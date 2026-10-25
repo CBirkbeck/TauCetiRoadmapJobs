@@ -1,0 +1,292 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "PELModuliPartII"
+
+[[source]]
+id = "LZ22"
+authors = "Chao Li, Wei Zhang"
+title = "Kudla–Rapoport cycles and derivatives of local densities"
+year = 2019
+arxiv = "1908.01701v3"
+locator_scheme = "page"
+locator = "§§2.1–2.2, 2.11, pp. 10–15; §§10.1–10.2, pp. 63–65; §§11.2–11.6, pp. 74–77; §13.1, pp. 80–81; §13.4, pp. 82–83; §§14.1–14.2, pp. 84–85"
+url = "https://arxiv.org/abs/1908.01701v3"
+fetched_from = "https://arxiv.org/pdf/1908.01701v3"
+fetched_at = "2026-10-25T20:50:34Z"
+sha256 = "7db1843f90c3e79741f8d58d92b6bb42b0a3b7ae001c8f9419f43b08c2119d49"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v3; locators use its printed pagination"
+cited_for = ["U0", "U1", "U2", "U6", "U7", "U8", "U9"]
+
+[[source]]
+id = "Zhang21"
+authors = "Wei Zhang"
+title = "Weil representation and Arithmetic Fundamental Lemma"
+year = 2019
+arxiv = "1909.02697v3"
+locator_scheme = "section"
+locator = "§3.1, (3.1)–(3.6); §6, Definition 6.1, Theorem 6.2; §7.3, (7.3)–(7.6) and footnote 3; Lemmas 7.10–7.11"
+url = "https://arxiv.org/abs/1909.02697v3"
+fetched_from = "https://arxiv.org/pdf/1909.02697v3"
+fetched_at = "2026-10-25T20:50:41Z"
+sha256 = "f58b275c97b2675123f44994c91fde9406d6928f6d659b7b8a0f196112d3f61c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v3 read and checked for the section, equation, footnote and lemma numbers cited; the page numbers cited are those of the published version, Annals of Mathematics 193 (2021), 863–978"
+cited_for = ["U0", "U1", "U6", "U7", "U9"]
+
+[[source]]
+id = "LL22"
+authors = "Chao Li, Yifeng Liu"
+title = "Chow groups and L-derivatives of automorphic motives for unitary groups, II"
+year = 2021
+arxiv = "2101.09485v2"
+locator_scheme = "theorem"
+locator = "Definition 1.1; Definitions 2.1, 2.3, the pairing (2.1) and footnote 9; Lemma 2.4 and footnote 8; Proposition 2.28; Definition 2.59, Lemma 2.60, Proposition 2.62, Corollaries 2.65–2.66; Notation 4.19; (4.8), Remark 4.29, Proposition 4.30"
+url = "https://www.math.columbia.edu/~chaoli/AIPF2.pdf"
+fetched_from = "https://www.math.columbia.edu/~chaoli/AIPF2.pdf"
+fetched_at = "2026-10-25T20:54:47Z"
+sha256 = "ebc12f4ddc2dc8b998f91bbfa3329364b075240c4ee53be1bf409a4361be7d88"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "author copy dated 16 January 2022 (published in Forum of Mathematics, Pi 10 (2022), e5); locators use its numbering and pagination. arXiv:2101.09485v2 numbers differently: its Lemma 2.6 is Lemma 2.4 here and it assumes representability as Hypothesis 2.4"
+cited_for = ["U3", "U4", "U6", "U7", "U9"]
+
+[[source]]
+id = "LL21"
+authors = "Chao Li, Yifeng Liu"
+title = "Chow groups and L-derivatives of automorphic motives for unitary groups"
+year = 2020
+arxiv = "2006.06139v5"
+locator_scheme = "theorem"
+locator = "Notation 5.6; §5, Lemmas 5.2 and 5.5; (8.2)"
+url = "https://www.math.columbia.edu/~chaoli/AIPF.pdf"
+fetched_from = "https://www.math.columbia.edu/~chaoli/AIPF.pdf"
+fetched_at = "2026-10-25T21:21:30Z"
+sha256 = "6ef2d63ea2cf55d8a2648f71ed7ac84e4d32f77e9e7eaeb62b47e584e4e5e566"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "author final copy (published in Annals of Mathematics 194 (2021)); locators use its pagination"
+cited_for = ["U6", "U9"]
+
+[[source]]
+id = "HLSY23"
+authors = "Qiao He, Chao Li, Yousheng Shi, Tonghai Yang"
+title = "A proof of the Kudla-Rapoport conjecture for Krämer models"
+year = 2022
+arxiv = "2208.07988v2"
+locator_scheme = "theorem"
+locator = "Definitions 2.1–2.2, §2.2, (2.1)–(2.6); §§10.1–10.2"
+url = "https://arxiv.org/abs/2208.07988v2"
+fetched_from = "https://arxiv.org/pdf/2208.07988v2"
+fetched_at = "2026-10-25T20:50:58Z"
+sha256 = "00e096d6e9b511934382db1e41dc4cf22419a021df06af58d2689dfb60b98b17"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v2; locators are for this version"
+cited_for = ["U5", "U7", "U9"]
+
+[[source]]
+id = "LTXZZ22"
+authors = "Yifeng Liu, Yichao Tian, Liang Xiao, Wei Zhang, Xinwen Zhu"
+title = "On the Beilinson-Bloch-Kato conjecture for Rankin-Selberg motives"
+year = 2019
+arxiv = "1912.11942v3"
+locator_scheme = "theorem"
+locator = "Definition 3.3.4; Lemma 4.2.1, Definition 4.2.2, Theorem 4.2.3, Remark 4.2.5; §5.1, Definitions 5.2.1, 5.2.6, Remark 5.2.4, Theorem 5.2.5(1)"
+url = "https://arxiv.org/abs/1912.11942v3"
+fetched_from = "https://arxiv.org/pdf/1912.11942v3"
+fetched_at = "2026-10-25T20:51:06Z"
+sha256 = "84dc7c8369298314bd4e7ece5a45e5e096f39bd376f08c4c489950873c46fe86"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v3, whose theorem and definition numbering agrees with the published version (Inventiones Mathematicae 228 (2022), 107–375) for the items cited; the page numbers cited are those of the published version"
+cited_for = ["U6", "U8"]
+
+[[source]]
+id = "RSZ20"
+authors = "Michael Rapoport, Brian Smithling, Wei Zhang"
+title = "Arithmetic diagonal cycles on unitary Shimura varieties"
+year = 2017
+arxiv = "1710.06962v6"
+locator_scheme = "theorem"
+locator = "equation (4.10); §4.3, (4.19)–(4.21), Theorem 4.5; Lemma 8.16, Remark 8.18; Appendix A, (A.1)–(A.8), Proposition A.1, Remarks A.2–A.3"
+url = "https://arxiv.org/abs/1710.06962v6"
+fetched_from = "https://arxiv.org/pdf/1710.06962v6"
+fetched_at = "2026-10-25T20:51:11Z"
+sha256 = "eee08e2004bb46afecd7c71768a19816de829d35b7c52db6bacad3e13b04a185"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v6; locators use its printed pages"
+cited_for = ["U6", "U7", "U9"]
+
+[[source]]
+id = "RSZ21"
+authors = "Michael Rapoport, Brian Smithling, Wei Zhang"
+title = "On Shimura varieties for unitary groups"
+year = 2019
+arxiv = "1906.12346v2"
+locator_scheme = "theorem"
+locator = "§3.3, (3.15)–(3.16), Remark 3.7; §4.1, (4.2); §5.1, (5.5)–(5.7); §5.2 cases (1)–(2); Theorems 5.4, 5.7; Theorems 6.2, 6.7, Remarks 6.8–6.9; Definition 6.10, Lemma 6.11"
+url = "https://www.math.uni-bonn.de/people/rapoport/myalggeom/preprints/unitshim.pdf"
+fetched_from = "https://www.math.uni-bonn.de/people/rapoport/myalggeom/preprints/unitshim.pdf"
+fetched_at = "2026-10-25T20:54:51Z"
+sha256 = "4ba9a81a1fcbdbf167395b5f5da02d65b67c4a38366187608b9127993b25cdc5"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "author copy dated 16 April 2020 (published in Pure and Applied Mathematics Quarterly 17 (2021)); locators use its pagination"
+cited_for = ["U6", "U7", "U9"]
+
+[[source]]
+id = "Mih19"
+authors = "Andreas Mihatsch"
+title = "Relative unitary RZ-spaces and the Arithmetic Fundamental Lemma"
+year = 2016
+arxiv = "1611.06520v2"
+locator_scheme = "theorem"
+locator = "Definitions 2.2, 2.7–2.8, 2.11, Proposition 2.12; Theorems 3.1, 3.3, Lemma 3.9, Corollary 3.10; Part III: Lemma 11.2, Definitions 11.6–11.9, Proposition 12.3"
+url = "https://arxiv.org/abs/1611.06520v2"
+fetched_from = "https://arxiv.org/pdf/1611.06520v2"
+fetched_at = "2026-10-25T20:51:23Z"
+sha256 = "1df1463952e54d98a6fe4c63ae04ec46ae03dc54648d841a53f3aae64af4fb97"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v2"
+cited_for = ["U0", "U6"]
+
+[[source]]
+id = "Cho18"
+authors = "Sungyoon Cho"
+title = "The basic locus of the unitary Shimura variety with parahoric level structure, and special cycles"
+year = 2018
+arxiv = "1807.09997v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.2; §3.9; Proposition 4.2, Theorem 4.3"
+url = "https://arxiv.org/abs/1807.09997v1"
+fetched_from = "https://arxiv.org/pdf/1807.09997v1"
+fetched_at = "2026-10-25T20:51:28Z"
+sha256 = "2dbfdd6d7c5e44eb561ac4cc9dae47a9b2c7810e17c63b66ca5279895976d521"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v1"
+cited_for = ["U2", "U7", "U9"]
+
+[[source]]
+id = "Howard19"
+authors = "Benjamin Howard"
+title = "Linear invariance of intersections on unitary Rapoport-Zink spaces"
+year = 2018
+arxiv = "1811.01482v2"
+locator_scheme = "theorem"
+locator = "§2, Propositions 2.1–2.2"
+url = "https://arxiv.org/abs/1811.01482v2"
+fetched_from = "https://arxiv.org/pdf/1811.01482v2"
+fetched_at = "2026-10-25T20:51:34Z"
+sha256 = "2364b23e456a8a6cad4ad5ffc7971e24e20619953cff342d8d24274f24938742"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v2 (published in Forum Mathematicum 31 (2019))"
+cited_for = ["U5"]
+
+[[source]]
+id = "Wu16"
+authors = "Haifeng Wu"
+title = "The supersingular locus of unitary Shimura varieties with exotic good reduction"
+year = 2016
+arxiv = "1609.08775v2"
+locator_scheme = "theorem"
+locator = "§3.4, (3.21)–(3.26); Theorems 5.17–5.18"
+url = "https://arxiv.org/abs/1609.08775v2"
+fetched_from = "https://arxiv.org/pdf/1609.08775v2"
+fetched_at = "2026-10-25T20:51:40Z"
+sha256 = "df0c71312bb35ed0255397d0114ecf152ddc994a1c695d90c41ca48780612123"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v2; ground field ℚ_p"
+cited_for = ["U3"]
+
+[[source]]
+id = "Kraemer03"
+authors = "Nicole Kraemer"
+title = "Local models for ramified unitary groups"
+year = 2003
+venue = "Abhandlungen aus dem Mathematischen Seminar der Universität Hamburg 73 (2003), 67–80"
+arxiv = "math/0302025v1"
+locator_scheme = "theorem"
+locator = "Definition 4.1, Proposition 4.3, Theorem 4.5 and (4.3)–(4.11)"
+url = "https://arxiv.org/abs/math/0302025v1"
+fetched_from = "https://arxiv.org/pdf/math/0302025v1"
+fetched_at = "2026-10-25T20:51:46Z"
+sha256 = "52a003a9ded4edf81f184c5e1138d2a499a0fefd6737ede4e5192d1f1393bcb8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v1; Theorem 4.5 assumes n≥3"
+cited_for = ["U5"]
+
+[[source]]
+id = "LRZ26"
+authors = "Chao Li, Michael Rapoport, Wei Zhang"
+title = "Quasi-canonical AFL and Arithmetic Transfer conjectures at parahoric levels"
+year = 2024
+arxiv = "2404.02214v2"
+locator_scheme = "theorem"
+locator = "Theorem 14.6.2"
+url = "https://arxiv.org/abs/2404.02214v2"
+fetched_from = "https://arxiv.org/pdf/2404.02214v2"
+fetched_at = "2026-10-25T20:51:53Z"
+sha256 = "4e687dfc505fb8555f0155c486ec849508f7c1af384446ed155c506a894a1bba"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v2"
+cited_for = ["U2", "U9"]
+
+[[source]]
+id = "RZ17"
+authors = "M. Rapoport, Th. Zink"
+title = "On the Drinfeld moduli problem of p-divisible groups"
+year = 2014
+venue = "Cambridge J. Math. 5 (2017), 229-279"
+arxiv = "1408.4071v2"
+locator_scheme = "theorem"
+locator = "§8, (8.1)–(8.2)"
+url = "https://arxiv.org/abs/1408.4071v2"
+fetched_from = "https://arxiv.org/pdf/1408.4071v2"
+fetched_at = "2026-10-25T20:51:58Z"
+sha256 = "cd8bf04054b1afd88f70018a002e152e8c421ecb3a9c4fe9003380f378a97290"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v2; locators use its pagination"
+cited_for = ["U6", "U7"]
+
+[[source]]
+id = "RZ96"
+authors = "Michael Rapoport, Thomas Zink"
+title = "Period Spaces for p-divisible Groups"
+year = 1996
+venue = "Annals of Mathematics Studies 141, Princeton University Press"
+locator_scheme = "theorem"
+locator = "Theorem 2.16; Definition 3.21, Theorem 3.25; §§6.13–6.16; Lemma 6.28, Corollary 6.29, Theorems 6.24, 6.27, 6.30"
+url = "https://www.math.uni-bonn.de/people/rapoport/myalggeom/preprints/Rapoport_Period%20spaces.pdf"
+fetched_from = "https://www.math.uni-bonn.de/people/rapoport/myalggeom/preprints/Rapoport_Period%20spaces.pdf"
+fetched_at = "2026-10-25T21:08:28Z"
+sha256 = "8ced3dfc636857d2bdd98b06f33586a30735a0820523fa1d001e6aa21cfa5a66"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "author-hosted scan of the Princeton book; locators use the printed page numbers"
+cited_for = ["U0", "U9"]
