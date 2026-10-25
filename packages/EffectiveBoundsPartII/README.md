@@ -1,6 +1,6 @@
 # Roadmap: effective arithmetic bounds and geometry of numbers, part ii
 
-**Summary.** This Part II continues Completed/EffectiveBounds, whose Layer 2 gives a primitive-polynomial count in a fixed ambient field. It constructs compact multi-equation models: every number field is an open and closed field component of a rational Jacobian-open complete intersection with explicit degree and coefficient bounds. Short algebraic integers, arithmetic first-jet interpolation and the integral lattice of polynomial relations give Couveignes’s explicit model theorem. A degree-dependent choice of parameters gives logarithmic models and one absolute constant Q≥3 such that, for every integer n>Q and integer H≥1, the unweighted number Nₙ(H) of ℚ-isomorφsm classes of exact degree n and absolute discriminant at most H satisfies
+**Summary.** This Part II continues Completed/EffectiveBounds, whose Layer 2 gives a primitive-polynomial count in a fixed ambient field. It constructs compact multi-equation models: every number field is an open and closed field component of a rational Jacobian-open complete intersection with explicit degree and coefficient bounds. Short algebraic integers, arithmetic first-jet interpolation and the integral lattice of polynomial relations give Couveignes’s explicit model theorem. A degree-dependent choice of parameters gives logarithmic models and one absolute constant Q≥3 such that, for every integer n>Q and integer H≥1, the unweighted number Nₙ(H) of ℚ-isomorphism classes of exact degree n and absolute discriminant at most H satisfies
 
     N_n(H) <= n^(Q*n*(log n)^3) * H^(Q*(log n)^3).
 
@@ -10,9 +10,9 @@ All logarithms are natural. The same Q controls both exponents and the degree th
 
 This roadmap owns the arithmetic specialization of the compact-model argument: weighted canonical measure on a number field’s mixed space; short integral rational bases; the embedding parameter change; the kernel of bounded integral evaluation and its transpose index; the discriminant-sensitive covolume estimate; the short-equation truncation and common arithmetic Jacobian minor; the compatible map from the supplied Jacobian-open algebra to the given field; central-binomial parameter selection; bounded ordered integer systems; and their field-class counting consequence.
 
-Completed/EffectiveBounds Layers 1–2 and the pinned effective-bounds modules supply the discriminant and primitive-polynomial Hermite theory. Their fixed-ambient count, primitive-generator bounds, class-number and unit-square bounds are not targets here. The new count has a degree-sensitive cubic-logarithmic exponent and counts unweighted isomorφsm classes. Regulator estimates, monogenicity, integral-basis reduction and enumeration procedures lie outside this Part II.
+Completed/EffectiveBounds Layers 1–2 and the pinned effective-bounds modules supply the discriminant and primitive-polynomial Hermite theory. Their fixed-ambient count, primitive-generator bounds, class-number and unit-square bounds are not targets here. The new count has a degree-sensitive cubic-logarithmic exponent and counts unweighted isomorphism classes. Regulator estimates, monogenicity, integral-basis reduction and enumeration procedures lie outside this Part II.
 
-Generic bounded polynomial carriers, support bases, evaluation, partial differentiation, torsion-free kernel saturation, central binomial coefficients and Catalan numbers are already in the library. GenericDoublePointInterpolation §§0.1, 0.3, 1.3–1.4 and 5.1–5.3 own their coefficient adapters, first jets, generic rank and universal minors; this roadmap specializes them to the conjugates of one arithmetic tuple. GeometryOfNumbersAndQuadraticArithmetic §§0.1–0.3 and 1.1–1.5 own generic Gram–Hadamard, primitive orthogonal covolumes, ordered-product estimates, intrinsic ball volumes and second Minkowski with witnesses. SchemeAndStackFoundations §§0.10 and 5.12 own the generic Jacobian étaleness and Bézout theory. ArithmeticStatisticsPartI, Layer 0, “Number fields ordered by discriminant”, owns the isomorφsm-family quotient, degree and height. These objects are imported by those sections, not reconstructed.
+Generic bounded polynomial carriers, support bases, evaluation, partial differentiation, torsion-free kernel saturation, central binomial coefficients and Catalan numbers are already in the library. GenericDoublePointInterpolation §§0.1, 0.3, 1.3–1.4 and 5.1–5.3 own their coefficient adapters, first jets, generic rank and universal minors; this roadmap specializes them to the conjugates of one arithmetic tuple. GeometryOfNumbersAndQuadraticArithmetic §§0.1–0.3 and 1.1–1.5 own generic Gram–Hadamard, primitive orthogonal covolumes, ordered-product estimates, intrinsic ball volumes and second Minkowski with witnesses. SchemeAndStackFoundations §§0.10 and 5.12 own the generic Jacobian étaleness and Bézout theory. ArithmeticStatisticsPartI, Layer 0, “Number fields ordered by discriminant”, owns the isomorphism-family quotient, degree and height. These objects are imported by those sections, not reconstructed.
 
 The acceptance signatures use only arithmetic specializations of native carriers. `jacobianPolynomial` and `JacobianOpenAlgebra` restrict the generic presentation to integer equations over ℚ; `HasBoundedModel` specifies its actual arithmetic point and compatible surjection. These definitions introduce no generic étaleness theorem or replacement field-class quotient. The arithmetic relation kernel differs from a class-group relation lattice: its codomain is the additive group of 𝓞_K and its generators are bounded monomials, rather than ideal classes.
 
@@ -37,13 +37,13 @@ The subtraction defining ℓ and the divisions by n are used in this positive ra
 
 Checks of defining expressions may use parameters outside the explicit model range; they test those expressions or conditional linear-algebra steps, without asserting the model theorem at those parameters.
 
-Evaluation of integer polynomials at integral κ lands in 𝓞_K. Surjective algebra evaluation onto K uses rational polynomials. When rational bounded evaluation is onto, the degree-d integer image has finite index and that index can exceed one. Counting uses inclusive cutoffs, ordered equations, and unweighted ℚ-isomorφsm classes. A nonnormal cubic field gives three embedded subfields of ℚ̄ and one class; an automorφsm weight would count another object (COU20 line 35, Theorem 2, p.488).
+Evaluation of integer polynomials at integral κ lands in 𝓞_K. Surjective algebra evaluation onto K uses rational polynomials. When rational bounded evaluation is onto, the degree-d integer image has finite index and that index can exceed one. Counting uses inclusive cutoffs, ordered equations, and unweighted ℚ-isomorphism classes. A nonnormal cubic field gives three embedded subfields of ℚ̄ and one class; an automorphism weight would count another object (COU20 line 35, Theorem 2, p.488).
 
 ## Exact supplier contracts
 
 ### From Mathlib
 
-- `NumberField.discr`, `NumberField.discr_ne_zero`, `NumberField.discr_eq_discr_of_algEquiv` in `Mathlib/NumberTheory/NumberField/Discriminant/Defs.lean` give the signed field discriminant, its nonvanishing and isomorφsm invariance. `NumberField.rootDiscr` in `Mathlib/NumberTheory/NumberField/Discriminant/Basic.lean` is |disc K|^(1/n), and `NumberField.finite_of_discr_bdd` there gives finite bounded-discriminant sets of finite-dimensional intermediate fields of a fixed characteristic-zero ambient field.
+- `NumberField.discr`, `NumberField.discr_ne_zero`, `NumberField.discr_eq_discr_of_algEquiv` in `Mathlib/NumberTheory/NumberField/Discriminant/Defs.lean` give the signed field discriminant, its nonvanishing and isomorphism invariance. `NumberField.rootDiscr` in `Mathlib/NumberTheory/NumberField/Discriminant/Basic.lean` is |disc K|^(1/n), and `NumberField.finite_of_discr_bdd` there gives finite bounded-discriminant sets of finite-dimensional intermediate fields of a fixed characteristic-zero ambient field.
 - `NumberField.mixedEmbedding.finrank` and `NumberField.mixedEmbedding.latticeBasis` in `Mathlib/NumberTheory/NumberField/CanonicalEmbedding/Basic.lean` provide real dimension n and the lattice basis associated to an actual integral basis. `NumberField.mixedEmbedding.covolume_integerLattice` in `Mathlib/NumberTheory/NumberField/Discriminant/Basic.lean` uses standard product volume and equals 2^(−r₂)√|disc K|. It is this same lattice and fundamental domain that §0.2 rescales.
 - `NumberField.house`, `NumberField.house_eq_sup'`, `NumberField.house_mul_le`, `NumberField.house_sum_le_sum_house`, `NumberField.house_intCast` and `NumberField.one_le_house_of_isIntegral` in `Mathlib/NumberTheory/NumberField/House.lean` supply the house, its embedding interpretation, product and sum bounds, integer normalization and the bound ≥1 for a nonzero algebraic integer. `NumberField.canonicalEmbedding.norm_le_iff` in `Mathlib/NumberTheory/NumberField/CanonicalEmbedding/Basic.lean` relates the canonical supremum norm to all embedding moduli.
 - `MvPolynomial.restrictTotalDegree`, `MvPolynomial.mem_restrictTotalDegree` and `MvPolynomial.basisRestrictSupport` in `Mathlib/RingTheory/MvPolynomial/Basic.lean` give the native degree-bounded submodule and support basis. Membership means total degree≤d; it does not mean a separate degree bound in each variable. `MvPolynomial.aeval` in `Mathlib/Algebra/MvPolynomial/Eval.lean` and `MvPolynomial.pderiv` in `Mathlib/Algebra/MvPolynomial/PDeriv.lean` are the actual evaluation and partial-derivative operations. These constructions use a commutative coefficient ring; field-rank arguments explicitly pass to ℚ or ℂ.
@@ -85,11 +85,11 @@ This contract is the system-of-equations consequence of the supplier’s general
 
 ### From TauCetiRoadmap.ArithmeticStatisticsPartI
 
-Consume Layer 0, “Number fields ordered by discriminant” (anchor `number-fields-ordered-by-discriminant`): `NumberFieldFamily.Embedded`, `NumberFieldFamily.isoSetoid`, `NumberFieldFamily.isoFamily` and `NumberFieldFamily.isoDegree`. The quotient is by ℚ-algebra isomorφsm of finite-dimensional intermediate fields of ℚ̄. Absolute field discriminant and degree descend to the quotient, and every bounded-height sublevel is finite by Hermite’s theorem. Nₙ(H) is the ordinary finite cardinality of its exact-degree-n inclusive height sublevel. The neighboring “Embedded and isomorφsm class counts of number fields” identifies an embedded multiplicity n/#Aut(K); that multiplicity is not inserted into Nₙ(H). For a nonnormal cubic field the values are three embedded copies and one class; for a Galois quadratic field they are one and one.
+Consume Layer 0, “Number fields ordered by discriminant” (anchor `number-fields-ordered-by-discriminant`): `NumberFieldFamily.Embedded`, `NumberFieldFamily.isoSetoid`, `NumberFieldFamily.isoFamily` and `NumberFieldFamily.isoDegree`. The quotient is by ℚ-algebra isomorphism of finite-dimensional intermediate fields of ℚ̄. Absolute field discriminant and degree descend to the quotient, and every bounded-height sublevel is finite by Hermite’s theorem. Nₙ(H) is the ordinary finite cardinality of its exact-degree-n inclusive height sublevel. The neighboring “Embedded and isomorphism class counts of number fields” identifies an embedded multiplicity n/#Aut(K); that multiplicity is not inserted into Nₙ(H). For a nonnormal cubic field the values are three embedded copies and one class; for a Galois quadratic field they are one and one.
 
 ## How to read the build
 
-Layer 0 uses the number-field canonical measure and second Minkowski to obtain a short integral rational basis. Layer 1 moves through its invertible complex embedding matrix to choose bounded integral generators with all first jets onto. Layer 2 builds the arithmetic relation lattice and preserves both its transpose index and its discriminant denominator. Layer 3 applies second Minkowski in the coefficient space, discards exactly n−1 relations and selects one integer Jacobian minor nonzero at every conjugate. Layer 4 combines the explicit coefficients with the actual field component map. Layer 5 chooses parameters depending only on the degree, counts ordered coefficient boxes and counts the field factors by isolated-point Bézout. Each *Needs* line names the statement and proof-route inputs separately enough to permit another proof. `Suggested.lean` tests four headline theorems; the two field-class headlines require the supplier’s quotient carrier and are described in its module docstring.
+Layer 0 uses the number-field canonical measure and second Minkowski to obtain a short integral rational basis. Layer 1 moves through its invertible complex embedding matrix to choose bounded integral generators with all first jets onto. Layer 2 builds the arithmetic relation lattice and preserves both its transpose index and its discriminant denominator. Layer 3 applies second Minkowski in the coefficient space, discards exactly n−1 relations and selects one integer Jacobian minor nonzero at every conjugate. Layer 4 combines the explicit coefficients with the actual field component map. Layer 5 chooses parameters depending only on the degree, counts ordered coefficient boxes and counts the field factors by isolated-point Bézout. Each *Needs* line names the statement and proof-route inputs separately enough to permit another proof. `Suggested.lean` tests six headline theorems: short integral rational bases, bounded arithmetic first jets, explicit models, logarithmic models, bounded-system field-class counts and discriminant counts. The two counting signatures use arbitrary finite families of pairwise nonisomorphic number fields; choosing one representative per class gives exactly the unweighted class-cardinality bounds. The supplier retains ownership of the quotient carrier.
 
 ## Layer 0: Short algebraic integers
 
@@ -279,7 +279,7 @@ A proof route is as follows. Project the full first-jet map onto its n value row
 - At κ=√5 in ℚ(√5), degree-one rational rank is 2 but the integral image is ℤ[√5], of index 2. Rational surjectivity cannot imply integral surjectivity.
 - For κ=0 in a quadratic field, every rational polynomial value is rational, so the image rank is 1<2. A tuple unrelated to the chosen first jets would make the conclusion false.
 
-Tensoring an integral image with ℚ can be onto while its integral index remains greater than one. The morφsm Spec K→A^r_ℚ comes from the actual evaluation map.
+Tensoring an integral image with ℚ can be onto while its integral index remains greater than one. The morphism Spec K→A^r_ℚ comes from the actual evaluation map.
 
 *Needs:* §1.2; TauCetiRoadmap.GenericDoublePointInterpolation §1.3, the value map; TauCetiRoadmap.GenericDoublePointInterpolation §1.3, first-jet kernel splitting; Mathlib `MvPolynomial.restrictTotalDegree`; Mathlib `MvPolynomial.aeval`.
 
@@ -521,7 +521,7 @@ A proof route is as follows. Full rank supplies r distinct retained rows and a n
 
 **Checks.**
 
-- For E=X³−2 at θ=∛2, J(θ)=3θ² has field norm 108≠0, and all three conjugates have modulus 3·2^(2/3). This nonnormal cubic uses no field automorφsm transitivity.
+- For E=X³−2 at θ=∛2, J(θ)=3θ² has field norm 108≠0, and all three conjugates have modulus 3·2^(2/3). This nonnormal cubic uses no field automorphism transitivity.
 - For E=X²−2 at √2, the two derivative values are 2√2 and −2√2. Their signs differ, but the same polynomial minor is nonzero at both embeddings.
 - For E=X² at zero the derivative is zero. Vanishing equations without a nonzero minor cannot define the component localization map.
 
@@ -541,7 +541,7 @@ Layers 1–2; GenericDoublePointInterpolation §1.3; GeometryOfNumbersAndQuadrat
 
 ### 4.1 The arithmetic component map
 
-For the ordered integer system E, define `jacobianPolynomial` as the determinant of its rational polynomial derivative matrix, with equation rows and variable columns. Define `JacobianOpenAlgebra` as the native quotient of ℚ[X] by the mapped Eᵢ, localized at that determinant. This is the arithmetic specialization of the supplier presentation. For any commutative ring R and κ∈R^r, form the integer derivative determinant before evaluation in R. This defines the evaluated Jacobian compatibly with every ring homomorφsm; it agrees with evaluation of `jacobianPolynomial` whenever R is a ℚ-algebra.
+For the ordered integer system E, define `jacobianPolynomial` as the determinant of its rational polynomial derivative matrix, with equation rows and variable columns. Define `JacobianOpenAlgebra` as the native quotient of ℚ[X] by the mapped Eᵢ, localized at that determinant. This is the arithmetic specialization of the supplier presentation. For any commutative ring R and κ∈R^r, form the integer derivative determinant before evaluation in R. This defines the evaluated Jacobian compatibly with every ring homomorphism; it agrees with evaluation of `jacobianPolynomial` whenever R is a ℚ-algebra.
 
 Assume the explicit model range r≥1, d≥5 and M≥n(r+1). E is the selected r-tuple selected in §3.5.
 
@@ -552,7 +552,7 @@ A proof route is as follows. Factor native ℚ-polynomial evaluation through the
 The API has the following properties.
 
 - For an ordered r-tuple E of integer polynomials and a tuple κ in a commutative ring R, evaluate the determinant of the r by r matrix of native partial derivatives. This equals evaluation of the polynomial Jacobian determinant.
-- For a ring homomorφsm f:R→S, applying f to the evaluated Jacobian at κ gives the evaluated Jacobian at f∘κ; hence injective field embeddings preserve nonvanishing.
+- For a ring homomorphism f:R→S, applying f to the evaluated Jacobian at κ gives the evaluated Jacobian at f∘κ; hence injective field embeddings preserve nonvanishing.
 - The specific evaluation map extends to A_E by inverting J(κ). In a commutative target ring its image must be a unit; for the target field K this is equivalent to J(κ)≠0.
 - On the image of f∈ℚ[x], φ equals f(κ).
 - The image of the inverse Jacobian is J(κ)^(−1).
@@ -566,7 +566,7 @@ The API has the following properties.
 **Checks.**
 
 - For E=X²−2 over ℚ and κ=√(2), J=2X is invertible and A_E≃ℚ(√(2)). The inverse derivative maps to √2/4.
-- For E=(X²−2)(X²−3), the Jacobian-open algebra is ℚ(√(2))×ℚ(√(3)); either projection is a component map, not an isomorφsm from all A_E. There are four geometric roots but two field components.
+- For E=(X²−2)(X²−3), the Jacobian-open algebra is ℚ(√(2))×ℚ(√(3)); either projection is a component map, not an isomorphism from all A_E. There are four geometric roots but two field components.
 - For E=X² at κ=0, J(κ)=0 and the Jacobian-open algebra is zero; no map of this construction onto ℚ exists. Inverting the nilpotent 2X annihilates the quotient.
 - For r=1, E=X²−2 and κ=3 in ℚ, the evaluated Jacobian is 6, the evaluated derivative. Substituting E(3)=7 for its derivative would give the wrong 7.
 - For r=1, E=X² and κ=0 in ℚ, the evaluated Jacobian is zero; this point cannot define the localization evaluation. No inverse of that Jacobian can map to a field unit.
@@ -575,13 +575,13 @@ The API has the following properties.
 - In ℚ[ε]/(ε²), E=X² at κ=ε has E(κ)=0 and J(κ)=2ε≠0, but 2ε is not a unit: its square is zero. Thus a general-ring extension requires a unit, and nonvanishing suffices only for the field target.
 - Over 𝔽₂ the integer system X²−X has derivative 1 at both roots, whereas X² has derivative 0. Over 𝔽₃ the derivative of X³−X is 2 at every root. The evaluated integer Jacobian uses no division by 2 or 3; the rational model theorem still assumes a number field.
 
-The universal property fixes φ, not merely an abstract isomorφc field somewhere in A_E.
+The universal property fixes φ, not merely an abstract isomorphic field somewhere in A_E.
 
 *Needs:* §3.5; §1.3; TauCetiRoadmap.SchemeAndStackFoundations §0.10, `jacobian_etale_algebra` over ℚ; Mathlib `Algebra.Etale.iff_exists_algEquiv_prod`; Mathlib `MvPolynomial.pderiv`.
 
 ### 4.2 Explicit small field models
 
-Define `HasBoundedModel K r d H` by existence of an integral tuple κ and ordered integer system E with degrees≤d, all coefficient moduli≤H, Eᵢ(κ)=0, rational polynomial evaluation onto K, J(κ)≠0, and an actual compatible surjection from the étale algebra `JacobianOpenAlgebra E` to K. Compatibility means that the map sends the class of every rational polynomial f to f(κ). Thus it determines the localization map, not merely an abstract isomorφsm class. Define `explicitCoefficientBound n r d δ` by B in the conventions. The headline `exists_explicit_small_model` asserts this full predicate at that bound; the finite-product classification identifies its surjection with a field-factor projection.
+Define `HasBoundedModel K r d H` by existence of an integral tuple κ and ordered integer system E with degrees≤d, all coefficient moduli≤H, Eᵢ(κ)=0, rational polynomial evaluation onto K, J(κ)≠0, and an actual compatible surjection from the étale algebra `JacobianOpenAlgebra E` to K. Compatibility means that the map sends the class of every rational polynomial f to f(κ). Thus it determines the localization map, not merely an abstract isomorphism class. Define `explicitCoefficientBound n r d δ` by B in the conventions. The headline `exists_explicit_small_model` asserts this full predicate at that bound; the finite-product classification identifies its surjection with a field-factor projection.
 
 Assume the explicit model range r≥1, d≥5 and M≥n(r+1).
 
@@ -599,7 +599,7 @@ The API has the following properties.
 **Checks.**
 
 - For K=ℚ,r=1,d=5, M=6,ℓ=5,δ=1 and E=X at κ=0 give coefficient height 1≤5^(5/2)√6·10⁵. The Jacobian is 1 and the model algebra is ℚ.
-- For K=ℚ(√2),r=1,d=5, use E=X²−2 at κ=√2: height 2, degree 2≤5, Jacobian 2√2≠0 and the localized algebra maps isomorφcally to K.
+- For K=ℚ(√2),r=1,d=5, use E=X²−2 at κ=√2: height 2, degree 2≤5, Jacobian 2√2≠0 and the localized algebra maps isomorphically to K.
 - The system X(X−1),XY has a positive-dimensional line component X=0, but Jacobian value 1 at (1,0). Thus the Jacobian-open model is ℚ, while the full zero locus is not zero-dimensional.
 - Replacing a coefficient bound H by a larger H′ preserves every bound; replacing the actual quotient map by a constant zero function fails φ(1)=1, so it is not an algebra map.
 - For n=1,r=1,d=5, doubling δ multiplies the explicit bound by 2¹⁰=1024. This checks that the power of δ is 2d rather than d or 4d.
@@ -654,7 +654,7 @@ The headline `exists_logarithmic_small_models` fixes r=d=`centralBinomialRank n`
 
 n is larger than the single absolute threshold Q.
 
-There is one absolute real Q≥3 such that for every number field K of degree n>Q one can take r=d=r(n)≤Q log n and M=choose(2r,r)≤Q n log n in the explicit small-model theorem, with every coefficient at most (n δ)^(Q log n). The resulting Jacobian-open model contains Spec K as an irreducible component. (COU20 line 420, Theorem 1, p. 487, proved in §4 pp. 495–496).
+There is one absolute real Q≥3 such that for every number field K of degree n>Q one can take r=d=r(n)≤Q log n and M=choose(2r,r)≤Q n log n in the explicit small-model theorem, with every coefficient at most (n δ)^(Q log n). The resulting Jacobian-open model contains Spec K as an irreducible component. (COU20 line 20, Theorem 1, p. 487; proved at lines 381–425, §4, pp. 495–496).
 
 A proof route is as follows. Choose n above the central-binomial threshold and take d=r(n)≥5. We have ℓ≤M≤4n(r+1)=O(n log n). Taking logarithms, log(ℓ^(ℓ/(2n)))=(ℓ/(2n))log ℓ=O((log n)²). Also log(√(M))=O(log n). For the remaining factors, d log(n²d(r+1))=O((log n)²) and 2d log δ=O(log n log δ). Combine into Q log n (log n+log δ). Enlarge one absolute Q to dominate every threshold and constant, then exponentiate and apply the explicit model theorem.
 
@@ -674,7 +674,7 @@ Define the coefficient box as a subset of native ordered polynomial tuples, not 
 
 r,d,C≥0 are integers. All equations have exactly the same variable index Fin r, and the tuple is ordered.
 
-For naturals r,d,C, let Box(r,d,C) be the set of ordered r-tuples E of native integer polynomials in r variables such that totalDegree(E_i)≤d and |coeff_α(E_i)|≤C for every i and exponent α. In the supplied monomial coordinates this is exactly rM independent integer slots in [−C,C], M=choose(d+r,d). This coefficient-box carrier is separate from any field-isomorφsm carrier. (COU20 line 425, §4, p. 496, the number of coefficients to be specified).
+For naturals r,d,C, let Box(r,d,C) be the set of ordered r-tuples E of native integer polynomials in r variables such that totalDegree(E_i)≤d and |coeff_α(E_i)|≤C for every i and exponent α. In the supplied monomial coordinates this is exactly rM independent integer slots in [−C,C], M=choose(d+r,d). This coefficient-box carrier is separate from any field-isomorphism carrier. (COU20 line 425, §4, p. 496, the number of coefficients to be specified).
 
 A proof route is as follows. Take the subset of (ℤ[x_1,…,x_r])^r specified by the degree and coefficient inequalities. Apply the imported coefficient-coordinate equivalence to the bounded-degree submodule. Coefficients outside the bounded exponent set vanish. This identifies the set with the product over Fin r×A(r,d) of the finite integer interval [−C,C].
 
@@ -720,20 +720,21 @@ At r=1 this recovers the familiar (2C+1)^(d+1) count for degree≤d integer poly
 
 ### 5.5 From finite models to field classes
 
-For this target use the ordinary finite isomorφsm-class family of the supplier. The finite product for each Jacobian-open algebra may be empty. Over ℚ̄ its geometric point count is the sum of the degrees of the field factors, so it bounds the number of factors as well. The map from a pair (ordered system, field factor) to a class may identify several different pairs; surjectivity onto the represented set is sufficient.
+The headline `bounded_systems_field_class_bound` states the bound on an arbitrary family Kᵢ, i∈Fin m, of pairwise nonisomorphic number fields. Each Kᵢ admits a surjective ℚ-algebra map from `JacobianOpenAlgebra E` for some E∈Box(r,d,C); the conclusion is m≤(2C+1)^(rM)d^r. This is equivalent to the bound for the ordinary finite isomorphism-class family of the supplier: every such family injects into the represented class set, and choosing one representative per represented class gives the converse. Finiteness follows from the finite coefficient box and finite field-factor sets. The finite product for each Jacobian-open algebra may be empty. Over ℚ̄ its geometric point count is the sum of the degrees of the field factors, so it bounds the number of factors as well. The map from a pair (ordered system, field factor) to a class may identify several different pairs; surjectivity onto the represented set is sufficient.
 
 r,d≥1 and C≥0 are integers; use the isolated-affine-point contract of SchemeAndStackFoundations §5.12 and the unweighted class carrier of ArithmeticStatisticsPartI, Layer 0.
 
-For r,d≥1 and C≥0, the number of ℚ-isomorφsm classes of fields that occur as residue fields of components of Jacobian-open algebras A_E for E∈Box(r,d,C) is at most (2C+1)^(rM) d^r. The same bound holds after restriction to exact degree n and |disc|≤H. This uses a surjection from pairs (equation tuple, field factor) onto the represented classes, not an injection from fields to tuples. (COU20 line 425, §4, p. 496, final isolated-point intersection argument; Theorem 2 p. 488).
+For r,d≥1 and C≥0, the number of ℚ-isomorphism classes of fields that occur as residue fields of components of Jacobian-open algebras A_E for E∈Box(r,d,C) is at most (2C+1)^(rM) d^r. The same bound holds after restriction to exact degree n and |disc|≤H. This uses a surjection from pairs (equation tuple, field factor) onto the represented classes, not an injection from fields to tuples. (COU20 line 425, §4, p. 496, final isolated-point intersection argument; Theorem 2 p. 488).
 
-A proof route is as follows. For each E use the imported finite-etale classification of A_E. Its factors give a finite set of residue-field classes; repeated isomorφc factors contribute just one class but can be overcounted. After base change to an algebraic closure of ℚ, the geometric point count is the sum of the factor degrees and is at most d^r by the isolated-affine-point contract. Each factor has positive degree, so the number of factors is also at most d^r. Form the finite disjoint union of these factor sets over the coefficient box and map each pair to its field-isomorφsm class. Its image is precisely the represented set. Apply the coefficient-box count. Restricting degree or discriminant can only decrease the image size.
+A proof route is as follows. For each E use the imported finite-etale classification of A_E. Its factors give a finite set of residue-field classes; repeated isomorphic factors contribute just one class but can be overcounted. After base change to an algebraic closure of ℚ, the geometric point count is the sum of the factor degrees and is at most d^r by the isolated-affine-point contract. Each factor has positive degree, so the number of factors is also at most d^r. Form the finite disjoint union of these factor sets over the coefficient box and map each pair to its field-isomorphism class. Its image is precisely the represented set. Apply the coefficient-box count. Restricting degree or discriminant can only decrease the image size.
 
 **Checks.**
 
-- For E=(X²−2)(X²−3), there are four geometric points, two degree-two field factors and two isomorφsm classes. One model need not mean one field.
-- For E=X(X−1), there are two geometric points and two field factors, both ℚ, giving only one class. The factor-to-class map need not be injective.
+- For E=(X²−2)(X²−3)=X⁴−5X²+6, there are four geometric points, two degree-two field factors and two isomorphism classes. Their discriminants 8 and 12 exclude a ℚ-algebra equivalence. For r=1,d=4,C=6, the family size satisfies 2≤13⁵·4=1485172. One model need not mean one field.
+- For E=X(X−1), there are two geometric points and two field factors, both ℚ, giving only one class. A family with two copies of ℚ fails pairwise nonisomorphism; one copy satisfies it and gives 1≤3³·2=54 for r=1,d=2,C=1. The factor-to-class map need not be injective.
 - For E=X², the Jacobian-open algebra is zero: zero geometric points, zero field factors and zero represented classes, consistent with the empty product.
 - For X(X−1),XY, the affine zero locus contains a line and one isolated simple point. The point count 1≤2²=4 remains valid in the presence of the line.
+- The empty family has m=0 and satisfies 0≤(2C+1)^(rM)d^r. For C=0 and r≥1, all equations and their Jacobian vanish, so the localized algebra is zero and no nonempty family admits the required surjections onto fields.
 
 For (X²−2)(X²−3) one equation represents two distinct quadratic classes, so a one-model-one-field argument fails. The Bézout hypothesis is in arbitrary dimension; a plane-only statement would not establish this target. No factor n/#Aut(K) appears in the unweighted class count.
 
@@ -741,21 +742,22 @@ For (X²−2)(X²−3) one equation represents two distinct quadratic classes, s
 
 ### 5.6 A cubic-logarithmic discriminant exponent
 
-The quantifier order is ∃Q≥3, ∀n∈ℕ with n>Q, ∀H∈ℕ with H≥1, followed by the displayed inequality for the actual exact-degree inclusive class sublevel. Finiteness is obtained before taking its ordinary cardinality. The real powers have positive bases n and H, and no reciprocal of log H occurs.
+The headline `discriminant_field_class_bound` quantifies over every m∈ℕ and every family Kᵢ, i∈Fin m, of pairwise nonisomorphic number fields, each of degree n and |disc Kᵢ|≤H, and bounds m by the displayed expression. Every such family injects into the class sublevel; conversely, choose one representative per class of the finite sublevel to recover its cardinality bound. The quantifier order is ∃Q≥3, ∀n∈ℕ with n>Q, ∀H∈ℕ with H≥1, followed by the bound for every such family and hence for the actual exact-degree inclusive class sublevel. Finiteness is obtained before taking its ordinary cardinality. The real powers have positive bases n and H, and no reciprocal of log H occurs.
 
-The class carrier has its isomorφsm-invariant degree and absolute field discriminant; n>Q and H≥1 are integers.
+The class carrier has its isomorphism-invariant degree and absolute field discriminant; n>Q and H≥1 are integers.
 
-There exists an absolute real Q≥3 such that, for all integers n>Q and H≥1, the number N_n(H) of ℚ-isomorφsm classes of number fields of exact degree n and |disc K|≤H satisfies N_n(H)≤n^(Q n (log n)^3) H^(Q (log n)^3). All logarithms are natural; the same Q is uniform in n and H. (COU20 line 35, Theorem 2, p. 488, and §4 pp. 495–496).
+There exists an absolute real Q≥3 such that, for all integers n>Q and H≥1, the number N_n(H) of ℚ-isomorphism classes of number fields of exact degree n and |disc K|≤H satisfies N_n(H)≤n^(Q n (log n)^3) H^(Q (log n)^3). All logarithms are natural; the same Q is uniform in n and H. (COU20 line 35, Theorem 2, p. 488, and §4 pp. 495–496).
 
-A proof route is as follows. Finiteness is inherited from the completed Hermite–Minkowski infrastructure in a fixed ℚ̄ and the isomorφsm-family quotient, rather than defining an unsupported finite count. For each class use the logarithmic model with the same r=d=r(n) and M depending only on n. From δ≤H^(1/n), take the common height B=(n H^(1/n))^(Q0 log n), C=floor(B). All these classes lie in the image counted in §5.5, so N_n(H)≤(2C+1)^(rM) r^r. Since B≥1, 2C+1≤3B. Use rM=O(n(log n)²). The logarithm of the bound is O(n(log n)^3 log n)+O((log n)^3 log H)+O(log n log log n). Absorb the last term and constants into Q n(log n)^3 log n and Q(log n)^3 log H. Choose one Q≥3 dominating Q0, every degree threshold and both constants, then exponentiate. H=1 is included by the same bound; the proof never divides by log H.
+A proof route is as follows. Finiteness is inherited from the completed Hermite–Minkowski infrastructure in a fixed ℚ̄ and the isomorphism-family quotient, rather than defining an unsupported finite count. For each class use the logarithmic model with the same r=d=r(n) and M depending only on n. From δ≤H^(1/n), take the common height B=(n H^(1/n))^(Q0 log n), C=floor(B). All these classes lie in the image counted in §5.5, so N_n(H)≤(2C+1)^(rM) r^r. Since B≥1, 2C+1≤3B. Use rM=O(n(log n)²). The logarithm of the bound is O(n(log n)^3 log n)+O((log n)^3 log H)+O(log n log log n). Absorb the last term and constants into Q n(log n)^3 log n and Q(log n)^3 log H. Choose one Q≥3 dominating Q0, every degree threshold and both constants, then exponentiate. H=1 is included by the same bound; the proof never divides by log H.
 
 **Checks.**
 
-- For H=1 and any n>1, Hermite–Minkowski discriminant bounds exclude all such fields, so Nₙ(1)=0≤n^(Qn(log n)³). The proof must allow log H=0.
-- For a nonnormal cubic field with trivial automorφsm group, its isomorφsm class contributes 1 and its embedded multiplicity is 3. The two counting conventions cannot be exchanged.
+- For H=1 and any n>1, Hermite–Minkowski discriminant bounds exclude all such fields, so Nₙ(1)=0≤n^(Qn(log n)³). Every family satisfying the hypotheses is empty. For any n>Q and H≥1, the empty family also gives 0≤n^(Qn(log n)³)H^(Q(log n)³). The proof must allow log H=0.
+- For a nonnormal cubic field with trivial automorphism group, its isomorphism class contributes 1 and its embedded multiplicity is 3. The two counting conventions cannot be exchanged.
 - For n=1,H=1 the actual class count is 1, but r(1)=1 and Q log 1=0; the eventual theorem does not justify its parameter estimate at degree one.
+- At n=2,H=3, the only class is ℚ(√−3), of discriminant −3; ℚ(i) has discriminant −4 and is excluded. A pairwise nonisomorphic family from this sublevel has size at most 1, and one representative attains 1. This tests equivalence of the two counting formulations, outside the eventual range n>Q≥3.
 
-This is an upper bound for exact-degree unweighted isomorφsm classes, not a density or an asymptotic equality. The constant is independent of H; the n=1 case is outside the eventual theorem.
+This is an upper bound for exact-degree unweighted isomorphism classes, not a density or an asymptotic equality. The constant is independent of H; the n=1 case is outside the eventual theorem.
 
 *Needs:* §5.2; §5.5; §5.1; TauCetiRoadmap.ArithmeticStatisticsPartI, Layer 0, “Number fields ordered by discriminant”; Mathlib `NumberField.finite_of_discr_bdd`; Tau Ceti `NumberField.ncard_setOf_finiteDimensional_abs_discr_le_le`.
 
@@ -769,7 +771,7 @@ Layer 4; GenericDoublePointInterpolation §0.1; SchemeAndStackFoundations §5.12
 
 ## Downstream consumers
 
-The principal exports are the explicit bound of §4.2, the degree-uniform logarithmic models of §5.2 and the exact-degree class bound of §5.6. Arithmetic-statistics consumers may use their coefficient boxes and their bound on the number of field factors per system; they must retain the unweighted isomorφsm-class convention. An application that counts embedded fields instead must supply its separate embedding multiplicity. Generic interpolation and lattice users consume the named supplier roadmaps directly.
+The principal exports are the explicit bound of §4.2, the degree-uniform logarithmic models of §5.2 and the exact-degree class bound of §5.6. Arithmetic-statistics consumers may use their coefficient boxes and their bound on the number of field factors per system; they must retain the unweighted isomorphism-class convention. An application that counts embedded fields instead must supply its separate embedding multiplicity. Generic interpolation and lattice users consume the named supplier roadmaps directly.
 
 ## Worked examples
 
@@ -779,7 +781,7 @@ The principal exports are the explicit bound of §4.2, the degree-uniform logari
 
 **One model may represent several classes.** The polynomial (X²−2)(X²−3) has four distinct geometric roots, rational algebra ℚ(√2)×ℚ(√3), and two class images. The two derivative values in those factors are respectively −2√2 and 2√3 up to the chosen roots, so the Jacobian localization retains both factors. The polynomial X(X−1) instead has two rational factors and one class image. For X² the Jacobian localization is zero and the represented set is empty. Counting pairs (system, factor), then taking their image, handles all three cases. The system X(X−1),XY retains an isolated simple point (1,0) alongside the line X=0 before localization, so the isolated-point Bézout contract must allow that line (COU20 lines 363–380, §3, p.495; line 425, §4, p.496).
 
-**Uniform parameters and inclusive height.** The Catalan values at r=1,2,3,4,5 are 1,2,5,14,42, so r(14)=4 and r(15)=5. For n above the single absolute threshold, take r=d=r(n) and M≤4n(r+1). If |disc K|≤H, then δ≤H^(1/n); the common real coefficient height is B=(nH^(1/n))^(Q₀ log n). Its natural floor C gives exactly (2C+1)^(rM) systems, and each contributes at most r^r field factors. Since rM is bounded by a constant times n(log n)², the logarithm of the total bound is at most a constant times n(log n)⁴ plus a constant times (log n)³log H. Enlarging one Q yields §5.6. At H=1 the second term is zero, not a denominator (COU20 line 385, equation (1), p.495; line 420, §4, p.496).
+**Uniform parameters and inclusive height.** The Catalan values at r=1,2,3,4,5 are 1,2,5,14,42, so r(14)=4 and r(15)=5. For n above the single absolute threshold, take r=d=r(n) and M≤4n(r+1). If |disc K|≤H, then δ≤H^(1/n); the common real coefficient height is B=(nH^(1/n))^(Q₀ log n). Its natural floor C gives exactly (2C+1)^(rM) systems, and each contributes at most r^r field factors. Since rM is bounded by a constant times n(log n)², the logarithm of the total bound is at most a constant times n(log n)⁴ plus a constant times (log n)³log H. Enlarging one Q yields §5.6. At H=1 the second term is zero, not a denominator (COU20 line 385, equation (1), p.495; lines 421–430, §4, p.496).
 
 ## References
 

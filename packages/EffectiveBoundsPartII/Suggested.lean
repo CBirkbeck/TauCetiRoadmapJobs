@@ -8,11 +8,13 @@ headline theorems against the pinned APIs. The arithmetic model predicate below
 uses the native quotient and localization: its actual compatible surjection
 from an etale rational algebra exhibits the number field as a field component.
 
-The coefficient-box / field-component bound for rational isomorphism classes and
-the cubic-logarithmic discriminant-count theorem are not statable at the pins
-without rebuilding a supplier-owned carrier. They lack ArithmeticStatisticsPartI's
-number-field isomorphism-family quotient with its degree and discriminant height.
-A count of embedded subfields is a different statement and is not substituted.
+The headline theorems are short integral rational bases, bounded arithmetic first
+jets, explicit field components, logarithmic models, bounded-system field-class
+counts and cubic-logarithmic discriminant counts. All six are statable at the pins.
+The two counting theorems use arbitrary finite families of pairwise nonisomorphic
+number fields. These are equivalent to the unweighted class-cardinality bounds
+by choosing one representative per class; ArithmeticStatisticsPartI owns the
+quotient carrier used by the class-cardinality API.
 -/
 
 namespace TauCetiRoadmap.EffectiveBoundsPartII
@@ -137,6 +139,36 @@ theorem exists_logarithmic_small_models :
         ((2 * r).choose r : ℝ) ≤ Q * n * Real.log n ∧
         HasBoundedModel K r r
           (((n : ℝ) * NumberField.rootDiscr K) ^ (Q * Real.log n)) := by
+  sorry
+
+/-- Bounded ordered integer systems represent at most the coefficient-box
+cardinality times the Bezout degree bound in pairwise nonisomorphic number fields
+(README §5.5; Couveignes §4, p.496). A field is represented by an actual
+surjective rational algebra map from the system's Jacobian-open algebra. -/
+theorem bounded_systems_field_class_bound
+    (r d C m : ℕ) (hr : 1 ≤ r) (hd : 1 ≤ d)
+    (K : Fin m → Type*) [∀ i, Field (K i)] [∀ i, NumberField (K i)]
+    (hsep : Pairwise (fun i j => ¬ Nonempty (K i ≃ₐ[ℚ] K j)))
+    (hmodels : ∀ i, ∃ E : Fin r → MvPolynomial (Fin r) ℤ,
+      (∀ j, (E j).totalDegree ≤ d) ∧
+      (∀ j a, |(E j).coeff a| ≤ (C : ℤ)) ∧
+      ∃ φ : JacobianOpenAlgebra E →ₐ[ℚ] K i, Function.Surjective φ) :
+    m ≤ (2 * C + 1) ^ (r * (d + r).choose d) * d ^ r := by
+  sorry
+
+/-- One absolute constant bounds every finite family of pairwise nonisomorphic
+number fields of degree n > Q and absolute discriminant at most H ≥ 1.
+This is the unweighted class count of Couveignes's Theorem 2, p.488
+(README §5.6), with the same constant in the threshold and both exponents. -/
+theorem discriminant_field_class_bound :
+    ∃ Q : ℝ, 3 ≤ Q ∧
+      ∀ (n H m : ℕ), Q < (n : ℝ) → 1 ≤ H →
+      ∀ (K : Fin m → Type*) [∀ i, Field (K i)] [∀ i, NumberField (K i)],
+        (∀ i, Module.finrank ℚ (K i) = n) →
+        (∀ i, |NumberField.discr (K i)| ≤ (H : ℤ)) →
+        Pairwise (fun i j => ¬ Nonempty (K i ≃ₐ[ℚ] K j)) →
+        (m : ℝ) ≤ (n : ℝ) ^ (Q * n * (Real.log n) ^ 3) *
+          (H : ℝ) ^ (Q * (Real.log n) ^ 3) := by
   sorry
 
 end TauCetiRoadmap.EffectiveBoundsPartII
