@@ -870,15 +870,16 @@
       ],
       "title": "Integrally normalized stratum Hecke action",
       "kind": "construction",
-      "statement": "For a chosen integral highest-weight lattice ωκ from the de Rham M-torsor and t∈T++, set ν=ν_w(κ) and t_w=ν(t)t_naive on the w-Igusa stratum. The trace factor is the character w⁻¹w0Mρ+ρ, calculated from formal torus root coordinates; the resulting coefficient correspondence p2*ωκ→p1!ωκ is integral. Globally choose k′ sufficiently large and tildeωκ=ωκ(−k′Σ_i Z_i) so this normalized correspondence extends to the degree model. It is a construction with a chosen lattice and model, not a canonical integral extension of the rational bundle. With finite character χ retain the same algebraic ν and the finite-character coefficient twist separately.",
+      "statement": "For a chosen integral highest-weight lattice ωκ from the de Rham M-torsor and t∈T++, set t_w=ν_w(κ)(t)t_naive on the w-Igusa stratum, for every w∈MW. The trace factor is the character w⁻¹w0Mρ+ρ, calculated from formal torus root coordinates; each local coefficient correspondence t_w:p2*ωκ→p1!ωκ is integral on its stratum. The global operator is built from a compatible chamber only: for any w₀∈Cκ+ put t_κ=ν_(w₀)(κ)(t)t_naive over the complement of ⋃_i p1*D_i∩p2*D_(2g+1−i) in the degree model of the correspondence. Its scalar does not depend on w₀, because w⁻¹w0M(κ+ρ) is the same antidominant weight for every w∈Cκ+, and t_κ is integral there. On the w′-stratum t_κ=p^(n_w′)t_w′ with n_w′=v_p((ν_(w₀)(κ)−ν_(w′)(κ))(t)); n_w′=0 for w′∈Cκ+ and n_w′>0 for w′∉Cκ+. Choose k′ sufficiently large and tildeωκ=ωκ(−k′Σ_i Z_i) so that t_κ extends to a correspondence p2*tildeωκ→p1!tildeωκ on the degree model. The global extension is asserted for t_κ only: for w′∉Cκ+ the local normalization t_w′=p^(−n_w′)t_κ has a pole along the generic part of a compatible stratum, which no vertical twist removes. It is a construction with a chosen lattice and model, not a canonical integral extension of the rational bundle. With finite character χ retain the same algebraic weights and the finite-character coefficient twist separately.",
       "hypotheses": [
         "G=GSp_{2g}/Q, g≥1, with hyperspecial good reduction at p, neat prime-to-p level and compatible integral toroidal data. Let d=g(g+1)/2.",
         "Use polarized ordinary Igusa quotients at the cofinal admissible P-levels, with coefficient lattices and their normalized Hecke correspondences specified. For p=2 use the source cofinal subgroup construction rather than an automatic Levi splitting."
       ],
       "proofSteps": [
         "Compute trace in each formal multiplicative coordinate and apply the highest-weight character.",
-        "Prove integrality on the supplied Igusa reduction of the de Rham torsor.",
-        "Bound the coefficient poles on the normalized degree model and absorb them in k′ΣZ_i."
+        "Prove integrality of each t_w on the supplied Igusa reduction of the de Rham torsor.",
+        "Check that t_κ is a true map at each generic point of the special fibre and compute n_w′ by comparing the two characters.",
+        "Bound the poles of t_κ along the intersections p1*D_i∩p2*D_(2g+1−i) and absorb them in k′ΣZ_i."
       ],
       "prerequisites": [
         "HigherHidaAndColemanTheory:H2/ordinary-strata",
@@ -894,8 +895,8 @@
       "sources": [
         {
           "sourceId": "BP-Hida",
-          "locator": "§4.3, Lemma 4.3.8, Proposition 4.3.9 and Proposition 4.3.13 and Lemma 4.3.14, pp. 46–49",
-          "match": "Root-coordinate traces give integral normalization; large negative degree twists extend it globally."
+          "locator": "§4.3, Lemma 4.3.8, Propositions 4.3.9 and 4.3.11, Remark 4.3.12, Proposition 4.3.13 and Lemma 4.3.14, pp. 46–49",
+          "match": "Root-coordinate traces give the local integral normalizations; the global operator uses w∈C(κ), restricts to p^(n_w′)t_w′, and extends after a large negative degree twist."
         }
       ],
       "acceptance": [
@@ -910,17 +911,17 @@
         {
           "name": "TauCeti.HigherHidaColeman.normalizedStratumHecke",
           "role": "constructor",
-          "statement": "The integral coefficient correspondence for ν(t)t_naive."
+          "statement": "For each w∈MW, the integral local coefficient correspondence t_w=ν_w(κ)(t)t_naive on the w-stratum; u∈T(Z_p) acts on its fixed-weight cohomology by ν_w(κ)(u)χ(u)."
         },
         {
-          "name": "TauCeti.HigherHidaColeman.normalizedHecke_units",
-          "role": "simp",
-          "statement": "u∈T(Z_p) acts on fixed-weight cohomology by ν(u)χ(u)."
+          "name": "TauCeti.HigherHidaColeman.globalNormalizedHecke",
+          "role": "constructor",
+          "statement": "For w₀,w₁∈Cκ+ the global operators built from w₀ and from w₁ coincide; t_κ restricts to p^(n_w′)t_w′ on the w′-stratum, with n_w′>0 exactly when w′∉Cκ+."
         },
         {
           "name": "TauCeti.HigherHidaColeman.normalizedHecke_product",
           "role": "compatibility",
-          "statement": "The correspondence for t1t2 equals composition for t1 and t2 on common level refinements."
+          "statement": "The global correspondence for t1t2 equals the composite of those for t1 and t2 on common level refinements, and likewise for each local t_w."
         },
         {
           "name": "TauCeti.HigherHidaColeman.modifiedLattice_genericFiber",
@@ -943,6 +944,16 @@
           "name": "H2.integral-normalization.vertical",
           "kind": "example",
           "statement": "Changing k′ changes the integral lattice but not its rational generic-fiber bundle."
+        },
+        {
+          "name": "H2.integral-normalization.wrong_chamber",
+          "kind": "non-example",
+          "statement": "Negative control, GL₂ weight k=2 at p=3: Cκ+={id}, U_naive sends the constant q-expansion coefficient 1 to p=3, and t_κ=p⁻¹U_naive sends it to 1. Using the long-stratum normalization p⁻²U_naive globally sends 1 to 1/3 on the generic ordinary degree-zero component; twisting both lattices by p^e sends p^e to p^(e−1) for every e, so no choice of k′ makes it integral."
+        },
+        {
+          "name": "H2.integral-normalization.slopes",
+          "kind": "example",
+          "statement": "In the same case the naive lower slope bounds (1,2) on the identity and long strata become (0,1) for t_κ, with n_long=1, whereas the wrong global normalization would give (−1,0). For k≤0 the roles swap: Cκ+={long}, t_κ=p^(−k)U_naive and n_id=1−k>0; at k=1 both chambers are compatible and n=0 on both."
         }
       ],
       "uses": [
@@ -952,7 +963,7 @@
         },
         {
           "where": "H2/integral-cousin",
-          "how": "Defines the normalized global correspondence on tildeωκ."
+          "how": "Defines the global operator t_κ from a compatible chamber on tildeωκ."
         }
       ]
     },
@@ -1074,7 +1085,7 @@
         {
           "name": "H2.fixed-complex.cusp",
           "kind": "example",
-          "statement": "For a compact Shimura variety D=∅, the ε=0 and ε=1 maps agree with the identity."
+          "statement": "At a genus-one cusp with parameter q, O(−D)→O is the inclusion (q)↪O on the cusp chart. On the boundary fibre q=0 this map is zero, whereas the identity coefficient map is 1, so the ε=1 and ε=0 complexes are joined by a map that is not an isomorphism near the boundary. The GSp₂g datum has nonempty boundary for every g≥1, so no instance of this section has D=∅."
         }
       ],
       "uses": [
@@ -1141,15 +1152,15 @@
       ],
       "title": "The integral ordinary Cousin spectral sequence",
       "kind": "theorem",
-      "statement": "On the chosen degree model with sufficiently twisted tildeωκ, there is a Hecke-equivariant spectral sequence E1^(r,q)=⊕_(w∈Cκ+,ℓ(w)=r) H^(r+q)(C_w(κ,1,ε))⇒H^(r+q)(RΓ(Stor,tildeωκ(−εD))^ord), with the analogous finite-nebentypus version. The local supported terms are canonical under the allowed comparisons; the integral global abutment and its differentials can depend on the degree model and tildeωκ. Singular Cκ+ with more than one element is retained.",
+      "statement": "On the chosen degree model with sufficiently twisted tildeωκ and the extended global operator t_κ of H2/integral-normalization (built from any w₀∈Cκ+), there is a Hecke-equivariant spectral sequence E1^(r,q)=⊕_(w∈Cκ+,ℓ(w)=r) H^(r+q)(C_w(κ,1,ε))⇒H^(r+q)(RΓ(Stor,tildeωκ(−εD))^ord), with the analogous finite-nebentypus version. The local supported terms are canonical under the allowed comparisons; the integral global abutment and its differentials can depend on the degree model and tildeωκ. Singular Cκ+ with more than one element is retained.",
       "hypotheses": [
         "G=GSp_{2g}/Q, g≥1, with hyperspecial good reduction at p, neat prime-to-p level and compatible integral toroidal data. Let d=g(g+1)/2.",
         "Use polarized ordinary Igusa quotients at the cofinal admissible P-levels, with coefficient lattices and their normalized Hecke correspondences specified. For p=2 use the source cofinal subgroup construction rather than an automatic Levi splitting."
       ],
       "proofSteps": [
         "Apply the supported Cousin filtration to the modified integral bundle.",
-        "Use the coefficient zeros/poles factorization to identify the ordinary formal-support summands with C_w.",
-        "Eliminate the incompatible weights using the normalized slope/divisibility estimates."
+        "Use the coefficient zeros/poles factorization to identify the ordinary formal-support summands with C_w, where t_κ restricts to t_w for w∈Cκ+.",
+        "Eliminate the incompatible strata: there t_κ restricts to p^(n_w′)t_w′ with n_w′>0 and t_w′ integral, so its ordinary part vanishes."
       ],
       "prerequisites": [
         "HigherHidaAndColemanTheory:H2/fixed-perfect",
@@ -1181,7 +1192,7 @@
       ],
       "title": "Regular global ordinary control",
       "kind": "comparison",
-      "statement": "If κ+ρ is regular and Cκ+={w}, the integral Cousin sequence identifies C_w(κ,χ,ε) with the ordinary cohomology of the chosen tildeωκ(χ)(−εD). On the rational generic fiber this becomes C_w(κ,χ,ε)⊗Q_p(ζ)(−ν_w(κ))≃RΓ(Stor_Qp(ζ),ωκ(χ)(−εD))^ord, where the right-hand operator convention is the classical normalized action. The algebraic torus twist in this formula is essential; finite characters remain in the coefficient.",
+      "statement": "If κ+ρ is regular and Cκ+={w}, the integral Cousin sequence for t_κ identifies C_w(κ,χ,ε), with its local operator t_w (equal to t_κ on that stratum since n_w=0), with the t_κ-ordinary cohomology of the chosen tildeωκ(χ)(−εD). On the rational generic fiber this becomes C_w(κ,χ,ε)⊗Q_p(ζ)(−ν_w(κ))≃RΓ(Stor_Qp(ζ),ωκ(χ)(−εD))^ord, where the right-hand operator convention is the classical normalized action. The algebraic torus twist in this formula is essential; finite characters remain in the coefficient.",
       "hypotheses": [
         "G=GSp_{2g}/Q, g≥1, with hyperspecial good reduction at p, neat prime-to-p level and compatible integral toroidal data. Let d=g(g+1)/2.",
         "Use polarized ordinary Igusa quotients at the cofinal admissible P-levels, with coefficient lattices and their normalized Hecke correspondences specified. For p=2 use the source cofinal subgroup construction rather than an automatic Levi splitting."
@@ -1203,7 +1214,8 @@
         }
       ],
       "acceptance": [
-        "At a wall the local complex is only one term of the Cousin calculation."
+        "At a wall the local complex is only one term of the Cousin calculation.",
+        "For GL₂ at k=2, t_κ=p⁻¹U_naive and twisting by −ν_id(κ), with ν_id(κ)(t)=p⁻¹, multiplies by p, recovering U_naive on the rational side."
       ],
       "library": {
         "module": "TauCeti/NumberTheory/HigherHidaColeman/H2",
@@ -2118,7 +2130,46 @@
         "module": "TauCeti/NumberTheory/HigherHidaColeman/C4",
         "namespace": "TauCeti.HigherHidaColeman"
       },
-      "implementationStatus": "unchecked"
+      "implementationStatus": "unchecked",
+      "api": [
+        {
+          "name": "TauCeti.HigherHidaColeman.localInterior",
+          "role": "constructor",
+          "statement": "H_w,!^i has source the cuspidal H_w^i(κ,χ,1)^±,fs and target the canonical H_w^i(κ,χ,0)^±,fs, the map being induced by O(−D)→O; it is a Hecke submodule of the target, stable under T^± and the prime-to-p double cosets, and is finite-dimensional on each slope block."
+        },
+        {
+          "name": "TauCeti.HigherHidaColeman.localInterior_vanishing",
+          "role": "characterisation",
+          "statement": "H_w,!^i=0 for i≠ℓ±(w), because the cuspidal source vanishes above ℓ±(w) and the canonical target vanishes below it."
+        },
+        {
+          "name": "TauCeti.HigherHidaColeman.localInterior_noBoundary",
+          "role": "compatibility",
+          "statement": "When the two boundary variants agree (D=∅), the map is the identity and H_w,!^i=H_w^i; the same holds for global H_!^i."
+        },
+        {
+          "name": "TauCeti.HigherHidaColeman.globalInterior",
+          "role": "constructor",
+          "statement": "The global H_!^i is the image of H_cusp^i→H_can^i with its induced Hecke action, and it is a subquotient of the degree-i cohomology of the interior Cousin complex."
+        }
+      ],
+      "tests": [
+        {
+          "name": "C4.interior-cousin.zero_map",
+          "kind": "example",
+          "statement": "If the cuspidal-to-canonical map on a one-dimensional eigenblock F is zero, the interior group is 0 although both groups are F; replacing the image by the target would give F."
+        },
+        {
+          "name": "C4.interior-cousin.identity",
+          "kind": "example",
+          "statement": "If that map is the identity of F, the interior group is F; replacing the image by the kernel would give 0."
+        },
+        {
+          "name": "C4.interior-cousin.range_and_base_change",
+          "kind": "non-example",
+          "statement": "For GL₂ (d=1) and w=id, cuspidal local cohomology lies in degree 0 and canonical in degrees [0,1], so H_id,!^1=0 even when canonical H_id^1 is nonzero. At a fixed weight the interior group is the image of the fixed-weight map: the family map t:F⟨t⟩→F⟨t⟩ has image (t) with fibre F at t=0, whereas the specialized map 0:F→F has image 0, so the fibre of a family image is not the fixed-weight interior group."
+        }
+      ]
     },
     {
       "id": "HigherHidaAndColemanTheory:C4/proved-slopes",
@@ -2303,6 +2354,82 @@
       ]
     },
     {
+      "id": "HigherHidaAndColemanTheory:F5/abelian-coefficient-descent",
+      "parentStageId": "HigherHidaAndColemanTheory:F5",
+      "realises": [
+        "HigherHidaAndColemanTheory:F5"
+      ],
+      "title": "Abelian-type descent of analytic coefficients",
+      "kind": "theorem",
+      "statement": "Choose a Hodge-type datum (G₁,X₁) and the auxiliary datum B₁=G₁×_(G₁^ab)T of PerfectoidShimuraVarieties §6.4, with compatible neat levels and a cone decomposition refined so that the toroidal compactifications for G₁, B₁ and G are smooth, the one for G₁ is perfect, and the neutral toroidal map f:S^tor,0(B₁)_(K′,Σ)→S^tor,0(G)_(K,Σ) is finite and generically finite étale with group Δ=Δ(K,K′). Let ν_A:Tʳ(Z_p)→A^× be n-analytic, K_p⊆K_(p,m′,0) with m′>n, and ν′_A the induced character for B₁. (1) On the neutral components of the depth-n tube preimages f restricts to a finite map; the Bruhat reduction M_dR,n,K_p for G is the Δ-quotient of the pushout of the B₁ reduction, and the B₁ reduction is the fibre product of the G₁ reduction with the trivial reduction on the zero-dimensional T-Shimura variety; consequently V^n-an_(ν_A)=(f_*V^n-an_(ν′_A))^Δ, and likewise for D^n-an and the −D twists, as sheaves, without asserting compatibility with Hecke actions at level B₁. (2) Every point of the G tube preimage has an affinoid neighbourhood U whose preimage at G₁-level is a Δ-stable union of pregood affinoids, and on such U the sections of V^n-an_(ν_A)(−εD) and D^n-an_(ν_A)(−εD) are projective Banach O(U)⊗̂A-modules. (3) For such U, RΓ(U,V^n-an_(ν_A)(−εD)) is the Δ-invariant direct factor of the corresponding B₁ complex, which is computed from the G₁ complex in the same way. For a Hodge-type datum take G₁=G and Δ trivial: the statement is the supplier's finite-flat trivialization.",
+      "hypotheses": [
+        "(G,X) is an abelian-type Shimura datum; G over Q_p is quasi-split. Fix B,T over Q_p and a finite extension F/Q_p splitting G and defining µ, P_µ and the coefficient representations.",
+        "Fix neat tame level K^p, compatible smooth admissible toroidal fans and sufficiently deep Iwahori-decomposed K_{p,m,b}, m≥b≥0 and m>0. All coefficient fields contain the required finite characters and cyclotomic extension for torsor reduction.",
+        "Coefficients factor through the supplied rank quotient Gʳ=G/Zᵣ(G) and its torus Tʳ. Identify Tʳ with T^c only under the supplied CM-split-centre comparison, retaining its quotient map. Finite slope is the union of finite nonzero-eigenvalue slope windows."
+      ],
+      "proofSteps": [
+        "Over a pregood affinoid at G₁-level trivialize M_dR,n after a finite flat cover at a deeper level and descend the coefficient as the invariant direct factor under the finite level-change group, whose order is invertible in the characteristic-zero coefficient field.",
+        "Extend to B₁ by the trivial torus part.",
+        "Use flatness of the finite map f between smooth toroidal compactifications of the same dimension, preservation of projective Banach modules under finite flat pushforward, and averaging over Δ."
+      ],
+      "prerequisites": [
+        "OverconvergentAutomorphicForms:8.6",
+        "OverconvergentAutomorphicForms:8.7",
+        "PerfectoidShimuraVarieties:3.13",
+        "PerfectoidShimuraVarieties:6.4",
+        "PerfectoidShimuraVarieties:6.5",
+        "PerfectoidShimuraVarieties:6.6",
+        "PerfectoidShimuraVarieties:6.7",
+        "PerfectoidShimuraVarieties:6.9",
+        "PerfectoidShimuraVarieties:6.14",
+        "HigherHidaAndColemanTheory:C4/finite-level-geometry",
+        "ShimuraCompactifications:C3.1",
+        "AdicSpacesPartIII:R3.8"
+      ],
+      "sources": [
+        {
+          "sourceId": "BP-Coleman",
+          "locator": "Definition 4.4.3, p. 66; Principle 4.4.44, p. 84; Remark 4.6.6, pp. 91–92; Remark 4.6.13 and Proposition 4.6.15, p. 95; Lemma 6.6.4 and its proof, pp. 163–164",
+          "match": "Reduces abelian-type coefficient sheaves to the Hodge-type pregood finite-flat trivialization through B₁ and the finite descent group Δ."
+        }
+      ],
+      "acceptance": [
+        "The descent uses that |Δ| and the level-change group orders are invertible in the coefficients; no integral projectivity is inferred."
+      ],
+      "library": {
+        "module": "TauCeti/NumberTheory/HigherHidaColeman/F5",
+        "namespace": "TauCeti.HigherHidaColeman"
+      },
+      "implementationStatus": "unchecked",
+      "tests": [
+        {
+          "name": "F5.abelian-coefficient-descent.hodge",
+          "kind": "example",
+          "statement": "For a Hodge-type datum, G₁=G, T acts trivially and Δ=1: the statement is the supplier's finite-flat trivialization on pregood affinoids, and taking invariants changes nothing."
+        },
+        {
+          "name": "F5.abelian-coefficient-descent.pgsp4",
+          "kind": "example",
+          "statement": "For the split adjoint datum PGSp₄, which is of abelian type but not of Hodge type, the GSp₄ Siegel datum is a Hodge-type cover. The descent must be applied with the actual Δ and the induced character ν′_A before any projective-Banach cohomology statement is used for PGSp₄; the Siegel Levi has a nontrivial root, so the coefficient is a genuinely infinite-rank analytic Banach sheaf and its finite-rank algebraic subsheaves do not settle the question."
+        },
+        {
+          "name": "F5.abelian-coefficient-descent.integral",
+          "kind": "non-example",
+          "statement": "For Δ={1,σ} of order 2, Δ-invariants of the augmentation Z_2[Δ]→Z_2 is the map Z_2(1+σ)→Z_2 with image 2Z_2, so invariants are not exact integrally; after inverting 2 the image is Q_2 and the averaging idempotent (1+σ)/2 exists. The argument gives no integral projectivity."
+        }
+      ],
+      "uses": [
+        {
+          "where": "F5/family-complex",
+          "how": "Supplies local projectivity of the analytic coefficients for general abelian-type data."
+        },
+        {
+          "where": "F5/family-vanishing-duality",
+          "how": "Supplies the locally projective coefficient premise of the vanishing contract and the Δ-descent of affinoid cohomology."
+        }
+      ]
+    },
+    {
       "id": "HigherHidaAndColemanTheory:F5/family-complex",
       "parentStageId": "HigherHidaAndColemanTheory:F5",
       "realises": [
@@ -2323,6 +2450,7 @@
       ],
       "prerequisites": [
         "HigherHidaAndColemanTheory:F5/analytic-hecke",
+        "HigherHidaAndColemanTheory:F5/abelian-coefficient-descent",
         "HigherHidaAndColemanTheory:C4/allowed-support",
         "AdicSpacesPartIII:R3.1",
         "AdicSpacesPartIII:R3.4",
@@ -2499,7 +2627,7 @@
       "sources": [
         {
           "sourceId": "BP-Coleman",
-          "locator": "Theorem 6.2.16, Corollary 6.2.18 and §6.2.20, pp. 151–153",
+          "locator": "Theorem 6.2.16, Corollary 6.2.18, Example 6.2.19 and §6.2.20, pp. 151–153",
           "match": "The stated special case is the source input; any explicitly named extension is a target here."
         }
       ],
@@ -2536,7 +2664,7 @@
         {
           "name": "F5.locally-analytic-bgg.3",
           "kind": "example",
-          "statement": "With t=diag(p,p⁻¹), z^n has slope 2n. At κ=1 the degree≤1 piece has slopes 0,2, while z² has slope 4; for W_M={1} the complex has only its identity column."
+          "statement": "With t=diag(p,p⁻¹), on untwisted analytic functions V_lan,1 the action is f(z)↦f(p²z) and z^n has slope 2n, so 1,z,z² have slopes 0,2,4. The term V_lan,1(w0Mκ) of the sequence is twisted by w0Mκ=−1, which subtracts 1: its slopes are −1,1,3, and its degree≤1 kernel matches V_1, whose slopes are −1,1. At p=3 the eigenvalues on 1 and z after the twist are 1/3 and 3, not 1 and 9. For W_M={1} the complex has only its identity column."
         }
       ],
       "implementationStatus": "unchecked"
@@ -2745,6 +2873,7 @@
       ],
       "prerequisites": [
         "HigherHidaAndColemanTheory:F5/perfect-slopes",
+        "HigherHidaAndColemanTheory:F5/abelian-coefficient-descent",
         "HigherHidaAndColemanTheory:F5/tor-specialization",
         "HigherHidaAndColemanTheory:C4/geometric-vanishing",
         "HigherHidaAndColemanTheory:C4/geometric-duality",
@@ -3800,6 +3929,153 @@
       "implementationStatus": "unchecked"
     },
     {
+      "id": "HigherHidaAndColemanTheory:X8/klingen-analytic-family",
+      "parentStageId": "HigherHidaAndColemanTheory:X8",
+      "realises": [
+        "HigherHidaAndColemanTheory:X8"
+      ],
+      "title": "The Klingen analytic overconvergent family",
+      "kind": "theorem",
+      "statement": "Let X_Kli(p^n,ε) be the strict neighbourhood of the p-rank-at-least-one locus at Klingen level p^n, for rational 0<ε≤n−1/(p−1), and U=U1U2 the Pilloni operator with the raw normalization of X8/klingen-complex. For rational 0<w′≤w≤ε, a p-adically complete admissible coefficient algebra A and a w′-analytic κ_A:Z_p^×→A^×, let F^(κ_A,w) be the Kli(Z/p^n)-invariants of the pushforward of L_(κ_A) from FL_(n,ε,w), and C(n,ε,w,κ_A,r)=RΓ(X_Kli(p^n,ε),F^(κ_A,w)⊗ω^r) with its cuspidal version. (1) Both are bounded complexes of projective Banach A[1/p]-modules with compact U; U has slopes ≥−3 on every H^i and ≥0 on H^0. (2) Over affinoids Spa(A_l[1/p],A_l) of the one-variable weight space W of Λ1, the finite-slope cuspidal part at r=2 is a complex C_cusp(A_l) over Spa(A_l[1/p],A_l)×G_m in degrees 0 and 1, independent of n,ε,w, with fibre at (κ,α⁻¹) computing H^i_cusp(†,κ,2)[U=α]; its annihilator defines a quasi-finite, locally finite spectral variety Z→W, and the charts glue. (3) k↦dim H^1_cusp(†,k,2)_(=0)−dim H^0_cusp(†,k,2)_(=0) is locally constant on Z_≥0⊂W. (4) For (k,r)∈Z_≥0², the relative BGG sequence 0→Ω(k,r)→F^(k,w−)⊗ω^r→F^(−2−k,w−)⊗ω^(k+r+1)→0 is exact, intertwining U with p^(−k−1)U on the last term; hence Ω(k,r)→F^(k,w)⊗ω^r induces isomorphisms on H^i of slope <k−2, isomorphisms on H^0 and injections on H^1 of slope <k+1, for canonical and cuspidal coefficients.",
+      "hypotheses": [
+        "Let p be any prime, K^p a neat prime-to-p level for GSp₄/ℚ, K_p=GSp₄(ℤ_p), and choose compatible smooth admissible toroidal data and the corresponding normal integral models. At Klingen level replace K_p by its Klingen parahoric Kli(p), using the common fan refinements for the p-correspondence."
+      ],
+      "proofSteps": [
+        "Trivialize L_(κ_A) on a Kli(Z/p^n)-stable affinoid cover and take the invariant direct factor of the Čech complex.",
+        "Factor U through a restriction that improves ε and w to obtain compactness and the slope lower bounds.",
+        "Apply the imported compact-slope charts to obtain the finite-slope complex and spectral variety; read the Euler characteristic off a finite perfect slope block.",
+        "Derive the classicality ranges from the BGG triangle and the slope bounds on its third term."
+      ],
+      "prerequisites": [
+        "HigherHidaAndColemanTheory:X8/klingen-complex",
+        "ShimuraCompactifications:C4.16",
+        "ShimuraCompactifications:C4.17",
+        "ShimuraCompactifications:C5.19",
+        "ShimuraCompactifications:C5.20",
+        "ShimuraCompactifications:C5.21",
+        "OverconvergentAutomorphicForms:0.4",
+        "PhiGammaModulesAndIwasawaCohomology:4.0",
+        "AdicSpacesPartIII:R3.1",
+        "AdicSpacesPartIII:R3.4",
+        "AdicSpacesPartIII:R3.6",
+        "gap:projective-banach-cohomology",
+        "gap:coherent-correspondences",
+        "LocallyAnalyticDistributions:4.16",
+        "PadicFamilies:2a.15",
+        "PadicFamilies:2a.16"
+      ],
+      "sources": [
+        {
+          "sourceId": "Pilloni-Singular",
+          "locator": "§§12.6.2 and 12.8, pp. 76–80, Proposition 12.8.2.1, p. 79; §13.2, p. 85; Proposition 13.3.1.1, p. 88; Proposition 13.3.2.1, Corollary 13.3.2.1, Proposition 13.3.3.1 and Corollary 13.3.3.1, pp. 89–90; §13.4 and Proposition 13.4.1, p. 91",
+          "match": "Constructs the w-analytic Klingen sheaves, their compact U, the cuspidal finite-slope family and spectral variety, local constancy of the slope-zero Euler characteristic and the sheaf-level classicality ranges."
+        }
+      ],
+      "acceptance": [
+        "The weight space has one variable; the family is the Klingen partial-ordinary one, not the full-torus Borel family."
+      ],
+      "library": {
+        "module": "TauCeti/NumberTheory/HigherHidaColeman/X8",
+        "namespace": "TauCeti.HigherHidaColeman"
+      },
+      "implementationStatus": "unchecked",
+      "tests": [
+        {
+          "name": "X8.klingen-analytic-family.k0",
+          "kind": "example",
+          "statement": "At k=0 the all-degree threshold is k−2=−2, so ordinary slope 0 is not covered in degree 1; the degree-0 threshold is k+1=1, so slope 0 is covered on H^0 and slope 1 is not."
+        },
+        {
+          "name": "X8.klingen-analytic-family.k3",
+          "kind": "example",
+          "statement": "At k=3 the all-degree threshold is k−2=1: ordinary slope 0 is covered, which is where the degree-one equality of X8/klingen-control starts."
+        },
+        {
+          "name": "X8.klingen-analytic-family.one_variable",
+          "kind": "non-example",
+          "statement": "Weight space has one variable: a point of Z lies over one character of Z_p^×, not over a two-variable Siegel Borel weight; replacing W by the two-variable space changes the local constancy statement."
+        }
+      ],
+      "uses": [
+        {
+          "where": "X8/klingen-small-slope",
+          "how": "Supplies the operator and the sheaf-level comparison."
+        },
+        {
+          "where": "X8/klingen-control",
+          "how": "Supplies the second locally constant Euler characteristic."
+        }
+      ]
+    },
+    {
+      "id": "HigherHidaAndColemanTheory:X8/klingen-small-slope",
+      "parentStageId": "HigherHidaAndColemanTheory:X8",
+      "realises": [
+        "HigherHidaAndColemanTheory:X8"
+      ],
+      "title": "Small-slope extension from the Klingen neighbourhood",
+      "kind": "theorem",
+      "statement": "Let X_Kli(p) be the analytic Klingen-level Siegel threefold with its toroidal compactification, X_Kli(p)_ε its ε-neighbourhood of the p-rank-at-least-one locus, and U the operator of X8/klingen-analytic-family on Ω(k,r)=Sym^kω⊗det(ω)^r. For all (k,r)∈Z_≥0², every rational ε∈[0,1) and every degree i, restriction H^i(X_Kli(p),Ω(k,r))_(<k+2r−3)→H^i(X_Kli(p)_ε,Ω(k,r))_(<k+2r−3) is bijective, and likewise for Ω(k,r)(−D); the threshold is strict. Combined with the sheaf-level comparison, H^i(X_Kli(p),Ω(k,r))→H^i(†,k,r) is an isomorphism on slopes <min(k+2r−3,k−2), and on H^0 an isomorphism and on H^1 an injection on slopes <min(k+2r−3,k+1), with cuspidal variants.",
+      "hypotheses": [
+        "Let p be any prime, K^p a neat prime-to-p level for GSp₄/ℚ, K_p=GSp₄(ℤ_p), and choose compatible smooth admissible toroidal data and the corresponding normal integral models. At Klingen level replace K_p by its Klingen parahoric Kli(p), using the common fan refinements for the p-correspondence."
+      ],
+      "proofSteps": [
+        "Use the correspondences C_n and the variation of the degree to continue a small-slope class integrally modulo every p^m over X_Kli(p).",
+        "Identify the inverse limit of the integral cohomologies modulo p^m with the cohomology of X_Kli(p).",
+        "Use boundedness of the integral image on each finite-dimensional slope block to prove that extension and restriction are mutually inverse."
+      ],
+      "prerequisites": [
+        "HigherHidaAndColemanTheory:X8/klingen-analytic-family",
+        "ShimuraCompactifications:C4.16",
+        "ShimuraCompactifications:C4.17",
+        "ShimuraCompactifications:C5.19",
+        "ShimuraCompactifications:C5.20",
+        "ShimuraCompactifications:C5.21",
+        "AdicSpacesPartIII:R3.1",
+        "AdicSpacesPartIII:R3.6",
+        "LocallyAnalyticDistributions:4.16",
+        "gap:coherent-correspondences"
+      ],
+      "sources": [
+        {
+          "sourceId": "Pilloni-Singular",
+          "locator": "§§14.1–14.6, pp. 91–99; Lemma 14.7.1 and Theorem 14.7.1, p. 99; Corollary 14.7.1, p. 100",
+          "match": "Small-slope restriction isomorphism from the Klingen space to its overconvergent neighbourhoods, with cuspidal variant and the combined classicality ranges."
+        }
+      ],
+      "acceptance": [
+        "The threshold k+2r−3 is strict."
+      ],
+      "library": {
+        "module": "TauCeti/NumberTheory/HigherHidaColeman/X8",
+        "namespace": "TauCeti.HigherHidaColeman"
+      },
+      "implementationStatus": "unchecked",
+      "tests": [
+        {
+          "name": "X8.klingen-small-slope.r2k0",
+          "kind": "example",
+          "statement": "At r=2 and k=0 the threshold is k+2r−3=1: ordinary slope 0 is included and slope 1 is excluded."
+        },
+        {
+          "name": "X8.klingen-small-slope.combined",
+          "kind": "example",
+          "statement": "At r=2 and k=0 the combined comparison with H^i(†,0,2) uses min(1,−2)=−2 in all degrees, which admits no slope, and min(1,1)=1 in degree 0; the all-degree statement must not be read with threshold 1."
+        },
+        {
+          "name": "X8.klingen-small-slope.r0",
+          "kind": "non-example",
+          "statement": "At (k,r)=(0,0) the threshold is −3: slope-zero classes are outside the statement, so it says nothing about ordinary cohomology at r=0, whereas at r=2 the same k admits slope 0."
+        }
+      ],
+      "uses": [
+        {
+          "where": "X8/klingen-control",
+          "how": "Replaces the Klingen space by its ε-neighbourhoods on the ordinary part."
+        }
+      ]
+    },
+    {
       "id": "HigherHidaAndColemanTheory:X8/klingen-control",
       "parentStageId": "HigherHidaAndColemanTheory:X8",
       "realises": [
@@ -3813,8 +4089,9 @@
       ],
       "proofSteps": [
         "Use the two-term Hasse resolution, ordinary-nilpotent highest-weight kernel and complete character specialization for integral perfectness.",
-        "Use the small-slope extension theorem, Theorem 14.7.1, and the two-term degree bounds.",
-        "Use the isolated spherical refinement of X8/local-refinement for the weight-large comparison, then the locally constant Euler characteristic and the opposite injection/surjection of Lemmas 14.8.2–14.8.4 for every k≥0.",
+        "Use X8/klingen-small-slope at r=2, whose threshold k+1 contains the ordinary slope 0 for every k≥0, to replace X_Kli(p) by its ε-neighbourhoods, together with the two-affine-cover degree bounds and the injection on H^0 and surjection on H^1 of Lemma 14.8.2.",
+        "Use the isolated spherical refinement of X8/local-refinement for the weight-large equality of dimensions.",
+        "For every k≥0 compare two locally constant Euler characteristics: d1(k)−d0(k) for the ordinary fibres of the perfect Λ1-complex M_Kli, and dim H^1_cusp(†,k,2)_(=0)−dim H^0_cusp(†,k,2)_(=0) for the analytic cuspidal family of X8/klingen-analytic-family, identified with the ε-neighbourhood dimensions through the sheaf-level comparison (degree 0 for all k, degree 1 for k≥3). Constancy for M_Kli alone does not close the argument.",
         "Use codimension-two extension and the ordinary hyperspecial/Klingen comparison for the torsion H^0 assertion in its stated range."
       ],
       "prerequisites": [
@@ -3831,7 +4108,9 @@
         "ShimuraCompactifications:C5.21",
         "gap:klingen-height-one-igusa",
         "gap:pel-subcanonical-vanishing",
-        "HigherHidaAndColemanTheory:X8/local-refinement"
+        "HigherHidaAndColemanTheory:X8/local-refinement",
+        "HigherHidaAndColemanTheory:X8/klingen-analytic-family",
+        "HigherHidaAndColemanTheory:X8/klingen-small-slope"
       ],
       "sources": [
         {
@@ -3868,6 +4147,11 @@
           "name": "X8.klingen-control.range",
           "kind": "example",
           "statement": "At p=2, k=0 is included in rational Klingen control, while the hyperspecial torsion assertion starts at k=4 because k>p+1=3. Equality k=3 is outside that assertion."
+        },
+        {
+          "name": "X8.klingen-control.threshold",
+          "kind": "example",
+          "statement": "At k=0 the extension threshold k+2r−3 with r=2 is 1, so the ordinary part (slope 0) is inside it while slope 1 is not; the degree-one dimension comparison with the analytic family is direct only for k≥3 and reaches k=0,1,2 through local constancy of the two Euler characteristics."
         }
       ]
     },
@@ -3925,7 +4209,9 @@
         "HigherHidaAndColemanTheory:C4/geometric-vanishing",
         "HigherHidaAndColemanTheory:C4/proved-slopes",
         "HigherHidaAndColemanTheory:F5/family-complex",
-        "HigherHidaAndColemanTheory:B7/ordinary-comparison"
+        "HigherHidaAndColemanTheory:B7/ordinary-comparison",
+        "HigherHidaAndColemanTheory:X8/klingen-analytic-family",
+        "HigherHidaAndColemanTheory:X8/klingen-small-slope"
       ]
     },
     {
@@ -3937,7 +4223,8 @@
         "HigherHidaAndColemanTheory:C4/geometric-vanishing",
         "HigherHidaAndColemanTheory:C4/proved-slopes",
         "HigherHidaAndColemanTheory:F5/family-complex",
-        "HigherHidaAndColemanTheory:B7/ordinary-comparison"
+        "HigherHidaAndColemanTheory:B7/ordinary-comparison",
+        "HigherHidaAndColemanTheory:X8/klingen-analytic-family"
       ]
     },
     {
@@ -3949,7 +4236,9 @@
         "HigherHidaAndColemanTheory:C4/geometric-vanishing",
         "HigherHidaAndColemanTheory:C4/proved-slopes",
         "HigherHidaAndColemanTheory:F5/family-complex",
-        "HigherHidaAndColemanTheory:B7/ordinary-comparison"
+        "HigherHidaAndColemanTheory:B7/ordinary-comparison",
+        "HigherHidaAndColemanTheory:X8/klingen-analytic-family",
+        "HigherHidaAndColemanTheory:X8/klingen-small-slope"
       ]
     },
     {
@@ -3960,6 +4249,7 @@
         "HigherHidaAndColemanTheory:C4/analytic-continuation",
         "HigherHidaAndColemanTheory:C4/geometric-vanishing",
         "HigherHidaAndColemanTheory:C4/proved-slopes",
+        "HigherHidaAndColemanTheory:F5/abelian-coefficient-descent",
         "HigherHidaAndColemanTheory:F5/family-complex",
         "HigherHidaAndColemanTheory:B7/ordinary-comparison"
       ]
@@ -4240,7 +4530,9 @@
         "HigherHidaAndColemanTheory:C4/allowed-support",
         "HigherHidaAndColemanTheory:C4/analytic-continuation",
         "HigherHidaAndColemanTheory:F5/family-complex",
-        "HigherHidaAndColemanTheory:F5/perfect-slopes"
+        "HigherHidaAndColemanTheory:F5/perfect-slopes",
+        "HigherHidaAndColemanTheory:X8/klingen-analytic-family",
+        "HigherHidaAndColemanTheory:X8/klingen-small-slope"
       ]
     },
     {
@@ -4248,7 +4540,8 @@
       "need": "Analytic induction and bounded-open-disc distribution families over arbitrary finite-type affinoids.",
       "neededBy": [
         "HigherHidaAndColemanTheory:F5/locally-analytic-bgg",
-        "HigherHidaAndColemanTheory:F5/automorphic-bgg"
+        "HigherHidaAndColemanTheory:F5/automorphic-bgg",
+        "HigherHidaAndColemanTheory:X8/klingen-analytic-family"
       ]
     },
     {
@@ -4256,6 +4549,7 @@
       "need": "Rank-quotient toroidal coefficients with their actual effectivity and twist hypotheses.",
       "neededBy": [
         "HigherHidaAndColemanTheory:F5/analytic-hecke",
+        "HigherHidaAndColemanTheory:F5/abelian-coefficient-descent",
         "HigherHidaAndColemanTheory:F5/family-complex",
         "HigherHidaAndColemanTheory:F5/automorphic-bgg"
       ]
@@ -4265,6 +4559,7 @@
       "need": "Bruhat coefficient and shifted distribution families, algebraic and finite-character maps, finite-flat local projectivity and all-degree analytic/étale comparison on finite quasi-Stein unions.",
       "neededBy": [
         "HigherHidaAndColemanTheory:F5/analytic-hecke",
+        "HigherHidaAndColemanTheory:F5/abelian-coefficient-descent",
         "HigherHidaAndColemanTheory:F5/family-complex",
         "HigherHidaAndColemanTheory:F5/locally-analytic-bgg",
         "HigherHidaAndColemanTheory:F5/automorphic-bgg",
@@ -4318,7 +4613,8 @@
       "need": "Compact-representative slope charts for bounded property-(Pr) complexes.",
       "neededBy": [
         "HigherHidaAndColemanTheory:E6/eigenvariety",
-        "HigherHidaAndColemanTheory:E6/interior-equidimension"
+        "HigherHidaAndColemanTheory:E6/interior-equidimension",
+        "HigherHidaAndColemanTheory:X8/klingen-analytic-family"
       ]
     },
     {
@@ -4326,7 +4622,8 @@
       "need": "complexSpectralVariety, annihilator support and representative independence; finite Hecke images use IntegralHeckeAndGaloisDeterminants §2.1.",
       "neededBy": [
         "HigherHidaAndColemanTheory:E6/eigenvariety",
-        "HigherHidaAndColemanTheory:E6/interior-equidimension"
+        "HigherHidaAndColemanTheory:E6/interior-equidimension",
+        "HigherHidaAndColemanTheory:X8/klingen-analytic-family"
       ]
     },
     {
@@ -4410,7 +4707,8 @@
       "supplier": "PerfectoidShimuraVarieties:6.14",
       "need": "Actual analytic reductions of the Levi torsor.",
       "neededBy": [
-        "HigherHidaAndColemanTheory:C4/finite-level-geometry"
+        "HigherHidaAndColemanTheory:C4/finite-level-geometry",
+        "HigherHidaAndColemanTheory:F5/abelian-coefficient-descent"
       ]
     },
     {
@@ -4438,7 +4736,8 @@
       "supplier": "PhiGammaModulesAndIwasawaCohomology:4.0",
       "need": "Rigid compact character spaces with universal characters and inversion.",
       "neededBy": [
-        "HigherHidaAndColemanTheory:E6/eigenvariety"
+        "HigherHidaAndColemanTheory:E6/eigenvariety",
+        "HigherHidaAndColemanTheory:X8/klingen-analytic-family"
       ]
     },
     {
@@ -4455,6 +4754,7 @@
       "neededBy": [
         "HigherHidaAndColemanTheory:C4/finite-level-geometry",
         "HigherHidaAndColemanTheory:C4/geometric-vanishing",
+        "HigherHidaAndColemanTheory:F5/abelian-coefficient-descent",
         "HigherHidaAndColemanTheory:F5/family-vanishing-duality"
       ]
     },
@@ -4477,6 +4777,8 @@
         "HigherHidaAndColemanTheory:B7/integral-overconvergent",
         "HigherHidaAndColemanTheory:B7/family-comparison",
         "HigherHidaAndColemanTheory:X8/klingen-complex",
+        "HigherHidaAndColemanTheory:X8/klingen-analytic-family",
+        "HigherHidaAndColemanTheory:X8/klingen-small-slope",
         "HigherHidaAndColemanTheory:X8/klingen-control"
       ]
     },
@@ -4490,6 +4792,8 @@
         "HigherHidaAndColemanTheory:B7/integral-overconvergent",
         "HigherHidaAndColemanTheory:B7/family-comparison",
         "HigherHidaAndColemanTheory:X8/klingen-complex",
+        "HigherHidaAndColemanTheory:X8/klingen-analytic-family",
+        "HigherHidaAndColemanTheory:X8/klingen-small-slope",
         "HigherHidaAndColemanTheory:X8/klingen-control"
       ]
     },
@@ -4503,6 +4807,8 @@
         "HigherHidaAndColemanTheory:B7/integral-overconvergent",
         "HigherHidaAndColemanTheory:B7/family-comparison",
         "HigherHidaAndColemanTheory:X8/klingen-complex",
+        "HigherHidaAndColemanTheory:X8/klingen-analytic-family",
+        "HigherHidaAndColemanTheory:X8/klingen-small-slope",
         "HigherHidaAndColemanTheory:X8/klingen-control"
       ]
     },
@@ -4652,6 +4958,64 @@
       "need": "GSp₄ spherical Satake parameters and the similitude relation αδ=βγ; the Klingen refinement comparison is a target here.",
       "neededBy": [
         "HigherHidaAndColemanTheory:X8/local-refinement"
+      ]
+    },
+    {
+      "supplier": "PerfectoidShimuraVarieties:3.13",
+      "need": "Hodge-type affinoid basis with affinoid perfectoid preimages.",
+      "neededBy": [
+        "HigherHidaAndColemanTheory:F5/abelian-coefficient-descent"
+      ]
+    },
+    {
+      "supplier": "PerfectoidShimuraVarieties:6.4",
+      "need": "The Hodge-type cover and Lovering's B₁ of an abelian-type datum.",
+      "neededBy": [
+        "HigherHidaAndColemanTheory:F5/abelian-coefficient-descent"
+      ]
+    },
+    {
+      "supplier": "PerfectoidShimuraVarieties:6.5",
+      "need": "Fibre products of torsors and the de Rham torsor of B₁.",
+      "neededBy": [
+        "HigherHidaAndColemanTheory:F5/abelian-coefficient-descent"
+      ]
+    },
+    {
+      "supplier": "PerfectoidShimuraVarieties:6.6",
+      "need": "Connected towers and the finite descent group Δ.",
+      "neededBy": [
+        "HigherHidaAndColemanTheory:F5/abelian-coefficient-descent"
+      ]
+    },
+    {
+      "supplier": "PerfectoidShimuraVarieties:6.7",
+      "need": "Finite quotients of connected towers with invariant pregood covers.",
+      "neededBy": [
+        "HigherHidaAndColemanTheory:F5/abelian-coefficient-descent"
+      ]
+    },
+    {
+      "supplier": "PerfectoidShimuraVarieties:6.9",
+      "need": "The Levi torsor of an abelian-type datum as a Δ-quotient from its Hodge cover.",
+      "neededBy": [
+        "HigherHidaAndColemanTheory:F5/abelian-coefficient-descent"
+      ]
+    },
+    {
+      "supplier": "ShimuraCompactifications:C4.16",
+      "need": "The compactified Klingen correspondence on triples (A,H_n,L).",
+      "neededBy": [
+        "HigherHidaAndColemanTheory:X8/klingen-analytic-family",
+        "HigherHidaAndColemanTheory:X8/klingen-small-slope"
+      ]
+    },
+    {
+      "supplier": "ShimuraCompactifications:C4.17",
+      "need": "Acyclicity of its first projection, algebraically and after analytification.",
+      "neededBy": [
+        "HigherHidaAndColemanTheory:X8/klingen-analytic-family",
+        "HigherHidaAndColemanTheory:X8/klingen-small-slope"
       ]
     }
   ],
@@ -4815,6 +5179,13 @@
         "OverconvergentAutomorphicForms:0.4",
         "OverconvergentAutomorphicForms:8.6",
         "OverconvergentAutomorphicForms:8.7",
+        "PerfectoidShimuraVarieties:3.13",
+        "PerfectoidShimuraVarieties:6.14",
+        "PerfectoidShimuraVarieties:6.4",
+        "PerfectoidShimuraVarieties:6.5",
+        "PerfectoidShimuraVarieties:6.6",
+        "PerfectoidShimuraVarieties:6.7",
+        "PerfectoidShimuraVarieties:6.9",
         "ShimuraCompactifications:C3.1",
         "ShimuraCompactifications:C3.9",
         "gap:abelian-subcanonical-vanishing",
@@ -4875,6 +5246,9 @@
       "stageId": "HigherHidaAndColemanTheory:X8",
       "status": "planned",
       "remaining": [
+        "AdicSpacesPartIII:R3.1",
+        "AdicSpacesPartIII:R3.4",
+        "AdicSpacesPartIII:R3.6",
         "AutomorphicBundles:B4.10",
         "AutomorphicBundles:B4.16",
         "AutomorphicBundles:B5.1",
@@ -4887,12 +5261,19 @@
         "DeformationAndDerivedPatchingAlgebra:7.5",
         "DeformationAndDerivedPatchingAlgebra:7.6",
         "DeformationAndDerivedPatchingAlgebra:7.8",
+        "LocallyAnalyticDistributions:4.16",
+        "OverconvergentAutomorphicForms:0.4",
         "PELModuli:M5.5",
         "PELModuli:M5.6",
+        "PadicFamilies:2a.15",
+        "PadicFamilies:2a.16",
         "PadicFamilies:Layer 0",
         "PadicFamilies:Layer 0a",
         "PadicMeasuresIwasawaAlgebras:1.1",
         "PadicMeasuresIwasawaAlgebras:1.7",
+        "PhiGammaModulesAndIwasawaCohomology:4.0",
+        "ShimuraCompactifications:C4.16",
+        "ShimuraCompactifications:C4.17",
         "ShimuraCompactifications:C5.19",
         "ShimuraCompactifications:C5.20",
         "ShimuraCompactifications:C5.21",
@@ -4907,7 +5288,8 @@
         "SmoothRepresentationsOfLocalGroups:SR.4.5",
         "gap:coherent-correspondences",
         "gap:klingen-height-one-igusa",
-        "gap:pel-subcanonical-vanishing"
+        "gap:pel-subcanonical-vanishing",
+        "gap:projective-banach-cohomology"
       ]
     }
   ],
@@ -4980,7 +5362,8 @@
         "HigherHidaAndColemanTheory:C4/geometric-vanishing",
         "HigherHidaAndColemanTheory:C4/proved-slopes",
         "HigherHidaAndColemanTheory:F5/family-complex",
-        "HigherHidaAndColemanTheory:B7/ordinary-comparison"
+        "HigherHidaAndColemanTheory:B7/ordinary-comparison",
+        "HigherHidaAndColemanTheory:X8/klingen-analytic-family"
       ]
     },
     {
@@ -5013,7 +5396,9 @@
         "HigherHidaAndColemanTheory:F5/analytic-hecke",
         "HigherHidaAndColemanTheory:E6/eigenvariety",
         "HigherHidaAndColemanTheory:B7/integral-overconvergent",
-        "HigherHidaAndColemanTheory:X8/klingen-complex"
+        "HigherHidaAndColemanTheory:X8/klingen-complex",
+        "HigherHidaAndColemanTheory:X8/klingen-analytic-family",
+        "HigherHidaAndColemanTheory:X8/klingen-small-slope"
       ]
     },
     {
