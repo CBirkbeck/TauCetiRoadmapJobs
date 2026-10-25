@@ -150,6 +150,7 @@ PrismaticCohomologyPartIV
 ColemanIntegration
 ArakelovGeometryAndAbelianHeights
 HeightsRationalPointsAndObstructions
+RealSurfacePeriodIndex
 LogicAndDefinabilityInNumberTheory
 ComputationalNumberTheory
 EisensteinIdealAndRationalTorsion
