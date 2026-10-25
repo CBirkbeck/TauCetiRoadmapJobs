@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-5260 mistakes recorded on the board: 3420 misprints, 1310 errors, 408 gaps, 122 unparsed bullets.
+5264 mistakes recorded on the board: 3421 misprints, 1312 errors, 409 gaps, 122 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -398,6 +398,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## akq
 
+- **Error** at §2.1, manuscript p.5 (`akq` lines 199–203): the source says the source identifies the integral connected-cover sign Thom spectrum with Hℤ; it should be identify its 2-localization with Hℤ_(2); affects a stated result; The last error is harmless for the subsequent prime-two applications after the correction. Its witness is the odd-prime sphere retract with π₃ containing ℤ/3. The first error is detected by the one-periodic characteristic-two Tate ring at an odd chromatic prime: rationalization is zero, positive odd-primary K vanishes, and global p-inversion still detects the input. Neither issue licenses changing the package's global T(0) convention silently. No correction in a later printed edition was established in this review. <!-- tauceti-roadmap-review {"agent": "codex", "head": "11a21b5b5a6087fb6daf4bb2d499d46210925fbc", "job": "REV-PKG-GeneralAlgebraicKTheoryPartII~2", "model": "gpt-6-astra", "worker": "chris-8"} -->. Found by GeneralAlgebraicKTheoryPartII (#1197 at 11a21b5, 2026-10-25, codex gpt-6-astra).
 - **Error** at §2.1, p.5, attributing Mahowald's Proposition 2.8: the source says the Thom spectrum of Ω²(S³⟨3⟩)→BO→BGL₁S is Hℤ; it should be Hℤ_(2) after 2-localization, since at odd primes the twist is null and the Thom spectrum is the suspension spectrum; affects nothing; (all later uses are 2-local). <!-- tauceti-roadmap-review {"agent": "claude", "head": "1916a38", "job": "REV-PKG-GeneralAlgebraicKTheoryPartII", "model": "opus", "worker": "fable-rev65"} -->. Found by GeneralAlgebraicKTheoryPartII (#1197 at 1916a38, 2026-10-24, claude opus).
 
 ## AKY
@@ -4939,11 +4940,14 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## lmmt
 
+- **Error** at Redshift Theorem and its Nullstellensatz application, introduction, printed p.1014 (`lmmt` lines 172–186): the source says global nonnegative height always increases by one under K; it should be require nonzero rationalization at height zero when T(0)=S[1/p]; affects a stated result. Found by GeneralAlgebraicKTheoryPartII (#1197 at 11a21b5, 2026-10-25, codex gpt-6-astra).
 - **Error** at Redshift Theorem and its Nullstellensatz input, introduction, p.1014: the source says redshift holds for every E∞ ring of nonnegative height, with the global convention T(0)=S[1/p]; it should be restricted at height zero to R with nonzero rationalization (for example p-local R), since (HF₂)^tC₂ at an odd p has height 0 but K-theory of height at most 0; affects a stated result. Found by GeneralAlgebraicKTheoryPartII (#1197 at 1916a38, 2026-10-24, claude opus).
 - **Misprint** at Remark 2.12, p.10: the source says T(i) kills K(π,r) for every finite group π when r>i; it should be every finite abelian p-group, since π=ℤ/q (q≠p) fails at r=1, i=0; affects nothing. Found by ChromaticHomotopyTheory (#986 at 0ea406d, 2026-10-23, claude opus).
 - **Misprint** at Remark 2.12, p.10: the source says finite-group Eilenberg–Mac Lane spaces vanish for every r>i; it should be finite abelian p-groups in this argument; affects nothing. Found by ChromaticHomotopyTheory (#986 at 5bbacd4, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at Remark 3.11, p.1026: the source says the stabilized relative K-theory of S with coefficients in M is ΩM; it should be ΣM, the first derivative ΣTHH(S;M); affects nothing; (the contradiction holds for any shift). Found by GeneralAlgebraicKTheoryPartII (#1197 at 1916a38, 2026-10-24, claude opus).
+- **Misprint** at Remark 3.11, printed p.1026 (`lmmt` line 747): the source says the stabilized relative K construction has value ΩM; it should be have value ΣM, equivalently ΣTHH(S;M); affects nothing. Found by GeneralAlgebraicKTheoryPartII (#1197 at 11a21b5, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at Remark 3.11, printed p.16 (lmmt line 672): the source says the linearized relative K functor on sphere-bimodules is ΩM; it should be ΣM, as the square-zero K₁ calculation shows; affects the proof. Found by RefinedTraceMethods (#175 at 87bc3ff, 2026-10-24, codex gpt-6-astra).
+- **Gap** at proof of Proposition 3.6, printed p.1023 (`lmmt` lines 621–623): the source says p-power coefficient vanishing for arbitrary torsion coefficient rings and mentions only height one; it should be supply the K(ℤ/pʳ)-module argument in every required positive height; affects the proof. Found by GeneralAlgebraicKTheoryPartII (#1197 at 11a21b5, 2026-10-25, codex gpt-6-astra).
 
 ## LO-II
 
