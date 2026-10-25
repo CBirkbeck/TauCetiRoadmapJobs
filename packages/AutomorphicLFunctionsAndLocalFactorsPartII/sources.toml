@@ -6,9 +6,10 @@ id = "CFK"
 authors = "Yuanqing Cai; Solomon Friedberg; Eyal Kaplan"
 title = "Doubling constructions: Global functoriality for non-generic cuspidal representations"
 year = 2024
+doi = "10.4007/annals.2024.200.3.2"
 arxiv = "1802.02637v5"
 locator_scheme = "theorem"
-locator = "Theorems 0.1, 2.1, 3.2–3.12, 4.1–4.11; Appendix A"
+locator = "Theorems 0.1, 2.1, 3.2–3.12, 4.1–4.11; Remark 3.11; Lemma 3.22; Appendix A (Theorems A.1–A.11)"
 url = "https://arxiv.org/abs/1802.02637v5"
 fetched_from = "https://arxiv.org/pdf/1802.02637v5"
 fetched_at = "2026-10-23T22:08:05Z"
@@ -19,7 +20,6 @@ accessed = "2026-10-23"
 version_note = "arXiv v5"
 cited_for = ["Layers 0, 5–10"]
 
-doi = "10.4007/annals.2024.200.3.2"
 [[source]]
 id = "MODELS"
 authors = "Yuanqing Cai; Solomon Friedberg; Dmitry Gourevitch; Eyal Kaplan"
@@ -27,7 +27,7 @@ title = "The generalized doubling method: (k,c) models"
 year = 2021
 arxiv = "2109.11309v1"
 locator_scheme = "theorem"
-locator = "Definition 1; Theorem 4; Claim 6; Lemmas 7, 9, 12"
+locator = "Definition 1; Proposition 2; Theorem 4 and its proof; Claim 6; Lemmas 7, 9, 12"
 url = "https://arxiv.org/abs/2109.11309v1"
 fetched_from = "https://arxiv.org/pdf/2109.11309v1"
 fetched_at = "2026-10-23T22:09:09Z"
@@ -40,9 +40,9 @@ cited_for = ["Layer 5"]
 
 [[source]]
 id = "GK"
-year = 2023
-title = "Multiplicity one theorems for the generalized doubling method"
 authors = "Dmitry Gourevitch; Eyal Kaplan; appendix by Avraham Aizenbud and Dmitry Gourevitch"
+title = "Multiplicity one theorems for the generalized doubling method"
+year = 2023
 locator_scheme = "theorem"
 locator = "Theorem A; Theorems 1.4, 1.9, 2.1; Corollary 3.7 and (3.8)"
 url = "https://ems.press/content/serial-article-files/32911"
@@ -56,9 +56,9 @@ cited_for = ["Layers 5, 6, 9"]
 
 [[source]]
 id = "HLS"
-year = 2006
-title = "p-adic L-functions for unitary Shimura varieties, I: Construction of the Eisenstein measure"
 authors = "Michael Harris; Jian-Shu Li; Christopher Skinner"
+title = "p-adic L-functions for unitary Shimura varieties, I: Construction of the Eisenstein measure"
+year = 2006
 locator_scheme = "section"
 locator = "Sections 3.1–3.2.1, internal pages 43–50"
 url = "https://webusers.imj-prg.fr/~michael.harris/padicPart1.pdf"
@@ -72,9 +72,9 @@ cited_for = ["Layers 1, 3"]
 
 [[source]]
 id = "GARRETT"
-year = 2006
-title = "Archimedean Zeta Integrals for Unitary Groups"
 authors = "Paul Garrett"
+title = "Archimedean Zeta Integrals for Unitary Groups"
+year = 2006
 locator_scheme = "section"
 locator = "Sections 1–2, internal pages 1–4"
 url = "https://math.nyu.edu/~tschinke/princeton/papers/.aim05/submitted/garrett.pdf"
@@ -88,11 +88,11 @@ cited_for = ["Layer 4"]
 
 [[source]]
 id = "HARRIS"
-year = 2008
-title = "A simple proof of rationality of Siegel–Weil Eisenstein series"
 authors = "Michael Harris"
+title = "A simple proof of rationality of Siegel–Weil Eisenstein series"
+year = 2008
 locator_scheme = "theorem"
-locator = "Remark 4.4(iv), internal pages 27–28"
+locator = "Remark 4.4(iii)–(iv), internal pages 27–28"
 url = "https://webusers.imj-prg.fr/~michael.harris/SW.pdf"
 fetched_from = "https://webusers.imj-prg.fr/~michael.harris/SW.pdf"
 fetched_at = "2026-10-23T22:11:31Z"
@@ -104,9 +104,10 @@ cited_for = ["Layer 4"]
 
 [[source]]
 id = "EHLS"
-year = 2020
-title = "p-adic L-functions for unitary groups"
 authors = "Ellen Eischen; Michael Harris; Jian-Shu Li; Christopher Skinner"
+title = "p-adic L-functions for unitary groups"
+year = 2020
+doi = "10.1017/fmp.2020.4"
 locator_scheme = "theorem"
 locator = "Sections 4.1–4.5; equation (143); Theorem 9.1.3"
 url = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/E1D22AA60E10A5B5CA5F838EB48467D7/S2050508620000049a.pdf"
@@ -116,6 +117,121 @@ sha256 = "033b0c22e72891a71b6c2408424bf4de9a1d3067174adb83b969dc9a786e1dc5"
 licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-10-23"
-cited_for = ["Layers 0–4"]
-doi = "10.1017/fmp.2020.4"
 version_note = "Published 160-page open text; published theorem and page numbering."
+cited_for = ["Layers 0–4"]
+
+[[source]]
+id = "HEN02"
+authors = "Guy Henniart"
+title = "Une caractérisation de la correspondance de Langlands locale pour GL(n)"
+year = 2002
+venue = "Bull. Soc. Math. France 130 (2002) 587–602"
+locator_scheme = "theorem"
+locator = "Proposition 1.9, p.592; §5.1(b) and §5.3, pp.601–602"
+url = "https://www.numdam.org/item/BSMF_2002__130_4_587_0.pdf"
+fetched_from = "https://www.numdam.org/item/BSMF_2002__130_4_587_0.pdf"
+fetched_at = "2026-10-25T02:42:01Z"
+sha256 = "40c0ed7c7bfb05f1415fd66642d0b1984052f0af7cb5f3061b328216e2d24306"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["Exact supplier contracts (gap:gamma-supercuspidal-support)", "10.2"]
+
+[[source]]
+id = "CPS94"
+authors = "James W. Cogdell; Ilya I. Piatetski-Shapiro"
+title = "Converse theorems for GL_n"
+year = 1994
+venue = "Publ. Math. IHÉS 79 (1994) 157–214"
+locator_scheme = "theorem"
+locator = "Lemmas 2.1–2.3, pp.161–164"
+url = "https://www.numdam.org/item/PMIHES_1994__79__157_0.pdf"
+fetched_from = "https://www.numdam.org/item/PMIHES_1994__79__157_0.pdf"
+fetched_at = "2026-10-25T02:42:02Z"
+sha256 = "3cda27c4464d0ebcc93ff70cfcdd252fb21739450c773ee6fea61740e29c2950"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["10.3"]
+
+[[source]]
+id = "CKPSS01"
+authors = "James W. Cogdell; Henry H. Kim; Ilya I. Piatetski-Shapiro; Freydoon Shahidi"
+title = "On lifting from classical groups to GL_N"
+year = 2001
+venue = "Publ. Math. IHÉS 93 (2001) 5–30"
+locator_scheme = "section"
+locator = "§2, Converse Theorem and its proof, pp.8–10"
+url = "https://www.numdam.org/item/PMIHES_2001__93__5_0.pdf"
+fetched_from = "https://www.numdam.org/item/PMIHES_2001__93__5_0.pdf"
+fetched_at = "2026-10-25T02:42:03Z"
+sha256 = "fb3811f42cacf9f827204139fc506c54d5409d0b489dc0ba7d0ebdf61bcfc8b8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["10.3"]
+
+[[source]]
+id = "ADAMS14"
+authors = "Jeffrey Adams"
+title = "The Real Chevalley Involution"
+year = 2014
+venue = "Compositio Math. 150 (2014) 2127-2142"
+doi = "10.1112/S0010437X14007374"
+arxiv = "1203.1901v4"
+locator_scheme = "theorem"
+locator = "Theorem 1.2 and Corollary 1.4, p.2 (arXiv v4)"
+url = "https://arxiv.org/abs/1203.1901v4"
+fetched_from = "https://arxiv.org/pdf/1203.1901v4"
+fetched_at = "2026-10-25T02:42:06Z"
+sha256 = "dab70ad7018428b3c3fa914d2bec3945a0d67dfb709249871ff708f37fcda72a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v4"
+cited_for = ["Exact supplier contracts (gap:real-chevalley-contragredient)", "3.2"]
+
+[[source]]
+id = "CFK22"
+authors = "Yuanqing Cai; Solomon Friedberg; Eyal Kaplan"
+title = "The generalized doubling method: local theory"
+year = 2022
+venue = "Geometric and Functional Analysis 32"
+doi = "10.1007/s00039-022-00609-4"
+locator_scheme = "theorem"
+locator = "Lemma 7.3"
+url = "https://doi.org/10.1007/s00039-022-00609-4"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["6.10"]
+
+[[source]]
+id = "YAM14"
+authors = "Shunsuke Yamana"
+title = "L-functions and theta correspondence for classical groups"
+year = 2014
+venue = "Inventiones mathematicae 196"
+doi = "10.1007/s00222-013-0476-x"
+locator_scheme = "theorem"
+locator = "Theorem 7.1"
+url = "https://doi.org/10.1007/s00222-013-0476-x"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["7.6"]
+
+[[source]]
+id = "KAP23"
+authors = "Eyal Kaplan"
+title = "Rankin–Selberg integrals and L-functions for covering groups of general linear groups"
+year = 2023
+venue = "International Mathematics Research Notices 2023(15), 13332–13386"
+doi = "10.1093/imrn/rnac201"
+locator_scheme = "theorem"
+locator = "Theorem 25"
+url = "https://doi.org/10.1093/imrn/rnac201"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (publisher landing page refused access); cited by its locator without the text, as attributed in CFK Theorem A.1"
+cited_for = ["7.2"]
