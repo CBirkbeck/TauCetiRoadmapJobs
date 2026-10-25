@@ -1,1632 +1,1014 @@
-# Relative endoscopy for unitary Friedberg–Jacquet periods
-
-This Part II extends ordinary unitary endoscopy to the infinitesimal symmetric
-space for a product of two equal-dimensional unitary groups. The main target
-is the unramified lattice-unit fundamental lemma: contraction turns its
-relative orbital integrals into ordinary Hermitian orbital integrals; a
-graded spherical calculation then reduces the theorem to an independent
-Jacquet–Rallis product-group fundamental lemma. The local comparison also
-develops reusable symmetric-space quotients, transfer relations, Hermitian
-spherical modules, nilpotent germs and Weil-equivariant orbital images.
-
-This reader is the definitive specification. The accompanying
-[packet](../packets/EndoscopicTransferAndUnitaryTraceComparisonPartII.json)
-records the dependency graph and the
-[suggested Lean file](../suggested/EndoscopicTransferAndUnitaryTraceComparisonPartII.lean)
-gives compact coordinate signatures over the pinned libraries. Every target
-has implementation status `unchecked`; elaborating admitted signatures does
-not implement the mathematics. All six stages have coverage `planned`.
-Eight explicit gaps and two supplier requests prevent dependency closure.
-
-The principal reference is Spencer Leslie, *The endoscopic fundamental lemma
-for unitary Friedberg–Jacquet periods*, Annals of Mathematics 201 (2025),
-551–645. All Leslie locators here mean the printed pages of
-**arXiv:1911.07907v3, 12 March 2025**, the accepted version read. The distinction
-matters for the normalization findings below: the published PDF was not
-compared. Statements throughout this document are restatements in our own
-words, organized by mathematical targets.
-
-## Conventions and the final theorem
-
-Let (F) be a nonarchimedean local field of characteristic zero and (E/F)
-a quadratic **field** extension, with involution (z\mapsto\bar z) and
-quadratic character (\eta_{E/F}). Hermitian forms are conjugate-linear in
-their first variable. For nondegenerate Hermitian spaces (W_1,W_2) of the
-same dimension (n), write (H=U(W_1)\times U(W_2)). The adjoint of
-(X:W_2\to W_1) is characterized by
-
-\[
-h_1(Xv,w)=h_2(v,X^\tau w).
-\]
-
-The symmetric Lie representation and its two contractions are
-
-\[
- X\longmapsto\begin{pmatrix}0&X\\-X^\tau&0\end{pmatrix},\qquad
- (g_1,g_2)X=g_1Xg_2^{-1},\qquad
- r_1(X)=-XX^\tau,\quad r_2(X)=-X^\tau X.
-\]
-
-Here (\operatorname{Herm}(W_i)) means **self-adjoint endomorphisms**; it
-does not mean the skew-adjoint unitary Lie algebra. Multiplication by a fixed
-nonzero trace-zero element of (E) identifies these representations when
-importing Lie-algebra invariant theory from ordinary endoscopy. Standard-Gram
-coordinates use `Matrix.conjTranspose` and `Matrix.IsHermitian`.
-
-Write (C_c^\infty) for complex-valued locally constant compactly supported
-functions. Fix Haar measures before taking quotient integrals. On each regular
-centralizer choose maximal-compact volume one, transport the measure through
-the specified stabilizer isomorphisms, and obtain quotient measures by
-integration in stages. Changing a torus Haar measure by (c>0) changes its
-orbital integral by (c^{-1}). In unramified comparisons the hyperspecial
-subgroups also have volume one. Weil Fourier transforms use self-dual
-additive measures and the trace pairing, rather than the norm of a pairing.
-
-Stages FJ.2–FJ.4 additionally assume (E/F) unramified. Choose a common
-uniformizer (\pi), put (q=\#k_F), and use
-(V_n=(E^n,I_n)), (\Lambda_n=\mathcal O_E^n). Thus (q_E=q^2) and
-(|\pi|_E=q^{-2}). No hypothesis excludes residue characteristic two.
-All proper endoscopic decompositions (n=a+b) have (a,b>0). Rank zero
-occurs only as the trivial factor in the rank-shifted comparison at (n=1).
-
-The main theorem target, `FJ.4/unit-fundamental-lemma`, is Leslie's Theorem
-2.12, pp. 21–22. For (W_1=W_2=V_n) and a relative elliptic datum with
-form labels (\alpha,\beta), the source
-(1_{\operatorname{End}(\Lambda_n)}) transfers to
-
-\[
-\begin{cases}
-1_{\operatorname{End}(\Lambda_a)}\otimes
-1_{\operatorname{End}(\Lambda_b)},&
-(\alpha,\beta)=(I_a,I_b),\\
-0,&\text{every other pair of Hermitian form classes}.
-\end{cases}
-\]
-
-Transfer includes the matching orbital-integral identity with the
-contraction-defined ordinary transfer factor **and** vanishing on unmatched
-target regular orbits. There are four target form pairs. Vanishing on the
-three nonreference pairs is part of the theorem, including when odd-dimensional
-forms happen to have isomorphic unitary groups.
-
-Unrestricted existence of relative smooth transfer for arbitrary source
-support is a separate conjectural target in the references read: Leslie19,
-Conjecture 4.4, p. 15. The unit theorem does not establish it. Remark 3.7,
-p. 27 of Leslie25 motivates a full spherical extension, but does not specify
-the transfer-factor augmentation needed for its orbital characterization.
-FJ.5 constructs the precise Fourier-defined operator and records that missing
-specification; the factor research question is not an executable theorem
-statement until G8 is discharged.
-
-## Ownership and dependencies
-
-The first source route, `UnitaryFriedbergJacquetRelativeEndoscopy`, is realized
-under this issue's fixed roadmap id. Ordinary endoscopy remains in the parent.
-The independent Jacquet–Rallis analytic/spectral programme is a proposed
-sibling, with no registered stage ids used as prerequisites here.
-
-| Owner | Exact input used here |
-| --- | --- |
-| GeometryOfNumbersAndQuadraticArithmetic, GN.2 | `signed-hermitian-space`, `hermitian-space-classification`, `integral-hermitian-lattice`, `hermitian-dual-lattice`, `local-unimodular-hermitian-classification`, `unramified-hermitian-lattice-diagonalization` |
-| GeometryOfNumbersAndQuadraticArithmetic, GN.3 | `hermitian-special-values`, including the normalized self-dual-overlattice count (m_0) |
-| EndoscopicTransferAndUnitaryTraceComparison, ET.0 | `unitary-hermitian-matching`, `rational-classes-in-stable-class`, `unitary-elliptic-endoscopic-data`, `crossed-module-galois-cohomology`, `abelianized-cohomology` |
-| EndoscopicTransferAndUnitaryTraceComparison, ET.2b | `chevalley-quotient`: ordinary characteristic-coefficient invariant theory, in characteristic zero |
-| EndoscopicTransferAndUnitaryTraceComparison, ET.1 | Requested normalized Hermitian orbital integrals, factors and the Xiao germ/descent factor comparison |
-| EndoscopicTransferAndUnitaryTraceComparison, ET.3 | Requested ordinary nonsingular smooth transfer and normalized squared-variable GL base change |
-| AdelicAlgebraicGroups, AA.2 | `quotient-measure`, `quotient-integral-integrable`, `quotient-measure-transitivity` |
-| SmoothRepresentationsOfLocalGroups, SR.4 | `satake-isomorphism` and **`parabolic-descent`**, already including the determinant-twisted Levi map and its Satake scaling |
-| SchemeAndStackFoundations, SF.1 | `galois-descent-affine` for the split-coordinate quotient identifications |
-
-These are references to the existing packet nodes, whose exact qualified ids
-appear under each target. They are planned inputs, with their owners' proof
-obligations; an import is not a claim that those roadmaps have already been
-implemented. No generic form, lattice, quotient-measure, ordinary endoscopic
-datum or spherical Levi map is rebuilt here. In particular, the SR.4 map
-(\xi_E) already has normalized Satake substitution
-(Z_i\mapsto q^{-b}X_i) on the first block and
-(Z_j\mapsto q^{-a}Y_j) on the second. The corresponding (F)-map scales by
-(q^{-b/2}), (q^{-a/2}). FJ.2 proves compatibility with base change;
-FJ.3 constructs the different **additive Lie** descent and compares it to
-this imported group descent.
-
-The mathematical build order is:
-
-1. Construct the symmetric representation, categorical quotients, stabilizers
-   and supported contraction pushforward (FJ.0).
-2. Pull ordinary data and factors back to relative matching and define transfer
-   with its unmatched-zero clause (FJ.1).
-3. Build the full Hermitian spherical module and Hironaka transform; compare
-   the imported Levi map with squared-variable base change (FJ.2).
-4. Specify the all-pure-form germ and Lie-descent reductions, and the Weil
-   reduction from the rank-shifted group comparison (FJ.3).
-5. Establish sign/pushforward comparisons; apply the independently supplied
-   product-group theorem, then augmented and cyclic transfer; conclude the
-   lattice theorem using compact determinant grades (FJ.4).
-6. State the arbitrary-support existence target and construct the full-module
-   Fourier extension with the factor question isolated (FJ.5).
-
-The spectral supplier in step 5 must prove the product-group theorem
-independently of the FJ result. Citing ET.3 as though it already contained a
-Jacquet–Rallis fundamental lemma would make this reduction circular.
-
-## Worked checks that determine the conventions
-
-**Signed rank one.** With standard forms and (X=z), both contractions are
-(-z\bar z); (z=1) gives (-1). In the unramified case there is an
-integral unit (c) with norm (-1). Hence (r_-(cX)=r_+(X)), and the
-lattice indicator is unchanged. This works in residue characteristic two by
-the imported rank-one Hermitian lattice classification; no division by two
-is involved. A categorical quotient must not be mistaken for surjectivity on
-rational points: for (n=1), the nonzero image of signed contraction is the
-single norm coset (-\operatorname{Nm}(E^\times)).
-
-**The full spherical module.** For (n=1), its basis (e_j) is indexed by
-all (j\in\mathbb Z). The (E^\times)-Hecke indicator at valuation (d)
-sends (e_0) to (e_{2d}). Consequently (e_1) lies outside the cyclic
-submodule, while (e_{-1}) is a valid compact function. One cannot obtain the
-full module by silently restricting to the reference Hermitian orbit.
-
-**Levi scaling and base change.** Write (T_{\lambda,L}) for a spherical
-double-coset indicator over (L). At (n=2,a=b=1),
-
-\[
-\operatorname{Sat}_E(T_{(1,0),E})=q(Z_1+Z_2),\qquad
-\xi_E(T_{(1,0),E})=T_{(1),E}\otimes1+1\otimes T_{(1),E}.
-\]
+# Roadmap: relative endoscopy for unitary Friedberg–Jacquet periods
 
-The central monomial (Z_1Z_2) acquires (q^{-2}). Squaring variables
-commutes with these scalings, but does **not** force every coweight in the
-base-change support to be entrywise even. Indeed,
+**Summary.** This Part II develops relative endoscopy for the infinitesimal symmetric space of (U(W1⊕W2), U(W1)×U(W2)), from signed contractions and ordinary unitary endoscopy to cyclic spherical transfer and the unramified lattice-unit fundamental lemma in every residue characteristic. It builds the Hermitian spherical module, regularized germs and local reductions needed to connect an independent Jacquet–Rallis comparison to that theorem.
 
-\[
-\operatorname{BC}(T_{(1,0),E})
-=T_{(2,0),F}-(q-1)T_{(1,1),F}.
-\]
+## Scope and ownership
 
-This follows by comparing (q(T_1^2+T_2^2)) with
-\(\operatorname{Sat}_F(T_{(2,0),F})
-=q(T_1^2+T_2^2)+(q-1)T_1T_2\).
-For (q=2) the coefficient of the odd central coweight is (-1).
+EndoscopicTransferAndUnitaryTraceComparison supplies ordinary unitary Lie-algebra endoscopy in §§1.17, 2.12 and 4.4–4.7 and stops before symmetric-space endoscopy. This Part II owns the relative symmetric-space geometry and transfer relation, the Hermitian spherical module on X_n, the germ/descent reductions, the Friedberg–Jacquet unit theorem and the Fourier-defined full-module operator. The Jacquet–Rallis inputs consumed here are the explicit supplier gaps below; their allocation to a separate continuation requires an ownership decision and is not assumed.
 
-**Raw germ versus finite inversion.** In unramified rank one, with
-(\operatorname{vol}(\mathcal O_F^\times)=1), the continuation at zero of
-\(\int_{F^\times}1_{\mathcal O_F}(t)\eta(t)|t|^s\,d^\times t\)
-is the value of (1/(1+q^{-s})), namely (1/2). The same raw distribution
-on (1_{\mathcal O_F^\times}) is (1), and on
-(1_{\pi\mathcal O_F^\times}) is (-1). Thus the raw distribution is not
-already Fourier-normalized. Inversion on a group of order (2^r) requires
-the average (2^{-r}\sum\), with the specified measures. G4 asks for the
-complete comparison with the ordinary orbital measures; this coefficient is
-a normalization target, not a closed general germ theorem. In the endoscopic
-application the exponents add across the two blocks, so the proposed factors
-cancel. This calculation does not refute the final unit theorem.
+Signed Hermitian carriers and integral lattice duals belong to GeometryOfNumbersAndQuadraticArithmetic §§2.7 and 2.9; its §3.2 owns general representation densities. The finite self-dual-overlattice count and its normalization against that density are the relative adapter of Layer 4. Quotient measures belong to AdelicAlgebraicGroups §2.2, spherical Satake and determinant-twisted Levi descent to SmoothRepresentationsOfLocalGroups §§SR.4.1 and SR.4.3, and Weil operators and the Weil index to MetaplecticAutomorphicForms §§2.1 and 2.5. None is constructed a second time. The matrix Hermitian-product and characteristic-polynomial identities used for coordinates are already in the pinned Mathlib and remain background facts here.
 
-**Weil defect.** Agreement of two representations on their intersection
-defines a representation on their sum: if (A+B=A'+B'), then
-(A-A'=B'-B) lies in the intersection. The spherical defect belongs to that
-sum before equality of orbital images is known. On the Hermitian side the
-Fourier kernel is (\psi(\operatorname{Tr}_{E/F}h(u,w))), additive in both
-variables; replacing the trace by a norm fails this check.
+Unrestricted relative smooth transfer is open in Leslie19 Conjecture 4.4, p. 15, and full-module orbital transfer with augmented factors is open in Leslie25 Remark 3.7, p. 27; neither is a target. Layer 5 constructs the precisely defined Fourier operator alone. Exchanging contractions requires an explicit transport of nonisometric form data and is not an additional theorem of this roadmap.
 
-**Compact grading.** The contracted full lattice unit has infinitely many
-nonzero determinant grades. Its rank-one pieces are (\Phi_{1,2d}=e_{2d})
-for (d\ge0), and the odd and negative pieces vanish. At (n=2), the degree
-one target is (\Phi_{1,2}\otimes\Phi_{1,0}+
-\Phi_{1,0}\otimes\Phi_{1,2}). A fixed regular matching orbit has a fixed
-determinant valuation, so it meets just one total grade. The proof needs no
-interchange of an infinite sum and an orbital integral.
+## Conventions
 
-## Target specifications
+F is a nonarchimedean local field of characteristic zero. Layers 0–1 allow a quadratic étale algebra E/F with involution z↦z̄, including F×F; later local germ theory allows every quadratic field extension. Only the spherical parts of Layers 2–5 and the Lie-descent application assume an unramified quadratic field extension. The spaces W1,W2 are nondegenerate Hermitian E-modules of the same finite rank n; forms are conjugate-linear in the first variable. All carriers lie in fixed universes, and test functions are complex-valued locally constant functions with compact support in their stated domain.
 
-Names below use namespace `TauCeti.UnitaryFJ`; they are proposed API names.
-The qualified dependency ids in the packet are authoritative. Each numbered
-proof outline specifies the intended mathematical construction or argument;
-it does not claim a formal proof. “Check” items and the discriminating unit
-tests are acceptance requirements. A gap associated to a target propagates
-through its descendants in the dependency graph.
+The adjoint X^τ:W1→W2 satisfies h1(Xv,w)=h2(v,X^τw). The block representation is δ(X)=[[0,X],[−X^τ,0]], with action (g1,g2)X=g1Xg2⁻¹. Its contractions are r1(X)=−XX^τ and r2(X)=−X^τX. Herm(W) denotes self-adjoint endomorphisms, rather than the skew-adjoint Lie algebra; multiplication by a chosen nonzero trace-zero element of E identifies these representations for ordinary endoscopy. In rank one with Wi=⟨ai⟩, X^τ=(a1/a2)z̄ and r_i(z)=−(a1/a2)N(z). For E=F×F, norm is (u,v)↦uv and U(W)=GL_n; there is one form class, and no proper elliptic block datum with a,b>0. The symmetric pair is then (GL_(2n),GL_n×GL_n), the linear Friedberg–Jacquet setting.
 
+Haar measures are fixed before quotient integration. Regular centralizers have maximal compact subgroup of volume one, transported through the specified stabilizer isomorphisms. Quotients use integration in stages, so scaling a torus Haar measure by c>0 scales either orbital integral by c⁻¹. For unramified E/F write π for a common uniformizer, q=#k_F≥2, V_n=(E^n,I_n), Λ_n=O_E^n and K_n,E=GL_n(O_E); hyperspecial volumes are one. Thus q_E=q² and |π|_E=q⁻². No spherical theorem excludes residue characteristic two. Proper endoscopic decompositions have a,b>0 and n=a+b; rank zero enters as GL_0=U_0={1} at n=1 in the adjacent-rank comparison.
 
-## FJ.0. The symmetric representation and contraction
+The quadratic character is η=η_E/F (trivial for split E). In the cyclic determinant factor use ordered columns v,xv,…,x^(n−1)v and block volume form Ωa∧Ωb. Set D_ab=∏(λa−λb); disjoint spectra make D_ab≠0. The general cyclic ratio is η((−1)^(ab)D_ab); unramified η(−1)=1 removes the sign in the spherical application. Weil transforms use a conductor-O_F additive character ψ and self-dual measures for the trace pairing: the Hermitian kernel is ψ(Tr_E/F h(u,w)); the linear kernel is ψ(v*w+w*v). The raw regularized germ has no finite-Fourier averaging built into it.
 
-Construct the off-diagonal representation for two equal-dimensional Hermitian spaces, its two adjoint contractions and affine invariant quotient. Prove regular semisimple elements are invertible, identify stabilizer tori and rational-class kernels under contraction, and compare relative orbital integrals with ordinary Hermitian orbital integrals through a correctly supported pushforward.
+**Checks.**
 
-**Dependencies:** `GeometryOfNumbersAndQuadraticArithmetic:GN.2`, `EndoscopicTransferAndUnitaryTraceComparison:ET.0`, `AdelicAlgebraicGroups:AA.2`, `SchemeAndStackFoundations:SF.1`, `EndoscopicTransferAndUnitaryTraceComparison:ET.2b`.
+- With standard rank-one forms X=1, δ²=−I and r_i(1)=−1. A unit c with N(c)=−1 gives r_−(c)=1=r_+(1); the pinned norm theorem supplies c even at p=2.
+- For a=b=1 and λa−λb=π, the unramified nice-match factor is η(π)|π|=−q⁻¹. Reversing the ordered cyclic columns instead contributes η(−1), which can be −1 for ramified E.
+- For q=2, q_E=4 and |π|_E=1/4; rescaling the stabilizer measure from 1 to 2 changes a unit orbital value from 1 to 1/2. These distinguish the field and measure normalizations.
 
-**Coverage:** `planned`. G1: analytic local sections, compact pushforward surjectivity and orbitwise cutoffs. ET.1 request: normalized convergence and local constancy of Hermitian orbital integrals.
+## Exact supplier contracts
 
-**Planets:** Unitary symmetric representation; Contraction maps; Symmetric invariant quotient; Regular symmetric orbits; Contraction torsor; Relative orbital integrals.
+### From Mathlib
 
+The pin is 6b7abb3c7686292736be2955bd3eb9ebf63b456a. Consume `Matrix.conjTranspose` (Mathlib/LinearAlgebra/Matrix/ConjTranspose.lean:43), `Matrix.IsHermitian`, `Matrix.isHermitian_mul_conjTranspose_self`, and `Matrix.isHermitian_conjTranspose_mul_self` (Mathlib/LinearAlgebra/Matrix/Hermitian.lean:44,285,289), `Matrix.charpoly` and `Matrix.charpoly_mul_comm` (Mathlib/LinearAlgebra/Matrix/Charpoly/Basic.lean:132,271), `MvPolynomial.hsymm` (Mathlib/RingTheory/MvPolynomial/Symmetric/Defs.lean:312) and `MvPolynomial.bind₁` (Mathlib/Algebra/MvPolynomial/Monad.lean:67). Conjugate transpose transposes and applies star; Hermitian means Aᴴ=A and imposes no arithmetic or measure structure. The square product charpoly theorem is over a commutative ring. `HasStrictFDerivAt.implicitFunction` (Mathlib/Analysis/Calculus/Implicit.lean:464) applies to a strict derivative of full range with complemented kernel; finite-dimensional smooth torsor coordinates provide these hypotheses.
 
-### FJ.0/symmetric-representation: The off-diagonal unitary representation
+### From Tau Ceti
 
-**Construction target.** For nondegenerate Hermitian E-spaces W1,W2 of the same dimension n, put W=W1 orthogonal-sum W2 and theta=Ad(1,-1). Identify the (-1)-eigenspace in Lie U(W) with Hom_E(W2,W1) by X mapping to the block matrix [[0,X],[-X^tau,0]], where h1(Xv,w)=h2(v,X^tau w). Its fixed-group action is (g1,g2).X=g1 X g2^(-1).
+The pin is a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039. Consume `TauCeti.map_normUnits_unitFiltration` and `TauCeti.mem_normGroup_iff_dvd_normalizedValuation` (TauCeti/NumberTheory/LocalField/Norm/Unramified/Basic.lean:126,158): they require a finite-dimensional unramified extension of nonarchimedean local fields with compatible valuations and assert norm surjectivity at every unit-filtration depth and the valuation criterion for norms. At depth zero this gives N(O_E×)=O_F×; it supplies no ramified-unit norm assertion.
 
-**Hypotheses and conventions:** F is a nonarchimedean local field of characteristic zero; E/F is a quadratic field extension. Hermitian forms are conjugate-linear in the first variable and linear in the second.
+### From TauCetiRoadmap.EndoscopicTransferAndUnitaryTraceComparison
 
-**Direct prerequisites:** `GeometryOfNumbersAndQuadraticArithmetic:GN.2/signed-hermitian-space`, `mathlib:Matrix.conjTranspose`.
+Consume §1.1 (crossed-module and nonabelian Galois cohomology), §1.5 (abelianized cohomology), §1.14 (rational classes in a stable class), §1.17(a)–(c) (unitary matching, inv across pure forms and its norm coordinates), §1.4 with §1.17(c) (local unitary elliptic data), §3.3 (characteristic-coefficient quotient), §§2.1 and 2.4 (convergence, normalized ordinary orbital integrals, stable and κ sums and basepoint change), §§2.9 and 2.11 (Lie factors and ordinary transfer including unmatched vanishing), §4.7 (ordinary Lie smooth transfer for any residue characteristic), and §4.9(b) (unramified spherical base change). Split E uses the GL_n specializations, not a two-form unitary classification. The local unitary factor formula in §2.12 is restricted to unramified E and odd p; its larger scope is a gap, not an import.
 
-**Construction or proof:**
+What EndoscopicTransferAndUnitaryTraceComparison must provide (gap:jr-local-comparison): Part II relative comparison continuation (local Jacquet–Rallis theory): Supply the augmented and block/group Jacquet–Rallis invariant quotients, regular matching across all pure forms, η(det)-twisted orbital distributions, the cyclic factors (4.1) and (4.6), local smooth transfer with partial Fourier compatibility, and the product-to-conjugation identities (7.5)–(7.7), with the measures and unmatched-zero clauses of Leslie25 §§4.1 and 7.1–7.2.
 
-1. Use the adjoint anti-involution imported from GN.2 and solve the skew-adjoint block equations.
+What EndoscopicTransferAndUnitaryTraceComparison must provide (gap:jr-weil-descent): Part II relative comparison continuation (Weil descent): Descend the Weil operators supplied by MetaplecticAutomorphicForms §§2.1 and 2.5 to the linear and unitary orbital-image spaces and prove agreement on their intersection, with self-dual trace-pairing measures as in BP21 Proposition 1, p. 7.
 
-2. Transport the fixed-group conjugation action through the block identification.
+What EndoscopicTransferAndUnitaryTraceComparison must provide (gap:jr-product-base-change): Part II relative comparison continuation (product-group spherical comparison): Prove Leslie25 Theorem 11.1, p. 78, for GL_m×GL_(m+1) in every m≥0 with its factor Ω, spherical base change and all nonreference-form zero components, from an independent spectral proof that does not assume the Friedberg–Jacquet unit theorem.
 
-**Sources:** [Leslie25] Section 2.1, pp. 13–14; Section 1.2, pp. 3–4. The source identifies the symmetric Lie representation with a Hom space using the Hermitian adjoint.
+What EndoscopicTransferAndUnitaryTraceComparison must provide (gap:unitary-factor-all-quadratic): §2.12 (extension of its ordinary unitary factor formula): For every quadratic extension of characteristic-zero p-adic fields, including p=2 and ramified E, identify the §2.9 factor for U(V_a)×U(V_b) with κ(inv(δ,δ′))η(D(δ))|D(δ)|_F in the normalization of Leslie25 (2.7), p. 19.
 
-**Uses:** `FJ.0/torsor and FJ.1/relative-datum`: The action and its adjoints determine stabilizers and the endoscopic symmetric representations.
+### From TauCetiRoadmap.GeometryOfNumbersAndQuadraticArithmetic
 
-**API:**
+Consume §2.7 `IntegralHermitianLattice.ofCarrier` and `IntegralHermitianLattice.dual`, §2.9 `SignedHermitianSpace` and its finite-dimensional adjoint, and §3.2 for local Hermitian representation densities. The carrier/adjoint is general over a field with involution; §2.9's local classification does not include dyadic fields. Generic densities do not by themselves supply the congruence-orbit or unit-vector transitivity contracts below.
 
-- `TauCeti.UnitaryFJ.offDiagonal` (constructor): Send X to [[0,X],[-X^tau,0]] in Lie U(W).
+What GeometryOfNumbersAndQuadraticArithmetic must provide (gap:hermitian-field-classification): §2.9 (local classification beyond odd residue characteristic): Classify nondegenerate Hermitian spaces over every quadratic extension of characteristic-zero local fields by dimension and discriminant, including dyadic and ramified extensions, as used in Xiao18 §2.2, p. 5, and Leslie19 Lemma 4.6, p. 16.
 
-- `TauCeti.UnitaryFJ.offDiagonal_equiv` (equivalence): The top-right projection and offDiagonal are inverse F-linear maps between the (-1)-eigenspace and Hom_E(W2,W1).
+**Checks.**
 
-- `TauCeti.UnitaryFJ.symmetricAction` (structure): The formula (g1,g2).X=g1 X g2^(-1) defines an F-linear algebraic representation.
+- At rank zero the discriminant is 1 and there is a single form, not two.
+- At positive rank one, ⟨1⟩ and ⟨ε⟩ have distinct discriminants in F×/N(E×), so they cannot be identified even when their unitary groups are isomorphic.
+- Over F×F the norm (u,v)↦uv is onto and there is one Hermitian class in each rank; a two-class field statement must not be applied there.
 
-- `TauCeti.UnitaryFJ.adjoint_action` (compatibility): The adjoint of g1 X g2^(-1) is g2 X^tau g1^(-1).
+What GeometryOfNumbersAndQuadraticArithmetic must provide (gap:unramified-hermitian-lattice-orbits): §2.7 (unramified integral Hermitian isometry classes): For unramified quadratic E/F in every residue characteristic prove the unique dominant-integral congruence representatives K_n,E∗π^λ of Leslie25 (3.7), p. 26, including that every self-dual rank-n lattice is integrally isometric to O_E^n with Gram I_n.
 
-**Unit tests:**
+**Checks.**
 
-- `TauCeti.UnitaryFJ.offDiagonal_scalar` (computation): For n=1 with standard forms, offDiagonal(z)=[[0,z],[-bar(z),0]].
+- In rank one the classes π^jOF× for j=0,1,−1 have distinct valuations and none may be dropped.
+- A self-dual rank-one lattice has unit Gram determinant; Gram π has dual quotient of O_E-length 1 and is not self-dual.
+- At residue cardinality q=2, N(F₄×)=F₂× and Tr(F₄/F₂) is onto; division by 2 is unavailable integrally and is not used.
 
-- `TauCeti.UnitaryFJ.offDiagonal_zero` (degenerate): The zero Hom map gives the zero Lie element and is fixed by every (g1,g2).
+What GeometryOfNumbersAndQuadraticArithmetic must provide (gap:unramified-unit-vector-transitivity): §2.7 (unit vectors in unramified self-dual lattices): For unramified quadratic E/F in every residue characteristic prove U(Λ_n) transitive on {w∈Λ_n:h(w,w)=1}, including n=1 and p=2, as used in BP21 §2, Lemma 1, pp. 4–5.
 
-- `TauCeti.UnitaryFJ.offDiagonal_equivariance` (compatibility): Conjugation by diag(g1,g2) takes offDiagonal(X) to offDiagonal(g1 X g2^(-1)).
+**Checks.**
 
-- `TauCeti.UnitaryFJ.offDiagonal_not_hermitian_block` (non-example): Over E=C, F=R as an algebraic matrix check, X=1 gives [[0,1],[-1,0]], rather than the symmetric off-diagonal matrix. This check concerns the algebraic construction only.
+- In rank one any norm-one unit w is taken to 1 by multiplication by w⁻¹∈U(Λ1).
+- For h(w,w)=1 the integral projector p(v)=w h(w,v) has p(w)=w and p²=p, including residue characteristic two.
+- The vector 0 has norm 0, so it is excluded; enlarging the claim to all vectors would put it in the orbit of a unit vector, which is impossible.
 
-**Check:** The block has zero diagonal blocks and its lower-left block is minus the adjoint.
+### From TauCetiRoadmap.AdelicAlgebraicGroups
 
+Consume §2.2, quotient-measure, Weil's formula for integrable functions and quotient measures in stages. The groups are second countable, locally compact Hausdorff, subgroups closed, and restricted modular characters agree. Local reductive groups and their regular centralizer tori are unimodular; these hypotheses give the quotient measures used here. Local sections and surjectivity on compact test functions are proved in Layer 0.
 
-### FJ.0/contractions: The two signed contractions
+### From TauCetiRoadmap.SmoothRepresentationsOfLocalGroups
 
-**Construction target.** Define r1(X)=-X X^tau in Herm(W1) and r2(X)=-X^tau X in Herm(W2). Here Herm(Wi) is the space of self-adjoint endomorphisms for hi. Both are F-polynomial maps. r1 is equivariant for U(W1) and invariant under U(W2); r2 has the opposite equivariance. In standard Gram coordinates the formulas use Matrix.conjTranspose, not plain transpose.
+Consume §SR.4.1, satake-isomorphism, and §SR.4.3, parabolic-descent. For unramified E/F the latter supplies normalized GL_n(E) descent with twists |det m1|_E^(b/2)|det m2|_E^(a/2) and Satake substitution Z_i↦q⁻ᵇX_i, Z_j↦q⁻ᵃY_j. Its F-version uses q⁻ᵇ/² and q⁻ᵃ/². These group-theoretic maps are inputs; Layer 3 constructs additive Lie descent and compares it to them.
 
-**Hypotheses and conventions:** F is a nonarchimedean local field of characteristic zero; E/F is a quadratic field extension. Hermitian forms are conjugate-linear in the first variable and linear in the second.
+### From TauCetiRoadmap.SchemeAndStackFoundations
 
-**Direct prerequisites:** `FJ.0/symmetric-representation`, `mathlib:Matrix.IsHermitian`, `mathlib:Matrix.isHermitian_mul_conjTranspose_self`, `mathlib:Matrix.isHermitian_conjTranspose_mul_self`.
+Consume §1.24, affine Galois descent of the split-coordinate equivariant coordinate-algebra isomorphisms. The invariant-ring proof in Layer 0 is given directly and invokes no unassigned Igusa criterion.
 
-**Construction or proof:**
+### From TauCetiRoadmap.ReductiveGroupsPartII
 
-1. Apply the adjoint to both products, using the involution and reversed multiplication.
+Consume RG2.0, smooth-group-analytic-charts, for characteristic-zero analytic coordinates on smooth local group points. Together with the explicit smooth contraction torsor and the pinned implicit function theorem this supplies local sections; smoothness alone does not assert surjectivity on all rational points.
 
-2. Use adjoint_action to verify the two transformation laws.
+### From TauCetiRoadmap.MetaplecticAutomorphicForms
 
-**Sources:** [Leslie25] Section 2.1, equation (2.1), p. 14. The two moment-type contractions have a negative sign and take values in Hermitian endomorphisms.
+Consume §2.1 `weilIndex` and §2.5 `weil_generators`, retaining the specified Weyl element, Weil scalars and self-dual polar-pairing measures. The quadratic spaces here have even F-dimension and are the hyperbolic linear form q(v,v*)=v*v and the Hermitian norm form q(w)=h(w,w). Agreement after descent to orbital images remains gap:jr-weil-descent, rather than a second construction of their Weil operators.
 
-**Uses:** `FJ.0/quotients, FJ.0/pushforward, FJ.1/matching-factor`: Contraction is the invariant quotient used to transport ordinary endoscopy.
+## How to read the build
 
-**API:**
+Layer 0 constructs contractions, quotients and fibre integration, then proves the orbital comparison. Layer 1 pulls back the supplied ordinary endoscopic data and proves transfer away from the singular support. Layer 2 builds the full spherical module and compares Satake substitutions. Layer 3 proves the germ and Lie-descent implications and acts on the sum of orbital-image spaces. Layer 4 uses the independent product-group comparison, then the augmented and cyclic results, and finally compact determinant grades to prove the relative lattice-unit theorem. Layer 5 transports the full spherical operator through Hironaka's transform. Supplier gaps are prerequisites of the individual consumers; the product-group proof must not consume the relative lattice-unit theorem.
 
-- `TauCeti.UnitaryFJ.leftContraction` (data): r1(X)=-X X^tau; with standard Gram matrix this is -(X * X.conjTranspose).
+## Layer 0: the symmetric representation and contraction
 
-- `TauCeti.UnitaryFJ.rightContraction` (data): r2(X)=-X^tau X; with standard Gram matrix this is -(X.conjTranspose * X).
+Construct the off-diagonal representation, its invariant quotients and stabilizer identifications; establish local sections and compact fibre integration, then compare relative and ordinary orbital integrals.
 
-- `TauCeti.UnitaryFJ.leftContraction_equivariant` (functoriality): r1(g1 X g2^(-1))=g1 r1(X) g1^(-1); the right version is analogous.
+### 0.1 The off-diagonal unitary representation
 
-- `TauCeti.UnitaryFJ.contraction_swap` (compatibility): r2(X)=r1(X^tau) when W1 and W2 are exchanged.
+For nondegenerate Hermitian E-spaces W1,W2 of the same dimension n, put W=W1 ⊕ W2 and θ=Ad(1,-1). Identify the (-1)-eigenspace in Lie U(W) with Hom_E(W2,W1) by X mapping to the block matrix [[0,X],[-X^τ,0]], where h1(Xv,w)=h2(v,X^τ w). Its fixed-group action is (g1,g2).X=g1 X g2⁻¹. For split E=F×F, write each Hermitian module as M_i⊕M_i* with pairing h((v,ℓ),(w,m))=(ℓ(w),m(v)). Its unitary group is GL(M_i), and a Hom map is represented by paired maps A:M2→M1 and B:M1→M2; the adjoint exchanges the paired maps. This supplies the split model directly from finite-dimensional duality; the field-valued SignedHermitianSpace carrier is used only in the nonsplit case.
 
-- `TauCeti.UnitaryFJ.contraction_zero` (simp): Both contractions send zero to zero.
+F is a nonarchimedean local field of characteristic zero; E/F is a quadratic étale F-algebra (a field extension or F × F). Hermitian forms are conjugate-linear in the first variable and linear in the second.
 
-- `TauCeti.UnitaryFJ.leftContraction_isHermitian` (compatibility): In standard Gram coordinates, leftContraction(X) is Matrix.IsHermitian.
+(Leslie25, Section 2.1, pp. 13–14; Section 1.2, pp. 3–4).
 
-- `TauCeti.UnitaryFJ.rightContraction_isHermitian` (compatibility): In standard Gram coordinates, rightContraction(X) is Matrix.IsHermitian.
+*Needs:* GeometryOfNumbersAndQuadraticArithmetic §2.9; Mathlib `Matrix.conjTranspose`.
 
-- `TauCeti.UnitaryFJ.contractions_charpoly` (compatibility): For a square standard-coordinate X over a commutative star ring, the two signed contractions have the same Matrix.charpoly, by Matrix.charpoly_mul_comm applied to -X and X*.
+A proof route solves the skew-adjoint block equations using the field adjoint for nonsplit E and the displayed dual-pair model for split E. Transport the fixed-group conjugation action through the block identification.
 
-**Unit tests:**
+The construction has the following API.
 
-- `TauCeti.UnitaryFJ.leftContraction_one` (computation): For the standard space, r1(1)=-1.
+- Send X to [[0,X],[-X^τ,0]] in Lie U(W).
+- The top-right projection and the block embedding are inverse F-linear maps between the (-1)-eigenspace and Hom_E(W2,W1).
+- The formula (g1,g2).X=g1 X g2⁻¹ defines an F-linear algebraic representation.
+- The adjoint of g1 X g2⁻¹ is g2 X^τ g1⁻¹.
 
-- `TauCeti.UnitaryFJ.contractions_zero` (degenerate): r1(0)=0=r2(0).
+**Checks.**
 
-- `TauCeti.UnitaryFJ.leftContraction_rankOne` (compatibility): For a one-by-one matrix [z], its only entry is -z*bar(z).
+- For standard rank one, X=1 gives δ=[[0,1],[−1,0]] and δ* = −δ; using a positive lower-left entry would give δ*=δ.
+- In the split model X=(u,v), the two GL_n actions become (gAh⁻¹,hBg⁻¹); for n=1, (g,h)=(2,1) sends (A,B)=(1,1) to (2,1/2), preserving AB=1.
+- For n=2, standard X=diag(1,π) gives δ²=diag(−1,−π²,−1,−π²); the nonsigned off-diagonal model gives the opposite square.
 
-- `TauCeti.UnitaryFJ.contraction_diagonal` (computation): For diagonal X=diag(z_i) in standard coordinates, r1(X)=diag(-z_i*bar(z_i)).
+Its direct consumers are FJ.0/contractions, FJ.1/relative-datum.
 
-**Check:** In dimension one r1(z)=r2(z)=-N_E/F(z).
+### 0.2 The two signed contractions
 
+Define r1(X)=-X X^τ in Herm(W1) and r2(X)=-X^τ X in Herm(W2). Here Herm(Wi) is the space of self-adjoint endomorphisms for hi. Both are F-polynomial maps. r1 is equivariant for U(W1) and invariant under U(W2); r2 has the opposite equivariance. In standard Gram coordinates the formulas use Matrix.conjTranspose, not plain transpose.
 
-### FJ.0/quotients: Invariant quotients of the symmetric representation
+F is a nonarchimedean local field of characteristic zero; E/F is a quadratic étale F-algebra (a field extension or F × F). Hermitian forms are conjugate-linear in the first variable and linear in the second.
 
-**Theorem target.** The morphism r1 realizes Hom_E(W2,W1)//U(W2) as Herm(W1), equivariantly for U(W1). Taking the quotient by both unitary groups gives affine n-space: the quotient map is the n nonleading coefficients of charpoly(r1(X)). These are categorical quotients of F-varieties, not assertions that every F-point has a preimage.
+(Leslie25, Section 2.1, equation (2.1), p. 14).
 
-**Hypotheses and conventions:** F is a nonarchimedean local field of characteristic zero; E/F is a quadratic field extension. Hermitian forms are conjugate-linear in the first variable and linear in the second.
+*Needs:* §0.1 (FJ.0/symmetric-representation); Mathlib `Matrix.IsHermitian`; Mathlib `Matrix.isHermitian_mul_conjTranspose_self`; Mathlib `Matrix.isHermitian_conjTranspose_mul_self`.
 
-**Direct prerequisites:** `FJ.0/contractions`, `SchemeAndStackFoundations:SF.1/galois-descent-affine`, `mathlib:Matrix.charpoly`, `EndoscopicTransferAndUnitaryTraceComparison:ET.2b/chevalley-quotient`.
+One proof route is the following. Apply the adjoint to both products, using the involution and reversed multiplication. Use adjoint_action to verify the two transformation laws.
 
-**Construction or proof:**
+The construction has the following API.
 
-1. After separable base change, E splits and the representation becomes a pair (A,B) with contraction -AB.
+- r1(X)=-X X^τ; with standard Gram matrix this is -(X * X.conjTranspose).
+- r2(X)=-X^τ X; with standard Gram matrix this is -(X.conjTranspose * X).
+- r1(g1 X g2⁻¹)=g1 r1(X) g1⁻¹; the right version is analogous.
+- r2(X)=r1(X^τ) when W1 and W2 are exchanged.
+- Both contractions send zero to zero.
+- In standard Gram coordinates, r1(X) is Matrix.IsHermitian.
+- In standard Gram coordinates, r2(X) is Matrix.IsHermitian.
+- For a square standard-coordinate X over a commutative star ring, the two signed contractions have the same Matrix.charpoly, by Matrix.charpoly_mul_comm applied to -X and X*.
 
-2. Use the split multiplication-map section and its generic transitive fibers in Igusa’s criterion (supplier request SF.1).
+**Checks.**
 
-3. Import the GL_n characteristic-coefficient invariant quotient from ET.2b/chevalley-quotient and transport it along multiplication by a trace-zero scalar between the Hermitian and skew-Hermitian representations. Descend the coordinate-algebra identifications with SF.1/galois-descent-affine.
+- For standard rank-one forms, r1(1)=−1; the positive Gram map would give 1.
+- For W1=⟨1⟩ and W2=⟨ε⟩ with ε a nonnorm, r1(1)=−ε⁻¹ and the nonzero image is −ε⁻¹N(E×), the other norm class from −N(E×).
+- For standard X=diag(1,π), both contractions are diag(−1,−π²), with characteristic polynomial (T+1)(T+π²).
+- For split E=F × F and X=(u,v) in rank one, X^τ=(v,u) and both contractions are −uv; (1,0) maps to zero and is singular.
 
-**Sources:** [Leslie25] Proposition 2.1 and Lemma 2.2, p. 14. One quotient is Hermitian endomorphisms and the full invariant quotient is given by characteristic coefficients.
+Its direct consumers are FJ.0/quotients, FJ.0/regular-invertible, FJ.1/relative-datum, FJ.4/contraction-sign-comparison.
 
-**Check:** For n=1 the full quotient is the scalar -N(z), although its rational image can omit nonnorms.
+### 0.3 Invariant quotients of the symmetric representation
 
+The morphism r1 realizes Hom_E(W2,W1)//U(W2) as Herm(W1), equivariantly for U(W1). Taking the quotient by both unitary groups gives affine n-space: the quotient map is the n nonleading coefficients of charpoly(r1(X)). These are categorical quotients of F-varieties, not assertions that every F-point has a preimage.
 
-### FJ.0/regular-invertible: Regular semisimplicity excludes singular Hom maps
+F is a nonarchimedean local field of characteristic zero; E/F is a quadratic étale F-algebra (a field extension or F × F). Hermitian forms are conjugate-linear in the first variable and linear in the second.
 
-**Theorem target.** For the symmetric representation, regular semisimple means a closed geometric orbit of maximal dimension. An element X is regular semisimple exactly when r1(X) is an invertible regular semisimple Hermitian endomorphism. In particular X is invertible and the stabilizer in U(W1) times U(W2) is a rank-n torus. The off-diagonal block has characteristic polynomial charpoly(r1(X))(T^2).
+(Leslie25, Proposition 2.1 and Lemma 2.2, p. 14).
 
-**Hypotheses and conventions:** F is a nonarchimedean local field of characteristic zero; E/F is a quadratic field extension. Hermitian forms are conjugate-linear in the first variable and linear in the second.
+*Needs:* §0.2 (FJ.0/contractions); SchemeAndStackFoundations §1.24; Mathlib `Matrix.charpoly`; EndoscopicTransferAndUnitaryTraceComparison §3.3.
 
-**Direct prerequisites:** `FJ.0/contractions`, `FJ.0/quotients`, `EndoscopicTransferAndUnitaryTraceComparison:ET.0/unitary-hermitian-matching`, `mathlib:Matrix.charpoly_mul_comm`.
+One proof route is the following. Over a splitting field write the representation as (A,B), with the second GL_n acting by (Ah⁻¹,hB) and signed contraction −AB. On det(B)≠0, invariance gives P(A,B)=P(AB,I) for every invariant polynomial P. Both sides are polynomials, so density extends the identity to all pairs; conversely every polynomial in AB is invariant. The section Z↦(−Z,I) makes pullback injective. This directly identifies the invariant coordinate ring without using Igusa’s criterion. Take the remaining conjugation quotient by EndoscopicTransferAndUnitaryTraceComparison §3.3 and descend the equivariant coordinate-ring isomorphisms by SchemeAndStackFoundations §1.24.
 
-**Construction or proof:**
+**Checks.**
 
-1. In split coordinates identify closed regular orbits with separable nonzero eigenvalues of the product.
+- For rank-one forms ⟨a1⟩,⟨a2⟩, χ(z)=−(a1/a2)N(z). Thus ⟨1⟩,⟨ε⟩ sends 1 to −ε⁻¹, rather than −1.
+- Over the split algebra in rank one, (A,B)=(0,1) and (1,0) have the same invariant 0 but different orbits: a categorical quotient need not classify singular orbits.
+- In rank two the section Z↦(−Z,I) gives −AB=Z, and charpoly(diag(1,π))=(T−1)(T−π); retaining only determinant would lose the trace 1+π.
 
-2. Compute the block characteristic polynomial by a Schur-complement identity; a zero product eigenvalue produces a repeated zero block root.
+### 0.4 Regular semisimplicity excludes singular Hom maps
 
-3. Descend the criterion and use the centralizer description from ET.0.
+For the symmetric representation, regular semisimple means a closed geometric orbit of maximal dimension. An element X is regular semisimple exactly when r1(X) is an invertible regular semisimple Hermitian endomorphism. In particular X is invertible and the stabilizer in U(W1) × U(W2) is a rank-n torus. The off-diagonal block has characteristic polynomial charpoly(r1(X))(T^2).
 
-**Sources:** [Leslie25] Section 2.1 before Proposition 2.1 and Lemma 2.4, pp. 13–15. The closed maximal-dimensional orbits are regular in the block Lie algebra, and the even characteristic polynomial rules out zero eigenvalues.
+F is a nonarchimedean local field of characteristic zero; E/F is a quadratic étale F-algebra (a field extension or F × F). Hermitian forms are conjugate-linear in the first variable and linear in the second.
 
-**Check:** The zero map fails regular semisimplicity for n>0. A diagonal X with distinct nonzero norm squares yields a regular example.
+(Leslie25, Section 2.1 before Proposition 2.1 and Lemma 2.4, pp. 13–15).
 
+*Needs:* §0.2 (FJ.0/contractions); §0.3 (FJ.0/quotients); EndoscopicTransferAndUnitaryTraceComparison §1.17; Mathlib `Matrix.charpoly_mul_comm`.
 
-### FJ.0/torsor: The contraction torsor and rational-class kernels
+One proof route is the following. In split coordinates identify closed regular orbits with separable nonzero eigenvalues of the product. Compute the block characteristic polynomial by a Schur-complement identity; a zero product eigenvalue produces a repeated zero block root. Descend the criterion and use the centralizer description from EndoscopicTransferAndUnitaryTraceComparison §§1.1, 1.14, 1.17.
 
-**Theorem target.** On invertible Hom maps, r1 is a U(W2)-torsor as a morphism of F-varieties over Herm(W1)^invertible. On F-points its image is the open-and-closed norm-form component Omega(W1,W2); no rational surjectivity onto all invertible Hermitian endomorphisms is asserted. At X, projection (g1,g2) to g1 identifies H_X with T_r1(X); its inverse sends t to (t,X^(-1)tX). For regular semisimple X it induces D(H_X,U(W1) times U(W2);F) isomorphic to D(T_r1(X),U(W1);F), compatibly with inv and the rational orbits inside a stable class.
+**Checks.**
 
-**Hypotheses and conventions:** F is a nonarchimedean local field of characteristic zero; E/F is a quadratic field extension. Hermitian forms are conjugate-linear in the first variable and linear in the second.
+- In rank one, r=−N(z) and charpoly δ=T²+N(z); z=0 gives T² and is not regular semisimple.
+- For standard X=diag(1,π), charpoly r=(T+1)(T+π²) and charpoly δ=(T²+1)(T²+π²); both eigenvalues of r are distinct and nonzero.
+- In the split rank-two model A=diag(1,0), B=I gives charpoly δ=T²(T²+1). Although −AB has distinct eigenvalues, its zero eigenvalue prevents symmetric regular semisimplicity.
 
-**Direct prerequisites:** `FJ.0/regular-invertible`, `EndoscopicTransferAndUnitaryTraceComparison:ET.0/crossed-module-galois-cohomology`, `EndoscopicTransferAndUnitaryTraceComparison:ET.0/abelianized-cohomology`, `EndoscopicTransferAndUnitaryTraceComparison:ET.0/unitary-hermitian-matching`, `EndoscopicTransferAndUnitaryTraceComparison:ET.0/rational-classes-in-stable-class`, `GeometryOfNumbersAndQuadraticArithmetic:GN.2/hermitian-space-classification`.
+### 0.5 The contraction torsor and rational-class kernels
 
-**Construction or proof:**
+On invertible Hom maps, r1 is a U(W2)-torsor as a morphism of F-varieties over Herm(W1)^invertible. On F-points its image is the open-and-closed norm-form component Ω(W1,W2); no rational surjectivity onto all invertible Hermitian endomorphisms is asserted. At X, projection (g1,g2) to g1 identifies H_X with T_r1(X); its inverse sends t to (t,X⁻¹tX). For regular semisimple X it induces D(H_X,U(W1) × U(W2);F) isomorphic to D(T_r1(X),U(W1);F), compatibly with inv and the rational orbits inside a stable class.
 
-1. Check the geometric fibers are free transitive right U(W2)-orbits, then descend the torsor.
+F is a nonarchimedean local field of characteristic zero; E/F is a quadratic étale F-algebra (a field extension or F × F). Hermitian forms are conjugate-linear in the first variable and linear in the second.
 
-2. Solve tX=Xg2 to obtain the inverse stabilizer map.
+(Leslie25, Lemma 2.3, p. 15; Leslie19 Lemmas 3.6 and 3.9, pp. 12–13; Leslie19, Lemmas 3.6 and 3.9, pp. 12–13).
 
-3. Use the determinant description of unitary H1 to identify the two kernel conditions; the two component obstruction maps agree on H1(H_X).
+*Needs:* §0.4 (FJ.0/regular-invertible); EndoscopicTransferAndUnitaryTraceComparison §1.1; EndoscopicTransferAndUnitaryTraceComparison §1.5; EndoscopicTransferAndUnitaryTraceComparison §1.17; EndoscopicTransferAndUnitaryTraceComparison §1.14; gap:hermitian-field-classification.
 
-**Sources:** [Leslie25] Lemma 2.3, p. 15; Leslie19 Lemmas 3.6 and 3.9, pp. 12–13. The source supplies the torsor, stabilizer projection and the equality of cohomological rational-class kernels.; [Leslie19] Lemmas 3.6 and 3.9, pp. 12–13. The earlier paper proves the stabilizer and kernel comparison explicitly.
+One proof route is the following. Check the geometric fibers are free transitive right U(W2)-orbits, then descend the torsor. Solve tX=Xg2 to obtain the inverse stabilizer map. Use the determinant description of unitary H1 to identify the two kernel conditions; the two component obstruction maps agree on H1(H_X).
 
-**Check:** For n=1 the F-point image is one norm coset, although the geometric torsor is surjective. The induced map preserves the neutral rational orbit.
+**Checks.**
 
+- For unramified standard rank one, −N(E×) consists of even valuations: −1 has a lift and −π does not, though the algebraic quotient is surjective after separable closure.
+- For rank one with W2=⟨ε⟩, r(1)=−ε⁻¹. The fibre is the translate of U(1), and the inverse stabilizer map t↦(t,t) projects back to t.
+- In the split rank-one case, r(u,v)=−uv and the fibre over T≠0 is {(u,−T/u):u∈F×}; the action of F× is free and transitive.
 
-### FJ.0/relative-orbital-integral: Relative orbital integrals
+### 0.6 Local sections, fibre integration and invariant cutoffs
 
-**Definition target.** For f in C_c^infinity(Hom_E(W2,W1)), regular semisimple X, Haar measures dh1,dh2 and dt on H_X, define RO(f,X)=integral over H_X\(U(W1) times U(W2)) of f(h1^(-1) X h2) with quotient measure determined by dt and dh1 dh2. The integral is absolutely convergent. The torus measure is identified with the contraction centralizer measure through the specified projection.
+For the contraction torsor r:Iso_E(W2,W1)(F)→Ω(W1,W2), every point of Ω has a neighbourhood admitting an analytic section, and integration over the right U(W2)(F)-fibres maps compact locally constant tests onto C_c^∞(Ω). For every closed regular orbit O and every f in C_c^∞(Hom_E(W2,W1)), there is a compact nonsingular test equal to f on an open neighbourhood of O.
 
-**Hypotheses and conventions:** F is a nonarchimedean local field of characteristic zero; E/F is a quadratic field extension. Hermitian forms are conjugate-linear in the first variable and linear in the second.
+F is a nonarchimedean local field of characteristic zero; E/F is a quadratic étale F-algebra (a field extension or F × F). Hermitian forms are conjugate-linear in the first variable and linear in the second.
 
-**Direct prerequisites:** `FJ.0/torsor`, `AdelicAlgebraicGroups:AA.2/quotient-measure`, `AdelicAlgebraicGroups:AA.2/quotient-integral-integrable`, `EndoscopicTransferAndUnitaryTraceComparison:ET.1`.
+(Leslie25, Section 2.1, p. 16, before Lemma 2.5; Leslie19, Appendix A, Proposition A.3, pp. 25–26).
 
-**Construction or proof:**
+*Needs:* §0.5 (FJ.0/torsor); §0.3 (FJ.0/quotients); §0.4 (FJ.0/regular-invertible); ReductiveGroupsPartII §RG2.0 (smooth-group-analytic-charts); Mathlib `HasStrictFDerivAt.implicitFunction`; AdelicAlgebraicGroups §2.2 (quotient-measure).
 
-1. Form the invariant quotient measure using the imported modular condition and specify dt.
+One proof route is the following. In smooth local coordinates the torsor projection has surjective differential; choose a linear complement to its kernel and apply the implicit function theorem. This constructs local analytic sections on the F-point image, including the split algebra. Cover the compact support of a target test by finitely many compact open trivializing sets; refine to disjoint compact open pieces. On each product chart lift using a compact open fibre subgroup J and the test 1_J/vol(J). Haar measure gives 0<vol(J)<∞, so the fibre integral is exactly the target test. Let χ be the full invariant quotient and choose a compact open B containing χ(O) inside the locus where the contracted characteristic polynomial is separable with nonzero constant coefficient. Then U=χ⁻¹(B) is clopen, lies in the nonsingular locus by regular-invertible, and f·1_U is the required compact test. U itself need not be compact.
 
-2. Obtain convergence from the closed regular orbit and compact support; transport the regular-orbit measure, as requested from ET.1.
+**Checks.**
 
-**Sources:** [Leslie25] Equation (2.3), p. 15; Section 1.5.4, pp. 11–12. The integral is over the relative stabilizer quotient with fixed compatible Haar measures.
+- For unramified standard rank one, f=1_OE and B=OF× on the scalar invariant base give U=OE× and f·1_U=1_OE×. Its fibre integral is 1_OF× when vol U(1)=1.
+- On a product chart B×J, the lift h(b)1_J(u)/vol(J) integrates to h(b)vol(J)/vol(J)=h(b); omitting the denominator rescales the answer if vol(J)=2.
+- With the same rank-one f, cutting by determinant a unit removes 0 and retains the entire orbit r=−1. The uncut support OE is not compact as a subset of E× because it contains 0.
 
-**Uses:** `FJ.1/kappa-orbital-integral and FJ.4/unit-fundamental-lemma`: Transfer compares stable and weighted sums of these quotient integrals.
+### 0.7 Relative orbital integrals
 
-**API:**
+For f in C_c^∞(Hom_E(W2,W1)), regular semisimple X, Haar measures dh1,dh2 and dt on H_X, define RO(f,X)=integral over the left coset space of H_X in U(W1) × U(W2) of f(h1⁻¹ X h2) with quotient measure determined by dt and dh1 dh2. The integral is absolutely convergent. The torus measure is identified with the contraction centralizer measure through the specified projection.
 
-- `TauCeti.UnitaryFJ.relativeOrbitalIntegral` (data): The displayed quotient integral with the supplied Haar measures.
+F is a nonarchimedean local field of characteristic zero; E/F is a quadratic étale F-algebra (a field extension or F × F). Hermitian forms are conjugate-linear in the first variable and linear in the second.
 
-- `TauCeti.UnitaryFJ.relativeOrbitalIntegral_add` (structure): RO is a complex-linear functional in f.
+(Leslie25, Equation (2.3), p. 15; Section 1.5.4, pp. 11–12).
 
-- `TauCeti.UnitaryFJ.relativeOrbitalIntegral_conjugate` (compatibility): Replacing X by g1 X g2^(-1), and transporting its centralizer measure, leaves RO unchanged.
+*Needs:* §0.5 (FJ.0/torsor); AdelicAlgebraicGroups §2.2 (quotient-measure); AdelicAlgebraicGroups §2.2 (Weil-integrable); EndoscopicTransferAndUnitaryTraceComparison §2.1; EndoscopicTransferAndUnitaryTraceComparison §2.4; EndoscopicTransferAndUnitaryTraceComparison §2.9; EndoscopicTransferAndUnitaryTraceComparison §2.11; §0.6 (FJ.0/fibre-integration).
 
-- `TauCeti.UnitaryFJ.relativeOrbitalIntegral_rescale` (compatibility): Rescaling dh1,dh2,dt by c1,c2,cT rescales RO by c1*c2/cT.
+One proof route is the following. Form the invariant quotient measure using the imported modular condition and specify dt. Obtain convergence from the closed regular orbit and compact support; transport the regular-orbit measure, using EndoscopicTransferAndUnitaryTraceComparison §§2.1, 2.4, 2.9, 2.11.
 
-**Unit tests:**
+The construction has the following API.
 
-- `TauCeti.UnitaryFJ.relativeOrbitalIntegral_zero` (degenerate): RO(0,X)=0.
+- The displayed quotient integral with the supplied Haar measures.
+- RO is a complex-linear functional in f.
+- Replacing X by g1 X g2⁻¹, and transporting its centralizer measure, leaves RO unchanged.
+- Rescaling dh1,dh2,dt by c1,c2,cT rescales RO by c1*c2/cT.
 
-- `TauCeti.UnitaryFJ.relativeOrbitalIntegral_torus_unit` (computation): For n=1, unramified E/F, standard forms, unit x, vol U(1)=1 and f=1_OE, RO(f,x)=1.
+**Checks.**
 
-- `TauCeti.UnitaryFJ.relativeOrbitalIntegral_measure` (compatibility): Keeping group measures fixed and doubling the stabilizer measure divides RO by two.
+- For unramified standard rank one and unit X, RO(1_OE,X)=1 with vol U(1)=1; the zero functional would give 0.
+- Keeping group Haar measures fixed and doubling the stabilizer measure changes that value from 1 to 1/2.
+- In the same example, multiply the two group measures by 2 and 3 and the stabilizer measure by 4: the value becomes 6/4=3/2.
 
-**Check:** Changing dt by c multiplies RO by c^(-1).
+Its direct consumers are FJ.0/orbital-comparison, FJ.1/kappa-orbital-integral.
 
+### 0.8 Orbital pushforward along contraction
 
-### FJ.0/pushforward: Orbital pushforward along contraction
+For T=r1(X) in Ω(W1,W2), set r_!f(T)=integral over U(W2) of f(Xu) du. It is independent of X and is zero off Ω in the invertible Hermitian locus. For f supported compactly in the invertible Hom locus, r_!f is a compactly supported locally constant function on that locus. For arbitrary f on all Hom maps it is only locally constant on the invertible locus with relatively compact support in the ambient Hermitian space; it need not be compactly supported within the invertible locus. The map on compact nonsingular tests is onto C_c^∞(Ω).
 
-**Construction target.** For T=r1(X) in Omega(W1,W2), set r_!f(T)=integral over U(W2) of f(Xu) du. It is independent of X and is zero off Omega in the invertible Hermitian locus. For f supported compactly in the invertible Hom locus, r_!f is a compactly supported locally constant function on that locus. For arbitrary f on all Hom maps it is only locally constant on the invertible locus with relatively compact support in the ambient Hermitian space; it need not be compactly supported within the invertible locus. The map on compact nonsingular tests is onto C_c^infinity(Omega).
+F is a nonarchimedean local field of characteristic zero; E/F is a quadratic étale F-algebra (a field extension or F × F). Hermitian forms are conjugate-linear in the first variable and linear in the second.
 
-**Hypotheses and conventions:** F is a nonarchimedean local field of characteristic zero; E/F is a quadratic field extension. Hermitian forms are conjugate-linear in the first variable and linear in the second.
+(Leslie25, Equation (2.4) and discussion, p. 16; Leslie19 Section 3.2, pp. 12–13; Leslie19, Section 3.2, pp. 12–13; Leslie19, Appendix A, Proposition A.3, pp. 25–26).
 
-**Direct prerequisites:** `FJ.0/torsor`, `AdelicAlgebraicGroups:AA.2/quotient-measure`, `AdelicAlgebraicGroups:AA.2/quotient-integral-integrable`.
+*Needs:* §0.5 (FJ.0/torsor); AdelicAlgebraicGroups §2.2 (quotient-measure); AdelicAlgebraicGroups §2.2 (Weil-integrable); §0.6 (FJ.0/fibre-integration).
 
-**Construction or proof:**
+One proof route is the following. Use the torsor to compare two lifts by right multiplication and Haar invariance. Use local analytic sections and a compact partition of unity to prove local constancy and surjectivity on Ω. For arbitrary f use an orbitwise compact cutoff before applying the nonsingular assertion; apply fibre-integration.
 
-1. Use the torsor to compare two lifts by right multiplication and Haar invariance.
+The construction has the following API.
 
-2. Use local analytic sections and a compact partition of unity to prove local constancy and surjectivity on Omega.
+- Integrate over the right-unitary fiber and extend by zero outside its F-point image.
+- At T=r1(X), the value is integral_U(W2) f(Xu) du, independently of the chosen lift.
+- Fiber integration is complex-linear.
+- For compact nonsingular support, support(r_!f) is contained in r1(support f), a compact subset of the invertible locus.
+- Every compact locally constant function on Ω has a compact nonsingular lift.
 
-3. For arbitrary f use an orbitwise compact cutoff before applying the nonsingular assertion; request the local-section/cutoff input.
+**Checks.**
 
-**Sources:** [Leslie25] Equation (2.4) and discussion, p. 16; Leslie19 Section 3.2, pp. 12–13. Fiber integration works on the norm-form image and preserves compact support only with support away from singular maps.; [Leslie19] Section 3.2, pp. 12–13. The distinction between compact support on the nonsingular locus and ambient relative compactness is explicit.; [Leslie19] Appendix A, Proposition A.3, pp. 25–26. Torsor pushforward from the sum over twists is onto the compact test functions on the base.
+- For unramified rank one and f=1_OE, r_!f(t)=1 if v_F(-t) is even and nonnegative, and is zero otherwise, with vol U(1)=1.
+- That rank-one pushforward is not compactly supported in F^×; its support accumulates at zero in F.
+- For rank one and f=1_OE^×, the pushforward is the indicator of OF^×, since -1 is an integral norm in the unramified case.
 
-**Uses:** `FJ.0/orbital-comparison and FJ.4/contracted-lattice-function`: It turns the relative orbital integrals and the lattice unit into Hermitian functions.
+Its direct consumers are FJ.0/orbital-comparison, FJ.1/nonsingular-transfer, FJ.4/contraction-sign-comparison, FJ.4/spherical-pushforward, FJ.4/contracted-lattice-function.
 
-**API:**
+### 0.9 Contraction preserves the orbital integral
 
-- `TauCeti.UnitaryFJ.contractionPushforward` (constructor): Integrate over the right-unitary fiber and extend by zero outside its F-point image.
+For regular semisimple X and every compact locally constant f on the full Hom space, RO(f,X)=Orb(r_!f,r1(X)), with the torus measure transported by the stabilizer projection. The right integral converges even when r_!f is not compactly supported on the entire invertible locus. The comparison extends termwise to stable and κ sums via the kernel bijection.
 
-- `TauCeti.UnitaryFJ.contractionPushforward_lift` (characterisation): At T=r1(X), the value is integral_U(W2) f(Xu) du, independently of the chosen lift.
+F is a nonarchimedean local field of characteristic zero; E/F is a quadratic étale F-algebra (a field extension or F × F). Hermitian forms are conjugate-linear in the first variable and linear in the second.
 
-- `TauCeti.UnitaryFJ.contractionPushforward_linear` (structure): Fiber integration is complex-linear.
+(Leslie25, Lemma 2.5, p. 16).
 
-- `TauCeti.UnitaryFJ.contractionPushforward_support` (other): For compact nonsingular support, support(r_!f) is contained in r1(support f), a compact subset of the invertible locus.
+*Needs:* §0.8 (FJ.0/pushforward); §0.7 (FJ.0/relative-orbital-integral); §0.5 (FJ.0/torsor); AdelicAlgebraicGroups §2.2 (quotient-measures-in-stages); EndoscopicTransferAndUnitaryTraceComparison §2.1; EndoscopicTransferAndUnitaryTraceComparison §2.4; EndoscopicTransferAndUnitaryTraceComparison §2.9; EndoscopicTransferAndUnitaryTraceComparison §2.11; §0.6 (FJ.0/fibre-integration).
 
-- `TauCeti.UnitaryFJ.contractionPushforward_surjective` (universal-property): Every compact locally constant function on Omega has a compact nonsingular lift.
+One proof route is the following. Apply quotient integration in stages through the right-unitary fiber and the projected centralizer. For an arbitrary f choose a compact nonsingular cutoff with the same values on the regular orbit in question. Use the kernel comparison for the finite stable-class sums.
 
-**Unit tests:**
+**Checks.**
 
-- `TauCeti.UnitaryFJ.contractionPushforward_zero` (degenerate): r_!(0)=0.
+- For unramified standard rank one and unit X, RO(1_OE,X)=1=Orb(r_!1_OE,−N(X)).
+- At X=π⁻¹ both sides for 1_OE are 0, since v(N(X))=−2; at X=π both sides are 1.
+- Doubling the transported torus measure makes both unit-orbit values 1/2; keeping only one of the two torus measures unchanged would give 1/2≠1.
 
-- `TauCeti.UnitaryFJ.contractionPushforward_rankOne` (computation): For unramified rank one and f=1_OE, r_!f(t)=1 if v_F(-t) is even and nonnegative, and is zero otherwise, with vol U(1)=1.
+### Examples
 
-- `TauCeti.UnitaryFJ.contractionPushforward_no_false_compactness` (non-example): That rank-one pushforward is not compactly supported in F^times; its support accumulates at zero in F.
+For standard rank one, X=1 gives δ=[[0,1],[−1,0]] and δ* = −δ; using a positive lower-left entry would give δ*=δ. The other subsections compute the corresponding boundary cases and normalization witnesses.
 
-- `TauCeti.UnitaryFJ.contractionPushforward_unitShell` (computation): For rank one and f=1_OE^times, the pushforward is the indicator of OF^times, since -1 is an integral norm in the unramified case.
+### Dependencies
 
-**Check:** For n=1 the unrestricted unit-lattice pushforward has infinitely many even nonnegative determinant degrees.
+GeometryOfNumbersAndQuadraticArithmetic §2.9; Mathlib `Matrix.conjTranspose`; Mathlib `Matrix.IsHermitian`; Mathlib `Matrix.isHermitian_mul_conjTranspose_self`; Mathlib `Matrix.isHermitian_conjTranspose_mul_self`; SchemeAndStackFoundations §1.24; Mathlib `Matrix.charpoly`; EndoscopicTransferAndUnitaryTraceComparison §3.3; EndoscopicTransferAndUnitaryTraceComparison §1.17; Mathlib `Matrix.charpoly_mul_comm`; EndoscopicTransferAndUnitaryTraceComparison §1.1; EndoscopicTransferAndUnitaryTraceComparison §1.5; EndoscopicTransferAndUnitaryTraceComparison §1.14; gap:hermitian-field-classification; ReductiveGroupsPartII §RG2.0 (smooth-group-analytic-charts); Mathlib `HasStrictFDerivAt.implicitFunction`; AdelicAlgebraicGroups §2.2 (quotient-measure); AdelicAlgebraicGroups §2.2 (Weil-integrable); EndoscopicTransferAndUnitaryTraceComparison §2.1; EndoscopicTransferAndUnitaryTraceComparison §2.4; EndoscopicTransferAndUnitaryTraceComparison §2.9; EndoscopicTransferAndUnitaryTraceComparison §2.11; AdelicAlgebraicGroups §2.2 (quotient-measures-in-stages).
 
-**Direct open obligations:** G1.
+## Layer 1: relative endoscopic data and transfer
 
+Transport ordinary endoscopic data through contraction, keeping form labels, characters, rational-orbit corrections and unmatched vanishing. Existence is proved for compact support in the invertible Hom locus.
 
-### FJ.0/orbital-comparison: Contraction preserves the orbital integral
+### 1.1 Relative endoscopic data and symmetric spaces
 
-**Theorem target.** For regular semisimple X and every compact locally constant f on the full Hom space, RO(f,X)=Orb(r_!f,r1(X)), with the torus measure transported by the stabilizer projection. The right integral converges even when r_!f is not compactly supported on the entire invertible locus. The comparison extends termwise to stable and kappa sums via the kernel bijection.
+For n=a+b with a,b positive, a relative datum Xi consists of an ordinary elliptic endoscopic datum (U(Va) × U(Vb),s,ξ) for U(W1), together with Hermitian forms alpha on E^a and beta on E^b. Its symmetric representation is Hom_E(V_alpha,Va) ⊕ Hom_E(V_beta,Vb), with acting group (U(Va) × U(V_alpha)) × (U(Vb) × U(V_beta)). The reference spaces Va,Vb and the varying spaces V_alpha,V_beta are retained separately even if their unitary groups happen to be isomorphic. For split E=F × F there is one Hermitian isometry class in each rank, U(W)=GL_n, and no proper elliptic datum of this block shape with a,b>0; the algebraic construction is interpreted only for an existing ordinary datum.
 
-**Hypotheses and conventions:** F is a nonarchimedean local field of characteristic zero; E/F is a quadratic field extension. Hermitian forms are conjugate-linear in the first variable and linear in the second.
+F is a nonarchimedean local field of characteristic zero; E/F is a quadratic étale F-algebra (a field extension or F × F). Hermitian forms are conjugate-linear in the first variable and linear in the second. An ordinary elliptic datum of the displayed block shape exists; a,b>0.
 
-**Direct prerequisites:** `FJ.0/pushforward`, `FJ.0/relative-orbital-integral`, `FJ.0/torsor`, `AdelicAlgebraicGroups:AA.2/quotient-measure-transitivity`, `EndoscopicTransferAndUnitaryTraceComparison:ET.1`.
+(Leslie25, Section 2.3, p. 20).
 
-**Construction or proof:**
+*Needs:* §0.1 (FJ.0/symmetric-representation); §0.2 (FJ.0/contractions); EndoscopicTransferAndUnitaryTraceComparison §1.4; gap:hermitian-field-classification; EndoscopicTransferAndUnitaryTraceComparison §1.17.
 
-1. Apply quotient integration in stages through the right-unitary fiber and the projected centralizer.
+One proof route is the following. Import the ordinary datum and local Hermitian isometry classes. Apply symmetric-representation separately in ranks a and b; use the product contraction r_alpha,beta.
 
-2. For an arbitrary f choose a compact nonsingular cutoff with the same values on the regular orbit in question.
+The construction has the following API.
 
-3. Use the kernel comparison for the finite stable-class sums.
+- Construct Xi from the ordinary datum and representatives alpha,beta of Hermitian isometry classes.
+- The associated representation is Hom(V_alpha,Va) ⊕ Hom(V_beta,Vb).
+- Return (r1(δ_a),r1(δ_b)) in Herm(Va) ⊕ Herm(Vb).
+- Isometries of alpha or beta induce equivariant linear isomorphisms of the symmetric representations and preserve contraction.
 
-**Sources:** [Leslie25] Lemma 2.5, p. 16. Relative fiber integration and the stabilizer isomorphism give the ordinary orbital integral.
+**Checks.**
 
-**Check:** The rank-one unit test gives one on both sides. No global compactness of r_!f is used.
+- For a=b=1 over a quadratic field extension, the labels (1,1),(1,ε),(ε,1),(ε,ε) give four pairs in (F×/N(E×))².
+- At reference labels the target is End(Va)⊕End(Vb). At a=b=1 and β=ε its second contraction at 1 is −ε⁻¹, so replacing the form label by the abstract group loses data.
+- For E=F×F there is one form class and U(W)=GL_n. The centre of GL_a×GL_b has dimension 2, while that of GL_n has dimension 1; hence a,b>0 gives no elliptic block datum.
 
-**Direct open obligations:** G1.
+Its direct consumers are FJ.1/matching-factor.
 
+### 1.2 Relative matching and the pullback factor
 
-## FJ.1. Relative endoscopic matching
+Regular semisimple δ and (δ_a,δ_b) match for Xi exactly when r1(δ) and (r1(δ_a),r1(δ_b)) match under the ordinary Hermitian endoscopic relation. Define Δ_rel by evaluating the EndoscopicTransferAndUnitaryTraceComparison §§2.1, 2.4, 2.9, 2.11 normalized factor on that contracted pair, and zero on nonmatching pairs. The associated character κ on D(H_δ/F) is the pullback, through the contraction kernel isomorphism, of the ordinary character trivial on a-components and nontrivial on b-components.
 
-Construct relative endoscopic data, their infinitesimal symmetric spaces, contraction-defined matching and transfer factors, finite kappa-weighted orbital sums, and the transfer relation including zero on unmatched orbits. Establish transfer for functions supported away from the singular locus. State the contraction-independence comparison with its required normalization transport.
+F is a nonarchimedean local field of characteristic zero; E/F is a quadratic étale F-algebra (a field extension or F × F). Hermitian forms are conjugate-linear in the first variable and linear in the second.
 
-**Dependencies:** `FJ.0`, `EndoscopicTransferAndUnitaryTraceComparison:ET.1`, `EndoscopicTransferAndUnitaryTraceComparison:ET.3`.
+(Leslie25, Section 2.3, p. 20; Sections 2.2.2–2.2.3, pp. 18–19).
 
-**Coverage:** `planned`. G2: nonisometric contraction-exchange normalization. Resolve FJ.0/G1 and the ordinary smooth-transfer export requested from ET.3.
+*Needs:* §1.1 (FJ.1/relative-datum); §0.5 (FJ.0/torsor); EndoscopicTransferAndUnitaryTraceComparison §1.17; EndoscopicTransferAndUnitaryTraceComparison §2.1; EndoscopicTransferAndUnitaryTraceComparison §2.4; EndoscopicTransferAndUnitaryTraceComparison §2.9; EndoscopicTransferAndUnitaryTraceComparison §2.11; gap:unitary-factor-all-quadratic.
 
-**Planets:** Relative endoscopic datum; Relative transfer factor; Relative kappa orbital integrals; Relative smooth transfer.
+One proof route is the following. Use the ordinary matching and factor exported by EndoscopicTransferAndUnitaryTraceComparison §§1.1, 1.14, 1.17 and EndoscopicTransferAndUnitaryTraceComparison §§2.1, 2.4, 2.9, 2.11. Pull back the factor along the pair of contractions and the character along torsor. For nicely matching contractions the reference factor is η(resultant)*absolute-value(resultant), with the EndoscopicTransferAndUnitaryTraceComparison §§2.1, 2.4, 2.9, 2.11 inv correction otherwise.
 
+The construction has the following API.
 
-### FJ.1/relative-datum: Relative endoscopic data and symmetric spaces
+- Relative matching is ordinary matching of the two contractions, with source regularity and cross-block disjoint spectra.
+- Δ_rel(δ_H,δ)=Delta(r_alpha,beta(δ_H),r1(δ)).
+- Pull back the EndoscopicTransferAndUnitaryTraceComparison §§1.1, 1.14, 1.17 endoscopic character to D(H_δ/F).
+- Changing the source rational orbit multiplies the factor by the ordinary κ(inv) correction, in the fixed EndoscopicTransferAndUnitaryTraceComparison §§2.1, 2.4, 2.9, 2.11 orientation.
 
-**Definition target.** For n=a+b with a,b positive, a relative datum Xi consists of an ordinary elliptic endoscopic datum (U(Va) times U(Vb),s,xi) for U(W1), together with Hermitian forms alpha on E^a and beta on E^b. Its symmetric representation is Hom_E(V_alpha,Va) direct-sum Hom_E(V_beta,Vb), with acting group (U(Va) times U(V_alpha)) times (U(Vb) times U(V_beta)). The reference spaces Va,Vb and the varying spaces V_alpha,V_beta are retained separately even if their unitary groups happen to be isomorphic.
+**Checks.**
 
-**Hypotheses and conventions:** F is a nonarchimedean local field of characteristic zero; E/F is a quadratic field extension. Hermitian forms are conjugate-linear in the first variable and linear in the second.
+- For a=b=1 with distinct nonzero contracted scalars x,y and a nice match, Δ=η(x−y)|x−y|_F. If E/F is unramified and x−y=π, this is −q⁻¹, including q=2.
+- For two blocks whose characteristic polynomials do not multiply to the source polynomial, matching fails and Δ=0 even if each block is separately regular.
+- For x−y a unit in the unramified case, Δ=1; for x=y the cross-resultant is zero and the pair is outside the G-regular domain, so the nonzero formula is not invoked.
 
-**Direct prerequisites:** `FJ.0/symmetric-representation`, `FJ.0/contractions`, `EndoscopicTransferAndUnitaryTraceComparison:ET.0/unitary-elliptic-endoscopic-data`, `GeometryOfNumbersAndQuadraticArithmetic:GN.2/hermitian-space-classification`.
+Its direct consumers are FJ.1/kappa-orbital-integral, FJ.1/smooth-transfer.
 
-**Construction or proof:**
+### 1.3 Stable and weighted relative orbital sums
 
-1. Import the ordinary datum and local Hermitian isometry classes.
+For a regular semisimple δ in the fixed symmetric representation and a character κ of D(H_δ/F), set RO^κ(f,δ)=sum over rational orbits δ_prime in its stable class of κ(inv(δ,δ_prime))*RO(f,δ_prime). Use inv transported from contraction with the EndoscopicTransferAndUnitaryTraceComparison §§1.1, 1.14, 1.17 orientation. SRO is the case κ=1. The sum ranges over the fixed symmetric space, not over all pure inner forms.
 
-2. Apply symmetric-representation separately in ranks a and b; use the product contraction r_alpha,beta.
+F is a nonarchimedean local field of characteristic zero; E/F is a quadratic étale F-algebra (a field extension or F × F). Hermitian forms are conjugate-linear in the first variable and linear in the second.
 
-**Sources:** [Leslie25] Section 2.3, p. 20. Ordinary elliptic data are enriched by two Hermitian source forms; each summand is a new symmetric representation.
+(Leslie25, Section 2.3.1, p. 20).
 
-**Uses:** `FJ.1/matching-factor and FJ.4/unit-fundamental-lemma`: The form labels determine both relative matching and which target unit is nonzero.
+*Needs:* §0.7 (FJ.0/relative-orbital-integral); §0.5 (FJ.0/torsor); EndoscopicTransferAndUnitaryTraceComparison §1.14; §1.2 (FJ.1/matching-factor); EndoscopicTransferAndUnitaryTraceComparison §2.4.
 
-**API:**
+One proof route is the following. Use the rational-class kernel to index the finite sum. Transport the centralizer measure consistently to each class and use ordinary inv functoriality.
 
-- `TauCeti.UnitaryFJ.RelativeDatum` (constructor): Construct Xi from the ordinary datum and representatives alpha,beta of Hermitian isometry classes.
+The construction has the following API.
 
-- `TauCeti.UnitaryFJ.RelativeDatum.symmetricSpace` (projection): The associated representation is Hom(V_alpha,Va) direct-sum Hom(V_beta,Vb).
+- Sum RO over the finite D(H_δ/F)-torsor with the character weights.
+- Set κ to the trivial character.
+- The weighted sum is complex-linear in the test function.
+- Transport the basepoint-change law from EndoscopicTransferAndUnitaryTraceComparison §2.4 through the contraction kernel isomorphism: a shift d₀ multiplies the weighted sum by κ(d₀)⁻¹.
 
-- `TauCeti.UnitaryFJ.RelativeDatum.contraction` (projection): Return (r1(delta_a),r1(delta_b)) in Herm(Va) direct-sum Herm(Vb).
+**Checks.**
 
-- `TauCeti.UnitaryFJ.RelativeDatum.isometry_transport` (functoriality): Isometries of alpha or beta induce equivariant linear isomorphisms of the symmetric representations and preserve contraction.
+- For κ=1 the sum equals SRO.
+- For a stable class with D=C2 and RO-values A,B, the nontrivial character gives A-B.
+- In the same C2 example, changing the base orbit interchanges A,B and changes the weighted sum to B-A.
 
-**Unit tests:**
+Its direct consumers are FJ.1/smooth-transfer.
 
-- `TauCeti.UnitaryFJ.RelativeDatum_rankTwo` (computation): For n=2,a=b=1, the four form pairs are distinct relative data over the same ordinary datum.
+### 1.4 The relative smooth-transfer relation
 
-- `TauCeti.UnitaryFJ.RelativeDatum_standard` (compatibility): When alpha=Ia,beta=Ib, the Hom spaces identify with End(Va) direct-sum End(Vb).
+A compact locally constant source function f and a compact locally constant target function f_Xi are transfers if SRO(f_Xi,δ_H)=Δ_rel(δ_H,δ)*RO^κ(f,δ) for every matching regular pair, and SRO(f_Xi,δ_H)=0 for every target regular orbit having no source match. This is a relation on functions and a well-defined correspondence of orbital-integral classes; no preferred representative is selected.
 
-- `TauCeti.UnitaryFJ.RelativeDatum_innerForm_matters` (non-example): In odd rank two nonisometric Hermitian spaces with isomorphic unitary groups still give different form labels in Xi.
+F is a nonarchimedean local field of characteristic zero; E/F is a quadratic étale F-algebra (a field extension or F × F). Hermitian forms are conjugate-linear in the first variable and linear in the second.
 
-**Check:** For a=b=1 there are four pairs of Hermitian isometry classes, with the same ordinary endoscopic group.
+(Leslie25, Definition 2.10, p. 21).
 
+*Needs:* §1.2 (FJ.1/matching-factor); §1.3 (FJ.1/κ-orbital-integral); §0.9 (FJ.0/orbital-comparison).
 
-### FJ.1/matching-factor: Relative matching and the pullback factor
+One proof route is the following. Use the finite orbital sums and the transported factor; prove the identity is independent of source rational representative. Retain the unmatched clause as a separate quantified condition.
 
-**Construction target.** Regular semisimple delta and (delta_a,delta_b) match for Xi exactly when r1(delta) and (r1(delta_a),r1(delta_b)) match under the ordinary Hermitian endoscopic relation. Define Delta_rel by evaluating the ET.1 normalized factor on that contracted pair, and zero on nonmatching pairs. The associated character kappa on D(H_delta/F) is the pullback, through the contraction kernel isomorphism, of the ordinary character trivial on a-components and nontrivial on b-components.
+The construction has the following API.
 
-**Hypotheses and conventions:** F is a nonarchimedean local field of characteristic zero; E/F is a quadratic field extension. Hermitian forms are conjugate-linear in the first variable and linear in the second.
+- The relation is the conjunction of the matching equality and the unmatched vanishing condition.
+- Adding two transfer pairs gives a transfer pair.
+- Scaling both members by a complex scalar preserves the relation.
+- Changing the target by a function with all stable relative orbital integrals zero preserves the relation.
 
-**Direct prerequisites:** `FJ.1/relative-datum`, `FJ.0/torsor`, `EndoscopicTransferAndUnitaryTraceComparison:ET.0/unitary-hermitian-matching`, `EndoscopicTransferAndUnitaryTraceComparison:ET.1`.
+**Checks.**
 
-**Construction or proof:**
+- At one matching orbit with Δ=−q⁻¹ and source κ-integral A, the target stable integral must be −A/q; using A gives a different relation whenever A≠0.
+- At an unmatched target orbit a target stable integral 1 violates transfer of the zero source, since the required value is 0.
+- For the same source, target orbital values B and B+C with C=0 at every target regular orbit define the same transfer class; a nonzero C at one such orbit changes the class.
 
-1. Use the ordinary matching and factor exported by ET.0 and ET.1.
+Its direct consumers are FJ.1/nonsingular-transfer, FJ.3/augmented-to-endoscopic, FJ.4/graded-transfer, FJ.4/unit-fundamental-lemma.
 
-2. Pull back the factor along the pair of contractions and the character along torsor.
+### 1.5 Transfer for tests supported on invertible maps
 
-3. For nicely matching contractions the reference factor is eta(resultant)*absolute-value(resultant), with the ET.1 inv correction otherwise.
+If f has compact support contained in the invertible Hom locus, then for every relative datum Xi of §1.1 of §1.1 there exists a compact locally constant target transfer supported in the invertible target Hom locus. On the ordinary endoscopic side choose a transfer of r_!f, restrict it to the image of the target contraction, and lift it through target fiber integration. This theorem concerns support away from the singular locus and does not prove general relative transfer.
 
-**Sources:** [Leslie25] Section 2.3, p. 20; Sections 2.2.2–2.2.3, pp. 18–19. Both the relative factor and the kappa character are transported from ordinary Hermitian endoscopy.
+F is a nonarchimedean local field of characteristic zero; E/F is a quadratic étale F-algebra (a field extension or F × F). Hermitian forms are conjugate-linear in the first variable and linear in the second.
 
-**Uses:** `FJ.1/smooth-transfer and FJ.4/unit-fundamental-lemma`: The ordinary normalization is exactly the multiplier in the relative transfer identity.
+(Leslie25, Definition 2.10 and the following discussion, p. 21; Leslie19 Proposition 1.3 and Proposition 4.5, pp. 4, 15; Leslie19, Proposition 1.3, p. 4, and Proposition 4.5, p. 15).
 
-**API:**
+*Needs:* §0.8 (FJ.0/pushforward); §0.9 (FJ.0/orbital-comparison); §1.4 (FJ.1/smooth-transfer); EndoscopicTransferAndUnitaryTraceComparison §4.7; §0.6 (FJ.0/fibre-integration).
 
-- `TauCeti.UnitaryFJ.relativeMatches` (characterisation): Relative matching is ordinary matching of the two contractions, with source regularity and cross-block disjoint spectra.
+One proof route is the following. Push f to the ordinary Hermitian space and extend it by zero from the invertible locus. Apply EndoscopicTransferAndUnitaryTraceComparison §4.7. Multiply the ordinary target transfer by a compact open cutoff on the common characteristic-coefficient base, equal to one on the source invariant support and zero near determinant zero. This preserves every transfer equality and gives compact support away from singular endomorphisms. Restrict to the stable invariant norm-form component of each target contraction and lift by fibre-integration; orbital-comparison proves matching and unmatched vanishing.
 
-- `TauCeti.UnitaryFJ.relativeTransferFactor` (data): Delta_rel(deltaH,delta)=Delta(r_alpha,beta(deltaH),r1(delta)).
+**Checks.**
 
-- `TauCeti.UnitaryFJ.relativeKappa` (projection): Pull back the ET.0 endoscopic character to D(H_delta/F).
+- In unramified rank one, 1_OE× has compact nonsingular support and pushes to 1_OF×; the full 1_OE includes 0 and does not satisfy the support hypothesis.
+- In that example, 1_OE pushes to a function equal to 1 at π^(2j) for every j≥0. These points approach 0, so this is not a compact test on F× and cannot be used in the ordinary transfer theorem without a cutoff.
+- On a target chart choose vol(J)=2 and h=1_B: the lift (1/2)1_(B×J) pushes to 1_B. A lift 1_(B×J) would give 2·1_B and the wrong orbital identity.
 
-- `TauCeti.UnitaryFJ.relativeTransferFactor_change_orbit` (compatibility): Changing the source rational orbit multiplies the factor by the ordinary kappa(inv) correction, in the fixed ET.1 orientation.
+### Examples
 
-**Unit tests:**
+For a=b=1 over a quadratic field extension, the labels (1,1),(1,ε),(ε,1),(ε,ε) give four pairs in (F×/N(E×))². The other subsections compute the corresponding boundary cases and normalization witnesses.
 
-- `TauCeti.UnitaryFJ.relativeFactor_rankTwo` (computation): For a=b=1 a nicely matching pair of distinct nonzero scalars has factor eta(x-y)*|x-y|_F.
+### Dependencies
 
-- `TauCeti.UnitaryFJ.relativeFactor_no_match` (degenerate): A nonmatching regular pair has relative factor zero.
+§0.1 (FJ.0/symmetric-representation); §0.2 (FJ.0/contractions); EndoscopicTransferAndUnitaryTraceComparison §1.4; gap:hermitian-field-classification; EndoscopicTransferAndUnitaryTraceComparison §1.17; §0.5 (FJ.0/torsor); EndoscopicTransferAndUnitaryTraceComparison §2.1; EndoscopicTransferAndUnitaryTraceComparison §2.4; EndoscopicTransferAndUnitaryTraceComparison §2.9; EndoscopicTransferAndUnitaryTraceComparison §2.11; gap:unitary-factor-all-quadratic; §0.7 (FJ.0/relative-orbital-integral); EndoscopicTransferAndUnitaryTraceComparison §1.14; §0.9 (FJ.0/orbital-comparison); §0.8 (FJ.0/pushforward); EndoscopicTransferAndUnitaryTraceComparison §4.7; §0.6 (FJ.0/fibre-integration).
 
-- `TauCeti.UnitaryFJ.relativeFactor_not_discriminantOnly` (non-example): When eta(x-y)=-1 the factor is negative, so replacing it by the positive absolute resultant fails.
+## Layer 2: Hermitian spherical functions and base change
 
-**Check:** For a=b=1 and distinct contracted scalars x,y, a nice-match factor is eta(x-y)*|x-y|_F.
+Keep every dominant integral coweight and both Hermitian field-form classes. The Hironaka transform identifies the full module; its cyclic base-change submodule is strictly smaller in positive rank.
 
+### 2.1 The spherical module on all invertible Hermitian matrices
 
-### FJ.1/kappa-orbital-integral: Stable and weighted relative orbital sums
+Let Xn={y in GL_n(E): y*=y}, with g*y=g y g*. Retain both GL_n(E)-orbits of Hermitian forms. Define H(Xn)=C_c^∞(Xn)^(K_n,E), where K_n,E=GL_n(OE), as an H(GL_n(E))-module by (φ*f)(y)=integral φ(g⁻¹)*f(g*y) dg. Its basis consists of the indicators e_lambda of K_n,E*π^lambda under congruence, for dominant integral lambda, including negative entries. Write e_0 for the integral unimodular orbit indicator. No convolution on Xn is implicit in this definition.
 
-**Definition target.** For a regular semisimple delta in the fixed symmetric representation and a character kappa of D(H_delta/F), set RO^kappa(f,delta)=sum over rational orbits delta_prime in its stable class of kappa(inv(delta,delta_prime))*RO(f,delta_prime). Use inv transported from contraction with the ET.0 orientation. SRO is the case kappa=1. The sum ranges over the fixed symmetric space, not over all pure inner forms.
+F is a nonarchimedean local field of characteristic zero; E/F is an unramified quadratic field extension, with common uniformizer π and q=card(k_F). Use the reference Hermitian space Vn=(E^n,I_n), Λ_n=OE^n, and hyperspecial Haar volumes one. This includes residue characteristic two.
 
-**Hypotheses and conventions:** F is a nonarchimedean local field of characteristic zero; E/F is a quadratic field extension. Hermitian forms are conjugate-linear in the first variable and linear in the second.
+(Leslie25, Section 3.2, equation (3.7), p. 26).
 
-**Direct prerequisites:** `FJ.0/relative-orbital-integral`, `FJ.0/torsor`, `EndoscopicTransferAndUnitaryTraceComparison:ET.0/rational-classes-in-stable-class`, `FJ.1/matching-factor`.
+*Needs:* GeometryOfNumbersAndQuadraticArithmetic §2.9; gap:hermitian-field-classification; gap:unramified-hermitian-lattice-orbits; SmoothRepresentationsOfLocalGroups §SR.4.1 (satake-isomorphism); AdelicAlgebraicGroups §2.2 (Weil-integrable).
 
-**Construction or proof:**
+One proof route is the following. Use local integral Hermitian diagonalization to classify K_n,E-orbits by dominant integral tuples. Every compact invariant test meets only finitely many such open orbits. Obtain the module laws by group convolution and Fubini, with vol K_n,E=1.
 
-1. Use the rational-class kernel to index the finite sum.
+The construction has the following API.
 
-2. Transport the centralizer measure consistently to each class and use ordinary inv functoriality.
+- The complex vector space of compact locally constant K_n,E-invariant functions on all Xn.
+- For dominant lambda in Z^n, e_lambda is the indicator of the congruence orbit of π^lambda.
+- The e_lambda are a basis, so each element has a unique finite expansion.
+- The displayed integral is a unital H(GL_n(E))-module action.
+- Extend by zero to Herm(Vn); compact support in Xn makes this a compact locally constant Hermitian test.
 
-**Sources:** [Leslie25] Section 2.3.1, p. 20. The weighted integral is a finite stable-class sum; the trivial character gives stable relative integration.
+**Checks.**
 
-**Uses:** `FJ.1/smooth-transfer`: The source side is weighted, while the target side is stable.
+- For n=1, e_(1) is nonzero and belongs to the other GL_1(E)-orbit from e_(0).
+- For n=1, e_(-1) is the indicator of π⁻¹*OF^× and is a valid compact test.
+- The Hecke unit 1_K acts as the identity on every e_lambda.
+- Distinct dominant lambda have disjoint supports; in particular e_(0) and e_(1) are linearly independent in rank one.
 
-**API:**
+Its direct consumers are FJ.2/spherical-fourier, FJ.3/weil-orbital-sum, FJ.3/group-to-augmented, FJ.4/spherical-pushforward, FJ.4/product-group-contraction, FJ.4/contracted-lattice-function, FJ.4/degree-hecke-identities.
 
-- `TauCeti.UnitaryFJ.relativeKappaOrbitalIntegral` (constructor): Sum RO over the finite D(H_delta/F)-torsor with the character weights.
+### 2.2 Quadratic base change commutes with the twisted Levi map
 
-- `TauCeti.UnitaryFJ.stableRelativeOrbitalIntegral` (data): Set kappa to the trivial character.
+Define ξ_F on spherical GL_n(F) by the same formula as ξ_E with |.|_F in both twists and in normalized descent. Then BC_(a,b) composed with ξ_E equals ξ_F composed with BC_n. On normalized Satake coordinates, BC_n sends each E-variable Z_i to the square T_i^2; ξ_F scales T_i by q^(−b/2) or q^(−a/2), so both composites substitute q^(−b)*X_i^2 or q^(−a)*Y_i^2. The equality does not imply that base change has support only on individually even coweights.
 
-- `TauCeti.UnitaryFJ.relativeKappaOrbitalIntegral_linear` (structure): The weighted sum is complex-linear in the test function.
+F is a nonarchimedean local field of characteristic zero; E/F is an unramified quadratic field extension, with common uniformizer π and q=card(k_F). Use the reference Hermitian space Vn=(E^n,I_n), Λ_n=OE^n, and hyperspecial Haar volumes one. This includes residue characteristic two.
 
-- `TauCeti.UnitaryFJ.relativeKappaOrbitalIntegral_basepoint` (compatibility): Changing the base rational orbit multiplies the sum by the inverse of its character value.
+(Leslie25, Proof of Proposition 4.8, p. 39; Lemma 3.2, p. 24).
 
-**Unit tests:**
+*Needs:* SmoothRepresentationsOfLocalGroups §SR.4.3 (parabolic-descent); EndoscopicTransferAndUnitaryTraceComparison §4.9; SmoothRepresentationsOfLocalGroups §SR.4.1 (satake-isomorphism).
 
-- `TauCeti.UnitaryFJ.relativeKappa_trivial` (compatibility): For kappa=1 the sum equals SRO.
+One proof route is the following. Use the unramified GL base-change Satake formula of EndoscopicTransferAndUnitaryTraceComparison §4.9(b). Compute both composites on Laurent variables and descend to symmetric Laurent polynomials by injectivity of Satake. Use the rank-two counterexample to rule out the source proof’s asserted support shortcut.
 
-- `TauCeti.UnitaryFJ.relativeKappa_two_classes` (computation): For a stable class with D=C2 and RO-values A,B, the nontrivial character gives A-B.
+**Checks.**
 
-- `TauCeti.UnitaryFJ.relativeKappa_two_classes_swap` (computation): In the same C2 example, changing the base orbit interchanges A,B and changes the weighted sum to B-A.
+- For a=b=1 the first Satake variable maps by either composite to q⁻¹X²: (q⁻¹/²X)²=q⁻¹X².
+- The central monomial Z1Z2 maps under ξ_E to q⁻²XY. At q=2 the coefficient is 1/4, excluding untwisted Levi restriction.
+- For n=2, BC(T_(1,0),E)=T_(2,0),F−(q−1)T_(1,1),F. At q=2 the odd central coweight coefficient is −1, although the Satake substitution squares variables.
 
-**Check:** If the stable class has one rational orbit, SRO=RO.
+### 2.3 Hironaka’s normalized spherical Fourier isomorphism
 
+Fix the invariant measure dμ(y)=C|det y|_F^(−n)dy on all X_n, where dy is additive Haar measure on Herm_n(E) with integral lattice volume one, and C>0 makes μ(K_n,E∗I_n)=1. The normalizing mass is positive because this orbit is nonempty compact open. Use Hironaka’s normalized spherical functions Y_z(y)=ω(y;z)/ω(I_n;z), as rational functions of the spectral variables, and the transform f↦∫_(X_n)f(y)Y_z(y⁻¹)dμ(y). The denominator is a nonzero rational function by Hironaka’s explicit formula. Identify its symmetric Laurent-polynomial image with the F-Satake algebra; this fixes H_n on every congruence orbit, including the nonreference form. Normalize the spherical Fourier transform to obtain a complex-linear isomorphism H_n:H(Xn) → H(GL_n(F)) such that H_n(e_0)=1_Kn and H_n(φ*f)=BC_n(φ)*H_n(f). It transports the GL_n(F) convolution algebra to an algebra structure on H(Xn). As an H_n,E-module H(Xn) is free of rank 2^n. The cyclic map φ → φ*e_0 is injective, but for n>0 is not surjective.
 
-### FJ.1/smooth-transfer: The relative smooth-transfer relation
+F is a nonarchimedean local field of characteristic zero; E/F is an unramified quadratic field extension, with common uniformizer π and q=card(k_F). Use the reference Hermitian space Vn=(E^n,I_n), Λ_n=OE^n, and hyperspecial Haar volumes one. This includes residue characteristic two.
 
-**Definition target.** A compact locally constant source function f and a compact locally constant target function f_Xi are transfers if SRO(f_Xi,deltaH)=Delta_rel(deltaH,delta)*RO^kappa(f,delta) for every matching regular pair, and SRO(f_Xi,deltaH)=0 for every target regular orbit having no source match. This is a relation on functions and a well-defined correspondence of orbital-integral classes; no preferred representative is selected.
+(Leslie25, Proposition 3.4 and Remarks 3.6–3.7, pp. 26–27; Hironaka99 Theorem 2, p. 571; Hironaka99, Section 2, Theorem 2, p. 571; normalization on pp. 570–571).
 
-**Hypotheses and conventions:** F is a nonarchimedean local field of characteristic zero; E/F is a quadratic field extension. Hermitian forms are conjugate-linear in the first variable and linear in the second.
+*Needs:* §2.1 (FJ.2/hermitian-spherical-module); §2.2 (FJ.2/base-change-compatibility); SmoothRepresentationsOfLocalGroups §SR.4.1 (satake-isomorphism); EndoscopicTransferAndUnitaryTraceComparison §4.9.
 
-**Direct prerequisites:** `FJ.1/matching-factor`, `FJ.1/kappa-orbital-integral`, `FJ.0/orbital-comparison`.
+One proof route is the following. Use the normalized spherical functions and Fourier image in Hironaka Theorem 2, matching q and the reference orbit. Identify the image with the F-Satake algebra and normalize the reference orbit to the unit. The symmetric Laurent algebra is free of rank 2^n over its squared-variable subalgebra, yielding freeness and cyclic injectivity.
 
-**Construction or proof:**
+The construction has the following API.
 
-1. Use the finite orbital sums and the transported factor; prove the identity is independent of source rational representative.
+- The normalized isomorphism H_n between the full Hermitian module and the F-Hecke algebra.
+- H_n(e_0)=1_Kn.
+- H_n(φ*f)=BC_n(φ)*H_n(f).
+- The inverse sends BC_n(φ) to φ*e_0, and both composites with H_n are identities on the full spaces.
+- φ → φ*e_0 is injective and its image under H_n is exactly the base-change subalgebra.
 
-2. Retain the unmatched clause as a separate quantified condition.
+**Checks.**
 
-**Sources:** [Leslie25] Definition 2.10, p. 21. The definition includes both matching identities and the zero condition on target orbits outside the image.
+- H_1(e_(0))=1_OF^×.
+- The π^d OE^× Hecke indicator sends e_(0) to e_(2d), and H_1(e_(2d)) is the π^(2d) OF^× Hecke indicator.
+- In rank one e_(1) lies outside the image of φ → φ*e_(0).
+- For f=e_(1), H_1⁻¹(H_1(f))=f; the inverse identity includes the noncyclic part.
+- In rank one H_1(e_j)=1_(π^j O_F×) for every j∈ℤ; j=1 fixes the noncyclic normalization rather than allowing an independent rescaling of the other form.
 
-**Uses:** `FJ.4/unit-fundamental-lemma and FJ.5/full-smooth-transfer`: It separates the proved unit theorem from the unrestricted existence conjecture.
+Its direct consumers are FJ.3/augmented-to-endoscopic, FJ.4/product-group-contraction, FJ.4/cyclic-endoscopic-transfer, FJ.5/full-spherical-extension.
 
-**API:**
+### Examples
 
-- `TauCeti.UnitaryFJ.IsRelativeTransfer` (characterisation): The relation is the conjunction of the matching equality and the unmatched vanishing condition.
+For n=1, e_(1) is nonzero and belongs to the other GL_1(E)-orbit from e_(0). The other subsections compute the corresponding boundary cases and normalization witnesses.
 
-- `TauCeti.UnitaryFJ.IsRelativeTransfer.add` (structure): Adding two transfer pairs gives a transfer pair.
+### Dependencies
 
-- `TauCeti.UnitaryFJ.IsRelativeTransfer.smul` (structure): Scaling both members by a complex scalar preserves the relation.
+GeometryOfNumbersAndQuadraticArithmetic §2.9; gap:hermitian-field-classification; gap:unramified-hermitian-lattice-orbits; SmoothRepresentationsOfLocalGroups §SR.4.1 (satake-isomorphism); AdelicAlgebraicGroups §2.2 (Weil-integrable); SmoothRepresentationsOfLocalGroups §SR.4.3 (parabolic-descent); EndoscopicTransferAndUnitaryTraceComparison §4.9.
 
-- `TauCeti.UnitaryFJ.IsRelativeTransfer.orbitalKernel` (compatibility): Changing the target by a function with all stable relative orbital integrals zero preserves the relation.
+## Layer 3: local comparison reductions
 
-**Unit tests:**
+Use the imported orbit torsor and the declared local Jacquet–Rallis interface to derive normalized finite inversion, descent and the spherical implications. The general germ statements allow ramified extensions; the spherical applications retain unramified hypotheses.
 
-- `TauCeti.UnitaryFJ.relativeTransfer_zero` (degenerate): The zero source and zero target form a transfer pair.
+### 3.1 The orbit torsor across both Hermitian forms
 
-- `TauCeti.UnitaryFJ.relativeTransfer_unmatched` (non-example): A target function with nonzero SRO on a target orbit with no source match cannot transfer the zero source.
+Use the all-pure-form orbit torsor and inv map of EndoscopicTransferAndUnitaryTraceComparison §1.17(b). For a fixed regular semisimple x with F[x]=∏Fi, put Ei=E⊗F Fi and S1={i:Ei is a field}. Prove that matching (x,v,v*ζ) to (yζ,wζ), for a cyclic reference triple, gives a bijection F[x]×/N(E[x]×)→S, equivariant for the imported H¹(F,T_y)-action. In these coordinates κ_Σ(ζ)=∏_(i∈S1\Σ)η_Ei/Fi(ζ_i).
 
-- `TauCeti.UnitaryFJ.relativeTransfer_kernel` (compatibility): Two target transfers of the same source have equal SRO on every target regular orbit.
+F is a nonarchimedean local field of characteristic zero; E/F is a quadratic field extension. Hermitian forms are conjugate-linear in the first variable and linear in the second.
 
-**Check:** Matching identities on the image alone do not certify transfer.
+(Leslie25, Proposition 4.5, Lemma 4.6 and the definition of κ_Σ, pp. 35–36; Xiao18, Proposition 3.8, pp. 11–12, and Lemma 4.6, pp. 19–20).
 
+*Needs:* EndoscopicTransferAndUnitaryTraceComparison §1.17; EndoscopicTransferAndUnitaryTraceComparison §1.14; EndoscopicTransferAndUnitaryTraceComparison §1.1; gap:hermitian-field-classification; gap:jr-local-comparison.
 
-### FJ.1/nonsingular-transfer: Transfer for tests supported on invertible maps
+One proof route is the following. Import the orbit torsor from EndoscopicTransferAndUnitaryTraceComparison §1.17(b). Use equality of the cyclic Gram invariants to identify each factor form with its norm class. Nondegeneracy and cyclicity make the resulting coordinate map injective and surjective. Evaluate the complementary-coordinate characters; no second torsor or inv map is constructed.
 
-**Theorem target.** If f has compact support contained in the invertible Hom locus, then for every relative datum Xi there exists a compact locally constant target transfer supported in the invertible target Hom locus. On the ordinary endoscopic side choose a transfer of r_!f, restrict it to the image of the target contraction, and lift it through target fiber integration. This theorem concerns support away from the singular locus and does not prove general relative transfer.
+**Checks.**
 
-**Hypotheses and conventions:** F is a nonarchimedean local field of characteristic zero; E/F is a quadratic field extension. Hermitian forms are conjugate-linear in the first variable and linear in the second.
+- For rank one over a field extension, S has the two norm classes 1,ε; on a fixed Hermitian form it has one orbit. The coordinate bijection therefore has size 2, not 1.
+- If S1 is empty, the norm quotient has size 1 and every κ_Σ takes value 1.
+- For two nonsplit factors write ζ=(ε,1) and Σ={1}. The complementary-coordinate character gives κ_Σ(ζ)=1, while Σ={2} gives −1; interchanging Σ with its complement fails this check.
 
-**Direct prerequisites:** `FJ.0/pushforward`, `FJ.0/orbital-comparison`, `FJ.1/smooth-transfer`, `EndoscopicTransferAndUnitaryTraceComparison:ET.3`.
+### 3.2 Regularized generalized nilpotent orbital distributions
 
-**Construction or proof:**
+Fix regular semisimple x in gl_n(F), cyclic v and v*, F[x]=product Fi and S1 as in pure-form-orbit-torsor. Let T=F[x]^× and T1=product_(i in S1) Fi^×. Set v_Σ to v_i for i in Σ and zero otherwise; v*_(S1\Σ) is analogous, with every S2 component zero. Define G_Σ(f) by integrating over GL_n(F)/T the value at s=0 of the meromorphic continuation of the T1 integral of f(gxg⁻¹,g t v_Σ,v*_(S1\Σ)t⁻¹g⁻¹)*η(det t)*η(det g)*product_(i in Σ)|t_i|^s*product_(i in S1\Σ)|t_i|^(−s). Use maximal-compact-volume-one multiplicative measures and their quotient measures. This is the raw regularized integral, with finite-Fourier averaging supplied by germ inversion.
 
-1. Apply ordinary smooth transfer to the compact r_!f.
+F is a nonarchimedean local field of characteristic zero; E/F is any quadratic field extension, including ramified extensions and residue characteristic two. All torus maximal compact subgroups have volume one; quotient measures are transported through the fixed stabilizer identifications.
 
-2. First multiply the ordinary target function by a compact determinant-valuation cutoff equal to one on the source invariant support; matching preserves determinant, so no relevant orbital integral changes. Restrict to the target norm-form component and lift by surjectivity of contractionPushforward.
+(Leslie25, Section 4.2, p. 36; Xiao18 Section 2.1, equation (2) and Lemma 2.1, pp. 3–5; Xiao18, Section 2.1, equation (2), Lemma 2.1, pp. 3–5; Section 4.1, p. 15).
 
-3. Apply orbital-comparison on both sides and check unmatched vanishing.
+*Needs:* §3.1 (FJ.3/pure-form-orbit-torsor); AdelicAlgebraicGroups §2.2 (quotient-measure); AdelicAlgebraicGroups §2.2 (Weil-integrable); EndoscopicTransferAndUnitaryTraceComparison §2.1; EndoscopicTransferAndUnitaryTraceComparison §2.4; EndoscopicTransferAndUnitaryTraceComparison §2.9; EndoscopicTransferAndUnitaryTraceComparison §2.11; gap:jr-local-comparison.
 
-**Sources:** [Leslie25] Definition 2.10 and the following discussion, p. 21; Leslie19 Proposition 1.3 and Proposition 4.5, pp. 4, 15. The earlier construction obtains relative transfer where the contraction pushforward remains a genuine compact test function.; [Leslie19] Proposition 1.3, p. 4, and Proposition 4.5, p. 15. Relative transfer is obtained from ordinary transfer for nonsingular support.
+One proof route is the following. Factor compact locally constant functions into finite sums of ⊗ products locally on the regular semisimple x-orbit. Apply Tate continuation in each nonsplit factor; the nontrivial quadratic character removes the pole at zero. At s=0 the value descends under changing the T-coset representative; compactness on GL/T gives a well-defined outer integral.
 
-**Check:** The hypothesis excludes the full lattice indicator, whose support meets the singular locus.
+The construction has the following API.
 
-**Direct open obligations:** G1.
+- The displayed regularized integral for x,Σ and the chosen cyclic reference data.
+- It is a complex-linear functional on the augmented linear test space.
+- Conjugating the triple by g changes the distribution by η(det g) with the chosen action convention.
+- For i in Σ scale the surviving v_i by c_i, and for i in S1\Σ scale the surviving v_i* by d_i, with all scalars nonzero. Changing variables in the regularized torus integral multiplies its value at s=0 by ∏_(i∈Σ)η_i(c_i) ∏_(i∈S1\Σ)η_i(d_i), where η_i=η_E/F∘N_Fi/F.
 
+**Checks.**
 
-### FJ.1/contraction-independence: Independence under exchanging the contractions
+- In the unramified rank-one specialization, for n=1, Σ={1}, x fixed and the vector test 1_OF^×, the raw Tate integral is 1.
+- In the unramified rank-one specialization, for n=1 and vector test 1_(π OF^×), the raw integral is η(π)=-1.
+- In the unramified rank-one specialization, for n=1 and vector test 1_OF, the Tate expression is 1/(1+q^(−s)), so its raw value at zero is 1/2, not 1.
 
-**Comparison target.** Compare the two relative transfer relations obtained from r1 and r2 after exchanging the two Hermitian summands, reindexing the endoscopic pure-inner-form data and transporting the centralizer measures and ordinary transfer-factor normalization. The intended assertion is equivalence of the resulting orbital-integral identities. The datum transport and its factor correction must be constructed explicitly; this is a comparison target with the normalization gap recorded below, not a claimed unqualified equality of factors.
+Its direct consumers are FJ.3/germ-inversion, FJ.3/factor-descent-comparison.
 
-**Hypotheses and conventions:** F is a nonarchimedean local field of characteristic zero; E/F is a quadratic field extension. Hermitian forms are conjugate-linear in the first variable and linear in the second.
+### 3.3 Germ inversion with an explicit finite-Fourier normalization
 
-**Direct prerequisites:** `FJ.0/contractions`, `FJ.0/torsor`, `FJ.1/smooth-transfer`, `EndoscopicTransferAndUnitaryTraceComparison:ET.1`.
+Suppose f and the family {f_V} are augmented Jacquet–Rallis transfers for the cyclic-vector factor ω and volume-one measures. For regular semisimple x with r=card S1, matching reference data (y,w), and Σ subset S1, the identity is ω(x,v,v*)*G_Σ(f)=2^(−r)*sum_(zeta in S) κ_Σ(zeta)*Orb_U(V_zeta)(f_V_zeta(-,0),y_zeta). Equivalently define the Fourier-normalized germ as 2^r*G_Σ. The orbit sum includes both Hermitian forms.
 
-**Construction or proof:**
+F is a nonarchimedean local field of characteristic zero; E/F is any quadratic field extension, including ramified extensions and residue characteristic two. All torus maximal compact subgroups have volume one; quotient measures are transported through the fixed stabilizer identifications.
 
-1. Use X^tau to exchange the two symmetric representations and X to identify the invertible contracted centralizers.
+(Leslie25, Theorem 4.7, p. 36; Xiao18 Theorem 4.7 and its preceding inversion, pp. 20–21; Xiao18, Sections 4.1–4.5, pp. 15–21, especially Theorem 4.7).
 
-2. Track inv and the ordinary pure-inner-form transfer-factor corrections under this exchange.
+*Needs:* §3.1 (FJ.3/pure-form-orbit-torsor); §3.2 (FJ.3/generalized-nilpotent-integral); EndoscopicTransferAndUnitaryTraceComparison §2.1; EndoscopicTransferAndUnitaryTraceComparison §2.4; EndoscopicTransferAndUnitaryTraceComparison §2.9; EndoscopicTransferAndUnitaryTraceComparison §2.11; gap:jr-local-comparison.
 
-3. Discharge the explicit datum/measure transport gap before claiming equivalence.
+One proof route is the following. Use Xiao18 (7), p. 19: for each norm-class coordinate ζ the ordinary orbital integral equals ω × the character-weighted sum of the raw germs. Lemma 4.6 identifies all these coordinates with the imported orbit torsor. For A=(Z/2)^r, compute ∑_(ζ∈A)κ(ζ)κ′(ζ)=2^r if κ=κ′ and zero otherwise. Invert the forward identities with 2⁻ʳ. Use the maximal-compact-volume-one centralizer measures of Leslie25 §1.5.4, p. 12, in both expansions and transport those measures through the cyclic-coordinate identification; the averaging factor comes solely from the finite character table.
 
-**Sources:** [Leslie25] Remark 2.11, p. 21. The source states contraction independence but supplies no complete normalization diagram.
+**Checks.**
 
-**Check:** The check must treat nonisometric W1,W2; the equal-form case alone is insufficient.
+- In unramified rank one with the augmented lattice unit and v=v*=1, ω=1, raw G=1/2 and the pure-form orbital values are (1,0). Thus 1/2=(1/2)(1+0), whereas the unaveraged sum is 1.
+- With v=π and v*=π⁻¹ in the same regular reference triple, ω=−1 and raw G=−1/2. Again ωG=1/2=(1/2)(1+κ·0); the sign changes on both linear factors.
+- For r=2 the character table has H Hᵗ=4I, so the inverse is Hᵗ/4. On the vector (1,0,0,0), each inverse coefficient is 1/4, rather than 1; r=0 gives coefficient 1.
 
-**Direct open obligations:** G2.
+### 3.4 Additive parabolic descent on augmented linear tests
 
+For n=a+b and an augmented linear test f(x,v,v*), define f_p(m1,m2,v,v*) as integral over Lie N_(a,b)(F) and K_n of f(k*[[m1,u],[0,m2]]*k⁻¹,k v,v* k⁻¹) dk du. Here du is additive, Lie N(OF) and K_n have volume one, and no δ_P^(1/2) occurs in the definition. With L_n=OF^n ⊕ (OF^n)*, the descent of φ ⊗ 1_Ln equals ξ_F(φ) ⊗ 1_(La × Lb) for spherical φ on GL_n(F), extended by zero to gl_n(F).
 
-## FJ.2. Spherical Hermitian functions and Hecke maps
+F is a nonarchimedean local field of characteristic zero; E/F is an unramified quadratic field extension, with common uniformizer π and q=card(k_F). Use the reference Hermitian space Vn=(E^n,I_n), Λ_n=OE^n, and hyperspecial Haar volumes one. This includes residue characteristic two.
 
-Build the spherical module on all invertible Hermitian matrices, Hironaka’s normalized Fourier isomorphism and its rank 2^n consequence. Import the determinant-twisted Levi Hecke map and its Satake substitution from SR.4; prove its compatibility with quadratic base change. Keep its cyclic submodule distinct from the full spherical module.
+(Leslie25, Definition 4.9, p. 38, and the Jacobian calculation in Proposition 4.8, p. 39).
 
-**Dependencies:** `FJ.0`, `SmoothRepresentationsOfLocalGroups:SR.4`, `GeometryOfNumbersAndQuadraticArithmetic:GN.2`, `EndoscopicTransferAndUnitaryTraceComparison:ET.3`.
+*Needs:* SmoothRepresentationsOfLocalGroups §SR.4.1 (satake-isomorphism); SmoothRepresentationsOfLocalGroups §SR.4.3 (parabolic-descent); AdelicAlgebraicGroups §2.2 (quotient-measure); AdelicAlgebraicGroups §2.2 (Weil-integrable); §2.2 (FJ.2/base-change-compatibility).
 
-**Coverage:** `planned`. ET.3 request: squared-variable unramified GL base-change export. Validate the chosen normalization of Hironaka against the supplied base-change map when the import is implemented.
+One proof route is the following. Define the integral on the additive nilpotent block and the compact K average. Use K-stability of L_n to factor out the vector-lattice indicator. Change u=m1*u_prime; its Jacobian is |det m1|_F^b. Compare with δ_P^(1/2) and the two half-power twists to identify ξ_F.
 
-**Planets:** Hermitian spherical module; Base change and Levi descent; Spherical Fourier transform.
+The construction has the following API.
 
+- The additive Lie N and compact K double integral above.
+- It is a complex-linear map between the augmented test spaces.
+- For φ spherical on GL_n(F), (φ ⊗ 1_Ln)_p=ξ_F(φ) ⊗ 1_(La × Lb).
+- On invertible Levi matrices the additive integral is |det m1|_F^b × unnormalized group descent; after δ_P normalization this is ξ_F.
 
-### FJ.2/hermitian-spherical-module: The spherical module on all invertible Hermitian matrices
+**Checks.**
 
-**Construction target.** Let Xn={y in GL_n(E): y*=y}, with g*y=g y g*. Retain both GL_n(E)-orbits of Hermitian forms. Define H(Xn)=C_c^infinity(Xn)^(K_n,E), where K_n,E=GL_n(OE), as an H(GL_n(E))-module by (phi*f)(y)=integral phi(g^(-1))*f(g*y) dg. Its basis consists of the indicators e_lambda of K_n,E*pi^lambda under congruence, for dominant integral lambda, including negative entries. Write e_0 for the integral unimodular orbit indicator. No convolution on Xn is implicit in this definition.
+- For n=2,a=b=1, the descent of 1_M2(OF) ⊗ 1_L2 is 1_OF ⊗ 1_OF ⊗ 1_L1 ⊗ 1_L1.
+- If a vector coordinate has negative valuation, the descended lattice-vector test is zero even when both Levi matrices are integral.
+- For a=b=1 and m1=π, replacing u by m1*u multiplies additive measure by q⁻¹; omitting this factor fails ξ_F compatibility.
 
-**Hypotheses and conventions:** F is a nonarchimedean local field of characteristic zero; E/F is an unramified quadratic field extension, with common uniformizer pi and q=card(k_F). Use the reference Hermitian space Vn=(E^n,I_n), Lambda_n=OE^n, and hyperspecial Haar volumes one. This includes residue characteristic two.
+Its direct consumers are FJ.3/factor-descent-comparison, FJ.3/augmented-to-endoscopic.
 
-**Direct prerequisites:** `GeometryOfNumbersAndQuadraticArithmetic:GN.2/signed-hermitian-space`, `GeometryOfNumbersAndQuadraticArithmetic:GN.2/hermitian-space-classification`, `GeometryOfNumbersAndQuadraticArithmetic:GN.2/local-unimodular-hermitian-classification`, `GeometryOfNumbersAndQuadraticArithmetic:GN.2/unramified-hermitian-lattice-diagonalization`, `SmoothRepresentationsOfLocalGroups:SR.4/satake-isomorphism`, `AdelicAlgebraicGroups:AA.2/quotient-integral-integrable`.
+### 3.5 Cyclic determinant factors and the descent Jacobian
 
-**Construction or proof:**
+Let x=diag(xa,xb) with separable disjoint block spectra, v=(va,vb) cyclic in each block and Ω=Ωa∧Ωb the ordered volume form. Put D_ab=∏_(λa,λb)(λa−λb). For ω=η(det[v,xv,…,x^(n−1)v]/Ω), prove ω_n=η((−1)^(ab)D_ab)ω_aω_b. For the unramified generalized nilpotent distribution at the truncated arguments u=(va,0), u*=(0,u_b*), where u_b* is cyclic on the b-block, additive parabolic descent satisfies G_n(f)=|D_ab|_F⁻¹G_(a,b)(f_p), with the compact average, Haar measures and surviving cyclic coordinates of lie-parabolic-descent. Thus in the unramified endoscopic diagram the reciprocal descent Jacobian and the cyclic factor yield η(D_ab)|D_ab|_F; the rational-class correction is the imported κ(inv).
 
-1. Use local integral Hermitian diagonalization to classify K_n,E-orbits by dominant integral tuples.
+F is a nonarchimedean local field of characteristic zero; E/F is a quadratic field extension for the determinant identity. For the integral descent identity E/F is unramified, the surviving vector/covector blocks satisfy the generalized nilpotent support conditions, and all additive integral lattices and compact groups have volume one. The spectra of xa and xb are disjoint, hence D_ab≠0; every displayed cyclic determinant is nonzero. The vector v=(va,vb) in the determinant identity is the full cyclic reference vector; u and u* in the regularized distribution are its separately specified singular arguments.
 
-2. Every compact invariant test meets only finitely many such open orbits.
+(Xiao18, Lemma 5.1, pp. 21–22; proof of Theorem 6.1, p. 24).
 
-3. Obtain the module laws by group convolution and Fubini, with vol K_n,E=1.
+*Needs:* §3.2 (FJ.3/generalized-nilpotent-integral); §3.4 (FJ.3/lie-parabolic-descent); §3.1 (FJ.3/pure-form-orbit-torsor); §3.3 (FJ.3/germ-inversion); gap:jr-local-comparison; gap:unitary-factor-all-quadratic.
 
-**Sources:** [Leslie25] Section 3.2, equation (3.7), p. 26. The congruence-orbit decomposition supplies the basis and the spherical Hecke action.
+A proof route factors the ordered Vandermonde determinant with cross factors λb−λa. Factoring out the two block determinants gives (−1)^(ab)D_ab. Apply η; in the unramified case η(−1)=1. On the off-block matrix space the map u↦xa u−u xb has determinant D_ab. Changing additive variables gives |D_ab|⁻¹. The unramified character is trivial on K, so the compact average agrees with lie-parabolic-descent. Combine this identity with germ-inversion and the cyclic-coordinate characters; use the ordinary factor from gap:unitary-factor-all-quadratic for the normalization comparison.
 
-**Uses:** `FJ.2/spherical-fourier and FJ.4/contracted-lattice-function`: The full module receives the Fourier isomorphism and the individual compact determinant pieces.
+**Checks.**
 
-**API:**
+- For a=b=1, va=vb=1 and x=diag(xa,xb), the cyclic determinant is xb−xa=−D_ab. Over an unramified extension η(−1)=1, so ω_n=η(D_ab)ω_aω_b.
+- For F=Q₃, E=Q₃(√3), xa=0 and xb=1, D_ab=−1, η(−1)=−1 and ω_n=η(1)=1. The corrected formula gives η((−1)D_ab)=1; the unsigned formula gives −1.
+- In the unramified a=b=1 descent with xa−xb=π, the off-block linear map is multiplication by π. Its modulus is q⁻¹ and the raw orbital integral acquires q=|D_ab|⁻¹; in the reversed comparison the ordinary factor is η(π)|π|=−q⁻¹.
 
-- `TauCeti.UnitaryFJ.hermitianSphericalModule` (data): The complex vector space of compact locally constant K_n,E-invariant functions on all Xn.
+### 3.6 From augmented Jacquet–Rallis to cyclic endoscopic transfer
 
-- `TauCeti.UnitaryFJ.hermitianOrbitIndicator` (constructor): For dominant lambda in Z^n, e_lambda is the indicator of the congruence orbit of pi^lambda.
+Assume in every positive rank m that, for each φ in H_m,E, the augmented tests BC_m(φ) ⊗ 1_Lm and {(φ*e_0) ⊗ 1_Λ_m,0} are Jacquet–Rallis transfers. Then for every n=a+b and φ in H_n,E, the functions φ*e_0 and ξ_E(φ)*e_0 are ordinary endoscopic transfers on Herm(Vn) and Herm(Va) ⊕ Herm(Vb), with the EndoscopicTransferAndUnitaryTraceComparison §§2.1, 2.4, 2.9, 2.11 factor and unmatched-zero clause. The hypothesis is for all ranks needed by the two Levi blocks, not only rank n.
 
-- `TauCeti.UnitaryFJ.hermitianOrbitBasis` (characterisation): The e_lambda are a basis, so each element has a unique finite expansion.
+F is a nonarchimedean local field of characteristic zero; E/F is an unramified quadratic field extension, with common uniformizer π and q=card(k_F). Use the reference Hermitian space Vn=(E^n,I_n), Λ_n=OE^n, and hyperspecial Haar volumes one. This includes residue characteristic two.
 
-- `TauCeti.UnitaryFJ.hermitianHeckeAction` (structure): The displayed integral is a unital H(GL_n(E))-module action.
+(Leslie25, Proposition 4.8, pp. 37–39).
 
-- `TauCeti.UnitaryFJ.hermitianSphericalModule_toTest` (coercion): Extend by zero to Herm(Vn); compact support in Xn makes this a compact locally constant Hermitian test.
+*Needs:* §1.4 (FJ.1/smooth-transfer); SmoothRepresentationsOfLocalGroups §SR.4.3 (parabolic-descent); §2.2 (FJ.2/base-change-compatibility); §2.3 (FJ.2/spherical-fourier); §3.1 (FJ.3/pure-form-orbit-torsor); §3.3 (FJ.3/germ-inversion); §3.4 (FJ.3/lie-parabolic-descent); EndoscopicTransferAndUnitaryTraceComparison §2.1; EndoscopicTransferAndUnitaryTraceComparison §2.4; EndoscopicTransferAndUnitaryTraceComparison §2.9; EndoscopicTransferAndUnitaryTraceComparison §2.11; EndoscopicTransferAndUnitaryTraceComparison §4.9; §3.5 (FJ.3/factor-descent-comparison); gap:jr-local-comparison; gap:unitary-factor-all-quadratic.
 
-**Unit tests:**
+One proof route is the following. Use F=(φ*e_0) ⊗ 1_Λ_n; evaluation at zero is φ*e_0, correcting the mistyped upper test in the source. Apply germ-inversion to source κ and target stable sums. The character counts satisfy r_n=r_a+r_b, so the finite averaging factors cancel. Use lie-parabolic-descent and base-change-compatibility to identify the descended linear test. Apply factor-descent-comparison and the ordinary factor contract. Only the reference/reference lower-rank test is nonzero; no general signed four-form operator is used.
 
-- `TauCeti.UnitaryFJ.hermitianOrbit_rankOne_odd` (non-example): For n=1, e_(1) is nonzero and belongs to the other GL_1(E)-orbit from e_(0).
+**Checks.**
 
-- `TauCeti.UnitaryFJ.hermitianOrbit_negative` (computation): For n=1, e_(-1) is the indicator of pi^(-1)*OF^times and is a valid compact test.
+- For F[x]=F×F with a=b=1 and unramified E, r_n=2 and r_a=r_b=1. The source averaging coefficient is 1/4=(1/2)(1/2), so no factor 2 remains.
+- For a=b=1 and x−y=π, the factor comparison produces −q⁻¹; omitting the descent modulus would produce −1.
+- The nonreference lower-rank tests have value 0, so the four-form combination is the reference/reference contribution plus three zero terms. The implication uses no sign choice for those zero terms.
 
-- `TauCeti.UnitaryFJ.hermitianHecke_unit` (compatibility): The Hecke unit 1_K acts as the identity on every e_lambda.
+### 3.7 The Weil action on the sum of orbital-image spaces
 
-- `TauCeti.UnitaryFJ.hermitianOrbit_disjoint` (characterisation): Distinct dominant lambda have disjoint supports; in particular e_(0) and e_(1) are linearly independent in rank one.
+Let I_GL and I_U be the images of the augmented linear and reference-unitary test spaces as locally constant functions on their common regular invariant base A^rss(F); include the cyclic-vector factor ω in I_GL and extend the unitary image by zero off its matching image. Import the descended SL_2(F) Weil actions and their agreement on I_GL intersection I_U. There is then a unique action on I_GL+I_U extending both actions: W(g)(A+B)=W_GL(g)A+W_U(g)B. For the spherical defect D=O_U((φ*e_0) ⊗ 1_Λ)-O_GL(BC(φ) ⊗ 1_L), use this sum, rather than assuming D belongs to the intersection.
 
-**Check:** For n=1, X1=F^times and its basis is indexed by every integer valuation, not just even valuations.
+F is a nonarchimedean local field of characteristic zero; E/F is an unramified quadratic field extension, with common uniformizer π and q=card(k_F). Use the reference Hermitian space Vn=(E^n,I_n), Λ_n=OE^n, and hyperspecial Haar volumes one. This includes residue characteristic two. psi has conductor OF; Fourier transforms use self-dual additive measures.
 
+(Leslie25, Proposition 5.1, p. 41; proof of Proposition 5.2, p. 43; Beuzart-Plessis21 Proposition 1, p. 7; BP21, Section 3, equations (4)–(5), pp. 5–6, and Proposition 1, p. 7).
 
-### FJ.2/base-change-compatibility: Quadratic base change commutes with the twisted Levi map
+*Needs:* §2.1 (FJ.2/hermitian-spherical-module); EndoscopicTransferAndUnitaryTraceComparison §2.1; EndoscopicTransferAndUnitaryTraceComparison §2.4; EndoscopicTransferAndUnitaryTraceComparison §2.9; EndoscopicTransferAndUnitaryTraceComparison §2.11; AdelicAlgebraicGroups §2.2 (quotient-measure); MetaplecticAutomorphicForms §2.1 (weilIndex); MetaplecticAutomorphicForms §2.5 (weil_generators); gap:jr-weil-descent; gap:jr-local-comparison.
 
-**Theorem target.** Define xi_F on spherical GL_n(F) by the same formula as xi_E with |.|_F in both twists and in normalized descent. Then BC_(a,b) composed with xi_E equals xi_F composed with BC_n. On normalized Satake coordinates, BC_n sends each E-variable Z_i to the square T_i^2; xi_F scales T_i by q^(-b/2) or q^(-a/2), so both composites substitute q^(-b)*X_i^2 or q^(-a)*Y_i^2. The equality does not imply that base change has support only on individually even coweights.
+One proof route is the following. Use the local Jacquet–Rallis invariant-base and orbital-image contracts. If A+B=A_prime+B_prime, their difference lies in the intersection; agreement of the actions proves independence of decomposition. Check the group law and uniqueness on the two generating subspaces.
 
-**Hypotheses and conventions:** F is a nonarchimedean local field of characteristic zero; E/F is an unramified quadratic field extension, with common uniformizer pi and q=card(k_F). Use the reference Hermitian space Vn=(E^n,I_n), Lambda_n=OE^n, and hyperspecial Haar volumes one. This includes residue characteristic two.
+**Checks.**
 
-**Direct prerequisites:** `SmoothRepresentationsOfLocalGroups:SR.4/parabolic-descent`, `EndoscopicTransferAndUnitaryTraceComparison:ET.3`, `SmoothRepresentationsOfLocalGroups:SR.4/satake-isomorphism`.
+- If A+B=A′+B′ and C=A−A′=B′−B lies in the intersection, the two proposed images differ by W_GL(g)C−W_U(g)C=0.
+- If the intersection is zero and A,B are both nonzero, A−B belongs to the sum, while its membership in the intersection would force A=B=0; the defect must be acted on in the sum.
+- At u=w=w′=1, Tr(h(u,w+w′))=Tr(2)=4 equals Tr(h(u,w))+Tr(h(u,w′))=2+2. Norm gives N(2)=4 whereas N(1)+N(1)=2, so a norm kernel fails additivity in characteristic zero.
 
-**Construction or proof:**
+### 3.8 The Weil reduction from rank-shifted to augmented transfer
 
-1. Request the unramified GL base-change Satake formula from ET.3.
+Fix n≥1 and φ in H_n,E. Suppose BC_n(φ) and {φ*e_0,0} match for the conjugation action of GL_(n-1)(F) on GL_n(F), against U(V_(n-1)) on the invertible part of Herm(V_(n-1) ⊕ Ee0), in the block Jacquet–Rallis sense. Then BC_n(φ) ⊗ 1_Ln and {(φ*e_0) ⊗ 1_Λ_n,0} are augmented Jacquet–Rallis transfers in rank n, including the nonreference-form zero clause.
 
-2. Compute both composites on Laurent variables and descend to symmetric Laurent polynomials by injectivity of Satake.
+F is a nonarchimedean local field of characteristic zero; E/F is an unramified quadratic field extension, with common uniformizer π and q=card(k_F). Use the reference Hermitian space Vn=(E^n,I_n), Λ_n=OE^n, and hyperspecial Haar volumes one. This includes residue characteristic two.
 
-3. Use the rank-two counterexample to rule out the source proof’s asserted support shortcut.
+(Leslie25, Proposition 5.2, pp. 42–43; Beuzart-Plessis21 Sections 2–3, pp. 3–8; BP21, Section 2, Lemma 1, pp. 4–5, and Section 3, Proposition 1 and proof, pp. 5–8).
 
-**Sources:** [Leslie25] Proof of Proposition 4.8, p. 39; Lemma 3.2, p. 24. The desired diagram follows directly from Satake substitutions, replacing the incorrect even-coweight support argument.
+*Needs:* §3.7 (FJ.3/weil-orbital-sum); §2.1 (FJ.2/hermitian-spherical-module); gap:unramified-hermitian-lattice-orbits; GeometryOfNumbersAndQuadraticArithmetic §2.7 (IntegralHermitianLattice.ofCarrier); GeometryOfNumbersAndQuadraticArithmetic §2.7 (IntegralHermitianLattice.dual); MetaplecticAutomorphicForms §2.1 (weilIndex); MetaplecticAutomorphicForms §2.5 (weil_generators); gap:jr-weil-descent; gap:unramified-unit-vector-transitivity; Tau Ceti `TauCeti.map_normUnits_unitFiltration`; gap:jr-local-comparison.
 
-**Check:** In rank two BC(1_K_E diag(pi,1) K_E)=1_K_F diag(pi^2,1) K_F-(q-1)*1_(pi K_F), which has an odd (1,1) component.
+A proof route uses the lattice indicators vanish when |q(a)|>1. For |q(a)|=1, use TauCeti.map_normUnits_unitFiltration at depth zero to rescale to norm one, then use gap:unramified-unit-vector-transitivity. The projection v↦w h(w,v)/h(w,w) splits an integral unit-norm line; its denominator is a unit. The complement is self-dual and has the reference isometry type by gap:unramified-hermitian-lattice-orbits. This gives the rank-(n−1) reduction in both forms, without division by 2. The lattice indicators are Fourier self-dual for the trace and hyperbolic pairings. On the orbital-image sum, the defect is fixed by the Weyl element. Since the defect is supported where q(a) is in the maximal ideal, every upper unipotent with t in π⁻¹OF fixes it. These and the Weyl element generate SL_2(F). For q(a)≠0 choose t with psi(t q(a))≠1, forcing the defect to zero. Local constancy and density of this locus finish the proof.
 
+**Checks.**
 
-### FJ.2/spherical-fourier: Hironaka’s normalized spherical Fourier isomorphism
+- For an integral unit-norm vector w, the projection p(v)=w h(w,v)/h(w,w) satisfies p(w)=w and p²=p; no factor 1/2 occurs, including over Z₂.
+- For q(a)=π and t∈π⁻¹OF, ψ(tq(a))=1. If q(a) is a unit, some t∈π⁻¹OF instead has ψ(tq(a))≠1; these conditions distinguish the supported defect from an arbitrary orbital image.
+- The Weyl element and N(π⁻¹OF) generate diagonal diag(π⁻¹,π), whose conjugation scales N by π⁻². The union of the resulting π^(−1-2j)OF is F, so all upper unipotents occur.
 
-**Construction target.** Normalize the spherical Fourier transform to obtain a complex-linear isomorphism H_n:H(Xn) -> H(GL_n(F)) such that H_n(e_0)=1_Kn and H_n(phi*f)=BC_n(phi)*H_n(f). It transports the GL_n(F) convolution algebra to an algebra structure on H(Xn). As an H_n,E-module H(Xn) is free of rank 2^n. The cyclic map phi -> phi*e_0 is injective, but for n>0 is not surjective.
+### Examples
 
-**Hypotheses and conventions:** F is a nonarchimedean local field of characteristic zero; E/F is an unramified quadratic field extension, with common uniformizer pi and q=card(k_F). Use the reference Hermitian space Vn=(E^n,I_n), Lambda_n=OE^n, and hyperspecial Haar volumes one. This includes residue characteristic two.
+For rank one over a field extension, S has the two norm classes 1,ε; on a fixed Hermitian form it has one orbit. The coordinate bijection therefore has size 2, not 1. The other subsections compute the corresponding boundary cases and normalization witnesses.
 
-**Direct prerequisites:** `FJ.2/hermitian-spherical-module`, `FJ.2/base-change-compatibility`, `SmoothRepresentationsOfLocalGroups:SR.4/satake-isomorphism`, `EndoscopicTransferAndUnitaryTraceComparison:ET.3`.
+### Dependencies
 
-**Construction or proof:**
+EndoscopicTransferAndUnitaryTraceComparison §1.17; EndoscopicTransferAndUnitaryTraceComparison §1.14; EndoscopicTransferAndUnitaryTraceComparison §1.1; gap:hermitian-field-classification; gap:jr-local-comparison; AdelicAlgebraicGroups §2.2 (quotient-measure); AdelicAlgebraicGroups §2.2 (Weil-integrable); EndoscopicTransferAndUnitaryTraceComparison §2.1; EndoscopicTransferAndUnitaryTraceComparison §2.4; EndoscopicTransferAndUnitaryTraceComparison §2.9; EndoscopicTransferAndUnitaryTraceComparison §2.11; SmoothRepresentationsOfLocalGroups §SR.4.1 (satake-isomorphism); SmoothRepresentationsOfLocalGroups §SR.4.3 (parabolic-descent); §2.2 (FJ.2/base-change-compatibility); gap:unitary-factor-all-quadratic; §1.4 (FJ.1/smooth-transfer); §2.3 (FJ.2/spherical-fourier); EndoscopicTransferAndUnitaryTraceComparison §4.9; §2.1 (FJ.2/hermitian-spherical-module); MetaplecticAutomorphicForms §2.1 (weilIndex); MetaplecticAutomorphicForms §2.5 (weil_generators); gap:jr-weil-descent; gap:unramified-hermitian-lattice-orbits; GeometryOfNumbersAndQuadraticArithmetic §2.7 (IntegralHermitianLattice.ofCarrier); GeometryOfNumbersAndQuadraticArithmetic §2.7 (IntegralHermitianLattice.dual); gap:unramified-unit-vector-transitivity; Tau Ceti `TauCeti.map_normUnits_unitFiltration`.
 
-1. Use the normalized spherical functions and Fourier image in Hironaka Theorem 2, matching q and the reference orbit.
+## Layer 4: the unit fundamental lemma
 
-2. Identify the image with the F-Satake algebra and normalize the reference orbit to the unit.
+Use the independent product-group theorem through its supplier gap, then derive the adjacent-rank and augmented comparisons and cyclic endoscopy. Compact determinant grades recover the full relative lattice indicator.
 
-3. The symmetric Laurent algebra is free of rank 2^n over its squared-variable subalgebra, yielding freeness and cyclic injectivity.
+### 4.1 The sign convention for the lattice pushforward
 
-**Sources:** [Leslie25] Proposition 3.4 and Remarks 3.6–3.7, pp. 26–27; Hironaka99 Theorem 2, p. 571. Hironaka’s transform identifies the full module with the F-Hecke algebra over the squared-variable E-Hecke algebra.; [Hironaka99] Section 2, Theorem 2, p. 571; normalization on pp. 570–571. The Fourier image is the full symmetric Laurent algebra and the module has rank 2^n.
+In the unramified setting choose c in OE^× with Nm_E/F(c)=-1. Define r_plus(X)=X X* and r_minus(X)=-X X* in the reference coordinates. Then r_minus(cX)=r_plus(X); multiplication by c preserves every integral Hom lattice and its test indicator, all group actions and stabilizer measures. Consequently the signed-contraction pushforward of the lattice unit equals its positive-contraction pushforward. The same comparison applies separately in each endoscopic block.
 
-**Uses:** `FJ.3/augmented-to-endoscopic and FJ.5/full-spherical-extension`: It relates the cyclic BC test to Hermitian tests and defines an extension on the full module.
+F is a nonarchimedean local field of characteristic zero; E/F is an unramified quadratic field extension, with common uniformizer π and q=card(k_F). Use the reference Hermitian space Vn=(E^n,I_n), Λ_n=OE^n, and hyperspecial Haar volumes one. This includes residue characteristic two.
 
-**API:**
+(Leslie25, Equation (2.1), p. 14, compared with equation (3.8) and Lemma 3.11, pp. 28–30).
 
-- `TauCeti.UnitaryFJ.hermitianSphericalFourier` (equivalence): The normalized isomorphism H_n between the full Hermitian module and the F-Hecke algebra.
+*Needs:* §0.2 (FJ.0/contractions); §0.8 (FJ.0/pushforward); Tau Ceti `TauCeti.map_normUnits_unitFiltration`.
 
-- `TauCeti.UnitaryFJ.hermitianSphericalFourier_unit` (simp): H_n(e_0)=1_Kn.
+One proof route is the following. Apply TauCeti.map_normUnits_unitFiltration (F,E,0) to the unit −1; it gives c∈O_E× with N(c)=−1 in every residue characteristic. Compute -(cX)(cX)*=-Nm(c)XX*=XX*. Use the invariant lattice indicator and unchanged fiber measures to identify the two pushforwards.
 
-- `TauCeti.UnitaryFJ.hermitianSphericalFourier_action` (compatibility): H_n(phi*f)=BC_n(phi)*H_n(f).
+**Checks.**
 
-- `TauCeti.UnitaryFJ.hermitianSphericalFourier_inverse` (universal-property): The inverse sends BC_n(phi) to phi*e_0, and both composites with H_n are identities on the full spaces.
+- For unramified rank one, N(c)=−1 gives r_−(c)=−N(c)=1=r_+(1), and cOE=OE even in residue characteristic two.
+- For X=diag(1,π), r_−(cX)=diag(1,π²)=r_+(X); replacing c by a norm-one unit would instead leave diag(−1,−π²).
+- For E=Q₃(√3), −1 is not a norm of a unit (its residue 2 is not a square). Thus no such c exists and the sign comparison is not extended to arbitrary ramified extensions.
 
-- `TauCeti.UnitaryFJ.hermitianCyclicEmbedding` (characterisation): phi -> phi*e_0 is injective and its image under H_n is exactly the base-change subalgebra.
+### 4.2 The cyclic embedding is contraction pushforward
 
-**Unit tests:**
+For every compact spherical φ on GL_n(E), viewed as a compact nonsingular matrix test, the positive-contraction pushforward r_plus,!φ equals φ*e_0 on all Xn, with zero on the other GL_n(E)-orbit of Hermitian forms. The signed pushforward gives the same function because multiplication by the unit c with norm -1 preserves a K_n,E-biinvariant φ.
 
-- `TauCeti.UnitaryFJ.sphericalFourier_rankOne_unit` (computation): H_1(e_(0))=1_OF^times.
+F is a nonarchimedean local field of characteristic zero; E/F is an unramified quadratic field extension, with common uniformizer π and q=card(k_F). Use the reference Hermitian space Vn=(E^n,I_n), Λ_n=OE^n, and hyperspecial Haar volumes one. This includes residue characteristic two.
 
-- `TauCeti.UnitaryFJ.sphericalFourier_rankOne_shift` (compatibility): The pi^d OE^times Hecke indicator sends e_(0) to e_(2d), and H_1(e_(2d)) is the pi^(2d) OF^times Hecke indicator.
+(Leslie25, Lemma 3.11, pp. 29–30).
 
-- `TauCeti.UnitaryFJ.sphericalFourier_not_cyclic_surjection` (non-example): In rank one e_(1) lies outside the image of phi -> phi*e_(0).
+*Needs:* §0.8 (FJ.0/pushforward); §2.1 (FJ.2/hermitian-spherical-module); §4.1 (FJ.4/contraction-sign-comparison).
 
-- `TauCeti.UnitaryFJ.sphericalFourier_inverse_all` (characterisation): For f=e_(1), H_1^(-1)(H_1(f))=f; the inverse identity includes the noncyclic part.
+One proof route is the following. Compute r_plus,!(1_K)=e_0 by vol U(Λ_n)=1 and the unimodular Hermitian orbit description. Prove r_plus,!(φ*φ1)=φ*r_plus,!φ1 by quotient Fubini. Set φ1=1_K. For the signed comparison, c I_n belongs to K_n,E.
 
-**Check:** For n=1 the action shifts valuations by even integers, so e_(0) and e_(1) give the two module generators.
+**Checks.**
 
+- In rank one, the Hecke shell 1_(π^d OE×) pushes to e_(2d), with coefficient vol U(1)=1; d=1 gives e_2.
+- The shell d=−1 pushes to e_−2, so spherical pushforward allows compact tests with negative valuation, unlike the full integral lattice unit.
+- At valuation 1 in F×, the same shell pushes to 0 since norm valuations are even; an unsigned shift by d would give a false nonzero value.
 
-## FJ.3. Local comparison reductions
+### 4.3 Contraction of the spherical product-group test
 
-Use Xiao’s pure-inner-form torsor, norm characters, regularized orbital distributions and germ identity to compare the endoscopic and Jacquet–Rallis transfer diagrams. Give additive Lie parabolic descent and its lattice/Jacobian computation. Deduce spherical endoscopic transfer from augmented Jacquet–Rallis transfer, and augmented transfer from the rank-shifted group comparison by the Weil representation. The local Jacquet–Rallis and Weil inputs have the explicit unresolved supplier contracts in the packet.
+Set m=n-1 and embed GL_m in GL_n by h → diag(h,1). For φ in H_n,E take Phi=1_Km,E ⊗ φ on GL_m(E) × GL_n(E). Its left-H contraction tilde(Phi)(g)=integral_GL_m(E) Phi(h⁻¹,diag(h⁻¹,1)g) dh equals φ. The corresponding Hermitian contraction at the reference pair (I_m,I_n) equals φ*e_0. The F-linear contraction of BC_(m,n)(Phi) equals BC_n(φ), and the product transfer factor Ω(gamma) is ω(diag(gamma1⁻¹,1)gamma2). With compatible quotient measures, product relative orbital integrals become the rank-shifted GL_m and U(V_m) orbital integrals.
 
-**Dependencies:** `FJ.1`, `FJ.2`, `EndoscopicTransferAndUnitaryTraceComparison:ET.0`, `EndoscopicTransferAndUnitaryTraceComparison:ET.1`, `EndoscopicTransferAndUnitaryTraceComparison:ET.3`, `SmoothRepresentationsOfLocalGroups:SR.4`.
+F is a nonarchimedean local field of characteristic zero; E/F is an unramified quadratic field extension, with common uniformizer π and q=card(k_F). Use the reference Hermitian space Vn=(E^n,I_n), Λ_n=OE^n, and hyperspecial Haar volumes one. This includes residue characteristic two.
 
-**Coverage:** `planned`. G3: register and prove the local Jacquet–Rallis exports. G4: settle raw Tate versus finite Fourier averaging and the endoscopic factor/sign comparison. G5: register the Weil/orbital-image export with its self-dual trace pairing.
+(Leslie25, Section 11.2, p. 86; equations (7.5)–(7.7) and Definition 7.4, pp. 50–51; Leslie25, Equations (7.5)–(7.7), Definition 7.4, pp. 50–51).
 
-**Planets:** Generalized nilpotent orbital integrals; Xiao germ comparison; Lie parabolic descent; Augmented Jacquet–Rallis reduction; Weil representation reduction.
+*Needs:* §2.3 (FJ.2/spherical-fourier); §2.1 (FJ.2/hermitian-spherical-module); AdelicAlgebraicGroups §2.2 (quotient-measures-in-stages); EndoscopicTransferAndUnitaryTraceComparison §4.9; §4.2 (FJ.4/spherical-pushforward); gap:jr-local-comparison; gap:jr-product-base-change.
 
+One proof route is the following. Apply the supplier product-group orbital contraction formulas, with n there replaced by n-1. For the unit ⊗ lift, K-invariance and vol K_m,E=1 give tilde(Phi)=φ. Use r_!φ=φ*e_0 from the spherical pushforward identity for the Hermitian contraction. Base change preserves the two units; factor compatibility is the cyclic determinant formula.
 
-### FJ.3/pure-form-orbit-torsor: The orbit torsor across both Hermitian forms
+**Checks.**
 
-**Comparison target.** For a regular semisimple Hermitian y with F[y]=product Fi, let Ei=E tensor_F Fi and S1={i:Ei is a field}. The union S of conjugacy classes with that characteristic polynomial across both n-dimensional Hermitian forms is a torsor for H1(F,T_y)=product_(i in S1) C2. In one fixed form the rational classes are the kernel of the sum map to C2. An auxiliary regular cyclic pair (v,v*) on a matching linear x chooses an origin in S and identifies it with F[x]^times/Nm(E[x]^times). For Sigma subset S1 the character is kappa_Sigma(zeta)=product_(i notin Sigma) eta_Ei/Fi(zeta_i).
+- For Φ=1_Km⊗φ and h∈K_m, φ(diag(h⁻¹,1)g)=φ(g). Thus the contraction is vol(K_m)φ(g)=φ(g); vol(K_m)=2 would give 2φ(g).
+- For n=1, m=0 and GL_0=U_0={1}, both contractions are their rank-one tests, with no additional volume factor.
+- For γ1=I_m, the contracted γ is γ2 and Ω(γ1,γ2)=ω(γ2). At rank one this is η(det[e_1])=η(1)=1.
 
-**Hypotheses and conventions:** F is a nonarchimedean local field of characteristic zero; E/F is a quadratic field extension. Hermitian forms are conjugate-linear in the first variable and linear in the second.
+### 4.4 Spherical rank-shifted Jacquet–Rallis comparison
 
-**Direct prerequisites:** `EndoscopicTransferAndUnitaryTraceComparison:ET.0/unitary-hermitian-matching`, `EndoscopicTransferAndUnitaryTraceComparison:ET.0/rational-classes-in-stable-class`, `EndoscopicTransferAndUnitaryTraceComparison:ET.0/crossed-module-galois-cohomology`, `GeometryOfNumbersAndQuadraticArithmetic:GN.2/hermitian-space-classification`.
+For n≥1, φ in H_n,E and X in GL_n(F) regular semisimple under GL_(n-1)-conjugation, ω(X)*Orb_GL_(n-1),η(BC_n(φ),X) equals Orb_U(V_(n-1))(φ*e_0,Y) when X matches Y in Xn for the reference block Hermitian form. It is zero when X matches a different (n-1)-dimensional Hermitian form. Here ω(X)=η(det[e_n,Xe_n,..,X^(n-1)e_n]); regularity makes this determinant nonzero.
 
-**Construction or proof:**
+F is a nonarchimedean local field of characteristic zero; E/F is an unramified quadratic field extension, with common uniformizer π and q=card(k_F). Use the reference Hermitian space Vn=(E^n,I_n), Λ_n=OE^n, and hyperspecial Haar volumes one. This includes residue characteristic two.
 
-1. Import the ordinary torus and fixed-form kernel from ET.0.
+(Leslie25, Theorem 5.3, p. 43, proved in Section 11.2, p. 86, using Theorem 11.1, p. 78).
 
-2. Classify the one-dimensional Ei-Hermitian factors by their norm classes; all factors together give the pure-form union.
+*Needs:* §4.3 (FJ.4/product-group-contraction); gap:jr-local-comparison; gap:jr-product-base-change.
 
-3. Use cyclic invariant matching to identify the norm quotient and evaluate the complementary-coordinate characters.
+One proof route is the following. Import the precise product-group base-change fundamental lemma in ranks (n-1,n), including all nonreference-form vanishing. Apply it to Phi=1_K_(n-1),E ⊗ φ. Use product-group-contraction and Ω=ω after taking matching lifts; transport the reference split forms to identity forms by integral isometries.
 
-**Sources:** [Leslie25] Proposition 4.5, Lemma 4.6 and the definition of kappa_Sigma, pp. 35–36. The larger pure-form union is an H1 torsor; choosing cyclic auxiliary data gives the norm-quotient coordinates and all characters.; [Xiao18] Proposition 3.8, pp. 11–12, and Lemma 4.6, pp. 19–20. The pure-form orbit union and its cyclic norm coordinates have a compatible H1-torsor structure.
+**Checks.**
 
-**Check:** For n=1 the union has two classes, while a single fixed form has one. If S1 is empty, the union is a singleton and the norm quotient is trivial.
+- For n=1 and φ=1_(π^d OE×), GL_0 is trivial, ω=1, and both sides are 1_(π^(2d)OF×).
+- For n=1 at an odd valuation in F×, BC(φ)=0 and φ*e0=0; a base-change map shifting by d would fail.
+- In the nonreference block form the asserted target orbital function is 0, including orbits with equal characteristic invariants; matching only the reference form cannot establish this zero clause.
 
-**Direct open obligations:** G3.
+### 4.5 Augmented spherical Jacquet–Rallis transfer
 
+In every positive rank n and for every φ in H_n,E, the test BC_n(φ) ⊗ 1_Ln transfers to the family {(φ*e_0) ⊗ 1_Λ_n,0} in the augmented Jacquet–Rallis comparison of gl_n(F) × F^n × (F^n)* with Herm(V) × V. The zero entry is the other Hermitian isometry class.
 
-### FJ.3/generalized-nilpotent-integral: Regularized generalized nilpotent orbital distributions
+F is a nonarchimedean local field of characteristic zero; E/F is an unramified quadratic field extension, with common uniformizer π and q=card(k_F). Use the reference Hermitian space Vn=(E^n,I_n), Λ_n=OE^n, and hyperspecial Haar volumes one. This includes residue characteristic two.
 
-**Definition target.** Fix regular semisimple x in gl_n(F), cyclic v and v*, F[x]=product Fi and S1 as in pure-form-orbit-torsor. Let T=F[x]^times and T1=product_(i in S1) Fi^times. Set v_Sigma to v_i for i in Sigma and zero otherwise; v*_(S1\Sigma) is analogous, with every S2 component zero. Define G_Sigma(f) by integrating over GL_n(F)/T the value at s=0 of the meromorphic continuation of the T1 integral of f(gxg^(-1),g t v_Sigma,v*_(S1\Sigma)t^(-1)g^(-1))*eta(det t)*eta(det g)*product_(i in Sigma)|t_i|^s*product_(i in S1\Sigma)|t_i|^(-s). Use maximal-compact-volume-one multiplicative measures and their quotient measures. This is the raw regularized integral; it includes no finite-Fourier inversion factor.
+(Leslie25, Proposition 5.2 and Theorem 5.3, pp. 42–43).
 
-**Hypotheses and conventions:** F is a nonarchimedean local field of characteristic zero; E/F is an unramified quadratic field extension, with common uniformizer pi and q=card(k_F). Use the reference Hermitian space Vn=(E^n,I_n), Lambda_n=OE^n, and hyperspecial Haar volumes one. This includes residue characteristic two.
+*Needs:* §4.4 (FJ.4/rank-shifted-fundamental-lemma); §3.8 (FJ.3/group-to-augmented).
 
-**Direct prerequisites:** `FJ.3/pure-form-orbit-torsor`, `AdelicAlgebraicGroups:AA.2/quotient-measure`, `AdelicAlgebraicGroups:AA.2/quotient-integral-integrable`, `EndoscopicTransferAndUnitaryTraceComparison:ET.1`.
+One proof route is the following. Apply group-to-augmented in each rank using rank-shifted-fundamental-lemma. Retain the same self-dual vector lattices and all reference/nonreference form labels.
 
-**Construction or proof:**
+**Checks.**
 
-1. Factor compact locally constant functions into finite sums of tensor products locally on the regular semisimple x-orbit.
+- For φ=1_K in unramified rank one, the augmented reference unit has normalized regular orbital value 1 on the norm-unit component, with the other form test equal to 0.
+- For the same lattice test the raw germ at v=1 is 1/2; augmented transfer does not identify that singular-vector regularization with the unaveraged value 1.
+- For n=1 and φ=1_(πOE×), the matrix argument of the Hermitian cyclic test has valuation 2, matching BC(φ); a valuation-one matrix gives 0 on both spherical tests.
 
-2. Apply Tate continuation in each nonsplit factor; the nontrivial quadratic character removes the pole at zero.
+### 4.6 The cyclic spherical endoscopic fundamental lemma
 
-3. At s=0 the value descends under changing the T-coset representative; compactness on GL/T gives a well-defined outer integral.
+For n=a+b with a,b positive and φ in H_n,E, the Hermitian functions φ*e_0 and ξ_E(φ)*e_0 are ordinary smooth endoscopic transfers with the EndoscopicTransferAndUnitaryTraceComparison §§2.1, 2.4, 2.9, 2.11 matching and factor. The notation on the target means the ⊗ of the cyclic embeddings in ranks a,b, extended linearly; φ need not be a simple ⊗ after applying ξ_E. This theorem covers the cyclic H_n,E-submodule of H(Xn), not all of H(Xn).
 
-**Sources:** [Leslie25] Section 4.2, p. 36; Xiao18 Section 2.1, equation (2) and Lemma 2.1, pp. 3–5. Tate continuation defines distributions on singular vector orbits with complementary supports.; [Xiao18] Section 2.1, equation (2), Lemma 2.1, pp. 3–5; Section 4.1, p. 15. The continuation is holomorphic at zero and descends to a compactly supported function on GL/T.
+F is a nonarchimedean local field of characteristic zero; E/F is an unramified quadratic field extension, with common uniformizer π and q=card(k_F). Use the reference Hermitian space Vn=(E^n,I_n), Λ_n=OE^n, and hyperspecial Haar volumes one. This includes residue characteristic two.
 
-**Uses:** `FJ.3/germ-inversion and FJ.3/augmented-to-endoscopic`: Its character transform recovers weighted ordinary orbital sums and passes through Lie parabolic descent.
+(Leslie25, Theorem 3.5, p. 27; final paragraph of Section 5.2, p. 43).
 
-**API:**
+*Needs:* §4.5 (FJ.4/augmented-fundamental-lemma); §3.6 (FJ.3/augmented-to-endoscopic); §2.3 (FJ.2/spherical-fourier); SmoothRepresentationsOfLocalGroups §SR.4.3 (parabolic-descent); gap:unitary-factor-all-quadratic.
 
-- `TauCeti.UnitaryFJ.generalizedNilpotentIntegral` (data): The displayed regularized integral for x,Sigma and the chosen cyclic reference data.
+One proof route is the following. Use augmented-fundamental-lemma in all three ranks in augmented-to-endoscopic. For a finite ⊗ expansion of ξ_E(φ), apply the target cyclic embeddings termwise. Check unmatched vanishing by the corresponding ordinary-transfer clause.
 
-- `TauCeti.UnitaryFJ.generalizedNilpotentIntegral_linear` (structure): It is a complex-linear functional on the augmented linear test space.
+**Checks.**
 
-- `TauCeti.UnitaryFJ.generalizedNilpotentIntegral_equivariant` (functoriality): Conjugating the triple by g changes the distribution by eta(det g) with the chosen action convention.
+- For φ=1_K the two cyclic functions are e0 and e0⊗e0; the unit is preserved by ξ_E.
+- For n=2,a=b=1 and φ=c_(2,1), the target is e2⊗e0+e0⊗e2; the two degree distributions each have coefficient 1.
+- In rank one e1 is nonzero but is outside the span of the e_(2d). Thus the cyclic theorem cannot be applied to an arbitrary full-module vector such as e1.
 
-- `TauCeti.UnitaryFJ.generalizedNilpotentIntegral_reference` (compatibility): Changing v,v* by torus scalars transforms the value by their quadratic norm characters, consistently with the corresponding change of origin on S.
+### 4.7 The contracted lattice unit and its determinant grades
 
-**Unit tests:**
+Put Phi_n=r_minus,!1_End(Λ_n), equivalently r_plus,!1_End(Λ_n). For integer d let Xn,d={T in Xn:v_F(det T)=d} and Phi_n,d=Phi_n*1_Xn,d, where this star denotes pointwise multiplication only. Each Phi_n,d is a compact spherical function. It is zero if d<0 or d is odd. For d≥0, Phi_n,2d=sum_(lambda dominant,nonnegative,sum lambda=2d) m0(π^lambda)*e_lambda, where m0(T) is the finite number of self-dual integral overlattices of the lattice with Gram matrix T, and is zero if no such overlattice exists. Identify this count with the normalized square-rank representation density of GeometryOfNumbersAndQuadraticArithmetic §3.2 (density divided by the reference self-density). Phi_n itself is only almost compact: it has infinitely many nonzero grades. The reference self-density is ∏_(j=1)^n(1−(−q)^(−j))>0 for q≥2, so this division is defined; the empty product is 1.
 
-- `TauCeti.UnitaryFJ.nilpotentIntegral_rankOne_unitShell` (computation): For n=1, Sigma={1}, x fixed and the vector test 1_OF^times, the raw Tate integral is 1.
+F is a nonarchimedean local field of characteristic zero; E/F is an unramified quadratic field extension, with common uniformizer π and q=card(k_F). Use the reference Hermitian space Vn=(E^n,I_n), Λ_n=OE^n, and hyperspecial Haar volumes one. This includes residue characteristic two.
 
-- `TauCeti.UnitaryFJ.nilpotentIntegral_rankOne_piShell` (computation): For n=1 and vector test 1_(pi OF^times), the raw integral is eta(pi)=-1.
+(Leslie25, Equation (3.8), Lemma 3.8 and Remark 3.9, pp. 28–29).
 
-- `TauCeti.UnitaryFJ.nilpotentIntegral_rankOne_lattice` (computation): For n=1 and vector test 1_OF, the Tate expression is 1/(1+q^(-s)), so its raw value at zero is 1/2, not 1.
+*Needs:* §0.8 (FJ.0/pushforward); §4.1 (FJ.4/contraction-sign-comparison); §2.1 (FJ.2/hermitian-spherical-module); GeometryOfNumbersAndQuadraticArithmetic §2.7 (IntegralHermitianLattice.ofCarrier); GeometryOfNumbersAndQuadraticArithmetic §2.7 (IntegralHermitianLattice.dual); gap:unramified-hermitian-lattice-orbits; GeometryOfNumbersAndQuadraticArithmetic §3.2.
 
-- `TauCeti.UnitaryFJ.nilpotentIntegral_zero` (degenerate): The zero augmented test gives zero.
+One proof route is the following. Integral Gram matrices have nonnegative elementary divisors; their determinant has even valuation for the reference norm component. Fixing the determinant grade leaves finitely many nonnegative dominant tuples, giving compactness. For T=xx*, put L=x*Λ_n. Cosets h U(Λ_n) with xh integral correspond to self-dual L′ with L⊆L′⊆L∨ by L′=hΛ_n; finiteness follows from the finite module L∨/L. Use gap:unramified-hermitian-lattice-orbits for self-dual transitivity. Identify this count with the reference-normalized square-rank density of GeometryOfNumbersAndQuadraticArithmetic §3.2; no generic density construction is repeated.
 
-**Check:** Distinguish this raw value from the normalized finite character sum in germ-inversion.
+The construction has the following API.
 
+- The fiber integral of the full integral Hom indicator, defined on Xn.
+- Restrict Φ_n to determinant valuation d.
+- The support is contained in integral Hermitian matrices of determinant valuation d, and is empty for negative or odd d.
+- For nonnegative even d, the e_λ coefficient is m0(π^λ), the finite self-dual-overlattice count just defined; it is the supplied square-rank density divided by its reference self-density.
+- Each grade is a finite basis expansion in H(Xn), although the total function is not in H(Xn).
 
-### FJ.3/germ-inversion: Germ inversion with an explicit finite-Fourier normalization
+**Checks.**
 
-**Theorem target.** Suppose f and the family {f_V} are augmented Jacquet–Rallis transfers for the cyclic-vector factor omega and volume-one measures. For regular semisimple x with r=card S1, matching reference data (y,w), and Sigma subset S1, the target normalized identity is omega(x,v,v*)*G_Sigma(f)=2^(-r)*sum_(zeta in S) kappa_Sigma(zeta)*Orb_U(V_zeta)(f_V_zeta(-,0),y_zeta). Equivalently define the Fourier-normalized germ as 2^r*G_Sigma. The orbit sum includes both Hermitian forms. This is the corrected normalization target; verifying the displayed coefficient against all quotient-measure transports is an explicit gap, not a closed import of the source’s unnormalized formula.
+- Phi_1,2=e_(2), with coefficient one.
+- Phi_1,1=0 even though e_(1) is a nonzero spherical Hermitian function.
+- Phi_n,d=0 for d<0.
+- Phi_1 has value one at π^(2d) for every d≥0, so it is not compactly supported within X1=F^×.
 
-**Hypotheses and conventions:** F is a nonarchimedean local field of characteristic zero; E/F is an unramified quadratic field extension, with common uniformizer pi and q=card(k_F). Use the reference Hermitian space Vn=(E^n,I_n), Lambda_n=OE^n, and hyperspecial Haar volumes one. This includes residue characteristic two.
+Its direct consumers are FJ.4/degree-hecke-identities, FJ.4/graded-transfer.
 
-**Direct prerequisites:** `FJ.3/pure-form-orbit-torsor`, `FJ.3/generalized-nilpotent-integral`, `EndoscopicTransferAndUnitaryTraceComparison:ET.1`.
+### 4.8 Determinant-degree identities in the spherical Hecke algebra
 
-**Construction or proof:**
+For d≥0 let c_n,d be the indicator of integral invertible E-matrices with v_E(det)=d, equivalently the sum of 1_K π^lambda K over nonnegative dominant lambda with sum d. Its normalized Satake polynomial is q^(d(n-1))*h_d(Z1,..,Zn), where h_d is Mathlib’s complete homogeneous symmetric polynomial. Then Phi_n,2d=c_n,d*e_0 and ξ_E(c_n,d)=sum_(da+db=d) c_a,da ⊗ c_b,db. All sums here are finite.
 
-1. Use the augmented Jacquet–Rallis matching contract and the torus germ expansions in Xiao Sections 4.1–4.3.
+F is a nonarchimedean local field of characteristic zero; E/F is an unramified quadratic field extension, with common uniformizer π and q=card(k_F). Use the reference Hermitian space Vn=(E^n,I_n), Λ_n=OE^n, and hyperspecial Haar volumes one. This includes residue characteristic two.
 
-2. Extract the constant term after the split-factor logarithmic terms.
+(Leslie25, Proposition 3.12, equations (3.9)–(3.10), pp. 30–31).
 
-3. Invert the r-dimensional C2 character table with factor 2^(-r); prove that its quotient measures agree with the ET.1 normalization.
+*Needs:* SmoothRepresentationsOfLocalGroups §SR.4.3 (parabolic-descent); §2.1 (FJ.2/hermitian-spherical-module); §4.2 (FJ.4/spherical-pushforward); §4.7 (FJ.4/contracted-lattice-function); SmoothRepresentationsOfLocalGroups §SR.4.1 (satake-isomorphism); Mathlib `MvPolynomial.hsymm`.
 
-**Sources:** [Leslie25] Theorem 4.7, p. 36; Xiao18 Theorem 4.7 and its preceding inversion, pp. 20–21. The source obtains a finite character transform of the nilpotent germs; its printed inverse omits the averaging factor under the stated volume-one conventions.; [Xiao18] Sections 4.1–4.5, pp. 15–21, especially Theorem 4.7. Torus germ expansions give the forward character identity; finite Fourier inversion determines its factor.
+One proof route is the following. Use the Iwasawa decomposition in SR.4 to count upper-unipotent entries; for a diagonal valuation tuple m the measure is q^(sum 2(i-1)m_i). The normalized Satake modulus combines with that count to give the uniform coefficient q^(d(n-1)). Apply the two scalings of ξ_E and split total monomial degree between the a and b blocks. For the pushforward, determinant valuation doubles under the Gram map; apply spherical-pushforward to c_n,d.
 
-**Check:** For n=1 and the standard augmented unit, G=1/2 while the unaveraged pure-form sum is 1. Changing the reference orbit transports both the character sum and omega*G by the same character.
+**Checks.**
 
-**Direct open obligations:** G3, G4.
+- For n=2,d=1, Sat(c_(2,1))=q(Z1+Z2), and ξ_E substitutes q⁻¹X,q⁻¹Y, giving X+Y.
+- For d=0, c_(n,0)=1_K and Φ_(n,0)=e0, so the degree identity is 1↦1⊗1.
+- For a=b=1,d=2 the target degree pairs are (2,0),(1,1),(0,2). Both Satake expressions are X²+XY+Y²; the middle term excludes a two-term-only splitting.
 
+### 4.9 The lattice theorem is equivalent to compact graded transfer
 
-### FJ.3/lie-parabolic-descent: Additive parabolic descent on augmented linear tests
+The relative unit fundamental lemma for a fixed datum Xi is equivalent to the following family of compact ordinary endoscopic transfer identities: for every d≥0, Phi_n,2d transfers to sum_(da+db=d) Phi_a,2da ⊗ Phi_b,2db for the reference pair (I_a,I_b), and the corresponding target contribution for every other form pair is zero. Matching preserves the product of characteristic polynomials and hence determinant valuation, so each regular matching orbit tests exactly one total grade.
 
-**Construction target.** For n=a+b and an augmented linear test f(x,v,v*), define f_p(m1,m2,v,v*) as integral over Lie N_(a,b)(F) and K_n of f(k*[[m1,u],[0,m2]]*k^(-1),k v,v* k^(-1)) dk du. Here du is additive, Lie N(OF) and K_n have volume one, and no delta_P^(1/2) occurs in the definition. With L_n=OF^n direct-sum (OF^n)*, the descent of phi tensor 1_Ln equals xi_F(phi) tensor 1_(La times Lb) for spherical phi on GL_n(F), extended by zero to gl_n(F).
+F is a nonarchimedean local field of characteristic zero; E/F is an unramified quadratic field extension, with common uniformizer π and q=card(k_F). Use the reference Hermitian space Vn=(E^n,I_n), Λ_n=OE^n, and hyperspecial Haar volumes one. This includes residue characteristic two.
 
-**Hypotheses and conventions:** F is a nonarchimedean local field of characteristic zero; E/F is an unramified quadratic field extension, with common uniformizer pi and q=card(k_F). Use the reference Hermitian space Vn=(E^n,I_n), Lambda_n=OE^n, and hyperspecial Haar volumes one. This includes residue characteristic two.
+(Leslie25, Corollary 3.10, p. 29; Lemma 2.5, p. 16).
 
-**Direct prerequisites:** `SmoothRepresentationsOfLocalGroups:SR.4/satake-isomorphism`, `SmoothRepresentationsOfLocalGroups:SR.4/parabolic-descent`, `AdelicAlgebraicGroups:AA.2/quotient-measure`, `AdelicAlgebraicGroups:AA.2/quotient-integral-integrable`, `FJ.2/base-change-compatibility`.
+*Needs:* §0.9 (FJ.0/orbital-comparison); §1.4 (FJ.1/smooth-transfer); §4.7 (FJ.4/contracted-lattice-function); §4.1 (FJ.4/contraction-sign-comparison).
 
-**Construction or proof:**
+One proof route is the following. Compare relative and ordinary orbital integrals through orbital-comparison. A regular orbit has one fixed determinant valuation; use the compact grade corresponding to that valuation. For other form pairs the relevant contraction images do not intersect the reference norm components in at least one block; record the resulting zero condition.
 
-1. Define the integral on the additive nilpotent block and the compact K average.
+**Checks.**
 
-2. Use K-stability of L_n to factor out the vector-lattice indicator.
+- For a=b=1 and total grade 2, the target is e2⊗e0+e0⊗e2. At block valuations (2,0) it is 1; at (1,1) it is 0.
+- If total determinant valuation is odd or negative, the source grade and every target grade product vanish, giving 0=0.
+- On a fixed matching pair, d_n=d_a+d_b. At (d_a,d_b)=(2,4), exactly total grade 6 contributes, so the orbital integral tests one grade rather than an infinite sum.
 
-3. Change u=m1*u_prime; its Jacobian is |det m1|_F^b. Compare with delta_P^(1/2) and the two half-power twists to identify xi_F.
+### 4.10 The unitary Friedberg–Jacquet fundamental lemma
 
-**Sources:** [Leslie25] Definition 4.9, p. 38, and the Jacobian calculation in Proposition 4.8, p. 39. The additive Lie operation differs from normalized group descent, but its lattice-vector specialization produces the required determinant twists.
+Let n=a+b with a,b positive, Vn=(E^n,I_n), Λ_n=OE^n=Λ_a ⊕ Λ_b and W1=W2=Vn. Fix a relative elliptic datum Xi=(U(Va) × U(Vb),s,ξ,alpha,beta), using the unramified ordinary transfer normalization and hyperspecial Haar volumes one. The source test 1_End(Λ_n) transfers, in the relation of §1.4, to 1_End(Λ_a) ⊗ 1_End(Λ_b) if (alpha,beta)=(I_a,I_b), and to the zero target test for every other pair of Hermitian isometry classes. The theorem holds for every characteristic-zero F, including residue characteristic two.
 
-**Uses:** `FJ.3/augmented-to-endoscopic`: This descent carries the upper-rank BC augmented test to the lower-rank BC(xi_E) test.
+F is a nonarchimedean local field of characteristic zero; E/F is an unramified quadratic field extension, with common uniformizer π and q=card(k_F). Use the reference Hermitian space Vn=(E^n,I_n), Λ_n=OE^n, and hyperspecial Haar volumes one. This includes residue characteristic two.
 
-**API:**
+(Leslie25, Theorem 2.12, p. 21; Proposition 3.12, pp. 30–31; Section 11.2, p. 86).
 
-- `TauCeti.UnitaryFJ.lieParabolicDescent` (constructor): The additive Lie N and compact K double integral above.
+*Needs:* §1.4 (FJ.1/smooth-transfer); §4.6 (FJ.4/cyclic-endoscopic-transfer); §4.8 (FJ.4/degree-hecke-identities); §4.9 (FJ.4/graded-transfer); GeometryOfNumbersAndQuadraticArithmetic §2.7 (IntegralHermitianLattice.ofCarrier); gap:unramified-hermitian-lattice-orbits; gap:unitary-factor-all-quadratic.
 
-- `TauCeti.UnitaryFJ.lieParabolicDescent_linear` (structure): It is a complex-linear map between the augmented test spaces.
+One proof route is the following. Apply cyclic-endoscopic-transfer to each determinant-shell test c_n,d. Use degree-hecke-identities to identify the transferred compact grade pair. Apply graded-transfer and the sign comparison to recover the full relative lattice indicators. Use the nonreference-form clause throughout, with the same datum labels and factor normalization.
 
-- `TauCeti.UnitaryFJ.lieParabolicDescent_lattice` (simp): For phi spherical on GL_n(F), (phi tensor 1_Ln)_p=xi_F(phi) tensor 1_(La times Lb).
+**Checks.**
 
-- `TauCeti.UnitaryFJ.lieParabolicDescent_vs_group` (compatibility): On invertible Levi matrices the additive integral is |det m1|_F^b times unnormalized group descent; after delta_P normalization this is xi_F.
+- For a=b=1 the target tests are the ⊗ unit at (I1,I1) and 0 at each of (I1,ε),(ε,I1),(ε,ε). The last pair has the same total discriminant as the reference pair but must still receive 0.
+- At an unramified dyadic place with x−y=π and a nice regular match, the factor is −q⁻¹; at q=2 it is −1/2, which the positive resultant alone would get wrong.
+- For total grade 2 and a=b=1, contraction gives the two terms e2⊗e0 and e0⊗e2 with coefficient 1; a single ungraded compact unit on X1 would omit e2.
 
-**Unit tests:**
+### Examples
 
-- `TauCeti.UnitaryFJ.lieDescent_integral_unit` (computation): For n=2,a=b=1, the descent of 1_M2(OF) tensor 1_L2 is 1_OF tensor 1_OF tensor 1_L1 tensor 1_L1.
+For unramified rank one, N(c)=−1 gives r_−(c)=−N(c)=1=r_+(1), and cOE=OE even in residue characteristic two. The other subsections compute the corresponding boundary cases and normalization witnesses.
 
-- `TauCeti.UnitaryFJ.lieDescent_vector_outside` (non-example): If a vector coordinate has negative valuation, the descended lattice-vector test is zero even when both Levi matrices are integral.
+### Dependencies
 
-- `TauCeti.UnitaryFJ.lieDescent_jacobian` (computation): For a=b=1 and m1=pi, replacing u by m1*u multiplies additive measure by q^(-1); omitting this factor fails xi_F compatibility.
+§0.2 (FJ.0/contractions); §0.8 (FJ.0/pushforward); Tau Ceti `TauCeti.map_normUnits_unitFiltration`; §2.1 (FJ.2/hermitian-spherical-module); §2.3 (FJ.2/spherical-fourier); AdelicAlgebraicGroups §2.2 (quotient-measures-in-stages); EndoscopicTransferAndUnitaryTraceComparison §4.9; gap:jr-local-comparison; gap:jr-product-base-change; §3.8 (FJ.3/group-to-augmented); §3.6 (FJ.3/augmented-to-endoscopic); SmoothRepresentationsOfLocalGroups §SR.4.3 (parabolic-descent); gap:unitary-factor-all-quadratic; GeometryOfNumbersAndQuadraticArithmetic §2.7 (IntegralHermitianLattice.ofCarrier); GeometryOfNumbersAndQuadraticArithmetic §2.7 (IntegralHermitianLattice.dual); gap:unramified-hermitian-lattice-orbits; GeometryOfNumbersAndQuadraticArithmetic §3.2; SmoothRepresentationsOfLocalGroups §SR.4.1 (satake-isomorphism); Mathlib `MvPolynomial.hsymm`; §0.9 (FJ.0/orbital-comparison); §1.4 (FJ.1/smooth-transfer).
 
-**Check:** The descent of the full augmented integral matrix/lattice indicator is the product of the two lower-rank augmented integral indicators.
+## Layer 5: the full spherical operator
 
+Construct the full-module operator through the fixed Hironaka transform, with the transported algebra structure and its precise restriction to the cyclic submodule.
 
-### FJ.3/augmented-to-endoscopic: From augmented Jacquet–Rallis to cyclic endoscopic transfer
+### 5.1 The Fourier-defined extension to the full spherical module
 
-**Theorem target.** Assume in every positive rank m that, for each phi in H_m,E, the augmented tests BC_m(phi) tensor 1_Lm and {(phi*e_0) tensor 1_Lambda_m,0} are Jacquet–Rallis transfers. Then for every n=a+b and phi in H_n,E, the functions phi*e_0 and xi_E(phi)*e_0 are ordinary endoscopic transfers on Herm(Vn) and Herm(Va) direct-sum Herm(Vb), with the ET.1 factor and unmatched-zero clause. The hypothesis is for all ranks needed by the two Levi blocks, not only rank n.
+For n=a+b with a,b positive, define ξ_X=(H_a⁻¹ ⊗ H_b⁻¹) composed with ξ_F composed with H_n on all H(Xn), using the normalized Hironaka isomorphisms. For the algebra structures transported by H, this is a unital complex algebra homomorphism. On the cyclic submodule it satisfies ξ_X(φ*e_0)=ξ_E(φ)*e_0. This specifies the extension as an operator.
 
-**Hypotheses and conventions:** F is a nonarchimedean local field of characteristic zero; E/F is an unramified quadratic field extension, with common uniformizer pi and q=card(k_F). Use the reference Hermitian space Vn=(E^n,I_n), Lambda_n=OE^n, and hyperspecial Haar volumes one. This includes residue characteristic two.
+F is a nonarchimedean local field of characteristic zero; E/F is an unramified quadratic field extension, with common uniformizer π and q=card(k_F). Use the reference Hermitian space Vn=(E^n,I_n), Λ_n=OE^n, and hyperspecial Haar volumes one. This includes residue characteristic two.
 
-**Direct prerequisites:** `FJ.1/smooth-transfer`, `SmoothRepresentationsOfLocalGroups:SR.4/parabolic-descent`, `FJ.2/base-change-compatibility`, `FJ.2/spherical-fourier`, `FJ.3/pure-form-orbit-torsor`, `FJ.3/germ-inversion`, `FJ.3/lie-parabolic-descent`, `EndoscopicTransferAndUnitaryTraceComparison:ET.1`, `EndoscopicTransferAndUnitaryTraceComparison:ET.3`.
+(Leslie25, Remark 3.7 and Remark 3.6, p. 27; the ξ_F diagram in Proposition 4.8, p. 39).
 
-**Construction or proof:**
+*Needs:* §2.3 (FJ.2/spherical-fourier); §2.2 (FJ.2/base-change-compatibility); SmoothRepresentationsOfLocalGroups §SR.4.3 (parabolic-descent).
 
-1. Use F=(phi*e_0) tensor 1_Lambda_n; evaluation at zero is phi*e_0, correcting the mistyped upper test in the source.
+One proof route is the following. Transport ξ_F across the three isomorphisms H_n,H_a,H_b. Use their cyclic normalization and the BC/ξ commuting square to identify the cyclic restriction. Algebra laws follow from the transported convolutions and ξ_F; no orbital transfer claim is needed to construct this map.
 
-2. Apply germ-inversion to source kappa and target stable sums. The character counts satisfy r_n=r_a+r_b, so the finite averaging factors cancel.
+The construction has the following API.
 
-3. Use lie-parabolic-descent and base-change-compatibility to identify the descended linear test.
+- The composite (H_a inverse ⊗ H_b inverse) after ξ_F after H_n.
+- ξ_X(φ*e_0)=ξ_E(φ)*e_0.
+- ξ_X(e_0)=e_0 ⊗ e_0.
+- It preserves the convolution algebras transported by H.
+- (H_a ⊗ H_b)(ξ_X(f))=ξ_F(H_n(f)) for every full spherical f.
 
-4. Use the ET.1 factor comparison for the two germ/descent paths. The nonreference lower-rank Hermitian tests are zero, so their Jacquet–Langlands correction terms disappear.
+**Checks.**
 
-**Sources:** [Leslie25] Proposition 4.8, pp. 37–39. Xiao’s germ comparison and Lie parabolic descent identify the transfer diagram for the special spherical tests.
+- ξ_X(e_0)=e_0 ⊗ e_0.
+- For n=2,a=b=1 and f=c_2,1*e_0, ξ_X(f)=e_(2) ⊗ e_(0)+e_(0) ⊗ e_(2).
+- For the noncyclic f=H_n⁻¹(1_K_F diag(π,1,..,1) K_F), applying H_a ⊗ H_b to ξ_X(f) gives ξ_F of that F-double-coset indicator; it is not forced to zero.
+- On f=1_(π K_n,E)*e_0, the image is q^(−2ab) × the two central cyclic indicators.
 
-**Check:** For n=2,a=b=1 check that the two rank-one averaging factors equal the rank-two averaging factor. This conditional theorem does not assume or establish arbitrary relative smooth transfer.
+Its direct consumers are .
 
-**Direct open obligations:** G3, G4.
+### Examples
 
+ξ_X(e_0)=e_0 ⊗ e_0. The other subsections compute the corresponding boundary cases and normalization witnesses.
 
-### FJ.3/weil-orbital-sum: The Weil action on the sum of orbital-image spaces
+### Dependencies
 
-**Comparison target.** Let I_GL and I_U be the images of the augmented linear and reference-unitary test spaces as locally constant functions on their common regular invariant base A^rss(F); include the cyclic-vector factor omega in I_GL and extend the unitary image by zero off its matching image. Import the descended SL_2(F) Weil actions and their agreement on I_GL intersection I_U. There is then a unique action on I_GL+I_U extending both actions: W(g)(A+B)=W_GL(g)A+W_U(g)B. For the spherical defect D=O_U((phi*e_0) tensor 1_Lambda)-O_GL(BC(phi) tensor 1_L), use this sum, rather than assuming D belongs to the intersection.
+§2.3 (FJ.2/spherical-fourier); §2.2 (FJ.2/base-change-compatibility); SmoothRepresentationsOfLocalGroups §SR.4.3 (parabolic-descent).
 
-**Hypotheses and conventions:** F is a nonarchimedean local field of characteristic zero; E/F is an unramified quadratic field extension, with common uniformizer pi and q=card(k_F). Use the reference Hermitian space Vn=(E^n,I_n), Lambda_n=OE^n, and hyperspecial Haar volumes one. This includes residue characteristic two. psi has conductor OF; Fourier transforms use self-dual additive measures.
+## Downstream consumers
 
-**Direct prerequisites:** `FJ.2/hermitian-spherical-module`, `EndoscopicTransferAndUnitaryTraceComparison:ET.1`, `AdelicAlgebraicGroups:AA.2/quotient-measure`.
+GanGrossPrasadUnitaryGroups consumes the relative comparison continuation through its own exact supplier contracts. The local results here provide symmetric-space transfer, the all-residue-characteristic unramified unit theorem and the explicitly normalized reductions; its global geometric and archimedean relative comparison gaps require their named supplier and are not consequences of the lattice theorem.
 
-**Construction or proof:**
+## Acceptance-test boundary
 
-1. Use the local Jacquet–Rallis invariant-base and orbital-image contracts.
+The headline theorems are Leslie25 Theorem 2.12 (relative lattice-unit transfer), Theorem 3.5 (cyclic spherical transfer), Theorem 5.3 (adjacent-rank Jacquet–Rallis comparison) and Hironaka99 Theorem 2 (the spherical Fourier isomorphism). The acceptance module has namespace TauCetiRoadmap.EndoscopicTransferAndUnitaryTraceComparisonPartII and a single import Mathlib. None of these four headlines is statable at the pins: Theorem 2.12 lacks local Hermitian unitary groups equipped with Haar and quotient measures, relative and κ-orbital integrals and rational stable-class carriers; Theorem 3.5 lacks local spherical GL_n(E) Hecke algebras, the X_n module and ordinary transfer; Theorem 5.3 lacks Jacquet–Rallis matching and orbital-integral carriers; Hironaka's isomorphism lacks local spherical Hecke algebras with normalized Satake. Its module docstring names these missing carriers and states that README.md is the roadmap, that the Lean file is not the roadmap, and that it records headline signatures against the pins. There are no substitute matrix theorems, admitted examples or data definitions.
 
-2. If A+B=A_prime+B_prime, their difference lies in the intersection; agreement of the actions proves independence of decomposition.
+Tau Ceti's HeckeRing.GLn (TauCeti/NumberTheory/HeckeRing/GLn/PolynomialRing/Basic.lean:13–31) concerns the arithmetic p-local Hecke ring over ℤ. It does not provide the local spherical analytic carriers required by these headlines.
 
-3. Check the group law and uniqueness on the two generating subspaces.
+## Source corrections
 
-**Sources:** [Leslie25] Proposition 5.1, p. 41; proof of Proposition 5.2, p. 43; Beuzart-Plessis21 Proposition 1, p. 7. The imported actions coincide on the intersection, which suffices to extend them to the sum containing the defect.; [BP21] Section 3, equations (4)–(5), pp. 5–6, and Proposition 1, p. 7. The trace pairing defines the Fourier operator; descended actions agree on the orbital-image intersection.
+The following corrections use the exact versions listed in References.
 
-**Check:** The defect has a well-defined Fourier action even before transfer is proved. On the Hermitian side the Fourier pairing is psi(Tr_E/F h(u,w)), with self-dual measure; the printed norm kernel is not additive.
+**E01 (misprint), Leslie arXiv:1911.07907v3, Lemma 1.8, p. 12.** The centralizer is labeled using U(W), although the surrounding datum is V. Use U(V). The lemma begins with δ in Herm(V), and the proof and cohomology map use that same V.
 
-**Direct open obligations:** G3, G5.
-
-
-### FJ.3/group-to-augmented: The Weil reduction from rank-shifted to augmented transfer
-
-**Theorem target.** Fix n>=1 and phi in H_n,E. Suppose BC_n(phi) and {phi*e_0,0} match for the conjugation action of GL_(n-1)(F) on GL_n(F), against U(V_(n-1)) on the invertible part of Herm(V_(n-1) orthogonal-sum Ee0), in the block Jacquet–Rallis sense. Then BC_n(phi) tensor 1_Ln and {(phi*e_0) tensor 1_Lambda_n,0} are augmented Jacquet–Rallis transfers in rank n, including the nonreference-form zero clause.
-
-**Hypotheses and conventions:** F is a nonarchimedean local field of characteristic zero; E/F is an unramified quadratic field extension, with common uniformizer pi and q=card(k_F). Use the reference Hermitian space Vn=(E^n,I_n), Lambda_n=OE^n, and hyperspecial Haar volumes one. This includes residue characteristic two.
-
-**Direct prerequisites:** `FJ.3/weil-orbital-sum`, `FJ.2/hermitian-spherical-module`, `GeometryOfNumbersAndQuadraticArithmetic:GN.2/local-unimodular-hermitian-classification`, `GeometryOfNumbersAndQuadraticArithmetic:GN.2/unramified-hermitian-lattice-diagonalization`, `GeometryOfNumbersAndQuadraticArithmetic:GN.2/integral-hermitian-lattice`, `GeometryOfNumbersAndQuadraticArithmetic:GN.2/hermitian-dual-lattice`.
-
-**Construction or proof:**
-
-1. The lattice-vector indicators force zero if |q(a)|>1. If |q(a)|=1, a primitive unit-norm vector splits off an integral orthogonal line without dividing by 2; its self-dual complement is isometric to the reference complement by GN.2. This proves integral unit-vector transitivity and reduces both augmented integrals to the rank-(n-1) group integrals, including the other form.
-
-2. The lattice indicators are Fourier self-dual for the trace and hyperbolic pairings. On the orbital-image sum, the defect is fixed by the Weyl element.
-
-3. Since the defect is supported where q(a) is in the maximal ideal, every upper unipotent with t in pi^(-1)OF fixes it. These and the Weyl element generate SL_2(F).
-
-4. For q(a)!=0 choose t with psi(t q(a))!=1, forcing the defect to zero. Local constancy and density of this locus finish the proof.
-
-**Sources:** [Leslie25] Proposition 5.2, pp. 42–43; Beuzart-Plessis21 Sections 2–3, pp. 3–8. The spherical defect vanishes on unit norm and is fixed by enough Weil generators to vanish everywhere.; [BP21] Section 2, Lemma 1, pp. 3–5, and Section 3, Proposition 1 and proof, pp. 5–8. The unit-norm reduction and Weil argument are available in all characteristic-zero residue characteristics.
-
-**Check:** Keep the rank shift n-1 explicit. Check the unit-vector and self-dual-lattice claims also at residue characteristic two; no division by 2 occurs in the trace pairing.
-
-**Direct open obligations:** G3, G5.
-
-
-## FJ.4. The unit fundamental lemma
-
-Deduce the rank-shifted spherical comparison from the product-group base-change fundamental lemma and its orbital-integral contraction formulas. Establish augmented transfer and cyclic spherical endoscopic transfer. Decompose the contracted lattice indicator by determinant valuation, prove the degree identities, and conclude the relative unit fundamental lemma, including vanishing for every other pair of Hermitian forms and residue characteristic two.
-
-**Dependencies:** `FJ.3`, `GeometryOfNumbersAndQuadraticArithmetic:GN.3`.
-
-**Coverage:** `planned`. G6: independent product-group spectral base-change theorem in the proposed sibling. Discharge the propagated FJ.0–FJ.3 analytic and normalization inputs; the unit theorem is not declared closed.
-
-**Planets:** Spherical Jacquet–Rallis comparison; Cyclic spherical fundamental lemma; Contracted lattice unit; Determinant-degree Hecke identity; Unitary Friedberg–Jacquet fundamental lemma.
-
-
-### FJ.4/contraction-sign-comparison: The sign convention for the lattice pushforward
-
-**Comparison target.** In the unramified setting choose c in OE^times with Nm_E/F(c)=-1. Define r_plus(X)=X X* and r_minus(X)=-X X* in the reference coordinates. Then r_minus(cX)=r_plus(X); multiplication by c preserves every integral Hom lattice and its test indicator, all group actions and stabilizer measures. Consequently the signed-contraction pushforward of the lattice unit equals its positive-contraction pushforward. The same comparison applies separately in each endoscopic block.
-
-**Hypotheses and conventions:** F is a nonarchimedean local field of characteristic zero; E/F is an unramified quadratic field extension, with common uniformizer pi and q=card(k_F). Use the reference Hermitian space Vn=(E^n,I_n), Lambda_n=OE^n, and hyperspecial Haar volumes one. This includes residue characteristic two.
-
-**Direct prerequisites:** `FJ.0/contractions`, `FJ.0/pushforward`, `GeometryOfNumbersAndQuadraticArithmetic:GN.2/integral-hermitian-lattice`, `GeometryOfNumbersAndQuadraticArithmetic:GN.2/hermitian-space-classification`, `GeometryOfNumbersAndQuadraticArithmetic:GN.2/unramified-hermitian-lattice-diagonalization`.
-
-**Construction or proof:**
-
-1. Apply rank-one unramified Hermitian lattice diagonalization to the unit form <-1> to obtain c in OE^times of norm -1, including residue characteristic two.
-
-2. Compute -(cX)(cX)*=-Nm(c)XX*=XX*.
-
-3. Use the invariant lattice indicator and unchanged fiber measures to identify the two pushforwards.
-
-**Sources:** [Leslie25] Equation (2.1), p. 14, compared with equation (3.8) and Lemma 3.11, pp. 28–30. The initial contraction has a minus sign; the spherical calculations use the positive Gram map, which is reconciled by an integral norm of -1.
-
-**Check:** For n=1 the two pushforwards are the same even-valuation indicator. The argument is not asserted for ramified E/F without an integral norm of -1.
-
-
-### FJ.4/spherical-pushforward: The cyclic embedding is contraction pushforward
-
-**Theorem target.** For every compact spherical phi on GL_n(E), viewed as a compact nonsingular matrix test, the positive-contraction pushforward r_plus,!phi equals phi*e_0 on all Xn, with zero on the other Hermitian congruence orbit. The signed pushforward gives the same function because multiplication by the unit c with norm -1 preserves a K_n,E-biinvariant phi.
-
-**Hypotheses and conventions:** F is a nonarchimedean local field of characteristic zero; E/F is an unramified quadratic field extension, with common uniformizer pi and q=card(k_F). Use the reference Hermitian space Vn=(E^n,I_n), Lambda_n=OE^n, and hyperspecial Haar volumes one. This includes residue characteristic two.
-
-**Direct prerequisites:** `FJ.0/pushforward`, `FJ.2/hermitian-spherical-module`, `FJ.4/contraction-sign-comparison`.
-
-**Construction or proof:**
-
-1. Compute r_plus,!(1_K)=e_0 by vol U(Lambda_n)=1 and the unimodular Hermitian orbit description.
-
-2. Prove r_plus,!(phi*phi1)=phi*r_plus,!phi1 by quotient Fubini.
-
-3. Set phi1=1_K. For the signed comparison, c I_n belongs to K_n,E.
-
-**Sources:** [Leslie25] Lemma 3.11, pp. 29–30. The fiber integral of the spherical group unit is e_0, and fiber integration intertwines group convolution.
-
-**Check:** In rank one, the pi^d OE^times indicator pushes to e_(2d), with coefficient one.
-
-
-### FJ.4/product-group-contraction: Contraction of the spherical product-group test
-
-**Comparison target.** Set m=n-1 and embed GL_m in GL_n by h -> diag(h,1). For phi in H_n,E take Phi=1_Km,E tensor phi on GL_m(E) times GL_n(E). Its left-H contraction tilde(Phi)(g)=integral_GL_m(E) Phi(h^(-1),diag(h^(-1),1)g) dh equals phi. The corresponding Hermitian contraction at the reference pair (I_m,I_n) equals phi*e_0. The F-linear contraction of BC_(m,n)(Phi) equals BC_n(phi), and the product transfer factor Omega(gamma) is omega(diag(gamma1^(-1),1)gamma2). With compatible quotient measures, product relative orbital integrals become the rank-shifted GL_m and U(V_m) orbital integrals.
-
-**Hypotheses and conventions:** F is a nonarchimedean local field of characteristic zero; E/F is an unramified quadratic field extension, with common uniformizer pi and q=card(k_F). Use the reference Hermitian space Vn=(E^n,I_n), Lambda_n=OE^n, and hyperspecial Haar volumes one. This includes residue characteristic two.
-
-**Direct prerequisites:** `FJ.2/spherical-fourier`, `FJ.2/hermitian-spherical-module`, `AdelicAlgebraicGroups:AA.2/quotient-measure-transitivity`, `EndoscopicTransferAndUnitaryTraceComparison:ET.3`, `FJ.4/spherical-pushforward`.
-
-**Construction or proof:**
-
-1. Apply the requested product-group orbital contraction formulas, with n there replaced by n-1.
-
-2. For the unit tensor lift, K-invariance and vol K_m,E=1 give tilde(Phi)=phi.
-
-3. Use r_!phi=phi*e_0 from the spherical pushforward identity for the Hermitian contraction.
-
-4. Base change preserves the two units; factor compatibility is the cyclic determinant formula.
-
-**Sources:** [Leslie25] Section 11.2, p. 86; equations (7.5)–(7.7) and Definition 7.4, pp. 50–51. The unit lift and the two contraction identities turn product-group transfer into the rank-shifted comparison.; [Leslie25] Equations (7.5)–(7.7), Definition 7.4, pp. 50–51. The product integrals contract to the conjugation integrals with the cyclic determinant factor.
-
-**Check:** For n=1 interpret GL_0,U_0 and their hyperspecial subgroups as trivial. For the reference test, neither an extra torus volume nor an extra power of q is introduced.
-
-**Direct open obligations:** G3, G6.
-
-
-### FJ.4/rank-shifted-fundamental-lemma: Spherical rank-shifted Jacquet–Rallis comparison
-
-**Theorem target.** For n>=1, phi in H_n,E and X in GL_n(F) regular semisimple under GL_(n-1)-conjugation, omega(X)*Orb_GL_(n-1),eta(BC_n(phi),X) equals Orb_U(V_(n-1))(phi*e_0,Y) when X matches Y in Xn for the reference block Hermitian form. It is zero when X matches a different (n-1)-dimensional Hermitian form. Here omega(X)=eta(det[e_n,Xe_n,...,X^(n-1)e_n]); regularity makes this determinant nonzero.
-
-**Hypotheses and conventions:** F is a nonarchimedean local field of characteristic zero; E/F is an unramified quadratic field extension, with common uniformizer pi and q=card(k_F). Use the reference Hermitian space Vn=(E^n,I_n), Lambda_n=OE^n, and hyperspecial Haar volumes one. This includes residue characteristic two.
-
-**Direct prerequisites:** `FJ.4/product-group-contraction`.
-
-**Construction or proof:**
-
-1. Import the precise product-group base-change fundamental lemma in ranks (n-1,n), including all nonreference-form vanishing.
-
-2. Apply it to Phi=1_K_(n-1),E tensor phi.
-
-3. Use product-group-contraction and Omega=omega after taking matching lifts; transport the reference split forms to identity forms by integral isometries.
-
-**Sources:** [Leslie25] Theorem 5.3, p. 43, proved in Section 11.2, p. 86, using Theorem 11.1, p. 78. The spherical product-group base-change fundamental lemma and the unit tensor lift prove the rank-shifted transfer identity and its zero clause.
-
-**Check:** For n=1 this reduces to the squared-valuation rank-one base-change identity. The nonreference-form vanishing is a required assertion, not merely a consequence of testing reference matching pairs.
-
-**Direct open obligations:** G3, G6.
-
-
-### FJ.4/augmented-fundamental-lemma: Augmented spherical Jacquet–Rallis transfer
-
-**Theorem target.** In every positive rank n and for every phi in H_n,E, the test BC_n(phi) tensor 1_Ln transfers to the family {(phi*e_0) tensor 1_Lambda_n,0} in the augmented Jacquet–Rallis comparison of gl_n(F) times F^n times (F^n)* with Herm(V) times V. The zero entry is the other Hermitian isometry class.
-
-**Hypotheses and conventions:** F is a nonarchimedean local field of characteristic zero; E/F is an unramified quadratic field extension, with common uniformizer pi and q=card(k_F). Use the reference Hermitian space Vn=(E^n,I_n), Lambda_n=OE^n, and hyperspecial Haar volumes one. This includes residue characteristic two.
-
-**Direct prerequisites:** `FJ.4/rank-shifted-fundamental-lemma`, `FJ.3/group-to-augmented`.
-
-**Construction or proof:**
-
-1. Apply group-to-augmented in each rank using rank-shifted-fundamental-lemma.
-
-2. Retain the same self-dual vector lattices and all reference/nonreference form labels.
-
-**Sources:** [Leslie25] Proposition 5.2 and Theorem 5.3, pp. 42–43. The proved rank-shifted comparison supplies the hypothesis of the Weil reduction.
-
-**Check:** The case phi=1_K gives the usual augmented integral-unit test family.
-
-
-### FJ.4/cyclic-endoscopic-transfer: The cyclic spherical endoscopic fundamental lemma
-
-**Theorem target.** For n=a+b with a,b positive and phi in H_n,E, the Hermitian functions phi*e_0 and xi_E(phi)*e_0 are ordinary smooth endoscopic transfers with the ET.1 matching and factor. The notation on the target means the tensor of the cyclic embeddings in ranks a,b, extended linearly; phi need not be a simple tensor after applying xi_E. This theorem covers the cyclic H_n,E-submodule of H(Xn), not all of H(Xn).
-
-**Hypotheses and conventions:** F is a nonarchimedean local field of characteristic zero; E/F is an unramified quadratic field extension, with common uniformizer pi and q=card(k_F). Use the reference Hermitian space Vn=(E^n,I_n), Lambda_n=OE^n, and hyperspecial Haar volumes one. This includes residue characteristic two.
-
-**Direct prerequisites:** `FJ.4/augmented-fundamental-lemma`, `FJ.3/augmented-to-endoscopic`, `FJ.2/spherical-fourier`, `SmoothRepresentationsOfLocalGroups:SR.4/parabolic-descent`.
-
-**Construction or proof:**
-
-1. Use augmented-fundamental-lemma in all three ranks in augmented-to-endoscopic.
-
-2. For a finite tensor expansion of xi_E(phi), apply the target cyclic embeddings termwise.
-
-3. Check unmatched vanishing by the corresponding ordinary-transfer clause.
-
-**Sources:** [Leslie25] Theorem 3.5, p. 27; final paragraph of Section 5.2, p. 43. The two conditional reductions and the rank-shifted theorem establish spherical endoscopic transfer on the cyclic submodule.
-
-**Check:** The unit test phi=1_K gives ordinary unramified unit transfer. The rank-one missing odd-valuation orbit shows why this theorem is not a statement about every spherical Hermitian function.
-
-**Direct open obligations:** G4.
-
-
-### FJ.4/contracted-lattice-function: The contracted lattice unit and its determinant grades
-
-**Construction target.** Put Phi_n=r_minus,!1_End(Lambda_n), equivalently r_plus,!1_End(Lambda_n). For integer d let Xn,d={T in Xn:v_F(det T)=d} and Phi_n,d=Phi_n*1_Xn,d, where this star denotes pointwise multiplication only. Each Phi_n,d is a compact spherical function. It is zero if d<0 or d is odd. For d>=0, Phi_n,2d=sum_(lambda dominant,nonnegative,sum lambda=2d) m0(pi^lambda)*e_lambda, where m0 is the normalized self-dual-overlattice density imported from GN.3. Phi_n itself is only almost compact: it has infinitely many nonzero grades.
-
-**Hypotheses and conventions:** F is a nonarchimedean local field of characteristic zero; E/F is an unramified quadratic field extension, with common uniformizer pi and q=card(k_F). Use the reference Hermitian space Vn=(E^n,I_n), Lambda_n=OE^n, and hyperspecial Haar volumes one. This includes residue characteristic two.
-
-**Direct prerequisites:** `FJ.0/pushforward`, `FJ.4/contraction-sign-comparison`, `FJ.2/hermitian-spherical-module`, `GeometryOfNumbersAndQuadraticArithmetic:GN.2/integral-hermitian-lattice`, `GeometryOfNumbersAndQuadraticArithmetic:GN.2/hermitian-dual-lattice`, `GeometryOfNumbersAndQuadraticArithmetic:GN.2/local-unimodular-hermitian-classification`, `GeometryOfNumbersAndQuadraticArithmetic:GN.3/hermitian-special-values`.
-
-**Construction or proof:**
-
-1. Integral Gram matrices have nonnegative elementary divisors; their determinant has even valuation for the reference norm component.
-
-2. Fixing the determinant grade leaves finitely many nonnegative dominant tuples, giving compactness.
-
-3. Identify the value with m0 by counting U(Vn)/U(Lambda_n) cosets and importing GN.3’s self-dual-overlattice formula.
-
-**Sources:** [Leslie25] Equation (3.8), Lemma 3.8 and Remark 3.9, pp. 28–29. The lattice pushforward decomposes into compact even determinant grades, with coefficients given by the existing local density.
-
-**Uses:** `FJ.4/graded-transfer and FJ.4/unit-fundamental-lemma`: The compact grades allow the proved cyclic spherical theorem to recover the noncompact contracted lattice unit.
-
-**API:**
-
-- `TauCeti.UnitaryFJ.contractedLatticeUnit` (constructor): The fiber integral of the full integral Hom indicator, defined on Xn.
-
-- `TauCeti.UnitaryFJ.contractedLatticeGrade` (data): Restrict contractedLatticeUnit to determinant valuation d.
-
-- `TauCeti.UnitaryFJ.contractedLatticeGrade_support` (characterisation): The support is contained in integral Hermitian matrices of determinant valuation d, and is empty for negative or odd d.
-
-- `TauCeti.UnitaryFJ.contractedLatticeGrade_density` (compatibility): For nonnegative even d, the e_lambda coefficient is the GN.3 normalized local self-dual-overlattice density.
-
-- `TauCeti.UnitaryFJ.contractedLatticeGrade_finite` (structure): Each grade is a finite basis expansion in H(Xn), although the total function is not in H(Xn).
-
-**Unit tests:**
-
-- `TauCeti.UnitaryFJ.contractedLattice_rankOne_even` (computation): Phi_1,2=e_(2), with coefficient one.
-
-- `TauCeti.UnitaryFJ.contractedLattice_rankOne_odd` (non-example): Phi_1,1=0 even though e_(1) is a nonzero spherical Hermitian function.
-
-- `TauCeti.UnitaryFJ.contractedLattice_negative` (degenerate): Phi_n,d=0 for d<0.
-
-- `TauCeti.UnitaryFJ.contractedLattice_not_compact` (non-example): Phi_1 has value one at pi^(2d) for every d>=0, so it is not compactly supported within X1=F^times.
-
-**Check:** For n=1, Phi_1,2d=e_(2d) for d>=0, and every other grade is zero.
-
-
-### FJ.4/degree-hecke-identities: Determinant-degree identities in the spherical Hecke algebra
-
-**Theorem target.** For d>=0 let c_n,d be the indicator of integral invertible E-matrices with v_E(det)=d, equivalently the sum of 1_K pi^lambda K over nonnegative dominant lambda with sum d. Its normalized Satake polynomial is q^(d(n-1))*h_d(Z1,...,Zn), where h_d is Mathlib’s complete homogeneous symmetric polynomial. Then Phi_n,2d=c_n,d*e_0 and xi_E(c_n,d)=sum_(da+db=d) c_a,da tensor c_b,db. All sums here are finite.
-
-**Hypotheses and conventions:** F is a nonarchimedean local field of characteristic zero; E/F is an unramified quadratic field extension, with common uniformizer pi and q=card(k_F). Use the reference Hermitian space Vn=(E^n,I_n), Lambda_n=OE^n, and hyperspecial Haar volumes one. This includes residue characteristic two.
-
-**Direct prerequisites:** `SmoothRepresentationsOfLocalGroups:SR.4/parabolic-descent`, `FJ.2/hermitian-spherical-module`, `FJ.4/spherical-pushforward`, `FJ.4/contracted-lattice-function`, `SmoothRepresentationsOfLocalGroups:SR.4/satake-isomorphism`, `mathlib:MvPolynomial.hsymm`.
-
-**Construction or proof:**
-
-1. Use the Iwasawa decomposition in SR.4 to count upper-unipotent entries; for a diagonal valuation tuple m the measure is q^(sum 2(i-1)m_i).
-
-2. The normalized Satake modulus combines with that count to give the uniform coefficient q^(d(n-1)).
-
-3. Apply the two scalings of xi_E and split total monomial degree between the a and b blocks.
-
-4. For the pushforward, determinant valuation doubles under the Gram map; apply spherical-pushforward to c_n,d.
-
-**Sources:** [Leslie25] Proposition 3.12, equations (3.9)–(3.10), pp. 30–31. The Satake coefficient of an integral determinant shell is a complete homogeneous polynomial, and the Levi substitution splits its degree.
-
-**Check:** For n=2,d=1 the Satake polynomial is q*(Z1+Z2), whose image is X1+Y1. For d=0 both identities reduce to units.
-
-
-### FJ.4/graded-transfer: The lattice theorem is equivalent to compact graded transfer
-
-**Theorem target.** The relative unit fundamental lemma for a fixed datum Xi is equivalent to the following family of compact ordinary endoscopic transfer identities: for every d>=0, Phi_n,2d transfers to sum_(da+db=d) Phi_a,2da tensor Phi_b,2db for the reference pair (I_a,I_b), and the corresponding target contribution for every other form pair is zero. Matching preserves the product of characteristic polynomials and hence determinant valuation, so each regular matching orbit tests exactly one total grade.
-
-**Hypotheses and conventions:** F is a nonarchimedean local field of characteristic zero; E/F is an unramified quadratic field extension, with common uniformizer pi and q=card(k_F). Use the reference Hermitian space Vn=(E^n,I_n), Lambda_n=OE^n, and hyperspecial Haar volumes one. This includes residue characteristic two.
-
-**Direct prerequisites:** `FJ.0/orbital-comparison`, `FJ.1/smooth-transfer`, `FJ.4/contracted-lattice-function`, `FJ.4/contraction-sign-comparison`.
-
-**Construction or proof:**
-
-1. Compare relative and ordinary orbital integrals through orbital-comparison.
-
-2. A regular orbit has one fixed determinant valuation; use the compact grade corresponding to that valuation.
-
-3. For other form pairs the relevant contraction images do not intersect the reference norm components in at least one block; record the resulting zero condition.
-
-**Sources:** [Leslie25] Corollary 3.10, p. 29; Lemma 2.5, p. 16. Contraction and the determinant decomposition recover the relative theorem from compact ordinary transfers grade by grade.
-
-**Check:** No infinite sum of orbital integrals is exchanged with an integral. A negative or odd total valuation gives zero on both sides.
-
-
-### FJ.4/unit-fundamental-lemma: The unitary Friedberg–Jacquet fundamental lemma
-
-**Theorem target.** Let n=a+b with a,b positive, Vn=(E^n,I_n), Lambda_n=OE^n=Lambda_a orthogonal-sum Lambda_b and W1=W2=Vn. Fix a relative elliptic datum Xi=(U(Va) times U(Vb),s,xi,alpha,beta), using the unramified ordinary transfer normalization and hyperspecial Haar volumes one. The source test 1_End(Lambda_n) transfers, in IsRelativeTransfer, to 1_End(Lambda_a) tensor 1_End(Lambda_b) if (alpha,beta)=(I_a,I_b), and to the zero target test for every other pair of Hermitian isometry classes. The theorem holds for every characteristic-zero F, including residue characteristic two.
-
-**Hypotheses and conventions:** F is a nonarchimedean local field of characteristic zero; E/F is an unramified quadratic field extension, with common uniformizer pi and q=card(k_F). Use the reference Hermitian space Vn=(E^n,I_n), Lambda_n=OE^n, and hyperspecial Haar volumes one. This includes residue characteristic two.
-
-**Direct prerequisites:** `FJ.1/smooth-transfer`, `FJ.4/cyclic-endoscopic-transfer`, `FJ.4/degree-hecke-identities`, `FJ.4/graded-transfer`, `GeometryOfNumbersAndQuadraticArithmetic:GN.2/integral-hermitian-lattice`, `GeometryOfNumbersAndQuadraticArithmetic:GN.2/local-unimodular-hermitian-classification`.
-
-**Construction or proof:**
-
-1. Apply cyclic-endoscopic-transfer to each determinant-shell test c_n,d.
-
-2. Use degree-hecke-identities to identify the transferred compact grade pair.
-
-3. Apply graded-transfer and the sign comparison to recover the full relative lattice indicators.
-
-4. Use the nonreference-form clause throughout, with the same datum labels and factor normalization.
-
-**Sources:** [Leslie25] Theorem 2.12, p. 22; Proposition 3.12, pp. 30–31; Section 11.2, p. 86. The cyclic spherical theorem, degree identities and contraction comparison imply the relative integral-unit matching and all other-form vanishing.
-
-**Check:** For a=b=1 all four form pairs are tested: the reference pair receives the tensor unit and the other three receive zero. An odd residue characteristic hypothesis is not inserted. This theorem has no implication that every compact test has a relative transfer.
-
-**Direct open obligations:** G4.
-
-
-## FJ.5. Full transfer and the spherical extension
-
-Specify the full relative smooth-transfer conjecture, construct the Fourier-defined extension of the Levi Hecke map to the whole Hermitian spherical module, and isolate the open orbital-integral characterization of that extension. The source does not specify the required augmented transfer factors; no full spherical fundamental lemma is asserted without that missing specification.
-
-**Dependencies:** `FJ.1`, `FJ.2`, `FJ.4`.
-
-**Coverage:** `planned`. G7: unrestricted relative smooth-transfer conjecture. G8: explicit transfer-factor augmentation and statement for the full spherical module.
-
-**Planets:** Relative smooth-transfer conjecture; Full spherical Levi extension.
-
-
-### FJ.5/full-smooth-transfer: The full relative smooth-transfer conjecture
-
-**Theorem target.** For every pair of equal-dimensional nondegenerate Hermitian spaces W1,W2, every relative elliptic datum Xi and every f in C_c^infinity(Hom_E(W2,W1)), there exists f_Xi in C_c^infinity of the Xi-symmetric representation such that IsRelativeTransfer(f,f_Xi). This is a conjectural target for arbitrary support, including singular Hom maps. It is not supplied by the unit fundamental lemma or by the nonsingular-support theorem.
-
-**Hypotheses and conventions:** F is a nonarchimedean local field of characteristic zero; E/F is a quadratic field extension. Hermitian forms are conjugate-linear in the first variable and linear in the second.
-
-**Direct prerequisites:** `FJ.1/smooth-transfer`, `FJ.1/nonsingular-transfer`, `FJ.4/unit-fundamental-lemma`.
-
-**Construction or proof:**
-
-1. The nonsingular case is covered by nonsingular-transfer.
-
-2. Construct transfer across the singular strata while controlling the noncompact contraction pushforward; a precise unresolved existence gap remains.
-
-3. Prove matching and unmatched vanishing simultaneously for arbitrary compact tests.
-
-**Sources:** [Leslie25] Definition 2.10 and discussion, p. 21; Leslie19 Conjecture 4.4, p. 15. The earlier paper formulates the unrestricted relative existence conjecture; the present source proves the lattice unit and the nonsingular case only.; [Leslie19] Conjecture 4.4 and Proposition 4.5, p. 15. The unrestricted relative transfer conjecture is distinguished from its nonsingular special case.
-
-**Check:** The singular-source support case remains a genuine mathematical gap. A formal declaration must retain conjectural status until a proof or a stronger source is supplied.
-
-**Direct open obligations:** G7.
-
-
-### FJ.5/full-spherical-extension: The Fourier-defined extension to the full spherical module
-
-**Construction target.** For n=a+b with a,b positive, define xi_X=(H_a^(-1) tensor H_b^(-1)) composed with xi_F composed with H_n on all H(Xn), using the normalized Hironaka isomorphisms. For the algebra structures transported by H, this is a unital complex algebra homomorphism. On the cyclic submodule it satisfies xi_X(phi*e_0)=xi_E(phi)*e_0. This specifies the extension as an operator. Its orbital-integral transfer characterization on arbitrary spherical Hermitian functions requires the separate augmented-factor target.
-
-**Hypotheses and conventions:** F is a nonarchimedean local field of characteristic zero; E/F is an unramified quadratic field extension, with common uniformizer pi and q=card(k_F). Use the reference Hermitian space Vn=(E^n,I_n), Lambda_n=OE^n, and hyperspecial Haar volumes one. This includes residue characteristic two.
-
-**Direct prerequisites:** `FJ.2/spherical-fourier`, `FJ.2/base-change-compatibility`, `SmoothRepresentationsOfLocalGroups:SR.4/parabolic-descent`.
-
-**Construction or proof:**
-
-1. Transport xi_F across the three isomorphisms H_n,H_a,H_b.
-
-2. Use their cyclic normalization and the BC/xi commuting square to identify the cyclic restriction.
-
-3. Algebra laws follow from the transported convolutions and xi_F; no orbital transfer claim is needed to construct this map.
-
-**Sources:** [Leslie25] Remark 3.7 and Remark 3.6, p. 27; the xi_F diagram in Proposition 4.8, p. 39. The Fourier isomorphisms and the F-Hecke Levi map give a canonical full-module extension whose cyclic restriction is the proved map.
-
-**Uses:** `FJ.5/full-spherical-transfer-factors`: The operator to be characterized by a corrected full spherical transfer identity is already defined on the whole module.
-
-**API:**
-
-- `TauCeti.UnitaryFJ.fullHermitianLeviMap` (constructor): The composite (H_a inverse tensor H_b inverse) after xi_F after H_n.
-
-- `TauCeti.UnitaryFJ.fullHermitianLeviMap_cyclic` (compatibility): xi_X(phi*e_0)=xi_E(phi)*e_0.
-
-- `TauCeti.UnitaryFJ.fullHermitianLeviMap_unit` (simp): xi_X(e_0)=e_0 tensor e_0.
-
-- `TauCeti.UnitaryFJ.fullHermitianLeviMap_mul` (structure): It preserves the convolution algebras transported by H.
-
-- `TauCeti.UnitaryFJ.fullHermitianLeviMap_fourier` (characterisation): (H_a tensor H_b)(xi_X(f))=xi_F(H_n(f)) for every full spherical f.
-
-**Unit tests:**
-
-- `TauCeti.UnitaryFJ.fullLevi_unit` (degenerate): xi_X(e_0)=e_0 tensor e_0.
-
-- `TauCeti.UnitaryFJ.fullLevi_cyclic_degreeOne` (computation): For n=2,a=b=1 and f=c_2,1*e_0, xi_X(f)=e_(2) tensor e_(0)+e_(0) tensor e_(2).
-
-- `TauCeti.UnitaryFJ.fullLevi_fourier_nontautological` (characterisation): For the noncyclic f=H_n^(-1)(1_K_F diag(pi,1,...,1) K_F), applying H_a tensor H_b to xi_X(f) gives xi_F of that F-double-coset indicator; it is not forced to zero.
-
-- `TauCeti.UnitaryFJ.fullLevi_central_twist` (compatibility): On f=1_(pi K_n,E)*e_0, the image is q^(-2ab) times the two central cyclic indicators.
-
-**Check:** For n=2,a=b=1, the definition applies to H_2^(-1)(1_K_F diag(pi,1) K_F), which lies outside the cyclic BC submodule.
-
-
-### FJ.5/full-spherical-transfer-factors: The augmented-factor boundary for full spherical transfer
-
-**Comparison target.** Determine an explicit augmentation of the ordinary Langlands–Shelstad–Kottwitz transfer factors on the relative Hermitian spherical comparison such that xi_X(f) has the stated transfer identity for every f in the full H(Xn), with matching loci and unmatched vanishing specified. It must specialize on the cyclic image to the ET.1-normalized identity already proved. The source only suggests this augmentation and gives no formula or complete conjectural statement; neither a full transfer theorem nor the unchanged ordinary factor is asserted here.
-
-**Hypotheses and conventions:** F is a nonarchimedean local field of characteristic zero; E/F is an unramified quadratic field extension, with common uniformizer pi and q=card(k_F). Use the reference Hermitian space Vn=(E^n,I_n), Lambda_n=OE^n, and hyperspecial Haar volumes one. This includes residue characteristic two.
-
-**Direct prerequisites:** `FJ.5/full-spherical-extension`, `FJ.4/cyclic-endoscopic-transfer`, `FJ.1/matching-factor`.
-
-**Construction or proof:**
-
-1. Compute orbital integrals on basis elements outside the cyclic image, starting with the F-double-coset preimages under H.
-
-2. Solve the factor/matching compatibility with cyclic transfer, rational-orbit change and the two pure-form components.
-
-3. State and prove the full identity only after that missing normalization specification is supplied.
-
-**Sources:** [Leslie25] Remark 3.7, p. 27. The source explicitly warns that the full-module extension needs additional transfer-factor modifications without defining them.
-
-**Check:** Any proposed augmentation agrees with the known cyclic theorem. The construction of xi_X alone is not evidence that the ordinary transfer factor works on the full module.
-
-**Direct open obligations:** G8.
-
-
-## Precise closure obligations
-
-All stages are planned, and none is declared closed. The two requests use existing supplier stages; the eight gaps name the unestablished analytic, normalization, unregistered-sibling or conjectural inputs.
-
-### Requests to registered suppliers
-
-
-**`EndoscopicTransferAndUnitaryTraceComparison:ET.1`.** For the Hermitian twisted Lie algebra of each local unitary pure inner form, export normalized regular orbital integrals and stable/kappa sums with centralizer maximal-compact volume one, their convergence and orbitwise local constancy, the ordinary transfer relation including unmatched vanishing, and the normalized Langlands–Shelstad–Kottwitz factor and rational-orbit correction. Also export the factor comparison for the two Xiao germ/Lie-descent paths: the resultant factor eta(D_ab)*|D_ab| and the inv correction must agree with this normalization. The raw Tate germ normalization in gap G4 must be accounted for.
-
-**Consumers:** `FJ.0/relative-orbital-integral`, `FJ.0/orbital-comparison`, `FJ.1/matching-factor`, `FJ.1/smooth-transfer`, `FJ.3/germ-inversion`, `FJ.3/augmented-to-endoscopic`.
-
-
-**`EndoscopicTransferAndUnitaryTraceComparison:ET.3`.** Export characteristic-zero ordinary Hermitian smooth transfer for every quadratic field extension and every test supported on the invertible locus, with the target chosen to have compact nonsingular support after an invariant determinant cutoff. For unramified GL_n(E)/GL_n(F), export the spherical base-change homomorphism normalized by Sat_E Z_i -> Sat_F T_i^2, preserving the hyperspecial unit and commuting with products. This is ordinary cyclic base change, not a Jacquet–Rallis fundamental lemma.
-
-**Consumers:** `FJ.1/nonsingular-transfer`, `FJ.2/base-change-compatibility`, `FJ.2/spherical-fourier`, `FJ.4/product-group-contraction`.
-
-
-### Gaps
-
-
-**G1: Analytic sections, fiber integration and orbitwise cutoffs.** Export the p-adic analytic submersion/torsor integration theorem used in Leslie19 Appendix A, specifically: local analytic sections on the F-point norm component; surjectivity of C_c^infinity pushforward with its Haar normalization; and for a closed regular orbit, a compact nonsingular cutoff agreeing with the full compact test on that orbit. AA.2 quotient integration alone does not prove these analytic assertions. No exact supplier node or scoped stage was found; register the input with the local analytic integration owner before closing FJ.0.
-
-**Consumers:** `FJ.0/pushforward`, `FJ.0/orbital-comparison`, `FJ.1/nonsingular-transfer`.
-
-
-**G2: Normalized comparison under exchanging the two contractions.** Construct the map on relative endoscopic data when W1,W2 are interchanged, including nonisometric forms; prove the inv, centralizer Haar and transfer-factor diagram commutes with its explicit correction. Remark 2.11 states independence without this full normalization diagram.
-
-**Consumers:** `FJ.1/contraction-independence`.
-
-
-**G3: The local Jacquet–Rallis interface has no registered supplier stages.** The proposed sibling JacquetRallisRelativeTraceComparison must export: (A) the augmented and block/group matching quotients, their regular open loci and eta(det)-twisted orbital distributions on the common invariant base; (B) all-pure-form matching, local constancy and the precise two cyclic-vector factors; (C) local smooth transfer and the Xiao Lie-descent/orbital-factor comparison, with the change from ordinary to Jacquet–Langlands form labels made explicit; (D) the product-group to conjugation integral identities (7.5)–(7.7), Definition 7.4 and matching lifts. For the augmented model the invariants are charpoly coefficients and b_i=v*x^i v, and omega=eta(det[v,xv,...,x^(n-1)v]); for the block model add the bottom-right scalar and replace the factor by eta(det[e_n,Xe_n,...,X^(n-1)e_n]). The new sibling is not an existing roadmap id; it is deliberately not used as a prerequisite.
-
-**Consumers:** `FJ.3/pure-form-orbit-torsor`, `FJ.3/germ-inversion`, `FJ.3/augmented-to-endoscopic`, `FJ.3/weil-orbital-sum`, `FJ.3/group-to-augmented`, `FJ.4/product-group-contraction`, `FJ.4/rank-shifted-fundamental-lemma`.
-
-
-**G4: Finite germ averaging and the ordinary endoscopic normalization.** With maximal-compact-volume-one measures the raw rank-one Tate germ of 1_OF is 1/2. Reconcile every centralizer measure in Xiao Theorem 4.7/Leslie Theorem 4.7, prove the corrected 2^(-card S1) inversion identity stated here, and track these factors through Lie descent. Their exponents add across endoscopic blocks, so the proposed reduction cancels them. Check the sign convention in Xiao Theorem 6.1 against the different signed four-form sum on Leslie p. 38. The special spherical reduction has only the reference/reference lower-rank test nonzero, which avoids depending on an unspecified sign for the other three tests, but it still needs the factor comparison requested from ET.1.
-
-**Consumers:** `FJ.3/germ-inversion`, `FJ.3/augmented-to-endoscopic`, `FJ.4/cyclic-endoscopic-transfer`, `FJ.4/unit-fundamental-lemma`.
-
-
-**G5: Weil actions on orbital-image spaces and their measures.** The proposed Jacquet–Rallis sibling must supply the Beuzart-Plessis Proposition 1 export: actual SL_2(F) Weil actions on the two test spaces; descent to their orbital-image spaces; agreement on the intersection. Fix q_U(w)=h(w,w), q_GL(v,v*)=v*v, Hermitian Fourier kernel psi(Tr_E/F h(u,w)) and linear kernel psi(v*w+w*v), with self-dual measures and unramified lattice indicators fixed by Fourier. Include the unit-norm orbital reduction, Weyl/upper-unipotent generator argument, regular-base local constancy, and density of q!=0. The comparison target supplies the action on the sum without presupposing equality of the images.
-
-**Consumers:** `FJ.3/weil-orbital-sum`, `FJ.3/group-to-augmented`.
-
-
-**G6: Independent product-group base-change fundamental lemma.** The proposed Jacquet–Rallis sibling must plan and prove Leslie Theorem 11.1 (p. 78) from its local/global spectral comparison. For all m>=0, G=GL_m(F) times GL_(m+1)(F), Gprime=GL_m(E) times GL_(m+1)(E), H,Hprime diagonally embedded, and right Hprime_(x,y)=U(Vx) times U(Vy): every spherical Phi on Gprime transfers under BC to the reference (I_m,I_(m+1)) relative test Phi with all other pure-form pairs zero. The equality is Omega(gamma)*Orb_eta(BC(Phi),gamma)=Orb(Phi,delta), with fixed hyperspecial Haar volumes one. Its proof route must be independent of the FJ unit theorem: the dependency is product-group theorem -> rank-shifted theorem -> augmented theorem -> cyclic endoscopy -> relative unit theorem, never reversed. Sections 6–11 are not claimed decomposed here.
-
-**Consumers:** `FJ.4/rank-shifted-fundamental-lemma`, `FJ.4/product-group-contraction`.
-
-
-**G7: Relative smooth transfer across singular Hom maps.** Prove existence of compact target transfers for arbitrary compact source tests meeting the singular locus. Nonsingular fiber integration does not give a compact ordinary test there. Leslie19 Conjecture 4.4 supplies a target, not a proof. No proof of unrestricted existence is claimed from the sources read.
-
-**Consumers:** `FJ.5/full-smooth-transfer`.
-
-
-**G8: Specify the augmented full-spherical transfer factor.** Remark 3.7 supplies no formula for the augmentation, its matching range or unmatched-zero clause on the full H(Xn). Determine those data and show agreement with the cyclic theorem before formulating a full-module fundamental lemma. The Fourier-defined operator itself is precise and does not close this mathematical specification gap.
-
-**Consumers:** `FJ.5/full-spherical-transfer-factors`.
-
-
-## Source corrections and verification gates
-
-These observations concern the versions actually read, not an asserted correction to the published edition. No source passage is reproduced. The first eight were already reported by the Leslie extraction; the packet preserves those cross-references. The locations checked for published corrections are recorded in every packet finding. No relevant correction was located on the checked article landing page or author page.
-
-
-**E01 (misprint), Leslie arXiv:1911.07907v3, Lemma 1.8, p. 12.** The centralizer is labeled using U(W), although the surrounding datum is V. Use U(V). The lemma begins with delta in Herm(V), and the proof and cohomology map use that same V.
-
-Previously reported as `PAPER-LESLIE-25/E1`.
-
-
-**E02 (misprint), Leslie arXiv:1911.07907v3, Section 2.2.3, transfer-factor paragraph after Remark 2.8, p. 19.** The endoscopic triple changes its embedding symbol to eta in this display. Retain xi for the embedding in the fixed endoscopic datum. Eta is already the quadratic extension character; the definition transports the same datum fixed earlier.
-
-Previously reported as `PAPER-LESLIE-25/E2`.
-
+**E02 (misprint), Leslie arXiv:1911.07907v3, Section 2.2.3, transfer-factor paragraph after Remark 2.8, p. 19.** The endoscopic triple changes its embedding symbol to η in this display. Retain ξ for the embedding in the fixed endoscopic datum. Eta is already the quadratic extension character; the definition transports the same datum fixed earlier.
 
 **E03 (misprint), Leslie arXiv:1911.07907v3, after Theorem 2.12, p. 22.** The reduction points to an unresolved proposition reference. The first reduction is Proposition 3.12, pp. 30–31. Its statement is exactly the implication from the spherical theorem to Theorem 2.12.
 
-Previously reported as `PAPER-LESLIE-25/E3`.
-
-
-**E04 (misprint), Leslie arXiv:1911.07907v3, Section 4.1.2, p. 32.** The Hermitian invariant formula uses powers of the linear-side variable. Use powers of the Hermitian variable y in h(w,y^i w). The invariant is a function on Herm(V) times V; no linear-side x is in its argument.
-
-Previously reported as `PAPER-LESLIE-25/E4`.
-
+**E04 (misprint), Leslie arXiv:1911.07907v3, Section 4.1.2, p. 32.** The Hermitian invariant formula uses powers of the linear-side variable. Use powers of the Hermitian variable y in h(w,y^i w). The invariant is a function on Herm(V) × V; no linear-side x is in its argument.
 
 **E05 (misprint), Leslie arXiv:1911.07907v3, Section 4.1.4, p. 33.** The upper-left block of the Hermitian embedding is labeled x. The block is y. The embedding takes the Hermitian pair (y,w); x labels the different linear-side pair.
 
-Previously reported as `PAPER-LESLIE-25/E5`.
-
-
 **E06 (misprint), Leslie arXiv:1911.07907v3, Remark 4.4, p. 35.** The surname of the characteristic-zero transfer contributor is misspelled. Use Julia Gordon. The bibliography reference is to Gordon’s transfer appendix.
 
-Previously reported as `PAPER-LESLIE-25/E6`.
-
-
-**E07 (misprint), Leslie arXiv:1911.07907v3, Proposition 4.8 proof, p. 38.** The chosen augmented upper test is written as phi tensor the vector-lattice indicator and its zero evaluation as phi. Use (phi*e_0) tensor 1_Lambda_n, whose zero evaluation is phi*e_0. Phi belongs to the GL_n(E) Hecke algebra; the upper test must be a function on Herm(Vn) times Vn. The surrounding hypothesis and desired orbital integral both use its cyclic image.
-
-Previously reported as `PAPER-LESLIE-25/E7`.
-
+**E07 (misprint), Leslie arXiv:1911.07907v3, Proposition 4.8 proof, p. 38.** The chosen augmented upper test is written as φ ⊗ the vector-lattice indicator and its zero evaluation as φ. Use (φ*e_0) ⊗ 1_Λ_n, whose zero evaluation is φ*e_0. Phi belongs to the GL_n(E) Hecke algebra; the upper test must be a function on Herm(Vn) × Vn. The surrounding hypothesis and desired orbital integral both use its cyclic image.
 
 **E08 (error), Leslie arXiv:1911.07907v3, Section 5.1 Hermitian Fourier formula, p. 40.** The character kernel is formed from the norm of a Hermitian pairing. Use psi(Tr_E/F h(u,w)) with the self-dual measure and keep the Hermitian matrix argument y fixed, as in Beuzart-Plessis arXiv:1901.02653v3, pp. 5–6. A norm is quadratic, so the displayed kernel is not a bilinear additive Fourier pairing. The trace is the polar form of h(w,w); it remains valid in residue characteristic two.
 
-Previously reported as `PAPER-LESLIE-25/E8`.
+**E09 (misprint), Leslie arXiv:1911.07907v3, Lemma 3.1, modular-character display, p. 23.** The E-parabolic modular character has F absolute-value subscripts on E-valued determinants. Use |det m1|_E^b*|det m2|_E^(−a); the F-group formula on p. 39 correctly uses |.|_F. The E-parabolic acts on the E-vector space Mat_(a,b)(E), so its additive Jacobian uses the normalized E absolute value. The adjacent twists and Lemma 3.2 then give q_E=q^2 powers.
 
+**E10 (error), Leslie arXiv:1911.07907v3, Proposition 4.8 proof, p. 39.** The justification of BC/ξ commutativity asserts support only on double cosets with every coweight entry even. Prove commutativity by normalized Satake substitutions, without that support assertion. For n=2, BC(T_(1,0),E)=T_(2,0),F-(q-1)T_(1,1),F: Sat_E(T_(1,0))=q(Z1+Z2), while Sat_F(T_(2,0))=q(T1^2+T2^2)+(q-1)T1*T2. Thus an odd (1,1) coset occurs. Squaring variables nevertheless commutes with the two Levi scalings.
 
-**E09 (misprint), Leslie arXiv:1911.07907v3, Lemma 3.1, modular-character display, p. 23.** The E-parabolic modular character has F absolute-value subscripts on E-valued determinants. Use |det m1|_E^b*|det m2|_E^(-a); the F-group formula on p. 39 correctly uses |.|_F. The E-parabolic acts on the E-vector space Mat_(a,b)(E), so its additive Jacobian uses the normalized E absolute value. The adjacent twists and Lemma 3.2 then give q_E=q^2 powers.
-
-
-**E10 (error), Leslie arXiv:1911.07907v3, Proposition 4.8 proof, p. 39.** The justification of BC/xi commutativity asserts support only on double cosets with every coweight entry even. Prove commutativity by normalized Satake substitutions, without that support assertion. For n=2, BC(T_(1,0),E)=T_(2,0),F-(q-1)T_(1,1),F: Sat_E(T_(1,0))=q(Z1+Z2), while Sat_F(T_(2,0))=q(T1^2+T2^2)+(q-1)T1*T2. Thus an odd (1,1) coset occurs. Squaring variables nevertheless commutes with the two Levi scalings.
-
-
-**E11 (error), Leslie arXiv:1911.07907v3, Theorem 4.7, p. 36; Xiao arXiv:1802.07624v1, inversion preceding Theorem 4.7, pp. 20–21.** The raw regularized germ is equated to a finite character sum without averaging. For volume-one measures the finite inversion requires 2^(-card S1), or an explicitly rescaled germ. Verify all quotient-measure transports as gap G4. In unramified rank one, choose the integral augmented unit with x a fixed unit scalar, cyclic v=v*=1 and vol OF^times=vol U(1)=1. It transfers to the reference unit and zero on the other form. The Sigma={1} raw germ is the continuation of sum_(k>=0)(-q^(-s))^k, equal to 1/2 at zero, while the unaveraged unitary sum at w=0 is 1. The C2 character table inverse also has coefficient 1/2. Endoscopic block exponents add, so this does not by itself refute the final FJ theorem.
-
+**E11 (error), Leslie arXiv:1911.07907v3, Theorem 4.7, p. 36; Xiao arXiv:1802.07624v1, inversion preceding Theorem 4.7, pp. 20–21.** The raw regularized germ is equated to a finite character sum without averaging. For volume-one measures the finite inversion requires 2^(−card S1), or an explicitly rescaled germ. The forward identity and transported centralizer measures are inverted in §3.3. In unramified rank one, choose the integral augmented unit with x a fixed unit scalar, cyclic v=v*=1 and vol OF^×=vol U(1)=1. It transfers to the reference unit and zero on the other form. The Σ={1} raw germ is the continuation of sum_(k≥0)(-q^(−s))^k, equal to 1/2 at zero, while the unaveraged unitary sum at w=0 is 1. The C2 character table inverse also has coefficient 1/2. Endoscopic block exponents add, so this does not by itself refute the final FJ theorem.
 
 **E12 (gap), Leslie arXiv:1911.07907v3, Proposition 4.8 four-form sum, p. 38; Xiao arXiv:1802.07624v1, Theorem 6.1 construction, p. 23.** The displayed four-form signs differ between the cited construction and its use. Supply an explicit conversion between the ordinary/Jacquet–Langlands transfer-factor conventions before using the general four-form operator. Xiao’s written signs depend on the second form, while Leslie’s depend on the parity of the two split-form labels. Different conventions might explain this, but the conversion is not supplied. The special spherical reduction has only the reference/reference term nonzero. This is a normalization gap, not a claim that the two final theorems contradict each other.
-
 
 **E13 (gap), Leslie arXiv:1911.07907v3, proof of Proposition 5.2, p. 43.** The defect is subjected to the common Weil action on the intersection of the two orbital-image spaces. Extend the agreeing actions from the intersection to the sum, then apply the action to the defect there. Before transfer is proved, the two orbital images need not coincide. Their difference belongs to the sum. Independence of a decomposition follows because its ambiguity lies in the intersection, where the actions agree.
 
 The sum-space construction is explicit in Beuzart-Plessis arXiv:1901.02653v3, Section 4, p. 8; this repairs the stated location of the defect.
 
+**E14 (ordered determinant sign), Xiao18, proof of Theorem 6.1, p. 24.** With Ω=Ωa∧Ωb and D_ab=∏(λa−λb), the ordered cyclic determinant has cross product ∏(λb−λa)=(−1)^(ab)D_ab. The formula is η((−1)^(ab)D_ab)ω_aω_b over a ramified extension. Over an unramified extension η(−1)=1, giving the form used in the spherical comparison. The rank-two calculation in §3.5 distinguishes the general formula.
 
-## Continuation routes and the proposed split
+## References
 
-The issue permits independent directions to be separated after the first is
-planned here. The packet's `restructure[0].routeRecords` preserves every input
-route record, its complete brief and its item list. The records are the
-extractions' mathematical routing specifications, not copied source passages.
-The proposal is:
-
-| Direction | Route items | Treatment |
-| --- | ---: | --- |
-| This roadmap, source alias `UnitaryFriedbergJacquetRelativeEndoscopy` | Leslie25: 35 | All 35 mapped to target nodes or the imported SR.4 descent node |
-| `JacquetRallisRelativeTraceComparison` | Leslie25: 55; Zhang21: 60; BPLZZ21: 34; BPCZ22: 31 | Preserve the proposed id, title, parent, area and all four briefs; total 180 items; supplier contracts G3, G5, G6 |
-| `EndoscopicTransferRigidInnerFormsPartII` | Kaletha16: 104 | Preserve its id and complete proposed record; independent rigid cohomology, factors and packets |
-| Proposed `GeometricStabilisationViaPadicIntegration` | GWZ20-B: 124; GWZ20: 23 | Move both colliding geometric routes together, preserving their common title, area, parent, full briefs and confirmed finite-quotient corrections; total 147 items |
-
-The eight records contain 466 route-item incidences. No sibling stage ids are
-invented. The other seven routes are not claimed planned here, their full
-source corpora are not claimed read, and no other roadmap or extraction file
-is changed. In particular the geometric pair currently uses
-the fixed id of this issue; moving both records is necessary to avoid
-replacing the geometric programme with the FJ programme. The Jacquet–Rallis
-direction includes its independent spectral proof, not just the interfaces
-this roadmap consumes. Its proof of Leslie Theorem 11.1 must not assume
-FJ.4/unit-fundamental-lemma.
-
-The complete first-route assignment is in `routeCoverage` in the packet.
-Items 23, 24 and 28 import SR.4/parabolic-descent. All other 32 first-route
-items have targets here. This is route coverage, distinct from proof closure.
-
-## Pinned libraries and compact Lean boundary
-
-The baseline is Mathlib `082e2d37e8b0463410cdb532e111cd43d5a66174` and Tau Ceti
-`f790474821cf4256814db967cb154e7af3d0c369`. The actual declarations were read
-at those commits:
-
-- `mathlib:Matrix.conjTranspose`, `Mathlib/LinearAlgebra/Matrix/ConjTranspose.lean`: Transpose followed by entrywise star, for rectangular matrices.
-
-- `mathlib:Matrix.IsHermitian`, `Mathlib/LinearAlgebra/Matrix/Hermitian.lean`: A square matrix satisfies A.conjTranspose=A; no new self-adjoint matrix carrier is needed.
-
-- `mathlib:Matrix.isHermitian_mul_conjTranspose_self`, `Mathlib/LinearAlgebra/Matrix/Hermitian.lean`: A*A.conjTranspose is Hermitian, including rectangular A.
-
-- `mathlib:Matrix.isHermitian_conjTranspose_mul_self`, `Mathlib/LinearAlgebra/Matrix/Hermitian.lean`: A.conjTranspose*A is Hermitian, including rectangular A.
-
-- `mathlib:Matrix.charpoly`, `Mathlib/LinearAlgebra/Matrix/Charpoly/Basic.lean`: The characteristic polynomial is det(TI-A).
-
-- `mathlib:Matrix.charpoly_mul_comm`, `Mathlib/LinearAlgebra/Matrix/Charpoly/Basic.lean`: Over a commutative ring, square AB and BA have equal characteristic polynomial; the signed-contraction equality is a specialization.
-
-- `mathlib:MvPolynomial.hsymm`, `Mathlib/RingTheory/MvPolynomial/Symmetric/Defs.lean`: Complete homogeneous symmetric polynomial as the sum over degree-d multisets of variables.
-
-- `mathlib:MvPolynomial.bind₁`, `Mathlib/Algebra/MvPolynomial/Monad.lean`: The algebra homomorphism substituting polynomials for variables; the compact coordinate tests use this existing operation.
-
-
-The current upstream roadmap checkout at
-`0d144d044dacebca17b654695b6f1ad58f159b27` and current Tau Ceti at
-`a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039` were also inspected for
-duplication, read only. In particular IntegralLattices and OrthogonalSpinGroups
-supply existing lattice/classical-group plans; no FJ or Jacquet–Rallis carrier
-was located in the representation-theory searches. The reviewed library audit
-records partial Hermitian arithmetic and absent density/quotient-integration
-targets in GN.2/GN.3/AA.2; it has no audited ET.0/ET.1/ET.3 or SR.4 entry that
-would supply the relative constructions. Importing the named owner nodes
-keeps their existing material in one place.
-
-The suggested file follows the 12 October 2026 compact-file rule in
-WORKERS.md. Its two light definitions are signed matrix contractions. Its
-five admitted milestones express their Hermitian, swap, equivariance and
-characteristic-polynomial properties over existing carriers. Seven admitted
-examples check zero, identity, scalar and diagonal contractions and three
-Satake substitutions. All other API and unit-test requirements are specified
-in this reader, where their absent mathematical carriers can be stated
-honestly. There are no admitted data definitions or substitute predicates
-for transfer. The file elaborated with `lean-check` at the baseline pins,
-exit zero, with twelve expected admitted-proof warnings and no
-other warnings. This checks signatures, not proofs.
-
-## References and reading boundary
-
-All references were accessed on 19 October 2026. The packet records PDF
-SHA-256 hashes and the precise reading ranges. The principal accepted copy
-was read in place in the maintainer's cleared library. Other listed copies
-are public.
-
-
-**[Leslie25]** Spencer Leslie, *The endoscopic fundamental lemma for unitary Friedberg–Jacquet periods*. Annals of Mathematics 201 (2025), 551–645; statements checked in arXiv:1911.07907v3, accepted version, 12 March 2025, 89 pages. [Source](https://arxiv.org/abs/1911.07907v3). Read: Sections 1.2–1.5, pp. 3–6, 10–12; Part 1, Sections 2–5, pp. 13–43, read in full; Sections 7.1–7.2.2, pp. 47–51, for the requested contraction contracts; Theorem 11.1 and Lemma 11.2, pp. 78–79; Section 11.2, p. 86; References, pp. 87–89; the intervening global proof is a separately owned, unread dependency.
-
-
-**[Leslie19]** Spencer Leslie, *Endoscopy for unitary symmetric spaces*. arXiv:1910.09685v2, 6 April 2020, 27 pages. [Source](https://arxiv.org/pdf/1910.09685v2). Read: Proposition 1.3, p. 4; Section 3.2, Lemmas 3.6–3.9, pp. 12–13; Section 4.2, Conjecture 4.4 and Proposition 4.5, pp. 14–15; Appendix A, Propositions A.1 and A.3 and Corollary A.2, pp. 25–26.
-
-
-**[Xiao18]** Jingwei Xiao, *Endoscopic transfer for unitary Lie algebras*. arXiv:1802.07624v1, 21 February 2018. [Source](https://arxiv.org/pdf/1802.07624v1). Read: Section 2.1, equation (2), Lemma 2.1, pp. 3–5; Section 3.2, Proposition 3.8, pp. 11–12; Sections 4.1–4.5, pp. 15–21; Section 5, Lie descent, pp. 21–22; Section 6, Theorem 6.1 and proof, pp. 23–24.
-
-
-**[Hironaka99]** Yumiko Hironaka, *Spherical functions and local densities on Hermitian forms*. Journal of the Mathematical Society of Japan 51 (1999), 553–581. [Source](https://www.jstage.jst.go.jp/article/jmath1948/51/3/51_3_553/_pdf/-char/en). Read: Introduction, pp. 553–554; Section 2, normalization on pp. 570–571 and Theorem 2, p. 571.
-
-
-**[BP21]** Raphaël Beuzart-Plessis, *A new proof of Jacquet–Rallis’ fundamental lemma*. Duke Mathematical Journal 170 (2021), no. 12; read arXiv:1901.02653v3, December 2020. [Source](https://arxiv.org/pdf/1901.02653v3). Read: Sections 1–4 and references, pp. 1–9; Lemma 1, pp. 3–5, Fourier formulas pp. 5–6, Proposition 1, p. 7, proof on p. 8.
-
-
-Leslie25 Part 1 was read in full, together with the specified product-group contraction and theorem statements. The intervening global spectral proof is outside the first direction and was not read or decomposed here: it is precisely the independent supplier obligation G6. Source locators for that boundary identify the input, rather than certify its proof.
+- **Leslie25:** Spencer Leslie, *The endoscopic fundamental lemma for unitary Friedberg–Jacquet periods*, Annals of Mathematics 201 (2025), 551–645. All locators here use [arXiv:1911.07907v3](https://arxiv.org/abs/1911.07907v3), with its own printed pagination.
+- **Leslie19:** Spencer Leslie, *Endoscopy for unitary symmetric spaces*, [arXiv:1910.09685v2](https://arxiv.org/abs/1910.09685v2), 2020 version.
+- **Xiao18:** Jingwei Xiao, *Endoscopic transfer for unitary Lie algebras*, [arXiv:1802.07624v1](https://arxiv.org/abs/1802.07624v1), 2018.
+- **Hironaka99:** Yumiko Hironaka, *Spherical functions and local densities on Hermitian forms*, Journal of the Mathematical Society of Japan 51 (1999), 553–581, [publisher scan](https://www.jstage.jst.go.jp/article/jmath1948/51/3/51_3_553/_pdf/-char/en), Theorem 2, p. 571.
+- **BP21:** Raphaël Beuzart-Plessis, *A new proof of Jacquet–Rallis’s fundamental lemma*, Duke Mathematical Journal 170 (2021). All locators here use [arXiv:1901.02653v3](https://arxiv.org/abs/1901.02653v3), with its own printed pagination.

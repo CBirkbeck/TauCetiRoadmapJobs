@@ -1,0 +1,92 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "EndoscopicTransferAndUnitaryTraceComparisonPartII"
+
+[[source]]
+id = "Leslie25"
+authors = "Spencer Leslie"
+title = "The endoscopic fundamental lemma for unitary Friedberg-Jacquet periods"
+year = 2025
+arxiv = "1911.07907v3"
+locator_scheme = "theorem"
+locator = "Proposition 2.1; Lemma 2.4; Theorems 2.12, 3.5, 4.7, 5.3, 11.1; Remark 3.7"
+url = "https://arxiv.org/abs/1911.07907v3"
+fetched_from = "https://arxiv.org/pdf/1911.07907v3"
+fetched_at = "2026-10-25T14:11:06Z"
+sha256 = "167574c84c7a7e9bed4be72ca08be2769dd1442741fe7ffa6d1024627b682b76"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Every section, theorem and page locator uses arXiv:1911.07907v3 pagination; Annals 201 (2025), 551–645 has different pagination."
+cited_for = ["FJ.0/symmetric-representation", "FJ.0/contractions", "FJ.0/quotients", "FJ.0/regular-invertible", "FJ.0/torsor", "FJ.0/fibre-integration", "FJ.0/relative-orbital-integral", "FJ.0/pushforward", "FJ.0/orbital-comparison", "FJ.1/relative-datum", "FJ.1/matching-factor", "FJ.1/kappa-orbital-integral", "FJ.1/smooth-transfer", "FJ.1/nonsingular-transfer", "FJ.2/hermitian-spherical-module", "FJ.2/base-change-compatibility", "FJ.2/spherical-fourier", "FJ.3/pure-form-orbit-torsor", "FJ.3/generalized-nilpotent-integral", "FJ.3/germ-inversion", "FJ.3/lie-parabolic-descent", "FJ.3/augmented-to-endoscopic", "FJ.3/weil-orbital-sum", "FJ.3/group-to-augmented", "FJ.4/contraction-sign-comparison", "FJ.4/spherical-pushforward", "FJ.4/product-group-contraction", "FJ.4/rank-shifted-fundamental-lemma", "FJ.4/augmented-fundamental-lemma", "FJ.4/cyclic-endoscopic-transfer", "FJ.4/contracted-lattice-function", "FJ.4/degree-hecke-identities", "FJ.4/graded-transfer", "FJ.4/unit-fundamental-lemma", "FJ.5/full-spherical-extension", "Scope and ownership", "Exact supplier contracts", "Source corrections E01–E13"]
+
+[[source]]
+id = "Leslie19"
+authors = "Spencer Leslie"
+title = "Endoscopy for unitary symmetric spaces"
+year = 2019
+arxiv = "1910.09685v2"
+locator_scheme = "theorem"
+locator = "Proposition 4.5; Conjecture 4.4; Proposition A.3"
+url = "https://arxiv.org/abs/1910.09685v2"
+fetched_from = "https://arxiv.org/pdf/1910.09685v2"
+fetched_at = "2026-10-25T14:11:46Z"
+sha256 = "8374f66a25bd34419b17ea83c7a842e2a76ecb8811cfa6fa592819dc13a56329"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v2"
+cited_for = ["FJ.0/torsor", "FJ.0/fibre-integration", "FJ.0/pushforward", "FJ.1/nonsingular-transfer", "Scope and ownership", "Exact supplier contracts"]
+
+[[source]]
+id = "Xiao18"
+authors = "Jingwei Xiao"
+title = "Endoscopic transfer for unitary Lie algebras"
+year = 2018
+arxiv = "1802.07624v1"
+locator_scheme = "theorem"
+locator = "Lemma 2.1; Lemma 4.6; Theorem 4.7; Section 5; Theorem 6.1"
+url = "https://arxiv.org/abs/1802.07624v1"
+fetched_from = "https://arxiv.org/pdf/1802.07624v1"
+fetched_at = "2026-10-25T14:12:01Z"
+sha256 = "8dafe949c5b654866aae0a8a108b298a6582908cea8407898be6789499b3e39c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v1"
+cited_for = ["FJ.3/pure-form-orbit-torsor", "FJ.3/generalized-nilpotent-integral", "FJ.3/germ-inversion", "FJ.3/factor-descent-comparison", "Exact supplier contracts", "Source corrections E11, E12, E14"]
+
+[[source]]
+id = "BP21"
+authors = "Raphaël Beuzart-Plessis"
+title = "A new proof of Jacquet-Rallis's fundamental lemma"
+year = 2021
+arxiv = "1901.02653v3"
+locator_scheme = "theorem"
+locator = "Theorem 1, p. 3; Section 2, Lemma 1, pp. 4–5; Proposition 1, p. 7"
+url = "https://arxiv.org/abs/1901.02653v3"
+fetched_from = "https://arxiv.org/pdf/1901.02653v3"
+fetched_at = "2026-10-25T14:12:32Z"
+sha256 = "27fc28404ef150760f7b85da367aaffb367851d851b791e279d10d3ab47d3ce6"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Every page and theorem locator uses arXiv:1901.02653v3 pagination, rather than the published Duke 170 (2021) pagination."
+cited_for = ["FJ.3/weil-orbital-sum", "FJ.3/group-to-augmented", "Exact supplier contracts"]
+
+[[source]]
+id = "Hironaka99"
+authors = "Yumiko Hironaka"
+title = "Spherical functions and local densities on Hermitian forms"
+year = 1999
+locator_scheme = "theorem"
+locator = "Theorem 2, p. 571; pp. 570–571"
+url = "https://www.jstage.jst.go.jp/article/jmath1948/51/3/51_3_553/_pdf/-char/en"
+fetched_from = "https://www.jstage.jst.go.jp/article/jmath1948/51/3/51_3_553/_pdf/-char/en"
+fetched_at = "2026-10-25T14:21:29Z"
+sha256 = "8889093dd918ea04ffd946a91a24435d7647d60189ff0738d35b052fefc5e84c"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["FJ.2/spherical-fourier"]
+doi = "10.2969/jmsj/05130553"
+version_note = "Publisher J-STAGE scan, recognised by OCR; all locators use printed JMSJ pages (printed page = PDF page + 552)."
