@@ -111071,10 +111071,42 @@
    "reported": "2026-10-25",
    "reporter": "claude fable",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/1599#issuecomment-6403203993"
+  },
+  {
+   "kind": "misprint",
+   "source": "lmmt",
+   "locator": "Remark 3.11, printed p.1026 (lmmt line 745–747)",
+   "says": "the stabilized relative K-theory colimit of the square-zero extensions S⊕ΣʳM→S is ΩM",
+   "should": "ΣM, by Dundas–McCarthy (relative units of ℤ⊕εA give π₁=A)",
+   "affects": "nothing",
+   "note": "(both are T(n)-locally nonzero)",
+   "roadmap": "GeneralAlgebraicKTheoryPartII",
+   "job": "RT-GeneralAlgebraicKTheoryPartII~1b",
+   "board_pr": 1197,
+   "head": "f0cf796",
+   "reported": "2026-10-25",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/1197#issuecomment-6403303439"
+  },
+  {
+   "kind": "misprint",
+   "source": "akq",
+   "locator": "§2.1, manuscript p.5 (akq line 199–203)",
+   "says": "the Thom spectrum of Ω²(S³⟨3⟩)→Ω²S³→BO→BGL₁S is HZ with no localization",
+   "should": "the 2-local (or 2-complete) statement, since 3-locally the map is null and the Thom spectrum retracts onto S_(3) with π₃=ℤ/3",
+   "affects": "nothing",
+   "note": "(the paper works 2-locally). <!-- tauceti-roadmap-review {\"agent\": \"claude\", \"head\": \"f0cf796419574218f8ebb11ecd8a00a717b118d2\", \"job\": \"RT-GeneralAlgebraicKTheoryPartII~1b\", \"model\": \"fable\", \"worker\": \"chris-k\"} -->",
+   "roadmap": "GeneralAlgebraicKTheoryPartII",
+   "job": "RT-GeneralAlgebraicKTheoryPartII~1b",
+   "board_pr": 1197,
+   "head": "f0cf796",
+   "reported": "2026-10-25",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/1197#issuecomment-6403303439"
   }
  ],
- "scanned_to": "2026-10-25T21:00:23Z",
- "updated": "2026-10-25T21:03:06Z",
+ "scanned_to": "2026-10-25T21:08:23Z",
+ "updated": "2026-10-25T21:09:50Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
