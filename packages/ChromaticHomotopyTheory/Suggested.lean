@@ -8,14 +8,14 @@ headline theorems against the pinned APIs whenever their actual carriers exist.
 
 The following headline theorems are not statable at the pins:
 
-- Ring-spectrum T(n)/K(n) acyclicity (§3.3): missing derived spectra, associative ring spectra, Morava theories and telescopes.
+- Homotopy-unital magma T(n)/K(n) acyclicity (§3.3): missing derived spectra, homotopy-category units and multiplications, Morava theories and telescopes.
 - All-spectra finite localization, compactly generated kernel and smashing (§4.1–§4.3): missing derived spectra and homological localization functors.
 - General homological fracture (§4.4): missing spectral reflectors, their units and homotopy pullbacks.
 - Bousfield–Kuhn existence and finite-source uniqueness (§5.1–§5.2): missing pointed derived spaces, mapping spectra, telescopes and spectral localization.
 - Suspension–loop detection (§5.3): missing the derived spectral suspension–loop adjunction and T(n)-localization.
 - Generalized Serre filtration with monodromy and convergence (§6.1): missing spectrum-valued fiber local systems and their filtered homotopy colimits.
 - Fiberwise generalized homology equivalence (§6.2): missing spectra and their smash with suspension spectra; the pinned Eilenberg–Steenrod homology pretheory has no excision axiom and no weak-equivalence invariance, and neither library has homotopy fibres of maps of spaces.
-- Sharp connective periodic vanishing and suspension–loop preservation (§6.3–§6.4): missing unstable periodic groups, nullification and the finite-local spectral tower.
+- Finite nullification and its periodic comparison, sharp connective periodic vanishing, including arbitrary-endpoint maps with the relative height-zero condition, and suspension–loop preservation (§6.3–§6.4): missing unstable periodic groups, derived space fibers, finite nullification and the finite-local spectral tower.
 - Marked Morava E realization and coherent stabilizer actions at every finite height (§7.1–§7.2): missing E∞ ring spectra, marked spectral realizations and coherent actions.
 - Uniform geometric-height locality for every module (§8.1): missing oriented ring spectra, module spectra and Johnson–Wilson localization.
 - T(n)/K(n) comparison on chromatically local spectra (§8.2): missing spectral chromatic reflectors and their natural transformations.
@@ -24,12 +24,12 @@ The following headline theorems are not statable at the pins:
 - Localized transfer criterion and telescopic Tate vanishing (§9.1–§9.3): missing coherent finite-group spectra, normalized norms and Tate cofibers.
 - Raw finite-local Tate blueshift (§9.4): missing coherent finite-group spectra, raw Tate cofibers and finite-local reflectors.
 - Nonzero raw KU Tate spectrum and its Euler-inversion calculation (§9.5): missing the KU spectrum, its derived completion and the spectral Tate construction.
-- Hahn upward acyclicity and the commutative-ring height threshold (§10.1–§10.3): missing E∞ ring spectra, Morava power operations and telescopic height detectors.
-- Tate height converse (§10.4): missing trivial coherent actions on E∞ ring spectra and Tate-localization comparisons.
+- Hahn Dₚ upward acyclicity, relative Dₚ-E power operations and the E∞-ring height threshold (§10.1–§10.3): missing spectra, cyclic extended powers, absolute and relative Dₚ-algebras, E∞ ring spectra and telescopic height detectors.
+- Dₚ Tate height converse and the local homotopy-E-algebra intermediate comparison (§10.4): missing homotopy spectral algebras, trivial coherent actions, Morava E-modules and Tate-localization comparisons.
 - Positive-height real Bott inversion for every ko-algebra (§11.1): missing ko-algebra spectra, relative spectral tensor and Bott inversion.
 - Elliptic spectral affineness (§12.1): missing spectral ringed stacks and quasicoherent spectral module categories.
 - Chromatic comparisons for tmf, Tmf and TMF (§12.2): missing the three modular-form spectra and their spectral localization units.
-- Faithful level-three spectral Galois extension and supersingular comparisons (§12.3–§12.4): missing E∞ spectral algebras, relative tensor, Morava E-theory and coherent fixed points.
+- Faithful full-level spectral Galois extensions for every N≥1, including the small-level stack cases, and supersingular comparisons (§12.3–§12.4): missing spectral level stacks, E∞ spectral algebras, relative tensor, Morava E-theory and coherent fixed points.
 - Hopkins–Mahowald completed Thom equivalences (§13.1–§13.2): missing p-complete spectra, spectral units, E₂ Thom rings and nilpotent space completion.
 - James-filtered Thom colimits and chromatic acyclicity (§13.3–§13.4): missing completed E₁ Thom spectra, homotopy colimits and Morava homology.
 - James splitting acyclicity application (§13.5): missing reduced suspension spectra and the stable James splitting.
