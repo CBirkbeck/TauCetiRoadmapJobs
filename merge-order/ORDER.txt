@@ -7,8 +7,8 @@ ResolutionOfSingularitiesCharacteristicZero
 DerivedModuleAlgebra
 AdicSpacesPartII
 CstConjectureForDaggerVarieties
-AdicSpacesPartIIPartII
 AdicSpacesPartIII
+AdicSpacesPartIIPartII
 AdicEtaleGeometry
 PerfectoidSpaces
 LocalFieldsRamificationPartII
@@ -97,7 +97,6 @@ AnalyticNumberTheoryPartI
 AnalyticNumberTheoryPartII
 AnalyticNumberTheory
 ArithmeticStatistics
-EffectiveBoundsPartII
 EffectiveBoundsCompactModels
 AlgebraicModularFormsAndSerreWeights
 GL2AutomorphicRepresentationsAndTransfer
@@ -122,6 +121,7 @@ ArcTopologyAndDescent
 EtaleDualityAndPerverseSheavesPartII
 AlgebraicTopologyPartII
 ArithmeticStatisticsPartI
+EffectiveBoundsPartII
 ArithmeticStatisticsPartII
 ArithmeticStatisticsPartIII
 ArithmeticStatisticsPartIV
