@@ -47,7 +47,7 @@ year = 2022
 doi = "10.4007/annals.2022.196.3.5"
 arxiv = "1905.08229v4"
 locator_scheme = "section"
-locator = "Definition 8.7, p. 67; BS22 line 2594; Lemmas 8.8 and Remark 8.9, pp. 67–68; CS24 Lemma 2.2.3 p. 19; BS22 line 2603; Proof of Theorem 9.1, pp. 71–73; BS22 line 2727; Proposition 8.10, pp. 67–68; BS22 line 2619; Second assertion of Proposition 8.10 and its proof, pp. 67–68; BS22 line 2619"
+locator = "Definition 8.7, p. 67; BS22 line 2594; Lemma 8.8 and Remark 8.9, p. 67; BS22 lines 2603 and 2610; Proof of Theorem 9.1, pp. 71–73; BS22 line 2727; Proposition 8.10, pp. 67–68; BS22 line 2619; Second assertion of Proposition 8.10 and its proof, pp. 67–68; BS22 line 2619"
 url = "https://arxiv.org/abs/1905.08229v4"
 fetched_from = "https://arxiv.org/pdf/1905.08229v4"
 fetched_at = "2026-10-24T00:22:32Z"
@@ -56,7 +56,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-24"
 version_note = "arXiv:1905.08229v4, 12 January 2022; Ann. Math. 196 (2022); locators use this arXiv version, not unverified journal renumbering."
-cited_for = ["§11.3", "Exact supplier contracts: PrismaticCohomology", "§12.2", "§12.4"]
+cited_for = ["§8.4", "§11.3", "Exact supplier contracts: PrismaticCohomology", "§12.2", "§12.4"]
 
 [[source]]
 id = "CS24"
@@ -66,7 +66,7 @@ year = 2024
 doi = "10.4007/annals.2024.199.1.2"
 arxiv = "1912.10932v3"
 locator_scheme = "section"
-locator = "Lemma 3.1.2 p. 30; CS24 line 1207; CS24 §2.2.1 pp. 18–19; CS24 line 692; CS24 Lemmas 2.2.3–2.2.4 pp. 19–20 (principal case); §2.2.1 for finite I; CS24 line 764; CS24 Theorem 2.2.5 and Remark 2.2.6, pp. 20–21; CS24 line 800; Lemma 2.2.2, p. 19; CS24 line 755; Lemma 4.2.6 and proof, pp. 41–42; CS24 line 1717"
+locator = "Lemma 3.1.2 p. 30; CS24 line 1207; CS24 §2.2.1 pp. 18–19 (aic completion p. 18); CS24 lines 692 and 733; CS24 Lemmas 2.2.3–2.2.4 pp. 19–20 (principal case); §2.2.1 for finite I; CS24 line 764; CS24 Theorem 2.2.5 and Remark 2.2.6, pp. 20–21; CS24 line 800; Lemma 2.2.2, p. 19; CS24 line 755; Lemma 4.2.6 and proof, pp. 41–42; CS24 line 1717"
 url = "https://arxiv.org/abs/1912.10932v3"
 fetched_from = "https://arxiv.org/pdf/1912.10932v3"
 fetched_at = "2026-10-24T00:22:38Z"
@@ -75,7 +75,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-24"
 version_note = "arXiv:1912.10932v3, 2023; Ann. Math. 199 (2024); locators use this arXiv version, not unverified journal renumbering."
-cited_for = ["§8.9", "§11.1", "§11.2", "§11.5", "§12.6", "§12.7"]
+cited_for = ["§8.4", "§8.9", "§11.1", "§11.2", "§11.5", "§12.6", "§12.7"]
 
 [[source]]
 id = "GR24"
@@ -113,7 +113,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-24"
 version_note = "arXiv:1803.10897v2; J. Amer. Math. Soc. 34 (2021); doi is the arXiv-issued identifier; locators use this arXiv version, not unverified journal renumbering."
-cited_for = ["§12.5", "Exact supplier contracts: affine characteristic-primary cohomology"]
+cited_for = ["§12.5"]
 
 [[source]]
 id = "MAT22"
@@ -245,7 +245,7 @@ venue = "Bull. Soc. Math. France 138 (2), 2010, p. 181-230"
 doi = "10.24033/bsmf.2588"
 arxiv = "0710.2488v3"
 locator_scheme = "theorem"
-locator = "Definition 2.2 p. 7 (RYD10 line 330); Proposition 2.7 p. 9 (line 389); Theorem 2.8 pp. 9–10 (line 421); Corollary 2.9 p. 10 (line 459); Theorem 3.12 p. 15 and Remark 3.13 pp. 15–16 (lines 699 and 711)"
+locator = "Definition 2.2 p. 7 (RYD10 line 330); cancellation discussion p. 8 (RYD10 line 350); Proposition 2.7 p. 9 (line 389); Theorem 2.8 pp. 9–10 (line 421); Corollary 2.9 p. 10 (line 459); Theorem 3.12 p. 15 and Remark 3.13 pp. 15–16 (lines 699 and 711)"
 url = "https://arxiv.org/abs/0710.2488v3"
 fetched_from = "https://arxiv.org/pdf/0710.2488v3"
 fetched_at = "2026-10-24T01:05:24Z"

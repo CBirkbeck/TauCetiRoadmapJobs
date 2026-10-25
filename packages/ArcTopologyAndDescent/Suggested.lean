@@ -19,9 +19,12 @@ The following headline theorems are not statable at the pins:
   lacks the general constructible-sheaf category and its categorical descent functor.
 * Characteristic-zero h-differential and h-de Rham arc-descent lacks the h-form
   cohomology functor, its coherent finitary extension and filtered enhancement.
-* Perfect-complex arc-hyperdescent and the universally effective epimorphism
-  criterion lack the coherent symmetric monoidal Perf functor, scheme perfection
-  and the general algebraic-space reconstruction interface.
+* Perfect-complex arc-hyperdescent lacks the coherent symmetric monoidal Perf
+  functor and scheme perfection; the algebraic-space mapping descent theorem
+  additionally lacks the general reconstruction interface.
+* The universally effective epimorphism criterion lacks the category of qcqs
+  perfect F_p-schemes. Perf and algebraic-space reconstruction are proof inputs,
+  not carriers in this criterion's statement.
 * Arbitrary-parameter completed-generic-fibre hyperdescent and its Kunneth theorem
   lack coherent derived etale sections on the complete sites and the compatible
   monoidal totalization/completed-tensor functors.

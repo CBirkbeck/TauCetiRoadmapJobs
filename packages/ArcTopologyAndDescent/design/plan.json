@@ -5913,7 +5913,7 @@
   "gaps": [
   {
     "slug": "coherent-topos-pushouts",
-    "needs": "For coherent sites, supply the representable coherence and quasi-compact relation criteria, Deligne enough points and coherence of pushouts along coherent monomorphisms used in the bounded arc-topos argument.",
+    "needs": "For essentially small finite-limit sites with finite covering subfamilies, supply coherence of sheafified representables, the coherent-quotient criterion for finite coproducts of these representables with quasi-compact relation, and coherence of pushouts of coherent objects along monomorphisms.",
     "supplier": "SchemeAndStackFoundations",
     "section": "§2.3 (coherent-site extension)"
   },
@@ -5930,16 +5930,10 @@
     "section": "§§1.2–1.10"
   },
   {
-    "slug": "affine-characteristic-primary-cohomology",
-    "needs": "For every affine scheme in characteristic p>0, arbitrary p-primary torsion étale sheaves have zero cohomology above degree one, with the bound zero for zero-dimensional finite-type schemes over a separably closed field, compatibly with filtered coefficient colimits.",
-    "supplier": "EtaleCohomologyFoundations",
-    "section": "§F.3"
-  },
-  {
     "slug": "perfectoid-tate-constant-comparison",
-    "needs": "For every p-complete integral perfectoid A and every n≥1, supply the natural constant Z/p^n cohomology comparison between Spec A[1/p] and Spa(A[1/p],A), compatible with perfectoid étale tilting and open restriction.",
+    "needs": "Extend the §2.6 comparison to the image of every p-complete integral perfectoid A in A[1/p] by comparing Spa(A[1/p],A) with Spa(A[1/p],(A[1/p])°), compatibly with open restriction and the étale-site tilting equivalence of PerfectoidSpaces §P3.20.",
     "supplier": "ClassicalAdicEtaleCohomology",
-    "section": "§§2.5–2.6"
+    "section": "§2.6 (integral-model and restriction compatibility)"
   },
   {
     "slug": "bounded-torsion-punctured-approximation",
