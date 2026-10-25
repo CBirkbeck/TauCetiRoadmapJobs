@@ -6415,30 +6415,73 @@
     }
   ],
   "gaps": [
-    {
-      "id": "TriangulineVarietyAndItsLocalModel/G1",
-      "title": "Assign the almost de Rham Artinian period extension to a precise supplier node",
-      "neededBy": [
-        "TriangulineVarietyAndItsLocalModel:A/period-deformation",
-        "TriangulineVarietyAndItsLocalModel:L/lattice-filtration",
-        "TriangulineVarietyAndItsLocalModel:T/parameter-weight",
-        "TriangulineVarietyAndItsLocalModel:C/cohomology-comparison"
-      ],
-      "detail": "R1 and R2 state verified source contracts. The accepted PHT field/coefficient-category nodes stop short of the full Artinian Fontaine and B-pair equivalences. No exact reserved Part II node exists in this checkout. Obtain that ownership/acceptance before packaging; do not regard a field classification as this stronger input. This is a supplier-closure gap, not an assertion that BHS proves no such theorem."
-    },
-    {
-      "id": "TriangulineVarietyAndItsLocalModel/G2",
-      "title": "Locally analytic constituent supplier has no reserved stage",
-      "neededBy": [
-        "TriangulineVarietyAndItsLocalModel:Y/multiplicity-problem",
-        "TriangulineVarietyAndItsLocalModel:Y/conditional-uniqueness",
-        "TriangulineVarietyAndItsLocalModel:Y/constituent-invariance",
-        "TriangulineVarietyAndItsLocalModel:Y/crystalline-multiplicity",
-        "TriangulineVarietyAndItsLocalModel:Y/rank-two-fibres"
-      ],
-      "detail": "The pending LocallyAnalyticRepresentationsOfLocalGroups direction must supply the actual locally analytic principal series I_δ, Orlik–Strauch constituents Π_w, finite Jordan–Hölder multiplicities, strong-linkage unitriangularity and the constituent isomorphism criterion under dominant parabolic permutations. No suitable existing or reserved node was found. This packet records the exact contract in pendingSuppliers instead of inventing a supplier stage or replacing representations by labels. The general multiplicity assertion remains a conjecture even after that supplier exists. The all-parameter signed-cycle uniqueness proof also needs this full unitriangular vanishing input; see E16. No effectivity restriction is silently added to the conjecture."
-    }
-  ],
+  {
+    "slug": "artinian-almost-de-rham",
+    "supplier": "PadicHodgeTheory",
+    "section": "§4.5",
+    "needs": "For every local Artinian E-algebra with residue E, provide the exact tensor Fontaine equivalence between almost de Rham coefficient B_dR representations and finite free A⊗K modules with nilpotent operator, including H⁰=ker ν, H¹=coker ν, finite-coefficient tensor compatibility and stable free positive lattices."
+  },
+  {
+    "slug": "artinian-b-pairs",
+    "supplier": "PadicHodgeTheory",
+    "section": "§4.5",
+    "needs": "Extend the coefficient B-pair/Robba equivalence to local Artinian E-algebras, preserving exact sequences, ranks and finite coefficient tensors and proving freeness from a free localized realization and a free positive period lattice."
+  },
+  {
+    "slug": "partial-de-rham-cohomology",
+    "supplier": "PadicHodgeTheory",
+    "section": "§4.5",
+    "needs": "Provide the J-de Rham B-pair dimension formula dim H¹_g,J=d rk W+dim H⁰(W)+dim H²_J(W)−dim H⁰(W_dR,J⁺), with H²_J defined by a positive J-algebraic twist killing positive invariants, its specialization when H²_J=H², and the six-term exact sequence for J-de Rham short exact sequences with H²_J(W₁)=0."
+  },
+  {
+    "slug": "dominant-trianguline-semistability",
+    "supplier": "PadicHodgeTheory",
+    "section": "§§5.2, 6.3",
+    "needs": "For a saturated trianguline Galois representation with strictly decreasing integral labelled parameter weights, prove semistability and the Frobenius-parameter dictionary, and prove that exclusion of the regular-character exceptional ratios gives zero monodromy and a noncritical crystalline refinement."
+  },
+  {
+    "slug": "selective-modification",
+    "supplier": "PadicHodgeTheory",
+    "section": "§5.2",
+    "needs": "Construct the unique embedding-selective period modification D⊂D_σ of a generic all-refinement noncritical crystabelline module, retaining its localization and σ-filtration, replacing every off-σ weight by the ambient minimum and identifying the potentially semistable period modules."
+  },
+  {
+    "slug": "rank-one-saturation",
+    "supplier": "PhiGammaModulesAndIwasawaCohomology",
+    "section": "§7.5",
+    "needs": "For K=ℚₚ, prove that a finite free Robba (φ,Γ)-module containing a rank-one (φ,Γ)-submodule contains a saturated rank-one submodule with finite free quotient, compatibly with finite coefficient-field extension."
+  },
+  {
+    "slug": "general-character-spaces",
+    "supplier": "LocallyAnalyticDistributions",
+    "section": "§§3.3–3.4",
+    "needs": "For every finite K/ℚₚ, provide the rigid continuous-character spaces of K× and O_K× with universal characters, coefficient change, dimensions d+1 and d, smooth restriction of relative dimension one, étale logarithmic derivative on unit weights and local Zariski accumulation of algebraic tuples with arbitrarily large decreasing gaps at every algebraic tuple."
+  },
+  {
+    "slug": "analytic-local-algebra",
+    "supplier": "RigidAnalyticGeometry",
+    "section": "§§7.3, 8.1–8.2",
+    "needs": "Provide openness of the normal and Cohen–Macaulay loci and of flat rigid morphisms, completed-ring injectivity above proper birational normalization of a reduced rigid space, generic freeness and coefficient change on the relevant coherent Herr loci, and the projective-image constructibility and constructible-adic-open comparison used for triangulation loci."
+  },
+  {
+    "slug": "polynomial-connection-finiteness",
+    "supplier": "PadicDifferentialEquationsAndRigidCohomology",
+    "section": "§RD.2.43",
+    "needs": "For every rank-two étale ℚₚ Robba module and nonzero P∈E[X], prove finite E-dimensionality of ker P(∇), with the connection commuting with Frobenius and Gamma and compatibility with finite coefficient extension."
+  },
+  {
+    "slug": "all-constituent-triangularity",
+    "supplier": "LocallyAnalyticRepresentationsOfLocalGroups",
+    "section": "LR.4/principal-series; LR.5/orlik-strauch-jordan-holder",
+    "needs": "Provide a separating unitriangular system of Jordan–Hölder multiplicity equations for all locally analytic principal-series constituent families, including non-locally-algebraic and nongeneric inducing data, sufficient to recover signed constituent cycles from all parameter-fibre cycles."
+  },
+  {
+    "slug": "constituent-conventions",
+    "supplier": "LocallyAnalyticRepresentationsOfLocalGroups",
+    "section": "LR.4/principal-series; LR.5/orlik-strauch-irreducibility; LR.5/orlik-strauch-jordan-holder",
+    "needs": "Identify the lower-Borel induction I_δ with twists δ_i ε^(i−1), its genuine Orlik–Strauch constituents, their finite Jordan–Hölder multiplicities and the dominant-parabolic criterion for isomorphic presentations in the BHS weight convention."
+  }
+],
   "pendingSuppliers": [
     {
       "proposedOwner": "LocallyAnalyticRepresentationsOfLocalGroups",
