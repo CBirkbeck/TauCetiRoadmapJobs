@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-6823 mistakes recorded on the board: 4211 misprints, 1742 errors, 662 gaps, 208 unparsed bullets.
+6825 mistakes recorded on the board: 4212 misprints, 1742 errors, 662 gaps, 209 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -216,6 +216,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Unparsed** (AutomorphicCongruences, #129 at 44e4c9e, 2026-10-25): Misprint** in BCS at §1.5, p. 5 (lines 220–222): the source says the divisibility of Wan-2015 assumes p > 3; Wan-2015 prints p > 5 in Theorems 3, 86 and 101, and only the proof of Theorem 86 reduces the restriction to p ≠ 3; affects a stated result (Theorem 3.2.1's prime range rests on the proof, not the printed statement).
 - **Unparsed** (HeightsRationalPointsAndObstructionsPartII, #1129 at 6536723, 2026-10-25): Gap** in xy-2022 at Proposition 5.4, printed p. 25, line 972: the source says every torsion point t off the jump locus gives height-zero fibre components; its proof at line 996 only treats torsion multisections of order prime to the characteristic (needed for the étale multisection); affects the proof, not the main theorem, since prime-to-p torsion off the jump locus is dense, which is what §5.3 uses and what the roadmap's §9.17 states. <!-- tauceti-roadmap-review {"agent": "claude", "head": "6536723", "job": "REV-PKG-HeightsRationalPointsAndObstructionsPartII~5", "model": "fable", "worker": "fable-rev138"} -->
 - **Unparsed** (RelativeFarguesFontainePartII, #1764 at 4ed8f9d, 2026-10-25): Misprint** in FF17 at §2.3.2 after Proposition 2.3.9, printed p. 118, line 4865: the source says `φ^k` induces an isometry of valued fields `(C_(y_ε1), v)→(C_(y_ε2), v)` when `ε2=π^k ε1`; with the F-normalised valuations of Proposition 2.3.2 the map multiplies valuations by `q^k` (it is an isometry only for the `v(π)=1` normalisation); affects nothing (the package states the `q^k` scaling).
+- **Unparsed** (AutomorphicCongruences, #129 at bfa3205, 2026-10-25): Misprint** in BCS at §1.5, p. 5 (lines 220–222): the source says the divisibility of Wan-2015 assumes p > 3; Wan-2015 prints p > 5 in Theorems 3, 86 and 101, and only the proof of Theorem 86 reduces the restriction to p ≠ 3; affects a stated result (the prime range of Theorem 3.2.1 rests on the proof, not the printed statement).
 
 ## A
 
@@ -9260,6 +9261,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at Definition 85, p. 69 (line 3541): the source says (NV2) concerns L^(Σ,−)_(f,K,ξ) without the v-subscript, though the condition is in A[[Γ⁻_v]]; it should be the v-restriction, as Theorem 86 uses it; affects a stated result. Found by AutomorphicCongruences (#129 at 44e4c9e, 2026-10-25, claude fable).
 - **Misprint** at Definition 85, p.69, line 3537–3541: the source says the integral function without a v-subscript belongs to the v-direction algebra; it should be use the preceding v-specialization, as Theorem 86 does; affects a stated result. Found by AutomorphicCongruences (#129 at b9d6195, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at Lemma 87, p. 71 (line 3584): the source says "a height-one prime of L^Σ_(f,K,1)"; it should be a height-one prime of I[[Γ_K]] pulled back from I[[Γ⁺_K]]; affects nothing. Found by AutomorphicCongruences (#129 at 44e4c9e, 2026-10-25, claude fable).
+- **Misprint** at §7.3.1, p. 69 (lines 3525–3532): the source says β is a homomorphism on Λ_(K,A) and applies it to L^Σ_(f,K,ξ), which Theorem 82(ii) places in I[[Γ_K]]; it should be composed with the weight specialization at the point of f_(κ0) fixed at line 3543; affects nothing; (the intended map is clear). Found by AutomorphicCongruences (#129 at bfa3205, 2026-10-25, claude fable).
 
 ## Wan-2020
 
