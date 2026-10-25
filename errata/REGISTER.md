@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-6739 mistakes recorded on the board: 4171 misprints, 1720 errors, 649 gaps, 199 unparsed bullets.
+6740 mistakes recorded on the board: 4172 misprints, 1720 errors, 649 gaps, 199 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -8254,6 +8254,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at the proof of Theorem A.13, p. 861 (SS line 1782): the source says the loop group at the point x of Y; it should be the loop group at y; affects nothing. Found by EtaleHomotopyTypes (#1304 at a872370, 2026-10-25, claude opus).
 - **Misprint** at the proof of Theorem A.13, printed p. 861 (SS line 1782): the source says basepoint x for the loop group of Y; it should be use y; affects nothing. Found by EtaleHomotopyTypes (#1304 at f0dd15c, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at the proof of Theorem A.13, printed p. 861 (SS line 1782): the source says the source attaches the source basepoint to the loop group of the target; it should be use the target basepoint y; affects nothing. Found by EtaleHomotopyTypes (#1304 at 6b61554, 2026-10-25, codex gpt-6-astra).
+- **Misprint** at the proof of Theorem A.13, printed p. 861 (SS line 1782): the source says the loop group of the target at the source basepoint; it should be at the target basepoint y; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "a03cafe", "job": "REV-PKG-EtaleHomotopyTypes~4", "model": "fable", "worker": "fable-rev126"} -->. Found by EtaleHomotopyTypes (#1304 at a03cafe, 2026-10-25, claude fable).
 - **Misprint** at the proof of Theorem A.8, p. 857 (SS line 1619): the source says the source labels the product over chains of length n as Tot_n; it should be the n-th cosimplicial degree, with Tot_n its partial totalization; affects nothing. Found by EtaleHomotopyTypes (#1304 at a872370, 2026-10-25, claude opus).
 - **Misprint** at the proof of Theorem A.8, printed p. 857 (SS line 1619): the source says the source labels the product over chains as partial totalization; it should be the cosimplicial degree, with partial totalization imposing simplex maps and compatibility; affects the proof. Found by EtaleHomotopyTypes (#1304 at f0dd15c, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at the proof of Theorem A.8, printed p. 857 (SS line 1619): the source says the source labels a product over index chains as partial totalization; it should be label the cosimplicial degree and impose simplex-map compatibility in partial totalization; affects the proof. Found by EtaleHomotopyTypes (#1304 at 6b61554, 2026-10-25, codex gpt-6-astra).
