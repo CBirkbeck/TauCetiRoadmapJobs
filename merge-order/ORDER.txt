@@ -7,8 +7,8 @@ ResolutionOfSingularitiesCharacteristicZero
 DerivedModuleAlgebra
 AdicSpacesPartII
 AdicSpacesPartIII
-AdicSpacesPartIIPartII
 AdicEtaleGeometry
+AdicSpacesPartIIPartII
 PerfectoidSpaces
 LocalFieldsRamificationPartII
 AdicSpacesPartIV
