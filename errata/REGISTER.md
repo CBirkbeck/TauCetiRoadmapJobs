@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-5756 mistakes recorded on the board: 3691 misprints, 1428 errors, 474 gaps, 163 unparsed bullets.
+5762 mistakes recorded on the board: 3694 misprints, 1430 errors, 475 gaps, 163 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -2411,6 +2411,14 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at §2.1, printed p.4 (CL18 line 160): the source says SO(3) is the special linear group; it should be the special orthogonal group; affects nothing. Found by McKaySkewGroup (ERRATA-McKaySkewGroup at a9ef22a, 2026-10-23, codex gpt-6-astra).
 - **Misprint** at §2.1, printed pp.4–9 (CL18 line 190, repeated at lines 220, 230, 327, 337, 354, 581, 595, 609): the source says the angles inside the quaternionic lift formulas are rotation angles; it should be half the SO(3) rotation angles, as Lemma 1 requires; affects nothing. Found by McKaySkewGroup (ERRATA-McKaySkewGroup at a9ef22a, 2026-10-23, codex gpt-6-astra).
 - **Error** at §3, printed p.10 (CL18 line 695): the source says the reflection-generated polytope has the indicated Coxeter group as its symmetry group; it should be a subgroup assertion: the 24-cell has full symmetry group W(F₄), order 1152, whereas the displayed W(D₄) has order 192; affects a stated result. Found by McKaySkewGroup (ERRATA-McKaySkewGroup at a9ef22a, 2026-10-23, codex gpt-6-astra).
+
+## clm
+
+- **Error** at proof of Corollary 6.6, printed p.25: the source says fibre-degree considerations force the marked pluricanonical higher direct image to vanish on all nodal fibres; it should be a justified evaluation-image argument accounting for unstable rational components; affects the proof. Found by StableReductionPartII (#1599 at 6875d07, 2026-10-25, codex gpt-6-astra).
+- **Misprint** at proof of Proposition 6.3, printed p.25: the source says the contraction pushes the target canonical sheaf onto the source canonical sheaf; it should be b_*ω_S=ω_(S′), with the pluricanonical pushforward justified using the exceptional discrepancy; affects the proof. Found by StableReductionPartII (#1599 at 6875d07, 2026-10-25, codex gpt-6-astra).
+- **Misprint** at proof of Proposition 6.3, printed p.25, finite-base-change paragraph: the source says the base-changed family and its relative dualizing sheaf use C; it should be C′, the source of the finite cover; affects the proof. Found by StableReductionPartII (#1599 at 6875d07, 2026-10-25, codex gpt-6-astra).
+- **Gap** at proof of Proposition 6.7, printed p.25: the source says separating intersecting weighted sections follows from the preceding unweighted blow-up argument; it should be justified using coefficient m−Σaᵢ and the actual ideal-twisted pushforward when negative; affects the proof. Found by StableReductionPartII (#1599 at 6875d07, 2026-10-25, codex gpt-6-astra).
+- **Error** at proof of Proposition 6.7, printed p.26: the source says positive pluricanonical twists have zero higher direct image by fibre degrees on arbitrary nodal families; it should be justified with an appropriate degree hypothesis or evaluation-image argument accounting for unstable components; affects the proof; <!-- tauceti-roadmap-review {"agent": "codex", "head": "6875d07a67d92b540577869398957097ebba6757", "job": "REV-PKG-StableReductionPartII", "model": "gpt-6-astra", "worker": "chris-17"} -->. Found by StableReductionPartII (#1599 at 6875d07, 2026-10-25, codex gpt-6-astra).
 
 ## Clozel–Harris–Taylor, Automorphy for some l-adic lifts of automorphic mod l Galois representations, Publ. Math. IHÉS 108 (2008)
 
@@ -4934,6 +4942,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at Lemma 4.1(P3), p.20, line 1215: the source says the complete sum is modulo the principal ideal (w); it should be modulo the rational norm ideal |N(w)|O_K, matching the preceding period; affects a stated result. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
 - **Error** at Theorem 1, p.2, lines 70–80: the source says the bound's constant depends only on K and ε despite unrestricted ψ; it should be allowed to depend on fixed ψ or require a bound for its supremum norm; affects a stated result; <!-- tauceti-roadmap-review {"agent": "codex", "head": "4fbab2b2f8b90794e0873ea2bfd5b4d063905ea9", "job": "RT-SieveMethodsAndPrimePatterns~2a", "model": "gpt-6-astra", "worker": "chris-6"} -->. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
 - **Gap** at definition (2.4), pp.5–6, lines 243–274: the source says an arbitrary odd principal generator can be passed to ψ on unit classes modulo F; it should be restricted to ideals coprime to F or use an explicit zero extension; affects a stated result. Found by SieveMethodsAndPrimePatterns (#177 at 4fbab2b, 2026-10-24, codex gpt-6-astra).
+
+## knudsen2012
+
+- **Misprint** at Proposition 3.1, printed p.12, and Corollary 3.2, printed p.13: the source says the dual fractional ideal has colon (J:R); it should be (R:J), the multipliers carrying J into R; affects a stated result. Found by StableReductionPartII (#1599 at 6875d07, 2026-10-25, codex gpt-6-astra).
 
 ## Koenigsmann, Defining ℤ in ℚ, Ann. Math. 183 (2016) (read in arXiv v2)
 
