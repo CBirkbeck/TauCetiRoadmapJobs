@@ -13,7 +13,7 @@ None of the following geometric headlines is statable at these pins:
   and parahoric levels on the reductive-group carriers.
 * Closed polynomial Hodge and symplectic embeddings, including restriction of scalars
   and period-total embeddings (Layer 2), lack the polynomial models and represented
-  lattice-chain Grassmannians; a scalar trace identity does not state this headline.
+  lattice-chain Grassmannians.
 * Canonical classical abelian-type local models and normalization of Hodge images
   (Layer 3) lack integral local-model v-sheaves and their scheme comparison morphisms.
 * General minuscule weak normal representability (Layer 3) lacks those v-sheaves,
@@ -38,12 +38,12 @@ None of the following geometric headlines is statable at these pins:
 * Good embeddings for acceptable Hodge data and the admissible lattice criterion
   (Layer 7) lack the integral Hodge models, their map to a represented Grassmannian
   and the admissible-stratum comparison.
-* Local-model inertia, centrality of the semisimple trace and its unramified Bernstein
-  characterization (Layer 8) lack scheme nearby cycles on these models, the central
-  sheaf construction and the parahoric Bernstein-to-spherical comparison.
+* Splitting-field inertia in the tame polynomial range, and the all-prime test-function
+  theorem for every reductive group and dominant bound (Layer 8), lack local-model
+  nearby cycles, central sheaves and parahoric Satake-parameter central functions.
+  For minuscule bounds the latter theorem uses the normal scheme representative;
+  for arbitrary bounds it uses the v-sheaf and its intersection complex.
 
-Elementary spans, power-series coefficient checks and scalar trace forms belong to
-README.md. They do not replace any of these geometric headline statements.
 -/
 
 namespace TauCetiRoadmap.GeometricSatakeAndFusionPartII

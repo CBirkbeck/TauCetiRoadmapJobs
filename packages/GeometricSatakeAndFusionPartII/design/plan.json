@@ -3939,10 +3939,28 @@
   ],
   "gaps": [
   {
-    "slug": "trait-normality-and-tangents",
-    "needs": "Give the pointed-scheme derivative and chain rule on the pinned tangent carrier, the noetherian flat-DVR normal-generic/reduced-special normality criterion, and the weak-normalization and canonical-module connectedness comparisons needed in §§3.6, 4.1 and 7.3.",
+    "slug": "pointed-tangent-chain-rule",
+    "needs": "Give the derivative of pointed scheme morphisms and its chain rule on Tau Ceti’s Zariski tangent carrier, for the formal curves of §4.1.",
     "supplier": "SchemeAndStackFoundations",
-    "section": "§§0.17–0.21, 1.1, 4.6–4.13"
+    "section": "§4.6; pointed tangent extension"
+  },
+  {
+    "slug": "trait-normality",
+    "needs": "For a noetherian scheme flat over a DVR with normal generic fibre and geometrically reduced special fibre, give the normality criterion used in §§0.5 and 1.3.",
+    "supplier": "SchemeAndStackFoundations",
+    "section": "§§0.8, 0.30 and 4.13"
+  },
+  {
+    "slug": "finite-weak-normalization",
+    "needs": "Give finite absolute weak normalization of the excellent flat local-model closures with characteristic-zero generic fibre used in §3.6.",
+    "supplier": "SchemeAndStackFoundations",
+    "section": "§§0.20–0.21, 0.26 and 0.30"
+  },
+  {
+    "slug": "canonical-module-connectedness",
+    "needs": "Give the canonical-module and local-cohomology connectedness criterion and deformation of depth needed for the Serre S₂ argument in §7.3.",
+    "supplier": "SchemeAndStackFoundations",
+    "section": "§§0.17–0.18; canonical-module extension"
   },
   {
     "slug": "normality-descent-and-algebraization",
@@ -3951,10 +3969,34 @@
     "section": "§§0.17–0.21, 1.1, 4.6–4.13"
   },
   {
-    "slug": "integral-minuscule-representations",
-    "needs": "Give the classical minuscule Hodge-cover classification, stable Weyl lattices up to centralizer, R-smooth full-fixer embeddings, symplectic toral factorization and descent of the polynomial integral representations, retaining division-centralizer multiplicities and each summand's building translation.",
+    "slug": "classical-hodge-cover-classification",
+    "needs": "Give the Galois-equivariant classical minuscule representation classification constructing the prime-to-p Hodge cover in §1.5.",
     "supplier": "ReductiveGroupsPartII",
-    "section": "RG2.1–RG2.3"
+    "section": "RG2.1; integral-representation extension"
+  },
+  {
+    "slug": "stable-weyl-lattices",
+    "needs": "Give uniqueness of stable minuscule Weyl lattices up to the representation centralizer, including repeated isotypic factors, for §§2.2 and 3.3.",
+    "supplier": "ReductiveGroupsPartII",
+    "section": "RG2.1–RG2.3; integral-representation extension"
+  },
+  {
+    "slug": "r-smooth-full-fixer-embeddings",
+    "needs": "Give the R-smooth centralizer and integral full-fixer closed-embedding theorems with their field-extension hypotheses used in §7.7.",
+    "supplier": "ReductiveGroupsPartII",
+    "section": "Scope and ownership, excluded R-smooth direction"
+  },
+  {
+    "slug": "symplectic-toral-factorization",
+    "needs": "Give the symplectic factorization of toral building embeddings, retaining division-centralizer multiplicities and each summand’s building translation, for §2.5.",
+    "supplier": "ReductiveGroupsPartII",
+    "section": "RG2.2; integral-representation extension"
+  },
+  {
+    "slug": "polynomial-representation-descent",
+    "needs": "Give polynomial lifts of the toral integral representations with specialization to the prescribed lattice chains and equivariant descent for §§2.4–2.5 and 3.3.",
+    "supplier": "ReductiveGroupsPartII",
+    "section": "RG2.3; integral-representation extension"
   },
   {
     "slug": "polynomial-parahoric-lifts",
@@ -3969,22 +4011,112 @@
     "section": "RG2.1–RG2.3"
   },
   {
-    "slug": "classical-modular-minuscule-tests",
-    "needs": "Give dominant-coweight detection and root and Cartan coefficient tests for the minuscule sets A: all fundamental weights, B: the spin weight, C: the standard weight, Dᴿ: the two spin weights and Dᴴ: those weights together with the standard weight, over the stated characteristics and on the simply connected cover.",
+    "slug": "minuscule-dominance-tests",
+    "needs": "Give dominance detection in the integral coroot coset by the type-dependent minuscule weight sets of §4.4, on the simply connected cover.",
     "supplier": "RootSystemsPartII",
-    "section": "RS2.4; minuscule representation continuation"
+    "section": "Independent continuation briefs, Minuscule weights and modular representation bounds, MB.1"
   },
   {
-    "slug": "algebraic-loops-and-coherence",
-    "needs": "Give arbitrary-field fpqc algebraic Grassmannians and twisted partial flags, polynomial BD ind-projectivity for the specified parahoric lifts, negative big cells, prime-to-p central-component comparisons, Schubert normality, Demazure and coherence, and standard GL and GSp chain flatness with the neutral-closure closed-immersion criterion.",
-    "supplier": "GeometricSatakeAndFusion",
-    "section": "GS0; GS2 early central prefix"
+    "slug": "minuscule-root-coefficients",
+    "needs": "Give the minuscule root-string coefficient computation identifying the FM root bound j_α with k_α in §4.7 at the stated characteristics.",
+    "supplier": "RootSystemsPartII",
+    "section": "Independent continuation briefs, Minuscule weights and modular representation bounds, MB.2–MB.3"
   },
   {
-    "slug": "early-central-wakimoto",
-    "needs": "Give algebraicity and perverse exactness of local-model central nearby cycles, their extremal Wakimoto filtration and constant-term multiplicities over F_ℓ for every ℓ≠p, as well as the rational central-sheaf and very-special faithful-cohomology inputs for Layer 8, using general tube cohomology before local-model tube connectedness.",
+    "slug": "minuscule-cartan-coefficients",
+    "needs": "Give the minuscule Cartan detecting-weight calculation of §4.9, retaining the Dᴴ endpoint and p≠2 hypotheses.",
+    "supplier": "RootSystemsPartII",
+    "section": "Independent continuation briefs, Minuscule weights and modular representation bounds, MB.2"
+  },
+  {
+    "slug": "algebraic-loop-representability",
+    "needs": "Give arbitrary-field fpqc algebraic Grassmannians and twisted partial affine flags on the shared GS0 carriers.",
     "supplier": "GeometricSatakeAndFusion",
-    "section": "GS0; GS2 early central prefix"
+    "section": "GS0, algebraic loop prefix"
+  },
+  {
+    "slug": "polynomial-bd-projectivity",
+    "needs": "Give ind-projectivity and the generic and companion fibres of polynomial BD modification functors for the specified parahoric lifts.",
+    "supplier": "GeometricSatakeAndFusion",
+    "section": "GS0, polynomial BD extension"
+  },
+  {
+    "slug": "negative-big-cells",
+    "needs": "Give the algebraic negative-loop big-cell chart and its root and torus coordinates used in §4.3.",
+    "supplier": "GeometricSatakeAndFusion",
+    "section": "GS0, algebraic loop prefix"
+  },
+  {
+    "slug": "prime-to-p-central-components",
+    "needs": "Give the neutral-component comparison of algebraic affine flags under prime-to-p central covers, including the nonreduced test rings used in §§1.4 and 5.3.",
+    "supplier": "GeometricSatakeAndFusion",
+    "section": "GS0, algebraic loop prefix"
+  },
+  {
+    "slug": "algebraic-schubert-normality",
+    "needs": "Give algebraic Schubert normality, geometric unibranchness and normal Cohen–Macaulay components in the prime-to-p companion range.",
+    "supplier": "GeometricSatakeAndFusion",
+    "section": "GS0, algebraic Schubert prefix"
+  },
+  {
+    "slug": "algebraic-demazure-fibres",
+    "needs": "Give the algebraic Demazure resolutions and connected fibres of parahoric projection used in the local-model arguments.",
+    "supplier": "GeometricSatakeAndFusion",
+    "section": "GS0, Relative-position flag correspondences; algebraic extension"
+  },
+  {
+    "slug": "algebraic-coherence",
+    "needs": "Give the equal-characteristic coherence and deformation theorem used for polynomial special fibres and the S₂ argument.",
+    "supplier": "GeometricSatakeAndFusion",
+    "section": "GS0, algebraic Schubert prefix"
+  },
+  {
+    "slug": "standard-chain-flatness",
+    "needs": "Give flatness of standard minuscule GL and GSp lattice-chain incidence models, identifying them with their flat generic closures.",
+    "supplier": "GeometricSatakeAndFusion",
+    "section": "GS0, standard chain extension"
+  },
+  {
+    "slug": "polynomial-closed-immersion-criterion",
+    "needs": "Give the polynomial BD closed-immersion criterion from closed generic group maps and the specified neutral schematic-closure condition on the companion fibre.",
+    "supplier": "GeometricSatakeAndFusion",
+    "section": "GS0, polynomial BD extension"
+  },
+  {
+    "slug": "central-nearby-cycles-algebraicity",
+    "needs": "Give algebraicity and bounded constructibility of local-model central nearby cycles over F_ℓ for every ℓ≠p before local-model tube connectedness.",
+    "supplier": "GeometricSatakeAndFusion",
+    "section": "GS0, Bounded admissible affine flag loci; GS2 early central prefix"
+  },
+  {
+    "slug": "central-nearby-cycles-perversity",
+    "needs": "Give perverse t-exactness of local-model central nearby cycles over F_ℓ for every ℓ≠p independently of local-model tube connectedness.",
+    "supplier": "GeometricSatakeAndFusion",
+    "section": "GS2 early central prefix"
+  },
+  {
+    "slug": "extremal-wakimoto-filtration",
+    "needs": "Give the central nearby-cycle Wakimoto filtration with its extremal weights over F_ℓ for every ℓ≠p used in §7.4.",
+    "supplier": "GeometricSatakeAndFusion",
+    "section": "GS2 early central prefix"
+  },
+  {
+    "slug": "wakimoto-constant-term-multiplicities",
+    "needs": "Give constant-term multiplicities of the extremal Wakimoto factors over F_ℓ for every ℓ≠p used in §7.4.",
+    "supplier": "GeometricSatakeAndFusion",
+    "section": "GS2 early central prefix"
+  },
+  {
+    "slug": "rational-central-nearby-cycles",
+    "needs": "Give the rational central nearby-cycle convolution and constant-term comparisons on bounded integral v-local models for every reductive group and dominant μ used in Layer 8.",
+    "supplier": "GeometricSatakeAndFusion",
+    "section": "GS0, Bounded admissible affine flag loci; GS2 early central prefix"
+  },
+  {
+    "slug": "very-special-faithful-cohomology",
+    "needs": "Give faithfulness of cohomology at very special level for the rational central sheaves used to control splitting-field inertia in §8.1.",
+    "supplier": "GeometricSatakeAndFusion",
+    "section": "GS2 early central prefix"
   },
   {
     "slug": "wild-admissible-closedness",
@@ -4006,15 +4138,15 @@
   },
   {
     "slug": "semisimple-trace-and-comparison",
-    "needs": "Give filtration-independent semisimple inertia trace, its triangle and proper-pushforward identities, and the scheme/analytic nearby-cycle comparison used for these proper local-model schemes.",
+    "needs": "Give the proper-pushforward identity for semisimple traces and the scheme/analytic nearby-cycle comparison for proper local-model schemes.",
     "supplier": "LefschetzPencilsAndVanishingCycles",
-    "section": "LPV.0, LPV.1, LPV.6"
+    "section": "LPV.0; LPV.1 §1.10; LPV.6"
   },
   {
     "slug": "parahoric-bernstein",
-    "needs": "Give the parahoric Bernstein-to-spherical centre isomorphism, normalized idempotent changes of level and companion-field compatibility independently of the local-model test-function identity.",
+    "needs": "Give Satake parameters and the central functions acting by trace(s_Φ(π)|V) on parahoric-spherical irreducible representations for arbitrary connected reductive groups, including non-quasi-split inner forms, together with injective minimal-Levi constant terms, inner-form transfer and normalized changes of parahoric level; in the unramified case recover the Bernstein-to-spherical isomorphism and companion-field comparison, independently of the local-model trace identity.",
     "supplier": "SmoothRepresentationsOfLocalGroups",
-    "section": "SR.4.1"
+    "section": "SR.3.2 and SR.4.1; general parahoric-center extension"
   }
 ],
   "sourceIssues": [
