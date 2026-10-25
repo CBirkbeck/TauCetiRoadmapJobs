@@ -6,9 +6,9 @@
 
 AutomorphicSpectralTheory §§0.11–0.15, 1.6–1.10, Layers 2–4 and §§6.1–6.4 supplies generic locally convex analysis, normalized cuspidal data, pseudo-Eisenstein series, intertwiners, spectral decomposition, compact Paley–Wiener multipliers and compact-test kernels. That roadmap stops before the moderate-symbol Schwartz multiplier theorem and the weighted quotient Schwartz spectral extensions built here. Its generic definitions and compact theorems are imported rather than restated as targets. The discrete-data variant in §5.7 retains its additional polynomial-counting hypothesis. AutomorphicSpectralTheory §§5.1–5.9 owns Franke’s admissible-weight spaces on [G]. Sections 2.6 and 2.14 here use BPCZ’s arbitrary comparable measurable weights on [G]_P: at P=G, after matching central quotient, measure and level, the individual smooth weighted-L² stages agree with Franke’s S_p when w=p², and §2.14 forms the specified intersections and unions of those stages.
 
-AutomorphicFormsOnReductiveGroups §§0.1–0.5 owns smooth adelic functions, the adelic test Schwartz algebra, uniform moderate growth and smoothing; §§2.1–2.4 and 2.7 owns real representations, induction, infinitesimal characters and globalizations; §§3.4–3.5 owns restricted tensor factorization; §§4.1–4.2 owns constant terms and cuspidal realizations. Here the real/adelic comparisons are topology and multiplier compatibility statements, and the growth spaces add specified quotient weights. The generic Kostant centralizer and principal-series inputs belong to its real representation layer; §1.4 retains only their rational-difference spectral comparison. Generic SF closed-subspace and globalization theory is not rebuilt here.
+AutomorphicFormsOnReductiveGroups §§0.1–0.5 owns smooth adelic functions, the adelic test Schwartz algebra, uniform moderate growth and smoothing; §§2.1–2.4 and 2.7 owns real representations, induction, infinitesimal characters, globalizations and the continuous nondegenerate integrated Schwartz action; §§3.4–3.5 owns restricted tensor factorization; §§4.1–4.2 owns constant terms and cuspidal realizations. Here the real/adelic comparisons are topology and multiplier compatibility statements, and the growth spaces add specified quotient weights. The generic Kostant centralizer and principal-series inputs belong to its real representation layer; §1.4 retains only their rational-difference spectral comparison. Generic SF closed-subspace and globalization theory is not rebuilt here. SpectralManifolds SM3 owns the Fréchet open mapping theorem and closed-subspace quotient topology; §§2.5 and 2.18 apply them to the specified SLF stages.
 
-AdelicAlgebraicGroups §§2.1–2.3, 3.1 and 3.4–3.6 owns heights, quotient measures, split-centre conventions, Iwasawa and reduction theory; §§4.6–4.7 owns compact central quotients and character theory. SmoothRepresentationsOfLocalGroups SR.1–SR.4 owns finite-place Hecke algebras, normalized induction, Jacquet modules and Satake theory. AutomorphicLFunctionsAndLocalFactors AL.3, **Isobaric construction** and **Strong multiplicity one for isobaric sums**, owns the GLₙ uniqueness input. The quotient-weight applications and spectral interpolation are owned here.
+AdelicAlgebraicGroups §§2.1–2.3, 3.1 and 3.4–3.6 owns heights, quotient measures, split-centre conventions, Iwasawa and reduction theory; §§4.6–4.7 owns compact central quotients and character theory. SmoothRepresentationsOfLocalGroups SR.1–SR.4 owns finite-place Hecke algebras, normalized induction, Jacquet modules and Satake theory. AutomorphicLFunctionsAndLocalFactors, preparatory **GLₙ isobaric sums** (anchor isobaric-construction), and AL.3 **Strong multiplicity one for isobaric sums**, owns the GLₙ construction and uniqueness inputs. The quotient-weight applications and spectral interpolation are owned here.
 
 ReductiveGroups Layer 7 and LieGroups Layer 7 own the group root datum and real descent. The finite involution coset and its shifted spectral lattices in §0.4 specialize those structures. NoncommutativeGeometry N1 owns completed projective tensor products. OperatorTheory/SelfAdjointSpectralTheory Parts A–E owns generic spectral calculus; OperatorTheory/OperatorIdeals OI-B32–OI-B41, OI-B84 and Part C owns Hilbert–Schmidt and trace-class tools. PDE Lane A owns local Sobolev analysis. The quotient nuclear inclusions and spectral realizations here differ by their automorphic weight and support estimates.
 
@@ -56,10 +56,6 @@ What AutomorphicSpectralTheory must provide (gap:slf-isotypic-sums): Supply the 
 
 The section contract is §0.11.
 
-What AutomorphicSpectralTheory must provide (gap:frechet-open-mapping): Supply the open mapping theorem for a continuous linear surjection between complex Fréchet spaces, hence the quotient-to-image topological isomorphism for a map with closed image.
-
-The section contract is §0.11.
-
 What AutomorphicSpectralTheory must provide (gap:frechet-bilinear-continuity): Supply joint continuity of separately continuous bilinear maps from a product of two complex Fréchet spaces to a Hausdorff locally convex space.
 
 The section contract is §0.11.
@@ -90,7 +86,7 @@ The section contract is §§6.3–6.4.
 
 ### From TauCetiRoadmap.AutomorphicFormsOnReductiveGroups
 
-Consume §§0.1–0.5 for the fixed-support/level Schwartz algebra, convolution, uniform growth and smoothing; §§2.1–2.4 and 2.7 for compact types, normalized real induction, infinitesimal characters and SF/SAF globalizations; §§3.4–3.5 for restricted tensors and spherical lines; §§4.1–4.2 for constant terms and cusp spaces. The multiplier acts on these same carriers.
+Consume §§0.1–0.5 for the fixed-support/level Schwartz algebra, convolution, compact-test density, uniform growth and smoothing; §§2.1–2.4 and 2.7 for compact types, normalized real induction, infinitesimal characters and SF/SAF globalizations. In particular §2.7 supplies the continuous nondegenerate integrated Schwartz action on every smooth moderate-growth Fréchet representation, with its convolution law and compact-test restriction; §1.2 here compares its derivative conventions. Consume §§3.4–3.5 for restricted tensors and spherical lines; §§4.1–4.2 for constant terms and cusp spaces. The multiplier acts on these same carriers.
 
 What AutomorphicFormsOnReductiveGroups must provide (gap:real-plancherel-characters): Supply real reductive Plancherel decomposition with the chosen Haar measure, Fourier faithfulness on the Nash Schwartz algebra and containment of tempered infinitesimal characters in the realized real-torus spectral strips, retaining finite real components.
 
@@ -190,7 +186,11 @@ Consume GlobalHolomorphicFunctions, **Preparatory primary factors and locally un
 
 ### From TauCetiRoadmap.AutomorphicLFunctionsAndLocalFactors
 
-Consume AL.3, **Isobaric construction** and **Strong multiplicity one for isobaric sums**, including arbitrary unramified norm twists and multiplicities of cuspidal constituents. Equality at almost all unramified places identifies the inducing multiset in §5.6, not an arbitrary irreducible constituent of an induction.
+Consume the preparatory **GLₙ isobaric sums** (anchor isobaric-construction) for normalized isobaric construction, and AL.3 **Strong multiplicity one for isobaric sums** for uniqueness, including arbitrary unramified norm twists and multiplicities of cuspidal constituents. Equality at almost all unramified places identifies the inducing multiset in §5.6, not an arbitrary irreducible constituent of an induction.
+
+### From TauCetiRoadmap.SpectralManifolds
+
+Consume SM3, **Smooth projective modules, functions and spectral measure**, for the open mapping theorem between complete metrizable locally convex complex spaces and the topology and completeness of quotients by closed linear subspaces. Applied to a continuous linear map of Fréchet spaces with closed image, it identifies the quotient by its kernel topologically with that image. Sections 2.5 and 2.18 use this theorem on fixed-level Fréchet stages.
 
 ## How to read the build
 
@@ -486,15 +486,17 @@ A proof route is as follows. Compare algebraic differential operators to polynom
 
 ### 1.2 Schwartz integration on moderate representations
 
-For a smooth moderate-growth Fréchet representation V of G(ℝ), the integral π(f)v=∫_G f(g)π(g)v dg converges in V for f∈S(G) and defines a continuous bilinear action S(G)×V→V. It satisfies π(f₁*f₂)=π(f₁)π(f₂), left/right differentiation identities with L(X)f(g)=d/dt f(exp(−tX)g), and agreement with the compactly supported integrated action. For irreducible admissible π use its Casselman–Wallach globalization. Equality of the transforms on all such π detects an element of S(G). (BPLZZ §2.3, before Theorem 2.13, p.12; §2.4, proof of Proposition 2.24, pp.17–19; bplzz line 532).
+For a smooth moderate-growth Fréchet representation V of G(ℝ), use the continuous nondegenerate integrated Schwartz action supplied by AutomorphicFormsOnReductiveGroups §2.7. Under the Schwartz-algebra comparison of §1.1, prove that it agrees with π(f)v=∫_G f(g)π(g)v dg in the conventions here, including the left/right differentiation identities with L(X)f(g)=d/dt f(exp(−tX)g). Transport its continuity, convolution law π(f₁*f₂)=π(f₁)π(f₂) and agreement with compactly supported integration along that comparison. For irreducible admissible π use the supplied Casselman–Wallach globalization. Prove that equality of the transforms on all such π detects an element of S(G). (BPLZZ §2.3, before Theorem 2.13, p.12; §2.4, proof of Proposition 2.24, pp.17–19; bplzz line 532).
 
-A proof route is as follows. Bound each representation seminorm of π(g)v by an algebraic height power times a stronger seminorm of v, then use Schwartz integrability. Apply vector-valued Fubini and integration by parts with the specified left regular sign. For detection use the faithful regular representation and the real Plancherel import requested in real-plancherel-characters.
+A proof route is as follows. Compare the supplied Schwartz algebra with §1.1, identify the actions on compactly supported functions, and use density and their supplied continuity to extend that equality. Compare the differentiated actions by integration by parts with the specified left regular sign; the convolution law is transported from the supplier. For detection use the faithful regular representation and the real Plancherel import requested in real-plancherel-characters.
 
-*Needs:* §1.1; AutomorphicFormsOnReductiveGroups §§2.1–2.4, 2.7; AutomorphicSpectralTheory §0.12 (quasi-complete-target integration); AutomorphicSpectralTheory §§0.11–0.15; real-plancherel-characters.
+*Needs:* §1.1; AutomorphicFormsOnReductiveGroups §0.3 (Schwartz algebra and compact-test density), §§2.1–2.4, 2.7 (integrated action and globalization); real-plancherel-characters.
 
 **Checks.**
 
 - On the additive line with π_t(x)=exp(itx), π_t(L(X)f)=itπ_t(f): at t=1 and t=2 the factors are i and 2i. The opposite derivative sign gives −i and −2i.
+
+- For π_t(x)=exp(itx), the imported action and the compared action both have scalar ∫f(x)exp(itx)dx. With Lebesgue measure, at t=0 and f(x)=exp(−πx²), both scalars are 1; on the group with one element and mass-one measure, both actions send (f,v) to f(1)v.
 
 ### 1.3 Delorme multipliers for reductive real groups
 
@@ -710,7 +712,7 @@ A proof route is as follows. Compare orbit-neighborhood volumes on Siegel charts
 
 ### 2.5 Smooth LF representations
 
-Define an adelic SLF representation to be a smooth finite-adelic representation V=⋃_J Vᴶ whose fixed-level spaces are SF Fréchet representations of G∞, with compatible actions, closed level inclusions and the indicated locally convex inductive-limit topology. Compare this with the K_f-isotypical direct-sum model for a fixed compact open K_f⊂G(𝔸_f) supplied by AutomorphicSpectralTheory §0.11 and the SF smooth topology of AutomorphicFormsOnReductiveGroups §2.7. Apply its closed invariant subspace and quotient-to-closed-image results to these stages. The resulting integrated Schwartz action agrees with compact integration; for a continuous moderate-growth Fréchet representation before taking smooth vectors, its smooth vectors equal S(G(𝔸))·V. Closed image alone does not imply injectivity. (BPCZ §§2.5.3–2.5.4, (2.5.3.2), Lemma 2.5.4.1, pp.209–211; bpcz line 1170).
+Define an adelic SLF representation to be a smooth finite-adelic representation V=⋃_J Vᴶ whose fixed-level spaces are SF Fréchet representations of G∞, with compatible actions, closed level inclusions and the indicated locally convex inductive-limit topology. Compare this with the K_f-isotypical direct-sum model for a fixed compact open K_f⊂G(𝔸_f) supplied by AutomorphicSpectralTheory §0.11 and the SF smooth topology of AutomorphicFormsOnReductiveGroups §2.7. Apply the closed-subspace and open mapping results of SpectralManifolds SM3 at the Fréchet stages to obtain the SLF closed invariant subspace and quotient-to-closed-image results. The imported integrated Schwartz action agrees with compact integration; for a continuous moderate-growth Fréchet representation before taking smooth vectors, its smooth vectors equal S(G(𝔸))·V. Closed image alone does not imply injectivity. (BPCZ §§2.5.3–2.5.4, (2.5.3.2), Lemma 2.5.4.1, pp.209–211; bpcz line 1170).
 
 The defining construction has the following API.
 
@@ -720,7 +722,7 @@ The defining construction has the following API.
 
 - Schwartz integration agrees with the compact action and respects all level transitions.
 
-*Needs:* §1.9; AutomorphicFormsOnReductiveGroups §§2.1–2.4, 2.7; AutomorphicSpectralTheory §§0.11–0.15; slf-isotypic-sums; frechet-open-mapping; frechet-bilinear-continuity.
+*Needs:* §1.9; AutomorphicFormsOnReductiveGroups §§2.1–2.4, 2.7; AutomorphicSpectralTheory §§0.11–0.15; SpectralManifolds SM3; slf-isotypic-sums; frechet-bilinear-continuity.
 
 **Checks.**
 
@@ -729,6 +731,8 @@ The defining construction has the following API.
 - For the trivial one-dimensional representation, every fixed-level space is ℂ and every transition is the identity; the SLF conditions hold.
 
 - The zero map from a nonzero SLF representation has closed image but is not an embedding; the quotient-to-image statement handles it correctly.
+
+- For z↦2z on ℂ, the open unit disc maps onto the disc of radius 2 and the kernel is zero. For the zero map ℂ→ℂ, the kernel is ℂ and ℂ/ℂ and its image are both the zero space; identifying the original domain with that image would be false.
 
 - Closed image implies an embedding only after adding injectivity, or after quotienting the kernel.
 
@@ -988,7 +992,7 @@ For P⊂Q and a weight w on [G]_Q there are weights w_P^−,w_P^+ on [G]_P, comp
 
 A proof route is as follows. Construct upper and lower weights by separating the deep-cusp and complementary regions using the approximation estimate. Use a partition across parabolic cusp regions to control the graph norm, then apply Fréchet duality/open mapping to the adjoint sum.
 
-*Needs:* §2.17; §2.1; §2.5; AutomorphicSpectralTheory §§0.11–0.15; frechet-open-mapping.
+*Needs:* §2.17; §2.1; §2.5; AutomorphicSpectralTheory §§0.11–0.15; SpectralManifolds SM3.
 
 **Checks.**
 
@@ -1000,7 +1004,7 @@ On the GL₂ modular cusp let n_G≍y and Ξ_G≍y¹ᐟ². A tail y⁻ᵃ fails 
 
 ### Dependencies
 
-Layer 1’s Schwartz action; AdelicAlgebraicGroups §§2.1–2.3, 3.1, 3.4–3.6; PDE Lane A; OperatorTheory/OperatorIdeals; AutomorphicSpectralTheory §§0.11–0.15, 1.6–1.10; NoncommutativeGeometry N1.
+Layer 1’s Schwartz-action comparison; AdelicAlgebraicGroups §§2.1–2.3, 3.1, 3.4–3.6; PDE Lane A; OperatorTheory/OperatorIdeals; AutomorphicSpectralTheory §§0.11–0.15, 1.6–1.10; SpectralManifolds SM3; NoncommutativeGeometry N1.
 
 ## Layer 3: Cuspidal support, wave packets and Schwartz kernels
 
@@ -1166,7 +1170,7 @@ A proof route is as follows. First bound `R(f):T₀,w→T_{w n^{N′₀}}` unifo
 
 ### 3.10 Spectral expansion of Schwartz kernels
 
-There exist a continuous seminorm p on S(G(𝔸)) and N≥0 such that for every X,Y∈U(g∞), f∈S and x,y∈G(𝔸)¹, the sum over χ and standard P, with coefficient `|𝒫(M_P)|^{−1}`, of `∫_{ia_P^{G,*}}Σ_τ |Σ_{v∈𝔅_{P,χ,τ}} R_x(X)E(x,I_P(λ,f)v,λ) overline(R_y(Y)E(y,v,λ))|dλ` is at most p(L(X)R(Y)f)n_G(x)^Nn_G(y)^N. Here 𝒫(M_P) is the finite set of parabolics with Levi M_P and 𝔅 is a K-basis in the discrete inducing space with support χ. For arbitrary x,y∈G(𝔸), `K⁰_{f,χ}(x,y)` is the sum of the same undifferentiated Eisenstein terms with those coefficients and spectral measures. The absolute value is outside the finite sum within each K-type, before summing types and integrating. (BPCZ §2.10.2, Lemma 2.10.2.1, pp.240–243; bpcz line 2481).
+There exist a continuous seminorm p on S(G(𝔸)) and N≥0 such that for every X,Y∈U(g∞), f∈S and x,y∈G(𝔸)¹, the sum over χ and standard P, with coefficient `|𝒫(M_P)|^{−1}`, of `∫_{ia_P^{G,*}}Σ_τ |Σ_{v∈𝔅_{P,χ,τ}} R_x(X)E(x,I_P(λ,f)v,λ) R_y(Y)(overline(E(y,v,λ)))|dλ` is at most p(L(X)R(Y)f)n_G(x)^Nn_G(y)^N. Here 𝒫(M_P) is the finite set of parabolics with Levi M_P and 𝔅 is a K-basis in the discrete inducing space with support χ. The derivative acts on the conjugate Eisenstein function, with Y extended complex-linearly; it is not the conjugate of the Y-derivative. For arbitrary x,y∈G(𝔸), `K⁰_{f,χ}(x,y)` is the sum of the same undifferentiated Eisenstein terms with those coefficients and spectral measures. The absolute value is outside the finite sum within each K-type, before summing types and integrating. (BPCZ §2.10.2, Lemma 2.10.2.1, pp.240–243; bpcz line 2481 and line 2496).
 
 A proof route is as follows. Start with the parent compact-kernel spectral identity, retaining its discrete inducing representation space and parabolic multiplicity factors. Use Arthur factorization at fixed normal finite level, then positivity on the diagonal and Cauchy–Schwarz to bound the grouped K-type terms by the kernel majorant. Use the uniform boundedness principle and density to pass to Schwartz f and commute group derivatives with the uniformly controlled expansion.
 
@@ -1177,6 +1181,10 @@ A proof route is as follows. Start with the parent compact-kernel spectral ident
 - Absolute convergence of the ungrouped individual basis terms is not claimed by this estimate.
 
 - The derivative estimate uses x,y∈G(𝔸)¹, whereas the displayed kernel identity holds after central disintegration for general x,y.
+
+- On the mass-one circle put D=(2π)⁻¹d/dx, X=1, Y=iD−1 and f=e₋₁. Since De₁=ie₁ and De₋₁=−ie₋₁, Y e₋₁=0 whereas Y e₁=−2e₁. The differentiated kernel and R(Y)f are both zero, so the estimate reads 0≤p(0)=0. Conjugating Y e₁ instead would give absolute value 2 and the false inequality 2≤0.
+
+- For the same projector with Y=D, differentiating conj(e₁(y)) gives −i e₋₁(y), and R(D)f=−i f. Both differentiated kernel coefficients are −i; this test fixes the sign even though absolute values alone give 1 in either convention.
 
 ### Examples
 
@@ -1501,6 +1509,8 @@ A proof route is as follows. Use isobaric strong multiplicity one from Automorph
 - Do not replace isobaric strong multiplicity one by the cuspidal-only Piatetski-Shapiro 1979 theorem.
 
 - The target is a coarse cuspidal-support component and may include continuous and residual spectrum.
+
+- Two unramified characters with values 2 and 3 give Satake polynomial (1−2T)(1−3T)=1−5T+6T² under the preparatory isobaric construction. The uniqueness input retains the unordered multiset {2,3}; repeating the first character instead gives 1−4T+4T², so multiplicities cannot be discarded.
 
 ### 5.7 Isolation of refined discrete-data components
 

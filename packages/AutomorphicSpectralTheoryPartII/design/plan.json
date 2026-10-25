@@ -4159,12 +4159,6 @@
       "needs": "Supply the countable K_f-isotypical direct-sum description of an SLF representation for a fixed compact open K_f in G(𝔸_f), with Fréchet summands and the induced direct-sum topology on closed invariant subspaces."
     },
     {
-      "slug": "frechet-open-mapping",
-      "supplier": "AutomorphicSpectralTheory",
-      "section": "§0.11",
-      "needs": "Supply the open mapping theorem for a continuous linear surjection between complex Fréchet spaces, hence the quotient-to-image topological isomorphism for a map with closed image."
-    },
-    {
       "slug": "frechet-bilinear-continuity",
       "supplier": "AutomorphicSpectralTheory",
       "section": "§0.11",
