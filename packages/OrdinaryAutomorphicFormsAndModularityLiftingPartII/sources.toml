@@ -88,7 +88,7 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "author preprint; published Math. Ann. 373 (2019) numbering: preprint Lemma 2.3.3 = Lemma 2.10, Lemma 2.4.4 = Lemma 2.14, Lemma 2.4.7 = Lemma 2.17, Corollary 2.5.4 = Corollary 2.21, Lemma 2.6.4 = Lemma 2.25, Proposition 2.7.4 = Proposition 2.29, Corollary 3.1.4 = Corollary 3.4 (matched by content)"
-cited_for = ["Conventions", "2.1", "2.2", "3.3"]
+cited_for = ["Conventions", "2.1", "2.2", "2.3", "3.3"]
 
 [[source]]
 id = "BCGP21"
@@ -205,7 +205,7 @@ year = 2008
 venue = "Publications Mathématiques de l'IHÉS 108"
 doi = "10.1007/s10240-008-0016-1"
 locator_scheme = "theorem"
-locator = "Lemmas 2.1.4, 2.1.12, Corollaries 2.2.12 and 2.3.5, Propositions 3.4.2 and 3.4.4"
+locator = "Lemmas 2.1.4, 2.1.12, 2.2.11, Corollaries 2.2.12 and 2.3.5, Propositions 3.4.2 and 3.4.4"
 url = "http://www.numdam.org/item/10.1007/s10240-008-0016-1.pdf"
 fetched_from = "https://www.numdam.org/item/10.1007/s10240-008-0016-1.pdf"
 fetched_at = "2026-10-25T21:52:03Z"

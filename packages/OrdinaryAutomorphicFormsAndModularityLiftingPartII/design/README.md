@@ -9,7 +9,7 @@ The two theorems are proved separately: for p = 3 the image Sp₄(𝔽₃) ⊂ G
 
 ## Scope and ownership
 
-This roadmap owns: polarized deformation problems over a weight algebra at p = 2 with strict equivalence by the full kernel Ĝ_n, Taylor–Wiles presentations over that weight algebra, the comparison of BCGP's near adequacy with relaxed adequacy, the unavoidable dyadic dual Selmer class (Layer 1); the Iwahori levels at 2, normalized U-operators, twisted Λ-structure and universal ordinary Hecke algebra of a definite unitary group at p = 2, with Geraghty's Hida theory at l = 2 (Layer 2); the ordinary global problem, its dimension bound, the Hecke-valued Galois representation at p = 2, uniform local fixed vectors and sufficiently deep levels (Layer 3); ring–module patching over a weight algebra with torsion and the whole proof of Theorem 5.7.14 (Layer 4); GSp₄ deformation problems over a weight algebra, GSp₄-reasonable residual representations and their Taylor–Wiles places, ordinary GSp₄ seed data, the selected problem and the Galois representation over the GSp₄ Hida–Hecke algebra (Layer 5); and the proof of Theorem 6.3.4 (Layer 6). GSp₄-reasonableness is defined nowhere else and is owned here; GSp4NonregularModularityLifting consumes it from Layer 5.
+This roadmap owns: polarized deformation problems over a weight algebra at p = 2 with strict equivalence by the full kernel Ĝ_n, Taylor–Wiles presentations over that weight algebra, the comparison of BCGP's near adequacy with relaxed adequacy, the unavoidable dyadic dual Selmer class (Layer 1); the Iwahori levels at 2, normalized U-operators, twisted Λ-structure and universal ordinary Hecke algebra of a definite unitary group at p = 2, with Geraghty's Hida theory and the Galois representations of constituents of algebraic modular forms at l = 2 (Layer 2); the ordinary global problem, its dimension bound, the Hecke-valued Galois representation at p = 2, uniform local fixed vectors and sufficiently deep levels (Layer 3); ring–module patching over a weight algebra with torsion and the whole proof of Theorem 5.7.14 (Layer 4); GSp₄ deformation problems over a weight algebra, GSp₄-reasonable residual representations and their Taylor–Wiles places, ordinary GSp₄ seed data, the selected problem and the Galois representation over the GSp₄ Hida–Hecke algebra (Layer 5); and the proof of Theorem 6.3.4 (Layer 6). GSp₄-reasonableness is defined nowhere else and is owned here; GSp4NonregularModularityLifting consumes it from Layer 5.
 
 It imports, and does not plan again:
 
@@ -19,7 +19,7 @@ It imports, and does not plan again:
 - **Local deformation rings**: LocalGaloisDeformationRings §1.3 (the coefficient rings Λ_v), §1.9 (the ordinary flag scheme and its image ring R^△_v), §§1.17 and 1.22 (G-valued framed rings and smooth points), §§2.22–2.24 and 2.29 (GSp₄ Ihara-avoidance rings, the Taylor–Wiles block condition, fixed-type rings away from p, unipotent and Ihara-avoidance rings at p = 2), §F.2.6 (framed rings are power series over unframed rings), §§6.24, 6.27, 6.29, 6.31 and 6.35 (flag rings for trivial residual representation and the GSp₄ ordinary flag rings of BCGP25 §6.2).
 - **Polarized deformation problems with O-coefficients and restriction finiteness**: GlobalGaloisDeformations §§8.1–8.4 (polarized problems, representability, tangent and obstruction spaces, presentations), §3.3 (global deformation data and T-framed deformations) and §4.2 (finiteness of restriction maps).
 - **Commutative algebra for patching**: DeformationAndDerivedPatchingAlgebra §1.12, §§4.1, 4.2 and 4.6, §§5.2–5.5, §§6.1, 6.3, 6.5 and 6.7, Layer 8 (§§8.2–8.5) and §9.6.
-- **Local–global compatibility and temperedness for RACSDC representations**: AutomorphicGaloisRepresentationsPartII, Layer AG2.5 (*Caraiani's full away-prime compatibility* and *Temperedness of regular unitary-type cuspidal forms*).
+- **Galois representations of conjugate self-dual cuspidal representations at every prime, local–global compatibility and temperedness**: AutomorphicGaloisRepresentationsPartII, Layers AG2.2 (*Twisting an essentially self-dual form into unitary type*), AG2.3 (*Arbitrary regular conjugate-self-dual existence*) and AG2.5 (*Caraiani's full away-prime compatibility* and *Temperedness of regular unitary-type cuspidal forms*).
 - **ι-ordinary automorphic representations and their soluble base change**: PotentialAutomorphyInfrastructure §§3.44 and 3.47.
 - **Bernstein components**: SmoothRepresentationsOfLocalGroups §SR.3.2. **Discrete automorphic representations of GSp₄**: ModularityAndLanglandsExtensions §3.9.
 
@@ -63,7 +63,7 @@ The baseline is Tau Ceti `a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039`. `TauCeti.co
 
 - PL.0 (*Soluble base change and descent of automorphy*, *Soluble and cyclic CM extensions with prescribed local behaviour*, *Principal-series characterisation of ι-ordinarity*): soluble CM extensions linearly disjoint from a given field with prescribed local behaviour at finitely many places, soluble descent of automorphy, and the principal-series criterion for ι-ordinarity. Assumed for every prime, including 2.
 - PL.1 (*Generic local representations are smooth points and smooth points are dense*): a lift whose associated local representation is generic lies on a single component of the local lifting ring.
-- PL.2 (*The definite unitary group attached to a CM field*, *Base change and descent between definite unitary groups and GL_n*, *Galois representations attached to constituents of algebraic modular forms*): the group G with ι_w : G(O_{F⁺_v}) ≅ GL_n(O_{F_w}) at split v, base change and descent, and Galois representations of constituents. The group and the constituent Galois representations do not depend on l; the Hecke-theoretic sections of PL.2 are stated for l odd and Layer 2 supplies l = 2.
+- PL.2 (*The definite unitary group attached to a CM field*, *Base change and descent between definite unitary groups and GL_n*): the group G with ι_w : G(O_{F⁺_v}) ≅ GL_n(O_{F_w}) at split v, Labesse's descent of RACSDC representations to G and base change of automorphic representations of G to isobaric sums of discrete conjugate self-dual representations (parts (1) and (2) of that section, whose hypotheses carry no condition on l). The algebraic modular forms, Hecke algebras and constituent Galois representations of PL.2 are stated for l odd (hypothesis 1 of *Algebraic modular forms on a definite unitary group*, inherited by *Galois representations attached to constituents of algebraic modular forms*); Layer 2 supplies l = 2, including the constituent Galois representations (2.3).
 - PL.3 (*Taylor–Wiles data when F contains ζ_p, including p = 2*): for O-coefficient problems in the sense of Thorne 2017 §2.1, µ_v, the dual Selmer group H¹_{𝒮^⊥,T}, and Thorne 2017 Proposition 2.21 under adequacy. Layer 1.2 extends this to Λ-coefficients and near adequacy.
 - PL.4 (*Adequacy relaxed to the vanishing of H¹(H, ad)*, *Strong residual oddness at a real place (p = 2)*): relaxed adequacy (H¹(H, k) = 0, H¹(H, ad) = 0 and the trace condition on simple submodules of ad) and the uses of adequacy it leaves intact; strong residual oddness, r̄(c_v) GL_n(k)-conjugate to (1_n, 1)j.
 
@@ -106,7 +106,8 @@ The baseline is Tau Ceti `a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039`. `TauCeti.co
 
 ### From TauCetiRoadmap.AutomorphicGaloisRepresentationsPartII
 
-- Layer AG2.5, *Caraiani's full away-prime compatibility* and *Temperedness of regular unitary-type cuspidal forms*: for RACSDC π and w ∤ p, WD(r_{π,p}|G_{F_w})^{F-ss} ≅ rec(π_w ⊗ |det|^{(1−n)/2}), with π_w tempered.
+- Layer AG2.3, *Arbitrary regular conjugate-self-dual existence*: for every prime ℓ, including ℓ = 2, a continuous semisimple Galois representation attached at good places to a regular algebraic conjugate self-dual cuspidal representation of GL_m over a CM field; with Layer AG2.2, *Twisting an essentially self-dual form into unitary type*, the same for essentially conjugate self-dual ones.
+- Layer AG2.5, *Caraiani's full away-prime compatibility* and *Temperedness of regular unitary-type cuspidal forms*: for RACSDC π, every prime p (including 2) and w ∤ p, WD(r_{π,p}|G_{F_w})^{F-ss} ≅ rec(π_w ⊗ |det|^{(1−n)/2}), with π_w tempered.
 - What AutomorphicGaloisRepresentationsPartII must provide (gap:gsp4-galois-representations-totally-real): for F⁺ totally real and π a cuspidal automorphic representation of GSp₄(𝔸_{F⁺}) of general type with weights ((k_v, l_v; 2))_{v|∞}, k_v ≥ l_v ≥ 2, including the ordinary parallel weight 2 case of BCGP25 Theorem 1.8.17, a continuous ρ_{π,p} : G_{F⁺} → GSp₄(ℚ̄_p) with similitude ε^{−1} times the finite central character, unramified outside p and the ramification of π, with Frobenius characteristic polynomials the spin Hecke polynomials, ordinary at v | p with the stabilization of π_v when π_v is ordinary (section *GSp₄ construction and normalization*, which treats F⁺ = ℚ).
 
 ### From TauCetiRoadmap.PotentialAutomorphyInfrastructure
@@ -124,8 +125,10 @@ The baseline is Tau Ceti `a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039`. `TauCeti.co
 
 ### From TauCetiRoadmap.AutomorphicBundles
 
-- Layer B5: Hecke action on classical sections of automorphic bundles on Shimura varieties of abelian type, including the Hilbert–Siegel varieties of Res_{F⁺/ℚ}GSp₄.
-- What AutomorphicBundles must provide (gap:hilbert-siegel-ordinary-hida-module): for F⁺ totally real with p split completely, the Hida module M¹ of BCGP21 §§7.8–7.9 with I = ∅, a finite free Λ_{GSp₄,F⁺}-module built from the ordinary part of coherent H⁰ of Hilbert–Siegel varieties with its Hecke action; its Taylor–Wiles variants M^{1,Q}, finite free over Λ_{GSp₄,F⁺}[Δ_Q] with Δ_Q-coinvariants M¹ (WHI22 Propositions 7.5–7.6); and classicality: the ℚ̄_p-points of the Hecke algebra above Zariski-dense arithmetic weights come from ordinary cuspidal π of large regular weight (section Layer B5).
+- Layer B5 (B5.10–B5.12): geometric Hecke operators on classical sections of automorphic bundles, with their convolution law and the non-neat case, in the four settings B5 names (determinant-weight and vector-coefficient good-prime PEL models, prime-to-p ramified Hilbert models, and the characteristic-zero classical Siegel comparison). B5 states nothing specific to the Hilbert–Siegel varieties of Res_{F⁺/ℚ}GSp₄; the three gaps below ask for the ordinary theory on them.
+- What AutomorphicBundles must provide (gap:hilbert-siegel-hida-module-free): for F⁺ totally real with p > 2 split completely, the Hida module M¹ of BCGP21 §§7.8–7.9 with I = ∅, built from the ordinary part of coherent H⁰ of Hilbert–Siegel varieties of prime-to-p level, finite free over Λ_{GSp₄,F⁺}, with the action of the prime-to-p Hecke operators of B5.10, and its variant M^χ at the level carrying characters χ_v at a finite set R of places prime to p (section Layer B5).
+- What AutomorphicBundles must provide (gap:hilbert-siegel-taylor-wiles-coinvariants): in the same setting and for a set Q of Taylor–Wiles places with group Δ_Q, the variants M^{1,Q} and M^{χ,Q} at the corresponding auxiliary level, finite free over Λ_{GSp₄,F⁺}[Δ_Q] with Hecke action and Δ_Q-coinvariants isomorphic to M¹ and M^χ (WHI22 Propositions 7.5–7.6; section Layer B5).
+- What AutomorphicBundles must provide (gap:hilbert-siegel-ordinary-classicality): in the same setting, every ℚ̄_p-point of the Hecke algebra acting on M¹ above a Zariski-dense set of arithmetic weights of Λ_{GSp₄,F⁺} is the Hecke eigensystem of an ordinary cuspidal automorphic representation π of GSp₄(𝔸_{F⁺}) of large regular weight (BCGP21 §7.9, classicality; section Layer B5).
 
 ## How to read the build
 
@@ -252,7 +255,7 @@ Its API:
 
 Keep 2.1 with U(l^{b₀,b₀}) sufficiently small for some b₀ ≥ 1 and U_v hyperspecial at split v ∉ T. Prove (BCGP25 §5.7, pp. 132–133; Ger19 Proposition 2.5.3, Corollary 2.5.4, Lemma 2.4.4, Proposition 2.6.1, Lemma 2.6.4 and the proof of Corollary 3.1.4):
 
-1. The Pontryagin dual of S^{ord}_{0,{χ_v}}(U(l^∞), E/O) is finite free over O⟦T(l^{b₀})⟧; T^{T,ord}_{{χ_v}}(U(l^∞), O) is a finite faithful Λ-algebra, and it and all finite-level ordinary Hecke algebras are reduced.
+1. The Pontryagin dual of S^{ord}_{0,{χ_v}}(U(l^∞), E/O) is finite free over O⟦T(l^{b₀})⟧; T^{T,ord}_{{χ_v}}(U(l^∞), O) is a finite Λ-algebra and a finite faithful O⟦T(l^{b₀})⟧-algebra (Ger19 Corollary 2.5.4), and it and all finite-level ordinary Hecke algebras are reduced.
 2. For a dominant λ, r ≥ 1 and c ≥ r, composing with the projection of M_λ onto its lowest weight line gives a Hecke-equivariant isomorphism S^{ord}_{λ,{χ_v}}(U(l^{c,c}), ϖ^{−r}O/O) ≅ S^{ord}_{0,{χ_v}}(U(l^{c,c}), ϖ^{−r}O/O) carrying U^j_λ to U^j_0 and twisting ⟨u⟩ by (w₀λ)(u).
 3. The primes ℘_λ ⊂ Λ attached to dominant weights λ are Zariski dense in Spec Λ.
 4. Hom_O(T^{T,ord}_{0,{χ_v}}(U(l^∞), O)/℘_λ, ℚ̄₂) = Hom_O(T^{T,ord}_{λ,{χ_v}}(U(l^{1,1}), O), ℚ̄₂) naturally (BCGP25 (5.7.4)).
@@ -265,6 +268,7 @@ The route is Geraghty's, at l = 2: exactness of A ↦ S(U, A) and freeness over 
 - For λ = 0 the isomorphism of (2) is the identity and the twist (w₀λ)(u) of ⟨u⟩ is 1; for n = 2 and λ_τ = (1, 0) at one τ it twists ⟨u⟩ by τ(u_2), the lowest weight of M_λ.
 - Every O-algebra map T^{T,ord}(U(l^∞), O) → ℚ̄₂ above some ℘_λ comes from a classical ordinary form of weight λ and level U(l^{1,1}), by (4); a map above a prime of Λ that is not of the form ℘_λ need not.
 - T^{T,ord}_{{χ_v}}(U(l^∞), O) is semilocal and finite over Λ, hence the product of its localizations at its finitely many maximal ideals.
+- Faithfulness over Λ fails. The scalar −1_n lies in T(l), since −1 ≡ 1 modulo every place above 2. If U_v ∋ −1_n at every finite v ∤ 2 (for instance U_v hyperspecial off R and U_v = ι_ṽ^{−1}Iw(ṽ) on R), then −1_n is a global central element and f(g·(−1_n)_2) = f(g·(−1_n)^{(2)}), so [−1_n] ∈ Λ acts on S^{ord}_{0,{χ_v}}(U(l^∞), E/O) by the sign ε₀ = (−1)^{dn(n−1)/2}∏_{v∈R}∏_j χ_{v,j}(−1) = ∏_{v∈R}∏_j χ_{v,j}(−1) (nd ≡ 0 mod 4 makes the twist contribute 1). The nonzero element [−1_n] − ε₀ of Λ then acts by zero, so Λ → T^{T,ord} is not injective, although it is finite.
 
 *Needs:* 2.1; AutomorphicFormsOnReductiveGroups §7.5.
 
@@ -272,15 +276,18 @@ The route is Geraghty's, at l = 2: exactness of A ↦ S(U, A) and freeness over 
 
 Keep 2.1 and fix ı : ℚ̄₂ ≅ ℂ. For λ ∈ (ℤ^n_+)^{Ĩ_2}, A_λ = colim_U S_λ(U, ℚ̄₂) is a semisimple admissible ℚ̄₂[G(𝔸^∞_{F⁺})]-module. Prove that the irreducible submodules of ıA_λ are the finite parts of descents to G of automorphic representations π of GL_n(𝔸_F) of weight λ, isobaric sums of conjugate self-dual representations, that after localization at a non-Eisenstein maximal ideal only RACSDC π contribute, and that an irreducible submodule meets S^{ord}_λ(U(l^{b,b}), ℚ̄₂) for some b exactly when π is ι-ordinary, that is (ı^{−1}(⊗_{v|2} π_v))^{ord} ≠ 0 (BCGP25 §5.7, the paragraph defining A_λ, pp. 132–133).
 
-The route: semisimplicity and admissibility come from the automorphic realization of AutomorphicFormsOnReductiveGroups §7.5 (G(F⁺ ⊗ ℝ) is compact); base change and descent between G and GL_n are PotentialAutomorphyInfrastructurePartII PL.2 (*Base change and descent between definite unitary groups and GL_n*); at a non-Eisenstein ideal the Galois representation is irreducible, forcing a cuspidal base change; ordinarity at Iwahori level is the principal-series criterion of PL.0 (*Principal-series characterisation of ι-ordinarity*) and PotentialAutomorphyInfrastructure §3.44.
+Prove moreover that every irreducible G(𝔸^{∞,R}_{F⁺}) × ∏_{v∈R} Iw(ṽ)-constituent π of S_{λ,{χ_v}}(ℚ̄₂) = colim_U S_{λ,{χ_v}}(U, ℚ̄₂) has a continuous semisimple r_2(π) : G_F → GL_n(ℚ̄₂), unique up to isomorphism, such that: (i) for every finite place v ∉ S_2 ∪ R of F⁺ split as ww^c in F, (r_2(π)|G_{F_w})^{ss} ≅ (r_2(π_v ∘ ι_w^{−1})^∨(1 − n))^{ss}, so that at w with π_v unramified r_2(π)(Frob_w) has the Hecke polynomial of 2.1 as characteristic polynomial; (ii) r_2(π)^c ≅ r_2(π)^∨ε^{1−n}; (iii) r_2(π) is unramified above every inert v at which π_v has a vector fixed by a hyperspecial maximal compact subgroup; (iv) for v ∈ R with π^{Iw(ṽ)} ≠ 0 and σ ∈ I_{F_ṽ}, r_2(π)(σ) has characteristic polynomial ∏_j (X − χ_{v,j}^{−1}(Art^{−1}_{F_ṽ}σ)) (Ger19 Proposition 2.7.2, stated for an arbitrary prime l, here at l = 2). This is the l = 2 case that PotentialAutomorphyInfrastructurePartII PL.2 (*Galois representations attached to constituents of algebraic modular forms*) does not state, its hypotheses requiring l odd.
+
+The route: semisimplicity and admissibility come from the automorphic realization of AutomorphicFormsOnReductiveGroups §7.5 (G(F⁺ ⊗ ℝ) is compact); base change and descent between G and GL_n are PotentialAutomorphyInfrastructurePartII PL.2 (*Base change and descent between definite unitary groups and GL_n*, parts (1) and the first assertion of (2), which carry no condition on l); at a non-Eisenstein ideal the Galois representation is irreducible, forcing a cuspidal base change; ordinarity at Iwahori level is the principal-series criterion of PL.0 (*Principal-series characterisation of ι-ordinarity*) and PotentialAutomorphyInfrastructure §3.44. For r_2(π): the base change of π is an isobaric sum π₁ ⊞ ⋯ ⊞ π_s of discrete conjugate self-dual representations; each π_i is a Speh representation on a cuspidal conjugate self-dual σ_i, a twist of which by a power of |det| and an algebraic character is regular algebraic and essentially conjugate self-dual because π is cohomological (the infinitesimal character λ + ρ of ξ_λ is regular); r_2(π) is the corresponding sum of Tate twists of the 2-adic Galois representations of these twists (AutomorphicGaloisRepresentationsPartII AG2.3, *Arbitrary regular conjugate-self-dual existence*, at ℓ = 2, with AG2.2, *Twisting an essentially self-dual form into unitary type*), as in Ger19's proof through Labesse Corollaire 5.3 and Chenevier–Harris Theorem 3.2.5. (i) at ramified split places is AG2.5 (*Caraiani's full away-prime compatibility*, every prime ℓ) up to semisimplification, which also gives (iv) through the characters χ_v; (ii) and (iii) follow from conjugate self-duality and unramified base change; uniqueness is Chebotarev and Brauer–Nesbitt.
 
 **Checks.**
 
 - For n = 1 the constituents are algebraic Hecke characters of weight λ and all are ordinary.
 - A maximal ideal of T^{T,ord}_λ is non-Eisenstein exactly when the attached residual representation is absolutely irreducible; for λ = 0 the constant functions span a constituent whose residual representation is a sum of characters, so its maximal ideal is Eisenstein and it is not RACSDC.
 - A RACSDC π whose local components above 2 are not ι-ordinary contributes to A_λ but meets no S^{ord}_λ(U(l^{b,b}), ℚ̄₂).
+- For n = 1, r_2(π) is the 2-adic character of the algebraic Hecke character x ↦ π(x/x^c) of 𝔸_F^×, and (ii) reads r^c = r^{−1}, since ε^{1−n} = 1; for λ = 0 and n ≥ 2 the constituent spanned by the constant functions has the non-cuspidal base change Speh(1, n) up to twist, and r_2(π) is a sum of n characters, consistent with its maximal ideal being Eisenstein (second Check). PL.2 states neither case at l = 2.
 
-*Needs:* 2.1; AutomorphicFormsOnReductiveGroups §7.5; PotentialAutomorphyInfrastructurePartII PL.0, PL.2; PotentialAutomorphyInfrastructure §3.44.
+*Needs:* 2.1; AutomorphicFormsOnReductiveGroups §7.5; PotentialAutomorphyInfrastructurePartII PL.0, PL.2 (*Base change and descent between definite unitary groups and GL_n*); PotentialAutomorphyInfrastructure §3.44; AutomorphicGaloisRepresentationsPartII AG2.2, AG2.3, AG2.5.
 
 ### Examples
 
@@ -288,7 +295,7 @@ The route: semisimplicity and admissibility come from the automorphic realizatio
 
 ### Dependencies
 
-AutomorphicFormsOnReductiveGroups §§7.4–7.5; PotentialAutomorphyInfrastructurePartII PL.0, PL.2; PotentialAutomorphyInfrastructure §3.44; LocalGaloisDeformationRings §1.3.
+AutomorphicFormsOnReductiveGroups §§7.4–7.5; PotentialAutomorphyInfrastructurePartII PL.0, PL.2; PotentialAutomorphyInfrastructure §3.44; AutomorphicGaloisRepresentationsPartII AG2.2, AG2.3, AG2.5; LocalGaloisDeformationRings §1.3.
 
 ## Layer 3: The ordinary global problem and the Hecke-valued Galois representation
 
@@ -316,23 +323,31 @@ Its API:
 
 ### 3.2 The dimension bound
 
-In the setting of 3.1, prove that every irreducible component of Spec R_{S_χ} has dimension at least dim Λ = 1 + nd (BCGP25 Lemma 5.7.7 and proof, pp. 133–134, with the printed 1 + [F:ℚ]n corrected).
+In the setting of 3.1 (so S = T ⊔ S_∞, S_2 ⊂ T and every place of T splits in F), prove:
 
-The route: R^loc_{S_χ,T} has every component of dimension at least 1 + n²#T + dn(n+1)/2 ((5.7.8)): R^{χ_v}_v has components of dimension n² + 1 (LocalGaloisDeformationRings §2.29), R^□_v for v ∤ 2 is O-flat and equidimensional of dimension n² + 1 (Sho18 Theorem 2.5; LocalGaloisDeformationRings §2.24), and every component of R^△_v has dimension at least 1 + n² + [F⁺_v:ℚ₂]n(n+1)/2 (gap:dyadic-flag-ring-dimension; only this lower bound is used). A presentation R^loc_{S_χ,T}⟦x_1, …, x_r⟧/(f_1, …, f_{r+s}) ≅ R_{S_χ} then gives the bound by Krull's principal ideal theorem in each component of the catenary ring R^loc⟦x⟧, provided s ≤ n²#T + dn(n−1)/2. The obstruction count with Thorne's complex (CHT08 Corollary 2.2.12, run with C^•_{S_χ,T} and the values of 1.2(2)) gives r = h¹_{S_χ,T} and r + s = h²_{S_χ,T} + (n²+1)#T − 1, hence s = n²#T + dn(n−1)/2 + h³_{S_χ,T}. Because h³_{S_χ,T} = 1 at p = 2 (1.2(2)), this count proves only dim ≥ dim Λ − 1. The target needs an argument beyond the printed count, for instance that the obstruction classes for R^T_{S_χ} over R^loc_{S_χ,T} lie in a hyperplane of H²_{S_χ,T}; the printed proof supplies none (source issue below), and this step belongs to the target.
+(a) (The obstruction count.) Every irreducible component of Spec R_{S_χ} has dimension at least dim Λ − 1 = nd.
+
+(b) (BCGP25 Lemma 5.7.7 and proof, pp. 133–134, with the printed 1 + [F:ℚ]n corrected.) Every irreducible component of Spec R_{S_χ} has dimension at least dim Λ = 1 + nd.
+
+The route of (a): R^loc_{S_χ,T} has every component of dimension at least 1 + n²#T + dn(n+1)/2 ((5.7.8)): R^{χ_v}_v has components of dimension n² + 1 (LocalGaloisDeformationRings §2.29), R^□_v for v ∤ 2 is O-flat and equidimensional of dimension n² + 1 (Sho18 Theorem 2.5; LocalGaloisDeformationRings §2.24), and every component of R^△_v has dimension at least 1 + n² + [F⁺_v:ℚ₂]n(n+1)/2 (gap:dyadic-flag-ring-dimension; only this lower bound is used). Write R^T_{S_χ} = P/J with P = R^loc_{S_χ,T}⟦x_1, …, x_r⟧, r = h¹_{S_χ,T} (1.2(2)), and m_P the maximal ideal of P. The obstruction to lifting the universal T-framed lift from P/J to P/m_P J, relative to the local lifts given by R^loc_{S_χ,T} → P, is a class o ∈ H²_{S_χ,T} ⊗_k J/m_P J whose adjoint (J/m_P J)^∨ → H²_{S_χ,T} is injective (CHT08 Lemma 2.2.11 and Corollary 2.2.12, run with Thorne's complex C^•_{S_χ,T}), so J is generated by h²_{S_χ,T} elements. Krull's principal ideal theorem in each component of P, a complete local domain, gives every component of Spec R^T_{S_χ} dimension at least dim R^loc + h¹ − h². By 1.2(2)–(3) with q = 0, h¹ − h² = h⁰ − h³ − χ = −1 − (1 − #T + dn(n−1)/2); the −1 is h³_{S_χ,T} = 1, the term −h⁰(ad r̄(1)) of CHT08 Corollary 2.3.5. Hence every component of Spec R^T_{S_χ} has dimension at least (n² + 1)#T − 1 + nd, and subtracting the (n² + 1)#T − 1 framing variables (1.1) gives nd.
+
+The route of (b): the count of (a) is one relation short, and (b) follows once J is generated by h²_{S_χ,T} − 1 elements, that is once the image of (J/m_P J)^∨ lies in a hyperplane of H²_{S_χ,T} ≅ (H¹_{S_χ^⊥,T})^∨ (1.2(2)). The hyperplane is that of the unavoidable class ψ of 1.4, which lies in H¹_{S_χ^⊥,T} because the argument of 1.4 does not depend on the local problems at T: the step to prove is ⟨o, ψ⟩ = 0 in J/m_P J. A route: det : 𝒢_n → 𝒢_1, (g, a) ↦ (det g, a^n), j ↦ j, is a homomorphism (both sides of j(g, a)j^{−1} = (a·ᵗg^{−1}, a) map to (a^n·det g^{−1}, a^n)), and its derivative on ad r̄ = M_n(k) is the trace, adjoint under the trace pairing to the scalar inclusion k(1) → ad r̄(1) through which ψ is defined. Functoriality of Thorne's complexes and of their duality gives ⟨o, ψ⟩ = ⟨tr_* o, ψ′⟩, where ψ′ is the class of L⁺/F⁺ in the rank-one dual Selmer group and tr_* o is the image of the universal obstruction o_1 of the rank-one problem of det ∘ r (multiplier χ^n δ^{n+1}_{F/F⁺}, all lifts at T) under the map of rank-one presentations into P/J. So it suffices that ⟨o_1, ψ′⟩ = 0. In rank one both rings are completed group rings, by class field theory: the global ring is O⟦Γ⟧ with framing variables, Γ the largest pro-2 quotient of G^{ab}_{F,S} on which c acts by inversion (ℤ₂-rank d), and the local ring is ⊗̂_{v∈T} O⟦F_ṽ^×(2)⟧, F_ṽ^×(2) the pro-2 completion of F_ṽ^×, mapping to it through the local Artin maps; ⟨o_1, ψ′⟩ = 0 is a computation with this map and the Kummer class of L⁺/F⁺. The source states (b) without this step (source issue below); the reduction to rank one and the rank-one computation are part of this target.
 
 **Checks.**
 
-- The bound is 1 + nd, not the printed 1 + n[F:ℚ] = 1 + 2nd; for n = 2, d = 2, #T = 3 the local ring has dimension 1 + 12 + 6 = 19 and s ≤ 12 + 2 = 14 relations give 5 = dim Λ, while the printed value would be 9.
-- With h³ = 1 and exactly h² relations the same numbers give s = 15 and only 4 = dim Λ − 1; the printed count, which uses h³ = 0, is one relation short.
-- Combined with finiteness over Λ (4.7), the bound forces every component of Spec R^{T,ord} to dominate a component of Spec Λ; a component of dimension dim Λ − 1, finite over Λ, could lie over a divisor containing no ℘_λ.
+- The bound of (b) is 1 + nd, not the printed 1 + n[F:ℚ] = 1 + 2nd: for n = 2, d = 2, #T = 3 the local ring has dimension 1 + 12 + 6 = 19, (b) gives 19 − 14 = 5 = dim Λ for R_{S_χ}, and the printed value 9 would contradict finiteness of R^{T,ord} over the five-dimensional Λ (4.7).
+- The same numbers in (a): h¹ − h² = −1 − (1 − 3 + 2) = −1, so every component of Spec R^T_{S_χ} has dimension at least 18 and of Spec R_{S_χ} at least 4 = dim Λ − 1; the printed count, which uses h³ = 0, gets 5 only by omitting the −1.
+- Rank one, where everything is explicit: with n = 1 the count of (a) gives dim R^loc_1 + h¹ − h² − (2#T − 1) = (1 + #T + d) + (#T − 2) − (2#T − 1) = d, while class field theory gives dim O⟦Γ⟧ = 1 + d (the ℤ₂-rank of the part of G^{ab}_{F,S}(2) on which c acts by −1 is d, the Leopoldt defects of F and F⁺ being equal). So in rank one the count is one short and the bound of (b) holds; this is the rank-one case of the step ⟨o_1, ψ′⟩ = 0 at the level of dimensions.
+- The multiplier of det ∘ r: for x = (g, a)j, ν(det x) = −a^n = (−1)^{n+1}ν(x)^n, so det ∘ r has multiplier χ^n δ^{n+1}_{F/F⁺}, not χ^n; its value at c_v is (−1)^n(−1)^{n+1} = −1, as 1.1 requires of a rank-one problem.
+- Combined with finiteness over Λ (4.7), (b) forces every component of Spec R^{T,ord} to dominate a component of Spec Λ; (a) alone does not, since a component of dimension dim Λ − 1, finite over Λ, could lie over a divisor containing no ℘_λ.
 
-*Needs:* 3.1; 1.2; gap:dyadic-flag-ring-dimension; LocalGaloisDeformationRings §§2.24, 2.29; GlobalGaloisDeformations §8.4.
+*Needs:* 3.1; 1.1; 1.2; 1.4 for (b); gap:dyadic-flag-ring-dimension; ArithmeticGaloisRepresentations §7.4; LocalGaloisDeformationRings §§2.24, 2.29; GlobalGaloisDeformations §8.4.
 
 ### 3.3 The Galois representation over the ordinary Hecke algebra
 
 In the setting of 3.1, suppose U_v is hyperspecial for v ∉ T and U_v ⊂ ι_ṽ^{−1}Iw(ṽ) for v ∈ R. Prove that there are a maximal ideal m of T^{T,ord}_{{χ_v}}(U(l^∞), O) and a surjection of Λ-algebras R_{S_χ} → T^{T,ord}_{{χ_v}}(U(l^∞), O)_m, and that the corresponding r_m : G_{F⁺} → 𝒢_n(T^{T,ord}_{{χ_v}}(U(l^∞), O)_m), unique up to strict equivalence, is characterized by: for every finite place v ∉ T split as ww^c in F, r_m is unramified at w and w^c and r_m(Frob_w) has characteristic polynomial X^n + ⋯ + (−1)^j q_w^{j(j−1)/2}T^j_w X^{n−j} + ⋯ + (−1)^n q_w^{n(n−1)/2}T^n_w (BCGP25 Proposition 5.7.9 and proof, p. 134).
 
-The route: glue the Galois representations of the ordinary constituents (2.3; PotentialAutomorphyInfrastructurePartII PL.2, *Galois representations attached to constituents of algebraic modular forms*) along the reduced finite-level Hecke algebras and pass to the limit as in Ger19 Proposition 2.7.4. The 𝒢_n-valued extension of the residual representation uses Tho17 Lemma 2.2 in place of CHT08 Lemma 2.1.4, and its lift and uniqueness up to strict equivalence use Tho17 Lemma 2.4 in place of CHT08 Lemma 2.1.12, which needs residue characteristic > 2 and enters Ger19 Propositions 2.7.3–2.7.4 through CHT08 Propositions 3.4.2 and 3.4.4 (Ger19 lines 1003, 1113, 1146). The condition at v | 2 is Ger19 Corollary 3.1.4, checked on the dense classical points of 2.2(3)–(4); at v ∈ R the inertial characteristic polynomial is as in Ger19 Proposition 2.7.4(5). Surjectivity holds because T_m is generated by the T^j_w, coefficients of characteristic polynomials of r_m, and by the diamond operators, the image of Λ.
+The route: glue the 2-adic Galois representations of the ordinary constituents (2.3, which states them at l = 2) along the reduced finite-level Hecke algebras and pass to the limit as in Ger19 Proposition 2.7.4. The 𝒢_n-valued extension of the residual representation uses Tho17 Lemma 2.2 in place of CHT08 Lemma 2.1.4, and its lift and uniqueness up to strict equivalence use Tho17 Lemma 2.4 in place of CHT08 Lemma 2.1.12, which needs residue characteristic > 2 and enters Ger19 Propositions 2.7.3–2.7.4 through CHT08 Propositions 3.4.2 and 3.4.4 (Ger19 lines 1003, 1113, 1146). The condition at v | 2 is Ger19 Corollary 3.1.4, checked on the dense classical points of 2.2(3)–(4); at v ∈ R the inertial characteristic polynomial is as in Ger19 Proposition 2.7.4(5). Surjectivity holds because T_m is generated by the T^j_w, coefficients of characteristic polynomials of r_m, and by the diamond operators, the image of Λ.
 
 **Checks.**
 
@@ -340,7 +355,7 @@ The route: glue the Galois representations of the ordinary constituents (2.3; Po
 - For n = 2 the characteristic polynomial is X² − T^1_w X + q_w T^2_w, the Hecke polynomial of 2.1.
 - A point of T_m above ℘_λ gives an ordinary RACSDC π′ of weight λ (2.2(4), 2.3) with r_{π′,2} the specialization of r_m.
 
-*Needs:* 3.1; 2.2; 2.3; PotentialAutomorphyInfrastructurePartII PL.2 (*Galois representations attached to constituents of algebraic modular forms*).
+*Needs:* 3.1; 2.2; 2.3; ArithmeticGaloisRepresentations §7.4.
 
 ### 3.4 Uniform local fixed vectors
 
@@ -376,11 +391,11 @@ Its API:
 
 ### Examples
 
-- For n = 2, d = 2, #T = 3 and R = ∅, dim R^loc_{S^{T,ord},T} = 19 and the corrected Lemma 5.7.7 bound is 5 = dim Λ.
+- For n = 2, d = 2, #T = 3 and R = ∅, dim R^loc_{S^{T,ord},T} = 19; the obstruction count 3.2(a) gives 4 = dim Λ − 1 and the corrected Lemma 5.7.7, 3.2(b), gives 5 = dim Λ.
 
 ### Dependencies
 
-Layers 1–2; ArithmeticGaloisRepresentations §7.4; LocalGaloisDeformationRings §§1.3, 1.9, 2.24, 2.29; GlobalGaloisDeformations §8.4; AutomorphicGaloisRepresentationsPartII AG2.5; SmoothRepresentationsOfLocalGroups §SR.3.2; PotentialAutomorphyInfrastructurePartII PL.2; gaps dyadic-flag-ring-dimension and inertial-types-and-block-levels.
+Layers 1–2; ArithmeticGaloisRepresentations §7.4; LocalGaloisDeformationRings §§1.3, 1.9, 2.24, 2.29; GlobalGaloisDeformations §8.4; AutomorphicGaloisRepresentationsPartII AG2.5; SmoothRepresentationsOfLocalGroups §SR.3.2; gaps dyadic-flag-ring-dimension and inertial-types-and-block-levels.
 
 ## Layer 4: The dyadic ordinary R = T theorem
 
@@ -409,7 +424,7 @@ The route: S_N modulo the standard cutoffs (ϖ^m and powers of the maximal ideal
 **Checks.**
 
 - For q = j = 0, S_∞ = Λ, S_N = Λ for every N and H_N = H; the conclusion says that H is finite free over Λ and, when dim R_∞ ≤ dim Λ, of maximal depth over R_∞.
-- For Λ = O[{±1}]⟦w⟧ (n = 1, F⁺_v = ℚ₂, one place) Λ is finite free of rank 2 over Λ⁰ = O⟦w⟧ but is not a domain and not a power series ring, so DeformationAndDerivedPatchingAlgebra Layer 8, which requires Λ = O⟦w_1, …, w_s⟧, does not apply directly, while the reduction to Λ⁰ does.
+- For n = 2 and F⁺ = ℚ(√105), F = ℚ(√−7, √−15) (F/F⁺ is unramified at every finite place, 2 splits completely in F since −7 ≡ −15 ≡ 105 ≡ 1 mod 8, and nd = 4), the two places above 2 have F⁺_v = ℚ₂ and Λ = O⟦({±1} × ℤ₂)^4⟧ = O[{±1}^4]⟦w_1, …, w_4⟧ is finite free of rank 16 over Λ⁰ = O⟦w_1, …, w_4⟧ but is not a domain ((1 − [−1])(1 + [−1]) = 0) and not a power series ring, so DeformationAndDerivedPatchingAlgebra Layer 8, which requires Λ = O⟦w_1, …, w_s⟧, does not apply directly, while the reduction to Λ⁰ does. One place with F⁺_v = ℚ₂ alone is no instance: it forces F⁺ = ℚ, which the standing hypotheses exclude (1.4).
 - If dim R_∞ = dim S_∞ + 1 (as happens when q is taken one too large at p = 2, cf. 1.4) the depth conclusion fails, since depth_{R_∞} H_∞ ≤ dim S_∞ < dim R_∞.
 
 *Needs:* DeformationAndDerivedPatchingAlgebra §§5.2–5.5, 6.1; Tau Ceti `TauCeti.completedGroupAlgebra`.
@@ -444,9 +459,9 @@ The route: components of a completed tensor product of local rings whose compone
 
 ### 4.5 Component support by Ihara avoidance
 
-In the situation of 4.3, prove (BCGP25 proof of Theorem 5.7.14, from "Fix for the moment a minimal prime Q" to the existence of π_Y, pp. 137–138): (a) for every set X of irreducible components C_v of Spec R^1_v (v ∈ R) there is an irreducible component C_{X,v₁} of Spec R^□_{v₁} such that C_{X,v₁} ⊗ ⊗_{v∈R} C_v lies in the support of H_{1,∞}; with R^loc_X the corresponding quotient of R^loc_{S_1,T} and R_X = R_{S_1} ⊗_{R^loc_{S_1,T}} R^loc_X, Spec R_X lies in the support of H_1, (R_X)_red is a quotient of T^{T,ord}_{{1}}(U(l^∞), O)_{m₁}, R_X is a finite Λ-algebra and every component of Spec R_X has dimension at least dim Λ; (b) for every choice Y of irreducible components C_v of the local rings at v ∈ R ∪ S_2 there is an ordinary RACSDC π_Y with r̄_{π_Y,2} ≅ ρ̄, r_{π_Y,2} unramified outside T, and r_{π_Y,2}|G_{F_ṽ} lying on C_v and on no other component for each v ∈ R ∪ S_2.
+In the situation of 4.3, prove (BCGP25 proof of Theorem 5.7.14, from "Fix for the moment a minimal prime Q" to the existence of π_Y, pp. 137–138): (a) for every minimal prime Q of Λ and every set X of irreducible components C_v of Spec R^1_v (v ∈ R) there is an irreducible component C_{X,v₁} of Spec R^□_{v₁} such that the component C_X = C_{X,v₁} ⊗ ⊗_{v∈R} C_v of Spec R_{1,∞}/Q (4.4(2)) lies in the support of H_{1,∞}; with R^loc_X the quotient of R^loc_{S_1,T}/Q by the prime of C_{X,v₁} ⊗ ⊗_{v∈R} C_v and R_X = R_{S_1} ⊗_{R^loc_{S_1,T}} R^loc_X, Spec R_X lies in the support of H_1, (R_X)_red is a quotient of T^{T,ord}_{{1}}(U(l^∞), O)_{m₁}, R_X is a finite Λ-algebra and every component of Spec R_X has dimension at least dim Λ; (b) for every choice Y of irreducible components C_v of the local rings at v ∈ R ∪ S_2 there is an ordinary RACSDC π_Y with r̄_{π_Y,2} ≅ ρ̄, r_{π_Y,2} unramified outside T, and r_{π_Y,2}|G_{F_ṽ} lying on C_v and on no other component for each v ∈ R ∪ S_2.
 
-The route: the seed π gives a nonempty support of H_{1,∞}; by the identification modulo ϖ the support of H_{χ,∞} is nonempty, and by 4.4(4) it is a union of components of R_{χ,∞}/Q, each indexed by a component of R^□_{v₁}; by 4.4(5) and the identification modulo ϖ (Taylor's Ihara avoidance) a product C_{X,v₁} ⊗ ⊗C_v lies in the support of H_{1,∞}. Then Spec R_X ⊂ Supp H_1, so (R_X)_red is a Hecke quotient, finite over Λ by 2.2(1); R_X is finite by DeformationAndDerivedPatchingAlgebra §4.1. The dimension bound for R_X is read off the patched module: H_{1,∞} restricted to the component has support of dimension dim S_∞, and cutting by the q + (n²+1)#T − 1 generators of a_∞ leaves support of dimension at least dim Λ inside Spec R_X, so no appeal to 3.2 is needed here. Choose λ with R_X/℘_λ nonzero, finite over O and of dimension ≥ 1; it has a ℚ̄₂-point (DeformationAndDerivedPatchingAlgebra §4.2), which by 2.2(4) and 2.3 comes from an ordinary RACSDC π_Y. Repeating over the minimal primes Q runs through the components above 2, and genericity of π_{Y,ṽ} puts its local representations on a single component (PotentialAutomorphyInfrastructurePartII PL.1).
+The route: the seed π gives a nonempty support of H_{1,∞}; by the identification modulo ϖ the support of H_{χ,∞} is nonempty, and by 4.4(4) it is a union of components of R_{χ,∞}/Q, each indexed by a component of R^□_{v₁}; by 4.4(5) and the identification modulo ϖ (Taylor's Ihara avoidance) a product C_{X,v₁} ⊗ ⊗C_v lies in the support of H_{1,∞}. Then Spec R_X ⊂ Supp H_1, so (R_X)_red is a Hecke quotient, finite over Λ by 2.2(1); R_X is finite by DeformationAndDerivedPatchingAlgebra §4.1. The dimension bound for R_X is read off the patched module, so no appeal to 3.2 is needed here. Inside Spec R_{1,∞}, the closed set V(I_X) cut out by the kernel I_X of R^loc_{S_1,T} → R^loc_X is the single component C_X, because R^△_v/Q is irreducible above 2 (LocalGaloisDeformationRings §6.24) and components are products of local components (4.4(2)). Since R_{1,∞}/a_∞ ↠ R_{S_1}, H_1 = H_{1,∞}/a_∞ and Supp(H_{1,∞}/a_∞) = Supp H_{1,∞} ∩ V(a_∞), we get Spec R_X = Spec R_{S_1} ∩ V(I_X) = Supp H_{1,∞} ∩ V(a_∞) ∩ C_X = C_X ∩ V(a_∞), using C_X ⊂ Supp H_{1,∞}. C_X is a complete local domain of dimension dim S_∞ (4.3), so by Krull's height theorem every irreducible component of C_X ∩ V(a_∞), that is of Spec R_X, has dimension at least dim S_∞ − (q + (n²+1)#T − 1) = dim Λ, and being finite over the domain Λ/Q of the same dimension it maps onto Spec Λ/Q. Choose λ with R_X/℘_λ nonzero, finite over O and of dimension ≥ 1; it has a ℚ̄₂-point (DeformationAndDerivedPatchingAlgebra §4.2), which by 2.2(4) and 2.3 comes from an ordinary RACSDC π_Y. Repeating over the minimal primes Q runs through the components above 2, and genericity of π_{Y,ṽ} puts its local representations on a single component (PotentialAutomorphyInfrastructurePartII PL.1).
 
 **Checks.**
 
@@ -488,15 +503,15 @@ The route: prepare F′ (4.1), patch over F′, remove the auxiliary place over 
 
 Assume (1)–(6), let R^{T,ord} be as in 4.7 and T^{T,ord}(U(l^∞))_m the localized universal ordinary Hecke algebra (2.1) with the surjection of 3.3. If U_v is sufficiently deep (3.5) for every v ∈ T ∖ S_2, prove that R^{T,ord} → T^{T,ord}(U(l^∞))_m has nilpotent kernel, so (R^{T,ord})_red ≅ T^{T,ord}(U(l^∞))_m (BCGP25 Theorem 5.7.14, second assertion, and the last paragraph of its proof, pp. 135 and 139). This is the headline of Layers 1–4.
 
-The route: by 4.7 and 3.2 every component of Spec R^{T,ord} dominates a component of Spec Λ, so the ℚ̄₂-points above the ℘_λ (dense by 2.2(3)) are dense in Spec R^{T,ord}. Each such point is automorphic: its restriction to G_L is a point of R′_{L/F,T′}, hence of the Hecke algebra over L (4.6), hence of an ordinary RACSDC representation over L by 2.2(4), and it is automorphic over F by soluble descent (PotentialAutomorphyInfrastructurePartII PL.0, *Soluble base change and descent of automorphy*). Sufficient depth puts it at level U(l^{1,1}), so it lies in Spec T^{T,ord}(U(l^∞))_m. A closed subset containing a dense set is everything, so the kernel lies in every prime (DeformationAndDerivedPatchingAlgebra §6.5).
+The route: by 4.7 and 3.2(b) every component of Spec R^{T,ord} dominates a component of Spec Λ, so the ℚ̄₂-points above the ℘_λ (dense by 2.2(3)) are dense in Spec R^{T,ord}. Each such point is automorphic: its restriction to G_L is a point of R′_{L/F,T′}, hence of the Hecke algebra over L (4.6), hence of an ordinary RACSDC representation over L by 2.2(4), and it is automorphic over F by soluble descent (PotentialAutomorphyInfrastructurePartII PL.0, *Soluble base change and descent of automorphy*). Sufficient depth puts it at level U(l^{1,1}), so it lies in Spec T^{T,ord}(U(l^∞))_m. A closed subset containing a dense set is everything, so the kernel lies in every prime (DeformationAndDerivedPatchingAlgebra §6.5).
 
 **Checks.**
 
 - Without the depth hypothesis the theorem still gives finiteness (4.7), but automorphic points may need a smaller level than U, so the kernel need not be nilpotent.
-- The density step uses 3.2 in full: a component of dimension dim Λ − 1 finite over Λ could lie over a divisor of Spec Λ that contains no ℘_λ.
+- The density step uses 3.2(b), whose scalar-direction step is part of that target and is not in the sources; the obstruction count 3.2(a) alone leaves room for a component of dimension dim Λ − 1, finite over Λ, lying over a divisor of Spec Λ that contains no ℘_λ.
 - For n = 2 and the 16-component Λ of the Examples of Layer 2 the conclusion holds component by component of Λ.
 
-*Needs:* 4.7; 3.2; 3.3; 3.5; 2.2; 4.6; PotentialAutomorphyInfrastructurePartII PL.0; DeformationAndDerivedPatchingAlgebra §6.5.
+*Needs:* 4.7; 3.2(b); 3.3; 3.5; 2.2; 4.6; PotentialAutomorphyInfrastructurePartII PL.0; DeformationAndDerivedPatchingAlgebra §6.5.
 
 ### Examples
 
@@ -602,9 +617,9 @@ Its API:
 
 ### 5.6 The Galois representation over the GSp₄ Hida–Hecke algebra
 
-In the setting of 5.5, let M¹ be the finite free Λ_{GSp₄,F⁺}-module of gap:hilbert-siegel-ordinary-hida-module and T_{S_1} the Hida–Hecke algebra acting faithfully on it. Prove that there is a continuous ρ : G_{F⁺} → GSp₄(T_{S_1}) of type S_1, unique up to strict equivalence, whose Frobenius characteristic polynomials at v ∉ S are the Hecke polynomials Q_v(X), giving a surjection R_{S_1} ↠ T_{S_1} of Λ_{GSp₄,F⁺}-algebras; the same holds for the Taylor–Wiles variants M^{1,Q}, compatibly with Δ_Q. Put T_{S_{1,π}} = R_{S_{1,π}} ⊗_{R_{S_1}} T_{S_1} (BCGP25 §6.3, p. 147; WHI22 Theorems 7.7–7.8 and proofs, pp. 64–65; BCGP21 Theorem 7.9.4).
+In the setting of 5.5, let M¹ be the finite free Λ_{GSp₄,F⁺}-module of gap:hilbert-siegel-hida-module-free and T_{S_1} the Hida–Hecke algebra acting faithfully on it. Prove that there is a continuous ρ : G_{F⁺} → GSp₄(T_{S_1}) of type S_1, unique up to strict equivalence, whose Frobenius characteristic polynomials at v ∉ S are the Hecke polynomials Q_v(X), giving a surjection R_{S_1} ↠ T_{S_1} of Λ_{GSp₄,F⁺}-algebras; the same holds for the Taylor–Wiles variants M^{1,Q}, compatibly with Δ_Q. Put T_{S_{1,π}} = R_{S_{1,π}} ⊗_{R_{S_1}} T_{S_1} (BCGP25 §6.3, p. 147; WHI22 Theorems 7.7–7.8 and proofs, pp. 64–65; BCGP21 Theorem 7.9.4).
 
-The route: embed T_{S_1} into a ring of tuples (a, (a_π)) ⊂ k × ∏_π O_{E_π} indexed by the classical ordinary π of large regular weight contributing to M¹ (classicality, gap:hilbert-siegel-ordinary-hida-module), glue their Galois representations (gap:gsp4-galois-representations-totally-real) and pass to Artinian quotients. The flag-image condition D^△_v is a scheme-theoretic image, not understood on Artinian rings; but T_{S_1} is reduced, O-flat and embeds in ∏_π O_{E_π}, so R^□_v → T_{S_1} factors through R^△_v once every composite R^□_v → O_{E_π} does, that is once each ρ_π|G_{F⁺_v} is ordinary with stabilization lifting (α_v, β_v) (DeformationAndDerivedPatchingAlgebra §6.3); only the O_{E′}-points of D^△_v are used.
+The route: embed T_{S_1} into a ring of tuples (a, (a_π)) ⊂ k × ∏_π O_{E_π} indexed by the classical ordinary π of large regular weight contributing to M¹ (gap:hilbert-siegel-ordinary-classicality), glue their Galois representations (gap:gsp4-galois-representations-totally-real) and pass to Artinian quotients. The flag-image condition D^△_v is a scheme-theoretic image, not understood on Artinian rings; but T_{S_1} is reduced, O-flat and embeds in ∏_π O_{E_π}, so R^□_v → T_{S_1} factors through R^△_v once every composite R^□_v → O_{E_π} does, that is once each ρ_π|G_{F⁺_v} is ordinary with stabilization lifting (α_v, β_v) (DeformationAndDerivedPatchingAlgebra §6.3); only the O_{E′}-points of D^△_v are used.
 
 **Checks.**
 
@@ -612,7 +627,7 @@ The route: embed T_{S_1} into a ring of tuples (a, (a_π)) ⊂ k × ∏_π O_{E_
 - The k-coordinate of a tuple (a, (a_π)) is determined by the others, so the factoring through R^△_v is tested on O_{E′}-points only.
 - For F⁺ = ℚ and ρ̄ residually p-distinguished, the construction is that of BCGP21 Theorem 7.9.4 with D^{B,α_p}.
 
-*Needs:* 5.5; gap:hilbert-siegel-ordinary-hida-module; gap:gsp4-galois-representations-totally-real; LocalGaloisDeformationRings §6.29; DeformationAndDerivedPatchingAlgebra §6.3.
+*Needs:* 5.5; gap:hilbert-siegel-hida-module-free; gap:hilbert-siegel-taylor-wiles-coinvariants for the Taylor–Wiles variants; gap:hilbert-siegel-ordinary-classicality; gap:gsp4-galois-representations-totally-real; LocalGaloisDeformationRings §6.29; DeformationAndDerivedPatchingAlgebra §6.3.
 
 ### Examples
 
@@ -620,7 +635,7 @@ The route: embed T_{S_1} into a ring of tuples (a, (a_π)) ⊂ k × ∏_π O_{E_
 
 ### Dependencies
 
-ArithmeticGaloisRepresentations §§7.5, 7.9, 7.11; LocalGaloisDeformationRings §§1.17, 1.22, 2.22, 6.27, 6.29, F.2.6; GlobalGaloisDeformations §3.3; DeformationAndDerivedPatchingAlgebra §§1.12, 6.3; ModularityAndLanglandsExtensions §3.9; gaps gsp4-semisimple-taylor-wiles-places, gsp4-galois-representations-totally-real and hilbert-siegel-ordinary-hida-module.
+ArithmeticGaloisRepresentations §§7.5, 7.9, 7.11; LocalGaloisDeformationRings §§1.17, 1.22, 2.22, 6.27, 6.29, F.2.6; GlobalGaloisDeformations §3.3; DeformationAndDerivedPatchingAlgebra §§1.12, 6.3; ModularityAndLanglandsExtensions §3.9; gaps gsp4-semisimple-taylor-wiles-places, gsp4-galois-representations-totally-real, hilbert-siegel-hida-module-free, hilbert-siegel-taylor-wiles-coinvariants and hilbert-siegel-ordinary-classicality.
 
 ## Layer 6: The symplectic ordinary R = T theorem for p > 2
 
@@ -644,7 +659,7 @@ The route: let Q_π ⊂ T_{S_1} be a minimal prime contained in the prime of π;
 
 Enlarge E to contain µ_p (µ_9 if p = 3) and fix, for v ∈ R, characters χ_v = (χ_{v,1}, χ_{v,2}) nontrivial and trivial mod λ with χ_{v,1} ≠ χ_{v,2}^{±1}; let S_χ be S_1 with D^{χ_v}_v (LocalGaloisDeformationRings §2.22) in place of D^1_v. Let q = h¹(G_{F⁺,S}, 𝔰𝔭₄^∨(1)) and, by WHI22 Lemma 7.10 built from 5.3, fix 0 ≤ t ≤ 2q and Taylor–Wiles data Q_N of level N with #Q_N = q and Δ_{Q_N} having t cyclic factors. Let Δ_∞ = ℤ_p^t ↠ Δ_{Q_N}, S_∞ = 𝒯⟦Δ_∞⟧ with 𝒯 the framing ring over Λ_{GSp₄,F⁺} (5.1) and augmentation ideal a_∞, R^1_∞ and R^χ_∞ power series rings in g = t − 4d + #S − 1 variables over R^loc_{S_1,S} and R^loc_{S_χ,S}, and R_{∞,π} = R^1_∞ ⊗_{R^loc_{S_1,S}} R^loc_{S_{1,π},S}. Prove that there are Λ_{GSp₄,F⁺}-algebra maps S_∞ → R^1_∞ → R_{S_1} and S_∞ → R^χ_∞ → R_{S_χ}, S_∞-modules M^1_∞ and M^χ_∞ finite free over S_∞ with M^·_∞/a_∞ ≅ M^· (5.6), compatible actions of R^·_∞, and identifications M^1_∞/λ ≅ M^χ_∞/λ compatible with R^1_∞/λ ≅ R^χ_∞/λ; and that M^·_∞ is maximal Cohen–Macaulay over R^·_∞ with dim (R^·_∞)′ = dim S_∞, ′ denoting the maximal O-flat quotient (BCGP25 proof of Theorem 6.3.4, p. 148; WHI22 §7.3, Lemma 7.10 and Proposition 7.11 with proof, pp. 66–68).
 
-The route: the Taylor–Wiles data are those of WHI22 Lemma 7.10 (#Q_N = q, with t the number of cyclic factors of Δ_{Q_N}, which varies with N and is fixed by passing to a subsequence); the modules M^{·,Q_N} are finite free over Λ_{GSp₄,F⁺}[Δ_{Q_N}] with coinvariants M^· (gap:hilbert-siegel-ordinary-hida-module) and carry the Galois representations of 5.6. Since Λ_{GSp₄,F⁺} is a power series ring, the patching is DeformationAndDerivedPatchingAlgebra Layer 8 (§§8.2–8.5) with complexes concentrated in one degree and δ = 1. Dimensions: S_∞ is formally smooth over Λ_{GSp₄,F⁺} of relative dimension t + 11#S − 1, and (R^·_∞)′ is equidimensional of relative dimension g + 10#S + 4d over it (14 over Λ_{GSp₄,v} above p by LocalGaloisDeformationRings §6.31, 10 over O at R and at w₀ by §§2.22 and 1.22); with g = t − 4d + #S − 1 these agree, so a module free over S_∞ is maximal Cohen–Macaulay over (R^·_∞)′.
+The route: the Taylor–Wiles data are those of WHI22 Lemma 7.10 (#Q_N = q, with t the number of cyclic factors of Δ_{Q_N}, which varies with N and is fixed by passing to a subsequence); the modules M^{·,Q_N} are finite free over Λ_{GSp₄,F⁺}[Δ_{Q_N}] with coinvariants M^· (gap:hilbert-siegel-taylor-wiles-coinvariants) and carry the Galois representations of 5.6. Since Λ_{GSp₄,F⁺} is a power series ring, the patching is DeformationAndDerivedPatchingAlgebra Layer 8 (§§8.2–8.5) with complexes concentrated in one degree and δ = 1. Dimensions: S_∞ is formally smooth over Λ_{GSp₄,F⁺} of relative dimension t + 11#S − 1, and (R^·_∞)′ is equidimensional of relative dimension g + 10#S + 4d over it (14 over Λ_{GSp₄,v} above p by LocalGaloisDeformationRings §6.31, 10 over O at R and at w₀ by §§2.22 and 1.22); with g = t − 4d + #S − 1 these agree, so a module free over S_∞ is maximal Cohen–Macaulay over (R^·_∞)′.
 
 **Checks.**
 
@@ -652,7 +667,7 @@ The route: the Taylor–Wiles data are those of WHI22 Lemma 7.10 (#Q_N = q, with
 - The number of places in Q_N is q, while t, the number of cyclic factors of Δ_{Q_N}, can be up to 2q because the Levi centres at semisimple Frobenius have rank up to 2; using t for #Q_N would miscount.
 - With I = ∅ the patched modules are free over S_∞; there is no defect, unlike the Klingen case #I = 1 of BCGP21 where they are only balanced.
 
-*Needs:* 5.1; 5.3; 5.6; gap:hilbert-siegel-ordinary-hida-module; LocalGaloisDeformationRings §§1.22, 2.22, 6.31; DeformationAndDerivedPatchingAlgebra Layer 8, §6.3.
+*Needs:* 5.1; 5.3; 5.6; gap:hilbert-siegel-taylor-wiles-coinvariants; LocalGaloisDeformationRings §§1.22, 2.22, 6.31; DeformationAndDerivedPatchingAlgebra Layer 8, §6.3.
 
 ### 6.3 The symplectic ordinary reduced R = T theorem
 
@@ -688,7 +703,7 @@ The route: T_{S_1}, and hence its quotient T_{S_{1,π}}, is finite over Λ_{GSp�
 
 ### Dependencies
 
-Layer 5; LocalGaloisDeformationRings §§1.22, 2.22, 6.31, 6.35; DeformationAndDerivedPatchingAlgebra §§4.1, 6.1, 6.3, 6.5, 9.6 and Layer 8; gap hilbert-siegel-ordinary-hida-module.
+Layer 5; LocalGaloisDeformationRings §§1.22, 2.22, 6.31, 6.35; DeformationAndDerivedPatchingAlgebra §§4.1, 6.1, 6.3, 6.5, 9.6 and Layer 8; gaps hilbert-siegel-hida-module-free and hilbert-siegel-taylor-wiles-coinvariants.
 
 ## Downstream consumers
 
@@ -700,7 +715,7 @@ Layer 5; LocalGaloisDeformationRings §§1.22, 2.22, 6.31, 6.35; DeformationAndD
 The statements above use the corrected readings below (BCGP25 arXiv v1 unless stated).
 
 - **§5.4, p. 123** (error; affects a stated result). The source says that for T nonempty the cohomology of Thorne's complex vanishes outside degrees 1 and 2. Correction: h³_{𝒮,T} = h⁰(F(S)/F⁺, ad r̄(1)) = 1 at p = 2 (Tho17 Lemma 2.15), the scalars being invariant because j acts on Lie GL_n by X ↦ ᵗX in characteristic 2; h⁰ = 0 and h^i = 0 for i ≥ 4 do hold. Used in 1.2.
-- **Lemma 5.7.7, proof, pp. 133–134** (gap; affects the proof). The printed relation count s ≤ n²#T + dn(n−1)/2, obtained as in CHT08 Corollary 2.2.12 with Thorne's complex, presupposes h³_{𝒮,T} = 0; with h³_{𝒮,T} = 1 the count gives s ≤ n²#T + dn(n−1)/2 + 1 and only dim ≥ dim Λ − 1. An argument for the missing relation is needed. Recorded in 3.2.
+- **Lemma 5.7.7, proof, pp. 133–134** (gap; affects the proof). The printed relation count s ≤ n²#T + dn(n−1)/2, obtained as in CHT08 Corollary 2.2.12 with Thorne's complex, presupposes h³_{𝒮,T} = 0; with h³_{𝒮,T} = 1 the count gives s ≤ n²#T + dn(n−1)/2 + 1 and only dim ≥ dim Λ − 1 (3.2(a)). Correction: the stated bound needs one relation saved in the scalar direction, i.e. the obstruction classes orthogonal to the class ψ of Lemma 5.5.3; 3.2(b) makes this step part of the target and reduces it to rank one, where class field theory gives the dimension directly.
 - **Lemma 5.7.7, statement, p. 133** (misprint). The bound is printed as dim Λ = 1 + [F:ℚ]n. Correction: dim Λ = 1 + [F⁺:ℚ]n, since T(l) has ℤ₂-rank Σ_{v|2} n[F⁺_v:ℚ₂] = nd, and (5.7.17) uses dim S_∞ = nd + (n²+1)#T + q.
 - **Lemma 5.7.7, proof, p. 133** (gap; affects the proof). Local equidimensionality is taken from Proposition 5.6.6, whose dimension clause assumes trivial residual representation and large local degree, while the lemma is applied on p. 139 at the unprepared field. Correction: use only the lower bound on the dimension of the components of R^△_v for arbitrary residual representation (gap:dyadic-flag-ring-dimension).
 - **Remark 5.4.4, display (5.4.5), p. 124** (misprint). The last term of the inflation–restriction sequence is printed H²(F(S)/F⁺, k). Correction: H²(F(S)/F⁺, ad r̄), the sequence having coefficients ad r̄ with (ad r̄)^{G_F} = k.
