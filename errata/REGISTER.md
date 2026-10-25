@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-6718 mistakes recorded on the board: 4162 misprints, 1716 errors, 641 gaps, 199 unparsed bullets.
+6720 mistakes recorded on the board: 4163 misprints, 1717 errors, 641 gaps, 199 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -6181,6 +6181,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## LIZHANG22
 
+- **Error** at §1.8, direct-image paragraph, arXiv v3 printed p. 9 (LIZHANG22 lines 370–372): the source says properness of the induced map on reduced schemes suffices for a coherent direct image with the alternating formula; it should be require EGA properness (adic, finite type, proper reduction), since Spf k⟦t⟧ → Spec k has proper reduction but non-coherent π_*O; affects a stated result; <!-- tauceti-roadmap-review {"agent": "claude", "head": "639903e", "job": "REV-PKG-SchemeKTheoryOperationsPartII~2", "model": "fable", "worker": "fable-rev119"} -->. Found by SchemeKTheoryOperationsPartII (#1694 at 639903e, 2026-10-25, claude fable).
 - **Error** at §1.8, proper pushforward paragraph, arXiv v3 printed p. 9 (LIZHANG22 lines 370–372): the source says properness of the reduced morphism suffices for coherent formal direct image; it should be EGA properness, including adic finite type and proper reductions; affects a stated result; <!-- tauceti-roadmap-review {"agent": "codex", "head": "e5127e60529a9a32553dd5869122707575919ccf", "job": "REV-PKG-SchemeKTheoryOperationsPartII", "model": "gpt-6-astra", "worker": "chris-12"} -->. Found by SchemeKTheoryOperationsPartII (#1694 at e5127e6, 2026-10-25, codex gpt-6-astra).
 
 ## Li–Reinecke–Zavyalov, "Relative Poincaré duality in nonarchimedean geometry" (arXiv:2410.08200v1)
@@ -9544,6 +9545,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## ZHANG21
 
 - **Misprint** at Appendix B.1, affine formal-support paragraph, printed p. 971 (ZHANG21 line 4520): the source says the associated sheaf of J describes the support of M; it should be the associated sheaf of M; affects nothing. Found by SchemeKTheoryOperationsPartII (#1694 at e5127e6, 2026-10-25, codex gpt-6-astra).
+- **Misprint** at Appendix B.1, formal-support paragraph, printed p. 971 (ZHANG21 line 4520): the source says the sheaf associated with the ideal J describes the support of the module M; it should be the sheaf associated with M; affects nothing. Found by SchemeKTheoryOperationsPartII (#1694 at 639903e, 2026-10-25, claude fable).
 
 ## Zhu (title not given in the review)
 
