@@ -17,18 +17,18 @@ sha256 = "5d717b2a94288593049be2aed34e38dbde10750beba4bd3d3387820d038e8807"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-23"
-version_note = "Read the 64-page Berkeley author copy, printed pp. 1–64; all page/line locators use that copy. The named theorem numbers agree with the corresponding journal results; journal pagination 225–319 is bibliographic only."
+version_note = "Read the 64-page Berkeley author copy, printed pp. 1–64; all page/line locators use that copy. Theorem numbers refer to that author copy; journal pagination 225–319 is bibliographic only."
 cited_for = ["Layers 0–8"]
 
 [[source]]
 id = "charney1987"
-authors = "Ruth Charney"
+authors = ["Ruth Charney"]
 title = "A generalization of a theorem of Vogtmann"
 year = 1987
 venue = "Journal of Pure and Applied Algebra 44"
 doi = "10.1016/0022-4049(87)90019-3"
 locator_scheme = "theorem"
-locator = "Corollary 4.5, pp. 107–125"
+locator = "Corollary 4.5"
 url = "https://doi.org/10.1016/0022-4049(87)90019-3"
 licence_class = "none"
 status = "uncertified"

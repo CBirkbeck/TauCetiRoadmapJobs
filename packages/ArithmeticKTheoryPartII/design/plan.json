@@ -2354,33 +2354,6 @@
   ],
   "gaps": [
     {
-      "id": "G1",
-      "title": "Coherent ppav realization and the p=3 Moore construction",
-      "detail": "EH.6/G7 remains open. Verify the Γ/product/coefficient-compatible realization of the graded rigidified ppav atlas, including Moore smashing before completion at p=3, and strictification or a genuine homotopy-coherent spectral action. Appendix A.5 identifies the homotopy groups but does not by itself supply all point-set choices in the current atlas framework. R22 and H.5 R21 must be integrated before the action is a closed proof plan.",
-      "neededBy": [
-        "ArithmeticKTheoryPartII:AK2.4/spectrum-action",
-        "ArithmeticKTheoryPartII:AK2.6/finite-action",
-        "ArithmeticKTheoryPartII:AK2.7/padic-universality"
-      ]
-    },
-    {
-      "id": "G2",
-      "title": "Hurewicz endpoint 2p−2",
-      "detail": "The source’s Postnikov H-space splitting can fail at the printed endpoint because of a P¹ k-invariant. Prove that the endpoint class survives the integral indecomposable quotient by treating that extension directly, or supply another primary proof. The planned theorem stops at 2p−3 and the even application degrees are at most 2p−4, so the Bernoulli result does not depend on this unresolved endpoint.",
-      "neededBy": [
-        "ArithmeticKTheoryPartII:AK2.8/low-hurewicz",
-        "ArithmeticKTheoryPartII:AK2.8/stable-symplectic-homology"
-      ]
-    },
-    {
-      "id": "G3",
-      "title": "Characteristic-number prime boundary",
-      "detail": "The source proof does not justify p=max_j n_j: the denominator n_j! of ch_{n_j} can have a factor p, so the integral cap-product step fails. Establish a different integral characteristic-class argument for that boundary or retain the strict inequality permanently. The planned divisibility theorem assumes p>max_j n_j.",
-      "neededBy": [
-        "ArithmeticKTheoryPartII:AK2.8/characteristic-divisibility"
-      ]
-    },
-    {
       "slug": "duality-transfer",
       "needs": "Compare integral dualization with finite-projective transfer through the trace-dual inverse different and preserve the Bott descent edges and coefficient maps at every odd prime power.",
       "supplier": "SchemeKTheoryOperations",
@@ -2388,7 +2361,7 @@
     },
     {
       "slug": "topological-symplectic-hodge",
-      "needs": "Provide the contractible compatible-complex-structure comparison Sp(ℝ) ← U, its ku/KU realization, tangent-normalized primitive Chern-character pairing, integral lifts for m<p and coefficient-Bockstein compatibility.",
+      "needs": "Provide the ku/KU realization of the unitary model, tangent-normalized primitive Chern-character pairing, integral lifts for m<p and coefficient-Bockstein compatibility.",
       "supplier": "GeneralizedCohomology",
       "section": "G5.4–G5.6"
     },
@@ -2406,7 +2379,7 @@
     },
     {
       "slug": "cyclotomic-p-class-fields",
-      "needs": "Identify the maximal unramified abelian p-subfields of cyclotomic Hilbert fields with the native Picard p-parts, compatibly in towers, with principal-p-prime splitting and the local-p-split class-field comparison.",
+      "needs": "Construct H_q as the fixed field of the prime-to-p subgroup in the supplied cyclotomic Hilbert field, compatibly along the cyclotomic tower, and provide the local-p-split class-field comparison.",
       "supplier": "ClassFieldTheory",
       "section": "Layers 11–13"
     },
@@ -2424,7 +2397,7 @@
     },
     {
       "slug": "relative-homology-edges",
-      "needs": "Provide relative chain quotients and long exact sequences, the natural inverse-bar comparison and the finite and compact relative homological Hochschild–Serre edges for the arithmetic pairs used here.",
+      "needs": "Provide relative chain quotients and long exact sequences and the finite and compact relative homological Hochschild–Serre edges for the arithmetic pairs used here.",
       "supplier": "ArithmeticGaloisDuality",
       "section": "R02.2"
     },
@@ -2436,7 +2409,7 @@
     },
     {
       "slug": "compact-relative-cocycles",
-      "needs": "Provide completed relative bar homology and its continuous universal-cocycle property for finite-free coefficients and finite-type compact targets, with coefficient coinvariants and exact finite inverse limits.",
+      "needs": "Provide completed relative bar homology for finite-free coefficients and finite-type compact targets, with coefficient coinvariants and exact finite inverse limits.",
       "supplier": "ArithmeticGaloisDuality",
       "section": "R02.1 and R02.2"
     },
@@ -2448,7 +2421,7 @@
     },
     {
       "slug": "sphere-unit-finite-field",
-      "needs": "Provide surjectivity of the p-adic sphere unit onto K_(4k−1)(𝔽_ℓ) at a prime ℓ topologically generating ℤ_p× and its comparison isomorphism from K_(4k−1)(ℤ;ℤ_p), with the χ^(2k) normalization.",
+      "needs": "For odd p and k≥1, provide surjectivity of π^s_(4k−1)(S;ℤ_p)→K_(4k−1)(𝔽_ℓ;ℤ_p) when the prime ℓ topologically generates ℤ_p×.",
       "supplier": "KTheoryFiniteLocalFields",
       "section": "§§1.1–1.2"
     },
@@ -2469,6 +2442,12 @@
       "needs": "Provide the equivalence between finite-type compact continuous ℤ_p-representations of Gal(ℚ(p)/ℚ) and lisse integral coefficient sheaves on Spec ℤ[1/p], compatible with kernels and restriction to Spec ℚ_p.",
       "supplier": "EtaleCohomologyFoundations",
       "section": "F.4"
+    },
+    {
+      "slug": "full-cyclotomic-h2-descent",
+      "needs": "Extend §6.11’s top-degree corestriction descent to the full cover K_q/ℚ at every integer twist t, giving H²_et(O′_q,μ_q^(⊗t))_(Gal(K_q/ℚ))≅H²_et(ℤ[1/p],μ_q^(⊗t)) by corestriction.",
+      "supplier": "ArithmeticKTheory",
+      "section": "§6.11"
     }
   ],
   "requests": [
