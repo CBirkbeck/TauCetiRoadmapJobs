@@ -3607,6 +3607,30 @@
     "EtaleDualityAndPerverseSheavesPartII:EQ.3/alteration-hypercover-base-change"
    ],
    "detail": "ILO arXiv v1 XII §1.3.4 and §2.3.8 (pp. 190, 194), referring to XI §2.8, flag an unpublished justification for the limit calculation of fibres for ind-finite stacks. The published XII-A §1.4, p. 241, retains this qualification. Supply a precise limit theorem with the required hypotheses, or leave the non-abelian companions outside the accepted abelian statements. No abelian or Česnavičius–Scholze consumer here uses this input."
+  },
+  {
+   "slug": "equicharacteristic-cohen-coefficients",
+   "needs": "For every complete noetherian equicharacteristic local ring and every chosen lift of a p-basis of its residue field in positive characteristic, provide the compatible coefficient-field section and Cohen power-series presentation, without perfection or finiteness assumptions on that residue field.",
+   "supplier": "DeformationAndDerivedPatchingAlgebra",
+   "section": "1.10"
+  },
+  {
+   "slug": "generic-constructibility-noetherian",
+   "needs": "For a finite-type morphism of finite-type schemes over a noetherian base S and a constructible ℤ/n-sheaf with n invertible on S, provide a dense open V of S over which all higher direct images are constructible, eventually zero and compatible with every base change to V, without a properness assumption.",
+   "supplier": "EtaleCohomologyFoundations",
+   "section": "F.3"
+  },
+  {
+   "slug": "general-base-exceptional-pullback",
+   "needs": "For compactifiable finite-type morphisms between noetherian schemes with invertible torsion coefficients, provide exceptional inverse image as the right adjoint of derived proper-support pushforward, with composition, the closed-support identification and smooth purity, independently of the existence of a dualizing complex on the base.",
+   "supplier": "EtaleCohomologyFoundations",
+   "section": "F.5"
+  },
+  {
+   "slug": "general-base-open-duality",
+   "needs": "For an open immersion j of noetherian schemes and invertible finite torsion coefficients, provide the natural exchange RHom_X(j_!F,K) ≅ Rj_*RHom_U(F,j^*K) from tensor compatibility and j_! ⊣ j^*, together with its evaluation compatibility, without assuming a field base or a duality theorem.",
+   "supplier": "EtaleDualityAndPerverseSheaves",
+   "section": "0.2"
   }
  ],
  "sourceIssues": [
