@@ -3110,6 +3110,36 @@
       "needs": "For every g≥1 choose a common positive weight and a finite rational Fourier-normalized scalar Siegel cusp family with no common zero on Siegel space, together with its analytic trivialization and for each 0<δ≤1 positive constants M,c depending only on g,δ and the family such that |u(x+iy)|≤M exp(−c tr y) for every member whenever y≥δdiag(y) and every y_i≥δ.",
       "supplier": "AutomorphicBundles",
       "section": "B4.2, B5.13"
+    },
+    {
+      "slug": "hermitian-maximal-slope-existence",
+      "needs": "For a nonzero Hermitian vector bundle Ē over O_K, μ̂_max(Ē)=max_F deĝ(F̄)/([K:ℚ] rank F), over nonzero saturated subbundles with induced metrics, is attained and invariant under finite scalar extension with pulled-back lattices and metrics; for e∈E_K nonzero, −h_Ē(e)≤μ̂_max(Ē), with h the normalized adelic vector height.",
+      "supplier": "ArakelovGeometryAndAbelianHeights",
+      "section": "1.1–1.6"
+    },
+    {
+      "slug": "hermitian-symmetric-power-slope",
+      "needs": "For a Hermitian bundle Ē of rank r≥1 and every integer n≥0, with the induced quotient Hermitian norms on SymⁿĒ, μ̂_max(SymⁿĒ)≤n(μ̂_max(Ē)+2 log r).",
+      "supplier": "ArakelovGeometryAndAbelianHeights",
+      "section": "1.1–1.6"
+    },
+    {
+      "slug": "hermitian-morphism-slope",
+      "needs": "For a nonzero K-linear map φ:E_K→F_K between nonzero Hermitian bundles, μ̂_min(Ē)≤μ̂_max(F̄)+h(φ), where μ̂_min(Ē)=−μ̂_max(Ē∨) and h(φ) is the normalized sum of log operator norms at all places, using the integral lattice norms at finite places.",
+      "supplier": "ArakelovGeometryAndAbelianHeights",
+      "section": "1.1–1.6"
+    },
+    {
+      "slug": "hermitian-metric-rescaling",
+      "needs": "Multiplying every archimedean squared norm on a nonzero Hermitian bundle by c>0, with the finite lattices fixed, changes μ̂_max by −½ log c.",
+      "supplier": "ArakelovGeometryAndAbelianHeights",
+      "section": "1.1–1.6, 2.7"
+    },
+    {
+      "slug": "semistable-abelian-tangent-metric",
+      "needs": "For a polarized abelian variety (A,L)/K, use the integral tangent lattice of its Néron model and the Riemann metric after a finite semistable extension; this Hermitian tangent bundle, its dual and their symmetric powers pull back isometrically under further finite extensions, so their normalized slopes are independent of the chosen semistable extension.",
+      "supplier": "ArakelovGeometryAndAbelianHeights",
+      "section": "2.4, 3.4"
     }
   ],
   "restructure": [

@@ -4,15 +4,15 @@
 
 ## Scope and ownership
 
-FaltingsFinitenessAndIsogenyTheorems stops at qualitative finiteness, number-field Tate comparison and semisimplicity (R28.4–R28.5). This Part II owns the quantitative estimates and the finitely generated field extension in Layers 1–8. Its order invariant concerns every full order in every finite-dimensional division ℚ-algebra and both module sides. Its adelic theorem retains every prime, including the finitely many primes with nontrivial local index.
+FaltingsFinitenessAndIsogenyTheorems reaches R28.6: qualitative finiteness, number-field Tate comparison and semisimplicity, the cyclic non-CM elliptic Hom lattice, and the integral commutant at almost all primes. This Part II owns the quantitative estimates and the finitely generated field extension in Layers 1–8. Its order invariant concerns every full order in every finite-dimensional division ℚ-algebra and both module sides. Its adelic theorem retains every prime, including the finitely many primes with nontrivial local index.
 
 AbelianSchemesAndArithmeticModuli A3.9, A4.1, A5.1–A5.4 and A6.1–A6.14 own the dual, Rosati involution and positivity, Tate modules, complex realization, degree, homogeneous degree law, finite free Hom, simple factors and qualitative reducibility. They are stated by that roadmap and consumed here. Section 1.5 keeps the oriented lattice determinant comparison, which differs from A6.6's intrinsic polynomial law. Section 1.2 takes the norm induced by the supplied positive pairing; it does not introduce a second positivity theorem. Section 8.2 adds preservation of the integral geometric endomorphism ring to NeronModelsAndSemistableAbelianVarieties §6.0's full-image specialization.
 
-ArakelovGeometryAndAbelianHeights §§3.4–3.5, 4.4, 5.9, 6.1–6.2, 6.5 own stable height, its identities and inequalities, elliptic j-height comparison, Zarhin's construction and the dimension-dependent lower bound. GeometryOfNumbersAndQuadraticArithmetic §§0.1–0.3, 1.1–1.2, 1.5 own general covolumes, Gram determinants, minima and integral bases. IntegralLattices Layers 0–1 own the integral lattice carriers. These generic objects are not constructed again.
+ArakelovGeometryAndAbelianHeights §§3.4–3.5, 4.4, 5.9, 6.1–6.2, 6.5 own stable height, its identities and inequalities, elliptic j-height comparison, Zarhin's construction and the dimension-dependent lower bound. GeometryOfNumbersAndQuadraticArithmetic §§0.1–0.3, 1.2, 1.5 own general covolumes, Gram determinants, minima and integral bases. IntegralLattices Layers 0–1 own the integral lattice carriers. These generic objects are not constructed again.
 
 The matrix trace and determinant, finite-dimensional linear trace, semisimple-algebra structure and group indices are already in the library. The generic Frobenius norm product inequality and Gram/covolume identity are library supplies. Tau Ceti's double-centralizer theorem, profinite-integer ring/product decomposition and finiteness of bounded-index open subgroups are already in the library at the pins. SemisimpleAlgebras Layers 2–3 and 6 own their structural assembly and splitting-field theory; ClassFieldTheory Layer 10 owns the cohomological Brauer sequence. QuadraticFormInvariants Layer 7B, milestones 2–3 and 5, owns the all-class crossed-product comparison with continuous H². Section 3.4 consumes their precise arithmetic bridge below. ArithmeticGaloisRepresentations §§5.8, 6.4a, 7.6 own compact matrix-group analytic structure, finite Frattini detection and algebraic monodromy. NeronModelsAndSemistableAbelianVarieties §6.0 owns Serre independence and the torsion specialization comparisons. AutomorphicBundles B4.2, B4.9 and B5.13 own the cusp-form and analytic/algebraic carriers.
 
-AbelianSchemesAndArithmeticModuliPartII's Betti families and counting in isogeny classes are distinct downstream uses. Elliptic and surface open-image theorems, real multiplication images, and density/automorphy applications belong to OpenImageTheoremsForAbelianVarieties; its scope is recorded under downstream consumers. They are not premises of the quantitative or integral-algebra theorems here.
+AbelianSchemesAndArithmeticModuliPartII's Betti families and counting in isogeny classes are distinct downstream uses. Elliptic and surface open-image theorems, real multiplication images, and density/automorphy results are outside this roadmap.
 
 ## Conventions
 
@@ -32,11 +32,15 @@ The coefficient ring Ẑ is `Additive TauCeti.zHat`, identified with ∏_ℓℤ_
 
 ### From Mathlib
 
+Consume `MeasureTheory.exists_ne_zero_mem_lattice_of_measure_mul_two_pow_lt_measure` from `Mathlib/MeasureTheory/Group/GeometryOfNumbers.lean`, line 65: in a finite-dimensional real normed space with Haar measure and a countable lattice with fundamental domain F, a symmetric convex set of volume greater than 2^dim times the measure of F contains a nonzero lattice point. The strict inequality is retained. Consume `NumberField.absLogHeight₁` from `Mathlib/NumberTheory/Height/NumberField.lean`, line 145, for the absolute logarithmic Weil height of the elliptic j-invariant; its nonalgebraic junk case never occurs over a number field.
+
 Consume `Matrix.trace` from `Mathlib/LinearAlgebra/Matrix/Trace.lean`, `Matrix.det` from `Mathlib/LinearAlgebra/Matrix/Determinant/Basic.lean`, `LinearMap.trace` from `Mathlib/LinearAlgebra/Trace.lean`, `LinearMap.mulLeft` from `Mathlib/Algebra/Module/LinearMap/Defs.lean`, and `LinearMap.toMatrix` on `Module.Basis`. Trace of left multiplication gives the regular trace also for a noncommutative algebra. `Subring`, `Submodule`, `Module.Finite`, `FiniteDimensional`, tensor products, `Convex`, `Bornology.IsBounded`, `MeasureTheory.volume`, `Real.sqrt` and `Real.rpow` supply the carriers of Layer 3. Lebesgue measure is ordinary real coordinate measure, with value one in dimension zero. `AddSubgroup.index` has the finite/infinite convention of `Mathlib/GroupTheory/Index.lean`. `Submodule.IsLattice` expresses finite integral generation and full rational span; `IsZLattice` expresses a full real lattice, with discreteness stated separately where its interface requires it. Semisimple decomposition uses `isSemisimpleRing_iff_pi_matrix_divisionRing` in `Mathlib/RingTheory/SimpleModule/WedderburnArtin.lean` with its division-ring and finite-dimensional algebra variants; The real matrix inequality, with the library Frobenius norm instance, is `Matrix.frobenius_norm_mul` in `Mathlib/Analysis/Matrix/Normed.lean`, line 657. In the commutative case use `Algebra.discr` from `Mathlib/RingTheory/Discriminant.lean`, line 67; the order discriminant below extends to noncommutative rings.
 
 ### From Tau Ceti
 
 Consume `TauCeti.AlgebraicGeometry.AbelianVariety` (`TauCeti/AlgebraicGeometry/AbelianVariety/Basic.lean`, line 95), `TauCeti.AlgebraicGeometry.AbelianVariety.End` (`End/Basic.lean`, line 83) and `TauCeti.AlgebraicGeometry.AbelianVariety.IsIsogeny` (`Isogeny.lean`, line 61). The carrier bundles a proper geometrically integral group scheme over a field; IsIsogeny means finite and surjective, and End is the additive reindexing of native Hom with composition multiplication.
+
+Consume `TauCeti.Isogeny` and `TauCeti.Isogeny.degree` from `TauCeti/AlgebraicGeometry/EllipticCurve/Isogeny/Degree.lean`, line 99, for native affine Weierstrass isogenies and their positive function-field degree, including inseparable degree. The elliptic acceptance statement uses algebraic-closure base change of nonsingular Weierstrass curves.
 
 Consume `ZLattice.covolume_sq_eq_det_gram` from `TauCeti/Algebra/Module/ZLattice/Covolume.lean`, line 42, for a full discrete lattice in a finite-dimensional real inner-product space with its canonical Borel volume. Its Gram determinant is 1 on the zero-dimensional lattice.
 
@@ -48,19 +52,37 @@ Consume `TauCeti.zHat.ringEquivPiPadicInt`, its two continuity theorems and `Tau
 
 A3.9 gives the rational Rosati anti-involution and its adjoint convention; integral preservation is used under a principal polarization. A3.3–A3.5 give finite-flat quotients, divisibility by torsion and dual isogenies. A4.1 gives the integral Tate module, its finite-level reductions and continuous Galois action. A5.1 gives V/Λ, the rank-2g lattice and Betti–Tate comparison; A5.2–A5.4 give the stated Riemann form and normalized intersection degree. A6.1 and A6.6 give degree, rational degree and its homogeneous law; A6.4–A6.8 give simple Hom spaces, reducibility, finite free Hom and semisimplicity; A6.10–A6.14 give the abelian characteristic polynomial, trace and Rosati positivity. A6.20 defines all geometric Hom over k(A[3],B[3]); A6.22 gives coefficient Hom and its units; A6.25 gives relative Hom rigidity and extension over a normal base.
 
-What AbelianSchemesAndArithmeticModuli must provide (gap:hom-specialization-saturation): For abelian schemes over a connected normal characteristic-zero variety, specialization from geometric generic Hom to geometric fibre Hom is injective with torsion-free cokernel, compatibly with every finite étale torsion realization.
+What AbelianSchemesAndArithmeticModuli must provide (gap:hom-specialization-saturation): For abelian schemes over a connected normal characteristic-zero variety, the cokernel of the A6.25(1) specialization map on geometric Hom is torsion-free, compatibly with every finite étale torsion realization.
 
 ### From TauCetiRoadmap.ArakelovGeometryAndAbelianHeights
 
 Sections 3.4–3.5 give stable height, invariance under finite base change, products and duality. Section 4.4 gives |h_F(A)−h_F(B)|≤½log deg f for an isogeny f:A→B. Section 5.9 gives h_F(E)≤h(j(E))/12+3. Sections 6.1–6.2 give Zarhin's principal polarization over k with both multipliers 8; §6.5 gives the dimension-dependent lower height bound used to separate simple-factor heights. These statements apply to the native abelian carriers and use the supplier's Faltings normalization.
 
-Sections 5.7–5.8 give the modular-origin/theta height and its comparison with stable height; §2.7 fixes metric shifts. Section 2.4 below proves the lower bound for a nonzero fixed cusp value from these height inputs.
+Sections 5.7–5.8 give the modular-origin/theta height, its comparison with stable height and Masser’s matrix lemma; §2.7 fixes metric shifts. Section 2.4 below proves the lower bound for a nonzero fixed cusp value from these height inputs.
 
-What ArakelovGeometryAndAbelianHeights must provide (gap:hermitian-maximal-slope): For nonzero Hermitian vector bundles over rings of integers, extend §§1.1–1.6 to the maximum normalized slope of saturated subbundles, with dual, tensor, symmetric-power and norm-controlled morphism inequalities and the metric-rescaling law, compatible with the semistable-extension convention for abelian tangent bundles.
+The following slope conventions use normalized degree and all complex embeddings, counting conjugate embeddings separately (gr14 §3.2, pp. 358–359, gr14 lines 607–639; §6.8, p. 377, gr14 lines 1432–1441; bost95 §4.3, pp. 131–132).
+
+What ArakelovGeometryAndAbelianHeights must provide (gap:hermitian-maximal-slope-existence): For a nonzero Hermitian vector bundle Ē over O_K, μ̂_max(Ē)=max_F deĝ(F̄)/([K:ℚ] rank F), over nonzero saturated subbundles with induced metrics, is attained and invariant under finite scalar extension with pulled-back lattices and metrics; for e∈E_K nonzero, −h_Ē(e)≤μ̂_max(Ē), with h the normalized adelic vector height.
+
+What ArakelovGeometryAndAbelianHeights must provide (gap:hermitian-symmetric-power-slope): For a Hermitian bundle Ē of rank r≥1 and every integer n≥0, with the induced quotient Hermitian norms on SymⁿĒ, μ̂_max(SymⁿĒ)≤n(μ̂_max(Ē)+2 log r).
+
+What ArakelovGeometryAndAbelianHeights must provide (gap:hermitian-morphism-slope): For a nonzero K-linear map φ:E_K→F_K between nonzero Hermitian bundles, μ̂_min(Ē)≤μ̂_max(F̄)+h(φ), where μ̂_min(Ē)=−μ̂_max(Ē∨) and h(φ) is the normalized sum of log operator norms at all places, using the integral lattice norms at finite places.
+
+What ArakelovGeometryAndAbelianHeights must provide (gap:hermitian-metric-rescaling): Multiplying every archimedean squared norm on a nonzero Hermitian bundle by c>0, with the finite lattices fixed, changes μ̂_max by −½ log c.
+
+What ArakelovGeometryAndAbelianHeights must provide (gap:semistable-abelian-tangent-metric): For a polarized abelian variety (A,L)/K, use the integral tangent lattice of its Néron model and the Riemann metric after a finite semistable extension; this Hermitian tangent bundle, its dual and their symmetric powers pull back isometrically under further finite extensions, so their normalized slopes are independent of the chosen semistable extension.
+
+**Checks.**
+
+- The trivial Hermitian line over ℤ has μ̂_max=0 and h(1)=0. Its nth symmetric power has slope 0=n(0+2 log 1), including n=0; the zero bundle is excluded.
+- Multiplication by 2 on the trivial line has archimedean operator norm 2 and 2-adic operator norm 1/2, so h(φ)=log 2−log 2=0 and the morphism inequality is 0≤0. A zero map would have no finite logarithmic height and is excluded.
+- Rescale squared norms of the trivial line by 4. Its slope becomes −log 2; on the dual it becomes +log 2. Thus L↦L⁴ multiplies tangent lengths by 2 and raises the cotangent slope by log 2, as in §6.3.
+- For a rank-two trivial bundle, the n=2 symmetric-power bound is 0≤4 log 2; for a degree-two scalar extension both degree and field degree double, leaving slope 0.
+- On the Gaussian elliptic curve with principal Riemann metric, tangent period 1 has length 1. After L↦L⁴ its length is 2 and the cotangent norm is halved. A Néron lattice before semistable extension is not substituted for the pulled-back semistable lattice.
 
 ### From TauCetiRoadmap.GeometryOfNumbersAndQuadraticArithmetic
 
-Sections 0.1–0.3 give the Gram/covolume-square identity, Hadamard, integral adapted bases and basis transport. Sections 1.1–1.2 give the symmetric convex-body Minkowski interface, positive successive minima and a genuine integral basis bounded in terms of them; §1.5 gives the upper second-theorem product bound. Finite real dimension, full discreteness and positive interior are used where required. IntegralLattices Layers 0–1 supply the integral-form carrier. In rank zero the empty Gram determinant and product are 1. The norm-body measure in §3.3 uses the ordinary real coordinate normalization, so a complex disk has area π.
+Sections 0.1–0.3 give the Gram/covolume-square identity, Hadamard, integral adapted bases and basis transport. Section 1.2 gives positive successive minima and a genuine integral basis bounded in terms of them; §1.5 gives the upper second-theorem product bound. Finite real dimension, full discreteness and positive interior are used where required. IntegralLattices Layers 0–1 supply the integral-form carrier. In rank zero the empty Gram determinant and product are 1. The norm-body measure in §3.3 uses the ordinary real coordinate normalization, so a complex disk has area π.
 
 ### From TauCetiRoadmap.SemisimpleAlgebras
 
@@ -84,7 +106,7 @@ What AutomorphicBundles must provide (gap:fixed-siegel-cusp-family): For every g
 
 ### From TauCetiRoadmap.FaltingsFinitenessAndIsogenyTheorems
 
-R28.4.5–R28.4.6 give semisimplicity of V_ℓ(A) over number fields and the integral Hom Tate comparison for every prime. In §7.4 they are applied over the bounded finite extension associated to an open image subgroup. In §8.1 this is the number-field starting case of the finitely generated field extension, rather than the extension itself.
+R28.6.6 gives the cyclic non-CM elliptic Hom lattice and its degree law. R28.6.7 gives the integral commutant at almost all primes and its separable-order centralizer reduction; §7.3 specifies a saturation exceptional set and injectivity at every prime, and §7.6 adds uniformity over subgroups of index at most d. R28.4.5–R28.4.6 give semisimplicity of V_ℓ(A) over number fields and the integral Hom Tate comparison for every prime. In §7.4 they are applied over the bounded finite extension associated to an open image subgroup. In §8.1 this is the number-field starting case of the finitely generated field extension, rather than the extension itself.
 
 ### From TauCetiRoadmap.ArithmeticGaloisRepresentations
 
@@ -100,7 +122,7 @@ IG.2.4 gives Hilbertianity for finitely generated characteristic-zero fields; IG
 
 ## How to read the build
 
-Layer 1 fixes the metric, traces and coordinates. Layer 2 obtains period and endomorphism estimates. Layer 3 supplies the noncommutative order bound. Layer 4 combines it with Hom discriminants to remove polarizations, and Layer 5 finishes factorization and descent of fields of definition. Layer 6 supplies the sharper elliptic rate independently of the coarse exponent. Layer 7 combines residual refinement, centralizer reduction and fixed-prime control; Layer 8 transfers the resulting integral bound through specialization. Each Needs line separates the statement's carriers from the inputs of its indicated proof route. The two Layer 3 headlines expressible on native carriers are `division_norm_body_lower_bound` and `class_index_bound`; the other headline carrier requirements are recorded in Suggested.lean.
+Layer 1 fixes the metric, traces and coordinates. Layer 2 obtains period and endomorphism estimates. Layer 3 supplies the noncommutative order bound. Layer 4 combines it with Hom discriminants to remove polarizations, and Layer 5 finishes factorization and descent of fields of definition. Layer 6 supplies the sharper elliptic rate independently of the coarse exponent. Layer 7 combines residual refinement, centralizer reduction and fixed-prime control; Layer 8 transfers the resulting integral bound through specialization. Each Needs line separates the statement's carriers from the inputs of its indicated proof route. The native-carrier headlines in Suggested.lean are `class_index_bound` and `elliptic_isogeny_j_height_bound`; the missing carriers of the other headlines are recorded in its module docstring.
 
 
 ## Layer 1: Rosati metrics and coordinate bounds
@@ -259,7 +281,7 @@ For g≥1 and v∈End(A), with degree zero on nonisogenies, deg(v)≤(qλ(v)/(2g
 
 ### 1.7 Coordinate trace formula
 
-In normalized principally polarized coordinates write τ=x+iy in Siegel space and let ε be the standard alternating matrix in the chosen symplectic lattice basis. Then qλ(v)=tr(ρ(v)ερ(v)ᵀε⁻¹)=2 Re tr(κ(v)y overline(κ(v))ᵀy⁻¹). The bilinear Gram entry is 2 Re tr(κ(v)y overline(κ(w))ᵀy⁻¹). In orthonormal real coordinates this becomes tr(MMᵀ). (mz20, §4 p653 equation(22) and p655 Gram determinant following Lemma 4.1, corrected by realification; mz20 line 783).
+In normalized principally polarized coordinates write τ=x+iy in Siegel space and let ε be the standard alternating matrix in the chosen symplectic lattice basis. Then qλ(v)=tr(ρ(v)ερ(v)ᵀε⁻¹)=2 Re tr(κ(v)y overline(κ(v))ᵀy⁻¹). The bilinear Gram entry is 2 Re tr(κ(v)y overline(κ(w))ᵀy⁻¹). In orthonormal real coordinates this becomes tr(MMᵀ). (mz20, §4 p653 equation(22) and p655 Gram determinant following Lemma 4.1, corrected by realification; mz20 line 788).
 
 *Proof route.* Express Rosati as the adjoint for the Riemann form. Compute the rational adjoint matrix and pass to the Hermitian complex matrix. Realify the complex trace; check v=w=1 and v=i on the square CM curve.
 
@@ -337,19 +359,62 @@ The API records the following facts.
 
 ### 2.2 Masser–Wüstholz period theorem
 
-For each g≥1 there are C_g,κ_g>0 such that for every principally polarized G/k of dimension g, D=[k:ℚ], every complex embedding and every period ω, Δ_L(G_ω)≤C_g max(1,D,h_F(G),q_L(ω))^κ_g. Here q_L is the squared Hermitian period norm, and h_F is stable. Replacing q by its square root changes only the exponent. The field of definition of G_ω need not be k. (mw94-preprint, §4 internal p6, restatement of the MW93 period theorem; bost95, Theorem 2.2 pp119–120; §5.1 pp132–136; mw93-isog-preprint line 205).
+For each g≥1 and each normalized polarization degree d=Δ_L(G)≥1 there is κ_g>0 depending only on g and C_(g,d)>0 such that for every polarized G/k of dimension g with L ample and Δ_L(G)=d, D=[k:ℚ], every complex embedding and every period ω, Δ_L(G_ω)≤C_(g,d) max(1,D,h_F(G),q_L(ω))^κ_g. Here q_L is the squared Hermitian period norm, and h_F is stable. Replacing q by its square root changes only the exponent. The field of definition of G_ω need not be k. (mw94-preprint, §4 internal p6, restatement of the MW93 period theorem; bost95, Theorem 2.2 pp119–120; §5.1 pp132–136; gr14 lines 63–68).
 
-*Proof route.* Use the auxiliary-section method for the polarized exponential map: an auxiliary section with controlled arithmetic height, a tangent-space height estimate and a multiplicity estimate bound the smallest algebraic subgroup carrying the period. Normalize its intersection degree and stable height as stated; the zero period is treated separately.
+*Proof route.* Apply the filtered interpolation estimate of §2.2b to produce a nonzero section with prescribed period jets; its arithmetic degree and jet-norm argument supplies noninjectivity without assuming a separate height bound on that section. The tangent-space height estimate and §2.2a’s multiplicity theorem then bound the smallest algebraic subgroup carrying the period. Normalize its intersection degree and stable height as stated; the zero period is treated separately.
 
-*Needs:* §2.1; ArakelovGeometryAndAbelianHeights §3.4; AbelianSchemesAndArithmeticModuli §A5.2–A5.4.
+*Needs:* §2.1; the multiplicity and interpolation targets of §§2.2a–2.2b; ArakelovGeometryAndAbelianHeights §§3.4, 5.8 and the semistable tangent-metric and slope contracts; AbelianSchemesAndArithmeticModuli §A5.2–A5.4.
 
 **Checks.**
 
-- For ω=0 the normalized degree is 1 and the right side is≥1 after enlarging C_g.
+- For ω=0 the normalized degree is 1 and the right side is≥1 after enlarging C_(g,d).
 
-- For A simple and ω≠0 the bound applies to A itself, with its fixed principal degree 1.
+- For A simple and ω≠0 the bound applies to A itself, with normalized degree d. On an elliptic curve, L of degree 3 gives Δ_L(A)=3 and polarization map-degree 9, whereas a principal line gives Δ_L(A)=1.
 
 - On a principally polarized elliptic curve, every nonzero period has minimal subgroup E and normalized degree 1; the zero period has subgroup 0 and degree 1. Thus both require a right side at least 1.
+
+### 2.2a Multiplicity estimate on an abelian variety
+
+Let A be an abelian variety of dimension g≥1 over an algebraically closed characteristic-zero field, L an ample line bundle, S⊂A a finite subscheme, and s a nonzero global section of L. Write S^[g] for the scheme-theoretic image of Sᵍ under addition. If s restricts to zero on S^[g], prove that some proper connected abelian subvariety B⊊A satisfies length(p(S)) d_L(B)≤d_L(A), where p:A→A/B is the quotient, p(S) is its scheme-theoretic image, and d_L(Y)=c₁(L)^(dim Y)[Y] is the unnormalized intersection degree, with d_L(0)=1. This includes nonreduced S (bost95 Theorem 4.1, p. 128, bost95 lines 381–389).
+
+*Proof route.* Use the intersection-theoretic zero estimate on the successive translated vanishing loci; retain scheme-theoretic multiplicities when passing to the stabilizing connected subgroup. Applied to L^D it gives the corresponding factor D^codim B after cancelling D^dim B.
+
+*Needs:* AbelianSchemesAndArithmeticModuli §§A3.3, A5.2–A5.4, A6.5 for quotients, intersection degree and connected abelian subvarieties; finite subscheme images and intersection multiplicities in the native scheme theory.
+
+**Checks.**
+
+- On an elliptic curve with a degree-two line and a section vanishing on two distinct points, g=1, B=0 and length(S) d_L(0)=2·1=2=d_L(A).
+- For L=O_E(2[0]) and the length-two infinitesimal neighbourhood of 0, the canonical section vanishes on S, and again 2·1=2. Replacing scheme length by number of geometric points would give 1 and lose the multiplicity information.
+- The zero section would vanish on a length-three subscheme for a degree-two line, giving the false inequality 3≤2 on an elliptic curve. Thus nonzero s is indispensable. With S empty the left side is 0 and B=0 works; dimension zero is excluded because it has no proper abelian subvariety.
+
+### 2.2b Auxiliary sections and interpolation along a period
+
+Let A/k have dimension g≥2, let L be symmetric ample, choose a finite extension k′/k, a k′-rational hyperplane W⊂Lie(A), an embedding σ₀:k′→ℂ, and a primitive nonzero period γ∈W_σ₀. Use the semistable tangent metric from the supplier contract and define h(W) as minus the normalized Arakelov degree of its saturated integral lattice. Put d=[k:ℚ], h=max(1,h_Del(A),log d_L(A),h(W)) and r=max(1,‖γ‖²_L), where h_Del(A)=h_F(A)+(g/2)log π. For Q∈A_σ₀ and i≥0, define V(Q,W,i) by requiring that every translation-invariant W-derivative of total order at most i vanish at Q. Thus V(Q,W,i) has length binomial(g−1+i,g−1), including length 1 at i=0.
+
+The jet API is the following.
+
+- V(Q,W,i) is the translate of V(0,W,i), with its full scheme structure.
+- Its restriction maps for i≥j give the usual truncation of W-jets.
+- Its degree-i graded piece is Symⁱ(W∨); its cumulative length is the displayed binomial coefficient.
+
+For integers D,M,N≥2 put P=exp(γ/N) and T=V(0,W,2gM)∪⋃_(i=0)^(N−1)V(iP,W,gM). Prove that a constant C_g>0 depending only on g makes the restriction H⁰(A_σ₀,L^D)→H⁰(T,L^D|T) noninjective whenever
+
+    M ≥ C_g D r,
+    D^g d_L(A) ≥ C_g M^(g−1),
+    M² ≥ C_g N^(2g) D d r (D + M h + log N).
+
+The kernel therefore supplies a nonzero auxiliary section with all the stated jet vanishings. This is a sufficient condition, not a characterization of the kernel (bost95 Lemma 5.4, equations (5.9)–(5.10), pp. 136–137, bost95 lines 598–603; proof §§5.3.1–5.3.4, pp. 139–145). Its proof must cover arbitrary reduction: the potentially good case of §5.3 is extended using the semistable cubist-model argument indicated at bost95 lines 624–628. For the arbitrary ample line in §2.2, symmetrization L⊗[−1]*L and its degree and norm scaling reduce to the symmetric case.
+
+*Proof route.* Filter restriction by W-jets, compare the arithmetic degree of the section module with the sum of the norms of the filtered maps, and estimate these norms by Cauchy and Schwarz bounds. Combine the resulting nonzero section with §2.2a; induction on a proper abelian subvariety and the tangent-height estimate of bost95 Proposition 5.3 give §2.2. The sharp estimate of §6.3 uses the same geometric multiplicity theorem with the different jet metrics and parameter bounds of gr14 §§6.1–6.9; the three inequalities here alone do not give its sharp exponent.
+
+*Needs:* §2.2a; AbelianSchemesAndArithmeticModuli §§A5.1–A5.4 for exponential, periods, line sections and intersection degree; ArakelovGeometryAndAbelianHeights §§1.1–1.6, 2.4, 2.7, 3.4, 5.8 for Hermitian sections, semistable cubist models, height and the matrix lemma; the precise maximal-slope, symmetric-power, morphism and tangent-metric supplier contracts. The filtered jet-norm and section-degree argument is part of the proof of the displayed noninjectivity theorem (bost95 Proposition 4.4 and Lemmas 5.7–5.8). Its tangent-height inputs are targets here with explicit statements: there is c_g>0 depending only on g such that h(Lie B)≤c_g max(1,h_Del(A),log d_L(A),log d_L(B)) for every geometric abelian subvariety B⊂A; and h(F)≥−c_g max(1,h_Del(A),log d_L(A)) for every subspace F⊂Lie(A_k′) over every finite extension k′/k. Both heights use the saturated semistable tangent lattice and the restricted Riemann metrics, and rank-zero height is 0 (bost95 Proposition 5.3(i)–(ii), pp. 134–135, bost95 lines 553–567; proof of (i), Appendix D, pp. 155–157, and of (ii), §5.3.4, pp. 144–145).
+
+**Checks.**
+
+- For g=2 and i=0,1,2 the jet lengths are 1,2,3, respectively. A reduced-point model would return 1 at every order and omit the derivative conditions.
+- For g=3 and i=2, the six monomials 1,x,y,x²,xy,y² give length binomial(4,2)=6. Forgetting mixed derivatives would give only 5.
+- For the tangent-height inputs, B=0 and F=0 both give h=0, with d_L(0)=1 and log 1=0. Rescaling L to L⁴ raises the height of a rank-b tangent subspace by b log 2 and log d_L(B) by b log 4. A degree-two field extension doubles the unnormalized degree and its denominator, leaving each normalized height unchanged.
+- For g=2,M=N=2, primitivity makes P a nonzero 2-torsion point. T has lengths 9 at 0 and 5 at P, hence length 14, rather than 9+5+5=19: the smaller jet at 0 is absorbed by the union. For a principally polarized surface and D=4, h⁰(L⁴)=16, so the restriction has kernel dimension at least 2. The arithmetic inequalities are sufficient, not necessary.
 
 ### 2.3 Short period bases
 
@@ -357,7 +422,7 @@ For each g≥1 there are C_g,c_g>0: if A/k is principally polarized of dimension
 
 *Proof route.* Use the restricted-polarization degree/covolume identity. The matrix-height lower bound for a nonzero period and Minkowski’s second theorem bound successive minima; the integral basis theorem then gives a basis of the whole period lattice. The matrix-height estimate follows by reducing the period matrix and combining its imaginary-part bound with the fixed modular-origin height comparison.
 
-*Needs:* AbelianSchemesAndArithmeticModuli §A5.1; GeometryOfNumbersAndQuadraticArithmetic §1.5; GeometryOfNumbersAndQuadraticArithmetic §0.2, 1.2; ArakelovGeometryAndAbelianHeights §3.4; §2.5; ArakelovGeometryAndAbelianHeights §§5.7–5.8.
+*Needs:* AbelianSchemesAndArithmeticModuli §A5.1; GeometryOfNumbersAndQuadraticArithmetic §1.5; GeometryOfNumbersAndQuadraticArithmetic §0.2, 1.2; ArakelovGeometryAndAbelianHeights §3.4; §2.5; ArakelovGeometryAndAbelianHeights §§5.7–5.8 (including Masser’s matrix lemma).
 
 **Checks.**
 
@@ -371,9 +436,11 @@ For each g≥1 there are C_g,c_g>0: if A/k is principally polarized of dimension
 
 For each g≥1 fix once and for all a weight and a finite ℚ-rational Fourier-normalized family of scalar Siegel cusp forms with no common zero on H_g, and the analytic trivialization used for that Fourier normalization. For a ppav A/k represented by τ, at least one nonzero value u from this fixed family satisfies log max(1,|u(τ)|⁻¹)≤C_g D max(1,h_F(A)). The choice and scaling of the family are part of the theorem, not arbitrary input. (mz20, Lemma 4.3 proof pp656–657, citing MW93 periods Lemmas 8.4 p439 and 8.6 p440, equation (7.4) p436; mz20 line 937).
 
+First prove the arithmetic evaluation estimate: for the fixed rational family and Fourier trivialization, at least one nonzero coordinate u at the origin satisfies log max(1,|u(τ)|⁻¹)≤c_g D max(1,h_Θ(A)), with fixed theta level and coordinate system. This is a target here, with no arbitrary rescaling of u (mw93-periods Lemma 8.4, p. 439, Lemma 8.6, p. 440; mz20 lines 945–952). The comparison h_Θ(A)≤c_g max(1,h_F(A)) is consumed from ArakelovGeometryAndAbelianHeights §5.8.
+
 *Proof route.* Choose the common-weight cusp family once. Compare its modular-origin height with stable height, then apply the arithmetic value estimate to a nonzero coordinate in the chosen Fourier trivialization. The constants include the fixed family and cannot vary with the variety.
 
-*Needs:* ArakelovGeometryAndAbelianHeights §3.4; AutomorphicBundles §B4.2; AutomorphicBundles §B4.9, B5.13; AutomorphicBundles B4.2, B5.13 and its fixed-family contract; ArakelovGeometryAndAbelianHeights §§5.7–5.8.
+*Needs:* the fixed-coordinate arithmetic value estimate in this subsection; ArakelovGeometryAndAbelianHeights §3.4; AutomorphicBundles §B4.2; AutomorphicBundles §B4.9, B5.13; AutomorphicBundles B4.2, B5.13 and its fixed-family contract; ArakelovGeometryAndAbelianHeights §§5.7–5.8.
 
 **Checks.**
 
@@ -469,7 +536,7 @@ Fix dimension g and map-degreesδ_A,δ_B of k-defined polarizations. There are C
 
 ### Dependencies
 
-Layer 1; ArakelovGeometryAndAbelianHeights §§3.4–3.5, 4.4; AbelianSchemesAndArithmeticModuli A3.3–A3.4, A5.1–A5.4, A6.20; the exact cusp-family and value-height contracts; GeometryOfNumbersAndQuadraticArithmetic §§0.2, 1.2, 1.5.
+Layer 1; ArakelovGeometryAndAbelianHeights §§3.4–3.5, 4.4, 5.8 and the precise slope and tangent-metric contracts; AbelianSchemesAndArithmeticModuli A3.3–A3.4, A5.1–A5.4, A6.20; the exact cusp-family and value-height contracts; GeometryOfNumbersAndQuadraticArithmetic §§0.2, 1.2, 1.5.
 
 ## Layer 3: Order discriminants and class indices
 
@@ -507,7 +574,7 @@ The API records the following facts.
 
 ### 3.2 Order class index
 
-Let D be a finite-dimensional division ℚ-algebra and O⊂D a unital full ℤ-lattice subring. For e≥1 consider finitely generated left O-modules M whose underlying abelian group is ℤ-torsion-free and whose rationalization ℚ⊗_ℤ M is a left D-vector space of dimension e. Let b(M) be the least additive index [M:F] among free left O-submodules F≅O^e of full ℤ-rank. Such F exist by clearing denominators in a D-basis. Define i_e(O)=sup_M b(M) in ℕ∪{∞}; also i_0(O)=1. Finiteness is the class-index theorem, not a defining assumption. (mw95, §2 p8, definition preceding(2.1); mw95, End of §3 pp13–14, equation (3.11); mw95 line 148).
+Let D be a finite-dimensional division ℚ-algebra and O⊂D a unital full ℤ-lattice subring. For e≥1 consider finitely generated left O-modules M whose underlying abelian group is ℤ-torsion-free and whose rationalization ℚ⊗_ℤ M is a left D-vector space of dimension e. Let b(M) be the least additive index [M:F] among free left O-submodules F≅O^e of full ℤ-rank. Such F exist by clearing denominators in a D-basis. Define i_e(O)=sup_M b(M) in ℕ∪{∞}; also i_0(O)=1. Finiteness is the class-index theorem, not a defining assumption. (mw95, §2 p8, definition after (2.1); mw95, End of §3 pp13–14, equation (3.11); mw95 lines 157–159).
 
 *Proof route.* Represent M as a lattice in D^e after a rational basis choice. Clear common denominators to embed O^e and take the least positive finite index. Take the supremum in the extended naturals so that the definition does not presuppose Jordan–Zassenhaus finiteness. Transport right modules to left modules over the opposite algebra. For x∈D, the subalgebra ℚ[x] is a field; its left and right actions on D have equal dimension over ℚ[x], so L_x and R_x have equal rational trace. Cyclicity gives tr_D(yx)=tr_D(xy), hence the opposite order has the same regular-trace discriminant.
 
@@ -541,11 +608,11 @@ The API records the following facts.
 
 ### 3.3 Division-algebra norm body
 
-Let D be a finite-dimensional division ℚ-algebra of ℚ-dimension m≥1. Put N_D(x)=det_ℚ(L_x), extended to D_ℝ. In any full rational lattice basis Λ put p(D)=sqrt(|disc(Λ)|) times the supremum of the coordinate volumes of bounded convex bodies C with nonempty interior, C=−C, and C⊂{x:|N_D(x)|<1}. Symmetry is about zero. Strict interior may be replaced by limiting compact bodies. The product is independent of Λ and the chosen basis; it is a positive finite real number, with upper bound supplied by Minkowski applied to any full order lattice. In rational basis coordinates `regularNormCoordinates` is the determinant of the real scalar extension of left multiplication: its ij entry is ∑_k x_k b_i*(b_k b_j), with b_i* the ith coordinate functional. Define `divisionNormBody` by the displayed discriminant-normalized volume supremum on these real coordinates; it is the same invariant. (mw95, §2 pp 8–9, norm body definition; §3 pp 10–13; mw95 line 170).
+Let D be a finite-dimensional division ℚ-algebra of ℚ-dimension m≥1. Put N_D(x)=det_ℚ(L_x), extended to D_ℝ. In any full rational lattice basis Λ put p(D)=sqrt(|disc(Λ)|) times the supremum of the coordinate volumes of bounded convex bodies C with nonempty interior, C=−C, and C⊂{x:|N_D(x)|<1}. Symmetry is about zero. Strict interior may be replaced by limiting compact bodies. The product is independent of Λ and the chosen basis; it is a positive finite real number, with upper bound supplied by Minkowski applied to any full order lattice. In rational basis coordinates the regular norm is the determinant of the real scalar extension of left multiplication: its ij entry is ∑_k x_k b_i*(b_k b_j), with b_i* the ith coordinate functional. Use the displayed discriminant-normalized volume supremum on these real coordinates. (mw95, §2 pp 8–9, norm body definition; §3 pp 10–13; mw95 line 170).
 
 *Proof route.* Transform the regular-trace determinant and Lebesgue coordinate volume under the same basis change; their factors cancel. Use a sufficiently small Euclidean ball for positivity. For a full order lattice, every nonzero integral vector has nonzero integral regular norm. Minkowski therefore bounds the volume of any eligible symmetric convex body; this proves finiteness of the supremum.
 
-*Needs:* §3.1; Mathlib `Matrix.det`; GeometryOfNumbersAndQuadraticArithmetic §1.1.
+*Needs:* §3.1; Mathlib `Matrix.det`; Mathlib `MeasureTheory.exists_ne_zero_mem_lattice_of_measure_mul_two_pow_lt_measure`.
 
 The API records the following facts.
 
@@ -577,7 +644,7 @@ The API records the following facts.
 
 ### 3.4 Division norm-body bound
 
-Every finite-dimensional division ℚ-algebra D of ℚ-dimension m satisfies p(D)≥2^m. Its native-carrier acceptance statement is `division_norm_body_lower_bound`. (mw95, §3, Lemmas3.1–3.3 pp 10–13, especially Lemma 3.3 p13; mw95 line 319).
+Every finite-dimensional division ℚ-algebra D of ℚ-dimension m satisfies p(D)≥2^m. (mw95, §3, Lemmas3.1–3.3 pp 10–13, especially Lemma 3.3 p13; mw95 line 319).
 
 *Proof route.* Over the number-field center use the supplied cyclic maximal subfield and its cyclic-algebra presentation. In these coordinates construct the bounded symmetric convex bodies at every real and complex place, apply Hadamard to their regular norms, and multiply the coordinate volumes with the discriminant factor. The arithmetic bridge in the supplier contracts is part of this route.
 
@@ -597,7 +664,7 @@ For every full order O in a finite-dimensional division ℚ-algebra D and e≥1,
 
 *Proof route.* Minkowski in the regular norm body gives i_1≤2^m sqrt|discO|/p(D). Use p(D)≥2^m to obtain i_1≤sqrt|discO|. Filter a rank-e lattice by a rational D-line; lift a free sublattice of the quotient and combine it with a rank-one sublattice to prove i_e≤i_1 i_(e−1). Apply the same theorem to Oᵒᵖ⊂Dᵒᵖ and use disc(Oᵒᵖ)=disc(O) to obtain the right-module bound, including the rank-one case used in the Hom cross-discriminant argument.
 
-*Needs:* §3.2; §3.4; GeometryOfNumbersAndQuadraticArithmetic §1.1.
+*Needs:* §3.2; §3.4; Mathlib `MeasureTheory.exists_ne_zero_mem_lattice_of_measure_mul_two_pow_lt_measure`.
 
 **Checks.**
 
@@ -639,7 +706,7 @@ Let A be isotypic of dimension g≥1 and O=End_k(A) of ℚ-rank m, where the k-i
 
 ### Dependencies
 
-Native rational algebras, modules, traces, determinants and real volume; GeometryOfNumbersAndQuadraticArithmetic §1.1; SemisimpleAlgebras Layers 2 and 6; ClassFieldTheory Layer 10 and its cyclic-maximal-subfield contract; QuadraticFormInvariants Layer 7B; Layer 1 and AbelianSchemesAndArithmeticModuli A6.4, A6.8 only for the isotypic comparison.
+Native rational algebras, modules, traces, determinants and real volume; Mathlib `MeasureTheory.exists_ne_zero_mem_lattice_of_measure_mul_two_pow_lt_measure`; SemisimpleAlgebras Layers 2 and 6; ClassFieldTheory Layer 10 and its cyclic-maximal-subfield contract; QuadraticFormInvariants Layer 7B; Layer 1 and AbelianSchemesAndArithmeticModuli A6.4, A6.8 only for the isotypic comparison.
 
 ## Layer 4: Cross-discriminants and polarization removal
 
@@ -807,7 +874,7 @@ Let A/k be an actual product of pairwise nonisogenous k-simple powers, of dimens
 
 For each g≥1 there are C_g,κ_g>0 such that A/k of dimension g admits a k-isogeny A→∏A_i^(e_i), where the A_i are pairwise nonisogenous k-simple k-abelian subvarieties of A and degree≤C_g max(1,D,h_F(A))^κ_g. The factors are not assumed principally polarized. (mw95, Theorem I p5; proof §7 pp 22–23; final p23; mw95 line 620).
 
-*Proof route.* Use existing qualitative Poincaré reducibility to choose a minimal-degree factorization N:A→A₀. The preceding product-target lemma bounds another map A→A₀ by C max(1,D,h_F(A₀))^κ. Height variation gives h_F(A₀)≤h_F(A)+½log N, so N≤C(H+log N)^κ. Absorb the logarithm for N≥1 and retain polynomial dependence on D from MW94(5.3),(6.4).
+*Proof route.* Use existing qualitative Poincaré reducibility to choose a minimal-degree factorization N:A→A₀. The preceding product-target lemma bounds another map A→A₀ by C max(1,D,h_F(A₀))^κ. Height variation gives h_F(A₀)≤h_F(A)+½log N, so N≤C(H+log N)^κ. Absorb the logarithm for N≥1 and retain polynomial dependence on D from mw94-preprint (5.3), (6.4).
 
 *Needs:* §5.1; AbelianSchemesAndArithmeticModuli §A6.5; ArakelovGeometryAndAbelianHeights §4.4.
 
@@ -851,6 +918,18 @@ Let k be a number field and k⊂K⊂k̄. For K-isogenous A,B defined over k, the
 
 - For k=ℚ,K=ℚ̄, [K:k] is infinite but [k:ℚ]=1. All Hom descends to K∩k(A[3],B[3]), of relative degree at most |GL_(2g)(ℤ/3)|²; when g=1 this is 48²=2304.
 
+The relative-field factorization theorem is also a target: for every extension K/k and A/k of dimension g≥1, there is a K-isogeny A→∏A_i^(e_i), with A_i⊂A_K pairwise K-nonisogenous K-simple abelian subvarieties and degree≤C_g max(1,[k:ℚ],h_F(A))^κ_g. The constants do not depend on K (mw95 Theorem I, p. 5, and the relative proof on p. 23, mw95 lines 661–671).
+
+*Proof route for factorization.* For algebraic K take k₁=K∩k(A[3]). Subvariety and Hom descent show that simplicity and nonisogeny over k₁ persist over K; apply §5.2 over the bounded-degree number field k₁. For arbitrary K first descend to the relative algebraic closure of k in K by rigidity, then extend scalars.
+
+*Needs for factorization:* §5.2; AbelianSchemesAndArithmeticModuli §§A6.20, A6.25.
+
+**Checks for factorization.**
+
+- K=k gives §5.2 and a k-simple A has the single factor A with degree 1.
+- For K=k̄, all factors are geometrically simple; [K:k] may be infinite, while in dimension 1 the definition field degree is at most |GL₂(𝔽₃)|=48.
+- For A=E² over k and K=k(t), a non-CM E remains simple and Hom(E,E)=ℤ, so the factorization has multiplicity 2 and degree 1. An isogeny to two labelled copies does not make them pairwise nonisogenous factors.
+
 ### 5.5 Geometric isogeny estimate
 
 For every g≥1 there are C_g,κ_g>0 such that geometrically isogenous dimension-g abelian varieties A,B over the same number field k admit a k̄-isogeny A→B of degree≤C_g max(1,h_F(A),[k:ℚ])^κ_g. The map need not be k-defined or preserve a polarization. The same geometric bound holds after any algebraically closed overfield ofk̄ by rigidity of Hom. (ts18, Theorem 2.3 pp382–383; mw95, Theorem II p6; final field-degree argument p23; mw95 line 688).
@@ -883,11 +962,11 @@ Layers 2 and 4; AbelianSchemesAndArithmeticModuli A3.3–A3.4, A6.5, A6.20, A6.2
 
 ### 6.1 Non-CM period graph
 
-Let E₁,E₂/k be geometrically isogenous elliptic curves without CM. Choose period bases(ω₁₁,ω₁₂),(ω₂₁,ω₂₂), and let ω=(ω₁₁,ω₁₂,ω₂₁,ω₂₂) in Lie(E₁²×E₂²). The minimal period subvariety G_ω is, after an extension of degree≤2, isomorphic to E₁×E₂. IfN is the least geometric isogeny degree E₁→E₂, the finite intersection G_ω∩(0²×E₂²) has order N. (gr14, §7.1 Proposition 7.3 and §7.2 Theorem 7.5, pp 383–386; gr14 line 1770).
+Let E₁,E₂/k be geometrically isogenous elliptic curves without CM. Choose period bases(ω₁₁,ω₁₂),(ω₂₁,ω₂₂), and let ω=(ω₁₁,ω₁₂,ω₂₁,ω₂₂) in Lie(E₁²×E₂²). The minimal period subvariety G_ω is, after an extension of degree≤2, isomorphic to E₁×E₂. IfN is the least geometric isogeny degree E₁→E₂, the finite intersection G_ω∩(0²×E₂²) has order N. (gr14, §7.1 Proposition 7.3 and §7.2 Theorem 7.5, pp 383–386; gr14 line 1813).
 
-*Proof route.* Use the rank-one non-CM Hom lattice to obtain the at-most-quadratic definition field. Choose compatible period bases for a minimal cyclic isogeny and write the graph using it and its dual. The absence of CM excludes a one-dimensional subgroup containing both independent periods; compute the indicated finite intersection.
+*Proof route.* Use FaltingsFinitenessAndIsogenyTheorems R28.6.6’s rank-one non-CM Hom lattice to obtain the at-most-quadratic definition field. Choose compatible period bases for a minimal cyclic isogeny and write the graph using it and its dual. The absence of CM excludes a one-dimensional subgroup containing both independent periods; compute the indicated finite intersection.
 
-*Needs:* §2.1; AbelianSchemesAndArithmeticModuli §A6.4; AbelianSchemesAndArithmeticModuli §A6.20.
+*Needs:* §2.1; FaltingsFinitenessAndIsogenyTheorems §R28.6.6; AbelianSchemesAndArithmeticModuli §A6.4; AbelianSchemesAndArithmeticModuli §A6.20.
 
 **Checks.**
 
@@ -899,7 +978,7 @@ Let E₁,E₂/k be geometrically isogenous elliptic curves without CM. Choose pe
 
 ### 6.2 CM period graph
 
-For geometrically isogenous CM elliptic curves E₁,E₂/k, choose shortest nonzero periodsω₁,ω₂ in their complex period lattices and put ω=(ω₁,ω₂) in Lie(E₁×E₂). Its minimal period subvariety is elliptic after an extension of degree≤12. Its two projections are isogenies of degrees N₁,N₂, and dualizing the first then composing the second gives E₁→E₂ of degree N₁N₂. (gr14, §7.1 Proposition 7.3 and §7.4 Lemmas7.7–7.8, pp 383–384,389–390; gr14 line 1950).
+For geometrically isogenous CM elliptic curves E₁,E₂/k, choose shortest nonzero periodsω₁,ω₂ in their complex period lattices and put ω=(ω₁,ω₂) in Lie(E₁×E₂). Its minimal period subvariety is elliptic after an extension of degree≤12. Its two projections are isogenies of degrees N₁,N₂, and dualizing the first then composing the second gives E₁→E₂ of degree N₁N₂. (gr14, §7.1 Proposition 7.3 and §7.4 Lemmas7.7–7.8, pp 383–384,389–390; gr14 lines 1995–2012).
 
 *Proof route.* Use the rank-two integral Hom action to bound its finite Galois image by 12. The CM relation between shortest periods gives a one-dimensional minimal subgroup. Its nonzero projections to the two elliptic curves are isogenies; the elliptic dual has the same degree.
 
@@ -930,13 +1009,16 @@ Prove the sharp surface estimate. Let X/k have dimension 2, let L be a k-defined
 
 Here μ̂_max is the maximum normalized slope of nonzero saturated subbundles of the cotangent bundle with the dual Riemann metric and the integral tangent lattice of a semistable Néron model, computed after finite semistable extension. The normalized averages and this slope convention make the expression independent of that extension. The enlarged constant and additive 2 are a consequence of Proposition 6.9; its printed numerical constants are not part of the export. The low-degree range d_L(X)<10¹⁰ is treated directly in the elliptic application, before invoking this estimate (gr14, §3.2, Proposition 6.9 and its proof, pp. 358–359, 380–381; gr14 lines 607, 1609).
 
-*Needs for this input:* §2.1; AbelianSchemesAndArithmeticModuli §§A5.1–A5.4; ArakelovGeometryAndAbelianHeights §§1.1–1.6, 2.7, 4.4 and its Hermitian maximal-slope contract; the matrix-period bound and conormal slope estimates proved here by gr14 §§3.1–3.2, 6.1–6.9. The auxiliary-section route uses Hermitian norms on symmetric powers, interpolation at jets along the exponential map, a multiplicity estimate for proper algebraic subgroups, and the norm-controlled morphism slope inequality. Its surface specialization retains the same auxiliary construction as §§6.1–6.7 and sharpens the final inequalities of §6.8.
+The two preparatory estimates in this subsection are also targets, for every polarized X/k of dimension g≥1 over a number field: there is c_g>0 depending only on g such that D⁻¹Σ_σρ(X_σ,L_σ)⁻²≤c_g max(1,h_F(X),log d_L(X)); and μ̂_max(t_X∨)≤(g+1)(h_Del(X)+½log h⁰(X,L))+2g⁵log 2. The first is the matrix-period bound of gr14 Theorem 1.1, p. 345, gr14 lines 96–103; the second is gr14 Proposition 3.10, p. 359, gr14 lines 668–687, with h⁰(X,L)=d_L(X)/g!. Their proofs use principalization, the supplied matrix lemma, height variation and the morphism slope inequality. These are bounds on the actual period and cotangent objects, with the semistable metric convention fixed above.
+
+*Needs for this input:* §2.1; AbelianSchemesAndArithmeticModuli §§A5.1–A5.4; ArakelovGeometryAndAbelianHeights §§1.1–1.6, 2.7, 4.4 and its maximal-slope, symmetric-power, morphism, metric-rescaling and semistable tangent-metric contracts; the matrix-period and cotangent slope estimates just stated; §§2.2a–2.2b for the multiplicity and interpolation mechanism, with the precise metrics and parameters of gr14 §§6.1–6.9 for the sharp estimate. The auxiliary-section route uses Hermitian norms on symmetric powers, interpolation at jets along the exponential map, a multiplicity estimate for proper algebraic subgroups, and the norm-controlled morphism slope inequality. Its surface specialization retains the same auxiliary construction as §§6.1–6.7 and sharpens the final inequalities of §6.8.
 
 **Checks for the sharp input.**
 
 - On the square Gaussian E² with the principal product line L₀, d_L₀(E²)=2, Δ_L₀(E²)=1, and the diagonal B has d_L₀(B)=2. The period (1,0) has distance 1/√2 from Lie(B), while ρ=1; replacing avoidance length by shortest period changes its inverse square from 2 to 1.
 - On E² with L=L₀ to the tensor power a=10⁵, a coordinate factor has d_L(B)=a, d_L(E²)=2a²=2·10¹⁰, x=1/(2a)=5·10⁻⁶, and δ=ρ=√a, so δ⁻²=10⁻⁵. Since log(2·10¹⁰)>23, even the degree term with C=1 exceeds 1.15·10⁻⁴; the displayed bound is consistent. The unscaled product has degree 2 and is excluded from this large-degree assertion.
 - Under L↦L⁴ the values are x/4, 2δ, 2ρ, and μ̂_max+log 2; both inverse-square quantities scale by 1/4. Under a degree-two field extension, the embedding sum and D both double. An opposite slope sign or an unnormalized embedding sum fails these equalities.
+- For the two preparatory bounds, the square Gaussian product has ρ=1 and embedding average ρ⁻²=1, d_L(X)=2 and h⁰(L)=1. The cotangent bound at g=2 is μ̂_max≤3h_Del(X)+64 log 2. Under L↦L⁴, ρ⁻² becomes 1/4, h⁰(L) becomes 16, and the slope rises by log 2 while its displayed upper bound rises by 6 log 2. These changes fix both the factorial and the slope sign.
 
 
 There is an absolute C>0 such that geometrically isogenous elliptic curves E₁,E₂/k, D=[k:ℚ]≥1, admit a geometric isogeny of degree≤C D² max(1,h_F(E₁),log D)². Both CM and non-CM cases are included; no k-rationality of the isogeny is asserted. (gr14, Theorem 1.4 p347; §7.2 Theorem 7.5 pp384–386; §7.3 pp386–389 and §7.4 pp389–390; Proposition 6.9 invoked in those proofs; gr14 line 1609).
@@ -955,11 +1037,11 @@ There is an absolute C>0 such that geometrically isogenous elliptic curves E₁,
 
 ### 6.4 Elliptic j-height isogeny bound
 
-There is an absolute C>0 such that for D=[k:ℚ]≥2, any geometrically isogenous elliptic E₁,E₂/k admit a geometric isogeny of degree≤C D²(log D)²(1+h(j(E₁)))², where h is absolute logarithmic Weil height. For D=1 use C max(1,h(j(E₁)))² instead. (mz20, Lemma 2.2, p. 644; gr14, Theorem 1.4 p347; §7.3 pp386–389 and §7.4 pp389–390; mz20 line 397).
+The headline `elliptic_isogeny_j_height_bound` states that there is an absolute C>0 such that for D=[k:ℚ]≥2, any geometrically isogenous elliptic E₁,E₂/k admit a geometric isogeny of degree≤C D²(log D)²(1+h(j(E₁)))², where h is absolute logarithmic Weil height. For D=1 use C max(1,h(j(E₁)))² instead. (mz20, Lemma 2.2, p. 644; gr14, Theorem 1.4 p347; §7.3 pp386–389 and §7.4 pp389–390; mz20 line 397).
 
 *Proof route.* Substitute the supplier bound h_F(E₁)≤h(j(E₁))/12+3. For D≥2, log D is bounded below by log 2, so max(1,h_F,log D)≤c(log D)(1+h(j)). Treat D=1 separately rather than returning a zero bound.
 
-*Needs:* §6.3; ArakelovGeometryAndAbelianHeights §5.9.
+*Needs:* §6.3; ArakelovGeometryAndAbelianHeights §5.9; `TauCeti.Isogeny.degree`; `NumberField.absLogHeight₁`.
 
 **Checks.**
 
@@ -979,7 +1061,7 @@ There is an absolute C>0 such that for D=[k:ℚ]≥2, any geometrically isogenou
 
 ### Dependencies
 
-The minimal period subvariety of §2.1; AbelianSchemesAndArithmeticModuli A3.5, A6.4, A6.20; ArakelovGeometryAndAbelianHeights §§3.4, 4.4, 5.9; the sharp dimension-two slope/period argument of §6.3. The coarse exponent in §2.2 does not supply this rate.
+The minimal period subvariety of §2.1; AbelianSchemesAndArithmeticModuli A3.5, A6.4, A6.20; ArakelovGeometryAndAbelianHeights §§3.4, 4.4, 5.8–5.9 and the precise slope and tangent-metric contracts; FaltingsFinitenessAndIsogenyTheorems R28.6.6; §§2.2a–2.2b; the sharp dimension-two slope/period argument of §6.3. The coarse exponent in §2.2 does not supply this rate.
 
 ## Layer 7: Uniform integral Tate bounds over number fields
 
@@ -1019,7 +1101,7 @@ The API records the following facts.
 
 ### 7.2 Adelic algebra product comparison
 
-For the adelic Galois image U of A over a number field with all geometric endomorphisms defined, and every open U′⊂U, B(U′) is closed and equals ∏_ℓ Z_ℓ[pr_ℓU′] inside End_Ẑ(T). Consequently its finite additive index in Z is the product of the local additive indices. This statement includes the distinction between the algebraic and closed generated algebras. (ry25, Proof of Theorem 4.7 p261, product assertion attributed there to reference[11], Theorem 2.7; deligne84, Theorem 2.7, printed p39; ry25 line 483).
+For the adelic Galois image U of A over a number field with all geometric endomorphisms defined, and every open U′⊂U, B(U′) is closed and equals ∏_ℓ Z_ℓ[pr_ℓU′] inside End_Ẑ(T). Consequently its finite additive index in Z is the product of the local additive indices. This statement includes the distinction between the algebraic and closed generated algebras. (ry25, proof of Theorem 4.7 p261, product formula, ry25 lines 492–497; deligne84, Theorem 2.7, printed p39, deligne84 line 534, supplies the full-Galois commutant theorem; the product formula for every open subgroup is proved by the route below).
 
 *Proof route.* By the imported Serre independence theorem, after a finite number-field extension the image is a product V=∏V_ℓ, open in U. Every open U′⊂U contains an open product W=∏W_ℓ inside V: shrink finitely many local factors in a basic open neighborhood of 1. Each local algebra Z_ℓ[W_ℓ] is a free finite Z_ℓ-module of rank ≤(2g)². Nakayama chooses at most (2g)² generators from W_ℓ itself. Pad with identities and use the product W to assemble that many adelic group elements. They span ∏Z_ℓ[W_ℓ] over Ẑ, so B(W) is this product and is compact. Since [U′:W] is finite, a coset decomposition expresses B(U′) as a finite sum c_jB(W). It is the continuous image of a finite product of compact modules, hence compact and closed. Every closed Ẑ-submodule of ∏End_Zℓ(T_ℓ) equals the product of its coordinate projections: apply the native orthogonal prime idempotents, take finite sums, then take limits. The projections here are exactly Z_ℓ[pr_ℓU′]. Thus the algebraic finite-sum span equals the local product without silently defining brackets as closure.
 
@@ -1037,7 +1119,7 @@ For the adelic Galois image U of A over a number field with all geometric endomo
 
 ### 7.3 Integral centralizer reduction
 
-Choose an embedding K̄→ℂ, L=H₁(A(ℂ),ℤ), E₀=End_ℤ(L), and generators e₁,…,e_r of E=End_K̄(A). Let ψ:E₀→E₀^r be f↦([f,e_i])_i, Z₀=kerψ, and W⊂E₀∨ the lattice spanned by the rows of ψ. Put sat(W)=(W⊗ℚ)∩E₀∨ and M_A=[sat(W):W]. For every prime ℓ the natural Z₀⊗𝔽_ℓ→End_𝔽ℓ(L/ℓL) is injective. For ℓ∤M_A its image equals Cent_End_𝔽ℓ(L/ℓL)(E⊗𝔽_ℓ), and Z₀⊗ℤ_ℓ identifies with the integral Tate centralizer. (ry25, Proof of Theorem 4.7 pp 262–263; ry25 line 542).
+Choose an embedding K̄→ℂ, L=H₁(A(ℂ),ℤ), E₀=End_ℤ(L), and generators e₁,…,e_r of E=End_K̄(A). Let ψ:E₀→E₀^r be f↦([f,e_i])_i, Z₀=kerψ, and W⊂E₀∨ the lattice spanned by the rows of ψ. Put sat(W)=(W⊗ℚ)∩E₀∨ and M_A=[sat(W):W]. Unlike the separable-order reduction in FaltingsFinitenessAndIsogenyTheorems R28.6.7, this specifies the exceptional set ℓ∤M_A and proves injectivity at every prime. For every prime ℓ the natural Z₀⊗𝔽_ℓ→End_𝔽ℓ(L/ℓL) is injective. For ℓ∤M_A its image equals Cent_End_𝔽ℓ(L/ℓL)(E⊗𝔽_ℓ), and Z₀⊗ℤ_ℓ identifies with the integral Tate centralizer. (ry25, Proof of Theorem 4.7 pp 262–263; ry25 line 542).
 
 *Proof route.* Z₀ is a saturated kernel in the free abelian group E₀, so reduction is injective at every prime. Apply Smith normal form to ψ: outside the prime divisors of the torsion index of its row lattice, kernel formation commutes with reduction. Flat base change to Z_ℓ and the imported Betti–Tate comparison identify the integral kernel. The row lattice lies in E₀∨, not E₀.
 
@@ -1085,11 +1167,11 @@ Let A/k be over a number field with End_k=End_k̄ and d≥1. There is M′(A,k,d
 
 ### 7.6 Large-prime full integral algebra
 
-For A/k and d as above, if ℓ>max(M_A,M′(A,k,d)), then for every open U′⊂U with [U:U′]≤d, Z_ℓ[pr_ℓU′]=Z_ℓ, where Z_ℓ is the integral End centralizer. In particular all large-prime local indices are 1. (ry25, Theorem 4.7 proof pp 262–263, finite-field double centralizer and Nakayama step; ry25 line 591).
+For A/k and d as above, if ℓ>max(M_A,M′(A,k,d)), then for every open U′⊂U with [U:U′]≤d, Z_ℓ[pr_ℓU′]=Z_ℓ, where Z_ℓ is the integral End centralizer. This extends FaltingsFinitenessAndIsogenyTheorems R28.6.7 by uniformity over subgroups of index at most d. In particular all large-prime local indices are 1. (ry25, Theorem 4.7 proof pp 262–263, finite-field double centralizer and Nakayama step; ry25 line 591).
 
 *Proof route.* The preimage of U′ in G_k has index≤d, so the residual refinement applies. A faithful semisimple module over the residual image algebra satisfies the finite-field double-centralizer theorem; its image algebra is the reduction of Z_ℓ. Apply Nakayama to the finite Z_ℓ-module quotient of Z_ℓ by the generated algebra. The threshold is M′, not the unrelated final adelic bound M.
 
-*Needs:* §7.3; §7.5; pinned finite semisimple double-centralizer theorem.
+*Needs:* §7.3; §7.5; FaltingsFinitenessAndIsogenyTheorems §R28.6.7; pinned finite semisimple double-centralizer theorem.
 
 **Checks.**
 
@@ -1105,13 +1187,13 @@ For A/k over a number field with End_k=End_k̄ and every d≥1 there is M(A,k,d)
 
 *Proof route.* For each exceptional prime use the fixed-prime maximum M_ℓ. For every other prime the local algebra is the whole integral centralizer. The adelic algebra product comparison gives M=∏exceptional M_ℓ. This constant depends on A,k,d, not only on dimension.
 
-*Needs:* §7.2; §7.4; §7.6.
+*Needs:* §7.2; §7.4; §7.6; FaltingsFinitenessAndIsogenyTheorems §R28.6.7.
 
 **Checks.**
 
 - All but finitely many local indices equal 1.
 
-- M may depend on A,k,d; the dimension-only constants of QI.5 are not asserted here.
+- M may depend on A,k,d; the dimension-only constants of §5.5 are not asserted here.
 
 - If the exceptional local bounds are 4 and 9 at 2 and 3 and 1 elsewhere, the adelic bound is 36. If U′=U and every local algebra is full, the index and the allowed bound are 1.
 
@@ -1129,7 +1211,7 @@ For A/k over a number field with End_k=End_k̄ and every d≥1 there is M(A,k,d)
 
 ### Dependencies
 
-Layer 5; FaltingsFinitenessAndIsogenyTheorems R28.4.5–R28.4.6; AbelianSchemesAndArithmeticModuli A4.1, A5.1, A6.7, A6.22; NeronModelsAndSemistableAbelianVarieties §6.0; ArithmeticGaloisRepresentations §5.8; the pinned double-centralizer, profinite-integer and open-subgroup theorems.
+Layer 5; FaltingsFinitenessAndIsogenyTheorems R28.4.5–R28.4.6, R28.6.7; AbelianSchemesAndArithmeticModuli A4.1, A5.1, A6.7, A6.22; NeronModelsAndSemistableAbelianVarieties §6.0; ArithmeticGaloisRepresentations §5.8; the pinned double-centralizer, profinite-integer and open-subgroup theorems.
 
 ## Layer 8: Specialization and finitely generated fields
 
@@ -1137,9 +1219,11 @@ Layer 5; FaltingsFinitenessAndIsogenyTheorems R28.4.5–R28.4.6; AbelianSchemesA
 
 If K/ℚ is finitely generated as a field, A,B/K are abelian varieties and ℓ is any prime, then Hom_K(A,B)⊗ℤ_ℓ→Hom_GK(T_ℓA,T_ℓB) is an isomorphism, and V_ℓA is semisimple. K need not be a number field. Finite generation as a ℚ-algebra is not the hypothesis. (noot95, Corollary 1.5 proof pp 164–165, citing Faltings–Wüstholz Chapter VI, section 3; noot95 line 164).
 
-*Proof route.* Spread A and B over a normal finite-type model over a number field. The generic/specialization extension of the number-field Tate theorem yields rational Hom comparison and semisimplicity. Torsion divisibility and saturation of the native Hom realization upgrade the rational comparison to the integral ℤ_ℓ statement. The field is finitely generated as a field throughout.
+The function-field Tate comparison is a target of this subsection: for every finitely generated K/ℚ and every prime ℓ, the natural map Hom_K(A,B)⊗ℚ_ℓ→Hom_GK(V_ℓA,V_ℓB) is bijective. Its algebraicity assertion, that each invariant map is a ℚ_ℓ-linear combination of K-defined homomorphisms, is owned here (fw84 Chapter VI §3, uncertified; the use of that result is explicit in noot95 line 172). It is not inferred from equality of specialized Galois images.
 
-*Needs:* FaltingsFinitenessAndIsogenyTheorems §R28.4.5–R28.4.6; AbelianSchemesAndArithmeticModuli §A6.25; AbelianSchemesAndArithmeticModuli §A4.1.
+*Proof route.* Spread A and B over a normal geometrically integral finite-type model over a number field, extending to abelian schemes on a dense open. Establish the function-field rational algebraicity theorem just stated, starting from the number-field comparison and the relative Hom scheme and descent of algebraic homomorphisms; this is the substantive function-field step. Independently, specialize A×B at a closed point with full image at the selected ℓ using the torsion specialization and Hilbertian contracts; number-field semisimplicity then transfers to its generic representation. Finally the integral Hom realization is saturated: if the realization of f is divisible by ℓⁿ, f kills A[ℓⁿ], so the quotient property factors f through [ℓⁿ] over K. A saturated inclusion of finite ℤ_ℓ-lattices which becomes bijective over ℚ_ℓ is bijective. None of these steps uses §8.2.
+
+*Needs:* FaltingsFinitenessAndIsogenyTheorems §R28.4.5–R28.4.6; AbelianSchemesAndArithmeticModuli §§A6.25, A6.7, A3.3–A3.4, A4.1; NeronModelsAndSemistableAbelianVarieties §6.0; InverseGaloisAndArithmeticFundamentalGroups §IG.2.4 and §IG.2.6; ArithmeticGaloisRepresentations §§5.8, 6.4a.
 
 **Checks.**
 
@@ -1217,7 +1301,7 @@ Let K/ℚ be finitely generated, A/K with End_K=End_K̄, U its adelic image and 
 
 ### 8.5 Uniform finitely-generated-field Tate bound
 
-Let K/ℚ be finitely generated, A/K with End_K=End_K̄, U its adelic image and Z its geometric-End centralizer. For every d≥1 there is M(A,K,d)≥1 such that every open U′⊂U with [U:U′]≤d satisfies [Z:B(U′)]≤M. This is the full finitely-generated-field form of RY25 Theorem 4.7. (ry25, Theorem 4.7 p260 and deduction from Proposition 4.8 pp 263–265; ry25 line 652).
+Let K/ℚ be finitely generated, A/K with End_K=End_K̄, U its adelic image and Z its geometric-End centralizer. For every d≥1 there is M(A,K,d)≥1 such that every open U′⊂U with [U:U′]≤d satisfies [Z:B(U′)]≤M. This is the full finitely-generated-field form of ry25 Theorem 4.7. (ry25, Theorem 4.7 p260 and deduction from Proposition 4.8 pp 263–265; ry25 line 652).
 
 *Proof route.* Set W′=W∩U′. It is open in W and [W:W′]≤[U:U′]≤d. Apply the supported-image bound, then use B(W′)⊂B(U′)⊂Z to decrease the additive index.
 
@@ -1250,17 +1334,6 @@ Layer 7; AbelianSchemesAndArithmeticModuli A4.1, A6.7, A6.25 with Hom-specializa
 ## Downstream consumers
 
 ComplexMultiplicationAndExplicitReciprocityPartII consumes the geometric dimension-only isogeny estimate and the polarization-free order bounds. Quantitative moduli and unlikely-intersection arguments consume the Rosati discriminant, weak Siegel bounds and quadratic elliptic rate. The uniform integral Tate hypothesis in Richard–Yafaev consumes §7.7 and §§8.4–8.5 with the geometric-End centralizer and the algebraic finite span. A group-image conclusion requires additional subgroup theory; it does not follow from equality of generated algebras.
-
-OpenImageTheoremsForAbelianVarieties has the following distinct scope, supplied in the indicated direction by this roadmap. Its endomorphism and finite-algebra layer consumes the residual refinement and proves absolute irreducibility from a scalar commutant plus semisimplicity. Its elliptic layer proves eventual GL₂ over every number field without CM, using Borel, Cartan-normalizer and exceptional subgroup exclusion. Its integral lifting layer handles SL₂ and Sp₄ for ℓ≥5 and multiplier independence for products. Its surface layer proves eventual GSp₄ under geometric End=ℤ, including the exact tame-inertia and self-twist hypotheses. Its real multiplication layer retains coefficient-field, inner-twist and polarization conditions. Its density layer targets the elliptic supersingular density-zero theorem and nonconstancy of trace(V⊗²−4∧²V)χ⁻¹ on each relevant Sato–Tate component, including USp₄ and the normalizer of SU₂×SU₂, before the automorphy applications. The semistable-over-ℚ descent of End is distinguished from the weaker assertion End_ℚ=ℤ: a Weil restriction from an imaginary quadratic field supplies a negative control for that weaker hypothesis. These scopes consume this package and give it no prerequisites.
-
-**Consumer boundary Checks.**
-
-- A non-CM elliptic curve and its nontrivial quadratic twist have a geometric isomorphism of degree 1, while rational Hom is zero when the twisting character acts nontrivially. The quantitative geometric estimate allows this example (gr14, Remark 7.4, p. 384; gr14 line 1761).
-- Let F/ℚ be imaginary quadratic and E/F have geometric End=ℤ and no geometric isogeny to its conjugate. The geometric endomorphism algebra of its Weil restriction is ℚ×ℚ, with the two factors interchanged by Galois; its rational endomorphisms are the diagonal ℤ. Thus rational and geometric End have ranks 1 and 2. The surface consumer must retain geometric End or the precise semistable descent hypothesis (AbelianSchemesAndArithmeticModuli §§A6.4, A6.31).
-- The Gaussian elliptic curve has geometric End rank 2 and is excluded from the non-CM open-image direction, while §6.3 includes it. The primes 2 and 3 satisfy 2<5 and 3<5, so an integral lifting theorem quantified only over ℓ≥5 supplies no assertion at those primes; §§7.7 and 8.5 still include their integral indices.
-- The diagonal subgroup {(1,1),(−1,−1)} of {±1}² has order 2 and surjects onto both order-2 factors, while the product has order 4. Separate surjectivity does not give the joint character independence required by the product-image consumer.
-- A degree-two residue coefficient field matters: SL₂(𝔽₉) has order 9(9²−1)=720, whereas SL₂(𝔽₃) has order 3(3²−1)=24. The real multiplication direction retains the actual coefficient field, its splitting, polarization and inner-twist conditions.
-- On the compact group {±1}×S¹ the function f(ε,z)=(1+ε)(z−1) is nonconstant on the identity component, with f(1,1)=0 and f(1,−1)=−4, but vanishes on the other component. Its zero set has Haar probability 1/2. A density argument using only the identity component misses this positive contribution.
 
 ## Worked examples
 

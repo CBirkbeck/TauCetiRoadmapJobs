@@ -1,4 +1,5 @@
 import Mathlib
+import TauCeti.AlgebraicGeometry.EllipticCurve.Isogeny.Degree
 
 /-!
 # Quantitative isogenies and uniform integral Tate bounds: target signatures
@@ -15,7 +16,9 @@ Polarization-free discriminant bounds, quantitative
 simple factorization and the rational, relative and geometric isogeny bounds require
 stable Faltings height and the abelian degree API. The sharp surface avoidance-period
 estimate requires polarized period lattices and the Hermitian cotangent slope;
-the quadratic elliptic bounds require stable height and its j-invariant comparison. The adelic product
+the quadratic elliptic stable-height bound of §6.3 requires stable Faltings height.
+The j-height bound of §6.4 is statable using native Weierstrass curves, isogenies
+and absolute logarithmic Weil height, and is stated below. The adelic product
 comparison, uniform residual Tate refinement, uniform integral number-field theorem,
 finitely generated field Tate comparison, endomorphism-preserving specialization,
 and the supported-image and full finitely generated field index theorems require
@@ -36,35 +39,6 @@ noncomputable def regularOrderDiscriminant {D : Type*} [Ring D]
   Matrix.det (fun i j => Matrix.trace
     (LinearMap.toMatrix b b (LinearMap.mulLeft ℤ (b i * b j))))
 
-/-- The regular norm on the real scalar extension of a rational algebra, in
-coordinates of a rational basis. The displayed multiplication matrices are the
-scalar extensions of left multiplication, so no commutativity is assumed. -/
-noncomputable def regularNormCoordinates {D : Type*} [Ring D] [Algebra ℚ D]
-    {m : ℕ} (b : Module.Basis (Fin m) ℚ D) (x : Fin m → ℝ) : ℝ :=
-  Matrix.det (fun i j => ∑ k, x k * (b.repr (b k * b j) i : ℝ))
-
-/-- The discriminant-normalized supremum of volumes of bounded symmetric convex
-bodies in the strict regular-norm unit region. Coordinate volume is ordinary real
-Lebesgue volume, including at complex places. Masser–Wüstholz, §2, pp. 8–9. -/
-noncomputable def divisionNormBody {D : Type*} [DivisionRing D] [Algebra ℚ D]
-    {m : ℕ} (b : Module.Basis (Fin m) ℚ D) : ℝ :=
-  Real.sqrt |(Matrix.det (fun i j =>
-    LinearMap.trace ℚ D (LinearMap.mulLeft ℚ (b i * b j))) : ℝ)| *
-  sSup {v : ℝ | ∃ C : Set (Fin m → ℝ), Bornology.IsBounded C ∧
-    Convex ℝ C ∧ (interior C).Nonempty ∧
-    (∀ x, x ∈ C ↔ -x ∈ C) ∧
-    (∀ x ∈ C, |regularNormCoordinates b x| < 1) ∧
-    v = (MeasureTheory.volume C).toReal}
-
-/-- Every finite-dimensional division rational algebra has normalized norm-body
-invariant at least two to its rational dimension. The center need not be rational.
-Masser–Wüstholz, Factorization estimates, Lemma 3.3, p. 13. -/
-theorem division_norm_body_lower_bound
-    (D : Type*) [DivisionRing D] [Algebra ℚ D] [FiniteDimensional ℚ D]
-    {m : ℕ} (b : Module.Basis (Fin m) ℚ D) :
-    (2 : ℝ) ^ m ≤ divisionNormBody b := by
-  sorry
-
 /-- Every full order lattice in a finite-dimensional division rational algebra,
 in every positive module rank, contains a free order sublattice whose finite
 additive index is at most the absolute regular discriminant to the half-rank.
@@ -81,6 +55,23 @@ theorem class_index_bound
       f.range.toAddSubgroup.index ≠ 0 ∧
       (f.range.toAddSubgroup.index : ℝ) ≤
         Real.rpow (|regularOrderDiscriminant O b| : ℝ) ((e : ℝ) / 2) := by
+  sorry
+
+/-! ## Layer 6: Quadratic elliptic isogeny estimates -/
+
+/-- Geometrically isogenous elliptic curves over a number field of degree at least
+ two admit a geometric isogeny of degree at most an absolute constant times
+ D²(log D)²(1 + h(j(E₁)))². Both CM and non-CM curves are included.
+ Masser–Zannier, Lemma 2.2, p. 644; Gaudron–Rémond, Theorem 1.4, p. 347. -/
+theorem elliptic_isogeny_j_height_bound :
+    ∃ C : ℝ, 0 < C ∧ ∀ (k : Type*) [Field k] [NumberField k], 2 ≤ Module.finrank ℚ k →
+      ∀ (E₁ E₂ : WeierstrassCurve k) [E₁.IsElliptic] [E₂.IsElliptic],
+        Nonempty (TauCeti.Isogeny (E₁.baseChange (AlgebraicClosure k)).toAffine
+          (E₂.baseChange (AlgebraicClosure k)).toAffine) →
+        ∃ φ : TauCeti.Isogeny (E₁.baseChange (AlgebraicClosure k)).toAffine
+            (E₂.baseChange (AlgebraicClosure k)).toAffine,
+          (φ.degree : ℝ) ≤ C * (Module.finrank ℚ k : ℝ) ^ 2 *
+            Real.log (Module.finrank ℚ k) ^ 2 * (1 + NumberField.absLogHeight₁ E₁.j) ^ 2 := by
   sorry
 
 end TauCetiRoadmap.FaltingsFinitenessAndIsogenyTheoremsPartII
