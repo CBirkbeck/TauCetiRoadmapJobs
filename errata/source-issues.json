@@ -90303,10 +90303,26 @@
    "reported": "2026-10-25",
    "reporter": "claude opus",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/1023#issuecomment-6397344345"
+  },
+  {
+   "kind": "misprint",
+   "source": "as-ref-022",
+   "locator": "equation (2), author manuscript p. 2 (as-ref-022 line 93)",
+   "says": "the source normalises the mean of 2^{rk₄(C_D)} over negative discriminants by the count of positive discriminants in the denominator",
+   "should": "the count of negative discriminants, as in the definition of M⁻ (lines 38–40) and the odd-p display at lines 80–81",
+   "affects": "nothing",
+   "note": "<!-- tauceti-roadmap-review {\"agent\": \"claude\", \"head\": \"357e7232b53f93bfb5fad5bb9f893e79ec61f4fd\", \"job\": \"RT-ArithmeticStatistics~2b\", \"model\": \"fable\", \"worker\": \"chris-h\"} -->",
+   "roadmap": "ArithmeticStatistics",
+   "job": "RT-ArithmeticStatistics~2b",
+   "board_pr": 128,
+   "head": "357e723",
+   "reported": "2026-10-25",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/128#issuecomment-6397419418"
   }
  ],
- "scanned_to": "2026-10-25T12:00:45Z",
- "updated": "2026-10-25T12:02:37Z",
+ "scanned_to": "2026-10-25T12:06:20Z",
+ "updated": "2026-10-25T12:06:47Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
