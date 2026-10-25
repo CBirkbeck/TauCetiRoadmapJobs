@@ -11,8 +11,8 @@ for ClassicalArithmeticCompletion's surfaces and moves.
 Geometric connectedness of the absolute trace-minus-two level stack and the general
 coarse-degree congruence are not statable at the pins: the elliptic G-level stack,
 its rigidified compactification and its coarse forgetful degree are missing.
-Finite primitive-group structure is developed in README.md; its quantitative
-order and section bounds are stated below on native permutation subgroups. The all-prime connectivity conjecture is not asserted.
+Finite primitive-group structure and its quantitative order and section bounds
+are supporting targets in README.md. The all-prime connectivity conjecture is not asserted.
 -/
 
 open Classical
@@ -53,14 +53,14 @@ theorem stable_card_dvd (p : ℕ) [Fact p.Prime] (hp : p ≠ 3)
 def divisorPhi (n : ℕ) : ℚ := ∑ d ∈ n.divisors, (Nat.totient d : ℚ) / d
 
 /-- Rotation fixing coordinate zero on the coefficient-one surface. -/
-def rotation {R : Type*} [CommRing R] (x : Fin 3 → R) : Fin 3 → R :=
+def markoffRotation {R : Type*} [CommRing R] (x : Fin 3 → R) : Fin 3 → R :=
   ![x 0, x 2, x 0 * x 2 - x 1]
 
 /-- The exact rational formula for the number of cyclic rotation orbits. -/
 theorem rotation_orbit_count (p : ℕ) [Fact p.Prime] (hp : 2 < p) :
     (Nat.card (Quotient (Relation.EqvGen.setoid
       (fun x y : {x : Fin 3 → ZMod p // markoffEquation 1 x ∧ x ≠ 0} =>
-        y.val = rotation x.val))) : ℚ) =
+        y.val = markoffRotation x.val))) : ℚ) =
       ((p : ℚ) - 1) / 2 * divisorPhi (p - 1) +
       ((p : ℚ) + 1) / 2 * divisorPhi (p + 1) +
       (if p % 4 = 1 then (-5 * (p : ℚ) + 11) / 4 else (-7 * (p : ℚ) - 1) / 4) := by
@@ -130,14 +130,11 @@ noncomputable def maximalDivisors (n : ℕ) (x : ℝ) : Finset ℕ := by
   exact n.divisors.filter fun d => (d : ℝ) ≤ x ∧
     ∀ e ∈ n.divisors, d ∣ e → (e : ℝ) ≤ x → e = d
 
-/-- The number of prime factors counted with multiplicity. -/
-def bigOmega (n : ℕ) : ℕ := n.factorization.sum fun _ a => a
-
 /-- The rank-k size of the positive-divisor lattice. -/
-def divisorRank (n k : ℕ) : ℕ := (n.divisors.filter fun d => bigOmega d = k).card
+def divisorRank (n k : ℕ) : ℕ := (n.divisors.filter fun d => ArithmeticFunction.cardFactors d = k).card
 
 /-- Reduced positive integers, with integer-power inequalities at all odd primes. -/
-def IsReduced (n : ℕ) : Prop :=
+def IsMaxDivReduced (n : ℕ) : Prop :=
   0 < n ∧ (∀ p q : ℕ, p.Prime → q.Prime → 2 < p → 2 < q →
     p ^ ((n.factorization p + 1) / (n.factorization q + 2)) < q) ∧
   ∀ q : ℕ, q.Prime → 2 < q → n.factorization q = 0 →
@@ -145,21 +142,15 @@ def IsReduced (n : ℕ) : Prop :=
 
 /-- Every n >= 2 is uniformly dominated by a reduced integer between n and 4n-6. -/
 theorem reduced_domination (n : ℕ) (hn : 2 ≤ n) :
-    ∃ m : ℕ, IsReduced m ∧ n ≤ m ∧ m ≤ 4 * n - 6 ∧
+    ∃ m : ℕ, IsMaxDivReduced m ∧ n ≤ m ∧ m ≤ 4 * n - 6 ∧
       ∀ x : ℝ, (maximalDivisors n x).card ≤ (maximalDivisors m x).card := by
   sorry
 
 /-- The central-rank antichain bound and the normalized central binomial comparison. -/
 theorem central_rank_bound (n : ℕ) (hn : 0 < n) (x : ℝ) :
-    (maximalDivisors n x).card ≤ divisorRank n (bigOmega n / 2) ∧
-    divisorRank n (bigOmega n / 2) * 2 ^ bigOmega n ≤
-      n.divisors.card * (bigOmega n).choose (bigOmega n / 2) := by
-  sorry
-
-/-- Connectivity above the exact rational-decimal threshold quoted by Martin. -/
-theorem effective_connectivity (p : ℕ) [Fact p.Prime] (hp : 3489 * 10 ^ 389 < p)
-    (x : Fin 3 → ZMod p) (hx : markoffEquation 3 x) (hzero : x ≠ 0) :
-    Relation.ReflTransGen (moveStep 3) (fun _ => 1) x := by
+    (maximalDivisors n x).card ≤ divisorRank n (ArithmeticFunction.cardFactors n / 2) ∧
+    divisorRank n (ArithmeticFunction.cardFactors n / 2) * 2 ^ ArithmeticFunction.cardFactors n ≤
+      n.divisors.card * (ArithmeticFunction.cardFactors n).choose (ArithmeticFunction.cardFactors n / 2) := by
   sorry
 
 /-! ## Layer 6: oriented traces and level structures -/
@@ -203,8 +194,8 @@ theorem oriented_card_dvd (p : ℕ) [Fact p.Prime]
     p ∣ Nat.card {y : Fin 3 → ZMod p // Relation.ReflTransGen orientedStep x y} := by
   sorry
 
-/-- For p >= 5, full Markoff transitivity implies oriented transitivity. -/
-theorem oriented_transitivity (p : ℕ) [Fact p.Prime] (hp : 5 ≤ p)
+/-- For every prime, full Markoff transitivity implies oriented transitivity. -/
+theorem oriented_transitivity (p : ℕ) [Fact p.Prime]
     (htrans : ∀ x y : Fin 3 → ZMod p, markoffEquation 1 x → x ≠ 0 →
       markoffEquation 1 y → y ≠ 0 → Relation.ReflTransGen (gammaStep 1) x y) :
     ∀ x y : Fin 3 → ZMod p, markoffEquation 1 x → x ≠ 0 →
@@ -222,25 +213,6 @@ def mpCondition (p : ℕ) [Fact p.Prime] : Prop :=
 /-- A composite-modulus point is primitive when every prime reduction is nonzero. -/
 def primitivePoint (n : ℕ) (x : Fin 3 → ZMod n) : Prop :=
   ∀ p : ℕ, p.Prime → ∀ h : p ∣ n, ∃ i, ZMod.castHom h (ZMod p) (x i) ≠ 0
-
-/-- A proper primitive permutation group other than the alternating group has
-subexponential order when it is not two-transitive (Dixon-Mortimer, Theorem 5.3A). -/
-theorem primitive_order_bound (n : ℕ) (hn : 2 ≤ n)
-    (G : Subgroup (Equiv.Perm (Fin n))) [MulAction.IsPreprimitive G (Fin n)]
-    (hproper : G ≠ ⊤) (halt : G ≠ alternatingGroup (Fin n))
-    (htrans : ¬ MulAction.IsMultiplyPretransitive G (Fin n) 2) :
-    (Nat.card G : ℝ) < Real.exp (4 * Real.sqrt n * (Real.log n) ^ 2) := by
-  sorry
-
-/-- Alternating sections in a proper two-transitive group have logarithmically
-bounded degree (Dixon-Mortimer, Theorem 5.5B). -/
-theorem primitive_section_bound (n k : ℕ) (hn : 2 ^ 16 ≤ n)
-    (G : Subgroup (Equiv.Perm (Fin n))) [MulAction.IsPreprimitive G (Fin n)]
-    [MulAction.IsMultiplyPretransitive G (Fin n) 2]
-    (hproper : G ≠ ⊤) (halt : G ≠ alternatingGroup (Fin n))
-    (H : Subgroup G) (f : H →* alternatingGroup (Fin k))
-    (hf : Function.Surjective f) : (k : ℝ) < 6 * Real.log n := by
-  sorry
 
 /-- Local transitivity and MP imply one global Vieta word reaches every primitive point. -/
 theorem squarefree_transitivity (n : ℕ) (hn : 1 < n) (hsq : Squarefree n)

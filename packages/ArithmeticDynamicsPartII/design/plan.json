@@ -3031,14 +3031,7 @@
       ]
     }
   ],
-  "gaps": [
-  {
-    "slug": "explicit-divisor-constants",
-    "needs": "Explicit positive rational C and a natural N such that τ(n)≤C·n^(1/16) for every integer n≥N, together with proved values and domains sufficient to bound n/φ(n)≤τ(n) and produce a finite numerical endpoint for the two repaired order intervals.",
-    "supplier": "ErdosProgressionPowers",
-    "section": "Layer 0, Explicit totient and divisor bounds"
-  }
-],
+  "gaps": [],
   "sourceIssues": [
     {
       "id": "ArithmeticDynamicsPartII/E1",

@@ -42,7 +42,7 @@ authors = "William Y. Chen"
 title = "Nonabelian level structures, Nielsen equivalence, and Markoff triples"
 year = 2024
 locator_scheme = "theorem"
-locator = "Theorems 5.2.10, 5.4.4, 5.5.4, 5.5.7–5.5.9; pp. 398–417"
+locator = "Theorem 2.5.2, pp. 335–339; Proposition 3.5.2; Theorems 4.10.3, 4.10.5; Corollary 4.12.5, p. 391; Theorems 5.2.10, 5.4.4, 5.5.4, 5.5.7–5.5.9; Proposition 5.3.3, p. 409"
 url = "https://static1.squarespace.com/static/60d92f4398f4bb6a7b5a99c6/t/65dcfcb3b69a510efa7037dd/1708981427968/Chen+-+Nonabelian+level+structures%2C+Nielsen+equivalence%2C+and+Markoff+triples.pdf"
 fetched_from = "https://static1.squarespace.com/static/60d92f4398f4bb6a7b5a99c6/t/65dcfcb3b69a510efa7037dd/1708981427968/Chen+-+Nonabelian+level+structures%2C+Nielsen+equivalence%2C+and+Markoff+triples.pdf"
 fetched_at = "2026-10-23T23:41:22Z"
@@ -135,7 +135,7 @@ url = "https://link.springer.com/book/10.1007/978-1-4612-0731-3"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Section 7.5: finite primitive groups"]
+cited_for = ["Section 7.5a: finite primitive groups"]
 
 [[source]]
 id = "CKSZ14"
