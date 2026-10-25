@@ -14,9 +14,9 @@ The [headline acceptance file](Suggested.lean) records which headline statements
 
 ## Conventions
 
-Fix a prime p. Layers 0–5 use a complete algebraically closed, nontrivially rank-one valued extension C of ℚ_p, its valuation ring O_C and maximal ideal 𝔪_C. For Galois conclusions let K be a complete nontrivially rank-one valued field of mixed characteristic (0,p), and C its completed algebraic closure. The formal-duality assertions over O_K retain that generality; generic canonical identifications and model-independent coherent traces in Layer 1 use K=C. Layer 7 allows every complete nontrivially valued characteristic-zero nonarchimedean K. Residue characteristic zero is included, using the prime-to-residue branch for every finite exponent.
+Fix a prime p. Layers 0 and 2–5 use a complete algebraically closed, nontrivially rank-one valued extension C of ℚ_p, its valuation ring O_C and maximal ideal 𝔪_C; the separate characteristic-p algebraic calculation in §§3.6–3.7 is over 𝔽_p. For Galois conclusions let K be a complete nontrivially rank-one valued field of mixed characteristic (0,p), and C its completed algebraic closure. Layer 1 uses an arbitrary complete nontrivially rank-one valued field K and a chosen nonzero pseudouniformizer ϖ∈O_K: thickenings are modulo ϖⁿ⁺¹ for n≥0 and completion is derived ϖ-completion. Sections 1.6–1.7 additionally assume K algebraically closed. Its applications in Layers 0 and 2–5 specialize to K=C and ϖ=p. Layer 7 allows every complete nontrivially valued characteristic-zero nonarchimedean K. Residue characteristic zero is included, using the prime-to-residue branch for every finite exponent.
 
-An admissible formal model is flat and topologically finitely presented over the valuation ring. Formal dualizing complexes use separated models, global comparisons use separated qcqs models, and local assertions restrict to such opens. Pure dimension d means every generic component has dimension d. Write 𝔛₀=𝔛⊗O_C/p and 𝔛̄=𝔛⊗O_C/𝔪_C; reducedness of 𝔛̄ does not imply reducedness of 𝔛₀. Almostification is with respect to the flat idempotent ideal 𝔪_C, or its scalar extension on a perfectoid C-base. Almost zero means annihilation by the entire ideal. It does not mean annihilation by p or by one chosen small scalar.
+An admissible formal model is flat and topologically finitely presented over the valuation ring. Formal dualizing complexes use separated models, global comparisons use separated qcqs models, and local assertions restrict to such opens. Pure dimension d means every generic component has dimension d. In Layer 1 write 𝔛₀=𝔛⊗O_K/ϖ and 𝔛̄=𝔛⊗k_K; under K=C and ϖ=p these are 𝔛⊗O_C/p and 𝔛⊗O_C/𝔪_C; reducedness of 𝔛̄ does not imply reducedness of 𝔛₀. Almostification is with respect to the flat idempotent ideal 𝔪_C, or its scalar extension on a perfectoid C-base. Almost zero means annihilation by the entire ideal. It does not mean annihilation by p or by one chosen small scalar.
 
 Complexes are cohomological: Hⁱ(M[r])=Hⁱ⁺ʳ(M). Thus M[−a] is concentrated in degree a. All tensor products, reductions and inverse limits of complexes are derived. Underived maps are identified explicitly. A pairing is perfect when both adjoints to derived internal Hom are isomorphisms; this is distinct from finite Tor amplitude over a singular coefficient ring. RalHom denotes almost derived internal Hom. Cohomological indices in duality are integers: 2d−i is integer subtraction, with zero groups outside the stated interval. Finite coefficients ℤ/pⁿ use n≥1; ℤ/n uses n≥1, including the zero coefficient ring at n=1.
 
@@ -35,7 +35,7 @@ The completed absolute cotangent line gives the Breuil–Kisin twist {1}. Fontai
 
 ### From Mathlib
 
-Use `LinearMap.IsPerfPair` in `Mathlib/LinearAlgebra/PerfectPairing/Basic.lean`, line 39: both adjoints are bijective. The definition by itself imposes neither finite dimension nor projectivity. Use `Representation.invariants` in `Mathlib/RepresentationTheory/Invariants.lean`, line 73: the submodule consists of vectors fixed by every group element. It imposes no finiteness on the group. Use `AlgebraicGeometry.Scheme`, `ModuleCat`, `DerivedCategory`, polynomial quotients, exterior powers and the sheaf categories on their native carriers. Scheme étale sites are `AlgebraicGeometry.Scheme.smallEtaleTopology` in `Mathlib/AlgebraicGeometry/Sites/Etale.lean`, line 50; they are used only on schemes.
+Use `LinearMap.IsPerfPair` in `Mathlib/LinearAlgebra/PerfectPairing/Basic.lean`, line 39: both adjoints are bijective. The definition by itself imposes neither finite dimension nor projectivity. Use `Representation.invariants` in `Mathlib/RepresentationTheory/Invariants.lean`, line 73: the submodule consists of vectors fixed by every group element. It imposes no finiteness on the group. Use `MvPolynomial`, `Ideal.Quotient.mk`, and `Ideal.span` for polynomial quotients; `iterateFrobenius` in `Mathlib/Algebra/CharP/Lemmas.lean`, line 327; `ModuleCat.restrictScalars` in `Mathlib/Algebra/Category/ModuleCat/ChangeOfRings.lean`, line 85; and `CategoryTheory.Abelian.Ext` in `Mathlib/Algebra/Homology/DerivedCategory/Ext/Basic.lean`, line 118, for the characteristic-p root duality. Use `AlgebraicGeometry.Scheme`, `ModuleCat`, `DerivedCategory`, exterior powers and the sheaf categories on their native carriers. Scheme étale sites are `AlgebraicGeometry.Scheme.smallEtaleTopology` in `Mathlib/AlgebraicGeometry/Sites/Etale.lean`, line 50; they are used only on schemes.
 
 ### From Tau Ceti
 
@@ -85,7 +85,7 @@ RigidAnalyticGeometry §§1.1–1.2 supplies noetherianity and excellence of cla
 
 Sections 0.6, 0.8–0.9 and 2.18–2.21 supply reflexive modules, finite-presentation geometry, DQCoh, the right adjoint of proper pushforward, upper shriek and coherent dualizing complexes on their stated bases.
 
-What SchemeAndStackFoundations must provide (gap:valuation-upper-shriek): For a qcqs universally coherent base S, including Spec(O_K/pⁿ) for a rank-one valuation ring O_K and n≥1, coherent upper shriek on separated finitely presented S-schemes is a pseudofunctor on bounded-below quasi-coherent complexes, right adjoint to proper pushforward and compatible with flat base change and the smooth formula f!B≅f*B⊗Ωᵈ[d] for smooth pure-d f.
+What SchemeAndStackFoundations must provide (gap:valuation-upper-shriek): For a qcqs universally coherent base S, including Spec(O_K/ϖⁿ⁺¹) for a rank-one valuation ring O_K, nonzero pseudouniformizer ϖ and n≥0, coherent upper shriek on separated finitely presented S-schemes is a pseudofunctor on bounded-below quasi-coherent complexes, right adjoint to proper pushforward and compatible with flat base change and the smooth formula f!B≅f*B⊗Ωᵈ[d] for smooth pure-d f.
 
 What SchemeAndStackFoundations must provide (gap:valuation-duality-amplitude): For a flat separated finitely presented map f:X→S with S qcqs universally coherent and fibres of dimension at most d, f!O_S is coherent of cohomological and S-relative Tor amplitude [−d,0].
 
@@ -99,11 +99,9 @@ DerivedModuleAlgebra §§0.2, 0.4, 0.8, 0.10–0.14 supplies derived tensor, the
 
 ### From TauCetiRoadmap.EnhancedDerivedSheaves
 
-Sections 0.1–0.4 and E1.1–E1.5 supply the ringed-site enhancement, replacements, derived tensor and internal Hom, coherent functor transformations, and point-site comparison. Section E2:towers.1 supplies coherent homotopy inverse limits. The enhancement realizes the geometric cohomological-descent comparisons on complexes.
+Sections 0.1–0.4 and E1.1–E1.5 supply the ringed-site enhancement, replacements, derived tensor and internal Hom, coherent functor transformations, and point-site comparison. Section E2:towers.1 supplies coherent homotopy inverse limits. Section E5:animation.3 (`tot_filteredColimit_of_bounded`) supplies bounded totalizations: for a cosimplicial diagram with terms in D≥0 and every i≥0, Hⁱ of its totalization is computed by `Tot_{i+1}`, naturally in the diagram. The enhancement realizes the geometric cohomological-descent comparisons on complexes.
 
-What EnhancedDerivedSheaves must provide (gap:connective-totalization-truncation): For every i≥0 and every cosimplicial object `K : Delta -> D^{>=0}` of a module-derived category, restriction to `Delta_{<=i+1}` induces an isomorphism on Hⁱ of its homotopy totalization, naturally in K.
-
-The residual truncation statement is used in BH Theorem 3.10, pp.17–18, BH line 780. Geometric proper hyperdescent is supplied by DiamondEtaleCohomology §§C0.1, C0.23 and C2.10 for residue characteristic p>0, including p dividing n: proper surjections induce v-covers, and bounded-below rigid étale complexes embed fully faithfully into the v-derived category. For n invertible in O⁺, use ClassicalAdicEtaleCohomology §8.4 proper base change and its resulting proper cohomological descent; this covers every finite n in residue characteristic zero. Keep one common adequate cutoff for the hypercover and its base changes.
+This truncation bound is used in BH Theorem 3.10, pp.17–18, BH line 780. Geometric proper hyperdescent is supplied by DiamondEtaleCohomology §§C0.1, C0.23 and C2.10 for residue characteristic p>0, including p dividing n: bounded-below rigid étale complexes embed fully faithfully into the v-derived category. Proper surjections give v-covers by the surjectivity criterion of DiamondsAndVStacks §D2.2, applied on perfectoid covers after base change and transported through the rigid–diamond comparison of DiamondEtaleCohomology §C0.1. For n invertible in O⁺, use ClassicalAdicEtaleCohomology §8.4 proper base change and its resulting proper cohomological descent; this covers every finite n in residue characteristic zero. Keep one common adequate cutoff for the hypercover and its base changes.
 
 ### From TauCetiRoadmap.AInfCohomology
 
@@ -113,7 +111,7 @@ Section AI.0:integral.1 supplies the intrinsic completed cotangent line and Font
 
 Sections 2.1, 2.4 and 2.7 supply the completed structure sheaf, rational geometric Hodge–Tate comparison, absolute and relative primitive comparison with their smoothness hypotheses, singular proper constant primitive comparison and proper finite-level/integral perfectness. Section 7.2 supplies the geometric étale/pro-étale lattice comparison. The point primitive comparison is the identity, the torus character corresponds to dlog T, and the ℙ¹ top class has Tate twist (1) and trace 1.
 
-What PadicHodgeTheory must provide (gap:general-nearby-coherence): Supply the general admissible-model almost coherent nearby-cycle theorem, its derived p-completeness, reduction, amplitude [0,d] and étale base change for d-dimensional generic fibre, as in AC Theorems 6.13.5–6.13.6.
+What PadicHodgeTheory must provide (gap:general-nearby-coherence): For an admissible formal O_C-scheme 𝔛 with generic fibre X of finite dimension d and specialization ν:X_proét→𝔛_Zar, the cohomology sheaves of Rν_*(O_X⁺/p) are quasi-coherent on 𝔛₀ and have almost finitely presented sections on every formal affine (PerfectoidSpaces §P0.10); they are almost zero outside [0,d]; for 𝔛=Spf A the associated-sheaf maps Hⁱ(X_proét,O_X⁺/p)^Δ→Rⁱν_*(O_X⁺/p) are isomorphisms for all i≥0; these cohomology sheaves commute with étale base change of models; the same assertions hold for Rν_*Ô_X⁺ with adically quasi-coherent cohomology on 𝔛, and this integral complex is derived p-complete with Rν_*Ô_X⁺⊗ᴸO_C/p≅Rν_*(O_X⁺/p).
 
 What PadicHodgeTheory must provide (gap:integral-toric-field-extension): For complete algebraically closed C′/C/ℚ_p, a smooth C-affinoid with an étale map to a torus and its pulled-back perfectoid toric tower A_∞, the canonical map from the completed tensor product of A_∞° and O_C′ over O_C to (A_∞⊗̂_C C′)° is an almost isomorphism, compatible with the finite Koszul cochains.
 
@@ -121,15 +119,15 @@ These additional contracts are AC pp.170–172, AC line 7390, and BH Lemma 3.25,
 
 ### From TauCetiRoadmap.ArithmeticGaloisDuality
 
-Sections D7.1–D7.3 and R02.1.2–R02.2.3 supply derived finite/continuous group cochains, bar resolutions, Hochschild–Serre, Shapiro, coefficient changes and Mittag–Leffler limits on their stated coefficient domains. The geometric extension to ringed-site almost modules is §4.4 here. At G=C_p with trivial 𝔽_p action, H¹=𝔽_p; at an induced regular module, Shapiro gives the original module in degree zero and zero higher cohomology. Thus the imported calculus uses derived invariants in the wild case.
+Sections D7.1–D7.3 and R02.1.2–R02.2.3 supply derived finite/continuous group cochains, bar resolutions, Hochschild–Serre, Shapiro, coefficient changes and Mittag–Leffler limits on their stated coefficient domains. The geometric extension to ringed-site almost modules is §4.4 here. At G=C_p with trivial 𝔽_p action, H¹=𝔽_p; for a finite group G and an induced regular module, Shapiro gives the original module in degree zero and zero higher cohomology. Thus the imported calculus uses derived invariants in the wild case.
 
 ### From TauCetiRoadmap.DiamondsAndVStacks and TauCetiRoadmap.DiamondEtaleCohomology
 
-DiamondsAndVStacks §§D1.1–D1.6 and D1.9–D1.11 supplies disconnected perfectoid bases, field components, automatic integral flatness and their topological sheaf description. DiamondEtaleCohomology §§C0.1, C0.23 and C2.10 supply the rigid–diamond étale comparison, bounded-below embedding into v-sheaves and v-hyperdescent for every coefficient ring, with one common adequate cutoff. Proper surjections of rigid spaces induce v-covers of their diamonds. Sections C1.7–C1.12 supply comparison and base change when the base map is quasi-pro-étale, for every p-torsion exponent. Its prime-to-p alternative is a separate hypothesis. At the identity base map the exchange is the identity even with 𝔽_p coefficients; the general arbitrary-base p-primary exchange is proved in §7.6 here.
+DiamondsAndVStacks §§D1.1–D1.6 and D1.9–D1.11 supplies disconnected perfectoid bases, field components, automatic integral flatness and their topological sheaf description. Section D2.2 supplies the singleton v-cover criterion for a quasicompact perfectoid source and quasiseparated perfectoid target: a morphism is a v-cover exactly when it is surjective. DiamondEtaleCohomology §§C0.1, C0.23 and C2.10 supply the rigid–diamond étale comparison, bounded-below embedding into v-sheaves and v-hyperdescent for every coefficient ring, with one common adequate cutoff. For proper surjections of rigid spaces, apply that criterion on perfectoid covers of their base changes and transport through the §C0.1 comparison to obtain v-covers of their diamonds. Sections C1.7–C1.12 supply comparison and base change when the base map is quasi-pro-étale, for every p-torsion exponent. Its prime-to-p alternative is a separate hypothesis. At the identity base map the exchange is the identity even with 𝔽_p coefficients; the general arbitrary-base p-primary exchange is proved in §7.6 here.
 
 ### From TauCetiRoadmap.ClassicalAdicEtaleCohomology
 
-Sections 1.1–1.4 supplies classical sheaves, local systems, twists and étale/pro-étale comparisons; 7.1 supplies weak geometric field-pair comparison on its exact domain; 8.2 supplies proper algebraic/analytic comparison; 8.4 supplies all-torsion proper amplitude and projection formula; 9.5 supplies the normalized analytic smooth trace, its geometric-fibre compatibility and surjectivity for nonempty fibres; 9.7 supplies Galois equivariance and prime-to-residue duality; 10.5 supplies prime-to-residue smooth-family constructibility; 11.1 supplies field-base nonproper algebraic comparison and its purity input. These are used without importing arbitrary p-primary proper base change. On a split degree-p cover, the trace sends (1,…,1) to p, reducing to zero, and sends (1,0,…,0) to 1.
+Sections 1.1–1.4 supplies classical sheaves, local systems, twists and étale/pro-étale comparisons; 1.5(c) supplies the rank-one strict-localisation stalk formula (Rf_*K)_ξ≅RΓ(X×_Y Y(ξ),K) for qcqs f locally of weakly finite type and K bounded below, for every coefficient ring, with Y(ξ) the adic spectrum of C_ξ and its valuation ring; 3.2 supplies overconvergent sheaves, their exact closure properties, pullback and detection of isomorphisms at maximal geometric points on taut rigid spaces; 9.1 supplies overconvergence of proper direct images; 2.5, sheaf-comparison-3-2-9 (`AdicSpace.henselianComparison_bijective_of_spec`), supplies absolute affinoid comparison for arbitrary torsion sheaves; 11.2 (`ordinary_etale_cohomological_dimension`) supplies ordinary cohomological dimension ≤2d over a rank-one algebraically closed point for arbitrary p-primary torsion sheaves; 8.2 supplies proper algebraic/analytic comparison; 8.4 supplies all-torsion proper amplitude and projection formula; 9.5 supplies the normalized analytic smooth trace, its geometric-fibre compatibility and surjectivity for nonempty fibres; 9.7 supplies Galois equivariance and prime-to-residue duality; 10.5 supplies prime-to-residue smooth-family constructibility; 11.1 supplies field-base nonproper algebraic comparison and its purity input. These are used without importing arbitrary p-primary proper base change. On a split degree-p cover, the trace sends (1,…,1) to p, reducing to zero, and sends (1,0,…,0) to 1.
 
 ### From TauCetiRoadmap.HodgeTateAndCanonicalSubgroups
 
@@ -176,7 +174,7 @@ The formal and scheme-modulo-p categories agree on sheaves killed by p.
 
 For 𝔛=Spf A topologically finitely presented over O_C, RΓ identifies D_acoh(𝔛)ᵃ with D_acoh(A)ᵃ, compatibly with completed localization and reduction. For F∈D⁻_acoh and G∈D⁺_acoh, RalHom(F,G) is bounded below almost coherent and is computed by the affine derived Hom. Proper topologically finitely presented maps preserve almost coherent cohomology; boundedness is retained in the almost category. All derived completeness claims are derived p-completeness, not exactness of ordinary completion on arbitrary modules. (AC Theorem 4.8.6, Corollary 4.8.16, Lemma 4.9.7(1), Theorem 5.1.6, pp. 108–118; AC line 4725.)
 
-One proof route is as follows. Use derived completed localization and the affine equivalence for derived complete complexes; almost coherent cohomology makes the associated-sheaf functor t-exact. Approximate almost finitely presented sheaves to any prescribed finitely generated subideal of 𝔪_C by coherent sheaves, as in AC Theorem 4.7.6. Apply the valuation-formal-proper-mapping contract of AdicSpacesPartIII §§R2.2–R2.8 to each coherent approximation, using its associated-sheaf comparison as well as coherence of Hⁱ (AC Theorem 5.1.5, pp.116–117, AC line 4990). Then use finite Čech descent and these approximations to obtain the almost proper-mapping assertion of AC Theorem 5.1.6 (AC line 5058); apply affine Ext comparison to internal Hom. Use the boundedness order in AC Lemma 4.9.7(2).
+One proof route is as follows. Use derived completed localization and the affine equivalence for derived complete complexes; almost coherent cohomology makes the associated-sheaf functor t-exact. Approximate almost finitely presented sheaves to any prescribed finitely generated subideal of 𝔪_C by coherent sheaves, as in AC Theorem 4.7.6. Apply the valuation-formal-proper-mapping contract of AdicSpacesPartIII §§R2.2–R2.8 to each coherent approximation, using its associated-sheaf comparison as well as coherence of Hⁱ (AC Theorem 5.1.5, pp.116–117, AC line 4990). Then use finite Čech descent and these approximations to obtain the almost proper-mapping assertion of AC Theorem 5.1.6 (AC line 5058); apply affine Ext comparison to internal Hom. Use AC Corollary 4.9.6 and the almostification comparison in the proof of Lemma 4.9.7 (pp.112–114, AC line 4834 and AC line 4854): the first argument is bounded above and the second bounded below. The signs in the printed Lemma 4.9.7(2) are reversed.
 
 On an affine, Hⁱ(RΓF)=ΓHⁱ(F) in the almost category; proper pushforward need not preserve honest finite presentation.
 
@@ -194,7 +192,7 @@ On an affine, Hⁱ(RΓF)=ΓHⁱ(F) in the almost category; proper pushforward ne
 
 ### 0.3 Almost coherent proper duality
 
-Let R=O_C/pⁿ, n≥1, and f:Y→T be a proper finitely presented morphism between separated finitely presented R-schemes. Using coherent upper shriek over the valuation quotient, define f!ᵃ(Fᵃ)=(f!(F!))ᵃ. It is right adjoint to R f_* on bounded-below almost quasi-coherent categories. For A∈D⁻_acoh(Y)ᵃ and B∈D⁺_aqc(T)ᵃ, R f_* RalHom_Y(A,f!ᵃB)≅RalHom_T(R f_*A,B), naturally on T. For a smooth relative-d map, f!ᵃB=f^*B⊗Ωᵈ[d]. (AC §5.5, Definition 5.5.2, Theorem 5.5.5, Lemma 5.5.6 and Theorem 5.5.7, pp. 129–131; AC line 5504.)
+Let R=O_C/pⁿ⁺¹, n≥0, and f:Y→T be a proper finitely presented morphism between separated finitely presented R-schemes. Using coherent upper shriek over the valuation quotient, define f!ᵃ(Fᵃ)=(f!(F!))ᵃ. It is right adjoint to R f_* on bounded-below almost quasi-coherent categories. For A∈D⁻_acoh(Y)ᵃ and B∈D⁺_aqc(T)ᵃ, R f_* RalHom_Y(A,f!ᵃB)≅RalHom_T(R f_*A,B), naturally on T. For a smooth relative-d map, f!ᵃB=f^*B⊗Ωᵈ[d]. (AC §5.5, Definition 5.5.2, Theorem 5.5.5, Lemma 5.5.6 and Theorem 5.5.7, pp. 129–131; AC line 5504.)
 
 One proof route is as follows. Use flatness of the almost tensor ideal and preservation of almost-zero objects by the coherent f! to descend to the quotient. Obtain adjunction from coherent proper duality and the almost projection formula. Construct the internal-Hom comparison by cup, evaluation and the counit, then prove it is an isomorphism by testing against quasi-coherent objects. The valuation-upper-shriek contract supplies this construction over the valuation quotient.
 
@@ -202,7 +200,7 @@ For f=id the counit and comparison are identities; the Hom comparison lives on T
 
 **Checks.**
 
-- For f=id and A=B=O_Cᵃ/p, both sides are O_Cᵃ/p in degree zero and the comparison sends 1 to 1.
+- For n=0, f=id and A=B=O_Cᵃ/p, both sides are O_Cᵃ/p in degree zero and the comparison sends 1 to 1. For n=1, over R=O_C/p² with the same A,B, both sides have H¹=O_Cᵃ/p: the periodic free resolution has differential p, which becomes zero after Hom into O_C/p.
 - For a smooth curve, f! of the unit is Ω¹[1], in degree −1.
 - For a split two-point finite map, the counit is (a,b)↦a+b, so (1,0) maps to 1.
 
@@ -266,29 +264,30 @@ Use PerfectoidSpaces P0 and §§P3.11–P3.22; AdicSpacesPartIII §§F0.6–F0.8
 
 ### 1.1 Formal dualizing complexes and canonical sheaves
 
-For a separated flat admissible formal O_K-scheme 𝔛 with pure relative dimension d, put 𝔛_n=𝔛×Spec(O_K/pⁿ), n≥1. Choose compatible scheme dualizing complexes `ω•_{𝔛_n}=f_n!O_K/pⁿ` and define ω•_𝔛=Rlim_n `ω•_{𝔛_n}`. Its isomorphism class is independent of choices, but no canonical identification of these complexes is asserted. The bottom sheaf ω_𝔛=H⁻ᵈ(ω•_𝔛) is canonical and O_K-flat. The complex is coherent of amplitude [−d,0], reduces derivedly to `ω•_{𝔛_n}`, and for smooth 𝔛 is `Ω̂ᵈ_{𝔛/O_K}[d]`. (Z Definition 2.4.1, Warning 2.4.2, Theorem 2.4.4, Corollary 2.4.5, pp. 19–20; Z line 831.)
+For a separated flat admissible formal O_K-scheme 𝔛 with pure relative dimension d, put 𝔛_n=𝔛×Spec(O_K/ϖⁿ⁺¹), n≥0. Choose compatible scheme dualizing complexes `ω•_{𝔛_n}=f_n!O_K/ϖⁿ⁺¹` and define ω•_𝔛=Rlim_n `ω•_{𝔛_n}`. Thus 𝔛₀ is the modulo-ϖ fibre. Its isomorphism class is independent of choices, but no canonical identification of these complexes is asserted. The bottom sheaf ω_𝔛=H⁻ᵈ(ω•_𝔛) is canonical and O_K-flat. The complex is coherent of amplitude [−d,0], reduces derivedly to `ω•_{𝔛_n}`, and for smooth 𝔛 is `Ω̂ᵈ_{𝔛/O_K}[d]`. (Z Definition 2.4.1, Warning 2.4.2, Theorem 2.4.4, Corollary 2.4.5, pp. 19–20; Z line 831.)
 
 The API includes the following facts.
 
 - ω_𝔛=lim_n `H⁻ᵈ(ω•_{𝔛_n})` and is O_K-flat.
-- `ω•_𝔛⊗ᴸO_K/pⁿ≅ω•_{𝔛_n}` for n≥1.
+- `ω•_𝔛⊗ᴸO_K/ϖⁿ⁺¹≅ω•_{𝔛_n}` for n≥0.
 - For smooth pure-d 𝔛, ω•_𝔛≅Ω̂ᵈ[d], and the bottom identification is canonical.
 
-One proof route is as follows. Apply coherent f! over O_K/pⁿ, using its flat-finite-presentation amplitude theorem, and choose compatible reductions. Take the derived inverse limit; use coherence and derived completeness to identify derived reductions. Extract the bottom sheaf from the compatible system; use torsion-freeness over the valuation ring for its flatness. Universally coherent f! and its amplitude are the valuation-upper-shriek and valuation-duality-amplitude contracts.
+One proof route is as follows. Apply coherent f! over O_K/ϖⁿ⁺¹, using its flat-finite-presentation amplitude theorem, and choose compatible reductions. Take the derived inverse limit; use coherence and derived completeness to identify derived reductions. Extract the bottom sheaf from the compatible system; use torsion-freeness over the valuation ring for its flatness. Universally coherent f! and its amplitude are the valuation-upper-shriek and valuation-duality-amplitude contracts.
 
-The modulo-p dualizing complex is a derived reduction of ω•_𝔛, not generally the sheaf ω_𝔛/p in degree −d alone.
+The modulo-ϖ dualizing complex is a derived reduction of ω•_𝔛, not generally the sheaf ω_𝔛/ϖ in degree −d alone.
 
 **Checks.**
 
 - For Spf O_K, ω•=O_K and ω=O_K. The amplitude is [0,0].
 - For Spf O_K⟨T₁,…,T_d⟩, ω is generated by dT₁∧⋯∧dT_d and sits in degree −d. For d=2 the generator has degree −2.
+- Over K=𝔽₂((t)) with ϖ=t, the formal line has ω=𝔽₂[[t]]⟨T⟩·dT and ω•=ω[1], so its generator is in degree −1. Its n=0 and n=1 reductions are modulo t and t²; using p=2 instead would give the unchanged ring at every quotient level, since 2=0, rather than the required t-power thickenings.
 - Let R be the p-adic completion of the subalgebra ℤ_p[pT,T²,T³] of ℤ_p[T]. Its generic fibre is the smooth closed unit disc. Modulo p, the class x=pT is nonzero, x²=0 and xT²=xT³=0. This embedded point makes the one-dimensional reduction non-Cohen–Macaulay, so the dualizing complex has more than its bottom cohomology.
 
-*Needs:* SchemeAndStackFoundations §§2.18–2.21 with the valuation-upper-shriek and valuation-duality-amplitude contracts; AdicCoefficientsAndComparisons L2/fp-compactification-limit and L2/fp-strict-cofiltered; AdicSpacesPartIII §§R2.2–R2.8; AInfCohomology §§AI.1.1–AI.1.7 (completion); DerivedModuleAlgebra §§1.1–1.8.
+*Needs:* SchemeAndStackFoundations §§2.18–2.21 with the valuation-upper-shriek and valuation-duality-amplitude contracts; AdicCoefficientsAndComparisons L2/fp-compactification-limit and L2/fp-strict-cofiltered; AdicSpacesPartIII §§R2.2–R2.8; DerivedModuleAlgebra §§1.1–1.8.
 
 ### 1.2 Étale and algebraic comparison of formal duality
 
-Bounded coherent complexes on an admissible formal model are derived p-complete. For an étale g:𝔜→𝔛 of separated pure-d models, g^*ω_𝔛≅ω_𝔜 canonically and g^*ω•_𝔛≅ω•_𝔜 as isomorphism classes. If 𝔛 is the p-adic completion of a separated flat finitely presented O_K-scheme with pure-d generic fibre, its formal dualizing complex is the derived completion of the scheme one, and their bottom sheaves agree under completion. (Z Lemmas 2.4.6–2.4.8 and Corollary 2.4.9, pp. 20–22; Z line 901.)
+Bounded coherent complexes on an admissible formal model are derived ϖ-complete. For an étale g:𝔜→𝔛 of separated pure-d models, g^*ω_𝔛≅ω_𝔜 canonically and g^*ω•_𝔛≅ω•_𝔜 as isomorphism classes. If 𝔛 is the ϖ-adic completion of a separated flat finitely presented O_K-scheme with pure-d generic fibre, its formal dualizing complex is the derived completion of the scheme one, and their bottom sheaves agree under completion. (Z Lemmas 2.4.6–2.4.8 and Corollary 2.4.9, pp. 20–22; Z line 901.)
 
 One proof route is as follows. Use coherent completeness and reduction to each finite thickening. Apply étale f! comparison and flatness to the bottom sheaves. Compare completion with the inverse system of algebraic dualizing complexes; avoid claiming canonical identifications not furnished by the inverse limit.
 
@@ -297,14 +296,14 @@ One proof route is as follows. Use coherent completeness and reduction to each f
 **Checks.**
 
 - For the coordinate change U=2T over K of odd residue characteristic, dU=2dT, so the bottom transition has determinant 2.
-- At n=1, completion followed by derived reduction returns the scheme dualizing complex modulo p.
+- At n=0, completion followed by derived reduction returns the scheme dualizing complex modulo ϖ; n=1 instead gives the thickening modulo ϖ².
 - On the identity model, the étale comparison sends the canonical generator to itself.
 
 *Needs:* §1.1; AdicSpacesPartIII §§F0.6–F0.8 (formal coherent modules, completion and algebraization); SchemeAndStackFoundations §§2.18–2.21 with the valuation-upper-shriek contract.
 
 ### 1.3 Gluing generic and smooth-open sections
 
-Let 𝔘⊂𝔛 be a formal open and F a sheaf. Define Glue_𝔘(F) as the kernel of `j_K,*F_K⊕j_𝔘,*(F|𝔘)→j_{𝔘_K},*(F_K|𝔘_K)`, with the difference of the two restriction maps. There is a natural map F→Glue_𝔘(F). The notation as an intersection of lattices is used only after proving both restriction maps injective. (Z Definition 2.5.1 and Warning 2.5.2, p. 22; Z line 956.)
+Let 𝔘⊂𝔛 be a formal open and F a coherent O_𝔛-module, with coherent generic fibre F_K supplied by AdicSpacesPartIII §§R2.2–R2.8 and R3.1–R3.8. Define Glue_𝔘(F) as the kernel of `j_K,*F_K⊕j_𝔘,*(F|𝔘)→j_{𝔘_K},*(F_K|𝔘_K)`, with the difference of the two restriction maps. There is a natural map F→Glue_𝔘(F). The notation as an intersection of lattices is used only after proving both restriction maps injective. (Z Definition 2.5.1 and Warning 2.5.2, p. 22; Z line 956.)
 
 The API includes the following facts.
 
@@ -322,7 +321,7 @@ Compatible pairs, rather than arbitrary pairs, are the sections.
 - For 𝔘 empty the gluing sheaf is j_K,*F_K, so it need not equal F. For the unit on Spf O_K its sections become K.
 - For 𝔛=Spf O_K and 𝔘=𝔛, the compatible pairs in K⊕O_K are exactly (a,a) with a∈O_K, not all of K⊕O_K. The unrestricted direct sum contains (1,0), which is incompatible.
 
-*Needs:* §0.5; §1.2; AdicSpacesPartIII §§R3.1–R3.8 (coherent sheaves, GAGA, differentials and finite traces).
+*Needs:* §1.2; AdicSpacesPartIII §§R3.1–R3.8 (coherent sheaves, GAGA, differentials and finite traces).
 
 ### 1.4 Hartogs extension for the canonical sheaf
 
@@ -358,15 +357,15 @@ A rig-isomorphism need not induce an isomorphism on the full underived direct im
 
 - For the identity model, every finite-level and limiting trace is the identity. This fixes the counit normalization.
 - For a disjoint union of r copies of 𝔛 mapping to 𝔛, the trace adds the r sections. At r=2 the pair (1,0) maps to 1.
-- In dimension zero, for a finite étale degree-p generic map, the trace of the unit canonical section 1 is p; it is not normalized to 1. After reduction modulo p the unit trace is zero.
+- In mixed characteristic with ϖ=p and dimension zero, for a finite étale degree-p generic map, the trace of the unit canonical section 1 is p; it is not normalized to 1. After reduction modulo p the unit trace is zero.
 
 *Needs:* §1.1; §1.2; SchemeAndStackFoundations §§2.18–2.21 with the valuation-upper-shriek contract.
 
 ### 1.6 Generic canonical sheaf and top differentials
 
-Let K=C be algebraically closed. For a separated qcqs admissible O_K-model 𝔛 with smooth pure-d generic fibre X and geometrically reduced residue special fibre, there is a canonical `s_𝔛:Ωᵈ_{X/K}≅(ω_𝔛)_K` and an identification Ωᵈ_X[d]≅(ω•_𝔛)_K. The bottom identification is independent of algebraization and compatible with proper rig-isomorphisms between models with these hypotheses. The complex comparison is not asserted to be canonical. (Z Theorem 2.7.1, Lemmas 2.7.3, 2.7.5 and Remark 2.7.4, pp. 25–27; Z line 1142.)
+Let K be algebraically closed, in either characteristic. For a separated qcqs admissible O_K-model 𝔛 with smooth pure-d generic fibre X and geometrically reduced residue special fibre, there is a canonical `s_𝔛:Ωᵈ_{X/K}≅(ω_𝔛)_K` and an identification Ωᵈ_X[d]≅(ω•_𝔛)_K. The bottom identification is independent of algebraization and compatible with proper rig-isomorphisms between models with these hypotheses. The complex comparison is not asserted to be canonical. (Z Theorem 2.7.1, Lemmas 2.7.3, 2.7.5 and Remark 2.7.4, pp. 25–27; Z line 1142.)
 
-One proof route is as follows. Use refined local algebraization (the refined-formal-algebraization contract) for models with geometrically reduced residue special fibre. Apply smooth algebraic duality after inverting p and compare completions. Check independence using algebraization comparisons and the bottom trace for proper rig-isomorphisms.
+One proof route is as follows. Use refined local algebraization (the refined-formal-algebraization contract) for models with geometrically reduced residue special fibre. Apply smooth algebraic duality after inverting ϖ and compare completions. Check independence using algebraization comparisons and the bottom trace for proper rig-isomorphisms.
 
 On the formal torus, s sends the wedge of dlog coordinates to the generic canonical generator.
 
@@ -376,11 +375,11 @@ On the formal torus, s sends the wedge of dlog coordinates to the generic canoni
 - On a smooth one-torus it sends dlog T to the generic canonical generator.
 - For the coordinate change U=T⁻¹, dlog U=−dlog T on both sides.
 
-*Needs:* §0.5; §1.2; §1.5; AdicSpacesPartIII §F0.8 and R2.8 with the refined-formal-algebraization contract.
+*Needs:* §1.2; §1.5; AdicSpacesPartIII §F0.8 and R2.8 with the refined-formal-algebraization contract.
 
 ### 1.7 Coherent traces on smooth rigid spaces
 
-Over the algebraically closed field C, for a proper morphism f:Y→X of smooth separated qcqs rigid C-spaces, both pure of dimension d, define Tr_f:f_*Ωᵈ_Y→Ωᵈ_X by a proper map of admissible models and their bottom trace, transported by s. The map is independent of models, composes, and for finite étale f equals the coefficient trace under Ωᵈ_Y≅f^*Ωᵈ_X. Pullback in this last formula is the usual inverse image of differential bundles. (Z Theorem/Definition 2.7.6 and Lemma 2.7.9, pp. 27–29; Z line 1200.)
+Over an algebraically closed complete rank-one valued field K, for a proper morphism f:Y→X of smooth separated qcqs rigid K-spaces, both pure of dimension d, define Tr_f:f_*Ωᵈ_Y→Ωᵈ_X by a proper map of admissible models and their bottom trace, transported by s. The map is independent of models, composes, and for finite étale f equals the coefficient trace under Ωᵈ_Y≅f^*Ωᵈ_X. Pullback in this last formula is the usual inverse image of differential bundles. (Z Theorem/Definition 2.7.6 and Lemma 2.7.9, pp. 27–29; Z line 1200.)
 
 The API includes the following facts.
 
@@ -390,13 +389,13 @@ The API includes the following facts.
 
 One proof route is as follows. Choose a formal representative after admissible blow-ups and take the generic fibre of its bottom trace. Use cofinal common models and the trace comparison for rig-isomorphisms to show independence. Algebraize finite étale maps on a dense smooth open and compare the multiplication trace; extend using coherent generic-fibre descent.
 
-For a finite étale map of degree r, Tr_f(f^*α)=rα, including r divisible by p.
+For a finite étale map of degree r, Tr_f(f^*α)=rα, including r divisible by the residue characteristic when char K=0.
 
 **Checks.**
 
 - For the identity on a smooth rigid C-space, the coherent trace is the identity on its top differential bundle. This fixes the domain and codomain identification.
 - For r disjoint copies of X the trace is summation. The pair (1,0) maps to 1.
-- On T↦Tʳ, Tr(dlog T)=dlog S and Tr(f^*dlog S)=r dlog S, since dlog S=r dlog T. At r=p these values are 1 and p, respectively.
+- For r≥1 nonzero in K, on the finite étale map T↦Tʳ, Tr(dlog T)=dlog S and Tr(f^*dlog S)=r dlog S, since dlog S=r dlog T. In mixed characteristic at r=p these values are 1 and p, respectively; in characteristic p the map T↦Tᵖ is inseparable and is outside this finite étale Check.
 
 - The reduced-model-cofinality contract requires algebraically closed fraction field. Over K=ℚ_p the ramified point L=K(π), π²=p, has power-bounded ring O_L with residue special fibre 𝔽_p[t]/(t²). By Z Lemma B.7, p.90, Z line 4253, a reduced-special-fibre model would equal O_L, which still has this nonreduced fibre. This point has no reduced-special-fibre model over O_K; after extension to C it splits into two points with reduced model Spf(O_C×O_C).
 
@@ -404,11 +403,11 @@ For a finite étale map of degree r, Tr_f(f^*α)=rα, including r divisible by p
 
 ### Examples
 
-For S=Tʳ on a smooth one-torus, pullback sends dlog S to r dlog T, while coherent trace sends dlog T to dlog S. Thus trace after pullback is multiplication by r, also at r=p. The identity model has bottom trace 1→1. (Z Lemma 2.7.9, pp.28–29, Z line 1266.)
+For r≥1 nonzero in K and S=Tʳ on a smooth one-torus, pullback sends dlog S to r dlog T, while coherent trace sends dlog T to dlog S. Thus trace after pullback is multiplication by r, also at r=p in mixed characteristic. The identity model has bottom trace 1→1. (Z Lemma 2.7.9, pp.28–29, Z line 1266.)
 
 ### Dependencies
 
-Use Layer 0, SchemeAndStackFoundations §§0.6, 2.18–2.21 with the upper-shriek, amplitude and canonical-reflexivity contracts, AdicSpacesPartIII F0/R2/R3 with refined algebraization and reduced-model cofinality, and DerivedModuleAlgebra §§1.1–1.8. Canonical generic identifications use C algebraically closed; formal duality retains general mixed-characteristic K.
+Use SchemeAndStackFoundations §§0.6, 2.18–2.21 with the upper-shriek, amplitude and canonical-reflexivity contracts, AdicSpacesPartIII F0/R2/R3 with refined algebraization and reduced-model cofinality, and DerivedModuleAlgebra §§1.1–1.8. Canonical generic identifications use K algebraically closed; formal duality allows arbitrary complete rank-one K in either characteristic. The coherent generic-fibre functor is supplied by AdicSpacesPartIII R2/R3. Layers 0 and 2–5 use its specialization K=C, ϖ=p.
 
 ## Layer 2: Integral Faltings traces
 
@@ -512,7 +511,7 @@ Coordinate tori suffice for normalization; no splitting of the entire Hodge–Ta
 
 - For the torus, Φ=Sch∘j gives jΦ⁻¹(Sch(dlog T))=dlog T.
 - For S=Tʳ, pullback takes dlog S to r dlog T and coherent trace takes dlog T to dlog S.
-- For d=0 all comparison and trace maps send 1 to 1.
+- For d=0 on the identity point map, comparison and trace send 1 to 1. On a split degree-r finite étale cover, trace sends the unit to r and one component unit to 1; at r=2 this is 2 integrally and 0 modulo 2.
 
 *Needs:* §0.5; §2.2; §2.3; §1.7; PadicHodgeTheory §§2.1, 2.4, 2.7 and 7.2; AdicSpacesPartIII §§R3.1–R3.8 (coherent sheaves, GAGA, differentials and finite traces); §2.4.
 
@@ -722,7 +721,7 @@ For m=0 the map is identity.
 
 **Checks.**
 
-- tr_m(1)=1 even when m>0. The ordinary inseparable algebra trace would send 1 to 0 in characteristic p.
+- tr_m(1)=1 even when m>0. On the one-torus in characteristic p the ordinary algebra trace instead sends 1 to pᵐ=0 for m>0. For n=0 the hypersurface is the field 𝔽_p and both traces send 1 to 1.
 - For a one-torus and m>0, `tr_m(T^{1/pᵐ})=0`. This weight is nonintegral.
 - For the same torus, tr_m(T)=T; the trace selects integral weights, not only exponent zero. For m=0 every weight is retained.
 
@@ -730,16 +729,26 @@ For m=0 the map is identity.
 
 ### 3.7 Derived duality of finite root algebras
 
-For the characteristic-p monomial hypersurface A and every m≥0, multiplication followed by tr_m induces A_m≅RHom_A(A_m,A). For every standard polystable R⁺, the integral projection similarly gives `R_m⁺≅RHom_{R⁺}(R_m⁺,R⁺)`; characterwise `R⁺_χ≅RHom_{R⁺}(R⁺_{−χ},R⁺)`. These modules need not be projective or flat over the singular base. (Z Theorem 4.3.2, Lemmas 4.3.4–4.3.5, Proposition 4.3.6 and Corollary 4.3.7, pp. 59–62; Z line 2834.)
+The acceptance theorem `monomial_root_duality` uses `monomialRootAlgebra` for A=𝔽_p[t₀,…,tₙ]/(t₀⋯tₙ), n≥0, `monomialClass` for the class of the monomial with exponent vector e, and `monomialRootModule` for A restricted along the m-fold Frobenius, m≥0. The quotient, monomial classes and `monomialRootAlgebraCharP` instance are defined for all natural p using ZMod p; the root module and duality theorem require p prime. The instance supplies its characteristic: evaluation at all coordinates zero shows that the defining ideal kills no nonzero constant. Under the identification `t_i^(1/p^m) <-> t_i`, its A-action sends (a,x) to `a^(p^m)*x`. For every prime p and n,m≥0 the theorem asserts an A-linear τ with `tau(t^e)=t^(e/p^m)` when every exponent is divisible by pᵐ and zero otherwise; its multiplication adjoint x↦(y↦τ(xy)) is bijective and Ext_Aᵏ(A_m,A)=0 for every k>0. Equivalently, for the characteristic-p monomial hypersurface A and every m≥0, multiplication followed by tr_m induces A_m≅RHom_A(A_m,A). For every standard polystable R⁺, the integral projection similarly gives `R_m⁺≅RHom_{R⁺}(R_m⁺,R⁺)`; characterwise `R⁺_χ≅RHom_{R⁺}(R⁺_{−χ},R⁺)`. These modules need not be projective or flat over the singular base. (Z Theorem 4.3.2, Lemmas 4.3.4–4.3.5, Proposition 4.3.6 and Corollary 4.3.7, pp. 59–62; Z line 2834.)
 
 One proof route is as follows. In characteristic p, use the hypersurface resolution/duality and the explicit monomial projection to identify Hom and prove higher Ext vanishing; retain the singular relation in this computation. For a single nonunit-parameter block choose a nonzero π∈𝔪_C with `max(|ϖ^{1/pᵐ}|,|p|)<|π|<1`; reduce to the characteristic-p hypersurface after derived reduction. Use derived completeness, Hom base change and derived Nakayama to lift the isomorphism; for unit parameters use the free torus decomposition. Combine blocks by the completed derived Künneth comparison, whose finite-presentation and O_C-flatness hypotheses hold for the root stages; extract opposite-character pairs.
 
 For a nodal chart, duality must be formulated by derived Hom; a declaration requiring all R⁺_χ to be free over R⁺ would reject the required example.
 
+The API of the supporting native definitions includes the following facts (Z Definition 4.3.1 and Theorem 4.3.2, p.59, Z line 2825).
+
+- In the quotient algebra the product of all coordinates is zero, and evaluation at all coordinates zero retracts the constant inclusion. Thus the quotient retains the characteristic of ZMod p.
+- The zero exponent vector has monomial class 1; adding exponent vectors multiplies their classes; a vector with every entry positive has class zero.
+- The root module has the same underlying additive group as the quotient. Its scalar action sends (a,x) to `a^(p^m)*x`, and at m=0 this is the ordinary module action. Multiplication in the pairing is the underlying quotient-ring multiplication.
+
 **Checks.**
 
+- At p=0 the underlying quotient is over ℤ and retains characteristic zero; at p=1 it is the zero ring. Neither is admitted by the prime hypothesis of the root-module theorem.
+- With n=0 the relation is t₀=0, A=𝔽_p and every root module is its unit: τ(1)=1 and τ(t₀)=0. The zero exponent vector represents 1; a vector with every entry positive represents zero, including when every entry is divisible by pᵐ. These checks distinguish the quotient and its monomials.
 - At m=0 the adjoint is r↦(s↦rs) and evaluates at 1 to r.
-- At the characteristic-two node, the two fractional generators x,y satisfy xy=0 after reduction; their Hom duals are the ideals (u) and (v), so the coefficient constraints retain the branches.
+- At the characteristic-two node, the two fractional generators x,y satisfy xy=0 after reduction; the root module decomposes as A⊕A/(v)·x⊕A/(u)·y with x²=u, y²=v. The adjoint takes x to the functional with value u on x, and y to the one with value v on y. Their Hom duals are (u) and (v); alternating multiplication by u and v in the periodic resolutions gives ker(u)=(v) and ker(v)=(u), so positive Ext vanishes.
+- In that presentation u·1=x² in the root module, whereas multiplication by the underlying coordinate x sends 1 to x: restriction along Frobenius is essential. The class with exponent vector (1,0) is nonzero and (1,1) is zero. At p=3 and m=1, τ(x)=τ(x²)=0 and τ(x³)=u; the x,x² block of the adjoint has values 0,u,u,0, with image in the branch dual ideal (u), and the same periodic resolutions give zero positive Ext.
+- At the node over 𝔽₂, u+u=0 with u≠0; over 𝔽₃, u+u=2u≠0 and 3u=0. Evaluation at zero sends the constant 1 to 1 in both cases, excluding a quotient that also kills the coefficient field.
 - For the torus at p=2 and m=1, the projection pairing on basis (1,T^(1/2)) has matrix diag(1,T), of invertible determinant T.
 
 *Needs:* SchemeAndStackFoundations §§2.19–2.20 (finite coherent duality and complete-intersection dualizing modules); §3.6; §3.2; §0.2; DerivedModuleAlgebra §§0.4, 0.8, 0.10–0.14; DerivedDeRhamCohomology §1.22; AInfCohomology §§AI.1.1–AI.1.7 (décalage, products and continuous Koszul cochains); DerivedModuleAlgebra §§1.1–1.8.
@@ -885,7 +894,7 @@ When p divides |G|, invariants and orbits are derived and cannot be replaced by 
 **Checks.**
 
 - For C_p acting trivially on O_Cᵃ/p, H¹(C_p,O_Cᵃ/p)≅O_Cᵃ/p, so derived invariants have nonzero positive cohomology. The cyclic bar complex has zero mod-p differentials in degrees 0 and 1.
-- For the regular induced module O[G]⊗_O M, homotopy invariants and orbits are each M with the usual Shapiro identifications. For G=S₃ the six regular basis vectors give one invariant sum and one coinvariant generator.
+- For finite G and the regular induced module O[G]⊗_O M, homotopy invariants and orbits are each M with the usual Shapiro identifications. For G=S₃ the six regular basis vectors give one invariant sum and one coinvariant generator. For infinite G=ℤ and nonzero M, the regular induced module has zero ordinary invariants but coinvariants M: a constant finitely supported coefficient sequence is zero. Induction cannot replace coinduction in this case.
 - If |G| is a unit in the coefficient ring, higher group cohomology vanishes and the norm divided by |G| gives the familiar averaging identification. For C₃ over F₂ the inverse of 3 is 1, so averaging fixes a constant vector.
 
 *Needs:* §0.1; EnhancedDerivedSheaves §§0.1–0.4, E1.1–E1.5 (ringed-site enhancement and tensor–Hom); ArithmeticGaloisDuality §§D7.1–D7.3 and R02.1.2–R02.2.3; Mathlib `Representation.invariants`.
@@ -894,7 +903,7 @@ When p divides |G|, invariants and orbits are derived and cannot be replaced by 
 
 For t:(X_ét,O_X⁺/p)→(𝔛₀,O_𝔛₀) and finite G acting trivially on the base site, R t_* commutes with homotopy invariants and homotopy orbits. For equivariant F and a nonequivariant target D, there is `RalHom_O(F,D)^{hG}≅RalHom_O(F_{hG},D)`, with the contragredient action on Hom. No order-of-G invertibility is assumed. (Z Lemmas 4.4.11 and 4.4.15, pp. 68–69; Z line 3288.)
 
-One proof route is as follows. Use coherence of the site map and its finite cohomological dimension to commute R t_* with sequential homotopy colimits, including unbounded bar complexes. Use preservation of homotopy limits for invariants and finite-free bar terms for both comparisons. Apply tensor–Hom adjunction to the bar resolution and almostify; central scalar flatness gives the almost comparison.
+One proof route is as follows. Work locally on a d-dimensional formal affine. Use coherence of the site map and the ordinary étale bound 2d for every p-primary torsion sheaf from ClassicalAdicEtaleCohomology §11.2 to commute R t_* with sequential homotopy colimits, including unbounded bar complexes. Use preservation of homotopy limits for invariants and finite-free bar terms for both comparisons. Apply tensor–Hom adjunction to the bar resolution and almostify; central scalar flatness gives the almost comparison.
 
 The orbit comparison needs the finite-cohomological-dimension input, not just the existence of a right derived pushforward.
 
@@ -904,7 +913,7 @@ The orbit comparison needs the finite-cohomological-dimension input, not just th
 - For G=C_p acting trivially on O_C/p, the invariant complex has H¹=O_C/p; pushforward does not erase this term.
 - For S₃, (gh)⁻¹=h⁻¹g⁻¹, so inversion reverses multiplication in the right-action conversion; using g instead would reverse the action law incorrectly.
 
-*Needs:* §4.4; §0.4; EnhancedDerivedSheaves §§0.1–0.4, E1.1–E1.5 (ringed-site enhancement and tensor–Hom); ClassicalAdicEtaleCohomology §§1.1–1.4 (étale and pro-étale coefficients).
+*Needs:* §4.4; §0.4; EnhancedDerivedSheaves §§0.1–0.4, E1.1–E1.5 (ringed-site enhancement and tensor–Hom); ClassicalAdicEtaleCohomology §§1.1–1.4 (étale and pro-étale coefficients) and 11.2 (ordinary cohomological dimension for all bar terms).
 
 ### 4.6 Almost local duality descends along good quotients
 
@@ -944,7 +953,7 @@ For a split C_p-torsor the unit trace is p, hence zero modulo p; the trace of a 
 
 ### Dependencies
 
-Use §0.3, §2.9 and §3.10, valuation models from AdicSpacesPartIII R2, ArithmeticGaloisDuality §§D7.1–D7.3, EnhancedDerivedSheaves §§0.1–0.4, and ClassicalAdicEtaleCohomology §§1.1–1.4. The wild descent route uses bar resolutions and induced torsors for arbitrary finite groups.
+Use §0.3, §2.9 and §3.10, valuation models from AdicSpacesPartIII R2, ArithmeticGaloisDuality §§D7.1–D7.3, EnhancedDerivedSheaves §§0.1–0.4, and ClassicalAdicEtaleCohomology §§1.1–1.4 and 11.2. The wild descent route uses bar resolutions and induced torsors for arbitrary finite groups.
 
 ## Layer 5: Global étale Poincaré duality
 
@@ -1124,6 +1133,7 @@ The API includes the following facts.
 - On qcqs X, locally bounded Zariski-constructible complexes are globally bounded.
 - Rigid pullback preserves Zariski-constructible cohomology and local boundedness.
 - For a Zariski-locally closed stratum, extension by zero of a finite local system is Zariski-constructible.
+- A Zariski-constructible sheaf is overconvergent. Locally constant sheaves are overconvergent; geometric specializations preserve membership in a Zariski stratum, so extension by zero along Zariski locally closed immersions preserves this property, and the exact closure properties of ClassicalAdicEtaleCohomology §3.2 give the assertion by finite stratification (BH Theorem 3.15 proof, p.20, BH line 878).
 
 One proof route is as follows. Use the supplied rigid Zariski closed/locally closed subspace operations. Define finite local constancy on strata using the supplied étale local-system category. Take the cohomological full derived subcategory and the locally bounded convention.
 
@@ -1132,16 +1142,16 @@ Global boundedness cannot be imposed on every non-quasi-compact proper-map probl
 **Checks.**
 
 - A skyscraper finite sheaf at a classical point of a closed disc is Zariski-constructible; it need not be Huber-constructible because the complement is not qc. Its two Zariski strata are the point and its complement.
-- Every finite constant sheaf is Zariski-constructible. There is one stratum.
+- Every finite constant sheaf is Zariski-constructible. There is one stratum; every specialization map is id on its coefficient module. For the classical-point skyscraper, specialization chains stay either inside the point, with stalk Λ, or outside, with stalk 0.
 - On a disjoint union of points, place Λ in degree −j on the j-th component: the object is locally bounded and Zariski-constructible but not globally bounded. There is no common lower cohomological bound.
 
-*Needs:* ClassicalAdicEtaleCohomology §§1.1–1.4 (étale and pro-étale coefficients); AdicSpacesPartIIPartII RZ.0 (Zariski closed sets and dimension); EnhancedDerivedSheaves §§0.1–0.4, E1.1–E1.5 (ringed-site enhancement and tensor–Hom).
+*Needs:* ClassicalAdicEtaleCohomology §§1.1–1.4 (étale and pro-étale coefficients) and 3.2 (overconvergence); AdicSpacesPartIIPartII RZ.0 (Zariski closed sets and dimension); EnhancedDerivedSheaves §§0.1–0.4, E1.1–E1.5 (ringed-site enhancement and tensor–Hom).
 
 ### 7.2 Affinoid constructible algebraization
 
 Let K have characteristic zero, A be a K-affinoid algebra, S_alg=Spec A and S=Spa(A,A°). For a finite-type S_alg-scheme Z and n≥1, analytification induces a fully faithful t-exact functor D_cᵇ(Z,ℤ/n)→D_zcᵇ(Z_an,ℤ/n); it is an equivalence when Z is proper over S_alg, in particular for Z=S_alg. For every finite-type map h:Z→W of finite-type S_alg-schemes, (Rh_*F)_an≅Rh_an,*F_an for F∈D_cᵇ(Z,ℤ/n), without a properness hypothesis on h. It also identifies the lisse subcategories for every such Z. (BH Proposition 3.7 and proof, pp. 15–16; BH line 672.)
 
-One proof route follows Han Propositions 4.3–4.7. Affinoid excellence and scheme constructibility on quasi-excellent bases permit the reduction by algebraic compactification, finite-cover coefficient generators and a resolution preserving the regular open. The comparison on regular open immersions follows from the regular-boundary purity theorem on its finite-coefficient characteristic-zero domain. The unit F→Rμ_*μ*F is an isomorphism because its restriction to every étale test scheme is the cohomology comparison; adjunction then proves full faithfulness. For proper Z, induct over a normal lisse open. Extend its finite étale covers to finite normal branched covers, apply relative rigid GAGA, and restrict back. Finite descent and a normal proper compactification identify the lisse subcategories on nonproper Z. (Han Theorems 1.8, 1.10(ii), pp.5–6, Han line 196 and Han line 226; §§4.2–4.3, pp.19–23, Han line 817 and Han line 946; BH Proposition 3.7 proof, p.16, BH line 684.)
+One proof route follows Han Propositions 4.3–4.7. Affinoid excellence and scheme constructibility on quasi-excellent bases permit the reduction by algebraic compactification, finite-cover coefficient generators and a resolution preserving the regular open. The comparison on regular open immersions follows from the regular-boundary purity theorem on its finite-coefficient characteristic-zero domain. For each étale test scheme, combine the relative direct-image comparison with absolute affinoid comparison from ClassicalAdicEtaleCohomology §2.5 to identify its scheme and analytic cohomology (Han line 946). This makes the unit F→Rμ_*μ*F an isomorphism; adjunction then proves full faithfulness. For proper Z, induct over a normal lisse open. Extend its finite étale covers to finite normal branched covers, apply relative rigid GAGA, and restrict back. Finite descent and a normal proper compactification identify the lisse subcategories on nonproper Z. (Han Theorems 1.8, 1.10(ii), pp.5–6, Han line 196 and Han line 226; §§4.2–4.3, pp.19–23, Han line 817 and Han line 946; BH Proposition 3.7 proof, p.16, BH line 684.)
 
 For Z=Spec A the equivalence identifies scheme constructibility with rigid Zariski-constructibility. It does not identify it with Huber constructibility.
 
@@ -1151,7 +1161,7 @@ For Z=Spec A the equivalence identifies scheme constructibility with rigid Zaris
 - A skyscraper at a classical point algebraizes to the corresponding closed-point sheaf; its complement need not be an adic constructible stratum.
 - For Z=Spec K and the constant (ℤ/n)ʳ sheaf, analytification preserves the finite coefficient module (ℤ/n)ʳ in degree zero.
 
-*Needs:* RigidAnalyticGeometry §§1.1–1.2 (affinoid excellence); ResolutionOfSingularitiesCharacteristicZero §§7.5, 7.8 (scheme resolution over an affinoid algebra); the quasi-excellent-direct-images contract; §7.1; ClassicalAdicEtaleCohomology §§8.2 and 11.1 (proper, field-base and regular-boundary purity comparison); AdicSpacesPartIII §§R3.1–R3.8 (coherent sheaves, GAGA, differentials and finite traces); AdicSpacesPartIIPartII RZ.1 (normalization and Riemann extension), with the finite-branched-covers contract; EtaleCohomologyFoundations §§G.1–G.3 and F.0 (scheme compactification and constructible coefficients).
+*Needs:* RigidAnalyticGeometry §§1.1–1.2 (affinoid excellence); ResolutionOfSingularitiesCharacteristicZero §§7.5, 7.8 (scheme resolution over an affinoid algebra); the quasi-excellent-direct-images contract; §7.1; ClassicalAdicEtaleCohomology §§2.5, 8.2 and 11.1 (absolute affinoid, proper, field-base and regular-boundary purity comparison); AdicSpacesPartIII §§R3.1–R3.8 (coherent sheaves, GAGA, differentials and finite traces); AdicSpacesPartIIPartII RZ.1 (normalization and Riemann extension), with the finite-branched-covers contract; EtaleCohomologyFoundations §§G.1–G.3 and F.0 (scheme compactification and constructible coefficients).
 
 ### 7.3 Locality and finite-cover generators
 
@@ -1173,7 +1183,7 @@ Use the affinoid comparison owned by this Part II; §7.2 supplies its nonproper 
 
 For any proper morphism f:X→Y of rigid spaces over a characteristic-zero complete nonarchimedean field K, and any n>0, R f_* carries `D_zc^{(b)}(X,ℤ/n)` into `D_zc^{(b)}(Y,ℤ/n)`. If source and target are qcqs, it carries bounded objects to bounded objects. The theorem allows residue characteristic dividing n. (BH Theorem 3.10 and proof, pp. 17–18; BH line 764.)
 
-One proof route is as follows. Work over an affinoid target, use finite-cover generators, and reduce to the constant sheaf on a proper space. Use rigid resolution and proper cohomological descent: DiamondEtaleCohomology §§C0.1, C0.23 and C2.10 for residue characteristic p>0, and ClassicalAdicEtaleCohomology §8.4 proper base change when n is invertible in O⁺, including every n in residue characteristic zero. For a cosimplicial object in D≥0, Hⁱ of its totalization depends on the truncation through cosimplicial degree i+1; thus finitely many smooth hypercover terms suffice for each i≥0. Use proper generic smoothness (the proper-generic-smoothness contract) separately for each of those proper maps, then intersect their finitely many dense Zariski opens in the reduced target. For ℓ=p apply HodgeTateAndCanonicalSubgroups §7.6; for ℓ≠p use ClassicalAdicEtaleCohomology §10.5’s smooth proper prime-to-residue local constancy. Induct over the closed complement and use weak geometric base change plus the uniform local cohomological bound. This proof does not use the arbitrary base change theorem it precedes.
+One proof route is as follows. Work over an affinoid target, use finite-cover generators, and reduce to the constant sheaf on a proper space. Use rigid resolution and proper cohomological descent: DiamondEtaleCohomology §§C0.1, C0.23 and C2.10 for residue characteristic p>0, and ClassicalAdicEtaleCohomology §8.4 proper base change when n is invertible in O⁺, including every n in residue characteristic zero. Use DiamondsAndVStacks §D2.2 on perfectoid covers to obtain the proper v-covers. By EnhancedDerivedSheaves §E5:animation.3 (`tot_filteredColimit_of_bounded`), for a cosimplicial object in D≥0, Hⁱ of its totalization depends on the truncation through cosimplicial degree i+1; thus finitely many smooth hypercover terms suffice for each i≥0. Use proper generic smoothness (the proper-generic-smoothness contract) separately for each of those proper maps, then intersect their finitely many dense Zariski opens in the reduced target. For ℓ=p apply HodgeTateAndCanonicalSubgroups §7.6; for ℓ≠p use ClassicalAdicEtaleCohomology §10.5’s smooth proper prime-to-residue local constancy. Induct over the closed complement and use the rank-one stalk formula of ClassicalAdicEtaleCohomology §1.5(c) plus the uniform local cohomological bound, after obtaining overconvergence from §3.2 and proper-image overconvergence from §9.1. This proof does not use the arbitrary base change theorem it precedes.
 
 Over a non-qc target, neither global fibre dimension bounds nor one global cohomological interval are assumed.
 
@@ -1186,13 +1196,13 @@ Over a non-qc target, neither global fibre dimension bounds nor one global cohom
 - For the proper point inclusion {a}→Y into a closed disc, S_f=Y∖{a}; for inclusions at a and b their common smooth open is Y∖{a,b}. No one dense open works for all point inclusions.
 - For normalized cosimplicial cochains N⁰=Λ, N¹=Λ and differential id, H⁰=0; degree zero alone would give Λ. For N⁰=0 and N¹→N² equal to id on Λ, H¹=0; discarding degree two would give Λ. These compute the i+1 bound at i=0 and 1.
 
-*Needs:* §7.3; HodgeTateAndCanonicalSubgroups §7.6; AdicSpacesPartIIPartII RZ.5 (rigid resolution), RZ.2 and RZ.4 with the proper-generic-smoothness contract; ClassicalAdicEtaleCohomology §§7.1, 8.4, 10.5 (weak geometric comparison, amplitude, prime-to-residue proper base change and local constancy); DiamondEtaleCohomology §§C0.1, C0.23, C2.10 (proper hyperdescent in positive residue characteristic); EnhancedDerivedSheaves §§0.3–0.4 and E2:towers.1 with the connective-totalization-truncation contract; DerivedModuleAlgebra §S.1.
+*Needs:* §7.3; HodgeTateAndCanonicalSubgroups §7.6; AdicSpacesPartIIPartII RZ.5 (rigid resolution), RZ.2 and RZ.4 with the proper-generic-smoothness contract; ClassicalAdicEtaleCohomology §§1.5(c), 3.2, 9.1, 8.4, 10.5 (rank-one stalks, overconvergence, amplitude, prime-to-residue proper base change and local constancy); DiamondsAndVStacks §D2.2 (v-cover surjectivity criterion); DiamondEtaleCohomology §§C0.1, C0.23, C2.10 (proper hyperdescent in positive residue characteristic); EnhancedDerivedSheaves §§0.3–0.4, E2:towers.1 and E5:animation.3 (`tot_filteredColimit_of_bounded`: terms in D≥0 have Hⁱ computed by `Tot_{i+1}`, i≥0); DerivedModuleAlgebra §S.1.
 
 ### 7.5 Proper cohomology under algebraically closed field extension
 
 For C′/C/ℚ_p an extension of complete algebraically closed nonarchimedean fields, proper rigid X/C and F∈D_zcᵇ(X,ℤ/pᵃ), the canonical map `RΓ(X,F)→RΓ(X_{C′},F_{C′})` is an isomorphism. The field extension need not have transcendence dimension zero. (BH Lemma 3.25 and proof, p. 25; BH line 1102.)
 
-One proof route is as follows. Use finite generators and coefficient induction to reduce to 𝔽_p on a proper finite cover Y. Resolve the matching objects successively to obtain a proper hypercover Y_•→Y by smooth proper C-spaces, using AdicSpacesPartIIPartII RZ.5. Apply proper hyperdescent via DiamondEtaleCohomology §§C0.1, C0.23 and C2.10 before and after extension; the connective-totalization-truncation contract reduces each fixed degree i to levels at most i+1. On every smooth term apply primitive comparison over both fields. Cover it by smooth affinoids étale over tori and use the pulled-back perfectoid toric towers. The integral-toric-field-extension contract compares their power-bounded rings almostly, compatibly with the finite Koszul cochains. Glue on these smooth terms, use almost detection of finite 𝔽_p cohomology, then descend the canonical field-extension map along the truncated hypercover. The hyperdescent input has no prime-to-p restriction and does not use §7.6.
+One proof route is as follows. Use finite generators and coefficient induction to reduce to 𝔽_p on a proper finite cover Y. Resolve the matching objects successively to obtain a proper hypercover Y_•→Y by smooth proper C-spaces, using AdicSpacesPartIIPartII RZ.5. Apply proper hyperdescent via DiamondEtaleCohomology §§C0.1, C0.23 and C2.10 before and after extension; DiamondsAndVStacks §D2.2 supplies the v-cover criterion on perfectoid covers, and EnhancedDerivedSheaves §E5:animation.3 reduces each fixed degree i≥0 to levels at most i+1. On every smooth term apply primitive comparison over both fields. Cover it by smooth affinoids étale over tori and use the pulled-back perfectoid toric towers. The integral-toric-field-extension contract compares their power-bounded rings almostly, compatibly with the finite Koszul cochains. Glue on these smooth terms, use almost detection of finite 𝔽_p cohomology, then descend the canonical field-extension map along the truncated hypercover. The hyperdescent input has no prime-to-p restriction and does not use §7.6.
 
 This field-extension step supplies the missing all-p comparison at rank-one geometric points in arbitrary proper base change.
 
@@ -1204,13 +1214,13 @@ This field-extension step supplies the missing all-p comparison at rank-one geom
 
 - For a rational proper curve with one split node, normalization is ℙ¹ and the branch difference at the node is (a,b)↦a−b. The resulting groups are H⁰=Λ, H¹=Λ and H²=Λ(−1), before and after scalar extension. The nodal chart itself is singular and has no étale toric chart; use the smooth normalization and point terms.
 
-*Needs:* §7.3; §5.3 (almost detection); PadicHodgeTheory §2.7 (smooth proper primitive comparison and finiteness) with the integral-toric-field-extension contract; AdicSpacesPartIIPartII RZ.5 (resolution of hypercover matching objects); DiamondEtaleCohomology §§C0.1, C0.23, C2.10 (proper hyperdescent); EnhancedDerivedSheaves §§0.3–0.4 and E2:towers.1 with the connective-totalization-truncation contract; PerfectoidSpaces §§P3.11–P3.22 (almost purity and almost acyclicity); AInfCohomology §§AI.1.1–AI.1.7, AI.3.1–AI.3.2 (Koszul cochains and smooth toric comparison); DerivedModuleAlgebra §§1.1–1.8.
+*Needs:* §7.3; §5.3 (almost detection); PadicHodgeTheory §2.7 (smooth proper primitive comparison and finiteness) with the integral-toric-field-extension contract; AdicSpacesPartIIPartII RZ.5 (resolution of hypercover matching objects); DiamondsAndVStacks §D2.2 (v-cover surjectivity criterion); DiamondEtaleCohomology §§C0.1, C0.23, C2.10 (proper hyperdescent); EnhancedDerivedSheaves §§0.3–0.4, E2:towers.1 and E5:animation.3 (`tot_filteredColimit_of_bounded`: terms in D≥0 have Hⁱ computed by `Tot_{i+1}`, i≥0); PerfectoidSpaces §§P3.11–P3.22 (almost purity and almost acyclicity); AInfCohomology §§AI.1.1–AI.1.7, AI.3.1–AI.3.2 (Koszul cochains and smooth toric comparison); DerivedModuleAlgebra §§1.1–1.8.
 
 ### 7.6 Proper base change with all torsion coefficients
 
 In a cartesian square of rigid spaces over a complete characteristic-zero nonarchimedean field, with f:X→Y proper and arbitrary g:Y′→Y, let f′:X′→Y′ and g′:X′→X be the base changes. For every n>0 and `F∈D_zc^{(b)}(X,ℤ/n)`, the canonical exchange map g^*R f_*F→R f′_*g′^*F is an isomorphism. No prime-to-residue-characteristic restriction is imposed. (BH Theorem 3.15 and proof, pp. 19–20; BH line 864.)
 
-One proof route is as follows. Construct the exchange natural transformation from the site adjunctions, respecting composition. Both sides are Zariski-constructible by proper pushforward and hence overconvergent; use enough rank-one geometric points and weak geometric proper base change to reduce the map to field-valued proper cohomology. For residue-prime-to-n coefficients apply the inherited Huber theorem; for p-power coefficients use the algebraically closed field-extension comparison. Use coefficient decomposition and local boundedness to conclude for all n and the stated derived range.
+One proof route is as follows. Construct the exchange natural transformation from the site adjunctions, respecting composition. Both sides are Zariski-constructible by proper pushforward and hence overconvergent; use the maximal-stalk detection of ClassicalAdicEtaleCohomology §3.2 and its rank-one strict-localisation formula §1.5(c), with proper-image overconvergence from §9.1, to reduce the map to field-valued proper cohomology. For residue-prime-to-n coefficients apply the inherited Huber theorem; for p-power coefficients use the algebraically closed field-extension comparison. Use coefficient decomposition and local boundedness to conclude for all n and the stated derived range.
 
 The result is scoped to Zariski-constructible locally bounded complexes; it is not an arbitrary-sheaf p-torsion six-functor theorem.
 
@@ -1221,7 +1231,7 @@ The result is scoped to Zariski-constructible locally bounded complexes; it is n
 - For n=1 the coefficient category is zero and the exchange is 0→0.
 - For an empty proper source, both direct images are zero for every base map.
 
-*Needs:* §7.4; §7.5; §7.1; ClassicalAdicEtaleCohomology §§1.1–1.4 (sites and coefficients), 7.1 (weak geometric field-pair comparison), 8.4 (proper prime-to-residue base change and local amplitude).
+*Needs:* §7.4; §7.5; §7.1; ClassicalAdicEtaleCohomology §§1.1–1.4 (sites and coefficients), 1.5(c) (rank-one strict-localisation stalks), 3.2 and 9.1 (overconvergence and maximal-stalk detection), 8.4 (proper prime-to-residue base change and local amplitude).
 
 ### 7.7 Proper constant cohomology sheaves on smooth rigid bases
 
@@ -1245,7 +1255,7 @@ The finite inclusion of a classical point in a disc pushes the unit to a Zariski
 
 ### Dependencies
 
-Use §5.3 for almost detection; HodgeTateAndCanonicalSubgroups §7.6 for proper smooth local systems; AdicSpacesPartIIPartII RZ.0–RZ.5 with branched covers and proper generic smoothness; ClassicalAdicEtaleCohomology §§8.2, 8.4, 10.5 and 11.1; EtaleCohomologyFoundations §§G.1–G.3; PadicHodgeTheory §2.7 with integral toric field extension; DiamondEtaleCohomology §§C0.1, C0.23 and C2.10 for proper hyperdescent in positive residue characteristic; and EnhancedDerivedSheaves §§0.3–0.4 for connective totalization truncation. Affinoid algebraization precedes the generator theorem, and proper pushforward precedes arbitrary-base exchange.
+Use §5.3 for almost detection; HodgeTateAndCanonicalSubgroups §7.6 for proper smooth local systems; AdicSpacesPartIIPartII RZ.0–RZ.5 with branched covers and proper generic smoothness; ClassicalAdicEtaleCohomology §§1.5(c), 2.5, 3.2, 9.1, 8.2, 8.4, 10.5 and 11.1; EtaleCohomologyFoundations §§G.1–G.3; PadicHodgeTheory §2.7 with integral toric field extension; DiamondsAndVStacks §D2.2 for the v-cover criterion on perfectoid covers; DiamondEtaleCohomology §§C0.1, C0.23 and C2.10 for proper hyperdescent in positive residue characteristic; and EnhancedDerivedSheaves §§0.3–0.4 and E5:animation.3 for the enhancement and connective totalization bound. Affinoid algebraization precedes the generator theorem, and proper pushforward precedes arbitrary-base exchange.
 
 ## Downstream consumers
 

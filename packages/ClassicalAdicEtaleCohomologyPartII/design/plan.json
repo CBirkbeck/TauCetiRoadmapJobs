@@ -4366,7 +4366,7 @@
     },
     {
       "slug": "valuation-upper-shriek",
-      "needs": "For a qcqs universally coherent base S, including Spec(O_K/pⁿ) for a rank-one valuation ring O_K and n≥1, coherent upper shriek on separated finitely presented S-schemes is a pseudofunctor on bounded-below quasi-coherent complexes, right adjoint to proper pushforward and compatible with flat base change and the smooth formula f!B≅f*B⊗Ωᵈ[d] for smooth pure-d f.",
+      "needs": "For a qcqs universally coherent base S, including Spec(O_K/ϖⁿ⁺¹) for a rank-one valuation ring O_K, nonzero pseudouniformizer ϖ and n≥0, coherent upper shriek on separated finitely presented S-schemes is a pseudofunctor on bounded-below quasi-coherent complexes, right adjoint to proper pushforward and compatible with flat base change and the smooth formula f!B≅f*B⊗Ωᵈ[d] for smooth pure-d f.",
       "supplier": "SchemeAndStackFoundations",
       "section": "2.19–2.21"
     },
@@ -4383,14 +4383,8 @@
       "section": "0.6 and 2.19–2.21"
     },
     {
-      "slug": "connective-totalization-truncation",
-      "needs": "For every i≥0 and every cosimplicial object K:Δ→D^{≥0} of a module-derived category, restriction to Δ_{≤i+1} induces an isomorphism on Hⁱ of its homotopy totalization, naturally in K.",
-      "supplier": "EnhancedDerivedSheaves",
-      "section": "0.3–0.4"
-    },
-    {
       "slug": "general-nearby-coherence",
-      "needs": "Supply the general admissible-model almost coherent nearby-cycle theorem, its derived p-completeness, reduction, amplitude [0,d] and étale base change for d-dimensional generic fibre, as in AC Theorems 6.13.5–6.13.6.",
+      "needs": "For an admissible formal O_C-scheme 𝔛 with generic fibre X of finite dimension d and specialization ν:X_proét→𝔛_Zar, the cohomology sheaves of Rν_*(O_X⁺/p) are quasi-coherent on 𝔛₀ and have almost finitely presented sections on every formal affine (PerfectoidSpaces §P0.10); they are almost zero outside [0,d]; for 𝔛=Spf A the associated-sheaf maps Hⁱ(X_proét,O_X⁺/p)^Δ→Rⁱν_*(O_X⁺/p) are isomorphisms for all i≥0; these cohomology sheaves commute with étale base change of models; the same assertions hold for Rν_*Ô_X⁺ with adically quasi-coherent cohomology on 𝔛, and this integral complex is derived p-complete with Rν_*Ô_X⁺⊗ᴸO_C/p≅Rν_*(O_X⁺/p).",
       "supplier": "PadicHodgeTheory",
       "section": "2.1–2.7"
     },
