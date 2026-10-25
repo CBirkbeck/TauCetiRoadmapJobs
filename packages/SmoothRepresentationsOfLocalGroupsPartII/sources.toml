@@ -22,7 +22,7 @@ cited_for = ["SRU.2", "SRU.4", "SRU.5", "SRU.6", "SRU.7"]
 [[source]]
 id = "Cas95"
 locator_scheme = "section"
-locator = "§2.1, definition of P_K and the sentence after it, p. 20; extracted line 298; §2.1, Proposition 2.1.5 and the paragraph after Proposition 2.1.11, pp. 20–22; extracted line 760; §2.1, Proposition 2.1.15, p. 23; extracted line 858; §2.1, Propositions 2.1.5 and 2.1.14 with proof, pp. 20–23; extracted line 298; §2.1, Propositions 2.1.5 and 2.1.14–2.1.15, PDF p. 8; extracted line 298; §2.3, definition of the distribution character, p. 25; extracted line 327; Proposition 2.3.1, PDF p. 25; extracted line 969"
+locator = "§2.1, definition of P_K and the sentence after it, p. 20; extracted line 744; §2.1, Proposition 2.1.5 and the paragraph after Proposition 2.1.11, pp. 20–22; extracted line 760; §2.1, Proposition 2.1.15, p. 23; extracted line 858; §2.1, Propositions 2.1.5 and 2.1.14 with proof, pp. 20–23; extracted lines 760 and 858; §2.3, definition of the distribution character, p. 25; extracted line 964; Proposition 2.3.1, PDF p. 25; extracted line 969"
 url = "https://personal.math.ubc.ca/~cass/research/pdf/p-adic-book.pdf"
 fetched_from = "https://personal.math.ubc.ca/~cass/research/pdf/p-adic-book.pdf"
 fetched_at = "2026-10-25T11:47:58Z"
@@ -109,7 +109,7 @@ cited_for = ["SRU.6"]
 [[source]]
 id = "Aub95"
 locator_scheme = "section"
-locator = "§1, Définition 1.5 and Théorème 1.7, p. 2181; extracted line 107; §2, Théorème 2.3, p. 2185; §3, Corollaire 3.9, p. 2189; extracted line 265"
+locator = "§1, Définition 1.5 and Théorème 1.7, p. 2181; extracted line 107; §2, Théorème 2.3, p. 2185; extracted line 265; §3, Corollaire 3.9, p. 2189"
 url = "https://www.ams.org/journals/tran/1995-347-06/S0002-9947-1995-1285969-0/S0002-9947-1995-1285969-0.pdf"
 fetched_from = "https://www.ams.org/journals/tran/1995-347-06/S0002-9947-1995-1285969-0/S0002-9947-1995-1285969-0.pdf"
 fetched_at = "2026-10-25T11:48:16Z"
@@ -230,7 +230,7 @@ year = 2002
 [[source]]
 id = "CiF4"
 locator_scheme = "section"
-locator = "§3.1, Theorem 3.1, pp. 10–11 of the author version; extracted line 427"
+locator = "§3.1, Theorem 3.1, pp. 10–11 of the author version; extracted line 427; §3.2, B₃ row of the maximal-parabolic spherical unitary parameters, p. 14; extracted line 584"
 url = "https://www.math.utah.edu/~ptrapa/math-library/ciubotaru/ciubotaru_F4.pdf"
 fetched_from = "https://www.math.utah.edu/~ptrapa/math-library/ciubotaru/ciubotaru_F4.pdf"
 fetched_at = "2026-10-25T11:48:42Z"
@@ -282,7 +282,7 @@ doi = "10.1090/S0002-9947-96-01776-X"
 [[source]]
 id = "BHV"
 locator_scheme = "section"
-locator = "Definition C.4.1; Propositions C.4.2–C.4.3; Theorem C.4.10; Proposition C.5.1 and Theorems C.5.2, C.5.5–C.5.6; Lemmas C.5.3–C.5.4; Definition F.1.1, Lemma F.1.3 and Proposition F.1.4; Definition F.2.1 and Propositions F.2.2, F.2.4; Exercise F.6.4; extracted lines 14301, 14433, 14570, 14634, 14642, 14690, 16025, 16155, 16321, 16976"
+locator = "Definitions A.1.1 and A.1.7; Definition C.4.1; Propositions C.4.2–C.4.3; Theorem C.4.10; Proposition C.5.1 and Theorems C.5.2, C.5.5–C.5.6; Lemmas C.5.3–C.5.4; Definition F.1.1, Lemma F.1.3 and Proposition F.1.4; Definition F.2.1 and Propositions F.2.2, F.2.4; Exercises C.6.10 and F.6.4; extracted lines 11667, 11764, 14649, 14923, 14301, 14433, 14570, 14634, 14642, 14690, 16025, 16155, 16321, 16976"
 url = "https://archive-ouverte.unige.ch/unige:10789"
 fetched_from = "https://access.archive-ouverte.unige.ch/access/metadata/19c0d173-9917-4a95-b246-5f2eda3727b9/download"
 fetched_at = "2026-10-25T11:54:05Z"
@@ -300,7 +300,7 @@ version_note = "Published 2008 text, institutionally hosted; PDF page numbering 
 [[source]]
 id = "Ber92"
 locator_scheme = "section"
-locator = "Definition 27 and Proposition 40, PDF p. 83; extracted line 2853; Lemma 38, PDF p. 84; extracted line 2887; Proposition 41, PDF p. 86; extracted line 2934; Proposition 38, PDF p. 84; extracted line 2861"
+locator = "Ch. II §2.1, Proposition 22, p. 39; extracted line 1281; Definition 27 and Proposition 40, PDF p. 83; extracted line 2853; Lemma 38, PDF p. 84; extracted line 2887; Proposition 41, PDF p. 86; extracted line 2934; Proposition 38, PDF p. 84; extracted line 2861"
 url = "https://personal.math.ubc.ca/~cass/research/pdf/bernstein.pdf"
 fetched_from = "https://personal.math.ubc.ca/~cass/research/pdf/bernstein.pdf"
 fetched_at = "2026-10-25T11:54:09Z"
@@ -308,7 +308,7 @@ sha256 = "a594282d1ab35ad49e04eef571e59d620be535a98954c64e3a35205d206311c7"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["SRU.2"]
+cited_for = ["SRU.2", "SRU.4"]
 authors = "Joseph Bernstein, notes by Karl E. Rumelhart"
 title = "Representations of p-adic groups (Harvard lectures, Fall 1992)"
 year = 1992
