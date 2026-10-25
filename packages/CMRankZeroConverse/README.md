@@ -4,15 +4,15 @@
 
 ## Scope and ownership
 
-This roadmap owns the converse deduction, its central specializations, the two rational CM doubling identities, the analytic twist applications, the explicit cube-sum model comparison, and the descent-coset theorem. Its elementary sign and proposition definitions are local conventions, not new realizations or new Selmer theories. The shared rank-r p-converse proposition has this owner; RankOneConverse owns its rank-one results.
+This roadmap owns the converse deduction, its central specializations, the two rational CM doubling identities, the analytic twist applications, the explicit cube-sum model comparison, and the descent-coset theorem. Its elementary sign and proposition definitions are local conventions, not new realizations or new Selmer theories. The rank-r p-converse proposition has this owner and is consumed by RankZeroOneBSDPartII; RankOneConverse owns its rank-one results.
 
 The general cohomological realization and conjugate-dual dictionary are stated by AutomorphicGaloisRepresentations §§1.5, 4.4–4.8, 6.4 and 7.2. They are consumed here at the centre, rather than constructed again. KatoEulerSystems §§4.4, 4.6, 5.1, 5.3 and 7.2 own the actual zeta morphism, independent Iwasawa module structure, general twist compatibility, interpolation and the cohomological bound. SelmerIwasawaCohomology §§2.10–2.12a, 3.0, 3.10, 3.13–3.16, 4.9 and 4.26 own coranks, the completed cyclotomic algebra interface, derived control and the finite Kummer comparisons. ArithmeticGaloisDuality §§R02.4.3–R02.4.4 and D7.3–D7.7 own duality and Shapiro. PadicHodgeRegulators §§1.1–1.8 own the Bloch–Kato maps and their general dimension formulas.
 
-ArithmeticStatisticsPartI §§0.1–0.2, 0.5–0.7 and 0.15 own families, relative density, squareclass height, finite support-ideal fibres, squarefree denominators, the general piecewise height comparison and the positive linear squareclass denominator. In particular its §0.1 already includes the weights 3 and 6 for the congruent-number discriminant comparison. The application here uses that comparison with the analytic nonvanishing subset. ArithmeticStatisticsPartVII §§5.9–5.11 own the statistical corank inputs and the maximal-order CM reduction; their unconditional endpoints required here are specified below. No probability distribution, three-isogeny average or squarefree counting theory is reconstructed here. ComplexMultiplicationAndExplicitReciprocity §§1.2, 4.1–4.2 own the CM self-twist, coefficient components, theta induction and full factors, together with the extensions specified below. The anticyclotomic theories of NonordinaryCMSpecialValues and InertAnticyclotomicCMMainConjecture do not replace the full cyclotomic equality needed here.
+ArithmeticStatisticsPartI §§0.1–0.2, 0.5–0.7 and 0.15 own families, relative density, squareclass height, finite support-ideal fibres, squarefree denominators, the general piecewise height comparison and the positive linear squareclass denominator. In particular its §0.1 already includes the weights 3 and 6 for the congruent-number discriminant comparison. The application here uses that comparison with the analytic nonvanishing subset. ArithmeticStatisticsPartVII §§5.9–5.11 own the statistical corank inputs and the maximal-order CM reduction; their unconditional endpoints required here are specified below. No probability distribution, three-isogeny average or squarefree counting theory is reconstructed here. ComplexMultiplicationAndExplicitReciprocity §§1.2, 4.1–4.2 own the CM self-twist, coefficient components, theta induction and full factors, together with the extensions specified below. ModularIwasawaMainConjecturesPartII §§CZ.4–CZ.6 owns the full rational cyclotomic CM equality and its normalization dictionary; the anticyclotomic theories of NonordinaryCMSpecialValues and InertAnticyclotomicCMMainConjecture supply different main-conjecture statements.
 
-The five-coefficient curve, discriminant, ellipticity, j-invariant and base change are already in the library: Mathlib's `WeierstrassCurve`, `WeierstrassCurve.Δ`, `WeierstrassCurve.IsElliptic`, `WeierstrassCurve.j`, `WeierstrassCurve.map`. Tau Ceti already supplies `WeierstrassCurve.quadraticTwistOf` and changes of variables. EllipticCurves Layers 1, 5 and 7 own general isogenies, exceptional-j twist classification and isogeny invariance of the classical Selmer corank. Only the CM-specific applications and descent-coset bound remain here. The native endomorphism ring is `TauCeti.Isogeny.Hom` with its ring instance in `TauCeti/AlgebraicGeometry/EllipticCurve/Isogeny/Hom/Ring.lean`; this roadmap specializes that ring to the cube-sum model. Mathlib's `WeierstrassCurve.LFunction` supplies the multiplicative L-series coefficients and `WeierstrassCurve.LSeries` their literal total Dirichlet series; evaluating that series at the centre does not supply the analytic continuation required in this roadmap. EllipticCurveModularity §R29.6 and ModularForms Layer 7 own the analytic functions.
+The five-coefficient curve, discriminant, ellipticity, j-invariant and base change are already in the library: Mathlib's `WeierstrassCurve`, `WeierstrassCurve.Δ`, `WeierstrassCurve.IsElliptic`, `WeierstrassCurve.j`, `WeierstrassCurve.map`. Tau Ceti supplies `WeierstrassCurve.shortCurve`, `WeierstrassCurve.quadraticTwistOf` and changes of variables, including fourth- and sixth-power scaling between short forms. EllipticCurves Layers 1, 5 and 7 own general isogenies, pointed-twist classification and isogeny invariance of the classical Selmer corank. Only the CM-specific applications and descent-coset bound remain here. The native endomorphism ring is `TauCeti.Isogeny.Hom` with its ring instance in `TauCeti/AlgebraicGeometry/EllipticCurve/Isogeny/Hom/Ring.lean`; this roadmap specializes that ring to the cube-sum model. Mathlib's `WeierstrassCurve.LFunction` supplies the multiplicative L-series coefficients and `WeierstrassCurve.LSeries` their total Dirichlet series. Agreement with it on Re(s)>3/2 specifies the unique entire continuation and makes the elliptic analytic headlines statable. EllipticCurveModularity §R29.6 supplies the continuation theorem. The newform analytic function, finite analytic order, Euler product and Fricke functional equation are supplied by the pinned Mathlib and Tau Ceti declarations below.
 
-The headline signatures are in [Suggested.lean](Suggested.lean). The full-CM theorem for the cube-sum model and the descent-coset theorem are statable there on native curves. The L-value, Selmer, regulator, CM-order and support-height headlines require the supplier carriers described in its module docstring. Sign identities, discriminant identities, API facts and Checks stay in this README.
+The headline signatures are in [Suggested.lean](Suggested.lean): analytic-order doubling, the three congruent-number limits, CM twist nonvanishing, full CM for cube sums, descent cosets, the descent count and non-descending nonvanishing. The cube-sum full-CM theorem verifies the geometric input to the advertised cube-sum application; the two-coset theorem is the geometric input to the advertised non-descending proportion. Selmer, zeta and regulator headlines lack the carriers specified in the module docstring. The height formula is a specialization of ArithmeticStatisticsPartI's height to the native squareclass quotient, without a second counting theory. Sign identities, discriminant identities, API facts and Checks stay in this README.
 
 ## Conventions
 
@@ -32,35 +32,37 @@ All representations and vector spaces use the coefficient-field universe of thei
 
 ### From Mathlib
 
-Use `WeierstrassCurve` and its five coefficients in `Mathlib/AlgebraicGeometry/EllipticCurve/Weierstrass.lean`, lines 76–86; `WeierstrassCurve.Δ` at line 131; `WeierstrassCurve.map` at line 230; `WeierstrassCurve.IsElliptic` at line 366 and `WeierstrassCurve.j` at line 388. Ellipticity is exactly invertibility of Δ, including over rings; over ℚ it is equivalent to Δ≠0. It does not assert smoothness of a singular model after forgetting this hypothesis. Use `NumberField.RingOfIntegers` in `Mathlib/NumberTheory/NumberField/Basic.lean`, line 101, and `CyclotomicField` in `Mathlib/NumberTheory/Cyclotomic/Basic.lean`, line 652, for the full-CM signature. Use `WeierstrassCurve.VariableChange` for pointed isomorphisms, `Algebra.IsQuadraticExtension` for quadratic fields, and the ordinary finite-dimensional, ideal, localization and limit APIs. Their routine algebra is not a target here. The coefficient function and raw series are `WeierstrassCurve.LFunction` and `WeierstrassCurve.LSeries` in `Mathlib/AlgebraicGeometry/EllipticCurve/LFunction.lean`, lines 79 and 84; neither definition includes holomorphic continuation.
+Use `WeierstrassCurve` and its five coefficients in `Mathlib/AlgebraicGeometry/EllipticCurve/Weierstrass.lean`, lines 76–86; `WeierstrassCurve.Δ` at line 131; `WeierstrassCurve.map` at line 230; `WeierstrassCurve.IsElliptic` at line 366 and `WeierstrassCurve.j` at line 388. Ellipticity is exactly invertibility of Δ, including over rings; over ℚ it is equivalent to Δ≠0. It does not assert smoothness of a singular model after forgetting this hypothesis. Use `NumberField.RingOfIntegers` in `Mathlib/NumberTheory/NumberField/Basic.lean`, line 101, and `CyclotomicField` in `Mathlib/NumberTheory/Cyclotomic/Basic.lean`, line 652, for the full-CM signature. Use `WeierstrassCurve.VariableChange` for pointed isomorphisms, `Algebra.IsQuadraticExtension` for quadratic fields, and the ordinary finite-dimensional, ideal, localization and limit APIs. Their routine algebra is not a target here. The coefficient function and raw series are `WeierstrassCurve.LFunction` and `WeierstrassCurve.LSeries` in `Mathlib/AlgebraicGeometry/EllipticCurve/LFunction.lean`, lines 79 and 84; neither definition includes holomorphic continuation. Use `ModularForm.L` and `CuspForm.differentiable_L` in `Mathlib/NumberTheory/ModularForms/LFunction.lean`, lines 134 and 190, for the positive-weight cusp-form entire L-function. Use `analyticOrderAt_mul` and `analyticOrderNatAt_mul` in `Mathlib/Analysis/Analytic/Order.lean`, lines 523 and 528; the natural-order formula requires both analytic orders to be finite. Use `AnalyticOnNhd.eq_of_eventuallyEq` in `Mathlib/Analysis/Analytic/Uniqueness.lean`, line 234, for uniqueness of entire continuation on connected ℂ.
+
+For the support height use `FractionalIdeal.count` and `FractionalIdeal.finite_factors` in `Mathlib/RingTheory/DedekindDomain/Factorization.lean`, lines 309 and 596, for the integer valuation and its finite support, and `Ideal.absNorm` in `Mathlib/RingTheory/Ideal/Norm/AbsNorm.lean`, line 258. The count of the zero ideal is defined to be zero; squareclass representatives are units of the field, so that boundary never enters. For cyclotomic arithmetic use `IsCyclotomicExtension.Rat.discr_odd_prime'` in `Mathlib/NumberTheory/NumberField/Cyclotomic/Basic.lean`, line 56, and `IsCyclotomicExtension.Rat.absNorm_span_zeta_sub_one`, `IsCyclotomicExtension.Rat.map_eq_span_zeta_sub_one_pow`, `IsCyclotomicExtension.Rat.ramificationIdx_span_zeta_sub_one` in its `Ideal.lean`, lines 83, 106 and 124, specialized to p=3 and exponent one.
 
 ### From Tau Ceti
 
 Use `HeckeRing.GL2.Newform` in `TauCeti/NumberTheory/ModularForms/Newforms/Newform.lean`, line 104: it extends the normalized good-prime cuspidal eigenform and adds newspace membership. It does not bundle Galois realizations, CM, Selmer groups or analytic continuation. Use `TauCeti.completedGroupAlgebra` in `TauCeti/Topology/Algebra/Group/Profinite/CompletedGroupAlgebra/Basic.lean`, line 145, the compatible inverse limit over open normal subgroups, through the Iwasawa supplier's continuous character interface. An ordinary finite-support group ring is not this algebra.
 
-Use `WeierstrassCurve.quadraticTwistOf` in `TauCeti/AlgebraicGeometry/EllipticCurve/QuadraticTwist/Basic.lean`, line 169, and `WeierstrassCurve.isElliptic_quadraticTwistOf`, line 411. The former is a five-coefficient formula with discriminant parameter t²−4n and has no ellipticity hypothesis. In characteristic zero the specialization (t,n)=(0,−a) represents the squareclass a because the parameter is 4a; for a short equation its coefficients become `(4a)^2 A, (4a)^3 B`. Use `WeierstrassCurve.exists_smul_eq_or_exists_smul_eq_quadraticTwist`, line 739, only with its j≠0,1728 hypotheses. The two exceptional values consume EllipticCurves Layer 5, rather than that generic theorem outside its scope.
+Use `WeierstrassCurve.quadraticTwistOf` in `TauCeti/AlgebraicGeometry/EllipticCurve/QuadraticTwist/Basic.lean`, line 169, and `WeierstrassCurve.isElliptic_quadraticTwistOf`, line 411. The former is a five-coefficient formula with discriminant parameter t²−4n and has no ellipticity hypothesis. In characteristic zero the specialization (t,n)=(0,−a) represents the squareclass a because the parameter is 4a; for a short equation its coefficients become `(4a)^2 A, (4a)^3 B`. Use `WeierstrassCurve.exists_smul_eq_or_exists_smul_eq_quadraticTwist`, line 739, only with its j≠0,1728 hypotheses. For short forms use `WeierstrassCurve.shortCurve` and `WeierstrassCurve.smul_shortCurve` in `TauCeti/AlgebraicGeometry/EllipticCurve/ShortWeierstrass.lean`, lines 109 and 168, and `WeierstrassCurve.variableChange_a₄_of_isShortNF`, `WeierstrassCurve.variableChange_a₆_of_isShortNF` in `TauCeti/AlgebraicGeometry/EllipticCurve/NormalForms.lean`, lines 131 and 140. When two and three are non-zero-divisors and both forms are short, they give scaling by u⁻⁴ and u⁻⁶ and hence the exceptional-j coefficient classifications.
 
 Use `TauCeti.Isogeny.Hom` in `TauCeti/AlgebraicGeometry/EllipticCurve/Isogeny/Hom/Basic.lean`, line 106, and its ring instance in `TauCeti/AlgebraicGeometry/EllipticCurve/Isogeny/Hom/Ring.lean`, line 174, for actual algebraic endomorphisms. The latter requires ellipticity and takes multiplication to be composition; an arbitrary additive endomorphism of the point group is not substituted.
 
+Use `TauCeti.SquareClassGroup` and `TauCeti.squareClass_toMul_out` in `TauCeti/FieldTheory/SquareClassGroup/Basic.lean`, lines 45 and 66: the carrier is the additive quotient of Kˣ by squares, and the chosen representative has the prescribed class. Use `HeckeRing.GL2.Newform.analyticOrderAt_L_ne_top`, `HeckeRing.GL2.Newform.analyticRank` and `HeckeRing.GL2.Newform.analyticRank_eq_zero_iff` in `TauCeti/NumberTheory/ModularForms/Newforms/AnalyticInvariants.lean`, lines 72, 80 and 107. For positive weight these give finite analytic order and the central nonvanishing equivalence for the native newform. Use `HeckeRing.GL2.Newform.L_eulerProduct` in `TauCeti/NumberTheory/ModularForms/LFunction/EulerProduct.lean`, line 217, including the linear factor at primes dividing the level; `CuspForm.frickeCompletedL_functional_equation` in its `FunctionalEquation.lean`, line 324, with its normalized Fricke partner; and `CuspForm.conj` in `TauCeti/NumberTheory/ModularForms/Conjugate.lean`, line 298, for coefficient conjugation.
+
 ### From TauCetiRoadmap.ModularForms
 
-Layer 7, “L-functions”, supplies the arithmetic newform L-function, entire continuation and functional equation. Its coefficient-conjugation construction is used on the coefficient field, not by applying an arbitrary complex automorphism pointwise to analytic functions.
-
-What ModularForms must provide (gap:newform-central-analytic-interface): for every normalized cuspidal newform of weight k≥2 and every coefficient embedding, export finite central analytic order, L(f*,h)=conjugate L(f,h), and L⁽ᵖ⁾(f*,s)=P_p(f*,p⁻ˢ)L(f*,s), with the actual bad-prime factor when p divides the level, compatibly with the theta-series L-function.
+What ModularForms must provide (gap:newform-central-analytic-interface): for every normalized cuspidal newform of weight k≥2 and every coefficient embedding, export L(f*,h)=conjugate L(f,h) for the coefficient-conjugate cusp form, and L⁽ᵖ⁾(f*,s)=P_p(f*,p⁻ˢ)L(f*,s) on all of ℂ, with the actual bad-prime factor when p divides the level, compatibly with the theta-series L-function of Layer 7.
 
 ### From TauCetiRoadmap.EllipticCurveModularity
 
 Section R29.6, “Continuation and the functional equation”, supplies the entire elliptic continuation agreeing with its actual Euler product and the modular L-function. The order at 1 of this function is the analytic rank used here.
 
-What EllipticCurveModularity must provide (gap:elliptic-quadratic-analytic-identities): export the full quadratic base-change factorization L(A/K,s)=L(A,s)L(Aᶜʰⁱ_K,s), equality of all local factors under isogeny, finite analytic order and its product additivity, and the congruent-number root numbers +1 for positive squarefree residues 1,2,3 modulo eight and −1 for 5,6,7, including ramified factors.
+What EllipticCurveModularity must provide (gap:elliptic-quadratic-analytic-identities): export the full quadratic base-change factorization L(A/K,s)=L(A,s)L(Aᶜʰⁱ_K,s), equality of all local factors under isogeny, finite analytic order, and the congruent-number root numbers +1 for positive squarefree residues 1,2,3 modulo eight and −1 for 5,6,7, including ramified factors.
 
 ### From TauCetiRoadmap.EllipticCurves
 
-Layers 1 and 5 supply pointed model comparison, quadratic twists, and the characteristic-zero exceptional classifications: sixth-power coefficient classes at j=0 and fourth-power classes at j=1728. Layer 7 supplies the classical Kummer Selmer functor. These are used for arbitrary number fields, with every local Kummer image.
+Layers 1 and 5 supply general isogenies, the pointed-twist classification and quadratic twists. Layer 7 supplies the classical Kummer Selmer functor. These are used for arbitrary number fields, with every local Kummer image.
 
 What EllipticCurves must provide (gap:isogeny-corank-all-primes): for every number field, elliptic isogeny φ and prime p, give maps on classical p∞ Kummer Selmer groups respecting all local images whose composites with the dual maps are multiplication by deg φ, so finite-cotype kernels and cokernels have equal rationalized dual corank even when p divides deg φ.
 
-What EllipticCurves must provide (gap:pointed-cubic-model-comparison): export the pointed smooth-projective model comparison for the invertible linear substitutions in §6.2, with origin [1:−1:0], and the j=0,1728 coefficient classifications over arbitrary characteristic-zero fields needed in §6.4.
+What EllipticCurves must provide (gap:pointed-cubic-model-comparison): over a characteristic-zero field, an invertible projective linear map sending a smooth plane cubic with a marked rational point onto a Weierstrass cubic and the marked point to its origin restricts to a pointed isomorphism of smooth projective curves.
 
 ### From TauCetiRoadmap.AutomorphicGaloisRepresentations
 
@@ -86,21 +88,25 @@ Sections 1.1, 1.4–1.8 supply H_f⊆H_g, the dual exponential with kernel H_g, 
 
 ### From TauCetiRoadmap.KatoEulerSystems
 
-Sections 4.4 and 4.6 supply independent rational rank-one/torsion structure and twisting/specialization. Sections 5.1 and 5.3 supply the actual E-linear zeta morphism, its relation z(cγ)=−σ₋₁z(γ), and its critical period formula on F-rational vectors. Section 7.2 supplies the cohomological upper bound; this is weaker than the equality below. The CM module argument includes Kato §15.14 when K⊂ℚ(μ_p∞); for imaginary quadratic K these include ℚ(i) at two and ℚ(√−p) for p≡3 mod 4, not only the case p=3.
+Sections 4.4 and 4.6 supply independent rational rank-one/torsion structure and twisting/specialization in their stated admissible range. Sections 5.1 and 5.3 supply the actual E-linear zeta morphism, its relation z(cγ)=−σ₋₁z(γ), and its critical period formula on F-rational vectors. Section 7.2 supplies the cohomological upper bound. The all-prime CM structure and equality use ModularIwasawaMainConjecturesPartII §§CZ.5–CZ.6 below. The CM module argument includes Kato §15.14 when K⊂ℚ(μ_p∞); for imaginary quadratic K these include ℚ(i) and ℚ(√−2) at two and ℚ(√−p) for p≡3 mod 4, not only the case p=3.
 
 What KatoEulerSystems must provide (gap:central-modular-local-dimensions): export Kato Proposition 14.12 for f and f*, every prime p and every 1≤r≤k−1, with local H⁰=H²=0, dim H¹=2 and dim H_f¹=1, including the bad-prime weight-two exception check that κ⁻¹ differs from κ⁻² times a finite character.
 
-What KatoEulerSystems must provide (gap:cm-rational-kato-equality): for every CM newform of weight k≥2 and every λ|p, export char_A H²_Iw=char_A(H¹_Iw/Z(f)) for the full cyclotomic Kato complex after inverting p, retaining conductor factors, its actual zeta normalization and independent prior CM module structure, including K⊂ℚ(μ_p∞).
+### From TauCetiRoadmap.ModularIwasawaMainConjecturesPartII
+
+Use §CZ.4 for the rational equivariant input with conductor corrections, §CZ.5 for independent CM module structure and the contained-cyclotomic-field case, and §CZ.6 for the all-prime rational Kato equality and its normalization dictionary.
+
+What ModularIwasawaMainConjecturesPartII must provide (gap:cm-rational-kato-equality): for every CM newform of weight k≥2 and every λ|p, export the §CZ.6 equality char_A H²_Iw=char_A(H¹_Iw/Z(f)) for the full cyclotomic Kato complex after inverting p, with the §CZ.4 conductor-factor conventions, actual zeta normalization and independent prior §CZ.5 CM module structure, including K⊂ℚ(μ_p∞).
 
 The equality is BT Theorem 2.6, p. 5 (BT lines 208–218); Kato Proposition 15.17, p. 265 (Kato lines 5762–5772), gives only the bound. The all-prime cyclotomic endpoint belongs to this supplier's cohomological theory rather than to a restricted anticyclotomic theory.
 
 ### From TauCetiRoadmap.ComplexMultiplicationAndExplicitReciprocity
 
-Sections 1.2 and 4.1–4.2 supply the rational CM self-twist isogeny, actual Hecke characters, completed coefficient decomposition, conjugate duals and full L-factors. Their rational comparison allows primes dividing the order index.
+Sections 1.2 and 4.1–4.2 supply the rational CM self-twist isogeny, actual Hecke characters, completed coefficient decomposition, conjugate duals and full L-factors. In §4.2, ellipticCMLFactorization applies to A/K without rational descent, whereas cmInductionComparison assumes A/ℚ. Their rational comparison allows primes dividing the order index.
 
-What ComplexMultiplicationAndExplicitReciprocity must provide (gap:theta-induction-arbitrary-cm-curve): for every elliptic A/K with all CM endomorphisms defined over its imaginary quadratic field and any CM order, extend §4.2 from curves over ℚ to actual weight-two theta forms with M_f(1)⊗L=Ind η̄ and its conjugate, and full arithmetic factorization L(A/K,s)=L(f_η,s)L(f_η̄,s), without descent to ℚ.
+What ComplexMultiplicationAndExplicitReciprocity must provide (gap:theta-induction-arbitrary-cm-curve): for every elliptic A/K with all CM endomorphisms defined over its imaginary quadratic field and any CM order, supply weight-two theta newforms f_ψ and f_ψ̄ with L(f_ψ,s)=L(ψ,s) at every Euler factor and the central comparison M_(f_ψ)(1)⊗L=Ind η̄ with its conjugate, without descent to ℚ; §4.2's ellipticCMLFactorization supplies L(A/K,s)=L(ψ,s)L(ψ̄,s).
 
-What ComplexMultiplicationAndExplicitReciprocity must provide (gap:cube-sum-full-cm): in its CM-order interface identify the origin-fixing automorphism (X,Y)↦(ζ₃X,Y) of §6.2 with an injective ℤ[ζ₃] action and full CM by that maximal order, with discriminant −3 and ramification of three.
+What ComplexMultiplicationAndExplicitReciprocity must provide (gap:cube-sum-full-cm): for every elliptic curve of j=0 over a characteristic-zero field containing a primitive cube root ζ, identify its endomorphism ring over that field with the ring of integers of ℚ(ζ₃), with ζ acting in a short model by (x,y)↦(ζx,y), using the characteristic-zero classification of elliptic endomorphism rings.
 
 ### From TauCetiRoadmap.ArithmeticStatisticsPartI
 
@@ -126,7 +132,21 @@ Layer 0 fixes the shared propositions, sign and central kernel on the supplied r
 
 For an elliptic A/ℚ, prime p and r∈ℕ, define the rank-r p-converse proposition to mean `corank Sel_(pInfinity)(A/Q) = r implies analyticRank(A) = r`. The analytic rank is the finite order at 1 of the actual elliptic continuation. This definition proves no rank-r converse. (BT (1.1), p. 1; BT lines 24–34.)
 
-Its API is:
+For a native Weierstrass W over a number field define `ellipticLNonvanishingAtOne` to mean that there exists an entire F:ℂ→ℂ agreeing with W.LSeries on Re(s)>3/2 and satisfying F(1)≠0. The identity theorem makes the entire continuation unique; absolute convergence of the Hasse–Weil series in that half-plane ties the definition to the full arithmetic Euler product. This predicate includes existence of the continuation and is used only on elliptic curves in the headline theorems. (BT Theorem 1.1, p. 1, BT lines 39–43, for the central nonvanishing endpoint; EllipticCurveModularity §R29.6 for continuation.)
+
+Its analytic API is:
+
+- Any entire continuation agreeing in that half-plane has the same value at one, by the identity theorem.
+- On an elliptic curve with this continuation and finite central order, the predicate is equivalent to analytic rank zero.
+- Isomorphic elliptic curves have identical full local factors, so their predicates agree.
+
+**Checks.**
+
+- For the nonvanishing congruent-number twist n=1, the unique continuation has F(1)≠0 and the predicate holds; for n=5 the root number is −1 and F(1)=−F(1)=0, so it fails.
+- Replacing F by 2F multiplies its first Dirichlet coefficient from 1 to 2, so it fails agreement on the convergence half-plane. A zero function has first coefficient 0 and also fails agreement.
+- The raw series at one is not used: only the half-plane values fix F. The singular model at n=0 is outside every analytic headline's family.
+
+The p-converse API is:
 
 - It holds exactly when the displayed corank-to-analytic-rank implication holds.
 - At r=0 it is equivalent to corank zero implying L(A,1)≠0, using the supplied analytic-order equivalence.
@@ -139,7 +159,7 @@ Its API is:
 - The hypothetical pair (corank, analytic rank)=(0,1) makes the rank-zero proposition false and the rank-one proposition vacuously true. Reversing the implication would fail this truth table.
 - With corank Sel₂∞=0 and A[2](ℚ)≅(ℤ/2)², the antecedent is true but dim Sel₂≥2 by Kummer. Finite Sel₂=0 would be a different antecedent.
 
-*Needs:* statement: SelmerIwasawaCohomology §§2.11–2.12a; EllipticCurveModularity §R29.6 and its central analytic interface; Mathlib analytic order. Route: the same inputs.
+*Needs:* statement: SelmerIwasawaCohomology §§2.11–2.12a; EllipticCurveModularity §R29.6 and its central analytic interface; Mathlib analytic order and the native elliptic L-series. Route: the same inputs and the identity theorem for entire functions.
 
 ### 0.2 The central sign and rational projection
 
@@ -316,7 +336,7 @@ By §1.4 its dual exponential is nonzero. Choose an F-basis γ₁,γ₂ before c
 
 **Checks.** At k=2 the exponent is zero, the sign is +1 and 1≤h=1≤k−1. At k=4 the exponent is one and the sign is −1; at k=6 the exponent is two and the sign is +1. If the Euler polynomial evaluates to zero, the product is zero for every finite full L-value, so it cannot satisfy the nonzero-product hypothesis; no inverse of zero occurs.
 
-*Needs:* statement: §§0.3, 2.2; ModularForms Layer 7; KatoEulerSystems §5.3. Route: §1.4; the F-rational structure in AutomorphicGaloisRepresentations §1.5; gap:newform-central-analytic-interface and its correct bad local factors.
+*Needs:* statement: §§0.3, 2.2; Mathlib `ModularForm.L`; KatoEulerSystems §5.3. Route: §1.4; the F-rational structure in AutomorphicGaloisRepresentations §1.5; gap:newform-central-analytic-interface and the native newform Euler factors.
 
 ### 3.2 The converse under rational Kato equality
 
@@ -330,9 +350,9 @@ For every normalized newform of even weight k≥2 and every λ|p, assume the act
 
 For every normalized CM newform of even weight k≥2, every prime p and every λ|p, prove `H_f^1(Q,M_f(h))=0 implies L(f,h) != 0`, equivalently analytic order zero at h. Apply §3.2 to the all-prime rational cohomological equality supplied by gap:cm-rational-kato-equality. Its independent module structure precedes the zeta construction. The proof of that equality, including elliptic units, conductor factors and the cyclotomic-field cases, belongs to its supplier. (BT Theorems 2.6 and 3.1, pp. 5–6; BT lines 208–228.)
 
-**Checks.** Weight two at p=2 and K=ℚ(i) is included. Weight two at ramified p=3 and K=ℚ(ζ₃) is included. For K=ℚ(√−7),p=7, the cyclotomic-field case is also included. There is no condition p∤N, no integral characteristic-ideal equality and no leading-term valuation in the conclusion.
+**Checks.** Weight two at p=2 and K=ℚ(i) is included. Also at p=2, ζ₈+ζ₈³ has square −2, so K=ℚ(√−2) lies in ℚ(μ₈) and uses Kato §15.14. Weight two at ramified p=3 and K=ℚ(ζ₃) is included. For K=ℚ(√−7),p=7, the cyclotomic-field case is also included. There is no condition p∤N, no integral characteristic-ideal equality and no leading-term valuation in the conclusion.
 
-*Needs:* statement: the CM predicate of AutomorphicGaloisRepresentations §3.15 and the central carriers of §0.3. Route: §3.2; KatoEulerSystems §§4.4, 5.1, 7.2 and gap:cm-rational-kato-equality.
+*Needs:* statement: the CM predicate of AutomorphicGaloisRepresentations §3.15 and the central carriers of §0.3. Route: §3.2; KatoEulerSystems §§5.1, 5.3; ModularIwasawaMainConjecturesPartII §§CZ.4–CZ.6 and gap:cm-rational-kato-equality.
 
 ### Examples
 
@@ -366,7 +386,7 @@ For any imaginary quadratic K, elliptic A/K with End_K(A) an order in K and any 
 
 **Checks.** The implication allows p=2 when K=ℚ(i), p=3 ramified in ℚ(ζ₃), and p dividing the conductor of the CM order. For two nonzero central factors a,b the central product ab is nonzero. The conclusion alone says nothing about finiteness of the whole Tate–Shafarevich group or its BSD valuation.
 
-*Needs:* statement: the actual CM action, classical p∞ Selmer group and full analytic L-function in §4.1. Route: §§3.3, 4.1; gap:theta-induction-arbitrary-cm-curve and ModularForms Layer 7.
+*Needs:* statement: the actual CM action, classical p∞ Selmer group and full analytic L-function in §4.1. Route: §§3.3, 4.1; ComplexMultiplicationAndExplicitReciprocity §4.2 ellipticCMLFactorization; gap:theta-induction-arbitrary-cm-curve and gap:newform-central-analytic-interface.
 
 ### 4.3 Rational Selmer corank doubles
 
@@ -380,9 +400,11 @@ If A/ℚ has CM by an order in the imaginary quadratic K, prove for every p that
 
 For the same A/ℚ and K, prove `ord_(s=1) L(A/K,s)=2 analyticRank(A/Q)`, without a rank bound. The full quadratic factorization and the self-twist isogeny identify L(A/K,s) with L(A,s)² as actual analytic functions. Product additivity of finite analytic order yields the formula. An isogeny theorem restricted to BSD defects at ranks at most one does not supply this general identity. (BT lines 260–261.)
 
+The headline `cm_analyticOrder_double` states this on native curves: K is a totally complex number field of ℚ-dimension two, A is elliptic over ℚ, and the integer-scalar map to the endomorphism ring of A_K is not surjective. In characteristic zero this means that End_K(A_K) is an order in K. For any entire F,G agreeing respectively with A.LSeries and A_K.LSeries on Re(s)>3/2, it asserts `analyticOrderNatAt G 1 = 2 * analyticOrderNatAt F 1`. These continuations are uniquely determined; their nonzero first Dirichlet coefficient makes their analytic orders finite.
+
 **Checks.** A local analytic factor `(s-1)^r u(s)` with u(1)≠0 squares to order 2r: r=0,1,2 give 0,2,4. The units u(1),u(1)² are nonzero, so the finite-order convention is applicable. Omitting a conductor factor would not establish equality of the full functions.
 
-*Needs:* statement: the unique arithmetic continuations and finite order of §0.1. Route: ComplexMultiplicationAndExplicitReciprocity §1.2; gap:elliptic-quadratic-analytic-identities and its all-factor isogeny comparison.
+*Needs:* statement: the unique arithmetic continuations and finite order of §0.1; the native endomorphism ring. Route: ComplexMultiplicationAndExplicitReciprocity §1.2; gap:elliptic-quadratic-analytic-identities and its all-factor isogeny comparison; Mathlib `analyticOrderAt_mul` and `analyticOrderNatAt_mul` with analytic-at-one and finite-order hypotheses.
 
 ### 4.5 The elliptic converse over ℚ
 
@@ -398,7 +420,7 @@ The Gaussian congruent-number curve supplies the dyadic case of §4.5; the Eisen
 
 ### Dependencies
 
-Layer 3 is the modular input. ComplexMultiplicationAndExplicitReciprocity supplies actual theta induction, CM characters and the rational self-twist. SelmerIwasawaCohomology and ArithmeticGaloisDuality supply the typed finite-condition comparison; EllipticCurves supplies all-prime isogeny invariance. EllipticCurveModularity and ModularForms supply full analytic identities. The two doubling identities are applications here, with no forward BSD theorem used as a converse input.
+Layer 3 is the modular input. ComplexMultiplicationAndExplicitReciprocity supplies actual theta induction, CM characters and the rational self-twist. SelmerIwasawaCohomology and ArithmeticGaloisDuality supply the typed finite-condition comparison; EllipticCurves supplies all-prime isogeny invariance. EllipticCurveModularity and the central newform analytic contract supply full analytic identities. The two doubling identities are applications here, with no forward BSD theorem used as a converse input.
 
 ## Layer 5: Congruent-number twists and even Goldfeld
 
@@ -426,6 +448,20 @@ Its API is:
 
 Let A:y²=x³−x and `S(X)={n : 0<n<=X, Squarefree n, n mod 8 in {1,2,3}}`. Prove that the proportion of n∈S(X) with L(A⁽ⁿ⁾/ℚ,1)≠0 tends to one. Apply the unconditional positive-family Smith corank-zero input to obtain a relative-density-one subset with corank Sel₂∞=0. Every twist remains CM by ℤ[i], so §4.5 at p=2 gives nonvanishing. Inclusion and the upper bound one squeeze the ratio. (BT Theorems 1.2, 3.3 and their proof, pp. 2, 6; BT lines 50–52, 265–269.)
 
+Define `congruentTwist` on all integers n as the native short curve with a₄=−n² and a₆=0. For n≠0 this is A⁽ⁿ⁾ up to pointed isomorphism; the sign n↦−n leaves the displayed model unchanged. The headline `congruentNumber_densityOne` states the limit with natural cutoffs X, finite intervals 1≤n≤X and `ellipticLNonvanishingAtOne` as the numerator predicate. Natural cutoffs give the same limit as real cutoffs by taking integer parts.
+
+Its model API is:
+
+- The first three coefficients and a₆ vanish, and a₄=−n².
+- Its discriminant is 64n⁶; it is elliptic exactly when n≠0, and then j=1728.
+- Its models at n and −n coincide; for n≠0 it represents the quadratic twist class of n.
+
+**Checks.**
+
+- At n=1 the model is y²=x³−x and Δ=64; at n=2 it is y²=x³−4x and Δ=4096. A coefficient −n would give Δ=512 at n=2 and the wrong twist.
+- At n=−1 the coefficients again give y²=x³−x and Δ=64, testing the sign isomorphism used in §5.4.
+- At n=0 its discriminant is zero; the positive-squarefree and nonzero-discriminant filters exclude this singular value.
+
 **Checks.** The curve has four rational two-torsion points, so dim Sel₂≥2 even on the corank-zero subset. The roots 0,1,−1 give the Smith obstruction products −1,2,2, none rational squares. In the family of positive squarefree n, each residue 1,2,3 has count X/π²+o(X); hence #S(X)=3X/π²+o(X)>0 eventually.
 
 *Needs:* statement: §5.1 twists and actual L-values; ArithmeticStatisticsPartI §§0.5–0.6. Route: §4.5; ArithmeticStatisticsPartVII §5.9 and gap:smith-unconditional-positive-corank; SelmerIwasawaCohomology §4.29.
@@ -433,6 +469,8 @@ Let A:y²=x³−x and `S(X)={n : 0<n<=X, Squarefree n, n mod 8 in {1,2,3}}`. Pro
 ### 5.3 Exactly half in positive-squarefree ordering
 
 For A:y²=x³−x and `P(X)={n : 0<n<=X, Squarefree n}`, prove `# {n in P(X) : L(A^(n),1) != 0}/#P(X) -> 1/2`. The root numbers of positive squarefree twists are +1 precisely in residues 1,2,3 modulo eight. The remaining residues 5,6,7 have sign −1; the functional equation forces their central value to vanish. Thus all nonzero values lie in S. Since #P(X)=6X/π²+o(X) and §5.2 gives #S(X)+o(X) nonzero values, the exact density is one half. (BT abstract, Theorem 1.2 and footnote 2, pp. 1–2; BT lines 12–13, 50–52, 97.)
+
+The headline `congruentNumber_half_positive` uses the same native model, nonvanishing predicate and natural cutoffs as §5.2, with the residue condition omitted from both counts and limit 1/2.
 
 **Checks.** Residues 0 and 4 contain no squarefree positive integers; each of the other six has mass 1/6, so the three permitted classes have mass 1/2. Sign −1 gives Λ(1)=−Λ(1), hence Λ(1)=0 over ℂ. It implies an odd positive analytic order, not order exactly one. Applying this positive residue table to negative n without a character conversion is excluded.
 
@@ -442,7 +480,9 @@ For A:y²=x³−x and `P(X)={n : 0<n<=X, Squarefree n}`, prove `# {n in P(X) : L
 
 Prove the even Goldfeld proposition of §5.1 for A:y²=x³−x, with both signs ordered by |d|. Use A⁽⁻ⁿ⁾≅A⁽ⁿ⁾ and the signed-squarefree-part description of a fundamental discriminant. For odd n its two sign cutoffs are n and 4n; for even squarefree n they are both 4n. Apply ArithmeticStatisticsPartI §0.1's piecewise rescaling with its §0.6 residue asymptotics. The allowed residues have total reciprocal-cutoff weight `5/4 + 1/2 + 5/4 = 3` out of total weight 6. Density one restricts from S to each of its positive-density residue classes, so the bad subset remains o(X) after each of these finitely many rescalings. Root numbers give the matching upper bound. (BT §1.0.2 and Theorem 1.2, p. 2; BT lines 47–52; ArithmeticStatisticsPartI §0.1, “Piecewise rescaling of a height”.)
 
-**Checks.** At n=1 the discriminants are 1,−4; n=2 gives 8,−8; n=3 gives 12,−3. The even class contributes 1/4+1/4=1/2, not two. The allowed total 3 and full total 6 give 1/2; using an identical height for both signs of every n would miss these terms.
+The headline `congruentNumber_half_discriminants` counts d∈[−X,X]⊂ℤ, d≠0, satisfying either d≡1 modulo four and Squarefree d, or d=4m with Squarefree m and m≡2 or 3 modulo four. This is the both-sign fundamental-discriminant family including d=1. Its numerator tests `congruentTwist d`: when d=4m, scaling X↦4X,Y↦8Y identifies that model with the twist at m, so the central L-value is the intended one.
+
+**Checks.** At n=1 the discriminants are 1,−4; n=2 gives 8,−8; n=3 gives 12,−3. The filter rejects 0, 4 and 9; 4 would require m=1 in a residue-two-or-three branch, and 9 is not squarefree. At d=8 the coefficient is −64, while the squarefree twist n=2 has coefficient −4; scaling by 2⁴ gives −64 as required. The even class contributes 1/4+1/4=1/2, not two. The allowed total 3 and full total 6 give 1/2; using an identical height for both signs of every n would miss these terms.
 
 *Needs:* statement: §5.1. Route: §§5.2–5.3; ArithmeticStatisticsPartI §0.1 and §§0.5–0.7; EllipticCurves Layer 5 for the sign isomorphism and gap:elliptic-quadratic-analytic-identities.
 
@@ -463,15 +503,31 @@ Let K be imaginary quadratic with three split or ramified and A/K elliptic with 
     liminf_(X -> infinity)
       # {t : H(t)<X, L(A^(t)/K,1) != 0} / # {t : H(t)<X} >= 1/2.
 
+The signature uses `squareclassHeight`, the finite product of absolute norms of primes where the principal fractional ideal of a representative has odd integer valuation. Its domain is `TauCeti.SquareClassGroup K`; a chosen nonzero representative is used only to evaluate the formula. This is the native specialization of ArithmeticStatisticsPartI §0.5's support height. (BKLOS §2, p. 2, BKLOS lines 80–98.)
+
+Its height API is:
+
+- Changing a representative by a square changes every valuation by an even integer and leaves the height unchanged.
+- The odd support is finite, the height is a positive integer, and the identity class has height one.
+- The sets with height less than X are finite; for X≤1 they are empty. Their cardinalities are the finite-set cardinalities used by the statistics supplier.
+
+**Checks.**
+
+- Over ℚ the classes of 2 and 1/2 have valuations 1 and −1 at two; both heights are 2. Using only positive odd valuations would give height 1 for 1/2.
+- In ℚ(i), H([5])=25 and H([3])=9, for split five and inert three. Replacing 5 by 5·2² changes valuations by even integers and leaves height 25.
+- The distinct unit classes [1] and [i] in ℚ(i) both have height 1; thus H<1 is empty and H<2 has at least these two classes. Height one does not force a trivial squareclass.
+
+The headline `cmTwists_nonvanishing_lowerHalf` takes K totally complex of ℚ-dimension two, the non-primality of the ideal (3), an elliptic A/K, and non-surjectivity of ℤ→End_K(A). For such K the last condition means CM by an order of K, and non-primality of (3) means three is split or ramified. It states that for each real ε>0 and all sufficiently large real X, the nonvanishing count is at least (1/2−ε) times the total count. It uses native squareclasses once each and the trace/norm twist at (0,−t), which represents the class t. The supplier's positive linear denominator makes this formulation equivalent to the displayed lower proportion.
+
 The supplier's unconditional 3∞-corank-zero subset has lower proportion at least one half. Apply §4.2 at p=3 to every member and use monotonicity. The supplier's maximal-order route uses a norm-three ideal isogeny with Selmer ratio one; its passage to other orders uses isogeny invariance of rational corank, including when three divides the degree. No hypothesis on a windowed cubic count is silently discharged in this application: gap:cm-three-selmer-unconditional specifies the needed unconditional endpoint. (BT Proposition 1.3, Theorem 3.5, pp. 2, 7, BT lines 58–60, 273–276; BKLOS Theorem 2.7, §9.2 and §11, pp. 5, 14, 18–19, BKLOS lines 654–661, 831–879.)
 
-**Checks.** In ℚ(ζ₃), three ramifies and the theorem applies; in ℚ(i), three is inert and this twist theorem's hypothesis fails even though the all-prime converse itself holds. The height-one set need not be a singleton: in ℚ(i), [1] and [i] have height one. A ratio tending to 3/4 is consistent with this lower bound, so no exact half-density is claimed.
+**Checks.** In ℚ(ζ₃), three ramifies and the theorem applies; in ℚ(i), three is inert and this twist theorem's hypothesis fails even though the all-prime converse itself holds. In ℚ(√−2), three splits: T²+2=(T−1)(T+1) modulo three, and the quotient of the integer ring by (3) is 𝔽₃×𝔽₃, so (3) is not prime. The height-one set need not be a singleton: in ℚ(i), [1] and [i] have height one. A ratio tending to 3/4 is consistent with this lower bound, so no exact half-density is claimed.
 
 *Needs:* statement: the CM, twist, actual L-function and height carriers of §4.2 and ArithmeticStatisticsPartI §0.5. Route: §4.2; ArithmeticStatisticsPartVII §5.11 and gap:cm-three-selmer-unconditional; EllipticCurves Layer 7, gap:isogeny-corank-all-primes; ArithmeticStatisticsPartI §0.15 for the positive denominator.
 
 ### 6.2 The cube-sum model and pointed comparison
 
-For n∈ℤ define `cubeSumModel`, the cube-sum model over ℚ by the five Weierstrass coefficients `(a1,a2,a3,a4,a6)=(0,0,0,0,-27 n^2)`. Thus Y²=X³−27n². The definition is total; all elliptic applications require n≠0. Its smooth projective cubic comparison has source `x^3+y^3=2n z^3` with origin [1:−1:0] and target the Weierstrass cubic with origin [0:1:0]. For n≠0 use
+For n∈ℤ define `cubeSumModel` as `WeierstrassCurve.shortCurve 0 (-27 * (n : Q)^2)`, the cube-sum model over ℚ with coefficients `(a1,a2,a3,a4,a6)=(0,0,0,0,-27 n^2)`. Thus Y²=X³−27n². The definition is total; all elliptic applications require n≠0. Its smooth projective cubic comparison has source `x^3+y^3=2n z^3` with origin [1:−1:0] and target the Weierstrass cubic with origin [0:1:0]. For n≠0 use
 
     [x:y:z] -> [6n z : 9n(x-y) : x+y],
     [X:Y:Z] -> [9n Z+Y : 9n Z-Y : 3X].
@@ -495,7 +551,7 @@ Its API is:
 - At n=3, a₆=−243 and Δ=−314928·81=−25509168. Using n or n³ instead of n² changes the discriminant scaling.
 - The source origin maps to [0:18n:0]=[0:1:0]. An affine-only correspondence would not establish this pointed equality.
 
-*Needs:* statement: native Weierstrass curves and invariants, EllipticCurves Layer 5's pointed model comparison. Route: gap:pointed-cubic-model-comparison and elementary polynomial algebra; no new projective-scheme carrier.
+*Needs:* statement: native Weierstrass curves, `WeierstrassCurve.shortCurve` and invariants; EllipticCurves Layer 1 and gap:pointed-cubic-model-comparison for pointed projective curves. Route: that general comparison and elementary polynomial algebra; no new projective-scheme carrier.
 
 ### 6.3 CM and ramified three for the cube-sum family
 
@@ -503,7 +559,7 @@ For each fixed n≠0, prove that the model of §6.2 over K=ℚ(ζ₃) has full C
 
 **Checks.** ζ₃³=1 preserves X³−27n² while α≠1 and α³=1; the identity automorphism would give 1+1+1=3≠0 in the endomorphism ring. The field polynomial T²+T+1 has discriminant −3; the prime above three has norm three and square norm nine. At n=0 the singular cubic is outside the elliptic statement. The parameter n is fixed, so no density of rational cube sums in integer n follows.
 
-*Needs:* statement: §6.2 and the CM-order carrier of ComplexMultiplicationAndExplicitReciprocity §1.2. Route: gap:cube-sum-full-cm and §6.1; the native cyclotomic field arithmetic supplies ζ₃ and its polynomial.
+*Needs:* statement: §6.2 and the native algebraic endomorphism ring. Route: j=0 in §6.2; ComplexMultiplicationAndExplicitReciprocity §1.2 and gap:cube-sum-full-cm. For the application of §6.1 use Mathlib `IsCyclotomicExtension.Rat.discr_odd_prime'`, `IsCyclotomicExtension.Rat.absNorm_span_zeta_sub_one`, `IsCyclotomicExtension.Rat.map_eq_span_zeta_sub_one_pow` and `IsCyclotomicExtension.Rat.ramificationIdx_span_zeta_sub_one` at p=3; they give discriminant −3, prime norm 3 and ramification index 2.
 
 ### 6.4 Descending twists lie in at most two cosets
 
@@ -529,11 +585,13 @@ A proof route first replaces A by one descended twist E₀/ℚ. For j≠0,1728 a
 
 **Checks.** For j=0, an element of an exponent-two group has [u]³=[u], so [u]³=1 forces the identity. For j=1728 over ℚ(√−2), the parameter √−2 sends Y²=X³−X to a short twist Y²=X³+2X, both rational models, and supplies the second coset described above. At t=t₀ the first branch holds with q=u=1; no hypothesis that t₀=1 occurs.
 
-*Needs:* statement: native curves, `WeierstrassCurve.VariableChange`, `WeierstrassCurve.quadraticTwistOf`, `Algebra.IsQuadraticExtension` and `descendsToRat`. Route: EllipticCurves Layer 5, gap:pointed-cubic-model-comparison; the native generic twist classification with its exceptional values excluded.
+*Needs:* statement: native curves, `WeierstrassCurve.VariableChange`, `WeierstrassCurve.quadraticTwistOf`, `Algebra.IsQuadraticExtension` and `descendsToRat`. Route: EllipticCurves Layer 5 for pointed twists; `WeierstrassCurve.variableChange_a₄_of_isShortNF`, `WeierstrassCurve.variableChange_a₆_of_isShortNF` and `WeierstrassCurve.smul_shortCurve` for the exceptional values in characteristic zero; the native generic twist classification with its exceptional values excluded.
 
 ### 6.5 Descending twists have height density zero
 
 For every fixed elliptic A/K with K imaginary quadratic, prove `# {t in D_A : H(t)<X} = O_(A,K)(sqrt X)`. This is independent of CM and does not require A to descend. In a fixed coset a·im(ℚ×/ℚ×²), represent rational classes by signed squarefree integers n. Outside the fixed finite set of primes ramified in K or in the odd support of a, a rational prime ℓ|n contributes ℓ² to H_K([n]): two split primes each of norm ℓ, or one inert prime of norm ℓ². Ramified primes and fixed support give only bounded factors. Thus H_K(a[n])≥c·n_out² for a fixed c>0. There are O(√X) possible n_out and finitely many choices at the excluded primes and for the sign. Duplicate rational images only decrease the count. Apply §6.4 to at most two cosets. (BT Remark 3.6(ii), p. 7, BT lines 279–282; BKLOS §2, p. 2, BKLOS lines 80–98 for the height; this support calculation proves the stated bound.)
+
+The headline `descendingTwists_count_sqrt` states this for every totally complex number field K of ℚ-dimension two and every elliptic A/K: there exists a real C>0 such that, for all sufficiently large real X, the count of native squareclasses below `squareclassHeight` X whose twists satisfy `descendsToRat` is at most C√X. If the descent set is empty take C=1; otherwise one descending twist supplies t₀ in §6.4.
 
 By ArithmeticStatisticsPartI §0.15, the total count is c_KX+o(X), c_K>0, so division gives height density zero. Its support-ideal proof counts squarefree ideals with class in Cl(K)² and finite unit/Selmer fibres; it never assumes every ideal is principal.
 
@@ -543,7 +601,9 @@ By ArithmeticStatisticsPartI §0.15, the total count is c_KX+o(X), c_K>0, so div
 
 ### 6.6 Non-descending nonvanishing twists
 
-Under the hypotheses of §6.1, prove that the lower proportion of t with H(t)<X, A⁽ᵗ⁾ not descending to ℚ and L(A⁽ᵗ⁾/K,1)≠0 is at least one half. The same bound holds when the denominator is restricted to non-descending twists. Subtract the O(√X) descending set of §6.5 from the nonvanishing numerator of §6.1. Against c_KX+o(X) the lost ratio tends to zero. The restricted denominator divided by the full denominator tends to one, so it is positive eventually and the second lower bound follows. (BT Remark 3.6(ii), p. 7; BT lines 279–282.)
+Under the hypotheses of §6.1, prove that the lower proportion of t with H(t)<X, A⁽ᵗ⁾ not descending to ℚ and L(A⁽ᵗ⁾/K,1)≠0 is at least one half. The same bound holds when the denominator is restricted to non-descending twists. Subtract the O(√X) descending set of §6.5 from the nonvanishing numerator of §6.1. Against c_KX+o(X) the lost ratio tends to zero. The restricted denominator divided by the full denominator tends to one, so it is positive eventually and the second lower bound follows. (BT Remark 3.6(ii), p. 7; BT lines 279–282; the source states a positive proportion, and the one-half bound is derived here from §§6.1 and 6.5.)
+
+The headline `cmTwists_nondescending_nonvanishing_lowerHalf` uses exactly the field, prime, ellipticity and CM hypotheses of `cmTwists_nonvanishing_lowerHalf`. For each ε>0 it gives the eventual lower count (1/2−ε) times the full denominator, with `¬ descendsToRat` added to the numerator. The bound with the restricted denominator is the consequent comparison described above.
 
 **Checks.** If total count is cX+o(X), nonvanishing count has lower ratio 1/2, and the excluded count is at most C√X, the new ratio has lower bound `1/2 - (C/c)/sqrt X + o(1)`, tending to 1/2. If the original limit were 3/4, removal of this set would leave 3/4; the theorem does not force equality with 1/2. Empty descent set gives the original numerator and denominator exactly.
 
@@ -559,7 +619,7 @@ Layer 4 supplies the all-prime converse over K. ArithmeticStatisticsPartVII supp
 
 ## Downstream consumers
 
-Rank-zero BSD comparisons can use the all-prime CM nonvanishing theorem without a good-reduction restriction. RankOneConverse can use the shared rank-r implication of §0.1 while retaining ownership of its own rank-one results. Analytic twist applications use §5.4 for both-sign fundamental discriminants and §6.6 for non-descending K-twists; those two heights and the distinction between exact density and a lower proportion are part of the interface. Arithmetic refinements involving an integral characteristic ideal, a leading BSD quotient or the distribution of positive-rank analytic orders require their own theorems.
+RankZeroOneBSDPartII consumes the rank-r implication of §0.1 and the all-prime CM nonvanishing theorem for rank-zero BSD comparisons without a good-reduction restriction. Analytic twist applications use §5.4 for both-sign fundamental discriminants and §6.6 for non-descending K-twists; those two heights and the distinction between exact density and a lower proportion are part of the interface. Arithmetic refinements involving an integral characteristic ideal, a leading BSD quotient or the distribution of positive-rank analytic orders require their own theorems.
 
 ## References
 
