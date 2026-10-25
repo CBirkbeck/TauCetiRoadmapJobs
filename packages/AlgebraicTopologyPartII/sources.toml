@@ -1,0 +1,13 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "AlgebraicTopologyPartII"
+
+[[source]]
+id = "KRASNOV"
+authors = "V. A. Krasnov"
+title = "On equivariant Grothendieck cohomology of a real algebraic variety, and its applications"
+year = 1994
+locator_scheme = "theorem"
+locator = "Theorem 2.1"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/1089#issuecomment-6393228874"
