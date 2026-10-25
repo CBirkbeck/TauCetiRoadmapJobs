@@ -4,7 +4,7 @@
 
 ## Scope and ownership
 
-This roadmap owns the filtered valuation truncation and its solution argument specific to Fontaine’s higher-weight killed-p theorem; the global category cut out by crystallinity in weights [0,3] at seven; the ordered cyclotomic steps and their finite and rational exhaustiveness; the application of purity to the full low-degree cohomology action; and the local-model Hodge obstruction and its K3 application. The base roadmap SmallRamificationAndAbelianVarietyBaseCases, §§1.1–1.9, 2 and 3, stops at discriminant estimates, finite-flat representation obstructions and abelian-variety nonexistence. Its explicit-formula and degree-bound theory is consumed here, including the additional threshold specified below.
+This roadmap owns the filtered valuation truncation and its solution argument specific to Fontaine’s higher-weight killed-p theorem; the global category cut out by crystallinity in weights [0,3] at seven; the ordered cyclotomic steps and their finite and rational exhaustiveness; the application of purity to the full low-degree cohomology action; and the local-model Hodge obstruction and its K3 application. The base roadmap SmallRamificationAndAbelianVarietyBaseCases, §§1.1–1.9, 2 and 3, stops at discriminant estimates, finite-flat representation obstructions and abelian-variety nonexistence. Its explicit-formula and degree-bound theory is consumed here, including §1.9’s exact lower bound 7.00 at degree 11 and its monotonicity in the degree.
 
 General Fontaine–Laffaille categories, torsion functors, safe-range lattice equivalence and generic ramification criteria belong to FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.3.4–R07.3.17 and R07.6.1a–R07.6.5. The ramification bound retained here differs from its finite-flat bound by allowing all weights 0≤i≤r<p−1 for killed-p crystalline subquotients. Rational periods, Hodge–Tate signs and proper smooth comparison belong to PadicHodgeTheory §§0, 3 and 8.1. Étale coefficients, proper/smooth base change, trait inertia, stable lattices and rational realizations belong to EtaleCohomologyFoundations §§F.2, F.3a and F.4. General scheme base change, spreading and completion belong to SchemeAndStackFoundations §§0.9, 0.11 and 4.8. Continuous representation operations, restrictions and global unramifiedness belong to ArithmeticGaloisRepresentations §§1.1–1.3, 1.6, 1.9 and 2.2. No parallel carriers for those objects are introduced.
 
@@ -64,7 +64,11 @@ Consume §§R07.3.4–R07.3.5 for the filtered Frobenius and finite-length categ
 
 What FiniteFlatGroupsAndIntegralPadicHodgeTheory must provide (gap:fl-acris-truncation): Supply the killed-p A_cris realization, the explicit divided-power presentation and filtered Frobenius projection of Fontaine93 §3.1 to the strict valuation quotient, and its identification with the existing contravariant torsion functor on [0,r] for 0<r<p−1.
 
-What FiniteFlatGroupsAndIntegralPadicHodgeTheory must provide (gap:fl-local-weight-ext): For safe Fontaine–Laffaille intervals supply weight-zero unramifiedness, rank-one inertia χⁱ at every p-power length allowing an unramified twist, and the oriented local extension splitting for distinct weights with quotient exponent greater than subobject exponent used in Fontaine93 §§2.3–2.6.
+What FiniteFlatGroupsAndIntegralPadicHodgeTheory must provide (gap:fl-weight-zero-unramified): For prime p, perfect characteristic-p k and K=Frac W(k), inertia in G(K) acts trivially on Uₛ(M) for every M∈MFₜₒᵣ[0,0] of arbitrary finite p-power length.
+
+What FiniteFlatGroupsAndIntegralPadicHodgeTheory must provide (gap:fl-rank-one-inertia): For prime p, perfect characteristic-p k, K=Frac W(k), n≥1 and integers 0≤i≤r<p−1, the inertia character of Uₛ(M) is χₚⁱ modulo pⁿ for every rank-one W(k)/pⁿ object M∈MFₜₒᵣ[0,r] with unique filtration weight i; its full G(K) character may have an unramified twist.
+
+What FiniteFlatGroupsAndIntegralPadicHodgeTheory must provide (gap:fl-oriented-mod-p-splitting): For prime p, perfect characteristic-p k, K=Frac W(k) and integers 0≤j<i≤r<p−1, every exact sequence 0→𝔽ₚ(j)→U→𝔽ₚ(i)→0 with pU=0 and U in the local Fontaine–Laffaille essential image on [0,r] splits as a G(K)-module sequence.
 
 What FiniteFlatGroupsAndIntegralPadicHodgeTheory must provide (gap:pm-remove-inverse-e): For every finite Galois L/K over a complete mixed-characteristic DVR with perfect residue field and every real c>0, Pₘ(L/K) for all real m>c implies Fontaine’s shifted upper break u(L/K)≤c, including the refinement removing the 1/e loss in §R07.6.3.
 
@@ -80,9 +84,7 @@ What ArithmeticGaloisRepresentations must provide (gap:finite-torsion-kernel-dic
 
 Consume §§1.1, 1.4, 1.7 and 1.9: local-to-global normalized differents, Minkowski’s unramified-field obstruction, the unconditional totally complex Poitou–Odlyzko inequality, and its sufficient numerical rows rd<19.02⇒degree≤287, rd<5.72⇒degree≤8 and degree≥36⇒rd>12. These apply to actual totally complex number fields, not arbitrary positive real inputs.
 
-What SmallRamificationAndAbelianVarietyBaseCases must provide (gap:root-discriminant-seven): For every totally complex number field F, rd(F)<7 implies [F:ℚ]≤10, with a rigorous evaluation of its unconditional Poitou–Odlyzko inequality in §1.7.
-
-For that evaluation one sufficient substitution is n=12 and b=17/4, with I₁(b)<5/4, γ>0.577 and π>3.14159, giving exp(γ+log(8π)−5/4−16b/(12π²))>7; monotonicity in n extends the bound. This is an exact real-inequality requirement. Since our fields contain ℚ(ζ₇), the degree is divisible by six, and the threshold yields degree six.
+Section 1.9, row (b)’s accompanying exact numerical lower bound is 7.00 at n=11, b=17/4, and the bound increases with n. Thus every totally complex F with rd(F)<7 has [F:ℚ]≤10. For fields containing ℚ(ζ₇), divisibility of the degree by six then forces degree six.
 
 ### From TauCetiRoadmap.LocalFieldsRamification
 
@@ -135,8 +137,6 @@ The API records the following facts.
 - ℙⁿ_ℚ has the property for every n≥0 through ℙⁿ over each Witt ring.
 - For E:y²=x³−x, Witt good reduction at three holds: its integral Weierstrass model has discriminant 64, a unit in ℤ₃, so gives a proper smooth ℤ₃-model. Yet everywhere Witt good reduction fails at 2 by the next test. Requiring a proper smooth ℤ-model in the local predicate would fail this example.
 - A model only after a ramified field extension does not meet the witness type. For example the elliptic curve y²=x³−x has potentially good reduction at 2 but not good reduction over W(F̄₂); its 3-adic Tate module has nontrivial inertia at 2. The numerical minimal discriminant 64 and j=1728 are recorded by LMFDB 32.a3; the potential-good-reduction and Néron–Ogg–Shafarevich criteria are imported from TauCetiRoadmap EllipticCurves Layer 4. Proper smooth base change then rules out a Witt-ring model.
-- No converse asserting descent of a W(F̄ₚ)-model to ℤₚ is included.
-- An algebraic-space model alone is not a witness.
 
 *Needs:* native schemes, Witt vectors and generic-fibre pullbacks for the statement; SchemeAndStackFoundations §0.11 for base change, EllipticCurves Layer 4 for the negative elliptic Check.
 
@@ -155,8 +155,6 @@ A proof route is as follows. Use proper smooth base change on the W(F̄_q)-schem
 - For X=Spec ℚ, H⁰=ℚ₇ and higher cohomology is zero; adding a positive-degree nonzero group would violate this calculation.
 - For ℙ¹ and q=2, degree-two geometric Frobenius is 2, dual Frobenius is 1/2, and the only Hodge–Tate fixed piece has i=1. Arithmetic Frobenius would interchange these two scalars.
 - For two disjoint rational points, H⁰ has dimension two and all positive groups vanish; imposing geometric connectedness would exclude a valid input.
-- With geometric Frobenius, χ₇ has value q^−1, so χ₇ⁱ on Vₘ has absolute value q^−i.
-- For H²(ℙ¹), the result is ℚ₇(−1), of Hodge–Tate weight −1; its dual has weight +1.
 
 *Needs:* §0.1, EtaleCohomologyFoundations §§F.2.1–F.2.2 and F.4.5–F.4.6 for the realizations; PadicHodgeTheory §§3.3–3.5, 8.1 and gap:witt-proper-smooth-comparison for comparison; LocalFieldsRamification gap:completed-unramified-inertia; SchemeAndStackFoundations §§0.9, 4.8 and DeligneWeightsAndPurity §7.15 for the route.
 
@@ -196,15 +194,14 @@ The API records the following facts.
 - In E containing an element of valuation r/(p−1), its class is nonzero, whereas every element of larger valuation is zero.
 - At p=3,r=1, let E=ℚ₃(π) with π²=−3. Then v₀(π)=1/2, so [π] is nonzero in Fil¹ A(E) and φ₁([π])=[π]. Using +p instead of −p gives −[π], which is distinct because 2 is a unit. This tests the divided-Frobenius sign at the strict cutoff.
 - For p=3,r=1 over an algebraic closure of K, choose elements with distinct values 1/n for n≥3. Every such value is at most 1/2 and the corresponding classes are linearly independent over k, since a nonzero finite combination has the unique smallest value among its terms. Thus the ambient truncation can have infinite k-dimension; requiring finite length would lose this object.
-- At the boundary v₀(x)=r/(p−1), a nonzero class survives; replacing > by ≥ changes the object. For p=2 no positive r satisfies the local hypotheses; no weight-one dyadic object is asserted.
 
 *Needs:* FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.3.4–R07.3.5 for the ambient filtered Frobenius category; PadicHodgeTheory §0.1 for the local valuation fields.
 
 ### 1.2 Torsion period solutions
 
-Let M be a finite-length filtered Frobenius module of FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.3.4 killed by p, with jumps in [0,r], and d=dimₖ M. Define J(M,E)=Homₘ𝒻(M,A(E)), an 𝔽ₚ-vector space with natural maps along K-embeddings. With M fixed, write J(E) for J(M,E). Choose a filtered basis with weights iₜ, so FilⁱM is spanned by the basis vectors whose weights are at least i. The t-th column of the invertible Frobenius matrix (λₛₜ) records `phi_(i_t)(e_t) = sum_s lambda(s,t) * e_s`. Choose lifts λ̂ₛₜ∈O(E). Define Ĵ(M,λ̂,E) as the set of tuples x∈O(E)ᵈ satisfying `x_t^p = (-p)^(i_t) * (sum_s lambdaHat(s,t) * x_s)` for every t. It is a set of solutions, not a vector subspace of Eᵈ under ordinary addition.
+Let M∈MFₜₒᵣ[0,r] of FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.3.4 be killed by p, and put d=dimₖ M. Thus M has finite length, Fil⁰M=M, Filʳ⁺¹M=0 and the Frobenius generation condition Σᵢφᵢ(FilⁱM)=M. Define J(M,E)=Homₘ𝒻(M,A(E)), an 𝔽ₚ-vector space with natural maps along K-embeddings. With M fixed, write J(E) for J(M,E). Choose a filtered basis with weights iₜ, so FilⁱM is spanned by the basis vectors whose weights are at least i. The t-th column of the invertible Frobenius matrix (λₛₜ) records `phi_(i_t)(e_t) = sum_s lambda(s,t) * e_s`. Choose lifts λ̂ₛₜ∈O(E). Define Ĵ(M,λ̂,E) as the set of tuples x∈O(E)ᵈ satisfying `x_t^p = (-p)^(i_t) * (sum_s lambdaHat(s,t) * x_s)` for every t. It is a set of solutions, not a vector subspace of Eᵈ under ordinary addition.
 
-Assume p is prime, k is perfect of characteristic p, K=Frac W(k), and v₀(p)=1; let r be an integer with 0<r<p−1. M is a genuine object of that filtered category, not a module with arbitrary unrelated Frobenius maps. Coefficient lifts are chosen anew when needed.
+Assume p is prime, k is perfect of characteristic p, K=Frac W(k), and v₀(p)=1; let r be an integer with 0<r<p−1. The generating torsion subcategory is required for M; the target A(E) remains in the larger ambient filtered category and need not be finite or generating. Coefficient lifts are chosen anew when needed.
 
 A proof route is as follows. The Hom space uses addition and 𝔽ₚ scaling in the target A(E). Write a morphism on a basis adapted to the filtration and apply φᵢ; this gives the polynomial equations after lifting. Transport solutions by embeddings preserving the coefficient choices; the intrinsic J_M is independent of those choices.
 
@@ -226,12 +223,13 @@ The API records the following facts.
 - For rank one of weight one, Ĵ solves xᵖ=−p x. Over ℚₚ it has only the zero solution, but over a field containing a (p−1)-st root of −p it has p solutions. Thus J(E) need not have maximal cardinality for every E.
 - At p=3 with weights (0,1) and matrix rows (1,1),(0,1), the column convention gives x₁³=x₁ and x₂³=−3(x₁+x₂). If θ³+3θ+3=0, then (1,θ) satisfies both equations and v₀(θ)=1/3. The transposed matrix would require 1=1+θ and fails since θ≠0.
 - Exact lifts are not closed under coordinatewise addition: at p=3 the weight-zero equation has roots 0,1,−1, but 1+1=2 has 2³=8≠2.
+- At p=3,r=1 take the ambient object M=𝔽₃ with Fil¹M=0 and every φᵢ=0, and E=ℚ₃(π), π²=−3. Here A(E)=𝔽₃[π]/(π²), φ₀(a+bπ)=a, and J(M,E)={0,π,−π} has three elements, while the equation x³=0 has only zero. This M is excluded because ΣᵢIm φᵢ=0≠M; the zero object instead satisfies 0=M and has one solution on each side.
 
 *Needs:* §1.1 and FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.3.4–R07.3.5 for filtered morphisms.
 
 ### 1.3 Unique lifts of truncated torsion solutions
 
-For the data of the solution functor and every algebraic E/K, evaluation on the filtered basis followed by reduction induces a bijection Ĵ(M,λ̂,E)→J(M,E). In particular the cardinality of the exact-solution set is independent of the permitted coefficient lifts. For finite E, successive corrections of approximate solutions converge in O(E); the algebraic-extension statement follows by finite descent.
+For M∈MFₜₒᵣ[0,r] killed by p, the coefficient data of §1.2 and every algebraic E/K, evaluation on the filtered basis followed by reduction induces a bijection Ĵ(M,λ̂,E)→J(M,E). In particular the cardinality of the exact-solution set is independent of the permitted coefficient lifts. The bijection transfers the 𝔽ₚ-vector-space structure to Ĵ; this is not coordinatewise addition. For finite E, successive corrections of approximate solutions converge in O(E); the algebraic-extension statement follows by finite descent.
 
 Assume p is prime, k is perfect of characteristic p, K=Frac W(k), and v₀(p)=1; let r be an integer with 0<r<p−1. E need not contain the splitting field of the period representation.
 
@@ -244,14 +242,12 @@ A proof route is as follows. Use the invertibility of (λₛₜ) and the valuati
 - For M=0 the empty tuple is the unique exact lift: both sets have cardinality one.
 - For p=3, a weight-one unit object and E=ℚ₃, the exact equation x³=−3x has only zero; in E=ℚ₃(π), π²=−3, its roots are 0,π,−π and all three truncated classes differ.
 - With p=3,r=1,e=2 the initial precision must be an integer n>1, so n=2 works and n=1 is outside the statement. The two roots π,−π differ by value 1/2 and coincide if the strict cutoff is incorrectly replaced by a weak one.
-- Keep the precision inequality strict; it controls uniqueness.
-- The bijection transfers the 𝔽ₚ-vector-space structure to Ĵ, without identifying that addition with coordinatewise addition.
 
 *Needs:* §1.2 for the statement; finite-extension completeness and FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.3.5 for the route.
 
 ### 1.4 Period truncation computes the torsion representation
 
-The natural projection A_cris/p→A(K̄) induces a G(K)-equivariant 𝔽ₚ-linear isomorphism U*(M)=Homₘ𝒻(M,A_cris/p)≅J(M,K̄). Under that supplier’s period-functor identification this is the same contravariant torsion crystalline representation as Uₛ(M), of 𝔽ₚ-dimension dimₖ M.
+For M∈MFₜₒᵣ[0,r] killed by p, the natural projection A_cris/p→A(K̄) induces a G(K)-equivariant 𝔽ₚ-linear isomorphism U*(M)=Homₘ𝒻(M,A_cris/p)≅J(M,K̄). Under that supplier’s period-functor identification this is the same contravariant torsion crystalline representation as Uₛ(M), of 𝔽ₚ-dimension dimₖ M.
 
 Assume p is prime, k is perfect of characteristic p, K=Frac W(k), and v₀(p)=1; let r be an integer with 0<r<p−1. Use that supplier’s normalization in which a filtration jump i gives cyclotomic weight +i.
 
@@ -264,13 +260,12 @@ A proof route is as follows. Import the explicit divided-power presentation of A
 - For the zero module both Hom groups have dimension zero and the comparison is the unique map between singleton groups.
 - For the weight-zero unit object both groups are 𝔽ₚ with p elements; the zero comparison map would lose the nonzero solutions.
 - For p=3,r=1 the weight-one object yields a one-dimensional 𝔽₃-representation and exactly three solutions over the splitting field. Its basis class satisfies φ₁([π])=[π] at π²=−3; a comparison with the opposite divided-Frobenius sign fails this normalization.
-- Dimensions and contravariance agree with Uₛ, rather than introducing a second torsion realization.
 
 *Needs:* §§1.1–1.3; FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.3.7, R07.3.10, R07.3.15 and gap:fl-acris-truncation.
 
 ### 1.5 Solutions detect the torsion splitting field
 
-Let L/K be the finite Galois extension fixed by the kernel of G(K) on U*(M). For every algebraic E/K inside K̄, #J(M,E)≤pᵈ; equality holds iff L⊆E. Intrinsically, without a fixed embedding E⊆K̄, equality holds iff a K-embedding L→E exists.
+For M∈MFₜₒᵣ[0,r] killed by p, let L/K be the finite Galois extension fixed by the kernel of G(K) on U*(M). For every algebraic E/K inside K̄, #J(M,E)≤pᵈ; equality holds iff L⊆E. Intrinsically, without a fixed embedding E⊆K̄, equality holds iff a K-embedding L→E exists.
 
 Assume p is prime, k is perfect of characteristic p, K=Frac W(k), and v₀(p)=1; let r be an integer with 0<r<p−1. d=dimₖ M. The representation is continuous with finite image.
 
@@ -283,13 +278,12 @@ A proof route is as follows. Use the period-truncation comparison to identify J(
 - For d=0 the kernel field is K and every algebraic E has exactly p⁰=1 solution, testing both directions of the field criterion.
 - For p=3 and the weight-one unit object, E=ℚ₃ has one solution and L=ℚ₃(π), π²=−3, has three: 1<3 and equality detects L.
 - Adjoining an independent algebraic extension to L leaves the solution count three, not three times the extension degree; the criterion is containment, not equality of fields.
-- d=0 gives L=K and equality for every E.
 
 *Needs:* §§1.3–1.4; ArithmeticGaloisRepresentations gap:finite-torsion-kernel-dictionary.
 
 ### 1.6 Approximate integral embeddings recover the period field
 
-For L attached to M and every real m>1+r/(p−1), the supplier property Pₘ(L/K) holds: for every algebraic E/K, an O(K)-algebra map O(L)→O(E)/a(E)^m, where a(E)^m={x:v₀(x)≥m}, implies a K-embedding L→E. The approximate map need not itself lift to that embedding.
+For M∈MFₜₒᵣ[0,r] killed by p, L its kernel field and every real m>1+r/(p−1), the supplier property Pₘ(L/K) holds: for every algebraic E/K, an O(K)-algebra map O(L)→O(E)/a(E)^m, where a(E)^m={x:v₀(x)≥m}, implies a K-embedding L→E. The approximate map need not itself lift to that embedding.
 
 Assume p is prime, k is perfect of characteristic p, K=Frac W(k), and v₀(p)=1; let r be an integer with 0<r<p−1.
 
@@ -301,14 +295,13 @@ A proof route is as follows. First lift the map on the finite unramified part us
 
 - For L=K the identity map and identity field embedding exist for every m>1+r/(p−1); the field conclusion is nonempty even for the zero representation.
 - At p=3,r=1 the threshold is 3/2: m=2 is admitted, m=3/2 is not. An element of value exactly 2 is zero in the approximate-map quotient but cannot be confused with the period boundary value 1/2.
-- For the weight-one splitting field L=ℚ₃(π), E=ℚ₃ and m=2, no approximate integral map can exist, since the conclusion would supply π∈ℚ₃; reducing the Eisenstein relation modulo valuation 2 already excludes it.
-- The truncation ideal a(E)^m uses ≥m, while b(E) uses >r/(p−1). They are distinct ideals.
+- For the weight-one splitting field L=ℚ₃(π), E=ℚ₃ and m=2, no approximate integral map can exist, since the conclusion would supply π∈ℚ₃; the relation would require x²+3=0 modulo 9, but x²+3 takes only the residues 1,3,4,7 modulo 9, none zero.
 
 *Needs:* §§1.1, 1.5; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.6.3 for Pₘ; LocalFieldsRamification Layer 2 for henselian unramified lifting.
 
 ### 1.7 Fontaine’s higher-weight torsion ramification bound
 
-For U=Uₛ(M) killed by p as above and L its kernel field, its largest upper break in Fontaine’s shifted numbering is at most 1+r/(p−1). Equivalently, Serre’s upper ramification groups act trivially for v>r/(p−1). Consequently v₀(𝔇(L/K))<1+r/(p−1). If L/K is unramified the different exponent is zero and the strict inequality still holds.
+For M∈MFₜₒᵣ[0,r] killed by p, U=Uₛ(M) and L its kernel field, its largest upper break in Fontaine’s shifted numbering is at most 1+r/(p−1). Equivalently, Serre’s upper ramification groups act trivially for v>r/(p−1). Consequently v₀(𝔇(L/K))<1+r/(p−1). If L/K is unramified the different exponent is zero and the strict inequality still holds.
 
 Assume p is prime, k is perfect of characteristic p, K=Frac W(k), and v₀(p)=1; let r be an integer with 0<r<p−1.
 
@@ -321,18 +314,16 @@ A proof route is as follows. Apply the refined all-m ramification implication in
 - At p=7,r=3 the shifted bound is 3/2, Serre’s bound is 1/2 and the different is strictly less than 3/2.
 - At p=3,r=1 the tame quadratic weight-one splitting field has shifted break 1, Serre break 0 and normalized different 1/2<3/2; equality with the shifted break would be false.
 - For an unramified kernel field the different is 0<1+r/(p−1). At p=2 there is no positive integral r<1; at p=3 exactly r=1 occurs.
-- At p=7,r=3 the different is strictly below 3/2.
-- At p=3 the permissible positive integral range is r=1. At p=2 it is empty.
 
 *Needs:* §1.6; FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.6.1a–R07.6.3 and gap:pm-remove-inverse-e for the ramification route.
 
 ### 1.8 The ramification bound for crystalline subquotients
 
-Let V be a crystalline ℚₚ-representation of G(K) with Hodge–Tate weights in [0,r], and let U be a finite G(K)-stable subquotient of V killed by p. Then its kernel field L satisfies v₀(𝔇(L/K))<1+r/(p−1). A finite subquotient means a quotient of two stable lattices or lattice submodules, not a ℚₚ-linear quotient that happens to have finite cardinality.
+Let V be a crystalline ℚₚ-representation of G(K) with Hodge–Tate weights in [0,r], and let U be a finite G(K)-stable subquotient of V killed by p. Then its kernel field L satisfies v₀(𝔇(L/K))<1+r/(p−1). A finite subquotient means a quotient of two stable lattices or lattice submodules, not a ℚₚ-linear quotient that happens to have finite cardinality. The bound does not extend here to arbitrary p-power torsion, ramified K or r=p−1.
 
 Assume p is prime, k is perfect of characteristic p, K=Frac W(k), and v₀(p)=1; let r be an integer with 0<r<p−1.
 
-A proof route is as follows. Use the FiniteFlatGroupsAndIntegralPadicHodgeTheory R07.3 lattice correspondence and closure of the essential image under subquotients to realize U as Uₛ(M), with the same weight interval. Apply the torsion bound. This is a higher-weight crystalline consequence; it does not reprove the finite-flat pⁿ bound already owned by FiniteFlatGroupsAndIntegralPadicHodgeTheory R07.6.
+A proof route is as follows. Use the FiniteFlatGroupsAndIntegralPadicHodgeTheory R07.3 lattice correspondence and closure of the essential image under subquotients to realize U as Uₛ(M) for a generating M∈MFₜₒᵣ[0,r] killed by p, with the same weight interval. Apply the torsion bound. This is a higher-weight crystalline consequence; it does not reprove the finite-flat pⁿ bound already owned by FiniteFlatGroupsAndIntegralPadicHodgeTheory R07.6.
 
 (Fontaine93 lines 23–30, 127–139, abstract and §1, printed p. 4.)
 
@@ -341,8 +332,6 @@ A proof route is as follows. Use the FiniteFlatGroupsAndIntegralPadicHodgeTheory
 - The zero lattice quotient has L=K and different 0.
 - At p=3 a killed-three quotient of ℚ₃(1) has splitting field ℚ₃(ζ₃) and different 1/2<3/2, agreeing with the filtered-unit calculation.
 - The quotient ℤ/9(1) is outside the killed-three hypothesis: ℚ₃(ζ₉) has different 9/6=3/2, showing why the strict killed-p bound cannot cover arbitrary p-power torsion.
-- A general module killed by pⁿ with n>1 is not assigned this killed-p bound.
-- Ramified K and the endpoint r=p−1 are outside this theorem.
 
 *Needs:* §1.7; FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.3.12, R07.3.17 for the lattice-subquotient realization.
 
@@ -379,8 +368,7 @@ The API records the following facts.
 
 - ℤ/49 with trivial G_ℚ-action belongs, so the category is larger than 𝔽₇-representations.
 - 𝔽₇(i), i=0,1,2,3, all belong.
-- 𝔽₇(4) is unramified outside 7 but its inertial FL weight is 4, hence it is excluded from this interval; an arbitrary noncrystalline ramified self-extension is excluded too.
-- Do not identify the category with all extensions of its simple objects in the ambient Galois category.
+- 𝔽₇(4) is unramified outside 7 but its inertial FL weight is 4, hence it is excluded from this interval.
 
 *Needs:* ArithmeticGaloisRepresentations §§1.1, 1.9 and gap:finite-torsion-kernel-dictionary for the ambient category; FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.3.4–R07.3.5, R07.3.10–R07.3.12, R07.3.17 for the local essential image and closure.
 
@@ -405,9 +393,7 @@ The API records the following facts.
 
 **Checks.**
 
-- With χ=1, step₀(0)=Representation.invariants ρ; stepᵢ(top)=top for every i.
 - Over a field, on a pure χʲ-line, if χ⁰,…,χ³ are pairwise distinct and 0≤j≤3, Uᵢ is the whole line exactly when i≤j.
-- For any nonsplit two-dimensional extension 0→χ³→U→1→0 over a field where χ⁰,χ¹,χ²,χ³ are pairwise distinct, U₃ is the χ³-line and U₀=U. Starting with the trivial eigenspace instead misses the extension; testing just semisimplification would not detect this error.
 - For G=C₇⋊C₆, let t act on the wild generator w by w↦w⁶, set χ(t)=3 and χ(w)=1 over 𝔽₇, and let ρ(t)=diag(6,1), ρ(w)=((1,1),(0,1)). The χ³-subline has dimension one, the trivial quotient dimension one, and the invariant space is zero. The order 3,2,1,0 gives dimensions (1,1,1,2); order 0,1,2,3 gives (0,0,0,1). This is a representation-theoretic example, without an assertion of global crystalline realizability.
 - Over ℤ/25 on a line, take a C₅-generator with χ=6 and ρ=6. The powers χ⁰,χ¹,χ²,χ³ are the distinct units 1,6,11,16, but step₃(0)=5(ℤ/25) has five elements. Distinctness alone cannot replace the field hypothesis in the pure-line Check.
 - For the permutation action of S₃ on ℚ³, χ=1 and N=0 give step₀(0)=ℚ(1,1,1), of dimension one; step₀(top)=top has dimension three. The line ℚ(1,0,0) is not stable, since (12) sends its generator to (0,1,0), so it cannot support the quotient interpretation.
@@ -428,10 +414,9 @@ A proof route is as follows. Translate the sequence contravariantly to FL module
 
 - The sequence 0→ℤ/7→ℤ/49→ℤ/7→0 with trivial action satisfies the conclusion, although its middle group contains an element of order 49 and the product of its endpoints does not.
 - For U=0 the action is trivial and the finite kernel field is ℚ, of degree one and root discriminant one.
-- An ambient unipotent representation with a nonzero ramified self-extension would have a nontrivial action; the middle-term crystalline condition must be checked rather than inferred from the endpoints.
-- The sequence 0→ℤ/7→ℤ/49→ℤ/7→0 with trivial action qualifies and does not split as groups.
+- On 𝔽₇² let G_ℚ act by matrices ((1,a(g)),(0,1)), where a(g)=(χ₇(g)⁶−1)/7 modulo 7. This is an ambient extension of trivial characters, unramified outside seven; an inertia element with χ₇(g)=8 modulo 49 has a(g)=6 and matrix of order seven. Its ramification excludes the middle term from C₇[0,3], since a weight-zero FL middle term would be unramified.
 
-*Needs:* §2.1 for the statement; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.3.5 and gap:fl-local-weight-ext, SmallRamificationAndAbelianVarietyBaseCases §1.4 for the route.
+*Needs:* §2.1 for the statement; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.3.5 and gap:fl-weight-zero-unramified, SmallRamificationAndAbelianVarietyBaseCases §1.4 for the route.
 
 ### 2.4 The four simple global crystalline objects
 
@@ -439,7 +424,7 @@ The nonzero simple objects of C₇[0,3], up to isomorphism, are exactly 𝔽₇(
 
 Simplicity is taken in the finite global crystalline category; subquotient closure identifies it with the relevant G_ℚ-module simplicity.
 
-A proof route is as follows. A simple object is killed by 7. If E is its kernel field, form F=E(ℚ(ζ₇)), the field of U⊕𝔽₇(1). Layer 1 gives rd(F)<7^(3/2)<19.02; the base certified totally complex row gives [F:ℚ]≤287. Write [F:ℚ]=6n′. If wild ramification occurs at 7, 7 divides n′. Since 6n′≤287, n′=7n″ with 1≤n″≤6. The number of 7-Sylow subgroups in Gal(F/ℚ(ζ₇)) divides n″ and is 1 modulo 7, hence is one. Its unique Sylow is characteristic there and normal in Gal(F/ℚ). Its fixed field F′ is tame, so rd(F′)<7. The supplier’s root-discriminant-seven threshold gives [F′:ℚ]≤10 and 6n″≤10, hence n″=1. A normal 7-subgroup acts trivially on a simple 𝔽₇-module (use fixed vectors and normality), and also on 𝔽₇(1), contradicting faithfulness of their combined action. Thus F is tame and rd(F)<7 gives [F:ℚ]≤10. Since it contains the degree-six ℚ(ζ₇), F=ℚ(ζ₇). The characters of its cyclic group and the imported FL tame-weight formula restrict the exponent to 0,…,3.
+A proof route is as follows. A simple object is killed by 7. If E is its kernel field, form F=E(ℚ(ζ₇)), the field of U⊕𝔽₇(1). Layer 1 gives rd(F)<7^(3/2)<19.02; the base certified totally complex row gives [F:ℚ]≤287. Write [F:ℚ]=6n′. If wild ramification occurs at 7, 7 divides n′. Since 6n′≤287, n′=7n″ with 1≤n″≤6. The number of 7-Sylow subgroups in Gal(F/ℚ(ζ₇)) divides n″ and is 1 modulo 7, hence is one. Its unique Sylow is characteristic there and normal in Gal(F/ℚ). Its fixed field F′ is tame, so rd(F′)<7. The supplier’s §1.9 row (b) exact lower bound 7.00 at n=11 and monotonicity give [F′:ℚ]≤10 and 6n″≤10, hence n″=1. A normal 7-subgroup acts trivially on a simple 𝔽₇-module (use fixed vectors and normality), and also on 𝔽₇(1), contradicting faithfulness of their combined action. Thus F is tame and rd(F)<7 gives [F:ℚ]≤10. Since it contains the degree-six ℚ(ζ₇), F=ℚ(ζ₇). The characters of its cyclic group and the imported FL tame-weight formula restrict the exponent to 0,…,3.
 
 (Fontaine93 lines 198–213, §2.4 Lemma 2, printed p. 6.)
 
@@ -448,10 +433,8 @@ A proof route is as follows. A simple object is killed by 7. If E is its kernel 
 - At n′=7n″ the bound 6·7n″≤287 gives n″≤6. A number of Sylow seven-subgroups dividing n″ and congruent to 1 modulo 7 can only be one.
 - For the tame fixed field, 6n″≤10 forces n″=1: the next possible degree 12 is excluded.
 - The four characters on a tame generator of mod-seven value 3 have scalars 1,3,2,6; the next character has scalar 4 and weight four, outside the interval.
-- The replacement 287 still leaves n″≤6<8, which is enough for the unique-Sylow argument.
-- F contains ℚ(ζ₇), so the totally complex hypotheses of every analytic bound are checked.
 
-*Needs:* §§1.7, 2.1; SmallRamificationAndAbelianVarietyBaseCases §§1.1, 1.9 and gap:root-discriminant-seven; FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.3.8–R07.3.9; Tau Ceti p-group invariant theorem and normality; ArithmeticGaloisRepresentations gap:finite-torsion-kernel-dictionary.
+*Needs:* §§1.7, 2.1; SmallRamificationAndAbelianVarietyBaseCases §§1.1, 1.9 (row (b)’s exact lower bound 7.00 and monotonicity); FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.3.8–R07.3.9; Tau Ceti p-group invariant theorem and normality; ArithmeticGaloisRepresentations gap:finite-torsion-kernel-dictionary.
 
 ### 2.5 The unique possible orientation of a nonsplit mod-seven extension
 
@@ -470,10 +453,8 @@ A proof route is as follows. For equal characters twist into weight zero and use
 - For (i,j)=(0,3) the exponent would be 59 and 7^(59/42)>12, so this numerical contradiction stops. The reversed pair (3,0) is in the proved splitting range.
 - In the unramified relative case the exponent is 35 and the root discriminant is 7^(35/42)=7^(5/6)<5.72; degree 42 contradicts the bound eight.
 - In the tame-conjugation calculation with θ₀(t)=3 and normalized wild value 1, breaks b=1,2 give conjugated values 3 and 2. Inverting the tame character instead gives 5 and 4, reversing the required exponent congruence.
-- Do not reverse the exceptional pair.
-- The exponent 41+6a uses degree 42 and lower break after the degree-six tame base, not a break over ℚ₇.
 
-*Needs:* §§2.3–2.4 for the global category and simple characters; §1.7 with interval [0,a]; FiniteFlatGroupsAndIntegralPadicHodgeTheory gap:fl-local-weight-ext; LocalFieldsRamification Layer 3 tame conjugation and different formulas; SmallRamificationAndAbelianVarietyBaseCases §§1.1, 1.9.
+*Needs:* §§2.3–2.4 for the global category and simple characters; §1.7 with interval [0,a]; FiniteFlatGroupsAndIntegralPadicHodgeTheory gap:fl-oriented-mod-p-splitting; LocalFieldsRamification Layer 3 tame conjugation and different formulas; SmallRamificationAndAbelianVarietyBaseCases §§1.1, 1.9.
 
 ### 2.6 Cyclotomic decomposition without a trivial quotient
 
@@ -490,9 +471,8 @@ A proof route is as follows. Induct on the order of U, using the four simple obj
 - For U=ℤ/49(1), multiplication by seven is nonzero and the single nonzero eigensubgroup g₁U is all 49 elements; an argument confined to 𝔽₇-vector spaces would miss this case.
 - For U=𝔽₇(1)⊕𝔽₇(2), g₀=0 and g₁,g₂ have orders seven, giving 7·7=49 elements in the direct sum.
 - A permitted nonsplit extension with quotient 1 and sub χ³ has a trivial quotient; it lies outside the hypothesis. Removing that hypothesis would incorrectly force it to split.
-- An argument only for 𝔽₇-vector spaces does not establish this theorem.
 
-*Needs:* §§2.3–2.5; FiniteFlatGroupsAndIntegralPadicHodgeTheory gap:fl-local-weight-ext for arbitrary 7-power rank one; SmallRamificationAndAbelianVarietyBaseCases §1.4 for the global unramified ratio.
+*Needs:* §§2.3–2.5; FiniteFlatGroupsAndIntegralPadicHodgeTheory gap:fl-rank-one-inertia for arbitrary 7-power rank one; SmallRamificationAndAbelianVarietyBaseCases §1.4 for the global unramified ratio.
 
 ### 2.7 The finite global cyclotomic filtration is exhaustive
 
@@ -509,7 +489,6 @@ A proof route is as follows. Induct on the finite order. If U has no trivial sim
 - For U=0 all terms are zero and U₀=U has one element.
 - On U=ℤ/49(i), i=0,1,2,3, character differences on a tame generator are units modulo seven, so Uₖ=U exactly for k≤i.
 - For a nonsplit χ³-by-trivial extension of dimension two the dimensions (U₄,U₃,U₂,U₁,U₀) are (0,1,1,1,2). It is exhausted without a direct-sum conclusion.
-- Exhaustiveness is stronger than the list of Jordan–Hölder factors.
 
 *Needs:* §§2.1–2.3, 2.6 for the order induction; the same finite torsion category throughout.
 
@@ -528,7 +507,6 @@ A proof route is as follows. Choose a stable ℤ₇-lattice T using ArithmeticGa
 - For V=0 every term is zero, and the stable lattice is zero.
 - For ℚ₇(1)⊕ℚ₇(2), dimensions from V₄ to V₀ are (0,0,1,2,2); the two graded scalar actions are χ² and χ.
 - At lattice levels ℤ/7ⁿ(i), the compatible witness uₙ=1 has reductions 1 at every preceding level. Arbitrary witnesses uₙ with incompatible reductions do not define an element of ℤ₇, which excludes that inverse-limit shortcut.
-- No conclusion that every such V is a direct sum of distinct Tate characters is made.
 
 *Needs:* §2.2 for the statement; §2.7, ArithmeticGaloisRepresentations §1.6, EtaleCohomologyFoundations §F.4.0 and FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.3.17 for the lattice route; compact inverse limits of finite solution sets.
 
@@ -538,7 +516,7 @@ The pure χ²-line has filtration dimensions (0,0,1,1,1) from index four to zero
 
 ### Dependencies
 
-Layer 1; FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.3.4–R07.3.17 and gap:fl-local-weight-ext; SmallRamificationAndAbelianVarietyBaseCases §§1.1, 1.4, 1.7, 1.9 and gap:root-discriminant-seven; LocalFieldsRamification Layer 3; ArithmeticGaloisRepresentations §§1.1–1.3, 1.6, 1.9, 2.2 and gap:finite-torsion-kernel-dictionary; EtaleCohomologyFoundations §F.4.0; Mathlib representations and submodules; Tau Ceti p-group invariant theorem.
+Layer 1; FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.3.4–R07.3.17 and gap:fl-weight-zero-unramified, gap:fl-rank-one-inertia and gap:fl-oriented-mod-p-splitting; SmallRamificationAndAbelianVarietyBaseCases §§1.1, 1.4, 1.7, 1.9 (including row (b)’s exact lower bound 7.00 and monotonicity); LocalFieldsRamification Layer 3; ArithmeticGaloisRepresentations §§1.1–1.3, 1.6, 1.9, 2.2 and gap:finite-torsion-kernel-dictionary; EtaleCohomologyFoundations §F.4.0; Mathlib representations and submodules; Tau Ceti p-group invariant theorem.
 
 
 ## Layer 3: Low-degree cohomology and Hodge vanishing
@@ -558,7 +536,6 @@ A proof route is as follows. Apply the rational filtration to Vₘ=(Hᵐₑₜ)^
 - For ℙ¹ at q=2, H² has one Frobenius eigenvalue 2 and its dual 1/2, so m=2i forces i=1.
 - For m=1, the candidate grade absolute values 1,1/2,1/4,1/8 differ from 2^(−1/2); for m=3 they differ from 2^(−3/2). Thus all grades have dimension zero.
 - A two-dimensional Jordan block with both eigenvalues 2 is pure of weight two but not scalar. The exhaustive filtration with its only surviving grade equal to the whole space excludes that wrong inference from purity alone.
-- Purity alone does not give semisimplicity. The special exhaustive filtration proves the full scalar action here.
 
 *Needs:* §§0.1–0.2 and 2.8; DeligneWeightsAndPurity §§0.8–0.9, 7.15 and SchemeAndStackFoundations §0.9 for the purity route.
 
@@ -574,11 +551,9 @@ A proof route is as follows. For m=i+j equal to 1 or 3 use the zero étale group
 
 **Checks.**
 
-- The off-diagonal pairs in total degree at most three are (1,0),(0,1),(2,0),(0,2),(3,0),(2,1),(1,2),(0,3); each has zero cohomology under the hypothesis.
+- For ℙ² the eight off-diagonal pairs in total degree at most three, (1,0),(0,1),(2,0),(0,2),(3,0),(2,1),(1,2),(0,3), all have dimension zero by the projective-space formula; an assertion allowing a nonzero one would fail this instance.
 - For ℙ¹, h¹¹=1 with total degree two, so dropping i≠j gives the false value zero.
 - For the empty scheme every coherent cohomology group has one element and dimension zero. For ℙ², h²²=1 has total degree four and lies outside the assertion; the pair (0,0) is diagonal and imposes no condition.
-- h¹¹ can be nonzero.
-- There is no assertion about h³¹ or h⁴⁰, both of total degree four.
 
 *Needs:* §0.1 and native differential sheaf/cohomology for the statement; §§0.2, 3.1, PadicHodgeTheory §§3.3–3.5 and SchemeAndStackFoundations §2.6 for comparison and faithful coefficient extension.
 
@@ -595,7 +570,6 @@ A proof route is as follows. Base change each model to W(F̄ₚ). Apply the vani
 - For ℙ¹_ℤ the local models are its base changes and h¹⁰=h⁰¹=h²⁰=h⁰²=0, while h¹¹=1 remains allowed.
 - For Spec ℤ, the generic point has h⁰⁰=1 and all positive Hodge groups zero.
 - For y²=x³−x the prime-three model exists since Δ=64 is a unit, but at two v₂(Δ_min)=6. A single ℤₚ model cannot satisfy the universal hypothesis.
-- Smooth projective spaces over ℤ meet all hypotheses.
 
 *Needs:* §§0.1, 3.2; SchemeAndStackFoundations §0.11 for base change of each integral model.
 
@@ -623,13 +597,12 @@ The shared predicate requires smooth relative dimension two, properness, geometr
 - Over ℚ̄ a trivial canonical line has H⁰ of dimension one, so field base change gives dim_ℚ H⁰(Ω²)=1 as well.
 - Rescaling a nonzero geometric two-form by 2 changes the chosen section and leaves the dimension equal to one; the zero form cannot trivialize the canonical line.
 - An abelian surface has h²⁰=1 and h¹(O)=2, whereas a K3 surface has h¹(O)=0. The Hodge invariant alone is not a definition of K3.
-- A projective abelian surface also has h²⁰=1 but fails the shared K3 H¹(O)=0 condition; it is not identified as K3.
 
 *Needs:* K3SurfacesAndSymplecticBoundedness §§1.1–1.4, 2.4 for the invariant and field-extension comparison; SchemeAndStackFoundations §2.6 for coherent base change.
 
 ### 4.2 A K3 surface has a bad prime over the unramified Witt ring
 
-Let X/ℚ be smooth proper with geometric K3 base change in the shared predicate. There is a rational prime p for which X has no proper smooth scheme model over W(F̄ₚ). In particular X cannot have proper smooth scheme models over ℤₚ for all p, nor be the generic fibre of a proper smooth ℤ-scheme.
+Prove `geometricK3_hasBadWittPrime`: let X/ℚ be smooth proper with geometric K3 base change in the shared predicate of K3SurfacesAndSymplecticBoundedness §1.1. The acceptance signature expands its five conditions on X_ℚ̄ directly: smooth relative dimension two, properness, geometric integrality, an isomorphism Ω²≅O, and H¹(O)=0. There is a rational prime p for which X has no proper smooth scheme model over W(F̄ₚ). In particular X cannot have proper smooth scheme models over ℤₚ for all p, nor be the generic fibre of a proper smooth ℤ-scheme.
 
 A proof route is as follows. If all Witt models existed, Layer 3 at (i,j)=(2,0) would force H⁰(Ω²)=0. This contradicts the K3 dimension-one theorem. Negate the universal model property.
 

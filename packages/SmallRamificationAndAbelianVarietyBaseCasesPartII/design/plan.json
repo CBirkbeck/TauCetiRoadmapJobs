@@ -1518,8 +1518,20 @@
       "section": "§§R07.3.6–R07.3.7, R07.3.15"
     },
     {
-      "slug": "fl-local-weight-ext",
-      "needs": "For safe Fontaine–Laffaille intervals supply weight-zero unramifiedness, rank-one inertia χⁱ at every p-power length allowing an unramified twist, and the oriented local extension splitting for distinct weights with quotient exponent greater than subobject exponent used in Fontaine93 §§2.3–2.6.",
+      "slug": "fl-weight-zero-unramified",
+      "needs": "For prime p, perfect characteristic-p k and K=Frac W(k), inertia in G(K) acts trivially on Uₛ(M) for every M∈MFₜₒᵣ[0,0] of arbitrary finite p-power length.",
+      "supplier": "FiniteFlatGroupsAndIntegralPadicHodgeTheory",
+      "section": "§§R07.3.4–R07.3.12"
+    },
+    {
+      "slug": "fl-rank-one-inertia",
+      "needs": "For prime p, perfect characteristic-p k, K=Frac W(k), n≥1 and integers 0≤i≤r<p−1, the inertia character of Uₛ(M) is χₚⁱ modulo pⁿ for every rank-one W(k)/pⁿ object M∈MFₜₒᵣ[0,r] with unique filtration weight i; its full G(K) character may have an unramified twist.",
+      "supplier": "FiniteFlatGroupsAndIntegralPadicHodgeTheory",
+      "section": "§§R07.3.4–R07.3.12"
+    },
+    {
+      "slug": "fl-oriented-mod-p-splitting",
+      "needs": "For prime p, perfect characteristic-p k, K=Frac W(k) and integers 0≤j<i≤r<p−1, every exact sequence 0→𝔽ₚ(j)→U→𝔽ₚ(i)→0 with pU=0 and U in the local Fontaine–Laffaille essential image on [0,r] splits as a G(K)-module sequence.",
       "supplier": "FiniteFlatGroupsAndIntegralPadicHodgeTheory",
       "section": "§§R07.3.4–R07.3.12"
     },
@@ -1534,12 +1546,6 @@
       "needs": "Supply the finite continuous p-primary Galois-module and kernel-field dictionary, fixed-point/cardinality detection of a splitting field, compatibility with the cyclotomic degree/action identification at seven.",
       "supplier": "ArithmeticGaloisRepresentations",
       "section": "§§1.1, 1.9, 2.2"
-    },
-    {
-      "slug": "root-discriminant-seven",
-      "needs": "For every totally complex number field F, rd(F)<7 implies [F:ℚ]≤10, with a rigorous evaluation of its unconditional Poitou–Odlyzko inequality in §1.7.",
-      "supplier": "SmallRamificationAndAbelianVarietyBaseCases",
-      "section": "§1.7"
     },
     {
       "slug": "completed-unramified-inertia",

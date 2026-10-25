@@ -10,6 +10,9 @@ The roadmap is README.md; this file is not the roadmap. It states the roadmap's
 headline theorems against the pinned APIs. The local-model predicates below use
 native schemes, Witt vectors and generic-fibre isomorphisms. The Hodge theorem
 uses native relative differentials, sheaf exterior powers and Zariski cohomology.
+The geometric K3 bad-prime theorem expands the five native conditions of
+K3SurfacesAndSymplecticBoundedness §1.1 on the geometric base change; it does
+not introduce another K3 predicate.
 
 The following headline theorems are not statable at the pins:
 * Layer 1: the higher-weight torsion ramification and strict different bounds
@@ -19,9 +22,6 @@ The following headline theorems are not statable at the pins:
   and the rational crystalline predicate with its Hodge–Tate weight interval.
 * Layer 3: the vanishing of odd low étale cohomology and the full scalar Tate
   action in degree two lack geometric rational étale cohomology with Galois action.
-* Layer 4: the geometric K3 obstruction lacks the shared K3 predicate supplied by
-  K3SurfacesAndSymplecticBoundedness §1.1, which is not a pinned declaration.
-  That supplier's predicate and differential-form definition are not duplicated.
 -/
 
 namespace TauCetiRoadmap.SmallRamificationAndAbelianVarietyBaseCasesPartII
@@ -63,6 +63,30 @@ theorem lowDegreeHodgeVanishing {X : Scheme.{0}} (f : X ⟶ Spec (.of ℚ))
     letI : X.Over (Spec (.of ℚ)) := ⟨f⟩
     Subsingleton (TauCeti.AlgebraicGeometry.Scheme.Modules.Cohomology
       ((SheafOfModules.exteriorPower X.sheaf i).obj (X.relativeDifferentials ℚ)) j) := by
+  sorry
+
+/-! ## Layer 4: K3 bad reduction and geometric examples -/
+
+/-- A smooth proper rational scheme whose geometric base change satisfies the
+five K3 conditions has a prime with no smooth proper Witt-ring model.
+The conditions are those of K3SurfacesAndSymplecticBoundedness §1.1.
+Fontaine, Theorem 1 and Remark (a), p. 3; Schröer, Proposition 5.5 proof, p. 16. -/
+theorem geometricK3_hasBadWittPrime {X : Scheme.{0}}
+    (f : X ⟶ Spec (.of ℚ)) [Smooth f] [IsProper f] :
+    let a := Spec.map (CommRingCat.ofHom (algebraMap ℚ (AlgebraicClosure ℚ)))
+    let Xbar := pullback f a
+    let fbar := pullback.snd f a
+    letI : Xbar.Over (Spec (.of (AlgebraicClosure ℚ))) := ⟨fbar⟩
+    (SmoothOfRelativeDimension 2 fbar ∧ IsProper fbar ∧
+      GeometricallyIntegral fbar ∧
+      Nonempty (((SheafOfModules.exteriorPower Xbar.sheaf 2).obj
+        (Xbar.relativeDifferentials (AlgebraicClosure ℚ))) ≅
+          SheafOfModules.unit Xbar.ringCatSheaf) ∧
+      Subsingleton (TauCeti.AlgebraicGeometry.Scheme.Modules.Cohomology
+        (SheafOfModules.unit Xbar.ringCatSheaf) 1)) →
+    ∃ (p : ℕ) (hp : p.Prime),
+      letI : Fact p.Prime := ⟨hp⟩
+      ¬ hasWittGoodReductionAt f p := by
   sorry
 
 end TauCetiRoadmap.SmallRamificationAndAbelianVarietyBaseCasesPartII
