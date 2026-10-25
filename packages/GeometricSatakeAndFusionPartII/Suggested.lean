@@ -11,7 +11,8 @@ None of the following geometric headlines is statable at these pins:
   lack polynomial Beilinson–Drinfeld Grassmannians and their schematic Schubert closures.
 * Auxiliary prime-to-p Hodge covers (Layer 1) lack local cocharacter data, reflex fields
   and parahoric levels on the reductive-group carriers.
-* Closed polynomial Hodge and symplectic embeddings, including restriction of scalars
+* Flatness of the standard GL and GSp chain models and closed polynomial Hodge
+  and symplectic embeddings, including restriction of scalars
   and period-total embeddings (Layer 2), lack the polynomial models and represented
   lattice-chain Grassmannians.
 * Canonical classical abelian-type local models and normalization of Hodge images

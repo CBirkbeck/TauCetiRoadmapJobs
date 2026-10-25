@@ -3957,16 +3957,16 @@
     "section": "§§0.20–0.21, 0.26 and 0.30"
   },
   {
-    "slug": "canonical-module-connectedness",
-    "needs": "Give the canonical-module and local-cohomology connectedness criterion and deformation of depth needed for the Serre S₂ argument in §7.3.",
+    "slug": "s2ification-connectedness",
+    "needs": "In §§0.17–0.18, for a reduced equidimensional excellent weakly normal finite-type scheme X over a perfect field with geometrically unibranch irreducible components, prove that X is S₂ if and only if at every geometric point x the graph of irreducible components of the strict local scheme at x, joined when they meet in codimension one, is connected, equivalently the finite S₂-ification has singleton geometric fibres, and show compatibility with completion (GL Lemma 3.3 and Proposition 3.4, pp. 6–7; GL line 255).",
     "supplier": "SchemeAndStackFoundations",
-    "section": "§§0.17–0.18; canonical-module extension"
+    "section": "§§0.17–0.18; S₂-ification extension"
   },
   {
-    "slug": "normality-descent-and-algebraization",
-    "needs": "Give faithful-flat descent of normality and the proper-scheme algebraization of the specified equivariant formal isomorphisms after finite reflex-field extension used in §§6.5–6.6 and 7.6.",
+    "slug": "fpqc-normality-descent",
+    "needs": "In §§0.30, 1.1 and 4.13, prove that normality descends along an fpqc covering of locally noetherian schemes, as used in §7.6.",
     "supplier": "SchemeAndStackFoundations",
-    "section": "§§0.17–0.21, 1.1, 4.6–4.13"
+    "section": "§§0.30, 1.1 and 4.13"
   },
   {
     "slug": "classical-hodge-cover-classification",
@@ -4036,7 +4036,7 @@
   },
   {
     "slug": "polynomial-bd-projectivity",
-    "needs": "Give ind-projectivity and the generic and companion fibres of polynomial BD modification functors for the specified parahoric lifts.",
+    "needs": "In GS0’s polynomial BD extension, define the torsor modification functor Fl^P for smooth affine O_(K₀)[u]-groups with geometrically connected fibres and monic divisor P, and prove ind-projectivity with generic Grassmannian and companion affine-flag fibres for the specified polynomial parahoric lifts and Eisenstein divisors (LEV Definition 4.1.1, Proposition 4.1.4 and Theorem 4.2.10, pp. 20, 28; LEV line 791).",
     "supplier": "GeometricSatakeAndFusion",
     "section": "GS0, polynomial BD extension"
   },
@@ -4060,7 +4060,7 @@
   },
   {
     "slug": "algebraic-demazure-fibres",
-    "needs": "Give the algebraic Demazure resolutions and connected fibres of parahoric projection used in the local-model arguments.",
+    "needs": "In GS0’s algebraic extension of “Relative-position flag correspondences”, prove geometric connectedness of the fibres of the Iwahori-to-parahoric projection of admissible loci, using the reduced-word resolutions from “Equal-characteristic Schubert models and coefficient comparison” (GL Lemma 5.2, p. 10; GL line 430).",
     "supplier": "GeometricSatakeAndFusion",
     "section": "GS0, Relative-position flag correspondences; algebraic extension"
   },
@@ -4069,12 +4069,6 @@
     "needs": "Give the equal-characteristic coherence and deformation theorem used for polynomial special fibres and the S₂ argument.",
     "supplier": "GeometricSatakeAndFusion",
     "section": "GS0, algebraic Schubert prefix"
-  },
-  {
-    "slug": "standard-chain-flatness",
-    "needs": "Give flatness of standard minuscule GL and GSp lattice-chain incidence models, identifying them with their flat generic closures.",
-    "supplier": "GeometricSatakeAndFusion",
-    "section": "GS0, standard chain extension"
   },
   {
     "slug": "polynomial-closed-immersion-criterion",
@@ -4108,9 +4102,9 @@
   },
   {
     "slug": "rational-central-nearby-cycles",
-    "needs": "Give the rational central nearby-cycle convolution and constant-term comparisons on bounded integral v-local models for every reductive group and dominant μ used in Layer 8.",
+    "needs": "In the GS2 early central prefix, give the rational central nearby-cycle convolution isomorphism on bounded integral v-local models for every reductive group and dominant μ (AGLR Proposition 6.17, pp. 40–41; AGLR line 2239).",
     "supplier": "GeometricSatakeAndFusion",
-    "section": "GS0, Bounded admissible affine flag loci; GS2 early central prefix"
+    "section": "GS2 early central prefix"
   },
   {
     "slug": "very-special-faithful-cohomology",
@@ -4120,15 +4114,21 @@
   },
   {
     "slug": "wild-admissible-closedness",
-    "needs": "For the acceptable Hodge datum with p>2, prime-to-p derived fundamental group and R-smooth centralizer in §7.7, prove schematic closedness of the companion admissible-locus map associated to its possibly wild splitting extension, sufficient with the polynomial closedness criterion to make the induced local-model scheme map a closed immersion.",
+    "needs": "In GS0’s canonical deperfection extension, for the acceptable Hodge datum of §7.7 with p>2, p∤|π₁(G^der)| and R-smooth centralizer, prove that the special-fibre map between canonical deperfected admissible loci induced by 𝒢→Res_(O_K/O_F)𝒢₀ for the specified finite splitting extension K/F is a closed immersion.",
     "supplier": "GeometricSatakeAndFusion",
-    "section": "GS0; GS2 early central prefix"
+    "section": "GS0, Bounded admissible affine flag loci; canonical deperfection extension"
   },
   {
     "slug": "general-tube-cohomology",
-    "needs": "Give all three comparisons of GL Theorem 4.7 for spatial generic diamonds of finite cohomological dimension, perfectly finite-type reduction and ℓ-torsion coefficients, retaining algebraicity for the étale-neighbourhood limit, together with the rich-smelted connected-fibre tube-transfer criterion.",
+    "needs": "In D11, give the three comparisons of GL Theorem 4.7 for a prekimberlite over a rank-one valuation ring, spatial generic diamond of finite cohomological dimension, perfectly finite-type reduction and ℓ-torsion coefficients with ℓ≠p, retaining algebraicity of nearby cycles for the comparison with the étale-neighbourhood limit (GL pp. 8–9; GL line 391).",
     "supplier": "DiamondsAndVStacksPartII",
-    "section": "D11"
+    "section": "D11; cohomology comparison extension"
+  },
+  {
+    "slug": "connected-fibre-tube-transfer",
+    "needs": "In D11, for a surjective morphism X→Y of rich p-adic kimberlites over Spd O_F with perfectly finite-type reductions and geometrically connected reduction fibres, prove that connected geometric tubes of X imply connected geometric tubes of Y (GLE22 Lemma 5.26, p. 45; GLE22 line 2293).",
+    "supplier": "DiamondsAndVStacksPartII",
+    "section": "D11; tube-transfer extension"
   },
   {
     "slug": "ramified-local-pel-data",
@@ -4137,16 +4137,46 @@
     "section": "M0"
   },
   {
-    "slug": "semisimple-trace-and-comparison",
-    "needs": "Give the proper-pushforward identity for semisimple traces and the scheme/analytic nearby-cycle comparison for proper local-model schemes.",
+    "slug": "semisimple-proper-pushforward",
+    "needs": "In LPV.1 §1.10 and LPV.6, for a proper equivariant morphism between finite-type schemes over a finite residue field and a bounded constructible rational ℓ-adic complex with admissible inertia action, prove that the semisimple trace of proper pushforward equals the sum of semisimple stalk traces over the rational points of each fibre, with geometric Frobenius (PZ §9.d.1–§9.d.2, pp. 74–75; PZ line 3064).",
     "supplier": "LefschetzPencilsAndVanishingCycles",
-    "section": "LPV.0; LPV.1 §1.10; LPV.6"
+    "section": "LPV.1 §1.10; LPV.6"
   },
   {
-    "slug": "parahoric-bernstein",
-    "needs": "Give Satake parameters and the central functions acting by trace(s_Φ(π)|V) on parahoric-spherical irreducible representations for arbitrary connected reductive groups, including non-quasi-split inner forms, together with injective minimal-Levi constant terms, inner-form transfer and normalized changes of parahoric level; in the unramified case recover the Bernstein-to-spherical isomorphism and companion-field comparison, independently of the local-model trace identity.",
+    "slug": "parahoric-satake-central-functions",
+    "needs": "In the SR.3.2 parahoric-centre extension, for every connected reductive G, connected parahoric P, finite-dimensional algebraic L-group representation V and lift Φ of geometric Frobenius, construct the central function z_(Φ,V) characterized on irreducible P-spherical representations π by trace(s_Φ(π)|V), over algebraically closed characteristic-zero coefficients and independently of local-model traces (HAI15 Theorem 1.1 and Definition 9.1, pp. 1, 19–20; HAI15 line 24 and HAI15 line 742; AGLR (8.7), pp. 52–53; AGLR line 2953).",
     "supplier": "SmoothRepresentationsOfLocalGroups",
-    "section": "SR.3.2 and SR.4.1; general parahoric-center extension"
+    "section": "SR.3.2; general parahoric-centre extension"
+  },
+  {
+    "slug": "centre-constant-term-injectivity",
+    "needs": "In the SR.3.2 parahoric-centre extension, for a minimal F-Levi M whose split torus apartment contains the facet of P, put P_M=P∩M(F) and prove that normalized constant term Z(H(G(F),P))→Z(H(M(F),P_M)) is injective and carries z_(Φ,V) to z_(Φ,V restricted to the L-group of M) (HAI14 §11.11, pp. 44–45; HAI14 line 1896; AGLR (8.9)–(8.10), AGLR line 2974).",
+    "supplier": "SmoothRepresentationsOfLocalGroups",
+    "section": "SR.3.2; general parahoric-centre extension"
+  },
+  {
+    "slug": "inner-form-central-support",
+    "needs": "In the SR.3.2 parahoric-centre extension, for G anisotropic modulo centre, identify normalized inner-form transfer from its quasi-split inner form on central functions with fibre sums along the Kottwitz map, with the single-support specialization used in §8.4 when V has irreducible restriction to the dual group extended by inertia (HAI14 Proposition 11.12.6, p. 48; HAI14 line 2087; AGLR (8.14), AGLR line 3006).",
+    "supplier": "SmoothRepresentationsOfLocalGroups",
+    "section": "SR.3.2; general parahoric-centre extension"
+  },
+  {
+    "slug": "parahoric-level-change",
+    "needs": "In the SR.3.2 parahoric-centre extension, for an Iwahori I contained in a connected parahoric P, prove that convolution with the normalized P-idempotent identifies their Hecke centres compatibly with Satake-parameter central functions (HAI14 Theorem 11.10.1, p. 44; HAI14 line 1888).",
+    "supplier": "SmoothRepresentationsOfLocalGroups",
+    "section": "SR.3.2; general parahoric-centre extension"
+  },
+  {
+    "slug": "unramified-bernstein-spherical",
+    "needs": "In the SR.4.1 parahoric-centre extension, for unramified G identify the parahoric centre with the hyperspecial spherical Hecke algebra through the Bernstein isomorphism and normalized level change (PZ Theorem 9.16, p. 76; PZ line 3132; HAI14 Theorem 11.10.1, p. 44; HAI14 line 1888).",
+    "supplier": "SmoothRepresentationsOfLocalGroups",
+    "section": "SR.4.1; parahoric-centre extension"
+  },
+  {
+    "slug": "companion-hecke-comparison",
+    "needs": "In the SR.4.1 companion comparison extension, for the tame Pappas–Zhu companion datum identify the parahoric Hecke algebras through their matching Iwahori–Weyl basis and parameters, compatibly with Bernstein elements and normalized parahoric idempotents (PZ §9.d.2–§9.d.3, pp. 75–76; PZ line 3091).",
+    "supplier": "SmoothRepresentationsOfLocalGroups",
+    "section": "SR.4.1; companion comparison extension"
   }
 ],
   "sourceIssues": [
