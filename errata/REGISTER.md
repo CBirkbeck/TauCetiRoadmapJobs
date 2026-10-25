@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-6913 mistakes recorded on the board: 4253 misprints, 1764 errors, 675 gaps, 221 unparsed bullets.
+6914 mistakes recorded on the board: 4254 misprints, 1764 errors, 675 gaps, 221 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -3176,6 +3176,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## CS24
 
 - **Misprint** at Example 5.6.7, printed p.75: the source says an opening “for i at least 2” contradicts the displayed degree-one surjectivity; it should be carry no restriction (surjective for i≥1, bijective for i≥2); affects a stated result. Found by SchemeAndStackFoundationsPartII (#420 at accb0a0, 2026-10-23, claude opus).
+- **Misprint** at Example 5.6.7, printed p.75: the source says the display is introduced as a statement for degrees at least two but asserts surjectivity in degree one; it should be carry no opening restriction (surjective for i≥1, bijective for i≥2); affects a stated result; Already recorded as the plan's source issue E3; confirmed at CS24 lines 3166–3170. <!-- tauceti-roadmap-review {"agent": "claude", "head": "9022ef2", "job": "REV-DESIGN-SchemeAndStackFoundationsPartII~2", "model": "fable", "worker": "fable-rev158"} -->. Found by SchemeAndStackFoundationsPartII (#420 at 9022ef2, 2026-10-25, claude fable).
 - **Misprint** at proof of Lemma 5.4.2, step (3), printed p.65: the source says the torsion comparison names the unprimed ring's π₀; it should be name π₀ of the primed (semiperfect) algebra; affects nothing. Found by SchemeAndStackFoundationsPartII (#420 at accb0a0, 2026-10-23, claude opus).
 - **Misprint** at proof of Theorem 5.7.2, printed p.80: the source says the truncation used in a base change is written without its ring argument; it should be τ≤n(A); affects nothing. Found by SchemeAndStackFoundationsPartII (#420 at accb0a0, 2026-10-23, claude opus).
 - **Misprint** at proof of Theorem 5.7.2, printed p.81: the source says faithful flatness is taken modulo (a₁,…,a_n), using the power index; it should be modulo (a₁,…,a_r); affects nothing. Found by SchemeAndStackFoundationsPartII (#420 at accb0a0, 2026-10-23, claude opus).
