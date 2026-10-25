@@ -10,12 +10,13 @@ The following objects are stated elsewhere and are consumed with their original 
 
 - Finite-level curves, central quotients, definite class sets with arbitrary finite ramification, coefficient systems, Hecke operators, degeneracy maps and non-Eisenstein control: HilbertModularVarietiesAndShimuraCurves §§R18.1.1–R18.1.4, R18.3.1–R18.3.16, R18.4.1–R18.4.27. Layer 0 supplies the BHHMS normalization adapter and multiplicity spaces, not another curve or class-set construction.
 - Smooth categories and central characters: SmoothRepresentationsOfLocalGroups §§SR.0.1–SR.0.4. Weight coordinates, Diamond modules, the local GK carrier and bound, first-order envelopes, the endpoint projective lattice and relative projectivity: ModpRepresentationsOfGL2OverLocalFields MP.3–MP.9. Layer 4 owns the intermediate global-patching lattices and their comparisons; the endpoint lattice is imported.
-- Tame types and single/multiple-type Galois deformation rings: LocalGaloisDeformationRingsPartII T.0–T.7. Whole-type component ideals retain the coupled terms in the common chart. Weight-isolating lattice theory and the Gee–Kisin input are the precise supplier gaps below.
-- Generic local/global deformation rings and Taylor–Wiles primes: LocalGaloisDeformationRings §§1.1–1.24, 3.1–3.10 and GlobalGaloisDeformations §§3.3–3.7, 5.1–5.8. Local power-series cancellation (HAM75 Theorem 4), general module and complex patching, commutative depth and support: DeformationAndDerivedPatchingAlgebra §§3.1–3.4, 5.6, 6.1–6.2, 8.1–8.5. The weight-filtration argument of GL2ModularityLifting §8.1 has a totally split setting; Layer 0 proves the unramified-place quaternionic version it needs.
+- Tame types and single/multiple-type Galois deformation rings: LocalGaloisDeformationRingsPartII T.0–T.7. Whole-type component ideals retain the coupled terms in the common chart. The characteristic-zero correspondence and lattices, and the local Gee–Kisin input, are the precise supplier gaps below; §0.2 owns their comparison with the BDJ extension-class recipe.
+- Generic local/global deformation rings and Taylor–Wiles primes: LocalGaloisDeformationRings §§1.1–1.24, 3.1–3.10 and GlobalGaloisDeformations §§3.3–3.7, 5.1–5.8. General module and complex patching, commutative depth and support: DeformationAndDerivedPatchingAlgebra §§3.1–3.4, 5.6, 6.1–6.2, 8.1–8.5. The weight-filtration argument of GL2ModularityLifting §8.1 has a totally split setting; Layer 0 proves the unramified-place quaternionic version it needs.
 - Completed cohomology, derived finite Hecke images, localization and integral Banach duality: CompletedCohomologyPartII §§F.1, 1.1–1.3, 3.1–3.2, 8.4–8.15. Layer 5 identifies their fixed-central-character quaternionic specialization; it does not build another completed-cohomology carrier. This also supplies the duality needed here rather than repeating LocallyAnalyticDistributionsPartII ND.6.
+- Module fibre products use Mathlib `LinearMap.eqLocus` and its equality with the kernel of a difference, `LinearMap.eqLocus_eq_ker_sub` (Mathlib/Algebra/Module/Submodule/EqLocus.lean). Layer 2 owns the support-freeness criterion.
 - Completed group algebras are already in the library as `TauCeti.completedGroupAlgebra`. Grades, canonical dimension, Auslander regularity, coefficient shifts and finite-index comparisons are owned by NoncommutativeAndEquivariantIwasawa §§F.1, 0.10–0.11, reexported by CompletedCohomologyPartII §5.5. Layer 2 adds the depth/projective-dimension identities, noncommutative CM condition, central-variable comparisons and miracle flatness; it does not redeclare those supplied objects.
 
-The quaternionic varieties with an arbitrary real split set belong to HilbertModularVarietiesAndShimuraCurvesPartIIQuaternionic; the Hilbert–Siegel moduli direction belongs to HilbertSiegelModularVarieties. Neither direction supplies an input to this roadmap.
+Quaternionic Shimura varieties with more than one split real place, and Hilbert–Siegel moduli, are outside this roadmap; no target here uses them. Local power-series cancellation is the declared gap:power-series-cancellation on DeformationAndDerivedPatchingAlgebra.
 
 ## Conventions
 
@@ -27,7 +28,7 @@ Cyclotomic Hodge–Tate weight is +1. Frobenius and Artin reciprocity are geomet
 
 Pontryagin dual means continuous O-linear maps to E/O with the compact/discrete topologies; the coefficient notation σ* in §0.3 always has this meaning, including for a finite free lattice (EGS15 §1.9, p. 8; EGS15 line 385). Schikhof dual means the integral O-dual, rationalized when a Banach space is wanted. Left dual actions are contragredient. The big compact module has central character ψ, dual to π's ψ⁻¹. Smooth group actions on colimits use right translations on forms and the induced left representation; pullback maps for smaller levels point from larger-level cohomology into smaller-level cohomology.
 
-The scheme-theoretic support of M over commutative A is A/Ann_A(M). Support-rank r means an A-linear isomorphism with r copies of that quotient, not merely generic rank. In the acceptance file this is `FreeRankOnSupport`; the underlying maps of a fibre product are bundled by `modulePullback`. A nonzero commutative finite module is MCM over a specified ring when its depth equals that ring's dimension; zero values are separately allowed in a patching functor. The noncommutative CM condition excludes zero. Grades of zero are ∞, dimensions of zero are −∞, and ordinary finite numerical equalities exclude zero. GK dimension is canonical dimension of π∨ over 𝔽⟦K₁/Z₁⟧, namely 3f minus its grade for nonzero π (GN22 Definitions A.2, A.5, pp. 42–44; GN22 line 1955).
+The scheme-theoretic support of M over commutative A is A/Ann_A(M). Support-rank r means an A-linear isomorphism with r copies of that quotient, not merely generic rank. A nonzero commutative finite module is MCM over a specified ring when its depth equals that ring's dimension; zero values are separately allowed in a patching functor. The noncommutative CM condition excludes zero. Grades of zero are ∞, dimensions of zero are −∞, and ordinary finite numerical equalities exclude zero. GK dimension is canonical dimension of π∨ over 𝔽⟦K₁/Z₁⟧, namely 3f minus its grade for nonzero π (GN22 Definitions A.2, A.5, pp. 42–44; GN22 line 1955).
 
 **Checks.**
 
@@ -43,13 +44,13 @@ The scheme-theoretic support of M over commutative A is A/Ann_A(M). Support-rank
 
 ### From Mathlib
 
-At the repository's Mathlib pin, consume `CategoryTheory.Abelian.Ext` (Mathlib/Algebra/Homology/DerivedCategory/Ext/Basic.lean), `IsLocalRing` (Mathlib/RingTheory/LocalRing/Defs.lean), `IsNoetherianRing` (Mathlib/RingTheory/Noetherian/Defs.lean), `IsRegularLocalRing` (Mathlib/RingTheory/RegularLocalRing/Defs.lean), `LinearMap.ker` (Mathlib/Algebra/Module/Submodule/Ker.lean), `Module.Finite` (Mathlib/RingTheory/Finiteness/Defs.lean), `Module.Free` (Mathlib/LinearAlgebra/FreeModule/Basic.lean), `Module.Flat` and `Module.FaithfullyFlat` (Mathlib/RingTheory/Flat/Basic.lean and FaithfullyFlat/Basic.lean), and `Module.annihilator` (Mathlib/RingTheory/Ideal/Maps.lean). These are native categories, module predicates and ideals, not cohomology of Shimura curves or patching data. Local rings include nontriviality. Freeness alone specifies no finite rank; finite generation is separate. Faithful flatness includes flatness and faithfulness of tensoring.
+At the repository's Mathlib pin, consume `CategoryTheory.Abelian.Ext` (Mathlib/Algebra/Homology/DerivedCategory/Ext/Basic.lean), `IsLocalRing` (Mathlib/RingTheory/LocalRing/Defs.lean), `IsNoetherianRing` (Mathlib/RingTheory/Noetherian/Defs.lean), `IsRegularLocalRing` (Mathlib/RingTheory/RegularLocalRing/Defs.lean), `LinearMap.ker` (Mathlib/Algebra/Module/Submodule/Ker.lean), `LinearMap.eqLocus` and `LinearMap.eqLocus_eq_ker_sub` (Mathlib/Algebra/Module/Submodule/EqLocus.lean), `Module.Finite` (Mathlib/RingTheory/Finiteness/Defs.lean), `Module.Free` (Mathlib/LinearAlgebra/FreeModule/Basic.lean), `Module.Flat` and `Module.FaithfullyFlat` (Mathlib/RingTheory/Flat/Basic.lean and FaithfullyFlat/Basic.lean), and `Module.annihilator` (Mathlib/RingTheory/Ideal/Maps.lean). These are native categories, module predicates and ideals, not cohomology of Shimura curves or patching data. Local rings include nontriviality. Freeness alone specifies no finite rank; finite generation is separate. Faithful flatness includes flatness and faithfulness of tensoring.
 
 Also consume `Module.support` (Mathlib/RingTheory/Support.lean), `MvPowerSeries` and `PowerSeries` (Mathlib/RingTheory/MvPowerSeries/Basic.lean and PowerSeries/Basic.lean), `Matrix.GeneralLinearGroup` (Mathlib/LinearAlgebra/Matrix/GeneralLinearGroup/Defs.lean), `Nat.Prime` (Mathlib/Data/Nat/Prime/Defs.lean), `Representation` (Mathlib/RepresentationTheory/Basic.lean), `WittVector` (Mathlib/RingTheory/WittVector/Defs.lean), and `Submodule.spanFinrank` (Mathlib/Algebra/Module/SpanRank.lean). The last is a natural number obtained by cardinal-to-natural conversion and is interpreted as a generator count only for finite modules. A representation on the native algebraic carrier carries no smoothness by itself; topologies, continuity and admissibility come from the smooth-category supplier.
 
 ### From Tau Ceti
 
-Use `TauCeti.completedGroupAlgebra` from TauCeti/Topology/Algebra/Group/Profinite/CompletedGroupAlgebra/Basic.lean, the compatible inverse-limit family of finite-quotient group algebras with its projections and group elements. For profinite groups and compact Hausdorff coefficients use its supplied topological structure, and the continuous compact-module action extension in TauCeti/Topology/Algebra/Group/Profinite/CompletedGroupAlgebra/Module.lean. The carrier does not assert analytic-group dimension, uniformity, noetherianity or Auslander regularity. Those hypotheses and conclusions are supplied below. No Tau Ceti module is imported into Suggested.lean, since its two theorem signatures use Mathlib carriers only.
+Use `TauCeti.completedGroupAlgebra` from TauCeti/Topology/Algebra/Group/Profinite/CompletedGroupAlgebra/Basic.lean, the compatible inverse-limit family of finite-quotient group algebras with its projections and group elements. For profinite groups and compact Hausdorff coefficients use its supplied topological structure, and the continuous compact-module action extension in TauCeti/Topology/Algebra/Group/Profinite/CompletedGroupAlgebra/Module.lean. The carrier does not assert analytic-group dimension, uniformity, noetherianity or Auslander regularity. Those hypotheses and conclusions are supplied below. No Tau Ceti module is imported into Suggested.lean, which states no theorem.
 
 ### From TauCetiRoadmap.HilbertModularVarietiesAndShimuraCurves
 
@@ -63,13 +64,13 @@ Consume MP.3/weight-coordinates, tame-weight-set and diamond-socle with their al
 
 Consume T.0 “Tame inertial types” and “Weights of a tame type”, T.4/weight-shape-bijection, T.6/single-presentation, single-components and special-fibres, and T.7/weight-union, multiple-presentation, exact-q-ideals and p-membership. These provide the stable single-type and multi-type presentations with their finite residue-field enlargements, exact prime kernels, reduced special fibres and integral p-membership. The multi-type presentation is stabilized by 2f variables on the Galois side and four on the chart side; use that stable form, then enlarge the global patching variable count and use DeformationAndDerivedPatchingAlgebra gap:power-series-cancellation below. Each transported ideal is indexed by its whole type tuple and retains coupled tails. Include the reversal j↦f−1−j and the 3→1 relabeling in §4.8. The scalar in p-membership is p, not an arbitrary ramified uniformizer. No use of the supplier's unstabilized presentation is needed.
 
-What LocalGaloisDeformationRingsPartII must provide (gap:tame-types): For K/ℚ_p unramified, sufficiently large E and generic r̄, supply the tame inertial correspondence τ↦σ(τ) with its Diamond-box constituents: every irreducible smooth E-representation of GL₂(O_K) inflated from GL₂(k) and not a Steinberg twist is in its image after scalar extension; each σ∈W(r̄) has a non-scalar tame τ with JH(σ̄(τ))∩W(r̄)={σ}; semisimple r̄ has the unique τ₀ with JH(σ̄(τ₀))=W(r̄); supply the irreducible-cosocle lattices σ_J°(τ), their capped-interval subquotients, and the two-weight extension types of EGS15 Proposition 10.1.11, with W(r̄) and duality as in §0.2.
+What LocalGaloisDeformationRingsPartII must provide (gap:tame-types): For K/ℚ_p unramified and sufficiently large E, supply the tame inertial correspondence τ↦σ(τ) with its Diamond-box constituents: every irreducible smooth E-representation of GL₂(O_K) inflated from GL₂(k) and not a Steinberg twist is in its image after scalar extension; supply the irreducible-cosocle lattices σ_J°(τ) and their capped-interval subquotients (EGS15 §5.1 and Definition 10.1.4, pp. 25–27, 60).
 
-What LocalGaloisDeformationRingsPartII must provide (gap:single-type-rings): For generic residual representations including nonsplit ones away from v, supply the EGS potentially Barsotti–Tate presentations and weight-component ideals, the one-weight formally smooth fixed-determinant ring of relative dimension 3+f, the two-weight regular case and determinant twisting, together with intersections of component ideals cutting out any selected union of weights and their formal-power-series base changes I_𝒥 (EGS15 §10.1, pp. 59–61); the equality with patched-module annihilators is proved in this roadmap’s §3.2.
+What LocalGaloisDeformationRingsPartII must provide (gap:single-type-rings): For generic residual representations including nonsplit ones away from v, supply the EGS potentially Barsotti–Tate presentations and weight-component ideals, the one-weight formally smooth fixed-determinant ring of relative dimension 3+f, the two-weight regular case and determinant twisting, together with, for the component-intersection ideals I_𝒥 of the reduced special fibre R̄ of a single-type ring, the cyclic-quotient identity `I_{F(J₁,J₂)^×}/I_{F(J₁,J₂)} ≅ R̄/I_{{J₁}}` for J₁⊆J₂, where F(J₁,J₂)={J:J₁⊆J⊆J₂} and F(J₁,J₂)^×=F(J₁,J₂)∖{J₁}, and the identity `I_{𝒥₁}+I_{𝒥₂}=I_{𝒥₁∩𝒥₂}` for capped intervals sharing a cap (EGS15 Lemmas 10.1.6 and 10.1.8, pp. 60–61; EGS15 lines 3246, 3282); §3.2 defines the global I_𝒥 and proves their equality with patched-module annihilators.
 
-What LocalGaloisDeformationRingsPartII must provide (gap:breuil-mezard-pbt): For every finite K/ℚ_p with p>2 and continuous r̄:G_K→GL₂(𝔽), with sufficiently large coefficients O and uniformizer ϖ, supply the unique integers μ_σ(r̄)≥0 satisfying `e(R^{□,0,τ}_{r̄}/ϖ)=Σ_σ n_{0,τ}(σ)μ_σ(r̄)` for every inertial type τ, with μ_σ(r̄)≠0 exactly for the predicted weights, equal to BDJ’s W(r̄) when K is unramified (GK14 Theorem A).
+What LocalGaloisDeformationRingsPartII must provide (gap:breuil-mezard-pbt): For every finite K/ℚ_p with p>2 and continuous r̄:G_K→GL₂(𝔽), with sufficiently large coefficients O and uniformizer ϖ, supply the unique integers μ_σ(r̄)≥0 satisfying `e(R^{□,0,τ}_{r̄}/ϖ)=Σ_σ n_{0,τ}(σ)μ_σ(r̄)` for every inertial type τ, with μ_σ(r̄)≠0 exactly when r̄ has a crystalline lift of Hodge type σ in the sense of GK14 Definitions 2.2.2–2.2.3 (for ramified K choose one lift of each residue embedding for the highest-weight pair representing σ and put the other highest-weight pairs equal to (0,0) as there) (GK14 Theorem A(1) and §2.2, pp. 3, 7–8; GK14 lines 105, 325, 347, 363); these are GK14’s Hodge-type labels, with its convention HT(ε)=−1 (GK14 lines 244–249).
 
-The tame-type gap uses BHHMS23 §2.2 and Remark 8.2.5, pp. 13–14, 93, and EGS15 §§3.5, 5.1, 10.1, pp. 14–16, 25–27, 59–65 (EGS15 line 687). The EGS ring extension uses Theorem 7.2.1(2),(4),(5), pp. 42–43 (EGS15 line 2197); when the residual representation is semisimple the small-Hodge domains and reducedness use T.6 instead. The Breuil–Mézard gap is the general finite-K local identity and weight identification of GK14 Theorem A, pp. 2–4 (GK14 line 105). The global nonvanishing of Corollary 5.4.5 is a target of §0.6, and the Serre-weight support comparison is a target of §1.5. The ring gap supplies the component-intersection ideals of EGS15 §10.1 (EGS15 line 3212); §3.2 identifies their patched-module annihilators.
+The tame-type gap uses BHHMS23 §2.2 and Remark 8.2.5, pp. 13–14, 93, and EGS15 §5.1 and Definition 10.1.4, pp. 25–27, 60 (EGS15 lines 954, 3239); the weight-dependent comparisons of EGS15 §3.5 and Proposition 10.1.11 are targets of §0.2. The EGS ring extension uses Theorem 7.2.1(2),(4),(5), pp. 42–43 (EGS15 line 2197); when the residual representation is semisimple the small-Hodge domains and reducedness use T.6 instead. The Breuil–Mézard gap is the general finite-K local identity and crystalline characterization of its support in GK14 Theorem A and §2.2, pp. 3, 7–8 (GK14 lines 105, 363); §0.2 compares this support with the BDJ recipe when K is unramified. The global nonvanishing of Corollary 5.4.5 is a target of §0.6, and the Serre-weight support comparison is a target of §1.4. The ring gap supplies the component primes and the two ideal identities of EGS15 §10.1 (EGS15 lines 3246, 3282); §3.2 forms their global intersections and identifies their patched-module annihilators.
 
 ### From TauCetiRoadmap.LocalGaloisDeformationRings
 
@@ -129,7 +130,7 @@ Consume §§R17.3.1 and R17.3.10: global Jacquet–Langlands on the non-one-dime
 
 ## How to read the build
 
-Layer 0 constructs the normalized global datum, weights and multiplicity spaces from finite-level quaternionic geometry. Define its colimit before using the weight theorem to prove nonvanishing. Layer 1 builds the coefficient patching functor, its fibres and the compatible big module. Layer 2 supplies support freeness and the added Iwasawa algebra. Layer 3 proves one common positive rank and identifies K₁-invariants independently of Layer 4; Layer 4 then proves glued-lattice freeness and the second-truncation multiplicity theorem. Layer 5 combines that theorem with the imported local GK bound, proves a separate lower bound, and deduces flatness, Banach lifts and the inert-prime deformation/Hecke theorem. Needs lines distinguish the statement's objects from a possible proof route. Every target below is part of the library; Suggested.lean contains only the two statable algebraic headlines, `freeRankOnSupport_of_extension` and `modulePullback_freeRankOnSupport_iff`.
+Layer 0 constructs the normalized global datum, weights and multiplicity spaces from finite-level quaternionic geometry. Define its colimit before using the weight theorem to prove nonvanishing. Layer 1 builds the coefficient patching functor, its fibres and the compatible big module. Layer 2 supplies support freeness and the added Iwasawa algebra. Layer 3 proves one common positive rank and identifies K₁-invariants independently of Layer 4; Layer 4 then proves glued-lattice freeness and the second-truncation multiplicity theorem. Layer 5 combines that theorem with the imported local GK bound, proves a separate lower bound, and deduces flatness, Banach lifts and the inert-prime deformation/Hecke theorem. Needs lines distinguish the statement's objects from a possible proof route. Every target below is part of the library. Suggested.lean states no theorem: no end theorem is statable at the pins.
 
 ## Layer 0: The global setting and quaternionic weights
 
@@ -152,11 +153,11 @@ Its API:
 - The data (p, F, D, 𝔽, r̄, ψ, v, w₁, S, U) with the conditions of BHHMS23 §8.1 as fields; the choice of zero or one split real place is part of a single datum.
 - The exponent bounds at v imply p ≥ 29.
 - r̄_v is generic in the sense of EGS15 Definition 2.1.1, so the datum is a special case of the EGS15 setting.
-- r̄_v^∨ is again semisimple of one of the two inertial shapes, up to twist, with exponents satisfying the same bounds (BHHMS23 §8.1 (i)); the patched rings of §1.2 are rings for r̄_v^∨.
+- r̄_v^∨ is again semisimple of one of the two inertial shapes, up to twist, with exponents satisfying the same bounds (BHHMS23 §8.1 (i)); the patched rings of §1.1 are rings for r̄_v^∨.
 - For r̄ with absolutely irreducible restriction to `G_{F(ζ_p)}` and p > 5, infinitely many places w₁ satisfy the three auxiliary conditions.
 - For every compact open V ⊆ U the level V is sufficiently small as specified in EGS15 §6.2, p. 34 (EGS15 line 1695), and the finite group V(𝔸_F^∞)^×/V F^× acts on X_V without fixed geometric points (BHHMS23 Remark 8.1.3(iii), from the conditions on w₁).
 
-A proof route is as follows. Record the data and conditions of BHHMS23 §8.1, items (i)–(iv) together with the standing assumptions on F, D, r̄ and ψ (pp. 86–87); the genericity conditions of the introduction, (i)–(iii) on p. 5, are the same conditions in another order. The auxiliary place w₁ exists by Chebotarev (EGS15 §6.2, citing Lemma 4.11 of Darmon–Diamond–Taylor; BHHMS cite EGS15 §§6.2 and 6.5); the conditions on w₁ make the level U sufficiently small as specified in EGS15 §6.2, p. 34 (EGS15 line 1695) (EGS15 §6.2). The shape of V in the modularity hypothesis is always available once r̄ is modular at some level (BHHMS23 §8.1, citing Breuil–Diamond Theorem 3.2.2 and the proof of Corollary 3.2.3).
+A proof route is as follows. Record the data and conditions of BHHMS23 §8.1, items (i)–(iv) together with the standing assumptions on F, D, r̄ and ψ (pp. 86–87); the genericity conditions of the introduction, (i)–(iii) on p. 5, are the same conditions in another order. The auxiliary place w₁ exists by Chebotarev (EGS15 §6.2, citing Lemma 4.11 of Darmon–Diamond–Taylor; BHHMS cite EGS15 §§6.2 and 6.5); the conditions on w₁ make the level U sufficiently small as specified in EGS15 §6.2, p. 34 (EGS15 line 1695). The shape of V in the modularity hypothesis is always available once r̄ is modular at some level (BHHMS23 §8.1, citing Breuil–Diamond Theorem 3.2.2 and the proof of Corollary 3.2.3).
 
 **Checks.**
 
@@ -192,7 +193,13 @@ Its API:
 - For generic ρ every weight is regular (no s_j = p − 1) and not of the form `σ_{t,0}` (EGS15 Lemma 2.1.6).
 - For generic semisimple ρ, W(ρ) has exactly 2^f elements.
 
-A proof route is as follows. Use BDJ10 §3.1–3.2 directly for the semisimple recipes, including the antisymmetric subset condition, and for W(ρ) ⊆ W(ρ^ss). Translate EGS15 §2 by both its embedding convention and its inverse fundamental characters: W(ρ) = D_EGS(ρ^∨). For the nonsplit reducible case the subset condition is BDJ10's L_J condition, phrased through crystalline lifts with prescribed labelled Hodge–Tate weights (LocalGaloisDeformationRings §§3.1–3.10 supplies the crystalline lifting rings and their points). When ρ is tame and its inertial parameter is 1-deep, the description agrees with the parametrisation of MP.3/tame-weight-set by the extension-graph labels; prove agreement by matching the subset J with the sign vector of MP.3.
+For p>2 and generic ρ, prove that each σ∈W(ρ) is isolated by a non-scalar tame type τ: JH(σ̄(τ))∩W(ρ)={σ}. Prove that a non-scalar tame type contains W(ρ) among its reduction constituents; for semisimple ρ this type is unique, denoted τ₀, and JH(σ̄(τ₀))=W(ρ). Here σ̄(τ) is the semisimplified reduction of a stable lattice in σ(τ), and uniqueness is up to isomorphism of inertial types (EGS15 Propositions 3.5.1–3.5.2, pp. 14–16; EGS15 lines 687, 767; BHHMS23, paragraph before Theorem 8.3.9, p. 101; BHHMS23 line 5066).
+
+For generic ρ and σ,σ′∈W(ρ) joined by a nonsplit extension of GL₂(k)-representations, prove that there is a tame type τ′ with JH(σ̄(τ′))∩W(ρ)={σ,σ′} and an irreducible-cosocle lattice in σ(τ′) whose cosocle filtration realizes that extension (EGS15 Proposition 10.1.11, pp. 62–63; EGS15 line 3324). The input for all these type assertions is the correspondence, its Jordan–Hölder sets and its lattices from gap:tame-types; W(ρ)=D_EGS(ρ^∨) fixes the input duality.
+
+For every continuous ρ over unramified K and p>2, prove that σ∈W(ρ) if and only if ρ^∨ has a crystalline lift of Hodge type σ in GK14 Definitions 2.2.2–2.2.3, with a coefficient extension allowed. Equivalently, for `σ=σ_{t,s}`, ρ itself has a crystalline lift with labelled Hodge–Tate weights {t_j,t_j+s_j+1} in this roadmap’s convention HT(ε)=+1. GK14 and EGS15 use HT(ε)=−1, so their numerical Hodge weights are negated when transported, and dualizing the Galois representation negates them again. This comparison includes nonsplit extensions and nonregular weights (EGS15 Definition 2.1.7 and Theorem 2.1.8, p. 11; EGS15 lines 527–534; GK14 §2.2, pp. 7–8; GK14 lines 325–371; BDJ10 §3.2, pp. 21–26).
+
+A proof route is as follows. Use BDJ10 §3.1–3.2 directly for the semisimple recipes, including the antisymmetric subset condition, and for W(ρ) ⊆ W(ρ^ss). Translate EGS15 §2 by both its embedding convention and its inverse fundamental characters: W(ρ) = D_EGS(ρ^∨). For the nonsplit reducible case the subset condition is BDJ10's L_J condition, phrased through crystalline lifts with prescribed labelled Hodge–Tate weights (LocalGaloisDeformationRings §§3.1–3.10 supplies the crystalline lifting rings and their points). When ρ is tame and its inertial parameter is 1-deep, the description agrees with the parametrisation of MP.3/tame-weight-set by the extension-graph labels; prove agreement by matching the subset J with the sign vector of MP.3. For weight-isolating and two-weight types, apply EGS15 Propositions 3.5.1 and 10.1.11 to ρ^∨; their reduction to the semisimple case uses W(ρ)⊆W(ρ^ss). The containing type is EGS15 Proposition 3.5.2, with the semisimple equality and uniqueness from BHHMS23 line 5066. For the crystalline comparison apply EGS15 Theorem 2.1.8 to ρ^∨, or the equality recalled in GK14 §2.2 with the same dual input, and use W(ρ)=D_EGS(ρ^∨); this is a local comparison, independent of the global weight theorem §0.6.
 
 **Checks.**
 
@@ -203,9 +210,14 @@ A proof route is as follows. Use BDJ10 §3.1–3.2 directly for the semisimple r
 - For a tame 1-deep ρ the Finset agrees with MP.3/tame-weight-set elementwise. For f=1,p=29 and inertia ω¹³⊕1, both recipes give Sym¹² and det¹³ Sym¹⁴.
 - For p = 5 and semisimple ρ|I = ω³ ⊕ 1, the boundary s = p − 3 gives three weights {Sym², det³, det³ ⊗ Sym⁴}; the two-weight formula applies only away from this boundary. EGS15 computes these weights from the dual inertial input ω_EGS³ ⊕ 1. Using its inverse character on ρ itself fails this test. The count is 3, not 2; the boundary is outside the strict two-weight interval.
 - At p=5, inertia ω²⊕1 has weights Sym¹ and det² Sym¹ (two); inertia ω³⊕1 has Sym², det³ and det³ Sym⁴ (three). At f=2 a generic semisimple parameter has 2²=4 weights.
+- At p=29, f=1 and semisimple inertia ω¹³⊕1, W(ρ)={Sym¹²,det¹³Sym¹⁴}. An isolating type for either weight has intersection of cardinality 1, whereas τ₀ has intersection of cardinality 2 and cannot isolate it. For a nonsplit generic ρ with W(ρ)={σ}⊆W(ρ^ss), intersecting the semisimple isolating set {σ} again gives {σ}, not the two-element semisimple set.
+- In this same two-weight case τ₀ has reduction dimension 13+15=28; a scalar type has dimension 1 and a tame principal-series type dimension 30, so neither has this constituent multiset. Semisimplicity is needed for the equality with all of W(ρ).
+- For a nonsplit extension 0→σ′→θ→σ→0 of these two weights, the two-weight type has intersection of cardinality 2, and the relevant cosocle layer has dimension 13+15=28. The split sum also has dimension 28, but its cosocle has both weights instead of the required single weight σ; dimension alone does not realize θ.
+- For the très ramifiée extension ρ of 1 by ω, the set of σ for which ρ^∨ has a GK14 crystalline lift of Hodge type σ has one element `Sym^{p−1}`, just as W(ρ); the trivial GK14 Hodge type for ρ^∨ is absent because such a lift would give ρ a finite flat model. For the split ω⊕1 the weights are 1, `Sym^{p−1}` and det `Sym^{p−3}`. Thus the extension-class condition changes both sets from cardinality 3 to 1; comparison only with semisimplification would fail.
+- For p=29 and split ρ=ω⊕1, the trivial weight lies in W(ρ). In GK14’s convention a lift of trivial Hodge type has determinant reducing to ω⁻¹, not ω: on an inertia element with ω=2 the determinants are 15 and 2. Thus ρ cannot have that raw GK14 Hodge type; ρ^∨ does, via the lift ε⁻¹⊕1. This fixes the dual input in the comparison.
 
 
-*Needs:* ModpRepresentationsOfGL2OverLocalFields MP.3/tame-weight-set; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.1.26; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.5.15; LocalGaloisDeformationRings §3.1; LocalGaloisDeformationRings §3.4; Mathlib `Representation`.
+*Needs:* LocalGaloisDeformationRingsPartII gap:tame-types for the type assertions; ModpRepresentationsOfGL2OverLocalFields MP.3/tame-weight-set; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.1.26; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.5.15; LocalGaloisDeformationRings §3.1; LocalGaloisDeformationRings §3.4; Mathlib `Representation`.
 
 ### 0.3 Quaternionic spaces of mod p forms and their residual eigenspaces
 
@@ -284,7 +296,7 @@ A proof route is as follows. The colimit is the fixed-exponent smooth colimit of
 **Checks.**
 
 - If σ_w ∉ W(r̄_w^∨) for some w ∈ S_p ∖ {v} then the weighted π is 0. A construction returning a nonzero space for that weight would contradict the two-way weight theorem.
-- `π^{K₁}` with K₁ = 1 + `pM₂(O_{F_v})` is the finite-level weighted r̄-part at level V^vK₁; it is a GL₂(k_v)-representation (used in §3.4). At f=1,p=29 the modular socle has the two weights Sym¹² and det¹³ Sym¹⁴, each r times.
+- `π^{K₁}` with K₁ = 1 + `pM₂(O_{F_v})` is the finite-level weighted r̄-part at level V^vK₁; it is a GL₂(k_v)-representation (used in §3.4). At f=1, p=29 and r̄_v|I ≅ ω¹⁵⊕1 (r₀=14, inside the box), r̄_v^∨|I ≅ ω¹³⊕1 and the modular socle has the two weights Sym¹² and det¹³ Sym¹⁴, each r times; for r̄_v|I ≅ ω¹³⊕1 it is {det¹⁵Sym¹², Sym¹⁴}, each r times.
 - Under a compatible global character twist r̄ ↦ r̄ ⊗ χ, ψ changes to ψχ², so the new central character is `ψ^{−1}χ^{−2}`. The corresponding local determinant twist, when levels and away-from-v weights are transported, is `χ̃^{−1}` ∘ det. The positive twist gives the wrong central character. At χ(z)=2 in 𝔽₂₉ the factors are 22 and 4 respectively.
 - For the nonzero weighted π, §5.1 gives dimension f ≥ 1. A finite-dimensional smooth representation has dimension 0 because its dual is a finite-length Iwasawa module. Thus π is infinite-dimensional; this is a downstream consequence, not an assumption in its definition. At f=1 the positive GK dimension is 1, whereas finite-dimensional nonzero representations give 0.
 - A determinant twist by χ⁻¹ with χ(z)=2 over 𝔽₂₉ multiplies the scalar central action by 2⁻²=22; the positive twist multiplies it by 4. A wrong away-from-v weight gives π=0, while its matched modular weight gives a nonzero Hom space.
@@ -294,17 +306,17 @@ A proof route is as follows. The colimit is the fixed-exponent smooth colimit of
 
 ### 0.6 The weight part of Serre's conjecture for quaternion algebras (Gee–Kisin)
 
-Let p > 2, F totally real, r̄ : G_F → GL₂(𝔽) modular with r̄|`G_{F(ζ_p)}` irreducible (and, for p = 5, projective image of r̄|`G_{F(ζ_5)}` not A₅), and D a quaternion algebra over F split above p and at no more than one infinite place, compatible with r̄ at its finite ramified places. For Serre weights σ_w of GL₂(k_w), w | p, r̄ is modular for D of weight ⊗_w σ_w if and only if σ_w ∈ `W^{BT}(r̄|G_{F_w})` for all w | p, where `W^{BT}` is the set of weights with nonzero Breuil–Mézard multiplicity. When p is unramified in F, `W^{BT}(ρ)` is the Buzzard–Diamond–Jarvis set. Here ψ is a fixed character with det r̄ = `ψε^{−1}` modulo p, the weights are compatible with ψ, and r̄ is modular for D of weight σ if the 𝔪-part of the space of forms of weight σ is nonzero at some level (GK14 Definitions 5.5.2–5.5.3). In the setting of a generic global datum (BHHMS normalisations, which dualise r̄): for V with V_w ⊆ 1 + `pM₂(O_{F_w})` normal at w ∈ S_p and such that r̄ is modular at level V (BHHMS23 (60)), `Hom_{GL₂(O_F ⊗ ℤ_p)}(⊗_{w∈S_p}σ_w, Hom_{G_F}(r̄, H¹_ét(X_V ×_F F̄, 𝔽)))` ≠ 0 if and only if σ_w ∈ W(r̄_w^∨) for every w ∈ S_p, and in the definite case the same holds with S(V, 𝔽)[𝔪] in place of the r̄-part of H¹.
+Let p > 2, F totally real, r̄ : G_F → GL₂(𝔽) modular with r̄|`G_{F(ζ_p)}` irreducible (and, for p = 5, projective image of r̄|`G_{F(ζ_5)}` not A₅), and D a quaternion algebra over F split above p and at no more than one infinite place, compatible with r̄ at its finite ramified places. For Serre weights σ_w of GL₂(k_w), w | p, r̄ is modular for D of weight ⊗_w σ_w if and only if σ_w ∈ `W^{BT}(r̄|G_{F_w})` for all w | p, where `W^{BT}` is the set of weights with nonzero Breuil–Mézard multiplicity. When p is unramified in F, `W^{BT}(ρ)` equals W(ρ^∨) in the BDJ convention of §0.2; the Breuil–Mézard symbols in this paragraph retain GK14’s Hodge-type labels. Here ψ is a fixed character with det r̄ = `ψε^{−1}` modulo p, the weights are compatible with ψ, and r̄ is modular for D of weight σ if the 𝔪-part of the space of forms of weight σ is nonzero at some level (GK14 Definitions 5.5.2–5.5.3). In the setting of a generic global datum (BHHMS normalisations, which dualise r̄): for V with V_w ⊆ 1 + `pM₂(O_{F_w})` normal at w ∈ S_p and such that r̄ is modular at level V (BHHMS23 (60)), `Hom_{GL₂(O_F ⊗ ℤ_p)}(⊗_{w∈S_p}σ_w, Hom_{G_F}(r̄, H¹_ét(X_V ×_F F̄, 𝔽)))` ≠ 0 if and only if σ_w ∈ W(r̄_w^∨) for every w ∈ S_p, and in the definite case the same holds with S(V, 𝔽)[𝔪] in place of the r̄-part of H¹.
 
 p > 2 and, for p = 5, the A₅ exception excluded; both hold for a generic global datum (BHHMS: p > 23).
 
-The identification `W^{BT}` = `W^{BDJ}` for p unramified rests on Gee–Liu–Savitt and Gee–Kisin Theorem A(1); it is the Breuil–Mézard supplier contract.
+The identification `W^{BT}(ρ)` = W(ρ^∨) for p unramified uses Gee–Kisin Theorem A(1) and the crystalline comparison recalled there; the supplier gives the crystalline description and §0.2 the comparison, including its duality adapter (EGS15 Theorem 2.1.8; EGS15 line 533).
 
 For the quaternionic Taylor–Wiles datum, fixed away-from-p types and compatible global Serre weight σ=`⊗_{w|p}σ_w` of GK14 §5.4, prove `S_{τ^p}(U,σ)_𝔪`≠0 if and only if every `μ_{σ_w}(r̄_w)`>0; equivalently, its patched weight module is nonzero exactly for those tuples. This global nonvanishing is GK14 Corollary 5.4.5, p. 33 (GK14 line 1573), with the modularity, residual irreducibility and p=5 image hypotheses above.
 
 (GK14, Theorem B (= Corollary 5.5.7), p. 3 and p. 35; Corollary 5.5.4 with Definitions 5.5.2–5.5.3, p. 34; Corollary 5.4.5, p. 33; GK14 line 1605; BHHMS23, (61), §8.1, p. 87; BHHMS23 line 4355; EGS15, §6.4, last paragraph, p. 37; EGS15 line 1832).
 
-A proof route is as follows. Patching (GK14 §5.4): for each potentially Barsotti–Tate type, patch the spaces of quaternionic forms with that type at p (DeformationAndDerivedPatchingAlgebra §§5.6, 8.1–8.5) and compare the Hilbert–Samuel multiplicity of the patched module modulo ϖ (DeformationAndDerivedPatchingAlgebra §3.11–3.12) with the Breuil–Mézard multiplicity of the potentially Barsotti–Tate deformation ring; filtering the type lattice modulo ϖ by Serre weights gives one inequality and the Breuil–Mézard identity (GK14 Theorem A, the supplier gap) the other. Deduce (GK14 Corollary 5.4.5) that the patched module of a Serre weight σ is nonzero exactly when its Breuil–Mézard multiplicity is nonzero, using potential diagonalisability of potentially Barsotti–Tate lifts (PotentialAutomorphyInfrastructurePartII PL.1) to see that r̄ is modular of some type. Translate into the original BDJ formulation (GK14 Corollary 5.5.4): Shapiro-type identity (5.5.5) between forms of type τ^p and forms of weight σ at smaller level, and the compatibility of r̄ with D at the ramified places. For BHHMS's normalisation: the space Hom(⊗σ_w, `Hom_{G_F}(r̄, H¹)`) corresponds to the 𝔪-part of forms of weight ⊗σ_w^∨ twisted by ψ; this replaces W(r̄_w) by W(r̄_w^∨) (BHHMS23 (61), citing GK14 §5.5).
+A proof route is as follows. Patching (GK14 §5.4): for each potentially Barsotti–Tate type, patch the spaces of quaternionic forms with that type at p (DeformationAndDerivedPatchingAlgebra §§5.6, 8.1–8.5) and compare the Hilbert–Samuel multiplicity of the patched module modulo ϖ (DeformationAndDerivedPatchingAlgebra §3.11–3.12) with the Breuil–Mézard multiplicity of the potentially Barsotti–Tate deformation ring; filtering the type lattice modulo ϖ by Serre weights gives one inequality and the Breuil–Mézard identity (GK14 Theorem A, the supplier gap) the other. Deduce (GK14 Corollary 5.4.5) that the patched module of a Serre weight σ is nonzero exactly when its Breuil–Mézard multiplicity is nonzero, using potential diagonalisability of potentially Barsotti–Tate lifts (PotentialAutomorphyInfrastructurePartII PL.1) to see that r̄ is modular of some type. Translate into the original BDJ formulation (GK14 Corollary 5.5.4): Shapiro-type identity (5.5.5) between forms of type τ^p and forms of weight σ at smaller level, and the compatibility of r̄ with D at the ramified places. For BHHMS's normalisation: the space Hom(⊗σ_w, `Hom_{G_F}(r̄, H¹)`) corresponds to the 𝔪-part of forms of weight ⊗σ_w^∨ twisted by ψ; transporting the coefficients and Galois normalization as in §0.3 yields W(r̄_w^∨) (BHHMS23 (61), citing GK14 §5.5). The raw GK14 input and its Hodge-type labels are transported together, rather than identifying its crystalline-weight set with W of the same Galois input.
 
 **Checks.**
 
@@ -344,7 +356,7 @@ Use HilbertModularVarietiesAndShimuraCurves §R18.1.1; HilbertModularVarietiesAn
 
 ## Layer 1: Patching functors and the big patched module
 
-### 1.2 The patched local deformation ring R∞
+### 1.1 The patched local deformation ring R∞
 
 For a generic global datum and integers q ≥ [F : ℚ], put R^loc = (`⊗̂_{w∈S∖S_p}` `R_{r̄_w}^{ψ_w}`) ⊗̂ (`⊗̂_{w∈S_p∖{v}}` `R_{r̄_w}^{(0,−1),τ_w,ψ_w}`) ⊗̂ `R_{r̄_v}^{ψ_v}` over W(𝔽), where `R^{ψ_w}` is the framed deformation ring of r̄_w with determinant `ε^{−1}ψ_w` and `R^{(0,−1),τ_w,ψ_w}` its reduced p-torsion-free quotient of parallel Hodge–Tate weights (0, −1) and inertial type τ_w; R∞ = R^loc⟦X₁, …, `X_{q−[F:ℚ]+|S|−1}`⟧ and S∞ = W(𝔽)⟦x₁, …, `x_{4|S|+q−1}`⟧ with a local W(𝔽)-algebra map S∞ → R∞. Then `R_{r̄_w}^{ψ_w}` ≅ W(𝔽)⟦X₁, X₂, X₃⟧ for w ∈ S ∖ S_p, `R_{r̄_v}^{ψ_v}` ≅ W(𝔽)⟦X₁, …, `X_{3+3f}`⟧, `R_{r̄_w}^{(0,−1),τ_w,ψ_w}` ≅ `R_{r̄_w^∨}^{(1,0),τ_w^∨,ψ_w^{−1}}` ≅ W(𝔽)⟦X₁, …, `X_{3+[F_w:ℚ_p]}`⟧ for w ∈ S_p ∖ {v}, and consequently R∞ ≅ `R_{r̄_v}^{ψ_v}⟦X₁, …, X_{4(|S|−1)+q−f}⟧` ≅ W(𝔽)⟦X₁, …, `X_{4|S|+q−1+2f}`⟧; in particular dim R∞ − dim S∞ = 2f.
 
@@ -380,11 +392,11 @@ A proof route is as follows. Build R^loc and R∞ as completed tensor products a
 
 *Needs:* §0.1; DeformationAndDerivedPatchingAlgebra gap:power-series-cancellation; LocalGaloisDeformationRings §1.1; LocalGaloisDeformationRings §1.10, 1.24; LocalGaloisDeformationRings §1.4; GlobalGaloisDeformations §3.5–3.7; GlobalGaloisDeformations §5.8; Mathlib `MvPowerSeries`; LocalGaloisDeformationRingsPartII T.0, T.6–T.7 and the applicable supplier gaps.
 
-### 1.3 Type and Hodge–Tate quotients of the patched ring
+### 1.2 Type and Hodge–Tate quotients of the patched ring
 
 For a tame inertial type τ of `I_{F_v}` and λ = `((a_j, b_j))_{0≤j<f}` with a_j > b_j, let `R_{r̄_v^∨}^{λ,τ}` be the reduced p-torsion-free quotient of the framed ring `R_{r̄_v^∨}` whose Q̄_p-points are the potentially crystalline lifts of r̄_v^∨ of inertial type τ and labelled Hodge–Tate weights (a_j, b_j) at the embedding σ_j; put `R∞^{λ,τ}` = R∞ `⊗_{R_{r̄_v^∨}}` `R_{r̄_v^∨}^{λ,τ}`, `p_{λ,τ}` = ker(R∞ ↠ `R∞^{λ,τ}`), `R̄∞^{λ,τ}` = `R∞^{λ,τ}`/(p), and write `R∞^{(a,b),τ}` when λ_j = (a, b) for all j. Because of the fixed determinant, `R∞^{λ,τ}` ≠ 0 forces a_j + b_j = 1 for all j; the cases used are λ_j ∈ {(1, 0), (2, −1)}, and after twisting by ε, λ_j ∈ {(2, 1), (3, 0)}.
 
-τ tame; R∞ is the patched ring of §1.2 (whose local factor at v is a ring for r̄_v^∨ under the duality used there).
+τ tame; R∞ is the patched ring of §1.1 (whose local factor at v is a ring for r̄_v^∨ under the duality used there).
 
 The domain property of `R∞^{λ,τ}` for the relevant λ, τ and the reducedness of `R̄∞^{(2,−1)_j,τ}` come from the local-ring supplier contract (BHHMS23 Proposition 4.2.1, Corollary 4.2.6).
 
@@ -405,14 +417,14 @@ A proof route is as follows. Define `R_{r̄_v^∨}^{λ,τ}` as Kisin's potential
 
 - λ = (1, 0) at every embedding gives potentially Barsotti–Tate lifts of type τ. Their determinant weight is 1 at every embedding.
 - λ_j = (2, 0) for some j gives the zero ring (a_j + b_j = 2 ≠ 1). The determinant has weight 2 instead of 1; nonzero characteristic-zero points cannot exist.
-- 1 + (3 + f) + 4(|S| − 1) + q − f = 4|S| + q: the type quotient has the dimension of S∞. For f=1, |S|=2, q=1 in the definite rational datum of §1.2, the two dimensions are 9=9.
+- 1 + (3 + f) + 4(|S| − 1) + q − f = 4|S| + q: the type quotient has the dimension of S∞. For f=1, |S|=2, q=1 in the definite rational datum of §1.1, the two dimensions are 9=9.
 - For τ trivial and λ_j = (2, −1) at one embedding, a nonzero characteristic-zero point is crystalline but not Barsotti–Tate: its labelled Hodge–Tate weights differ from (1, 0). This point cannot factor through the Barsotti–Tate quotient. The test makes no nonzero-point assertion for a zero quotient. At the exceptional embedding the two multisets {2,−1} and {1,0} differ despite having equal sum 1.
 - For λ=(1,0) the determinant weight is 1 and the type dimension is 4|S|+q; for λ=(2,0) the sum is 2 and the fixed-determinant quotient is zero. Twisting (2,−1) by ε gives (3,0), with determinant weight 3.
 
 
-*Needs:* §1.2; LocalGaloisDeformationRings §3.4; LocalGaloisDeformationRings §3.1; LocalGaloisDeformationRings §3.9–3.10; LocalGaloisDeformationRingsPartII T.0, T.6–T.7 and the applicable supplier gaps.
+*Needs:* §1.1; LocalGaloisDeformationRings §3.4; LocalGaloisDeformationRings §3.1; LocalGaloisDeformationRings §3.9–3.10; LocalGaloisDeformationRingsPartII T.0, T.6–T.7 and the applicable supplier gaps.
 
-### 1.4 Fixed-determinant patching functors
+### 1.3 Fixed-determinant patching functors
 
 Let K = `GL₂(O_{F_v})` (more generally a product of compact open subgroups of GL₂ or of units of quaternion division algebras at finitely many places), R∞ = R⟦x₁, …, x_h⟧ over a completed tensor product R of framed local deformation rings, and C_Z′ a Serre subcategory of the category of continuous representations of K on finitely generated O-modules with central character lifting (ε det ρ̄)|_I ∘ Art. A fixed-determinant patching functor is a covariant exact functor M∞ from C_Z′ to finitely generated R∞-modules (coherent sheaves on Spf R∞) such that: (1) for every σ, M∞(σ) is supported on the fixed-determinant locus `X∞^{ψ_σ}`; (2) for every K-stable O-lattice σ°(τ) in σ(τ) for an inertial type τ, M∞(σ°(τ)) is p-torsion free, supported on `R∞^{ψ,τ}` and maximal Cohen–Macaulay over it; (3) for every Serre weight σ (an irreducible representation killed by ϖ), M∞(σ) is supported on the special fibre of `R∞^{ψ,σ}` and maximal Cohen–Macaulay over it. It is minimal if M∞(σ°(τ)) is locally free of rank one over the generic fibre whenever that generic fibre is regular. In conditions (2) and (3) the zero value is allowed; for a nonzero value maximal Cohen–Macaulay means depth equals the indicated ring dimension.
 
@@ -442,13 +454,13 @@ A proof route is as follows. Take EGS15 Definitions 6.1.1 and 6.1.3 as mathemati
 - The zero functor has zero values and satisfies the support conditions; it fails nonzero rank-one minimality on a nonempty type locus. For A=O[[t]], depths of A and A/(t) are 2 and 1; A⊕A/(t) has depth 1<2.
 
 
-*Needs:* §1.3; §1.2; DeformationAndDerivedPatchingAlgebra §3.1, 6.1; DeformationAndDerivedPatchingAlgebra §3.1; Mathlib `Module.support`.
+*Needs:* §1.2; §1.1; DeformationAndDerivedPatchingAlgebra §3.1, 6.1; DeformationAndDerivedPatchingAlgebra §3.1; Mathlib `Module.support`.
 
-### 1.5 The patching functor of Shimura curves at v
+### 1.4 The patching functor of Shimura curves at v
 
-Let a generic global datum be given. For each w ∈ S_p ∖ {v} fix a tame inertial type τ_w such that JH(σ(τ_w^∨)) contains exactly one Serre weight σ_w of W(r̄_w^∨), and a `GL₂(O_{F_w})`-stable lattice σ°(τ_w^∨), free over W(𝔽); put σ_p^v = `⊗_{w∈S_p∖{v}}` σ°(τ_w^∨), a representation of `∏_{w∈S∖{v}}` U_w through its quotient `∏_{w∈S_p∖{v}}` `GL₂(O_{F_w})`. Taylor–Wiles–Kisin patching of the modules M(σ_p^v ⊗ σ_v) at auxiliary levels produces integers q ≥ [F:ℚ], the rings S∞ → R∞ of §1.2 and an exact functor M∞ = `M∞^{σ_p^v}` : σ_v ↦ M∞(σ_p^v ⊗ σ_v) from continuous representations of K = `GL₂(O_{F_v})` on finitely generated W(𝔽)-modules with central character `ψ^{−1}`|`I_{F_v}` to finitely generated R∞-modules, such that: M∞(σ_v)/(x₁, …, `x_{4|S|+q−1}`) ≅ M(σ_p^v ⊗ σ_v), compatibly with a surjection R∞/(x) ↠ `R_S^{loc-cond}`, where `R_S^{loc-cond}` is the global deformation ring with the specified local conditions; the action of R^loc on M∞(σ_v) factors through the fixed-determinant quotient at v and, at w ∈ S_p ∖ {v}, through `R_{r̄_w}^{(0,−1),τ_w,ψ_w}`; M∞(σ_v) is free over S∞ when σ_v is free over W(𝔽), and free over S∞/(p) when σ_v is free over 𝔽; and M∞ is a fixed-determinant patching functor.
+Let a generic global datum be given. For each w ∈ S_p ∖ {v} fix a tame inertial type τ_w such that JH(σ(τ_w^∨)) contains exactly one Serre weight σ_w of W(r̄_w^∨), and a `GL₂(O_{F_w})`-stable lattice σ°(τ_w^∨), free over W(𝔽); put σ_p^v = `⊗_{w∈S_p∖{v}}` σ°(τ_w^∨), a representation of `∏_{w∈S∖{v}}` U_w through its quotient `∏_{w∈S_p∖{v}}` `GL₂(O_{F_w})`. Taylor–Wiles–Kisin patching of the modules M(σ_p^v ⊗ σ_v) at auxiliary levels produces integers q ≥ [F:ℚ], the rings S∞ → R∞ of §1.1 and an exact functor M∞ = `M∞^{σ_p^v}` : σ_v ↦ M∞(σ_p^v ⊗ σ_v) from continuous representations of K = `GL₂(O_{F_v})` on finitely generated W(𝔽)-modules with central character `ψ^{−1}`|`I_{F_v}` to finitely generated R∞-modules, such that: M∞(σ_v)/(x₁, …, `x_{4|S|+q−1}`) ≅ M(σ_p^v ⊗ σ_v), compatibly with a surjection R∞/(x) ↠ `R_S^{loc-cond}`, where `R_S^{loc-cond}` is the global deformation ring with the specified local conditions; the action of R^loc on M∞(σ_v) factors through the fixed-determinant quotient at v and, at w ∈ S_p ∖ {v}, through `R_{r̄_w}^{(0,−1),τ_w,ψ_w}`; M∞(σ_v) is free over S∞ when σ_v is free over W(𝔽), and free over S∞/(p) when σ_v is free over 𝔽; and M∞ is a fixed-determinant patching functor.
 
-The weights and types at w ∈ S_p ∖ {v} come from EGS15 Proposition 3.5.1 (a type isolating one weight), part of the supplier gap on tame types owned by LocalGaloisDeformationRingsPartII.
+The weight-isolating types at w ∈ S_p ∖ {v} come from §0.2 (EGS15 Proposition 3.5.1), using the local correspondence and lattices of gap:tame-types.
 
 The construction uses one choice (non-principal ultrafilter or diagonal subsequence) for all σ_v simultaneously, so that M∞ is a functor: there are only countably many isomorphism classes of finite length σ_v (EGS15 §6.4).
 
@@ -466,22 +478,22 @@ Its API:
 - The functor satisfies the three conditions of a fixed-determinant patching functor.
 - For every Serre weight σ_v with the fixed central character, the local action on M∞(σ_v) factors through the special fibre of the fixed-determinant crystalline weight locus `R∞^{ψ,σ_v}`; M∞(σ_v)≠0 exactly when σ_v∈W(r̄_v^∨). The factorization is an assertion about the module action, including nilpotents, rather than only characteristic-zero points (EGS15 §6.4, p. 37; EGS15 line 1832).
 
-A proof route is as follows. Taylor–Wiles data Q_N (GlobalGaloisDeformations §§5.1, 5.7–5.8; the generator count in Gee's convention, GlobalGaloisDeformations §5.8, gives q − [F:ℚ] + |S| − 1 patching variables, with q ≥ [F:ℚ] for p > 5 and r̄|`G_{F(ζ_p)}` absolutely irreducible) at level N, with the spaces at auxiliary level free over the group rings of the `Δ_{Q_N}` (§0.4; HilbertModularVarietiesAndShimuraCurves §R18.3.14 is its definite Taylor–Wiles instance). Patch the modules `M(σ_p^v ⊗ σ_v)_{Q_N}` with their framings over S∞ by the finite-data extraction of DeformationAndDerivedPatchingAlgebra §§5.6, 8.1–8.5 (patching-extraction, patched-module, patched-ring-action), simultaneously for all finite length σ_v; extend to finitely generated σ_v by inverse limits. The functor σ ↦ S(σ)_𝔪 is contravariantly exact (§0.3); its dual multiplicity module M is covariantly exact at every auxiliary level. Patching preserves this exact system, giving covariant exactness of M∞. Support at w ∈ S_p ∖ {v}: local–global compatibility for the type σ°(τ_w^∨) (EGS15 §6.4). Support at v for lattices in types: local–global compatibility; for Serre weights: establish the scheme-theoretic crystalline weight-locus factorization as a support step of this construction (EGS15 §6.4, p. 37; EGS15 line 1832), using the crystalline weight quotients of §1.4 and finite-level Galois actions of §0.3; use the local Breuil–Mézard identity and §0.6 for weight nonvanishing. The global factorization is part of this target, rather than an assertion supplied by a local deformation ring. Maximal Cohen–Macaulay: M∞(σ°(τ)) is finite free over the regular ring S∞ and dim `R∞^{ψ,τ}` = dim S∞, so Auslander–Buchsbaum gives the maximal depth (EGS15 §6.4).
+A proof route is as follows. Taylor–Wiles data Q_N (GlobalGaloisDeformations §§5.1, 5.7–5.8; the generator count in Gee's convention, GlobalGaloisDeformations §5.8, gives q − [F:ℚ] + |S| − 1 patching variables, with q ≥ [F:ℚ] for p > 5 and r̄|`G_{F(ζ_p)}` absolutely irreducible) at level N, with the spaces at auxiliary level free over the group rings of the `Δ_{Q_N}` (§0.4; HilbertModularVarietiesAndShimuraCurves §R18.3.14 is its definite Taylor–Wiles instance). Patch the modules `M(σ_p^v ⊗ σ_v)_{Q_N}` with their framings over S∞ by the finite-data extraction of DeformationAndDerivedPatchingAlgebra §§5.6, 8.1–8.5 (patching-extraction, patched-module, patched-ring-action), simultaneously for all finite length σ_v; extend to finitely generated σ_v by inverse limits. The functor σ ↦ S(σ)_𝔪 is contravariantly exact (§0.3); its dual multiplicity module M is covariantly exact at every auxiliary level. Patching preserves this exact system, giving covariant exactness of M∞. Support at w ∈ S_p ∖ {v}: local–global compatibility for the type σ°(τ_w^∨) (EGS15 §6.4). Support at v for lattices in types: local–global compatibility; for Serre weights: establish the scheme-theoretic crystalline weight-locus factorization as a support step of this construction (EGS15 §6.4, p. 37; EGS15 line 1832), using the crystalline weight quotients of §1.2 and finite-level Galois actions of §0.3; use the local Breuil–Mézard identity and §0.6 for weight nonvanishing. The global factorization is part of this target, rather than an assertion supplied by a local deformation ring. Maximal Cohen–Macaulay: M∞(σ°(τ)) is finite free over the regular ring S∞ and dim `R∞^{ψ,τ}` = dim S∞, so Auslander–Buchsbaum gives the maximal depth (EGS15 §6.4).
 
 **Checks.**
 
 - M∞(0) = 0. A functor with a constant nonzero summand would fail.
-- For a Serre weight σ_v ∉ W(r̄_v^∨), M∞(σ_v) = 0 (by §1.6 and Nakayama). The residual fibre is 0, and finite-module Nakayama gives the value 0.
-- At a Fontaine–Laffaille regular predicted weight μ_σ(r̄_v^∨)=1, §0.6 gives a nonzero residual weight fibre, so the patched value is nonzero; at μ_σ=0 both vanish. A zero functor meets the abstract support axioms of §1.4 but fails this arithmetic nonvanishing.
+- For a Serre weight σ_v ∉ W(r̄_v^∨), M∞(σ_v) = 0 (by §1.5 and Nakayama). The residual fibre is 0, and finite-module Nakayama gives the value 0.
+- At a Fontaine–Laffaille regular σ∈W(r̄_v^∨), §0.6 gives a nonzero residual weight fibre, so the patched value is nonzero; for σ outside this set both vanish. The raw GK14 multiplicities are compared with this weight set using §0.2’s duality adapter. A zero functor meets the abstract support axioms of §1.3 but fails this arithmetic nonvanishing.
 - Scheme-theoretic support cannot be replaced by a condition on field-valued points: for A=𝔽[ε]/ε², the module A has ε·1=ε≠0 although ε vanishes at its unique field-valued point. The module A/(ε) has ε·1=0. Only the latter action factors through A/(ε).
 - If τ_w were chosen with two weights of W(r̄_w^∨) in JH(σ(τ_w^∨)), the fibre M∞(σ_v)/𝔪∞ would compute a space involving both weights at w, not Hom_K(σ_v, π)^∨ for the weighted π of §0.5; the single-weight choice is essential. When each weight has multiplicity 1 the incorrectly mixed fibre has dimension 2 instead of 1.
 - For a lattice σ°(τ) in a tame type τ whose ring `R∞^{(1,0),τ}` is regular (for example a power series ring over W(𝔽)), M∞(σ°(τ)) is free over `R∞^{(1,0),τ}` (patching-functor property and Auslander–Buchsbaum). The zero module is allowed with rank 0; the arithmetic functor has positive rank when its modular weights occur.
 - M∞(0)=0. If the chosen away type has two surviving modular constituents rather than one, its fibre dimension is the sum r₁+r₂; for r₁=r₂=1 it is 2 rather than the required single-weight value 1.
 
 
-*Needs:* §0.3; §0.2; §0.6; §1.2; §1.3; §1.4; §0.4; GlobalGaloisDeformations §5.1; GlobalGaloisDeformations §5.7; GlobalGaloisDeformations §5.8; DeformationAndDerivedPatchingAlgebra §8.1–8.4; DeformationAndDerivedPatchingAlgebra §5.6, 8.4–8.5; DeformationAndDerivedPatchingAlgebra §8.4; DeformationAndDerivedPatchingAlgebra §5.6; HilbertModularVarietiesAndShimuraCurves §R18.3.14; HilbertModularVarietiesAndShimuraCurves §R18.4.21; LocalGaloisDeformationRingsPartII T.0, T.6–T.7 and the applicable supplier gaps; the Breuil–Mézard supplier gap.
+*Needs:* §0.3; §0.2; §0.6; §1.1; §1.2; §1.3; §0.4; GlobalGaloisDeformations §5.1; GlobalGaloisDeformations §5.7; GlobalGaloisDeformations §5.8; DeformationAndDerivedPatchingAlgebra §8.1–8.4; DeformationAndDerivedPatchingAlgebra §5.6, 8.4–8.5; DeformationAndDerivedPatchingAlgebra §8.4; DeformationAndDerivedPatchingAlgebra §5.6; HilbertModularVarietiesAndShimuraCurves §R18.3.14; HilbertModularVarietiesAndShimuraCurves §R18.4.21; LocalGaloisDeformationRingsPartII T.0, T.6–T.7 and the applicable supplier gaps; the Breuil–Mézard supplier gap.
 
-### 1.6 Fibres of the patching functor at the maximal ideal
+### 1.5 Fibres of the patching functor at the maximal ideal
 
 For every continuous representation σ_v of K = `GL₂(O_{F_v})` on a finitely generated W(𝔽)-module with central character `ψ^{−1}`|`I_{F_v}` on which some V_v ⊆ 1 + `pM₂(O_{F_v})`, normal in K, acts trivially, there are natural isomorphisms of finite-dimensional 𝔽-vector spaces M∞(σ_v)/𝔪∞ ≅ `Hom_{U_v/V_v}(σ_v, Hom_{U^v/V^v}(⊗_{w∈S_p∖{v}}σ_w, Hom_{G_F}(r̄, H¹_ét(X_V ×_F F̄, 𝔽))))^∨` ≅ Hom_K(σ_v, π)^∨ in the indefinite case, with S(V, 𝔽)[𝔪] in place of the r̄-part in the definite case, where π is the weighted representation of §0.5 and σ_w the unique weight of W(r̄_w^∨) in JH(σ(τ_w^∨)). In particular M∞(σ_v) ≠ 0 if and only if JH(σ_v/pσ_v) ∩ W(r̄_v^∨) ≠ ∅.
 
@@ -497,15 +509,15 @@ A proof route is as follows. Reduce M∞(σ_v) modulo (x₁, …) and then modul
 
 - A free support-rank-r value has residual fibre 𝔽^r; for r=2 both sides of the fibre identity have dimension 2. An integral lattice has infinite O-length, whereas its reduction has finite length, so constituents are taken after reduction.
 
-*Needs:* §1.5; §0.5; §0.6; §0.3; §0.4; HilbertModularVarietiesAndShimuraCurves §R18.4.10.
+*Needs:* §1.4; §0.5; §0.6; §0.3; §0.4; HilbertModularVarietiesAndShimuraCurves §R18.4.10.
 
-### 1.7 The big patched module with its GL₂(F_v)-action
+### 1.6 The big patched module with its GL₂(F_v)-action
 
-With the data of §1.5 (and the same σ_p^v, with Hecke operators at the places of S′ forgotten), the patching construction of DL21 §6.2 (using CEGGPS16 §2 as described in BHHMS23 Theorem 8.4.1(ii)) produces a profinite R∞⟦K⟧-module M∞, K = `GL₂(O_{F_v})`, with an R∞-linear continuous action of GL₂(F_v) extending the K-action, such that: M∞ is finite free over S∞⟦K₁/Z₁⟧; M∞ is finite projective over S∞⟦K⟧_Z, the largest quotient of S∞⟦K⟧ on which the centre of K acts through ψ|`I_{F_v}`; M∞/𝔪∞M∞ ≅ π^∨ for the weighted π of §0.5; and for every continuous σ_v as in §1.6 with central character `ψ^{−1}`|`I_{F_v}`, M∞(σ_v) ≅ `Hom^{cont}_{W(𝔽)⟦K⟧}(M∞, σ_v^∨)^∨`, where (−)^∨ = `Hom^{cont}_{W(𝔽)}(−, E/W(𝔽))`. If moreover p is inert in F, then M∞ `⊗_{S∞}` W(𝔽) ≅ `Hom_{W(𝔽)}(Ĥ¹(V^v)_{r̄}^{ψ^{−1}}, W(𝔽))` (resp. the dual of `Ŝ(V^v)_{r̄}^{ψ^{−1}}` in the definite case), compatibly with surjections R∞ `⊗_{S∞}` W(𝔽) ↠ `R_{r̄,S∪{w₁}}^ψ` ↠ `T̂(V^v)_{r̄}^{ψ^{−1}}`.
+With the data of §1.4 (and the same σ_p^v, with Hecke operators at the places of S′ forgotten), the patching construction of DL21 §6.2 (using CEGGPS16 §2 as described in BHHMS23 Theorem 8.4.1(ii)) produces a profinite R∞⟦K⟧-module M∞, K = `GL₂(O_{F_v})`, with an R∞-linear continuous action of GL₂(F_v) extending the K-action, such that: M∞ is finite free over S∞⟦K₁/Z₁⟧; M∞ is finite projective over S∞⟦K⟧_Z, the largest quotient of S∞⟦K⟧ on which the centre of K acts through ψ|`I_{F_v}`; M∞/𝔪∞M∞ ≅ π^∨ for the weighted π of §0.5; and for every continuous σ_v as in §1.5 with central character `ψ^{−1}`|`I_{F_v}`, M∞(σ_v) ≅ `Hom^{cont}_{W(𝔽)⟦K⟧}(M∞, σ_v^∨)^∨`, where (−)^∨ = `Hom^{cont}_{W(𝔽)}(−, E/W(𝔽))`. If moreover p is inert in F, then M∞ `⊗_{S∞}` W(𝔽) ≅ `Hom_{W(𝔽)}(Ĥ¹(V^v)_{r̄}^{ψ^{−1}}, W(𝔽))` (resp. the dual of `Ŝ(V^v)_{r̄}^{ψ^{−1}}` in the definite case), compatibly with surjections R∞ `⊗_{S∞}` W(𝔽) ↠ `R_{r̄,S∪{w₁}}^ψ` ↠ `T̂(V^v)_{r̄}^{ψ^{−1}}`.
 
 Here K₁ = 1 + `pM₂(O_{F_v})` and Z₁ the centre of K₁; K₁/Z₁ is a uniform pro-p group of dimension 3f (p > 2, F_v unramified).
 
-The construction uses the same Taylor–Wiles data and patching choice as §1.5, so that the two are compatible; a choice of basis of the universal deformation over `R_{r̄,S∪{w₁}}^ψ` is among the choices (BHHMS23 §8.5).
+The construction uses the same Taylor–Wiles data and patching choice as §1.4, so that the two are compatible; a choice of basis of the universal deformation over `R_{r̄,S∪{w₁}}^ψ` is among the choices (BHHMS23 §8.5).
 
 (BHHMS23, proof of Theorem 8.4.1, part (ii), p. 104; proof of Theorem 8.4.2, p. 105; §8.5, (84), p. 108; BHHMS23 line 5213; DL21, Theorem 6.2 and §6.2, pp. 54–55; DL21 line 3111; CEGGPS16, §2, in particular the properties of M∞ listed before §2.12 and Proposition 2.13; CEGGPS16 line 1369).
 
@@ -519,18 +531,18 @@ Its API:
 - For p inert: M∞ `⊗_{S∞}` W(𝔽) ≅ the W(𝔽)-dual of `Ĥ¹(V^v)_{r̄}^{ψ^{−1}}`, with the surjections R∞ `⊗_{S∞}` W(𝔽) ↠ `R^ψ_{r̄,S∪{w₁}}` ↠ `T̂(V^v)_{r̄}^{ψ^{−1}}`.
 - For x : R∞ → O′, V(x) = `Hom^{cont}_{O′}(M∞ ⊗_{R∞,x} O′, E′)` with its GL₂(F_v)-action.
 
-A proof route is as follows. Replace K^v by U^v and the representation V of DL21 §6.1 by σ_p^v, and forget the Hecke operators T_w at w ∈ S′ (no multiplicity one is needed); patch the dual completed cohomology at Taylor–Wiles levels as in DL21 §6.2 (BHHMS23 proof of Theorem 8.4.1 (ii)). Freeness over S∞⟦K₁/Z₁⟧ and projectivity over S∞⟦K⟧_Z: at each auxiliary level and each finite quotient K₁/V of K₁ the dual 𝔪-localised cohomology is free over the finite group ring (§0.4, with DeformationAndDerivedPatchingAlgebra §7.2–7.3 for the finite groups); patch these finite S∞/J-modules (DeformationAndDerivedPatchingAlgebra §§5.6, 8.1–8.5) compatibly in J and V and pass to the inverse limit, which gives freeness over S∞⟦K₁/Z₁⟧. The fibre M∞/𝔪∞ ≅ π^∨ and the comparison with the patching functor M∞(σ_v) = Hom(M∞, σ_v^∨)^∨ follow from the construction and from (68) (§1.6). When p is inert, reducing modulo (x₁, …) recovers the dual of the localized completed cohomology and the surjections onto the global deformation ring and the big Hecke algebra (BHHMS23 (84), citing CEGGPS16 §2 and DL21 §6).
+A proof route is as follows. Replace K^v by U^v and the representation V of DL21 §6.1 by σ_p^v, and forget the Hecke operators T_w at w ∈ S′ (no multiplicity one is needed); patch the dual completed cohomology at Taylor–Wiles levels as in DL21 §6.2 (BHHMS23 proof of Theorem 8.4.1 (ii)). Freeness over S∞⟦K₁/Z₁⟧ and projectivity over S∞⟦K⟧_Z: at each auxiliary level and each finite quotient K₁/V of K₁ the dual 𝔪-localised cohomology is free over the finite group ring (§0.4, with DeformationAndDerivedPatchingAlgebra §7.2–7.3 for the finite groups); patch these finite S∞/J-modules (DeformationAndDerivedPatchingAlgebra §§5.6, 8.1–8.5) compatibly in J and V and pass to the inverse limit, which gives freeness over S∞⟦K₁/Z₁⟧. The fibre M∞/𝔪∞ ≅ π^∨ and the comparison with the patching functor M∞(σ_v) = Hom(M∞, σ_v^∨)^∨ follow from the construction and from (68) (§1.5). When p is inert, reducing modulo (x₁, …) recovers the dual of the localized completed cohomology and the surjections onto the global deformation ring and the big Hecke algebra (BHHMS23 (84), citing CEGGPS16 §2 and DL21 §6).
 
 **Checks.**
 
 - M∞/(p, x₁, …, `x_{4|S|+q−1}`) is finite projective over 𝔽⟦K⟧_Z and is `⊕_{σ∈W(r̄_v^∨)}(Proj_{K/Z₁}σ^∨)^{m_σ}` with m_σ ≥ 1 (BHHMS23 proof of Theorem 8.4.2). Taking all weights, including a nonmodular one, would introduce a projective summand of multiplicity 0 rather than ≥1.
 - M∞ is not finitely generated over R∞ alone: its fibre π^∨ at 𝔪∞ is infinite-dimensional; finiteness holds only over R∞⟦K⟧. For f=1 the residual canonical dimension is 1, so vector-space finiteness would incorrectly give 0.
-- For σ_v a Serre weight, Hom(M∞, σ_v^∨)^∨ modulo 𝔪∞ is Hom_K(σ_v, π)^∨, agreeing with §1.6. At r=2 each residual Hom space has dimension 2.
+- For σ_v a Serre weight, Hom(M∞, σ_v^∨)^∨ modulo 𝔪∞ is Hom_K(σ_v, π)^∨, agreeing with §1.5. At r=2 each residual Hom space has dimension 2.
 - M∞ = 0 iff π = 0; for a generic global datum π ≠ 0, so M∞ ≠ 0. A zero big module has zero fibre; a nonzero residual π has nonzero dual.
 - The compact residual fibre is π∨, not its O-linear dual: Hom_O(𝔽,O)=0 while Hom_O(𝔽,E/O)=𝔽. At f=1, dim(K₁/Z₁)=3; the residual π has canonical dimension 1 and is infinite dimensional as a vector space.
 
 
-*Needs:* §1.5; §1.6; §0.5; §0.4; DeformationAndDerivedPatchingAlgebra §5.6, 8.4–8.5; DeformationAndDerivedPatchingAlgebra §7.2–7.3; CompletedCohomologyPartII §F.1, 3.1–3.2; NoncommutativeAndEquivariantIwasawa §§F.1, 0.10–0.11; CompletedCohomologyPartII §F.1.
+*Needs:* §1.4; §1.5; §0.5; §0.4; DeformationAndDerivedPatchingAlgebra §5.6, 8.4–8.5; DeformationAndDerivedPatchingAlgebra §7.2–7.3; CompletedCohomologyPartII §F.1, 3.1–3.2; NoncommutativeAndEquivariantIwasawa §§F.1, 0.10–0.11; CompletedCohomologyPartII §F.1.
 
 ### Examples
 
@@ -586,15 +598,13 @@ No Noetherian or local hypothesis is needed; finiteness enters only through the 
 
 (BHHMS23, Lemma 8.2.1 and proof, p. 90; BHHMS23 line 4566; STACKS, Tag 05G8; STACKS line 1544).
 
-The native support-rank predicate `FreeRankOnSupport` includes the complete quotient ring and the rank, so it distinguishes freeness from a statement only about generic fibres.
+Support-rank specifies the complete quotient ring and the rank, so it distinguishes freeness from a statement only about generic fibres.
 
 Its API:
 
 - An isomorphism of A-modules transports the support and the rank.
 - The zero module has zero quotient support and permits every rank; assertions recovering the rank require nonzero support.
 - For a nonzero quotient A/I and positive r, its r-fold free module has annihilator I and support rank r.
-
-*Lean:* `freeRankOnSupport_of_extension` states this extension theorem using a surjection from Aʳ and the actual quotient of annihilator submodules.
 
 A proof route is as follows. Replace A by A/Ann_A(M); put I = Ann_A(M/N) and choose a surjection f : A^r ↠ M. The composite A^r → M → M/N factors through (A/I)^r; as M/N ≅ (A/I)^r, the induced surjection (A/I)^r ↠ M/N is an isomorphism (a surjective endomorphism of a finitely generated module is bijective: Stacks 05G8, the finite-module Hopfian theorem (STACKS, Tag 05G8)). The snake lemma makes I^r → N surjective; since I ≅ A/Ann_A(N) and N ≅ (A/Ann_A(N))^r, the same fact makes I^r → N bijective, so f is an isomorphism.
 
@@ -615,15 +625,13 @@ R local is used through Nakayama to reduce to rank one; the annihilator identity
 
 (BHHMS23, Lemma 8.3.8 and proof, p. 101; BHHMS23 line 5054).
 
-The definition `modulePullback` is the submodule of M₁×M₂ cut out by f(x)=g(y), equivalently the kernel of the difference map. Its source is the product module and its target under the defining map is M.
+For maps f : M₁ → M and g : M₂ → M, use the equal locus of their composites with the coordinate projections on M₁×M₂. The difference map has source M₁×M₂ and target M; its kernel is the fibre product.
 
 Its API:
 
 - The two coordinate projections land in M₁ and M₂ and have equal composites to M.
 - Every compatible pair of module maps has a unique map to this submodule, with the specified projections.
 - When both input maps are surjective, each coordinate projection is surjective, giving the intersection annihilator formula.
-
-*Lean:* `modulePullback_freeRankOnSupport_iff` states the intersection identity and equivalence with the sum-ideal condition. The inclusion form is equivalent because both input annihilators annihilate the target.
 
 A proof route is as follows. Write M_i = (R/I_i)^r and M = (R/I)^r with I_i ⊆ I; after changing bases the surjections are the natural maps, so M₁ ×_M M₂ ≅ (R/I₁ `×_{R/I}` R/I₂)^r and by Nakayama one reduces to r = 1. For r = 1 the diagonal R → R/I₁ `×_{R/I}` R/I₂ has kernel I₁ ∩ I₂; it is surjective iff every pair (a, b) with a ≡ b mod I is congruent to some c modulo I₁ and I₂, iff I ⊆ I₁ + I₂ (Chinese remainder argument). Surjectivity is exactly cyclicity, i.e. freeness of rank one over R/(I₁ ∩ I₂). (ii) ⇔ (iii) because I₁ + I₂ ⊆ I always holds. BHHMS cite Hu–Wang Lemma 8.11 for the rank-one case.
 
@@ -634,7 +642,7 @@ A proof route is as follows. Write M_i = (R/I_i)^r and M = (R/I)^r with I_i ⊆ 
 - For the two identity maps M→M the pullback is the diagonal {(m,m)}≅M; using the full product would double the rank.
 - For zero source and target modules the kernel is zero. For maps k→k equal to zero, the pullback is k², illustrating why surjectivity matters to the freeness criterion.
 
-*Needs:* Mathlib `Module.annihilator`; Mathlib `LinearMap.ker`; Mathlib `IsLocalRing`; Mathlib `IsNoetherianRing`; Mathlib `Submodule.spanFinrank`.
+*Needs:* Mathlib `Module.annihilator`; Mathlib `LinearMap.eqLocus`; Mathlib `LinearMap.eqLocus_eq_ker_sub`; Mathlib `IsLocalRing`; Mathlib `IsNoetherianRing`; Mathlib `Submodule.spanFinrank`.
 
 ### 2.4 Grade and dimension under power-series variables (Gee–Newton)
 
@@ -707,7 +715,7 @@ Use CompletedCohomologyPartII §5.5; DeformationAndDerivedPatchingAlgebra §3.1,
 
 For every smooth representation σ of K = `GL₂(O_{F_v})` on a finite length W(𝔽)-module with central character `ψ^{−1}`|`I_{F_v}`, the R∞-module M∞(σ) is maximal Cohen–Macaulay over its scheme-theoretic support R∞/`Ann_{R∞}(M∞(σ))`; in particular this support has no embedded associated prime.
 
-M∞ = `M∞^{σ_p^v}` is the patching functor of §1.5; finite length means killed by a power of p and of finite length as a W(𝔽)-module.
+M∞ = `M∞^{σ_p^v}` is the patching functor of §1.4; finite length means killed by a power of p and of finite length as a W(𝔽)-module.
 
 (BHHMS23, Lemma 8.2.2 and proof, p. 91; BHHMS23 line 4591).
 
@@ -717,7 +725,7 @@ A proof route is as follows. If M∞(σ) = 0 there is nothing to prove. For each
 
 - Over k[[x,y]], k[[x,y]]/(x) has depth and support dimension both 1, although the ambient ring dimension is 2. For zero coefficients the value is zero and the assertion uses the separate zero convention.
 
-*Needs:* §1.5; §1.4; DeformationAndDerivedPatchingAlgebra §3.1, 6.1.
+*Needs:* §1.4; §1.3; DeformationAndDerivedPatchingAlgebra §3.1, 6.1.
 
 ### 3.2 Freeness for Serre weights and for lattices in tame types
 
@@ -725,19 +733,19 @@ There is an integer r ≥ 1 such that: (i) for every σ_v ∈ W(r̄_v^∨), M∞
 
 Generic global datum; M∞ = `M∞^{σ_p^v}`. MP.5/finite-weight-hulls covers the principal-series intervals; the cuspidal types (second inertial shape at v) and EGS15 §§5.1, 10.1 are part of the tame-type gap.
 
-The structure of the tame potentially Barsotti–Tate rings (formal smoothness, domain property, special fibres; EGS15 Theorem 7.2.1) and the description of the constituents of lattices in tame types (EGS15 §5.1, Propositions 3.5.1–3.5.2) come from the supplier contracts with LocalGaloisDeformationRingsPartII.
+The tame potentially Barsotti–Tate ring structure (EGS15 Theorem 7.2.1) and the constituents of tame-type lattices (EGS15 §5.1) come from the supplier contracts with LocalGaloisDeformationRingsPartII. Weight-isolating, containing and two-weight types relative to W(r̄_v^∨) come from §0.2.
 
-For a subset 𝒥 of the weight components of a fixed type, let I_𝒥 be the inverse image in R∞ of the intersection of their prime ideals in the reduced special-fibre type ring. Thus it cuts out their reduced union; the empty intersection is the unit ideal. Prove Ann(M∞(σ^𝒥))=I_𝒥 for the capped-interval subquotients σ^𝒥 of an irreducible-cosocle type lattice supplied by gap:tame-types (BHHMS23 (70), p. 92; BHHMS23 line 4628; EGS15 §10.1, p. 60; EGS15 line 3212).
+In the Boolean subset labels of EGS15 §10.1, an interval is an order-convex set of labels and a capped interval has a unique maximal label, its cap. For a subset 𝒥 of the weight components of a fixed type, let I_𝒥 be the inverse image in R∞ of the intersection of their prime ideals in the reduced special-fibre type ring. Thus it cuts out their reduced union; the empty intersection is the unit ideal. Prove Ann(M∞(σ^𝒥))=I_𝒥 for the capped-interval subquotients σ^𝒥 of an irreducible-cosocle type lattice supplied by gap:tame-types (BHHMS23 (70), p. 92; BHHMS23 line 4628; EGS15 §10.1, p. 60; EGS15 line 3212).
 
 Its API:
 
 - A singleton gives the corresponding component ideal.
 - A union of weight subsets gives the intersection of their ideals; the empty subset gives the unit ideal.
-- After the formal-power-series base change supplied by gap:single-type-rings, the ideal of a capped interval is the actual annihilator of its patched module, not only its radical.
+- Because the special fibre of `R∞^{(1,0),τ}` is a power-series ring over the local special fibre (§1.2), the two identities of gap:single-type-rings hold for the I_𝒥 in R∞: power-series base change is flat and preserves these finite intersections and quotient isomorphisms. The ideal of a capped interval is the actual annihilator of its patched module, not only its radical.
 
 (BHHMS23, Proposition 8.2.3 and proof, pp. 91–92; BHHMS23 line 4607; EGS15, Theorem 10.1.1, §10.1, Definition 10.1.4, Proposition 10.1.11, Lemma 6.1.4, Propositions 3.5.1–3.5.2; EGS15 line 3324; LE19, Lemma 4.5; LE19 line 779).
 
-A proof route is as follows. By EGS15 §5.1 the lattice is σ_J°(τ) for a unique subset J in a set P_τ; its constituents in W(r̄_v^∨) are indexed by a subset W ⊆ P_τ, and for capped intervals 𝒥 ⊆ W there are subquotients σ^𝒥 with exactly those constituents (EGS15 Definition 10.1.4). Supports: R∞/Ann(M∞(σ^𝒥)) is reduced, being generically reduced by dévissage (the supports of the M∞(σ_v) are reduced, irreducible, pairwise distinct and of equal dimension, and σ^𝒥 is multiplicity free) and without embedded primes by §3.1; hence its annihilator equals I_𝒥 and its support ring is R∞/I_𝒥, in the notation of EGS15 §10.1. |𝒥| ≤ 2: there is a tame type τ′ and a lattice whose reduction has the same patched module as σ^𝒥, and `R∞^{(1,0),τ′}` is regular, so the integral patched module is free over the regular type ring, and its reduction is free over the type ring modulo p (EGS15 Lemma 6.1.4); for |𝒥| = 2 freeness over a power series ring over 𝔽⟦X₁, X₂⟧/(X₁X₂) forces equal ranks of the two weights, and connectedness of W(r̄_v^∨) by nonsplit extensions (EGS15 Proposition 3.5.2) gives one rank r for all weights. |𝒥| > 2 with a unique minimal element 𝒥₀: M∞(σ^𝒥) is generated by r elements (as in EGS15 Theorem 10.1.1, using Le's Lemma 4.5 in place of EGS15 Lemma 10.1.13), and §2.2 with N = `M∞(σ^{{𝒥₀}})` gives freeness; with two minimal elements, write M∞(σ^𝒥) as a fibre product over smaller capped intervals and use §2.3. (ii): for 𝒥 = W this gives M∞(σ_J°(τ))/p free of rank r over `R̄∞^{(1,0),τ}`; lift a basis by Nakayama to a surjection (`R∞^{(1,0),τ}`)^r ↠ M∞(σ°(τ)) which is an isomorphism mod p; its kernel satisfies p·ker = ker because M∞(σ°(τ)) is p-torsion free, so the kernel vanishes.
+A proof route is as follows. By EGS15 §5.1 the lattice is σ_J°(τ) for a unique subset J in a set P_τ; its constituents in W(r̄_v^∨) are indexed by a subset W ⊆ P_τ, and for capped intervals 𝒥 ⊆ W there are subquotients σ^𝒥 with exactly those constituents (EGS15 Definition 10.1.4). Supports: R∞/Ann(M∞(σ^𝒥)) is reduced, being generically reduced by dévissage (the supports of the M∞(σ_v) are reduced, irreducible, pairwise distinct and of equal dimension, and σ^𝒥 is multiplicity free) and without embedded primes by §3.1; hence its annihilator equals I_𝒥 and its support ring is R∞/I_𝒥, in the notation of EGS15 §10.1. |𝒥| ≤ 2: there is a tame type τ′ and a lattice whose reduction has the same patched module as σ^𝒥, and `R∞^{(1,0),τ′}` is regular, so the integral patched module is free over the regular type ring, and its reduction is free over the type ring modulo p (EGS15 Lemma 6.1.4); for |𝒥| = 2 freeness over a power series ring over 𝔽⟦X₁, X₂⟧/(X₁X₂) forces equal ranks of the two weights, and connectedness of the weight constituents of the containing type of §0.2, using its Diamond-box extension graph (EGS15 §5.1), gives one rank r for all weights. |𝒥| > 2 with a unique minimal element 𝒥₀: M∞(σ^𝒥) is generated by r elements (as in EGS15 Theorem 10.1.1, using Le's Lemma 4.5 in place of EGS15 Lemma 10.1.13), and §2.2 with N = `M∞(σ^{{𝒥₀}})` gives freeness: a capped interval with a unique minimum is F(𝒥₀,J_cap), so EGS15 Lemma 10.1.6 supplies its annihilator quotient. With several minimal elements, write M∞(σ^𝒥) as a fibre product over smaller capped intervals with the same cap and use §2.3; EGS15 Lemma 10.1.8 supplies the sum-ideal condition. (ii): for 𝒥 = W this gives M∞(σ_J°(τ))/p free of rank r over `R̄∞^{(1,0),τ}`; lift a basis by Nakayama to a surjection (`R∞^{(1,0),τ}`)^r ↠ M∞(σ°(τ)) which is an isomorphism mod p; its kernel satisfies p·ker = ker because M∞(σ°(τ)) is p-torsion free, so the kernel vanishes.
 
 **Checks.**
 
@@ -745,8 +753,11 @@ A proof route is as follows. By EGS15 §5.1 the lattice is σ_J°(τ) for a uniq
 - In A=k⟦x,y⟧/(xy), selecting only V(x) gives I=(x) and support A/(x)≅k⟦y⟧. The zero ideal would incorrectly retain the other branch.
 - Selecting both branches gives (x)∩(y)=0 and support A. Their sum (x,y) instead cuts out the closed point, so it cannot define the union.
 - Selecting no branch gives I=A and quotient 0; choosing I=0 would give the entire nonzero support. This tests the empty-union convention without asserting a nonempty capped interval for it.
+- In R̄=k⟦x,y⟧/(xy), for F(∅,{1}) containing both components, I_F=0 and `I_{F^×}=(x)`; multiplication by x identifies R̄/(y) with (x). For F(J,J) the punctured interval is empty and the quotient is `R̄/I_{{J}}`, generated by 1. Replacing the singleton ideal by (x) in the first case would give the wrong annihilator, since Ann(x)=(y).
+- In R̄=k⟦x₁,y₁,x₂,y₂⟧/(x₁y₁,x₂y₂), the two capped intervals { {1,2},{1} } and { {1,2},{2} } have ideals (x₁) and (x₂); their sum is (x₁,x₂), the ideal of their common singleton { {1,2} }. Replacing the second interval by { {1,2},∅ } gives sum (x₁,x₂y₁), strictly smaller than (x₁,x₂): setting x₁=y₁=y₂=0 leaves x₂ nonzero. Thus the interval hypothesis cannot be discarded (EGS15 Example 10.1.3(3), p. 60; EGS15 line 3236).
+- Adjoining a power-series variable t keeps Ann(x)=(y) and (x₁)+(x₂)=(x₁,x₂); pulling these ideals back to R∞ adds the same type-and-p kernel to each. A quotient by (x,y) instead would kill x and turn the cyclic quotient into 0, so this step requires flat base change, not an arbitrary quotient.
 
-*Needs:* §1.5; §1.4; §1.3; §0.2; §3.1; §2.2; §2.3; DeformationAndDerivedPatchingAlgebra §3.1; ModpRepresentationsOfGL2OverLocalFields MP.5/finite-weight-hulls; LocalGaloisDeformationRingsPartII T.0, T.6–T.7 and the applicable supplier gaps.
+*Needs:* §1.4; §1.3; §1.2; §0.2; §3.1; §2.2; §2.3; DeformationAndDerivedPatchingAlgebra §3.1; ModpRepresentationsOfGL2OverLocalFields MP.5/finite-weight-hulls; LocalGaloisDeformationRingsPartII T.0, T.6–T.7 and the applicable supplier gaps.
 
 ### 3.3 Lattices in sums of locally algebraic types
 
@@ -762,7 +773,7 @@ A proof route is as follows. By exactness, M∞(σ°)[1/p] ≅ ⊕_i `M∞(σ_i�
 
 - For two disjoint characteristic-zero types with multiplicities 1 and 2 and common base rank r, the two factor ranks are r and 2r. At r=2 they are 2 and 4; local freeness does not mean one global constant rank on a disconnected support.
 
-*Needs:* §3.1; §3.2; §1.3; DeformationAndDerivedPatchingAlgebra §6.1–6.2; DeformationAndDerivedPatchingAlgebra §3.1; LocalGaloisDeformationRings §3.9–3.10; LocalGaloisDeformationRings §3.4; LocalGaloisDeformationRingsPartII T.0, T.6–T.7 and the applicable supplier gaps.
+*Needs:* §3.1; §3.2; §1.2; DeformationAndDerivedPatchingAlgebra §6.1–6.2; DeformationAndDerivedPatchingAlgebra §3.1; LocalGaloisDeformationRings §3.9–3.10; LocalGaloisDeformationRings §3.4; LocalGaloisDeformationRingsPartII T.0, T.6–T.7 and the applicable supplier gaps.
 
 ### 3.4 Freeness for the projective lift of a modular Serre weight
 
@@ -776,13 +787,13 @@ The upper embedding W = `π^{K₁}` ↪ `D₀(r̄_v^∨)^{⊕r}` follows from BH
 
 (BHHMS23, Proposition 8.2.6 and proof, pp. 93–94; BHHMS23 line 4716; BHHMS23, proof of Proposition 8.3.7, p. 101; BHHMS23 line 5044; LMS22, Lemma 4.5, p. 14, and Proposition 4.6, p. 15; LMS22 line 631; BRE14, Lemma 9.2 and its proof, pp. 54–55 of the author copy; BRE14 line 2754).
 
-A proof route is as follows. Generation by r elements: by Nakayama and §1.6 it suffices that dim `Hom_K(P_{σ_v}, π)` = dim `Hom_{GL₂(k)}(P_{σ_v}, W)` = r for W = `π^{K₁}`. By §3.2 (i), dim Hom(σ, W) = r for each modular weight; since `Hom(P_{σ_v}, D₀/soc D₀)` = 0 it suffices to embed W into `D₀(r̄_v^∨)^{⊕r}`, equivalently to find a surjection `(D₀^∨)^{⊕r}` ↠ W^∨, which follows as in Le–Morra–Schraen Lemma 4.5 and Proposition 4.6 with 1 replaced by r. For the reverse embedding, embed R′ = `soc(D₀^{⊕r})` into the weighted π using the weight theorem and its multiplicity r. Put R = `D₀^{⊕r}`; by the defining property of D₀, R/R′ has no modular Serre weight, so Hom_K(R/R′, π) = 0. Apply the argument of Breuil Lemma 9.2 to the finite-level spaces: localisation makes Hom(−, S)_𝔪 exact by §0.4; the zero quotient Hom space remains zero after localisation by Nakayama. Restriction Hom(R, S)_𝔪 → Hom(R′, S)_𝔪 is therefore an isomorphism. Taking the residual Hecke eigenspace, the Galois multiplicity space, and the fixed weights away from v preserves this isomorphism. The socle embedding extends uniquely to R → π and is injective since every nonzero submodule of R meets its socle. Thus `D₀^{⊕r}` ↪ W. Both modules are finite-dimensional, so together with the upper embedding this gives W ≅ `D₀^{⊕r}`, without Layers 4–5. Support: `P̃_{σ_v}[1/p]` is the direct sum of the σ(τ), each once, so by BHHMS23 (71)–(72) and §3.2 (ii) `M∞(P̃_{σ_v})`[1/p] is free of rank r over S[1/p], S the scheme-theoretic support. A surjection S^r ↠ `M∞(P̃_{σ_v})` is an isomorphism after inverting p and `M∞(P̃_{σ_v})` has no p-torsion, so it is injective; S = R∞/∩_τ p_τ because the `R∞^{(1,0),τ}` are domains, so the support of each M∞(σ(τ)°)[1/p] is exactly R∞/p_τ.
+A proof route is as follows. Generation by r elements: by Nakayama and §1.5 it suffices that dim `Hom_K(P_{σ_v}, π)` = dim `Hom_{GL₂(k)}(P_{σ_v}, W)` = r for W = `π^{K₁}`. By §3.2 (i), dim Hom(σ, W) = r for each modular weight; since `Hom(P_{σ_v}, D₀/soc D₀)` = 0 it suffices to embed W into `D₀(r̄_v^∨)^{⊕r}`, equivalently to find a surjection `(D₀^∨)^{⊕r}` ↠ W^∨, which follows as in Le–Morra–Schraen Lemma 4.5 and Proposition 4.6 with 1 replaced by r. For the reverse embedding, embed R′ = `soc(D₀^{⊕r})` into the weighted π using the weight theorem and its multiplicity r. Put R = `D₀^{⊕r}`; by the defining property of D₀, R/R′ has no modular Serre weight, so Hom_K(R/R′, π) = 0. Apply the argument of Breuil Lemma 9.2 to the finite-level spaces: localisation makes Hom(−, S)_𝔪 exact by §0.4; the zero quotient Hom space remains zero after localisation by Nakayama. Restriction Hom(R, S)_𝔪 → Hom(R′, S)_𝔪 is therefore an isomorphism. Taking the residual Hecke eigenspace, the Galois multiplicity space, and the fixed weights away from v preserves this isomorphism. The socle embedding extends uniquely to R → π and is injective since every nonzero submodule of R meets its socle. Thus `D₀^{⊕r}` ↪ W. Both modules are finite-dimensional, so together with the upper embedding this gives W ≅ `D₀^{⊕r}`, without Layers 4–5. Support: `P̃_{σ_v}[1/p]` is the direct sum of the σ(τ), each once, so by BHHMS23 (71)–(72) and §3.2 (ii) `M∞(P̃_{σ_v})`[1/p] is free of rank r over S[1/p], S the scheme-theoretic support. A surjection S^r ↠ `M∞(P̃_{σ_v})` is an isomorphism after inverting p and `M∞(P̃_{σ_v})` has no p-torsion, so it is injective; S = R∞/∩_τ p_τ because the `R∞^{(1,0),τ}` are domains, so the support of each M∞(σ(τ)°)[1/p] is exactly R∞/p_τ.
 
 **Checks.**
 
 - At common r=2, each modular weight has Hom dimension 2 and Hom(P_σ,D₀²)=2 because the quotient by the socle contributes 0. The upper and lower embeddings have dimensions 2 dim D₀ on both sides; an isomorphism on socles alone would also allow a proper essential extension.
 
-*Needs:* §3.2; §3.3; §1.6; §0.5; ModpRepresentationsOfGL2OverLocalFields MP.3/diamond-socle; ModpRepresentationsOfGL2OverLocalFields MP.5/projective-adjoint; ModpRepresentationsOfGL2OverLocalFields MP.8/projective-lattice; §0.4; §0.6; LocalGaloisDeformationRingsPartII T.0, T.6–T.7 and the applicable supplier gaps.
+*Needs:* §3.2; §3.3; §1.5; §0.5; ModpRepresentationsOfGL2OverLocalFields MP.3/diamond-socle; ModpRepresentationsOfGL2OverLocalFields MP.5/projective-adjoint; ModpRepresentationsOfGL2OverLocalFields MP.8/projective-lattice; §0.4; §0.6; LocalGaloisDeformationRingsPartII T.0, T.6–T.7 and the applicable supplier gaps.
 
 ### Examples
 
@@ -802,7 +813,7 @@ Fix σ_v ∈ W(r̄_v^∨); write P = `P_{σ_v}` and P̃ = `P̃_{σ_v}` for its p
 
 σ_v = F(λ) with λ 8-deep in the lowest alcove, which genericity of r̄_v guarantees (BHHMS23 Proposition 2.4.2 in MP.3).
 
-The existence and uniqueness of τ₀ is EGS15 Proposition 3.5.2 for semisimple r̄_v, part of the tame-type gap.
+The type τ₀ is the semisimple all-weight type of §0.2 (EGS15 Proposition 3.5.2 for existence; BHHMS23 line 5066 for equality and uniqueness).
 
 (BHHMS23, §8.3: definition of `R′_{2,j}` and (75), p. 95; (76) and the definitions of `T_{2,j}`, `T′_{2,j}`, Y_j, N_j, pp. 98–99; choice of τ₀ before Theorem 8.3.9, p. 101; BHHMS23 line 4797; BHHMS23, §1.3.3, (7), pp. 8–9; BHHMS23 line 354).
 
@@ -855,13 +866,13 @@ For every j ∈ {0, …, f − 1}, the R∞-module `M∞(R′_{2,j})` is minimal
 
 (BHHMS23, Lemma 8.3.2 and proof, p. 96; BHHMS23 line 4814; LE19, Lemma 4.5; LE19 line 779).
 
-A proof route is as follows. Show by induction on the length of Q that M∞(Q) is minimally generated by r elements for every nonzero quotient Q of `R′_{2,j}`/`pR′_{2,j}`. Length one: Q = σ_v and §3.2 (i). If soc_K(Q) contains a nonmodular weight σ then M∞(Q) = M∞(Q/σ) (§1.6); so assume all socle constituents are modular. If [rad_K(Q)/soc_K(Q) : σ_v] ≠ 0, pick Q′ ⊊ Q with cosocle σ_v not in the socle; since `R′_{2,j}`/p is a quotient of R/pR ≅ (`Proj_{K/Z₁}σ_v`)/`𝔪²_{K₁}` (MP.8/projective-truncation, which applies because σ_v is 8-deep, hence 3-deep), relative projectivity (MP.9/relative-projectivity) makes Q′ a quotient of Q of smaller length; apply Le's Lemma 4.5 to M∞(Q′) ⊆ M∞(Q) with a socle weight σ′ of Q′. Otherwise [Q/soc_K(Q) : σ_v] = 1, and by §4.2 the quotient Q/S is K₁-fixed, hence a quotient of P; by the exact sequence of §4.1 the image of `P_{σ_{1,j}}` ⊕ `P_{σ_{2,j}}` in Q lies in S and is zero, so Q is a quotient of P and M∞(Q) is generated by r elements (§3.4); minimality from the quotient M∞(σ_v). Conclude for `R′_{2,j}` by Nakayama.
+A proof route is as follows. Show by induction on the length of Q that M∞(Q) is minimally generated by r elements for every nonzero quotient Q of `R′_{2,j}`/`pR′_{2,j}`. Length one: Q = σ_v and §3.2 (i). If soc_K(Q) contains a nonmodular weight σ then M∞(Q) = M∞(Q/σ) (§1.5); so assume all socle constituents are modular. If [rad_K(Q)/soc_K(Q) : σ_v] ≠ 0, pick Q′ ⊊ Q with cosocle σ_v not in the socle; since `R′_{2,j}`/p is a quotient of R/pR ≅ (`Proj_{K/Z₁}σ_v`)/`𝔪²_{K₁}` (MP.8/projective-truncation, which applies because σ_v is 8-deep, hence 3-deep), relative projectivity (MP.9/relative-projectivity) makes Q′ a quotient of Q of smaller length; apply Le's Lemma 4.5 to M∞(Q′) ⊆ M∞(Q) with a socle weight σ′ of Q′. Otherwise [Q/soc_K(Q) : σ_v] = 1, and by §4.2 the quotient Q/S is K₁-fixed, hence a quotient of P; by the exact sequence of §4.1 the image of `P_{σ_{1,j}}` ⊕ `P_{σ_{2,j}}` in Q lies in S and is zero, so Q is a quotient of P and M∞(Q) is generated by r elements (§3.4); minimality from the quotient M∞(σ_v). Conclude for `R′_{2,j}` by Nakayama.
 
 **Checks.**
 
 - At r=2 the terminal quotient σ has residual patched dimension 2, hence every surjection onto it needs at least 2 generators; the induction supplies at most 2, so the minimum is exactly 2.
 
-*Needs:* §4.1; §4.2; §3.2; §3.4; §1.6; ModpRepresentationsOfGL2OverLocalFields MP.9/relative-projectivity; ModpRepresentationsOfGL2OverLocalFields MP.8/projective-truncation.
+*Needs:* §4.1; §4.2; §3.2; §3.4; §1.5; ModpRepresentationsOfGL2OverLocalFields MP.9/relative-projectivity; ModpRepresentationsOfGL2OverLocalFields MP.8/projective-truncation.
 
 ### 4.4 Patched lattices in V(α_j) ⊗ τ° with cosocle σ_v
 
@@ -879,7 +890,7 @@ A proof route is as follows. The constituents of τ° are those of a Diamond box
 
 - V(α_j) has dimension 3 and scalar z acts by z²z⁻²=1. The three local tensor labels for a modular constituent lie in the allowed box 0≤a_j≤2; labels −2,−1,3 in the kernel contribute patched value 0, leaving the same rank r in source and quotient.
 
-*Needs:* §4.1; §3.2; §1.3; §1.6; ModpRepresentationsOfGL2OverLocalFields MP.6/adjoint-tensor; ModpRepresentationsOfGL2OverLocalFields MP.6/diamond-box; ModpRepresentationsOfGL2OverLocalFields MP.3/tame-weight-set; LocalGaloisDeformationRingsPartII T.0, T.6–T.7 and the applicable supplier gaps.
+*Needs:* §4.1; §3.2; §1.2; §1.5; ModpRepresentationsOfGL2OverLocalFields MP.6/adjoint-tensor; ModpRepresentationsOfGL2OverLocalFields MP.6/diamond-box; ModpRepresentationsOfGL2OverLocalFields MP.3/tame-weight-set; LocalGaloisDeformationRingsPartII T.0, T.6–T.7 and the applicable supplier gaps.
 
 ### 4.5 Freeness of `M∞(R′_{2,j})`
 
@@ -895,7 +906,7 @@ A proof route is as follows. By §4.3 there is a surjection f : S^r ↠ `M∞(R�
 
 - For r=2 a surjection S²→M becomes an isomorphism on every characteristic-zero type component of rank 2. Its kernel has generic rank 0 and is p-power torsion; p-torsion-freeness of S² gives kernel 0.
 
-*Needs:* §4.3; §4.4; §3.3; §1.3; LocalGaloisDeformationRingsPartII T.0, T.6–T.7 and the applicable supplier gaps.
+*Needs:* §4.3; §4.4; §3.3; §1.2; LocalGaloisDeformationRingsPartII T.0, T.6–T.7 and the applicable supplier gaps.
 
 ### 4.6 L_j and N_j agree modulo the third radical
 
@@ -921,13 +932,13 @@ N_j formed with τ₀; π the weighted representation, with `π^{K₁}` ≅ `D�
 
 (BHHMS23, Proposition 8.3.7 and proof, pp. 100–101; BHHMS23 line 5030).
 
-A proof route is as follows. By §1.6, generation by r elements is equivalent to dim_𝔽 Hom_K(L_j, π) = r (resp. Hom_K(N_j, π)); since N_j is a quotient of L_j the forward implication is clear. Conversely, suppose dim Hom_K(L_j, π) > r; since dim Hom_K(σ_v, π) = r there is h : L_j → π not factoring through cosoc L_j = σ_v; choose one with [Im h : σ_v] minimal and put Q = Im h. Minimality and relative projectivity (MP.9/relative-projectivity, applicable because L_j/p is a quotient of `L_{f−1}`/p (§4.1), which is (`Proj_{K/Z₁}σ_v`)/`𝔪²_{K₁}` by MP.8/projective-truncation for the 8-deep σ_v) force [Q/soc_K Q : σ_v] = 1. From `π^{K₁}` = `D₀(r̄_v^∨)^{⊕r}`, soc_K Q consists of modular weights, so Q satisfies (a)–(b) of §4.2; then rad_K(Q) ⊆ `π^{K₁}`, and rad_K Q/soc_K Q embeds in `π^{K₁}`/soc_K π, giving (c)–(d); hence Q has Loewy length ≤ 3. By §4.6 h factors through N_j, contradicting the hypothesis on N_j. (In the source this step reads dim Hom_K(σ_v, π) = f; the correct value is r.)
+A proof route is as follows. By §1.5, generation by r elements is equivalent to dim_𝔽 Hom_K(L_j, π) = r (resp. Hom_K(N_j, π)); since N_j is a quotient of L_j the forward implication is clear. Conversely, suppose dim Hom_K(L_j, π) > r; since dim Hom_K(σ_v, π) = r there is h : L_j → π not factoring through cosoc L_j = σ_v; choose one with [Im h : σ_v] minimal and put Q = Im h. Minimality and relative projectivity (MP.9/relative-projectivity, applicable because L_j/p is a quotient of `L_{f−1}`/p (§4.1), which is (`Proj_{K/Z₁}σ_v`)/`𝔪²_{K₁}` by MP.8/projective-truncation for the 8-deep σ_v) force [Q/soc_K Q : σ_v] = 1. From `π^{K₁}` = `D₀(r̄_v^∨)^{⊕r}`, soc_K Q consists of modular weights, so Q satisfies (a)–(b) of §4.2; then rad_K(Q) ⊆ `π^{K₁}`, and rad_K Q/soc_K Q embeds in `π^{K₁}`/soc_K π, giving (c)–(d); hence Q has Loewy length ≤ 3. By §4.6 h factors through N_j, contradicting the hypothesis on N_j. (In the source this step reads dim Hom_K(σ_v, π) = f; the correct value is r.)
 
 **Checks.**
 
 - At f=1, r=2 the relevant baseline Hom dimension is 2, while f is 1. A hypothetical extra map gives dimension ≥3 and an image of length at most 3, which factors through N_j; equality of Hom dimensions is 2=2.
 
-*Needs:* §4.6; §4.2; §3.4; §1.6; ModpRepresentationsOfGL2OverLocalFields MP.9/relative-projectivity; ModpRepresentationsOfGL2OverLocalFields MP.8/projective-truncation; ModpRepresentationsOfGL2OverLocalFields MP.3/diamond-socle.
+*Needs:* §4.6; §4.2; §3.4; §1.5; ModpRepresentationsOfGL2OverLocalFields MP.9/relative-projectivity; ModpRepresentationsOfGL2OverLocalFields MP.8/projective-truncation; ModpRepresentationsOfGL2OverLocalFields MP.3/diamond-socle.
 
 ### 4.8 Freeness of the patched glued lattices (BHHMS23 Theorem 1.8)
 
@@ -951,11 +962,11 @@ A proof route is as follows. Use the twist/reindexing of BHHMS23 proof of Theore
 
 - For f=2 and j=1 the Hodge profiles on the characteristic-zero support are ((1,0),(1,0)), ((2,−1),(1,0)) and ((1,0),(2,−1)): three profiles. The simultaneous profile ((2,−1),(2,−1)) is absent. The generic representation has rank (1+3+3) dim P=7 dim P, whereas adjoining the double-adjoint tensor would add 9 dim P and give 16 dim P. A rectangular four-profile support would therefore include a nonempty generic locus on which this patched module is zero.
 
-*Needs:* §4.1; §4.7; §4.4; §4.5; §3.4; §2.3; §1.3; §3.3; LocalGaloisDeformationRingsPartII T.0, T.6–T.7 and the applicable supplier gaps.
+*Needs:* §4.1; §4.7; §4.4; §4.5; §3.4; §2.3; §1.2; §3.3; LocalGaloisDeformationRingsPartII T.0, T.6–T.7 and the applicable supplier gaps.
 
 ### 4.9 Multiplicity one for the first-order projective envelope (BHHMS23 Theorem 8.3.11)
 
-M∞(R) is free of rank r over R∞/`∩_{λ,τ}` `p_{λ,τ}`, with τ over the tame types with σ_v ∈ JH(σ(τ)) and λ equal to the parallel profile (1,0) or to (2,−1)_i for exactly one embedding i, and dim_𝔽 M∞(R)/𝔪∞ = r. Consequently the surjection (`Proj_{K/Z₁}σ_v`)/`𝔪²_{K₁}` ↠ σ_v induces an isomorphism of nonzero finite-dimensional 𝔽-vector spaces M∞((`Proj_{K/Z₁}σ_v`)/`𝔪²_{K₁}`)/𝔪∞ ≅ M∞(σ_v)/𝔪∞; equivalently, by §1.6, Hom_K(σ_v, π) ≅ Hom_K((`Proj_{K/Z₁}σ_v`)/`𝔪²_{K₁}`, π).
+M∞(R) is free of rank r over R∞/`∩_{λ,τ}` `p_{λ,τ}`, with τ over the tame types with σ_v ∈ JH(σ(τ)) and λ equal to the parallel profile (1,0) or to (2,−1)_i for exactly one embedding i, and dim_𝔽 M∞(R)/𝔪∞ = r. Consequently the surjection (`Proj_{K/Z₁}σ_v`)/`𝔪²_{K₁}` ↠ σ_v induces an isomorphism of nonzero finite-dimensional 𝔽-vector spaces M∞((`Proj_{K/Z₁}σ_v`)/`𝔪²_{K₁}`)/𝔪∞ ≅ M∞(σ_v)/𝔪∞; equivalently, by §1.5, Hom_K(σ_v, π) ≅ Hom_K((`Proj_{K/Z₁}σ_v`)/`𝔪²_{K₁}`, π).
 
 σ_v ∈ W(r̄_v^∨); R = `L_{f−1}` with R/pR ≅ (`Proj_{K/Z₁}σ_v`)/`𝔪²_{K₁}` (MP.8/projective-truncation).
 
@@ -971,7 +982,7 @@ A proof route is as follows. The first assertion is §4.8 for j = f − 1; the f
 
 - At f=2 the endpoint still has three Hodge profiles, not four; its residual patched fibre has dimension r. Freeness over its actual support suffices for the fibre theorem and does not require the missing double-adjoint profile.
 
-*Needs:* §4.8; §3.2; §1.6; ModpRepresentationsOfGL2OverLocalFields MP.8/projective-truncation.
+*Needs:* §4.8; §3.2; §1.5; ModpRepresentationsOfGL2OverLocalFields MP.8/projective-truncation.
 
 ### Examples
 
@@ -997,13 +1008,13 @@ For a generic global datum and the weighted representation π of §0.5, `dim_{GL
 
 (BHHMS23, Theorem 8.4.1 and proof, (80)–(81), pp. 104–105; Theorem 1.10, p. 10; BHHMS23 line 5172; GN22, Lemmas A.16 and A.19, Definition A.2, Proposition A.4(1), pp. 42–47; GN22 line 2122).
 
-A proof route is as follows. Upper bound: verify the three hypotheses of MP.7/local-gk-bound for ρ = r̄_v^∨. (i) JH(soc_K π) = W(r̄_v^∨) by the weight theorem (§0.6). (ii) [`π[𝔪²_{K₁}]` : σ_v] = [soc_K π : σ_v] for σ_v ∈ W(r̄_v^∨) by §4.9 in its Hom form. (iii) `JH(π^{I₁})` = JH(D₁(r̄_v^∨)): since K₁ ⊆ I₁, `π^{I₁}` = `(π^{K₁})^{I₁}` = `(D₀(r̄_v^∨)^{⊕r})^{I₁}` = `D₁(r̄_v^∨)^{⊕r}` by §3.4 and MP.3/diamond-socle (BHHMS argue instead with Breuil's Lemma 9.2 and Breuil–Paškūnas Lemma 14.1); MP.7/diamond-connected (D₁ of a tame 6-deep ρ is connected) and MP.7/connected-characters turn (iii) into the connectedness hypothesis. Hence dim π ≤ f. Lower bound: let M∞ be the big patched module (§1.7). By §2.4 (2) for A = R∞⟦K₁/Z₁⟧ and MP.4/dimension-comparisons, `j_{R∞⟦K₁/Z₁⟧}(M∞)` ≥ `j_{𝔽⟦K₁/Z₁⟧}(M∞/𝔪∞)` = 3f − dim π (BHHMS23 (80)). M∞ is finite free over S∞⟦K₁/Z₁⟧, so its grade there is 0 and its dimension is dim S∞ + dim K₁/Z₁; by §2.4 (3) its dimension over R∞⟦K₁/Z₁⟧ is the same, so `j_{R∞⟦K₁/Z₁⟧}(M∞)` = dim R∞ − dim S∞ = 2f (§1.2; BHHMS23 (81)). Combining, 2f ≥ 3f − dim π, so dim π ≥ f.
+A proof route is as follows. Upper bound: verify the three hypotheses of MP.7/local-gk-bound for ρ = r̄_v^∨. (i) JH(soc_K π) = W(r̄_v^∨) by the weight theorem (§0.6). (ii) [`π[𝔪²_{K₁}]` : σ_v] = [soc_K π : σ_v] for σ_v ∈ W(r̄_v^∨) by §4.9 in its Hom form. (iii) `JH(π^{I₁})` = JH(D₁(r̄_v^∨)): since K₁ ⊆ I₁, `π^{I₁}` = `(π^{K₁})^{I₁}` = `(D₀(r̄_v^∨)^{⊕r})^{I₁}` = `D₁(r̄_v^∨)^{⊕r}` by §3.4 and MP.3/diamond-socle (BHHMS argue instead with Breuil's Lemma 9.2 and Breuil–Paškūnas Lemma 14.1); MP.7/diamond-connected (D₁ of a tame 6-deep ρ is connected) and MP.7/connected-characters turn (iii) into the connectedness hypothesis. Hence dim π ≤ f. Lower bound: let M∞ be the big patched module (§1.6). By §2.4 (2) for A = R∞⟦K₁/Z₁⟧ and MP.4/dimension-comparisons, `j_{R∞⟦K₁/Z₁⟧}(M∞)` ≥ `j_{𝔽⟦K₁/Z₁⟧}(M∞/𝔪∞)` = 3f − dim π (BHHMS23 (80)). M∞ is finite free over S∞⟦K₁/Z₁⟧, so its grade there is 0 and its dimension is dim S∞ + dim K₁/Z₁; by §2.4 (3) its dimension over R∞⟦K₁/Z₁⟧ is the same, so `j_{R∞⟦K₁/Z₁⟧}(M∞)` = dim R∞ − dim S∞ = 2f (§1.1; BHHMS23 (81)). Combining, 2f ≥ 3f − dim π, so dim π ≥ f.
 
 **Checks.**
 
 - At f=1, grades satisfy 2≥3−dim π and the upper bound is dim π≤1, giving dim π=1. At f=2, 4≥6−dim π and dim π≤2 give dim π=2. A nonzero finite-dimensional smooth representation has GK dimension 0 and cannot be this π.
 
-*Needs:* ModpRepresentationsOfGL2OverLocalFields MP.7/local-gk-bound; ModpRepresentationsOfGL2OverLocalFields MP.7/connected-characters; ModpRepresentationsOfGL2OverLocalFields MP.7/diamond-connected; ModpRepresentationsOfGL2OverLocalFields MP.4/gk-dimension; ModpRepresentationsOfGL2OverLocalFields MP.4/dimension-comparisons; ModpRepresentationsOfGL2OverLocalFields MP.3/diamond-socle; §3.4; §0.6; §0.5; §4.9; §1.7; §1.2; §2.4.
+*Needs:* ModpRepresentationsOfGL2OverLocalFields MP.7/local-gk-bound; ModpRepresentationsOfGL2OverLocalFields MP.7/connected-characters; ModpRepresentationsOfGL2OverLocalFields MP.7/diamond-connected; ModpRepresentationsOfGL2OverLocalFields MP.4/gk-dimension; ModpRepresentationsOfGL2OverLocalFields MP.4/dimension-comparisons; ModpRepresentationsOfGL2OverLocalFields MP.3/diamond-socle; §3.4; §0.6; §0.5; §4.9; §1.6; §1.1; §2.4.
 
 ### 5.2 Structure of `π[𝔪²_{K₁}]` (BHHMS23 Theorem 1.9)
 
@@ -1015,29 +1026,29 @@ For the weighted π there is r ≥ 1 with `π[𝔪²_{K₁}]` ≅ `(⊕_{σ_v∈
 
 (BHHMS23, Theorem 8.4.2 and proof, p. 105; Theorem 1.9, p. 10; BHHMS23 line 5246).
 
-A proof route is as follows. M∞ is finite projective over S∞⟦K⟧_Z (§1.7), so M∞/(p, x₁, …) is finite projective over 𝔽⟦K⟧_Z; since Hom(M∞/(p, x), σ_v^∨)^∨ = M∞(σ_v)/(p, x) is nonzero exactly for σ_v ∈ W(r̄_v^∨), M∞/(p, x) ≅ `⊕_{σ_v}(Proj_{K/Z₁}σ_v^∨)^{m_{σ_v}}` with `m_{σ_v}` ≥ r. By the defining property of `D̃_{σ_v}`, restriction gives Hom(M∞/(p, x), `D̃_{σ_v}^∨`) ≅ Hom(M∞/(p, x), σ_v^∨); taking 𝔪∞-torsion and M∞/𝔪∞ ≅ π^∨ gives `Hom_K(D̃_{σ_v}, π)` ≅ Hom_K(σ_v, soc_K π). As soc_K π = `(⊕σ_v)^{⊕r}` (§3.2), `(⊕D̃_{σ_v})^{⊕r}` ⊆ `π[𝔪²_{K₁}]`; it cannot be larger by MP.6/socle-enlargement and §4.9; multiplicities by the constituent description of MP.6/socle-enlargement.
+A proof route is as follows. M∞ is finite projective over S∞⟦K⟧_Z (§1.6), so M∞/(p, x₁, …) is finite projective over 𝔽⟦K⟧_Z; since Hom(M∞/(p, x), σ_v^∨)^∨ = M∞(σ_v)/(p, x) is nonzero exactly for σ_v ∈ W(r̄_v^∨), M∞/(p, x) ≅ `⊕_{σ_v}(Proj_{K/Z₁}σ_v^∨)^{m_{σ_v}}` with `m_{σ_v}` ≥ r. By the defining property of `D̃_{σ_v}`, restriction gives Hom(M∞/(p, x), `D̃_{σ_v}^∨`) ≅ Hom(M∞/(p, x), σ_v^∨); taking 𝔪∞-torsion and M∞/𝔪∞ ≅ π^∨ gives `Hom_K(D̃_{σ_v}, π)` ≅ Hom_K(σ_v, soc_K π). As soc_K π = `(⊕σ_v)^{⊕r}` (§3.2), `(⊕D̃_{σ_v})^{⊕r}` ⊆ `π[𝔪²_{K₁}]`; it cannot be larger by MP.6/socle-enlargement and §4.9; multiplicities by the constituent description of MP.6/socle-enlargement.
 
 **Checks.**
 
 - For r=2 each constituent in the direct sum of first-order summands occurs twice, so a multiplicity-one conclusion would return 1 instead of 2. Passing to K₁-invariants recovers D₀² consistently with §3.4.
 
-*Needs:* §1.7; §3.2; §4.9; §1.6; ModpRepresentationsOfGL2OverLocalFields MP.6/socle-enlargement; ModpRepresentationsOfGL2OverLocalFields MP.5/first-order-weight-hulls.
+*Needs:* §1.6; §3.2; §4.9; §1.5; ModpRepresentationsOfGL2OverLocalFields MP.6/socle-enlargement; ModpRepresentationsOfGL2OverLocalFields MP.5/first-order-weight-hulls.
 
 ### 5.3 The big patched module is faithfully flat over R∞
 
 The big patched module M∞ is a faithfully flat R∞-module.
 
-Generic global datum; M∞ as in §1.7, finite free over S∞⟦K₁/Z₁⟧.
+Generic global datum; M∞ as in §1.6, finite free over S∞⟦K₁/Z₁⟧.
 
 (BHHMS23, Theorem 8.4.3 and proof, pp. 105–106; BHHMS23 line 5283; GN22, Corollary A.29 and Proposition A.30; GN22 line 2235).
 
-A proof route is as follows. M∞ is free of finite rank over A = S∞⟦K₁/Z₁⟧, hence Cohen–Macaulay over A; by §2.5 it is Cohen–Macaulay over B = R∞⟦K₁/Z₁⟧ (R∞ is a power series ring over W(𝔽) by §1.2, so B is an Iwasawa algebra with power-series coefficients). By §5.1 and the computations (80)–(81) there, j_B(M∞) = 2f = `j_{𝔽⟦K₁/Z₁⟧}(M∞/𝔪∞)`. §2.6 gives flatness over R∞; M∞/𝔪∞ ≅ π^∨ ≠ 0 and R∞ is local, so M∞ is faithfully flat.
+A proof route is as follows. M∞ is free of finite rank over A = S∞⟦K₁/Z₁⟧, hence Cohen–Macaulay over A; by §2.5 it is Cohen–Macaulay over B = R∞⟦K₁/Z₁⟧ (R∞ is a power series ring over W(𝔽) by §1.1, so B is an Iwasawa algebra with power-series coefficients). By §5.1 and the computations (80)–(81) there, j_B(M∞) = 2f = `j_{𝔽⟦K₁/Z₁⟧}(M∞/𝔪∞)`. §2.6 gives flatness over R∞; M∞/𝔪∞ ≅ π^∨ ≠ 0 and R∞ is local, so M∞ is faithfully flat.
 
 **Checks.**
 
 - At f=1 both required grades are 2; at f=2 both are 4. The residual fibre π∨ is nonzero. The flat module Frac(O) has closed fibre 0 and is not faithfully flat over O, showing that flatness alone is insufficient.
 
-*Needs:* §1.7; §1.2; §2.5; §2.6; §5.1; NoncommutativeAndEquivariantIwasawa §§F.1, 0.10–0.11; CompletedCohomologyPartII §F.1.
+*Needs:* §1.6; §1.1; §2.5; §2.6; §5.1; NoncommutativeAndEquivariantIwasawa §§F.1, 0.10–0.11; CompletedCohomologyPartII §F.1.
 
 ### 5.4 Nonzero Banach lifts of π (BHHMS23 Theorem 1.3)
 
@@ -1053,7 +1064,7 @@ A proof route is as follows. Admissibility and unitarity: let x̄ : R∞ → �
 
 - For a compact torsion module 𝔽, Hom_O(𝔽,E)=0, so a nonzero residual fibre alone does not ensure a Banach lift. For O-flat specialization O the bounded dual is E with unit ball O and reduction 𝔽; faithful flatness excludes the torsion alternative.
 
-*Needs:* §5.3; §1.7; CompletedCohomologyPartII §F.1, 3.1–3.2; NoncommutativeAndEquivariantIwasawa §§F.1, 0.10–0.11; CompletedCohomologyPartII §F.1.
+*Needs:* §5.3; §1.6; CompletedCohomologyPartII §F.1, 3.1–3.2; NoncommutativeAndEquivariantIwasawa §§F.1, 0.10–0.11; CompletedCohomologyPartII §F.1.
 
 ### 5.5 Gelfand–Kirillov dimension of mod p cohomology of Shimura curves (BHHMS23 Theorem 1.1)
 
@@ -1111,13 +1122,13 @@ Generic global datum with p inert in F; `V_{w₁}` sufficiently small at the cho
 
 (BHHMS23, (84), p. 108; Corollary 8.5.1 and proof, p. 109; Theorem 1.2, p. 4; BHHMS23 line 5447; GN22, Proposition 4.3.1, §4.3; GN22 line 1408).
 
-A proof route is as follows. By §1.7, M∞/(x₁, …) is the dual of the localized completed cohomology, compatibly with the surjections; it is faithfully flat over R∞/(x₁, …) by base change of §5.3. A faithfully flat module is faithful, so the composite R∞/(x) ↠ R^ψ ↠ T̂ → `End_{W(𝔽)}(dual of Ĥ¹)` is injective; hence all maps are isomorphisms, and the dual of Ĥ¹ is faithfully flat over T̂. M∞ is faithfully flat over R∞ and over S∞ (finite free over S∞⟦K₁/Z₁⟧), so R∞ is faithfully flat over S∞; thus the regular sequence (x₁, …) of S∞ is R∞-regular and T̂ ≅ R∞/(x₁, …) is a power series ring over W(𝔽) modulo a regular sequence, a complete intersection (BHHMS reproduce Gee–Newton Proposition 4.3.1 in this setting).
+A proof route is as follows. By §1.6, M∞/(x₁, …) is the dual of the localized completed cohomology, compatibly with the surjections; it is faithfully flat over R∞/(x₁, …) by base change of §5.3. A faithfully flat module is faithful, so the composite R∞/(x) ↠ R^ψ ↠ T̂ → `End_{W(𝔽)}(dual of Ĥ¹)` is injective; hence all maps are isomorphisms, and the dual of Ĥ¹ is faithfully flat over T̂. M∞ is faithfully flat over R∞ and over S∞ (finite free over S∞⟦K₁/Z₁⟧), so R∞ is faithfully flat over S∞; thus the regular sequence (x₁, …) of S∞ is R∞-regular and T̂ ≅ R∞/(x₁, …) is a power series ring over W(𝔽) modulo a regular sequence, a complete intersection (BHHMS reproduce Gee–Newton Proposition 4.3.1 in this setting).
 
 **Checks.**
 
 - For a regular power-series ring R=O[[x,t]], quotienting by the regular sequence (x) leaves O[[t]], a codimension-one complete intersection. Acting on its faithful free module R/(x), any intermediate surjection kernel acts by 0 and is therefore 0; the zero module would detect no kernel.
 
-*Needs:* §5.6; §5.3; §1.7; §1.2; DeformationAndDerivedPatchingAlgebra §3.4; Mathlib `Module.FaithfullyFlat`.
+*Needs:* §5.6; §5.3; §1.6; §1.1; DeformationAndDerivedPatchingAlgebra §3.4; Mathlib `Module.FaithfullyFlat`.
 
 ### Examples
 
