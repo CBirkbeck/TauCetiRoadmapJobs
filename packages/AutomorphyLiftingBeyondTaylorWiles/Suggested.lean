@@ -16,13 +16,14 @@ None of the following headline theorems is statable on the pinned carriers:
   detector and global representing rings. A numerical identity alone does not
   state that arithmetic theorem.
 * The rank-two Taylor–Wiles level comparison (CG18 Lemma 9.6) lacks arithmetic
-  quotient cohomology, its actual level maps, local systems and selected Hecke
-  ideals.
+  quotient cohomology, its component-indexed level maps and coefficient
+  transports, local systems and selected Hecke ideals.
 * The GL_n distinct-root global comparison lacks the arithmetic tower, its
   localized smooth block module and the derived hyperspecial/parahoric
   comparison.
-* The PGL_n distinct-root comparison lacks the central-character descent and
-  the corresponding arithmetic derived-cohomology carriers.
+* The conditional PGL_n distinct-root comparison, with its principal-series
+  block hypothesis at every successive base level, lacks central-character
+  descent and the arithmetic tower and derived-cohomology carriers.
 * The two arithmetic patched complexes and their maximal-depth top modules lack
   the finite-cutoff arithmetic patching data, deformation actions and paired
   coefficient comparisons.

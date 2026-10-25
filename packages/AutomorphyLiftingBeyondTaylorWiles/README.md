@@ -6,7 +6,7 @@
 
 PotentialAutomorphyInfrastructure Layers 3–5 carry out the unconditional automorphy lifting argument for GLₙ over CM fields; the present construction retains arbitrary number fields and an explicit Hecke–Galois hypothesis. It owns the simultaneous character and unipotent arithmetic data, their local-ring comparison, the numerical coincidence, the rank-two level comparison at arbitrary number-field components, the finite data attached to these quotients, and the application of patching to their support.
 
-Generic arithmetic quotients, local systems, Betti and boundary complexes, Hecke correspondences and duality are stated by ArithmeticLocallySymmetricSpaces ALS.0–ALS.6. Only their Res PGLₙ instantiations occur here. IntegralHeckeAndGaloisDeterminants §§2.1–2.3 and 3a.1–3b.2 owns image Hecke algebras, factorial localization and the Galois-type predicate; the variant here takes one simultaneous image on every intermediate cover and every finite coefficient quotient. LocalGaloisDeformationRings §§1.6, 1.13, 2.8, 2.15–2.16, 2.21 and 2.23 owns the local deformation conditions and component calculations. GlobalGaloisDeformations §§3.3–3.7 and 7.2–7.4 owns representability, framing and global presentations. Their representing objects are specialized here.
+Generic arithmetic quotients, local systems, Betti and boundary complexes, Hecke correspondences and duality are stated by ArithmeticLocallySymmetricSpaces ALS.0–ALS.6. Only their Res PGLₙ instantiations occur here. IntegralHeckeAndGaloisDeterminants §§2.1–2.3 and 3a.1–3b.2 owns image Hecke algebras, factorial localization and the Galois-type predicate; the variant here takes one simultaneous image on every intermediate cover and every finite coefficient quotient. LocalGaloisDeformationRings §§1.6, 1.13, 2.8, 2.15–2.16 and 2.21 owns the local deformation conditions and component calculations. GlobalGaloisDeformations §§3.3–3.7 and 7.2–7.4 owns representability, framing and global presentations. Their representing objects are specialized here.
 
 DeformationAndDerivedPatchingAlgebra §§6.1–6.8, 7.3, 8.6 and 9.1–9.2 owns near faithfulness, minimal representatives, generic patching, codimension concentration and support descent; Layer 5 applies them to the particular finite data of Layer 4. ReductiveGroupsPartII RG2.2.4 owns the local tree and amalgam, and FreeGroupsAndLimitGroups §§4.5 and 4.8 own the structure theorem presenting a group acting on a tree as the fundamental group of its quotient graph of groups. ModularCurvesPartII §15.4 states the Lyndon sequence only for its principal-level amalgam over ℚ; the sequence of §3.4 is a kept variant for the number-field amalgam of §3.2, and the global component and operator comparison below differs by allowing all number fields and the actual character coefficients. SmoothRepresentationsOfLocalGroups SR.5.3 owns the distinct-root local block and its derived comparison. KTheoryLowDegrees §11.6 owns factorization of arithmetic-lattice characters through congruence quotients; the Hecke-localized cohomology consequence uses the supplier contract below.
 
@@ -52,6 +52,12 @@ What ArithmeticLocallySymmetricSpaces must provide (gap:localized-orbifold-perfe
 
 What ArithmeticLocallySymmetricSpaces must provide (gap:congruence-character-localized-h1): Using the character-factorization theorem of KTheoryLowDegrees §11.6, prove H⁰(Y(K),k)_m=H¹(Y(K),k)_m=0 for PGL₃/ℚ and PGL₂ over CM quartic fields at every level, for p>n unramified in F and a non-Eisenstein ideal of Galois type, retaining compatibility with the dual ideal and Hecke action.
 
+### From TauCetiRoadmap.CompletedCohomologyPartII
+
+Consume §§0.1–0.3 and 1.1 for coherent level systems and the fixed-exponent smooth colimit, and §6.2 for continuous fixed-exponent descent in its p-level setting. The tame-place version required in §§3.6–3.7 is the following contract; ALS.6.2 remains its finite-cover input.
+
+What CompletedCohomologyPartII must provide (gap:tame-place-fixed-exponent-descent): Extend fixed-exponent descent of §6.2 to x∤p for GLₙ and PGLₙ arithmetic groupoid level systems with fixed level and local system away from x: for each b≥1 construct the discrete smooth pullback colimit Mʲ_b=colim_t Hʲ(Z(xᵗ),O(ψ)⊗O/ϖᵇ), using principal x-levels cofinal inside each hyperspecial or line-parahoric U, and convergent first-quadrant spectral sequences Hⁱ_cts(U,Mʲ_b)⇒Hⁱ⁺ʲ(Z(U),O(ψ)⊗O/ϖᵇ), natural for the hyperspecial-to-parahoric comparison, coefficient maps, away-from-x Hecke operators and localization; prove the required regular-cover or groupoid descent comparisons retaining all arithmetic stabilizers rather than assuming faithful deck quotients.
+
 ### From TauCetiRoadmap.IntegralHeckeAndGaloisDeterminants
 
 Consume §§2.1–2.3 for finite Hecke action images, operator localization, and (§2.2, finite local factors and specified idempotent summands) the decomposition of a finite commutative algebra over a complete Noetherian local ring into its complete local factors, with the corresponding summands of every module it acts on; §3a.1 for the unnormalized polynomial `sum_i (-1)^iN(v)^{i(i-1)/2}T_{v,i}X^{n-i}`; §§3b.1–3b.2 for Galois-type and dual residual ideals; §§1.2–1.3 for semisimple reconstruction and absolutely irreducible lifting. A relation valid on the full cover alone is not assumed to hold on intermediate covers; the simultaneous image of §0.3 includes them in its definition.
@@ -60,7 +66,9 @@ What IntegralHeckeAndGaloisDeterminants must provide (gap:simultaneous-orbifold-
 
 ### From TauCetiRoadmap.LocalGaloisDeformationRings
 
-Consume §§F.1–F.3 for strict deformation and local-problem carriers, §§1.6 and 1.13 for the Fontaine–Laffaille condition and its smooth dimension, §1.10 for fixed determinant, §§2.8 and 2.21 for minimal regular-unipotent ramification, §2.15 for literal character-polynomial quotients and their components, and §§2.16 and 2.23 for the rank-n Taylor–Wiles block condition and tangent contribution 1. In §2.15 the generic component statements concern characteristic-zero minimal primes; they do not imply coefficient flatness of the literal quotient. Determinant fixing uses p∤n and the unramified n-th-root twist.
+Consume §§F.1–F.3 for strict deformation and local-problem carriers, §§1.6 and 1.13 for the Fontaine–Laffaille condition and its smooth dimension, §1.10 for fixed determinant, §§2.8 and 2.21 for minimal regular-unipotent ramification, §2.15 for literal character-polynomial quotients and their components, and §2.16 for the fixed-determinant two-scalar Taylor–Wiles condition and tangent contribution 1 when residual Frobenius is semisimple; §2.23 instead requires an unramified complementary block and is not this condition. In §2.15 the generic component statements concern characteristic-zero minimal primes; they do not imply coefficient flatness of the literal quotient. Determinant fixing uses p∤n and the unramified n-th-root twist.
+
+What LocalGaloisDeformationRings must provide (gap:nonsemisimple-two-scalar-taylor-wiles): For ℓ≠p, p>n≥2, residue norm q≡1 modulo p, an arbitrary unramified rank-n residual representation with a specified simple generalized Frobenius eigenline and its complementary generalized eigenspaces, and an unramified determinant ξ lifting the residual determinant, extend the two-scalar condition of §2.16 without semisimplicity: construct its framed representing quotient and coefficient-natural block projectors, scalar inertia characters θ on the line and η on the complement with θηⁿ⁻¹=1 and θ^(q−1)=η^(q−1)=1, prove dim L−h⁰(ad⁰r̄)=1, and identify augmentation of its inertia group-algebra map with the fixed-determinant unramified local problem.
 
 ### From TauCetiRoadmap.GlobalGaloisDeformations
 
@@ -268,7 +276,7 @@ The specialized interface records the following facts.
 
 ### 0.4 The Taylor–Wiles maximal ideal m_Q and projector e_Q
 
-Let m be a maximal ideal of `T^an_{Q,psi}` with residue field k. For each x ∈ Q fix a factorization P_x(X) = (X − α_x)Q_x(X) in k[X] of a monic polynomial of degree n with Q_x(α_x) ≠ 0. In the application P_x is the characteristic polynomial of r̄(Frob_x) for the residual representation r̄ of a standing datum (§1.1), r̄|G_x ≅ s̄_x ⊕ ψ̄_x with ψ̄_x a one-dimensional generalized Frobenius eigenspace, and α_x := ψ̄_x(Frob_x). The ideal generated by m and the V_x−α̃_x is the selected maximal ideal m_Q when that factor is in the support; otherwise its localization is zero. In the comparison theorem properness is a consequence of the nonzero base eigensystem, not of an arbitrary polynomial factorization. The Taylor–Wiles projector is e_Q := `lim_{k->infty}` `prod_{x in Q}` `QTilde_x(V_x)^{k!}`, with Q̃_x any lift of Q_x to O[X]. On every finite `T_{Q,psi}`-module M supported above m it is the idempotent projecting onto ⊕_𝔫 M_𝔫, the sum over the maximal ideals 𝔫 of `T_{Q,psi}` above m at which no V_x is congruent to a root of Q_x; when the residual eigenvalues of every V_x on M are roots of P_x, this is the localization `M_{m_Q}`.
+Let m be a maximal ideal of `T^an_{Q,psi}` with residue field k. For each x ∈ Q fix a factorization P_x(X) = (X − α_x)Q_x(X) in k[X] of a monic polynomial of degree n with Q_x(α_x) ≠ 0. In the application P_x is the characteristic polynomial of r̄(Frob_x) for the residual representation r̄ of a standing datum (§1.1), r̄|G_x ≅ s̄_x ⊕ ψ̄_x with ψ̄_x the full generalized eigenspace of a simple Frobenius eigenvalue, and α_x := ψ̄_x(Frob_x). The ideal generated by m and the V_x−α̃_x is the selected maximal ideal m_Q when that factor is in the support; otherwise its localization is zero. In the comparison theorem properness is a consequence of the nonzero base eigensystem, not of an arbitrary polynomial factorization. The Taylor–Wiles projector is e_Q := `lim_{k->infty}` `prod_{x in Q}` `QTilde_x(V_x)^{k!}`, with Q̃_x any lift of Q_x to O[X]. On every finite `T_{Q,psi}`-module M supported above m it is the idempotent projecting onto ⊕_𝔫 M_𝔫, the sum over the maximal ideals 𝔫 of `T_{Q,psi}` above m at which no V_x is congruent to a root of Q_x; when the residual eigenvalues of every V_x on M are roots of P_x, this is the localization `M_{m_Q}`.
 
 α_x a simple root of P_x, as for the one-dimensional generalized eigenspace ψ̄_x at a Taylor–Wiles prime (§1.6). Limits are in the profinite topology of the finite O-algebra `T_{Q,psi,m}`.
 
@@ -454,7 +462,7 @@ The specialized interface records the following facts.
 
 - For R = ∅, R^1_loc = R^χ_loc ≅ O⟦y_1, …, y_d⟧ with d = |S_p|(n² − 1) + [F:ℚ]n(n − 1)/2.
 
-- For n = 2 and v ∈ R_reg, R^1_v is the Steinberg ring of LocalGaloisDeformationRings §2.26, a power series ring in 3 variables over O.
+- For n = 2 and v ∈ R_reg, the regular-unipotent minimal condition of LocalGaloisDeformationRings §§2.8 and 2.21, with determinant fixed, gives R^1_v ≅ O⟦y₁,y₂,y₃⟧; the trivial-residual Steinberg closure of §2.26 is a different ring.
 
 - For n = 2 and v ∈ R_triv with q = N(v), write Φ = ρ(φ_v) and S = ρ(σ_v) − 1 for the universal lift over R^1_v; then (q − 1)·tr(ΦS) = 0 but tr(ΦS) ≠ 0, as the point Φ = diag(1 + X, δ/(1 + X)), Σ = diag(1 + α, 1 − α) with values in O⟦X⟧[α]/(α², (q − 1)α) shows (δ = ξ(φ_v)); so R^1_v and R^1_loc have nonzero p-torsion.
 
@@ -494,11 +502,11 @@ A proof uses the following inputs and comparisons. Factors at v | p and v ∈ R_
 
 ### 1.4 The global deformation data S_Q and S^χ_Q
 
-For a standing datum and a finite set Q of places disjoint from S at which r̄|G_x ≅ s̄_x ⊕ ψ̄_x with ψ̄_x a one-dimensional generalized Frobenius eigenspace and N(x) ≡ 1 mod p, let D_x be the Taylor–Wiles local problem of LocalGaloisDeformationRings §2.16: lifts of determinant ξ of the form s_x ⊕ ψ_x lifting s̄_x ⊕ ψ̄_x with I_x acting by scalars on s_x and on ψ_x. S_Q := (r̄, O, S ⊔ Q, ξ, `(D_v)_{v in S_p union Q}`, `(D^1_v)_{v in R}`) and S^χ_Q := (r̄, O, S ⊔ Q, ξ, `(D_v)_{v in S_p union Q}`, `(D^chi_v)_{v in R_triv}`, `(D^1_v)_{v in R_reg}`) are global deformation data in the sense of GlobalGaloisDeformations §3.3. A deformation is of type S_Q if it is unramified outside S ⊔ Q, has determinant ξ, and lies in the given local problem at each v ∈ S_p ∪ Q ∪ R. `R_{S_Q}` and `R^{square_T}_{S_Q}` (T-framed) are the representing objects; S := S_∅. Let θ_x(u)=ψ_x(Art_x(u)) on Δ_x, the maximal p-power quotient of k_xˣ. In the deck coordinate `delta=det(B)a^{1-n}`, let b_x be the inverse of 1−n on Δ_x and send [δ] to θ_x(`delta^{b_x}`); this defines the O[Δ_Q]-algebra structure on `R_{S_Q}`. It satisfies `R_{S_Q} tensor_{O[Delta_Q]} O ~= R_S`. This coordinate change is necessary because diag(u,1,…,1) has deck class `u^{1-n}`.
+For a standing datum and a finite set Q of places disjoint from S at which r̄|G_x ≅ s̄_x ⊕ ψ̄_x with ψ̄_x the full generalized eigenspace of a simple Frobenius eigenvalue and N(x) ≡ 1 mod p, let D_x be the two-scalar Taylor–Wiles local problem, supplied by LocalGaloisDeformationRings §2.16 for semisimple residual Frobenius and by gap:nonsemisimple-two-scalar-taylor-wiles in general: lifts of determinant ξ of the form s_x ⊕ ψ_x lifting s̄_x ⊕ ψ̄_x with I_x acting by scalars on s_x and on ψ_x. S_Q := (r̄, O, S ⊔ Q, ξ, `(D_v)_{v in S_p union Q}`, `(D^1_v)_{v in R}`) and S^χ_Q := (r̄, O, S ⊔ Q, ξ, `(D_v)_{v in S_p union Q}`, `(D^chi_v)_{v in R_triv}`, `(D^1_v)_{v in R_reg}`) are global deformation data in the sense of GlobalGaloisDeformations §3.3. A deformation is of type S_Q if it is unramified outside S ⊔ Q, has determinant ξ, and lies in the given local problem at each v ∈ S_p ∪ Q ∪ R. `R_{S_Q}` and `R^{square_T}_{S_Q}` (T-framed) are the representing objects; S := S_∅. Let θ_x(u)=ψ_x(Art_x(u)) on Δ_x, the maximal p-power quotient of k_xˣ. In the deck coordinate `delta=det(B)a^{1-n}`, let b_x be the inverse of 1−n on Δ_x and send [δ] to θ_x(`delta^{b_x}`); this defines the O[Δ_Q]-algebra structure on `R_{S_Q}`. It satisfies `R_{S_Q} tensor_{O[Delta_Q]} O ~= R_S`. This coordinate change is necessary because diag(u,1,…,1) has deck class `u^{1-n}`.
 
 r̄ absolutely irreducible, so the unframed functor is representable. p ∤ n so ad r̄ = k ⊕ ad⁰ r̄. The Taylor–Wiles places carry the one-dimensional eigenspace condition of CG18 §8.5.1.
 
-A proof uses the following inputs and comparisons. Representability of the T-framed and unframed functors: GlobalGaloisDeformations §3.4, using that each local problem is a local deformation problem (LocalGaloisDeformationRings §F.3.1). The local maps R^1_loc → `R^{square_T}_{S_Q}` and R^χ_loc → `R^{square_T}_{S^chi_Q}` are GlobalGaloisDeformations §3.5. At x ∈ Q a lift of type D_x is s_x ⊕ ψ_x, and ψ_x|I_x factors through the p-part of k_x^× since N(x) ≡ 1 mod p (the block form of LocalGaloisDeformationRings §2.23 with n_1 = 1); this defines O[Δ_Q] → `R_{S_Q}`. Killing the augmentation ideal forces ψ_x and s_x unramified, which with determinant ξ unramified at x gives deformations of type S (GlobalGaloisDeformations §4.3).
+A proof uses the following inputs and comparisons. Representability of the T-framed and unframed functors: GlobalGaloisDeformations §3.4, using that each local problem is a local deformation problem (LocalGaloisDeformationRings §F.3.1). The local maps R^1_loc → `R^{square_T}_{S_Q}` and R^χ_loc → `R^{square_T}_{S^chi_Q}` are GlobalGaloisDeformations §3.5. At x ∈ Q a lift of type D_x is s_x ⊕ ψ_x. Write θ_x=ψ_x|I_x and η_x for scalar inertia on s_x, so θ_xη_xⁿ⁻¹=1. Frobenius conjugation fixes each scalar, hence the tame relation gives θ_x^(N(x)−1)=η_x^(N(x)−1)=1. Residual inertia is trivial, so these characters factor through the p-part of k_xˣ. Since p∤n−1, η_x is uniquely determined by θ_x; this gives the inertia map and, with the displayed deck-coordinate correction, O[Δ_Q] → `R_{S_Q}`. Killing the augmentation ideal forces ψ_x and s_x unramified, which with determinant ξ unramified at x gives deformations of type S (GlobalGaloisDeformations §4.3).
 
 The specialized interface records the following facts.
 
@@ -520,7 +528,7 @@ The specialized interface records the following facts.
 
 - For Q = ∅, `R_{S_empty}` = R_S and Δ_∅ is trivial.
 
-- For n = 2 and x ∈ Q with distinct residual eigenvalues, the local problem D_x is a fixed-determinant ring with three formally smooth coordinates and one cyclic inertia coordinate u satisfying `(1+u)^{p^a}=1`, where p^a is the p-part of N(x)−1 (LocalGaloisDeformationRings §§2.10 and 2.23).
+- For n = 2 and x ∈ Q with distinct residual eigenvalues, the local problem D_x is a fixed-determinant ring with three formally smooth coordinates and one cyclic inertia coordinate u satisfying `(1+u)^{p^a}=1`, where p^a is the p-part of N(x)−1 (LocalGaloisDeformationRings §§2.10 and 2.16).
 
 - A deformation of type S_Q unramified at every x ∈ Q is killed by the augmentation ideal of O[Δ_Q].
 
@@ -534,7 +542,13 @@ The specialized interface records the following facts.
 
 (CG18, §8.5.1–8.5.2, published pp. 407–409; CG18 line 4422; CG18, §9.5, published p. 427; CG18 line 5200.)
 
-*Needs:* §1.1; §1.2; TauCetiRoadmap.LocalGaloisDeformationRings §2.16; TauCetiRoadmap.LocalGaloisDeformationRings §2.23; TauCetiRoadmap.GlobalGaloisDeformations §3.3; TauCetiRoadmap.GlobalGaloisDeformations §3.4; TauCetiRoadmap.GlobalGaloisDeformations §3.5; TauCetiRoadmap.GlobalGaloisDeformations §4.3.
+*Needs:* §1.1; §1.2; TauCetiRoadmap.LocalGaloisDeformationRings §2.16; TauCetiRoadmap.LocalGaloisDeformationRings gap:nonsemisimple-two-scalar-taylor-wiles; TauCetiRoadmap.GlobalGaloisDeformations §3.3; TauCetiRoadmap.GlobalGaloisDeformations §3.4; TauCetiRoadmap.GlobalGaloisDeformations §3.5; TauCetiRoadmap.GlobalGaloisDeformations §4.3.
+
+**Checks on the local condition.**
+
+- Over 𝔽₇, Φ=diag(4,J₂(3)) has determinant 4·3²=1, a simple 4-line and a nonscalar complementary Jordan block. It is admitted by the gap contract; imposing semisimplicity would discard it. Its unramified fixed-determinant tangent dimension is 2 and the scalar ramification adds 1, giving dim L=3 and h⁰(ad⁰r̄)=2.
+- In rank two, p=5 and N(x)=11, inertia diag(1+ε,1−ε) over k[ε]/ε² has determinant 1 and one ramified parameter. Requiring the complementary character unramified instead gives ε=0.
+- For rank one a fixed determinant gives zero ramified parameters; the two-scalar contract requires n≥2. In every allowed rank, θ=1 forces η=1, because n−1 is prime to p, so augmentation is exactly unramifiedness.
 
 **Coordinate check.** For n=3, p=5 and Δ=C₅ with generator d, 1−n=−2≡3 and its inverse is 2; the Galois character sends deck d to θ(d)², and the deck class d³ of diag(d,1,1) consequently acts by θ(d)⁶=θ(d). Sending deck d directly to θ(d) instead gives θ(d)³, which fails the compatibility. Killing the augmentation kills θ because this power map is invertible.
 
@@ -562,9 +576,9 @@ A proof uses the following inputs and comparisons. (1) The T-framed functor is a
 
 ### 1.6 The numerical coincidence (Proposition 8.5)
 
-For a standing datum with r̄(`G_{F(zeta_p)}`) big (the big-subgroup condition of gap:cht-big-image) and F(ad⁰r̄) ∌ ζ_p, and an integer q ≥ `h^1_{L^perp,T}(G_F, ad^0 rbar(1))`, for every N ≥ 1 there is a tuple (Q, `(psibar_x)_{x in Q}`) with: (1) |Q| = q and Q ∩ S = ∅; (2) r̄|G_x ≅ s̄_x ⊕ ψ̄_x with ψ̄_x a one-dimensional generalized Frobenius eigenspace; (3) N(x) ≡ 1 mod p^N; (4) `R^{square_T}_{S_Q}` (resp. `R^{square_T}_{S^chi_Q}`) is a quotient of R^1_loc⟦x_1, …, x_g⟧ (resp. R^χ_loc⟦x_1, …, x_g⟧) with g = q + |T| − 1 − [F:ℚ]n(n − 1)/2 − l_0, l_0 = r_1⌊(n − 1)/2⌋ + r_2(n − 1). Consequently, with j = n²|T| − 1, dim R^1_loc⟦x_1, …, x_g⟧ = 1 + q + j − l_0.
+For a standing datum with r̄(`G_{F(zeta_p)}`) big (the big-subgroup condition of gap:cht-big-image) and F(ad⁰r̄) ∌ ζ_p, and an integer q ≥ `h^1_{L^perp,T}(G_F, ad^0 rbar(1))`, for every N ≥ 1 there is a tuple (Q, `(psibar_x)_{x in Q}`) with: (1) |Q| = q and Q ∩ S = ∅; (2) r̄|G_x ≅ s̄_x ⊕ ψ̄_x with ψ̄_x the full generalized eigenspace of a simple Frobenius eigenvalue; (3) N(x) ≡ 1 mod p^N; (4) `R^{square_T}_{S_Q}` (resp. `R^{square_T}_{S^chi_Q}`) is a quotient of R^1_loc⟦x_1, …, x_g⟧ (resp. R^χ_loc⟦x_1, …, x_g⟧) with g = q + |T| − 1 − [F:ℚ]n(n − 1)/2 − l_0, l_0 = r_1⌊(n − 1)/2⌋ + r_2(n − 1). Consequently, with j = n²|T| − 1, dim R^1_loc⟦x_1, …, x_g⟧ = 1 + q + j − l_0.
 
-r̄(`G_{F(zeta_p)}`) big in the sense of the big-subgroup condition requested from ArithmeticGaloisRepresentations §§7.7–7.12 as gap:cht-big-image, and F(ad⁰r̄) ∌ ζ_p. r̄ odd at the real places, so that the archimedean count of ArithmeticGaloisDuality R02.6.1 applies. N(x) ≡ 1 mod p for x ∈ Q is what gives dim_k L_x − h⁰(G_x, ad⁰r̄) = 1 (LocalGaloisDeformationRings §2.16).
+r̄(`G_{F(zeta_p)}`) big in the sense of the big-subgroup condition requested from ArithmeticGaloisRepresentations §§7.7–7.12 as gap:cht-big-image, and F(ad⁰r̄) ∌ ζ_p. r̄ odd at the real places, so that the archimedean count of ArithmeticGaloisDuality R02.6.1 applies. N(x) ≡ 1 mod p for x ∈ Q is what gives dim_k L_x − h⁰(G_x, ad⁰r̄) = 1 (LocalGaloisDeformationRings §2.16 in the semisimple case and gap:nonsemisimple-two-scalar-taylor-wiles in general).
 
 A proof uses the following inputs and comparisons. (1)–(3) and the vanishing `H^1_{L(Q)^perp,T}(G_F, ad^0 rbar(1))` = 0: choose x by Chebotarev so that each class of the dual Selmer group is detected by tr(e_x φ(Frob_x)); this rank-n big-image selection is requested from GlobalGaloisDeformations §§5.6–5.8 as gap:big-image-rank-n-taylor-wiles. Then §1.5 (2)–(3) with `h^1_{L(Q)^perp,T}` = 0, h⁰(G_F, ad⁰) = h⁰(G_F, ad⁰(1)) = 0 (absolute irreducibility and ζ_p ∉ F(ad⁰r̄)), dim L_x − h⁰ = 1 at x ∈ Q, h⁰(G_v, ad) = h⁰(G_v, ad⁰) + 1 (p ∤ n), and `sum_{v|infty}h^0(G_v, ad^0)` = [F:ℚ]n(n − 1)/2 + l_0 (ArithmeticGaloisDuality R02.6.1, using oddness) give g = q + |T| − 1 − [F:ℚ]n(n − 1)/2 − l_0. Adding dim R^1_loc = 1 + |T|(n² − 1) + [F:ℚ]n(n − 1)/2 (§1.3) to g gives 1 + q + (n²|T| − 1) − l_0.
 
@@ -580,7 +594,7 @@ A proof uses the following inputs and comparisons. (1)–(3) and the vanishing `
 
 (CG18, §8.6, Proposition 8.5 and its proof, published pp. 410–411; CG18 line 4543; CG18, §8.4, equation (1), published pp. 405–406; CG18 line 4339; CG18, §9.5, published p. 426; CG18 line 5168.)
 
-*Needs:* §1.5; §1.2; §1.3; TauCetiRoadmap.LocalGaloisDeformationRings §2.16; TauCetiRoadmap.ArithmeticGaloisDuality R02.6.1; TauCetiRoadmap.AutomorphicFormsOnReductiveGroups §5.3; TauCetiRoadmap.GlobalGaloisDeformations §§5.6–5.8 and gap:big-image-rank-n-taylor-wiles; TauCetiRoadmap.ArithmeticGaloisRepresentations §§7.2 and 7.4 and gap:cht-big-image.
+*Needs:* §1.5; §1.2; §1.3; TauCetiRoadmap.LocalGaloisDeformationRings §2.16 and gap:nonsemisimple-two-scalar-taylor-wiles; TauCetiRoadmap.ArithmeticGaloisDuality R02.6.1; TauCetiRoadmap.AutomorphicFormsOnReductiveGroups §5.3; TauCetiRoadmap.GlobalGaloisDeformations §§5.6–5.8 and gap:big-image-rank-n-taylor-wiles; TauCetiRoadmap.ArithmeticGaloisRepresentations §§7.2 and 7.4 and gap:cht-big-image.
 
 ### 1.7 Lifts satisfying the hypotheses of Theorem 5.16 have type S
 
@@ -632,7 +646,7 @@ For F imaginary quadratic, n=2, |T|=1 and q=3, the count is g=3+1−1−2−1=0,
 
 ### Dependencies
 
-Earlier layers 0; TauCetiRoadmap.LocalGaloisDeformationRings §§F.1–F.3, 1.6, 1.10, 1.13, 2.8, 2.10, 2.15–2.16, 2.21 and 2.23; TauCetiRoadmap.ArithmeticGaloisRepresentations §§7.2, 7.4 and 7.7–7.12; TauCetiRoadmap.ArithmeticGaloisDuality R02.5.1–R02.5.2 and R02.6.1–R02.6.2; TauCetiRoadmap.GlobalGaloisDeformations §§3.3–3.7, 4.3–4.4, 5.1, 5.5–5.8 and 7.2–7.4; TauCetiRoadmap.DeformationAndDerivedPatchingAlgebra §§1.12, 3.1–3.4, 3.10, 4.6, 6.1–6.8, 7.3, 7.6, 8.6 and 9.1–9.2; TauCetiRoadmap.AutomorphicFormsOnReductiveGroups Layers 4–6; TauCetiRoadmap.PadicHodgeTheory §6.1; TauCetiRoadmap.AdelicAlgebraicGroups §4.2 and Layer AA.5; ClassFieldTheory Layers 7 and 11 and Chebotarev Layer 10.
+Earlier layers 0; TauCetiRoadmap.LocalGaloisDeformationRings §§F.1–F.3, 1.6, 1.10, 1.13, 2.8, 2.10, 2.15–2.16, 2.21 and gap:nonsemisimple-two-scalar-taylor-wiles; TauCetiRoadmap.ArithmeticGaloisRepresentations §§7.2, 7.4 and 7.7–7.12; TauCetiRoadmap.ArithmeticGaloisDuality R02.5.1–R02.5.2 and R02.6.1–R02.6.2; TauCetiRoadmap.GlobalGaloisDeformations §§3.3–3.7, 4.3–4.4, 5.1, 5.5–5.8 and 7.2–7.4; TauCetiRoadmap.DeformationAndDerivedPatchingAlgebra §§1.12, 3.1–3.4, 3.10, 4.6, 6.1–6.8, 7.3, 7.6, 8.6 and 9.1–9.2; TauCetiRoadmap.AutomorphicFormsOnReductiveGroups Layers 4–6; TauCetiRoadmap.PadicHodgeTheory §6.1; TauCetiRoadmap.AdelicAlgebraicGroups §4.2 and Layer AA.5; ClassFieldTheory Layers 7 and 11 and Chebotarev Layer 10.
 
 ## Layer 2: Strengthened Hecke–Galois hypotheses
 
@@ -678,11 +692,11 @@ The specialized interface records the following facts.
 
 ### 2.2 Local compatibility and the diamond coordinate 
 
-Assume B^gal(Q, ψ, m) with m non-Eisenstein, r̄_m ≅ r̄ ⊗ T^an/m for the r̄ of a standing datum, and Q a set of Taylor–Wiles primes as in §1.6 (Q = ∅ allowed). The strengthened local compatibility requirement B^lgc(Q, ψ, m) consists of the local clauses of CG18's Conjecture B(1)–(3) together with the deck-coordinate clause: (1) for v | p, r_m|G_v is Fontaine–Laffaille with all weights {0, 1, …, n − 1} (an object of the deformation problem D_v of §1.2); (2) for v ∈ Q, r_m|G_v is a lifting of type D_v (r_m|G_v ≅ s_v ⊕ ψ_v with I_v acting by scalars on each summand); (3) for v ∈ R and σ ∈ I_v, the characteristic polynomial of r_m(σ) is ∏_i(X − `psi_{v,i}(Art_v^{-1}(sigma))`); (6) for v ∈ Q and α ∈ O_v^× (α = 1 at the other places), the operator `T_{alpha,1}` acts on H^*_ψ(Y_1(Q), O/ϖᵃ)_m as the scalar by which r_m(Art_v(α)) acts on the lift ψ_v of the line ψ̄_v.
+Assume B^gal(Q, ψ, m) with m non-Eisenstein, r̄_m ≅ r̄ ⊗ T^an/m for the r̄ of a standing datum, and Q a set of Taylor–Wiles primes as in §1.6 (Q = ∅ allowed). The strengthened local compatibility requirement B^lgc(Q, ψ, m) consists of the local clauses of CG18's Conjecture B(1)–(3) together with the deck-coordinate clause: (1) for v | p, r_m|G_v is Fontaine–Laffaille with all weights {0, 1, …, n − 1} (an object of the deformation problem D_v of §1.2); (2) for v ∈ Q, r_m|G_v is a lifting of type D_v (r_m|G_v ≅ s_v ⊕ ψ_v with I_v acting by scalars on each summand); (3) for v ∈ R and σ ∈ I_v, the characteristic polynomial of r_m(σ) is ∏_i(X − `psi_{v,i}(Art_v^{-1}(sigma))`); (6) for v ∈ Q and α ∈ O_v^× (α = 1 at the other places), for every K′ ∈ 𝒦_Q, every degree i and every a≥1, the residual deck operator `T_{alpha,1}` acts on Hⁱ_ψ(Y(K′),O/ϖᵃ)_m as the image of the scalar ψ_v(Art_v(α)) in the simultaneous Hecke action at that level. Here the residual deck action is through K_Q/K′, so deck elements in K′ act as 1. Require these equalities naturally for every finite O-module coefficient A, compatible with all O-linear coefficient maps and all level pullback and trace maps.
 
 Clause (6) is not in CG18's Conjecture B; it is the GL(n) analogue of Conjecture A(3), needed for condition (d) of the patching theorem and for the surjection onto T^an including diamond operators. Art_v normalized as in ClassFieldTheory Layer 7 (uniformizers to arithmetic Frobenius); on the homology side (m^*) the clause holds with the inverse character.
 
-A proof uses the following inputs and comparisons. (1)–(3) are the local compatibility clauses of CG18's Conjecture B; (3) with ψ = 1 says inertia at R acts unipotently. Under the identification K_Q/L_Q ≅ ∏k_x^× of §0.2, `T_{alpha,1}` has class `alpha^{1-n}`, so (6) fixes the action of O[Δ_Q] on the m-part, and p > n makes the `T_{alpha,1}` exhaust the p-part of Δ̃_Q.
+A proof uses the following inputs and comparisons. (1)–(3) are the local compatibility clauses of CG18's Conjecture B; (3) with ψ = 1 says inertia at R acts unipotently. Under the identification K_Q/L_Q ≅ ∏k_x^× of §0.2, `T_{alpha,1}` has class `alpha^{1-n}`, so the all-level equalities in (6) are equalities in the simultaneous image algebra of §0.3 and fix its O[Δ_Q]-action, and p > n makes the `T_{alpha,1}` exhaust the p-part of Δ̃_Q.
 
 The specialized interface records the following facts.
 
@@ -694,7 +708,7 @@ The specialized interface records the following facts.
 
 - Clause (3).
 
-- Clause (6): the deck action of δ equals θ_x(`delta^{b_x}`), with b_x=(1−n)⁻¹ on Δ_x as in §1.4.
+- Clause (6): at every intermediate level and every finite O-coefficient module, the residual deck action of δ equals the image of θ_x(`delta^{b_x}`), with b_x=(1−n)⁻¹ on Δ_x as in §1.4. Obtain the finite-module actions by the natural coefficient construction of §4.4: finite O-modules decompose into cyclic modules and naturality under all coefficient maps makes the result independent of the decomposition.
 
 - For Q = ∅ the proposition is the conjunction of (1) and (3).
 
@@ -703,6 +717,8 @@ The specialized interface records the following facts.
 - For Q = ∅, B^lgc reduces to clauses (1) and (3).
 
 - With ψ = 1, clause (3) says r_m(σ) − 1 is nilpotent for σ ∈ I_v, v ∈ R.
+
+- For T=k[ε]/ε², let M_top=k and M_inter=T. Multiplication by ε is zero on M_top and nonzero on M_inter, although ε²=0. For a degree-p cover, cor∘res=p=0 over k supplies no injection. Equality only on the top cover therefore fails the all-level hypothesis; equality on both modules is an equality in their simultaneous image.
 
 - Without clause (6), r_m may be unramified at x ∈ Q while a diamond operator acts nontrivially; then the augmentation ideal of O[Δ_Q] does not map into the image of ker(`R_{S_Q}` → R_S) and condition (d) fails.
 
@@ -718,7 +734,7 @@ The specialized interface records the following facts.
 
 (CG18, §9.3, Conjecture B(1)–(3), published p. 414; CG18 line 4684; CG18, §5.3, Conjecture A(3), published pp. 374–375; CG18 line 3156.)
 
-*Needs:* §2.1; §1.1; §1.2; TauCetiRoadmap.LocalGaloisDeformationRings §2.16; §0.1; §0.2; TauCetiRoadmap.ClassFieldTheory Layers 7 and 11.
+*Needs:* §2.1; §1.1; §1.2; TauCetiRoadmap.LocalGaloisDeformationRings §2.16 and gap:nonsemisimple-two-scalar-taylor-wiles; §0.1; §0.2; TauCetiRoadmap.ClassFieldTheory Layers 7 and 11.
 
 ### 2.3 Conjecture B(4): vanishing outside [q_0, q_0 + l_0] and on the boundary 
 
@@ -792,7 +808,7 @@ The specialized interface records the following facts.
 
 - For n = 2 the hypothesis holds at every Taylor–Wiles prime (Lemma 9.6, §3.5).
 
-- Under local–global compatibility at x the GL(n) analogue holds at primes with distinct Frobenius eigenvalues (§3.6); its transfer to the Res PGLₙ quotients is the target of §3.7.
+- Under the local admissibility and principal-series block hypothesis on the smooth tower at x, the GLₙ analogue holds for distinct residual roots (§3.6). Its Res PGLₙ version (§3.7) requires the corresponding block hypothesis at every successive base level.
 
 (CG18, §9.3, Conjecture B(5), published pp. 414–415; CG18 line 4710; CG18, §9.3, discussion after Remark 9.5, published p. 416; CG18 line 4764.)
 
@@ -800,9 +816,9 @@ The specialized interface records the following facts.
 
 ### 2.5 Conjecture B for a standing datum (the hypothesis bundle)
 
-For a standing datum and a maximal ideal m of T at level K_∅(R) with r̄_m ≅ r̄, the strengthened package ConjB(Q, ψ, m) is B^gal ∧ B^lgc ∧ B^van ∧ B^tw at (Q, ψ, m). The hypothesis of §5.4 is ConjB(Q, ψ, m) for Q = ∅ and for each set Q_N of the chosen Taylor–Wiles system, with ψ = 1 and ψ = χ. 'Conjecture B for F' means ConjB for every standing datum over F, every Taylor–Wiles set and both character data. The appendix CGH20 Theorem 1.2 assumes all clauses except B^van.
+For a standing datum and a maximal ideal m of T at level K_∅(R) with r̄_m ≅ r̄, the strengthened package ConjB(Q, ψ, m) is B^gal ∧ B^lgc ∧ B^van ∧ B^tw at (Q, ψ, m). The hypothesis of §5.4 is ConjB(Q, ψ, m) for Q = ∅ and for each set Q_N of the chosen Taylor–Wiles system, with ψ = 1 and ψ = χ. 'Conjecture B for F' means ConjB for every standing datum over F, every Taylor–Wiles set and both character data. The conjunction omitting B^van is a strengthened version of the hypothesis used in CGH20 Theorem 1.2: it adds the all-level, all-finite-coefficient inertia–diamond equalities, which CGH20 does not explicitly assume.
 
-Clause (6) of §2.2 is included. Intermediate levels are included in B^gal and B^van.
+Clause (6) of §2.2 is included. Intermediate levels are included in B^gal and B^van, and in every coefficient action of B^lgc(6).
 
 A proof uses the following inputs and comparisons. The bundle is the conjunction of the four named predicates; each theorem of Layers 4–5 names exactly the clauses it uses.
 
@@ -812,7 +828,7 @@ The specialized interface records the following facts.
 
 - Conjecture B for F.
 
-- The conjunction without B^van, as assumed in CGH20.
+- The conjunction without B^van, strengthening the CGH20 hypothesis by clause (6) at every level and finite coefficient module.
 
 - Assemble from the four clauses.
 
@@ -832,7 +848,7 @@ The specialized interface records the following facts.
 
 - For F = ℚ and n = 2 every clause holds at non-Eisenstein m (classical theory and Lemma 9.6).
 
-- CGH20 uses its Theorem 3.2 for the auxiliary-level range; the PGLₙ comparison required in that proof is the target of §3.7, and is not supplied by the GLₙ statement alone.
+- CGH20 uses its Theorem 3.2 for the auxiliary-level range. The conditional comparison of §3.7 supplies that step only with its principal-series block hypothesis at every successive base level; distinct roots alone do not assert that hypothesis.
 
 (CG18, §9.3, Conjecture B, published pp. 414–415; CG18 line 4684; CG18, §9.5, published pp. 424–425; CG18 line 5111; CGH20, §1 and §4, arXiv pp. 3, 7–8; CGH20 line 287.)
 
@@ -865,7 +881,7 @@ Let a standing datum be given, Q a Taylor–Wiles set, ψ ∈ {1, χ}, and m a m
 
 ξ = `epsilon^{n(n-1)/2}`. Clause (6) for the Δ_Q-linearity.
 
-A proof uses the following inputs and comparisons. Clauses (1)–(3) of B^lgc and det r_m = `epsilon^{n(n-1)/2}` (from `T_{lambda,n}` = 1 and Chebotarev) show r_m is of type S_Q or S^χ_Q (§1.4). The image of `R_{S_Q}` is the closed O-subalgebra generated by the coefficients of the characteristic polynomials of r_m(Frob_λ), which are the `T_{lambda,i}`; these generate `T^an_{Q,psi,m}` together with the diamond operators. Clause (6) identifies the diamond operators with the images of the inertial characters ψ_x, so the image contains them and the map is O[Δ_Q]-linear. Compatibility with the maps between levels holds because pullback and trace commute with the `T_{lambda,i}`, λ ∉ S_Q.
+A proof uses the following inputs and comparisons. Clauses (1)–(3) of B^lgc and det r_m = `epsilon^{n(n-1)/2}` (from `T_{lambda,n}` = 1 and Chebotarev) show r_m is of type S_Q or S^χ_Q (§1.4). The image of `R_{S_Q}` is the closed O-subalgebra generated by the coefficients of the characteristic polynomials of r_m(Frob_λ), which are the `T_{lambda,i}`; these generate `T^an_{Q,psi,m}` together with the diamond operators. Clause (6) identifies these operators with the inertial scalars in every defining cohomology action, hence in the simultaneous image algebra itself; the image therefore contains the diamonds and the map is O[Δ_Q]-linear. Its natural finite-coefficient and level-map equalities give the same conclusion on every coefficient and framing quotient of §4.4; away-from-S_Q Hecke equivariance supplies the remaining level compatibility.
 
 **Checks.**
 
@@ -906,140 +922,112 @@ For the two-term exact coefficient sequence 0→O/ϖ→O/ϖ²→k→0, the long 
 
 ### Dependencies
 
-Earlier layers 0–1; TauCetiRoadmap.IntegralHeckeAndGaloisDeterminants §§1.2–1.3, 2.1–2.3, 3a.1 and 3b.1–3b.2; TauCetiRoadmap.GlobalGaloisDeformations §§3.3–3.7, 4.3–4.4, 5.1, 5.5–5.8 and 7.2–7.4; TauCetiRoadmap.LocalGaloisDeformationRings §§F.1–F.3, 1.6, 1.10, 1.13, 2.8, 2.10, 2.15–2.16, 2.21 and 2.23; ClassFieldTheory Layers 7 and 11 and Chebotarev Layer 10; TauCetiRoadmap.AutomorphicFormsOnReductiveGroups Layers 4–6; TauCetiRoadmap.ArithmeticLocallySymmetricSpaces ALS.0.7–ALS.0.10, ALS.1.1–ALS.1.8, ALS.2.2–ALS.2.4, ALS.3.3–ALS.3.9 and ALS.3.14, ALS.4.1 and ALS.4.9–ALS.4.12, ALS.5a.2–ALS.5a.6, ALS.5b.4–ALS.5b.6, ALS.6.1–ALS.6.3; TauCetiRoadmap.KTheoryLowDegrees §11.6.
+Earlier layers 0–1; TauCetiRoadmap.IntegralHeckeAndGaloisDeterminants §§1.2–1.3, 2.1–2.3, 3a.1 and 3b.1–3b.2; TauCetiRoadmap.GlobalGaloisDeformations §§3.3–3.7, 4.3–4.4, 5.1, 5.5–5.8 and 7.2–7.4; TauCetiRoadmap.LocalGaloisDeformationRings §§F.1–F.3, 1.6, 1.10, 1.13, 2.8, 2.10, 2.15–2.16, 2.21 and gap:nonsemisimple-two-scalar-taylor-wiles; ClassFieldTheory Layers 7 and 11 and Chebotarev Layer 10; TauCetiRoadmap.AutomorphicFormsOnReductiveGroups Layers 4–6; TauCetiRoadmap.ArithmeticLocallySymmetricSpaces ALS.0.7–ALS.0.10, ALS.1.1–ALS.1.8, ALS.2.2–ALS.2.4, ALS.3.3–ALS.3.9 and ALS.3.14, ALS.4.1 and ALS.4.9–ALS.4.12, ALS.5a.2–ALS.5a.6, ALS.5b.4–ALS.5b.6, ALS.6.1–ALS.6.3; TauCetiRoadmap.KTheoryLowDegrees §11.6.
 
 ## Layer 3: Taylor–Wiles level comparison
 
-### 3.1 Reduction from PGL_2 to PSL_2 arithmetic groups
+### 3.1 Reduction from PGL₂ to determinant-square arithmetic groups
 
-Let n = 2, p odd, and Y = ⊔_i Γ_i\ℋ the decomposition of an arithmetic quotient of `Res_{F/Q}PGL_2` into components (ℋ the symmetric space, Γ_i congruence subgroups commensurable with PGL_2(O_F)). For each Γ = Γ_i put Γ^1 := Γ ∩ PSL_2(O_F). Then Φ := Γ/Γ^1 is an elementary abelian 2-group and, for every a ≥ 1, restriction gives H^*(Γ, O/ϖᵃ) ≅ H^*(Γ^1, O/ϖᵃ)^Φ; the same holds for Γ_0(x) and Γ^1_0(x) := Γ_0(x) ∩ Γ^1, compatibly with restriction maps and with double-coset operators from elements of PSL_2(F).
+Let n=2, p odd, and Y=⊔_c Γ_c∖ℋ be the arithmetic-groupoid component decomposition, with component representatives a_c and Γ_c=PGL₂(F)∩a_cKa_c⁻¹, retaining the prescribed real component. Define Γ_c¹=Γ_c∩PSL₂(F), the kernel of det:Γ_c→Fˣ/Fˣ². Then Φ_c=Γ_c/Γ_c¹ is a finite elementary abelian 2-group. For every a≥1 and coefficient module M_c obtained by restricting O(ψ)⊗O/ϖᵃ to this component, restriction gives H*(Γ_c,M_c)≅H*(Γ_c¹,M_c)^Φ_c. At Iwahori level use Γ_c,e¹=Γ_c,e∩PSL₂(F) and its own determinant quotient. These identifications are natural for level restrictions, coefficient transport, conjugation and Hecke correspondences; when a correspondence permutes components its source and target are retained.
 
-p odd (p > n = 2). Component groups as in ALS.0.7; at non-neat level the cohomology is that of the arithmetic groupoid.
-
-A proof uses the following inputs and comparisons. PGL_2/PSL_2 is identified with `F^*/F^{*2}` through the determinant, so Γ/Γ^1 embeds in `O_F^*/O_F^{*2}`-type groups of exponent two (ALS.0.7). The Hochschild–Serre spectral sequence for Γ^1 ⊂ Γ with |Φ| a power of 2 invertible in O/ϖᵃ degenerates to the invariants (ALS.6.2, degenerate case). Double-coset operators of elements of PSL_2(F) normalize the situation and commute with the Φ-action.
-
-**Checks.**
-
-- For F = ℚ and Γ = PGL_2(ℤ), Φ = ℤ/2 and Γ^1 = PSL_2(ℤ).
-
-- The statement fails for p = 2.
-
-- Φ acts on H^*(Γ^1) through the outer action of a matrix of determinant a unit not a square.
-
-- For a C₂-quotient with k=𝔽₃, averaging is (1+s)/2 and sends (a,b) under the swap action to ((a+b)/2,(a+b)/2); for k=𝔽₂ that denominator is zero and H¹(C₂,k)=k survives.
-
-(CG18, §9.3, proof of Lemma 9.6, published p. 417; CG18 line 4815.)
-
-*Needs:* TauCetiRoadmap.ArithmeticLocallySymmetricSpaces ALS.0.7; TauCetiRoadmap.ArithmeticLocallySymmetricSpaces ALS.6.2.
-
-### 3.2 The S-arithmetic amalgam G = Γ^1 `*_{Gamma^1_0(x)}` Γ^1
-
-Let n = 2, x a Taylor–Wiles prime with K_x maximal, and assume x is trivial in the ray class group governing the components of Y, with π_x ∈ O_F a generator of x. For Γ^1 as in §3.1, with level maximal at x, let Γ^1_0(x) := Γ_0(x) ∩ Γ^1, h := diag(1, π_x) ∈ PGL_2(F) and g := diag(π_x, `pi_x^{-1}`) ∈ PSL_2(F). Then Γ^1 ∩ `h Gamma^1 h^{-1}` = Γ^1_0(x), Γ^1 and `h Gamma^1 h^{-1}` being the stabilizers of two adjacent vertices of the Bruhat–Tits tree of PSL_2(F_x); the subgroup G of PSL_2(O_F[1/x]) generated by Γ^1 and `h Gamma^1 h^{-1}` is a congruence subgroup with the same level as Γ^1 away from x and contains g; and G is the amalgamated product Γ^1 `*_{Gamma^1_0(x)}` Γ^1 of Γ^1 with itself along Γ^1_0(x), embedded in the first factor by inclusion and in the second by γ ↦ `h^{-1} gamma h`. G acts on the tree without inversion with an edge as fundamental domain. Conjugation by g moves a vertex to one at distance two, so Γ^1 and `g Gamma^1 g^{-1}` do not form this amalgam.
-
-Without the triviality assumption on x one amalgamates different Γ_i of the component decomposition; the argument is the same with more notation. Strong approximation for SL_2 over F with respect to the place x (SL_2(F_x) noncompact).
-
-A proof uses the following inputs and comparisons. Local Ihara amalgam: PSL_2(F_x) is the amalgamated product of the stabilizers of two adjacent vertices of its tree over the Iwahori subgroup (ReductiveGroupsPartII RG2.2.4). Strong approximation for SL_2 (AdelicAlgebraicGroups §4.2) gives density of the S-arithmetic group in PSL_2(F_x) and identifies the quotient of the tree by G with one edge, whose vertex stabilizers are Γ^1 and `h Gamma^1 h^{-1}` and whose edge stabilizer is Γ^1_0(x); g lies in G because π_x is a unit congruent to 1 at the level away from x (the triviality of x in the ray class group). The structure theorem for groups acting on trees without inversion (FreeGroupsAndLimitGroups §4.8), applied to this one-edge quotient, presents G as the fundamental group of a segment graph of groups, which FreeGroupsAndLimitGroups §4.5 identifies with the pushout `Monoid.PushoutI` of the two vertex stabilizers over the edge stabilizer.
+The determinant kernel is taken in PGL₂(F). Its local integral description uses the actual lattices a_c,vO_v² at every place, rather than the standard O_F². Finiteness of Φ_c follows because determinant square classes of an arithmetic group have valuation parity supported on a fixed finite set: the corresponding S-unit square classes and class-group 2-torsion are finite. The quotient has exponent 2 by its embedding in Fˣ/Fˣ². Since its order is invertible in O/ϖᵃ, finite-group Hochschild–Serre degenerates to invariants. Apply the natural restriction, conjugation and transfer maps to the determinant kernels and their finite quotients before taking invariants. (CG18, proof of Lemma 9.6, p.417; CG18 line 4815; the integral intersection at CG18 line 4823 is replaced by the determinant kernel.)
 
 The specialized interface records the following facts.
 
-- The group G ⊂ PSL_2(O_F[1/x]) with its two embeddings of Γ^1 (inclusion, and conjugation by h = diag(1, π_x)).
-
-- G is the pushout of Γ^1 ← Γ^1_0(x) → Γ^1 in groups.
-
-- G is a congruence subgroup of PSL_2(O_F[1/x]) with level equal to that of Γ^1 away from x.
-
-- diag(π_x, `pi_x^{-1}`) ∈ G.
+- Γ_c¹ is normal in Γ_c and Φ_c is its finite determinant-square-class image.
+- Restriction identifies component cohomology with Φ_c-invariants, also with O(ψ) coefficients.
+- The identification is natural for the actual source and target components of each level correspondence, with their transported coefficient modules.
 
 **Checks.**
 
-- For F = ℚ, Γ^1 = PSL_2(ℤ) and x = ℓ, G = PSL_2(ℤ[1/ℓ]).
+- For F=ℚ and Γ=PGL₂(ℤ), Γ¹=PSL₂(ℤ) and Φ=C₂, detected by determinant −1.
+- Put h=diag(2,1) and Γ=hPSL₂(ℤ)h⁻¹. For A=(1,2;0,1) and γ=(1,0;1/2,1), γAγ⁻¹=(0,2;−1/2,2). Thus Γ∩PSL₂(ℤ) is not normal; it has index 3. All elements of Γ have square determinant, so the defined Γ¹ is Γ, Φ=1, and restriction is the identity.
+- For a C₂-quotient over 𝔽₃, averaging under the swap is (a,b)↦((a+b)/2,(a+b)/2). Over 𝔽₂, H¹(C₂,k)=k survives and the asserted degeneration fails; odd p is essential.
 
-- G∖tree is a single edge whose vertex stabilizers are Γ^1 and `h Gamma^1 h^{-1}`, h = diag(1, π_x); the vertices fixed by Γ^1 and by `g Gamma^1 g^{-1}` are at distance two.
+*Needs:* TauCetiRoadmap.ArithmeticLocallySymmetricSpaces ALS.0.7 and ALS.1.1; TauCetiRoadmap.ArithmeticLocallySymmetricSpaces ALS.6.2; §0.1.
 
-- PGL_2(ℤ[1/ℓ]) is not the amalgam of two copies of PGL_2(ℤ) over Γ_0(ℓ): it contains elements of odd valuation determinant, which invert the edge.
+### 3.2 Component-indexed S-arithmetic amalgams at every auxiliary prime
 
-- [Γ^1 : Γ^1_0(x)] = N(x) + 1.
+Let n=2, x∉S a Taylor–Wiles prime, K_x=PGL₂(O_x), and q=N(x). Let ϖ_x be a local uniformizer and t_x the finite adelic element equal to diag(1,ϖ_x) at x and 1 away from x. No generator of the ideal x is chosen. For a component represented by a, let c₀=[a] and c₁=[at_x] at level K. Let H_a¹ be the subgroup of PSL₂(F) satisfying a_v⁻¹γ_va_v∈K_v at every finite v≠x, with the same real-component condition as Γ_c. On the local tree let v₀=a_x[O_x²] and v₁=a_xt_x[O_x²]. Set Γ_a,0¹=`Stab_{H_a^1}(v_0)`, Γ_a,1¹=`Stab_{H_a^1}(v_1)`, and Γ_a,e¹=Γ_a,0¹∩Γ_a,1¹. The component-indexed amalgam target is the canonical isomorphism `Gamma_{a,0}^1 *_{Gamma_{a,e}^1} Gamma_{a,1}^1 -> H_a^1`, with both maps from the edge group the actual inclusions.
 
-- For F = ℚ and Γ^1 = PSL_2(ℤ), G = PSL_2(ℤ[1/x]) and the statement is Ihara's theorem.
+The first vertex is the determinant kernel of the component c₀ at K, the second that of c₁ at K, and the edge that of the component represented by a at K₀(x). The two maps from this edge component have targets c₀ and c₁: adelically they are pr₀:[z,g]↦[z,g] and pr₁:[z,g]↦[z,gt_x]. Since t_x is 1 on R, pr₀*O(ψ) and pr₁*O(ψ) identify with O(ψ) on the edge. Fix those identifications: if at_x=γa_dκ with γ∈PGL₂(F) and κ∈K, transport the second stabilizer by h↦γ⁻¹hγ to component d=c₁ and transport its coefficient fibre by the prescribed κ_R-action of O(ψ). The coefficient characters agree because ψ(κ_R⁻¹uκ_R)=ψ(u); retain this intertwiner in both pullback and trace. Thus pullback has sources H*(Γ_a,0¹,M_a) and H*(Γ_a,1¹,M_a) and target H*(Γ_a,e¹,M_a), where M_a is the restriction to H_a¹ of the away-from-x character ψ through a⁻¹γa. This coefficient module extends across the entire amalgam. For all components, c↦c₁ is the ray-class translation induced by t_x; each vertex family is a reindexing of the full component family.
 
-- G contains g, so the double coset GgG = G acts on H^*(G) as the identity.
+For invariant descent, define Ĥ_a to be the subgroup of PGL₂(F) with the same away-from-x level and even x-adic determinant valuation. Its determinant kernel is H_a¹, and Φ_a=Ĥ_a/H_a¹ is a finite elementary 2-group. Since H_a¹ is transitive on edges and on each vertex type, each stabilizer in Ĥ_a surjects onto Φ_a; its kernel is the corresponding stabilizer in H_a¹. Thus the two vertex and edge determinant quotients identify with the same Φ_a, acting on the full chain sequence. Their invariants are precisely the arithmetic component cohomologies in §3.1.
 
-- The amalgam does not exist for PGL_2 (only for the even-valuation subgroup).
-
-(CG18, §9.3, proof of Lemma 9.6 and Remark 9.7, published pp. 417–418; CG18 line 4843.)
-
-*Needs:* §3.1; TauCetiRoadmap.ReductiveGroupsPartII RG2.2.4; TauCetiRoadmap.AdelicAlgebraicGroups §4.2; TauCetiRoadmap.FreeGroupsAndLimitGroups §§4.5 and 4.8; Mathlib `Monoid.PushoutI`.
-
-### 3.3 The operator `U_{x^2}` on Γ^1_0(x)-cohomology
-
-With x, π_x as in §3.2, `U_{x^2}` is `N(x)^{-2}` times the double-coset operator of Γ^1_0(x) attached to diag(π_x², 1), equivalently (the operator depends on the matrix only up to scalars) to g = diag(π_x, `pi_x^{-1}`). It acts on H^*(Γ^1_0(x), O/ϖᵃ), on H^*(Y_0(x), O/ϖᵃ) componentwise, and on H^*(G, O/ϖᵃ) through the double coset GgG = G, where the unnormalized operator is the identity, so that `U_{x^2}` acts on H^*(G) by the scalar `N(x)^{-2}`. On H^*(Y_0(x), O/ϖᵃ), U_x² = `U_{x^2}` for U_x normalized as `N(x)^{-1}` times the double coset of diag(π_x, 1); for the unnormalized V_x = `T_{x,1}`, V_x² = `N(x)^2U_{x^2}` ≡ `U_{x^2}` mod p.
-
-N(x) ≡ 1 mod p, so N(x) is a unit and N(x)² ≡ 1 mod p.
-
-Use restriction, conjugation and transfer for the double coset at Γ¹₀(x), and use the explicit tree-chain extension in §3.4 for the compatible action on the Lyndon sequence. The fact that g belongs to G identifies its bare G-double-coset operator with the identity, but does not by itself determine the extension on that sequence; the augmentation calculation in §3.4 does. The relation `U_x^2=U_{x^2}` comes from composition of the two positive Iwahori double cosets. Since N(x) is a p-adic unit, their norm denominators are defined. Modulo ϖ, N(x)=1 and the normalized and unnormalized residual operators agree.
+A proof uses strong approximation for SL₂ in the finite adeles with the fixed away-from-x compact open, and the local adjacent-vertex amalgam: H_a¹ acts without inversion, with a single edge as quotient and with exactly the displayed stabilizers. Apply the tree structure theorem and the segment pushout theorem. The statement is the all-component extension of the principal-ray-class argument of CG18, proof of Lemma 9.6 and Remark 9.7, pp.417–418; CG18 line 4827 and line 4875. The extension, including its coefficient intertwiners, is owned here.
 
 The specialized interface records the following facts.
 
-- `U_{x^2}` on H^*(Γ^1_0(x)), H^*(Y_0(x)) and H^*(G).
-
-- `U_{x^2}` acts on H^*(G, O/ϖᵃ) by the scalar `N(x)^{-2}` (the unnormalized double coset GgG = G acts by 1); in particular `U_{x^2}` − 1 acts by a scalar in pℤ_p.
-
-- U_x² = `U_{x^2}` on H^*(Y_0(x), O/ϖᵃ).
-
-- The operator depends on the matrix only up to scalars.
+- The groups H_a¹, Γ_a,0¹, Γ_a,1¹ and Γ_a,e¹, the two inclusions, and their pushout isomorphism.
+- The two edge-to-vertex component maps pr₀ and pr₁ and their O(ψ) pullbacks; all representative changes intertwine the maps.
+- The common determinant quotient Φ_a acts on the amalgam sequence, with the two vertex and edge quotients identified as above. Both vertex-to-edge indices are q+1. The two vertex types are not identified within the type-preserving group H_a¹.
 
 **Checks.**
 
-- On the old part, if a,b are the characteristic-zero roots of X²−T_xX+N(x), then V_x has eigenvalues a,b, U_x has a/N(x),b/N(x), and `U_{x^2}` has a²/N(x)²,b²/N(x)²; the residual eigenvalues are α_x²,β_x² because N(x)≡1 modulo p.
+- For F=ℚ, a=1 and K maximal, the vertices have stabilizers PSL₂(ℤ) and hPSL₂(ℤ)h⁻¹ for h=diag(1,ℓ), their edge stabilizer is Γ₀(ℓ)∩PSL₂(ℤ), and H_a¹=PSL₂(ℤ[1/ℓ]). The indices are ℓ+1.
+- If x=(π_x) is trivial in the relevant ray class group, the representative changes identify the two vertex groups by h=diag(1,π_x), and the second inclusion in the two-copy presentation is γ↦h⁻¹γh. The element diag(π_x,π_x⁻¹), when compatible with the away level, moves distance 2; it is not the adjacent vertex map.
+- In ℚ(√−5), x=(7,3+√−5) has norm 7. For b=0, a²=7 has no integral solution; for b=±1 it gives a²=2, and |b|≥2 gives a²+5b²≥20. Thus x is nonprincipal. With p=3, 7≡1 and the local roots i,−i in 𝔽₉ have product 1 and squares −1=2. The two component stabilizers and the local t_x exist, with index 8, without any global π_x.
+- For F=ℚ and maximal away level, Ĥ_a has determinant classes {1,−1}, so Φ_a=C₂ on both vertices and the edge, while H_a¹=PSL₂(ℤ[1/ℓ]). Taking invariants uses the same order-two action on all three terms.
+- For PGL₂(ℚ_ℓ), diag(1,ℓ) has odd determinant valuation and exchanges the two vertex types. The determinant-square group preserves them; using the full PGL₂ group would invalidate this segment quotient.
 
-- `U_{x^2}` acts on H^0(G, O/ϖᵃ) = O/ϖᵃ by `N(x)^{-2}`, which is ≡ 1 mod p but not 1 in general: for N(x) = 7, p = 3 and a = 2 it is multiplication by 7 on ℤ/9.
+*Needs:* §3.1; §0.1; TauCetiRoadmap.ArithmeticLocallySymmetricSpaces ALS.0.7 and ALS.3.3–ALS.3.9; TauCetiRoadmap.ReductiveGroupsPartII RG2.2.4; TauCetiRoadmap.AdelicAlgebraicGroups §4.2; TauCetiRoadmap.FreeGroupsAndLimitGroups §§4.5 and 4.8; Mathlib `Monoid.PushoutI`.
 
-- The unnormalized double coset of diag(π_x², 1) acts on H^0(Γ^1_0(x)) by N(x)², not by 1.
+### 3.3 The squared operator on the sum of components
 
-- V_x² ≡ `U_{x^2}` mod p, since N(x) ≡ 1 mod p.
+Use all component and coefficient data of §3.2. Let s_x be the adelic element diag(ϖ_x,1) at x and 1 away from x. On the direct sum of all K₀(x)-component cohomologies with O(ψ)⊗O/ϖᵃ coefficients, let V_x be its unnormalized Iwahori correspondence and U_x=q⁻¹V_x. Define `U_{x^2}`=q⁻² times the correspondence of s_x², equivalently of diag(ϖ_x,ϖ_x⁻¹) locally. Positive Iwahori composition gives U_x²=`U_{x^2}`. These correspondences include their maps between components, rather than acting separately on every component.
 
-- `U_{x^2}` ≡ V_x² mod p.
+The compatible squared-operator target on the sum of the amalgam sequences is the tree-chain extension of §3.4. Its unnormalized action on each H*(H_a¹,M_a) is 1, and its normalized action is q⁻². Indeed the determinant of s_x² is locally a square, so the resulting component translation is trivial; its action on the type-preserving tree is transported within the H_a¹ edge orbit by strong approximation. The coefficient intertwiner is the one of §3.2, not an unmarked identification. This construction requires neither a global uniformizer nor an element diag(π_x,π_x⁻¹) in the arithmetic group. In the principal-ray-class case with such an element g∈H_a¹, it agrees with the identity bare double coset H_a¹gH_a¹=H_a¹; the augmentation of the chain map is still what fixes the extension to the whole sequence.
 
-- Modulo ϖ on the old degeneracy images, U_x has eigenvalues α_x,β_x and `U_{x^2}` has α_x²,β_x²; integrally the norm denominators in the preceding check remain.
+The specialized interface records the following facts.
 
-- `U_{x^2}` − 1 is invertible on the localization at (m, U_x − α_x) because α_x² ≢ 1.
-
-- For N(x)=7, coefficient ℤ/9, the inverse of 7²=4 is 7; thus the normalized augmentation scalar is 7, while the unnormalized edge degree is 4. Confusing edge degree with augmentation gives 1 instead of 7.
-
-(CG18, §9.3, proof of Lemma 9.6, published p. 418; CG18 line 4843; CG18, §9.3, Remark 9.7, published p. 418; CG18 line 4843.)
-
-*Needs:* §3.2; §0.2; TauCetiRoadmap.ArithmeticLocallySymmetricSpaces ALS.3.5; TauCetiRoadmap.ArithmeticLocallySymmetricSpaces ALS.3.8.
-
-### 3.4 The Hecke-equivariant Lyndon sequence of the amalgam
-
-For the amalgam G = Γ^1 `*_{Gamma^1_0(x)}` Γ^1 and every a ≥ 1 there is a long exact sequence ⋯ → `H^{i-1}(Gamma^1_0(x), O/varpi^a)` → H^i(G, O/ϖᵃ) → H^i(Γ^1, O/ϖᵃ)² → H^i(Γ^1_0(x), O/ϖᵃ) → `H^{i+1}(G, O/varpi^a)` → ⋯, whose middle map is the difference of the two restrictions (the second through conjugation by h). It is equivariant for `U_{x^2}`, acting on the outer terms as in §3.3 and on H^i(Γ^1)² by the 2 × 2 matrix of Hecke operators induced by the tree endomorphism, and for the Hecke operators prime to x. Localizing at any ideal where `U_{x^2}` − 1 is invertible on all terms gives H^i(Γ^1, O/ϖᵃ)²_· ≅ H^i(Γ^1_0(x), O/ϖᵃ)_·.
-
-The left connecting degree is i; the sequence includes H^i(G) before the two vertex terms.
-
-The tree of ReductiveGroupsPartII RG2.2.4 is connected and acyclic, and G acts on it without inversion with one edge orbit and two vertex orbits (§3.2), so its augmented oriented chain complex is an exact sequence 0 → ℤ[G/Γ¹₀(x)] → ℤ[G/Γ¹] ⊕ ℤ[G/hΓ¹h⁻¹] → ℤ → 0 of G-modules. It is ℤ-split, so Hom_ℤ(−, M) for the coefficient module M gives a short exact sequence of G-modules whose terms Hom_ℤ(ℤ[G/H], M) are the coinduced modules Coind_H^G M; its long exact cohomology sequence, with Shapiro's isomorphism `groupCohomology.coindIso` and conjugation by h on the second vertex term, is the displayed sequence. The operator maps are defined on that chain sequence, rather than inferred from the double coset GgG. Orient an edge e from a type-zero vertex v₀ to a type-one vertex v₁. Send e to the sum of the q² edges reached by two successive steps without reversing direction, where q=N(x). Let A₁(v) and A₂(v) denote the sums of vertices at distance one and two from v. The compatible vertex maps are F(v₀)=A₁(v₀)−qv₀ and F(v₁)=A₂(v₁)−qA₁(v₁)+v₁. Indeed the boundary of the edge sum is A₂(v₁)+v₁−A₁(v₀)−qA₁(v₁)+qv₀=F(v₁)−F(v₀). These formulas are equivariant for the type-preserving arithmetic group. Their augmentations are q+1−q=1 and q(q+1)−q(q+1)+1=1. Thus the induced unnormalized action on the augmentation module is 1, even though the edge operator has degree q². Multiplying the entire chain map by q⁻² gives the `U_{x^2}` action on the sequence, and its action on H^i(G) is q⁻². The scalar q⁻²−1 is nilpotent modulo ϖᵃ when q≡1 modulo p. Consequently localization where `U_{x^2}-1` is a unit kills the adjacent G terms and gives the desired middle isomorphism. The normalization q⁻² is defined because x∤p.
-
+- V_x, U_x and `U_{x^2}` on the full component sum, with the source and target component transports and O(ψ) intertwiners.
+- U_x²=`U_{x^2}`, and V_x²=q²`U_{x^2}`≡`U_{x^2}` modulo ϖ because q≡1 modulo p.
+- On each amalgam cohomology term the compatible operator is q⁻², so `U_{x^2}`−1 is nilpotent modulo ϖᵃ. The denominator is a unit since x∤p.
 
 **Checks.**
 
-- The localized isomorphism holds at m̃ = (m, U_x − α_x) since `U_{x^2}` − 1 ≡ α_x² − 1 is a unit there.
+- On the old summand, roots a,b of X²−T_xX+q give V_x-eigenvalues a,b, U_x-eigenvalues a/q,b/q and `U_{x^2}`-eigenvalues a²/q²,b²/q². Modulo ϖ they are α²,β² for the squared operator.
+- In the principal case, the unnormalized edge correspondence has degree q² on H⁰ of an edge stabilizer with trivial coefficients, while the augmentation action on H⁰(H_a¹) is 1. For q=7 over ℤ/9, q²=4 and q⁻²=7. The normalized edge degree is 1 and the normalized augmentation is 7, not 1.
+- For the nonprincipal norm-7 ideal in §3.2, s_x and s_x² are adelic correspondences. V_x transports components, while its square has trivial component translation; on the amalgam term over 𝔽₃ its scalar is 7⁻²=1 and over ℤ/9 it is 7. The local roots i,−i have α²−1=β²−1=1 in 𝔽₉.
+- At a selected root α with α²≠1, `U_{x^2}`−1 is a unit on the selected edge localization. At roots 1,1 it is not: its residual value is 0.
 
-- At the anaemic m itself the argument does not apply when part of the m-localization has U_x ≡ ±1.
+(CG18, proof of Lemma 9.6 and Remark 9.7, p.418; CG18 line 4843 and line 4875; the augmentation normalization is established by §3.4.)
 
-- For F=ℚ the same selected-root result agrees with ModularCurvesPartII §15.8, at its stated modular-curve level and coefficient hypotheses.
+*Needs:* §3.2; §0.2; TauCetiRoadmap.ArithmeticLocallySymmetricSpaces ALS.3.5 and ALS.3.8.
 
-- For q=7, the two vertex augmentations are 8−7=1 and 56−56+1=1; the oriented edge sum has 49 edges. After normalization modulo 9 these become 7,7 and 49·7=1 respectively, and the boundary relation is preserved.
+### 3.4 The component-indexed Hecke-equivariant Lyndon comparison
 
-(CG18, §9.3, proof of Lemma 9.6, published p. 418; CG18 line 4843.)
+For each amalgam of §3.2 and M_a=O(ψ)⊗O/ϖᵃ with its specified H_a¹-action, prove the natural long exact sequence ⋯→Hⁱ⁻¹(Γ_a,e¹,M_a)→Hⁱ(H_a¹,M_a)→Hⁱ(Γ_a,0¹,M_a)⊕Hⁱ(Γ_a,1¹,M_a)→Hⁱ(Γ_a,e¹,M_a)→Hⁱ⁺¹(H_a¹,M_a)→⋯. The vertex-to-edge map is res₀−res₁, using the actual inclusions and the coefficient intertwiners of §3.2. Taking the full component sums and the finite determinant-quotient invariants of §3.1 gives the two degeneracy copies of Hⁱ_ψ(Y,O/ϖᵃ) and Hⁱ_ψ(Y₀(x),O/ϖᵃ). The resulting sequence is equivariant for away-from-x Hecke correspondences and the squared operator of §3.3, with source and target component labels transported along every correspondence. Where `U_{x^2}`−1 is invertible, its adjacent amalgam terms vanish, giving the middle isomorphism. No principal-ideal hypothesis occurs.
 
-*Needs:* §3.2; §3.3; TauCetiRoadmap.ReductiveGroupsPartII RG2.2.4; Mathlib `groupCohomology.coindIso`; TauCetiRoadmap.ModularCurvesPartII §15.4 (only the principal-level case over ℚ).
+The tree is connected and acyclic. Its augmented oriented chains give 0→ℤ[H_a¹/Γ_a,e¹]→ℤ[H_a¹/Γ_a,0¹]⊕ℤ[H_a¹/Γ_a,1¹]→ℤ→0. This sequence is ℤ-split; applying Hom_ℤ(−,M_a), then group cohomology and Shapiro's isomorphism, gives the displayed long exact sequence with the stated coefficient action. The component intertwiners give its naturality, and taking invariants under the finite 2-groups is exact for odd p.
+
+The compatible squared operator is defined on this chain sequence. Orient e from the second vertex v₁ to the first v₀. Send e to the sum of the q² oriented terminal edges of length-three paths starting with e and never reversing direction; this is the direction of s_x²=diag(ϖ_x²,1). Write A₁(v), A₂(v) for sums of vertices at distances one and two. The vertex maps are F(v₁)=A₁(v₁)−qv₁ and F(v₀)=A₂(v₀)−qA₁(v₀)+v₀. The boundary of the edge sum is A₂(v₀)+v₀−A₁(v₁)−qA₁(v₀)+qv₁=F(v₀)−F(v₁). The vertex augmentations are q+1−q=1 and q(q+1)−q(q+1)+1=1. All maps are H_a¹-equivariant and induce the adelic squared edge correspondence with the coefficient transport of §3.2. Tensoring the permutation-chain description with M_a gives the coefficient version; the augmentation map is the identity of M_a. Multiplying the chain map by q⁻² gives augmentation q⁻². Since q≡1 modulo p, q⁻²−1 is nilpotent modulo ϖᵃ, and localization at `U_{x^2}`−1 kills every amalgam term.
+
+The specialized interface records the following facts.
+
+- The coefficient Lyndon sequence for the two actual vertex groups and edge group at every component, with its restriction and connecting maps.
+- Its equivariance after summing components and taking the common determinant-quotient invariants, using all specified coefficient intertwiners.
+- The selected-root middle isomorphism when α²≠1, since `U_{x^2}`−1 then has residual value α²−1 on that localization.
+
+**Checks.**
+
+- For a principal ray-class prime, identify the second vertex with the first by h as in §3.2: res₁ becomes restriction after conjugation by h. For F=ℚ at principal level N≥3, this is the sequence of ModularCurvesPartII §15.4.
+- With a_x=1, v₀=[O_x²] and v₁=[O_x⊕ϖ_xO_x], the local element s_x=diag(ϖ_x,1) sends v₁ to v₀. Its square sends the oriented edge v₁→v₀ to the terminal edge of the path v₁→v₀→s_xv₀→s_x²v₀, of length 3. Reversing the initial orientation instead selects the opposite squared correspondence. The boundary is terminal vertex minus initial vertex, so the cohomology difference is res₀−res₁.
+- For q=7 the vertex augmentations are 8−7=1 and 56−56+1=1; the edge sum has 49 terms. Modulo 9 the normalized vertex augmentations are 7 and the normalized edge degree is 49·7=1. These values do not depend on whether the norm-7 ideal is principal.
+- With p=3 and the nonprincipal norm-7 ideal, roots i,−i have α²=2 and α²−1=1 in 𝔽₉. The amalgam scalar is 1, so its `U_{x^2}`−1 action is 0; localization at the edge’s unit therefore kills the adjacent amalgam groups. Both vertex groups remain present with their actual component labels.
+- Localization at the anaemic ideal alone need not invert `U_{x^2}`−1: a summand with U_x=1 has residual squared-operator difference 0. The selected-root projection is essential.
+
+(CG18, proof of Lemma 9.6, p.418; CG18 line 4843. This is the all-component, O(ψ)-coefficient extension of that argument.)
+
+*Needs:* §3.2; the Iwahori correspondence and normalization of §3.3; §3.1; TauCetiRoadmap.ReductiveGroupsPartII RG2.2.4; TauCetiRoadmap.ArithmeticLocallySymmetricSpaces ALS.3.3–ALS.3.9; Mathlib `groupCohomology.coindIso`; TauCetiRoadmap.ModularCurvesPartII §15.4 (only the principal-level case over ℚ).
 
 ### 3.5 Lemma 9.6: condition (5) of Conjecture B for n = 2
 
 Let n = 2, p > 2, Q a set of Taylor–Wiles primes and m a maximal ideal of `T^an_{Q,psi}` with B^gal and r̄_m ≅ r̄. For x ∈ Q let α_x, β_x be the two (distinct) eigenvalues of r̄(Frob_x), with α_x the eigenvalue on ψ̄_x. Then for every a ≥ 1 the map (`lim_{k->infty}prod_{x in Q}(V_x - betaTilde_x)^{k!}`) ∘ pr^* , followed by the projection onto the m_Q-part, is an isomorphism H^*_ψ(Y, O/ϖᵃ)_m → `H^*_psi(Y_0(Q), O/varpi^a)_{m_Q}`; that is, B^tw(Q, ψ, m) holds.
 
-N(x) ≡ 1 mod p and α_x ≠ β_x (so α_x ≢ ±1, since α_xβ_x ≡ N(x) ≡ 1). ψ dropped from the notation; the argument is the same for O(ψ) since ψ is trivial at x. Localization at m̃ = (m, U_x − α_x), not at m.
+N(x) ≡ 1 mod p and α_x ≠ β_x (so α_x ≢ ±1, since α_xβ_x ≡ N(x) ≡ 1). The coefficient module extends to each away-from-x amalgam by §3.2, since ψ is supported on R and x∉R; the maps use its specified transports. Localization at m̃ = (m, U_x − α_x), not at m.
 
-A proof uses the following inputs and comparisons. Induction on |Q| reduces to Q = {x}, using that the projectors for different primes commute. The degeneracy maps φ : H^*(Y)² → H^*(Y_0(x)) and φ^∨ satisfy φ^∨ ∘ φ = (N(x)+1, T_x; T_x, N(x)+1), with determinant (N(x)+1)² − T_x² ∉ m, so H^*(Y_0(x))_m ≅ H^*(Y)²_m ⊕ W and `H^*(Y_0(x))_{mTilde}` ≅ `(H^*(Y)^2_m)_{alpha_x}` ⊕ `W_{mTilde}`, where the root selection on the old two-copy module is defined by its degeneracy operator (ArithmeticLocallySymmetricSpaces ALS.3.14). Pass to PSL_2 components (§3.1) and apply the localized Lyndon isomorphism at m̃ (§3.4), where `U_{x^2}` − 1 ≡ α_x² − 1 is a unit: `(H^i(Y)^2_m)_{alpha_x}` ≅ `H^i(Y_0(x))_{mTilde}`, so `W_{mTilde}` = 0. Applying the projectors `lim(U_x - betaTilde_x)^{k!}` and `lim(U_x - alphaTilde_x)^{k!}` identifies H^*(Y)_m with the α_x-part, which is the m_Q-part.
+A proof uses the following inputs and comparisons. Induction on |Q| reduces to Q = {x}, using that the projectors for different primes commute. The degeneracy maps φ : H^*(Y)² → H^*(Y_0(x)) and φ^∨ satisfy φ^∨ ∘ φ = (N(x)+1, T_x; T_x, N(x)+1), with determinant (N(x)+1)² − T_x² ∉ m, so H^*(Y_0(x))_m ≅ H^*(Y)²_m ⊕ W and `H^*(Y_0(x))_{mTilde}` ≅ `(H^*(Y)^2_m)_{alpha_x}` ⊕ `W_{mTilde}`, where the root selection on the old two-copy module is defined by its degeneracy operator (ArithmeticLocallySymmetricSpaces ALS.3.14). Pass to the determinant-square kernels (§3.1), form the component-indexed amalgams and O(ψ) transports of §3.2, and apply the full-component localized Lyndon isomorphism at m̃ (§3.4), where `U_{x^2}` − 1 ≡ α_x² − 1 is a unit: `(H^i(Y)^2_m)_{alpha_x}` ≅ `H^i(Y_0(x))_{mTilde}`, so `W_{mTilde}` = 0. Applying the projectors `lim(U_x - betaTilde_x)^{k!}` and `lim(U_x - alphaTilde_x)^{k!}` identifies H^*(Y)_m with the α_x-part, which is the m_Q-part.
 
 **Checks.**
 
@@ -1061,7 +1049,7 @@ Let G = GL_n over F with arithmetic quotients X, X_0(x) (level the line-stabiliz
 
 The Frobenius eigenvalues are pairwise distinct and the localized tower is locally admissible with every simple subquotient in the specified unramified principal-series block. The comparison is conditional on that local compatibility. The map at X₀(x) uses the parahoric stabilizing the last coordinate; conjugating to the first-coordinate convention transports both the operator and its chosen root. The PGLₙ descent is §3.7.
 
-A proof uses the following inputs and comparisons. Each M_j is filtered by its m_∅-torsion, and the compatibility hypothesis with Ext-vanishing between the unramified principal series and other irreducibles (SmoothRepresentationsOfLocalGroups SR.5.3, distinct-eigenvalue local block) puts M_j in the block category 𝒞. Hochschild–Serre for the towers X(x^m) → X and X(x^m) → X_0(x) gives spectral sequences H^i(G(O_x), M_j) ⇒ `H^{i+j}(X)_{m_empty}` and e_αH^i(U_0(x), M_j) ⇒ `H^{i+j}(X_0(x))_m` (ArithmeticLocallySymmetricSpaces ALS.6.2 and its tower version). The map ι_* : H^k(G(O_x), M) → e_αH^k(U_0(x), M) is an isomorphism on the block (SR.5.3, derived hyperspecial–parahoric comparison, CG18 Theorem 9.16), so the morphism of spectral sequences is an isomorphism on E_2 and hence on the abutments. The comparison is equivariant for the Hecke operators away from x. The torus fibrations relate the two cohomologies through a Leray spectral sequence; §3.7 retains that comparison. KT17 Lemma 6.25(4) concerns GLₙ at Iwahori level and ordinary completed cohomology.
+A proof uses the following inputs and comparisons. Each M_j is filtered by its m_∅-torsion, and the compatibility hypothesis with Ext-vanishing between the unramified principal series and other irreducibles (SmoothRepresentationsOfLocalGroups SR.5.3, distinct-eigenvalue local block) puts M_j in the block category 𝒞. Hochschild–Serre for the towers X(x^m) → X and X(x^m) → X_0(x) gives spectral sequences H^i_cts(G(O_x), M_j) ⇒ `H^{i+j}(X)_{m_empty}` and e_αH^i_cts(U_0(x), M_j) ⇒ `H^{i+j}(X_0(x))_m` (CompletedCohomologyPartII §6.2 and gap:tame-place-fixed-exponent-descent, with ALS.6.2 as the finite-cover input). The map ι_* : H^k_cts(G(O_x), M) → e_αH^k_cts(U_0(x), M) is an isomorphism on the block (SR.5.3, derived hyperspecial–parahoric comparison, CG18 Theorem 9.16), so the morphism of spectral sequences is an isomorphism on E_2 and hence on the abutments. The comparison is equivariant for the Hecke operators away from x. The torus fibrations relate the two cohomologies through a Leray spectral sequence; §3.7 retains that comparison. KT17 Lemma 6.25(4) concerns GLₙ at Iwahori level and ordinary completed cohomology.
 
 **Checks.**
 
@@ -1071,13 +1059,17 @@ A proof uses the following inputs and comparisons. Each M_j is filtered by its m
 
 - The isomorphism is compatible with the Hecke operators prime to x.
 
+- For trivial discrete k under U=ℤₚ, H⁰_cts(U,k)=k and H¹_cts(U,k)=Hom_cts(ℤₚ,k)=k, while H¹(1,k)=0. Derived continuous invariants retain this degree-one term; ordinary invariants do not.
+
+- For the regular point tower Map(U/U_t,k), the colimit is C_cts(U,k), whose continuous cohomology is k in degree 0 and zero in positive degrees. The abutment is the point’s cohomology; replacing this tower module by trivial k would give the preceding degree-one term.
+
 (CG18, §9.4.1–9.4.2, Lemmas 9.9–9.14, Theorem 9.16, published pp. 419–424; CG18 line 4897; CGH20, §3.1, proof of Theorem 3.2, arXiv pp. 5–6; CGH20 line 210.)
 
-*Needs:* TauCetiRoadmap.SmoothRepresentationsOfLocalGroups SR.5.3, distinct-eigenvalue local block; TauCetiRoadmap.SmoothRepresentationsOfLocalGroups SR.5.3, derived hyperspecial–parahoric comparison; TauCetiRoadmap.ArithmeticLocallySymmetricSpaces ALS.6.2; §0.4; §2.4; §2.1.
+*Needs:* TauCetiRoadmap.CompletedCohomologyPartII §6.2 and gap:tame-place-fixed-exponent-descent; TauCetiRoadmap.SmoothRepresentationsOfLocalGroups SR.5.3, distinct-eigenvalue local block; TauCetiRoadmap.SmoothRepresentationsOfLocalGroups SR.5.3, derived hyperspecial–parahoric comparison; TauCetiRoadmap.ArithmeticLocallySymmetricSpaces ALS.6.2; §0.4; §2.4; §2.1.
 
 ### 3.7 Descent of the distinct-root comparison to PGLₙ
 
-Prove the analogue of §3.6 for Y and Y₀(Q) of Res PGLₙ, at auxiliary places x ∈ Q with N(x) ≡ 1 mod p at which r̄ is unramified with pairwise distinct residual Frobenius eigenvalues, assuming the following block condition: for every x ∈ Q, every subset Q′ ⊆ Q ∖ {x}, every j and every b ≥ 1, the smooth PGLₙ(F_x)-module `colim_{t->infty}` `H^j(Y_0(Q')(x^t), O/varpi^b)_{m_{Q'}}`, with transition pullbacks, is locally admissible and each of its irreducible subquotients is the unramified principal series of PGLₙ(F_x) (trivial central character) attached to r̄|G_x. Here Y₀(Q′)(x^t) has the level of Y₀(Q′) away from x and the principal congruence subgroup of level x^t at x, and `m_{Q'}` is the selected maximal ideal of §0.4 (m_∅ = m); the subsets Q′ give the successive base levels of the induction on |Q|. The map is pullback, the factorial root projector and the selected local-factor projection, with coefficients O/ϖᵃ for every a≥1; it is Hecke-equivariant away from Q. This is a separate comparison theorem, not an identification of GLₙ and PGLₙ cohomology. It supplies the comparison used by the Betti vanishing argument of CGH20 Theorem 3.2. The conditional near-faithfulness theorem in §5.4 continues to assume B^tw and does not use this descent to prove its own hypothesis.
+Prove the analogue of §3.6 for Y and Y₀(Q) of Res PGLₙ, at auxiliary places x ∈ Q with N(x) ≡ 1 mod p at which r̄ is unramified with pairwise distinct residual Frobenius eigenvalues, assuming the following block condition: for every x ∈ Q, every subset Q′ ⊆ Q ∖ {x}, every j and every b ≥ 1, the smooth PGLₙ(F_x)-module `colim_{t->infty}` `H^j(Y_0(Q')(x^t), O/varpi^b)_{m_{Q'}}`, with transition pullbacks, is locally admissible and each of its irreducible subquotients is the unramified principal series of PGLₙ(F_x) (trivial central character) attached to r̄|G_x. Here Y₀(Q′)(x^t) has the level of Y₀(Q′) away from x and the principal congruence subgroup of level x^t at x, and `m_{Q'}` is the selected maximal ideal of §0.4 (m_∅ = m); the subsets Q′ give the successive base levels of the induction on |Q|. The map is pullback, the factorial root projector and the selected local-factor projection, with coefficients O/ϖᵃ for every a≥1; it is Hecke-equivariant away from Q. This is a separate comparison theorem, not an identification of GLₙ and PGLₙ cohomology. With this block hypothesis at every successive base level, it supplies the comparison step in the Betti vanishing argument of CGH20 Theorem 3.2; no derivation of the block hypothesis from that source’s assumptions is asserted. The conditional near-faithfulness theorem in §5.4 continues to assume B^tw and does not use this descent to prove its own hypothesis.
 
 One route is to restrict the GLₙ block equivalence to representations with trivial central character and compare the derived invariant functors for the images of hyperspecial and line-parahoric subgroups. The centre has p-primary cohomology when p divides q−1, so simply identifying those functors with GLₙ invariants is invalid. A second route uses the central-torus fibrations with their full Leray spectral sequences and the compatibility of the root projector; taking only the base of such a fibration does not preserve its cohomology. Both routes retain the distinguished parahoric operator and its chosen root.
 
@@ -1085,11 +1077,12 @@ One route is to restrict the GLₙ block equivalence to representations with tri
 
 - For n=2, the conclusion agrees with §3.5 without its extra distinct-block hypothesis.
 - For a central Cₚ factor with k coefficients, H⁰(Cₚ,k)=k and H¹(Cₚ,k)=k; deleting that central factor cannot give an equality of all derived invariants.
+- For Q={x,y}, the block hypothesis is required for (x,∅), (x,{y}), (y,∅) and (y,{x}): four conditions, rather than two conditions only at the minimal level.
 - For n=3, p=7, residual roots 1,2,4 have determinant 1 and are distinct. Replacing them by 1,1,1 destroys the simple-root condition since Q(1)=0.
 
 (CG18, §9.4, pp.419–424, especially the passage to GLₙ and the two spectral sequences; CG18 line 4897 and line 5097. CGH20, Theorem 3.2 and proof, pp.5–6; CGH20 line 210. KT17, §6.6, Lemma 6.25(4), pp.40–41; KT17 line 1893.)
 
-*Needs:* §3.6; §0.4; TauCetiRoadmap.SmoothRepresentationsOfLocalGroups SR.5.3; TauCetiRoadmap.ArithmeticLocallySymmetricSpaces ALS.6.2; TauCetiRoadmap.IntegralHeckeAndGaloisDeterminants §§2.3 and 3a.1.
+*Needs:* §3.6; TauCetiRoadmap.CompletedCohomologyPartII §6.2 and gap:tame-place-fixed-exponent-descent (the PGLₙ tower); §0.4; TauCetiRoadmap.SmoothRepresentationsOfLocalGroups SR.5.3; TauCetiRoadmap.ArithmeticLocallySymmetricSpaces ALS.6.2; TauCetiRoadmap.IntegralHeckeAndGaloisDeterminants §§2.3 and 3a.1.
 
 ### Examples
 
@@ -1097,7 +1090,7 @@ Take p=7 and a prime of norm 29, so q≡1 modulo 7. Residual roots 2 and 4 have 
 
 ### Dependencies
 
-Earlier layers 0–2; TauCetiRoadmap.ArithmeticLocallySymmetricSpaces ALS.0.7–ALS.0.10, ALS.1.1–ALS.1.8, ALS.2.2–ALS.2.4, ALS.3.3–ALS.3.9 and ALS.3.14, ALS.4.1 and ALS.4.9–ALS.4.12, ALS.5a.2–ALS.5a.6, ALS.5b.4–ALS.5b.6, ALS.6.1–ALS.6.3; TauCetiRoadmap.ReductiveGroupsPartII RG2.2.4; TauCetiRoadmap.AdelicAlgebraicGroups §4.2 and Layer AA.5; TauCetiRoadmap.FreeGroupsAndLimitGroups §§4.5 and 4.8; Mathlib `Monoid.PushoutI` and `groupCohomology.coindIso`; TauCetiRoadmap.ModularCurvesPartII §15.4 (principal-level case over ℚ); TauCetiRoadmap.SmoothRepresentationsOfLocalGroups SR.5.3, “The distinct-eigenvalue local block” and “Derived hyperspecial–parahoric comparison”.
+Earlier layers 0–2; TauCetiRoadmap.CompletedCohomologyPartII §§0.1–0.3, 1.1 and 6.2 and gap:tame-place-fixed-exponent-descent; TauCetiRoadmap.ArithmeticLocallySymmetricSpaces ALS.0.7–ALS.0.10, ALS.1.1–ALS.1.8, ALS.2.2–ALS.2.4, ALS.3.3–ALS.3.9 and ALS.3.14, ALS.4.1 and ALS.4.9–ALS.4.12, ALS.5a.2–ALS.5a.6, ALS.5b.4–ALS.5b.6, ALS.6.1–ALS.6.3; TauCetiRoadmap.ReductiveGroupsPartII RG2.2.4; TauCetiRoadmap.AdelicAlgebraicGroups §4.2 and Layer AA.5; TauCetiRoadmap.FreeGroupsAndLimitGroups §§4.5 and 4.8; Mathlib `Monoid.PushoutI` and `groupCohomology.coindIso`; TauCetiRoadmap.ModularCurvesPartII §15.4 (principal-level case over ℚ); TauCetiRoadmap.SmoothRepresentationsOfLocalGroups SR.5.3, “The distinct-eigenvalue local block” and “Derived hyperspecial–parahoric comparison”.
 
 ## Layer 4: The two finite patching data
 
@@ -1121,7 +1114,7 @@ The specialized interface records the following facts.
 
 - `rank_{S_N}` `DTilde_{N,i}` = dim_k `H_i(Y, k)_{m^*}`.
 
-- `T^an_{Q_N,psi,m}` acts on D̃_N in the derived category of S_N-modules, compatibly with (3).
+- The abstract Hecke correspondences give the endomorphisms used to form the projector. The simultaneous image algebra acts on every cohomology group in (3); its compatible finite coefficient and framing-quotient actions are those of §4.4.
 
 **Checks.**
 
@@ -1138,6 +1131,8 @@ The specialized interface records the following facts.
 - For Q_N = ∅ (N = 0), D̃_0 is a minimal complex over O computing `H_*(Y, O)_{m^*}`.
 
 - The minimal representative is unique up to (non-unique) isomorphism of complexes.
+
+- For k=O/ϖ, Ext¹_O(k,k)=k. On C=k[0]⊕k[1], a nonzero off-diagonal Ext¹ endomorphism t has H*(t)=0 and t²=0 but t≠0 in D(O). An abstract Hecke action can retain such a ghost while its cohomological image acts by zero; no derived factorization through that image is asserted.
 
 - For the two-term minimal residual complex k --0→ k in degrees 1,2, residual ranks are (1,1) and cannot be replaced by a degree-one stalk. For a contractible disk O --1→ O both residual cohomology ranks are 0 and minimalization deletes both terms.
 
@@ -1175,7 +1170,7 @@ The specialized interface records the following facts.
 
 - With T^c = `H^{c-l_0}(Y, k)^vee_m` in the alternate convention, T is zero in degrees 0, …, l_0 − 1 for q_0 ≥ 1 and `H^{l_0}(T)` ≠ H/ϖ.
 
-- Changing φ^2_N by x_1 ↦ φ^2_N(x_1) + z_1² keeps it surjective but breaks the R^i_∞-equivariance of the comparison mod ϖ.
+- Assume g,j≥1. Change the framed presentation surjection R^2_∞→R^□ by adding z₁² to the image of x₁, before augmentation. In the smooth model O⟦X,Z⟧→R^□=O⟦x,z⟧, the maps (X,Z)↦(x,z) and (X,Z)↦(x+z²,z) are surjective and differ by the nonzero z² modulo ϖ. They agree after z=0. Thus compatibility must be imposed on the framed maps themselves; the final φ_N:R_∞→R cannot detect this difference.
 
 - dim R^i_∞ = 1 + q + j − l_0 (§1.6).
 
@@ -1214,7 +1209,7 @@ A proof uses the following inputs and comparisons. (1) The global deformation pr
 
 For the data of §4.2, assuming ConjB(Q, ψ, m) for Q = ∅ and Q = Q_N (N ≥ 1), ψ = 1, χ: each datum i satisfies the hypotheses of the Calegari–Geraghty patching theorem: dim R^i_∞ = 1 + j + q − l_0; H^i is a finite R^i-module and the common residual complex is nonzero; (a) D^i_N ⊗ S_N/𝔪 ≅ T; (b) for M ≥ N ≥ 0, M ≥ 1 and 1 ≤ s ≤ M, R^i_∞ acts on H^*((D^i_M)^□ `tensor_{S_M}` S_N/ϖˢ), commuting with S^□_M and compatibly with reductions; (c) `H^{l_0}((D^i_N)^square tensor O/varpi^s)` ≅ H^i/ϖˢ for 1 ≤ s ≤ N, R^i_∞-linearly through φ^i_N; (d) the image of S^□_M lies in the image of R^i_∞, and the augmentation ideal of S^□_N maps into the image of ker φ^i_M. The comparisons of §4.3 supply the additional hypotheses of the two-datum version.
 
-Conjecture B including clause (6) and the intermediate levels. The nonzero residual seed is H^*(Y,k)_m; its lowest-degree nonvanishing is established by codimension concentration, rather than inferred from membership of m in the support of total cohomology.
+Conjecture B including the all-level, all-finite-coefficient clause (6). The nonzero residual seed is H^*(Y,k)_m; its lowest-degree nonvanishing is established by codimension concentration, rather than inferred from membership of m in the support of total cohomology.
 
 A proof uses the following inputs and comparisons. (a) §4.1 (2) and (4) with B^tw. (b) §2.7 at Q_M gives `R_{S_{Q_M}}` → `T^an_{Q_M,psi,m}` acting on the cohomology of every intermediate cover `Y_{Delta_N}(Q_M)`; composing with R^i_∞ ↠ `R^square_{S_{Q_M}}` ≅ `R_{S_{Q_M}}[[z]]` gives the R^i_∞-action on the framed cohomology. (c) holds for s ≤ N by §4.1(3) and §4.3. (d) clause (6) of Conjecture B identifies the S_M-action (diamond operators) with the inertial characters at Q_M, which lie in the image of `R_{S_{Q_M}}`; the augmentation ideal of S_N maps to ker(`R_{S_{Q_M}}` → R_S) (§1.4), hence into the image of ker φ^i_M.
 
@@ -1343,7 +1338,7 @@ A proof uses the following inputs and comparisons. R^1_∞ = R^1_loc⟦x_1, …,
 
 **Checks.**
 
-- This is the form used by CGH20 Theorem 1.2 (A.2), where the bad places have a single unipotent block and no congruence on N(v) is imposed; CGH20 normalizes det r = `epsilon^{n(1-n)/2}`, so the statement applies to r^∨, which has the same adjoint representation.
+- This is the smooth local form used by CGH20 Theorem 1.2 (A.2), here under the additional all-level inertia–diamond clause of §2.2; there the bad places have a single unipotent block and no congruence on N(v) is imposed; CGH20 normalizes det r = `epsilon^{n(1-n)/2}`, so the statement applies to r^∨, which has the same adjoint representation.
 
 - Complete-intersection descent requires a regular augmentation sequence; no such conclusion is inferred from R = T alone.
 
@@ -1378,11 +1373,11 @@ A proof uses the following inputs and comparisons. B^van(b) with coefficients E 
 
 ### 5.7 The maximal ideal m from hypothesis (8)
 
-Let r̄ be the residual representation of a standing datum. (a) If π_0 is a cuspidal automorphic representation of GL_n(𝔸_F) with trivial central character and trivial infinitesimal character, unramified at every v | p and outside S, with `pi_{0,v}^{Iw(v)}` ≠ 0 for v ∈ R, whose unnormalized Hecke eigenvalues at λ ∉ S (after ι : ℂ ≅ Q̄_p) are integral and reduce to the coefficients of the characteristic polynomial of r̄(Frob_λ) in the convention of §2.1, then there is a maximal ideal m of T at level K_∅(R) with `H^{q_0}(Y, k)_m` ≠ 0 and r̄_m ≅ r̄ (given B^gal at m). (b) If r̄ is Serre modular of minimal level and R = R(r̄), such an m exists by definition (§0.6).
+Let r̄ be the residual representation of a standing datum. (a) If π_0 is a cuspidal automorphic representation of GL_n(𝔸_F) with trivial central character and trivial infinitesimal character, unramified at every v | p and outside S, with `pi_{0,v}^{Iw(v)}` ≠ 0 for v ∈ R, whose unnormalized Hecke eigenvalues at λ ∉ S (after ι : ℂ ≅ Q̄_p) are integral and reduce to the coefficients of the characteristic polynomial of r̄(Frob_λ) in the convention of §2.1, then there is a maximal ideal m of T at level K_∅(R) with `H^{q_0}(Y, k)_m` ≠ 0 and r̄_m ≅ r̄ (given B^gal at m). (b) If r̄ is Serre modular of minimal level and R = R(r̄), §0.6 instead gives a maximal ideal m with H*(Y,k)_m≠0 and the matching residual Hecke polynomials, hence r̄_m≅r̄ under B^gal. This branch asserts total residual support, without a degree-q₀ conclusion.
 
 (a) uses Clozel's purity lemma and the Borel–Wallach range to place π_0 in cuspidal cohomology in degree q_0. Uniqueness of r̄_m is Chebotarev with Brauer–Nesbitt.
 
-A proof uses the following inputs and comparisons. `pi_{0,infty}` is tempered and cohomological for the trivial coefficient system (AutomorphicFormsOnReductiveGroups §§5.5 and 5.3), so π_0 contributes to `H^{q_0}_cusp(Y(K_empty(R)), C)` (ALS.5b.5), since `(pi_0^infty)^{K_empty(R)}` ≠ 0. T acts on the finite O-module `H^{q_0}(Y, O)` and its eigensystem on the π_0-part is integral; reduction gives a maximal ideal m in the support of `H^{q_0}(Y, O)`, hence of `H^{q_0}(Y, k)` by Nakayama and universal coefficients. The Hecke polynomials at m are the reductions of those of π_0, i.e. the characteristic polynomials of r̄(Frob_λ); so r̄_m ≅ r̄ by IntegralHeckeAndGaloisDeterminants §3b.1 (uniqueness). (b) is the definition.
+A proof uses the following inputs and comparisons. `pi_{0,infty}` is tempered and cohomological for the trivial coefficient system (AutomorphicFormsOnReductiveGroups §§5.5 and 5.3), so π_0 contributes to `H^{q_0}_cusp(Y(K_empty(R)), C)` (ALS.5b.5), since `(pi_0^infty)^{K_empty(R)}` ≠ 0. T acts on the finite O-module `H^{q_0}(Y, O)` and its eigensystem on the π_0-part is integral; reduction gives a maximal ideal m in the support of `H^{q_0}(Y, O)`, hence of `H^{q_0}(Y, k)` by Nakayama and universal coefficients. The Hecke polynomials at m are the reductions of those of π_0, i.e. the characteristic polynomials of r̄(Frob_λ); so r̄_m ≅ r̄ by IntegralHeckeAndGaloisDeterminants §3b.1 (uniqueness). (b) is precisely the total-support definition in §0.6. Upgrading it to degree-q₀ nonvanishing uses the finite patching data, full strengthened Conjecture B and dimension–amplitude concentration of §§4.4 and 5.1, as invoked in §5.8.
 
 **Checks.**
 
@@ -1391,6 +1386,8 @@ A proof uses the following inputs and comparisons. `pi_{0,infty}` is tempered an
 - For F totally real or CM, (a) follows from the paper's form through the Galois representations attached to π_0 and local–global compatibility at ℓ ≠ p.
 
 - The ideal m depends only on r̄, not on π_0.
+
+- A graded module k concentrated in degree q₀+1 has total dimension 1 and degree-q₀ dimension 0. It satisfies the support conclusion of branch (b), while no lowest-degree conclusion follows by definition.
 
 - For a nonzero eigensummand lattice O^a with a≥1, reduction has dimension a over k and the maximal ideal stays in its support. A torsion-only k-class still defines the minimal-level residual branch without an initial O-eigenline.
 
@@ -1404,6 +1401,8 @@ Let r:G_F→GLₙ(O′) be a continuous lift in the standing problem, with O′/
 
 To apply this statement to the native weight-zero lifting data, require p>n unramified in F; crystalline weights 0,…,n−1 each once at every p-adic embedding; absolute irreducibility on `G_{F(zeta_p)}`; the big image there; ζₚ∉F(ad⁰r̄); balanced oddness at real places; and det `r=epsilon^{n(n-1)/2}`. At each place x∤p where r, or the initial π₀ in the characteristic-zero branch, ramifies, require unipotent inertia for r and either a trivial residual local representation with N(x)≡1 modulo p, or a single residual unipotent inertia block. In branch (a), π₀ is cuspidal with trivial central and infinitesimal characters, spherical at p and off R, Iwahori-spherical on R, with integral unramified Hecke eigenvalues reducing to those of r̄. In branch (b), use the minimal-level residual class of §0.6 and require no new ramification in r. These give R_triv and R_reg and the maximal ideal by §5.7. Finite coefficient extension supplies pairwise distinct χ with product 1: if the p-primary character group has order at least p>n, choose n distinct exponents and translate all of them by the inverse of n times their sum.
 
+For branch (b), begin with the nonzero total residual complex supplied by §5.7, construct the paired finite data using the full hypotheses of §4.4, and apply the dimension–amplitude concentration theorem of §5.1. It gives a nonzero top patched module and nonzero augmentation H, so `H^{q_0}(Y,k)_m`≠0. Thus the use of §5.4 does not require a characteristic-zero initial class.
+
 The point x_r exists by §1.7. Since ann(H) is nilpotent by §5.4 and O′ is reduced, the kernel of R_S→T_m annihilating H is killed by x_r, so x_r factors through T_m. Put κ=Frac(x_r(R_S)). The finite module H has nonzero fibre `H tensor_{R_S} kappa` at that prime. This is distinct from merely forming H⊗_O E. After extending κ to Q̄ₚ, the dual of the fibre gives a nonzero eigenclass at x_r in characteristic-zero cohomology; finite coefficient duality and base change identify the relevant generalized eigenspace, and a finite-dimensional commuting action has a nonzero eigenspace at every point of its support. The cuspidal recognition theorem gives π. Its polynomial equality is `X^n+sum_{i=1}^n (-1)^iN(v)^{i(i-1)/2}t_{v,i}(pi)X^{n-i}=det(X-r(Frob_v))`; equivalently L^S(r,s)=L^S(π,s−(n−1)/2), in the conventions above.
 
 **Checks.**
@@ -1416,7 +1415,7 @@ The point x_r exists by §1.7. Since ann(H) is nilpotent by §5.4 and O′ is re
 
 (CG18, Theorem 5.16(1)–(8), pp.383–384 and §9.5, pp.424–428; CG18 line 3497 and line 5166. The intermediate support argument is the deduction specified here, using the named supplier support and spectral results.)
 
-*Needs:* §§1.1–1.7, 2.5, 5.4, 5.6–5.7; TauCetiRoadmap.DeformationAndDerivedPatchingAlgebra §§6.1–6.5; TauCetiRoadmap.ArithmeticLocallySymmetricSpaces ALS.5a.2–ALS.5a.6 and ALS.5b.4–ALS.5b.6; TauCetiRoadmap.IntegralHeckeAndGaloisDeterminants §3a.1; TauCetiRoadmap.Chebotarev Layer 10.
+*Needs:* §§1.1–1.7, 2.5, 4.4, 5.1, 5.4, 5.6–5.7; TauCetiRoadmap.DeformationAndDerivedPatchingAlgebra §§6.1–6.5; TauCetiRoadmap.ArithmeticLocallySymmetricSpaces ALS.5a.2–ALS.5a.6 and ALS.5b.4–ALS.5b.6; TauCetiRoadmap.IntegralHeckeAndGaloisDeterminants §3a.1; TauCetiRoadmap.Chebotarev Layer 10.
 
 ### 5.9 The case n = 2 over an imaginary quadratic field
 
@@ -1436,7 +1435,7 @@ A proof uses the following inputs and comparisons. Specialize §5.8, replacing B
 
 - For F=ℚ(i), n=2 and R=∅, p=5 splits so |T|=2 and g=q−2; p=7 is inert so |T|=1 and g=q−3. At q=3 the values are 1 and 0, respectively.
 
-(CG18, §5, Theorems 1.2, 1.3 and 5.11, published pp. 299–300, 377–380; CG18 line 3497; CG18, §9.3, Lemma 9.6, published p. 416; CG18 line 4782.)
+(CG18, §5, Theorems 1.2, 1.3 and 5.11, published pp. 301–302, 379; CG18 line 192, line 225 and line 3324; CG18, §9.3, Lemma 9.6, published p. 416; CG18 line 4782.)
 
 *Needs:* §5.8; §3.5; §2.8.
 
@@ -1454,9 +1453,9 @@ A proof uses the following inputs and comparisons. l_0 = r_1⌊1/2⌋ + r_2 = 0 
 
 - For F = ℚ, Y is a modular curve, q_0 = 1, and Conjecture B holds at non-Eisenstein m.
 
-- The numerical coincidence dim R_∞ = dim S_∞ holds exactly (no defect).
+- The numerical coincidence dim R_∞ = dim S_∞^□ holds exactly (no defect); S_∞^□=S_∞⟦z₁,…,zⱼ⟧.
 
-- For F real quadratic, n=2 and |T|=1, ℓ₀=0, q₀=2, g=q−2 and dim R_∞=1+q+3=4+q. Dropping the framing variables instead gives 1+q, which is not the framed dimension.
+- For F real quadratic, n=2 and |T|=1, ℓ₀=0, q₀=2, g=q−2 and dim R_∞=1+q+3=4+q. At q=3, both dim R_∞ and dim S_∞^□ are 7, while dim S_∞=4; dropping framing changes the comparison.
 
 (CG18, §8.1, published p. 401; CG18 line 4167; CG18, §8.4, published pp. 405–406; CG18 line 4339.)
 
@@ -1472,7 +1471,7 @@ Earlier layers 0–4; TauCetiRoadmap.DeformationAndDerivedPatchingAlgebra §§1.
 
 ## Downstream consumers
 
-The near-faithfulness and smooth R=T conclusions supply conditional arbitrary-number-field arithmetic applications. The smooth case (§5.5) together with the PGLₙ comparison of §3.7 gives the Betti-cohomology argument behind the vanishing of adjoint Bloch–Kato Selmer groups in CGH20 Theorem 1.2. The rank-two specializations of the strengthened hypothesis and of §3.5 serve conditional GL₂ automorphy lifting over number fields of positive defect, at minimal and at nonminimal level. These applications consume this roadmap; none of them is an input to any layer.
+The near-faithfulness and smooth R=T conclusions supply conditional arbitrary-number-field arithmetic applications. The smooth case (§5.5), under the strengthened inertia–diamond hypothesis, together with the conditional PGLₙ comparison of §3.7 under its principal-series block hypothesis at every successive base level, supplies the corresponding inputs to the Betti-cohomology argument for adjoint Bloch–Kato Selmer vanishing in CGH20 Theorem 1.2. This use retains those additional hypotheses. The rank-two specializations of the strengthened hypothesis and of §3.5 serve conditional GL₂ automorphy lifting over number fields of positive defect, at minimal and at nonminimal level. These applications consume this roadmap; none of them is an input to any layer.
 
 ## References
 
