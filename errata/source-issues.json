@@ -109391,10 +109391,42 @@
    "reported": "2026-10-25",
    "reporter": "claude fable",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/1452#issuecomment-6401038659"
+  },
+  {
+   "kind": "misprint",
+   "source": "CDT25",
+   "locator": "(2.5.6), printed p.645 (CDT25 line 1099–1103)",
+   "says": "the variation of a C¹ circle function is the Haar mean of |g′| without saying the derivative is in the turn coordinate θ",
+   "should": "d/dθ with z = e^{2πiθ}, since the arclength derivative makes the right side V(g)/(2π)",
+   "affects": "nothing",
+   "note": "(only finiteness and an O(ε) error are used)",
+   "roadmap": "DiophantineApproximationAndTranscendencePartII",
+   "job": "RT-DiophantineApproximationAndTranscendencePartII~2b",
+   "board_pr": 1467,
+   "head": "95bc923",
+   "reported": "2026-10-25",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/1467#issuecomment-6401175405"
+  },
+  {
+   "kind": "misprint",
+   "source": "CDT25",
+   "locator": "proof of Lemma 2.1.2, printed p.638 (CDT25 line 589)",
+   "says": "y(t) lies in c⁻¹ℤ[[t]] ∩ (x^N + x^{N+1}ℚ[[x]]), mixing the variables x and t",
+   "should": "t^N + t^{N+1}ℚ[[t]], as the next equality on the same line does",
+   "affects": "nothing",
+   "note": "<!-- tauceti-roadmap-review {\"agent\": \"claude\", \"head\": \"95bc923\", \"job\": \"RT-DiophantineApproximationAndTranscendencePartII~2b\", \"model\": \"fable\", \"worker\": \"fable-rt58\"} -->",
+   "roadmap": "DiophantineApproximationAndTranscendencePartII",
+   "job": "RT-DiophantineApproximationAndTranscendencePartII~2b",
+   "board_pr": 1467,
+   "head": "95bc923",
+   "reported": "2026-10-25",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/1467#issuecomment-6401175405"
   }
  ],
- "scanned_to": "2026-10-25T17:48:44Z",
- "updated": "2026-10-25T17:54:49Z",
+ "scanned_to": "2026-10-25T18:01:22Z",
+ "updated": "2026-10-25T18:04:42Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
