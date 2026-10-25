@@ -191,7 +191,7 @@ title = "Examples of chromatic redshift in algebraic K-theory"
 year = 2024
 arxiv = "2111.10837v1"
 locator_scheme = "theorem"
-locator = "Theorems A and C, manuscript pp.2–3; §3 proof pp.6–7; §4, Theorem 4.2 and Lemma 4.5, pp.7–9"
+locator = "Theorems A and C, manuscript pp.2–3; §3 proof pp.6–7; §4, Theorems 4.2–4.3 and Lemma 4.5, pp.7–9"
 url = "https://arxiv.org/abs/2111.10837v1"
 fetched_from = "https://arxiv.org/pdf/2111.10837v1"
 fetched_at = "2026-10-24T15:21:51Z"
@@ -200,7 +200,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-24"
 version_note = "Theorem and section numbering of arXiv:2111.10837v1."
-cited_for = ["6.3 Yuan’s Lubin–Tate nonvanishing input"]
+cited_for = ["Exact supplier contracts", "6.3 Yuan’s Lubin–Tate nonvanishing input"]
 
 [[source]]
 id = "bsy"
@@ -304,7 +304,7 @@ sha256 = "2c423b7f8fa95e1ee236c1d59a22d559de26fb8882328d9604e7680f31a7c68e"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-24"
-version_note = "arXiv:2009.07223v3, §4.4; compact parametrized/retractive comparison at lines 4319–4346; replaces the inaccessible author-hosted URL."
+version_note = "arXiv:2009.07223v3, §4.4; compact parametrized/retractive comparison at lines 4319–4346."
 cited_for = ["1.4 Waldhausen A-theory"]
 
 [[source]]
@@ -498,7 +498,7 @@ title = "A homological approach to chromatic complexity of algebraic K-theory"
 year = 2019
 arxiv = "1908.09164v3"
 locator_scheme = "theorem"
-locator = "§2.1, p.5; Construction 2.1 and Lemma 2.2, pp.5–6; Proposition 2.22, p.15"
+locator = "§2.1, p.5; Construction 2.1 and Lemma 2.2, pp.5–6; Proposition 2.22 and proof, pp.15–16"
 url = "https://arxiv.org/abs/1908.09164v3"
 fetched_from = "https://arxiv.org/pdf/1908.09164v3"
 fetched_at = "2026-10-24T15:28:14Z"

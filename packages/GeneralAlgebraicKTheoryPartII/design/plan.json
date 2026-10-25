@@ -4334,13 +4334,13 @@
     },
     {
       "slug": "spectral-etale-descent",
-      "needs": "For every E∞ ring R and n≥0, prove that Y↦L_T(n)K(Perf(Y)) is an étale sheaf on the spectral étale site of R (Yuan Theorem 4.3).",
+      "needs": "With D₀=Hℚ and D_n=T(n) for n≥1, for every E∞ ring R and n≥0 prove that Y↦L_D(n)K(Perf(Y)) is an étale sheaf on the spectral étale site of R (yuan line 310, Theorem 4.3, manuscript p.8).",
       "supplier": "KTheoryFiniteLocalFields",
       "section": "§6.5a"
     },
     {
       "slug": "spectral-strict-henselian-detection",
-      "needs": "For every E∞ ring R and n≥0 with L_T(n)K(R)≠0, prove that there exists a prime ideal 𝔭⊂π₀R for which L_T(n)K(R_𝔭^sh)≠0 (Yuan Lemma 4.5).",
+      "needs": "With D₀=Hℚ and D_n=T(n) for n≥1, for every E∞ ring R and n≥0 with L_D(n)K(R)≠0 prove that there exists a prime ideal 𝔭⊂π₀R for which L_D(n)K(R_𝔭^sh)≠0 (yuan line 326, Lemma 4.5, manuscript pp.8–9).",
       "supplier": "KTheoryFiniteLocalFields",
       "section": "§6.5a"
     },
