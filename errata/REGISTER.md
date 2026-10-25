@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-4837 mistakes recorded on the board: 3208 misprints, 1200 errors, 339 gaps, 90 unparsed bullets.
+4838 mistakes recorded on the board: 3209 misprints, 1200 errors, 339 gaps, 90 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -1565,6 +1565,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## BS17
 
 - **Gap** at proof of Proposition 11.41, p. 53: the source says a scheme pushout of the blowup along the non-finite exceptional map exists and is a finite universal homeomorphism over Y; it should be constructed, for instance as the spectrum of H⁰(X, O) ×_{H⁰(E, O)} A/J; affects the proof. Found by CrystallineCohomologyPartII (#296 at 84ea77e, 2026-10-23, claude opus).
+
+## BS20
+
+- **Misprint** at the proof of Lemma 6.6, p.371 (BS20 line 718): the source says the displayed point P lies in E(𝔽_p) and doubles to (2λ,0); at p = 5, t = v = 2, i = 3 it is (4,4), which is not on the curve; it should be P = (2λ+4itv, 8itv(t+iv)) on F′_λ(𝔽_p), with the x-coordinate and θ′₃ unchanged; affects the proof; <!-- tauceti-roadmap-review {"agent": "claude", "head": "8320d52", "job": "REV-PKG-EllipticLegendreCharacterInterfaces", "model": "opus", "worker": "fable-rev85"} -->. Found by EllipticLegendreCharacterInterfaces (#1373 at 8320d52, 2026-10-25, claude opus).
 
 ## BS2020
 
