@@ -13,8 +13,9 @@ two-universal-variable integer formula,
 Hilbert’s tenth problem over ℤ, universal-existential rational undecidability,
 and parameter-uniform rational and bounded-degree counting.
 
-Relative Denef–Pas elimination and general AKE lack three-sorted ac-valued
-structures and their syntax adapter. Cluckers–Loeser integration, specialization
+Relative Denef–Pas elimination, general AKE and the transfer of Denef–Pas
+sentences with coefficients lack three-sorted ac-valued structures and their
+syntax adapter. Cluckers–Loeser integration, specialization
 and integral transfer lack constructible motivic functions and graded pushforwards.
 Dual Néron volumes lack gauge measures on Néron models;
 the normic zero-cycle headline lacks normic compactifications and Brauer–Manin
@@ -32,7 +33,8 @@ open MvPolynomial
 /-! ## Layer 1: valued-field languages and transfer -/
 
 /-- A fixed ring sentence has the same truth in ℚ_p and 𝔽_p((t)) at all
-sufficiently large primes; the bound depends on the sentence (§1.5). -/
+sufficiently large primes; the bound depends on the sentence (§1.5(a), the
+coefficient-free case over ℤ). -/
 theorem ax_kochen_ring (φ : FirstOrder.Language.ring.Sentence) :
     ∃ N : ℕ, ∀ (p : ℕ) (hp : p.Prime), N < p →
       letI : Fact p.Prime := ⟨hp⟩
