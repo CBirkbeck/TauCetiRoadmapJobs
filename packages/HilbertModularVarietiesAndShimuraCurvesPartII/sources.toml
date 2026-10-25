@@ -19,7 +19,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-24"
 version_note = "arXiv:2009.03127v7 internal pages; cited version, not an unverified publisher-numbering claim."
-cited_for = ["GK.0/generic-global-datum; GK.0/bdj-weight-set; GK.0/residual-eigenspaces; GK.0/non-eisenstein-freeness; GK.0/infinite-level-representation; GK.0/bdj-weight-theorem; GK.0/ihara-at-auxiliary-place; GK.1/power-series-cancellation; GK.1/patched-deformation-ring; GK.1/type-quotients; GK.1/fixed-determinant-patching-functor; GK.1/shimura-curve-patching-functor; GK.1/patched-fibre-identity; GK.1/big-patched-module; GK.2/freeness-from-extension; GK.2/fibre-product-freeness; GK.3/patched-maximal-cohen-macaulay; GK.3/weight-and-type-freeness; GK.3/locally-algebraic-lattices; GK.3/projective-lift-freeness; GK.4/glued-lattices; GK.4/loewy-length-three; GK.4/adjoint-lattice-generation; GK.4/adjoint-type-lattices; GK.4/adjoint-lattice-freeness; GK.4/comparison-lattice-truncation; GK.4/generation-transfer; GK.4/glued-lattice-freeness; GK.4/second-truncation-multiplicity; GK.5/patched-gk-dimension; GK.5/second-congruence-invariants; GK.5/patched-faithful-flatness; GK.5/banach-lifts; GK.5/shimura-curve-gk-dimension; GK.5/completed-cohomology-and-big-hecke; GK.5/big-r-equals-big-t"]
+cited_for = ["GK.0/generic-global-datum; GK.0/bdj-weight-set; GK.0/residual-eigenspaces; GK.0/non-eisenstein-freeness; GK.0/infinite-level-representation; GK.0/bdj-weight-theorem; GK.0/ihara-at-auxiliary-place; GK.1/patched-deformation-ring; GK.1/type-quotients; GK.1/fixed-determinant-patching-functor; GK.1/shimura-curve-patching-functor; GK.1/patched-fibre-identity; GK.1/big-patched-module; GK.2/freeness-from-extension; GK.2/fibre-product-freeness; GK.3/patched-maximal-cohen-macaulay; GK.3/weight-and-type-freeness; GK.3/locally-algebraic-lattices; GK.3/projective-lift-freeness; GK.4/glued-lattices; GK.4/loewy-length-three; GK.4/adjoint-lattice-generation; GK.4/adjoint-type-lattices; GK.4/adjoint-lattice-freeness; GK.4/comparison-lattice-truncation; GK.4/generation-transfer; GK.4/glued-lattice-freeness; GK.4/second-truncation-multiplicity; GK.5/patched-gk-dimension; GK.5/second-congruence-invariants; GK.5/patched-faithful-flatness; GK.5/banach-lifts; GK.5/shimura-curve-gk-dimension; GK.5/completed-cohomology-and-big-hecke; GK.5/big-r-equals-big-t"]
 
 [[source]]
 id = "EGS15"
@@ -66,7 +66,7 @@ title = "The Breuil-Mézard conjecture for potentially Barsotti-Tate representat
 year = 2014
 arxiv = "1208.3179v5"
 locator_scheme = "theorem"
-locator = "Introduction, Theorems A and B, pp. 2–4; §5.2 (Remark 5.2.2), p. 26; §5.5 (Definitions 5.5.2–5.5.3, Corollary 5.5.4 and proof), pp. 33–35; §5.4.1, the augmentation surjection and module comparison, pp. 30–31; Corollary 5.5.7 and proof, pp. 35–36"
+locator = "Introduction, Theorems A and B, pp. 2–4; §5.2 (Remark 5.2.2), p. 26; §5.5 (Definitions 5.5.2–5.5.3, Corollary 5.5.4 and proof), pp. 33–35; §5.4.1, the augmentation surjection and module comparison, pp. 30–31; Corollary 5.5.7 and proof, pp. 35–36; Corollary 5.4.5, p. 33"
 url = "https://arxiv.org/abs/1208.3179v5"
 fetched_from = "https://arxiv.org/pdf/1208.3179v5"
 fetched_at = "2026-10-24T08:26:53Z"
@@ -180,7 +180,7 @@ year = 2026
 title = "The Stacks project"
 authors = "The Stacks project authors"
 locator_scheme = "tag"
-locator = "05G8; 00MK; 090V"
+locator = "05G8"
 url = "https://stacks.math.columbia.edu/tag/090V"
 fetched_from = "https://stacks.math.columbia.edu/download/algebra.pdf#nameddest=090V"
 fetched_at = "2026-10-24T08:35:02Z"
@@ -188,7 +188,7 @@ sha256 = "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-24"
-cited_for = ["GK.2/freeness-from-extension; GK.2/iwasawa-miracle-flatness", "1.4; 2.2; 2.6; 3.3"]
+cited_for = ["2.2: finite-module Hopfian theorem"]
 
 [[source]]
 id = "BRE14"
@@ -221,5 +221,5 @@ sha256 = "29b601cf166b3c8c9771a1e57e659b77f8b731f61fca6d484db8900cedd52931"
 licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-10-24"
-cited_for = ["1.1"]
+cited_for = ["Exact supplier contracts: gap:power-series-cancellation"]
 version_note = "Publisher-open PDF; printed p. 155 is PDF page 4."

@@ -38,18 +38,6 @@ namespace TauCetiRoadmap.HilbertModularVarietiesAndShimuraCurvesPartII
 
 universe u v w z
 
-/-! ## Layer 1: Patching functors and the big patched module -/
-
-/-- Hamann's power-invariance theorem for commutative local rings: an abstract
-ring isomorphism between their one-variable power-series rings implies a ring
-isomorphism between the coefficient rings (Hamann, Theorem 4, p. 155). -/
-theorem powerSeries_cancellation
-    (A : Type u) (B : Type v) [CommRing A] [CommRing B]
-    [IsLocalRing A] [IsLocalRing B]
-    (h : Nonempty (PowerSeries A ≃+* PowerSeries B)) :
-    Nonempty (A ≃+* B) := by
-  sorry
-
 /-! ## Layer 2: Freeness over supports and noncommutative miracle flatness -/
 
 /-- A module is free of rank r over its scheme-theoretic support when it is
