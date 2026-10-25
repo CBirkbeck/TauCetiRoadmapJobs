@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-4746 mistakes recorded on the board: 3151 misprints, 1187 errors, 328 gaps, 80 unparsed bullets.
+4755 mistakes recorded on the board: 3159 misprints, 1188 errors, 328 gaps, 80 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -1040,6 +1040,12 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at §3.0.2 and proof of Theorem 3.4, pp.952–954: the source says l^m both as the order and as the conductor of ν; it should be index z and the ring class field by the conductor, with m=r+1 for exact order l^r; affects nothing. Found by AnticyclotomicLocalUnits (#1062 at 1b5329b, 2026-10-24, claude opus).
 - **Misprint** at §5.0.2, p.958: the source says the source labels the quasi-canonical field degree [Φ′_s:Φ]; it should be [Ψ′_s:Φ]=p^(s−1)(p+1); affects nothing. Found by AnticyclotomicLocalUnits (#1062 at 1b5329b, 2026-10-24, claude opus).
 - **Misprint** at §6.0.2, p.962: the source says characters factoring through Gal(Ψ_n/Ψ); it should be Gal(Ψ_n/Φ); affects nothing. Found by AnticyclotomicLocalUnits (#1062 at 1b5329b, 2026-10-24, claude opus).
+
+## bkt
+
+- **Misprint** at Appendix A.1, p.20: the source says ∂X is a real-analytic n-manifold with corners; it should be an (n−1)-manifold; affects nothing. Found by LogicAndDefinabilityInNumberTheory (#164 at 3062436, 2026-10-25, claude opus).
+- **Misprint** at Appendix A.2, p.20: the source says mixed transition maps are ψ_j∘ϕ_i⁻¹; it should be ψ_j⁻¹∘ϕ_i; affects nothing. Found by LogicAndDefinabilityInNumberTheory (#164 at 3062436, 2026-10-25, claude opus).
+- **Error** at Definition 4.4, p.14: the source says roughly polynomial functions form a ring; it should be restrict denominators to Laurent polynomials, since 1/k−1, with k as in README §6.13, is not of the stated form; affects a stated result. Found by LogicAndDefinabilityInNumberTheory (#164 at 3062436, 2026-10-25, claude opus).
 
 ## Blackadar
 
@@ -2843,6 +2849,11 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## GeL
 
 - **Error** at §9, printed page 43 (GeL line 1607): the source says the finite L-group quotient is determined by the Dynkin-diagram action; it should be determined by the full based root datum, including the central torus; affects a stated result. Found by GlobalShtukasAndFunctionFieldLanglands (#146 at e5b7994, 2026-10-23, codex gpt-6-astra).
+
+## geometric_stabilisation_via_p_adic_integration
+
+- **Misprint** at Example 2.4, p.7: the source says the quotient of dx∧dy by da is dx/x; it should be −dx/x under its own identification (7); affects nothing. Found by LogicAndDefinabilityInNumberTheory (#164 at 3062436, 2026-10-25, claude opus).
+- **Misprint** at the proof of Proposition 2.1(b), p.6: the source says the covering runs X◦→Y◦ with A⊂X◦; it should be Y◦→X◦ with A⊂Y◦; affects nothing. Found by LogicAndDefinabilityInNumberTheory (#164 at 3062436, 2026-10-25, claude opus).
 
 ## Getz (title not given in the review)
 
@@ -4766,6 +4777,11 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at §16, discussion before Symmetric Functions, p. 186 (MilnorStasheff lines 4448–4450): the source says CP^(2n+1) is a circle bundle over quaternionic projective space; it should be an S²-bundle over HP^n, bounding the associated D³-bundle; the real dimensions differ by two; affects a stated result. Found by TangentialBordism (ERRATA-TangentialBordism at bf9da30, 2026-10-24, codex gpt-6-astra).
 
+## mirror_symmetry_for_moduli_spaces_of_higgs_bundles_via_p_adic_int
+
+- **Misprint** at Proposition 4.1, p.20: the source says θ is a section on Y; it should be a section on X of the relative r-fold top forms; affects nothing. Found by LogicAndDefinabilityInNumberTheory (#164 at 3062436, 2026-10-25, claude opus).
+- **Misprint** at the proof of Claim 4.2, p.20: the source says take η to be (dx₁∧⋯∧dxₙ)^⊗r; it should be dx₁∧⋯∧dxₙ, a 1-gauge form; affects the proof. Found by LogicAndDefinabilityInNumberTheory (#164 at 3062436, 2026-10-25, claude opus).
+
 ## Montgomery1987
 
 - **Misprint** at §10.2, p. 259 (Montgomery1987 line 772): the source says Algorithm MCF is in Subsection 3.2; it should be Subsection 3.3, p. 248; affects nothing. Found by ECM (ERRATA-ECM at 6c5fb15, 2026-10-24, codex gpt-6-astra).
@@ -4818,6 +4834,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## mz20
 
 - **Misprint** at (22), p. 653, and at the Rosati discriminant display, p. 655: the source says the source equates the conjugate-transpose complex trace with the rational trace, but the complex one is half; it should be twice the real part of the complex trace; affects nothing. Found by FaltingsFinitenessAndIsogenyTheoremsPartII (#1273 at ddef4f3, 2026-10-24, claude opus).
+
+## native_multiplicative_heights
+
+- **Misprint** at the docstring of `NumberField.absMulHeight₁`: the source says the junk value off algebraic elements is 0; it should be 1, which the definition returns; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "3062436", "job": "REV-PKG-LogicAndDefinabilityInNumberTheory~2", "model": "opus", "worker": "fable-rev80"} -->. Found by LogicAndDefinabilityInNumberTheory (#164 at 3062436, 2026-10-25, claude opus).
 
 ## Nekovář, Selmer complexes (Astérisque 310, 2006)
 
@@ -4893,6 +4913,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at Proposition 8, proof of (2) ⇒ (1), p. 6-09 (Olivier line 281): the source says hypothesis 6 supplies the basis of open sets; it should be hypothesis (2); affects the proof. Found by CommRingFactorizationSystems (ERRATA-CommRingFactorizationSystems at 391c077, 2026-10-24, codex gpt-6-astra).
 - **Misprint** at Proposition 8, proof of (3) ⇒ (4), p. 6-09 (Olivier line 293): the source says A satisfies property 7; it should be property (3), the existence of complementary elements; affects the proof. Found by CommRingFactorizationSystems (ERRATA-CommRingFactorizationSystems at 391c077, 2026-10-24, codex gpt-6-astra).
 - **Misprint** at the problem following Proposition 8, p. 6-10 (Olivier line 302): the source says the previously announced implication runs from Proposition 6 to Proposition 7; it should be Proposition 7 to Proposition 8, comparing compactness of Min A with absolute flatness of the total quotient ring; affects nothing. Found by CommRingFactorizationSystems (ERRATA-CommRingFactorizationSystems at 391c077, 2026-10-24, codex gpt-6-astra).
+
+## on_the_algebraic_points_of_a_definable_set
+
+- **Misprint** at the proof of Proposition 3.4(2), p.6: the source says the preimages P, Q are taken in U; it should be in the basic block V; affects nothing. Found by LogicAndDefinabilityInNumberTheory (#164 at 3062436, 2026-10-25, claude opus).
 
 ## Orr, arXiv:1609.01315v2
 
