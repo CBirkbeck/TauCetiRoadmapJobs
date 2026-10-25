@@ -86,7 +86,7 @@ Consume §7.8, the field specialization, for a projective regular resolution of 
 
 ## How to read the build
 
-Layer 0 applies imported degree and proves the fibre-testing equivalences. Layer 1 forms numerical quotients and dual cones, proving finiteness before using a Euclidean topology or a natural-number Picard rank. Layer 2 builds proper-field Picard representability, the constants-algebra Brauer obstruction and the étale numerical local system. Layer 3 passes from semiample sheaves to contractions and descends them, treating inseparability before finite Galois averaging. Layer 4 combines negative intersections with Hilbert rigidity to descend curves and fibre graphs. Layer 5 applies these interfaces to DVR families and vertical descent and constructs the birational rank. A *Needs:* line separates statement vocabulary from the inputs to the indicated proof route; a different proof may omit route-only inputs. Every supplier extension has its exact contract above. `Suggested.lean` contains the headlines `numericalClassGroup_free_finite`, `relNumericalClassGroup_free_finite`, `numericallyTrivial_torsion_of_algebraic_finiteField`, `contraction_descends_purelyInseparable` and `lineBundle_lifts_completeDVR_of_h2_zero`, with the simple definitions `NumericallyTrivial`, `RelNumericallyTrivial`, `numericallyTrivialClasses`, `relNumericallyTrivialClasses` and `IsContraction`; its module docstring identifies the carriers required to state the other headline results.
+Layer 0 applies imported degree and proves the fibre-testing equivalences. Layer 1 forms numerical quotients and dual cones, proving finiteness before using a Euclidean topology or a natural-number Picard rank. Layer 2 builds proper-field Picard representability, the constants-algebra Brauer obstruction and the étale numerical local system. Layer 3 passes from semiample sheaves to contractions and descends them, treating inseparability before finite Galois averaging. Layer 4 combines negative intersections with Hilbert rigidity to descend curves and fibre graphs. Layer 5 applies these interfaces to DVR families and vertical descent and constructs the birational rank. A *Needs:* line separates statement vocabulary from the inputs to the indicated proof route; a different proof may omit route-only inputs. Every supplier extension has its exact contract above. `Suggested.lean` contains the headlines `numericalClassGroup_free_finite`, `relNumericalClassGroup_free_finite`, `constantNumericalClasses_iff_positivePowerDescent`, `numericallyTrivial_torsion_of_algebraic_finiteField`, `contraction_descends_purelyInseparable`, `constantNumericalClasses_iff_componentGraphDescent` and `lineBundle_lifts_completeDVR_of_h2_zero`, with the simple definitions `NumericallyTrivial`, `RelNumericallyTrivial`, `numericallyTrivialClasses`, `relNumericallyTrivialClasses`, `HasTrivialNumericalGaloisAction`, `IsContraction` and `componentGraph`; its module docstring identifies the carriers required to state the other headline results.
 
 ## Layer 0: degrees and relative numerical triviality
 
@@ -174,7 +174,6 @@ One proof route is as follows. Tensor additivity and inverse degree give the sub
 - For f = id_S every L ∈ Pic(S) is f-numerically trivial, so Pic^τ(S/S) = Pic(S) even when Pic(S) ≠ 0.
 - On an elliptic curve E over k̄ with distinct points p, q, O(p − q) ≡ 0 although O(p − q) ≇ O_E: numerically trivial is weaker than trivial.
 - For the first projection f : P¹×P¹ → P¹, O(a,b) ≡_f 0 iff b = 0, while O(a,b) ≡ 0 over Spec k iff a = b = 0.
-- f*N ≡_f 0 for every N ∈ Pic(S).
 - On an Enriques surface over k̄ of characteristic ≠ 2, ω is numerically trivial and nontrivial.
 
 ### 0.5 Numerical triviality can be tested over closed points of the base
@@ -468,11 +467,13 @@ One proof route is as follows. `Pic^τ_{X/k}` is open, so the quotient of the lo
 
 `Num_{X/k}` is constant if Gal(k^sep/k) acts trivially on `Num_{X/k}(k^sep)`; equivalently `Num_{X/k}` ≅ `(ℤ^{⊕ρ})_k` = `∐_{l∈ℤ^ρ}` Spec k as group schemes. (SCH23, §1, p. 5; SCH23 line 185).
 
+For a specified algebraic closure K/k and proper structure morphism x : X → Spec k, define `HasTrivialNumericalGaloisAction` on the actual quotient Num(X_K/K) of §1.1. Write π_X : X_K → X and π_K : X_K → Spec K for the two projections. For every σ ∈ Aut(K/k) and g : X_K → X_K satisfying g followed by π_X = π_X and g followed by π_K = π_K followed by Spec(σ), require [g*L] = [L] in Num(X_K/K) for every invertible L on X_K. Such g exists uniquely by the pullback universal property: σ fixes k, and the two equations specify both projections. Thus the quantification is over the actual semilinear maps. Automorphisms of k^sep extend uniquely across K/k^sep, so this predicate agrees with the Galois constancy above (SCH23 lines 175–188).
+
 The finite-index characterization is §2.10; it is a theorem about the actual integral image and a uniform positive exponent, not a definition by rational rank alone.
 
 The API gives the following facts.
 
-- The predicate that Gal(k^sep/k) acts trivially on `Num_{X/k}(k^sep)`.
+- `HasTrivialNumericalGaloisAction` fixes every geometric numerical class under the specified semilinear pullbacks; through §2.6 it is triviality of the action of Gal(k^sep/k) on `Num_{X/k}(k^sep)`.
 - constancy of the numerical local system of X ↔ `Num_{X/k}` ≅ (ℤ^ρ)_k.
 - constancy of the numerical local system of X ↔ the image of Num(X/k) in `Num(X_{k̄})` has finite index (§2.10).
 - Constancy is preserved by every field extension K/k.
@@ -480,7 +481,7 @@ The API gives the following facts.
 
 One proof route is as follows. The equivalence is the étale–Galois dictionary of §2.6: a trivial Galois module corresponds to a constant étale group scheme.
 
-*Needs:* §2.6.
+*Needs:* §1.1 and native scheme and invertible-sheaf pullbacks for the predicate; §2.6 for comparison with the represented numerical local system.
 
 **Checks.**
 
@@ -488,7 +489,6 @@ One proof route is as follows. The equivalence is the étale–Galois dictionary
 - `Num_{P¹_ℂ/ℝ}` (P¹_ℂ as an ℝ-scheme) is not constant: conjugation swaps the two generators of ℤ².
 - If `ρ(X_{k̄})` = 0 (for instance X finite over k), `Num_{X/k}` is constant.
 - For a smooth quadric surface Q ⊂ P³_k whose two rulings are defined over a quadratic extension and swapped by Galois, `Num_{Q/k}` is not constant though `ρ(Q_{k̄})` = 2; for the split quadric P¹×P¹ it is constant.
-- Over a separably closed field every `Num_{X/k}` is constant.
 
 ### 2.8 Norms of Picard classes along a finite field extension
 
@@ -527,7 +527,7 @@ One proof route is as follows. T_l is a P-torsor because Pic → Num is a P-tors
 
 ### 2.10 Positive-power descent criterion for constancy of Num
 
-For every proper X over k, prove that `Num_{X/k}` is constant if and only if a single integer d≥1 has the following property: for every invertible L on X over an algebraic closure, some numerically trivial N makes L^d tensor N isomorphic to the pullback of an invertible sheaf on X. Equivalently the integral image of Num(X/k) has finite index in the geometric numerical lattice. The integer is uniform over all L. (SCH23, Lemma 1.1 and proof, pp. 5–6; SCH23 line 191).
+For every proper X over k, prove that `Num_{X/k}` is constant if and only if a single integer d≥1 has the following property: for every invertible L on X over an algebraic closure, some numerically trivial N makes L^d tensor N isomorphic to the pullback of an invertible sheaf on X. Equivalently the integral image of Num(X/k) has finite index in the geometric numerical lattice. The integer is uniform over all L. This is `constantNumericalClasses_iff_positivePowerDescent`: for any specified algebraic closure K/k, its left side is `HasTrivialNumericalGaloisAction`, and its right side is equality of the classes of L^d and π_X*M in the actual quotient by `numericallyTrivialClasses`. By §0.4 the subgroup generated by numerically trivial classes is exactly the numerical kernel, so quotient equality is equivalent to allowing the stated numerically trivial twist. (SCH23, Lemma 1.1 and proof, pp. 5–6; SCH23 line 191).
 
 One proof route is as follows. (⇐) The condition says the image of Num(X/k) in `Num(X_{k̄})` ≅ ℤ^ρ contains d·ℤ^ρ, which is Galois-fixed; a group acting by automorphisms of a torsion-free ℤ^ρ and fixing d·ℤ^ρ fixes ℤ^ρ. (⇒) For each l in a basis of `Num_{X/k}(k)` = ℤ^ρ, §2.9 gives n ≥ 1 with n·l ∈ image of `Pic_{X/k}(k)`, and §2.4 gives n′ ≥ 1 with n′n·l ∈ image of Pic(X). Take d the product over a basis; then Pic(X) → `Num_{X/k}(k̄)` has image containing d·ℤ^ρ.
 
@@ -535,8 +535,10 @@ One proof route is as follows. (⇐) The condition says the image of Num(X/k) in
 
 **Checks.**
 
-- For X = P¹_ℂ over ℝ no d ≥ 1 works (Num not constant), while d = 0 works trivially: this is why d ≥ 1 is required.
-- For the pointless real conic, d = 2 works and d = 1 does not.
+- For X = P¹_k the geometric lattice and the image are both ℤ; d = 1 works for every O(m), including m = −1 and m = 0.
+- For X = P¹_ℂ over ℝ, conjugation swaps ℤ² and the image is the diagonal. The vector (d,0) is not diagonal for any d ≥ 1; both sides fail. With d = 0 every class maps to (0,0), which explains the positive-exponent hypothesis.
+- For the pointless real conic the action on ℤ is trivial and the image is 2ℤ: d = 2 works, whereas the geometric class 1 prevents d = 1.
+- For an empty scheme or a finite k-scheme, the geometric numerical quotient is 0; both sides hold with d = 1, including for Spec k[ε]/(ε²).
 
 ### 2.11 The canonical doubled Picard lift
 
@@ -726,11 +728,11 @@ Layers 0–2; SchemeAndStackFoundations §§0.9, 0.11, 0.23 and 4.9; AlgebraicMo
 
 ### 4.1 The component dual graph of a Noetherian scheme
 
-For a Noetherian scheme Z, Γ(Z) is the finite simple graph on its irreducible components; distinct components are adjacent when their intersection is nonempty. A morphism inducing a vertex map must send the closure of the image of each source component onto a target component (or be supplied with such component-dominance data). It sends an edge to an edge or a vertex. Injectivity on vertices gives edge preservation, but even vertex bijectivity does not imply reflection of adjacency for arbitrary morphisms. For field base change, a bijection on vertices does reflect adjacency and gives a graph isomorphism. (SCH23, §1, p. 6; SCH23 line 232).
+For a scheme Z, define `componentGraph` as Γ(Z), the simple graph on its irreducible components; distinct components are adjacent when their intersection is nonempty. It is finite when Z is Noetherian. A morphism inducing a vertex map must send the closure of the image of each source component onto a target component (or be supplied with such component-dominance data). It sends an edge to an edge or a vertex. Injectivity on vertices gives edge preservation, but even vertex bijectivity does not imply reflection of adjacency for arbitrary morphisms. For field base change, a bijection on vertices does reflect adjacency and gives a graph isomorphism. (SCH23, §1, p. 6; SCH23 line 232).
 
 The API gives the following facts.
 
-- Γ(Z) as a SimpleGraph on irreducibleComponents Z, adjacency Z_i ≠ Z_j ∧ (Z_i ∩ Z_j).Nonempty.
+- `componentGraph` is Γ(Z) as a SimpleGraph on irreducibleComponents Z, with adjacency Z_i ≠ Z_j ∧ (Z_i ∩ Z_j).Nonempty.
 - Adjacency unfolds to distinctness and nonempty intersection.
 - A morphism with closure-of-image equal to a target component for every source component induces the canonical vertex map; identities and composites are respected.
 - Adjacent vertices map to adjacent or equal vertices.
@@ -752,7 +754,7 @@ One proof route is as follows. Adjacency is symmetric and irreflexive; finitenes
 
 ### 4.2 Constancy of Num for curves is graph descent
 
-Let X be a proper scheme over k all of whose irreducible components are one-dimensional. Then `Num_{X/k}` is constant iff `Γ(X_{k̄})` → Γ(X) is a graph isomorphism. (SCH23, Proposition 1.2 and proof, p. 6; SCH23 line 239).
+Let X be a proper scheme over k all of whose irreducible components are one-dimensional. Then `Num_{X/k}` is constant iff `Γ(X_{k̄})` → Γ(X) is a graph isomorphism. This is `constantNumericalClasses_iff_componentGraphDescent`: for a specified algebraic closure K/k, `HasTrivialNumericalGaloisAction` holds iff there is a `componentGraph` isomorphism e from X_K to X with e(C) equal to the closure of π_X(C) for every geometric component C. The closure equation ties the isomorphism to the actual base-change projection, rather than to an arbitrary bijection of unmarked graphs. The purity hypothesis means dimension one for every component, permits X empty, and imposes no reducedness or perfection. (SCH23, Proposition 1.2 and proof, p. 6; SCH23 line 239).
 
 One proof route is as follows. An invertible sheaf is numerically trivial iff its degrees on the reduced components C_1, …, C_r vanish, so `Num(X_{k̄})` ⊗ ℚ has the components of `X_{k̄}` as a dual basis. (⇐) If the vertex map is bijective, choose closed points a_i in C_i outside the other components and outside the embedded points, and effective Cartier divisors D_i supported at a_i; the classes of O(D_i) span a finite-index subgroup of `Num_{X/k}(k̄)` defined over k, so Galois acts trivially (§2.10). (⇒) For a component E of `X_{k̄}`, take an effective Cartier divisor on `X_{k̄}` supported on E away from the others; §2.10 gives L on X with `(L_{k̄}·E′)` ≥ 0, positive exactly for E′ = E, so exactly one component of X lies under E: the vertex map is bijective.
 
@@ -762,7 +764,11 @@ One proof route is as follows. An invertible sheaf is numerically trivial iff it
 
 - For X = P¹_ℂ viewed over ℝ, Γ(X_ℂ) has two vertices over one: Num is not constant.
 - For X = P¹_ℝ ⊔ Spec ℂ the statement is outside the hypothesis: `Num_{X/ℝ}` = ℤ is constant but Γ(X_ℂ) has three vertices over two.
-- For two k-lines meeting at a k-point, both geometric and schematic component graphs have two vertices and one edge; the numerical local system is constant of rank 2.
+- For two k-lines meeting at a k-point, both geometric and schematic component graphs have two vertices and one edge; their geometric multidegree lattice is ℤ² with trivial action, and e is the projection-induced identity.
+- For X empty the purity condition is vacuous, both graphs have zero vertices and the numerical quotient is 0, so both sides hold.
+- For X = P¹_k ⊔ P¹_k, the projection fixes the two component labels. The graph automorphism interchanging them is an unmarked isomorphism but fails the closure-of-image equation: the image closure of the first component is the first, not the second.
+- For X = P¹ over k[ε]/(ε²), viewed as a proper k-scheme, each graph has one vertex and no edges, and geometric Num is ℤ with trivial action. O(1) has degree 1 on the reduced test curve, although its Euler degree on the full double curve is 2; the criterion uses the reduced components.
+- In characteristic p, let a ∉ k^p and X = `P^1_{k(a^{1/p})}` over k. Its geometric support is one P¹, with nilpotent multiplicity p; both graphs have one vertex and Num(X_K/K)=ℤ with trivial action. Pure inseparability does not create p vertices.
 
 ### 4.3 Intersection matrices and intersection-labelled graphs of curves on a surface
 
@@ -990,7 +996,7 @@ One proof route is as follows. Choose m with `f*f_*L^{⊗m}` → `L^{⊗m}` surj
 
 ### 5.7 Vertical numerical descent (Cascini–Tanaka, Lemma 2.17)
 
-Let f : X → S be proper between integral normal excellent schemes, with f_*O_X=O_S. Suppose S is ℚ-factorial, L is an f-nef ℚ-Cartier ℚ-divisor, its generic-fibre restriction is ℚ-linearly trivial, and every prime divisor of X dominates S or maps onto a prime divisor of S. Prove that there is a ℚ-Cartier ℚ-divisor M on S with L ℚ-linearly equivalent to f*M. The divisor M is on the target S. (CT20, Lemma 2.17 and proof, pp. 16–17; CT20 line 630; BMP23, proofs of Lemmas 2.54 and 9.25, pp. 27 and 111; BMP23 line 1230; WIT22, proof of Proposition 6.6; WIT22 line 1813).
+Let f : X → S be proper between integral normal excellent schemes, with f_*O_X=O_S. Suppose S is ℚ-factorial, L is an f-nef ℚ-Cartier ℚ-divisor, its generic-fibre restriction is ℚ-linearly trivial, and every prime divisor of X dominates S or maps onto a prime divisor of S. Prove that there is a ℚ-Cartier ℚ-divisor M on S with L ℚ-linearly equivalent to f*M. The divisor M is on the target S. (CT20, Lemma 2.17 and proof, pp. 16–18; CT20 line 630; BMP23, proofs of Lemmas 2.54 and 9.25, pp. 27 and 111; BMP23 line 1230; WIT22, proof of Proposition 6.6; WIT22 line 1813).
 
 The local geometric input can be stated independently: on an integral proper variety, a nonzero effective Cartier divisor has positive degree on some integral proper curve meeting it but not contained in it. Apply this on the zero-coefficient component to the restricted nonzero section. A curve on a nonclosed fibre is allowed by the all-fibres version of nefness.
 
@@ -1042,7 +1048,6 @@ One proof route is as follows. Exceptional-divisor independence is obtained by s
 - For Y=Spec ℂ, the identity resolution gives ρ_AHK(Y)=0; no positivity assertion is made in dimension zero.
 - For the projective cone Y over a smooth conic, the minimal resolution is the Hirzebruch surface F₂ with ρ = 2 and one exceptional curve, so ρ_AHK(Y) = 1.
 - Take the projective quadric threefold cone Y=V(xy−zw)⊂P⁴_ℂ. An incidence small resolution X→Y is a P²-bundle over P¹, hence projective with ρ(X)=2 and no exceptional prime divisors. Thus ρ_AHK(Y)=2, while the Cartier Picard rank of Y is 1. An affine local ordinary double point would not test the projective theorem.
-- For smooth projective Y over ℂ, ρ_AHK(Y)=ρ(Y).
 
 ### Examples
 

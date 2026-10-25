@@ -10,17 +10,14 @@ headline theorems against the pinned APIs.
 
 Murre–Oort representability and finite type of the torsion component lack the fppf Picard sheaf and Picard group scheme.
 The affinization Brauer obstruction lacks the scheme units sheaf on the fppf site
-and its Leray comparison. The positive-power criterion lacks the numerical Picard local system.
-The semiample contraction dictionary and numerical uniqueness lack relative
-global generation, the section algebra and relative Proj. Projective contraction
-descent under constant numerical classes also lacks that local system.
+and its Leray comparison. The semiample contraction dictionary, numerical
+uniqueness and projective contraction descent lack relative global generation,
+the section algebra and relative Proj.
 Openness of ampleness lacks algebraic spaces and relative ampleness.
-The pure-curve graph criterion lacks the numerical local system; geometric
-exceptional negativity and Zariski's lemma lack the geometric intersection
+Geometric exceptional negativity and Zariski's lemma lack the geometric intersection
 pairing, although their matrix inequalities are supplied by Tau Ceti.
 Negative-curve, fibre-graph and label descent and rationality of reducible-fibre
-image points lack that pairing, the numerical local system and the proper
-Hilbert algebraic space. The ampleness assertion for complete-DVR lifts lacks relative ampleness.
+image points lack that pairing and the proper Hilbert algebraic space. The ampleness assertion for complete-DVR lifts lacks relative ampleness.
 Cone identification over a discrete valuation ring lacks the real space of curve
 classes, its closed cones and the restriction map of numerical groups. Nef-and-big
 specialization lacks the relative projective-morphism and positivity interfaces. Semiample numerical descent and
@@ -104,6 +101,50 @@ theorem relNumericalClassGroup_free_finite {X S : Scheme.{u}} (f : X ⟶ S) [IsP
 
 /-! ## Layer 2: proper Picard schemes and the numerical local system -/
 
+/-- The actual base-field automorphisms fix every geometric numerical class.
+For each automorphism of the algebraic closure, the two equations specify its
+unique induced map on the base change. This is numerical local-system constancy
+without choosing a represented Picard sheaf (Schröer, §1, p. 5). -/
+def HasTrivialNumericalGaloisAction
+    (k K : Type u) [Field k] [Field K] [Algebra k K] [IsAlgClosure k K]
+    (X : Scheme.{u}) (x : X ⟶ Spec (CommRingCat.of k)) [IsProper x] : Prop :=
+  let b := Spec.map (CommRingCat.ofHom (algebraMap k K))
+  let X_K := pullback x b
+  let q : TauCeti.AlgebraicGeometry.LineBundleClass X_K →
+      TauCeti.AlgebraicGeometry.LineBundleClass X_K ⧸
+        numericallyTrivialClasses K X_K (pullback.snd x b) := QuotientGroup.mk
+  ∀ (sigma : K ≃ₐ[k] K) (g : X_K ⟶ X_K),
+    g ≫ pullback.fst x b = pullback.fst x b →
+    g ≫ pullback.snd x b =
+      pullback.snd x b ≫ Spec.map (CommRingCat.ofHom sigma.toRingHom) →
+    ∀ L : TauCeti.AlgebraicGeometry.InvertibleSheaf X_K,
+      q (TauCeti.AlgebraicGeometry.LineBundleClass.mk
+        ((TauCeti.AlgebraicGeometry.InvertibleSheaf.pullback g).obj L)) =
+      q (TauCeti.AlgebraicGeometry.LineBundleClass.mk L)
+
+/-- Numerical local-system constancy is equivalent to a single positive exponent
+making every geometric numerical class the pullback of an actual line bundle on X.
+The exponent is uniform in the geometric line bundle; equality is in the numerical
+quotient, allowing a numerically trivial twist. No reducedness, connectedness,
+projectivity or perfection is assumed (Schröer, Lemma 1.1, pp. 5–6). -/
+theorem constantNumericalClasses_iff_positivePowerDescent
+    (k K : Type u) [Field k] [Field K] [Algebra k K] [IsAlgClosure k K]
+    (X : Scheme.{u}) (x : X ⟶ Spec (CommRingCat.of k)) [IsProper x] :
+    let b := Spec.map (CommRingCat.ofHom (algebraMap k K))
+    let X_K := pullback x b
+    let q : TauCeti.AlgebraicGeometry.LineBundleClass X_K →
+        TauCeti.AlgebraicGeometry.LineBundleClass X_K ⧸
+          numericallyTrivialClasses K X_K (pullback.snd x b) := QuotientGroup.mk
+    HasTrivialNumericalGaloisAction k K X x ↔
+      ∃ d : ℕ, 0 < d ∧
+        ∀ L : TauCeti.AlgebraicGeometry.InvertibleSheaf X_K,
+          ∃ M : TauCeti.AlgebraicGeometry.InvertibleSheaf X,
+            q (TauCeti.AlgebraicGeometry.LineBundleClass.mk L ^ d) =
+            q (TauCeti.AlgebraicGeometry.LineBundleClass.mk
+              ((TauCeti.AlgebraicGeometry.InvertibleSheaf.pullback
+                (pullback.fst x b)).obj M)) := by
+  sorry
+
 /-- On a proper scheme over an algebraic extension of a finite field, every
 numerically trivial invertible sheaf has finite order in the Picard group.
 No reducedness, projectivity or geometric integrality is assumed.
@@ -145,6 +186,39 @@ theorem contraction_descends_purelyInseparable
       IsProper y ∧ IsContraction f ∧ f ≫ y = x ∧
       IsPullback v y' y (Spec.map (CommRingCat.ofHom (algebraMap k K))) ∧
       f' ≫ v = pullback.fst x (Spec.map (CommRingCat.ofHom (algebraMap k K))) ≫ f := by
+  sorry
+
+/-! ## Layer 4: component graphs and contractions of smooth surfaces -/
+
+/-- The simple intersection graph of the irreducible components of a scheme.
+Distinct components are adjacent exactly when their underlying closed sets meet;
+loops, intersection multiplicities and normalization genera are omitted. -/
+def componentGraph (X : Scheme.{u}) :
+    SimpleGraph {C : Set X // C ∈ irreducibleComponents X} where
+  Adj A B := A ≠ B ∧ (A.1 ∩ B.1).Nonempty
+  symm := by
+    constructor
+    intro A B h
+    exact ⟨h.1.symm, h.2.imp (fun _ hx => ⟨hx.2, hx.1⟩)⟩
+  loopless := by
+    constructor
+    intro A h
+    exact h.1 rfl
+
+/-- For a proper scheme whose irreducible components all have dimension one,
+numerical local-system constancy is equivalent to component-graph descent.
+The graph isomorphism must carry every geometric component to the closure of its
+image under the prescribed base-change projection. Empty schemes are allowed;
+reducedness and perfection are not required (Schröer, Proposition 1.2, p. 6). -/
+theorem constantNumericalClasses_iff_componentGraphDescent
+    (k K : Type u) [Field k] [Field K] [Algebra k K] [IsAlgClosure k K]
+    (X : Scheme.{u}) (x : X ⟶ Spec (CommRingCat.of k)) [IsProper x]
+    (hpure : ∀ C : Set X, C ∈ irreducibleComponents X →
+      topologicalKrullDim C = 1) :
+    let b := Spec.map (CommRingCat.ofHom (algebraMap k K))
+    HasTrivialNumericalGaloisAction k K X x ↔
+      ∃ e : componentGraph (pullback x b) ≃g componentGraph X,
+        ∀ C, closure ((pullback.fst x b) '' C.1) = (e C).1 := by
   sorry
 
 /-! ## Layer 5: numerical theory in families and descent along contractions -/
