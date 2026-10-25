@@ -4116,6 +4116,18 @@
       "needs": "Provide the finite saturated highest-weight-ideal categories associated to LP3.0, with Hom(Δ(λ),∇(μ)) equal to the coefficient field for λ=μ and zero otherwise, all higher Δ-to-∇ Ext vanishing, enough tiltings and finite standard-to-tilting resolutions, compatibly with field extension.",
       "supplier": "LanglandsParameterStacks",
       "section": "LP3.0"
+    },
+    {
+      "slug": "admissible-invariant-quotient-gluing",
+      "needs": "For a finite constant group Γ acting by F-automorphisms on a separated locally finite type F-scheme Y whose orbits have invariant affine neighbourhoods, glue the affine invariant quotients into a separated locally finite type scheme Q with finite categorical/geometric quotient q:Y→Q, and identify its restriction over every invariant open, in particular the free locus, with that open's quotient.",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "1.17"
+    },
+    {
+      "slug": "integral-tilting-lifts",
+      "needs": "For O=W(k), k=F̄_p, and a split connected reductive group over O, extend the finite saturated highest-weight-ideal categories of LP3.0 to split highest-weight O-orders with finite free standards/costandards, Hom(Δ(λ),∇(μ))=O for λ=μ and zero otherwise and Extⁿ(Δ(λ),∇(μ))=0 for n>0, finite projective generators and p-adically complete finite Hom modules; prove existence of tilting lifts, finite freeness and reduction base change for Hom between tiltings, lifting of idempotents in their endomorphism orders, detection of tilting on O-free objects by reduction, and a bijection on isomorphism classes of indecomposable tiltings under reduction to k, compatibly with inclusions of finite ideals, duals and external products.",
+      "supplier": "LanglandsParameterStacks",
+      "section": "LP3.0"
     }
   ],
   "sourceIssues": [

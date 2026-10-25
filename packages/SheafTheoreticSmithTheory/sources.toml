@@ -116,7 +116,7 @@ cited_for = ["modular-satake", "satake-standard-comparison", "hyperbolic-localiz
 [[source]]
 id = "Stacks"
 locator_scheme = "tag"
-locator = "Algebra Lemmas 10.101.1–10.101.3 (051E); Cohomology on Sites Lemmas 21.46.3 (08G1) and 21.46.10 (0DJJ); More on Algebra Definition 15.70.1 (0A5M); Fields Lemma 9.13.1 (0CKL), Section 0CKK"
+locator = "Algebra Lemmas 10.101.1–10.101.3 (051E); Cohomology on Sites Lemmas 21.46.3 (08G1) and 21.46.10 (0DJJ); More on Algebra Definition 15.70.1 (0A5N); Fields Lemma 9.13.1 (0CKL), Section 0CKK"
 url = "https://stacks.math.columbia.edu/tag/051E"
 fetched_from = "https://stacks.math.columbia.edu/download/algebra.pdf#nameddest=051E"
 fetched_at = "2026-10-25T12:18:17Z"
@@ -128,7 +128,7 @@ cited_for = ["cyclic-flat-free", "tor-detection"]
 year = 2026
 authors = "The Stacks Project Authors"
 title = "The Stacks Project"
-version_note = "Chapter-specific line locators: Algebra for 051E, Cohomology on Sites for 08G1 and 0DJJ, More on Algebra for 0A5M, and Fields for 0CKK/0CKL. Four legally fetched chapter texts, one work key."
+version_note = "Chapter-specific line locators: Algebra for 051E, Cohomology on Sites for 08G1 and 0DJJ, More on Algebra for section 0A5M and Definition 0A5N, and Fields for 0CKK/0CKL. Four legally fetched chapter texts, one work key."
 
 [[source.parts]]
 chapter = "Algebra"
@@ -152,7 +152,7 @@ status = "certified"
 
 [[source.parts]]
 chapter = "More on Algebra"
-locator = "0A5M"
+locator = "Section 15.70 (0A5M); Definition 15.70.1 (0A5N)"
 url = "https://stacks.math.columbia.edu/tag/0A5M"
 fetched_from = "https://stacks.math.columbia.edu/download/more-algebra.pdf#nameddest=0A5M"
 fetched_at = "2026-10-25T12:18:35Z"
