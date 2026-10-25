@@ -8,7 +8,8 @@ The roadmap is README.md; this file is not the roadmap. It states the roadmap's
 headline theorems against the pinned APIs: eventual Ax–Kochen transfer,
 Igusa–Poincaré rationality at every prime, MRDP, universal definability of the
 integers in ℚ, Diophantine rational nonintegers, the integer
-definition with one universal variable, Diophantine nonpowers over number fields,
+definition with one universal variable, Diophantine nonpowers over number fields, Koenigsmann's explicit
+two-universal-variable integer formula,
 Hilbert’s tenth problem over ℤ, universal-existential rational undecidability,
 and parameter-uniform rational and bounded-degree counting.
 
@@ -108,6 +109,23 @@ theorem one_universal_variable :
       ∀ t : ℚ, t ∈ rationalIntegers ↔
         ∀ x : ℚ, ∃ y : Fin m → ℚ,
           eval₂ (Int.castRingHom ℚ) (Fin.cons t (Fin.cons x y)) p = 0 := by sorry
+
+/-- Koenigsmann's explicit polynomial in two universal parameters a, b, the
+rational t and seven existential coordinates (§4.33), with zero-based indices:
+`(a + A)(b + A)((u₀² − B − 1)² + ((t − 2u₀)² − 4C − 4)²)`, where `A = Σ uᵢ²`,
+`B = a u₁² + b u₂² − ab u₃²` and `C = a v₀² + b v₁² − ab v₂²`. -/
+def twoUniversalIntegerPolynomial (a b t : ℚ) (u : Fin 4 → ℚ) (v : Fin 3 → ℚ) : ℚ :=
+  let A := ∑ i, u i ^ 2
+  let B := a * u 1 ^ 2 + b * u 2 ^ 2 - a * b * u 3 ^ 2
+  let C := a * v 0 ^ 2 + b * v 1 ^ 2 - a * b * v 2 ^ 2
+  (a + A) * (b + A) * ((u 0 ^ 2 - B - 1) ^ 2 + ((t - 2 * u 0) ^ 2 - 4 * C - 4) ^ 2)
+
+/-- Two universal and seven existential rational variables define ℤ in ℚ by
+Koenigsmann's explicit polynomial (§4.33; Koenigsmann, Step 1, p.79). -/
+theorem two_universal_integer_formula (t : ℚ) :
+    t ∈ rationalIntegers ↔
+      ∀ a b : ℚ, ∃ (u : Fin 4 → ℚ) (v : Fin 3 → ℚ),
+        twoUniversalIntegerPolynomial a b t u v = 0 := by sorry
 
 /-- Over every number field, the nonzero elements that are not r-th powers,
 for r>1, form a Diophantine set in finite-system normal form (§4.30;
