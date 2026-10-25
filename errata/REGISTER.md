@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-5007 mistakes recorded on the board: 3301 misprints, 1242 errors, 364 gaps, 100 unparsed bullets.
+5010 mistakes recorded on the board: 3303 misprints, 1243 errors, 364 gaps, 100 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -2170,6 +2170,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## CONRAD99
 
 - **Error** at §2.2, author p. 14 (line 648): the source says Spec of a local ring is irreducible exactly when a single irreducible component passes through the point; it should be only that local irreducibility implies a unique component, and is equivalent to a single normalization point over it (nodal cubic: one component, two local branches); affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "a39708a", "job": "REV-PKG-AdicSpacesPartIIPartII", "model": "opus", "worker": "fable-rev53"} -->. Found by AdicSpacesPartIIPartII (#1098 at a39708a, 2026-10-24, claude opus).
+- **Error** at §2.2, author p. 14 (line 648): the source says Spec O_{X,x} is irreducible exactly when one irreducible component passes through x; it should be only the forward implication (the nodal cubic has one component and two branches); affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "1988e25", "job": "REV-PKG-AdicSpacesPartIIPartII~2", "model": "opus", "worker": "fable-rev92"} -->. Found by AdicSpacesPartIIPartII (#1098 at 1988e25, 2026-10-25, claude opus).
 
 ## conrad_geom
 
@@ -3552,6 +3553,11 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Gap** at §6.3, Propositions 16–17 and (42), arXiv v2 printed pp.13–14 (HK01 line 616): the source says every binary subgroup has the stated zigzag comparison, including the order-two subgroup; it should be an explicit extension beyond §3’s simple-graph definition for the double-edge case, with separately distinguished arrows in the small cyclic presentations; affects a stated result. Found by McKaySkewGroup (ERRATA-McKaySkewGroup at a9ef22a, 2026-10-23, codex gpt-6-astra).
 - **Misprint** at §6.3, Remark after Proposition 21, arXiv v2 printed p.15 (HK01 line 688): the source says substitute the finite-dimensional skew-zigzag algebra for A!(Γ_aff) in the polynomial-side argument; it should be substitute it for A(Γ_aff), or substitute its quadratic dual for A!(Γ_aff); affects the proof. Found by McKaySkewGroup (ERRATA-McKaySkewGroup at a9ef22a, 2026-10-23, codex gpt-6-astra).
 - **Error** at §6.3, before Proposition 19, arXiv v2 printed p.14 (HK01 line 650): the source says T*ℙ¹/G′ has two singularities for cyclic G′; it should be two only for nontrivial cyclic G′; G={±I} gives G′=1 and the smooth surface T*ℙ¹; affects a stated result. Found by McKaySkewGroup (ERRATA-McKaySkewGroup at a9ef22a, 2026-10-23, codex gpt-6-astra).
+
+## HK2
+
+- **Misprint** at proof of Theorem 9.1.3, p. 58 (line 2600): the source says the orbit K₀·y is an element of V(C); it should be a subset of V(C); affects nothing. Found by AdicSpacesPartIIPartII (#1098 at 1988e25, 2026-10-25, claude opus).
+- **Misprint** at §1.1, p. 5 (line 219): the source says the Zariski-closed V meets C in a vanishing locus; it should be the intersection of V with the affinoid open U; affects nothing. Found by AdicSpacesPartIIPartII (#1098 at 1988e25, 2026-10-25, claude opus).
 
 ## HKI
 
