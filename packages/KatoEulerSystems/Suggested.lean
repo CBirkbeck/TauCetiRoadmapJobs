@@ -1,4 +1,5 @@
 import Mathlib
+import TauCeti.AlgebraicGeometry.EllipticCurve.Affine.Point.Galois
 
 /-!
 # KatoEulerSystems: target signatures
@@ -6,20 +7,28 @@ import Mathlib
 The roadmap is README.md; this file is not the roadmap. It states the roadmap's headline
 theorems against the pinned Mathlib and Tau Ceti APIs. The elliptic cases of §7.9 are statable:
 finite generation over every fixed cyclotomic tower and finiteness of rational points at
-analytic rank zero, with modularity expressed by a weight-two cusp form's q-expansion.
+analytic rank zero, together with the character-part finiteness over cyclotomic fields,
+with modularity expressed by a weight-two cusp form's q-expansion.
 
-The canonical zeta morphism (§5.1), non-torsion and cohomological bound (§§7.1–7.2) lack
-Iwasawa cohomology and the modular Galois realization. The regulator equality (§6.4) lacks
-the Kato zeta morphism and analytic p-adic L-function. The Bloch–Kato finiteness theorem
-(§7.9, parts 1–2) lacks the Selmer groups of V_λ(f). The abelian-variety conclusions of §7.9
-lack A_f and J₁(N). Classical finiteness of the Tate–Shafarevich group (§§7.3, 7.8) lacks
-the topological Galois module E(ℚ̄) and its local restriction maps, although Mathlib has
+The canonical zeta morphisms (§§5.1, 5.4, 5.6), non-torsion and cohomological bound
+(§§7.1–7.2) lack Iwasawa cohomology and the modular Galois realization. The regulator
+equality (§6.4) lacks the Kato zeta morphism and analytic p-adic L-function. The
+ordinary and multiplicative divisibility (§7.4) lacks the Iwasawa Selmer module over
+ℚ_∞ and the Mazur–Swinnerton-Dyer p-adic L-function; absence of finite submodules
+(§7.6) lacks that Selmer module. The Bloch–Kato finiteness theorem (§7.9, parts 1–2)
+lacks the Selmer groups of V_λ(f), and the Tamagawa bound there lacks its Galois
+cohomology and canonical zeta class. The abelian-variety conclusions of §7.9 lack
+A_f and J₁(N). The elliptic Mordell–Weil χ-part over cyclotomic fields is statable
+using the pinned Galois action and character map, and is included below. The Selmer
+χ-part still lacks its elliptic Selmer carrier. Classical finiteness and the rank-zero
+upper bound for the Tate–Shafarevich group (§§7.3, 7.8) lack the topological Galois
+module E(ℚ̄) and its local restriction maps, although Mathlib has
 ContinuousCohomology.tateShafarevich for supplied Galois modules.
 -/
 
 namespace TauCetiRoadmap.KatoEulerSystems
 
-/-! ## Layer 7: arithmetic consequences -/
+/-! ## Layer 7: divisibility and elliptic applications -/
 
 /-- For a nonsingular modular elliptic curve over ℚ and every integer m ≥ 1, its points over
 ⋃ₙ ℚ(ζ_(mⁿ)) form a finitely generated abelian group, including CM curves and m = 1.
@@ -35,14 +44,45 @@ theorem ellipticCyclotomicFiniteGeneration (W : WeierstrassCurve ℚ) [W.IsEllip
   sorry
 
 /-- A nonsingular modular elliptic curve over ℚ has finitely many rational points if its
-entire L-function is nonzero at 1 (Kato, Corollary 14.3). The continuation agrees with the
-native, total L-series on Re(s) > 3/2; no value of that total sum at s = 1 is used. -/
+entire L-function is nonzero at 1 (the K = ℚ, χ = 1 case of Kato, Corollary 14.3).
+The continuation agrees with the native, total L-series on Re(s) > 3/2; no value of that total sum at s = 1 is used. -/
 theorem ellipticRationalPoints_finite (W : WeierstrassCurve ℚ) [W.IsElliptic]
     (hmod : ∃ (N : ℕ) (_ : 0 < N) (f : CuspForm (CongruenceSubgroup.Gamma0 N) 2),
       ∀ n : ℕ, (UpperHalfPlane.qExpansion 1 f).coeff n = (W.LFunction n : ℂ))
     (F : ℂ → ℂ) (hF : Differentiable ℂ F)
     (hcont : ∀ s : ℂ, 3 / 2 < s.re → F s = W.LSeries s) (hne : F 1 ≠ 0) :
     Finite W.toAffine.Point := by
+  sorry
+
+/-- For an elliptic curve over ℚ, its K-points killed by the kernel of
+ℤ[Gal(K/ℚ)] → ℂ induced by ψ. A group-ring element acts by the integral linear
+combination of the actual coordinate actions, retaining all torsion. This is Kato's
+χ-part (14.2, p. 235) specialized to elliptic points. -/
+noncomputable def ellipticCharacterPart (W : WeierstrassCurve ℚ) [W.IsElliptic]
+    (K : Type*) [Field K] [DecidableEq K] [Algebra ℚ K]
+    (ψ : (K ≃ₐ[ℚ] K) →* ℂ) : Set (W.baseChange K).toAffine.Point :=
+  {P | ∀ a : MonoidAlgebra ℤ (K ≃ₐ[ℚ] K),
+    MonoidAlgebra.lift ℤ ℂ (K ≃ₐ[ℚ] K) ψ a = 0 →
+      a.coeff.sum (fun σ n => n • Multiplicative.toAdd (W.pointGaloisAction σ) P) = 0}
+
+/-- For a nonsingular modular elliptic curve over ℚ, the χ-part of its points over
+any m-th cyclotomic field is finite if the continued χ-twisted L-function is nonzero
+at 1 (Kato, Corollary 14.3(2)). The Galois character sends ζ_m ↦ ζ_m^a to χ(a),
+and the Dirichlet series uses the zero extension modulo m, including imprimitive χ.
+Its value at 1 is taken from the entire continuation, not the total Dirichlet sum. -/
+theorem ellipticCharacterPoints_finite (W : WeierstrassCurve ℚ) [W.IsElliptic]
+    (hmod : ∃ (N : ℕ) (_ : 0 < N) (f : CuspForm (CongruenceSubgroup.Gamma0 N) 2),
+      ∀ n : ℕ, (UpperHalfPlane.qExpansion 1 f).coeff n = (W.LFunction n : ℂ))
+    (m : ℕ) [NeZero m] (K : Type*) [Field K] [DecidableEq K] [Algebra ℚ K]
+    [IsCyclotomicExtension {m} ℚ K] (χ : DirichletCharacter ℂ m)
+    (F : ℂ → ℂ) (hF : Differentiable ℂ F)
+    (hcont : ∀ s : ℂ, 3 / 2 < s.re →
+      F s = LSeries (fun n => (W.LFunction n : ℂ) * χ n) s)
+    (hne : F 1 ≠ 0) :
+    (ellipticCharacterPart W K
+      ((Units.coeHom ℂ).comp (χ.toUnitHom.comp
+        (IsCyclotomicExtension.autEquivPow K
+          (Polynomial.cyclotomic.irreducible_rat (NeZero.pos m))).toMonoidHom))).Finite := by
   sorry
 
 end TauCetiRoadmap.KatoEulerSystems
