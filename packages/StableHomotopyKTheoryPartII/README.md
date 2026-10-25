@@ -11,7 +11,7 @@ The general constructions have the following owners, and are consumed by the exa
 - GeneralizedCohomology G2.8 owns symmetric extended powers as the summands of the free commutative spectral algebra; BordismFormalGroups §F6.5 supplies restriction to subgroups and coherent permutation actions. The cyclic desuspension tower here is an additional comparison of those powers.
 - TangentialBordism §B4 items 1, 2 and 7 owns ordinary and stable Steenrod operations, their complete operation algebra, admissible basis, Milnor dual, coproduct and conjugation at all primes. Its items 2 and 8 own the mod-p Adams tower, cohomological Ext page and bounded-below finite-type convergence. These constructions are not targets here. BordismFormalGroups §F6.3 owns the finite Steenrod Hopf subalgebras and their free-module tools.
 - BordismFormalGroups §F6.5 owns finite Borel actions, norms, Tate, induced-object vanishing, multiplicativity, restriction, transfer and finite-height Tate descent. KTheoryFiniteLocalFields §4.5 owns Eilenberg–MacLane/Tate comparison and the algebraic cyclic resolution. The coefficient target in Layer 1 adds a fixed Weyl normalization to those calculations.
-- AInfCohomology §AI.7.2 owns the spectral Tate diagonal and the Tate orbit lemma. RefinedTraceMethods §§2.3–2.4 supplies the boundedness and parametrized extensions; §§2.6, 2.8 and 2.10–2.16 owns the THH, E∞ Frobenius and genuine cyclotomic interfaces. Its §2.10 supplies the loop-space model; the Segal equivalence of that model is proved in Layer 8 here.
+- AInfCohomology §AI.7.2 owns the spectral Tate diagonal and the Tate orbit lemma. RefinedTraceMethods §§2.3–2.4 supplies the boundedness and parametrized extensions; its §2.3 owns the Tate fixpoint lemma together with its sphere counterexample (S^(hC_p))^(t(C_(p²)/C_p))≃S_p^∧≠0, which Layer 7 applies beside its own KU orbit and tensor-diagonal counterexamples; §§2.6, 2.8 and 2.10–2.16 owns the THH, E∞ Frobenius and genuine cyclotomic interfaces. Its §2.10 supplies the loop-space model; the Segal equivalence of that model is proved in Layer 8 here.
 - GeneralizedCohomology G4.2 and G5.3 owns ordinary Thom spaces and compatible Thom-spectrum diagrams; RefinedTraceMethods §2.13 owns genuine representation spheres. Layer 5 here adds tensor-inverse virtual twists over arbitrary spaces and their power-operation comparison. EnhancedDerivedSheaves E3 and E5 supplies the coherent Kan-extension and monoidal formalism.
 - GeneralizedCohomology G5.4 owns ku and KU. TopologicalKTheory T1–T5 owns bundle K-theory, Bott periodicity, splitting and degree-zero Adams operations. RefinedTraceMethods §5.1 owns Snaith's comparison and stable Adams operations after inverting their index. Layer 7 adds Atiyah-power compatibility, cyclic Tate coefficient fields and their Frobenius comparison.
 - Mathlib already has ordinary and Witt Frobenius and the finite inverse-system tools listed below. The finite-tower theorem here assembles the nonsurjective and empty-limit cases into a pro-isomorphism; it does not redefine compatible sections or eventual ranges.
@@ -26,7 +26,7 @@ A prime p is always an integer prime, including 2 and 3. Fix a p-cycle identifyi
 
 Derived p-completion is the spectral localization with the function-spectrum model of GeneralizedCohomology G3.9, with completeness criteria in StableHomotopyKTheory §§7.14–7.16. A p-adic equivalence has mod-p Moore cofiber zero. A finite-type spectrum has degreewise finite-dimensional mod-p homology; bounded below means π_i=0 for all i below some integer, which can depend on the object. A compact space in the KU comparison is a homotopy retract of a finite CW complex. The finite p-complete class in §4.7 consists of p-completions of finite spectra and retracts of finite cell S_p^∧-modules. For the p-inversion diagram on S_p^∧, the colimit in p-complete spectra is zero while the colimit of π₀ maps out of S_p^∧ is ℚ_p; these are different finiteness notions (§4.7; ns18, Example IV.1.2(ii), p.325; ns18 line 4852).
 
-A Laurent coefficient ring below is graded. Its homogeneous pieces do not include arbitrary ungraded series. Product decompositions of spectra induce products of mapping groups; no unrestricted tensor/cohomology interchange is assumed. Binomial coefficients with an integer upper argument use the integral polynomial convention, and a negative lower argument means zero: binom(−1,1)=−1, which is 1 in 𝔽₂. The KU Bott class β has homotopy degree 2 and is [H]−1 on S² for the chosen line H (ns18, Proposition IV.1.12, pp.329–330; ns18 line 5002). Set x=L−1; the multiplicative p-series is (1+x)^p−1, and its value at x=0 is 0.
+A Laurent coefficient ring below is graded. Its homogeneous pieces do not include arbitrary ungraded series. In Tate-valued cohomology such as H*(X;𝔽_p)((t^(p−1)))⊗Λ(e), Tate coefficients are written to the right of cohomology classes and pass them with the Koszul sign, so e·z=−z·e for z of odd degree; a component of a class is its right coefficient of the named Tate monomial. Product decompositions of spectra induce products of mapping groups; no unrestricted tensor/cohomology interchange is assumed. Binomial coefficients with an integer upper argument use the integral polynomial convention, and a negative lower argument means zero: binom(−1,1)=−1, which is 1 in 𝔽₂. The KU Bott class β has homotopy degree 2 and is [H]−1 on S² for the chosen line H (ns18, Proposition IV.1.12, pp.329–330; ns18 line 5002). Set x=L−1; the multiplicative p-series is (1+x)^p−1, and its value at x=0 is 0.
 
 ## Exact supplier contracts
 
@@ -98,7 +98,7 @@ Consume §AI.7.2, “Spectral Tate diagonal”, for the exact tensor-Tate functo
 
 ### From TauCetiRoadmap.RefinedTraceMethods
 
-Consume §§2.1 and 2.3–2.4 for orbit/fixed-point adjunctions, Postnikov/Tate comparisons, boundedness criteria, p-completeness and parametrized spectra. Consume §§2.5–2.6 for cyclic realization, edgewise subdivision and THH Frobenius; §2.8 supplies the E∞ Tate-valued Frobenius as multiplication after Δ_p, equivalently the THH Frobenius followed by augmentation. This supplies the unrefined map on all E∞-rings without using its Segal equivalence.
+Consume §§2.1 and 2.3–2.4 for orbit/fixed-point adjunctions, Postnikov/Tate comparisons, boundedness criteria, p-completeness and parametrized spectra. From §2.3 consume also the Tate fixpoint lemma for bounded-above spectra with C_(p²)-action and its sphere counterexample: for S with trivial C_(p²)-action, (S^(hC_p))^(t(C_(p²)/C_p))≃S_p^∧≠0, with the residual quotient action induced by the extension rather than assigned independently. Consume §§2.5–2.6 for cyclic realization, edgewise subdivision and THH Frobenius; §2.8 supplies the E∞ Tate-valued Frobenius as multiplication after Δ_p, equivalently the THH Frobenius followed by augmentation. This supplies the unrefined map on all E∞-rings without using its Segal equivalence.
 
 Consume §2.10's cyclic-bar equivalence THH(S[ΩY])=Σ∞_+LY and its cyclotomic model, §§2.11–2.13's genuine and representation-sphere models, and §2.16's restriction pullback for genuine fixed points. Consume §5.1 for coherent stable ψ^k on KU[1/k] and §6.1 for the equivalence between étale algebras over a connective E∞-ring and étale algebras over its π₀. The marked lift over S_p^∧ and its maps are the ones used here.
 
@@ -130,7 +130,7 @@ Normalize the cyclic coefficient generators and the conjugation action needed by
 
 ### 1.1 Cyclic Tate coefficients and Weyl weights
 
-Using the supplied cyclic Tate comparison, for the trivial C_p-action, the cohomologically graded Tate coefficient algebra of H𝔽₂ is 𝔽₂[s^(±1)], |s|=−1. For odd p it is 𝔽_p[t^(±1)]⊗Λ(e), |t|=−2 and |e|=−1. Choose e so that t^(−1)e is the positive degree-one group-cohomology generator. Under the normalizer quotient W=𝔽_p^×, a acts on t by a and fixes e; therefore invariants are 𝔽_p[t^(±(p−1))]⊗Λ(e). For HZ the Tate groups are 𝔽_p in even degrees and zero in odd degrees, and W-invariants occur in degrees divisible by 2(p−1). These are graded coefficient rings, not rings of arbitrary ungraded infinite series. (ns18, §I.1, p.218; §IV.1, discussion before Theorem IV.1.15, p.332; ns18 line 5098)
+Using the supplied cyclic Tate comparison, for the trivial C_p-action, the cohomologically graded Tate coefficient algebra of H𝔽₂ is 𝔽₂[s^(±1)], |s|=−1. For odd p it is 𝔽_p[t^(±1)]⊗Λ(e), |t|=−2 and |e|=−1. Normalize the generators as follows: let b∈H¹(C_p;𝔽_p)=Hom(C_p,𝔽_p) send the chosen p-cycle to 1, put u=βb∈H²(C_p;𝔽_p), and set t=u⁻¹ and e=b·u⁻¹. Then t⁻¹e=b and βe=1 for the Bockstein on Tate cohomology. Rescaling b by λ∈𝔽_p^× fixes e and t^(p−1)=u^(−(p−1)), so these two classes, and every formula below written in them, do not depend on the choice of b. Under the normalizer quotient W=𝔽_p^×, a acts on t by a and fixes e; therefore invariants are 𝔽_p[t^(±(p−1))]⊗Λ(e). For HZ the Tate groups are 𝔽_p in even degrees and zero in odd degrees, and W-invariants occur in degrees divisible by 2(p−1). These are graded coefficient rings, not rings of arbitrary ungraded infinite series. (ns18, §I.1, p.218; §IV.1, discussion before Theorem IV.1.15, p.332; ns18 line 5098)
 
 Throughout this statement, p prime; W=N_(Σ_p)(C_p)/C_p; coefficient actions are trivial.
 
@@ -145,13 +145,15 @@ One proof route is as follows. Use the alternating maps g−1 and N in the compl
 - At p=3 and a=−1, t has weight −1 and t² has weight +1; the invariant even generator has cohomological degree −4. A degree −2 invariant would fail.
 - The classes e and t⁻¹e have cohomological degrees −1 and 1 and weights 1 and a⁻¹ respectively; treating both as invariant gives the wrong H¹ action.
 - For Hℤ with p=2 the cyclic complex gives π₀=ℤ/2 and π₁=0, whereas H𝔽₂ Tate has one 𝔽₂ in every degree. At p=3 the integral invariant periods are 4.
+- With t=u⁻¹ and e=b·u⁻¹, β(e)=β(b)·u⁻¹−b·β(u⁻¹)=u·u⁻¹−0=1. The pair (−t,−e) has the same product t⁻¹e=b, the same degrees and the same weights, but β(−e)=−1; it is excluded by this normalization and would reverse the sign of every Bockstein coefficient in §6.2.
+- At p=3 replacing b by 2b gives u'=2u, t'=2t and e'=e, while t'²=4t²=t². The square t² is the same class for every choice, so the sign of the reduced-power coefficients in §6.2 cannot be changed by rescaling t.
 
 *Needs:* KTheoryFiniteLocalFields §4.5 (Eilenberg–MacLane Tate comparison); BordismFormalGroups §F6.5 (finite-action norm, Tate and transfers); StableHomotopyKTheory Layer 5 (smash, suspension, Eilenberg–MacLane and connectivity); AlgebraicTopology Stage 6 (ordinary cup products).
 
 
 ### Examples
 
-At p=3 the invariant Laurent power is t², in cohomological degree −4; the class e is invariant in degree −1. The positive H¹ generator t⁻¹e has weight a⁻¹. These same generators are used in Layer 6.
+At p=3 the invariant Laurent power is t²=u⁻², in cohomological degree −4; the class e=b·u⁻¹ is invariant in degree −1 and satisfies βe=1. The positive H¹ generator t⁻¹e=b has weight a⁻¹. These same generators are used in Layer 6.
 
 
 ### Dependencies
@@ -282,13 +284,13 @@ The construction has the following API.
 
 ### 2.6 Topological Singer cohomology comparison
 
-For B bounded below and degreewise finite type over 𝔽_p there is a natural graded A_p-isomorphism H_c^*(U_•(B);𝔽_p)≅R_+(H*(B;𝔽_p)). Under this isomorphism the map to H*(B;𝔽_p) induced by Δ_p:B→T_pB equals ε_(H*B). Equivalently colim_n H*(Σ^nD_(C_p)(Σ^(−n)B);𝔽_p)≅Σ^(−1)R_+(H*B); the one-suspension difference from U_n is essential. (lnr12, §5.1, Lemma 5.1 and Theorem 5.2, pp.896–898; §5.2, Theorem 5.9, p.903; §5.3, Definition 5.10, Lemma 5.11 and Proposition 5.12, pp.903–905; lnr12 line 1964)
+For B bounded below and degreewise finite type over 𝔽_p there is a natural graded A_p-isomorphism H_c^*(U_•(B);𝔽_p)≅R_+(H*(B;𝔽_p)). Under this isomorphism the map to H*(B;𝔽_p) induced by Δ_p:B→T_pB equals ε_(H*B). Equivalently colim_n H*(Σ^nD_(C_p)(Σ^(−n)B);𝔽_p)≅Σ^(−1)R_+(H*B); the one-suspension difference from U_n is essential. (lnr12, §5.1, Lemma 5.1 and Theorem 5.2, pp.896–898; §5.2, Theorem 5.9 and proof, pp.902–903; §5.3, Definition 5.10, Lemma 5.11 and Proposition 5.12, pp.903–905; lnr12 line 1964)
 
 The comparison is A_p-linear, not merely an isomorphism of graded vector spaces.
 
 The class Σxy^(−1)⊗1 (or Σx^(−1)⊗1 at p=2) maps to the unit.
 
-One proof route is as follows. Calculate extended-power homology by the cyclic resolution and the tensor Künneth isomorphism. Split mixed tensor-basis words into free C_p-orbits, leaving the diagonal words; track the Steenrod action to obtain the Singer formulas. Pass along the representation-sphere tower and keep its suspension shift, yielding the continuous-cohomology comparison. Construct the geometric map B≃Φ^(C_p)(N_e^(C_p)B)→(B^(⊗p))^(tC_p). It is natural, commutes with suspension and on S sends the unit to the canonical Tate unit; the exact-functor normalization in the imported Tate diagonal identifies it with Δ_p. No Segal equivalence is used for this identification. Its map on continuous cohomology factors uniquely through ε by the bounded-target Hom consequence. Determine the residual endomorphism first on B=H𝔽_p using the unit, then on suspensions, then on arbitrary cohomology classes represented by B→Σ^qH𝔽_p. (lnr12, §5.1, Lemma 5.1 and Theorem 5.2, pp.896–898; §5.2, Theorem 5.9, p.903; §5.3, Definition 5.10, Lemma 5.11 and Proposition 5.12, pp.903–905; lnr12 line 1964)
+One proof route is as follows. Calculate extended-power homology by the cyclic resolution and the tensor Künneth isomorphism. Split mixed tensor-basis words into free C_p-orbits, leaving the diagonal words; track the Steenrod action to obtain the Singer formulas. Pass along the representation-sphere tower and keep its suspension shift, yielding the continuous-cohomology comparison. Construct the geometric map B≃Φ^(C_p)(N_e^(C_p)B)→(B^(⊗p))^(tC_p). It is natural, commutes with suspension and on S sends the unit to the canonical Tate unit; the exact-functor normalization in the imported Tate diagonal identifies it with Δ_p. No Segal equivalence is used for this identification. Its map on continuous cohomology factors uniquely through ε by the bounded-target Hom consequence. Determine the residual endomorphism first on B=H𝔽_p using the unit, then on suspensions, then on arbitrary cohomology classes represented by B→Σ^qH𝔽_p. (lnr12, §5.1, Lemma 5.1 and Theorem 5.2, pp.896–898; §5.2, Theorem 5.9 and proof, pp.902–903; §5.3, Definition 5.10, Lemma 5.11 and Proposition 5.12, pp.903–905; lnr12 line 1964)
 
 **Checks.**
 
@@ -407,7 +409,7 @@ One proof route is as follows. Shift X to be connective, using exactness of T_p.
 
 - For X=S the target has π₀=ℤ_p; for X=Σ⁻¹H𝔽_p the only nonzero homotopy group is 𝔽_p in degree −1 on both sides. Bounded below does not mean connective.
 - For X=H(⊕_J𝔽_p), the degree-zero comparison is the identity for every set J.
-- At p=2, KU₂^∧/2 has 𝔽₂ in every even degree, while T₂(KU)/2=0 by §7.6. This is the unbounded negative control.
+- At p=2, KU₂^∧/2 has 𝔽₂ in every even degree, while T₂(KU)/2=0 by §7.5. This is the unbounded negative control.
 
 *Needs:* §3.3; AInfCohomology §AI.7.2 (Spectral Tate diagonal); RefinedTraceMethods §2.3 and KTheoryFiniteLocalFields §4.4 (boundedness and residual Tate comparison); StableHomotopyKTheory Layer 5 (smash, suspension, Eilenberg–MacLane and connectivity); GeneralizedCohomology G3.9 (derived completion and its function-spectrum model); StableHomotopyKTheory §7.15 (mod-p detection for complete spectra); StableHomotopyKTheory §7.16 (closure of complete spectra).
 
@@ -638,7 +640,8 @@ One proof route is as follows. Express the negative Thom object as the colimit o
 **Checks.**
 
 - At n=0 the negative Thom object is Σ∞_+(X×BΣ_p), giving the same ordinary Borel cohomology on both sides.
-- At X=* and n=−1, restricting to the trivial subgroup gives π₁R on each side, rather than π₋₁R.
+- At X=* and n=−1, restricting to the trivial subgroup turns −ρ into the trivial virtual bundle of rank −p, so both sides give π_pR, rather than π₁R or π_(−p)R.
+- At p=2 and n=−1, for R=ΣHℤ both restricted sides are π₂(ΣHℤ)=0, whereas the rank −1 reading would give π₁(ΣHℤ)=ℤ; for R=Σ²Hℤ both sides are π₂(Σ²Hℤ)=ℤ, whereas the rank −1 reading would give 0.
 - For p=2 and n=1, the transposition on S^ρ has degree −1; for n=2 its degree is +1. The adjunction retains that action.
 
 *Needs:* §5.1; RefinedTraceMethods §2.4 (parametrized spectra); EnhancedDerivedSheaves E3 (Kan extensions).
@@ -740,7 +743,7 @@ Choose coefficient splittings with the normalized Weyl weights and identify ever
 
 ### 6.1 Eilenberg–MacLane Tate decompositions
 
-As H𝔽_p-module spectra, (H𝔽₂)^(tC_2)≃∏_(j∈ℤ)Σ^jH𝔽₂. At odd p, ((H𝔽_p)^(tC_p))^(hW)≃∏_(j∈ℤ)(Σ^(2j(p−1))H𝔽_p⊕Σ^(2j(p−1)+1)H𝔽_p). Likewise (HZ)^(tC_2)≃∏_(j∈ℤ)Σ^(2j)H𝔽₂, and at odd p ((HZ)^(tC_p))^(hW)≃∏_(j∈ℤ)Σ^(2j(p−1))H𝔽_p. Choose these splittings by the coefficient generators of Layer 1. Because only finitely many summands contribute to each homotopy degree, the corresponding sum-to-product maps are equivalences; mapping an arbitrary spectrum into this product still gives a product of operation components. (ns18, §IV.1, displays before Theorem IV.1.15, p.332; ns18 line 5098)
+As H𝔽_p-module spectra, (H𝔽₂)^(tC_2)≃∏_(j∈ℤ)Σ^jH𝔽₂. At odd p, ((H𝔽_p)^(tC_p))^(hW)≃∏_(j∈ℤ)(Σ^(2j(p−1))H𝔽_p⊕Σ^(2j(p−1)+1)H𝔽_p). Likewise (HZ)^(tC_2)≃∏_(j∈ℤ)Σ^(2j)H𝔽₂, and at odd p ((HZ)^(tC_p))^(hW)≃∏_(j∈ℤ)Σ^(2j(p−1))H𝔽_p. Choose these splittings by the monomials in the normalized generators of Layer 1, as H𝔽_p-modules through const: the summand Σ^(2j(p−1))H𝔽_p is spanned by t^((p−1)j)=u^(−(p−1)j) and Σ^(2j(p−1)+1)H𝔽_p by t^((p−1)j)e with βe=1, at p=2 the summand Σ^jH𝔽₂ by s^j, and integrally the summands by the corresponding even monomials. This is the monomial splitting used in §§6.2–6.3. Because only finitely many summands contribute to each homotopy degree, the corresponding sum-to-product maps are equivalences; mapping an arbitrary spectrum into this product still gives a product of operation components. (ns18, §IV.1, displays before Theorem IV.1.15, p.332; ns18 line 5098)
 
 The summand carrying P¹ at odd p is Σ^(2(p−1))H𝔽_p.
 
@@ -759,39 +762,41 @@ One proof route is as follows. Calculate coefficients by the cyclic resolution a
 
 ### 6.2 Steenrod components of the ordinary power
 
-With the coefficient normalization s,t,e in Layer 1, applying can to P_p^n and then the Tate-suspension comparison has coefficients Sq^i at p=2, and P^i and βP^i at odd p. Equivalently, on a homogeneous x∈H^n(X;𝔽_p) of a space, the resulting degree-n class is Σ_(i≥0)Sq^i(x)s^i at p=2, and Σ_(i≥0)P^i(x)t^((p−1)i)+Σ_(i≥0)βP^i(x)t^((p−1)i)e at odd p. Each term has total degree n. The expression denotes the coefficientwise product decomposition; for an ordinary space and a fixed homogeneous class instability makes these displayed sums finite. It is not an unqualified tensor-product description of cohomology for arbitrary unbounded spectra. (bmms86, Chapter VIII §2, formulas (1)–(4) and Propositions 2.2–2.4 (scan PDF pp.133–135); bmms86 line 4414; ns18, §IV.1, Proposition IV.1.16 and its proof following Theorem IV.1.21, pp.333,339–340; ns18 line 5155)
+With the normalization s, t=u⁻¹ and e=b·u⁻¹ (βe=1) of Layer 1 and the monomial splitting of §6.1, applying can to P_p^n and then the Tate-suspension comparison has right coefficients Sq^i at p=2, and (−1)^iP^i and (−1)^(n+i)βP^i at odd p. Equivalently, on a homogeneous x∈H^n(X;𝔽_p) of a space, the resulting degree-n class is Σ_(i≥0)Sq^i(x)s^i at p=2, and Σ_(i≥0)(−1)^iP^i(x)t^((p−1)i)+(−1)^nΣ_(i≥0)(−1)^iβP^i(x)t^((p−1)i)e at odd p, with the Tate coefficients on the right. Each term has total degree n. The scalars are those of the Euler-normalized power expansion: with m=(p−1)/2, the power of x is Σ_i(−1)^(mi+mn(n−1)/2)[P^i(x)χ^(n−2i)+(−1)^nβP^i(x)ωχ^(n−2i−1)], where χ=m!u^m is the Euler class of the reduced real regular representation and ω=m!bu^(m−1), so βω=χ (bmms86, Chapter VIII §2, Proposition 2.4(vi), scan PDF p.134, and the normalization of χ and ω in the proof of the Adem relations, scan PDF p.135; bmms86 line 4481 and bmms86 line 4501). Dividing by the leading coefficient (−1)^(mn(n−1)/2)χ^n and using (m!)²=(−1)^(m+1) in 𝔽_p gives χ^(−2i)=(−1)^((m+1)i)t^((p−1)i) and ωχ⁻¹=e, hence the displayed signs. The unsigned formula of ns18 Proposition IV.1.16 is not multiplicative for the Koszul sign rule and disagrees with the Euler computation of the second Check. The expression denotes the coefficientwise product decomposition; for an ordinary space and a fixed homogeneous class instability makes these displayed sums finite. It is not an unqualified tensor-product description of cohomology for arbitrary unbounded spectra. (bmms86, Chapter VIII §2, formulas (1)–(4) and Propositions 2.2–2.4 (scan PDF pp.133–135); bmms86 line 4414; ns18, §IV.1, Proposition IV.1.16 and its proof following Theorem IV.1.21, pp.333,339–340; ns18 line 5155)
 
 For u∈H¹(ℝP∞;𝔽₂), the formula gives u+u²s.
 
-For v∈H²(ℂP∞;𝔽_p), odd p, the formula gives v+v^p t^(p−1), with zero Bockstein terms.
+For v∈H²(ℂP∞;𝔽_p), odd p, the formula gives v−v^p t^(p−1), with zero Bockstein terms.
 
-One proof route is as follows. Use the extended-power Thom comparison to identify P_p^n with the ordinary-cohomology power operation used to construct the Steenrod operations. Use the Thom class/Euler normalization to track the suspension and the coefficients s^i or t^((p−1)i), including the Bockstein coefficient e. At odd p check W weights and the factor 2 in the degree. Apply instability only to classes on spaces. (bmms86, Chapter VIII §2, formulas (1)–(4) and Propositions 2.2–2.4 (scan PDF pp.133–135); bmms86 line 4414; ns18, §IV.1, Proposition IV.1.16 and its proof following Theorem IV.1.21, pp.333,339–340; ns18 line 5155)
+One proof route is as follows. Use the extended-power Thom comparison to identify P_p^n with the ordinary-cohomology power operation used to construct the Steenrod operations. At odd p the Thom isomorphism of nρ and the inverse Tate-suspension comparison differ by multiplication by a unit of Ĥ^(n(p−1))(C_p;𝔽_p)=𝔽_p·u^(mn), a class of even degree, and at p=2 by a power of b; since φ is unital and its degree-zero component is a stable operation, that unit is fixed by making the coefficient of x equal to 1. Divide the Euler-normalized expansion above by it, tracking the coefficients s^i or t^((p−1)i) and the Bockstein coefficient e on the right. At odd p check W weights and the factor 2 in the degree. Apply instability only to classes on spaces. (bmms86, Chapter VIII §2, formulas (1)–(4) and Propositions 2.2–2.4 (scan PDF pp.133–135); bmms86 line 4414; ns18, §IV.1, Proposition IV.1.16 and its proof following Theorem IV.1.21, pp.333,339–340; ns18 line 5155)
 
 **Checks.**
 
-- For u in H¹(ℝP∞;𝔽₂), the expression is u+u²s with degrees 1 and 2−1=1.
-- For v in H²(ℂP∞;𝔽₃), it is v+v³t²; both terms have degree 2 because 6−4=2. Its Bockstein terms are zero.
-- For x in H¹(BC₃;𝔽₃) and y=βx, the expression starts x+ye; both degrees are 1 because 2−1=1. Omitting βP⁰ loses the second nonzero component.
+- For u in H¹(ℝP∞;𝔽₂), the expression is u+u²s with degrees 1 and 2−1=1. Independently, the power of u is the Euler class u(u+b) of the tensor bundle, and dividing by the Euler class b of the sign representation gives u+u²b⁻¹=u+u²s.
+- For v in H²(ℂP∞;𝔽₃), it is v−v³t²=v+2v³t²; both terms have degree 2 because 6−4=2, and its Bockstein terms are zero. Independently, the power of v is the Euler class v(v+u)(v+2u)=v³−vu² of the line bundle tensored with the complex regular representation; its coefficient of v is −u², and dividing by it gives v−v³u⁻²=v−v³t². The unsigned v+v³t² fails this test, and no rescaling of t changes t².
+- For x in H¹(BC₃;𝔽₃) and y=βx, the expression is x−ye; both degrees are 1 because 2−1=1. Omitting βP⁰ loses the second nonzero component.
+- At p=3 on BC₃×BC₃ take degree-one x and z with y=βx and w=βz; all positive reduced powers of x, z and xz vanish. The formula gives x−ye, z−we and, since β(xz)=yz−xw, xz+(yz−xw)e. The product (x−ye)(z−we)=xz−xwe+yze is the same class, using e·z=−z·e and e²=0. The unsigned formula would give x+ye and z+we with product xz+(xw−yz)e, while its value on xz is xz+(yz−xw)e; since yze and xwe are independent, the unsigned formula is not multiplicative.
 
 *Needs:* TangentialBordism §B4 items 1, 2 and 7; §5.5; §5.4; §6.1.
 
 
 ### 6.3 Frobenius as the total Steenrod operation
 
-Under the chosen product decomposition, φ_(H𝔽₂):H𝔽₂→(H𝔽₂)^(tC_2) has component Sq^i:H𝔽₂→Σ^iH𝔽₂ for i≥0 and zero components for i<0. At odd p, φ_(H𝔽_p):H𝔽_p→((H𝔽_p)^(tC_p))^(hW) has components P^i:H𝔽_p→Σ^(2i(p−1))H𝔽_p and βP^i:H𝔽_p→Σ^(2i(p−1)+1)H𝔽_p for i≥0, with negative-index components zero. For HZ the components are Sq^(2i)∘r at p=2, and P^i∘r at odd p, i≥0, where r:HZ→H𝔽_p is reduction. Evaluation on spaces is the total-operation formula of the previous theorem. This is an equality of spectrum maps, not just of maps on π₀. (ns18, §IV.1, Theorem IV.1.15 and Proposition IV.1.16, pp.332–333; proof completed pp.339–340; ns18 line 5132)
+Under the monomial splitting of §6.1, φ_(H𝔽₂):H𝔽₂→(H𝔽₂)^(tC_2) has component Sq^i:H𝔽₂→Σ^iH𝔽₂ on the summand of s^i for i≥0 and zero components for i<0. At odd p, φ_(H𝔽_p):H𝔽_p→((H𝔽_p)^(tC_p))^(hW) has component (−1)^iP^i:H𝔽_p→Σ^(2i(p−1))H𝔽_p on the summand of t^((p−1)i), and on the summand of t^((p−1)i)e the stable operation θ_i:H𝔽_p→Σ^(2i(p−1)+1)H𝔽_p that sends a class x of degree n of a space to (−1)^(n+i)βP^i(x), for i≥0; negative-index components are zero. Here a spectrum map θ:H𝔽_p→Σ^kH𝔽_p acts on degree-n classes as Σ^nθ, with suspension coordinates on the left, so that it commutes with x↦ι×x for the fundamental class ι of S¹. Since β(ι×x)=−ι×βx for the left derivation β of Conventions, the family x↦(−1)^nβx commutes with this suspension and the unsigned family x↦βx does not; writing β_L for the stable Bockstein in this convention, θ_i=(−1)^iβ_LP^i. For HZ the components are Sq^(2i)∘r at p=2, and (−1)^iP^i∘r at odd p, i≥0, where r:HZ→H𝔽_p is reduction. Evaluation on spaces is the total-operation formula of the previous theorem. This is an equality of spectrum maps, not just of maps on π₀. (ns18, §IV.1, Theorem IV.1.15 and Proposition IV.1.16, pp.332–333; proof completed pp.339–340; ns18 line 5132; bmms86, Chapter VIII §2, Proposition 2.4(vi), scan PDF p.134; bmms86 line 4481)
 
-The i=0 component is the identity for H𝔽_p and reduction for HZ.
+The i=0 component on the summand of 1 is the identity for H𝔽_p and reduction for HZ.
 
-For p=3, P¹ has target Σ⁴H𝔽₃ and βP¹ has target Σ⁵H𝔽₃.
+For p=3, the components −P¹ and θ₁ have targets Σ⁴H𝔽₃ and Σ⁵H𝔽₃.
 
 The higher components may be nonzero although all positive homotopy groups of H𝔽_p itself vanish.
 
-One proof route is as follows. The all-degree Frobenius theorem identifies evaluation with the power coefficients just computed. For each Eilenberg–MacLane target summand, identify the corresponding stable operation using representability and the complete stable Steenrod-operation algebra, retaining the all-degree comparisons. Product universality gives equality of the spectrum maps; do not assume φ is H𝔽_p-linear. Use naturality under HZ→H𝔽_p and the coefficient map on Tate to obtain the integral variant, eliminating the odd-square/Bockstein summands. (ns18, §IV.1, Theorem IV.1.15 and Proposition IV.1.16, pp.332–333; proof completed pp.339–340; ns18 line 5132)
+One proof route is as follows. The all-degree Frobenius theorem identifies evaluation with the power coefficients just computed. For each Eilenberg–MacLane target summand, identify the corresponding stable operation using representability and the complete stable Steenrod-operation algebra, retaining the all-degree comparisons. Product universality gives equality of the spectrum maps; do not assume φ is H𝔽_p-linear. The signs (−1)^i and (−1)^(n+i) are those of §6.2; no unsigned reading of the components is compatible with the monomial splitting. Use naturality under HZ→H𝔽_p and the coefficient map on Tate to obtain the integral variant, eliminating the odd-square/Bockstein summands. (ns18, §IV.1, Theorem IV.1.15 and Proposition IV.1.16, pp.332–333; proof completed pp.339–340; ns18 line 5132)
 
 **Checks.**
 
 - The identity/reduction component sends 1 to 1 at both p=2 and p=3; a zero map has component 0.
-- At p=3, P¹ targets Σ⁴H𝔽₃ and βP¹ targets Σ⁵H𝔽₃; on v in degree 2 they give v³ in degree 6 and 0 in degree 7.
+- At p=3 the components −P¹ and θ₁ target Σ⁴H𝔽₃ and Σ⁵H𝔽₃; on v in degree 2 they give −v³=2v³ in degree 6 and 0 in degree 7. The unsigned component P¹ would give v³, contradicting the Euler computation of §6.2.
+- At p=3 the component θ₀ sends x∈H¹(BC₃;𝔽₃) to −βx=−y and the degree-two class xz∈H²(BC₃×BC₃;𝔽₃) to +β(xz)=yz−xw. The sign alternates with the degree, as stability under x↦ι×x requires; a component equal to the unsigned β on every degree would make φ non-multiplicative by the last Check of §6.2.
 - For the mod-2 unit in H⁰(*), all positive components vanish while Sq⁰ is 1. On u in H¹(ℝP∞;𝔽₂), Sq¹u=u²≠0; agreement on coefficient π₀ alone would miss this component.
 
 *Needs:* §5.6; §6.2; §6.1; TangentialBordism §B4 items 2 and 7; RefinedTraceMethods §2.8 (E∞ Tate-valued Frobenius).
@@ -799,7 +804,7 @@ One proof route is as follows. The all-degree Frobenius theorem identifies evalu
 
 ### Examples
 
-On v in H²(ℂP∞;𝔽₃), the two nonzero terms are v and v³t², both of total degree 2. On x in H¹(BC₃;𝔽₃), the Bockstein term ye has degree 2−1=1. Thus both the factor 2 in the power shift and the odd component are detectable.
+On v in H²(ℂP∞;𝔽₃), the two nonzero terms are v and −v³t², both of total degree 2. On x in H¹(BC₃;𝔽₃), the Bockstein term −ye has degree 2−1=1, and on xz in H²(BC₃×BC₃;𝔽₃) the Bockstein term is +(yz−xw)e, the sign (−1)^n changing with the degree. Thus both the factor 2 in the power shift and the odd component are detectable.
 
 
 ### Dependencies
@@ -878,24 +883,7 @@ One proof route is as follows. Apply the degree-zero Frobenius comparison to KU 
 *Needs:* §7.1; §7.2; §4.6; RefinedTraceMethods §5.1 (localized stable Adams operations); GeneralizedCohomology G5.4 and TopologicalKTheory T1–T5 (KU, Bott and splitting); RefinedTraceMethods §2.8 (E∞ Tate-valued Frobenius).
 
 
-### 7.4 A counterexample to unbounded Tate fixpoint vanishing
-
-Give S the trivial C_(p²)-action. Then (S^(hC_p))^(t(C_(p²)/C_p))≃S_p^∧≠0. Thus the conclusion of the bounded-above Tate fixpoint lemma cannot be applied to the sphere. The residual quotient action is the coherent action induced by the C_(p²)-extension, not an independently assigned trivial action on S^(hC_p). (ns18, §I.2, Example I.2.3(i), p.219; ns18 line 618)
-
-π₀ of the iterated Tate spectrum is ℤ_p, so it is not contractible.
-
-One proof route is as follows. Apply the residual Tate construction to S_(hC_p)→S^(hC_p)→S^(tC_p). The first term vanishes by the bounded-below Tate orbit lemma. The sphere Segal equivalence identifies the last original term with S_p^∧ equivariantly for the trivial quotient action. Apply Tate p-completion invariance and the sphere Segal equivalence once more to obtain the result. (ns18, §I.2, Example I.2.3(i), p.219; ns18 line 618)
-
-**Checks.**
-
-- At p=2 the iterated spectrum has π₀=ℤ₂ and quotient mod 2 equal to 𝔽₂, rather than 0.
-- At p=3 it has π₀=ℤ₃ and quotient mod 3 equal to 𝔽₃, so the phenomenon includes odd primes.
-- For the zero C_(p²)-spectrum the iterated construction gives 0. The sphere has nonzero positive stable stems and is not bounded above; it cannot be substituted in the bounded-above fixpoint lemma.
-
-*Needs:* §3.4; AInfCohomology §AI.7.2 (Tate orbit lemma); BordismFormalGroups §F6.5 (finite-action norm, Tate and transfers); RefinedTraceMethods §2.3 and KTheoryFiniteLocalFields §4.4 (boundedness and residual Tate comparison).
-
-
-### 7.5 A counterexample to unbounded Tate orbit vanishing
+### 7.4 A counterexample to unbounded Tate orbit vanishing
 
 For KU with trivial C_(p²)-action the Tate orbit conclusion (KU_(hC_p))^(t(C_(p²)/C_p))≃0 fails. Indeed the natural comparison KU^(tC_(p²))→(KU^(tC_p))^(h(C_(p²)/C_p)) is not an equivalence: in each even degree its source has coefficient ℚ_p(ζ_p)⊕ℚ_p(ζ_(p²)), whereas its target has ℚ_p(ζ_p). Odd homotopy groups are zero. (ns18, §I.2, Example I.2.3(iii), pp.219–220; §II.4, Lemma II.4.1, pp.260–261; ns18 line 648)
 
@@ -912,7 +900,7 @@ One proof route is as follows. The coherent residual action on KU^(tC_p) extends
 *Needs:* §7.2; RefinedTraceMethods §2.3 and KTheoryFiniteLocalFields §4.4 (boundedness and residual Tate comparison); BordismFormalGroups §F6.5 (finite-action norm, Tate and transfers); GeneralizedCohomology G3.9 and StableHomotopyKTheory §7.19 (rationalization).
 
 
-### 7.6 Failure of Segal completion for unbounded spectra
+### 7.5 Failure of Segal completion for unbounded spectra
 
 Let L be localization at KU_(2), so its local sphere is L_1S at the prime 2. The raw Tate spectrum (LS)^(tC₂), with trivial action, is rational by finite-height descent. The unit LS→KU_(2)⊗KU_(2) is C₂-equivariant for the factor swap, because the localized sphere is an idempotent commutative algebra and this tensor product is L-local. Its Tate spectrum is a unital module over (LS)^(tC₂) and is therefore rational. Prime-to-2 localization does not change a C₂-Tate spectrum, so T₂(KU)=(KU⊗KU)^(tC₂) is rational as well. Thus Δ₂:KU→T₂(KU) cannot give KU₂^∧: the latter has nonzero mod-2 cofiber. This is the tensor permutation action, distinct from the trivial KU action in §7.2. (ns18, §III.1, paragraph following Theorem III.1.7, p.288; ns18 line 3283)
 
@@ -933,10 +921,12 @@ One proof route is as follows. Specialize BordismFormalGroups §F6.5 finite-heig
 
 At p=2 a rank-two bundle has tensor-square character 3·1+sign: dimension 4 and transposition value 2. The virtual class −1 instead gives sign with character −1. The C₄ KU Tate coefficient ring has ℚ₂-dimension 3, while the C₂ coefficient field has dimension 1.
 
+The sphere counterexample to the Tate fixpoint lemma is imported from RefinedTraceMethods §2.3: for S with trivial C_(p²)-action, (S^(hC_p))^(t(C_(p²)/C_p))≃S_p^∧, the residual quotient action being the one induced by the extension (ns18, §I.2, Example I.2.3(i), p.219; ns18 line 618). At p=2 its π₀ is ℤ₂ with mod-2 quotient 𝔽₂, and at p=3 its π₀ is ℤ₃ with mod-3 quotient 𝔽₃, rather than 0; the zero C_(p²)-spectrum gives 0. The sphere has nonzero positive stable stems, so it is not bounded above and the fixpoint lemma does not apply to it. Together with the KU computation of §7.4, this shows that the fixpoint and orbit lemmas each need their own boundedness hypothesis.
+
 
 ### Dependencies
 
-GeneralizedCohomology G5.4 and TopologicalKTheory T1–T5 (KU, Bott and splitting); GeneralizedCohomology G5.4 and RefinedTraceMethods §5.3 (the KU orientation); BordismFormalGroups §F6.5 (finite-action norm, Tate and transfers); GeneralizedCohomology G3.9 (derived completion and its function-spectrum model); GeneralizedCohomology G3.9 and StableHomotopyKTheory §7.19 (rationalization); RefinedTraceMethods §5.1 (localized stable Adams operations); RefinedTraceMethods §2.8 (E∞ Tate-valued Frobenius); AInfCohomology §AI.7.2 (Tate orbit lemma); RefinedTraceMethods §2.3 and KTheoryFiniteLocalFields §4.4 (boundedness and residual Tate comparison); AInfCohomology §AI.7.2 (Spectral Tate diagonal); BordismFormalGroups §F6.1 and §F6.5 (height-one finite-local Tate descent); BordismFormalGroups §F6.4 (smashing and the E(1)/KU Bousfield comparison). The individual Needs lines specify the earlier local targets and distinguish the general statement from its application.
+GeneralizedCohomology G5.4 and TopologicalKTheory T1–T5 (KU, Bott and splitting); GeneralizedCohomology G5.4 and RefinedTraceMethods §5.3 (the KU orientation); BordismFormalGroups §F6.5 (finite-action norm, Tate and transfers); GeneralizedCohomology G3.9 (derived completion and its function-spectrum model); GeneralizedCohomology G3.9 and StableHomotopyKTheory §7.19 (rationalization); RefinedTraceMethods §5.1 (localized stable Adams operations); RefinedTraceMethods §2.8 (E∞ Tate-valued Frobenius); RefinedTraceMethods §2.3 (Tate fixpoint lemma and its sphere counterexample, applied in the Examples); RefinedTraceMethods §2.3 and KTheoryFiniteLocalFields §4.4 (boundedness and residual Tate comparison); AInfCohomology §AI.7.2 (Spectral Tate diagonal); BordismFormalGroups §F6.1 and §F6.5 (height-one finite-local Tate descent); BordismFormalGroups §F6.4 (smashing and the E(1)/KU Bousfield comparison). The individual Needs lines specify the earlier local targets and distinguish the general statement from its application.
 
 ## Layer 8: The free-loop Segal theorem
 
@@ -1015,11 +1005,11 @@ RefinedTraceMethods §2.5 (cyclic realization and subdivision); StableHomotopyKT
 
 ## Downstream consumers
 
-Trace and cyclotomic applications use the bounded-below Segal equivalence with its exactness and unit normalization, the all-degree Frobenius comparison and the free-loop cyclotomic theorem. Power-operation and arithmetic K-theory consumers use the total Steenrod components, the finite-field spherical Witt Frobenius and the localized KU Adams comparison. The three counterexamples accompany these interfaces: a consumer must retain the bounded-above condition of the fixpoint lemma, the bounded-below condition of the orbit lemma, and the bounded-below condition of generalized Segal. The maps on genuine fixed points in Layer 8 are p-adic equivalences; they are not asserted to be integral equivalences.
+Trace and cyclotomic applications use the bounded-below Segal equivalence with its exactness and unit normalization, the all-degree Frobenius comparison and the free-loop cyclotomic theorem. Power-operation and arithmetic K-theory consumers use the total Steenrod components, the finite-field spherical Witt Frobenius and the localized KU Adams comparison. The two counterexamples of Layer 7 and the sphere counterexample of RefinedTraceMethods §2.3 accompany these interfaces: a consumer must retain the bounded-above condition of the fixpoint lemma, the bounded-below condition of the orbit lemma, and the bounded-below condition of generalized Segal. The maps on genuine fixed points in Layer 8 are p-adic equivalences; they are not asserted to be integral equivalences.
 
 ## Worked examples
 
-The normalizations can be read together in three two-term calculations. At p=2, a degree-one projective class maps to u+u²s, with both terms in total degree 1; the same degree-one sphere transposition has sign −1 in Layers 1 and 5. At p=3, v+v³t² has total degree 2, and x+β(x)e has total degree 1; these distinguish the invariant even period 4 from the odd Bockstein shift. For KU on S², H=1+β and β²=0 give H^p=1+pβ, so Frobenius has Bott value pβ while the constant coefficient comparison has Bott value β. Each is evaluated in its actual coefficient or cohomology ring; the nilpotence β²=0 in KU⁰(S²) is not imposed on the periodic coefficient ring π_*KU.
+The normalizations can be read together in three two-term calculations. At p=2, a degree-one projective class maps to u+u²s, with both terms in total degree 1; the same degree-one sphere transposition has sign −1 in Layers 1 and 5. At p=3, v−v³t² has total degree 2, and x−β(x)e has total degree 1, where e is the generator of Layer 1 normalized by βe=1; these distinguish the invariant even period 4 from the odd Bockstein shift. For KU on S², H=1+β and β²=0 give H^p=1+pβ, so Frobenius has Bott value pβ while the constant coefficient comparison has Bott value β. Each is evaluated in its actual coefficient or cohomology ring; the nilpotence β²=0 in KU⁰(S²) is not imposed on the periodic coefficient ring π_*KU.
 
 ## References
 

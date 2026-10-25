@@ -165,7 +165,7 @@ sha256 = "91a6bdea3f047979d5a53af9301411ddc8ae0b40b5da6a2d6b1d8b592bab5d56"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["PO.1/extended-powers; PO.1/steenrod-operations; PO.1/steenrod-algebra; PO.4/degree-zero-power; PO.4/transfer-ideal; PO.6/steenrod-power-coefficients; PO.7/atiyah-cyclic-power"]
+cited_for = ["PO.1/extended-powers; PO.1/steenrod-operations; PO.1/steenrod-algebra; PO.4/degree-zero-power; PO.4/transfer-ideal; PO.6/steenrod-power-coefficients; PO.6/total-steenrod-frobenius; PO.7/atiyah-cyclic-power"]
 
 [[source]]
 id = "milnor58"

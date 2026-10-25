@@ -32,14 +32,16 @@ is statable on its mathematical carriers at these pins:
   spectral etale lifting and Tate comparisons are missing; native Witt vectors
   alone do not provide these carriers.
 * Frobenius on mod-p and integral Eilenberg--MacLane spectra is the product of
-  the Steenrod components: Eilenberg--MacLane spectra, spectral Tate and stable
-  Steenrod operations are missing.
+  the Steenrod components with their Euler-normalized signs (`(-1)^i P^i` on the
+  even monomials; on a degree-`n` class, `(-1)^(n+i) beta P^i` as the right
+  coefficient of the odd monomials): Eilenberg--MacLane spectra, spectral Tate
+  and stable Steenrod operations are missing.
 * Frobenius on periodic complex K-theory is the localized stable Adams operation
   with Bott value p times Bott: the KU spectrum, spectral Tate and localized
   stable Adams maps are missing.
-* The sphere fixpoint, periodic-KU orbit and unbounded tensor-diagonal
-  counterexamples: spectral Tate, residual extension actions, KU and spectral
-  Bousfield localization are missing.
+* The periodic-KU orbit and unbounded tensor-diagonal counterexamples: spectral
+  Tate, residual extension actions, KU and spectral Bousfield localization are
+  missing.
 * Suspension spectra preserve the simply connected free-loop totalization,
   with increasingly connective fibers: suspension spectra, their derived
   cosimplicial totalizations and spectral connectivity are missing.
