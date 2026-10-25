@@ -1,18 +1,18 @@
 # Roadmap: deligne weights and purity, part II — weight–monodromy by tilting
 
-**Summary.** Extend DeligneWeightsAndPurity from weights over finite fields and local monodromy on finite-field curves to Scholze's weight–monodromy theorem for geometrically connected proper smooth set-theoretic complete intersections in projective smooth toric varieties over p-adic fields. The build isolates detection on highly ramified subgroups, compatibility of tame monodromy with tilting, and Huber's cohomological neighbourhood theorem. It constructs a multiplicative Galois-equivariant comparison with a smooth projective variety over a global function field, proves that comparison is an isomorphism in top degree, and splits it by Poincaré duality. Deligne's equal-characteristic theorem then supplies the required weights in every degree and at every prime ℓ different from the residue characteristic (SCH12, Theorem 9.6, pp. 309–311; SCH12 line 2589).
+**Summary.** Extend DeligneWeightsAndPurity from weights over finite fields and local monodromy on finite-field curves to Scholze's weight–monodromy theorem for geometrically connected proper smooth set-theoretic complete intersections in projective smooth toric varieties over p-adic fields. The build isolates detection on highly ramified subgroups, compatibility of tame monodromy with tilting, and cohomological neighbourhoods, including Ito's uniform constant-coefficient theorem in either characteristic. It constructs a multiplicative Galois-equivariant comparison with a smooth projective variety over a global function field, proves that comparison is an isomorphism in top degree, and splits it by Poincaré duality. Deligne's equal-characteristic theorem then supplies the required weights in every degree and at every prime ℓ different from the residue characteristic (SCH12, Theorem 9.6, pp. 309–311; SCH12 line 2589).
 
 ## Scope and ownership
 
-DeligneWeightsAndPurity stops at finite-field weights and the local theorem for pure sheaves on a finite-field curve (§5.11). This continuation owns local monodromy data on profinite groups, their restriction and transport, purity relative to those data, and the geometric argument through tubular neighbourhoods and a tilted approximation. Its general neighbourhood theorem applies to separated finite-type models over complete rank-one valuation rings; its final mixed-characteristic theorem has the full toric set-theoretic complete-intersection scope.
+DeligneWeightsAndPurity stops at finite-field weights and the local theorem for pure sheaves on a finite-field curve (§5.11). This continuation owns local monodromy data on profinite groups, their restriction and transport, purity relative to those data, and the geometric argument through tubular neighbourhoods and a tilted approximation. Its general constant-coefficient neighbourhood theorem applies to separated finite-type models over complete rank-one valuation rings in either characteristic, with one radius for all invertible coefficient orders; its final mixed-characteristic theorem has the full toric set-theoretic complete-intersection scope.
 
-The canonical scalar Weil-number predicate, linear monodromy filtration and Weil–Deligne pair purity are owned by ArithmeticGaloisRepresentations §§2.4–2.6. DeligneWeightsAndPurity §§0.1–0.19, 5.11 and 7.16 supply the weight comparisons and finite-field purity. LefschetzPencilsAndVanishingCycles §§1.1–1.5 owns the corresponding sheaf-theoretic monodromy. These objects are imported rather than given competing definitions. Our relative purity differs by admitting a marked profinite group whose inertia and tame character need not come from a discretely valued field.
+The canonical scalar Weil-number predicate, linear monodromy filtration and Weil–Deligne pair purity are owned by ArithmeticGaloisRepresentations §§2.4–2.6. DeligneWeightsAndPurity §§0.1–0.19, 5.11 and 7.15 supply the weight comparisons and finite-field purity. LefschetzPencilsAndVanishingCycles §§1.1–1.5 owns the corresponding sheaf-theoretic monodromy. These objects are imported rather than given competing definitions. Our relative purity differs by admitting a marked profinite group whose inertia and tame character need not come from a discretely valued field.
 
-Mathlib's exact-functor preservation of Yoneda composition owns the algebra behind Scholze's Lemma 9.8; §3.6 identifies its application to the supplied site pullbacks and cohomology products. Mathlib's perfect pairings and annihilators own the elementary linear algebra; §4.4 owns the equivariant splitting forced by a multiplicative top-degree isomorphism.
+Mathlib's exact-functor preservation of Yoneda composition owns the algebra behind Scholze's Lemma 9.8; §3.5 identifies its application to the supplied site pullbacks and cohomology products. Mathlib's perfect pairings and annihilators own the elementary linear algebra; §4.4 owns the equivariant splitting forced by a multiplicative top-degree isomorphism.
 
-LocalFieldsRamification Layers 0–4 and Tau Ceti's local-field modules own inertia, wild inertia, tame characters, Teichmüller representatives and Frobenius. EtaleCohomologyFoundations §§F.2–F.4 owns scheme base change, geometric finiteness and adic realization. SchemeAndStackFoundations §§0.7–0.9, 4.16, 4.19, 5.2–5.3 owns components, spreading out, alterations and Chow theory. EtaleDualityAndPerverseSheaves §§0.5–0.6, 1.3 and 3.4–3.7 owns the rational duality and cycle comparisons used here.
+LocalFieldsRamification Layers 0–4 and Tau Ceti's local-field modules own inertia, wild inertia, tame characters, Teichmüller representatives and Frobenius. EtaleCohomologyFoundations §§F.2–F.4.6 owns scheme base change, geometric finiteness and adic realization. SchemeAndStackFoundations §§0.7–0.9, 4.16, 4.19, 5.2–5.3 owns components, spreading out, alterations and Chow theory. AbelianSchemesAndArithmeticModuli §A2.7 owns positivity of ample intersection numbers, specialized here to the top self-intersection on the integral image. EtaleDualityAndPerverseSheaves §§0.5–0.6, 1.3 and 3.4–3.7 owns the rational duality and cycle comparisons used here.
 
-PerfectoidSpaces §§P1.10–P1.15 and P3.7–P3.8 owns perfectoid fields, their tilts and Fontaine–Wintenberger. FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.4.3 owns the Kummer field of norms and its abstract Galois equivalence; §2.2 here identifies that equivalence with the componentwise tilt action and marks inertia, geometric Frobenius and the tame character. AdicEtaleGeometry §A1.0.5 owns henselian completion. AdicSpacesPartIII §§R2.3–R2.4 and R2.8 owns generic fibres, equation-dependent closed tubes and proper-model comparison; §3.1 here glues the finite-ideal version for a specified closed subscheme and proves its cofinality as the radius tends to zero. AnalyticToricGeometryPartII NT.0–NT.6 owns the toric spaces, projection, cohomology isomorphism and approximation of complete intersections. No toric construction is duplicated. ClassicalAdicEtaleCohomology §§1.1–1.5, 8.2, 10.1–10.4 and 11.1 owns analytic sites, continuity, disc cohomology and algebraic comparison. Huber's shrinking-neighbourhood theorem and the punctured-disc Riemann-existence input belong to Layer 3 of this continuation.
+PerfectoidSpaces §§P1.6, P1.10–P1.15 and P3.7–P3.8 owns perfectoid fields, sharp naturality, the residue-field isomorphism, the degree-preserving finite-extension equivalence and the componentwise Fontaine–Wintenberger action. FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.4.3 owns the Kummer field of norms and its abstract Galois equivalence; §2.2 here names the composite of the supplied equivalences, and §§2.3–2.4 add the prime-to-p Tate-coordinate and marked inertia, geometric Frobenius and tame-character comparisons. AdicEtaleGeometry §A1.0.5 owns henselian completion. AdicSpacesPartIII §§R2.3–R2.4 and R2.8 owns generic fibres, equation-dependent closed tubes and proper-model comparison; §3.1 here glues the finite-ideal version for a specified closed subscheme and proves its cofinality as the radius tends to zero. AnalyticToricGeometryPartII NT.0–NT.6 owns the toric spaces, projection, cohomology isomorphism and approximation of complete intersections. No toric construction is duplicated. ClassicalAdicEtaleCohomology §§1.1–1.5, 8.2, 10.1–10.4 and 11.1 owns analytic sites, continuity, disc cohomology and algebraic comparison. Huber's characteristic-zero locally constant-sheaf neighbourhood theorem, Ito's constant-coefficient theorem with a radius uniform in all invertible orders in either characteristic, and the characteristic-zero punctured-disc Riemann-existence input belong to Layer 3 of this continuation.
 
 The general mixed-characteristic weight–monodromy conjecture, integral weight–monodromy, independence of ℓ, and the p-adic coefficient analogue are outside this roadmap. The results here include bad reduction and residue characteristics 2 and 3. WeightsInEtaleCohomology consumes weight results in its own arithmetic applications; it supplies no input to this continuation.
 
@@ -64,13 +64,11 @@ Sections 0.1–0.19 supply scalar Weil-number arithmetic, powers in both directi
 
 ### From TauCetiRoadmap.EtaleCohomologyFoundations
 
-Sections F.2.1–F.2.3 give proper and smooth base change, invariance under extension of separably closed fields, local acyclicity and lissity for a proper smooth family with invertible coefficients. Sections F.3 and F.4.1–F.4.5 give finite geometric cohomology, normalized adic systems, derived realization, finite-dimensional rational cohomology and group/Galois compatibility. Section F.3a supplies the trait tame character; §§0.9, F.6 and F.10.2 supply the positive first Chern class, smooth trace/Poincaré pairing and scheme/descent Frobenius conventions.
-
-What EtaleCohomologyFoundations must provide (gap:geometric-galois-restriction): For a proper smooth k-variety and ℓ invertible in k, package its finite-level and rational geometric cohomology as continuous `G_k-representations`, with equivariant restriction under finite field extension and equivariant comparison under extension of separably closed fields.
+Sections F.2.1–F.2.3 give proper and smooth base change, invariance under extension of separably closed fields, local acyclicity and lissity for a proper smooth family with invertible coefficients. Sections F.3 and F.4.1–F.4.6 give finite geometric cohomology, normalized adic systems, derived realization and finite-dimensional rational cohomology. In particular §F.4.6 `VanishingCycles.adicFunctoriality` supplies continuous geometric Galois actions, equivariant restriction along field extensions and conjugacy under closure change; §F.2.2 supplies separably closed extension invariance. Use these with the coefficient descent data, derived completeness and finiteness/realization hypotheses of §§F.4.3–F.4.6, and with ℓ invertible. Section F.3a supplies the trait tame character; §§0.9, F.6 and F.10.2 supply the positive first Chern class, smooth trace/Poincaré pairing and scheme/descent Frobenius conventions.
 
 ### From TauCetiRoadmap.PerfectoidSpaces
 
-Sections P1.10–P1.15 give perfectoid fields, the Frobenius criterion, sharp, functorial tilting and the tilt of a field; P1.32a supplies the completed Kummer-field example. Sections P3.7–P3.8 give finite extensions, preservation of degree and Fontaine–Wintenberger. Apply the finite-étale equivalences with chosen compatible closures, so the resulting action on the completed algebraic closure is the componentwise tilt action. The specific coordinate and marked-monodromy calculations are §2.1–§2.4 here.
+Sections P1.6 and P1.10–P1.15 give perfectoid fields, the Frobenius criterion, sharp, functorial tilting and the tilt of a field; §P1.6 supplies sharp naturality and §P1.15 `tiltField.residueFieldEquiv` supplies the residue-field isomorphism; P1.32a supplies the completed Kummer-field example. Sections P3.7–P3.8 give finite extensions, preservation of degree and Fontaine–Wintenberger with its componentwise action on the completed algebraic closure, for chosen compatible closures. The specific coordinate and marked-monodromy calculations are §2.1–§2.4 here.
 
 ### From TauCetiRoadmap.AdicEtaleGeometry and TauCetiRoadmap.FiniteFlatGroupsAndIntegralPadicHodgeTheory
 
@@ -82,7 +80,7 @@ AdicSpacesPartII §§R0.19.1–R0.19.2 and R1.3–R1.6 supply spectral/construct
 
 ### From TauCetiRoadmap.ClassicalAdicEtaleCohomology
 
-Sections 1.1–1.5 supply module sheaves, derived direct images, Leray, pseudo-adic supports and continuity with verified site and coefficient descent. Sections 10.1–10.4 supply disc and punctured-disc cohomology and prime-to-residue Kummer covers. Sections 8.2 and 11.1 supply proper algebraic comparison and the general nonproper algebraic comparison of Huber's Theorems 3.7.2 and 3.8.1. Only their proper instances are needed for Y and Z′. Huber's comparison is used at finite level before taking adic limits.
+Sections 1.1–1.5 supply module sheaves, derived direct images, Leray, pseudo-adic supports and continuity with verified site and coefficient descent. Sections 8.3–8.5 supply proper supports, proper base change, localization and support descent; §9.6 supplies smooth Poincaré duality with invertible coefficients. Sections 10.1–10.4 supply the radial regions, disc and annulus cohomology, and prime-to-residue Kummer covers. Layer 3 adds the uniform annular direct-image theorem and the finite-cover sheaf calculations used for the uniform neighbourhood result; it retains the suppliers' tautness, finite-type and coefficient-invertibility conditions. Sections 8.2 and 11.1 supply proper algebraic comparison and the general nonproper algebraic comparison of Huber's Theorems 3.7.2 and 3.8.1. Only their proper instances are needed for Y and Z′. Huber's comparison is used at finite level before taking adic limits.
 
 What ClassicalAdicEtaleCohomology must provide (gap:analytic-comparison-automorphisms): For a proper variety defined over a complete field K, the algebraic–adic cohomology comparison over its completed algebraic closure C commutes with every continuous K-automorphism of C, with cup products and coefficient reductions.
 
@@ -96,7 +94,9 @@ The NT.3 projection and open-topos targets explicitly include this field natural
 
 Sections 0.7–0.9 and 0.23a supply geometric irreducible components after finite extension, descent of finite-presentation models to a finite stage, spreading out and purely inseparable étale invariance. Sections 4.16 and 4.19 supply alterations, including the finite constant-field extension making the source smooth and geometrically irreducible. Sections 5.2–5.3 supply proper Chow pushforward, degree and the first-Chern-class projection formula. They apply to the proper generically finite g and the integral image W, including inseparable degree.
 
-What SchemeAndStackFoundations must provide (gap:ample-top-intersection): For an integral projective d-dimensional variety W over any field and an ample line bundle H, the degree of `c₁(H)^d` on W is a strictly positive integer, including degree one for a rational point when d = 0.
+### From TauCetiRoadmap.AbelianSchemesAndArithmeticModuli
+
+Section A2.7 `ampleIntersectionPositive` gives positive intersection of d ample line bundles on a nonempty d-dimensional closed subscheme of a proper scheme over any field. On the integral projective image W, specialize all d bundles to H. In dimension zero use the degree of the closed point, [κ(W):k] > 0, including inseparable degree, with pushforward and degree from SchemeAndStackFoundations §§5.2–5.3.
 
 ### From TauCetiRoadmap.EtaleDualityAndPerverseSheaves
 
@@ -104,7 +104,7 @@ Sections 0.5–0.6 and 3.4–3.7 provide the rational extensions of trace-normal
 
 ## How to read the build
 
-Layer 0 defines the marked local data and purity and proves restriction, transport and summand detection. Layer 1 identifies the equal-characteristic cohomology representations to which Deligne applies. Layer 2 marks the Kummer/tilt Galois equivalence with the data of Layer 0. Layer 3 independently develops small cohomological neighbourhoods, including the descent and derived bounds required for the punctured-disc route. Layer 4 combines the toric approximation with that neighbourhood, constructs the multiplicative comparison, proves its top-degree isomorphism and splits it before transferring weights. The sole Lean declaration, `duality_splitting`, states the native perfect-pairing form of §4.4; the geometric headline statements require supplier carriers described in the module docstring of [Suggested.lean](Suggested.lean).
+Layer 0 defines the marked local data and purity and proves restriction, transport and summand detection. Layer 1 identifies the equal-characteristic cohomology representations to which Deligne applies. Layer 2 marks the Kummer/tilt Galois equivalence with the data of Layer 0. Layer 3 independently develops small cohomological neighbourhoods, retaining the characteristic-zero punctured-disc route and adding the uniform annular and descent inputs for one radius in all invertible constant coefficients in either characteristic. Layer 4 combines the toric approximation with that neighbourhood, constructs the multiplicative comparison, proves its top-degree isomorphism and splits it before transferring weights. The sole Lean declaration, `duality_splitting`, states the native perfect-pairing form of §4.4; the geometric headline statements require supplier carriers described in the module docstring of [Suggested.lean](Suggested.lean).
 
 ## Layer 0: Weight–monodromy purity and varieties
 
@@ -322,7 +322,7 @@ The equivariant projectors commute with ρ(σ), hence with its finite logarithm 
 
 - Used in Scholze 2012, final paragraph of the proof of Theorem 9.6, p. 311, for `H^i(Y)` ⊆ `H^i(Z′)`.
 
-*Needs:* §0.4; ArithmeticGaloisRepresentations §2.6; DeligneWeightsAndPurity §§0.7, 0.11 (direct sums).
+*Needs:* §0.4; ArithmeticGaloisRepresentations §2.6; DeligneWeightsAndPurity §§0.7, 0.9 (direct sums).
 
 ### 0.8 The weight–monodromy conjecture for a proper smooth variety
 
@@ -360,7 +360,7 @@ Its API consists of the following facts.
 
 - The L-function consequence of Conjecture 9.3 (no poles of real part greater than i/2 for the local factors of `H^i` at bad places) is a consequence, not part of the definition.
 
-*Needs:* §§0.2, 0.4, 0.7; EtaleCohomologyFoundations §§F.3–F.4; the geometric Galois restriction contract.
+*Needs:* §§0.2, 0.4, 0.7; EtaleCohomologyFoundations §§F.2.2, F.3, F.4.3–F.4.6, especially `VanishingCycles.adicFunctoriality`.
 
 ### 0.9 The weight–monodromy conjecture is invariant under finite extension of the base field
 
@@ -372,7 +372,11 @@ Use geometric base change to identify the cohomology of `X_{k′}` with the rest
 
 - For X an elliptic curve with potentially good reduction, WMC holds over k because it holds over the finite extension where it acquires good reduction (§0.10).
 
-*Needs:* §§0.2, 0.5–0.6, 0.8; EtaleCohomologyFoundations §§F.2–F.4; SchemeAndStackFoundations §0.23a.
+- For ℙ¹ and a residue extension of degree f, restriction changes the eigenvalues on H⁰ and H² from (1,q) to (1,qᶠ). The geometric comparison sends the unit and the hyperplane class to the corresponding classes, each with trace coordinate 1.
+
+- In characteristic p, a purely inseparable extension preserves the geometric dimensions (dim H⁰, dim H²) = (1,1) of ℙ¹; the comparison again has coordinates (1,1), rather than an additional Galois action.
+
+*Needs:* §§0.2, 0.5–0.6, 0.8; EtaleCohomologyFoundations §§F.2.2, F.4.3–F.4.6 (`VanishingCycles.adicFunctoriality`); SchemeAndStackFoundations §0.23a.
 
 ### 0.10 Proper smooth varieties with good reduction satisfy the weight–monodromy conjecture
 
@@ -386,7 +390,7 @@ Smooth proper base change identifies generic geometric cohomology with that of t
 
 - A Tate elliptic curve has no good model and its H¹ has N ≠ 0; the theorem does not apply, while WMC still holds (classical curve case, and Theorem 9.6 for plane cubics).
 
-*Needs:* §§0.4, 0.8; EtaleCohomologyFoundations §§F.2–F.4; DeligneWeightsAndPurity §7.15.
+*Needs:* §§0.4, 0.8; EtaleCohomologyFoundations §§F.2–F.4.6; DeligneWeightsAndPurity §7.15.
 
 ### Examples
 
@@ -394,7 +398,7 @@ The two-term Tate-curve string of the conventions has weights 0 and 2 on grades 
 
 ### Dependencies
 
-LocalFieldsRamification Layers 0–4; ArithmeticGaloisRepresentations §§1.5, 2.1a, 2.4–2.6; LefschetzPencilsAndVanishingCycles §§1.1–1.5; DeligneWeightsAndPurity §§0.1–0.19, 7.15; EtaleCohomologyFoundations §§F.2–F.4; SchemeAndStackFoundations §0.23a. The abstract transport and summand results need no geometric base change.
+LocalFieldsRamification Layers 0–4; ArithmeticGaloisRepresentations §§1.5, 2.1a, 2.4–2.6; LefschetzPencilsAndVanishingCycles §§1.1–1.5; DeligneWeightsAndPurity §§0.1–0.19, 7.15; EtaleCohomologyFoundations §§F.2–F.4.6; SchemeAndStackFoundations §0.23a. The abstract transport and summand results need no geometric base change.
 
 ## Layer 1: Equal-characteristic weight–monodromy
 
@@ -410,7 +414,7 @@ Take the lisse sheaf `R^i` `f_*ℚ̄_ℓ`. Smooth proper base change identifies 
 
 - Points of good reduction (f extends smoothly over x) give N = 0 and purity of weight i, matching §0.10.
 
-*Needs:* Layer 0; DeligneWeightsAndPurity §§0.19, 5.11, 7.15; EtaleCohomologyFoundations §§F.2–F.4; AdicEtaleGeometry §A1.0.5 (henselization/completion).
+*Needs:* Layer 0; DeligneWeightsAndPurity §§0.19, 5.11, 7.15; EtaleCohomologyFoundations §§F.2–F.4.6; AdicEtaleGeometry §A1.0.5 (henselization/completion).
 
 ### 1.2 Weight–monodromy for proper smooth varieties over global function fields at every place
 
@@ -422,7 +426,7 @@ Spread Z to a proper smooth family on a dense open U of the smooth projective cu
 
 - For Z = `ℙ^n_F` the representation is unramified and pure at every place.
 
-*Needs:* §1.1 and §0.10; SchemeAndStackFoundations §§0.8–0.9; EtaleCohomologyFoundations §§F.2–F.4 and the geometric Galois restriction contract.
+*Needs:* §1.1 and §0.10; SchemeAndStackFoundations §§0.8–0.9; EtaleCohomologyFoundations §§F.2.2, F.4.3–F.4.6, especially `VanishingCycles.adicFunctoriality`.
 
 ### Examples
 
@@ -430,7 +434,7 @@ For the Legendre family y²=x(x−1)(x−λ) at λ=0 in odd characteristic, the 
 
 ### Dependencies
 
-Layer 0; DeligneWeightsAndPurity §§5.11, 7.15; EtaleCohomologyFoundations §§F.2–F.4; SchemeAndStackFoundations §§0.8–0.9; AdicEtaleGeometry §A1.0.5. No input from Layers 2–4 is needed.
+Layer 0; DeligneWeightsAndPurity §§5.11, 7.15; EtaleCohomologyFoundations §§F.2–F.4.6; SchemeAndStackFoundations §§0.8–0.9; AdicEtaleGeometry §A1.0.5. No input from Layers 2–4 is needed.
 
 ## Layer 2: The Kummer tower and its marked Galois groups
 
@@ -440,9 +444,20 @@ Let `k/ℚ_p` be finite, choose a uniformizer ϖ and compatible p-power roots `�
 
 Use Eisenstein `X^{p^n}−ϖ` at every stage. Frobenius on `O_K/p` is surjective: approximate an integral element modulo p at a finite stage and expand it as a finite sum of Teichmüller coefficients times powers of `ϖ_n`. Taking p-th roots of the coefficients in `𝔽_q` and replacing `ϖ_n` by `ϖ_{n+1}` produces a p-th root modulo p. The value group is nondiscrete. Apply the perfectoid criterion and compute the inverse Frobenius limit modulo ϖ, obtaining the asserted tilt. Finite character expansions in `t^{1/p^n}` prove density. The fields at finite stages remain discrete and are not perfectoid.
 
+Its coordinate API consists of the following facts.
+
+- Each stage k(ϖₙ) has degree pⁿ over k, normalized valuation group p⁻ⁿℤ relative to v_k(ϖ) = 1, and residue field 𝔽_q.
+- Completion of the union has value group ℤ[1/p] in this normalization, residue field 𝔽_q and surjective Frobenius on O_K/p.
+- The coordinate quotient sends `T^{1/p^n}` to ϖₙ modulo ϖ, and has exactly the relation T = 0 and its consequences.
+- The tilt coordinate satisfies t♯ = ϖ; the t-adic completion and the dense subfield are the ones specified above.
+
 **Checks.**
 
 - For k = `ℚ_p` this is the example K = completion of `ℚ_p(p^{1/p^∞})`, K♭ = `𝔽_p((t^{1/p^∞}))^∧`, t♯ = p (Scholze 2012, Theorem 1.1 and the paragraph after it).
+
+- For k = ℚ₂(√2), ϖ = √2 and v_k(ϖ) = 1, the first stage k(√ϖ) has degree 2 and v_k(√ϖ) = 1/2. In O_K/(ϖ), the class of ϖ₁ is nonzero with square zero, agreeing with `T^{1/2}` in `F_2[T^{1/2^infty}]/(T)`; the reduced quotient would lose this class.
+
+- At p = 2 the norm of ϖ₁ from k(ϖ₁) to k is −ϖ, while t♯ = ϖ. Sharp uses the multiplicative inverse-limit coordinate, not the unsigned norm of a tower uniformizer.
 
 - Non-example: the fields `k(ϖ^{1/p^n})` themselves are not perfectoid (discretely valued); only the completed union is.
 
@@ -450,21 +465,28 @@ Use Eisenstein `X^{p^n}−ϖ` at every stage. Frobenius on `O_K/p` is surjective
 
 ### 2.2 Galois groups of the Kummer tower, its completion, its tilt and `𝔽_q((t))`
 
-Choose a completed algebraic closure C of K and its tilt C♭, with compatible embedded closures. Identify `G_K` with `G_{k∞}` as a closed subgroup of `G_k`, identify `G_{K♭}` with `G_{𝔽_q((t))}`, and identify their composite β with the componentwise tilted action on C♭. For σ ∈ `G_K` and x ∈ C♭, require (β(σ)x)♯ = σ(x♯). For every finite extension L/K, tilting gives a finite extension L♭/K♭ of the same degree and β restricts to `G_L` ≅ `G_{L♭}`; every such finite extension arises. The abstract Kummer field-of-norms equivalence is the supplier's, and these are its completion, tilt-action and coordinate identifications (SCH12, Theorem 1.3 and proof of Theorem 9.6, pp. 246, 309; SCH12 line 2597).
+Choose a completed algebraic closure C of K and its tilt C♭, with compatible embedded closures, and put k′ = 𝔽_q((t)). Name β the composite `G_{k∞}` ≅ `G_K` ≅ `G_{K♭}` ≅ `G_{k′}` of henselian completion, Fontaine–Wintenberger and the completed-perfection comparison. Use the same notation for its middle arrow and its restrictions after these identifications. This is notation for the supplied equivalences, used to formulate the additional marked comparisons in §§2.3–2.4 (SCH12, proof of Theorem 9.6, p. 309; SCH12 line 2597).
 
-Apply henselian completion to k∞, Fontaine–Wintenberger to K and pure-inseparable étale invariance followed by henselian completion to `𝔽_q((t))^perf`. The coordinate formula follows from the sharp projection on the multiplicative inverse limit. Restrict the finite-étale equivalence to each finite extension. This distinguishes a mere continuous restriction homomorphism from the asserted isomorphisms.
+Its API records the following supplied compatibilities for this composite.
+
+- The source is the closed subgroup `G_{k∞}` of `G_k`, and the target is `G_{k′}` with the chosen compatible closures; the composite is a topological group isomorphism.
+- For σ ∈ `G_K`, the middle arrow acts componentwise on C♭ and satisfies (β(σ)x)♯ = σ(x♯), by PerfectoidSpaces §§P1.6, P3.8.
+- β preserves identities, products and inverses, and transports the Galois correspondence; a degree-r finite extension L/K corresponds to L♭/K♭ of degree r, by PerfectoidSpaces §P3.7.
+- Restricting the middle arrow to `G_L` gives the supplied equivalence `G_L` ≅ `G_{L♭}` with the same closure choices.
 
 **Checks.**
 
-- The composite `G_{k_∞}` ≅ `G_K` ≅ `G_{K♭}` ≅ `G_{k′}` is the isomorphism 'between the absolute Galois groups of K and k′' of the proof of Theorem 9.6.
+- The identity automorphism has β(1)x = x for every coordinate, hence (β(1)t)♯ = ϖ. A zero coordinate map would send the nonzero t to zero.
+- At k = ℚ₂, choose σ with σ(ζ₃) = ζ₃². If ζ₃♭ is the compatible prime-to-2 preimage of §2.3, then β(σ)ζ₃♭ = (ζ₃♭)², whose sharp is ζ₃² ≠ ζ₃. This excludes an identity-only action.
+- Every σ ∈ `G_K` fixes all ϖₙ, so β(σ)t = t and (β(σ)t)♯ = σ(ϖ) = ϖ. For a degree-r extension the corresponding tilted degree is r; for the unramified quadratic extension both degrees are 2 and both residue fields have q² elements.
 
-*Needs:* §2.1; PerfectoidSpaces §§P1.6, P3.7–P3.8; AdicEtaleGeometry §A1.0.5; SchemeAndStackFoundations §0.23a; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.4.3; Mathlib absolute Galois restriction.
+*Needs:* §2.1; PerfectoidSpaces §§P1.6, P1.15, P3.7–P3.8; AdicEtaleGeometry §A1.0.5; SchemeAndStackFoundations §0.23a; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.4.3 for comparison with its field-of-norms notation; Mathlib absolute Galois restriction.
 
-### 2.3 Tilting identifies residue fields and prime-to-p roots of unity, equivariantly
+### 2.3 Prime-to-p Tate coordinates and the supplied residue comparison
 
-For an algebraically closed perfectoid field C of residue characteristic p and its tilt C♭, prove that x ↦ x♯ modulo p induces κ(C♭) ≅ κ(C). For every ℓ ≠ p and n ≥ 1, sharp restricts to an isomorphism `μ_{ℓ^n}(C♭)` ≅ `μ_{ℓ^n}(C)`, compatible with the transition power maps, and hence identifies their ℓ-adic Tate modules. Both identifications commute with continuous automorphisms and their tilts. In particular β matches residue-field actions and cyclotomic characters (SCH12, §3, tilt construction, and §9, p. 309; SCH12 line 2597).
+For an algebraically closed perfectoid field C of residue characteristic p and its tilt C♭, use PerfectoidSpaces §P1.15 `tiltField.residueFieldEquiv` and its §P1.6 naturality. Prove that for every ℓ ≠ p and n ≥ 1, sharp restricts to an isomorphism `μ_{ℓ^n}(C♭)` ≅ `μ_{ℓ^n}(C)`, compatible with the transition power maps, and hence identifies their ℓ-adic Tate modules. Both identifications commute with continuous automorphisms and their tilts. In particular β matches residue-field actions and cyclotomic characters (SCH12, §3, tilt construction, and §9, p. 309; SCH12 line 2597).
 
-The first inverse-limit projection modulo p preserves valuations and gives the residue isomorphism. Sharp is multiplicative. If an `ℓ^n-torsion` element has sharp 1, its r-th inverse-limit coordinate has order dividing both `p^r` and `ℓ^n`, so is 1. Both torsion groups have `ℓ^n` elements; hence sharp is bijective on them. Componentwise actions give equivariance and transition compatibility. For ℓ = p in mixed characteristic the source torsion is trivial and surjectivity fails.
+Apply the supplied residue comparison to the action in §2.2. For the additional Tate-coordinate comparison use multiplicativity of sharp. If an `ℓ^n-torsion` element has sharp 1, its r-th inverse-limit coordinate has order dividing both `p^r` and `ℓ^n`, so is 1. Both torsion groups have `ℓ^n` elements; hence sharp is bijective on them. Componentwise actions give equivariance and transition compatibility. For ℓ = p in mixed characteristic the source torsion is trivial and surjectivity fails.
 
 **Checks.**
 
@@ -482,9 +504,9 @@ Identify inertia as the kernel of the common residue action. Its open residue im
 
 **Checks.**
 
-- For L = K and k″ = k′ = `𝔽_q((t))`: `G_K` ≅ `G_{k′}` is an isomorphism of data with constant 1, the precise form of 'the notion of weights and the monodromy operator N is compatible with this isomorphism of Galois groups' (Scholze 2012, p. 309).
+- For L = K and k″ = 𝔽_q((t)), β preserves the inertia kernel and geometric Frobenius coset, both Q are q, and `t_{ell,k}` = `t_{ell,k''}`∘β, so the scalar is 1. At q = 2 the two-term string has eigenvalues (1,2), N(e₁) = e₀ and weights (0,2) on both sides (SCH12, p. 309; SCH12 line 2598).
 
-- If k″ = `𝔽_q((t^{1/p}))` then `v_{k″}(t)` = p, and `t_{ℓ,k}` = `p·t_{ℓ,k″}∘β`; p is a unit in `ℤ_ℓ`, so the constant is harmless.
+- If k″ = `𝔽_q((t^{1/p}))` then `v_{k″}(t)` = p, and `t_{ℓ,k}` = `p·t_{ℓ,k″}∘β`; p is a unit in `ℤ_ℓ`, and the data-isomorphism scalar is p⁻¹. For p = 2 and ℓ = 3 this gives (1/2)(2N) = N on the two-term string.
 
 *Needs:* §§0.2–0.5, 2.1–2.3; LocalFieldsRamification Layers 0, 2, 4; henselian completion and purely inseparable étale invariance as in §2.2.
 
@@ -564,7 +586,7 @@ Use Huber's finiteness theorem in exactly the form recalled by Ito. The radius i
 
 - For X = Spec O[T] and f = T the direct images are ℤ/n in degree 0 and 0 otherwise: constant on all of B(1).
 
-- Characteristic 0 is a hypothesis of Huber's theorem as recalled by Ito (Theorem 1.1, p. 1, and Theorem 4.5, p. 21); for positive characteristic Ito records only the compactly supported analogue (Remark 4.6, p. 21).
+- Characteristic zero is retained for this ordinary oc-quasi-constructible direct-image target. The positive-characteristic compact-support analogue of Huber's fixed-sheaf theorem is recalled in ITO20 Remark 4.6; Ito's uniform constant-coefficient endpoint in §3.4 uses a different annular direct-image theorem (ITO20, Theorems 1.4 and 4.9).
 
 *Needs:* §3.1; ClassicalAdicEtaleCohomology §§1.1–1.4; HUB98 Definition 1.4 and Theorem 2.1 in the stated setting.
 
@@ -582,37 +604,57 @@ A finite-type local system over the finite ring ℤ/n is trivialized by a finite
 
 *Needs:* ClassicalAdicEtaleCohomology §§1.4, 10.1–10.4; the full characteristic-zero punctured-disc covering theorem, including p-divisible degree.
 
-### 3.4 Huber's neighbourhood theorem: small tubes have the cohomology of the subvariety
+### 3.4 Cohomological neighbourhoods: fixed locally constant sheaves and uniform constant coefficients
 
-For K algebraically closed complete of characteristic zero, X separated finite type over K°, Z ↪ X closed of finite presentation and n ≥ 1 invertible in K°, prove that there is ε₀ ∈ |Kˣ| such that, simultaneously for every ε ≤ ε₀ in |Kˣ| and every i ≥ 0, restriction gives `H^i(T(Z,ε),ℤ/n)` ≅ `H^i(d(Ẑ),ℤ/n)`. The right side uses the closed pseudo-adic support and its supplied comparison with the closed subspace. The radius depends on n. This is the constant-sheaf instance of the locally constant-sheaf theorem (HUB98, Theorem 3.6; ITO20, Theorem 4.5(2), p. 21; ITO20 line 964).
+For algebraically closed complete nontrivially valued rank-one K of characteristic zero, X separated finite type over O = K°, Z ↪ X closed of finite presentation, n ≥ 1 invertible in O, and a constructible locally constant étale ℤ/n-module sheaf F on d(X̂), prove that some ε₀ ∈ |Kˣ| makes restriction `H^i(T(Z,ε),F)` → `H^i(d(Ẑ),F|_{d(Ẑ)})` bijective for all ε ≤ ε₀ and every i. Here ε₀ may depend on n and F. This is the locally constant-sheaf form of Huber's theorem; the closed pseudo-adic support uses the supplied comparison with the closed subspace (HUB98, Theorem 3.6; ITO20, Theorem 4.5(2), p. 21; ITO20 line 974).
 
-Develop four proof inputs for the K,X,Z,n of this subsection, with `f^rig` as in §3.2 after the principal-ideal reduction. Call them blow-up descent, bounded direct-image amplitude, disc stabilization and closed-support continuity. They are targets of this subsection. For blow-up descent, take the proper surjective cover `Bl_Z(X)` ⊔ Z → X and its Čech nerve; prove that the natural augmented cohomology complexes for the inverse images of each tube and of the closed pseudo-adic support are quasi-isomorphisms. Prove finite-open-cover Čech gluing for the same complexes. This includes components of X contained in Z, where the blow-up alone need not be surjective. For bounded direct-image amplitude, prove that there are b ∈ ℕ and ε ∈ |Kˣ| such that `(R^j` `f^rig_*ℤ/n)|_{B(ε)}` = 0 for every j > b. Together with §§3.2–3.3 this gives one smaller radius and one Kummer cover for all its nonzero cohomology sheaves. For disc stabilization, prove that there is δ ∈ |Kˣ| such that for all ε′ ≤ ε ≤ δ in |Kˣ| restriction `RΓ(B(ε),Rf^rig_*ℤ/n)` → `RΓ(B(ε′),Rf^rig_*ℤ/n)` is a quasi-isomorphism, using the simultaneous Kummer trivialization and the actual extensions of these direct images across zero. This calculation includes covers of degree divisible by p. For closed-support continuity, prove for every i that the natural map `colim_{ε→0}` `H^i(T(Z,ε),ℤ/n)` → `H^i(d(Ẑ),ℤ/n)` is bijective, by verifying the shrinking-tube site and coefficient-descent hypotheses; equality of point sets alone does not establish this comparison. Apply Leray to identify the stabilized groups with the closed-subspace groups. These are the descent, amplitude, disc calculation and continuity steps in ITO20 §1.2, pp. 2–3 (ITO20 line 76); the simultaneous conclusion is ITO20 Theorem 4.5(2), not an inference from degreewise local constancy alone.
+For algebraically closed complete nontrivially valued rank-one K in either characteristic, the same separated finite-type X/O and finite-presentation immersion Z ↪ X, prove the full constant-coefficient endpoint: there exists one ε₀ ∈ |Kˣ| such that for every ε ≤ ε₀ in |Kˣ|, every positive n invertible in O and every i, restriction `H^i(T(Z,ε),ℤ/n)` → `H^i(d(Ẑ),ℤ/n)` is bijective. The radius is independent of both n and i (ITO20, Theorem 4.9, p. 22; ITO20 line 1003).
 
-**Checks.**
+For the characteristic-zero constant-sheaf instance develop four proof inputs for K,X,Z,n, with `f^rig` as in §3.2 after the principal-ideal reduction. Call them blow-up descent, bounded direct-image amplitude, disc stabilization and closed-support continuity. They are targets of this subsection. For blow-up descent, take the proper surjective cover `Bl_Z(X)` ⊔ Z → X and its Čech nerve; prove that the natural augmented cohomology complexes for the inverse images of each tube and of the closed pseudo-adic support are quasi-isomorphisms. Prove finite-open-cover Čech gluing for the same complexes. This includes components of X contained in Z, where the blow-up alone need not be surjective. For bounded direct-image amplitude, prove that there are b ∈ ℕ and ε ∈ |Kˣ| such that `(R^j` `f^rig_*ℤ/n)|_{B(ε)}` = 0 for every j > b. Together with §§3.2–3.3 this gives one smaller radius and one Kummer cover for all its nonzero cohomology sheaves. For disc stabilization, prove that there is δ ∈ |Kˣ| such that for all ε′ ≤ ε ≤ δ in |Kˣ| restriction `RΓ(B(ε),Rf^rig_*ℤ/n)` → `RΓ(B(ε′),Rf^rig_*ℤ/n)` is a quasi-isomorphism, using the simultaneous Kummer trivialization and the actual extensions of these direct images across zero. This calculation includes covers of degree divisible by p. For closed-support continuity, prove for every i that the natural map `colim_{ε→0}` `H^i(T(Z,ε),ℤ/n)` → `H^i(d(Ẑ),ℤ/n)` is bijective, by verifying the shrinking-tube site and coefficient-descent hypotheses; equality of point sets alone does not establish this comparison. Apply Leray to identify the stabilized groups with the closed-subspace groups. These are the descent, amplitude, disc calculation and continuity steps in ITO20 §1.2, pp. 2–3 (ITO20 line 76); the simultaneous conclusion is ITO20 Theorem 4.5(2), not an inference from degreewise local constancy alone.
 
-- For X = Spec O[T] and Z = V(T): T(Z, ε) is the closed disc and d(Ẑ) the origin; both have cohomology ℤ/n in degree 0 only, for every ε.
+**Checks for the characteristic-zero theorem and its four proof inputs.**
 
-- The hypothesis that n is invertible in O is essential: H¹(B(1), ℤ/p) is infinite-dimensional while H¹({0}, ℤ/p) = 0 (Ito, Remark 4.7, p. 22).
+- For X = Spec O[T], Z = V(T) and f = T, bounded direct-image amplitude has b = 0. On every smaller disc and on the origin, H⁰ = ℤ/n and Hⁱ = 0 for i > 0; every restriction sends 1 to 1. This computes disc stabilization and closed-support continuity. For the constant rank-two sheaf F, the corresponding groups are (ℤ/n)² and zero.
+- For Z = X, Bl_Z(X) is empty, while Bl_Z(X) ⊔ Z → X contains the identity; its augmented Čech complex computes H*(d(X̂),ℤ/n) identically. For X the affine line above these are ℤ/n in degree zero and zero otherwise. The blow-up alone would give zero in degree zero.
+- For two disjoint copies of the identity disc, R⁰f_*ℤ/n = (ℤ/n)² and Rʲf_*ℤ/n = 0 for j > 0, again b = 0. Disc restriction and its limit preserve (a,b) ↦ (a,b); finite-cover descent and the closed-support comparison give the same two summands. At n = 1 every group is zero.
 
-- For Z ⊆ X closed in a proper X over O this is the statement Scholze quotes from Huber in the proof of Theorem 9.6 (p. 309).
+The uniform proof uses the following additional targets in this subsection. They do not extend Lütkebohmert's characteristic-zero theorem.
 
-*Needs:* §§3.1–3.3; the four descent, amplitude, disc and continuity inputs in this subsection; ClassicalAdicEtaleCohomology §§1.1–1.5, 10.1–10.4; SchemeAndStackFoundations §§4.11, 4.16 for the scheme blow-ups and alterations used by the descent route.
-
-### 3.5 A Galois-stable neighbourhood with the cohomology of the subvariety, for all ℓ-power coefficients
-
-Let K be complete nonarchimedean of characteristic zero, C its completed algebraic closure, ℓ invertible in K°, and 𝒳 proper of finite presentation over K°. Let 𝒵 ↪ 𝒳 be closed of finite presentation with generic fibre Y ⊆ X. Prove that one ε ∈ |Kˣ| works for every ε′ ≤ ε in |Kˣ|, every i and every m ≥ 1: `Ỹ_{ε′}` = T(𝒵,ε′) is a quasicompact open neighbourhood of `Y^ad` over K and restriction `H^i(Ỹ_{ε′,C},ℤ/ℓ^m)` → `H^i(Y_C^ad,ℤ/ℓ^m)` is `G_K-equivariant` and bijective. The maps together identify graded cohomology rings, preserve the unit and commute with coefficient reductions (SCH12, proof of Theorem 9.6, p. 309; SCH12 line 2601; ITO20, Theorem 4.5(2), p. 21; ITO20 line 974).
-
-Apply §3.4 over C with n = ℓ, and choose a smaller radius in |Kˣ|. Base change of the ideal-defined tubes gives `G_K-stability`. The coefficient sequences 0 → ℤ/ℓ → `ℤ/ℓ^m` → `ℤ/ℓ^{m−1}` → 0 and the five lemma give all m with that same radius. The equivariant inclusion gives equivariance; §3.6 gives multiplicativity in both directions and coefficient reduction is natural.
+**Uniform annular direct images.** For algebraically closed complete nontrivially valued rank-one K in either characteristic and separated finitely presented f : X → Spec O[T], suppose d(f) is smooth over B(η)∖{0} for some η ∈ |Kˣ| with η ≤ 1. Prove that one δ ≤ η works for every positive n invertible in O: every Rʲd(f)!ℤ/n is locally constant of finite type on B(δ)∖{0}, and for each 0 < a < b ≤ δ in |Kˣ| there is a finite étale map h from an annulus to B(a,b), factoring as a Kummer covering of degree invertible in O followed by a finite Galois étale map, that makes all these sheaves constant. The cover may depend on n,a,b; δ does not. In characteristic zero the second factor can also be chosen Kummer (ITO20, Theorem 1.4, pp. 3–4, deduced from Proposition 6.6 and Theorem 6.10, pp. 33, 35–36; ITO20 line 124, line 1481 and line 1586). *Needs:* §3.1; ClassicalAdicEtaleCohomology §§1.1–1.5, 8.3–8.5, 9.6, 10.1–10.4; SchemeAndStackFoundations §§0.9, 4.16 for finite-stage descent and alterations.
 
 **Checks.**
 
-- For 𝒳 = 𝒵 the neighbourhood is all of `X^ad` and the statement is trivial.
+- For f the identity disc, R⁰d(f)!ℤ/n = ℤ/n and all other direct images are zero. Take δ = η = 1 and h = id simultaneously for every invertible n.
+- For T ↦ Tʳ with r invertible in O, the punctured-disc direct image has rank r in degree zero and cyclic permutation monodromy; its own Kummer pullback makes it constant. For r = 3 in residue characteristic 2 the rank is 3, including n = 3; no division by the cover degree is used.
+- In characteristic 2 the étale cover u²−u = T⁻¹ over an annulus has wild monodromy of order 2. Its rank-two ℤ/3 direct image becomes constant after that Galois cover, while prime-to-2 Kummer covers alone cannot remove the order-two wild inertia. At n = 1 all direct images vanish.
 
-- Non-example: an arbitrary open neighbourhood need not work; `X^ad` itself is a neighbourhood of `Y^ad`, but `H^i(X^ad_C)` → `H^i(Y^ad_C)` is in general neither injective nor surjective (for a smooth plane cubic Y ⊆ ℙ², H¹(ℙ²) = 0 while H¹(Y) has rank 2).
+**Annular sheaf comparison.** With K and O as in the uniform statement, use the supplied annuli B(a,b) and the pseudo-adic strict radial region D(b) = {|T| < b}, with interior D(b)° from ClassicalAdicEtaleCohomology §§10.1–10.2. For a locally constant constructible ℤ/n-module sheaf F on B(a,b), n invertible in O, assume a finite étale cover from an annulus, a composition of finite Galois étale maps, makes F constant. Prove that Hⁱ_c(B(b)∖B(a),F) and Hⁱ_c(D(b)∩B(a,b),F) are zero, and that restriction `H^i(B(a,b),F)` → `H^i(D(b)°∩B(a,b),F)` is bijective for every i. If F on B(δ)∖{0} has this property on every subannulus, prove Hⁱ_c(D(δ)∖{0},F) = 0 for every i. These statements use pseudo-adic supports, rather than replacing them by their rank-one points (ITO20, Lemma 6.11, pp. 37–38; ITO20 line 1673). *Needs:* ClassicalAdicEtaleCohomology §§1.1–1.5, 8.3–8.5, 10.1–10.4 for finite-cover descent, continuity and the constant annulus calculation.
 
-*Needs:* §§3.1, 3.4, 3.6 (only for cup compatibility); AdicSpacesPartIII §R2.8; coefficient long exact sequences.
+**Checks.**
 
-### 3.6 Pullback along a morphism of sites respects cup products (Lemma 9.8)
+- For F = ℤ/n constant, both annuli in the restriction have H⁰ = ℤ/n, H¹ = ℤ/n(−1), and Hⁱ = 0 for i ≥ 2. Restriction preserves the Kummer class of T; both compact-support expressions in the target are zero in every degree.
+- For F = (ℤ/n)² the same restriction is identity on (ℤ/n)² in degree zero and on (ℤ/n(−1))² in degree one; the indicated compact-support groups are again zero. This excludes a comparison that kills a nontrivial constant summand.
+- Pull back the rank-three direct image of T ↦ T³ in residue characteristic 2 and with n = 3 to its trivializing annulus. Radial restriction there is identity on three degree-zero generators and on their three Kummer classes. Finite-cover descent preserves the comparison despite 3 = 0 in ℤ/3; averaging by the degree would be invalid.
+
+**Uniform reduction, bounds and smooth principal case.** With K and O as in the uniform statement, for separated finite-type X/O and a finite-presentation closed Z, prove a cohomological bound N independent of ε and of invertible n for the ordinary cohomology of T(Z,ε), of the closed support d(Ẑ), and of the strict tubes and their interiors: all these groups must vanish for i ≥ N. Establish proper-surjective Čech descent and finite-open gluing for the restriction cones in these comparisons, retaining the same n-uniform quantifiers. A proper surjection P → Q of finite-type analytic adic spaces must give cohomological descent after every pseudo-adic base change. For locally closed supports U ↪ V in Q, let C be the cone of restriction RΓ(V,ℤ/n) → RΓ(U,ℤ/n), and Cₘ the corresponding cone on level m of the Čech nerve. For any integer r ≥ −1, if Hʲ(Cₘ) = 0 for j ≤ r−m at every level 0 ≤ m ≤ r+1, prove Hʲ(C) = 0 for j ≤ r. These are the analytic descent and truncation inputs of ITO20 Proposition 7.2, Corollary 7.4 and Lemma 7.6, pp. 40–43 (ITO20 line 1774, line 1813 and line 1901).
+
+For Z = V(f) with d(f) smooth on a sufficiently small punctured disc, derive one radius for all n and i from the uniform annular direct images, their annular sheaf comparisons, smooth Poincaré duality, Leray and closed-support continuity; this is the smooth principal comparison (ITO20, Lemma 7.1 and its proof, pp. 39, 44–46; ITO20 line 1738 and line 1973). Reduce general Z to this case using the supplied blow-ups and alterations and the owned descent for Bl_Z(X) ⊔ Z → X. In characteristic p, the alteration is made after a finite purely inseparable change of the principal parameter, `f = (f')^{p^N}`; verify `T(V(f'),epsilon) = T(V(f),epsilon^{p^N})` and the analogous strict-tube formula, with identical étale closed supports. Degreewise descent and the bound N give one radius in all degrees (ITO20, Lemmas 7.5–7.7, pp. 41–44; ITO20 line 1846 and line 1928). *Needs:* §3.1 and the uniform annular and sheaf-comparison targets above; ClassicalAdicEtaleCohomology §§1.1–1.5, 8.3–8.5, 9.6, 10.1–10.4; SchemeAndStackFoundations §§0.9, 0.23a, 4.11, 4.16 for approximation, purely inseparable invariance, blow-ups and alterations. The scheme constructions are imported; their analytic uniform comparison is the target here.
+
+**Checks.**
+
+- For f = T, δ = 1 works: every invertible ℤ/n gives H⁰ = ℤ/n on the disc and on the origin and no higher groups. One may take N = 1 for these ordinary groups. At Z = X the descent cover contains the identity and its comparison cone is zero in every degree.
+- In characteristic 2, f = T² is not smooth on any punctured disc. Set f′ = T. At ε = |t|² < 1, both T(V(T),ε) and T(V(T²),ε²) are {|T| ≤ |t|²}; their closed supports both have H⁰ = ℤ/n, Hⁱ = 0 for i > 0 and odd n. Reversing the exponent would give the wrong radius.
+- For the empty Z, T(Z,ε) is empty at ε < 1 and every group is zero for all n. With n = 1 the groups and all restriction cones are zero for arbitrary Z; this permits the zero coefficient ring without a nonzero-module assumption.
+
+**Checks for the uniform endpoint.**
+
+- Over the completed algebraic closure of 𝔽₂((t)), take X = Spec O[T], Z = V(T) and ε₀ = 1. For every ε ≤ 1 and every odd n, H⁰ on the tube and origin is ℤ/n, restriction is identity and Hⁱ = 0 for i > 0. The same radius works for all odd n.
+- In mixed characteristic (0,p), n = p is excluded: H¹(B(1),ℤ/p) has infinite dimension, while H¹({0},ℤ/p) = 0. Every rescaled positive-radius disc has the same obstruction (ITO20, Remark 4.7, p. 22; ITO20 line 987).
+- For Z = V(T²), the tube radius is `epsilon^{1/2}` over algebraically closed K, and for Z = V(T) it is ε. Their closed supports have the same étale cohomology; at 0 < ε < 1 the tubes differ, yet ε₀ = 1 works for both and all invertible n.
+
+*Needs:* §3.1 and the owned uniform annular direct images, annular sheaf comparison, uniform reduction/bounds and smooth principal comparison above. The characteristic-zero locally constant-sheaf target uses §§3.2–3.3, the four fixed-coefficient inputs and finite étale local trivialization with descent; it is independent of the positive-characteristic uniform route.
+
+### 3.5 Pullback along a morphism of sites respects cup products (Lemma 9.8)
 
 For a morphism of sites f : T₁ → T₂ and a constant commutative coefficient ring A, use exact inverse image on A-module sheaves and its identification f*A ≅ A. Identify cohomology with Ext from the coefficient unit and its cup product with Yoneda composition. Deduce that f* preserves products and the degree-zero unit, and that its inverse also preserves products whenever f* is bijective degreewise. This is Scholze's Lemma 9.8 in its geometric application, using the Mathlib identity in the supplier contract rather than a second abstract composition theorem (SCH12, Lemma 9.8 and following paragraph, p. 310; SCH12 line 2622).
 
@@ -622,7 +664,25 @@ Apply the exact-functor composition identity to inverse image, then transport th
 
 - Degree zero: f* sends the unit 1 ∈ H⁰(T₂, A) to the unit of H⁰(T₁, A).
 
+- For restriction from a closed disc to its origin with invertible coefficients ℤ/n, both sides of the product identity on a,b ∈ ℤ/n are ab, and both units are 1. With n = 3 and a = b = 2 the product is 1; the inverse comparison also sends that product to 1.
+
+- Over ℤ/2, the zero endomorphism of the degree-zero coefficient ring sends 1 to 0; it fails the unit law and cannot replace the pullback along the identity of a nonempty site.
+
 *Needs:* Mathlib Ext composition and exact-functor map; ClassicalAdicEtaleCohomology §1.1; EtaleCohomologyFoundations §F.6 (agreement of cup products).
+
+### 3.6 A Galois-stable neighbourhood with the cohomology of the subvariety, uniformly in invertible coefficients
+
+Let K be complete nontrivially valued rank-one nonarchimedean in either characteristic, C its completed algebraic closure, and 𝒳 proper of finite presentation over K°. Let 𝒵 ↪ 𝒳 be closed of finite presentation with generic fibre Y ⊆ X. Prove that one ε ∈ |Kˣ| works for every ε′ ≤ ε in |Kˣ|, every i and every positive n invertible in K°: `Ỹ_{ε′}` = T(𝒵,ε′) is a quasicompact open neighbourhood of `Y^ad` over K and restriction `H^i(Ỹ_{ε′,C},ℤ/n)` → `H^i(Y_C^ad,ℤ/n)` is `G_K-equivariant` and bijective. The maps identify graded cohomology rings, preserve the unit and commute with coefficient reductions. In particular the same radius works for all ℓ-power coefficients for every ℓ invertible in K° (ITO20, Theorem 4.9 and Corollary 4.11, pp. 22–23; ITO20 line 1003 and line 1030; SCH12, proof of Theorem 9.6, p. 309; SCH12 line 2601).
+
+Apply §3.4 over C and choose a smaller radius in |Kˣ|, using a power of any element with norm strictly between zero and one. Base change of the ideal-defined tubes gives `G_K-stability`. The inclusion is equivariant, §3.5 gives multiplicativity in both directions, and coefficient reduction is natural. Specializing n = ℓᵐ gives the all-power comparison directly; the coefficient exact sequences also recover it from n = ℓ at a fixed radius.
+
+**Checks.**
+
+- For 𝒳 = 𝒵 the neighbourhood is all of `X^ad` and restriction is identity for every n. For a geometric point H⁰ = ℤ/n, Hⁱ = 0 for i > 0 and the unit maps to 1.
+- For the proper model ℙ¹ over the valuation ring of 𝔽₂((t)) and its zero section, sufficiently small tubes are discs: over C the groups are ℤ/n in degree zero and zero otherwise for every odd n at the same radius. The unit and products have coordinates 1 and ab on both sides.
+- An arbitrary open neighbourhood need not work: for a smooth plane cubic Y ⊆ ℙ², H¹(ℙ²_C) = 0 while H¹(Y_C) has dimension 2 over ℚ_ℓ. Thus taking the whole ambient space loses the degree-one comparison even when the characteristic and coefficients are permitted.
+
+*Needs:* §§3.1, 3.4, 3.5 (cup compatibility); AdicSpacesPartIII §R2.8; coefficient long exact sequences.
 
 ### Examples
 
@@ -630,13 +690,13 @@ For X=Spec O[T] and Z=V(T), T(Z,ε) is the rational closed disc |T|≤ε. At pos
 
 ### Dependencies
 
-AdicSpacesPartII §§R0.19, R1.3–R1.6; AdicSpacesPartIII §§R2.3–R2.4, R2.8, R2.10; ClassicalAdicEtaleCohomology §§1.1–1.5, 10.1–10.4; SchemeAndStackFoundations §§4.11, 4.16; EtaleCohomologyFoundations §F.6; Mathlib Ext and exact functors. The four general derived proof inputs live in §3.4. No weight theory is needed.
+AdicSpacesPartII §§R0.19, R1.3–R1.6; AdicSpacesPartIII §§R2.3–R2.4, R2.8, R2.10; ClassicalAdicEtaleCohomology §§1.1–1.5, 10.1–10.4; SchemeAndStackFoundations §§4.11, 4.16; EtaleCohomologyFoundations §F.6; Mathlib Ext and exact functors. The four characteristic-zero derived inputs and the uniform annular, descent and boundedness targets live in §3.4. The uniform route also uses ClassicalAdicEtaleCohomology §§8.3–8.5, 9.6; its scheme inputs remain SchemeAndStackFoundations §§0.9, 0.23a, 4.11, 4.16. No weight theory is needed.
 
 ## Layer 4: The comparison and toric complete intersections
 
 ### 4.1 The tilted approximation Z′ of a toric complete intersection
 
-Let Y ⊆ `X_{Σ,k}` be geometrically connected proper smooth of dimension d over a p-adic field, set-theoretically the intersection of c = codim Y Cartier hypersurfaces in a projective smooth split toric variety. Choose the integral section model and a tube Ỹ as in §3.5. Construct tilted approximation data: a global function field k₁ ⊆ C♭ finite over some `𝔽_q(t^{1/p^n})`, the finite extension L♭ = K♭k₁ with untilt L/K, the closure k″ of k₁ in L♭, and a projective smooth geometrically irreducible k₁-variety Z′ of dimension d with a proper morphism g : Z′ → `X_{Σ,k₁}` generically finite onto its integral image W of dimension d. Require the analytification of `Z′_{L♭}` to map into `π_L⁻¹(Ỹ_L)`. Then k″ is a characteristic-p local field containing t and satisfies the hypothesis of §2.4. Geometric irreducibility is retained even though connectedness suffices for top-degree cohomology (SCH12, Corollary 8.8 and proof of Theorem 9.6, pp. 307, 309; SCH12 line 2496 and line 2607; DJ96, Theorem 4.1 and Remark 4.2, pp. 66–67; DJ96 line 597).
+Let Y ⊆ `X_{Σ,k}` be geometrically connected proper smooth of dimension d over a p-adic field, set-theoretically the intersection of c = codim Y Cartier hypersurfaces in a projective smooth split toric variety. Choose the integral section model and a tube Ỹ as in §3.6. Construct tilted approximation data: a global function field k₁ ⊆ C♭ finite over some `𝔽_q(t^{1/p^n})`, the finite extension L♭ = K♭k₁ with untilt L/K, the closure k″ of k₁ in L♭, and a projective smooth geometrically irreducible k₁-variety Z′ of dimension d with a proper morphism g : Z′ → `X_{Σ,k₁}` generically finite onto its integral image W of dimension d. Require the analytification of `Z′_{L♭}` to map into `π_L⁻¹(Ỹ_L)`. Then k″ is a characteristic-p local field containing t and satisfies the hypothesis of §2.4. Geometric irreducibility is retained even though connectedness suffices for top-degree cohomology (SCH12, Corollary 8.8 and proof of Theorem 9.6, pp. 307, 309; SCH12 line 2496 and line 2607; DJ96, Theorem 4.1 and Remark 4.2, pp. 66–67; DJ96 line 597).
 
 Use the dense perfect subfield `𝔽_q(t)^perf` of K♭ in the toric complete-intersection approximation. Descend its finitely many equations to `𝔽_q(t^{1/p^n})`, choose a d-dimensional geometric irreducible component after finite extension, and apply the alteration theorem with empty boundary. The finite constant extension of DJ96 Remark 4.2 makes the alteration smooth and geometrically irreducible. Form L♭ = K♭k₁ and untilt it. Completion at the induced place identifies k″ and gives the hypothesis of §2.4. Naturality of the toric projection under field extension preserves image containment. For ample H on the ambient toric variety, proper pushforward and the Chern projection formula give `deg(c₁(g*H)^d[Z′])` = deg(g) `deg(c₁(H)^d[W])` > 0; every factor is a positive integer.
 
@@ -670,7 +730,11 @@ Its API consists of the following facts.
 
 - Different cohomology is possible even with Y = X = ℙ¹ over `ℚ_3` and Ỹ = `X^ad`. Take k₁ = `𝔽_3(t)`, L♭ = K♭, k″ = `𝔽_3((t))`, and Z′ the smooth projective elliptic curve y² = x³ − x. Its x-coordinate gives a finite degree-two morphism g : Z′ → ℙ¹. These are tilted approximation data, yet dim H¹(Z′, `ℚ̄_ℓ)` = 2 and H¹(Y, `ℚ̄_ℓ)` = 0 for ℓ ≠ 3. Approximation permits a larger cohomology space; no cohomology isomorphism with Y is asserted.
 
-*Needs:* §§2.1–2.4, 3.5; AnalyticToricGeometryPartII NT.0–NT.1, NT.3, NT.5–NT.6; SchemeAndStackFoundations §§0.7–0.9, 4.16, 4.19, 5.2–5.3 and the ample-top-intersection contract; PerfectoidSpaces §P3.7.
+- On ℙ¹, the hyperplane class has degree 1; the degree-two elliptic cover in the preceding Check has deg g*O(1) = 2·1 = 2. Modulo 2 this trace is zero, while it is nonzero over ℚ₂.
+
+- For W = Spec L over a field k, the empty top product has degree [L:k]: 1 for L = k and p for a purely inseparable extension of degree p. Both are positive integers; inseparable degree is retained.
+
+*Needs:* §§2.1–2.4, 3.6; AnalyticToricGeometryPartII NT.0–NT.1, NT.3, NT.5–NT.6; SchemeAndStackFoundations §§0.7–0.9, 4.16, 4.19, 5.2–5.3; AbelianSchemesAndArithmeticModuli §A2.7 `ampleIntersectionPositive`; PerfectoidSpaces §P3.7.
 
 ### 4.2 Scholze's comparison map from the cohomology of Y to that of the tilted approximation
 
@@ -708,7 +772,7 @@ Its API consists of the following facts.
 
 - For Y = `X_{Σ,k}` with the identity approximation, f* is the toric isomorphism of AnalyticToricGeometryPartII NT.4, projection-cohomology.
 
-*Needs:* §§2.2–2.3, 3.5–3.6, 4.1; AnalyticToricGeometryPartII NT.3–NT.4; ClassicalAdicEtaleCohomology §§8.2, 11.1 and its automorphism contract; EtaleCohomologyFoundations §§F.2–F.4 and its Galois restriction contract.
+*Needs:* §§2.2–2.3, 3.5–3.6, 4.1; AnalyticToricGeometryPartII NT.3–NT.4; ClassicalAdicEtaleCohomology §§8.2, 11.1 and its automorphism contract; EtaleCohomologyFoundations §§F.2.2, F.4.3–F.4.6, especially `VanishingCycles.adicFunctoriality`.
 
 ### 4.3 The comparison map is an isomorphism in top degree (Lemma 9.9)
 
@@ -722,7 +786,7 @@ Both top groups are one-dimensional. If d = 0, unit preservation makes f* the id
 
 - If Z′ were not geometrically connected, `H^{2d}(Z′)` would have dimension the number of geometric components and f* could be injective without being surjective; the construction of §4.1 makes Z′ geometrically connected.
 
-*Needs:* §§4.1–4.2; AnalyticToricGeometryPartII NT.4; EtaleCohomologyFoundations §§0.9, F.6; EtaleDualityAndPerverseSheaves §§0.6, 1.3, 3.7; SchemeAndStackFoundations §§5.2–5.3 and its ample-top-intersection contract.
+*Needs:* §§4.1–4.2; AnalyticToricGeometryPartII NT.4; EtaleCohomologyFoundations §§0.9, F.6; EtaleDualityAndPerverseSheaves §§0.6, 1.3, 3.7; SchemeAndStackFoundations §§5.2–5.3; AbelianSchemesAndArithmeticModuli §A2.7 `ampleIntersectionPositive`.
 
 ### 4.4 A multiplicative map that is an isomorphism in top degree is a split injection
 
@@ -762,7 +826,7 @@ Apply rational Poincaré duality with complementary-degree cups, the multiplicat
 
 Prove Scholze's theorem: for every finite `k/ℚ_p`, every projective smooth split toric variety `X_Σ/k`, every geometrically connected proper smooth closed Y ⊆ `X_Σ` whose underlying set is the intersection of exactly codim Y hypersurfaces, and every prime ℓ ≠ p, `WMC_ℓ(Y)` holds. The conclusion quantifies over every cohomological degree and all reduction types. Scheme-theoretic equality with the intersection is unnecessary (SCH12, Theorem 9.6, pp. 309–311, and Theorem 1.15, p. 251; SCH12 line 2589).
 
-Form the Kummer tower and mark its tilt by Layer 2. Use invariant Cartier representatives to choose a finite-presentation integral equation model. Obtain the Galois-stable cohomological tube from §3.5 and the approximation and comparison from §§4.1–4.2. Sections 4.3–4.5 make `H^i(Y)` a stable summand of `H^i(Z′)` after restriction to `G_L`. Apply §1.2 at the place of k₁ with completion k″, and then §2.5 to transfer its weight i back to `G_k`. No general mixed-characteristic conjecture is an input.
+Form the Kummer tower and mark its tilt by Layer 2. Use invariant Cartier representatives to choose a finite-presentation integral equation model. Obtain the Galois-stable cohomological tube from §3.6 and the approximation and comparison from §§4.1–4.2. Sections 4.3–4.5 make `H^i(Y)` a stable summand of `H^i(Z′)` after restriction to `G_L`. Apply §1.2 at the place of k₁ with completion k″, and then §2.5 to transfer its weight i back to `G_k`. No general mixed-characteristic conjecture is an input.
 
 **Checks.**
 
@@ -774,9 +838,9 @@ Form the Kummer tower and mark its tilt by Layer 2. Use invariant Cartier repres
 
 - Non-example: for a variety that is not a set-theoretic complete intersection in any projective smooth toric variety, the method gives no statement; Corollary 8.8 is unavailable.
 
-- The hypothesis char k = 0 is used through Huber's neighbourhood theorem (characteristic 0) and the perfectoid field K; the equal-characteristic cohomological conclusion is supplied by Layer 1 for varieties defined over global function fields.
+- The hypothesis char k = 0 specifies the p-adic source field and its Kummer tower in Layer 2. The constant-coefficient neighbourhood theorem itself also applies in characteristic p; the equal-characteristic cohomological input for the tilted approximation is supplied by Layer 1.
 
-*Needs:* §§0.8, 1.2, 2.5, 3.5, 4.1–4.5; AnalyticToricGeometryPartII NT.0–NT.1 (integral equations).
+*Needs:* §§0.8, 1.2, 2.5, 3.6, 4.1–4.5; AnalyticToricGeometryPartII NT.0–NT.1 (integral equations).
 
 ### 4.7 Smooth complete intersections in projective space and in products of projective spaces
 
@@ -798,18 +862,18 @@ For Y=ℙ¹ use the identity approximation to obtain the toric isomorphism; on t
 
 ### Dependencies
 
-Layers 0–3; AnalyticToricGeometry Layer 0; AnalyticToricGeometryPartII NT.0–NT.6; SchemeAndStackFoundations §§0.7–0.9, 4.16, 4.19, 5.2–5.3 with ample-top-intersection; ClassicalAdicEtaleCohomology §§8.2, 11.1 with automorphism naturality; EtaleCohomologyFoundations §§0.9, F.2–F.4, F.6; EtaleDualityAndPerverseSheaves §§0.5–0.6, 1.3, 3.4–3.7. Section 4.4 itself uses only native finite-dimensional linear algebra.
+Layers 0–3; AnalyticToricGeometry Layer 0; AnalyticToricGeometryPartII NT.0–NT.6; SchemeAndStackFoundations §§0.7–0.9, 4.16, 4.19, 5.2–5.3; AbelianSchemesAndArithmeticModuli §A2.7 `ampleIntersectionPositive`; ClassicalAdicEtaleCohomology §§8.2, 11.1 with automorphism naturality; EtaleCohomologyFoundations §§0.9, F.2–F.4.6, F.6; EtaleDualityAndPerverseSheaves §§0.5–0.6, 1.3, 3.4–3.7. Section 4.4 itself uses only native finite-dimensional linear algebra.
 
 ## Downstream consumers
 
-The local representation interface in Layer 0 and the marked tilting interface in Layer 2 can be used independently of the toric application. The general characteristic-zero neighbourhood result in Layer 3 supplies étale cohomology comparisons for arbitrary separated finite-type models, with its finite-presentation closed immersion and invertible coefficients. The end theorem supplies weight–monodromy for toric complete intersections to arithmetic applications such as WeightsInEtaleCohomology. The tensor, dual, Tate-twist and finite-extension interfaces retain the normalizations of the canonical arithmetic suppliers.
+The local representation interface in Layer 0 and the marked tilting interface in Layer 2 can be used independently of the toric application. The general constant-coefficient neighbourhood result in Layer 3 supplies étale cohomology comparisons for arbitrary separated finite-type models in either characteristic, with a finite-presentation closed immersion and one radius for all invertible coefficient orders. Its characteristic-zero locally constant-sheaf form retains a radius depending on the sheaf and its coefficient order. The end theorem supplies weight–monodromy for toric complete intersections to arithmetic applications such as WeightsInEtaleCohomology. The tensor, dual, Tate-twist and finite-extension interfaces retain the normalizations of the canonical arithmetic suppliers.
 
 ## References
 
 Every mathematical statement above is an authorial formulation. Printed page numbers are used for published papers; ITO20 locators refer to arXiv v1. The source identifiers and line locators refer to the source manifest and its line-numbered extractions.
 
 - **SCH12.** Peter Scholze, [Perfectoid spaces](https://pmihes.centre-mersenne.org/item/10.1007/s10240-012-0042-x.pdf), Publ. Math. IHÉS 116 (2012), 245–313. Published numbering: Theorem 1.15, p. 251; §8, Theorem 8.5 to Corollary 8.8, pp. 304–307; §9, Proposition 9.1 to Lemma 9.9, pp. 307–311. In particular SCH12 line 2496, line 2518, line 2571, line 2589, line 2622 and line 2636.
-- **ITO20.** Kazuhiro Ito, [Uniform local constancy of étale cohomology of rigid analytic varieties](https://arxiv.org/abs/2008.07794v1), arXiv:2008.07794v1 (2020). Theorem 1.1 and §1.2, pp. 1–3; Proposition 4.1 and Lemma 4.3, pp. 19–20; Theorem 4.5(2) and Remark 4.7, pp. 21–22. ITO20 line 76, line 99, line 103, line 866, line 918, line 964 and line 987. This is the read source for the Huber and Lütkebohmert formulations in Layer 3.
+- **ITO20.** Kazuhiro Ito, [Uniform local constancy of étale cohomology of rigid analytic varieties](https://arxiv.org/abs/2008.07794v1), arXiv:2008.07794v1 (2020). Theorem 1.1 and §1.2, pp. 1–3; Proposition 4.1 and Lemma 4.3, pp. 19–20; Theorems 4.5(2) and 4.9, Remark 4.7 and Corollary 4.11, pp. 21–23; Theorem 1.4, Proposition 6.6, Theorem 6.10, Lemma 6.11 and Lemmas 7.1–7.7, pp. 3–4, 33–46. ITO20 line 76, line 99, line 103, line 124, line 866, line 918, line 964, line 987, line 1003, line 1030, line 1481, line 1586, line 1673, line 1738 and line 1774. This is the read source for the Huber and Lütkebohmert formulations in Layer 3.
 - **HUB98.** Roland Huber, A finiteness result for direct image sheaves on the étale site of rigid analytic varieties, J. Algebraic Geom. 7 (1998), 359–403. Definition 1.4 and Theorems 2.1 and 3.6; the neighbourhood and degreewise local-constancy forms used here are those recalled at the ITO20 locators above.
 - **LUT93.** Werner Lütkebohmert, [Riemann's existence problem for a p-adic field](https://doi.org/10.1007/BF01231290), Invent. Math. 111 (1993), 309–330, Theorem 2.2. Cited through ITO20 line 103; the original is recorded as uncertified.
 - **DEL80.** Pierre Deligne, [La conjecture de Weil. II](https://www.numdam.org/article/PMIHES_1980__52__137_0.pdf), Publ. Math. IHÉS 52 (1980), 137–252, §1.8, Theorem 1.8.4, pp. 175–176; DEL80 line 1524. The finite-field and pure-sheaf theorems are consumed through DeligneWeightsAndPurity.

@@ -20,8 +20,12 @@ The following headlines are not statable at the pins:
   and comparison maps. Tilting transfer (§2.5) also lacks relative purity.
 * Degreewise local constancy and punctured-disc Riemann existence (§§3.2–3.3) lack
   analytic étale sites, derived direct image, oc-quasi-constructibility and Kummer
-  covers. Huber's neighbourhood theorem and its Galois-stable all-power form
-  (§§3.4–3.5) lack analytic and pseudo-adic support cohomology.
+  covers. Huber's characteristic-zero locally constant-sheaf neighbourhood theorem and
+  Ito's all-invertible-order constant-coefficient theorem in either characteristic
+  (§3.4), with its Galois-stable application (§3.6), lack analytic and pseudo-adic
+  support cohomology, uniform annular direct images and their descent comparisons.
+  Cup compatibility (§3.5) uses native Ext functoriality, but its geometric
+  application lacks those sites and the module-sheaf cohomology comparison.
 * The tilted approximation (§4.1) lacks the toric models, open projection and tube
   interfaces. The multiplicative equivariant comparison (§4.2), its top-degree
   isomorphism (§4.3) and the geometric stable summand (§4.5) lack that actual
