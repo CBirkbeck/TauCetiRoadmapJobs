@@ -16,7 +16,7 @@ sha256 = "34ffd69795468054b4caab7847d5ae90393826c889b187397dbe53e16993967a"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["Layers 1–8"]
+cited_for = ["Layers 1–9", "supplier contracts (gap:general-character-spaces, gap:completed-normalization-injectivity, gap:rigid-normal-cm-openness, gap:rigid-flat-openness)"]
 version_note = "Read the published open PDF linked here; theorem numbering and printed pages refer to that version."
 
 [[source]]
@@ -69,7 +69,7 @@ sha256 = "e382a23bbf0cc63b386549a05337a5502c1b8e6430c95d23619fb58054688cf0"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["README references and targets"]
+cited_for = ["README references and targets", "supplier contract gap:unrestricted-trianguline-variety"]
 version_note = "Read the author final copy linked here; theorem numbering and PDF page locators use that copy."
 
 [[source]]
@@ -141,6 +141,6 @@ sha256 = "ef76912a84fdf3d0630fe3aaa83548110f9aca9fc50a421401ba5462512dce37"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["Layer 4"]
+cited_for = ["Layer 4", "supplier contract gap:completed-normalization-injectivity"]
 version_note = "Read the published open PDF linked here; theorem numbering and printed pages refer to that version."
 

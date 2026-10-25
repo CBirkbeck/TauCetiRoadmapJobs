@@ -8,14 +8,14 @@ This roadmap owns the deformation adapters, the lattice-to-Hodge-flag adapter, t
 
 The following objects and results are stated by their owners and are consumed by section:
 
-- CompletedCohomologyAndLocalGlobalCompatibility §5.2a supplies the framed trianguline variety as a reduced closure, the saturated regular locus, its openness, smoothness and dimension, and smooth character projection on that locus. This roadmap begins with its completion at a generic point. The global patching hypotheses of the surrounding application are not hypotheses on these local constructions, which §5.2a states for every finite local field and rank.
+- CompletedCohomologyAndLocalGlobalCompatibility §5.2a owns the framed trianguline variety as a reduced closure, its saturated regular locus, and the smoothness and dimension of that locus. That section states them inside its global patching setting; the unrestricted local form used here (every finite K, every n≥1, every residual representation, with smooth full-character projection on the regular locus) is the contract gap:unrestricted-trianguline-variety below. This roadmap begins with its completion at a generic point, and no global patching hypothesis enters any target here.
 - ModularityAndLanglandsExtensions §4.3 supplies ordered-regular saturated deformation functors, relative representability and injectivity, the absolutely irreducible unframed quotient ring, fixed-unit-weight tangent inclusion in H¹_g, the local closure tangent constraint and the admissible-cover density repair. Section 4 below retains the ordinary-flag dictionary, strictness theorem and numerical WD criterion; these are additional local statements.
 - PadicHodgeTheory §§4.3–4.5 and 5.2 own period representations, connections, B-pairs, their field Robba comparison, the full-rank torsion-quotient invariant theorem and filtered-module modifications. The embedding-selective carrier D_σ belongs there through the exact contract below. Section 10 constructs its labelled endpoint diagrams and recovery, rather than its period carrier.
-- PhiGammaModulesAndIwasawaCohomology §§1.1–1.2, 3.1–3.9 and 7.1–7.8 own the Robba categories, Herr complexes, rank-one characters and their classification, weights, integral triangulations, global triangulation and specialization. The new localized deformation adapter fixes a residual parameter and retains infinitesimal coefficients.
+- PhiGammaModulesAndIwasawaCohomology §§1.1–1.2, 3.1–3.9, 4.0 and 7.1–7.8 own the Robba categories, Herr complexes, the rigid character spaces of O_K× and K× with their universal characters, rank-one characters and their classification, weights, integral triangulations, global triangulation and specialization. LocallyAnalyticDistributions §3.3 adapts the same character spaces to distributions and is not a second carrier; PadicMeasuresIwasawaAlgebras §3a.1 supplies points and functions on the ℤₚ× space and constructs no rigid structure. The new localized deformation adapter fixes a residual parameter and retains infinitesimal coefficients.
 - LocalGaloisDeformationRings §§0.4, 1.1, 1.4, 1.12, 1.18, 1.23 and 3.4–3.10 own lifting rings, their completions and constrained de Rham and trianguline deformation rings. In particular the three individual crystabelline tangent dimensions come from §1.23; §11.3 proves their simultaneous derivative and Weyl-transport statements.
 - SpringerResolutionAndCharacteristicCycles Layers F, G, I, C, N, S, Y, K, P, T and E own flag schemes, the simultaneous resolution, incidence components, their normality, Cartan flatness, Steinberg cycles, KL identities and their completion. The targets here transfer those statements to Galois deformation spaces.
 - RigidAnalyticGeometry §§7.3, 8.1–8.3 and AdicSpacesPartII R1 own rigid spaces, local rings, completions, analytic excellence and rigid–adic comparison. SchemeAndStackFoundations §§0.16–0.21 and 4.3–4.5 own the general local algebra and Schlessinger theory. DeformationAndDerivedPatchingAlgebra §§1.6–1.14 and 2.1–2.7 supply their labelled coefficient and framing interfaces.
-- LocallyAnalyticRepresentationsOfLocalGroups LR.4–LR.5 own actual locally analytic inductions and Orlik–Strauch constituents; no formal labels replace those representations here. Global eigenvarieties, completed cohomology, patched socles and automorphy belong to their named consumers.
+- LocallyAnalyticRepresentationsOfLocalGroups LR.4–LR.5 own actual locally analytic inductions and Orlik–Strauch constituents; no formal labels replace those representations here. Completed cohomology, patched eigenvarieties and their socles belong to CompletedCohomologyAndLocalGlobalCompatibility, which precedes this roadmap; global eigenvarieties and automorphy statements are not stated here.
 
 Generic product maps, ranges, kernels, submodule quotients, dimension identities, adic completions, algebraic cycles and module lengths are already in Mathlib. There is no new abstract matched-range library or arithmetic slope adapter in this roadmap's acceptance file.
 
@@ -55,13 +55,17 @@ What PadicHodgeTheory must provide (gap:artinian-b-pairs): Extend the coefficien
 
 What PadicHodgeTheory must provide (gap:partial-de-rham-cohomology): Provide the J-de Rham B-pair dimension formula dim H¹_g,J=d rk W+dim H⁰(W)+dim H²_J(W)−dim H⁰(W_dR,J⁺), with H²_J defined by a positive J-algebraic twist killing positive invariants, its specialization when H²_J=H², and the six-term exact sequence for J-de Rham short exact sequences with H²_J(W₁)=0. (§4.5; Ding19 Propositions A.3, A.5 and Corollary A.4, preprint pp. 45–46; Ding19 line 2083).
 
-What PadicHodgeTheory must provide (gap:dominant-trianguline-semistability): For a saturated trianguline Galois representation with strictly decreasing integral labelled parameter weights, prove semistability and the Frobenius-parameter dictionary, and prove that exclusion of the regular-character exceptional ratios gives zero monodromy and a noncritical crystalline refinement. (§§5.2, 6.3; BHSsmooth17 Lemma 2.10, pp. 15–16; BHSsmooth17 line 617).
+What PadicHodgeTheory must provide (gap:dominant-trianguline-semistability): For every finite K/ℚₚ and every continuous r:G_K→GLₙ(E) whose Robba module has a saturated triangulation with parameters δ₁,…,δₙ such that δ_i(u)=∏_τ τ(u)^(k_(τ,i)) for every u∈O_K× with integers k_(τ,1)>⋯>k_(τ,n) at every τ, prove that r is semistable and δ_i=z^(k_i)unr(φ_i) with φ₁,…,φₙ the eigenvalues of the linearized Frobenius φ^f on D_st(r) in triangulation order, and that if moreover δ∈T_regⁿ then the monodromy vanishes, r is crystalline and this refinement is noncritical. (§§5.2, 6.3; BHSsmooth17 Lemma 2.10 and proof, pp. 15–16; BHSsmooth17 lines 617–656).
 
 What PadicHodgeTheory must provide (gap:selective-modification): Construct the unique embedding-selective period modification D⊂D_σ of a generic all-refinement noncritical crystabelline module, retaining its localization and σ-filtration, replacing every off-σ weight by the ambient minimum and identifying the potentially semistable period modules. (§5.2; Ding25 Proposition 2.5, p. 13; Ding25 line 560).
 
 ### From TauCetiRoadmap.PhiGammaModulesAndIwasawaCohomology
 
 Use §§1.0c, 1.1–1.2 for period-sheaf comparison, relative coefficient rings and finite-projective module categories; §§3.1, 3.4a, 3.8–3.9 for Herr complexes, Ext, duality, cups and localized Artinian comparison; §§7.1–7.4 for character lines, exceptional cohomology, weights and rank-one classification; §§7.5–7.8 for saturated/strict flags, global triangulation and specialization. Cohomology-group coefficient change carries its Tor-vanishing hypothesis. Take full finite Gamma-torsion invariants also at p=2. Over ℚₚ use d⁰x=((φ−1)x,(γ−1)x), d¹(a,b)=(γ−1)a−(φ−1)b: scalar operators φ=2,γ=3 give d⁰(1)=(1,2), d¹(1,2)=0 and d¹(1,0)=2. The adapter to the swapped degree-one convention has degree-two sign −1. Arithmetic unramified-first Kummer trace is 1 and its reverse is −1. The Tate line is R(ε); R(x) has Frobenius p while R(ε) has Frobenius 1.
+
+Use §4.0 for the rigid character spaces: W=`compactCharacterSpace` of O_K× and T=`localMultiplicativeCharacterSpace` K, base-changed to E, with their universal characters, generator and uniformizer changes, evaluation and finite coefficient extension. On a principal subgroup W has d open-disc coordinates and keeps every finite-torsion component, and T is W×G_m through K×≃ϖ_K^ℤ×O_K×. Hence dim W=d, dim T=d+1, and restriction of characters T→W is the projection, smooth of relative dimension one. For K=ℚ₂, W has two sign components, each a one-dimensional open disc on which the universal character takes the value +1, respectively −1, at −1; T adds one invertible uniformizer coordinate. Weights of Artinian-valued characters are §7.3's `CharacterWeights`.
+
+What PhiGammaModulesAndIwasawaCohomology must provide (gap:general-character-spaces): For every finite K/ℚₚ, (a) prove that the weight morphism wt=(wt_τ)_τ:W_E→(𝔸¹)^Σ, the logarithmic derivative on a sufficiently small unit subgroup extending §7.3's weights from Artinian to affinoid points, is étale, with fibre over 0 the finite-order characters and over an integral k the characters z^k·χ with χ of finite order; (b) prove that for every n≥1, every integral k∈(ℤ^Σ)ⁿ and every C>0, the point δ_k has a basis of affinoid neighbourhoods in Wⁿ_E on each of which the algebraic points δ_(k′) with k′_(τ,i)−k′_(τ,i+1)>C for every τ and 1≤i<n are Zariski dense. (§§4.0, 7.3; BHS19 Lemma 3.5.5 and proof, pp. 357–358; BHS19 line 2362; BHSsmooth17 proof of Proposition 2.12, p. 17; BHSsmooth17 line 727).
 
 What PhiGammaModulesAndIwasawaCohomology must provide (gap:rank-one-saturation): For K=ℚₚ, prove that a finite free Robba (φ,Γ)-module containing a rank-one (φ,Γ)-submodule contains a saturated rank-one submodule with finite free quotient, compatibly with finite coefficient-field extension. (§7.5; Colmez08 Lemma 3.2, p. 231; Colmez08 line 700).
 
@@ -85,17 +89,17 @@ Use §§1.6–1.8 for labelled Artinian coefficients and small extensions, §§1
 
 Use §§1.2, 7.3, 8.1–8.3 for affinoid local dimension, coherent identity principles, completed stalks, normality comparisons, analytic excellence, classical points and rigid–adic transport. Normality is an integrally closed local domain property. All completed-ring arguments specify the analytic point and its residue field.
 
-What RigidAnalyticGeometry must provide (gap:analytic-local-algebra): Provide openness of the normal and Cohen–Macaulay loci and of flat rigid morphisms, completed-ring injectivity above proper birational normalization of a reduced rigid space, generic freeness and coefficient change on the relevant coherent Herr loci, and the projective-image constructibility and constructible-adic-open comparison used for triangulation loci. (§§7.3, 8.1–8.2; BHS19 Propositions 3.7.2–3.7.3, pp. 366–367; NT21 Remark 2.16, pp. 37–38; NT21 line 1501).
+What RigidAnalyticGeometry must provide (gap:completed-normalization-injectivity): For a reduced rigid space Z over E, a classical point z, the normalization Z̃→Z with its finitely many points z̃₁,…,z̃_m above z, and a composite Z′=Z_s→⋯→Z₁=Z̃ of proper birational morphisms of normal rigid spaces, each locally on the target the relative analytification of a projective birational morphism of schemes over an affinoid algebra, prove that Ô_(Z,z)→∏_j Ô_(Z̃,z̃_j) is the normalization of Ô_(Z,z) and that Ô_(Z,z)→∏_j Ô_(Z′,z′_j) is injective for any closed points z′_j∈Z′ above the z̃_j. (§§1.2, 8.1; NT21 proof of Proposition 2.15, pp. 37–38; NT21 line 1473; BHS19 proof of Proposition 3.7.2, p. 367; BHS19 line 2691).
+
+What RigidAnalyticGeometry must provide (gap:rigid-normal-cm-openness): For a rigid space X locally of finite type over E, prove that the points x at which O_(X,x) is normal, respectively Cohen–Macaulay, form Zariski-open subsets of X; on an affinoid Sp A they are the traces on Max A of the corresponding open loci of the excellent ring A. (§§1.2, 8.1; BHS19 proof of Proposition 4.1.4, p. 373; BHS19 line 2948).
+
+What RigidAnalyticGeometry must provide (gap:rigid-flat-openness): For a morphism f:X→Y of rigid spaces locally of finite type over E and a point x at which O_(Y,f(x))→O_(X,x) is flat, prove that f is flat at every point of some affinoid neighbourhood U of x and that f(U) is an admissible open subset of Y. (§§7.3, 8.1; BHS19 proofs of Propositions 4.1.1 and 4.1.4, pp. 372–373; BHS19 lines 2923, 2948; BHSsmooth17 proof of Lemma 2.4, p. 11; BHSsmooth17 line 464).
+
+The coherent Herr complexes, their derived coefficient change and Tor-vanishing conditions, Fitting blowups and the global coherent triangulation used beside these contracts are PhiGammaModulesAndIwasawaCohomology §§3.4a and 7.6–7.8, imported as stated there.
 
 ### From TauCetiRoadmap.AdicSpacesPartII
 
 Use R1.1's rigid-local-ring-completion, R1.5's local-ring and constructible comparisons, R1.7's rigid–adic functor and R1.9's dimension and identity-principle comparisons. These supply the adic interpretation of the same rigid objects, not a second trianguline variety.
-
-### From TauCetiRoadmap.LocallyAnalyticDistributions
-
-Use §§3.3–3.4 for geometric character spaces, their functions and Mellin transport, together with the general-K extension specified below. PadicFunctionalAnalysis §§5.1–5.3 and PadicMeasuresIwasawaAlgebras §3a.1 supply the one-variable unit-coordinate specializations. For p=2 retain both finite-character components; logarithmic coordinates are taken on a sufficiently small torsion-free unit subgroup.
-
-What LocallyAnalyticDistributions must provide (gap:general-character-spaces): For every finite K/ℚₚ, provide the rigid continuous-character spaces of K× and O_K× with universal characters, coefficient change, dimensions d+1 and d, smooth restriction of relative dimension one, étale logarithmic derivative on unit weights and local Zariski accumulation of algebraic tuples with arbitrarily large decreasing gaps at every algebraic tuple. (§§3.3–3.4; BHS19 §3.3.4, pp. 347–349; BHSsmooth17 Proposition 2.12, pp. 16–17; BHSsmooth17 line 674).
 
 ### From TauCetiRoadmap.PadicFunctionalAnalysis
 
@@ -103,11 +107,15 @@ Sections 5.1–5.3 supply continuous-character coordinates, coefficient speciali
 
 ### From TauCetiRoadmap.PadicMeasuresIwasawaAlgebras
 
-Section 3a.1 supplies the rigid character space of ℤₚ× and its universal character. Its finite-order labels remain part of a character; a derivative alone does not recover them. The general-K geometry is the LocallyAnalyticDistributions contract.
+Section 3a.1 supplies the points of the character space of ℤₚ× with values in complete normed ℚₚ-algebras, its torsion and principal decomposition (with 1+4ℤ₂ at p=2) and bounded functions on it; it constructs no rigid structure, which is PhiGammaModulesAndIwasawaCohomology §4.0. Its finite-order labels remain part of a character; a derivative alone does not recover them.
 
 ### From TauCetiRoadmap.CompletedCohomologyAndLocalGlobalCompatibility
 
-Section 5.2a supplies X_tri(r̄), U_tri and their character maps: X_tri is the reduced closure of saturated regular flags in the framed lifting space times Tⁿ, U_tri is smooth open dense of dimension n²+dn(n+1)/2, and its full-character projection is smooth. It supplies these local constructions using PhiGammaModulesAndIwasawaCohomology, independently of its global patching data. Write ω′ for the full-character projection and ω for restriction to unit characters. A closure point need not retain an integral saturated flag of the displayed parameter. For n=2,d=1, dim X_tri=7, dim T²=4 and dim W²=2, giving regular fibre dimensions 3 and 5. Distinct unramified characters have the same unit restriction. The regular-locus proof uses the smooth rigidified triangulation moduli over T_regⁿ, the étale locus, representation frames, quotient by the n graded rescalings and the strict local deformation comparison. These are the same objects supplied by that section, rather than new targets here.
+Section 5.2a constructs X_tri(r̄) as the reduced closure of the regular triangulation locus in the framed lifting space times Tⁿ, proves representability of the regular triangulation space on PhiGammaModulesAndIwasawaCohomology §§1.1–1.2, 7.1 and 7.5's carriers, and proves the smoothness and dimension statements on that locus. It does so inside §5.1's global setting, retaining its globalisation, adequacy, local-type, projectivity and coefficient-field hypotheses, and it does not state smoothness of the full-character projection. The unrestricted local statement used here is the following contract.
+
+What CompletedCohomologyAndLocalGlobalCompatibility must provide (gap:unrestricted-trianguline-variety): For every finite K/ℚₚ, every n≥1 and every continuous r̄:G_K→GLₙ(k_E), with none of §5.1's global hypotheses, provide X_tri(r̄) as the reduced Zariski closure in X_r̄^□×Tⁿ of the locus U_tri(r̄) of points (r,δ) with δ∈T_regⁿ the parameter of a saturated triangulation of the Robba module of r, equidimensional of dimension n²+dn(n+1)/2, with U_tri(r̄) Zariski open and dense in X_tri(r̄), smooth over E, and with the full-character projection smooth on U_tri(r̄) of relative dimension n²+dn(n−1)/2−n. (§5.2a; BHS17 Definition 2.4 and Théorème 2.6, pp. 8–9; BHS17 line 298).
+
+Write ω′ for the full-character projection and ω for its composite with restriction to unit characters. A closure point need not retain an integral saturated flag of the displayed parameter. For n=2,d=1, dim X_tri=7, dim T²=4 and dim W²=2, giving regular fibre dimensions 3 and 5; the inputs are K, n and r̄ alone, with no globalisation datum. For n=1, X_tri(r̄) has dimension 1+d=dim T and the relative dimension is 0. Distinct unramified characters have the same unit restriction. The intended proof (BHS17 diagram (2.1)) uses the smooth rigidified triangulation moduli over T_regⁿ, representation frames, the smooth quotient by the n graded rescalings and the strict local deformation comparison.
 
 ### From TauCetiRoadmap.ModularityAndLanglandsExtensions
 
@@ -363,7 +371,7 @@ Let T be the rigid space of continuous characters K×→E×. Define T₀ⁿ by r
 
 A proof route uses the character space and algebraic characters; form the indicated complements of exceptional characters. Use the rank-one H⁰/H² formula to identify the cohomological meaning of each exclusion.
 
-*Needs:* LocallyAnalyticDistributions §3.4 (gap:general-character-spaces); PhiGammaModulesAndIwasawaCohomology §7.2.
+*Needs:* PhiGammaModulesAndIwasawaCohomology §4.0; PhiGammaModulesAndIwasawaCohomology §7.2.
 
 The reusable interface has the following properties.
 
@@ -487,7 +495,7 @@ In rank one no pairwise genericity test is imposed. In rank two a ratio equal to
 
 ### Dependencies
 
-LocallyAnalyticDistributions §3.4 (gap:general-character-spaces); PhiGammaModulesAndIwasawaCohomology §7.2; PhiGammaModulesAndIwasawaCohomology §§1.1–1.2; PhiGammaModulesAndIwasawaCohomology §7.4; PhiGammaModulesAndIwasawaCohomology §7.3; PadicHodgeTheory §4.4; PhiGammaModulesAndIwasawaCohomology §7.1; PadicHodgeTheory §4.5; PhiGammaModulesAndIwasawaCohomology §1.0c; PadicHodgeTheory §§4.4–4.5, 5.2; §1.3.
+PhiGammaModulesAndIwasawaCohomology §4.0; PhiGammaModulesAndIwasawaCohomology §7.2; PhiGammaModulesAndIwasawaCohomology §§1.1–1.2; PhiGammaModulesAndIwasawaCohomology §7.4; PhiGammaModulesAndIwasawaCohomology §7.3; PadicHodgeTheory §4.4; PhiGammaModulesAndIwasawaCohomology §7.1; PadicHodgeTheory §4.5; PhiGammaModulesAndIwasawaCohomology §1.0c; PadicHodgeTheory §§4.4–4.5, 5.2; §1.3.
 
 ## Layer 4: Ordered-regular local deformation applications
 
@@ -501,7 +509,7 @@ Use NT-regularity of δ=(δ₁,…,δ_n), namely δ_i/δ_j≠∏ττ^aτ for eve
 
 A proof route uses the existing rank-one Robba and integral triangulation definitions. Apply rank-one étaleness and the exact étale Robba/Galois equivalence to ordinary graded pieces. Use the ordered rank-one H⁰ vanishing for the NT-regular condition.
 
-*Needs:* PhiGammaModulesAndIwasawaCohomology §7.5; PhiGammaModulesAndIwasawaCohomology §7.2; PadicHodgeTheory §4.3; LocallyAnalyticDistributions §3.4 (gap:general-character-spaces).
+*Needs:* PhiGammaModulesAndIwasawaCohomology §7.5; PhiGammaModulesAndIwasawaCohomology §7.2; PadicHodgeTheory §4.3; PhiGammaModulesAndIwasawaCohomology §4.0.
 
 The reusable interface has the following properties.
 
@@ -547,7 +555,7 @@ Let `k_(tau,i)=wt_NT,tau delta_i` be strictly increasing integers. Call δ numer
 
 A proof route uses continuous characters and their weights and evaluations. Specify the prefix-product valuations and every embedding inequality. Use finite ordered indices and the actual character valuations; a bound on independent scalars is not this character condition.
 
-*Needs:* §4.1; LocallyAnalyticDistributions §3.4 (gap:general-character-spaces).
+*Needs:* §4.1; PhiGammaModulesAndIwasawaCohomology §§4.0, 7.3.
 
 The reusable interface has the following properties.
 
@@ -651,7 +659,7 @@ With one embedding and weights (0,3), prefix slope 2 passes the numerical criter
 
 ### Dependencies
 
-PhiGammaModulesAndIwasawaCohomology §7.5; PhiGammaModulesAndIwasawaCohomology §7.2; PadicHodgeTheory §4.3; LocallyAnalyticDistributions §3.4 (gap:general-character-spaces); PadicHodgeTheory §5.2; PhiGammaModulesAndIwasawaCohomology §7.4; PhiGammaModulesAndIwasawaCohomology §§7.1–7.8; PadicDifferentialEquationsAndRigidCohomology §RD.2.43 (gap:polynomial-connection-finiteness).
+PhiGammaModulesAndIwasawaCohomology §7.5; PhiGammaModulesAndIwasawaCohomology §7.2; PadicHodgeTheory §4.3; PhiGammaModulesAndIwasawaCohomology §§4.0, 7.3; PadicHodgeTheory §5.2; PhiGammaModulesAndIwasawaCohomology §7.4; PhiGammaModulesAndIwasawaCohomology §§7.1–7.8; PadicDifferentialEquationsAndRigidCohomology §RD.2.43 (gap:polynomial-connection-finiteness).
 
 ## Layer 5: Extension comparison and formal lifting
 
@@ -691,7 +699,7 @@ The reusable interface has the following properties.
 
 ### 5.2 Rank-one localization and period comparison
 
-If δ and εδ⁻¹ are nonalgebraic, H⁰(t^(−k)R_E(δ))=H²(R_E(δ))=0. The H¹ localization map is an isomorphism when wtτδ avoids {1,…,kτ} for every τ, and is zero when every wtτδ lies in that interval. If δ is additionally locally algebraic, H¹(R_E[1/t](δ))→H¹(G_K,W_dR(R_E[1/t](δ))) is an isomorphism. Over A with generic residual δ, localized H⁰ and H² vanish; the H¹ map is surjective if residual δ is locally algebraic and an isomorphism if δ_A itself is locally algebraic.
+Let δ:K×→E× be continuous with δ and εδ⁻¹ nonalgebraic, and let k=(kτ)_τ be a tuple of nonnegative integers. Then H⁰(t^(−k)R_E(δ))=H²(R_E(δ))=0, and both H¹(R_E(δ)) and H¹(t^(−k)R_E(δ)) have dimension d. The map `H^1(R_E(delta)) -> H^1(t^(-k)R_E(delta))` induced by the inclusion is an isomorphism when wtτδ∉{1,…,kτ} for every τ, and is zero when wtτδ∈{1,…,kτ} for every τ. These are statements about the finite shift t^(−k); the full localization R_E(δ)[1/t] is the union of all shifts. If δ is additionally locally algebraic, H¹(R_E[1/t](δ))→H¹(G_K,W_dR(R_E[1/t](δ))) is an isomorphism. Over A with generic residual δ, localized H⁰ and H² vanish; the H¹ map is surjective if residual δ is locally algebraic and an isomorphism if δ_A itself is locally algebraic.
 
 (BHS19 Lemmas 3.4.1–3.4.3, pp. 349–352; BHS19 line 2061.)
 
@@ -701,7 +709,9 @@ One proof proceeds as follows. Use rank-one Herr cohomology and the torsion exac
 
 **Checks.**
 
-- For K=ℚₚ,k=1 and a generic locally algebraic character of weight 1, the H¹ map to the twist-localization limit is zero; weight 2 lies outside {1} and gives the isomorphism case.
+- For K=ℚₚ and k=1, a generic locally algebraic character of weight 1 gives the zero map H¹(R_E(δ))→H¹(t⁻¹R_E(δ)); weight 2 lies outside {1} and gives an isomorphism onto H¹(t⁻¹R_E(δ)).
+
+- For K=ℚ₃ and δ=unr(2)x², δ and εδ⁻¹=unr(1/6)x⁻¹ are nonalgebraic and wt δ=2, so H¹(R_E(δ)) is a line. Its map to H¹(t⁻¹R_E(δ)) has rank 1 (2∉{1}), its map to H¹(t⁻²R_E(δ)) has rank 0 (2∈{1,2}), and hence its map to H¹(R_E(δ)[1/t]), which factors through the second, is zero. A finite-shift isomorphism therefore says nothing about the full localization.
 
 - For δ=1, H⁰=E; this excluded algebraic character disproves vanishing without the generic-ratio hypotheses.
 
@@ -777,7 +787,7 @@ The localized triangulation of M admits a parameter in T₀ⁿ, the standing ass
 
 One proof proceeds as follows. Identify relative fibres with deformations equipped with a period isomorphism. Use finite Herr H¹ and compatibility with Artinian fibre products for the relative Schlessinger conditions. Compute character derivatives: the unit-character directions give dn coordinates and the unramified directions give n.
 
-*Needs:* §6.1; §5.1; DeformationAndDerivedPatchingAlgebra §§2.1–2.5; SchemeAndStackFoundations §§4.3–4.5; LocallyAnalyticDistributions §3.4 (gap:general-character-spaces); §3.1; §5.2.
+*Needs:* §6.1; §5.1; DeformationAndDerivedPatchingAlgebra §§2.1–2.5; SchemeAndStackFoundations §§4.3–4.5; PhiGammaModulesAndIwasawaCohomology §4.0; §3.1; §5.2.
 
 **Checks.**
 
@@ -917,7 +927,7 @@ For n=2,d=1, the framed Galois component dimension is 7. Adding the period frame
 
 ### Dependencies
 
-§3.4; §3.2; §2.2; PadicHodgeTheory §4.5; PadicHodgeTheory §§4.4–4.5, 5.2; §5.1; DeformationAndDerivedPatchingAlgebra §§2.1–2.5; SchemeAndStackFoundations §§4.3–4.5; LocallyAnalyticDistributions §3.4 (gap:general-character-spaces); §3.1; §5.2; §5.3; §1.4; §2.4; SpringerResolutionAndCharacteristicCycles I/incidence-scheme; DeformationAndDerivedPatchingAlgebra §§1.9, 1.11, 2.7; SpringerResolutionAndCharacteristicCycles I/component-closures; SpringerResolutionAndCharacteristicCycles N/normal-components; SpringerResolutionAndCharacteristicCycles C/cm-reductive-and-zero; DeformationAndDerivedPatchingAlgebra §§1.13–1.14; SchemeAndStackFoundations §§0.17, 0.21; DeformationAndDerivedPatchingAlgebra §§1.13–1.14, 3.1–3.2; SchemeAndStackFoundations §§0.17, 0.21; §3.5; SpringerResolutionAndCharacteristicCycles T/formal-component-detection; SpringerResolutionAndCharacteristicCycles N/cartan-relation; LocalGaloisDeformationRings §1.18; PadicHodgeTheory §4.3; SpringerResolutionAndCharacteristicCycles I/bruhat-support; SpringerResolutionAndCharacteristicCycles Y/cartan-zero-fibres.
+§3.4; §3.2; §2.2; PadicHodgeTheory §4.5; PadicHodgeTheory §§4.4–4.5, 5.2; §5.1; DeformationAndDerivedPatchingAlgebra §§2.1–2.5; SchemeAndStackFoundations §§4.3–4.5; PhiGammaModulesAndIwasawaCohomology §4.0; §3.1; §5.2; §5.3; §1.4; §2.4; SpringerResolutionAndCharacteristicCycles I/incidence-scheme; DeformationAndDerivedPatchingAlgebra §§1.9, 1.11, 2.7; SpringerResolutionAndCharacteristicCycles I/component-closures; SpringerResolutionAndCharacteristicCycles N/normal-components; SpringerResolutionAndCharacteristicCycles C/cm-reductive-and-zero; DeformationAndDerivedPatchingAlgebra §§1.13–1.14; SchemeAndStackFoundations §§0.17, 0.21; DeformationAndDerivedPatchingAlgebra §§1.13–1.14, 3.1–3.2; §3.5; SpringerResolutionAndCharacteristicCycles T/formal-component-detection; SpringerResolutionAndCharacteristicCycles N/cartan-relation; LocalGaloisDeformationRings §1.18; PadicHodgeTheory §4.3; SpringerResolutionAndCharacteristicCycles I/bruhat-support; SpringerResolutionAndCharacteristicCycles Y/cartan-zero-fibres.
 
 ## Layer 7: The analytic trianguline variety near a generic point
 
@@ -931,7 +941,7 @@ For x=(r,δ)∈X_tri with δ∈T₀ⁿ, the localized D_r[1/t] has a unique full
 
 One proof proceeds as follows. Apply global triangulation after a proper birational modification on each irreducible component through x. Use specialization and the rank-one localization classification to obtain a localized flag at x. Use generic H⁰ vanishing to prove uniqueness, independent of component and modification.
 
-*Needs:* CompletedCohomologyAndLocalGlobalCompatibility §5.2a; PhiGammaModulesAndIwasawaCohomology §§7.6–7.8; PhiGammaModulesAndIwasawaCohomology §7.8; §5.4.
+*Needs:* CompletedCohomologyAndLocalGlobalCompatibility §5.2a (gap:unrestricted-trianguline-variety); PhiGammaModulesAndIwasawaCohomology §§7.6–7.8; PhiGammaModulesAndIwasawaCohomology §7.8; §5.4.
 
 **Checks.**
 
@@ -945,15 +955,17 @@ For a generic x=(r,δ), the map X̂_tri,x→X_r obtained by forgetting δ factor
 
 (BHS19 Propositions 3.7.2–3.7.3 and their proofs, pp. 366–367; BHS19 line 2660.)
 
-One proof proceeds as follows. Use the supplier’s framed point-completion theorem. Pull the global triangulation to a proper birational modification; above the dense saturated locus the closed condition holds. Use reducedness, normalization and injectivity into the product of completed rings upstairs to descend the defining ideal. Recover the parameter from the based uniqueness theorem.
+One proof proceeds as follows. Use the supplier’s framed point-completion theorem. Pull the global triangulation to a proper birational modification, normalizing after each Fitting blowup so that the modification is a composite of normal stages, each locally the analytification of a projective birational morphism over an affinoid algebra; the pulled-back flag keeps its properties because each stage maps every component dominantly onto a component. Above the dense saturated locus the closed condition holds. Use reducedness and the injectivity of Ô_(X_tri,x) into the product of the completed rings at chosen points of the modification above each of the finitely many normalization points over x (gap:completed-normalization-injectivity) to descend the defining ideal; a single point upstairs does not suffice at a point with several branches. Recover the parameter from the based uniqueness theorem.
 
-*Needs:* §7.1; §5.4; LocalGaloisDeformationRings §1.18; PhiGammaModulesAndIwasawaCohomology §§7.6–7.8; AdicSpacesPartII R1; RigidAnalyticGeometry §§7.3, 8.1 (gap:analytic-local-algebra).
+*Needs:* §7.1; §5.4; LocalGaloisDeformationRings §1.18; PhiGammaModulesAndIwasawaCohomology §§7.6–7.8; AdicSpacesPartII R1; RigidAnalyticGeometry §§1.2, 8.1 (gap:completed-normalization-injectivity).
 
 **Checks.**
 
 - At rank one, an infinitesimal unramified twist changes the representation and its forced full parameter together; an independent parameter perturbation is not a point of the closed completion.
 
 - For tR⊂R the localized flag survives while the quotient R/tR is nonprojective; the closed condition concerns localization.
+
+- For the node A=E[[x,y]]/(xy), the normalization map A→E[[x]]×E[[y]] sends y to (0,y) and has kernel 0, whereas the projection to the single branch E[[x]] kills y; descent of the ideal uses the product over all branches.
 
 ### 7.3 Sen polynomials and infinitesimal root matching
 
@@ -979,7 +991,7 @@ Let x=(r,δ)∈X_tri with δ locally algebraic generic and with distinct labelle
 
 One proof proceeds as follows. The closed immersion §7.2 lies in the union of minimal components of the same dimension. Use the root-matching weight graph and §6.7 to select only the w-component. Reducedness and equidimensionality remove any additional ideal on that component. Base-change the double-flag comparison, then forget the independent n²-dimensional Galois frame. Retain both torsors and the Cartan maps: the total smooth dimension on the incidence side is n²+dn(n+1)/2.
 
-*Needs:* CompletedCohomologyAndLocalGlobalCompatibility §5.2a; §7.3; §6.8; §6.4; §6.7; DeformationAndDerivedPatchingAlgebra §§1.9, 1.11, 2.7.
+*Needs:* CompletedCohomologyAndLocalGlobalCompatibility §5.2a (gap:unrestricted-trianguline-variety); §7.3; §6.8; §6.4; §6.7; DeformationAndDerivedPatchingAlgebra §§1.9, 1.11, 2.7.
 
 **Checks.**
 
@@ -995,7 +1007,7 @@ Under §7.4, X_tri is normal, locally irreducible and Cohen–Macaulay in a neig
 
 One proof proceeds as follows. Apply the normal and CM local component theorem to the completed ring. Use excellence of the rigid local ring and descent of normality and CM from its completion. Shrink an affinoid neighbourhood using openness of the resulting loci.
 
-*Needs:* §7.4; §6.6; AdicSpacesPartII R1; RigidAnalyticGeometry §§7.3, 8.1 (gap:analytic-local-algebra); DeformationAndDerivedPatchingAlgebra §§1.13–1.14, 3.1–3.2; SchemeAndStackFoundations §§0.17, 0.21.
+*Needs:* §7.4; §6.6; AdicSpacesPartII R1; RigidAnalyticGeometry §§1.2, 8.1 (gap:rigid-normal-cm-openness); DeformationAndDerivedPatchingAlgebra §§1.13–1.14, 3.1–3.2; SchemeAndStackFoundations §§0.17, 0.21.
 
 **Checks.**
 
@@ -1009,7 +1021,7 @@ A closure point can have a unique localized flag with the displayed parameter an
 
 ### Dependencies
 
-CompletedCohomologyAndLocalGlobalCompatibility §5.2a; PhiGammaModulesAndIwasawaCohomology §§7.6–7.8; PhiGammaModulesAndIwasawaCohomology §7.8; §5.4; LocalGaloisDeformationRings §1.18; AdicSpacesPartII R1; RigidAnalyticGeometry §§7.3, 8.1 (gap:analytic-local-algebra); §3.5; §2.3; PadicHodgeTheory §4.4; §6.8; §6.4; §6.7; DeformationAndDerivedPatchingAlgebra §§1.9, 1.11, 2.7; §6.6; DeformationAndDerivedPatchingAlgebra §§1.13–1.14, 3.1–3.2; SchemeAndStackFoundations §§0.17, 0.21.
+CompletedCohomologyAndLocalGlobalCompatibility §5.2a (gap:unrestricted-trianguline-variety); PhiGammaModulesAndIwasawaCohomology §§7.6–7.8; PhiGammaModulesAndIwasawaCohomology §7.8; §5.4; LocalGaloisDeformationRings §1.18; AdicSpacesPartII R1; RigidAnalyticGeometry §§1.2, 8.1 (gap:completed-normalization-injectivity); RigidAnalyticGeometry §§1.2, 8.1 (gap:rigid-normal-cm-openness); §3.5; §2.3; PadicHodgeTheory §4.4; §6.8; §6.4; §6.7; DeformationAndDerivedPatchingAlgebra §§1.9, 1.11, 2.7; §6.6; DeformationAndDerivedPatchingAlgebra §§1.13–1.14, 3.1–3.2; SchemeAndStackFoundations §§0.17, 0.21.
 
 ## Layer 8: Flatness, accumulation and companion geometry
 
@@ -1021,9 +1033,9 @@ At x satisfying §7.4, ω′:X_tri→Tⁿ is flat in a neighbourhood of x. Conse
 
 (BHS19 Proposition 4.1.1, pp. 371–372; BHS19 line 2897.)
 
-One proof proceeds as follows. Add the period frame and use the cartesian comparison with the first Cartan map on X_w. Import flatness of that Cartan map at every point of every fibre; descend flatness by the smooth faithfully flat frame maps. Use the smooth unramified-character projection Tⁿ→Wⁿ.
+One proof proceeds as follows. Add the period frame and use the cartesian comparison with the first Cartan map on X_w. Import flatness of that Cartan map at every point of every fibre; descend flatness by the smooth faithfully flat frame maps and pass from completed to rigid local rings by faithful flatness of completion. Spread flatness at x to an affinoid neighbourhood. Use the smooth projection Tⁿ→Wⁿ of relative dimension n.
 
-*Needs:* §7.4; SpringerResolutionAndCharacteristicCycles C/cartan-flatness; §6.2.
+*Needs:* §7.4; SpringerResolutionAndCharacteristicCycles C/cartan-flatness; §6.2; PhiGammaModulesAndIwasawaCohomology §4.0; RigidAnalyticGeometry §§7.3, 8.1 (gap:rigid-flat-openness).
 
 **Checks.**
 
@@ -1039,7 +1051,7 @@ For x with algebraic unit weight, the accumulation property means that for every
 
 One proof proceeds as follows. Use the imported notion of crystalline representations and the noncritical refinement condition. Use the supplier’s rigid accumulation convention: Zariski density on a neighbourhood basis, not mere existence of a converging sequence.
 
-*Needs:* CompletedCohomologyAndLocalGlobalCompatibility §5.2a; LocalGaloisDeformationRings §3.10.
+*Needs:* CompletedCohomologyAndLocalGlobalCompatibility §5.2a (gap:unrestricted-trianguline-variety); LocalGaloisDeformationRings §3.10.
 
 The reusable interface has the following properties.
 
@@ -1061,23 +1073,23 @@ The reusable interface has the following properties.
 
 ### 8.3 Large weight gaps force saturated crystalline refinements
 
-Let x=(r,δ)∈X_tri satisfy δ_i(u)=∏_τ `tau(u)^(k_(tau,i))` for every u∈𝒪_K×, with integral `k_(tau,i)` that are dominant, `k_(tau,1)>=...>=k_(tau,n)` at every τ. Put e=[K:K₀] and normalize v_p(p)=1. If `k_(tau,i)-k_(tau,i+1)>e*v_p((delta_1...delta_i)(varpi_K))` for every τ and 1≤i<n, then the point is saturated and r is semistable. If also δ∈T_regⁿ, r is crystalline, the parameter is strictly dominant and the refinement is noncritical. This result uses the decreasing parameter-weight convention, not the increasing sorting h of the local model.
+Put e=[K:K₀] and normalize v_p(p)=1. At every point x=(r,δ) of X_tri, v_p((δ₁⋯δ_i)(ϖ_K))≥0 for 1≤i≤n. Let x satisfy δ_i(u)=∏_τ `tau(u)^(k_(tau,i))` for every u∈𝒪_K× and 1≤i≤n, with integers `k_(tau,i)`. If `k_(tau,i)-k_(tau,i+1)>e*v_p((delta_1...delta_i)(varpi_K))` for every τ and 1≤i<n, then `k_(tau,1)>...>k_(tau,n)` at every τ, the point is saturated and r is semistable. If also δ∈T_regⁿ, r is crystalline, the parameter is strictly dominant and the refinement is noncritical. No dominance of k is assumed: it follows from the prefix bound and the gap inequalities. This result uses the decreasing parameter-weight convention, not the increasing sorting h of the local model.
 
-The algebraic parameter weights are dominant `(k_(tau,1)>=...>=k_(tau,n))` at every embedding; once saturation is proved, the étale slope bound v_p((δ₁⋯δ_i)(ϖ_K))≥0 and the gap inequalities make them strictly decreasing.
+(BHSsmooth17 Lemma 2.10 and proof, author PDF p. 15 (Lemma 3.12 in arXiv:1510.01222v1); BHSsmooth17 lines 617–656.)
 
-(BHSsmooth17 Lemma 2.10 and proof, author PDF p. 15 (Lemma 3.12 in arXiv:1510.01222v1); BHSsmooth17 line 617.)
+One proof proceeds as follows. First the prefix bound: on U_tri the parameter δ is that of a saturated triangulation of the étale Robba module of r, so R(δ₁⋯δ_i) is a saturated rank-one submodule of its i-th exterior power and has slope ≥0, that is v_p((δ₁⋯δ_i)(ϖ_K))≥0. The locus of X_tri where `|(delta_1...delta_i)(varpi_K)|>1` is an admissible open contained in the complement of U_tri; that complement is Zariski closed of dimension less than dim X_tri in the reduced equidimensional X_tri, while a nonempty admissible open has full local dimension, so the locus is empty. Next, the gap inequalities and the prefix bound give `k_(tau,i)-k_(tau,i+1)>0`. Use the specialization theorem to obtain a saturated parameter δ′ with `delta'_i=delta_i z^(k_(w^(-1)(i))-k_i)` for some w=(w_τ)∈(Sₙ)^Σ. The slope bound for δ′ gives `e*v_p((delta_1...delta_i)(varpi_K))>=sum_(j<=i) sum_tau (k_(tau,j)-k_(tau,w_tau^(-1)(j)))`. Induct on i: if w_τ⁻¹ fixes 1,…,i−1 for all τ, every summand `k_(tau,i)-k_(tau,w_tau^(-1)(i))` is nonnegative by strict dominance and a nonzero one is at least `k_(tau,i)-k_(tau,i+1)`, contradicting the gap bound; hence w=1 and δ′=δ. The comparison of a sum over embeddings with a single gap needs every summand nonnegative, which the prefix bound supplies; without it the induction step is incomplete. With δ′=δ apply the semistability contract to the saturated triangulation, whose parameters have the algebraic unit restrictions z^(k_i) with strictly decreasing k. The regular-character exclusions eliminate the Frobenius ratios permitting nonzero monodromy, so semistability becomes crystallinity and gives the stated noncriticality.
 
-One proof proceeds as follows. Use the specialization theorem to obtain a saturated parameter δ′ differing from δ by a labelled permutation of algebraic weights. Apply slope-zero inequalities to each exterior power of the étale Robba module (sub-objects have slope ≥0). Induct on i: a nonidentity first remaining permutation contradicts the gap bound, because dominance makes every other summand of `sum_tau(k_(tau,i)-k_(tau,w^(-1)(i)))` nonnegative. With δ′=δ apply the semistability criterion for a trianguline representation with decreasing integral parameter weights. The regular-character exclusions eliminate the Frobenius ratios permitting nonzero monodromy, so semistability becomes crystallinity and gives the stated noncriticality.
-
-*Needs:* CompletedCohomologyAndLocalGlobalCompatibility §5.2a; PhiGammaModulesAndIwasawaCohomology §7.8; PadicHodgeTheory §5.2; PadicHodgeTheory §§4.4–4.5, 5.2; gap:dominant-trianguline-semistability.
+*Needs:* CompletedCohomologyAndLocalGlobalCompatibility §5.2a (gap:unrestricted-trianguline-variety); RigidAnalyticGeometry §§1.2, 7.3; AdicSpacesPartII R1.9; PhiGammaModulesAndIwasawaCohomology §7.8; PadicHodgeTheory §5.2; PadicHodgeTheory §§4.4–4.5, 5.2; gap:dominant-trianguline-semistability.
 
 **Checks.**
 
-- The arithmetic data d=2,e=1, weights (0,2) at both embeddings and first prefix slope −3 give −2>−3 while failing dominance. This numerical test supplies no crystalline point of X_tri: a noncritical refinement has relative position w₀, so its anti-dominant parameter is absent.
+- For n=1 the prefix bound is the equality v_p(δ₁(ϖ_K))=0 of an étale rank-one module; the unramified character with uniformizer value p has valuation 1 and is not a point of X_tri.
+
+- The arithmetic data d=2, e=1, n=2, weights (0,2) at both embeddings and prefix valuation −3 satisfy −2>−3 at each embedding, and with w=s at both embeddings the slope inequality −3≥(0−2)+(0−2)=−4 also holds, so the induction step alone does not force w=1. The prefix bound excludes valuation −3, so these data occur at no point of X_tri.
 
 - For e=2, prefix slope 1 and decreasing weights (4,1), the required inequality is 3>2; equality gap 2 would fail.
 
-- Once saturated, prefix slopes are ≥0; a dominant gap greater than e times such a slope is strictly positive.
+- At prefix valuation 0 the gap condition reads k_(τ,i)>k_(τ,i+1); the nondominant weights (0,2) fail it at every point of X_tri, so the hypothesis forces strict dominance rather than assuming it.
 
 - A nontrivial ramified finite-order rank-one character has derivative weight 0 and no adjacent inequality, but need not be semistable over K. It is excluded because its unit restriction is not the algebraic character 1; integrality of derivatives alone is insufficient.
 
@@ -1087,9 +1099,9 @@ A point x satisfying §7.4 whose restriction `delta|_((O_K^*)^n)` is algebraic h
 
 (BHS19 Proposition 4.1.4, pp. 373–374; BHS19 line 2946; BHSsmooth17 Lemma 2.10 and proof, author PDF pp. 15–16; first half of Proposition 2.12, pp. 16–17; BHSsmooth17 line 617.)
 
-One proof proceeds as follows. Choose the flat affinoid neighbourhood of x with open weight image. Use density of U_tri and local irreducibility as in BHS19 Proposition 4.1.4 to reduce to algebraic-weight points of the regular locus; retain the algebraic-centre hypothesis in this reduction. The flat weight map is open. On each chosen affinoid the finitely many prefix uniformizer valuations are bounded. At each reduced algebraic-weight point, use a local product chart for the smooth weight map and algebraic weights accumulating at that centre with arbitrarily large decreasing gaps. Apply §8.3 and the regular-character condition to obtain crystalline noncritical Frobenius-distinct points. Use the smooth weight map on U_tri and local irreducibility to obtain density in a neighbourhood basis, for every prescribed gap bound.
+One proof proceeds as follows. Choose a flat affinoid neighbourhood of x whose weight image is an admissible open of Wⁿ (gap:rigid-flat-openness). Use density of U_tri, local irreducibility (§7.5) and openness of the normal locus (gap:rigid-normal-cm-openness) as in BHS19 Proposition 4.1.4 to reduce to algebraic-weight points of the regular locus; retain the algebraic-centre hypothesis in this reduction. On each chosen affinoid the finitely many prefix uniformizer valuations are bounded. At each reduced algebraic-weight point, use a local product chart for the smooth weight map and the accumulation of algebraic weights with arbitrarily large decreasing gaps at that centre in Wⁿ (gap:general-character-spaces). Apply §8.3 and the regular-character condition to obtain crystalline noncritical Frobenius-distinct points. Use the smooth weight map on U_tri and local irreducibility to obtain density in a neighbourhood basis, for every prescribed gap bound.
 
-*Needs:* §8.1; §8.2; CompletedCohomologyAndLocalGlobalCompatibility §5.2a; §8.3; §7.5; LocallyAnalyticDistributions §3.4 (gap:general-character-spaces); AdicSpacesPartII R1; RigidAnalyticGeometry §§7.3, 8.1 (gap:analytic-local-algebra).
+*Needs:* §8.1; §8.2; CompletedCohomologyAndLocalGlobalCompatibility §5.2a (gap:unrestricted-trianguline-variety); §8.3; §7.5; PhiGammaModulesAndIwasawaCohomology §4.0 (gap:general-character-spaces); AdicSpacesPartII R1; RigidAnalyticGeometry §§1.2, 8.1 (gap:rigid-normal-cm-openness); RigidAnalyticGeometry §§7.3, 8.1 (gap:rigid-flat-openness).
 
 **Checks.**
 
@@ -1125,7 +1137,7 @@ r̄:G_K→GL_n(k_E) is fixed and k is strictly dominant at every embedding. Kisi
 
 A proof route uses the smooth framed crystalline deformation space of weight k and the locally free family (D,Φ) of filtered φ-modules over it. Form the fibre product with T^rig→T^rig/S_n, the map to T/S_n being the characteristic polynomial of `Phi^([K_0:Q_p])`; reducedness follows because T→T/S_n is finite flat and generically étale and the map to T/S_n is open (BHSsmooth17 Lemmas 2.2–2.3). Locally choose a basis of D; the Frobenius matrix and the Hodge filtration define a smooth morphism to (Res GL_n×Flag)^rig, and distinct eigenvalues, the transversality condition and regularity of the ratios cut out smooth Zariski-open dense loci (BHSsmooth17 Lemma 2.4). On W̃ a Frobenius-adapted basis gives h, and changing the adapted basis acts through B, so Bruhat cells are well defined. At noncritical regular points Berger’s dictionary turns the ordered refinement into a triangulation with parameter `z^(k) unr(phi)`, so those points map into U_tri; reducedness and density then give ι_k into X_tri, a closed immersion because (r,φ)↦(r,z^kunr(φ)) is a closed immersion into `X_(r_bar) x T^n`.
 
-*Needs:* LocalGaloisDeformationRings §3.10; LocalGaloisDeformationRings §3.6; PadicHodgeTheory §5.2; SpringerResolutionAndCharacteristicCycles F/flag-scheme; CompletedCohomologyAndLocalGlobalCompatibility §5.2a; LocallyAnalyticDistributions §3.4 (gap:general-character-spaces); AdicSpacesPartII R1; RigidAnalyticGeometry §§7.3, 8.1 (gap:analytic-local-algebra).
+*Needs:* LocalGaloisDeformationRings §3.10; LocalGaloisDeformationRings §3.6; PadicHodgeTheory §5.2; SpringerResolutionAndCharacteristicCycles F/flag-scheme; CompletedCohomologyAndLocalGlobalCompatibility §5.2a (gap:unrestricted-trianguline-variety); PhiGammaModulesAndIwasawaCohomology §4.0; AdicSpacesPartII R1; RigidAnalyticGeometry §§7.3, 8.1 (gap:rigid-flat-openness).
 
 The reusable interface has the following properties.
 
@@ -1175,7 +1187,7 @@ For a rank-two prefix valuation b and ramification index e, a positive adjacent 
 
 ### Dependencies
 
-§7.4; SpringerResolutionAndCharacteristicCycles C/cartan-flatness; §6.2; CompletedCohomologyAndLocalGlobalCompatibility §5.2a; LocalGaloisDeformationRings §3.10; PhiGammaModulesAndIwasawaCohomology §7.8; PadicHodgeTheory §5.2; PadicHodgeTheory §§4.4–4.5, 5.2; §7.5; LocallyAnalyticDistributions §3.4 (gap:general-character-spaces); AdicSpacesPartII R1; RigidAnalyticGeometry §§7.3, 8.1 (gap:analytic-local-algebra); §6.9; SpringerResolutionAndCharacteristicCycles T/tangent-space-bound; SpringerResolutionAndCharacteristicCycles T/smoothness-criterion; LocalGaloisDeformationRings §3.6; SpringerResolutionAndCharacteristicCycles F/flag-scheme; SpringerResolutionAndCharacteristicCycles I/bruhat-support.
+§7.4; SpringerResolutionAndCharacteristicCycles C/cartan-flatness; §6.2; CompletedCohomologyAndLocalGlobalCompatibility §5.2a (gap:unrestricted-trianguline-variety); LocalGaloisDeformationRings §3.10; RigidAnalyticGeometry §§1.2, 7.3; AdicSpacesPartII R1.9; PhiGammaModulesAndIwasawaCohomology §7.8; PadicHodgeTheory §5.2; PadicHodgeTheory §§4.4–4.5, 5.2; §7.5; PhiGammaModulesAndIwasawaCohomology §4.0 (gap:general-character-spaces); AdicSpacesPartII R1; RigidAnalyticGeometry §§1.2, 8.1 (gap:rigid-normal-cm-openness); RigidAnalyticGeometry §§7.3, 8.1 (gap:rigid-flat-openness); §6.9; SpringerResolutionAndCharacteristicCycles T/tangent-space-bound; SpringerResolutionAndCharacteristicCycles T/smoothness-criterion; LocalGaloisDeformationRings §3.6; SpringerResolutionAndCharacteristicCycles F/flag-scheme; SpringerResolutionAndCharacteristicCycles I/bruhat-support.
 
 ## Layer 9: Local trianguline cycles and the crystalline multiplicity formula
 
@@ -1187,9 +1199,9 @@ For a generic r with integral regular Sen weights, transfer the supplier’s top
 
 (BHS19 §4.3, (4.6)–(4.8) and Remark 4.3.1, pp. 377–380; BHS19 line 3079.)
 
-One proof proceeds as follows. Identify the completed logarithmic-weight fibre with the completed unit-character fibre by the formal étaleness of the logarithmic derivative on the character space; this comparison is part of the weight-space supplier request. Pull cycles through the formally smooth diagram with its fixed relative dimensions. Use the imported completion formula for generic lengths, then descend through the period frame. Check equivariance and algebraic-twist invariance before declaring the resulting cycles intrinsic.
+One proof proceeds as follows. Identify the completed logarithmic-weight fibre with the completed unit-character fibre by the étaleness of the logarithmic derivative on the unit character space (gap:general-character-spaces). Pull cycles through the formally smooth diagram with its fixed relative dimensions. Use the imported completion formula for generic lengths, then descend through the period frame. Check equivariance and algebraic-twist invariance before declaring the resulting cycles intrinsic.
 
-*Needs:* §7.4; SpringerResolutionAndCharacteristicCycles Y/top-cycle-group; SpringerResolutionAndCharacteristicCycles Y/module-cycle; SpringerResolutionAndCharacteristicCycles K/three-bases; SpringerResolutionAndCharacteristicCycles E/completion-cycle-map; SpringerResolutionAndCharacteristicCycles E/module-completion-formula; LocallyAnalyticDistributions §3.4 (gap:general-character-spaces); `Module.length`.
+*Needs:* §7.4; SpringerResolutionAndCharacteristicCycles Y/top-cycle-group; SpringerResolutionAndCharacteristicCycles Y/module-cycle; SpringerResolutionAndCharacteristicCycles K/three-bases; SpringerResolutionAndCharacteristicCycles E/completion-cycle-map; SpringerResolutionAndCharacteristicCycles E/module-completion-formula; PhiGammaModulesAndIwasawaCohomology §4.0 (gap:general-character-spaces); `Module.length`.
 
 The reusable interface has the following properties.
 
@@ -1215,11 +1227,11 @@ The reusable interface has the following properties.
 
 ### 9.2 Kazhdan–Lusztig identity for weight-fibre cycles
 
-For a de Rham generic regular point with parameter permutation w and relative position w_x, `[Spec O_bar_(X_tri,x)^(wt)]=sum_(w_x<=v<=w) P_(w_0 w,w_0 v)(1) C_v^wt` as cycles on the ambient framed deformation ring. These terms are nonzero in the de Rham case. The extremal `C_(w_0)^wt=Z_(w_0)^wt` is nonzero exactly for de Rham r, and for crystalline r is the corresponding fixed-weight crystalline fundamental cycle.
+Let r be trianguline with integral distinct labelled Sen weights h, let x=(r,δ)∈X_tri with δ∈T₀ⁿ, let M_• be the unique triangulation of D_rig(r)[1/t] with parameter δ (§7.1), let w satisfy wtδ=w(h), and let w_x be the relative position of x_pdR (§6.9). Then `[Spec O_bar_(X_tri,x)^(wt)]=sum_(w_x<=v<=w) P_(w_0 w,w_0 v)(1) C_v^wt` as cycles on the ambient framed deformation ring. No de Rham hypothesis enters this identity, and individual terms C_v^wt may vanish. If r is moreover de Rham, every term of the sum is nonzero. The extremal `C_(w_0)^wt=Z_(w_0)^wt` is nonzero exactly for de Rham r, and for crystalline r is the corresponding fixed-weight crystalline fundamental cycle.
 
-(BHS19 Remark 4.3.1 and Corollary 4.3.2, pp. 379–380; BHS19 line 3203.)
+(BHS19 Remark 4.3.1, Corollary 4.3.2 and (4.9), pp. 379–380; BHS19 lines 3203–3224.)
 
-One proof proceeds as follows. Apply the supplier’s completed KL identity before descending the frame. Use the support and simple-cycle triangularity to identify the nonzero terms. Compare the extremal zero section with the de Rham condition; in the crystalline case identify the appropriate crystalline quotient ring.
+One proof proceeds as follows. Apply the supplier’s completed KL identity before descending the frame. Use the support and simple-cycle triangularity to restrict the sum to w_x≤v≤w; for de Rham r (ν=0) the Bruhat closure description makes every remaining Z_v, hence every C_v, nonzero. Compare the extremal zero section with the de Rham condition; in the crystalline case identify the appropriate crystalline quotient ring.
 
 *Needs:* §9.1; SpringerResolutionAndCharacteristicCycles E/completed-kl-identity; SpringerResolutionAndCharacteristicCycles K/kl-transition; LocalGaloisDeformationRings §3.4.
 
@@ -1228,6 +1240,8 @@ One proof proceeds as follows. Apply the supplier’s completed KL identity befo
 - For S₂ all nonzero relevant KL values at 1 equal 1: w_x=e,w=s gives [fibre]=C_e+C_s, whereas w_x=s gives C_s.
 
 - For w=e,v=s the coefficient P_(s,e)(1)=0; dropping the w₀ factors reverses the support test.
+
+- For n=2,d=1 and the non-de Rham period operator N=[[0,1],[0,0]], the only N-stable line is E e₁, so both flags of x_pdR equal it, w_x=e and the Cartan coordinates vanish; x_pdR lies off the zero-section component Z_(w₀)=Z_s. For w=s the identity reads C_e+C_s with C_s=Z_s=0: a vanishing term that a de Rham nonvanishing clause would wrongly exclude. For N=0 and w_x=e the same sum C_e+C_s has both terms nonzero.
 
 ### 9.3 Embedding of the fixed-character fibre
 
@@ -1297,9 +1311,9 @@ One proof proceeds as follows. For every constituent family, use a principal-ser
 
 ### 9.6 Full-character cycles and their dimensions
 
-For de Rham generic regular r, transfer the same simple local-model cycles to C_v^δ on the full-character fibre through diagram (4.11); the additional n unramified-character coordinates are fixed. These cycles have codimension dn(n+1)/2+n, hence dimension n²−n+dn(n−1)/2, in the smooth ambient Galois ring of dimension n²+dn². The construction is independent of the auxiliary period frame.
+For r, x=(r,δ), M_• and x_pdR as in §9.2 (trianguline with integral distinct labelled Sen weights, δ∈T₀ⁿ, no de Rham hypothesis), transfer the same simple local-model cycles to C_v^δ on the full-character fibre through diagram (4.11); the additional n unramified-character coordinates are fixed. These cycles have codimension dn(n+1)/2+n, hence dimension n²−n+dn(n−1)/2, in the smooth ambient Galois ring of dimension n²+dn². The construction is independent of the auxiliary period frame.
 
-(BHS19 Diagram (4.11) and discussion before Proposition 4.3.7, pp. 382–383; BHS19 line 3316.)
+(BHS19 Diagram (4.11) and discussion before Proposition 4.3.7, pp. 382–383; BHS19 lines 3303–3334.)
 
 One proof proceeds as follows. Refine the weight-fibre comparison by fixing the n unramified character coordinates. Use smooth pullback and descent of cycles as in the weight transfer. Calculate the codimension from the two independent framing dimensions and all dn+n character coordinates.
 
@@ -1327,13 +1341,13 @@ The reusable interface has the following properties.
 
 ### 9.7 Independence from the principal-series presentation
 
-If two admissible presentations (w,δ) give isomorphic irreducible locally analytic constituents Π_w, the associated full-character cycles C_w^δ agree. Thus they depend only on r and Π_w in the generic de Rham setting where constructed.
+If two admissible presentations (w,δ) give isomorphic irreducible locally analytic constituents Π_w, the associated full-character cycles C_w^δ agree. Thus they depend only on r and Π_w in the generic setting of §9.6, without a de Rham hypothesis.
 
 The constituent supplier supplies the precise constituent-isomorphism criterion and dominant parabolic conventions.
 
 (BHS19 Proposition 4.3.7 and proof, pp. 383–384; BHS19 line 3342.)
 
-One proof proceeds as follows. Reduce to permutations within the dominant Levi blocks. Use ν=0 splitting of the localized module and the supplier’s parabolic invariance of simple cycles. Transport the resulting identity through the full-character diagram.
+One proof proceeds as follows. Reduce to permutations within the dominant Levi blocks. Stability of the relevant components under the block reflections forces the nilpotent operator induced on each Levi-block graded piece to vanish; apply the ν=0 splitting of §5.4 blockwise, and the supplier’s parabolic invariance of simple cycles. Transport the resulting identity through the full-character diagram.
 
 *Needs:* §9.6; §5.4; SpringerResolutionAndCharacteristicCycles P/parabolic-cycle-invariance; gap:constituent-conventions.
 
@@ -1381,7 +1395,7 @@ For n=2,d=1 the smooth ambient Galois ring has dimension 8. A weight fibre has d
 
 ### Dependencies
 
-§7.4; SpringerResolutionAndCharacteristicCycles Y/top-cycle-group; SpringerResolutionAndCharacteristicCycles Y/module-cycle; SpringerResolutionAndCharacteristicCycles K/three-bases; SpringerResolutionAndCharacteristicCycles E/completion-cycle-map; SpringerResolutionAndCharacteristicCycles E/module-completion-formula; LocallyAnalyticDistributions §3.4 (gap:general-character-spaces); `Module.length`; SpringerResolutionAndCharacteristicCycles E/completed-kl-identity; SpringerResolutionAndCharacteristicCycles K/kl-transition; LocalGaloisDeformationRings §3.4; §7.2; §5.4; §6.2; SpringerResolutionAndCharacteristicCycles P/parabolic-cycle-invariance; §8.7; §8.1; SpringerResolutionAndCharacteristicCycles S/steinberg-components.
+§7.4; SpringerResolutionAndCharacteristicCycles Y/top-cycle-group; SpringerResolutionAndCharacteristicCycles Y/module-cycle; SpringerResolutionAndCharacteristicCycles K/three-bases; SpringerResolutionAndCharacteristicCycles E/completion-cycle-map; SpringerResolutionAndCharacteristicCycles E/module-completion-formula; PhiGammaModulesAndIwasawaCohomology §4.0 (gap:general-character-spaces); `Module.length`; SpringerResolutionAndCharacteristicCycles E/completed-kl-identity; SpringerResolutionAndCharacteristicCycles K/kl-transition; LocalGaloisDeformationRings §3.4; §7.2; §5.4; §6.2; SpringerResolutionAndCharacteristicCycles P/parabolic-cycle-invariance; §8.7; §8.1; SpringerResolutionAndCharacteristicCycles S/steinberg-components.
 
 ## Layer 10: Crystabelline Hodge parameters and modification
 
@@ -1587,7 +1601,7 @@ Use the supplier’s identification of first-order deformations with Ext¹(D,D),
 
 A proof route uses Herr–Yoneda Ext and local Galois/Robba deformation equivalences. Differentiate multiplication of rank-one characters over E[ε]/ε². Use the unit/uniformizer decomposition of K× and the d independent embedding logarithms.
 
-*Needs:* LocalGaloisDeformationRings §§0.4, 1.23; PhiGammaModulesAndIwasawaCohomology §3.4a; LocallyAnalyticDistributions §3.4 (gap:general-character-spaces).
+*Needs:* LocalGaloisDeformationRings §§0.4, 1.23; PhiGammaModulesAndIwasawaCohomology §3.4a; PhiGammaModulesAndIwasawaCohomology §§4.0, 7.3.
 
 **Checks.**
 
@@ -1767,7 +1781,7 @@ For n=2,d=1, the full, de Rham and trianguline self-Ext dimensions are 5, 2 and 
 
 ### Dependencies
 
-LocalGaloisDeformationRings §§0.4, 1.23; PhiGammaModulesAndIwasawaCohomology §3.4a; LocallyAnalyticDistributions §3.4 (gap:general-character-spaces); §10.1; `LinearMap.ker`; `LinearMap.finrank_range_add_finrank_ker`; §10.2; PhiGammaModulesAndIwasawaCohomology §§1.1–1.2; §5.2.
+LocalGaloisDeformationRings §§0.4, 1.23; PhiGammaModulesAndIwasawaCohomology §3.4a; PhiGammaModulesAndIwasawaCohomology §§4.0, 7.3; §10.1; `LinearMap.ker`; `LinearMap.finrank_range_add_finrank_ker`; §10.2; PhiGammaModulesAndIwasawaCohomology §§1.1–1.2; §5.2.
 
 ## Layer 12: Partial de Rham deformation spaces
 
@@ -2061,7 +2075,9 @@ One proof proceeds as follows. Project the common signed relation onto either se
 
 ### 13.6 The first/last-filtration higher-intertwining criterion
 
-Let F be D₁⊂D and G be `R(phi_n z^(h_1)) subset D`. For D̃∈Ext¹_F(D,D), write κ_F(D̃)=(D̃₁,ψ). Then D̃ also belongs to Ext¹_G if and only if D̃₁⊗R(1−εψ) belongs to `Ext^1_(iota_D)(D_1,D_1)`. In that case `kappa_(G,2)=psi` and there is M∈Ext¹(C₁,D₁) with D̃₁=ι_D⁻M⊗R(1+εψ) and `kappa_(G,1)=iota_D^(+)M tensor R(1+eps psi)`. All Robba coefficients are over K.
+Let F be D₁⊂D and G be `R(phi_n z^(h_1)) subset D`. In filtration order, F has graded pieces D₁ of rank n−1 and `R(phi_n z^(h_n))`, and G has graded pieces `R(phi_n z^(h_1))` and C₁ of rank n−1; first-order deformations of a rank-one module are Hom(K×,E) by §11.1. Define κ_F=(κ_(F,1),κ_(F,2)):Ext¹_F(D,D)→Ext¹(D₁,D₁)×Hom(K×,E) as §11.6's graded map of F. Define κ_G=(κ_(G,1),κ_(G,2)):Ext¹_G(D,D)→Ext¹(C₁,C₁)×Hom(K×,E) as §11.6's graded map of G, whose target in filtration order is Hom(K×,E)×Ext¹(C₁,C₁), followed by the exchange of the two factors: κ_(G,1) records the quotient C₁ and κ_(G,2) the rank-one submodule. The partial maps κ_(σ,F) and κ_(σ,G) on the partial paraboline spaces of §12.2, for D and for D_σ, are defined in the same way, κ_(σ,G) with the same exchange. These conventions are used in §§13.6–13.15.
+
+For D̃∈Ext¹_F(D,D), write κ_F(D̃)=(D̃₁,ψ). Then D̃ also belongs to Ext¹_G if and only if D̃₁⊗R(1−εψ) belongs to `Ext^1_(iota_D)(D_1,D_1)`. In that case κ_(G,2)(D̃)=ψ and there is M∈Ext¹(C₁,D₁) with D̃₁=ι_D⁻M⊗R(1+εψ) and κ_(G,1)(D̃)=ι_D⁺M⊗R(1+εψ). All Robba coefficients are over K.
 
 (Ding25 Theorem 2.32, pp. 28–29; Ding25 line 1233.)
 
@@ -2074,6 +2090,8 @@ One proof proceeds as follows. Twist by 1−εψ to reduce to ψ=0. Identify the
 - For a scalar twist D⊗R(1+εψ), twisting its first graded piece by 1−εψ cancels since (1+εψ)(1−εψ)=1.
 
 - At ψ=0 the condition is exactly membership of the pullback image and both graded twists are trivial.
+
+- At n=3,d=1 the filtration-ordered target of G is Hom(K×,E)×Ext¹(C₁,C₁), of dimensions (2,5), whereas κ_G lands in Ext¹(C₁,C₁)×Hom(K×,E), of dimensions (5,2). For the scalar deformation D⊗R(1+εψ) the filtration-ordered output of G is (ψ,C₁⊗R(1+εψ)), and κ_G gives (C₁⊗R(1+εψ),ψ): κ_(G,2)=ψ and κ_(G,1)=ι_D⁺(0)⊗R(1+εψ) with M=0, as asserted. Without the exchange the second coordinate would be C₁⊗R(1+εψ), not ψ.
 
 ### 13.7 Two paraboline spaces span self-Ext
 
@@ -2113,7 +2131,7 @@ Set V=(barExt¹(D₁,D₁)×Hom(K×,E))⊕(barExt¹(C₁,C₁)×Hom(K×,E)). Def
 
 (Ding25 Definition preceding Corollary 2.34, p. 30; Ding25 line 1274.)
 
-One proof proceeds as follows. Use the quotient paraboline product isomorphisms to identify V with barExt¹_F⊕barExt¹_G. Show that changing representatives by Ext¹₀ is absorbed by the de Rham image subspaces in I_D. Apply the signed matched relation after the two opposite twists and prove the result is a linear subspace.
+One proof proceeds as follows. Use the quotient paraboline product isomorphisms, through κ_F and the exchanged κ_G of §13.6, to identify V with barExt¹_F⊕barExt¹_G. Show that changing representatives by Ext¹₀ is absorbed by the de Rham image subspaces in I_D. Apply the signed matched relation after the two opposite twists and prove the result is a linear subspace.
 
 *Needs:* §13.4; §11.4; §11.7; §13.6.
 
@@ -2173,7 +2191,7 @@ One proof proceeds as follows. Repeat the torsion-quotient image computation wit
 
 ### 13.12 Higher intertwining with one varying Hodge embedding
 
-For `D_tilde_sigma in Ext^1_(sigma,F)(D_sigma,D_sigma)` with κ_F=(D̃₁,σ,ψ), ψ∈Hom_σ(K×,E), the additional G-filtration exists exactly when `D_tilde_1,sigma tensor R_(K,E[eps]/eps^2)(1-eps psi)` belongs to the partial injection image. In this case `kappa_(G,2)=psi` and a common M∈Ext¹_σ(C₁,σ,D₁,σ) gives both graded deformations with the same +εψ twist, as in §13.6.
+For `D_tilde_sigma in Ext^1_(sigma,F)(D_sigma,D_sigma)` with κ_(σ,F)(D̃_σ)=(D̃₁,σ,ψ), ψ∈Hom_σ(K×,E), the additional G-filtration exists exactly when `D_tilde_1,sigma tensor R_(K,E[eps]/eps^2)(1-eps psi)` belongs to the partial injection image. In this case κ_(σ,G,2)(D̃_σ)=ψ, and a common M∈Ext¹_σ(C₁,σ,D₁,σ) gives D̃₁,σ=ι_(D_σ)⁻M⊗R(1+εψ) and κ_(σ,G,1)(D̃_σ)=ι_(D_σ)⁺M⊗R(1+εψ), with κ_(σ,G) exchanged as in §13.6.
 
 (Ding25 Theorem 2.37, p. 31; Ding25 line 1349.)
 
@@ -2193,7 +2211,7 @@ Set V_σ=(barExt¹_σ(D₁,σ,D₁,σ)×Hom_σ(K×,E))⊕(barExt¹_σ(C₁,σ,C�
 
 (Ding25 Definition preceding Corollary 2.38, pp. 31–32; Ding25 line 1356.)
 
-One proof proceeds as follows. Use the partial graded quotient products and the modified zero subspaces. Descend the partial matched relation through those quotients using its de Rham image containment. Verify compatibility with the scalar σ-analytic character coordinates.
+One proof proceeds as follows. Use the partial graded quotient products through κ_(σ,F) and the exchanged κ_(σ,G), and the modified zero subspaces. Descend the partial matched relation through those quotients using its de Rham image containment. Verify compatibility with the scalar σ-analytic character coordinates.
 
 *Needs:* §13.12; §12.6; §13.9.
 
@@ -2269,9 +2287,9 @@ For f=g=id_E, the matched relation is {(a,−a)}. Its two projections are both a
 
 ## Downstream consumers
 
-PadicFamilies, Layers L2a and L3, and ModularityAndLanglandsExtensions §4.3 use the local noncritical and numerical interfaces together with their ordered deformation suppliers. CompletedCohomologyAndLocalGlobalCompatibility §5.2a uses the underlying Robba and regular trianguline objects independently; its global conclusions and completed-cohomology local–global comparisons can consume the component and cycle refinements of Layers 7–9. No local-model theorem takes a global patching theorem as a proof input.
+PadicHodgeParametersInLocallyAnalyticRepresentations TR1–TR5 consume the refinement derivatives, paraboline products, injection images, higher-intertwining relations and σ-partial recovery sequences of Layers 10–13. Its locally analytic representation comparison supplies no prerequisite here.
 
-PadicHodgeParametersInLocallyAnalyticRepresentations TR1–TR5 consume the refinement derivatives, paraboline products, injection images, higher-intertwining relations and σ-partial recovery sequences of Layers 10–13. Its locally analytic representation comparison supplies no prerequisite here. Future eigenvariety companion and socle applications consume the local companion and crystalline cycle theorems; no global companion or automorphy statement is asserted by these local results.
+PadicFamilies, CompletedCohomologyAndLocalGlobalCompatibility and ModularityAndLanglandsExtensions precede this roadmap and consume none of its results; the latter two enter only as the suppliers named above. The local companion criterion and the crystalline cycle theorems assert no global companion, socle or automorphy statement.
 
 ## Worked examples
 
