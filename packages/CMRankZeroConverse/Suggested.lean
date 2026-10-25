@@ -89,7 +89,8 @@ theorem congruentNumber_half_discriminants :
 
 /-! ## Layer 6: CM twists, cube sums and non-descent -/
 
-/-- The odd-valuation support height on the native squareclass quotient.
+/-- The odd-valuation support height on the native squareclass quotient over any
+number field, restating ArithmeticStatisticsPartI §0.5 for the headline signatures.
 The finite product uses the principal fractional ideal of a nonzero
 representative; changing it by a square preserves every valuation parity. -/
 noncomputable def squareclassHeight {K : Type*} [Field K] [NumberField K]

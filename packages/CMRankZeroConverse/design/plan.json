@@ -1826,6 +1826,12 @@
   ],
   "gaps": [
     {
+      "slug": "all-coefficient-places-zeta",
+      "needs": "for every normalized cuspidal newform of weight k≥2, every prime p and every coefficient place λ|p, export the actual E-linear zeta morphism of Kato Theorem 12.5(1), its relation z(cγ)=−σ₋₁z(γ) and critical interpolation on F-rational vectors, compatibly with rational lattice change, Tate twisting and central specialization, without an admissibility restriction.",
+      "supplier": "KatoEulerSystems",
+      "section": "4.6, 5.1 and 5.3"
+    },
+    {
       "slug": "newform-central-analytic-interface",
       "needs": "for every normalized cuspidal newform of weight k≥2 and every coefficient embedding, export L(f*,h)=conjugate L(f,h) for the coefficient-conjugate cusp form, and L⁽ᵖ⁾(f*,s)=P_p(f*,p⁻ˢ)L(f*,s) on all of ℂ, with the actual bad-prime factor when p divides the level.",
       "supplier": "ModularForms",
