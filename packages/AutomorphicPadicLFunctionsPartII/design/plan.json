@@ -3225,7 +3225,7 @@
     },
     {
       "slug": "ray-tower-tame-unit-kernel",
-      "needs": "Supply the inverse-limit fp∞ ray-class Galois comparison and exact kernel over Cl_f equal to the local p-unit group modulo the closure of O_f×, with arithmetic Artin and finite-level transition compatibility.",
+      "needs": "Supply the inverse-limit fp∞ ray-class Galois comparison and exact kernel over Cl_f equal to the local p-unit group modulo the closure of O_f×, with arithmetic Artin on ideals, the ideal-theoretic local-unit inclusion inverse to local idelic Artin, and finite-level transition compatibility.",
       "supplier": "ClassFieldTheory",
       "section": "Layers 11–13"
     }

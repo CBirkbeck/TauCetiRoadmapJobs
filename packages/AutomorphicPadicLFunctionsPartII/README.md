@@ -25,7 +25,7 @@ Use the covariant module H=(H¹_dR(A/R))∨ and its splitting H(barΣ)⊕H(Σ), 
 
 R is a noetherian arithmetic subring of ℂ and an O_(L^gal)[1/d_L]-algebra. Bases of invertible eigensheaves are chosen after a permitted localization or base extension. The p-adic objects are the indicated completed base changes; O_(ℂ_p) is not required noetherian. Define R[1/a] inside Frac(R) as the intersection of R_m over maximal ideals m whose contraction to O_L does not divide a; for R=O_L these are the a-integers (KS-v4, Notation 1.18, p.12, KS-v4 line 542). All number-field extensions are separable. Zero rings, equal-characteristic coefficient fields and nonreduced arithmetic bases are outside this embedded arithmetic datum; finite-flat theory in the supplier contracts retains its own broader bases.
 
-All conductor, auxiliary and fractional ideals are nonzero; the unit ideal is permitted wherever stated and the zero ideal is excluded. Thus every ideal norm used as a denominator is positive. Write h for a residue function and f for a conductor ideal. Mathematical symbols EK(h), θ(h) and μ(h) always carry their datum and group. Hecke values use χ((λ))=λ^(β−α) for principal ray generators. The idelic infinity exponent is the opposite of this ideal exponent. Arithmetic Artin maps a prime ideal to arithmetic Frobenius. Ramified ideal values, including the notation χ(v⁻¹), are set to zero only inside the specified Euler-factor extension; zero is never inverted. At an unramified prime, χ(v⁻¹)=χ(v)⁻¹. For conjugate-sum weight w the ideal-unitary shift is L(χ,s)=L(χᵘ,s−w/2), with χᵘ(a)=χ(a)Na^(−w/2) (KS-v4, §4.1, pp.46–47, KS-v4 line 2158).
+All conductor, auxiliary and fractional ideals are nonzero; the unit ideal is permitted wherever stated and the zero ideal is excluded. Thus every ideal norm used as a denominator is positive. Write h for a residue function and f for a conductor ideal. Mathematical symbols EK(h), θ(h) and μ(h) always carry their datum and group. Hecke values use χ((λ))=λ^(β−α) for principal ray generators. The idelic infinity exponent is the opposite of this ideal exponent. Arithmetic Artin maps a prime ideal to arithmetic Frobenius. The local-unit inclusion in the ray tower is ideal-theoretic: modulo fp^n a local unit u maps to the ray class of (λ), where λ≡1 mod f and λ≡u mod p^n. It is inverse to the idelic map u↦Art(u_p); §8.3 uses this inclusion. Ramified ideal values, including the notation χ(v⁻¹), are set to zero only inside the specified Euler-factor extension; zero is never inverted. At an unramified prime, χ(v⁻¹)=χ(v)⁻¹. For conjugate-sum weight w the ideal-unitary shift is L(χ,s)=L(χᵘ,s−w/2), with χᵘ(a)=χ(a)Na^(−w/2) (KS-v4, §4.1, pp.46–47, KS-v4 line 2158; §5.6, pp.72–73, KS-v4 lines 3336–3350).
 
 The Hermitian form is linear in the first variable: H(z,w)=Σh_i z_i barw_i, h_i>0; ⟨z,w⟩=Im H(z,w). Its alternating dual fixes both lattice characters and covolumes. Currents pair by η↦∫η∧ω. The unit torus is oriented by dr₁/r₁∧⋯∧dr_(d−1)/r_(d−1). Every use of a cap is integral for torsion-free Γ; the normalized extension through finite torsion first inverts its order. Division by a nonunit group index uses §5.4 for critical coordinates and §8.3 for weighted ray-quotient measures. Theta functions and Eisenstein measures before that pushforward use torsion-free groups Γ and are classes in Γ-coinvariants; only Γ-invariant functionals of them are used. The class sign ε(d,a,β) of §4.3 is retained in the critical moments and interpolation. These normalizations are tested in the layers that use them (KS-v4, §§2.4, 3.2–3.4, pp.22–23,33–39, KS-v4 lines 961, 1383, 1486, 1506).
 
@@ -51,9 +51,9 @@ Use `TauCeti.GlobalNumberFields.HeckeCharacter.IsAlgebraic` in `TauCeti/NumberTh
 
 ### From TauCetiRoadmap.GlobalNumberFields and TauCetiRoadmap.ClassFieldTheory
 
-GlobalNumberFields Layers 2, 7 and 9–10 supply ray classes, the ideal/idelic character comparison, continuous and algebraic infinity types, finite-order twists, unit compatibility, purity and norm base change. ClassFieldTheory Layers 7 and 11–13 supply normalized local/global Artin reciprocity, the finite ray extensions and the inverse-limit identification for the modulus fp∞. The kernel over a fixed tame ray class is the local unit group modulo the closure of units congruent to one modulo f. At f=O_L this becomes the full unit closure. Arithmetic Frobenius, inversion and the norm shift must agree with §§5.3 and 8.3.
+GlobalNumberFields Layers 2, 7 and 9–10 supply ray classes, the ideal/idelic character comparison, continuous and algebraic infinity types, finite-order twists, unit compatibility, purity and norm base change. ClassFieldTheory Layers 7 and 11–13 supply normalized local/global Artin reciprocity, the finite ray extensions and the inverse-limit identification for the modulus fp∞. The kernel over a fixed tame ray class is the local unit group modulo the closure of units congruent to one modulo f. At f=O_L this becomes the full unit closure. Arithmetic Frobenius, inversion and the norm shift must agree with §§5.3 and 8.3. The kernel identification with local units is ideal-theoretic, inverse to the local idelic Artin map; its avatar formula is χ(q_f(u))=χ_fin(u)u^(β−α), with q_f followed by that inclusion.
 
-What ClassFieldTheory must provide (gap:ray-tower-tame-unit-kernel): Supply the inverse-limit fp∞ ray-class Galois comparison and exact kernel over Cl_f equal to the local p-unit group modulo the closure of O_f×, with arithmetic Artin and finite-level transition compatibility.
+What ClassFieldTheory must provide (gap:ray-tower-tame-unit-kernel): Supply the inverse-limit fp∞ ray-class Galois comparison and exact kernel over Cl_f equal to the local p-unit group modulo the closure of O_f×, with arithmetic Artin on ideals, the ideal-theoretic local-unit inclusion inverse to local idelic Artin, and finite-level transition compatibility.
 
 What GlobalNumberFields must provide (gap:unit-type-classification): Classify integer embedding types trivial on a finite-index unit subgroup as norm pullbacks from the maximal CM subfield with parallel conjugate sum, or parallel norm powers when no CM subfield exists.
 
@@ -260,17 +260,15 @@ The construction has the following API.
 
 - The localization boundary of EK(h) equals the canonical support class of h.
 - EK is R-linear and injective.
-- A commuting support/trace/base-change diagram carries EK(h) to the class of the transported h, by uniqueness.
+- A commuting support/trace/base-change diagram carries EK(h) to the class of the transported h, by uniqueness; scalar extension requires flatness or an explicit base-change theorem.
 
 One proof route uses trace zero to place the support class of h in the localization kernel. Vanishing below d makes the preimage unique; retain the full trace square to prove injectivity and naturality.
 
 **Checks.**
 
-- EK(0)=0 and a class in its image with zero residue vanishes.
-- For d=1 and Γ=1 the class is a section of P_hat⊗Ω¹ on U with the prescribed infinitesimal Kronecker residues.
-- A split two-point function with values (1,1) in characteristic zero does not lie in the constructor domain.
-- Residue(EK(h))=h in the canonical supported submodule.
-- Flatness or an explicit base-change theorem accompanies each claimed scalar-extension compatibility.
+- Take d=1, Γ=1 and the norm-three ideal (1+√−2) in ℤ[√−2], over a permitted base inverting 3 and splitting its kernel as {e,P,−P}. For h=(2,−1,−1), the three residues of EK(h) are (2,−1,−1), so EK(h) is nonzero; the zero construction fails.
+- On the same kernel k=(0,1,−1) has trace 0, and EK(k) has residue +1 at P and −1 at −P. Its residue at e is 0 rather than 2, so EK(k)≠EK(h); identifying all nonzero inputs or reversing the residue signs fails.
+- The constant function (1,1,1) has trace 3≠0 and is rejected. Inverting 3 makes the isogeny and its dual étale; it does not make that trace zero.
 
 *Needs:* §1.2; AbelianSchemesAndArithmeticModuliPartII P2.6; SchemeAndStackFoundations §2.23; SchemeAndStackFoundations §2.7.
 
@@ -480,11 +478,11 @@ One proof route is to use the generic Borel comparison requested from SchemeAndS
 
 ### 3.2 Relative currents and residue-normalized integration
 
-For 0≤p≤d and 0≤q≤2d−1, on A(ℂ)×EΓ define D^(p,q) as the continuous dual of compactly supported smooth test forms of bidegree (d−p,2d−1−q), with their usual inductive-limit smooth topology; outside these ranges the current spaces are zero. For a smooth form ω its current is η↦∫η∧ω; extend the differential by (∇″T)(η)=(−1)^(3d−1−p−q)T(∇″η) for a (p,q)-current and dual connection on the tests. This sign follows from Stokes with the order η∧ω; on the (d,q) complex it is (−1)^(2d−1−q). Construct the Γ-equivariant bundle-valued finite-level current complex and prove the inclusion from forms is a quasi-isomorphism. Fix its local Thom/residue normalization to match the algebraic support trace used in Layer 1; in particular the current δ_t·vol has residue the rigidified unit at t. These are the relative bigraded complexes specific to the unit Borel model; the generic test topology and regularization are the C5.4 current calculus, and the mixed-bidegree connection resolution uses the specified extension contract.
+For 0≤p≤d and 0≤q≤2d−1, on A(ℂ)×EΓ define D^(p,q) as the continuous dual of compactly supported smooth test forms of bidegree (d−p,2d−1−q), with their usual inductive-limit smooth topology; outside these ranges the current spaces are zero. For a smooth form ω its current is η↦∫η∧ω; extend the differential by (∇″T)(η)=(−1)^(3d−1−p−q)T(∇″η) for a (p,q)-current and dual connection on the tests. This sign follows from Stokes with the order η∧ω; on the (d,q) complex it is (−1)^(2d−1−q). Construct the Γ-equivariant bundle-valued finite-level current complex and prove the inclusion from forms is a quasi-isomorphism. Fix its local Thom/residue normalization to match the algebraic support trace used in Layer 1; in particular the current δ_t·vol has residue the rigidified unit at t. Here δ_t is the Dirac distribution relative to Haar probability on A(ℂ): δ_t·vol=(2πi)^d[t], where [t] is the integration current of the point in the A-direction, extended constantly along EΓ. These are the relative bigraded complexes specific to the unit Borel model; the generic test topology and regularization are the C5.4 current calculus, and the mixed-bidegree connection resolution uses the specified extension contract.
 
 Assume the Borel model; smooth Poincaré coefficients at finite levels; compact supports for tests.
 
-(KS-v4, Definition 3.9 and Corollary 3.10, p.34; Corollary 3.22, p.41, KS-v4 line 1486.)
+(KS-v4, Definition 3.9 and Corollary 3.10, p.34; Corollary 3.22, p.41, KS-v4 line 1486; Definition 3.19 and equation (3.5.1), p.39, KS-v4 lines 1789–1797, with the Dirac normalization specified here.)
 
 The construction has the following API.
 
@@ -497,10 +495,10 @@ One proof route is to use C1 local regularization and its homotopy to compare sm
 **Checks.**
 
 - For d=1 a (1,0)-current tests (0,1)-forms, so their wedge is top real degree two.
-- A single point Thom current pairs to 1 against a test function equal to 1 near that point under the chosen residue convention.
+- The point integration current [t] pairs to 1 against a test function equal to 1 near t; δ_t·vol pairs to (2πi)^d, and division by this residue factor gives 1.
 - A discontinuous algebraic functional on the smooth test-form space is excluded, even if it has the correct linear type.
 - Continuity of the linear functional is required; the algebraic dual alone is too large.
-- The order η∧ω is used consistently in differentiation, contraction and fibre integration.
+- For d=1 and Λ=2ℤ+iℤ, covol_Leb=2, C=−π/2 and vol=πi·dx∧dy. A Lebesgue Dirac would give πi at a test function equal to 1 near t, whereas δ_t relative to Haar probability is twice that Dirac and gives 2πi. The current derivative has value 2πi·h(t) on a test supported near t, so the Lebesgue reading fails when h(t)=1.
 - In real dimension two at (p,q)=(1,0), Stokes gives ∫η∧dω=−∫dη∧ω; the differential sign is −1. Reversing the order of the two one-forms reverses their wedge sign.
 
 *Needs:* §3.1; Hyperfunctions HF2.AnalyticPreparation.CurrentResolution; AbelianSchemesAndArithmeticModuliPartII P3.2/P3.4; ComplexComparisonPartII C1.1 (gap:borel-bundle-currents); ComplexComparisonPartII C5.4 (gap:current-residue-trace).
@@ -559,7 +557,7 @@ One proof route applies ThetaSeries Layer 1, items 1A, 1E and 1F, to x↦barx^ν
 
 Let vol(A)=∫_A ∧_i(dz_i∧dbarz_i)=(-2i)^d times the positive real covolume of Λ, so vol(A)≠0. Put C=(2πi)^d/vol(A)=(−π)^d/covol_Leb(Λ), vol=C·∧_i(dz_i∧dbarz_i), χ_ℓ(z)=exp(2πi⟨ℓ,z⟩), and v_ℓ=Σ_i(barℓ_i/r_i)∂/∂barz_i for ℓ in the standard alternating dual lattice. For b,j≥0 set Φ_s^(b,j)=(-1)^(j+b)Γ(s)/j! · Σ_t h(t) Σ_(ℓ≠0) v_ℓ^[b] χ_ℓ(z−t) (π‖ℓ/√r‖²)^(−s) ι_(v_ℓ)(dι_(v_ℓ))^j vol. Define Φ^(n)=Σ_(b≤n,0≤j<d) Φ_(b+j+1)^(b,j), by meromorphic regularization in the current topology. Terms with j≥d vanish. The factor (-1)^b corrects the inverse-power binomial expansion in the d+ν convention. With u_i=dr_i/r_i and E=−Σr_i∂_(r_i), contraction has coefficient (-1)^(j+1)j! C in the epsilon expansion of Lemma 3.16; at j=d−1 it is (-1)^(d(d+1)/2)d! C·(barℓ/r)^1·(∧_(i<d)u_i)∧(∧_i dz_i). Away from D these currents are smooth and have the corresponding K-series expressions.
 
-Assume split torsion residue data after a permitted scalar extension; Σ_t h(t)=0; finite symmetric level n. The normalization of currents is the one in §3.2.
+Assume split torsion residue data after a permitted scalar extension; Σ_t h(t)=0; finite symmetric level n. The normalization of currents is the one in §3.2: vol=(2πi)^d times Haar probability and δ_t·vol=(2πi)^d[t].
 
 (KS-v4, Definitions 3.15 and 3.18, pp.37–39; Lemma 3.16, p.37; Proposition 3.17, p.38; binomial expansion in proof of Theorem 3.20, p.41, corrected for the contraction and binomial signs, KS-v4 line 1598.)
 
@@ -594,7 +592,7 @@ One proof route starts at large Re(s), differentiates termwise in the current to
 
 **Checks.**
 
-- Check b=0 and b=1 directly in dimension one to test the d+ν cancellation.
+- At d=1, b=0 and Λ=2ℤ+iℤ, the local residue h(t) gives (∇″Φ)(η)=2πi·h(t) for η equal to 1 near t and supported away from the other residue points. With h=(1,−1), the two local values are +2πi and −2πi; their sum is 0, as required by trace zero. Haar-normalized δ_h·vol gives these same values, whereas a Lebesgue Dirac gives +πi and −πi.
 - Residue equality includes the orientation sign, not only an unspecified nonzero scalar.
 
 *Needs:* §3.5; §1.3; §2.6; ComplexComparisonPartII C5.1.
@@ -667,8 +665,8 @@ One proof route is to extract the top (d−1)-form in r from Φ. Relative to the
 
 **Checks.**
 
-- At d=1, Γ=1 and a=β=0 on ℂ/ℤ[i] (C=−π), the level-zero current is Φ^(0)=Σ_t h(t)G(z−t)dz with G(u)=Σ_(ℓ≠0) barℓχ_ℓ(u)/|ℓ|². Since ∂_ū χ_ℓ=πℓχ_ℓ, Poisson summation gives ∂_ū G=π(Σ_λ δ_λ−1)=∂_ū E^(0,1)(u,0); the difference G−E^(0,1)(u,0) is holomorphic, periodic and odd, hence 0. So Φ^(0) has residue +h(t) at t, and the coefficient is ε(1,0,0)=+1; a coefficient −1 here would contradict the residue normalization of §3.2.
-- At d=1 the coefficient is (−1)^(a+β)a!, because ∂_z(z+λ)⁻¹=−(z+λ)⁻². For a=1, β=0 it is −1!, and for a=3, β=0 (the fourth critical value of §8.3) it is −3!; a sign independent of a gets one of these wrong.
+- At d=1, Γ=1 and a=β=0 on ℂ/ℤ[i] (C=−π), the level-zero current is Φ^(0)=Σ_t h(t)G(z−t)dz with G(u)=Σ_(ℓ≠0) barℓχ_ℓ(u)/|ℓ|². Since ∂_ū χ_ℓ=πℓχ_ℓ, Poisson summation gives ∂_ū G=π(Σ_λ δ_λ−1)=∂_ū E^(0,1)(u,0), with δ_λ the Haar-normalized Dirac of §3.2 (equal to the Lebesgue Dirac for this lattice); the difference G−E^(0,1)(u,0) is holomorphic, periodic and odd, hence 0. So Φ^(0) has residue +h(t) at t and its derivative pairs locally to 2πi·h(t), in agreement with δ_h·vol. For Λ=2ℤ+iℤ the same local value is 2πi·h(t), because the Fourier coefficient 1/covol_Leb and the Haar Dirac factor covol_Leb cancel. The coefficient is ε(1,0,0)=+1; a coefficient −1 here would contradict the residue normalization of §3.2.
+- At d=1 the coefficient is (−1)^(a+β)a!, because ∂_z(z+λ)⁻¹=−(z+λ)⁻². For a=1, β=0 it is −1!=−1, and for a=2, β=0 it is +2!=+2; a sign independent of a cannot give both coefficients.
 - For Λ=ℤ[i], Γ=1, c=(2), h=h_c (value 3 at e and −1 at the other three 2-torsion points), x=1/3, a=2 and β=0, the class is +2!·(4E^(0,3)(1/3,0)−8E^(0,3)(2/3,0))=+24E^(0,3)(1/3,0), using oddness at 2/3≡−1/3. The absolutely convergent value E^(0,3)(1/3,0) is about 23.47, so the class is about +563.3; omitting the volume factor (−1)^d of C gives about −563.3.
 - Admissibility gives β_barσ−α_σ=w for every σ, hence |a|+|β|≡d(w+1) modulo 2 and ε(d,a,β)=(−1)^(d(d+1)/2+d(w+1)+1): at d=1 this is (−1)^(w+1), and at d=2 it is +1 for every admissible critical type, for instance a=(1,1), β=0, whose coefficient is +1!·1!=+1; the printed sign (−1)^(d(d−1)/2) of Theorem 3.27 is −1 there.
 - The pairing uses barω_A; writing ω_A without conjugation changes q.
@@ -811,7 +809,7 @@ One proof route is to insert h_c into §5.4 and apply the distribution relation.
 
 ### 5.7 Regularized integrality and algebraicity
 
-For χ critical of conductor f and values in E, with the O_L-structure, differential bases and R-rational x_Ω, prove for f≠O_L and c prime to f: 𝒩_(α,β)((χ(c)Nc−1)L_f(χ,0))∈O_E R[1/(f Nc)]. For f=O_L and pairwise coprime c,c′, prove 𝒩_(α,β)((1−χ(c′))(χ(c)Nc−1)L_(O_L)(χ,0))∈O_E R[1/N(cc′)]. Choose k containing E and the field of definition, make the necessary torsion rational and bases free after the allowed extension/localization, and obtain a model R=O_k[1/(d_L f Nc)] in the sense of the indicated ideal localization. Vary the auxiliary ideals and show the smoothing factors can be chosen nonzero; consequently 𝒩_(α,β)(L_f(χ,0))∈k. Zero L-values are allowed.
+For χ critical of conductor f and values in E, with the O_L-structure, differential bases and R-rational x_Ω, prove for f≠O_L and c prime to f: 𝒩_(α,β)((χ(c)Nc−1)L_f(χ,0))∈O_E R[1/(f Nc)]. For f=O_L and pairwise coprime c,c′, prove 𝒩_(α,β)((1−χ(c′))(χ(c)Nc−1)L_(O_L)(χ,0))∈O_E R[1/N(cc′)]. These regularized integrality statements hold over the general standard ring R. For the algebraicity conclusion require additionally that A, its CM action, the chosen differential bases and torsion data descend to a fixed number field k containing E, and that R is a permitted localization in k. Such algebraically based data can be chosen after a finite extension and localization. Vary the auxiliary ideals and show the smoothing factors can be chosen nonzero; for these data 𝒩_(α,β)(L_f(χ,0))∈k. Zero L-values are allowed; this clause does not cover arbitrary transcendental changes of differential basis.
 
 Assume standard global period data; f integral; c,c′ nonzero integral ideals with the specified coprimality. Good reduction and bases are obtained by an explicitly finite localization/extension, not assumed over every O_k.
 
@@ -822,7 +820,7 @@ One proof route is to sum §5.6 over ray classes and choose representatives away
 **Checks.**
 
 - State both conductor cases; omitting (1−χ(c′)) in conductor one is incorrect.
-- The claimed algebraicity is in a field, including zero, rather than automatically in its multiplicative group.
+- For E:y²=x³−x over ℚ(i), ω₀=dx/(2y) and χ((λ))=λ⁻⁴, write its period lattice Ω₀ℤ[i]. Then g₂=4 gives Σ_(λ∈Ω₀ℤ[i],λ≠0)λ⁻⁴=1/15, and four generators per ideal give 3!L(χ,0)/Ω₀⁴=(6/4)(1/15)=1/10. Rescaling ω₀ by 2 gives 1/160∈ℚ. Over R=ℤ[i,1/210,t,t⁻¹] with transcendental t, the allowed basis tω₀ gives 1/(10t⁴), which is transcendental. General-R regularized integrality remains meaningful there, but the algebraicity clause does not apply.
 - For χ((λ))=λ⁻⁴ on ℚ(i), c=(7) and c′=(3), the raw distribution factor is 80·(49−2401)=−188160. Multiplying by χ(c)χ(c′)=1/(2401·81) gives (80/81)(49/2401−1)=−1280/1323. These scalars lie in the localization at N(cc′)=441; neither requires division by a smoothing factor that could vanish.
 
 *Needs:* §5.6; §5.1; GlobalNumberFields Layers 2, 7 and 9; ClassFieldTheory Layers 11–13 (gap:ray-tower-tame-unit-kernel).
@@ -831,7 +829,7 @@ One proof route is to sum §5.6 over ray classes and choose representatives away
 
 Let μ=β−α=N*_(L/K)(β₀−α₀), with K the maximal CM subfield and Ω₀ the compatible CM periods from a Serre construction. Then [ (2πi)^|β₀| / Ω₀^(α₀+barβ₀) ]^[L:K] ·L_f(χ,0)∈Qbar. Here barβ₀ is the conjugate-index transfer to Σ_K, not an unlabelled complex conjugate of the scalar L-value. The power [L:K] reflects repetition of every K-period among the lifted embeddings.
 
-Assume critical χ and compatible K/L period structures; α₀≥1, β₀≥0.
+Assume critical χ and compatible K/L period structures from CM abelian varieties with CM action, differential bases and torsion data defined over a number field as in §5.7; α₀≥1, β₀≥0.
 
 (KS-v4, §4.5 and equation (4.5.1), p.53; Corollary 4.14, p.54, KS-v4 line 2534.)
 
@@ -849,7 +847,7 @@ One proof route is to construct the L-datum by the imported Serre tensor constru
 
 For the Hecke motive M(χ) over L with coefficient field E, assume Res_(L/ℚ)M(χ) is critical in the realization-theoretic sense and fix τ:E→ℂ. Its nonzero period satisfies c⁺_τ(Res M(χ))∼[(2πi)^(−|β₀|)Ω₀^(α₀+barβ₀)]^[L:K], where ∼ means equality modulo Qbar×. Consequently L_f(χ,0)/c⁺_τ∈Qbar. The ratio is in Qbar× only if L_f(χ,0)≠0. No assertion of the sharper E-rationality is made here; this is the weaker period statement in Corollary 4.15 allowing a zero special value.
 
-Assume the Hecke motive, restriction of scalars, realizations and determinant periods of the PeriodsAndSpecialValues requirements PS.0 (gap:hecke-motive-periods) and PS.1 (gap:critical-cm-deligne-period). The criticality of the restricted motive is an explicit assumption.
+Assume the Hecke motive, restriction of scalars, realizations and determinant periods of the PeriodsAndSpecialValues requirements PS.0 (gap:hecke-motive-periods) and PS.1 (gap:critical-cm-deligne-period). The CM periods use the number-field differential bases of §§5.7–5.8. The criticality of the restricted motive is an explicit assumption.
 
 (KS-v4, Corollary 4.15 and Remarks 4.16–4.17, pp.54–55, KS-v4 line 2551.)
 
@@ -876,7 +874,7 @@ Earlier layers 0, 1, 2, 3, 4; ComplexMultiplicationAndExplicitReciprocity §1.3;
 
 Fix a prime p∤d_L, p noninvertible on the arithmetic model, embeddings of algebraic numbers into ℂ and ℂ_p, and a lifted type Σ. It is p-ordinary when the sets of p-adic places induced by Σ and barΣ are disjoint and together cover all places over p; this definition applies to L containing K, without requiring L itself CM. Write O_L⊗ℤ_p=O_L(Σ_p)⊕O_L(barΣ_p). A Γ₀₀(p∞)-structure consists of O_L-equivariant compatible identifications μ_(p∞)⊗O_L(Σ_p)≃A[p∞]^connected and μ_(p∞)⊗O_L(barΣ_p)≃A∨[p∞]^connected. A Γ_arith-structure includes the compatible full connected and étale trivializations. Set p_Σ=∏_(v∈Σ_p)v and A_(n)=A(barp_Σ^n); q_n=[barp_Σ^n]:A_(n)→A is étale, with kernel A_(n)[barp_Σ^n], while its dual is connected. Via Weil pairings these data are equivalent to the specified trivializations of the complementary étale kernels. A prime-to-p ideal Betti structure induces them using the chosen compatible roots exp(2πi/p^n). In particular formal A≃Gm_hat⊗O_L(Σ_p), formal A∨≃Gm_hat⊗O_L(barΣ_p), with character modules the corresponding dual Tate modules. The paired isogeny [p_Σ^n]:A→A_(n) composes with q_n to [p^n]. The primes 2 and 3 are included whenever the stated unramified and ordinary hypotheses hold.
 
-Assume ordinary standard datum over R followed by its chosen map to O_(ℂ_p); f prime to p. Ordinary finite-flat and Weil pairing theory is imported, not developed here.
+Assume ordinary standard datum over a permitted number-field model R as in §5.7, integral at p, followed by its chosen map to O_(ℂ_p); f prime to p. Ordinary finite-flat and Weil pairing theory is imported, not developed here.
 
 (KS-v4, Notation 5.1, Definitions 5.2–5.3 and Propositions 5.4–5.6, pp.56–58, KS-v4 line 2633.)
 
@@ -940,13 +938,14 @@ The construction has the following API.
 - The integral theta class maps to its generic-fiber counterpart whenever the killing dual is étale.
 - When β=a=0 is critical for Γ, evaluation at the identity is a Γ-invariant functional on M, and on θ_Γ(h,y) it gives Ω_p^1 e_(0,0), with the same algebraic-to-canonical determinant conversion as in the Eisenstein moment formula of §7.1. This follows by applying the augmentation before capping.
 
-One proof route is to apply AbelianSchemesAndArithmeticModuliPartII P4.2–P4.3 and their compatibility with the rigidification. Cap into H₀(Γ,M) with the canonical determinant differential, and obtain the critical moments from naturality of the cap in the coefficient map M→TSym^(a+1)ω_A⊗TSym^βω_A∨. Check integral and generic constructions agree under the injective base change.
+One proof route is to apply AbelianSchemesAndArithmeticModuliPartII P4.2–P4.3 and their compatibility with the rigidification. Cap into H₀(Γ,M) with the canonical determinant differential, and obtain the critical moments from naturality of the cap in the coefficient map M→TSym^(a+1)ω_A⊗TSym^βω_A∨. Naturality of restriction, trivialization and cap under coefficient extension maps the integral theta class to the generic-fiber class. The induced map on coinvariants is not asserted injective; equality after extending to ℂ_p alone does not imply equality of integral classes.
 
 **Checks.**
 
 - θ_Γ(0,y)=0 as a coinvariant class.
 - For Γ=ℤ acting on M=ℤ₅ by multiplication by 6, H¹(Γ,M)=M_Γ=ℤ₅/5 while M^Γ=0; the cap lands in the coinvariants and cannot be read as an invariant element.
-- On ℤ_p× with Γ=⟨1+p⟩ acting by multiplication, a bounded invariant measure gives equal masses to the p^(n−1) cosets of 1+p^nℤ_p inside 1+pℤ_p, so the mass of 1+pℤ_p lies in p^(n−1)O for every n and the measure vanishes on ℤ_p×, while δ₀ is invariant. Taking θ in M^Γ would therefore annihilate the unit restriction used in §8.3.
+- On the ambient ℤ_p let Γ=⟨1+p⟩ act by multiplication. For odd p, on any unit coset a(1+p^kℤ_p), k≥1, the subgroup generated by (1+p)^(p^(k−1)) permutes its p^(n−k) subcosets modulo p^n transitively for every n≥k. For p=2, use 9=3²: on a(1+2^kℤ₂), k≥3, the subgroup generated by 9^(2^(k−3)) permutes its 2^(n−k) subcosets modulo 2^n transitively for every n≥k. Thus a bounded invariant O_(ℂ_p)-valued measure assigns each fixed coset a mass in every p^rO_(ℂ_p), hence mass 0, and vanishes on the units. Modulo 8 multiplication by 3 has the two orbits {1,3} and {5,7}; modulo 16 multiplication by 9 interchanges 1 and 9. The ambient atom δ₀ remains invariant with mass 1.
+- For L=ℚ(√5,√−7), p=2 and Γ=⟨(1+√5)/2⟩, the selected determinant weight is −1. The determinant-twisted constant line O_(ℂ₂) splits equivariantly from M by constants and evaluation at the identity. Its coinvariants O_(ℂ₂)/2 contain [1]≠0, whereas the corresponding ℂ₂-coinvariants are 0. Thus the coefficient inclusion is injective and its coinvariant map is not. Here disc(L)=5·(−7)·(−35)=1225 and 2 splits in ℚ(√−7), so a Serre tensor of an ordinary elliptic datum realizes the stated unramified ordinary context.
 - A prime-to-p torsion y has an étale killing dual and gives an integral theta class.
 - For y in ker q_n on A_(n), q_n∨ is connected, so this argument gives its theta value only over the generic fiber.
 - For torsion-free Γ′⊂Γ of index 2, fixed h,y and unchanged canonical bases, the image of θ_(Γ′)(h,y) in M_Γ is 2θ_Γ(h,y), including when p=2; no division by the index is part of this restriction.
@@ -1012,9 +1011,9 @@ One proof route is to apply the inverse Amice equivalence to θ, which has integ
 **Checks.**
 
 - For the generic Amice test g=(1+T)^m, the measure is δ_m and its k-th moment is m^k; the CM specialization uses that same convention.
-- A constant formal function c corresponds to cδ₀, not normalized Haar measure.
-- At derivative index a=0 the algebraic-to-canonical moment conversion still contributes one Ω_p in each Σ coordinate.
-- At a=β=0 the total mass is Ω_p^1 times the (0,0) EK coordinate, not just that coordinate.
+- Before taking coinvariants, a constant formal function c corresponds to cδ₀, with mass c and positive-degree moments 0; this computes the generic Amice convention. A mass on the quotient requires the criticality condition below.
+- For critical indices with a=0 the algebraic-to-canonical moment conversion still contributes one Ω_p in each Σ coordinate.
+- When a=β=0 is critical for Γ, total mass descends to the class and equals Ω_p^1e_(0,0). For L=ℚ(i,√2), p=5 and Γ=⟨1+√2⟩, the selected determinant weight is −1 and this index is not critical: γδ₀=−δ₀ has mass −1 while δ₀ has mass 1. Since 2 is a unit, [δ₀]=0 in the coinvariants; total mass cannot descend. For Γ=1 it is ordinary augmentation.
 - Transport under an integral basis change of O_L⊗ℤ_p gives the same measure.
 - At d=1, β=0 and a=3 the normalized fourth-critical-value coordinate has ε(1,3,0)=−1; the Amice moment equals that signed coordinate. With the same a and β=1 the sign is ε(1,3,1)=+1, and at a=2, β=0 it is ε(1,2,0)=+1. Moment formation introduces no further minus sign.
 - On the dyadic datum of §6.3, μ_Eis,1 is not in 2Meas(O_L⊗ℤ₂,O_(ℂ₂)): integral Amice is linear, so such divisibility would put θ_1 in 2O_(ℂ₂)[[T,S]], contradicting the residue 1 after reduction. The selected critical-coordinate descent does not imply divisibility of this entire measure.
@@ -1023,20 +1022,26 @@ One proof route is to apply the inverse Amice equivalence to θ, which has integ
 
 ### 7.2 p-power translation with Weil-pairing weights
 
-Let q_n:A_(n)=A(barp_Σ^n)→A be as in §6.1; pull back D and h to D′ and h′. For Γ-invariant s∈A[p_Σ^n], t∈A∨[barp_Σ^n], let s′ be the unique p_Σ^n-torsion lift of s and x′ the unique f-torsion lift of x. Then (T_s×T_t)*θ_(Γ,A)(h,x)=Σ_(u∈ker q_n)⟨u,t⟩_(q_n)·q_(n),# θ_(Γ,A_(n))(h′,x′+s′+u). The equality is one of Γ-coinvariant classes, interpreted through the formal isogeny identifications in the generic fiber. Its left side is integral; individual right-hand theta functions need not be integral because q_n∨ is not étale.
+Let q_n:A_(n)=A(barp_Σ^n)→A be as in §6.1; pull back D and h to D′ and h′. For Γ-invariant s∈A[p_Σ^n], t∈A∨[barp_Σ^n], let s′ be the unique p_Σ^n-torsion lift of s and x′ the unique f-torsion lift of x. At this finite level choose a finite-index torsion-free Γ_n⊂Γ fixing x′, s′, every point of ker q_n, and all finite-level translation data. Such a subgroup exists as the kernel of the action on those finite sets. Then
+(T_s×T_t)*θ_(Γ_n,A)(h,x)=Σ_(u∈ker q_n)⟨u,t⟩_(q_n)·q_(n),# θ_(Γ_n,A_(n))(h′,x′+s′+u).
+This is an equality in Γ_n-coinvariants through the formal isogeny identifications in the generic fiber. Its left side is integral; individual right-hand classes need not be integral because q_n∨ is not étale. Each evaluation point is fixed by Γ_n, as its constructor requires.
 
-Assume ordinary theta data, p∤f, Γ fixes the torsion translations.
+For the original Γ, put m_n=[Γ:Γ_n]. Projecting the displayed identity to Γ-coinvariants gives m_n·(T_s×T_t)*θ_(Γ,A)(h,x) equal to the sum of the projected right-hand terms. This follows from the finite-cover projection formula, and retains the index even when p divides it. An individual θ_Γ(h′,x′+s′+u) is used only if Γ fixes that evaluation point. No subgroup is required to fix every p-power level simultaneously.
 
-(KS-v4, Theorem 5.23 and equations (5.5.1)–(5.5.8), pp.66–70, especially integrality remark p.67, KS-v4 line 3058.)
+Assume ordinary theta data, p∤f, torsion-free Γ fixing x,h,s,t, and the finite-level subgroup just specified.
 
-One proof route is to compare the supported residue functions under the Poincaré isogeny and translation diagrams. Identify the multiplier by the rigidified Weil pairing, with the same order of its arguments. Use uniqueness of the localized EK class and the compatibility of formal cap and trivialization.
+(KS-v4, Theorem 5.23 and equations (5.5.1)–(5.5.8), pp.66–70, KS-v4 lines 3058–3066, with the evaluation-point stabilizers and subgroup indices retained; integrality remark p.67, KS-v4 lines 3072–3083.)
+
+One proof route is to compare the supported residue functions under the Poincaré isogeny and translation diagrams for Γ_n. Identify the multiplier by the rigidified Weil pairing, with the same order of its arguments. Use uniqueness of the localized EK class and the compatibility of formal cap and trivialization, then project using §6.3's finite-cover formula.
 
 **Checks.**
 
-- The Weil pairing occurs with the positive power here; the inverse is in the Fourier transform below.
-- Integrality of the sum is deduced from the left side, never termwise.
+- For L=ℚ(i,√2), p=5, f=(3), Γ=⟨(1+√2)⁸⟩, s=t=0 and n=1, the generator is 577+408√2, congruent to 1 mod 3 but to 2+3√2≠1 in the complementary residue field 𝔽₂₅. A nonzero f-torsion x and h_(7) are fixed, and so is x′; nevertheless x′+u is not fixed for u≠0 in ker q₁. In 𝔽₂₅, (2+3√2)²=2+2√2 and (2+3√2)³=1. Thus Γ₁=Γ³ fixes all summands, and projection back gives 3 times the original translated theta class, not an unindexed identity.
+- At n=0 the kernel has one point, the pairing is 1 and q₀ is the identity. Take Γ₀=Γ, so m₀=1 and the formula is θ_Γ=θ_Γ.
+- The Weil-pairing multiplier is positive: a value ζ₃ remains ζ₃ in the translation sum, while the corresponding Fourier coefficient in §7.3 uses ζ₃⁻¹; these differ.
+- Integrality of the sum is deduced from the left side for Γ_n, never termwise. Projection to Γ multiplies that left side by m_n and does not justify integral division by m_n.
 
-*Needs:* §6.3; §6.1; AbelianSchemesAndArithmeticModuliPartII P4.3; AbelianSchemesAndArithmeticModuliPartII P2.4.
+*Needs:* §6.3; §6.1; §2.3; AlgebraicTopology Stage 6 (gap:torus-cap-projection); AbelianSchemesAndArithmeticModuliPartII P4.3; AbelianSchemesAndArithmeticModuliPartII P2.4.
 
 ### 7.3 Normalized partial Fourier transform
 
@@ -1070,7 +1075,7 @@ One proof route specializes AutomorphicLFunctionsAndLocalFactors AL.0 finite Fou
 
 For ρ:O_L/p^nO_L→Qbar and critical β−a−1, (Ω_p^(a+1)(Ω_p∨)^β)⁻¹∫t^a s^βρ(t,s)dμ_Eis(h,x)=Σ_(u∈A_(n)[p^n]) (P_Aρ)(u)·e_(β,a),A_(n)(h′,x′+u). The differential bases on A_(n) and its dual are uniquely transported by the two paired isogenies so that the p-adic periods on the left remain the common periods. Every right-hand term is initially interpreted generically.
 
-Assume finite-level ρ; translation theorem and compatible bases; Γ is torsion-free and may be replaced by a torsion-free subgroup fixing the level, with its index explicitly included, so that ρ is Γ-invariant and the twisted critical integral is a Γ-invariant functional on the coinvariant class.
+Assume finite-level ρ; translation theorem and compatible bases. In the displayed pointwise formula use a torsion-free Γ fixing x,h,ρ and every p^n-torsion point and lift that appears, as in §7.2. Starting with a larger torsion-free group, choose such a finite-index subgroup Γ_n; its moment formula projects with the factor [Γ:Γ_n]. A twisted moment for the larger group is used only when its test function is Γ-invariant; no unindexed equality is inferred by integral cancellation.
 
 (KS-v4, Corollary 5.25, pp.71–72, KS-v4 line 3244.)
 
@@ -1078,7 +1083,7 @@ One proof route is to expand ρ in the finite character basis. Apply theta trans
 
 **Checks.**
 
-- For ρ=1 the identity recovers the original moment formula after the correct distribution sum.
+- For ρ=1 the identity recovers the original moment formula after the correct distribution sum. In the quartic level-one example of §7.2 it is first the Γ³ formula; projection gives 3 times the Γ moment on the left and the projected sum on the right.
 - A level increase does not multiply the integral by the size of the inflated group.
 - Every summand has the same critical indices and hence the same factor ε(d,a,β). For d=1, a=3, β=0, a two-term combination with Fourier coefficients A,B and unsigned EK values v,w is −Av−Bw=−(Av+Bw). At A=2, B=3, v=5, w=7 both sides are −31; dropping the common sign gives +31, and for a=2, β=0 the common sign is ε(1,2,0)=+1, so the combination is +31.
 
@@ -1086,7 +1091,7 @@ One proof route is to expand ρ in the finite character basis. Apply theta trans
 
 ### Examples
 
-For ℤ/4→ℤ/2, inflating the zero-point indicator gives values (1,0,1,0); the normalized Fourier transform is (1/2,0,1/2,0). A constant formal function c corresponds to cδ₀, whose mass is c and whose positive monomial moments vanish.
+For ℤ/4→ℤ/2, inflating the zero-point indicator gives values (1,0,1,0); the normalized Fourier transform is (1/2,0,1/2,0). Before taking coinvariants a constant formal function c corresponds to cδ₀, whose mass is c and whose positive monomial moments vanish; after taking coinvariants only critical moment functionals descend, as in §7.1.
 
 ### Dependencies
 
@@ -1098,7 +1103,7 @@ Earlier layers 0, 1, 2, 3, 4, 5, 6; PadicMeasuresIwasawaAlgebras §§2.1–2.2 (
 
 Let χ have infinity type β−α and conductor dividing p∞f. Define χ_fin on (O_L⊗ℤ_p)× by χ((λ))=χ_fin(λ)·λ^(β−α) for λ prime to pf and congruent to 1 modulo f, with μ evaluated at the embedding σ in the exponent. Put Ftilde(x,y)=χ_fin(x⁻¹,y). For each v|p extend its v-component to O_(L,v) by the constant function 1 when v∈Σ_p and that unit-character component is trivial, and by zero off the units otherwise. Let F be the product. Choose ∏_(v∈Σ_p)v^(a_v)=(c)b with c≡1 mod f and b prime to p. Then Local(χ,Σ)=c^(α−β)·(PF)(c⁻¹)/χ(b), where c^(α−β) means (N_(L/K)c)^α₀/(overline(N_(L/K)c))^β₀ in the chosen embedding indices. Prove this scalar is nonzero, independent of the conductor decomposition, and compatible with the AutomorphicLFunctionsAndLocalFactors AL.1 trace-character Gauss-sum convention. Distinguish F from the zero extension of Ftilde; their difference at an unramified Σ-place produces an Euler factor.
 
-Assume ordinary lifted type; embeddings and additive trace character fixed; PF is exactly §7.3. χ_fin uses the ideal-character convention of §5.3, not its inverse.
+Assume ordinary lifted type; embeddings and additive trace character fixed; PF is exactly §7.3. χ_fin uses the ideal-character convention of §5.3. With the ideal-theoretic local-unit inclusion of §8.3 the arithmetic avatar satisfies χ(q_f(u))=χ_fin(u)u^(β−α).
 
 (KS-v4, §5.6, equation (5.6.1) and Definition 5.26, pp.72–73, KS-v4 line 3373.)
 
@@ -1151,7 +1156,7 @@ One proof route is to use Mathlib Dirac measures, addition and scalar multiplica
 
 ### 8.3 Smoothed ray-class measures from the CM Eisenstein measure
 
-Set U_f=O_f× (global units congruent to 1 mod f) and G⁰_f=(O_L⊗ℤ_p)×/closure(U_f), and use the exact sequence 1→G⁰_f→G_f→Cl_f→1. Let q_f:(O_L⊗ℤ_p)×→G⁰_f be the quotient map. For f≠O_L choose ray-class representatives a_i, the Serre tensors A_i=(a_i⁻¹f)⊗A and their compatible periods, and x_i=Ω mod a_i⁻¹fΩ. Choose a finite-index torsion-free Γ₀⊂U_f fixing the residue data. Restrict μ_Eis,Γ₀(h_c,x_i) to (O_L⊗ℤ_p)×, multiply by ∏_(σ∈Σ)σ(t)⁻¹ and push forward by (t,s)↦Art(a_i)q_f(t⁻¹,s) into G_f. Denote the sum over cosets by ν_(f,c,Γ₀). Its source is the Γ₀-coinvariant class of §7.1 restricted to the local unit group and its target is Meas(G_f,O_(ℂ_p)). This construction uses the closure of U_f. Prove that it is well defined on Γ₀-coinvariants: restriction to the Γ₀-stable unit locus is equivariant, and for every critical algebraic character χ of G_f the function χ(Art(a_i)q_f(t⁻¹,s))∏_(σ∈Σ)σ(t)⁻¹ is a critical monomial times a locally constant function and is invariant for the determinant-twisted Γ₀-action, because Γ₀⊂U_f and q_f kills closure(U_f); the finite-order twists of one such χ span a dense subspace of C(G_f,ℂ_p).
+Set U_f=O_f× (global units congruent to 1 mod f) and G⁰_f=(O_L⊗ℤ_p)×/closure(U_f), and use the exact sequence 1→G⁰_f→G_f→Cl_f→1. Let q_f:(O_L⊗ℤ_p)×→G⁰_f be the quotient map. The inclusion G⁰_f→G_f is ideal-theoretic: at level fp^n the class of u maps to the class of (λ), where λ≡1 mod f and λ≡u mod p^n. In idelic terms it is Art(u_p)⁻¹. Hence the arithmetic avatar satisfies χ(q_f(u))=χ_fin(u)u^(β−α), with q_f followed by this inclusion. For f≠O_L choose ray-class representatives a_i, the Serre tensors A_i=(a_i⁻¹f)⊗A and their compatible periods, and x_i=Ω mod a_i⁻¹fΩ. Choose a finite-index torsion-free Γ₀⊂U_f fixing the residue data. Restrict μ_Eis,Γ₀(h_c,x_i) to (O_L⊗ℤ_p)×, multiply by ∏_(σ∈Σ)σ(t)⁻¹ and push forward by (t,s)↦Art(a_i)q_f(t⁻¹,s) into G_f. Denote the sum over cosets by ν_(f,c,Γ₀). Its source is the Γ₀-coinvariant class of §7.1 restricted to the local unit group and its target is Meas(G_f,O_(ℂ_p)). This construction uses the closure of U_f. Prove that it is well defined on Γ₀-coinvariants: restriction to the Γ₀-stable unit locus is equivariant, and for every critical algebraic character χ of G_f the function χ(Art(a_i)q_f(t⁻¹,s))∏_(σ∈Σ)σ(t)⁻¹ is a critical monomial times a locally constant function and is invariant for the determinant-twisted Γ₀-action, because Γ₀⊂U_f and q_f kills closure(U_f); the finite-order twists of one such χ span a dense subspace of C(G_f,ℂ_p).
 
 Prove integral unit-index descent on this weighted pushforward: for every such Γ₀, with m=[U_f:Γ₀], ν_(f,c,Γ₀) belongs to m·Meas(G_f,O_(ℂ_p)), where integral measures have operator norm at most one. Equivalently, for every finite continuous quotient π:G_f→Q and q∈Q, prove ν_(f,c,Γ₀)(π⁻¹{q})∈mO_(ℂ_p). For Γ₁⊂Γ₀ prove ν_(f,c,Γ₁)=[Γ₀:Γ₁]ν_(f,c,Γ₀). Only after this theorem define μ_(f,c)=ν_(f,c,Γ₀)/m; it is integral and independent of Γ₀ by passage to intersections. This arithmetic theorem concerns the actual weighted ray-quotient measure; §5.4's integrality of individual critical coordinates is not its proof.
 
@@ -1161,7 +1166,7 @@ The comparison from the algebraic residue through the oriented current and from 
 
 For f=O_L use two coprime auxiliaries and the function pulled back from h_c on (A[c′] minus e)×A[c], extended by zero as in §1.1. With x_i=e form the corresponding ν_(O_L,c,c′,Γ₀) and prove the same integral divisibility and subgroup law before defining μ^raw_(O_L,c,c′)=ν_(O_L,c,c′,Γ₀)/[O_L×:Γ₀]. Its normalized χ-moment has the extra factor χ(c′)⁻¹−1 multiplying the signed smoothed expression. Define μ_(O_L,c,c′)=δ_(Art(c′))*μ^raw_(O_L,c,c′). This translation is an integral bounded automorphism, and it changes that factor to χ(c′)(χ(c′)⁻¹−1)=1−χ(c′), exactly δ′_(c′)(χ) from §8.2, including for finite-order twists.
 
-Assume ordinary based datum, tame f prime to p, compatible ideal structures and roots of unity; integral auxiliaries c prime to pf, and c′ prime to pc when f=O_L. Use the §1.1 residue functions and torsion-free theta data of §§6.3–7.4. A subgroup used to fix a finite p-power level carries its index; no subgroup is required to fix every level simultaneously. The unit-index divisibility theorem above is required before normalized integral descent.
+Assume ordinary based datum with the number-field CM action, differential bases and torsion data of §5.7, tame f prime to p, compatible ideal structures and roots of unity; integral auxiliaries c prime to pf, and c′ prime to pc when f=O_L. Use the §1.1 residue functions and torsion-free theta data of §§6.3–7.4. A subgroup used to fix a finite p-power level carries its index; no subgroup is required to fix every level simultaneously. The unit-index divisibility theorem above is required before normalized integral descent.
 
 (KS-v4, Theorem 5.27, proof Steps 1 and 3, equations (5.7.1)–(5.7.4), pp.74–78, KS-v4 lines 3417, 3468, 3507, 3681; retain the class sign at KS-v4 line 3514 and apply the Artin translation to the four-term distribution at KS-v4 lines 2491–2498. Integral unit-index descent on the weighted quotient is a theorem target here, rather than an assertion of divisibility of the theta function.)
 
@@ -1177,7 +1182,7 @@ One proof route uses the native pushforward and PadicMeasuresIwasawaAlgebras §2
 
 **Checks.**
 
-- A test local algebraic monomial with Σ-exponent α becomes t^(α−1)s^β after inversion and the determinant weight.
+- For L=ℚ(i), p=5, f=(3) and χ((λ))=λ⁻⁴, the local unit 7 maps ideal-theoretically to (7), giving 7⁻⁴=1/2401. The idelic image Art(7_p) gives 7⁴=2401 instead. On a selected coordinate, inversion followed by the determinant weight gives t⁴t⁻¹=t³ with the specified inclusion, whereas the idelic inclusion would give t⁻⁴t⁻¹=t⁻⁵.
 - For a global unit ε not congruent to 1 mod f, its p-component is not killed merely by calling it a global unit; only the actual image of U_f is quotiented out.
 - At f=O_L and x=e a single h_c is invalid on U; the c′ support excluding e makes the residue evaluation admissible.
 - On a character monomial the inversion and extra t⁻¹ give derivative exponent a=α−1; missing the weight shifts the critical value.
@@ -1213,9 +1218,9 @@ One proof route is to use finite-order twists of one fixed critical algebraic ch
 
 For a p-ordinary lifted type Σ of L and a tame integral ideal f prime to p, construct a bounded O_(ℂ_p)-valued measure μ_f on G_f=Gal(L(p∞f)/L) such that for every critical algebraic χ of conductor dividing p∞f and infinity type β−α,
 (Ω_p^α(Ω_p∨)^β)⁻¹∫_(G_f)χ(g)dμ_f(g)=ε(d,α−1,β)·𝒩_(α,β)(Local(χ,Σ)·∏_(v∈Σ_p)(1−χ(v⁻¹)/Nv)·∏_(v∈barΣ_p)(1−χ(v))·L_f(χ,0)).
-Here ε(d,α−1,β)=(-1)^(d(d−1)/2+|α|+|β|+1), the class sign of §4.3 at derivative index a=α−1. The complex normalization on the right is algebraic by Layer 5 and is transported to ℂ_p by the chosen embeddings of the common algebraic coefficient field; no map from all of ℂ to ℂ_p is used. At a prime ramified in χ set the corresponding ideal-character value to zero so the omitted Euler factor is one; χ(v⁻¹)=0 in that convention is not the inverse of zero. Primitive versus f-imprimitive L-functions are related by exactly the displayed depletion factors. Prove uniqueness from the finite-order-twist density after boundedness has been established. The construction retains the class-to-moment sign, uses the conductor-one Artin translation, and proves integral descent on the weighted ray quotient and bounded auxiliary division in §§8.3–8.4.
+Here ε(d,α−1,β)=(-1)^(d(d−1)/2+|α|+|β|+1), the class sign of §4.3 at derivative index a=α−1. For this algebraically based datum the complex normalization on the right is algebraic by §§5.7–5.8 and is transported to ℂ_p by the chosen embeddings of the common algebraic coefficient field; no map from all of ℂ to ℂ_p is used. At a prime ramified in χ set the corresponding ideal-character value to zero so the omitted Euler factor is one; χ(v⁻¹)=0 in that convention is not the inverse of zero. Primitive versus f-imprimitive L-functions are related by exactly the displayed depletion factors. Prove uniqueness from the finite-order-twist density after boundedness has been established. The construction retains the class-to-moment sign, uses the conductor-one Artin translation, and proves integral descent on the weighted ray quotient and bounded auxiliary division in §§8.3–8.4.
 
-Assume ordinary standard datum, O_L Betti structure, complex and p-adic periods fixed; all characters read through the chosen embeddings. The proof uses the signed moments, translated conductor-one family and integral ray-quotient descent of §8.3, and the uniform bounded division of §8.4.
+Assume ordinary standard datum with A, its CM action, differential bases and torsion data defined over a number field as in §5.7, O_L Betti structure, complex and p-adic periods fixed; all characters read through the chosen embeddings. The proof uses the signed moments, translated conductor-one family and integral ray-quotient descent of §8.3, and the uniform bounded division of §8.4.
 
 (KS-v4, Theorem 5.27, p.74 and proof pp.74–79, KS-v4 line 3392, with ε(d,α−1,β) retained from the class formula at KS-v4 lines 3507–3514 and with the conductor-one Artin translation specified in §8.3.)
 
@@ -1225,7 +1230,8 @@ One proof route is to combine the corrected smoothed interpolation with §8.4. A
 
 - For ℚ(i) at p=5, d=1 and α=2, β=1, the moment has period divisor Ω_p²Ω_p∨. For a degree-four CM field the divisor has two selected coordinates; the non-CM quartic of the worked example has the same coordinate count without a CM involution.
 - An inert prime for an imaginary quadratic K is outside this theorem; it belongs to the independent nonordinary direction.
-- For a unit u rescaling one selected algebraic differential, Ω and Ω_p both acquire u. Both normalized sides acquire u^(−α_σ), so the equality persists; for α_σ=2 and u=2 at p=5 this multiplier is 1/4.
+- For an algebraic unit u rescaling one selected algebraic differential, Ω and Ω_p both acquire u. Both normalized sides acquire u^(−α_σ), so the equality persists; for α_σ=2 and u=2 at p=5 this multiplier is 1/4.
+- A transcendental differential rescaling as in §5.7 gives no algebraic normalized value to transport through the chosen embeddings into ℂ_p; the interpolation datum requires algebraic bases even though the general-R residue and integrality constructions allow that rescaling.
 - At L=K=ℚ(i), f=O_K and p=5, the types −kΣ−d(σ)(σ−barσ), k≥1 and d(σ)≥0, have α=k+d(σ)≥1 and β=d(σ)≥0 and are included whenever the finite unit character is compatible. In particular k=2, d(σ)=1 gives (α,β)=(3,1), whose unit weight is trivial on μ₄ and whose class sign is ε(1,2,1)=−1. The target also includes arbitrary admissible critical types and tame f prime to p.
 - For the nonzero χ((λ))=λ⁻⁴ example in §8.3, ε(1,3,0)=−1, so the unsmoothed normalized moment is −U. Multiplication by δ_(7)(χ)=−2352 gives +2352U, in agreement with the constructed smoothed moment. For d=1 the sign is +1 at (α,β)=(3,0) and (2,1) and −1 at (4,0) and (3,1); at d=2 it is +1 for every admissible type, for instance α=(1,1), β=0; a single global sign cannot replace ε(d,α−1,β) across all critical types.
 
