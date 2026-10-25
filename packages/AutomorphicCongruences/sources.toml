@@ -1,0 +1,673 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "AutomorphicCongruences"
+
+[[source]]
+id = "Kisin"
+authors = "Mark Kisin"
+title = "Moduli of finite flat group schemes, and modularity"
+year = 2009
+doi = "10.4007/annals.2009.170.1085"
+locator_scheme = "section"
+locator = "Crystalline lifting in CLW proof of Theorem 8.2.1"
+url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v170-n3-p03-p.pdf"
+fetched_from = "https://annals.math.princeton.edu/wp-content/uploads/annals-v170-n3-p03-p.pdf"
+fetched_at = "2026-10-22T06:17:49Z"
+sha256 = "076f8bb6ec683633f7742d27504b97f5feaef2ddbae2bc5dc4325eb8386f4ee7"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-22"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/148#issuecomment-6334049806"
+cited_for = ["2.6"]
+
+[[source]]
+id = "Ichino2008"
+authors = "Atsushi Ichino"
+title = "Trilinear forms and the central values of triple product L-functions"
+year = 2008
+doi = "10.1215/00127094-2008-052"
+locator_scheme = "theorem"
+locator = "Theorem 1.1; comparison with Wan-2020 section 8.4"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/148#issuecomment-6334049806"
+cited_for = ["2.4", "2.12"]
+
+[[source]]
+id = "Ikeda1994"
+authors = "Tamotsu Ikeda"
+title = "On the theory of Jacobi forms and Fourier-Jacobi coefficients of Eisenstein series"
+year = 1994
+doi = "10.1215/kjm/1250518935"
+locator_scheme = "theorem"
+locator = "Proposition 1.3, Lemma 1.1, Theorem 3.2; pp.620,628"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/148#issuecomment-6334049806"
+cited_for = ["2.10", "2.12"]
+
+[[source]]
+id = "Harris1984"
+authors = "Michael Harris"
+title = "Eisenstein Series on Shimura Varieties"
+year = 1984
+doi = "10.2307/2006963"
+locator_scheme = "theorem"
+locator = "Theorem 2.5.6, regularity assumptions"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/148#issuecomment-6334049806"
+cited_for = ["2.6"]
+
+[[source]]
+id = "Rubin2000"
+authors = "Karl Rubin"
+title = "Euler systems"
+year = 2000
+locator_scheme = "section"
+locator = "Theorem II.3.3; Hyp(Q_infinity,T)"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/148#issuecomment-6334049806"
+cited_for = ["0.9", "7.7"]
+
+[[source]]
+id = "BST19"
+authors = "Ashay Burungale, Christopher Skinner and Ye Tian"
+title = "Elliptic curves and Beilinson-Kato elements: rank one aspects"
+year = 2019
+locator_scheme = "section"
+locator = "CM family induced representation in CW Theorem 3.6"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/148#issuecomment-6334049806"
+cited_for = ["2.15"]
+
+[[source]]
+id = "SU"
+authors = "Christopher Skinner, Eric Urban"
+title = "The Iwasawa main conjectures for GL2"
+year = 2014
+doi = "10.1007/s00222-013-0448-1"
+locator_scheme = "section"
+locator = "§§3.1–3.6, 4.1–4.5, 5–7, 9, 11–13 (author manuscript of 21 December 2012, its pagination)"
+url = "https://www.math.columbia.edu/~urban/eurp/MC.pdf"
+fetched_from = "https://www.math.columbia.edu/~urban/eurp/MC.pdf"
+fetched_at = "2026-10-25T00:17:06Z"
+sha256 = "f9faa40aa5e30eba705da88e3d68c8aa43069b5be01c1cc6ece212dd57879748"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "author manuscript of 21 December 2012 (226 pages); locators use its pagination; published in Invent. Math. 195 (2014), 1–277"
+cited_for = ["0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "1.8", "1.9", "1.10", "1.11", "2.6", "5.6", "5.11", "7.2", "7.3"]
+
+[[source]]
+id = "FW"
+authors = "Olivier Fouquet, Xin Wan"
+title = "The Iwasawa Main Conjecture for universal families of modular motives"
+year = 2021
+arxiv = "2107.13726v3"
+locator_scheme = "theorem"
+locator = "Assumption 2.1, Lemma 2.8, Theorems 1.6–1.8, 3.6, 4.38, 4.51, 5.1, 5.2, 7.11–7.18, 7.32; §§4.2, 4.5, 4.7, 6.2, 7.4 (arXiv v3)"
+url = "https://arxiv.org/abs/2107.13726v3"
+fetched_from = "https://arxiv.org/pdf/2107.13726v3"
+fetched_at = "2026-10-25T00:17:12Z"
+sha256 = "39cee6cec8a5d56baf5c0b19dd892a571bc7945eab281d6ec9a9c14fa70294ee"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v3"
+cited_for = ["0.4", "0.6", "2.9", "2.10", "2.11", "2.12", "2.13", "2.14", "2.18", "2.19", "2.20", "2.21", "3.1", "3.2", "3.3", "3.4", "3.5", "3.7", "3.8", "3.9", "3.10", "4.1", "4.2", "4.3", "4.4", "4.5", "4.6", "8.1"]
+
+[[source]]
+id = "CLW"
+authors = "Francesc Castella, Zheng Liu, Xin Wan"
+title = "Iwasawa-Greenberg main conjecture for non-ordinary modular forms and Eisenstein congruences on $\\mathrm{GU}(3,1)$"
+year = 2021
+arxiv = "2109.08375v1"
+locator_scheme = "theorem"
+locator = "Theorems 2.9.1, 3.0.7, 4.6.1, 5.5.1, 5.9.1, 6.1.1, 8.1.1, 8.2.1; §§5–7 (arXiv v1)"
+url = "https://arxiv.org/abs/2109.08375v1"
+fetched_from = "https://arxiv.org/pdf/2109.08375v1"
+fetched_at = "2026-10-25T00:17:17Z"
+sha256 = "0dcb80a52de820ef08982a94211377a7a7b56e47a9305bf217ba38f57726e45e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v1"
+cited_for = ["0.1", "0.2", "0.5", "0.7", "0.9", "2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7", "2.8"]
+
+[[source]]
+id = "CLW-addendum"
+authors = "Francesc Castella, Zheng Liu, Xin Wan"
+title = "Addendum to Iwasawa–Greenberg main conjecture for non-ordinary modular forms and Eisenstein congruences on GU(3,1)"
+year = 2023
+locator_scheme = "theorem"
+locator = "§§2–3; Theorems 4.0.1, 5.0.1, 5.0.2"
+url = "https://web.math.ucsb.edu/~castella/CLW-addendum.pdf"
+fetched_from = "https://web.math.ucsb.edu/~castella/CLW-addendum.pdf"
+fetched_at = "2026-10-25T00:17:19Z"
+sha256 = "c008624ff05f61c3780f02aaddf1188f4a68ec01cfffb9f1e63bd4d994820fd9"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "six-page author-hosted addendum; theorem numbers separate from CLW"
+cited_for = ["2.3", "2.4", "2.5", "2.7", "2.8", "2.12", "2.13"]
+
+[[source]]
+id = "Wan-2020"
+authors = "Xin Wan"
+title = "Iwasawa Main Conjecture for Rankin-Selberg p-adic L-functions"
+year = 2014
+arxiv = "1408.4044v5"
+locator_scheme = "theorem"
+locator = "Theorems 1.1–1.2; §7.5; §8.4; §9 set-up (1)–(9) and Proposition 9.2 (arXiv v5)"
+url = "https://arxiv.org/abs/1408.4044v5"
+fetched_from = "https://arxiv.org/pdf/1408.4044v5"
+fetched_at = "2026-10-25T00:17:24Z"
+sha256 = "8d0a2a2daceed95b51611952d11059afc223e953e9f31f9e6816ecef639157fd"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v5"
+cited_for = ["0.5", "0.7", "0.9", "2.4", "2.7", "2.8", "2.12", "2.13", "2.22"]
+
+[[source]]
+id = "NAK"
+authors = "Kentaro Nakamura"
+title = "Zeta morphisms for rank two universal deformations"
+year = 2020
+arxiv = "2006.13647v2"
+locator_scheme = "theorem"
+locator = "Theorems 2.2, 4.7, 5.2, 5.7–5.10, 5.13; Corollary 2.5, 5.14; (78)–(79) (arXiv v2)"
+url = "https://arxiv.org/abs/2006.13647v2"
+fetched_from = "https://arxiv.org/pdf/2006.13647v2"
+fetched_at = "2026-10-25T00:17:33Z"
+sha256 = "0d8fa462594a20ef96d755d31a13ba23081f1454bfe9809a5fda54fd30311ba7"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v2"
+cited_for = ["3.1", "3.5", "3.6", "3.7", "3.8", "3.9", "4.6", "4.7", "4.8", "4.9", "4.10"]
+
+[[source]]
+id = "BCS"
+authors = "Ashay Burungale, Francesc Castella, Christopher Skinner"
+title = "Base change and Iwasawa main conjectures for GL2"
+year = 2024
+doi = "10.1093/imrn/rnaf082"
+arxiv = "2405.00270v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.1.2, Theorem 3.2.1, Theorem 4.1.3, Corollary 4.1.4, Proposition 4.2.2, Lemmas 5.1.1–5.1.2, Proposition 5.2.1, Lemma 5.2.3, (5.4) (arXiv v2; published IMRN pages also cited)"
+url = "https://arxiv.org/abs/2405.00270v2"
+fetched_from = "https://arxiv.org/pdf/2405.00270v2"
+fetched_at = "2026-10-25T00:17:38Z"
+sha256 = "bf87592cdbaabb5c57004bfd44dd5b4d712cb306bbbdc36520a3daf92fa416f3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v2 (cited as BCS-v2) and the published IMRN 2025 version, author copy https://web.math.ucsb.edu/~castella/BCS-print.pdf (cited as BCS-published); numbering agrees, pages differ"
+cited_for = ["0.3", "5.1", "5.11", "5.12", "5.13", "6.1", "6.2", "6.3", "6.4", "6.5", "6.6", "7.1", "7.2", "7.3", "7.4", "7.5", "7.6", "7.7", "7.8", "7.9", "7.10", "8.1"]
+
+[[source]]
+id = "CW"
+authors = "Francesc Castella, Xin Wan"
+title = "The Iwasawa Main Conjectures for ${\\rm GL}_2$ and derivatives of $p$-adic $L$-functions"
+year = 2020
+arxiv = "2001.03878v1"
+locator_scheme = "theorem"
+locator = "Theorem 3.6 and §§2–3 (arXiv v1)"
+url = "https://arxiv.org/abs/2001.03878v1"
+fetched_from = "https://arxiv.org/pdf/2001.03878v1"
+fetched_at = "2026-10-25T00:17:44Z"
+sha256 = "9bb85193d1b7591bd1abc5b7b5bbcee2164559733c5da6714f000f64761b0f5b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v1"
+cited_for = ["2.15", "2.16", "2.17", "2.21"]
+
+[[source]]
+id = "Fujiwara"
+authors = "K. Fujiwara"
+title = "Deformation rings and Hecke algebras in the totally real case"
+year = 2006
+arxiv = "math/0602606v2"
+locator_scheme = "theorem"
+locator = "Definition 6.11, Theorems 11.1–11.2, Corollary 11.5, Proposition 9.8 (arXiv v2, manuscript pagination)"
+url = "https://arxiv.org/abs/math/0602606v2"
+fetched_from = "https://arxiv.org/pdf/math/0602606v2"
+fetched_at = "2026-10-25T00:17:52Z"
+sha256 = "e8d8c0bddddee83f29d82f34ac89401f2302749e09eb54818b769ffb676a60a1"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v2"
+cited_for = ["5.1", "5.13"]
+
+[[source]]
+id = "CGS23"
+authors = "Francesc Castella, Giada Grossi, Christopher Skinner"
+title = "Mazur's main conjecture at Eisenstein primes"
+year = 2023
+arxiv = "2303.04373v1"
+locator_scheme = "theorem"
+locator = "Definition 1.2.2, Remark 1.2.3, Proposition 1.2.4, Lemma 1.4.4, Proposition 1.4.5, Theorem 3.1.1, Corollary 3.1.3, Proposition 3.2.1 (arXiv v1; v2 numbering also noted)"
+url = "https://arxiv.org/abs/2303.04373v1"
+fetched_from = "https://arxiv.org/pdf/2303.04373v1"
+fetched_at = "2026-10-25T00:17:57Z"
+sha256 = "bd1e6c36d1fbe243dc6d41756abbd0773a5175200801e719e345e1a027bd2b8d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v1 (cited as CGS-v1); arXiv v2 (cited as CGS-v2) renumbers §1 as §2"
+cited_for = ["0.9", "6.1", "6.5", "7.4"]
+
+[[source]]
+id = "Kato2004"
+authors = "Kazuya Kato"
+title = "p-adic Hodge theory and values of zeta functions of modular forms"
+year = 2004
+locator_scheme = "theorem"
+locator = "Theorem 12.5, Theorem 13.4, Theorem 17.4, §17.5"
+url = "https://www.numdam.org/item/AST_2004__295__117_0.pdf"
+fetched_from = "https://www.numdam.org/item/AST_2004__295__117_0.pdf"
+fetched_at = "2026-10-25T00:18:01Z"
+sha256 = "3c6e14b11fa60262db8aff782ce3cf4d83e9100c0be83621a7e4ce502cec605d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Astérisque 295 (2004), 117–290"
+cited_for = ["7.6", "7.7"]
+
+[[source]]
+id = "KLZ17"
+authors = "Guido Kings, David Loeffler, Sarah Livia Zerbes"
+title = "Rankin–Eisenstein classes and explicit reciprocity laws"
+year = 2017
+venue = "Cambridge Journal of Mathematics 5"
+doi = "10.4310/CJM.2017.v5.n1.a1"
+arxiv = "1503.02888v6"
+locator_scheme = "theorem"
+locator = "Theorem B and the explicit reciprocity laws"
+url = "https://arxiv.org/abs/1503.02888v6"
+fetched_from = "https://arxiv.org/pdf/1503.02888v6"
+fetched_at = "2026-10-25T00:18:11Z"
+sha256 = "2530d973f05ff5a4e2338618dde66d3183c1feeb98abc94a05c8cd23183c504d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v6"
+cited_for = ["2.15", "2.16", "6.1"]
+
+[[source]]
+id = "LLZ14"
+authors = "Antonio Lei, David Loeffler, Sarah Zerbes"
+title = "Euler systems for Rankin-Selberg convolutions of modular forms"
+year = 2014
+venue = "Annals of Mathematics 180"
+doi = "10.4007/annals.2014.180.2.6"
+arxiv = "1212.4056v2"
+locator_scheme = "theorem"
+locator = "Beilinson–Flach classes and their norm relations"
+url = "https://arxiv.org/abs/1212.4056v2"
+fetched_from = "https://arxiv.org/pdf/1212.4056v2"
+fetched_at = "2026-10-25T00:18:17Z"
+sha256 = "26f67e2a6b6f36fed709bb526342a50077ecd823d4f477bf7063df799f63b90c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v2"
+cited_for = ["2.15"]
+
+[[source]]
+id = "HT93"
+authors = "Haruzo Hida, Jacques Tilouine"
+title = "Anti-cyclotomic Katz p-adic L-functions and congruence modules"
+year = 1993
+locator_scheme = "theorem"
+locator = "Theorem 7.1, (7.3a,b), (8.8b), Theorem I"
+url = "https://www.numdam.org/article/ASENS_1993_4_26_2_189_0.pdf"
+fetched_from = "https://www.numdam.org/article/ASENS_1993_4_26_2_189_0.pdf"
+fetched_at = "2026-10-25T00:18:18Z"
+sha256 = "a0caa6b587b0120c0394704576fdcbfd2cfa9af5be00e5a98ecca2cfcd787075"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Ann. Sci. ENS 26 (1993), 189–259"
+cited_for = ["0.9", "2.8"]
+
+[[source]]
+id = "HT94"
+authors = "Haruzo Hida, Jacques Tilouine"
+title = "On the anticyclotomic main conjecture for CM fields"
+year = 1994
+locator_scheme = "theorem"
+locator = "Theorems 0.1–0.3, Proposition 5.1, Theorem 7.1"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0117/LOG_0011.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0117/LOG_0011.pdf"
+fetched_at = "2026-10-25T00:18:19Z"
+sha256 = "1481798eb0b299d1393bd7b3c413a515a30eca4b4ae5a693dea043ead55057a6"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Invent. Math. 117 (1994), 89–147; Göttingen digitization with an added cover page, so printed p. 89 is PDF p. 2; image-only scan"
+cited_for = ["0.9", "2.8"]
+
+[[source]]
+id = "Vatsal2003"
+authors = "Vinayak Vatsal"
+title = "Special values of anticyclotomic L-functions"
+year = 2003
+locator_scheme = "theorem"
+locator = "Theorem 1.1; §2.4; §4.6, Proposition 4.7; §5.9 (author copy)"
+url = "https://personal.math.ubc.ca/~vatsal/research/mew3.pdf"
+fetched_from = "https://personal.math.ubc.ca/~vatsal/research/mew3.pdf"
+fetched_at = "2026-10-25T00:18:31Z"
+sha256 = "7463a871e5b26d9c175b3aba1bdc61270fc263e9a72748e629519b99379fb171"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "author copy; Duke Math. J. 116 (2003), 219–261"
+cited_for = ["1.5", "1.7"]
+
+[[source]]
+id = "BW"
+authors = "Adel Betina, Chris Williams"
+title = "Arithmetic of p-irregular modular forms: families and p-adic L-functions"
+year = 2020
+venue = "Mathematika, 67 (2021), no.4, pp.917-948"
+doi = "10.1112/mtk.12107"
+arxiv = "2011.02331v2"
+locator_scheme = "theorem"
+locator = "Theorems A–C (arXiv v2)"
+url = "https://arxiv.org/abs/2011.02331v2"
+fetched_from = "https://arxiv.org/pdf/2011.02331v2"
+fetched_at = "2026-10-25T00:18:40Z"
+sha256 = "e16d11c15cadf059d2717d1075c070b541923002a5223bec5e39bb1a7c0b1ef2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v2"
+cited_for = ["2.20"]
+
+[[source]]
+id = "Pan"
+authors = "Lue Pan"
+title = "The Fontaine-Mazur conjecture in the residually reducible case"
+year = 2019
+arxiv = "1901.07166v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.0.4"
+url = "https://arxiv.org/abs/1901.07166v2"
+fetched_from = "https://arxiv.org/pdf/1901.07166v2"
+fetched_at = "2026-10-25T00:18:48Z"
+sha256 = "590171129d28a65749cf92b1f6099dbacaa90cc6698828f0a4dfd3da943f4824"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v2"
+cited_for = ["2.6", "2.14"]
+
+[[source]]
+id = "Hung2017"
+authors = "Pin-Chi Hung"
+title = "On the non-vanishing mod ℓ of central L-values with anticyclotomic twists for Hilbert modular forms"
+year = 2017
+venue = "Journal of Number Theory 173"
+doi = "10.1016/j.jnt.2016.09.013"
+locator_scheme = "theorem"
+locator = "non-vanishing modulo l of anticyclotomic twists"
+url = "https://doi.org/10.1016/j.jnt.2016.09.013"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["2.12", "5.3"]
+
+[[source]]
+id = "JSW17"
+authors = "Dimitar Jetchev, Christopher Skinner, Xin Wan"
+title = "The Birch and Swinnerton-Dyer Formula for Elliptic Curves of Analytic Rank One"
+year = 2015
+arxiv = "1512.06894v1"
+locator_scheme = "theorem"
+locator = "Theorem 6.1.6"
+url = "https://arxiv.org/abs/1512.06894v1"
+fetched_from = "https://arxiv.org/pdf/1512.06894v1"
+fetched_at = "2026-10-25T00:19:04Z"
+sha256 = "908562efdddaf46b2653317294cb65ae627802bc996400a779b1cd51b5a7d49d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v1"
+cited_for = ["2.7", "2.22"]
+
+[[source]]
+id = "GV00"
+authors = "Ralph Greenberg, Vinayak Vatsal"
+title = "On the Iwasawa invariants of elliptic curves"
+year = 2000
+arxiv = "math/9906215v1"
+locator_scheme = "theorem"
+locator = "Proposition 2.4"
+url = "https://arxiv.org/abs/math/9906215v1"
+fetched_from = "https://arxiv.org/pdf/math/9906215v1"
+fetched_at = "2026-10-25T00:19:11Z"
+sha256 = "cdf0f6e9f9dbdc6ece6a6bda363c0bce62a3937ef7f9a829256bc3800bb8c8b6"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v1"
+cited_for = ["0.2", "2.7", "2.14"]
+
+[[source]]
+id = "KPX"
+authors = "Kiran S. Kedlaya, Jonathan Pottharst, Liang Xiao"
+title = "Cohomology of arithmetic families of (phi,Gamma)-modules"
+year = 2012
+arxiv = "1203.5718v3"
+locator_scheme = "section"
+locator = "Theorems 4.4.2–4.4.6, Corollary 4.4.11"
+url = "https://arxiv.org/abs/1203.5718v3"
+fetched_from = "https://arxiv.org/pdf/1203.5718v3"
+fetched_at = "2026-10-25T00:19:22Z"
+sha256 = "dfd271fa2ef3f329b717ad02637f77def77295bb9197843eba8851fde9212b8c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v3"
+cited_for = ["2.20"]
+
+[[source]]
+id = "Wan-2015"
+authors = "Xin Wan"
+title = "The Iwasawa main conjecture for Hilbert modular forms"
+year = 2015
+doi = "10.1017/fms.2015.16"
+locator_scheme = "theorem"
+locator = "Theorems 3, 8, 27, 82, 86, 88, 97, 100, 101, 103; Definitions 79, 85; Propositions 84, 95, 96, 98; Lemma 87; §§9.1–9.2"
+url = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/CEF44E686A47C92CDAAAC4BA361E9CB5/S205050941500016Xa.pdf/the-iwasawa-main-conjecture-for-hilbert-modular-forms.pdf"
+fetched_from = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/CEF44E686A47C92CDAAAC4BA361E9CB5/S205050941500016Xa.pdf/the-iwasawa-main-conjecture-for-hilbert-modular-forms.pdf"
+fetched_at = "2026-10-25T00:22:04Z"
+sha256 = "553f411135523226065cb5996ef9278ca6595e580e894b5fc83d01d90b03f2f1"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Forum Math. Sigma 3 (2015), e18, published open-access PDF"
+cited_for = ["0.5", "0.7", "1.4", "5.1", "5.2", "5.3", "5.4", "5.5", "5.6", "5.7", "5.8", "5.9", "5.10", "5.12", "5.13", "6.3"]
+
+[[source]]
+id = "Hid91"
+authors = "Haruzo Hida"
+title = "On p-adic L-functions of GL(2) × GL(2) over totally real fields"
+year = 1991
+doi = "10.5802/aif.1258"
+locator_scheme = "theorem"
+locator = "Lemma 5.3(vi)"
+url = "https://aif.centre-mersenne.org/item/10.5802/aif.1258.pdf"
+fetched_from = "https://aif.centre-mersenne.org/item/10.5802/aif.1258.pdf"
+fetched_at = "2026-10-25T00:22:05Z"
+sha256 = "d40f412d2a36f969ff62d1dc338b6245949449733c5d6316808d5aacada81814"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Ann. Inst. Fourier 41 (1991), 311–391"
+cited_for = ["0.9", "2.8"]
+
+[[source]]
+id = "Hid06"
+authors = "Haruzo Hida"
+title = "Anticyclotomic main conjectures"
+year = 2006
+locator_scheme = "theorem"
+locator = "main theorem pp. 466–467, Theorem 6.3, (7.15)–(7.17)"
+url = "https://ems.press/content/book-chapter-files/27475?nt=1"
+fetched_from = "https://ems.press/content/book-chapter-files/27475?nt=1"
+fetched_at = "2026-10-25T00:22:07Z"
+sha256 = "80736300d5bf408ef9bc480257cf8983464ef63c90d0e3abe011658544d8108a"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Documenta Math., Extra Volume Coates (2006), 465–532"
+cited_for = ["0.9", "2.8"]
+
+[[source]]
+id = "Paskunas2016"
+authors = "Vytautas Paskunas"
+title = "On 2-dimensional 2-adic Galois representations of local and global fields"
+year = 2016
+arxiv = "1509.00332v2"
+locator_scheme = "section"
+locator = "§2.2, Propositions 2.8–2.14, 2.33, Theorem 2.22 (arXiv numbering)"
+url = "https://arxiv.org/abs/1509.00332v2"
+fetched_from = "https://arxiv.org/pdf/1509.00332v2"
+fetched_at = "2026-10-25T00:22:18Z"
+sha256 = "727addeb49ee302052a493cf097a868a70c340286981598b5e7382fcd8f86749"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v2"
+cited_for = ["3.5", "3.7", "3.8"]
+
+[[source]]
+id = "Finis2006"
+authors = "Tobias Finis"
+title = "Divisibility of anticyclotomic L-functions and theta functions with complex multiplication"
+year = 2006
+doi = "10.4007/annals.2006.163.767"
+locator_scheme = "theorem"
+locator = "mod p nonvanishing of anticyclotomic Hecke L-values"
+url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v163-n3-p02.pdf"
+fetched_from = "https://annals.math.princeton.edu/wp-content/uploads/annals-v163-n3-p02.pdf"
+fetched_at = "2026-10-25T00:22:37Z"
+sha256 = "878674736df503052d7b0a58504740050016a3f7dd0a0048d66cd85eb4c40f82"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["1.7"]
+
+[[source]]
+id = "Hida2010"
+authors = "Haruzo Hida"
+title = "The Iwasawa μ-invariant of p-adic Hecke L-functions"
+year = 2010
+doi = "10.4007/annals.2010.172.41"
+locator_scheme = "theorem"
+locator = "Theorem I"
+url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v172-n1-p02-p.pdf"
+fetched_from = "https://annals.math.princeton.edu/wp-content/uploads/annals-v172-n1-p02-p.pdf"
+fetched_at = "2026-10-25T00:22:47Z"
+sha256 = "1a97277068aefe67926966d2ad1bb254f115fb610e82391c0d3123b45c80b9f1"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["2.12"]
+
+[[source]]
+id = "Hsieh2012"
+authors = "Ming-Lun Hsieh"
+title = "Non-vanishing of Hecke L-values modulo p"
+year = 2012
+arxiv = "1208.4751v1"
+locator_scheme = "theorem"
+locator = "Theorem C and its corollaries (arXiv 1208.4751)"
+url = "https://arxiv.org/abs/1208.4751v1"
+fetched_from = "https://arxiv.org/pdf/1208.4751v1"
+fetched_at = "2026-10-25T00:24:24Z"
+sha256 = "330cbaa073b6998f51647f34eff43b2c4d8293abaf236296477cc1953a9156c5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v1"
+cited_for = ["2.3", "2.4"]
+
+[[source]]
+id = "Pottharst2013"
+authors = "Jonathan Pottharst"
+title = "Analytic families of finite-slope Selmer groups"
+year = 2013
+doi = "10.2140/ant.2013.7.1571"
+locator_scheme = "theorem"
+locator = "Theorems 1.11–1.13 and 3.13"
+url = "https://msp.org/ant/2013/7-7/ant-v7-n7-p02-p.pdf"
+fetched_from = "https://msp.org/ant/2013/7-7/ant-v7-n7-p02-p.pdf"
+fetched_at = "2026-10-25T00:24:27Z"
+sha256 = "41410c5e95be1f5e6db08b3176563b8d3076d3dacdf924ddd9f809b448190f9e"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["2.20"]
+
+[[source]]
+id = "Hsieh2014"
+authors = "Ming-Lun Hsieh"
+title = "Special values of anticyclotomic Rankin–Selberg L-functions"
+year = 2014
+doi = "10.4171/DM/462"
+arxiv = "1112.1580"
+locator_scheme = "theorem"
+locator = "Theorems A, B and C (Documenta Math. 19 (2014); arXiv 1112.1580 is an earlier draft)"
+url = "https://www.maths.tcd.ie/EMIS/journals/DMJDMV/vol-19/24.pdf"
+fetched_from = "https://www.maths.tcd.ie/EMIS/journals/DMJDMV/vol-19/24.pdf"
+fetched_at = "2026-10-25T00:24:35Z"
+sha256 = "a662df673725f6abbdb5b3ee272e78973c125cbc5d6fd0ba9307c790e8070718"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "published Documenta Math. 19 (2014), 709–767; the arXiv version is an earlier draft and is not used for locators"
+cited_for = ["2.8", "2.13", "2.14", "6.5"]
+
+[[source]]
+id = "BDP22"
+authors = "Adel Betina, Mladen Dimitrov, Alice Pozzi"
+title = "On the failure of Gorensteinness at weight 1 Eisenstein points of the eigencurve"
+year = 2022
+arxiv = "1804.00648v4"
+locator_scheme = "theorem"
+locator = "Theorem A(i), as used in CGS23 Lemma 1.4.4"
+url = "https://arxiv.org/abs/1804.00648v4"
+fetched_from = "https://arxiv.org/pdf/1804.00648v4"
+fetched_at = "2026-10-25T00:25:02Z"
+sha256 = "a0a73bcb89b78eca706ddd287c97927b4bc076b431f6d2ff5939d24f333e10c2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v4"
+cited_for = ["0.9", "6.1"]
+
+[[source]]
+id = "EW16"
+authors = "Ellen Eischen, Xin Wan"
+title = "p-adic Eisenstein series and L-functions of certain cusp forms on definite unitary groups"
+year = 2016
+arxiv = "1404.7153v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.2, as restated in FW Proposition 7.19"
+url = "https://arxiv.org/abs/1404.7153v2"
+fetched_from = "https://arxiv.org/pdf/1404.7153v2"
+fetched_at = "2026-10-25T00:26:53Z"
+sha256 = "df523d74a0bdf668ea619e82074721ca953874331a3289784bd94ad197a9f40e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v2"
+cited_for = ["2.10"]

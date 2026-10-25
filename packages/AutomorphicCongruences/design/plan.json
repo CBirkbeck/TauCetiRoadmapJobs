@@ -1,0 +1,173 @@
+{
+ "gaps": [
+  {
+   "slug": "divisorial-char-ideal",
+   "title": "Divisorial characteristic ideals over noetherian normal domains",
+   "neededBy": [
+    "0.1",
+    "0.2",
+    "0.3",
+    "0.7",
+    "1.10",
+    "5.7",
+    "5.8",
+    "5.9",
+    "5.10",
+    "5.11",
+    "7.8",
+    "7.10"
+   ],
+   "needs": "for a finitely generated torsion module M over a noetherian integrally closed domain A, the divisorial ideal Ch_A(M) = ⋂_𝔭 𝔭^(length_(A_𝔭) M_𝔭) (𝔭 of height one, symbolic powers) attached to `charDivisor`, equal to A exactly when M is pseudo-null, equal to `charIdeal` when A is factorial, multiplicative in short exact sequences up to divisorial hull, with Ch_A(M) ⊆ fA for f ≠ 0 if and only if ord_𝔭(f) ≤ length_(A_𝔭) M_𝔭 at every height-one 𝔭, and, for a finite extension O→O′ of p-adic rings of integers and A = O⟦T_1,…,T_r⟧, the base change Ch_(A⊗O′)(M⊗O′) = Ch_A(M)·(A⊗O′) whose contraction to A is Ch_A(M).",
+   "supplier": "PadicMeasuresIwasawaAlgebras",
+   "section": "§4.6 Characteristic ideals"
+  },
+  {
+   "slug": "unitary-ordinary-igusa",
+   "title": "Ordinary Igusa towers and p-adic forms on GU(2,2) and GU(3,1)",
+   "neededBy": [
+    "1.1",
+    "1.2",
+    "2.1",
+    "2.2",
+    "2.6",
+    "2.9",
+    "5.4",
+    "5.6"
+   ],
+   "needs": "for the unitary similitude groups GU(2,2) and GU(3,1) attached to an imaginary quadratic field K in which p splits, and GU(2,2) attached to a CM quadratic extension M/F of a totally real field in which every place above p splits, with neat prime-to-p level, the Igusa tower over the ordinary locus of the toroidal compactification as a pro-étale torsor under the p-adic torus, the space of p-adic forms as its global functions with q-expansions and Fourier–Jacobi expansions at every cusp and the expansion principle, the action of the prime-to-p Hecke algebra and of the U_p-operators, the Siegel operator to the boundary strata, and the comparison with classical forms of sufficiently regular weight (SU §§5.2–6.2, CLW §§2–4, Wan-2015 §§3–5).",
+   "supplier": "IgusaVarietiesAndTorsionConcentration",
+   "section": "Layers IG.1–IG.2"
+  },
+  {
+   "slug": "unitary-galois-imaginary-quadratic",
+   "title": "Galois representations of GU(2,2) and U(3,1) over an imaginary quadratic field",
+   "neededBy": [
+    "1.8",
+    "2.6"
+   ],
+   "needs": "for an imaginary quadratic field K and a cohomological cuspidal representation π of GU(2,2) or U(3,1) over K of sufficiently regular weight, a four-dimensional polarized Galois representation of G_K unramified outside the ramification of π and p, whose Frobenius characteristic polynomials at the unramified places are the Hecke polynomials of π, crystalline at the places above p when π_p is unramified, and, when π is ordinary (respectively semi-ordinary) at p, with the corresponding filtration at the places above p (SU Theorem 7.1.1; CLW proof of Theorem 8.2.1).",
+   "supplier": "AutomorphicGaloisRepresentationsPartII",
+   "section": "Layer AG2.2"
+  },
+  {
+   "slug": "katz-cm-padic-l",
+   "title": "Katz CM p-adic L-functions, Hida's μ = 0 and CM Rankin–Selberg functions",
+   "neededBy": [
+    "0.9",
+    "1.5",
+    "1.7",
+    "2.3",
+    "2.4",
+    "2.8",
+    "2.11",
+    "2.12",
+    "2.22",
+    "5.5",
+    "6.5",
+    "7.4"
+   ],
+   "needs": "for an imaginary quadratic field K in which an odd prime p splits, Katz's two-variable p-adic L-function on Γ_K and its anticyclotomic restriction with the Hida–Tilouine period, Euler-factor and class-number normalization (HT93 Theorem 7.1 and (8.8b)); Hida's vanishing of the μ-invariant of the anticyclotomic restriction for branch characters whose prime-to-p conductor is divisible only by primes split in K, with p unramified in K and outside Hida's exceptional case (Hida2010 Theorem I); the nonvanishing modulo p of the anticyclotomic Hecke L-values for all but finitely many characters of ℓ-power conductor (Finis2006 Theorem 1.1, Hsieh2012 Theorems A–B); and Hida's Rankin–Selberg p-adic L-function of a primitive ordinary form or Hida family against the ordinary CM family of a character, with its congruence-ideal denominator, both orderings, and its factorization through Katz's function on the line interpolating values at s = 1 (Hid91 Lemma 5.3(vi); FW Corollary 7.21).",
+   "supplier": "PadicFamilies",
+   "section": "Layer 4, p-adic L-functions in families (after §4.7)"
+  },
+  {
+   "slug": "anticyclotomic-rankin-selberg",
+   "title": "Anticyclotomic Rankin–Selberg p-adic L-functions, their μ-invariants and mod-p nonvanishing",
+   "neededBy": [
+    "1.5",
+    "1.7",
+    "2.3",
+    "2.4",
+    "2.8",
+    "2.12",
+    "2.13",
+    "2.22",
+    "5.3",
+    "6.5"
+   ],
+   "needs": "for a cuspidal representation π of GL₂ over a totally real field F (F = ℚ included) of parallel or general weight, a CM quadratic extension K/F in which every place above an odd prime p splits, and a Hecke character λ of K of the infinity type making the central value critical, Hsieh's anticyclotomic p-adic L-function with its interpolation formula under the local root-number hypothesis at the primes dividing the nonsplit level and squarefree nonsplit level (Hsieh2014 Theorem A, pp. 711–712; in weight two over ℚ it is the function of GrossZagierAndArithmeticHeights §9.15), the vanishing of its μ-invariant when moreover p is unramified in F, the residual representation is absolutely irreducible on G_K and p ∤ ∏ #λ(O_(K_v)^×) over the nonsplit places of the conductor of λ (Hsieh2014 Theorem B, p. 713), the nonvanishing modulo p of the twisted central values for almost all anticyclotomic characters of ℓ-power conductor (Hsieh2014 Theorem C, p. 713; Hung2017 for the toric periods of parallel-weight Hilbert newforms used by Wan-2015 Theorem 86), and Vatsal's formula for the μ-invariant of the weight-two anticyclotomic theta element attached to a definite quaternion algebra (Vatsal2003 Theorem 1.1), each with the imprimitive Euler factors at nonsplit primes retained.",
+   "supplier": "PadicFamilies",
+   "section": "Layer 4, p-adic L-functions in families (after §4.7)"
+  },
+  {
+   "slug": "hilbert-hida-odd-degree",
+   "title": "Nearly ordinary Hilbert Hida theory in odd degree",
+   "neededBy": [
+    "5.1",
+    "5.4",
+    "5.11"
+   ],
+   "needs": "the statements of §§5.6–5.9 (freeness, finiteness, control and density of weight-two points for nearly ordinary Hilbert forms) for a totally real field F of odd degree, through definite or indefinite quaternion algebras and the Shimura-curve Ihara input, with the same coefficient rings and normalizations (Fujiwara §§6–11; Wan-2015 Theorem 8).",
+   "supplier": "PadicFamilies",
+   "section": "§§5.6–5.9"
+  },
+  {
+   "slug": "msd-neron-periods",
+   "title": "Néron-period normalization of the Mazur–Swinnerton-Dyer function",
+   "neededBy": [
+    "7.4"
+   ],
+   "needs": "for an elliptic curve E/ℚ with good ordinary reduction at an odd prime p and its quadratic twists, the Mazur–Swinnerton-Dyer p-adic L-function normalized by the Néron period of a minimal model and the unit root, and its comparison with the saturated-lattice normalization of §2.5 through the modular parametrization, the Manin constant and the modular degree (CGS23 Definition 1.2.2 and Remark 1.2.3).",
+   "supplier": "ModularSymbolsPadicLFunctions",
+   "section": "§§1.1 and 2.5"
+  },
+  {
+   "slug": "rubin-imaginary-quadratic",
+   "title": "Rubin's main conjecture for imaginary quadratic fields",
+   "neededBy": [
+    "0.9",
+    "6.5"
+   ],
+   "needs": "for an imaginary quadratic field K in which an odd prime p splits and a finite-order character of prime-to-p conductor, Rubin's two-variable and anticyclotomic main conjecture identifying the characteristic ideal of the Iwasawa module of the corresponding branch with Katz's p-adic L-function up to a unit of the unramified coefficient extension, in the normalization of gap:katz-cm-padic-l (as used in HT94 p. 91 and CGS23 Lemma 1.4.4 and Proposition 1.4.5).",
+   "supplier": "EulerSystemsCyclotomicMainConjecture",
+   "section": "Layer 3, imaginary-quadratic analogue"
+  },
+  {
+   "slug": "fujiwara-minimal",
+   "title": "Fujiwara's minimal totally real R = T with freeness and Gorenstein duality",
+   "neededBy": [
+    "5.1",
+    "5.3",
+    "5.8",
+    "5.13"
+   ],
+   "needs": "for a totally real field F, an odd prime p unramified in F and a nearly ordinary weight-two residual representation ρ̄ of G_F, absolutely irreducible on G_(F(ζ_p)) and outside Fujiwara's p = 5 exception, with a minimal deformation type satisfying Fujiwara's Definition 6.11 and Hypothesis 6.7, the identification of the minimal deformation ring with the localized Hecke algebra as a complete intersection, the freeness of the quaternionic and Hilbert Hecke modules over it, the finite flat Hida lift and the Gorenstein duality (Fujiwara Theorems 11.1–11.2 and Corollary 11.5), together with the ordinary modularity-lifting alternative used for condition (10) of Wan-2015 §9.2.1.",
+   "supplier": "OrdinaryAutomorphicFormsAndModularityLifting",
+   "section": "Layer 4 (R = T), with §§3.28–3.29"
+  },
+  {
+   "slug": "minimal-lift-base-change",
+   "title": "Minimal modular lifts and their real quadratic base change",
+   "neededBy": [
+    "5.1",
+    "5.13"
+   ],
+   "needs": "for an absolutely irreducible residual elliptic representation ρ̄ of G_ℚ and a real quadratic field F satisfying the field conditions of §5.13, a minimal modular lift of ρ̄ whose restriction to G_F is minimal in the sense of all six clauses of Fujiwara's Definition 6.11, with the determinant and Teichmüller types fixed and the local types preserved under the restriction of §4.1 (Wan-2015 proof of Theorem 103).",
+   "supplier": "GlobalGaloisDeformations",
+   "section": "§4.1 and Layer R04.6"
+  },
+  {
+   "slug": "paskunas-p3-freeness",
+   "title": "Paškūnas's freeness criterion at p = 3",
+   "neededBy": [
+    "3.1",
+    "3.5",
+    "3.7",
+    "3.8"
+   ],
+   "needs": "the application of §5.11 at p = 3 with End(ρ̄) = 𝔽 and ρ̄ not a twist of (ε ∗; 0 1): reducedness and the freeness of the patched module M(Θ) over the potentially semistable deformation ring of fixed type at its generic points, as used in Nakamura Theorem 4.7 (Paskunas2016 Proposition 2.33, generalizing the p ≥ 5 result of §6.1).",
+   "supplier": "PadicLocalLanglandsForGL2Qp",
+   "section": "§5.11"
+  },
+  {
+   "slug": "gl2-essential-vectors",
+   "title": "Unconditional GL₂ co-Whittaker families and essential vectors",
+   "neededBy": [
+    "3.5"
+   ],
+   "needs": "for GL₂ over a finite extension of ℚ_ℓ, ℓ ≠ p, and a reduced complete noetherian local p-torsion-free W(𝔽)-algebra, unconditional co-Whittaker families with prescribed generic local Langlands fibres for the principal-series, special and supercuspidal types, and, at the common conductor exponent m of a family with unchanged monodromy filtration, freeness of rank one of its K₁(ϖ^m)-invariants with base change along every specialization (FW Propositions 6.7–6.9).",
+   "supplier": "SmoothRepresentationsOfLocalGroups",
+   "section": "§SR.5.2"
+  }
+ ]
+}
