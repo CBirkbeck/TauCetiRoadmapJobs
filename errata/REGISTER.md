@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-4722 mistakes recorded on the board: 3135 misprints, 1184 errors, 324 gaps, 79 unparsed bullets.
+4727 mistakes recorded on the board: 3138 misprints, 1184 errors, 325 gaps, 80 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -87,6 +87,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Unparsed** (ExoticMonoidalStructuresAndAbstractAutomorphicity, #1277 at 58a1131, 2026-10-25): Error** in Dor23 at Remark 3.47, p. 33: the source allows any h with hKh⁻¹ ∩ U equal to the kernel of θ; that kernel need not be compact (over 𝔽₃((t)) it contains u(t⁻²)), so it should be the conductor lattice u(π^{−ν}O); affects a stated result.
 - **Unparsed** (ExoticMonoidalStructuresAndAbstractAutomorphicity, #1277 at 58a1131, 2026-10-25): Misprint** in Dor23 at the proof of Proposition 4.9, p. 43: the Fourier integrals are written over M₂(F); they should be over M₂(A), with the sum still over M₂(F); affects nothing.
 - **Unparsed** (ExoticMonoidalStructuresAndAbstractAutomorphicity, #1277 at 58a1131, 2026-10-25): Gap** in Dor23 at Construction A.7 and Remark A.8, p. 51: independence of the rational section and multiplicativity of ι are asserted without computation; they should be proved by transporting Δ_A and m along ω ↦ a²ω and the inverse transpose; affects a stated result.
+- **Unparsed** (ExcursionOperatorsAndSpectralActionPartII, #1289 at af07bf6, 2026-10-25): Misprint** in H26 at §2.3, p. 11: the source applies the stable projection to every element of D(G); it is defined only on D_temp(G) (p. 6), and the text uses it on tempered Ξ; affects nothing.
 
 ## A
 
@@ -3017,6 +3018,12 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Gap** at proof of Theorem4.29, printed p.23: the source says the two based conifold loops have identical monodromy images; it should be conjugation by p↦p+1, with fixed points differing by1; affects nothing. Found by PeriodsAndSpecialValues (#169 at 9f14c68, 2026-10-24, codex gpt-6-astra).
 - **Error** at the paragraph before Theorem4.12, printed p.15: the source says the full-rank embedding M₂⊕T₀ into K3 cohomology is primitive; it should be an index-four embedding, since its determinant is −16 and the ambient determinant is −1; affects nothing. Found by PeriodsAndSpecialValues (#169 at 9f14c68, 2026-10-24, codex gpt-6-astra).
 
+## H26
+
+- **Gap** at Corollary 1.3, p. 2: the source says the source attributes atomic stability of the regular supercuspidal packet sum to FKS without argument; it should be give the deduction, since FKS21v2 Theorem 4.4.4 covers only part of S_φ⁺ and assumes exponential convergence; affects a stated result; <!-- tauceti-roadmap-review {"agent": "claude", "head": "af07bf6", "job": "REV-PKG-ExcursionOperatorsAndSpectralActionPartII", "model": "opus", "worker": "fable-rev75"} -->. Found by ExcursionOperatorsAndSpectralActionPartII (#1289 at af07bf6, 2026-10-25, claude opus).
+- **Misprint** at §2.2, p. 8: the source says 2ρ_G as the usual positive-root sum, with G's roots implied by the subscript, yet uses μ_m=4mρ_G as a Ĝ-weight; it should be the positive roots of Ĝ (coroots of G); affects nothing. Found by ExcursionOperatorsAndSpectralActionPartII (#1289 at af07bf6, 2026-10-25, claude opus).
+- **Misprint** at §2.4, p. 13: the source says the reverse composite with extension index i; it should be the identity-stratum index 1, as on p. 9; affects nothing. Found by ExcursionOperatorsAndSpectralActionPartII (#1289 at af07bf6, 2026-10-25, claude opus).
+
 ## Haagerup
 
 - **Misprint** at Theorem 1.1 proof, Lemma 3.1, p. 99 (Haagerup line 225; Haagerup line 227): the source says the Taylor expansion applies φ to b and b²; it should be use ψ for every B-variable term, keeping φ for A-variable terms; affects the proof. Found by CStarAlgebras (ERRATA-CStarAlgebras at 2a35ac0, 2026-10-24, codex gpt-6-astra).
@@ -3357,6 +3364,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Gap** at equations (4.5.8)–(4.5.9), p. 40: the source says functoriality and monoidality of the based fibre product are straightforward and gives no proof; it should be they need a proof from the coherence of the Künneth maps; affects the proof. Found by VStackSheavesAndLisseCategoriesPartII (#441 at 0987ba7, 2026-10-23, claude opus).
 - **Misprint** at the proof of Lemma B.1.1, pp. 72–73: the source says the exponent is m in 𝔪^{m−1} and in Λ/𝔪^{m−1}; it should be k; affects nothing. Found by VStackSheavesAndLisseCategoriesPartII (#441 at 0987ba7, 2026-10-23, claude opus).
 - **Misprint** at the proof of Theorem 4.5.3, p. 41: the source says the fixed locus is fibred over In_S(T₁); it should be In_S(T); affects nothing. Found by VStackSheavesAndLisseCategoriesPartII (#441 at 0987ba7, 2026-10-23, claude opus).
+- **Misprint** at §3.3, (3.3.3), p. 18: the source says the source describes ρ_G as the full positive-root sum; it should be the half-sum, so that 2ρ_G is the full sum (App. A.2, p. 72); affects nothing. Found by ExcursionOperatorsAndSpectralActionPartII (#1289 at af07bf6, 2026-10-25, claude opus).
 - **Error** at §4.6, closing remark, p. 44: the source says isolated fixed points over U make the inertia étale over [U//G]; it should be étaleness of the fixed locus over U is needed (fails for the affine group on P¹); affects a stated result. Found by VStackSheavesAndLisseCategoriesPartII (#441 at 0987ba7, 2026-10-23, claude opus).
 - **Misprint** at §5.3, p. 48: the source says the trace map is described before Definition 4.3.5; it should be before Definition 4.3.6; affects nothing. Found by VStackSheavesAndLisseCategoriesPartII (#441 at 0987ba7, 2026-10-23, claude opus).
 
