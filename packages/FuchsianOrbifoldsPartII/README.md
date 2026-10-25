@@ -11,12 +11,12 @@ The following objects are supplied elsewhere and are not constructed again here.
 - Mathlib owns the curvature −1 metric and invariant measure, generated subgroups, coproduct groups and measurable pushforwards. The height-one distance expression below specializes that metric; it does not define another metric.
 - Tau Ceti owns the projective actions on the upper half-plane and ideal circle, proper discontinuity, cyclic elliptic stabilizers, geodesics, polygon area, modular fundamental-domain measure, ordinary covering lifts and deck conjugation. Completed/UniversalCovers Stage 2 owns the general covering interpretation.
 - AutomorphicSpectralTheory §4.17a owns the primitive reduced arithmetic cycle, Γ_A, the Nielsen surface F_A, its projection with multiplicities, area πℓ_A, primitive length 2log ε_D, and compact-part/finite-width-cusp decomposition. The arithmetic specialization in Layer 2 is a comparison of this supplied surface with the general construction here. Its signature and full oriented boundary-period comparison are stated by AnalyticNumberTheoryPartI §2.1. Those two results are consumed, rather than separate targets of this roadmap.
-- AnalyticNumberTheoryPartI §2.1 owns Stokes under absolute integrability and vanishing cusp flux. Layer 5 adds existence of an improper height-truncated integral from flux alone, including λ=0. AutomorphicSpectralTheory §§4.18 and 4.20 own cusp decay and integrability for uncompleted Eisenstein series; the completed critical-line cancellation estimate is the precise extension consumed below.
+- AnalyticNumberTheoryPartI §2.1 owns Stokes under absolute integrability and vanishing cusp flux, including its uncompleted critical-line and smooth cusp-form applications; multiplying by Λ(1+2it) gives the completed identity for t≠0. Layer 5 adds existence of an improper height-truncated integral from flux alone, including λ=0. AutomorphicSpectralTheory §§4.18 and 4.20 own cusp decay and integrability for uncompleted Eisenstein series; the C¹ Fourier expansion at the regular completed value E*(z,1/2) is the precise extension consumed below.
 - IntegralLattices Layer B, B2–B3 owns the oriented form/ideal-class dictionary and composition. GlobalNumberFields Layer 11 owns orders, Picard groups and narrow Picard groups. MultiquadraticPartII §§2.3–2.4 owns the two-square and distinguished-class square criteria; its §§3.1–3.2 own genus-character compatibility. No new narrow quotient, genus or genus-character construction is made here.
 - ComplexCurveModuli D0.1 and D0.4 own compact smooth surface normal forms and bordered uniformization by a conformal double; D6.2 owns the smooth geodesic-cut metric comparison. Layer 3 extends the reflection construction to finite-area cores with cusps and marked cone orders.
 - ConformalMapping L2 and L4 own disc automorphisms, Schwarz–Pick and reflection; AlgebraicTopology Stages 1 and 7 own van Kampen and finite-CW Euler characteristic; DifferentialGeometry §§5.3, 5.5 and 5.6.3 own ordinary/corners Stokes and its planar integration comparison.
 
-The limits of distribution theorems and spectral arithmetic remain with AutomorphicSpectralTheory Layer 4 and AnalyticNumberTheoryPartI Layer 2. Hyperbolic volume and gonality constructions for higher-dimensional arithmetic quotients belong to HyperbolicCurveVolumesAndGonality. This roadmap supplies exact geometric identities and measures, without adding those asymptotic results.
+The limits of distribution theorems and spectral arithmetic remain with AutomorphicSpectralTheory Layer 4 and AnalyticNumberTheoryPartI Layer 2. Hyperbolic volumes and gonality of higher-dimensional arithmetic quotients are outside this roadmap. This roadmap supplies exact geometric identities and measures, without adding those asymptotic results.
 
 ## Conventions
 
@@ -32,7 +32,7 @@ A primitive reduced minus period n₁,…,nℓ has nₖ≥2 and some nₖ>2. Set
 
 - S(i)=i, S(2i)=i/2 and S²(2i)=2i, while its integral matrix square is −I. For [3,6], T⁻³ changes centres {0,3} modulo 9 to {0,6}; the opposite conjugation gives the wrong rotation.
 - With signature (0;2,3;1;0), 2π(−2+1+1/2+2/3)=π/3. Signature (0;2;1;1) instead gives π. A paired side contributes zero to t in both computations.
-- For F=log y on 0≤x≤1, 1≤y≤2, α_F=i∂zF dz=dz/(2y). Its positively oriented boundary integral is 1/2−1/4=1/4, equal to (1/2)∫ΔF dμ; Δ=−y²(F_xx+F_yy). On F=y² the corrected operator gives −2y², while the inverse-square factor would give −2y⁻².
+- For F=log y on 0≤x≤1, 1≤y≤2, α_F=i∂zF dz=dz/(2y). Its positively oriented boundary integral is 1/2−1/4=1/4, equal to (1/2)∫ΔF dμ; Δ=−y²(F_xx+F_yy). On F=y², Δ gives −2y², while the inverse-square factor would give −2y⁻².
 - In D=12, Norm(2+√3)=1 and Norm(1+√3)=−2; the principal narrow class and J differ. In D=8 the norm −1 unit 1+√2 gives ε_D=(1+√2)²=3+2√2, so the primitive length is 2log(3+2√2).
 
 ## Exact supplier contracts
@@ -41,7 +41,11 @@ A primitive reduced minus period n₁,…,nℓ has nₖ≥2 and some nₖ>2. Set
 
 Use Mathlib at `6b7abb3c7686292736be2955bd3eb9ebf63b456a`. `UpperHalfPlane.volume_def` in `Mathlib/Analysis/Complex/UpperHalfPlane/Measure.lean` gives density y⁻²; `UpperHalfPlane.dist_eq` and `UpperHalfPlane.cosh_dist` in `Mathlib/Analysis/Complex/UpperHalfPlane/Metric.lean` give the curvature −1 metric. These definitions include positivity of height through the upper-half-plane subtype; they do not impose a finite-area quotient. `ModularGroup.S` and `ModularGroup.T` in `Mathlib/LinearAlgebra/Matrix/SpecialLinearGroup.lean` are determinant-one integral matrices, not projective order assertions. `ModularGroup.im_smul_eq_div_normSq` in `Mathlib/Analysis/Complex/UpperHalfPlane/MoebiusAction.lean` retains the nonzero denominator. `ModularGroup.fdo` in `Mathlib/NumberTheory/Modular.lean` uses both strict boundary inequalities.
 
-Use `Subgroup.closure` and `Subgroup.closure_le` in `Mathlib/Algebra/Group/Subgroup/Lattice.lean`; `Monoid.Coprod` and `Monoid.CoprodI` in `Mathlib/GroupTheory/Coprod/Basic.lean` and `Mathlib/GroupTheory/CoprodI.lean`; and `Subgroup.index_eq_zero_iff_infinite` in `Mathlib/GroupTheory/Index.lean`. Natural-valued index zero means an infinite coset space. Use `ProperlyDiscontinuousSMul.finite_stabilizer` in `Mathlib/Topology/Algebra/ConstMulAction.lean` under proper discontinuity. For `MeasureTheory.Measure.map_apply`, require a measurable target set and a measurable, or appropriately almost-everywhere measurable, map; for `MeasureTheory.integral_map`, require the almost-everywhere measurability and strong measurability hypotheses of the Bochner identity (`Mathlib/MeasureTheory/Measure/Map.lean` and `Mathlib/MeasureTheory/Integral/Bochner/Basic.lean`).
+Use `Subgroup.closure` and `Subgroup.closure_le` in `Mathlib/Algebra/Group/Subgroup/Lattice.lean`; `Monoid.Coprod` and `Monoid.CoprodI` in `Mathlib/GroupTheory/Coprod/Basic.lean` and `Mathlib/GroupTheory/CoprodI.lean`; and `Subgroup.index_eq_zero_iff_infinite` in `Mathlib/GroupTheory/Index.lean`. Natural-valued index zero means an infinite coset space. `Monoid.CoprodI.lift_injective_of_ping_pong` in `Mathlib/GroupTheory/CoprodI.lean` requires nonempty pairwise disjoint ping-pong sets, the nonidentity factor-action inclusions and either at least three factors or a factor with at least three elements; the infinite translation factor supplies the latter in §1.3. Use `ProperlyDiscontinuousSMul.finite_stabilizer` in `Mathlib/Topology/Algebra/ConstMulAction.lean` under proper discontinuity. For `MeasureTheory.Measure.map_apply`, require a measurable target set and a measurable, or appropriately almost-everywhere measurable, map; for `MeasureTheory.integral_map`, require the almost-everywhere measurability and strong measurability hypotheses of the Bochner identity (`Mathlib/MeasureTheory/Measure/Map.lean` and `Mathlib/MeasureTheory/Integral/Bochner/Basic.lean`).
+
+`completedRiemannZeta_eq`, `differentiable_completedZeta₀` and `completedRiemannZeta_residue_one` in `Mathlib/NumberTheory/LSeries/RiemannZeta.lean` give Λ(s)=Λ₀(s)−1/s−1/(1−s), with Λ₀ entire and residue 1 at s=1. The constant c_Λ in §5.3 is Λ₀(1)−1; this fixes the logarithmic endpoint coefficient without evaluating Λ(1).
+
+`MeasureTheory.IsFundamentalDomain.quotientMeasure_eq` in `Mathlib/MeasureTheory/Group/FundamentalDomain.lean` identifies the pushforwards of restricted invariant measure for two almost-everywhere fundamental domains, with a countable acting group and measurable constant actions. It does not compute their total mass.
 
 `IsCoveringMap.existsUnique_continuousMap_lifts_of_range_le` in `Mathlib/Topology/Homotopy/Lifting.lean` requires path-connected and locally path-connected source, compatible lifted basepoint and the inclusion of the induced fundamental-group ranges. Layer 3 proves that inclusion using cone meridian powers; it is not an extra conclusion assumed from the equivalence.
 
@@ -53,25 +57,25 @@ Use Tau Ceti at `a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039`.
 - `OnePoint.instMulActionPSL` and `OnePoint.pslMk_smul`, in `TauCeti/Topology/Compactification/OnePoint/ProjectiveLine.lean`, give the ideal-boundary action. The Cayley compactification compatibility is proved in Layer 0.
 - `TauCeti.UpperHalfPlane.isProperMap_psl_smul_I`, in `TauCeti/Analysis/Complex/UpperHalfPlane/ProperAction.lean`, and the discrete-subgroup action instance in `TauCeti/Analysis/Complex/Fuchsian/ProperAction.lean` give proper discontinuity. `Subgroup.instIsCyclicStabilizer` in `TauCeti/Analysis/Complex/Fuchsian/Stabilizer.lean` gives cyclicity of point stabilizers for discrete subgroups.
 - `TauCeti.UpperHalfPlane.geodesicLine` and `TauCeti.UpperHalfPlane.dist_geodesicLine`, in `TauCeti/Analysis/Complex/UpperHalfPlane/Geodesic.lean`, supply actual complete unit-speed lines. Compact polygon convexity uses `TauCeti/Analysis/Complex/UpperHalfPlane/Polygon/Basic.lean`. The ideal-vertex area theorem is `TauCeti.UpperHalfPlane.ConvexPolygon.volume_carrier` in `TauCeti/Analysis/Complex/UpperHalfPlane/Polygon/Convex/GaussBonnet.lean`; free sides and quotient bookkeeping use the FuchsianOrbifolds contract below.
-- `ModularGroup.isFundamentalDomain_fdo`, in `TauCeti/NumberTheory/Modular.lean`, is for PSL₂(ℤ) and is almost everywhere. `UpperHalfPlane.volume_preimage_coe_null`, in `TauCeti/Analysis/Complex/UpperHalfPlane/Measure.lean`, transfers planar-null boundaries. `UpperHalfPlane.volume_setOf_re_mem_Ico_and_lt_im` in the same module gives the finite-width cusp-tail mass. `Subgroup.exists_isFundamentalDomain` and `Subgroup.IsCofinite`, in `TauCeti/Analysis/Complex/Fuchsian/Covolume.lean`, give measurable quotient area and discrete finite-covolume groups, without finite generation in their definitions. The finite-index area input is `MeasureTheory.covolume_eq_card_mul_covolume` in `TauCeti/MeasureTheory/Group/FundamentalDomain.lean`, applied with the invariant measure and fundamental-domain hypotheses; equivalently use `Subgroup.isCofinite_iff_isCofinite_and_finiteIndex` in the Fuchsian covolume module for nested discrete subgroups.
+- `ModularGroup.isFundamentalDomain_fdo`, in `TauCeti/NumberTheory/Modular.lean`, is for PSL₂(ℤ) and is almost everywhere. `ModularGroup.fd_ae_eq_fdo` in the same file identifies the closed and open domains almost everywhere, so any measurable intermediate representative set has the same area. `UpperHalfPlane.volume_preimage_coe_null`, in `TauCeti/Analysis/Complex/UpperHalfPlane/Measure.lean`, transfers planar-null boundaries. `UpperHalfPlane.volume_setOf_re_mem_Ico_and_lt_im` in the same module gives the finite-width cusp-tail mass. `Subgroup.exists_isFundamentalDomain` and `Subgroup.IsCofinite`, in `TauCeti/Analysis/Complex/Fuchsian/Covolume.lean`, give measurable quotient area and discrete finite-covolume groups, without finite generation in their definitions. The finite-index area input is `MeasureTheory.covolume_eq_card_mul_covolume` in `TauCeti/MeasureTheory/Group/FundamentalDomain.lean`, applied with the invariant measure and fundamental-domain hypotheses; equivalently use `Subgroup.isCofinite_iff_isCofinite_and_finiteIndex` in the Fuchsian covolume module for nested discrete subgroups. `TauCeti.ModularGroup.isCofinite_psl2zToPSL2RRange` in `TauCeti/Analysis/Complex/Fuchsian/LevelOne/Basic.lean` supplies finite covolume for the ambient effective modular group.
 - `NumberField.NarrowClassGroup`, `NumberField.NarrowClassGroup.mkPrincipal_sq` and `NumberField.NarrowClassGroup.instFinite`, in `TauCeti/NumberTheory/NumberField/NarrowClassGroup/Basic.lean` and `Finite.lean`, give the native finite narrow group and J²=1. Its square-subgroup quotient and cosets supply genera; no new quotient is implicit.
 - `TauCeti.Deck.conjMulEquiv`, in `TauCeti/AlgebraicTopology/UniversalCover/Deck/Conjugation.lean`, conjugates deck groups of an over-base homeomorphism h with q∘h=p. Rebase the target covering along the doubled equivalence before applying it.
 
 ### From TauCetiRoadmap.FuchsianOrbifolds
 
-Consume Layer 0 (effective actions and proper discontinuity), Layer 1 (free quotient and finite cyclic cone charts), Layer 2, items 1–3 and 5 (geodesic polygons, local side/cycle theorem, angle defect, quotient signature bookkeeping and fundamental-domain area comparison), Layer 3 (full cusp stabilizers, scaling data and precisely invariant horodiscs), Layer 4 (cofinite compactification and genus convention), and Layer 6 (the effective level-one quotient M, its measure μ_mod of mass π/3, regular connected locus and cone charts). Restriction to CΓ uses those interior charts; this roadmap constructs its genuine half-disc boundary charts. The local polygon theorem is applied after the free-side tiling and local finiteness are proved in §1.3; the cofinite converse in Layer 2, item 4 is not an input for an infinite-area Ford polygon.
+Consume Layer 0 (effective actions and proper discontinuity), Layer 1 (free quotient and finite cyclic cone charts), Layer 2, items 1–3 and 5 (geodesic polygons, local side/cycle theorem, angle defect, quotient signature bookkeeping and fundamental-domain area comparison), Layer 3 (full cusp stabilizers, scaling data and precisely invariant horodiscs), Layer 4, item 5 (cofinite signature and area), Layer 5, item 1 (topological genus), and Layer 6 (the effective level-one quotient M with signature (0;2,3;1;0) and cone charts). Restriction to CΓ uses those interior charts; this roadmap constructs its genuine half-disc boundary charts. The local polygon theorem is applied after the free-side tiling and local finiteness are proved in §1.3; the cofinite converse in Layer 2, item 4 is not an input for an infinite-area Ford polygon.
 
 ### From TauCetiRoadmap.AutomorphicSpectralTheory
 
-Consume §§1.14–1.15 for E and E*=Λ(2s)E with Λ(s)=π^(−s/2)Γ(s/2)ζ(s), primitive-pair factor 1/2, continuation, Fourier constant term and residues −1/2,+1/2 at 0,1. Consume §4.17a for the arithmetic period, surface F_A, subgroup, projection, area, length and finite-width cusp. Consume §§4.18 and 4.20 for smooth cusp decay and uncompleted Eisenstein integrability. These section numbers specify the contracts instead of the older AS layer labels.
+Consume §§1.14–1.15 for E and E*=Λ(2s)E with Λ(s)=π^(−s/2)Γ(s/2)ζ(s), primitive-pair factor 1/2, continuation, Fourier constant term and residues −1/2,+1/2 at 0,1. Consume §4.17a for the arithmetic period, surface F_A, subgroup, projection, area, length and finite-width cusp. Consume §§4.18 and 4.20 for smooth cusp decay and uncompleted Eisenstein integrability, including vanishing horizontal flux. For t≠0 the completed specialization follows by scalar multiplication; only the regular completed value at t=0 needs the additional contract below.
 
 What AutomorphicSpectralTheory must provide (gap:primitive-minus-cycle-interface): §4.17a must export the primitive reduced minus cycle as a complete narrow-class invariant up to cyclic rotation, its attracting Pell word ∏T^nS with least norm-one unit, and its compatibility with the IntegralLattices B2–B3 oriented dictionary specialized through GlobalNumberFields Layer 11 to the native narrow class group.
 
-What AutomorphicSpectralTheory must provide (gap:oriented-quadratic-cycle-reversal): §4.17a must identify the full primitive parametrized modular cycles C_(JA⁻¹) and C_A with opposite orientations, using the DIT coefficient actions [a,−b,c]↦A⁻¹, [−a,b,−c]↦JA and −Q↦JA⁻¹ and retaining the negative-leading-coefficient sign clause.
+What AutomorphicSpectralTheory must provide (gap:oriented-quadratic-cycle-reversal): §4.17a must identify the full primitive parametrized modular cycle C_(JA⁻¹) with C_A traversed in the opposite orientation.
 
-What AutomorphicSpectralTheory must provide (gap:completed-critical-line-c1-bounds): §§1.15 and 4.18 must export C¹ termwise Fourier differentiation on high strips, exponential bounds for nonconstant modes and first derivatives, and fixed-t bounds O(√Y log Y) and O(Y⁻¹/² log Y) for the constant term and its derivative of E*(z,1/2+it), including t=0 by holomorphic cancellation, together with the corresponding zero-mean smooth Maass cusp estimates.
+What AutomorphicSpectralTheory must provide (gap:completed-critical-line-c1-bounds): §§1.15 and 4.18 must export, for the regular value E*(z,1/2), a termwise C¹ Fourier expansion on high strips with exponentially decaying nonconstant modes and first derivatives.
 
-The first gap refines the period construction without adding another arithmetic reduction theory here. The second fixes the signed primitive boundary required for cancellation. The third concerns the completed endpoint, rather than division by Λ(1) as a total value.
+The first gap refines the period construction without adding another arithmetic reduction theory here. The second fixes the signed primitive boundary required for cancellation. The third concerns only the regular completed endpoint at t=0. Its constant-term growth is deduced from §1.15 by cancellation of the two Laurent poles.
 
 ### From TauCetiRoadmap.AnalyticNumberTheoryPartI
 
@@ -79,7 +83,7 @@ Consume §2.1, “Stokes on supplied Nielsen surfaces and the CM-point adapter�
 
 ### From TauCetiRoadmap.IntegralLattices and TauCetiRoadmap.GlobalNumberFields
 
-Consume IntegralLattices Layer B, B2–B3: proper classes of primitive forms of nonsquare positive discriminant map to the narrow Picard group of the appropriate order; a negative leading coefficient requires the √D sign correction, and composition agrees with multiplication. Consume GlobalNumberFields Layer 11 for the order, invertible proper ideals, narrow Picard group and maximal-order comparison. The arithmetic specialization and DIT sign actions are exported through the §4.17a contract above; no dictionary or order carrier is rebuilt here.
+Consume IntegralLattices Layer B, B2–B3: proper classes of primitive forms of nonsquare positive discriminant map to the narrow Picard group of the appropriate order; a negative leading coefficient requires the √D sign correction, and composition agrees with multiplication. Consume GlobalNumberFields Layer 11 for the order, invertible proper ideals, narrow Picard group and maximal-order comparison. For the DIT label A of Q=[a,b,c], these B2–B3 rules give [a,−b,c]↦A⁻¹, [−a,b,−c]↦JA and −Q↦JA⁻¹, including the negative-leading-coefficient clause. Only the identification of the resulting oppositely oriented parametrized cycles is requested from §4.17a; no dictionary or order carrier is rebuilt here.
 
 ### From TauCetiRoadmap.MultiquadraticPartII
 
@@ -203,7 +207,7 @@ The construction has the following API.
 
 Boundary components contribute +t to −χorb. A cusp counts once in s and zero times in t.
 
-*Needs:* §0.3; FuchsianOrbifolds Layer 4; ComplexCurveModuli D0.1; AlgebraicTopology Stage 7.
+*Needs:* §0.3; FuchsianOrbifolds Layer 4 and Layer 5, item 1; ComplexCurveModuli D0.1; AlgebraicTopology Stage 7.
 
 ### 0.5 Gauss–Bonnet with geodesic boundary
 
@@ -239,7 +243,7 @@ The modular group has full ideal circle, core equal to its quotient, signature (
 
 ### Dependencies
 
-FuchsianOrbifolds Layers 0–4; ComplexCurveModuli D0.1 for compact smooth surface normal forms; ConformalMapping boundary charts through the parent; AlgebraicTopology Stages 1 and 7; the pinned metric, area, projective actions and finite stabilizers. The construction does not use arithmetic cycles or spectral functions.
+FuchsianOrbifolds Layers 0–5; ComplexCurveModuli D0.1 for compact smooth surface normal forms; ConformalMapping boundary charts through the parent; AlgebraicTopology Stages 1 and 7; the pinned metric, area, projective actions and finite stabilizers. The construction does not use arithmetic cycles or spectral functions.
 
 ## Layer 1: Quadratic cycles and their Ford polygons
 
@@ -305,7 +309,7 @@ At least one Iₖ is a nonempty interval. The semicircle endpoints are ideal, so
 
 ### 1.3 Cycle polygon presentation
 
-For an admissible digit list, the Γ(n)-translates of P(n) tile ℍ with disjoint interiors, locally finitely away from ideal endpoints. Boundary identifications are exactly the specified side pairings. The resulting group is ℤ*(C₂)^*ℓ, where T^m generates ℤ and S₀,…,Sℓ₋₁ generate the order-two factors. The quotient has one cusp class and its full stabilizer at ∞ is ⟨T^m⟩; the elliptic orbits are represented once by Nₖ+i, k=0,…,ℓ−1, all of order two. Its underlying topological type is genus zero with one funnel end. The acceptance statements are `cyclePolygon_fundamentalDomain` for the almost-everywhere fundamental domain, `cycleGroup_presentation` for existence of the free-product isomorphism, and `cycleGroup_cuspStabilizer` for Γ(n)∩⟨T⟩=⟨T^m⟩. They all quantify over every admissible finite list.
+For an admissible digit list, the Γ(n)-translates of P(n) tile ℍ with disjoint interiors, locally finitely away from ideal endpoints. Boundary identifications are exactly the specified side pairings. The resulting group is ℤ*(C₂)^*ℓ, where T^m generates ℤ and S₀,…,Sℓ₋₁ generate the order-two factors. The quotient has one cusp class and its full stabilizer at ∞ is ⟨T^m⟩; the elliptic orbits are represented once by Nₖ+i, k=0,…,ℓ−1, all of order two. Its underlying topological type is genus zero with one funnel end. The acceptance statements are `cyclePolygon_fundamentalDomain` for the almost-everywhere fundamental domain, `cycleGroup_presentation` for a free-product isomorphism sending the positive generator of ℤ to T^m and the nonidentity element of its kth C₂ factor to Sₖ, and `cycleGroup_cuspStabilizer` for Γ(n)∩⟨T⟩=⟨T^m⟩. They all quantify over every admissible finite list.
 
 The list is admissible; no assertion of minimality as an arithmetic period is needed for this theorem.
 
@@ -313,9 +317,15 @@ The list is admissible; no assertion of minimality as an arithmetic period is ne
 
 One route is to proceed as follows. Discreteness comes from the modular embedding. For any orbit, the integral bottom-row height formula gives a maximum among heights at least the starting height: only finitely many integer bottom rows occur there. Translate a maximizing point into the strip. If it lies inside a unit disc, that half-turn would increase its height, a contradiction. For uniqueness, a reduced alternating word in the translation and involution factors carries an interior point into an excluded disc or an exterior strip. This is the disjoint-disc ping-pong argument; it also proves there are no extra relations. Apply the inherited polygon cycle/orientation bookkeeping to the split half-sides. The only ideal parabolic vertex cycle is ∞, with primitive pairing T^m; traversing the remaining free ideal intervals through their endpoint identifications gives one end circle. The resulting planar polygon gluing gives genus zero. The reduction normal form shows that an element fixing ∞ has no involution syllable, hence is `T^(j*m)`. It also identifies the ℓ elliptic conjugacy classes.
 
+**Checks.**
+
+- For [4], the positive infinite-cyclic generator maps to T⁴, sending i to 4+i; T⁻⁴ sends i to −4+i and does not meet this marking.
+- For [3,6], the two order-two generators map to S and T³ST⁻³, whose latter SL representative is [[3,−10],[1,−3]] and fixes 3+i. A map interchanging the two factors does not meet the marking.
+- For [4,4], the two order-two factors remain distinct. With S₁=T⁴ST⁻⁴, SS₁ has representative [[−1,4],[4,−17]], while S₁S has [[−17,−4],[−4,−1]]; these are unequal even projectively. This rejects abelianizing the presentation or identifying repeated digits' factors.
+
 The full cusp stabilizer is proved, not inferred from the presence of T^m. The finite-area cofinite converse of the parent is not used for this infinite-area domain.
 
-*Needs:* §1.2; FuchsianOrbifolds Layer 6; FuchsianOrbifolds Layer 2; FuchsianOrbifolds Layer 3.
+*Needs:* §1.2; Mathlib `Monoid.CoprodI.lift_injective_of_ping_pong`; FuchsianOrbifolds Layer 6; FuchsianOrbifolds Layer 2; FuchsianOrbifolds Layer 3.
 
 ### 1.4 Cyclic presentation invariance
 
@@ -357,7 +367,7 @@ One route is to proceed as follows. The group contains a nontrivial translation 
 
 Both infinite index and second kind receive proofs in the correct direction. Core area is not confused with the infinite area of Γ(n)\ℍ.
 
-*Needs:* §1.3; §0.1; §0.3; FuchsianOrbifolds Layer 2; FuchsianOrbifolds Layer 6; Mathlib `UpperHalfPlane.volume_def`.
+*Needs:* §1.3; §0.1; §0.3; FuchsianOrbifolds Layer 2; FuchsianOrbifolds Layer 6; Mathlib `UpperHalfPlane.volume_def`; Tau Ceti `MeasureTheory.covolume_eq_card_mul_covolume`; Tau Ceti `TauCeti.ModularGroup.isCofinite_psl2zToPSL2RRange`.
 
 ### Examples
 
@@ -470,7 +480,7 @@ For a finite-area Nielsen core with t≥1 geodesic boundary circles, glue it to 
 
 The core is connected, nonelementary and geometrically finite; each genuine boundary component is a smooth closed geodesic without cone points.
 
-(DIT16, Theorem 1 p.957 and final proof paragraph p.959, corrected conformal-lift route, DIT16 line 387.)
+This is this roadmap's orbifold doubling route, extending the smooth double of ComplexCurveModuli D0.4 and the reflected geodesic-cut metric of D6.2.
 
 One route is to proceed as follows. Use half-disc charts along the boundary and the conjugate chart on the second copy. Geodesic reflection glues them analytically and isometrically; existing interior cone charts remain unchanged. Double a finite cut polygon. The inherited polygon theorem and reflected side identifications give the boundaryless orbifold quotient of ℍ; cusp ends stay complete. Compute Euler characteristic by gluing along t circles, each of Euler characteristic zero. Count the two copies of each cusp and cone orbit and compare area by integration.
 
@@ -500,7 +510,7 @@ An orientation-preserving conformal orbifold equivalence f:Core(Γ_A)→Core(Γ_
 
 A and B belong to the same fixed real quadratic field. The equivalence is holomorphic on the interior in orbifold charts and preserves its orientation and cone orders.
 
-(DIT16, Final proof paragraph p.959, the lift-selection gap correction, DIT16 line 387.)
+This is this roadmap's covering-lift route to conformal conjugacy, using the double of §3.1, the pinned based lifting criterion and the disc automorphism classification of ConformalMapping L2.
 
 One route is to proceed as follows. Double f by reflection using the analytic boundary charts. Remove the cone points and apply the pinned ordinary covering lifting criterion to the covers obtained from the reflected polygon groups, after rebasing the target cover by the doubled f. These punctured surfaces and covering spaces are path connected and locally path connected; choose matching lifted basepoints. The subgroup defining the orbifold universal cover is the normal closure of the mⱼth powers of small cone meridians. Cone-order preservation carries this subgroup to the matching subgroup, so the lift exists in both directions. Local maps extend across removed lifts by the removable-singularity theorem in disc coordinates. Choose matching lifted basepoints in the first halves of the doubles. Uniqueness of based lifts makes the two chosen lifts inverse and supplies deck equivariance; the pinned deck conjugation API packages the resulting cover isomorphism. The inverse lifts extend to a biholomorphism ℍ→ℍ; by the imported disc automorphism/Schwarz–Pick equality classification it is a PSL₂(ℝ) isometry. The corresponding connected preimage halves are the convex, hence simply connected, cores CΓ_A and CΓ_B; their stabilizers in the doubled polygon groups are exactly the original Γ_A and Γ_B. Thus the lift maps these halves onto each other and conjugates their stabilizers. This proves the required core-group conjugacy, not only conjugacy of the larger doubled groups. Conjugacy sends parabolics and their fixed points to parabolics. Since Γ_B has one cusp orbit, compose by its deck element to fix ∞. The real projective normal form is az+b with positive a.
 
@@ -510,13 +520,13 @@ The lift is derived from covering theory and cone meridians, not assumed as a fi
 
 ### 3.3 Highest elliptic lifts
 
-The headline `cycleGroup_highestElliptics` states the height bound and equality of the maximal-height fixed-point set with the prefix centres modulo m. A fixed-point witness is a nonidentity element of the actual subgroup, so identity fixed points are excluded.
+Prove the height bound and equality of the maximal-height fixed-point set with the prefix centres modulo m as the normalization step for §3.4. A fixed-point witness is a nonidentity element of the actual subgroup, so identity fixed points are excluded.
 
 For Γ(n), the union of all elliptic fixed points has maximal imaginary part 1, and the points attaining it are exactly {Nₖ+jm+i:0≤k<ℓ,j∈ℤ}. More precisely for γ represented by [[a,b],[c,d]] and Pₖ=Nₖ+i, Im(γPₖ)=1/((cNₖ+d)²+c²)≤1; equality holds exactly when γ∈⟨T^m⟩ or γ∈⟨T^m⟩Sₖ. The full stabilizer and the complete list of elliptic orbits are necessary inputs.
 
 n is admissible; matrix entries are integral and determinant one; Sₖ and γ are interpreted projectively. γ belongs to Γ(n), and 0≤k<ℓ. The equality classification is not asserted for arbitrary ambient modular matrices.
 
-(DIT16, Theorem 1 final proof paragraph p.959, corrected conformal-lift route, DIT16 line 387.)
+This is this roadmap's arithmetic normalization route, using the height formula `ModularGroup.im_smul_eq_div_normSq` in `Mathlib/Analysis/Complex/UpperHalfPlane/MoebiusAction.lean` and the elliptic-orbit and full cusp-stabilizer conclusions of §1.3.
 
 One route is to proceed as follows. Apply the pinned imaginary-part formula at Pₖ. The denominator is a positive integer, so it is at least one. Equality of the sum of two integer squares to one leaves (c,d)=±(0,1) or c=±1,d=−cNₖ. In the first case γ is a translation; in the second γSₖ is a translation. Use the full cusp stabilizer ⟨T^m⟩, not the ambient modular translation group, to identify the exact maximal-height points. Apply the orbit classification from the Ford-polygon theorem to include all elliptics.
 
@@ -526,7 +536,7 @@ For ℓ=1 the highest lift set has period m despite representing only one cone p
 
 **Checks.**
 
-- For [3,6], the elliptic points i and 3+i attain height one. The point S(3+i)=−3/10+i/10 has height 1/10 and is fixed by the conjugate of S₃; it is excluded from the maximal-height set.
+- For [3,6], the elliptic points i and 3+i attain height one. The point S(3+i)=−3/10+i/10 has height 1/10 and is fixed by S S₁ S⁻¹, the conjugate of the involution S₁ centred at 3; it is excluded from the maximal-height set.
 - If the identity were allowed as the fixed-point witness, 2i would satisfy the premise and incorrectly require 2≤1. The witness is expressly nonidentity.
 - For [4,4], the maximal-height set is ({0,4}+8ℤ)+i=4ℤ+i, while the full cusp period is 8. Recovering arithmetic periods uses primitivity and the full cusp subgroup, rather than the least period of this point set alone.
 
@@ -536,13 +546,19 @@ For ℓ=1 the highest lift set has period m despite representing only one cone p
 
 For A,B∈Cl⁺(K) in a fixed real quadratic field, there is an orientation-preserving conformal equivalence of bordered orbifolds F_A≅F_B if and only if A=B. It is sufficient to retain the cone points and their orders, the cusp and the oriented bordered conformal structure; the projection to M is not part of the required invariant.
 
-The reduced periods used to construct F_A,F_B are primitive. Conformal equivalence has the precise meaning in the conformal lifting theorem.
+The reduced periods used to construct F_A,F_B are primitive. Conformal equivalence has the precise meaning in the conformal lifting theorem. The raw-list headline `cycleGroup_conj_iff_isRotated` states that, for any two admissible lists n,n′, their subgroups embedded in PSL₂(ℝ) are conjugate by an element of PSL₂(ℝ) if and only if n and n′ are cyclic rotations. This group statement includes repeated lists and does not require a common quadratic field.
 
-(DIT16, Theorem 1 p.957 and last proof paragraph p.959, DIT16 line 387.)
+(DIT16, Theorem 1 p.957, conformal-class conclusion, DIT16 line 332; the raw-list classification uses §§1.3–1.4 and §3.3.)
 
-One route is to proceed as follows. Normalize its lift as φ(z)=az+b. Since φ bijects the entire elliptic fixed-point sets and scales their heights, the maximum-height theorem gives a=1. The full positive cusp translation period therefore agrees: m_A=m_B. Translation by b carries the cyclic ordered sets of height-one lifts modulo m onto one another. Their positive successive gaps are the digit cycles, up to cyclic rotation. Apply the imported complete-invariant theorem of AutomorphicSpectralTheory §4.17a to conclude A=B. Conversely equal classes have rotated reduced periods and cyclic-rotation conjugacy supplies the equivalence.
+One route is to proceed as follows. Normalize its lift as φ(z)=az+b. Since φ bijects the entire elliptic fixed-point sets and scales their heights, the maximum-height theorem gives a=1. The full positive cusp translation period therefore agrees: m_A=m_B. Translation by b carries the cyclic ordered sets of height-one lifts modulo m onto one another. Their positive successive gaps are the digit cycles, up to cyclic rotation. Apply the imported complete-invariant theorem of AutomorphicSpectralTheory §4.17a to conclude A=B. This argument also proves the forward direction of the raw-list headline: use the unique cusp class and the full cusp period of §1.3 for each group. Conversely cyclic-rotation conjugacy proves the group statement and, for equal arithmetic classes, supplies the conformal equivalence.
 
 No claim is made for antiholomorphic equivalences, which reverse cyclic order. For [3,6], V(3) and V(6) need not be the same intrinsic distance between the two cone points.
+
+**Checks.**
+
+- [3,6] and [6,3] are conjugate by T⁻³, and are cyclic rotations. This fixes the conjugation direction.
+- [4] and [4,4] are not conjugate: maximal elliptic height forces a=1, while their full cusp widths are 4 and 8. Their identical height-one point sets 4ℤ+i alone would give the wrong answer.
+- [3,4,5] and [5,4,3] have width 12 and centres {0,3,7} and {0,5,9} modulo 12. Their positive cyclic gap lists are not rotations, so neither side of the headline equivalence holds. Reflection reverses the cyclic order and is excluded by PSL₂(ℝ).
 
 *Needs:* §3.2; §3.3; §1.4; AutomorphicSpectralTheory §4.17a (primitive cycles, Pell word and orientation contracts).
 
@@ -558,13 +574,13 @@ Layers 0–2; ComplexCurveModuli D0.4 and D6.2; ConformalMapping L2 and L4; Alge
 
 ### 4.1 Modular boundary convention
 
-Let F_DIT be the subset of ℍ given by (−1/2≤Re z≤0 and |z|²≥1) or (0<Re z<1/2 and |z|²>1). It is the half-open representative convention of DIT. Its interior is the pinned open modular domain fdo, and its symmetric difference with fdo has hyperbolic area zero. Use the parent’s modular quotient and its measure μ_mod of total mass π/3; this adapter introduces no new modular fundamental-domain theorem.
+Let F_DIT be the subset of ℍ given by (−1/2≤Re z≤0 and |z|²≥1) or (0<Re z<1/2 and |z|²>1). It is the half-open representative convention of DIT. Its interior is the pinned open modular domain fdo, and its symmetric difference with fdo has hyperbolic area zero. On the parent’s modular quotient M, with orbit map π_mod:ℍ→M, define μ_mod=(π_mod)₊(volume.restrict fdo). Prove that this is its Borel quotient area measure, has total mass π/3 and is independent of the measurable almost-everywhere fundamental domain. Prove here also that the regular locus M_reg, obtained by deleting the two cone orbits, is path connected.
 
 The group is effective PSL₂(ℤ); area uses the invariant volume instance on ℍ.
 
 (DIT16, §2 p.953, definition of F, DIT16 line 195.)
 
-One route is to proceed as follows. Write the displayed inequalities as a measurable set. Its difference from fdo is contained in two vertical rays and the unit semicircle, which are planar-null and hence invariant-area-null by the pinned boundary-null theorem. Use the existing a.e. fundamental domain and parent’s modular quotient measure to identify integrals. Tie choices matter only for representatives, not for area.
+One route is to proceed as follows. The inclusions fdo⊆F_DIT⊆fd and the pinned almost-everywhere equality of fd and fdo give the required null difference; the inequalities make F_DIT measurable. Push forward the restricted measure through π_mod and use the countable modular action and `MeasureTheory.IsFundamentalDomain.quotientMeasure_eq` to obtain independence. The quotient chart topology identifies its Borel sets with the quotient measurable structure. FuchsianOrbifolds Layer 4, item 5 applied to the Layer 6 signature gives μ_mod(M)=2π(−2+1+1/2+2/3)=π/3. For connectedness, remove the locally finite discrete set of elliptic lifts from ℍ. Any compact path can be detoured around the finitely many points it meets, so this complement is path connected. Its image under the free quotient projection of FuchsianOrbifolds Layer 1 is M_reg. Tie choices matter only for representatives, not for area.
 
 The construction has the following API.
 
@@ -572,16 +588,22 @@ The construction has the following API.
 - F_DIT is measurable.
 - F_DIT=fdo almost everywhere for hyperbolic area.
 - For any integrable invariant function, its integral on F_DIT agrees with the modular quotient integral.
+- For Borel E⊆M, μ_mod(E)=volume(fdo∩π_mod⁻¹E), independent of the almost-everywhere fundamental domain.
+- μ_mod(M)=π/3, and every point, including each cone point, has measure zero.
+- M_reg is path connected.
 
 **Checks.**
 
 - i∈F_DIT although i∉fdo. This rejects using the strict open domain as the half-open representative set.
 - −1/2+2i belongs and 1/2+2i does not. This fixes which vertical tie is retained.
 - −1/2+(√3/2)i belongs, while 1/2+(√3/2)i and the positive-real-part open semicircle do not. This fixes which circular tie is retained.
+- The triangle with angles π/3, π/3 and 0 has mass π−2π/3=π/3; using an ineffective double count would give 2π/3.
+- μ_mod(∅)=0 and μ_mod({π_mod(i)})=0, while μ_mod(M)=π/3>0. This rejects an atom at the order-two cone point or a zero quotient measure.
+- Replacing fdo by F_DIT changes its area by 0 and changes neither μ_mod nor its integrals. Deleting the two cone points leaves paths joined by small detours, whereas deleting a separating curve need not preserve connectedness.
 
 The point i is included, and positive-real-part points on the unit semicircle are excluded. All subsequent measure equalities are independent of this null boundary choice.
 
-*Needs:* Mathlib `ModularGroup.fdo`; Tau Ceti `ModularGroup.isFundamentalDomain_fdo`; Tau Ceti `UpperHalfPlane.volume_preimage_coe_null`; FuchsianOrbifolds Layer 6.
+*Needs:* Mathlib `ModularGroup.fdo`; Mathlib `MeasureTheory.IsFundamentalDomain.quotientMeasure_eq`; Tau Ceti `ModularGroup.isFundamentalDomain_fdo`; Tau Ceti `ModularGroup.fd_ae_eq_fdo`; Tau Ceti `UpperHalfPlane.volume_preimage_coe_null`; FuchsianOrbifolds Layer 1, Layer 4, item 5 and Layer 6.
 
 ### 4.2 Projected core measure
 
@@ -631,13 +653,13 @@ The construction has the following API.
 
 **Checks.**
 
-- For D=28 and S={I,J}, the normalized sum has total denominator 7π, not 2π. This detects averaging individual class probabilities with equal weights.
+- For D=28 and S={I,J}, equal weights give ν_I(E)/(4π)+ν_J(E)/(10π) instead of (ν_I(E)+ν_J(E))/(7π). This detects averaging individual class probabilities with equal weights instead of their period-length weights 2/7 and 5/7.
 - The empty family is excluded; its zero sum cannot define a probability measure. This prevents normalization by a totalized reciprocal of zero.
 - For every exactly covered family, a modular test set of area a has probability 3a/π. This detects the wrong modular probability normalization.
 
 Normalization uses Σℓ_A, not the number of classes. No division by zero is hidden in an empty genus or family.
 
-*Needs:* §4.2; AutomorphicSpectralTheory §4.17a (primitive cycles, Pell word and orientation contracts); MultiquadraticPartII §§2.3–2.4; FuchsianOrbifolds Layer 6; Tau Ceti `NumberField.NarrowClassGroup.instFinite`.
+*Needs:* §4.2; AutomorphicSpectralTheory §4.17a (primitive cycles, Pell word and orientation contracts); MultiquadraticPartII §§2.3–2.4; §4.1; Tau Ceti `NumberField.NarrowClassGroup.instFinite`.
 
 ### 4.4 Complementary class surfaces
 
@@ -653,7 +675,7 @@ The target comparison uses oriented parametrized arcs with their preimage multip
 
 For D=12 the pair has density 9; for D=28 it has density 21. If A=ι(A), the factor of two on the left is retained.
 
-*Needs:* §4.2; AnalyticNumberTheoryPartI §2.1 and AutomorphicSpectralTheory §4.17a; AutomorphicSpectralTheory §4.17a (primitive cycles, Pell word and orientation contracts); FuchsianOrbifolds Layer 6; Tau Ceti `NumberField.NarrowClassGroup.mkPrincipal_sq`.
+*Needs:* §4.2; AnalyticNumberTheoryPartI §2.1 and AutomorphicSpectralTheory §4.17a; AutomorphicSpectralTheory §4.17a (primitive cycles, Pell word and orientation contracts); §4.1; Tau Ceti `NumberField.NarrowClassGroup.mkPrincipal_sq`.
 
 ### 4.5 Exact genus covering
 
@@ -663,9 +685,9 @@ Use the same fundamental discriminant and narrow group as the supplier. A genus 
 
 (DIT16, §4 p.960, complementary covering and principal-genus paragraph, DIT16 line 439.)
 
-One route is to proceed as follows. Sum the complementary-measure theorem over S. The involution permutes S, so the left sum is twice Σν_A and the length sum is twice Σℓ_A; divide the finite real measure identity by two. In the exponent-two genus quotient inversion is the identity, and multiplication by J preserves each coset exactly when J is a square. Apply the imported RQ.2 criterion without reproving genus theory. For A²=J, ι fixes A and the complementary-measure theorem directly gives ν_A=3ℓ_Aμ_mod. Divide by the positive total mass for probability normalization.
+One route is to proceed as follows. Sum the complementary-measure theorem over S. The involution permutes S, so the left sum is twice Σν_A and the length sum is twice Σℓ_A; divide the finite real measure identity by two. In the exponent-two genus quotient inversion is the identity, and multiplication by J preserves each coset exactly when J is a square. Apply MultiquadraticPartII §2.4, `J_square_iff_sumTwoSquares`, without reproving genus theory. For A²=J, ι fixes A and the complementary-measure theorem directly gives ν_A=3ℓ_Aμ_mod. Divide by the positive total mass for probability normalization.
 
-D=12 and D=28 have J nonsquare; exact covering of {I,J} does not imply exact covering of either singleton. For the arithmetic criterion the RQ.2 hypotheses are used verbatim with D=fundamentalDiscriminant(d).
+D=12 and D=28 have J nonsquare; exact covering of {I,J} does not imply exact covering of either singleton. The arithmetic criterion uses the positive fundamental discriminant D with the real quadratic presentation and prime-discriminant factorization of MultiquadraticPartII §2.4.
 
 *Needs:* §4.4; §4.3; MultiquadraticPartII §§2.3–2.4; Tau Ceti `NumberField.NarrowClassGroup.instFinite`.
 
@@ -739,17 +761,23 @@ The coefficient is λ/2, not λ or λ/(2i). For F=1 and λ=0 both sides vanish w
 
 ### 5.3 Completed critical-line specialization
 
-For the completed weight-zero Eisenstein function E*(z,1/2+it), t∈ℝ, prove both L¹ core integrability and the horizontal flux condition using the completed C¹ estimates in the supplier contract. Then `((1/4+t^2)/2)*integral_(F_A) E*(z,1/2+i*t) dmu = integral_(C_A) i*(partial_z E*(z,1/2+i*t)) dz`. At t=0 use its regular holomorphic value, obtained by cancellation between the two constant terms, rather than evaluating their poles separately. The same formula for smooth level-one weight-zero Maass cusp eigenfunctions follows by applying the supplied cusp estimates and the integrable Stokes identity, with their given eigenvalue and no Hecke or Fourier-coefficient normalization.
+For the regular holomorphic value E₀(z)=E*(z,1/2), prove L¹ core integrability, vanishing horizontal flux and `(1/8)*integral_(F_A) E_0 dmu = integral_(C_A) i*(partial_z E_0) dz`. The eigenvalue is 1/4 in the standing Δ convention. The additional target is this completed endpoint.
 
-Use the the supplied completion E*=Λ(2s)E, including its half-sum normalization, continuation and poles only at s=0,1. Cusp forms have zero horizontal Fourier constant term.
+For t≠0, the identity with coefficient (1/4+t²)/2 is consumed from AnalyticNumberTheoryPartI §2.1, `core_stokes`, by multiplying its E(z,1/2+it) specialization by the finite scalar Λ(1+2it). The same supplier's general eigenfunction identity, with the cusp estimates of AutomorphicSpectralTheory §4.18, gives the smooth level-one weight-zero Maass cusp-form formula with its given eigenvalue and no Hecke or Fourier normalization.
 
-(DIT16, §5 pp.961–962, (5.2)–(5.7); Lemmas 1–2 p.972, (7.9)–(7.11), DIT16 line 514.)
+Use the supplied completion E*=Λ(2s)E, its half-sum normalization, continuation and poles only at s=0,1. At t=0 take the regular value by cancellation of the two Laurent poles, not a product of totalized values at Λ(1). Cusp forms have zero horizontal Fourier constant term.
 
-One route is to proceed as follows. Use the supplied Fourier expansions and the differentiated cusp estimates in the supplier contract. Nonzero Fourier modes and their first derivatives decay exponentially on high strips, and integrating over the integer width m kills them exactly. For cusp forms the horizontal mean is zero. For E* on Re s=1/2 its constant term is O(√Y log Y), including the removable t=0 cancellation, and its derivative is O(Y⁻¹/² log Y). Therefore the horizontal flux tends to zero. The same growth makes |F|Y⁻² integrable over the width-m cusp strip; compact remainder integrability follows from smoothness and finite orbifold charts. Apply the improper Stokes identity and full modular invariance. No Hecke normalization, parity, subconvexity or asymptotic equidistribution proof is added here.
+(DIT16, §5 p.962, (5.3)–(5.5), DIT16 line 514; Lemmas 1–2 p.972, DIT16 line 1025.)
 
-The cusp eigenfunction is not rescaled by the Fourier coefficient convention. At s=1/2, a √Y log Y bound suffices; no false uniform O(√Y) estimate is required.
+One route is to proceed as follows. Write Λ(1+u)=1/u+c_Λ+O(u). In the supplied constant term Λ(2s)y^s+Λ(2−2s)y^(1−s), put s=1/2+ε and cancel the opposite poles. The limit is √y(log y+c), where c=2c_Λ, with derivative y⁻¹/²(1+(log y+c)/2). Thus the constant term and derivative are O(√Y log Y) and O(Y⁻¹/² log Y). The endpoint C¹ Fourier contract makes the nonconstant modes and their first derivatives exponentially decaying on high strips; termwise integration over the integer width m kills them. The horizontal flux tends to zero. The absolute bound is integrable against y⁻²dy on the width-m cusp, and smoothness gives integrability on the compact remainder. Apply §5.2 and the supplied full modular boundary-period comparison.
 
-*Needs:* §5.2; §4.2; AutomorphicSpectralTheory §§1.14–1.15, 4.18 and 4.20 (completed Fourier and cusp contracts).
+**Checks.**
+
+- The coefficients of 1/ε in the two constant terms are √y/2 and −√y/2, summing to 0; the surviving logarithmic term is √y log y. This rejects evaluating the summands' poles separately or imposing an O(√Y) endpoint bound.
+- For this mean the horizontal flux is −im/(2√Y)·(1+(log Y+c)/2), which tends to 0. Its scalar cusp tail integral is m(2log Y+4+2c)/√Y, also tending to 0; the coefficient is (1/4)/2=1/8.
+- A cusp eigenfunction has horizontal mean 0, and its full-period horizontal flux is 0. At t≠0 multiplication by Λ(1+2it) multiplies both sides of the supplied Stokes identity by that same scalar; at t=0 that multiplier has a pole and this argument does not apply.
+
+*Needs:* §5.2; §4.2; AnalyticNumberTheoryPartI §2.1; Mathlib `completedRiemannZeta_eq`, `differentiable_completedZeta₀` and `completedRiemannZeta_residue_one`; AutomorphicSpectralTheory §§1.14–1.15, 4.18 and 4.20, with gap:completed-critical-line-c1-bounds for the regular value at t=0.
 
 ### Examples
 
@@ -757,7 +785,7 @@ For F=1, λ=0, the integral is πℓ_A and both one-form boundary integrals vani
 
 ### Dependencies
 
-Layer 2 for Q_A, its compact boundary and finite-width cusp; Layer 4 for projected measures; DifferentialGeometry §§5.3, 5.5 and 5.6.3; AnalyticNumberTheoryPartI §2.1; AutomorphicSpectralTheory §§1.14–1.15, 4.18 and 4.20 with the completed C¹ contract.
+Layer 2 for Q_A, its compact boundary and finite-width cusp; Layer 4 for projected measures; DifferentialGeometry §§5.3, 5.5 and 5.6.3; AnalyticNumberTheoryPartI §2.1; AutomorphicSpectralTheory §§1.14–1.15, 4.18 and 4.20 with the C¹ Fourier contract at the regular completed endpoint.
 
 ## Downstream consumers
 

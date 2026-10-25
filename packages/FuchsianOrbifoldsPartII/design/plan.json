@@ -2099,13 +2099,13 @@
     },
     {
       "slug": "oriented-quadratic-cycle-reversal",
-      "needs": "§4.17a must identify the full primitive parametrized modular cycles C_(JA⁻¹) and C_A with opposite orientations, using the DIT coefficient actions [a,−b,c]↦A⁻¹, [−a,b,−c]↦JA and −Q↦JA⁻¹ and retaining the negative-leading-coefficient sign clause.",
+      "needs": "§4.17a must identify the full primitive parametrized modular cycle C_(JA⁻¹) with C_A traversed in the opposite orientation.",
       "supplier": "AutomorphicSpectralTheory",
       "section": "4.17a"
     },
     {
       "slug": "completed-critical-line-c1-bounds",
-      "needs": "§§1.15 and 4.18 must export C¹ termwise Fourier differentiation on high strips, exponential bounds for nonconstant modes and first derivatives, and fixed-t bounds O(√Y log Y) and O(Y⁻¹/² log Y) for the constant term and its derivative of E*(z,1/2+it), including t=0 by holomorphic cancellation, together with the corresponding zero-mean smooth Maass cusp estimates.",
+      "needs": "§§1.15 and 4.18 must export, for the regular value E*(z,1/2), a termwise C¹ Fourier expansion on high strips with exponentially decaying nonconstant modes and first derivatives.",
       "supplier": "AutomorphicSpectralTheory",
       "section": "1.15 and 4.18"
     }
