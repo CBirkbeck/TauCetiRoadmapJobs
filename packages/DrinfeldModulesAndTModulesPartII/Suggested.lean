@@ -112,6 +112,19 @@ theorem multipleZeta_ne_zero (F : Type*) [Field F] [Fintype F] [DecidableEq (Rat
     multipleZeta F s ε ≠ 0 := by
   sorry
 
+/-! ## Layer 1: products and value algebras -/
+
+/-- Thakur's product theorem in weight-graded form: the product of the ordinary
+MZV spaces of weights w and w' lies in the space of weight w + w', and likewise
+for the alternating spaces (Thakur 2010, Theorem 3; Im–Kim–Le–Ngo Dac–Pham,
+Proposition 4.2). -/
+theorem zeta_space_mul_le (F : Type*) [Field F] [Fintype F] [DecidableEq (RatFunc F)]
+    (w w' : ℕ) :
+    zetaSpace F w * zetaSpace F w' ≤ zetaSpace F (w + w') ∧
+      alternatingZetaSpace F w * alternatingZetaSpace F w' ≤
+        alternatingZetaSpace F (w + w') := by
+  sorry
+
 /-! ## Layer 2: generation and comparison of weight spaces -/
 
 /-- Brown generation: Thakur's family spans every ordinary MZV weight space. -/
@@ -214,48 +227,6 @@ theorem frobenius_solution_dimension (F : Type*) [Field F] [Fintype F] (w : ℕ)
         if Fintype.card F - 1 ∣ w then 1 else 0 := by
   sorry
 
-/-- Character-twisted rigidity (Im–Kim–Le–Ngo Dac–Pham, proof of Theorem 3.4,
-Case 1 and Subcase 1): on the reduced prefix tree, after one forward coefficient
-twist, the system whose root children carry a (q-1)-st root γ of ε has only the
-zero polynomial solution in positive weight when q-1 does not divide w or ε ≠ 1.
-The polynomial variable is t and θ is the constant `RatFunc.X`. -/
-theorem twisted_system_rigidity (F : Type*) [Field F] [Fintype F]
-    (w : ℕ) (hw : 0 < w) (ε : Fˣ)
-    (hε : ¬ Fintype.card F - 1 ∣ w ∨ ε ≠ 1) :
-    let q := Fintype.card F
-    let B := AlgebraicClosure (RatFunc F)
-    let θ : Polynomial B := Polynomial.C (algebraMap (RatFunc F) B RatFunc.X)
-    let twist := Polynomial.mapRingHom (FiniteField.frobeniusAlgHom F B).toRingHom
-    ∀ (γ : B) (δ : List ℕ → Polynomial B),
-      γ ^ (q - 1) = algebraMap F B (ε : F) →
-      (∀ l, l ∉ reducedPrefixes q w → δ l = 0) →
-      (∀ l ∈ reducedPrefixes q w, twist (δ l) =
-        (δ l + Polynomial.C (if l = [] then γ else 1) *
-          ∑ n ∈ Finset.range w, δ (l ++ [n + 1])) *
-          (Polynomial.X - θ ^ q) ^ (w - l.sum)) →
-      δ = 0 := by
-  sorry
-
-/-- Ngo Dac's two-row rigidity theorem in its exact small-weight polynomial
-coordinates, after one forward twist. The endpoint permits an Eulerian line. -/
-theorem two_row_rigidity (F : Type*) [Field F] [Fintype F]
-    (hq : 2 < Fintype.card F) (k : ℕ) (hk : 2 ≤ k) (hkq : k ≤ Fintype.card F - 1) :
-    let q := Fintype.card F
-    let B := AlgebraicClosure (RatFunc F)
-    let θ : Polynomial B := Polynomial.C (algebraMap (RatFunc F) B RatFunc.X)
-    let lift := Polynomial.mapRingHom (algebraMap F B)
-    let twist := Polynomial.mapRingHom (FiniteField.frobeniusAlgHom F B).toRingHom
-    let H := (Polynomial.X ^ q - Polynomial.X) +
-      Polynomial.C (k - 1 : B) * (Polynomial.X ^ q - θ ^ q)
-    ∀ (δ₁ δ₂ : Polynomial B) (a₁ a₂ : Polynomial F),
-      twist δ₁ = (δ₁ + δ₂ + lift a₁ * H) * (Polynomial.X - θ ^ q) ^ (q + k - 1) →
-      twist δ₂ = (δ₂ + lift a₂) * (Polynomial.X - θ ^ q) ^ (q - 1) →
-      a₂ = 0 ∧ (k < q - 1 → a₁ = 0) ∧
-        (k = q - 1 → ∃ a : Polynomial F, δ₂ = 0 ∧
-          δ₁ = lift a * (Polynomial.X - θ) ^ (2 * q) ∧
-          a₁ = a * (Polynomial.X ^ q - Polynomial.X)) := by
-  sorry
-
 /-! ## Layer 5: independence, bases and dimensions -/
 
 /-- Ngo Dac's independence theorem for every weight and parts less than q. -/
@@ -318,23 +289,6 @@ theorem thakur_basis_algebraicClosure (F : Type*) [Field F] [Fintype F]
       algebraMap (RatFunc.CompletionAtInfty F) E (multipleZeta F s (fun _ => 1))) := by
   sorry
 
-/-- Roots belonging to distinct degree characters are independent over the
-infinity completion; common-overfield embeddings agree on the constant field. -/
-theorem character_roots_independent (F : Type*) [Field F] [Fintype F]
-    [DecidableEq (RatFunc F)] (E : Type*) [Field E]
-    [Algebra F E] [Algebra (RatFunc F) E]
-    [Algebra (RatFunc.CompletionAtInfty F) E] [Algebra (AlgebraicClosure F) E]
-    [IsScalarTower F (RatFunc F) E]
-    [IsScalarTower (RatFunc F) (RatFunc.CompletionAtInfty F) E]
-    [IsScalarTower F (AlgebraicClosure F) E]
-    (n : ℕ) (ε : Fin n → Fˣ) (hε : Function.Injective ε)
-    (γ : Fin n → AlgebraicClosure F)
-    (hγ : ∀ i, γ i ^ (Fintype.card F - 1) =
-      algebraMap F (AlgebraicClosure F) (ε i : F)) :
-    LinearIndependent (RatFunc.CompletionAtInfty F)
-      (fun i => algebraMap (AlgebraicClosure F) E (γ i)) := by
-  sorry
-
 /-- The Hoffman-like family of alternating CMPL values is a basis, both of
 the alternating polylogarithm space and of the alternating MZV space. -/
 theorem alternating_hoffman_basis (F : Type*) [Field F] [Fintype F] [DecidableEq (RatFunc F)] (w : ℕ) :
@@ -372,10 +326,11 @@ def directIndices (q w : ℕ) : Set (Composition w) :=
             s.blocks[i.val + 1]? = some q) ∨
         s.blocks = [q - 1, 2 * q - 1]}
 
-/-- Direct AMZV spanning through weight 2q-1 by Thakur arrays whose q entries
-carry character one. This statement does not pass through CMPL values. -/
+/-- Direct AMZV spanning through weight 2q-2 by Thakur arrays whose q entries
+carry character one (Im–Kim–Le–Ngo Dac–Pham, Proposition 4.11). This statement
+does not pass through CMPL values. -/
 theorem direct_small_weight_spanning (F : Type*) [Field F] [Fintype F]
-    [DecidableEq (RatFunc F)] (w : ℕ) (hw : w ≤ 2 * Fintype.card F - 1) :
+    [DecidableEq (RatFunc F)] (w : ℕ) (hw : w ≤ 2 * Fintype.card F - 2) :
     Submodule.span (RatFunc F) (Set.range fun a :
       {a : (Σ s : Composition w, Fin s.length → Fˣ) //
         a.1 ∈ thakurIndices (Fintype.card F) w ∧
