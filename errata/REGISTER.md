@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-6533 mistakes recorded on the board: 4061 misprints, 1671 errors, 610 gaps, 191 unparsed bullets.
+6543 mistakes recorded on the board: 4067 misprints, 1672 errors, 613 gaps, 191 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -304,6 +304,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at Appendix B.2, item (3), printed p. 53: the source says the section equation raises τ to the power m, while d-th roots are being constructed; it should be φ(τ^d)=σ; affects nothing; Already recorded as E12. <!-- tauceti-roadmap-review {"agent": "claude", "head": "99fbf6f", "job": "REV-PKG-FunctionFieldArithmeticPartII", "model": "opus", "worker": "fable-rev69"} -->. Found by FunctionFieldArithmeticPartII (#1232 at 99fbf6f, 2026-10-24, claude opus).
 - **Misprint** at Appendix B.2, item (3), printed p.53 (AGV08 line 2439): the source says the section is raised to an unrelated exponent m; it should be raised to the defining root exponent d; affects nothing. Found by FunctionFieldArithmeticPartII (#1232 at 15344e5, 2026-10-25, codex gpt-6-astra).
+- **Misprint** at Appendix B.2, item (3), printed p.53 (AGV08 line 2439): the source says the section uses an unrelated exponent m; it should be raised to the defining root exponent d; affects nothing. Found by FunctionFieldArithmeticPartII (#1232 at 7359b72, 2026-10-25, codex gpt-6-astra).
 - **Error** at Appendix B.2, printed p.54 (AGV08 line 2473): the source says the finite root chart times G_m is the smooth frame chart; it should be the contracted product by the antidiagonal μ_d action; affects the proof. Found by FunctionFieldArithmeticPartII (#1232 at 15344e5, 2026-10-25, codex gpt-6-astra).
 
 ## AGZ
@@ -6078,6 +6079,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## LO-P
 
+- **Error** at Lemma 6.1, printed pp.9–10 (LO-P line 292): the source says the restriction and i* boundary condition uniquely determine intermediate extension; it should be also impose the i! boundary condition, equivalently exclude boundary subobjects as well as quotients; affects a stated result; <!-- tauceti-roadmap-review {"agent": "codex", "head": "7359b7220f5413246e2b82e07a2c4864ca467a77", "job": "REV-PKG-FunctionFieldArithmeticPartII~3", "model": "gpt-6-astra", "worker": "chris-32"} -->. Found by FunctionFieldArithmeticPartII (#1232 at 7359b72, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at the proof of Theorem 5.1, printed page 7 (LO-P line 200): the source says the nonpositive truncation also belongs to perverse degrees at least one; it should be the other, positive truncation that belongs there; affects the proof. Found by GlobalShtukasAndFunctionFieldLanglands (#146 at e5b7994, 2026-10-23, codex gpt-6-astra).
 
 ## Loeffler
@@ -7978,6 +7980,14 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at Theorem 8.10 (level-one Hasse lift): the source says suitable lifts exist for all sufficiently large weights; it should be require weights that are multiples of (p−1)p^{N₀}, N₀ depending on the precision, as Dasgupta–Kakde Theorem 8.8 states (p=5, precision 2, weight ≡4 mod 20 is excluded); affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
+## skinner-2020
+
+- **Gap** at Lemma 2.2.2, printed p.338 (lines 388–392): the source says freeness of A_f(K)⊗ℚ_p over M_{f,p} does not give injectivity of the restriction at each λ-component; it should be use nonvanishing of the eigenlogarithm at every embedding (bsw-2026, Theorem 1.1); affects the proof. Found by RankOneConverse (#1780 at 7925ead, 2026-10-25, claude fable).
+- **Misprint** at Lemma 2.8.1, printed p.347 (line 749): the source says the tame inertia generator is said to be at q while the prime is ℓ; it should be ℓ throughout; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "7925eadd4333fd9a93bddd6a07b463f22c64982a", "job": "REV-PKG-RankOneConverse", "model": "fable", "worker": "chris-i"} -->. Found by RankOneConverse (#1780 at 7925ead, 2026-10-25, claude fable).
+- **Misprint** at §2.6, printed p.341 (line 523): the source says the Heegner point with field and form exchanged; it should be the point P_K(f) defined in §2.4; affects nothing. Found by RankOneConverse (#1780 at 7925ead, 2026-10-25, claude fable).
+- **Misprint** at §2.7, printed p.346 (line 705): the source says the two Iwasawa algebras are unique factorization ideals; it should be unique factorization domains; affects nothing. Found by RankOneConverse (#1780 at 7925ead, 2026-10-25, claude fable).
+- **Gap** at §2.7, printed pp.346–347 (lines 716–729): the source says the finite-index claim for Sel_p inside Sel_∞[γ−1] rests on finiteness of the G_{K_𝔭}-invariants of the inertia-invariant coinvariants, asserted from the diagram without computation; it should be shown from the ordinary filtration (Teichmüller inertia kills the T⁺ part, unit root α≠1 on the T⁻ part); affects the proof. Found by RankOneConverse (#1780 at 7925ead, 2026-10-25, claude fable).
+
 ## skinner-published
 
 - **Error** at §2.6, printed p.343, skinner-published line 595: the source says an odd power of 2πi times real factors equals the real archimedean constant; it should be compare that constant together with the CM-period normalization; affects a stated result. Found by GrossZagierAndArithmeticHeights (#147 at b5527a0, 2026-10-23, codex gpt-6-astra).
@@ -9238,8 +9248,11 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Gap** at A.3.3, display (A.11), printed p. 525: the source says the four-term sequence of Picard stacks is called exact without saying in what sense, and on isomorphism classes it fails at Pic_X′ (for t↦t² on ℙ¹, O(1) is σ-invariant but not a pullback); it should be specify the connecting maps and obstructions; affects a stated result; Already recorded as E8. Found by FunctionFieldArithmeticPartII (#1232 at 99fbf6f, 2026-10-24, claude opus).
 - **Gap** at A.3.3, display (A.11), printed p.525 (YZ19 line 7870): the source says the sheaf sequence produces an exact four-term sequence of Picard stacks without specifying its obstruction meaning; it should be based torsor fibres and connecting obstructions, avoiding naive exactness on isomorphism classes; affects a stated result; The AGV product error is witnessed over ℂ with f=1,d=2: its proposed product has two connected components, while the frame chart is G_m and has one. The YZ sign is witnessed by the lattice π⁻¹O and degree +1. The Picard obstruction is witnessed by O(1) for the squaring cover of ℙ¹: degree 1 is not a pullback degree, while the involution fixes its class. No published correction was independently located. <!-- tauceti-roadmap-review {"agent": "codex", "head": "15344e547e817d749016f4dfdfe1afbde164e096", "job": "REV-PKG-FunctionFieldArithmeticPartII~2", "model": "gpt-6-astra", "worker": "chris-10"} -->. Found by FunctionFieldArithmeticPartII (#1232 at 15344e5, 2026-10-25, codex gpt-6-astra).
+- **Gap** at A.3.3, display (A.11), printed p.525 (YZ19 line 7870): the source says the sheaf sequence yields an exact four-term Picard-stack sequence without its obstruction interpretation; it should be specify based torsor fibres and connecting obstructions, excluding naive exactness on isomorphism classes; affects a stated result. Found by FunctionFieldArithmeticPartII (#1232 at 7359b72, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at proof of Lemma A.5, printed p.518 (YZ19 line 7279): the source says the extra root data uses the line-frame symbol τ_R; it should be use the root-frame symbol t_R; affects nothing. Found by FunctionFieldArithmeticPartII (#1232 at 15344e5, 2026-10-25, codex gpt-6-astra).
+- **Misprint** at proof of Lemma A.5, printed p.518 (YZ19 line 7279): the source says the extra root data uses the line-frame symbol; it should be use the root-frame symbol; affects nothing. Found by FunctionFieldArithmeticPartII (#1232 at 7359b72, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at proof of Lemma A.5, printed p.518 (YZ19 line 7281): the source says the idele coefficient uses the local frame after the inverse generic frame; it should be use the generic frame after the inverse local frame to match inverse uniformizer with O(x); affects nothing. Found by FunctionFieldArithmeticPartII (#1232 at 15344e5, 2026-10-25, codex gpt-6-astra).
+- **Misprint** at proof of Lemma A.5, printed p.518 (YZ19 line 7281): the source says the idele coefficient composes the local frame after the inverse generic frame; it should be compose the generic frame after the inverse local frame for the asserted divisor sign; affects nothing. Found by FunctionFieldArithmeticPartII (#1232 at 7359b72, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at the proof of Lemma A.5, printed p. 518: the source says the idele of a framed line is printed as τ_x∘τ_η⁻¹, which sends O_X(x) with its natural frames to ϖ_x; it should be τ_η∘τ_x⁻¹, so that ϖ_x⁻¹ ↦ O_X(x)♮ as the lemma states; affects nothing. Found by FunctionFieldArithmeticPartII (#1232 at 99fbf6f, 2026-10-24, claude opus).
 - **Misprint** at the proof of Lemma A.5, printed p. 518: the source says the extra data is written (K_R, ι, τ_R), with the line-frame letter; it should be (K_R, ι, t_R), the root frames; affects nothing; Already recorded by the author as E9. Found by FunctionFieldArithmeticPartII (#1232 at 99fbf6f, 2026-10-24, claude opus).
 
