@@ -6446,12 +6446,6 @@
     "needs": "Construct the unique embedding-selective period modification D⊂D_σ of a generic all-refinement noncritical crystabelline module, retaining its localization and σ-filtration, replacing every off-σ weight by the ambient minimum and identifying the potentially semistable period modules."
   },
   {
-    "slug": "rank-one-saturation",
-    "supplier": "PhiGammaModulesAndIwasawaCohomology",
-    "section": "§7.5",
-    "needs": "For K=ℚₚ, prove that a finite free Robba (φ,Γ)-module containing a rank-one (φ,Γ)-submodule contains a saturated rank-one submodule with finite free quotient, compatibly with finite coefficient-field extension."
-  },
-  {
     "slug": "general-character-spaces",
     "supplier": "PhiGammaModulesAndIwasawaCohomology",
     "section": "§§4.0, 7.3",
@@ -6474,12 +6468,6 @@
     "supplier": "RigidAnalyticGeometry",
     "section": "§§7.3, 8.1",
     "needs": "For a morphism f:X→Y of rigid spaces locally of finite type over E and a point x at which O_(Y,f(x))→O_(X,x) is flat, prove that f is flat at every point of some affinoid neighbourhood U of x and that f(U) is an admissible open subset of Y."
-  },
-  {
-    "slug": "polynomial-connection-finiteness",
-    "supplier": "PadicDifferentialEquationsAndRigidCohomology",
-    "section": "§RD.2.43",
-    "needs": "For every rank-two étale ℚₚ Robba module and nonzero P∈E[X], prove finite E-dimensionality of ker P(∇), with the connection commuting with Frobenius and Gamma and compatibility with finite coefficient extension."
   },
   {
     "slug": "all-constituent-triangularity",

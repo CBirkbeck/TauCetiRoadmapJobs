@@ -1,6 +1,6 @@
 # Roadmap: the trianguline variety and its local model
 
-**Summary.** Build the completed local comparison between trianguline deformation spaces and the double-flag incidence components for restriction of scalars of GLₙ, retaining character weights, nilpotent period operators and both framings. Derive normality, Cohen–Macaulayness, flatness, crystalline accumulation, companion criteria and local cycle identities. A second branch constructs simultaneous-refinement and partial de Rham tangent relations for generic crystabelline modules and proves that higher intertwining recovers their Hodge parameters. Ordered numerical noncriticality and the nontrianguline rank-two connection obstruction supply local inputs to eigenvariety and locally analytic representation theory.
+**Summary.** Build the completed local comparison between trianguline deformation spaces and the double-flag incidence components for restriction of scalars of GLₙ, retaining character weights, nilpotent period operators and both framings. Derive normality, Cohen–Macaulayness, flatness, crystalline accumulation, companion criteria and local cycle identities. A second branch constructs simultaneous-refinement and partial de Rham tangent relations for generic crystabelline modules and proves that higher intertwining recovers their Hodge parameters. Ordered-regular strictness and numerical noncriticality supply local inputs to eigenvariety arguments.
 
 ## Scope and ownership
 
@@ -9,13 +9,14 @@ This roadmap owns the deformation adapters, the lattice-to-Hodge-flag adapter, t
 The following objects and results are stated by their owners and are consumed by section:
 
 - CompletedCohomologyAndLocalGlobalCompatibility §5.2a owns the framed trianguline variety as a reduced closure, its saturated regular locus, and the smoothness and dimension of that locus. That section states them inside its global patching setting; the unrestricted local form used here (every finite K, every n≥1, every residual representation, with smooth full-character projection on the regular locus) is the contract gap:unrestricted-trianguline-variety below. This roadmap begins with its completion at a generic point, and no global patching hypothesis enters any target here.
-- ModularityAndLanglandsExtensions §4.3 supplies ordered-regular saturated deformation functors, relative representability and injectivity, the absolutely irreducible unframed quotient ring, fixed-unit-weight tangent inclusion in H¹_g, the local closure tangent constraint and the admissible-cover density repair. Section 4 below retains the ordinary-flag dictionary, strictness theorem and numerical WD criterion; these are additional local statements.
+- ModularityAndLanglandsExtensions §4.3 owns the NT-ordered regular condition, which §4.1 consumes, together with ordered-regular saturated deformation functors, relative representability and injectivity, the absolutely irreducible unframed quotient ring, fixed-unit-weight tangent inclusion in H¹_g, the local closure tangent constraint and the admissible-cover density repair, which no target here uses. Layer 4 below adds the ordinary-flag dictionary, strictness theorem and numerical WD criterion as further local statements.
 - PadicHodgeTheory §§4.3–4.5 and 5.2 own period representations, connections, B-pairs, their field Robba comparison, the full-rank torsion-quotient invariant theorem and filtered-module modifications. The embedding-selective carrier D_σ belongs there through the exact contract below. Section 10 constructs its labelled endpoint diagrams and recovery, rather than its period carrier.
 - PhiGammaModulesAndIwasawaCohomology §§1.1–1.2, 3.1–3.9, 4.0 and 7.1–7.8 own the Robba categories, Herr complexes, the rigid character spaces of O_K× and K× with their universal characters, rank-one characters and their classification, weights, integral triangulations, global triangulation and specialization. LocallyAnalyticDistributions §3.3 adapts the same character spaces to distributions and is not a second carrier; PadicMeasuresIwasawaAlgebras §3a.1 supplies points and functions on the ℤₚ× space and constructs no rigid structure. The new localized deformation adapter fixes a residual parameter and retains infinitesimal coefficients.
 - LocalGaloisDeformationRings §§0.4, 1.1, 1.4, 1.12, 1.18, 1.23 and 3.4–3.10 own lifting rings, their completions and constrained de Rham and trianguline deformation rings. In particular the three individual crystabelline tangent dimensions come from §1.23; §11.3 proves their simultaneous derivative and Weyl-transport statements.
 - SpringerResolutionAndCharacteristicCycles Layers F, G, I, C, N, S, Y, K, P, T and E own flag schemes, the simultaneous resolution, incidence components, their normality, Cartan flatness, Steinberg cycles, KL identities and their completion. The targets here transfer those statements to Galois deformation spaces.
 - RigidAnalyticGeometry §§7.3, 8.1–8.3 and AdicSpacesPartII R1 own rigid spaces, local rings, completions, analytic excellence and rigid–adic comparison. SchemeAndStackFoundations §§0.16–0.21 and 4.3–4.5 own the general local algebra and Schlessinger theory. DeformationAndDerivedPatchingAlgebra §§1.6–1.14 and 2.1–2.7 supply their labelled coefficient and framing interfaces.
 - LocallyAnalyticRepresentationsOfLocalGroups LR.4–LR.5 own actual locally analytic inductions and Orlik–Strauch constituents; no formal labels replace those representations here. Completed cohomology, patched eigenvarieties and their socles belong to CompletedCohomologyAndLocalGlobalCompatibility, which precedes this roadmap; global eigenvarieties and automorphy statements are not stated here.
+- PadicLocalLanglandsForGL2QpPartII GR.1/nontrianguline-differential-control owns the rank-two nontrianguline connection statements over ℚₚ: for an absolutely irreducible two-dimensional de Rham V that is not trianguline, every nonzero P(∇) is injective on D_rig(V) and ∂=t⁻¹∇ is bijective on N_rig(V). No target here uses them.
 
 Generic product maps, ranges, kernels, submodule quotients, dimension identities, adic completions, algebraic cycles and module lengths are already in Mathlib. There is no new abstract matched-range library or arithmetic slope adapter in this roadmap's acceptance file.
 
@@ -39,7 +40,7 @@ Ext¹_σ means de Rham at every τ≠σ. A bar over Ext denotes the quotient by 
 
 ### From Mathlib
 
-Use `LinearMap.prod` (Mathlib/LinearAlgebra/Prod.lean, line 95), `LinearMap.range` (Mathlib/Algebra/Module/Submodule/Range.lean, line 57), and `LinearMap.ker` (Mathlib/Algebra/Module/Submodule/Ker.lean, line 59). Their bodies respectively pair maps on one source, take elements admitting a preimage, and take elements mapping to zero. They contain no period, topology or saturation condition. Use `LinearMap.finrank_range_add_finrank_ker` and `Submodule.finrank_sup_add_finrank_inf_eq` (Mathlib/LinearAlgebra/FiniteDimensional/Lemmas.lean, lines 173 and 53) with their finite-dimensional hypotheses. Use `AdicCompletion` (Mathlib/RingTheory/AdicCompletion/Basic.lean, line 171) as the compatible inverse system of module quotients, `Module.length` (Mathlib/RingTheory/Length.lean, line 31) with finiteness before integer conversion, and `AlgebraicGeometry.AlgebraicCycle` (Mathlib/AlgebraicGeometry/AlgebraicCycle/Basic.lean, line 45) for integer cycles. None of these declarations constructs an incidence scheme or a trianguline moduli space.
+Use `LinearMap.prod` (Mathlib/LinearAlgebra/Prod.lean, line 95), `LinearMap.range` (Mathlib/Algebra/Module/Submodule/Range.lean, line 57), and `LinearMap.ker` (Mathlib/Algebra/Module/Submodule/Ker.lean, line 59). Their bodies respectively pair maps on one source, take elements admitting a preimage, and take elements mapping to zero. They contain no period, topology or saturation condition. Use `LinearMap.finrank_range_add_finrank_ker` and `Submodule.finrank_sup_add_finrank_inf_eq` (Mathlib/LinearAlgebra/FiniteDimensional/Lemmas.lean, lines 173 and 53) with their finite-dimensional hypotheses. Use `AdicCompletion` (Mathlib/RingTheory/AdicCompletion/Basic.lean, line 171) as the compatible inverse system of module quotients, `Module.length` (Mathlib/RingTheory/Length.lean, line 30) with finiteness before integer conversion, and `AlgebraicGeometry.AlgebraicCycle` (Mathlib/AlgebraicGeometry/AlgebraicCycle/Basic.lean, line 44) for integer cycles on Spec of the completed rings; its body is a locally finitely supported function on the scheme, so the codimension of the support is imposed separately. None of these declarations constructs an incidence scheme or a trianguline moduli space.
 
 ### From Tau Ceti
 
@@ -63,11 +64,9 @@ What PadicHodgeTheory must provide (gap:selective-modification): Construct the u
 
 Use §§1.0c, 1.1–1.2 for period-sheaf comparison, relative coefficient rings and finite-projective module categories; §§3.1, 3.4a, 3.8–3.9 for Herr complexes, Ext, duality, cups and localized Artinian comparison; §§7.1–7.4 for character lines, exceptional cohomology, weights and rank-one classification; §§7.5–7.8 for saturated/strict flags, global triangulation and specialization. Cohomology-group coefficient change carries its Tor-vanishing hypothesis. Take full finite Gamma-torsion invariants also at p=2. Over ℚₚ use d⁰x=((φ−1)x,(γ−1)x), d¹(a,b)=(γ−1)a−(φ−1)b: scalar operators φ=2,γ=3 give d⁰(1)=(1,2), d¹(1,2)=0 and d¹(1,0)=2. The adapter to the swapped degree-one convention has degree-two sign −1. Arithmetic unramified-first Kummer trace is 1 and its reverse is −1. The Tate line is R(ε); R(x) has Frobenius p while R(ε) has Frobenius 1.
 
-Use §4.0 for the rigid character spaces: W=`compactCharacterSpace` of O_K× and T=`localMultiplicativeCharacterSpace` K, base-changed to E, with their universal characters, generator and uniformizer changes, evaluation and finite coefficient extension. On a principal subgroup W has d open-disc coordinates and keeps every finite-torsion component, and T is W×G_m through K×≃ϖ_K^ℤ×O_K×. Hence dim W=d, dim T=d+1, and restriction of characters T→W is the projection, smooth of relative dimension one. For K=ℚ₂, W has two sign components, each a one-dimensional open disc on which the universal character takes the value +1, respectively −1, at −1; T adds one invertible uniformizer coordinate. Weights of Artinian-valued characters are §7.3's `CharacterWeights`.
+Use §4.0 for the rigid character spaces: W=`compactCharacterSpace` of O_K× and T=`localMultiplicativeCharacterSpace` K, base-changed to E, with their universal characters, generator and uniformizer changes, evaluation and finite coefficient extension. On a principal subgroup (for K=ℚₚ, 1+pℤₚ when p is odd and 1+4ℤ₂ when p=2) W has d open-disc coordinates and keeps every finite-torsion component, and T is W×G_m through K×≃ϖ_K^ℤ×O_K×. Hence dim W=d, dim T=d+1, and restriction of characters T→W is the projection, smooth of relative dimension one. For K=ℚ₂, W has two sign components, each a one-dimensional open disc on which the universal character takes the value +1, respectively −1, at −1; T adds one invertible uniformizer coordinate. Weights of Artinian-valued characters are §7.3's `CharacterWeights`.
 
 What PhiGammaModulesAndIwasawaCohomology must provide (gap:general-character-spaces): For every finite K/ℚₚ, (a) prove that the weight morphism wt=(wt_τ)_τ:W_E→(𝔸¹)^Σ, the logarithmic derivative on a sufficiently small unit subgroup extending §7.3's weights from Artinian to affinoid points, is étale, with fibre over 0 the finite-order characters and over an integral k the characters z^k·χ with χ of finite order; (b) prove that for every n≥1, every integral k∈(ℤ^Σ)ⁿ and every C>0, the point δ_k has a basis of affinoid neighbourhoods in Wⁿ_E on each of which the algebraic points δ_(k′) with k′_(τ,i)−k′_(τ,i+1)>C for every τ and 1≤i<n are Zariski dense. (§§4.0, 7.3; BHS19 Lemma 3.5.5 and proof, pp. 357–358; BHS19 line 2362; BHSsmooth17 proof of Proposition 2.12, p. 17; BHSsmooth17 line 727).
-
-What PhiGammaModulesAndIwasawaCohomology must provide (gap:rank-one-saturation): For K=ℚₚ, prove that a finite free Robba (φ,Γ)-module containing a rank-one (φ,Γ)-submodule contains a saturated rank-one submodule with finite free quotient, compatibly with finite coefficient-field extension. (§7.5; Colmez08 Lemma 3.2, p. 231; Colmez08 line 700).
 
 ### From TauCetiRoadmap.LocalGaloisDeformationRings
 
@@ -101,14 +100,6 @@ The coherent Herr complexes, their derived coefficient change and Tor-vanishing 
 
 Use R1.1's rigid-local-ring-completion, R1.5's local-ring and constructible comparisons, R1.7's rigid–adic functor and R1.9's dimension and identity-principle comparisons. These supply the adic interpretation of the same rigid objects, not a second trianguline variety.
 
-### From TauCetiRoadmap.PadicFunctionalAnalysis
-
-Sections 5.1–5.3 supply continuous-character coordinates, coefficient specialization and their analytic meaning on ℤₚ×. For odd p the coordinate subgroup uses 1+pℤₚ; for p=2 use 1+4ℤ₂. No division by log χ(γ) is taken unless γ lies in such a subgroup and χ(γ)≠1.
-
-### From TauCetiRoadmap.PadicMeasuresIwasawaAlgebras
-
-Section 3a.1 supplies the points of the character space of ℤₚ× with values in complete normed ℚₚ-algebras, its torsion and principal decomposition (with 1+4ℤ₂ at p=2) and bounded functions on it; it constructs no rigid structure, which is PhiGammaModulesAndIwasawaCohomology §4.0. Its finite-order labels remain part of a character; a derivative alone does not recover them.
-
 ### From TauCetiRoadmap.CompletedCohomologyAndLocalGlobalCompatibility
 
 Section 5.2a constructs X_tri(r̄) as the reduced closure of the regular triangulation locus in the framed lifting space times Tⁿ, proves representability of the regular triangulation space on PhiGammaModulesAndIwasawaCohomology §§1.1–1.2, 7.1 and 7.5's carriers, and proves the smoothness and dimension statements on that locus. It does so inside §5.1's global setting, retaining its globalisation, adequacy, local-type, projectivity and coefficient-field hypotheses, and it does not state smoothness of the full-character projection. The unrestricted local statement used here is the following contract.
@@ -119,7 +110,7 @@ Write ω′ for the full-character projection and ω for its composite with rest
 
 ### From TauCetiRoadmap.ModularityAndLanglandsExtensions
 
-Section 4.3 supplies the NT-ordered regular condition: δ_i/δ_j is not a nonnegative algebraic embedding monomial for i<j. It also supplies the saturated ordered deformation functor over Art_E, its injective relatively representable forgetful map, the quotient of the unframed representation ring when ρ is absolutely irreducible, and fixed-unit-weight tangent inclusion in H¹_g for de Rham noncritical increasing weights. It supplies the local closure tangent injection and the normalization/coherent-Herr construction that enlarges interpolation points to satisfy an admissible-cover density hypothesis. An unramified infinitesimal twist has zero unit-weight tangent, whereas log_σ has nonzero unit-weight tangent even when its uniformizer value is 0. Strict conjugation by 1+Mₙ(m_A) transports the same deformation class. Absolute irreducibility is not omitted from the unframed ring statement, and the tangent inclusion is not promoted to equality. A dense set in one remote component does not supply local cover density at another point.
+Section 4.3 supplies the NT-ordered regular condition consumed by §4.1: a parameter δ=(δ₁,…,δ_n) is NT-regular when, for every i<j, δ_i/δ_j is not a nonnegative algebraic embedding monomial ∏_τ τ^(a_τ) with all a_τ≥0. That section imposes it on saturated ordered triangulations over Art_E built on LocalGaloisDeformationRings §0.4's Robba objects. The condition is ordered: for n=2 and one embedding τ, δ₁/δ₂=τ is excluded while δ₂/δ₁=τ, that is δ₁/δ₂=τ⁻¹, is allowed. The exponent a=0 gives the ratio 1, so repeated parameters are never NT-regular.
 
 ### From TauCetiRoadmap.LocallyAnalyticRepresentationsOfLocalGroups
 
@@ -128,12 +119,6 @@ Use LR.4/principal-series and LR.5/orlik-strauch-functor, orlik-strauch-exactnes
 What LocallyAnalyticRepresentationsOfLocalGroups must provide (gap:all-constituent-triangularity): Provide a separating unitriangular system of Jordan–Hölder multiplicity equations for all locally analytic principal-series constituent families, including non-locally-algebraic and nongeneric inducing data, sufficient to recover signed constituent cycles from all parameter-fibre cycles. (LR.4/principal-series; LR.5/orlik-strauch-jordan-holder; BHS19 Proposition 4.3.6, p. 382; BHS19 line 3288).
 
 What LocallyAnalyticRepresentationsOfLocalGroups must provide (gap:constituent-conventions): Identify the lower-Borel induction I_δ with twists δ_i ε^(i−1), its genuine Orlik–Strauch constituents, their finite Jordan–Hölder multiplicities and the dominant-parabolic criterion for isomorphic presentations in the BHS weight convention. (LR.4/principal-series; LR.5/orlik-strauch-irreducibility; LR.5/orlik-strauch-jordan-holder; BHS19 §4.3, pp. 380–385; BHS19 line 3255).
-
-### From TauCetiRoadmap.PadicDifferentialEquationsAndRigidCohomology
-
-Section RD.2.43 supplies Robba residue duality for differential modules with invertible Frobenius over discretely valued characteristic-zero coefficients of perfect positive-characteristic residue field. Its connection-cohomology finiteness does not identify the kernel of an arbitrary P(∇); the exact polynomial-kernel contract follows below. The rank-two argument here uses both Frobenius and Gamma invariance.
-
-What PadicDifferentialEquationsAndRigidCohomology must provide (gap:polynomial-connection-finiteness): For every rank-two étale ℚₚ Robba module and nonzero P∈E[X], prove finite E-dimensionality of ker P(∇), with the connection commuting with Frobenius and Gamma and compatibility with finite coefficient extension. (§RD.2.43; DLB17 proof of Lemma 6.3, preprint p. 31; DLB17 line 1250).
 
 ## How to read the build
 
@@ -499,7 +484,7 @@ PhiGammaModulesAndIwasawaCohomology §4.0; PhiGammaModulesAndIwasawaCohomology �
 
 ## Layer 4: Ordered-regular local deformation applications
 
-This branch uses Newton–Thorne’s weaker, ordered regularity condition and their opposite sign for weights. It gives the local tangent and noncriticality inputs to eigenvariety arguments. The final rank-two application separates the absence of finite-dimensional (φ,Γ)-stable subspaces from the differential-equation theorem that makes a polynomial connection kernel finite.
+This branch uses Newton–Thorne’s weaker, ordered regularity condition and their opposite sign for weights. It gives the local strictness and noncriticality inputs to eigenvariety arguments.
 
 ### 4.1 Ordered-regular parameters and ordinary flags
 
@@ -509,7 +494,7 @@ Use NT-regularity of δ=(δ₁,…,δ_n), namely δ_i/δ_j≠∏ττ^aτ for eve
 
 A proof route uses the existing rank-one Robba and integral triangulation definitions. Apply rank-one étaleness and the exact étale Robba/Galois equivalence to ordinary graded pieces. Use the ordered rank-one H⁰ vanishing for the NT-regular condition.
 
-*Needs:* PhiGammaModulesAndIwasawaCohomology §7.5; PhiGammaModulesAndIwasawaCohomology §7.2; PadicHodgeTheory §4.3; PhiGammaModulesAndIwasawaCohomology §4.0.
+*Needs:* ModularityAndLanglandsExtensions §4.3; PhiGammaModulesAndIwasawaCohomology §7.5; PhiGammaModulesAndIwasawaCohomology §7.2; PadicHodgeTheory §4.3; PhiGammaModulesAndIwasawaCohomology §4.0.
 
 The reusable interface has the following properties.
 
@@ -615,51 +600,13 @@ One proof proceeds as follows. Classify the WD-stable rank-one lines in the thre
 
 - For a scalar WD character χ₁=χ₂, the distinctness hypothesis fails and the two-permutation count is inapplicable.
 
-### 4.6 A nontrianguline rank-two module has no (φ,Γ)-stable finite-dimensional subspace
-
-For K=ℚₚ and an absolutely irreducible two-dimensional E-representation V that is not trianguline, even after any finite extension of E, D_rig(V) contains no nonzero finite-dimensional E-subspace stable under both φ and Γ, and this persists after any finite extension of E. A φ-eigenvector alone is not claimed to span a Γ-stable line.
-
-Colmez’s saturation lemma for a rank-one (φ,Γ)-submodule is provided by the rank-one saturation supplier contract; nontriangulinity is meant after every finite extension of coefficients, as in Colmez’s definition.
-
-(DLB17 Proof of Lemma 6.3, arXiv p. 31 (published version p. 356); DLB17 line 1250; Colmez08 Lemma 3.2 and Definition 3.4, p. 231; Definition 4.1, p. 237; Colmez08 line 700.)
-
-One proof proceeds as follows. Let X be a nonzero finite-dimensional subspace stable under φ and Γ. The operators φ and γ∈Γ commute with each other, so after a finite extension of E they have a common eigenvector x≠0 in X. The Robba-span of x is a rank-one (φ,Γ)-submodule of D_rig(V); by Colmez’s saturation lemma it lies in a saturated rank-one (φ,Γ)-submodule, whose quotient has rank one. This is a triangulation of D_rig(V) after a finite extension of E, contradicting nontriangulinity.
-
-*Needs:* PhiGammaModulesAndIwasawaCohomology §7.5; PhiGammaModulesAndIwasawaCohomology §7.4; PhiGammaModulesAndIwasawaCohomology §§7.1–7.8; gap:rank-one-saturation.
-
-**Checks.**
-
-- On a nonzero finite-dimensional stable subspace, injective φ has no zero eigenvalue; a simultaneous eigenline after coefficient extension has rank 1 and saturation gives a 1+1 flag.
-
-- For the split unit rank-two representation, E·e₁ is a nonzero stable line; this trianguline example shows why nontriangulinity is necessary.
-
-- On the sum of the unit and Tate lines over ℚ₂, φ=1 on the two basis vectors; a Gamma element with cyclotomic value 5 sends e₁+e₂ to e₁+5e₂, so this φ-eigenvector does not span a Gamma-stable line.
-
-### 4.7 The nontrianguline polynomial-connection kernel argument
-
-Under §4.6, suppose the differential-equation supplier gives finite-dimensionality of ker P(∇)⊂D_rig(V) for every nonzero P∈E[X]. Then P(∇) is injective: ∇ commutes with φ and with Γ, so its kernel is a finite-dimensional subspace stable under φ and Γ, which vanishes by the preceding theorem. The finiteness theorem and the connection itself remain owned by the differential-equation and period suppliers.
-
-(DLB17 Lemma 6.3 and its proof, arXiv p. 31 (published version p. 356); DLB17 line 1250.)
-
-One proof proceeds as follows. φ∇=∇φ, and γ∇=∇γ for γ∈Γ because Γ is commutative, so ker P(∇) is stable under φ and Γ. By the polynomial-kernel supplier contract the kernel is finite-dimensional over E. Apply §4.6: no nonzero such subspace exists, so P(∇) is injective.
-
-*Needs:* §4.6; PadicHodgeTheory §4.3; PadicDifferentialEquationsAndRigidCohomology §RD.2.43 (gap:polynomial-connection-finiteness).
-
-**Checks.**
-
-- For P=1 the kernel is 0; for P=0 it is all D_rig(V), so nonzero P is essential.
-
-- For a trianguline unit line, ∇(1)=0 and P=X has a nonzero kernel E; the nontrianguline assumption cannot be discarded.
-
-- Since φ∇=∇φ and γ∇=∇γ, P(∇)x=0 gives P(∇)φx=0=P(∇)γx, the two required invariances.
-
 ### Examples
 
-With one embedding and weights (0,3), prefix slope 2 passes the numerical criterion and slope 3 fails. With a second embedding of gap 1, slope 2 fails the all-embedding test. A fixed-unit-weight unramified infinitesimal twist is allowed and is de Rham. A nonzero finite-dimensional subspace stable under φ and Γ, such as a nonzero kernel of P(∇), contradicts nontriangulinity through Colmez’s saturation lemma; a bare φ-eigenvector is not enough.
+With one embedding and weights (0,3), prefix slope 2 passes the numerical criterion and slope 3 fails. With a second embedding of gap 1, slope 2 fails the all-embedding test. A fixed-unit-weight unramified infinitesimal twist is allowed and is de Rham.
 
 ### Dependencies
 
-PhiGammaModulesAndIwasawaCohomology §7.5; PhiGammaModulesAndIwasawaCohomology §7.2; PadicHodgeTheory §4.3; PhiGammaModulesAndIwasawaCohomology §§4.0, 7.3; PadicHodgeTheory §5.2; PhiGammaModulesAndIwasawaCohomology §7.4; PhiGammaModulesAndIwasawaCohomology §§7.1–7.8; PadicDifferentialEquationsAndRigidCohomology §RD.2.43 (gap:polynomial-connection-finiteness).
+ModularityAndLanglandsExtensions §4.3; PhiGammaModulesAndIwasawaCohomology §7.5; PhiGammaModulesAndIwasawaCohomology §7.2; PadicHodgeTheory §4.3; PhiGammaModulesAndIwasawaCohomology §§4.0, 7.3; PadicHodgeTheory §5.2.
 
 ## Layer 5: Extension comparison and formal lifting
 
@@ -1045,9 +992,9 @@ One proof proceeds as follows. Add the period frame and use the cartesian compar
 
 ### 8.2 Crystalline accumulation property
 
-For x with algebraic unit weight, the accumulation property means that for every C>0 the set of crystalline strictly dominant noncritical points x′=(r′,δ′), with pairwise distinct Frobenius eigenvalues and ordered character weights `k'_(tau,1)>...>k'_(tau,n)` satisfying `k'_(tau,i)-k'_(tau,i+1)>C`, accumulates at x: there is a neighbourhood basis at x on each member of which this set is Zariski dense. The k′ are the parameter weights in decreasing order; the h used for local-model indexing are the same spectrum sorted increasingly.
+For x=(r,δ) whose unit restriction ω(x)=`delta|_((O_K^*)^n)` is an algebraic character, the accumulation property means that for every C>0 the set of crystalline strictly dominant noncritical points x′=(r′,δ′), with pairwise distinct Frobenius eigenvalues and algebraic unit restriction ω(x′)=δ_(k′), the character sending u∈O_K^× in the i-th factor to ∏_τ τ(u)^(k′_(τ,i)), whose integers satisfy `k'_(tau,1)>...>k'_(tau,n)` and `k'_(tau,i)-k'_(tau,i+1)>C`, accumulates at x: there is a neighbourhood basis at x on each member of which this set is Zariski dense. The k′ are the parameter weights in decreasing order; the h used for local-model indexing are the same spectrum sorted increasingly.
 
-(BHS19 Definition 4.1.3, p. 373; BHS19 line 2931.)
+(BHS19 Definition 4.1.3, p. 373; BHS19 line 2939; δ_k as in BHSsmooth17 §2.1, p. 7; BHSsmooth17 line 255.)
 
 One proof proceeds as follows. Use the imported notion of crystalline representations and the noncritical refinement condition. Use the supplier’s rigid accumulation convention: Zariski density on a neighbourhood basis, not mere existence of a converging sequence.
 
@@ -1093,13 +1040,13 @@ One proof proceeds as follows. First the prefix bound: on U_tri the parameter δ
 
 - A nontrivial ramified finite-order rank-one character has derivative weight 0 and no adjacent inequality, but need not be semistable over K. It is excluded because its unit restriction is not the algebraic character 1; integrality of derivatives alone is insufficient.
 
-### 8.4 Accumulation at generic algebraic-weight points
+### 8.4 Accumulation at generic points with algebraic unit restriction
 
 A point x satisfying §7.4 whose restriction `delta|_((O_K^*)^n)` is algebraic has the accumulation property of §8.2. This uses the crystalline density theorem on the regular triangulation locus in addition to flatness; it does not follow from flatness alone.
 
 (BHS19 Proposition 4.1.4, pp. 373–374; BHS19 line 2946; BHSsmooth17 Lemma 2.10 and proof, author PDF pp. 15–16; first half of Proposition 2.12, pp. 16–17; BHSsmooth17 line 617.)
 
-One proof proceeds as follows. Choose a flat affinoid neighbourhood of x whose weight image is an admissible open of Wⁿ (gap:rigid-flat-openness). Use density of U_tri, local irreducibility (§7.5) and openness of the normal locus (gap:rigid-normal-cm-openness) as in BHS19 Proposition 4.1.4 to reduce to algebraic-weight points of the regular locus; retain the algebraic-centre hypothesis in this reduction. On each chosen affinoid the finitely many prefix uniformizer valuations are bounded. At each reduced algebraic-weight point, use a local product chart for the smooth weight map and the accumulation of algebraic weights with arbitrarily large decreasing gaps at that centre in Wⁿ (gap:general-character-spaces). Apply §8.3 and the regular-character condition to obtain crystalline noncritical Frobenius-distinct points. Use the smooth weight map on U_tri and local irreducibility to obtain density in a neighbourhood basis, for every prescribed gap bound.
+One proof proceeds as follows. Choose a flat affinoid neighbourhood of x whose weight image is an admissible open of Wⁿ (gap:rigid-flat-openness). Use density of U_tri, local irreducibility (§7.5) and openness of the normal locus (gap:rigid-normal-cm-openness) as in BHS19 Proposition 4.1.4 to reduce to points of the regular locus whose unit restriction is algebraic; retain the algebraic-centre hypothesis in this reduction. On each chosen affinoid the finitely many prefix uniformizer valuations are bounded. At each such reduced point, use a local product chart for the smooth weight map and the accumulation of algebraic weights with arbitrarily large decreasing gaps at that centre in Wⁿ (gap:general-character-spaces). Apply §8.3 and the regular-character condition to obtain crystalline noncritical Frobenius-distinct points. Use the smooth weight map on U_tri and local irreducibility to obtain density in a neighbourhood basis, for every prescribed gap bound.
 
 *Needs:* §8.1; §8.2; CompletedCohomologyAndLocalGlobalCompatibility §5.2a (gap:unrestricted-trianguline-variety); §8.3; §7.5; PhiGammaModulesAndIwasawaCohomology §4.0 (gap:general-character-spaces); AdicSpacesPartII R1; RigidAnalyticGeometry §§1.2, 8.1 (gap:rigid-normal-cm-openness); RigidAnalyticGeometry §§7.3, 8.1 (gap:rigid-flat-openness).
 
@@ -1201,7 +1148,7 @@ For a generic r with integral regular Sen weights, transfer the supplier’s top
 
 One proof proceeds as follows. Identify the completed logarithmic-weight fibre with the completed unit-character fibre by the étaleness of the logarithmic derivative on the unit character space (gap:general-character-spaces). Pull cycles through the formally smooth diagram with its fixed relative dimensions. Use the imported completion formula for generic lengths, then descend through the period frame. Check equivariance and algebraic-twist invariance before declaring the resulting cycles intrinsic.
 
-*Needs:* §7.4; SpringerResolutionAndCharacteristicCycles Y/top-cycle-group; SpringerResolutionAndCharacteristicCycles Y/module-cycle; SpringerResolutionAndCharacteristicCycles K/three-bases; SpringerResolutionAndCharacteristicCycles E/completion-cycle-map; SpringerResolutionAndCharacteristicCycles E/module-completion-formula; PhiGammaModulesAndIwasawaCohomology §4.0 (gap:general-character-spaces); `Module.length`.
+*Needs:* §7.4; SpringerResolutionAndCharacteristicCycles Y/top-cycle-group; SpringerResolutionAndCharacteristicCycles Y/module-cycle; SpringerResolutionAndCharacteristicCycles K/three-bases; SpringerResolutionAndCharacteristicCycles E/completion-cycle-map; SpringerResolutionAndCharacteristicCycles E/module-completion-formula; PhiGammaModulesAndIwasawaCohomology §4.0 (gap:general-character-spaces); `Module.length`; `AlgebraicGeometry.AlgebraicCycle`.
 
 The reusable interface has the following properties.
 
@@ -1395,7 +1342,7 @@ For n=2,d=1 the smooth ambient Galois ring has dimension 8. A weight fibre has d
 
 ### Dependencies
 
-§7.4; SpringerResolutionAndCharacteristicCycles Y/top-cycle-group; SpringerResolutionAndCharacteristicCycles Y/module-cycle; SpringerResolutionAndCharacteristicCycles K/three-bases; SpringerResolutionAndCharacteristicCycles E/completion-cycle-map; SpringerResolutionAndCharacteristicCycles E/module-completion-formula; PhiGammaModulesAndIwasawaCohomology §4.0 (gap:general-character-spaces); `Module.length`; SpringerResolutionAndCharacteristicCycles E/completed-kl-identity; SpringerResolutionAndCharacteristicCycles K/kl-transition; LocalGaloisDeformationRings §3.4; §7.2; §5.4; §6.2; SpringerResolutionAndCharacteristicCycles P/parabolic-cycle-invariance; §8.7; §8.1; SpringerResolutionAndCharacteristicCycles S/steinberg-components.
+§7.4; SpringerResolutionAndCharacteristicCycles Y/top-cycle-group; SpringerResolutionAndCharacteristicCycles Y/module-cycle; SpringerResolutionAndCharacteristicCycles K/three-bases; SpringerResolutionAndCharacteristicCycles E/completion-cycle-map; SpringerResolutionAndCharacteristicCycles E/module-completion-formula; PhiGammaModulesAndIwasawaCohomology §4.0 (gap:general-character-spaces); `Module.length`; `AlgebraicGeometry.AlgebraicCycle`; SpringerResolutionAndCharacteristicCycles E/completed-kl-identity; SpringerResolutionAndCharacteristicCycles K/kl-transition; LocalGaloisDeformationRings §3.4; §7.2; §5.4; §6.2; SpringerResolutionAndCharacteristicCycles P/parabolic-cycle-invariance; §8.7; §8.1; SpringerResolutionAndCharacteristicCycles S/steinberg-components.
 
 ## Layer 10: Crystabelline Hodge parameters and modification
 
@@ -2305,7 +2252,6 @@ At n=3,d=2, first and last paraboline tangent spaces each have dimension 15 and 
 - **Ding25**. Yiwen Ding, [p-Adic Hodge parameters in the crystabelline representations of GL_n](https://pmihes.centre-mersenne.org/item/10.1007/s10240-025-00156-2.pdf). Publications Mathématiques de l’IHÉS 142 (2025), 1–74. Locators use this linked version.
 - **NT21**. James Newton and Jack A. Thorne, [Symmetric power functoriality for holomorphic modular forms](https://pmihes.centre-mersenne.org/item/10.1007/s10240-021-00127-3.pdf). Publications Mathématiques de l’IHÉS 134 (2021), 1–116. Locators use this linked version.
 - **Colmez08**. Pierre Colmez, [Représentations triangulines de dimension 2](https://www.numdam.org/item/AST_2008__319__213_0.pdf). Astérisque 319 (2008), 213–258. Locators use this linked version.
-- **DLB17**. Gabriel Dospinescu and Arthur-César Le Bras, [Revêtements du demi-plan de Drinfeld et correspondance de Langlands p-adique](https://arxiv.org/pdf/1509.00606v2). arXiv:1509.00606v2 (28 April 2017); published Annals of Mathematics 186 (2017), 321–411. Locators use this linked version.
 - **BHS17**. Christophe Breuil, Eugen Hellmann and Benjamin Schraen, [Une interprétation modulaire de la variété trianguline](https://www.imo.universite-paris-saclay.fr/~christophe.breuil/PUBLICATIONS/eigenvariete.pdf). Author final copy; Mathematische Annalen 367 (2017), 1587–1645. Locators use this linked version.
 - **BHSsmooth17**. Christophe Breuil, Eugen Hellmann and Benjamin Schraen, [Smoothness and classicality on eigenvarieties](https://www.imo.universite-paris-saclay.fr/~christophe.breuil/PUBLICATIONS/classicite.pdf). Author final copy; Inventiones Mathematicae 209 (2017), 197–274. Locators use this linked version.
 - **Ding19**. Yiwen Ding, [Companion points and locally analytic socle for GL₂(L)](https://arxiv.org/pdf/1602.08859v2). arXiv:1602.08859v2 (21 February 2019); published Israel Journal of Mathematics 231 (2019), 47–122. Locators use this linked version.

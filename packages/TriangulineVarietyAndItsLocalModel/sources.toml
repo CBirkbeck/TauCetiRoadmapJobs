@@ -25,7 +25,7 @@ year = 2008
 title = "Représentations triangulines de dimension 2"
 authors = "Pierre Colmez"
 locator_scheme = "section"
-locator = "Lemma 3.2 and Definition 3.4, p. 231; Definition 4.1 and Proposition 4.3, pp. 237–238, including proofs"
+locator = "Definition 4.1 and Proposition 4.3, pp. 237–238, including proofs"
 url = "https://www.numdam.org/item/AST_2008__319__213_0.pdf"
 fetched_from = "https://www.numdam.org/item/AST_2008__319__213_0.pdf"
 fetched_at = "2026-10-25T09:16:26Z"
@@ -33,27 +33,8 @@ sha256 = "eab0e8f383307b5d63960ea24cf4d86fb9aab215ae2e8155d7bf57efdf105ed6"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["README references and targets"]
+cited_for = ["§4.5"]
 version_note = "Read the published open PDF linked here; theorem numbering and printed pages refer to that version."
-
-[[source]]
-id = "DLB17"
-doi = "10.4007/annals.2017.186.2.1"
-authors = "Gabriel Dospinescu and Arthur-César Le Bras"
-title = "Revêtements du demi-plan de Drinfeld et correspondance de Langlands p-adique"
-year = 2017
-arxiv = "1509.00606v2"
-locator_scheme = "section"
-locator = "§6, Lemma 6.3 and its proof, arXiv p. 31; Theorem 8.3 and its use of Lemma 6.3"
-url = "https://arxiv.org/abs/1509.00606v2"
-fetched_from = "https://arxiv.org/pdf/1509.00606v2"
-fetched_at = "2026-10-25T09:16:31Z"
-sha256 = "bdf8f14fb4bfb4fe43980fdbff088b33469a16a9c0260616a0630de48de8cd68"
-licence_class = "open-repository"
-status = "certified"
-accessed = "2026-10-25"
-version_note = "Read arXiv:1509.00606v2, 2017; all section and page locators refer to that version, with published page 356 noted for Lemma 6.3."
-cited_for = ["README references and targets"]
 
 [[source]]
 id = "BHS17"

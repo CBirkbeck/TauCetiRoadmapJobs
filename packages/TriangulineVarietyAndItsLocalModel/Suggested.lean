@@ -40,11 +40,6 @@ following headlines is statable on those APIs with only simple definitions:
   the actual higher-intertwining relations on the Robba tangent quotients.
 * Numerical Weil–Deligne criterion for noncritical triangulations (Layer 4):
   missing de Rham representations, WD flags and their integral triangulations.
-* Absence of finite-dimensional Frobenius-and-Gamma-stable subspaces in
-  nontrianguline rank two (Layer 4): missing the coefficient Robba realization
-  and the triangulinity condition on representations.
-* Polynomial-connection injectivity in nontrianguline rank two (Layer 4): missing
-  that realization and its logarithmic Gamma connection.
 
 The pinned matrix, module, scheme and algebraic-cycle carriers do not supply
 these period or analytic moduli constructions. Abstract linear-map identities
