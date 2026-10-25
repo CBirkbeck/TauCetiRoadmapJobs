@@ -392,9 +392,9 @@ comparison at every prime and the identification of all Euler factors. In the
 cohomological convention here this identifies `V_p(E)` with `V_λ(f)(1)`.
 Layer R29.5: the isogeny from the attached modular quotient and the surjection
 `J₀(N_E) → E` giving a modular parametrisation. Layer R29.6: every elliptic curve over ℚ
-has such an attached rational-coefficient newform. For the elliptic signatures of §7.9,
-use R29.6 to choose this newform and R29.4–R29.5 for its Tate-module and modular-quotient
-comparisons with E.
+has such an attached rational-coefficient newform. For the elliptic statements of 6.6 and
+7.3–7.8 and the elliptic signatures of §7.9, which carry no modularity hypothesis, use R29.6 to
+choose this newform and R29.4–R29.5 for its Tate-module and modular-quotient comparisons with E.
 
 ### From EllipticCurves
 
@@ -891,8 +891,8 @@ specialized to perfect residue field; the open-curve local systems are those of
   at `i = k` fails.
 - At `k = 2, i = 1` the modular-form step remains: the critical range is not
   empty.
-- Forgetting the range of modularDualExp returns the supplied value, also on a nonzero
-  input; the range restriction does not change the map.
+- Forgetting the range of the restricted modular dual exponential returns the supplied
+  value, also on a nonzero input; the range restriction does not change the map.
 
 *Needs:* `PadicFamilies` §4.0.2; `ModularCurvesPartII` §§6.1, 14.1–14.4;
 `AutomorphicGaloisRepresentations` §§1.5, 4.5; `PadicHodgeRegulators` §1.4.
@@ -1112,12 +1112,17 @@ Layers 0–1; `PadicFamilies` §§4.0.1–4.0.2; `ModularCurvesPartII` §§3.14,
 Let f be a non-CM newform of weight `k ≥ 2`. Let Γ be its group of inner twists
 `(γ, χ_γ)`, `F⁰ = F^Γ`, and `H = ⋂ ker χ_γ`, an open subgroup of `G_ℚ`. By
 Momose and Ribet there is a central simple algebra B of degree two over `F⁰`,
-split by F and unramified outside `2N·disc(F/ℚ)·∞`, with `ρ_f(H) ⊂ B(F⁰ ⊗ ℚ̂)^×`;
-the image of H is open in the group of units of `B ⊗ ℚ̂` whose reduced norm lies in
-`ℚ̂^×`, and for all but finitely many p it is the full group
-`{x ∈ GL₂(O_(F⁰) ⊗ ℤ_p) : det x ∈ ℤ_p^(×(k−1))}` (Loeffler, Theorem 2.2.2 and
-Theorem 2.3.1, arXiv:1411.1789, pp. 5–6, with Ribet 1985 §§3–4 and
-Ghate–González-Jiménez–Quer Corollary 4.7).
+split by F and unramified outside `2N·disc(F/ℚ)·∞`, with `ρ_f(H) ⊂ B(F⁰ ⊗ ℚ̂)^×`.
+On H the reduced norm of `ρ_f` is `κ̂^(1−k)`, with `κ̂ : G_ℚ → ℤ̂^×` the adelic cyclotomic
+character, and the image of H under `(ρ_f, κ̂)` is open in Loeffler's group
+`G(ℚ̂) = {(x,λ) ∈ (B ⊗ ℚ̂)^× × ℚ̂^× : nrd x = λ^(1−k)}`. In particular, for each p the image of
+H is open in `{x ∈ (B ⊗ ℚ_p)^× : nrd x ∈ ℚ_p^×}`, and for all but finitely many p it is the
+full group `{x ∈ GL₂(O_(F⁰) ⊗ ℤ_p) : det x ∈ ℤ_p^(×(k−1))}` (Loeffler, arXiv:1411.1789,
+Definition 1.2.1, p. 3, Theorem 2.2.2, p. 6, and Theorem 2.3.1, p. 6, with Ribet 1985 §§3–4
+and Ghate–González-Jiménez–Quer Corollary 4.7). For `k ≥ 3` the image of H alone is not open
+in the adelic group of units with reduced norm in `ℚ̂^×`: its reduced norms are `(k−1)`-th
+powers, of index at least two in `ℤ_p^×` for infinitely many p (compare Loeffler, Remark 1.2.4,
+p. 5).
 
 Prove admissible_of_split: if λ lies above a place `λ₀` of `F⁰` at which B splits,
 then for a suitable stable lattice and basis the image of `G_(ℚ(μ_(p^∞)))` contains
@@ -1173,6 +1178,10 @@ Kato §§15.12–15.17, pp. 263–265, including the contained-cyclotomic case o
   does not require a unipotent element.
 - In a quaternion division algebra, `d − 1` is invertible for every `d ≠ 1`, so the
   fixed space of every nonidentity element is zero.
+- At `k = 3` the reduced norms of `ρ_f(H)` are squares, and `[ℤ_p^× : (ℤ_p^×)²] = 2` for every
+  odd p: the image has infinite index in every open subgroup of the adelic group of units with
+  reduced norm in `ℚ̂^×`, so openness must be stated in Loeffler's group of pairs. At a single
+  p, `(ℚ_p^×)²` has finite index in `ℚ_p^×`, and the per-prime openness holds.
 
 *Needs:* `AutomorphicGaloisRepresentations` §§1.5–1.6, 4.8, 7.5; Mathlib linear
 algebra.
@@ -1307,8 +1316,8 @@ inverting p, `H²(V)` is `Λ_ℚ`-torsion and `H¹(V)` is `Λ_ℚ`-free of rank 
 `p ≠ 2` and `T/λT` is irreducible, `H¹(T)` is Λ-free of rank one (Kato Theorem 12.4,
 p. 221; Burungale–Tian arXiv v2 Theorem 2.3, p. 4). The rational clauses are those
 of `PadicFamilies` §4.0.3 for admissible pairs, including CM forms (Kato §15.15, p. 265,
-with the case 15.14, p. 264, of a CM field `K ⊂ ℚ(ζ_(p^∞))`: `K = ℚ(i)` at `p = 2`, and
-`K = ℚ(√−p)` for `p ≡ 3 mod 4`). Kato states the
+with the case 15.14, p. 264, of a CM field `K ⊂ ℚ(ζ_(p^∞))`: `K = ℚ(i)` or `ℚ(√−2)` at
+`p = 2`, and `K = ℚ(√−p)` for `p ≡ 3 mod 4`). Kato states the
 theorem for every λ; at an inadmissible λ its proof rests on 12.8.2 (see 4.1), and the
 statement there is not claimed. Torsion-freeness
 of `H¹(T)` follows because its Λ-torsion submodule is the module of invariants of T
@@ -1334,6 +1343,10 @@ torsion-freeness and rational rank one only.
 - At `p = 2` the full algebra `O[{±1}][[T]]` is not a domain; torsion-freeness is
   stated with regular scalars, and the free module over `ℚ × ℚ` shows that this is
   weaker than freedom from every nonzero annihilator.
+- `ζ₈ + ζ₈³ = (1+i)/√2 + (−1+i)/√2 = i√2`, so `ℚ(√−2) ⊂ ℚ(ζ₈)`: a form with CM by `ℚ(√−2)`
+  at `p = 2` falls under the contained case 15.14, as does `ℚ(i)`, while `ℚ(√2)` is real. For
+  odd p the only quadratic subfield of `ℚ(ζ_(p^∞))` is `ℚ(√p*)` with
+  `p* = (−1)^((p−1)/2) p`, imaginary exactly when `p ≡ 3 mod 4`.
 
 *Needs:* 4.1, 4.3; `PadicFamilies` §4.0.3; `SelmerIwasawaCohomology` §§3.0–3.1,
 3.13; `ArithmeticGaloisDuality` §§R02.4.3–R02.4.4; `PadicMeasuresIwasawaAlgebras` §§4.2–4.3.
@@ -1444,7 +1457,8 @@ Layer 2; `PadicFamilies` §4.0.3; `AutomorphicGaloisRepresentations` §§1.5–1
 
 ## Layer 5: canonical zeta morphisms
 
-Throughout this layer `(f,λ)` is admissible.
+Throughout 5.1–5.4 `(f,λ)` is admissible. Targets 5.5 and 5.6 concern all newforms of level
+dividing a full level N at once, and state their admissibility proviso themselves.
 
 ### 5.1 The rational Kato zeta morphism
 
@@ -1621,9 +1635,9 @@ excluded.
 For `N ≥ 3`, `k ≥ 2`, `Σ = prime(Np)`, n prime to Np and `c ≥ 2` prime to `6Nnp`, use the
 rational Drinfeld–Manin splitting `s_N` from open to parabolic cohomology
 (`ModularSymbolsPadicLFunctions` §0.8). Prove parabolicFullLevelCharacterisation:
-for `v ∈ Sym^(k−2)(ℤ²)^*`, the split class `s_N(c-z^Iw_(N,n)(k,v))` of the full-level
-class of 2.3 is the unique element `z_v` of the parabolic Iwasawa cohomology with
-`ℚ_p(2)`-twisted coefficients such that, for every `m ≥ 0`, its twist by `1 − k`,
+for `v ∈ Sym^(k−2)(ℤ²)^*`, the split class `z_v = s_N(c-z^Iw_(N,n)(k,v))` of the full-level
+class of 2.3, an element of the parabolic Iwasawa cohomology with `ℚ_p(2)`-twisted
+coefficients, has the property that, for every `m ≥ 0`, its twist by `1 − k`,
 specialization, localization and dual exponential `ω_m(z_v)` lies in
 `S_k(N)_ℚ ⊗ ℚ(ζ_(np^m))` and satisfies
 
@@ -1631,19 +1645,29 @@ specialization, localization and dual exponential `ω_m(z_v)` lies in
 per(ω_m(z_v)) = (2πi)^(1−k) Z_(Σ,np^m)(k−1) · s_N(c-δ_(N,np^m)(k,v))
 ```
 
-in `H¹(X(N)(ℂ), j_*V_(k/ℂ)) ⊗_(ℂ[{±1}]) ℂ[Gal(ℚ(ζ_(np^m))/ℚ)]` (Nakamura, arXiv v2, Corollary 3.6,
-pp. 47–48). Uniqueness is 5.5; the period map is injective on `S_k(N)_ℚ ⊗ ℚ(ζ_(np^m))`
-into this quotient (Nakamura, arXiv v2, (19), p. 48). The splitting is rational and Hecke/Galois
-equivariant, with no integral splitting asserted.
+in `H¹(X(N)(ℂ), j_*V_(k/ℂ)) ⊗_(ℂ[{±1}]) ℂ[Gal(ℚ(ζ_(np^m))/ℚ)]`; and, provided every newform
+constituent of `S_k(N)` is admissible at the coefficient places above p (the proviso of 5.5),
+`z_v` is the unique element of that parabolic Iwasawa cohomology with this property (Nakamura,
+arXiv v2, Corollary 3.6, pp. 47–48). Uniqueness: two such elements differ by a class d with
+`per(ω_m(d)) = 0` for every m; the period map is injective on `S_k(N)_ℚ ⊗ ℚ(ζ_(np^m))` into
+this quotient (Nakamura, arXiv v2, (19), p. 46, used in the proof of Corollary 3.6, p. 48), so
+`ω_m(d) = 0` for every m, and parabolicExpStar_injective of 5.5, applied after the twist by
+`1 − k`, gives `d = 0`. The property itself carries no admissibility hypothesis: it is the
+explicit reciprocity law for the open-curve class (Nakamura, arXiv v2, Theorem 3.2, pp. 43–44)
+transported by `s_N`. The splitting is rational and Hecke/Galois equivariant, with no integral
+splitting asserted.
 
 **Checks.**
 
 - The coefficient object is `H¹(X(N), j_*V_k)`, not `H¹(Y(N), V_k)`.
 - The splitting is not integral: at a prime dividing the order of the Eisenstein
   congruence module the rational projector has a denominator.
+- If some newform constituent of `S_k(N)` is non-CM and its coefficient place above p lies over
+  a place where Momose's algebra is a division algebra (4.1), the injectivity of 5.5 is not
+  claimed there, so neither is uniqueness; the split class has the stated property regardless.
 
-*Needs:* 2.3, 5.5, 3.4 (operator-valued zeta); `ModularSymbolsPadicLFunctions` §0.8;
-`SelmerIwasawaCohomology` §3.7.
+*Needs:* 2.3, 5.5, 3.4 (operator-valued zeta); `PadicFamilies` §4.0.2;
+`ModularSymbolsPadicLFunctions` §0.8; `SelmerIwasawaCohomology` §3.7.
 
 ### Examples
 
@@ -1660,6 +1684,13 @@ Layers 2–4; `PadicFamilies` §§4.0.1–4.0.3; `ModularSymbolsPadicLFunctions`
 14.11–14.12; `PadicHodgeRegulators` §1.11.
 
 ## Layer 6: scalar regulators and elliptic periods
+
+In 6.2 and 6.4, which use the canonical map of 5.1 for `f*`, the pair `(f,λ)` is admissible;
+equivalently `(f*,λ)` is. Indeed f has complex multiplication exactly when `f*` has, and on
+`G_(ℚ(μ_(p^∞)))` the twist `κ^(1−k)` is trivial, so through `V(f*) ≅ Hom_E(V(f),E)(1−k)` an
+element σ acts on `V(f*)` by the contragredient of its action on `V(f)`, whose fixed space has
+the same dimension as that of σ. Targets 6.1 and 6.3 involve no zeta class and need no such
+hypothesis; in 6.6 the newform attached to E is admissible at every p (4.1).
 
 ### 6.1 Perrin-Riou's map for de Rham representations
 
@@ -1691,9 +1722,9 @@ Construct `ℒ_η` by pairing η with the big exponential of the dual: Kentaro N
 Theorem 1.5 (= Theorem 3.10), constructs it for every de Rham (φ,Γ)-module over any
 p-adic field and every p, with the dual exponential interpolation of its part (2);
 Colmez (Ann. of Math. 148 (1998), Theorem 7) gives the same for de Rham
-representations with uniqueness. For crystalline V the map is that of
-`PadicHodgeRegulators` §9.35 (all p) paired with η, and for odd p it agrees with §§8.8,
-8.13–8.14 there. Uniqueness: an element of `ℋ_(h,L)` is determined by its values at
+representations with uniqueness. For crystalline V it is the map Perrin-Riou constructed
+(Invent. Math. 115 (1994), 81–149), namely that of `PadicHodgeRegulators` §9.35 (all p) paired
+with η, and for odd p it agrees with §§8.8, 8.13–8.14 there. Uniqueness: an element of `ℋ_(h,L)` is determined by its values at
 the characters `κ^rχ^(−1)` with `r > h` (`ModularSymbolsPadicLFunctions` §2.5),
 and every element of `ℋ_(∞,L)` lies in some `ℋ_(h,L)`.
 
@@ -1714,8 +1745,8 @@ and every element of `ℋ_(∞,L)` lies in some `ℋ_(h,L)`.
 
 ### 6.2 The period-normalized scalar regulator
 
-Fix a nonzero `ω ∈ S(f*)` and `γ ∈ V_F(f*)` with `γ⁺, γ⁻` nonzero, and a root α of
-`X² − a_pX + ε(p)p^(k−1)` (`ε(p) = 0` at bad level) with `v_p(α) < k − 1`. Write
+Let `(f,λ)` be admissible. Fix a nonzero `ω ∈ S(f*)` and `γ ∈ V_F(f*)` with `γ⁺, γ⁻`
+nonzero, and a root α of `X² − a_pX + ε(p)p^(k−1)` (`ε(p) = 0` at bad level) with `v_p(α) < k − 1`. Write
 `per_(f*)(ω) = Ω_+γ⁺ + Ω_−γ⁻`. Since `(V(f*)(k))*(1) ≅ V(f)` satisfies (16.4.1), there is
 `η` in the `φ = α` line of `D_crys(V(f*)(k)*(1))` with `⟨ω, η⟩ = 1`: weak admissibility
 and the strict slope inequality prove the pairing nonzero before the division (Kato
@@ -1739,6 +1770,10 @@ projection; 6.1 still defines the η-indexed maps on its stated domain.
   hypothesis `a ≠ 0` is needed for the period normalization.
 - With the identity regulator and identity projection on ℚ, one maps to one, which
   rejects a zero construction.
+- For a non-CM f at a coefficient place over a division-algebra place of Momose's algebra,
+  admissibility is not established (4.1), so neither the canonical class of 5.1 nor the
+  regulator of 6.2 is claimed there; replacing f by `f*` does not help, since `(f*,λ)` is
+  admissible exactly when `(f,λ)` is.
 
 *Needs:* 6.1, 5.1, 2.2, 4.6; `AutomorphicGaloisRepresentations` §§4.5, 5.2;
 `ModularSymbolsPadicLFunctions` §1.1.
@@ -1772,8 +1807,8 @@ agree: both are `(−1)^(k−r−1)χ(−1)`.
 
 ### 6.4 Noncritical analytic–arithmetic equality
 
-Under 6.2's hypotheses prove noncriticalAnalyticArithmeticComparison: the scalar
-regulator of 6.2 equals Kato's analytic p-adic L-function `L_(p-adic,α,ω,γ)(f)`, the
+For admissible `(f,λ)` and under the remaining hypotheses of 6.2, prove
+noncriticalAnalyticArithmeticComparison: the scalar regulator of 6.2 equals Kato's analytic p-adic L-function `L_(p-adic,α,ω,γ)(f)`, the
 distribution of `ModularSymbolsPadicLFunctions` §2.5 transported by 6.3. For χ of exact
 conductor `p^n`, `n ≥ 1`, and `1 ≤ r ≤ k−1`, both evaluations at `κ^rχ^(−1)` are
 
@@ -1816,8 +1851,8 @@ for every p, including two, since 6.1 does.
 
 At bad reduction use 6.1 under (16.4.1), retaining its singular Euler factors;
 6.2–6.4 apply only when their nonzero crystalline eigenline and strict slope hypotheses
-hold. At critical slope the pairing argument of 6.2 no longer proves a nonzero pairing
-(Kato 16.4, Remark 16.5(2) and the proof of 16.6, pp. 270–271).
+hold, and 6.2 and 6.4 only for admissible pairs. At critical slope the pairing argument of 6.2
+no longer proves a nonzero pairing (Kato 16.4, Remark 16.5(2) and the proof of 16.6, pp. 270–271).
 
 **Checks.**
 
@@ -1834,10 +1869,10 @@ hold. At critical slope the pairing argument of 6.2 no longer proves a nonzero p
 
 ### 6.6 Elliptic local lattice and Kato period
 
-Let E/ℚ be modular of conductor N, `T = T_pE`, `ω_E` the invariant differential of a
-global minimal integral model over ℚ (`EllipticCurves` Layers 1 and 4.5b). Use the positive
-total real period `Ω_E = ∫_(E(ℝ)) |ω_E|` defined by the explicit integral of
-`EllipticCurves` Layer 7. If `Ω_E⁺` is the primitive positive real period, namely the
+Let E/ℚ be an elliptic curve of conductor N, modular by `EllipticCurveModularity` R29.6,
+`T = T_pE`, and `ω_E` the invariant differential of a global minimal integral model over ℚ
+(`EllipticCurves` Layers 1 and 4.5b). Use the positive total real period
+`Ω_E = ∫_(E(ℝ)) |ω_E|` defined by the explicit integral of `EllipticCurves` Layer 7. If `Ω_E⁺` is the primitive positive real period, namely the
 integral over the identity component with its positive orientation, then
 `Ω_E = c_∞ Ω_E⁺`, where `c_∞ = |π₀(E(ℝ))| ∈ {1,2}`: translation preserves the
 absolute differential on each component. In Rubin's fundamental-period normalization
@@ -1889,7 +1924,7 @@ its integral tail lies in `4ℤ₂`, and the image of `E₁` is `4ℤ₂`, not `
 - At `p = 2` the printed odd-prime lattice `p^(−1)ℤ_p` would give `2^(−1)ℤ₂` instead of
   the dual of `4ℤ₂`.
 
-*Needs:* 2.1–2.2, 5.3; `EllipticCurveModularity` R29.4–R29.5;
+*Needs:* 2.1–2.2, 5.3; `EllipticCurveModularity` R29.4–R29.6;
 `PadicHodgeRegulators` §§1.4, 8.22; `EllipticCurves` Layers 1, 4, 4.5b and 7;
 `SelmerIwasawaCohomology` §§2.12, 2.15; `ModularSymbolsPadicLFunctions` §1.1.
 
@@ -1904,7 +1939,7 @@ from the all-prime rational regulator theorem.
 
 Layers 2 and 5; `PadicHodgeRegulators` §§1.4, 1.11, 8.8, 8.13–8.16, 8.22, 9.31–9.35;
 `ModularSymbolsPadicLFunctions` §§1.1–1.3, 2.5, 3.0, 3.2–3.3;
-`AutomorphicGaloisRepresentations` §§4.5, 5.2; `EllipticCurveModularity` R29.4–R29.5;
+`AutomorphicGaloisRepresentations` §§4.5, 5.2; `EllipticCurveModularity` R29.4–R29.6;
 `EllipticCurves` Layers 1, 4, 4.5b and 7;
 `SelmerIwasawaCohomology` §§2.12, 2.15, 3.1, 3.7.
 
@@ -1987,7 +2022,8 @@ cites Kato's "Theorem 12.4(4)", which is 12.5(4), and his arXiv v2 Conjecture 5.
 
 ### 7.3 Elliptic points in the cyclotomic tower
 
-Let E/ℚ be modular and non-CM and `ℚ_∞/ℚ` its cyclotomic `ℤ_p`-extension, for any p. Prove
+Let E/ℚ be an elliptic curve without complex multiplication and `ℚ_∞/ℚ` its cyclotomic
+`ℤ_p`-extension, for any p. Prove
 finite generation of `E(ℚ_∞)`: this group is finitely generated. Apply the
 finite-level bound of `EulerSystemsAndKolyvaginSystems` §4.17(b) to the Euler system of 2.1
 with the finite-order character twists of `EulerSystemsAndKolyvaginSystems` §2.5,
@@ -2015,14 +2051,15 @@ global finiteness of Ш also uses 7.8.
   finite torsion do not give finite generation, and the uniform descent is needed.
 - At `p = 2` use the lattice of 6.6.
 
-*Needs:* 2.1, 4.2, 4.6–4.7, 6.6; `EulerSystemsAndKolyvaginSystems` §§2.5, 4.17;
+*Needs:* 2.1, 4.2, 4.6–4.7, 6.6; `EllipticCurveModularity` R29.6;
+`EulerSystemsAndKolyvaginSystems` §§2.5, 4.17;
 `SelmerIwasawaCohomology` §2.12; `EllipticCurves` Layer 6.
 
 ### 7.4 Elliptic ordinary and multiplicative divisibility
 
-Let E/ℚ be modular, non-CM, of conductor N, and p an odd prime at which E has good ordinary
-or multiplicative reduction. Put `T = T_pE`, `Λ = ℤ_p[[Gal(ℚ_∞/ℚ)]]` and `Z_∞ = Sel(E/ℚ_∞)^∨`. With Rubin's
-Coleman map on the singular local Iwasawa group (`PadicHodgeRegulators` §8.22) and the
+Let E/ℚ be an elliptic curve without complex multiplication, of conductor N, and p an odd
+prime at which E has good ordinary or multiplicative reduction. Put `T = T_pE`,
+`Λ = ℤ_p[[Gal(ℚ_∞/ℚ)]]` and `Z_∞ = Sel(E/ℚ_∞)^∨`. With Rubin's Coleman map on the singular local Iwasawa group (`PadicHodgeRegulators` §8.22) and the
 system c of 2.1 with `r_E` of 6.6, prove `Col(c) = r_E L_(E,N)`. Here `L_E` is the p-adic L-function of Mazur and Swinnerton-Dyer,
 normalized by `ω_E` and `Ω_E` (Rubin draft Theorem III.5.13), and `L_(E,N)` is its imprimitive
 form, with the Euler factors at the primes `q | N`, `q ≠ p`, removed from the interpolated values
@@ -2064,8 +2101,8 @@ case `1 − α^(−1) = 2`, a unit for odd p.
 - Rational open image (4.7) gives the first divisibility only; the exact one needs
   surjectivity.
 
-*Needs:* 2.1, 4.6–4.7, 5.3, 6.3, 6.6; `PadicFamilies` §4.0.3; `PadicHodgeRegulators`
-§§8.22, 9.36; `EllipticCurves` Layers 4.5b and 7;
+*Needs:* 2.1, 4.6–4.7, 5.3, 6.3, 6.6; `EllipticCurveModularity` R29.6; `PadicFamilies` §4.0.3;
+`PadicHodgeRegulators` §§8.22, 9.36; `EllipticCurves` Layers 4.5b and 7;
 `ModularSymbolsPadicLFunctions` §2.5; `EulerSystemsAndKolyvaginSystems` §§8.16,
 8.39; `SelmerIwasawaCohomology` §4.26; `PadicMeasuresIwasawaAlgebras` §4.6.
 
@@ -2092,15 +2129,15 @@ groups is zero.
 
 ### 7.6 No finite submodule in the ordinary elliptic Selmer dual
 
-For modular non-CM E with good ordinary reduction at an odd prime p, assume
-`p ∤ ∏_(q|N) |E(ℚ_q)_tors|`. Then `Z_∞` of 7.4 has no nonzero finite Λ-submodule. The
+For E/ℚ without complex multiplication and with good ordinary reduction at an odd prime p,
+assume `p ∤ ∏_(q|N) |E(ℚ_q)_tors|`. Then `Z_∞` of 7.4 has no nonzero finite Λ-submodule. The
 exclusions concern local torsion at every bad q, not `E(ℚ)_tors`; since `N > 1` they imply
 `E(ℚ)[p] = 0`, as the elliptic case of Greenberg's criterion requires. Rubin states the
 corollary without a parity condition; the criterion of `SelmerIwasawaCohomology` §3.20 is
 established in the cyclotomic ordinary elliptic case for odd p, whence the hypothesis.
 Proof: the exact sequence
-`0 → S(ℚ_∞, E_(p^∞)) → H¹(ℚ_Σ/ℚ_∞, E_(p^∞)) → ⊕ H¹_s` (Rubin Lemma I.5.3), vanishing of the
-bad local terms under the torsion hypothesis, the rank-one free norm module of 7.5 at p, the
+`0 → S(ℚ_∞, E_(p^∞)) → H¹(ℚ_Σ/ℚ_∞, E_(p^∞)) → ⊕ H¹_s` (Rubin draft Lemma I.5.3, p. 12),
+vanishing of the bad local terms under the torsion hypothesis, the rank-one free norm module of 7.5 at p, the
 torsionness of 7.4 and Greenberg's criterion (`SelmerIwasawaCohomology` §3.20; Rubin draft
 Corollary III.5.17 and its proof, p. 53).
 
@@ -2115,8 +2152,8 @@ Corollary III.5.17 and its proof, p. 53).
 
 ### 7.7 Control at the trivial character
 
-Let E/ℚ be modular, non-CM, with good ordinary reduction at an odd prime p, `ρ_(E,p)`
-surjective and `p ∤ ∏_(q|N) |E(ℚ_q)_tors|`. Prove ellipticOrdinaryControl: restriction
+Let E/ℚ be an elliptic curve without complex multiplication, with good ordinary reduction at
+an odd prime p, `ρ_(E,p)` surjective and `p ∤ ∏_(q|N) |E(ℚ_q)_tors|`. Prove ellipticOrdinaryControl: restriction
 `S(ℚ, E_(p^∞)) → S(ℚ_∞, E_(p^∞))^Γ` is injective, and if `S(ℚ, E_(p^∞))` is finite the order of its
 cokernel is divisible by the p-part of `|Ẽ(𝔽_p)|²`, which is the p-part of `(1 − α^(−1))²` for the
 unit root α
@@ -2144,8 +2181,8 @@ order p in `E(ℚ_q)`. Without that hypothesis they could only enlarge the coker
 
 ### 7.8 Rank-zero upper bound for the elliptic p-part
 
-Let E/ℚ be modular, non-CM, with `L(E,1) ≠ 0`. Suppose p odd, E has good reduction at p,
-`ρ_(E,p)` surjective and
+Let E/ℚ be an elliptic curve without complex multiplication, with `L(E,1) ≠ 0`. Suppose p
+odd, E has good reduction at p, `ρ_(E,p)` surjective and
 
 ```text
 p ∤ 2 r_E ∏_(q|N) (ℓ_q(q^(−1)) |E(ℚ_q)_tors|).
@@ -2169,7 +2206,8 @@ p-part equality nor a lower bound is claimed.
   hypothesis therefore also protects the period normalization.
 - `p = 2` is excluded by the factor 2 in the hypothesis.
 
-*Needs:* 4.7, 6.6, 7.3–7.4, 7.6–7.7; `EulerSystemsAndKolyvaginSystems` §4.17;
+*Needs:* 4.7, 6.6, 7.3–7.4, 7.6–7.7; `EllipticCurveModularity` R29.6;
+`EulerSystemsAndKolyvaginSystems` §4.17;
 `SelmerIwasawaCohomology` §2.12; `EllipticCurves` Layers 4.5b and 7.
 
 ### 7.9 Finiteness of Selmer groups over abelian fields
@@ -2278,14 +2316,13 @@ an elliptic curve E over ℚ with `L(E,1) ≠ 0` this gives finite `Sel_(p^∞)(
 including CM curves and `p = 2`, and zero for all but finitely many p when E has no CM.
 
 For the elliptic specializations below, `Suggested.lean` uses a Weierstrass curve
-W over ℚ with `W.IsElliptic`. Its modularity hypothesis is the existence of `N > 0` and
-`f : CuspForm (CongruenceSubgroup.Gamma0 N) 2` with
-`(UpperHalfPlane.qExpansion 1 f).coeff n = (W.LFunction n : ℂ)` for every natural n,
-including n = 0 and 1. The signature `ellipticRationalPoints_finite` states the case
-`K = ℚ, χ = 1` of Corollary 14.3 for elliptic curves: for an entire function
-`F : ℂ → ℂ` agreeing with `W.LSeries`
-when `Re(s) > 3/2`, `F(1) ≠ 0` implies `Finite W.toAffine.Point`. Entire means
-`Differentiable ℂ F`; the total L-series at 1 is not the continued value.
+W over ℚ with `W.IsElliptic`. No modularity hypothesis is made: `EllipticCurveModularity`
+R29.6 supplies the attached newform. A continued L-value enters as a hypothesis on an entire
+function. In the case `K = ℚ, χ = 1` Corollary 14.3 says that for an entire `F : ℂ → ℂ`
+agreeing with `W.LSeries` when `Re(s) > 3/2`, `F(1) ≠ 0` implies that the group of rational
+points is finite; this is the case `m = 1` of the character-part signature below, and is not
+stated separately. Entire means `Differentiable ℂ F`; the total L-series at 1 is not the
+continued value.
 
 For an elliptic W, define `ellipticCharacterPart` on a field K over ℚ with decidable
 equality and a character `ψ : Gal(K/ℚ) →* ℂ` as the set of points killed by
@@ -2303,9 +2340,8 @@ The signature `ellipticCharacterPoints_finite` states Corollary 14.3 for ellipti
 over cyclotomic K: for `m ≥ 1`, K a field over ℚ with
 `IsCyclotomicExtension {m} ℚ K` and decidable equality, and
 `χ : DirichletCharacter ℂ m`, identify its Galois character by
-`IsCyclotomicExtension.autEquivPow`. For W with the same nonsingularity and modularity
-hypotheses as above, an entire F agreeing with
-`LSeries (fun n => (W.LFunction n : ℂ) * χ n)` on `Re(s) > 3/2` and satisfying
+`IsCyclotomicExtension.autEquivPow`. For an elliptic W over ℚ as above, an entire F
+agreeing with `LSeries (fun n => (W.LFunction n : ℂ) * χ n)` on `Re(s) > 3/2` and satisfying
 `F(1) ≠ 0` gives finiteness of `ellipticCharacterPart W K` for that character
 (Kato Corollary 14.3(2), p. 235). The zero extension of χ removes every Euler factor
 at a prime dividing m. If m is not the smallest cyclotomic modulus for K, the
@@ -2318,7 +2354,8 @@ of points give the corresponding χ-part conclusion.
 
 - For `m = 1`, K is ℚ and `I_1 = 0`, so every rational point belongs to the
   character part. The twisted coefficients equal the elliptic coefficients, including
-  the zero constant term; this recovers the rational-point conclusion.
+  the zero constant term; this recovers finiteness of the rational points when the
+  continued L-value at 1 is nonzero.
 - For `K = ℚ(ζ₃)` and its quadratic character, σ sends `ζ₃` to `ζ₃²` and χ(2) = −1.
   The kernel is generated by `1 + σ`; hence its action is `P + σ(P)` and membership
   is exactly `σ(P) = −P`. A fixed point of order 3 gives `P + σ(P) = 2P ≠ 0` and
@@ -2346,8 +2383,8 @@ homomorphism from `Gal(ℚ(ζ_(m^∞))/L)` to `T₀`, killed by the exponent e o
 topologically finitely generated abelian, so its subgroup of e-th powers is open, and every
 point lies in one finite layer.
 
-The signature `ellipticCyclotomicFiniteGeneration` states this theorem for W with the
-same nonsingularity and modularity hypotheses and every natural `m ≥ 1`, as
+The signature `ellipticCyclotomicFiniteGeneration` states this theorem for every elliptic W
+over ℚ and every natural `m ≥ 1`, as
 `AddGroup.FG` of the point group over
 `IntermediateField.adjoin ℚ {x : ℂ | ∃ n : ℕ, x ^ (m ^ n) = 1}`.
 This is the union of the nested fields `ℚ(ζ_(m^n))`, including composite m and m = 1;
@@ -2384,10 +2421,9 @@ conjugate of `L(f,s)` at real s.
   is ℚ and the finite-generation conclusion specializes to Mordell–Weil. At `m = 6`,
   `6^n` divides `6^(n+1)`, so the cyclotomic fields are nested and the adjoin is their
   union, not the union of just the 2-power and 3-power roots.
-- Modularity fixes `a_0 = 0` and `a_1 = W.LFunction(1) = 1`; the zero cusp form has
-  `a_1 = 0` and cannot witness the hypothesis. The curve must be nonsingular:
-  `y² = x³` has discriminant zero and its nonsingular point group is `(ℚ,+)`, which
-  contains `1/n` for every positive n and is not finitely generated.
+- The curve must be nonsingular: `y² = x³` has discriminant zero and its nonsingular
+  point group is `(ℚ,+)`, which contains `1/n` for every positive n and is not finitely
+  generated.
 - A continuation is fixed by its agreement on `Re(s) > 3/2`: two entire candidates
   agreeing there have zero difference everywhere by the identity theorem, hence the
   same value at 1. If that value is zero, the rank-zero implication does not apply;
@@ -2404,9 +2440,9 @@ conjugate of `L(f,s)` at real s.
   positive corank.
 - Under the hypotheses of (3) the residual representation is irreducible, so `H¹(ℤ[1/p],T)` is
   torsion-free of rank one, say `≅ O`. For `z = p^(−1)` in it, `[O : z] = [O : pO]^(−1) < 1`, so
-  the bound of katoTamagawaBound (3) forces z into `H¹(ℤ[1/p],T)`, the integrality of 7.2; a
+  the Tamagawa bound of part (3) forces z into `H¹(ℤ[1/p],T)`, the integrality of 7.2; a
   normalization without the factor `[O : cO]^(−1)` would not see this.
-- For `m = 1` the union in modularAbelianVariety_cyclotomicFG is `A(ℚ)`, and the statement is
+- For `m = 1` the union of the m-power cyclotomic layers is `A(ℚ)`, and the statement is
   Mordell–Weil.
 
 *Needs:* 4.1–4.2, 5.1, 5.3, 7.2–7.3; `PadicFamilies` §4.0.3; `SelmerIwasawaCohomology` §§2.12a,
@@ -2456,11 +2492,13 @@ All statements here are paraphrases. Page numbers refer to the stated edition.
 - Kazuya Kato, *p-adic Hodge theory and values of zeta functions of modular forms*,
   Astérisque **295** (2004), 117–290.
   [Numdam](https://www.numdam.org/item/AST_2004__295__117_0.pdf).
-  Locators used: 1.3–1.10 (pp. 121–125), 2.3–2.13 (pp. 126–133), 3.1–3.11 (pp. 134–142),
-  4.2 (pp. 142–143), 5.2 (pp. 153–154), 6.3–6.6 (pp. 161–163), 8.9 (p. 185), 9.2–9.4
-  (pp. 186–188), 11.3–11.4 (pp. 204–207), 12.4–12.9 (pp. 221–223), 13.1–13.14 (pp. 224–234),
-  14.1–14.14 (pp. 234–243), 14.16–14.22 (pp. 244–250),
-  15.12–15.17 (pp. 263–265), 16.2–16.6 (pp. 269–271), 17.3–17.4 (p. 273). Corrections used
+  Locators used: 1.3–1.10 (pp. 121–125), 2.1–2.13 (pp. 125–133), 3.1–3.11 (pp. 134–142),
+  4.2 (pp. 142–143), 5.2 (pp. 153–154), 6.3–6.6 (pp. 161–163), §7, including 7.7, 7.12 and
+  7.18–7.20 (pp. 163–178), 8.4 (pp. 182–183), 8.9 (p. 185), 8.12 (p. 186), 9.2–9.4
+  (pp. 186–188), 10.9 (pp. 196–197), 11.3–11.4 (pp. 204–207), 12.4–12.10 (pp. 221–224),
+  13.1–13.14 (pp. 224–234), 14.1–14.14 (pp. 234–243), 14.16–14.22 (pp. 244–250),
+  15.12–15.17 (pp. 263–265), 15.23 (p. 267), 16.2–16.6 (pp. 269–271), 17.2–17.4
+  (pp. 272–273). Corrections used
   here: the square on `a` in 1.9 (0.3), the space of `η′` in 16.4(ii) (6.1), the integral
   modules in 12.5(4) (7.2), the scope of 12.8.2 (4.1), the condition (12.5.2) printed as
   (12.5.1) in 14.5(3), and the period of z in 14.13 (7.9).
@@ -2468,8 +2506,9 @@ All statements here are paraphrases. Page numbers refer to the stated edition.
   (2023), 171–290, DOI 10.1007/s00222-023-01203-7.
   [arXiv:2006.13647 v2](https://arxiv.org/abs/2006.13647v2).
   All locators here use the arXiv v2 numbering and pagination: Lemma 2.10 (pp. 29–31),
-  §§3.1.2–3.1.4 (pp. 33–40), Lemma 3.4 and Remark 3.5 (p. 47), Corollary 3.6
-  (pp. 47–48), Theorem 5.2 and Conjecture 5.1 (pp. 75–76), Appendix A (pp. 86–89).
+  §§3.1.2–3.1.4 (pp. 33–40), Theorem 3.2 (pp. 43–44), (19) (p. 46), Lemma 3.4 and
+  Remark 3.5 (p. 47), Corollary 3.6 (pp. 47–48), Theorem 5.2 and Conjecture 5.1
+  (pp. 75–76), Appendix A (pp. 86–89).
 - Kentaro Nakamura, *Iwasawa theory of de Rham (φ,Γ)-modules over the Robba rings*,
   J. Inst. Math. Jussieu **13** (2014).
   [arXiv:1201.6475 v2](https://arxiv.org/abs/1201.6475), Theorem 1.5 (= Theorem 3.10).
@@ -2483,16 +2522,17 @@ All statements here are paraphrases. Page numbers refer to the stated edition.
 - Ralph Greenberg, *Iwasawa theory for elliptic curves*, in Arithmetic Theory of Elliptic
   Curves, Lecture Notes in Math. **1716** (1999), Theorem 4.1.
 - Karl Rubin, *Euler Systems*, public 1999 draft,
-  [swc-math.github.io](https://swc-math.github.io/notes/files/99RubinES.pdf): Chapter III §5
-  (draft pp. 48–54, printed page = PDF page − 10) and Appendix B, Lemma 3.1 (pp. 153–154).
+  [swc-math.github.io](https://swc-math.github.io/notes/files/99RubinES.pdf): Lemma I.5.3
+  (p. 12), Chapter II §3 (pp. 27–28), Chapter III §5 (draft pp. 48–54, printed page = PDF
+  page − 10) and Appendix B, Lemma 3.1 (pp. 153–154).
   This is the freely available draft, not the pagination of the Annals of Mathematics Studies
   volume.
 - Ashay A. Burungale and Ye Tian, *A rank zero p-converse to a theorem of Gross–Zagier,
   Kolyvagin and Rubin*, [arXiv:2506.03465 v2](https://arxiv.org/abs/2506.03465), Theorems
   2.3–2.4 and Remark 2.5, pp. 4–5.
 - David Loeffler, *Images of adelic Galois representations for modular forms*, Glasgow Math. J.
-  **59** (2017), 11–25. [arXiv:1411.1789](https://arxiv.org/abs/1411.1789), §1 items (A)–(C),
-  Theorems 2.2.2 and 2.3.1, Corollary 2.2.3.
+  **59** (2017), 11–25. [arXiv:1411.1789](https://arxiv.org/abs/1411.1789), §1 items (A)–(B)
+  (p. 1), Definition 1.2.1 (p. 3), Remark 1.2.4 (p. 5), Theorems 2.2.2 and 2.3.1 (p. 6).
 - Kenneth A. Ribet, *On ℓ-adic representations attached to modular forms II*, Glasgow Math. J.
   **27** (1985), 185–194; Eknath Ghate, Enrique
   González-Jiménez and Jordi Quer, *On the Brauer class of modular endomorphism algebras*,
