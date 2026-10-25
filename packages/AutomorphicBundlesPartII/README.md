@@ -6,7 +6,7 @@
 
 The roadmap extends the good-prime integral Levi realization of AutomorphicBundles B3.10 to normalized deep-level models and the integral dual-Weyl lattice of LanglandsParameterStacks LP3.0, and owns finite-coefficient coherent homology, group-ring perfect models, higher cohomological Hecke comparisons, integral EO detection of relations, coherent automorphic image comparisons and the localized boundary and cuspidal conclusions. It imports VStackSheavesAndLisseCategories VS2.2’s analytic-ring interface and supplies the (A,A)■ solid/discrete scheme interface and Hilbert–Siegel EO geometry used by those constructions. It includes arbitrary complete DVR coefficients where the statement is coefficient algebra, and states every geometric reduction and logarithmic lifting hypothesis separately.
 
-AutomorphicBundles B0–B5 owns associated bundles, coefficient tensor operations, canonical and subcanonical extensions and section Hecke convolution; its B3.10 owns the good-prime integral Levi torsor, associated locally free coefficients and their formal canonical/subcanonical expansions, and its B3.BGG owns the dual BGG construction. AlgebraicVectorBundles L0A–L0C owns the generic vector-bundle operations. SchemeAndStackFoundations §§2.6–2.8, 2.18–2.21 and 4.8–4.10 owns generic Čech, Cousin, relative duality and formal functions. DerivedModuleAlgebra §§1.3–1.5, 1.E.0–1.E.1 and 1.M.1–1.M.2 owns object completion, perfectness/retracts, effectivity and Matlis duality, and DeformationAndDerivedPatchingAlgebra §§7.5–7.10 owns nilpotent lifting, dual complexes, strict tower actions, finite derived Hom completion, isolated derived-action blocks and coefficient spectral sequences. Here the perfectness and localization targets identify the actual geometric complexes and operators with those constructions.
+AutomorphicBundles B0–B5 owns associated bundles, coefficient tensor operations, canonical and subcanonical extensions and section Hecke convolution; its B3.10 owns the good-prime integral Levi torsor, associated locally free coefficients and their formal canonical/subcanonical expansions, and its B3.BGG owns the dual BGG construction. AlgebraicVectorBundles L0A–L0C owns the generic vector-bundle operations. SchemeAndStackFoundations §§2.6–2.8, 2.18–2.21 and 4.8–4.10 owns generic Čech, Cousin, relative duality and formal functions. EnhancedDerivedSheaves E1.9 owns perfectness of proper-support pushforward and its arbitrary base change. DerivedModuleAlgebra §§1.3–1.5, 1.E.0–1.E.1 and 1.M.1–1.M.2 owns object completion, perfectness/retracts, effectivity and Matlis duality, and DeformationAndDerivedPatchingAlgebra §§7.5–7.10 owns nilpotent lifting, dual complexes, strict tower actions, finite derived Hom completion, isolated derived-action blocks and coefficient spectral sequences. Here the perfectness and localization targets identify the actual geometric complexes and operators with those constructions.
 
 ShimuraCompactifications C3–C5 owns fans, toroidal/minimal models, refinements, polarized degenerations and normalized deeper-level models, in particular C5.19–C5.21 and C5.31; C4.16 owns the rational compactified Klingen span. Its C5.21 owns the formally canonical definition and its verification on its stated models. Section 5.1 here verifies its additional quotient and p-level applications. Its C5.29 owns the logarithmic canonical-bundle formula; §5.7 applies it to the actual Serre-dual coefficient.
 
@@ -66,7 +66,7 @@ L0A–L0C: The scheme-module tensor, dual, pullback, determinant and finite loca
 
 ### From TauCetiRoadmap.SchemeAndStackFoundations
 
-§§1.1, 2.6–2.8, 2.18–2.21, 2.23, 4.8–4.10: Quasi-coherent fpqc descent (§1.1), equivariant cohomological descent (§2.23), affine Čech comparison, scalar-linear derived cohomology, perfect proper pushforward, ordinary support triangles and Cousin resolutions, depth vanishing, proper coherent upper shriek, fundamental classes, smooth-proper duality and formal functions; use the Noetherian, Tor-independence, perfectness and boundedness conditions stated in those sections.
+§§1.1, 2.6–2.8, 2.18–2.21, 2.23, 4.8–4.10: Quasi-coherent fpqc descent (§1.1), equivariant cohomological descent (§2.23), affine Čech comparison, scalar-linear derived cohomology, ordinary support triangles and Cousin resolutions, depth vanishing, proper coherent upper shriek, fundamental classes, smooth-proper duality and formal functions; use the Noetherian, Tor-independence, perfectness and boundedness conditions stated in those sections.
 
 What SchemeAndStackFoundations must provide (gap:coefficient-linear-coherent-comparison): Identify Hⁱ of the scalar-linear RΓ(X,F) in D(O) of §2.18 with Tau Ceti’s base-linear scheme-module cohomology, compatibly with cohomologyMapBaseLinear, cohomologyδBaseLinear and the natural linear H⁰/global-sections equivalence. The supplying section is §2.18.
 
@@ -149,6 +149,8 @@ What CrystallineCohomology must provide (gap:coefficient-logarithmic-splitting):
 ### From TauCetiRoadmap.EnhancedDerivedSheaves
 
 §§0.1–0.3, E1.3, E2:towers, E3.2–E3.3, E5:abstract: Stable enhanced sheaf categories, coherent filtered diagrams, derived limits, tensor/Hom, localization and descent on small ringed sites. A triangulated category alone does not supply functorial cones.
+
+E1.9 (`perfect_proper_pushforward`): for a finitely presented morphism f, a perfect complex E and a bounded complex G• of finitely presented modules, termwise flat over the target with proper support, Rf_*(E⊗ᴸG•) is perfect and commutes with arbitrary derived base change. It is used here with G•=O_X[0] for a proper, flat, finitely presented model; target flatness is not dropped.
 
 ### From TauCetiRoadmap.SolidAnalyticRings
 
@@ -249,7 +251,7 @@ For a proper toroidal O-model X and finite locally free F, let C_can(F)=RΓ(X,F_
 
 (BP26, §1.1, p. 2; CG18 §7.2, pp. 395–398, BP26 line 52).
 
-A proof route is to use native derived sheaf cohomology and the boundary ideal inclusion. Apply proper perfect pushforward with all its flatness and support hypotheses. Identify its cohomology with Tau Ceti’s base-linear scheme-module cohomology through the derived comparison contract.
+A proof route is to use native derived sheaf cohomology and the boundary ideal inclusion. Apply EnhancedDerivedSheaves E1.9 (`perfect_proper_pushforward`) to the structure morphism X→Spec O, with E=F_can or F_sub perfect and G•=O_X[0], under the proper, flat, finite-presentation hypotheses; the same target gives the base change to A_n. Identify its cohomology with Tau Ceti’s base-linear scheme-module cohomology through the derived comparison contract.
 
 Its API is:
 
@@ -259,13 +261,14 @@ Its API is:
 - RΓ sends identity and composite coefficient maps to identity and composites, additively and O-linearly.
 - The boundary ideal sequence gives the full derived triangle and long exact cohomology sequence, naturally for coefficient maps.
 
-*Needs:* §1.2; AlgebraicModuliForArithmeticGeometry §7.5 (the boundary fundamental-class contract); DeformationAndDerivedPatchingAlgebra §§7.1–7.9; SchemeAndStackFoundations §§2.6–2.8, 2.18–2.21; Tau Ceti `TauCeti.AlgebraicGeometry.Scheme.Modules.Cohomology`.
+*Needs:* §1.2; AlgebraicModuliForArithmeticGeometry §7.5 (the boundary fundamental-class contract); DeformationAndDerivedPatchingAlgebra §§7.1–7.9; EnhancedDerivedSheaves E1.9 (perfect proper-support pushforward and its base change); SchemeAndStackFoundations §§2.6–2.8, 2.18–2.21; Tau Ceti `TauCeti.AlgebraicGeometry.Scheme.Modules.Cohomology`.
 
 **Checks.**
 
 - For empty D, the boundary arrow is the identity.
 - On Spec O with F=O and empty D, both complexes are O in degree zero.
 - For O→O in degrees 0,1 with differential ϖ, H⁰=0 and H¹=k; derived reduction has zero differential and H⁰=H¹=k. Thus reduction of H⁰ alone misses k.
+- Target flatness is needed: for Spec k→Spec A with A=k[ε]/(ε²), the structure sheaf is perfect on Spec k but its pushforward k has Tor_j^A(k,k)=k for every j≥0, so it is not perfect over A. A flat proper model such as ℙ¹_O with F=O(−2) gives RΓ=O[−1], and base change to A₂ gives A₂[−1].
 - Over k of characteristic p with Δ=Cₚ, the trivial module k[0] is perfect over k and over O, but Tor_j^(k[Cₚ])(k,k)=k in every j≥0, so it is not perfect over k[Cₚ].
 
 The coefficient abbreviation `dvrCoefficientRing` of Conventions has its native quotient ring structure. Its API is:
@@ -340,7 +343,7 @@ For a rank-two Hodge bundle E, the weights (1,0), (1,1), (2,2) give ranks 2,1,1 
 
 ### Dependencies
 
-AlgebraicModuliForArithmeticGeometry §7.5 (the boundary fundamental-class contract); AutomorphicBundles B0; AutomorphicBundles B1; AutomorphicBundles B2; AutomorphicBundles B3; AutomorphicBundles B4; DeformationAndDerivedPatchingAlgebra §§7.1–7.9; LanglandsParameterStacks LP3.0; SchemeAndStackFoundations §§2.6–2.8, 2.18–2.21; ShimuraCompactifications C3.3–C3.10 and C5; ShimuraCompactifications C4.1–C4.11; ShimuraCompactifications C5.19–C5.21, C5.31; Tau Ceti `TauCeti.AlgebraicGeometry.Scheme.Modules.Cohomology`. Earlier in this layer use the individual prerequisites displayed above.
+AlgebraicModuliForArithmeticGeometry §7.5 (the boundary fundamental-class contract); AutomorphicBundles B0; AutomorphicBundles B1; AutomorphicBundles B2; AutomorphicBundles B3; AutomorphicBundles B4; DeformationAndDerivedPatchingAlgebra §§7.1–7.9; EnhancedDerivedSheaves E1.9; LanglandsParameterStacks LP3.0; SchemeAndStackFoundations §§2.6–2.8, 2.18–2.21; ShimuraCompactifications C3.3–C3.10 and C5; ShimuraCompactifications C4.1–C4.11; ShimuraCompactifications C5.19–C5.21, C5.31; Tau Ceti `TauCeti.AlgebraicGeometry.Scheme.Modules.Cohomology`. Earlier in this layer use the individual prerequisites displayed above.
 
 ## Layer 2: equivariant coherent perfect complexes
 
@@ -468,7 +471,7 @@ The API supplies:
 **Checks.**
 
 - For X=Spec O with O=W(𝔽̄_p) or ℂ[[t]], the analytic ring is (O,O)■ formed with O discrete; for the identity map, all four operations are identity, and the adjunction composite sends 1 to 1. A zero counit fails this test.
-- For I=(0), completion is the identity and the open complement is empty; for I=(1), the completion is zero and the open complement is X. Interchanging local support with completion exchanges these answers incorrectly.
+- For I=(0), completion is the identity and the open complement is empty; for I=(1), the completion is zero and the open complement is X. Ordinary local cohomology with support agrees with completion at both endpoints (A in the first case, 0 in the second), so these endpoints separate completion from the open-complement term but not from local cohomology; the k[x] Check below separates those two.
 - For the discrete O-complex O→O with differential ϖ, derived reduction has k in degrees zero and one, whereas underived reduction of its cohomology loses degree zero. The discrete comparison must preserve this triangle.
 - On Spec k[x], localization at x is the open Spec k[x,x⁻¹] in this convention; the integer-solid convention instead makes principal localization closed. Local cohomology at (x) has H¹=k[x,x⁻¹]/k[x], while completion is k[[x]] in degree zero. The two localization triangles cannot be identified.
 
