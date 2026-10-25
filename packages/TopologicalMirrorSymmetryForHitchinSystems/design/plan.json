@@ -3822,7 +3822,7 @@
       "slug": "higgs-sector-purity",
       "needs": "Extend canonical GL Higgs purity to complex general-D semiprojective fixed-determinant spaces and canonical finite-order fixed loci with their finite splitting-torsor covers, compatibly with geometric mixed Hodge structures and character projectors.",
       "supplier": "CountingBundlesAndHallAlgebrasOfCurves",
-      "section": "CB.9/higgs-purity"
+      "section": "9.1"
     },
     {
       "slug": "tame-stack-trace",
