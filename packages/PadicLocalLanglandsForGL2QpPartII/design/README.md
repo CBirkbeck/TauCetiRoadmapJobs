@@ -1,6 +1,6 @@
 # Roadmap: p-adic local Langlands for GL₂(ℚ_p), Part II: geometric realisation in the Drinfeld tower
 
-**Summary.** PadicLocalLanglandsForGL2Qp builds the p-adic local Langlands correspondence for G = GL₂(ℚ_p). Its §6.9 identifies the analytic quotient Π^an/π with the strong dual of functions on a Drinfeld cover. It does this for a supercuspidal π with trivial central character, conditionally on a global nonzero map. This Part II starts from that comparison and the correspondence. It discharges the global hypothesis and extends the comparison to every supercuspidal type on which p acts trivially. It refines the comparison by the P-finite Kirillov model, the embedded common dual and the homographic covariance of the coordinate operator. It then extracts the Galois and Banach multiplicities of the geometric p-adic étale cohomology of the Drinfeld tower, and factors the arithmetic completed cohomology at a fixed level over blocks and full Weil–Deligne type rings. The end theorems are:
+**Summary.** PadicLocalLanglandsForGL2Qp builds the p-adic local Langlands correspondence for G = GL₂(ℚ_p). Its §6.9 identifies the analytic quotient Π^an/π with the strong dual of functions on a Drinfeld cover. It does this for a supercuspidal π with trivial central character, conditionally on a global nonzero map and global de Rham data. This Part II starts from that comparison and the correspondence. It discharges the global hypotheses and extends the comparison to every supercuspidal type on which p acts trivially. It refines the comparison by the P-finite Kirillov model, the embedded common dual and the homographic covariance of the coordinate operator. It then extracts the Galois and Banach multiplicities of the geometric p-adic étale cohomology of the Drinfeld tower, and factors the arithmetic completed cohomology at a fixed level over blocks and full Weil–Deligne type rings. The end theorems are:
 
 - the Galois-socle theorem: the multiplicity of V_{M,ℒ} in H¹_ét is Π(V_{M,ℒ})′_b⊗JL(M), and every absolutely irreducible V of dimension at least three has zero multiplicity (Dospinescu–Le Bras, Colmez–Dospinescu–Nizioł);
 - the factorisation of the arithmetic completed cohomology H¹_ét(M^p_{n,ℚ̄_p}, L(1)) for p > 3;
@@ -12,8 +12,8 @@ This roadmap owns the following:
 
 - the type and level bookkeeping of the p-central Drinfeld tower and the normalisation dictionary among the three sources;
 - the P-finite Kirillov model with its infinitesimal action and duality;
-- the embedded common dual E_π, the homographic covariance of the coordinate operator and the topological irreducibility of Π(π,0);
-- the discharge of the global nonzero-map hypothesis, and the line-independent Kirillov embedding;
+- the embedded common dual E_π, the homographic covariance of the coordinate operator, the topological irreducibility of Π(π,0) and Colmez's weight change;
+- the discharge of the global hypotheses of the base comparison, and the line-independent Kirillov embedding;
 - the realisation for every supercuspidal type in the p-central sector;
 - the geometric fundamental diagram, and all geometric multiplicity theorems of Layer 4;
 - the arithmetic block decomposition and the interpolated factorisation;
@@ -23,7 +23,7 @@ This roadmap owns the following:
 
 - `DivisionAlgebraTypes.jacquetLanglands`, the multiplicity spaces X^ρ and `DrinfeldComparison.halfPlaneModule`, the O(Ω)-module structure on E_π with its coordinate operator ∂;
 - `DrinfeldComparison.map_linear`, `DrinfeldComparison.map_surjective`, `DrinfeldComparison.scalarEndomorphisms` and `DrinfeldComparison.map_injective`, the last with the weight-two model Π(π,2) and its two-copy smooth kernel;
-- `DrinfeldComparison.functions_dual`, `DrinfeldComparison.deRham` and `DrinfeldComparison.filtration_preimage`, under the hypothesis `DrinfeldComparison.global_nonzero_map`.
+- `DrinfeldComparison.functions_dual`, `DrinfeldComparison.deRham` and `DrinfeldComparison.filtration_preimage`, under the hypothesis `DrinfeldComparison.global_nonzero_map` and the global de Rham data (uniformisation and automorphic realisation) that §6.9 takes as explicit hypotheses.
 
 Part II begins where §6.9 stops. It does not construct a second correspondence, a second analytic quotient, a second coordinate operator, a second O(Ω)-module structure or a second proof of surjectivity, injectivity or the de Rham comparison for trivial central character. The kept refinements say in one clause how they go beyond the base roadmap:
 
@@ -33,15 +33,15 @@ Part II begins where §6.9 stops. It does not construct a second correspondence,
 - §3.2 gives the Kirillov embedding of the u⁺-kernel, independent of the line, with its twisted coefficients.
 - §3.3 removes the trivial-central-character hypothesis of §6.9.
 
-The tower, its period maps, commuting actions, Weil descent, central quotients and Stein covers come from **EndoscopicTransferAndUnitaryTraceComparison** §§12.4, 12.5, 12.7, 12.14, 12.19 and 12.21. Its ℓ ≠ p compact-support comparison is not used. Hyodo–Kato cohomology of Stein curves and of semistable curve towers comes from **LocallyAnalyticDistributions** §0.CR.6.6. That roadmap's §0.3 also gives the strong-dual comparison for analytic compact-type spaces. **PhiGammaModulesAndIwasawaCohomology** supplies three things: the unfiltered differential equation N_dR (§5.6a), the map from ψ-fixed vectors to the ψ-zero part (§2.4) and the all-level exponential-image theorem with its annular generation (§5.7). **PadicHodgeTheory** §§3.3, 4.4, 5.1–5.4 and 8.1 supply the period functors, D_dif, Berger's differential equation, Fontaine's recipe and the proper smooth de Rham comparison. **PadicDifferentialEquationsAndRigidCohomology** §§RD.1.73 and RD.2.43 supply the Robba residue duality and the bijectivity of ∂ on N_rig of a nontrianguline de Rham representation.
+The tower, its period maps, commuting actions, Weil descent and central quotients come from **EndoscopicTransferAndUnitaryTraceComparison** §§12.4, 12.5, 12.7, 12.14 and 12.19. Its ℓ ≠ p compact-support comparison and its infinite-level perfectoid covers are not used. The finite-level Stein coverings are the preimages of the balls of the Bruhat–Tits tree, as in DLB17 Proposition 3.1. Hyodo–Kato cohomology of Stein curves and of semistable curve towers comes from **LocallyAnalyticDistributions** §0.CR.6.6. That roadmap's §0.3 also gives the strong-dual comparison for analytic compact-type spaces. **PhiGammaModulesAndIwasawaCohomology** supplies three things: the unfiltered differential equation N_dR (§5.6a), the map from ψ-fixed vectors to the ψ-zero part (§2.4) and the all-level exponential-image theorem with its annular generation (§5.7). **PadicHodgeTheory** §§3.3, 4.4, 5.1–5.4 and 8.1 supply the period functors, D_dif, Berger's differential equation, Fontaine's recipe and the proper smooth de Rham comparison. **PadicDifferentialEquationsAndRigidCohomology** §§RD.1.73 and RD.2.43 supply the Robba residue duality and the bijectivity of ∂ on N_rig of a nontrianguline de Rham representation.
 
-**GL2AutomorphicRepresentationsAndTransfer** R16.3 supplies the rank-two local parameters and R17.3 the global Jacquet–Langlands correspondence. Its R17.3.12 supplies the quaternionic globalisation of a supercuspidal type. **CompletedCohomologyAndLocalGlobalCompatibility** §4.9 supplies local–global compatibility for a definite quaternion algebra. **LocalGaloisDeformationRings** §3.8 compares R_{B,M} with deformation rings of fixed Weil–Deligne type. **SmoothRepresentationsOfLocalGroups** SR.0 and SR.2 supply the smooth categories and induction. The mod p finiteness of the tower, Strauch's description of its connected components, the derived Lie-algebra action and the coefficient form of supercuspidal projectivity are supplier gaps, stated under *Exact supplier contracts*.
+**GL2AutomorphicRepresentationsAndTransfer** R16.3 supplies the rank-two local parameters, R16.1.8 finite-order Hecke characters with a prescribed local component, and R17.3 the global Jacquet–Langlands correspondence. **CompletedCohomologyAndLocalGlobalCompatibility** §6.4 supplies the globalisation of a supercuspidal π on a definite quaternion algebra with residual representation absolutely irreducible at p, its §4.9 the local–global compatibility for that algebra and its §2.7 the comparison of classical and p-adic quaternionic forms. **HilbertModularVarietiesAndShimuraCurves** supplies the Čerednik–Drinfeld uniformisation of the Shimura-curve tower (§§R18.5.16 and R18.5.21), the automorphic eigenspaces of the cohomology of the curves (§R18.4.25), their semistable period comparison (§R18.4.24a) and local–global compatibility at p (§R18.3.29). Teitelbaum's semistable model of the first Drinfeld cover is owned here (§7.3): no roadmap supplies semistable models of the Drinfeld covers at positive level. **LocalGaloisDeformationRings** §3.8 compares R_{B,M} with deformation rings of fixed Weil–Deligne type. **SmoothRepresentationsOfLocalGroups** SR.0 and SR.2 supply the smooth categories and induction. The mod p finiteness of the tower, Strauch's description of its connected components, the derived Lie-algebra action and the coefficient form of supercuspidal projectivity are supplier gaps, stated under *Exact supplier contracts*.
 
 ## Conventions
 
 Let p be a prime, L/ℚ_p a finite extension, O = O_L with uniformiser ϖ and residue field k_L. Enlarge L whenever a splitting or absolute-irreducibility hypothesis needs it. Write G = GL₂(ℚ_p), Z for its centre, P for the mirabolic subgroup (∗ ∗; 0 1), B for the upper Borel subgroup, w = (0 1; 1 0), u(b) = (1 b; 0 1), and Γ = ℤ_p^× for the cyclotomic group. Write D for the quaternion division algebra over ℚ_p, O_D for its maximal order, ϖ_D for a uniformiser with ϖ_D² = pu for a unit u, and Ǧ = D^×. Let Ω = ℙ¹ ∖ ℙ¹(ℚ_p) be the Drinfeld half-plane over ℚ_p, with coordinate z, and let g = (a b; c d) act by z ↦ (az+b)/(cz+d).
 
-**Levels.** The source of Dospinescu–Le Bras (DLB17) writes Σ_r for the model over ℚ_p of the quotient by p^ℤ of the cover of level 1+p^rO_D. Its Galois group over Σ₀ is O_D^×/(1+p^rO_D) (DLB17 lines 104–106). Colmez–Dospinescu–Nizioł (CDN20, CDN23) write M^p_n for the p-central quotient of level 1+ϖ_D^nO_D. Since 1+p^rO_D = 1+ϖ_D^{2r}O_D, the DLB level r is the CDN level 2r. EndoscopicTransferAndUnitaryTraceComparison §12.4 indexes by ϖ_E-power level m, which is ϖ_D-level 2m for E = ℚ_p. The first cover of level 1+ϖ_DO_D is a different space from Σ_1. Σ₀ consists of two copies of Ω, exchanged by ϖ_D, on which O_D^× acts trivially (DLB17 lines 115–116).
+**Levels.** The source of Dospinescu–Le Bras (DLB17) writes Σ_r for the model over ℚ_p of the quotient by p^ℤ of the cover of level 1+p^rO_D. Its Galois group over Σ₀ is O_D^×/(1+p^rO_D) (DLB17 lines 104–106). Colmez–Dospinescu–Nizioł (CDN20, CDN23) write M^p_n for the p-central quotient of level 1+ϖ_D^nO_D. Since 1+p^rO_D = 1+ϖ_D^{2r}O_D, the DLB level r is the CDN level 2r. EndoscopicTransferAndUnitaryTraceComparison §12.4 indexes by ϖ_E-power level m, which is ϖ_D-level 2m for E = ℚ_p. A cover of odd ϖ_D-level n is the quotient of the cover of ϖ_D-level 2m ≥ n by the finite group (1+ϖ_D^nO_D)/(1+ϖ_D^{2m}O_D), so every level is finite étale over level zero. The first cover of level 1+ϖ_DO_D is a different space from Σ_1. Σ₀ consists of two copies of Ω, exchanged by ϖ_D, on which O_D^× acts trivially (DLB17 lines 115–116).
 
 **Actions and duals.** Groups act on functions by inverse pullback: (gf)(z) = f(g⁻¹z). With this convention the Lie algebra acts on O(Ω) by u⁺f = −f′, a⁺f = −zf′, a⁻f = zf′ and u⁻f = z²f′. This is the case k = 0 of DLB17 Lemme 3.5 (DLB17 line 759). The strong dual E′_b of a locally convex space E carries the topology of uniform convergence on bounded sets and the action (gℓ)(v) = ℓ(g⁻¹v). In particular a central element acting on E by a scalar χ(z) acts on E′_b by χ(z)⁻¹.
 
@@ -82,19 +82,13 @@ The pinned Tau Ceti (`a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039`) has no carrier 
 - §5.8: the universal family Π^univ for absolutely irreducible ρ̄. Its fibre at a closed point x is Π(ρ_x(ε)).
 - §5.12: `WDTypeRing` and `KisinRingLL.completion`, the B-adic completion LL_B(M) of a G-stable lattice, with the ring R_{B,M} = End_G(LL_B(M)), a finite product of principal ideal domains, and the free rank-two family ρ_{B,M}.
 - §6.7: Paškūnas–Tung finiteness.
-- §6.9: `DivisionAlgebraTypes.jacquetLanglands`, `DrinfeldComparison.halfPlaneModule`, `DrinfeldComparison.map_linear`, `DrinfeldComparison.map_surjective`, `DrinfeldComparison.scalarEndomorphisms`, `DrinfeldComparison.map_injective`, `DrinfeldComparison.functions_dual`, `DrinfeldComparison.deRham`, `DrinfeldComparison.filtration_preimage` and the hypothesis `DrinfeldComparison.global_nonzero_map`. It also supplies Π(π,2) with its differential d and the two-copy smooth kernel Π(π,2)^{u⁺=0} ≅ π⊗M_dR(π). All of these are stated there for supercuspidal π with trivial central character.
+- §6.9: `DivisionAlgebraTypes.jacquetLanglands`, `DrinfeldComparison.halfPlaneModule`, `DrinfeldComparison.map_linear`, `DrinfeldComparison.map_surjective`, `DrinfeldComparison.scalarEndomorphisms`, `DrinfeldComparison.map_injective`, `DrinfeldComparison.functions_dual`, `DrinfeldComparison.deRham`, `DrinfeldComparison.filtration_preimage` and the hypothesis `DrinfeldComparison.global_nonzero_map`. It also supplies Π(π,2) with its differential d and the two-copy smooth kernel Π(π,2)^{u⁺=0} ≅ π⊗M_dR(π). All of these are stated there for supercuspidal π with trivial central character. `DrinfeldComparison.halfPlaneModule` is the unique continuous O(Ω)-module structure, and §6.9 constructs the resolvents (∂−x)⁻¹ of ∂. The comparisons take the nonzero map `DrinfeldComparison.global_nonzero_map` and the global de Rham data of DLB17 §4 as explicit hypotheses; §3.1 proves both.
 
-What PadicLocalLanglandsForGL2Qp must provide (gap:halfplane-module-continuity): in §6.9, the uniqueness of `DrinfeldComparison.halfPlaneModule` must be stated among module structures for which f ↦ T_fℓ is continuous on O(Ω) for every ℓ. Uniqueness without this continuity is not what DLB17 Théorème 9.9 (DLB17 line 2005) proves (source correction E1).
-
-What PadicLocalLanglandsForGL2Qp must provide (gap:two-sided-resolvents): in §6.9, the operators a−c∂ for (a b; c d) ∈ G, and in particular the resolvents (∂−x)⁻¹ for x ∈ ℚ_p, must be proved to be two-sided continuous inverses on Π(π,0)′_b, not only one-sided ones (source correction E7).
-
-What PadicLocalLanglandsForGL2Qp must provide (gap:smooth-kernel-twisted-coefficients): in §6.9, the smooth-kernel comparison Π(π,2)^{u⁺=0} ≅ π⊗M_dR(π) must use the Kirillov target LP(ℚ_p^×, t⁻¹N⁺_dif,∞/N⁺_dif,∞)^Γ with its Tate-twisted Γ-action, and pass to locally constant coefficients only after the twist of Π(π,2) (source correction E9).
-
-What PadicLocalLanglandsForGL2Qp must provide (gap:fixed-radius-divisibility): in §6.9, the vanishing of ∩_{j≥0}(u⁺)^j Π(π,0)′_b used for `DrinfeldComparison.map_injective` must be proved inside one lattice of fixed admissible radius on both charts, not by t-divisibility in the full Robba ring (source correction E10).
+What PadicLocalLanglandsForGL2Qp must provide (gap:fixed-radius-divisibility): in §6.9, the vanishing of ∩_{j≥0}(u⁺)^j Π(π,0)′_b used for `DrinfeldComparison.map_injective` must be proved inside one lattice of fixed admissible radius on both charts, not by t-divisibility in the full Robba ring (source correction E9).
 
 ### From TauCetiRoadmap.EndoscopicTransferAndUnitaryTraceComparison
 
-§12.4 supplies the special O_D-module tower and its levels. §12.5 supplies the period maps and their equivariance, and §12.7 the commuting G×Ǧ×W_ℚ_p actions and the effective Weil descent. §12.14 supplies the central quotient and tensor sectors. There the diagonal centre acts trivially and the left Ǧ-character of a sector is the inverse of the central character of ρ. §12.19 supplies the arithmetic descent of the rank-two central quotient M^p_n to ℚ_p with its G′-action, and §12.21 the perfectoid Stein covers and the Mittag–Leffler property of their p-primary cohomology.
+§12.4 supplies the special O_D-module tower and its levels. §12.5 supplies the period maps and their equivariance, and §12.7 the commuting G×Ǧ×W_ℚ_p actions and the effective Weil descent. §12.14 supplies the central quotient and tensor sectors. There the diagonal centre acts trivially and the left Ǧ-character of a sector is the inverse of the central character of ρ. §12.19 supplies the arithmetic descent of the rank-two central quotient M^p_n to ℚ_p with its G′-action. Since every level is finite étale over level zero (Conventions), the preimages of the balls of the Bruhat–Tits tree under the period map and the retraction form an affinoid Stein covering of M^p_{n,C}, as for Σ_r in DLB17 Proposition 3.1 and the paragraph after it (DLB17 lines 641–651).
 
 ### From TauCetiRoadmap.LocallyAnalyticDistributions
 
@@ -114,12 +108,21 @@ PadicHodgeTheory §3.3 supplies Fontaine's functors and §4.4 the Sen and differ
 ### From the global and smooth suppliers
 
 - GL2AutomorphicRepresentationsAndTransfer R16.3: rank-two local parameters, Steinberg monodromy and supercuspidal parameters.
-- GL2AutomorphicRepresentationsAndTransfer R17.3: the global Jacquet–Langlands correspondence. R17.3.12 constructs a weight-two automorphic representation on a quaternion algebra with prescribed supercuspidal type at p. It permits a twist of τ by η∘det, with its partner twisted by η∘Nrd, and a finite extension of L.
-- CompletedCohomologyAndLocalGlobalCompatibility §4.9: Emerton's local–global compatibility for a definite quaternion algebra split at p, with r̄|G_ℚ_p absolutely irreducible.
+- GL2AutomorphicRepresentationsAndTransfer R16.1.8: a finite-order Hecke character of ℚ with prescribed finite-order components on the full groups ℚ_v^× at finitely many places, used to remove an unramified twist at p.
+- GL2AutomorphicRepresentationsAndTransfer R17.3: the global Jacquet–Langlands correspondence and strong multiplicity one.
+- CompletedCohomologyAndLocalGlobalCompatibility §6.4: for a supercuspidal π whose central character is trivial on p up to twist and the definite algebra B̄ of discriminant ℓ ≠ p, a weight-two form f on B̄^* with π(f)_p ≅ π⊗ξ∘det, ξ unramified, and r̄_f|G_ℚ_p absolutely irreducible (DLB17 Théorème 5.5 with Lemme 5.6).
+- CompletedCohomologyAndLocalGlobalCompatibility §4.9: Emerton's local–global compatibility C⁰(X)[𝔭] ≅ Π(𝔭)^{⊕m}, m > 0, for a definite quaternion algebra split at p, with r̄|G_ℚ_p absolutely irreducible. Its §2.7 compares classical and p-adic quaternionic forms (DLB17 Lemme 4.7).
 - LocalGaloisDeformationRings §3.8: the identification of R_{B,M} with the fixed-Weil–Deligne-type quotient of R_B^{ps,δ_M}[1/p], with its point criterion and its integral image R⁺_{B,M}.
 - SmoothRepresentationsOfLocalGroups SR.0 and SR.2: smooth categories, admissibility, compact induction and Frobenius reciprocity.
 
 What SmoothRepresentationsOfLocalGroups must provide (gap:cuspidal-projectivity-coefficients): §SR.3.2, *cuspidal-splitting*, for a field L of characteristic zero rather than ℂ. For G = GL₂(ℚ_p) and a smooth character ζ of Z, a smooth absolutely irreducible supercuspidal L-representation with central character ζ is projective and injective in the category of smooth L-representations with central character ζ.
+
+### From TauCetiRoadmap.HilbertModularVarietiesAndShimuraCurves
+
+- §R18.5.21 `TowerUniformisation`: for the indefinite algebra division at p and sufficiently small tame level, rigid isomorphisms between the Shimura curves of level 1+ϖ_D^nO_D at p and the quotients of the Drinfeld covers M_n by the definite partner, for every n ≥ 1, compatible in n, in the tame level and with the Weil descent. §R18.5.16 `RationalUniformisation` fixes the conventions over ℚ. These give DLB17 Théorème 4.8 and the input of DLB17 Théorème 5.7.
+- §R18.4.25 `CohomologicalEigenspaces`: the cuspidal Hecke eigenspaces of H¹ of a compact quaternionic curve with trivial coefficients are the automorphic representations with weight-two discrete series at the split real place, each with a two-dimensional multiplicity space, the degree-one relative Lie algebra cohomology of that discrete series.
+- §R18.4.24a `quaternionCurveSemistableComparison`: for a proper regular strictly semistable model of a quaternionic curve, D_st of its étale H¹ is its Hyodo–Kato cohomology, with the de Rham filtration after extension of scalars.
+- §R18.3.29 `quaternionEigenformGaloisCompatibility` (c): at p the Galois representation of a weight-two eigenform is potentially semistable and its Weil–Deligne representation corresponds to the local component, in the arithmetic normalisation stated there.
 
 ### Supplier gaps on board designs
 
@@ -131,7 +134,7 @@ What ScholzeFunctorAndModpCohomologyOfTheLubinTateTower must provide (gap:drinfe
 
 ## How to read the build
 
-Layer 0 fixes the types, levels, multiplicity spaces and the period-line parameter, and proves the normalisation dictionary among the base roadmap, DLB17 and CDN20. Layer 1 builds the differential-equation and Kirillov machinery of DLB17 §§6–7 for a fixed supercuspidal family. Layer 2 proves the embedded and covariant refinements of the base roadmap's analytic quotient and coordinate operator. Layer 3 discharges the global hypothesis of the base §6.9, builds the line-independent Kirillov embedding and extends the realisation to every supercuspidal type in ΦNᵖ. Layer 4 proves the geometric fundamental diagram and computes the Galois and Banach multiplicities of p-adic étale cohomology of the tower. Layer 5 builds the integral arithmetic completion at fixed level and its block decomposition. Layer 6 interpolates the multiplicities over the type rings and proves the factorisation. Layer 7 proves the weighted, Iwasawa, primitive, original Breuil–Strauch and derived consequences and constructs the boundary sheaf.
+Layer 0 fixes the types, levels, multiplicity spaces and the period-line parameter, and proves the normalisation dictionary among the base roadmap, DLB17 and CDN20. Layer 1 builds the differential-equation and Kirillov machinery of DLB17 §§6–7 for a fixed supercuspidal family. Layer 2 proves the embedded and covariant refinements of the base roadmap's analytic quotient and coordinate operator, and Colmez's weight change. Layer 3 discharges the global hypotheses of the base §6.9, builds the line-independent Kirillov embedding and extends the realisation to every supercuspidal type in ΦNᵖ. Layer 4 proves the geometric fundamental diagram and computes the Galois and Banach multiplicities of p-adic étale cohomology of the tower. Layer 5 builds the integral arithmetic completion at fixed level and its block decomposition. Layer 6 interpolates the multiplicities over the type rings and proves the factorisation. Layer 7 proves the weighted, Iwasawa, primitive, original Breuil–Strauch and derived consequences and constructs the boundary sheaf.
 
 ## Layer 0: Types, levels and normalisations
 
@@ -226,7 +229,7 @@ PadicLocalLanglandsForGL2Qp §§0.2, 1.7, 3.8 and 6.9; GL2AutomorphicRepresentat
 
 ## Layer 1: Differential equations and P-finite Kirillov models
 
-In Layers 1–2 fix a smooth absolutely irreducible supercuspidal L-representation π of G with trivial central character, ρ = JL(π), and the family V(π) of absolutely irreducible admissible unitary Banach representations Π with Π^lisse ≅ π (base roadmap §6.9). By §0.4, V(π) = {Π_{M,ℒ} : ℒ ∈ ℙ(M_dR)} with V = V_{M,ℒ} absolutely irreducible, de Rham of weights {0,1}, with det V = χ, potentially crystalline and nontrianguline. The general function-space and P-finite definitions of §§1.3–1.4 are stated on their own carriers, without these hypotheses.
+In Layers 1–2 fix a smooth absolutely irreducible supercuspidal L-representation π of G with trivial central character, ρ = JL(π), and the family V(π) of absolutely irreducible admissible unitary Banach representations Π with Π^lisse ≅ π (base roadmap §6.9). By §0.4, V(π) = {Π_{M,ℒ} : ℒ ∈ ℙ(M_dR)} with V = V_{M,ℒ} absolutely irreducible, de Rham of weights {0,1}, with det V = χ, potentially crystalline and nontrianguline. The general function-space and P-finite definitions of §§1.3–1.4 are stated on their own carriers, and the weight change of §2.4 for every supercuspidal M, without these hypotheses.
 
 ### 1.1 The unfiltered equation of a supercuspidal family
 
@@ -352,7 +355,7 @@ Layer 0; PadicLocalLanglandsForGL2Qp §§0.1, 1.1–1.3, 1.6, 3.1, 3.11 and 4.1k
 
 ## Layer 2: The common embedded dual and homographic covariance
 
-The base roadmap supplies the G-module tN_rig(π)⊠ℙ¹ (its §4.2a, independent of the line), the abstract analytic quotient (§4.11), and the coordinate operator ∂ on Π(π,0)′_b with its O(Ω)-module structure (§6.9). This layer proves the embedded, covariant and irreducibility refinements.
+The base roadmap supplies the G-module tN_rig(π)⊠ℙ¹ (its §4.2a, independent of the line), the abstract analytic quotient (§4.11), and the coordinate operator ∂ on Π(π,0)′_b with its O(Ω)-module structure (§6.9). This layer proves the embedded, covariant and irreducibility refinements, and Colmez's weight change, which Layer 7 uses for the weighted realisation.
 
 ### 2.1 The common embedded analytic dual
 
@@ -391,7 +394,7 @@ The route proves g∂g⁻¹(a−c∂) = d∂−b on Bruhat generators. A right i
 
 ### 2.3 Topological irreducibility of Π(π,0)
 
-Prove that Π(π,0) is topologically irreducible as a locally analytic G-representation. Equivalently, E_π has no nonzero proper closed G-stable subspace. Colmez proves that Π(M,−k) is irreducible for every absolutely irreducible M and k ≥ 1 (COLMEZ19POIDS, Théorème 0.3(ii), line 179). By COLMEZ19POIDS Remarque 0.2(ii) (lines 161–166), Π(V)^an is an extension of Π(M,−1) by LL_p(M) = π when V has weights {0,1}. Hence Π(π,0) ≅ Π(M,−1). DLB17 Remarque 1.8 (line 410) records this result. Transport it to E_π by the anti-equivalence of the base roadmap §0.1.
+Prove that Π(π,0) is topologically irreducible as a locally analytic G-representation. Equivalently, E_π has no nonzero proper closed G-stable subspace. Colmez proves that Π(M,−k) is irreducible for every absolutely irreducible M and k ≥ 1 (COLMEZ19POIDS, Théorème 0.3(ii), line 179). By COLMEZ19POIDS Remarque 0.2(ii) (lines 161–166) and Théorème 0.6(iii) at k = 1 (line 234), Π(V)^an is an extension of Π(M,−1)⊗det by LL_p(M) = π when V has weights {0,1}. Hence Π(π,0) ≅ Π(M,−1)⊗det, which is irreducible exactly when Π(M,−1) is. DLB17 Remarque 1.8 (line 410) records this result. Transport it to E_π by the anti-equivalence of the base roadmap §0.1.
 
 **Checks.**
 
@@ -401,37 +404,71 @@ Prove that Π(π,0) is topologically irreducible as a locally analytic G-represe
 
 *Needs:* §2.1; PadicLocalLanglandsForGL2Qp §§0.1, 3.11 and 4.11.
 
+### 2.4 Weight change
+
+Let M be a supercuspidal rank-two (φ,N,G_ℚ_p)-module, so that M is absolutely irreducible as a (φ,N,G_ℚ_p)-module, and let Δ = Δ(M) be the (φ,Γ)-module over the Robba ring of Hodge–Tate weights (0,0) attached to M. For M = M(π) with π as above, Δ is N_rig(π) of §1.1. Put ω = (x|x|)⁻¹det Δ, and write ⊗δ for the twist by δ∘det. For k ≥ 1 and a line ℒ ⊂ M_dR, let Δ_{k,ℒ} be the de Rham (φ,Γ)-module of weights (0,k) with t^kΔ ⊂ Δ_{k,ℒ} ⊂ Δ attached to ℒ (COLMEZ19POIDS lines 205–211). Every line is weakly admissible (§0.3), so Δ_{k,ℒ} = D_rig(V^{(k)}_{M,ℒ}) for an absolutely irreducible de Rham representation V^{(k)}_{M,ℒ} of weights {0,k}; up to the normalisations of §§0.3–0.4, the V^{(1)}_{M,ℒ} are the representations V_{M,ℒ′} of §0.3. This subsection does not assume a trivial central character. Prove the following (COLMEZ19POIDS, Théorème 0.6, lines 215–236, and Théorème 0.8, lines 262–271):
+
+- (i) For k ∈ ℤ, Δ extends uniquely to an analytic G-equivariant sheaf U ↦ Δ⊠_{x^kω}U on ℙ¹(ℚ_p) on which the centre acts by x^kω and the Casimir by (k²−1)/2. For k = 1 it is the G-module N_rig⊠ℙ¹ of the base roadmap §4.2a.
+- (ii) There are locally analytic representations Π(M,k), k ∈ ℤ, on spaces of compact type, with exact sequences 0 → Π(M,k)′_b⊗x^kω → Δ⊠_{x^kω}ℙ¹ → Π(M,−k)⊗x^k → 0. For k ≥ 1, Π(M,k)^alg = M_dR⊗(LL(M)⊗Sym^{k−1}), and for every line ℒ there are exact sequences 0 → Π(M,k)^alg → Π(M,k) → Π(M,−k)⊗x^k → 0 and 0 → ℒ⊗(LL(M)⊗Sym^{k−1}) → Π(M,k) → Π(V^{(k)}_{M,ℒ})^an → 0. Here LL(M) = π is the smooth factor of the base roadmap §4.2 (Colmez's LL_p(M); COLMEZ19POIDS Remarque 0.7(i), lines 237–243), and Π(Δ_{k,ℒ}) = Π(V^{(k)}_{M,ℒ})^an by COLMEZ19POIDS Remarque 0.2(i) (line 154).
+- (iii) There is a unique topological automorphism ∂ of the space of Π(M,0) with a⁺ = u⁺∂, u⁻ = −∂u⁺∂ and w∘∂ = ∂⁻¹∘w. For (a,c) ∈ ℚ_p²∖{(0,0)}, a−c∂ is a topological automorphism. For k ∈ ℤ and g = (a b; c d), the formula g·_kv = (a−c∂)^k(gv) defines a G-action on this space, and the resulting representation is Π(M,k).
+
+The route follows Colmez: twist the action of G on Δ⊠_ωℙ¹ by (a−cx)^k through the operator of multiplication by x, built from the infinitesimal action and Dospinescu's formula (COLMEZ19POIDS lines 244–260), and identify the algebraic vectors through the Casimir and the base roadmap §§4.2 and 4.11.
+
+**Checks.**
+
+- The central element aI₂ acts on Π(M,k) by a^kω(a), since (a−0·∂)^k = a^k. This agrees with (ii): Π(M,−k) has central character x^{−k}ω, so Π(M,−k)⊗x^k has x^{−k}ω·x^{2k} = x^kω, the central character of Δ⊠_{x^kω}ℙ¹. With (a−c∂)^{−k} in (iii), Π(M,k) would have central character x^{−k}ω and contradict (ii).
+- At k = 1, Π(M,1)^alg = M_dR⊗LL(M) is two copies of π. Its quotient by ℒ⊗π is Π(V^{(1)}_{M,ℒ})^an, whose smooth vectors (M_dR/ℒ)⊗π ≅ π form one copy, as for every member of V(π). The quotient Π(M,1)/Π(M,1)^alg ≅ Π(M,−1)⊗det is the analytic quotient of §2.3. For π with trivial central character, det Δ_{1,ℒ} = x·det Δ = x|x| gives ω = x⁻¹, and Π(M,−1)⊗det has central character x⁻²·x² = 1.
+- The Casimir on Δ⊠_{x^kω}ℙ¹ is (k²−1)/2: it is 0 at k = 1, matching §1.5 at weights (0,1), and −1/2 at k = 0. So the weight-(0,0) sheaf is not the sheaf of §4.2a, and the index k is not a relabelling.
+
+*Needs:* §§0.3, 1.1 and 1.5; PadicLocalLanglandsForGL2Qp §§3.11, 4.2, 4.2a and 4.11; PhiGammaModulesAndIwasawaCohomology §5.6a; gap:derived-lie-action.
+
 ### Examples
 
 On O(Ω) the coordinate operator is multiplication by z. Then a⁺−1 = u⁺∂ reads −zf′−f = −(zf)′, and the conjugation by w sends z to 1/z.
 
 ### Dependencies
 
-Layer 1; PadicLocalLanglandsForGL2Qp §§0.1, 3.11, 4.2a, 4.11 and 6.9; PhiGammaModulesAndIwasawaCohomology §§2.4 and 5.7.
+Layer 1; PadicLocalLanglandsForGL2Qp §§0.1, 3.11, 4.2, 4.2a, 4.11 and 6.9; PhiGammaModulesAndIwasawaCohomology §§2.4, 5.6a and 5.7; gap:derived-lie-action.
 
 ## Layer 3: Completing the Breuil–Strauch realisation
 
-### 3.1 Discharge of the global nonzero-map hypothesis
+### 3.1 Discharge of the global hypotheses
 
-For every supercuspidal π with trivial central character, every Π ∈ V(π) and every r with ρ trivial on 1+p^rO_D, prove that there is a nonzero continuous G-map Φ: (Π^an/Π^lisse)′_b → O(Σ_r)^ρ. This is the hypothesis `DrinfeldComparison.global_nonzero_map` of the base roadmap §6.9, which therefore becomes unconditional. The route follows DLB17 Théorèmes 5.1, 5.4, 5.5 and 5.7 (lines 999–1119), §5.3 (line 1184) and Théorème 8.8 (line 1864):
+Let π be supercuspidal with trivial central character, ρ = JL(π), and r such that ρ is trivial on 1+p^rO_D. Prove the two global inputs that the base roadmap §6.9 takes as explicit hypotheses:
 
-- Choose a weight-two quaternionic automorphic representation whose p-component is π, using GL2AutomorphicRepresentationsAndTransfer R17.3.12. This gives π up to a twist by η∘det, with its partner twisted by η∘Nrd.
-- Arrange the residual Galois representation to be absolutely irreducible at p.
-- Remove the twist by a finite-order global character with prescribed component η⁻¹ at p before taking isotypic parts. A map for π⊗η∘det is not a map for π (source correction E3).
-- Apply the local–global compatibility of CompletedCohomologyAndLocalGlobalCompatibility §4.9 and the Čerednik–Drinfeld uniformisation of the quaternionic Shimura curve to obtain (Π^an)′_b → Ω¹(Σ_r)^ρ.
-- Restriction to the quotient dual is nonzero: otherwise the smooth π′_b would inject into the differentials, which contradicts the u⁺-action. The induced map to H¹_dR vanishes by smoothness, so the map factors through exact forms and hence through O(Σ_r)^ρ.
+- (a) For every Π ∈ V(π) there is a nonzero continuous G-map Φ: (Π^an/Π^lisse)′_b → O(Σ_r)^ρ. This is the hypothesis `DrinfeldComparison.global_nonzero_map` (DLB17, Théorème 5.1, line 999).
+- (b) dim_L Hom_G(π′_b, H¹_dR(Σ_r)^ρ) = 2 (DLB17, Théorème 4.1, line 804). This is the de Rham datum that the base §6.9 uses for `DrinfeldComparison.map_injective` and `DrinfeldComparison.deRham`.
+
+With (a) and (b), `DrinfeldComparison.functions_dual`, `DrinfeldComparison.deRham` and `DrinfeldComparison.filtration_preimage` of the base become unconditional. Fix a prime ℓ ≠ p, the definite quaternion algebra B̄ over ℚ of discriminant ℓ, the indefinite algebra of discriminant pℓ, and its Shimura curve Sh_K of level K = K^p(1+p^rO_D), which is the CDN level 2r.
+
+The route for (a) follows DLB17 §5.3 (lines 1184–1209):
+
+- CompletedCohomologyAndLocalGlobalCompatibility §6.4 gives a weight-two form f on B̄^* with π(f)_p ≅ π⊗ξ∘det for an unramified character ξ, and with r̄_f|G_ℚ_p absolutely irreducible (DLB17, Théorème 5.5 and Lemme 5.6, lines 1071–1113). Twist f by a finite-order global character with component ξ⁻¹ at p, which exists by GL2AutomorphicRepresentationsAndTransfer R16.1.8 since ξ has finite order, before taking isotypic parts (source correction E3). The twist keeps r̄_f absolutely irreducible at p.
+- CompletedCohomologyAndLocalGlobalCompatibility §4.9 gives C⁰(X)[𝔭] ≅ Π(𝔭)^{⊕m}, m > 0, at the maximal ideal 𝔭 of f (DLB17, Théorème 5.4, line 1063). Its smooth vectors, compared with classical forms by §2.7 there, give Π(𝔭)^lisse ≅ π, so Π(𝔭) ∈ V(π).
+- HilbertModularVarietiesAndShimuraCurves §R18.5.21 at level 2r, with §R18.5.16 for the conventions over ℚ, uniformises Sh_K by Σ_r. Prove here its reformulation as an isomorphism of Hecke modules Hom_G(LA(X(K^p))′_b, Ω¹(Σ_r)^ρ) ≅ Ω¹(Sh_K)^ρ, by Frobenius reciprocity on the cocompact groups Γ_i of the uniformisation (DLB17, Théorème 5.7 and Lemmes 5.8–5.10, lines 1119–1173). At 𝔭 it gives a nonzero G-map Φ₀: (Π(𝔭)^an)′_b → Ω¹(Σ_r)^ρ.
+- The restriction of Φ₀ to (Π(𝔭)^an/π)′_b is nonzero: otherwise π′_b would embed in Ω¹(Σ_r)^ρ, on which u⁺ = −d/dz kills no nonzero vector. Its composite with Ω¹ → H¹_dR vanishes, since Π^an/π has no nonzero smooth vector while H¹_dR,c(Σ_r)^ρ is smooth. So it factors through O(Σ_r)^ρ.
+- Pass from Π(𝔭) to every Π ∈ V(π) by §2.1 (DLB17, Théorème 8.8, line 1864).
+
+The route for (b) follows DLB17 §4.2 (lines 916–996):
+
+- The same uniformisation and the Hochschild–Serre spectral sequences of the coverings Σ_{r,N} → Γ_i\Σ_{r,N}, combined by Frobenius reciprocity, give a spectral sequence E₂^{a,b} = Ext^a_G(H^{2−b}_dR,c(Σ_{r,N}), LC(X(K^p))) ⇒ H^{a+b}_dR(Sh_K) (DLB17 lines 943–969). It is proved here.
+- Ǧ acts on the geometric components through Nrd (gap:drinfeld-components) and dim ρ ≥ 2, so the ρ-parts of H⁰_dR,c and H²_dR,c vanish and the ρ-part gives Hom_G(H¹_dR,c(Σ_r)^ρ∨, LC(X(K^p))) ≅ H¹_dR(Sh_K)^ρ (DLB17 line 981).
+- Take π(f)^p-isotypic parts for the twisted form f of (a); this step needs no residual condition (DLB17 footnote 29, line 1008). On the left, LC(X)[π(f)^p] ≅ π by CompletedCohomologyAndLocalGlobalCompatibility §2.7. On the right, the global Jacquet–Langlands correspondence and strong multiplicity one (GL2AutomorphicRepresentationsAndTransfer R17.3) give the partner of π(f) on the indefinite algebra, with component ρ at p, and HilbertModularVarietiesAndShimuraCurves §R18.4.25 makes its eigenspace in H¹ two-dimensional over L after the comparison of de Rham and Betti cohomology of the proper curve.
 
 **Checks.**
 
-- The zero map is continuous and equivariant but does not discharge the hypothesis.
-- A map constructed for π⊗η∘det has Ǧ-sector JL(π)⊗η∘Nrd. When this is not isomorphic to ρ, the map does not land in O(Σ_r)^ρ.
+- The zero map is continuous and equivariant but does not discharge (a).
+- A map constructed for π⊗ξ∘det has Ǧ-sector JL(π)⊗ξ∘Nrd. When this is not isomorphic to ρ, the map does not land in O(Σ_r)^ρ.
 - Rescaling Φ by c ∈ L^× gives another valid map; the comparison of the base §6.9 is unique up to this scalar.
+- The twist in (a) can be removed: π(f)_p has central character ξ², which is the p-component of the finite-order central character of f, so ξ(p) is a root of unity. An unramified character with ξ(p) not a root of unity is the p-component of no finite-order global character.
+- For ρ trivial, the constant functions give H⁰_dR(Σ_r)^ρ ≠ 0 and the degeneration used in (b) fails. It is dim ρ ≥ 2, true for every supercuspidal π, that kills the ρ-parts of H⁰ and H².
+- The dimension in (b) is 2, not 1: the eigenspace of the proper curve has Hodge pieces of types (1,0) and (0,1). Counting holomorphic differentials alone gives 1.
 
-*Needs:* §§0.2 and 2.1; GL2AutomorphicRepresentationsAndTransfer R17.3; CompletedCohomologyAndLocalGlobalCompatibility §4.9; PadicLocalLanglandsForGL2Qp §§3.3, 3.8 and 6.9; EndoscopicTransferAndUnitaryTraceComparison §§12.4 and 12.7.
+*Needs:* §§0.2 and 2.1; CompletedCohomologyAndLocalGlobalCompatibility §§2.7, 4.9 and 6.4; HilbertModularVarietiesAndShimuraCurves §§R18.4.25, R18.5.16 and R18.5.21; GL2AutomorphicRepresentationsAndTransfer R16.1.8 and R17.3; PadicLocalLanglandsForGL2Qp §§3.3, 3.8 and 6.9; EndoscopicTransferAndUnitaryTraceComparison §§12.4 and 12.7; gap:drinfeld-components.
 
 ### 3.2 The line-independent quotient Kirillov embedding
 
-Localisation and the identifications of §1.1 induce a P-equivariant embedding ι of the u⁺-kernel of Π(V)^an/π into LP(ℚ_p^×, t⁻¹N⁺_dif,∞/N⁺_dif,∞)^Γ. Prove that the embeddings for different V agree up to their comparison scalar (DLB17, Proposition 11.2, Théorème 11.3 and Lemmes 11.4–11.5, lines 2432–2524). The coefficient module t⁻¹N⁺/N⁺ carries a Γ-action through χ⁻¹. The target is identified with locally constant L_∞-valued functions only after the twist of Π(π,2), in which the model takes values in the untwisted coefficient module (source correction E9). The route compares the pairings on compactly supported functions by Lemme 11.4 and uses their nondegeneracy (Lemme 11.5).
+Localisation and the identifications of §1.1 induce a P-equivariant embedding ι of the u⁺-kernel of Π(V)^an/π into LP(ℚ_p^×, t⁻¹N⁺_dif,∞/N⁺_dif,∞)^Γ. Prove that the embeddings for different V agree up to their comparison scalar (DLB17, Proposition 11.2, Théorème 11.3 and Lemmes 11.4–11.5, lines 2432–2524). The coefficient module t⁻¹N⁺/N⁺ is L_∞(−1)⊗M_dR(π), with Γ acting through χ⁻¹. The target is identified with locally constant L_∞⊗M_dR(π)-valued functions only after the twist of Π(π,2), in which the model takes values in the untwisted coefficient module (DLB17 lines 2449 and 2469–2472). The route compares the pairings on compactly supported functions by Lemme 11.4 and uses their nondegeneracy (Lemme 11.5).
 
 **Checks.**
 
@@ -452,11 +489,11 @@ M_dR and M*_dR are kept distinct; for ζ = 1 the dictionary §0.4(c) recovers th
 
 DLB17 Remarque 1.3(a) (line 159) states that trivial central character is not essential to the argument. CDN23 Proposition 5.7 uses the general case (lines 2438–2448, with footnote 30). The route reruns the base §6.9 and §§2.1–3.2 here with a fixed central character ζ. That needs three inputs:
 
-- the global map of §3.1 with prescribed central character, using the central-character adjustment allowed by GL2AutomorphicRepresentationsAndTransfer R17.3.12;
+- the two global inputs (a) and (b) of §3.1 for M. CompletedCohomologyAndLocalGlobalCompatibility §6.4 is stated for a supercuspidal π whose central character is trivial on p up to twist, so it applies to π and gives a form f with π(f)_p ≅ π⊗ξ∘det. Since ζ(p) = 1, ξ(p)² is the value at p of the finite-order central character of f, so the twist is removed as in §3.1. Then §§2.7 and 4.9 there and HilbertModularVarietiesAndShimuraCurves §§R18.4.25 and R18.5.21 at level n give the two inputs, with p acting trivially on JL(M) because M ∈ ΦNᵖ;
 - the smooth-kernel splitting in the category with central character ζ, from gap:cuspidal-projectivity-coefficients;
 - the dictionary of §0.4 in place of a self-duality of M_dR.
 
-CDN20 Théorème 0.4 (line 268) gives the de Rham isomorphism of (ii) for every supercuspidal M by the Lubin–Tate route; either route may be used for (ii).
+CDN20 Théorème 0.4 (line 268) proves the de Rham isomorphism of (ii) for every supercuspidal M by a second route through the Lubin–Tate tower (CDN20 Théorème 0.6), whose de Rham comparison none of this roadmap's suppliers states; the route above does not use it.
 
 **Checks.**
 
@@ -464,7 +501,7 @@ CDN20 Théorème 0.4 (line 268) gives the de Rham isomorphism of (ii) for every 
 - For ζ = 1 and ℒ = Le₁, (ii) puts the preimage at Le₁⊗π′_b ⊂ M_dR⊗π′_b. The base §6.9(iii) puts it at Le₂*⊗π′_b ⊂ M*_dR⊗π′_b. The two agree under §0.4(c).
 - For M ∉ ΦNᵖ, for instance after the twist with χ(p) = 1+p of §0.1, both sides of (i) vanish on the p-central quotient. The statement must not be read on the full tower.
 
-*Needs:* §§0.2–0.4, 2.1, 2.2, 3.1 and 3.2; PadicLocalLanglandsForGL2Qp §6.9; GL2AutomorphicRepresentationsAndTransfer R17.3; gap:cuspidal-projectivity-coefficients; gap:halfplane-module-continuity; gap:two-sided-resolvents; gap:smooth-kernel-twisted-coefficients; gap:fixed-radius-divisibility.
+*Needs:* §§0.2–0.4, 2.1, 2.2, 3.1 and 3.2; PadicLocalLanglandsForGL2Qp §6.9; CompletedCohomologyAndLocalGlobalCompatibility §§2.7, 4.9 and 6.4; HilbertModularVarietiesAndShimuraCurves §§R18.4.25 and R18.5.21; GL2AutomorphicRepresentationsAndTransfer R16.1.8 and R17.3; gap:cuspidal-projectivity-coefficients; gap:drinfeld-components; gap:fixed-radius-divisibility.
 
 ### Examples
 
@@ -472,7 +509,7 @@ For ζ = 1, n = 2r and ℒ = Le₁, §3.3(i) is the base §6.9(ii) at DLB level 
 
 ### Dependencies
 
-Layers 0–2; PadicLocalLanglandsForGL2Qp §6.9 with its four declared gaps; GL2AutomorphicRepresentationsAndTransfer R17.3; CompletedCohomologyAndLocalGlobalCompatibility §4.9; EndoscopicTransferAndUnitaryTraceComparison §§12.4, 12.7 and 12.14; gap:cuspidal-projectivity-coefficients.
+Layers 0–2; PadicLocalLanglandsForGL2Qp §§3.3, 3.8 and 6.9, with gap:fixed-radius-divisibility; GL2AutomorphicRepresentationsAndTransfer R16.1.8 and R17.3; CompletedCohomologyAndLocalGlobalCompatibility §§2.7, 4.9 and 6.4; HilbertModularVarietiesAndShimuraCurves §§R18.4.25, R18.5.16 and R18.5.21; EndoscopicTransferAndUnitaryTraceComparison §§12.4, 12.7 and 12.14; gap:cuspidal-projectivity-coefficients; gap:drinfeld-components.
 
 ## Layer 4: Individual geometric multiplicities
 
@@ -488,7 +525,7 @@ For supercuspidal M ∈ ΦNᵖ_n of slope 1/2, prove that there is a commutative
 
 The vertical maps are injective with closed image. The right-hand column uses the de Rham comparison of §3.3(ii) and the completed Hyodo–Kato comparison of LocallyAnalyticDistributions §0.CR.6.6. Under the latter, the Hyodo–Kato multiplicity is identified with M̆⊗̂LL(M)′_b compatibly with φ (CDN20, Théorème 0.4, line 268). The route of CDN20 §§5.3–5.4 and §0.6 has five steps:
 
-- Fix a Stein covering of M^p_{n,C} by affinoids, taken from EndoscopicTransferAndUnitaryTraceComparison §12.21.
+- Fix the Stein covering of M^p_{n,C} by the affinoids τ⁻¹(B_i), where τ is the period map to Ω followed by the retraction onto the Bruhat–Tits tree and B_i is the ball of radius i. It is a Stein covering because M^p_n is finite étale over level zero, a finite étale cover of the Stein space Ω⊔Ω (EndoscopicTransferAndUnitaryTraceComparison §§12.4 and 12.5; DLB17 Proposition 3.1 and lines 647–651).
 - Compute H¹_proét of each affinoid by the Kummer sequence. Its integral form H¹_ét(Y, ℤ_p(1)) is the p-adic completion of O(Y)^×/C^× extended by T_p Pic(Y) (CDN20 lines 779–791).
 - Pass to the limit over the cover; the limit is a Fréchet space (CDN20, Remarque 2.2, lines 792–800).
 - Compare with the syntomic description of the tower, using Hyodo–Kato cohomology of semistable curve towers (LocallyAnalyticDistributions §0.CR.6.6).
@@ -502,7 +539,7 @@ N = 0 on supercuspidal M, so B_st may be replaced by B_cris in X⁺_st(M). This 
 - Taking G_ℚ_p-invariants of the bottom row gives 0 → O[M]^{G_ℚ_p} → Ω¹[M]^{G_ℚ_p} → M_dR⊗LL(M)′_b → 0 (CDN20 lines 917–919).
 - For M ∉ ΦNᵖ all terms of both rows vanish on the p-central quotient.
 
-*Needs:* §3.3; EndoscopicTransferAndUnitaryTraceComparison §§12.4, 12.7, 12.19 and 12.21; LocallyAnalyticDistributions §§0.0, 0.2 and 0.CR.6.6; PadicHodgeTheory §§3.3 and 5.3.
+*Needs:* §3.3; EndoscopicTransferAndUnitaryTraceComparison §§12.4, 12.5, 12.7 and 12.19; LocallyAnalyticDistributions §§0.0, 0.2 and 0.CR.6.6; PadicHodgeTheory §§3.3 and 5.3.
 
 ### 4.2 Half-plane cohomology and the three Steinberg representations
 
@@ -530,7 +567,7 @@ Its API:
 
 ### 4.3 Extension of a partial operator with prescribed spectrum
 
-Let E be a d-dimensional L-vector space, S ⊂ E a subspace and A: S → E an L-linear map such that the only subspace T ⊂ S with A(T) ⊂ T is T = 0. Prove that for any d pairwise distinct λ₁,…,λ_d ∈ L there is an endomorphism B of E extending A that has an eigenbasis e₁,…,e_d with Be_i = λ_ie_i (CDN20, Lemme 2.18, line 1171). No algebraic closure of L is assumed. The route inducts on d along a maximal A-chain s, As, A²s, … inside S, whose iterates up to the first exit from S are linearly independent. It completes the companion block with the coefficients of ∏(X−λ_i), which alternate in sign. The proof must establish that the complementary partial operator again has no nonzero invariant subspace before the induction applies; the source omits this step. The source prints all-positive companion coefficients (source correction E14).
+Let E be a d-dimensional L-vector space, S ⊂ E a subspace and A: S → E an L-linear map such that the only subspace T ⊂ S with A(T) ⊂ T is T = 0. Prove that for any d pairwise distinct λ₁,…,λ_d ∈ L there is an endomorphism B of E extending A that has an eigenbasis e₁,…,e_d with Be_i = λ_ie_i (CDN20, Lemme 2.18, line 1171). No algebraic closure of L is assumed. The route inducts on d along a maximal A-chain s, As, A²s, … inside S, whose iterates up to the first exit from S are linearly independent. It completes the companion block with the coefficients of ∏(X−λ_i), which alternate in sign. The proof must establish that the complementary partial operator again has no nonzero invariant subspace before the induction applies; the source omits this step. The source prints all-positive companion coefficients (source correction E13).
 
 **Checks.**
 
@@ -583,7 +620,7 @@ For finite F/ℚ_p, supercuspidal M and V a representation of G_F, prove the fol
 - If dim V = rank M and this Hom is nonzero, then V is supercuspidal, D_pst(V) ≅ M[−1] and the Hom is one-dimensional.
 - For F = ℚ_p and V two-dimensional, H_M(V) ≠ 0 exactly when V ≅ V_{M,ℒ} for a unique line ℒ.
 
-For F ≠ ℚ_p the embeddingwise Hodge–Tate weights κ_{i,σ} ≥ 0 with Σκ_{i,σ} = [F:ℚ_p] allow representations other than V_{M,ℒ}, and the last statement is not asserted. The source's proof prints the dimension count of the equal-rank Hom in reverse (source correction E15).
+For F ≠ ℚ_p the embeddingwise Hodge–Tate weights κ_{i,σ} ≥ 0 with Σκ_{i,σ} = [F:ℚ_p] allow representations other than V_{M,ℒ}, and the last statement is not asserted. The source's proof prints the dimension count of the equal-rank Hom in reverse (source correction E14).
 
 **Checks.**
 
@@ -634,7 +671,7 @@ Its API:
 
 Prove that H¹_ét(M^p_{n,C}, L(1)) → H¹_proét(M^p_{n,C}, L(1)) is injective with image exactly the G-bounded vectors (CDN20, Proposition 2.12, line 1020; CDN23, Proposition 5.6, line 2420). The same holds for each M-multiplicity. Prove also that L⊗O(M^p_{n,C}) has no nonzero G-bounded vectors in a supercuspidal sector: O(M^p_{n,C})[M]^b = 0 for supercuspidal M (CDN23, proof of Théorème 5.24(i), lines 2791–2793 and footnote 31). There are two reasons. Bounded functions are constant on connected components. The action of Ǧ on the components factors through Nrd (gap:drinfeld-components), so only one-dimensional JL(M) occur.
 
-The route has three steps. The integral global group has a G-stable bounded unit ball, which gives one inclusion. For the other, choose a cocompact free subgroup Γ of G acting on the Bruhat–Tits tree, and finitely many affinoids whose Γ-translates cover the tower. Boundedness on these translates gives one integral denominator on a finite union, and the Čech sequence of the Stein covering (EndoscopicTransferAndUnitaryTraceComparison §12.21) patches it globally. Rational étale cohomology is L⊗ the integral group, formed after the inverse limit.
+The route has three steps. The integral global group has a G-stable bounded unit ball, which gives one inclusion. For the other, choose a cocompact free subgroup Γ of G acting on the Bruhat–Tits tree, and finitely many affinoids whose Γ-translates cover the tower. Boundedness on these translates gives one integral denominator on a finite union, and the Čech sequence of the Stein covering by the affinoids τ⁻¹(B_i) (Exact supplier contracts; DLB17 Proposition 3.1) patches it globally. Rational étale cohomology is L⊗ the integral group, formed after the inverse limit. No Mittag–Leffler input from infinite level is needed. M^p_{n,C} and each affinoid of the covering have finitely many connected components, so H⁰ with coefficients ℤ/p^k is finite and the inverse limits over k have no lim¹ term (CDN23 lines 2633 and 2642); the rational H⁰ over the covering are finite-dimensional, hence Mittag–Leffler.
 
 **Checks.**
 
@@ -642,7 +679,7 @@ The route has three steps. The integral global group has a G-stable bounded unit
 - A constant function on M^p_{n,C} is G-bounded and lies in the trivial sector. Its supercuspidal multiplicity is 0, since dim JL(M) > 1 and Ǧ acts on constants through Nrd.
 - The rational étale group is L⊗lim_k of integral groups, not lim_k of groups already tensored with L, which would vanish on p^k-torsion.
 
-*Needs:* §4.8; EndoscopicTransferAndUnitaryTraceComparison §§12.19 and 12.21; gap:drinfeld-components.
+*Needs:* §4.8; EndoscopicTransferAndUnitaryTraceComparison §§12.4, 12.5 and 12.19; gap:drinfeld-components.
 
 ### 4.10 Bounded duals and universal completions
 
@@ -687,7 +724,7 @@ Let Π be an absolutely irreducible admissible unitary Banach L-representation o
 - δ_Ǧ if Π ≅ St^cont⊗δ_G with Sp⊗δ ∈ ΦNᵖ_n, that is, δ(p)² = 1 and δ∘Nrd trivial on 1+ϖ_D^nO_D;
 - 0 otherwise.
 
-The line ℒ is part of the answer, not an unnamed one-dimensional space. Source: CDN23, Proposition 5.7 (line 2424), whose proof decomposes over M ∈ ΦNᵖ (line 2434). The statement prints the condition as level ≤ n (source correction E16). The route has three steps. For supercuspidal M, apply Hom_G(Π′_b, −) to 0 → (Π^an_{M,ℒ})′_b → Ω¹[M] → (M_dR/ℒ)⊗LL(M)′_b → 0 from §3.3(ii). A second line ℒ′ bounds the dimension by one. For special M, use §4.2.
+The line ℒ is part of the answer, not an unnamed one-dimensional space. Source: CDN23, Proposition 5.7 (line 2424), whose proof decomposes over M ∈ ΦNᵖ (line 2434). The statement prints the condition as level ≤ n (source correction E15). The route has three steps. For supercuspidal M, apply Hom_G(Π′_b, −) to 0 → (Π^an_{M,ℒ})′_b → Ω¹[M] → (M_dR/ℒ)⊗LL(M)′_b → 0 from §3.3(ii). A second line ℒ′ bounds the dimension by one. For special M, use §4.2.
 
 **Checks.**
 
@@ -705,7 +742,7 @@ With Π as in §4.12, prove that Hom_G(Π′_b, H¹_ét(M^p_{n,C}, L(1))) is G_�
 - δ⊗δ_Ǧ for Π ≅ St^cont⊗δ_G with Sp⊗δ ∈ ΦNᵖ_n;
 - 0 otherwise.
 
-Source: CDN23, Théorème 5.8 (line 2465), with the condition corrected as in §4.12 (source correction E16). Prove first that restriction gives an isomorphism Hom_G((Π^an)′_b, H¹_proét) ≅ Hom_G(Π′_b, H¹_ét) (CDN23, Lemme 5.9, line 2481). Injectivity uses density of Π′ in (Π^an)′. Surjectivity extends a map along Π′⊗_{Λ(K)}D(K) ≅ (Π^an)′, the Schneider–Teitelbaum identification of the base roadmap §0.1. Then apply Hom_G((Π^an)′_b, −) to the exact sequence 0 → H¹_proét[M] → Ω¹[M] → ((C⊗M_dR)/X⁺_st(M))⊗̂LL(M)′_b → 0 derived from §4.1. The completed tensor-Hom identity Hom(E, F⊗̂D) ≅ Hom(E,F)⊗̂D for nuclear Fréchet E and Fréchet F, D (CDN23, Lemme 5.4, line 2401) and §4.12 give the kernel X⁺_st(M) ∩ (ℒ⊗C) = V_{M,ℒ}.
+Source: CDN23, Théorème 5.8 (line 2465), with the condition corrected as in §4.12 (source correction E15). Prove first that restriction gives an isomorphism Hom_G((Π^an)′_b, H¹_proét) ≅ Hom_G(Π′_b, H¹_ét) (CDN23, Lemme 5.9, line 2481). Injectivity uses density of Π′ in (Π^an)′. Surjectivity extends a map along Π′⊗_{Λ(K)}D(K) ≅ (Π^an)′, the Schneider–Teitelbaum identification of the base roadmap §0.1. Then apply Hom_G((Π^an)′_b, −) to the exact sequence 0 → H¹_proét[M] → Ω¹[M] → ((C⊗M_dR)/X⁺_st(M))⊗̂LL(M)′_b → 0 derived from §4.1. The completed tensor-Hom identity Hom(E, F⊗̂D) ≅ Hom(E,F)⊗̂D for nuclear Fréchet E and Fréchet F, D (CDN23, Lemme 5.4, line 2401) and §4.12 give the kernel X⁺_st(M) ∩ (ℒ⊗C) = V_{M,ℒ}.
 
 **Checks.**
 
@@ -723,7 +760,7 @@ For an absolutely irreducible continuous L-representation V of G_ℚ_p, prove th
 - (St^cont⊗δ_G)′_b⊗δ_Ǧ if V = δ is a character with Sp⊗δ ∈ ΦNᵖ_n;
 - 0 otherwise.
 
-In particular the multiplicity is 0 for dim V ≥ 3. Sources: CDN20, Théorème 0.2 (line 130) and Corollaire 2.16 (line 1108); CDN23, Théorème 5.1 (line 2357) and Théorème 5.10 (line 2541). On the full tower M_n the source condition is level ≤ n (CDN23, Théorème 5.1); on the p-central quotient it is membership in ΦNᵖ_n (source correction E16). Weil equivariance extends to G_ℚ_p-equivariance by continuity of the descended action.
+In particular the multiplicity is 0 for dim V ≥ 3. Sources: CDN20, Théorème 0.2 (line 130) and Corollaire 2.16 (line 1108); CDN23, Théorème 5.1 (line 2357) and Théorème 5.10 (line 2541). On the full tower M_n the source condition is level ≤ n (CDN23, Théorème 5.1); on the p-central quotient it is membership in ΦNᵖ_n (source correction E15). Weil equivariance extends to G_ℚ_p-equivariance by continuity of the descended action.
 
 For dimension two the route uses §§4.6 and 4.10, and for dimension one §4.2. For dimension at least three there are two routes:
 
@@ -750,7 +787,7 @@ For the Steinberg type Sp, H¹_ét[Sp] is (St^cont)′_b with trivial Galois act
 
 ### Dependencies
 
-Layers 0 and 3; PadicLocalLanglandsForGL2Qp §§0.1, 2.5, 3.8, 3.11 and 4.2; EndoscopicTransferAndUnitaryTraceComparison §§12.4, 12.7, 12.14, 12.19 and 12.21; LocallyAnalyticDistributions §§0.0, 0.2, 0.3 and 0.CR.6.6; PadicHodgeTheory §§3.3 and 5.3–5.4; SmoothRepresentationsOfLocalGroups SR.2; Mathlib's von Neumann bornology; gap:drinfeld-components; gap:modp-drinfeld-finite-length.
+Layers 0 and 3; PadicLocalLanglandsForGL2Qp §§0.1, 2.5, 3.8, 3.11 and 4.2; EndoscopicTransferAndUnitaryTraceComparison §§12.4, 12.5, 12.7, 12.14 and 12.19; LocallyAnalyticDistributions §§0.0, 0.2, 0.3 and 0.CR.6.6; PadicHodgeTheory §§3.3 and 5.3–5.4; SmoothRepresentationsOfLocalGroups SR.2; Mathlib's von Neumann bornology; gap:drinfeld-components; gap:modp-drinfeld-finite-length.
 
 ## Layer 5: The integral arithmetic block decomposition
 
@@ -772,7 +809,7 @@ Its API:
 - L⊗lim_k is not lim_k(L⊗−): the latter vanishes on the p^k-torsion groups H^{1,+}_{k,K}.
 - Replacing the fixed level by a limit over n gives a different object. No limit over n enters the factorisation.
 
-*Needs:* EndoscopicTransferAndUnitaryTraceComparison §§12.19 and 12.21; gap:drinfeld-components.
+*Needs:* EndoscopicTransferAndUnitaryTraceComparison §12.19; gap:drinfeld-components.
 
 ### 5.2 Saturation and finite-K pieces
 
@@ -865,7 +902,7 @@ For a block B containing no constituent of H¹_ét(M^p_{n,C}, k_L), m_{n,B} = 0.
 
 ### Dependencies
 
-Layers 0 and 4; PadicLocalLanglandsForGL2Qp §§5.1–5.4 and 6.7; EndoscopicTransferAndUnitaryTraceComparison §§12.14, 12.19 and 12.21; gap:drinfeld-components; gap:modp-drinfeld-finite-length.
+Layers 0 and 4; PadicLocalLanglandsForGL2Qp §§5.1–5.4 and 6.7; EndoscopicTransferAndUnitaryTraceComparison §§12.14 and 12.19; gap:drinfeld-components; gap:modp-drinfeld-finite-length.
 
 ## Layer 6: Interpolated factorisation over type rings
 
@@ -917,13 +954,14 @@ Its API:
 
 ### 6.3 Rigidity over principal ideal domains
 
-Let A be a principal ideal domain with infinitely many prime ideals, or a finite product of such. Let V and W be representations of G_ℚ_p on finitely generated locally free A-modules whose specialisations at every closed point are absolutely irreducible. If these specialisations are pairwise isomorphic at every closed point, then V ≅ W (CDN23, Lemme 5.12, line 2574). Prove this as follows. Traces agree modulo every maximal ideal, hence agree, since the maximal ideals meet in 0. Irreducibility at the generic point holds, as otherwise almost all specialisations would be reducible. So V and W are isomorphic over the fraction field. Write the intertwiner in Smith normal form P·diag(λ₁,…,λ_d)·Q with λ₁ | ⋯ | λ_d, scaled so that λ₁ is a unit. A non-unit λ_i would make V or W reducible modulo a maximal ideal dividing it. The same statement holds for representations of a product E×G_ℚ_p with a finite-dimensional algebra E acting compatibly.
+Let A be a principal ideal domain with infinitely many prime ideals, or a finite product of such. Let V and W be representations of G_ℚ_p on finitely generated locally free A-modules whose specialisations at every closed point are absolutely irreducible. If these specialisations are pairwise isomorphic at every closed point, then V ≅ W (CDN23, Lemme 5.12, line 2574). Prove this as follows. Traces agree modulo every maximal ideal, hence agree, since the maximal ideals meet in 0. Irreducibility at the generic point holds, as otherwise almost all specialisations would be reducible. So V and W are isomorphic over the fraction field. Write the intertwiner in Smith normal form P·diag(λ₁,…,λ_d)·Q with λ₁ | ⋯ | λ_d, scaled so that λ₁ is a unit. A non-unit λ_i would make V or W reducible modulo a maximal ideal dividing it. The same statement and proof hold for an A-algebra E that is finite as an A-module, acting A-linearly on V and W and commuting with G_ℚ_p, when the specialisations are absolutely irreducible as modules over (κ(x)⊗_A E)[G_ℚ_p]. The traces of the elements e·g then agree. As in the main case, V and W become absolutely irreducible over (F⊗_A E)[G_ℚ_p], for F the fraction field, and two absolutely irreducible modules with the same trace function are isomorphic by the density theorem.
 
 **Checks.**
 
 - Over a discrete valuation ring O there is only one closed point. V = ρ and W = ρ⊗χ, with χ a nontrivial unramified character congruent to 1, have isomorphic absolutely irreducible reductions but are not isomorphic. So the hypothesis of infinitely many primes is needed.
 - For A = L[T] and V = W the statement is trivial.
 - For A = L[T], a representation that is reducible over L(T) stays reducible modulo all but finitely many maximal ideals. So irreducibility at all closed points forces generic irreducibility; with finitely many closed points this step fails.
+- For A = L[T] and E = A acting by scalars, E is finite over A but infinite-dimensional over L, and the statement reduces to the one for G_ℚ_p alone. The algebra E_{B,M} of §6.5 is of this kind: it is finite over R_{B,M}, and not finite-dimensional over L unless R_{B,M} is. A version requiring E finite-dimensional over L would not apply there.
 
 *Needs:* Mathlib `Submodule` and `Module.Basis`.
 
@@ -950,8 +988,8 @@ For p > 3, prove that there is an E_B^{δ_M}[G_ℚ_p]-equivariant isomorphism m_
 
 - At a closed point x, compute m_{B,M}[𝔪_x] using the base roadmap's Morita specialisation and §4.13.
 - Pass to continuous L-duals.
-- Prove that these duals are finite locally free over each principal ideal domain factor of R_{B,M}. The source asserts this without argument (source correction E18).
-- Apply §6.3 to the joint action of E_{B,M}×G_ℚ_p. All closed fibres are absolutely irreducible for this joint action. For p > 3, generic semisimplicity of E_{B,M} and its characteristic-zero trace determine the generic representation (footnote 32; source correction E13).
+- Prove that these duals are finite locally free over each principal ideal domain factor of R_{B,M}. The source asserts this without argument (source correction E17).
+- Apply §6.3 to the joint action of E_{B,M}×G_ℚ_p. All closed fibres are absolutely irreducible for this joint action. For p > 3, generic semisimplicity of E_{B,M} and its characteristic-zero trace determine the generic representation (footnote 32; source correction E12).
 - Dualise back; Ř_{B,M} accounts for the continuous dual of the coefficient ring.
 
 The special case is §6.2. The formula concerns the rational module; no formula for m_{n,B} before inverting p is asserted.
@@ -959,7 +997,7 @@ The special case is §6.2. The formula concerns the rational module; no formula 
 **Checks.**
 
 - For R_{B,M} = L (one closed point), Ř = L and the formula reads m_{B,M} ≅ m_B(Π(ρ_x)′_b)⊗ρ_x.
-- Ř_{B,M} is the continuous L-dual of R_{B,M}. The source formula Ř = Hom(Ř, L) refers to the object being defined (source correction E12).
+- Ř_{B,M} is the continuous L-dual of R_{B,M}. The source formula Ř = Hom(Ř, L) refers to the object being defined (source correction E11).
 - A comparison of Galois modules alone, without the E_B-action, is weaker than the statement and does not determine the isomorphism.
 
 *Needs:* §§4.13, 5.5, 6.1–6.4; PadicLocalLanglandsForGL2Qp §§5.3, 5.5 and 5.12; LocalGaloisDeformationRings §3.8.
@@ -1010,36 +1048,43 @@ For k ∈ ℤ, let E_π[k] be E_π as a topological O(Ω)-module with the action
 
 ### 7.2 Weighted realisation and the BGG row
 
-For k ≥ 0, prove the strict exact sequence of G-Fréchet spaces 0 → O(−k)(Σ_r)^ρ → O(k+2)(Σ_r)^ρ⊗det^{k+1} → H¹_dR(Σ_r)^ρ⊗Sym^k → 0, whose first map is (u⁺)^{k+1} = (d/dz)^{k+1} (DLB17, Remarque 11.12, lines 2718–2725). Prove that the preimages of the lines ℒ⊗(π′⊗Sym^k) describe the duals of the locally analytic vectors of the Banach representations of weights {0,k+1} attached to M. This is COLMEZ19POIDS Conjecture 0.10 (lines 328–332), which its Remarque 0.11(iii) (lines 337–340) derives from the case k = 0 and its Théorèmes 0.6 and 0.8. For every supercuspidal M ∈ ΦNᵖ, use §3.3 in place of the case k = 0. The route takes the case k = 0 from §3.3 and the operators of §7.1; exactness of the row is justified as indicated in DLB17 Remarque 11.12.
+For k ≥ 0, prove the strict exact sequence of G-Fréchet spaces 0 → O(−k)(Σ_r)^ρ → O(k+2)(Σ_r)^ρ⊗det^{k+1} → H¹_dR(Σ_r)^ρ⊗Sym^k → 0, whose first map is (u⁺)^{k+1} = (d/dz)^{k+1} (DLB17, Remarque 11.12, lines 2718–2725). For the identification H¹_dR(Σ_r)^ρ ≅ π′⊗M*_dR of the base §6.9(iii), prove that the preimage of ℒ^⊥⊗(π′⊗Sym^k) in O(k+2)(Σ_r)^ρ⊗det^{k+1} is, up to the twist by the power of det that matches central characters, the strong dual of Π(V^{(k+1)}_{M,ℒ})^an, with V^{(k+1)}_{M,ℒ} the representation of weights {0,k+1} of §2.4. This is COLMEZ19POIDS Conjecture 0.10 (lines 328–332), which its Remarque 0.11(i) and (iii) (lines 333–340) derive from the case k = 0 and its Théorèmes 0.6 and 0.8. For every supercuspidal M ∈ ΦNᵖ_n the same holds on M^p_n, with the identification of §3.3(ii) and the lines ℒ⊗(π′⊗Sym^k). The route takes the case k = 0 from §3.3. Under the twisted actions of §7.1 it identifies the multiplicity space of O(k) with the strong dual of Π(M,k−1) of §2.4, up to a twist, because the operator ∂ of §2.2 corresponds to the operator ∂ of §2.4 (COLMEZ19POIDS Remarque 0.11(ii), lines 335–336). The exact sequences of §2.4(ii) for Π(M,k+1) then give the preimage statement, the first map of the row being u⁺ (Remarque 0.11(i)). Exactness of the row is justified as indicated in DLB17 Remarque 11.12.
 
 **Checks.**
 
 - For k = 0 the row is the de Rham sequence of §3.3, with O(2)⊗det = Ω¹ (DLB17, Lemme 3.5).
-- For k = 1, (u⁺)² sends O(−1) to O(3)⊗det². Its cokernel is H¹_dR(Σ_r)^ρ⊗Sym¹ ≅ π′⊗M_dR⊗Sym¹, which is four copies of π′, and the weights become {0,2}.
+- For k = 1, (u⁺)² sends O(−1) to O(3)⊗det². Its cokernel is H¹_dR(Σ_r)^ρ⊗Sym¹ ≅ π′⊗M*_dR⊗Sym¹, which is four copies of π′, and the weights become {0,2}.
 - The determinant power is k+1; omitting it changes the central character of the middle term by a^{2k+2}.
 
-*Needs:* §§3.3 and 7.1; PadicLocalLanglandsForGL2Qp §§4.1–4.2.
+*Needs:* §§2.2, 2.4, 3.3 and 7.1; PadicLocalLanglandsForGL2Qp §§4.1–4.2 and 6.9.
 
 ### 7.3 Comparison with the original first-cover formulation
 
-Let Σ_{1+ϖ_DO_D} be the ℚ_p-model of the p^ℤ-quotient of the first ϖ_D-cover, with Teitelbaum's semistable model over K = ℚ_{p²}((−p)^{1/(p²−1)}) as recalled in DLB17 Remarque 11.13 (lines 2731–2781). Define BS(ℒ) as the strong dual of the preimage of ℒ^⊥⊗π′ in Ω¹(Σ_{1+ϖ_DO_D})^ρ under the de Rham identification transported from Hyodo–Kato cohomology. Prove that BS(ℒ) = Π^an_ℒ for every ℒ. The route has four steps:
+Assume that ρ is trivial on 1+ϖ_DO_D. Let Σ_{1+ϖ_DO_D} be the ℚ_p-model of the p^ℤ-quotient of the first ϖ_D-cover, of CDN level 1, and let K = ℚ_{p²}((−p)^{1/(p²−1)}). Since Σ_1 is Galois over Σ_{1+ϖ_DO_D} with group (1+ϖ_DO_D)/(1+pO_D), on which ρ is trivial, the ρ-parts of functions, differentials and de Rham cohomology of Σ_{1+ϖ_DO_D} are those of Σ_1, and §3.3 and the base §6.9 apply to them.
 
-- Identify H¹_dR(Σ_{1+ϖ_DO_D})^ρ with π′⊗M*_dR using the nonproper Hyodo–Kato comparison of LocallyAnalyticDistributions §0.CR.6.6 and the proper comparison on the Shimura curve (PadicHodgeTheory §8.1).
-- For a quaternionic form with local component π, use the local Galois representation to show that BS agrees with Π^an at its line.
-- Produce three distinct global lines by varying the residual representation in §3.1.
-- Two lines fix the comparison only up to a diagonal projectivity of ℙ¹(L); three distinct lines force it to be scalar (source correction E11).
+Construct Teitelbaum's semistable formal model Σ̂ of Σ_{1+ϖ_DO_D,K} over O_K, with the actions of G and O_D^×. Over the affinoid of Ω̂ attached to a vertex of the Bruhat–Tits tree and its bounding edges, the cover cut out by the nonzero Π-torsion of Drinfeld's universal special formal O_D-module is given by y^{p²−1} = p(z−z^p)^{p−1} in a suitable coordinate z. Over ℂ_p its reduction is made of copies of the curve y^{p+1} = z−z^p meeting in double points along the tree (TEI90, Theorem 5, line 177, Corollary 6, line 232, and lines 251–259; recalled in DLB17 lines 2734–2737). This model is owned here: HilbertModularVarietiesAndShimuraCurves §R18.5.21 makes no semistability claim at positive level, and LocallyAnalyticDistributions §0.CR.6.6 takes semistable models as hypotheses.
+
+Define BS(ℒ) as the strong dual of the preimage of ℒ^⊥⊗π′ in Ω¹(Σ_{1+ϖ_DO_D})^ρ under the identification H¹_dR(Σ_{1+ϖ_DO_D})^ρ ≅ π′⊗M*_dR that is compatible with the Hyodo–Kato (φ,N,G_ℚ_p)-structure of Σ̂. It is unique up to L^×, because WD(M) is irreducible. Prove that BS(ℒ) = Π^an_ℒ for every ℒ. The route has five steps:
+
+- Hyodo–Kato. LocallyAnalyticDistributions §0.CR.6.6 gives H¹_HK(Σ̂) with its (φ,N,G_ℚ_p)-structure and its comparison with H¹_dR. The quotients of Σ̂ by the cocompact groups Γ_i of the uniformisation of HilbertModularVarietiesAndShimuraCurves §R18.5.21 at level 1, with §R18.5.16 over ℚ, form a semistable model over O_K of the Shimura curve Sh of level (1+ϖ_DO_D)K^p (TEI90, Theorem 8, line 298; DLB17 lines 2736–2737). The Hochschild–Serre spectral sequence of log-rigid cohomology for Σ̂ → Γ_i\Σ̂ (DLB17 footnote 53, line 2763), proved here like the de Rham one of §3.1(b), identifies Hom_G((H¹_HK(Σ̂)^ρ)′, π) with the π(g)^p_f-part of H¹_HK of that model, compatibly with (φ,N,G_ℚ_p).
+- Saito. HilbertModularVarietiesAndShimuraCurves §R18.4.24a, applied to a proper regular strictly semistable model of Sh refining this one over a finite extension of K, identifies that Hyodo–Kato part with D_st of the π(g)^p_f-part of H¹_ét(Sh), with its de Rham filtration. By §R18.3.29(c) there, after the conversion of normalisations of §0.4, this (φ,N,G_ℚ_p)-module is M(π). This gives the identification H¹_dR(Σ_{1+ϖ_DO_D})^ρ ≅ π′⊗M*_dR (DLB17 lines 2741–2749).
+- One line. Let g be a quaternionic form with π(g)_p ≅ ρ and r̄_g absolutely irreducible at p, obtained from CompletedCohomologyAndLocalGlobalCompatibility §6.4 as in §3.1, and ℒ_g = Fil⁰D_dR(r_g|G_ℚ_p). By §4.9 there and the Hecke-module uniformisation of §3.1, Π^an_{ℒ_g} is a quotient of (Ω¹(Σ_{1+ϖ_DO_D})^ρ)′ through some line ℒ′. The induced map on H¹_dR is the Hodge filtration of the π(g)^p_f-part of H¹_dR(Sh), which is ℒ_g^⊥ by the de Rham comparison of the proper curve (PadicHodgeTheory §8.1). So ℒ′ = ℒ_g and BS(ℒ_g) = Π^an_{ℒ_g} (DLB17 lines 2753–2772).
+- Three lines. Varying the residual representation in CompletedCohomologyAndLocalGlobalCompatibility §6.4 gives three forms with pairwise distinct lines.
+- Conclusion. Both ℒ ↦ BS(ℒ) and ℒ ↦ Π^an_ℒ are linear in ℒ for the vector-space structure of Ext¹_G((O(Σ_{1+ϖ_DO_D})^ρ)′, π) (DLB17 lines 2776–2781). Two lines fix the comparison only up to a diagonal projectivity of ℙ¹(L); three distinct lines force it to be scalar (source correction E10).
 
 **Checks.**
 
 - The DLB cover Σ_1 has level 1+pO_D = 1+ϖ_D²O_D. It is not the first ϖ_D-cover (§0.1).
 - In the basis (ℒ, ℒ′), the diagonal projectivity diag(1, c) fixes the points 0 and ∞ but moves the point 1 unless c = 1.
 - The comparison is of filtered objects; an unfiltered isomorphism H¹_dR ≅ π′⊗M*_dR does not determine BS(ℒ).
+- Over ℤ_{p²} the equation y^{p²−1} = p(z−z^p)^{p−1} has special fibre y^{p²−1} = 0, which is not reduced, so no unramified base gives a semistable model of this shape. Over K, with ϖ_K^{p²−1} = −p and y = ϖ_Ky′, it becomes y′^{p²−1} + (z−z^p)^{p−1} = 0, the product of the p−1 factors y′^{p+1} − ζ(z−z^p) over the roots ζ of ζ^{p−1} = −1, which lie in ℚ_{p²}. Each factor reduces to a smooth curve on the vertex affinoid, since ∂/∂z(z−z^p) ≡ 1 mod p, and the p−1 factors match the p−1 connected components of TEI90 Corollary 6.
+- If ρ is nontrivial on the normal subgroup 1+ϖ_DO_D, which acts trivially on the first cover, every Ǧ-map from ρ to its functions or differentials vanishes. The statement is then empty, so the hypothesis on ρ cannot be dropped.
 
-*Needs:* §§0.1, 0.4, 3.1 and 3.3; LocallyAnalyticDistributions §0.CR.6.6; PadicHodgeTheory §8.1; GL2AutomorphicRepresentationsAndTransfer R17.3.
+*Needs:* §§0.1, 0.4, 3.1 and 3.3; LocallyAnalyticDistributions §0.CR.6.6; HilbertModularVarietiesAndShimuraCurves §§R18.3.29, R18.4.24a, R18.5.16 and R18.5.21; CompletedCohomologyAndLocalGlobalCompatibility §§4.9 and 6.4; PadicHodgeTheory §8.1; GL2AutomorphicRepresentationsAndTransfer R17.3.
 
 ### 7.4 Iwasawa invariants of Drinfeld functions
 
-For V in the family of π, prove that (O(Σ_r)^ρ)^{diag(p,1)=1} is a free D(Γ)-module of rank two, isomorphic to {μ ∈ H¹(G_ℚ_p, D(Γ)⊗_L V) : ∫_{1+p^mℤ_p}μ ∈ H¹_e(G_{ℚ_p(μ_{p^m})}, V) for every m ≥ 0} (DLB17, Théorème 1.9, line 434; §12.1, line 2785). H¹_e is the image of the Bloch–Kato exponential, not H¹_f or H¹_g. The route identifies the diag(p,1)-fixed vectors with tN_rig(π)^{ψ=1} by §2.1. Applying 1−φ and `allLevelExp_iff_tNrig` with `allLevelExp_oneSubPhi_injective` (PhiGammaModulesAndIwasawaCohomology §5.7) identifies the result with the right side. Freeness of rank two over D(Γ) is proved here, using the analytic Iwasawa comparison of PhiGammaModulesAndIwasawaCohomology §5.4 for the right-hand side. The cover level r and the cyclotomic level m are different indices; the source uses n for both (source correction E19).
+For V in the family of π, prove that (O(Σ_r)^ρ)^{diag(p,1)=1} is a free D(Γ)-module of rank two, isomorphic to {μ ∈ H¹(G_ℚ_p, D(Γ)⊗_L V) : ∫_{1+p^mℤ_p}μ ∈ H¹_e(G_{ℚ_p(μ_{p^m})}, V) for every m ≥ 0} (DLB17, Théorème 1.9, line 434; §12.1, line 2785). H¹_e is the image of the Bloch–Kato exponential, not H¹_f or H¹_g. The route identifies the diag(p,1)-fixed vectors with tN_rig(π)^{ψ=1} by §2.1. Applying 1−φ and `allLevelExp_iff_tNrig` with `allLevelExp_oneSubPhi_injective` (PhiGammaModulesAndIwasawaCohomology §5.7) identifies the result with the right side. Freeness of rank two over D(Γ) is proved here, using the analytic Iwasawa comparison of PhiGammaModulesAndIwasawaCohomology §5.4 for the right-hand side. The cover level r and the cyclotomic level m are different indices; the source uses n for both (source correction E18).
 
 **Checks.**
 
@@ -1053,7 +1098,7 @@ For V in the family of π, prove that (O(Σ_r)^ρ)^{diag(p,1)=1} is a free D(Γ)
 
 A function f ∈ O(Σ_n) is infinitely primitivable when it lies in ∩_{j≥0} (d/dz)^j O(Σ_n). Prove that the infinitely primitivable functions lie in H⁰_dR(Σ_n)·O(Ω): finite sums of locally constant functions on geometric components times pullbacks of functions on Ω, after the finite extension that splits the components. The conclusion of DLB17 Théorème 1.10 (line 447), that they lie in O(Ω), is false when component constants are nontrivial (source correction E2). The route decomposes f by Ǧ-types:
 
-- On a supercuspidal sector ρ of any central character trivial on p, use §3.3(i) to identify O(Σ_n)^ρ with a dual on which ∩_j(u⁺)^j is zero (gap:fixed-radius-divisibility in the base §6.9). The source proof treats every nontrivial type as supercuspidal with trivial central character (source correction E20).
+- On a supercuspidal sector ρ of any central character trivial on p, use §3.3(i) to identify O(Σ_n)^ρ with a dual on which ∩_j(u⁺)^j is zero (gap:fixed-radius-divisibility in the base §6.9). The source proof treats every nontrivial type as supercuspidal with trivial central character (source correction E19).
 - On a one-dimensional type χ∘Nrd, use gap:drinfeld-components: the χ∘Nrd-sector of O(Σ_n) is (χ-isotypic locally constant functions on components)·O(Ω).
 
 **Checks.**
@@ -1072,7 +1117,7 @@ For V in the family of π and r large, prove that Hom_{D^b(D(G))}((Π(V)^an)′_
 
 - For the chosen line ℒ, the filtration induced on the two-dimensional Hom is Fil⁰D_dR(V) = ℒ. An unfiltered dimension count would only give 2.
 - The trivial sector ρ = 1 has H⁰_dR ≠ 0 and is excluded.
-- The full O(Σ_r) is an infinite sum over types and is not coadmissible as a D(G)-module.
+- Ǧ acts on O(Σ_r) through the finite group Ǧ/(p^ℤ(1+p^rO_D)), so only finitely many types occur (§0.2). The fixed ρ-sector is used because the comparison with (Π^an/π)′ that gives its coadmissibility (DLB17, Théorème 10.1, line 2192) concerns a supercuspidal ρ, not because the sum over types is infinite. The one-dimensional sectors χ∘Nrd lie outside that comparison (source correction E8).
 
 *Needs:* §§0.4 and 3.3; PadicLocalLanglandsForGL2Qp §§0.1 and 6.9.
 
@@ -1101,7 +1146,7 @@ On Σ₀ = Ω⊔Ω every locally constant function is infinitely primitivable, a
 
 ### Dependencies
 
-Layers 2–4; PadicLocalLanglandsForGL2Qp §§0.1, 4.2a and 6.9; PhiGammaModulesAndIwasawaCohomology §§5.4 and 5.7; LocallyAnalyticDistributions §0.CR.6.6; PadicHodgeTheory §8.1; GL2AutomorphicRepresentationsAndTransfer R17.3; EndoscopicTransferAndUnitaryTraceComparison §§12.4 and 12.5; gap:drinfeld-components; gap:fixed-radius-divisibility.
+Layers 2–4; PadicLocalLanglandsForGL2Qp §§0.1, 4.1–4.2, 4.2a and 6.9; PhiGammaModulesAndIwasawaCohomology §§5.4 and 5.7; LocallyAnalyticDistributions §0.CR.6.6; PadicHodgeTheory §8.1; GL2AutomorphicRepresentationsAndTransfer R17.3; CompletedCohomologyAndLocalGlobalCompatibility §§4.9 and 6.4; HilbertModularVarietiesAndShimuraCurves §§R18.3.29, R18.4.24a, R18.5.16 and R18.5.21; EndoscopicTransferAndUnitaryTraceComparison §§12.4 and 12.5; gap:drinfeld-components; gap:fixed-radius-divisibility.
 
 ## Downstream consumers
 
@@ -1111,26 +1156,25 @@ The Galois-socle theorem §4.14 and the factorisation §6.6 are the inputs for c
 
 All statements below are in our own words.
 
-- **E1** (gap, DLB17, Théorème 9.9, line 2005; affects a stated result). Uniqueness of the O(Ω)-module structure needs continuity of f ↦ T_fℓ for every ℓ; algebraic density does not determine an arbitrary action. Declared as gap:halfplane-module-continuity.
+- **E1** (gap, DLB17, Théorème 9.9, line 2005; affects a stated result). Uniqueness of the O(Ω)-module structure needs continuity of f ↦ T_fℓ for every ℓ; algebraic density does not determine an arbitrary action. The base roadmap §6.9 already states uniqueness among continuous module structures.
 - **E2** (error, DLB17, Théorème 1.10, line 447; affects a stated result). Infinitely primitivable functions lie in H⁰_dR(Σ_n)·O(Ω), not in O(Ω). §7.5.
 - **E3** (gap, DLB17, proof of Théorème 5.1, §5.3, line 1184; affects the proof). A globalisation obtained up to an unramified twist must have the twist removed by a global character before taking isotypic parts. §3.1.
 - **E4** (error, DLB17, Proposition 7.7(b), line 1568; affects a stated result). The orthogonal of N⁺_dif,n(V̌) is tN⁺_dif,n(V) for every weight k ≥ 1, not t^kN⁺_dif,n(V). The two agree at k = 1. §1.6.
 - **E5** (gap, DLB17, proof of Théorème 8.3, line 1690; affects the proof). Injectivity of Res_ℤ_p on the fixed vectors needs the Weyl chart and D_rig^{φ=1} = 0. §2.1.
 - **E6** (error, DLB17, proof of Proposition 8.4, line 1768; affects the proof). Generation is used over D(Γ) where only generation after scalar extension to the Robba ring of Γ is available. This roadmap takes tN_rig(π)⊠ℙ¹ from the base roadmap §4.2a and does not use this step.
-- **E7** (gap, DLB17, proof of Théorème 9.7, line 1967; affects the proof). The displayed computation gives a one-sided inverse of a−c∂; the identity for g⁻¹ gives the other. §2.2 and gap:two-sided-resolvents.
+- **E7** (gap, DLB17, proof of Théorème 9.7, line 1967; affects the proof). The displayed computation gives a one-sided inverse of a−c∂; the identity for g⁻¹ gives the other. §2.2. The base roadmap §6.9 already constructs the resolvents, and COLMEZ19POIDS Théorème 0.8(ii) (line 265) proves the two-sided statement for the operator ∂ of §2.4.
 - **E8** (gap, DLB17, §12.2 before Proposition 12.2, line 2810; affects the proof). Théorème 10.1 gives coadmissibility of the ρ-sector, not of the whole de Rham complex of Σ_n. §7.6.
-- **E9** (error, DLB17, Proposition 11.2 and Théorème 11.3, lines 2432–2461; affects the proof). The coefficient module t⁻¹N⁺/N⁺ carries a Tate twist and is not a locally constant coefficient module before the twist of Π(π,2). §3.2 and gap:smooth-kernel-twisted-coefficients.
-- **E10** (gap, DLB17, Proposition 11.10, line 2685; affects the proof). Infinite t-divisibility must be proved in one lattice of fixed radius on both charts. gap:fixed-radius-divisibility.
-- **E11** (gap, DLB17, Remarque 11.13, lines 2776–2781; affects the proof). Two filtration lines leave a diagonal projectivity; three distinct lines are needed. §7.3.
-- **E12** (misprint, CDN23, Théorème 5.15, line 2624; affects nothing). Ř_{B,M} is the continuous L-dual of R_{B,M}, not Hom(Ř_{B,M}, L). §6.5.
-- **E13** (gap, CDN23, Théorème 5.15 and Théorème 5.24(ii), lines 2620 and 2779; affects a stated result). The local statements do not repeat the hypothesis p > 3 used for generic semisimplicity (footnote 32, line 2861; line 93). §§6.5–6.6 retain it.
-- **E14** (misprint, CDN20, proof of Lemme 2.18, line 1186; affects the proof). The completing column uses the symmetric functions without the alternating signs. The proof's complement step checks only AS′ ∩ (S_v+AS_v) = 0, not that S′+AS′ meets S_v+AS_v in 0 (lines 1188–1193). §4.3.
-- **E15** (misprint, CDN20, proof of Proposition 2.5, lines 875–876; affects nothing). The Hom has dimension 1 when D_pst(V*) ≅ M[−1]* and 0 otherwise, not the reverse. §4.6.
-- **E16** (error, CDN23, Proposition 5.7 and Théorème 5.8, lines 2424–2473; affects a stated result). On the p-central quotient the condition is M ∈ ΦNᵖ_n, not level ≤ n; the proofs decompose over ΦNᵖ (line 2434). §§4.12–4.14.
-- **E17** (gap, CDN23, proof of Proposition 5.7, lines 2438–2448, and CDN20, Proposition 2.9, line 952; affects the proof). DLB17 is applied to every supercuspidal M, though DLB17 assumes trivial central character. §3.3.
-- **E18** (gap, CDN23, proof of Théorème 5.24(ii); affects the proof). Local freeness of the dual multiplicities over each PID factor is asserted without argument. §6.5.
-- **E19** (misprint, DLB17, Théorème 1.9, line 434; affects nothing). n denotes both the cover level and the cyclotomic level. §7.4.
-- **E20** (gap, DLB17, proof of Théorème 1.10, §12.1, line 2785; affects the proof). Théorème 1.2 is applied to every nontrivial Ǧ-type, including one-dimensional types and nontrivial central characters. §7.5.
+- **E9** (gap, DLB17, Proposition 11.10, line 2685; affects the proof). Infinite t-divisibility must be proved in one lattice of fixed radius on both charts. gap:fixed-radius-divisibility.
+- **E10** (gap, DLB17, Remarque 11.13, lines 2776–2781; affects the proof). Two filtration lines leave a diagonal projectivity; three distinct lines are needed. §7.3.
+- **E11** (misprint, CDN23, Théorème 5.15, line 2624; affects nothing). Ř_{B,M} is the continuous L-dual of R_{B,M}, not Hom(Ř_{B,M}, L). §6.5.
+- **E12** (gap, CDN23, Théorème 5.15 and Théorème 5.24(ii), lines 2620 and 2779; affects a stated result). The local statements do not repeat the hypothesis p > 3 used for generic semisimplicity (footnote 32, line 2861; line 93). §§6.5–6.6 retain it.
+- **E13** (misprint, CDN20, proof of Lemme 2.18, line 1186; affects the proof). The completing column uses the symmetric functions without the alternating signs. The proof's complement step checks only AS′ ∩ (S_v+AS_v) = 0, not that S′+AS′ meets S_v+AS_v in 0 (lines 1188–1193). §4.3.
+- **E14** (misprint, CDN20, proof of Proposition 2.5, lines 875–876; affects nothing). The Hom has dimension 1 when D_pst(V*) ≅ M[−1]* and 0 otherwise, not the reverse. §4.6.
+- **E15** (error, CDN23, Proposition 5.7 and Théorème 5.8, lines 2424–2473; affects a stated result). On the p-central quotient the condition is M ∈ ΦNᵖ_n, not level ≤ n; the proofs decompose over ΦNᵖ (line 2434). §§4.12–4.14.
+- **E16** (gap, CDN23, proof of Proposition 5.7, lines 2438–2448, and CDN20, Proposition 2.9, line 952; affects the proof). DLB17 is applied to every supercuspidal M, though DLB17 assumes trivial central character. §3.3.
+- **E17** (gap, CDN23, proof of Théorème 5.24(ii); affects the proof). Local freeness of the dual multiplicities over each PID factor is asserted without argument. §6.5.
+- **E18** (misprint, DLB17, Théorème 1.9, line 434; affects nothing). n denotes both the cover level and the cyclotomic level. §7.4.
+- **E19** (gap, DLB17, proof of Théorème 1.10, §12.1, line 2785; affects the proof). Théorème 1.2 is applied to every nontrivial Ǧ-type, including one-dimensional types and nontrivial central characters. §7.5.
 
 ## References
 
@@ -1138,3 +1182,4 @@ All statements below are in our own words.
 - **CDN20.** Pierre Colmez, Gabriel Dospinescu, Wiesława Nizioł, *Cohomologie p-adique de la tour de Drinfeld : le cas de la dimension 1*, J. Amer. Math. Soc. 33 (2020), 311–362; locators refer to the authors' copy.
 - **CDN23.** Pierre Colmez, Gabriel Dospinescu, Wiesława Nizioł, *Factorisation de la cohomologie étale p-adique de la tour de Drinfeld*, Forum Math. Pi 11 (2023), e16; locators refer to the HAL copy hal-04289191, whose theorem numbering agrees with the published version.
 - **COLMEZ19POIDS.** Pierre Colmez, *Correspondance de Langlands locale p-adique et changement de poids*, J. Eur. Math. Soc. 21 (2019); locators refer to the author's copy.
+- **TEI90.** Jeremy Teitelbaum, *Geometry of an étale covering of the p-adic upper half plane*, Ann. Inst. Fourier 40 (1990), no. 1, 69–78; locators refer to the Numdam copy.
