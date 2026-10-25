@@ -181,7 +181,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-24"
 version_note = "arXiv v2"
-cited_for = ["Layers 3–4 finite etale products and arithmetic exact sequence", "3.5 unibranch components", "3.8 degree-one input of the elementary-fibration sequence", "3.8a cohomological properness, local asphericity and the homotopy exact sequence"]
+cited_for = ["Layers 3–4 finite etale products and arithmetic exact sequence", "3.5 unibranch components", "3.9d degree-one input of the elementary-fibration sequence", "3.8a cohomological properness, local asphericity and the homotopy exact sequence"]
 
 [[source]]
 id = "Fr"
@@ -226,7 +226,7 @@ url = "https://doi.org/10.1007/bfb0081551"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["3.8a: non-abelian proper base change for ind-finite stacks, proper descent, constructible subsheaves, local constancy from specialization, local 0-acyclicity, local 1-asphericity and 0-acyclicity of coherent morphisms, requested from EtaleCohomologyFoundations", "3.8a: ind-finiteness of direct images of torsor stacks along coherent morphisms"]
+cited_for = ["3.8a: non-abelian proper base change for ind-finite stacks, proper descent, constructible subsheaves, local constancy from specialization, local 0-acyclicity, local 1-asphericity and the 0-acyclicity criterion for coherent locally 0-acyclic morphisms, requested from EtaleCohomologyFoundations", "3.8a: ind-finiteness of direct images of torsor stacks along coherent morphisms"]
 
 [[source]]
 id = "StacksVarieties"

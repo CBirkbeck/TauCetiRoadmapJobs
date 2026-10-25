@@ -3245,7 +3245,7 @@
     },
     {
       "slug": "nonabelian-local-acyclicity",
-      "needs": "Define locally 0-acyclic and locally 1-aspheric morphisms for a set of primes through the fibres of strict localizations, and prove that smooth morphisms are universally locally 1-aspheric for the primes invertible on the base, that flat finitely presented morphisms with geometrically reduced fibres are universally locally 0-acyclic, and that a coherent morphism is 0-acyclic exactly when its geometric fibres are nonempty and connected (SGA 4 XV 1.11, 1.16, 2.1 and 4.1).",
+      "needs": "Define 0-acyclic morphisms f, those for which the unit F → f_*f^*F is bijective for every étale sheaf of sets F on the base, and locally 0-acyclic and locally 1-aspheric morphisms for a set of primes through the fibres of strict localizations, and prove that smooth morphisms are universally locally 1-aspheric for the primes invertible on the base, that flat finitely presented morphisms with geometrically reduced fibres are universally locally 0-acyclic, and that a coherent locally 0-acyclic morphism is 0-acyclic exactly when its geometric fibres are nonempty and connected (SGA 4 XV 1.11, 1.16, 2.1 and 4.1).",
       "supplier": "EtaleCohomologyFoundations",
       "section": "F.2.3"
     },
