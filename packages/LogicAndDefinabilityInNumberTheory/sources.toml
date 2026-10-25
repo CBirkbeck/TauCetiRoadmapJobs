@@ -7,10 +7,10 @@ authors = "L. P. D. van den Dries"
 title = "Tame Topology and O-minimal Structures"
 year = 1998
 locator_scheme = "section"
-locator = "Chapters 3–4 and 8–10; Chapter 10 (2.15), p.166 and (2.18), p.167"
+locator = "Chapters 3–4 and 8–10"
 licence_class = "none"
 status = "waived"
-cited_for = ["6.1–6.9"]
+cited_for = ["6.1–6.6"]
 
 [[source]]
 id = "vd_dr_macintyre_marker"
@@ -34,18 +34,7 @@ locator = "Definition 1.4; Theorems 1.8–1.10"
 url = "https://doi.org/10.1215/S0012-7094-06-13336-7"
 licence_class = "none"
 status = "waived"
-cited_for = ["6.15; 6.18"]
-
-[[source]]
-id = "cl_addenda"
-authors = "Raf Cluckers and Francois Loeser"
-title = "List of addenda"
-year = "undated"
-locator_scheme = "section"
-locator = "Addenda to motivic integration"
-licence_class = "none"
-status = "waived"
-cited_for = []
+cited_for = ["6.11–6.12; 6.14"]
 
 [[source]]
 id = "undecidability_in_number_theory"
@@ -53,7 +42,7 @@ authors = "Bjorn Poonen"
 title = "Undecidability in number theory"
 year = 2008
 locator_scheme = "section"
-locator = "Definition 1 and footnote 4, author p.2"
+locator = "Definition 1 and footnote 4, author p.2; “Negative answer to H10”, author p.3"
 url = "https://math.mit.edu/~poonen/papers/h10_notices.pdf"
 fetched_from = "https://math.mit.edu/~poonen/papers/h10_notices.pdf"
 fetched_at = "2026-10-25T00:20:21Z"
@@ -61,7 +50,7 @@ sha256 = "baaf73c4ed8e57f78c52fddb5fc81718a42e804995c565686300726e749435f8"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["4.1–4.10"]
+cited_for = ["4.1–4.9", "4.16"]
 
 [[source]]
 id = "diophantine_functions_and_matiyasevic_s_theorem_native_poly_and_d"
@@ -109,7 +98,7 @@ sha256 = "3f9bc08bda18fcdb4e52895c6a42739d14a4c830ed8421f5bafa5d230f92b7bd"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["4.7–4.10"]
+cited_for = ["4.6–4.9"]
 
 [[source]]
 id = "multivariate_polynomial_extensionality_on_infinite_boxes"
@@ -209,7 +198,7 @@ authors = "Jochen Koenigsmann"
 title = "Defining Z in Q"
 year = 2016
 locator_scheme = "section"
-locator = "Theorem 1; Corollaries 2–3; §2; Proposition 6; Remark 8(a); Definition 10; Lemmas 11–17; Proposition 18; Definition 19; Lemma 20; Proposition 21; Corollary 22; Proposition 23; Remark 24; published pp.73–93"
+locator = "§1, pp.73–74; Observation 0; Theorem 1; Corollaries 2–3 and 3′; §2; Proposition 6; Remark 8(a); Proposition 10; Corollary 11; Definition 12; Lemmas 13–14; Corollary 15; Proposition 16; Lemma 17; Proposition 18; Definition 19; Lemma 20; Proposition 21; Corollary 22; Proposition 23; Remark 24; published pp.73–93"
 url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v183-n1-p02-p.pdf"
 fetched_from = "https://annals.math.princeton.edu/wp-content/uploads/annals-v183-n1-p02-p.pdf"
 fetched_at = "2026-10-25T00:20:42Z"
@@ -218,7 +207,7 @@ licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "Published Annals version; Proposition 23(c) states all positive exponents and its proof invokes nonpowers. Numbering differs from arXiv v2."
-cited_for = ["4.20–4.29; 4.32–4.34"]
+cited_for = ["4.17–4.28; 4.31–4.33"]
 
 [[source]]
 id = "hilbert_s_tenth_problem_is_unsolvable"
@@ -232,7 +221,7 @@ url = "https://doi.org/10.2307/2318447"
 licence_class = "none"
 status = "uncertified"
 version_note = "Commercial publication cited by locator; no readable legal text resolved by the sources service."
-cited_for = ["References"]
+cited_for = ["4.10–4.16"]
 
 [[source]]
 id = "le_compl_mentaire_des_puissances_n_i_mes_dans_un_corps_de_nombres"
@@ -252,7 +241,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v1"
-cited_for = ["4.30–4.31; 4.33"]
+cited_for = ["4.29–4.30; 4.32"]
 
 [[source]]
 id = "bkt"
@@ -260,7 +249,7 @@ authors = "Benjamin Bakker, Bruno Klingler and Jacob Tsimerman"
 title = "Tame topology of arithmetic quotients and algebraicity of Hodge loci"
 year = 2020
 locator_scheme = "section"
-locator = "§1.1; Lemma 2.1; Theorem 4.13; Appendix A.1–A.3"
+locator = "§1.1; Theorem 4.13; Appendix A.1–A.2"
 url = "https://benjamin-bakker.github.io/DefArith.pdf"
 fetched_from = "https://benjamin-bakker.github.io/DefArith.pdf"
 fetched_at = "2026-10-25T00:20:51Z"
@@ -268,7 +257,7 @@ sha256 = "b559c652490eb54595e86ec063945d016dd104949a91f9d6b4616cc4e25b8c8e"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["6.2–6.3; 6.6–6.10; 6.12"]
+cited_for = ["6.2–6.3; 6.6–6.7; 6.9"]
 
 [[source]]
 id = "geometric_stabilisation_via_p_adic_integration"
@@ -286,7 +275,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v2"
-cited_for = ["2.7–2.13; 5.4"]
+cited_for = ["2.7–2.12; 5.4"]
 
 [[source]]
 id = "mirror_symmetry_for_moduli_spaces_of_higgs_bundles_via_p_adic_int"
@@ -295,7 +284,7 @@ title = "Mirror symmetry for moduli spaces of Higgs bundles via p-adic integrati
 year = 2017
 arxiv = "1707.06417v3"
 locator_scheme = "section"
-locator = "§4.1; Propositions 4.1 and 4.4; Claim 4.2; Lemma 4.11"
+locator = "§4.1; Propositions 4.1 and 4.4; Claim 4.2; Lemma 4.3"
 url = "https://arxiv.org/abs/1707.06417v3"
 fetched_from = "https://arxiv.org/pdf/1707.06417v3"
 fetched_at = "2026-10-25T00:21:03Z"
@@ -304,7 +293,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v3"
-cited_for = ["2.7–2.13"]
+cited_for = ["2.7–2.12"]
 
 [[source]]
 id = "geometric_categories_and_o_minimal_structures"
@@ -323,22 +312,6 @@ accessed = "2026-10-25"
 cited_for = ["6.1–6.5"]
 
 [[source]]
-id = "integer_points_on_the_dilation_of_a_subanalytic_surface"
-authors = "Jonathan Pila"
-title = "Integer points on the dilation of a subanalytic surface"
-year = 2004
-locator_scheme = "section"
-locator = "Lemma 3.1, p.6; Proposition 4.2, p.8; Remark 4.5, p.9"
-url = "https://people.maths.ox.ac.uk/pila/isurface.pdf"
-fetched_from = "https://people.maths.ox.ac.uk/pila/isurface.pdf"
-fetched_at = "2026-10-25T00:21:06Z"
-sha256 = "ad48dae208b22a80836efeecd56bfdb9dc053f075ae70b5f1e96a69940d61a06"
-licence_class = "author-page"
-status = "certified"
-accessed = "2026-10-25"
-cited_for = ["Source provenance"]
-
-[[source]]
 id = "peterzil_starchenko_agc"
 authors = "Ya’acov Peterzil and Sergei Starchenko"
 title = "Complex analytic geometry and analytic-geometric categories"
@@ -352,7 +325,7 @@ sha256 = "e7556f77373bdc1e24e4f620413d674197f842569dde1a704555dd1d03f7856a"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["6.11–6.12"]
+cited_for = ["6.8–6.9"]
 
 [[source]]
 id = "on_the_algebraic_points_of_a_definable_set"
@@ -368,7 +341,7 @@ sha256 = "4ff1a624d92a0a5cbe05d77c5ce097d29353d70445f10efa2ba72833b0821c59"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["6.15–6.16; 6.17–6.20"]
+cited_for = ["6.11–6.12; 6.13–6.16"]
 
 [[source]]
 id = "the_andr_oort_conjecture_for_a_g"
@@ -384,7 +357,7 @@ sha256 = "43259ca3cfedfb574bf1fe2f80e1023cb736ea299a76588536fd816340722abc"
 licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["6.20; 6.21; 7.1–7.4; 7.7"]
+cited_for = ["6.16; 6.17; 7.1–7.4; 7.7"]
 
 [[source]]
 id = "abelian_varieties_isogenous_to_no_jacobian"
@@ -454,7 +427,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v3"
-cited_for = ["6.11–6.12"]
+cited_for = ["6.8–6.9"]
 
 [[source]]
 id = "ax_lindemann_for_a_g"
@@ -470,7 +443,7 @@ sha256 = "261af339f1ff909701e74bc2e28fd9c77d186fb4df9e6eeb0b2aa411718143a7"
 licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["6.14; 7.1–7.5"]
+cited_for = ["6.10; 7.1–7.5"]
 
 [[source]]
 id = "towards_the_andr_oort_conjecture_for_mixed_shimura_varieties_the_"
@@ -523,24 +496,7 @@ sha256 = "bf4ed3bd45526085480ddaf37a55272e9f00d771de4a4d542108b8b6e423794e"
 licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["2.11"]
-
-[[source]]
-id = "the_stacks_project"
-authors = "The Stacks project authors"
-title = "The Stacks project"
-year = 2026
-locator_scheme = "tag"
-locator = "Tags 04GN, 04GS, 0ASK; Lemmas 10.155.1, 10.155.6, 15.125.6"
-url = "https://stacks.math.columbia.edu/tag/0ASK"
-fetched_from = "https://stacks.math.columbia.edu/download/more-algebra.pdf#nameddest=0ASK"
-fetched_at = "2026-10-25T00:28:00Z"
-sha256 = "ab69179738e642603ddbde651f2838e1cb5d8711e8bcd7c447cbf02a8bb6a5d2"
-licence_class = "open-repository"
-status = "certified"
-accessed = "2026-10-25"
-version_note = "Algebra extraction for 04GN/04GS and More on Algebra extraction for 0ASK; numbering checked against the stable tags."
-cited_for = ["Source provenance"]
+cited_for = ["2.10"]
 
 [[source]]
 id = "native_ultraproduct_structures_and_o_transfer"
@@ -572,7 +528,7 @@ sha256 = "3f0cf81276e074c3ba6ffe8b0d66ddd355a878fccd33e2bb48e2ec6da9bb4bee"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["Exact supplier contracts; 6.16; 6.20"]
+cited_for = ["Exact supplier contracts; 6.12; 6.16"]
 
 [[source]]
 id = "bosch_lutkebohmert_raynaud"
@@ -586,7 +542,7 @@ url = "https://doi.org/10.1007/978-3-642-51438-8"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["2.11"]
+cited_for = ["2.10"]
 
 [[source]]
 id = "schneider"
@@ -601,7 +557,7 @@ url = "https://doi.org/10.1007/978-3-642-21147-8"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["2.7"]
+cited_for = ["Exact supplier contracts; 2.4–2.5; 2.7"]
 
 [[source]]
 id = "hodges"
@@ -631,26 +587,6 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["2.6"]
-
-[[source]]
-id = "dittmann_pop"
-authors = "Philip Dittmann, Florian Pop"
-title = "Characterizing finitely generated fields by a single field axiom"
-year = 2023
-venue = "Ann. of Math. (2) 198 (2023), no. 3, 1203-1227"
-doi = "10.4007/annals.2023.198.3.4"
-arxiv = "2012.01307v2"
-locator_scheme = "section"
-locator = "§1, pp.1–2, Kronecker dimension and prime divisors; Fact 5.2, p.16"
-url = "https://arxiv.org/abs/2012.01307v2"
-fetched_from = "https://arxiv.org/pdf/2012.01307v2"
-fetched_at = "2026-10-25T00:22:21Z"
-sha256 = "f9f26f7d8d6b5cb6bf86d04bf97f8f99069d8d676623cebe706e90ea8dcb2c1f"
-licence_class = "open-repository"
-status = "certified"
-accessed = "2026-10-25"
-version_note = "arXiv v2"
-cited_for = ["Source provenance"]
 
 [[source]]
 id = "pila_tsimerman_2013"
@@ -704,4 +640,4 @@ sha256 = "2db7aa02ab95a4b8b8a453d98d1b88267259c84482dc624700b0dc5c0867101b"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["Scope and ownership; Exact supplier contracts; 3.2; 6.15"]
+cited_for = ["Scope and ownership; Exact supplier contracts; 3.2; 6.11"]

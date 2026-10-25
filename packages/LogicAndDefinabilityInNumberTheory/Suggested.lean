@@ -7,16 +7,15 @@ import TauCeti.Geometry.RealAlgebraic.Semialgebraic.Basic
 The roadmap is README.md; this file is not the roadmap. It states the roadmap's
 headline theorems against the pinned APIs: eventual Ax–Kochen transfer,
 Igusa–Poincaré rationality at every prime, MRDP, universal definability of the
-integers in ℚ, Diophantine rational nonintegers and nonsquares, the integer
+integers in ℚ, Diophantine rational nonintegers, the integer
 definition with one universal variable, Diophantine nonpowers over number fields,
+Hilbert’s tenth problem over ℤ, universal-existential rational undecidability,
 and parameter-uniform rational and bounded-degree counting.
 
 Relative Denef–Pas elimination and general AKE lack three-sorted ac-valued
 structures and their syntax adapter. Cluckers–Loeser integration, specialization
 and integral transfer lack constructible motivic functions and graded pushforwards.
-Hilbert's tenth problem over ℤ lacks the computable polynomial-code adapter for
-native semidecidability. Undecidability of the universal-existential rational
-theory (§4.26) also lacks a native `Primcodable` sentence-code adapter. Dual Néron volumes lack gauge measures on Néron models;
+Dual Néron volumes lack gauge measures on Néron models;
 the normic zero-cycle headline lacks normic compactifications and Brauer–Manin
 pairings. Definable Chow lacks definable complex analytic spaces.
 The André–Oort and CM-pair reductions lack A_g with special subvarieties and
@@ -66,6 +65,13 @@ theorem mrdp {n : ℕ} (S : Set (Fin n → ℕ)) :
 
 end Diophantine
 
+/-- One fixed integer-polynomial family has noncomputable integer solvability
+as a predicate of its integer parameter (§4.16; Poonen, author-copy p.3). -/
+theorem hilbert_tenth_integers :
+    ∃ (n : ℕ) (p : MvPolynomial (Fin (n + 1)) ℤ),
+      ¬ ComputablePred (fun a : ℤ =>
+        ∃ x : Fin n → ℤ, eval (Fin.cons a x) p = 0) := by sorry
+
 /-- The actual embedded integer subset of the rational field. -/
 def rationalIntegers : Set ℚ := {x | ∃ z : ℤ, (z : ℚ) = x}
 
@@ -86,10 +92,14 @@ theorem universal_integers :
 theorem rational_nonintegers_diophantine :
     rationalDiophantine rationalIntegersᶜ := by sorry
 
-/-- The complement of rational squares includes every negative rational and
-excludes zero (Koenigsmann, Proposition 21(b), p.88). -/
-theorem rational_nonsquares_diophantine :
-    rationalDiophantine {x : ℚ | ¬ ∃ y : ℚ, y ^ 2 = x} := by sorry
+/-- One fixed universal-existential polynomial family over ℚ has a
+noncomputable truth predicate on natural parameters (§4.25; Koenigsmann,
+Corollaries 3 and 3′, p.74, with the one-parameter MRDP reduction). -/
+theorem forall_exists_rational_undecidable :
+    ∃ (k l : ℕ) (q : MvPolynomial (Fin (1 + k + l)) ℤ),
+      ¬ ComputablePred (fun a : ℕ => ∀ x : Fin k → ℚ, ∃ y : Fin l → ℚ,
+        eval₂ (Int.castRingHom ℚ)
+          (Fin.append (Fin.append ![(a : ℚ)] x) y) q = 0) := by sorry
 
 /-- Exactly one universal rational variable, followed by a fixed finite
 existential block (Koenigsmann, Corollary 22, pp.90–91). -/
@@ -100,7 +110,7 @@ theorem one_universal_variable :
           eval₂ (Int.castRingHom ℚ) (Fin.cons t (Fin.cons x y)) p = 0 := by sorry
 
 /-- Over every number field, the nonzero elements that are not r-th powers,
-for r>1, form a Diophantine set in finite-system normal form (§4.31;
+for r>1, form a Diophantine set in finite-system normal form (§4.30;
 Colliot-Thélène–Van Geel, Theorem 4.3, arXiv v1, pp.16–17). -/
 theorem nonpowers_diophantine (k : Type*) [Field k] [NumberField k]
     (r : ℕ) (hr : 1 < r) :
@@ -121,19 +131,19 @@ def IsOMinimalExpansion (L : FirstOrder.Language) [L.Structure ℝ] : Prop :=
     (frontier {x : ℝ | (fun _ : Fin 1 => x) ∈ s}).Finite
 
 /-- The union of connected positive-dimensional semialgebraic subsets of X
-(§6.15). A connected semialgebraic set has positive dimension precisely when
+(§6.11). A connected semialgebraic set has positive dimension precisely when
 it contains two distinct points. -/
 def algebraicPart {n : ℕ} (X : Set (Fin n → ℝ)) : Set (Fin n → ℝ) :=
   {x | ∃ S : Set (Fin n → ℝ), S ⊆ X ∧ TauCeti.IsSemialgebraic S ∧
     IsConnected S ∧ ¬ S.Subsingleton ∧ x ∈ S}
 
-/-- Maximum reduced numerator/denominator height of a rational tuple (§6.16),
+/-- Maximum reduced numerator/denominator height of a rational tuple (§6.12),
 with height one for the empty tuple. Each coordinate term, cast to ℝ,
 equals `Height.mulHeight₁ (x i)` by `Rat.mulHeight₁_eq_max`. -/
 def rationalTupleHeight {n : ℕ} (x : Fin n → ℚ) : ℕ :=
   max 1 (Finset.univ.sup fun i => max (x i).num.natAbs (x i).den)
 
-/-- Pila–Wilkie (§6.18): the number of rational points outside a definable
+/-- Pila–Wilkie (§6.14): the number of rational points outside a definable
 fibre's algebraic part with maximum height at most T is at most C T^ε,
 uniformly in the parameter and in T≥1. -/
 theorem pila_wilkie (L : FirstOrder.Language) [L.Structure ℝ]
@@ -150,7 +160,7 @@ theorem pila_wilkie (L : FirstOrder.Language) [L.Structure ℝ]
 
 /-- Algebraic points of coordinatewise degree at most k and absolute
 multiplicative height at most T outside each definable fibre's algebraic part
-satisfy C T^ε uniformly in the parameter and T≥1 (§6.20; Pila 2009,
+satisfy C T^ε uniformly in the parameter and T≥1 (§6.16; Pila 2009,
 Theorems 1.6 and 5.3). Explicit algebraicity excludes total-function junk values. -/
 theorem bounded_degree_counting (L : FirstOrder.Language) [L.Structure ℝ]
     (hL : IsOMinimalExpansion L) (n m : ℕ)

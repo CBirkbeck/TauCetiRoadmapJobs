@@ -5,6 +5,12 @@
       "needs": "Perfectness of the Galois-equivariant Grothendieck pairing on geometric component groups of an arbitrary abelian variety and its dual over a nonarchimedean local field with finite residue field, without semistability.",
       "supplier": "NeronModelsAndSemistableAbelianVarieties",
       "section": "4.6"
+    },
+    {
+      "slug": "general-ominimal-block-foundations",
+      "needs": "Cell decomposition, definable dimension and definable choice for arbitrary o-minimal expansions of the real field, sufficient for B2.6 and supplied independently of LogicAndDefinabilityInNumberTheory §§6.4–6.5.",
+      "supplier": "AbelianSchemesAndArithmeticModuliPartII",
+      "section": "B2.6"
     }
   ]
 }
