@@ -1,0 +1,208 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "SheafTheoreticSmithTheory"
+
+[[source]]
+id = "Feng24"
+authors = "Tony Feng; Appendix A jointly with Gus Lonergan"
+title = "Smith theory and cyclic base change functoriality"
+year = 2024
+venue = "Forum of Mathematics, Pi 12"
+doi = "10.1017/fmp.2023.32"
+locator_scheme = "theorem"
+locator = "Sections 3–4; Definition 5.14; Lemma 5.15; Construction 5.17; Appendix A, pp.13–30,42–43,56–61"
+url = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/76E09C985494E340189BDD496BDBD3C1/S205050862300032Xa.pdf/smith-theory-and-cyclic-base-change-functoriality.pdf"
+fetched_from = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/76E09C985494E340189BDD496BDBD3C1/S205050862300032Xa.pdf/smith-theory-and-cyclic-base-change-functoriality.pdf"
+fetched_at = "2026-10-25T12:18:06Z"
+sha256 = "665ae06a29b85c1c89f8b074037f295ed308c4138134af061c94aafaa1fd1b2c"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["coefficients", "actions", "equivariant-derived", "cyclic-flat-free", "flat-complexes", "tor-detection", "tate-categories", "tate-periodicity", "tate-cohomology", "tate-exact-sequence", "trivial-action-tate", "integral-tate-stratification", "finite-tor-pushforward", "lft-compact-support", "free-quotient-flat", "near-fixed-flat", "fixed-restrictions", "smith", "flat-pushforward", "tate-six-operations", "smith-pushforward", "smith-localization", "modular-satake", "satake-standard-comparison", "tilting-category", "tilting-tensor", "derived-tilting-generation", "jmw-stratification", "parity-complex", "parity-indecomposables", "grassmannian-parity", "parity-tilting", "parity-product", "integral-tate-hom", "tate-parity", "tate-parity-indecomposables", "parity-reduction", "normalized-parity", "parity-lift", "fixed-grassmannian", "norm-functor", "norm-stalks", "smith-preserves-parity", "categorical-tate-diagonal", "frobenius-category", "satake-prime-field-form", "base-change-functor", "hyperbolic-localization", "extreme-orbits", "constant-term-satake", "constant-term-smith", "constant-term-lifting", "torus-base-change", "base-change-characters", "reductive-comparison-maps", "feng-base-change", "constant-term-conservative", "norm-smith-exact", "equivariantization", "base-change-galois", "integral-comparison-objects", "norm-image-comparison", "algebra-tate-diagonal", "tate-character-extension", "frobenius-algebra"]
+version_note = "Version of record read; all theorem and page locators use the published 66-page text. The arXiv v6 counterpart is the same work with different pagination and is not used for page locators."
+
+[[source]]
+id = "LL21"
+authors = "Spencer Leslie, Gus Lonergan"
+title = "Parity Sheaves and Smith Theory"
+year = 2021
+arxiv = "1708.08174v4"
+locator_scheme = "theorem"
+locator = "§§4.5.2–4.6.1, pp.14–15: integral Tate cohomology and the graded Hom formula; §§4.9–5.2.1, pp.19–20: trivial-action passage and stratification assumptions; §§5.5–5.6, pp.21–25: indecomposables and lifting"
+url = "https://arxiv.org/abs/1708.08174v4"
+fetched_from = "https://arxiv.org/pdf/1708.08174v4"
+fetched_at = "2026-10-25T12:16:21Z"
+sha256 = "339b2e57ababc44df85b1adbe3e614e48ffb5f8daed3f971fd9fa8fd05b057ff"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v4; README locators use this preprint numbering and pagination, with the published year recorded."
+cited_for = ["integral-tate-stratification", "integral-tate-hom", "tate-parity", "tate-parity-indecomposables", "normalized-parity", "parity-lift"]
+
+[[source]]
+id = "JMW14"
+authors = "Daniel Juteau, Carl Mautner, Geordie Williamson"
+title = "Parity Sheaves"
+year = 2014
+venue = "Journal of the American Mathematical Society 27 (4), 1169-1212 (2014)"
+doi = "10.1090/S0894-0347-2014-00804-3"
+arxiv = "0906.2994v3"
+locator_scheme = "theorem"
+locator = "§2.1, pp.4–6: even local-system Hom and parity conventions; Theorem 2.12 and Definition 2.14, pp.7–8; Proposition 2.39 and formula (2.13), pp.17–18"
+url = "https://arxiv.org/abs/0906.2994v3"
+fetched_from = "https://arxiv.org/pdf/0906.2994v3"
+fetched_at = "2026-10-25T12:16:27Z"
+sha256 = "cb18832f73adb0b0ccc74d34f9f92b0ab52a9b275351c3658ee3f8f5eb88f3b4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v3; README locators use this preprint numbering and pagination, with the published year recorded."
+cited_for = ["jmw-stratification", "parity-complex", "parity-indecomposables", "parity-reduction"]
+
+[[source]]
+id = "JMW16"
+authors = "Daniel Juteau, Carl Mautner, Geordie Williamson"
+title = "Parity sheaves and tilting modules"
+year = 2016
+venue = "Ann. Sci. Éc. Norm. Supér. (4) 49 (2016), no. 2, 257-275"
+arxiv = "1403.1647v1"
+locator_scheme = "theorem"
+locator = "§1, pp.1–3: Theorems 1.1–1.6 and prime bounds; Appendix §5, pp.15–16: Theorems 5.1 and 5.3 and relation to good filtrations"
+url = "https://arxiv.org/abs/1403.1647v1"
+fetched_from = "https://arxiv.org/pdf/1403.1647v1"
+fetched_at = "2026-10-25T12:16:32Z"
+sha256 = "3c10a0246ac6cf593808cc2d07dbd3b908f2968048d46b4c560b5b5ae601a9c6"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v1; README locators use this preprint numbering and pagination, with the published year recorded."
+cited_for = ["tilting-category", "tilting-tensor", "grassmannian-parity", "norm-functor"]
+
+[[source]]
+id = "MR18"
+authors = "Carl Mautner, Simon Riche"
+title = "Exotic tilting sheaves, parity sheaves on affine Grassmannians, and the Mirkovic-Vilonen conjecture"
+year = 2018
+arxiv = "1501.07369v3"
+locator_scheme = "theorem"
+locator = "§§1.2–1.4, pp.2–4: the precise Iwahori-parity/exotic-tilting equivalence and its grading; Corollary 1.6, pp.6–7; §6.5, p.60: reduction of Corollary 1.6 to the exotic equivalence of Theorem 1.1"
+url = "https://arxiv.org/abs/1501.07369v3"
+fetched_from = "https://arxiv.org/pdf/1501.07369v3"
+fetched_at = "2026-10-25T12:16:39Z"
+sha256 = "48c15e732a9874e207769f1bb86e532ff97d10a2a9750fafedbcdd2cf3aca954"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v3; README locators use this preprint numbering and pagination, with the published year recorded."
+cited_for = ["parity-tilting"]
+
+[[source]]
+id = "MV07"
+authors = "I. Mirkovic, K. Vilonen"
+title = "Geometric Langlands duality and representations of algebraic groups over commutative rings"
+year = 2007
+arxiv = "math/0401222v5"
+locator_scheme = "theorem"
+locator = "Introduction, p.1; §3, pp.9–13: Theorems 3.2, 3.5, 3.6 and extremal orbit calculation (3.6); §4.1–4.4, pp.13–14: coefficient-sensitive convolution; §6, pp.20–22: tensor structure of weight functors; §11 and beginning of §12, pp.31–34: integral reconstruction and root-datum target; §§12–14, pp.38–40: final reductions, standards/costandards and étale variant Theorem 14.1"
+url = "https://arxiv.org/abs/math/0401222v5"
+fetched_from = "https://arxiv.org/pdf/math/0401222v5"
+fetched_at = "2026-10-25T12:16:45Z"
+sha256 = "b3fa89de4f2aeefadaba248aba2e942a20fc0895b8a218dfcab93322b4140e21"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v5; README locators use this preprint numbering and pagination, with the published year recorded."
+cited_for = ["modular-satake", "satake-standard-comparison", "hyperbolic-localization", "extreme-orbits", "constant-term-satake"]
+
+[[source]]
+id = "Stacks"
+locator_scheme = "tag"
+locator = "Algebra Lemmas 10.101.1–10.101.3 (051E); Cohomology on Sites Lemmas 21.46.3 (08G1) and 21.46.10 (0DJJ); More on Algebra Definition 15.70.1 (0A5M); Fields Lemma 9.13.1 (0CKL), Section 0CKK"
+url = "https://stacks.math.columbia.edu/tag/051E"
+fetched_from = "https://stacks.math.columbia.edu/download/algebra.pdf#nameddest=051E"
+fetched_at = "2026-10-25T12:18:17Z"
+sha256 = "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["cyclic-flat-free", "tor-detection"]
+year = 2026
+authors = "The Stacks Project Authors"
+title = "The Stacks Project"
+version_note = "Chapter-specific line locators: Algebra for 051E, Cohomology on Sites for 08G1 and 0DJJ, More on Algebra for 0A5M, and Fields for 0CKK/0CKL. Four legally fetched chapter texts, one work key."
+
+[[source.parts]]
+chapter = "Algebra"
+locator = "051E"
+url = "https://stacks.math.columbia.edu/tag/051E"
+fetched_from = "https://stacks.math.columbia.edu/download/algebra.pdf#nameddest=051E"
+fetched_at = "2026-10-25T12:18:17Z"
+sha256 = "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947"
+licence_class = "open-repository"
+status = "certified"
+
+[[source.parts]]
+chapter = "Cohomology on Sites"
+locator = "08G1"
+url = "https://stacks.math.columbia.edu/tag/08G1"
+fetched_from = "https://stacks.math.columbia.edu/download/sites-cohomology.pdf#nameddest=08G1"
+fetched_at = "2026-10-25T12:18:21Z"
+sha256 = "f1af633f357c96051dabe6e6c26e0d62a16685bdc7ff81a195dfd75c5e0b2c2a"
+licence_class = "open-repository"
+status = "certified"
+
+[[source.parts]]
+chapter = "More on Algebra"
+locator = "0A5M"
+url = "https://stacks.math.columbia.edu/tag/0A5M"
+fetched_from = "https://stacks.math.columbia.edu/download/more-algebra.pdf#nameddest=0A5M"
+fetched_at = "2026-10-25T12:18:35Z"
+sha256 = "ab69179738e642603ddbde651f2838e1cb5d8711e8bcd7c447cbf02a8bb6a5d2"
+licence_class = "open-repository"
+status = "certified"
+
+[[source.parts]]
+chapter = "Fields"
+locator = "0CKK"
+url = "https://stacks.math.columbia.edu/tag/0CKK"
+fetched_from = "https://stacks.math.columbia.edu/download/fields.pdf#nameddest=0CKK"
+fetched_at = "2026-10-25T12:18:38Z"
+sha256 = "c7b01202a2ec2b6d43c729a026a086f7d49508dfa439d511f6adc64c9565cd1b"
+licence_class = "open-repository"
+status = "certified"
+
+[[source]]
+id = "Braden03"
+authors = "Tom Braden"
+title = "Hyperbolic localization of intersection cohomology"
+year = 2003
+venue = "Transformation Groups 8 (2003), no. 3, 209-216"
+arxiv = "math/0202251v5"
+locator_scheme = "theorem"
+locator = "Theorem 1 and coefficient/weak-equivariance hypotheses, pp.1–2; §§2–4, pp.4–6: invariant local models, contraction Lemma 6 and proof of Theorem 1; §6, pp.7–8: proof of the contraction lemma"
+url = "https://arxiv.org/abs/math/0202251v5"
+fetched_from = "https://arxiv.org/pdf/math/0202251v5"
+fetched_at = "2026-10-25T12:16:50Z"
+sha256 = "a224c3d11819195bacf713777d4f08e7e63b2007772559d0accf387a51c27275"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v5; README locators use this preprint numbering and pagination, with the published year recorded."
+cited_for = ["hyperbolic-localization"]
+
+[[source]]
+id = "TV16"
+authors = "David Treumann, Akshay Venkatesh"
+title = "Functoriality, Smith theory, and the Brauer homomorphism"
+year = 2016
+arxiv = "1407.2346v1"
+locator_scheme = "theorem"
+locator = "§2.1, p.5: Frobenius twist of a k-vector space; §3.4 and (3.4.1), pp.11–12: Tate cohomology of a commutative algebra and the bijection on characters"
+url = "https://arxiv.org/abs/1407.2346v1"
+fetched_from = "https://arxiv.org/pdf/1407.2346v1"
+fetched_at = "2026-10-25T12:16:57Z"
+sha256 = "34e2416f08ba0dc4a4fb8369875ef3d9f5a5b2ef8290733545442801baec9ee8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v1; README locators use this preprint numbering and pagination, with the published year recorded."
+cited_for = ["tate-character-extension", "frobenius-algebra"]
