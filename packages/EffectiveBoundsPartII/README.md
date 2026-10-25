@@ -726,19 +726,19 @@ r,d≥1 and C≥0 are integers; use the isolated-affine-point contract of Scheme
 
 For r,d≥1 and C≥0, the number of ℚ-isomorphism classes of fields that occur as residue fields of components of Jacobian-open algebras A_E for E∈Box(r,d,C) is at most (2C+1)^(rM) d^r. The same bound holds after restriction to exact degree n and |disc|≤H. This uses a surjection from pairs (equation tuple, field factor) onto the represented classes, not an injection from fields to tuples. (COU20 line 425, §4, p. 496, final isolated-point intersection argument; Theorem 2 p. 488).
 
-A proof route is as follows. For each E use the imported finite-etale classification of A_E. Its factors give a finite set of residue-field classes; repeated isomorphic factors contribute just one class but can be overcounted. After base change to an algebraic closure of ℚ, the geometric point count is the sum of the factor degrees and is at most d^r by the isolated-affine-point contract. Each factor has positive degree, so the number of factors is also at most d^r. Form the finite disjoint union of these factor sets over the coefficient box and map each pair to its field-isomorphism class. Its image is precisely the represented set. Apply the coefficient-box count. Restricting degree or discriminant can only decrease the image size.
+A proof route is as follows. For every E∈Box(r,d,C), apply SchemeAndStackFoundations §0.10, `jacobian_etale_algebra` over ℚ, to make A_E étale and finitely presented. Apply the imported field-base finite-etale classification. Its factors give a finite set of residue-field classes; repeated isomorphic factors contribute just one class but can be overcounted. After base change to an algebraic closure of ℚ, the geometric point count is the sum of the factor degrees and is at most d^r by the isolated-affine-point contract. Each factor has positive degree, so the number of factors is also at most d^r. Form the finite disjoint union of these factor sets over the coefficient box and map each pair to its field-isomorphism class. Its image is precisely the represented set. Apply the coefficient-box count. Restricting degree or discriminant can only decrease the image size.
 
 **Checks.**
 
 - For E=(X²−2)(X²−3)=X⁴−5X²+6, there are four geometric points, two degree-two field factors and two isomorphism classes. Their discriminants 8 and 12 exclude a ℚ-algebra equivalence. For r=1,d=4,C=6, the family size satisfies 2≤13⁵·4=1485172. One model need not mean one field.
-- For E=X(X−1), there are two geometric points and two field factors, both ℚ, giving only one class. A family with two copies of ℚ fails pairwise nonisomorphism; one copy satisfies it and gives 1≤3³·2=54 for r=1,d=2,C=1. The factor-to-class map need not be injective.
+- For E=X(X−1), there are two geometric points and two field factors, both ℚ, giving only one class. A family with two copies of ℚ fails pairwise nonisomorphism; one copy satisfies it and gives 1≤3³·2=54 for r=1,d=2,C=1. Here J=2X−1 has values −1 and 1 at 0 and 1, so A_E≃ℚ×ℚ is étale by the general supplier contract even though d=2<5. Requiring a §3.5 selection would exclude this box system. The factor-to-class map need not be injective.
 - For E=X², the Jacobian-open algebra is zero: zero geometric points, zero field factors and zero represented classes, consistent with the empty product.
 - For X(X−1),XY, the affine zero locus contains a line and one isolated simple point. The point count 1≤2²=4 remains valid in the presence of the line.
 - The empty family has m=0 and satisfies 0≤(2C+1)^(rM)d^r. For C=0 and r≥1, all equations and their Jacobian vanish, so the localized algebra is zero and no nonempty family admits the required surjections onto fields.
 
 For (X²−2)(X²−3) one equation represents two distinct quadratic classes, so a one-model-one-field argument fails. The Bézout hypothesis is in arbitrary dimension; a plane-only statement would not establish this target. No factor n/#Aut(K) appears in the unweighted class count.
 
-*Needs:* §5.4; §4.1; TauCetiRoadmap.SchemeAndStackFoundations §5.12 and the isolated-affine-point contract; TauCetiRoadmap.ArithmeticStatisticsPartI, Layer 0, “Number fields ordered by discriminant”; Mathlib `Algebra.Etale.iff_exists_algEquiv_prod`; Mathlib `NumberField.discr_eq_discr_of_algEquiv`.
+*Needs:* §5.4; §4.1; TauCetiRoadmap.SchemeAndStackFoundations §0.10, `jacobian_etale_algebra` over ℚ, for every system of the box; TauCetiRoadmap.SchemeAndStackFoundations §5.12 and the isolated-affine-point contract; TauCetiRoadmap.ArithmeticStatisticsPartI, Layer 0, “Number fields ordered by discriminant”; Mathlib `Algebra.Etale.iff_exists_algEquiv_prod`; Mathlib `NumberField.discr_eq_discr_of_algEquiv`.
 
 ### 5.6 A cubic-logarithmic discriminant exponent
 
@@ -767,7 +767,7 @@ The least ranks r(1),r(2),r(14),r(15) are 1,2,4,5. A coefficient box with r=2,d=
 
 ### Dependencies
 
-Layer 4; GenericDoublePointInterpolation §0.1; SchemeAndStackFoundations §5.12 and the isolated-affine-point contract; ArithmeticStatisticsPartI, Layer 0, “Number fields ordered by discriminant”; the completed Hermite infrastructure. Central-binomial parameter choice and coefficient boxes are independent of the field-component construction.
+Layer 4; GenericDoublePointInterpolation §0.1; SchemeAndStackFoundations §0.10 for every system of the box, and §5.12 with the isolated-affine-point contract; ArithmeticStatisticsPartI, Layer 0, “Number fields ordered by discriminant”; the completed Hermite infrastructure. Central-binomial parameter choice and coefficient boxes are independent of the field-component construction.
 
 ## Downstream consumers
 
