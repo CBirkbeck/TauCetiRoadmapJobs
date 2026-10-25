@@ -38,13 +38,15 @@ The following headline theorems are not statable at the pins:
 * SLn/PGLn topological mirror symmetry: lacks stable SL/PGL Higgs moduli, geometric Hodge cohomology and gerbe-twisted stringy invariants.
 * Canonical-twist Hodge numbers: lacks stable SL/PGL Higgs moduli, geometric Hodge cohomology and gerbe-twisted stringy invariants.
 * The justified fibrewise virtual comparison: lacks Hitchin-fibre and inertia-fibre étale cohomology as continuous Galois complexes, with gerbe coefficients and age twists.
-* The stronger fibrewise Galois-isomorphism target: lacks Hitchin-fibre and inertia-fibre étale cohomology as continuous Galois complexes, with gerbe coefficients and age twists.
+* The stronger ungraded fibrewise Galois isomorphism of README §5.4: lacks the actual Hitchin-fibre and inertia-sector compact cohomology representations, their gerbe local systems, centralizer invariants and Frobenius descent with fractional age Tate twists; the target takes direct sums over all ordinary degrees without cohomological shifts.
 * Determinant variation of inertia-sector traces: lacks determinant-twisted stable Higgs moduli, their inertia-sector cohomology and the geometric Weil-pairing normalization.
 * Character-isotypic mirror symmetry: lacks determinant-twisted stable Higgs moduli, their inertia-sector cohomology and the geometric Weil-pairing normalization.
 
-The actual fibrewise Galois-isomorphism target also requires a mathematical proof
-of degree separation and arithmetic semisimplicity, or an independent geometric
-comparison. Equality of alternating traces does not supply these assertions.
+The actual ungraded fibrewise Galois-isomorphism target also requires a geometric
+comparison, or recovery of nonalternating multiplicities followed by arithmetic
+semisimplicity. It asserts no derived or degreewise comparison. The canonical
+stringy grading belongs to the separate Hodge-number theorem in README §5.2.
+Equality of alternating traces does not supply these assertions.
 -/
 
 namespace TauCetiRoadmap.TopologicalMirrorSymmetryForHitchinSystems
