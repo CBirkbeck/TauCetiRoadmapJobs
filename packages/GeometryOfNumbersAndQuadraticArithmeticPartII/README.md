@@ -14,7 +14,7 @@ The following constructions and theorems are owned elsewhere and are imported wi
 - GeometryOfNumbersAndQuadraticArithmetic §6.10a owns both integer L-tables, the signature and signature-divided-by-eight normalizations, and multiplication by eight under symmetrization. The integral Witt groups in §4.2 and the integer tables among the examples are supplied consequences, not new classifications. The new E₈ calculation is its actual quadratic refinement modulo two.
 - QuadraticFormInvariants Layers 4, 6 and 9 owns odd-characteristic field Witt theory, nonarchimedean classification, Hilbert symbols and transfer. GlobalQuadraticForms §§8.1–8.3 owns number-field Hasse–Minkowski, classification and global Witt injectivity. No global-function-field theorem is inferred from its number-field scope.
 - Completed/IntegralLattices Layers 1–5 and IntegralLattices' signature theory own the integral lattice, dual, unimodularity, evenness and E₈. KTheoryFiniteLocalFields §1.7 owns the perfect-characteristic-two symmetric comparison; its symmetric rank coordinate is distinct from the quadratic Arf coordinate.
-- SchemeAndStackFoundations §§0.14–0.15 and 0.21 owns henselian lifting, Néron–Popescu and regular completion inputs. GeneralAlgebraicKTheory §§11.3–11.4 and 11.15 owns dense triangulated subcategories and ordinary nonconnective localization. These generic theories are consumed, not reconstructed.
+- SchemeAndStackFoundations §§0.13–0.15 and 0.21 owns henselizations of pairs, henselian lifting, Néron–Popescu and G-rings; the regularity of ideal-adic completions of G-rings and of their henselizations is requested from its §0.21 as a supplier contract. GeneralAlgebraicKTheory §§11.3–11.4 and 11.15 owns dense triangulated subcategories and ordinary nonconnective localization. Homotopy groups, fibres, cofibres, long exact sequences and detection of equivalences in the shared spectrum category carrying the L-spectra are GeometryOfNumbersAndQuadraticArithmetic §6.1a's. These generic theories are consumed, not reconstructed.
 
 ## Conventions
 
@@ -22,13 +22,13 @@ R is a commutative Dedekind domain with fraction field K unless a statement expl
 
 A quadratic form q has full polar b(x,y)=q(x+y)−q(x)−q(y). Nonsingularity means the adjoint P→Hom_R(P,R) of b is an isomorphism. For symmetric forms the same condition is imposed on the pairing itself. Nonzero determinant is insufficient over a ring. A Lagrangian is a direct summand equal to its perpendicular; the quadratic form must also vanish on it. Ws(R) and Wq(R) are the corresponding metabolic Witt groups. Their rank-zero representatives are zero, with perfect adjoint 0→0. The zero ring has only the zero module and both theories vanish. Over a field of characteristic two a nonzero square on a line has zero polar and is excluded.
 
-Ls and Lq denote positive-sign periodic symmetric and quadratic Poincaré L-spectra; L_n=π_n for n∈ℤ. Genuine symmetric theory is denoted Lgs and is kept distinct. The negative-sign theory is Σ² of the positive-sign theory: its degree n is positive degree n−2. Four-periodicity also identifies n−2 with n+2, but suspension itself uses subtraction. In characteristic two the sign involutions coincide, giving the specified two-periodic theories. The homotopy pullback of A→D←B uses the difference map A⊕B→D, (a,b)↦f(a)−g(b). (CDHHLMNNS-III-v4, Remarks 2.3.3 and 2.3.11, pp.42 and 45; lines 1933 and 2097; StableHomotopyKTheory §§5.7–5.9.)
+Ls and Lq denote positive-sign periodic symmetric and quadratic Poincaré L-spectra; L_n=π_n for n∈ℤ. Genuine symmetric theory is denoted Lgs and is kept distinct. The negative-sign theory is Σ² of the positive-sign theory: its degree n is positive degree n−2. Four-periodicity also identifies n−2 with n+2, but suspension itself uses subtraction. In characteristic two the sign involutions coincide, giving the specified two-periodic theories. The homotopy pullback of A→D←B uses the difference map A⊕B→D, (a,b)↦f(a)−g(b); for f=g=id on ℤ it sends (1,1) to 0 and (2,1) to +1. (CDHHLMNNS-III-v4, Remarks 2.3.3 and 2.3.11, pp.42 and 45; lines 1933 and 2097; GeometryOfNumbersAndQuadraticArithmetic §6.1a.)
 
 For a nonzero prime p, the unshifted residue line is lₚ=p⁻¹/R after localization at p. Its derived coefficient has shift −1. A uniformizer trivializes the line only for a displayed residue coordinate. The second residue uses bilinear diagonal coefficients: ∂ₚ⟨πu⟩=⟨ū⟩. A change π′=vπ changes the displayed Witt coefficient by v̄⁻¹ up to squares. Canonical line-valued maps are independent of this choice; ramified base change retains its linking comparison. Direct sums over primes always mean finite support. (CDHHLMNNS-III-v4, Lemma 2.2.2 and Lemma 2.2.9, pp.37 and 40; line 1840.)
 
 When char K≠2, I is the finite set of primes containing two, d=|I|, and C is the ordinary (2)-adic completion. No finiteness or perfection is imposed on a residue field unless stated. For a general ring, comparison of ordinary and derived completion is an explicit hypothesis; a Dedekind domain of fraction characteristic different from two is two-torsion-free. Pic(R)/2 is a cokernel, not the subgroup of two-torsion. The obstruction A(R) is a quotient by the sum of two images. An exact extension involving it is not given a splitting. (CDHHLMNNS-III-v4, Proposition 2.3.9, pp.44–45; line 2044.)
 
-In characteristic two the Arf coordinate over a finite field is the absolute trace to 𝔽₂. In characteristic different from two, symmetric diagonal coefficients are read as the same diagonal coefficients in the native field Witt ring. This is a unital tensor-ring identification B↦(x↦B(x,x)); the inverse of polarisation instead uses B(x,x)/2 and is an additive comparison. These two comparisons differ by the line ⟨2⟩. For an n-dimensional bilinear form, plain determinant is det B and signed determinant is (−1)^(n(n−1)/2)det B modulo squares. E₈ has positive Gram matrix, roots of norm two, and quadratic refinement q(x)=B(x,x)/2.
+In characteristic two the Arf coordinate over a finite field is the absolute trace to 𝔽₂. In characteristic different from two, symmetric diagonal coefficients are read as the same diagonal coefficients in the native field Witt ring. This is a unital tensor-ring identification B↦(x↦B(x,x)); the inverse of polarisation instead uses B(x,x)/2 and is an additive comparison. These two comparisons differ by the line ⟨2⟩. For an n-dimensional bilinear form, plain determinant is det B and signed determinant is (−1)^(n(n−1)/2)det B modulo squares. Over a local field the Hasse invariant of a diagonal form ⟨a₁,…,aₙ⟩ is the product Π_(i<j)(aᵢ,aⱼ) of Hilbert symbols, which is +1 in ranks zero and one. Adding a hyperbolic plane to a form of determinant d multiplies it by (d,−1), so Witt classes are compared through rank, determinant and Hasse invariant only after stabilizing to equal dimension. E₈ has positive Gram matrix, roots of norm two, and quadratic refinement q(x)=B(x,x)/2.
 
 ## Exact supplier contracts
 
@@ -42,15 +42,15 @@ For the Eisenstein arithmetic consume `IsCyclotomicExtension.Rat.isIntegralClosu
 
 ### From Tau Ceti
 
-Consume `TauCeti.WittRing`, `TauCeti.wittClass`, `TauCeti.regularFormSetoid`, and `TauCeti.WittRing.dimMod2` from `TauCeti/LinearAlgebra/QuadraticForm/Witt/Ring.lean` and its imports. The carrier requires a field with two invertible. Its unit is ⟨1⟩ and its relations kill hyperbolic planes. It cannot serve as a ring-valued integral Witt group or a characteristic-two quadratic Witt group. Scalar extension is `TauCeti.WittRing.baseChange` in `Witt/BaseChange.lean`. Transfer and Frobenius reciprocity are `TauCeti.WittRing.scharlauTransfer` and `TauCeti.WittRing.scharlauTransfer_baseChange_mul` in `Transfer/Witt.lean`, for a finite field extension and a nonzero linear functional. The functional in §5.5 is specified on a basis.
+Consume `TauCeti.WittRing`, `TauCeti.wittClass`, `TauCeti.regularFormSetoid`, and `TauCeti.WittRing.dimMod2` from `TauCeti/LinearAlgebra/QuadraticForm/Witt/Ring.lean` and its imports. The carrier requires a field with two invertible. Its unit is ⟨1⟩ and its relations kill hyperbolic planes. It cannot serve as a ring-valued integral Witt group or a characteristic-two quadratic Witt group. Consume `TauCeti.oneFoldPfisterClass` from `Witt/FundamentalIdeal.lean`, the class ⟨⟨a⟩⟩=⟨1,−a⟩ of a unit a; thus v=⟨1,−2⟩ is ⟨⟨2⟩⟩ and c=⟨1,3⟩ is ⟨⟨−3⟩⟩. For ℚ₂ the invertibility of two is Mathlib's instance `invertibleTwo` for division semirings of characteristic zero (`Algebra/CharP/Invertible.lean`). Scalar extension is `TauCeti.WittRing.baseChange` in `Witt/BaseChange.lean`. Transfer and Frobenius reciprocity are `TauCeti.WittRing.scharlauTransfer` and `TauCeti.WittRing.scharlauTransfer_baseChange_mul` in `Transfer/Witt.lean`, for a finite field extension and a nonzero linear functional. The functional in §5.5 is specified on a basis.
 
-Consume `TauCeti.hilbertSymbol_padicTwo` in `TauCeti/NumberTheory/LocalField/QuadraticForm/PadicTwo.lean`, and `TauCeti.RegularFormClass.eq_iff_rank_eq_and_discr_eq_and_localHasse_eq` in `Classification.lean`, with its field, nonarchimedean local topology, valuation and invertibility hypotheses. In the formula a=2^αu, b=2^βv, the exponent is ε(u)ε(v)+αω(v)+βω(u) modulo two, where ε(u)=(u−1)/2 and ω(u)=(u²−1)/8 modulo two. Thus (−1,−1)₂=−1 and (2,5)₂=−1; (−1,2)₂=+1.
+Consume `TauCeti.hilbertSymbol_padicTwo` in `TauCeti/NumberTheory/LocalField/QuadraticForm/PadicTwo.lean`, and `TauCeti.RegularFormClass.eq_iff_rank_eq_and_discr_eq_and_localHasse_eq` in `Classification.lean`, with its field, nonarchimedean local topology, valuation and invertibility hypotheses. Its Hasse invariant is `TauCeti.RegularFormClass.localHasse` in `Hasse.lean`, the product Π_(i<j)(aᵢ,aⱼ) of the Conventions. In the formula a=2^αu, b=2^βv, the exponent is ε(u)ε(v)+αω(v)+βω(u) modulo two, where ε(u)=(u−1)/2 and ω(u)=(u²−1)/8 modulo two. Thus (−1,−1)₂=−1 and (2,5)₂=−1; (−1,2)₂=+1.
 
 Consume `IsDedekindDomain.HeightOneSpectrum.isAdicComplete_adicCompletionIntegers` and `IsDedekindDomain.HeightOneSpectrum.residueFieldEquivAdicCompletionIntegers` in `TauCeti/RingTheory/DedekindDomain/AdicValuation/Completion.lean`. They supply complete DVR integers and the canonical residue-field equivalence for an arbitrary Dedekind domain and its fraction field. They do not require a finite residue field. The native `TauCeti.IntegralLattice` in `TauCeti/LinearAlgebra/IntegralLattice/Basic.lean` supplies the rational ambient lattice and integral symmetric form used with the E₈ supplier.
 
 ### From TauCetiRoadmap.GeometryOfNumbersAndQuadraticArithmetic
 
-Consume §§6.2–6.5's symmetric spaces and metabolic Witt group; §6.8a's perfect derived enhancement, invertible coefficients with involution, quadratic/symmetric/genuine Poincaré structures, stable GW and L, localizing invariance and filtered-colimit compatibility; §§6.8a–6.9's canonical residue line, shifted torsion duality and symmetric dévissage; and §6.10a's integral invariant maps and L-tables. Section 6.9.2 supplies the valuation-defined overring R_S even when no single element can invert exactly S. Section 6.9.3's GW localization is combined with §6.8a's L-localization and symmetric heart dévissage, preserving the residue shift.
+Consume §6.1a's shared spectrum category, in which the L-spectra live, with its integer homotopy groups, fibres, cofibres, their long exact sequences and detection of equivalences by all integer homotopy groups; §§6.2–6.5's symmetric spaces and metabolic Witt group; §6.8a's perfect derived enhancement, invertible coefficients with involution, quadratic/symmetric/genuine Poincaré structures, stable GW and L, localizing invariance and filtered-colimit compatibility; §§6.8a–6.9's canonical residue line, shifted torsion duality and symmetric dévissage; and §6.10a's integral invariant maps and L-tables. Section 6.9.2 supplies the valuation-defined overring R_S even when no single element can invert exactly S. Section 6.9.3's GW localization is combined with §6.8a's L-localization and symmetric heart dévissage, preserving the residue shift.
 
 What GeometryOfNumbersAndQuadraticArithmetic must provide (gap:derived-localization-completion-square): for an associative unital ring R and a positive integer ℓ with bounded ℓ-power torsion in R, ordinary ℓ-adic completion C represents derived completion and the square R→C over R[1/ℓ]→C[1/ℓ] is a pullback in D(R).
 
@@ -78,9 +78,11 @@ Consume §§8.1–8.3's number-field classification, hyperbolicity criterion and
 
 Consume §1.7's symmetric perfect-characteristic-two equivalence and its rank-parity normalization: Ws(k)=ℤ/2 for every perfect characteristic-two field k. In particular 𝔽₂→𝔽₄ sends the symmetric unit class to the symmetric unit class. This supplies no quadratic Arf scalar-extension law and no integral dyadic quadratic rigidity theorem.
 
-### From the lattice, commutative-algebra and stable suppliers
+### From the lattice, commutative-algebra and K-theory suppliers
 
-Completed/IntegralLattices §§1–2 and Layer 5 supplies the even unimodular positive E₈ Gram model and its half-norm convention; IntegralLattices supplies the signature-divisibility theorem. SchemeAndStackFoundations §§0.14, 0.15 and 0.21 supplies henselian smooth lifting, ind-smoothness for regular Noetherian maps and the regular-completion/excellence inputs used for finite-type henselizations. GeneralAlgebraicKTheory §§11.3–11.4 and 11.15 supplies the dense K₀-image criterion and ordinary nonconnective localization. StableHomotopyKTheory §§5.5, 5.7–5.9 supplies true homotopy groups, stable fibres and their long exact sequences. For an identity pair of maps the difference on (1,1) is zero; on (2,1) it is +1. None of these imports identifies a K₀-image subcategory with all perfect complexes without a surjectivity argument.
+Completed/IntegralLattices §§1–2 and Layer 5 supplies the even unimodular positive E₈ Gram model and its half-norm convention; IntegralLattices supplies the signature-divisibility theorem. SchemeAndStackFoundations §0.13 supplies the henselization of a pair, its Noetherianity for a Noetherian base and the identifications R^h/(I^h)^n=R/I^n; §0.14 supplies henselian smooth lifting; §0.15 supplies ind-smoothness for regular maps of Noetherian rings; §0.21 supplies regular maps and G-rings, with ℤ and its finite-type algebras excellent, and regularity of the completion of a local G-ring. It does not state regularity of the ideal-adic completion of a nonlocal G-ring or the G-ring property of a henselization along an ideal; these are the contract below. GeneralAlgebraicKTheory §§11.3–11.4 and 11.15 supplies the dense K₀-image criterion and ordinary nonconnective localization. None of these imports identifies a K₀-image subcategory with all perfect complexes without a surjectivity argument.
+
+What SchemeAndStackFoundations must provide (gap:henselian-pair-completion-regular): for a Noetherian G-ring A and an ideal I⊆A, the map A→AdicCompletion I A is a regular ring map, and the henselization of the pair (A,I) is again a Noetherian G-ring (Stacks, Lemmas 15.51.14 and 15.51.15, tags 0AH2 and 0AH3).
 
 ## How to read the build
 
@@ -279,15 +281,15 @@ Apply the supplied change-of-rings criterion to the derived ring square and its 
 **Checks.**
 
 - For ℓ=1, completion is zero, R[1/ℓ]=R and the controlled category is all Perf(R); the square becomes R→0 over R→0 and is a pullback.
-- For R=ℤ, ℓ=2 and M=ℤ, the overlap is ℚ₂. The maps of units send (1,1) to 1−1=0 and (2,1) to 2−1=1; a sum map would fail to be the boundary of a complex.
+- For R=ℤ, ℓ=2 and M=ℤ, the overlap is ℚ₂. The additive difference map ℤ[1/2]⊕ℤ₂→ℚ₂, (a,b)↦a−b, sends (1,1) to 0 and (2,1) to 1, so ℤ→ℤ[1/2]⊕ℤ₂→ℚ₂ composes to zero on 1↦(1,1). The sum map would send (1,1) to 2 and fail to give a complex.
 - For the dense even-Euler subcategory of Dᵇ(k), the K₀ image is 2ℤ and k[0] has class 1 outside it. This excludes deleting a control subgroup merely because its category is dense.
 - For R=ℤ/4 and ℓ=2, power torsion is bounded and the completion is R, while R[1/2]=0. The square is an identity horizontally on top and zero below.
 
-*Needs:* GeometryOfNumbersAndQuadraticArithmetic §6.8a, gap:derived-localization-completion-square and gap:poincare-change-of-rings-criterion; HermitianKTheoryOfPoincareCategories §§4.6 and 1.6; GeneralAlgebraicKTheory §§11.3–11.4 and 11.15; StableHomotopyKTheory §§5.5 and 5.7–5.9.
+*Needs:* GeometryOfNumbersAndQuadraticArithmetic §6.8a, gap:derived-localization-completion-square and gap:poincare-change-of-rings-criterion; HermitianKTheoryOfPoincareCategories §§4.6 and 1.6; GeneralAlgebraicKTheory §§11.3–11.4 and 11.15; GeometryOfNumbersAndQuadraticArithmetic §6.1a for homotopy groups, fibres and the long exact sequence of the pullback.
 
 ### 2.3 Quadratic isometry lifting
 
-Let R have a Wall anti-structure: an anti-automorphism α and unit u with α²(a)=uau⁻¹ and α(u)=u⁻¹. Let J be a two-sided ideal preserved by α, and suppose R is complete and separated for the powers of J. For a finite projective right module, quadratic refinements are sesquilinear maps modulo the relation generated by T−1, where Tφ(x,y)=α(φ(y,x))u; nonsingularity means the adjoint of φ+Tφ is invertible. Prove projectives and nonsingular refinements lift from R/J. Every prescribed residue isometry between reductions of two such forms lifts to an isometry over R. In particular, refinements on one module agreeing modulo J are related by an automorphism congruent to the identity modulo J. For commutative R with α=id and u=1 these are the full-polar quadratic forms of Layer 0. No invertibility of two is imposed.
+Let R have a Wall anti-structure: an anti-automorphism α and unit u with α²(a)=uau⁻¹ and α(u)=u⁻¹. Let J be a two-sided ideal preserved by α, and suppose R is complete and separated for the powers of J. For a finite projective right module, quadratic refinements are sesquilinear maps, φ(xa,yb)=α(a)φ(x,y)b, modulo the relation generated by T−1, where Tφ(x,y)=α(φ(y,x))u; nonsingularity means the adjoint of φ+Tφ is invertible. Prove projectives and nonsingular refinements lift from R/J. Every prescribed residue isometry between reductions of two such forms lifts to an isometry over R. In particular, refinements on one module agreeing modulo J are related by an automorphism congruent to the identity modulo J. For commutative R with α=id and u=1 these are the full-polar quadratic forms of Layer 0. No invertibility of two is imposed.
 
 (CDHHLMNNS-III-v4, Proposition 2.3.7, pp. 43–44, invoking Wall (1970), Lemma 1 and Theorem 2.)
 
@@ -299,6 +301,9 @@ Lift a residue module map using projectivity; Nakayama upgrades the lift of an i
 - The quadratic plane x²+xy+y² over ℤ₂ reduces to Arf one, whereas xy reduces to Arf zero; no residue isometry exists between them, so lifting does not identify them.
 - For J=0, the reduction is the identity and the specified isometry lifts as itself. For the square-zero pair 𝔽₂[ε]/(ε²)→𝔽₂, an error in J is sent to J²=0 in one correction.
 - The symmetric ℤ₂-lines with coefficients 1 and 3 reduce to the same 𝔽₂-line but are not isometric because 3 is not a square in ℚ₂. This excludes replacing quadratic refinements by arbitrary symmetric pairings.
+- Over ℚ with α=id and u=−1, the rank-one refinement φ(x,y)=xy has Tφ(x,y)=−yx, so φ+Tφ=0 and the form is singular. Omitting u in T would give 2xy, which is nonsingular.
+- On ℚ² with α=id, the refinement with matrix [[0,1],[0,0]] has symmetrization [[0,1],[−1,0]], of determinant 1, for u=−1, and [[0,1],[1,0]], of determinant −1, for u=1. The sign u decides between alternating and symmetric polar forms.
+- On M₂(ℚ) with α the transpose and u=1, α(E₁₂E₂₁)=α(E₁₁)=E₁₁=α(E₂₁)α(E₁₂), whereas α(E₁₂)α(E₂₁)=E₂₂. The anti-automorphism reverses products, which is why φ(xa,yb)=α(a)φ(x,y)b is the sesquilinearity matching right modules.
 
 *Needs:* finite-projective module lifting and Nakayama; supplied classical quadratic carrier and its reduction maps; J-adic completeness and separation.
 
@@ -310,7 +315,7 @@ For any associative unital ring R with involution, complete and separated for th
 
 (CDHHLMNNS-III-v4, Proposition 2.3.7, pp. 43–44; CDHHLMNNS-III-v4 line 2000.)
 
-Section 2.3 identifies the isometry classes and K₀ controls, hence gives the degree-zero comparison for both signs. In degree one use the fundamental fibre sequence K_(hC₂)→GWq→Lq. Surjectivity of lifted isometries is only part of the argument: the relation/kernel comparison must identify the image of elementary quadratic formations. Use the free/projective comparison and the surjection on the two vertical kernels in Wall-1973, Corollary 1, Lemma 1 and Proposition 4. This proves injectivity as well as surjectivity on Lq₁. Sign shift and four-periodicity cover every integer degree; homotopy-group detection gives the spectrum equivalence.
+Section 2.3 identifies the isometry classes and K₀ controls, hence gives the degree-zero comparison for both signs. In degree one use the fundamental fibre sequence K_(hC₂)→GWq→Lq. Surjectivity of lifted isometries is only part of the argument: the relation/kernel comparison must identify the image of elementary quadratic formations. Use the free/projective comparison and the surjection on the two vertical kernels in Wall-1973, Corollary 1, Lemma 1 and Proposition 4. This proves injectivity as well as surjectivity on Lq₁. Sign shift and four-periodicity cover every integer degree; detection of equivalences by all integer homotopy groups gives the spectrum equivalence.
 
 **Checks.**
 
@@ -319,7 +324,7 @@ Section 2.3 identifies the isometry classes and K₀ controls, hence gives the d
 - For J=0 the map is the identity; for J=R separated completeness forces R=0, so both spectra are zero.
 - Symmetric degree zero does not satisfy the same theorem: Ws(ℤ₂) has order 16 and Ws(𝔽₂) has order 2.
 
-*Needs:* §2.3; GeometryOfNumbersAndQuadraticArithmetic §6.8a fundamental fibre sequence; HermitianKTheoryOfPoincareCategories §1.6 `bordism_invariant_periodicity` and §§4.5–4.6; the degree-one relation comparison of Wall-1973.
+*Needs:* §2.3; GeometryOfNumbersAndQuadraticArithmetic §6.8a fundamental fibre sequence; HermitianKTheoryOfPoincareCategories §1.6 `bordism_invariant_periodicity` and §§4.5–4.6; GeometryOfNumbersAndQuadraticArithmetic §6.1a homotopy groups and detection of equivalences; the degree-one relation comparison of Wall-1973.
 
 (Wall-1973, Corollary 1, Lemma 1, Proposition 4 and Lemma 5; cited by locator only. CDHHLMNNS-III-v4 lines 2019–2021 gives the precise use of these inputs.)
 
@@ -329,15 +334,16 @@ For every commutative henselian pair (R,J), reduction induces Lq(R)≃Lq(R/J), i
 
 (CDHHLMNNS-III-v4, Remark 2.3.8, p. 44; CDHHLMNNS-III-v4 line 2023.)
 
-By filtered colimits reduce to henselizations of finitely presented pairs. Their Noetherian completion maps are ind-smooth by regularity and Néron–Popescu. A smooth algebra mapping to that completion has a section over the henselian base by smooth henselian lifting. The completion map is therefore a filtered colimit of split injections. Apply the retraction argument to the functor Lq, using complete rigidity and preservation of filtered colimits. The result concerns all homotopy degrees and both signs.
+By filtered colimits reduce to henselizations of finitely presented pairs. A finitely presented ℤ-algebra A is a G-ring, so its henselization H along I is a Noetherian G-ring and H→Ĥ, the completion along the extended ideal, is regular (gap:henselian-pair-completion-regular); Néron–Popescu then makes it ind-smooth. A smooth algebra mapping to that completion has a section over the henselian base by smooth henselian lifting. The completion map is therefore a filtered colimit of split injections. Apply the retraction argument to the functor Lq, using complete rigidity and preservation of filtered colimits. The result concerns all homotopy degrees and both signs.
 
 **Checks.**
 
 - For (ℤ₂,(2)) reduction gives the same ℤ/2 quadratic groups as §2.4; no prime-to-two coefficient restriction is present.
 - For (𝔽₂[ε]/(ε²),(ε)) the pair is henselian and the quadratic theory ignores the nilpotent thickening.
 - For a ring with J=0 the reduction is the identity. A nonnilpotent ideal such as (2) in ℤ₂ is allowed; nilpotence is not the definition of a henselian pair.
+- For A=ℤ[x] and I=(2), the henselization H satisfies H/2H=𝔽₂[x], which has infinitely many maximal ideals, and every maximal ideal of H contains 2H. So H is not local, and regularity of H→Ĥ is the ideal-adic statement for a G-ring, not regularity of the completion of a local G-ring.
 
-*Needs:* §2.4; GeometryOfNumbersAndQuadraticArithmetic §6.8a filtered-colimit compatibility; SchemeAndStackFoundations §§0.14–0.15 and 0.21, including regularity of completion of the finite-type henselizations used by approximation.
+*Needs:* §2.4; GeometryOfNumbersAndQuadraticArithmetic §6.8a filtered-colimit compatibility; SchemeAndStackFoundations §0.13 henselization, §0.14 smooth lifting, §0.15 Néron–Popescu and §0.21 G-rings of finite type over ℤ; gap:henselian-pair-completion-regular for regularity of the completion map of these henselizations.
 
 (CMM, Remark 5.6, p.39, lines 1659–1674; smooth lifting is Theorem 3.15, p.21, line 892.)
 
@@ -417,7 +423,7 @@ A completed quadratic form reduces to a perfect alternating polar, hence has eve
 
 For a Dedekind domain R with char K≠2 and any set S of nondyadic nonzero primes, use the supplied valuation overring R_S. Prove the fibre sequence Lq(R)→Lq(R_S)→⊕_(p∈S)Lq(kₚ) after choosing residue-line trivializations. Before trivialization retain the canonical line and derived shift. The result includes infinite S via finite support and filtered colimits; it does not require the primes to be principal. Dyadic S is outside the assertion.
 
-(CDHHLMNNS-III-v4, Remark 2.3.15, p. 47; Remark 2.2.8, p. 40; CDHHLMNNS-III-v4 line 2206.)
+(CDHHLMNNS-III-v4, Remark 2.3.15, p. 47; Remark 2.2.8, pp. 39–40; CDHHLMNNS-III-v4 lines 2206 and 1807–1818.)
 
 R→R_S induces an equivalence of dyadic completions. Paste the supplied quadratic/symmetric completion pullbacks to obtain a pullback for R→R_S. Symmetric localization identifies its cofiber with the residue sum. At nondyadic primes two is a unit, so the residue quadratic and symmetric theories agree. The residue coefficient shift and the rotation of the localization triangle cancel exactly as in §0.3.
 
@@ -444,7 +450,9 @@ The supplied Dedekind tables and comparison square, Layer 0's Arf maps and Layer
 
 In the native field Witt ring W(ℚ₂), let u=⟨1⟩ be the unit, v=⟨1,−2⟩ and c=⟨1,3⟩. For a∈ℤ/8 and b,e∈ℤ/2 define the coordinate function as au+bv+ec using least nonnegative representatives. Prove this function is the underlying function of an additive equivalence and that multiplication by c sends (a,b,e) to ac+4bu. Hence W(ℚ₂)=ℤ/8{u}⊕ℤ/2{v}⊕ℤ/2{c}, (c)=⟨c,4u⟩≃(ℤ/2)² and ann(c)=⟨2u,c⟩≃ℤ/4⊕ℤ/2. Also c=⟨1,−5⟩ and ⟨1,−3⟩=2u+c.
 
-(CDHHLMNNS-III-v4, Examples 2.3.13–14, pp. 46–47; the ring computations here are derived from the imported local invariant classification; CDHHLMNNS-III-v4 line 2175.)
+The headline theorem `wittRing_padicTwo_coordinates` states the additive equivalence on `TauCeti.WittRing ℚ_[2]`, and `wittRing_padicTwo_mul_c` states the multiplication formula for every coordinate triple. In both, u is the unit 1, and v and c are the one-fold Pfister classes ⟨⟨2⟩⟩ and ⟨⟨−3⟩⟩ given by `TauCeti.oneFoldPfisterClass`.
+
+(CDHHLMNNS-III-v4, Examples 2.3.13–14, pp. 46–47, lines 2120–2124 for the order 32 and the abstract group and lines 2175–2182 for c; Lam-2005, VI Theorem 2.29; the ring computations here are derived from the imported local invariant classification.)
 
 Use dimension parity, signed determinant and Hasse invariant to distinguish the 32 classes. To compare Witt classes by the local isometry theorem, first stabilize representatives of the same rank parity to equal dimension using ⟨1,−1⟩; determinant and Hasse signs change under that stabilization and must be recomputed. The Hilbert formula then gives cu=c, cv=4u and c²=0. Solving ac+4bu=0 forces a even and b=0. This excludes the coefficient pair 1,−2 from the annihilator generators in the cited example; 1,−3 is the correct alternative.
 
@@ -457,7 +465,7 @@ The defining map has the following API.
 **Checks.**
 
 - For v, the signed determinant is 2 and its second residue is one. It has order two and cv=4u≠0, excluding v as an annihilator generator.
-- For v, the tensor c·v has diagonal ⟨1,3,−2,−6⟩, signed determinant a square and stabilized Hasse sign −1; it is the nonzero class 4u.
+- For v, the tensor c·v has diagonal ⟨1,3,−2,−6⟩: rank four, determinant 36, a square, and Hasse invariant (3,−2)(3,−6)(−2,−6)=(+1)(−1)(−1)=+1, the symbols involving the entry 1 being trivial. These are the invariants of ⟨1,1,1,1⟩, so c·v=4u. The hyperbolic four-form ⟨1,−1,1,−1⟩ has square determinant but Hasse invariant (−1,−1)=−1, so 4u≠0; a Hasse sign −1 for c·v would instead make it zero.
 - For v, doubling gives 2v=0; it is independent of u and c because its 2-adic residue is one, while both of theirs are zero.
 - For c, the ratio −5/3 is 1 modulo eight and a square, giving ⟨1,3⟩=⟨1,−5⟩. Its signed determinant is −3, the unramified quadratic square class.
 - For c, 2c=0 and c²=0. Multiplying the corrected binary class ⟨1,−3⟩ by c gives a hyperbolic four-form, whereas multiplying v by c gives 4u.
@@ -545,7 +553,7 @@ Inject Ws(R) into W(K). A unimodular determinant is a unit; modulo squares the u
 **Checks.**
 
 - The class 2u has signed determinant −1. Since −1 is nonsquare in K and in E, 2u≠0.
-- The class 4u has square determinant and trivial local Hasse obstruction after the degree-two extension at two, so 4u=0. The generator therefore has order four, not two.
+- The class 4u=⟨1,1,1,1⟩ has determinant 1 and Hasse invariant +1 at every place, and the hyperbolic ⟨1,−1,1,−1⟩ has determinant 1 and Hasse invariant (−1,−1)_v. At odd places −1 is a unit and this is +1; at the dyadic place (−1,−1)_E=(−1,N_(E/ℚ₂)(−1))_(ℚ₂)=(−1,1)=+1. The invariants agree everywhere, so 4u=0, whereas over ℚ₂ itself (−1,−1)=−1 keeps 4u≠0. The generator therefore has order four, not two.
 - The classes 0,u,2u,3u have pairs (rank parity,signed determinant) respectively (0,1),(1,1),(0,−1),(1,−1). Their completed images remain distinct.
 
 *Needs:* §§0.2 and 5.1; `IsCyclotomicExtension.Rat.Three.Units.mem`; GlobalQuadraticForms §4.4 and §§8.1–8.3; QuadraticFormInvariants Layer 6.
@@ -592,7 +600,7 @@ For R=ℤ[ζ₃], identify the positive-sign periodic symmetric groups in residu
 
 (CDHHLMNNS-III-v4, Example 2.3.14, pp. 46–47; corrected calculation from Proposition 2.3.9 and finite Arf base change; CDHHLMNNS-III-v4 line 2183.)
 
-Use the completion pullback in degree zero: ⟨u⟩∩⟨t⟩=0 makes its kernel zero. In the native ℚ₂ coordinates, θ kills c and 4u, so its integral image is precisely the global subgroup ⟨u⟩. Under the transfer identification of its cokernel with ann(c), the additional local quadratic image has class c. Thus A=ann(c)/⟨c⟩, generated by 2u of order four. Apply the supplied symmetric and quadratic tables and Pic(R)=0.
+Use the completion pullback Lq(R)→Lq(O) over Ls(R)→Ls(O) in degree zero. Its Mayer–Vietoris sequence identifies Lq₀(R)=Wq(R) with the kernel of Wq(O)⊕Ws(R)→Ws(O), because the boundary from Ls₁(O) vanishes: Ls₁(R)→Ls₁(O) is the identity of Ws(𝔽₄) under the residue descriptions of §1.2, so Lq₁(O)⊕Ls₁(R)→Ls₁(O) is onto (CDHHLMNNS-III-v4, proof of Proposition 2.3.9, step iv, line 2070). Both maps into Ws(O) are injective, since Ws(R)=ℤ/4 maps onto ⟨u⟩ of order four and Wq(O)=ℤ/2 onto ⟨t⟩ of order two; hence ⟨u⟩∩⟨t⟩=0 makes the kernel zero. In the native ℚ₂ coordinates, θ kills c and 4u, so its integral image is precisely the global subgroup ⟨u⟩. Under the transfer identification of its cokernel with ann(c), the additional local quadratic image has class c. Thus A=ann(c)/⟨c⟩, generated by 2u of order four. Apply the supplied symmetric and quadratic tables and Pic(R)=0.
 
 **Checks.**
 
@@ -601,7 +609,7 @@ Use the completion pullback in degree zero: ⟨u⟩∩⟨t⟩=0 makes its kernel
 - The transferred polar matrix has determinant 21 and diagonalization ⟨1,−1,4,−21/4⟩. Removing the hyperbolic pair gives ⟨1,−21⟩=c because −7≡1 modulo eight is a ℚ₂ square.
 - Pic(R)/2=0 and d=1, so the supplied tables give quadratic degree two ℤ/2 and degree three A(R)=ℤ/4. A zero parity quotient at d=1 is compatible with this nonzero obstruction.
 
-*Needs:* §§3.1–3.2 and 5.1–5.4; `IsCyclotomicExtension.Rat.three_pid` and `ClassGroup.equivPic`; the supplied Dedekind tables and comparison pullback of ArithmeticKTheory §3.5.
+*Needs:* §1.2, §§3.1–3.2 and 5.1–5.4; `IsCyclotomicExtension.Rat.three_pid` and `ClassGroup.equivPic`; the supplied Dedekind tables and comparison pullback of ArithmeticKTheory §3.5.
 
 ### Examples
 
@@ -643,5 +651,6 @@ All source locators use the editions below. Statements and arithmetic derivation
 - **Wall-1970.** C. T. C. Wall, [On the classification of hermitian forms. I. Rings of algebraic integers](https://www.numdam.org/item/CM_1970__22_4_425_0/), Compositio Mathematica 22 (1970), 425–451. Lemma 1, p.427, and Theorem 2, pp.428–429; Wall-1970 lines 104, 132 and 155.
 - **Wall-1973.** C. T. C. Wall, [On the classification of hermitian forms. III. Complete semilocal rings](https://doi.org/10.1007/BF01418851), Inventiones Mathematicae 19 (1973), 59–71. Corollary 1, Lemma 1, Proposition 4 and Lemma 5. Uncertified; cited by locator only. The precise comparison needed is also described in CDHHLMNNS-III-v4 lines 2019–2021.
 - **CMM.** D. Clausen, A. Mathew and M. Morrow, [K-theory and topological cyclic homology of henselian pairs](https://arxiv.org/abs/1803.10897v2), arXiv v2, 2020. Theorem 3.15, p.21, and Remark 5.6, p.39; CMM lines 892 and 1659–1674.
+- **Stacks.** The Stacks project authors, [The Stacks project](https://stacks.math.columbia.edu), Chapter 15, More on Algebra, Lemmas 15.51.14 and 15.51.15, tags 0AH2 and 0AH3: regularity of ideal-adic completion of a G-ring and the G-ring property of its henselization along an ideal, for the SchemeAndStackFoundations contract of §2.5.
 - **Lam-2005.** T. Y. Lam, [Introduction to Quadratic Forms over Fields](https://doi.org/10.1090/gsm/067), GSM 67, AMS, 2005. VII Theorem 3.5 for restriction/transfer exactness; VI Theorem 2.29 for the local finite two-primary Witt group. Uncertified; cited by locator only.
 - **Scharlau-1985.** W. Scharlau, [Quadratic and Hermitian Forms](https://doi.org/10.1007/978-3-642-69971-9), Springer, 1985. Chapter 6 §6, Theorem 6.11, for the global Witt residue cokernel consumed from ArithmeticKTheory §3.5. Uncertified; cited by locator only.

@@ -1868,6 +1868,12 @@
       "supplier": "QuadraticFormInvariants",
       "section": "Layer 9",
       "needs": "for a field F with char F≠2 and a nonsquare a∈F×, restriction to E=F(√a), transfer for a nonzero F-linear functional s:E→F with s(1)=0, and multiplication by ⟨1,−a⟩ form an exact cyclic sequence, identifying the restriction kernel with that principal ideal and its cokernel with that element's annihilator."
+    },
+    {
+      "slug": "henselian-pair-completion-regular",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "0.21",
+      "needs": "for a Noetherian G-ring A and an ideal I⊆A, the map A→AdicCompletion I A is a regular ring map, and the henselization of the pair (A,I) is again a Noetherian G-ring (Stacks, Lemmas 15.51.14 and 15.51.15, tags 0AH2 and 0AH3)."
     }
   ],
   "sourceIssues": [

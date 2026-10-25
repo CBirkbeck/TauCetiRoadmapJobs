@@ -95,7 +95,7 @@ url = "https://doi.org/10.1090/gsm/067"
 licence_class = "none"
 status = "uncertified"
 version_note = "AMS book; cited by locator only. Sources service reached the publisher landing page but obtained no open text; no text was read."
-cited_for = ["3.2", "5.3", "supplier quadratic-extension exactness"]
+cited_for = ["3.2", "4.1", "5.3", "supplier quadratic-extension exactness"]
 
 [[source]]
 id = "CDHHLMNNS-II-v5"
@@ -114,3 +114,19 @@ status = "certified"
 accessed = "2026-10-24"
 version_note = "arXiv v5"
 cited_for = ["2.2; supplier Poincaré change-of-rings criterion"]
+
+[[source]]
+id = "Stacks"
+authors = "The Stacks project authors"
+title = "The Stacks project, Chapter 15: More on Algebra"
+year = 2026
+locator_scheme = "tag"
+locator = "Lemmas 15.51.14 (0AH2) and 15.51.15 (0AH3), pp. 130–131 of the chapter PDF"
+url = "https://stacks.math.columbia.edu/tag/0AH2"
+fetched_from = "https://stacks.math.columbia.edu/download/more-algebra.pdf#nameddest=0AH2"
+fetched_at = "2026-10-25T16:28:53Z"
+sha256 = "ab69179738e642603ddbde651f2838e1cb5d8711e8bcd7c447cbf02a8bb6a5d2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["2.5; supplier gap henselian-pair-completion-regular"]
