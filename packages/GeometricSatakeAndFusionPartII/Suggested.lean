@@ -12,9 +12,9 @@ None of the following geometric headlines is statable at these pins:
 * Auxiliary prime-to-p Hodge covers (Layer 1) lack local cocharacter data, reflex fields
   and parahoric levels on the reductive-group carriers.
 * Flatness of the standard GL and GSp chain models and closed polynomial Hodge
-  and symplectic embeddings, including restriction of scalars
-  and period-total embeddings (Layer 2), lack the polynomial models and represented
-  lattice-chain Grassmannians.
+  and symplectic embeddings, restriction of scalars into possibly nonminuscule
+  Schubert-bound closures, and period-total embeddings (Layer 2), lack the polynomial
+  models and represented lattice-chain Grassmannians.
 * Canonical classical abelian-type local models and normalization of Hodge images
   (Layer 3) lack integral local-model v-sheaves and their scheme comparison morphisms.
 * General minuscule weak normal representability (Layer 3) lacks those v-sheaves,

@@ -3939,6 +3939,12 @@
   ],
   "gaps": [
   {
+    "slug": "algebraic-compatible-schubert-splitting",
+    "needs": "For split SL_n and Sp_(2n) over an algebraically closed field of positive characteristic, supply Frobenius splittings of finite affine Schubert bounds compatible with every Schubert subvariety, so scheme-theoretic intersections of finite Schubert unions in a common bound are reduced.",
+    "supplier": "GeometricSatakeAndFusion",
+    "section": "GS0, Equal-characteristic Schubert models and coefficient comparison (affine-flag extension)"
+  },
+  {
     "slug": "pointed-tangent-chain-rule",
     "needs": "Give the derivative of pointed scheme morphisms and its chain rule on Tau Ceti’s Zariski tangent carrier, for the formal curves of §4.1.",
     "supplier": "SchemeAndStackFoundations",
