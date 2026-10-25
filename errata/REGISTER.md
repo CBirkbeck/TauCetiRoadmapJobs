@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-5106 mistakes recorded on the board: 3355 misprints, 1265 errors, 383 gaps, 103 unparsed bullets.
+5110 mistakes recorded on the board: 3357 misprints, 1265 errors, 384 gaps, 104 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -111,6 +111,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Unparsed** (HeightsRationalPointsAndObstructionsPartII, #1129 at 0e276b6, 2026-10-25): Gap** in xy-2022 at Proposition 5.4, pp. 25–26: the source states the conclusion for every torsion point off the jump locus; the proof uses an étale torsion multisection, so only orders prime to the characteristic are covered; affects the proof. <!-- tauceti-roadmap-review {"agent": "claude", "head": "0e276b6", "job": "REV-PKG-HeightsRationalPointsAndObstructionsPartII~2", "model": "opus", "worker": "fable-rev94"} -->
 - **Unparsed** (AlgebraicTopologyPartII, #1073 at eabd8fb, 2026-10-25): Misprint** in BS at proof of Lemma 7.4, printed p.943: the source's final product has factors (1−qU^k) with no exponent; each factor should carry the exponent −e_k(N); affects the proof.
 - **Unparsed** (DirectSummandsAndBigCohenMacaulay, #1452 at 102f454, 2026-10-25): Gap** in ANDRE18B at Proposition 4.1.2, proof, p. 85: the source says B → D factors through the colimit algebra; the construction gives only choice-dependent linear maps into π^{−1/pⁿ}D; affects nothing.
+- **Unparsed** (GlobalShtukasAndFunctionFieldLanglandsPartII, #1152 at ce1bda8, 2026-10-25): Gap** in ch26 at §1.2, paragraph after Expectation 1.9, p. 5: the source says the parametrization is promoted to an Arthur parameter satisfying all of Conjecture 1.8; Theorems 1.11 and 10.3 only fix weight patterns and real parts and build no global ψ; affects nothing. <!-- tauceti-roadmap-review {"agent": "claude", "head": "ce1bda8", "job": "REV-PKG-GlobalShtukasAndFunctionFieldLanglandsPartII~2", "model": "opus", "worker": "fable-rev98"} -->
 
 ## A
 
@@ -2016,6 +2017,8 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Error** at Corollary 6.32(1), p. 25, used in the proof of Theorem 5.4, p. 14: the source says generic unitary L(s_c s_ν) half-integral for the test family has ν = 0; it should be assume s_c central (split G₂, α₁∨(s_c)=−1, ν=½ω₂, q=4 is a counterexample); affects the proof. Found by GlobalShtukasAndFunctionFieldLanglandsPartII (#1152 at c98ff93, 2026-10-24, claude opus).
 - **Misprint** at Definition 2.6(iii), p. 7: the source says N^i maps the weight w−i graded piece onto the weight w+i piece; it should be run from weight w+i to w−i, as condition (ii) and the downward monodromy convention require; affects nothing. Found by GlobalShtukasAndFunctionFieldLanglandsPartII (#1152 at c98ff93, 2026-10-24, claude opus).
 - **Error** at Proposition 3.10(2), p. 10: the source says a character of any torus is geometric iff its values are Weil q-numbers; it should be split tori only, with q_E for Res_{E/F}G_m (unramified quadratic, χ(ϖ_E)=q_F^{1/2} gives weight 1/2); affects a stated result. Found by GlobalShtukasAndFunctionFieldLanglandsPartII (#1152 at c98ff93, 2026-10-24, claude opus).
+- **Misprint** at Theorem 1.11, p. 5 (also in the paragraph after Expectation 1.9, p. 5): the source says the hypotheses are Conjectures 9.1 and 9.3; it should be Conjectures 9.1 and 9.5, since 9.3 is a displayed decomposition asserted by Conjecture 9.5(1); affects nothing. Found by GlobalShtukasAndFunctionFieldLanglandsPartII (#1152 at ce1bda8, 2026-10-25, claude opus).
+- **Gap** at Theorem 4.3 and step (2) of its sketch, p. 11: the source says every local monodromy of L(Π,τ) is geometric because G is semisimple; it should be require integral weights, which are known only from an anchor or Expectation 5.9; affects a stated result. Found by GlobalShtukasAndFunctionFieldLanglandsPartII (#1152 at ce1bda8, 2026-10-25, claude opus).
 - **Misprint** at Theorem 8.5(3), p. 29: the source says the F₄ B₃ extraneous point has an extra ω₂ term; it should be ω₁+½ω₃+½ω₄, whose top adjoint weight 10 is the one used in the proof of Theorem 10.3, case (3a); affects a stated result. Found by GlobalShtukasAndFunctionFieldLanglandsPartII (#1152 at c98ff93, 2026-10-24, claude opus).
 - **Misprint** at the proof of Theorem 10.3, cases (3a), (4) and (5a), p. 34: the source says n_v on both sides of three comparisons; it should be n_u on one side; affects nothing. Found by GlobalShtukasAndFunctionFieldLanglandsPartII (#1152 at c98ff93, 2026-10-24, claude opus).
 - **Gap** at §4.1, sketch of Theorems 4.2–4.3, step (1), p. 11: the source says Beuzart-Plessis's appendix makes every discrete series a local component; it should be it gives a cuspidal Π with the same cuspidal support, isomorphic only at a supercuspidal place; affects the proof. Found by GlobalShtukasAndFunctionFieldLanglandsPartII (#1152 at c98ff93, 2026-10-24, claude opus).
@@ -2241,6 +2244,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## COU20
 
 - **Misprint** at §3, printed p.493, COU20 line 266: the source says the integral relation lattice is tensored over ℚ with ℝ; it should be tensored over ℤ with ℝ, or rationalized before tensoring over ℚ; affects the proof; <!-- tauceti-roadmap-review {"agent": "codex", "head": "06884a94331b1a80f42bf83fd1df828e001f63e0", "job": "REV-PKG-EffectiveBoundsPartII", "model": "gpt-6-astra", "worker": "chris-8"} -->. Found by EffectiveBoundsPartII (#1411 at 06884a9, 2026-10-25, codex gpt-6-astra).
+- **Misprint** at §3, printed p.494 (line 324): the source says the source calls the set of vectors of norm at most one in the real span of the relation lattice a sphere; it should be the closed unit ball, since a sphere has volume zero; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "06884a9", "job": "RT-EffectiveBoundsPartII~1b", "model": "opus", "worker": "fable-rt24"} -->. Found by EffectiveBoundsPartII (#1411 at 06884a9, 2026-10-25, claude opus).
 
 ## COUVEIGNES20
 
