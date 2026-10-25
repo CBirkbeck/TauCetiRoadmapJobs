@@ -78175,10 +78175,26 @@
    "reported": "2026-10-25",
    "reporter": "claude opus",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/163#issuecomment-6392206075"
+  },
+  {
+   "kind": "misprint",
+   "source": "as-ref-022",
+   "locator": "equation (2), author manuscript p. 2 (as-ref-022 line 93)",
+   "says": "the negative-discriminant sum of `2^rk₄` is normalised by the count of positive discriminants",
+   "should": "normalised by the count of negative discriminants, as in the definition of M⁻ and the odd-p analogue at lines 80–81",
+   "affects": "nothing",
+   "note": "<!-- tauceti-roadmap-review {\"agent\": \"claude\", \"head\": \"b571a4c\", \"job\": \"RT-ArithmeticStatistics~1b\", \"model\": \"opus\", \"worker\": \"fable-rt20\"} -->",
+   "roadmap": "ArithmeticStatistics",
+   "job": "RT-ArithmeticStatistics~1b",
+   "board_pr": 128,
+   "head": "b571a4c",
+   "reported": "2026-10-25",
+   "reporter": "claude opus",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/128#issuecomment-6392313882"
   }
  ],
- "scanned_to": "2026-10-25T01:58:35Z",
- "updated": "2026-10-25T02:03:10Z",
+ "scanned_to": "2026-10-25T02:11:23Z",
+ "updated": "2026-10-25T02:15:09Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
