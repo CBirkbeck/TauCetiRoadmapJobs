@@ -1,17 +1,19 @@
 import Mathlib
 import TauCeti.NumberTheory.ModularForms.Newforms.Basic
 import TauCeti.NumberTheory.ModularForms.DiamondOperators
-import TauCeti.NumberTheory.ModularForms.Newforms.Newform
 import TauCeti.AlgebraicGeometry.EllipticCurve.Affine.Point.Galois
 import TauCeti.AlgebraicGeometry.EllipticCurve.Isogeny.Kernel
 import TauCeti.AlgebraicGeometry.EllipticCurve.Isogeny.BaseChange.Basic
 import TauCeti.AlgebraicGeometry.EllipticCurve.Isogeny.Hom.Add
 
 /-!
-# Elliptic modularity effective comparisons: target signatures
+# Elliptic modularity and effective residual comparisons: target signatures
 
 The roadmap is README.md; this file is not the roadmap. It states the roadmap's
-headline theorems against the pinned Mathlib and Tau Ceti APIs.
+headline theorems against the pinned Mathlib and Tau Ceti APIs: Martin’s dimension
+formula and sharp bound, the prime and composite cyclic-isogeny degree
+classifications, the two uniform irreducibility bounds, split-normalizer
+exclusion, and Lemos’s surjectivity theorem.
 
 The removed-prime exponent bound and Kraus's rational and full-two-torsion
 realization theorems are not statable at the pins: the arithmetic elliptic
@@ -72,60 +74,6 @@ theorem martin_sharp_bound (N : ℕ) [NeZero N] :
     12 * newDimension N ≤ N + 1 ∧
       (12 * newDimension N = N + 1 ↔ N = 35 ∨ (N.Prime ∧ N % 12 = 11)) := by sorry
 
-/-! ## Layer 3: coefficient recognition and exact-conductor realization -/
-
-/-- A primitive weight-two trivial-character newform has integral coefficients
-if its prime coefficients through the Sturm bound are integers
-(Kraus, Lemma 1, pp. 1144–1145). -/
-theorem newform_integral_of_small_primes (N : ℕ) [NeZero N]
-    (f : HeckeRing.GL2.Newform N 2) (hχ : f.χ = 1)
-    (hsmall : ∀ q : ℕ, q.Prime → 6 * q ≤ (CongruenceSubgroup.Gamma0 N).index →
-      ∃ z : ℤ, (UpperHalfPlane.qExpansion 1 f.toCuspForm).coeff q = (z : ℂ)) :
-    ∀ n : ℕ, ∃ z : ℤ, (UpperHalfPlane.qExpansion 1 f.toCuspForm).coeff n = (z : ℂ) := by sorry
-
-/-- Integral Sturm recognition for every character and every ideal of a number
-field's ring of integers, including prime-power ideals (Kraus, Appendix II,
-Proposition 1). The constant coefficient is included in the finite hypothesis. -/
-theorem integral_ideal_sturm (N : ℕ) [NeZero N] (k : ℕ)
-    (χ : (ZMod N)ˣ →* ℂˣ) (f : modFormCharSpace (k : ℤ) χ)
-    (K : Type*) [Field K] [NumberField K] (σ : K →ₐ[ℚ] ℂ)
-    (a : ℕ → 𝓞 K)
-    (ha : ∀ n, (UpperHalfPlane.qExpansion 1 f.val).coeff n = σ (a n : K))
-    (J : Ideal (𝓞 K))
-    (hsmall : ∀ n : ℕ, 12 * n ≤ k * (CongruenceSubgroup.Gamma0 N).index → a n ∈ J) :
-    ∀ n : ℕ, a n ∈ J := by
-  sorry
-
-/-- Kraus's global prime-power coefficient congruence (Appendix II, Proposition 2).
-The coefficient sequence is realized in the actual ring of integers. -/
-theorem kraus_prime_power_congruence (N : ℕ) [NeZero N]
-    (f : HeckeRing.GL2.Newform N 2) (hχ : f.χ = 1)
-    (K : Type*) [Field K] [NumberField K] (σ : K →ₐ[ℚ] ℂ)
-    (a : ℕ → 𝓞 K)
-    (ha : ∀ n, (UpperHalfPlane.qExpansion 1 f.toCuspForm).coeff n = σ (a n : K))
-    (P : Ideal (𝓞 K)) (hP : P.IsPrime) (m : ℕ) (hm : 1 ≤ m)
-    (hgood : ∀ q : ℕ, q.Prime →
-      6 * q ≤ (CongruenceSubgroup.Gamma0 (Nat.lcm N 4)).index → ¬ q ∣ 2 * N →
-        a q - (q + 1 : ℕ) ∈ P ^ m)
-    (hbad : ∀ q : ℕ, q.Prime →
-      6 * q ≤ (CongruenceSubgroup.Gamma0 (Nat.lcm N 4)).index → q ∣ 2 * N →
-        ¬ q ^ 2 ∣ 4 * N → ((q + 1 : ℕ) : 𝓞 K) * (a q - 1) ∈ P ^ m) :
-    ∀ q : ℕ, q.Prime → ¬ q ∣ 2 * N → a q - (q + 1 : ℕ) ∈ P ^ m := by
-  sorry
-
-/-- Four-divisible counts at every odd prime away from an integral model's
-discriminant give a rational isogeny of degree one or two to a curve with
-full rational two-torsion. Extra model-bad primes form a finite excluded set. -/
-theorem four_divisible_isogeny_realization (W : WeierstrassCurve ℤ)
-    [(W.map (Int.castRingHom ℚ)).IsElliptic]
-    (hcount : ∀ (q : ℕ) [Fact q.Prime], q ≠ 2 → ¬ (q : ℤ) ∣ W.Δ →
-      4 ∣ Nat.card (W.map (Int.castRingHom (ZMod q))).toAffine.Point) :
-    ∃ F : WeierstrassCurve ℚ, ∃ (_ : F.IsElliptic),
-      ∃ φ : TauCeti.Isogeny (W.map (Int.castRingHom ℚ)).toAffine F.toAffine,
-        (φ.degree = 1 ∨ φ.degree = 2) ∧
-          Nat.card (AddSubgroup.torsionBy F.toAffine.Point (2 : ℤ)) = 4 := by
-  sorry
-
 /-! ## Layer 4: rational cyclic isogenies and uniform irreducibility -/
 
 /-- Geometric n-torsion of an elliptic Weierstrass curve over the fixed
@@ -140,14 +88,27 @@ def CyclicIsogenyDegree (E : WeierstrassCurve ℚ) [E.IsElliptic] (n : ℕ) : Pr
     ∃ f : TauCeti.Isogeny E.toAffine F.toAffine,
       f.degree = n ∧ IsAddCyclic ((f.map (algebraMap ℚ (AlgebraicClosure ℚ))).ker)
 
-/-- For prime n, invariant additive subgroups are precisely invariant F_n-subspaces
-of the actual geometric torsion; this is residual irreducibility. -/
-def ResiduallyIrreducible (E : WeierstrassCurve ℚ) [E.IsElliptic] (n : ℕ) : Prop :=
-  ∀ V : AddSubgroup (GeometricTorsion E n),
-    (∀ (σ : (AlgebraicClosure ℚ) ≃ₐ[ℚ] (AlgebraicClosure ℚ))
-      (P : GeometricTorsion E n), P ∈ V →
-        Multiplicative.toAdd (E.torsionGaloisAction (K := AlgebraicClosure ℚ) (n : ℤ) σ) P ∈ V) →
-    V = ⊥ ∨ V = ⊤
+/-- The native ZMod n module on geometric n-torsion. -/
+instance torsionModule (E : WeierstrassCurve ℚ) [E.IsElliptic] (n : ℕ) :
+    Module (ZMod n) (GeometricTorsion E n) := AddSubgroup.torsionBy.zmodModule
+
+/-- The coordinate Galois action on geometric torsion as a linear representation;
+its operators are the native additive operators made ZMod-linear. -/
+def torsionRepresentation (E : WeierstrassCurve ℚ) [E.IsElliptic] (n : ℕ) :
+    Representation (ZMod n) ((AlgebraicClosure ℚ) ≃ₐ[ℚ] (AlgebraicClosure ℚ))
+      (GeometricTorsion E n) where
+  toFun σ := (Multiplicative.toAdd
+    (E.torsionGaloisAction (K := AlgebraicClosure ℚ) (n : ℤ) σ)).toAddMonoidHom.toZModLinearMap n
+  map_one' := by
+    apply LinearMap.ext
+    intro P
+    exact congrArg (fun f : Multiplicative (AddAut (GeometricTorsion E n)) => Multiplicative.toAdd f P)
+      (map_one (E.torsionGaloisAction (K := AlgebraicClosure ℚ) (n : ℤ)))
+  map_mul' σ τ := by
+    apply LinearMap.ext
+    intro P
+    exact congrArg (fun f : Multiplicative (AddAut (GeometricTorsion E n)) => Multiplicative.toAdd f P)
+      (map_mul (E.torsionGaloisAction (K := AlgebraicClosure ℚ) (n : ℤ)) σ τ)
 
 /-- Mazur's prime-degree classification, including CM possibilities. -/
 theorem prime_cyclic_isogeny_degrees (E : WeierstrassCurve ℚ) [E.IsElliptic]
@@ -163,16 +124,16 @@ theorem rational_cyclic_isogeny_degrees (E : WeierstrassCurve ℚ) [E.IsElliptic
 
 /-- A rational point of exact order two forces irreducibility at all primes ell ≥ 11. -/
 theorem rational_two_uniform_irreducibility (E : WeierstrassCurve ℚ) [E.IsElliptic]
-    (ell : ℕ) (hell : ell.Prime) (hbound : 11 ≤ ell)
+    (ell : ℕ) [Fact ell.Prime] (hbound : 11 ≤ ell)
     (hE : ∃ P : E.toAffine.Point, P ≠ 0 ∧ (2 : ℤ) • P = 0) :
-    ResiduallyIrreducible E ell := by
+    (torsionRepresentation E ell).IsIrreducible := by
   sorry
 
-/-- Full rational two-torsion forces irreducibility at every prime ell ≥ 7. -/
+/-- Full rational two-torsion forces irreducibility at every prime ell ≥ 5. -/
 theorem full_two_uniform_irreducibility (E : WeierstrassCurve ℚ) [E.IsElliptic]
-    (ell : ℕ) (hell : ell.Prime) (hbound : 7 ≤ ell)
+    (ell : ℕ) [Fact ell.Prime] (hbound : 5 ≤ ell)
     (hE : Nat.card (AddSubgroup.torsionBy E.toAffine.Point (2 : ℤ)) = 4) :
-    ResiduallyIrreducible E ell := by
+    (torsionRepresentation E ell).IsIrreducible := by
   sorry
 
 /-! ## Layer 5: rational cyclic-isogeny surjectivity -/
@@ -185,14 +146,6 @@ def GeometricallyNonCM (E : WeierstrassCurve ℚ) [E.IsElliptic] : Prop :=
     ∃ n : ℤ, f = n • (1 : TauCeti.Isogeny.Hom
       (E.baseChange (AlgebraicClosure ℚ)).toAffine (E.baseChange (AlgebraicClosure ℚ)).toAffine)
 
-/-- Nonsplit Cartan containment, using a cyclic subgroup of additive automorphisms
-of order p²−1 and its group normalizer. Used only at primes p. -/
-def NonsplitNormalizerImage (E : WeierstrassCurve ℚ) [E.IsElliptic] (p : ℕ) : Prop :=
-  ∃ C : Subgroup (Multiplicative (AddAut (GeometricTorsion E p))),
-    IsCyclic C ∧ Nat.card C = p ^ 2 - 1 ∧
-      ∀ σ : (AlgebraicClosure ℚ) ≃ₐ[ℚ] (AlgebraicClosure ℚ),
-        E.torsionGaloisAction (K := AlgebraicClosure ℚ) (p : ℤ) σ ∈ Subgroup.normalizer (C : Set _)
-
 /-- A split-normalizer image preserves an unordered pair of distinct order-p
 subgroups of the actual geometric p-torsion. Used only at prime p. -/
 def SplitNormalizerImage (E : WeierstrassCurve ℚ) [E.IsElliptic] (p : ℕ) : Prop :=
@@ -203,27 +156,10 @@ def SplitNormalizerImage (E : WeierstrassCurve ℚ) [E.IsElliptic] (p : ℕ) : P
       (V.map a = V ∧ W.map a = W) ∨ (V.map a = W ∧ W.map a = V)
 
 /-- Bilu–Parent–Rebolledo excludes split-normalizer images for a non-CM rational
-elliptic curve at every prime p≥11 except 13. -/
+elliptic curve at every prime p>11 except 13. -/
 theorem split_normalizer_exclusion (E : WeierstrassCurve ℚ) [E.IsElliptic]
-    (hCM : GeometricallyNonCM E) (p : ℕ) (hp : p.Prime) (hbound : 11 ≤ p)
+    (hCM : GeometricallyNonCM E) (p : ℕ) (hp : p.Prime) (hbound : 11 < p)
     (h13 : p ≠ 13) : ¬ SplitNormalizerImage E p := by
-  sorry
-
-/-- A proper non-CM residual image at a prime p>37 lies in a nonsplit normalizer. -/
-theorem proper_image_nonsplit (E : WeierstrassCurve ℚ) [E.IsElliptic]
-    (hCM : GeometricallyNonCM E) (p : ℕ) (hp : p.Prime) (hbound : 37 < p)
-    (hproper : ¬ Function.Surjective
-      (E.torsionGaloisAction (K := AlgebraicClosure ℚ) (p : ℤ))) :
-    NonsplitNormalizerImage E p := by
-  sorry
-
-/-- A genus-zero prime isogeny and nonsplit containment force integral j
-at every prime outside the five genus-zero degrees (Lemos, Proposition 2.1). -/
-theorem cyclic_isogeny_integral_j (E : WeierstrassCurve ℚ) [E.IsElliptic]
-    (r : ℕ) (hr : r ∈ ({2, 3, 5, 7, 13} : Finset ℕ)) (hiso : CyclicIsogenyDegree E r)
-    (p : ℕ) (hp : p.Prime) (houtside : p ∉ ({2, 3, 5, 7, 13} : Finset ℕ))
-    (himage : NonsplitNormalizerImage E p) :
-    ∃ z : ℤ, E.j = (z : ℚ) := by
   sorry
 
 /-- Lemos's rational cyclic-isogeny uniformity theorem: every prime above 37

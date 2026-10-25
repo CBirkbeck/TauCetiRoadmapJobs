@@ -5007,22 +5007,16 @@
       "section": "§4.8"
     },
     {
-      "slug": "mixed-modular-curves",
-      "needs": "Supply the normalized mixed Borel and Cartan fibre products for arbitrary coprime positive levels, their j maps, smooth cusp charts away from the level and 6, and Hecke-compatible Jacobian pull-push maps with the actual residue fields of cusps.",
+      "slug": "mixed-cusp-charts",
+      "needs": "For coprime positive auxiliary and Cartan levels, supply smooth cusp charts on the normalized mixed curves away from 6 times the level, with their actual cusp residue fields and compatibility with the level maps.",
       "supplier": "ModularCurvesPartII",
-      "section": "§§9.5–9.7, 13.1–13.3"
+      "section": "§§4.1–4.2, 4.8, 5.5, 9.6"
     },
     {
       "slug": "chen-winding-comparison",
       "needs": "Supply the prime-to-p Hecke-equivariant Chen isogeny between the p-new split and nonsplit mixed Jacobians, integral Hecke-annihilator quotients with connected kernel, and their semistable cotangent comparison, without assuming genus zero of the auxiliary level.",
       "supplier": "ModularCurvesPartII",
       "section": "§§9.6, 13.1–13.3, 16.2–16.6"
-    },
-    {
-      "slug": "split-cartan-height-inputs",
-      "needs": "Supply split-Cartan integrality and the explicit Runge inequality log|j|≤2π√p+6log p+21(log p)²/√p for rational non-CM noncuspidal points in the Bilu–Parent–Rebolledo normalization.",
-      "supplier": "ModularCurvesPartII",
-      "section": "§9.6"
     },
     {
       "slug": "positive-characteristic-support",
@@ -5037,16 +5031,16 @@
       "section": "§6.1"
     },
     {
-      "slug": "mixed-winding-boundary",
-      "needs": "Supply the exact cuspidal boundary divisor of order p and its full-new winding projection for the five mixed levels r∈{2,3,5,7,13}, extending the r=2,3 boundary argument with explicit nonvanishing at r=5,7,13.",
-      "supplier": "ModularSymbolsPadicLFunctions",
-      "section": "§§0.8, 1.1–1.2"
-    },
-    {
       "slug": "modular-rank-zero",
       "needs": "For every primitive weight-two modular abelian factor A_f over ℚ with L(f,1)≠0, supply the analytic-rank-zero comparison to a genuine arithmetic descent system proving A_f(ℚ) finite, including coefficient-order and CM cases rather than assuming an elliptic-only theorem.",
       "supplier": "EulerSystemsAndKolyvaginSystems",
       "section": "§§4.7, 5.13"
+    },
+    {
+      "slug": "quantitative-abelian-periods",
+      "needs": "Supply the quantitative period inequalities for positive-dimensional polarized abelian varieties in Gaudron–Rémond Theorems 1.1–1.2 and 4.5, including the dimension-two avoidance estimate of Proposition 6.9 with its exact constants, intersection degree and Faltings-height normalization.",
+      "supplier": "ArakelovGeometryAndAbelianHeights",
+      "section": "§§4.4, 5.9"
     }
   ],
   "sourceIssues": [

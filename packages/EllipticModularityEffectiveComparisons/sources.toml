@@ -111,7 +111,7 @@ year = 1981
 [[source]]
 id = "bilu-parent-rebolledo"
 locator_scheme = "section"
-locator = "Theorems 1.1, 4.1–4.2; Propositions 4.3–4.4, pp.970–972; Proposition 5.6, Corollary 5.7, Proposition 5.9, pp.976–979; §6 table"
+locator = "Theorem 1.1, pp.958–959; Theorem 3.1, p.964, proof pp.968–970; Theorems 4.1–4.2 and Propositions 4.3–4.4, pp.970–972; Proposition 5.6, Corollary 5.7, Proposition 5.9, pp.976–979; §6 table"
 url = "https://www.numdam.org/item/10.5802/aif.2781.pdf"
 fetched_from = "https://www.numdam.org/item/10.5802/aif.2781.pdf"
 fetched_at = "2026-10-25T01:34:51Z"
@@ -241,3 +241,39 @@ url = "https://doi.org/10.1112/jlms/s2-23.3.428-s"
 licence_class = "none"
 status = "uncertified"
 note = "Published locator only; the sources service did not retrieve legal full text."
+
+[[source]]
+id = "gaudron-remond"
+authors = "Éric Gaudron, Gaël Rémond"
+title = "Théorème des périodes et degrés minimaux d'isogénies"
+year = 2011
+arxiv = "1105.1230v1"
+locator_scheme = "theorem"
+locator = "Theorems 1.1–1.2, p.3; Theorem 1.4, p.4; Theorem 4.5; Proposition 6.9, pp.24–25; Theorem 7.5, pp.27–28; §§7.3–7.5, pp.28–32"
+url = "https://arxiv.org/abs/1105.1230v1"
+fetched_from = "https://arxiv.org/pdf/1105.1230v1"
+fetched_at = "2026-10-25T10:00:52Z"
+sha256 = "d0eefd98c2be51e655bea147341c642b7a568b0709ae801fa9ed845ddbb91ef2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Locators use arXiv 1105.1230v1 (2011), not Comment. Math. Helv. 89 (2014), 343–403; theorem numbering has not been asserted for that edition."
+cited_for = ["§5.3a", "gap:quantitative-abelian-periods"]
+
+[[source]]
+id = "bilu-parent-split"
+authors = "Yuri Bilu, Pierre Parent"
+title = "Serre's uniformity problem in the split Cartan case"
+year = 2009
+arxiv = "0807.4954v5"
+locator_scheme = "theorem"
+locator = "Theorem 6.1"
+url = "https://arxiv.org/abs/0807.4954v5"
+fetched_from = "https://arxiv.org/pdf/0807.4954v5"
+fetched_at = "2026-10-25T10:02:09Z"
+sha256 = "cac50b5f2a97239adc966e23e819ecb407334b019c6ffc2c0ce747859368a70a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Locators use arXiv 0807.4954v5 (3 March 2009), Appendix Theorem 6.1, pp.8–10; the first posting was in 2008."
+cited_for = ["§5.3b"]
