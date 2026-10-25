@@ -1,0 +1,227 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ProetaleCohomologyOfPAdicCurvesAndTowers"
+
+[[source]]
+id = "CDN-CURVES"
+authors = "Pierre Colmez, Gabriel Dospinescu, Wiesława Nizioł"
+title = "Cohomologie des courbes analytiques $p$-adiques"
+year = 2021
+arxiv = "2101.06647v2"
+locator_scheme = "theorem"
+locator = "Théorèmes 0.1, 0.4, 0.5, 0.7, 0.9, 0.13, 0.15, 0.17; Remarques 0.16, 0.19; Corollaire 5.5; Théorèmes 3.19, 6.24, 6.30, 6.32, 7.6, 7.9, 8.1, 8.9, 8.11, 8.12"
+url = "https://arxiv.org/abs/2101.06647v2"
+fetched_from = "https://arxiv.org/pdf/2101.06647v2"
+fetched_at = "2026-10-25T23:26:06Z"
+sha256 = "04c4a7d1d50b953c46e9edebfff28c5f36b87185f64a591114087c4050b50798"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v2 (23 July 2022); no journal version found; all locators use the arXiv v2 numbering (the introduction refers to Théorème 6.24 as prop. 6.24)"
+cited_for = ["Final targets T1-T4: affinoid, overconvergent, proper and Stein curves; triangulations; symbols; Jacobian"]
+
+[[source]]
+id = "CDN-STEIN"
+authors = "Pierre Colmez, Gabriel Dospinescu, Wieslawa Niziol"
+title = "Cohomology of $p$-adic Stein spaces"
+year = 2018
+arxiv = "1801.06686v2"
+locator_scheme = "theorem"
+locator = "Proposition 1.11; Example 1.9; Theorems 1.3, 4.12, 5.8, 5.10, 5.13, 6.45; Corollary 5.9; Lemma 5.11; §§5.2-5.5"
+url = "https://arxiv.org/abs/1801.06686v2"
+fetched_from = "https://arxiv.org/pdf/1801.06686v2"
+fetched_at = "2026-10-25T23:26:45Z"
+sha256 = "3c448b957f3e842d24145c46b6c8776143608c1ebc232f7d9a552f5eab62dc89"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v2 (January 2019); locators use the arXiv v2 numbering, not collated with the journal version"
+venue = "Invent. Math. 219 (2020), 873-985"
+cited_for = ["Final targets T5-T6: semistable Stein spaces and Drinfeld half-spaces"]
+
+[[source]]
+id = "CDN20"
+authors = "Pierre Colmez, Gabriel Dospinescu, Wiesława Nizioł"
+title = "Cohomologie p-adique de la tour de Drinfeld: le cas de la dimension 1"
+year = 2017
+arxiv = "1704.08928v2"
+locator_scheme = "theorem"
+locator = "Proposition 0.1; Théorèmes 0.4, 0.6, 0.8; Remarque 0.10; Proposition A.1"
+url = "https://arxiv.org/abs/1704.08928v2"
+fetched_from = "https://arxiv.org/pdf/1704.08928v2"
+fetched_at = "2026-10-25T23:26:57Z"
+sha256 = "15e4868f5b11ad113e2806b5e9884d7b100f529e67c6cd6030f24cf8e3ae9073"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v2 (7 June 2018); locators use the preprint numbering, as EndoscopicTransferAndUnitaryTraceComparison also does"
+venue = "J. Amer. Math. Soc. 33 (2020), 311-362"
+doi = "10.1090/jams/935"
+cited_for = ["Final targets T7: the Drinfeld tower in dimension one over any finite extension of Qp"]
+
+[[source]]
+id = "CDN23"
+authors = "Pierre Colmez, Gabriel Dospinescu, Wiesława Nizioł"
+title = "Factorisation de la cohomologie étale p-adique de la tour de Drinfeld"
+year = 2022
+arxiv = "2204.11214v2"
+locator_scheme = "theorem"
+locator = "Théorème 0.5 = Théorème 2.1; Proposition 2.7; §2.1.3 with Lemmes 2.8-2.9; Corollaire 2.12; Théorèmes 2.13-2.14"
+url = "https://arxiv.org/abs/2204.11214v2"
+fetched_from = "https://arxiv.org/pdf/2204.11214v2"
+fetched_at = "2026-10-25T23:27:04Z"
+sha256 = "c5711666b845a48f6fc2cd944b22bbde0c45567fe29dacb00a3429619baecbee"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v2; theorem numbers agree with the Forum Math. Pi version as cited by the ScholzeFunctorAndModpCohomologyOfTheLubinTateTower design (Théorème 2.1, Corollaire 2.12); page numbers differ, so cite by number"
+venue = "Forum Math. Pi 11 (2023), e16"
+doi = "10.1017/fmp.2023.15"
+cited_for = ["Final targets T7: finite copresentation and non-admissibility for the Drinfeld levels"]
+
+[[source]]
+id = "CDN-DUKE"
+authors = "Pierre Colmez, Gabriel Dospinescu, Wiesława Nizioł"
+title = "Integral $p$-adic étale cohomology of Drinfeld symmetric spaces"
+year = 2019
+venue = "Duke Math. J. 170, no. 3 (2021), 575-613"
+doi = "10.1215/00127094-2020-0084"
+arxiv = "1905.11495v1"
+locator_scheme = "theorem"
+locator = "Theorems 1.1, 1.3"
+url = "https://arxiv.org/abs/1905.11495v1"
+fetched_from = "https://arxiv.org/pdf/1905.11495v1"
+fetched_at = "2026-10-25T23:27:09Z"
+sha256 = "d651dbc382b328956594deeb4e6de589889753e549a4110f90a7f016c9df6be1"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v1; locators use the arXiv v1 numbering, not collated with the Duke version"
+cited_for = ["Final targets T6: integral p-adic étale cohomology of Drinfeld half-spaces"]
+
+[[source]]
+id = "THO24"
+authors = "Jack A. Thorne"
+title = "A $p$-adic approach to the existence of level-raising congruences"
+year = 2022
+doi = "10.1112/plms.12584"
+arxiv = "2212.03591v2"
+locator_scheme = "section"
+locator = "§3, Theorems 3.5-3.6; §5"
+url = "https://arxiv.org/abs/2212.03591v2"
+fetched_from = "https://arxiv.org/pdf/2212.03591v2"
+fetched_at = "2026-10-25T23:31:08Z"
+sha256 = "372ed2cbe894a75e01f8292963eeb9a50ffe7236098f183e3784aa09c98343b1"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v2"
+venue = "Proc. Lond. Math. Soc. (3) 128 (2024), no. 2, e12584"
+cited_for = ["Consumers: the Drinfeld half-space input requested by ModularityAndLanglandsExtensionsPartII G3"]
+
+[[source]]
+id = "CGN23"
+authors = "Pierre Colmez, Sally Gilles, Wiesława Nizioł"
+title = "Arithmetic duality for $p$-adic pro-étale cohomology of analytic curves"
+year = 2023
+arxiv = "2308.07712v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/2308.07712v2"
+fetched_from = "https://arxiv.org/pdf/2308.07712v2"
+fetched_at = "2026-10-25T23:31:15Z"
+sha256 = "a033c41d718dc9790eaa91c59115db23c1e8ec2ab34635206478fd246fc67281"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v2"
+cited_for = ["Scope: duality and compact supports for curves, proposed for a Part II"]
+
+[[source]]
+id = "DAT06"
+locator_scheme = "theorem"
+locator = "Théorème 3.1.1; §4.1.3; Théorème 4.1.5; Proposition 4.2.2"
+url = "https://www.numdam.org/item/ASENS_2006_4_39_1_1_0/"
+fetched_from = "https://www.numdam.org/item/ASENS_2006_4_39_1_1_0.pdf"
+fetched_at = "2026-10-25T23:32:30Z"
+sha256 = "0ddaa01e0c187da69feb595be7040fdc12929631f63de1c404c04c225a22ad53"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+authors = "Jean-François Dat"
+title = "Espaces symétriques de Drinfeld et correspondance de Langlands locale"
+year = 2006
+venue = "Ann. Sci. École Norm. Sup. (4) 39 (2006), no. 1, 1-74"
+doi = "10.1016/j.ansens.2005.11.002"
+cited_for = ["Final targets T6: compactly supported l-adic cohomology of Drinfeld half-spaces as complexes of smooth representations"]
+
+[[source]]
+id = "SS91"
+authors = "P. Schneider, U. Stuhler"
+title = "The cohomology of p-adic symmetric spaces"
+year = 1991
+venue = "Inventiones Mathematicae 105"
+doi = "10.1007/BF01232257"
+locator_scheme = "section"
+locator = "§3, §4"
+url = "https://doi.org/10.1007/BF01232257"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text; its theorems are restated in CDN-STEIN Theorem 5.8 and §5.3, which is the readable account used here"
+cited_for = ["Final targets T6: de Rham and l-adic cohomology of Drinfeld half-spaces"]
+
+[[source]]
+id = "GK05"
+authors = "Elmar Grosse-Klönne"
+title = "Frobenius and monodromy operators in rigid analysis, and Drinfel'd's symmetric space"
+year = 2005
+venue = "Journal of Algebraic Geometry 14 (2005), 391--437"
+arxiv = "1408.3346v1"
+locator_scheme = "theorem"
+locator = "Theorem 3.4, Corollary 3.7, Theorem 6.3, Corollary 6.6"
+url = "https://arxiv.org/abs/1408.3346v1"
+fetched_from = "https://arxiv.org/pdf/1408.3346v1"
+fetched_at = "2026-10-25T23:32:39Z"
+sha256 = "84d6c4b36a3e1908f989ac1a139fb28055f6e7ab51384c26a48cd517f87e0713"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v1 (2014 posting of the 2005 paper); locators use the arXiv numbering"
+cited_for = ["Final targets T6: Hyodo-Kato cohomology of Drinfeld half-spaces"]
+
+[[source]]
+id = "CN-II"
+authors = "Pierre Colmez, Wiesława Nizioł"
+title = "On the cohomology of p-adic analytic spaces, II: The $C_{\\rm st}$-conjecture"
+year = 2021
+arxiv = "2108.12785v4"
+locator_scheme = "theorem"
+locator = "Theorem 6.14"
+url = "https://arxiv.org/abs/2108.12785v4"
+fetched_from = "https://arxiv.org/pdf/2108.12785v4"
+fetched_at = "2026-10-25T23:34:09Z"
+sha256 = "83c6afdc8a377e38dced9dd8b400cb3461a2d47de2664a094e81a04332051361"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v4; locators use the arXiv v4 numbering, as CstConjectureForDaggerVarieties does"
+venue = "Duke Math. J. 174 (2025), 2203-2301"
+doi = "10.1215/00127094-2024-0074"
+cited_for = ["Scope: boundary with CstConjectureForDaggerVarieties CS.1 (simplified fundamental diagram)"]
+
+[[source]]
+id = "CN-I"
+authors = "Pierre Colmez, Wiesława Nizioł"
+title = "On the cohomology of $p$-adic analytic spaces, I: The basic comparison theorem"
+year = 2021
+arxiv = "2104.13448v3"
+locator_scheme = "theorem"
+locator = "Theorems 1.1, 1.3"
+url = "https://arxiv.org/abs/2104.13448v3"
+fetched_from = "https://arxiv.org/pdf/2104.13448v3"
+fetched_at = "2026-10-25T23:34:18Z"
+sha256 = "f4798bc39e556c7f3439c0037783986842ebe03498bf425500c4b9f6ef1ed25d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v3"
+cited_for = ["Scope: the model-free syntomic comparison stays outside this roadmap"]
