@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-4838 mistakes recorded on the board: 3209 misprints, 1200 errors, 339 gaps, 90 unparsed bullets.
+4845 mistakes recorded on the board: 3214 misprints, 1201 errors, 340 gaps, 90 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -731,6 +731,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Error** at §5.4, p. 123: the source says the cohomology of Thorne's complex vanishes outside degrees 1 and 2 when T is nonempty; it should be give degree three dimension one at p = 2, from the invariant scalars (Tho17 Lemma 2.15); affects a stated result. Found by OrdinaryAutomorphicFormsAndModularityLiftingPartII (#383 at 7e88c38, 2026-10-23, claude opus).
 - **Misprint** at §5.6.1, definition of the fixed-type problem, p. 129: the source says the source evaluates the characters at the Artin map applied to an inertia element; it should be the inverse Artin map, as in Geraghty; affects nothing. Found by OrdinaryAutomorphicFormsAndModularityLiftingPartII (#383 at 7e88c38, 2026-10-23, claude opus).
 - **Misprint** at §9.2.16, p. 198: the source says the Frobenius polynomial of Y at 2 is x⁴+2x²+1; it should be x⁴+2x²+4, the Weil polynomial given by the point counts 3 over 𝔽₂ and 9 over 𝔽₄; affects nothing. Found by AbelianSurfacesModularity (#1105 at c42801b, 2026-10-24, claude opus).
+
+## BCS
+
+- **Misprint** at Lemma 5.1.1 proof, printed p. 9 of v2 and p. 10 published (BCS v2 line 457; published line 488): the source says both summands after quadratic Shapiro are cohomology over M; it should be put those two twisted summands over K; affects the proof; <!-- tauceti-roadmap-review {"agent": "codex", "head": "b047dd3439cef25dcc2fa59f5bc8f6597d8b100d", "job": "REV-PKG-AutomorphicCongruences~2", "model": "gpt-6-astra", "worker": "chris-8"} -->. Found by AutomorphicCongruences (#129 at b047dd3, 2026-10-25, codex gpt-6-astra).
 
 ## BdJ2003
 
@@ -1998,6 +2002,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Error** at Proposition 2.4.8(3): the source says a character ratio for the ordinary filtration that needed correction; it should be the ratio given in the authors' erratum; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
+## CLW
+
+- **Misprint** at Theorem 8.1.1 proof, printed p. 78 (CLW line 6212): the source says the Eisenstein ideal's valuation is at most m after proving containment in P^m; it should be at least m; affects the proof. Found by AutomorphicCongruences (#129 at b047dd3, 2026-10-25, codex gpt-6-astra).
+
 ## cmnn
 
 - **Gap** at Lemma 4.7 and Theorem 4.6 proof, pp.19–20: the source says the positive-height ideal and Laurent-series field also at i=0; it should be separate the zero ideal and rational Witt-vector field case; affects the proof. Found by ChromaticHomotopyTheory (#986 at 5bbacd4, 2026-10-25, codex gpt-6-astra).
@@ -2805,8 +2813,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## FW
 
+- **Gap** at Definition 3.18's following paragraph, printed p. 31 (FW line 1798): the source says Lemma 3.17 gives arbitrary base change of the full Euler-corrected line; it should be justify the Euler-line compatibility or retain the suitability restrictions of Proposition 3.20; affects the proof. Found by AutomorphicCongruences (#129 at b047dd3, 2026-10-25, codex gpt-6-astra).
 - **Error** at proof of Lemma 3.13, p.26 (FW lines 1497–1499): the source says lifting a nonidentity residual unipotent gives a rank-one kernel; it should be required to choose genuine characteristic-zero unipotence with primitive image; affects the proof. Found by ModularIwasawaMainConjectures (#165 at e1ec38a, 2026-10-24, codex gpt-6-astra).
 - **Misprint** at proof of Lemma 3.13, p.26 (FW lines 1504–1510): the source says a cone on fraction-field representations has the displayed integral torsion cohomology; it should be an integral cone, or its displayed cohomology should be tensored with the fraction field; affects the proof. Found by ModularIwasawaMainConjectures (#165 at e1ec38a, 2026-10-24, codex gpt-6-astra).
+- **Error** at the paragraph after Assumption 2.1, printed p. 17 (FW line 928): the source says local endomorphisms are scalar unless the two semisimple characters coincide; it should be exclude split distinct characters and irreducible representations that are not absolutely irreducible; affects the proof. Found by AutomorphicCongruences (#129 at b047dd3, 2026-10-25, codex gpt-6-astra).
 
 ## fyz
 
@@ -4917,6 +4927,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at (22), p. 653, and at the Rosati discriminant display, p. 655: the source says the source equates the conjugate-transpose complex trace with the rational trace, but the complex one is half; it should be twice the real part of the complex trace; affects nothing. Found by FaltingsFinitenessAndIsogenyTheoremsPartII (#1273 at ddef4f3, 2026-10-24, claude opus).
 
+## NAK
+
+- **Misprint** at Corollary 5.6 proof, printed p. 77 of v2 (NAK line 3391): the source says the second specialization is reduced modulo ϖ^n while mapping to O/ϖ^m; it should be reduce both specializations modulo ϖ^m; affects the proof. Found by AutomorphicCongruences (#129 at b047dd3, 2026-10-25, codex gpt-6-astra).
+
 ## Nakamura2023
 
 - **Misprint** at the proof of Theorem A.1, arXiv v2 p. 87: the source says the conductor-n smoothing factor has first scalar d; it should be `d²`, as in the conductor-one factor displayed just above it; affects the proof; <!-- tauceti-roadmap-review {"agent": "claude", "head": "5fb6ef4", "job": "REV-PKG-KatoEulerSystems~2", "model": "opus", "worker": "fable-rev81"} -->. Found by KatoEulerSystems (#163 at 5fb6ef4, 2026-10-25, claude opus).
@@ -6590,6 +6604,11 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Error** at Example 11.2, p. 99 (Sturmfels line 2978): the source says three elementary symmetric polynomials and the Vandermonde polynomial generate the A₃-invariants over the unrestricted field; it should be assume characteristic different from 2; in characteristic 2 these generators are symmetric and miss t₁²t₂+t₂²t₃+t₃²t₁; affects a stated result. Found by GroebnerGeometry (ERRATA-GroebnerGeometry at 163d43c, 2026-10-24, codex gpt-6-astra).
 - **Gap** at Lemma 4.10’s proof, p. 34 (Sturmfels line 1104): the source says any circuit agreeing with v in the first coordinate’s sign supplies a conformal decomposition; it should be first prove existence of a circuit conformal in every coordinate, for example using an extreme ray of ker(A) intersected with v’s orthant; affects the proof. Found by GroebnerGeometry (ERRATA-GroebnerGeometry at 163d43c, 2026-10-24, codex gpt-6-astra).
 - **Error** at Theorem 4.7, p. 33 (Sturmfels line 1039): the source says primitive-binomial degrees are strictly below (d+1)(n−d)D(A); it should be at most that bound; A={1,−1} has primitive binomial x₁x₂−1 of degree 2, equal to the bound; affects a stated result. Found by GroebnerGeometry (ERRATA-GroebnerGeometry at 163d43c, 2026-10-24, codex gpt-6-astra).
+
+## SU
+
+- **Misprint** at Proposition 7.2.1 proof, printed p. 101 (SU line 3952): the source says the degree-2n−1 coefficient of the Euler polynomial gives minus trace; it should be the degree-one coefficient, or the reversed monic polynomial; affects the proof. Found by AutomorphicCongruences (#129 at b047dd3, 2026-10-25, codex gpt-6-astra).
+- **Misprint** at §6.5.3, printed p. 98 (SU line 3820): the source says the Eisenstein ideal is the quotient of the coefficient map; it should be its kernel, as required by the following quotient isomorphism; affects nothing. Found by AutomorphicCongruences (#129 at b047dd3, 2026-10-25, codex gpt-6-astra).
 
 ## Sun, A generalization of Gauss–Kuzmin–Lévy theorem, arXiv:1705.02921v2
 
