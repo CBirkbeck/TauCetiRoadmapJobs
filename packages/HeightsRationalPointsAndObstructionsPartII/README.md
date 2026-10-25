@@ -104,7 +104,9 @@ What ArakelovGeometryAndAbelianHeights must provide (gap:controlled-polarization
 
 ### From TauCetiRoadmap.ArakelovGeometryAndAbelianHeightsPartII
 
-Section 0.5 supplies the geometric two-nef Siu inequality: on an integral projective d-fold with d≥1, nef rational bundles F,M and rational t≥0 satisfy vol(F−tM)≥Fᵈ−dt(Fᵈ⁻¹·M); positive right side implies bigness after clearing denominators. Sections 3.1–3.3 supply adelic intersections, Deligne pairings and projection formulas. Sections 4.7–4.9 supply algebraic-point heights, the big-bundle height inequality and successive minima. Sections 5.1–5.5 supply generic equidistribution, invariant extensions, adelic non-degeneracy, the general dynamical height inequality and the Hodge bundle computing stable Faltings heights. Sections 6.1–6.4 supply Moriwaki heights and specialization. Sections 8.4, 9.1–9.2 supply canonical theta and shift identities. Sections 12.1–12.6 supply potential bigness, its relative-power criterion, the product-grid degree bound, theta potential bigness after restriction to every integral parameter subvariety and cross-characteristic restriction. Sections 13.1, 13.7 supply function-field Faltings heights and Bost's lower bound in Faltings' normalization.
+Section 0.5 supplies the geometric two-nef Siu inequality: on an integral projective d-fold with d≥1, nef rational bundles F,M and rational t≥0 satisfy vol(F−tM)≥Fᵈ−dt(Fᵈ⁻¹·M); positive right side implies bigness after clearing denominators. Sections 3.1–3.3 supply adelic intersections, Deligne pairings and projection formulas. Sections 4.7–4.9 supply algebraic-point heights, the big-bundle height inequality and successive minima. Sections 5.1–5.5 supply generic equidistribution, invariant extensions, adelic non-degeneracy, the general dynamical height inequality and the Hodge bundle computing stable Faltings heights. Sections 6.1–6.4 supply Moriwaki heights and specialization; §6.4 is stated for big polarizations, and its comparison part is extended to nef polarizations by gap:moriwaki-silverman-tate-nef. The height machine §6.2 holds for every polarization except Northcott, which needs bigness. Sections 8.4, 9.1–9.2 supply canonical theta and shift identities. Sections 12.1–12.6 supply potential bigness, its relative-power criterion, the product-grid degree bound, theta potential bigness after restriction to every integral parameter subvariety and cross-characteristic restriction. Sections 13.1, 13.7 supply function-field Faltings heights and Bost's lower bound in Faltings' normalization.
+
+What ArakelovGeometryAndAbelianHeightsPartII must provide (gap:moriwaki-silverman-tate-nef): Extend §6.4(1) from big to arbitrary Moriwaki polarizations: for k₀ finitely generated over ℚ with a polarization B whose H̄ᵢ are nef but not necessarily big, an abelian scheme 𝒜 → S over a smooth irreducible quasi-projective k₀-curve with smooth projective compactification S̄, a symmetric relatively ample L with the projective embedding of §6.4(1), and an ample bundle on S̄ defining h^B_S̄, prove that there is C > 0 with |ĥ^B_(𝒜_π(P))(P) − h^B(P)| ≤ C·max{1, h^B_S̄(π(P))} for every P ∈ 𝒜(k̄₀), keeping the big hypothesis on the specialization limit §6.4(2) (gh-2019 line 2596 and line 2609, §A.2 and proof of Theorem A.3, p. 56).
 
 For the function-field branches of Layer 10, bigness is over the field of constants. A constant genus-two curve over K with S=Spec K has a quasi-finite K-moduli map but does not meet this absolute bigness hypothesis. Its difference image C−C=J contains all constant torsion, so the stronger relative-K-only hypothesis would give a false theorem.
 
@@ -202,7 +204,7 @@ One proof route is the following. Apply the product-set lemma to X = C and Z ∩
 
 ### 0.4 Ball packing in Euclidean space (Rémond)
 
-Let E be a real Euclidean space of dimension ρ and 0 < r ≤ R. For S ⊆ Metric.closedBall x₀ R, the internal covering number `Metric.coveringNumber` at radius r is finite and its real value is at most (1 + 2R/r)^ρ; equivalently S is covered by that many closed r-balls centred in S. (ggk-2026 line 1460, §7.1, proof sketch of Theorem 7.1, p. 221; dgh-2021 line 1473, Proof of Proposition 8.1, p. 34 (arXiv v3)).
+Let E be a real Euclidean space of dimension ρ and 0 < r ≤ R. For S ⊆ Metric.closedBall x₀ R, the internal covering number `Metric.coveringNumber` at radius r is finite and its real value is at most (1 + 2R/r)^ρ; equivalently S is covered by that many closed r-balls centred in S. (ggk-2026 line 1496, §7.1, proof of Theorem 7.1, p. 221; dgh-2021 line 1601, Proof of Proposition 8.1, p. 34 (arXiv v3)).
 
 Throughout this subsection, E Euclidean of dimension ρ; 0 < r ≤ R; S ⊆ a closed ball B(x₀, R).
 
@@ -346,7 +348,7 @@ One proof route is the following. By the generic finiteness lemma, `ι^{[m]}|_{X
 
 ### 1.7 The locus of finite stabilizer and generation
 
-For a subvariety S ⊆ H°, S_gen ⊆ S(ℚ̄) is the set of s such that `Stab_{A_s}(X_s)` is finite and X_s generates A_s (no proper abelian subvariety contains a translate of X_s, equivalently the abelian subvariety generated by X_s − X_s is A_s). (ggk-2026 line 637, (3.9), p. 203).
+For a subvariety S ⊆ H°, S_gen ⊆ S(ℚ̄) is the set of s such that `Stab_{A_s}(X_s)` is finite and X_s generates A_s (no proper abelian subvariety contains a translate of X_s, equivalently the abelian subvariety generated by X_s − X_s is A_s). (ggk-2026 line 646, Lemma 3.5, (3.9), p. 203).
 
 Throughout this subsection, S ⊆ H° a subvariety.
 
@@ -815,7 +817,7 @@ Layers 0–3; StableReductionPartII MC.4,MC.6–MC.7; JacobianChallengePartII La
 
 ### 5.1 The Néron–Tate Euclidean space of a finite-rank subgroup
 
-Let A be an abelian variety over ℚ̄ with a symmetric ample line bundle L and Γ ⊆ A(ℚ̄) a subgroup of finite rank ρ. On Γ_ℝ = (Γ/Γ_tors) ⊗ ℝ the Néron–Tate height extends to a positive definite quadratic form; write |P| = `ĥ_L(P)^{1/2}` and ⟨P, Q⟩ = (ĥ_L(P + Q) − ĥ_L(P) − ĥ_L(Q))/2. Then (Γ_ℝ, ⟨·,·⟩) is a Euclidean space of dimension ρ, the image of Γ in it is a subgroup whose rational span has dimension ρ (dense when Γ is a division group), and points of Γ with equal image differ by torsion. (ggk-2026 line 1834, Appendix A.5, Step 1, p. 230; dgh-2021 line 1473, Proof of Proposition 8.1, pp. 32–34 (arXiv v3)).
+Let A be an abelian variety over ℚ̄ with a symmetric ample line bundle L and Γ ⊆ A(ℚ̄) a subgroup of finite rank ρ. On Γ_ℝ = (Γ/Γ_tors) ⊗ ℝ the Néron–Tate height extends to a positive definite quadratic form; write |P| = `ĥ_L(P)^{1/2}` and ⟨P, Q⟩ = (ĥ_L(P + Q) − ĥ_L(P) − ĥ_L(Q))/2. Then (Γ_ℝ, ⟨·,·⟩) is a Euclidean space of dimension ρ, the image of Γ in it is a subgroup whose rational span has dimension ρ (dense when Γ is a division group), and points of Γ with equal image differ by torsion. (ggk-2026 line 1834, Appendix A.5, Step 1, p. 230; dgh-2021 line 1600, Proof of Proposition 8.1, p. 34 (arXiv v3)).
 
 Throughout this subsection, A abelian over ℚ̄; L symmetric ample; Γ ⊆ A(ℚ̄) of finite rank ρ.
 
@@ -840,7 +842,7 @@ The defining object has the following API.
 
 ### 5.2 The constants c_NT and h₁ of an embedded abelian variety
 
-Let A ⊆ ℙⁿ be an abelian variety over ℚ̄ embedded projectively normally by a basis ξ₀, …, ξ_n of H⁰(A, L) for a symmetric very ample L. Then c_NT(A) ≥ 0 is the least constant with |ĥ_L − h| ≤ c_NT on A(ℚ̄), and h₁(A) is the height of the coefficient vector for a chosen family of bihomogeneous polynomials `P_{ij}` of bidegree (2, 2) with f^*(p₁^*ξ_i ⊗ p₂^*ξ_j) = `P_{ij}(p₁^*ξ, p₂^*ξ)` for f(P, Q) = (P + Q, P − Q). (dgh-2021 line 1468, §8, (8.1)–(8.2), pp. 31–32 (arXiv v3); ggk-2026 line 1447, §7.1, (7.3)–(7.4), pp. 220–221).
+Let A ⊆ ℙⁿ be an abelian variety over ℚ̄ embedded projectively normally by a basis ξ₀, …, ξ_n of H⁰(A, L) for a symmetric very ample L. Then c_NT(A) ≥ 0 is the least constant with |ĥ_L − h| ≤ c_NT on A(ℚ̄), and h₁(A) is the height of the coefficient vector for a chosen family of bihomogeneous polynomials `P_{ij}` of bidegree (2, 2) with f^*(p₁^*ξ_i ⊗ p₂^*ξ_j) = `P_{ij}(p₁^*ξ, p₂^*ξ)` for f(P, Q) = (P + Q, P − Q). (dgh-2021 line 1468, §8, (8.1)–(8.2), pp. 31–32 (arXiv v3); ggk-2026 line 1480, §7.1, definitions of c_NT and h₁ before (7.3), p. 221).
 
 Throughout this subsection, A ⊆ ℙⁿ projectively normal by a symmetric very ample L.
 
@@ -863,7 +865,7 @@ The defining object has the following API.
 
 ### 5.3 Bounds for c_NT and h₁ by the Faltings height (DGH (8.4), (8.7))
 
-Fix g, a projective embedding of the level-ℓ universal principally polarized family as in DGH §6.1, and the power l used there. For its fibre embeddings there is c′ depending on these fixed choices such that c_NT(A) ≤ c′ max{1,`h_{A_g,M}([A])`}, and one can choose addition/difference polynomials with h₁(A) ≤ c′ max{1,`h_{A_g,M}([A])`}. Thus both are bounded by c″ max{1,h_Fal(A)}. The embedding and polynomial family are controlled choices; arbitrary changes of projective coordinates are excluded. The general-polarization extension is supplied by gap:controlled-polarization-embeddings. (dgh-2021 line 1473, Proof of Proposition 8.1, (8.4) and (8.6)–(8.7), pp. 32–33 (arXiv v3); ggk-2026 line 1447, §7.1, (7.3)–(7.4), p. 221).
+Fix g, a projective embedding of the level-ℓ universal principally polarized family as in DGH §6.1, and the power l used there. For its fibre embeddings there is c′ depending on these fixed choices such that c_NT(A) ≤ c′ max{1,`h_{A_g,M}([A])`}, and one can choose addition/difference polynomials with h₁(A) ≤ c′ max{1,`h_{A_g,M}([A])`}. Thus both are bounded by c″ max{1,h_Fal(A)}. The embedding and polynomial family are controlled choices; arbitrary changes of projective coordinates are excluded. The general-polarization extension is supplied by gap:controlled-polarization-embeddings. (dgh-2021 line 1536, Proof of Proposition 8.1, (8.4), p. 32, and line 1541 through (8.6)–(8.7), pp. 32–33 (arXiv v3); ggk-2026 line 1480, §7.1, the comparison before (7.3), p. 221).
 
 Throughout this subsection, A principally polarized of dimension g with the fixed universal-family embedding and chosen controlled polynomial family of DGH §6.1 and §8.
 
@@ -1014,16 +1016,20 @@ One proof route is the following. Fix P₀ ∈ X(ℚ̄); apply the new gap princ
 
 ### 5.12 Rémond’s bound for one subvariety (David–Philippon form)
 
-For a subvariety X of a principally polarized abelian variety (A,M) over a number field k, of positive dimension g, using the Mumford embedding by L=M¹⁶, and a subgroup Γ ⊆ A(ℚ̄) of finite rank r, X(ℚ̄) ∩ Γ is a union of at most `(2^{34} h₀(A) deg_L X)^{(r+1) g^(5(dim X + 1)²)}` sets (x_i + B_i)(ℚ̄) ∩ Γ with x_i + B_i ⊆ X and B_i abelian subvarieties, where A is principally polarized by M over a number field k, L=M¹⁶, h(A) is the height of the origin in its Mumford theta embedding and h₀(A)=[k:Q]max{1,h(A)}. For arbitrary ample polarizations, the general counting theorem is §5.10; the displayed explicit numerical formula retains this principal theta setting. (dgh-2021 line 1594, Proofs of Theorems 1.1 and 1.2, pp. 34–36 (arXiv v3), citing David–Philippon, Comment. Math. Helv. 77 (2002), p. 643; david-philippon-2002 line 183, p. 643; ggk-2026 line 1447, §7.1, (7.3)–(7.6), pp. 220–222 (citing david-philippon-2007, Theorem 6.8 and (6.41))).
+For a subvariety X of a principally polarized abelian variety (A,M) over a number field k, of positive dimension g, using the Mumford embedding by L=M¹⁶, and a subgroup Γ ⊆ A(ℚ̄) of finite rank r, X(ℚ̄) ∩ Γ is a union of at most `(2^{34} h₀(A) deg_L X)^{(r+1) g^(5(dim X + 1)²)}` sets (x_i + B_i)(ℚ̄) ∩ Γ with x_i + B_i ⊆ X and B_i abelian subvarieties, where A is principally polarized by M over a number field k, L=M¹⁶, h(A) is the height of the origin in its Mumford theta embedding and h₀(A)=[k:Q]max{1,h(A)}. For arbitrary ample polarizations, the general counting theorem is §5.10; the displayed explicit numerical formula retains this principal theta setting. (dgh-2021 line 1644 and line 1662, Proof of Theorem 1.1, p. 35, and line 1696, Remark 8.3, p. 36 (arXiv v3), citing David–Philippon, Comment. Math. Helv. 77 (2002), p. 643; david-philippon-2002 line 183, p. 643; ggk-2026 line 1447, §7.1, (7.3)–(7.6), pp. 220–222 (citing david-philippon-2007, Theorem 6.8 and (6.41))).
+
+The small-point input is the following quantitative count, owned here. In the same setting, with D = deg_L X, X° the complement of the Ueno locus and ĥ the Néron–Tate height for L in David–Philippon’s normalization, put `Q = (2^(16g) h₀(A)^(2/g) D)^((4g²)^(dim X))`. (a) At most Q points of X°(ℚ̄) have ĥ < 1/Q. (b) For every real a > 1 and every Γ ⊆ A(ℚ̄) of finite rank r, at most `Q (5aQ)^(r/2)` points of Γ ∩ X°(ℚ̄) have ĥ ≤ a. (david-philippon-2002 line 115, line 122 and line 129, Théorèmes 1.2–1.4, p. 641; proof of Théorème 1.3 at line 2493, pp. 689–690.) The source states (a) and (b) with its quantity q(X) and proves q(X) ≤ Q in Théorème 1.4; both counts are monotone in the constant, so they hold with Q. The source deduces (b) from the non-strict form of (a) for its smaller constant (its Théorème 5.3): it covers the ellipsoid ĥ ≤ a in Γ_ℝ by translates, centred at points x′ of Γ ∩ X°, of a small ellipsoid whose quarter-size copies are pairwise disjoint, and counts each translate on X − x′, which has the same degree and Ueno complement X° − x′.
 
 Throughout this subsection, A,M and the chosen theta coordinates descend to k, L=M¹⁶ and h₀(A) includes [k:Q]; Γ has finite rank and X is defined over Q̄.
 
-One proof route is the following. Large points: the large-points bound (Rémond’s Vojta and Mumford inequalities), with c_NT and h₁ bounded by h₀(A). Small points: David–Philippon’s lower bound for the Néron–Tate height on the complement of the Ueno locus in terms of h₀(A) and the degrees, combined with ball packing in the Néron–Tate space, bounds the points of height below the large-point threshold. Induction on dim X handles the exceptional subvarieties; David–Philippon p. 643 records the resulting explicit constant. The exponent is (r+1)g^(5(dim X+1)²), with the whole 5(dim X+1)² in the exponent of g (david-philippon-2002 line 183, p. 643).
+One proof route is the following. Large points: the large-points bound (Rémond’s Vojta and Mumford inequalities), with c_NT and h₁ bounded by h₀(A). Small points: take a > 1 at least the large-point threshold of §5.8 and apply the quantitative small-point count stated above; the at most Q exceptional points of height below 1/Q, among them all torsion points of X°, are kept inside that count rather than excluded by a lower bound, and the points of height above a are the large points. Induction on dim X handles the exceptional subvarieties; David–Philippon p. 643 records the resulting explicit constant. The exponent is (r+1)g^(5(dim X+1)²), with the whole 5(dim X+1)² in the exponent of g (david-philippon-2002 line 183, p. 643).
 
 **Checks.**
 
 - The bound depends on the height of A, unlike the uniform theorems; it is the input for the finitely many curves of small modular height in DGH Theorem 1.1.
 - For r = 0 it is a bound, uniform in the base point, on torsion cosets: this supplies the small-height step of DGH Theorem 1.4.
+- Negative control for the small-point count: for a genus-two curve C with Weierstrass point w and X = C − w in its Jacobian, L = M¹⁶ gives D = 16·(Θ·C) = 32, dim X = 1, (4g²)^(dim X) = 16 and Q = (2³²·h₀(A)·32)¹⁶ = 2⁵⁹² h₀(A)¹⁶. X° = X contains the six 2-torsion points w_i − w of height 0, and 6 ≤ Q as (a) allows; a positive lower bound for ĥ on all of X° would be false.
+- In (b) with r = 0 and a = 2 the count is at most Q, independent of a, matching the rank-zero torsion count; with r = 2 the factor 5aQ enters to the first power, so replacing the exponent r/2 by r would square it and lose the square-root packing gain.
 
 *Needs:* §5.8; §0.4; §5.1; §5.3; HeightsRationalPointsAndObstructions §§0.16–0.35, 1.7–1.11, 5.1–5.19.
 
@@ -1412,13 +1418,14 @@ Let k₀ be finitely generated over ℚ with a polarization B, 𝒜 → S an abe
 
 Throughout this subsection, k₀ finitely generated over ℚ with polarization B; S smooth irreducible curve over k₀.
 
-One proof route is the following. Reduce to k₀ ⊆ ℂ by a field isomorphism (Moriwaki heights transport, ArakelovGeometryAndAbelianHeightsPartII §§6.1–6.4). Rerun the proof of the height inequality: the Betti-form and intersection arguments are geometric over ℂ; only the height machine, Néron–Tate heights and Silverman–Tate are replaced by their Moriwaki versions (ArakelovGeometryAndAbelianHeightsPartII §§6.1–6.4). The left-hand side is the base height `h^B_{S̄,M}(π(P))`.
+One proof route is the following. Reduce to k₀ ⊆ ℂ by a field isomorphism (Moriwaki heights transport, ArakelovGeometryAndAbelianHeightsPartII §§6.1–6.4). Rerun the proof of the height inequality: the Betti-form and intersection arguments are geometric over ℂ; only the height machine, Néron–Tate heights and Silverman–Tate are replaced by their Moriwaki versions: the height machine without Northcott (ArakelovGeometryAndAbelianHeightsPartII §§6.1–6.3, valid for every polarization) and the Silverman–Tate comparison for the given, possibly non-big, polarization B (ArakelovGeometryAndAbelianHeightsPartII §6.4(1) with gap:moriwaki-silverman-tate-nef). Bigness of B is not used here; it enters only through the specialization limit in §8.6. The left-hand side is the base height `h^B_{S̄,M}(π(P))`.
 
 **Checks.**
 
 - For k₀ a number field, Moriwaki heights are Weil heights and the statement is the height inequality over a curve.
+- For k₀ = ℚ(t) with B given by the trivially metrized trivial bundle on ℙ¹_ℤ (nef, volume 0, not big), all Moriwaki heights are bounded, so the statement reads O(1) ≤ c(1 + O(1)) and holds after enlarging c; it lies outside the big-polarization comparison of the supplier, which is why the comparison is taken for nef B.
 
-*Needs:* §8.3; ArakelovGeometryAndAbelianHeightsPartII §§3.1–3.3, 4.7–4.9, 5.1–5.5, 6.1–6.4, 8.4, 9.1–9.2, 12.1–12.6, 13.1, 13.7.
+*Needs:* §8.3; ArakelovGeometryAndAbelianHeightsPartII §§3.1–3.3, 4.7–4.9, 5.1–5.5, 6.1–6.4 (gap:moriwaki-silverman-tate-nef), 8.4, 9.1–9.2, 12.1–12.6, 13.1, 13.7.
 
 ### 8.6 Geometric Bogomolov over function fields of curves in characteristic zero
 
@@ -1441,7 +1448,7 @@ For a geometrically trace-free curve-field variety, D=1 bounds rational torsion.
 
 ### Dependencies
 
-Layers 2,7; AbelianSchemesAndArithmeticModuliPartII §§B2.3,B2.13,B2.21–B2.23; ArakelovGeometryAndAbelianHeightsPartII §§6.1–6.4; HeightsRationalPointsAndObstructions §§0.29,1.10,5.8. The curve-base geometric theorem does not use Layer 9.
+Layers 2,7; AbelianSchemesAndArithmeticModuliPartII §§B2.3,B2.13,B2.21–B2.23; ArakelovGeometryAndAbelianHeightsPartII §§6.1–6.4 (gap:moriwaki-silverman-tate-nef); HeightsRationalPointsAndObstructions §§0.29,1.10,5.8. The curve-base geometric theorem does not use Layer 9.
 
 ## Layer 9: The geometric Bogomolov conjecture in all characteristics
 
@@ -2135,7 +2142,7 @@ The uniform theorems supply height-independent finite-rank intersection bounds a
 - David W. Masser, *Specializations of endomorphism rings of abelian varieties*. [masser-1996](https://www.numdam.org/item/BSMF_1996__124_3_457_0.pdf). Bull. Soc. Math. France 124 (1996), 457–476 (Numdam)
 - Laura DeMarco, Niki Myrto Mavraki, Hexi Ye, *Bounded geometry for PCF-special subvarieties*. [dmy-2026](https://arxiv.org/pdf/2405.17343v3). Forum Math. Pi 14 (2026) e4; read: arXiv 2405.17343v3
 - Gaël Rémond, *Décompte dans une conjecture de Lang*, Inventiones Mathematicae 142 (2000), 513–545. [remond-2000-decompte](https://doi.org/10.1007/s002220000095), Lemma 3.1, Propositions 3.3–3.4 and Lemma 6.1; cited by published locators, with GGK Appendix A providing the restated statements.
-- Sinnou David and Patrice Philippon, *Minorations des hauteurs normalisées des sous-variétés de variétés abéliennes II*, Commentarii Mathematici Helvetici 77 (2002), 639–700. [david-philippon-2002](https://ems.press/content/serial-article-files/42941), pp. 640–643.
+- Sinnou David and Patrice Philippon, *Minorations des hauteurs normalisées des sous-variétés de variétés abéliennes II*, Commentarii Mathematici Helvetici 77 (2002), 639–700. [david-philippon-2002](https://ems.press/content/serial-article-files/42941), Théorèmes 1.2–1.4, p. 641; Rémond’s theorem, p. 643; proof of Théorème 1.3, pp. 689–690.
 - Sinnou David and Patrice Philippon, *Minorations des hauteurs normalisées des sous-variétés des puissances des courbes elliptiques*, International Mathematics Research Papers 2007, rpm006. [david-philippon-2007](https://doi.org/10.1093/imrp/rpm006), Theorem 6.8 and equation (6.41), cited by published locators.
 - David W. Masser, *Specializations of finitely generated subgroups of abelian varieties*, Transactions of the American Mathematical Society 311 (1989), 413–424. [masser-1989](https://www.ams.org/journals/tran/1989-311-01/S0002-9947-1989-0974783-6/S0002-9947-1989-0974783-6.pdf), Main Theorem and Scholium 1, p. 414.
 - Kazuhiko Yamaki, *Strict supports of canonical measures and applications to the geometric Bogomolov conjecture*. [yamaki-strict-support](https://arxiv.org/abs/1211.0406v6). Compos. Math. 152 (2016), 997–1040; read: arXiv v6, Theorem E (= Corollary 7.22), pp. 3, 41; §§3.1, 5.3, Proposition 5.12, proof of Theorem 6.2, pp. 13–15, 25–31.

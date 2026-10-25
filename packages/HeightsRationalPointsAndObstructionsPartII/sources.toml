@@ -217,7 +217,7 @@ cited_for = ["Layers 5–6"]
 [[source]]
 id = "david-philippon-2002"
 locator_scheme = "theorem"
-locator = "Rémond theorem, p. 643; standing principal M¹⁶ embedding and h₀=[k:Q]max{1,h(A)}, pp. 640–641"
+locator = "Théorèmes 1.2–1.4, p. 641; Rémond theorem, p. 643; proof of Théorème 1.3, pp. 689–690; standing principal M¹⁶ embedding and h₀=[k:Q]max{1,h(A)}, pp. 640–641"
 url = "https://ems.press/content/serial-article-files/42941"
 fetched_from = "https://ems.press/content/serial-article-files/42941"
 fetched_at = "2026-10-24T09:31:03Z"
