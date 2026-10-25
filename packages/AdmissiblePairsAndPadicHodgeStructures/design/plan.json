@@ -5287,12 +5287,6 @@
     "section": "§5.5"
   },
   {
-    "slug": "countable-chevalley-lines",
-    "needs": "Supply a countable exhaustion of the regular representation by finite-dimensional subrepresentations and its exterior-power Chevalley-line criterion for every closed subgroup.",
-    "supplier": "ReductiveGroups",
-    "section": "Layer 1"
-  },
-  {
     "slug": "adjoint-kernel-and-orbit-differential",
     "needs": "Prove ker(Ad) = Z(G) for connected characteristic-zero linear groups and the image and kernel formulas for differentials of their flag-orbit maps.",
     "supplier": "ReductiveGroups",
@@ -5300,7 +5294,7 @@
   },
   {
     "slug": "observable-subgroup-embedding",
-    "needs": "Supply Chevalley line stabilizers and the inverse-character observable embedding into GL(V) × G_m, with the quasi-affine and affine quotient hypotheses distinguished.",
+    "needs": "Prove that a closed subgroup realized as a vector stabilizer is observable and has a representable quasi-affine homogeneous quotient, and distinguish this conclusion from the stronger affine-quotient hypothesis.",
     "supplier": "ReductiveGroups",
     "section": "Layer 3"
   },
