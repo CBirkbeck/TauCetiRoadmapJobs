@@ -3009,6 +3009,36 @@
         "EllAdicHomotopyTypesAndWeights:EH.5/frobenius-hodge-weight-comparison"
       ],
       "detail": "The current SchemeAndStackFoundations README, layer 2 conventions at upstream commit a08dc283184a9ec4d6c7fab2fb2b41866801994a, explicitly leaves finite-coefficient/adic étale theory and Artin comparison downstream. Its generic site cohomology, curve computations and proper hypercover descent do not supply the complete EH.4 contract. Locate and match the existing downstream finite-coefficient contracts before packaging: ordinary H^i_et(X,Z/l^r) finiteness for separated finite-type X, invariance under algebraically closed extension, cofinal étale-hypercover computation, compatible Galois action and SGA4 XVI 4.1 analytic comparison. Weil II 5.2.2–5.2.5, pp. 238–239, invokes these inputs; their general proofs were not independently verified here. The EDC.0 supplier inventory names EtaleBaseChange/EllAdicRealization in the CohomologicalPointCounting direction; those names alone are not a verified replacement. Preserve existing owners when locating them, and request only any genuinely absent comparison theorem. This gap is separate from G3 good covers, G2 completion and G4 Hodge realization."
+    },
+    {
+      "slug": "connected-sullivan-interface",
+      "supplier": "AlgebraicTopologyPartII",
+      "section": "AT2.4, G3",
+      "needs": "Extend §AT2.4, G3 to polynomial forms and ordered Sullivan/Hirsch models of all connected nonnegative commutative DG algebras over characteristic-zero fields, with polynomial homotopy lifting, full and 1-minimal existence, quasi-isomorphism rigidity and scalar-extension compatibility."
+    },
+    {
+      "slug": "compatible-good-cover-refinement",
+      "supplier": "ComplexComparisonPartII",
+      "section": "C6.0",
+      "needs": "For every separated finite-type complex scheme and finite diagram of étale covers, supply a cofinal compatible system of analytic good-cover refinements and a refinement-natural nerve equivalence, without requiring compactness or smoothness."
+    },
+    {
+      "slug": "geometric-mixed-hodge-realization",
+      "supplier": "ComplexComparisonPartII",
+      "section": "C5.3",
+      "needs": "Extend §C5.3’s geometric Hodge realization and MotivicEtaleKTheory §3.2’s smooth logarithmic realization to every separated finite-type complex scheme through proper smooth/SNC hyperresolutions, with rational/complex filtered comparison, cohomological weight shift, cup and Künneth compatibility and common-refinement independence."
+    },
+    {
+      "slug": "arbitrary-base-weight-filtration",
+      "supplier": "DeligneWeightsAndPurity",
+      "section": "8.20–8.24",
+      "needs": "Extend §§8.20–8.24 to the functorial finite cohomological weight filtration on ordinary ℚ_ℓ cohomology over arbitrary algebraically closed fields, independent of suitable spreads and common refinements and compatible with products, field extension and the normal-variety H¹ weights 1 and 2."
+    },
+    {
+      "slug": "normal-variety-unipotent-category",
+      "supplier": "AnabelianGeometryAndNonabelianChabauty",
+      "section": "2.2–2.3",
+      "needs": "Extend §§2.2–2.3’s pointed unipotent étale Tannakian category, finite-dimensional quotient towers and H¹/Ext¹ and H² obstruction interfaces to every connected normal separated finite-type variety over an algebraically closed field with ℓ invertible."
     }
   ],
   "coverage": [
