@@ -6,7 +6,7 @@
 
 AnalyticToricGeometry stops at algebraic and complex analytic geometry of finite regular fans. Its Layer 0, the algebraic supplier, and the pinned Tau Ceti toric modules own integral lattices, rational salient cones, primitive rays, dual semigroups, Gordan finite generation and the complex fan scheme. This Part II extends that direction to arbitrary coefficient rings for divisor modules and to nonarchimedean and perfectoid geometry; singular finite fans remain admitted wherever regularity is not stated. Classification of all toric varieties and Sumihiro's theorem are outside this fan-parametrized scope.
 
-The following objects are already in the library or stated by their named suppliers and are not constructions of this roadmap: Mathlib's monoid algebras and continuous functions vanishing at infinity; Tau Ceti's scheme Weil divisors, orders, linear equivalence and divisorial sheaves; its native adic-space category and open restrictions; arbitrary-ring toric charts, ordinary face localization and finite-fan gluing in ShimuraCompactifications C0.6–C0.7 and C0.16–C0.18; general analytification in AdicSpacesPartII R1; formal completion, generic fibres and section domains in AdicSpacesPartIII R2.2–R2.4, R2.8 and R2.10; perfected cone algebras and homogeneous approximation in PerfectoidSpaces P1.30 and P2.1 with the extensions specified below; and general tilting, tilde-limits, étale sites, cohomology, Chow groups and refined Gysin maps in the supplier sections below. Only the toric specialization, its character formulas and the comparisons on those actual spaces belong here. In particular, the power map extends the complex toric map to the common integral model and its completed tower; it does not introduce another monoid-algebra map.
+The following objects are already in the library or stated by their named suppliers and are not constructions of this roadmap: Mathlib's monoid algebras and continuous functions vanishing at infinity; Tau Ceti's scheme Weil divisors, orders, linear equivalence and divisorial sheaves; its native adic-space category and open restrictions; arbitrary-ring toric charts, ordinary face localization and finite-fan gluing in ShimuraCompactifications C0.9 and C0.16–C0.18; general analytification in AdicSpacesPartII R1; formal completion, generic fibres and section domains in AdicSpacesPartIII R2.2–R2.4, R2.8 and R2.10; perfected cone algebras and homogeneous approximation in PerfectoidSpaces P1.30 and P2.1 with the extensions specified below; and general tilting, tilde-limits, étale sites, cohomology, Chow groups and refined Gysin maps in the supplier sections below. Only the toric specialization, its character formulas and the comparisons on those actual spaces belong here. In particular, the power map extends the complex toric map to the common integral model and its completed tower; it does not introduce another monoid-algebra map.
 
 The fixed smooth complete nonprojective threefold of Fujino–Sato is owned by WeilConjectures WC.6, “A smooth proper nonprojective threefold”, including its fan, integral model and fixed-fan Chow presentation. Here it is a Check of the general complete-fan comparison and hypersurface approximation, not another construction. The general operational Chow identification for every complete fan in §6.1 is broader than that fixed-fan presentation. SchemeAndStackFoundations owns the general operational and finite-orbit duality extensions in the contracts below; restricting §6.1 to regular fans would discard a theorem.
 
@@ -16,7 +16,7 @@ DeligneWeightsAndPurityPartII consumes the natural toric projection, cohomology 
 
 Let N be a finite free ℤ-module of rank n, let M=Homℤ(N,ℤ), and use the integral-lattice and finite-fan carriers of the parent. The fan Σ is a nonempty finite rational strongly convex fan in Nℝ. Strong convexity means that a cone contains no line; merely containing zero is insufficient. The rank-zero fan containing only the zero cone is allowed. Empty fans have empty realizations but are excluded from the nonempty geometric targets. Regular means that each cone's primitive ray generators extend to an integral basis; complete means support Nℝ; projective is a separate condition.
 
-For primitive ray vectors vᵢ and integer coefficients aᵢ write D=ΣᵢaᵢDᵢ. Fix div(χᵘ)=Σᵢ⟨u,vᵢ⟩Dᵢ and section-generator weights ⟨mσ,vᵢ⟩=−aᵢ on σ. A rational function regarded as a local equation for D has the opposite weight −mσ. On ℙ¹, with the positive ray at zero and the negative ray at infinity, div(t)=D₊−D₋, W(dD₋)={u∈ℤ:0≤u≤d}, and the frames 1,tᵈ have first-to-second ratio t⁻ᵈ. These computations fix all three signs (SCH12, Definition/Proposition 8.4, p. 304; FS94, equation (2.3), p. 7; SCH12 line 2381; FS94 line 234).
+For primitive ray vectors vᵢ and integer coefficients aᵢ write D=ΣᵢaᵢDᵢ. Fix div(χᵘ)=Σᵢ⟨u,vᵢ⟩Dᵢ and section-generator weights ⟨mσ,vᵢ⟩=−aᵢ on σ. A rational function regarded as a local equation for D has the opposite weight −mσ. On ℙ¹, with the positive ray at zero and the negative ray at infinity, div(t)=D₊−D₋, W(dD₋)={u∈ℤ:0≤u≤d}, and the frames 1,tᵈ have first-to-second ratio t⁻ᵈ. These computations fix all three signs (SCH12, Definition/Proposition 8.4, p. 304; FS94, equation (2.3), p. 7; SCH12 line 2381; FS94 line 235).
 
 A is any commutative unital ring, including the zero ring and rings with nilpotents. Weil terminology uses only normal field fibres. Character modules over A need neither normality nor noetherianity of A; a Cartier interpretation requires Cartier data. A regular fan makes every integer invariant divisor Cartier. Multiplication of sections is convolution, with source S(D)×S(E) and target S(D+E); it is not multiplication of coefficient functions at the same weight.
 
@@ -48,13 +48,13 @@ Layer 0, “the algebraic supplier”, supplies dual semigroups, face localizati
 
 ### From TauCetiRoadmap.ShimuraCompactifications
 
-C0.6–C0.7 supply ordinary character face localization; C0.16 supplies the finite-fan scheme over every commutative ring, its stratum ideals, torus action and coherent arbitrary coefficient change. C0.17 supplies the properness criterion: for the complete fan the structure morphism is proper over every base. C0.18 supplies the regular boundary's integral chart description. Completeness is not replaced by projectivity and the coefficient ring may be K°.
+C0.6–C0.7 supply face projections and off-face ideals for closed strata, with their coefficient change; C0.9 supplies face open immersions by inverting an exposing character; C0.16 supplies the finite-fan scheme over every commutative ring, its stratum ideals, torus action and coherent arbitrary coefficient change. C0.17 supplies the properness criterion: for the complete fan the structure morphism is proper over every base. C0.18 supplies the regular boundary's integral chart description. Completeness is not replaced by projectivity and the coefficient ring may be K°.
 
 What ShimuraCompactifications must provide (gap:toric-field-fibres): Export normal geometrically integral field fibres for arbitrary finite rational fans, their distinct codimension-one ray orbit closures, and regular-fan smoothness over every coefficient ring, compatibly with the C0.16 chart gluing and coefficient change.
 
 ### From TauCetiRoadmap.AdicSpaces and TauCetiRoadmap.AdicSpacesPartII
 
-AdicSpaces §§3–5 supply affinoid spectra, rational opens, sheafiness where applicable, the adic-space carrier and open gluing. AdicSpacesPartII R0 supplies completed scalar extension and rational localization; R1 supplies analytification, its chart comparison and preservation of properness. Use the native adic category throughout.
+AdicSpaces §§2–5 supply affinoid spectra, rational opens, sheafiness where applicable, the adic-space carrier and open gluing. AdicSpacesPartII R0 supplies completed scalar extension and rational localization, with R0.19.1–R0.19.3 supplying constructible compactness and the pro-constructible subset calculus; R1 supplies analytification, its chart comparison and preservation of properness. Use the native adic category throughout.
 
 ### From TauCetiRoadmap.AdicSpacesPartIII
 
@@ -62,7 +62,7 @@ R2.2 supplies admissible formal schemes over an arbitrary complete rank-one valu
 
 ### From TauCetiRoadmap.PerfectoidSpaces
 
-P1.30 supplies perfected Tate algebras. P2.1 supplies homogeneous approximation on perfected polydiscs; P2.2–P2.3 supply the tilting homeomorphism and perfectoid rational localization; P2.9–P2.12 supply affinoid and glued perfectoid spaces and tilting. P3.18 and P3.20 supply the perfectoid étale site and its tilting equivalence. P7.1–P7.3 and P7.12 supply chart-density tilde-limits, residue-field conversion, rational restriction and gluing; P7.13 supplies characteristic-p perfection towers; P7.15 supplies the fibred-topos limit, inseparable-tower invariance and torsion-cohomology continuity. The completed-colimit input requires a common pseudouniformizer and compatible integral rings of definition, both furnished by the Gauss models here. Perfection is used on split toric charts with their coefficient-field twists identified.
+P1.30 supplies perfected Tate algebras. P2.1 supplies homogeneous approximation on perfected polydiscs; P2.2–P2.3 supply the tilting homeomorphism and perfectoid rational localization; P2.9–P2.12 supply affinoid and glued perfectoid spaces and tilting. P3.18 and P3.20 supply the perfectoid étale site and its tilting equivalence. P7.1–P7.3 define the chart-density and residue-field tilde-limit relations; P7.11 supplies the completed-colimit criterion through AdicSpacesPartII R0.20.1; P7.12 supplies rational restriction and gluing; P7.13 supplies characteristic-p perfection towers; P7.15 supplies conversion from chart-density to residue-field tilde-limits for qcqs locally noetherian analytic finite levels, the fibred-topos limit, inseparable-tower invariance and torsion-cohomology continuity. The completed-colimit input requires a common pseudouniformizer and compatible integral rings of definition, both furnished by the Gauss models here. Perfection is used on split toric charts with their coefficient-field twists identified.
 
 What PerfectoidSpaces must provide (gap:perfected-cone-algebras): Extend perfected Tate algebras to coefficient-Gauss completions K⟨C∩L[1/p]⟩ for every rational polyhedral cone C in a finite-rank lattice L, including lineality, with their power-bounded plus rings, perfectoidness and monomial-compatible tilts.
 
@@ -78,15 +78,19 @@ A1.6 supplies the small étale site, its jointly surjective covering families an
 
 What SchemeAndStackFoundations must provide (gap:split-torus-divisors): Export that for every field k and finite free lattice M the split-torus ring k[M] is a Laurent polynomial unique factorization domain with units exactly aχᵘ for a∈k× and u∈M, and that its native Weil divisor class group is zero, compatibly with the divisor excision and Picard interfaces.
 
-What SchemeAndStackFoundations must provide (gap:valuation-smooth-proper): Export prime-to-residue-characteristic smooth proper base change between geometric generic and special fibres over any rank-one valuation ring with algebraically closed fraction field, for Z/ℓ^m with m≥1, natural for morphisms and valuation-field extension.
-
 What SchemeAndStackFoundations must provide (gap:operational-chow-finite-orbits): Supply integral operational Chow groups, their product and evaluation on cycles, and the Kronecker isomorphism A^j(X)≅Hom(A_j(X),Z) for complete k-schemes with a split connected solvable group action and finitely many orbits, each k-isomorphic to a product of an affine space and a split torus, compatibly with field extension and the smooth intersection product.
 
-What SchemeAndStackFoundations must provide (gap:intersection-positivity-cuts): Export positive ample degree of every nonzero effective projective cycle, localized top Chern support for arbitrary sections including excess intersection, and ample hypersurface cuts over any infinite field that avoid the finitely many top-dimensional geometric components and preserve nonemptiness in positive dimension.
+What SchemeAndStackFoundations must provide (gap:ample-degree-positivity): Export deg(c₁(H)^d∩[V])>0 for every field k, projective k-scheme X, ample line bundle H on X and d-dimensional integral closed subscheme V⊂X, hence positive ample degree for every nonzero effective cycle of pure dimension d.
+
+What SchemeAndStackFoundations must provide (gap:ample-generic-cuts): For every infinite field k and projective k-scheme W of dimension d>0 with a fixed projective embedding, supply an m≥1 and a k-defined hypersurface in |O(m)| containing no top-dimensional geometric component of W, whose intersection with W is nonempty of dimension d−1.
+
+### From TauCetiRoadmap.EtaleCohomologyFoundations
+
+§F.2.3 supplies smooth universal local acyclicity for finite lisse coefficients invertible on the base, including nonnoetherian bases, and coherent cospecialization under base change. For a smooth scheme over a strictly henselian valuation ring with separably closed fraction field, its constant Λ coefficients therefore satisfy RΨΛ≅Λ on the special fibre.
 
 ### From TauCetiRoadmap.ClassicalAdicEtaleCohomology
 
-§1.1 supplies the ordinary derived cohomology of module and abelian sheaves, the constant-coefficient comparison and functorial pullback. §8.2, proper algebraic comparison, supplies the natural comparison between algebraic and analytic torsion cohomology for proper finite-type schemes; use its ℤ/ℓᵐ specialization and retain naturality for φₚ and field extension. The tower passage itself is PerfectoidSpaces P7.15, not a claim that analytic cohomology commutes with an arbitrary limit.
+§1.1 supplies the ordinary derived cohomology of module and abelian sheaves, the constant-coefficient comparison and functorial pullback. §6.2 supplies the natural proper specialization RΓ(X_η,F)≅RΓ(X_s,RΨF) over a strictly henselian valuation ring with separably closed fraction field, and its valuation-base-change compatibility. §8.2, proper algebraic comparison, supplies the natural comparison between algebraic and analytic torsion cohomology for proper finite-type schemes; use its ℤ/ℓᵐ specialization and retain naturality for φₚ and field extension. The tower passage itself is PerfectoidSpaces P7.15, not a claim that analytic cohomology commutes with an arbitrary limit.
 
 What ClassicalAdicEtaleCohomology must provide (gap:geometric-morphism-cup-pullback): Extend ordinary constant-torsion cohomology pullback and its coefficient-forgetting comparison to geometric morphisms of the adic étale topoi, with cup-product, identity, composition and field-base-change compatibility.
 
@@ -106,7 +110,7 @@ On XΣ,k over a field k, let D_i be the reduced closure of the codimension-one o
 
 Here k is a field for the Weil-divisor interpretation.
 
-One proof route is the following. Import XΣ,A, orbit ideals, torus action and base change from ShimuraCompactifications C0. Use the normal geometrically integral field-fibre and codimension-one orbit properties of gap:toric-field-fibres; arbitrary-ring chart construction alone does not assert normality. Use the primitive ray chart to identify its boundary coordinate; take its closure and codimension-one generic point. Map ray Finsupp coefficients to the native SchemeWeilDivisor by the injective ray-point map; do not reconstruct the generic divisor carrier. (SCH12, §8, Definition/Proposition 8.4, p. 304; SCH12 line 2381).
+One proof route is the following. Import XΣ,A, torus action and base change from ShimuraCompactifications C0.16, and orbit ideals from C0.6–C0.7. Use the normal geometrically integral field-fibre and codimension-one orbit properties of gap:toric-field-fibres; arbitrary-ring chart construction alone does not assert normality. Use the primitive ray chart to identify its boundary coordinate; take its closure and codimension-one generic point. Map ray Finsupp coefficients to the native SchemeWeilDivisor by the injective ray-point map; do not reconstruct the generic divisor carrier. (SCH12, §8, Definition/Proposition 8.4, p. 304; SCH12 line 2381).
 
 The API records these facts, with the hypotheses of this subsection. (SCH12, §8, Definition/Proposition 8.4, p. 304; SCH12 line 2381).
 
@@ -120,10 +124,11 @@ The API records these facts, with the hypotheses of this subsection. (SCH12, §8
 - For the ℙ¹ fan with rays +1 and −1, the character t has divisor D_+−D_−.
 - For the zero-cone fan there are no boundary rays and the invariant divisor group is zero.
 - On ℙ¹, 2D_+ differs from D_+; the coefficient is 2, not a reduced support indicator.
+- On the positive-ray chart k[t], the closed orbit projection sends t to 0 and has quotient k. The open chart of the zero-cone face instead inverts t, giving k[t,t⁻¹]; these maps have different targets.
 
 All ray identifications agree on overlaps; coefficients retain multiplicities.
 
-*Needs:* ShimuraCompactifications C0.16; `TauCeti.Toric.primitiveGenerator`; `TauCeti.AlgebraicGeometry.SchemeWeilDivisor`; ShimuraCompactifications C0.16–C0.18, including gap:toric-field-fibres.
+*Needs:* ShimuraCompactifications C0.6–C0.7 and C0.16; `TauCeti.Toric.primitiveGenerator`; `TauCeti.AlgebraicGeometry.SchemeWeilDivisor`; ShimuraCompactifications C0.16–C0.18, including gap:toric-field-fibres.
 
 ### 0.2 Divisor character weights
 
@@ -154,7 +159,7 @@ For every commutative ring A, define the A-module S_A(D)=⊕_(u∈W_Σ(D)) Aχ^u
 
 Here A is any commutative ring; Cartier is required for the line-bundle interpretation.
 
-One proof route is the following. Work in the native additive monoid algebra A[M], with finite support in W(D). Localize the character modules along the ordinary face maps supplied by ShimuraCompactifications C0. Intersect the local character support conditions in A[M]; monomial independence gives exactly W_Σ(D), even for rings with nilpotents. For a normal finite-type toric field fibre, codimension-one stalks are DVRs. Supply these native sheaf hypotheses, then identify the module with SchemeWeilDivisor.sheaf using the character orders along D_i. (SCH12, §8, Definition/Proposition 8.4, p. 304; proof of Proposition 8.7, p. 306; SCH12 line 2386 and line 2477).
+One proof route is the following. Work in the native additive monoid algebra A[M], with finite support in W(D). Localize the character modules along the ordinary face maps supplied by ShimuraCompactifications C0.9 and C0.16. Intersect the local character support conditions in A[M]; monomial independence gives exactly W_Σ(D), even for rings with nilpotents. For a normal finite-type toric field fibre, codimension-one stalks are DVRs. Supply these native sheaf hypotheses, then identify the module with SchemeWeilDivisor.sheaf using the character orders along D_i. (SCH12, §8, Definition/Proposition 8.4, p. 304; proof of Proposition 8.7, p. 306; SCH12 line 2386 and line 2477).
 
 The API records these facts, with the hypotheses of this subsection. (SCH12, §8, Definition/Proposition 8.4, p. 304; proof of Proposition 8.7, p. 306; SCH12 line 2386 and line 2477).
 
@@ -172,7 +177,7 @@ The API records these facts, with the hypotheses of this subsection. (SCH12, §8
 
 Arbitrary coefficient change A→B gives B⊗_A S_A(D)≅S_B(D); singular charts do not silently make O(D) invertible.
 
-*Needs:* §0.2; ShimuraCompactifications C0.16; ShimuraCompactifications C0.6–C0.7; `AddMonoidAlgebra`; `TauCeti.AlgebraicGeometry.SchemeWeilDivisor.sheaf`.
+*Needs:* §0.2; ShimuraCompactifications C0.9 and C0.16; `AddMonoidAlgebra`; `TauCeti.AlgebraicGeometry.SchemeWeilDivisor.sheaf`.
 
 ### 0.4 Invariant divisor representatives
 
@@ -187,8 +192,6 @@ One proof route is the following. Restrict the divisor to the dense split torus 
 - On the affine line the Cartier equation x² has vanishing order 2 at zero; passing to the invariant representative keeps 2, whereas taking the reduced support would give 1.
 - On the split rank-one torus, div(t)=0 because t is a unit, so its restricted divisor class is zero; this uses the torus, not the compactification.
 - On ℙ¹, the divisor of t−a for a≠0 is [a]−D₋, so [a] is equivalent to D₋, not to the zero divisor.
-
-The hypersurface x²=0 on an affine chart retains coefficient multiplicity two.
 
 *Needs:* §0.1; §0.3; `TauCeti.AlgebraicGeometry.WeilDivisor.OrderSystem.ofScheme`; SchemeAndStackFoundations §§0.7, 0.17–0.18, 3.4 and 4.13, including gap:split-torus-divisors.
 
@@ -226,11 +229,9 @@ One proof route is the following. Use the invariant-representative theorem for s
 
 **Checks.**
 
-- For ℙ¹ the character map is u↦(u,−u), and the quotient map is (a,b)↦a+b; its kernel is exactly the image and Pic=ℤ.
+- For ℙ¹ the character map is u↦(u,−u), and the quotient map is (a,b)↦a+b; its kernel is exactly the image and Pic=ℤ. A nonempty effective divisor of degree d≥1 has powered degree pᴺd>0 over either coefficient field, so its class cannot become zero.
 - For the rank-one zero-cone fan there are no rays: the map ℤ→0 has kernel ℤ and the class group is zero, excluding injectivity without completeness.
 - The incomplete regular fan with separate rays (1,0),(1,2) in ℤ² has character matrix with rows (1,0),(1,2), determinant 2 and cokernel ℤ/2; smoothness alone does not imply torsion-free Pic.
-
-For ℙ¹, Cl=Pic=ℤ with degree a_++a_−. On a complete regular fan, a nonempty effective divisor has a nonzero class which stays nonzero over the tilted field and after multiplication by p^N. An incomplete smooth fan need not have torsion-free Pic: the two separate rays (1,0),(1,2) in ℤ² give cokernel ℤ/2.
 
 *Needs:* §0.4; §0.1; §0.5; `TauCeti.AlgebraicGeometry.WeilDivisor.OrderSystem.ofScheme`; SchemeAndStackFoundations §§0.7, 0.17–0.18, 3.4 and 4.13, including gap:split-torus-divisors.
 
@@ -240,7 +241,7 @@ On ℙ¹, D=dD₋ gives the basis 1,t,…,tᵈ for d≥0, no sections for d<0, a
 
 ### Dependencies
 
-Mathlib monoid algebras, modules and tensor products; Tau Ceti toric and Weil-divisor modules; AnalyticToricGeometry Layer 0; ShimuraCompactifications C0.6–C0.7 and C0.16–C0.18; SchemeAndStackFoundations §3.4, gap:split-torus-divisors; AdicSpacesPartIII R2.2 and R2.10 for integral completion.
+Mathlib monoid algebras, modules and tensor products; Tau Ceti toric and Weil-divisor modules; AnalyticToricGeometry Layer 0; ShimuraCompactifications C0.6–C0.7 (orbit ideals), C0.9 and C0.16–C0.18; SchemeAndStackFoundations §3.4, gap:split-torus-divisors; AdicSpacesPartIII R2.2 and R2.10 for integral completion.
 
 ## Layer 1: unit toric formal generic fibres
 
@@ -248,7 +249,7 @@ Mathlib monoid algebras, modules and tensor products; Tau Ceti toric and Weil-di
 
 Define AΣ,K as the generic fibre of the ϖ-adic completion of XΣ,K°. For each cone σ its affinoid chart is Spa(K⟨P_σ⟩,K°⟨P_σ⟩), where P_σ=σ∨∩M and restricted sums use the coefficient supremum norm. A face τ⊂σ is the formal localization in a monomial χ^m, m∈P_σ∩τ⊥ exposing the face, and its generic-fibre chart is the rational unit locus |χ^m|=1. Glue these charts along the fan intersections. The plus subring is explicit and agrees with the integral closure of the model ring. (SCH12, §8, paragraph following Definition/Proposition 8.4, p. 304; SCH12 line 2391).
 
-One proof route is the following. Import arbitrary-ring fan gluing and the ordinary algebraic face maps from ShimuraCompactifications C0. Complete the monoid chart K°[P_σ] ϖ-adically, then invert ϖ; Gordan finite generation supplies topological finite presentation. The coefficient Gauss norm on the restricted monoid algebra is multiplicative: use an order on the ambient lattice and leading terms in finite truncations. Its norm-at-most-one subring is K°⟨P_σ⟩, is integrally closed in the Banach algebra, and is the power-bounded subring. This justifies the stated plus ring, rather than assuming every formal model is normal. Use AdicSpacesPartIII R2 generic fibres of formal opens, which are completed localizations, to obtain rational unit overlaps. Use the native adic-space gluing for the finite compatible affinoid cover, with its structure and plus sheaves. (SCH12, §8, paragraph following Definition/Proposition 8.4, p. 304; SCH12 line 2391).
+One proof route is the following. Import arbitrary-ring fan gluing and the ordinary algebraic face maps from ShimuraCompactifications C0.9 and C0.16. Complete the monoid chart K°[P_σ] ϖ-adically, then invert ϖ; Gordan finite generation supplies topological finite presentation. The coefficient Gauss norm on the restricted monoid algebra is multiplicative: use an order on the ambient lattice and leading terms in finite truncations. Its norm-at-most-one subring is K°⟨P_σ⟩, is integrally closed in the Banach algebra, and is the power-bounded subring. This justifies the stated plus ring, rather than assuming every formal model is normal. Use AdicSpacesPartIII R2 generic fibres of formal opens, which are completed localizations, to obtain rational unit overlaps. Use the native adic-space gluing for the finite compatible affinoid cover, with its structure and plus sheaves. (SCH12, §8, paragraph following Definition/Proposition 8.4, p. 304; SCH12 line 2391).
 
 The API records these facts, with the hypotheses of this subsection. (SCH12, §8, paragraph following Definition/Proposition 8.4, p. 304; SCH12 line 2391).
 
@@ -266,7 +267,7 @@ The API records these facts, with the hypotheses of this subsection. (SCH12, §8
 
 Do not replace a formal face overlap by the entire analytification of D(χ^m).
 
-*Needs:* ShimuraCompactifications C0.16; ShimuraCompactifications C0.6–C0.7; AnalyticToricGeometry Layer 0; AdicSpacesPartIII R2.3; AdicSpacesPartIII R2.8.
+*Needs:* ShimuraCompactifications C0.9 and C0.16; AnalyticToricGeometry Layer 0; AdicSpacesPartIII R2.3; AdicSpacesPartIII R2.8.
 
 ### 1.2 Toric analytification comparison
 
@@ -279,8 +280,6 @@ One proof route is the following. Apply AdicSpacesPartIII R2 good-reduction-locu
 - For the positive ray, t=ϖ⁻¹ has |t|=|ϖ|⁻¹>1, so it belongs to full affine-line analytification and not the unit model.
 - For the ℙ¹ fan, the charts |t|≤1 and |t⁻¹|≤1 cover, and their intersection is |t|=1; the comparison is onto without a choice of projective embedding.
 - Apply the theorem to the fixed complete regular nonprojective fan of WeilConjectures WC.6: its unit model equals its full analytification although its ample support-function inequalities are inconsistent (FS25, Example 4.1, pp. 7–8; FS25 line 299 and line 318).
-
-The smooth complete nonprojective threefold of Fujino–Sato Example 4.1 satisfies this comparison. A classical point t=ϖ⁻¹ of A¹ lies in analytification and outside the unit disc.
 
 *Needs:* §1.1; AdicSpacesPartIII R2.8; ShimuraCompactifications C0.16; ShimuraCompactifications C0.16–C0.18, including gap:toric-field-fibres.
 
@@ -307,7 +306,7 @@ The API records these facts, with the hypotheses of this subsection. (SCH12, §8
 
 The tower uses φ_p, rather than a coefficient-changing absolute Frobenius over K.
 
-*Needs:* ShimuraCompactifications C0.16; ShimuraCompactifications C0.6–C0.7; §1.1; `AddMonoidAlgebra`.
+*Needs:* ShimuraCompactifications C0.9 and C0.16; §1.1; `AddMonoidAlgebra`.
 
 ### Examples
 
@@ -315,7 +314,7 @@ The positive-ray chart is the unit disc, the zero-cone chart the unit torus, and
 
 ### Dependencies
 
-Layer 0; ShimuraCompactifications C0.16–C0.18; AdicSpaces §§3–5; AdicSpacesPartII R0–R1; AdicSpacesPartIII R2.2–R2.4 and R2.8; WeilConjectures WC.6 for the nonprojective Check.
+Layer 0; ShimuraCompactifications C0.16–C0.18; AdicSpaces §§2–5; AdicSpacesPartII R0–R1; AdicSpacesPartIII R2.2–R2.4 and R2.8; WeilConjectures WC.6 for the nonprojective Check.
 
 ## Layer 2: perfected charts and homogeneous divisor algebras
 
@@ -338,9 +337,7 @@ The API records these facts, with the hypotheses of this subsection. (SCH12, §8
 - For the zero cone in ℤ, the algebra contains both t^(1/pⁿ) and their inverses; it is not the perfected disc algebra.
 - For the rank-zero nonempty fan the space is Spa(K,K°) and every projection is the identity.
 
-The zero cone produces a perfected unit torus, retaining invertible characters.
-
-*Needs:* §1.1; §1.3; PerfectoidSpaces P1.30 and P2.1–P2.12, gaps:perfected-cone-algebras and homogeneous-cone-approximation; PerfectoidSpaces P2.3; PerfectoidSpaces P2.9–P2.12.
+*Needs:* §1.1; §1.3; PerfectoidSpaces P1.30 and P2.1–P2.12, gap:perfected-cone-algebras; PerfectoidSpaces P2.3; PerfectoidSpaces P2.9–P2.12.
 
 ### 2.2 Perfected divisor sections
 
@@ -371,8 +368,6 @@ The API records these facts, with the hypotheses of this subsection. (SCH12, §8
 - At distinct weights 1/pⁿ, the coefficients ϖⁿ define a c₀ section with infinitely many nonzero terms, whose truncation error is at most |ϖ|^(N+1). The identity from the finite-support span to itself cannot extend continuously with values in that incomplete span; the target of the bounded extension theorem must be complete.
 - For p=2 and D=(1/4)D₋, a weight-zero section already has integral character weight, but one squaring leaves divisor (1/2)D₋. Two squarings give the integer divisor D₋; clearing weights alone would miss the divisor denominator.
 
-Use c₀, not the unrestricted product K^(W^p(D)).
-
 *Needs:* §0.2; §0.5; §2.1; `ZeroAtInftyContinuousMap`.
 
 ### 2.3 Graded divisor cones
@@ -394,15 +389,13 @@ The API records these facts, with the hypotheses of this subsection. (SCH12, §8
 - For a complete fan and D=0, Q_D={0}×ℤ[1/p], with negative degrees present.
 - For the positive-ray fan and D=0, degree zero contains every nonnegative p-local weight, so its completed algebra is not K.
 
-Degree zero equals K only after imposing completeness; this hypothesis is needed by the PerfectoidSpaces P2.1 homogeneous-cone contract.
-
 *Needs:* §0.2; §2.2; AnalyticToricGeometry Layer 0.
 
 ### 2.4 Graded divisor algebras
 
 For integer D form R_D as the coefficient-Gauss completion of the finite-degree direct sum over j∈ℤ[1/p] of H⁰(TΣ,K,O_T(jD)); use convolution products and the integral coefficient lattice. Identify it isometrically with the PerfectoidSpaces cone algebra K⟨Q_D⟩, with homogeneous degree-j subspace c₀(W^p(jD),K). Thus R_D is perfectoid and R_D♭≅K♭⟨Q_D⟩, monomial compatibly. The completed grading is a c₀ direct sum, not a product, and sharp preserves homogeneous degrees; no additivity is assumed. When Σ is complete R_D has degree-zero part K and satisfies the exact hypotheses of the PerfectoidSpaces P2.1 homogeneous-cone contract. (SCH12, §8, proof of Proposition 8.7, p. 306; Proposition 5.20, p. 280; Lemma 6.5 and Remark 6.6, pp. 288–290; SCH12 line 2463).
 
-One proof route is the following. Send the degree-j monomial χ^u to the monomial χ^(u,j) of Q_D. Check products and the integral coefficient lattices; complete the isometric monomial identification. Import perfected-cone perfectoidness/tilt from PerfectoidSpaces P2, rather than reproduce its Frobenius proof. For complete Σ use the divisor-cone degree-zero calculation and import PerfectoidSpaces P2 homogeneous approximation; the toric application is Layer 5. (SCH12, §8, proof of Proposition 8.7, p. 306; Proposition 5.20, p. 280; Lemma 6.5 and Remark 6.6, pp. 288–290; SCH12 line 2463).
+One proof route is the following. Send the degree-j monomial χ^u to the monomial χ^(u,j) of Q_D. Check products and the integral coefficient lattices; complete the isometric monomial identification. Import perfected-cone perfectoidness/tilt from PerfectoidSpaces P2, rather than reproduce its Frobenius proof. For complete Σ the divisor-cone calculation verifies the degree-zero hypothesis of homogeneous approximation; the estimate itself is applied in §5.2. (SCH12, §8, proof of Proposition 8.7, p. 306; Proposition 5.20, p. 280; Lemma 6.5 and Remark 6.6, pp. 288–290; SCH12 line 2463).
 
 The API records these facts, with the hypotheses of this subsection. (SCH12, §8, proof of Proposition 8.7, p. 306; Proposition 5.20, p. 280; Lemma 6.5 and Remark 6.6, pp. 288–290; SCH12 line 2463).
 
@@ -426,7 +419,7 @@ The API records these facts, with the hypotheses of this subsection. (SCH12, §8
 
 No arbitrary completion topology or ordinary Proj construction replaces the Gauss completion.
 
-*Needs:* §2.3; §2.2; PerfectoidSpaces P1.30 and P2.1–P2.12, gaps:perfected-cone-algebras and homogeneous-cone-approximation.
+*Needs:* §2.3; §2.2; PerfectoidSpaces P1.30 and P2.1–P2.12, gap:perfected-cone-algebras.
 
 ### Examples
 
@@ -434,13 +427,13 @@ For ℙ¹ and D=D₋, Q_D has 0≤u≤j; the map (u,j)↦(u,j−u) gives the per
 
 ### Dependencies
 
-Layers 0–1; Mathlib c₀ carrier; PerfectoidSpaces P1.30, P2.1–P2.12 and the perfected-cone and homogeneous-approximation supplier contracts. General cone perfectoidness is a supplier input, whereas the identification of Q_D is local work.
+Layers 0–1; Mathlib c₀ carrier; PerfectoidSpaces P1.30, P2.1–P2.12 and the perfected-cone supplier contract. General cone perfectoidness is a supplier input, whereas the identification of Q_D is local work.
 
 ## Layer 3: the five toric comparisons
 
 ### 3.1 Toric tilting comparison
 
-For every Σ, TΣ,K♭≅TΣ,K♭, preserving cone charts, plus rings, perfected characters and p-local divisor models. On a chart the tilted algebra is K♭⟨P_σ[1/p]⟩. This is an isomorphism of perfectoid spaces; it does not identify the unperfected K and K♭ toric spaces as ringed spaces. (SCH12, §8, Theorem 8.5(i) and proof, pp. 304–305; SCH12 line 2414).
+For every Σ, (TΣ,K)♭≅TΣ,K♭, preserving cone charts, plus rings, perfected characters and p-local divisor models. On a chart the tilted algebra is K♭⟨P_σ[1/p]⟩. This is an isomorphism of perfectoid spaces; it does not identify the unperfected K and K♭ toric spaces as ringed spaces. (SCH12, §8, Theorem 8.5(i) and proof, pp. 304–305; SCH12 line 2414).
 
 One proof route is the following. Apply the PerfectoidSpaces P2 cone tilt and monomial correspondence chartwise. Use compatibility with rational unit face localization, then glue by the common fan cocycle. (SCH12, §8, Theorem 8.5(i) and proof, pp. 304–305; SCH12 line 2414).
 
@@ -450,15 +443,13 @@ One proof route is the following. Apply the PerfectoidSpaces P2 cone tilt and mo
 - The rank-one zero cone retains t^(1/pⁿ) and its inverse in both tilts, distinguishing the unit torus from the disc.
 - In characteristic p, tilting the rank-zero chart Spa(K,K°) gives the same chart and the identity map, not a second choice of coefficient field.
 
-For the positive ray this is the usual perfected-disc tilt.
-
-*Needs:* §2.1; PerfectoidSpaces P2.9–P2.12; PerfectoidSpaces P1.30 and P2.1–P2.12, gaps:perfected-cone-algebras and homogeneous-cone-approximation.
+*Needs:* §2.1; PerfectoidSpaces P2.9–P2.12; PerfectoidSpaces P1.30 and P2.1–P2.12, gap:perfected-cone-algebras.
 
 ### 3.2 Toric perfectoid tilde-limits
 
-The compatible projections give TΣ,K ~ lim_(φ_p) AΣ,K. Here ~ is the PerfectoidSpaces P7 perfectoid tilde-limit, with both the homeomorphism of underlying spaces and dense finite-level functions on an affinoid cover. On cone charts the completed colimit of K⟨P_σ⟩ under u↦pu is K⟨P_σ[1/p]⟩. This is not a claim of a categorical inverse limit in all adic spaces. (SCH12, §8, Theorem 8.5(ii) and proof, p. 305; Definition 7.14 and Theorem 7.17, p. 302; SCH12 line 2422 and line 2317).
+The compatible projections give TΣ,K ~ lim_(φ_p) AΣ,K. Here ~ is the PerfectoidSpaces P7 perfectoid tilde-limit, with both the homeomorphism of underlying spaces and dense finite-level functions on an affinoid cover. On cone charts the completed colimit of K⟨P_σ⟩ under u↦pu is K⟨P_σ[1/p]⟩. SCH12 Definition 7.14 is the weaker residue-field relation of PerfectoidSpaces P7.3, which follows here by P7.15 because the finite levels are qcqs and locally noetherian analytic. This is not a claim of a categorical inverse limit in all adic spaces. (SCH12, §8, Theorem 8.5(ii) and proof, p. 305; Definition 7.14 and Theorem 7.17, p. 302; SCH12 line 2422 and line 2317).
 
-One proof route is the following. Use the shared pseudouniformizer and coefficient-Gauss integral lattices in the PerfectoidSpaces P7 completed-colimit theorem. Identify the algebraic colimit by u at level n↦u/p^n; its image is dense in the perfected chart. Apply the PerfectoidSpaces P7 gluing theorem to the stable finite toric cover. (SCH12, §8, Theorem 8.5(ii) and proof, p. 305; Definition 7.14 and Theorem 7.17, p. 302; SCH12 line 2422 and line 2317).
+One proof route is the following. Use the shared pseudouniformizer and coefficient-Gauss integral lattices in PerfectoidSpaces P7.11, the completed-colimit theorem imported from AdicSpacesPartII R0.20.1. Identify the algebraic colimit by u at level n↦u/p^n; its image is dense in the perfected chart. The monomial embeddings are isometric, so membership in each ϖ^r integral lattice is detected at the originating level. Apply the PerfectoidSpaces P7.12 gluing theorem to the stable finite toric cover. (SCH12, §8, Theorem 8.5(ii) and proof, p. 305; Definition 7.14 and Theorem 7.17, p. 302; SCH12 line 2422 and line 2317).
 
 **Checks.**
 
@@ -466,9 +457,7 @@ One proof route is the following. Use the shared pseudouniformizer and coefficie
 - The union of finite-level monomials contains every t^(a/pⁿ) with a≥0, and its finite sums are Gauss-dense; the nonvanishing coefficient-one infinite sum is excluded.
 - In rank zero all stages are Spa(K,K°), every transition is the identity and the topological inverse limit is that same space.
 
-Check both the topological and density conditions, including for the rank-zero fan.
-
-*Needs:* §2.1; §1.3; PerfectoidSpaces P7.1–P7.4 (completed-colimit criterion); PerfectoidSpaces P7.12.
+*Needs:* §2.1; §1.3; PerfectoidSpaces P7.11 (completed-colimit criterion); AdicSpacesPartII R0.20.1; PerfectoidSpaces P7.12; PerfectoidSpaces P7.15 (residue-field conversion).
 
 ### 3.3 Toric inverse-limit homeomorphism
 
@@ -481,8 +470,6 @@ One proof route is the following. In characteristic p φ_p has purely inseparabl
 - A classical tilted torus coordinate x gives tower coordinates ((x^(1/pⁿ))♯)ₙ; the pth power of coordinate n+1 equals coordinate n by multiplicativity.
 - For ℙ¹, x=0 gives the constant zero tower and x=∞ gives the constant infinity tower; no boundary stratum is exchanged.
 - In characteristic p the tower (x^(1/pⁿ))ₙ projects to x at level zero and is uniquely recovered from x over the perfect field; there is no extra pth-root branch.
-
-For projective space it sends a tilted point to its compatible p-power-root sequence.
 
 *Needs:* §3.1; §3.2; PerfectoidSpaces P7.13.
 
@@ -508,23 +495,19 @@ The API records these facts, with the hypotheses of this subsection. (SCH12, §8
 - For the line x₀+x₁+x₂=0 over mixed-characteristic K, finite-stage pullbacks under φₚⁿ have equations x₀^(pⁿ)+x₁^(pⁿ)+x₂^(pⁿ)=0 over K. Its π-preimage over K♭ is the locus x₀♯+x₁♯+x₂♯=0 on classical tilted points; it is not obtained by reading these sums as polynomial equations over K♭. With p=2, [1:1:0] satisfies the tilted linear equation but maps to a point whose coordinate sum is 2≠0 over K.
 - For a perfectoid field K of characteristic p, the canonical identification with its tilt makes sharp additive. The preimage of the line x₀+x₁+x₂=0 is the corresponding tilted line. This is the control case for the mixed-characteristic non-example.
 
-Additivity of sharp is never required.
-
 *Needs:* §3.3; §1.1; §2.1; PerfectoidSpaces P2.9–P2.12.
 
 ### 3.5 Toric étale topos comparison
 
 The étale topos of AΣ,K♭ is the projective limit of the fibred diagram of étale topoi of AΣ,K under φ_p, with its level projections. Construct this as an equivalence with the sheaves on the finite-stage colimit étale site, not a pointwise limit of categories. The associated level-zero geometric morphism has underlying continuous map π. It respects finite étale objects, covering families and constant torsion coefficients. The equivalence and its level-zero geometric morphism are natural under continuous isometric embeddings of perfectoid fields. (SCH12, §8, Theorem 8.5(iv), p. 305; Theorem 7.17 and Corollary 7.19, pp. 302–303; SCH12 line 2430 and line 2335).
 
-One proof route is the following. Convert the chart-dense tilde-limit to the residue-field tilde-limit using PerfectoidSpaces P7. Use PerfectoidSpaces P7 étale-topos comparison for the qcqs locally noetherian finite-level unit toric spaces. Identify the K♭ tower with its level-zero étale topos by inseparable-tower invariance, then use PerfectoidSpaces P3 site tilting. Naturality in the field: base change of the finite-stage étale sites along K→L commutes with the colimit-site construction, with PerfectoidSpaces P3 tilting and with the inseparable-tower equivalence; combine with the naturality of π. (SCH12, §8, Theorem 8.5(iv), p. 305; Theorem 7.17 and Corollary 7.19, pp. 302–303; SCH12 line 2430 and line 2335).
+One proof route is the following. Convert the chart-dense tilde-limit to the residue-field tilde-limit using PerfectoidSpaces P7.15. Use PerfectoidSpaces P7.15 étale-topos comparison for the qcqs locally noetherian finite-level unit toric spaces. Identify the K♭ tower with its level-zero étale topos by inseparable-tower invariance, then use PerfectoidSpaces P3 site tilting. Naturality in the field: base change of the finite-stage étale sites along K→L commutes with the colimit-site construction, with PerfectoidSpaces P3 tilting and with the inseparable-tower equivalence; combine with the naturality of π. (SCH12, §8, Theorem 8.5(iv), p. 305; Theorem 7.17 and Corollary 7.19, pp. 302–303; SCH12 line 2430 and line 2335).
 
 **Checks.**
 
 - On the rank-zero algebraically closed perfectoid point, finite étale algebras are finite products of the coefficient field on both sides; the empty finite cover is the empty object.
 - For a characteristic-p torus, adjoining t^(1/p) changes characters but is purely inseparable, and therefore creates no new finite étale covers; replacing this by a separable degree-p extension would give the wrong site.
 - For the ℙⁿ fan, the comparison specializes to Scholze Theorem 1.13 (p. 249); it does not identify the unperfected ℙⁿ spaces as perfectoid spaces.
-
-For the ℙⁿ fan this is Theorem 1.13; unperfected tilted spaces are not assumed perfectoid.
 
 *Needs:* §3.2; §3.1; §3.4; PerfectoidSpaces P7.3; PerfectoidSpaces P7.15; PerfectoidSpaces P3.18 and P3.20; AdicEtaleGeometry A1.6.
 
@@ -542,8 +525,6 @@ One proof route is the following. Use PerfectoidSpaces P7 tilde-limit rational r
 - For U={|t−ϖ|≤|ϖ|²}, the point t=ϖ belongs to U, while |ϖᵖ−ϖ|=|ϖ|>|ϖ|² shows that φₚ(t) does not. Thus the finite-stage opens really are φₚ⁻ⁿ(U), and U need not be φₚ-stable.
 - For the open complement of infinity in ℙ¹, φₚ⁻¹(∞)={∞}, so the restricted square has precisely the two affine-line complements; the direction remains V-étale to U-étale.
 
-Take U to be a small neighbourhood of an algebraic hypersurface; U is not required to be invariant under φ.
-
 *Needs:* §3.5; PerfectoidSpaces P7.1–P7.3 and P7.12 (rational restriction); PerfectoidSpaces P7.1–P7.3 (base change); PerfectoidSpaces P2.10–P2.12; §3.4.
 
 ### 3.7 Affine-line sharp comparison
@@ -558,8 +539,6 @@ One proof route is the following. Apply the complete-fan analytification compari
 - The compatible tilted point x gives ((x^(1/pⁿ))♯)ₙ in the full line, all of whose coordinates are finite; infinity has a constant infinity tower and is excluded.
 - At x=0 the tower is constantly zero and the projection is zero; at x=1 the tower is constantly one, fixing the direction of the comparison.
 
-The point t=ϖ⁻¹ is admitted by the affine-line statement although it is excluded from the unit-disc statement.
-
 *Needs:* §1.2; §3.3; §3.6; §3.4.
 
 ### Examples
@@ -568,7 +547,7 @@ A tilted classical coordinate x gives the compatible sequence ((x^(1/pⁿ))♯)�
 
 ### Dependencies
 
-Layers 1–2; PerfectoidSpaces P2.2–P2.12, P3.18, P3.20, P7.1–P7.4, P7.12–P7.15; AdicEtaleGeometry A1.6. The full affine-line application additionally uses §1.2.
+Layers 1–2; PerfectoidSpaces P2.2–P2.12, P3.18, P3.20, P7.1–P7.4, P7.11–P7.15; AdicSpacesPartII R0.20.1; AdicEtaleGeometry A1.6. The full affine-line application additionally uses §1.2.
 
 ## Layer 4: prime-to-p torsion cohomology
 
@@ -578,17 +557,15 @@ Let Σ be complete and regular, K algebraically closed perfectoid of residue cha
 
 Here Σ is complete; K is algebraically closed; ℓ is a prime different from p, m≥1.
 
-One proof route is the following. Use ClassicalAdicEtaleCohomology §8.2 proper algebraic/analytic cohomology comparison. Apply SchemeAndStackFoundations §2.15 and its valuation-base-change contract smooth proper base change over the rank-one valuation ring K° with invertible torsion, compatibly with φ_p. The special fibre XΣ,κ is the base change of XΣ,𝔽ₚ, so the canonical identification XΣ,κ⁽ᵖ⁾≅XΣ,κ turns the relative Frobenius over κ into the coefficient-linear φ_p. Relative Frobenius is a universal homeomorphism (SchemeAndStackFoundations §0.29), and pullback along a universal homeomorphism is an equivalence of étale topoi (SchemeAndStackFoundations §0.23a). Transport the automorphism back to the analytic generic fibre. (SCH12, §8, Proposition 8.6 and proof, pp. 305–306; SCH12 line 2450).
+One proof route is the following. Use ClassicalAdicEtaleCohomology §8.2 proper algebraic/analytic cohomology comparison. The valuation ring K° is strictly henselian and has algebraically closed fraction and residue fields. Apply ClassicalAdicEtaleCohomology §6.2 proper specialization RΓ(X_K,Λ)≅RΓ(X_κ,RΨΛ), then EtaleCohomologyFoundations §F.2.3 smooth universal local acyclicity to identify RΨΛ≅Λ. These comparisons are natural for φ_p and valuation-field extension; no noetherian hypothesis on K° is required. The special fibre XΣ,κ is the base change of XΣ,𝔽ₚ, so the canonical identification XΣ,κ⁽ᵖ⁾≅XΣ,κ turns the relative Frobenius over κ into the coefficient-linear φ_p. Relative Frobenius is a universal homeomorphism (SchemeAndStackFoundations §0.29), and pullback along a universal homeomorphism is an equivalence of étale topoi (SchemeAndStackFoundations §0.23a). Transport the automorphism back to the analytic generic fibre. (SCH12, §8, Proposition 8.6 and proof, pp. 305–306; SCH12 line 2450).
 
 **Checks.**
 
-- On ℙ¹, H⁰=Λ, H¹=0 and H²(Λ(1))=Λ; φₚ acts by 1, the unique map on 0, and p respectively. For p=2, ℓ=3, m=1, the last map sends 1 to 2, an automorphism distinct from the identity.
+- For ℙ¹ over K°, proper specialization and smooth ULA identify the generic and special fibre groups (H⁰,H¹,H²(Λ(1)))=(Λ,0,Λ), including for nondiscrete K°. On these groups, φₚ acts by 1, the unique map on 0, and p respectively. For p=2, ℓ=3, m=1, the last map sends 1 to 2, an automorphism distinct from the identity.
 - In mixed characteristic, with ℓ=p the same top-degree map is multiplication by p on ℤ/p and hence zero, which is not an automorphism; the excluded coefficient range is essential.
 - On the rank-zero algebraically closed point, H⁰=Λ and all positive-degree cohomology is zero, and the identity power map preserves this calculation.
 
-The ℙ¹ top-degree action distinguishes an automorphism from the identity; ℓ=p is excluded.
-
-*Needs:* §1.3; §1.2; ShimuraCompactifications C0.16; ShimuraCompactifications C0.16–C0.18, including gap:toric-field-fibres; ClassicalAdicEtaleCohomology §8.2; SchemeAndStackFoundations §2.15, gap:valuation-smooth-proper; SchemeAndStackFoundations §0.29; SchemeAndStackFoundations §0.23a.
+*Needs:* §1.3; §1.2; ShimuraCompactifications C0.16; ShimuraCompactifications C0.16–C0.18, including gap:toric-field-fibres; ClassicalAdicEtaleCohomology §8.2; ClassicalAdicEtaleCohomology §6.2; EtaleCohomologyFoundations §F.2.3; SchemeAndStackFoundations §0.29; SchemeAndStackFoundations §0.23a.
 
 ### 4.2 Toric torsion cohomology comparison
 
@@ -596,7 +573,7 @@ Under the preceding hypotheses, the level-zero geometric morphism associated wit
 
 Here Σ complete; K algebraically closed; ℓ≠p prime; m≥1.
 
-One proof route is the following. Use PerfectoidSpaces P7 cohomological continuity with constant torsion on the finite-stage tower. Identify the tilted topos with the tower-limit topos from Layer 3. All φ_p* transitions are isomorphisms by §4.1, so the map from level zero to their filtered colimit is an isomorphism. Cup compatibility is functoriality of inverse image of sheaves and derived cohomology, imported from ClassicalAdicEtaleCohomology §1.1. Naturality in the field: the étale-topos comparison and the ClassicalAdicEtaleCohomology §8.2 and SchemeAndStackFoundations §2.15 and its valuation-base-change contract comparisons are natural under base change of the field, so π* is equivariant for continuous automorphisms. (SCH12, §8, Proposition 8.6, pp. 305–306; SCH12 line 2446 and line 2344).
+One proof route is the following. Use PerfectoidSpaces P7 cohomological continuity with constant torsion on the finite-stage tower. Identify the tilted topos with the tower-limit topos from Layer 3. All φ_p* transitions are isomorphisms by §4.1, so the map from level zero to their filtered colimit is an isomorphism. Cup compatibility is functoriality of inverse image of sheaves and derived cohomology, imported from ClassicalAdicEtaleCohomology §1.1. Naturality in the field: the étale-topos comparison and the ClassicalAdicEtaleCohomology §§6.2, 8.2 and EtaleCohomologyFoundations §F.2.3 comparisons are natural under base change of the field, so π* is equivariant for continuous automorphisms. (SCH12, §8, Proposition 8.6, pp. 305–306; SCH12 line 2446 and line 2344).
 
 **Checks.**
 
@@ -604,9 +581,7 @@ One proof route is the following. Use PerfectoidSpaces P7 cohomological continui
 - For p=2 and Λ=ℤ/3, the transition sequence on H² is 1↦2↦1↦2, so its colimit is Λ and the level-zero map is an isomorphism rather than a quotient by p−1.
 - The cup product of the degree-zero unit with a top class is that same class on both sides; for a field automorphism the fixed toric hyperplane class maps to itself in twisted degree two.
 
-For ℙ¹, H⁰ and H² are identified and H¹=0; no mixed-characteristic ringed-space morphism is used.
-
-*Needs:* §4.1; §3.5; PerfectoidSpaces P7.15; ClassicalAdicEtaleCohomology §1.1, gap:geometric-morphism-cup-pullback; ClassicalAdicEtaleCohomology §1.1 (derived direct image); ClassicalAdicEtaleCohomology §1.1 (coefficient-forgetting comparison).
+*Needs:* §4.1; §3.5; PerfectoidSpaces P7.15; ClassicalAdicEtaleCohomology §1.1, gap:geometric-morphism-cup-pullback; ClassicalAdicEtaleCohomology §1.1 (derived direct image); ClassicalAdicEtaleCohomology §1.1 (coefficient-forgetting comparison); ClassicalAdicEtaleCohomology §§6.2, 8.2 and EtaleCohomologyFoundations §F.2.3 (field naturality).
 
 ### Examples
 
@@ -614,7 +589,7 @@ For p=2 and Λ=ℤ/3, the top cohomology transition of ℙ¹ is multiplication b
 
 ### Dependencies
 
-§§1.2–1.3, 3.4–3.6; ShimuraCompactifications C0.16–C0.18; SchemeAndStackFoundations §§0.23a, 0.29 and gap:valuation-smooth-proper; ClassicalAdicEtaleCohomology §§1.1, 8.2 and gap:geometric-morphism-cup-pullback; PerfectoidSpaces P7.15.
+§§1.2–1.3, 3.4–3.6; ShimuraCompactifications C0.16–C0.18; SchemeAndStackFoundations §§0.23a, 0.29; EtaleCohomologyFoundations §F.2.3; ClassicalAdicEtaleCohomology §§1.1, 6.2, 8.2 and gap:geometric-morphism-cup-pullback; PerfectoidSpaces P7.15.
 
 ## Layer 5: section tubes and hypersurface approximation
 
@@ -624,7 +599,7 @@ Let Σ be complete and regular and let f₁,…,f_s be finitely many nonzero sec
 
 Here Σ complete; the family is finite and each f_i defines an effective Cartier hypersurface; U contains the full common adic zero locus.
 
-One proof route is the following. Import AdicSpacesPartIII R2 section-valuation domains on the completed tautological line bundle. Use finitely many integral toric charts and rational localization to express the zero-locus neighbourhoods. Each rational section domain is closed in the compact constructible topology, while the complement of U in Xᵃⁿ is constructibly closed and compact. Continuity of the point valuations makes the intersection over c of the common domains exactly Yᵃⁿ. The finite intersection property on the complement of U in Xᵃⁿ gives one common c for which the domain avoids that complement. For an integer r≥1, compare |f^r|≤|ϖ|^(rc); unchanged reduced zero locus does not imply unchanged radius. (SCH12, §8, proof of Proposition 8.7, p. 306; proof of Corollary 8.8, p. 307; SCH12 line 2475).
+One proof route is the following. Import AdicSpacesPartIII R2.10 section-valuation domains on the completed tautological line bundle and AdicSpacesPartII R0.19.1–R0.19.3 constructible compactness. Use finitely many integral toric charts and rational localization to express the zero-locus neighbourhoods. Each rational section domain is closed in the compact constructible topology, while the complement of U in Xᵃⁿ is constructibly closed and compact. Continuity of the point valuations makes the intersection over c of the common domains exactly Yᵃⁿ. The finite intersection property on the complement of U in Xᵃⁿ gives one common c for which the domain avoids that complement. For an integer r≥1, compare |f^r|≤|ϖ|^(rc); unchanged reduced zero locus does not imply unchanged radius. (SCH12, §8, proof of Proposition 8.7, p. 306; proof of Corollary 8.8, p. 307; SCH12 line 2475).
 
 **Checks.**
 
@@ -632,9 +607,7 @@ One proof route is the following. Import AdicSpacesPartIII R2 section-valuation 
 - For f=t² the exponent 2c gives |t²|≤|ϖ|^(2c) exactly when |t|≤|ϖ|ᶜ; keeping exponent c would give the larger radius |ϖ|^(c/2).
 - Replacing f by ϖf changes |f|≤|ϖ|ᶜ into |f|≤|ϖ|^(c−1), while multiplication by an integral unit leaves the domain unchanged. The empty equation family gives the whole space; with nonempty common zero locus its only neighbourhood is the whole space.
 
-Rescaling by c∈K× scales the threshold; a nonreduced equation f^r uses threshold exponent multiplied by r.
-
-*Needs:* §0.5; §1.2; AdicSpacesPartIII R2.10.
+*Needs:* §0.5; §1.2; AdicSpacesPartIII R2.10; AdicSpacesPartII R0.19.1–R0.19.3 (constructible compactness).
 
 ### 5.2 Dense-field section approximation
 
@@ -651,17 +624,15 @@ One proof route is the following. Use R_D=K⟨Q_D⟩ and its tilt with degree-ze
 - On ℙ¹, g₀=a+b t^(1/p) with b≠0 is a degree-one perfected section of O(D₋). Its pth power is aᵖ+bᵖt in O(pD₋), not a scalar regular function on ℙ¹; the coefficients stay in k₀ without extracting roots.
 - Retaining a coefficient b with approximation error <|b| gives |b′|=|b|>0, while truncating without that requirement could give the zero section.
 
-The perturbed equation is kept nonzero by preserving a selected nonzero coefficient; it is not interpreted as a global regular function on a proper variety. The zero input is excluded. A coarse threshold may allow the homogeneous approximation g=0; refinement to c′ at the Gauss point is therefore needed before retaining a nonzero coefficient.
-
 *Needs:* §2.4; §2.2; §3.4; §5.1; PerfectoidSpaces P1.30 and P2.1–P2.12, gaps:perfected-cone-algebras and homogeneous-cone-approximation.
 
 ### 5.3 Toric hypersurface approximation
 
-Let Σ be complete and regular, K perfectoid, Y⊂XΣ,K a nonempty effective Cartier hypersurface (possibly nonreduced), and U an open neighbourhood of Yᵃⁿ. For every specified dense subfield k₀⊂K♭ there is an algebraic hypersurface Z⊂XΣ,K♭, defined over k₀, with Zᵃⁿ⊂π⁻¹(U). For an invariant divisor representative D of Y, one may produce Z as the zero locus of a nonzero section of O(p^N D) for some N≥0. Projectivity and algebraic closedness are not hypotheses of this result. (SCH12, §8, Proposition 8.7 and proof, pp. 306–307; §1, Lemma 1.16, p. 251; FS25, Example 4.1, pp. 7–8; SCH12 line 2458).
+Let Σ be complete and regular, K perfectoid, Y⊂XΣ,K a nonempty effective Cartier hypersurface (possibly nonreduced), and U an open neighbourhood of Yᵃⁿ. For every specified dense subfield k₀⊂K♭ there is an algebraic hypersurface Z⊂XΣ,K♭, defined over k₀, with Zᵃⁿ⊂π⁻¹(U). For an invariant divisor representative D of Y, one may produce Z as the zero locus of a nonzero section of O(p^N D) for some N≥0. Projectivity and algebraic closedness are not hypotheses of this result. (SCH12, §8, Proposition 8.7 and proof, p. 306; §1, Lemma 1.16, p. 251; FS25, Example 4.1, pp. 7–8; SCH12 line 2458).
 
 Here Σ complete; Y is a nonempty effective Cartier hypersurface; k₀⊂K♭ is dense.
 
-One proof route is the following. Represent Y by f in an invariant O(D) using Layer 0. Choose an integral normalization and a section domain N_c(f)⊂U. Apply the preceding dense-field approximation and denominator-clearing theorem, then take the zero locus of h. The preceding character-lattice class presentation identifies Pic across K and K♭. Completeness and regularity make it torsion-free, and a nonempty effective divisor on the proper geometrically integral toric variety has nonzero class. Hence its class stays nonzero under p^N; a nowhere-vanishing section would trivialize it. Thus Z is a hypersurface, not an empty or whole-space zero locus. (SCH12, §8, Proposition 8.7 and proof, pp. 306–307; §1, Lemma 1.16, p. 251; FS25, Example 4.1, pp. 7–8; SCH12 line 2458).
+One proof route is the following. Represent Y by f in an invariant O(D) using Layer 0. Choose an integral normalization and a section domain N_c(f)⊂U. Apply the preceding dense-field approximation and denominator-clearing theorem, then take the zero locus of h. The preceding character-lattice class presentation identifies Pic across K and K♭. Completeness and regularity make it torsion-free, and a nonempty effective divisor on the proper geometrically integral toric variety has nonzero class. Hence its class stays nonzero under p^N; a nowhere-vanishing section would trivialize it. Thus Z is a hypersurface, not an empty or whole-space zero locus. (SCH12, §8, Proposition 8.7 and proof, p. 306; §1, Lemma 1.16, p. 251; FS25, Example 4.1, pp. 7–8; SCH12 line 2458).
 
 **Checks.**
 
@@ -669,8 +640,6 @@ One proof route is the following. Represent Y by f in an invariant O(D) using La
 - For the doubled divisor f²=0 the class is twice the original and the tube exponent scales by 2; replacing f² by its reduced equation without changing the threshold would alter the prescribed neighbourhood.
 - Apply to an effective nonempty Cartier divisor on the smooth complete nonprojective threefold of WeilConjectures WC.6. The class is nonzero in its torsion-free Picard group and remains so after multiplying by pᴺ; projectivity is not needed (FS25, Example 4.1, pp. 7–8; FS25 line 299).
 - On a rank-zero fan a nonzero section is a scalar on Spec K and has no nonempty Cartier zero locus; the nonempty-hypersurface hypothesis has no such input.
-
-Apply to a line in ℙ², to a nonreduced equation f², and to a hypersurface on the smooth complete nonprojective fan of Fujino–Sato Example 4.1.
 
 *Needs:* §0.4; §0.6; §5.1; §5.2.
 
@@ -680,19 +649,19 @@ For f=t and c=1, the section tube has radius |ϖ|. The doubled equation t² requ
 
 ### Dependencies
 
-§§0.3–0.6, 1.2, 2.2–2.4 and 3.4; AdicSpacesPartIII R2.10; PerfectoidSpaces P2.1 and the homogeneous-cone-approximation contract; no cohomology from Layer 4 is used by the approximation route.
+§§0.3–0.6, 1.2, 2.2–2.4 and 3.4; AdicSpacesPartII R0.19.1–R0.19.3; AdicSpacesPartIII R2.10; PerfectoidSpaces P2.1 and the homogeneous-cone-approximation contract; no cohomology from Layer 4 is used by the approximation route.
 
 ## Layer 6: intersection degrees and complete-intersection approximation
 
 ### 6.1 Toric intersection weights
 
-For a complete fan Σ of rank n, define MW^j(Σ) as the integer functions c on cones σ of codimension j satisfying the following balancing equations: for every cone τ of codimension j+1 and u in the annihilator M(τ), sum over σ⊃τ of ⟨u,nσ,τ⟩c(σ)=0, where n_(σ,τ) is the primitive positive generator of N_σ/N_τ and N_σ=N∩spanℝ σ. A basis of each M(τ) gives a finite integral relation matrix. Use the operational Chow group of the SchemeAndStackFoundations Layer 5 supplier contract and identify A^j(XΣ,k) with MW^j(Σ), by evaluation on the orbit closures V(σ). Cartier line bundles give degree-one weights: for adjacent maximal cones ρ,ρ′ with wall σ and local section weights m_ρ,m_ρ′, m_ρ′−m_ρ=c(σ)b_(ρ,σ), where b_(ρ,σ) is the primitive annihilator positive on ρ. (FS94, Proposition 1.1, p. 4; Proposition 1.4 and Theorem 2.1, p. 6; Corollary 2.4, p. 7; FS94 line 117, line 176, line 188 and line 234).
+For a complete fan Σ of rank n, define MW^j(Σ) as the integer functions c on cones σ of codimension j satisfying the following balancing equations: for every cone τ of codimension j+1 and u in the annihilator M(τ), sum over σ⊃τ of ⟨u,nσ,τ⟩c(σ)=0, where n_(σ,τ) is the primitive positive generator of N_σ/N_τ and N_σ=N∩spanℝ σ. A basis of each M(τ) gives a finite integral relation matrix. Use the operational Chow group of the SchemeAndStackFoundations Layer 5 supplier contract and identify A^j(XΣ,k) with MW^j(Σ), by evaluation on the orbit closures V(σ). Cartier line bundles give degree-one weights: for adjacent maximal cones ρ,ρ′ with wall σ and local section weights m_ρ,m_ρ′, m_ρ′−m_ρ=c(σ)b_(ρ,σ), where b_(ρ,σ) is the primitive annihilator positive on ρ. (FS94, Proposition 1.1, p. 4; Proposition 1.4 and Theorem 2.1, p. 6; Corollary 2.4, p. 7; FS94 line 117, line 176, line 188 and line 235).
 
-Here Σ complete; 0≤j≤n; k is a field. Cartier data use the section-generator convention ⟨mρ,vᵢ⟩=−a_i.
+Here Σ complete; 0≤j≤n; k is a field. Cartier data use the section-generator convention ⟨mρ,vᵢ⟩=−a_i. FS94's u(ρ) in equation (2.3) are local-equation weights, u(ρ)=−m_ρ. Thus its relation u(ρ)−u(ρ′)=c(σ)b_(ρ,σ) becomes m_ρ′−m_ρ=c(σ)b_(ρ,σ), with the positive ℙ¹ degree computed below (FS94 line 235).
 
-One proof route is the following. Express orbit-closure cycle relations using characters of M(τ); they give exactly the balancing matrix. Apply the finite-orbit Kronecker-duality theorem of the SchemeAndStackFoundations Layer 5 supplier contract to the split torus action on the complete toric variety; every orbit is a split torus over k. Together with the orbit-cycle presentation this identifies the integer functionals annihilating the character relations. For a Cartier divisor, compare local equations χ^(−m_ρ); their wall difference yields the stated degree-one coefficient, with the opposite sign from the local section generator. (FS94, Proposition 1.1, p. 4; Proposition 1.4 and Theorem 2.1, p. 6; Corollary 2.4, p. 7; FS94 line 117, line 176, line 188 and line 234).
+One proof route is the following. Express orbit-closure cycle relations using characters of M(τ); they give exactly the balancing matrix. Apply the finite-orbit Kronecker-duality theorem of the SchemeAndStackFoundations Layer 5 supplier contract to the split torus action on the complete toric variety; every orbit is a split torus over k. Together with the orbit-cycle presentation this identifies the integer functionals annihilating the character relations. For a Cartier divisor, compare local equations χ^(−m_ρ); their wall difference yields the stated degree-one coefficient, with the opposite sign from the local section generator. (FS94, Proposition 1.1, p. 4; Proposition 1.4 and Theorem 2.1, p. 6; Corollary 2.4, p. 7; FS94 line 117, line 176, line 188 and line 235).
 
-The API records these facts, with the hypotheses of this subsection. (FS94, Proposition 1.1, p. 4; Proposition 1.4 and Theorem 2.1, p. 6; Corollary 2.4, p. 7; FS94 line 117, line 176, line 188 and line 234).
+The API records these facts, with the hypotheses of this subsection. (FS94, Proposition 1.1, p. 4; Proposition 1.4 and Theorem 2.1, p. 6; Corollary 2.4, p. 7; FS94 line 117, line 176, line 188 and line 235).
 
 - The ℤ-submodule of integer cone weights annihilated by the finite character balancing matrix.
 - A weight belongs exactly when every character balancing sum vanishes.
@@ -708,7 +677,7 @@ The API records these facts, with the hypotheses of this subsection. (FS94, Prop
 
 Changing lattice bases or annihilator bases produces a canonically identified kernel, not a different Chow group.
 
-*Needs:* §0.5; ShimuraCompactifications C0.16; SchemeAndStackFoundations §§5.1–5.6 and the operational-Chow/positivity supplier contracts; SchemeAndStackFoundations §5.1; SchemeAndStackFoundations §§5.1–5.6, gap:operational-chow-finite-orbits; SchemeAndStackFoundations §5.3.
+*Needs:* §0.5; ShimuraCompactifications C0.16; SchemeAndStackFoundations §5.1; SchemeAndStackFoundations §§5.1–5.6, gap:operational-chow-finite-orbits; SchemeAndStackFoundations §5.3.
 
 ### 6.2 Toric fan displacement products
 
@@ -724,9 +693,7 @@ One proof route is the following. Apply the diagonal torus deformation to the la
 - At a ray γ of a rank-two fan the displacement space is the one-dimensional quotient N/Nγ; using the line Nγ itself projects every displacement to zero and cannot be generic.
 - The primitive vectors (1,0),(1,2) span an index-2 sublattice of ℤ², so a contributing displacement term from these rays has multiplicity 2, not 1. In rank zero the empty product has degree 1.
 
-On ℙ¹×ℙ¹ the degree of O(a,b)·O(c,d) is ad+bc. In particular O(2,0)·O(1,1) has degree 2.
-
-*Needs:* §6.1; SchemeAndStackFoundations §§5.1–5.6 and the operational-Chow/positivity supplier contracts; SchemeAndStackFoundations §§5.1–5.6, gap:operational-chow-finite-orbits; SchemeAndStackFoundations §5.2.
+*Needs:* §6.1; SchemeAndStackFoundations §§5.1–5.6, gap:operational-chow-finite-orbits; SchemeAndStackFoundations §5.2.
 
 ### 6.3 Toric complete-intersection degrees
 
@@ -734,17 +701,15 @@ Let XΣ,k be smooth projective of dimension n, D₁,…,D_c invariant Cartier di
 
 Here Σ projective; 0≤c≤n; the initial sections form a proper intersection of effective Cartier divisors, set-theoretically of codimension c; H ample.
 
-One proof route is the following. A smooth toric scheme is Cohen–Macaulay. Codimension c for c Cartier equations gives a regular-sequence intersection cycle with positive generic lengths. Apply SchemeAndStackFoundations Layer 5 and its operational-Chow/positivity contracts Chern classes and ample degree positivity to this nonzero effective (n−c)-cycle. Apply the preceding fan displacement product to its Cartier weights; the resulting integral degree is unchanged by coefficient field or characteristic. Apply SchemeAndStackFoundations Layer 5 and its operational-Chow/positivity contracts refined Gysin support and projection/excess formulas to arbitrary tilted equations in the same powered divisor classes. A positive-degree class cannot be supported on an empty scheme. (SCH12, §8, Corollary 8.8 and proof, p. 307; SCH12 line 2501; FS94 line 385).
+One proof route is the following. A smooth toric scheme is Cohen–Macaulay. Codimension c for c Cartier equations gives a regular-sequence intersection cycle with positive generic lengths. Apply SchemeAndStackFoundations §§5.3–5.4 Chern classes and gap:ample-degree-positivity to this nonzero effective (n−c)-cycle. Apply the preceding fan displacement product to its Cartier weights; the resulting integral degree is unchanged by coefficient field or characteristic. For arbitrary equations over the other coefficient field in the same powered divisor classes, put E=⊕_i O(p^(N_i)D_i) and let s:X→E be their section. SchemeAndStackFoundations §5.5 `Chow.gysin`, applied to the zero section 0:X→E and pulled back along s, gives 0_s^![X]∈CH_(n−c)(Z(s)). Its pushforward is c_c(E)∩[X]; this follows from the zero-section formula and homotopy invariance, using H:X×A¹→E, H(x,t)=t·s(x), to compare s with 0. Use the projection formula and `excess_intersection` for its ample degree and excess cases. A positive-degree class cannot be supported on an empty scheme. (SCH12, §8, Corollary 8.8 and proof, p. 307; SCH12 line 2501; FS94 line 385).
 
 **Checks.**
 
 - For two distinct fibres of type (2,0) on ℙ¹×ℙ¹ and H=O(1,1), the degree is 2, while the support has two connected components; positive degree does not imply connectedness.
-- On ℙ², two line classes give δ=1. Choosing the same line section twice gives an excess-dimensional common zero locus, yet the localized degree remains 1, so nonemptiness persists.
+- On ℙ², two line classes give δ=1. For s=(ℓ,ℓ) in O(1)⊕O(1), Z(s) is the line L. The excess normal bundle is O(1)|_L, so 0_s^![ℙ²]=c₁(O(1)|_L)∩[L] in CH₀(L), of degree 1. The excess-dimensional zero locus remains nonempty.
 - Replacing those two line classes by pᴺ¹ and pᴺ² multiples changes δ from 1 to p^(N₁+N₂). For c=0, δ=deg(Hⁿ)>0; in rank zero this degree is 1.
 
-For type (2,0) on ℙ¹×ℙ¹, H=O(1,1) gives degree 2 for two disjoint fibres; positivity does not assert connectedness.
-
-*Needs:* §6.2; §0.5; ShimuraCompactifications C0.16; SchemeAndStackFoundations §§5.1–5.6 and the operational-Chow/positivity supplier contracts; SchemeAndStackFoundations §§0.1, 0.7, 0.17–0.18, 3.4 and 4.13; SchemeAndStackFoundations §0.18; SchemeAndStackFoundations §§5.4–5.5; SchemeAndStackFoundations §5.5; SchemeAndStackFoundations §5.2; SchemeAndStackFoundations §§5.3–5.6 and 4.13, gap:intersection-positivity-cuts.
+*Needs:* §6.2; §0.5; ShimuraCompactifications C0.16; SchemeAndStackFoundations §§0.7, 0.17–0.18 (dimension, regular sequences and Cohen–Macaulayness); §§5.2–5.4 (degree, Chern classes and projection formula), gap:ample-degree-positivity; §5.5 `Chow.gysin`, `excess_intersection` and zero-section homotopy invariance (localized support).
 
 ### 6.4 Toric complete-intersection approximation
 
@@ -761,9 +726,7 @@ One proof route is the following. Apply the finite-family section-neighbourhood 
 - In ℙ², two identical lines give codimension 1 with two equations and are not an input with c=codim Y=2. Two distinct lines meeting in a point have c=2 and dim Y=0.
 - Over the imperfect field k₀=𝔽ₚ(t), xᵖ−t defines a reduced degree-p point, but after adjoining t^(1/p) its equation is (x−t^(1/p))ᵖ. Its geometric reduction has length 1, while the base-changed model has length p. The reduced geometric structure need not descend. This is an algebraic descent Check; it does not assert density of 𝔽ₚ(t) in a perfectoid field (STACKS, tags 020I and 035X; STACKS line 223 and line 229).
 
-For ℙ¹×ℙ¹ and the two disjoint fibres of type (2,0), the conclusion permits a disconnected one-dimensional Z. For c=0 the construction returns the whole toric variety. A hypersurface in ℙⁿ is the c=1 case; a collection with fewer or more equations than codimension is not a set-theoretic complete-intersection input. As a field-extension descent check, for k₀=F_p(t) inside a perfect characteristic-p extension, the reduced k₀-scheme defined by x^p−t becomes nonreduced after base change. Its reduced geometric point is x=t^(1/p) and is not a reduced closed subscheme descending to k₀. The endpoint must distinguish the k₀ model from its geometric reduction.
-
-*Needs:* §5.3; §6.3; SchemeAndStackFoundations §§5.1–5.6 and the operational-Chow/positivity supplier contracts; SchemeAndStackFoundations §§0.1, 0.7, 0.17–0.18, 3.4 and 4.13; SchemeAndStackFoundations §0.7; SchemeAndStackFoundations §§5.3–5.6 and 4.13, gap:intersection-positivity-cuts.
+*Needs:* §5.3; §6.3; SchemeAndStackFoundations §0.7 (dimension and height bounds); §4.13, gap:ample-generic-cuts (cuts over the infinite dense field); §§5.3–5.4, gap:ample-degree-positivity (nonemptiness of positive-dimensional ample cuts).
 
 ### Examples
 
@@ -771,7 +734,7 @@ On ℙ¹×ℙ¹, two distinct fibres of one projection have ample degree 2 and d
 
 ### Dependencies
 
-Layers 0 and 5; ShimuraCompactifications C0.16–C0.18; SchemeAndStackFoundations §§0.7, 0.17–0.18, 4.13 and 5.1–5.6, with gap:operational-chow-finite-orbits and gap:intersection-positivity-cuts. The finite-torsion comparison is a separate downstream output and is not a premise of positive intersection degree.
+Layers 0 and 5; ShimuraCompactifications C0.16–C0.18; SchemeAndStackFoundations §§0.7, 0.17–0.18, 4.13 and 5.1–5.6, with gap:operational-chow-finite-orbits, gap:ample-degree-positivity and gap:ample-generic-cuts. The finite-torsion comparison is a separate downstream output and is not a premise of positive intersection degree.
 
 ## Downstream consumers
 

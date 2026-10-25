@@ -37,7 +37,7 @@ accessed = "2026-10-24"
 doi = "10.1016/S0040-9383(96)00016-X"
 arxiv = "alg-geom/9403002"
 version_note = "arXiv v1, 1 March 1994, preprint pagination; theorem numbers refer to this version."
-cited_for = ["Layer 6"]
+cited_for = ["Conventions", "0.6", "Layer 6"]
 
 [[source]]
 id = "FS25"

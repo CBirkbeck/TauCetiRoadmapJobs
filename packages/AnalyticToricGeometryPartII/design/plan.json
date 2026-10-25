@@ -2272,22 +2272,22 @@
       "needs": "Extend the homogeneous sharp estimate of P2.1 from perfected polydiscs to the perfected rational cone algebras with a linear Z[1/p]-grading and degree-zero piece K, for integral homogeneous f, rational c≥0 and ε∈Z[1/p] with 0<ε<1, preserving degree and the bound |f−g♯|≤|ϖ|^(1−ε) max(|f|,|ϖ|^c) when ϖ=(ϖ♭)♯ and ϖ^p divides p."
     },
     {
-      "slug": "valuation-smooth-proper",
-      "supplier": "SchemeAndStackFoundations",
-      "section": "2.15",
-      "needs": "Export prime-to-residue-characteristic smooth proper base change between geometric generic and special fibres over any rank-one valuation ring with algebraically closed fraction field, for Z/ℓ^m with m≥1, natural for morphisms and valuation-field extension."
-    },
-    {
       "slug": "operational-chow-finite-orbits",
       "supplier": "SchemeAndStackFoundations",
       "section": "5.1–5.6",
       "needs": "Supply integral operational Chow groups, their product and evaluation on cycles, and the Kronecker isomorphism A^j(X)≅Hom(A_j(X),Z) for complete k-schemes with a split connected solvable group action and finitely many orbits, each k-isomorphic to a product of an affine space and a split torus, compatibly with field extension and the smooth intersection product."
     },
     {
-      "slug": "intersection-positivity-cuts",
+      "slug": "ample-degree-positivity",
       "supplier": "SchemeAndStackFoundations",
-      "section": "5.3–5.6; 4.13",
-      "needs": "Export positive ample degree of every nonzero effective projective cycle, localized top Chern support for arbitrary sections including excess intersection, and ample hypersurface cuts over any infinite field that avoid the finitely many top-dimensional geometric components and preserve nonemptiness in positive dimension."
+      "section": "5.3–5.4",
+      "needs": "Export deg(c₁(H)^d∩[V])>0 for every field k, projective k-scheme X, ample line bundle H on X and d-dimensional integral closed subscheme V⊂X, hence positive ample degree for every nonzero effective cycle of pure dimension d."
+    },
+    {
+      "slug": "ample-generic-cuts",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "4.13",
+      "needs": "For every infinite field k and projective k-scheme W of dimension d>0 with a fixed projective embedding, supply an m≥1 and a k-defined hypersurface in |O(m)| containing no top-dimensional geometric component of W, whose intersection with W is nonempty of dimension d−1."
     },
     {
       "slug": "geometric-morphism-cup-pullback",
