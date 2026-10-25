@@ -21,8 +21,10 @@ The following headlines are not statable at the pins:
   lack those representations and their canonical Rankin–Selberg functions and
   gamma-parameter families. Arbitrary functions do not stand for these objects.
 
-The Kloosterman sheaf realization and its purity are also not statable: the
-native rational adic direct-image and lisse-sheaf carriers are absent.
+The Kloosterman sheaf realization and its purity, the rational-adic curve
+Euler–Poincaré formula and the Swan-constancy criterion for families are also
+not statable: the native rational-adic direct-image, lisse-sheaf and local
+conductor carriers are absent.
 The general numerical Deligne bound and Gauss-power average bound are statable on the native finite-character carriers.
 -/
 

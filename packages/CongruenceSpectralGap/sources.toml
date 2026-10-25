@@ -23,7 +23,7 @@ authors = "Gerald Teschl"
 title = "Mathematical Methods in Quantum Mechanics"
 year = 2009
 locator_scheme = "theorem"
-locator = "Theorems 2.12–2.13, Theorem 4.10, sections 2.3 and 4.3, printed pp. 70–72 and 118–119"
+locator = "Theorems 2.12–2.13, Theorem 4.10, sections 2.3 and 4.4, printed pp. 70–72 and 118–119"
 url = "https://www.mat.univie.ac.at/~gerald/ftp/book-schroe/schroe.pdf"
 fetched_from = "https://www.mat.univie.ac.at/~gerald/ftp/book-schroe/schroe.pdf"
 fetched_at = "2026-10-23T17:12:33Z"
@@ -55,7 +55,7 @@ authors = "Nicholas M. Katz"
 title = "Gauss Sums, Kloosterman Sums, and Monodromy Groups"
 year = 1988
 locator_scheme = "theorem"
-locator = "Section 4.0, Theorem 4.1.1, section 4.3, Theorem 5.1(1)–(8), pp. 47–49, 59–64"
+locator = "Section 2.3.1, section 4.0, Theorem 4.1.1, section 4.3, Theorem 5.1(1)–(8), Proposition 5.2.1 and section 5.2.4, pp. 32, 47–49, 59–76"
 url = "https://web.math.princeton.edu/~nmk/Katz-GKM.pdf"
 fetched_from = "https://web.math.princeton.edu/~nmk/Katz-GKM.pdf"
 fetched_at = "2026-10-23T17:24:57Z"
@@ -63,7 +63,7 @@ sha256 = "8711424f8edb14f38c0e61606ef49d6efc67d5a93ac9f5bd9fa3e13b7c7d9ffe"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-23"
-cited_for = ["Layer 4 general hyper-Kloosterman sum and bound"]
+cited_for = ["Layer 4 curve conductor inputs, convolution, general hyper-Kloosterman sum and bound"]
 
 [[source]]
 id = "bms02"
@@ -83,3 +83,19 @@ status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v3 (29 July 2002); section and corollary numbering of the arXiv text, which is the version read; published in Russian Mathematical Surveys 57:4 (2002)."
 cited_for = ["0.2", "5.3"]
+
+[[source]]
+id = "laumon-swan"
+authors = "Gérard Laumon"
+title = "Semi-continuité du conducteur de Swan (d’après P. Deligne)"
+year = 1981
+locator_scheme = "theorem"
+locator = "Theorem 2.1.1, Corollary 2.1.2 and Remark 2.1.3, pp. 185–187"
+url = "https://www.numdam.org/item/AST_1981__82-83__173_0/"
+fetched_from = "https://www.numdam.org/item/AST_1981__82-83__173_0.pdf"
+fetched_at = "2026-10-25T03:48:28Z"
+sha256 = "fe8746258ffe496e49536a635e11a7f698063a7e7854301f114fcc9148c1bf60"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["4.2b Swan-constancy criterion"]

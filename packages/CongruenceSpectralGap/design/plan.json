@@ -1963,7 +1963,7 @@
       "slug": "all-prime-self-pair-positivity",
       "supplier": "AutomorphicLFunctionsAndLocalFactors",
       "section": "AL.3, Rankin–Selberg local factors and global poles",
-      "needs": "For unitary cuspidal GL_m over ℚ provide nonnegative full finite self-pair coefficients including ramified primes, coefficient one at n=1, a positive simple residue at s=1 and continuous pole-subtracted boundary values on Re(s)≥1."
+      "needs": "For unitary cuspidal GL_m over ℚ provide nonnegative full finite self-pair coefficients including ramified primes, coefficient one at n=1 and a positive residue of the finite self-pair L-function at s=1."
     },
     {
       "slug": "self-pair-local-character-transport",
@@ -1975,7 +1975,7 @@
       "slug": "finite-rs-polynomial-strips",
       "supplier": "AutomorphicLFunctionsAndLocalFactors",
       "section": "AL.3, Hecke, eigensystem and Rankin–Selberg data",
-      "needs": "For unitary cuspidal π of GL_m over ℚ and each nonprincipal even character χ of prime conductor q>2 with q∤fπ, realize the twisted self-pair `rsDatum (π⊗χ) π∨` as an `LFunctions.AnalyticLFunctionData` record meeting the hypotheses of ZerosOfLFunctions Layer 3, item 3: Dirichlet agreement with coefficients b(n)χ(n), empty polar divisor, finite-order entire completion, functional equation against its dual record with conductor fq^(m²) and root number τπχ(f)τ(χ)^(m²)(fq^(m²))^(−1/2), and the average coefficient bound."
+      "needs": "For unitary cuspidal π of GL_m over ℚ and each nonprincipal even character χ of prime conductor q>2 with q∤fπ, realize the twisted self-pair `rsDatum (π⊗χ) π∨` as an `LFunctions.AnalyticLFunctionData` record of TauCetiRoadmap.LFunctions Layer 0 meeting the hypotheses of ZerosOfLFunctions Layer 3, item 3: Dirichlet agreement with coefficients b(n)χ(n), empty polar divisor, finite-order entire completion, functional equation against its dual record with conductor fq^(m²) and root number τπχ(f)τ(χ)^(m²)(fq^(m²))^(−1/2), and the average coefficient bound."
     },
     {
       "slug": "additive-character-sheaf-weight",
