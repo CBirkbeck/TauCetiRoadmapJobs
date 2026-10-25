@@ -26,7 +26,8 @@ The following headline theorems are not statable at the pins:
   character space, its torsion restriction loci and the preceding family groups.
 * Surface period finiteness and quasi-finiteness of an isogeny-pullback period
   map lack geometric polarized integral variations on the smooth-divisor space,
-  their period maps and trace-compatible marked Hodge-locus relations.
+  their period maps and the transport Hodge relations of polarized integral
+  variations.
 -/
 
 namespace TauCetiRoadmap.SheafConvolutionOnAbelianVarieties

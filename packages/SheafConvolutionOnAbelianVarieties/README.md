@@ -10,9 +10,9 @@ Mathlib already supplies finite subsets, binomial coefficients, derived categori
 
 AbelianSchemesAndArithmeticModuli §§A2–A6 owns abelian schemes, duality, isogenies, degree-one realizations and rigid Hom spaces. SchemeAndStackFoundations Layer 5 owns Chow operations, Chern classes and Riemann–Roch. SpringerResolutionAndCharacteristicCycles §§D and H owns coherent D-modules, their full characteristic cycles and regular holonomicity. The clean quotient and its convolution applications here differ from those full cycles. ComplexComparisonPartII §§C5.1–C5.6 owns constructible comparison, geometric Hodge theory and regular-singular connections. PadicHodgeTheory §§3.3 and 8.1–8.2 owns geometric p-adic comparison and its sign convention.
 
-MotivesAndAlgebraicCycles §§6.1–6.3 and 6.8 owns abstract neutral reconstruction and tensor-isomorphism torsors. ReductiveGroups Layers 6–10, LieHighestWeight Layers 4, 6 and 8, SpinRepresentations Layers 4–5, and LieHighestWeightPartII §N2 own the generic group and highest-weight inputs. MordellLawrenceVenkatesh §§0.22–0.24 owns Lie-Goursat. ClassicalArithmeticCompletion §§2.18, 2.39, 2.56–2.57, 2.71 and 2.77–2.78 owns Eulerian numbers and all general Appendix C inequalities; Layer 6 here proves only the bespoke Appendix B comparisons and their occupancy consequences. Jordan's finite-linear-group theorem is an auxiliary general theorem owned here because it supplies the family detection argument.
+MotivesAndAlgebraicCycles §§6.1–6.3 and 6.8 owns abstract neutral reconstruction and tensor-isomorphism torsors. ReductiveGroups Layers 6–10, LieHighestWeight Layers 4, 6 and 8, SpinRepresentations Layers 4–5, and LieHighestWeightPartII §N2 own the generic group and highest-weight inputs. MordellLawrenceVenkatesh §§0.22–0.24 owns Lie-Goursat. ClassicalArithmeticCompletion §§2.18, 2.39, 2.56–2.57, 2.71 and 2.77–2.78 owns Eulerian numbers and all general Appendix C inequalities. This roadmap owns the bespoke Appendix B comparisons of §6.2, with their unbounded ranges, and their occupancy consequences: each comparison is calibrated to one occupancy estimate of LS Appendix B and has no use outside the exterior-power argument, and it is derived from the imported general bounds rather than restating them. Jordan's finite-linear-group theorem is an auxiliary general theorem owned here because it supplies the family detection argument.
 
-ShimuraData §§3.1–3.4 owns variations and their morphisms and polarizations. HodgeStructures L0–L3 owns pure integral Hodge structures and period domains. StableReductionPartII §§MC.4 and MC.6 owns curve level moduli and finite Torelli fibres. JacobianChallenge Layer F and JacobianChallengePartII §2 own Abel–Jacobi morphisms. The fixed-linear-system period-finiteness arguments here consume these objects and retain the trace-compatibility theorem required in §9.3. Exact additions needed of these owners are specified below.
+ShimuraData §§3.1–3.4 owns variations and their morphisms and polarizations. HodgeStructures L0–L3 owns pure integral Hodge structures, their polarizations and period-domain points. StableReductionPartII §§MC.4 and MC.6 owns curve level moduli and finite Torelli fibres. JacobianChallenge Layer F and JacobianChallengePartII §2 own Abel–Jacobi morphisms. The fixed-linear-system period-finiteness arguments here consume these objects. This roadmap owns the transport Hodge relation theorem of §9.3 and its application to the period maps of §9.1: HodgeStructures stops at period-domain points, ShimuraData §§3.1–3.4 supplies variations and their morphisms, and ShimuraVarieties §§3.5b.1 and 3.5c treat period maps of polarized variations only through local nilpotent orbits and definability; none of them states the transport relation, its descent along split morphisms of variations or its comparison with period-map fibres. Exact additions needed of these owners are specified below.
 
 ## Conventions
 
@@ -24,7 +24,7 @@ The Eulerian number A(n,q) is descent-indexed. For n≥1 extend it by zero to in
 
 The cohomological prime, the order prime of a finite character, and the residue characteristic of a reduction place are independent. In Layer 8 choose the order prime different from the residue characteristic to apply its prime-to-residue-characteristic avoidance theorem. Multiplication covers in characteristic zero allow every positive m, including m divisible by the cohomological prime. Fix arithmetic Frobenius in the geometric and cyclotomic transport actions; on prime-to-p character values the latter raises roots of unity to the pth power. Their combined eigenvalues have absolute value p^(1/2) for a degree-one place, with the corresponding residue-cardinality version at other places.
 
-Define the derived negligible category by every perverse cohomology object being negligible, rather than by cancellation in the total Euler characteristic. The Serre quotient is the image of the perverse heart in the Verdier quotient; the whole Verdier quotient is triangulated. All pairings and period maps retain their integral lattice modulo torsion, polarization and marking convention. Period-fibre finiteness means finitely many points in each fibre of the analytic polarized period map; it asserts neither properness nor injectivity.
+Define the derived negligible category by every perverse cohomology object being negligible, rather than by cancellation in the total Euler characteristic. The Serre quotient is the image of the perverse heart in the Verdier quotient; the whole Verdier quotient is triangulated. All pairings and period maps retain their integral lattice modulo torsion, polarization and marking convention. Period-fibre finiteness means finitely many points in each fibre of the polarized period map to the quotient of the period domain by the full integral isometry group of the reference lattice (§9.1); it asserts neither properness nor injectivity.
 
 ## Exact supplier contracts
 
@@ -46,7 +46,11 @@ For Jordan's theorem use `Matrix.GeneralLinearGroup` in Mathlib/LinearAlgebra/Ma
 
 Consume §§F.0.2 and F.0.A2 for based geometric π₁ and the arithmetic exact sequence split by a rational point; §§F.2–F.3 for proper/smooth base change, projection and Künneth; §§F.4.0–F.4.6 for lattices, finite-extension rational coefficients, continuous lisse monodromy on normal schemes and geometric Galois actions; §§F.5–F.6 for duality, purity and the rational étale Gauss–Bonnet identity; ComplexComparisonPartII §C5.1 identifies its rational Euler characteristic with the topological one over C. Abelian varieties are normal, so the lisse-monodromy comparison is used within this scope.
 
-What EtaleCohomologyFoundations must provide (gap:geometric-character-comparisons): For abelian varieties in characteristic zero, geometric π₁ commutes with products and algebraically closed extension, and that extension is fully faithful on constructible Hom and preserves simple perverse constituents of tensor constructions defined over the smaller field.
+What EtaleCohomologyFoundations must provide (gap:geometric-character-comparisons): For abelian varieties A and A′ over an algebraically closed characteristic-zero field, the geometric étale fundamental group of A×A′ based at the identity is the product of those of A and A′, and it is unchanged under extension to a larger algebraically closed field.
+
+What EtaleCohomologyFoundations must provide (gap:closed-extension-constructible-comparison): For an extension k⊂K of algebraically closed characteristic-zero fields and a variety X over k, pullback of constructible Q̄_ℓ-complexes from X to X_K is fully faithful on Hom and preserves the simple perverse constituents of tensor constructions of objects defined over k.
+
+The first is used for the character spaces of §§0.1–0.2, the second for the extension comparison of §2.4.
 
 ### From TauCetiRoadmap.EtaleDualityAndPerverseSheaves
 
@@ -70,7 +74,11 @@ This is the general criterion of EHS Appendix A, Theorem A.1(iii), pp.20–21, E
 
 Consume §§A2.4 and A3.6 for χ(L), deg φ_L=χ(L)² and the finite translation stabilizer contained in ker φ_L; §§A3.1–A3.5 for multiplication isogenies, their kernel torsors and pairings; §A4.1 for Tate modules; §A5 for polarized degree-one Hodge realization; §A6 for rigidity and relative Hom. Use its proper group carrier throughout.
 
-What AbelianSchemesAndArithmeticModuli must provide (gap:ample-divisor-albanese): For a smooth ample divisor H in A over an algebraically closed characteristic-zero field with dim A≥3, Alb(H)→A is an isomorphism, and rational maps from smooth varieties to abelian varieties extend to morphisms.
+What AbelianSchemesAndArithmeticModuli must provide (gap:ample-divisor-albanese): For a smooth ample divisor H in an abelian variety A over an algebraically closed characteristic-zero field with dim A≥3, the homomorphism Alb(H)→A induced by the inclusion H↪A is an isomorphism.
+
+What AbelianSchemesAndArithmeticModuli must provide (gap:rational-map-extension-to-abelian-varieties): For a smooth variety X over a field k and an abelian variety A over k, every rational map from X to A extends uniquely to a morphism X→A.
+
+The first is used in §4.5 (weak Lefschetz for H of dimension at least two); the second in §4.5, where the rational support maps of §4.3 are extended from the smooth divisor H. The second is the field case of the extension argument of AbelianSchemesAndArithmeticModuli §A1.8, which that section states only over a connected Dedekind base; smoothness of X is needed, since the inverse of the normalization of the nodal curve obtained from an elliptic curve E by gluing two distinct points is a rational map to E that is undefined at the node. (K2, proof of Lemma 5.2.2, pp. 25–26, K2 line 1221; JV, proof of Proposition 6.1, p. 19, JV line 947.)
 
 What AbelianSchemesAndArithmeticModuli must provide (gap:translation-stabilizer-family-quotient): After shrinking a characteristic-zero family of smooth ample divisors, its finite geometric generic translation stabilizer descends and the family is pulled back from a smooth ample divisor family on the quotient abelian variety with trivial generic stabilizer.
 
@@ -108,13 +116,15 @@ No closure of Hodge–Tate representations under arbitrary extensions is used. (
 
 ReductiveGroups Layers 6–7 and 9–10 provides derived groups, central isogenies, root data, finite outer automorphisms and rational highest-weight representations. LieHighestWeight Layers 4 and 6 provides irreducible highest weights, Weyl dimensions and the minuscule Pieri rule; Layer 8 provides dimensions 27 and 56. SpinRepresentations Layers 4–5 provides the spin and half-spin modules and dimensions. LieHighestWeightPartII §N2 provides classical highest-weight comparisons.
 
-What LieHighestWeightPartII must provide (gap:minuscule-weight-table): Over an algebraically closed characteristic-zero field, the minuscule dominant weights are A_r: all fundamental weights of dimensions choose(r+1,k), B_r: ω_r of dimension 2^r, C_r: ω₁ of dimension 2r, D_r: ω₁ of dimension 2r and ω_(r−1),ω_r of dimension 2^(r−1), E₆: ω₁,ω₆ of dimension 27, E₇: ω₇ of dimension 56, and none for E₈, F₄ or G₂.
+What LieHighestWeightPartII must provide (gap:minuscule-weight-table): Over an algebraically closed characteristic-zero field, for each simple type the nonzero minuscule dominant weights are A_r: all fundamental weights of dimensions choose(r+1,k), B_r: ω_r of dimension 2^r, C_r: ω₁ of dimension 2r, D_r: ω₁ of dimension 2r and ω_(r−1),ω_r of dimension 2^(r−1), E₆: ω₁,ω₆ of dimension 27, E₇: ω₇ of dimension 56, and none for E₈, F₄ or G₂.
+
+Minuscule keeps its usual meaning (the weights form a single Weyl orbit), so the zero weight, with orbit {0}, is minuscule in every type, E₈ included; it gives the one-dimensional trivial representation. The contract classifies the nonzero weights only, as the paragraph and table of K1 before Corollary 1.10 (pp. 11–12, K1 line 433) list only nontrivial minuscule representations; the hypersurface application excludes the zero weight independently because N=n!d≥6.
 
 MordellLawrenceVenkatesh §§0.22–0.24 supplies the two-factor Lie-Goursat graph alternative and its finite-product consequence. These are used on connected noncommutative simple derived factors, rather than on arbitrary abstract simple groups.
 
 ### From TauCetiRoadmap.ClassicalArithmeticCompletion
 
-Consume §§2.18 and 2.39 for the descent-indexed Eulerian row, sum, symmetry, recurrence and finite-difference identity; §2.56 for unimodality; §§2.57 and 2.71 for exponential and factorial bounds; §2.77 for the square-separation inequality and §2.78 for 27A(n,2)<A(n,1)² when n≥11. Keep their ranges: for n=10 the last comparison is 1,291,680>1,026,169, and fails. No general Appendix C target is reconstructed here.
+Consume §§2.18 and 2.39 for the descent-indexed Eulerian row, sum, symmetry, recurrence and finite-difference identity; §2.56 for unimodality; §§2.57 and 2.71 for exponential and factorial bounds; §2.77 for the square-separation inequality and §2.78 for 27A(n,2)<A(n,1)² when n≥11. Keep their ranges: for n=10 the last comparison is 1,291,680>1,026,169, and fails. No general Appendix C target is reconstructed here. The bespoke Appendix B comparisons, which this supplier does not state, are the target §6.2 of this roadmap and are derived from these bounds.
 
 ### From TauCetiRoadmap.DeligneWeightsAndPurity
 
@@ -122,7 +132,7 @@ Consume §§0.1–0.3 and 0.11 for Weil numbers, powers and inverse eigenvalues,
 
 ### From TauCetiRoadmap.ShimuraData and HodgeStructures
 
-Consume ShimuraData §§3.1–3.4 for integral and rational polarized variations, Hom variations, tensor operations, and flat Hodge-idempotent splittings, and HodgeStructures L0–L3 for the pure structures and marked period domains. Combine these with ComplexComparisonPartII §§C5.2–C5.3 for the geometric variation. AlgebraicModuliForArithmeticGeometry §§1.1–1.2 and 2.1 supplies projective section spaces and smooth-family parameter geometry.
+Consume ShimuraData §§3.1–3.4 for integral and rational polarized variations, Hom variations, tensor operations, and flat Hodge-idempotent splittings, and HodgeStructures L0–L3 for the pure structures, the positive definite Hodge metric of a polarization (L1) and period-domain points with the integral isometry group (L3). Combine these with ComplexComparisonPartII §§C5.2–C5.3 for the geometric variation. AlgebraicModuliForArithmeticGeometry §§1.1–1.2 and 2.1 supplies projective section spaces and smooth-family parameter geometry.
 
 What ShimuraData must provide (gap:bounded-norm-orbit-hodge-loci): For an integral polarized weight-zero variation on a smooth complex algebraic base, integral (0,0) classes of polarization norm at most K form an algebraic space finite over the base, and the Hodge locus projected from one fixed flat-section orbit is closed algebraic, also after clearing one fixed rational denominator.
 
@@ -140,7 +150,7 @@ The field statement and Torelli are JV Proposition 6.1, pp.19–20, JV line 941,
 
 ## How to read the build
 
-Layer 0 constructs characters and convolution and proves the negligible quotient laws. Layer 1 gives twisted fibres and represented groups; Layer 2 compares arithmetic and geometric groups. Layer 3 computes the hypersurface data. Layer 4 reduces its connected derived image to minuscule possibilities. Layers 5–6 solve the exterior-weight obstruction and identify the classical groups. Layer 7 converts convolution groups into family monodromy; Layer 8 makes the product conclusion uniform along character orbits. Layer 9 constructs the period maps and proves their fibre finiteness, including a separate surface argument and the trace-compatible relation theorem in §9.3. Each target lists the inputs its statement and the indicated proof route use.
+Layer 0 constructs characters and convolution and proves the negligible quotient laws. Layer 1 gives twisted fibres and represented groups; Layer 2 compares arithmetic and geometric groups. Layer 3 computes the hypersurface data. Layer 4 reduces its connected derived image to minuscule possibilities. Layers 5–6 solve the exterior-weight obstruction and identify the classical groups. Layer 7 converts convolution groups into family monodromy; Layer 8 makes the product conclusion uniform along character orbits. Layer 9 constructs the period maps (§9.1), proves fibre finiteness for surfaces by Torelli (§9.2), proves the transport Hodge relation theorem for polarized integral variations (§9.3) and deduces fibre finiteness in every dimension (§9.4). Each target lists the inputs its statement and the indicated proof route use.
 
 ## Layer 0: characters, convolution and negligible objects
 
@@ -475,7 +485,7 @@ For algebraically closed characteristic-zero fields k⊂K, A/k, and a constructi
 
 Throughout this subsection, Continuous adic sheaves with finite stratifications and the coefficient essential-image condition of EtaleDualityAndPerverseSheaves §§3.3–3.5.
 
-One proof route is as follows. Use the geometric character comparison contract for fully faithful invariance of constructible Hom and geometric simple objects under algebraically closed extension. Proper base change preserves convolution, cohomology and Euler characteristic. Full faithfulness and preservation of simple constituents identify all subquotients of tensor constructions of Q.
+One proof route is as follows. Use the closed-extension constructible comparison contract for fully faithful invariance of constructible Hom and geometric simple objects under algebraically closed extension. Proper base change preserves convolution, cohomology and Euler characteristic. Full faithfulness and preservation of simple constituents identify all subquotients of tensor constructions of Q.
 
 **Checks.**
 
@@ -483,7 +493,7 @@ One proof route is as follows. Use the geometric character comparison contract f
 - New supports defined only over K are not included in this equivalence.
 - A rank-one skyscraper has endomorphism dimension 1 before and after extension; the comparison cannot enlarge it to a free family of supports.
 
-*Needs:* §1.3; §0.6; EtaleDualityAndPerverseSheaves §§3.3–3.5; EtaleCohomologyFoundations §§F.0.2, F.4.5; geometric character comparison contract.
+*Needs:* §1.3; §0.6; EtaleDualityAndPerverseSheaves §§3.3–3.5; EtaleCohomologyFoundations §§F.0.2, F.4.5; closed-extension constructible comparison contract.
 
 ### Examples
 
@@ -491,7 +501,7 @@ For A=Spec k, every geometric object is a sum of tensor units, so G_geo=1 and G_
 
 ### Dependencies
 
-§1.1; §1.2; EtaleDualityAndPerverseSheaves §5.10; MotivesAndAlgebraicCycles §§6.1–6.3, 6.8; §0.2; §1.3; §1.4; §0.6; EtaleDualityAndPerverseSheaves §§3.3–3.5; EtaleCohomologyFoundations §§F.0.2, F.4.5. The exact supplier contracts above retain their coefficient, dimension and finiteness hypotheses.
+§1.1; §1.2; EtaleDualityAndPerverseSheaves §5.10; MotivesAndAlgebraicCycles §§6.1–6.3, 6.8; §0.2; §1.3; §1.4; §0.6; EtaleDualityAndPerverseSheaves §§3.3–3.5; EtaleCohomologyFoundations §§F.0.2, F.4.5; closed-extension constructible comparison contract. The exact supplier contracts above retain their coefficient, dimension and finiteness hypotheses.
 
 ## Layer 3: hypersurface Euler and Hodge data
 
@@ -615,11 +625,11 @@ One proof route is as follows. Import the characteristic cycle of a coherent D-m
 
 ### 4.3 Microlocal tensor factorization
 
-Let K be a simple perverse sheaf on a complex abelian variety, of positive Euler characteristic and with trivial translation stabilizer. Suppose the nonzero semisimple derived Lie algebra of its connected convolution group has at least two simple factors. Prove that for some integer m>0 there are effective clean cycles Λ₁,Λ₂ of Gauss degrees greater than 1 with [m]_*cc(K)=Λ₁◦Λ₂. A multiplicity-one irreducible conormal component supplies dominant rational maps to both supports. The splitting hypothesis excludes a zero derived Lie algebra. (K2, Theorem 2.3.1, p. 15; Lemma 5.2.2, p. 25; Proposition 6.1.1, pp. 29–30; K2 line 1402.)
+Let K be a simple perverse sheaf on a complex abelian variety, of positive Euler characteristic and with trivial translation stabilizer. Suppose the nonzero semisimple derived Lie algebra of its connected convolution group has at least two simple factors. Prove that for some integer m>0 there are effective clean cycles Λ₁,Λ₂ of Gauss degrees greater than 1 with [m]_*cc(K)=Λ₁◦Λ₂. The splitting hypothesis excludes a zero derived Lie algebra. For the support maps, write Λ₁=Σ_i a_iΛ_(Z₁,i) and Λ₂=Σ_j b_jΛ_(Z₂,j) with integers a_i,b_j>0 and distinct irreducible clean components; each Z is irreducible with finite translation stabilizer, because a positive-dimensional stabilizer B puts Λ_Z inside A×(Lie B)^⊥, which does not dominate V. Prove that if an irreducible clean component Λ_Y has multiplicity one in Λ₁◦Λ₂, then exactly one pair (i,j) has Λ_Y in Λ_(Z₁,i)◦Λ_(Z₂,j); for that pair a_i=b_j=1, Λ_Y has multiplicity one in Λ_(Z₁,i)◦Λ_(Z₂,j), and addition induces dominant rational maps Y⇢Z₁,i and Y⇢Z₂,j. No map from Y onto the whole support of Λ₁ or of Λ₂ is asserted. (K2, Theorem 2.3.1, p. 15; Lemma 5.2.2, p. 25, K2 line 1200; Proposition 6.1.1, pp. 29–30; K2 line 1402.)
 
 Throughout this subsection, Use the regular-holonomic realization, where translation stabilizer and the tensor group agree with the perverse realization.
 
-One proof route is as follows. Use irreducibility on the identity component after killing translation stabilizers. Pull back to a central product cover of the connected reductive group and split its irreducible representation into two tensor factors. Apply K2 Theorem 2.3.1 and the isogeny-clearing step to obtain integral effective cycles. The degree bounds reflect the nontrivial semisimple factors. Obtain the rational support maps from the reduced component as in Lemma 5.2.2.
+One proof route is as follows. Use irreducibility on the identity component after killing translation stabilizers. Pull back to a central product cover of the connected reductive group and split its irreducible representation into two tensor factors. Apply K2 Theorem 2.3.1 and the isogeny-clearing step to obtain integral effective cycles. The degree bounds reflect the nontrivial semisimple factors. For the support maps, bilinearity gives Λ₁◦Λ₂=Σ a_ib_j Λ_(Z₁,i)◦Λ_(Z₂,j), and each product of two irreducible clean conormals is effective, being the clean part of a cycle pushforward of an effective fibre product. The multiplicity of Λ_Y is therefore a sum of terms a_ib_jc_(ij) with c_(ij)≥0 the multiplicity of Λ_Y in Λ_(Z₁,i)◦Λ_(Z₂,j); a total of one forces a single nonzero term with a_i=b_j=c_(ij)=1. For that pair, a component of Λ_(Z₁,i)×_VΛ_(Z₂,j) maps birationally onto Λ_Y, and its two projections give the dominant rational maps, as in Lemma 5.2.2.
 
 **Checks.**
 
@@ -628,8 +638,10 @@ One proof route is as follows. Use irreducibility on the identity component afte
 - If two clean factors each have degree 2, their product has degree 4.
 - A rank-one skyscraper has degree 1 and connected group either trivial or a torus; its zero derived Lie algebra cannot satisfy the two-factor hypothesis.
 - A connected simple derived group has one simple ideal, so the splitting hypothesis is false even when its representation has dimension 6.
+- As cycles, take Λ₁=Λ_x+Λ_y and Λ₂=Λ_z+Λ_t for points with four distinct sums. Both factors have degree 2, and Λ₁◦Λ₂=Λ_(x+z)+Λ_(x+t)+Λ_(y+z)+Λ_(y+t) has degree 4. The component Λ_(x+z) has multiplicity one and is contributed only by the pair (Λ_x,Λ_z), so the support maps are {x+z}→{x} and {x+z}→{z}; a map from the one-point support onto the two-point support {x,y} of Λ₁ does not exist.
+- If instead x+z=y+t, for instance x=0, y=a, z=b, t=b−a with a≠0, then Λ_(x+z) has multiplicity two, contributed by the pairs (Λ_x,Λ_z) and (Λ_y,Λ_t), and no support map is asserted.
 
-*Needs:* §4.2; §1.3; ReductiveGroups Layer 7; LieHighestWeight Layer 4.
+*Needs:* §4.1; §4.2; §1.3; ReductiveGroups Layer 7; LieHighestWeight Layer 4.
 
 ### 4.4 Minuscule hypersurface representation
 
@@ -655,7 +667,7 @@ If n>2 and H is a smooth ample divisor on A with trivial translation stabilizer,
 
 Throughout this subsection, n>2 is needed for the Albanese/Lefschetz step.
 
-One proof route is as follows. Assuming failure of simplicity, factor [m]_*Λ_H as two effective clean cycles of degree >1. Trivial stabilizer makes [m]|H generically injective, hence the left side remains reduced and irreducible. Use the rational maps from the support factorization, extend them to maps from H to A, and factor them through Alb(H)=A by weak Lefschetz (dim H≥2). The addition identity becomes an identity of homomorphisms plus translation. Write g₁:A→B₁ for the induced surjective homomorphism and Z₁ for the image of H. If Z₁=B₁ its Gauss degree is zero. Otherwise H is an irreducible component of g₁⁻¹Z₁ by dimension. The connected kernel preserves every such component; a positive-dimensional kernel would preserve the ample divisor, which is impossible. Thus g₁ is an isogeny onto A. Trivial stabilizer makes its restriction H→Z₁ generically one-to-one: outside the intersections with finitely many distinct kernel translates there are no collisions. Isogeny pushforward of conormals therefore preserves the Gauss degree N, forcing the other clean factor to have degree 1. Only the isogeny and the generically degree-one restriction are required.
+One proof route is as follows. Assuming failure of simplicity, §4.3 factors [m]_*Λ_H as Λ₁◦Λ₂ with effective clean cycles of degree >1. Trivial stabilizer makes [m]|H generically injective, hence the left side is the reduced irreducible cycle Λ_([m]H), of degree N. Let Λ_(Z₁) and Λ_(Z₂) be the components of Λ₁ and Λ₂ contributing to it, each of multiplicity one (§4.3). Compose H→[m]H with the dominant rational maps [m]H⇢Z_i, extend the composites to morphisms H→A (rational-map extension contract; H is smooth), and factor them through Alb(H)=A (ample-divisor Albanese contract; weak Lefschetz, dim H≥2). The addition identity becomes an identity of homomorphisms plus translation. Write g₁:A→B₁ for the induced surjective homomorphism, so that Z₁ is a translate of g₁(H). If Z₁ were a translate of B₁ its Gauss degree would be zero, whereas Λ_(Z₁) is clean. Otherwise H is an irreducible component of g₁⁻¹Z₁ by dimension. The connected kernel preserves every such component; a positive-dimensional kernel would preserve the ample divisor, which is impossible. Thus g₁ is an isogeny onto A. Trivial stabilizer makes its restriction H→Z₁ generically one-to-one: outside the intersections with finitely many distinct kernel translates there are no collisions. Isogeny pushforward of conormals therefore gives deg Λ_(Z₁)=N, so deg Λ₁≥deg Λ_(Z₁)=N because Λ₁ is effective; as deg Λ₁·deg Λ₂=deg Λ_([m]H)=N, this forces deg Λ₂≤1, contradicting deg Λ₂>1. Only the isogeny, the generically degree-one restriction and this component bound are required; the factors need not be irreducible.
 
 **Checks.**
 
@@ -664,8 +676,9 @@ One proof route is as follows. Assuming failure of simplicity, factor [m]_*Λ_H 
 - For n=3,d=1, N=6>1; an irreducible representation of a connected torus has dimension 1, so the derived algebra cannot be zero.
 - An isogeny with kernel of size 4 has four possible translates, but a divisor with trivial stabilizer meets each distinct kernel translate only in a proper closed set; its generic restriction has degree 1.
 - On a smooth curve in an abelian surface, dim Alb(H)=g=1+d>2 when d>1; the isomorphism Alb(H)=A cannot be used for n=2.
+- For n=3,d=1 the contradiction is numerical: deg Λ_(Z₁)=6, so an effective Λ₁=Λ_(Z₁)+Λ′ has deg Λ₁=6+deg Λ′≥6, and deg Λ₁·deg Λ₂=6 leaves deg Λ₂=1, below the required degree 2.
 
-*Needs:* §4.3; §4.4; AbelianSchemesAndArithmeticModuli §A2.4; ample-divisor Albanese and translation-stabilizer quotient contracts.
+*Needs:* §4.3; §4.4; AbelianSchemesAndArithmeticModuli §A2.4; ample-divisor Albanese, rational-map extension and translation-stabilizer quotient contracts.
 
 ### 4.6 Minuscule representation alternatives
 
@@ -673,7 +686,7 @@ For n>2 under the preceding hypotheses, the image G_H* in GL_N is either a stand
 
 Throughout this subsection, Classify faithful images up to central isogeny; do not identify the image with SL_m when its exterior-power kernel is nontrivial.
 
-One proof route is as follows. Use the minuscule table specified by the minuscule-weight-table contract, including types A–D, E₆ and E₇ and the absence of minuscule weights in the remaining exceptional types. Apply the Weyl dimension formula and the spin and exceptional dimensions of the Tau Ceti layers cited as they stand. For n≥3, divisibility by 6 rules out powers of 2, 27 and 56. Keep the standard representations and interior exterior powers.
+One proof route is as follows. Use the minuscule table specified by the minuscule-weight-table contract, including types A–D, E₆ and E₇ and the absence of nonzero minuscule weights in the remaining exceptional types; the zero weight, minuscule in every type, gives the trivial representation of dimension 1<N and is discarded. Apply the Weyl dimension formula and the spin and exceptional dimensions of the Tau Ceti layers cited as they stand. For n≥3, divisibility by 6 rules out powers of 2, 27 and 56. Keep the standard representations and interior exterior powers.
 
 **Checks.**
 
@@ -682,6 +695,7 @@ One proof route is as follows. Use the minuscule table specified by the minuscul
 - For n=3, N is divisible by 6; 27 mod 6=3, 56 mod 6=2 and 2^r mod 3 is 1 or 2, excluding all three dimension types.
 - The ∧²SL₄ image has dimension 6 as a module and is SO₆; it survives the numerical test.
 - For n=2,d=28, N=56 and the divisibility-by-6 premise fails; no surface exclusion follows.
+- The zero weight is minuscule in every type, E₈ included, and gives a one-dimensional representation; since N=n!d≥6 it cannot be the distinguished representation, so classifying only nonzero minuscule weights loses no case.
 
 *Needs:* §4.5; §4.4; §3.1; LieHighestWeight Layer 4; LieHighestWeight Layer 6; LieHighestWeight Layer 8; SpinRepresentations Layer 4; LieHighestWeightPartII §N2; minuscule-weight-table contract.
 
@@ -710,7 +724,7 @@ Point conormals satisfy (2Λₓ)◦(3Λᵧ)=6Λₓ₊ᵧ and degree 6. For a sym
 
 ### Dependencies
 
-AbelianSchemesAndArithmeticModuli §A1.3; SchemeAndStackFoundations §§5.1–5.4, 5.8; conormal geometry contract; §0.3; EtaleDualityAndPerverseSheaves §§3.3–3.5; EtaleCohomologyFoundations §§F.0.2, F.4.5; ComplexComparisonPartII §§C5.1–C5.6; holonomic realization contract; SpringerResolutionAndCharacteristicCycles §D/characteristic-cycle; §1.3; ReductiveGroups Layer 7; LieHighestWeight Layer 4; §3.2; LieHighestWeightPartII §N2; minuscule-weight-table contract; AbelianSchemesAndArithmeticModuli §A2.4; §3.1; LieHighestWeight Layer 6; LieHighestWeight Layer 8; SpinRepresentations Layer 4; §1.5. The exact supplier contracts above retain their coefficient, dimension and finiteness hypotheses.
+AbelianSchemesAndArithmeticModuli §A1.3; SchemeAndStackFoundations §§5.1–5.4, 5.8; conormal geometry contract; §0.3; EtaleDualityAndPerverseSheaves §§3.3–3.5; EtaleCohomologyFoundations §§F.0.2, F.4.5; ComplexComparisonPartII §§C5.1–C5.6; holonomic realization contract; SpringerResolutionAndCharacteristicCycles §D/characteristic-cycle; §1.3; ReductiveGroups Layer 7; LieHighestWeight Layer 4; §3.2; LieHighestWeightPartII §N2; minuscule-weight-table contract; AbelianSchemesAndArithmeticModuli §A2.4; ample-divisor Albanese, rational-map extension and translation-stabilizer quotient contracts; §3.1; LieHighestWeight Layer 6; LieHighestWeight Layer 8; SpinRepresentations Layer 4; §1.5. The exact supplier contracts above retain their coefficient, dimension and finiteness hypotheses.
 
 ## Layer 5: exterior-power counts and exceptional degrees
 
@@ -926,21 +940,33 @@ One proof route is as follows. Enumerate modifications increasing the minimum we
 
 More explicitly, the five q=2 ratios in their displayed order are h(v−2)t/(r+1), h(v−1)(h(v−1)−1)t(t−1)/(2(r+1)(r+2)), h(v−1)h(v+1), h(v+1)(h(v+1)−1)r(r−1)/(2(t+1)(t+2)), and rh(v+2)/(t+1). Arithmetic is rational, with r≥1,t≥0 making every denominator positive; an invalid occupancy has count zero. For the histogram 1[−1]+23[0]+1[1] and k=5, d=8855,r=4,t=19. Then R_a=19/5,R_b=1/5, their sum is 4=A(3,1), their product is 19/25<1, and the five second ratios are 0,0,1,0,0, summing to A(3,2)=1. (LS equations (13)–(14), pp.99–100, LS line 5013.)
 
-### 6.2 Eulerian comparison comparisons
+### 6.2 Eulerian comparisons
 
-Write A_j=A(n,j). The bespoke comparisons required in Layer 6 are: for n≥5, (n−1)²/2<A₁−1, 28A₂<3(A₁−1)², n+1+(n−1)A₁/2<A₂, 78nA₄<(A₁−1)³, 10A₂<A₁², 341A₅<A₁³, (n−1)A₁/2+4A₃/A₁+1+sqrt(2A₅)+1<A₂, 6nA₄<A₁²A₂, and 100A₆<(A₂−1)². For n≥11 require 2A₁+sqrt(48A₃A₁/11)+1+48A₃/(11A₁)+sqrt(96A₅/(11A₁))+1<A₂. For 6≤n≤19 require 2A₁+sqrt(2n!)+1+2(sqrt(2n!)+1)²/A₁²+sqrt(96A₅/(11A₁))+1<A₂. For 5≤n≤10 require sqrt(36A₃A₁/11)+1+36A₃/(11A₁)+sqrt(72A₅/(11A₁))+1<A₂ and sqrt(48A₃A₁/11)+1+sqrt(96A₅/(11A₁))+1<A₂. The small n=5 variant in B.16 is 2A₁+3+sqrt(96A₅/(11A₁))+1<A₂. Supplement these by the finite n=5,…,10 binomial lower bounds in B.11–B.12 after each allowed r,t,adjacent occupancy is enumerated. All square roots and divisions here are in R with positive denominators. (LS, Appendix B, pp. 101–115, comparisons cited in B.11–B.31; Appendix C, pp. 116–118; LS line 5078.)
+Write A_j=A(n,j) for the descent-indexed Eulerian numbers, with A_j=0 for j≥n. Prove the following inequalities on exactly the stated ranges of n; square roots and quotients are taken in ℝ, every denominator being positive.
 
-The comparisons have exactly the displayed ranges.
+- For every n≥5: (n−1)²/2<A₁−1, 6(n−1)<A₁−1, 28A₂<3(A₁−1)², 10A₂<A₁², n+1+(n−1)A₁/2<A₂, 78nA₄<(A₁−1)³, 341A₅<A₁³, 6nA₄<A₁²A₂, 100A₆<(A₂−1)², and (n−1)A₁/2+4A₃/A₁+1+sqrt(2A₅)+1<A₂.
+- For every n≥6: 9(n−1)≤A₁. For every n≥8: 247≤A₁ and 140A₇<A₁⁴.
+- For every n≥11: 2A₁+sqrt(48A₃A₁/11)+1+48A₃/(11A₁)+sqrt(96A₅/(11A₁))+1<A₂.
+- For 6≤n≤19: 2A₁+sqrt(2·n!)+1+2(sqrt(2·n!)+1)²/A₁²+sqrt(96A₅/(11A₁))+1<A₂.
+- For 5≤n≤10: sqrt(2A₄)+1≤A₁²/(48(n−1)), sqrt(36A₃A₁/11)+1+36A₃/(11A₁)+sqrt(72A₅/(11A₁))+1<A₂, and sqrt(48A₃A₁/11)+1+sqrt(96A₅/(11A₁))+1<A₂.
+- For 6≤n≤10: 27·46²·A₂<4·45²·A₁². For n=5: 6·13·46²·A₂<11·45²·A₁² and 2A₁+3+sqrt(96A₅/(11A₁))+1<A₂.
 
-One proof route is as follows. For each fixed-index comparison, combine the exponential and factorial bounds of ClassicalArithmeticCompletion §§2.57 and 2.71 with rational bounds above the square roots to obtain a uniform large-n range. Establish the remaining finite base range as exact inequalities, and retain the finite B.11–B.12 occupancy cases. The target includes these uniform estimates; a finite sweep alone does not prove the unbounded range.
+These are the Eulerian comparisons that LS Lemmas B.11–B.31 use without proof, apart from 27A₂<A₁² for n≥11 and the product inequality of Lemma C.4, which are ClassicalArithmeticCompletion §§2.78 and 2.77 and are imported. The entries for n≥6 and n≥8, the first entry for 5≤n≤10 and the entries for 6≤n≤10 and n=5 serve B.11–B.12; the sums bounding five occupancy ratios serve B.15–B.18; the n≥5 list serves B.19–B.31, with 6(n−1)<A₁−1 giving the integrality steps of B.20, B.22 and B.24. (LS, Appendix B, Lemmas B.11–B.31, pp. 101–115, LS lines 5083–5741; Appendix C, opening paragraph, p. 116, LS line 5745.)
+
+The comparisons have exactly the displayed ranges; none is asserted outside them.
+
+One proof route is as follows. Use A₁=2ⁿ−n−1 (ClassicalArithmeticCompletion §2.39(e)), the bounds (q+1)ⁿ−(n+1)qⁿ≤A_q≤(q+1)ⁿ and A_q≤n! (§2.57), and (1−1/e)(q+1)ⁿ≤A_q in the range of §2.71. Bounding each smaller side above and each larger side below by these, and each square root above through the bound on its argument, reduces every comparison with an unbounded range to an inequality between exponentials in n that holds beyond an explicit threshold; for instance 78nA₄<(A₁−1)³ follows from 78n·5ⁿ<(2ⁿ−n−2)³ once n is large. Below the threshold, and on the bounded ranges, each comparison is an inequality between explicit integers A(n,q), determined by the recurrence of §2.39(c), with each square root replaced by a rational upper bound. The target includes the unbounded ranges, which a list of verified cases does not prove.
 
 **Checks.**
 
 - At n=5, A₁=26,A₂=66,A₃=26,A₄=1,A₅=A₆=0: 28A₂=1848<1875=3(A₁−1)² and 78nA₄=390<15625=(A₁−1)³.
 - At n=11, A₁=2036,A₂=152637: 27A₂=4121199<4145296=A₁². At n=10 this reverses to 1291680>1026169; the supplier threshold is necessary.
-- At n=2, the proposed all-n inequality (n−1)²/2<A₁−1 becomes 1/2<−1 and fails; the n≥5 premise cannot be erased.
+- At n=2, A(2,1)=1, so the inequality (n−1)²/2<A₁−1 becomes 1/2<0 and fails; the n≥5 premise cannot be erased.
+- At n=7, A₁=120 and A₄=1191: sqrt(2A₄)+1=sqrt(2382)+1≈49.81≤50=A₁²/(48·6). Replacing the constant 48 by 49 gives 14400/294≈48.98, which fails, so the B.11 comparison leaves no room for a coarser constant.
+- At n=11, A₄=9738114: 78nA₄=8355301812<8427392875=(A₁−1)³, a ratio of about 0.991; the exponential reduction does not reach this n, so the base range is needed as exact integer inequalities.
+- At n=5, 9(n−1)=36>26=A₁, so 9(n−1)≤A₁ needs n≥6 and B.11 treats n=5 with A₁/(n−1)=13/2 instead; 6(n−1)=24<25=A₁−1 holds at n=5 but fails at n=4, where A(4,1)=11 gives 18>10.
 
-*Needs:* ClassicalArithmeticCompletion §2.57; ClassicalArithmeticCompletion §2.71; ClassicalArithmeticCompletion §2.77; ClassicalArithmeticCompletion §2.78; ClassicalArithmeticCompletion §2.39.
+*Needs:* ClassicalArithmeticCompletion §2.39; ClassicalArithmeticCompletion §2.57; ClassicalArithmeticCompletion §2.71; ClassicalArithmeticCompletion §2.77; ClassicalArithmeticCompletion §2.78.
 
 ### 6.3 Exclusion of the first large-ratio regime
 
@@ -948,7 +974,7 @@ Under the normalized counting hypotheses with n≥5, it is impossible that R_a�
 
 Throughout this subsection, R_a,R_b are the rational quantities of ratio-identities.
 
-One proof route is as follows. B.11 and B.12 give h(v−1)=1 and h(v−2)≤2. For j=1,2, B.13–B.14 give h(v+j)(h(v+j)−1)≤(48/11)A(n,2j+1)R_a, improved to 36/11 if r≥2. Keep R_a in this sharper intermediate bound. Bound each of the five q=2 ratios. Their sum is less than A(n,2) for n≥11, so 5≤n≤10. The q=s+3 occupancy in B.16 excludes filled weights below v−1; then B.17 forces r=1. With r=1 the q=2 ratios a,b,d vanish; the remaining c,e estimates contradict the finite comparison in eulerian-comparisons. The uniform comparisons in §6.2 are required.
+One proof route is as follows. B.11 and B.12 give h(v−1)=1 and h(v−2)≤2, from their comparisons in §6.2 and, for 5≤n≤10, the bound R_a≥(45/46)A(n,1) that §6.1's product bound gives because (1+sqrt(11/12))/2≥45/46. For j=1,2, B.13–B.14 give h(v+j)(h(v+j)−1)≤(48/11)A(n,2j+1)R_a, improved to 36/11 if r≥2. Keep R_a in this sharper intermediate bound. Bound each of the five q=2 ratios. Their sum is less than A(n,2) for n≥11, so 5≤n≤10. The q=s+3 occupancy in B.16 excludes filled weights below v−1; then B.17 forces r=1. With r=1 the q=2 ratios a,b,d vanish; the remaining c,e estimates contradict the last 5≤n≤10 comparison of §6.2. The comparisons of §6.2, with their unbounded ranges, are required.
 
 **Checks.**
 
@@ -1163,13 +1189,14 @@ Let A/K be an abelian variety over a number field with good reduction at a place
 
 Throughout this subsection, Only prime-to-p torsion characters are asserted here. Fix a common algebraic closure and compatible embeddings for the transport.
 
-One proof route is as follows. Let M be the number of cosets in S. The case M=0 is immediate. Replace m by a multiple so the geometric restriction kernels and translating torsion data are stable under σ=Frob^m. On every prime-to-p Tate module the combined geometric/cyclotomic action has Weil eigenvalues of nonzero weight, so no positive power has eigenvalue 1. For a fixed proper coset τT in Π(A)^c, choose a coordinate axis with proper inverse image T_r. The projected positive-dimensional abelian subvariety B⊂A determines a restriction kernel T_B, and T_r is a finite union of torsion translates of T_B. Treat each of these translates in the collision argument; the finiteness follows from the isogeny part of the projection onto B. For every 0≤e<e′≤M, equality of σ^eχ and σ^e′χ on B forces χ|B into a finite torsion set: the relevant σ^(e′−e)−1 has nonzero determinant. Taking inverse images under restriction gives a finite union of torsion translates of T_r. Collect these collision loci for all cosets and exponent pairs into S′. For χ outside S′, fix all exponents other than e_r in {0,…,M}. At most one e_r can place the tuple in τT; two choices would give an excluded collision on B. Thus at most (M+1)^(c−1) tuples are bad for each coset and at most M(M+1)^(c−1)<(M+1)^c are bad in total. A good tuple exists. Exponents for the original Frobenius step are obtained by the integer scaling used when enlarging m. The determinant argument applies to prime-to-p torsion. Its finite-box inequality bounds the tuples inside each exceptional coset.
+One proof route is as follows. Let M be the number of cosets in S. The case M=0 is immediate. Replace m by a multiple so the geometric restriction kernels and translating torsion data are stable under σ=Frob^m. On every prime-to-p Tate module the combined geometric/cyclotomic action has Weil eigenvalues of nonzero weight, so no positive power has eigenvalue 1. For a fixed proper coset τT in Π(A)^c, choose a coordinate axis r with proper inverse image T_r⊂Π(A) under the r-th axis inclusion. The projected positive-dimensional abelian subvariety B⊂A determines the restriction ρ_B:Π(A)→Π(B) with kernel T_B, and T_r is a finite union of torsion translates of T_B, finitely many because of the isogeny part of the projection onto B; hence E_r=ρ_B(T_r) is a finite torsion subgroup of Π(B). Enlarging m makes B stable under σ, so ρ_B commutes with σ. Writing character groups additively, for every 0≤e<e′≤M and every η∈E_r the prime-to-p torsion characters ψ of B with (σ^e−σ^e′)ψ=η form a finite set, because σ^(e′−e)−1 has nonzero determinant on every prime-to-p Tate module and so has finite kernel on prime-to-p torsion; their inverse images under ρ_B form a finite union of torsion cosets of T_B. Collect these collision loci for all cosets, exponent pairs and values η into S′. For χ outside S′, fix all exponents other than e_r in {0,…,M}. At most one e_r can place the tuple in τT: two choices e≠e′ would put the difference (σ^e−σ^e′)χ in T_r, so (σ^e−σ^e′)ρ_B(χ)=ρ_B((σ^e−σ^e′)χ) would be some η∈E_r and χ would lie in S′. Equality of σ^eχ and σ^e′χ on B detects only η=0 and does not suffice. Thus at most (M+1)^(c−1) tuples are bad for each coset and at most M(M+1)^(c−1)<(M+1)^c are bad in total. A good tuple exists. Exponents for the original Frobenius step are obtained by the integer scaling used when enlarging m. The determinant argument applies to prime-to-p torsion. Its finite-box inequality bounds the tuples inside each exceptional coset.
 
 **Checks.**
 
 - The Frobenius powers e_i may depend on χ and may be negative.
 - Do not apply the proof to arbitrary p-power characters.
 - For E×E, the embedded curve a↦(2a,3a) has restriction equation χ₁²χ₂³=1; its first-axis inverse image contains all four characters in Π(E)[2], rather than just the trivial character. With two bad cosets and c=2 the box has 3²=9 tuples and at most 2·3=6 bad tuples, leaving at least 3 good ones.
+- On E³ take the embedded curve a↦(2a,3a,5a), with restriction equation χ₁²χ₂³χ₃⁵=1, so that the first-axis inverse image is Π(E)[2] while T_E={1} and E₁=Π(E)[2]. Let σ act by 3 on a cyclic group of characters of order 4, as for a scalar Frobenius of modulus 3 over a residue field with 9 elements, take M=1, the generator χ, and (e₂,e₃)=(1,0). Both e₁=0 and e₁=1 are bad, since 2+9+5=16 and 6+9+5=20 are divisible by 4, although σχ≠χ: in the additive notation χ−σχ has exponent 1−3≡2 modulo 4. It lies in E₁ as the nonzero value η=2, which the collision loci therefore exclude.
 
 *Needs:* §0.1; AbelianSchemesAndArithmeticModuli §A4.1; DeligneWeightsAndPurity §§0.1–0.3, 0.11, 1.4.
 
@@ -1217,7 +1244,7 @@ For two bad cosets and c=2, 9 exponent tuples contain at most 6 bad choices and 
 
 ### 9.1 Period maps of isogeny pullbacks
 
-Fix a complex abelian variety A of dimension n≥2 and an ample line bundle L. Let M be the open subset of the complete linear system P(H⁰(A,L)) parameterizing smooth divisors, using the convention that points are nonzero sections modulo scalar. For m>0 let Y_m→M be the family [m]⁻¹H. The torsion-free integral middle cohomology with its polarization and Hodge filtration defines a period map Φ_m to the appropriate polarized period quotient. Its rational local system splits, after a coefficient extension, into character-isotypic summands H^(n−1)(H,Lχ), for characters of A[m]. The fixed class is in Pic(A), not merely NS(A). (LS, Proposition 4.11 and its proof, pp. 37–38; LS line 1698.)
+Fix a complex abelian variety A of dimension n≥2 and an ample line bundle L. Let M be the open subset of the complete linear system P(H⁰(A,L)) parameterizing smooth divisors, using the convention that points are nonzero sections modulo scalar. For m>0 let Y_m→M be the family [m]⁻¹H. The torsion-free integral middle cohomology V_m with its polarization Q and Hodge filtration is a polarized integral variation on M. Fix a base point b∈M, let D_m be the set of polarized Hodge filtrations of the type of V_m on (V_(m,b),Q) (HodgeStructures L3) and Γ_m the full group of integral isometries of (V_(m,b),Q). The period map Φ_m:M→Γ_m\D_m sends s to the Γ_m-orbit of the Hodge filtration at s transported to b along a path; it is well defined because monodromy preserves the lattice and Q. Its rational local system splits, after a coefficient extension, into character-isotypic summands H^(n−1)(H,Lχ), for characters of A[m]. The fixed class is in Pic(A), not merely NS(A). (LS, Proposition 4.11 and its proof, pp. 37–38; LS line 1698.)
 
 Throughout this subsection, Use polarizations from the fixed ample geometric data and finite level/markings when a period domain rather than its quotient is used.
 
@@ -1225,10 +1252,10 @@ Its API includes the following facts.
 
 - M(C) is the set of smooth effective divisors H with O_A(H)≅L, embedded by their section line.
 - The family and polarized variation commute with base change in M.
-- For m|m′, pullback and trace split the m-variation as a rational direct summand of the m′-variation, compatibly with Hodge structures.
+- For m|m′, pullback u:V_m→V_(m′) and trace t:V_(m′)→V_m along the finite étale map [m′/m]:Y_(m′)→Y_m of degree r=(m′/m)^(2n) are integral morphisms of variations with t∘u=r·id, so e=u∘t/r is a flat idempotent endomorphism of the rational m′-variation whose image is u(V_m)⊗Q.
 - The rational variation after adjoining deck characters is the direct sum of the corresponding twisted cohomology local systems.
 
-One proof route is as follows. Form the smooth-divisor open of the projective section space. Multiplication by m is finite étale in characteristic zero, so the pulled-back universal divisor is smooth proper. Import the polarized integral variation and its period map, keeping the lattice modulo torsion. Decompose the finite abelian deck group after scalar extension; trace and pullback maps compare the variations for m|m′.
+One proof route is as follows. Form the smooth-divisor open of the projective section space. Multiplication by m is finite étale in characteristic zero, so the pulled-back universal divisor is smooth proper. Take the polarized integral variation from the geometric Hodge theory of ComplexComparisonPartII §§C5.2–C5.3 in the carrier of ShimuraData §3.4, keeping the lattice modulo torsion, and define Φ_m by transport to the base point. Decompose the finite abelian deck group after scalar extension; trace and pullback maps compare the variations for m|m′.
 
 **Checks.**
 
@@ -1239,7 +1266,7 @@ One proof route is as follows. Form the smooth-divisor open of the projective se
 - The number of translates of one divisor retaining the same L is finite.
 - Fixing only a Néron–Severi class allows a positive-dimensional translation orbit and is not this parameter space.
 
-*Needs:* AbelianSchemesAndArithmeticModuli §A2.4; AbelianSchemesAndArithmeticModuli §§A3.1–A3.5; AlgebraicModuliForArithmeticGeometry §§1.1–1.2, 2.1; ShimuraData §§3.1–3.4; ShimuraData §§3.1–3.4; bounded-norm orbit Hodge-locus contract; isogeny character/trace contract.
+*Needs:* AbelianSchemesAndArithmeticModuli §A2.4; AbelianSchemesAndArithmeticModuli §§A3.1–A3.5; AlgebraicModuliForArithmeticGeometry §§1.1–1.2, 2.1; ComplexComparisonPartII §§C5.2–C5.3; ShimuraData §§3.1–3.4; HodgeStructures L3; isogeny character/trace contract.
 
 ### 9.2 Surface period finiteness by Torelli
 
@@ -1258,22 +1285,44 @@ One proof route is as follows. Use adjunction and the Layer 3 Euler calculation 
 
 *Needs:* §9.1; §3.1; AbelianSchemesAndArithmeticModuli §A2.4; AbelianSchemesAndArithmeticModuli §A5; AbelianSchemesAndArithmeticModuli §A6; StableReductionPartII §MC.4/fine-level-scheme; StableReductionPartII §MC.6/torelli-finite-fibres; polarized integral Jacobian contract; JacobianChallenge Layer F; JacobianChallengePartII §§2.1–2.4; relative pointed Albanese contract.
 
-### 9.3 Quasi-finite isogeny-pullback period map
+### 9.3 Transport Hodge relations and period fibres
 
-Let M be the smooth-divisor open of the complete linear system of an ample line bundle on a complex abelian variety of dimension n≥2. Prove that some m>0 makes every fibre of Φ_m finite. For n=2 take m=1 by §9.2. For n>2 prove the trace-compatible marked-relation statement below and use the finite generic translation-stabilizer quotient followed by simple convolution monodromy. The scope is the entire fixed Picard class, including divisors with nontrivial finite stabilizer. (LS, Proposition 4.11 and its proof, pp. 37–38; LS line 1698; CDK, Theorem 1.1 and Corollary 1.3, p. 2; CDK line 54.)
+Let S be a smooth connected complex algebraic variety and V a polarized integral variation of Hodge structures on S, with lattice V_Z, polarization Q and Hodge filtration F. Define the transport Hodge relation R_V⊂S×S as the set of pairs (s₁,s₂) for which some path from s₁ to s₂ has parallel transport V_(Z,s₁)→V_(Z,s₂) carrying F_(s₁) to F_(s₂); such a transport preserves Q and is an isomorphism of polarized integral Hodge structures. For a base point b and a group Γ of integral isometries of (V_(Z,b),Q) containing the monodromy image, let Φ_Γ:S→Γ\D be the period map defined as in §9.1. Prove the following.
 
-One proof route is as follows. On M×M use the weight-zero Hom variation and the flat orbit of the diagonal identity tensor. CDK Corollary 1.3 makes its projected Hodge locus Z_m closed algebraic: multiply a rational tensor by a fixed denominator and use its fixed polarization norm to apply the finite bounded-norm theorem. A countable-union Hodge-locus statement alone would not suffice. For m|m′ the trace-compatible identity condition gives Z_m′⊂Z_m. Along divisibility, Noetherianity gives a stabilized closed relation. A positive-dimensional period fibre then supplies an algebraic positive-dimensional family with constant period for every multiple of m. Integral polarizability makes its monodromy finite, and the deck-character decomposition makes every torsion-twist summand have finite monodromy. Fixing L rules out constancy by translations. Quotient by the finite generic translation stabilizer, shrinking the family so that its action is fixed; the resulting ample family has trivial stabilizer. For n>2 apply simplicity and generic-big-monodromy to contradict finite monodromy for a torsion character outside the finite exceptional union. For n=2 use §9.2. For n>2 the trace-compatible marked-relation theorem must relate identity transport, the trace idempotents and the quotient convention of the period map.
+- (a) R_V is an equivalence relation and a closed algebraic subset of S×S.
+- (b) If V′ is a second polarized integral variation on S and u:V→V′, t:V′→V are morphisms of variations with t∘u=r·id for an integer r>0, then R_(V′)⊆R_V.
+- (c) Pairs in R_V have equal images under Φ_Γ, and conversely when Γ is the monodromy image. When Γ is the full group of integral isometries, every fibre of Φ_Γ is a closed algebraic subset of S.
+- (d) If W⊂S is a connected locally closed analytic subset on which Φ_Γ is constant, then W×W⊆R_V, and for w∈W the monodromy of V restricted to W at w lies in the automorphism group of the polarized integral Hodge structure V_w, which is finite.
+
+(LS, Proposition 4.11 and its proof, pp. 37–38, LS lines 1707–1726; CDK, Theorem 1.1 and Corollary 1.3, p. 2, CDK lines 54 and 59; positivity of the Hodge metric, CDK line 121.)
+
+Throughout this subsection, paths run in S, and the relation is defined by parallel transports, not by abstract isomorphisms between fibres.
+
+One proof route is as follows. For (a), concatenation and reversal of paths give an equivalence relation. On S×S take the weight-zero variation Hom(pr₁*V,pr₂*V), polarized by the form induced from Q multiplied by one fixed integer to make it integral. The flat continuation of the identity at a diagonal point has as determinations at (s₁,s₂) exactly the transports along paths from s₁ to s₂, and a determination has type (0,0) exactly when it carries F_(s₁) to F_(s₂); the orbit form of CDK Corollary 1.3, supplied by the bounded-norm contract, makes R_V closed algebraic. For (b), parallel transport commutes with the flat maps u and t, so the transport T of V along a path equals r⁻¹·t∘T′∘u for the transport T′ of V′. If T′ is a Hodge isomorphism, T is an integral isomorphism and a rational Hodge morphism, hence a Hodge isomorphism; in particular T′ commutes with the flat projector e=u∘t/r. For (c), a transport carrying F_(s₁) to F_(s₂) changes the filtration transported to b by an element of the monodromy image, and conversely a monodromy element relating the transported filtrations gives such a transport by composing paths. For the full isometry group, s lies in the fibre through x exactly when Hom(V_x,V_s) contains an integral (0,0) class that is an isometry; these classes have one fixed polarization norm, the bounded-norm contract makes them an algebraic space finite over S, the isometries form a union of its connected components because flat continuation preserves them, and the fibre is the image of that union. For (d), along a path in W the filtration transported back to its start moves continuously inside one Γ-orbit. Each Γ-orbit in D is discrete: if γ_kF₀ converges, the Hodge metrics of γ_kF₀ converge, so the γ_k⁻¹ are bounded in the positive definite Hodge metric of F₀, and bounded integral isometries are finitely many. A continuous path in a discrete set is constant, so every path in W transports Hodge filtrations to Hodge filtrations. A loop in W at w therefore preserves the lattice, Q and F_w, hence the positive definite Hodge metric of V_w, and such automorphisms form a discrete subgroup of a compact group, which is finite.
+
+**Checks.**
+
+- For n=3, m=1 and m′=2 the cover has degree r=2⁶=64. With u=(1,0)ᵀ and t=(64,0) one has t∘u=64 and e=u∘t/64=diag(1,0), e²=e. For two identical one-dimensional rational Hodge summands the swap P is a Hodge isomorphism of the total space with PeP⁻¹=diag(0,1)≠e, so an arbitrary Hodge isomorphism of total cohomology neither preserves the designated summand nor descends, whereas a transport commutes with the flat e.
+- The weight-one Hodge structure of ℂ/ℤ[i] has integral polarized automorphism group {±1,±i} of order 4, while multiplication by (3+4i)/5 is a rational Hodge isometry of infinite order, its minimal polynomial x²−(6/5)x+1 not being integral; the finiteness in (d) needs the integral lattice.
+- For the universal elliptic curve over Y(3), with monodromy Γ(3), the points [τ] and [τ+1] have the same image in SL₂(ℤ)\ℍ under the full-isometry period map. For τ with stabilizer {±1} in SL₂(ℤ), a transport identifying them would be some δ∈Γ(3) with δτ=τ+1, forcing δ=±T with T=[[1,1],[0,1]]∉±Γ(3); so ([τ],[τ+1])∉R_V, the converse in (c) needs the monodromy image, and (d) needs W connected.
+- For a constant variation R_V=S×S, and if u and t are mutually inverse (r=1) then R_(V′)=R_V.
+
+*Needs:* §9.1; ShimuraData §§3.1–3.4; HodgeStructures L1; HodgeStructures L3; bounded-norm orbit Hodge-locus contract.
+
+### 9.4 Quasi-finite isogeny-pullback period map
+
+Let M be the smooth-divisor open of the complete linear system of an ample line bundle on a complex abelian variety of dimension n≥2. Prove that some m>0 makes every fibre of the full-isometry period map Φ_m of §9.1 finite; a period map to Γ\D_m with Γ a smaller group containing the monodromy has smaller fibres, so it is quasi-finite as well. For n=2 take m=1 by §9.2. For n>2 apply §9.3 to the variations V_m and use the finite generic translation-stabilizer quotient followed by simple convolution monodromy. The scope is the entire fixed Picard class, including divisors with nontrivial finite stabilizer. (LS, Proposition 4.11 and its proof, pp. 37–38; LS line 1698; CDK, Theorem 1.1 and Corollary 1.3, p. 2; CDK line 54.)
+
+One proof route is as follows. Put Z_m=R_(V_m)⊂M×M. By §9.3(a) Z_m is closed algebraic, and by §9.3(b), applied to the pullback and trace maps of §9.1, Z_(m′)⊆Z_m whenever m|m′. Since M×M is Noetherian, choose m with Z_m minimal among all Z_k; then Z_(m′)=Z_m for every multiple m′ of m. If some fibre of Φ_m were infinite, it would be closed algebraic by §9.3(c), hence contain an irreducible positive-dimensional subvariety W, and W×W⊆Z_m by §9.3(d). Fix x∈W and let X be the smooth locus of an irreducible component containing W of the fibre of Z_m over x; it is connected, algebraic and positive-dimensional. For every multiple m′ of m, {x}×X⊆Z_(m′), so Φ_(m′) is constant on X by §9.3(c) and V_(m′) has finite monodromy on X by §9.3(d). The deck-character decomposition of §9.1 then gives finite monodromy for every torsion-twist summand R^(n−1)f_*(g*Lχ) over X, since every torsion character has order dividing some multiple of m. Fixing L rules out constancy by translations. Quotient by the finite generic translation stabilizer, shrinking the family so that its action is fixed; the resulting ample family has trivial stabilizer. For n>2 apply simplicity and generic-big-monodromy to contradict finite monodromy for a torsion character outside the finite exceptional union. For n=2 use §9.2.
 
 **Checks.**
 
 - Quasi-finite is fibre finiteness, not global injectivity or properness.
 - Only Picard-fixed parameter spaces are in scope.
 - The n=2 proof uses Torelli and rigid Hom spaces, with no appeal to the n>2 simplicity lemma.
-- For two identical one-dimensional rational Hodge summands, the swap matrix sends the first projector diag(1,0) to diag(0,1); an unmarked total Hodge isomorphism does not preserve the designated summand.
+- The descent Z_(m′)⊆Z_m uses transports, which commute with e=u∘t/r; for two identical one-dimensional rational Hodge summands the swap matrix sends the projector diag(1,0) to diag(0,1), so a relation defined by arbitrary Hodge isomorphisms of total cohomology would not descend.
 
-*Needs:* §9.1; §9.2; §7.6; §4.5; ShimuraData §§3.1–3.4; bounded-norm orbit Hodge-locus contract; AbelianSchemesAndArithmeticModuli §A2.4; ample-divisor Albanese and translation-stabilizer quotient contracts.
-
-The required marked-relation theorem specifies the proof obligation precisely. In the weight-zero Hom variation on M×M, fix the flat orbit of the diagonal identity with its rational polarization and integral multiple. For m dividing m′, let u:V_m→V_m′ be pullback and t:V_m′→V_m trace for the finite étale map [m′/m]:Y_m′→Y_m of degree r=(m′/m)^(2n)>0, and use the normalized projector e=u∘t/r on V_m′. Prove that the identity-orbit Hodge relation at level m′ preserves the designated e-summand, descends to the identity-orbit relation at level m, and accounts for the chosen polarized period-fibre relation. These are relations on the fixed algebraic base M×M. Prove their inclusion Z_m′⊆Z_m, their stabilization along divisibility, and that a positive-dimensional period fibre yields one positive-dimensional algebraic family with finite monodromy in every torsion-character summand. The positive integer r is invertible over Q, and t∘u=r id on V_m. An arbitrary unmarked total-cohomology Hodge isomorphism is insufficient, as the projector-swap Check shows. This marked-relation theorem is part of Layer 9, rather than a consequence asserted from CDK alone. (LS Proposition 4.11, pp.37–38, LS line 1707; CDK line 54.)
+*Needs:* §9.1; §9.2; §9.3; §7.6; §4.5; ShimuraData §§3.1–3.4; AbelianSchemesAndArithmeticModuli §A2.4; ample-divisor Albanese, rational-map extension and translation-stabilizer quotient contracts.
 
 ### Examples
 
@@ -1281,11 +1330,11 @@ For an abelian surface, g(H)=1+d; d=1 gives genus 2 and Torelli applies also to 
 
 ### Dependencies
 
-AbelianSchemesAndArithmeticModuli §A2.4; AbelianSchemesAndArithmeticModuli §§A3.1–A3.5; AlgebraicModuliForArithmeticGeometry §§1.1–1.2, 2.1; ShimuraData §§3.1–3.4; ShimuraData §§3.1–3.4; bounded-norm orbit Hodge-locus contract; §3.1; AbelianSchemesAndArithmeticModuli §A5; AbelianSchemesAndArithmeticModuli §A6; StableReductionPartII §MC.4/fine-level-scheme; StableReductionPartII §MC.6/torelli-finite-fibres; polarized integral Jacobian contract; JacobianChallenge Layer F; JacobianChallengePartII §§2.1–2.4; relative pointed Albanese contract; §7.6; §4.5. The exact supplier contracts above retain their coefficient, dimension and finiteness hypotheses.
+AbelianSchemesAndArithmeticModuli §A2.4; AbelianSchemesAndArithmeticModuli §§A3.1–A3.5; AlgebraicModuliForArithmeticGeometry §§1.1–1.2, 2.1; ComplexComparisonPartII §§C5.2–C5.3; ShimuraData §§3.1–3.4; HodgeStructures L1, L3; bounded-norm orbit Hodge-locus contract; isogeny character/trace contract; §3.1; AbelianSchemesAndArithmeticModuli §A5; AbelianSchemesAndArithmeticModuli §A6; StableReductionPartII §MC.4/fine-level-scheme; StableReductionPartII §MC.6/torelli-finite-fibres; polarized integral Jacobian contract; JacobianChallenge Layer F; JacobianChallengePartII §§2.1–2.4; relative pointed Albanese contract; §7.6; §4.5; ample-divisor Albanese, rational-map extension and translation-stabilizer quotient contracts. The exact supplier contracts above retain their coefficient, dimension and finiteness hypotheses.
 
 ## Downstream consumers
 
-The Galois-uniform product theorem of §8.3 supplies the geometric monodromy input for a Part II development of MordellLawrenceVenkatesh. Layers 3–6 supply hypersurface dimensions, Hodge multiplicities and connected derived images for independent arithmetic applications. Section 9.3 supplies a finite-fibre period statement; it does not itself prove arithmetic Shafarevich finiteness. Every consumer uses these results with their stated stabilizer, dimension and coefficient hypotheses.
+The Galois-uniform product theorem of §8.3 supplies the geometric monodromy input for a Part II development of MordellLawrenceVenkatesh. Layers 3–6 supply hypersurface dimensions, Hodge multiplicities and connected derived images for independent arithmetic applications. Section 9.4 supplies a finite-fibre period statement; it does not itself prove arithmetic Shafarevich finiteness. Every consumer uses these results with their stated stabilizer, dimension and coefficient hypotheses.
 
 ## References
 
