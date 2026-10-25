@@ -4022,7 +4022,7 @@
     },
     {
       "slug": "finite-group-ext-stalk",
-      "needs": "For a finite group acting trivially on a base site with exact filtered stalks, identify the stalk of the sheaf Ext from the constant integral equivariant sheaf with group cohomology of the coefficient stalk, naturally in restrictions, using a degreewise finite-rank resolution.",
+      "needs": "For a finite group Γ acting trivially on a ringed space X, in the category of equivariant abelian sheaves identify each stalk of internal Ext^q from the constant equivariant ℤ with H^q(Γ,F_x), naturally in restriction, using the bar resolution with finite rank in each degree (periodic for C₂).",
       "supplier": "SchemeAndStackFoundations",
       "section": "2.23"
     },
@@ -4040,7 +4040,7 @@
     },
     {
       "slug": "configuration-carrier-generality",
-      "needs": "Extend §IG.5.1 ordered/unordered configuration carriers and their embedding functoriality to every topological space, reserving Hausdorffness for the covering theorem, and represent formal monic degree-m polynomials by coefficient tuples over every ring, including the zero ring.",
+      "needs": "Extend §IG.5.1 ordered/unordered configuration carriers and their embedding functoriality to every topological space, reserving Hausdorffness for the covering theorem, and represent formal monic degree-m polynomials by coefficient tuples over every ring, including the zero ring, with the S_m action exposed as the left action (σ·x)(i)=x(σ⁻¹i).",
       "supplier": "InverseGaloisAndArithmeticFundamentalGroups",
       "section": "IG.5.1"
     },
@@ -4085,6 +4085,18 @@
       "needs": "Extend §3.37 for connected homotopy-associative, homotopy-commutative H-spaces of CW type with finite-type rational homology: rational Hurewicz extends to the Hopf algebra isomorphism from the free graded-commutative algebra on positive rational homotopy to rational homology, whose degreewise dual identifies cohomology with the free graded-commutative algebra on dual rational homotopy.",
       "supplier": "StableHomotopyKTheory",
       "section": "3.37"
+    },
+    {
+      "slug": "semialgebraic-ext-stalk",
+      "needs": "In §7.6a, extend the finite-group internal Ext-stalk comparison of SchemeAndStackFoundations §2.23 to the finite-cover semialgebraic site with trivial action on the base, for stalk functors at points of its topos, using the degreewise finite-rank bar resolution, compatibly with restriction and with the ordinary comparison over ℝ.",
+      "supplier": "MotivesAndAlgebraicCycles",
+      "section": "7.6a"
+    },
+    {
+      "slug": "steenrod-conjugated-real-pushforward",
+      "needs": "In §7.6b, for a proper map f:Y→X of smooth irreducible R-varieties over any real closed R and every integer degree n, with m=n+2(dim X−dim Y), prove that restriction of complex equivariant mod-two Gysin to total fixed-locus coordinates equals Sq∘f_(R,*)∘Sq⁻¹ from coordinates 0≤p≤n to 0≤p≤m, compatibly with real closed extension (BW Proposition 1.22, BW lines 1130–1148).",
+      "supplier": "MotivesAndAlgebraicCycles",
+      "section": "7.6b"
     }
   ],
   "sourceIssues": [

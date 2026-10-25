@@ -23,8 +23,8 @@ Not statable at the pins:
   corrected-localization self-duality, affine/Lefschetz and
   near-top cup-omega theorems lack the arbitrary-real-closed semialgebraic site, derived equivariant
   supports and their purity/trace maps.
-* The all-degree semialgebraic Wu theorem and gamma/Stiefel--Whitney comparison lack supported
-  cohomology operations and the characteristic-class carrier. Transverse surface representatives
+* The gamma/Stiefel--Whitney comparison lacks supported cohomology operations and the
+  characteristic-class carrier. The all-degree Wu pushforward formula is consumed from the supplier. Transverse surface representatives
   lack the class map from an embedded circle to the specified singular homology group.
 * The real-empty quartic rank lacks the real-variety equivariant Betti carrier.
 * The ramified double-cover triangle, corrected trace-quotient lift, circle obstruction and
@@ -164,6 +164,33 @@ theorem doubleLoopBetti (s N j : ℕ) (x : unitSphere (s + 3))
     FiniteDimensional ℚ H ∧
       (Module.finrank ℚ H : ℚ) = PowerSeries.coeff j
         (∏ r ∈ Finset.range j, doubleLoopFactor (s + 4) N (r + 1) (by omega) (by omega)) := by
+  sorry
+
+/-- The indexed Fermat level-one fibre in complex affine n-space, with its subspace topology. -/
+abbrev fermatFiber {n : ℕ} (k : Fin n → ℕ) :=
+  {z : Fin n → ℂ // ∑ i, z i ^ k i = 1}
+
+/-- Pham's skeleton consists of fibre points whose coordinate powers are real and nonnegative. -/
+abbrev phamSkeleton {n : ℕ} (k : Fin n → ℕ) :=
+  {z : fermatFiber k // ∀ i, (z.val i ^ k i).im = 0 ∧ 0 ≤ (z.val i ^ k i).re}
+
+/-- The continuous inclusion of the positive-power skeleton into its indexed Fermat fibre. -/
+def phamInclusion {n : ℕ} (k : Fin n → ℕ) : C(phamSkeleton k, fermatFiber k) :=
+  ⟨Subtype.val, continuous_subtype_val⟩
+
+/-- Pham's equivariant strong deformation retraction for every positive exponent family.
+The relative homotopy fixes the included skeleton at every time. Equivariance is expressed
+coordinatewise for multiplication by any family of roots of unity (Pham I §2, pp.337–338). -/
+theorem phamStrongRetraction (n : ℕ) (hn : 2 ≤ n) (k : Fin n → ℕ)
+    (hk : ∀ i, 1 ≤ k i) :
+    ∃ r : C(fermatFiber k, phamSkeleton k),
+      r.comp (phamInclusion k) = ContinuousMap.id (phamSkeleton k) ∧
+      ∃ H : ContinuousMap.HomotopyRel (ContinuousMap.id (fermatFiber k))
+          ((phamInclusion k).comp r) (Set.range (phamInclusion k)),
+        ∀ (u : Fin n → ℂ), (∀ i, u i ^ k i = 1) →
+          ∀ (t : unitInterval) (z w : fermatFiber k),
+            (∀ i, w.val i = u i * z.val i) →
+              ∀ i, (H (t, w)).val i = u i * (H (t, z)).val i := by
   sorry
 
 end TauCetiRoadmap.AlgebraicTopologyPartII

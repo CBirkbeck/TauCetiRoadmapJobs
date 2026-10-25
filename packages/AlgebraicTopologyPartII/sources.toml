@@ -99,22 +99,6 @@ accessed = "2026-10-24"
 cited_for = ["Layer 4"]
 
 [[source]]
-id = "SULLIVAN"
-authors = "Dennis Sullivan"
-title = "Infinitesimal computations in topology"
-year = 1977
-locator_scheme = "section"
-locator = "Introduction, pp.269–270; §11 loop models, pp.311–312"
-url = "https://www.numdam.org/item/10.1007/BF02684341.pdf"
-fetched_from = "https://www.numdam.org/item/10.1007/BF02684341.pdf"
-fetched_at = "2026-10-24T02:59:22Z"
-sha256 = "ba6e3f93cad5e39559642920223b99a5657d3afb3a26a8a9037da30482b13d93"
-licence_class = "open-repository"
-status = "certified"
-accessed = "2026-10-24"
-cited_for = []
-
-[[source]]
 id = "PHAM"
 authors = "Frédéric Pham"
 title = "Formules de Picard-Lefschetz généralisées et ramification des intégrales"
@@ -250,8 +234,8 @@ title = "On equivariant Grothendieck cohomology of a real algebraic variety, and
 year = 1994
 locator_scheme = "theorem"
 locator = "Theorem 2.1"
-cited_for = ["12.3"]
 status = "waived"
+cited_for = ["12.3"]
 
 [[source]]
 id = "GM"
@@ -267,4 +251,18 @@ sha256 = "87ec78b5948ef42f7af568ecdda7a71c8bc8feed81af21564dccc07ab9b2387c"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-25"
+cited_for = ["11.1"]
+
+[[source]]
+id = "BCR"
+authors = "Jacek Bochnak, Michel Coste, Marie-Françoise Roy"
+title = "Real Algebraic Geometry"
+year = 1998
+doi = "10.1007/978-3-662-03718-8"
+locator_scheme = "theorem"
+locator = "Theorem 9.3.2 (semialgebraic triviality)"
+url = "https://doi.org/10.1007/978-3-662-03718-8"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
 cited_for = ["11.1"]

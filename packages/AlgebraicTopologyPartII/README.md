@@ -9,7 +9,7 @@ This roadmap owns arrangement purity, signed integer Euler exponents, Hilton cal
 The following objects have one owner and are consumed here.
 
 - TauCetiRoadmap.AlgebraicTopology Stages 2–8 own ordinary relative chains, CW pairs, cofibrations, covering transfer, local systems, products, the ordinary Serre spectral-sequence interface of Stage 5 item 5, cohomology and manifold duality, Euler characteristic, Hurewicz and Whitehead. The new results concern configuration cohomology, rational homotopy and formulas on the supplied semialgebraic site.
-- TauCetiRoadmap.StableHomotopyKTheory §§3.36–3.37 owns Hurewicz modulo Serre classes and rational H-space theory; §4.6 applies that theory to connected double loops. TauCetiRoadmap.MorseNovikov N6 owns the smooth closed-manifold Lefschetz formula; the arbitrary-real-closed trace specialization is a MotivesAndAlgebraicCycles §7.6b supplier contract.
+- TauCetiRoadmap.StableHomotopyKTheory §§3.36–3.37 owns Hurewicz modulo Serre classes and rational H-space theory; §4.6 supplies the homotopy-associative and homotopy-commutative H-space predicates, whose double-loop instance is proved in §4.6 here. TauCetiRoadmap.MorseNovikov N6 owns the smooth closed-manifold Lefschetz formula; the arbitrary-real-closed trace specialization is a MotivesAndAlgebraicCycles §7.6b supplier contract.
 - TauCetiRoadmap.SchemeAndStackFoundations §2.23 owns generic equivariant sheaves, derived invariants, supports and Ext. Its §§2.7 and 2.19 own the generic support and derived right-adjoint operations; §2.23 supplies the forgetful/coinduction injectivity facts used with regular coefficients in §16.4. MotivesAndAlgebraicCycles §§7.6a–7.6b owns their semialgebraic cohomology, orientation and purity specialization; this roadmap proves the additional fixed-locus and cover formulas; it does not introduce a second generic derived category.
 - TauCetiRoadmap.ComplexComparisonPartII §C−1.1 owns scheme analytification, and TauCetiRoadmap.EtaleDualityAndPerverseSheaves §§3.5–3.8 and §6.5 own coefficient/trace comparison and the compact Frobenius trace interface. Only Layers 1–3 use those comparisons. Section 4.7 of that supplier owns complete-intersection Betti numbers, including the ordinary quartic number used in §13.3.
 - The full Frobenius-root factorization theorem is already in the library as `TauCeti.FiniteField.fullCycleType_eq_map_natDegree_normalizedFactors`, in `TauCeti/FieldTheory/GaloisGroups/FrobeniusOrbits.lean`. Its full cycle partition is `Equiv.Perm.fullCycleType`, in `TauCeti/GroupTheory/Perm/Partition.lean`. Both the root-cycle theorem and its fixed-point bookkeeping are supplied, rather than targets here.
@@ -19,7 +19,7 @@ The following objects have one owner and are consumed here.
 - TauCetiRoadmap.DifferentialGeometry Layers 2, 3 and 10 own orientation covers, finite-dimensional flows and their stated Sard theorem; TauCetiRoadmap.GeometricTopology Layer 1 owns the manifold bridge. TauCetiRoadmap.SmoothBundlesConnections §B1 item 5 owns ordinary Ehresmann transport. Section 16.1 adds finite-involution equivariance, and §12.4 owns the relative surface-curve perturbation needed here.
 - TauCetiRoadmap.QWittVectors §1.4a owns the big Witt coordinate/power-series comparison. The exponents in §3.1 are signed integer powers of the factors 1−Tʳ; they are a different transform from the Witt coordinates in factors 1−a_rTʳ.
 
-- TauCetiRoadmap.InverseGaloisAndArithmeticFundamentalGroups §IG.5.1 owns ordered/unordered configurations, their discriminant-open schemes, permutation torsors and complex comparison; TauCetiRoadmap.MotivesAndAlgebraicCycles §§7.6a–7.6b owns the semialgebraic cohomology, duality, purity and Steenrod foundations. Their API facts and discriminating checks are retained in the supplier contracts. TauCetiRoadmap.CharacteristicClasses §§C2.3 and C3.2 own Euler evaluation and the orientation-cover/Stiefel–Whitney comparisons, and TauCetiRoadmap.TangentialBordism §B4 item 3 owns Wu classes and w(TM)=Sq(v); §12.3 owns the equality γ_X=w(TX(ℝ)) and applies those results to surfaces.
+- TauCetiRoadmap.InverseGaloisAndArithmeticFundamentalGroups §IG.5.1 owns ordered/unordered configurations, their discriminant-open schemes, permutation torsors and complex comparison; TauCetiRoadmap.MotivesAndAlgebraicCycles §§7.6a–7.6b owns the semialgebraic cohomology, duality, purity and Steenrod foundations. Their consumed interfaces and convention checks are described in the supplier contracts; the all-degree Steenrod-conjugated real pushforward is included in the explicit supplier gap below. TauCetiRoadmap.CharacteristicClasses §§C2.3 and C3.2 own Euler evaluation and the orientation-cover/Stiefel–Whitney comparisons, and TauCetiRoadmap.TangentialBordism §B4 item 3 owns Wu classes and w(TM)=Sq(v); §12.3 owns the equality γ_X=w(TX(ℝ)) and applies those results to surfaces.
 
 TauCetiRoadmap.AffineMorseLefschetz A2–A3 owns smooth affine CW dimension and its cohomological vanishing over ℝ. Section 11.1 owns the singular-affine and arbitrary-real-closed extensions used in real restriction.
 
@@ -43,7 +43,7 @@ Use the native cyclic differential σ−1 in even cochain degree and 1+σ in odd
 
 ### From Mathlib
 
-Use `GenLoop` in `Mathlib/Topology/Homotopy/HomotopyGroup.lean`, with its actual boundary condition on continuous cubical maps and its native higher homotopy groups. The definition imposes neither Hausdorffness nor a CW hypothesis. `ContinuousMap.HomotopyEquiv` supplies actual continuous maps and both homotopies. Use `Metric.sphere`, `EuclideanSpace`, `MvPolynomial`, `MvPolynomial.pderiv`, `MvPolynomial.eval`, `Ideal.span`, `Ideal.Quotient.mk`, `Algebra.lmul` and `Module.End.maxGenEigenspace` for the Jacobian algebra and critical-value summands, and `Polynomial.Monic`, `Squarefree` and `UniqueFactorizationMonoid.normalizedFactors` for the native geometric and polynomial carriers.
+Use `GenLoop` in `Mathlib/Topology/Homotopy/HomotopyGroup.lean`, with its actual boundary condition on continuous cubical maps and its native higher homotopy groups. The definition imposes neither Hausdorffness nor a CW hypothesis. `ContinuousMap.HomotopyEquiv` supplies actual continuous maps and both homotopies; `ContinuousMap.HomotopyRel` in `Mathlib/Topology/Homotopy/Basic.lean` fixes every point of its specified subset at every time. Use `Metric.sphere`, `EuclideanSpace`, `MvPolynomial`, `MvPolynomial.pderiv`, `MvPolynomial.eval`, `Ideal.span`, `Ideal.Quotient.mk`, `Algebra.lmul` and `Module.End.maxGenEigenspace` for the Jacobian algebra and critical-value summands, and `Polynomial.Monic`, `Squarefree` and `UniqueFactorizationMonoid.normalizedFactors` for the native geometric and polynomial carriers.
 
 Use `Algebra.lmul` in `Mathlib/Algebra/Algebra/Bilinear.lean` and `Module.End.maxGenEigenspace` in `Mathlib/LinearAlgebra/Eigenspace/Basic.lean` for the critical-value operator. Use `IsArtinianRing.quotNilradicalPowEquivPi` in `Mathlib/RingTheory/Artinian/Module.lean` and `IsArtinianRing.isNilpotent_nilradical` in `Mathlib/RingTheory/Artinian/Ring.lean` for the finite local-factor decomposition, retaining nilpotents.
 
@@ -71,9 +71,9 @@ Consume Stage 2 ordinary pair/triple chains and their maps, Stage 4 Hausdorff CW
 
 ### From TauCetiRoadmap.SchemeAndStackFoundations
 
-Use §0.7 for dimensions of finite-type schemes, §§0.1–0.2 for the relative-spectrum algebra interfaces, the scheme topology and morphism properties retained in Layer 0, §2.7 for supports, §2.19 for derived right adjoints, and §2.23 for equivariant sheaves, derived invariants, supported cohomology, Hochschild–Serre and equivariant Ext. The action category must allow an action moving the base. A generic theorem about a free abelian acting group does not specialize to C₂; the topological specialization uses the semialgebraic theory of MotivesAndAlgebraicCycles §§7.6a–7.6b.
+Use §0.7 for dimensions of finite-type schemes, §§0.1–0.2 for the relative-spectrum algebra interfaces, the scheme topology and morphism properties retained in Layer 0, §2.5’s `cohomology_filtered_colimits` for finite-cover sites and the local specialization in §11.1, §2.7 for supports, §2.19 for derived right adjoints, and §2.23 for equivariant sheaves, derived invariants, supported cohomology, Hochschild–Serre and equivariant Ext. The action category must allow an action moving the base. A generic theorem about a free abelian acting group does not specialize to C₂; the topological specialization uses the semialgebraic theory of MotivesAndAlgebraicCycles §§7.6a–7.6b.
 
-What SchemeAndStackFoundations must provide (gap:finite-group-ext-stalk): For a finite group acting trivially on a base site with exact filtered stalks, identify the stalk of the sheaf Ext from the constant integral equivariant sheaf with group cohomology of the coefficient stalk, naturally in restrictions, using a degreewise finite-rank resolution.
+What SchemeAndStackFoundations must provide (gap:finite-group-ext-stalk): For a finite group Γ acting trivially on a ringed space X, in the category of equivariant abelian sheaves identify each stalk of internal Ext^q from the constant equivariant ℤ with H^q(Γ,F_x), naturally in restriction, using the bar resolution with finite rank in each degree (periodic for C₂).
 
 For §16.4 use §2.23’s `forget_injective` and `coind_injective`: for finite G, the diagonal regular tensor I⊗ℤ[G] identifies with coinduction of the underlying I. Tensoring with ℤ(1) is an exact equivalence whose square is the identity, so it also preserves injectives. Consume these facts through the semialgebraic specialization of MotivesAndAlgebraicCycles §7.6a.
 
@@ -121,18 +121,17 @@ Consume §B1 item 5, the complementary horizontal distribution, local horizontal
 
 Consume §IG.5.1 for the topological and algebraic configuration spaces, the all-characteristic permutation torsor and the complex-point comparison.
 
-What InverseGaloisAndArithmeticFundamentalGroups must provide (gap:configuration-carrier-generality): Extend §IG.5.1 ordered/unordered configuration carriers and their embedding functoriality to every topological space, reserving Hausdorffness for the covering theorem, and represent formal monic degree-m polynomials by coefficient tuples over every ring, including the zero ring.
+What InverseGaloisAndArithmeticFundamentalGroups must provide (gap:configuration-carrier-generality): Extend §IG.5.1 ordered/unordered configuration carriers and their embedding functoriality to every topological space, reserving Hausdorffness for the covering theorem, and represent formal monic degree-m polynomials by coefficient tuples over every ring, including the zero ring, with the S_m action exposed as the left action (σ·x)(i)=x(σ⁻¹i).
  The coordinatewise plane/interior-disc identification is the topological transport of its embedding functoriality. The contracts below retain the concrete coordinate laws, APIs and checks needed by the arrangement and trace calculations.
 
 **Ordered and unordered configurations.** For a space X and m≥0, PConf_m(X) is the subspace of injective maps Fin m→X; Conf_m(X) is its orbit quotient for (σ·x)(i)=x(σ⁻¹i). For A¹ over ℤ, use the open locus where every x_i−x_j is invertible, and the unordered locus of monic degree-m polynomials with invertible discriminant. (BS, §1 p.894; §3 proof of Lemma 3.9, p.919, BS line 55.)
 
-The consumed API provides these facts.
+The supplier contract includes the following interface laws.
 
 - An injective tuple determines a topological ordered configuration; a tuple with unit differences determines an A¹ scheme point.
 - A continuous embedding X→Y induces equivariant maps of both configuration spaces.
 - The map PConf_m(X)→Conf_m(X) identifies exactly the permutation orbits.
 - Ordered configurations agree iff their coordinate evaluations agree; unordered classes agree iff their tuples differ by a permutation.
-- (σ·x)(i)=x(σ⁻¹i); identity and multiplication satisfy the left-action laws.
 - Embedding maps commute with composition and with the orbit projection.
 
 **Checks.**
@@ -160,6 +159,10 @@ The consumed API provides these facts.
 
 ### From TauCetiRoadmap.MotivesAndAlgebraicCycles
 
+What MotivesAndAlgebraicCycles must provide (gap:steenrod-conjugated-real-pushforward): In §7.6b, for a proper map f:Y→X of smooth irreducible R-varieties over any real closed R and every integer degree n, with m=n+2(dim X−dim Y), prove that restriction of complex equivariant mod-two Gysin to total fixed-locus coordinates equals Sq∘f_(R,*)∘Sq⁻¹ from coordinates 0≤p≤n to 0≤p≤m, compatibly with real closed extension (BW Proposition 1.22, BW lines 1130–1148).
+
+What MotivesAndAlgebraicCycles must provide (gap:semialgebraic-ext-stalk): In §7.6a, extend the finite-group internal Ext-stalk comparison of SchemeAndStackFoundations §2.23 to the finite-cover semialgebraic site with trivial action on the base, for stalk functors at points of its topos, using the degreewise finite-rank bar resolution, compatibly with restriction and with the ordinary comparison over ℝ.
+
 Consume §§7.6a–7.6b for semialgebraic loci and sites over every real closed field, derived equivariant cohomology with supports, the pair and support localization sequences, real-complex coefficient sequences, norm/restriction, field-extension invariance, ordinary singular/Borel comparison over ℝ, orientation duality, purity/Gysin and the fixed mod-two decomposition. The rank-one-local-system refinement and explicit Bockstein formula in §§7.5–7.6 extend the constant-coefficient decomposition consumed here.
 
 Chart gluing of X(R) and X(C) is consumed from §7.6a’s affine-chart construction, with its overlap and restriction identifications.
@@ -180,9 +183,9 @@ What MotivesAndAlgebraicCycles must provide (gap:semialgebraic-duality-coefficie
 
 What MotivesAndAlgebraicCycles must provide (gap:supported-steenrod-comparison): Expose §7.6b Steenrod squares on ordinary, relative, equivariant and supported semialgebraic cohomology with instability, Adem relations, Sq¹ as reduced integral Bockstein, finite Borel and real-closed-extension compatibility, and the Thom identity.
 
-**Semialgebraic real and complex loci.** For a real closed field R, C=R(i), and a separated finite-type R-scheme X, construct the locally complete semialgebraic spaces X(R) and X(C), using Weil restriction on affine charts and gluing. The site has semialgebraic open subsets and finite open covers. Complex conjugation acts on X(C), and its fixed subspace is X(R). (BW v3, §1.1.1, pp.8–9, BW line 310.)
+**Semialgebraic real and complex loci.** For a real closed field R, C=R(i), and a separated finite-type R-scheme X, MotivesAndAlgebraicCycles §7.6a supplies the locally complete semialgebraic spaces X(R) and X(C), using Weil restriction on affine charts and gluing. The site has semialgebraic open subsets and finite open covers. Complex conjugation acts on X(C), and its fixed subspace is X(R). (BW v3, §1.1.1, pp.8–9, BW line 310.)
 
-The consumed API provides these facts.
+The supplier contract includes the following interface laws.
 
 - An R-morphism induces a continuous semialgebraic conjugation-equivariant map on complex loci and its fixed real map.
 - The fixed-point locus of conjugation is naturally X(R).
@@ -197,14 +200,14 @@ The consumed API provides these facts.
 - x²+1=0 has two conjugate complex points and empty real locus.
 - Over a non-Archimedean R use finite semialgebraic admissible covers; arbitrary ordinary open covers are not the defining coverings.
 
-**Equivariant semialgebraic cohomology.** Specialize SchemeAndStackFoundations §2.23 to a locally complete semialgebraic G-space V, G=C₂, an invariant closed semialgebraic Z⊂V and an equivariant abelian sheaf F: H_G,Z^i(V,F)=H^i(R(Γ_Z(V,−)^G)F). Retain derived supported sections, cup products, restriction and finite-G spectral sequences; do not replace derived invariants by invariants of ordinary cohomology. (BW v3, §1.1.1, equations (1.3)–(1.5), p.9, BW line 336.)
+**Equivariant semialgebraic cohomology.** MotivesAndAlgebraicCycles §7.6a supplies the specialization of SchemeAndStackFoundations §2.23 to a locally complete semialgebraic G-space V, G=C₂, an invariant closed semialgebraic Z⊂V and an equivariant abelian sheaf F: H_G,Z^i(V,F)=H^i(R(Γ_Z(V,−)^G)F). Its interface includes derived supported sections, cup products, restriction and finite-G spectral sequences. (BW v3, §1.1.1, equations (1.3)–(1.5), p.9, BW line 336.)
 
-The consumed API provides these facts.
+The supplier contract includes the following interface laws.
 
 - H_G^i(pt,M) identifies with the pinned group-cohomology carrier for the G-module M.
 - Restriction to invariant opens and change of supports induce the derived maps and commute with cup products.
 - The two displayed spectral sequences are natural in the equivariant sheaf and supports, with named edge maps.
-- Degree zero is the group of invariant sections supported in Z; identify it through the imported derived-functor comparison.
+- The imported derived-functor comparison identifies degree zero with invariant sections supported in Z.
 - The induced maps preserve identities and composition; coefficient zero maps induce zero in cohomology.
 
 **Checks.**
@@ -214,15 +217,15 @@ The consumed API provides these facts.
 - H_G,∅^i(V,F)=0 in every degree.
 - On the two-point free C₂ orbit with constant integral coefficients, H_G⁰=ℤ and H_G^q=0 for q>0; ordinary invariant cohomology of a fixed point does not pass the point-sign test.
 
-**Cohomology of the real-locus pair.** For j:U=X(C)\X(R)↪X(C), define H_G^i(X(C),X(R);M)=H_G^i(X(C),j!M_U). It sits in …→H_G^i(pair;M)→H_G^i(X(C),M)→H_G^i(X(R),M)→H_Gⁱ⁺¹(pair;M)→…. Supported-on-X(R) cohomology instead occurs in …→H_G,X(R)^i(X(C),M)→H_G^i(X(C),M)→H_G^i(U,M)→…. (BW v3, §1.1.3, p.10, BW line 372.)
+**Cohomology of the real-locus pair.** For j:U=X(C)\X(R)↪X(C), MotivesAndAlgebraicCycles §7.6a supplies H_G^i(X(C),X(R);M)=H_G^i(X(C),j!M_U). It sits in …→H_G^i(pair;M)→H_G^i(X(C),M)→H_G^i(X(R),M)→H_Gⁱ⁺¹(pair;M)→…. Supported-on-X(R) cohomology instead occurs in …→H_G,X(R)^i(X(C),M)→H_G^i(X(C),M)→H_G^i(U,M)→…. (BW v3, §1.1.3, p.10, BW line 372.)
 
-The consumed API provides these facts.
+The supplier contract includes the following interface laws.
 
 - The relative object is RΓ_G(X(C),j!M_U).
 - The extension-by-zero triangle gives the pair/ambient/real long exact sequence.
 - The support triangle has free complement as its third term and is related naturally to the pair sequence.
 - The extension-by-zero object fits the canonical j!j*→id→i*i* distinguished triangle, natural under maps of coefficient objects.
-- Successive maps in both long exact sequences compose to zero; name their connecting maps and degree shifts.
+- Successive maps in both long exact sequences compose to zero; their connecting maps and degree shifts are part of the interface.
 
 **Checks.**
 
@@ -244,14 +247,14 @@ The consumed API provides these facts.
 
 - No extension of ordinary singular paths to non-Archimedean R is claimed.
 
-**Parity twists and regular coefficients.** Let ℤ(j) be ℤ with σ acting by (−1)^j and set F(j)=F⊗ℤ(j), with diagonal action. The diagonal and signed-diagonal embeddings in F[G] give natural short exact sequences 0→F→F[G]→F(1)→0 and 0→F(1)→F[G]→F→0; use the regular diagonal representation, which is induced even when F has nontrivial action. (BW v3, §1.1, equations (1.1)–(1.7), pp.8–10, BW line 297.)
+**Parity twists and regular coefficients.** Let ℤ(j) be ℤ with σ acting by (−1)^j and F(j)=F⊗ℤ(j), with diagonal action. The diagonal and signed-diagonal embeddings in F[G] give natural short exact sequences 0→F→F[G]→F(1)→0 and 0→F(1)→F[G]→F→0; the consumed §7.6a interface uses the regular diagonal representation, induced even when F has nontrivial action. (BW v3, §1.1, equations (1.1)–(1.7), pp.8–10, BW line 297.)
 
-The consumed API provides these facts.
+The supplier contract includes the following interface laws.
 
 - F(j+2)≅F(j), with compatible tensor identifications F(j)(k)≅F(j+k).
 - The two exact sequences are natural in F and have forgetful/norm maps after cohomology.
 - The regular-coefficient equivariant cohomology identifies with the underlying nonequivariant cohomology.
-- Build F(j) by tensoring with the explicit sign lattice; the involution on a local tensor is σ_F⊗(−1)^j.
+- The supplied F(j) is tensoring with the explicit sign lattice; the involution on a local tensor is σ_F⊗(−1)^j.
 - F(0)≅F and the double sign twist is naturally F; all identifications commute with coefficient maps.
 
 **Checks.**
@@ -267,14 +270,14 @@ The consumed API provides these facts.
 
 - A point has one 𝔽₂ in every nonnegative degree; a circle has two in every positive degree.
 
-**Semialgebraic orientation sheaves.** For a locally complete semialgebraic homology v-manifold V, or_V is the rank-one ℤ-sheaf locally dual to H_c^v of a small oriented chart. Set `or_(V/W)`=Hom(f*or_W,or_V) for f:V→W. Conjugation gives `or_(X(C))`≅ℤ(d) for smooth pure-d X/R. Over ℝ reuse the existing manifold orientation carrier and prove compatibility. (BW v3, §1.1.4–1.1.5, pp.10–14, BW line 387.)
+**Semialgebraic orientation sheaves.** For a locally complete semialgebraic homology v-manifold V, or_V is the rank-one ℤ-sheaf locally dual to H_c^v of a small oriented chart. The §7.6b contract supplies `or_(V/W)`=Hom(f*or_W,or_V) for f:V→W. Conjugation gives `or_(X(C))`≅ℤ(d) for smooth pure-d X/R. Over ℝ its orientation comparison is with the existing manifold carrier. (BW v3, §1.1.4–1.1.5, pp.10–14, BW line 387.)
 
-The consumed API provides these facts.
+The supplier contract includes the following interface laws.
 
 - An orientation on a chart identifies its top compactly supported cohomology with ℤ and or_V with the constant sheaf.
 - `or_(V/U)`≅`or_(V/W)`⊗f*`or_(W/U)` for composable maps.
 - `or_(X(C))`≅ℤ(d) equivariantly for smooth pure-dimensional X/R.
-- Glue local top-compact-cohomology dual generators with the transition orientation signs; compare over ℝ to DifferentialGeometry’s orientation cover.
+- The supplied gluing uses local top-compact-cohomology dual generators and transition orientation signs, with comparison over ℝ to DifferentialGeometry’s orientation cover.
 - `or_(V/V)` is constant ℤ, and tensoring either orientation sheaf with 𝔽₂ is canonically constant 𝔽₂.
 
 **Checks.**
@@ -284,9 +287,9 @@ The consumed API provides these facts.
 - Conjugation on ℂ² preserves orientation, so the twist is ℤ(2).
 - The integral orientation sheaf of RP² is nonconstant, although its tensor product with 𝔽₂ is constant.
 
-**Semialgebraic exceptional inverse image.** Let Λ be any commutative noetherian coefficient ring. For a continuous semialgebraic map f:V→W between locally complete spaces in the separated definable category, specialize the generic derived proper-image construction to definably proper supports and obtain the adjunction Rf! ⊣ f!:D⁺(W,Λ)→D⁺(V,Λ). Prove finite cohomological dimension and the bounded-below restriction of the adjunction. In particular this includes ℤ and every finite commutative coefficient ring. (EP, Theorem 4.1, pp.46–47; Theorem 4.7, pp.49–50; BW §1.1.4, p.11, EP line 2127.)
+**Semialgebraic exceptional inverse image.** Let Λ be any commutative noetherian coefficient ring. For a continuous semialgebraic map f:V→W between locally complete spaces in the separated definable category, MotivesAndAlgebraicCycles §7.6b supplies the specialization of the generic derived proper-image construction to definably proper supports and the adjunction Rf! ⊣ f!:D⁺(W,Λ)→D⁺(V,Λ). Its contract includes finite cohomological dimension and the bounded-below restriction of the adjunction. In particular this includes ℤ and every finite commutative coefficient ring. (EP, Theorem 4.1, pp.46–47; Theorem 4.7, pp.49–50; BW §1.1.4, p.11, EP line 2127.)
 
-The consumed API provides these facts.
+The supplier contract includes the following interface laws.
 
 - Hom(Rf!A,B)≅Hom(A,f!B), natural in both objects.
 - (g∘f)!≅f!g!, compatibly with the adjunction counits.
@@ -301,7 +304,7 @@ The consumed API provides these facts.
 - For an open immersion, exceptional inverse image is ordinary restriction.
 - For a closed immersion, the exceptional object has the prescribed local support; it is not ordinary restriction in general.
 
-**Orientation formula and finite duality.** For a semialgebraic map f:V→W between pure-dimensional homology manifolds of dimensions v,w, a commutative noetherian ring Λ and F∈Dᵇ(W,Λ) with locally constant cohomology sheaves, prove f!F≅(`or_(V/W)`⊗f*F)[v−w]. For a locally constant sheaf A of finite abelian groups on V, cup product followed by trace is a perfect pairing H_cⁱ(V,A)×Hᵛ⁻ⁱ(V,Hom(A,ℚ/ℤ)⊗or_V)→ℚ/ℤ; both adjoint homomorphisms are isomorphisms. Finite stalks, rather than finite exponent alone, are essential. (BW v3, Proposition 1.1, Fact 1.2 and equation (1.16), pp.11–12, BW line 403.)
+**Orientation formula and finite duality.** For a semialgebraic map f:V→W between pure-dimensional homology manifolds of dimensions v,w, a commutative noetherian ring Λ and F∈Dᵇ(W,Λ) with locally constant cohomology sheaves, the §7.6b duality-coefficient contract supplies f!F≅(`or_(V/W)`⊗f*F)[v−w]. For a locally constant sheaf A of finite abelian groups on V, cup product followed by trace is a perfect pairing H_cⁱ(V,A)×Hᵛ⁻ⁱ(V,Hom(A,ℚ/ℤ)⊗or_V)→ℚ/ℤ; both adjoint homomorphisms are isomorphisms. Finite stalks, rather than finite exponent alone, are essential. (BW v3, Proposition 1.1, Fact 1.2 and equation (1.16), pp.11–12, BW line 403.)
 
 **Checks.**
 
@@ -322,9 +325,9 @@ The consumed API provides these facts.
 - pt→P¹ has complex degree shift two and real degree shift one; do not use the same shift.
 - For pt→ℙ¹, the complex target degree is 2 and the real target degree is 1; the complex source twist is −1. In a complex line, conjugation has orientation −1, matching that twist.
 
-**Semialgebraic Steenrod squares.** Construct natural Sq^a:H^b(V,𝔽₂)→Hᵃ⁺ᵇ(V,𝔽₂), and their equivariant/support versions on locally complete semialgebraic spaces over R, satisfying Sq⁰=id, instability, Sq^b(x)=x², Cartan, Adem and Sq¹ equal to mod-two integral Bockstein. Their finite Borel comparison agrees with ordinary squares over ℝ. (BW v3, §1.6.3–1.6.4, pp.27–31, BW line 1060.)
+**Semialgebraic Steenrod squares.** The §7.6b supported-Steenrod contract supplies natural Sq^a:H^b(V,𝔽₂)→Hᵃ⁺ᵇ(V,𝔽₂), and their equivariant/support versions on locally complete semialgebraic spaces over R, satisfying Sq⁰=id, instability, Sq^b(x)=x², Cartan, Adem and Sq¹ equal to mod-two integral Bockstein. Their finite Borel comparison agrees with ordinary squares over ℝ. (BW v3, §1.6.3–1.6.4, pp.27–31, BW line 1060.)
 
-The consumed API provides these facts.
+The supplier contract includes the following interface laws.
 
 - Semialgebraic pullback and change of supports commute with each Sq^a.
 - `Sq^a(xy)=sum_(b+c=a) Sq^b(x) Sq^c(y)`, with the relevant support intersection.
@@ -350,7 +353,7 @@ Consume §B4 item 3’s ordinary mod-two Wu classes on closed smooth manifolds a
 
 ### From TauCetiRoadmap.StableHomotopyKTheory
 
-Consume §3.36's Hurewicz theorem modulo Serre classes for connected abelian CW spaces in §4.4, and §3.37's rational Hurewicz identification with primitives for path-connected H-spaces with finite-type rational homology. For the Hopf form retain homotopy associativity.
+Consume §4.6’s homotopy-associative and homotopy-commutative H-space predicates and §3.36's Hurewicz theorem modulo Serre classes for connected abelian CW spaces in §4.4, and §3.37's rational Hurewicz identification with primitives for path-connected H-spaces with finite-type rational homology. For the Hopf form retain homotopy associativity.
 
 What StableHomotopyKTheory must provide (gap:rational-commutative-hspace-hopf): Extend §3.37 for connected homotopy-associative, homotopy-commutative H-spaces of CW type with finite-type rational homology: rational Hurewicz extends to the Hopf algebra isomorphism from the free graded-commutative algebra on positive rational homotopy to rational homology, whose degreewise dual identifies cohomology with the free graded-commutative algebra on dual rational homotopy.
 
@@ -364,6 +367,8 @@ Layers 1–3 construct configuration covers, identify their cohomology and trace
 
 
 ## Layer 1: configuration spaces and permutation covers
+
+This roadmap fixes the left action (σ·x)(i)=x(σ⁻¹i) on the supplied ordered configurations. Its acceptance form is `configurationPermutation`; the identity and multiplication laws follow by composing inverse coordinate permutations. With σ=(123), τ=(12), x=(a,b,c), both σ·(τ·x) and (στ)·x are (c,b,a).
 
 Use InverseGaloisAndArithmeticFundamentalGroups §IG.5.1 for configurations, discriminant opens, permutation torsors and complex comparison. Its ring-valued functor uses invertible differences; the supplier contract fixes the action and disc conventions for the subsequent cohomology calculations.
 
@@ -442,9 +447,9 @@ Integral Euler factorization, Möbius inversion, weighted squarefree products an
 
 ### 3.1 Signed Witt–Euler exponents
 
-Define the signed Euler exponents for n,N≥0 by constructing the unique sequence of integers e_r(n,N), indexed by r≥1, for which `prod_(r>=1) (1-T^r)^(-e_r)=1+s_n*N*T` in ℤ[[T]]. Here s_n=−1 for even n and +1 for odd n, including n=0. Products mean stabilization of each coefficient. The simple acceptance definition `eulerExponent` is the integral Möbius quotient; prove its divisibility and agreement with this integral factorization before using that quotient as an exponent. (BS, Definition 7.3, p.941, BS line 2211.)
+Define the signed Euler exponents for n,N≥0 by constructing the unique sequence of integers e_r(n,N), indexed by r≥1, for which `prod_(r>=1) (1-T^r)^(-e_r)=1+s_n*N*T` in ℤ[[T]]. Here s_n=−1 for even n and +1 for odd n, including n=0. Products mean stabilization of each coefficient. The acceptance definition `eulerExponent` is the total integer-division expression displayed in §3.2; its divisibility and identification with the constructed sequence belong to §3.2. This section constructs only the integral factorization sequence. (BS, Definition 7.3, p.941, BS line 2211.)
 
-A proof can proceed as follows. At degree r the new factor changes the coefficient by exactly e_r. Successive coefficient cancellation constructs integers without division, and the first differing coefficient proves uniqueness. Compare its logarithmic derivative with the Möbius formula of §3.2.
+A proof can proceed as follows. At degree r the new factor changes the coefficient by exactly e_r. Successive coefficient cancellation constructs integers without division, and the first differing coefficient proves uniqueness.
 
 The construction has the following API, with the hypotheses of this section.
 
@@ -465,7 +470,7 @@ The construction has the following API, with the hypotheses of this section.
 
 ### 3.2 Möbius formula for Euler exponents
 
-For r≥1, `e_r(n,N)=-(1/r) sum_(a | r) mu(a)((-1)^n*N)^(r/a)`, as an equality in Q whose right side is integral. (BS, Equation (7.2), pp.941–942, BS line 2242.)
+For r≥1, `e_r(n,N)=-(1/r) sum_(a | r) mu(a)((-1)^n*N)^(r/a)`, as an equality in ℚ whose numerator is divisible by r in ℤ. Prove that the resulting integer is `eulerExponent n N r` and equals the sequence constructed in §3.1; subsequent products may then use that acceptance definition. (BS, Equation (7.2), pp.941–942, BS line 2242.)
 
 A proof can proceed as follows. Take formal logarithmic derivatives to obtain `sum_(d | r) d*e_d=-((-1)^n*N)^r`. Use the pinned divisor-sum Möbius inversion and uniqueness of the integral recursion.
 
@@ -487,7 +492,7 @@ A proof can proceed as follows. Unique monic factorization identifies the square
 - The weight counts linear factors too; N=0 leaves only the constant polynomial; n even,N=1 gives 1−qU.
 - For c=1 the product is (1−qU²)/(1−qU), with first coefficients 1,q,q²−q. For c=−1 it is 1−qU. For c=0 only the monic constant 1 contributes, with weight 0⁰=1.
 
-*Needs:* §3.1; Mathlib `Polynomial.Monic`; Mathlib `UniqueFactorizationMonoid.normalizedFactors`.
+*Needs:* §3.2 for identification with `eulerExponent`; Mathlib `Polynomial.Monic`; Mathlib `UniqueFactorizationMonoid.normalizedFactors`.
 
 ### 3.4 Twisted configuration multiplicities
 
@@ -506,11 +511,12 @@ A proof can proceed as follows. The twisted root character is `(-1)^((n-1)*m)*c^
 
 Let n≥4,j,d,N≥0 and d(n−3)≥j. Then `sum_(m=0)^d dim((H_c^(mn-m-j)(PConf_m(CC),QQ) tensor V^(tensor m) tensor sgn^(epsilon_n))^(S_m))=[t^j] prod_(r>=1) (1-(-t)^(r*(n-2)-1))^(-e_r(n,N))`. n≥4 and j,d,N≥0. d(n−3)≥j. (BS, Corollary 7.5 and equation (7.3), pp.943–944, BS line 2322.)
 
-A proof can proceed as follows. Take the weighted diagonal i=m(n−2)−j of the bivariate identity. The support lower bound excludes m(n−3)>j; hence truncating at d does not change the coefficient. Use t=q⁻¹ only on the extracted diagonal; the positive exponents r(n−2)−1 make the resulting product locally finite.
+A proof can proceed as follows. Take the weighted diagonal i=m(n−2)−j of the bivariate identity. For m>0, the upper support bound H_c^a(PConf_m)=0 for a>2m excludes m(n−3)>j, since a=m(n−1)−j. For m=0 only compact degree zero contributes. Thus truncating at d does not change the coefficient. Use t=q⁻¹ only on the extracted diagonal; the positive exponents r(n−2)−1 make the resulting product locally finite.
 
 **Checks.**
 
 - This is an equality after diagonal extraction, not equality of the full bivariate series. Check j=0 and d=0.
+- At (n,m,j)=(4,2,0), the compact degree is 6>2m=4, so the term vanishes; the lower bound 3≤6 would not exclude it. At (4,1,1), the compact degree is 2=2m and its N=1 contribution is 1.
 - For n=4, N=1 the series is 1+t, so the j=1 diagonal has value 1 already at d=1. For n=5,N=1 it begins 1+t²+t⁴+t⁵; for j=2,d=1 both sides are 1. For j=d=0 both sides are 1.
 
 *Needs:* §3.4; §2.1.
@@ -521,7 +527,7 @@ For even n,N=2, e₁,e₂,e₃=−2,−1,−2; for odd n,N=2 they are 2,−3,2. 
 
 ### Dependencies
 
-Mathlib `ArithmeticFunction.sum_eq_iff_sum_smul_moebius_eq`; §3.1; Mathlib `Polynomial.Monic`; Mathlib `UniqueFactorizationMonoid.normalizedFactors`; §2.4; §2.3; §3.3; §3.4; §2.1.
+Mathlib `ArithmeticFunction.sum_eq_iff_sum_smul_moebius_eq`; §3.1; §3.2; Mathlib `Polynomial.Monic`; Mathlib `UniqueFactorizationMonoid.normalizedFactors`; §2.4; §2.3; §3.3; §3.4; §2.1.
 
 ## Layer 4: tame fibres and rational homotopy
 
@@ -596,7 +602,7 @@ A proof can proceed as follows. Construct the basic Whitehead products and their
 
 ### 4.4 Rational homotopy of spheres
 
-For s≥2 and i≥2, π_i(S^s)⊗ℚ is ℚ for i=s, additionally ℚ for i=2s−1 when s is even, and zero otherwise. (SERRE, Chapter V §3 Proposition 3, pp.492–494; §6 Corollary 2, p.498.)
+For s≥2 and i≥2, π_i(S^s)⊗ℚ is ℚ for i=s, additionally ℚ for i=2s−1 when s is even, and zero otherwise. (SERRE, Chapter V §3 Proposition 3, pp.492–494; §6 Corollary 2, p.498, SERRE lines 2623–2700, 2852.)
 
 The acceptance abbreviation `unitSphere` is the subspace sphere of radius 1 centered at 0 in real Euclidean space of dimension s+1.
 
@@ -648,7 +654,7 @@ A proof can proceed as follows. Double-loop concatenation and interchange give t
 - For X=S³ the answer is exterior on a degree-one generator, with series 1+t. For X=S⁴ it is ℚ[y₂]⊗Λ(z₅), with series (1+t⁵)/(1−t²), matching §5.1.
 - X=S² has π₀Ω²X=ℤ and fails connectedness. Applying the connected H-space statement to its entire double loop would miss its components.
 
-*Needs:* TauCetiRoadmap.StableHomotopyKTheory §3.37 and its rational commutative H-space Hopf contract; Tau Ceti `HomotopyGroup.zerothHomotopyEquiv`; Tau Ceti `HomotopyGroup.piLoopSpaceMulEquiv`; TauCetiRoadmap.AlgebraicTopology Stage 4 and Stage 5.
+*Needs:* TauCetiRoadmap.StableHomotopyKTheory §4.6 for the H-space predicates; TauCetiRoadmap.StableHomotopyKTheory §3.37 and its rational commutative H-space Hopf contract; Tau Ceti `HomotopyGroup.zerothHomotopyEquiv`; Tau Ceti `HomotopyGroup.piLoopSpaceMulEquiv`; TauCetiRoadmap.AlgebraicTopology Stage 4 and Stage 5.
 
 ### Examples
 
@@ -656,7 +662,7 @@ The polynomial x²y−x has gradient (2xy−1,x²). On x=t,y=1/(2t), for nonzero
 
 ### Dependencies
 
-TauCetiRoadmap.GeometricTopology Layer 1; TauCetiRoadmap.DifferentialGeometry Layers 2–3; §4.1; TauCetiRoadmap.AlgebraicTopology Stage 4; TauCetiRoadmap.AlgebraicTopology Stage 8; TauCetiRoadmap.RealAlgebraicGeometry Layers 3 and 6; TauCetiRoadmap.AffineMorseLefschetz A4.1 (the real-closed triangulation and dimension contract); TauCetiRoadmap.DifferentialGeometry Layer 3; Mathlib `IsArtinianRing.quotNilradicalPowEquivPi` and `IsArtinianRing.isNilpotent_nilradical`; the local-factor identification for the Jacobian algebra, local Milnor fibres, thimbles and controlled attachment in §4.2; §3.2; TauCetiRoadmap.AlgebraicTopology Stage 5 item 5; §4.3; §4.4; TauCetiRoadmap.StableHomotopyKTheory §§3.36–3.37; Tau Ceti `HomotopyGroup.zerothHomotopyEquiv`; Tau Ceti `HomotopyGroup.piLoopSpaceMulEquiv`.
+TauCetiRoadmap.GeometricTopology Layer 1; TauCetiRoadmap.DifferentialGeometry Layers 2–3; §4.1; TauCetiRoadmap.AlgebraicTopology Stage 4; TauCetiRoadmap.AlgebraicTopology Stage 8; TauCetiRoadmap.RealAlgebraicGeometry Layers 3 and 6; TauCetiRoadmap.AffineMorseLefschetz A4.1 (the real-closed triangulation and dimension contract); TauCetiRoadmap.DifferentialGeometry Layer 3; Mathlib `IsArtinianRing.quotNilradicalPowEquivPi` and `IsArtinianRing.isNilpotent_nilradical`; the local-factor identification for the Jacobian algebra, local Milnor fibres, thimbles and controlled attachment in §4.2; §3.2; TauCetiRoadmap.AlgebraicTopology Stage 5 item 5; §4.3; §4.4; TauCetiRoadmap.StableHomotopyKTheory §§3.36–3.37 and §4.6; Tau Ceti `HomotopyGroup.zerothHomotopyEquiv`; Tau Ceti `HomotopyGroup.piLoopSpaceMulEquiv`.
 
 ## Layer 5: double loops and Fermat comparisons
 
@@ -699,37 +705,32 @@ A proof can proceed as follows. Realize the join as a finite CW complex of simpl
 
 ### 5.3 Fermat fibre and finite join
 
-For k≥2,n≥2, X={z∈ℂ^n:∑z_i^k=1} deformation retracts onto the subspace {z: z_i^k≥0 real for every i}, canonically homeomorphic to the join of n copies of μ_k. Moreover {z:∑z_i^k∈(0,∞)}≅X×(0,∞) by positive-real scaling. (PHAM, Part I §2, deformation-retraction lemma, pp.337–338, PHAM line 207.)
+For n≥2 and a family of positive integers k_i≥1, X={z∈ℂⁿ:∑ᵢzᵢ^(kᵢ)=1} strongly deformation retracts onto S={z∈X: every zᵢ^(kᵢ) is real and nonnegative}, equivariantly for ∏ᵢμₖᵢ. The skeleton S is canonically homeomorphic to the join of the μₖᵢ; hence X≃∨_N Sⁿ⁻¹ with N=∏ᵢ(k_i−1). Moreover {z:∑ᵢzᵢ^(kᵢ)∈(0,∞)}≅X×(0,∞). (PHAM, Part I §§1–2, pp.335–338, PHAM lines 118–125, 175–221; the product identification follows by positive scaling.)
 
-Define the Fermat fibre and its positive-power skeleton as the subspaces in the displayed equations, with topology inherited from ℂⁿ and then from the fibre. Their APIs are as follows.
+Define `fermatFiber` as the level-one subtype of Fin n→ℂ for this indexed power sum, `phamSkeleton` as its subtype with zero imaginary and nonnegative real coordinate powers, and `phamInclusion` as the continuous subtype inclusion S→X. The theorem `phamStrongRetraction` asserts the equivariant strong retraction for n≥2 and every k_i≥1 on these native carriers. The finite-join identification is a separate target.
 
-- A tuple belongs to the Fermat fibre exactly when its sum of kth powers is 1; equality is coordinate equality.
-- Coordinate permutations and multiplication of a coordinate by a kth root of unity preserve the fibre.
-- The inclusion of the fibre in ℂⁿ is continuous, and the same inclusion is used in the retraction theorem.
-- Membership in the positive-power skeleton additionally requires zero imaginary part and nonnegative real part for every coordinate power.
-- Skeleton coordinates give nonnegative barycentric weights summing to 1; positive weights retain a kth-root phase and zero weights identify all phases.
-- The retraction fixes every skeleton point, and its inclusion followed by retraction is the identity of the skeleton.
+- Fibre membership is precisely the indexed sum equal to 1, with coordinatewise equality and the inherited subspace topology.
+- Multiplication in coordinate i by a k_i-th root of unity preserves X and S. A coordinate permutation transports the exponent family with it; it preserves a fixed family only when it preserves its exponents.
+- The inclusion S→X is the native continuous subtype map. The retraction r:X→S satisfies r∘ι=id_S, and the homotopy from id_X to ι∘r fixes ι(S) at every time.
+- Skeleton powers give barycentric weights summing to 1. A positive weight retains a k_i-th-root phase; at weight zero all its phases identify.
+- The retraction and homotopy commute with ∏ᵢμₖᵢ. At the endpoint this determines equivariance of r as well.
+- Writing t=∑ᵢzᵢ^(kᵢ)>0, the product map is z↦((t^(−1/kᵢ)z_i)_i,t), with inverse (x,t)↦(t^(1/kᵢ)x_i)_i. Each power scales by t⁻¹; positivity excludes zero denominators.
 
-**Checks.**
-
-- At n=2,k=2, (1,0) has power sum 1 and belongs to both fibre and skeleton; (0,0) has power sum 0 and belongs to neither.
-- The point (√2,i) has powers 2,−1 with sum 1. It belongs to the fibre and fails the skeleton's nonnegativity law.
-- For n=0 the sum is 0, so the fibre is empty. For k=0,n=2 the sum is 2 and the fibre is empty; these total-definition values lie outside the k≥2,n≥2 theorem.
-
-Prove that the retraction is strong: it restricts to the identity on the skeleton and the homotopy fixes every skeleton point. Deduce the bouquet type with N=(k−1)ⁿ from §5.2.
-
-A proof can proceed as follows. View X as the branched root cover of ∑u_i=1. Retract that hyperplane with its coordinate hyperplanes onto the positive simplex with its faces. Lift the compatible retraction continuously through the coordinate kth-root branches, obtaining the μ_k-equivariant finite simplicial join. Scale z by (∑z_i^k)^(−1/k) for the positive-value product homeomorphism.
+A proof can proceed as follows. Retract the hyperplane ∑u_i=1, together with its coordinate hyperplanes, onto the positive simplex and its faces. Lift the homotopy through u_i=zᵢ^(kᵢ), fixing the simplex lifts and respecting each root-of-unity action. Apply §5.2 to the resulting finite join. Positive real roots give the product map without choosing any complex root branch.
 
 **Checks.**
 
-- A face with z_i=0 collapses the phase in precisely the join coordinate; no global choice of complex kth root is made.
-- For the Fermat fibre, n=k=2 gives z₁²+z₂²=1 and a circle skeleton; the point (1,0) lies in it, while (√2,i) lies in the fibre but outside the skeleton since i²=−1. For n=3,k=2 the fibre has the type of S²; for n=2,k=3 the bouquet has (3−1)²=4 circles. At a zero coordinate all k phase choices give the same skeleton point, as required by the join relation.
+- At n=2,k=(2,2), (1,0) lies in X and S and remains fixed for the entire homotopy. The tuple (0,0) has sum 0 and belongs to neither. Thus the inclusion has its specified source and is not a constant map.
+- At the same exponents, (√2,i) has powers 2,−1: it lies in X but not S. The identity on X cannot be the endpoint ι∘r. Multiplication of the first coordinate by −1 sends the fixed point (1,0) to the fixed point (−1,0), testing equivariance against a constant retraction.
+- For k=(2,3), S is K₂,₃, with 5 vertices and 6 edges, so its bouquet has 6−5+1=2 circles. At t=8 the point (0,2) scales to (0,1): its cubic term scales by 8⁻¹. Using a common square root would instead give cube 1/(2√2), not 1.
+- For k=(1,3), the singleton μ₁ factor makes S contractible and N=(1−1)(3−1)=0; X is the graph z₁=1−z₂³, homeomorphic to ℂ. Exponent 1 is included, while exponent 0 is excluded from the theorem. The total subtype at n=0 is empty since its sum is 0, and at n=2,k=(0,0) it is empty since its sum is 2.
+- At a zero coordinate every phase gives the same skeleton point. For common k=2,n=3 the fibre has type S²; for common k=3,n=2 its bouquet has 4 circles, retaining the equal-exponent cases.
 
-*Needs:* §5.2.
+*Needs:* §5.2; Mathlib `ContinuousMap.HomotopyRel` for the acceptance signature.
 
 ### 5.4 Fermat double-loop simple connectivity
 
-For k≥2,n≥5 and X={∑z_i^k=1}, π₂X=π₃X=0. Therefore Ω²X is connected and simply connected, using the existing path-component and homotopy-shift equivalences. (BS, §7, Lemma 7.2, pp.940–941; connectivity deduction from PHAM Part I §2, BS line 2174.)
+For n≥5 and k_i≥1, with X={∑ᵢzᵢ^(kᵢ)=1}, π₂X=π₃X=0. Therefore Ω²X is connected and simply connected, using the existing path-component and homotopy-shift equivalences. (PHAM, Part I §2, deformation-retraction lemma, pp.337–338, PHAM lines 204–221; §§5.2–5.3 and the supplied native homotopy-loop shifts.)
 
 The simple-connectivity statement holds for native generalized double loops based at every point of the Fermat fibre.
 
@@ -737,6 +738,7 @@ A proof can proceed as follows. The join is (n−2)-connected with n−2≥3. Tr
 
 **Checks.**
 
+- At n=5 and every k_i=2, X≃S⁴ has π₂=π₃=0, hence π₀Ω²X is a singleton and π₁Ω²X=0. A singleton root factor instead gives a contractible X and the same vanishings.
 - n=4,k=2 gives X≃S³ and π₁Ω²X≅ℤ, so n≥5 is required for simple connectivity.
 
 *Needs:* §5.3; Tau Ceti `HomotopyGroup.zerothHomotopyEquiv`; Tau Ceti `HomotopyGroup.piLoopSpaceMulEquiv`; TauCetiRoadmap.AlgebraicTopology Stage 8.
@@ -1043,18 +1045,33 @@ Topological affine vanishing feeds restriction and Gysin criteria for smooth amp
 
 For an affine R-variety U of dimension d and any G-module M used as constant complex-locus coefficients, restriction H_G^i(U(C),M)→H_G^i(U(R),M) is an isomorphism for i>d. (BW v3, Lemma 1.16, p.25, BW line 978.)
 
-For smooth U over ℝ consume the affine CW dimension bound and cohomological vanishing of AffineMorseLefschetz A2–A3. The additional target here is Hⁱ(U(C),M)=0 for i>d for singular affine U and for arbitrary real closed R, initially for finitely generated constant coefficients, together with its parameter-uniform finite-semialgebraic-model comparison. No smoothness or pure-dimensionality hypothesis is added to the restriction theorem. (GM, Part II §1.1*, special cases, p.152, GM line 5587; the singular attachment argument on p.148, GM lines 5428–5457; BW v3 Lemma 1.16, p.25, BW lines 978–986, for the arbitrary-real-closed vanishing used there.)
+For smooth U over ℝ consume the affine CW dimension bound and cohomological vanishing of AffineMorseLefschetz A2–A3. The additional target here is Hⁱ(U(C),M)=0 for i>d for singular affine U and for arbitrary real closed R, initially for finitely generated constant coefficients, together with the uniform affine-family triviality target specified below. No smoothness or pure-dimensionality hypothesis is added to the restriction theorem. (GM, Part II §1.1*, special cases, p.152, GM line 5587; the singular attachment argument on p.148, GM lines 5428–5457; BW v3 Lemma 1.16, p.25, BW lines 978–986, for the arbitrary-real-closed vanishing used there.)
 
-A proof can proceed as follows. For singular affine U over ℝ use a proper semialgebraic stratified Morse exhaustion. Prove the local attachment estimates needed for this extension: at a stratum of complex dimension a the tangential index is at most a and the normal Morse data has a CW model of dimension at most d−a, using induction on the complex links. These estimates and their compatible attachments yield the dimension-d cohomological bound; they are the singular extension’s proof targets here, not an application of smooth Morse theory to a singular space (GM, Part II introduction, p.148, GM lines 5432–5457, and Chapter 4, p.177, GM lines 6483–6488). Prove the parameter-uniform semialgebraic finite-model comparison and transport this bound by real-closed transfer; an embedding of R into ℝ is not assumed. Combine it with the real-locus dimension bound Hⁱ(U(R),M)=0 for i>d and the high-degree free-complement bound. Descend through the two real-complex exact sequences while varying M, and pass to all G-modules using exact filtered-colimit comparison from MotivesAndAlgebraicCycles §7.6a.
+A proof can proceed as follows. For singular affine U over ℝ use a proper semialgebraic stratified Morse exhaustion. Prove the local attachment estimates needed for this extension: at a stratum of complex dimension a the tangential index is at most a and the normal Morse data has a CW model of dimension at most d−a, using induction on the complex links. These estimates and their compatible attachments yield the dimension-d cohomological bound; they are the singular extension’s proof targets here, not an application of smooth Morse theory to a singular space (GM, Part II introduction, p.148, GM lines 5432–5457, and Chapter 4, p.177, GM lines 6483–6488). Apply the uniform affine-family triviality target below, followed by the real-closed-extension invariance of MotivesAndAlgebraicCycles §7.6a, to transport this bound; no embedding of R into ℝ is assumed. Combine it with the real-locus dimension bound Hⁱ(U(R),M)=0 for i>d and the high-degree free-complement bound. Descend through the two real-complex exact sequences while varying M, and pass to all G-modules using the finite-cover coefficient-colimit specialization below of SchemeAndStackFoundations §2.5.
+
+The uniform affine-family triviality target has these quantifiers. For every ambient dimension a, number b of defining equations and degree bound D, let P be the ℚ-definable coefficient parameter space for b polynomials of degree at most D in a variables. On the universal complex locus, expressed in 2a real coordinates, construct a finite semialgebraic partition of P, defined over the field A of real algebraic numbers, and semialgebraic homeomorphisms over each nonempty piece P_λ of the form V|P_λ≅P_λ×V_(p_λ), where p_λ∈P_λ(A). Refine the partition by the algebraic fibre dimension d. The same defining formulas are trivializations over every real closed extension R/A. Thus V_p for p∈P_λ(R) is semialgebraically homeomorphic to (V_(p_λ))_R; comparing this A-fibre with its extension to ℝ transfers the singular-affine dimension-d cohomological bound. This asserts triviality over a finite partition, not Zariski local triviality or triviality across dimension changes. (BCR, Theorem 9.3.2, uncertified publisher locator; the coefficient-family specialization and dimension refinement are targets here.)
+
+- The trivialization commutes with projection to P_λ, so it identifies each individual fibre rather than only total spaces.
+- Restricting a piece restricts its trivialization, and extension of real closed fields preserves its formulas and inverse identities.
+- Every nonempty piece has an A-point by real closed transfer; empty pieces have no chosen point or fibre. Refinement by dimension retains the complex dimension used in the bound.
+
+The finite-cover coefficient-colimit specialization is also a target here: for every small filtered diagram of constant G-modules M_α, every degree i and finite-atlas semialgebraic V, identify colim H^i(V,M_α) with H^i(V,colim M_α), and likewise for equivariant cohomology and the pair with an invariant closed semialgebraic subset. To apply SchemeAndStackFoundations §2.5’s `cohomology_filtered_colimits`, take B to be all semialgebraic opens of V and Cov all finite admissible open covers: intersections remain in B, these covers generate the site and are cofinal, and V is terminal in B. For the equivariant form use the degreewise finite-rank C₂ resolution and the first-quadrant cohomology spectral sequence (finitely many terms in each total degree). For the pair use the extension-by-zero sequence and exactness of filtered colimits. Finitely generated invariant submodules exhaust every G-module because G is finite; finite invariant submodules exhaust a torsion G-module. (BW v3 §1.1.1–1.1.3, BW lines 310–378, for the site and pair; SchemeAndStackFoundations §2.5 for the colimit theorem.)
+
+- All comparison maps are the natural coefficient maps, with source the colimit of cohomology and target cohomology of the sheafified colimit.
+- Restriction, the two C₂ differentials and the pair boundary commute with these comparisons.
+- Constant coefficients commute with the sheaf colimit, and the comparisons are preserved by real closed extension through the supplied invariance maps.
 
 **Checks.**
 
+- For the family z²=t over A, the complex fibre at t=0 is one point and at t≠0 consists of two points, with H⁰ ranks 1 and 2. No trivialization can cross t=0. A partition into t<0, t=0, t>0 admits anchors −1,0,1 in A, also after non-Archimedean extension.
+- The constant family xy=0 has complex dimension 1 and every fibre contracts to its node; H⁰=M, H^i=0 for i>0 before and after extension. The empty variety has all groups zero; its parameter piece needs no fictitious nonempty fibre.
+- At a fixed point take M=colim_r ℤ/2ʳ=ℚ₂/ℤ₂ with trivial action and transition maps x↦2x. In positive odd degree, the kernel-of-2 generators map to each other, giving colim ℤ/2=ℤ/2=M[2]; in positive even degree the quotient-by-2 maps are zero, giving colim 0=M/2M. On a finite discrete two-point site, colim(M_α²)=(colim M_α)²; for the pair of a point with itself both sides are 0. The infinite discrete ordinary topology instead admits infinitely many covering members: colim_r (ℤ^r)^ℕ consists of sequences lying in one bounded coordinate submodule, strictly smaller than (⊕_ℕℤ)^ℕ, which contains (e_j)_j.
 - The cutoff is strict: degree d is not included.
 - For U=𝔾_m over ℝ, d=1, ordinary H¹(ℂ*,ℤ)=ℤ, so the affine ordinary bound cannot include degree d. For the real-empty affine dimension-zero scheme Spec ℂ over ℝ, the complex locus is a free orbit: degree 0 restriction is ℤ→0, whereas every positive-degree map is 0→0.
 - The singular affine curve xy=0 has two complex lines meeting at a point and contracts by scalar multiplication, so H¹=H²=0. At its zero-dimensional stratum the complex link has two points: its cone pair contributes at most one real cell dimension, not the ambient real dimension 2.
 - The square-zero thickening Spec R[x,ε]/(ε²) has the same real and complex loci as A¹: constant-coefficient H⁰= M and positive ordinary cohomology is 0. The dimension-one bound depends on the reduced point space, not on a smooth scheme presentation.
 
-*Needs:* TauCetiRoadmap.MotivesAndAlgebraicCycles §7.6a; §7.5; TauCetiRoadmap.AffineMorseLefschetz A2–A3 and A4.1 (the real-closed triangulation and dimension contract); TauCetiRoadmap.RealAlgebraicGeometry Layers 3 and 6; TauCetiRoadmap.AlgebraicTopology Stages 4 and 6; the singular attachment estimates and parameter-uniform finite-model comparison of this section.
+*Needs:* TauCetiRoadmap.MotivesAndAlgebraicCycles §7.6a; §7.5; TauCetiRoadmap.AffineMorseLefschetz A2–A3 and A4.1 (the real-closed triangulation and dimension contract); TauCetiRoadmap.RealAlgebraicGeometry Layers 3 and 6; TauCetiRoadmap.AlgebraicTopology Stages 4 and 6; the singular attachment estimates, uniform affine-family triviality and finite-cover coefficient-colimit specialization of this section; TauCetiRoadmap.SchemeAndStackFoundations §2.5.
 
 ### 11.2 Real-empty equivariant weak Lefschetz
 
@@ -1099,14 +1116,14 @@ A proof can proceed as follows. Use the preceding-degree boundary in the localiz
 
 For an affine R-variety U of dimension d and a torsion G-module M, H_G^i(U(C),U(R);M)=0 for i>d. This is stronger than high-degree restriction alone in its first vanishing degree. (SCHEIDERER, Corollary 18.11, uncertified locator; BW v3, Remark 1.17(ii), p.26, BW line 1012.)
 
-A proof can proceed as follows. Prove the relative affine bound for finite torsion coefficients, including degree d+1. The relative finite-model argument must control the cokernel of degree-d restriction, which the isomorphism for i>d alone does not control. Pass to arbitrary torsion G-modules using finite invariant submodules and exact filtered-colimit comparison on the finite-cover site.
+A proof can proceed as follows. Prove the relative affine bound for finite torsion coefficients, including degree d+1. The relative finite-model argument must control the cokernel of degree-d restriction, which the isomorphism for i>d alone does not control. Pass to arbitrary torsion G-modules using finite invariant submodules and the ordinary, equivariant and pair coefficient-colimit specialization of §11.1, from SchemeAndStackFoundations §2.5.
 
 **Checks.**
 
 - State the torsion hypothesis; i=d+1 needs a boundary-degree argument.
 - For U=ℝ-affine line, the pair (ℂ,ℝ) is equivariantly contractible onto its fixed line, so all relative groups vanish. For U=𝔾_m with 𝔽₂ coefficients, choose the ambient degree-one classes ω and the equivariant class of the square cover z↦z². Their evaluations on positive and negative real components are (1,1) and (0,1), so restriction has matrix [[1,0],[1,1]], determinant 1, cokernel 0 and relative H²=0. Isomorphisms in degrees >1 alone do not compute that cokernel.
 
-*Needs:* TauCetiRoadmap.MotivesAndAlgebraicCycles §7.6a; §11.1; TauCetiRoadmap.RealAlgebraicGeometry Layers 3 and 6; TauCetiRoadmap.AffineMorseLefschetz A4.1 (the real-closed triangulation and dimension contract).
+*Needs:* TauCetiRoadmap.MotivesAndAlgebraicCycles §7.6a; §11.1, including its coefficient-colimit specialization; TauCetiRoadmap.SchemeAndStackFoundations §2.5; TauCetiRoadmap.RealAlgebraicGeometry Layers 3 and 6; TauCetiRoadmap.AffineMorseLefschetz A4.1 (the real-closed triangulation and dimension contract).
 
 ### Examples
 
@@ -1114,24 +1131,22 @@ A real-empty affine zero-dimensional variety has degree-zero equivariant cohomol
 
 ### Dependencies
 
-TauCetiRoadmap.MotivesAndAlgebraicCycles §7.6a; §7.5; TauCetiRoadmap.RealAlgebraicGeometry Layers 3 and 6; TauCetiRoadmap.AffineMorseLefschetz A2–A3 and A4.1 (the real-closed triangulation and dimension contract); TauCetiRoadmap.AlgebraicTopology Stages 4 and 6; the singular attachment estimates and parameter-uniform finite-model comparison of §11.1; §11.1; TauCetiRoadmap.MotivesAndAlgebraicCycles §7.6b; §9.1; §11.3.
+TauCetiRoadmap.MotivesAndAlgebraicCycles §7.6a; §7.5; TauCetiRoadmap.RealAlgebraicGeometry Layers 3 and 6; TauCetiRoadmap.AffineMorseLefschetz A2–A3 and A4.1 (the real-closed triangulation and dimension contract); TauCetiRoadmap.AlgebraicTopology Stages 4 and 6; the singular attachment estimates, uniform affine-family triviality and finite-cover coefficient-colimit specialization of §11.1; TauCetiRoadmap.SchemeAndStackFoundations §2.5; §11.1; TauCetiRoadmap.MotivesAndAlgebraicCycles §7.6b; §9.1; §11.3.
 
 ## Layer 12: Steenrod operations and real characteristic classes
 
-Semialgebraic Steenrod squares, their Wu formula for real proper maps, the identification of γ over ℝ, and tangent-bundle parity for compact surfaces.
+The supplied semialgebraic Steenrod squares and real proper-pushforward formula, the identification of γ over ℝ, and tangent-bundle parity for compact surfaces.
 
 ### 12.2 Steenrod-conjugated real pushforward
 
-For a proper map f:Y→X of smooth R-varieties, extend the supplied compatibility on admissible cycle degrees to every equivariant mod-two cohomology degree: under total fixed-locus coordinates, restriction of complex equivariant Gysin equals Sq∘`f_(R,*)`∘Sq⁻¹ applied to restricted coordinates. Complex shift is twice the dimension difference; the ordinary real Gysin inside the formula has the real dimension shift. (BW v3, Proposition 1.22, pp.29–31, BW line 1130.)
-
-A proof can proceed as follows. Use the Thom identity for the normal orientation class to compute the self-intersection and proper-map square correction. Express the total equivariant restriction as fixed-locus coordinates and conjugate by the total square operation. For nonproper varieties use the graph embedding into a product with a sphere. Use the supported-operation comparison and extension of real closed fields from MotivesAndAlgebraicCycles §7.6b to transport the Thom and proper-map identities. This is the field-extension step of BW v3 Proposition 1.22, pp.30–31.
+Consume the all-degree formula of MotivesAndAlgebraicCycles §7.6b through gap:steenrod-conjugated-real-pushforward. For proper f:Y→X between smooth irreducible R-varieties, its degree-n complex mod-two Gysin has target degree m=n+2(dim X−dim Y). In total fixed-locus coordinates its restriction is Sq∘f_(R,*)∘Sq⁻¹, with the real dimension shift inside the expression. This is the supplied statement, including its finite coordinate windows. (BW v3, Proposition 1.22, pp.29–31, BW lines 1130–1148.)
 
 **Checks.**
 
 - For identity f the expression is identity; for a real point inclusion it reproduces the normal class.
 - For the identity, Sq∘id∘Sq⁻¹=id. For pt→ℙ¹, real Gysin gives the top degree-one class a of RP¹ and Sq(a)=a because a²=0; the complex degree-two restriction has ordinary coordinate a, rather than an ordinary degree-two class on RP¹.
 
-*Needs:* TauCetiRoadmap.MotivesAndAlgebraicCycles §7.6b; §9.1; §9.2.
+*Needs:* TauCetiRoadmap.MotivesAndAlgebraicCycles §7.6b, gap:steenrod-conjugated-real-pushforward; §9.1 for coordinates; §9.2 for the normal-class Check.
 
 ### 12.3 Real self-intersection and Stiefel–Whitney
 
@@ -1146,7 +1161,7 @@ A proof can proceed as follows. Identify the normal bundle of X(ℝ)⊂X(ℂ) wi
 - The Klein bottle has nonzero w₁ but deg w₁²=0=χ mod 2. In the connected-sum-of-two-projective-planes basis, the pairing is diag(1,1) and w₁=(1,1), whose square is 1+1=0. For RP² the corresponding matrix is (1), giving square 1; for the torus it is the alternating matrix [[0,1],[1,0]], with characteristic element 0.
 - A closed disk has w₁=0 and χ=1; it has boundary and is excluded from the surface evaluation theorem.
 
-*Needs:* TauCetiRoadmap.CharacteristicClasses §§C2.3 and C3.2; TauCetiRoadmap.TangentialBordism §B4 item 3; §9.2; TauCetiRoadmap.MotivesAndAlgebraicCycles §7.6b; TauCetiRoadmap.AlgebraicTopology Stage 6; TauCetiRoadmap.AlgebraicTopology Stage 7; TauCetiRoadmap.GeometricTopology Layer 1.
+*Needs:* TauCetiRoadmap.CharacteristicClasses §§C2.3 and C3.2; TauCetiRoadmap.TangentialBordism §B4 item 3; §9.2; TauCetiRoadmap.MotivesAndAlgebraicCycles §7.6b (gap:steenrod-conjugated-real-pushforward); TauCetiRoadmap.AlgebraicTopology Stage 6; TauCetiRoadmap.AlgebraicTopology Stage 7; TauCetiRoadmap.GeometricTopology Layer 1.
 
 ### 12.4 Transverse mod-two surface loops
 
@@ -1167,7 +1182,7 @@ On RP², Sq¹(a)=a² and Sq²(a)=0. The projective plane has degree w₁²=1; th
 
 ### Dependencies
 
-TauCetiRoadmap.MotivesAndAlgebraicCycles §7.6b; §9.1; §9.2; TauCetiRoadmap.CharacteristicClasses §§C2.3 and C3.2; TauCetiRoadmap.TangentialBordism §B4 item 3; TauCetiRoadmap.AlgebraicTopology Stage 6; TauCetiRoadmap.AlgebraicTopology Stage 7; TauCetiRoadmap.GeometricTopology Layer 1; §12.3; TauCetiRoadmap.AlgebraicTopology Stage 4; TauCetiRoadmap.DifferentialGeometry Layers 2, 3 and 10; relative surface perturbation in this section.
+TauCetiRoadmap.MotivesAndAlgebraicCycles §7.6b (gap:steenrod-conjugated-real-pushforward); §9.1; §9.2; TauCetiRoadmap.CharacteristicClasses §§C2.3 and C3.2; TauCetiRoadmap.TangentialBordism §B4 item 3; TauCetiRoadmap.AlgebraicTopology Stage 6; TauCetiRoadmap.AlgebraicTopology Stage 7; TauCetiRoadmap.GeometricTopology Layer 1; §12.3; TauCetiRoadmap.AlgebraicTopology Stage 4; TauCetiRoadmap.DifferentialGeometry Layers 2, 3 and 10; relative surface perturbation in this section.
 
 ## Layer 13: near-top equivariant applications
 
@@ -1188,12 +1203,14 @@ A proof can proceed as follows. Use the parity-restricted splitting with i=2d−
 
 ### 13.2 Cup-ω near the top degree
 
-Let X/R be smooth proper geometrically connected pure-d, d≥2, with ordinary H²ᵈ⁻¹(X(C),ℤ) finite of odd order. Cup by ω maps H_G²ᵈ⁻²(X(C),ℤ(d−1)) onto H_G²ᵈ⁻¹(X(C),ℤ(d))[2] with kernel the ordinary norm image, and gives an isomorphism from that 2-torsion group to H_G²ᵈ(X(C),ℤ(d+1)). If X(R)≠∅, the next cup-ω map to H_G²ᵈ⁺¹(X(C),ℤ(d+2)) is also an isomorphism. X is smooth proper geometrically connected, d≥2. Ordinary penultimate integral cohomology is finite of odd order; the last map additionally needs a real point. (BW v3, Lemma 3.15, pp.46–47, BW line 1838.)
+Let X/R be smooth proper geometrically connected pure-d, with ordinary H²ᵈ⁻¹(X(C),ℤ) finite of odd order. Cup by ω maps H_G²ᵈ⁻²(X(C),ℤ(d−1)) onto H_G²ᵈ⁻¹(X(C),ℤ(d))[2] with kernel the ordinary norm image, and gives an isomorphism from that 2-torsion group to H_G²ᵈ(X(C),ℤ(d+1)). If X(R)≠∅, the next cup-ω map to H_G²ᵈ⁺¹(X(C),ℤ(d+2)) is also an isomorphism. X is smooth proper geometrically connected, with d≥0. Ordinary penultimate integral cohomology is finite of odd order; the last map additionally needs a real point. (BW v3, Lemma 3.15, pp.46–47, BW line 1838.)
 
 A proof can proceed as follows. Read kernels and images from the two real-complex long exact sequences. Use odd-order ordinary penultimate cohomology and ordinary top-degree orientation/norm calculations to identify the 2-primary parts. For the last map use evaluation at a real point and high-degree restriction. The algebraic implication from absence of Picard 2-torsion belongs to the downstream comparison; this theorem assumes the ordinary-cohomology condition itself.
 
 **Checks.**
 
+- For d=0, X=Spec R: the first two groups are in degrees −2 and −1 and are zero, as is H⁰(G,ℤ(1)); the last map is 0→H¹(G,ℤ(2))=0.
+- For d=1, X=ℙ¹_R has H¹(ℂP¹,ℤ)=0 of odd order 1. The first map is ℤ→ℤ/2, reduction modulo 2, with norm image 2ℤ; H¹_G(ℂP¹,ℤ(1))[2], H²_G(ℂP¹,ℤ(2)) and H³_G(ℂP¹,ℤ(3)) are each ℤ/2 and the next two maps are identities. The dimension-one case is included.
 - A real point is required only for the last isomorphism; the algebraic Picard comparison is not used as a prerequisite here.
 - For X=ℙ², H³(ℂP²,ℤ)=0 has odd order 1. In the fixed-locus coordinates, cup by ω carries the degree-one 𝔽₂ coordinate in H_G³(ℂP²,ℤ(2))[2] identically into H_G⁴(ℂP²,ℤ(3)); the next map preserves it. Zero is a finite group of odd order, so it is included.
 
@@ -1286,16 +1303,16 @@ The construction has the following API, with the hypotheses of this section.
 
 ### 14.4 Cyclic Ext-stalk comparison for the circle construction
 
-For the equivariant abelian sheaves restricted to a real circle C with trivial C₂-action, specialize SchemeAndStackFoundations §2.23’s finite-group sheaf-Ext stalk comparison to obtain (Ext̲_G^q(ℤ,F))_x≅H^q(G,F_x). If F_x≅ℤ[G]^k, these stalks vanish for q>0. Generic equivariant Ext and its finite-group stalk theorem remain at the reserved SchemeAndStackFoundations §2.23 owner; this target identifies the periodic cochain comparison used by the circle construction. (B19, Lemma 7.5 proof, p.99, citing Tôhoku §4.4, B19 line 1484.)
+For the equivariant abelian sheaves restricted to a real circle C with trivial C₂-action, consume the semialgebraic specialization in MotivesAndAlgebraicCycles §7.6a (gap:semialgebraic-ext-stalk) of SchemeAndStackFoundations §2.23’s finite-group sheaf-Ext stalk comparison to obtain (Ext̲_G^q(ℤ,F))_x≅H^q(G,F_x). If F_x≅ℤ[G]^k, these stalks vanish for q>0. Generic equivariant Ext and its finite-group stalk theorem remain at the reserved SchemeAndStackFoundations §2.23 owner; this target identifies the periodic cochain comparison used by the circle construction. (B19, Lemma 7.5 proof, p.99, citing Tôhoku §4.4, B19 line 1484.)
 
-A proof can proceed as follows. Specialize the generic finite-group sheaf-Ext stalk theorem from SchemeAndStackFoundations §2.23. Identify the C₂ periodic model with the native cyclic complex by the sign comparison, and apply regular-module Shapiro. Carry naturality on subarcs; this is not a global Ext=stalk assertion.
+A proof can proceed as follows. Use the declared semialgebraic-site Ext comparison; over ℝ compare it with the ordinary ringed-space theorem. For arbitrary real closed R the finite-cover site is retained, without asserting a site-to-ordinary-space comparison. Identify the C₂ periodic model with the native cyclic complex by the sign comparison, and apply regular-module Shapiro. Carry naturality on subarcs; this is not a global Ext=stalk assertion.
 
 **Checks.**
 
 - A trivial ℤ stalk has nonzero degree-two C₂ cohomology, whereas a regular ℤ[C₂] stalk has none in positive degrees. This concerns sheaf Ext stalks, not global Ext.
 - At a point, a trivial ℤ stalk has H¹=0 and H²=𝔽₂; a sign ℤ stalk has H¹=𝔽₂ and H²=0. A regular ℤ[C₂] stalk has both groups zero. Thus sheaf-Ext vanishing uses regular stalks, not merely free abelian stalks.
 
-*Needs:* TauCetiRoadmap.MotivesAndAlgebraicCycles §7.6a; §7.3; TauCetiRoadmap.SchemeAndStackFoundations §2.23.
+*Needs:* TauCetiRoadmap.MotivesAndAlgebraicCycles §7.6a (gap:semialgebraic-ext-stalk); §7.3; TauCetiRoadmap.SchemeAndStackFoundations §2.23.
 
 ### Examples
 
@@ -1303,7 +1320,7 @@ On a transverse disc the branched trace is multiplication by 2 at the origin; th
 
 ### Dependencies
 
-TauCetiRoadmap.MotivesAndAlgebraicCycles §7.6a; TauCetiRoadmap.AlgebraicTopology Stage 5; §14.1; §7.6; TauCetiRoadmap.SchemeAndStackFoundations §2.23; §7.3.
+TauCetiRoadmap.MotivesAndAlgebraicCycles §7.6a (gap:semialgebraic-ext-stalk); TauCetiRoadmap.AlgebraicTopology Stage 5; §14.1; §7.6; TauCetiRoadmap.SchemeAndStackFoundations §2.23; §7.3.
 
 ## Layer 15: permutation quotients and integral lifts
 
@@ -1361,7 +1378,9 @@ A proof can proceed as follows. Compare the coefficient Bockstein sequence with 
 
 **Checks.**
 
-- No Brauer class is a hypothesis; its role in the paper is only to supply the Bockstein vanishing.
+- In the constant local model with n=2 and two fixed sheets over a fixed point, H²(G,ℤ(1)⊕Q(1))=0. The nonzero a∈H²(G,ℤ/2)=𝔽₂ has pulled-back Bockstein (1,1)∈H³(G,ℤ(1)²)=𝔽₂² and does not lift.
+- With two exchanged sheets, P=ℤ[G] and Q(1)=ℤ with trivial action. The nonzero ζ∈H²(G,Q(1))=𝔽₂ maps under −φ to a=1; upstairs H³=0, so the obstruction vanishes and the class lifts. These are constant local tests of the mixed sequence, not surface theorems for points.
+- For n=1, ℤ/n=Q=0 and a=η=ζ=0 is a lift. The zero coefficient class also lifts in both two-sheet models.
 
 *Needs:* §15.1; TauCetiRoadmap.MotivesAndAlgebraicCycles §7.6a.
 
@@ -1380,19 +1399,20 @@ A proof can proceed as follows. Reduce b modulo n and use ψ mod n=diagφ to obt
 
 ### 15.5 Cyclic reduction in adjacent sign degrees
 
-For n even and A=ℤ/n with sign action, H¹(G,A)=A/2A and H²(G,A)=A[2]. Under their standard 𝔽₂ identifications, reduction A→𝔽₂ is identity on H¹ and multiplication by (n/2 mod 2) on H². Thus the two truncated-degree reduction maps cannot always both be identities. (B19, Equations (7.7)–(7.9), pp.99–100; direct cyclic-resolution calculation, B19 line 1490.)
+For a positive even integer n and A=ℤ/n with sign action, H¹(G,A)=A/2A and H²(G,A)=A[2]. Under their standard 𝔽₂ identifications, reduction A→𝔽₂ is identity on H¹ and multiplication by (n/2 mod 2) on H². Thus the two truncated-degree reduction maps cannot always both be identities. (B19, Equations (7.7)–(7.9), pp.99–100; direct cyclic-resolution calculation, B19 line 1490.)
 
 A proof can proceed as follows. For sign action the differentials alternate −2 and 0. Represent H¹ by the class of 1 and H² by n/2; reduce those representatives modulo two.
 
 **Checks.**
 
+- At n=0, A=ℤ has sign cohomology H¹=ℤ/2 and H²=0; a degree-two 𝔽₂ identification is unavailable, so this case is excluded.
 - n=2: both maps are identity; n=4: H¹ map is identity and H² map is zero; n=6: both are identity.
 
 *Needs:* §7.3; §7.6.
 
 ### 15.6 Circle extension and obstruction class
 
-Restrict the preceding degree-n trace data, n even, to an embedded fixed-locus circle C where each permutation stalk P_x is ℤ[G]-free. Set E=coker[(φ₂,1+σ):Q(1)→𝔽₂⊕Q(1)^G], where φ₂ is reduction of φ. Then 0→𝔽₂→E→𝔽₂→0 is exact. If ζ∈H_G²(C,Q(1)) has (φζ)_2=1 under the H_G²(C,ℤ/n(1)) fixed-cochain degree-two projection, the boundary of 1 in this extension is the degree-one component of φζ. n is positive and even; C is a fixed-locus embedded circle. Every P stalk on C is free over ℤ[C₂]. The input ζ has normalized degree-two component in sign-coefficient cyclic cohomology. (B19, Equations (7.5)–(7.9), Lemma 7.5, pp.99–100, B19 line 1472.)
+Restrict the preceding degree-n trace data, n positive and even, to an embedded fixed-locus circle C where each permutation stalk P_x is ℤ[G]-free. Set E=coker[(φ₂,1+σ):Q(1)→𝔽₂⊕Q(1)^G], where φ₂ is reduction of φ. Then 0→𝔽₂→E→𝔽₂→0 is exact. If ζ∈H_G²(C,Q(1)) has (φζ)_2=1 under the H_G²(C,ℤ/n(1)) fixed-cochain degree-two projection, the boundary of 1 in this extension is the degree-one component of φζ. n is positive and even; C is a fixed-locus embedded circle. Every P stalk on C is free over ℤ[C₂]. The input ζ has normalized degree-two component in sign-coefficient cyclic cohomology. (B19, Equations (7.5)–(7.9), Lemma 7.5, pp.99–100, B19 line 1472.)
 
 A proof can proceed as follows. Use vanishing of positive cohomology of the free permutation stalks to identify the two-degree truncation of R Hom_G(ℤ,Q(1)). Write the comparison using the actual reduction maps from Layer 15, keeping n modulo four. The cokernel extension’s connecting class is obtained by lifting the quotient unit through those truncated cochains.
 
@@ -1416,7 +1436,7 @@ The construction has the following API, with the hypotheses of this section.
 
 ### Examples
 
-For n=4 and a=(1,0,0,0), ψ[a]=(−3,1,1,1) and its trace is 0. The negative vector reduces to the constant vector 3 modulo 4; the positive vector reduces to 1. In sign cohomology the H¹ reduction is always 1↦1 for even n, while H² reduction is (n/2) mod 2: values 1,0,1 at n=2,4,6. (B19 §§7.1–7.4, pp.97–100, B19 lines 1382,1444,1490.)
+For n=4 and a=(1,0,0,0), ψ[a]=(−3,1,1,1) and its trace is 0. The negative vector reduces to the constant vector 3 modulo 4; the positive vector reduces to 1. In sign cohomology the H¹ reduction is always 1↦1 for positive even n, while H² reduction is (n/2) mod 2: values 1,0,1 at n=2,4,6. (B19 §§7.1–7.4, pp.97–100, B19 lines 1382,1444,1490.)
 
 ### Dependencies
 
@@ -1513,3 +1533,5 @@ The BW locators below and throughout the build refer to arXiv:1801.00872v3, whos
 - **MILNOR-STASHEFF.** John W. Milnor; James D. Stasheff. [Characteristic Classes](https://webhomes.maths.ed.ac.uk/~v1ranick/papers/milnstas.pdf). Annals of Mathematics Studies 76 (1974); Corollary 11.12, p.130, and Theorem 11.14, pp.132–133.
 
 - **GM.** Mark Goresky; Robert MacPherson. [Stratified Morse Theory](https://www.math.ias.edu/~goresky/pdf/SMT.pdf). Ergebnisse der Mathematik, 3. Folge 14 (1988); Part II introduction p.148, §1.1* p.152, and Chapter 4 p.177; author-hosted scan.
+
+- **BCR.** J. Bochnak; M. Coste; M.-F. Roy. [Real Algebraic Geometry](https://doi.org/10.1007/978-3-662-03718-8) (1998), Theorem 9.3.2 (uncertified publisher locator), for the uniform affine-family triviality target of §11.1.
