@@ -9,9 +9,9 @@ compositions and the completion at infinity, including the empty composition.
 The following headlines are not statable with the pinned interfaces and a few
 simple definitions: Anderson–Thakur interpolation and entire Frobenius
 specialisation need the Carlitz period, Omega and its analytic twist; Chang's
-general descent theorem needs the MZ-property carrier over C-infinity; the ABP
+general descent theorem for MZ-property values needs the MZ-property carrier
+over C-infinity (its grading consequence for MZVs is stated below); the ABP
 independence criterion and Eulerian suffix theorem need the merged analytic
-prefix system; general twisted-system rigidity needs its character-decorated
 prefix system; the full description of relations
 needs the constructed q-shuffle rewriting operator; period character splitting
 and normalised ACMPL period relations need their period realisation; the v-adic
@@ -144,6 +144,23 @@ theorem strong_brown_spanning (F : Type*) [Field F] [Fintype F] [DecidableEq (Ra
       alternatingPolylogSpace F w := by
   sorry
 
+/-! ## Layer 3: deformation periods and ABP independence -/
+
+/-- Chang's grading theorem (Chang 2014, Theorem 2.2.1(1)): in any common
+overfield of the infinity completion and an algebraic closure of K with
+compatible K-embeddings, the spans over that algebraic closure of the MZVs of
+the different weights are independent; weight zero contributes the scalars. -/
+theorem zeta_algebra_graded (F : Type*) [Field F] [Fintype F]
+    [DecidableEq (RatFunc F)] (E : Type*) [Field E]
+    [Algebra (RatFunc F) E] [Algebra (RatFunc.CompletionAtInfty F) E]
+    [Algebra (AlgebraicClosure (RatFunc F)) E]
+    [IsScalarTower (RatFunc F) (RatFunc.CompletionAtInfty F) E]
+    [IsScalarTower (RatFunc F) (AlgebraicClosure (RatFunc F)) E] :
+    iSupIndep (fun w : ℕ => Submodule.span (AlgebraicClosure (RatFunc F))
+      (Set.range fun s : Composition w =>
+        algebraMap (RatFunc.CompletionAtInfty F) E (multipleZeta F s (fun _ => 1)))) := by
+  sorry
+
 /-! ## Layer 4: Frobenius difference solution spaces -/
 
 /-- Prefixes of the reduced q-indivisible family: later parts are multiples of
@@ -195,6 +212,28 @@ theorem frobenius_solution_dimension (F : Type*) [Field F] [Fintype F] (w : ℕ)
     Module.Finite (RatFunc F) (frobeniusSolutionSpace F w) ∧
       Module.finrank (RatFunc F) (frobeniusSolutionSpace F w) =
         if Fintype.card F - 1 ∣ w then 1 else 0 := by
+  sorry
+
+/-- Character-twisted rigidity (Im–Kim–Le–Ngo Dac–Pham, proof of Theorem 3.4,
+Case 1 and Subcase 1): on the reduced prefix tree, after one forward coefficient
+twist, the system whose root children carry a (q-1)-st root γ of ε has only the
+zero polynomial solution in positive weight when q-1 does not divide w or ε ≠ 1.
+The polynomial variable is t and θ is the constant `RatFunc.X`. -/
+theorem twisted_system_rigidity (F : Type*) [Field F] [Fintype F]
+    (w : ℕ) (hw : 0 < w) (ε : Fˣ)
+    (hε : ¬ Fintype.card F - 1 ∣ w ∨ ε ≠ 1) :
+    let q := Fintype.card F
+    let B := AlgebraicClosure (RatFunc F)
+    let θ : Polynomial B := Polynomial.C (algebraMap (RatFunc F) B RatFunc.X)
+    let twist := Polynomial.mapRingHom (FiniteField.frobeniusAlgHom F B).toRingHom
+    ∀ (γ : B) (δ : List ℕ → Polynomial B),
+      γ ^ (q - 1) = algebraMap F B (ε : F) →
+      (∀ l, l ∉ reducedPrefixes q w → δ l = 0) →
+      (∀ l ∈ reducedPrefixes q w, twist (δ l) =
+        (δ l + Polynomial.C (if l = [] then γ else 1) *
+          ∑ n ∈ Finset.range w, δ (l ++ [n + 1])) *
+          (Polynomial.X - θ ^ q) ^ (w - l.sum)) →
+      δ = 0 := by
   sorry
 
 /-- Ngo Dac's two-row rigidity theorem in its exact small-weight polynomial
@@ -314,12 +353,24 @@ theorem alternating_dimension (F : Type*) [Field F] [Fintype F] [DecidableEq (Ra
       alternatingNumber (Fintype.card F) w := by
   sorry
 
-/-- The direct AMZV index family of the companion Note, through weight 3q-3. -/
+/-- The direct AMZV index family of the companion Note, through weight 3q-2:
+no entry q up to weight 2q-2; up to weight 3q-3, no entry in {q, 2q-1, 2q} or
+exactly one adjacent pair (q-1, q); at weight 3q-2 for q > 2, no entry in
+{q, 2q-1, 2q, 3q-2}, or exactly one adjacent pair (q-1, q) or (2q-2, q) other
+than (q-1, q-1, q), or (q-1, 2q-1); at q = 2 and weight 4, three listed tuples. -/
 def directIndices (q w : ℕ) : Set (Composition w) :=
-  {s | if w ≤ 2 * q - 2 then ∀ a ∈ s.blocks, a ≠ q else
-    (∀ a ∈ s.blocks, a ≠ q ∧ a ≠ 2 * q - 1 ∧ a ≠ 2 * q) ∨
-      ∃! i : Fin (s.length - 1),
-        s.blocks[i.val]? = some (q - 1) ∧ s.blocks[i.val + 1]? = some q}
+  {s | if w ≤ 2 * q - 2 then ∀ a ∈ s.blocks, a ≠ q
+    else if w ≤ 3 * q - 3 then
+      (∀ a ∈ s.blocks, a ≠ q ∧ a ≠ 2 * q - 1 ∧ a ≠ 2 * q) ∨
+        ∃! i : Fin (s.length - 1),
+          s.blocks[i.val]? = some (q - 1) ∧ s.blocks[i.val + 1]? = some q
+    else if q = 2 then s.blocks ∈ [[2, 1, 1], [1, 2, 1], [1, 3]]
+    else
+      (∀ a ∈ s.blocks, a ≠ q ∧ a ≠ 2 * q - 1 ∧ a ≠ 2 * q ∧ a ≠ 3 * q - 2) ∨
+        (s.blocks ≠ [q - 1, q - 1, q] ∧ ∃! i : Fin (s.length - 1),
+          (s.blocks[i.val]? = some (q - 1) ∨ s.blocks[i.val]? = some (2 * q - 2)) ∧
+            s.blocks[i.val + 1]? = some q) ∨
+        s.blocks = [q - 1, 2 * q - 1]}
 
 /-- Direct AMZV spanning through weight 2q-1 by Thakur arrays whose q entries
 carry character one. This statement does not pass through CMPL values. -/
@@ -332,11 +383,12 @@ theorem direct_small_weight_spanning (F : Type*) [Field F] [Fintype F]
       multipleZeta F a.1.1 a.1.2) = alternatingZetaSpace F w := by
   sorry
 
-/-- Direct independence of the companion Note's AMZVs through weight 3q-3
-for every finite field of more than two elements. -/
+/-- Direct independence of the companion Note's AMZVs through weight 3q-2
+for every finite field, with character one over the entries q and 2q-1
+(the Note, Theorem 1.6). -/
 theorem direct_small_weight_independent (F : Type*) [Field F] [Fintype F]
-    [DecidableEq (RatFunc F)] (hq : 2 < Fintype.card F)
-    (w : ℕ) (hw : w ≤ 3 * Fintype.card F - 3) :
+    [DecidableEq (RatFunc F)]
+    (w : ℕ) (hw : w ≤ 3 * Fintype.card F - 2) :
     LinearIndependent (RatFunc F) (fun a :
       {a : (Σ s : Composition w, Fin s.length → Fˣ) //
         a.1 ∈ directIndices (Fintype.card F) w ∧ ∀ i,

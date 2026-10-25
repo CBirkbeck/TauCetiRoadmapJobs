@@ -4742,7 +4742,7 @@
    "slug": "general-power-sum-degree",
    "supplier": "DrinfeldModulesAndTModules",
    "section": "DM.6",
-   "needs": "For every prime power q, k ≥ 1 and d ≥ 0, the power sum S_d(k) must be nonzero and satisfy degθ S_{d+1}(k) < degθ S_d(k)."
+   "needs": "For every prime power q, k ≥ 1 and d ≥ 0, the power sum S_d(k) must be nonzero and satisfy degθ S_(d+1)(k) < degθ S_d(k)."
   },
   {
    "title": "Proof of the Anderson–Thakur interpolation formula",
@@ -4753,7 +4753,7 @@
    "slug": "anderson-thakur-generating-series",
    "supplier": "DrinfeldModulesAndTModules",
    "section": "DM.6",
-   "needs": "The generating series of depth-one power sums in Carlitz-exponential coefficients and the polynomials γ_j must yield the Anderson–Thakur interpolation identity used in §3.2."
+   "needs": "For every finite field with q elements and every d ≥ 0, the identity Σ_(n≥1) S_d(n)x^(n−1) = ℓ_d⁻¹(1 − Σ_(0≤j≤d) γ_j(θ^(q^d))(x/ℓ_d)^(q^j)/D_j)⁻¹ must hold in K[[x]], where γ_0 = 1, γ_j(t) = ∏_(1≤i≤j)(θ^(q^j) − t^(q^i)) as in §3.1, ℓ_d and D_j are the nonzero Carlitz products, and γ_j(θ^(q^d)) = 0 for j > d (Anderson–Thakur 1990, §§3.6–3.7, (3.6.4) and (3.7.1)–(3.7.4), pp. 185–186, AT90 line 750; Anderson–Thakur 2009, §2.4.1)."
   },
   {
    "title": "v-adic multiple zeta values and the Chang–Mishiba homomorphism",
@@ -4776,7 +4776,13 @@
    "slug": "parent-period-analytic-field",
    "supplier": "DrinfeldModulesAndTModules",
    "section": "DM.2",
-   "needs": "C∞ and its embeddings, the Carlitz exponential and logarithm, the chosen period π̃ and Ω must satisfy the domain, product, twist, valuation and period-power identities used in Layer 3."
+   "needs": "For every finite field, C∞ with its embeddings of K∞ and K̄, the entire F_q-linear Carlitz exponential e_C(z) = Σ_(d≥0) z^(q^d)/D_d, the Carlitz logarithm log_C(z) = Σ_(d≥0) z^(q^d)/ℓ_d convergent on |z|∞ < q^(q/(q−1)) with e_C(log_C(z)) = z there, and the product e_C(z) = z∏_(0≠a∈A)(1 − z/(aπ̃)) with ker e_C = π̃A must be supplied."
+  },
+  {
+   "slug": "parent-carlitz-omega",
+   "supplier": "DrinfeldModulesAndTModules",
+   "section": "DM.2/omega",
+   "needs": "For every (q−1)-st root ρ of −θ, Ω(t) = ρ⁻ᑫ∏_(i≥1)(1 − t/θ^(qⁱ)) must be entire with coefficients in K∞(ρ) and satisfy Ω⁽⁻¹⁾ = (t − θ)Ω, and π̃ = Ω(θ)⁻¹ must generate ker e_C, with v∞(π̃) = −q/(q−1) and π̃^(q−1) ∈ K∞ independent of ρ."
   },
   {
    "slug": "parent-effective-dual-motives",
@@ -4785,10 +4791,34 @@
    "needs": "Effective dual t-motives must admit the stated finite-free inverse-Frobenius matrix interpretation without requiring finite generation over K̄[σ]."
   },
   {
-   "slug": "parent-abp-interface",
+   "slug": "parent-twisted-analytic-rings",
    "supplier": "DrinfeldModulesAndTModules",
    "section": "DM.8",
-   "needs": "The arithmetic entire-series ring, coefficient twist, fixed-field theorems, entire-from-equation theorem, nonzero-determinant ABP lifting, constant-denominator theorem and uniqueness of fundamental matrices must be provided with the hypotheses in this contract."
+   "needs": "The coefficientwise twist f ↦ f⁽ⁿ⁾ (n ∈ ℤ) on C∞[[t]] must be a ring automorphism fixing t that preserves T, with ‖f⁽ⁿ⁾‖ = ‖f‖^(qⁿ), and preserves E, and the fixed rings and fields of the inverse twist σ must be T^σ = E^σ = F_q[t] and Frac(T)^σ = K̄(t)^σ = F_q(t)."
+  },
+  {
+   "slug": "parent-abp-interface",
+   "supplier": "DrinfeldModulesAndTModules",
+   "section": "DM.8/abp-lifting",
+   "needs": "If Φ ∈ Mat_ℓ(K̄[t]) has det Φ = c(t − θ)ᵐ with c ∈ K̄ˣ, ψ ∈ Mat_(ℓ×1)(E) satisfies ψ⁽⁻¹⁾ = Φψ and ρ ∈ Mat_(1×ℓ)(K̄) satisfies ρψ(θ) = 0, then there must be P ∈ Mat_(1×ℓ)(K̄[t]) with P(θ) = ρ and Pψ = 0."
+  },
+  {
+   "slug": "abp-entire-from-equation",
+   "supplier": "DrinfeldModulesAndTModules",
+   "section": "DM.8/entire-from-equation",
+   "needs": "If Φ ∈ Mat_ℓ(K̄[t]) has det Φ(0) ≠ 0 and ψ ∈ Mat_(ℓ×1)(T) satisfies ψ⁽⁻¹⁾ = Φψ, then ψ must lie in Mat_(ℓ×1)(E)."
+  },
+  {
+   "slug": "frobenius-constant-denominator",
+   "supplier": "DrinfeldModulesAndTModules",
+   "section": "DM.8/constant-denominator",
+   "needs": "If Φ_i ∈ Mat_(r_i)(K̄[t]) have det Φ_i = c_i(t − θ)^(m_i) with c_i ∈ K̄ˣ for i = 1, 2 and U ∈ Mat_(r_1×r_2)(K̄(t)) satisfies U⁽⁻¹⁾Φ_2 = Φ_1U, then the monic least common denominator of the entries of U must lie in F_q[t]."
+  },
+  {
+   "slug": "frobenius-fundamental-matrix",
+   "supplier": "DrinfeldModulesAndTModules",
+   "section": "DM.8/fundamental-matrix",
+   "needs": "If Φ ∈ GL_n(K̄(t)) and Ψ, Ψ′ ∈ GL_n(Frac(T)) both satisfy X⁽⁻¹⁾ = ΦX, then Ψ′ = ΨC for a unique C ∈ GL_n(F_q(t))."
   },
   {
    "slug": "parent-small-power-sums",

@@ -40,7 +40,8 @@ A matrix acts on a column from the left, and a trivialisation satisfies Ψ⁽⁻
 - `Composition` in `Mathlib/Combinatorics/Enumerative/Composition.lean`: positive block lists with prescribed sum, `Composition.length`, `Composition.blocksFun`, their positivity and sum laws, `Composition.sizeUpTo`, and `composition_card`. Its empty composition is present at weight zero; no real-MZV admissibility condition is included.
 - `Polynomial` in `Mathlib/Algebra/Polynomial/Basic.lean`, `Polynomial.Monic` in `Mathlib/Algebra/Polynomial/Degree/Defs.lean`, and `RatFunc` in `Mathlib/FieldTheory/RatFunc/Defs.lean`: A, K and the polynomial coefficient maps. Monicity means leading coefficient one and excludes zero over a field.
 - `RatFunc.inftyValuation`, `RatFunc.inftyValuation.polynomial`, `RatFunc.inftyValuation.X`, `RatFunc.inftyValuation.X_inv` and `RatFunc.CompletionAtInfty` in `Mathlib/FieldTheory/RatFunc/Valuation.lean`: the multiplicative integer-valued infinity valuation and its completion. Passing to |·|∞ = q to the degree is a normalization; the native value group is not the real numbers. The completion derives `Field` and `Algebra (RatFunc F)`.
-- `Submodule.span` in `Mathlib/LinearAlgebra/Span/Defs.lean`, `Finsupp` and `Finsupp.single` in `Mathlib/Data/Finsupp/Defs.lean`, `LinearIndependent`, `Module.finrank`, `HasSum` and `tsum`: finite support, spans, dimensions and convergence on the native carriers.
+- `Submodule.span` in `Mathlib/LinearAlgebra/Span/Defs.lean`, `Finsupp` in `Mathlib/Data/Finsupp/Defs.lean`, `Finsupp.single` in `Mathlib/Data/Finsupp/Single.lean`, `LinearIndependent`, `Module.finrank`, `HasSum` and `tsum`: finite support, spans, dimensions and convergence on the native carriers. `Finsupp.single a b` sends a to b and every other index to 0; for b = 0 its support is empty.
+- `iSupIndep` in `Mathlib/Order/SupIndep.lean`: a family of submodules is independent when each meets the supremum of the others only in zero. Over K̄, the lines spanned by 1 and by a nonzero x are independent exactly when x ∉ K̄; for x = −1/D₁ they coincide.
 - `FiniteField.card'` in `Mathlib/FieldTheory/Finite/Basic.lean` identifies the cardinality of a finite field as a positive power of a prime. At F₄ it gives 4 = 2², matching the q-versus-p Check.
 - `Nat.choose` in `Mathlib/Data/Nat/Choose/Basic.lean` and `FiniteField.sum_pow_units` in `Mathlib/FieldTheory/Finite/Basic.lean`: binomial coefficients and the sum of natural powers over Fˣ. Negative powers are transferred by the inversion bijection. At q = 3, the sums of first and second powers of units are 0 and 2 = −1; the exponent-zero sum is also −1.
 
@@ -59,24 +60,43 @@ Sections 0.1–0.3 and 1.1–1.2 supply native restricted-series coefficient and
 The depth-one boundary is the following exact contract. The statements are requirements on that supplier, including the explicitly registered gaps.
 
 - DM.0/carlitz-products supplies the products ℓ_d, D_d, their nonvanishing and their norm formulas. At d = 0 both products equal one; at d = 1 their sum is zero.
-- DM.2/c-infinity, carlitz-exponential, lattice-exponential, carlitz-period, period-power and omega supply C∞ with its embeddings, e_C and log_C with their convergence domains, the product with kernel π̃A, the chosen period and Ω. They include e_C(z) = z + zᑫ/D₁ + higher terms, Ω⁽⁻¹⁾ = (t−θ)Ω, π̃ = Ω(θ)⁻¹ and v∞(π̃) = −q/(q−1). These formulas give the q = 3 witnesses in the conventions.
+- DM.2/c-infinity, carlitz-exponential, lattice-exponential and carlitz-period supply C∞, the completion of an algebraic closure of K∞, containing K̄ as the algebraic closure of K; the Carlitz exponential e_C(z) = Σ_(d≥0) z^(q^d)/D_d, F_q-linear and convergent on all of C∞; the Carlitz logarithm log_C(z) = Σ_(d≥0) z^(q^d)/ℓ_d, convergent on the disc |z|∞ < q^(q/(q−1)), with e_C(log_C(z)) = z there; and the product e_C(z) = z∏_(0≠a∈A)(1 − z/(aπ̃)), so that ker e_C = π̃A. The general term of log_C has absolute value q^(q/(q−1))·(|z|∞/q^(q/(q−1)))^(q^d), so the disc is exactly the convergence domain.
+- DM.2/omega, carlitz-period and period-power supply, for every (q−1)-st root ρ of −θ, the series Ω(t) = ρ⁻ᑫ∏_(i≥1)(1 − t/θ^(qⁱ)), entire with coefficients in K∞(ρ), with Ω⁽⁻¹⁾ = (t−θ)Ω; the element π̃ = Ω(θ)⁻¹ generates ker e_C, v∞(π̃) = −q/(q−1), and π̃^(q−1) ∈ K∞ does not depend on ρ. They include e_C(z) = z + zᑫ/D₁ + higher terms. These formulas give the q = 3 witnesses in the conventions; replacing ρ by ξρ with ξ ∈ Fˣ multiplies π̃ by ξ, which preserves π̃A.
 - DM.4/inverse-twist-dual-motive supplies the effective dual t-motive category with the finite-free, injective semilinear action and power-torsion cokernel specified above, plus its matrix interpretation.
 - DM.6/small-power-sum supplies S_d(n) = ℓ_d⁻ⁿ for d ≥ 0 and 1 ≤ n ≤ q. At d = 0 this is 1 = 1; the n = q+1 statement is not part of this contract.
-- DM.8/coefficient-twist, tate-analytic-interface, entire-series, analytic-fixed-fields, entire-from-equation, abp-lifting, constant-denominator and fundamental-matrix supply the coefficientwise twist; the arithmetic ring E; the fixed fields; the passage from a Tate solution to E when det Φ(0) ≠ 0; ABP lifting when det Φ = c(t−θ)ᵐ with c ≠ 0; common denominators in F[t]; and uniqueness of fundamental matrices up to a matrix over F(t). On a two-term polynomial the twist fixes t, and for Φ = ((t−θ,0),(t−θ,1)) the determinant is t−θ, not zero.
+- DM.8/coefficient-twist, tate-analytic-interface, entire-series and analytic-fixed-fields supply the twist f ↦ f⁽ⁿ⁾ (n ∈ ℤ) on C∞[[t]], raising every coefficient to its qⁿ-th power and fixing t; it is a ring automorphism preserving the Tate algebra T of series convergent on |t|∞ ≤ 1, with ‖f⁽ⁿ⁾‖ = ‖f‖^(qⁿ) for the Gauss norm, and preserving the ring E of series with coefficients in K̄ generating a finite extension of K∞ and with infinite radius of convergence. Writing σ for the inverse twist, the fixed rings and fields are T^σ = E^σ = F_q[t] and Frac(T)^σ = K̄(t)^σ = F_q(t) (Papanikolas 2008, §2.2 and Lemma 3.3.2, PAP08 lines 346 and 564).
+- DM.8/entire-from-equation supplies: if Φ ∈ Mat_ℓ(K̄[t]) has det Φ(0) ≠ 0 and ψ ∈ Mat_(ℓ×1)(T) satisfies ψ⁽⁻¹⁾ = Φψ, then ψ ∈ Mat_(ℓ×1)(E) (ABP04 Proposition 3.1.3, ABP04 line 409).
+- DM.8/abp-lifting supplies: if Φ ∈ Mat_ℓ(K̄[t]) has det Φ = c(t−θ)ᵐ with c ∈ K̄ˣ and m ≥ 0, ψ ∈ Mat_(ℓ×1)(E) satisfies ψ⁽⁻¹⁾ = Φψ, and ρ ∈ Mat_(1×ℓ)(K̄) satisfies ρψ(θ) = 0, then some P ∈ Mat_(1×ℓ)(K̄[t]) has P(θ) = ρ and Pψ = 0 (ABP04 Theorem 3.1.1, ABP04 line 346).
+- DM.8/constant-denominator supplies: if Φ_i ∈ Mat_(r_i)(K̄[t]) have det Φ_i = c_i(t−θ)^(m_i) with c_i ∈ K̄ˣ (i = 1, 2) and U ∈ Mat_(r_1×r_2)(K̄(t)) satisfies U⁽⁻¹⁾Φ_2 = Φ_1U, then the monic least common denominator of the entries of U lies in F_q[t] (CPY19 Proposition 2.2.1, CPY19 line 245, where the matrix of the rationalised homomorphism is over K̄(t)).
+- DM.8/fundamental-matrix supplies: if Φ ∈ GL_n(K̄(t)) and Ψ, Ψ′ ∈ GL_n(Frac(T)) both satisfy X⁽⁻¹⁾ = ΦX, then Ψ′ = ΨC for a unique C ∈ GL_n(F_q(t)) (PAP08 §4.1.6, PAP08 line 1033).
+
+Witnesses for these hypotheses: on a two-term polynomial the twist fixes t. For Φ = ((t−θ,0),(t−θ,1)) the determinant is t−θ, so both det Φ(0) = −θ ≠ 0 and the lifting hypothesis hold; a determinant c(t−θ)ᵐ with c ≠ 0 has the nonzero value c(−θ)ᵐ at 0, while the zero matrix satisfies neither hypothesis. For Φ_1 = Φ_2 = (1) and U = (1/t), U⁽⁻¹⁾ = U and the denominator is t ∈ F_q[t] although U is not polynomial; U = (1/(t−θ)) is not a solution, since its inverse twist is 1/(t−θ^(1/q)).
 
 What DrinfeldModulesAndTModules must provide (gap:general-power-sum-degree): For every prime power q, k ≥ 1 and d ≥ 0, the power sum S_d(k) must be nonzero and satisfy degθ S_(d+1)(k) < degθ S_d(k).
 
-What DrinfeldModulesAndTModules must provide (gap:anderson-thakur-generating-series): The generating series of depth-one power sums in Carlitz-exponential coefficients and the polynomials γ_j must yield the Anderson–Thakur interpolation identity used in §3.2.
+What DrinfeldModulesAndTModules must provide (gap:anderson-thakur-generating-series): For every finite field with q elements and every d ≥ 0, the identity Σ_(n≥1) S_d(n)x^(n−1) = ℓ_d⁻¹(1 − Σ_(0≤j≤d) γ_j(θ^(q^d))(x/ℓ_d)^(q^j)/D_j)⁻¹ must hold in K[[x]], where γ_0 = 1, γ_j(t) = ∏_(1≤i≤j)(θ^(q^j) − t^(q^i)) as in §3.1, ℓ_d and D_j are the nonzero Carlitz products, and γ_j(θ^(q^d)) = 0 for j > d (Anderson–Thakur 1990, §§3.6–3.7, (3.6.4) and (3.7.1)–(3.7.4), pp. 185–186, AT90 line 750; Anderson–Thakur 2009, §2.4.1).
+
+At d = 0 both sides are (1 − x)⁻¹, since γ_j(θ) = 0 for j ≥ 1. At d = 1 the constant coefficients are S_1(1) = ℓ_1⁻¹ on both sides, and the right side equals ℓ_1⁻¹(1 − (x^q − x)/D_1)⁻¹, the reciprocal of ℓ_1 − ℓ_1(x^q − x)/D_1 = ℓ_1 + x^q − x. Comparing x^(n−1) after the substitution x ↦ x/ℓ_d in the defining series of α_n gives S_d(n) = α_n(θ^(q^d))/(Γ_nℓ_dⁿ), which is the input of §3.2.
 
 What DrinfeldModulesAndTModules must provide (gap:v-adic-mzv-specialisation): For every finite place v of F(θ), the v-adic MZVs and their K-algebra specialisation from infinity-adic MZVs must be defined in every weight and send ζ_A(q−1) to zero.
 
 What DrinfeldModulesAndTModules must provide (gap:parent-carlitz-products): The Carlitz products ℓ_d and D_d must have their nonvanishing, recursion and infinity-norm formulas for every finite field.
 
-What DrinfeldModulesAndTModules must provide (gap:parent-period-analytic-field): C∞ and its embeddings, the Carlitz exponential and logarithm, the chosen period π̃ and Ω must satisfy the domain, product, twist, valuation and period-power identities used in Layer 3.
+What DrinfeldModulesAndTModules must provide (gap:parent-period-analytic-field): For every finite field, C∞ with its embeddings of K∞ and K̄, the entire F_q-linear Carlitz exponential e_C(z) = Σ_(d≥0) z^(q^d)/D_d, the Carlitz logarithm log_C(z) = Σ_(d≥0) z^(q^d)/ℓ_d convergent on |z|∞ < q^(q/(q−1)) with e_C(log_C(z)) = z there, and the product e_C(z) = z∏_(0≠a∈A)(1 − z/(aπ̃)) with ker e_C = π̃A must be supplied.
+
+What DrinfeldModulesAndTModules must provide (gap:parent-carlitz-omega): For every (q−1)-st root ρ of −θ, Ω(t) = ρ⁻ᑫ∏_(i≥1)(1 − t/θ^(qⁱ)) must be entire with coefficients in K∞(ρ) and satisfy Ω⁽⁻¹⁾ = (t − θ)Ω, and π̃ = Ω(θ)⁻¹ must generate ker e_C, with v∞(π̃) = −q/(q−1) and π̃^(q−1) ∈ K∞ independent of ρ.
 
 What DrinfeldModulesAndTModules must provide (gap:parent-effective-dual-motives): Effective dual t-motives must admit the stated finite-free inverse-Frobenius matrix interpretation without requiring finite generation over K̄[σ].
 
-What DrinfeldModulesAndTModules must provide (gap:parent-abp-interface): The arithmetic entire-series ring, coefficient twist, fixed-field theorems, entire-from-equation theorem, nonzero-determinant ABP lifting, constant-denominator theorem and uniqueness of fundamental matrices must be provided with the hypotheses in this contract.
+What DrinfeldModulesAndTModules must provide (gap:parent-twisted-analytic-rings): The coefficientwise twist f ↦ f⁽ⁿ⁾ (n ∈ ℤ) on C∞[[t]] must be a ring automorphism fixing t that preserves T, with ‖f⁽ⁿ⁾‖ = ‖f‖^(qⁿ), and preserves E, and the fixed rings and fields of the inverse twist σ must be T^σ = E^σ = F_q[t] and Frac(T)^σ = K̄(t)^σ = F_q(t).
+
+What DrinfeldModulesAndTModules must provide (gap:parent-abp-interface): If Φ ∈ Mat_ℓ(K̄[t]) has det Φ = c(t − θ)ᵐ with c ∈ K̄ˣ, ψ ∈ Mat_(ℓ×1)(E) satisfies ψ⁽⁻¹⁾ = Φψ and ρ ∈ Mat_(1×ℓ)(K̄) satisfies ρψ(θ) = 0, then there must be P ∈ Mat_(1×ℓ)(K̄[t]) with P(θ) = ρ and Pψ = 0.
+
+What DrinfeldModulesAndTModules must provide (gap:abp-entire-from-equation): If Φ ∈ Mat_ℓ(K̄[t]) has det Φ(0) ≠ 0 and ψ ∈ Mat_(ℓ×1)(T) satisfies ψ⁽⁻¹⁾ = Φψ, then ψ must lie in Mat_(ℓ×1)(E).
+
+What DrinfeldModulesAndTModules must provide (gap:frobenius-constant-denominator): If Φ_i ∈ Mat_(r_i)(K̄[t]) have det Φ_i = c_i(t − θ)^(m_i) with c_i ∈ K̄ˣ for i = 1, 2 and U ∈ Mat_(r_1×r_2)(K̄(t)) satisfies U⁽⁻¹⁾Φ_2 = Φ_1U, then the monic least common denominator of the entries of U must lie in F_q[t].
+
+What DrinfeldModulesAndTModules must provide (gap:frobenius-fundamental-matrix): If Φ ∈ GL_n(K̄(t)) and Ψ, Ψ′ ∈ GL_n(Frac(T)) both satisfy X⁽⁻¹⁾ = ΦX, then Ψ′ = ΨC for a unique C ∈ GL_n(F_q(t)).
 
 What DrinfeldModulesAndTModules must provide (gap:parent-small-power-sums): For every finite field of cardinality q, d ≥ 0 and 1 ≤ n ≤ q, the depth-one power sum must satisfy S_d(n) = ℓ_d⁻ⁿ with the stated sign of ℓ_d.
 
@@ -221,7 +241,7 @@ The signature also includes the empty weight-zero array, whose value is 1 ≠ 0.
 
 - ζ_A(1) has leading term 1; for q = 2, ζ_A(1, 1) has leading term S_1(1) = (θ² + θ)⁻¹ of degree −2.
 
-*Needs:* §0.3; §0.4; DrinfeldModulesAndTModules DM.6/small-power-sum.
+*Needs:* §0.3; §0.4; DrinfeldModulesAndTModules DM.6/small-power-sum; DrinfeldModulesAndTModules DM.6 (gap:general-power-sum-degree).
 
 ### 0.6 Carlitz multiple polylogarithms
 
@@ -359,7 +379,7 @@ One proof route is the following. Each sequence is defined by strong recursion o
 - s(w) ≠ t(w) in general: for q = 3, t(4) = 2(t(3) + t(2) + t(1)) = 48 while s(4) = 46.
 - For q = 2, d(w) is the Fibonacci sequence 1, 1, 2, 3, 5, … (w = 1, 2, …); for q = 3, d(1), …, d(4) = 1, 2, 3, 6 and s(1), …, s(4) = 2, 6, 16, 46.
 
-*Needs:* .
+*Needs:* no earlier target; the sequences are defined by recursion.
 
 ### 0.12 Counting Thakur and Hoffman index sets
 
@@ -414,7 +434,7 @@ At q = 2, weight three has four compositions, but Iᵀ₃ = {(1,1,1),(2,1)} and 
 
 ### Dependencies
 
-The exact target needs above specify each mathematical object and proof-route input. External inputs: DrinfeldModulesAndTModules DM.0/carlitz-products, DrinfeldModulesAndTModules DM.2/c-infinity, DrinfeldModulesAndTModules DM.2/carlitz-exponential, DrinfeldModulesAndTModules DM.2/carlitz-period, DrinfeldModulesAndTModules DM.2/lattice-exponential, DrinfeldModulesAndTModules DM.2/period-power, DrinfeldModulesAndTModules DM.6/small-power-sum, Mathlib Composition, Mathlib FiniteField.sum_pow_units, Mathlib Polynomial.Monic, Mathlib RatFunc, Mathlib RatFunc.CompletionAtInfty, Mathlib RatFunc.inftyValuation, Mathlib Submodule.span.
+The exact target needs above specify each mathematical object and proof-route input. External inputs: DrinfeldModulesAndTModules DM.0/carlitz-products, DrinfeldModulesAndTModules DM.2/c-infinity, DrinfeldModulesAndTModules DM.2/carlitz-exponential, DrinfeldModulesAndTModules DM.2/carlitz-period, DrinfeldModulesAndTModules DM.2/lattice-exponential, DrinfeldModulesAndTModules DM.2/period-power, DrinfeldModulesAndTModules DM.6/small-power-sum, DrinfeldModulesAndTModules DM.6 (gap:general-power-sum-degree), Mathlib Composition, Mathlib FiniteField.sum_pow_units, Mathlib Polynomial.Monic, Mathlib RatFunc, Mathlib RatFunc.CompletionAtInfty, Mathlib RatFunc.inftyValuation, Mathlib Submodule.span.
 
 ## Layer 1: products and value algebras
 
@@ -479,7 +499,7 @@ One proof route is the following. The q-shuffle product is defined by recursion 
 - (n) ⊞ P is not [n] + P: (2) ⊞ [1, 1] = [3, 1].
 - [1] ∗ [1] = 2[1, 1] + [2]; for q = 2, [1] ∗^ζ [2] = [1, 2] + [2, 1] + [3] + [2, 1] = [1, 2] + [3] (characteristic 2 coefficients).
 
-*Needs:* PeriodsAndSpecialValues §PS.9.2 (integral stuffle contract); §0.1; §1.1; Mathlib `Finsupp`.
+*Needs:* PeriodsAndSpecialValues §PS.9.2 (gap:integral-positive-index-stuffle); §0.1; §1.1; Mathlib `Finsupp`.
 
 ### 1.4 The realisation maps
 
@@ -538,7 +558,10 @@ One proof route is the following. Sum the expansions of §1.6 over d: ζ_A(ε; s
 
 **Checks.**
 
-- ζ_A(1)² = ζ_A(2) + 2ζ_A(1, 1); for q = 2, ζ_A(1)ζ_A(2) = ζ_A(3) + ζ_A(1, 2) .
+- Unit: ζ_A(∅) = 1 lies in Z_0 = K and ζ_A(∅)ζ_A(s) = ζ_A(s) has weight 0 + wt(s); likewise Li(∅) = 1 in L_0. A definition of Z as Σ_(w≥1) Z_w would omit 1 and give no unital subalgebra.
+- For q = 3, ζ_A(1)² = ζ_A(2) + 2ζ_A(1, 1) in Z_2, of depth at most 1 + 1. The uncorrected guess ζ_A(1)² = ζ_A(2) fails: the difference 2ζ_A(1, 1) has leading term 2S_1(1) = 2ℓ_1⁻¹, of valuation 3. All entries are ≤ q, so the same identity reads Li(1)² = Li(2) + 2Li(1, 1) in L_2.
+- For q = 2, ζ_A(1)ζ_A(2) = ζ_A(3) + ζ_A(1, 2), the realisation of [1] ∗^ζ [2] = [1, 2] + [3]. Applying the stuffle expansion [1, 2] + [2, 1] + [3] to MZVs would add ζ_A(2, 1) ≠ 0 (§0.5); the stuffle expansion is the one realised by CMPLs, Li(1)Li(2) = Li(1, 2) + Li(2, 1) + Li(3).
+- Alternating values, q = 3: ζ_A(−1; 1)² = ζ_A(2) + 2ζ_A(−1, −1; 1, 1) in AZ_2. The product of two values of character −1 is a combination of arrays of character 1, and the q-shuffle correction vanishes here because q − 1 = 2 does not divide 1.
 
 *Needs:* §0.9; §1.6; §1.5.
 
@@ -625,7 +648,8 @@ One proof route is the following. B*: multiply Σ_(e<d)R(e) = Σ a_i S_(<d)(ε_i
 - C_∅ is the identity, and B*_∅ is the identity.
 - B*_0 is not defined: the operator needs a positive head v ≥ 1.
 - For q = 2, C₍₁₎(R_1) has the coefficient θ² − θ on S_(d+1)(1, 2): the coefficients of C lie in K, not in F_p.
-- B*_(q)(R_1) followed by subtraction of C_((1,q−1))(R_1) is BC_q(R_1), whose fixed part is S_d(q, q).
+- BC_q(R_1) = B*_(q)(R_1) − D_1C_((1,q−1))(R_1), the coefficient D_1 being the shifted coefficient b of R_1; its fixed part is S_d(q, q). At q = 2 and d = 1 the fixed parts of B*_(2)(R_1), C_((1,1))(R_1) and S_1(2, 2) are 0, D_1⁻³ and D_1⁻², and indeed 0 − D_1·D_1⁻³ = D_1⁻² in characteristic two.
+- Subtracting C_((1,q−1))(R_1) without the coefficient D_1 leaves (D_1 − 1)(S_d(q, 1, q − 1) + S_d(q)S_d(1, q − 1)) in the fixed part besides S_d(q, q): at q = 2 and d = 1 its fixed part is 0 − D_1⁻³ ≠ D_1⁻², and the formal coefficient of [2, 1, 1] is D_1 − 1 instead of 0.
 
 *Needs:* §2.1; §2.2; §1.6; §1.3.
 
@@ -783,7 +807,7 @@ Earlier layers 0, 1. The exact target needs above specify each mathematical obje
 
 ## Layer 3: deformation periods and ABP independence
 
-Polynomial tuples satisfy the termwise Gauss bound whenever all tails of a period matrix are used. The weaker whole-tuple condition is used only for initial-prefix columns, where the stated decay implication suffices.
+Polynomial tuples satisfy the termwise Gauss bound whenever all tails of a period matrix are used. The weaker whole-tuple condition is used only for initial-prefix columns and for the Frobenius specialisation of the full series (§3.5 (1)), where the stated decay implication suffices.
 
 ### 3.1 Anderson–Thakur polynomials and Carlitz factorials
 
@@ -814,13 +838,13 @@ One proof route is the following. Expanding the geometric series, the coefficien
 
 s ≥ 1, d ≥ 0; H_s in Ngo Dac’s indexing. For s ≥ 1 and d ≥ 0, (H_s Ω^s)⁽ᵈ⁾(θ) = Γ_s S_d(s)/π̃^s, where f⁽ᵈ⁾ raises coefficients to the q^d-th power (DrinfeldModulesAndTModules DM.8/coefficient-twist) and Ω, π̃ = 1/Ω(θ) are as in DM.2. With a character, if γ ∈ F̄_q satisfies γᑫ⁻¹ = ε, then (γH_sΩ^s)⁽ᵈ⁾(θ) = γε^d Γ_s S_d(s)/π̃^s. (CHANG14, Theorem 5.5.1, p. 18 (CHANG14 line 901); ND21, §4.2, (4.2), p. 17 (ND21 line 1002); CH21, §2.4, Proposition 2.12, p. 13 (CH21 line 593)).
 
-One proof route is the following. This is Anderson–Thakur’s interpolation formula (Anderson–Thakur 1990, (3.7.3)–(3.7.4); Anderson–Thakur 2009, 2.4.1), as stated in Chang 2014 Theorem 5.5.1; its proof expresses S_d(s) through the coefficients of the Carlitz exponential and the polynomials γ_j. The generating-series identity and its finite-place input are specified in the exact supplier contracts. The character version follows from γ^(q^d) = γε^d (§0.6).
+One proof route is the following. This is Anderson–Thakur’s interpolation formula (Anderson–Thakur 1990, (3.7.3)–(3.7.4); Anderson–Thakur 2009, 2.4.1), as stated in Chang 2014 Theorem 5.5.1; its proof expresses S_d(s) through the coefficients of the Carlitz exponential and the polynomials γ_j. The generating-series identity of the supplier contract gives S_d(s) = α_s(θ^(q^d))/(Γ_sℓ_dˢ), and (Ω^s)⁽ᵈ⁾(θ) = π̃⁻ˢ/ℓ_dˢ with H_s⁽ᵈ⁾(θ) = α_s(θ^(q^d)) turns it into the displayed formula. The character version follows from γ^(q^d) = γε^d (§0.6).
 
 **Checks.**
 
 - For s ≤ q, H_s = 1 and Γ_s = 1, and the formula reads Ω⁽ᵈ⁾(θ)^s = S_d(s)/π̃^s, i.e. ℓ_d⁻ˢπ̃⁻ˢ = S_d(s)π̃⁻ˢ, which is Carlitz’s identity, since Ω⁽ᵈ⁾ = Ω/𝕃_d with 𝕃_d(θ) = ℓ_d.
 
-*Needs:* §3.1; §0.2; DrinfeldModulesAndTModules DM.2/omega; DrinfeldModulesAndTModules DM.2/carlitz-period; DrinfeldModulesAndTModules DM.8/coefficient-twist.
+*Needs:* §3.1; §0.2; DrinfeldModulesAndTModules DM.2/omega; DrinfeldModulesAndTModules DM.2/carlitz-period; DrinfeldModulesAndTModules DM.8/coefficient-twist; DrinfeldModulesAndTModules DM.6 (gap:anderson-thakur-generating-series).
 
 ### 3.3 Chang’s deformation series
 
@@ -864,13 +888,16 @@ One proof route is the following. By §3.3, 𝔏(s; Q) and the series of all its
 
 ### 3.5 Specialisations of Chang’s series
 
-Q ∈ K̄[t]^r with the termwise bound; γ_iᑫ⁻¹ = ε_i. (1) For j ≥ 0, 𝔏(s; Q)(θ^(q^j)) = 𝔏(s; Q)(θ)^(q^j). (2) At t = θ: 𝔏(s; H)(θ) = Γ_s ζ_A(s)/π̃ʷᵗ⁽ˢ⁾ with Γ_s = Γ_(s_1)⋯Γ_(s_r); 𝔏(s; ε)(θ) = γ_1⋯γ_r Γ_s ζ_A(ε; s)/π̃ʷᵗ⁽ˢ⁾; 𝔏𝔦(s; ε)(θ) = γ_1⋯γ_r Li(ε; s)/π̃ʷᵗ⁽ˢ⁾; 𝓛(s)(θ) = Li(s)/π̃ʷᵗ⁽ˢ⁾. (CHANG14, Lemma 5.3.5, p. 16; Theorem 5.5.2, (5.5.3), p. 18 (CHANG14 line 792); CPY19, Proposition 2.3.3, p. 7 (CPY19 line 302); ND21, (4.2), p. 17; (5.4), p. 20 (ND21 line 1002); IKLNDP24, (2.3), p. 27; (2.5) and (2.7), p. 29 (IKLNDP24 line 3501); CCM23, §5, p. 22 (CCM23 line 1155); CH21, §2.4, Proposition 2.12, p. 13 (CH21 line 593)).
+For (1), Q ∈ K̄[t]^r with the whole-tuple decay condition of §3.4, which the termwise bound implies; for (2), the four special tuples, which satisfy the termwise bound; γ_iᑫ⁻¹ = ε_i. (1) If Q ∈ K̄[t]^r satisfies ∏_j (‖Q_j‖/|θ|^(q s_j/(q−1)))^(q^(d_j)) → 0 as d_1 > ⋯ > d_r ≥ 0 and d_1 → ∞ (Chang–Papanikolas–Yu (2.3.1)), then 𝔏(s; Q)(θ^(q^j)) = 𝔏(s; Q)(θ)^(q^j) for every j ≥ 0; if some Q_i = 0, the series is 0 and both sides vanish. (2) At t = θ: 𝔏(s; H)(θ) = Γ_s ζ_A(s)/π̃ʷᵗ⁽ˢ⁾ with Γ_s = Γ_(s_1)⋯Γ_(s_r); 𝔏(s; ε)(θ) = γ_1⋯γ_r Γ_s ζ_A(ε; s)/π̃ʷᵗ⁽ˢ⁾; 𝔏𝔦(s; ε)(θ) = γ_1⋯γ_r Li(ε; s)/π̃ʷᵗ⁽ˢ⁾; 𝓛(s)(θ) = Li(s)/π̃ʷᵗ⁽ˢ⁾. (CHANG14, Lemma 5.3.5, p. 16; Theorem 5.5.2, (5.5.3), p. 18 (CHANG14 line 792); CPY19, Proposition 2.3.3, p. 7 (CPY19 line 302); ND21, (4.2), p. 17; (5.4), p. 20 (ND21 line 1002); IKLNDP24, (2.3), p. 27; (2.5) and (2.7), p. 29 (IKLNDP24 line 3501); CCM23, §5, p. 22 (CCM23 line 1155); CH21, §2.4, Proposition 2.12, p. 13 (CH21 line 593)).
 
-One proof route is the following. (1): split the sum at d_r < j and d_r ≥ j. The terms with d_r < j vanish at θ^(q^j), since Ωʷᵗ⁽ˢ⁾ vanishes there to order wt(s) while those terms have poles of order at most s_1 + ⋯ + sᵣ₋₁; the remaining part is the j-fold twist of 𝔏(s; Q), whose value at θ^(q^j) is 𝔏(s; Q)(θ)^(q^j) (Chang Lemma 5.3.5 for constant Q, Chang–Papanikolas–Yu Proposition 2.3.3 in general). (2): at θ, (ΩˢQ)⁽ᵈ⁾(θ) = π̃⁻ˢQ⁽ᵈ⁾(θ)/ℓ_d^s; for Q = H use §3.2 term by term; for Q = γ use γ^(q^d) = γε^d; multiply over the r factors and sum over d_1 > ⋯ > d_r ≥ 0.
+One proof route is the following. (1): assume every Q_i ≠ 0, so that by §3.4 the series of the tuple and of every initial sub-tuple are entire. Split the sum at d_r < j and d_r ≥ j. For fixed d_r < j the terms group into (Ω^(s_r)Q_r)⁽ᵈʳ⁾·𝔏(s_1, …, sᵣ₋₁; Q_1, …, Qᵣ₋₁)⁽ᵈʳ⁺¹⁾; the second factor is entire and the first, Ω^(s_r)Q_r⁽ᵈʳ⁾/𝕃_(d_r)^(s_r), vanishes at θ^(q^j) to order s_r. The remaining part is the j-fold twist of 𝔏(s; Q), whose value at θ^(q^j) is 𝔏(s; Q)(θ)^(q^j) because the series is entire. Only the first column of the period matrix is used, so no tail series is needed (Chang Lemma 5.3.5 for constant Q, Chang–Papanikolas–Yu Proposition 2.3.3 under (2.3.1), CPY19 lines 275 and 325). (2): at θ, (ΩˢQ)⁽ᵈ⁾(θ) = π̃⁻ˢQ⁽ᵈ⁾(θ)/ℓ_d^s; for Q = H use §3.2 term by term; for Q = γ use γ^(q^d) = γε^d; multiply over the r factors and sum over d_1 > ⋯ > d_r ≥ 0.
 
 **Checks.**
 
 - For s = (1) and Q = 1, 𝓛(1)(θ) = Li(1)/π̃ = ζ_A(1)/π̃.
+- At q = 2, s = (1) and Q = 1, the values at θ and θ² are −D₁⁻¹ and D₁⁻², so (1) holds at j = 1: (−D₁⁻¹)² = D₁⁻².
+- At q = 3, s = (2, 2) and Q = (1, t + θ⁴), the whole-tuple exponent −3·3^(d_1) + 3^(d_2) is at most −8·3^(d_2) on d_1 > d_2 and tends to −∞, while ‖Q_2‖ = 3⁴ > 3³ violates the termwise bound. Part (1) applies to 𝔏(s; Q); the tail series 𝔏((2); (t + θ⁴)) has general term of Gauss norm 3^(3^d) and receives no specialisation.
+- For Q = (1, 0) every summand vanishes, so 𝔏(s; Q) = 0 and both sides of (1) are 0; nothing about the prefix (1) follows from this.
 
 *Needs:* §3.3; §3.4; §3.2; §0.3; §0.4; §0.6.
 
@@ -926,7 +953,7 @@ One proof route is the following. The data (Φ, ψ) is a witness; the weight is 
 
 The termwise bound for polynomial Q. The additional general-point assertion uses nonzero algebraic u satisfying Chang’s whole-tuple convergence condition D_s; nonvanishing is required in both cases. For (s; Q) as in §3.3 with 𝔏(s; Q)(θ) ≠ 0, the value π̃ʷᵗ⁽ˢ⁾𝔏(s; Q)(θ) has the MZ property of weight wt(s). In particular every nonzero Li_s(u) with u ∈ D_s ∩ (K̄^×)^r, every ζ_A(s), and every ζ_A(ε; s) and Li(ε; s) whose total character χ(ε) is trivial has the MZ property of weight wt(s); for a general array the normalised values γ_1⋯γ_rΓ_sζ_A(ε; s) and γ_1⋯γ_rLi(ε; s) (γ_iᑫ⁻¹ = ε_i) have it, and so has every nontrivial monomial in such values, with the total weight. (CHANG14, Proposition 5.4.1 and its proof, pp. 16–17 (CHANG14 line 792); IKLNDP24, §2.2.1, paragraph before Proposition 2.3, p. 28 (IKLNDP24 line 3563); ND21, §4.2 and §5.2, pp. 17–20 (ND21 line 1002)).
 
-One proof route is the following. Take Φ = Φ_(s,Q) and ψ the first column of Ψ_(s,Q) (§3.6): ψ⁽⁻¹⁾ = Φψ, det Φ is a power of t − θ, and the last column of Φ is (0, …, 0, 1)^T. ψ(θ) has first entry Ω(θ)ʷᵗ⁽ˢ⁾ = π̃⁻ʷᵗ⁽ˢ⁾ and last entry 𝔏(s; Q)(θ); at θ^(q^N), N ≥ 1, every entry carrying a positive power of Ω vanishes and the last entry is 𝔏(s; Q)(θ)^(q^N) (§3.5). For the larger domain D_s take Q = u and use only Chang’s first column: §3.4 gives convergence and entire-ness of every prefix under the whole-tuple condition, and Chang Lemma 5.3.5 (p. 16) gives their specialisations at θ^(q^N). This proves the same witness conditions without assuming that the full tail matrix Ψ exists on D_s. The named values are the cases Q = u (Chang Proposition 5.4.1), Q = H, γH and γ, using §0.5 and §0.7 for nonvanishing. The constant c of the definition must lie in K^×: c = Γ_s ∈ K^× for ζ_A(s), and γ_1⋯γ_r is a (q − 1)-th root of χ(ε), so it lies in F_q^× ⊂ K^× exactly when χ(ε) = 1; otherwise one keeps the normalised value with c = 1. Monomials: §3.7.
+One proof route is the following. Take Φ = Φ_(s,Q) and ψ the first column of Ψ_(s,Q) (§3.6): ψ⁽⁻¹⁾ = Φψ, det Φ is a power of t − θ, and the last column of Φ is (0, …, 0, 1)^T. ψ(θ) has first entry Ω(θ)ʷᵗ⁽ˢ⁾ = π̃⁻ʷᵗ⁽ˢ⁾ and last entry 𝔏(s; Q)(θ); at θ^(q^N), N ≥ 1, every entry carrying a positive power of Ω vanishes and the last entry is 𝔏(s; Q)(θ)^(q^N) (§3.5). For the larger domain D_s take Q = u and use only Chang’s first column: §3.4 gives convergence and entire-ness of every prefix under the whole-tuple condition, and §3.5 (1) (Chang Lemma 5.3.5, p. 16, for constant u) gives the specialisation of the full series at θ^(q^N). This proves the same witness conditions without assuming that the full tail matrix Ψ exists on D_s. The named values are the cases Q = u (Chang Proposition 5.4.1), Q = H, γH and γ, using §0.5 and §0.7 for nonvanishing. The constant c of the definition must lie in K^×: c = Γ_s ∈ K^× for ζ_A(s), and γ_1⋯γ_r is a (q − 1)-th root of χ(ε), so it lies in F_q^× ⊂ K^× exactly when χ(ε) = 1; otherwise one keeps the normalised value with c = 1. Monomials: §3.7.
 
 **Checks.**
 
@@ -938,11 +965,16 @@ One proof route is the following. Take Φ = Φ_(s,Q) and ψ the first column of 
 
 MZ-property values as in §3.7. Let w_1, …, w_ℓ be distinct positive integers and V_i a finite set of MZ-property values of weight w_i, each V_i K-linearly independent. Then {1} ∪ V_1 ∪ ⋯ ∪ V_ℓ is K̄-linearly independent. Moreover, if Z_1, …, Z_n have the MZ property of the same weight w and π̃^w, Z_1, …, Z_n are K̄-linearly dependent, they are K-linearly dependent. Consequences: (a) MZ-property values of one weight are K-independent iff K̄-independent (Im–Kim–Le–Ngo Dac–Pham Proposition 2.3); (b) the K̄-algebra 𝒵 generated by all MZVs is graded, 𝒵 = K̄ ⊕ ⊕_(w ≥ 1)𝒵_w, and defined over K (K̄ ⊗_K Z → 𝒵 is bijective), and the same holds for CMPL values at algebraic points (Chang Theorems 2.2.1 and 5.4.3); (c) if ζ_A(s)/π̃ʷᵗ⁽ˢ⁾ ∈ K̄ then it lies in K. (CHANG14, Theorem 3.4.5, p. 9, with proof in §§4.1–4.2, pp. 9–12; Proposition 4.3.1, p. 12; Theorem 2.2.1, p. 5; Theorem 5.4.3, p. 17; Corollary 5.5.5, p. 19 (CHANG14 line 385); IKLNDP24, Proposition 2.3, p. 28 (IKLNDP24 line 3563); CCM23, Remark 1.2.6, p. 3; proof of Lemma 5.1.1, p. 23 (CCM23 line 102)).
 
+The headline `zeta_algebra_graded` states the grading in (b) for MZVs (Chang Theorem 2.2.1(1), CHANG14 line 220). In any field E containing K∞ and an algebraic closure K̄ of K whose two K-embeddings agree, the K̄-spans 𝒵_w ⊂ E of the weight-w MZVs, w ≥ 0, form an independent family of K̄-subspaces; 𝒵_0 = K̄ is spanned by ζ_A(∅) = 1. C∞ is one such field, and an automorphism of K̄ over K carries one compatible pair of embeddings to any other, so independence does not depend on E. Together with `thakur_basis` and `thakur_basis_algebraicClosure` it gives that the union over all weights of the Thakur families is K̄-linearly independent and that K̄ ⊗_K Z → 𝒵 is bijective (Chang Theorem 2.2.1(2)).
+
 One proof route is the following. Step I (separation of the top weight w_1 > ⋯): form the block-diagonal system with blocks (t − θ)^(w_1 − w_i)Φᵢⱼ and vectors Ω^(w_1 − w_i)ψᵢⱼ (entries in E, since Ω ∈ E by §3.4); apply ABP lifting (DrinfeldModulesAndTModules DM.8/abp-lifting) to a relation, normalise, and specialise at θ^(q^N), where the lower-weight blocks vanish, to get a K̄-relation inside V_1. Step II (descent from K̄ to K in one weight): lift a K̄-relation by ABP, divide by the last coordinate, compare the twisted and untwisted lifts; the coefficients become σ-invariant rational functions, hence lie in F_q(t) (DrinfeldModulesAndTModules DM.8/analytic-fixed-fields), and specialising gives a K-relation, contradicting the hypothesis. The same argument with the extra entry 1 in place of a weight-w block gives the statement with π̃^w (Chang Proposition 4.3.1). (b) follows by Chang Theorem 5.5.2 (ζ_A(s) = Γ_s⁻¹Σ_u a_u Li_s(u) with u in a finite set of algebraic points) and §3.8; (c) is the case n = 1 of the statement with π̃^w.
 
 **Checks.**
 
 - (a) applied to I^T_w and the basis theorem gives that I^T_w is a K̄-basis of 𝒵_w (Chang–Chen–Mishiba Remark 1.2.6).
+- At q = 3 the Thakur families of weights 0, 1, 2 are {∅}, {(1)} and {(1, 1), (2)}. The grading makes the four values 1, ζ_A(1), ζ_A(1, 1), ζ_A(2) K̄-linearly independent; the three separate one-weight statements allow a relation between the groups, such as one expressing ζ_A(2) through 1 and ζ_A(1).
+- The weight cannot be replaced by a normalisation: at q = 3, ζ_A(2)/π̃² = −1/D₁ lies in K, so the K̄-span of the normalised weight-2 value meets the span of 1. The grading is a property of the values themselves, not of ratios by period powers.
+- Since ζ_A(q − 1) = −π̃^(q−1)/D₁ (§0.13), π̃^(q−1) lies in 𝒵_(q−1), and the grading gives π̃^(q−1) ∉ K̄ = 𝒵_0, in agreement with the transcendence of π̃.
 
 *Needs:* §3.7; §3.8; §3.4; DrinfeldModulesAndTModules DM.8/abp-lifting; DrinfeldModulesAndTModules DM.8/analytic-fixed-fields; DrinfeldModulesAndTModules DM.8/entire-series; DrinfeldModulesAndTModules DM.2/omega.
 
@@ -1005,7 +1037,7 @@ For s = (2,1), the determinant exponent of Φ is 3 + 1 = 4. For q = 3 and Q = (1
 
 ### Dependencies
 
-Earlier layers 0. The exact target needs above specify each mathematical object and proof-route input. External inputs: DrinfeldModulesAndTModules DM.0/carlitz-products, DrinfeldModulesAndTModules DM.2/carlitz-period, DrinfeldModulesAndTModules DM.2/omega, DrinfeldModulesAndTModules DM.4/inverse-twist-dual-motive, DrinfeldModulesAndTModules DM.8/abp-lifting, DrinfeldModulesAndTModules DM.8/analytic-fixed-fields, DrinfeldModulesAndTModules DM.8/coefficient-twist, DrinfeldModulesAndTModules DM.8/constant-denominator, DrinfeldModulesAndTModules DM.8/entire-from-equation, DrinfeldModulesAndTModules DM.8/entire-series, DrinfeldModulesAndTModules DM.8/fundamental-matrix, DrinfeldModulesAndTModules DM.8/tate-analytic-interface, Mathlib Polynomial.
+Earlier layers 0. The exact target needs above specify each mathematical object and proof-route input. External inputs: DrinfeldModulesAndTModules DM.0/carlitz-products, DrinfeldModulesAndTModules DM.2/carlitz-period, DrinfeldModulesAndTModules DM.2/omega, DrinfeldModulesAndTModules DM.6 (gap:anderson-thakur-generating-series), DrinfeldModulesAndTModules DM.4/inverse-twist-dual-motive, DrinfeldModulesAndTModules DM.8/abp-lifting, DrinfeldModulesAndTModules DM.8/analytic-fixed-fields, DrinfeldModulesAndTModules DM.8/coefficient-twist, DrinfeldModulesAndTModules DM.8/constant-denominator, DrinfeldModulesAndTModules DM.8/entire-from-equation, DrinfeldModulesAndTModules DM.8/entire-series, DrinfeldModulesAndTModules DM.8/fundamental-matrix, DrinfeldModulesAndTModules DM.8/tate-analytic-interface, Mathlib Polynomial.
 
 ## Layer 4: Frobenius difference solution spaces
 
@@ -1026,7 +1058,7 @@ The interface includes the following facts.
 
 One proof route is the following. R is stable under twisting because g⁽¹⁾ = g for g ∈ F_q[t]; F_q(t)-linear combinations of solutions are solutions since the twist fixes F_q(t). For s ∈ M the equation reads ε_s⁽¹⁾ = ε_s, so ε_s ∈ F_q(t) (DrinfeldModulesAndTModules DM.8/analytic-fixed-fields).
 
-The native descended carrier is `frobeniusSolutionSpace`, the kernel of the genuine K(t)-linear map `frobeniusResidual`. Its coordinates are polynomial functions in θ with coefficients in F(t), indexed by lists; `reducedPrefixes` is precisely the prefix tree of IND°_w. Coordinates outside that finite tree are zero. At a prefix u, the residual is f_u(θᑫ) − (f_u(θ) + Σ_(1≤n≤w) f_((u,n))(θ))(t−θ)ʷ⁻ʷᵗ⁽ᵘ⁾. This is the original X_w after the descent of §4.3, with no degree truncation and no extra solutions: restriction to the tree and zero extension are inverse F(t)-linear maps. In this polynomial presentation the coefficient parameter t is `RatFunc.X`; the polynomial variable is θ. The residual has source and target the native module of list-indexed polynomials.
+The native descended carrier is `frobeniusSolutionSpace`, the kernel of the F(t)-linear map `frobeniusResidual`; it is not linear over K(t) = F(θ, t), since substituting θ^q for θ does not commute with multiplication by θ. Its coordinates are polynomial functions in θ with coefficients in F(t), indexed by lists; `reducedPrefixes` is precisely the prefix tree of IND°_w. Coordinates outside that finite tree are zero. At a prefix u, the residual is f_u(θᑫ) − (f_u(θ) + Σ_(1≤n≤w) f_((u,n))(θ))(t−θ)ʷ⁻ʷᵗ⁽ᵘ⁾. This is the original X_w after the descent of §4.3, with no degree truncation and no extra solutions: restriction to the tree and zero extension are inverse F(t)-linear maps. In this polynomial presentation the coefficient parameter t is `RatFunc.X`; the polynomial variable is θ. The residual has source and target the native module of list-indexed polynomials.
 
 **Checks.**
 
@@ -1035,6 +1067,7 @@ The native descended carrier is `frobeniusSolutionSpace`, the kernel of the genu
 - For q ≥ 3, IND°_(2q−2) = {(q − 1, q − 1), (2q − 2)}.
 - IND°_w differs from IND_w: for q = 3, (1, 1) ∈ IND_2 but (1, 1) ∉ IND°_2 since q − 1 = 2 does not divide 1.
 - (E_0) is ε_∅⁽¹⁾ = ε_∅ and X_0 = F_q(t); for w = q, IND°_q = {(1, q − 1)} and (E_q) has three equations; for q ≥ 3 and w = 2q − 2, IND°_w = {(q − 1, q − 1), (2q − 2)} and (E_w) has four equations.
+- Scalars of the residual: in weight zero the tree is {∅}. The root coordinate f = 1 has residual 1 − 1 = 0 and t·f has residual t − t = 0, but θ·f has residual θ^q − θ ≠ 0 although θ times the residual of f is 0. So `frobeniusResidual` is F(t)-linear and not F(θ, t)-linear.
 
 *Needs:* §0.10; DrinfeldModulesAndTModules DM.8/coefficient-twist; DrinfeldModulesAndTModules DM.8/analytic-fixed-fields.
 
@@ -1096,11 +1129,15 @@ The headline `frobenius_solution_dimension` states finite generation over F(t) t
 
 Finite support of distinct weight-w arrays with q dividing none of their entries, later entries divisible by q − 1, and characters (ε, 1, …, 1); b = 1 after clearing a common denominator. In the twisted system of §4.1 attached to a putative relation a + Σ a_i𝔏𝔦(s_i; ε_i)(θ) = 0 with s_i ∈ J′_w and all ε_i of character ε under the explicit reduced-support hypotheses (q − 1) | sᵢ₂, … and ε_i = (ε, 1, …, 1): every solution has, at each nonempty prefix t with m_t = (w − wt(t))/(q − 1), the form δ_t = f_t(X^(m_t) + Σ_(i<m_t)P_(t,i)(T)X^i) with X = t^q − θ^q, T = t − t^q, f_t ∈ F_q[t], P_(t,i) ∈ F_q(y) of y-adic valuation ≥ 1, and the f of children are F_q(T)-multiples of f_t. If (q − 1) ∤ w, or (q − 1) | w and ε ≠ 1, the only solution is zero; if (q − 1) | w and ε = 1, any two polynomial solutions are proportional over F_q(t). Thus their span in the localised ambient space has dimension at most one; existence of a nonzero solution for an arbitrary chosen support is not asserted. (IKLNDP24, proof of Theorem 3.4, §3.3 claims 1)–2), Case 1 and Case 2 with its subcases, pp. 37–42 (IKLNDP24 line 4114)).
 
+The headline `twisted_system_rigidity` states the vanishing part on the full reduced tree after one forward coefficient twist. Let w > 0, ε ∈ Fˣ, γ ∈ K̄ with γ^(q−1) = ε, and let δ be a family of polynomials in K̄[t] indexed by lists, zero outside `reducedPrefixes` and satisfying at every node l of that tree δ_l⁽¹⁾ = (δ_l + c_l Σ_(1≤n≤w) δ_((l,n)))(t − θ^q)^(w − wt(l)), with c_∅ = γ and c_l = 1 otherwise. If (q − 1) ∤ w or ε ≠ 1, then δ = 0. The forward twist is bijective on K̄[t], so this system is equivalent to the inverse-twisted system of §4.1 (IKLNDP24 (3.4)–(3.5), lines 4164–4171). At a leaf the equation reads δ_l⁽¹⁾ = δ_l, so leaf coordinates lie in F_q[t]. A smaller support extends by zero to a solution on the full tree. When ε = 1 one has γ ∈ F_qˣ, and dividing the root coordinate by γ gives the untwisted system, whose polynomial solutions lie in X_w of §4.5 after δ ↦ δ⁽⁻¹⁾.
+
 One proof route is the following. Induct on m_t: at leaves δ = a_i(t) ∈ F_q[t]; at an inner prefix, §4.2 and §4.3 give δ_t ∈ K[t] of θ-degree ≤ m_tq and divisible by (t − θ)^((q−1)m_t); write δ_t = F(t − θ)^((q−1)m_t) with deg_θ F ≤ m_t. Since F(t − θ)^((q−1)m_t) lies in F_q[t, θ^q], F = Σ_(0 ≤ i ≤ m_t/q)f_(m_t−iq)(t − θ)^(m_t−iq) with f ∈ F_q[t], so F(t − θ)^((q−1)m_t) = Σ f_(m_t−iq)X^(m_t−i) and F⁽¹⁾ = Σ f_(m_t−iq)(T + X)^(m_t−iq); comparing powers of X gives a linear system with matrix B over F_q(y), y = T, whose diagonal entries are ±1 and whose subdiagonal entries have positive y-adic valuation, whence the stated form. At the root, with the extra factor γ⁽⁻¹⁾ = γ/ε: if (q − 1) ∤ w a θ-degree comparison forces deg_θ δ ≤ mq and the same triangular system has only the zero solution. If (q − 1) | w, comparing the top coefficient gives εf_m = f_m; so ε ≠ 1 forces f_m = 0 and then everything vanishes, while ε = 1 leaves one free parameter. The comparison proves uniqueness up to a rational factor when solutions exist. Multiplying a polynomial solution by an arbitrary element of F_q(t) need not preserve polynomiality, and a smaller support can force the free parameter to vanish.
 
 **Checks.**
 
 - For q = 2 the character is trivial; after ε_t = δ_t⁽⁻¹⁾ and localising at F_q[t] ∖ {0}, the system on the full reduced support is (E_w). A smaller support is extended by zero.
+- Weight zero must be excluded: the tree is {∅}, the root equation is δ_∅⁽¹⁾ = δ_∅, and δ_∅ = 1 is a nonzero solution for every ε. No weight-zero array has a nontrivial character.
+- At q = 3 and w = 2 the reduced tree is {∅, (2)}, since (1, 1) has a later entry not divisible by 2. With γ = 1, δ_∅ = t³ − θ³ and δ_((2)) = t − t³ solve the system: the root equation has t³ − θ⁹ = (t − θ³)³ on both sides, and the leaf has coefficients in F_3. With γ² = −1 (so ε = −1) the same pair leaves the root residual (1 − γ)(t − t³)(t − θ³)² ≠ 0, as the vanishing statement requires.
 
 *Needs:* §4.1; §4.2; §4.3.
 
@@ -1225,6 +1262,9 @@ One proof route is the following. R_w ⊂ Ker 𝔏^ζ_w by §2.10 (1); since U^�
 **Checks.**
 
 - For w = q, R_q contains [q] − L_1[1, q − 1], which is R_1.
+- At q = 2, I_1 = I^T_1 = {(1)}, so R_1 = 0, of dimension 1 − 1 = 0. The plausible wrong choice R_w = H_w would put [1] in the kernel, although ζ_A(1) ≠ 0.
+- At q = 2, R_2 has the basis [2] − U^ζ(2) = [2] + D_1[1, 1], realised by ζ_A(2) + D_1ζ_A(1, 1) = 0; its dimension is 2 − 1 = 1.
+- At q = 2, R_3 has the basis [1, 2] + D_1([1, 1, 1] + [2, 1]) and [3] + D_1[1, 2] (from U^ζ(1, 2) and U^ζ(3) of §2.9–§2.10), with distinct pivots [1, 2] and [3]; both realise to zero, and the dimension is 4 − 2 = 2.
 
 *Needs:* §5.6; §2.10; §2.9; §1.4; §3.9.
 
@@ -1300,19 +1340,21 @@ One proof route is the following. Li(s) ∈ Z_w: by the trivial-character versio
 
 ### 5.13 Direct bounds for alternating MZVs in small weights
 
-The stated weight ranges. (1) For w ≤ 2q − 2 (and also w = 2q − 1), the AMZVs ζ_A(ε; s) with (ε; s) ∈ AT^1_w = AJ^1_w span AZ_w, so dim_K AZ_w ≤ s(w) without ACMPLs. (2) For q > 2 and w ≤ 3q − 3, the AMZVs in the explicit set AT′_w are K-linearly independent, and |AT′_w| = s(w); so dim_K AZ_w ≥ s(w). Here AT′_w consists of the ζ_A(ε; s) with characters 1 over the entries q and 2q − 1 and with s ∈ I′_w: for w ≤ 2q − 2, the indices with no entry equal to q; for 2q − 1 ≤ w ≤ 3q − 3, those with no entry in {q, 2q − 1, 2q} or with exactly one consecutive pair (q − 1, q). (For q = 2 the source treats w ≤ 4 separately; there all characters are trivial, AZ_w = Z_w, and the bound is also §5.6.) With §5.11, AT^1_w (w ≤ 2q − 2) and AT′_w (w ≤ 3q − 3) are bases of AZ_w consisting of AMZVs. (IKLNDP24, Proposition 4.11 and its proof, pp. 55–57; Remark 4.12 and Proposition 4.13, p. 57; Remark 4.14, p. 58 (IKLNDP24 line 6495); IKLNDP-NOTE, Propositions 1.3–1.4 and Theorems 1.5–1.6, pp. 3–4; §3.2, p. 12 (bijection); §4.1, pp. 12–14; §§5.1–5.8, pp. 15–29 (the ranges used here) (IKLNDP-NOTE line 148)).
+The stated weight ranges. (1) For w ≤ 2q − 2 (and also w = 2q − 1), the AMZVs ζ_A(ε; s) with (ε; s) ∈ AT^1_w = AJ^1_w span AZ_w, so dim_K AZ_w ≤ s(w) without ACMPLs. (2) For every q and w ≤ 3q − 2, the AMZVs in the explicit set AT′_w are K-linearly independent; for w ≤ 3q − 3 moreover |AT′_w| = s(w), so dim_K AZ_w ≥ s(w). Here AT′_w consists of the ζ_A(ε; s) with characters 1 over the entries q and 2q − 1 and with s ∈ I′_w: for w ≤ 2q − 2, the indices with no entry equal to q; for 2q − 1 ≤ w ≤ 3q − 3, those with no entry in {q, 2q − 1, 2q} or with exactly one consecutive pair (q − 1, q); for w = 3q − 2 and q > 2, those with no entry in {q, 2q − 1, 2q, 3q − 2}, those other than (q − 1, q − 1, q) with exactly one consecutive pair equal to (q − 1, q) or (2q − 2, q), and (q − 1, 2q − 1); for q = 2 and w = 4, exactly (2, 1, 1), (1, 2, 1) and (1, 3), all characters being trivial. With §5.11, AT^1_w (w ≤ 2q − 2) and AT′_w (w ≤ 3q − 3) are bases of AZ_w consisting of AMZVs; at the endpoint w = 3q − 2 the cardinality equality is not part of the statement. (IKLNDP24, Proposition 4.11 and its proof, pp. 55–57; Remark 4.12 and Proposition 4.13, p. 57; Remark 4.14, p. 58 (IKLNDP24 line 6495); IKLNDP-NOTE, the definition of I′_w and J′_w, p. 3 (IKLNDP-NOTE line 191); Propositions 1.3–1.4 and Theorems 1.5–1.6, pp. 3–4 (IKLNDP-NOTE line 262); §3.2, p. 12 (bijection); §4.1, pp. 12–14; §§5.1–5.10, pp. 15–35 (IKLNDP-NOTE line 970)).
 
-One proof route is the following. (1): show by induction on depth and first entry that ζ_A(ε, λ; U, q + w_1, W_−) and ζ_A(ε; U, q, W) lie in the span of AT^1_w, using the explicit expansion of B*_(ε,U)C_(λ,W)(R_ε), with U = ∅ treated by summing C_(λ,W)(R_ε) directly; the condition w ≤ 2q − 2 keeps the expansion short. For (2), use strong induction on w and closure under deleting the last entry (the Note, Proposition 1.4(2)) to supply (LW). Character splitting and the rational suffix combinations reduce support: below 2q − 1 this is the two-row argument of §4.7 with a common root of the total character; in the range 2q − 1 ≤ w ≤ 3q − 3, Lemmas 5.2–5.5 of the Note restrict suffix weights to multiples of q − 1 and remove later nontrivial characters, apart from the explicit exceptional (q − 1,q) block. For w = 2q − 1 the remaining prefixes are ∅, (1), (q − 1) and (q − 1,1), with the last two carrying the possible split characters. For w = 2q the shortlist is (2,q − 1,q − 1), (2,2q − 2), (q + 1,q − 1); for 2q + 1 ≤ w ≤ 3q − 3 replace these first entries by w − 2q + 2 and w − q + 1 and allow (w). The two-row endpoint shows ζ_A(q − 1,q − 1) and ζ_A(2q − 2) are not proportional, removing the double-tail candidate. Monic descent bounds the remaining root quotient by degree 3 in θ. Comparing θ^q and constant coefficients, separately at q = 3 and w = 3q − 3, forces a coefficient assumed in the support to vanish (the Note §§5.6–5.8, pp. 22–29). |AT^1_w| = s(w) (§0.12) and |AT′_w| = s(w) (the Note, Proposition 1.4).
+One proof route is the following. (1): show by induction on depth and first entry that ζ_A(ε, λ; U, q + w_1, W_−) and ζ_A(ε; U, q, W) lie in the span of AT^1_w, using the explicit expansion of B*_(ε,U)C_(λ,W)(R_ε), with U = ∅ treated by summing C_(λ,W)(R_ε) directly; the condition w ≤ 2q − 2 keeps the expansion short. For (2), use strong induction on w and closure under deleting the last entry (the Note, Proposition 1.4(2)) to supply (LW). Character splitting and the rational suffix combinations reduce support: below 2q − 1 this is the two-row argument of §4.7 with a common root of the total character; in the range 2q − 1 ≤ w ≤ 3q − 3, Lemmas 5.2–5.5 of the Note restrict suffix weights to multiples of q − 1 and remove later nontrivial characters, apart from the explicit exceptional (q − 1,q) block. For w = 2q − 1 the remaining prefixes are ∅, (1), (q − 1) and (q − 1,1), with the last two carrying the possible split characters. For w = 2q the shortlist is (2,q − 1,q − 1), (2,2q − 2), (q + 1,q − 1); for 2q + 1 ≤ w ≤ 3q − 3 replace these first entries by w − 2q + 2 and w − q + 1 and allow (w). The two-row endpoint shows ζ_A(q − 1,q − 1) and ζ_A(2q − 2) are not proportional, removing the double-tail candidate. Monic descent bounds the remaining root quotient by degree 3 in θ. Comparing θ^q and constant coefficients, separately at q = 3 and w = 3q − 3, forces a coefficient assumed in the support to vanish (the Note §§5.6–5.8, pp. 22–29). At w = 3q − 2 and q > 2 the same two steps apply: Lemmas 5.2 and 5.5 of the Note give a shortlist of ten array shapes, the rational suffix combinations with Corollary 5.1 and the weight-(3q − 3) case remove most of them, and monic descent bounds the root coordinate by θ-degree 3q + 1 before the final coefficient comparison (the Note §5.9, pp. 29–33, IKLNDP-NOTE line 1739). At q = 2 and w = 4 the three indices (2, 1, 1), (1, 2, 1), (1, 3) are treated directly: (LW) uses the independence of ζ_A(1, 2) and ζ_A(2, 1), which follows from the weight-three relation D_1ζ_A(1, 1, 1) + D_1ζ_A(2, 1) + ζ_A(1, 2) = 0 and the weight-three case (the Note §5.10, pp. 33–35). |AT^1_w| = s(w) (§0.12) and, for w ≤ 3q − 3, |AT′_w| = s(w) (the Note, Proposition 1.4).
 
-The native predicate `directIndices` describes I′_w in this weight range. The word “exactly one” quantifies over adjacent positions of the composition; outside the bounds there is no asserted independence theorem. The headline signatures are `direct_small_weight_spanning` and `direct_small_weight_independent`.
+The native predicate `directIndices` describes I′_w for w ≤ 3q − 2, including the endpoint family for q > 2 and the three listed indices for q = 2. The word “exactly one” quantifies over adjacent positions of the composition; above weight 3q − 2 there is no asserted independence theorem. The headline signatures are `direct_small_weight_spanning` and `direct_small_weight_independent`; the latter holds for every finite field, q = 2 included.
 
-Its interface identifies I′_w with the no-q family below 2q−1, with the stated excluded-entry or unique-pair family above that weight, and attaches character one exactly to entries q and 2q−1. It gives the equality |AT′_w| = s(w) in the asserted range.
+Its interface identifies I′_w with the no-q family below 2q−1, with the stated excluded-entry or unique-pair family up to 3q−3, and with the endpoint family at 3q−2, and attaches character one exactly to entries q and 2q−1. It gives the equality |AT′_w| = s(w) for w ≤ 3q − 3 only.
 
 **Checks for this family.**
 
 - At q = 3, w = 4, I′₄ has the six compositions listed for IND₄ and its arrays number 46. Unrestricted compositions give 54 arrays in that weight and do not define AT′₄.
 - At q = 3, w = 5, the forbidden singleton (5) is replaced by the pair (2,3), with character one over 3. The weighted count is 130; allowing either character over 3 would add two arrays.
 - At q = 3, w = 6, (2,3,1) and (1,2,3) are admitted, whereas (3,2,1) is excluded. The weighted count is 368. A test for merely having an entry 3 would admit the third tuple and lose the prescribed adjacency.
+- At q = 3, w = 7 = 3q − 2, the family has 37 indices and 1040 arrays, whereas s(7) = 1042: (4,3) and (2,5) are admitted, while (7) and (2,2,3) are excluded. Independence holds there, but the family is not a basis of AZ_7.
+- At q = 2, w = 4, the family is exactly (2,1,1), (1,2,1), (1,3), three indices, equal to d(4) = 3. Extending the weight-three rule instead would select (1,1,1,1), (1,1,2), (1,2,1), which are dependent: ζ_A(1,1,2) + D_1(ζ_A(1,1,1,1) + ζ_A(1,2,1)) = 0.
 
 Both native small-weight signatures include the zero-weight empty array, whose value is 1; the positive-weight ranges above are their substantive assertions.
 
@@ -1332,7 +1374,7 @@ One proof route is the following. Chang–Mishiba supply the weightwise K-linear
 
 - For w < q − 1 the bound is d(w); for w = q − 1 it is d(q − 1) − 1 = 2ᑫ⁻² − 1.
 
-*Needs:* §5.6; §1.7; §0.13.
+*Needs:* §5.6; §1.7; §0.13; DrinfeldModulesAndTModules DM.6/v-adic-special-values (gap:v-adic-mzv-specialisation).
 
 ### Examples
 
@@ -1340,7 +1382,7 @@ At q = 3 the ordinary dimensions in weights one through five are 1, 2, 3, 6, 11;
 
 ### Dependencies
 
-Earlier layers 0, 1, 2, 3, 4. The exact target needs above specify each mathematical object and proof-route input. External inputs: .
+Earlier layers 0, 1, 2, 3, 4. The exact target needs above specify each mathematical object and proof-route input. External inputs: DrinfeldModulesAndTModules DM.6/v-adic-special-values (gap:v-adic-mzv-specialisation).
 
 ## Downstream consumers
 
