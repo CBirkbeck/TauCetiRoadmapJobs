@@ -1,0 +1,236 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "OrdinaryAutomorphicFormsAndModularityLiftingPartII"
+
+[[source]]
+id = "BCGP25"
+authors = "George Boxer, Frank Calegari, Toby Gee, Vincent Pilloni"
+title = "Modularity theorems for abelian surfaces"
+year = 2025
+arxiv = "2502.20645v1"
+locator_scheme = "theorem"
+locator = "§§5–6 (Lemmas 5.3.1, 5.5.3, 5.7.7, Proposition 5.5.6, Theorems 5.7.14 and 6.3.4)"
+url = "https://arxiv.org/abs/2502.20645v1"
+fetched_from = "https://arxiv.org/pdf/2502.20645v1"
+fetched_at = "2026-10-25T21:49:40Z"
+sha256 = "51d7eacca6eae394943f09ab72dfe09ee9aa6da27f563be8237c416e5da4e95c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v1"
+cited_for = ["Summary", "1.1", "1.2", "1.3", "1.4", "2.1", "2.2", "2.3", "3.1", "3.2", "3.3", "3.4", "3.5", "4.1", "4.3", "4.4", "4.5", "4.6", "4.7", "4.8", "5.1", "5.2", "5.4", "5.5", "5.6", "6.1", "6.2", "6.3", "6.4"]
+
+[[source]]
+id = "WHI22"
+authors = "Dmitri Whitmore"
+title = "The Taylor-Wiles method for reductive groups"
+year = 2022
+arxiv = "2205.05062v3"
+locator_scheme = "theorem"
+locator = "Definitions 3.15, 3.19, Lemmas 3.14, 3.16, 3.20, Proposition 3.18, Theorems 7.7–7.8, Lemma 7.10, Proposition 7.11"
+url = "https://arxiv.org/abs/2205.05062v3"
+fetched_from = "https://arxiv.org/pdf/2205.05062v3"
+fetched_at = "2026-10-25T21:49:46Z"
+sha256 = "6a4eae2b462125d29a76224cf3f2ae5192b7a3508e67bd929df124b92ef38123"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v3"
+cited_for = ["5.2", "5.3", "5.6", "6.2", "6.3"]
+
+[[source]]
+id = "BCGNT25"
+authors = "George Boxer, Frank Calegari, Toby Gee, James Newton, Jack A. Thorne"
+title = "The Ramanujan and Sato-Tate Conjectures for Bianchi modular forms"
+year = 2023
+locator_scheme = "theorem"
+locator = "Lemma 3.2.4"
+url = "https://www.math.uchicago.edu/~fcale/papers/SatoTate.pdf"
+fetched_from = "https://www.math.uchicago.edu/~fcale/papers/SatoTate.pdf"
+fetched_at = "2026-10-25T22:01:46Z"
+sha256 = "ea12cd0dbc91c73f05886a59aa512e4b69f2dc2fae12dc5b68cf444d9046cdb2"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["4.4"]
+
+[[source]]
+id = "Tho17"
+authors = "Jack A. Thorne"
+title = "A 2-adic automorphy lifting theorem for unitary groups over CM fields"
+year = 2017
+venue = "Mathematische Zeitschrift 285"
+doi = "10.1007/s00209-016-1681-2"
+locator_scheme = "theorem"
+locator = "Lemmas 2.2, 2.4, 2.8, 2.10, 2.12, 2.13, 2.15, 2.16, 2.17, Corollary 2.14, Definitions 2.20 and 3.3"
+url = "https://api.repository.cam.ac.uk/server/api/core/bitstreams/9bca3a85-7db2-4da6-b8cb-b91c54ee9620/content"
+fetched_from = "https://api.repository.cam.ac.uk/server/api/core/bitstreams/9bca3a85-7db2-4da6-b8cb-b91c54ee9620/content"
+fetched_at = "2026-10-25T21:50:25Z"
+sha256 = "f7b706eb2eb69354f5be3ce846193dc75f73ed46a7437eb54451b8f177af74c9"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["1.1", "1.2", "1.3", "3.1", "3.3", "4.7"]
+
+[[source]]
+id = "Ger19"
+authors = "David Geraghty"
+title = "Modularity lifting theorems for ordinary Galois representations"
+year = 2019
+venue = "Mathematische Annalen 373"
+doi = "10.1007/s00208-018-1742-4"
+locator_scheme = "theorem"
+locator = "§§2.2–2.7, Corollary 3.1.4, Lemma 3.2.3 (preprint numbering)"
+url = "https://web.archive.org/web/20200311145253id_/https://www2.bc.edu/david-geraghty/files/oml.pdf"
+fetched_from = "https://web.archive.org/web/20200311145253id_/https://www2.bc.edu/david-geraghty/files/oml.pdf"
+fetched_at = "2026-10-25T21:50:24Z"
+sha256 = "18c3b5081c8c8e6af6001fdaa145cd43a51763c5fd72abf6949dd431704a72f1"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "author preprint; published Math. Ann. 373 (2019) numbering: preprint Lemma 2.3.3 = Lemma 2.10, Lemma 2.4.4 = Lemma 2.14, Lemma 2.4.7 = Lemma 2.17, Corollary 2.5.4 = Corollary 2.21, Lemma 2.6.4 = Lemma 2.25, Proposition 2.7.4 = Proposition 2.29, Corollary 3.1.4 = Corollary 3.4 (matched by content)"
+cited_for = ["Conventions", "2.1", "2.2", "3.3"]
+
+[[source]]
+id = "BCGP21"
+authors = "George Boxer, Frank Calegari, Toby Gee, Vincent Pilloni"
+title = "Abelian surfaces over totally real fields are potentially modular"
+year = 2021
+venue = "Publications mathématiques de l'IHÉS 134"
+doi = "10.1007/s10240-021-00128-2"
+locator_scheme = "theorem"
+locator = "§§7.8–7.11, Lemma 7.5.9, Theorem 7.9.4"
+url = "https://pmihes.centre-mersenne.org/item/10.1007/s10240-021-00128-2.pdf"
+fetched_from = "https://pmihes.centre-mersenne.org/item/10.1007/s10240-021-00128-2.pdf"
+fetched_at = "2026-10-25T21:50:39Z"
+sha256 = "b4cc8b016615bcaf4b92bdf826ec1e285f6aca842ebd9f13712e1c498f8454af"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["5.3", "5.6", "6.2", "6.3"]
+
+[[source]]
+id = "BLGGT14"
+authors = "Thomas Barnet-Lamb, Toby Gee, David Geraghty, Richard Taylor"
+title = "Potential automorphy and change of weight"
+year = 2010
+arxiv = "1010.2561v4"
+locator_scheme = "theorem"
+locator = "Lemma 1.2.3"
+url = "https://arxiv.org/abs/1010.2561v4"
+fetched_from = "https://arxiv.org/pdf/1010.2561v4"
+fetched_at = "2026-10-25T21:51:06Z"
+sha256 = "c953df6229ba8d8b4ae25b1a00cf11592864c74692859d324ff10d3eef645d24"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v4"
+cited_for = ["4.7"]
+
+[[source]]
+id = "KT17"
+authors = "Chandrashekhar Khare, Jack A. Thorne"
+title = "Potential automorphy and the Leopoldt conjecture"
+year = 2014
+arxiv = "1409.7007v2"
+locator_scheme = "section"
+locator = "§4"
+url = "https://arxiv.org/abs/1409.7007v2"
+fetched_from = "https://arxiv.org/pdf/1409.7007v2"
+fetched_at = "2026-10-25T21:51:11Z"
+sha256 = "f8a86b8d7dfd290b9b4199931238f21392cb9c82d609f0879060a890e58ec0b4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v2"
+cited_for = ["1.2", "4.2"]
+
+[[source]]
+id = "Tho12"
+authors = "Jack Thorne"
+title = "On the automorphy of l-adic Galois representations with small residual image"
+year = 2012
+arxiv = "1107.5989v1"
+locator_scheme = "theorem"
+locator = "Proposition 4.4, Theorem 8.6 (arXiv v1)"
+url = "https://arxiv.org/abs/1107.5989v1"
+fetched_from = "https://arxiv.org/pdf/1107.5989v1"
+fetched_at = "2026-10-25T21:51:25Z"
+sha256 = "537af0053745f4206157c0441365218285624d95a25ae408149f287372d9ba55"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v1"
+cited_for = ["4.2"]
+
+[[source]]
+id = "BLGHT11"
+authors = "Tom Barnet-Lamb, David Geraghty, Michael Harris, Richard Taylor"
+title = "A family of Calabi-Yau varieties and potential automorphy II"
+year = 2011
+venue = "Publications of the Research Institute for Mathematical Sciences 47"
+locator_scheme = "theorem"
+locator = "Lemma 3.3"
+url = "https://virtualmath1.stanford.edu/~rltaylor/cy2fin.pdf"
+fetched_from = "https://virtualmath1.stanford.edu/~rltaylor/cy2fin.pdf"
+fetched_at = "2026-10-25T21:51:40Z"
+sha256 = "225cab84210837ca6130c1c76a5eababeffeaa8d1594b6267e853ce0ae8eabb3"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["4.4"]
+
+[[source]]
+id = "Tay08"
+authors = "Richard Taylor"
+title = "Automorphy for some l-adic lifts of automorphic mod l Galois representations. II"
+year = 2008
+venue = "Publications Mathématiques de l'IHÉS 108"
+doi = "10.1007/s10240-008-0015-2"
+locator_scheme = "theorem"
+locator = "Lemma 2.3"
+url = "http://www.numdam.org/item/10.1007/s10240-008-0015-2.pdf"
+fetched_from = "https://www.numdam.org/item/10.1007/s10240-008-0015-2.pdf"
+fetched_at = "2026-10-25T21:52:00Z"
+sha256 = "f9014a899bcccaa56035314f196b15b581abe63d56cb9d9a285ce9e93f1030bc"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["4.2"]
+
+[[source]]
+id = "CHT08"
+authors = "Laurent Clozel, Michael Harris, Richard Taylor"
+title = "Automorphy for some l-adic lifts of automorphic mod l Galois representations"
+year = 2008
+venue = "Publications Mathématiques de l'IHÉS 108"
+doi = "10.1007/s10240-008-0016-1"
+locator_scheme = "theorem"
+locator = "Lemmas 2.1.4, 2.1.12, Corollaries 2.2.12 and 2.3.5, Propositions 3.4.2 and 3.4.4"
+url = "http://www.numdam.org/item/10.1007/s10240-008-0016-1.pdf"
+fetched_from = "https://www.numdam.org/item/10.1007/s10240-008-0016-1.pdf"
+fetched_at = "2026-10-25T21:52:03Z"
+sha256 = "9d3b7079440d8cd3167812bb11c25ae4b51ada973b2e98f0928624254a60156c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["3.2", "3.3", "4.7"]
+
+[[source]]
+id = "Sho18"
+authors = "Jack Shotton"
+title = "The Breuil--Mézard conjecture when $l \\neq p$"
+year = 2016
+venue = "Duke Math. J. 167, no. 4 (2018), 603-678"
+doi = "10.1215/00127094-2017-0039"
+arxiv = "1608.01784v2"
+locator_scheme = "theorem"
+locator = "Theorem 2.5"
+url = "https://arxiv.org/abs/1608.01784v2"
+fetched_from = "https://arxiv.org/pdf/1608.01784v2"
+fetched_at = "2026-10-25T22:16:46Z"
+sha256 = "54775e5adac83cdbb628ea5238aab8a7a04a3d9bb3dc2502b46da6bb21689992"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v2"
+cited_for = ["3.2"]
