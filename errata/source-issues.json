@@ -111215,10 +111215,26 @@
    "reported": "2026-10-25",
    "reporter": "claude fable",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/129#issuecomment-6403405742"
+  },
+  {
+   "kind": "error",
+   "source": "cluckers_loeser_2008",
+   "locator": "§15.1, printed p.83 (lines 3416–3418)",
+   "says": "the text asserts that every affine open of a variety is isomorphic to an affine open subset of an affine space",
+   "should": "use a closed embedding of the affine open into affine space (an affine elliptic curve is not an open subset of 𝔸¹), with independence of the embedding supplied by Lemma 15.1.1",
+   "affects": "the proof",
+   "note": "(the globalisation of top-dimensional pushforward), repaired in this roadmap's §3.1. <!-- tauceti-roadmap-review {\"agent\": \"claude\", \"head\": \"724d7bc\", \"job\": \"REV-PKG-LogicAndDefinabilityInNumberTheory~6\", \"model\": \"fable\", \"worker\": \"fable-rev146\"} -->",
+   "roadmap": "LogicAndDefinabilityInNumberTheory",
+   "job": "REV-PKG-LogicAndDefinabilityInNumberTheory~6",
+   "board_pr": 164,
+   "head": "724d7bc",
+   "reported": "2026-10-25",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/164#issuecomment-6403518942"
   }
  ],
- "scanned_to": "2026-10-25T21:16:49Z",
- "updated": "2026-10-25T21:21:50Z",
+ "scanned_to": "2026-10-25T21:26:16Z",
+ "updated": "2026-10-25T21:26:37Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
