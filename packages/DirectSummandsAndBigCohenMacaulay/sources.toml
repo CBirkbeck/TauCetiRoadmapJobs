@@ -1,0 +1,247 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "DirectSummandsAndBigCohenMacaulay"
+
+[[source]]
+id = "ANDRE18B"
+authors = "Yves André"
+title = "La conjecture du facteur direct"
+year = 2018
+doi = "10.1007/s10240-017-0097-9"
+arxiv = "1609.00345"
+locator_scheme = "theorem"
+locator = "§§0.1–0.2, pp.71–73, Conjecture 0.1.1; §§0.6–0.7, pp.74–75; Théorèmes 0.2.1, 0.7.1–0.7.2; Corollaire 2.6.1 and Remarques 2.6.1(4), pp.82–83; §§3.1–3.4, pp.83–84, Théorème 3.2.1, Corollaire 3.2.2; §§4.1–4.4, pp.84–88, Définition 4.1.1(1)–(3), footnotes 5–7, Proposition 4.1.2, Lemme 4.1.3, Remarque 4.2.1, Proposition 4.4.1, Théorème 4.4.2; Annexe A.2–A.3, pp.90–91, Lemmes A.2.1(4), A.2.2, Proposition A.3.1 and Applications"
+url = "https://www.numdam.org/item/10.1007/s10240-017-0097-9.pdf"
+fetched_from = "https://www.numdam.org/item/10.1007/s10240-017-0097-9.pdf"
+fetched_at = "2026-10-23T12:03:26Z"
+sha256 = "34da107d0b96149d9a6779ec1694a0cbb096136d021114b59427024ef3d47053"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-23"
+version_note = "Published Numdam version, pp.71–93; arXiv numbering differs and is not used for the published locators."
+cited_for = ["DS.0/split-algebra", "DS.0/splinter", "DS.0/big-cm-module", "DS.0/balanced-big-cm-module", "DS.0/completion-balances", "DS.0/regular-big-cm-flat", "DS.0/splitting-obstruction", "DS.0/direct-summand-reductions", "DS.0/trace-retraction", "DS.0/low-dimension-direct-summand", "DS.1/endomorphism-retraction-criterion", "DS.1/complete-pure-split", "DS.1/frobenius-direct-summand", "DS.2/adic-splitting-criterion", "DS.2/mod-p-power-splitting", "DS.2/andre-unramified-direct-summand", "DS.4/almost-big-cm-algebra", "DS.4/partial-algebra-modification", "DS.4/hochster-key-lemma", "DS.4/almost-cm-to-big-cm", "DS.4/almost-cm-criteria", "DS.4/big-cm-reductions", "DS.4/mixed-char-big-cm-existence", "DS.4/equal-char-zero-big-cm", "DS.4/big-cm-existence", "DS.4/weak-functoriality-almost-cm", "DS.5/direct-summand-theorem", "DS.5/flat-products-noetherian", "DS.5/finite-cover-flat-domination", "DS.5/absolute-integral-closure-splits", "DS.5/homological-consequences", "DS.6/pure-local-completion", "DS.6/weak-functoriality-regular-target", "DS.6/cm-descent-from-regular-target", "DS.6/pure-subring-of-regular-is-cm"]
+
+[[source]]
+id = "BHATT18"
+authors = "Bhargav Bhatt"
+title = "On the direct summand conjecture and its derived variant"
+year = 2016
+doi = "10.1007/s00222-017-0768-7"
+arxiv = "1608.08882v2"
+locator_scheme = "theorem"
+locator = "§1, pp.1–3, Theorems 1.1–1.2, Remark 1.3(2), §1.2; Theorem 2.3, p.4; Remark 4.3, p.7; Propositions 5.1–5.2, pp.8–9; Lemma 5.3, pp.9–10; Theorem 5.4 and proof, p.10; Theorem 6.1 and proof, Proposition 6.2 and footnote 8, p.11"
+url = "https://arxiv.org/abs/1608.08882v2"
+fetched_from = "https://arxiv.org/pdf/1608.08882v2"
+fetched_at = "2026-10-23T12:03:34Z"
+sha256 = "08578ca15b17f51ee12c398ef305af3446057063c015e2bc8beb6012bcc26430"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-23"
+version_note = "arXiv:1608.08882v2, 11 November 2017; cited pages and numbering are those of this version."
+cited_for = ["DS.0/split-algebra", "DS.0/splitting-obstruction", "DS.0/direct-summand-reductions", "DS.0/low-dimension-direct-summand", "DS.2/adic-splitting-criterion", "DS.3/regular-local-cohen-presentation", "DS.3/regular-local-perfectoid-cover", "DS.3/perfectoid-cover-almost-faithfully-flat", "DS.3/obstruction-detection", "DS.3/annular-almost-splitting", "DS.3/obstruction-limit", "DS.3/bhatt-direct-summand", "DS.5/direct-summand-theorem", "DS.7/derived-splinter", "DS.7/proper-cohomology-perfect", "DS.7/derived-obstruction-reductions", "DS.7/perfectoid-proper-almost-split", "DS.7/char-p-derived-splinter", "DS.7/char-zero-derived-splitting", "DS.7/derived-direct-summand-theorem"]
+
+[[source]]
+id = "HOCHSTER02"
+authors = "Melvin Hochster"
+title = "Big Cohen–Macaulay algebras in dimension three via Heitmann's theorem"
+year = 2002
+locator_scheme = "theorem"
+locator = "Definition 3.1, p. 6 of the author preprint; §4.1, p. 8 of the author preprint; Theorem 4.2 and the paragraph before it, p. 9 of the author preprint; Lemma 5.1 and its proof, pp. 9–10 of the author preprint; Lemma 5.1 and Theorem 4.2, pp. 9–10"
+url = "https://sites.lsa.umich.edu/hochster/wp-content/uploads/sites/1337/2024/09/bigcm3.pdf"
+fetched_from = "https://sites.lsa.umich.edu/hochster/wp-content/uploads/sites/1337/2024/09/bigcm3.pdf"
+fetched_at = "2026-10-23T12:05:12Z"
+sha256 = "640c051dc4b75d5ee09916e10ef2675d3eea7e874702d1b0bfa98186c15db5a0"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-23"
+cited_for = ["DS.4/partial-algebra-modification", "DS.4/modification-criterion", "DS.4/hochster-key-lemma", "DS.4/almost-cm-to-big-cm"]
+
+[[source]]
+id = "HEITMANNMA18"
+authors = "Raymond Heitmann, Linquan Ma"
+title = "Big Cohen-Macaulay algebras and the vanishing conjecture for maps of Tor in mixed characteristic"
+year = 2017
+venue = "Alg. Number Th. 12 (2018) 1659-1674"
+doi = "10.2140/ant.2018.12.1659"
+arxiv = "1703.08281v2"
+locator_scheme = "theorem"
+locator = "§1.2, discussion after Theorem 1.6, p. 4; §1.2, p. 3; Theorem 1.6 and the discussion after it, pp. 3–4; Theorem 1.6, pp. 3–4"
+url = "https://arxiv.org/abs/1703.08281v2"
+fetched_from = "https://arxiv.org/pdf/1703.08281v2"
+fetched_at = "2026-10-23T12:05:16Z"
+sha256 = "91264d904a494520a7b4eb1e0fd1520d6e052440f08e46a93b126aab07bee5e0"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-23"
+version_note = "arXiv v2"
+cited_for = ["DS.0/completion-balances", "DS.4/partial-algebra-modification", "DS.4/modification-criterion", "DS.4/weak-functoriality-almost-cm"]
+
+[[source]]
+id = "BMPSTWW"
+authors = "Bhargav Bhatt, Linquan Ma, Zsolt Patakfalvi, Karl Schwede, Kevin Tucker, Joe Waldron, Jakub Witaszek"
+title = "Globally +-regular varieties and the minimal model program for threefolds in mixed characteristic"
+year = 2020
+arxiv = "2012.15801v3"
+locator_scheme = "theorem"
+locator = "Definition 2.12 and the following paragraph, p. 15; §2.2, conditions (a)–(d) and the definitions after them, p. 12; §2.2, condition (c) and the definition of balanced, p. 12; §2.2, paragraph after conditions (a)–(d), p. 12; Theorem 2.5 and the paragraph after it, p. 13; §2.2, paragraph before Theorem 2.5, p. 13"
+url = "https://arxiv.org/abs/2012.15801v3"
+fetched_from = "https://arxiv.org/pdf/2012.15801v3"
+fetched_at = "2026-10-23T12:05:25Z"
+sha256 = "533218825ca5045a9e8e04da1f78ef51e05c90dd83ca4ecb7cd6e8c68dff3d80"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-23"
+version_note = "arXiv v3"
+cited_for = ["DS.0/splinter", "DS.0/big-cm-module", "DS.0/balanced-big-cm-module", "DS.0/completion-balances", "DS.4/char-p-absolute-integral-closure", "DS.4/equal-char-zero-big-cm"]
+
+[[source]]
+id = "DATTAMURAYAMA"
+authors = "Rankeya Datta and Takumi Murayama, with an appendix by Karen E. Smith"
+title = "Excellence, F-singularities, and solidity"
+year = 2020
+arxiv = "2007.10383v1"
+locator_scheme = "theorem"
+locator = "Proposition 5.4.1(iii), p. 28"
+url = "https://arxiv.org/abs/2007.10383v1"
+fetched_from = "https://arxiv.org/pdf/2007.10383v1"
+fetched_at = "2026-10-23T12:05:30Z"
+sha256 = "7141751642fb40172c6a530c336ef958fadf2e909cc0618c06ffa46b5c433198"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-23"
+version_note = "arXiv v1"
+cited_for = ["DS.1/complete-pure-split", "DS.5/absolute-integral-closure-splits"]
+
+[[source]]
+id = "HUNEKELYUBEZNIK"
+authors = "Craig Huneke, Gennady Lyubeznik"
+title = "Absolute integral closure in positive characteristic"
+year = 2006
+arxiv = "math/0604046v1"
+locator_scheme = "theorem"
+locator = "Theorem 2.1, Lemma 2.2 and Corollary 2.3, pp. 2–6"
+url = "https://arxiv.org/abs/math/0604046v1"
+fetched_from = "https://arxiv.org/pdf/math/0604046v1"
+fetched_at = "2026-10-23T12:05:35Z"
+sha256 = "c42f2f814c66af827628cee92712a0470ade7a71d3c2d776f76409a642e76533"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-23"
+version_note = "arXiv v1"
+cited_for = ["DS.4/char-p-absolute-integral-closure"]
+
+[[source]]
+id = "HOCHSTERLC"
+authors = "Melvin Hochster"
+title = "Local cohomology (Math 615 lecture notes, Winter 2011)"
+year = 2011
+locator_scheme = "theorem"
+locator = "§5, Theorem 5.1, p. 19 (End(E)=R̂), and Theorem 5.4, p. 21 (Matlis duality)"
+url = "https://sites.lsa.umich.edu/hochster/wp-content/uploads/sites/1337/2024/10/615W2011.LocCoh.pdf"
+fetched_from = "https://sites.lsa.umich.edu/hochster/wp-content/uploads/sites/1337/2024/10/615W2011.LocCoh.pdf"
+fetched_at = "2026-10-23T12:05:36Z"
+sha256 = "e8dda8d32793d5257b3e2c51f68e0fc61ea02bbca23117f2adacbc3bb7ce8ed0"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-23"
+cited_for = ["DS.1/complete-pure-split"]
+
+[[source]]
+id = "BHATT12"
+authors = "Bhargav Bhatt"
+title = "Derived splinters in positive characteristic"
+year = 2011
+venue = "Compositio Math. 148 (2012) 1757-1786"
+doi = "10.1112/S0010437X12000309"
+arxiv = "1109.0354v1"
+locator_scheme = "theorem"
+locator = "Definition 0.1 and Example 1.1, pp. 1–2; Example 1.1, pp. 1–2; Example 1.3, pp. 2–3; Definition 0.2 and Theorem 0.3, p. 1; Theorem 0.4, p. 1; Lemma 2.2 and Propositions 3.1–3.2 with Corollary 3.5, pp. 5–9; Theorem 0.3, p. 1, proof p. 9; Example 1.3, pp. 2–3; Example 1.2, p. 2"
+url = "https://arxiv.org/abs/1109.0354v1"
+fetched_from = "https://arxiv.org/pdf/1109.0354v1"
+fetched_at = "2026-10-23T12:05:41Z"
+sha256 = "4fa366d392ea74d5f361e9c324ff2bf0f9bd9303ff72cd61a0d7fd4ec5119040"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-23"
+version_note = "arXiv v1"
+cited_for = ["DS.0/splinter", "DS.0/trace-retraction", "DS.1/frobenius-direct-summand", "DS.7/derived-splinter", "DS.7/char-p-cohomology-killing", "DS.7/char-p-derived-splinter", "DS.7/char-zero-derived-splitting"]
+
+[[source]]
+id = "HH95"
+authors = "M. Hochster, C. Huneke"
+title = "Applications of the Existence of Big Cohen-Macaulay Algebras"
+year = 1995
+venue = "Advances in Mathematics 113"
+doi = "10.1006/aima.1995.1035"
+locator_scheme = "theorem"
+locator = "§1.2(d), §2.3; cited through André §§4.2–4.4"
+url = "https://doi.org/10.1006/aima.1995.1035"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["0.6", "4.10", "6.3"]
+
+[[source]]
+id = "KOVACS00"
+authors = "Sándor J. Kovács"
+title = "A characterization of rational singularities"
+year = 2000
+locator_scheme = "theorem"
+locator = "Theorem 1, p. 187; Theorem 2 and proof, pp. 188–191"
+url = "https://sites.math.washington.edu/~kovacs/current/papers/Kovacs__A_characterization_of_rtl_singularities.pdf"
+fetched_from = "https://sites.math.washington.edu/~kovacs/current/papers/Kovacs__A_characterization_of_rtl_singularities.pdf"
+fetched_at = "2026-10-23T12:05:50Z"
+sha256 = "a4f8f76df504e48d3657cd182b9c3a146463abb82545b0327beb2c848f7faf50"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-23"
+cited_for = ["DS.7/char-zero-derived-splitting"]
+
+[[source]]
+id = "STACKS"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project"
+year = 2026
+locator_scheme = "tag"
+locator = "Definition 10.42.1 (tag 030O); Tags 0A6A, 01XI, 02O5, 02O6; Sections 30.4, 30.19"
+url = "https://stacks.math.columbia.edu/tag/030O"
+fetched_from = "https://stacks.math.columbia.edu/download/algebra.pdf#nameddest=030O"
+fetched_at = "2026-10-25T05:27:54Z"
+sha256 = "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["DS.7/proper-cohomology-perfect", "7.2", "Conventions; 6.2"]
+additional_texts = [{ url = "https://stacks.math.columbia.edu/download/more-algebra.pdf#nameddest=0A6A", sha256 = "ab69179738e642603ddbde651f2838e1cb5d8711e8bcd7c447cbf02a8bb6a5d2", licence_class = "open-repository", line_locator = "0A6A line 13484" }, { url = "https://stacks.math.columbia.edu/download/coherent.pdf#nameddest=01XH", sha256 = "b4980a08a8cce98fed6a420364b18c119364a9436577031b28a16863bcbdbfb8", licence_class = "open-repository", line_locator = "01XI line 290; 02O5 line 2350" }]
+
+[[source]]
+id = "HOCHSTER73"
+authors = "Melvin Hochster"
+title = "Contracted ideals from integral extensions of regular rings"
+year = 1973
+locator_scheme = "theorem"
+locator = "Theorem 1 pp. 29–30; Theorem 2 pp. 31–32"
+url = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/82D140341FC0DE224799A1FB5468DC45/S0027763000015701a.pdf/contracted-ideals-from-integral-extensions-of-regular-rings.pdf"
+fetched_from = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/82D140341FC0DE224799A1FB5468DC45/S0027763000015701a.pdf/contracted-ideals-from-integral-extensions-of-regular-rings.pdf"
+fetched_at = "2026-10-23T12:07:25Z"
+sha256 = "9c4d4d3e5e3a98322bd4aa8d665565c01a1395db000ac9457bde3711211c1f0d"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-23"
+cited_for = ["DS.1", "DS.2"]
+
+[[source]]
+id = "CHASE60"
+authors = "Stephen U. Chase"
+title = "Direct products of modules"
+year = 1960
+doi = "10.1090/S0002-9947-1960-0120260-3"
+locator_scheme = "theorem"
+locator = "Theorem 2.1, p.460"
+url = "https://www.ams.org/journals/tran/1960-097-03/S0002-9947-1960-0120260-3/S0002-9947-1960-0120260-3.pdf"
+fetched_from = "https://www.ams.org/journals/tran/1960-097-03/S0002-9947-1960-0120260-3/S0002-9947-1960-0120260-3.pdf"
+fetched_at = "2026-10-23T12:27:27Z"
+sha256 = "1ce8c5132c59a0bbaa54686eae5bb342b1abebe0a1760742d73f72cbedecdb2b"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-23"
+cited_for = ["5.2"]
