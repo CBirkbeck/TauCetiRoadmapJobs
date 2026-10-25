@@ -4,7 +4,7 @@
 
 ## Scope and ownership
 
-Each target has one owner among the eight parts; this index states no target of its own. Section numbers §k.n follow the common six-layer build: Part I holds Layer 0, Part II Layer 1, Part III Layer 2, Parts IV and V Layer 3, Part VI Layer 4, and Parts VII and VIII Layer 5. Parts VII and VIII number their Layer 5 sections disjointly, but Parts IV and V both use §§3.2–3.9 for different targets, so a citation of a Layer 3 section names its part. The exact links in each part identify its earlier suppliers.
+This index states no target of its own. Section numbers §k.n follow the common six-layer build: Part I holds Layer 0, Part II Layer 1, Part III Layer 2, Parts IV and V Layer 3, Part VI Layer 4, and Parts VII and VIII Layer 5. Parts VII and VIII number their Layer 5 sections disjointly, but Parts IV and V both use §§3.2–3.9 for different targets, so a citation of a Layer 3 section names its part. The exact links in each part identify its earlier suppliers.
 
 The binary-cubic action and discriminant, the cubic-algebra parametrization on projective modules, the weighted cubic coefficients, the uniform small-degree field count, the cubic poles, residues and convexity bound, and the quadratic large sieve are stated by AnalyticNumberTheoryPartII Layer 5; the parts import these objects and do not construct them again. Quantitative prime and number-field estimates are stated by AnalyticNumberTheoryPartI, and Euler products, Abel and Perron summation and the Wiener–Ikehara theorem by ArithmeticDirichletSeries. Generic number-field, elliptic-curve, duality, moduli and finite-quadratic carriers belong to the Mathlib, Tau Ceti and roadmap suppliers named in each part. The source-specific local selectors, sieve estimates and statistical applications are targets of the parts.
 
@@ -12,13 +12,23 @@ The binary-cubic action and discriminant, the cubic-algebra parametrization on p
 
 A field count uses base-field isomorphism classes unless an embedded or rigid family is named. Stabilizer weights, signed discriminants, local Haar measures, height cutoffs and the order of limits are part of every theorem. Arithmetic conjectures remain propositions. Positive limiting denominators precede every limiting average; distribution convergence alone does not imply moment convergence.
 
+**Checks.**
+
+- For the positive squarefree negative-Pell radicand family at cutoff 5, [Part I §0.15](../ArithmeticStatisticsPartI/README.md#negative-pell-radicands) uses d ≤ 5 and gives {1, 2, 5}, whereas [Part V §3.31](../ArithmeticStatisticsPartV/README.md#restricted-real-quadratic-family) uses d < 5 and gives {1, 2}. The unit radicand is included in both; 3 fails the prime-factor condition and 4 fails squarefreeness. These finite counts cannot be identified across the two cutoff conventions.
+
 ## Exact supplier contracts
 
 Each part states its own external contracts, by roadmap and section, in its own supplier section. The analytic contracts shared by several parts are the following; Parts IV and VIII take no input from them.
 
 ### From TauCetiRoadmap.AnalyticNumberTheoryPartII
 
-[§5.4 binary-cubic action, discriminant and local orbit data](../AnalyticNumberTheoryPartII/README.md#s5-4), [§5.5 cubic algebras and projective forms](../AnalyticNumberTheoryPartII/README.md#s5-5), [§5.6 discriminant fibres and weighted cubic coefficients](../AnalyticNumberTheoryPartII/README.md#s5-6), [§5.7 uniform small-degree field-discriminant count](../AnalyticNumberTheoryPartII/README.md#s5-7), [§5.21 the two cubic poles and their residues](../AnalyticNumberTheoryPartII/README.md#s5-21), [§5.28 pole-aware cubic convexity bound](../AnalyticNumberTheoryPartII/README.md#s5-28) and [§5.29 quadratic large sieve and primitive real-character moment](../AnalyticNumberTheoryPartII/README.md#s5-29). The equivalence of §5.5 covers nonprincipal rank-two projective modules, stabilizers, and discriminants as sections of the square of the determinant line; the parts use these objects with the basis and sign conventions of §5.5. Parts I, II, III, V and VI consume the cubic sections, each those its own contract lists, and Parts I, III, V and VII consume §5.29.
+[§5.4 binary-cubic action, discriminant and local orbit data](../AnalyticNumberTheoryPartII/README.md#s5-4), [§5.5 cubic algebras and projective forms](../AnalyticNumberTheoryPartII/README.md#s5-5), [§5.6 discriminant fibres and weighted cubic coefficients](../AnalyticNumberTheoryPartII/README.md#s5-6), [§5.7 uniform small-degree field-discriminant count](../AnalyticNumberTheoryPartII/README.md#s5-7), [§5.21 the two cubic poles and their residues](../AnalyticNumberTheoryPartII/README.md#s5-21), [§5.28 pole-aware cubic convexity bound](../AnalyticNumberTheoryPartII/README.md#s5-28) and [§5.29 quadratic large sieve and primitive real-character moment](../AnalyticNumberTheoryPartII/README.md#s5-29). The equivalence of §5.5 covers nonprincipal rank-two projective modules, stabilizers, and discriminants as sections of the square of the determinant line; Part I's “Cubic ring of a binary cubic form” target uses the simultaneously negated basis (1, −ω, −θ) of §5.5's normal basis. Their linear traces are (3, −b, c), whereas the supplier's are (3, b, −c); a part importing Part I's cubic ring uses Part I's coordinates. Parts I, II, III, V and VI consume the cubic sections, each those its own contract lists, and Parts I, III, V and VII consume §5.29.
+
+**Checks.**
+
+- For f = x²y − xy² over ℤ, (a, b, c, d) = (0, 1, −1, 0). In the supplier's basis ω² = ω and Tr(ω) = 1; in Part I's basis ω² = −ω and Tr(ω) = −1. In the split algebra ℤ³ the latter ω is (−1, 0, 0), so the sign change is visible.
+- On the same form, the supplier's trace-pairing matrix is [[3, 1, 1], [1, 1, 0], [1, 0, 1]], of determinant 1. Negating both nonconstant basis vectors gives [[3, −1, −1], [−1, 1, 0], [−1, 0, 1]], also of determinant 1. The linear traces change sign while the discriminant stays fixed.
+- Reducing this example modulo 2 makes −1 = 1, so that field alone cannot distinguish the bases. Modulo 3 their ω traces are respectively 1 and 2; both trace-pairing determinants remain 1. The basis comparison uses no division by 2 or 3.
 
 ### From TauCetiRoadmap.AnalyticNumberTheoryPartI
 
@@ -40,12 +50,16 @@ A later part keeps every hypothesis and normalization of each earlier target it 
 | [II](../ArithmeticStatisticsPartII/README.md) | Integral orbit dictionaries. |
 | [III](../ArithmeticStatisticsPartIII/README.md) | Uniform orbit counts and sieves. |
 | [IV](../ArithmeticStatisticsPartIV/README.md) | Finite groups, matrix laws and moment tools. |
-| [V](../ArithmeticStatisticsPartV/README.md) | Fields and class-group statistics, among them the four-rank moments of quadratic class groups (Fouvry–Klüners [as-ref-022], Theorem 1). |
+| [V](../ArithmeticStatisticsPartV/README.md) | Fields and class-group statistics, among them the four-rank moments of narrow class groups of quadratic fields (Fouvry–Klüners [as-ref-022], Theorem 1). |
 | [VI](../ArithmeticStatisticsPartVI/README.md) | Selmer averages and arithmetic applications. |
 | [VII](../ArithmeticStatisticsPartVII/README.md) | Quadratic probability models and twist applications, among them the function-field three-Selmer average bound (de Jong [as-ref-056], Theorem 1.2). |
 | [VIII](../ArithmeticStatisticsPartVIII/README.md) | Function-field distributions and geometric statistics. |
 
-Each part's README is its full mathematical specification, and its `Suggested.lean` states that part's headline theorems against the pinned Mathlib and Tau Ceti, naming the missing carrier of each headline that is not statable there.
+**Checks.**
+
+- At discriminant 136, the field ℚ(√34) has narrow class group ℤ/4 and ordinary class group ℤ/2. The respective square subgroups have two-torsion cardinalities 2 and 1. Thus the four-rank statistic in Part V's Fouvry–Klüners target distinguishes the narrow group from the ordinary one.
+
+Each part's README is its full mathematical specification. Consult that part's `Suggested.lean` for its target signatures and recorded carrier limitations.
 
 ## Downstream consumers
 
