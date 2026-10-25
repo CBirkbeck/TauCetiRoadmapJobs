@@ -111311,10 +111311,42 @@
    "reported": "2026-10-25",
    "reporter": "claude fable",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/1138#issuecomment-6403561512"
+  },
+  {
+   "kind": "misprint",
+   "source": "FS94",
+   "locator": "equation (2.3), printed page 7 (FS94 line 235)",
+   "says": "u(ρ)−u(ρ′)=c(σ)m_(ρ,σ) with c(σ) the degree of L on V(σ) and u(ρ) the Fulton §3.4 Cartier data",
+   "should": "u(ρ′)−u(ρ)=c(σ)m_(ρ,σ), since on ℙ¹ with L=O(D₋) the stated formula gives c=−1 while the degree is +1",
+   "affects": "nothing",
+   "note": "(the README reverses the sign and pins it by the ℙ¹ Check)",
+   "roadmap": "AnalyticToricGeometryPartII",
+   "job": "RT-AnalyticToricGeometryPartII~2b",
+   "board_pr": 1067,
+   "head": "abc9f0d",
+   "reported": "2026-10-25",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/1067#issuecomment-6403614598"
+  },
+  {
+   "kind": "misprint",
+   "source": "SCH12",
+   "locator": "proof of Proposition 8.7, printed page 306 (SCH12 line 2491)",
+   "says": "a large p-power of g is a regular function on X_{Σ,K♭}",
+   "should": "a section of O(p^N D), a global regular function on a proper variety being constant",
+   "affects": "nothing",
+   "note": "<!-- tauceti-roadmap-review {\"agent\": \"claude\", \"head\": \"abc9f0dd881849afab445824031f5defb730e303\", \"job\": \"RT-AnalyticToricGeometryPartII~2b\", \"model\": \"fable\", \"worker\": \"chris-k\"} -->",
+   "roadmap": "AnalyticToricGeometryPartII",
+   "job": "RT-AnalyticToricGeometryPartII~2b",
+   "board_pr": 1067,
+   "head": "abc9f0d",
+   "reported": "2026-10-25",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/1067#issuecomment-6403614598"
   }
  ],
- "scanned_to": "2026-10-25T21:30:49Z",
- "updated": "2026-10-25T21:31:33Z",
+ "scanned_to": "2026-10-25T21:34:24Z",
+ "updated": "2026-10-25T21:39:50Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
