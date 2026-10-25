@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-5553 mistakes recorded on the board: 3582 misprints, 1366 errors, 454 gaps, 151 unparsed bullets.
+5557 mistakes recorded on the board: 3583 misprints, 1368 errors, 455 gaps, 151 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -5573,6 +5573,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Error** at §4.2, (4.2.1), pp. 252–253 (Montgomery1987 line 449; Montgomery1987 line 493): the source says every emitted pair satisfies v≥2a_min; it should be flush expired queues before advancing a_min; with B₁=100, w=u_max=30, L=2, prime 271 advances a_min to 4 before emitting (6,7); affects a stated result. Found by ECM (ERRATA-ECM at 6c5fb15, 2026-10-24, codex gpt-6-astra).
 - **Misprint** at §9.2, p. 257 (Montgomery1987 line 680): the source says the auxiliary prime s may divide the transformed value difference F(vw)−F(u); it should be the factor p divides that difference when s divides the corresponding transformed index sum or difference; affects nothing. Found by ECM (ERRATA-ECM at 6c5fb15, 2026-10-24, codex gpt-6-astra).
 
+## morgan
+
+- **Error** at Theorem 9.2 and its proof, p. 195 (morgan-correction line 29): the source says indecomposables are invariant under homotopic maps; it should be the associated graded of their canonical filtration, with the corrected conjugacy qualification; affects a stated result; corrected in print at morgan-correction, revised Theorem 9.2, p. 185. <!-- tauceti-roadmap-review {"agent": "codex", "head": "73d32d03db57818f64236a4545793fe77d8d6538", "job": "REV-PKG-EllAdicHomotopyTypesAndWeights~2", "model": "gpt-6-astra", "worker": "chris-7"} -->. Found by EllAdicHomotopyTypesAndWeights (#1396 at 73d32d0, 2026-10-25, codex gpt-6-astra).
+
 ## Morin-Duchesne–Saint-Aubin
 
 - **Misprint** at Corollary 4.2, proof, printed p.20 (Morin-Duchesne–Saint-Aubin line 1120): the source says the block reduction uses the same twist in both factors of UᵀGU; it should be evaluate the two basis-change matrices at reciprocal twists, consistently with Theorem 3.3, with both determinants remaining one; affects the proof. Found by TemperleyLiebOperatorAlgebras (ERRATA-TemperleyLiebOperatorAlgebras at cb75c58, 2026-10-24, codex gpt-6-astra).
@@ -7946,6 +7950,12 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Weibel, The K-book, Chapter VI
 
 - **Misprint** at Theorem 10.1, items (5)–(6): the source says these items involve c_{2k+1} and ℤ/c_{4k+4}; it should be c_{2k+2} and ℤ/w_{4k+4}, as the book's Table 10.1.1 and the proof give; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## weil-II
+
+- **Gap** at Lemme 5.3.5, p. 241 (weil-II line 3934): the source says finitely many automorphisms admit a common stable filtration, leaving verification to the reader; it should be justified by a finite-block construction before deriving unrestricted grading conjugacy; affects the proof. Found by EllAdicHomotopyTypesAndWeights (#1396 at 73d32d0, 2026-10-25, codex gpt-6-astra).
+- **Error** at §5.1.5, last paragraph, p. 235 (weil-II line 3694): the source says arbitrary coefficient quotients commute with forms off the diagonal; it should be restricted to suitable finitely generated ideals, including the principal quotients used here; affects a stated result. Found by EllAdicHomotopyTypesAndWeights (#1396 at 73d32d0, 2026-10-25, codex gpt-6-astra).
+- **Misprint** at §5.1.5, p. 235 (weil-II line 3690): the source says the homogenization map to the full polynomial-form extension is an isomorphism; it should be an injection with the specified bounded-degree image in each homogeneous degree; affects nothing. Found by EllAdicHomotopyTypesAndWeights (#1396 at 73d32d0, 2026-10-25, codex gpt-6-astra).
 
 ## Wenzl
 
