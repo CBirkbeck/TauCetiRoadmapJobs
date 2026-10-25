@@ -6,17 +6,17 @@
 
 The parent AlgebraicModuliForArithmeticGeometry stops at parameter spaces, representability machinery, Picard sheafification and infinitesimal lifting. This continuation owns the arbitrary proper-field Picard representability application without universal functions, its affinization-valued obstruction, numerical local system, relative numerical quotient, and geometric descent theorems. Its proper bigness extension differs from the parent's projective geometrically integral theory by admitting integral proper schemes without a polarization.
 
-Curve degree and its tensor, normalization, cycle and field-extension laws are owned by JacobianChallenge Layers A–C and StableReduction Layer 2, J-A2; the proper first-Chern comparison is SchemeAndStackFoundations §5.3. The Euler-degree invariant, tensor/dual/pullback operations, generic quotient factorization and abstract matrix inequalities are already in the library and are consumed through the exact declarations below. The construction of relative Spec belongs to AlgebraicVectorBundles L1A–L1B; Stein factorization to SchemeAndStackFoundations §4.9. Section 2.2 here identifies the constants algebra and its units, rather than constructing an affine hull theory.
+Curve degree χ(L) − χ(O_C) on proper one-dimensional schemes over a field, with its tensor additivity, field-extension invariance, divisor comparison and nodal normalization law, is owned by JacobianChallenge Layers A–C and StableReduction Layer 2, J-A2. The first-Chern comparison on a proper curve is SchemeAndStackFoundations §5.3 `c1_degree_curve`; §0.1 applies it over the residue field κ(s) and adds the length-weighted component law for nonreduced curves. The Euler-degree invariant, tensor/dual/pullback operations, generic quotient factorization and abstract matrix inequalities are already in the library and are consumed through the exact declarations below. The construction of relative Spec belongs to AlgebraicVectorBundles L1A–L1B; Stein factorization to SchemeAndStackFoundations §4.9. Section 2.2 here identifies the constants algebra and its units, rather than constructing an affine hull theory.
 
 SchemeAndStackFoundations §5.10 owns the numerical quotient of smooth projective surfaces over algebraically closed fields. AbundanceStatement Layers 4A–4D own characteristic-zero projective numerical spaces, cones and Kleiman's criterion, and Layer 5 owns semiampleness there. Those cases are compared with, and transported to, the arbitrary-field proper and relative versions here. AlgebraicModuliForArithmeticGeometry §1.6 owns projective bigness; its §§1.4–1.5 and 2.1 own the projective parameter constructions. The relative Picard algebraic space with universal functions and the projective flat geometrically integral torsion component are stated by ComplexComparisonPartII §§C3.2d.2–C3.2f.2; the variants here allow arbitrary proper schemes over a field. General finite étale pushforward, Kummer, field Brauer comparisons, cohomological descent, norms and formal existence remain with SchemeAndStackFoundations §§2.10–2.15, 2.22, 3.5 and 4.10. All-dimensional finite-coefficient finiteness is supplied by EtaleCohomologyFoundations §F.3.
 
-StableReduction Layers 1 and 4 own nodal dual graphs and regular-model intersection theory. The graph here is the simple component-intersection graph of any Noetherian scheme; it forgets loops, node multiplicities and normalization genera. Its geometric Zariski-lemma application admits a regular proper flat surface model without smooth generic fibre. The doubling construction in §2.11 is an application to the Picard sheaf of the supplied quotient universal property, not a second generic quotient theory.
+StableReduction Layers 1 and 4 own nodal dual graphs and regular-model intersection theory. The graph here is the simple component-intersection graph of any Noetherian scheme; it forgets loops, node multiplicities and normalization genera. Its geometric Zariski-lemma application admits a regular proper flat surface model without smooth generic fibre. The doubling construction in §2.11 is an application to the Picard sheaf of the supplied quotient universal property, not a second generic quotient theory. StableReduction Layer 2 owns contraction descent for a proper surjective morphism c with O_Y ≅ c_*O_X universally, tested on geometric fibres; the rigidity theorem of §3.2 differs by testing integral curves in the fibres and by requiring O_Y ≅ f_*O_X only, not universally. StableReduction Layer 2 also owns openness of fibrewise ampleness for proper finitely presented families of schemes, which is the scheme case of §3.8(i) and the case used in §§5.3–5.4; §3.8 differs by admitting a proper algebraic space as source and by the universal open locus of (ii).
 
-Stable-surface moduli belong to AlgebraicModuliForArithmeticGeometryStableSurfaces. Flips, dlt and plt pairs, the cone and base point free theorems inside the mixed-characteristic MMP belong to SchemeAndStackFoundationsMixedCharacteristicBirationalGeometry. EWM maps and Keel gluing belong to SchemeAndStackFoundationsMixedCharacteristicPositivity; genus-one surface theory belongs to GenusOneFibrationsAndRationalEllipticSurfaces; Enriques applications belong to EnriquesSurfacesAndIntegralNonexistence. These are consumers of this numerical theory.
+Moduli of stable surfaces; flips, dlt and plt pairs and the cone and base point free theorems of the mixed-characteristic minimal model program; Keel's nef line bundles endowed with a map (EWM) and the gluing of such maps; and the structure theory of genus-one fibred surfaces lie outside this roadmap: its results are inputs to them, and none of them is stated here. Enriques applications belong to EnriquesSurfacesAndIntegralNonexistence.
 
 ## Conventions
 
-All schemes, sites and indexing types live in fixed universes; extensions of universes use the canonical equivalences, not changes to the objects. A proper scheme over a field may be empty, nonreduced, disconnected or of mixed dimension unless a theorem states otherwise. A surface is pure of dimension two. An integral curve is reduced, irreducible and of dimension one. A relative curve for numerical testing lies in a fibre of a proper morphism f : X → S, with S Noetherian. Its degree is always taken over the residue field κ(s). Testing all fibres and testing only closed points are equivalent by §0.5; the definition initially uses all fibres, so this equivalence is not a prerequisite of the definition.
+All schemes, sites and indexing types live in fixed universes; extensions of universes use the canonical equivalences, not changes to the objects. A proper scheme over a field may be empty, nonreduced, disconnected or of mixed dimension unless a theorem states otherwise. A surface is pure of dimension two. An integral curve is reduced, irreducible and of dimension one. A relative curve for numerical testing lies in a fibre of a proper morphism f : X → S. The definitions of relative numerical triviality and of Num(X/S) need no hypothesis on S; every theorem about them assumes S Noetherian. The degree of a relative curve is always taken over the residue field κ(s). Testing all fibres and testing only closed points are equivalent by §0.5; the definition initially uses all fibres, so this equivalence is not a prerequisite of the definition.
 
 Write Pic(X) for invertible sheaves up to isomorphism under tensor product, and Pic^τ(X/S), for its numerical kernel. The group scheme `Pic^τ_{X/k}` is a different object. Num(X/S) is the integral quotient; N¹ with subscript ℚ or ℝ is its scalar extension, and an unsubscripted N¹ means real coefficients. N₁ has real coefficients. Picard number means dimension after finite-dimensionality is proved; the total function `Module.finrank` does not certify finiteness. Curve classes, not arbitrary divisors, generate NE; its closure uses the finite-dimensional real topology and need not be polyhedral.
 
@@ -30,7 +30,7 @@ Positive tensor powers have integer exponent at least one. Cartier multiples and
 
 Use `AlgebraicGeometry.Scheme` and `AlgebraicGeometry.Scheme.Hom.app` from `Mathlib/AlgebraicGeometry/Scheme.lean` (sections on Hom and maps on sections); `AlgebraicGeometry.IsProper` from `Mathlib/AlgebraicGeometry/Morphisms/Proper.lean`, line 41; `AlgebraicGeometry.Flat` from `Mathlib/AlgebraicGeometry/Morphisms/Flat.lean`, line 42; and `CategoryTheory.IsPullback` for the cartesian descent square. Properness includes separation, universal closedness and local finite type; the definition does not include flatness, nonemptiness or geometric connectedness. A contraction adds the sheaf isomorphism, expressed on every open by `IsIso` of the map on sections.
 
-Use `CommRing.Pic` and the instance for rings with finite `MaximalSpectrum` in `Mathlib/RingTheory/PicardGroup.lean`, line 545, to obtain trivial Picard groups of finite semilocal algebras. Use `IsPurelyInseparable` from `Mathlib/FieldTheory/PurelyInseparable/Basic.lean`, line 107, `IsAlgClosure`, `IsSepClosure`, `separableClosure.isGalois` (with its normality hypothesis), and `separableClosure.isPurelyInseparable` for the field tower. Use `Module.finrank` from `Mathlib/LinearAlgebra/Dimension/Finrank.lean`, line 61, only on proved finite-dimensional spaces. The finite locally free norm rank uses `AlgebraicGeometry.Scheme.Hom.finrank` from `Mathlib/AlgebraicGeometry/Morphisms/FlatRank.lean`, line 88, with finite, flat and locally finitely presented hypotheses for local constancy; `DistribMulAction` from `Mathlib/Algebra/GroupWithZero/Action/Defs.lean`, line 346, supplies additive monoid actions on the numerical lattice. Use `SimpleGraph` and `irreducibleComponents` as the component-graph substrate; the graph constructor here specifies its adjacency. The quotient factorization used in §2.11 is the universal property underlying `QuotientAddGroup.lift` in `Mathlib/GroupTheory/QuotientGroup/Defs.lean` and `CategoryTheory.Limits.cokernel.desc` for abelian sheaves.
+Use `CommRing.Pic` and the instance for rings with finite `MaximalSpectrum` in `Mathlib/RingTheory/PicardGroup.lean`, line 545, to obtain trivial Picard groups of finite semilocal algebras. Use `IsPurelyInseparable` from `Mathlib/FieldTheory/PurelyInseparable/Basic.lean`, line 107, `IsAlgClosure`, `IsSepClosure`, `separableClosure.isGalois` (with its normality hypothesis), and `separableClosure.isPurelyInseparable` for the field tower. Use `Module.finrank` from `Mathlib/LinearAlgebra/Dimension/Finrank.lean`, line 61, only on proved finite-dimensional spaces. The finite locally free norm rank uses `AlgebraicGeometry.Scheme.Hom.finrank` from `Mathlib/AlgebraicGeometry/Morphisms/FlatRank.lean`, line 88, with finite, flat and locally finitely presented hypotheses for local constancy; `DistribMulAction` from `Mathlib/Algebra/GroupWithZero/Action/Defs.lean`, line 346, supplies additive monoid actions on the numerical lattice. Use `AlgebraicGeometry.Scheme.Hom.fiber`, `AlgebraicGeometry.Scheme.Hom.fiberι` and `AlgebraicGeometry.Scheme.Hom.fiberToSpecResidueField` from `Mathlib/AlgebraicGeometry/Fiber.lean`, lines 37–46, for the scheme-theoretic fibre `X_s = X ×_S Spec κ(s)` as a κ(s)-scheme, with the instance making the second projection of a pullback of a proper morphism proper (`Mathlib/AlgebraicGeometry/Morphisms/Proper.lean`, line 82); `AlgebraicGeometry.IsNoetherian` from `Mathlib/AlgebraicGeometry/Noetherian.lean`, line 277; and `Subgroup.closure`, `Additive`, `Module.Free` and `Module.Finite` for the numerical groups as ℤ-modules. A subgroup closure is generated by its set without asserting that the set is a subgroup; that the numerically trivial classes already form a subgroup is §0.4. Use `SimpleGraph` and `irreducibleComponents` as the component-graph substrate; the graph constructor here specifies its adjacency. The quotient factorization used in §2.11 is the universal property underlying `QuotientAddGroup.lift` in `Mathlib/GroupTheory/QuotientGroup/Defs.lean` and `CategoryTheory.Limits.cokernel.desc` for abelian sheaves.
 
 ### From Tau Ceti
 
@@ -46,15 +46,15 @@ Consume §3.5 for the finite locally free line-bundle norm, rank formula, compos
 
 What SchemeAndStackFoundations must provide (gap:relative-exceptional-degree-witnesses): For a projective birational morphism from a regular variety to a normal variety over any field, provide finitely many contracted integral curves whose Cartier degrees detect every nonzero rational combination of exceptional prime divisors, with field-extension compatibility. This extends §5.9's surface input to the relative comparison of §5.9 here; it is formulated in intersection degrees, so it does not consume this roadmap's numerical quotient.
 
-What SchemeAndStackFoundations must provide (gap:projective-nef-big-criterion): For a nef invertible sheaf on a reduced projective scheme over a field, prove bigness exactly when its top self-intersection is positive on each irreducible component, with compatibility with the supplied section-growth predicate. This extends §5.3 and is KEE99 Definition–Lemma 0.0, line 46.
+What SchemeAndStackFoundations must provide (gap:projective-nef-big-criterion): For an integral projective scheme V of dimension n over a field and an invertible sheaf L on V of nonnegative degree on every integral curve in V, prove that (L^n·V) > 0 if and only if there are c > 0 and an integer a ≥ 1 with h⁰(V, L^m) ≥ c·m^n for every sufficiently large m divisible by a. This extends §5.3; its integral case is KEE99 Definition–Lemma 0.0, line 46, where bigness is birationality of the map of a high power. It is stated in section dimensions and intersection numbers and uses no bigness predicate of a later roadmap.
 
 ### From TauCetiRoadmap.AlgebraicModuliForArithmeticGeometry
 
-Consume §§1.4–1.5 for projective embeddings, twists and Hilbert polynomials, §1.6 for `bigLineBundle`, `boundedSupportParameters` and the finite-family support reduction, §2.1 for Hilbert functors as Quot, Layer 3 for effective and polarized descent, §§7.3 and 7.6.1–7.6.1a for Picard stacks, sheafification and section rigidification, and §7.9 for group-space components. The projective big predicate agrees with the section-growth extension of §1.6 here on its supplied domain. The parent's projective Hilbert scheme does not by itself give the proper nonprojective Hilbert algebraic space.
+Consume §§1.4–1.5 for projective embeddings, twists and Hilbert polynomials, §1.6 for `bigLineBundle`, `boundedSupportParameters` and the finite-family support reduction, §2.1 for Hilbert functors as Quot, Layer 3 for effective and polarized descent, §§7.3 and 7.6.1–7.6.1a for Picard stacks, sheafification and section rigidification, and §7.9 for group-space components. The projective big predicate `bigLineBundle` agrees with the section-growth bigness of §1.6 here on projective geometrically integral schemes; that comparison is a §1.6 statement here, not a supplier obligation. The parent's projective Hilbert scheme does not by itself give the proper nonprojective Hilbert algebraic space.
 
-What AlgebraicModuliForArithmeticGeometry must provide (gap:relative-numerical-component-reduction): For every proper morphism of Noetherian schemes, provide a finite projective Chow-cover and stratification reduction, with geometrically integral component families after finite covers, that detects the relative numerical kernel on finitely many generic fibres and the closed complement. This extends §1.6.
+What AlgebraicModuliForArithmeticGeometry must provide (gap:relative-numerical-component-reduction): For every proper morphism f : X → S with S Noetherian, provide finitely many points s₁, …, s_n of S such that an invertible sheaf on X has degree zero, over the residue field, on every integral curve in every fibre of f if and only if it has degree zero on every integral curve in the fibres over s₁, …, s_n. This extends §1.6; it is stated in curve degrees and uses no numerical quotient of this roadmap. On P¹ ⊔ P¹ over a field, O(1) ⊔ O(−1) has degree 1 on a curve of the only fibre, so the criterion separates it from O, although both have the Euler polynomial 2n + 2.
 
-What AlgebraicModuliForArithmeticGeometry must provide (gap:proper-bigness-birational-comparison): Extend the section-growth and birational-system comparison for bigness to integral proper schemes over any field, including invariance under proper birational modifications and compatibility of their top Cartier intersections. This extends §1.6.
+What AlgebraicModuliForArithmeticGeometry must provide (gap:proper-bigness-birational-comparison): For a proper birational morphism π : V′ → V of integral proper schemes of dimension n over a field and an invertible sheaf L on V, prove h⁰(V, L^m) ≤ h⁰(V′, π*L^m) for every m ≥ 1, with difference at most C·m^(n−1) for a constant C and all m ≥ 1 when n ≥ 1, and prove ((π*L)^n·V′) = (L^n·V) for the top first-Chern intersections. This extends §1.6; it is stated in section dimensions and intersection numbers and uses no bigness predicate of this roadmap.
 
 What AlgebraicModuliForArithmeticGeometry must provide (gap:proper-picard-nonflat-descent): Provide nilpotent dévissage and nonflat relative representability for pullback of Picard sheaves along surjective maps of proper schemes over a field, by quasi-affine maps of finite type, together with the representability descent used in Kleiman Corollary 4.18.3. This extends §7.3.
 
@@ -66,7 +66,7 @@ Consume §C3.2d.2 `relative_picard_algebraicSpace` only for proper flat finitely
 
 ### From TauCetiRoadmap.JacobianChallenge and TauCetiRoadmap.StableReduction
 
-Consume JacobianChallenge Layer A for degree and its divisor comparison, Layers B–C for coherent finiteness, base change and Euler characteristics, and Layer D for the Picard functor and projective geometrically integral representability. Consume StableReduction Layer 2, J-A2, for degree on proper pure curves, with its nilpotent cycle multiplicities, and its relative Proj, generation and scheme ampleness interface; Layer 1 for nodal graph comparison; and Layer 4 for regular-model intersections. In the common two-component fibre with multiplicities (1,1), each component is orthogonal to the full fibre; with intersection 1 the matrix is [[−1,1],[1,−1]], so the value on (1,0) is −1 and on (1,1) is 0. This is the same sign as the Tau Ceti matrix input.
+Consume JacobianChallenge Layer A for degree and its divisor comparison, Layers B–C for coherent finiteness, base change and Euler characteristics, and Layer D for the Picard functor and projective geometrically integral representability. Consume StableReduction Layer 2, J-A2, for degree χ(L) − χ(O) on proper pure one-dimensional schemes over a field, its tensor additivity, field-extension invariance and nodal normalization law (the length-weighted component law is §0.1 here); StableReduction Layer 2 for relative Proj, generation, openness of fibrewise ampleness for proper finitely presented families of schemes, and contraction descent along proper surjective morphisms with O_Y ≅ c_*O_X universally; Layer 1 for nodal graph comparison; and Layer 4 for regular-model intersections. In the common two-component fibre with multiplicities (1,1), each component is orthogonal to the full fibre; with intersection 1 the matrix is [[−1,1],[1,−1]], so the value on (1,0) is −1 and on (1,1) is 0. This is the same sign as the Tau Ceti matrix input.
 
 ### From TauCetiRoadmap.AlgebraicVectorBundles
 
@@ -78,7 +78,7 @@ Consume Layers 4A–4B for degree intersections, projective characteristic-zero 
 
 ### From TauCetiRoadmap.EtaleCohomologyFoundations
 
-Consume §F.3, the proper constructibility, finiteness and ctf-preservation theorem: for proper finite-type schemes over a separably closed field and finite constructible coefficients with invertible annihilator, every cohomology group is finite, with bounded amplitude. Together with Kummer this gives the all-dimensional H²(X,μ_ℓ) input for §1.3, including reducible and nonreduced proper X. For P¹ over an algebraically closed field, H²(X,μ_ℓ) has dimension 1 over 𝔽_ℓ and the numerical rank is 1; for Spec k both are 0. The input requires ℓ invertible, including at ℓ=2 and 3; it does not assert the same étale Kummer bound at ℓ=char k.
+Consume §F.3, the proper constructibility, finiteness and ctf-preservation theorem: for proper finite-type schemes over a separably closed field and finite constructible coefficients with invertible annihilator, every cohomology group is finite, with bounded amplitude. Together with Kummer this gives the all-dimensional H²(X,μ_ℓ) input for §1.2, including reducible and nonreduced proper X. For P¹ over an algebraically closed field, H²(X,μ_ℓ) has dimension 1 over 𝔽_ℓ and the numerical rank is 1; for Spec k both are 0. The input requires ℓ invertible, including at ℓ=2 and 3; it does not assert the same étale Kummer bound at ℓ=char k.
 
 ### From TauCetiRoadmap.ResolutionOfSingularitiesCharacteristicZero
 
@@ -86,13 +86,13 @@ Consume §7.8, the field specialization, for a projective regular resolution of 
 
 ## How to read the build
 
-Layer 0 applies imported degree and proves the fibre-testing equivalences. Layer 1 forms numerical quotients and dual cones, proving finiteness before using a Euclidean topology or a natural-number Picard rank. Layer 2 builds proper-field Picard representability, the constants-algebra Brauer obstruction and the étale numerical local system. Layer 3 passes from semiample sheaves to contractions and descends them, treating inseparability before finite Galois averaging. Layer 4 combines negative intersections with Hilbert rigidity to descend curves and fibre graphs. Layer 5 applies these interfaces to DVR families and vertical descent and constructs the birational rank. A *Needs:* line separates statement vocabulary from the inputs to the indicated proof route; a different proof may omit route-only inputs. Every supplier extension has its exact contract above. `Suggested.lean` contains the headlines `numericallyTrivial_torsion_of_algebraic_finiteField`, `contraction_descends_purelyInseparable` and `lineBundle_lifts_completeDVR_of_h2_zero`, with the simple predicates `NumericallyTrivial` and `IsContraction`; its module docstring identifies the carriers required to state the other headline results.
+Layer 0 applies imported degree and proves the fibre-testing equivalences. Layer 1 forms numerical quotients and dual cones, proving finiteness before using a Euclidean topology or a natural-number Picard rank. Layer 2 builds proper-field Picard representability, the constants-algebra Brauer obstruction and the étale numerical local system. Layer 3 passes from semiample sheaves to contractions and descends them, treating inseparability before finite Galois averaging. Layer 4 combines negative intersections with Hilbert rigidity to descend curves and fibre graphs. Layer 5 applies these interfaces to DVR families and vertical descent and constructs the birational rank. A *Needs:* line separates statement vocabulary from the inputs to the indicated proof route; a different proof may omit route-only inputs. Every supplier extension has its exact contract above. `Suggested.lean` contains the headlines `numericalClassGroup_free_finite`, `relNumericalClassGroup_free_finite`, `numericallyTrivial_torsion_of_algebraic_finiteField`, `contraction_descends_purelyInseparable` and `lineBundle_lifts_completeDVR_of_h2_zero`, with the simple definitions `NumericallyTrivial`, `RelNumericallyTrivial`, `numericallyTrivialClasses`, `relNumericallyTrivialClasses` and `IsContraction`; its module docstring identifies the carriers required to state the other headline results.
 
 ## Layer 0: degrees and relative numerical triviality
 
 ### 0.1 The relative curve pairing
 
-For an integral curve C in a fibre X_s of f : X → S, define the relative numerical pairing (L·C) to be the imported degree over κ(s) of L restricted to C. Prove that this application agrees with the degree of c₁(L) intersected with the fundamental one-cycle. For a proper scheme C of dimension at most one, that cycle is the sum of its reduced one-dimensional components with generic-length multiplicities; zero-dimensional components contribute zero. (KLE05, Definition 6.1, p. 52; KLE05 line 2480; BMP23, §2.5, paragraph before Remark 2.22, p. 18; BMP23 line 819; STACKS, §33.45, tag 0BEL, Varieties line 4676).
+For an integral curve C in a fibre X_s of f : X → S, define the relative numerical pairing (L·C) to be the imported degree over κ(s) of L restricted to C. Prove that this application agrees with the degree of c₁(L) intersected with the fundamental one-cycle. For a proper scheme C of dimension at most one, that cycle is the sum of its reduced one-dimensional components with generic-length multiplicities; zero-dimensional components contribute zero. (KLE05, Definition 6.1, p. 52; KLE05 line 2480; BMP23, §2.5, paragraph before Remark 2.22, p. 18; BMP23 line 819; STACKS, Lemma 33.44.6, tag 0AYW, Varieties line 4474, for the length-weighted law; STACKS, §33.45, tag 0BEL, Varieties line 4676).
 
 The API gives the following facts.
 
@@ -103,11 +103,11 @@ The API gives the following facts.
 - For a finite surjective κ-morphism π : C′ → C of integral proper curves, deg_κ(π*L) = [κ(C′) : κ(C)]·deg_κ(L).
 - If C is proper over a finite extension κ′ ⊃ κ, then deg_κ(L) = `[κ′ : κ]·deg_{κ′}(L)`.
 - For any field extension K/κ, deg_K(L_K on C_K) = deg_κ(L on C) (flat base change of cohomology).
-- On an integral proper curve, deg_κ(L) = deg(c₁(L) ∩ [C]) of SchemeAndStackFoundations §5.3 and agrees with JacobianChallenge Layer A's deg for smooth projective geometrically integral curves.
+- On an integral proper curve, deg_κ(L) = deg(c₁(L) ∩ [C]) by SchemeAndStackFoundations §5.3 `c1_degree_curve` over κ, and the degree agrees with JacobianChallenge Layer A's deg for smooth projective geometrically integral curves.
 
-One proof route is as follows. Use the tensor, inverse, cycle, normalization, finite-pullback and ground-field laws supplied by the degree owners. The new comparison is the equality of the fibre degree with the first-Chern intersection on the fundamental one-cycle.
+One proof route is as follows. Tensor additivity and field-extension invariance are StableReduction Layer 2, J-A2, and the inverse and power laws follow from additivity. The restriction-of-scalars law is the identity dim_κ = [κ′:κ]·dim_κ′ on each cohomology group. The length-weighted component law is proved here by dévissage of O_C along the nilpotent filtration at each generic point, as in STACKS tag 0AYW. On each integral component, `deg_κ(L|_{C_i}) = deg(c₁(L) ∩ [C_i])` is SchemeAndStackFoundations §5.3 `c1_degree_curve` over κ(s); summing with the generic lengths gives the comparison with the fundamental one-cycle. The finite-pullback law is the projection formula `proper_pushforward` of SchemeAndStackFoundations §5.3 together with π_*[C′] = [κ(C′):κ(C)]·[C] for proper pushforward of cycles (SchemeAndStackFoundations §5.2).
 
-*Needs:* JacobianChallenge Layer A; JacobianChallenge Layer B; JacobianChallenge Layer C; SchemeAndStackFoundations §§3.4–3.5; SchemeAndStackFoundations §§5.2–5.3, 5.9–5.10; Tau Ceti `TauCeti.AlgebraicGeometry.LineBundleClass`; Mathlib `AlgebraicGeometry.IsProper`; StableReduction Layer 2, J-A2; SchemeAndStackFoundations §5.3; StableReduction Layer 2.
+*Needs:* JacobianChallenge Layer A; JacobianChallenge Layer B; JacobianChallenge Layer C; StableReduction Layer 2, J-A2; SchemeAndStackFoundations §§5.2–5.3; Tau Ceti `TauCeti.AlgebraicGeometry.LineBundleClass`; Mathlib `AlgebraicGeometry.IsProper`.
 
 **Checks.**
 
@@ -116,9 +116,6 @@ One proof route is as follows. Use the tensor, inverse, cycle, normalization, fi
 - deg_κ(O_C) = 0, and on a zero-dimensional proper κ-scheme every invertible sheaf has degree 0.
 - For the nonreduced conic C = V(y²) ⊂ P²_κ, deg_κ(O(1)|_C) = 2 = 2·deg(O(1)|_line): nilpotent multiplicities count.
 - χ(L) is not the degree: on P¹_κ, χ(O) = 1 while deg(O) = 0.
-- deg_κ `O_{P¹_κ}(m)` = m.
-- deg over κ depends on κ: P¹_ℂ regarded as an ℝ-scheme has deg_ℝ O(1) = 2.
-- On the double line V(y²) ⊂ P²_κ, deg O(1)|_C = 2.
 
 ### 0.2 Divisibility of curve degrees by the geometric index d_C
 
@@ -132,15 +129,13 @@ One proof route is as follows. The group Aut(k̄/k) permutes the irreducible com
 
 - For C = P¹_ℂ viewed over ℝ, d_C = 2 and every invertible sheaf has even ℝ-degree on C.
 - For k = F_p(t), k′ = `k(t^{1/p})` and C = `P¹_{k′}` viewed over k, `C_{k̄}` is a p-fold thickening of `P¹_{k̄}`: d_C = p.
-- For geometrically integral C, d_C = 1.
 - For a geometrically integral curve d_C=1, so O(1) on P¹ has degree 1; a factor depending only on characteristic would fail over ℝ.
-- For k=𝔽_p(t) and k′=k(t^(1/p)), the curve `P¹_{k′}` has one geometric component of multiplicity p, so d_C=p and O(1) has k-degree p.
 
 Here d_C is the geometric component factor m r, not the gcd of closed-point residue degrees. For the pointless real conic it is 1, although all line-bundle degrees are even and the usual curve index is 2.
 
 ### 0.3 Numerical triviality is invariant under extension of the base field
 
-Let X be proper over a field k, L ∈ Pic(X) and K/k any field extension. Then (L·C) = 0 for every integral curve C ⊂ X if and only if (L_K·C′) = 0 for every integral curve C′ ⊂ X_K. (KLE05, Exercise 6.11, Proposition 6.12 and Remark 6.14, pp. 57–58; KLE05 line 2721; KLE05, Theorem 6.3, pp. 52–53; KLE05 line 2721).
+Let X be proper over a field k, L ∈ Pic(X) and K/k any field extension. Then (L·C) = 0 for every integral curve C ⊂ X if and only if (L_K·C′) = 0 for every integral curve C′ ⊂ X_K. (KLE05, Exercise 6.11, Proposition 6.12 and Remark 6.14, pp. 57–58; KLE05 line 2721; KLE05, Theorem 6.3, pp. 52–53; KLE05 line 2498).
 
 One proof route is as follows. (⇐) For C ⊂ X, the base change C_K is a proper one-dimensional K-scheme and deg_k(L|_C) = `deg_K(L_K|_{C_K})` = Σ_i m_i (L_K·C_i) = 0. (⇒), K/k finite: X_K → X is finite; a curve C′ ⊂ X_K maps finitely onto an integral curve C ⊂ X, and the projection formula gives [K:k]·(L_K·C′)_K = [κ(C′):κ(C)]·(L·C)_k = 0. (⇒), general K: C′ is defined over a finitely generated k-subalgebra A ⊂ K; spread C′ to a flat proper family of curves over an open of Spec A and specialise to a closed point a, whose residue field is finite over k (Nullstellensatz). Degrees are constant in flat proper families of curves (`χ(L^{⊗n})` is locally constant), so (L_K·C′) equals a degree on `X_{κ(a)}`, which vanishes by the finite case. The direct specialization route precedes the Picard-scheme comparison of §2.5; it does not require Picard representability.
 
@@ -149,18 +144,18 @@ One proof route is as follows. (⇐) For C ⊂ X, the base change C_K is a prope
 **Checks.**
 
 - On P¹_ℝ, O(m) is numerically trivial iff it is so on P¹_ℂ, iff m = 0.
-- A curve on X_K need not map onto a curve of X (a generic line of `P²_{k(u)}` dominates P²_k); the proof specialises instead of taking images.
-- Over k(u), the generic line in P² need not map onto a curve of P²_k; its O(1)-degree is nevertheless 1. Specialization, rather than taking that image as a curve, detects the same nonzero degree.
+- A curve on X_K need not map onto a curve of X: a generic line of `P²_{k(u)}` dominates P²_k. Its O(1)-degree is 1, and specialization, rather than taking the image as a curve, detects the same nonzero degree.
 
 ### 0.4 Relative numerical triviality and the subgroup Pic^τ(X/S)
 
-For proper f : X → S with S Noetherian, define L ≡_f 0 by vanishing of (L·C) for every point s of S and every integral curve C in X_s. Define numerical equivalence of L and M by L tensor M inverse ≡_f 0, and let Pic^τ(X/S) be the subgroup of Pic(X) satisfying this condition. Compare the definition with testing closed fibres and geometric fibres by §§0.3 and 0.5. (BMP23, Remark 2.22, p. 19; BMP23 line 825; SCH23, §1, p. 4; SCH23 line 167; WIT22, §2, p. 7; WIT22 line 319).
+For proper f : X → S, define L ≡_f 0 by vanishing of (L·C) for every point s of S and every integral curve C in the scheme-theoretic fibre X_s, with degrees over κ(s); the definition needs no hypothesis on S, and every theorem below assumes S Noetherian. Define numerical equivalence of L and M by L tensor M inverse ≡_f 0, and let Pic^τ(X/S) be the subgroup of Pic(X) satisfying this condition. Compare the definition with testing closed fibres and geometric fibres by §§0.3 and 0.5. (BMP23, Remark 2.22, p. 19; BMP23 line 825; SCH23, §1, p. 4; SCH23 line 167; WIT22, §2, p. 7; WIT22 line 319).
 
-The absolute-field predicate `NumericallyTrivial` in the acceptance test is the degree-zero condition on every integral closed curve, using native pullback and Euler degree. For proper X it is exactly the specialization of this relative definition to Spec k.
+The absolute-field predicate `NumericallyTrivial` in the acceptance test is the degree-zero condition on every integral closed curve, using native pullback and Euler degree. The relative predicate `RelNumericallyTrivial` applies `NumericallyTrivial` over κ(s) to the pullback of L to the scheme-theoretic fibre X_s (Mathlib `AlgebraicGeometry.Scheme.Hom.fiber`) of every point s.
 
 The API gives the following facts.
 
-- The predicate L ≡_f 0 on Pic(X) for proper f : X → S.
+- The predicate L ≡_f 0 on Pic(X) for proper f : X → S, which is `RelNumericallyTrivial`; it depends only on the class of L.
+- For the structure morphism of a proper k-scheme X, `RelNumericallyTrivial` agrees with `NumericallyTrivial` through the canonical isomorphism of X with its fibre over the point of Spec k.
 - Pic^τ(X/S) is a subgroup of Pic(X): closed under ⊗, inverse, containing O_X.
 - f*N ≡_f 0 for N ∈ Pic(S).
 - L ≡_f 0 iff (L·C) = 0 for all curves C in fibres over closed points of S (§0.5).
@@ -171,7 +166,7 @@ The API gives the following facts.
 
 One proof route is as follows. Tensor additivity and inverse degree give the subgroup. Establish the independent all-fibres definition before applying the field-extension theorem of §0.3 and the closed-point theorem of §0.5. This order uses neither characterization to define the other.
 
-*Needs:* §0.1 and native line bundles for the definition and subgroup; §0.3 for geometric comparison; §0.5 only for the closed-point characterization.
+*Needs:* §0.1, native line bundles and Mathlib `AlgebraicGeometry.Scheme.Hom.fiber` for the definition and subgroup; §0.3 for geometric comparison; §0.5 only for the closed-point characterization.
 
 **Checks.**
 
@@ -180,7 +175,6 @@ One proof route is as follows. Tensor additivity and inverse degree give the sub
 - On an elliptic curve E over k̄ with distinct points p, q, O(p − q) ≡ 0 although O(p − q) ≇ O_E: numerically trivial is weaker than trivial.
 - For the first projection f : P¹×P¹ → P¹, O(a,b) ≡_f 0 iff b = 0, while O(a,b) ≡ 0 over Spec k iff a = b = 0.
 - f*N ≡_f 0 for every N ∈ Pic(S).
-- For the identity X = S every invertible sheaf is numerically trivial.
 - On an Enriques surface over k̄ of characteristic ≠ 2, ω is numerically trivial and nontrivial.
 
 ### 0.5 Numerical triviality can be tested over closed points of the base
@@ -198,7 +192,7 @@ One proof route is as follows. Suppose the conclusion fails at some point; by No
 
 ### 0.6 Proper surjective pullback detects numerical triviality
 
-Let g : X′ → X be a proper surjective morphism of schemes proper over a Noetherian S. For L ∈ Pic(X), L ≡_S 0 if and only if g*L ≡_S 0. Hence g* : Num(X/S) → Num(X′/S) (Layer 1) is injective. (KLE05, Remark 6.14, pp. 57–58; KLE05 line 2742; STACKS, Lemma 33.45.7, tag 0BET, Varieties line 4790).
+Let g : X′ → X be a proper surjective morphism of schemes proper over a Noetherian S. For L ∈ Pic(X), L ≡_S 0 if and only if g*L ≡_S 0. (KLE05, Remark 6.14, pp. 57–58; KLE05 line 2742; STACKS, Lemma 33.45.7, tag 0BET, Varieties line 4790).
 
 One proof route is as follows. (⇒) A curve C′ in a fibre of X′ maps onto a curve D or to a point; by the projection formula (g*L·C′) = [κ(C′):κ(D)](L·D), or 0. (⇐) Given a curve D ⊂ X_s, the generic fibre of g over the generic point of D is a nonempty proper scheme; the closure of one of its closed points is an integral curve C′ ⊂ X′_s mapping finitely onto D, and (g*L·C′) = [κ(C′):κ(D)](L·D) with a positive factor.
 
@@ -219,18 +213,19 @@ Mathlib scheme morphisms and field extensions; Tau Ceti line bundles and degree;
 
 ## Layer 1: numerical groups, cones, nefness and bigness
 
-### 1.1 The relative numerical group N¹(X/S) and the relative Picard number
+### 1.1 The relative numerical group Num(X/S)
 
-For f : X → S proper with S Noetherian put Num(X/S) := Pic(X)/Pic^τ(X/S), N¹(X/S)_ℚ := Num(X/S) ⊗ ℚ and N¹(X/S) := N¹(X/S)_ℝ := Num(X/S) ⊗ ℝ, with the class map [−] : Pic(X) → Num(X/S). The relative Picard number is ρ(X/S) := dim_ℝ N¹(X/S), finite by §1.4. Equivalently N¹(X/S)_ℚ is (Pic(X) ⊗ ℚ) modulo the kernel of the ℚ-linear degree pairing with curves in fibres, which is Hacon–Witaszek's N¹(X) = Pic(X) ⊗ ℚ/≡ for S = Spec k. (BMP23, Remark 2.22, p. 19; BMP23 line 825; HW23, §1, after Theorem 1.3, p. 3; HW23 line 96).
+For f : X → S proper put Num(X/S) := Pic(X)/Pic^τ(X/S), N¹(X/S)_ℚ := Num(X/S) ⊗ ℚ and N¹(X/S) := N¹(X/S)_ℝ := Num(X/S) ⊗ ℝ, with the class map [−] : Pic(X) → Num(X/S). In the acceptance test Num(X/S) is the quotient of Tau Ceti's `TauCeti.AlgebraicGeometry.LineBundleClass` of X by the subgroup `relNumericallyTrivialClasses` of f, and for X proper over a field k with structure morphism x, Num(X/k) is the quotient by the subgroup `numericallyTrivialClasses` of (k, X, x). Equivalently N¹(X/S)_ℚ is (Pic(X) ⊗ ℚ) modulo the kernel of the ℚ-linear degree pairing with curves in fibres, which is Hacon–Witaszek's N¹(X) = Pic(X) ⊗ ℚ/≡ for S = Spec k. (BMP23, Remark 2.22, p. 19; BMP23 line 825; HW23, §1, after Theorem 1.3, p. 3; HW23 line 96).
 
 The API gives the following facts.
 
 - Num(X/S) := Pic(X)/Pic^τ(X/S), an abelian group with class map Pic(X) → Num(X/S).
+- `relNumericallyTrivialClasses` and, over a field, `numericallyTrivialClasses` are the subgroups of Pic(X) generated by the classes of relatively, respectively absolutely, numerically trivial invertible sheaves; since those classes form a subgroup (§0.4), each consists exactly of them and equals Pic^τ(X/S), respectively Pic^τ(X/k).
+- For the structure morphism of a proper k-scheme X, the two subgroups agree through the canonical isomorphism of X with its fibre over the point of Spec k.
 - [L] = [M] in Num(X/S) iff L ⊗ `M^{-1}` ≡_f 0.
 - The degree pairing Num(X/S) × {curves in fibres} → ℤ descends from Pic(X).
 - Num(X/S) is torsion-free.
 - N¹(X/S)_ℚ := Num ⊗ ℚ and N¹(X/S) := Num ⊗ ℝ with the injective maps Num ↪ N¹_ℚ ↪ N¹_ℝ.
-- ρ(X/S) := dim_ℝ N¹(X/S) ∈ ℕ.
 - An S-morphism g : X′ → X of proper S-schemes induces g* : Num(X/S) → Num(X′/S), with id* = id and (g∘h)* = h*∘g*; injective when g is surjective.
 - For a field extension K/k, Num(X/k) → Num(X_K/K) is injective (§0.3).
 - For normal X and a ℚ-Cartier Weil divisor D with rD Cartier, [D] := (1/r)[O_X(rD)] ∈ N¹(X/S)_ℚ, independent of r.
@@ -238,21 +233,52 @@ The API gives the following facts.
 
 One proof route is as follows. Num(X/S) is torsion-free: if `L^{⊗n}` ≡_f 0 with n ≠ 0, cancel n in each integer degree. Torsion-freeness makes Num → N¹_ℚ → N¹_ℝ injective, and tensoring the exact sequence 0 → Pic^τ(X/S) → Pic(X) → Num → 0 with ℚ identifies N¹_ℚ with Pic ⊗ ℚ modulo ℚ-numerical equivalence.
 
-*Needs:* §0.4; §0.6; Mathlib `Module.finrank`.
+*Needs:* §0.4; §0.6; Tau Ceti `TauCeti.AlgebraicGeometry.LineBundleClass`; Mathlib `Subgroup.closure`.
 
 **Checks.**
 
-- Num(P¹_k/k) ≅ ℤ via the degree, and ρ = 1.
-- Num(S/S) = 0 and ρ(S/S) = 0 for the identity, whatever Pic(S) is.
+- Num(P¹_k/k) ≅ ℤ via the degree.
+- Num(S/S) = 0 for the identity, whatever Pic(S) is: every fibre is a point, so every class is relatively numerically trivial.
 - For the first projection P¹×P¹ → P¹, Num ≅ ℤ by the fibre degree b of O(a,b); over Spec k, Num ≅ ℤ² with intersection matrix [[0,1],[1,0]].
 - For an elliptic curve E over k̄, Pic(E) ≅ E(k̄) × ℤ but Num(E/k̄) ≅ ℤ: the numerical group is not the Picard group.
 - For an Enriques surface Y over k̄ (characteristic ≠ 2), the class of ω has order 2 in Pic(Y) and is zero in Num(Y/k̄).
-- ρ(P¹×P¹/k) = 2 and ρ(P¹×P¹/P¹) = 1 for a projection.
-- ρ(S/S) = 0 for the identity.
 
-### 1.2 Relative 1-cycles N₁(X/S) and the cone of curves NE(X/S)
+### 1.2 Numerical Néron–Severi theorem for proper schemes over a field
 
-For f : X → S proper with S Noetherian, a curve over S is an integral one-dimensional closed subscheme C ⊂ X with f(C) a closed point s, proper over κ(s). Let Z₁(X/S)_ℝ be the real vector space on curves over S, paired with Pic(X) by (L·Σa_iC_i) = Σ a_i `(L·C_i)_{κ(s_i)}`. Put N₁(X/S) := Z₁(X/S)_ℝ modulo the cycles pairing to zero with every invertible sheaf. NE(X/S) ⊂ N₁(X/S) is the convex cone of classes Σ a_i[C_i] with a_i ≥ 0, and NE‾(X/S) its closure in the Euclidean topology of the finite-dimensional space N₁(X/S). (BMP23, §2.5, paragraph before Remark 2.22, p. 18; BMP23 line 819; HW23, proof of Theorem 1.3(2a), p. 33; HW23 line 1520).
+For X proper over any field k, prove that Num(X/k) is free abelian of finite rank; this is `numericalClassGroup_free_finite`. It extends SchemeAndStackFoundations §5.10 `Num.free_finiteRank`, which treats smooth projective surfaces over algebraically closed fields, to arbitrary proper schemes over arbitrary fields. Its rank ρ(X) ∈ ℕ, the Picard number, equals dim_ℝ N¹(X/k) and is at most the rank after extension to an algebraic closure. If k is algebraically closed and ℓ is a prime invertible in k, prove ρ(X) ≤ dim over 𝔽_ℓ of H²_ét(X,μ_ℓ). (KLE05, Remark 6.19, pp. 59–60; KLE05 line 2840; BMP23, Remark 2.22, p. 19; BMP23 line 825).
+
+For n=0, Num(P⁰)=0; for n≥1, Num(Pⁿ)=ℤ. In the elliptic-product Check below, End(E) has rank 1, 2 or 4, giving ρ=3, 4 or 6; the last value is the supersingular case.
+
+One proof route is as follows. Extend the field to an algebraic closure using injectivity of numerical pullback. For any r independent numerical classes, choose r curve evaluations of nonzero determinant. The image of all classes in ℤ^r is a rank-r lattice, so its reduction modulo ℓ has dimension r. Kummer injects Pic(X)/ℓ into H²_ét(X,μ_ℓ); EtaleCohomologyFoundations §F.3 makes that group finite. Hence independent sets have bounded size. A maximal independent set and r separating curves then embed the whole torsion-free numerical group into ℤ^r, proving finite freeness.
+
+*Needs:* §1.1; §0.3; SchemeAndStackFoundations §§2.1–2.2, 2.11, 2.15; EtaleCohomologyFoundations §F.3; Mathlib `Module.finrank`.
+
+**Checks.**
+
+- For n≥1, ρ(P^n_k)=1; for n=0, ρ(P⁰_k)=0.
+- For an elliptic curve E over k̄, ρ(E × E) = 2 + rank End(E) ∈ {3, 4, 6}, the value 6 occurring only for supersingular E in positive characteristic.
+
+### 1.3 Finite rank of Num(X/S) over a Noetherian base and the relative Picard number
+
+For every proper f : X → S with S Noetherian, prove that Num(X/S) is free abelian of finite rank; this is `relNumericalClassGroup_free_finite`. Consequently its rational and real scalar extensions are finite-dimensional, and the relative Picard number ρ(X/S) := dim_ℝ N¹(X/S) is a natural number. The proof uses the finite-point detection of the parent supplier contract, rather than testing a single Euler polynomial on a reducible fibre. (BMP23, Remark 2.22, p. 19; BMP23 line 825; KLE05, Theorem 6.16 and proof, pp. 58–59; KLE05 line 2793).
+
+The detection is stated in curve degrees, curve by curve: for the disjoint union of two lines, a degree vector (1,−1) has zero total Euler difference but is not numerically zero.
+
+One proof route is as follows. The parent contract gives points s₁, …, s_n of S such that L ≡_f 0 exactly when L has degree zero on every integral curve in the fibres over s₁, …, s_n. Hence `L ↦ (L|_{X_{s_j}})_j` induces an injective homomorphism `Num(X/S) → ⊕_j Num(X_{s_j}/κ(s_j))`, each summand is free of finite rank by §1.2, and a subgroup of a finitely generated free abelian group is free of finite rank. The supplier obtains the points by Noetherian induction over a projective Chow cover with geometrically integral flat component families; generic flatness alone does not give them.
+
+*Needs:* §1.1; §1.2; AlgebraicModuliForArithmeticGeometry §1.6 with the finite-point detection contract; Mathlib `Module.finrank`.
+
+**Checks.**
+
+- For S = Spec k this is §1.2: P¹ has lattice ℤ and P⁰ has lattice 0. A strictly positive Picard rank would fail on P⁰.
+- ρ(P¹×P¹/k) = 2 and ρ(P¹×P¹/P¹) = 1 for a projection, and ρ(S/S) = 0 for the identity.
+- ρ(X/S) ≤ ρ(X/k) for X proper over a field and S proper over k.
+- The Noetherian hypothesis is needed for finite generation: for `S = Spec ∏_{n∈ℕ} k`, Pic(P¹_S) = Pic(S) × H⁰(S, ℤ), and Num(P¹_S/S) is the group of locally constant ℤ-valued degree functions on the Stone–Čech compactification of ℕ, the bounded integer sequences, which is not finitely generated.
+- The Euler-polynomial test cannot be used on a reducible fibre without separating its components: on P¹ ⊔ P¹ with the standard ample sheaf, L = O(1) ⊔ O(−1) satisfies χ(L^p(n)) = χ(O(n)) for all integers p,n but has nonzero component degrees.
+
+### 1.4 Relative 1-cycles N₁(X/S) and the cone of curves NE(X/S)
+
+For f : X → S proper with S Noetherian, a curve over S is an integral one-dimensional closed subscheme C ⊂ X with f(C) a closed point s, proper over κ(s). Let Z₁(X/S)_ℝ be the real vector space on curves over S, paired with Pic(X) by (L·Σa_iC_i) = Σ a_i `(L·C_i)_{κ(s_i)}`. Put N₁(X/S) := Z₁(X/S)_ℝ modulo the cycles pairing to zero with every invertible sheaf. NE(X/S) ⊂ N₁(X/S) is the convex cone of classes Σ a_i[C_i] with a_i ≥ 0, and NE‾(X/S) its closure in the Euclidean topology of the finite-dimensional space N₁(X/S). (BMP23, §2.5, paragraph before Remark 2.22, p. 18; BMP23 line 819; HW23, proof of Theorem 1.3(2a), p. 33; HW23 line 1513).
 
 The API gives the following facts.
 
@@ -262,9 +288,9 @@ The API gives the following facts.
 - NE(X/S) and its closure NE‾(X/S), a closed convex cone.
 - For an S-morphism g : X′ → X of proper S-schemes, g_*[C] = [κ(C):κ(g(C))]·[g(C)] or 0, with (g*L·γ) = (L·g_*γ) and g_*(NE(X′/S)) ⊂ NE(X/S).
 
-One proof route is as follows. By §0.5, the kernel of Pic(X) → Hom(Z₁(X/S)_ℤ, ℤ) is Pic^τ(X/S), so the pairing N¹(X/S) × N₁(X/S) → ℝ is nondegenerate on both sides. With N¹(X/S) finite-dimensional (§1.4), nondegeneracy makes N₁(X/S) its dual; NE‾ is a closed convex cone, not assumed polyhedral.
+One proof route is as follows. By §0.5, the kernel of Pic(X) → Hom(Z₁(X/S)_ℤ, ℤ) is Pic^τ(X/S), so the pairing N¹(X/S) × N₁(X/S) → ℝ is nondegenerate on both sides. With N¹(X/S) finite-dimensional (§1.3), nondegeneracy makes N₁(X/S) its dual; NE‾ is a closed convex cone, not assumed polyhedral.
 
-*Needs:* §1.1; §0.5; §1.4 for perfect duality and the finite-dimensional topology.
+*Needs:* §1.1; §0.5; §1.3 for perfect duality and the finite-dimensional topology.
 
 **Checks.**
 
@@ -272,40 +298,6 @@ One proof route is as follows. By §0.5, the kernel of Pic(X) → Hom(Z₁(X/S)_
 - For f = id_S there are no curves over S: N₁(S/S) = 0 and NE(S/S) = {0}.
 - For the first projection P¹×P¹ → P¹, N₁(X/S) = ℝ·[fibre] and NE‾ is its nonnegative ray.
 - For X=E×E over ℂ with End(E)=ℤ and product polarization, identify the nef cone with positive semidefinite symmetric 2×2 matrices, and the closed curve cone with its trace dual. The matrix A=[[1,√2],[√2,2]] has determinant 0 and spans an irrational extremal ray containing no nonzero rational class. Hence A is not a finite positive combination of integral curve classes. The positive-definite matrices A+εI approach A: det(A+I)=4 and det(A+I/2)=7/4. Thus NE differs from its closure in this abelian-surface example (PS12, Proposition 1.2, p. 3, PS12 line 98; Theorem 4.3, p. 9, PS12 line 421; the boundary calculation is the argument here).
-- For P¹×P¹ over k, NE‾ is spanned by the two rulings.
-- For S = X, N₁ = 0.
-
-### 1.3 Numerical Néron–Severi theorem for proper schemes over a field
-
-For X proper over any field k, prove that Num(X/k) is free abelian of finite rank. Its rank is at most the rank after extension to an algebraic closure. If k is algebraically closed and ℓ is a prime invertible in k, prove ρ(X) ≤ dim over 𝔽_ℓ of H²_ét(X,μ_ℓ). (KLE05, Remark 6.19, pp. 59–60; KLE05 line 2840; BMP23, Remark 2.22, p. 19; BMP23 line 825).
-
-For n=0, Num(P⁰)=0; for n≥1, Num(Pⁿ)=ℤ. In the elliptic-product Check below, End(E) has rank 1, 2 or 4, giving ρ=3, 4 or 6; the last value is the supersingular case.
-
-One proof route is as follows. Extend the field to an algebraic closure using injectivity of numerical pullback. For any r independent numerical classes, choose r curve evaluations of nonzero determinant. The image of all classes in ℤ^r is a rank-r lattice, so its reduction modulo ℓ has dimension r. Kummer injects Pic(X)/ℓ into H²_ét(X,μ_ℓ); EtaleCohomologyFoundations §F.3 makes that group finite. Hence independent sets have bounded size. A maximal independent set and r separating curves then embed the whole torsion-free numerical group into ℤ^r, proving finite freeness.
-
-*Needs:* §1.1; §0.3; SchemeAndStackFoundations §§2.1–2.2, 2.6, 2.10–2.11, 2.15; SchemeAndStackFoundations §§5.2–5.3, 5.9–5.10; EtaleCohomologyFoundations §F.3.
-
-**Checks.**
-
-- For n≥1, ρ(P^n_k)=1; for n=0, ρ(P⁰_k)=0.
-- For an elliptic curve E over k̄, ρ(E × E) = 2 + rank End(E) ∈ {3, 4, 6}, the value 6 occurring only for supersingular E in positive characteristic.
-- For P⁰ the numerical group is zero, whereas for P¹ it is ℤ; assigning rank 1 to every projective space fails in dimension zero.
-
-### 1.4 Finite-dimensionality of N¹(X/S) over a Noetherian base
-
-For every proper f : X → S with S Noetherian, prove that Num(X/S) is free abelian of finite rank. Consequently its rational and real scalar extensions are finite-dimensional. The proof includes the componentwise numerical-kernel reduction specified in the parent supplier contract, rather than testing a single Euler polynomial on a reducible fibre. (BMP23, Remark 2.22, p. 19; BMP23 line 825; KLE05, Theorem 6.16 and proof, pp. 58–59; KLE05 line 2793).
-
-The finite component-family reduction must retain each geometric component and its nilpotent generic multiplicity. For the disjoint union of two lines, a degree vector (1,−1) has zero total Euler difference but is not numerically zero.
-
-One proof route is as follows. Apply the finite component-family reduction of the parent contract after a projective Chow cover. On each geometrically integral projective flat family use Kleiman Theorem 6.3(g) and constancy of Euler characteristics to detect numerical triviality at its generic fibre. Use a finite covering family of such components and repeat on the closed complement. The degree quotient embeds into a finite direct sum of absolute numerical lattices, so it is finite free. The component-family detection itself is part of the exact supplier extension; generic flatness alone is not that extension.
-
-*Needs:* §1.3; §0.5; SchemeAndStackFoundations §§4.9–4.12; JacobianChallenge Layer C; the component-family supplier extension of AlgebraicModuliForArithmeticGeometry §1.6.
-
-**Checks.**
-
-- For S = Spec k this is §1.3: P¹ has lattice ℤ and P⁰ has lattice 0. A strictly positive Picard rank would fail on P⁰.
-- ρ(X/S) ≤ ρ(X/k) for X proper over a field and S proper over k.
-- The Euler-polynomial test cannot be used on a reducible fibre without separating its components: on P¹ ⊔ P¹ with the standard ample sheaf, L = O(1) ⊔ O(−1) satisfies χ(L^p(n)) = χ(O(n)) for all integers p,n but has nonzero component degrees.
 
 ### 1.5 Relatively nef invertible sheaves and ℝ-Cartier classes
 
@@ -323,7 +315,7 @@ The API gives the following facts.
 
 One proof route is as follows. Nonnegativity on curves extends to NE(X/S) by linearity and to NE‾ by continuity of the pairing; so the two descriptions agree. Testing over all points of S is equivalent: the specialization argument of §0.5 transports a degree on a curve over a nonclosed point to a nonnegative combination of degrees over a closed point.
 
-*Needs:* §1.2; §0.5.
+*Needs:* §1.4; §0.5.
 
 **Checks.**
 
@@ -343,17 +335,18 @@ The API gives the following facts.
 - For integral proper V and nef L, bigness is equivalent to (L^n·V)>0; use the projective criterion and the proper birational comparison.
 - L is big iff `L^{⊗m}` is big for some (every) m ≥ 1.
 - For K/k with V_K integral, L is big iff L_K is big (flat base change of H⁰).
+- On a projective geometrically integral V, L is big iff it is AlgebraicModuliForArithmeticGeometry §1.6 `bigLineBundle`: both are section growth of order dim V along sufficiently divisible powers.
+- For a proper birational π : V′ → V of integral proper schemes, L is big iff π*L is big.
 
-One proof route is as follows. For a projective integral scheme apply the nef top-intersection criterion of Keel. For arbitrary proper integral schemes use the supplied proper birational comparison and a projective Chow modification; pullback preserves nefness and the top Cartier intersection. Flat coherent base change proves the section-growth assertion after a field extension with integral source. Section-growth bigness on projective integral schemes is numerically invariant even without nefness; the proof of the criterion here only uses the nef case.
+One proof route is as follows. For a projective integral scheme apply the supplied projective criterion, Keel's nef top-intersection criterion. For an arbitrary proper integral V of dimension n choose a projective birational Chow modification π : V′ → V (SchemeAndStackFoundations §4.12). The supplied section comparison bounds h⁰(V′, π*L^m) − h⁰(V, L^m) by C·m^(n−1), so L is big exactly when π*L is big; π*L is nef (§1.5), and the supplied intersection equality gives ((π*L)^n·V′) = (L^n·V). Apply the projective criterion on V′. Flat coherent base change proves the section-growth assertion after a field extension with integral source. Section-growth bigness on projective integral schemes is numerically invariant even without nefness; the proof of the criterion here only uses the nef case.
 
-*Needs:* §1.5; SchemeAndStackFoundations §§5.2–5.3, 5.9–5.10; JacobianChallenge Layer B; the projective nef-and-big contract of SchemeAndStackFoundations §5.3; the proper-bigness supplier extension of AlgebraicModuliForArithmeticGeometry §1.6.
+*Needs:* §1.5; SchemeAndStackFoundations §4.12; SchemeAndStackFoundations §§5.2–5.3, 5.9–5.10; JacobianChallenge Layer B; the projective nef-and-big contract of SchemeAndStackFoundations §5.3; the proper-bigness supplier extension of AlgebraicModuliForArithmeticGeometry §1.6.
 
 **Checks.**
 
 - O(1) on P^n_k is big; h⁰(O(m)) = binom(m+n, n).
 - O_V is big iff dim V = 0.
 - On P¹×P¹, the pullback O(1,0) of O(1) along a projection is nef with (O(1,0)²) = 0 and is not big.
-- O(1) on P^n is big; O on a positive-dimensional V is not big.
 
 ### Examples
 
@@ -361,7 +354,7 @@ For P¹×P¹, numerical classes are (a,b), the intersection matrix of the two ru
 
 ### Dependencies
 
-Layer 0; SchemeAndStackFoundations §§4.12 and 5.2–5.3; EtaleCohomologyFoundations §F.3; AbundanceStatement Layers 4A–4D; AlgebraicModuliForArithmeticGeometry §1.6 and its exact component-family and proper-bigness extensions. Form quotients first, prove absolute and relative finiteness next, then give curve-space duality, topology and cones. The definitions of the quotient and algebraic cycle space do not require the finiteness proof.
+Layer 0; SchemeAndStackFoundations §§2.1–2.2, 2.11, 2.15, 4.12 and 5.2–5.3, with the projective nef-and-big extension of §5.3; EtaleCohomologyFoundations §F.3; AbundanceStatement Layers 4A–4D; AlgebraicModuliForArithmeticGeometry §1.6 and its finite-point detection and proper-bigness extensions. Form quotients first, prove absolute and relative finiteness next, then give curve-space duality, topology and cones. The definitions of the quotient and algebraic cycle space do not require the finiteness proof.
 
 ## Layer 2: proper Picard schemes and the numerical local system
 
@@ -394,7 +387,7 @@ The API gives the following facts.
 
 One proof route is as follows. Finite-dimensionality of H⁰(X, O_X) (JacobianChallenge Layer C) and flat base change of coherent cohomology (SchemeAndStackFoundations §2.6) give the formula for Γ(X_A, O). Units of H⁰(X, O_X) ⊗ A define the fppf sheaf h_*G_m; the Stein factorization X → X^aff → Spec k is SchemeAndStackFoundations §4.9's stein_factorization.
 
-*Needs:* JacobianChallenge Layer C; SchemeAndStackFoundations §§2.1–2.2, 2.6, 2.10–2.11, 2.15; SchemeAndStackFoundations §§4.9–4.12.
+*Needs:* JacobianChallenge Layer C; SchemeAndStackFoundations §§2.1–2.2, 2.6; SchemeAndStackFoundations §4.9; AlgebraicVectorBundles L1A–L1B.
 
 **Checks.**
 
@@ -411,7 +404,7 @@ Let R be a finite k-algebra and h : Spec R → Spec k. On the small étale sites
 
 One proof route is as follows. Apply finite exact pushforward on small étale sites, in degrees one and two. The units Weil restriction is the open units locus in the affine space of the finite-dimensional algebra, hence smooth, so smooth-group comparison gives the fppf assertion. Filter the units congruent to one modulo the nilradical by its powers; successive quotients are additive quasi-coherent modules with zero higher cohomology on the affine scheme. Reduction gives a finite product of field Brauer groups. Semilocality gives Pic(R)=0.
 
-*Needs:* §2.2; Mathlib `CommRing.Pic`; SchemeAndStackFoundations §2.22; SchemeAndStackFoundations §§2.1–2.2, 2.6, 2.10–2.11, 2.15; SchemeAndStackFoundations §2.11.
+*Needs:* §2.2; Mathlib `CommRing.Pic`; SchemeAndStackFoundations §§2.1–2.2, 2.10–2.11, 2.15, 2.22.
 
 **Checks.**
 
@@ -423,9 +416,9 @@ One proof route is as follows. Apply finite exact pushforward on small étale si
 
 Let h : X → Spec k be proper. The fppf Leray spectral sequence for h and G_m gives an exact sequence 0 → Pic(X) → `Pic_{X/k}(k)` → H²(k, h_*G_m) ≅ Br(X^aff) → H²(X, G_m), with the first map the canonical one. Since Br(X^aff) is torsion, for every λ ∈ `Pic_{X/k}(k)` there is n ≥ 1 with n·λ the class of an invertible sheaf on X. For every field K ⊃ k the map Pic(X_K) → `Pic_{X/k}(K)` is injective. (SCH23, proof of Lemma 1.1, p. 5; SCH23 line 221; KLE05, Theorem 2.5 and Remark 2.11, pp. 17–21; KLE05 line 1019).
 
-One proof route is as follows. R¹h_*G_m is the fppf Picard sheaf `Pic_{X/k}` (Hilbert 90, SchemeAndStackFoundations §2.11), and h_*G_m = (X^aff → Spec k)_*G_m (§2.2). The five-term sequence 0 → H¹(k, h_*G_m) → H¹(X, G_m) → H⁰(k, R¹h_*G_m) → H²(k, h_*G_m) → H²(X, G_m) has H¹(k, h_*G_m) = Pic(X^aff) = 0 (§2.3, i = 1). H²(k, h_*G_m) ≅ Br(X^aff) is torsion by §2.3. When H⁰(X, O_X) = k this is AlgebraicModuliForArithmeticGeometry A0-extension/picard-brauer-obstruction over T = Spec k.
+One proof route is as follows. R¹h_*G_m is the fppf Picard sheaf `Pic_{X/k}` (Hilbert 90, SchemeAndStackFoundations §2.11), and h_*G_m = (X^aff → Spec k)_*G_m (§2.2). The five-term sequence 0 → H¹(k, h_*G_m) → H¹(X, G_m) → H⁰(k, R¹h_*G_m) → H²(k, h_*G_m) → H²(X, G_m) has H¹(k, h_*G_m) = Pic(X^aff) = 0 (§2.3, i = 1). H²(k, h_*G_m) ≅ Br(X^aff) is torsion by §2.3. When H⁰(X, O_X) = k this is ComplexComparisonPartII §C3.2d.4 `picard_brauer_obstruction` over T = Spec k.
 
-*Needs:* §2.1; §2.2; §2.3; AlgebraicModuliForArithmeticGeometry §§7.3, 7.6.1–7.6.1a; SchemeAndStackFoundations §§2.1–2.2, 2.6, 2.10–2.11, 2.15.
+*Needs:* §2.1; §2.2; §2.3; AlgebraicModuliForArithmeticGeometry §§7.3, 7.6.1–7.6.1a; SchemeAndStackFoundations §§2.1–2.2, 2.11.
 
 **Checks.**
 
@@ -458,9 +451,9 @@ The API gives the following facts.
 - `Num_{X_K/K}` = `(Num_{X/k})_K` for every field extension K/k.
 - A k-morphism g : X′ → X of proper k-schemes induces g* : `Num_{X/k}` → `Num_{X′/k}`, functorially; injective on stalks when g is surjective.
 
-One proof route is as follows. `Pic^τ_{X/k}` is open, so the quotient of the locally finite type group `Pic_{X/k}` by it is étale (its geometric fibre is the discrete group of components modulo those of Pic^τ). Over k̄: `Num_{X/k}(k̄)` = `Pic(X_{k̄})/Pic^τ(X_{k̄}/k̄)` = `Num(X_{k̄}/k̄)` by §2.5; this is free of finite rank by §1.3. Purely inseparable extensions do not change points of an étale scheme, so the k^sep- and k̄-points agree. A finitely generated free ℤ-module with continuous action of a profinite group has open stabiliser, so the action factors through a finite quotient. Injectivity of Num(X/k) → `Num_{X/k}(k)`: if [L] ∈ `Pic^τ_{X/k}(k)` then `L_{k̄}` is numerically trivial, hence L is (§0.3).
+One proof route is as follows. `Pic^τ_{X/k}` is open, so the quotient of the locally finite type group `Pic_{X/k}` by it is étale (its geometric fibre is the discrete group of components modulo those of Pic^τ). Over k̄: `Num_{X/k}(k̄)` = `Pic(X_{k̄})/Pic^τ(X_{k̄}/k̄)` = `Num(X_{k̄}/k̄)` by §2.5; this is free of finite rank by §1.2. Purely inseparable extensions do not change points of an étale scheme, so the k^sep- and k̄-points agree. A finitely generated free ℤ-module with continuous action of a profinite group has open stabiliser, so the action factors through a finite quotient. Injectivity of Num(X/k) → `Num_{X/k}(k)`: if [L] ∈ `Pic^τ_{X/k}(k)` then `L_{k̄}` is numerically trivial, hence L is (§0.3).
 
-*Needs:* §2.5; §1.3; §1.1; Mathlib `IsSepClosure`; Mathlib `separableClosure.isPurelyInseparable`.
+*Needs:* §2.5; §1.2; §1.1; Mathlib `IsSepClosure`; Mathlib `separableClosure.isPurelyInseparable`.
 
 **Checks.**
 
@@ -518,7 +511,6 @@ One proof route is as follows. The norm along a finite locally free morphism of 
 - For X = P¹_k, `Nm(O_{P¹_E}(d))` = O(n·d) and the induced map on Num is multiplication by n.
 - For E = k, Nm is the identity.
 - For n ≥ 2, Nm is not inverse to pr*: Nm ∘ pr* = [n] ≠ id on `Pic_{P¹/k}` ≅ ℤ.
-- For X = P¹_k and E/k of degree n, `Nm(O_{P¹_E}(1))` ≅ `O_{P¹_k}(n)`.
 
 ### 2.9 Pic^τ-torsors split by a field extension of degree n are killed by n
 
@@ -526,7 +518,7 @@ Let X be proper over k, P = `Pic^τ_{X/k}` and l ∈ `Num_{X/k}(k)`. The fibre T
 
 One proof route is as follows. T_l is a P-torsor because Pic → Num is a P-torsor over each point of the étale Num; a closed point of T_l with residue field E splits it over E. With P_E = P ⊗_k E = `Pic^τ_{X_E/E}` and q : Spec E → Spec k, the five-term sequence for q gives an injection H¹(k, q_*P_E) → H¹(E, P_E); the class pr*[T_l] maps to the split class, hence is zero. Apply Nm : q_*P_E → P (§2.8): n·[T_l] = Nm(pr*[T_l]) = 0. A trivial torsor has a rational point, which lifts n·l.
 
-*Needs:* §2.6; §2.8; SchemeAndStackFoundations §§2.1–2.2, 2.6, 2.10–2.11, 2.15.
+*Needs:* §2.6; §2.8; SchemeAndStackFoundations §§2.1–2.3.
 
 **Checks.**
 
@@ -566,11 +558,10 @@ One proof route is as follows. Multiplication by 2 kills the kernel P. Factor it
 - For 0 → 2ℤ/4 → ℤ/4 → ℤ/2 → 0, d(1) = 2 ∈ ℤ/4.
 - For P = 0, d = [2]_N.
 - For 0 → 2ℤ/8 → ℤ/8 → ℤ/2 → 0 the kernel 2ℤ/8 ≅ ℤ/4 is not killed by 2, and [2] does not factor through ℤ/2, since 2·2 = 4 ≠ 0 in ℤ/8.
-- For Q = ℤ/4 ⊃ P = 2ℤ/4, N = ℤ/2 and d(1) = 2.
 
 ### 2.12 Finiteness of rational τ-classes over finite fields and torsion over locally finite fields
 
-(a) For X proper over a finite field F_q, `Pic^τ_{X/F_q}(F_{q^r})` is finite for every r ≥ 1. (b) If k is an algebraic extension of a finite field and X is proper over k, every numerically trivial invertible sheaf on X has finite order in Pic(X). The headline `numericallyTrivial_torsion_of_algebraic_finiteField` states (b), with an explicit prime p, an algebraic field extension of ZMod p, proper structure morphism and positive exponent. (WIT22, proof of Proposition 5.3, using Keel 1999 Lemma 2.16; WIT22 line 1513; KEE99, Lemma 2.16, printed p. 270, KEE99 line 677).
+(a) For X proper over a finite field F_q, `Pic^τ_{X/F_q}(F_{q^r})` is finite for every r ≥ 1. (b) If k is an algebraic extension of a finite field and X is proper over k, every numerically trivial invertible sheaf on X has finite order in Pic(X). The headline `numericallyTrivial_torsion_of_algebraic_finiteField` states (b), with an explicit prime p, an algebraic field extension of ZMod p, proper structure morphism and positive exponent. (WIT22, proof of Proposition 5.3, p. 34, using Keel 1999 Lemma 2.16; WIT22 line 1513; KEE99, Lemma 2.16, printed p. 270, KEE99 line 677).
 
 One proof route is as follows. (a) Pic^τ is of finite type over F_q (§2.5), so it has finitely many points over each finite field. (b) X and L are defined over a finite subfield F ⊂ k (spreading out, EGA IV 8.8.2); L₀ on X₀ is numerically trivial (§0.3), so [L₀] ∈ `Pic^τ_{X₀/F}(F)`, a finite group by (a). Pic(X₀) → `Pic_{X₀/F}(F)` is injective (§2.4), so L₀ has finite order, hence so does L.
 
@@ -589,7 +580,7 @@ The pointless real conic has Pic image 2ℤ inside the rational points ℤ of it
 
 ### Dependencies
 
-Layer 0 and the absolute finiteness theorem of §1.3; AlgebraicVectorBundles L0A–L0C and L1A–L1B; JacobianChallenge Layer D; AlgebraicModuliForArithmeticGeometry §§7.3, 7.6 and its proper Picard supplier extension; ComplexComparisonPartII §§C3.2d–C3.2f; SchemeAndStackFoundations §§2.1–2.2, 2.10–2.11, 2.15, 2.22, 3.5 and 4.9. Norms and the Brauer obstruction precede the uniform exponent criterion.
+Layer 0 and the absolute finiteness theorem of §1.2; AlgebraicVectorBundles L0A–L0C and L1A–L1B; JacobianChallenge Layer D; AlgebraicModuliForArithmeticGeometry §§7.3, 7.6 and its proper Picard supplier extension; ComplexComparisonPartII §§C3.2d–C3.2f; SchemeAndStackFoundations §§2.1–2.2, 2.10–2.11, 2.15, 2.22, 3.5 and 4.9. Norms and the Brauer obstruction precede the uniform exponent criterion.
 
 ## Layer 3: contractions, semiampleness and descent
 
@@ -609,7 +600,7 @@ The API gives the following facts.
 
 One proof route is as follows. Surjectivity: if y ∉ f(X), then (f_*O_X)_y = 0 ≠ `O_{Y,y}`. Geometric connectedness of the fibres is Zariski's connectedness theorem, SchemeAndStackFoundations §4.9 (stein_factorization), for locally Noetherian Y. Flat base change of f_*O_X (SchemeAndStackFoundations §2.6) shows that contractions are stable under flat base change, in particular under field extension.
 
-*Needs:* Mathlib `AlgebraicGeometry.IsProper`; SchemeAndStackFoundations §§4.9–4.12; SchemeAndStackFoundations §§2.1–2.2, 2.6, 2.10–2.11, 2.15.
+*Needs:* Mathlib `AlgebraicGeometry.IsProper`; SchemeAndStackFoundations §§2.6, 4.9.
 
 **Checks.**
 
@@ -618,12 +609,10 @@ One proof route is as follows. Surjectivity: if y ∉ f(X), then (f_*O_X)_y = 0 
 - Every isomorphism is a contraction; Spec k → Spec k is the contraction of a point.
 - The normalization 𝔸¹ → Spec k[t², t³] is finite and birational but not a contraction: f_*O is k[t] ≠ k[t², t³].
 - P¹_ℂ → Spec ℝ is proper with connected fibre but not a contraction, since H⁰ = ℂ ≠ ℝ.
-- The blow-up of a regular surface in a closed point is a contraction.
-- The structure morphism of P¹_ℂ regarded over ℝ is not a contraction to Spec ℝ.
 
 ### 3.2 Rigidity: maps contracting the curves of a contraction factor through it
 
-Let S be a Noetherian scheme, f : X → Y a contraction of proper S-schemes and g : X → Z an S-morphism to a scheme Z proper over S. If g maps every integral curve contained in a fibre of f to a point, then there is a unique S-morphism h : Y → Z with g = h ∘ f. (SCH23, proof of Theorem 1.3, pp. 6–7; SCH23 line 265).
+Let S be a Noetherian scheme, f : X → Y a contraction of proper S-schemes and g : X → Z an S-morphism to a scheme Z proper over S. If g maps every integral curve contained in a fibre of f to a point, then there is a unique S-morphism h : Y → Z with g = h ∘ f. This differs from StableReduction Layer 2's contraction descent, which assumes O_Y ≅ f_*O_X universally and tests geometric fibres, by testing integral curves in the fibres and assuming O_Y ≅ f_*O_X only. (SCH23, proof of Theorem 1.3, pp. 6–7; SCH23 line 265).
 
 One proof route is as follows. Each fibre F = `f^{-1}(y)` is connected (§3.1). If g(F) had positive dimension, some integral curve of F would map onto a curve (lift curves as in §0.6); so g(F) is finite and connected, a single point. Let Γ ⊂ Y ×_S Z be the scheme-theoretic image of (f, g). The projection π : Γ → Y is proper with finite fibres, hence finite, and O_Y → π_*O_Γ → f_*O_X = O_Y with the second map injective (Γ is a scheme-theoretic image) forces π_*O_Γ = O_Y, so π is an isomorphism. h is the second projection composed with `π^{-1}`; uniqueness holds because f is surjective and O_Y = f_*O_X makes f an epimorphism of schemes.
 
@@ -659,7 +648,6 @@ One proof route is as follows. Over a field, global generation descends along ev
 - Every torsion invertible sheaf (in particular O_X) is semiample, with P(X, L) = X^aff.
 - On an elliptic curve over ℂ, O(p − q) of infinite order is nef but not semiample: no positive power has a nonzero section.
 - On Bl_p P², O(E) is effective but not semiample (it is not nef).
-- O(1) on P^n is semiample; a torsion invertible sheaf is semiample.
 
 ### 3.4 Semiample sheaves and projective contractions
 
@@ -680,7 +668,7 @@ Let X be proper over k and f̄ : `X_{k̄}` → Ȳ a contraction with Ȳ projecti
 
 One proof route is as follows. Descend the finitely presented target, morphism and projective embedding along the filtered union of finite subextensions. The structure-sheaf map becomes an isomorphism after the faithfully flat extension to the algebraic closure; flat coherent base change detects that it was an isomorphism.
 
-*Needs:* §3.1; SchemeAndStackFoundations §§0.9, 0.11, 0.23; SchemeAndStackFoundations §§2.1–2.2, 2.6, 2.10–2.11, 2.15.
+*Needs:* §3.1; SchemeAndStackFoundations §§0.9, 0.11, 0.23, 2.6.
 
 **Checks.**
 
@@ -697,7 +685,6 @@ One proof route is as follows. pr : `X_{k′}` → X is a universal homeomorphis
 
 **Checks.**
 
-- For k′ = k this returns f′.
 - The statement fails for separable extensions without further hypotheses: contracting one of the two components of (P¹_ℂ)_ℂ = P¹_ℂ ⊔ P¹_ℂ does not descend to ℝ.
 - For the identity purely inseparable extension both cartesian squares are identity squares, and f=f′; allowing an arbitrary unrelated f would violate the source equation.
 
@@ -716,7 +703,7 @@ One proof route is as follows. Choose a finite normal field of definition and le
 
 ### 3.8 Openness of ampleness for proper algebraic spaces
 
-Let Y be a Noetherian scheme, f : X → Y a proper morphism from an algebraic space and L an invertible O_X-module. (i) If y ∈ Y is such that the fibre X_y is a scheme and L_y is ample on X_y, there is an open neighbourhood V ∋ y such that `L|_{f^{-1}V}` is ample on `f^{-1}(V)/V`; in particular `f^{-1}(V)` is a scheme, projective over V. (ii) For an arbitrary proper morphism of algebraic spaces f : X → Y there is an open V ⊂ Y such that a morphism Y′ → Y factors through V iff the pullback of L to X ×_Y Y′ is ample over Y′. (STACKS, Lemma 71.15.3, tag 0D3A, Divisors on Algebraic Spaces line 1392; Lemma 74.13.2, tag 0D3D, Descent on Spaces line 1008).
+Let Y be a Noetherian scheme, f : X → Y a proper morphism from an algebraic space and L an invertible O_X-module. (i) If y ∈ Y is such that the fibre X_y is a scheme and L_y is ample on X_y, there is an open neighbourhood V ∋ y such that `L|_{f^{-1}V}` is ample on `f^{-1}(V)/V`; in particular `f^{-1}(V)` is a scheme, projective over V. (ii) For an arbitrary proper morphism of algebraic spaces f : X → Y there is an open V ⊂ Y such that a morphism Y′ → Y factors through V iff the pullback of L to X ×_Y Y′ is ample over Y′. When X is a scheme, (i) is StableReduction Layer 2's openness of fibrewise ampleness. (STACKS, Lemma 71.15.3, tag 0D3A, Divisors on Algebraic Spaces line 1392; Lemma 74.13.2, tag 0D3D, Descent on Spaces line 1008).
 
 One proof route is as follows. Lift a sufficiently very ample power and its finite set of sections over a neighbourhood of the fibre, using coherent cohomology and base change. The induced map to projective space is finite after shrinking; its source is therefore a scheme and the power is relatively ample. Descend these open loci over an étale scheme cover of the target, using relative ampleness descent.
 
@@ -762,7 +749,6 @@ One proof route is as follows. Adjacency is symmetric and irreflexive; finitenes
 - For Z = V(xy) ⊂ 𝔸², Γ(Z) is a single edge.
 - For Z = V(x² + y²) ⊂ 𝔸²_ℝ, Γ(Z_ℂ) is an edge and Γ(Z) a single vertex: the induced map sends the edge to a vertex, not to an edge.
 - The normalization P¹ ⊔ P¹ → V(xy) ⊂ P² (a pair of meeting lines) is bijective on components and sends each component onto a component, but the source graph has no edge and the target has one.
-- Γ(P¹ ⊔ P¹) has two vertices and no edge; Γ of a nodal cubic is one vertex.
 
 ### 4.2 Constancy of Num for curves is graph descent
 
@@ -803,7 +789,6 @@ One proof route is as follows. Distinct components meet iff (C_i·C_j) > 0 (loca
 - A single smooth fibre F of a fibration S → P¹: N = [0], negative semidefinite and not definite.
 - For S₀ = P²_κ viewed as a k-scheme, κ/k finite of degree 2, two κ-lines meet with k-intersection 2 and κ-intersection 1. This is a change of the ground field of the whole surface, not a rule for reduced fibre components in a k-surface.
 - Let k have characteristic p and a∉k^p. On the affine chart A²_k of P²_k take D₁ = V(x^p−a) and D₂ = V(y^p−a). Their local k-intersection is p², whereas their reduced geometric supports meet with multiplicity 1; after field extension the Cartier divisors are pC₁ and pC₂. Replacing pullbacks by reduced supports loses both factors.
-- For two lines in P²_k, N = [[1,1],[1,1]].
 
 ### 4.4 Contractions of smooth proper surfaces
 
@@ -914,7 +899,7 @@ Layers 0–3; StableReduction Layers 1 and 4; SchemeAndStackFoundations §§5.3 
 
 ### 5.1 Restriction of numerical classes to the special fibre over a DVR
 
-Let R be a discrete valuation ring with residue field k, S = Spec R, and 𝒳 → S proper with special fibre X = 𝒳 ⊗_R k. The curves over S are exactly the integral curves of X, so N₁(𝒳/S) is a quotient of N₁(X/k), and restriction of invertible sheaves induces res : N¹(𝒳/S) → N¹(X/k), [𝓛] ↦ [𝓛|_X], which is injective. 𝒳/S is called numerically surjective when res is surjective (equivalently its ℚ-form is). (HW23, Theorem 1.3(2), p. 2, and the remark after Theorem 1.4, p. 3; HW23 line 1520; HW23, proof of Theorem 1.3(2a), p. 33; HW23 line 1520).
+Let R be a discrete valuation ring with residue field k, S = Spec R, and 𝒳 → S proper with special fibre X = 𝒳 ⊗_R k. The curves over S are exactly the integral curves of X, so N₁(𝒳/S) is a quotient of N₁(X/k), and restriction of invertible sheaves induces res : N¹(𝒳/S) → N¹(X/k), [𝓛] ↦ [𝓛|_X], which is injective. 𝒳/S is called numerically surjective when res is surjective (equivalently its ℚ-form is). (HW23, Theorem 1.3(2), p. 2, and the remark after Theorem 1.4, p. 3; HW23 lines 90 and 111; HW23, proof of Theorem 1.3(2a), p. 33; HW23 line 1513).
 
 The API gives the following facts.
 
@@ -926,15 +911,13 @@ The API gives the following facts.
 
 One proof route is as follows. The only closed point of S is the closed point, so by §0.5 𝓛 ≡_S 0 iff 𝓛|_X ≡ 0: res is well defined and injective. A 1-cycle on X pairs with Pic(𝒳) through restriction; it is numerically trivial on 𝒳/S iff it annihilates the image of res, so N₁(𝒳/S) = N₁(X)/(image of res)^⊥.
 
-*Needs:* §1.1; §1.2; §0.5.
+*Needs:* §1.1; §1.4; §0.5.
 
 **Checks.**
 
 - For n≥1 and 𝒳 = P^n_R, res is the identity of ℝ ≅ N¹ and 𝒳 is numerically surjective.
 - For 𝒳 = S, both N¹ groups are zero; the restriction map is 0 → 0 and remains injective and surjective.
 - For the smooth quadric 𝒳 = {x² + y² = zw} over the non-complete DVR ℤ_(5), the rulings of the generic fibre are defined over ℚ(i) and exchanged by Galois, so Pic(𝒳) = Pic(𝒳_ℚ) has rank 1, while the special fibre over 𝔽₅ (where −1 is a square) is split with N¹ of rank 2: res is injective and not surjective. Over a henselian DVR this cannot happen, since the ruling cover is étale.
-- For n≥1 and 𝒳 = P^n_R, res : ℝ → ℝ is the identity on the degree.
-- For n=0 the restriction map of numerical spaces of P⁰_R is the map 0 → 0; the one-dimensional calculation applies only for n≥1.
 
 ### 5.2 Numerical representatives and exact restrictions
 
@@ -942,7 +925,7 @@ In the situation of §5.1, assume 𝒳/S is numerically surjective. Then for eve
 
 One proof route is as follows. The relative and special-fibre numerical groups are finite free lattices. Surjectivity after tensoring with ℚ means that the injective integral image has finite index; clearing this index gives a numerical representative after a positive power. It says nothing about the degree-zero Picard kernel. On the regular elliptic model over ℤ_(7) described below, every generic line bundle extends, and a vertical divisor is a multiple of the principal special fibre, so Pic of the model equals Pic of the generic elliptic curve. A special degree-zero point outside the rational specialization image therefore has no exact lift. Its numerical class is zero, and some positive power does lift.
 
-*Needs:* §5.1; §1.4.
+*Needs:* §5.1; §1.2; §1.3.
 
 **Checks.**
 
@@ -953,9 +936,9 @@ One proof route is as follows. The relative and special-fibre numerical groups a
 
 Let R be a complete discrete valuation ring, 𝒳 → Spec R proper flat with special fibre X, and H²(X, O_X) = 0. Every invertible sheaf L on X is isomorphic to 𝓛|_X for some invertible 𝓛 on 𝒳; in particular 𝒳/R is numerically surjective. If L is ample, every such 𝓛 is ample over R. The existence of an actual lift is `lineBundle_lifts_completeDVR_of_h2_zero`; its vanishing assumption is that the native degree-two structure-sheaf cohomology of the residue-field pullback is the zero group, expressed by Subsingleton. (HW23, Lemma 6.3 and proof, p. 31; HW23 line 1406; KLE05, Proposition 5.19 and proof, p. 47; KLE05 line 2219).
 
-One proof route is as follows. Lift L successively to X_n = 𝒳 ⊗ `R/m^{n+1}`: the obstruction lies in H²(X, O_X) ⊗ `m^n/m^{n+1}` = 0 (AlgebraicModuliForArithmeticGeometry A0-extension/picard-infinitesimal-lifting, framed lifts along the flat thickenings). Grothendieck's existence theorem (SchemeAndStackFoundations §4.10) algebraises the compatible system (L_n) to an invertible 𝓛 on 𝒳 with 𝓛|_X ≅ L. Ampleness: the closed fibre is the only fibre over a closed point, so openness of ampleness (§3.8, scheme case) makes 𝓛 ample over a neighbourhood of the closed point, which is all of Spec R.
+One proof route is as follows. Lift L successively to X_n = 𝒳 ⊗ `R/m^{n+1}`: the obstruction lies in H²(X, O_X) ⊗ `m^n/m^{n+1}` = 0 (AlgebraicModuliForArithmeticGeometry §7.3 `picard_infinitesimal_lifting`, framed lifts along the flat thickenings). Grothendieck's existence theorem (SchemeAndStackFoundations §4.10) algebraises the compatible system (L_n) to an invertible 𝓛 on 𝒳 with 𝓛|_X ≅ L. Ampleness: the closed fibre is the only fibre over a closed point, so openness of fibrewise ampleness for schemes (StableReduction Layer 2, the scheme case of §3.8(i)) makes 𝓛 ample over a neighbourhood of the closed point, which is all of Spec R.
 
-*Needs:* §5.1; §3.8; AlgebraicModuliForArithmeticGeometry §§7.3, 7.6.1–7.6.1a; SchemeAndStackFoundations §§4.9–4.12.
+*Needs:* §5.1; StableReduction Layer 2; AlgebraicModuliForArithmeticGeometry §7.3; SchemeAndStackFoundations §§4.9–4.12.
 
 **Checks.**
 
@@ -964,16 +947,15 @@ One proof route is as follows. Lift L successively to X_n = 𝒳 ⊗ `R/m^{n+1}`
 
 ### 5.4 Numerical surjectivity identifies relative and special-fibre cones
 
-In the situation of §5.1, if 𝒳/S is numerically surjective then res : N¹(𝒳/S) → N¹(X) is an isomorphism, the identity on cycles induces N₁(X) ≅ N₁(𝒳/S), and under these identifications NE‾(𝒳/S) = NE‾(X), Nef(𝒳/S) = Nef(X), and extremal rays and faces of the two cones correspond. A class on 𝒳 is relatively ample over S iff its restriction to X is ample. (HW23, proof of Theorem 1.3(2a), p. 33; HW23 line 1520).
+In the situation of §5.1, if 𝒳/S is numerically surjective then res : N¹(𝒳/S) → N¹(X) is an isomorphism, the identity on cycles induces N₁(X) ≅ N₁(𝒳/S), and under these identifications NE‾(𝒳/S) = NE‾(X), Nef(𝒳/S) = Nef(X), and extremal rays and faces of the two cones correspond. A class on 𝒳 is relatively ample over S iff its restriction to X is ample. (HW23, proof of Theorem 1.3(2a), p. 33; HW23 line 1513).
 
-One proof route is as follows. res is injective (§5.1) and surjective by hypothesis; dualising gives N₁(X) ≅ N₁(𝒳/S) because the curves are the same and the annihilator of im res is zero. Effective cycles correspond under the identity, so the cones and their closures agree; nef cones are their duals; faces correspond. Ampleness over S is tested on the special fibre by openness of ampleness (§3.8).
+One proof route is as follows. res is injective (§5.1) and surjective by hypothesis; dualising gives N₁(X) ≅ N₁(𝒳/S) because the curves are the same and the annihilator of im res is zero. Effective cycles correspond under the identity, so the cones and their closures agree; nef cones are their duals; faces correspond. Ampleness over S is tested on the special fibre by openness of fibrewise ampleness for schemes (StableReduction Layer 2).
 
-*Needs:* §5.1; §1.5; §3.8.
+*Needs:* §5.1; §1.5; StableReduction Layer 2.
 
 **Checks.**
 
-- For n≥1 and 𝒳 = P^n_R both cones are the ray of a line; for n=0 both are {0}.
-- For the identity family Spec R, both cycle spaces are 0 and the cones are {0}; no nonzero ray is present.
+- For n≥1 and 𝒳 = P^n_R both cones are the ray of a line; for n=0, the identity family Spec R, both cycle spaces are 0 and both cones are {0}.
 
 ### 5.5 Nef and big classes on the special fibre are nef and big on the generic fibre
 
@@ -992,7 +974,7 @@ One proof route is as follows. Top self-intersections are constant in flat prope
 
 ### 5.6 Relatively semiample, relatively numerically trivial sheaves descend
 
-Let f : X → Z be a contraction of schemes proper over a Noetherian scheme S, and L an invertible sheaf on X that is f-semiample and f-numerically trivial. Then there are m ≥ 1 and an invertible sheaf M on Z with `L^{⊗m}` ≅ f*M. For ℚ-Cartier divisors: an f-semiample, f-numerically trivial ℚ-Cartier D on X is ℚ-linearly equivalent to f* of a ℚ-Cartier divisor on Z. (BMP23, Proposition 2.51, second assertion and proof, pp. 26–27; BMP23 line 1171; BMP23, Proposition 9.16(a), p. 106; BMP23 line 1171).
+Let f : X → Z be a contraction of schemes proper over a Noetherian scheme S, and L an invertible sheaf on X that is f-semiample and f-numerically trivial. Then there are m ≥ 1 and an invertible sheaf M on Z with `L^{⊗m}` ≅ f*M. For ℚ-Cartier divisors: an f-semiample, f-numerically trivial ℚ-Cartier D on X is ℚ-linearly equivalent to f* of a ℚ-Cartier divisor on Z. The lemma is proved here from the rigidity theorem §3.2. Its three-dimensional dlt counterparts, which assume no semiampleness of the descended divisor and do not state this lemma, are BMP23, Proposition 2.51, second assertion, pp. 26–27, BMP23 line 1177, and Proposition 9.16(a), p. 106, BMP23 line 4789.
 
 The ℚ-divisor conclusion concerns ℚ-Cartier divisor classes (equivalently rational line-bundle classes) on the target. For literal rational sections and Cartier divisors choose the corresponding Cartier representatives; neither numerical equivalence nor pullback is asserted for an unmarked Weil divisor.
 
@@ -1028,7 +1010,7 @@ Let f : X → T be projective with T Noetherian, R ⊂ NE‾(X/T) a ray containi
 
 One proof route is as follows. d_C divides (H·C) (§0.2), and (H·C) > 0 for f-ample H, so (H·C)/d_C ∈ `ℤ_{>0}`; a nonempty set of positive integers has a minimum. All curves in R have classes λ_C·ξ for a fixed generator ξ with λ_C > 0; for another ample H′, (H·C)/(H′·C) = (H·ξ)/(H′·ξ) is constant on R, so the minimisers coincide. For D·R < 0, (D·C)/d_C = λ_C(D·ξ)/d_C with D·ξ < 0 is maximal exactly where λ_C/d_C, equivalently (H·C)/d_C, is minimal.
 
-*Needs:* §0.2; §1.2.
+*Needs:* §0.2; §1.4.
 
 **Checks.**
 
@@ -1038,7 +1020,7 @@ One proof route is as follows. d_C divides (H·C) (§0.2), and (H·C) > 0 for f-
 
 ### 5.9 The Alexeev–Hacon–Kawamata birational Picard rank
 
-For a normal projective complex variety Y and a projective smooth resolution π : X → Y, define ρ_AHK(Y)=ρ(X)−e(π), with e(π) the number of exceptional prime divisors and subtraction in ℤ. Prove independence of resolution, invariance under birational maps that are isomorphisms in codimension one, and equality with the Cartier Picard number when Y is ℚ-factorial. For a projective birational map Y → Y′ contracting r prime divisors, prove ρ_AHK(Y′)=ρ_AHK(Y)−r. These statements concern the projective complex setting, not the naive Cartier rank of an arbitrary singular variety. (AHK07, Conventions, p. 1; Lemma 1.6 and proof, pp. 3–4; AHK07 line 135; HW23, §3, p. 12; HW23 line 542).
+For a normal projective complex variety Y and a projective smooth resolution π : X → Y, define ρ_AHK(Y)=ρ(X)−e(π), with e(π) the number of exceptional prime divisors and subtraction in ℤ. Prove independence of resolution, invariance under birational maps that are isomorphisms in codimension one, and equality with the Cartier Picard number when Y is ℚ-factorial. For a projective birational map Y → Y′ contracting r prime divisors, prove ρ_AHK(Y′)=ρ_AHK(Y)−r. These statements concern the projective complex setting, not the naive Cartier rank of an arbitrary singular variety. (AHK07, §1, working convention over ℂ, p. 2; AHK07 line 63; Lemma 1.6 and proof, pp. 3–4; AHK07 line 135; HW23, §3, p. 12; HW23 line 542).
 
 The relative extension is a target under the exact degree-witness supplier contract: for normal finite-type k-schemes Y equipped with a projective morphism to a Noetherian k-scheme T, with projective regular resolutions and common projective regular dominations, prove that ρ(X/T)−e(π) is independent of such a resolution. Prove the same small-modification and r-divisor rank-change laws, and equality with ρ(Y/T) for ℚ-factorial Y. Existence of regular resolutions in positive characteristic is not asserted. The supplied degree witnesses, rather than existence of resolutions alone, provide the exceptional independence needed for this statement. For positive-dimensional projective complex Y, prove ρ_AHK(Y)≥1; a point has value 0.
 
@@ -1052,7 +1034,7 @@ The API gives the following facts.
 
 One proof route is as follows. Exceptional-divisor independence is obtained by slicing in the projective complex setting and applying exceptional surface negativity. If e cuts come from the target and n=dim X, the additional number of cuts on X is n−e−2, leaving dimension 2. Normality of Y makes each exceptional-divisor image have codimension at least two, so e≤n−2 and this number of cuts is nonnegative. A common projective smooth resolution compares two resolutions; pullback and pushforward on a smooth intermediate variety split off the independent exceptional classes. Small modifications have the same exceptional divisors on a common resolution. When Y is ℚ-factorial, pushed-forward Weil divisors have Cartier multiples, giving the comparison with N¹(Y).
 
-*Needs:* §1.1; §4.5; §1.4; SchemeAndStackFoundations §§4.9–4.12; the exceptional-degree supplier extension of SchemeAndStackFoundations §5.9; ResolutionOfSingularitiesCharacteristicZero §7.8 for the complex proof route.
+*Needs:* §1.1; §1.2; §1.3; §4.5; SchemeAndStackFoundations §§4.9–4.12; the exceptional-degree supplier extension of SchemeAndStackFoundations §5.9; ResolutionOfSingularitiesCharacteristicZero §7.8 for the complex proof route.
 
 **Checks.**
 
@@ -1061,7 +1043,6 @@ One proof route is as follows. Exceptional-divisor independence is obtained by s
 - For the projective cone Y over a smooth conic, the minimal resolution is the Hirzebruch surface F₂ with ρ = 2 and one exceptional curve, so ρ_AHK(Y) = 1.
 - Take the projective quadric threefold cone Y=V(xy−zw)⊂P⁴_ℂ. An incidence small resolution X→Y is a P²-bundle over P¹, hence projective with ρ(X)=2 and no exceptional prime divisors. Thus ρ_AHK(Y)=2, while the Cartier Picard rank of Y is 1. An affine local ordinary double point would not test the projective theorem.
 - For smooth projective Y over ℂ, ρ_AHK(Y)=ρ(Y).
-- For the projective cone over a smooth plane conic over ℂ, the resolution F₂ has Picard number 2 and one exceptional curve, so ρ_AHK=1.
 
 ### Examples
 
@@ -1073,9 +1054,7 @@ Layers 0–4; AlgebraicModuliForArithmeticGeometry §7.3 infinitesimal lifting a
 
 ## Downstream consumers
 
-EnriquesSurfacesAndIntegralNonexistence uses Layers 2–4 for numerical constancy, descent of genus-one fibrations, and rational reducible fibres with their labels. GenusOneFibrationsAndRationalEllipticSurfaces uses the geometric Zariski lemma and component graph interface. K3SurfacesAndSymplecticBoundedness uses the arbitrary-field numerical lattice, finite rank and field comparisons, without supplying a premise here.
-
-SchemeAndStackFoundationsMixedCharacteristicPositivity uses relative nefness, proper bigness, semiampleness and the semiample dictionary, torsion over locally finite fields and vertical ℚ-pullback. SchemeAndStackFoundationsMixedCharacteristicBirationalGeometry uses the special-fibre numerical map, numerical representatives, cone comparison, nef-and-big specialization, semiample numerical descent, vertical descent, extremal-curve normalization and the relative AHK comparison under its exact resolution and degree-witness hypotheses. Its MMP steps, including Cartier-index preservation, generation in a double MMP, persistence of numerical surjectivity and boundary perturbation, use these results as inputs. AlgebraicModuliForArithmeticGeometryStableSurfaces uses the same numerical and semiample theory, algebraic-space ampleness openness and descent of semiample numerically trivial sheaves; stable-surface moduli and their MMP inputs lie in that separate direction.
+EnriquesSurfacesAndIntegralNonexistence uses Layers 2–4 for numerical constancy, descent of genus-one fibrations, and rational reducible fibres with their labels. K3SurfacesAndSymplecticBoundedness uses the arbitrary-field numerical lattice, finite rank and field comparisons, without supplying a premise here.
 
 ## Worked examples
 

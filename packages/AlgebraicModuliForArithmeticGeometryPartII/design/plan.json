@@ -3868,13 +3868,13 @@
  "gaps": [
   {
     "slug": "relative-numerical-component-reduction",
-    "needs": "For every proper morphism of Noetherian schemes, provide a finite projective Chow-cover and stratification reduction, with geometrically integral component families after finite covers, that detects the relative numerical kernel on finitely many generic fibres and the closed complement.",
+    "needs": "For every proper morphism f : X → S with S Noetherian, provide finitely many points s₁, …, s_n of S such that an invertible sheaf on X has degree zero, over the residue field, on every integral curve in every fibre of f if and only if it has degree zero on every integral curve in the fibres over s₁, …, s_n.",
     "supplier": "AlgebraicModuliForArithmeticGeometry",
     "section": "§1.6"
   },
   {
     "slug": "proper-bigness-birational-comparison",
-    "needs": "Extend the section-growth and birational-system comparison for bigness to integral proper schemes over any field, including invariance under proper birational modifications and compatibility of their top Cartier intersections.",
+    "needs": "For a proper birational morphism π : V′ → V of integral proper schemes of dimension n over a field and an invertible sheaf L on V, prove h⁰(V, L^m) ≤ h⁰(V′, π*L^m) for every m ≥ 1, with difference at most C·m^(n−1) for a constant C and all m ≥ 1 when n ≥ 1, and prove ((π*L)^n·V′) = (L^n·V) for the top first-Chern intersections.",
     "supplier": "AlgebraicModuliForArithmeticGeometry",
     "section": "§1.6"
   },
@@ -3898,7 +3898,7 @@
   },
   {
     "slug": "projective-nef-big-criterion",
-    "needs": "For a nef invertible sheaf on a reduced projective scheme over a field, prove bigness exactly when its top self-intersection is positive on each irreducible component, with compatibility with the supplied section-growth predicate.",
+    "needs": "For an integral projective scheme V of dimension n over a field and an invertible sheaf L on V of nonnegative degree on every integral curve in V, prove that (L^n·V) > 0 if and only if there are c > 0 and an integer a ≥ 1 with h⁰(V, L^m) ≥ c·m^n for every sufficiently large m divisible by a.",
     "supplier": "SchemeAndStackFoundations",
     "section": "§5.3"
   }
