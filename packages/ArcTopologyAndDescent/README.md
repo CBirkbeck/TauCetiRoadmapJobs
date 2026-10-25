@@ -50,6 +50,7 @@ Use the Mathlib revision `6b7abb3c7686292736be2955bd3eb9ebf63b456a` fixed by `la
 - `IsAlgClosed` and `IsAlgClosed.exists_root`, in `Mathlib/FieldTheory/IsAlgClosed/Basic.lean`, concern fields; the positive-degree monic-root condition in §0.1 is a ring predicate. `FirstOrder.Language.Ultraproduct.sentence_realize`, in `Mathlib/ModelTheory/Ultraproducts.lean`, supplies Łoś's theorem for nonempty structures; apply it separately to each finite-degree monic-root sentence.
 - `SpectralSpace`, in `Mathlib/Topology/Spectral/Basic.lean`, includes T₀, compactness, quasi-sobriety, quasi-separatedness and a basis of compact opens. `IsSpectralMap`, in `Mathlib/Topology/Spectral/Hom.lean`, includes continuity and preservation of compactness for inverse images of compact opens. Neither declaration supplies reflection of openness.
 - `AlgebraicGeometry.Scheme`, in `Mathlib/AlgebraicGeometry/Scheme.lean`, is the scheme carrier. `CategoryTheory.GrothendieckTopology`, in `Mathlib/CategoryTheory/Sites/Grothendieck.lean`, supplies the covering-sieve axioms. `AlgebraicGeometry.Scheme.smallEtaleTopology`, in `Mathlib/AlgebraicGeometry/Sites/Etale.lean`, supplies the small site. `AlgebraicGeometry.Scheme.AffineEtale.Spec`, `AlgebraicGeometry.Scheme.AffineEtale.sheafEquiv` and `AlgebraicGeometry.Scheme.isGrothendieckAbelian_sheaf_smallEtaleTopology`, in `Mathlib/AlgebraicGeometry/Sites/AffineEtale.lean`, supply its affine basis and abelian structure. `AlgebraicGeometry.Scheme.pointSmallEtale`, in `Mathlib/AlgebraicGeometry/Sites/EtalePoint.lean`, and the enough-points instance there supply geometric points without any noetherian hypothesis.
+- `IsAffineHom`, in `Mathlib/AlgebraicGeometry/Morphisms/Affine.lean` (line 47), means that inverse images of affine opens are affine. `CategoryTheory.IsCofiltered`, in `Mathlib/CategoryTheory/Filtered/Basic.lean` (line 590), includes nonemptiness. `CategoryTheory.Limits.Cone` and `CategoryTheory.Limits.Cone.postcompose`, in `Mathlib/CategoryTheory/Limits/Cones.lean` (lines 116 and 373), and `CategoryTheory.Limits.IsLimit`, in `Mathlib/CategoryTheory/Limits/IsLimit.lean` (line 49), supply the limit cones and induced map used in §2.7. `Mathlib/AlgebraicGeometry/AffineTransitionLimit.lean` uses these native carriers for affine-transition limits.
 - `CategoryTheory.ObjectProperty.FullSubcategory`, in `Mathlib/CategoryTheory/ObjectProperty/FullSubcategory.lean`, restricts a category to objects satisfying a predicate and retains all morphisms between them. `CategoryTheory.IsPullback`, in `Mathlib/CategoryTheory/Limits/Shapes/Pullback/IsPullback/Defs.lean` (line 61), expresses a cartesian square. `CategoryTheory.EffectiveEpi`, in `Mathlib/CategoryTheory/EffectiveEpi/Basic.lean` (line 71), expresses the universal descent property for maps constant on relations; it agrees with the kernel-pair coequalizer condition when the kernel pair exists.
 - `IsAddTorsion`, generated from `IsMulTorsion` in `Mathlib/GroupTheory/Torsion.lean` (line 56), says every element of an additive group has finite order; it does not require a common exponent.
 - `CategoryTheory.Sheaf.H`, in `Mathlib/CategoryTheory/Sites/SheafCohomology/Basic.lean`, is the Ext-defined ordinary sheaf-cohomology group. `CategoryTheory.IsGrothendieckAbelian.hasExt`, in `Mathlib/CategoryTheory/Abelian/GrothendieckCategory/HasExt.lean`, supplies the needed Ext structure. `DerivedCategory`, in `Mathlib/Algebra/Homology/DerivedCategory/Basic.lean`, is an ordinary derived category; the coherent enhancements used in the descent criteria come from the named supplier below.
@@ -141,7 +142,7 @@ ResolutionOfSingularitiesCharacteristicZero §§5.1–5.2 supply characteristic-
 
 ## How to read the build
 
-Layers 0–2 supply valuation intervals and the general scheme comparisons on the imported sites. Layer 3 gives finitary and Boolean/ultraproduct detection. Layer 4 proves the excision criterion, and Layer 5 removes finitariness from the excision conclusion using the coherent arc-topos. Layers 6–7 give the new étale-object, differential and perfect-complex applications on the supplied cohomological foundations. Layers 8–10 extend formal glueing, compare completed generic fibres and prove affinoid vanishing. Layers 11–12 treat finite-ideal complete covers and integral perfectoid hyperdescent. Each target's Needs clause names the inputs to its statement and to the displayed route; another proof can use a smaller subset. [Suggested.lean](Suggested.lean) records four headline signatures on pinned native carriers (§§2.7, 7.8 and 10.8); the other headline statements and their construction dependencies are specified here.
+Layers 0–2 supply valuation intervals and the general scheme comparisons on the imported sites. Layer 3 gives finitary and Boolean/ultraproduct detection. Layer 4 proves the excision criterion, and Layer 5 removes finitariness from the excision conclusion using the coherent arc-topos. Layers 6–7 give the new étale-object, differential and perfect-complex applications on the supplied cohomological foundations. Layers 8–10 extend formal glueing, compare completed generic fibres and prove affinoid vanishing. Layers 11–12 treat finite-ideal complete covers and integral perfectoid hyperdescent. Each target's Needs clause names the inputs to its statement and to the displayed route; another proof can use a smaller subset. [Suggested.lean](Suggested.lean) records five headline signatures on pinned native carriers (§§2.7, 7.8 and 10.8); the other headline statements and their construction dependencies are specified here.
 
 ## Layer 0: Valuation extensions and rank intervals
 
@@ -448,13 +449,19 @@ The headline `arc_spectral_characterization` quantifies over every qcqs T→X an
 - For the generic-point inclusion into a nonfield rank-one valuation spectrum, the missing closed point has empty compact-open inverse image but is not open. Surjectivity and the reflection condition fail.
 - For the rank-two split at the middle prime, the three target points all lift; among the eight subsets, exactly ∅, {0}, {0,p} and {0,p,m} have open inverse image. Those are precisely the target opens. The full rank-two identity test still fails v-lifting.
 
-For a qcqs scheme morphism f, f is an arc-cover if and only if it is universally spectrally submersive. Universal spectral submersions and hence arc-covers are stable under cofiltered limits of diagrams with affine transition maps.
+For a qcqs scheme morphism f, f is an arc-cover if and only if it is universally spectrally submersive. Universal spectral submersions and hence arc-covers are stable under cofiltered limits of diagrams with affine transition maps (`isSchemeArcCover_of_isLimit`). Precisely, let I be a small nonempty cofiltered category, X and Y be I-diagrams of qcqs schemes with affine transition maps, and f:Y→X a natural transformation whose components are arc-covers. For limit cones cX and cY, the induced map cY.pt→cX.pt, obtained by applying the universal property of cX to the f-postcomposition of cY, is an arc-cover.
 
 First prove the two v-local statements explicitly: for a v-cover Z→Y, f:Y→X is universally spectrally submersive exactly when Z→X is; for a v-cover X′→X, f has the property exactly when Y×_X X′→X′ does. Pull compact opens back through the relevant spectral projections and descend openness through the universal quotient map supplied by §1.7. Show the reflection property after valuation base changes and use these local statements. Conversely a failure to lift a rank-one specialization produces a compact open with nonopen image. Descend a compact open and its equality conditions to a finite stage in an affine-transition limit.
 
+**Checks for the limit theorem.**
+
+- For a one-object category with only its identity, choose the identity limit cones: the induced map is the sole component f, and its arc-cover condition is exactly the hypothesis.
+- For the inverse system Spec k[t₁,…,t_n] with projection transitions, let Y_n be its disjoint union with itself, with componentwise projection transitions, and let f_n be the fold. The limits are Spec k[t₁,t₂,…] and its disjoint union with itself; the limit fold has a section, so every valuation test lifts with W=V. No finite-type assumption on the limit is needed.
+- For constant X=Y=Spec k and f the identity, replacing the source limit cone by the cone with apex ∅ produces ∅→Spec k. The field test has zero lifts, so requiring cY to be a limit cone is essential. When both diagrams are constantly ∅, the actual limits are ∅ and the induced identity is an arc-cover.
+
 Ordinary universal quotient maps are not asserted stable under these limits.
 
-(BM21, Lemma 2.17 pp. 12–13, Proposition 2.19 pp. 14–15 and Corollary 2.20 p. 14.) Text locators: BM21 line 495. *Needs:* §1.7 universal quotientness of v-covers; PrismaticCohomology §2.0; DiamondsAndVStacks §§D0.11–D0.12; §2.4; §2.2; SchemeAndStackFoundations §0.9; DiamondsAndVStacks §§D0.6, D0.11–D0.12, D0.16, D0.18 and D0.22.
+(BM21, Lemma 2.17 pp. 12–13, Proposition 2.19 pp. 14–15 and Corollary 2.20 p. 14.) Text locators: BM21 lines 495, 557 and 560. *Needs:* Mathlib `IsAffineHom`, `IsCofiltered`, `IsLimit` and `Cone.postcompose`; §1.7 universal quotientness of v-covers; PrismaticCohomology §2.0; DiamondsAndVStacks §§D0.11–D0.12; §2.4; §2.2; SchemeAndStackFoundations §0.9; DiamondsAndVStacks §§D0.6, D0.11–D0.12, D0.16, D0.18 and D0.22.
 
 ### Examples
 
@@ -583,9 +590,15 @@ No assertion of preservation of rank one by arbitrary ultraproducts is made.
 
 ### 3.7 The rank-one component obstruction
 
-For any field k, k[x,y] has no affine arc-cover all of whose connected components are spectra of rank-at-most-one valuation domains. Since the target is noetherian, such a cover would be a v-cover. A rank-two valuation centred over k[x,y] would then lift after a local extension. Its map through a connected component would give an injective local map from a rank-two valuation to a rank-at-most-one valuation, contradicting surjectivity on prime spectra (BM21 Remark 3.31, p. 23; BM21 line 978).
+For any field k, k[x,y] has no affine arc-cover all of whose connected components are spectra of rank-at-most-one valuation domains. Since the target is noetherian, such a cover would be a v-cover. Use the composite valuation on k(x,y) with v(y)=(1,0) and v(x)=(0,1), ordered lexicographically, and write V for its rank-two valuation ring and p for its middle prime. A v-lift gives an injective local V→W and a map Spec W→Spec B over Spec k[x,y]. Faithful flatness gives a prime q of W over p, so 0⊊q⊊m_W contracts in k[x,y] to 0⊊(y)⊊(x,y). Since Spec W is connected, its image lies in one connected component of Spec B. That component would contain three distinct points, whereas the spectrum of a rank-at-most-one valuation domain has at most two (BM21 Remark 3.31, p. 23; BM21 line 978).
 
 This assertion concerns the connected components of the source, rather than the displayed factors of a ring product. Nonprincipal ultraproduct components of a product of rank-one factors can have larger rank. The supplied infinite-chain example distinguishes a spectral submersion from an ordinary quotient map.
+
+**Checks.**
+
+- A nonzero polynomial has first valuation coordinate equal to its least y-exponent. Thus p∩k[x,y]=(y); among polynomials with y-exponent zero, positive second coordinate means zero constant term, giving m_V∩k[x,y]=(x,y). The three contractions are distinct over every field, including F₂ and F₃.
+- The lifted primes 0, q and m_W have the same three distinct contractions. Their images in the single component of Spec B must therefore be distinct; no map V to the component ring is required.
+- A field component has one point and a nonfield rank-one valuation component has two. The identity component Spec V has three and permits the lifted chain, showing why the rank bound is the obstruction.
 
 *Needs:* §2.2 noetherian-target comparison; §3.6 valuation-product components; ClassicalAdicEtaleCohomology §6.1 injective-local/faithfully-flat comparison; DiamondsAndVStacks §D0.12 infinite-chain example.
 
@@ -955,7 +968,7 @@ D_qc hyperdescent is not inferred; Tor-amplitude replaces cohomological amplitud
 
 For a qcqs algebraic space Y/F_p, the set-valued functor X↦Hom(X^perf,Y) is an arc-sheaf. A morphism of qcqs perfect F_p-schemes is an arc-cover if and only if it is a universally effective epimorphism in that category. The Hom functor is finitary when Y is finite type.
 
-For prime p, define `IsPerfectFpScheme` on a native scheme X by requiring p=0 and bijectivity of x↦x^p on Γ(X,U) for every open U. This includes the zero section ring on the empty open. It is equivalent to a perfect F_p-scheme: the unique F_p-structure is forced by p=0, and sectionwise Frobenius isomorphisms give the absolute Frobenius isomorphism (SchemeAndStackFoundations §§0.24–0.25; BM21 Theorem 5.17, p. 45).
+For prime p, define `IsPerfectFpScheme` on a native scheme X by requiring p=0 and bijectivity of x↦x^p on Γ(X,U) for every open U. This includes the zero section ring on the empty open. It is equivalent to SchemeAndStackFoundations §0.24's `Scheme.IsPerfect` for X over F_p: the unique F_p-structure is forced by p=0, and sectionwise Frobenius isomorphisms give the absolute Frobenius isomorphism (SchemeAndStackFoundations §§0.24–0.25; BM21 Theorem 5.17, p. 45).
 
 - Restricting to an open subscheme preserves the predicate, by identifying its section rings with those of X.
 - For an affine scheme Spec A with p=0, the predicate is equivalent to bijectivity of Frobenius on A; the inverse Frobenius extends to localized sections and glues on all opens.
@@ -984,7 +997,7 @@ Use the algebraic-space Tannaka equivalence Hom(T,Y)=Fun^⊗_ex(Perf(Y),Perf(T))
 
 The canonical-topology characterization concerns singleton qcqs maps, not a claim that its arbitrary families admit finite subcovers.
 
-(BM21, Theorem 5.17 and Remark 5.18, pp. 45–46.) (BH16, Theorem 1.5, p. 2; conventions pp. 4–5.) Text locators: BM21 line 1875, BH16 line 86. *Needs:* §7.7; §5.3; §3.10; SchemeAndStackFoundations §§1.1–1.10; SchemeAndStackFoundations §1.4 reconstruction contract (gap:algebraic-space-perf-tannaka).
+(BM21, Theorem 5.17 and Remark 5.18, pp. 45–46.) (BH16, Theorem 1.5, p. 2; conventions pp. 4–5.) Text locators: BM21 line 1875, BH16 line 86. *Needs:* §7.7; §5.3; §3.10; §2.7 (`IsSchemeArcCover`); SchemeAndStackFoundations §§0.24–0.25 and 1.1–1.10; SchemeAndStackFoundations §1.4 reconstruction contract (gap:algebraic-space-perf-tannaka); Mathlib `CategoryTheory.ObjectProperty.FullSubcategory`, `CategoryTheory.IsPullback` and `CategoryTheory.EffectiveEpi`.
 
 ### Examples
 
@@ -992,7 +1005,7 @@ With Λ=Z/4, the constant constructible sheaf Z/2 in degree zero belongs to Dᵇ
 
 ### Dependencies
 
-Layer 0, Layer 1, Layer 3, Layer 4, Layer 5, Layer 6, DerivedModuleAlgebra §§0.4, 0.7–0.8, 0.11–0.12 and 0.14; DerivedDeRhamCohomology §§2.1–2.21, EnhancedDerivedSheaves §§E0.1–E0.8, EnhancedDerivedSheaves §§0.1–0.4, E1.3–E1.6, EnhancedDerivedSheaves §§E2.6–E2.8, EnhancedDerivedSheaves §E5:abstract.5 and Layer E5:descent, EtaleCohomologyFoundations §§F.0.1, 0.5–0.7, SchemeAndStackFoundations §§0.9, 0.11–0.14, 0.24 and 4.7–4.8, SchemeAndStackFoundations §§1.1–1.10, SchemeAndStackFoundations §§2.1–2.3, 2.7, 2.14–2.15; EtaleCohomologyFoundations §§0.5–0.7, F.2.1–F.2.6 and F.3, §0.5, SchemeKTheoryOperations §4.10.
+Layer 0, Layer 1, Layer 2, Layer 3, Layer 4, Layer 5, Layer 6, DerivedModuleAlgebra §§0.4, 0.7–0.8, 0.11–0.12 and 0.14; DerivedDeRhamCohomology §§2.1–2.21, EnhancedDerivedSheaves §§E0.1–E0.8, EnhancedDerivedSheaves §§0.1–0.4, E1.3–E1.6, EnhancedDerivedSheaves §§E2.6–E2.8, EnhancedDerivedSheaves §E5:abstract.5 and Layer E5:descent, EtaleCohomologyFoundations §§F.0.1, 0.5–0.7, SchemeAndStackFoundations §§0.9, 0.11–0.14, 0.24–0.25 and 4.7–4.8, SchemeAndStackFoundations §§1.1–1.10, SchemeAndStackFoundations §§2.1–2.3, 2.7, 2.14–2.15; EtaleCohomologyFoundations §§0.5–0.7, F.2.1–F.2.6 and F.3, §0.5, SchemeKTheoryOperations §4.10.
 
 ## Layer 8: Formal glueing and henselian rigidity
 
@@ -1531,8 +1544,6 @@ This proof uses structure-sheaf descent and formal affine maps; it does not use 
 Let (A,I) be a henselian pair, X proper over Spec A and F a torsion abelian étale sheaf on X. Then RΓ(X,F)≃RΓ(X×_A A/I,F|). For I=(p), this is the reduction used in the proof of CMM21 Theorem 6.3.
 
 Apply enhanced proper base change to Rf_*F at the closed fibre. Use the affine henselian-pair theorem on its cohomology sheaves and the bounded-below spectral-sequence or truncation argument.
-
-This target supplies the proper henselian torsion-cohomology comparison used in the proof of CMM21 Theorem 6.3.
 
 (CMM21, Proof of Theorem 6.3, p. 51.) Text locators: CMM21 line 2180. *Needs:* SchemeAndStackFoundations §2.15; SchemeAndStackFoundations §§2.1–2.3, 2.7, 2.14–2.15; EtaleCohomologyFoundations §§0.5–0.7, F.2.1–F.2.6 and F.3; EnhancedDerivedSheaves §E1.3; EnhancedDerivedSheaves §§0.3–0.4, E1.4.
 

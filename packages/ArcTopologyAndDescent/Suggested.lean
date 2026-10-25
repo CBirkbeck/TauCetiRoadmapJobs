@@ -63,6 +63,18 @@ theorem arc_spectral_characterization (X Y : Scheme.{u})
             IsCompact ((pullback.snd f g) ⁻¹' U) → IsOpen U := by
   sorry
 
+/-- Arc-covers are stable under cofiltered limits with affine transition maps (BM21 Corollary 2.20). -/
+theorem isSchemeArcCover_of_isLimit {I : Type u} [Category.{u} I] [IsCofiltered I]
+    {X Y : I ⥤ Scheme.{u}} (f : Y ⟶ X)
+    [∀ i, CompactSpace (X.obj i)] [∀ i, QuasiSeparatedSpace (X.obj i)]
+    [∀ i, CompactSpace (Y.obj i)] [∀ i, QuasiSeparatedSpace (Y.obj i)]
+    [∀ {i j} (φ : i ⟶ j), IsAffineHom (X.map φ)]
+    [∀ {i j} (φ : i ⟶ j), IsAffineHom (Y.map φ)]
+    {cX : Cone X} (hX : IsLimit cX) {cY : Cone Y} (hY : IsLimit cY)
+    (hf : ∀ i, IsSchemeArcCover (f.app i)) :
+    IsSchemeArcCover (hX.lift ((Cone.postcompose f).obj cY)) := by
+  sorry
+
 /-! ## Layer 7: Constructible complexes, differentials and perfect schemes -/
 
 /-- For prime p, every open-section ring has p = 0 and bijective Frobenius; the empty scheme is included. -/
