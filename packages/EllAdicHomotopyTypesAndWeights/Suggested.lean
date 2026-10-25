@@ -18,6 +18,8 @@ at these pins with only a few simple definitions on existing carriers.
 * The completed triangular comparison lacks the bidegreewise completed form complex.
 * The cohomology theorem for the ℓ-adic homotopy algebra lacks the constructed algebra
   and its comparison map.
+* The étale realization theorem for separated finite-type varieties lacks A_ℓ and the
+  étale ℚ_ℓ cohomology ring of a variety.
 * Complex minimal-model comparison lacks that algebra, Sullivan models, and polynomial forms.
 * Frobenius–Hodge weight comparison lacks the geometric cohomology realizations and
   their common filtered comparison.
@@ -41,8 +43,7 @@ at these pins with only a few simple definitions on existing carriers.
   its H¹/H² comparison, and its weight realization.
 
 The generic Sullivan existence, lifting and uniqueness theorem is a supplier contract
-in README.md. Bare scalar identities and diagonal-cycle identities do not replace the
-geometric headline theorems.
+in README.md.
 -/
 
 namespace TauCetiRoadmap.EllAdicHomotopyTypesAndWeights
