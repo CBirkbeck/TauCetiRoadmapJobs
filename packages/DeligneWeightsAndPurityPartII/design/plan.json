@@ -2329,24 +2329,44 @@
   }
  ],
  "gaps": [
-  {
-   "title": "Huber 1998 and Lütkebohmert 1993 not read in the original",
-   "neededBy": [
-    "DeligneWeightsAndPurityPartII:WM.3/oc-quasi-constructibility",
-    "DeligneWeightsAndPurityPartII:WM.3/lutkebohmert-riemann-existence",
-    "DeligneWeightsAndPurityPartII:WM.3/huber-neighbourhood-theorem"
-   ],
-   "detail": "R. Huber, A finiteness result for direct image sheaves on the étale site of rigid analytic varieties, J. Algebraic Geom. 7 (1998), 359–403 (Theorems 2.1 and 3.6), and W. Lütkebohmert, Riemann's existence problem for a p-adic field, Invent. Math. 111 (1993), 309–330 (Theorem 2.2), are not freely available to the worker. The three nodes state these results in the form in which K. Ito, arXiv:2008.07794v1 (Theorem 1.1, Theorem 4.5 and the proof sketch in §1.2), recalls and uses them, and the proof outline of the neighbourhood theorem follows Ito's sketch. Before formalisation the statements, in particular the definition of oc-quasi-constructible sheaves (Huber 1998, Definition 1.4) and any hypotheses of Theorem 3.6(a) beyond those Ito records, must be checked against the originals."
-  },
-  {
-   "title": "Derived inputs in the neighbourhood-theorem proof route",
-   "neededBy": [
-    "DeligneWeightsAndPurityPartII:WM.3/oc-quasi-constructibility",
-    "DeligneWeightsAndPurityPartII:WM.3/huber-neighbourhood-theorem"
-   ],
-   "detail": "To implement the route recalled in Ito §1.2 (pp. 2–3), establish: (1) the blow-up descent and finite-cover gluing comparison for tubes and the closed pseudo-adic subspace; (2) bounded cohomological amplitude of Rf^{rig}_* ℤ/n on a sufficiently small disc, giving a common radius and Kummer trivialisation for all nonzero direct images; (3) stabilisation of disc cohomology for these Kummer-trivialised sheaves with their extension across the origin, including the covers not supplied by the prime-to-p tame-cover input in ClassicalAdicEtaleCohomology H4; (4) the étale-topos limit and coefficient descent needed to identify the shrinking-tube limit with cohomology of the closed pseudo-adic subspace. The end theorem is verified in Ito Theorem 4.5(2), p. 21. These proof inputs are not claimed established by ordinary proper base change, nonproper fibre cohomology, or equality of underlying point sets."
-  }
- ],
+ {
+  "slug": "huber-lutkebohmert-original-sources",
+  "title": "Huber 1998 and Lütkebohmert 1993 not read in the original",
+  "neededBy": [
+   "DeligneWeightsAndPurityPartII:WM.3/oc-quasi-constructibility",
+   "DeligneWeightsAndPurityPartII:WM.3/lutkebohmert-riemann-existence",
+   "DeligneWeightsAndPurityPartII:WM.3/huber-neighbourhood-theorem"
+  ],
+  "detail": "R. Huber, A finiteness result for direct image sheaves on the étale site of rigid analytic varieties, J. Algebraic Geom. 7 (1998), 359–403 (Theorems 2.1 and 3.6), and W. Lütkebohmert, Riemann's existence problem for a p-adic field, Invent. Math. 111 (1993), 309–330 (Theorem 2.2), are not freely available to the worker. The three nodes state these results in the form in which K. Ito, arXiv:2008.07794v1 (Theorem 1.1, Theorem 4.5 and the proof sketch in §1.2), recalls and uses them, and the proof outline of the neighbourhood theorem follows Ito's sketch. Before formalisation the statements, in particular the definition of oc-quasi-constructible sheaves (Huber 1998, Definition 1.4) and any hypotheses of Theorem 3.6(a) beyond those Ito records, must be checked against the originals."
+ },
+ {
+  "slug": "neighbourhood-derived-proof-inputs",
+  "title": "Derived inputs in the neighbourhood-theorem proof route",
+  "neededBy": [
+   "DeligneWeightsAndPurityPartII:WM.3/oc-quasi-constructibility",
+   "DeligneWeightsAndPurityPartII:WM.3/huber-neighbourhood-theorem"
+  ],
+  "detail": "To implement the route recalled in Ito §1.2 (pp. 2–3), establish: (1) the blow-up descent and finite-cover gluing comparison for tubes and the closed pseudo-adic subspace; (2) bounded cohomological amplitude of Rf^{rig}_* ℤ/n on a sufficiently small disc, giving a common radius and Kummer trivialisation for all nonzero direct images; (3) stabilisation of disc cohomology for these Kummer-trivialised sheaves with their extension across the origin, including the covers not supplied by the prime-to-p tame-cover input in ClassicalAdicEtaleCohomology H4; (4) the étale-topos limit and coefficient descent needed to identify the shrinking-tube limit with cohomology of the closed pseudo-adic subspace. The end theorem is verified in Ito Theorem 4.5(2), p. 21. These proof inputs are not claimed established by ordinary proper base change, nonproper fibre cohomology, or equality of underlying point sets."
+ },
+ {
+  "slug": "geometric-galois-restriction",
+  "needs": "For a proper smooth k-variety and ℓ invertible in k, package its finite-level and rational geometric cohomology as continuous `G_k-representations`, with equivariant restriction under finite field extension and equivariant comparison under extension of separably closed fields.",
+  "supplier": "EtaleCohomologyFoundations",
+  "section": "F.2.1–F.2.3, F.4.3–F.4.5"
+ },
+ {
+  "slug": "analytic-comparison-automorphisms",
+  "needs": "For a proper variety defined over a complete field K, the algebraic–adic cohomology comparison over its completed algebraic closure C commutes with every continuous K-automorphism of C, with cup products and coefficient reductions.",
+  "supplier": "ClassicalAdicEtaleCohomology",
+  "section": "8.2, 11.1"
+ },
+ {
+  "slug": "ample-top-intersection",
+  "needs": "For an integral projective d-dimensional variety W over any field and an ample line bundle H, the degree of `c₁(H)^d` on W is a strictly positive integer, including degree one for a rational point when d = 0.",
+  "supplier": "SchemeAndStackFoundations",
+  "section": "5.2–5.3"
+ }
+],
  "restructure": [
   {
    "action": "rescope",
