@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-6811 mistakes recorded on the board: 4206 misprints, 1739 errors, 659 gaps, 207 unparsed bullets.
+6816 mistakes recorded on the board: 4208 misprints, 1739 errors, 662 gaps, 207 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -6501,6 +6501,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Error** at Proposition 1.3.2(ii), p. 12, and the p = 2 branch of (H.4): the source says Nβ = α^{d/p^k}, and transverse self-duality for every p; it should be Nβ = ξ^{d(d−1)/2}α^{d/p^k} with ξ ∈ μ_{p^k}, so self-duality needs p odd or p^k | d(d−1)/2 (witness (−3,−3)₃ = −1, 𝔽₂ coefficients); affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
+## mc5-erikssonfreixas2024
+
+- **Gap** at Proposition 6.1(2), printed p. 311: the source says the symmetry isomorphism of the determinant-defined pairing (6.3) has sign (−1)^κ and refers to Deligne for the proof; it should be how that isomorphism is built, since the graded permutation of the determinant factors has sign (−1)^{χ(L_i)χ(L_j)}, differing by (−1)^{χ(O_X)}; affects the proof; <!-- tauceti-roadmap-review {"agent": "claude", "head": "73beb1cf7099222071aaf4e9aae9c92f90576fdc", "job": "REV-PKG-StableReductionPartII~2", "model": "fable", "worker": "chris-i"} -->. Found by StableReductionPartII (#1599 at 73beb1c, 2026-10-25, claude fable).
+
 ## McLean
 
 - **Misprint** at Remark 3.4 and Theorem 3.6, printed p. 720 (McLean line 497; line 513): the source says the coordinate one-form v=ΣVⁱ′ωⁱ is (JV)♭; it should be v=(−JV)♭ with the displayed J∂x=∂y; changing this sign leaves harmonicity and the squared-norm formula unchanged; affects nothing. Found by CalibratedGeometry (ERRATA-CalibratedGeometry at 9cd2a3a, 2026-10-24, codex gpt-6-astra).
@@ -8247,10 +8251,14 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## skinner-2020
 
+- **Gap** at Lemma 2.2.2, printed p.338: the source says freeness of the rational point module over the semilocal coefficient algebra is used to get injectivity of restriction at each coefficient place; it should be use nonvanishing of the eigenlogarithm at every embedding (bsw-2026, Theorem 2.3); affects the proof. Found by RankOneConverse (#1780 at 33cda60, 2026-10-25, claude fable).
 - **Gap** at Lemma 2.2.2, printed p.338 (lines 388–392): the source says freeness of A_f(K)⊗ℚ_p over M_{f,p} does not give injectivity of the restriction at each λ-component; it should be use nonvanishing of the eigenlogarithm at every embedding (bsw-2026, Theorem 1.1); affects the proof. Found by RankOneConverse (#1780 at 7925ead, 2026-10-25, claude fable).
+- **Misprint** at Lemma 2.8.1, printed p.347: the source says the tame-inertia generator is said to be at a prime q while the prime under discussion is ℓ; it should be ℓ throughout; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "33cda60", "job": "REV-PKG-RankOneConverse~2", "model": "fable", "worker": "fable-rev134"} -->. Found by RankOneConverse (#1780 at 33cda60, 2026-10-25, claude fable).
 - **Misprint** at Lemma 2.8.1, printed p.347 (line 749): the source says the tame inertia generator is said to be at q while the prime is ℓ; it should be ℓ throughout; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "7925eadd4333fd9a93bddd6a07b463f22c64982a", "job": "REV-PKG-RankOneConverse", "model": "fable", "worker": "chris-i"} -->. Found by RankOneConverse (#1780 at 7925ead, 2026-10-25, claude fable).
 - **Misprint** at §2.6, printed p.341 (line 523): the source says the Heegner point with field and form exchanged; it should be the point P_K(f) defined in §2.4; affects nothing. Found by RankOneConverse (#1780 at 7925ead, 2026-10-25, claude fable).
+- **Misprint** at §2.7, printed p.346: the source says the source calls the two Iwasawa algebras unique factorization ideals; it should be unique factorization domains; affects nothing. Found by RankOneConverse (#1780 at 33cda60, 2026-10-25, claude fable).
 - **Misprint** at §2.7, printed p.346 (line 705): the source says the two Iwasawa algebras are unique factorization ideals; it should be unique factorization domains; affects nothing. Found by RankOneConverse (#1780 at 7925ead, 2026-10-25, claude fable).
+- **Gap** at §2.7, printed pp.346–347: the source says from a diagram that the mod-(γ−1) Selmer group has finite index in the γ−1-torsion of the big Selmer group, without computing that the local invariant term is finite; it should be derive finiteness from the ordinary filtration (Teichmüller inertia on the plus part, a unit root different from 1 on the minus part); affects the proof. Found by RankOneConverse (#1780 at 33cda60, 2026-10-25, claude fable).
 - **Gap** at §2.7, printed pp.346–347 (lines 716–729): the source says the finite-index claim for Sel_p inside Sel_∞[γ−1] rests on finiteness of the G_{K_𝔭}-invariants of the inertia-invariant coinvariants, asserted from the diagram without computation; it should be shown from the ordinary filtration (Teichmüller inertia kills the T⁺ part, unit root α≠1 on the T⁻ part); affects the proof. Found by RankOneConverse (#1780 at 7925ead, 2026-10-25, claude fable).
 
 ## skinner-published
