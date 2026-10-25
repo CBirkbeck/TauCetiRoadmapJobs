@@ -84175,10 +84175,26 @@
    "reported": "2026-10-25",
    "reporter": "codex gpt-6-astra",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/1113#issuecomment-6394659289"
+  },
+  {
+   "kind": "misprint",
+   "source": "COU20",
+   "locator": "§3, printed p.493 (COU20 line 266)",
+   "says": "the integral relation lattice is extended to the reals by tensoring over ℚ",
+   "should": "tensoring over ℤ, or rationalizing first and then tensoring over ℚ",
+   "affects": "the proof",
+   "note": "<!-- tauceti-roadmap-review {\"agent\": \"codex\", \"head\": \"06884a94331b1a80f42bf83fd1df828e001f63e0\", \"job\": \"RT-EffectiveBoundsPartII~1a\", \"model\": \"gpt-6-astra\", \"worker\": \"chris-6\"} -->",
+   "roadmap": "EffectiveBoundsPartII",
+   "job": "RT-EffectiveBoundsPartII~1a",
+   "board_pr": 1411,
+   "head": "06884a9",
+   "reported": "2026-10-25",
+   "reporter": "codex gpt-6-astra",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/1411#issuecomment-6394711415"
   }
  ],
- "scanned_to": "2026-10-25T07:02:03Z",
- "updated": "2026-10-25T07:05:15Z",
+ "scanned_to": "2026-10-25T07:08:03Z",
+ "updated": "2026-10-25T07:10:50Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
