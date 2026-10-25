@@ -2,7 +2,7 @@
   "roadmap": "CompletedCohomologyAndLocalGlobalCompatibilityPartII",
   "title": "Patched modules and density in local deformation rings",
   "parent": "CompletedCohomologyAndLocalGlobalCompatibility",
-  "summary": "Build arithmetic component detection for the general GL_d(F) patched module and deduce faithfulness of its unrestricted framed local deformation action. From this obtain Zariski density of crystalline lifts with regular weights varying, potentially crystabelline lifts with one regular weight fixed, and unramified degree-d induced supercuspidal lifts with that weight fixed. Further endpoints are benign density, density for every prescribed inertial type with varying regular weights, and fixed-weight minimal-stratum density. The patched results assume p∤2d.",
+  "summary": "Build arithmetic component detection for the general GL_d(F) patched module and deduce faithfulness of its unrestricted framed local deformation action. From this obtain Zariski density of crystalline lifts with regular weights varying, potentially crystabelline lifts with one regular weight fixed, and unramified degree-d induced supercuspidal lifts with that weight fixed. Further endpoints are benign density, density for every prescribed inertial type with varying regular weights, and fixed-weight minimal-stratum density. Crystalline and benign density hold at every prime through a local route; local faithfulness and the other densities use the patched module and assume p∤2d.",
   "baseline": {
     "mathlib": "6b7abb3c7686292736be2955bd3eb9ebf63b456a",
     "tauceti": "a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039"
@@ -104,7 +104,7 @@
             },
             {
               "kind": "computation",
-              "statement": "At p=d=3 the lift contract still applies, but p divides 2d=6 and the patched density conclusion is outside the theorem."
+              "statement": "At p=d=3 the lift contract still applies, but p divides 2d=6: local faithfulness and the fixed-weight densities are outside their theorems, while §5.2 applies through its local route."
             }
           ]
         }
@@ -286,7 +286,7 @@
           "hypotheses": [
             "Standing finite-extension arithmetic setup; p∤2d for assertions using M∞."
           ],
-          "proofSketch": "Restrict the finite R∞[[K]] presentation to H, which has finite index, so it remains finite over R∞[[H]]. The right action on Θ is v·g=g⁻¹v. Identify the displayed double dual with the completed balanced tensor Θ⊗̂_{O[[H]]}M∞. A finite presentation makes it a quotient of finitely many copies of R∞⊗_OΘ, proving finiteness. Compare commensurable lattices after inverting p and use torsion-free biduality for the Hom adjunction. Frobenius reciprocity compares H-tests with induced K-tests. Use the imported parent theorem, rather than general finiteness, to obtain reduced O-flat faithful quotients for algebraic and type-specialised tests.",
+          "proofSketch": "Restrict the finite R∞[[K]] presentation to H, which has finite index, so it remains finite over R∞[[H]]. The right action on Θ is v·g=g⁻¹v. Identify the displayed double dual with the completed balanced tensor Θ⊗̂_{O[[H]]}M∞. A finite presentation makes it a quotient of finitely many copies of R∞⊗_OΘ, proving finiteness. Compare commensurable lattices after inverting p and use torsion-free biduality for the Hom adjunction. Frobenius reciprocity and duality for continuous induction from the open subgroup H (ArithmeticGaloisRepresentations §1.3) compare H-tests with induced K-tests: a continuous H-map φ:M∞→V* gives the K-map m↦(x↦φ(xm)) into Ind_H^K V*≅(Ind_H^K V)*, continuous because the induced module carries the finite product topology over a transversal. Use the imported parent theorem, rather than general finiteness, to obtain reduced O-flat faithful quotients for algebraic and type-specialised tests.",
           "api": [
             {
               "statement": "Two stable lattices give canonically isomorphic rational testing modules, compatibly with third-lattice comparison."
@@ -316,7 +316,7 @@
             "CompletedCohomologyPartII §3.2",
             "SmoothRepresentationsOfLocalGroups §SR.2.1",
             "§3.1",
-            "gap:continuous-finite-index-induction",
+            "ArithmeticGaloisRepresentations §1.3",
             "CompletedCohomologyPartII §F.2"
           ],
           "locator": {
@@ -346,11 +346,15 @@
             },
             {
               "kind": "computation",
+              "statement": "For d=1, F=ℚ_5, K=ℤ_5^×, H=1+5ℤ_5 of index 4 and the continuous character χ(u)=u of H, which is nontrivial on every open subgroup and so not smooth, Ind_H^K χ has dimension 4 with the product topology of L⁴, and for M=O[[K]] both Hom_H(M,χ*) and Hom_K(M,(Ind_H^K χ)*) have dimension 4; smooth induction would not apply."
+            },
+            {
+              "kind": "computation",
               "statement": "For H=K the induction comparison is the identity, with n=1 and both dimensions r."
             },
             {
               "kind": "computation",
-              "statement": "M∞ is finite over R∞[[H]]; its testing quotient’s reducedness is the arithmetic assertion imported from the parent."
+              "statement": "For the model H=1, B=O[[x]] acting on M=B/(x²) and Θ=O: M is free of rank two over O=O[[H]], hence compact projective, and finite over B; its test is M itself by torsion-free biduality, and Ann_B(M)=(x²). The faithful testing quotient B/(x²) has x²=0 but x≠0, so finiteness and compact projectivity do not give reducedness; that comes only from the parent's arithmetic theorem."
             }
           ]
         },
@@ -601,14 +605,24 @@
           "id": "5.2",
           "kind": "theorem",
           "name": "Density of crystalline points",
-          "statement": "If p∤2d, then Σcris is Zariski dense in X□=Spec R□_{ρ̄}. The labelled regular weights vary; coefficients are allowed finite extensions of L.",
+          "statement": "For every prime p, every finite F/ℚ_p, every d≥1 and every ρ̄ in the standing setup, Σcris is Zariski dense in X□=Spec R□_{ρ̄}, and already in the rigid generic fibre (Spf R□_{ρ̄})^rig. The labelled regular weights vary; coefficients are allowed finite extensions of L.",
           "hypotheses": [
-            "Standing finite-extension arithmetic setup; p∤2d for assertions using M∞."
+            "Standing finite-extension arithmetic setup at every prime p; the second route uses M∞ and p∤2d."
           ],
-          "proofSketch": "For every algebraic ξ, take the K-test M∞(ξ); these ξ capture the compact projective M∞. The parent crystalline specialisation theorem identifies its faithful quotient with a reduced O-flat union of components of the appropriate crystalline deformation ring, including the auxiliary factors. All characteristic-zero points map to Σcris. Apply Layer 5 testing density with Layer 4 faithfulness.",
+          "proofSketch": "Local route, every p. For each χ:μ_{p∞}(F)→O×, PadicHodgeTheory §3.6 gives a crystalline ψ lifting detρ̄ with ψ∘Art_F=χ on μ_{p∞}(F), and gap:crystalline-lift-prescribed-determinant gives a regular crystalline lift with determinant ψ (BIPD Corollary 2.8). After coefficient extension R□[1/p] is the product of the R□,χ[1/p], each an O-flat normal domain by gap:framed-ring-components, so by gap:berthelot-points-components the irreducible components of (Spf R□)^rig are the pairwise disjoint generic fibres of the R□,χ, and each contains a regular crystalline point. By gap:crystalline-closure-components the Zariski closure of these points is a union of components, hence everything. An element of R□[1/p] vanishing on Σcris then lies in every maximal ideal of the reduced Jacobson ring R□[1/p], so it is zero; as R□ is O-torsion free, the vanishing ideal of Σcris in R□ is zero (BIPD Lemma 5.1). Patched route, p∤2d. For every algebraic ξ, take the K-test M∞(ξ); these ξ capture the compact projective M∞. The parent crystalline specialisation theorem identifies its faithful quotient with a reduced O-flat union of components of the appropriate crystalline deformation ring, including the auxiliary factors. All characteristic-zero points map to Σcris. Apply Layer 5 testing density with Layer 4 faithfulness.",
           "api": [],
           "prerequisites": [
             "§1.1",
+            "PadicHodgeTheory §3.6",
+            "ModularityAndLanglandsExtensions §2.1",
+            "gap:crystalline-lift-prescribed-determinant",
+            "LocalGaloisDeformationRings §1.1",
+            "gap:framed-ring-components",
+            "AdicSpacesPartIII §R2.9",
+            "gap:berthelot-points-components",
+            "CompletedCohomologyAndLocalGlobalCompatibility §5.2a",
+            "gap:crystalline-closure-components",
+            "DeformationAndDerivedPatchingAlgebra §4.4",
             "§1.2",
             "§4.2",
             "§5.1",
@@ -617,8 +631,8 @@
             "LocalGaloisDeformationRings §3.4"
           ],
           "locator": {
-            "source": "BIP",
-            "where": "BIP Theorem 6.1 and proof, pp. 46, 49–50; CEGGPS Lemma 4.18, pp. 65–66; BIP lines 2311–2312, 2462–2476"
+            "source": "BIPD",
+            "where": "BIPD Theorem 3.3, p. 8, Lemma 5.1 and Corollary 5.2, p. 11; BIP Remark 6.10, p. 50; for p∤2d, BIP Theorem 6.1 and proof, pp. 46, 49–50, and CEGGPS Lemma 4.18, pp. 65–66; BIPD lines 349–354, 454–465; BIP lines 2311–2312, 2462–2476, 2495–2498"
           },
           "tests": [
             {
@@ -627,7 +641,15 @@
             },
             {
               "kind": "computation",
-              "statement": "For d=2,F=ℚ_p,p>2 it specializes to the known framed crystalline-density theorem; no claim at p=2 is made by this proof."
+              "statement": "For p=2, d=1, F=ℚ_2 and trivial ρ̄, μ_{2^∞}(ℚ_2)={±1} gives two components. The crystalline characters equal to x↦x^n on ℤ_2^× and to 1 at 2 lift the trivial character and take the value (−1)^n at −1, so even and odd n meet both components; the theorem applies although 2 divides 2d=2."
+            },
+            {
+              "kind": "computation",
+              "statement": "For d=2, F=ℚ_2 and trivial ρ̄ the framed generic fibre again has two components, indexed by the value ±1 of the determinant at −1, and both contain regular crystalline points, as in PadicLocalLanglandsForGL2Qp §3.6a."
+            },
+            {
+              "kind": "computation",
+              "statement": "BIPD and IYE use HT(ε)=+1. Negating and reversing a labelled weight tuple sends (2,0) to (0,−2) and keeps strict inequalities, so both conventions define the same set Σcris; a non-regular tuple such as (1,1) stays non-regular."
             }
           ]
         },
@@ -718,13 +740,18 @@
           "id": "6.1",
           "kind": "theorem",
           "name": "Density of benign points",
-          "statement": "For p∤2d, benign crystalline points with regular labelled weights varying are Zariski dense in X□.",
+          "statement": "For every prime p, benign crystalline points with regular labelled weights varying are Zariski dense in X□=Spec R□_{ρ̄}, and already in (Spf R□_{ρ̄})^rig.",
           "hypotheses": [
-            "Standing finite-extension arithmetic setup; p∤2d for assertions using M∞."
+            "Standing finite-extension arithmetic setup at every prime p; the patched route uses M∞ and p∤2d."
           ],
-          "proofSketch": "For each algebraic test quotient, benign points are dense in every component of its characteristic-zero support by CompletedCohomologyAndLocalGlobalCompatibility §5.2a. A local scalar vanishing on all benign points therefore vanishes on every reduced integral test quotient. Algebraic capture and local faithfulness give zero vanishing ideal, exactly as in crystalline density.",
+          "proofSketch": "Local route, every p. A regular crystalline point x of weight k lies on the closed crystalline locus (Spf R□,k_cr)^rig. By gap:local-benign-crystalline-points every admissible open neighbourhood of x there contains a benign point; a Zariski-closed analytic subset containing all benign points has admissible open complement, so it contains x. Hence the Zariski closure of the benign points contains Σcris, which is dense in (Spf R□)^rig by §5.2, and the passage to Spec R□ is that of §5.2. Patched route, p∤2d. For each algebraic test quotient, benign points are dense in every component of its characteristic-zero support by CompletedCohomologyAndLocalGlobalCompatibility §5.2a. A local scalar vanishing on all benign points therefore vanishes on every reduced integral test quotient. Algebraic capture and local faithfulness give zero vanishing ideal, exactly as in crystalline density.",
           "api": [],
           "prerequisites": [
+            "§5.2",
+            "LocalGaloisDeformationRings §3.4",
+            "gap:local-benign-crystalline-points",
+            "AdicSpacesPartIII §R2.9",
+            "gap:berthelot-points-components",
             "CompletedCohomologyAndLocalGlobalCompatibility §§5.2, 5.2a",
             "§3.1",
             "§4.2",
@@ -732,7 +759,7 @@
           ],
           "locator": {
             "source": "BIP",
-            "where": "BIP Remark 6.2, p. 46; EP Proposition 6.9 and its use preceding Lemma 6.11, p. 368; BIP lines 2313–2316; EP Proposition 6.9; EP lines 1320–1336"
+            "where": "BIP Remark 6.2, p. 46; NAK Lemma 4.2, pp. 120–122; BIPD proof of Theorem 4.2, p. 10; for p∤2d, EP Proposition 6.9 and its use preceding Lemma 6.11, p. 368; BIP lines 2313–2316; NAK lines 1356–1418; BIPD lines 428–440; EP lines 1320–1336"
           },
           "tests": [
             {
@@ -746,6 +773,10 @@
             {
               "kind": "computation",
               "statement": "For a zero algebraic test the support is empty; its benign locus contributes no points. For a nonempty test, openness is relative to each crystalline component."
+            },
+            {
+              "kind": "computation",
+              "statement": "For p=2, d=1, F=ℚ_2 and trivial ρ̄, benign points are the crystalline points, and the characters x↦x^n of §5.2 with n even and odd meet both components; no prime restriction enters."
             }
           ]
         },
@@ -853,9 +884,9 @@
           "id": "6.4",
           "kind": "definition",
           "name": "Minimal-stratum supercuspidal points",
-          "statement": "Fix an embedded extension E/F of degree d containing an element minimal over F. Write e=e(E/F), v_E normalized and ϖ_F a uniformizer. Minimal means gcd(e,v_E(α))=1 and the residue of ϖ_F^{−v_E(α)}α^e generates k_E/k_F. Choose an O_F-basis of O_E to identify its lattice with O_F^d. Let 𝔄 be the hereditary order of End_F(E) preserving the chain (𝔭_E^i). For regular weight k, Σsc_{k,E} consists of potentially semistable points of that weight whose local Langlands representation is supercuspidal and contains a simple stratum [𝔄,n,0,α] with F[α]=E and α minimal, v_E(α)=−n<0. Simple strata, simple characters and their occurrence are imported from the smooth-representation owner. This predicate also covers wild E/F outside the range of the density theorem in §6.5.",
+          "statement": "Fix an embedded extension E/F of degree d containing an element minimal over F. Write e=e(E/F), v_E normalized and ϖ_F a uniformizer. Minimal means gcd(e,v_E(α))=1 and the residue of ϖ_F^{−v_E(α)}α^e generates k_E/k_F. Choose an O_F-basis of O_E to identify its lattice with O_F^d. Let 𝔄 be the hereditary order of End_F(E) preserving the chain (𝔭_E^i). For regular weight k, Σsc_{k,E} consists of potentially semistable points of that weight whose local Langlands representation is supercuspidal and contains a simple stratum [𝔄,n,0,α] with F[α]=E and α minimal, v_E(α)=−n<0. Simple strata, simple characters and their occurrence are imported from the smooth-representation owner. For an integer m≥1 such that U^{m+1}(𝔄) is torsion free, the deep subset Σsc_{k,E,m} consists of the points of Σ_k whose local Langlands representation contains some V(α,θ) with α∈E minimal over F, v_E(α)=−n, n>2m, and θ∈C(m,α). The predicate Σsc_{k,E} also covers wild E/F outside the range of the density theorem in §6.5.",
           "hypotheses": [
-            "F/ℚ_p finite, d≥1, E/F a degree-d extension admitting a minimal element; regular labelled weight k. No prime restriction is imposed on this definition."
+            "F/ℚ_p finite, d≥1, E/F a degree-d extension admitting a minimal element; regular labelled weight k; for Σsc_{k,E,m}, an integer m≥1 with U^{m+1}(𝔄) torsion free. No prime restriction is imposed on these definitions."
           ],
           "proofSketch": "Apply the supplied minimal-stratum/type occurrence predicate to the local Langlands representation. The field embedding and lattice chain are specified up to conjugacy. The numerical minimality condition is the EP §3.4 input; it implies F[α]=E. The filtration and type constructors remain the supplier’s definitions; the chosen lattice puts U^{m+1}(𝔄) inside K. Use type recognition to see that such supercuspidal points have N=0. Character induction is available only under the extra tame hypothesis of EP Proposition 3.19.",
           "api": [
@@ -863,13 +894,13 @@
               "statement": "Changing the embedding E↪End_F(F^d) by conjugation gives the same point predicate."
             },
             {
-              "statement": "Every point of this set is potentially crystalline, with N=0."
+              "statement": "Every point of Σsc_{k,E}, hence of Σsc_{k,E,m}, is potentially crystalline, with N=0."
             },
             {
-              "statement": "Membership is detected by occurrence of some V(α,θ) of the EP §3.4 family in the corresponding smooth representation, with the specified k."
+              "statement": "Membership in Σsc_{k,E,m} is occurrence of some V(α,θ) with n>2m and θ∈C(m,α). Every point of Σsc_{k,E,m} lies in Σsc_{k,E}: by EP Proposition 3.19 its representation is supercuspidal and contains θ, which restricts to ψ_α on U^{[n/2]+1}(𝔄) and extends to a simple character of [𝔄,n,0,α] occurring in the same representation. The converse fails for strata with n≤2m."
             },
             {
-              "statement": "For tame E/F the type condition is equivalent to the character-induction description with ψ|U_E^{m+1}=θ|U_E^{m+1}; no such equivalence is asserted for wild E."
+              "statement": "For tame E/F and fixed (α,θ), occurrence of V(α,θ) is equivalent to the character-induction description with ψ|U_E^{m+1}=θ|U_E^{m+1}; this describes Σsc_{k,E,m}, not all of Σsc_{k,E}, and no such equivalence is asserted for wild E."
             },
             {
               "statement": "Finite coefficient extension does not change the underlying arithmetic point predicate."
@@ -901,6 +932,10 @@
             {
               "kind": "computation",
               "statement": "For F=ℚ_3, d=3 and E=ℚ_3(3^(1/3)), e=3 and a uniformizer is minimal. The definition uses simple strata here; p divides 2d=6, so §6.5 gives no density claim for this wild instance."
+            },
+            {
+              "kind": "computation",
+              "statement": "For p=3, d=1, F=E=ℚ_3(ζ_3) and a weight-zero point whose character is trivial on U_F^2 and on ϖ and nontrivial on U_F^1, its restriction to U_F^1 is some ψ_α with v(α)=−1, so it contains the stratum with n=1 and lies in Σsc_{k,E}. The least permitted m is 1, since U_F^2 is torsion free while ζ_3∈U_F^1∖U_F^2; so every deep family has n≥3, and each such θ is nontrivial on U_F^n where the character is trivial: the point lies in no Σsc_{k,E,m}."
             }
           ]
         },
@@ -908,11 +943,11 @@
           "id": "6.5",
           "kind": "theorem",
           "name": "Density with a minimal-stratum inducing extension",
-          "statement": "Assume p∤2d. For every fixed regular weight k and every degree-d extension E/F containing a minimal element, Σsc_{k,E} is Zariski dense in X□. Since d=e(E/F)·f(E/F) and p∤d, every such E/F is tamely ramified. Equivalently these points have irreducible WD representation Ind_{W_E}^{W_F}ψ with ψ|U_E^{m+1}=θ|U_E^{m+1} for some EP minimal α of valuation −n, n>2m, and θ∈C(m,α), where m is chosen so U^{m+1}(𝔄) is torsion free. Every totally ramified degree-d extension is included.",
+          "statement": "Assume p∤2d. For every fixed regular weight k and every degree-d extension E/F containing a minimal element, Σsc_{k,E} is Zariski dense in X□; already its deep subset Σsc_{k,E,m} is dense, for every m≥1 with U^{m+1}(𝔄) torsion free. Since d=e(E/F)·f(E/F) and p∤d, every such E/F is tamely ramified, so the points of Σsc_{k,E,m} are those of Σ_k whose WD representation is irreducible and isomorphic to Ind_{W_E}^{W_F}ψ with ψ|U_E^{m+1}=θ|U_E^{m+1} for some EP minimal α of valuation −n, n>2m, and θ∈C(m,α). Every totally ramified degree-d extension is included.",
           "hypotheses": [
             "Standing finite-extension arithmetic setup; p∤2d for assertions using M∞."
           ],
-          "proofSketch": "Choose m as stated and the supplied V(α,θ) family. EP Lemma 3.16 supplies arbitrarily negative minimal elements from one such element. The family captures by §3.3 after tensoring with the nonzero fixed algebraic representation. EP Proposition 3.19 applies in its tame form to every E in this theorem, with the displayed character restriction. Parent §5.2 and the EP Theorem 5.3 argument identify reduced O-flat faithful quotients. Apply §5.1 and §4.2 to obtain density in X□.",
+          "proofSketch": "Choose m as stated and the supplied V(α,θ) family. EP Lemma 3.16 supplies arbitrarily negative minimal elements from one such element. The family captures by §3.3 after tensoring with the nonzero fixed algebraic representation. EP Proposition 3.19, in its tame form with the displayed character restriction, places the characteristic-zero points of the faithful test quotients in Σsc_{k,E,m}. Parent §5.2 and the EP Theorem 5.3 argument identify reduced O-flat faithful quotients. Apply §5.1 and §4.2 to obtain density of Σsc_{k,E,m} in X□; density of Σsc_{k,E} follows from the inclusion of §6.4.",
           "api": [],
           "prerequisites": [
             "§6.4",
@@ -932,15 +967,19 @@
           "tests": [
             {
               "kind": "computation",
-              "statement": "For p=5,d=2 and E=ℚ_5(√5), e(E/F)=2,f(E/F)=1 and p∤2d=4; the uniformizer is minimal and the tame induced-character description applies."
+              "statement": "For p=5,d=2 and E=ℚ_5(√5), e(E/F)=2,f(E/F)=1 and p∤2d=4; the uniformizer is minimal and the tame induced-character description applies to the deep subset."
             },
             {
               "kind": "computation",
-              "statement": "For unramified E, e=1 and this recovers §5.4."
+              "statement": "For unramified E, e=1 and the tame part of EP Proposition 3.19 places Σsc_{k,E,m} inside Σspcd_k, so density of the deep subset gives §5.4 by inclusion. The sets differ: for d=1, an unramified character lies in Σspcd_k=Σ_k but contains no stratum with n>0, so it is not in Σsc_{k,E}."
             },
             {
               "kind": "computation",
               "statement": "For the degree-12 extension over ℚ_5 in §6.4, 5∤24 but no minimal element exists; the minimal-element hypothesis is necessary."
+            },
+            {
+              "kind": "computation",
+              "statement": "The shallow rank-one point of §6.4 (p=3, F=E=ℚ_3(ζ_3), 3∤2d=2) lies in Σsc_{k,E} and in no Σsc_{k,E,m}; the density of Σsc_{k,E} comes from that of Σsc_{k,E,m} by inclusion, not by equality of the two sets."
             }
           ]
         }
@@ -956,7 +995,7 @@
         "§5.2a",
         "§5.3"
       ],
-      "what": "General GL_d(F) patched rings and M∞, fixed-centre projectivity, locally algebraic testing quotients, local–global compatibility, benign loci on every crystalline component and support as a union of components; capture requires gap:algebraic-capture."
+      "what": "General GL_d(F) patched rings and M∞, fixed-centre projectivity, locally algebraic testing quotients, local–global compatibility, benign loci on every crystalline component, the framed trianguline variety and support as a union of components; capture requires gap:algebraic-capture, and the local crystalline geometry at every prime requires gap:crystalline-closure-components and gap:local-benign-crystalline-points."
     },
     {
       "roadmap": "PadicHodgeTheory",
@@ -1056,14 +1095,21 @@
       "sections": [
         "§2.1"
       ],
-      "what": "Potential diagonalizability, component criteria and coefficient transport; the universal crystalline lift requires gap:pd-crystalline-lift."
+      "what": "Potential diagonalizability, component criteria and coefficient transport; the universal crystalline lift requires gap:pd-crystalline-lift, and the regular crystalline lift with prescribed determinant requires gap:crystalline-lift-prescribed-determinant."
     },
     {
-      "roadmap": "LocallyAnalyticRepresentationsOfLocalGroups",
+      "roadmap": "ArithmeticGaloisRepresentations",
       "sections": [
-        "Layer LR.0"
+        "§1.3"
       ],
-      "what": "Only the unmet gap:continuous-finite-index-induction contract is consumed; this supplier must be packaged before this roadmap can be packaged or ported."
+      "what": "Continuous induction from an open subgroup H of a profinite group Γ, for continuous representations on finite-dimensional vector spaces over a finite extension of ℚ_p: functions f with f(hx)=σ(h)f(x) under right translation, both Frobenius reciprocities, duality, the projection formula, and the homeomorphism with the finite product over a right transversal that identifies it with Mathlib's continuous coinduction. It applies to Γ=K=GL_d(O_F) and to nonsmooth continuous representations; §3.2 uses the same coset formula on the compact module M∞, where continuity is checked on the finitely many coordinates."
+    },
+    {
+      "roadmap": "AdicSpacesPartIII",
+      "sections": [
+        "§R2.9"
+      ],
+      "what": "Conrad's Berthelot-type generic-fibre functor on locally noetherian formal schemes over Spf O with finite-type reduction, which contains Spf R for every complete local Noetherian O-algebra R with residue field finite over k, and takes closed immersions to closed immersions; its point and component comparison requires gap:berthelot-points-components."
     }
   ],
   "consumers": [],
@@ -1077,7 +1123,9 @@
       "neededBy": [
         "2.1",
         "4.1",
-        "4.2"
+        "4.2",
+        "5.2",
+        "6.1"
       ],
       "detail": "BIP Corollary 3.38, p. 25 (BIP lines 1290–1301), and Corollaries 4.19, 4.21–4.22, pp. 39–40; geometric integrality in the proof of Lemma 6.3, p. 47 (BIP lines 1996, 2011, 2020, 2354–2359)."
     },
@@ -1182,15 +1230,50 @@
       "detail": "EP pp. 342–345, 351 (EP lines 266–354, 612–621); W=0 is excluded as in the Check of §3.1."
     },
     {
-      "slug": "continuous-finite-index-induction",
-      "title": "continuous finite index induction",
-      "supplier": "LocallyAnalyticRepresentationsOfLocalGroups",
-      "section": "Layer LR.0",
-      "needs": "For open finite-index H⊆K, provide continuous induction of finite-dimensional continuous H-representations and both Frobenius adjunctions, including the contragredient comparison, with their finite-product topologies.",
+      "slug": "crystalline-lift-prescribed-determinant",
+      "title": "crystalline lift prescribed determinant",
+      "supplier": "ModularityAndLanglandsExtensions",
+      "section": "§2.1",
+      "needs": "For every finite F/ℚ_p, every continuous ρ̄:G_F→GL_d(k) and every crystalline character ψ:G_F→O× lifting detρ̄, after a finite coefficient extension there is a crystalline lift of ρ̄ with regular labelled Hodge–Tate weights and determinant ψ.",
       "neededBy": [
-        "3.2"
+        "5.2"
       ],
-      "detail": "EP Theorem 5.3 and proof, pp. 364–365; continuous finite-index Hom adjunction on the testing modules of §3.2."
+      "detail": "BIPD Proposition 2.7, p. 7 (BIPD lines 281–313), by induction on Jordan–Hölder length from EG Theorem 6.3.2, p. 165 (EG lines 6816–6828), with the absolutely irreducible case BIPD Proposition 2.6 (BIPD line 243); no restriction on p or d."
+    },
+    {
+      "slug": "crystalline-closure-components",
+      "title": "crystalline closure components",
+      "supplier": "CompletedCohomologyAndLocalGlobalCompatibility",
+      "section": "§5.2a",
+      "needs": "For every finite F/ℚ_p, every prime p and every residual ρ̄, the Zariski closure of the regular crystalline points in the rigid generic fibre (Spf R□_{ρ̄})^rig is a union of irreducible components, proved on the framed trianguline variety at benign points.",
+      "neededBy": [
+        "5.2",
+        "6.1"
+      ],
+      "detail": "IYE Proposition 5.10, pp. 26–27 (IYE lines 1023–1087), for the framed space of an arbitrary residual representation, as used in BIPD Theorem 3.3, p. 8 (BIPD lines 349–354); its inputs are the accumulation of crystalline points at benign points of the trianguline variety (IYE Proposition 5.9, line 1020) and gap:local-benign-crystalline-points."
+    },
+    {
+      "slug": "local-benign-crystalline-points",
+      "title": "local benign crystalline points",
+      "supplier": "CompletedCohomologyAndLocalGlobalCompatibility",
+      "section": "§5.2a",
+      "needs": "For every finite F/ℚ_p, every prime p, every residual ρ̄ and every regular labelled Hodge type k, every admissible open neighbourhood of every point of the framed crystalline rigid generic fibre (Spf R□,k_cr)^rig contains a point that is benign in the sense of §5.2a.",
+      "neededBy": [
+        "6.1"
+      ],
+      "detail": "NAK Lemma 4.2, pp. 120–122 (NAK lines 1356–1418), whose proof is local on the framed crystalline space and imposes no condition on p; used in this form in IYE line 1033 and BIPD lines 436–437."
+    },
+    {
+      "slug": "berthelot-points-components",
+      "title": "berthelot points components",
+      "supplier": "AdicSpacesPartIII",
+      "section": "§R2.9",
+      "needs": "For a complete local Noetherian O-algebra A with residue field finite over k, the points of (Spf A)^rig correspond bijectively to the maximal ideals of A[1/p], with canonical local maps inducing isomorphisms of completions, and when A is O-flat the irreducible components of (Spf A)^rig are the generic fibres of the connected components of the normalization of Spf A.",
+      "neededBy": [
+        "5.2",
+        "6.1"
+      ],
+      "detail": "DEJ Lemma 7.1.9, p. 78 (DEJ lines 2553–2560); CON Theorem 2.3.1, pp. 500–501 (CON lines 1053–1070); applied in BIPD §3, p. 8, and Lemma 5.1, p. 11 (BIPD lines 329–339, 454–461)."
     }
   ]
 }
