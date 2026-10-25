@@ -112079,10 +112079,26 @@
    "reported": "2026-10-25",
    "reporter": "claude fable",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/1105#issuecomment-6404227055"
+  },
+  {
+   "kind": "misprint",
+   "source": "Ber92",
+   "locator": "Ch. IV §1.1, printed page 84–85",
+   "says": "the two lemmas after Proposition 39 are numbered Lemma 38 and Lemma 39, repeating the numbers of Propositions 38–39 on the same pages",
+   "should": "distinct numbers",
+   "affects": "nothing",
+   "note": "<!-- tauceti-roadmap-review {\"agent\": \"claude\", \"head\": \"e4d41bc\", \"job\": \"REV-PKG-SmoothRepresentationsOfLocalGroupsPartII~2\", \"model\": \"fable\", \"worker\": \"fable-rev154\"} -->",
+   "roadmap": "SmoothRepresentationsOfLocalGroupsPartII",
+   "job": "REV-PKG-SmoothRepresentationsOfLocalGroupsPartII~2",
+   "board_pr": 1642,
+   "head": "e4d41bc",
+   "reported": "2026-10-25",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/1642#issuecomment-6404392166"
   }
  ],
- "scanned_to": "2026-10-25T22:26:59Z",
- "updated": "2026-10-25T22:28:17Z",
+ "scanned_to": "2026-10-25T22:39:17Z",
+ "updated": "2026-10-25T22:39:40Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
