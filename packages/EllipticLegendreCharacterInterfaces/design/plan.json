@@ -2589,20 +2589,7 @@
       ]
     }
   ],
-  "gaps": [
-    {
-      "slug": "rational-local-unit-reduction",
-      "needs": "Transport rational equations and their j-invariants to ℚ_p, prove that good reduction of minimal local models implies integral j, and compare rational valuation-zero parameters with ℤ_p units and their nonzero residues, including minimality and nonsingular reduction of integral unit-discriminant equations.",
-      "supplier": "EllipticCurves",
-      "section": "Layer 4"
-    },
-    {
-      "slug": "rational-squareclass-character",
-      "needs": "Extend §1.7's fundamental-discriminant character to every nonzero rational squareclass with the stated prime-value characterization, uniqueness, odd conductor parity and squarefree odd conductor, including the trivial squareclass.",
-      "supplier": "ClassicalArithmeticCompletion",
-      "section": "§§1.7–1.8"
-    }
-  ],
+  "gaps": [],
   "sourceIssues": [
     {
       "id": "EllipticLegendreCharacterInterfaces/E1",
