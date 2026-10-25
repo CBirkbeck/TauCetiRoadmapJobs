@@ -27,14 +27,14 @@ Rings are commutative with identity, including the zero ring for polynomial asse
 
 For smooth curve level take g≥2 and N≥3 invertible on the base. Similitude frames include their primitive multiplier; exact symplectic frames use Spec ℤ[1/N,ζ_N]. Curve cohomology versus Jacobian torsion retains the dual and Tate twist. A constant finite branch-exchange group remains a stack stabilizer even in characteristic two.
 
-The untwisted Hodge bundle is E=f_*ω and λ=det E; rank-zero determinant is O. Ordered Hodge exchange has sign `(−1)^{g₁g₂}`. Smoothing conormal L_a⊗L_b has unsigned branch exchange, whereas residue reversal changes sign. Determinants are formed with their integer grades before comparison maps forget the grades. Relative Picard points are fppf-sheafified line classes. Actual lifts have scalar automorphisms; when nonempty, their global isomorphism classes form a Pic(T)-torsor.
+The untwisted Hodge bundle is E=f_*ω and λ=det E; rank-zero determinant is O. Ordered Hodge exchange has sign `(−1)^{g₁g₂}`. Smoothing conormal L_a⊗L_b has unsigned branch exchange, whereas residue reversal changes sign. Determinants are formed with their integer grades before comparison maps forget the grades. The symmetry ⟨L,M⟩≅⟨M,L⟩ of the Deligne pairing is Deligne's isomorphism built from symbols and norms, sending ⟨l,m⟩ to ⟨m,l⟩; on ⟨L,L⟩ it acts by `(−1)^{deg L}`. The Koszul permutation of the two factors d(L)∨ of the four-determinant expression acts by `(−1)^{χ(L)}`, so on the diagonal the symmetry is that permutation multiplied by `(−1)^{χ(O_C)}`. Relative Picard points are fppf-sheafified line classes. Actual lifts have scalar automorphisms; when nonempty, their global isomorphism classes form a Pic(T)-torsor.
 
 **Checks.**
 
 - At (g,n)=(0,3), stability degree is −2+3=1 and moduli dimension is −3+3=0; at (0,2) stability degree is 0. This excludes nonnegative degree as a stability definition.
 - At g=2, tricanonical rank is 5, ambient dimension 4, degree 6 and Hilbert polynomial 6T−1; at T=1 it equals 5. Confusing rank with projective dimension fails this witness.
 - Exchanging two genus-one Hodge factors has sign −1; exchanging factors of ranks one and two has sign +1. Interchanging the two smoothing cotangent factors is +1 in both cases. Residues (r,−r) become (−r,r).
-- On ℙ¹, the determinant grades of O(1), O and O(−2) are 2, 1 and −1; [R → R] with identity differential in degrees 0,1 has grade 0. The pairing of O(1) with itself has interchange −1 in characteristic different from two; the dualizing degree 2g−2 gives +1.
+- On ℙ¹, the determinant grades of O(1), O and O(−2) are 2, 1 and −1; [R → R] with identity differential in degrees 0,1 has grade 0. The symmetry of ⟨O(1),O(1)⟩ on ℙ¹ is (−1)^1=−1 in characteristic different from two, and the symmetry of ⟨ω,ω⟩ in genus g is `(−1)^{2g−2}=+1`. The bare Koszul permutation gives `(−1)^{χ(O(1))}=(−1)^2=+1` on ℙ¹ and `(−1)^{χ(ω)}=(−1)^{g−1}` on ⟨ω,ω⟩, so it is not the symmetry; the factor `(−1)^{χ(O_C)}`, which is −1 on ℙ¹ and `(−1)^{1−g}` in genus g, restores −1 and +1.
 - With N=3, multiplier 2 becomes multiplier 1 after precomposition by diag(2I_g,I_g), since 2·2=1 in ℤ/3ℤ. A multiplier without its component is insufficient.
 
 ## Exact supplier contracts
@@ -93,7 +93,7 @@ What SchemeAndStackFoundations must provide (gap:positive-surface-twist): Over a
 
 What SchemeAndStackFoundations must provide (gap:graded-perfect-stack-descent): Refine the parity-graded ring determinant to integer-graded lines, then descend to schemes and stack atlases with exact-sequence, shift, quasi-isomorphism and arbitrary proper-flat perfect-pushforward comparisons, extending the smooth Noetherian curve determinant. (§§1.22, 2.18.)
 
-What SchemeAndStackFoundations must provide (gap:integral-deligne-pairing): Provide the integral four-determinant Deligne pairing for locally projective faithfully flat finitely presented pure curve morphisms over arbitrary bases, with coherent bilinearity, base change, norm, scalar and graded permutation laws. (§3.4.)
+What SchemeAndStackFoundations must provide (gap:integral-deligne-pairing): Provide the integral four-determinant Deligne pairing for locally projective faithfully flat finitely presented pure curve morphisms over arbitrary bases, with coherent bilinearity, base change, norm and scalar laws, and Deligne's symmetry isomorphism ⟨L,M⟩≅⟨M,L⟩ built from symbols and norms, which acts on ⟨L,L⟩ by `(−1)^{deg L}`. (§3.4.)
 
 What SchemeAndStackFoundations must provide (gap:stack-chow-grr): Provide rational codimension-one Chow and Picard comparison, proper pushforward, Chern and projection laws and Grothendieck–Riemann–Roch on the smooth Deligne–Mumford moduli stack needed by the Noether computation. (§§5.1–5.8.)
 
@@ -145,7 +145,7 @@ The supplier provides the following comparison laws.
 - Pullback identifies the pairing with the pairing on the cartesian family for every base morphism; identity and composition comparisons satisfy descent.
 - For a relative effective Cartier divisor D finite flat over S, identify ⟨O(D),M⟩ with N_D/S(M|D). If D is empty on an open-and-closed component, the value there is the trivial line.
 - Multiplication by u on L acts on the pairing by `u^{deg(M)}` on each rank/degree component.
-- The canonical interchange on ⟨L,L⟩ is multiplication by `(−1)^{deg(L)}`. It is not always the identity.
+- The symmetry ⟨L,M⟩≅⟨M,L⟩ is Deligne's isomorphism sending ⟨l,m⟩ to ⟨m,l⟩; on ⟨L,L⟩ it is multiplication by `(−1)^{deg(L)}`, which equals the Koszul permutation of the two `d_f(L)∨` factors multiplied by `(−1)^{χ(O_C)}`. It is not always the identity.
 - On the divisorial-scheme range of Corollary 6.9 identify the pairing class with the degree-two Chern pushforward in the graded K-group; the Chow and stack extensions are separate named needs.
 
 **Checks.**
@@ -153,18 +153,18 @@ The supplier provides the following comparison laws.
 - ⟨O_X,M⟩ has the bilinear unit trivialization; omitting the d(O_X) term breaks this normalization.
 - For a section s in the smooth locus, ⟨O(s),M⟩≅s*M by the degree-one norm; no inverse appears.
 - For P¹_k and L=O(1), the canonical self-interchange is −1 when char(k)≠2, even though the pairing line is one-dimensional.
-- For a connected stable genus-g fibre, deg(ω)=2g−2 is even, so self-interchange of ⟨ω,ω⟩ is +1.
+- For a connected stable genus-g fibre, deg(ω)=2g−2 is even, so the symmetry of ⟨ω,ω⟩ is +1. The bare Koszul permutation of the determinant factors gives `(−1)^{χ(ω)}=(−1)^{g−1}`, which is −1 at g=2, and on ℙ¹ with L=O(1) it gives (−1)^2=+1; a supplier that takes that permutation as the symmetry fails both values.
 - For L=f*A, identify ⟨f*A,M⟩ with `A^{deg(M)}`. For M=O(1) on P¹ this is A, not A∨.
 - For a stable nodal family over Z and its F_p fibre, the integral pairing specializes; a smooth-family-only or flat-base-change-only definition fails.
 - For a relative divisor of degree two, multiplication by u on M acts by u² on its norm pairing, not by u.
 
-**Sources.** [Pierre Deligne](https://publications.ias.edu/sites/default/files/Number58.pdf), Construction 7.2, (7.2.1), pp. 147–149; §7.4, p. 150: Gives the rank-zero determinant expression and the coherent bilinear comparison for proper flat curves, beyond the smooth discussion in §6.; [Dennis Eriksson; Gerard Freixas i Montplet](https://jep.centre-mersenne.org/item/10.5802/jep.254.pdf), Definition 1.1, p. 258; (6.3), Proposition 6.1, Remark 6.2, pp. 310–312 (mc5-erikssonfreixas2024 line 2864): Supplies the locally projective arbitrary-base version and the sign, scalar and relative-divisor laws.
+**Sources.** [Pierre Deligne](https://publications.ias.edu/sites/default/files/Number58.pdf), Construction 7.2, (7.2.1), pp. 147–149; §7.4, p. 150; §6.2, p. 142 for the symmetry: Gives the rank-zero determinant expression and the coherent bilinear comparison for proper flat curves, beyond the smooth discussion in §6.; [Dennis Eriksson; Gerard Freixas i Montplet](https://jep.centre-mersenne.org/item/10.5802/jep.254.pdf), Definition 1.1, p. 258; (6.3), Proposition 6.1, Remark 6.2, pp. 310–312 (mc5-erikssonfreixas2024 line 2864): Supplies the locally projective arbitrary-base version and the sign, scalar and relative-divisor laws.
 
 For the Deligne pairing the four-determinant formula must be interpreted before forgetting the grading:
 
 ⟨L,M⟩_f = d_f(L⊗M)⊗d_f(O_C)⊗d_f(L)∨⊗d_f(M)∨.
 
-The locally constant grade is zero. Nevertheless its canonical permutation map need not be the ordinary identity on an equal argument: the self-interchange on ⟨L,L⟩ is (−1)^deg(L). For the dualizing line the degree is 2g−2, so that map is +1. A construction which forgets all determinant signs before producing these comparison maps fails the odd-degree test.
+The locally constant grade is zero. Nevertheless the symmetry need not be the identity on an equal argument. Deligne's symmetry, built from symbols and norms (Deligne §6.2, p. 142; Eriksson–Freixas i Montplet, Proposition 6.1(2), p. 311), acts on ⟨L,L⟩ by `(−1)^{deg L}`. The Koszul permutation of the two factors d_f(L)∨, each of grade −χ(L), acts by `(−1)^{χ(L)²}=(−1)^{χ(L)}=(−1)^{deg L+1−g}`. On the diagonal the symmetry is therefore that permutation multiplied by `(−1)^{χ(O_C)}`. For the dualizing line the degree is 2g−2 and the symmetry is +1, while the bare permutation is `(−1)^{g−1}`. Taking the bare permutation as the symmetry fails the test L=O(1) on ℙ¹, and forgetting all signs fails it too.
 
 Deligne's smooth discussion in §6 is not used to assert a theorem about all nodal families. Construction 7.2, pp. 147–149, and Eriksson–Freixas i Montplet's arbitrary-base construction supply the required range. The latter's locally projective condition is Zariski-local on the base and stable under every base change; it does not require a Noetherian base. A relative effective Cartier divisor in the norm law must be flat over the base. An arbitrary vertical divisor is not substituted into that law.
 
@@ -257,9 +257,9 @@ Layer 0 fixes arbitrary-base family and descent comparisons. Layer 1 makes the t
 
 Let A be a filtered colimit of finite-type Z-algebras A_i. Any finite diagram over Spec A of proper, flat, finitely presented, geometrically connected nodal curves of pure relative dimension one, equipped with finitely many ordered pairwise disjoint sections in the relative smooth locus and a fixed fibre genus for each curve, descends to some Spec A_i. Specified maps, isomorphisms, inverses, and finitely many commutative diagrams descend after a common refinement. Smoothness of a specified family and stability of a specified pointed family descend after refinement. The latter means positivity of 2h_v−2+b_v+m_v for every normalized geometric component, where b_v counts node branches. Two such finite-stage realizations of the same finite diagram become isomorphic at a common later stage, compatibly with all specified identifications. This is a local-on-the-base approximation theorem; it asserts no single Noetherian model for a non-quasi-compact base.
 
-Here Every curve morphism is of finite presentation; only a finite diagram and finitely many marked sections are being descended. The A_i form a filtered system of finite-type Z-algebras with colimit A. Fixed genus, nonempty geometrically connected fibres, and pure relative dimension one are part of the objects.
+Every curve morphism is of finite presentation; only a finite diagram and finitely many marked sections are being descended. The A_i form a filtered system of finite-type Z-algebras with colimit A. Fixed genus, nonempty geometrically connected fibres, and pure relative dimension one are part of the objects.
 
-One proof uses the following inputs and comparisons. Import SchemeAndStackFoundations §0.9 and SchemeAndStackFoundations §0.9 for schemes, arrows, equalities and inverse equations. Spread properness and flatness after refining. Apply Stacks Lemma 53.20.10 to spread nodality, using its syntomic relative-dimension-one and unramified-singular-locus criterion. Spread geometric connectedness using the SchemeAndStackFoundations §§0.3, 0.8–0.9, 0.11, 0.17–0.21 property-spreading contract; use the locally Noetherian genus strata from StableReduction Layer 2 to select genus g. Over a Noetherian model, the failure loci for smooth marked sections, disjointness, smooth fibres and stable fibres are closed after taking the appropriate proper images. Remove their images and refine the model until the limit base factors through the resulting open. Fixed-genus strata are open and closed. Apply the finite-presentation limit theorem again to comparisons and all finite relations. Apply the construction on affine opens of a general base and compare on affine refinements of their intersections; do not assume intersections or the base are quasi-compact.
+One proof uses the following inputs and comparisons. Import SchemeAndStackFoundations §0.9 for schemes, arrows, equalities and inverse equations. Spread properness and flatness after refining. Apply Stacks Lemma 53.20.10 to spread nodality, using its syntomic relative-dimension-one and unramified-singular-locus criterion. Spread geometric connectedness using the SchemeAndStackFoundations §§0.3, 0.8–0.9, 0.11, 0.17–0.21 property-spreading contract; use the locally Noetherian genus strata from StableReduction Layer 2 to select genus g. Over a Noetherian model, the failure loci for smooth marked sections, disjointness, smooth fibres and stable fibres are closed after taking the appropriate proper images. Remove their images and refine the model until the limit base factors through the resulting open. Fixed-genus strata are open and closed. Apply the finite-presentation limit theorem again to comparisons and all finite relations. Apply the construction on affine opens of a general base and compare on affine refinements of their intersections; do not assume intersections or the base are quasi-compact.
 
 A marking permutation is a separately specified arrow, not an equality of ordered markings. Nilpotents of the base are retained by scheme approximation. No bound on the number of affine opens of an arbitrary base is imposed.
 
@@ -285,7 +285,7 @@ For P¹_S, R¹f_*O=0 and the genus is zero. For a smooth elliptic family the fir
 
 For a proper flat finitely presented nodal curve f:C→S of pure relative dimension one over any scheme S, take the canonical relative dualizing complex supplied by SchemeAndStackFoundations §2.20, with its diagonal rigidity and, for proper f, trace normalization. It is concentrated in degree −1, with cohomology `ω_{C/S}`; ω is an invertible O_C-module. For ordered disjoint smooth sections σ_i, their images are relative effective Cartier divisors D_i. Define `L=ω_{C/S}(ΣD_i)` using the existing invertible-sheaf tensor and Cartier-twist operations. Canonical comparisons `u_C^*ω_{C/S}≅ω_{C_T/T}` and u_C^*L≅L_T hold for every T→S, respect isomorphisms of pointed curves, and satisfy unit and composition coherence. On the locally Noetherian domain these identify with StableReduction Layer 2, including trace and smooth differential comparisons. On a geometric normalized component v, deg L=2h_v−2+b_v+m_v; a self-node contributes two to b_v. L is relatively ample exactly when all these degrees are positive. This extends the existing curve-specific dualizing interface; it does not introduce another line-bundle or generic duality theory.
 
-Here Nodal fibres are Gorenstein and geometrically reduced; all geometric components have dimension one. Each σ_i is a section in the relative smooth locus and the sections are pairwise disjoint. For ampleness the morphism is proper and of finite presentation; no Noetherian condition is imposed on S.
+Nodal fibres are Gorenstein and geometrically reduced; all geometric components have dimension one. Each σ_i is a section in the relative smooth locus and the sections are pairwise disjoint. For ampleness the morphism is proper and of finite presentation; no Noetherian condition is imposed on S.
 
 One proof uses the following inputs and comparisons. Import the arbitrary-base rigid dualizing complex from SchemeAndStackFoundations §§2.1–2.2, 2.6, 2.18–2.22. Use the requested arbitrary-base Cohen–Macaulay concentration and Gorenstein-invertibility extension to obtain its degree −1 module, with arbitrary base change. Import relative Cartier marking divisors and log twists from StableReduction Layers 2–3. Form their tensor product with ω using the line-bundle API by AlgebraicVectorBundles; do not replan those operations. Compare with SchemeAndStackFoundations §2.20 and the existing StableReduction sheaf on Noetherian models. Trace/rigidity uniqueness makes the comparisons independent of models and coherent; pointed-approximation handles finite diagrams. Import the normalization residue and degree formula and componentwise positivity from StableReduction Layers 1–3. Reduce the fibrewise calculation to the Noetherian case; apply the relative ampleness criterion locally on S.
 
@@ -319,9 +319,9 @@ The construction has the following API.
 
 For naturals g,n with 2g−2+n>0 computed in Z, realize StableReductionPartII:key/moduli-curves on all schemes. Start with the category whose objects are an object q:C→S of the native slice category Over S and an ordered n-tuple of slice morphisms from id_S to q; morphisms are slice arrows preserving each of the n sections. Restrict by the actual geometric predicates: proper, flat, finitely presented, nonempty geometrically connected genus-g fibres of pure dimension one, nodality, disjointness and smoothness of the sections, and relative ampleness of the canonical log line. Take the native categorical core of this full subcategory. This is the stable fibre groupoid; its full subgroupoid cut out by smoothness of C→S is the smooth fibre groupoid. Reindex along u:T→S by the native slice pullback and the induced sections. Transport the native slice pullback identity and composition isomorphisms through the pointed full subcategories and their cores to obtain a Pseudofunctor on LocallyDiscrete(Schemeᵒᵖ) with values in Cat and groupoid fibres. The comparisons preserve the ordered marking data and satisfy the unit and pentagon laws. Geometric points recover the groupoid of pointed curves with their full marking-preserving automorphism groups, rather than its set of isomorphism classes.
 
-Here Fix universes for schemes, fibre categories and the Cat-valued pseudofunctor; use universe enlargement where required. The geometric predicates refer to the existing StableReduction objects, with arbitrary-base genus and log-duality comparisons above. There is no assumption that the moduli problem is algebraic or has a Hilbert atlas.
+Fix universes for schemes, fibre categories and the Cat-valued pseudofunctor; use universe enlargement where required. The geometric predicates refer to the existing StableReduction objects, with arbitrary-base genus and log-duality comparisons above. There is no assumption that the moduli problem is algebraic or has a Hilbert atlas.
 
-One proof uses the following inputs and comparisons. Use the parent owned definition as the specification and StableReduction Layer 3 as the family and stability interface. Realize sections as actual morphisms in Over S, not named points or unconnected labels. Use arbitrary-base-genus and arbitrary-base-duality to interpret the family predicates without a locally Noetherian restriction. On the total curve of a pullback, the i-th section is the unique map with components σ_i∘u and id_T. All geometric conditions are preserved by base change. Use Over.pullbackId and Over.pullbackComp for canonical comparisons, verify their equations on both projections and all marked sections, and apply Functor.core and Iso.core. These comparison maps give the same coherent pseudofunctor as parent MC.0/pullback-coherence. Identify arrows in the core with inverse pairs of section-preserving over-S morphisms, and identify geometric fibres with the parent geometric-curve groupoid.
+One proof uses the following inputs and comparisons. Use the parent owned definition as the specification and StableReduction Layer 3 as the family and stability interface. Realize sections as actual morphisms in Over S, not named points or unconnected labels. Use [genus and cohomology over arbitrary bases](#02-genus-and-cohomology-over-arbitrary-bases) and [log dualizing sheaves over arbitrary bases](#03-log-dualizing-sheaves-over-arbitrary-bases) to interpret the family predicates without a locally Noetherian restriction. On the total curve of a pullback, the i-th section is the unique map with components σ_i∘u and id_T. All geometric conditions are preserved by base change. Use Over.pullbackId and Over.pullbackComp for canonical comparisons, verify their equations on both projections and all marked sections, and apply Functor.core and Iso.core. These comparison maps give the coherent pullback pseudofunctor of the pointed moduli problem. Identify arrows in the core with inverse pairs of section-preserving over-S morphisms, and identify geometric fibres with the parent geometric-curve groupoid.
 
 A smooth elliptic curve with its origin retains its inversion automorphism in characteristic different from two. For a fixed ordered triple on P¹, the identity scheme map is not an arrow to a differently ordered triple unless it preserves each label. A noninvertible section-preserving endomorphism belongs to the ambient pointed slice category when defined, but is not an arrow of the moduli groupoid.
 
@@ -350,13 +350,13 @@ The construction has the following API.
 
 ### 0.5 Effective descent of the geometric pointed moduli problem
 
-For an fppf covering of any scheme S, restriction of either the stable or the smooth pointed genus-(g,n) groupoid to its descent-data category is an equivalence. In the stable case, a family isomorphism cocycle induces a specified cocycle of isomorphisms on L=ω(ΣD_i), using rigidity/base-change coherence; this is a lift of the cocycle to line-bundle data, not merely invariance of a line-bundle isomorphism class. Apply polarized descent to obtain a scheme family and descend the marking sections and their equalities. The descended geometric predicates and fixed genus are the ones of native-family-realization. These equivalences give the native Pseudofunctor.IsStack instance for Scheme.fppfTopology and the specified groupoid fibres separately. On the locally Noetherian étale subsite the descended family and log line agree, by a uniquely determined isomorphism compatible with the chosen descent identifications, with the polarized descent by StableReduction Layer 2. The same uniqueness compares with the polarized descent comparison of AlgebraicModuliForArithmeticGeometry §§3.1–3.5 on their common domain.
+For an fppf covering of any scheme S, restriction of either the stable or the smooth pointed genus-(g,n) groupoid to its descent-data category is an equivalence. In the stable case, a family isomorphism cocycle induces a specified cocycle of isomorphisms on L=ω(ΣD_i), using rigidity/base-change coherence; this is a lift of the cocycle to line-bundle data, not merely invariance of a line-bundle isomorphism class. Apply polarized descent to obtain a scheme family and descend the marking sections and their equalities. The descended geometric predicates and fixed genus are the ones of [geometric realization of the pointed moduli pseudofunctor](#04-geometric-realization-of-the-pointed-moduli-pseudofunctor). These equivalences give the native Pseudofunctor.IsStack instance for Scheme.fppfTopology and the specified groupoid fibres separately. On the locally Noetherian étale subsite the descended family and log line agree, by a uniquely determined isomorphism compatible with the chosen descent identifications, with the polarized descent by StableReduction Layer 2. The same uniqueness compares with the polarized descent comparison of AlgebraicModuliForArithmeticGeometry §§3.1–3.5 on their common domain.
 
 Use AlgebraicModuliForArithmeticGeometry §3.5 `ModuliDescent.polarizedDescentComparison`, including actual cocycle isomorphisms, arrows and marking maps; descend flatness separately along the fppf cover. The stable log line is relatively ample by arbitrary-base-duality. The smooth groupoid is the full subcategory satisfying smoothness, an fppf-local condition.
 
 One proof uses the following inputs and comparisons. Use log-duality mapIso and baseChange to lift the curve descent cocycle canonically to L, with its identity and triple-overlap equations. Use AlgebraicModuliForArithmeticGeometry §3.5 `ModuliDescent.polarizedDescentComparison` with the specified log-line cocycle. Relative ampleness is fpqc local, and the descended ample invertible sheaf makes the descended algebraic space a scheme (Stacks 74.13.1). Descend sections and marking-preserving arrows using the morphism part of the supplier and subcanonicity. Properness, flatness, finite presentation, nodality, geometric connectedness, genus, smoothness/disjointness of markings and log ampleness descend; use Stacks 53.20.9 for nodality. Translate full faithfulness and essential surjectivity of the descent functor into native IsStack via SchemeAndStackFoundations §1.18. Preserve automorphisms in this equivalence. Compare étale and fppf descent constructions using full faithfulness, not a chosen equality of objects.
 
-For a finite separable splitting cover of a genus-zero three-pointed form, descent recovers the marked curve and its descent identifications. The triviality theorem is imported from MC.2, not used to prove descent. An elliptic involution in an overlap cocycle descends as actual automorphism data; it is not discarded by passing to classes. Specifying that a line-bundle class is fixed, without cocycle isomorphisms, is insufficient input to polarized descent.
+For a finite separable splitting cover of a genus-zero three-pointed form, descent recovers the marked curve and its descent identifications. The triviality theorem is proved in Layer 2 and is not used to prove descent. An elliptic involution in an overlap cocycle descends as actual automorphism data; it is not discarded by passing to classes. Specifying that a line-bundle class is fixed, without cocycle isomorphisms, is insufficient input to polarized descent.
 
 ([mc0-stacks-quot](#references), Lemma 99.14.3 (0D40), pp. 38–39. The fppf stack property for polarized proper flat finitely presented schemes follows from space descent, module descent and descent of ampleness.; [mc0-stacks-descent](#references), Lemma 74.13.1 (0D3C), pp. 21–22. An ample line descends along fpqc covers, and its existence over a scheme base forces the descended space to be a scheme.; [knudsen2](#references), Definition 1.2 and following stack assertion, p. 164. The original fibred category and its étale stack assertion motivate the comparison; the fppf and arbitrary-base strengthening uses the Stacks arguments explicitly.)
 
@@ -364,9 +364,9 @@ For a finite separable splitting cover of a genus-zero three-pointed form, desce
 
 ### 0.6 The universal curve represents an unrestricted additional section
 
-Realize the parent MC.0/universal-curve construction by the pseudofunctor `Z̄_{g,n}` whose S-objects are stable pointed families (C/S,σ_i) together with any section Δ:S→C, and whose arrows are marking-preserving isomorphisms carrying Δ to Δ. Forgetting Δ defines π:Z̄→M̄. The extra-section pseudofunctor is an fppf stack by effective family descent and descent of section morphisms. For a family x over S, there is a pseudonatural equivalence `h_S×_{M̄}Z̄≃h_C` over h_S: an object over u:T→S includes a specified isomorphism of its underlying family with u^*x, and that isomorphism carries its extra section to a unique map T→C over S. Thus π is represented by schemes, and its base change along x is exactly f:C→S. It is representable, proper, flat, finitely presented and nodal of pure relative dimension one, with geometrically connected genus-g fibres. Its relative smooth locus is identified under every such base change with that of f; a geometric point is smooth for π exactly when it is smooth in the corresponding geometric curve. The n marking maps M̄→Z̄ send Δ to σ_i. Their images are disjoint and in the relative smooth locus. Δ is otherwise unrestricted and can coincide with a mark or pass through a node; it is not a new stable disjoint marking. No equivalence with `M̄_{g,n+1}` is assumed; that equivalence is owned by MC.2/expansion-contraction-inverses.
+Realize the universal curve by the pseudofunctor `Z̄_{g,n}` whose S-objects are stable pointed families (C/S,σ_i) together with any section Δ:S→C, and whose arrows are marking-preserving isomorphisms carrying Δ to Δ. Forgetting Δ defines π:Z̄→M̄. The extra-section pseudofunctor is an fppf stack by effective family descent and descent of section morphisms. For a family x over S, there is a pseudonatural equivalence `h_S×_{M̄}Z̄≃h_C` over h_S: an object over u:T→S includes a specified isomorphism of its underlying family with u^*x, and that isomorphism carries its extra section to a unique map T→C over S. Thus π is represented by schemes, and its base change along x is exactly f:C→S. It is representable, proper, flat, finitely presented and nodal of pure relative dimension one, with geometrically connected genus-g fibres. Its relative smooth locus is identified under every such base change with that of f; a geometric point is smooth for π exactly when it is smooth in the corresponding geometric curve. The n marking maps M̄→Z̄ send Δ to σ_i. Their images are disjoint and in the relative smooth locus. Δ is otherwise unrestricted and can coincide with a mark or pass through a node; it is not a new stable disjoint marking. No equivalence with `M̄_{g,n+1}` is assumed; that equivalence is proved in Layer 2, §2.473.
 
-Here g,n satisfy the stable range and x is an actual object of native-family-realization. The two-fibre product includes an isomorphism to the fixed pulled-back family. The representability statement is about the projection, not algebraicity of M̄.
+Here g,n satisfy the stable range and x is an actual object of [geometric realization of the pointed moduli pseudofunctor](#04-geometric-realization-of-the-pointed-moduli-pseudofunctor). The two-fibre product includes an isomorphism to the fixed pulled-back family. The representability statement is about the projection, not algebraicity of M̄.
 
 One proof uses the following inputs and comparisons. Use the native over-S section Hom description and fibre-product universal property to identify sections of C_T→T with maps T→C over S. Using SchemeAndStackFoundations §1.18, identify an object with a family, an identification with x_T, and an extra section. Transport the section to x_T. The inverse uses x_T with its given section and identity identification. Prove full faithfulness: an arrow compatible with the fixed identification is uniquely determined. This makes each represented fibre discrete while leaving the automorphisms of Z̄ and M̄ intact. Check pseudonaturality in T and x. Transport the curve properties through this equivalence and identify the n marking maps. Extra-section descent follows from descent of morphisms; there is no smooth-locus condition on Δ.
 
@@ -390,13 +390,13 @@ The construction has the following API.
 - Under `h_S×_{M̄}Z̄≃h_C`, each marking map is precisely the given section σ_i.
 - For an elliptic pointed curve with nontrivial automorphisms, an automorphism in the represented two-fibre fibre compatible with a fixed identification must be the identity.
 
-([knudsen2012](#references), Introduction, pp. 1–2, the cartesian universal-family square. An extra section has no smoothness or disjointness requirement; applying the construction to the diagonal of C×_S C identifies the pulled-back universal family with C.; [knudsen2](#references), Definition 1.2, p. 164; Corollary 2.6, p. 179. The extra-section category is distinct from the stable extra-marking category; expansion and contraction compare them in MC.2.)
+([knudsen2012](#references), Introduction, pp. 1–2, the cartesian universal-family square. An extra section has no smoothness or disjointness requirement; applying the construction to the diagonal of C×_S C identifies the pulled-back universal family with C.; [knudsen2](#references), Definition 1.2, p. 164; Corollary 2.6, p. 179. The extra-section category is distinct from the stable extra-marking category; expansion and contraction compare them in Layer 2.)
 
 *Needs:* SchemeAndStackFoundations §1.18, `CategoryTheory.Over.pullback`, [geometric realization of the pointed moduli pseudofunctor](#04-geometric-realization-of-the-pointed-moduli-pseudofunctor), [effective descent of the geometric pointed moduli problem](#05-effective-descent-of-the-geometric-pointed-moduli-problem).
 
 ### 0.7 The smooth-family open and the relative smooth locus
 
-For a stable family f:C→S, let C_sm be the relative smooth locus, and define S_sm as the open subscheme with underlying set S minus f(|C| minus |C_sm|). The complementary image is closed because f is proper. For any u:T→S, the family C_T→T is smooth exactly when u factors through S_sm; the open S_sm and the resulting cartesian square commute with arbitrary base change. Hence the smooth pointed pseudofunctor is a full open subfunctor of the stable one, represented on every scheme test object by S_sm. Pulling the universal curve back to that subfunctor gives C×_S S_sm, with all its markings. This differs from C_sm→S, which keeps smooth points of nodal fibres. Smoothness of the moduli stack over Z, owned by MC.2, is a separate assertion and implies no smoothness of the universal projection over nodal curves.
+For a stable family f:C→S, let C_sm be the relative smooth locus, and define S_sm as the open subscheme with underlying set S minus f(|C| minus |C_sm|). The complementary image is closed because f is proper. For any u:T→S, the family C_T→T is smooth exactly when u factors through S_sm; the open S_sm and the resulting cartesian square commute with arbitrary base change. Hence the smooth pointed pseudofunctor is a full open subfunctor of the stable one, represented on every scheme test object by S_sm. Pulling the universal curve back to that subfunctor gives C×_S S_sm, with all its markings. This differs from C_sm→S, which keeps smooth points of nodal fibres. Smoothness of the moduli stack over Z, supplied by SchemeAndStackFoundations §4.15, is a separate assertion and implies no smoothness of the universal projection over nodal curves.
 
 Here f is proper, flat and finitely presented with nodal pure-one-dimensional geometric fibres. The relative smooth locus is taken for f, not for the total space over Z.
 
@@ -451,7 +451,7 @@ The construction has the following API.
 
 Let f:C→S be a proper flat finitely presented family of geometrically connected nodal curves, of constant arithmetic genus g≥2, with relatively ample dualizing line bundle ω. Then ω is invertible and compatible with arbitrary base change; Rf_*ω³ is the finite locally free sheaf E=f_*ω³ in degree zero, of rank r=5g−5, and formation of E commutes with every base change. The evaluation f*E→ω³ gives a closed immersion C→P_S(E). The polynomial with respect to ω³ is P_g and deg(ω³)=6g−6.
 
-Here No Noetherian hypothesis on S. Projective bundles use invertible quotients; g is constant on S.
+No Noetherian hypothesis on S. Projective bundles use invertible quotients; g is constant on S.
 
 One proof uses the following inputs and comparisons. Import the geometric very-ampleness and H¹(ω³)=0 computations from StableReduction Layers 2–3; do not plan their proofs again. Use the requested arbitrary-base Gorenstein dualizing comparison, proper perfect pushforward and the single-degree free-locus criterion. Fibre vanishing makes the degree-zero locus all of S. Apply the relative very-ampleness criterion to evaluation. On affine qcqs bases, descend the finitely presented family, nodality, stability and the polarization to a Noetherian model; glue the base-change-compatible comparison. Use Layer 0 finite-stage, cohomology and log-dualizing comparisons, gap:perfect-arbitrary-base and gap:cm-duality-arbitrary-base for the arbitrary-base extension.
 
@@ -459,7 +459,7 @@ For g=2, E has rank 5 and evaluation embeds in P⁴ with degree 6. The result ap
 
 ([dm](#references), §1, pp. 76–78, duality and tricanonical embedding. Provides the stable-fibre calculation, with relative conclusions whose arbitrary-base extension is made explicit here.; [mc0-stacks-moduli](#references), Lemmas 109.19.1 and 109.19.3 (0E6R), pp. 19–21. Gorenstein curve families have an invertible relative dualizing sheaf compatible with unrestricted base change.; [mc1-perf](#references), Lemma 75.25.4(1) (0CTM), pp. 61–62; Lemma 75.26.4, pp. 64–65. The flat proper finitely presented special case gives perfect pushforward and arbitrary derived base change; the single-degree free locus then gives the required bundle universally.)
 
-*Needs:* StableReduction Layer 2, StableReduction Layer 3, AlgebraicModuliForArithmeticGeometry §§7.2–7.3, 7.6, SchemeAndStackFoundations §0.9, SchemeAndStackFoundations §5.4, AlgebraicModuliForArithmeticGeometry §§1.1–1.7, [the tricanonical hilbert polynomial](#11-the-tricanonical-hilbert-polynomial), [genus and cohomology over arbitrary bases](#02-genus-and-cohomology-over-arbitrary-bases), [log dualizing sheaves over arbitrary bases](#03-log-dualizing-sheaves-over-arbitrary-bases).
+*Needs:* gap:perfect-arbitrary-base, gap:cm-duality-arbitrary-base, StableReduction Layer 2, StableReduction Layer 3, AlgebraicModuliForArithmeticGeometry §§7.2–7.3, 7.6, SchemeAndStackFoundations §0.9, SchemeAndStackFoundations §5.4, AlgebraicModuliForArithmeticGeometry §§1.1–1.7, [the tricanonical hilbert polynomial](#11-the-tricanonical-hilbert-polynomial), [genus and cohomology over arbitrary bases](#02-genus-and-cohomology-over-arbitrary-bases), [log dualizing sheaves over arbitrary bases](#03-log-dualizing-sheaves-over-arbitrary-bases).
 
 ### 1.3 Tricanonical Hilbert polynomial and frame rank
 
@@ -502,15 +502,15 @@ The construction has the following API.
 
 ([dm](#references), §1, pp. 77–78, locally closed tricanonical Hilbert locus. The claimed locus is refined into universal rank and evaluation conditions.; [mc1-perf](#references), Lemma 75.26.6 (0D21), p. 65; Lemmas 75.26.7–75.26.8 (0E0S), pp. 65–66. The lowest-cohomology stratum is universal; Lemma 75.26.8 gives universal pushforward of functions for geometrically reduced connected fibres, via Lemma 75.26.7.; [mc0-stacks-moduli](#references), Lemmas 109.22.1, 109.22.3 and 109.22.5, pp. 25–27. Stability and genus cut out the initial Hilbert open.)
 
-*Needs:* AlgebraicModuliForArithmeticGeometry §§2.1–2.2, AlgebraicModuliForArithmeticGeometry §§7.2–7.3, 7.6, SchemeAndStackFoundations §0.18, AlgebraicModuliForArithmeticGeometry §§1.1–1.7, [arbitrary-base tricanonical comparison](#12-arbitrary-base-tricanonical-comparison).
+*Needs:* gap:perfect-arbitrary-base, gap:cm-duality-arbitrary-base, AlgebraicModuliForArithmeticGeometry §§2.1–2.2, AlgebraicModuliForArithmeticGeometry §§7.2–7.3, 7.6, SchemeAndStackFoundations §0.18, AlgebraicModuliForArithmeticGeometry §§1.1–1.7, [arbitrary-base tricanonical comparison](#12-arbitrary-base-tricanonical-comparison).
 
 ### 1.5 The complete tricanonical Hilbert locus
 
 Over W the bundle f_*H≅E⊗L has rank r. Let a:O_W^r→f_*H be induced by the ambient homogeneous coordinates. Define U_g⊂W as the open where a is an isomorphism, cut out by invertibility of its determinant. Thus U_g is locally closed and of finite type over Z. A T-point is precisely an embedded stable family satisfying H≅ω³⊗f*L and the completeness condition a_T an isomorphism.
 
-Here Use W and its base line from refinement-polarization-locus. The map a is the actual coordinate restriction, not a freely chosen trivialization.
+Use W and its base line from [the universal relative polarization locus](#14-the-universal-relative-polarization-locus). The map a is the actual coordinate restriction, not a freely chosen trivialization.
 
-One proof uses the following inputs and comparisons. Use projection formula and refinement-arbitrary-base to identify f_*H with E⊗L and its arbitrary-base comparison. Use the existing scheme-theoretic rank locus for a morphism between rank-r bundles. Intersect this open with W; the two universal properties give exactly the parent tricanonical-hilbert target.
+One proof uses the following inputs and comparisons. Use projection formula and [arbitrary-base tricanonical comparison](#12-arbitrary-base-tricanonical-comparison) to identify f_*H with E⊗L and its arbitrary-base comparison. Use the existing scheme-theoretic rank locus for a morphism between rank-r bundles. Intersect this open with W; the two universal properties give exactly the parent tricanonical-hilbert target.
 
 The map U_g→Hilb is locally closed; its points retain an embedded subscheme, not an extra basis of a line.
 
@@ -536,7 +536,7 @@ The construction has the following API.
 
 For every scheme T, U_g(T) is naturally equivalent to the groupoid of stable genus-g C/T with an isomorphism α:P_T(f_*ω³)≅P_T(O_T^r), where an isomorphism of curves must carry α to α. This groupoid is discrete up to unique isomorphism. The induced embedding satisfies H≅ω³⊗f*L for a base line L; L and its trivialization are not extra moduli. For fixed C/T the sheaf of such frames is represented by Isom_T(P(E),P(O^r)), a smooth surjective PGL_r-torsor of relative dimension r²−1.
 
-Here Projective-bundle convention is invertible quotients. PGL_r denotes the group scheme, equivalently the fppf quotient GL_r/G_m, rather than the quotient of matrices on every ring of points.
+Projective-bundle convention is invertible quotients. PGL_r denotes the group scheme, equivalently the fppf quotient GL_r/G_m, rather than the quotient of matrices on every ring of points.
 
 One proof uses the following inputs and comparisons. On U_g the identity f_*H≅E⊗L and the coordinate isomorphism give P(E)≅P(E⊗L)≅P(O^r). Conversely, apply the requested projective-bundle line-twist comparison gap:projective-frame-line-twist to α and the tricanonical immersion. The coordinate restriction is complete by construction, so the resulting embedded curve factors through U_g. Use functoriality of ω and its pushforward to identify the two constructions and all isomorphisms. Faithfulness of the closed immersion makes an automorphism preserving the frame the identity. Apply the smooth group-scheme and projective-frame torsor statement in gap:projective-frame-line-twist. For torsor representability use only part (a) of SchemeAndStackFoundations §1.15: PGL_r is affine, so affine fpqc descent represents its torsors by affine schemes. The general non-affine-group algebraic-space bootstrap is not used.
 
@@ -593,19 +593,19 @@ For two stable genus-g curves C,D over S, the full unpolarized Isom_S(C,D) lies 
 
 Here g≥2; the relative ω³ lines are canonical and ample. Use the Noetherian projective graph construction first, followed by finite-presentation approximation and gluing; arbitrary S is allowed.
 
-One proof uses the following inputs and comparisons. Functoriality of the relative dualizing line gives φ*ω_D≅ω_C for every curve isomorphism φ. The product polarization on its graph is therefore ω_C^6, so its Hilbert polynomial is Q_g. Choose local tricanonical embeddings after trivializing the relevant vector bundles. Apply the fixed-graph-polynomial Isom-representability node of AlgebraicModuliForArithmeticGeometry §§2.1–2.2; this is finite presentation, whereas the unbounded Isom theorem is only locally of finite presentation. The representing schemes and their canonical functors descend on overlaps. Use the comparisons in [finite-stage models](#01-finite-stage-models-of-pointed-curve-diagrams), [genus and cohomology](#02-genus-and-cohomology-over-arbitrary-bases), [log dualizing sheaves](#03-log-dualizing-sheaves-over-arbitrary-bases) and [arbitrary-base tricanonical comparison](#12-arbitrary-base-tricanonical-comparison), using gap:perfect-arbitrary-base and gap:cm-duality-arbitrary-base to descend the curve and dualizing data to Noetherian affine models and recover arbitrary-base finite presentation. Do not invoke polarized-isom-representability for pairs (φ,line-isomorphism): that adds a G_m worth of data.
+One proof uses the following inputs and comparisons. Functoriality of the relative dualizing line gives φ*ω_D≅ω_C for every curve isomorphism φ. The product polarization on its graph is therefore ω_C^6, so its Hilbert polynomial is Q_g. Choose local tricanonical embeddings after trivializing the relevant vector bundles. Apply the Isom representability for a fixed graph Hilbert polynomial of AlgebraicModuliForArithmeticGeometry §§2.1–2.2; this is finite presentation, whereas the unbounded Isom theorem is only locally of finite presentation. The representing schemes and their canonical functors descend on overlaps. Use the comparisons in [finite-stage models](#01-finite-stage-models-of-pointed-curve-diagrams), [genus and cohomology](#02-genus-and-cohomology-over-arbitrary-bases), [log dualizing sheaves](#03-log-dualizing-sheaves-over-arbitrary-bases) and [arbitrary-base tricanonical comparison](#12-arbitrary-base-tricanonical-comparison), using gap:perfect-arbitrary-base and gap:cm-duality-arbitrary-base to descend the curve and dualizing data to Noetherian affine models and recover arbitrary-base finite presentation. Do not invoke polarized Isom representability for pairs (φ,line-isomorphism): that adds a G_m worth of data.
 
 For genus two the graph polynomial is 12n−1. An automorphism contributes one Isom point; choosing a scalar identification of polarization lines must not multiply it by G_m. The finite-presentation conclusion does not come from treating an arbitrary unbounded Hilbert union as finite type.
 
 ([dm](#references), §1, Theorem 1.11 and its proof, pp. 84–85. Represents stable Isom and uses preservation of the canonical polarization to control the graph.; [dm](#references), §1, pp. 77–78. Riemann–Roch determines Q_g by doubling the twist exponent.)
 
-*Needs:* AlgebraicModuliForArithmeticGeometry §§2.1–2.2, SchemeAndStackFoundations §0.9, SchemeAndStackFoundations §1.15, [the tricanonical hilbert polynomial](#11-the-tricanonical-hilbert-polynomial), [arbitrary-base tricanonical comparison](#12-arbitrary-base-tricanonical-comparison).
+*Needs:* gap:perfect-arbitrary-base, gap:cm-duality-arbitrary-base, AlgebraicModuliForArithmeticGeometry §§2.1–2.2, SchemeAndStackFoundations §0.9, SchemeAndStackFoundations §1.15, [the tricanonical hilbert polynomial](#11-the-tricanonical-hilbert-polynomial), [arbitrary-base tricanonical comparison](#12-arbitrary-base-tricanonical-comparison).
 
 ### 1.10 The universal Isom scheme as an action groupoid
 
 Let C_U→U=U_g be the universal curve and `R=Isom_{U×U}(pr_1*C_U,pr_2*C_U)`. There is a canonical isomorphism U×PGL_r≅R sending (u,h) to (u,h·u,h restricted to C_u). Its source is u, its target is h·u, its unit is (u,1), its inverse is (h·u,h^−1), and composition of h_1 followed by h_2 is h_2h_1. These formulas identify the scheme groupoid with the projective-coordinate action, functorially on all schemes.
 
-Here Use complete projective frames, not bases of E. R is the bounded bare Isom scheme of refinement-bounded-graphs.
+Use complete projective frames, not bases of E. R is the bounded bare Isom scheme of [a single graph polynomial for stable-curve isomorphisms](#19-a-single-graph-polynomial-for-stable-curve-isomorphisms).
 
 One proof uses the following inputs and comparisons. Every isomorphism of universal curves induces an isomorphism of their tricanonical bundles; frame comparison extends it uniquely to an ambient projective transformation. Conversely restrict an ambient transformation carrying one embedded curve to the other. The two maps are inverse on every test scheme, so Yoneda identifies the schemes. Transport identities, inverses and composition through this bijection. The fppf frame-torsor description then identifies [U/PGL_r] with the defined stable-curve stack; generic quotient-stack theory is imported from SchemeAndStackFoundations §§1.18–1.23, not redeveloped.
 
@@ -648,9 +648,9 @@ Keep quotient stack and coarse quotient distinct.
 
 Let C/k be a proper geometrically connected nodal curve of pure dimension one over an algebraically closed field, and ν:⊔C_v→C its normalization. Let D_v be the reduced divisor of branches above nodes and `N_q=T_{q+}C_v⊗_k T_{q−}C_w` (also when both branches lie on one component). Then `T_C≅ν_*(⊔T_{C_v}(−D_v))`, Ext²_C(Ω_C,O_C)=0, and there is a natural exact sequence 0→⊕_v `H¹(C_v,T_{C_v}(−D_v))→Ext¹_C(Ω_C,O_C)→⊕_q` N_q→0. If C is stable of genus g≥2, then also Ext⁰_C(Ω_C,O_C)=0 and dim Ext¹_C(Ω_C,O_C)=3g−3. The sequence has no asserted canonical splitting.
 
-Here Properness, geometric connectedness, nodality and pure dimension one suffice for Ext² vanishing and the exact sequence; only Ext⁰ vanishing and the dimension formula require stability and g≥2. All characteristics are allowed. Ext is coherent sheaf Ext over O_C followed by global derived Hom; Ω_C is algebraic Kähler differentials on the finite-type curve. N_q is a tensor product of tangent lines, not a chosen copy of k until branch parameters are fixed.
+Properness, geometric connectedness, nodality and pure dimension one suffice for Ext² vanishing and the exact sequence; only Ext⁰ vanishing and the dimension formula require stability and g≥2. All characteristics are allowed. Ext is coherent sheaf Ext over O_C followed by global derived Hom; Ω_C is algebraic Kähler differentials on the finite-type curve. N_q is a tensor product of tangent lines, not a chosen copy of k until branch parameters are fixed.
 
-One proof uses the following inputs and comparisons. Use normalization at nodes from StableReduction Layer 1: a derivation on the node lifts to derivations vanishing on both branches. The local hypersurface resolution gives sheaf Ext¹ supported at nodes with fibres N_q and sheaf Ext^i=0 for i≥2. On the reduced nodal curve the conormal map in the hypersurface presentation is injective, so the cotangent complex is quasi-isomorphic to Ω_C for this computation. Use the local-to-global coherent Ext spectral sequence requested in gap:coherent-curve-deformation-ext, together with cohomological dimension one from StableReduction Layer 2. This gives the exact sequence and vanishing; the zero-dimensional support kills H¹ of sheaf Ext¹. For the stable clause, stability implies `H⁰(T_{C_v}(−D_v))=0`. Riemann–Roch gives h¹=3g_v−3+deg D_v. Use Σdeg D_v=2δ and g=Σg_v+δ−|vertices|+1 to obtain Σh¹+δ=3g−3. The global-to-local deformation map is smooth by SchemeAndStackFoundations §4.6 and Lemma 93.16.3; the displayed tangent surjection identifies its δ local smoothing directions. With unobstructedness these become independent parameters in refinement-completed-atlas. Tangent surjectivity alone is not the formal smoothness assertion. No averaging over automorphism groups is used.
+One proof uses the following inputs and comparisons. Use normalization at nodes from StableReduction Layer 1: a derivation on the node lifts to derivations vanishing on both branches. The local hypersurface resolution gives sheaf Ext¹ supported at nodes with fibres N_q and sheaf Ext^i=0 for i≥2. On the reduced nodal curve the conormal map in the hypersurface presentation is injective, so the cotangent complex is quasi-isomorphic to Ω_C for this computation. Use the local-to-global coherent Ext spectral sequence requested in gap:coherent-curve-deformation-ext, together with cohomological dimension one from StableReduction Layer 2. This gives the exact sequence and vanishing; the zero-dimensional support kills H¹ of sheaf Ext¹. For the stable clause, stability implies `H⁰(T_{C_v}(−D_v))=0`. Riemann–Roch gives h¹=3g_v−3+deg D_v. Use Σdeg D_v=2δ and g=Σg_v+δ−|vertices|+1 to obtain Σh¹+δ=3g−3. The global-to-local deformation map is smooth by SchemeAndStackFoundations §4.6 and Lemma 93.16.3; the displayed tangent surjection identifies its δ local smoothing directions. With unobstructedness these become independent parameters in the completed framed Hilbert charts of §1.13. Tangent surjectivity alone is not the formal smoothness assertion. No averaging over automorphism groups is used.
 
 For smooth genus two, the local-node sum is zero and h¹(T_C)=3. For an irreducible one-nodal genus-two curve, the normalization has genus one: h¹(T_E(−p−q))=2 and the local contribution is 1. For the genus-two theta curve consisting of two P¹s meeting at three nodes, both `H¹(T_{P¹}(−3 points))` vanish, and the three local directions give dimension 3. Ordinary algebraic differentials of k[[u,v]] must not replace continuous deformation theory of a complete local algebra. For the unstable smooth curve P¹, the same Ext² vanishing and exact sequence hold, while h⁰(T)=3 and Ext¹=0; neither stable-only conclusion may be applied.
 
@@ -664,7 +664,7 @@ Let C/k be a stable connected nodal curve of genus g≥2 over an algebraically c
 
 The chosen special-fibre identification is part of a deformation object; automorphisms of C are not discarded from the moduli stack. The displayed completed ring is that of the Λ-base-changed Hilbert scheme at its k-rational point. It is not claimed to be the completion of a finite-type Z-point with residue field an arbitrary algebraically closed k. The identifications of power-series rings and node parameters involve choices.
 
-One proof uses the following inputs and comparisons. Import the existing node-versal-deformation theorem from SchemeAndStackFoundations §§4.1–4.10, 4.14–4.15 and the exact sequence above, using the continuous-versus-algebraic comparison of Lemma 93.16.3 (0DZP) for the completed node. Schlessinger prorepresentability uses H⁰(T_C)=0, not absence of finite automorphisms of C. Compare the deformation functor of the existing Hilbert scheme with deformations of C and a lift of its projective frame. The frame torsor is smooth of dimension r²−1, so frame liftings contribute exactly that many formal variables. Use the scheme-formal comparison of AlgebraicModuliForArithmeticGeometry §§8.1–8.3 after base change to Λ; u is a finite-type point over Λ. The ample compatible ω³ and SchemeAndStackFoundations §§4.1–4.10, 4.14–4.15 Grothendieck algebraization give effectivity and full faithfulness of the formal family, without invoking a generic algebraization theorem whose finite-type-residue hypothesis over Z fails for k=F_p-bar. Apply the infinitesimal lifting criterion for the finitely presented atlas, coefficient-ring descent, and the dimension comparison in gap:coefficient-completion-smoothness. This supplies native scheme smoothness rather than equating formal smoothness with smoothness without finite presentation. In each such completion the nonsmooth-curve locus is the union t_1…t_δ=0; the complement is dense. Faithful-flat local comparison gives density in each irreducible component of U. This conclusion uses no properness of Isom or of the moduli stack.
+One proof uses the following inputs and comparisons. Import the versal deformation of a node from SchemeAndStackFoundations §§4.1–4.10, 4.14–4.15 and the exact sequence above, using the continuous-versus-algebraic comparison of Lemma 93.16.3 (0DZP) for the completed node. Schlessinger prorepresentability uses H⁰(T_C)=0, not absence of finite automorphisms of C. Compare the deformation functor of the existing Hilbert scheme with deformations of C and a lift of its projective frame. The frame torsor is smooth of dimension r²−1, so frame liftings contribute exactly that many formal variables. Use the scheme-formal comparison of AlgebraicModuliForArithmeticGeometry §§8.1–8.3 after base change to Λ; u is a finite-type point over Λ. The ample compatible ω³ and SchemeAndStackFoundations §§4.1–4.10, 4.14–4.15 Grothendieck algebraization give effectivity and full faithfulness of the formal family, without invoking a generic algebraization theorem whose finite-type-residue hypothesis over Z fails for k=F_p-bar. Apply the infinitesimal lifting criterion for the finitely presented atlas, coefficient-ring descent, and the dimension comparison in gap:coefficient-completion-smoothness. This supplies native scheme smoothness rather than equating formal smoothness with smoothness without finite presentation. In each such completion the nonsmooth-curve locus is the union t_1…t_δ=0; the complement is dense. Faithful-flat local comparison gives density in each irreducible component of U. This conclusion uses no properness of Isom or of the moduli stack.
 
 For genus two the miniversal curve deformation has 3 variables; the P⁴ Hilbert atlas has 3+24=27 relative variables. The Hilbert atlas is smooth of positive relative dimension over the moduli stack; it is not declared étale. The construction remains valid at a stable curve whose automorphism group has order divisible by the residue characteristic.
 
@@ -674,7 +674,7 @@ For genus two the miniversal curve deformation has 3 variables; the P⁴ Hilbert
 
 ### 1.14 Algebraic labelled boundary branches
 
-Let u be a geometric point of U_g whose curve has δ nodes. Pull back the finite unramified singular scheme Σ=Sing(C_U/U), defined by Fitt_1(Ω), to an étale neighbourhood T→U of u. After shrinking T, it splits as a disjoint union of δ closed immersions Z_i→T. The labels are auxiliary; the ideals I_i defining Z_i are actual algebraic ideals. After the completed framed comparison each I_i becomes the ideal (t_i). The nonsmooth-curve locus on T has underlying set ⋃|Z_i|, and its reduced effective Cartier divisor structure will be identified by refinement-relative-boundary.
+Let u be a geometric point of U_g whose curve has δ nodes. Pull back the finite unramified singular scheme Σ=Sing(C_U/U), defined by Fitt_1(Ω), to an étale neighbourhood T→U of u. After shrinking T, it splits as a disjoint union of δ closed immersions Z_i→T. The labels are auxiliary; the ideals I_i defining Z_i are actual algebraic ideals. After the completed framed comparison each I_i becomes the ideal (t_i). The nonsmooth-curve locus on T has underlying set ⋃|Z_i|, and its reduced effective Cartier divisor structure will be identified in §1.15.
 
 Here T contains the chosen geometric lift of u and no additional singular branches meeting that lift. Σ is finite unramified, not necessarily flat or étale over U.
 
@@ -702,9 +702,9 @@ The construction has the following API.
 
 ### 1.15 Transverse relative boundary charts
 
-At the geometric point u above, choose T and I_1,…,I_δ as in refinement-labelled-branches. After shrinking, each I_i is generated by a nonzerodivisor a_i, every intersection V(a_i:i∈J) is smooth over Z of relative codimension |J| in T, and (a_1,…,a_δ):T→A^δ_Z is smooth near u. Étale locally this extends to relative étale coordinates on T. Thus the effective Cartier divisor with ideal ∏I_i is reduced, has support equal to the complement of U^sm in T, and has equation a_1…a_δ=0 in these coordinates. These divisors descend to the relative normal-crossing boundary of the stable-curve stack. Global strict normal crossings and globally labelled branches are not asserted.
+At the geometric point u above, choose T and I_1,…,I_δ as in [algebraic labelled boundary branches](#114-algebraic-labelled-boundary-branches). After shrinking, each I_i is generated by a nonzerodivisor a_i, every intersection V(a_i:i∈J) is smooth over Z of relative codimension |J| in T, and (a_1,…,a_δ):T→A^δ_Z is smooth near u. Étale locally this extends to relative étale coordinates on T. Thus the effective Cartier divisor with ideal ∏I_i is reduced, has support equal to the complement of U^sm in T, and has equation a_1…a_δ=0 in these coordinates. These divisors descend to the relative normal-crossing boundary of the stable-curve stack. Global strict normal crossings and globally labelled branches are not asserted.
 
-Here g≥2; U is smooth of relative dimension N=3g−3+r²−1 by refinement-completed-atlas. Relative normal crossings over Z means étale locally the union of coordinate hyperplanes in a scheme étale over A^N_Z; it is stronger than absolute regularity of intersections.
+Here g≥2; U is smooth of relative dimension N=3g−3+r²−1 by [completed framed hilbert charts](#113-completed-framed-hilbert-charts). Relative normal crossings over Z means étale locally the union of coordinate hyperplanes in a scheme étale over A^N_Z; it is stronger than absolute regularity of intersections.
 
 One proof uses the following inputs and comparisons. Use actual algebraic ideals I_i, and the faithful-flat coefficient-completion comparison in gap:coefficient-completion-smoothness to detect invertibility and injectivity of I_i→O_T from their completed ideals (t_i). Apply the same comparison to all finite intersections: their completed rings are Λ[[remaining t,z]], so the intersections are smooth over Z of the stated codimensions. gap:coefficient-completion-smoothness explicitly includes descent of these native scheme properties. The relative differentials da_1,…,da_δ are independent at u; equivalently the relative tangent map of (a_1,…,a_δ) is surjective there. The smooth coordinate criterion in gap:relative-boundary-coordinates gives a smooth map to A^δ_Z and then étale coordinates after adjoining N−δ functions. The product ideal defines a reduced effective Cartier divisor and is independent of choices of generators and labels. The intrinsic singular scheme makes its ideals agree on refinements of the relation groupoid. Use the relative-normal-crossing descent contract in gap:relative-boundary-coordinates to descend the divisor along the smooth atlas and obtain the parent boundary target. The generic absolute-normal-crossings node alone is insufficient.
 
@@ -720,13 +720,13 @@ For the universal Isom morphism R=U_g×PGL_r→U_g×U_g, the open R^sm=U_g^sm×P
 
 Here U_g is of finite type over Z; its universal relation is finite type by the bounded graph theorem. The refined test fixes A⊂κ(η), Frac(A)=κ(η), for a generic point η of an irreducible component of R. Use the same-DVR uniqueness theorem for two existing stable models; no extension of the fraction field is allowed in this Isom test.
 
-One proof uses the following inputs and comparisons. Smoothness of PGL_r makes its projection from R open and surjective. Density of U^sm in U therefore pulls back to density in every component of R. A generic point of R lies in R^sm, independently of whether its image is generic in U×U. Apply SchemeAndStackFoundations §§0.3, 0.8–0.9, 0.11, 0.17–0.21, whose proof is supplied in Stacks 32.15.3, not by the source paper’s unproved generic assertion. For its canonical generic-point top arrow, both universal curves have a smooth generic fibre. The upstream StableReduction Layer 8 uniqueness theorem extends this isomorphism uniquely across A. The extension is a point of the full bare Isom scheme, with its original two frames. Conclude properness over U×U and descend on an fppf cover of S on which C and D acquire projective frames. Properness is stable under base change and local on the target in this topology. This covers nodal generic fibres without incorrectly applying smooth-generic uniqueness directly to them.
+One proof uses the following inputs and comparisons. Smoothness of PGL_r makes its projection from R open and surjective. Density of U^sm in U therefore pulls back to density in every component of R. A generic point of R lies in R^sm, independently of whether its image is generic in U×U. Apply the source-dense trait criterion of gap:source-dense-valuative, proved as in Stacks 32.15.3, not the source paper’s unproved generic assertion. For its canonical generic-point top arrow, both universal curves have a smooth generic fibre. The upstream StableReduction Layer 8 uniqueness theorem extends this isomorphism uniquely across A. The extension is a point of the full bare Isom scheme, with its original two frames. Conclude properness over U×U and descend on an fppf cover of S on which C and D acquire projective frames. Properness is stable under base change and local on the target in this topology. This covers nodal generic fibres without incorrectly applying smooth-generic uniqueness directly to them.
 
 Density in the target U×U alone does not supply the hypothesis. A test pair with nodal generic fibre is covered by descent of universal properness, not by a false smooth-generic reduction on that pair. After the unramified criterion, proper plus locally quasi-finite gives finite by the existing native Mathlib declaration.
 
 ([dm](#references), Theorem 1.11, pp. 84–85; Theorem 4.19, p. 103; §5, proof of Theorem 5.2, pp. 104–105. Uses smooth generic curves to prove universal separatedness; the source-density quantifiers are made explicit.; [stacks-noetherian-valuative-KKjBS6](#references), Lemmas 32.15.2–32.15.3 (0207, 0208), pp. 39–42. Proves that actual generic points of irreducible components of the source suffice for the DVR criterion.)
 
-*Needs:* SchemeAndStackFoundations §§0.3, 0.8–0.9, 0.11, 0.17–0.21, StableReduction Layer 8, SchemeAndStackFoundations §1.20, [the universal isom scheme as an action groupoid](#110-the-universal-isom-scheme-as-an-action-groupoid), [completed framed hilbert charts](#113-completed-framed-hilbert-charts), [a single graph polynomial for stable-curve isomorphisms](#19-a-single-graph-polynomial-for-stable-curve-isomorphisms).
+*Needs:* gap:source-dense-valuative, SchemeAndStackFoundations §§0.3, 0.8–0.9, 0.11, 0.17–0.21, StableReduction Layer 8, SchemeAndStackFoundations §1.20, [the universal isom scheme as an action groupoid](#110-the-universal-isom-scheme-as-an-action-groupoid), [completed framed hilbert charts](#113-completed-framed-hilbert-charts), [a single graph polynomial for stable-curve isomorphisms](#19-a-single-graph-polynomial-for-stable-curve-isomorphisms).
 
 ### Examples
 
@@ -744,7 +744,7 @@ A labelled setup applies only to the statement or hypothesis that links to it. E
 
 #### Coefficient convention C1
 
-Let A be a commutative ring, γ,δ,s,t∈A, R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), ι:A→R its actual coefficient map, p⊆A and m⊆R with p⊆ι⁻¹(m), Â=AdicCompletion(p,A), R̂=AdicCompletion(m,R), and Qₙ=R/mⁿ with the completed-coefficient actions. Let N be an Â-module with its compatible restricted A-action (Module A N and IsScalarTower A Â N are explicit native binders), and G_N the native Â-linear diagram n↦Qₙ⊗_Â N. This action compatibility imposes no flatness or finite-generation condition on N. In the retraction statements F=Fin(r)→Â and Â-linear maps i:N→F, r:F→N are displayed data; factorisation, separation and the limit assertion explicitly require r∘i=id_N. In the projective statements require N finite and projective over Â, not finite over A. The uses A and N in one common universe, matching the finite-free limit construction; no universe-resizing comparison is supplied.
+Let A be a commutative ring, γ,δ,s,t∈A, R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), ι:A→R its actual coefficient map, p⊆A and m⊆R with p⊆ι⁻¹(m), Â=AdicCompletion(p,A), R̂=AdicCompletion(m,R), and Qₙ=R/mⁿ with the completed-coefficient actions. Let N be an Â-module with its compatible restricted A-action (Module A N and IsScalarTower A Â N are explicit native binders), and G_N the native Â-linear diagram n↦Qₙ⊗_Â N. This action compatibility imposes no flatness or finite-generation condition on N. In the retraction statements F=Fin(r)→Â and Â-linear maps i:N→F, r:F→N are displayed data; factorisation, separation and the limit assertion explicitly require r∘i=id_N. In the projective statements require N finite and projective over Â, not finite over A. A and N lie in one common universe, matching the finite-free limit construction; no universe-resizing comparison is supplied.
 
 #### Coefficient convention C2
 
@@ -834,7 +834,7 @@ The statement uses the actual section ideal and actual R-linear dual in the untr
 
 Under coefficient convention C3. For i≤j and a∈Â, factor_p(j,i)(π_A,j(a))=π_A,i(a).
 
-Here Only the displayed commutative-ring and ideal-containment assumptions are used. No noetherianity, localness, nontriviality, discriminant condition or flatness of N is required for these specialized adapters. The source completion criterion has additional noetherian/local hypotheses and is not proved here.
+Only the displayed commutative-ring and ideal-containment assumptions are used. No noetherianity, localness, nontriviality, discriminant condition or flatness of N is required for these comparisons. The source completion criterion has additional noetherian/local hypotheses and is not proved here.
 
 One proof uses the following inputs and comparisons. Transport raw completion coherence through the native quotient-by-pⁿ•⊤ identification; quotient representatives verify the transition square.
 
@@ -1075,7 +1075,7 @@ Set q=X²+γXY+δY², F=q(X,Y)−q(s,t), R=A[Y][X]/(F), u=[X], v=[Y], ι:A→R, 
 
 Here A is any commutative ring, including the zero ring; γ,δ,s,t∈A. No noetherianity, regularity of A or unit discriminant is assumed for this polynomial-model statement.
 
-One proof uses the following inputs and comparisons. Use the built AdjoinRoot.induction_on to represent r by a bivariate polynomial P. The built lift_mk and eval₂_evalRingHom identify section evaluation with (P.eval(C s)).eval t. The built Polynomial.mem_span_C_X_sub_C_X_sub_C_iff_eval_eval_eq_zero puts every vanishing representative in span{C(Y−t),X−C(s)}. This proves the two-variable division statement; do not plan a private generic remainder lemma. Map that ideal through the actual AdjoinRoot.mk using Ideal.mem_map_of_mem and Ideal.map_span. Its two generator images are v−ιt and u−ιs, so the image lies in J. Conversely both generators evaluate to zero. Ideal.span_le puts J in the actual evaluation kernel. AdjoinRoot.lift_of and evaluation on constants give ev∘ι=id_A. The A-linear splitting is made explicit by the separate section-evaluation-split construction. This proof does not use a normal-form basis, noetherianity, a unit discriminant or flatness of a coefficient map.
+One proof uses the following inputs and comparisons. Use the built AdjoinRoot.induction_on to represent r by a bivariate polynomial P. The built lift_mk and eval₂_evalRingHom identify section evaluation with (P.eval(C s)).eval t. The built Polynomial.mem_span_C_X_sub_C_X_sub_C_iff_eval_eval_eq_zero puts every vanishing representative in span{C(Y−t),X−C(s)}. This proves the two-variable division statement; do not plan a private generic remainder lemma. Map that ideal through the actual AdjoinRoot.mk using Ideal.mem_map_of_mem and Ideal.map_span. Its two generator images are v−ιt and u−ιs, so the image lies in J. Conversely both generators evaluate to zero. Ideal.span_le puts J in the actual evaluation kernel. AdjoinRoot.lift_of and evaluation on constants give ev∘ι=id_A. The A-linear splitting is made explicit by the coefficient-linear splitting of section evaluation (§2.92). This proof does not use a normal-form basis, noetherianity, a unit discriminant or flatness of a coefficient map.
 
 The splitting is A-linear; the section map ι is not R-linear for the evaluation action on A.
 
@@ -1504,7 +1504,7 @@ The construction has the following API.
 
 Under coefficient convention C3. For every n≥0, pⁿ⊆ι⁻¹(mⁿ).
 
-Here Only the displayed commutative-ring and ideal-containment assumptions are used. No noetherianity, localness, nontriviality, discriminant condition or flatness of N is required for these specialized adapters. The source completion criterion has additional noetherian/local hypotheses and is not proved here.
+Only the displayed commutative-ring and ideal-containment assumptions are used. No noetherianity, localness, nontriviality, discriminant condition or flatness of N is required for these comparisons. The source completion criterion has additional noetherian/local hypotheses and is not proved here.
 
 One proof uses the following inputs and comparisons. Apply the native map/comap adjunction, transport ideal powers through ι, and use monotonicity of ideal powers.
 
@@ -1530,11 +1530,11 @@ A can have zero divisors; d is not chosen to be invertible.
 
 ### 2.44 Canonical retraction onto the section ideal
 
-For the actual polynomial quotient R and J=(u−ιs,v−ιt)=ker(ev), construct the canonical A-linear map p:R→J, p(r)=r−ι(ev(r)). Its composite with J→R fixes J and kills the coefficient image. This is the explicit first coordinate of sectionSplit; it is not generally R-linear.
+For the actual polynomial quotient R and J=(u−ιs,v−ιt)=ker(ev), construct the canonical A-linear map p:R→J, p(r)=r−ι(ev(r)). Its composite with J→R fixes J and kills the coefficient image. This is the explicit first coordinate of the coefficient-linear splitting of section evaluation (§2.92); it is not generally R-linear.
 
 Here A is any commutative ring, including the zero ring; γ,δ,s,t∈A. No noetherianity, regularity of A or unit discriminant is assumed for this polynomial-model statement.
 
-One proof uses the following inputs and comparisons. Evaluation of r−ιev(r) is zero, so the existing kernel equivalence places it in the actual ideal J. Verify addition by ring normalization and A-linearity by section-evaluation-scalars and the native coefficient action. For j∈J, ev(j)=0 makes p(j)=j. For a∈A, ev(ι(a))=a makes p(ι(a))=0. Use these two identities in both inverse laws of sectionSplit and as the actual coefficient-flatness retraction.
+One proof uses the following inputs and comparisons. Evaluation of r−ιev(r) is zero, so the existing kernel equivalence places it in the actual ideal J. Verify addition by ring normalization and A-linearity by [coefficient linearity of section evaluation](#234-coefficient-linearity-of-section-evaluation) and the native coefficient action. For j∈J, ev(j)=0 makes p(j)=j. For a∈A, ev(ι(a))=a makes p(ι(a))=0. Use these two identities in both inverse laws of the splitting of §2.92 and as the actual coefficient-flatness retraction.
 
 Use the existing polynomial quotient, coefficient algebra and actual ideal carrier; no new scalar action, chosen basis or unit discriminant.
 
@@ -1676,7 +1676,7 @@ Use the actual node ring, section ideal, R-linear dual and ordered native matrix
 
 Under coefficient convention C3. Construct λ_n:A/pⁿ→R/mⁿ as the actual quotient map induced by ι.
 
-Here Only the displayed commutative-ring and ideal-containment assumptions are used. No noetherianity, localness, nontriviality, discriminant condition or flatness of N is required for these specialized adapters. The source completion criterion has additional noetherian/local hypotheses and is not proved here.
+Only the displayed commutative-ring and ideal-containment assumptions are used. No noetherianity, localness, nontriviality, discriminant condition or flatness of N is required for these comparisons. The source completion criterion has additional noetherian/local hypotheses and is not proved here.
 
 One proof uses the following inputs and comparisons. Use the proved power containment in the native ideal quotient map.
 
@@ -1937,7 +1937,7 @@ The statement uses the actual section ideal and actual R-linear dual in the untr
 
 Under coefficient convention C3. For every a∈A and n≥0, λ_n([a])=[ι(a)].
 
-Here Only the displayed commutative-ring and ideal-containment assumptions are used. No noetherianity, localness, nontriviality, discriminant condition or flatness of N is required for these specialized adapters. The source completion criterion has additional noetherian/local hypotheses and is not proved here.
+Only the displayed commutative-ring and ideal-containment assumptions are used. No noetherianity, localness, nontriviality, discriminant condition or flatness of N is required for these comparisons. The source completion criterion has additional noetherian/local hypotheses and is not proved here.
 
 One proof uses the following inputs and comparisons. Unfold the actual quotient map on its quotient representative.
 
@@ -1951,7 +1951,7 @@ Use the inherited polynomial nodal chart, native ideal quotients and actual Adic
 
 Under coefficient convention C3. For i≤j, factor_m(j,i)∘λ_j=λ_i∘factor_p(j,i).
 
-Here Only the displayed commutative-ring and ideal-containment assumptions are used. No noetherianity, localness, nontriviality, discriminant condition or flatness of N is required for these specialized adapters. The source completion criterion has additional noetherian/local hypotheses and is not proved here.
+Only the displayed commutative-ring and ideal-containment assumptions are used. No noetherianity, localness, nontriviality, discriminant condition or flatness of N is required for these comparisons. The source completion criterion has additional noetherian/local hypotheses and is not proved here.
 
 One proof uses the following inputs and comparisons. Use ring-hom extensionality and quotient-surjectivity to reduce both composites to the same coefficient representative.
 
@@ -1965,7 +1965,7 @@ Use the inherited polynomial nodal chart, native ideal quotients and actual Adic
 
 Under coefficient convention C3. For every n and a,b∈A/pⁿ, λ_n(ab)=λ_n(a)λ_n(b).
 
-Here Only the displayed commutative-ring and ideal-containment assumptions are used. No noetherianity, localness, nontriviality, discriminant condition or flatness of N is required for these specialized adapters. The source completion criterion has additional noetherian/local hypotheses and is not proved here.
+Only the displayed commutative-ring and ideal-containment assumptions are used. No noetherianity, localness, nontriviality, discriminant condition or flatness of N is required for these comparisons. The source completion criterion has additional noetherian/local hypotheses and is not proved here.
 
 One proof uses the following inputs and comparisons. Use multiplication preservation of this particular native ring homomorphism.
 
@@ -1979,7 +1979,7 @@ Use the inherited polynomial nodal chart, native ideal quotients and actual Adic
 
 Under coefficient convention C3. Construct f_n:Â→R/mⁿ as λ_n∘π_A,n.
 
-Here Only the displayed commutative-ring and ideal-containment assumptions are used. No noetherianity, localness, nontriviality, discriminant condition or flatness of N is required for these specialized adapters. The source completion criterion has additional noetherian/local hypotheses and is not proved here.
+Only the displayed commutative-ring and ideal-containment assumptions are used. No noetherianity, localness, nontriviality, discriminant condition or flatness of N is required for these comparisons. The source completion criterion has additional noetherian/local hypotheses and is not proved here.
 
 One proof uses the following inputs and comparisons. Compose the actual quotient map with native completion evaluation, as a ring homomorphism.
 
@@ -2237,7 +2237,7 @@ The construction has the following API.
 
 Under coefficient convention C3. For i≤j, factor_m(j,i)∘f_j=f_i.
 
-Here Only the displayed commutative-ring and ideal-containment assumptions are used. No noetherianity, localness, nontriviality, discriminant condition or flatness of N is required for these specialized adapters. The source completion criterion has additional noetherian/local hypotheses and is not proved here.
+Only the displayed commutative-ring and ideal-containment assumptions are used. No noetherianity, localness, nontriviality, discriminant condition or flatness of N is required for these comparisons. The source completion criterion has additional noetherian/local hypotheses and is not proved here.
 
 One proof uses the following inputs and comparisons. Compose the two separately proved finite-transition identities; no topology is supplied by a private carrier.
 
@@ -2251,7 +2251,7 @@ Use the inherited polynomial nodal chart, native ideal quotients and actual Adic
 
 Under coefficient convention C3. For every a∈A and n≥0, f_n(e_A(a))=[ι(a)].
 
-Here Only the displayed commutative-ring and ideal-containment assumptions are used. No noetherianity, localness, nontriviality, discriminant condition or flatness of N is required for these specialized adapters. The source completion criterion has additional noetherian/local hypotheses and is not proved here.
+Only the displayed commutative-ring and ideal-containment assumptions are used. No noetherianity, localness, nontriviality, discriminant condition or flatness of N is required for these comparisons. The source completion criterion has additional noetherian/local hypotheses and is not proved here.
 
 One proof uses the following inputs and comparisons. Apply evaluation of native completed coefficients, followed by the quotient representative law.
 
@@ -2265,7 +2265,7 @@ Use the inherited polynomial nodal chart, native ideal quotients and actual Adic
 
 Under coefficient convention C3. For every n≥0, f_n(1)=1.
 
-Here Only the displayed commutative-ring and ideal-containment assumptions are used. No noetherianity, localness, nontriviality, discriminant condition or flatness of N is required for these specialized adapters. The source completion criterion has additional noetherian/local hypotheses and is not proved here.
+Only the displayed commutative-ring and ideal-containment assumptions are used. No noetherianity, localness, nontriviality, discriminant condition or flatness of N is required for these comparisons. The source completion criterion has additional noetherian/local hypotheses and is not proved here.
 
 One proof uses the following inputs and comparisons. Use the ring-hom unit identity on the compatible coefficient family.
 
@@ -2323,11 +2323,11 @@ For b∈A and q∈R/mⁿ, the inherited scalar b·q equals completionCoefficient
 
 Here A is any commutative ring; R is the existing polynomial nodal chart Ring A γ δ s t, with the actual coefficient homomorphism. Ideals p⊆A and m⊆R satisfy p⊆coefficientHom⁻¹(m). The finite coefficient and chart actions are the completionResidueAlgebra, completionFiniteChartAlgebra and their composed native scalar actions. This scalar comparison holds without finite generation of p and without any coefficient module.
 
-One proof uses the following inputs and comparisons. Choose an actual original chart representative r of q using native quotient surjectivity. The inherited quotient A-action sends b·[r] to [b·r]. In R the existing coefficient-inclusion-action node identifies b·r with coefficientHom(b)r. The finite coefficient map sends [b] to [coefficientHom(b)]; the native quotient ring hom preserves products. This proves the equation without assuming that two independently inferred scalar structures are definitionally equal.
+One proof uses the following inputs and comparisons. Choose an actual original chart representative r of q using native quotient surjectivity. The inherited quotient A-action sends b·[r] to [b·r]. In R, [native coefficient action on the pointed node](#220-native-coefficient-action-on-the-pointed-node) identifies b·r with coefficientHom(b)r. The finite coefficient map sends [b] to [coefficientHom(b)]; the native quotient ring hom preserves products. This proves the equation without assuming that two independently inferred scalar structures are definitionally equal.
 
 The theorem compares the inherited scalar action with the displayed coefficient map. It does not replace that action or add an equality assumption.
 
-([knudsen2](#references), Knudsen II Appendix Propositions6–7, printed194–195/PDF34–35: motivation for the separate completed-local comparison; authored finite-transition deduction from the incoming polynomial adapters and pinned Mathlib maps.)
+([knudsen2](#references), Knudsen II Appendix Propositions6–7, printed194–195/PDF34–35: motivation for the separate completed-local comparison; the finite-transition deduction uses the polynomial comparisons above and pinned Mathlib maps.)
 
 *Needs:* [native coefficient action on the pointed node](#220-native-coefficient-action-on-the-pointed-node), [finite-level nodal coefficient map](#252-finite-level-nodal-coefficient-map), [finite coefficients on representatives](#267-finite-coefficients-on-representatives), `Ideal.Quotient.mk_surjective`, `Algebra.smul_def`.
 
@@ -2361,7 +2361,7 @@ For the actual polynomial node ring R and J=ker(ev), construct the canonical A-l
 
 Here A is any commutative ring, including the zero ring; γ,δ,s,t∈A. No noetherianity, regularity of A or unit discriminant is assumed for this polynomial-model statement.
 
-One proof uses the following inputs and comparisons. Use the existing inherited A-module structures on R, J and A; coefficient-inclusion-action identifies the actual coefficient inclusion with the native algebra map. Define e(r)=(p(r),ev(r)), with p the actual section-evaluation-projection, and inverse (j,a)↦j+ι(a). The forward/inverse identities follow from p(j)=j, p(ι(a))=0 and ev(j)=0. The other composition is the additive identity r−ιev(r)+ιev(r)=r. Use p’s LinearMap laws and section-evaluation-scalars for addition and scalar multiplication. This directly instantiates the canonical formulas without an uninstantiated complementary-submodule adapter. The inherited zero-base, nonreduced and non-R-linear tests all check against these actual bodies. No chosen basis or inverse discriminant is used.
+One proof uses the following inputs and comparisons. Use the existing inherited A-module structures on R, J and A; [native coefficient action on the pointed node](#220-native-coefficient-action-on-the-pointed-node) identifies the actual coefficient inclusion with the native algebra map. Define e(r)=(p(r),ev(r)), with p the retraction of [canonical retraction onto the section ideal](#244-canonical-retraction-onto-the-section-ideal), and inverse (j,a)↦j+ι(a). The forward/inverse identities follow from p(j)=j, p(ι(a))=0 and ev(j)=0. The other composition is the additive identity r−ιev(r)+ιev(r)=r. Use p’s LinearMap laws and [coefficient linearity of section evaluation](#234-coefficient-linearity-of-section-evaluation) for addition and scalar multiplication. This directly instantiates the canonical formulas without choosing a complementary submodule. The inherited zero-base, nonreduced and non-R-linear tests all check against these actual bodies. No chosen basis or inverse discriminant is used.
 
 The equivalence is over A, with the actual ideal carrier J and actual evaluation map; never strengthen it to an R-linear splitting. No finite A-rank or R-flatness of J is implied.
 
@@ -2456,7 +2456,7 @@ Use the actual polynomial quotient and the stated ordered matrices; an arbitrary
 
 For every commutative ring A and γ,δ,s,t∈A, put q(X,Y)=X²+γXY+δY², R=A[Y][X]/(q(X,Y)−q(s,t)), ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), incl:J→R, and ε∈D with dε(j)=bj. Write η=Module.Dual.eval R J. d·ε=b·incl in D.
 
-Here No noetherianity, invertible discriminant, nonzero coefficient ring or nonzero parameters are assumed. Duals here are R-linear.
+No noetherianity, invertible discriminant, nonzero coefficient ring or nonzero parameters are assumed. Duals here are R-linear.
 
 One proof uses the following inputs and comparisons. Evaluate both linear maps at j∈J and use dε(j)=bj; multiplication by 1 is inclusion.
 
@@ -2538,7 +2538,7 @@ The construction has the following API.
 
 Under coefficient convention C3. Construct ĩ:Â→R̂ as the native completion lift of the compatible f_n.
 
-Here Only the displayed commutative-ring and ideal-containment assumptions are used. No noetherianity, localness, nontriviality, discriminant condition or flatness of N is required for these specialized adapters. The source completion criterion has additional noetherian/local hypotheses and is not proved here.
+Only the displayed commutative-ring and ideal-containment assumptions are used. No noetherianity, localness, nontriviality, discriminant condition or flatness of N is required for these comparisons. The source completion criterion has additional noetherian/local hypotheses and is not proved here.
 
 One proof uses the following inputs and comparisons. Instantiate the native completion universal property with the proved compatible finite family.
 
@@ -2566,7 +2566,7 @@ Under coefficient convention C4. For b∈pⁿ and q∈Qₙ, bq=0.
 
 The displayed finite-generation hypothesis is used only where stated. All actions are the specified actual restrictions. No flatness of N, no noetherianity or localness, and no discriminant hypothesis is introduced. The completed-base module N is arbitrary.
 
-One proof uses the following inputs and comparisons. The chosen A-action factors through Bₙ. The quotient class of b is zero, so its coefficient image annihilates q. Use finite-chart-original-scalar to compare the inherited original-coefficient action with the displayed finite coefficient homomorphism; this equality is propositional and must not be replaced by definitional reduction.
+One proof uses the following inputs and comparisons. The chosen A-action factors through Bₙ. The quotient class of b is zero, so its coefficient image annihilates q. Use [the finite quotient retains its native original-coefficient action](#290-the-finite-quotient-retains-its-native-original-coefficient-action) to compare the inherited original-coefficient action with the displayed finite coefficient homomorphism; this equality is propositional and must not be replaced by definitional reduction.
 
 Use the actual native polynomial chart, ideal quotients, adic completion, tensor product and linear-map spaces. No comparison conclusion is an input hypothesis. A finite quotient equivalence does not identify the whole completed tensor products and does not close Proposition6, Proposition7, stable-reflexivity, pointed hull or moduli geometry.
 
@@ -2580,7 +2580,7 @@ Under coefficient convention C4. The chosen actions form the actual scalar tower
 
 The displayed finite-generation hypothesis is used only where stated. All actions are the specified actual restrictions. No flatness of N, no noetherianity or localness, and no discriminant hypothesis is introduced. The completed-base module N is arbitrary.
 
-One proof uses the following inputs and comparisons. Evaluate the completed image of b∈A and compare the two actual scalar actions on Qₙ. Apply the native scalar-tower constructor. Use finite-chart-original-scalar to compare the inherited original-coefficient action with the displayed finite coefficient homomorphism; this equality is propositional and must not be replaced by definitional reduction.
+One proof uses the following inputs and comparisons. Evaluate the completed image of b∈A and compare the two actual scalar actions on Qₙ. Apply the native scalar-tower constructor. Use [the finite quotient retains its native original-coefficient action](#290-the-finite-quotient-retains-its-native-original-coefficient-action) to compare the inherited original-coefficient action with the displayed finite coefficient homomorphism; this equality is propositional and must not be replaced by definitional reduction.
 
 Use the actual native polynomial chart, ideal quotients, adic completion, tensor product and linear-map spaces. No comparison conclusion is an input hypothesis. A finite quotient equivalence does not identify the whole completed tensor products and does not close Proposition6, Proposition7, stable-reflexivity, pointed hull or moduli geometry.
 
@@ -2594,9 +2594,7 @@ For i≤j, equip the actual native quotient transition R/mʲ→R/mⁱ with its �
 
 Here A is any commutative ring; R is the existing polynomial nodal chart Ring A γ δ s t, with the actual coefficient homomorphism. Ideals p⊆A and m⊆R satisfy p⊆coefficientHom⁻¹(m). The finite coefficient and chart actions are the completionResidueAlgebra, completionFiniteChartAlgebra and their composed native scalar actions. For the four tensor-naturality lemmas, p is finitely generated and N,N′ are arbitrary Â=AdicCompletion p A modules, with specified A-actions satisfying the native scalar-tower equations. The transition algebra homomorphism and its four structural laws do not require p finitely generated. No noetherianity or locality of A or R, finite generation or flatness of N, global tensor/limit interchange, or injectivity of the whole completed-ring tensor comparison is assumed.
 
-One proof uses the following inputs and comparisons. Retain the native Ideal.Quotient.factorPow ring map; only its completed-coefficient compatibility needs an adapter. The equation factorPow∘completionCoefficientFamilyⱼ=completionCoefficientFamilyᵢ is exactly the algebra-map square. Evaluate it at an arbitrary a∈Â, without assuming that a comes from A. Package that square in the native AlgHom structure. Finite generation of p is unnecessary for this transition.
-
-For i≤j, equip the actual native quotient transition R/mʲ→R/mⁱ with its Â-algebra-hom structure, using the finite completed-coefficient actions.
+One proof uses the following inputs and comparisons. Retain the native Ideal.Quotient.factorPow ring map; only its completed-coefficient compatibility needs a separate comparison. The equation factorPow∘completionCoefficientFamilyⱼ=completionCoefficientFamilyᵢ is exactly the algebra-map square. Evaluate it at an arbitrary a∈Â, without assuming that a comes from A. Package that square in the native AlgHom structure. Finite generation of p is unnecessary for this transition.
 
 The construction has the following API.
 
@@ -2611,7 +2609,7 @@ The construction has the following API.
 - Every level-j element maps to zero at level zero, where R/m⁰ is the zero ring.
 - An arbitrary completed coefficient a∈Â commutes with the actual transition; a is not required to be the image of an original coefficient.
 
-([knudsen2](#references), Knudsen II Appendix Propositions6–7, printed194–195/PDF34–35: motivation for the separate completed-local comparison; authored finite-transition deduction from the incoming polynomial adapters and pinned Mathlib maps.)
+([knudsen2](#references), Knudsen II Appendix Propositions6–7, printed194–195/PDF34–35: motivation for the separate completed-local comparison; the finite-transition deduction uses the polynomial comparisons above and pinned Mathlib maps.)
 
 *Needs:* [completed coefficient family transitions](#284-completed-coefficient-family-transitions), [completed coefficients in the finite chart](#289-completed-coefficients-in-the-finite-chart), `AlgHom`, `Ideal.Quotient.factorPow`.
 
@@ -2623,7 +2621,7 @@ Here A is any commutative ring, including the zero ring; γ,δ,s,t∈A. No noeth
 
 One proof uses the following inputs and comparisons. Extend the monomial basis vⁿ,u vⁿ through tensoring. The same monic normal form over A′ identifies the image basis with that of R′. Multiplication compatibility follows on pure tensors.
 
-The algebra-equivalence adapter section-ring-tensor-equivalence specifies the same natural underlying linear map; the comparison records signatures, not verified implementation proofs.
+The algebra equivalence of §2.128 has the same underlying linear map.
 
 ([knudsen2012](#references), §3, printed pp.11–12: monic division, κ/λ comparisons and proof of Proposition3.1.)
 
@@ -2633,7 +2631,7 @@ The algebra-equivalence adapter section-ring-tensor-equivalence specifies the sa
 
 Under coefficient convention C9. ev′(φ(r))=f(ev(r)) for every r∈R.
 
-Here All coefficient rings are commutative and may have zero divisors or be the zero ring. No noetherianity, unit discriminant, injectivity or flatness of f is required. Statements concern the explicit polynomial model, not arbitrary nodal families.
+All coefficient rings are commutative and may have zero divisors or be the zero ring. No noetherianity, unit discriminant, injectivity or flatness of f is required. Statements concern the explicit polynomial model, not arbitrary nodal families.
 
 One proof uses the following inputs and comparisons. Both sides are ring maps R→A′; evaluate them on u, v and every coefficient ιz. Use the unique expression p(v)+u q₁(v) to reduce the equality to coefficientwise polynomial evaluation. A direct proof compares the two ring maps by AdjoinRoot.ringHom_ext; their values on coefficient polynomials and the root agree. This direct proof requires only those evaluations, with no flatness assumption.
 
@@ -2731,7 +2729,7 @@ Use the actual polynomial quotient and the stated ordered matrices; an arbitrary
 
 For every commutative ring A and γ,δ,s,t∈A, put q(X,Y)=X²+γXY+δY², R=A[Y][X]/(q(X,Y)−q(s,t)), ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), incl:J→R, and ε∈D with dε(j)=bj. Write η=Module.Dual.eval R J. Every F∈Hom_R(D,R) satisfies dF(ε)=bF(incl).
 
-Here No noetherianity, invertible discriminant, nonzero coefficient ring or nonzero parameters are assumed. Duals here are R-linear.
+No noetherianity, invertible discriminant, nonzero coefficient ring or nonzero parameters are assumed. Duals here are R-linear.
 
 One proof uses the following inputs and comparisons. Apply the R-linear functional F to d·ε=b·incl and use R-linearity.
 
@@ -2845,7 +2843,7 @@ The statement uses the actual section ideal and actual R-linear dual in the untr
 
 Under coefficient convention C3. For every a∈Â and n≥0, π_R,n(ĩ(a))=λ_n(π_A,n(a)).
 
-Here Only the displayed commutative-ring and ideal-containment assumptions are used. No noetherianity, localness, nontriviality, discriminant condition or flatness of N is required for these specialized adapters. The source completion criterion has additional noetherian/local hypotheses and is not proved here.
+Only the displayed commutative-ring and ideal-containment assumptions are used. No noetherianity, localness, nontriviality, discriminant condition or flatness of N is required for these comparisons. The source completion criterion has additional noetherian/local hypotheses and is not proved here.
 
 One proof uses the following inputs and comparisons. Use the finite-evaluation characterization of the actual native completion lift.
 
@@ -2859,7 +2857,7 @@ Use the inherited polynomial nodal chart, native ideal quotients and actual Adic
 
 Under coefficient convention C3. Equip R̂ with the Â-algebra induced by ĩ. Keep the inherited A-algebra coming from R.
 
-Here Only the displayed commutative-ring and ideal-containment assumptions are used. No noetherianity, localness, nontriviality, discriminant condition or flatness of N is required for these specialized adapters. The source completion criterion has additional noetherian/local hypotheses and is not proved here.
+Only the displayed commutative-ring and ideal-containment assumptions are used. No noetherianity, localness, nontriviality, discriminant condition or flatness of N is required for these comparisons. The source completion criterion has additional noetherian/local hypotheses and is not proved here.
 
 One proof uses the following inputs and comparisons. Use the algebra attached to the constructed ring homomorphism; record the chosen structure explicitly in all dependent signatures.
 
@@ -2873,9 +2871,9 @@ The construction has the following API.
 
 **Checks.**
 
-- Under coefficient convention C3. The inherited A-action factors compatibly through the chosen actual Â-action on R̂.
-- Under coefficient convention C3. The algebra map carries e_A(ab) to e_R(ι(ab)) for arbitrary a,b∈A.
-- Under coefficient convention C3. The algebra map equals ĩ for every element of Â, beyond elements known to lie in e_A(A).
+- Take A=ℤ, γ=δ=s=t=0, p=(2) and m=2R, so R=ℤ[u,v]/(u²) and Â=ℤ₂. ĩ(1/3) is the element of R̂ with 3·ĩ(1/3)=1; its images in R/4R and R/8R are both 3, since 3·3≡1 modulo 4 and modulo 8. The inherited ℤ-action does not produce this element.
+- In the same fixture ĩ(2^k)=2^k≠0 in R̂ for every k, so ĩ does not factor through A/p=𝔽₂.
+- For the unit ideals p=A and m=R, which satisfy p⊆ι⁻¹(m), Â=0 and R̂=0, and the algebra map is the map of zero rings.
 
 ([knudsen2](#references), Appendix Definition1 and Theorem2(1), printed191–193; Proposition6, printed194–195 (physical31–35).)
 
@@ -2901,11 +2899,9 @@ The ring homomorphism underlying completionFiniteTransition is exactly Ideal.Quo
 
 Here A is any commutative ring; R is the existing polynomial nodal chart Ring A γ δ s t, with the actual coefficient homomorphism. Ideals p⊆A and m⊆R satisfy p⊆coefficientHom⁻¹(m). The finite coefficient and chart actions are the completionResidueAlgebra, completionFiniteChartAlgebra and their composed native scalar actions. For the four tensor-naturality lemmas, p is finitely generated and N,N′ are arbitrary Â=AdicCompletion p A modules, with specified A-actions satisfying the native scalar-tower equations. The transition algebra homomorphism and its four structural laws do not require p finitely generated. No noetherianity or locality of A or R, finite generation or flatness of N, global tensor/limit interchange, or injectivity of the whole completed-ring tensor comparison is assumed.
 
-One proof uses the following inputs and comparisons. Unfold only the new adapter; its underlying ring map was specified to be the pinned quotient transition. Keep the native quotient carriers and direction R/mʲ→R/mⁱ for i≤j.
+One proof uses the following inputs and comparisons. Unfold only the new comparison; its underlying ring map was specified to be the pinned quotient transition. Keep the native quotient carriers and direction R/mʲ→R/mⁱ for i≤j.
 
-The ring homomorphism underlying completionFiniteTransition is exactly Ideal.Quotient.factorPow m hij.
-
-([knudsen2](#references), Knudsen II Appendix Propositions6–7, printed194–195/PDF34–35: motivation for the separate completed-local comparison; authored finite-transition deduction from the incoming polynomial adapters and pinned Mathlib maps.)
+([knudsen2](#references), Knudsen II Appendix Propositions6–7, printed194–195/PDF34–35: motivation for the separate completed-local comparison; the finite-transition deduction uses the polynomial comparisons above and pinned Mathlib maps.)
 
 *Needs:* [finite quotient transition over completed coefficients](#2106-finite-quotient-transition-over-completed-coefficients).
 
@@ -2917,9 +2913,7 @@ Here A is any commutative ring; R is the existing polynomial nodal chart Ring A 
 
 One proof uses the following inputs and comparisons. Use the underlying Â-linear map of the new algebra homomorphism. Its scalar law is the native map_smul law, with no restriction on the origin of a.
 
-For every a∈Â and q∈R/mʲ, the finite transition sends a·q to a times the image of q, with the specified completed-coefficient actions.
-
-([knudsen2](#references), Knudsen II Appendix Propositions6–7, printed194–195/PDF34–35: motivation for the separate completed-local comparison; authored finite-transition deduction from the incoming polynomial adapters and pinned Mathlib maps.)
+([knudsen2](#references), Knudsen II Appendix Propositions6–7, printed194–195/PDF34–35: motivation for the separate completed-local comparison; the finite-transition deduction uses the polynomial comparisons above and pinned Mathlib maps.)
 
 *Needs:* [finite quotient transition over completed coefficients](#2106-finite-quotient-transition-over-completed-coefficients), `AlgHom.toLinearMap`.
 
@@ -2929,7 +2923,7 @@ Set q=X²+γXY+δY², F=q(X,Y)−q(s,t), R=A[Y][X]/(F), u=[X], v=[Y], ι:A→R, 
 
 Here A is any commutative ring, including the zero ring; γ,δ,s,t∈A. No noetherianity, regularity of A or unit discriminant is assumed for this polynomial-model statement.
 
-One proof uses the following inputs and comparisons. R is A-free by the existing monomial normal form. The native sectionProjection is the A-linear retraction R→J and fixes each actual ideal element; it is exactly the sectionSplit first coordinate. Apply the cited retract-of-flat theorem. No R-flatness or relative stable reflexivity is asserted. An alternative proof uses section-ideal-coefficient-projective and the existing projective/free-flat instance. 
+One proof uses the following inputs and comparisons. R is A-free by the existing monomial normal form. The native sectionProjection is the A-linear retraction R→J and fixes each actual ideal element; it is exactly the first coordinate of [coefficient-linear splitting of section evaluation](#292-coefficient-linear-splitting-of-section-evaluation). Apply the cited retract-of-flat theorem. No R-flatness or relative stable reflexivity is asserted. An alternative proof uses [coefficient projectivity of the actual section ideal](#2110-coefficient-projectivity-of-the-actual-section-ideal) and the existing projective/free-flat instance. 
 
 No claim that J is R-flat, projective over R or invertible at the node.
 
@@ -2941,7 +2935,7 @@ No claim that J is R-flat, projective over R or invertible at the node.
 
 Under coefficient convention C9. Construct the unique A′-algebra equivalence E_R:A′⊗_A R≃R′ with E_R(a′⊗r)=ι′a′·φ(r). The tensor algebra multiplication is (a′⊗r)(b′⊗z)=a′b′⊗rz.
 
-Here All coefficient rings are commutative and may have zero divisors or be the zero ring. No noetherianity, unit discriminant, injectivity or flatness of f is required. Statements concern the explicit polynomial model, not arbitrary nodal families.
+All coefficient rings are commutative and may have zero divisors or be the zero ring. No noetherianity, unit discriminant, injectivity or flatness of f is required. Statements concern the explicit polynomial model, not arbitrary nodal families.
 
 One proof uses the following inputs and comparisons. The coefficient map is an A-algebra map after restricting the target through f; its scalar equation follows on coefficients. Use the baseline algebra base-change universal property to obtain the A′-algebra map with the specified pure-tensor formula. The existing linear tensor comparison has the same formula, hence the same underlying map by tensor induction. Transfer its inverse/bijectivity, not an unproved algebra isomorphism. Uniqueness follows by equality on pure tensors.
 
@@ -3069,7 +3063,7 @@ Use the actual polynomial quotient and the stated ordered matrices; an arbitrary
 
 For every commutative ring A and γ,δ,s,t∈A, put q(X,Y)=X²+γXY+δY², R=A[Y][X]/(q(X,Y)−q(s,t)), ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), incl:J→R, and ε∈D with dε(j)=bj. Write η=Module.Dual.eval R J. For every F∈Hom_R(D,R), F(incl)∈J.
 
-Here No noetherianity, invertible discriminant, nonzero coefficient ring or nonzero parameters are assumed. Duals here are R-linear.
+No noetherianity, invertible discriminant, nonzero coefficient ring or nonzero parameters are assumed. Duals here are R-linear.
 
 One proof uses the following inputs and comparisons. Apply the earlier dual syzygy to x=F(ε), y=F(incl). It gives y=dr+ιαc, hence ideal membership.
 
@@ -3083,7 +3077,7 @@ Use the actual ideal subtype and native Module.Dual, Module.Dual.eval and Module
 
 Under coefficient convention C3. For every a∈A, ĩ(e_A(a))=e_R(ι(a)).
 
-Here Only the displayed commutative-ring and ideal-containment assumptions are used. No noetherianity, localness, nontriviality, discriminant condition or flatness of N is required for these specialized adapters. The source completion criterion has additional noetherian/local hypotheses and is not proved here.
+Only the displayed commutative-ring and ideal-containment assumptions are used. No noetherianity, localness, nontriviality, discriminant condition or flatness of N is required for these comparisons. The source completion criterion has additional noetherian/local hypotheses and is not proved here.
 
 One proof uses the following inputs and comparisons. Compare all finite quotient evaluations, then apply native completion extensionality.
 
@@ -3097,7 +3091,7 @@ Use the inherited polynomial nodal chart, native ideal quotients and actual Adic
 
 Under coefficient convention C3. If f:Â→R̂ is a ring homomorphism satisfying π_R,n(f(a))=λ_n(π_A,n(a)) for every n,a, then f=ĩ.
 
-Here Only the displayed commutative-ring and ideal-containment assumptions are used. No noetherianity, localness, nontriviality, discriminant condition or flatness of N is required for these specialized adapters. The source completion criterion has additional noetherian/local hypotheses and is not proved here.
+Only the displayed commutative-ring and ideal-containment assumptions are used. No noetherianity, localness, nontriviality, discriminant condition or flatness of N is required for these comparisons. The source completion criterion has additional noetherian/local hypotheses and is not proved here.
 
 One proof uses the following inputs and comparisons. Use ring-hom extensionality followed by native completion extensionality; finite equality is a hypothesis, not presumed injectivity of a single quotient.
 
@@ -3111,7 +3105,7 @@ Use the inherited polynomial nodal chart, native ideal quotients and actual Adic
 
 Under coefficient convention C3. The chosen algebra map Â→R̂ equals ĩ on every a∈Â.
 
-Here Only the displayed commutative-ring and ideal-containment assumptions are used. No noetherianity, localness, nontriviality, discriminant condition or flatness of N is required for these specialized adapters. The source completion criterion has additional noetherian/local hypotheses and is not proved here.
+Only the displayed commutative-ring and ideal-containment assumptions are used. No noetherianity, localness, nontriviality, discriminant condition or flatness of N is required for these comparisons. The source completion criterion has additional noetherian/local hypotheses and is not proved here.
 
 One proof uses the following inputs and comparisons. Unfold the native algebra structure induced by the ring homomorphism.
 
@@ -3127,7 +3121,7 @@ Under coefficient convention C4. For arbitrary Â-module N equip N with its rest
 
 The displayed finite-generation hypothesis is used only where stated. All actions are the specified actual restrictions. No flatness of N, no noetherianity or localness, and no discriminant hypothesis is introduced. The completed-base module N is arbitrary.
 
-One proof uses the following inputs and comparisons. Choose b∈A lifting evalₙ(a). The difference a−e_A(b) belongs to pⁿ·Â. Its action contributes zero to the A-tensor by the preceding lemma, and zero to Qₙ by the chosen finite action. Reduce to the ordinary A-balancing relation. Use finite-chart-original-scalar to compare the inherited original-coefficient action with the displayed finite coefficient homomorphism; this equality is propositional and must not be replaced by definitional reduction.
+One proof uses the following inputs and comparisons. Choose b∈A lifting evalₙ(a). The difference a−e_A(b) belongs to pⁿ·Â. Its action contributes zero to the A-tensor by the preceding lemma, and zero to Qₙ by the chosen finite action. Reduce to the ordinary A-balancing relation. Use [the finite quotient retains its native original-coefficient action](#290-the-finite-quotient-retains-its-native-original-coefficient-action) to compare the inherited original-coefficient action with the displayed finite coefficient homomorphism; this equality is propositional and must not be replaced by definitional reduction.
 
 Use the actual native polynomial chart, ideal quotients, adic completion, tensor product and linear-map spaces. No comparison conclusion is an input hypothesis. A finite quotient equivalence does not identify the whole completed tensor products and does not close Proposition6, Proposition7, stable-reflexivity, pointed hull or moduli geometry.
 
@@ -3143,9 +3137,7 @@ Here A is any commutative ring; R is the existing polynomial nodal chart Ring A 
 
 One proof uses the following inputs and comparisons. Apply native AlgHom extensionality and quotient induction. On an original chart representative, the native factor map with equal powers sends the class to itself.
 
-The completed-coefficient transition from level n to itself is the identity Â-algebra homomorphism.
-
-([knudsen2](#references), Knudsen II Appendix Propositions6–7, printed194–195/PDF34–35: motivation for the separate completed-local comparison; authored finite-transition deduction from the incoming polynomial adapters and pinned Mathlib maps.)
+([knudsen2](#references), Knudsen II Appendix Propositions6–7, printed194–195/PDF34–35: motivation for the separate completed-local comparison; the finite-transition deduction uses the polynomial comparisons above and pinned Mathlib maps.)
 
 *Needs:* [underlying finite transition ring map](#2125-underlying-finite-transition-ring-map), `AlgHom.ext`, `Ideal.Quotient.mk_surjective`.
 
@@ -3157,9 +3149,7 @@ Here A is any commutative ring; R is the existing polynomial nodal chart Ring A 
 
 One proof uses the following inputs and comparisons. Apply algebra-hom extensionality, then native quotient induction on a class represented by r∈R. Both paths send that class to the class of the same r modulo mⁱ. Proof witnesses of the order relations do not enter the resulting map.
 
-For i≤j≤k, the level-k-to-j transition followed by the level-j-to-i transition equals the direct level-k-to-i transition as Â-algebra homomorphisms.
-
-([knudsen2](#references), Knudsen II Appendix Propositions6–7, printed194–195/PDF34–35: motivation for the separate completed-local comparison; authored finite-transition deduction from the incoming polynomial adapters and pinned Mathlib maps.)
+([knudsen2](#references), Knudsen II Appendix Propositions6–7, printed194–195/PDF34–35: motivation for the separate completed-local comparison; the finite-transition deduction uses the polynomial comparisons above and pinned Mathlib maps.)
 
 *Needs:* [underlying finite transition ring map](#2125-underlying-finite-transition-ring-map), `AlgHom.ext`, `Ideal.Quotient.mk_surjective`.
 
@@ -3335,7 +3325,7 @@ The construction has the following API.
 
 For every commutative ring A and γ,δ,s,t∈A, put q(X,Y)=X²+γXY+δY², R=A[Y][X]/(q(X,Y)−q(s,t)), ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), incl:J→R, and ε∈D with dε(j)=bj. Write η=Module.Dual.eval R J. Construct the R-linear map ψ:Hom_R(D,R)→J with underlying value ψ(F)=F(incl).
 
-Here No noetherianity, invertible discriminant, nonzero coefficient ring or nonzero parameters are assumed. Duals here are R-linear.
+No noetherianity, invertible discriminant, nonzero coefficient ring or nonzero parameters are assumed. Duals here are R-linear.
 
 One proof uses the following inputs and comparisons. Use membership to form the actual ideal subtype. Addition and scalar multiplication are inherited from evaluation at incl.
 
@@ -3403,7 +3393,7 @@ Use actual R-linear Hom maps, the signed P_J/P_D presentations and native Module
 
 Under coefficient convention C3. The chosen algebra map sends e_A(a) to e_R(ι(a)) for every a∈A.
 
-Here Only the displayed commutative-ring and ideal-containment assumptions are used. No noetherianity, localness, nontriviality, discriminant condition or flatness of N is required for these specialized adapters. The source completion criterion has additional noetherian/local hypotheses and is not proved here.
+Only the displayed commutative-ring and ideal-containment assumptions are used. No noetherianity, localness, nontriviality, discriminant condition or flatness of N is required for these comparisons. The source completion criterion has additional noetherian/local hypotheses and is not proved here.
 
 One proof uses the following inputs and comparisons. Apply the proved original-coefficient square to the specified algebra map.
 
@@ -3446,9 +3436,9 @@ The construction has the following API.
 
 **Checks.**
 
-- For i≤j the j-to-i diagram transition sends q⊗z to τᵢⱼ(q)⊗z over A.
-- The transition at equal levels is the identity on the actual tensor module.
-- At level zero Q₀=R/R=0, so every j-to-zero transition on the actual tensor module is zero.
+- Take A=ℤ, γ=δ=s=t=0, p=(2) and m=2R, so R=ℤ[u,v]/(u²), Â=ℤ₂ and Qₙ=(ℤ/2ⁿ)[u,v]/(u²). With N=ℤ₂ the level-2 object Q₂⊗_ℤℤ₂ is Q₂, because ℤ/4⊗_ℤℤ₂=ℤ/4, and the transition from level 3 to level 2 sends (u+5)⊗1 to (u+1)⊗1. A transition keeping the level-3 representative does not land in this 4-torsion module.
+- In the same fixture with N=ℚ₂ every object Qₙ⊗_ℤℚ₂ is 0, since 2ⁿ kills Qₙ and is a unit in ℚ₂. A diagram with object Qₙ alone is nonzero there.
+- At level zero Q₀=R/R=0, so every transition from level j to level zero on the actual tensor module is zero.
 
 (Deduction using `Matrix.mulVecLin_apply` in `Mathlib/LinearAlgebra/Matrix/ToLin.lean`, line 291, and `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [finite quotient transition over completed coefficients](#2106-finite-quotient-transition-over-completed-coefficients), [identity finite completed-coefficient transition](#2140-identity-finite-completed-coefficient-transition), [composition of finite completed-coefficient transitions](#2141-composition-of-finite-completed-coefficient-transitions), [the finite chart scalar tower](#2105-the-finite-chart-scalar-tower), [the finite quotient retains its native original-coefficient action](#290-the-finite-quotient-retains-its-native-original-coefficient-action).; [knudsen2](#references), Appendix Proposition6, printed194–195 (physical34–35).)
 
@@ -3473,9 +3463,9 @@ The construction has the following API.
 
 **Checks.**
 
-- For i≤j the j-to-i diagram transition sends q⊗z to τᵢⱼ(q)⊗z over Â.
-- The transition at equal levels is the identity on the actual tensor module.
-- At level zero Q₀=R/R=0, so every j-to-zero transition on the actual tensor module is zero.
+- Take A=ℤ, γ=δ=s=t=0, p=(2) and m=2R, so R=ℤ[u,v]/(u²), Â=ℤ₂ and Qₙ=(ℤ/2ⁿ)[u,v]/(u²). With N=ℤ₂² the level-2 object is Q₂², and the transition from level 3 to level 2 sends (u+5)⊗(1,1/3) to (u+1,3u+3), because 1/3≡3 modulo 4.
+- In the same fixture with N=ℚ₂ every object `Qₙ⊗_{ℤ₂}ℚ₂` is 0, as over the original base.
+- At level zero Q₀=R/R=0, so every transition from level j to level zero on the actual tensor module is zero.
 
 (Deduction using `Matrix.mulVecLin_apply` in `Mathlib/LinearAlgebra/Matrix/ToLin.lean`, line 291, and `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [finite quotient transition over completed coefficients](#2106-finite-quotient-transition-over-completed-coefficients), [identity finite completed-coefficient transition](#2140-identity-finite-completed-coefficient-transition), [composition of finite completed-coefficient transitions](#2141-composition-of-finite-completed-coefficient-transitions), [the finite chart scalar tower](#2105-the-finite-chart-scalar-tower).; [knudsen2](#references), Appendix Proposition6, printed194–195 (physical34–35).)
 
@@ -3485,7 +3475,7 @@ The construction has the following API.
 
 Under coefficient convention C7. Construct G:ℕᵒᵖ→ModuleCat(Â), with object Qₙ⊗_Â N and transition τᵢⱼ⊗id_N for i≤j. This is the native Â-linear diagram before scalar restriction.
 
-Here N is arbitrary: no flatness, finite generation or finite-quotient-annihilation hypothesis. No noetherianity, localness, discriminant or regular-sequence hypothesis. No finite-generation hypothesis on p.
+Here N is arbitrary: no flatness, finite generation or annihilation hypothesis on the finite quotients. No noetherianity, localness, discriminant or regular-sequence hypothesis. No finite-generation hypothesis on p.
 
 One proof uses the following inputs and comparisons. Give the actual finite completed tensor objects and completed-linear transitions before scalar restriction. Prove identity by the inherited actual quotient identity on pure tensors; prove composition on actual quotient representatives and extend by native tensor induction.
 
@@ -3658,7 +3648,7 @@ Use the actual node ring, section ideal, R-linear dual and ordered native matrix
 
 For every commutative ring A and γ,δ,s,t∈A, put q(X,Y)=X²+γXY+δY², R=A[Y][X]/(q(X,Y)−q(s,t)), ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), incl:J→R, and ε∈D with dε(j)=bj. Write η=Module.Dual.eval R J. The image of ψ(F) in R is F(incl).
 
-Here No noetherianity, invertible discriminant, nonzero coefficient ring or nonzero parameters are assumed. Duals here are R-linear.
+No noetherianity, invertible discriminant, nonzero coefficient ring or nonzero parameters are assumed. Duals here are R-linear.
 
 One proof uses the following inputs and comparisons. Unfold the defining subtype map.
 
@@ -3672,7 +3662,7 @@ Use the actual ideal subtype and native Module.Dual, Module.Dual.eval and Module
 
 For every commutative ring A and γ,δ,s,t∈A, put q(X,Y)=X²+γXY+δY², R=A[Y][X]/(q(X,Y)−q(s,t)), ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), incl:J→R, and ε∈D with dε(j)=bj. Write η=Module.Dual.eval R J. For every j∈J, ψ(η(j))=j.
 
-Here No noetherianity, invertible discriminant, nonzero coefficient ring or nonzero parameters are assumed. Duals here are R-linear.
+No noetherianity, invertible discriminant, nonzero coefficient ring or nonzero parameters are assumed. Duals here are R-linear.
 
 One proof uses the following inputs and comparisons. Evaluate η(j) at incl; the underlying value is incl(j)=j. Apply subtype extensionality.
 
@@ -3694,17 +3684,17 @@ Use the actual signed P_J/P_D maps and native ModuleCat complex, projectivity an
 
 The construction has the following API.
 
-- For any commutative ring A and γ,δ,s,t∈A, use the actual polynomial ring R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), its coefficient map ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt and a=ιδ·v+ιδ·ιt+ιγ·u. Set J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), and the signed presentations P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε.  Put F=R² with its native R-module structure. For e∈{false,true} write B(e,n)=Φ if (n mod 2=0) has the same truth value as e=true, and Ψ otherwise. C(e) has F in every degree n≥0, differential `C(e)_{n+1}→C(e)_n` given by B(e,n), and zero off that shape. B(false,0)=Ψ as an actual R-linear map.
-- For any commutative ring A and γ,δ,s,t∈A, use the actual polynomial ring R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), its coefficient map ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt and a=ιδ·v+ιδ·ιt+ιγ·u. Set J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), and the signed presentations P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε.  Put F=R² with its native R-module structure. For e∈{false,true} write B(e,n)=Φ if (n mod 2=0) has the same truth value as e=true, and Ψ otherwise. C(e) has F in every degree n≥0, differential `C(e)_{n+1}→C(e)_n` given by B(e,n), and zero off that shape. B(true,0)=Φ as an actual R-linear map.
-- For any commutative ring A and γ,δ,s,t∈A, use the actual polynomial ring R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), its coefficient map ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt and a=ιδ·v+ιδ·ιt+ιγ·u. Set J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), and the signed presentations P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε.  Put F=R² with its native R-module structure. For e∈{false,true} write B(e,n)=Φ if (n mod 2=0) has the same truth value as e=true, and Ψ otherwise. C(e) has F in every degree n≥0, differential `C(e)_{n+1}→C(e)_n` given by B(e,n), and zero off that shape. B(e,n+2)=B(e,n) for every e,n as actual R-linear maps.
-- For any commutative ring A and γ,δ,s,t∈A, use the actual polynomial ring R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), its coefficient map ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt and a=ιδ·v+ιδ·ιt+ιγ·u. Set J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), and the signed presentations P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε.  Put F=R² with its native R-module structure. For e∈{false,true} write B(e,n)=Φ if (n mod 2=0) has the same truth value as e=true, and Ψ otherwise. C(e) has F in every degree n≥0, differential `C(e)_{n+1}→C(e)_n` given by B(e,n), and zero off that shape. For every e and n≥0, B(e,n+1) followed by B(e,n) is exact.
-- For any commutative ring A and γ,δ,s,t∈A, use the actual polynomial ring R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), its coefficient map ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt and a=ιδ·v+ιδ·ιt+ιγ·u. Set J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), and the signed presentations P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε.  Put F=R² with its native R-module structure. For e∈{false,true} write B(e,n)=Φ if (n mod 2=0) has the same truth value as e=true, and Ψ otherwise. C(e) has F in every degree n≥0, differential `C(e)_{n+1}→C(e)_n` given by B(e,n), and zero off that shape. For every e and n≥0, B(e,n)∘B(e,n+1)=0 as R-linear maps.
+- B(false,0)=Ψ as an actual R-linear map.
+- B(true,0)=Φ as an actual R-linear map.
+- B(e,n+2)=B(e,n) for every e,n as actual R-linear maps.
+- For every e and n≥0, B(e,n+1) followed by B(e,n) is exact.
+- For every e and n≥0, B(e,n)∘B(e,n+1)=0 as R-linear maps.
 
 **Checks.**
 
 - For γ=δ=s=t=0 over every A, B(false,0)(1,0) has second coordinate u.
 - For γ=δ=s=t=0 over every A, B(true,0)(1,0) has second coordinate −u.
-- For every phase and n, B(e,n+2)=B(e,n).
+- For γ=δ=s=t=0 over A=ℤ, Ψ(1,0)=(v,u) and Φ(v,u)=(u²,0)=(0,0) in R; over ℤ[u,v], before the quotient, the same composite is (u²,0)≠0, so B(e,n)∘B(e,n+1)=0 uses the defining relation.
 
 ([knudsen2012](#references), arXiv:1106.1588v2 §3 Key Example, Proposition3.1 and Corollary3.2; §4 separates completed-local descent.; Deduction using `Matrix.mulVecLin_apply` in `Mathlib/LinearAlgebra/Matrix/ToLin.lean`, line 291, and `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [exactness at the left node matrix](#2147-exactness-at-the-left-node-matrix), [exactness at the right node matrix](#2148-exactness-at-the-right-node-matrix).)
 
@@ -3714,7 +3704,7 @@ The construction has the following API.
 
 Under coefficient convention C3. The inherited A-action and the chosen Â-action on R̂ form IsScalarTower(A,Â,R̂).
 
-Here Only the displayed commutative-ring and ideal-containment assumptions are used. No noetherianity, localness, nontriviality, discriminant condition or flatness of N is required for these specialized adapters. The source completion criterion has additional noetherian/local hypotheses and is not proved here.
+Only the displayed commutative-ring and ideal-containment assumptions are used. No noetherianity, localness, nontriviality, discriminant condition or flatness of N is required for these comparisons. The source completion criterion has additional noetherian/local hypotheses and is not proved here.
 
 One proof uses the following inputs and comparisons. Compare the native A-algebra maps with the completed coefficient square, then apply the scalar-tower constructor.
 
@@ -3878,9 +3868,9 @@ All arrows have the stated orientation, actual finite tensor components and coef
 
 Under coefficient convention C7. Construct G:ℕᵒᵖ→ModuleCat(Â), with object Qₙ⊗_Â N and transition τᵢⱼ⊗id_N for i≤j. This is the native Â-linear diagram before scalar restriction. At level n, G(n) is the actual native Â-module Qₙ⊗_Â N.
 
-Here N is arbitrary: no flatness, finite generation or finite-quotient-annihilation hypothesis. No noetherianity, localness, discriminant or regular-sequence hypothesis. No finite-generation hypothesis on p.
+Here N is arbitrary: no flatness, finite generation or annihilation hypothesis on the finite quotients. No noetherianity, localness, discriminant or regular-sequence hypothesis. No finite-generation hypothesis on p.
 
-One proof uses the following inputs and comparisons. Unfold only the specialized adapter and use its actual native object, morphism or transported scalar data. Use the listed native scalar transport or linearity law; for level zero, the actual quotient by the unit ideal and its tensor are zero.
+One proof uses the following inputs and comparisons. Unfold only the comparison just defined and use its native object, morphism or transported scalar data. Use the listed native scalar transport or linearity law; for level zero, the actual quotient by the unit ideal and its tensor are zero.
 
 At level n, G(n) is the actual native Â-module Qₙ⊗_Â N. No identification of an ordinary completed tensor product with this limit is assumed.
 
@@ -3892,9 +3882,9 @@ At level n, G(n) is the actual native Â-module Qₙ⊗_Â N. No identification 
 
 Under coefficient convention C7. Construct G:ℕᵒᵖ→ModuleCat(Â), with object Qₙ⊗_Â N and transition τᵢⱼ⊗id_N for i≤j. This is the native Â-linear diagram before scalar restriction. For i≤j, G(j→i)(q⊗z)=τᵢⱼ(q)⊗z over Â, with the actual quotient coefficient actions.
 
-Here N is arbitrary: no flatness, finite generation or finite-quotient-annihilation hypothesis. No noetherianity, localness, discriminant or regular-sequence hypothesis. No finite-generation hypothesis on p.
+Here N is arbitrary: no flatness, finite generation or annihilation hypothesis on the finite quotients. No noetherianity, localness, discriminant or regular-sequence hypothesis. No finite-generation hypothesis on p.
 
-One proof uses the following inputs and comparisons. Unfold only the specialized adapter and use its actual native object, morphism or transported scalar data. Use the listed native scalar transport or linearity law; for level zero, the actual quotient by the unit ideal and its tensor are zero.
+One proof uses the following inputs and comparisons. Unfold only the comparison just defined and use its native object, morphism or transported scalar data. Use the listed native scalar transport or linearity law; for level zero, the actual quotient by the unit ideal and its tensor are zero.
 
 For i≤j, G(j→i)(q⊗z)=τᵢⱼ(q)⊗z over Â, with the actual quotient coefficient actions. No identification of an ordinary completed tensor product with this limit is assumed.
 
@@ -3906,9 +3896,9 @@ For i≤j, G(j→i)(q⊗z)=τᵢⱼ(q)⊗z over Â, with the actual quotient coe
 
 Under coefficient convention C7. Construct G:ℕᵒᵖ→ModuleCat(Â), with object Qₙ⊗_Â N and transition τᵢⱼ⊗id_N for i≤j. This is the native Â-linear diagram before scalar restriction. For any j and x∈G(j), G(j→0)(x)=0 because Q₀=R/R=0.
 
-Here N is arbitrary: no flatness, finite generation or finite-quotient-annihilation hypothesis. No noetherianity, localness, discriminant or regular-sequence hypothesis. No finite-generation hypothesis on p.
+Here N is arbitrary: no flatness, finite generation or annihilation hypothesis on the finite quotients. No noetherianity, localness, discriminant or regular-sequence hypothesis. No finite-generation hypothesis on p.
 
-One proof uses the following inputs and comparisons. Unfold only the specialized adapter and use its actual native object, morphism or transported scalar data. Use the listed native scalar transport or linearity law; for level zero, the actual quotient by the unit ideal and its tensor are zero.
+One proof uses the following inputs and comparisons. Unfold only the comparison just defined and use its native object, morphism or transported scalar data. Use the listed native scalar transport or linearity law; for level zero, the actual quotient by the unit ideal and its tensor are zero.
 
 For any j and x∈G(j), G(j→0)(x)=0 because Q₀=R/R=0. No identification of an ordinary completed tensor product with this limit is assumed.
 
@@ -3920,7 +3910,7 @@ For any j and x∈G(j), G(j→0)(x)=0 because Q₀=R/R=0. No identification of a
 
 Under coefficient convention C7. Construct the natural isomorphism ρ from the A-linear completed-tensor diagram F̂ to G followed by native restriction of scalars along A→Â. Both components are the identity on actual tensors; morphisms are the same restricted Â-linear quotient transitions.
 
-Here N is arbitrary: no flatness, finite generation or finite-quotient-annihilation hypothesis. No noetherianity, localness, discriminant or regular-sequence hypothesis. No finite-generation hypothesis on p.
+Here N is arbitrary: no flatness, finite generation or annihilation hypothesis on the finite quotients. No noetherianity, localness, discriminant or regular-sequence hypothesis. No finite-generation hypothesis on p.
 
 One proof uses the following inputs and comparisons. Compare the actual object carriers and restricted module actions by unfolding their native definitions. Use identity components; naturality identifies the same actual quotient transition before and after scalar restriction.
 
@@ -3946,7 +3936,7 @@ The construction has the following API.
 
 Under coefficient convention C5. Construct eₙ:R̂→ₐ[Â]Qₙ whose underlying ring map is the native completion evaluation at n.
 
-Here No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
+No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
 
 One proof uses the following inputs and comparisons. Use the actual completed coefficient algebra and the inherited completionCoefficientHom_eval square to prove that evaluation preserves Â coefficients.
 
@@ -3958,9 +3948,9 @@ The construction has the following API.
 
 **Checks.**
 
-- On the native completion image of r∈R, evaluation gives its actual class modulo mⁿ.
+- Take A=ℤ, γ=δ=s=t=0, p=(2) and m=2R, so R=ℤ[u,v]/(u²), Â=ℤ₂ and Qₙ=(ℤ/2ⁿ)[u,v]/(u²). The element `σ=Σ_{k≥0}2^k v^k` of R̂ evaluates to 1+2v in Q₂ and to 1+2v+4v² in Q₃. Evaluation modulo m instead of mⁿ would give 1 at every level.
 - Each actual completed-chart evaluation sends zero to zero.
-- Evaluation sends b·u to b times evaluation of u for every b∈Â.
+- In the same fixture the scalar 1/3∈Â sends e₂(1)=1 to 3 in Q₂, since 3·3≡1 modulo 4; Â-linearity forces e₂((1/3)·1)=3, which no ℤ-linear evaluation determines.
 
 (Deduction using `AdicCompletion.transitionMap_comp_eval_apply` in `Mathlib/RingTheory/AdicCompletion/Basic.lean`, line 414, and `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [the actual completed coefficient algebra](#2123-the-actual-completed-coefficient-algebra), [completed coefficients at finite level](#2122-completed-coefficients-at-finite-level), [finite quotient transition over completed coefficients](#2106-finite-quotient-transition-over-completed-coefficients), [native completed-coefficient tensor diagram](#2160-native-completed-coefficient-tensor-diagram).; [knudsen2](#references), Appendix Proposition 6, pp. 194–195, for the surrounding two-base completion problem; the displayed native diagram calculation is the deduction specified here.)
 
@@ -3970,7 +3960,7 @@ The construction has the following API.
 
 Under coefficient convention C5. For every family fₙ∈Qₙ satisfying τᵢⱼ(fⱼ)=fᵢ for i≤j, construct u∈R̂ from this actual family, without choosing representatives as mathematical data.
 
-Here No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
+No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
 
 One proof uses the following inputs and comparisons. Convert Qₙ to the native submodule quotient R/(mⁿ·R); prove its coherence by the supplied quotient equations and quotient representatives. The native subtype is reused, not redefined.
 
@@ -3982,9 +3972,9 @@ The construction has the following API.
 
 **Checks.**
 
-- Every quotient of an assembled compatible family is the supplied family member.
-- Assembling the identically zero compatible family produces zero in the actual completion.
-- Assembling all quotients of an existing element of R̂ recovers that element.
+- Take A=ℤ, γ=δ=s=t=0, p=(2) and m=2R, so R=ℤ[u,v]/(u²) and Qₙ=(ℤ/2ⁿ)[u,v]/(u²). The compatible family `fₙ=1+2v+⋯+2^{n−1}v^{n−1}` assembles to `σ=Σ_{k≥0}2^k v^k`, which is not the image of an element of R because its v-degrees are unbounded.
+- A family with f₁=1 and f₂=0 is not compatible, since τ₁₂(0)=0≠1; it is not an input of the assembly.
+- The constant family fₙ=u assembles to the image of u∈R, and the identically zero family to 0.
 
 (Deduction using `CategoryTheory.Limits.IsLimit.hom_ext` and `CategoryTheory.Limits.IsLimit.lift_self` in `Mathlib/CategoryTheory/Limits/IsLimit.lean`, lines 232 and 95; tensor components use `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [the actual completed coefficient algebra](#2123-the-actual-completed-coefficient-algebra), [finite quotient transition over completed coefficients](#2106-finite-quotient-transition-over-completed-coefficients), [native completed-coefficient tensor diagram](#2160-native-completed-coefficient-tensor-diagram).; [knudsen2](#references), Appendix Proposition 6, pp. 194–195, for the surrounding two-base completion problem; the displayed native diagram calculation is the deduction specified here.)
 
@@ -4010,7 +4000,7 @@ The proof evaluates on q⊗z, using `TensorProduct.map_tmul` and `TensorProduct.
 
 Under coefficient convention C1. For any Â-linear i:N→F and cone c over G_N, construct a cone over G_F with point c.pt and component (id_Qₙ⊗i)∘cₙ. The construction does not require a splitting.
 
-The uses a common universe for A and N, and explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed.
+A and N lie in one common universe and carry explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed.
 
 One proof uses the following inputs and comparisons. Combine c naturality with commutation of the actual quotient transition and native lTensor(i), proved by tensor induction.
 
@@ -4034,7 +4024,7 @@ The construction has the following API.
 
 Under coefficient convention C2. Construct H_L as the native Â-submodule of ∏ₙ Hom_R(L,Qₙ⊗_Â N) consisting of families h with τᵢⱼ(hⱼ(x))=hᵢ(x) for every i≤j and x∈L. This carrier exists for every N.
 
-Here Native A,N,L,K have a common universe with compatible A/Â-actions on N. Assembly, equivalence and the displayed API/test package use finite projective N over Â. No noetherian, local, discriminant or finiteness-over-A hypothesis. The carrier and forward maps exist for arbitrary N.
+Native A,N,L,K have a common universe with compatible A/Â-actions on N. Assembly, equivalence and the displayed API/test package use finite projective N over Â. No noetherian, local, discriminant or finiteness-over-A hypothesis. The carrier and forward maps exist for arbitrary N.
 
 One proof uses the following inputs and comparisons. Use the commuting R/Â tensor actions for pointwise Hom coefficients; linear transitions make the stated carrier closed under zero, addition and Â-scalars.
 
@@ -4290,7 +4280,7 @@ Use the actual signed P_J/P_D maps and native ModuleCat complex, projectivity an
 
 Under coefficient convention C3. For every Â-module N with the compatible restricted A-action, construct the R̂-linear map c_N:R̂⊗_A N→R̂⊗_Â N induced by r⊗n↦r⊗n.
 
-Here Only the displayed commutative-ring and ideal-containment assumptions are used. No noetherianity, localness, nontriviality, discriminant condition or flatness of N is required for these specialized adapters. The source completion criterion has additional noetherian/local hypotheses and is not proved here.
+Only the displayed commutative-ring and ideal-containment assumptions are used. No noetherianity, localness, nontriviality, discriminant condition or flatness of N is required for these comparisons. The source completion criterion has additional noetherian/local hypotheses and is not proved here.
 
 One proof uses the following inputs and comparisons. Specialize the existing generic compatible-scalar tensor map to the actual completed coefficient algebra and scalar tower. Do not construct a duplicate tensor carrier.
 
@@ -4399,9 +4389,9 @@ The construction has the following API.
 
 Under coefficient convention C7. Construct the natural isomorphism ρ from the A-linear completed-tensor diagram F̂ to G followed by native restriction of scalars along A→Â. Both components are the identity on actual tensors; morphisms are the same restricted Â-linear quotient transitions. The forward component ρₙ is the identity of the actual restricted tensor module.
 
-Here N is arbitrary: no flatness, finite generation or finite-quotient-annihilation hypothesis. No noetherianity, localness, discriminant or regular-sequence hypothesis. No finite-generation hypothesis on p.
+Here N is arbitrary: no flatness, finite generation or annihilation hypothesis on the finite quotients. No noetherianity, localness, discriminant or regular-sequence hypothesis. No finite-generation hypothesis on p.
 
-One proof uses the following inputs and comparisons. Unfold only the specialized adapter and use its actual native object, morphism or transported scalar data. Use the listed native scalar transport or linearity law; for level zero, the actual quotient by the unit ideal and its tensor are zero.
+One proof uses the following inputs and comparisons. Unfold only the comparison just defined and use its native object, morphism or transported scalar data. Use the listed native scalar transport or linearity law; for level zero, the actual quotient by the unit ideal and its tensor are zero.
 
 The forward component ρₙ is the identity of the actual restricted tensor module. No identification of an ordinary completed tensor product with this limit is assumed.
 
@@ -4413,9 +4403,9 @@ The forward component ρₙ is the identity of the actual restricted tensor modu
 
 Under coefficient convention C7. Construct the natural isomorphism ρ from the A-linear completed-tensor diagram F̂ to G followed by native restriction of scalars along A→Â. Both components are the identity on actual tensors; morphisms are the same restricted Â-linear quotient transitions. The inverse component ρₙ⁻¹ is the identity of the same restricted tensor module.
 
-Here N is arbitrary: no flatness, finite generation or finite-quotient-annihilation hypothesis. No noetherianity, localness, discriminant or regular-sequence hypothesis. No finite-generation hypothesis on p.
+Here N is arbitrary: no flatness, finite generation or annihilation hypothesis on the finite quotients. No noetherianity, localness, discriminant or regular-sequence hypothesis. No finite-generation hypothesis on p.
 
-One proof uses the following inputs and comparisons. Unfold only the specialized adapter and use its actual native object, morphism or transported scalar data. Use the listed native scalar transport or linearity law; for level zero, the actual quotient by the unit ideal and its tensor are zero.
+One proof uses the following inputs and comparisons. Unfold only the comparison just defined and use its native object, morphism or transported scalar data. Use the listed native scalar transport or linearity law; for level zero, the actual quotient by the unit ideal and its tensor are zero.
 
 The inverse component ρₙ⁻¹ is the identity of the same restricted tensor module. No identification of an ordinary completed tensor product with this limit is assumed.
 
@@ -4427,9 +4417,9 @@ The inverse component ρₙ⁻¹ is the identity of the same restricted tensor m
 
 Under coefficient convention C7. Construct the natural isomorphism ρ from the A-linear completed-tensor diagram F̂ to G followed by native restriction of scalars along A→Â. Both components are the identity on actual tensors; morphisms are the same restricted Â-linear quotient transitions. The completed diagram transition is exactly the restriction of G(j→i) along A→Â.
 
-Here N is arbitrary: no flatness, finite generation or finite-quotient-annihilation hypothesis. No noetherianity, localness, discriminant or regular-sequence hypothesis. No finite-generation hypothesis on p.
+Here N is arbitrary: no flatness, finite generation or annihilation hypothesis on the finite quotients. No noetherianity, localness, discriminant or regular-sequence hypothesis. No finite-generation hypothesis on p.
 
-One proof uses the following inputs and comparisons. Unfold only the specialized adapter and use its actual native object, morphism or transported scalar data. Use the listed native scalar transport or linearity law; for level zero, the actual quotient by the unit ideal and its tensor are zero.
+One proof uses the following inputs and comparisons. Unfold only the comparison just defined and use its native object, morphism or transported scalar data. Use the listed native scalar transport or linearity law; for level zero, the actual quotient by the unit ideal and its tensor are zero.
 
 The completed diagram transition is exactly the restriction of G(j→i) along A→Â. No identification of an ordinary completed tensor product with this limit is assumed.
 
@@ -4441,7 +4431,7 @@ The completed diagram transition is exactly the restriction of G(j→i) along A�
 
 Under coefficient convention C5. For every u∈R̂, eₙ(u)=AdicCompletion.evalₐ(m,n,u).
 
-Here No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
+No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
 
 One proof uses the following inputs and comparisons. Read the actual underlying ring homomorphism of eₙ.
 
@@ -4453,7 +4443,7 @@ One proof uses the following inputs and comparisons. Read the actual underlying 
 
 Under coefficient convention C5. For every coherent family f and every n, evalₙ(assemble(f))=fₙ.
 
-Here No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
+No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
 
 One proof uses the following inputs and comparisons. Cancel the two quotient casts using their actual factor maps on quotient representatives.
 
@@ -4465,7 +4455,7 @@ One proof uses the following inputs and comparisons. Cancel the two quotient cas
 
 Under coefficient convention C5. Construct ρₙ:R̂⊗_Â N→ₗ[Â]G(n) as eₙ⊗id_N.
 
-Here No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
+No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
 
 One proof uses the following inputs and comparisons. Right-tensor the actual completed-coefficient-linear evaluation; use precisely the G object, not a bespoke quotient tensor.
 
@@ -4489,7 +4479,7 @@ The construction has the following API.
 
 Under coefficient convention C5. On the native completion image of r∈R, evaluation gives its actual class modulo mⁿ.
 
-Here No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
+No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
 
 One proof uses the following inputs and comparisons. Use the specified native data/projection or inverse law; retain the actual coefficient action and carrier.
 
@@ -4501,7 +4491,7 @@ One proof uses the following inputs and comparisons. Use the specified native da
 
 Under coefficient convention C1. Construct P_N,n=eₙ⊗id_N:R̂⊗_Â N→ₗ[Â]Qₙ⊗_Â N using the actual completed-chart evaluation.
 
-The uses a common universe for A and N, and explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed.
+A and N lie in one common universe and carry explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed.
 
 One proof uses the following inputs and comparisons. Apply native LinearMap.rTensor to the Â-algebra evaluation; no finiteness is needed.
 
@@ -4513,9 +4503,9 @@ The construction has the following API.
 
 **Checks.**
 
-- Under coefficient convention C1. For every n, u∈R̂ and z∈N, P_N,n(u⊗z)=evalₙ(u)⊗z.
-- Under coefficient convention C1. For every compatible Â-module K, Â-linear f:N→K, n and x∈R̂⊗_Â N, P_K,n((id_R̂⊗f)(x))=(id_Qₙ⊗f)(P_N,n(x)).
-- Under coefficient convention C1. For every n, P_N,n(0)=0.
+- Take A=ℤ, γ=δ=s=t=0, p=(2) and m=2R, so R=ℤ[u,v]/(u²), Â=ℤ₂ and Qₙ=(ℤ/2ⁿ)[u,v]/(u²); put `σ=Σ_{k≥0}2^k v^k∈R̂`. With N=ℤ₂², P_N,2(σ⊗(1,1/3)) is (1+2v,3+2v) in `Q₂⊗_{ℤ₂}ℤ₂²≅Q₂²`, since 3(1+2v)=3+6v≡3+2v modulo 4.
+- In the same fixture with N=ℚ₂ every target `Qₙ⊗_{ℤ₂}ℚ₂` is 0, so every projection is zero although 1⊗1≠0 in `R̂⊗_{ℤ₂}ℚ₂=R̂[1/2]`. Joint injectivity of the projections needs the finiteness hypotheses of the limit statements.
+- For f the multiplication by 2 on N=ℤ₂, both composites send σ⊗1 to 2+4v≡2 in Q₂.
 
 (Deduction using `Matrix.mulVecLin_apply` in `Mathlib/LinearAlgebra/Matrix/ToLin.lean`, line 291, and `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [completed-chart coefficient-linear evaluation](#2186-completed-chart-coefficient-linear-evaluation), [native completed-coefficient tensor diagram](#2160-native-completed-coefficient-tensor-diagram).; [knudsen2](#references), Appendix Proposition 6, pp. 194–195, for the surrounding two-base completion problem; the displayed native diagram calculation is the deduction specified here.)
 
@@ -4525,7 +4515,7 @@ The construction has the following API.
 
 Under coefficient convention C1. At n and x∈c.pt, the embedded cone component is (id_Qₙ⊗i)(cₙ(x)).
 
-The uses a common universe for A and N, and explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed.
+A and N lie in one common universe and carry explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed.
 
 One proof uses the following inputs and comparisons. Read the computed cone component.
 
@@ -4537,7 +4527,7 @@ One proof uses the following inputs and comparisons. Read the computed cone comp
 
 Under coefficient convention C1. For j≤k, its k-component followed by G_F(k→j) equals its j-component.
 
-The uses a common universe for A and N, and explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed.
+A and N lie in one common universe and carry explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed.
 
 One proof uses the following inputs and comparisons. Use the native naturality field of the embedded cone.
 
@@ -4549,7 +4539,7 @@ One proof uses the following inputs and comparisons. Use the native naturality f
 
 Under coefficient convention C1. For the zero map i:N→F, every component of the embedded cone is zero; this is a cone computation and does not assert that zero is a splitting.
 
-The uses a common universe for A and N, and explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed.
+A and N lie in one common universe and carry explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed.
 
 One proof uses the following inputs and comparisons. Use native LinearMap.lTensor_zero on the actual cone component.
 
@@ -4561,7 +4551,7 @@ One proof uses the following inputs and comparisons. Use native LinearMap.lTenso
 
 Under coefficient convention C2. For h∈H_L, i≤j and x∈L, τᵢⱼ(hⱼ(x))=hᵢ(x).
 
-Here Native A,N,L,K have a common universe with compatible A/Â-actions on N. Assembly, equivalence and the displayed API/test package use finite projective N over Â. No noetherian, local, discriminant or finiteness-over-A hypothesis. The carrier and forward maps exist for arbitrary N.
+Native A,N,L,K have a common universe with compatible A/Â-actions on N. Assembly, equivalence and the displayed API/test package use finite projective N over Â. No noetherian, local, discriminant or finiteness-over-A hypothesis. The carrier and forward maps exist for arbitrary N.
 
 One proof uses the following inputs and comparisons. Read the native submodule membership equation.
 
@@ -4573,7 +4563,7 @@ One proof uses the following inputs and comparisons. Read the native submodule m
 
 Under coefficient convention C2. For every n and x∈L, the zero element of H_L has value zero at (n,x).
 
-Here Native A,N,L,K have a common universe with compatible A/Â-actions on N. Assembly, equivalence and the displayed API/test package use finite projective N over Â. No noetherian, local, discriminant or finiteness-over-A hypothesis. The carrier and forward maps exist for arbitrary N.
+Native A,N,L,K have a common universe with compatible A/Â-actions on N. Assembly, equivalence and the displayed API/test package use finite projective N over Â. No noetherian, local, discriminant or finiteness-over-A hypothesis. The carrier and forward maps exist for arbitrary N.
 
 One proof uses the following inputs and comparisons. Read the pointwise native zero operation.
 
@@ -4585,7 +4575,7 @@ One proof uses the following inputs and comparisons. Read the pointwise native z
 
 Under coefficient convention C2. Two members h,k∈H_L are equal if hₙ(x)=kₙ(x) for all n and x.
 
-Here Native A,N,L,K have a common universe with compatible A/Â-actions on N. Assembly, equivalence and the displayed API/test package use finite projective N over Â. No noetherian, local, discriminant or finiteness-over-A hypothesis. The carrier and forward maps exist for arbitrary N.
+Native A,N,L,K have a common universe with compatible A/Â-actions on N. Assembly, equivalence and the displayed API/test package use finite projective N over Â. No noetherian, local, discriminant or finiteness-over-A hypothesis. The carrier and forward maps exist for arbitrary N.
 
 One proof uses the following inputs and comparisons. Use Subtype.ext, function extensionality and native LinearMap.ext.
 
@@ -4629,7 +4619,7 @@ Here A is any commutative ring, including the zero ring; γ,δ,s,t∈A. No noeth
 
 One proof uses the following inputs and comparisons. Identify the two sides with R′×A′ by the normal equivalences and ring base change. The relation d′φ(ε(j))=b′φ(j) and regularity of d′ identify the mapped generator with ε′. Exact monic division for P,Q commutes with coefficient mapping; hence φ(Kr)=K′φ(r). The correction formula proves compatibility with the scalar action of φ(r), and pure tensors specify the natural evaluation comparison.
 
-The native canonical dual adapter, tensor action, R′-linearity, identity/composition and actual quotient comparison have declaration-sized signatures. No completed-local or global sheaf conclusion follows.
+The native canonical dual comparison, tensor action, R′-linearity, identity/composition and quotient comparison are separate statements. No completed-local or global sheaf conclusion follows.
 
 ([knudsen2012](#references), §3, printed pp.11–12: monic division, κ/λ comparisons and proof of Proposition3.1.)
 
@@ -4639,7 +4629,7 @@ The native canonical dual adapter, tensor action, R′-linearity, identity/compo
 
 Under coefficient convention C9. If K:R→R and K′:R′→R′ are the coefficient-linear corrections dK(r)=b(r−ιev(r)) and d′K′(r′)=b′(r′−ι′ev′(r′)), then φ(K(r))=K′(φ(r)) for every r.
 
-Here All coefficient rings are commutative and may have zero divisors or be the zero ring. No noetherianity, unit discriminant, injectivity or flatness of f is required. Statements concern the explicit polynomial model, not arbitrary nodal families.
+All coefficient rings are commutative and may have zero divisors or be the zero ring. No noetherianity, unit discriminant, injectivity or flatness of f is required. Statements concern the explicit polynomial model, not arbitrary nodal families.
 
 One proof uses the following inputs and comparisons. Apply φ to the defining correction equation; naturality of evaluation changes its right side into the primed correction right side. Subtract the primed equation at φ(r); regularity of d′ forces equality. No injectivity of φ or flatness of f is used. The native proof applies the existing target-coordinate regularity to the two characterized corrections. The named canonical specialization is also proved by the two actual ideal-valued naturality lemmas. Neither proof uses the unproved dual tensor equivalence.
 
@@ -4763,7 +4753,7 @@ The construction has the following API.
 
 For every commutative ring A and γ,δ,s,t∈A, put q(X,Y)=X²+γXY+δY², R=A[Y][X]/(q(X,Y)−q(s,t)), ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), incl:J→R, and ε∈D with dε(j)=bj. Write η=Module.Dual.eval R J. For every F∈Hom_R(D,R), η(ψ(F))=F.
 
-Here No noetherianity, invertible discriminant, nonzero coefficient ring or nonzero parameters are assumed. Duals here are R-linear.
+No noetherianity, invertible discriminant, nonzero coefficient ring or nonzero parameters are assumed. Duals here are R-linear.
 
 One proof uses the following inputs and comparisons. Set j=ψ(F), so F(incl)=j. Both dF(ε) and dε(j) equal bj; cancel the regular coordinate d to get F(ε)=ε(j). Write every h∈D as z₀·incl−z₁·ε using the actual dual presentation. R-linearity and equality on incl and ε give h(j)=F(h), hence extensional equality.
 
@@ -4841,9 +4831,9 @@ Use the actual signed P_J/P_D maps and native ModuleCat complex, projectivity an
 
 The construction has the following API.
 
-- For any commutative ring A and γ,δ,s,t∈A, use the actual polynomial ring R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), its coefficient map ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt and a=ιδ·v+ιδ·ιt+ιγ·u. Set J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), and the signed presentations P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε.  Put F=R² with its native R-module structure. For e∈{false,true} write B(e,n)=Φ if (n mod 2=0) has the same truth value as e=true, and Ψ otherwise. C(e) has F in every degree n≥0, differential `C(e)_{n+1}→C(e)_n` given by B(e,n), and zero off that shape. P_J∘B(false,0)=P_J∘Ψ=0.
-- For any commutative ring A and γ,δ,s,t∈A, use the actual polynomial ring R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), its coefficient map ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt and a=ιδ·v+ιδ·ιt+ιγ·u. Set J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), and the signed presentations P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε.  Put F=R² with its native R-module structure. For e∈{false,true} write B(e,n)=Φ if (n mod 2=0) has the same truth value as e=true, and Ψ otherwise. C(e) has F in every degree n≥0, differential `C(e)_{n+1}→C(e)_n` given by B(e,n), and zero off that shape. π_J.f 0=ModuleCat.ofHom(P_J), including the prescribed negative second generator.
-- For any commutative ring A and γ,δ,s,t∈A, use the actual polynomial ring R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), its coefficient map ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt and a=ιδ·v+ιδ·ιt+ιγ·u. Set J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), and the signed presentations P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε.  Put F=R² with its native R-module structure. For e∈{false,true} write B(e,n)=Φ if (n mod 2=0) has the same truth value as e=true, and Ψ otherwise. C(e) has F in every degree n≥0, differential `C(e)_{n+1}→C(e)_n` given by B(e,n), and zero off that shape. π_J is a QuasiIso: its map on native homology is an isomorphism in every degree.
+- P_J∘B(false,0)=P_J∘Ψ=0.
+- π_J.f 0=ModuleCat.ofHom(P_J), including the prescribed negative second generator.
+- π_J is a QuasiIso: its map on native homology is an isomorphism in every degree.
 
 **Checks.**
 
@@ -4867,9 +4857,9 @@ Use the actual signed P_J/P_D maps and native ModuleCat complex, projectivity an
 
 The construction has the following API.
 
-- For any commutative ring A and γ,δ,s,t∈A, use the actual polynomial ring R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), its coefficient map ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt and a=ιδ·v+ιδ·ιt+ιγ·u. Set J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), and the signed presentations P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε.  Put F=R² with its native R-module structure. For e∈{false,true} write B(e,n)=Φ if (n mod 2=0) has the same truth value as e=true, and Ψ otherwise. C(e) has F in every degree n≥0, differential `C(e)_{n+1}→C(e)_n` given by B(e,n), and zero off that shape. P_D∘B(true,0)=P_D∘Φ=0.
-- For any commutative ring A and γ,δ,s,t∈A, use the actual polynomial ring R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), its coefficient map ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt and a=ιδ·v+ιδ·ιt+ιγ·u. Set J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), and the signed presentations P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε.  Put F=R² with its native R-module structure. For e∈{false,true} write B(e,n)=Φ if (n mod 2=0) has the same truth value as e=true, and Ψ otherwise. C(e) has F in every degree n≥0, differential `C(e)_{n+1}→C(e)_n` given by B(e,n), and zero off that shape. π_D.f 0=ModuleCat.ofHom(P_D), including the prescribed negative ε generator.
-- For any commutative ring A and γ,δ,s,t∈A, use the actual polynomial ring R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), its coefficient map ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt and a=ιδ·v+ιδ·ιt+ιγ·u. Set J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), and the signed presentations P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε.  Put F=R² with its native R-module structure. For e∈{false,true} write B(e,n)=Φ if (n mod 2=0) has the same truth value as e=true, and Ψ otherwise. C(e) has F in every degree n≥0, differential `C(e)_{n+1}→C(e)_n` given by B(e,n), and zero off that shape. π_D is a QuasiIso: its map on native homology is an isomorphism in every degree.
+- P_D∘B(true,0)=P_D∘Φ=0.
+- π_D.f 0=ModuleCat.ofHom(P_D), including the prescribed negative ε generator.
+- π_D is a QuasiIso: its map on native homology is an isomorphism in every degree.
 
 **Checks.**
 
@@ -4885,7 +4875,7 @@ The construction has the following API.
 
 Under coefficient convention C3. For every such N, r∈R̂ and n∈N, c_N(r⊗_A n)=r⊗_Â n.
 
-Here Only the displayed commutative-ring and ideal-containment assumptions are used. No noetherianity, localness, nontriviality, discriminant condition or flatness of N is required for these specialized adapters. The source completion criterion has additional noetherian/local hypotheses and is not proved here.
+Only the displayed commutative-ring and ideal-containment assumptions are used. No noetherianity, localness, nontriviality, discriminant condition or flatness of N is required for these comparisons. The source completion criterion has additional noetherian/local hypotheses and is not proved here.
 
 One proof uses the following inputs and comparisons. Use the pure-tensor law of the imported native map.
 
@@ -4899,7 +4889,7 @@ Use the inherited polynomial nodal chart, native ideal quotients and actual Adic
 
 Under coefficient convention C3. For every such N, c_N is surjective. No flatness or finite-generation assumption is placed on N.
 
-Here Only the displayed commutative-ring and ideal-containment assumptions are used. No noetherianity, localness, nontriviality, discriminant condition or flatness of N is required for these specialized adapters. The source completion criterion has additional noetherian/local hypotheses and is not proved here.
+Only the displayed commutative-ring and ideal-containment assumptions are used. No noetherianity, localness, nontriviality, discriminant condition or flatness of N is required for these comparisons. The source completion criterion has additional noetherian/local hypotheses and is not proved here.
 
 One proof uses the following inputs and comparisons. Import generic surjectivity, whose proof is tensor induction on zero, pure tensors and sums.
 
@@ -4913,7 +4903,7 @@ Use the inherited polynomial nodal chart, native ideal quotients and actual Adic
 
 Under coefficient convention C3. As an Â-submodule, ker(c_N)=span_Â{(a•r)⊗_A n−r⊗_A(a•n):a∈Â,r∈R̂,n∈N}; restrict the R̂-linear map to Â to state this exact kernel.
 
-Here Only the displayed commutative-ring and ideal-containment assumptions are used. No noetherianity, localness, nontriviality, discriminant condition or flatness of N is required for these specialized adapters. The source completion criterion has additional noetherian/local hypotheses and is not proved here.
+Only the displayed commutative-ring and ideal-containment assumptions are used. No noetherianity, localness, nontriviality, discriminant condition or flatness of N is required for these comparisons. The source completion criterion has additional noetherian/local hypotheses and is not proved here.
 
 One proof uses the following inputs and comparisons. Specialize the native generic kernel theorem. The explicit scalar restriction agrees definitionally with the Â-linear native map. This identifies a quotient and makes no assertion that its kernel is zero.
 
@@ -4987,9 +4977,7 @@ Here A is any commutative ring; R is the existing polynomial nodal chart Ring A 
 
 One proof uses the following inputs and comparisons. Use the actual Â-linear quotient transition and restrict its scalars along A→Â for the source tensor map. Tensor induction reduces equality to zero, sums and q⊗z. The inherited forward pure-tensor formula and native rTensor formula send both sides to factorPow(q)⊗z. All arbitrary finite tensor sums are covered. No flatness, finite generation or discrete p-power action on N is assumed.
 
-For every i≤j and x∈(R/mʲ)⊗_A N, first transition over A and then apply the level-i comparison equals first apply the level-j comparison and then transition over Â.
-
-([knudsen2](#references), Knudsen II Appendix Propositions6–7, printed194–195/PDF34–35: motivation for the separate completed-local comparison; authored finite-transition deduction from the incoming polynomial adapters and pinned Mathlib maps.)
+([knudsen2](#references), Knudsen II Appendix Propositions6–7, printed194–195/PDF34–35: motivation for the separate completed-local comparison; the finite-transition deduction uses the polynomial comparisons above and pinned Mathlib maps.)
 
 *Needs:* [finite quotient transition over completed coefficients](#2106-finite-quotient-transition-over-completed-coefficients), [finite comparison on pure tensors](#2206-finite-comparison-on-pure-tensors), [the finite chart scalar tower](#2105-the-finite-chart-scalar-tower), `LinearMap.restrictScalars`, `LinearMap.rTensor`, `LinearMap.rTensor_tmul`.
 
@@ -5001,9 +4989,7 @@ Here A is any commutative ring; R is the existing polynomial nodal chart Ring A 
 
 One proof uses the following inputs and comparisons. Apply tensor induction over Â. The inherited inverse pure-tensor formula and the actual restricted transition take q⊗z to factorPow(q)⊗z; additivity supplies all sums. This is an actual inverse compatibility equation, not an assertion that arbitrary independent levelwise inverses form a compatible family.
 
-For every i≤j and x∈(R/mʲ)⊗_Â N, the level-i inverse after transition equals the A-transition after the level-j inverse.
-
-([knudsen2](#references), Knudsen II Appendix Propositions6–7, printed194–195/PDF34–35: motivation for the separate completed-local comparison; authored finite-transition deduction from the incoming polynomial adapters and pinned Mathlib maps.)
+([knudsen2](#references), Knudsen II Appendix Propositions6–7, printed194–195/PDF34–35: motivation for the separate completed-local comparison; the finite-transition deduction uses the polynomial comparisons above and pinned Mathlib maps.)
 
 *Needs:* [finite quotient transition over completed coefficients](#2106-finite-quotient-transition-over-completed-coefficients), [inverse finite comparison on pure tensors](#2207-inverse-finite-comparison-on-pure-tensors), [the finite chart scalar tower](#2105-the-finite-chart-scalar-tower), `LinearMap.restrictScalars`, `LinearMap.rTensor`, `LinearMap.rTensor_tmul`.
 
@@ -5015,9 +5001,7 @@ Here A is any commutative ring; R is the existing polynomial nodal chart Ring A 
 
 One proof uses the following inputs and comparisons. Restrict f to A for the source tensor and retain its original Â-linear structure for the target tensor. For a pure tensor q⊗z, both paths are q⊗f(z) by the native lTensor law and inherited finite comparison formula. Extend by tensor induction. Both coefficient modules are arbitrary; torsion and nonflat examples are allowed.
 
-For every Â-linear f:N→N′, applying id⊗f over A and then the finite comparison equals applying the finite comparison and then id⊗f over Â.
-
-([knudsen2](#references), Knudsen II Appendix Propositions6–7, printed194–195/PDF34–35: motivation for the separate completed-local comparison; authored finite-transition deduction from the incoming polynomial adapters and pinned Mathlib maps.)
+([knudsen2](#references), Knudsen II Appendix Propositions6–7, printed194–195/PDF34–35: motivation for the separate completed-local comparison; the finite-transition deduction uses the polynomial comparisons above and pinned Mathlib maps.)
 
 *Needs:* [finite comparison on pure tensors](#2206-finite-comparison-on-pure-tensors), [the finite chart scalar tower](#2105-the-finite-chart-scalar-tower), `LinearMap.restrictScalars`, `LinearMap.lTensor`, `LinearMap.lTensor_tmul`.
 
@@ -5029,9 +5013,7 @@ Here A is any commutative ring; R is the existing polynomial nodal chart Ring A 
 
 One proof uses the following inputs and comparisons. Use tensor induction over Â and the inherited inverse pure-tensor equation. Check the exact restriction of f to A on the target side; both paths take q⊗z to q⊗f(z). Together with forward naturality and the inherited inverse laws, this gives a coefficient-natural family of levelwise equivalences.
 
-For every Â-linear f:N→N′, the inverse finite comparison intertwines id⊗f over Â with id⊗f over A.
-
-([knudsen2](#references), Knudsen II Appendix Propositions6–7, printed194–195/PDF34–35: motivation for the separate completed-local comparison; authored finite-transition deduction from the incoming polynomial adapters and pinned Mathlib maps.)
+([knudsen2](#references), Knudsen II Appendix Propositions6–7, printed194–195/PDF34–35: motivation for the separate completed-local comparison; the finite-transition deduction uses the polynomial comparisons above and pinned Mathlib maps.)
 
 *Needs:* [inverse finite comparison on pure tensors](#2207-inverse-finite-comparison-on-pure-tensors), [the finite chart scalar tower](#2105-the-finite-chart-scalar-tower), `LinearMap.restrictScalars`, `LinearMap.lTensor`, `LinearMap.lTensor_tmul`.
 
@@ -5039,7 +5021,7 @@ For every Â-linear f:N→N′, the inverse finite comparison intertwines id⊗f
 
 Under coefficient convention C5. For u∈R̂ and z∈N, ρₙ(u⊗z)=evalₙ(u)⊗z over Â.
 
-Here No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
+No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
 
 One proof uses the following inputs and comparisons. Use the native right-tensor evaluation rule.
 
@@ -5051,7 +5033,7 @@ One proof uses the following inputs and comparisons. Use the native right-tensor
 
 Under coefficient convention C5. For x∈R̂⊗_Â N and k∈Fin(r), cₙ(ρₙx)(k)=eₙ(ĉ(x)(k)), where ĉ is the pinned piScalarRight equivalence for R̂.
 
-Here No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
+No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
 
 One proof uses the following inputs and comparisons. Prove the coordinate equation on pure tensors by eₙ's Â-linearity and extend by native tensor induction.
 
@@ -5063,7 +5045,7 @@ One proof uses the following inputs and comparisons. Prove the coordinate equati
 
 Under coefficient convention C5. Construct an actual Cone(G) with point ModuleCat(Â,R̂⊗_Â N) and projections ρₙ.
 
-Here No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
+No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
 
 One proof uses the following inputs and comparisons. Prove its naturality from the actual quotient evaluation coherence on pure tensors and native tensor induction.
 
@@ -5087,7 +5069,7 @@ The construction has the following API.
 
 Under coefficient convention C5. For any actual cone C over G, x∈C.pt and k∈Fin(r), assemble the quotient family n↦cₙ(C.πₙ(x))(k) into an element of R̂.
 
-Here No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
+No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
 
 One proof uses the following inputs and comparisons. Derive quotient coherence from C's native naturality and cₙ's transition equation, then apply the actual chart family assembly.
 
@@ -5099,9 +5081,9 @@ The construction has the following API.
 
 **Checks.**
 
-- Every lifted coordinate has precisely the quotients prescribed by the native cone.
-- The coordinate lift sends the zero cone element to zero in R̂.
-- For the ordinary cone itself, the lift coordinate of u⊗z is exactly z(k)·u.
+- Take A=ℤ, γ=δ=s=t=0, p=(2) and m=2R, so R=ℤ[u,v]/(u²), Â=ℤ₂ and Qₙ=(ℤ/2ⁿ)[u,v]/(u²); put `σ=Σ_{k≥0}2^k v^k∈R̂`. With r=2 and the ordinary cone, the two coordinates of σ⊗(1,1/3) lift to σ and (1/3)σ, with level-2 quotients 1+2v and 3+2v.
+- For x=u⊗(0,1) the first coordinate lifts to 0 and the second to u. A lift that ignored the index k would give equal coordinates.
+- For the cone with point ℤ₂ and legs `a↦a(1+2v+⋯+2^{n−1}v^{n−1})⊗(1,0)`, the first coordinate of 1 lifts to σ and the second to 0.
 
 (Deduction using `TensorProduct.piScalarRightHom_tmul` in `Mathlib/LinearAlgebra/TensorProduct/Pi.lean`, line 139, and `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [assembly of completed-chart quotient families](#2187-assembly-of-completed-chart-quotient-families), [the actual completed coefficient algebra](#2123-the-actual-completed-coefficient-algebra), [finite-free quotient tensor coordinates](#2188-finite-free-quotient-tensor-coordinates), [finite quotient transition over completed coefficients](#2106-finite-quotient-transition-over-completed-coefficients), [native completed-coefficient tensor diagram](#2160-native-completed-coefficient-tensor-diagram).; [knudsen2](#references), Appendix Proposition 6, pp. 194–195, for the surrounding two-base completion problem; the displayed native diagram calculation is the deduction specified here.)
 
@@ -5111,7 +5093,7 @@ The construction has the following API.
 
 Under coefficient convention C5. Assembling the identically zero compatible family produces zero in the actual completion.
 
-Here No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
+No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
 
 One proof uses the following inputs and comparisons. Use the specified native data/projection or inverse law; retain the actual coefficient action and carrier.
 
@@ -5123,7 +5105,7 @@ One proof uses the following inputs and comparisons. Use the specified native da
 
 Under coefficient convention C5. Assembling all quotients of an existing element of R̂ recovers that element.
 
-Here No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
+No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
 
 One proof uses the following inputs and comparisons. Use the specified native data/projection or inverse law; retain the actual coefficient action and carrier.
 
@@ -5135,7 +5117,7 @@ One proof uses the following inputs and comparisons. Use the specified native da
 
 Under coefficient convention C1. For u∈R̂ and z∈N, P_N,n(u⊗z)=evalₙ(u)⊗z.
 
-The uses a common universe for A and N, and explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed.
+A and N lie in one common universe and carry explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed.
 
 One proof uses the following inputs and comparisons. Read the native rTensor pure-tensor formula.
 
@@ -5147,7 +5129,7 @@ One proof uses the following inputs and comparisons. Read the native rTensor pur
 
 Under coefficient convention C1. For every compatible Â-module K and Â-linear f:N→K, P_K,n∘(id_R̂⊗f)=(id_Qₙ⊗f)∘P_N,n.
 
-The uses a common universe for A and N, and explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed.
+A and N lie in one common universe and carry explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed.
 
 One proof uses the following inputs and comparisons. Induct on actual tensors: both composites agree on every pure tensor, zero and sums.
 
@@ -5159,7 +5141,7 @@ One proof uses the following inputs and comparisons. Induct on actual tensors: b
 
 Under coefficient convention C1. Construct a native Cone G_N with point ModuleCat.of Â (R̂⊗_Â N) and components P_N,n.
 
-The uses a common universe for A and N, and explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed.
+A and N lie in one common universe and carry explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed.
 
 One proof uses the following inputs and comparisons. Use the actual quotient-transition/evaluation square on pure tensors to prove naturality.
 
@@ -5183,7 +5165,7 @@ The construction has the following API.
 
 Under coefficient convention C1. For every n, P_N,n(0)=0.
 
-The uses a common universe for A and N, and explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed.
+A and N lie in one common universe and carry explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed.
 
 One proof uses the following inputs and comparisons. Use the native linear-map zero law.
 
@@ -5195,7 +5177,7 @@ One proof uses the following inputs and comparisons. Use the native linear-map z
 
 Under coefficient convention C2. For r∈R and x∈T, Pₙ(r·x)=r·Pₙ(x), using the actual R-actions.
 
-Here Native A,N,L,K have a common universe with compatible A/Â-actions on N. Assembly, equivalence and the displayed API/test package use finite projective N over Â. No noetherian, local, discriminant or finiteness-over-A hypothesis. The carrier and forward maps exist for arbitrary N.
+Native A,N,L,K have a common universe with compatible A/Â-actions on N. Assembly, equivalence and the displayed API/test package use finite projective N over Â. No noetherian, local, discriminant or finiteness-over-A hypothesis. The carrier and forward maps exist for arbitrary N.
 
 One proof uses the following inputs and comparisons. Use tensor induction and R-linearity of the native algebra evaluation evalₙ:R̂→Qₙ.
 
@@ -5223,7 +5205,7 @@ Set q=X²+γXY+δY², F=q(X,Y)−q(s,t), R=A[Y][X]/(F), u=[X], v=[Y], ι:A→R, 
 
 Here A is any commutative ring, including the zero ring; γ,δ,s,t∈A. No noetherianity, regularity of A or unit discriminant is assumed for this polynomial-model statement.
 
-One proof uses the following inputs and comparisons. Normal coordinates identify D with R×A as A-modules. The right side is A-free; transport and apply the existing free-flat instance. An alternative proof uses section-dual-coefficient-free and the existing projective/free-flat instance. 
+One proof uses the following inputs and comparisons. Normal coordinates identify D with R×A as A-modules. The right side is A-free; transport and apply the existing free-flat instance. An alternative proof uses [coefficient freeness of the actual section dual](#2231-coefficient-freeness-of-the-actual-section-dual) and the existing projective/free-flat instance. 
 
 The theorem is about the actual R-linear dual with restriction to A.
 
@@ -5235,7 +5217,7 @@ The theorem is about the actual R-linear dual with restriction to A.
 
 Under coefficient convention C9. Construct the canonical A′-linear equivalence E_D:A′⊗_A D≃D′ characterized by E_D(a′⊗h)(φ(j))=ι′a′φ(h(j)). It is identity-compatible and composition-compatible under the canonical heterobasic base-change cancellation a″⊗(a′⊗h)↦a″g(a′)⊗h: for g:A′→A″, `E_{D,g}(a″⊗E_{D,f}(a′⊗h))=E_{D,gf}(a″g(a′)⊗h)`.
 
-Here All coefficient rings are commutative and may have zero divisors or be the zero ring. No noetherianity, unit discriminant, injectivity or flatness of f is required. Statements concern the explicit polynomial model, not arbitrary nodal families.
+All coefficient rings are commutative and may have zero divisors or be the zero ring. No noetherianity, unit discriminant, injectivity or flatness of f is required. Statements concern the explicit polynomial model, not arbitrary nodal families.
 
 One proof uses the following inputs and comparisons. Identify the mapped-polynomial quotient in the existing tensor theorem with R′ by coefficientwise mapping of the explicit polynomial; transport the ideal and dual through that equality. Pure-tensor evaluation determines the dual map because φ(c),φ(d) generate J′ as an R′-ideal; do not assume φ(J) is all of J′ as a set. For the identity, compare evaluations on c,d. For composition, evaluate the two nested maps on φ_gφ_f(c),φ_gφ_f(d), and use coefficient-map composition. Use the baseline heterobasic base-change cancellation `A″⊗_{A′}(A′⊗_A D)≃A″⊗_A D`, sending a″⊗(a′⊗h) to a″g(a′)⊗h. Tensor generation extends the displayed formula to the full comparison square.
 
@@ -5246,7 +5228,7 @@ The construction has the following API.
 - E_D(a′⊗h)(φ(j))=ι′a′φ(h(j)).
 - `E_{D,id}(a⊗h)=a·h`.
 - `E_{D,g}(a″⊗E_{D,f}(a′⊗h))=E_{D,gf}(a″g(a′)⊗h)` under the canonical heterobasic base-change cancellation.
-- E_D(a′⊗(r·h))=φ(r)·E_D(a′⊗h). This is the pure-tensor consequence of section-dual-tensor-scalar.
+- E_D(a′⊗(r·h))=φ(r)·E_D(a′⊗h). This is the pure-tensor case of the R-linearity of E_D.
 
 **Checks.**
 
@@ -5306,7 +5288,7 @@ For every commutative ring A and γ,δ,s,t∈A, put q(X,Y)=X²+γXY+δY², R=A[Y
 
 The headline `pointedSection_reflexive` states canonical reflexivity of J and its actual R-linear dual over every commutative A, including the zero ring; the dual assertion uses the dual normal-form and bidual comparisons of this layer.
 
-Here No noetherianity, invertible discriminant, nonzero coefficient ring or nonzero parameters are assumed. Duals here are R-linear.
+No noetherianity, invertible discriminant, nonzero coefficient ring or nonzero parameters are assumed. Duals here are R-linear.
 
 One proof uses the following inputs and comparisons. The explicit two-sided inverse makes native evaluation bijective, exactly the field required by Module.IsReflexive.
 
@@ -5366,13 +5348,13 @@ Use the actual signed P_J/P_D maps and native ModuleCat complex, projectivity an
 
 The construction has the following API.
 
-- For any commutative ring A and γ,δ,s,t∈A, use the actual polynomial ring R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), its coefficient map ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt and a=ιδ·v+ιδ·ιt+ιγ·u. Set J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), and the signed presentations P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε.  Put F=R² with its native R-module structure. For e∈{false,true} write B(e,n)=Φ if (n mod 2=0) has the same truth value as e=true, and Ψ otherwise. C(e) has F in every degree n≥0, differential `C(e)_{n+1}→C(e)_n` given by B(e,n), and zero off that shape. For every e,n, C(e).X n is the native object ModuleCat.of R F.
-- For any commutative ring A and γ,δ,s,t∈A, use the actual polynomial ring R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), its coefficient map ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt and a=ιδ·v+ιδ·ιt+ιγ·u. Set J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), and the signed presentations P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε.  Put F=R² with its native R-module structure. For e∈{false,true} write B(e,n)=Φ if (n mod 2=0) has the same truth value as e=true, and Ψ otherwise. C(e) has F in every degree n≥0, differential `C(e)_{n+1}→C(e)_n` given by B(e,n), and zero off that shape. For every e,n, C(e).d(n+1,n)=ModuleCat.ofHom(B(e,n)).
-- For any commutative ring A and γ,δ,s,t∈A, use the actual polynomial ring R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), its coefficient map ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt and a=ιδ·v+ιδ·ιt+ιγ·u. Set J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), and the signed presentations P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε.  Put F=R² with its native R-module structure. For e∈{false,true} write B(e,n)=Φ if (n mod 2=0) has the same truth value as e=true, and Ψ otherwise. C(e) has F in every degree n≥0, differential `C(e)_{n+1}→C(e)_n` given by B(e,n), and zero off that shape. C(e).d(i,j)=0 whenever j+1≠i; there is no upward differential or negative degree.
-- For any commutative ring A and γ,δ,s,t∈A, use the actual polynomial ring R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), its coefficient map ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt and a=ιδ·v+ιδ·ιt+ιγ·u. Set J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), and the signed presentations P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε.  Put F=R² with its native R-module structure. For e∈{false,true} write B(e,n)=Φ if (n mod 2=0) has the same truth value as e=true, and Ψ otherwise. C(e) has F in every degree n≥0, differential `C(e)_{n+1}→C(e)_n` given by B(e,n), and zero off that shape. C(e) is natively ExactAt(n+1) for every e and n≥0.
-- For any commutative ring A and γ,δ,s,t∈A, use the actual polynomial ring R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), its coefficient map ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt and a=ιδ·v+ιδ·ιt+ιγ·u. Set J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), and the signed presentations P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε.  Put F=R² with its native R-module structure. For e∈{false,true} write B(e,n)=Φ if (n mod 2=0) has the same truth value as e=true, and Ψ otherwise. C(e) has F in every degree n≥0, differential `C(e)_{n+1}→C(e)_n` given by B(e,n), and zero off that shape. Every C(e).X n is a projective object of ModuleCat R.
-- For any commutative ring A and γ,δ,s,t∈A, use the actual polynomial ring R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), its coefficient map ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt and a=ιδ·v+ιδ·ιt+ιγ·u. Set J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), and the signed presentations P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε.  Put F=R² with its native R-module structure. For e∈{false,true} write B(e,n)=Φ if (n mod 2=0) has the same truth value as e=true, and Ψ otherwise. C(e) has F in every degree n≥0, differential `C(e)_{n+1}→C(e)_n` given by B(e,n), and zero off that shape. For every e,n, the native module underlying C(e).X n has both Module.Free R and Module.Finite R instances; it is the actual F=Fin 2→R.
-- For any commutative ring A and γ,δ,s,t∈A, use the actual polynomial ring R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), its coefficient map ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt and a=ιδ·v+ιδ·ιt+ιγ·u. Set J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), and the signed presentations P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε.  Put F=R² with its native R-module structure. For e∈{false,true} write B(e,n)=Φ if (n mod 2=0) has the same truth value as e=true, and Ψ otherwise. C(e) has F in every degree n≥0, differential `C(e)_{n+1}→C(e)_n` given by B(e,n), and zero off that shape. For every A-module M, every phase e and n≥0, native R-linear precomposition by the underlying C(e).d(n+1,n) equals exactly the existing sectionHomDifferential(A,γ,δ,s,t,M,e,n) on Hom_R(F,R⊗_A M). This fixes the actual coefficient cochain differential, without yet constructing a categorical Hom-complex isomorphism or native Ext comparison.
+- For every e,n, C(e).X n is the native object ModuleCat.of R F.
+- For every e,n, C(e).d(n+1,n)=ModuleCat.ofHom(B(e,n)).
+- C(e).d(i,j)=0 whenever j+1≠i; there is no upward differential or negative degree.
+- C(e) is natively ExactAt(n+1) for every e and n≥0.
+- Every C(e).X n is a projective object of ModuleCat R.
+- For every e,n, the native module underlying C(e).X n has both Module.Free R and Module.Finite R instances; it is the actual F=Fin 2→R.
+- For every A-module M, every phase e and n≥0, native R-linear precomposition by the underlying C(e).d(n+1,n) equals exactly the existing sectionHomDifferential(A,γ,δ,s,t,M,e,n) on Hom_R(F,R⊗_A M). This fixes the actual coefficient cochain differential, without yet constructing a categorical Hom-complex isomorphism or native Ext comparison.
 
 **Checks.**
 
@@ -5416,7 +5398,7 @@ Use the actual signed P_J/P_D maps and native ModuleCat complex, projectivity an
 
 Under coefficient convention C3. For a∈Â,r∈R̂,n∈N, c_N((a•r)⊗_A n)=c_N(r⊗_A(a•n)).
 
-Here Only the displayed commutative-ring and ideal-containment assumptions are used. No noetherianity, localness, nontriviality, discriminant condition or flatness of N is required for these specialized adapters. The source completion criterion has additional noetherian/local hypotheses and is not proved here.
+Only the displayed commutative-ring and ideal-containment assumptions are used. No noetherianity, localness, nontriviality, discriminant condition or flatness of N is required for these comparisons. The source completion criterion has additional noetherian/local hypotheses and is not proved here.
 
 One proof uses the following inputs and comparisons. Use the pure-tensor law and the actual Â-balancing relation in the codomain.
 
@@ -5447,9 +5429,9 @@ The construction has the following API.
 
 **Checks.**
 
-- Assume p finitely generated. The forward component at n sends q⊗_A z to the same pure tensor q⊗_Â z.
-- Assume p finitely generated. The inverse component at n sends q⊗_Â z to q⊗_A z.
-- Assume p finitely generated. The left component roundtrip at n is the identity.
+- Take A=ℤ, γ=δ=s=t=0, p=(2), finitely generated, and m=2R, so Qₙ=(ℤ/2ⁿ)[u,v]/(u²). With N=ℤ₂ at n=2, 1⊗_ℤ(1/3) equals 3⊗_ℤ1 in Q₂⊗_ℤℤ₂ although 1/3∉ℤ, and the forward component sends it to `1⊗_{ℤ₂}(1/3)=3` in `Q₂⊗_{ℤ₂}ℤ₂≅Q₂`.
+- In the same fixture with N=ℚ₂ both diagrams are zero at every level, so every component is the zero isomorphism.
+- Starting at level 3 with (u+7)⊗_ℤ1, the transition to level 2 followed by E₂, and E₃ followed by the transition, both give u+3 in Q₂.
 
 (Deduction using `Matrix.mulVecLin_apply` in `Mathlib/LinearAlgebra/Matrix/ToLin.lean`, line 291, and `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [finite tensor diagram over the original base](#2158-finite-tensor-diagram-over-the-original-base), [finite tensor diagram over the completed base](#2159-finite-tensor-diagram-over-the-completed-base), [finite two-base tensor equivalence](#2173-finite-two-base-tensor-equivalence), [finite comparison on pure tensors](#2206-finite-comparison-on-pure-tensors), [inverse finite comparison on pure tensors](#2207-inverse-finite-comparison-on-pure-tensors), [finite tensor comparison commutes with every quotient transition](#2248-finite-tensor-comparison-commutes-with-every-quotient-transition), [the finite chart scalar tower](#2105-the-finite-chart-scalar-tower).; [knudsen2](#references), Appendix Proposition6, printed194–195 (physical34–35).)
 
@@ -5459,7 +5441,7 @@ The construction has the following API.
 
 Under coefficient convention C5. For every C,x,k,n, evalₙ(liftCoordinate(C,x,k))=cₙ(C.πₙ(x))(k).
 
-Here No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
+No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
 
 One proof uses the following inputs and comparisons. Use the coherent-family evaluation law with coherence obtained from native cone naturality.
 
@@ -5471,7 +5453,7 @@ One proof uses the following inputs and comparisons. Use the coherent-family eva
 
 Under coefficient convention C5. For x,y∈R̂⊗_Â N, if ρₙ(x)=ρₙ(y) for every n, then x=y.
 
-Here No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
+No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
 
 One proof uses the following inputs and comparisons. Use ĉ's injectivity and native completion evaluation extensionality coordinate by coordinate. This uses finite freeness, not arbitrary tensor/limit commutation.
 
@@ -5483,7 +5465,7 @@ One proof uses the following inputs and comparisons. Use ĉ's injectivity and n
 
 Under coefficient convention C5. The n-th native cone morphism is exactly ModuleCat.ofHom(ρₙ), with the actual ordinary tensor point.
 
-Here No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
+No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
 
 One proof uses the following inputs and comparisons. Read the actual cone projection data.
 
@@ -5495,7 +5477,7 @@ One proof uses the following inputs and comparisons. Read the actual cone projec
 
 Under coefficient convention C1. The n-component of this cone equals the actual map P_N,n; on u⊗z it is evalₙ(u)⊗z.
 
-The uses a common universe for A and N, and explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed.
+A and N lie in one common universe and carry explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed.
 
 One proof uses the following inputs and comparisons. Unfold the computed cone component and native pure-tensor projection.
 
@@ -5507,7 +5489,7 @@ One proof uses the following inputs and comparisons. Unfold the computed cone co
 
 Under coefficient convention C1. For j≤k, the k-component followed by G_N(k→j) equals the j-component.
 
-The uses a common universe for A and N, and explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed.
+A and N lie in one common universe and carry explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed.
 
 One proof uses the following inputs and comparisons. Use the native cone naturality law with the actual opposite-order arrow.
 
@@ -5519,7 +5501,7 @@ One proof uses the following inputs and comparisons. Use the native cone natural
 
 Under coefficient convention C1. For b∈Â and x∈R̂⊗_Â N, the n-component sends b·x to b times its value at x.
 
-The uses a common universe for A and N, and explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed.
+A and N lie in one common universe and carry explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed.
 
 One proof uses the following inputs and comparisons. Use the actual Â-linear projection, not an A-linear substitute.
 
@@ -5531,7 +5513,7 @@ One proof uses the following inputs and comparisons. Use the actual Â-linear pr
 
 Under coefficient convention C2. Package Pₙ as an actual R-linear map T→Qₙ⊗_Â N, before imposing finiteness on N.
 
-Here Native A,N,L,K have a common universe with compatible A/Â-actions on N. Assembly, equivalence and the displayed API/test package use finite projective N over Â. No noetherian, local, discriminant or finiteness-over-A hypothesis. The carrier and forward maps exist for arbitrary N.
+Native A,N,L,K have a common universe with compatible A/Â-actions on N. Assembly, equivalence and the displayed API/test package use finite projective N over Â. No noetherian, local, discriminant or finiteness-over-A hypothesis. The carrier and forward maps exist for arbitrary N.
 
 One proof uses the following inputs and comparisons. Retain the evaluation function and additive law, and prove the preceding R-scalar law.
 
@@ -5586,7 +5568,7 @@ The construction has the following API.
 
 Under coefficient convention C9. Equip A′⊗_A D with the canonical module structure over the actual tensor algebra T=A′⊗_A R, uniquely characterized by (a′⊗r)·(b′⊗h)=a′b′⊗(r·h). This specializes the existing module/tensor universal properties, and introduces no new abstract theory of tensor representations.
 
-Here All coefficient rings are commutative and may have zero divisors or be the zero ring. No noetherianity, unit discriminant, injectivity or flatness of f is required. Statements concern the explicit polynomial model, not arbitrary nodal families.
+All coefficient rings are commutative and may have zero divisors or be the zero ring. No noetherianity, unit discriminant, injectivity or flatness of f is required. Statements concern the explicit polynomial model, not arbitrary nodal families.
 
 One proof uses the following inputs and comparisons. The displayed product is additive and A-balanced separately in both pairs, using the coefficient scalar tower on D; extend it by the tensor universal property. Check unit, associativity and both distributivities on pure tensors and extend by tensor induction. In the normal coordinates of D, use r·(z,α)=(rz+ιαK(r),ev(r)α). This checks that the tensor action is not the componentwise action on R⊕A.
 
@@ -5668,7 +5650,7 @@ Use the actual node ring, section ideal, R-linear dual and ordered native matrix
 
 For every commutative ring A and γ,δ,s,t∈A, put q(X,Y)=X²+γXY+δY², R=A[Y][X]/(q(X,Y)−q(s,t)), ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), incl:J→R, and ε∈D with dε(j)=bj. Write η=Module.Dual.eval R J. Construct E:J≃ₗ[R]Hom_R(D,R) as native Module.evalEquiv R J using the proved ordinary reflexivity.
 
-Here No noetherianity, invertible discriminant, nonzero coefficient ring or nonzero parameters are assumed. Duals here are R-linear.
+No noetherianity, invertible discriminant, nonzero coefficient ring or nonzero parameters are assumed. Duals here are R-linear.
 
 One proof uses the following inputs and comparisons. Supply the proved native reflexivity instance and use the library evaluation equivalence.
 
@@ -5764,13 +5746,13 @@ The construction has the following API.
 - Assume p finitely generated. The left limit roundtrip is the identity.
 - Assume p finitely generated. The right limit roundtrip is the identity.
 - Assume p finitely generated. Any A-linear map between the two limits with all the prescribed finite-component equations equals the limit comparison.
-- Assume p finitely generated. For every actual cone c to the A-tensor diagram, transport its legs by Eₙ; its universal lift to the completed-base-tensor limit is the old lift followed by the limit comparison.
+- Assume p finitely generated. For every actual cone c to the A-tensor diagram, transport its legs by Eₙ; its universal lift to the limit of the completed-base tensor diagram is the old lift followed by the limit comparison.
 
 **Checks.**
 
-- Assume p finitely generated. Projection at n after the limit comparison equals projection at n followed by Eₙ.
-- Assume p finitely generated. Projection at n after the inverse limit comparison equals projection at n followed by Eₙ⁻¹.
-- Assume p finitely generated. For every actual cone c to the A-tensor diagram, transport its legs by Eₙ; its universal lift to the completed-base-tensor limit is the old lift followed by the limit comparison.
+- Take A=ℤ, γ=δ=s=t=0, p=(2), finitely generated, and m=2R, so Qₙ=(ℤ/2ⁿ)[u,v]/(u²). With N=ℤ₂, the element of lim Fᴬ_N with components `(1+2v+⋯+2^{n−1}v^{n−1})⊗_ℤ1` goes to the element of lim FÂ_N whose level-3 projection is 1+2v+4v² in `Q₃⊗_{ℤ₂}ℤ₂≅Q₃`.
+- With N=0 both limits are 0; with N=ℚ₂ both limits are 0 although N is not.
+- A family with level-1 component 1⊗1 and level-2 component 0 is not compatible, since the transition from level 2 to level 1 sends 0 to 0≠1⊗1; it lies in neither limit.
 
 (Deduction using `CategoryTheory.Limits.IsLimit.hom_ext` and `CategoryTheory.Limits.IsLimit.lift_self` in `Mathlib/CategoryTheory/Limits/IsLimit.lean`, lines 232 and 95; tensor components use `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [natural two-base finite tensor comparison](#2276-natural-two-base-finite-tensor-comparison).; [knudsen2](#references), Appendix Proposition6, printed194–195 (physical34–35).)
 
@@ -5864,7 +5846,7 @@ All arrows have the stated orientation, actual finite tensor components and coef
 
 Under coefficient convention C5. For every Cone C over G, construct an actual Â-linear lift C.pt→R̂⊗_Â N by assembling all r coordinates and applying ĉ⁻¹.
 
-Here No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
+No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
 
 One proof uses the following inputs and comparisons. Prove additivity and Â-linearity by native completion evaluation extensionality, the coordinate evaluation law, and actual cone projection linearity.
 
@@ -5876,9 +5858,9 @@ The construction has the following API.
 
 **Checks.**
 
-- The constructed linear lift factors every actual cone projection.
-- The actual finite-free lift sends zero to zero.
-- The actual finite-free lift respects every completed coefficient scalar.
+- Take A=ℤ, γ=δ=s=t=0, p=(2) and m=2R, so R=ℤ[u,v]/(u²), Â=ℤ₂ and Qₙ=(ℤ/2ⁿ)[u,v]/(u²); put `σ=Σ_{k≥0}2^k v^k∈R̂`. With r=1, the cone with point ℤ₂ and legs `a↦a(1+2v+⋯+2^{n−1}v^{n−1})⊗1` lifts to a↦aσ⊗1.
+- The cone with all legs zero lifts to the zero map, even on a nonzero cone point; the cone with legs a↦a·uv⊗1 at every level lifts to a↦a·uv⊗1.
+- In the first cone, the lift of 1/3 is (1/3)σ⊗1, whose level-2 image is 3+2v.
 
 (Deduction using `CategoryTheory.Limits.IsLimit.hom_ext` and `CategoryTheory.Limits.IsLimit.lift_self` in `Mathlib/CategoryTheory/Limits/IsLimit.lean`, lines 232 and 95; tensor components use `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [completed-chart coefficient-linear evaluation](#2186-completed-chart-coefficient-linear-evaluation), [underlying completed-chart evaluation](#2214-underlying-completed-chart-evaluation), [the actual completed coefficient algebra](#2123-the-actual-completed-coefficient-algebra), [completed coordinate of a cone lift](#2255-completed-coordinate-of-a-cone-lift), [evaluation of a lifted coordinate](#2277-evaluation-of-a-lifted-coordinate), [finite quotient transition over completed coefficients](#2106-finite-quotient-transition-over-completed-coefficients), [native completed-coefficient tensor diagram](#2160-native-completed-coefficient-tensor-diagram).; [knudsen2](#references), Appendix Proposition 6, pp. 194–195, for the surrounding two-base completion problem; the displayed native diagram calculation is the deduction specified here.)
 
@@ -5888,7 +5870,7 @@ The construction has the following API.
 
 Under coefficient convention C5. The coordinate lift sends the zero cone element to zero in R̂.
 
-Here No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
+No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
 
 One proof uses the following inputs and comparisons. Use the specified native data/projection or inverse law; retain the actual coefficient action and carrier.
 
@@ -5900,7 +5882,7 @@ One proof uses the following inputs and comparisons. Use the specified native da
 
 Under coefficient convention C5. For the ordinary cone itself, the lift coordinate of u⊗z is exactly z(k)·u.
 
-Here No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
+No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
 
 One proof uses the following inputs and comparisons. Use the specified native data/projection or inverse law; retain the actual coefficient action and carrier.
 
@@ -5912,7 +5894,7 @@ One proof uses the following inputs and comparisons. Use the specified native da
 
 Under coefficient convention C1. If r∘i=id_N and P_N,n(x)=P_N,n(y) for every n, then x=y in R̂⊗_Â N.
 
-The uses a common universe for A and N, and explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed.
+A and N lie in one common universe and carry explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed.
 
 One proof uses the following inputs and comparisons. Embed x,y by id_R̂⊗i, use the finite-free projection extensionality, and retract by id_R̂⊗r. No flatness of R̂ or N is assumed.
 
@@ -5924,7 +5906,7 @@ One proof uses the following inputs and comparisons. Embed x,y by id_R̂⊗i, us
 
 Under coefficient convention C2. Construct C_L:Hom_R(L,T)→ₗ[Â]H_L by (C_L(f))ₙ=Pₙ∘f; finiteness of N is unnecessary for this map.
 
-Here Native A,N,L,K have a common universe with compatible A/Â-actions on N. Assembly, equivalence and the displayed API/test package use finite projective N over Â. No noetherian, local, discriminant or finiteness-over-A hypothesis. The carrier and forward maps exist for arbitrary N.
+Native A,N,L,K have a common universe with compatible A/Â-actions on N. Assembly, equivalence and the displayed API/test package use finite projective N over Â. No noetherian, local, discriminant or finiteness-over-A hypothesis. The carrier and forward maps exist for arbitrary N.
 
 One proof uses the following inputs and comparisons. Compose with the actual R-linear projection; native tensor-cone naturality gives coherence, and the inherited Â-linearity gives additivity and scalar compatibility.
 
@@ -5948,7 +5930,7 @@ The construction has the following API.
 
 Under coefficient convention C2. For u∈R̂ and z∈N, Pₙ(u⊗z)=evalₙ(u)⊗z, also in its R-linear packaging.
 
-Here Native A,N,L,K have a common universe with compatible A/Â-actions on N. Assembly, equivalence and the displayed API/test package use finite projective N over Â. No noetherian, local, discriminant or finiteness-over-A hypothesis. The carrier and forward maps exist for arbitrary N.
+Native A,N,L,K have a common universe with compatible A/Â-actions on N. Assembly, equivalence and the displayed API/test package use finite projective N over Â. No noetherian, local, discriminant or finiteness-over-A hypothesis. The carrier and forward maps exist for arbitrary N.
 
 One proof uses the following inputs and comparisons. Read the computed projection function and native rTensor pure-tensor law.
 
@@ -5960,7 +5942,7 @@ One proof uses the following inputs and comparisons. Read the computed projectio
 
 Under coefficient convention C2. For a∈Â and x∈T, the R-linear packaged Pₙ satisfies Pₙ(a·x)=a·Pₙ(x).
 
-Here Native A,N,L,K have a common universe with compatible A/Â-actions on N. Assembly, equivalence and the displayed API/test package use finite projective N over Â. No noetherian, local, discriminant or finiteness-over-A hypothesis. The carrier and forward maps exist for arbitrary N.
+Native A,N,L,K have a common universe with compatible A/Â-actions on N. Assembly, equivalence and the displayed API/test package use finite projective N over Â. No noetherian, local, discriminant or finiteness-over-A hypothesis. The carrier and forward maps exist for arbitrary N.
 
 One proof uses the following inputs and comparisons. Use the Â-linear evaluation; the R-linear packaging has the identical function.
 
@@ -5972,7 +5954,7 @@ One proof uses the following inputs and comparisons. Use the Â-linear evaluatio
 
 Under coefficient convention C2. Pₙ(0)=0 in Qₙ⊗_Â N.
 
-Here Native A,N,L,K have a common universe with compatible A/Â-actions on N. Assembly, equivalence and the displayed API/test package use finite projective N over Â. No noetherian, local, discriminant or finiteness-over-A hypothesis. The carrier and forward maps exist for arbitrary N.
+Native A,N,L,K have a common universe with compatible A/Â-actions on N. Assembly, equivalence and the displayed API/test package use finite projective N over Â. No noetherian, local, discriminant or finiteness-over-A hypothesis. The carrier and forward maps exist for arbitrary N.
 
 One proof uses the following inputs and comparisons. Use the actual linear-map zero law.
 
@@ -5984,7 +5966,7 @@ One proof uses the following inputs and comparisons. Use the actual linear-map z
 
 Under coefficient convention C9. Transport the preceding T-module structure along E_R⁻¹:R′→T. Then E_D is an R′-linear equivalence for this action and the usual action on `Hom_{R′}(J′,R′)`. In particular E_D(a′⊗(r·h))=φ(r)·E_D(a′⊗h).
 
-Here All coefficient rings are commutative and may have zero divisors or be the zero ring. No noetherianity, unit discriminant, injectivity or flatness of f is required. Statements concern the explicit polynomial model, not arbitrary nodal families.
+All coefficient rings are commutative and may have zero divisors or be the zero ring. No noetherianity, unit discriminant, injectivity or flatness of f is required. Statements concern the explicit polynomial model, not arbitrary nodal families.
 
 One proof uses the following inputs and comparisons. For pure scalars a′⊗r and pure vectors b′⊗h, compare evaluations on φ(c),φ(d); the natural formula gives ι′a′φ(r)·E_D(b′⊗h). Use tensor induction in scalar and vector to establish T-linearity. Equivalently the normal-coordinate calculation uses φK=K′φ and the non-diagonal correction term. Restrict the canonical T action through E_R⁻¹ using the baseline scalar restriction; the bijective map E_D is then R′-linear.
 
@@ -5998,7 +5980,7 @@ The R′ action is transported from the specified tensor-ring action, not define
 
 Under coefficient convention C9. Form Q=D/im(m), using the image of the actual injective R-linear multiplication map m:R→D. Construct the canonical A-linear equivalence E_Q:Q≃A induced by ρ, normalized by E_Q([ε])=1. The inherited R action satisfies E_Q(r·z)=ev(r)E_Q(z).
 
-Here All coefficient rings are commutative and may have zero divisors or be the zero ring. No noetherianity, unit discriminant, injectivity or flatness of f is required. Statements concern the explicit polynomial model, not arbitrary nodal families.
+All coefficient rings are commutative and may have zero divisors or be the zero ring. No noetherianity, unit discriminant, injectivity or flatness of f is required. Statements concern the explicit polynomial model, not arbitrary nodal families.
 
 One proof uses the following inputs and comparisons. The characterized residue kills precisely im(m), so descend it through the native quotient universal property. The inverse sends α to [ιαε]; the unique dual normal form proves both inverse identities. Transport the residue scalar equation to quotient representatives; every quotient element has a representative.
 
@@ -6012,7 +5994,7 @@ The construction has the following API.
 
 **Checks.**
 
-- E_Q([ε])=1.
+- With γ=δ=s=t=0 over any A, the dual generator satisfies ε(u)=0 and ε(v)=u, so v·ε=m(u) and [v·ε]=0 in Q, while E_Q([(3+v)ε])=ev(3+v)=3, not 3+v and not −3.
 - [m(r)]=0 in Q for every r∈R.
 - d·z=0 for every z∈Q, whereas multiplication by d is injective on D.
 
@@ -6059,7 +6041,7 @@ Use the actual node ring, section ideal, R-linear dual and ordered native matrix
 
 For every commutative ring A and γ,δ,s,t∈A, put q(X,Y)=X²+γXY+δY², R=A[Y][X]/(q(X,Y)−q(s,t)), ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), incl:J→R, and ε∈D with dε(j)=bj. Write η=Module.Dual.eval R J. For every j∈J and h∈D, E(j)(h)=h(j).
 
-Here No noetherianity, invertible discriminant, nonzero coefficient ring or nonzero parameters are assumed. Duals here are R-linear.
+No noetherianity, invertible discriminant, nonzero coefficient ring or nonzero parameters are assumed. Duals here are R-linear.
 
 One proof uses the following inputs and comparisons. This is the defining native evaluation formula.
 
@@ -6073,7 +6055,7 @@ Use the actual ideal subtype and native Module.Dual, Module.Dual.eval and Module
 
 For every commutative ring A and γ,δ,s,t∈A, put q(X,Y)=X²+γXY+δY², R=A[Y][X]/(q(X,Y)−q(s,t)), ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), incl:J→R, and ε∈D with dε(j)=bj. Write η=Module.Dual.eval R J. For every F∈Hom_R(D,R), E⁻¹(F)=ψ(F).
 
-Here No noetherianity, invertible discriminant, nonzero coefficient ring or nonzero parameters are assumed. Duals here are R-linear.
+No noetherianity, invertible discriminant, nonzero coefficient ring or nonzero parameters are assumed. Duals here are R-linear.
 
 One proof uses the following inputs and comparisons. Apply injectivity of E; native inverse cancellation and η(ψ(F))=F identify both images.
 
@@ -6087,7 +6069,7 @@ Use the actual ideal subtype and native Module.Dual, Module.Dual.eval and Module
 
 For every commutative ring A and γ,δ,s,t∈A, put q(X,Y)=X²+γXY+δY², R=A[Y][X]/(q(X,Y)−q(s,t)), ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), incl:J→R, and ε∈D with dε(j)=bj. Write η=Module.Dual.eval R J. The underlying linear map of E equals Module.Dual.eval R J.
 
-Here No noetherianity, invertible discriminant, nonzero coefficient ring or nonzero parameters are assumed. Duals here are R-linear.
+No noetherianity, invertible discriminant, nonzero coefficient ring or nonzero parameters are assumed. Duals here are R-linear.
 
 One proof uses the following inputs and comparisons. Unfold native Module.evalEquiv; its forward linear map is evaluation.
 
@@ -6197,7 +6179,7 @@ All arrows have the stated orientation, actual finite tensor components and coef
 
 ### 2.324 LimitIso lift
 
-Under coefficient convention C6. Assume p finitely generated. For every actual cone c to the A-tensor diagram, transport its legs by Eₙ; its universal lift to the completed-base-tensor limit is the old lift followed by the limit comparison.
+Under coefficient convention C6. Assume p finitely generated. For every actual cone c to the A-tensor diagram, transport its legs by Eₙ; its universal lift to the limit of the completed-base tensor diagram is the old lift followed by the limit comparison.
 
 The coefficient ideal is finitely generated only for comparison statements; no condition on N besides the displayed actual scalar tower.
 
@@ -6213,7 +6195,7 @@ All arrows have the stated orientation, actual finite tensor components and coef
 
 Under coefficient convention C7. Assume p is finitely generated. Construct the A-linear isomorphism E:lim Fᴬ≅Res_A^Â(lim G), composing the finite-tensor limit isomorphism, the limit of ρ and the inverse native restriction-of-scalars limit comparison. Its target is the restriction of the actual Â-module limit.
 
-Here N is arbitrary: no flatness, finite generation or finite-quotient-annihilation hypothesis. No noetherianity, localness, discriminant or regular-sequence hypothesis. p is finitely generated, exactly as required by the finite tensor equivalence.
+Here N is arbitrary: no flatness, finite generation or annihilation hypothesis on the finite quotients. No noetherianity, localness, discriminant or regular-sequence hypothesis. p is finitely generated, exactly as required by the finite tensor equivalence.
 
 One proof uses the following inputs and comparisons. Compose the actual finite-tensor limit isomorphism with the limit induced by the restriction natural isomorphism. Use the inverse native scalar-restriction comparison, whose preservation hypothesis is provided by ModuleCat.preservesLimit_restrictScalars for this countable diagram.
 
@@ -6239,7 +6221,7 @@ The construction has the following API.
 
 Under coefficient convention C5. For every C,x,n, ρₙ(lift(C)(x))=C.πₙ(x).
 
-Here No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
+No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
 
 One proof uses the following inputs and comparisons. Apply the injective native quotient coordinate equivalence, evaluate every coordinate, and cancel ĉ∘ĉ⁻¹.
 
@@ -6251,7 +6233,7 @@ One proof uses the following inputs and comparisons. Apply the injective native 
 
 Under coefficient convention C5. The actual finite-free lift sends zero to zero.
 
-Here No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
+No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
 
 One proof uses the following inputs and comparisons. Use the specified native data/projection or inverse law; retain the actual coefficient action and carrier.
 
@@ -6263,7 +6245,7 @@ One proof uses the following inputs and comparisons. Use the specified native da
 
 Under coefficient convention C5. The actual finite-free lift respects every completed coefficient scalar.
 
-Here No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
+No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
 
 One proof uses the following inputs and comparisons. Use the specified native data/projection or inverse law; retain the actual coefficient action and carrier.
 
@@ -6275,7 +6257,7 @@ One proof uses the following inputs and comparisons. Use the specified native da
 
 Under coefficient convention C1. For any i:N→F and r:F→N, define L_i,r(c)=(id_R̂⊗r)∘L_F(c embedded by i):c.pt→ₗ[Â]R̂⊗_Â N. The formula exists before assuming r∘i=id.
 
-The uses a common universe for A and N, and explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed.
+A and N lie in one common universe and carry explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed.
 
 One proof uses the following inputs and comparisons. Use the finite-free native lift and native lTensor(r), with their actual Â-actions.
 
@@ -6299,7 +6281,7 @@ The construction has the following API.
 
 Under coefficient convention C2. For finite projective N, if Pₙ(x)=Pₙ(y) for all n then x=y in T.
 
-Here Native A,N,L,K have a common universe with compatible A/Â-actions on N. Assembly, equivalence and the displayed API/test package use finite projective N over Â. No noetherian, local, discriminant or finiteness-over-A hypothesis. The carrier and forward maps exist for arbitrary N.
+Native A,N,L,K have a common universe with compatible A/Â-actions on N. Assembly, equivalence and the displayed API/test package use finite projective N over Â. No noetherian, local, discriminant or finiteness-over-A hypothesis. The carrier and forward maps exist for arbitrary N.
 
 One proof uses the following inputs and comparisons. Use the pinned finite-projective splitting and retract projection separation. No basis of N is chosen as a hypothesis.
 
@@ -6311,7 +6293,7 @@ One proof uses the following inputs and comparisons. Use the pinned finite-proje
 
 Under coefficient convention C2. For every f,n,x, (C_L(f))ₙ(x)=Pₙ(f(x)).
 
-Here Native A,N,L,K have a common universe with compatible A/Â-actions on N. Assembly, equivalence and the displayed API/test package use finite projective N over Â. No noetherian, local, discriminant or finiteness-over-A hypothesis. The carrier and forward maps exist for arbitrary N.
+Native A,N,L,K have a common universe with compatible A/Â-actions on N. Assembly, equivalence and the displayed API/test package use finite projective N over Â. No noetherian, local, discriminant or finiteness-over-A hypothesis. The carrier and forward maps exist for arbitrary N.
 
 One proof uses the following inputs and comparisons. Read the computed composition of actual R-linear maps.
 
@@ -6323,7 +6305,7 @@ One proof uses the following inputs and comparisons. Read the computed compositi
 
 Under coefficient convention C2. C_L(0)=0.
 
-Here Native A,N,L,K have a common universe with compatible A/Â-actions on N. Assembly, equivalence and the displayed API/test package use finite projective N over Â. No noetherian, local, discriminant or finiteness-over-A hypothesis. The carrier and forward maps exist for arbitrary N.
+Native A,N,L,K have a common universe with compatible A/Â-actions on N. Assembly, equivalence and the displayed API/test package use finite projective N over Â. No noetherian, local, discriminant or finiteness-over-A hypothesis. The carrier and forward maps exist for arbitrary N.
 
 One proof uses the following inputs and comparisons. Use the native linear-map zero law.
 
@@ -6335,7 +6317,7 @@ One proof uses the following inputs and comparisons. Use the native linear-map z
 
 Under coefficient convention C2. For a∈Â and f∈Hom_R(L,T), C_L(a·f)=a·C_L(f).
 
-Here Native A,N,L,K have a common universe with compatible A/Â-actions on N. Assembly, equivalence and the displayed API/test package use finite projective N over Â. No noetherian, local, discriminant or finiteness-over-A hypothesis. The carrier and forward maps exist for arbitrary N.
+Native A,N,L,K have a common universe with compatible A/Â-actions on N. Assembly, equivalence and the displayed API/test package use finite projective N over Â. No noetherian, local, discriminant or finiteness-over-A hypothesis. The carrier and forward maps exist for arbitrary N.
 
 One proof uses the following inputs and comparisons. Use the actual Â-linearity of C_L.
 
@@ -6347,7 +6329,7 @@ One proof uses the following inputs and comparisons. Use the actual Â-linearity
 
 Under coefficient convention C9. Construct the canonical A′-linear equivalence `E_{Q,f}:A′⊗_A` Q≃Q′ satisfying `E_{Q,f}(a′⊗[h])=[E_D(a′⊗h)]` and `E_Q′(E_{Q,f}(a′⊗z))=a′f(E_Q(z))`. This is the base change of D/im(m), not an identification of chosen unrelated copies of A.
 
-Here All coefficient rings are commutative and may have zero divisors or be the zero ring. No noetherianity, unit discriminant, injectivity or flatness of f is required. Statements concern the explicit polynomial model, not arbitrary nodal families.
+All coefficient rings are commutative and may have zero divisors or be the zero ring. No noetherianity, unit discriminant, injectivity or flatness of f is required. Statements concern the explicit polynomial model, not arbitrary nodal families.
 
 One proof uses the following inputs and comparisons. Tensor E_Q, use the native heterobasic right unit TensorProduct.AlgebraTensorModule.rid A A′ A′ : A′⊗_A A≃ₗ[A′]A′, then compose with E_Q′⁻¹. Its coefficient action is through f and its A′-linearity is retained. The evaluation formula and generation of J′ show E_D(a′⊗m(r))=m′(ι′a′φ(r)); hence passing from h to its quotient class is well-defined. Evaluate E_D in normal coordinates: it takes r incl+ιαε to the corresponding primed expression, sends ε to ε′, and its residue is a′f(ρh). This proves the quotient-representative formula agrees with the constructed equivalence. Identity and composition follow from the residue formula and injectivity of E_Q′; no tensor left-exactness or flatness of f is assumed.
 
@@ -6480,9 +6462,9 @@ All arrows have the stated orientation, actual finite tensor components and coef
 
 Under coefficient convention C7. Assume p is finitely generated. Construct the A-linear isomorphism E:lim Fᴬ≅Res_A^Â(lim G), composing the finite-tensor limit isomorphism, the limit of ρ and the inverse native restriction-of-scalars limit comparison. Its target is the restriction of the actual Â-module limit. For every n, E followed by the restricted native projection π⁽ᴳ⁾ₙ equals the original projection π⁽ᴬ⁾ₙ followed by the finite tensor comparison αₙ.
 
-Here N is arbitrary: no flatness, finite generation or finite-quotient-annihilation hypothesis. No noetherianity, localness, discriminant or regular-sequence hypothesis. p is finitely generated, exactly as required by the finite tensor equivalence.
+Here N is arbitrary: no flatness, finite generation or annihilation hypothesis on the finite quotients. No noetherianity, localness, discriminant or regular-sequence hypothesis. p is finitely generated, exactly as required by the finite tensor equivalence.
 
-One proof uses the following inputs and comparisons. Unfold only the specialized adapter and use its actual native object, morphism or transported scalar data. Compose the native forward/inverse limit projection equations and the identity restriction component.
+One proof uses the following inputs and comparisons. Unfold only the comparison just defined and use its native object, morphism or transported scalar data. Compose the native forward/inverse limit projection equations and the identity restriction component.
 
 For every n, E followed by the restricted native projection π⁽ᴳ⁾ₙ equals the original projection π⁽ᴬ⁾ₙ followed by the finite tensor comparison αₙ. No identification of an ordinary completed tensor product with this limit is assumed.
 
@@ -6494,9 +6476,9 @@ For every n, E followed by the restricted native projection π⁽ᴳ⁾ₙ equal
 
 Under coefficient convention C7. Assume p is finitely generated. Construct the A-linear isomorphism E:lim Fᴬ≅Res_A^Â(lim G), composing the finite-tensor limit isomorphism, the limit of ρ and the inverse native restriction-of-scalars limit comparison. Its target is the restriction of the actual Â-module limit. For every n, E⁻¹ followed by π⁽ᴬ⁾ₙ equals the restricted native projection π⁽ᴳ⁾ₙ followed by αₙ⁻¹.
 
-Here N is arbitrary: no flatness, finite generation or finite-quotient-annihilation hypothesis. No noetherianity, localness, discriminant or regular-sequence hypothesis. p is finitely generated, exactly as required by the finite tensor equivalence.
+Here N is arbitrary: no flatness, finite generation or annihilation hypothesis on the finite quotients. No noetherianity, localness, discriminant or regular-sequence hypothesis. p is finitely generated, exactly as required by the finite tensor equivalence.
 
-One proof uses the following inputs and comparisons. Unfold only the specialized adapter and use its actual native object, morphism or transported scalar data. Compose the native forward/inverse limit projection equations and the identity restriction component.
+One proof uses the following inputs and comparisons. Unfold only the comparison just defined and use its native object, morphism or transported scalar data. Compose the native forward/inverse limit projection equations and the identity restriction component.
 
 For every n, E⁻¹ followed by π⁽ᴬ⁾ₙ equals the restricted native projection π⁽ᴳ⁾ₙ followed by αₙ⁻¹. No identification of an ordinary completed tensor product with this limit is assumed.
 
@@ -6508,9 +6490,9 @@ For every n, E⁻¹ followed by π⁽ᴬ⁾ₙ equals the restricted native proj
 
 Under coefficient convention C7. Assume p is finitely generated. Construct the A-linear isomorphism E:lim Fᴬ≅Res_A^Â(lim G), composing the finite-tensor limit isomorphism, the limit of ρ and the inverse native restriction-of-scalars limit comparison. Its target is the restriction of the actual Â-module limit. The composite E followed by E⁻¹ is the identity of the original A-linear limit.
 
-Here N is arbitrary: no flatness, finite generation or finite-quotient-annihilation hypothesis. No noetherianity, localness, discriminant or regular-sequence hypothesis. p is finitely generated, exactly as required by the finite tensor equivalence.
+Here N is arbitrary: no flatness, finite generation or annihilation hypothesis on the finite quotients. No noetherianity, localness, discriminant or regular-sequence hypothesis. p is finitely generated, exactly as required by the finite tensor equivalence.
 
-One proof uses the following inputs and comparisons. Unfold only the specialized adapter and use its actual native object, morphism or transported scalar data. Use the listed native scalar transport or linearity law; for level zero, the actual quotient by the unit ideal and its tensor are zero.
+One proof uses the following inputs and comparisons. Unfold only the comparison just defined and use its native object, morphism or transported scalar data. Use the listed native scalar transport or linearity law; for level zero, the actual quotient by the unit ideal and its tensor are zero.
 
 The composite E followed by E⁻¹ is the identity of the original A-linear limit. No identification of an ordinary completed tensor product with this limit is assumed.
 
@@ -6522,7 +6504,7 @@ The composite E followed by E⁻¹ is the identity of the original A-linear limi
 
 Under coefficient convention C7. Assume p is finitely generated. Equip the underlying abelian group L of lim Fᴬ with the Â-module structure transported along the actual additive equivalence underlying E to the native Â-module lim G. Explicitly b⋆x=E⁻¹(b·E(x)); preserve the existing A-module structure on L.
 
-Here N is arbitrary: no flatness, finite generation or finite-quotient-annihilation hypothesis. No noetherianity, localness, discriminant or regular-sequence hypothesis. p is finitely generated, exactly as required by the finite tensor equivalence.
+Here N is arbitrary: no flatness, finite generation or annihilation hypothesis on the finite quotients. No noetherianity, localness, discriminant or regular-sequence hypothesis. p is finitely generated, exactly as required by the finite tensor equivalence.
 
 One proof uses the following inputs and comparisons. Turn E into its actual A-linear and additive equivalence. Transport only the completed action through native AddEquiv.module; the existing abelian group and A-action remain the original ones.
 
@@ -6548,7 +6530,7 @@ The construction has the following API.
 
 Under coefficient convention C5. Supply native IsLimit for the actual ordinary completed tensor cone: every Cone C has a unique Â-linear map C.pt→R̂⊗_Â N factoring all projections.
 
-Here No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
+No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
 
 One proof uses the following inputs and comparisons. Use the constructed lift and factorization law; prove uniqueness from joint faithfulness of the actual finite tensor projections.
 
@@ -6560,9 +6542,9 @@ The construction has the following API.
 
 **Checks.**
 
-- The IsLimit lift satisfies the native categorical factorization equation for every cone and level.
+- Take A=ℤ, γ=δ=s=t=0, p=(2) and m=2R, so R=ℤ[u,v]/(u²), Â=ℤ₂ and Qₙ=(ℤ/2ⁿ)[u,v]/(u²); put `σ=Σ_{k≥0}2^k v^k∈R̂`. With r=1, the cone with point ℤ₂ and legs `a↦a(1+2v+⋯+2^{n−1}v^{n−1})⊗1` factors through a↦aσ⊗1. The element σ⊗1 does not come from R⊗_ℤℤ₂=ℤ₂[u,v]/(u²), so a cone vertex R⊗_A N in place of R̂⊗_Â N has no such factorization.
 - Any actual cone-point morphism factoring all levels equals the specified IsLimit lift.
-- The IsLimit lift of the ordinary cone itself is the identity, excluding a nonfaithful limiting construction.
+- With r=0 every cone point maps to the zero module and the lift is zero.
 
 (Deduction using `Matrix.mulVecLin_apply` in `Mathlib/LinearAlgebra/Matrix/ToLin.lean`, line 291, and `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [the actual completed coefficient algebra](#2123-the-actual-completed-coefficient-algebra), [finite-free ordinary tensor cone lift](#2302-finite-free-ordinary-tensor-cone-lift), [cone lift factorization](#2326-cone-lift-factorization), [finite quotient transition over completed coefficients](#2106-finite-quotient-transition-over-completed-coefficients), [native completed-coefficient tensor diagram](#2160-native-completed-coefficient-tensor-diagram), [ordinary completed tensor cone](#2254-ordinary-completed-tensor-cone), [ordinary completed tensor projection](#2216-ordinary-completed-tensor-projection), [joint faithfulness of completion projections](#2278-joint-faithfulness-of-completion-projections).; [knudsen2](#references), Appendix Proposition 6, pp. 194–195, for the surrounding two-base completion problem; the displayed native diagram calculation is the deduction specified here.)
 
@@ -6572,7 +6554,7 @@ The construction has the following API.
 
 Under coefficient convention C1. If r∘i=id_N then P_N,n(L_i,r(c)(x))=cₙ(x) for every cone c, x and n.
 
-The uses a common universe for A and N, and explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed.
+A and N lie in one common universe and carry explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed.
 
 One proof uses the following inputs and comparisons. Commute P with r, apply finite-free factorisation, and reduce (id_Qₙ⊗r)(id_Qₙ⊗i) using native lTensor_comp_apply and the splitting identity.
 
@@ -6584,7 +6566,7 @@ One proof uses the following inputs and comparisons. Commute P with r, apply fin
 
 Under coefficient convention C1. For any displayed i,r and any cone c, L_i,r(c)(0)=0, before any splitting assumption.
 
-The uses a common universe for A and N, and explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed.
+A and N lie in one common universe and carry explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed.
 
 One proof uses the following inputs and comparisons. Use the native linear-map zero law.
 
@@ -6698,9 +6680,9 @@ Use the actual signed P_J/P_D maps and native ModuleCat complex, projectivity an
 
 The construction has the following API.
 
-- For any commutative ring A and γ,δ,s,t∈A, use the actual polynomial ring R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), its coefficient map ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt and a=ιδ·v+ιδ·ιt+ιγ·u. Set J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), and the signed presentations P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε.  Put F=R² with its native R-module structure. For e∈{false,true} write B(e,n)=Φ if (n mod 2=0) has the same truth value as e=true, and Ψ otherwise. C(e) has F in every degree n≥0, differential `C(e)_{n+1}→C(e)_n` given by B(e,n), and zero off that shape. The native sectionIdealResolution.complex is exactly C(false).
-- For any commutative ring A and γ,δ,s,t∈A, use the actual polynomial ring R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), its coefficient map ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt and a=ιδ·v+ιδ·ιt+ιγ·u. Set J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), and the signed presentations P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε.  Put F=R² with its native R-module structure. For e∈{false,true} write B(e,n)=Φ if (n mod 2=0) has the same truth value as e=true, and Ψ otherwise. C(e) has F in every degree n≥0, differential `C(e)_{n+1}→C(e)_n` given by B(e,n), and zero off that shape. The native sectionIdealResolution.π is exactly π_J.
-- For any commutative ring A and γ,δ,s,t∈A, use the actual polynomial ring R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), its coefficient map ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt and a=ιδ·v+ιδ·ιt+ιγ·u. Set J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), and the signed presentations P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε.  Put F=R² with its native R-module structure. For e∈{false,true} write B(e,n)=Φ if (n mod 2=0) has the same truth value as e=true, and Ψ otherwise. C(e) has F in every degree n≥0, differential `C(e)_{n+1}→C(e)_n` given by B(e,n), and zero off that shape. The actual bundled sectionIdealResolution.π is a native QuasiIso in every degree.
+- The native sectionIdealResolution.complex is exactly C(false).
+- The native sectionIdealResolution.π is exactly π_J.
+- The actual bundled sectionIdealResolution.π is a native QuasiIso in every degree.
 
 **Checks.**
 
@@ -6724,9 +6706,9 @@ Use the actual signed P_J/P_D maps and native ModuleCat complex, projectivity an
 
 The construction has the following API.
 
-- For any commutative ring A and γ,δ,s,t∈A, use the actual polynomial ring R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), its coefficient map ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt and a=ιδ·v+ιδ·ιt+ιγ·u. Set J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), and the signed presentations P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε.  Put F=R² with its native R-module structure. For e∈{false,true} write B(e,n)=Φ if (n mod 2=0) has the same truth value as e=true, and Ψ otherwise. C(e) has F in every degree n≥0, differential `C(e)_{n+1}→C(e)_n` given by B(e,n), and zero off that shape. The native sectionDualResolution.complex is exactly C(true).
-- For any commutative ring A and γ,δ,s,t∈A, use the actual polynomial ring R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), its coefficient map ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt and a=ιδ·v+ιδ·ιt+ιγ·u. Set J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), and the signed presentations P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε.  Put F=R² with its native R-module structure. For e∈{false,true} write B(e,n)=Φ if (n mod 2=0) has the same truth value as e=true, and Ψ otherwise. C(e) has F in every degree n≥0, differential `C(e)_{n+1}→C(e)_n` given by B(e,n), and zero off that shape. The native sectionDualResolution.π is exactly π_D.
-- For any commutative ring A and γ,δ,s,t∈A, use the actual polynomial ring R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), its coefficient map ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt and a=ιδ·v+ιδ·ιt+ιγ·u. Set J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), and the signed presentations P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε.  Put F=R² with its native R-module structure. For e∈{false,true} write B(e,n)=Φ if (n mod 2=0) has the same truth value as e=true, and Ψ otherwise. C(e) has F in every degree n≥0, differential `C(e)_{n+1}→C(e)_n` given by B(e,n), and zero off that shape. The actual bundled sectionDualResolution.π is a native QuasiIso in every degree.
+- The native sectionDualResolution.complex is exactly C(true).
+- The native sectionDualResolution.π is exactly π_D.
+- The actual bundled sectionDualResolution.π is a native QuasiIso in every degree.
 
 **Checks.**
 
@@ -6742,9 +6724,9 @@ The construction has the following API.
 
 Under coefficient convention C7. Assume p is finitely generated. Equip the underlying abelian group L of lim Fᴬ with the Â-module structure transported along the actual additive equivalence underlying E to the native Â-module lim G. Explicitly b⋆x=E⁻¹(b·E(x)); preserve the existing A-module structure on L. The transported action satisfies IsScalarTower(A,Â,L) with the existing A-action and the actual A→Â coefficient algebra.
 
-Here N is arbitrary: no flatness, finite generation or finite-quotient-annihilation hypothesis. No noetherianity, localness, discriminant or regular-sequence hypothesis. p is finitely generated, exactly as required by the finite tensor equivalence.
+Here N is arbitrary: no flatness, finite generation or annihilation hypothesis on the finite quotients. No noetherianity, localness, discriminant or regular-sequence hypothesis. p is finitely generated, exactly as required by the finite tensor equivalence.
 
-One proof uses the following inputs and comparisons. Unfold only the specialized adapter and use its actual native object, morphism or transported scalar data. Use the listed native scalar transport or linearity law; for level zero, the actual quotient by the unit ideal and its tensor are zero.
+One proof uses the following inputs and comparisons. Unfold only the comparison just defined and use its native object, morphism or transported scalar data. Use the listed native scalar transport or linearity law; for level zero, the actual quotient by the unit ideal and its tensor are zero.
 
 The transported action satisfies IsScalarTower(A,Â,L) with the existing A-action and the actual A→Â coefficient algebra. No identification of an ordinary completed tensor product with this limit is assumed.
 
@@ -6756,7 +6738,7 @@ The transported action satisfies IsScalarTower(A,Â,L) with the existing A-actio
 
 Under coefficient convention C7. Assume p is finitely generated. With precisely the transported Â-action on L, construct Ê:L≃ₗ[Â]lim G from the same underlying additive equivalence as E. Its maps are the actual maps E and E⁻¹; no additional scalar action is selected.
 
-Here N is arbitrary: no flatness, finite generation or finite-quotient-annihilation hypothesis. No noetherianity, localness, discriminant or regular-sequence hypothesis. p is finitely generated, exactly as required by the finite tensor equivalence.
+Here N is arbitrary: no flatness, finite generation or annihilation hypothesis on the finite quotients. No noetherianity, localness, discriminant or regular-sequence hypothesis. p is finitely generated, exactly as required by the finite tensor equivalence.
 
 One proof uses the following inputs and comparisons. Apply native AddEquiv.linearEquiv to the same actual additive equivalence and exactly the transported module. The forward and inverse maps agree with E and E⁻¹, and native completed-linear projections give scalar compatibility.
 
@@ -6782,7 +6764,7 @@ The construction has the following API.
 
 Under coefficient convention C5. Construct an actual ModuleCat(Â) isomorphism R̂⊗_Â N≅lim G from the two native limiting cones.
 
-Here No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
+No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
 
 One proof uses the following inputs and comparisons. Reuse pinned IsLimit.conePointUniqueUpToIso with the proved ordinary cone and limit.isLimit(G).
 
@@ -6794,9 +6776,9 @@ The construction has the following API.
 
 **Checks.**
 
-- The module-category isomorphism's forward morphism commutes with every actual projection.
-- The module-category isomorphism's inverse morphism commutes with every actual projection.
-- The forward morphism followed by the inverse is the actual identity morphism.
+- Take A=ℤ, γ=δ=s=t=0, p=(2) and m=2R, so R=ℤ[u,v]/(u²), Â=ℤ₂ and Qₙ=(ℤ/2ⁿ)[u,v]/(u²); put `σ=Σ_{k≥0}2^k v^k∈R̂`. With r=1, the forward map sends σ⊗1 to the compatible family (1, 1+2v, 1+2v+4v², …), with level-3 term 1+2v+4v².
+- The inverse sends the constant family (u⊗1, u⊗1, …) to u⊗1; the family with level-1 term 1 and level-2 term 0 is not an element of lim G.
+- With r=0 both sides are 0.
 
 (Deduction using `CategoryTheory.Limits.IsLimit.hom_ext` and `CategoryTheory.Limits.IsLimit.lift_self` in `Mathlib/CategoryTheory/Limits/IsLimit.lean`, lines 232 and 95; tensor components use `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [the actual completed coefficient algebra](#2123-the-actual-completed-coefficient-algebra), [finite quotient transition over completed coefficients](#2106-finite-quotient-transition-over-completed-coefficients), [native completed-coefficient tensor diagram](#2160-native-completed-coefficient-tensor-diagram), [finite-free completed tensor universal property](#2345-finite-free-completed-tensor-universal-property).; [knudsen2](#references), Appendix Proposition 6, pp. 194–195, for the surrounding two-base completion problem; the displayed native diagram calculation is the deduction specified here.)
 
@@ -6806,7 +6788,7 @@ The construction has the following API.
 
 Under coefficient convention C5. The IsLimit lift of the ordinary cone itself is the identity, excluding a nonfaithful limiting construction.
 
-Here No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
+No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
 
 One proof uses the following inputs and comparisons. Use the specified native data/projection or inverse law; retain the actual coefficient action and carrier.
 
@@ -6818,7 +6800,7 @@ One proof uses the following inputs and comparisons. Use the specified native da
 
 Under coefficient convention C1. For two splittings through Fin(r)→Â and Fin(r′)→Â, their lifts of the same cone agree pointwise, even if r≠r′.
 
-The uses a common universe for A and N, and explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed.
+A and N lie in one common universe and carry explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed.
 
 One proof uses the following inputs and comparisons. Apply separation by finite tensor projections and both lift factorisation equations.
 
@@ -6830,7 +6812,7 @@ One proof uses the following inputs and comparisons. Apply separation by finite 
 
 Under coefficient convention C1. If r∘i=id_N, the ordinary completed tensor cone is a native IsLimit with lift L_i,r.
 
-The uses a common universe for A and N, and explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed.
+A and N lie in one common universe and carry explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed.
 
 One proof uses the following inputs and comparisons. Use the factorisation theorem for fac, then finite projection separation and the candidate cone equations for uniq.
 
@@ -7006,7 +6988,7 @@ Use the actual signed P_J/P_D maps and native ModuleCat complex, projectivity an
 
 Under coefficient convention C8. The canonical exchange Φ_D,M:D∨⊗_A M≃ₗ[R]Hom_R(D,N_M) is an equivalence with Φ_D,M(F⊗m)(h)=F(h)⊗m. Construct it as (η⁻¹⊗id_M) followed by the existing Θ_J,M.
 
-Here No noetherianity, reducedness, nonzero coefficient ring, unit discriminant or flatness of M is assumed. Ext vanishing is only in positive degrees.
+No noetherianity, reducedness, nonzero coefficient ring, unit discriminant or flatness of M is assumed. Ext vanishing is only in positive degrees.
 
 One proof uses the following inputs and comparisons. Tensor the explicit native bidual equivalence with id_M using the heterobasic R-linear tensor equivalence. Compose its inverse direction with Θ_J,M. On pure tensors, η(η⁻¹F)(h)=F(h) proves that the result is the actual canonical exchange map. Tensor induction gives uniqueness and naturality for every A-linear map M→M′.
 
@@ -7033,9 +7015,9 @@ The construction has the following API.
 
 Under coefficient convention C7. Assume p is finitely generated. Equip the underlying abelian group L of lim Fᴬ with the Â-module structure transported along the actual additive equivalence underlying E to the native Â-module lim G. Explicitly b⋆x=E⁻¹(b·E(x)); preserve the existing A-module structure on L. For every b∈Â and x∈L, E(b⋆x)=b·E(x), using the actual completed action on lim G.
 
-Here N is arbitrary: no flatness, finite generation or finite-quotient-annihilation hypothesis. No noetherianity, localness, discriminant or regular-sequence hypothesis. p is finitely generated, exactly as required by the finite tensor equivalence.
+Here N is arbitrary: no flatness, finite generation or annihilation hypothesis on the finite quotients. No noetherianity, localness, discriminant or regular-sequence hypothesis. p is finitely generated, exactly as required by the finite tensor equivalence.
 
-One proof uses the following inputs and comparisons. Unfold only the specialized adapter and use its actual native object, morphism or transported scalar data. Use the listed native scalar transport or linearity law; for level zero, the actual quotient by the unit ideal and its tensor are zero.
+One proof uses the following inputs and comparisons. Unfold only the comparison just defined and use its native object, morphism or transported scalar data. Use the listed native scalar transport or linearity law; for level zero, the actual quotient by the unit ideal and its tensor are zero.
 
 For every b∈Â and x∈L, E(b⋆x)=b·E(x), using the actual completed action on lim G. No identification of an ordinary completed tensor product with this limit is assumed.
 
@@ -7047,9 +7029,9 @@ For every b∈Â and x∈L, E(b⋆x)=b·E(x), using the actual completed action 
 
 Under coefficient convention C7. Assume p is finitely generated. Equip the underlying abelian group L of lim Fᴬ with the Â-module structure transported along the actual additive equivalence underlying E to the native Â-module lim G. Explicitly b⋆x=E⁻¹(b·E(x)); preserve the existing A-module structure on L. For every a∈A and x∈L, ι̂(a)⋆x=a·x, where ι̂ is the actual completion coefficient map A→Â and the right action is the existing A-action.
 
-Here N is arbitrary: no flatness, finite generation or finite-quotient-annihilation hypothesis. No noetherianity, localness, discriminant or regular-sequence hypothesis. p is finitely generated, exactly as required by the finite tensor equivalence.
+Here N is arbitrary: no flatness, finite generation or annihilation hypothesis on the finite quotients. No noetherianity, localness, discriminant or regular-sequence hypothesis. p is finitely generated, exactly as required by the finite tensor equivalence.
 
-One proof uses the following inputs and comparisons. Unfold only the specialized adapter and use its actual native object, morphism or transported scalar data. Use the listed native scalar transport or linearity law; for level zero, the actual quotient by the unit ideal and its tensor are zero.
+One proof uses the following inputs and comparisons. Unfold only the comparison just defined and use its native object, morphism or transported scalar data. Use the listed native scalar transport or linearity law; for level zero, the actual quotient by the unit ideal and its tensor are zero.
 
 For every a∈A and x∈L, ι̂(a)⋆x=a·x, where ι̂ is the actual completion coefficient map A→Â and the right action is the existing A-action. No identification of an ordinary completed tensor product with this limit is assumed.
 
@@ -7061,9 +7043,9 @@ For every a∈A and x∈L, ι̂(a)⋆x=a·x, where ι̂ is the actual completion
 
 Under coefficient convention C7. Assume p is finitely generated. With precisely the transported Â-action on L, construct Ê:L≃ₗ[Â]lim G from the same underlying additive equivalence as E. Its maps are the actual maps E and E⁻¹; no additional scalar action is selected. For every x∈L, the forward completed-linear equivalence evaluates as E(x).
 
-Here N is arbitrary: no flatness, finite generation or finite-quotient-annihilation hypothesis. No noetherianity, localness, discriminant or regular-sequence hypothesis. p is finitely generated, exactly as required by the finite tensor equivalence.
+Here N is arbitrary: no flatness, finite generation or annihilation hypothesis on the finite quotients. No noetherianity, localness, discriminant or regular-sequence hypothesis. p is finitely generated, exactly as required by the finite tensor equivalence.
 
-One proof uses the following inputs and comparisons. Unfold only the specialized adapter and use its actual native object, morphism or transported scalar data. Use the listed native scalar transport or linearity law; for level zero, the actual quotient by the unit ideal and its tensor are zero.
+One proof uses the following inputs and comparisons. Unfold only the comparison just defined and use its native object, morphism or transported scalar data. Use the listed native scalar transport or linearity law; for level zero, the actual quotient by the unit ideal and its tensor are zero.
 
 For every x∈L, the forward completed-linear equivalence evaluates as E(x). No identification of an ordinary completed tensor product with this limit is assumed.
 
@@ -7075,9 +7057,9 @@ For every x∈L, the forward completed-linear equivalence evaluates as E(x). No 
 
 Under coefficient convention C7. Assume p is finitely generated. With precisely the transported Â-action on L, construct Ê:L≃ₗ[Â]lim G from the same underlying additive equivalence as E. Its maps are the actual maps E and E⁻¹; no additional scalar action is selected. For every y∈lim G, its inverse evaluates as E⁻¹(y).
 
-Here N is arbitrary: no flatness, finite generation or finite-quotient-annihilation hypothesis. No noetherianity, localness, discriminant or regular-sequence hypothesis. p is finitely generated, exactly as required by the finite tensor equivalence.
+Here N is arbitrary: no flatness, finite generation or annihilation hypothesis on the finite quotients. No noetherianity, localness, discriminant or regular-sequence hypothesis. p is finitely generated, exactly as required by the finite tensor equivalence.
 
-One proof uses the following inputs and comparisons. Unfold only the specialized adapter and use its actual native object, morphism or transported scalar data. Use the listed native scalar transport or linearity law; for level zero, the actual quotient by the unit ideal and its tensor are zero.
+One proof uses the following inputs and comparisons. Unfold only the comparison just defined and use its native object, morphism or transported scalar data. Use the listed native scalar transport or linearity law; for level zero, the actual quotient by the unit ideal and its tensor are zero.
 
 For every y∈lim G, its inverse evaluates as E⁻¹(y). No identification of an ordinary completed tensor product with this limit is assumed.
 
@@ -7089,9 +7071,9 @@ For every y∈lim G, its inverse evaluates as E⁻¹(y). No identification of an
 
 Under coefficient convention C7. Assume p is finitely generated. With precisely the transported Â-action on L, construct Ê:L≃ₗ[Â]lim G from the same underlying additive equivalence as E. Its maps are the actual maps E and E⁻¹; no additional scalar action is selected. For b∈Â, x∈L and every n, π⁽ᴳ⁾ₙ(Ê(b⋆x))=b·π⁽ᴳ⁾ₙ(Ê(x)) in the actual finite Â-tensor module.
 
-Here N is arbitrary: no flatness, finite generation or finite-quotient-annihilation hypothesis. No noetherianity, localness, discriminant or regular-sequence hypothesis. p is finitely generated, exactly as required by the finite tensor equivalence.
+Here N is arbitrary: no flatness, finite generation or annihilation hypothesis on the finite quotients. No noetherianity, localness, discriminant or regular-sequence hypothesis. p is finitely generated, exactly as required by the finite tensor equivalence.
 
-One proof uses the following inputs and comparisons. Unfold only the specialized adapter and use its actual native object, morphism or transported scalar data. Use the listed native scalar transport or linearity law; for level zero, the actual quotient by the unit ideal and its tensor are zero.
+One proof uses the following inputs and comparisons. Unfold only the comparison just defined and use its native object, morphism or transported scalar data. Use the listed native scalar transport or linearity law; for level zero, the actual quotient by the unit ideal and its tensor are zero.
 
 For b∈Â, x∈L and every n, π⁽ᴳ⁾ₙ(Ê(b⋆x))=b·π⁽ᴳ⁾ₙ(Ê(x)) in the actual finite Â-tensor module. No identification of an ordinary completed tensor product with this limit is assumed.
 
@@ -7103,7 +7085,7 @@ For b∈Â, x∈L and every n, π⁽ᴳ⁾ₙ(Ê(b⋆x))=b·π⁽ᴳ⁾ₙ(Ê(
 
 Under coefficient convention C5. Construct E:R̂⊗_Â N≃ₗ[Â]lim G from the actual module-category isomorphism.
 
-Here No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
+No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
 
 One proof uses the following inputs and comparisons. Use ModuleCat.Iso.toLinearEquiv; no alternate limit carrier or transported ad hoc scalar action is introduced.
 
@@ -7131,7 +7113,7 @@ The construction has the following API.
 
 Under coefficient convention C5. The forward morphism followed by the inverse is the actual identity morphism.
 
-Here No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
+No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
 
 One proof uses the following inputs and comparisons. Use the specified native data/projection or inverse law; retain the actual coefficient action and carrier.
 
@@ -7143,7 +7125,7 @@ One proof uses the following inputs and comparisons. Use the specified native da
 
 Under coefficient convention C1. For every c and n, the native limit lift followed by the ordinary n-projection is cₙ.
 
-The uses a common universe for A and N, and explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed.
+A and N lie in one common universe and carry explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed.
 
 One proof uses the following inputs and comparisons. Use the actual IsLimit.fac field.
 
@@ -7155,7 +7137,7 @@ One proof uses the following inputs and comparisons. Use the actual IsLimit.fac 
 
 Under coefficient convention C1. Any cone morphism f into the ordinary tensor cone with f followed by every projection equal to cₙ is its limit lift.
 
-The uses a common universe for A and N, and explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed.
+A and N lie in one common universe and carry explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed.
 
 One proof uses the following inputs and comparisons. Use the actual IsLimit.uniq field, supplying every opposite-natural-number component.
 
@@ -7167,7 +7149,7 @@ One proof uses the following inputs and comparisons. Use the actual IsLimit.uniq
 
 Under coefficient convention C1. The lift of the ordinary tensor cone to itself is its identity morphism.
 
-The uses a common universe for A and N, and explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed.
+A and N lie in one common universe and carry explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed.
 
 One proof uses the following inputs and comparisons. Apply native IsLimit.hom_ext and its factorisation law.
 
@@ -7179,7 +7161,7 @@ One proof uses the following inputs and comparisons. Apply native IsLimit.hom_ex
 
 Under coefficient convention C1. For every finite projective Â-module N, the ordinary completed tensor cone is a native IsLimit, without choosing a basis of N or assuming N free.
 
-The uses a common universe for A and N, and explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed. N is finite and projective over Â; a basis or freeness is not assumed.
+A and N lie in one common universe and carry explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed. N is finite and projective over Â; a basis or freeness is not assumed.
 
 One proof uses the following inputs and comparisons. Import Module.Finite.exists_comp_eq_id_of_projective at the pin. Apply the explicit finite-free retract construction and choose a witness of Nonempty IsLimit. The generic retraction theorem is not replanned.
 
@@ -7273,7 +7255,7 @@ The two native Mathlib Ext definitions are distinguished, with both positive van
 
 Under coefficient convention C8. For every x∈J⊗_A M, Φ_D,M((η⊗id_M)x)=Θ_J,M(x) in Hom_R(D,N_M). This identifies Knudsen’s ψ, and Ile’s σ_J⊗id followed by exchange, with the previously constructed evaluation comparison.
 
-Here No noetherianity, reducedness, nonzero coefficient ring, unit discriminant or flatness of M is assumed. Ext vanishing is only in positive degrees.
+No noetherianity, reducedness, nonzero coefficient ring, unit discriminant or flatness of M is assumed. Ext vanishing is only in positive degrees.
 
 One proof uses the following inputs and comparisons. Check both sides on j⊗m: evaluation at h is h(j)⊗m. Use tensor induction for zero and addition; the result is equality of actual R-linear maps on every tensor.
 
@@ -7291,7 +7273,7 @@ Use the actual ideal subtype, native R-duals and R-module tensor action. No priv
 
 Under coefficient convention C5. For every x and n, πₙ(E(x))=ρₙ(x).
 
-Here No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
+No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
 
 One proof uses the following inputs and comparisons. Evaluate the pinned forward projection equation for unique limiting-cone isomorphisms.
 
@@ -7303,7 +7285,7 @@ One proof uses the following inputs and comparisons. Evaluate the pinned forward
 
 Under coefficient convention C5. For every y∈lim G and n, ρₙ(E⁻¹(y))=πₙ(y).
 
-Here No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
+No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
 
 One proof uses the following inputs and comparisons. Evaluate the pinned inverse projection equation for unique limiting-cone isomorphisms.
 
@@ -7315,7 +7297,7 @@ One proof uses the following inputs and comparisons. Evaluate the pinned inverse
 
 Under coefficient convention C5. For every x∈R̂⊗_Â N, E⁻¹(E(x))=x.
 
-Here No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
+No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
 
 One proof uses the following inputs and comparisons. Use the left inverse of the actual native linear equivalence.
 
@@ -7327,7 +7309,7 @@ One proof uses the following inputs and comparisons. Use the left inverse of the
 
 Under coefficient convention C5. For every y∈lim G, E(E⁻¹(y))=y.
 
-Here No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
+No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
 
 One proof uses the following inputs and comparisons. Use the right inverse of the actual native linear equivalence.
 
@@ -7339,7 +7321,7 @@ One proof uses the following inputs and comparisons. Use the right inverse of th
 
 Under coefficient convention C5. Assume additionally p.FG. For the actual original-base diagram Fᴬ:n↦Qₙ⊗_A N, with the transported Â-action on Lᴬ=lim Fᴬ, construct Lᴬ≃ₗ[Â]R̂⊗_Â N as E⁻¹ composed with the inherited completed-linear limit comparison.
 
-Here No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. p is finitely generated; this is inherited from the original-base finite tensor comparison.
+No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. p is finitely generated; this is inherited from the original-base finite tensor comparison.
 
 One proof uses the following inputs and comparisons. Compose the inherited completed-linear equivalence with the finite-free ordinary equivalence's inverse. Retain the finite-generation condition required by the original finite-level comparison.
 
@@ -7351,9 +7333,9 @@ The construction has the following API.
 
 **Checks.**
 
-- With p.FG and the completed action, inverse after forward is the identity on the actual original tensor limit.
-- With p.FG, forward after inverse is the identity on the ordinary completed tensor.
-- The original-limit equivalence's finite projections equal the inherited completed-native limit projections.
+- Take A=ℤ, γ=δ=s=t=0, p=(2), finitely generated, and m=2R, so R=ℤ[u,v]/(u²), Â=ℤ₂ and Qₙ=(ℤ/2ⁿ)[u,v]/(u²); put `σ=Σ_{k≥0}2^k v^k∈R̂`. With r=1, the element of Lᴬ with components `(1+2v+⋯+2^{n−1}v^{n−1})⊗_ℤ1` goes to σ⊗1.
+- The constant family 1⊗_ℤ(1/3) goes to ĩ(1/3)⊗1, whose level-2 projection is 3; on the original base the scalar 1/3 is visible only through 1⊗_ℤ(1/3)=3⊗_ℤ1 at level 2.
+- With r=0 both sides are 0.
 
 (Deduction using `CategoryTheory.Limits.IsLimit.hom_ext` and `CategoryTheory.Limits.IsLimit.lift_self` in `Mathlib/CategoryTheory/Limits/IsLimit.lean`, lines 232 and 95; tensor components use `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [completed-linear equivalence of finite tensor limits](#2356-completed-linear-equivalence-of-finite-tensor-limits), [the actual completed coefficient algebra](#2123-the-actual-completed-coefficient-algebra), [finite tensor diagram over the original base](#2158-finite-tensor-diagram-over-the-original-base), [finite quotient transition over completed coefficients](#2106-finite-quotient-transition-over-completed-coefficients), [native completed-coefficient tensor diagram](#2160-native-completed-coefficient-tensor-diagram), [ordinary tensor and native limit linear equivalence](#2377-ordinary-tensor-and-native-limit-linear-equivalence), [completed coefficient action on the original tensor limit](#2344-completed-coefficient-action-on-the-original-tensor-limit).; [knudsen2](#references), Appendix Proposition 6, pp. 194–195, for the surrounding two-base completion problem; the displayed native diagram calculation is the deduction specified here.)
 
@@ -7363,7 +7345,7 @@ The construction has the following API.
 
 Under coefficient convention C1. For every c and n, its native limit lift followed by the ordinary n-projection is cₙ.
 
-The uses a common universe for A and N, and explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed. N is finite and projective over Â; a basis or freeness is not assumed.
+A and N lie in one common universe and carry explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed. N is finite and projective over Â; a basis or freeness is not assumed.
 
 One proof uses the following inputs and comparisons. Use the actual IsLimit.fac field.
 
@@ -7375,7 +7357,7 @@ One proof uses the following inputs and comparisons. Use the actual IsLimit.fac 
 
 Under coefficient convention C1. A cone morphism into the ordinary tensor cone is the lift exactly when it has every required finite projection.
 
-The uses a common universe for A and N, and explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed. N is finite and projective over Â; a basis or freeness is not assumed.
+A and N lie in one common universe and carry explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed. N is finite and projective over Â; a basis or freeness is not assumed.
 
 One proof uses the following inputs and comparisons. Apply IsLimit.uniq to the displayed component equalities.
 
@@ -7387,7 +7369,7 @@ One proof uses the following inputs and comparisons. Apply IsLimit.uniq to the d
 
 Under coefficient convention C1. The native lift of the ordinary tensor cone to itself is its identity morphism.
 
-The uses a common universe for A and N, and explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed. N is finite and projective over Â; a basis or freeness is not assumed.
+A and N lie in one common universe and carry explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed. N is finite and projective over Â; a basis or freeness is not assumed.
 
 One proof uses the following inputs and comparisons. Use IsLimit.hom_ext with the factorisation equations.
 
@@ -7399,7 +7381,7 @@ One proof uses the following inputs and comparisons. Use IsLimit.hom_ext with th
 
 Under coefficient convention C1. For finite projective N construct the native Â-linear equivalence R̂⊗_Â N≃ₗ[Â]lim G_N.
 
-The uses a common universe for A and N, and explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed. N is finite and projective over Â; a basis or freeness is not assumed.
+A and N lie in one common universe and carry explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed. N is finite and projective over Â; a basis or freeness is not assumed.
 
 One proof uses the following inputs and comparisons. Use the uniqueness isomorphism of two native limit cones and ModuleCat.Iso.toLinearEquiv.
 
@@ -7427,7 +7409,7 @@ The construction has the following API.
 
 Under coefficient convention C2. Construct the Â-linear map B from the existing ModuleCat sections submodule of G_N to T.
 
-Here Native A,N,L,K have a common universe with compatible A/Â-actions on N. Assembly, equivalence and the displayed API/test package use finite projective N over Â. No noetherian, local, discriminant or finiteness-over-A hypothesis. The carrier and forward maps exist for arbitrary N.
+Native A,N,L,K have a common universe with compatible A/Â-actions on N. Assembly, equivalence and the displayed API/test package use finite projective N over Â. No noetherian, local, discriminant or finiteness-over-A hypothesis. The carrier and forward maps exist for arbitrary N.
 
 One proof uses the following inputs and comparisons. Make the evaluation cone on the native sections submodule and apply the actual projective tensor IsLimit lift. Do not introduce a surrogate completion.
 
@@ -7535,7 +7517,7 @@ The two native Mathlib Ext definitions are distinguished, with both positive van
 
 Under coefficient convention C5. For u∈R̂,z∈N and every n, πₙ(E(u⊗z))=evalₙ(u)⊗z over Â.
 
-Here No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
+No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. No finite-generation condition on p.
 
 One proof uses the following inputs and comparisons. Combine the actual forward projection equation with the native pure tensor projection rule.
 
@@ -7547,7 +7529,7 @@ One proof uses the following inputs and comparisons. Combine the actual forward 
 
 Under coefficient convention C5. For p.FG, x∈Lᴬ and every n, ρₙ(E_original(x))=πₙ(E_inherited(x)), where E_inherited:Lᴬ≃ₗ[Â]lim G is the completed-linear comparison.
 
-Here No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. p is finitely generated; this is inherited from the original-base finite tensor comparison.
+No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. p is finitely generated; this is inherited from the original-base finite tensor comparison.
 
 One proof uses the following inputs and comparisons. Apply the actual inverse ordinary-limit projection to the inherited forward comparison.
 
@@ -7559,7 +7541,7 @@ One proof uses the following inputs and comparisons. Apply the actual inverse or
 
 Under coefficient convention C5. With p.FG and the completed action, inverse after forward is the identity on the actual original tensor limit.
 
-Here No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. p is finitely generated; this is inherited from the original-base finite tensor comparison.
+No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. p is finitely generated; this is inherited from the original-base finite tensor comparison.
 
 One proof uses the following inputs and comparisons. Use the specified native data/projection or inverse law; retain the actual coefficient action and carrier.
 
@@ -7571,7 +7553,7 @@ One proof uses the following inputs and comparisons. Use the specified native da
 
 Under coefficient convention C5. With p.FG, forward after inverse is the identity on the ordinary completed tensor.
 
-Here No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. p is finitely generated; this is inherited from the original-base finite tensor comparison.
+No noetherian, local, regular-sequence or discriminant hypothesis. The coefficient module is exactly Fin(r)→Â; no arbitrary-module completion interchange is asserted. p is finitely generated; this is inherited from the original-base finite tensor comparison.
 
 One proof uses the following inputs and comparisons. Use the specified native data/projection or inverse law; retain the actual coefficient action and carrier.
 
@@ -7583,7 +7565,7 @@ One proof uses the following inputs and comparisons. Use the specified native da
 
 Under coefficient convention C1. For every x and n, πₙ(E_N(x))=P_N,n(x).
 
-The uses a common universe for A and N, and explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed. N is finite and projective over Â; a basis or freeness is not assumed.
+A and N lie in one common universe and carry explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed. N is finite and projective over Â; a basis or freeness is not assumed.
 
 One proof uses the following inputs and comparisons. Use conePointUniqueUpToIso_hom_comp at the actual native limit.
 
@@ -7595,7 +7577,7 @@ One proof uses the following inputs and comparisons. Use conePointUniqueUpToIso_
 
 Under coefficient convention C1. For every y∈lim G_N and n, P_N,n(E_N⁻¹(y))=πₙ(y).
 
-The uses a common universe for A and N, and explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed. N is finite and projective over Â; a basis or freeness is not assumed.
+A and N lie in one common universe and carry explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed. N is finite and projective over Â; a basis or freeness is not assumed.
 
 One proof uses the following inputs and comparisons. Use conePointUniqueUpToIso_inv_comp at the actual native limit.
 
@@ -7607,7 +7589,7 @@ One proof uses the following inputs and comparisons. Use conePointUniqueUpToIso_
 
 Under coefficient convention C1. For every x∈R̂⊗_Â N, E_N⁻¹(E_N(x))=x.
 
-The uses a common universe for A and N, and explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed. N is finite and projective over Â; a basis or freeness is not assumed.
+A and N lie in one common universe and carry explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed. N is finite and projective over Â; a basis or freeness is not assumed.
 
 One proof uses the following inputs and comparisons. Use the native LinearEquiv inverse law.
 
@@ -7619,7 +7601,7 @@ One proof uses the following inputs and comparisons. Use the native LinearEquiv 
 
 Under coefficient convention C1. For every y∈lim G_N, E_N(E_N⁻¹(y))=y.
 
-The uses a common universe for A and N, and explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed. N is finite and projective over Â; a basis or freeness is not assumed.
+A and N lie in one common universe and carry explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed. N is finite and projective over Â; a basis or freeness is not assumed.
 
 One proof uses the following inputs and comparisons. Use the native LinearEquiv inverse law.
 
@@ -7631,9 +7613,9 @@ One proof uses the following inputs and comparisons. Use the native LinearEquiv 
 
 Under coefficient convention C1. If p is finitely generated and N is finite projective over Â, the actual original A-linear finite-tensor limit, endowed with the transported Â-action, is Â-linearly equivalent to R̂⊗_Â N.
 
-The uses a common universe for A and N, and explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed. N is finite and projective over Â; a basis or freeness is not assumed. p is finitely generated; the original limit uses exactly the transported Â-action.
+A and N lie in one common universe and carry explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed. N is finite and projective over Â; a basis or freeness is not assumed. p is finitely generated; the original limit uses exactly the transported Â-action.
 
-One proof uses the following inputs and comparisons. Compose the completed-linear finite-tensor-limit equivalence with E_N⁻¹. Keep the ordinary R̂⊗_A N quotient comparison distinct.
+One proof uses the following inputs and comparisons. Compose [completed-linear equivalence of finite tensor limits](#2356-completed-linear-equivalence-of-finite-tensor-limits) with E_N⁻¹. Keep the ordinary R̂⊗_A N quotient comparison distinct.
 
 The construction has the following API.
 
@@ -7655,7 +7637,7 @@ The construction has the following API.
 
 Under coefficient convention C2. For a compatible tensor section v, Pₙ(B(v))=vₙ.
 
-Here Native A,N,L,K have a common universe with compatible A/Â-actions on N. Assembly, equivalence and the displayed API/test package use finite projective N over Â. No noetherian, local, discriminant or finiteness-over-A hypothesis. The carrier and forward maps exist for arbitrary N.
+Native A,N,L,K have a common universe with compatible A/Â-actions on N. Assembly, equivalence and the displayed API/test package use finite projective N over Â. No noetherian, local, discriminant or finiteness-over-A hypothesis. The carrier and forward maps exist for arbitrary N.
 
 One proof uses the following inputs and comparisons. Use the actual projective IsLimit factorisation equation with the section-evaluation cone.
 
@@ -7667,7 +7649,7 @@ One proof uses the following inputs and comparisons. Use the actual projective I
 
 Under coefficient convention C2. If y∈T satisfies Pₙ(y)=vₙ for every n, then y=B(v).
 
-Here Native A,N,L,K have a common universe with compatible A/Â-actions on N. Assembly, equivalence and the displayed API/test package use finite projective N over Â. No noetherian, local, discriminant or finiteness-over-A hypothesis. The carrier and forward maps exist for arbitrary N.
+Native A,N,L,K have a common universe with compatible A/Â-actions on N. Assembly, equivalence and the displayed API/test package use finite projective N over Â. No noetherian, local, discriminant or finiteness-over-A hypothesis. The carrier and forward maps exist for arbitrary N.
 
 One proof uses the following inputs and comparisons. Combine finite-projective projection separation with the assembly evaluation equation.
 
@@ -7679,7 +7661,7 @@ One proof uses the following inputs and comparisons. Combine finite-projective p
 
 Under coefficient convention C2. B(0)=0.
 
-Here Native A,N,L,K have a common universe with compatible A/Â-actions on N. Assembly, equivalence and the displayed API/test package use finite projective N over Â. No noetherian, local, discriminant or finiteness-over-A hypothesis. The carrier and forward maps exist for arbitrary N.
+Native A,N,L,K have a common universe with compatible A/Â-actions on N. Assembly, equivalence and the displayed API/test package use finite projective N over Â. No noetherian, local, discriminant or finiteness-over-A hypothesis. The carrier and forward maps exist for arbitrary N.
 
 One proof uses the following inputs and comparisons. Use native Â-linear-map preservation of zero.
 
@@ -7733,7 +7715,7 @@ Use actual R-linear Hom maps, the signed P_J/P_D presentations and native Module
 
 Under coefficient convention C8. For every n≥0 and α∈CategoryTheory.Abelian.Ext (ModuleCat.of R J) (ModuleCat.of R R) (n+1), α=0.
 
-Here No noetherianity, reducedness, nonzero coefficient ring, unit discriminant or flatness of M is assumed. Ext vanishing is only in positive degrees.
+No noetherianity, reducedness, nonzero coefficient ring, unit discriminant or flatness of M is assumed. Ext vanishing is only in positive degrees.
 
 One proof uses the following inputs and comparisons. Map the native R-linear tensor-unit isomorphism through the localization-defined Ext functor in its target argument. Apply the inherited coefficient-module vanishing with M=A to the inverse image of α. Map the zero equality forward and use the actual categorical inverse identity. This is separate from the root Ext module-valued interface; no equality of the two Ext constructions is assumed.
 
@@ -7751,7 +7733,7 @@ Use the actual ideal subtype, native R-duals and R-module tensor action. No priv
 
 Under coefficient convention C8. For every n≥0 and α∈CategoryTheory.Abelian.Ext (ModuleCat.of R D) (ModuleCat.of R R) (n+1), α=0.
 
-Here No noetherianity, reducedness, nonzero coefficient ring, unit discriminant or flatness of M is assumed. Ext vanishing is only in positive degrees.
+No noetherianity, reducedness, nonzero coefficient ring, unit discriminant or flatness of M is assumed. Ext vanishing is only in positive degrees.
 
 One proof uses the following inputs and comparisons. Map the native R-linear tensor-unit isomorphism through the localization-defined Ext functor in its target argument. Apply the inherited coefficient-module vanishing with M=A to the inverse image of α. Map the zero equality forward and use the actual categorical inverse identity. This is separate from the root Ext module-valued interface; no equality of the two Ext constructions is assumed.
 
@@ -7769,9 +7751,9 @@ Use the actual ideal subtype, native R-duals and R-module tensor action. No priv
 
 Under coefficient convention C1. For x in the original limit, P_N,n of its ordinary-tensor image equals the n-projection of the completed-linear limit image.
 
-The uses a common universe for A and N, and explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed. N is finite and projective over Â; a basis or freeness is not assumed. p is finitely generated; the original limit uses exactly the transported Â-action.
+A and N lie in one common universe and carry explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed. N is finite and projective over Â; a basis or freeness is not assumed. p is finitely generated; the original limit uses exactly the transported Â-action.
 
-One proof uses the following inputs and comparisons. Apply the inverse projective equivalence projection after the finite-tensor-limit comparison.
+One proof uses the following inputs and comparisons. Apply the inverse projective equivalence projection after the finite tensor-limit comparison of [completed-linear equivalence of finite tensor limits](#2356-completed-linear-equivalence-of-finite-tensor-limits).
 
 (Deduction using `Matrix.mulVecLin_apply` in `Mathlib/LinearAlgebra/Matrix/ToLin.lean`, line 291, and `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [original-base limit and ordinary projective tensor](#2411-original-base-limit-and-ordinary-projective-tensor), [inverse projective limit projection](#2408-inverse-projective-limit-projection).; [knudsen2](#references), Appendix Proposition 6, pp. 194–195, for the surrounding two-base completion problem; the displayed native diagram calculation is the deduction specified here.)
 
@@ -7781,7 +7763,7 @@ One proof uses the following inputs and comparisons. Apply the inverse projectiv
 
 Under coefficient convention C1. The composite equivalence followed by its inverse fixes every point of the original limit, with the same transported Â-action.
 
-The uses a common universe for A and N, and explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed. N is finite and projective over Â; a basis or freeness is not assumed. p is finitely generated; the original limit uses exactly the transported Â-action.
+A and N lie in one common universe and carry explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed. N is finite and projective over Â; a basis or freeness is not assumed. p is finitely generated; the original limit uses exactly the transported Â-action.
 
 One proof uses the following inputs and comparisons. Use the native LinearEquiv inverse law with the actual transported module instance.
 
@@ -7793,7 +7775,7 @@ One proof uses the following inputs and comparisons. Use the native LinearEquiv 
 
 Under coefficient convention C1. The inverse followed by the composite equivalence fixes every tensor in R̂⊗_Â N.
 
-The uses a common universe for A and N, and explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed. N is finite and projective over Â; a basis or freeness is not assumed. p is finitely generated; the original limit uses exactly the transported Â-action.
+A and N lie in one common universe and carry explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; no flatness of N is assumed. N is finite and projective over Â; a basis or freeness is not assumed. p is finitely generated; the original limit uses exactly the transported Â-action.
 
 One proof uses the following inputs and comparisons. Use the native LinearEquiv inverse law with the actual transported module instance.
 
@@ -7805,7 +7787,7 @@ One proof uses the following inputs and comparisons. Use the native LinearEquiv 
 
 Under coefficient convention C2. For finite projective N construct A_L:H_L→ₗ[Â]Hom_R(L,T), with A_L(h)(x)=B((hₙ(x))ₙ).
 
-Here Native A,N,L,K have a common universe with compatible A/Â-actions on N. Assembly, equivalence and the displayed API/test package use finite projective N over Â. No noetherian, local, discriminant or finiteness-over-A hypothesis. The carrier and forward maps exist for arbitrary N.
+Native A,N,L,K have a common universe with compatible A/Â-actions on N. Assembly, equivalence and the displayed API/test package use finite projective N over Â. No noetherian, local, discriminant or finiteness-over-A hypothesis. The carrier and forward maps exist for arbitrary N.
 
 One proof uses the following inputs and comparisons. For each x use the native compatible tensor section. Finite-projection separation proves additivity, R-linearity in x, and Â-linearity in h from the corresponding finite-level laws. No completed coefficient action on L is needed.
 
@@ -7870,7 +7852,7 @@ The construction has the following API.
 
 Under coefficient convention C2. For h∈H_L and x∈L, Pₙ(A_L(h)(x))=hₙ(x).
 
-Here Native A,N,L,K have a common universe with compatible A/Â-actions on N. Assembly, equivalence and the displayed API/test package use finite projective N over Â. No noetherian, local, discriminant or finiteness-over-A hypothesis. The carrier and forward maps exist for arbitrary N.
+Native A,N,L,K have a common universe with compatible A/Â-actions on N. Assembly, equivalence and the displayed API/test package use finite projective N over Â. No noetherian, local, discriminant or finiteness-over-A hypothesis. The carrier and forward maps exist for arbitrary N.
 
 One proof uses the following inputs and comparisons. Apply the actual tensor-section assembly evaluation law.
 
@@ -7882,7 +7864,7 @@ One proof uses the following inputs and comparisons. Apply the actual tensor-sec
 
 Under coefficient convention C2. For an R-module K, an R-linear map b:K→L, h∈H_L and k∈H_K with kₙ(x)=hₙ(b(x)) for every n,x, A_K(k)=A_L(h)∘b.
 
-Here Native A,N,L,K have a common universe with compatible A/Â-actions on N. Assembly, equivalence and the displayed API/test package use finite projective N over Â. No noetherian, local, discriminant or finiteness-over-A hypothesis. The carrier and forward maps exist for arbitrary N.
+Native A,N,L,K have a common universe with compatible A/Â-actions on N. Assembly, equivalence and the displayed API/test package use finite projective N over Â. No noetherian, local, discriminant or finiteness-over-A hypothesis. The carrier and forward maps exist for arbitrary N.
 
 One proof uses the following inputs and comparisons. Evaluate at x, apply finite projection separation, and use both assembly evaluation formulas followed by the supplied finite-level precomposition equation.
 
@@ -8002,7 +7984,7 @@ The two native Mathlib Ext definitions are distinguished, with both positive van
 
 Under coefficient convention C2. For f∈Hom_R(L,T), A_L(C_L(f))=f.
 
-Here Native A,N,L,K have a common universe with compatible A/Â-actions on N. Assembly, equivalence and the displayed API/test package use finite projective N over Â. No noetherian, local, discriminant or finiteness-over-A hypothesis. The carrier and forward maps exist for arbitrary N.
+Native A,N,L,K have a common universe with compatible A/Â-actions on N. Assembly, equivalence and the displayed API/test package use finite projective N over Â. No noetherian, local, discriminant or finiteness-over-A hypothesis. The carrier and forward maps exist for arbitrary N.
 
 One proof uses the following inputs and comparisons. Evaluate at x, then separate the two tensors using every finite projection and the assembly evaluation equation.
 
@@ -8014,7 +7996,7 @@ One proof uses the following inputs and comparisons. Evaluate at x, then separat
 
 Under coefficient convention C2. For h∈H_L, C_L(A_L(h))=h.
 
-Here Native A,N,L,K have a common universe with compatible A/Â-actions on N. Assembly, equivalence and the displayed API/test package use finite projective N over Â. No noetherian, local, discriminant or finiteness-over-A hypothesis. The carrier and forward maps exist for arbitrary N.
+Native A,N,L,K have a common universe with compatible A/Â-actions on N. Assembly, equivalence and the displayed API/test package use finite projective N over Â. No noetherian, local, discriminant or finiteness-over-A hypothesis. The carrier and forward maps exist for arbitrary N.
 
 One proof uses the following inputs and comparisons. Use native submodule/function/linear-map extensionality and the assembly projection law at every n and x.
 
@@ -8110,7 +8092,7 @@ The two native Mathlib Ext definitions are distinguished, with both positive van
 
 Under coefficient convention C2. Construct E_L:Hom_R(L,T)≃ₗ[Â]H_L with forward map C_L and inverse A_L, for finite projective N.
 
-Here Native A,N,L,K have a common universe with compatible A/Â-actions on N. Assembly, equivalence and the displayed API/test package use finite projective N over Â. No noetherian, local, discriminant or finiteness-over-A hypothesis. The carrier and forward maps exist for arbitrary N.
+Native A,N,L,K have a common universe with compatible A/Â-actions on N. Assembly, equivalence and the displayed API/test package use finite projective N over Â. No noetherian, local, discriminant or finiteness-over-A hypothesis. The carrier and forward maps exist for arbitrary N.
 
 One proof uses the following inputs and comparisons. Apply native LinearEquiv.ofLinearMap to the proved two inverse composite identities.
 
@@ -8136,7 +8118,7 @@ The construction has the following API.
 
 Under coefficient convention C8. For every n≥0, native _root_.Ext R (ModuleCat R) (n+1), evaluated contravariantly at J and covariantly at R, is a zero R-module object.
 
-Here No noetherianity, reducedness, nonzero coefficient ring, unit discriminant or flatness of M is assumed. Ext vanishing is only in positive degrees.
+No noetherianity, reducedness, nonzero coefficient ring, unit discriminant or flatness of M is assumed. Ext vanishing is only in positive degrees.
 
 One proof uses the following inputs and comparisons. Specialize coefficient-module vanishing for J to M=A. Apply the actual Ext functor to the native R-linear tensor-unit isomorphism R⊗_A A≃R. Transport IsZero along the inverse of that image isomorphism. Keep the R-action, variance and universe unchanged.
 
@@ -8154,7 +8136,7 @@ Use the actual ideal subtype, native R-duals and R-module tensor action. No priv
 
 Under coefficient convention C8. For every n≥0, native _root_.Ext R (ModuleCat R) (n+1), evaluated contravariantly at D and covariantly at R, is a zero R-module object.
 
-Here No noetherianity, reducedness, nonzero coefficient ring, unit discriminant or flatness of M is assumed. Ext vanishing is only in positive degrees.
+No noetherianity, reducedness, nonzero coefficient ring, unit discriminant or flatness of M is assumed. Ext vanishing is only in positive degrees.
 
 One proof uses the following inputs and comparisons. Specialize coefficient-module vanishing for D to M=A. Apply the actual Ext functor to the native R-linear tensor-unit isomorphism R⊗_A A≃R. Transport IsZero along the inverse of that image isomorphism. Keep the R-action, variance and universe unchanged.
 
@@ -8172,7 +8154,7 @@ Use the actual ideal subtype, native R-duals and R-module tensor action. No priv
 
 Under coefficient convention C2. For every f,n,x, (E_L(f))ₙ(x)=Pₙ(f(x)).
 
-Here Native A,N,L,K have a common universe with compatible A/Â-actions on N. Assembly, equivalence and the displayed API/test package use finite projective N over Â. No noetherian, local, discriminant or finiteness-over-A hypothesis. The carrier and forward maps exist for arbitrary N.
+Native A,N,L,K have a common universe with compatible A/Â-actions on N. Assembly, equivalence and the displayed API/test package use finite projective N over Â. No noetherian, local, discriminant or finiteness-over-A hypothesis. The carrier and forward maps exist for arbitrary N.
 
 One proof uses the following inputs and comparisons. Read the native equivalence constructed from C_L.
 
@@ -8184,7 +8166,7 @@ One proof uses the following inputs and comparisons. Read the native equivalence
 
 Under coefficient convention C2. For h∈H_L, Pₙ(E_L⁻¹(h)(x))=hₙ(x).
 
-Here Native A,N,L,K have a common universe with compatible A/Â-actions on N. Assembly, equivalence and the displayed API/test package use finite projective N over Â. No noetherian, local, discriminant or finiteness-over-A hypothesis. The carrier and forward maps exist for arbitrary N.
+Native A,N,L,K have a common universe with compatible A/Â-actions on N. Assembly, equivalence and the displayed API/test package use finite projective N over Â. No noetherian, local, discriminant or finiteness-over-A hypothesis. The carrier and forward maps exist for arbitrary N.
 
 One proof uses the following inputs and comparisons. Use the actual inverse A_L and its projection formula.
 
@@ -8196,7 +8178,7 @@ One proof uses the following inputs and comparisons. Use the actual inverse A_L 
 
 Under coefficient convention C2. E_L⁻¹(E_L(f))=f.
 
-Here Native A,N,L,K have a common universe with compatible A/Â-actions on N. Assembly, equivalence and the displayed API/test package use finite projective N over Â. No noetherian, local, discriminant or finiteness-over-A hypothesis. The carrier and forward maps exist for arbitrary N.
+Native A,N,L,K have a common universe with compatible A/Â-actions on N. Assembly, equivalence and the displayed API/test package use finite projective N over Â. No noetherian, local, discriminant or finiteness-over-A hypothesis. The carrier and forward maps exist for arbitrary N.
 
 One proof uses the following inputs and comparisons. Apply the native LinearEquiv inverse law.
 
@@ -8208,7 +8190,7 @@ One proof uses the following inputs and comparisons. Apply the native LinearEqui
 
 Under coefficient convention C2. E_L(E_L⁻¹(h))=h.
 
-Here Native A,N,L,K have a common universe with compatible A/Â-actions on N. Assembly, equivalence and the displayed API/test package use finite projective N over Â. No noetherian, local, discriminant or finiteness-over-A hypothesis. The carrier and forward maps exist for arbitrary N.
+Native A,N,L,K have a common universe with compatible A/Â-actions on N. Assembly, equivalence and the displayed API/test package use finite projective N over Â. No noetherian, local, discriminant or finiteness-over-A hypothesis. The carrier and forward maps exist for arbitrary N.
 
 One proof uses the following inputs and comparisons. Apply the native LinearEquiv inverse law.
 
@@ -8314,7 +8296,7 @@ The construction has the following API.
 
 For Noetherian A,R, A→R flat, and M finite over R, relative stable reflexivity is equivalent to the following for every A-module N: α_N:M*⊗_A N→Hom_R(M,R⊗_A N), f⊗n↦(m↦f(m)⊗n), and β_N:M⊗_A N→Hom_R(M*,R⊗_A N), m⊗n↦(f↦f(m)⊗n), are isomorphisms, and Ext_R^i(M,R⊗_A N)=Ext_R^i(M*,R⊗_A N)=0 for every i>0. It is also equivalent to existence of a universally acyclic complete hull. In particular M and M* are A-flat and M→M** is canonical evaluation.
 
-Here Noetherian A,R; R A-flat; M finite over R.
+Noetherian A,R; R A-flat; M finite over R.
 
 One proof uses the following inputs and comparisons. For the fibre definition, use the coefficient cohomology/base-change criterion on finite projective presentations and both resolution complexes; filtered colimits extend finite coefficients to every N. Identify β_N with canonical bidual evaluation followed by the first Hom exchange for M*. Conversely the two exchange maps force M* and M to be A-flat by the same coefficient criterion; change-of-rings for their flat fibres gives biduality and both fibre Ext vanishings. The complete-hull characterization is the splicing theorem and the converse obtained by reading Hom cohomology of the two halves.
 
@@ -8328,7 +8310,7 @@ One proof uses the following inputs and comparisons. For the fibre definition, u
 
 Let A,R,T be Noetherian, R flat over A, T flat over R, and M finite over R. Relative stable reflexivity of M over A implies relative stable reflexivity of T⊗_R M over A. If R→T is faithfully flat the converse holds. Absolute stable reflexivity has the same preservation/reflection statement for Noetherian R,T and finite M. Canonical duals and all coefficient Hom/Ext comparison maps are obtained by tensoring finite free resolutions, not by assuming Hom commutes with an inverse limit.
 
-Here Noetherian rings as displayed; M finite over R; faithful flatness required only for reflection.
+Noetherian rings as displayed; M finite over R; faithful flatness required only for reflection.
 
 One proof uses the following inputs and comparisons. Use degreewise finite free resolutions to compare Hom and Ext after the flat chart extension R→T; compare M* and its bidual by finite-presentation flat Hom base change. For each A-module N identify T⊗_R(R⊗_A N) with T⊗_A N. Flat tensor commutes with homology; faithful flat tensor detects the kernel and cokernel of α_N, β_N and each positive Ext module. Apply the coefficient criterion; the absolute case uses the same calculation with target R and its dual.
 
@@ -8384,7 +8366,7 @@ Include nonflat A′ and nonflat N′. The dual map sends f⊗a′ to m⊗b′�
 
 Let (A,p)→(R,m) be a flat local map of Noetherian local rings with a retraction R→A whose composite is the identity, and suppose R/pR is a one-dimensional Gorenstein local ring. For J=ker(R→A), J is relatively stably reflexive over A. Multiplication embeds R in J*=Hom_R(J,R), and J*/R is free of rank one over A, supported on the section. Its generator is a choice, not a canonical trivialization. Duals and this exact quotient commute with arbitrary coefficient base change. In particular this applies at every smooth or nodal point of a section of a Noetherian nodal family.
 
-Here Local flat Noetherian coefficient map with a specified section retraction; one-dimensional Gorenstein closed chart fibre.
+Local flat Noetherian coefficient map with a specified section retraction; one-dimensional Gorenstein closed chart fibre.
 
 One proof uses the following inputs and comparisons. The exact sequence 0→J→R→A→0 makes J A-flat. On the closed fibre its maximal ideal is maximal Cohen–Macaulay over a one-dimensional Gorenstein ring, hence has canonical biduality and both positive dual Ext vanishings. Apply the relative fibre criterion. The Hom long exact sequence identifies J*/R with Ext_R^1(A,R); fibre duality and coefficient exchange make this an A-free rank-one module locally. A fibre regular element in the section ideal lifts to a nonzerodivisor, proving multiplication R→J* injective. Apply the canonical exchanges for arbitrary coefficients and exactness of the A-flat quotient to obtain the base-change exact sequence.
 
@@ -8412,7 +8394,7 @@ The source module is T⊗_R L, not L endowed with an invented completed action. 
 
 In the two-base completion theorem, suppose M is relatively stably reflexive over A and put D̂=Hom_(R̂)(M̂,R̂)=R̂⊗_R M*. For every Â-module N, with V=R̂⊗_Â N, the actual R̂-linear maps D̂⊗_Â N→Hom_(R̂)(M̂,V) and M̂⊗_Â N→Hom_(R̂)(D̂,V) are the evaluation isomorphisms, and Ext_(R̂)^i(M̂,V)=Ext_(R̂)^i(D̂,V)=0 for all i>0. All maps are natural in N and in compatible local changes, and compose with completed-ring adjunction to actual Hom_R/Ext_R comparisons.
 
-Here Flat local Noetherian A→R; M finite relatively stably reflexive; N any Â-module.
+Flat local Noetherian A→R; M finite relatively stably reflexive; N any Â-module.
 
 One proof uses the following inputs and comparisons. Apply the completion theorem to obtain relative stable reflexivity over Â. Apply its universal coefficient criterion with the actual Â-module N. Identify D̂ with the completed original dual by the flat Hom comparison; use evaluation formulas to check naturality. Use flat adjunction for the comparison with original-ring Hom and Ext.
 
@@ -8470,7 +8452,7 @@ Given such C/S with old markings sᵢ and arbitrary extra section Δ, put D=Σs�
 
 Here g,n are nonnegative integers with 2g−2+n>0; C/S is a stable ordered n-pointed family and Δ:S→C is any section. The dual-ideal theorem is verified over locally Noetherian bases. The extension of this construction to arbitrary schemes uses the separately recorded approximation/descent input.
 
-One proof uses the following inputs and comparisons. Use the parent effective Cartier divisor and invertible-sheaf API for D, the dual-section-ideal theorem for J, and the diagonal map to form the finitely presented cokernel K. Its two quotients restrict to invertible sheaves along the old markings and along Δ. Use the quotient convention for relative Proj of Sym of a finitely presented sheaf to define the lifts and the projection C^s→C; K need not be a vector bundle at Δ. Transport the sheaf sequence, symmetric algebra, Proj, projection and section quotients through base change and pointed isomorphisms. Their universal properties give identity/composition coherence. Flatness and stable fibres remain the separate next targets; arbitrary bases require the exact approximation gap.
+One proof uses the following inputs and comparisons. Use the parent effective Cartier divisor and invertible-sheaf API for D, the dual of the section ideal for J, and the diagonal map to form the finitely presented cokernel K. Its two quotients restrict to invertible sheaves along the old markings and along Δ. Use the quotient convention for relative Proj of Sym of a finitely presented sheaf to define the lifts and the projection C^s→C; K need not be a vector bundle at Δ. Transport the sheaf sequence, symmetric algebra, Proj, projection and section quotients through base change and pointed isomorphisms. Their universal properties give identity/composition coherence. Flatness and stable fibres remain the separate next targets; arbitrary bases require the exact approximation gap.
 
 An arbitrary extra section is not assumed Cartier.
 
@@ -8541,7 +8523,7 @@ The affine cover is displayed and is valid over nonreduced A. The new marking is
 
 For the Noetherian pointed nodal family, C^s=Proj_C Sym K is flat over the coefficient base near the preimage of a nodal section point. The completed family comparison identifies its formal affine charts with completed base changes of the parent polynomial expansion charts. This is a statement about actual local rings of the intrinsic Proj. It uses neither algebraization of an arbitrary formal scheme nor excellence of the coefficient ring.
 
-Here Noetherian local coefficient base; finitely presented nodal curve with section; the intrinsic finite-presentation sheaf K and the pointed formal comparison.
+Noetherian local coefficient base; finitely presented nodal curve with section; the intrinsic finite-presentation sheaf K and the pointed formal comparison.
 
 One proof uses the following inputs and comparisons. On a distinguished affine H of the actual Proj over the local chart R, the formal ring is lim H/m^kH, where m is the maximal ideal of R at the section point. This is completion along the inverse image of that point. Use Sym/Proj base change and then complete this affine ring; a polynomial algebra over R̂ is not itself presumed complete. The pointed formal comparison identifies these rings with the (p,u,v)-adic completions of the parent polynomial expansion charts over Â. The first polynomial chart has monic leading term vy²; the complementary localization of the second is a polynomial localization. Their explicit parent normal forms give Â-flatness before completion. All these polynomial charts are Noetherian. Their displayed ideal-adic completions are flat over them and hence Â-flat. At a point under test, localize in the compared formal charts and complete once more at its maximal ideal; this yields the same maximal-ideal completion B̂ of the actual Proj local ring B. No ordinary tensor product of power-series rings is used. The resulting B̂ is Â-flat and hence A-flat. Since B→B̂ is faithfully flat, descend A-flatness to B. Away from the exceptional locus the intrinsic Proj is the original curve. This uses only completions of actual Noetherian rings and requires no algebraization of an arbitrary formal scheme.
 
@@ -8555,7 +8537,7 @@ Distinguish completion after coefficient base change from a bare tensor product 
 
 Over a locally Noetherian S the expanded C^s/S is flat and finitely presented. In the polynomial nodal model q(u,v)=q(s,t), its Proj charts are R₀=A[v,y]/(v(y²−γy+δ)+s(2y−γ)+t(−y²+2γy−γ²+δ)) and R₁=A[u,x]/(u(δx²−γx+1)+s(δx²−1)+tδ(γx²−2x)). R₀ has free A-basis the monomials vⁱyʲ excluding i≥1,j≥2. With h=δx²−γx+1, Spec R₀ and Spec R₁[h⁻¹] cover; R₁[h⁻¹]≅A[x,h⁻¹]. Transferring this calculation to C^s uses the actual formal completion and faithful flatness comparison. Arbitrary-base extension is a separate recorded gap.
 
-Here Use the stable range and the family/section data of expansion. The formal-local proof is over a locally Noetherian base. In the polynomial node chart, A is commutative and γ²−4δ is a unit; the pointed completed-local comparison is an additional input, not an identification with an algebraic chart.
+Use the stable range and the family/section data of expansion. The formal-local proof is over a locally Noetherian base. In the polynomial node chart, A is commutative and γ²−4δ is a unit; the pointed completed-local comparison is an additional input, not an identification with an algebraic chart.
 
 One proof uses the following inputs and comparisons. Use the actual signed dual presentation to write Sym J∨ as the homogeneous quotient and eliminate u or v on its two Proj charts. The coefficients of the leading vy² term and of the localized linear u term give the displayed basis and localization, respectively. Since h(0)=1, V(h) is in the chart where x is invertible and hence in Spec R₀. Thus these two flat opens cover the polynomial expansion. For a general family, identify the completed expansion along the exceptional fibre with the completed polynomial Proj model using the pointed hull, completed dual and quotient comparisons, and relative Proj completion compatibility. Reflect flatness by the applicable local faithfully flat completions. These formal-local suppliers remain explicitly open. At an old-mark collision use Knudsen II Theorem 2.4 Case II and the parent Cartier/curve cohomology inputs; away from nodes and collisions the projection is an isomorphism. The finitely presented sheaf/graded-algebra construction gives finite presentation. Extend beyond locally Noetherian bases only via the recorded approximation input.
 
@@ -8569,7 +8551,7 @@ A fibrewise description alone does not prove flatness over a nonreduced base.
 
 C^s with its n+1 lifted sections is a stable pointed family of the same arithmetic genus g. Its new marking is in the relative smooth locus and is disjoint from every retained mark; in the node case the inserted P¹ has three distinct special flags.
 
-Here Use the stable pair and pointed family of expansion, with the base and formal comparison hypotheses of expansion-flat.
+Use the stable pair and pointed family of expansion, with the base and formal comparison hypotheses of expansion-flat.
 
 One proof uses the following inputs and comparisons. Identify geometric fibres by the Proj charts, including nodal and collision cases. Compute the genus using the parent normalization/dual-graph formula. Check log-canonical degrees on every component using the parent pointed-stability criterion.
 
@@ -8597,7 +8579,7 @@ A finite-presentation module can have a dual that fails arbitrary base change in
 
 The existing intrinsic diagonal-cokernel construction defines stable (g,n+1)-pointed expansion over every scheme S for each stable pair (g,n), including old-mark collisions and nodal sections. The result is proper, flat and finitely presented over S, of the same genus, with disjoint smooth lifted markings and positive log-dual degree on every geometric component. Its canonical base-change and pointed-isomorphism comparisons satisfy the identity and composition cocycles. The new section is not required to be smooth or disjoint before expansion.
 
-Here Stable (g,n)-pointed C/S; 2g−2+n>0; arbitrary extra section Δ.
+Stable (g,n)-pointed C/S; 2g−2+n>0; arbitrary extra section Δ.
 
 One proof uses the following inputs and comparisons. Work over a Noetherian model. The complement of Δ is unchanged; the smooth disjoint case is an isomorphism, the collision case is the displayed tail chart, and the node case is the formal-transfer chart. These charts prove flatness, nodality, smoothness/disjointness of lifted marks and the geometric three-flag description. The graph/genus and componentwise degree formulas prove same genus and stability. Pull back to an arbitrary base using the approximation theorem, then glue across affine charts. All comparisons arise from the canonical sheaf dual, cokernel, Sym and Proj maps, so their identity and composition laws follow from those universal properties.
 
@@ -8611,7 +8593,7 @@ Include all three fibre types in a single construction. Retain automorphisms of 
 
 Let Y/S be stable (g,n+1)-pointed, and let q:Y→C be the parent contraction after omitting its last marking, with 2g−2+n>0. Let Δ be the image of the omitted mark. There is a unique pointed isomorphism Y≃C^s over C compatible with q, the lifted old markings and the last marking. It is natural in family isomorphisms and every base change. The only contracted component is the rational three-flag tail or bridge rendered unstable by removal of that one marking; no stable component is contracted.
 
-Here Parent single-mark contraction with its universal structure-sheaf and base-change properties; stable source and stable retained pair.
+Parent single-mark contraction with its universal structure-sheaf and base-change properties; stable source and stable retained pair.
 
 One proof uses the following inputs and comparisons. Use the parent contraction and componentwise log-dual degrees to classify its exceptional fibre: collision tail, nodal bridge, or none. Write D for the old divisor on C, D_Y for the retained divisor on Y and l for the last section. The fibrewise tail/bridge calculations and cohomology/base change give q_*O_Y(l−D_Y)≃J∨(−D). The evaluation diagram identifies q_*O_Y(l) with K(−D), not K itself, and gives q^*K(−D)→O_Y(l) surjective. Tensor by q^*O_C(D), or use Proj Sym K(−D)≃Proj Sym K, to obtain the map Y→C^s with the specified quotient lines. Keep the signs compatible with the positive diagonal. The map preserves all quotient lines and is an isomorphism on geometric fibres, hence is quasi-finite. It is proper because Y is proper over S and C^s is separated over S, and is therefore finite. For a finite map between S-flat finitely presented curves, fibrewise isomorphism makes its structure-sheaf map an isomorphism by Nakayama and coefficient-flatness. The quotient universal property and the contraction factorization property give uniqueness. Prove over Noetherian models and descend to arbitrary S.
 
@@ -8667,7 +8649,7 @@ The compactification adds three points, each with a stable rational tail.
 
 For every scheme S, forgetting the generalized elliptic action gives an equivalence from the imported one-gon generalized elliptic groupoid E₁(S) to the groupoid of stable one-pointed genus-one curves over S. The inverse uses the unique group law on the relative smooth locus with the mark as identity, and its unique extension action on the cubic. It commutes with arbitrary pullback. Consequently M̄₁,₁ is proper smooth Deligne–Mumford over Z of relative dimension one; its reduced boundary is the smooth Cartier stack B(C₂). This proof is independent of the triangle embedding.
 
-Here Stable pointed genus-one family; the ordered single mark is relatively smooth.
+Stable pointed genus-one family; the ordered single mark is relatively smooth.
 
 One proof uses the following inputs and comparisons. The total log-dual degree is 2g−2+n=1. Positivity on each geometric component forces one component: a smooth genus-one curve or an irreducible rational nodal curve. The degree-three marked polarization gives the relative noncuspidal Weierstrass cubic locally on S. Use the existing integral Weierstrass presentation and its coordinate-change group; its generalized elliptic law is uniquely recovered from the pointed cubic. The coordinate comparisons descend and are compatible with all pullbacks, identifying the two groupoids and preserving their automorphisms. Import properness, smoothness, DM and the one-gon cusp from ModularCurvesPartII §§2.1–2.3 and 2.11; no new construction of generalized elliptic curves is made here.
 
@@ -8704,7 +8686,7 @@ Suppose for a stable pair (g,n) the imported M̄_(g,n) is smooth proper DM over 
 
 The stated smooth proper DM and independent-node-coordinate hypotheses for (g,n); 2g−2+n>0.
 
-One proof uses the following inputs and comparisons. Representability of the universal-curve morphism transfers DM algebraicity from the base and gives properness by composition; its relative dimension is one. On a smooth atlas at a point away from an old node, the universal curve is smooth relative dimension one. At an old node its local deformation equation is xy=t₁; eliminating the independent parameter t₁ proves smoothness of the total space over Z. At a collision, the explicit tail chart identifies the new node parameter with the transverse coordinate a; at an old node the bridge chart identifies its two node parameters with x,y. Retain every other old node coordinate. Thus the boundary coordinates remain independent, and the complement of their zero loci is the dense smooth-family open. Use the same atlas and the formal-to-étale coordinate comparison required by MC.1, rather than infer étale normal crossings from arbitrary formal equations.
+One proof uses the following inputs and comparisons. Representability of the universal-curve morphism transfers DM algebraicity from the base and gives properness by composition; its relative dimension is one. On a smooth atlas at a point away from an old node, the universal curve is smooth relative dimension one. At an old node its local deformation equation is xy=t₁; eliminating the independent parameter t₁ proves smoothness of the total space over Z. At a collision, the explicit tail chart identifies the new node parameter with the transverse coordinate a; at an old node the bridge chart identifies its two node parameters with x,y. Retain every other old node coordinate. Thus the boundary coordinates remain independent, and the complement of their zero loci is the dense smooth-family open. Use the same atlas and the formal-to-étale coordinate comparison of [completed framed hilbert charts](#113-completed-framed-hilbert-charts), rather than infer étale normal crossings from arbitrary formal equations.
 
 Dimension increases by one, including g=0 and g=1. The nodal universal projection remains nonsmooth at xy=t₁ with x=y=0. Prove smoothness and the node-coordinate hypothesis together in the induction.
 
@@ -8714,9 +8696,9 @@ Dimension increases by one, including g=0 and g=1. The nodal universal projectio
 
 ### 2.478 Four fixed triangle smoothing parameters
 
-At a geometric point in the labelled triangle immersion, choose the independent ambient M̄₂,₂ node-smoothing coordinates. Its formal image is defined by the vanishing of the four coordinates for the three internal triangle nodes and the attachment. The remaining parameter is free. If F is nodal, it is precisely its fifth ambient node-smoothing parameter and cuts out the boundary of M̄₁,₁; if F is smooth it is the one-dimensional smooth deformation coordinate. After the MC.1 formal-to-étale comparison these equations describe the image étale locally. There is no assertion that the fifth parameter vanishes on the whole image.
+At a geometric point in the labelled triangle immersion, choose the independent ambient M̄₂,₂ node-smoothing coordinates. Its formal image is defined by the vanishing of the four coordinates for the three internal triangle nodes and the attachment. The remaining parameter is free. If F is nodal, it is precisely its fifth ambient node-smoothing parameter and cuts out the boundary of M̄₁,₁; if F is smooth it is the one-dimensional smooth deformation coordinate. After the formal-to-étale comparison of [completed framed hilbert charts](#113-completed-framed-hilbert-charts) these equations describe the image étale locally. There is no assertion that the fifth parameter vanishes on the whole image.
 
-Here Geometric pointed triangle point; specified branches of the four persistent nodes; independent ambient node parameters on a smooth atlas.
+Geometric pointed triangle point; specified branches of the four persistent nodes; independent ambient node parameters on a smooth atlas.
 
 One proof uses the following inputs and comparisons. The three rational triangle components have three labelled flags each and thus no moduli; retain their four gluing nodes unsmoothed. Cutting those nodes as in the family-recovery theorem identifies their equisingular deformation groupoid with the one-pointed genus-one deformation groupoid. The ambient independent-node deformation ring therefore restricts by setting exactly those four parameters to zero; the source dimension one accounts for the remaining coordinate. At a nodal F its own self-node is left free, so its parameter is the source cusp parameter. Apply the same formal-to-étale supplier as the ambient boundary theorem.
 
@@ -8758,7 +8740,7 @@ The smooth elliptic locus has one remaining deformation parameter after imposing
 
 For a flat local map of Noetherian local rings (A,p)→(R,m), finite R-module M and ideal I⊆p, M is relatively stably reflexive over A if and only if M/I^nM is relatively stably reflexive over A/I^n for every n≥1, with chart ring R/I^nR. This is the local scope of Appendix Proposition 7. A global assertion needs the corresponding Jacobson condition on IR, not just I⊆Jac(A).
 
-Here Local flat Noetherian A→R; M finite; I⊆p.
+Local flat Noetherian A→R; M finite; I⊆p.
 
 One proof uses the following inputs and comparisons. The forward direction is arbitrary coefficient base change. For the reverse direction, all quotient modules are A/I^n-flat. The infinitesimal flatness criterion gives A-flatness of M since IR is in the maximal ideal of R. The n=1 relative condition descends further to the closed coefficient fibre and supplies its absolute stable reflexivity; the local fibre definition applies.
 
@@ -8800,7 +8782,7 @@ Layers 0–1; StableReduction Layers 1–3 and 9; StablePeriodicCurved Layer 2; 
 
 For ordered complementary marking sets I,J and g₁+g₂=g, with stable source pairs (g₁,|I|+1),(g₂,|J|+1), define `ξ_{g₁,I}:M̄_{g₁,I∪{a}}×M̄_{g₂,J∪{b}}→M̄_{g,n}` by gluing a and b in the disjoint union. The new node is distinguished in the construction, but is forgotten in the target. The two source components may each be reducible.
 
-Here All marking sets are finite and ordered/reindexed explicitly; every source vertex pair satisfies 2g_v−2+n_v>0. The stack morphism is specified on arbitrary schemes; the parent coherent pushout proof over locally Noetherian bases requires the recorded extension for arbitrary bases.
+All marking sets are finite and ordered/reindexed explicitly; every source vertex pair satisfies 2g_v−2+n_v>0. The stack morphism is specified on arbitrary schemes; the parent coherent pushout proof over locally Noetherian bases requires the recorded extension for arbitrary bases.
 
 One proof uses the following inputs and comparisons. Apply the parent’s external scheme clutching and reindex the remaining markings. Its arbitrary-base-change and isomorphism compatibility define the stack morphism.
 
@@ -8828,7 +8810,7 @@ The construction has the following API.
 
 For g≥1 with stable source pair (g−1,n+2), define `ξ_irr:M̄_{g−1,n+2}→M̄_{g,n}` by identifying the last two ordered smooth sections. The genus increases by one and both glued labels disappear. Exchanging these two sections gives the same glued target and is part of the graph automorphism quotient, including characteristic two.
 
-Here All marking sets are finite and ordered/reindexed explicitly; every source vertex pair satisfies 2g_v−2+n_v>0. The stack morphism is specified on arbitrary schemes; the parent coherent pushout proof over locally Noetherian bases requires the recorded extension for arbitrary bases.
+All marking sets are finite and ordered/reindexed explicitly; every source vertex pair satisfies 2g_v−2+n_v>0. The stack morphism is specified on arbitrary schemes; the parent coherent pushout proof over locally Noetherian bases requires the recorded extension for arbitrary bases.
 
 One proof uses the following inputs and comparisons. Apply the parent’s self-clutching pushout with its base-change isomorphisms. Use the parent graph-genus formula to obtain genus g.
 
@@ -8910,7 +8892,7 @@ The construction has the following API.
 
 ([knudsen2](#references), Definition3.8 and Corollary3.9(a), §3, printed p.190 (PDF30). The two clutching maps are finite unramified; the proof passes through the relative singular scheme. Part(b) is corrected by the recorded counterexample.; [mc0-stacks-curves](#references), Lemma53.21.1, §53.21, tag0CBY (unpaginated HTML). An arbitrary-base nodal family is étale locally the pullback of xy=t. Its Jacobian calculation gives the scheme structure on node choices, not just its geometric points.)
 
-*Needs:* gap:relative-node-branch-data, StableReduction Layer 1, StableReduction Layer 3, SchemeAndStackFoundations §§1.18–1.23, SchemeAndStackFoundations §1.19, `Ideal.Quotient.mk`, `AlgebraicGeometry.IsFinite.of_isProper_of_locallyQuasiFinite`, SchemeAndStackFoundations §4.15.
+*Needs:* gap:integral-node-incidence, gap:relative-node-branch-data, StableReduction Layer 1, StableReduction Layer 3, SchemeAndStackFoundations §§1.18–1.23, SchemeAndStackFoundations §1.19, `Ideal.Quotient.mk`, `AlgebraicGeometry.IsFinite.of_isProper_of_locallyQuasiFinite`, SchemeAndStackFoundations §4.15.
 
 ### 3.5 Stable one-edge boundary types
 
@@ -8952,13 +8934,13 @@ The fibre-product equivalence fixes the target family and its gluing isomorphism
 
 ([knudsen2](#references), Definition3.8 and Corollary3.9(a), §3, printed p.190 (PDF30). The two clutching maps are finite unramified; the proof passes through the relative singular scheme. Part(b) is corrected by the recorded counterexample.; [mc3-edidin-fulghesu](#references), Propositions4.4–4.6 and Theorem4.7, §4, printed pp.177–180 (PDF11–14). Graph labels give finite étale covers of a fixed stratum, and the quotient of the compactified vertex product is its stack normalization. The relative one-edge comparison below includes further degenerations and labelled external markings.; [mc0-stacks-curves](#references), Lemma53.21.1, §53.21, tag0CBY (unpaginated HTML). An arbitrary-base nodal family is étale locally the pullback of xy=t. Its Jacobian calculation gives the scheme structure on node choices, not just its geometric points.)
 
-*Needs:* gap:relative-node-branch-data, StableReduction Layer 1, StableReduction Layer 2, StableReduction Layer 3, SchemeAndStackFoundations §1.21, SchemeAndStackFoundations §1.15, SchemeAndStackFoundations §§1.18–1.23, [the stack of persistent nodes](#34-the-stack-of-persistent-nodes), [separating clutching morphism](#31-separating-clutching-morphism), [nonseparating clutching morphism](#32-nonseparating-clutching-morphism), [stable one-edge boundary types](#35-stable-one-edge-boundary-types).
+*Needs:* gap:integral-node-incidence, gap:relative-node-branch-data, StableReduction Layer 1, StableReduction Layer 2, StableReduction Layer 3, SchemeAndStackFoundations §1.21, SchemeAndStackFoundations §1.15, SchemeAndStackFoundations §§1.18–1.23, [the stack of persistent nodes](#34-the-stack-of-persistent-nodes), [separating clutching morphism](#31-separating-clutching-morphism), [nonseparating clutching morphism](#32-nonseparating-clutching-morphism), [stable one-edge boundary types](#35-stable-one-edge-boundary-types).
 
 ### 3.7 Finite unramified clutching
 
 Both clutching morphisms are representable finite and unramified. For a fixed target stable curve their geometric fibres are finite choices of a node and, when relevant, an ordering or genus/marking assignment to its branches. These choices can be more than one even for a fixed separating genus and marking partition.
 
-Here Use stable source and target pairs and the actual scheme clutching from parent Layer 3. Relative singular loci in a smoothing need not be flat or étale over the base; only unramifiedness is used here.
+Use stable source and target pairs and the actual scheme clutching from parent Layer 3. Relative singular loci in a smoothing need not be flat or étale over the base; only unramifiedness is used here.
 
 One proof uses the following inputs and comparisons. An automorphism of the input mapping to the identity of the target restricts to the identity on its partial normalization, giving injectivity on stabilizers. Use the exact DM-stack representability criterion from the requested supplier. Over a target family the fibre product records a persistent chosen node and ordered branch/marking/genus data, as in Knudsen’s auxiliary doubled stabilization argument. The relative singular locus is finite unramified for a proper nodal family, but generally not flat. The precise family representability and node-choice comparison is recorded as an open contract. The representable morphism is quasi-finite by finite node choices. Properness follows from proper source and separated target over Z; proper plus quasi-finite gives finiteness. The node-choice factorization gives unramifiedness; none of these steps requires a closed immersion of the entire separating map.
 
@@ -8972,15 +8954,15 @@ There can be two distinct separating preimages for two elliptic tails. For xy=t 
 
 Let `U→M̄_{g,n}` be a sufficiently small étale scheme chart at a geometric stable curve with r nodes, with the independent smoothing coordinates t₁,…,tᵣ of the pointed normal-crossing chart. After further étale localization, `U×_{M̄}N_{g,n}≅⨿_{j=1}^r` V(tⱼ). The universal curve near the jth selected node has equation xⱼyⱼ=tⱼ after étale localization on curve and base. The chosen-node map V(tⱼ)→U is a regular codimension-one immersion and its conormal is (tⱼ)/(tⱼ²). On overlaps nodes can be permuted, and the corresponding local conormal lines identify coherently. For a map S→U, the node-incidence formula pulls back to ⨿V(tⱼ|S); that pullback need not be normal or Cartier.
 
-Here U is an étale chart of the moduli stack itself over Z, not an arbitrary family base. The pointed DM, universal-curve and normal-crossing results are imported from MC.2; the underlying unpointed versal parameters are MC.1. Parameters are local near a fixed finite set of nodes, after shrinking. Arbitrary-base pullback uses [finite-diagram approximation](#01-finite-stage-models-of-pointed-curve-diagrams), gap:relative-node-branch-data and gap:integral-node-incidence; the smoothing-line calculation is proved in this layer.
+Here U is an étale chart of the moduli stack itself over Z, not an arbitrary family base. The pointed DM, universal-curve and normal-crossing results are imported from SchemeAndStackFoundations §4.15 and Layer 2; the underlying unpointed versal parameters are those of [completed framed hilbert charts](#113-completed-framed-hilbert-charts). Parameters are local near a fixed finite set of nodes, after shrinking. Arbitrary-base pullback uses [finite-diagram approximation](#01-finite-stage-models-of-pointed-curve-diagrams), gap:relative-node-branch-data and gap:integral-node-incidence; the smoothing-line calculation is proved in this layer.
 
-One proof uses the following inputs and comparisons. Start with the imported MC.1 versal node coordinates for g≥2. Extend to pointed types using the MC.2 universal-curve equivalence: adding a point at an old node replaces t by uv in the total base, while at a smooth point it adds a smooth coordinate; the new expanded curve has the corresponding two node parameters. Start separately at (0,3) and (1,1), as in the imported pointed DM proof. This is the chart form of that existing theorem, not a new moduli representability argument. Use the parent arbitrary-base nodal normal form and the Jacobian calculation of incidence near each node. Finite unramified incidence can be étale locally separated into the chosen node branches, and after shrinking no additional singular points occur. Thus the jth branch is precisely V(tⱼ), with its scheme structure. Since U is smooth over Z and the tⱼ are independent relative parameters, each V(tⱼ) is smooth over Z, hence regular and normal, and tⱼ is a nonzerodivisor. The unramified morphism has the displayed rank-one conormal. On a common chart refinement the chosen node determines the same local closed immersion; compare its ideal quotients and descend.
+One proof uses the following inputs and comparisons. Start with the versal node coordinates of [completed framed hilbert charts](#113-completed-framed-hilbert-charts) for g≥2. Extend to pointed types using the universal-curve equivalence of [expansion and contraction are inverse](#2473-expansion-and-contraction-are-inverse): adding a point at an old node replaces t by uv in the total base, while at a smooth point it adds a smooth coordinate; the new expanded curve has the corresponding two node parameters. Start separately at (0,3) and (1,1), as in the imported pointed DM proof. This is the chart form of that existing theorem, not a new moduli representability argument. Use the parent arbitrary-base nodal normal form and the Jacobian calculation of incidence near each node. Finite unramified incidence can be étale locally separated into the chosen node branches, and after shrinking no additional singular points occur. Thus the jth branch is precisely V(tⱼ), with its scheme structure. Since U is smooth over Z and the tⱼ are independent relative parameters, each V(tⱼ) is smooth over Z, hence regular and normal, and tⱼ is a nonzerodivisor. The unramified morphism has the displayed rank-one conormal. On a common chart refinement the chosen node determines the same local closed immersion; compare its ideal quotients and descend.
 
 For r=0 the incidence is empty and the boundary equation is the unit empty product. At r=2 the total boundary is V(t₁t₂), while its two node branches are V(t₁) and V(t₂). Over S mapping into tⱼ=0, pull back the conormal line from V(tⱼ); do not replace it by the ideal quotient of the zero ideal on S.
 
 ([mc0-stacks-curves](#references), Lemma53.21.1, §53.21, tag0CBY (unpaginated HTML). An arbitrary-base nodal family is étale locally the pullback of xy=t. Its Jacobian calculation gives the scheme structure on node choices, not just its geometric points.; [mc1-etale](#references), Lemma41.21.6, §41.21, tag0CBR (unpaginated HTML). The normalization of a normal-crossings divisor is étale locally the disjoint union of its regular branches, with the conormal of each selected branch of rank one.; [knudsen2](#references), Definition3.8 and Corollary3.9(a), §3, printed p.190 (PDF30). The two clutching maps are finite unramified; the proof passes through the relative singular scheme. Part(b) is corrected by the recorded counterexample.)
 
-*Needs:* StableReduction Layer 1, SchemeAndStackFoundations §1.22, `Ideal.Cotangent`, [the stack of persistent nodes](#34-the-stack-of-persistent-nodes), SchemeAndStackFoundations §4.15, [expansion and contraction are inverse](#2473-expansion-and-contraction-are-inverse).
+*Needs:* gap:integral-node-incidence, gap:relative-node-branch-data, StableReduction Layer 1, SchemeAndStackFoundations §1.22, `Ideal.Cotangent`, [the stack of persistent nodes](#34-the-stack-of-persistent-nodes), SchemeAndStackFoundations §4.15, [expansion and contraction are inverse](#2473-expansion-and-contraction-are-inverse).
 
 ### 3.9 Chosen nodes and stack normalization
 
@@ -8988,19 +8970,19 @@ Let Δ be the reduced total boundary of `M̄_{g,n}` over Z. Its normalization, i
 
 Here g,n≥0 in the stable range; Δ is the reduced relative normal-crossings boundary over Z. Ordinary normalization means normalization of the reduction in its total rings of fractions. Z is an excellent Nagata base. Arbitrary-base pullback uses [finite-diagram approximation](#01-finite-stage-models-of-pointed-curve-diagrams), gap:relative-node-branch-data and gap:integral-node-incidence; the smoothing-line calculation is proved in this layer.
 
-One proof uses the following inputs and comparisons. By node-atlas-branch-comparison, the incidence over U is ⨿V(tⱼ) and the reduced boundary has equation ∏tⱼ. These branches are normal; their disjoint union is the normalization of V(∏tⱼ), including when several j have the same global boundary type. Invoke the planned AlgebraicModuliForArithmeticGeometry §§5.1–5.4 and its smooth-chart characterization to glue this identification uniquely on atlas overlaps; invoke dm-normalization-finite for finiteness over Z. Do not construct stack normalization again here. Use the relative decorated-node equivalence to identify the connected type pieces of N with the graph quotients. Over a one-node curve the node scheme is the base, so the incidence is an equivalence on that locus, including its stabilizers. Combine with the local branch computation to obtain the original boundary-normalization endpoint.
+One proof uses the following inputs and comparisons. By [node incidence on pointed boundary charts](#38-node-incidence-on-pointed-boundary-charts), the incidence over U is ⨿V(tⱼ) and the reduced boundary has equation ∏tⱼ. These branches are normal; their disjoint union is the normalization of V(∏tⱼ), including when several j have the same global boundary type. Invoke the planned AlgebraicModuliForArithmeticGeometry §§5.1–5.4 and its smooth-chart characterization to glue this identification uniquely on atlas overlaps; invoke the finite normalization of gap:integral-node-incidence for finiteness over Z. Do not construct stack normalization again here. Use the relative decorated-node equivalence to identify the connected type pieces of N with the graph quotients. Over a one-node curve the node scheme is the base, so the incidence is an equivalence on that locus, including its stabilizers. Combine with the local branch computation to obtain the original boundary-normalization endpoint.
 
 On M̄₀,₃ the boundary, N and the coproduct of graph quotients are empty. For (0,4), the normalization is the three boundary sections over Spec Z. For (1,1), the boundary normalization is [M̄₀,₃/C₂]≃BC₂, not Spec Z. For (2,0), both Δ₀ and Δ₁ have the appropriate C₂ quotients. At the two-tail genus-three curve N has two selected-node lifts in the same type piece; a global boundary component need not be embedded smoothly.
 
 ([mc3-edidin-fulghesu](#references), Propositions4.4–4.6 and Theorem4.7, §4, printed pp.177–180 (PDF11–14). Graph labels give finite étale covers of a fixed stratum, and the quotient of the compactified vertex product is its stack normalization. The relative one-edge comparison below includes further degenerations and labelled external markings.; [mc3-stacks-norm](#references), Lemmas101.46.1–101.46.2 and Definition101.46.3, §101.46, tags0GMI–0GMK (unpaginated HTML). Stack normalization is characterized by normalization on smooth scheme charts and glued from the normalized groupoid. AlgebraicModuliForArithmeticGeometry §§5.1–5.4 owns this general construction.; [mc1-etale](#references), Lemma41.21.6, §41.21, tag0CBR (unpaginated HTML). Normal crossings give an unramified normalization locally equal to the separate regular divisor branches.)
 
-*Needs:* AlgebraicModuliForArithmeticGeometry §§5.1–5.4, SchemeAndStackFoundations §1.21, [clutching fibres as decorated node choices](#36-clutching-fibres-as-decorated-node-choices), [node incidence on pointed boundary charts](#38-node-incidence-on-pointed-boundary-charts).
+*Needs:* gap:integral-node-incidence, gap:relative-node-branch-data, AlgebraicModuliForArithmeticGeometry §§5.1–5.4, SchemeAndStackFoundations §1.21, [clutching fibres as decorated node choices](#36-clutching-fibres-as-decorated-node-choices), [node incidence on pointed boundary charts](#38-node-incidence-on-pointed-boundary-charts).
 
 ### 3.10 Normalization of the boundary
 
 The normalization of the reduced total boundary of `M̄_{g,n}` is the disjoint union, over stable one-edge types, of the corresponding vertex-product quotient stacks. Its finite map to the boundary records a distinguished node; it separates branches at curves with several nodes of the same type.
 
-Here Use the full stable range, reduced total boundary and compactified vertex stacks; no quotient coarse spaces replace these stacks. The graph quotient is by the constant finite automorphism group acting on vertex factors and flag labels. Characteristic two is included without using μ₂ or averaging.
+Use the full stable range, reduced total boundary and compactified vertex stacks; no quotient coarse spaces replace these stacks. The graph quotient is by the constant finite automorphism group acting on vertex factors and flag labels. Characteristic two is included without using μ₂ or averaging.
 
 One proof uses the following inputs and comparisons. Use finite representable clutching and its invariant descent through the constant graph automorphism group. The product of vertex stacks is smooth and normal; its finite-group quotient is normal as a stack because the torsor atlas is étale, including in characteristic two. On the one-node stratum, partial normalization recovers the vertex data uniquely up to graph automorphisms, including automorphisms on objects. Check this as an equivalence of groupoids, not just uniqueness of geometric points. Local nodal smoothing charts show the same map separates the branches at a curve with several nodes. Use the stack normalization universal property after an étale atlas, with finite birational comparison and effective gluing. AlgebraicModuliForArithmeticGeometry §§5.1–5.4 names normalization but does not specify this stack-level theorem: the exact owner extension is a recorded gap. The characteristic-zero descriptions in Hacking and CLP do not fill the integral supplier gap.
 
@@ -9028,7 +9010,7 @@ In genus zero the degree difference produces deg Lᵢ=1 on M̄₀,₄.
 
 For `j:N_{g,n}≃Δ^ν→M̄_{g,n}`, construct the invertible conormal C_j by its étale-local description (t)/(t²) for the selected node branch, and its dual normal line C_j^∨. On the vertex-product cover PΓ→NΓ, give the canonical isomorphism C_j|PΓ≅L_a⊗L_b. The graph-equivariant structure uses ordinary unsigned symmetry when the flags are exchanged. In split charts a change of branch parameters x′=u₁x+O(x²), y′=v₁y+O(y²) on the cut central curve multiplies the smoothing conormal generator by u₁v₁; general lifts across the first infinitesimal neighborhood give the same law, regardless of their higher terms. These transitions satisfy composition, base-change and atlas-refinement coherence over Z, including characteristic two.
 
-Here j is the finite unramified chosen-node map; its local closed-immersion charts are supplied by node-atlas-branch-comparison. L_a,L_b are the imported marking cotangent lines on the cut curve, using their identification with branch differentials. The coordinates are formal parameters along the two smooth sections; their linear coefficients are units in the base ring. This concerns the conormal of the chosen branch in the moduli stack. It is not the ideal of an arbitrary pulled-back boundary family, or the torsion differential on the singular curve. Arbitrary-base pullback uses [finite-diagram approximation](#01-finite-stage-models-of-pointed-curve-diagrams), gap:relative-node-branch-data and gap:integral-node-incidence; the smoothing-line calculation is proved in this layer.
+Here j is the finite unramified chosen-node map; its local closed-immersion charts are supplied by [node incidence on pointed boundary charts](#38-node-incidence-on-pointed-boundary-charts). L_a,L_b are the imported marking cotangent lines on the cut curve, using their identification with branch differentials. The coordinates are formal parameters along the two smooth sections; their linear coefficients are units in the base ring. This concerns the conormal of the chosen branch in the moduli stack. It is not the ideal of an arbitrary pulled-back boundary family, or the torsion differential on the singular curve. Arbitrary-base pullback uses [finite-diagram approximation](#01-finite-stage-models-of-pointed-curve-diagrams), gap:relative-node-branch-data and gap:integral-node-incidence; the smoothing-line calculation is proved in this layer.
 
 One proof uses the following inputs and comparisons. On each pointed nodal moduli chart use the conormal of V(t) in U, and descend on common étale refinements. This produces a line because t is regular on the moduli chart. The native module for an affine ideal quotient is Ideal.Cotangent; scheme and stack sheafification remain supplier operations. Compute the first-order smoothing class of xy=0 over any R by the relation module of the hypersurface: the map A²→A is (α,β)↦yα+xβ, and its cokernel is A/(x,y)=R, where A=R[x,y]/(xy). A perturbation of the equation contributes its value at the node; changes of lifted coordinates contribute a Jacobian term and disappear in this quotient. This computation, including nilpotents in R, shows that higher branch-parameter terms change no first-order multiplier. Comparing xy=t and x′y′=t′ gives [t′]=u₁v₁[t]. At each branch, [dx′]=u₁[dx] and [dy′]=v₁[dy]. Hence [t]↦[dx]⊗[dy] is independent of the split parameter choice. On overlaps with varying base coordinates use these pullback differential lines and the same relative Jacobian calculation. The product of slopes under composition is exactly the tensor transition cocycle. Polishchuk Proposition3.5 and Lemma4.6 provide an independent integral formal-coordinate check; Theorem1.2 over Q is not used. For exchange x↔y, the relation xy and t are unchanged. The tensor identification exchanges the two factors by TensorProduct.comm without a sign. Descend the equivariant line along the constant GΓ-torsor and then along the moduli atlas by SchemeAndStackFoundations §1.22. Invertibility and equality of maps can be checked after the faithfully flat cover. Use no averaging and no exactness claim for invariants. Dualizing gives the normal line L_a^∨⊗L_b^∨; with a consumer’s integral or rational first-Chern-class API its class is −ψ_a−ψ_b. Only the class notation is imported from intersection theory, not a new Chow theory.
 
@@ -9040,10 +9022,10 @@ The construction has the following API.
 - On the selected-node chart V(t)⊂U the line is the sheaf associated to (t)/(t²).
 - On PΓ identify the conormal with L_a⊗L_b by [t]↦dx⊗dy.
 - For arbitrary formal changes of the two branch parameters with slopes u₁,v₁, the conormal comparison multiplies by u₁v₁. Coordinate-lift errors in the Jacobian ideal do not contribute.
-- The branchTensor comparison commutes with flag exchange and the unsigned symmetry of the two cotangent factors; exchange squared is the identity.
+- The comparison C_j|PΓ≅L_a⊗L_b commutes with flag exchange and the unsigned symmetry of the two cotangent factors; exchange squared is the identity.
 - Pullback of the line along S→N agrees with s_a*Ω⊗s_b*Ω on an ordered cut, and the comparisons satisfy identity, composition and common-atlas-refinement coherence.
 - The dual line, with its canonical comparison to L_a^∨⊗L_b^∨ on every vertex cover.
-- Two morphisms between the descended conormal lines agree if their pullbacks agree on a jointly surjective étale selected-node atlas. In particular the chart and branchTensor comparisons determine the descended comparison uniquely, also in characteristic two.
+- Two morphisms between the descended conormal lines agree if their pullbacks agree on a jointly surjective étale selected-node atlas. In particular the chart comparison and C_j|PΓ≅L_a⊗L_b determine the descended comparison uniquely, also in characteristic two.
 
 **Checks.**
 
@@ -9055,13 +9037,13 @@ The construction has the following API.
 
 ([mc3-polishchuk](#references), Proposition3.5, §3.3, p.11; Lemma4.6 and proof of Theorem1.1, §4.3, pp.15–16. Over commutative Z[q]/q^(n+1)-algebras, the boundary section is the smoothing parameter and its determinant trivialization is invariant under the gluing group, with the inverse scaling for a parameter rescaling. This supports the integral transition law; the arbitrary-pointed atlas and conormal comparison are deduced explicitly here.; [hacking-boundary-review](#references), §3 pp.810–811 and Lemma4.2, §4, pp.813–814 (PDF3–4,6–7). The normal space is the local node-deformation space, and the pullback of the boundary conormal is the tensor of branch cotangent lines. The source’s characteristic-zero scope is retained as a comparison check.; [mc0-stacks-curves](#references), Lemma53.21.1, §53.21, tag0CBY (unpaginated HTML). An arbitrary-base nodal family is étale locally the pullback of xy=t. Its Jacobian calculation gives the scheme structure on node choices, not just its geometric points.)
 
-*Needs:* StableReduction Layer 1, StableReduction Layer 2, SchemeAndStackFoundations §1.22, SchemeAndStackFoundations §1.1, `Ideal.Cotangent`, `TensorProduct.comm`, `TensorProduct.map`, `TensorProduct.map_comp`, `TauCeti.AlgebraicGeometry.InvertibleSheaf`, [chosen nodes and stack normalization](#39-chosen-nodes-and-stack-normalization), [node incidence on pointed boundary charts](#38-node-incidence-on-pointed-boundary-charts), [clutching fibres as decorated node choices](#36-clutching-fibres-as-decorated-node-choices), [cotangent lines at the markings](#33-cotangent-lines-at-the-markings).
+*Needs:* gap:integral-node-incidence, gap:relative-node-branch-data, StableReduction Layer 1, StableReduction Layer 2, SchemeAndStackFoundations §1.22, SchemeAndStackFoundations §1.1, `Ideal.Cotangent`, `TensorProduct.comm`, `TensorProduct.map`, `TensorProduct.map_comp`, `TauCeti.AlgebraicGeometry.InvertibleSheaf`, [chosen nodes and stack normalization](#39-chosen-nodes-and-stack-normalization), [node incidence on pointed boundary charts](#38-node-incidence-on-pointed-boundary-charts), [clutching fibres as decorated node choices](#36-clutching-fibres-as-decorated-node-choices), [cotangent lines at the markings](#33-cotangent-lines-at-the-markings).
 
 ### 3.13 The node-smoothing conormal line
 
 On the vertex-product cover of a normalized one-edge boundary branch, its conormal line is canonically L_a⊗L_b, with the two cotangent lines at the preimages of the distinguished node. This identity is equivariant for the constant graph automorphism group and descends to the boundary normalization. The corresponding normal line is L_a∨⊗L_b∨. Where the consumer supplies first Chern classes on these stacks, its class is −ψ_a−ψ_b. This is a chosen-branch statement, not a claim that the whole boundary component is smoothly embedded.
 
-Here Use a distinguished node branch on the normalized reduced boundary; do not replace its conormal with the conormal of the entire possibly self-intersecting component. The line identity is integral. Hacking’s explicit source statement is characteristic zero; extending it over Z uses the nodal coordinate and stack descent contract recorded as a gap.
+Use a distinguished node branch on the normalized reduced boundary; do not replace its conormal with the conormal of the entire possibly self-intersecting component. The line identity is integral. Hacking’s explicit source statement is characteristic zero; extending it over Z uses the nodal coordinate and stack descent contract recorded as a gap.
 
 One proof uses the following inputs and comparisons. Work on a versal nodal deformation chart xy=t with the selected boundary branch t=0. Its conormal is generated by t modulo t². For changes of branch parameters x′=ux+higher terms and y′=vy+higher terms, the first-order smoothing class t′ modulo t² transforms by u₀v₀. The branch differential frames transform by u₀ and v₀; identify the conormal with their tensor. Prove independence from the higher-order terms via the node deformation module, rather than checking only linear rescalings. Branch exchange sends x,y to y,x and preserves xy=t, so the conormal exchange is the usual unsigned tensor symmetry, including characteristic two. Check all graph-equivariance and atlas/base-change cocycles. The exact integral deformation-line/descent contract remains a recorded gap; the characteristic-zero reference is not silently generalized.
 
@@ -9077,13 +9059,13 @@ For every retained external label i, separating or nonseparating clutching pulls
 
 Here 2g−2+n>0 for the forgetful target; i is retained, and all source vertex types of a clutching map are stable. `D_{i,n+1}` is the rational tail with marks i,n+1 and the attaching node, a Cartier divisor on the moduli stack. The comparison is pulled back as a line-bundle isomorphism even when a family maps into D. The arbitrary-base dualizing and Cartier-section comparisons use gap:cm-duality-arbitrary-base and finite-diagram approximation in Layer 0. Arbitrary-base pullback uses [finite-diagram approximation](#01-finite-stage-models-of-pointed-curve-diagrams), gap:relative-node-branch-data and gap:integral-node-incidence; the smoothing-line calculation is proved in this layer.
 
-One proof uses the following inputs and comparisons. The parent gluing morphism is an isomorphism near every retained smooth section. Pull back relative differentials along that section and use the imported canonical identification s_i*ω≅s_i*Ω. This gives the retained-line comparison without choices of local coordinates. Use the smooth-section conormal/differential comparison in the integral smoothing-conormal comparison in this layer; the ideal vanishes along the section, but its restriction I/I² is rank one. Parent base-change and gluing uniqueness give unit, composition, relabelling and graph-equivariance diagrams; descent uses the compatible-family formulation of stack QCoh. For forgetting use the original MC.3/forget-cotangent-line endpoint with its source proof: Knudsen III Theorem4.1(c), pp.202–203, pulls the exact sequence to a section transverse to the exceptional divisor. The quotient has length one along D, so the map π*L_i→L_i has exactly that simple zero. This fixes the sign and hence L_i≅π*L_i⊗O(D). Do not reprove contraction or construct new ordinary sheaf tensor operations here.
+One proof uses the following inputs and comparisons. The parent gluing morphism is an isomorphism near every retained smooth section. Pull back relative differentials along that section and use the imported canonical identification s_i*ω≅s_i*Ω. This gives the retained-line comparison without choices of local coordinates. Use the smooth-section conormal/differential comparison in the integral smoothing-conormal comparison in this layer; the ideal vanishes along the section, but its restriction I/I² is rank one. Parent base-change and gluing uniqueness give unit, composition, relabelling and graph-equivariance diagrams; descent uses the compatible-family formulation of stack QCoh. For forgetting use [cotangent-line correction under forgetting](#311-cotangent-line-correction-under-forgetting) with its source proof: Knudsen III Theorem4.1(c), pp.202–203, pulls the exact sequence to a section transverse to the exceptional divisor. The quotient has length one along D, so the map π*L_i→L_i has exactly that simple zero. This fixes the sign and hence L_i≅π*L_i⊗O(D). Do not reprove contraction or construct new ordinary sheaf tensor operations here.
 
 For M̄₀,₄→M̄₀,₃, π*L_i is trivial and `D_{i,4}` is one boundary section; thus L_i has degree1 on P¹, fixing the sign. For retained marks on opposite sides of separating clutching, the two comparisons land on their respective factors. Self-clutching leaves every retained marking line unchanged. Pullback along a constant map into D preserves the line-bundle identity; it does not preserve the effective-Cartier presentation as an embedding in that base.
 
 ([knudsen3](#references), Marking-line definition in §4, printed p.201 (PDF2); Theorem4.1(c) and its proof, printed pp.202–203 (PDF3–4). The contraction comparison has the negative rational-tail twist on π*L_i, proved using a transverse-section exact sequence.; [knudsen2](#references), Definition3.8 and Corollary3.9(a), §3, printed p.190 (PDF30). The two clutching maps are finite unramified; the proof passes through the relative singular scheme. Part(b) is corrected by the recorded counterexample.; [hacking-boundary-review](#references), §3 pp.810–811 and Lemma4.2, §4, pp.813–814 (PDF3–4,6–7). The normal space is the local node-deformation space, and the pullback of the boundary conormal is the tensor of branch cotangent lines. The source’s characteristic-zero scope is retained as a comparison check.)
 
-*Needs:* StableReduction Layer 2, StableReduction Layer 3, SchemeAndStackFoundations §1.22, `TauCeti.AlgebraicGeometry.InvertibleSheaf`, [cotangent lines at the markings](#33-cotangent-lines-at-the-markings), [cotangent-line correction under forgetting](#311-cotangent-line-correction-under-forgetting), [separating clutching morphism](#31-separating-clutching-morphism), [nonseparating clutching morphism](#32-nonseparating-clutching-morphism), SchemeAndStackFoundations §4.15.
+*Needs:* gap:cm-duality-arbitrary-base, gap:integral-node-incidence, gap:relative-node-branch-data, StableReduction Layer 2, StableReduction Layer 3, SchemeAndStackFoundations §1.22, `TauCeti.AlgebraicGeometry.InvertibleSheaf`, [cotangent lines at the markings](#33-cotangent-lines-at-the-markings), [cotangent-line correction under forgetting](#311-cotangent-line-correction-under-forgetting), [separating clutching morphism](#31-separating-clutching-morphism), [nonseparating clutching morphism](#32-nonseparating-clutching-morphism), SchemeAndStackFoundations §4.15.
 
 ### Examples
 
@@ -9127,9 +9109,9 @@ The construction has the following API.
 
 Let S be a quasi-compact Noetherian scheme, g≥2, and f:X→S a stable genus-g family. Put E=f_*ω³, of rank r=5g−5, and use the quotient convention for i:X↪P_S(E), with i*O(1)=ω³. For the ideal sheaf I of i there is d₀≥2 such that for every integer d≥d₀, I(d) is relatively generated, R^jπ_*I(d)=0 for j>0, and K_d=π_*I(d) is finite locally free and commutes with every base change. There is a base-change-compatible exact sequence 0→K_d→Sym^d `E→f_*ω^{3d}→0`, whose quotient has rank (6d−1)(g−1). Evaluation of K_d generates I(d), and its geometric-fibre equations recover the embedded curve as a closed subscheme. The same d₀ works over every residue characteristic of S, without assuming S is reduced, integral or flat over Z.
 
-Here Stable means proper flat finitely presented, geometrically connected nodal fibres and relatively ample dualizing line; genus g≥2 is fixed. The MC.1 tricanonical embedding and its locally free direct images commute with arbitrary base change. π:P_S(E)→S uses one-dimensional quotients, so π_*O(d)=Sym^d E for d≥0.
+Stable means proper flat finitely presented, geometrically connected nodal fibres and relatively ample dualizing line; genus g≥2 is fixed. The tricanonical embedding of [arbitrary-base tricanonical comparison](#12-arbitrary-base-tricanonical-comparison) and its locally free direct images commute with arbitrary base change. π:P_S(E)→S uses one-dimensional quotients, so π_*O(d)=Sym^d E for d≥0.
 
-One proof uses the following inputs and comparisons. In 0→I→O_P→i_*O_X→0, the last two terms are S-flat, hence so is I. Tensoring with any base change stays exact, identifying I_T with the actual ideal of X_T. This is the flat-kernel criterion, not an appeal to constancy of a Hilbert polynomial. Choose a finite affine cover trivializing E. Apply the imported relative Serre and S-flat family-regularity theorems on each projective-space chart to I. Take the maximum of these finitely many regularity thresholds: each conclusion holds for every higher degree on the same fixed chart. Descent gives one d₀ on S. Push forward the twisted ideal sequence. The higher vanishing supplies surjectivity; projective-bundle cohomology identifies the middle term with Sym^d E. Cohomology and arbitrary base change for the stable family identify the quotient with `f_*ω^{3d}`. Local freeness of the quotient makes the exact sequence locally split as modules; arbitrary pullback therefore preserves its kernel. Relative generation, also pulled back, recovers the fibre ideal sheaf. Equality of degree-d subspaces gives equality of these ideal sheaves after untwisting. This refines the proof obligation of the parent finite-degree-equations node. It does not create another generic relative Serre theorem or assert generation of all lower graded pieces of the homogeneous ideal.
+One proof uses the following inputs and comparisons. In 0→I→O_P→i_*O_X→0, the last two terms are S-flat, hence so is I. Tensoring with any base change stays exact, identifying I_T with the actual ideal of X_T. This is the flat-kernel criterion, not an appeal to constancy of a Hilbert polynomial. Choose a finite affine cover trivializing E. Apply the imported relative Serre and S-flat family-regularity theorems on each projective-space chart to I. Take the maximum of these finitely many regularity thresholds: each conclusion holds for every higher degree on the same fixed chart. Descent gives one d₀ on S. Push forward the twisted ideal sequence. The higher vanishing supplies surjectivity; projective-bundle cohomology identifies the middle term with Sym^d E. Cohomology and arbitrary base change for the stable family identify the quotient with `f_*ω^{3d}`. Local freeness of the quotient makes the exact sequence locally split as modules; arbitrary pullback therefore preserves its kernel. Relative generation, also pulled back, recovers the fibre ideal sheaf. Equality of degree-d subspaces gives equality of these ideal sheaves after untwisting. The finite-degree equations of stable embeddings (§4.3) use it. It does not create another generic relative Serre theorem or assert generation of all lower graded pieces of the homogeneous ideal.
 
 Choose d once before applying any characteristic-dependent positivity argument. The degree-d equations determine the saturated closed-subscheme ideal, not necessarily the entire graded ideal in lower degrees.
 
@@ -9174,7 +9156,7 @@ Fix g≥2 and N≥3 invertible on the base. A full homogeneous Jacobi level on a
 
 Here g≥2; N≥3 is invertible on every test base. The fixed symplectic flavour includes a chosen primitive root ζ_N; the homogeneous flavour retains its multiplier. The JacobianChallengePartII §§1.1–1.4 suppliers initially construct smooth projective geometrically connected families over Noetherian bases. General test families require the tricanonical Noetherian atlas, arbitrary pullback and effective polarized-abelian descent specified below; no field theorem is used as family representability.
 
-One proof uses the following inputs and comparisons. On the Noetherian smooth-curve tricanonical atlas from MC.1/hilbert-quotient import JacobianChallengePartII §§1.1–1.4 and JacobianChallengePartII §§1.1–1.4. JacobianChallengePartII §§1.1–1.4 supplies arbitrary, including nonreduced, pullbacks of this family. Descend these actual polarized abelian schemes along the curve-family atlas, using functorial curve isomorphisms and their all-test-scheme cocycle. The precise arbitrary-base polarized-Jacobian descent and cohomological frame bridge is gap:polarized-atlas-descent; the Noetherian JacobianChallengePartII §§1.1–1.4 statements do not by themselves prove it. Use A3 prime-to-characteristic torsion and Weil pairing and M6 symplectic frames. Define the pairing-preserving isomorphism functor and curve-level isomorphisms. For the DM H¹ étale formulation retain the separate SchemeAndStackFoundations §§3.3–3.7 cup-product/Tate-twist/dual comparison; a Jacobian existence theorem does not fix that convention.
+One proof uses the following inputs and comparisons. On the Noetherian smooth-curve tricanonical atlas from [hilbert quotient presentation](#111-hilbert-quotient-presentation) import JacobianChallengePartII §§1.1–1.4. JacobianChallengePartII §§1.1–1.4 supplies arbitrary, including nonreduced, pullbacks of this family. Descend these actual polarized abelian schemes along the curve-family atlas, using functorial curve isomorphisms and their all-test-scheme cocycle. The precise arbitrary-base polarized-Jacobian descent and cohomological frame bridge is gap:polarized-atlas-descent; the Noetherian JacobianChallengePartII §§1.1–1.4 statements do not by themselves prove it. Use A3 prime-to-characteristic torsion and Weil pairing and M6 symplectic frames. Define the pairing-preserving isomorphism functor and curve-level isomorphisms. For the DM H¹ étale formulation retain the separate SchemeAndStackFoundations §§3.3–3.7 cup-product/Tate-twist/dual comparison; a Jacobian existence theorem does not fix that convention.
 
 N is invertible; level at the characteristic is a different problem.
 
@@ -9224,7 +9206,7 @@ N=2 fails because of hyperelliptic[−1].
 
 Let B be a smooth projective connected curve over an algebraically closed field and f:X→B a proper flat finitely presented family of geometrically connected nodal curves of arithmetic genus g≥2, with smooth generic fibre. For every section s:B→X through the relative smooth locus, `deg(s*ω_{X/B})≥0`.
 
-Here Use the smooth-generic direct-image nef theorem for m≥3; no stability assumption on every fibre and no special-fibre vanishing for ω^m(−s) are imposed. The parent supplies relative duality and generic pluricanonical generation; torsion-free modules on the nonsingular curve give the invertible evaluation image and its effective-divisor comparison, while SchemeAndStackFoundations §4.15 supplies nef quotients.
+Use the smooth-generic direct-image nef theorem for m≥3; no stability assumption on every fibre and no special-fibre vanishing for ω^m(−s) are imposed. The parent supplies relative duality and generic pluricanonical generation; torsion-free modules on the nonsingular curve give the invertible evaluation image and its effective-divisor comparison, while SchemeAndStackFoundations §4.15 supplies nef quotients.
 
 One proof uses the following inputs and comparisons. Choose m≥3. On the smooth generic fibre, ω^m is globally generated, so evaluation f_*ω^m→s*ω^m is generically surjective. On the smooth integral base curve B the image is an invertible sheaf I=s*ω^m(−D) for an effective divisor D. It is a locally free quotient of the nef bundle f_*ω^m, hence deg I≥0. Thus m deg(s*ω)=deg I+deg D≥0. No vanishing of R¹f_*(ω^m(−s)) on every special fibre is used: an unstable rational tail can make it nonzero. A nonzero subsheaf of a line on a nonsingular curve is that line tensored with an effective ideal O(−D); use SchemeAndStackFoundations §4.15 for nef quotient positivity.
 
@@ -9280,7 +9262,7 @@ This concerns smooth curves; it is not naive full-level representability on all 
 
 Fix g≥2 and N≥3, B=Spec Z[1/N], and `G=(Z/N)^{2g}`. On the smooth genus-g stack the sheaf of exterior epimorphisms from the prime-to-residue-characteristic fundamental group to G is the full abelian torsion-frame sheaf, after the canonical H¹/Jacobian dual-and-Tate-twist comparisons. In this sheaf the homogeneous symplectic-similitude frames form an open and closed subfunctor, stable under `GSp_{2g}(Z/N)`. Its multiplier map has target the primitive-pairing scheme B_N=Spec Z[1/N,ζ_N]. Fixing a B_N-point gives exactly the symplectic Jacobi-level problem; the unconditioned sheaf of all frames is larger. Pairing conventions use e_N:J[N]×J[N]→μ_N, whereas DM 5.3 uses the H¹ pairing with values in `μ_N^{-1}`.
 
-Here Import the relative Jacobian, canonical polarization and arbitrary pullback on the Noetherian MC.1 atlas from JacobianChallengePartII §§1.1–1.4, and effective polarized-family descent from AlgebraicModuliForArithmeticGeometry §§7.3, 8.1–8.3. N is invertible, so torsion and frame sheaves are finite étale; the comparison is étale-local and natural in the base. The primitive root is part of the base change, not a choice silently made over B.
+Import the relative Jacobian, canonical polarization and arbitrary pullback on the Noetherian tricanonical atlas of [hilbert quotient presentation](#111-hilbert-quotient-presentation) from JacobianChallengePartII §§1.1–1.4, and effective polarized-family descent from AlgebraicModuliForArithmeticGeometry §§7.3, 8.1–8.3. N is invertible, so torsion and frame sheaves are finite étale; the comparison is étale-local and natural in the base. The primitive root is part of the base change, not a choice silently made over B.
 
 One proof uses the following inputs and comparisons. Use relative Kummer theory to identify J[N] with R¹f_*μ_N, and duality between H¹ with constant coefficients and the abelianized fundamental group modulo N. Exterior conjugation is trivial because G is abelian. An epimorphism to G from the rank-2g abelianization modulo N is an isomorphism: a surjection of finite free modules of equal finite cardinality has zero kernel, including composite N. Transport the cup-product orientation through the dual and Tate twist. Retain its inverse on changing between the H¹ and torsion conventions; test rather than erase this sign/twist. Étale-locally all relevant sheaves are finite constant, so the condition that an isomorphism takes the symplectic form to a scalar multiple is a union of connected components. The scalar is primitive and defines the multiplier morphism. Fixing the multiplier gives the symplectic level problem; the full GL-frame sheaf is a finite union of translates of the homogeneous subfunctor. This comparison is used only over the smooth locus.
 
@@ -9308,7 +9290,7 @@ The construction has the following API.
 
 Over B_N=Spec Z[1/N,ζ_N], let U be the smooth genus-g stack and U_N its fixed-pairing Jacobi-level cover, g≥2 and N≥3. Normalize the stable stack M̄_g×B_N in U_N, retaining every generic component. The resulting stack Y is finite over M̄_g×B_N, proper and flat of finite presentation over B_N; every geometric fibre of Y is normal, and U_N is dense in every such fibre. Consequently its geometric fibre component count is locally constant on B_N and equals that of U_N. Y is not asserted to be a scheme, a smooth stack, or a naive nodal full-level moduli problem.
 
-The parent MC.1 boundary charts are excellent regular schemes, smooth over the integer base, with a relative normal-crossing boundary. Its generic divisorial points have characteristic zero, as required by the absolute local Lemma 5.10 of DM. The DM tame Teichmuller normalization theorem applies to `G=(Z/N)^{2g}`, whose order `N^{2g}` is invertible on B_N. Use the exact finite normalization and normal-component comparison supplier contracts; no arbitrary normalization/base-change claim is made.
+The charts of [transverse relative boundary charts](#115-transverse-relative-boundary-charts) are excellent regular schemes, smooth over the integer base, with a relative normal-crossing boundary. Its generic divisorial points have characteristic zero, as required by the absolute local Lemma 5.10 of DM. The DM tame Teichmuller normalization theorem applies to `G=(Z/N)^{2g}`, whose order `N^{2g}` is invertible on B_N. Use the exact finite normalization and normal-component comparison supplier contracts; no arbitrary normalization/base-change claim is made.
 
 One proof uses the following inputs and comparisons. Use the open-and-closed abelian Teichmuller comparison to select the fixed-pairing component before normalization. Normalize each generic component and descend the finite normalization from étale atlases (AlgebraicModuliForArithmeticGeometry §§5.1–5.4). Apply the tame local theorem of DM 5.9–5.10. On strict local normal-crossing charts, the cover is dominated by adjoining roots of the boundary parameters of order invertible on the residue base, and the normalization is obtained by the appropriate finite tame quotient. The generic Kummer-chart supplier must give flatness and geometrically normal fibres after taking this quotient; its proof uses the root charts, tame invariants and normality. This is gap:level-tame-components, rather than a consequence of finiteness of normalization. The nonempty smooth part is dense on every geometric fibre by those same boundary charts. Apply the proper-flat-geometrically-normal component-count theorem DM 4.17(iii), pp.102–103, and its application in 5.11, p.107. Use 4.16 for irreducibility of normal connected components; 4.19 is instead the valuative criterion for properness. A normal Noetherian geometric fibre has disjoint irreducible components, so deleting this dense boundary complement preserves its connected-component count.
 
@@ -9337,17 +9319,17 @@ The construction has the following API.
 
 ### 4.13 The complex fixed-pairing orbit calculation
 
-Let g≥2, N≥3 and ζ_N∈C be primitive. Assuming the generic marked-surface uniformization and integral symplectic-reduction supplier contracts, the analytification of the fixed-pairing smooth curve level scheme is connected: its components correspond to orbits of the orientation-preserving genus-g mapping class group on symplectic frames modulo N, and that action is transitive. This complex calculation together with boundary-level-normalization proves every geometric fibre over B_N is connected.
+Let g≥2, N≥3 and ζ_N∈C be primitive. Assuming the generic marked-surface uniformization and integral symplectic-reduction supplier contracts, the analytification of the fixed-pairing smooth curve level scheme is connected: its components correspond to orbits of the orientation-preserving genus-g mapping class group on symplectic frames modulo N, and that action is transitive. This complex calculation together with [tame normalization of a fixed pairing level](#412-tame-normalization-of-a-fixed-pairing-level) proves every geometric fibre over B_N is connected.
 
-Here Use the actual analytification of the MC.4 fine smooth scheme, with the H¹/torsion convention of jacobi-teichmueller-comparison. The Teichmuller space is connected; its mapping-class quotient supplies the analytic moduli comparison, rather than an assumed connected moduli space. The integral symplectic reduction `Sp_{2g}(Z)→Sp_{2g}(Z/N)` is onto for composite N as well as prime N.
+Use the actual analytification of the fine smooth scheme of [the fine smooth full-level curve scheme](#410-the-fine-smooth-full-level-curve-scheme), with the H¹/torsion convention of [jacobi level as an abelian teichmuller component](#411-jacobi-level-as-an-abelian-teichmuller-component). The Teichmuller space is connected; its mapping-class quotient supplies the analytic moduli comparison, rather than an assumed connected moduli space. The integral symplectic reduction `Sp_{2g}(Z)→Sp_{2g}(Z/N)` is onto for composite N as well as prime N.
 
-One proof uses the following inputs and comparisons. Use connected marked Teichmuller space and identify the analytic moduli cover as the quotient of its product with the finite set of frames. Components are the mapping-class orbits of that finite set. The mapping-class action on integral first homology surjects onto `Sp_{2g}(Z)` (DM 5.12). Reduce modulo N; use elementary symplectic generators over Z/N, or Chinese remainder and prime-power generators, rather than a finite-field-only argument. The symplectic group acts transitively on its own frame torsor, so there is one orbit. Connected analytification implies connectedness of the algebraic complex fibre. Since B_N is connected, the locally constant component count from boundary-level-normalization equals one everywhere. Geometric normality plus density then gives connectedness of the smooth fibre, and smoothness makes it irreducible.
+One proof uses the following inputs and comparisons. Use connected marked Teichmuller space and identify the analytic moduli cover as the quotient of its product with the finite set of frames. Components are the mapping-class orbits of that finite set. The mapping-class action on integral first homology surjects onto `Sp_{2g}(Z)` (DM 5.12). Reduce modulo N; use elementary symplectic generators over Z/N, or Chinese remainder and prime-power generators, rather than a finite-field-only argument. The symplectic group acts transitively on its own frame torsor, so there is one orbit. Connected analytification implies connectedness of the algebraic complex fibre. Since B_N is connected, the locally constant component count from [tame normalization of a fixed pairing level](#412-tame-normalization-of-a-fixed-pairing-level) equals one everywhere. Geometric normality plus density then gives connectedness of the smooth fibre, and smoothness makes it irreducible.
 
 Fix the primitive pairing before computing orbits; homogeneous level can have several multiplier components. The cited upstream Fuchsian and topology layers do not themselves contain Teichmuller theory or this homology-action theorem. Use gap:stack-topology-boundary for these analytic inputs.
 
 ([dm](#references), 5.12–5.13, pp.107–108; 5.15 and Lemma 5.16, pp.108–109. DM reduces component counts to the connected marked space and the symplectic orbit calculation. Teichmüller connectedness and symplectic monodromy use the topology supplier contract.)
 
-*Needs:* FuchsianOrbifolds Layer 4, GeometricTopology Layer 3, [the fine smooth full-level curve scheme](#410-the-fine-smooth-full-level-curve-scheme), [jacobi level as an abelian teichmuller component](#411-jacobi-level-as-an-abelian-teichmuller-component), [tame normalization of a fixed pairing level](#412-tame-normalization-of-a-fixed-pairing-level).
+*Needs:* gap:stack-topology-boundary, FuchsianOrbifolds Layer 4, GeometricTopology Layer 3, [the fine smooth full-level curve scheme](#410-the-fine-smooth-full-level-curve-scheme), [jacobi level as an abelian teichmuller component](#411-jacobi-level-as-an-abelian-teichmuller-component), [tame normalization of a fixed pairing level](#412-tame-normalization-of-a-fixed-pairing-level).
 
 ### 4.14 Connectedness of a pairing component
 
@@ -9375,17 +9357,17 @@ One fixed level cannot be used at the primes dividing it.
 
 ### 4.16 One determinant line over the integer base
 
-Let M be the proper coarse algebraic space of the stable genus-g stack over Z, g≥2. Let V→M̄_g be a representable finite surjective scheme cover, and put h:V→M. Fix any d at least the bound of integral-hilbert-kernel for the pulled-back family, and λ=det `f_*ω^{3d}` on V. Suppose the generic positivity supplier gives the parent moduli-determinant-ample criterion in every characteristic, and there are a line L on M and e>0 with h*L≅λ^e. Then λ is ample over Z, L is ample over Z, and M is a projective Z-scheme. Neither V nor its fibres need be integral for this argument.
+Let M be the proper coarse algebraic space of the stable genus-g stack over Z, g≥2. Let V→M̄_g be a representable finite surjective scheme cover, and put h:V→M. Fix any d at least the bound of [uniform integral tricanonical equations](#42-uniform-integral-tricanonical-equations) for the pulled-back family, and λ=det `f_*ω^{3d}` on V. Suppose the generic positivity supplier gives the determinant-quotient ampleness criterion `determinantQuotient_ample` of SchemeAndStackFoundations §4.15 in every characteristic, and there are a line L on M and e>0 with h*L≅λ^e. Then λ is ample over Z, L is ample over Z, and M is a projective Z-scheme. Neither V nor its fibres need be integral for this argument.
 
-Here M̄_g is proper finite type Deligne–Mumford over Z, with finite inertia. The finite scheme-cover and coarse power-descent contracts are separate inputs, not consequences of coarse-space existence. The determinant and its descent power are fixed before testing fibres.
+Here M̄_g is proper finite type Deligne–Mumford over Z, with finite inertia. The finite scheme cover V→M̄_g (gap:finite-scheme-cover) and the descent h*L≅λ^e of a positive power to the coarse space (gap:coarse-line-power) are separate inputs, not consequences of coarse-space existence. The determinant and its descent power are fixed before testing fibres.
 
 One proof uses the following inputs and comparisons. Properness of the stack and finiteness of V→M̄_g imply V is a proper finite-type Z-scheme. The composite h is proper and quasi-finite, hence finite; its geometric fibres have finitely many points by the finite stack cover and the coarse geometric-point property. Apply the fixed-degree multiplication and ideal comparison on every V_s over an algebraically closed residue field. The family has finite coarse moduli fibres, so the parent ampleness criterion makes λ_s ample. Reduce nilpotents and components only through the generic criterion, without assuming the total cover normal. Apply fixed-line openness of ampleness to λ on the proper scheme V over Spec Z (Stacks 0D2N). The resulting open sets cover Spec Z; relative ampleness is local on the base, so this single λ is relatively ample. No comparison between `λ_{3d}` for different d is used. The same holds for λ^e=h*L. Descend relative ampleness across the finite surjection h using the generic algebraic-space finite descent theorem. An algebraic space carrying such a relatively ample line over Spec Z is a scheme and is projective. Only after projectivity and irreducibility choose a dominating component and normalize to obtain the parent normal integral projective cover. This removes the potential circular use of irreducibility to construct the initial parameter scheme.
 
 Do not replace the initial cover by an integral dominating component before irreducibility has been proved. No arbitrary-base-change theorem for coarse spaces is used; the family direct images do commute with arbitrary base change.
 
-([clm](#references), Theorem 7.2, pp.30–31. Its conclusion is retained, while integral regularity fixes the determinant before fibrewise ampleness and openness.; [mc4-ehkv](#references), Theorem 2.7 p.5, proof §4.1 pp.12–13. Finite-type stacks over a Noetherian ground scheme with quasi-finite diagonal admit a finite surjective scheme cover; no fine-level interpretation is supplied.; [mc4-stacks](#references), Tag 0D2N, Lemma 30.21.4; Tag 01VG, Definition 29.38.1 and Lemma 29.38.4; Tag 0GFB, Lemma 69.21.2. The fixed-line openness and locality argument is applied on the proper scheme V. Tag 0GFB descends ampleness along the finite surjection V→M between proper algebraic spaces over the Noetherian ring Z, and establishes schemeness; no algebraic-space openness theorem is assumed.)
+([clm](#references), Theorem 7.2, pp.30–31. Its conclusion is retained, while integral regularity fixes the determinant before fibrewise ampleness and openness.; [mc4-ehkv](#references), Theorem 2.7 p.5, proof §4.1 pp.12–13. Finite-type stacks over a Noetherian ground scheme with quasi-finite diagonal admit a finite surjective scheme cover; no fine-level interpretation is supplied.; [mc4-stacks](#references), Tag 0D2N, Lemma 30.21.4; [mc2-stacks-unramified-diagonal](#references), Morphisms of Schemes §38, p. 83 (tag 01VG); [stacks-spaces-cohomology](#references), Cohomology of Algebraic Spaces, Lemma 21.2 (tag 0GFB). The fixed-line openness and locality argument is applied on the proper scheme V. Tag 0GFB descends ampleness along the finite surjection V→M between proper algebraic spaces over the Noetherian ring Z, and establishes schemeness; no algebraic-space openness theorem is assumed.)
 
-*Needs:* AlgebraicModuliForArithmeticGeometry §§5.1–5.4, SchemeAndStackFoundations §§1.18–1.23, SchemeAndStackFoundations §§5.1–5.10, [uniform integral tricanonical equations](#42-uniform-integral-tricanonical-equations), [coarse spaces of pointed curve stacks](#41-coarse-spaces-of-pointed-curve-stacks), SchemeAndStackFoundations §4.15.
+*Needs:* gap:finite-scheme-cover, gap:coarse-line-power, AlgebraicModuliForArithmeticGeometry §§5.1–5.4, SchemeAndStackFoundations §§1.18–1.23, SchemeAndStackFoundations §§5.1–5.10, [uniform integral tricanonical equations](#42-uniform-integral-tricanonical-equations), [coarse spaces of pointed curve stacks](#41-coarse-spaces-of-pointed-curve-stacks), SchemeAndStackFoundations §4.15.
 
 ### Positivity, collisions and a single integral determinant
 
@@ -9471,27 +9453,27 @@ The construction has the following API.
 
 Let g≥2 and L be an r-torsion line on M̄_g/C with a chosen L^r≅O and r≥1. The associated μ_r-torsor on the stack has trivial monodromy on M_g/C: after analytification and pullback to Teichmüller space, its character Mod_g→μ_r is trivial. Indeed extension over each transverse one-node smoothing kills the associated Dehn twist, and Dehn twists generate Mod_g. The torsor is then trivial over the normal compactified stack, so L is trivial. Quotient stacks and their inertia are retained throughout; a coarse-space argument is insufficient, including in genus two.
 
-Here Use algebraic finite étale μ_r-torsors over C, where r is invertible; do not use the same étale argument in characteristic dividing r. gap:stack-topology-boundary supplies the analytic stack quotient [T_g/Mod_g], simple connectedness of T_g, mapping-class generation, nodal monodromy and cover comparison, including algebraic recovery on the proper DM stack.
+Use algebraic finite étale μ_r-torsors over C, where r is invertible; do not use the same étale argument in characteristic dividing r. gap:stack-topology-boundary supplies the analytic stack quotient [T_g/Mod_g], simple connectedness of T_g, mapping-class generation, nodal monodromy and cover comparison, including algebraic recovery on the proper DM stack.
 
-One proof uses the following inputs and comparisons. Construct `Spec(⊕_{i=0}^{r−1}L^i)`, with multiplication from L^r≅O, using the existing torsor/relative-Spec machinery. Pull the analytic torsor to the contractible Teichmüller space. Descent along the action groupoid T_g×Mod_g gives a character of the full mapping-class group. The nerve has action face maps: it is not the product simplicial object with constant T_g; its realization is a homotopy quotient with contractible fibre over BMod_g (sourceIssues E16–E17). A transverse smoothing disk has trivial étale/topological cover when filled in, so the loop around its puncture acts trivially; its mapping-class monodromy is the corresponding Dehn twist. Use Luo’s generation theorem to kill the character. Extend the analytic cover splitting from the dense smooth locus across the normal compactified stack by normalization, retaining inertia; the disk argument is applied in stack charts. Hall Theorem 1 with proper DM source M̄_g/C and target Bμ_r algebraizes the trivialization and its inverse. Equivalently apply separated GAGA to the line isomorphism on the proper stack.
+One proof uses the following inputs and comparisons. Construct `Spec(⊕_{i=0}^{r−1}L^i)`, with multiplication from L^r≅O, using the existing torsor/relative-Spec machinery. Pull the analytic torsor to the contractible Teichmüller space. Descent along the action groupoid T_g×Mod_g gives a character of the full mapping-class group. The nerve has action face maps: it is not the product simplicial object with constant T_g; its realization is a homotopy quotient with contractible fibre over BMod_g. A transverse smoothing disk has trivial étale/topological cover when filled in, so the loop around its puncture acts trivially; its mapping-class monodromy is the corresponding Dehn twist. Use Luo’s generation theorem to kill the character. Extend the analytic cover splitting from the dense smooth locus across the normal compactified stack by normalization, retaining inertia; the disk argument is applied in stack charts. Hall Theorem 1 with proper DM source M̄_g/C and target Bμ_r algebraizes the trivialization and its inverse. Equivalently apply separated GAGA to the line isomorphism on the proper stack.
 
 Include separating as well as nonseparating nodal monodromy, and do not suppress inertia by replacing the stack with its coarse space. For r=1 the torsor is trivial. For arbitrary r over C it is étale; this reasoning does not assert the same in characteristic p dividing r. Triviality on the dense open is extended by normality, not by an unproved claim that restriction of arbitrary line bundles is injective.
 
-([mumford1977](#references), Lemma 5.14, statement p. 102 and proof pp. 103–105. Uses the Teichmüller-space cover, mapping-class characters and boundary Dehn twists to eliminate torsion; the cited analytic inputs require separate supplier contracts.; [mc5-fredianineumann2004](#references), Theorem 2.5 and Proposition 2.6, p. 11; §2.3, pp. 17–19, with corrections E16–E17 below. Supplies Teichmüller representability and contractibility. Use the action groupoid and homotopy quotient, retaining stabilizers; the displayed product-of-simplicial-spaces proof is corrected in sourceIssues.; [mc5-luo1998](#references), §1, main unnumbered theorem, p. 2. Presents the orientation-preserving mapping class group of a compact oriented surface by all Dehn twists, hence gives generation for the closed genus-g surface.; [mc5-hall2011](#references), Theorem 1, p. 1; Theorem A.1 and Corollary A.3, p. 17. For a proper DM source, analytification recovers morphisms to the DM target Bμ_r and their isomorphisms. Separated GAGA also recovers coherent line isomorphisms on the proper compactification.)
+([mumford1977](#references), Lemma 5.14, statement p. 102 and proof pp. 103–105. Uses the Teichmüller-space cover, mapping-class characters and boundary Dehn twists to eliminate torsion; the cited analytic inputs require separate supplier contracts.; [mc5-fredianineumann2004](#references), Theorem 2.5 and Proposition 2.6, p. 11; §2.3, pp. 17–19. Supplies Teichmüller representability and contractibility. Use the action groupoid and homotopy quotient, retaining stabilizers; the source's argument through a product of simplicial spaces is replaced by the nerve of the action groupoid.; [mc5-luo1998](#references), §1, main unnumbered theorem, p. 2. Presents the orientation-preserving mapping class group of a compact oriented surface by all Dehn twists, hence gives generation for the closed genus-g surface.; [mc5-hall2011](#references), Theorem 1, p. 1; Theorem A.1 and Corollary A.3, p. 17. For a proper DM source, analytification recovers morphisms to the DM target Bμ_r and their isomorphisms. Separated GAGA also recovers coherent line isomorphisms on the proper compactification.)
 
-*Needs:* SchemeAndStackFoundations §1.15, SchemeAndStackFoundations §1.21, MordellLawrenceVenkatesh LV.5/mapping-class-group, MordellLawrenceVenkatesh LV.5/dehn-twist, [the universal boundary cartier divisor](#52-the-universal-boundary-cartier-divisor), SchemeAndStackFoundations §4.15.
+*Needs:* gap:stack-topology-boundary, SchemeAndStackFoundations §1.15, SchemeAndStackFoundations §1.21, MordellLawrenceVenkatesh LV.5/mapping-class-group, MordellLawrenceVenkatesh LV.5/dehn-twist, [the universal boundary cartier divisor](#52-the-universal-boundary-cartier-divisor), SchemeAndStackFoundations §4.15.
 
 ### 5.4 Torsion freeness of the stable-stack Picard group
 
 For g≥2 `Pic(M̄_{g,C})` is torsion free. A torsion line gives a finite cyclic cover of the stack. Over Teichmüller space this cover splits; its character factors through the mapping-class group, and extending over every boundary kills each Dehn-twist generator, so the cover and line are trivial.
 
-One proof uses the following inputs and comparisons. The proof uses connected simply connected Teichmüller space, the analytic presentation of the smooth stack and generation by Dehn twists. These general analytic inputs have no verified atlas supplier and are recorded as gaps. Use the one-node smoothing monodromy to identify the boundary loop with the corresponding Dehn twist. Since the cover extends over that divisor, its cyclic monodromy on the loop vanishes; all generators vanish.
+One proof uses the following inputs and comparisons. The proof uses connected simply connected Teichmüller space, the analytic presentation of the smooth stack and generation by Dehn twists. These analytic inputs are gap:stack-topology-boundary. Use the one-node smoothing monodromy to identify the boundary loop with the corresponding Dehn twist. Since the cover extends over that divisor, its cyclic monodromy on the loop vanishes; all generators vanish.
 
 Retain stack stabilizers; passing first to the coarse space is not this proof.
 
 ([mumford1977](#references), Lemma5.14 proof,pp.103–105.)
 
-*Needs:* SchemeAndStackFoundations §4.15, AlgebraicModuliForArithmeticGeometry §§7.3, 8.1–8.3, [boundary twists kill torsion-line monodromy](#53-boundary-twists-kill-torsion-line-monodromy).
+*Needs:* gap:stack-topology-boundary, SchemeAndStackFoundations §4.15, AlgebraicModuliForArithmeticGeometry §§7.3, 8.1–8.3, [boundary twists kill torsion-line monodromy](#53-boundary-twists-kill-torsion-line-monodromy).
 
 ### 5.5 Global units on integral stable moduli
 
@@ -9509,7 +9491,7 @@ Over C the global units include all of C×.
 
 Let X=M̄_g/Z, g≥2, and L a line on X. If L_C is trivial, then L_Q is trivial. More precisely H⁰(X_Q,L_Q)⊗_Q C≅H⁰(X_C,L_C) is one-dimensional, because Γ(X_C,O)=C. Choose a nonzero rational section in this space; after base change it is a nonzero constant multiple of a trivialization and hence nowhere vanishing. Faithful flatness then makes its evaluation O_XQ→L_Q an isomorphism.
 
-Here Proper stable-moduli stack over Z, and the geometrically connected/irreducible fibre statements imported from MC.1/MC.4. DESCENT supplies H⁰ flat field-extension base change on the proper DM stack and descent of the evaluation isomorphism. No claim is made that a line trivial after every arbitrary field extension descends without these H⁰ hypotheses.
+Proper stable-moduli stack over Z, and the geometrically connected/irreducible fibre statements imported from SchemeAndStackFoundations §4.15 and [geometric irreducibility of stable moduli](#415-geometric-irreducibility-of-stable-moduli). SchemeAndStackFoundations §§1.1 and 1.22 supply H⁰ flat field-extension base change on the proper DM stack and descent of the evaluation isomorphism. No claim is made that a line trivial after every arbitrary field extension descends without these H⁰ hypotheses.
 
 One proof uses the following inputs and comparisons. Use flat cohomology base change for Q→C, without asserting the chosen complex section itself has rational coefficients. The right-hand H⁰ has dimension one since the line is trivial and the proper connected complex stack has only constant functions. A nonzero rational vector becomes a nonzero scalar multiple of a complex trivialization. Descend invertibility of its evaluation map by faithful flatness.
 
@@ -9523,7 +9505,7 @@ One-dimensionality is proved before selecting the rational section. The evaluati
 
 For X=M̄_g/Z, g≥2, every Cartier divisor whose support is vertical is a finite sum D=Σ_p n_p X_Fp of whole prime fibres, with integral n_p. Since X/Z is smooth with geometrically irreducible fibres, each X_Fp is reduced, irreducible and Cartier of multiplicity one. Consequently D=div_X(∏_p `p^{n_p})`. In particular, for any line L on X, a trivialization of L|X_Q extends after multiplication by a rational number to a nowhere-vanishing section on X.
 
-Here X is the smooth integral noetherian stable DM stack with geometrically irreducible fibres. DIVISORS supplies Cartier/Weil comparison, divisors of rational sections and the codimension-one criterion on a smooth DM stack, extending the scheme-only SchemeAndStackFoundations §§3.3–3.7 excision result.
+Here X is the smooth integral noetherian stable DM stack with geometrically irreducible fibres. The Cartier/Weil comparison, divisors of rational sections and the codimension-one criterion on this smooth DM stack follow from the scheme statements of SchemeAndStackFoundations §§3.3–3.7 on a smooth atlas, by descent along the atlas groupoid (SchemeAndStackFoundations §1.1), since codimension of points, regularity and Cartier divisors are smooth-local.
 
 One proof uses the following inputs and comparisons. A codimension-one irreducible vertical support lies over a unique prime and equals that whole irreducible fibre; use smoothness and dimension to exclude a proper codimension-one subvariety of the fibre. Smoothness makes each prime fibre reduced, and flatness makes p a nonzerodivisor, with divisor exactly that fibre. A Cartier divisor has finitely many such components on the quasi-compact stack. Compare with the principal divisor of the rational number `∏p^{n_p}`. For a line rationally trivialized on X_Q, subtract this principal divisor from the divisor of its rational section; regularity/codimension-one comparison then makes it a global trivialization.
 
@@ -9531,7 +9513,7 @@ Negative coefficients are allowed; the correcting scalar belongs to Q×, not nec
 
 ([mumford1977](#references), Integral descent after Lemma 5.14, printed pp. 102–103. Removes vertical zeros or poles by whole-prime-fibre principal divisors, proving the needed integral restriction injectivity.)
 
-*Needs:* SchemeAndStackFoundations §3.4, SchemeAndStackFoundations §4.15, [geometric irreducibility of stable moduli](#415-geometric-irreducibility-of-stable-moduli).
+*Needs:* SchemeAndStackFoundations §1.1, SchemeAndStackFoundations §3.4, SchemeAndStackFoundations §4.15, [geometric irreducibility of stable moduli](#415-geometric-irreducibility-of-stable-moduli).
 
 ### 5.8 Integral-to-complex Picard injection
 
@@ -9597,7 +9579,7 @@ The determinant identity does not identify the two Hodge vector bundles, whose r
 
 For a proper stable family f:C→S of connected arithmetic genus g, let E=f_*ω and λ=det E. There are natural underlying-line isomorphisms d_f(ω)≅λ and d_f(O_C)≅λ, coherent with arbitrary base change. In graded lines their integer degrees are respectively g−1 and 1−g; these grades are not silently identified with the ordinary rank-g determinant grading.
 
-Here S a scheme chart of the stable stack, including arbitrary base via gap:cm-duality-arbitrary-base. Relative trace R¹f_*ω≅O_S and Serre duality R¹f_*O≅E∨, with f_*O≅O_S.
+Here S is a scheme chart of the stable stack, including arbitrary base via gap:cm-duality-arbitrary-base. Relative trace R¹f_*ω≅O_S and Serre duality R¹f_*O≅E∨, with f_*O≅O_S.
 
 One proof uses the following inputs and comparisons. Use the parent connected-nodal cohomology and duality contracts to identify the two cohomology sheaves in degrees zero and one. Compute the alternating determinant, retaining the trace trivialization and canonical double-dual comparison. Transport the identifications along derived base change; check the equality of grades and descent separately from the underlying line.
 
@@ -9605,13 +9587,13 @@ For g=0 on a stable pointed genus-zero family, both underlying lines are trivial
 
 ([knudsen3](#references), §4, definitions (a)–(b), p. 201; Theorem 4.1 proof, p. 202. Defines the Hodge line by the derived determinant and compares the O and dualizing determinants using curve duality.; [mumford1977](#references), Definition 5.9 and Theorem 5.10, pp. 100–102. Uses the determinant of the derived direct image for the Hodge and pluricanonical lines.; [mc5-erikssonfreixas2024](#references), Definition 4.16, p. 287. Specifies the graded determinant-of-cohomology convention used in the comparison.)
 
-*Needs:* StableReduction Layer 2, SchemeAndStackFoundations §3.4, [the hodge bundle of stable pointed curves](#51-the-hodge-bundle-of-stable-pointed-curves), AlgebraicVectorBundles L0C and the Hodge descent comparison in Layer 5.
+*Needs:* gap:cm-duality-arbitrary-base, gap:graded-perfect-stack-descent, StableReduction Layer 2, SchemeAndStackFoundations §3.4, [the hodge bundle of stable pointed curves](#51-the-hodge-bundle-of-stable-pointed-curves), AlgebraicVectorBundles L0C and the Hodge descent comparison in Layer 5.
 
 ### 5.14 Dualizing Deligne pairing
 
 For g≥2 and f:C→M̄_g over Z, construct P_g=⟨ω_f,ω_f⟩ as a line object on M̄_g. Precisely, P_g is a cartesian assignment to each T-valued stable curve of the gap:integral-deligne-pairing line ⟨ω_C/T,ω_C/T⟩ in the core of InvertibleSheaf T, together with base-change isomorphisms and their cocycle. Equivalently it is a 1-morphism M̄_g→BG_m, using the existing line-stack equivalence. Its tensor operations and isomorphisms occur in this Picard groupoid, not in its set of isomorphism classes.
 
-Here g≥2; universal unpointed stable curve; untwisted relative dualizing sheaf. gap:graded-perfect-stack-descent/gap:integral-deligne-pairing and the arbitrary-base nodal-dualizing extension in gap gap:cm-duality-arbitrary-base are supplied.
+Here g≥2; universal unpointed stable curve; untwisted relative dualizing sheaf. gap:graded-perfect-stack-descent/gap:integral-deligne-pairing and the arbitrary-base nodal-dualizing extension in gap:cm-duality-arbitrary-base are supplied.
 
 One proof uses the following inputs and comparisons. On a scheme chart use the parent stable-curve dualizing line, local projectivity of a stable curve and the integral gap:integral-deligne-pairing construction. Its canonical base-change comparisons, and the dualizing base-change maps, give descent along the chart groupoid. Apply SchemeAndStackFoundations §§1.18–1.23 line-stack equivalence and effective descent to obtain a line on the stack; verify identity, composition and 2-isomorphism invariance.
 
@@ -9621,7 +9603,7 @@ The construction has the following API.
 
 - For x:T→M̄_g, x*P_g≅⟨ω_Cx/T,ω_Cx/T⟩, with its actual four-determinant expression.
 - The chart comparison is coherent for arbitrary T′→T, for identities/composites, and for isomorphisms of stable families.
-- The canonical self-interchange is +1 because the dualizing degree is 2g−2, including nodal fibres.
+- Deligne's symmetry on P_g is +1, since it acts by `(−1)^{deg ω}=(−1)^{2g−2}`, including on nodal fibres; the bare Koszul permutation of the four determinant factors acts by `(−1)^{χ(ω)}=(−1)^{g−1}` and the factor `(−1)^{χ(O_C)}=(−1)^{1−g}` converts it into the symmetry.
 - On a scheme chart the value belongs to the core of the pinned InvertibleSheaf category, via SchemeAndStackFoundations §§1.18–1.23’s BG_m equivalence, not merely to LineBundleClass.
 
 **Checks.**
@@ -9629,37 +9611,37 @@ The construction has the following API.
 - For a fixed stable genus-two curve C/k pulled to S, P is the pullback of the one-dimensional k-line ⟨ω_C,ω_C⟩; the degree for self-symmetry is 2.
 - A stable nodal genus-two curve over k has a pairing line; restricting this construction to smooth curves fails.
 - Base change along Spec(F_p)→Spec(Z), which is not flat, preserves the stated chart comparison.
-- For every g≥2 the self-swap is +1; replacing ω by an arbitrary odd-degree line does not justify this conclusion.
+- For every g≥2 Deligne's symmetry on P_g is +1. At g=2 the bare Koszul permutation is `(−1)^{χ(ω)}=−1`, so taking it as the symmetry gives the wrong value; for an odd-degree line L the symmetry on ⟨L,L⟩ is −1.
 
 ([yuan-author-http](#references), Theorem 3.3, §3.1.1, p. 42; §3.1.2, pp. 42–43. Uses the universal relative-dualizing pairing and its classifying pullback.; [mc5-erikssonfreixas2024](#references), (6.3), Proposition 6.1, pp. 310–312. Supplies the actual line-valued chart construction and coherent arbitrary base change, permitting effective descent.)
 
-*Needs:* gap:integral-deligne-pairing, SchemeAndStackFoundations §1.21, SchemeAndStackFoundations §1.1, SchemeAndStackFoundations §3.4, StableReduction Layer 2, [the hodge bundle of stable pointed curves](#51-the-hodge-bundle-of-stable-pointed-curves), SchemeAndStackFoundations §4.15.
+*Needs:* gap:graded-perfect-stack-descent, gap:cm-duality-arbitrary-base, gap:integral-deligne-pairing, SchemeAndStackFoundations §1.21, SchemeAndStackFoundations §1.1, SchemeAndStackFoundations §3.4, StableReduction Layer 2, [the hodge bundle of stable pointed curves](#51-the-hodge-bundle-of-stable-pointed-curves), SchemeAndStackFoundations §4.15.
 
 ### 5.15 Chern class of the dualizing pairing
 
 On M̄_g/C, g≥2, the universal pairing satisfies c₁(P_g)=f_*(c₁(ω_f)²) in CH¹(M̄_g/C;Q). The scheme-level integral input is the degree-one graded-K comparison for Deligne pairings on divisorial bases. Its passage to rational Chow and then to the moduli stack must use named comparison/descent maps, and is not an integral identification of arbitrary stack Chow and Picard groups.
 
-Here Use SchemeAndStackFoundations §§5.1–5.10 stack Chow with rational coefficients and its actual first-Chern/proper-pushforward operations. Supply gap CHOW-PIC: pairing Chern comparison and codimension-one Picard comparison for this smooth DM stack, including stabilizers.
+Use SchemeAndStackFoundations §§5.1–5.10 stack Chow with rational coefficients and its actual first-Chern/proper-pushforward operations. gap:stack-chow-grr supplies the pairing Chern comparison and the codimension-one Picard comparison for this smooth DM stack, including stabilizers.
 
-One proof uses the following inputs and comparisons. On a suitable divisorial scheme chart apply Eriksson–Freixas Corollary 6.9 to the two line arguments. Use the rational Chern-character comparison to convert its graded-K identity to Chow. Use a smooth equivariant Hilbert presentation of the moduli stack and compatible mixed quotients (Edidin–Graham, Propositions 14–19), so that the chart computation is an equivariant identity and not merely an identity after forgetting equivariance. Theorem 3.1 of their Riemann–Roch paper supplies the compatible proper pushforward. Supply the comparison to the chosen SchemeAndStackFoundations §§5.1–5.10 stack-Chow carrier in CHOW-PIC; pullback to a plain atlas alone is not an injection on Picard groups.
+One proof uses the following inputs and comparisons. On a suitable divisorial scheme chart apply Eriksson–Freixas Corollary 6.9 to the two line arguments. Use the rational Chern-character comparison to convert its graded-K identity to Chow. Use a smooth equivariant Hilbert presentation of the moduli stack and compatible mixed quotients (Edidin–Graham, Propositions 14–19), so that the chart computation is an equivariant identity and not merely an identity after forgetting equivariance. Theorem 3.1 of their Riemann–Roch paper supplies the compatible proper pushforward. The comparison to the chosen SchemeAndStackFoundations §§5.1–5.10 stack-Chow carrier is part of gap:stack-chow-grr; pullback to a plain atlas alone is not an injection on Picard groups.
 
 State the divisorial-scheme hypothesis before using Corollary 6.9. The smooth-scheme GRR signature is not advertised as arbitrary singular or stack GRR. The sign in the pairing term is positive.
 
-([mc5-erikssonfreixas2024](#references), §6.1.4, Proposition 6.8 and Corollary 6.9, pp. 316–318. Identifies the Deligne-pairing Chern class with the direct image in graded K-theory under the divisorial-base hypothesis. The projection-formula display in the Proposition 6.8 proof omits a gamma operation on its left side (confirmed E18); the intended graded K-group statement and Corollary 6.9 are unchanged.; [mumford1977](#references), Theorem 5.10, rational calculation, pp. 100–102. Supplies the moduli rational computation, including the local singularity correction; a formal stack Chow comparison is required.; [mc5-edidingraham1997](#references), Theorem 1, pp. 7–8; Corollary 1, p. 9; Propositions 14–19, pp. 28–29. Gives the equivariant Chern/Picard comparison, its quotient-stack interpretation and rational intersection-product compatibility.; [mc5-edidingraham1999](#references), Theorem 3.1(b)–(e), pp. 13–14. Supplies proper equivariant pushforward and the smooth/qualified-lci Riemann–Roch compatibilities needed in a quotient presentation, with rational coefficients.)
+([mc5-erikssonfreixas2024](#references), §6.1.4, Proposition 6.8 and Corollary 6.9, pp. 316–318. Identifies the Deligne-pairing Chern class with the direct image in graded K-theory under the divisorial-base hypothesis. The projection-formula display in the Proposition 6.8 proof omits a gamma operation on its left side; the intended graded K-group statement and Corollary 6.9 are unchanged.; [mumford1977](#references), Theorem 5.10, rational calculation, pp. 100–102. Supplies the moduli rational computation, including the local singularity correction; a formal stack Chow comparison is required.; [mc5-edidingraham1997](#references), Theorem 1, pp. 7–8; Corollary 1, p. 9; Propositions 14–19, pp. 28–29. Gives the equivariant Chern/Picard comparison, its quotient-stack interpretation and rational intersection-product compatibility.; [mc5-edidingraham1999](#references), Theorem 3.1(b)–(e), pp. 13–14. Supplies proper equivariant pushforward and the smooth/qualified-lci Riemann–Roch compatibilities needed in a quotient presentation, with rational coefficients.)
 
-*Needs:* SchemeAndStackFoundations §§5.1–5.10, SchemeAndStackFoundations §5.3, SchemeAndStackFoundations §§5.4, 5.8, [dualizing deligne pairing](#514-dualizing-deligne-pairing).
+*Needs:* gap:stack-chow-grr, SchemeAndStackFoundations §§5.1–5.10, SchemeAndStackFoundations §5.3, SchemeAndStackFoundations §§5.4, 5.8, [dualizing deligne pairing](#514-dualizing-deligne-pairing).
 
 ### 5.16 Rational Noether identity
 
 Over C, for the universal stable genus-g family with g≥2, 12c₁(λ)=f_*(c₁(ω)²)+[Δ] in codimension-one Chow groups with rational coefficients, equivalently the corresponding Picard identity modulo torsion after the line-valued Deligne-pairing comparison. Each universal node smoothing branch contributes coefficient1. The integral identity over Z is proved separately by complex torsion freeness and the integral Picard injection, not by an unstated mixed-characteristic GRR theorem.
 
-One proof uses the following inputs and comparisons. Work on the characteristic-zero smooth tricanonical moduli charts with the equivariant descent needed for the stack. The universal curve is regular; its relative nodal morphism is lci, with its cotangent complex and virtual relative tangent convention specified. In the universal node chart xy=t, Ω¹→ω has cokernel at the codimension-two singular locus. Compute the node term and descend the branch contribution. Apply the source-scoped GRR and extract codimension one on the base; R¹f_*ω≅O has trivial determinant. Compare the pushforward intersection class with the first Chern class of the Deligne pairing. Use Pic≅CH¹ on the regular stack in this range to obtain the line identity modulo torsion. The integral Noether node subsequently uses torsion freeness and injection from Z to C.
+One proof uses the following inputs and comparisons. Work on the characteristic-zero smooth tricanonical moduli charts with the equivariant descent needed for the stack. The universal curve is regular; its relative nodal morphism is lci, with its cotangent complex and virtual relative tangent convention specified. In the universal node chart xy=t, Ω¹→ω has cokernel at the codimension-two singular locus. Compute the node term and descend the branch contribution. Apply the source-scoped GRR, extended to the stack by gap:stack-chow-grr, and extract codimension one on the base; R¹f_*ω≅O has trivial determinant. Compare the pushforward intersection class with the first Chern class of the Deligne pairing. Use Pic≅CH¹ on the regular stack in this range to obtain the line identity modulo torsion. The integral Noether node subsequently uses torsion freeness and injection from Z to C.
 
 A rational Chow identity alone is not the integral Picard identity.
 
 ([mumford1977](#references), Theorem5.10 calculation,pp.100–102.)
 
-*Needs:* AlgebraicVectorBundles L0C and the Hodge descent comparison in Layer 5, [the universal boundary cartier divisor](#52-the-universal-boundary-cartier-divisor), SchemeAndStackFoundations §4.15, SchemeAndStackFoundations §§5.1–5.10, StableReduction Layer 2, [hodge determinant and derived direct image](#513-hodge-determinant-and-derived-direct-image), [chern class of the dualizing pairing](#515-chern-class-of-the-dualizing-pairing).
+*Needs:* gap:stack-chow-grr, AlgebraicVectorBundles L0C and the Hodge descent comparison in Layer 5, [the universal boundary cartier divisor](#52-the-universal-boundary-cartier-divisor), SchemeAndStackFoundations §4.15, SchemeAndStackFoundations §§5.1–5.10, StableReduction Layer 2, [hodge determinant and derived direct image](#513-hodge-determinant-and-derived-direct-image), [chern class of the dualizing pairing](#515-chern-class-of-the-dualizing-pairing).
 
 ### 5.17 Noether defect line
 
@@ -9693,15 +9675,15 @@ The construction has the following API.
 
 For g≥2 the class [N_g/C] is torsion in Pic(M̄_g/C). Equivalently, some positive tensor power of N_g/C is trivial. This is the precise intermediate conclusion of rational Noether: 12c₁λ=f_*(c₁ω²)+[Δ] together with the pairing Chern comparison and the rational codimension-one Picard–Chow comparison.
 
-The imported rational-noether identity is over C and has coefficient one on every reduced universal node branch. CHOW-PIC supplies an injective Pic⊗Q→CH¹⊗Q comparison for the actual stack; N_g is a genuine line, not a rational formal symbol.
+The [rational noether identity](#516-rational-noether-identity) is over C and has coefficient one on every reduced universal node branch. gap:stack-chow-grr supplies an injective Pic⊗Q→CH¹⊗Q comparison for the actual stack; N_g is a genuine line, not a rational formal symbol.
 
-One proof uses the following inputs and comparisons. Compute c₁(N_g/C) from its three factors and cancel using rational Noether and pairing-chern-on-moduli. Transport the vanishing to Pic⊗Q through the specified codimension-one comparison. Use that the kernel of an abelian group’s map to its rationalization is its torsion subgroup; do not infer [N]=0 integrally yet.
+One proof uses the following inputs and comparisons. Compute c₁(N_g/C) from its three factors and cancel using [rational noether identity](#516-rational-noether-identity) and [chern class of the dualizing pairing](#515-chern-class-of-the-dualizing-pairing). Transport the vanishing to Pic⊗Q through the specified codimension-one comparison. Use that the kernel of an abelian group’s map to its rationalization is its torsion subgroup; do not infer [N]=0 integrally yet.
 
 The conclusion includes an existential positive exponent, not a canonical trivialization or an asserted exponent 12. A torsion character line on Bμ_r over C demonstrates why a rational class identity does not by itself imply an integral one.
 
 ([mumford1977](#references), Theorem 5.10, pp. 100–105; Lemma 5.14, p. 102. First obtains the line relation rationally and then needs a separate torsion-freeness theorem to make it integral.; [yuan-author-http](#references), Theorem 3.3, p. 42. States the integral endpoint, for which this node supplies only the rational/torsion intermediate step.; [mc5-edidingraham1997](#references), Corollary 1, p. 9; Propositions 16–19, pp. 28–29. Identifies equivariant Picard and codimension-one Chow for a smooth quotient presentation; rationalization detects exactly the torsion ambiguity.)
 
-*Needs:* SchemeAndStackFoundations §3.4, [noether defect line](#517-noether-defect-line), [chern class of the dualizing pairing](#515-chern-class-of-the-dualizing-pairing), [rational noether identity](#516-rational-noether-identity).
+*Needs:* gap:stack-chow-grr, SchemeAndStackFoundations §3.4, [noether defect line](#517-noether-defect-line), [chern class of the dualizing pairing](#515-chern-class-of-the-dualizing-pairing), [rational noether identity](#516-rational-noether-identity).
 
 ### 5.19 Integral universal Noether formula
 
@@ -9719,15 +9701,15 @@ The coefficient of Δ is+1 and the power on λ is12.
 
 Choose one universal integral isomorphism e:λ_g^12≅P_g⊗O(Δ), g≥2. For every stable genus-g family C→S classified by c:S→M̄_g, pullback and the Hodge/pairing comparisons give an actual line isomorphism (det f_*ω)^12≅⟨ω,ω⟩⊗c*O(Δ), coherent under arbitrary base change and isomorphisms of families. If S is integral noetherian and the family is generically smooth, c*O(Δ)=O(Δ_S) with its pulled-back effective-Cartier section. For a family lying in the boundary, c*O(Δ) still exists but its pulled-back section can be zero and need not cut out an effective Cartier divisor. Any two universal choices differ by ±1, whose images may coincide over characteristic two. Arbitrary family isomorphisms can instead differ by any unit on S.
 
-Here All stable-family Hodge and dualizing base-change comparisons have been extended to arbitrary bases as specified in gap:cm-duality-arbitrary-base. The imported integral-noether and universal-units theorems give a universal choice and its universal ambiguity. An effective-Cartier family boundary is asserted only under the stated integral/noetherian/generically-smooth hypotheses.
+All stable-family Hodge and dualizing base-change comparisons have been extended to arbitrary bases as specified in gap:cm-duality-arbitrary-base. [Integral universal noether formula](#519-integral-universal-noether-formula) and [global units on integral stable moduli](#55-global-units-on-integral-stable-moduli) give a universal choice and its universal ambiguity. An effective-Cartier family boundary is asserted only under the stated integral/noetherian/generically-smooth hypotheses.
 
-One proof uses the following inputs and comparisons. Apply the stack Picard pullback functor to e; identify its left side using Hodge base change and AV determinant pullback. Identify the pairing by universal-dualizing-pairing and keep the boundary as a line with its pulled-back section. Use nonvanishing of the generic smoothing parameters only when identifying the pulled-back section with a Cartier divisor. Transport the unique ratio unit of two universal comparisons through the same pullback functor; Γ(M̄_g/Z,O×)=Z× supplies ±1.
+One proof uses the following inputs and comparisons. Apply the stack Picard pullback functor to e; identify its left side using Hodge base change and AV determinant pullback. Identify the pairing by [dualizing deligne pairing](#514-dualizing-deligne-pairing) and keep the boundary as a line with its pulled-back section. Use nonvanishing of the generic smoothing parameters only when identifying the pulled-back section with a Cartier divisor. Transport the unique ratio unit of two universal comparisons through the same pullback functor; Γ(M̄_g/Z,O×)=Z× supplies ±1.
 
 For a stable nodal curve over a field, the boundary line pulls back while its boundary section is zero; do not call that zero locus an effective Cartier divisor. For xy=π^m on a trait, the pulled-back boundary section has order m, not one. On an F₂-scheme the two universal signs have identical images. On a Q-scheme, multiplying a family comparison by 2 shows why arbitrary comparisons are not exhausted by the universal choices.
 
 ([yuan-author-http](#references), §3.1.2, pp. 42–43. States the classifying-pullback comparison and its universal-choice interpretation for generically smooth integral Noetherian families; arbitrary-base line pullback here follows from the explicit stack line and base-change contracts.; [mc5-erikssonfreixas2024](#references), Definition 4.16, p. 287; Proposition 6.1, pp. 311–312. Provides the nonflat and non-Noetherian pairing base-change input for the stated extension.)
 
-*Needs:* SchemeAndStackFoundations §3.4, `AlgebraicGeometry.Scheme.Modules.pullback`, `CategoryTheory.Functor.mapIso`, [integral universal noether formula](#519-integral-universal-noether-formula), [global units on integral stable moduli](#55-global-units-on-integral-stable-moduli), [the hodge bundle of stable pointed curves](#51-the-hodge-bundle-of-stable-pointed-curves), AlgebraicVectorBundles L0C and the Hodge descent comparison in Layer 5, [dualizing deligne pairing](#514-dualizing-deligne-pairing), [the universal boundary cartier divisor](#52-the-universal-boundary-cartier-divisor).
+*Needs:* gap:cm-duality-arbitrary-base, SchemeAndStackFoundations §3.4, `AlgebraicGeometry.Scheme.Modules.pullback`, `CategoryTheory.Functor.mapIso`, [integral universal noether formula](#519-integral-universal-noether-formula), [global units on integral stable moduli](#55-global-units-on-integral-stable-moduli), [the hodge bundle of stable pointed curves](#51-the-hodge-bundle-of-stable-pointed-curves), AlgebraicVectorBundles L0C and the Hodge descent comparison in Layer 5, [dualizing deligne pairing](#514-dualizing-deligne-pairing), [the universal boundary cartier divisor](#52-the-universal-boundary-cartier-divisor).
 
 ### 5.21 Semi-canonical Noether comparison
 
@@ -9826,9 +9808,9 @@ Over the fixed pairing base and for g≥2, form τ:M_g[N]→A_g[N] by the relati
 
 Here g≥2 and N≥3; work over B=Spec Z[1/N,ζ_N] in the fixed symplectic component, with the same pairing convention in M_g[N] and A_g[N]. The fine curve scheme is Noetherian, and its universal curve is smooth projective geometrically connected of genus g; hence the JacobianChallengePartII §§1.1–1.4 suppliers apply without choosing a section of the curve.
 
-One proof uses the following inputs and comparisons. Apply the exact JacobianChallengePartII §§1.1–1.4, JacobianChallengePartII §§1.1–1.4 and JacobianChallengePartII §§1.1–1.4 imports to the universal curve over the Noetherian fine scheme. All satisfy g>0, smoothness, projectivity and geometric connectedness. Arbitrary test-scheme pullbacks are supplied by their base-change comparisons. Equip this relative Jacobian with the given torsion frame and apply the M5/M6 fine ppav universal property over the identical cyclotomic base. The classifying map and its universal-family identification give the Cartesian square.
+One proof uses the following inputs and comparisons. Apply the exact JacobianChallengePartII §§1.1–1.4 imports to the universal curve over the Noetherian fine scheme. All satisfy g>0, smoothness, projectivity and geometric connectedness. Arbitrary test-scheme pullbacks are supplied by their base-change comparisons. Equip this relative Jacobian with the given torsion frame and apply the M5/M6 fine ppav universal property over the identical cyclotomic base. The classifying map and its universal-family identification give the Cartesian square.
 
-The curve-to-Jacobian construction is not AbelianSchemes duality. For the Hodge API use MC.6/jacobian-hodge-comparison; no generic Picard Lie or curve duality theorem is reconstructed here. Do not import JC7/universal-level-jacobian: that application itself depends on this roadmap’s full-level and fine-level nodes.
+The curve-to-Jacobian construction is not AbelianSchemes duality. The Hodge comparison along this morphism is §6.7; no generic Picard Lie or curve duality theorem is reconstructed here. Do not import JC7/universal-level-jacobian: that application itself depends on this roadmap’s full-level and fine-level nodes.
 
 The construction has the following API.
 
@@ -9851,7 +9833,7 @@ The construction has the following API.
 
 Over an algebraically closed field k, the coarse stable curve moduli admits a morphism `t̄:M̄_g^{coarse}→A_g^{min}` extending smooth Torelli. On a stable curve it uses the abelian part of the generalized Jacobian and maps to the corresponding minimal-compactification stratum. The descended rational Hodge line satisfies λ_coarse=t̄*ω_min, with ω_min ample.
 
-One proof uses the following inputs and comparisons. On integral Noetherian stable-family atlas charts import NeronModelsAndSemistableAbelianVarieties §4.13 `StableFamilyPicard` and JacobianChallengePartII §§6.1–6.3. The source does not require a regular total space. Descending the semiabelian group and line comparisons to the stack remains part of the atlas/descent contract. For a geometric stable curve use NeronModelsAndSemistableAbelianVarieties §4.1 `NormalizationExactSequence` to identify the abelian quotient with the product of normalized-component Jacobians; the torus retains loops and multiple edges. Use the minimal Siegel extension theorem and descended rational automorphic Hodge line; the all-characteristic unlevel statement needs a scoped supplier extension, not an unsupported assertion from good-prime level moduli. Check the extension and line comparison on the boundary with the source’s abelian-part interpretation and descent. NeronModelsAndSemistableAbelianVarieties §4.1 applies directly to every geometric nodal curve; its normalization sequence is not restricted to a DVR. Arbitrary-base representation and descent of the stable Picard scheme use gap:stable-picard-arbitrary-base. MC.6/jacobian-hodge-comparison applies to smooth full-level Torelli, so the stable boundary comparison imports JacobianChallengePartII §§6.1–6.3 directly.
+One proof uses the following inputs and comparisons. On integral Noetherian stable-family atlas charts import NeronModelsAndSemistableAbelianVarieties §4.13 `StableFamilyPicard` and JacobianChallengePartII §§6.1–6.3. The source does not require a regular total space. Descending the semiabelian group and line comparisons to the stack remains part of the atlas/descent contract. For a geometric stable curve use NeronModelsAndSemistableAbelianVarieties §4.1 `NormalizationExactSequence` to identify the abelian quotient with the product of normalized-component Jacobians; the torus retains loops and multiple edges. Use the minimal Siegel extension theorem and descended rational automorphic Hodge line; the all-characteristic unlevel statement needs a scoped supplier extension, not an unsupported assertion from good-prime level moduli. Check the extension and line comparison on the boundary with the source’s abelian-part interpretation and descent. NeronModelsAndSemistableAbelianVarieties §4.1 applies directly to every geometric nodal curve; its normalization sequence is not restricted to a DVR. Arbitrary-base representation and descent of the stable Picard scheme use gap:stable-picard-arbitrary-base. The Hodge comparison of §6.7 applies to smooth full-level Torelli, so the stable boundary comparison imports JacobianChallengePartII §§6.1–6.3 directly.
 
 The entire semiabelian Jacobian is not an abelian scheme at a non-compact-type node.
 
@@ -9861,7 +9843,7 @@ The entire semiabelian Jacobian is not an abelian scheme at a non-compact-type n
 
 ### 6.5 Graph-closure compactification after a finite cover
 
-Choose a projective compactification S̄₀ of S and the normal projective finite scheme cover V→M̄_g. Let `W=S×_{M̄_g}V`, choose a reduced irreducible component W₀ dominating S, and normalize it to S′. In S̄₀×V close the finite image of W₀, then normalize that integral closure in the finite function-field extension K(W₀) to obtain S̄′. The resulting S′ is the inverse image of S under S̄′→S̄₀, and the family pulled back from V extends X×_S S′.
+Choose a projective compactification S̄₀ of S and the normal projective finite scheme cover V→M̄_g (the normalization of a cover from gap:finite-scheme-cover). Let `W=S×_{M̄_g}V`, choose a reduced irreducible component W₀ dominating S, and normalize it to S′. In S̄₀×V close the finite image of W₀, then normalize that integral closure in the finite function-field extension K(W₀) to obtain S̄′. The resulting S′ is the inverse image of S under S̄′→S̄₀, and the family pulled back from V extends X×_S S′.
 
 One proof uses the following inputs and comparisons. W is finite surjective over S because the cover map is representable finite. A component dominates the generic point of integral S. The map W→S×V is finite, as the pullback of the finite diagonal of M̄_g. It need not be a monomorphism: the chosen isomorphism of the two curve families is part of W. Close its finite image in the projective product, preserving the S̄₀-coordinate and then its function field K(W₀); normalization in a finite extension is finite over the excellent finite-type base. Because W₀ is finite over its image, normalization over the open S in K(W₀) is the normalization of W₀; the extension family is obtained from the second projection to V.
 
@@ -9883,7 +9865,7 @@ The construction has the following API.
 
 ([yuan-author-http](#references), §3.1.4,p.45, final paragraph (corrected graph closure).)
 
-*Needs:* [stable compactification of a smooth family](#62-stable-compactification-of-a-smooth-family), SchemeAndStackFoundations §4.15, AlgebraicModuliForArithmeticGeometry §§5.1–5.4, SchemeAndStackFoundations §§0.3, 0.8–0.9, 0.11, 0.17–0.21.
+*Needs:* gap:finite-scheme-cover, [stable compactification of a smooth family](#62-stable-compactification-of-a-smooth-family), SchemeAndStackFoundations §4.15, AlgebraicModuliForArithmeticGeometry §§5.1–5.4, SchemeAndStackFoundations §§0.3, 0.8–0.9, 0.11, 0.17–0.21.
 
 ### 6.6 Finite Torelli fibres and the sign ambiguity
 
@@ -9901,9 +9883,9 @@ The blanket claim of noninjectivity for every g≥2 is excluded.
 
 For g≥2 and N≥3 over the fixed pairing base B=Spec Z[1/N,ζ_N], let τ:M_g[N]→A_g[N] be smooth full-level Torelli. The canonical comparison of its universal families identifies τ* of the ppav Hodge bundle with f_*ω of the universal curve; its determinant identifies τ* of the ppav Hodge line with the curve Hodge line. Pullback along every T→M_g[N], including nonreduced T, respects these comparisons and their identity/composition isomorphisms.
 
-The fine-level scheme and its universal smooth projective curve have the MC.4/fine-level-scheme properties; g≥2, N≥3 invertible, with the same ζ_N pairing component on both moduli schemes. JacobianChallengePartII §§6.1–6.3 supplies the generic stable-family comparison over integral Noetherian bases with g>1. Apply it componentwise on the regular Noetherian fine curve scheme using the explicit SchemeAndStackFoundations §§0.3, 0.8–0.9, 0.11, 0.17–0.21 component criterion; do not silently apply that supplier over an arbitrary nonintegral base.
+The fine-level scheme and its universal smooth projective curve have the properties of [the fine smooth full-level curve scheme](#410-the-fine-smooth-full-level-curve-scheme); g≥2, N≥3 invertible, with the same ζ_N pairing component on both moduli schemes. JacobianChallengePartII §§6.1–6.3 supplies the generic stable-family comparison over integral Noetherian bases with g>1. Apply it componentwise on the regular Noetherian fine curve scheme using the explicit SchemeAndStackFoundations §§0.3, 0.8–0.9, 0.11, 0.17–0.21 component criterion; do not silently apply that supplier over an arbitrary nonintegral base.
 
-One proof uses the following inputs and comparisons. The fine curve scheme is regular Noetherian and quasi-compact. Use the requested SchemeAndStackFoundations §§0.3, 0.8–0.9, 0.11, 0.17–0.21 statement that such a scheme is a finite disjoint union of open-and-closed integral connected components. This avoids requiring the separate Teichmüller/level-connectedness theorem merely to use JacobianChallengePartII §§6.1–6.3. On each component the universal smooth curve is a stable connected nodal family of genus g>1. Import JacobianChallengePartII §§6.1–6.3 and JacobianChallengePartII §§6.1–6.3; their generic Lie/duality construction stays in the Jacobian owner. The Cartesian abelian-family comparison of smooth-torelli identifies the invariant differentials with the pullback ppav Hodge bundle. Assemble the componentwise isomorphisms on their disjoint cover and take the determinant. Pull back the resulting universal comparison to arbitrary T by the supplied Hodge-bundle and Jacobian base-change isomorphisms. Check identity/composition; no new arbitrary-base Picard representability theorem is inferred from the integral-base JacobianChallengePartII §§6.1–6.3 statement.
+One proof uses the following inputs and comparisons. The fine curve scheme is regular Noetherian and quasi-compact. Use the requested SchemeAndStackFoundations §§0.3, 0.8–0.9, 0.11, 0.17–0.21 statement that such a scheme is a finite disjoint union of open-and-closed integral connected components. This avoids requiring the separate Teichmüller/level-connectedness theorem merely to use JacobianChallengePartII §§6.1–6.3. On each component the universal smooth curve is a stable connected nodal family of genus g>1. Import JacobianChallengePartII §§6.1–6.3; their generic Lie/duality construction stays in the Jacobian owner. The Cartesian abelian-family comparison of [the smooth full-level torelli morphism](#63-the-smooth-full-level-torelli-morphism) identifies the invariant differentials with the pullback ppav Hodge bundle. Assemble the componentwise isomorphisms on their disjoint cover and take the determinant. Pull back the resulting universal comparison to arbitrary T by the supplied Hodge-bundle and Jacobian base-change isomorphisms. Check identity/composition; no new arbitrary-base Picard representability theorem is inferred from the integral-base JacobianChallengePartII §§6.1–6.3 statement.
 
 This is a canonical algebraic line comparison; metric equality is supplied by the Arakelov owner.
 
@@ -9931,7 +9913,7 @@ One proof uses the following inputs and comparisons. After a finite field or lev
 
 Only finite fibres on the smooth locus are used.
 
-([yuan-author-http](#references), §3.4,pp.55–56.)
+([yuan-author-http](#references), §3.4 (which begins on p. 54), argument following Remark 3.9, pp. 55–56.)
 
 *Needs:* [maximal variation of a curve family](#61-maximal-variation-of-a-curve-family), [the compactified torelli and hodge comparison](#64-the-compactified-torelli-and-hodge-comparison), [finite torelli fibres and the sign ambiguity](#66-finite-torelli-fibres-and-the-sign-ambiguity), AlgebraicVectorBundles L0C and the Hodge descent comparison in Layer 5, SchemeAndStackFoundations §§5.1–5.10.
 
@@ -9949,7 +9931,7 @@ N remains invertible on the original level base.
 
 ### 6.11 Stable compactification of a stable input family
 
-Let B be Spec Z or Spec k for an arbitrary field k, S an integral quasi-projective B-scheme and C→S a stable genus-g family, g≥2. There exist a normal integral scheme S′, a finite surjective map p:S′→S, an open immersion j:S′→S̄′ with S̄′ normal integral projective over B, and a stable family C̄′→S̄′ whose restriction is isomorphic to C×_S S′. The construction preserves an nodal family; smooth generic fibre is not required.
+Let B be Spec Z or Spec k for an arbitrary field k, S an integral quasi-projective B-scheme and C→S a stable genus-g family, g≥2. There exist a normal integral scheme S′, a finite surjective map p:S′→S, an open immersion j:S′→S̄′ with S̄′ normal integral projective over B, and a stable family C̄′→S̄′ whose restriction is isomorphic to C×_S S′. The construction preserves a nodal family; smooth generic fibre is not required.
 
 Integral means reduced and irreducible; finite type is included in quasi-projective. A compactification is over the same B. The finite projective cover V→M̄_g is a representable finite surjective map to the stack, carrying the universal stable family.
 
@@ -9963,9 +9945,9 @@ For C=C₀×A¹ with fixed stable C₀, S̄′ has dimension1. Closing only the 
 
 ### 6.12 Full-level Torelli by the relative Jacobian
 
-Fix g≥2, N≥3 and B_N=Spec Z[1/N,ζ_N] with the chosen primitive root specifying the symplectic pairing. For the MC.4 universal smooth curve f:C_g[N]→M_g[N], use JacobianChallengePartII §§1.1–1.4 to form `J=Pic⁰_{C/M}`, its canonical principal polarization and the induced full symplectic level. Its PEL classifying map τ_N:M_g[N]→A_g[N] has a canonical isomorphism `J≅M_g[N]×_{A_g[N]}A_g[N]^univ` preserving polarization and level. Formation is natural under every test-scheme pullback; it does not choose a section of C.
+Fix g≥2, N≥3 and B_N=Spec Z[1/N,ζ_N] with the chosen primitive root specifying the symplectic pairing. For the universal smooth curve of [the fine smooth full-level curve scheme](#410-the-fine-smooth-full-level-curve-scheme) f:C_g[N]→M_g[N], use JacobianChallengePartII §§1.1–1.4 to form `J=Pic⁰_{C/M}`, its canonical principal polarization and the induced full symplectic level. Its PEL classifying map τ_N:M_g[N]→A_g[N] has a canonical isomorphism `J≅M_g[N]×_{A_g[N]}A_g[N]^univ` preserving polarization and level. Formation is natural under every test-scheme pullback; it does not choose a section of C.
 
-Here Both source and target use the same fixed cyclotomic pairing component. N is invertible on B_N. The fine Siegel target can first be used as an algebraic space: its good-base scheme realization is a PEL M6/C5 import, not a prerequisite for the classifying map.
+Both source and target use the same fixed cyclotomic pairing component. N is invertible on B_N. The fine Siegel target can first be used as an algebraic space: its good-base scheme realization is a PEL M6/C5 import, not a prerequisite for the classifying map.
 
 One proof uses the following inputs and comparisons. Import the family Picard construction and its base change. Use the canonical polarization descended from local theta data; there is no global Abel–Jacobi base point. Transfer the curve level to its Jacobian torsion with the agreed Weil pairing. Apply fine ppav representability to the object (J,λ,α). The universal property supplies the Cartesian family comparison and its identity/composition coherence, rather than just agreement on geometric points.
 
@@ -9995,7 +9977,7 @@ For τ_N above, let `E_A=e*Ω¹_{A_g[N]^univ/A_g[N]}`, `E_C=f_*ω_{C/M}`, and λ
 
 Here g≥2, N≥3 and B_N as above; M_g[N] is regular, Noetherian and quasi-compact. The integral-base JacobianChallengePartII §§6.1–6.3 theorem is applied on integral open-and-closed components of this fine scheme, not to an arbitrary test scheme T.
 
-One proof uses the following inputs and comparisons. Regular local rings are integrally closed domains. SchemeAndStackFoundations §§0.3, 0.8–0.9, 0.11, 0.17–0.21 identifies finitely many disjoint integral open-and-closed components; no geometric irreducibility theorem is required. Apply JacobianChallengePartII §§6.1–6.3 on each component to identify e*Ω¹_J with (R¹f_*O_C)∨≅f_*ω. Use the Cartesian Jacobian comparison to identify the left side with τ_N*E_A. Glue the canonical componentwise maps. Pull this map and the represented Picard/base-change comparisons to arbitrary T; do not reapply an integral theorem to nonreduced T. Take the fixed-rank determinant using the existing AlgebraicVectorBundles L0C functor imported by MC.5. Identity and composition coherence come from the same natural maps.
+One proof uses the following inputs and comparisons. Regular local rings are integrally closed domains. SchemeAndStackFoundations §§0.3, 0.8–0.9, 0.11, 0.17–0.21 identifies finitely many disjoint integral open-and-closed components; no geometric irreducibility theorem is required. Apply JacobianChallengePartII §§6.1–6.3 on each component to identify e*Ω¹_J with (R¹f_*O_C)∨≅f_*ω. Use the Cartesian Jacobian comparison to identify the left side with τ_N*E_A. Glue the canonical componentwise maps. Pull this map and the represented Picard/base-change comparisons to arbitrary T; do not reapply an integral theorem to nonreduced T. Take the fixed-rank determinant using the existing AlgebraicVectorBundles L0C functor imported in Layer 5. Identity and composition coherence come from the same natural maps.
 
 On two disconnected integral components the maps glue componentwise, without assuming the full fine scheme integral. For a dual-number test base the same comparison survives and its reduction agrees with the geometric comparison. In genus2 the bundle rank is2 but its determinant rank is1; replacing E by λ fails.
 
@@ -10021,7 +10003,7 @@ For a nonhyperelliptic genus3 curve and N=3 there are two different curve-level 
 
 Let U→M̄_g be a quasi-compact regular Noetherian smooth scheme atlas over Z, g≥2, and `R=U×_{M̄_g}U`. On integral open-and-closed components of U and R the NeronModelsAndSemistableAbelianVarieties §4.13 stable-family Picard and JacobianChallengePartII §§6.1–6.3 comparison identify `e*Ω¹_{Pic⁰}` with f_*ω. Canonical pullback isomorphisms of the represented relative Picard functor identify the two objects on R and satisfy the cocycle on triple overlaps. They descend a semiabelian Picard group object over the stack and its rank-g Hodge comparison. For any test scheme T→M̄_g the comparison is the pullback one for the classified stable curve, including nonreduced T; a scheme-representability claim on T requires the NeronModelsAndSemistableAbelianVarieties §4.13 arbitrary-base export, not algebraic-space descent alone.
 
-The MC.1 atlas is smooth over the regular base Z and finite type; its overlaps are representable schemes and regular Noetherian. The arbitrary-base Picard identification and effective scheme representation are gap:stable-picard-arbitrary-base. Geometric normalization is imported directly from NeronModelsAndSemistableAbelianVarieties §4.1.
+The atlas of SchemeAndStackFoundations §4.15 is smooth over the regular base Z and finite type; its overlaps are representable schemes and regular Noetherian. The arbitrary-base Picard identification and effective scheme representation are gap:stable-picard-arbitrary-base. Geometric normalization is imported directly from NeronModelsAndSemistableAbelianVarieties §4.1.
 
 One proof uses the following inputs and comparisons. Use regularity and the exact SchemeAndStackFoundations §§0.3, 0.8–0.9, 0.11, 0.17–0.21 component criterion on U, R and triple overlaps; apply integral-base NeronModelsAndSemistableAbelianVarieties §4.13 and JacobianChallengePartII §§6.1–6.3 componentwise. All comparison maps arise from pullback of the same fppf Picard sheaf and the natural Lie/cohomology map. Hence they agree on overlaps and satisfy the cocycle before taking determinants. Use algebraic-space group descent and quasi-coherent descent for the stack object and Hodge isomorphism. Use gap:stable-picard-arbitrary-base for scheme representation; algebraic-space descent alone is insufficient. For arbitrary T, pull back the canonical atlas descent and compare its represented Picard functor. This transfers the formula without assuming T integral or regular.
 
@@ -10035,7 +10017,7 @@ For a stable one-node irreducible genus2 curve with elliptic normalization, the 
 
 For a stable connected curve C of genus g≥2 over an algebraically closed field k, let ν:⊔_v C̃_v→C be its normalization and Γ its dual multigraph, allowing loops. There is a canonical fppf exact sequence 1→T_Γ→Pic⁰_C→∏_v J(C̃_v)→0, with X*(T_Γ)=H₁(Γ,Z). Put r=b₁(Γ) and a=Σ_v g(C̃_v)=g−r. The abelian quotient has the product principal polarization and defines a point of the a-dimensional ppav stratum of A_g^min. Hodge rank of Pic⁰_C remains g, not a.
 
-Here Vertices index geometric irreducible components; edges index nodes, including self-nodes. The normalized component Jacobians and their principal polarizations are imports, not reconstructed here.
+Vertices index geometric irreducible components; edges index nodes, including self-nodes. The normalized component Jacobians and their principal polarizations are imports, not reconstructed here.
 
 One proof uses the following inputs and comparisons. Import NeronModelsAndSemistableAbelianVarieties §4.1 `NormalizationExactSequence` and its graph-character calculation. Use arithmetic-genus additivity to identify g=a+r. Give the abelian quotient the product polarization; its determinant differential is not the whole rank-g semiabelian Hodge bundle. Apply the C5 Siegel minimal-stratum interpretation by the abelian part. No claim that the nonproper generalized Jacobian itself lies in A_g is made.
 
@@ -10051,7 +10033,7 @@ For every algebraically closed field k and g≥2 construct t̄_g:M̄_g^coarse→
 
 Here A_g^min is the fixed-field unlevelled Siegel coarse minimal space requested from C5, supported by FC V2.3 over Z and a proved fixed-field comparison. A literal identification with a geometric fibre of the integral model is not assumed; a characteristic-zero Satake theorem alone does not supply this target. The C5 normal-base semiabelian extension and Hodge-power contract is an explicit supplier gap. No use is made of FC V6.7 in characteristic p. Coarse formation is used over fixed k and permitted flat field extension; no arbitrary nonflat base-change theorem is asserted.
 
-One proof uses the following inputs and comparisons. Choose a quasi-compact smooth scheme atlas of M̄_g over the fixed field k. MC.1 smoothness over k makes the atlas and its scheme double overlaps regular, and the dense smooth-curve locus meets every integral component by the boundary theorem. On each component use its stable Picard semiabelian scheme, generically a canonically polarized abelian scheme. Invoke the requested C5 stable-Jacobian polarized-trait compatibility from gap:minimal-siegel-all-characteristics before applying the normal-base minimal-extension/Hodge-power contract. Both this trait identification and the minimal contraction remain in gap:minimal-siegel-all-characteristics; semiabelianity alone is not the asserted input. Uniqueness and the canonical Picard overlap isomorphisms make these maps agree on double overlaps. Descend the stack map; the categorical coarse universal property factors it uniquely through M̄_g^coarse. At geometric boundary points apply the abelian-part stratum rule. On the smooth open this is the JacobianChallengePartII §§1.1–1.4 Jacobian, so the result extends smooth Torelli. FC IV5.1 requires a common toroidal cone on a general normal base. Independence after contraction to the minimal space must be proved by the supplier; a direct toroidal lift is not silently assumed.
+One proof uses the following inputs and comparisons. Choose a quasi-compact smooth scheme atlas of M̄_g over the fixed field k. Smoothness of M̄_g over k (SchemeAndStackFoundations §4.15) makes the atlas and its scheme double overlaps regular, and the dense smooth-curve locus meets every integral component by the boundary theorem. On each component use its stable Picard semiabelian scheme, generically a canonically polarized abelian scheme. Invoke the requested C5 stable-Jacobian polarized-trait compatibility from gap:minimal-siegel-all-characteristics before applying the normal-base minimal-extension/Hodge-power contract. Both this trait identification and the minimal contraction remain in gap:minimal-siegel-all-characteristics; semiabelianity alone is not the asserted input. Uniqueness and the canonical Picard overlap isomorphisms make these maps agree on double overlaps. Descend the stack map; the categorical coarse universal property factors it uniquely through M̄_g^coarse. At geometric boundary points apply the abelian-part stratum rule. On the smooth open this is the JacobianChallengePartII §§1.1–1.4 Jacobian, so the result extends smooth Torelli. FC IV5.1 requires a common toroidal cone on a general normal base. Independence after contraction to the minimal space must be proved by the supplier; a direct toroidal lift is not silently assumed.
 
 A separating elliptic–elliptic genus2 boundary curve maps into A₂, not the lower-dimensional boundary. A rational stable genus2 curve with two nodes maps into A₀. Moving the attaching points of two fixed smooth components leaves the product-Jacobian image fixed; compactified Torelli need not have finite fibres. A characteristic2 example is covered by the all-Z minimal target and the requested semiabelian extension contract, not by characteristic-zero purity.
 
@@ -10061,7 +10043,7 @@ The construction has the following API.
 - At C the stratum and ppav point are the polarized product of normalization-component Jacobians.
 - The morphism agrees with every atlas-local semiabelian classifying extension and is uniquely determined by this property.
 - Extension of algebraically closed fields preserves the morphism and the boundary-value formula.
-- Its pullback of the minimal ample Hodge power is the same positive power of the stable curve Hodge line, as stated in minimal-hodge-power.
+- Its pullback of the minimal ample Hodge power is the same positive power of the stable curve Hodge line, as supplied by gap:minimal-siegel-all-characteristics.
 
 **Checks.**
 
@@ -10072,29 +10054,29 @@ The construction has the following API.
 
 ([mc6-fc1990](#references), IV Proposition5.1, Remark5.3, Theorem5.7, pp.113–117; V Theorem2.3, pp.150–151. Toroidal extension has a cone condition; minimal compactification exists over Z and records the abelian part. A normal-base extension/Hodge comparison independent of a chosen cone is a requested C5 interface, not a direct quotation of these theorems.; [knudsen3](#references), §6, printed pp.210–211 (PDF11–12). Characteristic-zero map from a finite stable-family cover to the Satake compactification and identification of a positive Hodge power. It alone does not prove the all-characteristic target.; [yuan-author-http](#references), §3.4, p.56, proof of Hodge nefness and bigness. Uses compactified Torelli, Hodge pullback and generic finiteness. The smooth Torelli step is read as quasi-finiteness, not proper finiteness.)
 
-*Needs:* SchemeAndStackFoundations §1.23, ShimuraCompactifications §§C5.13–C5.18, [the compactified torelli and hodge comparison](#64-the-compactified-torelli-and-hodge-comparison), [full-level torelli by the relative jacobian](#612-full-level-torelli-by-the-relative-jacobian), [stable picard and hodge comparison along a moduli atlas](#615-stable-picard-and-hodge-comparison-along-a-moduli-atlas), [the abelian part of a stable jacobian](#616-the-abelian-part-of-a-stable-jacobian), SchemeAndStackFoundations §4.15, [coarse spaces of pointed curve stacks](#41-coarse-spaces-of-pointed-curve-stacks).
+*Needs:* gap:minimal-siegel-all-characteristics, SchemeAndStackFoundations §1.23, ShimuraCompactifications §§C5.13–C5.18, [the compactified torelli and hodge comparison](#64-the-compactified-torelli-and-hodge-comparison), [full-level torelli by the relative jacobian](#612-full-level-torelli-by-the-relative-jacobian), [stable picard and hodge comparison along a moduli atlas](#615-stable-picard-and-hodge-comparison-along-a-moduli-atlas), [the abelian part of a stable jacobian](#616-the-abelian-part-of-a-stable-jacobian), SchemeAndStackFoundations §4.15, [coarse spaces of pointed curve stacks](#41-coarse-spaces-of-pointed-curve-stacks).
 
 ### 6.18 Stable Hodge as a minimal Hodge pullback
 
-Over the k of minimal-torelli-descent, let q:M̄_g→M̄_g^coarse and λ=det(f_*ω). There exist m>0 and an ample invertible sheaf A on A_g^min such that (t̄_g∘q)*A≅λ^⊗m canonically with the semiabelian Hodge comparison. Equivalently, λ descends as a rational line λ_coarse with λ_coarse=t̄_g*ω_min and ω_min ample as a rational line. For every stable family over a projective k-scheme X this yields λ_X^⊗m≅h_X*A; the comparison survives nonreduced test pullback. The power absorbs stabilizer actions and toric determinant signs.
+Over the field k of [compactified torelli in every characteristic](#617-compactified-torelli-in-every-characteristic), let q:M̄_g→M̄_g^coarse and λ=det(f_*ω). There exist m>0 and an ample invertible sheaf A on A_g^min such that (t̄_g∘q)*A≅λ^⊗m canonically with the semiabelian Hodge comparison. Equivalently, λ descends as a rational line λ_coarse with λ_coarse=t̄_g*ω_min and ω_min ample as a rational line. For every stable family over a projective k-scheme X this yields λ_X^⊗m≅h_X*A; the comparison survives nonreduced test pullback. The power absorbs stabilizer actions and toric determinant signs.
 
 Here A and m are chosen compatibly from the Siegel minimal Hodge-power theorem; the unlevelled coarse Hodge line need not itself descend integrally. Use the rank-g semiabelian invariant-differential determinant across the boundary, not the smaller-rank abelian-part differential determinant.
 
-One proof uses the following inputs and comparisons. Request the all-characteristic Siegel minimal ample power and its pullback identification on semiabelian normal bases. Compare this semiabelian Hodge line with the stable Hodge line by atlas-comparison. Glue the canonical positive-power isomorphisms on overlaps and factor the target morphism through the coarse space. This directly supplies a descending power of λ, without an unsupported wild coarse-line descent assertion. For a family pull back the stack equality. Rationalize the line group only after the positive-power statement, with coherent determinant base change.
+One proof uses the following inputs and comparisons. Use the all-characteristic Siegel minimal ample power of gap:minimal-siegel-all-characteristics and its pullback identification on semiabelian normal bases. Compare this semiabelian Hodge line with the stable Hodge line by [stable picard and hodge comparison along a moduli atlas](#615-stable-picard-and-hodge-comparison-along-a-moduli-atlas). Glue the canonical positive-power isomorphisms on overlaps and factor the target morphism through the coarse space. This directly supplies a descending power of λ, without an unsupported wild coarse-line descent assertion. For a family pull back the stack equality. Rationalize the line group only after the positive-power statement, with coherent determinant base change.
 
 At an irreducible nodal genus2 curve the rank2 semiabelian determinant is used although the abelian quotient has dimension1. For two components of genera g₁,g₂ the determinant symmetry contains (−1)^(g₁g₂); a suitable positive power absorbs this sign on coarse descent. For a family over dual numbers the equality is an invertible-sheaf isomorphism pulled back from the stack, not a numerical equality of degrees.
 
 ([mc6-fc1990](#references), IV Proposition5.1, Remark5.3, Theorem5.7, pp.113–117; V Theorem2.3, pp.150–151. Toroidal extension has a cone condition; minimal compactification exists over Z and records the abelian part. A normal-base extension/Hodge comparison independent of a chosen cone is a requested C5 interface, not a direct quotation of these theorems.; [knudsen3](#references), §6, printed pp.210–211 (PDF11–12). Characteristic-zero map from a finite stable-family cover to the Satake compactification and identification of a positive Hodge power. It alone does not prove the all-characteristic target.; [yuan-author-http](#references), §3.4, p.56, proof of Hodge nefness and bigness. Uses compactified Torelli, Hodge pullback and generic finiteness. The smooth Torelli step is read as quasi-finiteness, not proper finiteness.)
 
-*Needs:* ShimuraCompactifications §§C5.13–C5.18, JacobianChallengePartII §§6.1–6.3, [compactified torelli in every characteristic](#617-compactified-torelli-in-every-characteristic), [stable picard and hodge comparison along a moduli atlas](#615-stable-picard-and-hodge-comparison-along-a-moduli-atlas), AlgebraicVectorBundles L0C and the Hodge descent comparison in Layer 5.
+*Needs:* gap:minimal-siegel-all-characteristics, ShimuraCompactifications §§C5.13–C5.18, JacobianChallengePartII §§6.1–6.3, [compactified torelli in every characteristic](#617-compactified-torelli-in-every-characteristic), [stable picard and hodge comparison along a moduli atlas](#615-stable-picard-and-hodge-comparison-along-a-moduli-atlas), AlgebraicVectorBundles L0C and the Hodge descent comparison in Layer 5.
 
 ### 6.19 Generic finiteness of the extended Torelli classifying map
 
-Let k be algebraically closed, X normal integral projective over k, and C→X a stable genus-g family, g≥2, smooth over a dense open U. If U→M_g^coarse has maximal variation in the imported MC.6 sense, the composite h:X→M̄_g^coarse→A_g^min is generically finite onto its reduced integral image Z. The finite field extension K(X)/K(Z) need not be separable. No global finiteness of h or t̄ is required.
+Let k be algebraically closed, X normal integral projective over k, and C→X a stable genus-g family, g≥2, smooth over a dense open U. If U→M_g^coarse has maximal variation in the sense of [maximal variation of a curve family](#61-maximal-variation-of-a-curve-family), the composite h:X→M̄_g^coarse→A_g^min is generically finite onto its reduced integral image Z. The finite field extension K(X)/K(Z) need not be separable. No global finiteness of h or t̄ is required.
 
 The classifying map is to coarse curve moduli; adding a level is not part of maximal variation. X is integral and U is dense and nonempty; a dimension-zero X is permitted.
 
-One proof uses the following inputs and comparisons. Unlevelled strong Torelli gives finite geometric fibres on the smooth locus; this follows from the same JacobianChallengePartII §§1.1–1.4 supplier used in signed-level-fibres after forgetting level. Compose the generically quasi-finite U classifying map with this quasi-finite smooth Torelli map. The image of U is dense in h(X), so the resulting dominant map to Z has finite generic residue-field extension. Retain the full inseparable degree. Positive-dimensional boundary fibres of t̄ do not change the generic calculation.
+One proof uses the following inputs and comparisons. Unlevelled strong Torelli gives finite geometric fibres on the smooth locus; this follows from the same JacobianChallengePartII §§1.1–1.4 supplier used in [the sign ambiguity in geometric torelli fibres](#614-the-sign-ambiguity-in-geometric-torelli-fibres) after forgetting level. Compose the generically quasi-finite U classifying map with this quasi-finite smooth Torelli map. The image of U is dense in h(X), so the resulting dominant map to Z has finite generic residue-field extension. Retain the full inseparable degree. Positive-dimensional boundary fibres of t̄ do not change the generic calculation.
 
 An isotrivial family over a positive-dimensional X fails maximal variation; its constant h is not generically finite. A generically finite purely inseparable base change of a maximal-variation family stays in range; no generic étaleness test is imposed. For X a point the image dimension is0 and the finite field extension condition holds.
 
@@ -10104,7 +10086,7 @@ An isotrivial family over a positive-dimensional X fails maximal variation; its 
 
 ### 6.20 Nefness and bigness of the Hodge line under maximal variation
 
-For the family over X in maximal-variation-generic-finiteness, λ_X=det f_*ω is nef and big. Choose m,A from minimal-hodge-power, let d=dim X, Z=h(X)_red and e=[K(X):K(Z)]. Then deg_X(c₁(λ_X^⊗m)^d)=e·deg_Z(c₁(A|Z)^d)>0. Nefness follows by curve degrees; the nef-and-positive-top-intersection criterion gives bigness, and positive powers detect both properties.
+For the family over X in [generic finiteness of the extended torelli classifying map](#619-generic-finiteness-of-the-extended-torelli-classifying-map), λ_X=det f_*ω is nef and big. Choose m,A from [stable hodge as a minimal hodge pullback](#618-stable-hodge-as-a-minimal-hodge-pullback), let d=dim X, Z=h(X)_red and e=[K(X):K(Z)]. Then deg_X(c₁(λ_X^⊗m)^d)=e·deg_Z(c₁(A|Z)^d)>0. Nefness follows by curve degrees; the nef-and-positive-top-intersection criterion gives bigness, and positive powers detect both properties.
 
 Here k algebraically closed; X normal integral projective, stable genus g≥2, smooth over a dense maximal-variation open. Big means the imported section-growth convention, and nef means nonnegative degree on every integral curve. These are generic SchemeAndStackFoundations §§5.1–5.10 notions, not new definitions.
 
@@ -10118,15 +10100,15 @@ On a positive-dimensional constant family λ_X is a constant line and has zero t
 
 ### 6.21 Hodge positivity descends from a finite cover
 
-Let p:Y→X be a finite surjective morphism of normal integral projective schemes over an arbitrary field k, and C→X a stable genus-g family g≥2. Put λ_X=det f_*ω and λ_Y for its pulled-back family. Canonically λ_Y≅p*λ_X. Consequently λ_X is nef if and only if λ_Y is nef, and, when these lines are nef, λ_X is big if and only if λ_Y is big. This applies when Y is a normal stable-family cover or an constructed finite normalization; flatness and separability of p are unnecessary.
+Let p:Y→X be a finite surjective morphism of normal integral projective schemes over an arbitrary field k, and C→X a stable genus-g family g≥2. Put λ_X=det f_*ω and λ_Y for its pulled-back family. Canonically λ_Y≅p*λ_X. Consequently λ_X is nef if and only if λ_Y is nef, and, when these lines are nef, λ_X is big if and only if λ_Y is big. This applies when Y is a normal stable-family cover or a constructed finite normalization; flatness and separability of p are unnecessary.
 
-Here Both schemes are projective over the same k; p is finite and surjective, not just dominant on an open. The bigness equivalence here is stated for nef lines and uses top intersection, avoiding a stronger unproved general section-growth descent assertion.
+Both schemes are projective over the same k; p is finite and surjective, not just dominant on an open. The bigness equivalence here is stated for nef lines and uses top intersection, avoiding a stronger unproved general section-growth descent assertion.
 
 One proof uses the following inputs and comparisons. Use arbitrary base change for the Hodge bundle and coherent determinant pullback to identify λ_Y. For curves use a component of the finite preimage dominating each integral curve of X; degree scales by its positive field degree. This proves nef descent, and the same projection argument proves ascent. For d=dim X use deg_Y(c₁(p*λ_X)^d)=[K(Y):K(X)]deg_X(c₁(λ_X)^d). Apply the nef/big criterion in both directions.
 
 For relative Frobenius `F_{Y/k}:Y→Y^(p)` on a smooth geometrically integral projective k-curve in characteristic p, pull a stable family on X=Y^(p) back to Y. This finite k-morphism has degree p, so deg λ_Y=p·deg λ_X; an étale-only proof fails. Absolute Frobenius need not be a k-morphism. For a finite nonflat cover of a singular normal projective base over k, the equality uses the full generic field degree; no flat pullback of Chow cycles is assumed. A positive-dimensional constant family stays nonbig under any finite surjective cover; a cover cannot manufacture maximal variation.
 
-([yuan-author-http](#references), §3.4, pp.55–56. Finite-cover reductions in the geometric argument and the subsequent Hodge positivity argument; the general numerical transfer belongs to SchemeAndStackFoundations §§5.1–5.10.)
+([yuan-author-http](#references), §3.4, argument following Remark 3.9, pp. 55–56. Finite-cover reductions in the geometric argument and the subsequent Hodge positivity argument; the general numerical transfer belongs to SchemeAndStackFoundations §§5.1–5.10.)
 
 *Needs:* gap:numerical-nef-big-transfer, SchemeAndStackFoundations §5.2, SchemeAndStackFoundations §§5.1–5.10, SchemeAndStackFoundations §3.3, [the hodge bundle of stable pointed curves](#51-the-hodge-bundle-of-stable-pointed-curves), AlgebraicVectorBundles L0C and the Hodge descent comparison in Layer 5.
 
@@ -10134,13 +10116,13 @@ For relative Frobenius `F_{Y/k}:Y→Y^(p)` on a smooth geometrically integral pr
 
 Let k be any field, X a normal integral projective k-scheme, and f:C→X a stable genus-g family, g≥2, smooth over a dense open U. If U→M_g^coarse is generically quasi-finite onto its image, then λ_X=det f_*ω is nef and big. No perfectness or geometric-integrality assumption on k or X is imposed. The conclusion is geometric positivity of this line, not arithmetic bigness over Spec Z.
 
-Here Normality is that of X itself; X over an algebraic closure may be nonreduced or reducible. Use the arbitrary-field numerical/base-extension and reduced-component comparison of gap:numerical-nef-big-transfer.
+Normality is that of X itself; X over an algebraic closure may be nonreduced or reducible. Use the arbitrary-field numerical/base-extension and reduced-component comparison of gap:numerical-nef-big-transfer.
 
-One proof uses the following inputs and comparisons. Extend to an algebraic closure k̄. For each integral component Z of (X_k̄)_red take its finite normalization Y. The Y are normal integral projective k̄-schemes; pull back the stable family and its Hodge line. The smooth dense open and generic quasi-finiteness persist on these components. Use the permitted flat field-base-change comparison for coarse spaces, not arbitrary nonflat coarse base change. Apply hodge-nef-big-application to each Y. Use gap:numerical-nef-big-transfer for component/reduction/normalization detection of nefness and positivity of top intersection, and flat field-extension invariance, to descend to X. Nonreduced geometric base change is treated with its generic multiplicities, not declared integral. Apply the nef/big numerical criterion on the original integral X.
+One proof uses the following inputs and comparisons. Extend to an algebraic closure k̄. For each integral component Z of (X_k̄)_red take its finite normalization Y. The Y are normal integral projective k̄-schemes; pull back the stable family and its Hodge line. The smooth dense open and generic quasi-finiteness persist on these components. Use the permitted flat field-base-change comparison for coarse spaces, not arbitrary nonflat coarse base change. Apply [nefness and bigness of the hodge line under maximal variation](#620-nefness-and-bigness-of-the-hodge-line-under-maximal-variation) to each Y. Use gap:numerical-nef-big-transfer for component/reduction/normalization detection of nefness and positivity of top intersection, and flat field-extension invariance, to descend to X. Nonreduced geometric base change is treated with its generic multiplicities, not declared integral. Apply the nef/big numerical criterion on the original integral X.
 
 In characteristic p, X may have a finite purely inseparable field of constants over k. Its geometric base change can be nonreduced; the theorem still applies after reduction and normalization, with positive generic multiplicities. A geometrically disconnected smooth projective X over a nonclosed k is treated componentwise after k̄, not by choosing just one component. A constant positive-dimensional family is excluded by maximal variation even after extending k.
 
-([yuan-author-http](#references), §3.4, pp.55–56, geometric Hodge-positivity argument. The minimal-Torelli pullback supplies the geometric positivity argument. Extension to an arbitrary field here explicitly imports field-extension and component detection from the numerical owner.)
+([yuan-author-http](#references), §3.4, argument following Remark 3.9, pp. 55–56, geometric Hodge-positivity argument. The minimal-Torelli pullback supplies the geometric positivity argument. Extension to an arbitrary field here explicitly imports field-extension and component detection from the numerical owner.)
 
 *Needs:* gap:numerical-nef-big-transfer, SchemeAndStackFoundations §§0.20–0.21, SchemeAndStackFoundations §§5.1–5.10, [maximal variation of a curve family](#61-maximal-variation-of-a-curve-family), [nefness and bigness of the hodge line under maximal variation](#620-nefness-and-bigness-of-the-hodge-line-under-maximal-variation), [hodge positivity descends from a finite cover](#621-hodge-positivity-descends-from-a-finite-cover), [coarse spaces of pointed curve stacks](#41-coarse-spaces-of-pointed-curve-stacks), [the hodge bundle of stable pointed curves](#51-the-hodge-bundle-of-stable-pointed-curves), AlgebraicVectorBundles L0C and the Hodge descent comparison in Layer 5.
 
@@ -10160,7 +10142,7 @@ For g≥2, N≥3 invertible with a fixed ζ_N pairing component, and d∈Z, defi
 
 Here g≥2, N≥3 invertible and d an arbitrary integer; the fixed pairing component is over Z[1/N,ζ_N]. The universal curve lies over the Noetherian fine scheme and is smooth projective with geometrically connected genus-g fibres, so JacobianChallengePartII §§0.1–0.4 representability and torsor statements apply. For every test base T, use `O_T≅(f_T)_*O_{C_T}` universally from the specified parent stable-family/cohomology contract before applying the exact obstruction and kernel statements.
 
-One proof uses the following inputs and comparisons. Apply JacobianChallengePartII §§0.1–0.4, JacobianChallengePartII §§0.1–0.4 and JacobianChallengePartII §§0.1–0.4 to the universal curve on its Noetherian fine base. Representability and all arbitrary-base-change identifications use the imported A0-extension Picard sheaf, not global representatives. Verify the universal global-functions isomorphism for the proper flat smooth geometrically connected family, then apply JacobianChallengePartII §4.4 to every pullback C_T/T. Its exact sequence is `0→Pic(T)→Pic(C_T)→Pic_{C_T/T}(T)→H²_fppf(T,G_m)→H²_fppf(C_T,G_m)`. Restrict the lifting assertion to the degree-d component. Exactness gives existence when the boundary vanishes and the Pic(T)-torsor of lifts, using injectivity of base pullback. A chosen curve section kills the boundary and permits the A0-extension/section-picard-split rigidification; no section of the unpointed universal curve is assumed. Over algebraically closed k, choose an fppf-local actual line representative. A nonempty finite-type open of the covering scheme has a k-point, whose pullback supplies an actual line on C_k; thus the boundary of every relative point vanishes. Pic(k)=0 makes the lift class unique. Full-level rigidity controls the curve-level isomorphism; scalar line automorphisms survive in the groupoid. Use JacobianChallengePartII §§6.1–6.3 on a constant smooth genus-two family over C for the dual-number test, together with the exact arbitrary-pullback Picard comparison. The infinitesimal calculation is imported, not re-planned here.
+One proof uses the following inputs and comparisons. Apply JacobianChallengePartII §§0.1–0.4 to the universal curve on its Noetherian fine base. Representability and all arbitrary-base-change identifications use the relative Picard sheaf of AlgebraicModuliForArithmeticGeometry §7.6, not global representatives. Verify the universal global-functions isomorphism for the proper flat smooth geometrically connected family, then apply JacobianChallengePartII §4.4 to every pullback C_T/T. Its exact sequence is `0→Pic(T)→Pic(C_T)→Pic_{C_T/T}(T)→H²_fppf(T,G_m)→H²_fppf(C_T,G_m)`. Restrict the lifting assertion to the degree-d component. Exactness gives existence when the boundary vanishes and the Pic(T)-torsor of lifts, using injectivity of base pullback. A chosen curve section kills the boundary and permits the section-splitting rigidification of AlgebraicModuliForArithmeticGeometry §7.6.1a; no section of the unpointed universal curve is assumed. Over algebraically closed k, choose an fppf-local actual line representative. A nonempty finite-type open of the covering scheme has a k-point, whose pullback supplies an actual line on C_k; thus the boundary of every relative point vanishes. Pic(k)=0 makes the lift class unique. Full-level rigidity controls the curve-level isomorphism; scalar line automorphisms survive in the groupoid. Use JacobianChallengePartII §§6.1–6.3 on a constant smooth genus-two family over C for the dual-number test, together with the exact arbitrary-pullback Picard comparison. The infinitesimal calculation is imported, not re-planned here.
 
 The Picard parameter is a sheaf of classes, not the automorphism groupoid of line bundles.
 
@@ -10190,7 +10172,7 @@ The construction has the following API.
 
 Let f:C→M be the universal smooth projective genus-g curve on the fixed symplectic level component M=M_g[N] over B=Spec Z[1/N,ζ_N]. For every scheme T→M, including non-Noetherian and nonreduced T, the canonical unit `O_T→(f_T)_*O_{C_T}` is an isomorphism. The identifications for identity and composite base changes agree with the structure-sheaf pullback maps. In particular Γ(C_T,O)^×=Γ(T,O)^× canonically.
 
-Here g≥2, N≥3; N invertible and a primitive ζ_N fixed. f is the smooth projective universal family supplied by MC.4; its geometric fibres are connected.
+Here g≥2, N≥3; N invertible and a primitive ζ_N fixed. f is the smooth projective universal family supplied by [the fine smooth full-level curve scheme](#410-the-fine-smooth-full-level-curve-scheme); its geometric fibres are connected.
 
 One proof uses the following inputs and comparisons. Apply the imported universal-functions statement for prestable curves, or its independent proper-flat-finite-presentation criterion in Stacks Lemma36.32.6. Smooth connected geometric curve fibres are geometrically reduced and connected. The criterion has no Noetherian-base assumption: its proof uses perfect proper-flat cohomology (Lemma36.32.5) and H⁰(C_s,O)=κ(s) for geometrically reduced connected proper fibres (Lemma33.9.3(7)). Its conclusion quantifies over all base changes, so it does not merely compare closed fibres. All maps are the canonical units; naturality of the unit and uniqueness of inverses give identity/composition coherence. Take global sections and units.
 
@@ -10202,17 +10184,17 @@ Specialize to T with nilpotents and to a non-Noetherian affine scheme without ad
 
 ### 7.3 All-base comparison for degree-Picard parameters
 
-For f:C→M as above and d∈Z, let P=P^d be the degree-d scheme of MC.7/level-picard-parameter and J=P^0. On the big fppf site Sch/M, h_P is naturally the degree-d subsheaf of a_fppf(T↦Pic(C_T)). This is also the sheafification of Pic(C_T)/f_T*Pic(T), with the degree condition imposed on every geometric fibre. P is smooth separated quasi-projective over M, J acts by tensor, and (a,x)↦(x,a·x) identifies J×_M P with P×_M P. Difference is δ(x,y)=y⊗x⁻¹. All these comparisons and actions commute with arbitrary base change, including identity/composition coherence. They make no assertion that P(T) is the pointwise quotient of globally defined line bundles.
+For f:C→M as above and d∈Z, let P=P^d be the degree-d scheme of [the degree-d level picard parameter functor](#71-the-degree-d-level-picard-parameter-functor) and J=P^0. On the big fppf site Sch/M, h_P is naturally the degree-d subsheaf of a_fppf(T↦Pic(C_T)). This is also the sheafification of Pic(C_T)/f_T*Pic(T), with the degree condition imposed on every geometric fibre. P is smooth separated quasi-projective over M, J acts by tensor, and (a,x)↦(x,a·x) identifies J×_M P with P×_M P. Difference is δ(x,y)=y⊗x⁻¹. All these comparisons and actions commute with arbitrary base change, including identity/composition coherence. They make no assertion that P(T) is the pointwise quotient of globally defined line bundles.
 
-Here Same fixed-component hypotheses as fine-family-functions; d is a fixed integer. The Noetherian scheme M and its projective smooth connected family satisfy the exact JacobianChallengePartII §§0.1–0.4 representability hypotheses. Degree d is imposed on all components of T; variable locally constant degree belongs to the full disjoint union of components.
+Same fixed-component hypotheses as [universal global functions for the level family](#72-universal-global-functions-for-the-level-family); d is a fixed integer. The Noetherian scheme M and its projective smooth connected family satisfy the exact JacobianChallengePartII §§0.1–0.4 representability hypotheses. Degree d is imposed on all components of T; variable locally constant degree belongs to the full disjoint union of components.
 
-One proof uses the following inputs and comparisons. Apply the exact JacobianChallengePartII §§0.1–0.4 degree and representability nodes to the Noetherian base M. For their proof route, BLR9.3/1 reduces to8.2/1,5 and8.4/2; the supplier audit records the Hilbert/divisor/quotient inputs with their owners rather than replanning them. A0 gives the two sheafification descriptions and its arbitrary-base-change theorem. A base-changed representing object represents the restricted sheaf by Yoneda, so arbitrary T does not require a new representability theorem over non-Noetherian bases. For the JacobianChallengePartII §§0.1–0.4 torsor, the smooth surjection C→M is an fppf cover and its pullback family has the diagonal section. Its divisor d·Γ (inverse tensor powers for d<0) gives a local degree-d origin. Tensor/difference yield the displayed isomorphism locally; equality and inverses descend in the represented sheaves. Transfer the defined tensor, inverse and pullback coherence through representability. Fix the orientation δ(x,y)=y−x so the torsor identity is δ(x,a·x)=a.
+One proof uses the following inputs and comparisons. Apply the exact JacobianChallengePartII §§0.1–0.4 degree and representability nodes to the Noetherian base M. For their proof route, BLR9.3/1 reduces to8.2/1,5 and8.4/2; the quotient by a proper flat equivalence relation in that route is gap:proper-flat-picard-quotient, and the Hilbert and divisor inputs are imported with JacobianChallengePartII §§0.1–0.4. AlgebraicModuliForArithmeticGeometry §7.6 gives the two sheafification descriptions and its arbitrary-base-change theorem. A base-changed representing object represents the restricted sheaf by Yoneda, so arbitrary T does not require a new representability theorem over non-Noetherian bases. For the JacobianChallengePartII §§0.1–0.4 torsor, the smooth surjection C→M is an fppf cover and its pullback family has the diagonal section. Its divisor d·Γ (inverse tensor powers for d<0) gives a local degree-d origin. Tensor/difference yield the displayed isomorphism locally; equality and inverses descend in the represented sheaves. Transfer the defined tensor, inverse and pullback coherence through representability. Fix the orientation δ(x,y)=y−x so the torsor identity is δ(x,a·x)=a.
 
 P^0 has its canonical zero, while P^1 has no chosen origin from this construction. A canonical class of degree2g−2 does not choose a degree-one class. On T=T₀⊔T₁ a class of degrees0 and1 is not a P^d(T)-point for any single d. Base change of the action/difference square agrees for two successive morphisms and on dual numbers.
 
 ([blr-relative-picard-LwkQQl](#references), §9.3 Theorem1 p.252, proof citing8.2/1,5 and8.4/2; §9.2 Corollary13 p.251. The existing curve Picard theorem supplies represented degree components and their torsor structure.; [yuan-author-http](#references), §4.3.2 pp.74–75. The degree pieces are used as relative parameters; this comparison specifies their sheaf meaning on general bases.; [dgh](#references), §6.1 printed/PDF pp.23–24, relative Picard and Pic¹ discussion. DGH uses represented degree pieces and their difference map on the universal fine-level family; this is a second consumer of the relative sheaf comparison.)
 
-*Needs:* JacobianChallengePartII §§0.1–0.4, AlgebraicModuliForArithmeticGeometry §§7.2–7.3, 7.6, `AlgebraicGeometry.Scheme.fppfTopology`, `CategoryTheory.Sheaf`, `CategoryTheory.GrothendieckTopology.yonedaEquiv`, [the degree-d level picard parameter functor](#71-the-degree-d-level-picard-parameter-functor), [universal global functions for the level family](#72-universal-global-functions-for-the-level-family).
+*Needs:* gap:proper-flat-picard-quotient, JacobianChallengePartII §§0.1–0.4, AlgebraicModuliForArithmeticGeometry §§7.2–7.3, 7.6, `AlgebraicGeometry.Scheme.fppfTopology`, `CategoryTheory.Sheaf`, `CategoryTheory.GrothendieckTopology.yonedaEquiv`, [the degree-d level picard parameter functor](#71-the-degree-d-level-picard-parameter-functor), [universal global functions for the level family](#72-universal-global-functions-for-the-level-family).
 
 ### 7.4 Actual triples and their class morphism
 
@@ -10230,7 +10212,7 @@ The construction has the following API.
 - An arrow consists exactly of a level-preserving curve isomorphism and an isomorphism of the pulled-back invertible sheaves.
 - q is a cartesian/fppf stack morphism to the discrete represented sheaf h_P and commutes with arbitrary pullback.
 - Fixing a level curve identifies its line-bundle fibre with the degree-d part of the native core; the absolute class comparison agrees with LineBundleClass.mk.
-- Every automorphism of a triple is scalar multiplication by a unique unit of Γ(T,O_T), by level rigidity and fine-family-functions.
+- Every automorphism of a triple is scalar multiplication by a unique unit of Γ(T,O_T), by level rigidity and [universal global functions for the level family](#72-universal-global-functions-for-the-level-family).
 - Tensor gives `Trip^d×_{h_M}Trip^e→Trip^{d+e}`; its image under q is the represented relative tensor law.
 
 **Checks.**
@@ -10240,7 +10222,7 @@ The construction has the following API.
 - The zero endomorphism of an invertible sheaf on a nonempty curve is a morphism in the native full module subcategory but is not an arrow of Trip^d_N.
 - At a fixed curve the class of L⊗K agrees with multiplication in the pinned LineBundleClass commutative group. On ℙ¹, the classes of O(1) and O(−1) multiply to the identity: 1+(−1)=0 in Pic(ℙ¹)=ℤ, using `TauCeti.AlgebraicGeometry.LineBundleClass.inv_mk`.
 
-([blr-relative-picard-LwkQQl](#references), §8.1 pp.203–205, Picard functor and rigidification discussion. Relative classes forget line-bundle automorphisms and base twists.; [mc4-stacks](#references), Lemma108.9.1, tag0DME. The Picard stack maps to its sheaf of classes with local lifts and local isomorphisms.; [yuan-author-http](#references), §4.3.2 pp.73–75. The triples motivating the parameter space contain actual line bundles; the geometric-field qualification must be preserved.)
+([blr-relative-picard-LwkQQl](#references), §8.1 pp.203–205, Picard functor and rigidification discussion. Relative classes forget line-bundle automorphisms and base twists.; [stacks-moduli-stacks](#references), Moduli Stacks, Lemma 9.1 (tag 0DME). The Picard stack maps to its sheaf of classes with local lifts and local isomorphisms.; [yuan-author-http](#references), §4.3.2 pp.73–75. The triples motivating the parameter space contain actual line bundles; the geometric-field qualification must be preserved.)
 
 *Needs:* SchemeAndStackFoundations §1.21, AlgebraicModuliForArithmeticGeometry §§3.1–3.5, `CategoryTheory.Core`, `TauCeti.AlgebraicGeometry.InvertibleSheaf`, `TauCeti.AlgebraicGeometry.LineBundleClass`, `TauCeti.AlgebraicGeometry.LineBundleClass.mk_eq_mk_iff`, `TauCeti.AlgebraicGeometry.LineBundleClass.mk_tensorProduct`, JacobianChallenge Layer A, [the fine smooth full-level curve scheme](#410-the-fine-smooth-full-level-curve-scheme), [rigidity of full curve level](#46-rigidity-of-full-curve-level), [full symplectic level on smooth curves](#44-full-symplectic-level-on-smooth-curves), [all-base comparison for degree-picard parameters](#73-all-base-comparison-for-degree-picard-parameters).
 
@@ -10250,7 +10232,7 @@ For T→M and p∈P^d(T), define Lift_T(p) as the fibre of q over p: objects are
 
 The fixed level family and degree-d component of the preceding nodes. p is a sheaf point; existence of a global lift is not a hypothesis.
 
-One proof uses the following inputs and comparisons. Use the fixed level-family identification to take the genuine groupoid fibre of q, not the fibre of a purported bijection of sets. Sheafification provides an fppf cover on which p is represented by a line bundle. Equality of two sheafified classes gives local equality of absolute isomorphism classes after refinement, hence local line-bundle isomorphisms. The automorphism sheaf of a line bundle on C_U is Γ(C_U,O)^× for every U/T; fine-family-functions identifies this with Γ(U,O)^×, compatibly with restriction. Pullback of line bundles, their isomorphisms and the relative class furnishes the cartesian equivalence with its identity/composition constraints.
+One proof uses the following inputs and comparisons. Use the fixed level-family identification to take the genuine groupoid fibre of q, not the fibre of a purported bijection of sets. Sheafification provides an fppf cover on which p is represented by a line bundle. Equality of two sheafified classes gives local equality of absolute isomorphism classes after refinement, hence local line-bundle isomorphisms. The automorphism sheaf of a line bundle on C_U is Γ(C_U,O)^× for every U/T; [universal global functions for the level family](#72-universal-global-functions-for-the-level-family) identifies this with Γ(U,O)^×, compatibly with restriction. Pullback of line bundles, their isomorphisms and the relative class furnishes the cartesian equivalence with its identity/composition constraints.
 
 A nonempty fibre can have many global isomorphism classes and nontrivial inertia; neither property contradicts local isomorphism. No global Poincaré line bundle is inferred from local nonemptiness.
 
@@ -10267,7 +10249,7 @@ The construction has the following API.
 - A section σ:T→C_T gives each p a normalized lift L_norm with σ*L_norm≅O_T, unique up to unique rigidification-preserving isomorphism. Every unnormalized lift is isomorphic to L_norm⊗f_T*N for some base line bundle N. For the constant family over P¹_C, N=O(1) gives a lift not isomorphic to L_norm, although their relative classes agree.
 - Over P¹_C, the nonisomorphic lifts differing by O(1) become isomorphic over the standard affine trivializing cover. This tests local isomorphism without global uniqueness.
 
-([mc4-stacks](#references), Lemma108.9.1, tag0DME, proof of local nonemptiness and local isomorphism. The gerbe property follows from the definition of the sheafified Picard functor.; [blr-relative-picard-LwkQQl](#references), §8.1 Proposition4 and rigidification discussion pp.204–205. Scalars and descent account for the distinction between a relative class and an actual line bundle.)
+([stacks-moduli-stacks](#references), Moduli Stacks, Lemma 9.1 (tag 0DME), proof of local nonemptiness and local isomorphism. The gerbe property follows from the definition of the sheafified Picard functor.; [blr-relative-picard-LwkQQl](#references), §8.1 Proposition4 and rigidification discussion pp.204–205. Scalars and descent account for the distinction between a relative class and an actual line bundle.)
 
 *Needs:* AlgebraicModuliForArithmeticGeometry §§7.2–7.3, 7.6, SchemeAndStackFoundations §1.21, [actual triples and their class morphism](#74-actual-triples-and-their-class-morphism), [universal global functions for the level family](#72-universal-global-functions-for-the-level-family).
 
@@ -10275,9 +10257,9 @@ The construction has the following API.
 
 For every T→M there is the functorial exact sequence `0→Pic(T)→Pic(C_T)→Pic_{C_T/T}(T)→H²_fppf(T,G_m)→H²_fppf(C_T,G_m)`. Its boundary β_T is the Leray differential `d₂^{0,1}` after identifying `f_{T,*}G_m=G_m`. For p∈P^d(T), β_T(p)=0 if and only if Lift_T(p) has a global object. Pullback carries β_T(p) to `β_{T′}(p|_{T′})`. The target is cohomological H², without any identification with Azumaya classes. A section of C_T/T makes β_T zero by the imported splitting; no section of the relative Jacobian is treated as a section of C_T.
 
-Here Arbitrary T→M; fine-family-functions holds universally for f_T. Pic means actual line bundles up to isomorphism; the relative Picard term is the fppf sheaf, not a pointwise quotient.
+Arbitrary T→M; the global-functions isomorphism of [universal global functions for the level family](#72-universal-global-functions-for-the-level-family) holds universally for f_T. Pic means actual line bundles up to isomorphism; the relative Picard term is the fppf sheaf, not a pointwise quotient.
 
-One proof uses the following inputs and comparisons. Use the general proper-flat/universal-functions clause of JacobianChallengePartII §4.4. The other clauses concerning Pic⁰(J) and autoduality are not prerequisites of this specialization. Identify f_*G_m with G_m as sheaves on the big fppf base site, using the universal unit isomorphism on every U/T. Identify H¹(G_m) with the Picard group via SchemeAndStackFoundations §§1.18–1.23. Read the low-degree Leray sequence with R¹f_*G_m the relative Picard sheaf. Its transgression gives the boundary and its naturality. A0 supplies exactness/injectivity at the earlier terms. Exactness at the relative Picard term says precisely that p is the class of an actual L. This is global nonemptiness of Lift_T(p), not a chosen lift. For a section use A0/section-picard-split.
+One proof uses the following inputs and comparisons. Use the general proper-flat/universal-functions clause of JacobianChallengePartII §4.4. The other clauses concerning Pic⁰(J) and autoduality are not prerequisites of this specialization. Identify f_*G_m with G_m as sheaves on the big fppf base site, using the universal unit isomorphism on every U/T. Identify H¹(G_m) with the Picard group via SchemeAndStackFoundations §§1.18–1.23. Read the low-degree Leray sequence with R¹f_*G_m the relative Picard sheaf. Its transgression gives the boundary and its naturality. AlgebraicModuliForArithmeticGeometry §7.6 supplies exactness/injectivity at the earlier terms. Exactness at the relative Picard term says precisely that p is the class of an actual L. This is global nonemptiness of Lift_T(p), not a chosen lift. For a section use the section splitting of AlgebraicModuliForArithmeticGeometry §7.6.1a.
 
 State every sheaf and cohomology site in the exact sequence and check naturality for arbitrary T′→T. Zero obstruction yields existence, not a canonical bundle or a trivial automorphism group. The specialization does not import JacobianChallengePartII §4.4 autoduality or a section of a Jacobian as a curve section.
 
@@ -10289,9 +10271,9 @@ State every sheaf and cohomology site in the exact sequence and check naturality
 
 For p∈P^d(T), let LiftClasses_T(p)={a∈Pic(C_T): a maps to p}. This is the set of isomorphism classes of Lift_T(p). Pic(T) acts by n·a=a⊗f_T*n. The action is free, and for any a,b in the fibre there is a unique n with n·a=b. Therefore the fibre is empty exactly when β_T(p)≠0; when β_T(p)=0 it is a Pic(T)-torsor, with no chosen origin. A chosen actual lift L₀ gives a groupoid equivalence Lines(T)→Lift_T(p), N↦L₀⊗f_T*N, as well as a Pic(T)-equivariant bijection Pic(T)→LiftClasses_T(p). These statements are natural for pullback of a specified L₀. Lines(T) means the groupoid Core(InvertibleSheaf T).
 
-Here Arbitrary T→M, p∈P^d(T). The torsor assertion includes nonemptiness precisely under β_T(p)=0; the unpointed fibre is not made into a group.
+Arbitrary T→M, p∈P^d(T). The torsor assertion includes nonemptiness precisely under β_T(p)=0; the unpointed fibre is not made into a group.
 
-One proof uses the following inputs and comparisons. Tensor by a pullback line bundle does not change the sheafified relative class, so it defines the action. The kernel theorem gives injectivity of f_T*:Pic(T)→Pic(C_T), hence freeness. For two classes a,b in the fibre, b⊗a⁻¹ lies in the kernel. A0 identifies it with a unique class from Pic(T), giving transitivity and the unique difference in the stated orientation. For a chosen L₀, tensor/pullback gives the displayed functor on actual line bundles. Essential surjectivity follows from the same kernel descent. Full faithfulness uses descent of homomorphisms between pullback invertible sheaves: locally trivialize N,N′ and apply O_T≅f_*O_C; the Hom sheaves and their invertible sections then agree. Tensor associativity, pullback monoidality and their coherence belong to the bundle owner. They give equivariance, the change-of-origin translation formula, and compatibility with successive base changes.
+One proof uses the following inputs and comparisons. Tensor by a pullback line bundle does not change the sheafified relative class, so it defines the action. The kernel theorem gives injectivity of f_T*:Pic(T)→Pic(C_T), hence freeness. For two classes a,b in the fibre, b⊗a⁻¹ lies in the kernel. AlgebraicModuliForArithmeticGeometry §7.6 identifies it with a unique class from Pic(T), giving transitivity and the unique difference in the stated orientation. For a chosen L₀, tensor/pullback gives the displayed functor on actual line bundles. Essential surjectivity follows from the same kernel descent. Full faithfulness uses descent of homomorphisms between pullback invertible sheaves: locally trivialize N,N′ and apply O_T≅f_*O_C; the Hom sheaves and their invertible sections then agree. Tensor associativity, pullback monoidality and their coherence belong to the bundle owner. They give equivariance, the change-of-origin translation formula, and compatibility with successive base changes.
 
 Do not confuse this Pic(T)-torsor of lifts with the J_T-torsor P^d_T of relative degree-d classes. A global lift changes the entire groupoid to Lines(T), not to a discrete copy of Pic(T).
 
@@ -10303,7 +10285,7 @@ The construction has the following API.
 - A specified lift L₀ identifies Pic(T) equivariantly with LiftClasses_T(p); the origin maps satisfy `Φ_{L₀⊗f_T*N}([M])=Φ_{L₀}([N]+[M])`, so a fixed lift has new coordinate equal to its old coordinate minus [N].
 - A specified L₀ gives Lines(T)≃Lift_T(p), naturally on every U/T, preserving the G_m-band.
 - Pullback gives a map of lift fibres equivariant for Pic(T)→Pic(T′); identity and composition agree. A bijection is not asserted for arbitrary base change.
-- If σ:T→C_T is given, L↦L⊗f_T*(σ*L)⁻¹ is the A0 normalized representative; its σ-rigidification removes the scalar ambiguity.
+- If σ:T→C_T is given, L↦L⊗f_T*(σ*L)⁻¹ is the section-normalized representative of AlgebraicModuliForArithmeticGeometry §7.6.1a; its σ-rigidification removes the scalar ambiguity.
 
 **Checks.**
 
@@ -10312,17 +10294,17 @@ The construction has the following API.
 - For the same constant family with a constant section σ, all L₀⊗f*O(n) have the same normalized representative. Their σ-rigidified normalized objects are uniquely isomorphic.
 - The theorem is conditional on β=0 for nonemptiness: an empty fibre with β≠0 is never assigned a torsor structure with an inhabited carrier.
 
-([blr-relative-picard-LwkQQl](#references), §8.1 Proposition4 and rigidification/descent discussion pp.204–205. Kernel and scalar descent give the ambiguity of a global representative by a line bundle from the base.; [mc4-stacks](#references), Lemma108.9.1 (0DME). Local equality of lifts retains their invertible-sheaf isomorphisms.)
+([blr-relative-picard-LwkQQl](#references), §8.1 Proposition4 and rigidification/descent discussion pp.204–205. Kernel and scalar descent give the ambiguity of a global representative by a line bundle from the base.; [stacks-moduli-stacks](#references), Moduli Stacks, Lemma 9.1 (tag 0DME). Local equality of lifts retains their invertible-sheaf isomorphisms.)
 
 *Needs:* AlgebraicModuliForArithmeticGeometry §§7.2–7.3, 7.6, AlgebraicModuliForArithmeticGeometry §§3.1–3.5, SchemeAndStackFoundations §1.21, JacobianChallenge Layer A, [the obstruction to a global line-bundle lift](#76-the-obstruction-to-a-global-line-bundle-lift), [the groupoid of lifts of a relative class](#75-the-groupoid-of-lifts-of-a-relative-class).
 
 ### 7.8 Geometric triples and the Picard sheaf
 
-For an algebraically closed field k in which N is invertible, geometric points of P_g,N^d identify with isomorphism classes of curve-level-line triples. For general bases retain the fppf sheafification and the obstruction/rigidification distinction; the existence of the parameter scheme does not produce a tautological line on every pulled-back curve.
+For an algebraically closed field k in which N is invertible, geometric points of P_g,N^d identify with isomorphism classes of triples of a curve, a full level structure and a degree-d line bundle. For general bases retain the fppf sheafification and the obstruction/rigidification distinction; the existence of the parameter scheme does not produce a tautological line on every pulled-back curve.
 
 Here g≥2, N≥3 and d∈Z as in the parameter node; k is algebraically closed with N invertible, and the fixed pairing primitive root is part of the level datum. General-base remarks use the parameter node’s universal global-functions hypothesis.
 
-One proof uses the following inputs and comparisons. Use the represented degree-d relative sheaf and JacobianChallengePartII §4.4. Over algebraically closed k a local fppf representative lifts to an actual line by choosing a k-point in a nonempty finite-type open of its covering scheme. Hence its Leray boundary vanishes. Pic(k)=0 makes the actual line class unique. This gives the bijection without reconstructing general Brauer cohomology theory here. Use MC.4/level-rigidity to identify curve-level representatives uniquely up to their prescribed isomorphism; passage to line-bundle classes removes scalar inertia. For general bases, boundary vanishing only gives existence, and base Picard twists still give multiple actual line classes.
+One proof uses the following inputs and comparisons. Use the represented degree-d relative sheaf and JacobianChallengePartII §4.4. Over algebraically closed k a local fppf representative lifts to an actual line by choosing a k-point in a nonempty finite-type open of its covering scheme. Hence its Leray boundary vanishes. Pic(k)=0 makes the actual line class unique. This gives the bijection without reconstructing general Brauer cohomology theory here. Use [rigidity of full curve level](#46-rigidity-of-full-curve-level) to identify curve-level representatives uniquely up to their prescribed isomorphism; passage to line-bundle classes removes scalar inertia. For general bases, boundary vanishing only gives existence, and base Picard twists still give multiple actual line classes.
 
 Scalar automorphisms disappear only after passage to classes.
 
@@ -10334,9 +10316,9 @@ Scalar automorphisms disappear only after passage to classes.
 
 Let k be algebraically closed with N invertible, C/k a fixed smooth projective geometrically connected genus-g≥2 curve with fixed full level, and L₀ an actual degree-d line bundle. Put A=k[ε]/(ε²), C_A=C×Spec A. The fibre of P^d_C(A)→P^d_C(k) over [L₀] is canonically, using the constant lift of L₀ as origin, the additive k-vector space H¹(C,O_C), of dimension g. It is also the set of isomorphism classes of pairs (L,φ), where L is a line bundle on C_A and φ:L|_C≅L₀, and arrows respect φ. Each framed object has automorphism group 1+εk≅(k,+). Thus a fixed geometric point can have many infinitesimal lifts even though Pic(Spec A)=0. Curve, level and special-fibre bundle stay fixed; this does not compute the tangent space of the full varying-curve stack.
 
-Here Algebraically closed k; fixed curve C, fixed level η, actual L₀ and its constant pullback. The JacobianChallengePartII §§6.1–6.3 Lie theorem is applied with integral Noetherian base Spec k, not with nonreduced base Spec A.
+Algebraically closed k; fixed curve C, fixed level η, actual L₀ and its constant pullback. The JacobianChallengePartII §§6.1–6.3 Lie theorem is applied with integral Noetherian base Spec k, not with nonreduced base Spec A.
 
-One proof uses the following inputs and comparisons. Tensor by the inverse of the constant lift of L₀ identifies the degree-d reduction fibre with the infinitesimal kernel at zero in J_C. Apply JacobianChallengePartII §§6.1–6.3 at Spec k and its dual-number definition of Lie to identify this with H¹(C,O_C). Concretely 1+εO_C is additively O_C and the split reduction sequence of units identifies the kernel of Pic(C_A)→Pic(C) with H¹(C,O_C). Constants lift all units, so a chosen reduction framing does not change the set of isomorphism classes. C has a k-point, giving a constant section over A. The A0 pointed splitting identifies relative classes with absolute classes modulo Pic(A), and Pic(A)=0 because A is local. This relates the actual framed problem to P^d_C(A), without applying an integral-base theorem to Spec A. Framed automorphisms are units reducing to1: by universal functions these are exactly1+εk. Genus gives dim_k H¹(C,O_C)=g from the existing coherent-curve owner.
+One proof uses the following inputs and comparisons. Tensor by the inverse of the constant lift of L₀ identifies the degree-d reduction fibre with the infinitesimal kernel at zero in J_C. Apply JacobianChallengePartII §§6.1–6.3 at Spec k and its dual-number definition of Lie to identify this with H¹(C,O_C). Concretely 1+εO_C is additively O_C and the split reduction sequence of units identifies the kernel of Pic(C_A)→Pic(C) with H¹(C,O_C). Constants lift all units, so a chosen reduction framing does not change the set of isomorphism classes. C has a k-point, giving a constant section over A. The pointed splitting of AlgebraicModuliForArithmeticGeometry §7.6.1a identifies relative classes with absolute classes modulo Pic(A), and Pic(A)=0 because A is local. This relates the actual framed problem to P^d_C(A), without applying an integral-base theorem to Spec A. Framed automorphisms are units reducing to1: by universal functions these are exactly1+εk. Genus gives dim_k H¹(C,O_C)=g from the existing coherent-curve owner.
 
 For genus2 the reduction fibre is a two-dimensional k-vector space and is not a singleton. The constant deformation is zero and adding a class means tensoring its infinitesimal line bundle. Changing a reduction framing is absorbable by a constant scalar, but scalar units reducing to1 remain automorphisms.
 
@@ -10350,7 +10332,7 @@ For each g≥2, the smooth unpointed curve stack M_g and its universal smooth pr
 
 Here g≥2 for this unpointed stable-range export. Fix r≥1 and a finite field F_ℓ of odd cardinality, as in the consumer; invert `|Sp_{2r}(F_ℓ)|` on the curve-moduli base. The consumer supplies its own connected-fibre G-cover problem, cyclotomic twist and forgetful morphism.
 
-One proof uses the following inputs and comparisons. Apply the parent universal property to the underlying smooth proper curve family in the Hurwitz object. Over a scheme the curve is projective by the genus≥2 canonical-polarization input of MC.0/MC.1. Base change the universal curve along the consumer forgetful morphism to obtain the same curve over its Hurwitz groupoid. The cartesian equivalence is the classifying-family equivalence, natural on arrows as well as objects. The central deck transformations, connected-cover condition, possible failure of étaleness of the Hurwitz forgetful map, cyclotomic multiplier and symplectic local system are defined by SymplecticLFunctionsModSquares. They are not consequences of the curve fine-level scheme.
+One proof uses the following inputs and comparisons. Apply the parent universal property to the underlying smooth proper curve family in the Hurwitz object. Over a scheme the curve is projective by the genus≥2 canonical-polarization input of SchemeAndStackFoundations §4.15. Base change the universal curve along the consumer forgetful morphism to obtain the same curve over its Hurwitz groupoid. The cartesian equivalence is the classifying-family equivalence, natural on arrows as well as objects. The central deck transformations, connected-cover condition, possible failure of étaleness of the Hurwitz forgetful map, cyclotomic multiplier and symplectic local system are defined by SymplecticLFunctionsModSquares. They are not consequences of the curve fine-level scheme.
 
 Over a test scheme and after a second pullback the classifying curve is canonically the same family. A central deck automorphism in AV Example5.1 is not removed by replacing the consumer stack with a curve full-level scheme. No assertion of an unmarked genus-one DM stack or étaleness of the Hurwitz map is made.
 
@@ -10360,9 +10342,9 @@ Over a test scheme and after a second pullback the classifying curve is canonica
 
 ### 7.11 Pointed stable-stack export for tautological operations
 
-For all ordered stable pairs (g,n) with 2g−2+n>0, the parent supplies the smooth proper Deligne–Mumford stack M̄_g,n/Z of relative dimension3g−3+n, its dense smooth-curve open M_g,n and universal stable family, relabelling of the n ordered marks, forget-and-stabilize, and separating/nonseparating clutching. The normalization of the reduced total boundary is the finite disjoint union of the one-edge vertex-product quotient stacks, retaining the constant finite graph-automorphism groups. After base change to C or to the relevant étale-cohomology base these maps and their coherent compositions are the geometric input of Canning–Larson–Payne §2.1.
+For all ordered stable pairs (g,n) with 2g−2+n>0, the parent supplies the smooth proper Deligne–Mumford stack M̄_g,n/Z of relative dimension3g−3+n, its dense smooth-curve open M_g,n and universal stable family, relabelling of the n ordered marks, forgetting a mark followed by stabilization, and separating/nonseparating clutching. The normalization of the reduced total boundary is the finite disjoint union of the one-edge vertex-product quotient stacks, retaining the constant finite graph-automorphism groups. After base change to C or to the relevant étale-cohomology base these maps and their coherent compositions are the geometric input of Canning–Larson–Payne §2.1.
 
-Here Stable pairs, with marks ordered, disjoint and in the smooth locus of each curve. The consumer supplies Chow/cohomology theories, graph invariants and their push-pull formalism.
+Stable pairs, with marks ordered, disjoint and in the smooth locus of each curve. The consumer supplies Chow/cohomology theories, graph invariants and their push-pull formalism.
 
 One proof uses the following inputs and comparisons. Use the parent definition with ordered marks and its stack theorem on the whole stable range, including genus0 and genus1. Relabelling is induced by permuting the tuple, with the permutation law on the actual sections. Compose the existing forget/stabilization and clutching morphisms; pullback of their universal families identifies them with the consumer operations. Parent contraction coherence handles successive forgetting. For the boundary use the normalization node, not the unnormalized image of a clutching map. Descent by the constant graph-automorphism group retains branch exchange and self-intersection data. The consumer MotivicStructuresInModuliOfCurves owns STEs, motivic/cohomological structures, cycle maps, graph complexes and every push-pull theorem. This export supplies their domain stacks and algebraic maps only.
 
@@ -10376,9 +10358,9 @@ One proof uses the following inputs and comparisons. Use the parent definition w
 
 For every coefficient field k, the smooth one-pointed genus-one stack M_1,1,k of the parent is equivalent to the elliptic-curve stack Ell/k of ModularCurves4A–4B, compatibly with the marked universal curve and arbitrary base change. Its coarse algebraic space is therefore canonically the existing coarse j-line A¹_k=Spec k[j] of ModularCurves9E. The comparison is characterized by the coarse classifying maps. It supplies Chen’s elliptic stack and its distinct coarse scheme M(1), without putting a universal elliptic curve on the coarse scheme.
 
-The one mark is a section; smooth proper geometric genus-one fibres. Import ModularCurves1C,1D,2D,4A,4B,9D,9E and the exact AlgebraicModuliForArithmeticGeometry §§5.1–5.4 elliptic/coarse-j recovery nodes. The SchemeAndStackFoundations §§1.18–1.23 finite-quotient-coarse bridge supplies universality among algebraic spaces; the scheme-target universal property of upstream CoarseModuliData alone does not.
+The one mark is a section; smooth proper geometric genus-one fibres. Import ModularCurves1C,1D,2D,4A,4B,9D,9E and the exact AlgebraicModuliForArithmeticGeometry §§5.1–5.4 elliptic/coarse-j recovery nodes. The SchemeAndStackFoundations §§1.18–1.23 coarse-space comparison for finite quotients supplies universality among algebraic spaces; the scheme-target universal property of upstream CoarseModuliData alone does not.
 
-One proof uses the following inputs and comparisons. Use ModularCurves1C for the pointed Weierstrass presentation and 1D for the canonical scheme-level group law, including arbitrary-base-change compatibility. Use 2D (KM2.5.1, isGroupHom_of_mapsZero) to show pointed isomorphisms preserve that law and to prove uniqueness of a compatible group structure. Forgetting the group law while retaining the identity section is then quasi-inverse to this construction, naturally under base change. The marked family is identified with the elliptic universal family by the classifying equivalence, not by a coarse-point bijection. Use AlgebraicModuliForArithmeticGeometry §§5.1–5.4: the full level3 rigidifier on D(3) and level4 rigidifier on D(2) give the quotient-stack charts imported from ModularCurves4C/9D. SchemeAndStackFoundations §1.23 upgrades their invariant quotients to coarse spaces universal for algebraic-space targets. The unique comparisons glue on overlaps. AlgebraicModuliForArithmeticGeometry §§5.1–5.4 then identifies this coarse space with the coefficient-ring j-line by9E, including its explicit characteristic2/3 results. Transport through the stack equivalence and use MC.4/coarse uniqueness. This proves the latter is a scheme; scheme-target universality alone would not justify the comparison. No proof of coarse-j representability or its invariant-ring computations is added here. Hurwitz/Nielsen/Higman/Markoff constructions remain in InverseGaloisAndArithmeticFundamentalGroups:IG.5.
+One proof uses the following inputs and comparisons. Use ModularCurves1C for the pointed Weierstrass presentation and 1D for the canonical scheme-level group law, including arbitrary-base-change compatibility. Use 2D (KM2.5.1, isGroupHom_of_mapsZero) to show pointed isomorphisms preserve that law and to prove uniqueness of a compatible group structure. Forgetting the group law while retaining the identity section is then quasi-inverse to this construction, naturally under base change. The marked family is identified with the elliptic universal family by the classifying equivalence, not by a coarse-point bijection. Use AlgebraicModuliForArithmeticGeometry §§5.1–5.4: the full level3 rigidifier on D(3) and level4 rigidifier on D(2) give the quotient-stack charts imported from ModularCurves4C/9D. SchemeAndStackFoundations §1.23 upgrades their invariant quotients to coarse spaces universal for algebraic-space targets. The unique comparisons glue on overlaps. AlgebraicModuliForArithmeticGeometry §§5.1–5.4 then identifies this coarse space with the coefficient-ring j-line by9E, including its explicit characteristic2/3 results. Transport through the stack equivalence and use the uniqueness in [coarse spaces of pointed curve stacks](#41-coarse-spaces-of-pointed-curve-stacks). This proves the latter is a scheme; scheme-target universality alone would not justify the comparison. No proof of coarse-j representability or its invariant-ring computations is added here. Hurwitz/Nielsen/Higman/Markoff constructions remain in InverseGaloisAndArithmeticFundamentalGroups:IG.5.
 
 Over k of characteristic2 or3 use the coefficient-ring9E theorem, not commutation of arbitrary coarse-space formation with base change. The stack retains automorphisms of elliptic curves with a marked identity, whereas the j-line is a scheme. A map to the j-line does not provide a universal elliptic family; the universal curve belongs to M_1,1.
 
@@ -10390,9 +10372,9 @@ Over k of characteristic2 or3 use the coefficient-ring9E theorem, not commutatio
 
 Fix g≥2,N≥3 and a primitive Nth root over Q̄. On the corresponding exact symplectic component, M_g[N] is a regular geometrically irreducible quasi-projective variety of dimension3g−3 with a universal smooth projective curve f:C→M. The Torelli map τ:M→A_g[N] uses the same level and pairing, and Jac(C/M)≅τ*U_g as principally polarized abelian schemes with level; this is the cartesian square (6.1). The smooth Torelli map has finite geometric fibres (at most two), not an asserted globally finite morphism. The section-free Abel map a₁:C→P¹ and the difference map P¹×_M P¹→J are defined without a section of f and commute with every base change. These compose the moduli/Picard interface used in DGH §6.1.
 
-Here Characteristic zero, fixed exact pairing component, g≥2,N≥3. The ppav fine scheme/universal family, principal polarization and strong-Torelli input are the exact suppliers of MC.6.
+Characteristic zero, fixed exact pairing component, g≥2,N≥3. The ppav fine scheme/universal family, principal polarization and strong-Torelli input are the exact suppliers of Layer 6.
 
-One proof uses the following inputs and comparisons. Choose the pairing component on both curve and ppav moduli before applying the fine universal properties. Smoothness and connectedness from the separate MC.4 nodes imply geometric irreducibility; regularity/quasi-projectivity and dimension come from fineness. MC.6/smooth-torelli, with its existing ppav and Jacobian suppliers, identifies the actual pulled-back abelian family with Jac(C/M). Yoneda gives the square on arbitrary test schemes, not only on Q̄-points. Use MC.6/torelli-finite-fibres with its sign qualification. In genus2 all curves are hyperelliptic and the map is injective on geometric points; in the nonhyperelliptic range the two signs can be distinct. Specialize the JacobianChallengePartII §§2.1–2.3 diagonal-divisor Abel map to the universal family and the imported JacobianChallengePartII §§0.1–0.4 torsor difference to P¹. The orientation is a₁(y)−a₁(x). JC5/JC7 own the universal Faltings–Zhang tuple, so that construction is not repeated here.
+One proof uses the following inputs and comparisons. Choose the pairing component on both curve and ppav moduli before applying the fine universal properties. Smoothness and connectedness from Layer 4 imply geometric irreducibility; regularity/quasi-projectivity and dimension come from fineness. [The smooth full-level torelli morphism](#63-the-smooth-full-level-torelli-morphism), with its existing ppav and Jacobian suppliers, identifies the actual pulled-back abelian family with Jac(C/M). Yoneda gives the square on arbitrary test schemes, not only on Q̄-points. Use [finite torelli fibres and the sign ambiguity](#66-finite-torelli-fibres-and-the-sign-ambiguity) with its sign qualification. In genus2 all curves are hyperelliptic and the map is injective on geometric points; in the nonhyperelliptic range the two signs can be distinct. Specialize the JacobianChallengePartII §§2.1–2.3 diagonal-divisor Abel map to the universal family and the imported JacobianChallengePartII §§0.1–0.4 torsor difference to P¹. The orientation is a₁(y)−a₁(x). JC5/JC7 own the universal Faltings–Zhang tuple, so that construction is not repeated here.
 
 The Jacobian square commutes after dual-number base change and identifies the same principal polarization and level, rather than merely isomorphic geometric fibres. The construction uses P¹ before choosing a degree-one origin; a curve section is not supplied by the identity section of J. Preserve finite-to-one versus finite, and check genus2 separately from nonhyperelliptic curves.
 
@@ -10416,11 +10398,11 @@ The constant family with (g,n)=(0,4) over a positive-dimensional B has a classif
 
 ### 7.15 Stable, level and Picard export for Yuan
 
-For g>1 the smooth/stable curve stacks and universal families of MC.0–MC.2, together with their separate coarse schemes from MC.4 (projective for the stable unpointed space), supply Yuan §3.1.1. On each fixed symplectic level component with N≥3 invertible, the fine smooth scheme and the stable extension after a finite dominant cover are the MC.4/MC.6 exports used in the fine-level compactification discussion. For degree-d triples in §4.3.2, fix ζ_N over an algebraically closed field k. Yuan permits symplectic similitude multiplier c∈(Z/N)×; his parameter is therefore the finite disjoint union P^d_sim=⊔_c P^d_c, not just the exact c=1 component. Precomposition by diag(c⁻¹I_g,I_g) identifies the c-component with the exact component; precomposition by diag(cI_g,I_g) is the inverse. For every algebraically closed extension F/k, P^d_sim(F) is bijective to isomorphism classes of Yuan’s actual degree-d level-N triples over F. For a general T, use q and its obstruction/torsor of lifts instead. The algebraic Lie/Hodge comparison in Lemma3.4 is imported on its integral Noetherian stable-family bases; its metric assertion is outside this export.
+For g>1 the smooth/stable curve stacks and universal families of SchemeAndStackFoundations §4.15 and Layers 0–2, together with their separate coarse schemes from Layer 4 (projective for the stable unpointed space), supply Yuan §3.1.1. On each fixed symplectic level component with N≥3 invertible, the fine smooth scheme and the stable extension after a finite dominant cover are the exports of Layers 4 and 6 used in the fine-level compactification discussion. For degree-d triples in §4.3.2, fix ζ_N over an algebraically closed field k. Yuan permits symplectic similitude multiplier c∈(Z/N)×; his parameter is therefore the finite disjoint union P^d_sim=⊔_c P^d_c, not just the exact c=1 component. Precomposition by diag(c⁻¹I_g,I_g) identifies the c-component with the exact component; precomposition by diag(cI_g,I_g) is the inverse. For every algebraically closed extension F/k, P^d_sim(F) is bijective to isomorphism classes of Yuan’s actual degree-d level-N triples over F. For a general T, use q and its obstruction/torsor of lifts instead. The algebraic Lie/Hodge comparison in Lemma3.4 is imported on its integral Noetherian stable-family bases; its metric assertion is outside this export.
 
-Here g>1; in the level/Picard clause, N≥3 invertible and primitive ζ_N fixed. The stable extension is after the cover/normalization of MC.6; no moduli interpretation by naive nodal full torsion frames is used. For Lemma3.4 the original base is integral Noetherian; geometric constant-field conventions in §4.3.2 use the chosen embedding k̄→K̄.
+Here g>1; in the level/Picard clause, N≥3 invertible and primitive ζ_N fixed. The stable extension is after the cover and normalization of [graph-closure compactification after a finite cover](#65-graph-closure-compactification-after-a-finite-cover); no moduli interpretation by naive nodal full torsion frames is used. For Lemma3.4 the original base is integral Noetherian; geometric constant-field conventions in §4.3.2 use the chosen embedding k̄→K̄.
 
-One proof uses the following inputs and comparisons. Compose the smooth/stable stack universal properties with their coarse classifying maps, keeping the universal family on the stack. MC.4/projective-coarse makes the stable unpointed coarse algebraic space a projective scheme. Its smooth-curve open is the smooth coarse scheme, using coarse restriction under open (hence flat) base change. Apply the exact finite-cover stable-compactification export on each smooth level component; stable boundary existence is a parent supplier, not inferred from the Picard scheme. For a frame η with `e(ηv,ηw)=ζ_N^{c⟨v,w⟩}`, precompose η with diag(c⁻¹I_g,I_g) to obtain an exact frame; the inverse precomposition gives multiplier c. This works over any base with ζ_N and separates the finitely many constant multiplier components. Apply the same change of frame to the pulled-back universal curves and degree-Picard schemes. For F algebraically closed, use the existing parent geometric-point comparison on each component. Its surjectivity follows by finding an F-point in an fppf cover carrying a lift; uniqueness of the line-bundle class uses Pic(F)=0. Scalar automorphisms remain in the triple groupoid. Disjoint union gives the stated similitude comparison. For arbitrary T apply the exact obstruction and lift-torsor nodes. For Lemma3.4, use JacobianChallengePartII §§6.1–6.3 Lie(J/S)≅R¹π_*O and stable-curve duality to obtain π_*ω≅e*Ω¹_J/S and then its determinant. MC.5 owns determinant formation, MC.6 owns the smooth universal comparison; metric compatibility remains the arithmetic/analytic consumer’s work. The routed Picard item requires the geometric triple comparison, not a new proof of Lemma4.8 or a rational-field isotriviality criterion. Do not infer descent of an actual line bundle to a smaller nonclosed field from descent of its sheaf class.
+One proof uses the following inputs and comparisons. Compose the smooth/stable stack universal properties with their coarse classifying maps, keeping the universal family on the stack. SchemeAndStackFoundations §4.15 and [one determinant line over the integer base](#416-one-determinant-line-over-the-integer-base) make the stable unpointed coarse algebraic space a projective scheme. Its smooth-curve open is the smooth coarse scheme, using coarse restriction under open (hence flat) base change. Apply the exact finite-cover stable-compactification export on each smooth level component; stable boundary existence is a parent supplier, not inferred from the Picard scheme. For a frame η with `e(ηv,ηw)=ζ_N^{c⟨v,w⟩}`, precompose η with diag(c⁻¹I_g,I_g) to obtain an exact frame; the inverse precomposition gives multiplier c. This works over any base with ζ_N and separates the finitely many constant multiplier components. Apply the same change of frame to the pulled-back universal curves and degree-Picard schemes. For F algebraically closed, use the existing parent geometric-point comparison on each component. Its surjectivity follows by finding an F-point in an fppf cover carrying a lift; uniqueness of the line-bundle class uses Pic(F)=0. Scalar automorphisms remain in the triple groupoid. Disjoint union gives the stated similitude comparison. For arbitrary T apply the exact obstruction and lift-torsor nodes. For Lemma3.4, use JacobianChallengePartII §§6.1–6.3 Lie(J/S)≅R¹π_*O and stable-curve duality to obtain π_*ω≅e*Ω¹_J/S and then its determinant. Layer 5 forms the determinant and Layer 6 gives the smooth universal comparison; metric compatibility remains the arithmetic/analytic consumer’s work. The routed Picard item requires the geometric triple comparison, not a new proof of Lemma4.8 or a rational-field isotriviality criterion. Do not infer descent of an actual line bundle to a smaller nonclosed field from descent of its sheaf class.
 
 For N=3 there are two multiplier components c=1,2; the exact component alone does not parametrize all the permitted frames. Over algebraically closed F the lift-class fibre is a singleton with scalar inertia F×; over T=P¹_C the base-twist test refutes the unqualified global-bundle interpretation. In a one-variable function-field application read the bars in k̄ and K̄ geometrically; no rational-field descent theorem is smuggled into the geometric-point bijection. The stable family lies over the covering compactification, and the boundary is not claimed to carry ordinary full N-torsion of an abelian Jacobian. The determinant Hodge line λ and the rank-g Hodge vector bundle E have distinct types.
 
@@ -10457,8 +10439,6 @@ For a constant genus-two family E₃ has rank five and degree zero; its determin
 At a node xy=π^e over a DVR, the boundary branch pulls back to e times the closed point. Two nodes of thicknesses 2 and 3 give total boundary length 5. The local residue vector (r,−r) changes to (−r,r) on branch reversal. For g=0 the Hodge bundle has rank zero and determinant O, while the unpointed integral Noether statement is scoped to g≥2.
 
 The constant family C₀×𝔸¹ must compactify a one-dimensional base even though its moduli image is a point. A quadratic twist with generic isomorphism field L of degree two requires normalization in L, rather than in the image field. On a positive-dimensional isotrivial projective base λ is numerically trivial and is not big; on a point the dimension-zero bigness convention is satisfied.
-
-Over an algebraically closed field Pic(k)=0, so a nonempty lift-class fibre is a singleton, while its scalar automorphisms are k×. Over T=ℙ¹_ℂ, tensoring a lift by the base line O(1) produces a distinct actual lift with the same relative class. Over k[ε]/ε² the fixed-curve reduction fibre is H¹(C,O_C), of dimension two at genus two, with scalar infinitesimal inertia 1+εk.
 
 ## References
 
@@ -10535,6 +10515,8 @@ Over an algebraically closed field Pic(k)=0, so a nonempty lift-class fibre is a
 - **mc4-chen-zhang**: Yifei Chen, Lei Zhang, [The subadditivity of the Kodaira Dimension for Fibrations of Relative Dimension One in Positive Characteristics](https://arxiv.org/abs/1305.6024v1), 2013. arXiv:1305.6024v1; theorem numbering follows this version.
 
 - **mc4-stacks**: The Stacks Project Authors, [The Stacks Project: Cohomology of Schemes](https://stacks.math.columbia.edu/download/coherent.pdf), 2026.
+- **stacks-moduli-stacks**: The Stacks Project Authors, [The Stacks Project: Moduli Stacks](https://stacks.math.columbia.edu/download/moduli.pdf), 2026.
+- **stacks-spaces-cohomology**: The Stacks Project Authors, [The Stacks Project: Cohomology of Algebraic Spaces](https://stacks.math.columbia.edu/download/spaces-cohomology.pdf), 2026.
 
 - **mc5-deligne1987**: Pierre Deligne, [Le déterminant de la cohomologie](https://publications.ias.edu/sites/default/files/Number58.pdf), 1987.
 

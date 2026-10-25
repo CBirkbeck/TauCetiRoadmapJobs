@@ -32521,7 +32521,7 @@
   },
   {
     "slug": "integral-deligne-pairing",
-    "needs": "Provide the integral four-determinant Deligne pairing for locally projective faithfully flat finitely presented pure curve morphisms over arbitrary bases, with coherent bilinearity, base change, norm, scalar and graded permutation laws.",
+    "needs": "Provide the integral four-determinant Deligne pairing for locally projective faithfully flat finitely presented pure curve morphisms over arbitrary bases, with coherent bilinearity, base change, norm and scalar laws, and Deligne's symmetry isomorphism ⟨L,M⟩≅⟨M,L⟩ built from symbols and norms, which acts on ⟨L,L⟩ by (−1)^{deg L}.",
     "supplier": "SchemeAndStackFoundations",
     "section": "§3.4"
   },
