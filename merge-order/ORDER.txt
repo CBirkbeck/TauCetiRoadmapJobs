@@ -6,7 +6,6 @@ GeneralAlgebraicKTheory
 ResolutionOfSingularitiesCharacteristicZero
 DerivedModuleAlgebra
 AdicSpacesPartII
-CstConjectureForDaggerVarieties
 AdicSpacesPartIII
 AdicSpacesPartIIPartII
 AdicEtaleGeometry
@@ -203,6 +202,7 @@ TropicalAndBerkovichArithmetic
 EffectiveClassNumbers
 CompletedCohomologyPartII
 CohomologyComparisons
+CstConjectureForDaggerVarieties
 GaloisSectionsPadicPeriodMaps
 HabiroCohomologyFoundations
 CohomologyComparisonsPartII
