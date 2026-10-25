@@ -109487,10 +109487,26 @@
    "reported": "2026-10-25",
    "reporter": "claude fable",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/1658#issuecomment-6401415235"
+  },
+  {
+   "kind": "misprint",
+   "source": "HK2",
+   "locator": "§1.1, p. 5 (line 219)",
+   "says": "a closed set meets C in the local vanishing locus",
+   "should": "its intersection with the affinoid open U",
+   "affects": "nothing",
+   "note": "",
+   "roadmap": "AdicSpacesPartIIPartII",
+   "job": "REV-PKG-AdicSpacesPartIIPartII~4",
+   "board_pr": 1098,
+   "head": "2fad3dd",
+   "reported": "2026-10-25",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/1098#issuecomment-6401448939"
   }
  ],
- "scanned_to": "2026-10-25T18:22:53Z",
- "updated": "2026-10-25T18:24:59Z",
+ "scanned_to": "2026-10-25T18:25:59Z",
+ "updated": "2026-10-25T18:32:16Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
