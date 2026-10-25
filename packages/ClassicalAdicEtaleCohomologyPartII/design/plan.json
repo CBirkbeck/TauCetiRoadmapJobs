@@ -4323,6 +4323,12 @@
   ],
   "gaps": [
     {
+      "slug": "valuation-formal-proper-mapping",
+      "needs": "For a complete rank-one valuation ring O_K, a topologically finitely presented O_K-algebra A, and a proper topologically finitely presented morphism f:𝔜→Spf A of admissible formal schemes, every coherent O_𝔜-module F has coherent A-modules Hⁱ(𝔜,F), and the canonical associated-sheaf map Hⁱ(𝔜,F)^Δ→Rⁱf_*F is an isomorphism for every i≥0.",
+      "supplier": "AdicSpacesPartIII",
+      "section": "R2.2–R2.8"
+    },
+    {
       "slug": "reduced-model-cofinality",
       "needs": "For a complete rank-one valuation ring O_K with algebraically closed fraction field K, the generic-fibre functor from qcqs admissible formal O_K-schemes with reduced residue special fibre, localized at rig-isomorphisms, is an equivalence with qcqs reduced rigid K-spaces, so these models are cofinal among admissible models of each qcqs reduced rigid K-space.",
       "supplier": "AdicSpacesPartIII",

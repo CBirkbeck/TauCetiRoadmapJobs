@@ -26,7 +26,7 @@ title = "Almost coherent modules and almost coherent sheaves"
 year = 2021
 arxiv = "2110.10773v3"
 locator_scheme = "section"
-locator = "§§4.5–4.9, 5.1, 5.5, 6.13"
+locator = "§§4.5–4.9, 5.1, 5.5, 6.13; Theorem 5.1.5, pp.116–117"
 url = "https://arxiv.org/abs/2110.10773v3"
 fetched_from = "https://arxiv.org/pdf/2110.10773v3"
 fetched_at = "2026-10-23T18:18:43Z"
@@ -35,7 +35,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-23"
 version_note = "arXiv v3"
-cited_for = ["Layers 0–1"]
+cited_for = ["Layers 0–1", "Exact supplier contracts, valuation-formal-proper-mapping"]
 
 [[source]]
 id = "SW"

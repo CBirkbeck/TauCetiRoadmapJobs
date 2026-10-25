@@ -53,6 +53,10 @@ Layers R0–R1 supply classical affinoids, rational restrictions, continuous dif
 
 Sections F0.6–F0.8 and R2.2–R2.8 supply coherent formal modules, admissible models, generic fibres, blowups, Raynaud localization, formal properness and algebraization on their stated bases. Sections R3.1–R3.8 supply associated coherent sheaves, coherent operations, continuous differentials, Kiehl proper mapping, relative proper GAGA and finite locally free coefficient trace. The finite coefficient trace sends the unit to the degree, including degree p; the torus formula is Tr(dlog T)=dlog S for S=Tʳ.
 
+What AdicSpacesPartIII must provide (gap:valuation-formal-proper-mapping): For a complete rank-one valuation ring O_K, a topologically finitely presented O_K-algebra A, and a proper topologically finitely presented morphism f:𝔜→Spf A of admissible formal schemes, every coherent O_𝔜-module F has coherent A-modules Hⁱ(𝔜,F), and the canonical associated-sheaf map Hⁱ(𝔜,F)^Δ→Rⁱf_*F is an isomorphism for every i≥0.
+
+This contract is the coherent formal proper-mapping input of AC Theorem 5.1.5, pp.116–117, AC line 4990; AC Theorem 5.1.6 uses it in the almost-coherent approximation argument (AC line 5058).
+
 What AdicSpacesPartIII must provide (gap:reduced-model-cofinality): For a complete rank-one valuation ring O_K with algebraically closed fraction field K, the generic-fibre functor from qcqs admissible formal O_K-schemes with reduced residue special fibre, localized at rig-isomorphisms, is an equivalence with qcqs reduced rigid K-spaces, so these models are cofinal among admissible models of each qcqs reduced rigid K-space.
 
 What AdicSpacesPartIII must provide (gap:refined-formal-algebraization): For a complete rank-one valuation ring O_K and an admissible affine formal scheme Spf B with smooth pure-d generic fibre, there is a flat finitely presented O_K-algebra A with completion B, smooth generic fibre and pure relative dimension d.
@@ -172,7 +176,7 @@ The formal and scheme-modulo-p categories agree on sheaves killed by p.
 
 For 𝔛=Spf A topologically finitely presented over O_C, RΓ identifies D_acoh(𝔛)ᵃ with D_acoh(A)ᵃ, compatibly with completed localization and reduction. For F∈D⁻_acoh and G∈D⁺_acoh, RalHom(F,G) is bounded below almost coherent and is computed by the affine derived Hom. Proper topologically finitely presented maps preserve almost coherent cohomology; boundedness is retained in the almost category. All derived completeness claims are derived p-completeness, not exactness of ordinary completion on arbitrary modules. (AC Theorem 4.8.6, Corollary 4.8.16, Lemma 4.9.7(1), Theorem 5.1.6, pp. 108–118; AC line 4725.)
 
-One proof route is as follows. Use derived completed localization and the affine equivalence for derived complete complexes; almost coherent cohomology makes the associated-sheaf functor t-exact. Approximate almost finitely presented sheaves to any prescribed finitely generated subideal of 𝔪_C by coherent sheaves, as in AC Theorem 4.7.6. Apply coherent formal proper mapping, then finite Čech descent and these approximations; apply affine Ext comparison to internal Hom. Use the boundedness order in AC Lemma 4.9.7(2).
+One proof route is as follows. Use derived completed localization and the affine equivalence for derived complete complexes; almost coherent cohomology makes the associated-sheaf functor t-exact. Approximate almost finitely presented sheaves to any prescribed finitely generated subideal of 𝔪_C by coherent sheaves, as in AC Theorem 4.7.6. Apply the valuation-formal-proper-mapping contract of AdicSpacesPartIII §§R2.2–R2.8 to each coherent approximation, using its associated-sheaf comparison as well as coherence of Hⁱ (AC Theorem 5.1.5, pp.116–117, AC line 4990). Then use finite Čech descent and these approximations to obtain the almost proper-mapping assertion of AC Theorem 5.1.6 (AC line 5058); apply affine Ext comparison to internal Hom. Use the boundedness order in AC Lemma 4.9.7(2).
 
 On an affine, Hⁱ(RΓF)=ΓHⁱ(F) in the almost category; proper pushforward need not preserve honest finite presentation.
 
@@ -181,8 +185,12 @@ On an affine, Hⁱ(RΓF)=ΓHⁱ(F) in the almost category; proper pushforward ne
 - On Spf O_C with F=G=O_C, derived Hom is O_C in degree zero.
 - With F=O_C and G having O_C in every negative degree, Hom has the same nonzero negative degrees; this excludes the reversed boundedness assertion.
 - For the identity proper map, the affine comparison is the identity on H⁰ and both sides have zero higher unit cohomology.
+- For C=ℂ_p and f the formal completion of the structural morphism from the projective line over O_C to Spec O_C, the unit sheaf has H⁰=O_C and Hⁱ=0 for i>0; the degree-zero associated-sheaf map is the identity on the structure sheaf of Spf O_C. Its generic fibre has H⁰=C, which forgets the integral lattice.
+- On the same formal projective line, O_𝔜/p has H⁰=O_C/p≠0 and Hⁱ=0 for i>0. Its associated-sheaf comparison identifies R⁰f_*(O_𝔜/p) with (O_C/p)^Δ, whereas the generic fibre is zero. Coherent coefficients are allowed to have p-torsion although the formal schemes are flat.
+- For O_𝔜(−2) on the same formal projective line, H⁰=0 and H¹=O_C, with Laurent class T⁻¹ as generator. The associated-sheaf map identifies (O_C)^Δ with R¹f_*O_𝔜(−2), testing a nonzero higher direct image rather than only degree zero.
+- Normalize v(p)=1 on ℂ_p. A finite nonzero set in 𝔪_C has a least valuation δ>0, and every element of its generated ideal has valuation at least δ; an n-th root of p has valuation 1/n<δ for sufficiently large n. Thus 𝔪_C is not finitely generated, for p=2 and p=3 as well, excluding a Noetherian-base theorem as this supplier input.
 
-*Needs:* §0.1; EnhancedDerivedSheaves §§0.1–0.4, E1.1–E1.5 (ringed-site enhancement and tensor–Hom); AInfCohomology §§AI.1.1–AI.1.7 (décalage, products and continuous Koszul cochains); DerivedModuleAlgebra §§1.1–1.8; AdicSpacesPartIII §§F0.6–F0.8 (formal coherent modules, completion and algebraization).
+*Needs:* §0.1; EnhancedDerivedSheaves §§0.1–0.4, E1.1–E1.5 (ringed-site enhancement and tensor–Hom); AInfCohomology §§AI.1.1–AI.1.7 (décalage, products and continuous Koszul cochains); DerivedModuleAlgebra §§1.1–1.8; AdicSpacesPartIII §§R2.2–R2.8 with the valuation-formal-proper-mapping contract.
 
 ### 0.3 Almost coherent proper duality
 
@@ -234,7 +242,7 @@ The API includes the following facts.
 - For proper f, (R f_*F)_K≅R f_K,*(F_K).
 - For smooth generic fibre X, the generic fibre of A_𝔛 is Rμ_*Ô_X, compatible with cup and finite étale trace.
 
-One proof route is as follows. Invert a nonzero topologically nilpotent scalar on formal affines, then pull back and glue. Use almost coherent approximation and coherent generic-fibre comparison to identify cohomology and proper direct images. Compare the two ringed-site pullbacks and the integral/rational completed structure sheaves for the last identification. Smoothness supplies coherent rational Hodge–Tate cohomology in Z Lemma C.9; it is not needed for the generic-fibre functor itself.
+One proof route is as follows. Invert a nonzero topologically nilpotent scalar on formal affines, then pull back and glue. Use almost coherent approximation, the valuation-formal-proper-mapping contract through §0.2, and coherent generic-fibre comparison to identify cohomology and proper direct images. Compare the two ringed-site pullbacks and the integral/rational completed structure sheaves for the last identification. Smoothness supplies coherent rational Hodge–Tate cohomology in Z Lemma C.9; it is not needed for the generic-fibre functor itself.
 
 A sheaf killed by a power of p has zero generic fibre; this assertion concerns generic fibre, not reduction modulo p.
 
@@ -252,7 +260,7 @@ For the formal point, A=O_Cᵃ and K=O_Cᵃ/p have amplitude [0,0]. Generic fibr
 
 ### Dependencies
 
-Use PerfectoidSpaces P0 and §§P3.11–P3.22; AdicSpacesPartIII §§F0.6–F0.8, R2.2–R2.8 and R3.1–R3.8; SchemeAndStackFoundations §§2.18–2.21 with the valuation-upper-shriek contract; EnhancedDerivedSheaves §§0.1–0.4; AInfCohomology AI.1; and the general-nearby-coherence contract of PadicHodgeTheory. The individual statements specify their derived boundedness ranges.
+Use PerfectoidSpaces P0 and §§P3.11–P3.22; AdicSpacesPartIII §§F0.6–F0.8, R2.2–R2.8 and R3.1–R3.8 with the valuation-formal-proper-mapping contract for coherent formal higher direct images; SchemeAndStackFoundations §§2.18–2.21 with the valuation-upper-shriek contract; EnhancedDerivedSheaves §§0.1–0.4; AInfCohomology AI.1; and the general-nearby-coherence contract of PadicHodgeTheory. The individual statements specify their derived boundedness ranges.
 
 ## Layer 1: Formal canonical sheaves and coherent traces
 
