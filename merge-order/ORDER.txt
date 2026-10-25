@@ -97,7 +97,6 @@ AnalyticNumberTheoryPartI
 AnalyticNumberTheoryPartII
 AnalyticNumberTheory
 ArithmeticStatistics
-EffectiveBoundsCompactModels
 AlgebraicModularFormsAndSerreWeights
 GL2AutomorphicRepresentationsAndTransfer
 CongruenceSpectralGap
@@ -122,6 +121,7 @@ EtaleDualityAndPerverseSheavesPartII
 AlgebraicTopologyPartII
 ArithmeticStatisticsPartI
 EffectiveBoundsPartII
+EffectiveBoundsCompactModels
 ArithmeticStatisticsPartII
 ArithmeticStatisticsPartIII
 ArithmeticStatisticsPartIV
