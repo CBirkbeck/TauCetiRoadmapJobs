@@ -4269,61 +4269,49 @@
     }
   ],
   "gaps": [
-  {
-    "slug": "dpH-full-faithfulness",
-    "supplier": "PadicHodgeTheory",
-    "section": "§§3.5, 5.3",
-    "needs": "For every finite extension F/ℚₚ, the functor D_pH from de Rham ℚₚ-representations to filtered discrete (φ,N,G_F)-modules is fully faithful and symmetric monoidal, with the comparison over F̄ and compatibility with restriction and finite induction."
-  },
-  {
-    "slug": "horizontal-pst-specialisation",
-    "supplier": "PadicHodgeTheory",
-    "section": "§§7.3, 7.5",
-    "needs": "On spherical polyannuli over every finite F/ℚₚ, provide the horizontal semistable period ring, potentially horizontal semistable realisations, the relative monodromy theorem for a de Rham pair with a horizontal basis, and the φ,N,G_F-equivariant specialisation isomorphisms D_pst^∇(E) ≅ D_pst(E_y) compatible with its actual de Rham comparison."
-  },
-  {
-    "slug": "polyannulus-integral-local-systems",
-    "supplier": "PadicHodgeTheory",
-    "section": "§7.3",
-    "needs": "For F/ℚₚ finite and R=O_F⟨t₁±¹,…,tₙ±¹⟩, identify finite étale covers of Sp(R[1/p]) with the Galois category of finite étale R[1/p]-algebras and identify finite-rank integral local systems with continuous representations of its profinite fundamental group, compatibly with the map to G_F and point fibres."
-  },
-  {
-    "slug": "model-free-polarised-fibres",
-    "supplier": "MordellLawrenceVenkatesh",
-    "section": "§§2.1, 2.4, 2.9",
-    "needs": "For polarised abelian-by-finite families over characteristic-zero fields, provide the induced H⁰-linear perfect alternating H¹ pairings from half the Poincaré Chern class, their Lagrangian de Rham filtration, and horizontal transport preserving algebra, module and pairing on any trivialising closed polydisc, including the induced trivialisation of the finite étale base."
-  },
-  {
-    "slug": "model-free-period-maps",
-    "supplier": "MordellLawrenceVenkatesh",
-    "section": "§§3.12–3.19",
-    "needs": "For smooth varieties over every finite F/ℚₚ and every F-point, provide local horizontal trivialisations and the inverse-transport period map, its flag functor, comparison of its Zariski closure with complex periods at F-rational centres, density under full monodromy, and finite intersection with a proper closed subvariety on a closed curve disc."
-  },
-  {
-    "slug": "symplectic-faltings-finiteness",
-    "supplier": "MordellLawrenceVenkatesh",
-    "section": "§1.2",
-    "needs": "For every number field, prime p, finite S containing p and infinity, integers n≥0, d>0 and B≥1, provide GSp-irreducibility as absence of a nonzero stable isotropic subspace and finiteness up to symplectic isomorphism of rank-2d representations unramified and pure of weight n outside S whose Frobenius eigenvalues are algebraic integers of degree over ℚ at most B, including the integer-polynomial case B=2d."
-  },
-  {
-    "slug": "four-isotropic-lagrangians",
-    "supplier": "MordellLawrenceVenkatesh",
-    "section": "§LV.7, Lagrangians in general position",
-    "needs": "For every finite-dimensional symplectic space over a field and r≥4, prove that r-tuples admitting a nonzero isotropic subspace meeting each Lagrangian in at least half its dimension lie in a proper Zariski-closed subscheme of the r-fold Lagrangian Grassmannian."
-  },
-  {
-    "slug": "kodaira-parshin-local-fibres",
-    "supplier": "MordellLawrenceVenkatesh",
-    "section": "§§8.13–8.14",
-    "needs": "For every characteristic-zero extension F/K and y∈Y(F), describe the geometric finite-base fibre of the Kodaira–Parshin family G_F-equivariantly by conjugacy classes of punctured-curve surjections to Aff(q) nontrivial on inertia, with the equal-fibre surjection to primitive cyclic characters, including F=K_v."
-  },
-  {
-    "slug": "linnik-polynomial-least-prime",
-    "supplier": "AnalyticNumberTheoryPartI",
-    "section": "§0.32",
-    "needs": "There are absolute constants C>0 and L>0 such that every coprime residue class a modulo m≥2 contains a prime q≤C m^L, with constants independent of a and m."
-  }
-],
+    {
+      "slug": "horizontal-pst-specialisation",
+      "supplier": "PadicHodgeTheory",
+      "section": "§§7.3, 7.5",
+      "needs": "On spherical polyannuli over every finite F/ℚₚ, provide the horizontal semistable period ring, potentially horizontal semistable realisations, the relative monodromy theorem for a de Rham pair with a horizontal basis, and the φ,N,G_F-equivariant specialisation isomorphisms D_pst^∇(E) ≅ D_pst(E_y) compatible with its actual de Rham comparison."
+    },
+    {
+      "slug": "model-free-polarised-fibres",
+      "supplier": "MordellLawrenceVenkatesh",
+      "section": "§§2.1, 2.4, 2.9",
+      "needs": "For polarised abelian-by-finite families over characteristic-zero fields, provide the induced H⁰-linear perfect alternating H¹ pairings from half the Poincaré Chern class, their Lagrangian de Rham filtration, and horizontal transport preserving algebra, module and pairing on any trivialising closed polydisc, including the induced trivialisation of the finite étale base."
+    },
+    {
+      "slug": "model-free-period-maps",
+      "supplier": "MordellLawrenceVenkatesh",
+      "section": "§§3.12–3.19",
+      "needs": "For smooth varieties over every finite F/ℚₚ and every F-point, provide local horizontal trivialisations and the inverse-transport period map, its flag functor, comparison of its Zariski closure with complex periods at F-rational centres, density under full monodromy, and finite intersection with a proper closed subvariety on a closed curve disc."
+    },
+    {
+      "slug": "symplectic-faltings-finiteness",
+      "supplier": "MordellLawrenceVenkatesh",
+      "section": "§1.2",
+      "needs": "For every number field L, prime p, finite S containing the places above p and infinity, and integers n≥0, d>0 and B≥1, there are finitely many isomorphism classes of GSp-irreducible symplectic ℚₚ-representations (V, L₀, ω) of G_L with V of rank 2d, unramified and pure of weight n outside S, whose Frobenius eigenvalues outside S are algebraic integers of degree over ℚ at most B; B=2d includes the integer-polynomial case."
+    },
+    {
+      "slug": "four-isotropic-lagrangians",
+      "supplier": "MordellLawrenceVenkatesh",
+      "section": "§LV.7, Lagrangians in general position",
+      "needs": "For every finite-dimensional symplectic space over a field and r≥4, prove that r-tuples admitting a nonzero isotropic subspace meeting each Lagrangian in at least half its dimension lie in a proper Zariski-closed subscheme of the r-fold Lagrangian Grassmannian."
+    },
+    {
+      "slug": "kodaira-parshin-local-fibres",
+      "supplier": "MordellLawrenceVenkatesh",
+      "section": "§§8.13–8.14",
+      "needs": "For every characteristic-zero extension F/K and y∈Y(F), describe the geometric finite-base fibre of the Kodaira–Parshin family G_F-equivariantly by conjugacy classes of punctured-curve surjections to Aff(q) nontrivial on inertia, with the equal-fibre surjection to primitive cyclic characters, including F=K_v."
+    },
+    {
+      "slug": "linnik-polynomial-least-prime",
+      "supplier": "AnalyticNumberTheoryPartI",
+      "section": "§0.32",
+      "needs": "There are absolute constants C>0 and L>0 such that every coprime residue class a modulo m≥2 contains a prime q≤C m^L, with constants independent of a and m."
+    }
+  ],
   "sourceIssues": [
     {
       "id": "GaloisSectionsPadicPeriodMaps/E1",
