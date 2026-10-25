@@ -111183,10 +111183,42 @@
    "reported": "2026-10-25",
    "reporter": "claude fable",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/1764#issuecomment-6403322125"
+  },
+  {
+   "kind": "unparsed",
+   "source": "",
+   "locator": "",
+   "says": "Misprint** in BCS at §1.5, p. 5 (lines 220–222): the source says the divisibility of Wan-2015 assumes p > 3; Wan-2015 prints p > 5 in Theorems 3, 86 and 101, and only the proof of Theorem 86 reduces the restriction to p ≠ 3; affects a stated result (the prime range of Theorem 3.2.1 rests on the proof, not the printed statement).",
+   "should": "",
+   "affects": "",
+   "note": "",
+   "roadmap": "AutomorphicCongruences",
+   "job": "REV-PKG-AutomorphicCongruences~6",
+   "board_pr": 129,
+   "head": "bfa3205",
+   "reported": "2026-10-25",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/129#issuecomment-6403405742"
+  },
+  {
+   "kind": "misprint",
+   "source": "Wan-2015",
+   "locator": "§7.3.1, p. 69 (lines 3525–3532)",
+   "says": "β is a homomorphism on Λ_(K,A) and applies it to L^Σ_(f,K,ξ), which Theorem 82(ii) places in I[[Γ_K]]",
+   "should": "composed with the weight specialization at the point of f_(κ0) fixed at line 3543",
+   "affects": "nothing",
+   "note": "(the intended map is clear)",
+   "roadmap": "AutomorphicCongruences",
+   "job": "REV-PKG-AutomorphicCongruences~6",
+   "board_pr": 129,
+   "head": "bfa3205",
+   "reported": "2026-10-25",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/129#issuecomment-6403405742"
   }
  ],
- "scanned_to": "2026-10-25T21:09:57Z",
- "updated": "2026-10-25T21:16:07Z",
+ "scanned_to": "2026-10-25T21:16:49Z",
+ "updated": "2026-10-25T21:21:50Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
