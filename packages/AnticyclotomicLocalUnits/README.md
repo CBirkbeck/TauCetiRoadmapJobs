@@ -9,7 +9,7 @@ This roadmap owns the arithmetic inverse limit and its ω-component, the inverse
 The general objects below have these owners; the targets here are their arithmetic applications.
 
 - The unit filtration and formal-to-elliptic point homomorphism are already in Tau Ceti. LocalFieldsRamification Layer 1 supplies principal-unit topology and pro-p structure; ProfiniteArithmetic §1.3 supplies continuous p-adic scalar powers. No second filtration, formal-point homomorphism or scalar-power construction is defined here.
-- The completed group algebra and its compact-module action are already in Tau Ceti. PadicMeasuresIwasawaAlgebras §§1.7, 4.2–4.5 and 5.2 supply measure comparison, coefficient extension, the continuous one-variable O-coordinate with generator comparison, one-variable ring and module structure, and topological Nakayama. The generic algebra and generic ring-theoretic generation criterion are not targets here. Section 8.1 applies them to the actual derivative and optimal unit.
+- The completed group algebra and its compact-module action are already in Tau Ceti. PadicMeasuresIwasawaAlgebras §§1.7, 4.2–4.5 and 5.2 supply measure comparison, coefficient extension, the continuous one-variable O-coordinate with generator comparison, one-variable ring and module structure, and topological Nakayama. SelmerIwasawaCohomology §3.0 owns multivariable coordinates, regular sequences, closed-subgroup quotients and continuous character twists. CompletedCohomologyPartII §§3.1–3.2 owns continuous coefficient duals and compact/discrete biduality. The generic algebra and generic ring-theoretic generation criterion are not targets here. Section 8.1 applies them to the actual derivative and optimal unit.
 - IntegralIwasawaTheory §7.1 owns the multiplicative determinant norm and unramified cyclotomic interpolation; ColemanPowerSeries Layer 1 supplies its explicit norm/evaluation refinements. Section 1.1 differs by its height-two formal module, rank-p² scalar algebra and π-division points.
 - LubinTateFormalModulesAndQuasiCanonicalLifts LT.0–LT.2 own formal O-modules, logarithms, torsion, Tate modules and reciprocity; LT.4 owns the scalar-Frobenius and unramified Honda comparison; LT.5–LT.8 own integral lattice quotients, quasi-canonical fields, neighboring lattices and the tame/anticyclotomic field comparisons; LT.9 owns formal traces. Section 5.3 applies scalar Frobenius to cyclic-level subgroup descent, §6.1 builds modular images of the supplied quotients, and §6.3 identifies their supplied lattice orbits with the Hecke trace. None rebuilds those foundations.
 - NonordinaryCMSpecialValues NCM.0–NCM.4 own canonical CM characters, early normalized zeta classes, semilocal comparisons, root numbers and Finis’s unit-value specialization; NCM.5 owns the canonical unramified coefficient and scalar-to-tensor comparison. Section 4.1 owns the auxiliary field, §4.2 the local-unit projection composite, §4.3 the Coleman/dual-exponential normalization, and §§4.4–4.5 their application before signed freeness.
@@ -45,6 +45,8 @@ Native carriers use their library universes; finite extensions, finite quotients
 
 ### From Mathlib
 
+For §4.1 use `NumberField`, `Module.finrank`, `NumberField.IsTotallyComplex`, `NumberField.RingOfIntegers`, `Ideal.span`, `Ideal.IsPrime` and `NumberField.classNumber` on their native carriers. A degree-two totally complex number field is imaginary quadratic; the principal-ideal clauses specify splitting and inertness without a separate splitting predicate.
+
 Use `PowerSeries.coeff` and `PowerSeries.constantCoeff` from Mathlib/RingTheory/PowerSeries/Basic.lean, `PowerSeries.derivative` from Mathlib/RingTheory/PowerSeries/Derivative.lean and `PowerSeries.isUnit_iff_constantCoeff` from Mathlib/RingTheory/PowerSeries/Inverse.lean. The derivative is formal; convergence and evaluation at division points are separate hypotheses supplied in the Lubin–Tate analytic comparison. The unit criterion is over a ring and concerns the actual constant coefficient. Native `Submodule`, `LinearMap`, `TensorProduct`, `Algebra.norm` and `Algebra.trace` are used with their specified algebra and scalar-tower instances. Use `IsGalois.normalBasis` and `IsGalois.normalBasis_apply` in Mathlib/FieldTheory/Galois/NormalBasis.lean for finite Galois extensions, including the required finite-dimensionality. Finite projective modules over a commutative local ring are finite flat and hence free, via `Module.free_of_flat_of_isLocalRing` in Mathlib/RingTheory/LocalRing/Module.lean.
 
 ### From Tau Ceti
@@ -61,21 +63,29 @@ Use `TauCeti.TateCohomology.H0IsoNormQuotient` and `TauCeti.TateCohomology.HNegO
 
 ### From TauCetiRoadmap.LocalFieldsRamification and TauCetiRoadmap.ProfiniteArithmetic
 
-LocalFieldsRamification Layers 0–3 supply native finite-extension fields, their integer rings, residue fields, principal-unit filtration/topology, pro-p property, ramification and normal basis. ProfiniteArithmetic §1.3 supplies the continuous ℤ_p scalar action on abelian pro-p groups. At p=5 a degree-p² base scalar norm has exponent 25; finite Galois transport and coefficient tensoring retain that norm, not a guessed scalar endomorphism on arbitrary units.
+LocalFieldsRamification Layers 0–3 supply native finite-extension fields, their integer rings, residue fields, principal-unit filtration/topology, pro-p property and ramification. ProfiniteArithmetic §1.3 supplies the continuous ℤ_p scalar action on abelian pro-p groups. At p=5 a degree-p² base scalar norm has exponent 25; finite Galois transport and coefficient tensoring retain that norm, not a guessed scalar endomorphism on arbitrary units.
 
 ### From TauCetiRoadmap.PadicMeasuresIwasawaAlgebras
 
 Use §1.7 for the measure/completed-algebra comparison and coefficient extension, §§4.3–4.4 for one-variable O[[T]] ring properties and Weierstrass preparation, §4.2 for module structure, and §4.5 (`TauCeti.Iwasawa.exists_completedCoordinate` and its continuous-coordinate API) for the coefficient-preserving O-coordinate, inverse continuity and generator comparison T↦(1+T)^a−1 for a∈ℤ_p×. Use §5.2 for compact inverse-limit exactness and topological Nakayama. Quotient duality always uses the actual compact topology and the discrete Φ/O-valued dual. The residual example Λ/(p,T)=𝔽_(p²) has cardinal p², equal to 25 at p=5.
 
-What PadicMeasuresIwasawaAlgebras must provide (gap:quadratic-coefficient-coordinates): For finite free unramified O/ℤ_p and Γ⁺≃Γ⁻≃ℤ_p, extend the supplied one-variable O-coordinate to a continuous coefficient-preserving two-variable equivalence O[[Γ⁺×Γ⁻]]≃O[[S,T]], with continuous inverse and two-variable noetherian local-domain properties, compatibly with coefficient extension, generator changes and κ-twisting, so that after inverse twisting the plus relation σ−1 corresponds to S and specialization S=0 recovers the supplied one-variable Γ⁻ coordinate.
+What PadicMeasuresIwasawaAlgebras must provide (gap:compact-coefficient-duality): Finite free coefficient extension O → W commutes, as a topological module equivalence, with the compact inverse limits of §§0.2 and 2.3, including ℤ_p → O for the ambient principal-unit limit.
 
-What PadicMeasuresIwasawaAlgebras must provide (gap:compact-coefficient-duality): Finite free coefficient extension must commute with these compact inverse limits, and continuous O-duality into Φ/O must identify invariants with the dual of closed coinvariants and give biduality for the compact modules used here.
+### From TauCetiRoadmap.SelmerIwasawaCohomology
+
+Use §3.0's multivariable coordinate, augmentation regular sequence, closed-subgroup quotient and continuous character twist, specified there as iwasawaAlgebra_mvPowerSeries_equiv, iwasawaAlgebra_isRegular_augmentation and iwasawaAlgebra_twist. For O a complete DVR with finite residue field and Γ=Γ⁺×Γ⁻≃ℤ_p², these identify Λ₂ with O[[S,T]], a regular local domain of dimension three, and the closed Γ⁺ quotient with O[[T]], of dimension two. The twist Tw_κ sends σ−κ(σ) to κ(σ)(σ−1), preserving its quotient ideal up to the displayed unit.
+
+What SelmerIwasawaCohomology must provide (gap:quadratic-coefficient-coordinates): Relative to §3.0's coordinates and twists, identify the two-variable coordinate under finite free unramified coefficient extension and changes of the selected Γ⁺ and Γ⁻ generators, and prove that specialization of the plus coordinate to zero equals PadicMeasuresIwasawaAlgebras §4.5's selected Γ⁻ coordinate.
+
+### From TauCetiRoadmap.CompletedCohomologyPartII
+
+Use §3.1's continuous O-dual D_t(M)=Hom_cont,O(M,Φ/O), discrete for compact Hausdorff linearly topologized M, with left action (g f)(m)=f(g⁻¹m). Use §3.2's evaluation biduality for compact inverse limits of finite π-primary O-modules and discrete π-primary torsion modules; O here is the unramified quadratic integer ring. Evaluation identifies D_t(M/(σ−1)M) with D_t(M)^σ for the closed relation image. On M=O with σ acting trivially, both sides are Φ/O; on M=O/π with trivial σ-action, both have p² elements, equal to 25 at p=5. The O-valued dual instead vanishes on O/π and cannot give this biduality.
 
 ### From TauCetiRoadmap.IntegralIwasawaTheory and TauCetiRoadmap.ColemanPowerSeries
 
 IntegralIwasawaTheory §7.1 supplies `colemanSeriesBasis`, `colemanNorm`, `colemanTrace`, `localUnitNormLimit` and `colemanInterpolation` for the multiplicative cyclotomic tower over every finite unramified coefficient field, retaining the coefficient Frobenius in interpolation. ColemanPowerSeries Layer 1 supplies the explicit multiplication-matrix and norm/evaluation comparisons. The finite-free scalar structure has rank p there, whereas §1.1 proves rank p² for [π]_F; the multiplicative theorem is not quoted as height-two interpolation.
 
-What IntegralIwasawaTheory must provide (gap:general-unit-norm-control): For any prime p, finite K/ℚ_p and abelian K∞/K with G=Δ×Γ, Δ finite of order prime to p and Γ≃ℤ_p^r, r≥1, put Z(F)=lim_(K⊆E⊆F, [E:K]<∞) lim_m Eˣ/(Eˣ)^(p^m), with norm transitions in E, and Z∞=Z(K∞); require, for K⊆F⊆F′⊆K∞ with Gal(F′/F)≃ℤ_p and σ∈G restricting to its topological generator, ker(N:Z(F′)→Z(F))=(σ−1)Z(F′), Z(F)/N Z(F′)≃ℤ_p with trivial G-action, and injectivity of σ−1 on Z(F′); moreover, for each nontrivial irreducible ℚ_p-character ψ of Δ, with idempotent e_ψ and A_ψ=e_ψℤ_p[Δ], K_n=K∞^(p^nΓ) and I_n=(γ_1^(p^n)−1,…,γ_r^(p^n)−1) for a ℤ_p-basis γ_i of Γ, require ker(Z∞,ψ→Z(K_n)_ψ)=I_n Z∞,ψ for every n≥0, identifying these coinvariants with the norm image in Z(K_n)_ψ, and, when r=2 and either μ_(p∞)(K∞)={1} or ψ differs from the tame cyclotomic character, require these coinvariants to be finite free over A_ψ of rank [K:ℚ_p]p^(2n).
+What IntegralIwasawaTheory must provide (gap:general-unit-norm-control): For any prime p, finite K/ℚ_p and abelian K∞/K with G=Δ×Γ, Δ finite of order prime to p and Γ≃ℤ_p^r, r≥1, put Z(F)=lim_(K⊆E⊆F, [E:K]<∞) lim_m Eˣ/(Eˣ)^(p^m), with norm transitions in E, and Z∞=Z(K∞); require, for K⊆F⊆F′⊆K∞ with Gal(F′/F)≃ℤ_p and σ∈G restricting to its topological generator, ker(N:Z(F′)→Z(F))=(σ−1)Z(F′), Z(F)/N Z(F′)≃ℤ_p with trivial G-action, and injectivity of σ−1 on Z(F′); moreover, for each nontrivial irreducible ℚ_p-character ψ of Δ, with idempotent e_ψ and A_ψ=e_ψℤ_p[Δ], K_n=K∞^(p^nΓ) and I_n=(γ_1^(p^n)−1,…,γ_r^(p^n)−1) for a ℤ_p-basis γ_i of Γ, require ker(Z∞,ψ→Z(K_n)_ψ)=I_n Z∞,ψ for every n≥0, identifying these coinvariants with the norm image in Z(K_n)_ψ.
 
 ### From TauCetiRoadmap.LubinTateFormalModulesAndQuasiCanonicalLifts
 
@@ -161,7 +171,7 @@ Use `TauCeti.unitFiltration` at depth one for P_n⊆Φ_nˣ. Regard P_n additivel
 
 (BKO21, §2, p.948; BKO21 line 253.)
 
-A proof route is as follows. Norms preserve the principal-unit filtration. Apply the supplied pro-p scalar action and compact completed action; finite-free tensor comparison transports the topology. The tame denominator is a unit because p∤p²−1.
+A proof route is as follows. Norms preserve the principal-unit filtration. Apply the supplied pro-p scalar action and compact completed action; finite-free tensor comparison transports the topology, identifying Ũ∞ with (lim_n P_n)⊗_ℤ_p O. The tame denominator is a unit because p∤p²−1.
 
 Its API consists of the following facts on these same carriers and with these same hypotheses.
 
@@ -178,7 +188,7 @@ Its API consists of the following facts on these same carriers and with these sa
 - The zero additive family is the coordinatewise unit 1 and has norm 1. For a base unit a viewed in a degree-p² extension its norm is a^(p²), whereas a general nonfixed unit has a product of conjugates; after tensoring N(u⊗b)=N(u)⊗b.
 - On an ω-eigenvector the projector is (p²−1)⁻¹(p²−1)=1; on an η-eigenvector with η≠ω its character sum is 0. The zero family projects to zero.
 
-*Needs:* `TauCeti.unitFiltration`; `TauCeti.unitFiltration_one`; Tau Ceti completed-group-algebra modules (supplier contract); PadicMeasuresIwasawaAlgebras §§4.2–4.5; PadicMeasuresIwasawaAlgebras §5.2; LocalFieldsRamification Layer 1; ProfiniteArithmetic §1.3.
+*Needs:* `TauCeti.unitFiltration`; `TauCeti.unitFiltration_one`; Tau Ceti completed-group-algebra modules (supplier contract); PadicMeasuresIwasawaAlgebras §5.2 (gap:compact-coefficient-duality); PadicMeasuresIwasawaAlgebras §§4.2–4.5; PadicMeasuresIwasawaAlgebras §5.2; LocalFieldsRamification Layer 1; ProfiniteArithmetic §1.3.
 
 ### 0.3 Two-variable omega-unit freeness
 
@@ -186,14 +196,17 @@ U∞ is a finite free Λ₂=O[[Γ]]-module of rank two, with its compact module 
 
 (Rubin87, Proposition 1.1, p.407; Win80, §4, theorem (i),(iii), pp.91–92; §§5.2–5.5.3, pp.93–98; Rubin87 line 116; Win80 line 112; Win80 line 192; Win80 line 296.)
 
-A proof route is as follows. Apply the two-variable nonexceptional-character theorem to the ω-component, with base degree two. The cyclotomic tame character is ω^(p+1), distinct from ω. Prove its finite coinvariant and torsion-freeness hypotheses using the general norm-control contract; finite local reciprocity alone is insufficient.
+For the norm-control contract's general finite K/ℚ_p, G=Δ×Γ with Γ≃ℤ_p² and nontrivial irreducible ℚ_p-character ψ of Δ, prove for every n≥0 that Z∞,ψ/I_n Z∞,ψ is finite free over A_ψ of rank [K:ℚ_p]p^(2n), provided μ_(p∞)(K∞)={1} or ψ differs from the tame cyclotomic character. This finite-level freeness is a target here, with the same Win80 §§5.2–5.5.3 locator.
+
+A proof route is as follows. Start with the norm-control contract's kernel/cokernel and coinvariant-to-norm-image identifications. Use finite local reciprocity, the logarithm lattice and the rational normal basis to compute the finite-level rank; show that the stated tame component has no p-power torsion, and use that A_ψ is a DVR to obtain finite freeness (Win80 line 301; Win80 line 321). Pass to the limit by topological Nakayama. For U∞ the base degree is two and ψ corresponds to ω; the cyclotomic tame character is ω^(p+1), distinct from ω.
 
 **Checks.**
 
 - At p=5 the tame exponents of ω and the cyclotomic character are 1 and 6 modulo 24, so the exceptional characters are different. Rank two gives finite coinvariant O-rank 2·5^(2n): 2 at n=0 and 50 at n=1.
 - For the cyclotomic ℤ_p-extension F′/Φ, local reciprocity identifies Z(Φ)/N Z(F′) with ℤ_p, with trivial Galois action; it is nonzero. On a nontrivial tame character this quotient has component zero, while the trivial component remains ℤ_p. The norm-control contract therefore does not assert surjectivity on every tame component.
+- At p=5,n=2 the nonexceptional rank is 2·5⁴=1250, and its π-torsion subgroup has cardinal 1. As a negative model, M=O with γ₊ acting by 6 and γ₋ by 1 has level-zero coinvariants O/(6−1)=O/5O, with 25 elements all killed by 5. The nonexceptional hypothesis excludes the cyclotomic Tate component represented by this model.
 
-*Needs:* §0.2; ClassFieldTheory Layer 6; ClassFieldTheory Layer 8; PadicMeasuresIwasawaAlgebras §§4.2–4.5; PadicMeasuresIwasawaAlgebras §5.2; IntegralIwasawaTheory §7.2 (gap:general-unit-norm-control).
+*Needs:* §0.2; ClassFieldTheory Layer 6; ClassFieldTheory Layer 8; PadicMeasuresIwasawaAlgebras §§4.2–4.5; PadicMeasuresIwasawaAlgebras §5.2; IntegralIwasawaTheory §7.2 (gap:general-unit-norm-control); Mathlib normal basis.
 
 ### 0.4 The inverse Tate twist
 
@@ -241,7 +254,7 @@ Its API consists of the following facts on these same carriers and with these sa
 - On the untwisted quotient, σ−κ(σ) acts by 0, while σ−1 acts by κ(σ)−1, generally nonzero. On the inverse twist σ−1 acts by 0.
 - For σ′=σ^(1+p), the ratio of the two twisted defining generators has unit constant term (1+p)κ(σ)^p. Its normalized untwisted-coordinate value is 1+p, equal to 6 at p=5.
 
-*Needs:* §0.3; §0.4; Tau Ceti completed-group-algebra modules (supplier contract); PadicMeasuresIwasawaAlgebras §§4.2–4.5; PadicMeasuresIwasawaAlgebras §5.2; PadicMeasuresIwasawaAlgebras §4.5 (gap:quadratic-coefficient-coordinates).
+*Needs:* §0.3; §0.4; Tau Ceti completed-group-algebra modules (supplier contract); PadicMeasuresIwasawaAlgebras §§4.2–4.5; PadicMeasuresIwasawaAlgebras §5.2; SelmerIwasawaCohomology §3.0 (gap:quadratic-coefficient-coordinates).
 
 ### Examples
 
@@ -249,7 +262,7 @@ At p=5, [Φ_0:Φ]=24 and Ψ_0=Φ; the first wild anticyclotomic degree is 5. The
 
 ### Dependencies
 
-The subsection *Needs:* lines give the internal dependencies. External inputs: LubinTateFormalModulesAndQuasiCanonicalLifts LT.2, LT.8; `TauCeti.unitFiltration`; `TauCeti.unitFiltration_one`; Tau Ceti completed-group-algebra modules (supplier contract); PadicMeasuresIwasawaAlgebras §§4.2–4.5; PadicMeasuresIwasawaAlgebras §5.2; LocalFieldsRamification Layer 1; ProfiniteArithmetic §1.3; ClassFieldTheory Layer 6; ClassFieldTheory Layer 8; IntegralIwasawaTheory §7.2 (gap:general-unit-norm-control); LubinTateFormalModulesAndQuasiCanonicalLifts LT.2; PadicMeasuresIwasawaAlgebras §4.5 (gap:quadratic-coefficient-coordinates).
+The subsection *Needs:* lines give the internal dependencies. External inputs: Mathlib normal basis; PadicMeasuresIwasawaAlgebras §§1.7, 5.2 (gap:compact-coefficient-duality); LubinTateFormalModulesAndQuasiCanonicalLifts LT.2, LT.8; `TauCeti.unitFiltration`; `TauCeti.unitFiltration_one`; Tau Ceti completed-group-algebra modules (supplier contract); PadicMeasuresIwasawaAlgebras §§4.2–4.5; PadicMeasuresIwasawaAlgebras §5.2; LocalFieldsRamification Layer 1; ProfiniteArithmetic §1.3; ClassFieldTheory Layer 6; ClassFieldTheory Layer 8; IntegralIwasawaTheory §7.2 (gap:general-unit-norm-control); LubinTateFormalModulesAndQuasiCanonicalLifts LT.2; SelmerIwasawaCohomology §3.0 (gap:quadratic-coefficient-coordinates).
 
 ## Layer 1: Coleman derivatives and signed units
 
@@ -281,15 +294,16 @@ Its API consists of the following facts on these same carriers and with these sa
 
 ### 1.2 The Coates–Wiles derivatives
 
-For a pure element x=u⊗a⊗v⁻¹ of U∞*, using the Coleman series relative to v, put δ(x)=a f_u′(0)/f_u(0)∈O and δ_n(x)=a f_u′(v_n)/(λ′(v_n)f_u(v_n))∈Φ_n. Extend O-linearly and continuously. These maps are independent of tensor presentations and Tate basis, δ_n(gx)=gδ_n(x) for g∈Gal(Φ∞/Φ), and δ(gx)=δ(x). For r∈Λ₂ the last identity extends to δ(rx)=aug(r)δ(x). The denominators f_u(v_n) and λ′(v_n) are nonzero: the first is a unit and λ′ is the invertible invariant differential on the open formal disk.
+Use Ũ∞≃(lim_n P_n)⊗_ℤ_p O from §0.2 and first define the derivatives on Ũ∞*=Hom_O(T,Ũ∞). Relative to a Tate basis v, every element has a finite presentation x=Σ_i u_i⊗a_i⊗v⁻¹ with actual principal-unit families u_i. Put δ̃(x)=Σ_i a_i f_(u_i)′(0)/f_(u_i)(0)∈O and δ̃_n(x)=Σ_i a_i f_(u_i)′(v_n)/(λ′(v_n)f_(u_i)(v_n))∈Φ_n. Prove ℤ_p-balancedness, presentation independence and continuity on this ambient module. Define δ:U∞*→O and δ_n:U∞*→Φ_n by restricting to U∞*=(Ũ∞*)^Δ. These restrictions are independent of Tate basis, δ_n(gx)=gδ_n(x) for g∈Gal(Φ∞/Φ), and δ(gx)=δ(x). For r∈Λ₂, δ(rx)=aug(r)δ(x). The denominators f_(u_i)(v_n) and λ′(v_n) are nonzero: the first is a unit and λ′ is the invertible invariant differential on the open formal disk.
 
 (BKO21, §2, pp.948–949; BKO21 line 270.)
 
-A proof route is as follows. Multiplicativity of the interpolating series gives additivity of its logarithmic derivative. The identity λ′([b]X)[b]′(X)=bλ′(X) cancels the Tate-basis change. Differentiating the norm gives Tr_(Φ_(n+1)/Φ_n)δ_(n+1)=πδ_n. The value at zero has augmentation action.
+A proof route is as follows. Multiplicativity and continuity of the interpolating series give additivity and ℤ_p-linearity of its logarithmic derivative on lim_n P_n. Apply the tensor universal property on the ambient module, then the tame projector; pure tensors need not themselves lie in the omega component. The identity λ′([b]X)[b]′(X)=bλ′(X) cancels the Tate-basis change. Differentiating the norm gives Tr_(Φ_(n+1)/Φ_n)δ_(n+1)=πδ_n. The value at zero has augmentation action.
 
 Its API consists of the following facts on these same carriers and with these same hypotheses.
 
-- δ and δ_n are continuous O-linear maps on the inverse twist.
+- δ̃ and δ̃_n are continuous O-linear maps on Ũ∞*; δ and δ_n are their restrictions to the Δ-invariants.
+- Put D_n(f)=f′(v_n)/(λ′(v_n)f(v_n)). On the projected generator e_ω(u⊗a)⊗v⁻¹, δ_n is a(p²−1)⁻¹Σ_(d∈Δ)ω(d)⁻¹D_n(f_(du)); δ is a f_u′(0)/f_u(0). These agree with applying the Δ-average to u⊗a⊗v⁻¹ in Ũ∞*. Finite sums of these projected generators span U∞*; arbitrary pure tensors inside U∞* are not presumed to span it.
 - The simultaneous changes v→bv, a→ba, f→f∘[b⁻¹] leave δ and every δ_n unchanged.
 - δ_n(gx)=gδ_n(x) and δ(gx)=δ(x); thus δ(r x)=aug(r)δ(x).
 - Tr_(Φ_(n+1)/Φ_n)δ_(n+1)(x)=π δ_n(x).
@@ -300,8 +314,10 @@ Its API consists of the following facts on these same carriers and with these sa
 - For f=1, f′/(fλ′)=0, so δ=δ_n=0. A formula returning the constant coefficient gives 1 and fails.
 - Under a change of coordinate with derivative 2, the ordinary logarithmic derivative and λ′ both multiply by 2; their ratio is unchanged. Dividing only by f leaves an erroneous factor 2.
 - For basis change v↦−v the tensor scalar changes a↦−a and the derivative changes sign, so the product is a times the original derivative. Changing only one factor negates it.
+- At p=5 let ζ have order 3 in O, with ζ∉ℚ₅, and let d act on the ℤ₅-module O by multiplication by ζ. In O⊗_ℤ₅ O the vector z=(1⊗1+ζ⊗ζ⁻¹+ζ²⊗ζ⁻²)/3 satisfies dz=ζz and has multiplication image 1. Each displayed pure summand fails dz=ζz, so restricting the recipe to pure eigenvectors misses this nonzero vector. Applying the ambient sum followed by the projector retains z.
+- On a genuine omega eigenvector z_ω, the twisted tame average has multiplier (p²−1)⁻¹Σ_d ω(d)⁻¹ω(d)=1; on a different tame character its multiplier is 0. At p=5 these sums are 24/24=1 and 0/24=0, fixing the inverse weight in the projected-generator formula.
 
-*Needs:* §1.1; §0.4; `PowerSeries.coeff`; `PowerSeries.constantCoeff`; `PowerSeries.derivative`; LubinTateFormalModulesAndQuasiCanonicalLifts LT.0.
+*Needs:* §1.1; §0.2; §0.4; PadicMeasuresIwasawaAlgebras §§1.7, 5.2 (gap:compact-coefficient-duality); `PowerSeries.coeff`; `PowerSeries.constantCoeff`; `PowerSeries.derivative`; LubinTateFormalModulesAndQuasiCanonicalLifts LT.0.
 
 ### 1.3 Character Coates–Wiles derivatives
 
@@ -372,7 +388,7 @@ At p=5 the trivial Euler factor is 6/5. A plus element with δ-value 1 has δ_1=
 
 ### Dependencies
 
-The subsection *Needs:* lines give the internal dependencies. External inputs: ColemanPowerSeries Layer 1; IntegralIwasawaTheory §7.1; `PowerSeries.derivative`; LubinTateFormalModulesAndQuasiCanonicalLifts LT.0–LT.2; `PowerSeries.coeff`; `PowerSeries.constantCoeff`; LubinTateFormalModulesAndQuasiCanonicalLifts LT.0; PadicMeasuresIwasawaAlgebras §§4.2–4.3; NonordinaryCMSpecialValues NCM.5.
+The subsection *Needs:* lines give the internal dependencies. External inputs: PadicMeasuresIwasawaAlgebras §§1.7, 5.2 (gap:compact-coefficient-duality); ColemanPowerSeries Layer 1; IntegralIwasawaTheory §7.1; `PowerSeries.derivative`; LubinTateFormalModulesAndQuasiCanonicalLifts LT.0–LT.2; `PowerSeries.coeff`; `PowerSeries.constantCoeff`; LubinTateFormalModulesAndQuasiCanonicalLifts LT.0; PadicMeasuresIwasawaAlgebras §§4.2–4.3; NonordinaryCMSpecialValues NCM.5.
 
 ## Layer 2: Formal Kummer duality and reciprocity
 
@@ -435,7 +451,7 @@ Its API consists of the following facts on these same carriers and with these sa
 - With that same actual dual coordinate, multiplying Q⊗π^(−2) by π gives Q⊗π^(−1), and multiplying once more gives zero. At p=5 the paired values are (−5)(1/25)=−1/5 and (−5)(−1/5)=1=0 modulo O. The finite restriction/norm adjunction uses the same evaluation and local invariant; at the identity extension both sides have the nonzero value −1/5.
 - In O/5O the unramified coefficient trace in the finite Cartier comparison has Tr(1)=2 and Tr(3)=6=1 modulo 5. Thus the order-5 values 1/5 and 3/5 trace to 2/5 and 1/5 modulo ℤ₅; an identity scalar map instead gives 1/5 and 3/5. This tests the coefficient trace as well as nondegeneracy.
 
-*Needs:* §2.2; §0.2; §0.4; ClassFieldTheory Layer 6; ClassFieldTheory Layer 8; ArithmeticGaloisDuality §§R02.1.2–R02.1.3; PadicMeasuresIwasawaAlgebras §5.2 (gap:compact-coefficient-duality).
+*Needs:* §2.2; §0.2; §0.4; ClassFieldTheory Layer 6; ClassFieldTheory Layer 8; ArithmeticGaloisDuality §§R02.1.2–R02.1.3; CompletedCohomologyPartII §§3.1–3.2; PadicMeasuresIwasawaAlgebras §§1.7, 5.2 (gap:compact-coefficient-duality).
 
 ### 2.4 Descent of Kummer duality to the anticyclotomic tower
 
@@ -449,7 +465,7 @@ A proof route is as follows. Dualize Γ⁺-coinvariants on units. The p-power fi
 
 - For a scalar σ-action a on a one-dimensional unit module, inverse twisting changes it to κ(σ)⁻¹a. The required relation is then 1−1=0 when a=κ(σ); using the untwisted relation again gives 1−κ(σ), not 0.
 
-*Needs:* §2.3; §0.5; §2.2; ArithmeticGaloisDuality §§R02.1.2–R02.1.3; PadicMeasuresIwasawaAlgebras §5.2 (gap:compact-coefficient-duality).
+*Needs:* §2.3; §0.5; §2.2; ArithmeticGaloisDuality §§R02.1.2–R02.1.3; CompletedCohomologyPartII §§3.1–3.2; PadicMeasuresIwasawaAlgebras §§1.7, 5.2 (gap:compact-coefficient-duality).
 
 ### 2.5 Wiles’s trace formula in the pi normalization
 
@@ -471,7 +487,7 @@ For the trivial finite group the norm and restriction are identities, so Kummer 
 
 ### Dependencies
 
-The subsection *Needs:* lines give the internal dependencies. External inputs: ClassFieldTheory Layer 5; ArithmeticGaloisDuality §§R02.1.2–R02.1.3; Tau Ceti affine Cartier duality; LubinTateFormalModulesAndQuasiCanonicalLifts LT.2; PadicMeasuresIwasawaAlgebras §5.2; LubinTateFormalModulesAndQuasiCanonicalLifts LT.9; ClassFieldTheory Layer 6; ClassFieldTheory Layer 8; PadicMeasuresIwasawaAlgebras §5.2 (gap:compact-coefficient-duality).
+The subsection *Needs:* lines give the internal dependencies. External inputs: ClassFieldTheory Layer 5; ArithmeticGaloisDuality §§R02.1.2–R02.1.3; Tau Ceti affine Cartier duality; LubinTateFormalModulesAndQuasiCanonicalLifts LT.2; PadicMeasuresIwasawaAlgebras §5.2; LubinTateFormalModulesAndQuasiCanonicalLifts LT.9; ClassFieldTheory Layer 6; ClassFieldTheory Layer 8; CompletedCohomologyPartII §§3.1–3.2; PadicMeasuresIwasawaAlgebras §§1.7, 5.2 (gap:compact-coefficient-duality).
 
 ## Layer 3: Signed formal points and annihilators
 
@@ -612,7 +628,7 @@ Use the standing local data and an imaginary quadratic K satisfying §4.1. The c
 
 ### 4.1 An auxiliary CM field and character
 
-For every prime p≥5, construct an imaginary quadratic K in which 2 splits, p is inert and p∤h_K. Apply the canonical-character and auxiliary-prime contracts of NonordinaryCMSpecialValues NCM.0 and NCM.2 to this K: choose φ of type (1,0), conductor f supported at ramified primes, φ(pO_K)=−p and W(φ)=+1, its compatible CM elliptic realization over H and good differential period Ω, and a split prime l≥5 with l∤p h_K N(f) and p∤(l−1). This target owns the auxiliary-field existence and its assembly with those supplied objects.
+For every prime p≥5, construct an imaginary quadratic K in which 2 splits, p is inert and p∤h_K. The headline `exists_auxiliaryQuadraticField` states this on native number fields: [K:ℚ]=2, K is totally complex, (2)=PQ for distinct prime ideals P,Q of its integer ring, (p) is prime, and p does not divide its class number. Apply the canonical-character and auxiliary-prime contracts of NonordinaryCMSpecialValues NCM.0 and NCM.2 to this K: choose φ of type (1,0), conductor f supported at ramified primes, φ(pO_K)=−p and W(φ)=+1, its compatible CM elliptic realization over H and good differential period Ω, and a split prime l≥5 with l∤p h_K N(f) and p∤(l−1). This target owns the auxiliary-field existence and its assembly with those supplied objects.
 
 (BKO21, Lemma 3.1 and §3.0.1, pp.950–951; Theorem 3.4, pp.953–954; BKO21 line 339.)
 
@@ -620,6 +636,8 @@ A proof route is as follows. Choose 1≤a≤p−1 with (−a/p)=−1, and 0≤k�
 
 **Checks.**
 
+- In K=ℚ(√−7), α=(1+√−7)/2 has polynomial X²−X+2. Modulo 2 this is X(X−1), giving distinct primes (2,α) and (2,α−1); modulo 5 its discriminant is 3, a nonsquare, so (5) is prime. Here h_K=1 and 5∤1.
+- In K=ℚ(√−15), 2 splits and h_K=2, but at p=5 the discriminant is 0 modulo 5: (5) ramifies and is not prime, so this field fails the inertness clause.
 - The complete small-prime discriminant choices and the class numbers 1,2,3 are computed in the worked examples. At p=53, sqrt(424)(2+log(424))/π_real≈52.7612<53, and the corresponding ratio is decreasing.
 
 *Needs:* §0.1; ImaginaryQuadraticClassNumber H1.3, H2.1–H2.3 (gap:quadratic-class-number-upper-bound); NonordinaryCMSpecialValues NCM.0, NCM.2.
@@ -707,7 +725,7 @@ Use p≥5 and the standing unramified quadratic field. For the modular targets t
 
 There is E/ℚ with good reduction at p and a_p(E)=0. At p=5 or 11 choose the j=0 conductor-27 curve, and at p=7 choose the j=1728 conductor-32 curve. It may be chosen optimal in its ℚ-isogeny class without changing good reduction or a_p. Its base change to O has formal group O-isomorphic to F for π=−p.
 
-(BKO21, §5.0.1, p.955 and Lemma 5.1(ii), p.956; BKO21 line 554.)
+(BKO21, §5.0.1, p.955 and Lemma 5.1(ii), p.956, with the sign correction explained in §5.3; BKO21 line 554.)
 
 A proof route is as follows. Use the trace-zero existence theorem in the finite-field supplier contract, lift a nonsingular Weierstrass equation to ℤ and apply unconditional modularity. Replace E by the optimal representative; isogeny preserves good reduction and a_p. Apply the supplied unramified elliptic Honda comparison to its formal group.
 
@@ -735,13 +753,13 @@ A proof route is as follows. Apply AU96 Theorem A to the optimal parametrization
 
 For A/𝔽_(p²) with trace 2εp, ε∈{1,−1}, apply the scalar-Frobenius and Honda comparison of LubinTateFormalModulesAndQuasiCanonicalLifts LT.4 to show that every geometric cyclic subgroup C of order N prime to p is stable under Frobenius. Consequently the cyclic-level moduli point (A,C) is rational over 𝔽_(p²). Use the supplied parameter εp on the formal lift; selecting the trace −2p representative gives π=−p. This application owns subgroup descent to the level curve, not the scalar-endomorphism or Honda theorem.
 
-(BKO21, Lemma 5.1(i)–(ii), p.956; BKO21 line 573.)
+(BKO21, Lemma 5.1(i)–(ii), p.956; BKO21 line 573; BKO21 line 586. The displayed Honda-type and parameter signs in part (ii) are interchanged: the proof’s Frobenius εp gives type p−εX² and parameter εp.)
 
 A proof route is as follows. Scalar multiplication preserves every geometric prime-to-p subgroup as a subgroup; it need not fix each point. Frobenius-stability gives descent of its finite étale subgroup scheme and hence a rational moduli point. Apply the supplied Honda comparison only over the absolutely unramified quadratic coefficient ring.
 
 **Checks.**
 
-- At p=5 the two traces ±10 give scalars ±5 and point counts 16,36. On a point of order 6 the scalar −5 acts as 1; on a point of order 7 it acts as 2, preserving the subgroup without fixing the point.
+- At p=5 the two traces ±10 give scalars ±5 and point counts 16,36. The trace −10 representative has Frobenius −5 and parameter −5, while trace +10 gives +5 and parameter +5; the printed parameter ∓p reverses these. On a point of order 6 the scalar −5 acts as 1; on a point of order 7 it acts as 2, preserving the subgroup without fixing the point.
 
 *Needs:* LubinTateFormalModulesAndQuasiCanonicalLifts LT.4; ModularCurves Layers 8–9; §5.1.
 
@@ -1022,7 +1040,7 @@ A proof route is as follows. Dualize §7.3 to identify X⁻/(γ−1)X⁻ with O.
 
 - The coinvariant O reduces to O/pO of cardinal 25 at p=5 and dimension 1 over its residue field. The cyclic torsion module Λ/(T) has that same residual dimension but Λ-rank 0, so the positive-rank hypothesis is essential.
 
-*Needs:* §7.3; §3.6; §3.7; PadicMeasuresIwasawaAlgebras §5.2; PadicMeasuresIwasawaAlgebras §§4.2–4.5; Mathlib finite projective modules over local rings.
+*Needs:* §7.3; §3.6; §3.7; CompletedCohomologyPartII §§3.1–3.2; PadicMeasuresIwasawaAlgebras §5.2; PadicMeasuresIwasawaAlgebras §§4.2–4.5; Mathlib finite projective modules over local rings.
 
 ### Examples
 
@@ -1030,7 +1048,7 @@ At p=5,n=3 the Herbrand quotient is 25 and the primitive trace spans 5Oy, so the
 
 ### Dependencies
 
-The subsection *Needs:* lines give the internal dependencies. External inputs: Tau Ceti cyclic Tate cohomology, periodicity and Herbrand quotient (the pinned declarations in §7.1 and the supplier contract); PadicMeasuresIwasawaAlgebras §5.2; PadicMeasuresIwasawaAlgebras §§4.2–4.5; Mathlib finite projective modules over local rings.
+The subsection *Needs:* lines give the internal dependencies. External inputs: CompletedCohomologyPartII §§3.1–3.2; Tau Ceti cyclic Tate cohomology, periodicity and Herbrand quotient (the pinned declarations in §7.1 and the supplier contract); PadicMeasuresIwasawaAlgebras §5.2; PadicMeasuresIwasawaAlgebras §§4.2–4.5; Mathlib finite projective modules over local rings.
 
 ## Layer 8: Integral decomposition and finite Kummer images
 

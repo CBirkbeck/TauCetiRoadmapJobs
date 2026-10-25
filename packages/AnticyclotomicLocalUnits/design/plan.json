@@ -3160,21 +3160,21 @@
   "gaps": [
     {
       "slug": "quadratic-coefficient-coordinates",
-      "supplier": "PadicMeasuresIwasawaAlgebras",
-      "section": "4.5",
-      "needs": "For finite free unramified O/ℤ_p and Γ⁺≃Γ⁻≃ℤ_p, extend the supplied one-variable O-coordinate to a continuous coefficient-preserving two-variable equivalence O[[Γ⁺×Γ⁻]]≃O[[S,T]], with continuous inverse and two-variable noetherian local-domain properties, compatibly with coefficient extension, generator changes and κ-twisting, so that after inverse twisting the plus relation σ−1 corresponds to S and specialization S=0 recovers the supplied one-variable Γ⁻ coordinate."
+      "supplier": "SelmerIwasawaCohomology",
+      "section": "3.0",
+      "needs": "Relative to §3.0's coordinates and twists, identify the two-variable coordinate under finite free unramified coefficient extension and changes of the selected Γ⁺ and Γ⁻ generators, and prove that specialization of the plus coordinate to zero equals PadicMeasuresIwasawaAlgebras §4.5's selected Γ⁻ coordinate."
     },
     {
       "slug": "compact-coefficient-duality",
       "supplier": "PadicMeasuresIwasawaAlgebras",
       "section": "5.2",
-      "needs": "Finite free coefficient extension must commute with these compact inverse limits, and continuous O-duality into Φ/O must identify invariants with the dual of closed coinvariants and give biduality for the compact modules used here."
+      "needs": "Finite free coefficient extension O → W commutes, as a topological module equivalence, with the compact inverse limits of §§0.2 and 2.3, including ℤ_p → O for the ambient principal-unit limit."
     },
     {
       "slug": "general-unit-norm-control",
       "supplier": "IntegralIwasawaTheory",
       "section": "7.2",
-      "needs": "For any prime p, finite K/ℚ_p and abelian K∞/K with G=Δ×Γ, Δ finite of order prime to p and Γ≃ℤ_p^r, r≥1, put Z(F)=lim_(K⊆E⊆F, [E:K]<∞) lim_m Eˣ/(Eˣ)^(p^m), with norm transitions in E, and Z∞=Z(K∞); require, for K⊆F⊆F′⊆K∞ with Gal(F′/F)≃ℤ_p and σ∈G restricting to its topological generator, ker(N:Z(F′)→Z(F))=(σ−1)Z(F′), Z(F)/N Z(F′)≃ℤ_p with trivial G-action, and injectivity of σ−1 on Z(F′); moreover, for each nontrivial irreducible ℚ_p-character ψ of Δ, with idempotent e_ψ and A_ψ=e_ψℤ_p[Δ], K_n=K∞^(p^nΓ) and I_n=(γ_1^(p^n)−1,…,γ_r^(p^n)−1) for a ℤ_p-basis γ_i of Γ, require ker(Z∞,ψ→Z(K_n)_ψ)=I_n Z∞,ψ for every n≥0, identifying these coinvariants with the norm image in Z(K_n)_ψ, and, when r=2 and either μ_(p∞)(K∞)={1} or ψ differs from the tame cyclotomic character, require these coinvariants to be finite free over A_ψ of rank [K:ℚ_p]p^(2n)."
+      "needs": "For any prime p, finite K/ℚ_p and abelian K∞/K with G=Δ×Γ, Δ finite of order prime to p and Γ≃ℤ_p^r, r≥1, put Z(F)=lim_(K⊆E⊆F, [E:K]<∞) lim_m Eˣ/(Eˣ)^(p^m), with norm transitions in E, and Z∞=Z(K∞); require, for K⊆F⊆F′⊆K∞ with Gal(F′/F)≃ℤ_p and σ∈G restricting to its topological generator, ker(N:Z(F′)→Z(F))=(σ−1)Z(F′), Z(F)/N Z(F′)≃ℤ_p with trivial G-action, and injectivity of σ−1 on Z(F′); moreover, for each nontrivial irreducible ℚ_p-character ψ of Δ, with idempotent e_ψ and A_ψ=e_ψℤ_p[Δ], K_n=K∞^(p^nΓ) and I_n=(γ_1^(p^n)−1,…,γ_r^(p^n)−1) for a ℤ_p-basis γ_i of Γ, require ker(Z∞,ψ→Z(K_n)_ψ)=I_n Z∞,ψ for every n≥0, identifying these coinvariants with the norm image in Z(K_n)_ψ."
     },
     {
       "slug": "formal-point-completion-realization",

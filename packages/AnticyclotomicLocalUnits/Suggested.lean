@@ -3,14 +3,15 @@ import Mathlib
 /-!
 # Anticyclotomic local units: target signatures
 
-The roadmap is README.md; this file is not the roadmap. It records which of the
-roadmap's headline theorems can be stated against the pinned APIs.
+The roadmap is README.md; this file is not the roadmap. It states the roadmap's headline theorems that can be expressed against the
+pinned APIs: the auxiliary imaginary quadratic field existence theorem of §4.1.
 
 The following headline theorems are not statable at the pins:
 
 * Layer 0: rank-two freeness of the omega local-unit limit and its anticyclotomic
-  quotient. The arithmetic Lubin–Tate division tower, norm-compatible local-unit
-  limit and its inverse Tate twist are missing.
+  quotient, and general nonexceptional finite coinvariant freeness. The arithmetic
+  Lubin–Tate division tower, general norm-compatible multiplicative-group limit,
+  local-unit limit and its inverse Tate twist are missing.
 * Layer 1: height-two Lubin–Tate Coleman interpolation. The formal O-module,
   its compatible division points and the analytic interpolation carrier are missing.
 * Layer 2: universal formal-norm vanishing and perfect arithmetic Kummer duality.
@@ -19,6 +20,8 @@ The following headline theorems are not statable at the pins:
   the native Coates–Wiles derivatives are missing.
 * Layer 3: the signed annihilator theorem and signed rank bounds. The arithmetic
   character derivatives, Fourier logarithms and signed submodules are missing.
+* Layer 4: assembly of the auxiliary field with its canonical Hecke character, CM
+  realization and period. These marked Hecke-character and CM-period carriers are missing.
 * Layer 4: existence of an optimal plus unit with unit derivative. The actual
   anticyclotomic local-unit module and its Coates–Wiles derivative are missing.
 * Layers 5–6: a primitive modular formal CM point and the optimal local trace
@@ -43,5 +46,24 @@ assumed pairing or proposition-valued replacement states these headlines.
 -/
 
 namespace TauCetiRoadmap.AnticyclotomicLocalUnits
+
+/-! ## Layer 4: An optimal plus unit from early CM values -/
+
+/-- For every prime p at least five there is an imaginary quadratic number field
+in which 2 splits into distinct prime ideals, p is inert, and p does not divide
+its class number (BKO21, Lemma 3.1, pp.950–951). -/
+theorem exists_auxiliaryQuadraticField (p : ℕ) (hp : p.Prime) (hp5 : 5 ≤ p) :
+    ∃ (K : Type) (hK : Field K),
+      letI := hK
+      ∃ hNF : NumberField K,
+        letI := hNF
+        Module.finrank ℚ K = 2 ∧ NumberField.IsTotallyComplex K ∧
+          ∃ P Q : Ideal (NumberField.RingOfIntegers K),
+            P.IsPrime ∧ Q.IsPrime ∧ P ≠ Q ∧
+            Ideal.span ({2} : Set (NumberField.RingOfIntegers K)) = P * Q ∧
+            (Ideal.span ({(p : NumberField.RingOfIntegers K)} :
+              Set (NumberField.RingOfIntegers K))).IsPrime ∧
+            ¬ p ∣ NumberField.classNumber K := by
+  sorry
 
 end TauCetiRoadmap.AnticyclotomicLocalUnits
