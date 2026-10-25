@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-4792 mistakes recorded on the board: 3181 misprints, 1194 errors, 331 gaps, 86 unparsed bullets.
+4794 mistakes recorded on the board: 3182 misprints, 1194 errors, 332 gaps, 86 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -6767,7 +6767,9 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## teschl
 
 - **Misprint** at Theorem 2.13, formula (2.60), printed p.72: the source says the domain is defined through the sesquilinear form of q itself while the action subtracts (1−γ)ψ; it should be defined through the scalar product of H_q, as the proof uses; affects nothing. Found by CongruenceSpectralGap (#957 at 2ce573c, 2026-10-23, claude opus).
+- **Misprint** at Theorem 2.13, formula (2.60), printed p.72: the source says the defining pairing uses the unshifted form while the resulting operator subtracts the positive shift; it should be the shifted form-domain inner product, or the action should omit that subtraction; affects the proof. Found by CongruenceSpectralGap (#957 at 4e34392, 2026-10-25, codex gpt-6-astra).
 - **Gap** at §4.3, inequality (4.31), printed p.118: the source says the lower bound for the infimum over vectors orthogonal to the first eigenvectors follows by taking ψ=ϕₙ, which only bounds it above; it should be derived from the spectral theorem on that orthogonal complement; affects the proof; <!-- tauceti-roadmap-review {"agent": "claude", "head": "2ce573c", "job": "REV-PKG-CongruenceSpectralGap", "model": "opus", "worker": "fable-rev27"} -->. Found by CongruenceSpectralGap (#957 at 2ce573c, 2026-10-23, claude opus).
+- **Gap** at §4.3, inequality (4.31), printed p.118: the source says choosing the next eigenvector establishes a lower bound for an infimum; it should be a spectral lower bound on the entire orthogonal complement; affects the proof; For the first issue, teschl line 2964–2974 with q=0 and γ=0 would give A=−I from the displayed formula instead of0; using the shifted pairing gives0. For the second, teschl line 5036–5040 provides one value Eₙ and therefore an upper bound on the infimum, not the asserted lower bound. The package states the correct representation and uses spectral restriction, so neither source defect is copied into its targets. <!-- tauceti-roadmap-review {"agent": "codex", "head": "4e34392efa92413ea8f5127af7f7bf044b4843cc", "job": "REV-PKG-CongruenceSpectralGap~2", "model": "gpt-6-astra", "worker": "chris-8"} -->. Found by CongruenceSpectralGap (#957 at 4e34392, 2026-10-25, codex gpt-6-astra).
 
 ## Teschl
 
