@@ -8,11 +8,11 @@ The base roadmap AlgebraicModularFormsAndSerreWeights R15.1–R15.6 supplies the
 
 Generic tensor, symmetric-power, determinant and dual bundle constructions are stated by AlgebraicVectorBundles §§L0A–L0C and AutomorphicBundles B2–B3. Canonical and subcanonical extensions and their generic vector expansion principle are stated by AutomorphicBundles §§B3.2–B3.4, B5.14–B5.15; §§1.1–1.4 below specialize them to binary Fourier indices and all geometric components. The generic componentwise coefficient-recognition proof is imported. The double-coset Hecke ring, its finite left-coset decompositions, the degree map and the elementary-divisor parametrization are stated by ModularForms Layer 2; §5.2 owns the ℙ¹(𝔽_p) parametrization of the determinant-p left cosets, their normalized binary-index integrality and the arbitrary prime-to-p congruence-level extension. Binary quadratic forms with their discriminant and SL₂-action are Tau Ceti's; §1.2 adds the determinant-normalized GL₂(ℚ) action used for Fourier indices. The projective-zero theorem is stated by ClassicalArithmeticCompletion §1.17; §6.2 applies it to labeled neighbor occurrences.
 
-The primary semiabelian Hasse section and its ordinary and minimal-model comparisons are stated by HodgeTateAndCanonicalSubgroups §§0.12–0.16. General BT₁ filtration, Hasse–Witt complexes and Fargues determinant duality are stated by FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.2.2, R07.2.21–R07.2.23. Layers 2–3 own the genus-two reducedness, secondary invariant, rank-one flags and its global extension and root. The split subgroup recipes use these imported carriers; they introduce no second BT₁ or primary-Hasse theory.
+The primary semiabelian Hasse section and its ordinary and minimal-model comparisons are stated by HodgeTateAndCanonicalSubgroups §§0.12–0.16. General BT₁ filtration, Hasse–Witt complexes and Fargues determinant duality are stated by FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.2.2, R07.2.21–R07.2.23. Layers 2–3 own the genus-two reducedness, secondary invariant, rank-one flags and its global extension and root. The split subgroup recipes use these imported carriers; they introduce no second BT₁ or primary-Hasse theory. The general finite-field Lang theorem belongs to ReductiveGroupsPartII §RG2.3.7; §8.4 uses its SL₂ specialization for normalized frames.
 
 Spherical integral toroidal and minimal models belong to ShimuraCompactifications §§C5.3 and C5.16; the Klingen and paramodular models, their universal isogeny chain and the integral compactified correspondence are requested from that roadmap by the extension recorded below. General coherent duality, Hartogs, ample vanishing and formal functions belong to SchemeAndStackFoundations §§0.6, 2.6, 2.7, 2.19–2.20 and 4.9. Krull intersection is already in the library as Mathlib `Ideal.iInf_pow_smul_eq_bot_of_isLocalRing`. Layer 7 owns the genus-two integral factorizations and corrected Q₂ correspondence, which differ from the generic rational Hecke action of AutomorphicBundles §§B5.10–B5.11.
 
-The ordinary Igusa tower belongs to HodgeTateAndCanonicalSubgroups §§5.1–5.2, which treat Hilbert modular varieties with torsor group (𝒪_F/p^m)^×; its genus-two full-frame extension is requested from that roadmap below. Layer 9 owns its function weight spaces, saturated expansions and coefficient comparisons. Analytic coefficient sheaves, overconvergent Hecke actions and their analytic comparisons belong to OverconvergentAutomorphicForms Layers 5–6; the integral ordinary interface here is the algebraic comparison target for those constructions.
+The ordinary Igusa tower belongs to HodgeTateAndCanonicalSubgroups §§5.1–5.2, which treat Hilbert modular varieties with torsor group (𝒪_F/p^m)^×; its genus-two full-frame extension is requested from that roadmap below. Layer 9 owns its function weight spaces, saturated expansions and marked Klingen coefficient comparison. Analytic coefficient sheaves, overconvergent Hecke actions and their analytic comparisons belong to OverconvergentAutomorphicForms Layers 5–6; the integral ordinary interface here is the algebraic comparison target for those constructions.
 
 ## Conventions
 
@@ -105,6 +105,10 @@ What SchemeAndStackFoundations must provide (gap:open-formal-milnor): Provide th
 What SchemeAndStackFoundations must provide (gap:lci-fundamental-class): Provide the determinant-of-cotangent-complex identification and fundamental class for projectively embeddable proper maps between flat lci schemes of equal relative dimension, with perfect-coefficient projection formula, finite-flat trace comparison, logarithmic boundary ideal compatibility and integral derived reduction even for nonflat correspondence maps.
 
 What SchemeAndStackFoundations must provide (gap:reduced-section-propagation): Provide injectivity of restriction of a locally free sheaf on a reduced scheme to an open dense in every irreducible component, with componentwise propagation from neighborhoods meeting those components.
+
+### From TauCetiRoadmap.ReductiveGroupsPartII
+
+§RG2.3.7 supplies the ordinary Frobenius Lang theorem `Lang.lang_surjective`: for a smooth geometrically connected finite-type group H over 𝔽_q, the map g↦g⁻¹F(g) is surjective on H(𝔽̄_q). Use it in §8.4 for SL₂ over 𝔽_p, which is smooth, geometrically connected and of finite type; only the ordinary finite-type theorem is needed.
 
 ## How to read the build
 
@@ -682,7 +686,7 @@ The API records the following facts.
 - For d=0, a(ZF,n,r,m)=a(F,pn,r,m/p)+Σ_(0≤a<p)a(F,(n+ar+a²m)/p,r+2ma,pm), with nonintegral terms zero.
 - For the scalar constant series at p=3, U and V have constant value 1 while Z and Z₂ have value 4. A primitive index with coefficient 1 is killed by VU, whereas UV retains it.
 
-For d=0 recover the two scalar formulas recorded in the worked examples. The source’s ordinary U_(p,2) is Z₂ in the congruences; it is not the diagonal U₂.
+For d=0 recover the two scalar formulas recorded in the worked examples. In CG20’s formal spherical congruences, U_(p,2) denotes Z₂. The marked Klingen operator of §9.4 is defined by its own normalized trace; U₂ denotes the diagonal operator of §5.4.
 
 *Needs:* §5.1; §5.2.
 
@@ -1091,7 +1095,7 @@ The API records the following facts.
 
 ### 8.3 Small symmetric powers of SL₂(F_p)
 
-For 0≤d≤p−1 and a field k in Type of characteristic p, the natural representation Sym^d(k²) of SL₂(F_p) is irreducible. Consequently, if Γ⊂GL₂(k) is conjugate in GL₂(k) to the image of SL₂(F_p), then for every nonzero P∈Sym^d(k²) and every nonzero linear form ℓ on Sym^d(k²) some γ∈Γ has ℓ(γ·P)≠0, because the span of the orbit of P is a nonzero Γ-invariant subspace. §8.4 applies this to the special unitary group of frame changes preserving Koblitz's dual-basis normalization, which is such a conjugate when k is algebraically closed. For SL₂(F_p) itself and d<p+1 the coefficient of x^d can also be reached directly, since every nonzero binary form of degree d has a nonzero value at a primitive vector of F_p². The frame changes are in a geometric fiber and are not a global action on the modular-form space. The pinned acceptance theorem is `smallSymmetricPower_irreducible`, on the standard coefficient-field representation `standardSL2`; its field and characteristic hypotheses occur in both declaration signatures. (CG20, Proof of Theorem 8.11, internal p. 63 (863); CG20 line 2469; Y16, Theorem 4.9 and proof, p. 39; Y16 line 2112).
+For 0≤d≤p−1 and a field k in Type of characteristic p, the natural representation Sym^d(k²) of SL₂(F_p) is irreducible. Consequently, if Γ⊂GL₂(k) is conjugate in GL₂(k) to the image of SL₂(F_p), then for every nonzero P∈Sym^d(k²) and every nonzero linear form ℓ on Sym^d(k²) some γ∈Γ has ℓ(γ·P)≠0, because the span of the orbit of P is a nonzero Γ-invariant subspace. §8.4 applies this to the special unitary group of frame changes preserving Koblitz's dual-basis normalization, which is such a conjugate when k is algebraically closed. For SL₂(F_p) itself and d<p+1 the coefficient of x^d can also be reached directly, since every nonzero binary form of degree d has a nonzero value at a primitive vector of F_p². The frame changes are in a geometric fiber and are not a global action on the modular-form space. The pinned acceptance theorem is `smallSymmetricPower_irreducible`, on the standard coefficient-field representation `standardSL2`; its field and characteristic hypotheses occur in both declaration signatures. (CG20, proof of Theorem 8.11, internal p. 62 (862); CG20 line 2458–2460; Y16, Theorem 4.9 and proof, p. 39; Y16 line 2112).
 
 p is prime; only d≤p−2 is needed for the vector-theta frame step.
 
@@ -1126,9 +1130,9 @@ The interpolation uses degrees <p, including d=p−1. For d=p+1, x^p y−xy^p va
 
 If a scalar form of weight k≥2 is nonzero on SS and p does not divide k(2k−1), then ΘF≠0. For vector weight (j,k) with d=j−k≥2 and p>d+1, a nonzero superspecial value gives θ₁F≠0 when j−3k is nonzero modulo p. In weight (6,2), the same conclusion holds for every p≥7 by choosing a local frame in which the coefficient F₂ is nonzero; the local linear term has nonzero coefficient j−3=3. The frames used are those preserving Koblitz's dual-basis normalization, in which Yamauchi's local expansion holds; this is a change of fiber frame at the fixed point, not a Γ̄-action on global modular forms. (Y16, Theorem 4.7 and proof, p. 38; Theorem 4.9 and proof, p. 39; Y16 line 2044, 2129–2141; K75, Chapter IV, Lemma 13 and its corollary, pp. 191–192; K75 line 1676–1700; CG20, Proof of Theorem 8.11, internal p. 62 (862); CG20 line 2433).
 
-The superspecial point and its coefficients may be taken over an algebraic closure k̄₀. A change of basis C of H⁰(Ω¹) at the point, with the dual change of H¹(O), keeps the normalized Hasse–Witt matrix equal to the identity exactly when C^(p)Cᵗ=I. These C form the unitary group U of 𝔽_(p²)/𝔽_p for the identity hermitian form; an upper unipotent [[1,a],[0,1]] with a≠0 in 𝔽_p is not in U.
+The superspecial point and its coefficients may be taken over an algebraic closure k̄₀. Koblitz’s auxiliary bijective p-linear block B:H¹(O)→H⁰(Ω¹) is normalized to I, whereas the Hasse–Witt block A of the universal deformation has A(0)=0 and A(t)≡(t_ij) modulo the square of the deformation ideal. A change of basis C of H⁰(Ω¹) at the point, with the dual change of H¹(O), preserves B=I exactly when C^(p)Cᵗ=I (K75 line 1673–1700; Y16 line 2061–2069). These C form the unitary group U of 𝔽_(p²)/𝔽_p for the identity hermitian form; an upper unipotent [[1,a],[0,1]] with a≠0 in 𝔽_p is not in U.
 
-A proof route is as follows. Use the generic first-order superspecial deformation to evaluate the scalar constant term as a nonzero unit times k(2k−1)F|_x. For vectors compute, in a normalized frame, the three linear coefficients involving (j−3k)F₀/2, (j−3k)F₁/2 and (j−3)F₂. For C of determinant one, the condition C^(p)Cᵗ=I says that C is fixed by C↦J⁻¹C^(p)J with J=[[0,1],[−1,0]], because (Cᵗ)⁻¹=JCJ⁻¹ on SL₂; by Lang's theorem U∩SL₂ is conjugate in GL₂(k̄₀) to SL₂(𝔽_p). Since d≤p−2, §8.3 gives an element of U∩SL₂ moving the nonzero value F|_x to a vector with F₀≠0 when j−3k≢0, or with F₂≠0 when (j,k)=(6,2); then use the corresponding linear coefficient.
+A proof route is as follows. Use the generic first-order superspecial deformation to evaluate the scalar constant term as a nonzero unit times k(2k−1)F|_x. For vectors compute, in a normalized frame, the three linear coefficients involving (j−3k)F₀/2, (j−3k)F₁/2 and (j−3)F₂. For C of determinant one, the condition C^(p)Cᵗ=I says that C is fixed by C↦J⁻¹C^(p)J with J=[[0,1],[−1,0]], because (Cᵗ)⁻¹=JCJ⁻¹ on SL₂; apply the ordinary Frobenius Lang theorem of ReductiveGroupsPartII §RG2.3.7 to the smooth geometrically connected finite-type group SL₂/𝔽_p. Choose g∈SL₂(k̄₀) with g⁻¹g^(p)=J⁻¹ and put B_L=g⁻¹, so B_L^(p)=JB_L. Then C=B_L A₀ B_L⁻¹ is fixed by C↦J⁻¹C^(p)J exactly when A₀^(p)=A₀. Thus U∩SL₂=B_L SL₂(𝔽_p) B_L⁻¹. Since d≤p−2, §8.3 gives an element of U∩SL₂ moving the nonzero value F|_x to a vector with F₀≠0 when j−3k≢0, or with F₂≠0 when (j,k)=(6,2); then use the corresponding linear coefficient.
 
 **Checks.**
 
@@ -1137,10 +1141,13 @@ A proof route is as follows. Use the generic first-order superspecial deformatio
 - At k=p the scalar factor k(2k−1) is 0 modulo p, so the numerical hypothesis deliberately fails.
 - For C=[[1,1],[0,1]]∈SL₂(𝔽_p), C^(p)Cᵗ=CCᵗ=[[2,1],[1,1]]≠I, so this frame change leaves Koblitz's normalization and the local expansion does not apply in the new frame. For p=3 and i∈𝔽₉ with i²=−1, the matrix C=[[0,i],[i,0]] has C^(3)Cᵗ=[[0,−i],[−i,0]][[0,i],[i,0]]=I and determinant 1, so it lies in U∩SL₂.
 - At p=7,(j,k)=(6,2) the hypothesis p>d+1=5 holds, and j−3=3≢0 modulo 7; at p=5 the weight (6,2) has d=4=p−1 and is excluded.
+- At the superspecial origin, the normalized auxiliary block is B=I and the Hasse–Witt block is A(0)=0. Every invertible change of dual frames still sends the zero block to 0; it cannot make A(0)=I.
+- With B_L^(p)=JB_L and A₀∈SL₂(𝔽_p), J⁻¹(B_L A₀ B_L⁻¹)^(p)J=B_L A₀ B_L⁻¹; conversely (B_L⁻¹CB_L)^(p)=B_L⁻¹CB_L for a fixed C. For A₀=[[1,1],[0,1]], conjugation by J gives JA₀J⁻¹=[[1,0],[−1,1]], fixing the sign and direction of this Frobenius equation.
+- On the disconnected constant group of order two, Frobenius fixes both elements and g⁻¹F(g)=1 for both. The image has one element instead of two, so Lang surjectivity cannot be imported without geometric connectedness.
 
 The exceptional case requires only a local frame change. The irreducibility check is in the stated small-degree characteristic-p range.
 
-*Needs:* §8.2; §8.3; Tau Ceti `Representation.symmetricPower`; AbelianSchemesAndArithmeticModuli §§A4.3, A4.7 (gap:siegel-logarithmic-de-rham); ShimuraCompactifications §C5.12.
+*Needs:* §8.2; §8.3; ReductiveGroupsPartII §RG2.3.7; Tau Ceti `Representation.symmetricPower`; AbelianSchemesAndArithmeticModuli §§A4.3, A4.7 (gap:siegel-logarithmic-de-rham); ShimuraCompactifications §C5.12.
 
 ### 8.5 Negative-weight section vanishing
 
@@ -1202,7 +1209,7 @@ At p=7,d=2, con₂(y²⊗x²)=1/3=5 while det(x²)=0. At p=5 the Hasse weight is
 
 ### Dependencies
 
-Layers 1–3 and 5; Tau Ceti `Representation.symmetricPower`; Tau Ceti `Module.Basis.symmetricPower`; Tau Ceti `TauCeti.stdSLRep`; Mathlib `Matrix.SpecialLinearGroup.map`; Mathlib `ZMod.castHom`; Mathlib `Representation.IsIrreducible`; ShimuraCompactifications §§C5.12, C5.23; AbelianSchemesAndArithmeticModuli §§A4.3, A4.7 (gap:siegel-logarithmic-de-rham); Mathlib `Ideal.iInf_pow_smul_eq_bot_of_isLocalRing`; SchemeAndStackFoundations §0.6 (gap:reduced-section-propagation).
+Layers 1–3 and 5; Tau Ceti `Representation.symmetricPower`; Tau Ceti `Module.Basis.symmetricPower`; Tau Ceti `TauCeti.stdSLRep`; Mathlib `Matrix.SpecialLinearGroup.map`; Mathlib `ZMod.castHom`; Mathlib `Representation.IsIrreducible`; ReductiveGroupsPartII §RG2.3.7; ShimuraCompactifications §§C5.12, C5.23; AbelianSchemesAndArithmeticModuli §§A4.3, A4.7 (gap:siegel-logarithmic-de-rham); Mathlib `Ideal.iInf_pow_smul_eq_bot_of_isLocalRing`; SchemeAndStackFoundations §0.6 (gap:reduced-section-propagation).
 
 ## Layer 9: Ordinary p-adic forms and coefficient comparison
 
@@ -1289,21 +1296,29 @@ No finite-level injectivity theorem is obtained merely by reducing the integral 
 
 ### 9.4 Klingen ordinary coefficient operator
 
-On the ordinary genus-two Igusa function space, normalize the Klingen degree-zero operator U_(p,2)^ord so that its formal coefficient action is Z₂=UZ: a(U_(p,2)^ord f,Q)=Σ_Mρ_d(M)a(f,M⁻¹·pQ) at an algebraic weight of symmetric degree d, and the corresponding finite-coset action on continuous frame functions at continuous weight. It preserves integral expansions and hence the integral function lattice by saturation. This operator is distinct from the diagonal formal U₂=−1+pX₂. At algebraic weight (d+r,r) it corresponds, under the classical comparison of §9.3 restricted to the multiplicative Klingen component, to the Klingen-level operator p^(3−r)U_(Kli(p),1) in the similitude^(−3) normalization of Layer 5, including the central and cusp transports; this is the normalization against which analytic consumers compare their operators (P20, §10, p. 57; P20 line 2616). (T06, §3.2, p. 810, for the trace-normalized p^(−3)[diag(1,p,p,p²)] on p-adic forms; T06 line 1313–1314; CG20, §5.5, internal p. 33 (833); Lemmas 8.3–8.4, pp. 58–59 (858–859); CG20 line 1315; P20, §13.3.1, p. 89, for the integrality of its q-expansions; P20 line 4094–4099).
+On the ordinary genus-two full Igusa tower, retain the multiplicative Klingen marking H_m selected by the frame, with m≥1. The interior correspondence C(p^m) parametrizes (G,H_m,L), where L⊂G[p²] is totally isotropic of order p⁴, L[p] has order p³ and L∩H_m=0. Its maps are t₁(G,H_m,L)=(G,H_m) and t₂(G,H_m,L)=(G/L,(H_m+L)/L). Use the compactification obtained by the degree-p³ and degree-p factors, and lift to the corresponding transported Igusa frames (P20, §§10.1–10.2, pp. 57–60; P20 line 2618–2628, 2649–2650, 2668–2703, 2716–2750).
 
-The operator is the ordinary Klingen correspondence lifted to the full Igusa frames; its finite-sum formula is part of this theorem, and lattice preservation follows from that formula and saturation. At a continuous weight use the induced correspondence on full-frame functions; the character κ has domain ℤ_pˣ and is never evaluated at p.
+Define the degree-zero marked operator U_(p,2)^ord on V_(κ,r) by the integral normalized correspondence (p⁻³ Tr_t₁) ∘ φ_norm ∘ t₂*. Here φ_norm carries the pulled-back target coefficient realization to the source realization on C(p^m). At algebraic weight (d+r,r), φ_norm:t₂*Ω(d,r)→t₁*Ω(d,r) is the natural symmetric-power differential map tensored with the determinant pullback normalized by p⁻ʳ; the degree-p³ factor has differential diag(p,1) in an adapted frame and the degree-p factor is étale. At continuous weight use the induced transport of marked frames with the character law of §9.1; κ is evaluated only on units. The normalized trace is constructed integrally before finite coefficient reduction, with factors p⁻² and p⁻¹ on the compactified factors (P20, Lemmas 10.3.2–10.3.4 and §10.4, pp. 60–63; P20 line 2760–2774, 2800–2841, 2842–2907).
 
-A proof route is as follows. Lift the ordinary Klingen correspondence to the full Igusa tower and express its finite cosets in the frame functions. Match the algebraic specialization with the Z₂ coefficient identity from Layer 5; the p-powers are determined by the rational Hecke normalization. Use the saturated full-frame expansion principle to prove lattice preservation, retaining the source and target weight characters of each correspondence map.
+Its all-frame expansion is obtained by pulling the cusp expansion along t₂, applying φ_norm, and taking the normalized t₁-trace on the marked cusp correspondence. Explicitly, for each marked cusp c, `Exp_c(U_(p,2)^ord f) = (p^(-3) Tr_(t1,c))(phi_(norm,c)(t2,c* Exp(f)))`, where the trace includes the finite branch degrees and the induced coefficient, index and cusp transports. This expansion preserves the integral lattice and hence, by §9.2, the integral function module; it commutes with coefficient reduction and the tower transitions. Its indexing retains L∩H_m=0 throughout. At algebraic weight it intertwines the evaluation of §9.3, pulled back to the multiplicative Klingen component, with p^(3−r)U_(Kli(p),1) in Layer 5’s similitude^(−3) normalization (P20, §10, p. 57; P20 line 2616–2617; §13.3.1, p. 89; P20 line 4094–4099).
+
+A proof route is as follows. Base-change the compactified factorization to the marked tower. Construct its normalized trace using the ordinary Serre–Tate equations and the boundary fundamental classes of §7.5. Normalize the coefficient pullback on the character lattice before tensoring, transport the marked frames, and compute expansions by that same pullback–trace. Compare the algebraic specialization using P20 §10.4, and pass to the coefficient and tower limits of §9.1. Integral trace and coefficient maps, followed by saturation, give lattice preservation. A comparison with the full spherical formal sum Z₂ after forgetting or summing markings requires a separate identity with its marking multiplicities.
+
+The API records the following facts.
+
+- U_(p,2)^ord is an integral endomorphism of V_(κ,r), also preserving its cusp submodule.
+- Its expansion is the marked normalized pullback–trace displayed above, with L∩H_m=0 and every branch multiplicity retained.
+- At algebraic weights it commutes with classical evaluation for the normalized Klingen-level operator p^(3−r)U_(Kli(p),1).
+- Finite coefficient reductions and tower transitions intertwine the integral operator, without division by p on torsion coefficients.
 
 **Checks.**
 
-- On scalar constant full-frame functions at p=3, the finite sum defining Z₂ has value p+1=4; the diagonal U₂ at Q=0 has value p²−1=8.
-- At algebraic degree 1 and M=diag(3,1), the transported coefficients x,y have values 3x,y, agreeing with the integral symmetric-power action.
-- For κ:ℤ₃ˣ→Oˣ, κ(1)=1 is defined while κ(3) has no domain value; the full-frame correspondence must supply the action instead.
+- Over a geometric ordinary interior point with G[p²]=μ_(p²)²⊕(ℤ/p²)² and fixed H₁⊂μ_p², the multiplicative part of L is a line different from H₁. There are p choices. For each, the two monic Serre–Tate equations have degrees p and p², so each branch has degree p³ and deg(t₁)=p⁴. At weight zero φ_norm=1, giving U_(p,2)^ord(1)=p⁴/p³=p. At p=3 this is 81/27=3, and at p=5 it is 625/125=5. The formal Z₂(1) instead equals 4 and 6, respectively; modulo p the values are 0 and 1.
+- In an adapted algebraic frame the degree-p³ factor acts on E by diag(p,1). At d=1,r=1 it sends x,y to p²x,py before determinant normalization and to px,y afterwards; the étale factor contributes an invertible differential. At p=3 these normalized values are 3x,y.
+- At p=2 the same branch count is 2·8=16 and the normalized constant trace is 16/8=2, whereas Z₂(1)=3; no odd-prime discriminant formula is used.
+- For κ:ℤ₃ˣ→Oˣ, κ(1)=1 is defined while κ(3) has no domain value. The transported-frame definition supplies the continuous-weight action without such a value.
 
-A continuous character of Z_p× is never evaluated at p. The diagonal U₂ is not silently substituted for Z₂.
-
-*Needs:* §9.2; §9.3; §5.3; §5.5; HodgeTateAndCanonicalSubgroups §§5.1–5.2 (gap:siegel-igusa-full-frames).
+*Needs:* §9.1; §9.2; §9.3; §7.5; §3.8; ShimuraCompactifications §C5 (gap:siegel-parahoric-models); AbelianSchemesAndArithmeticModuli §§A4.10–A4.11 (gap:siegel-isogeny-trace-ideals); SchemeAndStackFoundations §§2.19–2.20 (gap:lci-fundamental-class); HodgeTateAndCanonicalSubgroups §§5.1–5.2 (gap:siegel-igusa-full-frames).
 
 ### Examples
 
@@ -1311,11 +1326,11 @@ At p=3,n=1, GL₂(𝔽₃) has 48 elements; its diagonal subgroup has 4. The wei
 
 ### Dependencies
 
-Layers 1 and 5; HodgeTateAndCanonicalSubgroups §§5.1–5.2 (gap:siegel-igusa-full-frames); HodgeTateAndCanonicalSubgroups §0.14.
+Layers 1, 3, 5 and 7; ShimuraCompactifications §C5 (gap:siegel-parahoric-models); AbelianSchemesAndArithmeticModuli §§A4.10–A4.11 (gap:siegel-isogeny-trace-ideals); SchemeAndStackFoundations §§2.19–2.20 (gap:lci-fundamental-class); HodgeTateAndCanonicalSubgroups §§5.1–5.2 (gap:siegel-igusa-full-frames); HodgeTateAndCanonicalSubgroups §0.14.
 
 ## Downstream consumers
 
-Subsequent higher Hida and Coleman comparison theorems consume the integral ordinary coefficient target, full-frame expansion and algebraic specialization of Layer 9; any analytic-to-Igusa map must identify the rational normalization p^(3−r)U_(Kli(p),1) of §9.4 (P20, §10, p. 57). Torsion and ordinary automorphic applications consume Layer 7 with all finite and K/O coefficient maps, and Layer 8 with its exact prime and weight bounds. A consumer using a symmetric binary-neighbor relation at arbitrary tame level must supply the explicit diamond/cusp identification of the two orientations; §6.3 supplies the general oriented relation. The independent generic GL₃ Serre-weight and Breuil-lattice continuation imports no genus-two result merely from sharing the parent roadmap.
+Subsequent higher Hida and Coleman comparison theorems consume the integral ordinary coefficient target, full-frame expansion and algebraic specialization of Layer 9; any analytic-to-Igusa map must identify the marked pullback–trace and rational normalization p^(3−r)U_(Kli(p),1) of §9.4, retaining L∩H_m=0 and the trace multiplicities (P20, §§10.1–10.4, pp. 57–63). Its algebraic specialization is the marked Klingen action; comparison with the full formal Z₂ sum requires an additional forgetting-or-summing identity. Torsion and ordinary automorphic applications consume Layer 7 with all finite and K/O coefficient maps, and Layer 8 with its exact prime and weight bounds. A consumer using a symmetric binary-neighbor relation at arbitrary tame level must supply the explicit diamond/cusp identification of the two orientations; §6.3 supplies the general oriented relation. The independent generic GL₃ Serre-weight and Breuil-lattice continuation imports no genus-two result merely from sharing the parent roadmap.
 
 ## Worked examples
 

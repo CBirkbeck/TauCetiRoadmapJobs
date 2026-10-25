@@ -38,8 +38,9 @@ The following headline theorems are not statable at the pins:
 * Negative-weight vanishing and scalar/vector low-weight theta injectivity lack
   those geometric section modules and the normalized geometric theta maps.
 * Saturated ordinary expansions, the injective integral classical comparison
-  and the normalized Klingen comparison lack the full genus-two Igusa tower
-  and its function module and geometric correspondence.
+  and the normalized marked Klingen pullback–trace comparison lack the full
+  genus-two Igusa tower, its function module and the correspondence retaining
+  disjointness from its multiplicative Klingen marking.
 
 No formal-series substitute or proposition-valued proxy is asserted for these
 geometric theorems.
