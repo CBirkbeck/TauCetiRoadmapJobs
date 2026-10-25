@@ -14,7 +14,7 @@ ReductiveGroups Layer 7 and LieGroups Layer 7 own the group root datum and real 
 
 GlobalHolomorphicFunctions, **Preparatory primary factors and locally uniform products**, owns the elementary factors, locally uniform product construction and exact zero divisor. Here §0.2 adds the fixed-genus finite-rank global growth bound, including rank zero and an origin factor. The native formulas in Suggested.lean spell the supplied product for this acceptance test. ZerosOfLFunctions, standing **finite order** convention and Layer 5.1–5.6, owns order bounds and genus-one Hadamard theory; the predicate in §0.2 is only the existential integral global-bound specialization needed for interpolation. ModularCurvesPartII §1.4a, **Lattice sigma function**, owns the rank-two period-lattice sigma specialization. No Hadamard factorization or elliptic sigma theory is developed here.
 
-Mathlib supplies Euclidean Schwartz functions, entire holomorphy, exponential and polynomial evaluation, unordered sums/products, almost-everywhere Lp classes and algebraic centroids. Their generic definitions are not targets here. CongruenceSpectralGap CSG.0–CSG.5 owns the congruence Laplacian gap, including its continuous threshold and curvature normalization. GanGrossPrasadUnitaryGroups §§6.3–6.4 owns relative period applications and trace comparison. Its §6.4 application needs a separate theorem that base-change-compatible multipliers preserve smooth transfer (BPLZZ §4.2, Proposition 4.8, pp.34–35; bplzz line 1685). That theorem is outside this Part II’s scope and belongs with the relative comparison; §4.3 here supplies only the scalar multiplier action it needs.
+Mathlib supplies Euclidean Schwartz functions, entire holomorphy, exponential and polynomial evaluation, unordered sums/products, almost-everywhere Lp classes and algebraic centroids. Their generic definitions are not targets here. CongruenceSpectralGap Layers 0–5 (from the congruence quotient and positive spectrum to the parameter bound and congruence gap) owns the congruence Laplacian gap, including its continuous threshold and curvature normalization. GanGrossPrasadUnitaryGroups §§6.3–6.4 owns relative period applications and trace comparison. Its §6.4 application needs a separate theorem that base-change-compatible multipliers preserve smooth transfer (BPLZZ §4.2, Proposition 4.8, pp.34–35; bplzz line 1685). That theorem is outside this Part II’s scope and belongs with the relative comparison; §4.3 here supplies only the scalar multiplier action it needs.
 
 ## Conventions
 
@@ -572,7 +572,7 @@ A proof route is as follows. Use sharp support to bound the discrete parameters 
 
 ### 1.9 Adelic LF and finite-place compatibility
 
-Compare the supplied adelic Schwartz topology of AutomorphicFormsOnReductiveGroups §0.3 with the real multiplier construction. At fixed compact finite support C and compact open J, identify its stage with finitely many copies of S(G∞), indexed by the J-double cosets meeting C. Extend the real multiplier on this finite direct sum and then through the countable support/level LF system; prove compatibility with convolution and finite-place spherical action. For finite S the local product uses completed archimedean projective tensors and finite-place compactly supported locally constant functions. Extension away from S uses the normalized hyperspecial units of volume one, and different extensions agree under their canonical comparison maps. The carrier and its LF topology are supplied; the target here is the comparison and multiplier action. (BPLZZ §3.1, Definition 3.1, pp.21–22; §4.2, pp.33–35; BPCZ §2.5.2, p.209; bplzz line 1056).
+Compare the supplied adelic Schwartz topology of AutomorphicFormsOnReductiveGroups §0.3 with the real multiplier construction. At fixed compact finite support C and compact open J, identify its stage with finitely many copies of S(G∞), indexed by the J-double cosets contained in C. Bi-J-invariance forces a function to vanish on every double coset not contained in C. Extend the real multiplier on this finite direct sum and then through the countable support/level LF system; prove compatibility with convolution and finite-place spherical action. For finite S the local product uses completed archimedean projective tensors and finite-place compactly supported locally constant functions. Extension away from S uses the normalized hyperspecial units of volume one, and different extensions agree under their canonical comparison maps. The carrier and its LF topology are supplied; the target here is the comparison and multiplier action. (BPLZZ §3.1, Definition 3.1, pp.21–22; §4.2, pp.33–35; BPCZ §2.5.2, p.209; bplzz line 1063; bpcz line 1151).
 
 The defining construction has the following API.
 
@@ -586,11 +586,15 @@ The defining construction has the following API.
 
 **Checks.**
 
-- At a finite place this space is C_c∞, not the larger Harish-Chandra Schwartz algebra planned in SR.3.
+- At a finite place this space is C_c∞(G(F_v)); a function with noncompact support in a Harish-Chandra Schwartz algebra of G(F_v) is outside it.
 
 - A completed archimedean tensor product cannot be silently replaced by finite sums of pure tensors.
 
-- A compact finite support meeting two J-double cosets gives two real Schwartz copies; one copy loses independent values.
+- A compact support C that is the disjoint union JxJ ⊔ JyJ gives two real Schwartz copies, determined independently by f(·,x) and f(·,y).
+
+- For C={1} and J≠{1}, the stage is zero, although J meets C: any nonzero value at 1 would force the same value outside C.
+
+- For C=∅ the stage is zero; the finite direct sum has no summands.
 
 - A finite-place test supported on one double coset is compactly supported; an infinite-support rapidly decreasing p-adic function is outside this test algebra.
 
