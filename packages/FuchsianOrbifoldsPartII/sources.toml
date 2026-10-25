@@ -50,4 +50,4 @@ sha256 = "4eb1f4c626d58673afdcd7b5769854d288e860d951af76695a4129a0d70e28c8"
 licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-10-24"
-cited_for = ["Layers 0 and 3"]
+cited_for = ["Layer 0"]

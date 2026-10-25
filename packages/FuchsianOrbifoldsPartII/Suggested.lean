@@ -14,8 +14,8 @@ surface lack the reduced-period/axis-cycle and bordered-core carriers.
 The reflected double, conformal lifting and recovery of the narrow ideal class
 lack bordered conformal orbifolds and their doubles. The raw-cycle conjugacy
 classification is statable below, including repeated admissible lists.
-Complementarity and exact family/genus covering lack class-indexed arithmetic surfaces, projections and
-area measures. The improper cusp-flux Stokes theorem and its completed
+Complementarity and exact family/genus covering lack class-indexed arithmetic
+surfaces, projections and area measures. The improper cusp-flux Stokes theorem and its completed
 critical-line endpoint lack oriented core-boundary integration and class-indexed
 core domains. No replacement predicates or assumed geometric data encode these
 results here. The arithmetic surface, its signature and primitive length, the

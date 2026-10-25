@@ -11,7 +11,8 @@ The following objects are supplied elsewhere and are not constructed again here.
 - Mathlib owns the curvature −1 metric and invariant measure, generated subgroups, coproduct groups and measurable pushforwards. The height-one distance expression below specializes that metric; it does not define another metric.
 - Tau Ceti owns the projective actions on the upper half-plane and ideal circle, proper discontinuity, cyclic elliptic stabilizers, geodesics, polygon area, modular fundamental-domain measure, ordinary covering lifts and deck conjugation. Completed/UniversalCovers Stage 2 owns the general covering interpretation.
 - AutomorphicSpectralTheory §4.17a owns the primitive reduced arithmetic cycle, Γ_A, the Nielsen surface F_A, its projection with multiplicities, area πℓ_A, primitive length 2log ε_D, and compact-part/finite-width-cusp decomposition. The arithmetic specialization in Layer 2 is a comparison of this supplied surface with the general construction here. Its signature and full oriented boundary-period comparison are stated by AnalyticNumberTheoryPartI §2.1. Those two results are consumed, rather than separate targets of this roadmap.
-- AnalyticNumberTheoryPartI §2.1 owns Stokes under absolute integrability and vanishing cusp flux, including its uncompleted critical-line and smooth cusp-form applications; multiplying by Λ(1+2it) gives the completed identity for t≠0. Layer 5 adds existence of an improper height-truncated integral from flux alone, including λ=0. AutomorphicSpectralTheory §§4.18 and 4.20 own cusp decay and integrability for uncompleted Eisenstein series; the C¹ Fourier expansion at the regular completed value E*(z,1/2) is the precise extension consumed below.
+- CongruenceSpectralGap §0.1 owns the hyperbolic quotient measure for congruence groups, its independence of the measurable fundamental domain and its level-one mass π/3. Layer 4 compares the DIT representative convention with that supplied measure and proves nullity of points and connectedness of the regular locus.
+- AnalyticNumberTheoryPartI §2.1 owns Stokes under absolute integrability and vanishing cusp flux, and its uncompleted critical-line Eisenstein application; its general identity with AutomorphicSpectralTheory §4.18 cusp-form decay gives the cusp-form case. Multiplying by Λ(1+2it) gives the completed identity for t≠0. Layer 5 adds existence of an improper height-truncated integral from flux alone, including λ=0. AutomorphicSpectralTheory §§2.17–2.18 own the completed Fourier expansion and continuation; §§4.18 and 4.20 own cusp decay and integrability for uncompleted Eisenstein series. Layer 5 deduces the C¹ bounds at the regular completed value E*(z,1/2) from that expansion and the Bessel estimates of §§0.27–0.28.
 - IntegralLattices Layer B, B2–B3 owns the oriented form/ideal-class dictionary and composition. GlobalNumberFields Layer 11 owns orders, Picard groups and narrow Picard groups. MultiquadraticPartII §§2.3–2.4 owns the two-square and distinguished-class square criteria; its §§3.1–3.2 own genus-character compatibility. No new narrow quotient, genus or genus-character construction is made here.
 - ComplexCurveModuli D0.1 and D0.4 own compact smooth surface normal forms and bordered uniformization by a conformal double; D6.2 owns the smooth geodesic-cut metric comparison. Layer 3 extends the reflection construction to finite-area cores with cusps and marked cone orders.
 - ConformalMapping L2 and L4 own disc automorphisms, Schwarz–Pick and reflection; AlgebraicTopology Stages 1 and 7 own van Kampen and finite-CW Euler characteristic; DifferentialGeometry §§5.3, 5.5 and 5.6.3 own ordinary/corners Stokes and its planar integration comparison.
@@ -65,17 +66,19 @@ Use Tau Ceti at `a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039`.
 
 Consume Layer 0 (effective actions and proper discontinuity), Layer 1 (free quotient and finite cyclic cone charts), Layer 2, items 1–3 and 5 (geodesic polygons, local side/cycle theorem, angle defect, quotient signature bookkeeping and fundamental-domain area comparison), Layer 3 (full cusp stabilizers, scaling data and precisely invariant horodiscs), Layer 4, item 5 (cofinite signature and area), Layer 5, item 1 (topological genus), and Layer 6 (the effective level-one quotient M with signature (0;2,3;1;0) and cone charts). Restriction to CΓ uses those interior charts; this roadmap constructs its genuine half-disc boundary charts. The local polygon theorem is applied after the free-side tiling and local finiteness are proved in §1.3; the cofinite converse in Layer 2, item 4 is not an input for an infinite-area Ford polygon.
 
+### From TauCetiRoadmap.CongruenceSpectralGap
+
+Consume §0.1, “Hyperbolic quotient measure”, at Γ=SL₂(ℤ), identifying its effective quotient with M. Its measure μ_mod is the pushforward of invariant area restricted to any measurable almost-everywhere fundamental domain of PSL₂(ℤ), in particular (π_mod)₊(volume.restrict fdo). It is independent of that domain, is positive and finite, and has total mass π/3.
+
 ### From TauCetiRoadmap.AutomorphicSpectralTheory
 
-Consume §§1.14–1.15 for E and E*=Λ(2s)E with Λ(s)=π^(−s/2)Γ(s/2)ζ(s), primitive-pair factor 1/2, continuation, Fourier constant term and residues −1/2,+1/2 at 0,1. Consume §4.17a for the arithmetic period, surface F_A, subgroup, projection, area, length and finite-width cusp. Consume §§4.18 and 4.20 for smooth cusp decay and uncompleted Eisenstein integrability, including vanishing horizontal flux. For t≠0 the completed specialization follows by scalar multiplication; only the regular completed value at t=0 needs the additional contract below.
+Consume §§1.14–1.15 for E and E*=Λ(2s)E with Λ(s)=π^(−s/2)Γ(s/2)ζ(s), primitive-pair factor 1/2 and Fourier constant term. Consume §2.17, `completed_eisenstein_fourier`, for the full K-Bessel expansion, its local convergence and parameter continuation; §2.18 for meromorphic continuation with poles only at s=0,1 and residues −1/2,+1/2; and §§0.27–0.28 for the positive-argument K-Bessel comparison and large-argument decay, including derivative estimates. Layer 5 deduces the termwise C¹ endpoint bounds from these inputs. Consume §4.17a for the arithmetic period, surface F_A, subgroup, projection, area, length and finite-width cusp. Consume §§4.18 and 4.20 for smooth cusp decay and uncompleted Eisenstein integrability, including vanishing horizontal flux. For t≠0 the completed specialization follows by scalar multiplication.
 
 What AutomorphicSpectralTheory must provide (gap:primitive-minus-cycle-interface): §4.17a must export the primitive reduced minus cycle as a complete narrow-class invariant up to cyclic rotation, its attracting Pell word ∏T^nS with least norm-one unit, and its compatibility with the IntegralLattices B2–B3 oriented dictionary specialized through GlobalNumberFields Layer 11 to the native narrow class group.
 
 What AutomorphicSpectralTheory must provide (gap:oriented-quadratic-cycle-reversal): §4.17a must identify the full primitive parametrized modular cycle C_(JA⁻¹) with C_A traversed in the opposite orientation.
 
-What AutomorphicSpectralTheory must provide (gap:completed-critical-line-c1-bounds): §§1.15 and 4.18 must export, for the regular value E*(z,1/2), a termwise C¹ Fourier expansion on high strips with exponentially decaying nonconstant modes and first derivatives.
-
-The first gap refines the period construction without adding another arithmetic reduction theory here. The second fixes the signed primitive boundary required for cancellation. The third concerns only the regular completed endpoint at t=0. Its constant-term growth is deduced from §1.15 by cancellation of the two Laurent poles.
+The first gap refines the period construction without adding another arithmetic reduction theory here. The second fixes the signed primitive boundary required for cancellation. The completed endpoint’s constant-term growth is deduced from §1.15 by cancellation of the two Laurent poles.
 
 ### From TauCetiRoadmap.AnalyticNumberTheoryPartI
 
@@ -117,7 +120,7 @@ For a discrete Γ≤PSL₂(ℝ), ΛΓ is the set of ideal-boundary accumulation 
 
 Γ is a discrete subgroup; z₀∈ℍ is arbitrary.
 
-(DIT16, §2 p.952, limit-set paragraph, DIT16 line 149; LU23, §3.1 pp.194–195, LU23 line 275.)
+(DIT16, §2 p.952, limit-set paragraph, DIT16 line 149; LU23, §3.1 p.195, LU23 line 253.)
 
 A route uses the Cayley embedding z↦(z−i)/(z+i), takes the closure of the orbit in the closed unit disc and intersects the unit circle. Use the canonical boundary action in the supplier contract. Prove compatibility with the Cayley boundary identification and continuity at infinity. Bounded hyperbolic distance gives the same boundary limit, proving basepoint independence; continuity of the extended action gives conjugacy equivariance. No new ideal-boundary action is constructed here. For a nonelementary group, use attracting/repelling limits of hyperbolic words to obtain perfection and the first/second-kind dichotomy.
 
@@ -277,7 +280,9 @@ The predicate and, under admissibility, its group have the following API.
 
 The order-two assertion is in PSL, never in SL. An all-2 word is excluded from the arithmetic/geometric input.
 
-*Needs:* Mathlib `ModularGroup.S`; Mathlib `ModularGroup.T`; Mathlib `Subgroup.closure`; Mathlib `Subgroup.closure_le`; Tau Ceti `UpperHalfPlane.pslMk_smul`; Tau Ceti `psl2zToPSL2R_injective`; AutomorphicSpectralTheory §4.17a (primitive cycles, Pell word and orientation contracts).
+Raw-list construction: *Needs:* Mathlib `ModularGroup.S`; Mathlib `ModularGroup.T`; Mathlib `Subgroup.closure`; Mathlib `Subgroup.closure_le`; Tau Ceti `UpperHalfPlane.pslMk_smul`; Tau Ceti `psl2zToPSL2R_injective`.
+
+Arithmetic specialization: *Needs:* the raw-list construction; AutomorphicSpectralTheory §4.17a (gap:primitive-minus-cycle-interface).
 
 ### 1.2 Ford polygon of a cycle
 
@@ -339,7 +344,9 @@ One route is to proceed as follows. Subtract Nᵣ from all old centers and reduc
 
 For [3,6]→[6,3], the conjugating translation is T⁻³. Reversal is not silently identified with rotation or with the same narrow class.
 
-*Needs:* §1.1; §0.2; AutomorphicSpectralTheory §4.17a (primitive cycles, Pell word and orientation contracts).
+Raw-list conjugacy: *Needs:* §1.1; §0.2.
+
+Arithmetic representative independence: *Needs:* the raw-list conjugacy; AutomorphicSpectralTheory §4.17a (gap:primitive-minus-cycle-interface).
 
 ### 1.5 Boundary word and endpoint ordering
 
@@ -560,7 +567,9 @@ No claim is made for antiholomorphic equivalences, which reverse cyclic order. F
 - [4] and [4,4] are not conjugate: maximal elliptic height forces a=1, while their full cusp widths are 4 and 8. Their identical height-one point sets 4ℤ+i alone would give the wrong answer.
 - [3,4,5] and [5,4,3] have width 12 and centres {0,3,7} and {0,5,9} modulo 12. Their positive cyclic gap lists are not rotations, so neither side of the headline equivalence holds. Reflection reverses the cyclic order and is excluded by PSL₂(ℝ).
 
-*Needs:* §3.2; §3.3; §1.4; AutomorphicSpectralTheory §4.17a (primitive cycles, Pell word and orientation contracts).
+Raw-list headline: *Needs:* §1.3; §1.4; §3.3.
+
+Class statement: *Needs:* §3.2; §3.3; §1.4; AutomorphicSpectralTheory §4.17a (gap:primitive-minus-cycle-interface).
 
 ### Examples
 
@@ -574,13 +583,13 @@ Layers 0–2; ComplexCurveModuli D0.4 and D6.2; ConformalMapping L2 and L4; Alge
 
 ### 4.1 Modular boundary convention
 
-Let F_DIT be the subset of ℍ given by (−1/2≤Re z≤0 and |z|²≥1) or (0<Re z<1/2 and |z|²>1). It is the half-open representative convention of DIT. Its interior is the pinned open modular domain fdo, and its symmetric difference with fdo has hyperbolic area zero. On the parent’s modular quotient M, with orbit map π_mod:ℍ→M, define μ_mod=(π_mod)₊(volume.restrict fdo). Prove that this is its Borel quotient area measure, has total mass π/3 and is independent of the measurable almost-everywhere fundamental domain. Prove here also that the regular locus M_reg, obtained by deleting the two cone orbits, is path connected.
+Let F_DIT be the subset of ℍ given by (−1/2≤Re z≤0 and |z|²≥1) or (0<Re z<1/2 and |z|²>1). It is the half-open representative convention of DIT. Its interior is the pinned open modular domain fdo, and its symmetric difference with fdo has hyperbolic area zero. On the parent’s modular quotient M, with orbit map π_mod:ℍ→M, take μ_mod from CongruenceSpectralGap §0.1 at Γ=SL₂(ℤ); its supplied fundamental-domain formula gives μ_mod=(π_mod)₊(volume.restrict fdo). Prove that replacing fdo by F_DIT gives this same measure and that every quotient point is null. Prove here also that the regular locus M_reg, obtained by deleting the two cone orbits, is path connected.
 
 The group is effective PSL₂(ℤ); area uses the invariant volume instance on ℍ.
 
 (DIT16, §2 p.953, definition of F, DIT16 line 195.)
 
-One route is to proceed as follows. The inclusions fdo⊆F_DIT⊆fd and the pinned almost-everywhere equality of fd and fdo give the required null difference; the inequalities make F_DIT measurable. Push forward the restricted measure through π_mod and use the countable modular action and `MeasureTheory.IsFundamentalDomain.quotientMeasure_eq` to obtain independence. The quotient chart topology identifies its Borel sets with the quotient measurable structure. FuchsianOrbifolds Layer 4, item 5 applied to the Layer 6 signature gives μ_mod(M)=2π(−2+1+1/2+2/3)=π/3. For connectedness, remove the locally finite discrete set of elliptic lifts from ℍ. Any compact path can be detoured around the finitely many points it meets, so this complement is path connected. Its image under the free quotient projection of FuchsianOrbifolds Layer 1 is M_reg. Tie choices matter only for representatives, not for area.
+One route is to proceed as follows. The inclusions fdo⊆F_DIT⊆fd and the pinned almost-everywhere equality of fd and fdo give the required null difference; the inequalities make F_DIT measurable. Equality of the restricted measures identifies the F_DIT pushforward with the supplied μ_mod. The inverse image of a quotient singleton is a countable modular orbit; each lift has zero invariant area, so the quotient singleton is null. For connectedness, remove the locally finite discrete set of elliptic lifts from ℍ. Any compact path can be detoured around the finitely many points it meets, so this complement is path connected. Its image under the free quotient projection of FuchsianOrbifolds Layer 1 is M_reg. Tie choices matter only for representatives, not for area.
 
 The construction has the following API.
 
@@ -588,8 +597,8 @@ The construction has the following API.
 - F_DIT is measurable.
 - F_DIT=fdo almost everywhere for hyperbolic area.
 - For any integrable invariant function, its integral on F_DIT agrees with the modular quotient integral.
-- For Borel E⊆M, μ_mod(E)=volume(fdo∩π_mod⁻¹E), independent of the almost-everywhere fundamental domain.
-- μ_mod(M)=π/3, and every point, including each cone point, has measure zero.
+- The pushforward (π_mod)₊(volume.restrict F_DIT) equals the supplied μ_mod.
+- Every point, including each cone point, has measure zero.
 - M_reg is path connected.
 
 **Checks.**
@@ -597,13 +606,12 @@ The construction has the following API.
 - i∈F_DIT although i∉fdo. This rejects using the strict open domain as the half-open representative set.
 - −1/2+2i belongs and 1/2+2i does not. This fixes which vertical tie is retained.
 - −1/2+(√3/2)i belongs, while 1/2+(√3/2)i and the positive-real-part open semicircle do not. This fixes which circular tie is retained.
-- The triangle with angles π/3, π/3 and 0 has mass π−2π/3=π/3; using an ineffective double count would give 2π/3.
 - μ_mod(∅)=0 and μ_mod({π_mod(i)})=0, while μ_mod(M)=π/3>0. This rejects an atom at the order-two cone point or a zero quotient measure.
 - Replacing fdo by F_DIT changes its area by 0 and changes neither μ_mod nor its integrals. Deleting the two cone points leaves paths joined by small detours, whereas deleting a separating curve need not preserve connectedness.
 
 The point i is included, and positive-real-part points on the unit semicircle are excluded. All subsequent measure equalities are independent of this null boundary choice.
 
-*Needs:* Mathlib `ModularGroup.fdo`; Mathlib `MeasureTheory.IsFundamentalDomain.quotientMeasure_eq`; Tau Ceti `ModularGroup.isFundamentalDomain_fdo`; Tau Ceti `ModularGroup.fd_ae_eq_fdo`; Tau Ceti `UpperHalfPlane.volume_preimage_coe_null`; FuchsianOrbifolds Layer 1, Layer 4, item 5 and Layer 6.
+*Needs:* CongruenceSpectralGap §0.1; Mathlib `ModularGroup.fdo`; Tau Ceti `ModularGroup.isFundamentalDomain_fdo`; Tau Ceti `ModularGroup.fd_ae_eq_fdo`; Tau Ceti `UpperHalfPlane.volume_preimage_coe_null`; FuchsianOrbifolds Layers 1 and 6.
 
 ### 4.2 Projected core measure
 
@@ -711,7 +719,7 @@ For D=12 the complementary masses π and 2π add to 3π=9(π/3). For D=28 they a
 
 ### Dependencies
 
-Layer 2 and the supplied boundary-period comparison; native narrow-class finiteness and squares; MultiquadraticPartII §§2.3–2.4; AutomorphicSpectralTheory §4.17a orientation adapter; pinned measure pushforwards and the level-one quotient measure.
+Layer 2 and the supplied boundary-period comparison; native narrow-class finiteness and squares; MultiquadraticPartII §§2.3–2.4; AutomorphicSpectralTheory §4.17a orientation adapter; pinned measure pushforwards; CongruenceSpectralGap §0.1 for the level-one quotient measure.
 
 ## Layer 5: Cusp-truncated Stokes and spectral inputs
 
@@ -769,15 +777,16 @@ Use the supplied completion E*=Λ(2s)E, its half-sum normalization, continuation
 
 (DIT16, §5 p.962, (5.3)–(5.5), DIT16 line 514; Lemmas 1–2 p.972, DIT16 line 1025.)
 
-One route is to proceed as follows. Write Λ(1+u)=1/u+c_Λ+O(u). In the supplied constant term Λ(2s)y^s+Λ(2−2s)y^(1−s), put s=1/2+ε and cancel the opposite poles. The limit is √y(log y+c), where c=2c_Λ, with derivative y⁻¹/²(1+(log y+c)/2). Thus the constant term and derivative are O(√Y log Y) and O(Y⁻¹/² log Y). The endpoint C¹ Fourier contract makes the nonconstant modes and their first derivatives exponentially decaying on high strips; termwise integration over the integer width m kills them. The horizontal flux tends to zero. The absolute bound is integrable against y⁻²dy on the width-m cusp, and smoothness gives integrability on the compact remainder. Apply §5.2 and the supplied full modular boundary-period comparison.
+One route is to proceed as follows. Write Λ(1+u)=1/u+c_Λ+O(u). In the supplied constant term Λ(2s)y^s+Λ(2−2s)y^(1−s), put s=1/2+ε and cancel the opposite poles. The limit is √y(log y+c), where c=2c_Λ, with derivative y⁻¹/²(1+(log y+c)/2). Thus the constant term and derivative are O(√Y log Y) and O(Y⁻¹/² log Y). At s=1/2, AutomorphicSpectralTheory §2.17 gives the nonconstant part R(x,y)=2√yΣₙ≠₀σ₀(|n|)K₀(2π|n|y)e(nx), where e(u)=exp(2πiu) and σ₀(r) counts the positive divisors of r. The differentiated positive-argument K integral gives K₀′=−K₁. The estimates from AutomorphicSpectralTheory §§0.27–0.28 give |Kⱼ(t)|≤C t⁻¹/²e⁻ᵗ for j=0,1 and t≥2π. Since σ₀(r)≤r, each summand and each first x- or y-derivative is bounded by C r^(3/2)e^(−2πry) on y≥1, uniformly in x. Their sums are bounded by C e^(−2πy)Σᵣ≥₁r^(3/2)e^(−2π(r−1)), a convergent numerical series. Thus the expansion and its first derivatives converge uniformly on this strip, justify termwise differentiation, and satisfy |R|+|R_x|+|R_y|=O(e^(−2πy)). These are bounds proved here from the supplied expansion. Termwise integration over the integer width m kills every nonconstant mode and its derivatives. The horizontal flux tends to zero. The absolute bound is integrable against y⁻²dy on the width-m cusp, and smoothness gives integrability on the compact remainder. Apply §5.2 and the supplied full modular boundary-period comparison.
 
 **Checks.**
 
 - The coefficients of 1/ε in the two constant terms are √y/2 and −√y/2, summing to 0; the surviving logarithmic term is √y log y. This rejects evaluating the summands' poles separately or imposing an O(√Y) endpoint bound.
 - For this mean the horizontal flux is −im/(2√Y)·(1+(log Y+c)/2), which tends to 0. Its scalar cusp tail integral is m(2log Y+4+2c)/√Y, also tending to 0; the coefficient is (1/4)/2=1/8.
 - A cusp eigenfunction has horizontal mean 0, and its full-period horizontal flux is 0. At t≠0 multiplication by Λ(1+2it) multiplies both sides of the supplied Stokes identity by that same scalar; at t=0 that multiplier has a pole and this argument does not apply.
+- The n=±1 pair contributes 4√y K₀(2πy)cos(2πx); n=±2 contributes 8√y K₀(4πy)cos(4πx). Their integrals over x∈[0,m] are 0 for integer m, and their x-derivatives have factors −2π and −4π on the corresponding sine terms. This fixes the divisor multiplicity and Fourier derivative factors; bounding only the undifferentiated expansion would not control the flux.
 
-*Needs:* §5.2; §4.2; AnalyticNumberTheoryPartI §2.1; Mathlib `completedRiemannZeta_eq`, `differentiable_completedZeta₀` and `completedRiemannZeta_residue_one`; AutomorphicSpectralTheory §§1.14–1.15, 4.18 and 4.20, with gap:completed-critical-line-c1-bounds for the regular value at t=0.
+*Needs:* §5.2; §4.2; AnalyticNumberTheoryPartI §2.1; Mathlib `completedRiemannZeta_eq`, `differentiable_completedZeta₀` and `completedRiemannZeta_residue_one`; AutomorphicSpectralTheory §§0.27–0.28, 1.14–1.15, 2.17 (`completed_eisenstein_fourier`), 2.18, 4.18 and 4.20.
 
 ### Examples
 
@@ -785,7 +794,7 @@ For F=1, λ=0, the integral is πℓ_A and both one-form boundary integrals vani
 
 ### Dependencies
 
-Layer 2 for Q_A, its compact boundary and finite-width cusp; Layer 4 for projected measures; DifferentialGeometry §§5.3, 5.5 and 5.6.3; AnalyticNumberTheoryPartI §2.1; AutomorphicSpectralTheory §§1.14–1.15, 4.18 and 4.20 with the C¹ Fourier contract at the regular completed endpoint.
+Layer 2 for Q_A, its compact boundary and finite-width cusp; Layer 4 for projected measures; DifferentialGeometry §§5.3, 5.5 and 5.6.3; AnalyticNumberTheoryPartI §2.1; AutomorphicSpectralTheory §§0.27–0.28, 1.14–1.15, 2.17–2.18, 4.18 and 4.20 for the completed expansion, Bessel estimates and uncompleted cusp inputs.
 
 ## Downstream consumers
 

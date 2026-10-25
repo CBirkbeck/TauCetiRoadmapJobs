@@ -2102,12 +2102,6 @@
       "needs": "§4.17a must identify the full primitive parametrized modular cycle C_(JA⁻¹) with C_A traversed in the opposite orientation.",
       "supplier": "AutomorphicSpectralTheory",
       "section": "4.17a"
-    },
-    {
-      "slug": "completed-critical-line-c1-bounds",
-      "needs": "§§1.15 and 4.18 must export, for the regular value E*(z,1/2), a termwise C¹ Fourier expansion on high strips with exponentially decaying nonconstant modes and first derivatives.",
-      "supplier": "AutomorphicSpectralTheory",
-      "section": "1.15 and 4.18"
     }
   ],
   "requests": [
