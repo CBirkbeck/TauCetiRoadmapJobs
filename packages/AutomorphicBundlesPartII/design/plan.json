@@ -4289,6 +4289,12 @@
       "needs": "Extend the good-prime rank-two realization of R18.3.29 to every non-parallel algebraic Hilbert cusp eigenpacket of weights (k_v) with k_v≥2 and common parity, over every totally real field, without a finite discrete-series-place restriction on its unramified Hecke polynomial.",
       "supplier": "HilbertModularVarietiesAndShimuraCurves",
       "section": "R18.3.29"
+    },
+    {
+      "slug": "su-parabolic-regularization",
+      "needs": "For a Shimura datum with connected reductive G over ℚ, maximal ℚ-split central torus A_G also maximal ℝ-split in the centre, neat finite level K and finite-dimensional holomorphic P_h-coefficient V, prove that C∞_umg(G)^K→C∞_dmg(G)^K induces isomorphisms on H^i(p_o,K_o;−⊗V) for every i, naturally in V and finite Hecke maps, with G(A_f)-equivariance on the tower after the inverse central action on V_o.",
+      "supplier": "AutomorphicSpectralTheory",
+      "section": "§5.2"
     }
   ],
   "coverage": [
