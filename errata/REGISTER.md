@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-6717 mistakes recorded on the board: 4161 misprints, 1716 errors, 641 gaps, 199 unparsed bullets.
+6718 mistakes recorded on the board: 4162 misprints, 1716 errors, 641 gaps, 199 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -4789,6 +4789,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at proof of Theorem 9.1.3, p. 58 (line 2600): the source says the orbit is an element of V(C); it should be a subset of V(C); affects nothing. Found by AdicSpacesPartIIPartII (#1098 at 61492b5, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at §1.1, p. 5 (line 219): the source says the Zariski-closed V meets C in a vanishing locus; it should be the intersection of V with the affinoid open U; affects nothing. Found by AdicSpacesPartIIPartII (#1098 at 1988e25, 2026-10-25, claude opus).
 - **Misprint** at §1.1, p. 5 (line 219): the source says a closed subset meets C in the local vanishing locus; it should be its intersection with the affinoid open U; affects nothing. Found by AdicSpacesPartIIPartII (#1098 at 61492b5, 2026-10-25, codex gpt-6-astra).
+- **Misprint** at §1.1, p. 5 (line 219): the source says a closed set meets C in the local vanishing locus; it should be its intersection with the affinoid open U; affects nothing. Found by AdicSpacesPartIIPartII (#1098 at 2fad3dd, 2026-10-25, claude fable).
 
 ## HKI
 
