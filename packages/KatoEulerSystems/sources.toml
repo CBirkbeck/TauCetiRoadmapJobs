@@ -1,0 +1,374 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "KatoEulerSystems"
+
+[[source]]
+id = "FontaineMessing1987"
+authors = "Jean-Marc Fontaine, William Messing"
+title = "𝑝-adic periods and 𝑝-adic étale cohomology"
+year = 1987
+doi = "10.1090/conm/067/902593"
+locator_scheme = "theorem"
+locator = "Strongly divisible lattices for p > k at good reduction, pp. 179–207"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/192#issuecomment-6334684419"
+cited_for = ["7.9"]
+
+[[source]]
+id = "Kato2004"
+locator_scheme = "theorem"
+locator = "1.3–1.10; 2.3–2.13; 3.1–3.11; 4.2; 5.2; 6.3–6.6; 8.9; 9.2–9.4; 11.3–11.4; 12.4–12.10; 13.1–13.14; 14.1–14.22; 15.12–15.17; 16.1–16.6; 17.3–17.4"
+url = "https://www.numdam.org/item/AST_2004__295__117_0.pdf"
+fetched_from = "https://www.numdam.org/item/AST_2004__295__117_0.pdf"
+fetched_at = "2026-10-25T00:41:07Z"
+sha256 = "3c6e14b11fa60262db8aff782ce3cf4d83e9100c0be83621a7e4ce502cec605d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["Layers 0–7"]
+authors = "Kazuya Kato"
+title = "p-adic Hodge theory and values of zeta functions of modular forms"
+year = 2004
+
+[[source]]
+id = "Nakamura2023"
+authors = "Kentaro Nakamura"
+title = "Zeta morphisms for rank two universal deformations"
+year = 2023
+arxiv = "2006.13647v2"
+locator_scheme = "theorem"
+locator = "arXiv v2: Lemma 2.10; §§3.1.2–3.1.4; Lemma 3.4; Remark 3.5; Corollary 3.6; Theorem 5.2; Remark A.6, p. 89"
+url = "https://arxiv.org/abs/2006.13647v2"
+fetched_from = "https://arxiv.org/pdf/2006.13647v2"
+fetched_at = "2026-10-25T00:48:52Z"
+sha256 = "0d8fa462594a20ef96d755d31a13ba23081f1454bfe9809a5fda54fd30311ba7"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Published in 2023; all theorem, equation and page locators use arXiv:2006.13647 v2 (2020), including Remark A.6 on p. 89. Published numbering is not substituted."
+cited_for = ["2.2–2.3, 5.4–5.5, 7.2"]
+doi = "10.1007/s00222-023-01203-7"
+
+[[source]]
+id = "Rubin2000"
+locator_scheme = "theorem"
+locator = "Chapter III §5, draft pp. 48–54; Appendix B Lemma 3.1, pp. 153–154"
+url = "https://swc-math.github.io/notes/files/99RubinES.pdf"
+fetched_from = "https://swc-math.github.io/notes/files/99RubinES.pdf"
+fetched_at = "2026-10-25T00:41:15Z"
+sha256 = "de47655dc35066fd01f2e76a37076ad03dee62e816130586c7674e520be73d50"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["4.3, 6.6, 7.3–7.8"]
+authors = "Karl Rubin"
+title = "Euler Systems (public 1999 draft)"
+year = 1999
+version_note = "Public 1999 draft; retain lifetime key Rubin2000. Draft printed page equals PDF page minus 10; no published-volume pagination is used."
+
+[[source]]
+id = "Loeffler2017"
+authors = "David Loeffler"
+title = "Images of adelic Galois representations for modular forms"
+year = 2017
+venue = "Glasgow J. Math. 59 (2017), no. 1, pp11--25"
+doi = "10.1017/S0017089516000367"
+arxiv = "1411.1789v2"
+locator_scheme = "theorem"
+locator = "§1 (A)–(C); Theorems 2.2.2, 2.3.1; Corollary 2.2.3"
+url = "https://arxiv.org/abs/1411.1789v2"
+fetched_from = "https://arxiv.org/pdf/1411.1789v2"
+fetched_at = "2026-10-25T00:41:18Z"
+sha256 = "a2e61412d94a745de083ba4b7d2c9ea36ced48f6b1f1be3aceeb68c104a0524b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Published in 2017; theorem numbering agrees with arXiv v2; page locators use the arXiv text."
+cited_for = ["4.1"]
+
+[[source]]
+id = "BurungaleTian2025"
+authors = "Ashay A. Burungale, Ye Tian"
+title = "A rank zero p-converse to a theorem of Gross–Zagier, Kolyvagin and Rubin"
+year = 2025
+arxiv = "2506.03465v2"
+locator_scheme = "theorem"
+locator = "Theorems 2.3–2.4; Remark 2.5, pp. 4–5 (v2)"
+url = "https://arxiv.org/abs/2506.03465v2"
+fetched_from = "https://arxiv.org/pdf/2506.03465v2"
+fetched_at = "2026-10-25T00:41:24Z"
+sha256 = "cbb8284a13ed40bd15df9713001485724bc4d2a3b5c38d8fd83f9b6f3f3e4664"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v2"
+cited_for = ["4.4, 7.2"]
+
+[[source]]
+id = "Nakamura2014"
+authors = "Kentaro Nakamura"
+title = "Iwasawa theory of de Rham (φ,Γ)-modules over the Robba rings"
+year = 2014
+arxiv = "1201.6475v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.5 (= Theorem 3.10), v2"
+url = "https://arxiv.org/abs/1201.6475v2"
+fetched_from = "https://arxiv.org/pdf/1201.6475v2"
+fetched_at = "2026-10-25T00:41:31Z"
+sha256 = "8bd801a88d869c17450e27f5080bbd144cf45216e7557fe6b53132d4c24c74c5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Published in 2014; the cited Theorem 1.5 (= Theorem 3.10) is read in arXiv v2."
+cited_for = ["6.1"]
+doi = "10.1017/S1474748013000078"
+
+[[source]]
+id = "Schneider1985"
+authors = "Peter Schneider"
+title = "p-adic height pairings II"
+year = 1985
+venue = "Inventiones Mathematicae 79"
+doi = "10.1007/bf01388978"
+locator_scheme = "theorem"
+locator = "§2; §A.1 Lemma 6"
+url = "https://doi.org/10.1007/bf01388978"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["7.6"]
+
+[[source]]
+id = "Greenberg1999"
+authors = "Ralph Greenberg"
+title = "Iwasawa theory for elliptic curves"
+year = 1999
+arxiv = "math/9809206v1"
+locator_scheme = "theorem"
+locator = "Theorem 4.1"
+url = "https://arxiv.org/abs/math/9809206v1"
+fetched_from = "https://arxiv.org/pdf/math/9809206v1"
+fetched_at = "2026-10-25T00:41:50Z"
+sha256 = "d39ff7b21372d60fca0684ea9a74fea4e94b45840b4c79343ad9ec8b31640b8b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v1"
+cited_for = ["7.7"]
+
+[[source]]
+id = "JacquetShalika1976"
+authors = "Hervé Jacquet, Joseph Shalika"
+title = "A non-vanishing theorem for zeta functions of GL_n"
+year = 1976
+venue = "Inventiones Mathematicae 38"
+doi = "10.1007/bf01390166"
+locator_scheme = "theorem"
+locator = "pp. 1–16"
+url = "https://doi.org/10.1007/bf01390166"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["4.2 (supplier boundary theorem)"]
+
+[[source]]
+id = "Rohrlich1988"
+authors = "David E. Rohrlich"
+title = "L-functions and division towers"
+year = 1988
+venue = "Mathematische Annalen 281"
+doi = "10.1007/bf01456842"
+locator_scheme = "theorem"
+locator = "pp. 611–632 (Kato §13.5 nonvanishing input)"
+url = "https://doi.org/10.1007/bf01456842"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["4.2, 7.9"]
+
+[[source]]
+id = "Rohrlich1984"
+authors = "David E. Rohrlich"
+title = "On L-functions of elliptic curves and cyclotomic towers"
+year = 1984
+venue = "Inventiones Mathematicae 75"
+doi = "10.1007/bf01388636"
+locator_scheme = "theorem"
+locator = "§3, pp. 409–423"
+url = "https://doi.org/10.1007/bf01388636"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["4.2, 7.9"]
+
+[[source]]
+id = "Ribet1980"
+authors = "Kenneth A. Ribet"
+title = "Twists of modular forms and endomorphisms of abelian varieties"
+year = 1980
+venue = "Mathematische Annalen 253"
+doi = "10.1007/bf01457819"
+locator_scheme = "theorem"
+locator = "pp. 43–62"
+url = "https://doi.org/10.1007/bf01457819"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["7.9"]
+
+[[source]]
+id = "Weibel2013"
+locator_scheme = "theorem"
+locator = "Chapter III Corollary 1.7.1, p. 8; Exercise 5.6, p. 46"
+url = "https://sites.math.rutgers.edu/~weibel/Kbook/Kbook.III.pdf"
+fetched_from = "https://sites.math.rutgers.edu/~weibel/Kbook/Kbook.III.pdf"
+fetched_at = "2026-10-25T00:42:25Z"
+sha256 = "ba1bc2d25680ab25c4baadc5ab28e39d1077dc66bb12ca4e2174b6cb55f81307"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["1.1"]
+authors = "Charles A. Weibel"
+title = "The K-book"
+year = 2013
+
+[[source]]
+id = "Colmez1998"
+locator_scheme = "theorem"
+locator = "Theorem 7"
+url = "https://webusers.imj-prg.fr/~pierre.colmez/iwasawa-deRham.pdf"
+fetched_from = "https://webusers.imj-prg.fr/~pierre.colmez/iwasawa-deRham.pdf"
+fetched_at = "2026-10-25T00:44:44Z"
+sha256 = "8a454d9e6969a4c2e1b259d276af06ecf7445ef0fe066aa25bd7d8d698893f3e"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["6.1"]
+authors = "Pierre Colmez"
+title = "Théorie d’Iwasawa des représentations de de Rham d’un corps local"
+year = 1998
+
+[[source]]
+id = "PerrinRiou1994"
+authors = "Bernadette Perrin-Riou"
+title = "Théorie d’Iwasawa des représentations p-adiques sur un corps local"
+year = 1994
+venue = "Inventiones Mathematicae 115"
+doi = "10.1007/BF01231755"
+locator_scheme = "theorem"
+locator = "pp. 81–149 (main text)"
+url = "https://doi.org/10.1007/BF01231755"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["6.1"]
+
+[[source]]
+id = "PerrinRiou1990"
+authors = "Bernadette Perrin-Riou"
+title = "Théorie d’Iwasawa p-adique locale et globale"
+year = 1990
+venue = "Inventiones Mathematicae 99"
+doi = "10.1007/BF01234420"
+locator_scheme = "theorem"
+locator = "Théorème 3.1; §6"
+url = "https://doi.org/10.1007/BF01234420"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["4.4, 7.6"]
+
+[[source]]
+id = "Ribet1985"
+locator_scheme = "theorem"
+locator = "§§3–4, pp. 185–194"
+url = "https://math.berkeley.edu/~ribet/Articles/rankin.pdf"
+fetched_from = "https://math.berkeley.edu/~ribet/Articles/rankin.pdf"
+fetched_at = "2026-10-25T00:44:52Z"
+sha256 = "88adbb7f4a931e5c8705a4773453315c06a98b52c434ce57e54336f8dc9353f8"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["4.1"]
+authors = "Kenneth A. Ribet"
+title = "On ℓ-adic representations attached to modular forms II"
+year = 1985
+
+[[source]]
+id = "Serre1972"
+locator_scheme = "theorem"
+locator = "Théorèmes 2–3"
+url = "https://www.college-de-france.fr/media/jean-pierre-serre/UPL5874918517843398173_Serre_proprie_te_s_galoisiennes_des_courbes_elliptiques.pdf"
+fetched_from = "https://www.college-de-france.fr/media/jean-pierre-serre/UPL5874918517843398173_Serre_proprie_te_s_galoisiennes_des_courbes_elliptiques.pdf"
+fetched_at = "2026-10-25T00:44:56Z"
+sha256 = "93970ed93730194af8bed0f1f59d29cbed061d20f34f4bcffc079ad8aedf01d5"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["4.7"]
+authors = "Jean-Pierre Serre"
+title = "Propriétés galoisiennes des points d’ordre fini des courbes elliptiques"
+year = 1972
+
+[[source]]
+id = "BlochKato1990"
+authors = "Spencer Bloch, Kazuya Kato"
+title = "L-functions and Tamagawa numbers of motives"
+year = 1990
+venue = "Progress in Mathematics"
+doi = "10.1007/978-0-8176-4574-8_9"
+locator_scheme = "theorem"
+locator = "§3; Examples 3.10.1 and 3.11, pp. 359–361"
+url = "https://doi.org/10.1007/978-0-8176-4574-8_9"
+licence_class = "none"
+status = "uncertified"
+version_note = "1990 original, reprinted electronically in 2007 under this DOI; pp. 333–400 and Examples 3.10.1, 3.11 retain their locators. Paywalled; cited by locator."
+cited_for = ["7.9"]
+
+[[source]]
+id = "Ribet1981"
+locator_scheme = "theorem"
+locator = "Appendix to Katz–Lang, Finiteness theorems in geometric classfield theory, pp. 285–319"
+url = "https://math.berkeley.edu/~ribet/Articles/kl.pdf"
+fetched_from = "https://math.berkeley.edu/~ribet/Articles/kl.pdf"
+fetched_at = "2026-10-25T00:45:19Z"
+sha256 = "5133c99960aefe6c0487455fa4f5c21091be36798e5990c652bc6d92c1ad3a4c"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["7.9"]
+authors = "Kenneth A. Ribet"
+title = "Torsion points of abelian varieties in cyclotomic extensions"
+year = 1981
+
+[[source]]
+id = "DiamondShurman2005"
+title = "A First Course in Modular Forms"
+year = 2005
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-0-387-27226-9"
+locator_scheme = "theorem"
+locator = "Theorem 6.6.6"
+url = "https://doi.org/10.1007/978-0-387-27226-9"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["7.9"]
+authors = "Fred Diamond, Jerry Shurman"
+
+[[source]]
+id = "GhateGonzalezQuer2005"
+locator_scheme = "theorem"
+locator = "Corollary 4.7"
+url = "http://verso.mat.uam.es/~enrique.gonzalez.jimenez/research/papers/03_Ghate-Gonzalez-Jimenez-Quer%20-%20On%20the%20Brauer%20class%20of%20modular%20endomorphism%20algebras.pdf"
+fetched_from = "http://verso.mat.uam.es/~enrique.gonzalez.jimenez/research/papers/03_Ghate-Gonzalez-Jimenez-Quer%20-%20On%20the%20Brauer%20class%20of%20modular%20endomorphism%20algebras.pdf"
+fetched_at = "2026-10-25T00:45:18Z"
+sha256 = "bdea25bf5bb1c44a8c37d0e4ff4850952f3ae3e199476fe73b927023d908f3e6"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["4.1"]
+authors = "Eknath Ghate, Enrique González-Jiménez, Jordi Quer"
+title = "On the Brauer class of modular endomorphism algebras"
+year = 2005
+doi = "10.1155/IMRN.2005.701"
