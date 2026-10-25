@@ -6808,18 +6808,6 @@
     "needs": "On possibly singular complex projective varieties, provide Bedford–Taylor products for locally bounded plurisubharmonic potentials, uniform or monotone continuity, and semipositive ample-metric regularization compatible with Chern currents and cycle integration.",
     "supplier": "ComplexComparisonPartII",
     "section": "C5.4"
-  },
-  {
-    "slug": "curve-local-analytic-contract",
-    "needs": "Provide the Banach-ring and hybrid analytifications, skeleton retraction, graph Laplacian and normalized Green functions, and model-metric and Chambert-Loir measure comparisons specified in TB.0, TB.2, TB.3 and TB.6, with finite-extension and valuation-rescaling compatibility.",
-    "supplier": "TropicalAndBerkovichArithmetic",
-    "section": "TB.0, TB.2, TB.3, TB.6"
-  },
-  {
-    "slug": "archimedean-curve-admissibility",
-    "needs": "Provide the normalized archimedean admissible Green kernel and dualizing metric, conjugation descent, and the explicit skeleton/admissible-measure compatibility of GZ.2 with zero Green mean and residue-adjunction norm one.",
-    "supplier": "GrossZagierAndArithmeticHeights",
-    "section": "GZ.2"
   }
 ],
  "sourceIssues": [
