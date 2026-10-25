@@ -279,3 +279,21 @@ status = "certified"
 accessed = "2026-10-25"
 version_note = "Compositio Math. 152 (2016); read: arXiv 1211.0406v6 (19 November 2015), with manuscript page locators"
 cited_for = ["Exact supplier contracts; 9.12"]
+
+[[source]]
+id = "yuan-zhang-adelic"
+authors = "Xinyi Yuan, Shou-Wu Zhang"
+title = "Adelic line bundles on quasi-projective varieties"
+year = 2021
+arxiv = "2105.13587v9"
+locator_scheme = "theorem"
+locator = "Theorem 5.3.3, p. 158; Lemma 5.3.4, p. 159"
+url = "https://arxiv.org/abs/2105.13587v9"
+fetched_from = "https://arxiv.org/pdf/2105.13587v9"
+fetched_at = "2026-10-25T16:02:32Z"
+sha256 = "3de89c1736979c44592447edd3bc5a14be9202fc9a07a0ea9d158e422a25145a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v9"
+cited_for = ["7.2"]

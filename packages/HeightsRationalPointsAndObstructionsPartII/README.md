@@ -104,7 +104,7 @@ What ArakelovGeometryAndAbelianHeights must provide (gap:controlled-polarization
 
 ### From TauCetiRoadmap.ArakelovGeometryAndAbelianHeightsPartII
 
-Sections 3.1–3.3 supply adelic intersections, Deligne pairings and projection formulas. Sections 4.7–4.9 supply algebraic-point heights, the big-bundle height inequality and successive minima. Sections 5.1–5.5 supply generic equidistribution, invariant extensions, adelic non-degeneracy, the general dynamical height inequality and the Hodge bundle computing stable Faltings heights. Sections 6.1–6.4 supply Moriwaki heights and specialization. Sections 8.4, 9.1–9.2 supply canonical theta and shift identities. Sections 12.1–12.6 supply potential bigness, its relative-power criterion, the product-grid degree bound, theta potential bigness after restriction to every integral parameter subvariety and cross-characteristic restriction. Sections 13.1, 13.7 supply function-field Faltings heights and Bost's lower bound in Faltings' normalization.
+Section 0.5 supplies the geometric two-nef Siu inequality: on an integral projective d-fold with d≥1, nef rational bundles F,M and rational t≥0 satisfy vol(F−tM)≥Fᵈ−dt(Fᵈ⁻¹·M); positive right side implies bigness after clearing denominators. Sections 3.1–3.3 supply adelic intersections, Deligne pairings and projection formulas. Sections 4.7–4.9 supply algebraic-point heights, the big-bundle height inequality and successive minima. Sections 5.1–5.5 supply generic equidistribution, invariant extensions, adelic non-degeneracy, the general dynamical height inequality and the Hodge bundle computing stable Faltings heights. Sections 6.1–6.4 supply Moriwaki heights and specialization. Sections 8.4, 9.1–9.2 supply canonical theta and shift identities. Sections 12.1–12.6 supply potential bigness, its relative-power criterion, the product-grid degree bound, theta potential bigness after restriction to every integral parameter subvariety and cross-characteristic restriction. Sections 13.1, 13.7 supply function-field Faltings heights and Bost's lower bound in Faltings' normalization.
 
 For the function-field branches of Layer 10, bigness is over the field of constants. A constant genus-two curve over K with S=Spec K has a quasi-finite K-moduli map but does not meet this absolute bigness hypothesis. Its difference image C−C=J contains all constant torsion, so the stronger relative-K-only hypothesis would give a false theorem.
 
@@ -171,7 +171,7 @@ The defining object has the following API.
 
 ### 0.2 Products of point sets in a proper subvariety (Gao–Ge–Kühne Lemma 4.3)
 
-Let X be an irreducible projective variety over a field k with a very ample line bundle L, let M ≥ 1 and let Z ⊊ X^M be a proper closed subset. There is c = c(M, dim X, deg_L X, `deg_{L^{⊠M}}` Z) > 0 such that every subset Σ ⊆ X(k) with Σ^M ⊆ Z(k) lies in X′(k) for a proper closed X′ ⊊ X with deg_L X′ < c. (ggk-2026 line 821, Lemma 4.3 and proof, pp. 207–208; dmy-2026 line 783, pp. 26–27 (arXiv v3)).
+Let X be an irreducible projective variety over a field k with a very ample line bundle L, let M ≥ 1 and let Z ⊊ X^M be a proper closed subset. There is c = c(M, dim X, deg_L X, `deg_{L^{⊠M}}` Z) > 0 such that every subset Σ ⊆ X(k) with Σ^M ⊆ Z(k) lies in X′(k) for a proper closed X′ ⊊ X with deg_L X′ < c. (ggk-2026 line 821, Lemma 4.3 and proof, pp. 207–208; dmy-2026 line 879, pp. 26–27 (arXiv v3)).
 
 Throughout this subsection, X irreducible projective over k, L very ample on X; M ≥ 1; Z ⊊ X^M closed; Σ ⊆ X(k) with Σ^M ⊆ Z(k).
 
@@ -500,14 +500,15 @@ Under (Hyp), let X ⊆ A be closed irreducible of dimension d dominating S, with
 
 Throughout this subsection, (Hyp); X closed irreducible, dimension d, dominant over S; a smooth point with positive top Betti form.
 
-One proof route is the following. For d ≥ 1 choose a rational c₁ > 0 with c₁ c d < κ, and a positive integer q divisible by its denominator. The case d = 0 is immediate. The lower and upper intersection bounds imply F^d > d·c₁N²·(M·`F^{d−1}`). Siu’s nef-difference bound (HeightsRationalPointsAndObstructions §5.9c) makes `F^{⊗q}` ⊗ `M^{⊗(−qc₁N²)}` big. Replacing q by a multiple gives a nonzero section, with all tensor exponents integral. Heights are bounded below off the base locus of that section (HeightsRationalPointsAndObstructions §0.17); translate through the graph heights h_F and h_M to get h([N]P) ≥ c₁N²h(π(P)) − c₂(N) on the complement U_N.
+One proof route is the following. For d ≥ 1 choose a rational c₁ > 0 with c₁ c d < κ, and a positive integer q divisible by its denominator. The case d = 0 is immediate. Both graph bundles F and M are nef, as restrictions of pullbacks of projective O(1). The lower and upper intersection bounds imply F^d > d·c₁N²·(M·`F^{d−1}`). The geometric two-nef Siu inequality (ArakelovGeometryAndAbelianHeightsPartII §0.5) gives vol(F−c₁N²M) ≥ F^d−d·c₁N²·(M·`F^{d−1}`) > 0, so it makes `F^{⊗q}` ⊗ `M^{⊗(−qc₁N²)}` big. Replacing q by a multiple gives a nonzero section, with all tensor exponents integral. Heights are bounded below off the base locus of that section (HeightsRationalPointsAndObstructions §0.17); translate through the graph heights h_F and h_M to get h([N]P) ≥ c₁N²h(π(P)) − c₂(N) on the complement U_N.
 
 **Checks.**
 
 - c₁ does not depend on N; only U_N and c₂ do.
+- For a fixed elliptic curve with embedding degree four, S a point and N=2, the graph has deg F=4·2²=16 and deg M=0. Here M is trivial and is not ample, but vol(F−tM)=16 for every rational t≥0; the two-nef bound gives 16≥16>0.
 - The inequality fails on torsion sections of a non-constant elliptic family over a curve: ĥ = 0 while h(π(P)) is unbounded; such a section is a degenerate subvariety and is excluded by the Betti-form hypothesis.
 
-*Needs:* §2.4; §2.5; §2.3; HeightsRationalPointsAndObstructions §§0.16–0.35, 1.7–1.11, 5.1–5.19.
+*Needs:* §2.4; §2.5; §2.3; ArakelovGeometryAndAbelianHeightsPartII §0.5; HeightsRationalPointsAndObstructions §§0.16–0.35, 1.7–1.11, 5.1–5.19.
 
 ### 2.7 The height inequality under (Hyp) (DGH Theorem 1.6)
 
@@ -526,7 +527,7 @@ One proof route is the following. Non-degenerate means full Betti rank somewhere
 
 ### 2.8 DGH height inequality in Weil-height form: comparison with the adelic export
 
-Let π : A → S be an abelian scheme over an irreducible quasi-projective variety S over ℚ̄, L a symmetric relatively ample line bundle on A/S and M an ample line bundle on a projective compactification S̄ of S. If X ⊆ A is an irreducible (not necessarily closed) non-degenerate subvariety over ℚ̄, there are c₁ > 0, c₂ ≥ 0 and a Zariski open dense U ⊆ X with `ĥ_{A,L}(P)` ≥ c₁ `h_{S̄,M}(π(P))` − c₂ for all P ∈ U(ℚ̄). This is the abelian-scheme Weil-height specialization of ArakelovGeometryAndAbelianHeightsPartII §5.4, compared here with the geometric level-case construction of §2.7; it is not a second owner of the general dynamical inequality. (dgh-2021 line 1978, Theorem B.1 and proof, pp. 40–47 (arXiv v3); ggk-2026 line 69, (4.6), p. 206).
+Let π : A → S be an abelian scheme over an irreducible quasi-projective variety S over ℚ̄, L a symmetric relatively ample line bundle on A/S and M an ample line bundle on a projective compactification S̄ of S. If X ⊆ A is an irreducible (not necessarily closed) non-degenerate subvariety over ℚ̄, there are c₁ > 0, c₂ ≥ 0 and a Zariski open dense U ⊆ X with `ĥ_{A,L}(P)` ≥ c₁ `h_{S̄,M}(π(P))` − c₂ for all P ∈ U(ℚ̄). This is the abelian-scheme Weil-height specialization of ArakelovGeometryAndAbelianHeightsPartII §5.4, compared here with the geometric level-case construction of §2.7; it is not a second owner of the general dynamical inequality. (dgh-2021 line 1978, Theorem B.1 and proof, pp. 40–47 (arXiv v3); ggk-2026 line 783, (4.6), p. 206).
 
 Throughout this subsection, S irreducible quasi-projective over ℚ̄; L symmetric relatively ample; M ample on a compactification; X irreducible non-degenerate.
 
@@ -546,7 +547,7 @@ For the cut-off form, [2]* multiplies the form by 4 and its d-fold wedge by 4^d.
 
 ### Dependencies
 
-Layer 1; HeightsRationalPointsAndObstructions §§0.16–0.30,5.9c; AbelianSchemesAndArithmeticModuliPartII B0–B1; ComplexComparisonPartII §C5.4; SchemeAndStackFoundations Layer 5; ArakelovGeometryAndAbelianHeightsPartII §5.4 for the final comparison.
+Layer 1; HeightsRationalPointsAndObstructions §§0.16–0.30; AbelianSchemesAndArithmeticModuliPartII B0–B1; ComplexComparisonPartII §C5.4; SchemeAndStackFoundations Layer 5; ArakelovGeometryAndAbelianHeightsPartII §0.5 for geometric two-nef Siu and §5.4 for the final comparison.
 
 ## Layer 3: Equidistribution in families and uniform Bogomolov
 
@@ -911,14 +912,20 @@ With X ⊆ A irreducible and `D_{dim X}` as in Rémond’s Mumford inequality, e
 
 Throughout this subsection, X ⊆ A irreducible; Ξ ⊆ X°(ℚ̄).
 
-One proof route is the following. If Stab(X) is positive-dimensional, X° = ∅; assume it is finite. A tuple (x, x₁, …, `x_{dim X}`) is isolated iff 0 is an isolated point of (X − x) ∩ (X − x₁) ∩ ⋯ ∩ (X − `x_{dim X}`). If (i) fails, there is a stage i₀ < dim X with W = (X − x) ∩ ⋯ ∩ (X − `x_{i₀}`) whose components C_j through 0 of dimension dim X − i₀ ≥ 1 persist after intersecting with X − y for every y ∈ Ξ; then Ξ ⊆ ⋃_j `⋂_{c ∈ C_j}` (X − c). Each `⋂_{c ∈ C_j}(X − c)` is an intersection of at most dim X translates, proper since Stab(X) is finite; Bézout gives degree ≤ `(deg X)^{dim X}` and at most `(deg X)^{dim X}` components C_j, so deg X′ ≤ `(deg_L X)^{2 dim X}` (with a non-strict bound).
+Prove the containment-degree alternative here (remond-2000-decompte, Proposition 3.3; ggk-2026 line 1790, Proposition A.3, pp. 228–229). Put r=dim X and D=deg_L X. For r=0 the empty tuple is isolated. If X° is empty, take X′ empty. Otherwise Stab(X) is finite: its positive-dimensional identity component would place every point of X on an abelian coset in X. If #Ξ<r, choose a hyperplane through Ξ not containing X; its section has degree D≤D^(2r). Such a hyperplane exists because the span of fewer than r points has dimension less than r.
+
+For #Ξ≥r and failure of (i), fix a witnessing x. Starting with W₀=X−x, successively intersect with X−y, y∈Ξ, whenever this strictly decreases the local dimension at 0. A chosen y is new, since an already imposed translate cannot decrease it. Reaching local dimension zero after at most r choices would give the required isolated tuple at x, padding with distinct points of Ξ if necessary, contrary to the choice of x. Thus the process stops after i≤r−1 choices at a positive local dimension k, unchanged by every further X−y. Let C₁,…,C_s be the k-dimensional components through 0. For each y∈Ξ at least one C_j is contained in X−y, so Ξ⊆⋃_j E_j, where E_j=⋂_(c∈C_j)(X−c). Translation preserves the numerical class of L (AbelianSchemesAndArithmeticModuli §§A2.3, A2.10), and total-degree Bézout gives s≤D^(i+1).
+
+For each j choose c_j∈C_j outside the finite Stab(X). Since 0∈C_j, E_j⊆Z_j:=X∩(X−c_j). Each Z_j is proper in X and has total reduced degree at most D² by refined Bézout. Take X′=⋃_j Z_j; irreducibility of X makes this finite union proper. For r≥2 its degree is at most sD²≤D^(i+3)≤D^(r+2)≤D^(2r). For r=1, i=0 and W₀ is irreducible, so s=1 and the same endpoint is D². The degree estimate concerns X′; no degree bound on E_j is used.
 
 **Checks.**
 
-- For X a curve (dim X = 1), alternative (ii) is Ξ ⊆ a finite set of at most (deg X)² points.
-- The bound on deg X′ is ≤, not <: The component-degree product gives a non-strict bound.
+- For a genus-two theta curve X through 0, Ξ={0} and x=0 give C₁=X and E₁=Stab(X)={0}. A single translate has dimension 1, whereas E₁ has dimension 0. With L=3Θ one has D=6; for general c₁ outside the stabilizer, X∩(X−c₁) consists of Θ²=2 points, within the bound D²=36.
+- On a principally polarized genus-two Jacobian J with smooth symmetric theta curve Θ through 0, take X=[3]⁻¹Θ and L=3Θ. The étale pullback is smooth; it is an ample divisor, hence connected and integral. Its stabilizer is J[3], of order 3⁴=81, while D=(3Θ·9Θ)=54 since Θ²=2. Thus deg E₁=81>54, whereas the containing intersection has degree at most 54²=2916 and 81≤2916. The endpoint permits this example.
+- For r=2, i=0 gives s=1 and degree at most D²; i=1 gives s≤D² and degree at most D⁴=D^(2r). For r≥2 the exponent comparison i+3≤r+2≤2r includes equality at r=2.
+- For r=0 the fibre is a point, so alternative (i) holds with no chosen points. For Ξ empty and r≥1 the empty exceptional set has degree 0≤D^(2r); for fewer than r points the hyperplane section has degree D≤D^(2r).
 
-*Needs:* §0.1; HeightsRationalPointsAndObstructions §§0.16–0.35, 1.7–1.11, 5.1–5.19.
+*Needs:* §0.1; SchemeAndStackFoundations §§0.3, 5.12; AbelianSchemesAndArithmeticModuli §§A2.3, A2.10; HeightsRationalPointsAndObstructions §§0.16–0.35, 1.7–1.11, 5.1–5.19.
 
 ### 5.7 Removing the height of X (GGK Lemma A.4)
 
@@ -930,7 +937,8 @@ One proof route is the following. The needed input is Rémond’s arithmetic int
 
 **Checks.**
 
-- For X a point use the separate identity h(X)=h(x); the positive-dimensional interpolation theorem is not applied to codimension −1.
+- A zero-dimensional irreducible X over ℚ̄ is a singleton, so its intersection count is at most one; the positive-dimensional interpolation theorem is not applied to codimension −1. Its Fubini–Study cycle height need not equal its coefficient maximum point height.
+- On the smooth cubic y²z=x³−2z³, P=[3:5:1] satisfies 25=27−2. Its coefficient height is log 5 and its singleton Fubini–Study cycle height is ½log 35. The difference ½log(7/5) is positive and less than ½log 3, in agreement with h_coeff(P)≤h_FS({P})≤h_coeff(P)+½log(n+1) on ℙⁿ. These are projective heights; the canonical normalized point identity of §7.1 uses a different metric.
 - The hypothesis on S cannot be dropped: if S lies in a low-degree hypersurface section, its points carry no information on the height of X.
 
 *Needs:* HeightsRationalPointsAndObstructions §5.9b; §0.1; HeightsRationalPointsAndObstructions §§0.16–0.35, 1.7–1.11, 5.1–5.19.
@@ -1025,7 +1033,7 @@ For rank zero the Néron–Tate space is zero. For a rank-one division group it 
 
 ### Dependencies
 
-Layers 0,3–4; HeightsRationalPointsAndObstructions §§1.7–1.8,5.9–5.13; AbelianSchemesAndArithmeticModuli A1–A3,A6; ArakelovGeometryAndAbelianHeights gap:controlled-polarization-embeddings; gap:arithmetic-interpolation. Use simultaneous strong induction on subvariety dimension: the rank-bounded packing assertion for dimension r uses the conditional counting theorem only on exceptional components of dimension below r, and the dimension-r counting theorem then uses that packing assertion. No same-dimension counting result is assumed in its own proof.
+Layers 0,3–4; SchemeAndStackFoundations §§0.3, 5.12; HeightsRationalPointsAndObstructions §§1.7–1.8,5.9–5.13; AbelianSchemesAndArithmeticModuli A1–A3,A6; ArakelovGeometryAndAbelianHeights gap:controlled-polarization-embeddings; gap:arithmetic-interpolation. Use simultaneous strong induction on subvariety dimension: the rank-bounded packing assertion for dimension r uses the conditional counting theorem only on exceptional components of dimension below r, and the dimension-r counting theorem then uses that packing assertion. No same-dimension counting result is assumed in its own proof.
 
 ## Layer 6: Uniform Mordell–Lang
 
@@ -1186,7 +1194,7 @@ One proof route is the following. Choose a level-ℓ structure on C over ℚ̄, 
 
 ### 6.11 Finitely many curves of small modular height and bounded degree
 
-Fix g ≥ 2, d ≥ 1 and c₁. The smooth genus-g curves C defined over a number field F with [F : ℚ] ≤ d and `h_{A_g,M}(τ(s))` < c₁ (for a level structure s over F′ ⊇ F) lie in finitely many ℚ̄-isomorphism classes, and the degree [F′ : F] of the field over which a level structure is defined is bounded in terms of g and the level. (dgh-2021 line 38, Proof of Theorem 1.1, pp. 34–35 (arXiv v3)).
+Fix g ≥ 2, d ≥ 1 and c₁. The smooth genus-g curves C defined over a number field F with [F : ℚ] ≤ d and `h_{A_g,M}(τ(s))` < c₁ (for a level structure s over F′ ⊇ F) lie in finitely many ℚ̄-isomorphism classes, and the degree [F′ : F] of the field over which a level structure is defined is bounded in terms of g and the level. (dgh-2021 line 1618, Proof of Theorem 1.1, pp. 34–35 (arXiv v3)).
 
 Throughout this subsection, [F : ℚ] ≤ d; modular height < c₁.
 
@@ -2112,6 +2120,8 @@ Layer 3 for comparison with the general uniform theorems; ArithmeticDynamics §�
 The uniform theorems supply height-independent finite-rank intersection bounds and bounded small-point sets for subvarieties of abelian varieties. Applications to a fixed curve use §6.8 and §11.7; the geometric theorem over arbitrary constants is §9.19.
 
 ## References
+
+- Xinyi Yuan and Shou-Wu Zhang, *Adelic line bundles on quasi-projective varieties*, arXiv:2105.13587v9. [yuan-zhang-adelic](https://arxiv.org/abs/2105.13587v9), Theorem 5.3.3, p. 158, and Lemma 5.3.4, p. 159.
 
 - Xinyi Yuan, *Arithmetic bigness and a uniform Bogomolov-type result*. [yuan-2026](https://faculty.bicmr.pku.edu.cn/~yxy/preprints/bigness_and_bogomolov.pdf). Ann. of Math. 203 (2026), no. 1; read: author manuscript of 21 August 2024 (126 pp., printed page = PDF page), arXiv 2108.05625
 - Vesselin Dimitrov, Ziyang Gao, Philipp Habegger, *Uniformity in Mordell–Lang for curves*. [dgh-2021](https://arxiv.org/pdf/2001.10276v3). Ann. of Math. 194 (2021), no. 1; read: arXiv 2001.10276v3 (31 March 2021)
