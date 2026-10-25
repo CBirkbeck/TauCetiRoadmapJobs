@@ -2600,15 +2600,42 @@
  ],
  "gaps": [
   {
-   "id": "ScholzeFunctorAndModpCohomologyOfTheLubinTateTower/gap/proetale-finite-presentation",
-   "title": "Finite presentation of the mod p^k cohomology of the arithmetic Drinfeld levels (CDN Theorem 2.1)",
-   "neededBy": [
-    "ScholzeFunctorAndModpCohomologyOfTheLubinTateTower:SZ.5/finite-length",
-    "ScholzeFunctorAndModpCohomologyOfTheLubinTateTower:SZ.6/geometric-multiplicity"
-   ],
-   "detail": "Needed statement (CDN23 Théorème 2.1, p. 21 = Théorème 0.5, p. 5): for F/ℚ_p finite, K/F finite, k ≥ 1 and q ≥ 0, the G′-module H^q_ét(M^ϖ_{n,K}, O_L/p^k) is a profinite O_L-module whose Pontryagin dual is a smooth finitely presented representation of G′ = GL₂(F)/ϖ^ℤ. Its proof uses the G-equivariant semi-stable formal model of M^ϖ_n (CDN Proposition 2.7), the Bloch–Kato–Hyodo filtration on mod p nearby cycles of formal schemes (Theorem 2.4; ClassicalAdicEtaleCohomology H1:formal-adic-comparison plans the filtration) and Shotton’s coherence of the category of finitely presented representations (ModpRepresentationsOfGL2OverLocalFields MP.0/amalgam-coherence). The paper extraction routes it to the new roadmap ProetaleCohomologyOfPAdicCurvesAndTowers (item PAPER-COLMEZ-DOSPINESCU-NIZIOL-23/2-thm-2-1, with 2-prop-semistable, 2-thm-BKH, 2-cpcf and 2-cpcf-lemmas), whose design job DESIGN-ProetaleCohomologyOfPAdicCurvesAndTowers (issue #3410) has not been done; that roadmap has no stages yet, so no request can be filed. Once it is planned, SZ.5/finite-length cites its node for Theorem 2.1 and this gap closes. It is also a direct input to the general-F smooth finite-presentation assertion in SZ.6/geometric-multiplicity (CDN Corollary 2.12, p.30), via the finite-Galois and Stein-cover Hochschild–Serre argument. The supplier must cover that arithmetic theorem; the corollary’s passage to finite-group coinvariants is planned here."
+    "slug": "proetale-finite-presentation",
+    "needs": "For every finite F/ℚ_p, finite K/F, rank-two level n≥0, a≥1 and q≥0, Hᑫ_ét(M⁽ϖ⁾_{n,K},O_L/pᵃ) is profinite with continuous G′-action and its Pontryagin dual is a smooth finitely presented O_L[G′]-module.",
+    "supplier": "ProetaleCohomologyOfPAdicCurvesAndTowers",
+    "section": "Arithmetic finite presentation (CDN23 Theorem 2.1)"
+  },
+  {
+    "slug": "temkin-good-germs",
+    "needs": "For a separated quasicompact analytic adic space V over a complete algebraically closed C, a maximal point whose closure is the full Riemann–Zariski space of its completed residue field has an affinoid neighbourhood containing that closure.",
+    "supplier": "AdicSpacesPartII",
+    "section": "R0.18"
+  },
+  {
+    "slug": "analytic-topology-dimension",
+    "needs": "For a d-dimensional rigid analytic space over a complete nonarchimedean field, cohomology of every abelian sheaf in the analytic topology vanishes in degrees greater than d.",
+    "supplier": "ClassicalAdicEtaleCohomology",
+    "section": "1.1"
+  },
+  {
+    "slug": "arithmetic-stein-hochschild-serre",
+    "needs": "For a quasicompact or Stein rigid analytic space X over a finite extension K of ℚ_p and a torsion coefficient ring Λ, construct the continuous Hochschild–Serre spectral sequence from Gal_K acting on geometric étale cohomology to H⁎_ét(X,Λ), compatible with the prodiscrete Stein limits and strict low-degree sequences.",
+    "supplier": "ClassicalAdicEtaleCohomology",
+    "section": "1.3 and 1.5"
+  },
+  {
+    "slug": "height-zero-modular-uniformisation",
+    "needs": "Embed the height-zero Lubin–Tate tower at a supersingular point into the infinite-level perfectoid modular curve, compatibly with its Hodge–Tate map, level maps and GL₂(ℤ_p)-action.",
+    "supplier": "PerfectoidShimuraVarieties",
+    "section": "1.14"
+  },
+  {
+    "slug": "potentially-barsotti-tate-lifts",
+    "needs": "For p>2 and every finite K/ℚ_p, every continuous two-dimensional residual representation of Gal_K over a finite field of characteristic p has a potentially Barsotti–Tate lift after a finite coefficient extension.",
+    "supplier": "LocalGaloisDeformationRings",
+    "section": "3.4"
   }
- ],
+],
  "sourceIssues": [
   {
    "id": "ScholzeFunctorAndModpCohomologyOfTheLubinTateTower/E1",
