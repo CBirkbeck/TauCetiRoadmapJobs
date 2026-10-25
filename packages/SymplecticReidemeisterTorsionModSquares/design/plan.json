@@ -3963,11 +3963,58 @@
   ],
   "gaps": [
     {
-      "title": "Arithmetic-scheme Chebotarev supplier",
-      "detail": "AV §2.8 and §2.14 invoke Serre, Lectures on N_X(p), §9, Theorems 9.1 and 9.11, and Pink Appendix B. The cited book is not cleared in the supplied library and was not read. The current AnalyticNumberTheory:AN.4 is the analytic Hecke/Dedekind/Artin interface, not the finite-type scheme theorem; no exact existing producer node was found. Supply the quadratic-cover Frobenius detection and quantitative characteristic-zero lower bound stated in RT.5/quadratic-cover-detection through an AnalyticNumberTheory Part II, with primary accessible proof and the correct counting normalization. This remains an explicit leaf, not an asserted library result.",
-      "neededBy": [
-        "SymplecticReidemeisterTorsionModSquares:RT.5/quadratic-cover-detection"
-      ]
+      "slug": "smooth-cell-comparison",
+      "supplier": "GeometricTopology",
+      "section": "Layer 11; smoothing-and-triangulation comparison",
+      "needs": "Provide finite smooth-compatible triangulations, boundary dual cells, common subdivisions and simple comparison maps in every finite dimension, preserving transported local-coefficient cellular volumes."
+    },
+    {
+      "slug": "poincare-boundary-cone",
+      "supplier": "AlgebraicTopology",
+      "section": "Stage 6.3",
+      "needs": "Provide a chain-homotopy-compatible identification of the cone of the relative self-duality adjoint with boundary cochains, carrying its signed pairing to outward-first Poincaré duality for finite projective self-dual local systems with two invertible."
+    },
+    {
+      "slug": "normal-torsor-gluing",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "Sections 2.9 and 2.11",
+      "needs": "Provide generic-fibre full faithfulness for finite étale covers of an arbitrary normal integral affine scheme, including injectivity on μ₂-torsor classes and extension of generic isomorphisms between covers already defined on the base."
+    },
+    {
+      "slug": "unstable-sl2-chern-lift",
+      "supplier": "K3BlochGroups",
+      "section": "Sections 2.4 and 4.20",
+      "needs": "Provide the natural surjection from integral H₃ of SL₂ of every infinite field onto indecomposable K3, compatible with stabilization and the number-field stable Hurewicz equivalence."
+    },
+    {
+      "slug": "dyadic-number-field-chern-rank",
+      "supplier": "K3BlochGroups",
+      "section": "Sections 2.5 and 6.7",
+      "needs": "Provide for every number field the degree-three Chern surjection from indecomposable K3 onto H¹(F,ℤ₂(2))/2, its rank bound at least r₂(F), and injective reduction into H¹(F,μ₂), with real-place corrections and standard-representation normalization."
+    },
+    {
+      "slug": "witt-sylow-lift",
+      "supplier": "KTheoryFiniteLocalFields",
+      "section": "Section 1.9",
+      "needs": "Provide compatible lifts of every finite-field symplectic Sylow 2-subgroup representation through truncated Witt rings to the full Witt ring in odd residue characteristic, using smooth congruence kernels and averaging."
+    },
+    {
+      "slug": "real-chern-bockstein",
+      "supplier": "KTheoryFiniteLocalFields",
+      "section": "Section 1.8",
+      "needs": "Provide the real c₂₂ and c₃₁ components of the universal standard-representation étale c₂, identify c₂₂ with the discrete pullback of the real metaplectic cover, and prove compatibility with the group and étale coefficient Bocksteins."
+    },
+    {
+      "slug": "symplectic-universal-cover-kernel",
+      "supplier": "RepresentationTheory/LieGroups",
+      "section": "Layer 5",
+      "needs": "Identify the fundamental group of positive-rank real symplectic groups with ℤ and the quotient of their universal covering group by 2ℤ with the metaplectic double cover, preserving its central generator modulo two."
+    },
+    {
+      "slug": "arithmetic-scheme-frobenius-detection",
+      "supplier": "Chebotarev",
+      "section": "Layer 13, arithmetic-scheme extension",
+      "needs": "For every normal integral affine finite-type ℤ[1/2]-scheme, provide Frobenius detection of finite étale quadratic quotients and independent pairs at closed points, and in characteristic zero a positive cQ^d lower bound for the logarithmically weighted nonsplit-point count together with the O(q^(d-1)) residue-order bound, where d is the Krull dimension."
     }
   ],
   "sourceIssues": [
