@@ -204,6 +204,7 @@ EffectiveDiophantineMethods
 TropicalAndBerkovichArithmetic
 EffectiveClassNumbers
 CompletedCohomologyPartII
+ArithmeticLocallySymmetricSpacesPartII
 CohomologyComparisons
 CstConjectureForDaggerVarieties
 GaloisSectionsPadicPeriodMaps
