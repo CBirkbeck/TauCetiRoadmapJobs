@@ -36,6 +36,7 @@ DerivedDeRhamCohomology, DerivedModuleAlgebra, EnhancedDerivedSheaves ───�
 PerfectoidSpaces, PerfectoidQuotients, PerfectoidQuotientsPartII, PrismaticCohomology,
 PrismaticCohomologyPartII, FiniteFlatGroupsAndIntegralPadicHodgeTheory ────────────→ Layers 2, 5, 6
 LefschetzPencilsAndVanishingCycles, PurityOfBranchLocus ────────────────────────────→ Layers 1, 6, 7
+ArithmeticGaloisDuality ────────────────────────────────────────────────────────────→ Layer 8
 ```
 
 The headline theorems stated in `Suggested.lean` are Zariski–Nagata purity in virtual dimension
@@ -49,8 +50,8 @@ The flat-cohomological headline theorems are specified in this README; the modul
 **This roadmap owns** the punctured spectrum of a semilocal ring; fppf cohomology with supports on
 the big fppf site of a scheme with its local-to-global spectral sequence, excision, finite flat
 descent and continuity; the non-Noetherian vanishing and Hartogs lemmas of [CS24] §7.2; Cohen
-presentations, complete intersections as a predicate on Noetherian local rings, and the virtual
-dimension; the local étale duality statements on excellent regular local rings used for the local
+presentations, complete intersections as a predicate on local rings (used only for Noetherian
+ones), and the virtual dimension; the local étale duality statements on excellent regular local rings used for the local
 Lefschetz theorem; Gabber's bound on the étale depth; algebraization over punctured spectra and
 Zariski–Nagata purity in virtual dimension `≥ 3`; the crystalline key formula over perfect schemes
 ([CS24] §4.1); fppf cohomology of animated rings with its deformation triangle, `p`-adic continuity,
@@ -101,15 +102,31 @@ residue descriptions ([C19] §§2, 5, 6 and Appendix A).
   PrismaticCohomology §2.0.
 - *Prismatic Dieudonné modules of finite locally free groups over perfectoid rings*:
   PrismaticCohomologyPartII (supplier gap below).
+- *Residue and Witt sequences of complete discretely valued fields with perfect residue field*:
+  ArithmeticGaloisDuality §R02.2.4.
 - *Raynaud's embedding into abelian schemes, descent of finite locally free groups along
   `p`-completely faithfully flat maps, Dieudonné theory over perfect fields*:
   FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.1.40, R07.1.41, R07.2.8.
 
-**Downstream boundary.** SchemeAndStackFoundationsPartII and PrismaticCohomologyPartIII §6.0
-consume the flat cohomology of animated rings, the crystalline key formula, continuity and excision
-from Layers 2–3 here, and EtaleDualityAndPerverseSheavesPartII consumes the local duality and local
-Lefschetz statements of §§1.4–1.5; DeformationAndDerivedPatchingAlgebra consumes the factoriality,
-parafactoriality and local Grothendieck–Lefschetz statements of §§7.4–7.6.
+**Owned here and imported by later roadmaps.** Four roadmaps later in the merge order plan statements
+of this roadmap; each is owned here, and each of those roadmaps imports it from the section named
+rather than planning it.
+
+- The crystalline key formula over perfect schemes with its pro-fppf site and the covariant Dieudonné
+  module over a perfect base (Layer 2, §§2.1–2.4): imported by PrismaticCohomologyPartIII §6.0 (its
+  perfect-base Dieudonné comparison) and by SchemeAndStackFoundationsPartII.
+- Fppf cohomology of animated rings, its deformation triangle, `p`-adic continuity and excision
+  (Layer 3, §§3.1–3.5): imported by PrismaticCohomologyPartIII §6.0 (its `p`-adic continuity,
+  excision and animated flat cohomology) and by SchemeAndStackFoundationsPartII (its animated group
+  points and cotangent deformation).
+- The local étale duality statements and the local Lefschetz theorem (§§1.4–1.5): imported by
+  EtaleDualityAndPerverseSheavesPartII (its local Lefschetz hyperplane theorem).
+- The virtual dimension and complete intersections (§1.1), the counterexamples of §1.3, factoriality
+  of regular local rings, parafactoriality and the local Grothendieck–Lefschetz theorem (§§7.4–7.6):
+  imported by DeformationAndDerivedPatchingAlgebra (its parafactoriality of local complete
+  intersections of dimension `≥ 4`).
+- The Brauer comparison of Gabber and de Jong for schemes with an ample line bundle (§7.11): imported
+  by SchemeAndStackFoundationsPartII (its Layer 1 Brauer comparison).
 
 ## Conventions
 
@@ -117,12 +134,13 @@ parafactoriality and local Grothendieck–Lefschetz statements of §§7.4–7.6.
    universe `u`. Dimensions are Krull dimensions (`ringKrullDim`). Regular sequences are weakly
    regular in the sense of EGA ([CS24] §1.4): Mathlib's `RingTheory.Sequence.IsWeaklyRegular`, with
    no condition that the final quotient be nonzero.
-2. A **Cohen presentation** of a Noetherian local ring `(R, 𝔪)` is a regular local ring `B` with a
-   surjection `B → R̂` onto the `𝔪`-adic completion (Mathlib `AdicCompletion`); one exists by Cohen's
-   theorem (DerivedDeRhamCohomology §0.19, Cohen factorizations of `ℤ → R̂`). `R` is a **complete
+2. A **Cohen presentation** of a local ring `(R, 𝔪)` is a regular local ring `B` with a
+   surjection `B → R̂` onto the `𝔪`-adic completion (Mathlib `AdicCompletion`); for Noetherian `R` one exists by
+   Cohen's theorem (DerivedDeRhamCohomology §0.19, Cohen factorizations of `ℤ → R̂`). `R` is a **complete
    intersection** if some Cohen presentation has kernel generated by a regular sequence (Bruns–Herzog
    Definition 2.3.1; DerivedDeRhamCohomology §0.21); `μ(I)` is the minimal number of generators,
-   Mathlib's `Submodule.spanFinrank`.
+   Mathlib's `Submodule.spanFinrank`. These notions are defined for every local ring and used only
+   for Noetherian ones: every statement about them is made for Noetherian `R`.
 3. **Cohomology** is fppf cohomology on the big fppf site (Mathlib `Scheme.fppfTopology`), identified
    with étale cohomology for smooth coefficients and with Zariski cohomology for quasi-coherent
    coefficients (SchemeAndStackFoundations §2.10). `H^i_Z(X, F)` is cohomology with supports in a
@@ -301,7 +319,9 @@ Fontaine generators; §0.6 `integralPerfectoid_pi_iff` (products), `perfectoid_c
 
 §Q5.2 tilts and `A_inf` of products; §Q5.4 torsion of a perfectoid ring and of its tilt; §§Q6.3–Q6.7
 tilting of valuation rings, localizations and algebraically closed fraction fields ([CS24]
-Proposition 2.1.9); §Q10.1 the towers of [CS24] Lemma 3.1.1.
+Proposition 2.1.9); §Q7.1 ind-fppf ring maps (filtered colimits of faithfully flat
+finitely presented algebras) and §Q7.3 their stability under composition, base change, nonempty
+finite products and filtered colimits ([CS24] §2.3.3); §Q10.1 the towers of [CS24] Lemma 3.1.1.
 
 What PerfectoidQuotientsPartII must provide (gap:regular-tower-tilt): for a perfect field `k` of
 characteristic `p` and `R_∞ = W(k)⟦x_1^{1/p^∞}, …, x_d^{1/p^∞}⟧/(p − f)` as in §Q10.1, the tilt of
@@ -338,6 +358,14 @@ over perfect `𝔽_p`-algebras with the crystalline classification of Berthelot,
 §R07.1.40 `raynaudAbelianEmbedding` (Zariski-locally, a finite locally free commutative group embeds
 into a projective abelian scheme); §R07.1.41 `pCompleteFlatDescent`; §R07.2.8 the Dieudonné
 classification over perfect fields, used to test §2.1.
+
+### From TauCetiRoadmap.ArithmeticGaloisDuality
+
+§R02.2.4 the residue and Witt sequences of a complete discretely valued field `K` with perfect residue
+field `k`: `0 → Br(k) → Br(K) → H^1(k, ℚ/ℤ) → 0` exact and split by a uniformiser, and for `K = k((t))`
+and `m` prime to `char k` the split exact sequences
+`0 → H^q(k, μ_m^{⊗r}) → H^q(K, μ_m^{⊗r}) → H^{q−1}(k, μ_m^{⊗(r−1)}) → 0`. Used in §8.15 for exactness
+only; the sign of the residue is fixed here by Convention 8.
 
 ## How to read the build
 
@@ -545,7 +573,10 @@ has kernel generated by a weakly regular sequence of `B` (Bruns–Herzog Definit
 `μ(𝔪_B) − μ(ker)`, where `μ` is Mathlib's `Submodule.spanFinrank` and `μ(𝔪_B) = dim B` because `B`
 is regular; by the independence statement below every presentation gives the same value, which is
 Grothendieck's geometric depth ([SGA2] XIV, Proposition 5.2 and Définition 5.3, pp. 198–200; [CS24]
-(3.2.1.1), p. 32). The value may be negative.
+(3.2.1.1), p. 32). The value may be negative. The three definitions make sense for every local
+ring and are used only for Noetherian ones; for a non-Noetherian local ring without a Cohen
+presentation the infimum is over the empty set and Mathlib's `sInf ∅ = 0` for `ℤ` is a value no
+target uses. In the API and Checks below `R` is Noetherian, except in the last Check.
 *Needs:* Mathlib `IsRegularLocalRing`, `AdicCompletion`, `Submodule.spanFinrank`,
 `RingTheory.Sequence.IsWeaklyRegular`, `Ideal.ofList`; DerivedDeRhamCohomology §§0.19, 0.21 (Cohen
 factorizations and the absolute complete-intersection criterion); PerfectoidSpaces §P7.16a
@@ -581,6 +612,11 @@ API (each a target):
   virtual dimension is not the dimension and can be negative.
 - For `R = 𝔽_p⟦x, y, z, t⟧/(x², y², xz − yt)` the three relations are minimal generators, so
   `virtualDimension R = 4 − 3 = 1` while `dim R = 2`; `R` is not a complete intersection.
+- Outside the Noetherian case the predicate carries no information: for a rank-one valuation ring
+  with `𝔪 = 𝔪²` the completion `lim R/𝔪ⁿ = R/𝔪` is a field, the presentation `R/𝔪 → R/𝔪` has
+  kernel `0`, generated by the empty sequence, so `IsCompleteIntersection R` holds and
+  `virtualDimension R = 0` although `R` is not Noetherian; this is why every theorem using these
+  notions assumes `IsNoetherianRing R`.
 - A Cohen presentation needs `B` regular: `k⟦x, y⟧/(xy) → k⟦x, y⟧/(xy)` is surjective but its source
   is not regular, and taking it would give `2 − 0 = 2 ≠ 1`.
 
@@ -854,13 +890,20 @@ fpqc and pro-fppf covers of a perfect scheme ([CS24] Lemma 4.1.6); and the seque
 `0 → G → 𝕄(G) → 𝕄(G) → 0`, the last map `V − 1`, is exact on perfect `S`-schemes with the pro-fppf
 topology ([CS24] Proposition 4.1.7, p. 38): an extension of `ℤ/p^n` by `G` splits over the `G`-torsor
 `π^{-1}(1)`, and Lemma 4.1.6 keeps the splitting cover perfect.
-*Needs:* §§2.1–2.2; PerfectoidQuotientsPartII §Q7.1 (ind-fppf ring maps and their stability);
-SchemeAndStackFoundations §0.24.
+*Needs:* §§2.1–2.2; PerfectoidQuotientsPartII §§Q7.1, Q7.3 (ind-fppf ring maps and their
+stability); SchemeAndStackFoundations §0.24.
 
 API (each a target):
-- Pro-ppf maps are stable under base change and composition (PerfectoidQuotientsPartII §Q7.1), so
-  pro-fppf covers define a Grothendieck topology on `X`-schemes, finer than the fppf topology and
-  coarser than the fpqc topology.
+- Pro-ppf maps are stable under base change and composition, so pro-fppf covers define a
+  Grothendieck topology on `X`-schemes, finer than the fppf topology and coarser than the fpqc
+  topology ([CS24] §4.1.5, p. 37). Base change is formal: base change commutes with filtered colimits
+  and preserves flat finitely presented algebras. For composition `A → A′ → A″`, use the
+  factorization criterion (Stacks 07C3, for the class of flat finitely presented algebras): a finitely
+  presented `B → A″` gives `A′ ⊗_A B → S → A″` with `S` flat and finitely presented over `A′`; descend
+  `S` and its flatness to a flat finitely presented algebra over some flat finitely presented
+  `A`-algebra `A′_i` in a presentation of `A′`, as in [CS24] §2.3.3, footnote 13 (CS24 line 997),
+  and factor `B` through it. The faithfully flat case, ind-fppf maps, is PerfectoidQuotientsPartII
+  §§Q7.1, Q7.3; faithful flatness is not needed for the pro-ppf statement.
 - Fppf and Zariski covers are pro-fppf covers; a pro-fppf cover is an fpqc cover.
 - The perfection of a pro-fppf cover of a perfect scheme is a pro-fppf cover (Lemma 4.1.6).
 
@@ -900,7 +943,7 @@ with the fibre of `φ^{-1} − 1` on `RΓ_Z(S, 𝒪_S)`; since `t` is regular, `
 
 ### Dependencies
 
-PrismaticCohomologyPartII gap:prismatic-dieudonne-perfectoid; PerfectoidQuotientsPartII §Q7.1;
+PrismaticCohomologyPartII gap:prismatic-dieudonne-perfectoid; PerfectoidQuotientsPartII §§Q7.1, Q7.3;
 SchemeAndStackFoundations §§0.24, 1.18, 2.1–2.3, 2.10, 2.11; §0.2.
 
 ## Layer 3: Flat cohomology of animated rings
@@ -993,7 +1036,8 @@ Route: reduce to discrete `A` by §3.3 and Postnikov convergence, use an ind-fpp
 nonsplit fppf covers ([CS24] Lemma 5.3.1) and the Mittag-Leffler argument; Corollary 5.3.7 reduces by
 §3.3 to reduced `𝔽_p`-algebras and then to §2.4; Corollary 5.3.8 uses the invariance of étale cohomology
 of `Spec(π_0 A)[1/p]` under `p`-adic completion.
-*Needs:* §§2.4, 3.2, 3.3; PerfectoidQuotientsPartII §Q7.1 (ind-fppf maps); PrismaticCohomology §2.0
+*Needs:* §§2.4, 3.2, 3.3; PerfectoidQuotientsPartII §§Q7.1, Q7.3 (ind-fppf maps and their
+stability); PrismaticCohomology §2.0
 (the `arc_p` sheaf `R ↦ RΓ_ét(Spec R̂_p[1/p], F)` and the henselian completion comparison).
 
 **Checks.**
@@ -1047,8 +1091,8 @@ is a quotient of `H^2(A, μ_{p^n}) = 0`, so `Br′(Spec A)[p^∞] = 0`.
 ### Dependencies
 
 §§0.2, 2.4; EnhancedDerivedSheaves E5:animation; DerivedModuleAlgebra §§0.4, 0.25, 1.5;
-PerfectoidQuotientsPartII §Q7.1; PrismaticCohomology §2.0; FiniteFlatGroupsAndIntegralPadicHodgeTheory
-§R07.1.41; SchemeAndStackFoundations §§0.9, 2.10.
+PerfectoidQuotientsPartII §§Q7.1, Q7.3; PrismaticCohomology §2.0;
+FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.1.41; SchemeAndStackFoundations §§0.9, 2.10.
 
 ## Layer 4: Purity in positive characteristic
 
@@ -1547,8 +1591,14 @@ ModularCurves Layer 4D.
 - For `X = Spec k ⊔ Spec k`, `Z` one point, `d = 1` and `G = ℤ/2`: the uncorrected bound `dim ≥ d − 1 = 0`
   would admit the field `𝒪_{X,z} = k`, and `H^0(X, G) = (ℤ/2)² → H^0(X ∖ Z, G) = ℤ/2` is not injective;
   `max(d − 1, 1)` excludes it.
-- For a smooth variety `X` over a field and `Z` of codimension `≥ c`, `H^i(X, μ_p) ≅ H^i(X ∖ Z, μ_p)` for
-  `i < c − 1`, also in characteristic `p`.
+- For a smooth variety `X` over a field and `Z` of codimension `≥ c ≥ 1`, every `𝒪_{X,z}`, `z ∈ Z`, is
+  regular of dimension `≥ c = max(d − 1, 1)` for `d = c + 1`, so `H^i(X, μ_p) ≅ H^i(X ∖ Z, μ_p)` for
+  `i < c` and `H^c(X, μ_p) ↪ H^c(X ∖ Z, μ_p)`, also in characteristic `p`. For `c = 2`, a point on a
+  smooth surface, this is bijectivity on `H^1` (purity for `μ_p`-torsors, §7.3) and injectivity on
+  `H^2`. The bound is sharp at `c = 1`: for `X = 𝔾_m` over an algebraically closed field of
+  characteristic `≠ p` and `Z = {1}`, `H^0` is bijective and `H^1(X, μ_p) = ℤ/p · [t] ↪
+  H^1(X ∖ Z, μ_p) = (ℤ/p)² = ⟨[t], [t − 1]⟩` (Kummer; both Picard groups vanish) is injective but
+  not onto.
 
 ### 7.2 Auslander's freeness criterion through endomorphisms
 
@@ -2161,14 +2211,28 @@ Prove: under the hypotheses of §8.14, `0 → H²_ét(𝒪, 𝔾_m)[ℓ^∞] →
 exact ([C19] Remark 6.4, p. 14; [Poo17] Proposition 6.8.1, p. 196; [Gro68] Brauer III, 2.1). Route:
 injectivity by §7.10(b); for complete `𝒪`, the valuation sequence `0 → (𝒪^{unr})^× → (K^{unr})^× → ℤ → 0`,
 Hochschild–Serre and `Br(𝒪) ≅ Br(k)` (SchemeAndStackFoundations §2.22, `brauer_henselian_local`); in
-general §8.13(b). No surjectivity of the residue is asserted.
-*Needs:* §§7.10, 8.13, 8.14; SchemeAndStackFoundations §§2.15, 2.22.
+general §8.13(b). For complete `𝒪` with perfect residue field `k`, exactness at `H²(K, 𝔾_m)` is also the
+Witt sequence `0 → Br(k) → Br(K) → H^1(k, ℚ/ℤ) → 0` of ArithmeticGaloisDuality §R02.2.4, in every
+characteristic and for every `ℓ` (for `𝒪 = k⟦t⟧` and `ℓ ≠ char k`, its finite-coefficient sequence
+with `q = 2`, `r = 1` gives the same after the Kummer sequence); both residues are the valuation map
+`H²(G_k, (K^{unr})^×) → H²(G_k, ℤ)` followed by an identification `H²(G_k, ℤ) ≅ H^1(k, ℚ/ℤ)`, so they
+differ at most by a sign and have the same kernel, and exactness transfers whatever sign that roadmap
+uses. No surjectivity of the residue is asserted.
+*Needs:* §§7.10, 8.13, 8.14; SchemeAndStackFoundations §§2.15, 2.22; ArithmeticGaloisDuality §R02.2.4
+(complete `𝒪` with perfect `k`).
 
 **Checks.**
 - For `𝒪 = ℤ_p`: `0 → 0 → ℚ/ℤ → ℚ/ℤ`, the residue being the local invariant.
 - For `𝒪 = ℝ⟦t⟧`: `Br(ℝ⟦t⟧) = ℤ/2 → Br(ℝ((t))) = ℤ/2 ⊕ ℤ/2 → H^1(ℝ, ℚ/ℤ) = ℤ/2` is exact and the residue is
   onto.
 - For `𝒪 = ℤ_(p)` the sequence is that of `ℤ_p` on the classes coming from `Br(ℚ)`, by §8.13(b).
+- For `𝒪 = 𝔽_q⟦t⟧`, `L = 𝔽_{q^n}((t))` and `π = t`: `Br(𝔽_q) = 0`, so the residue
+  `Br(𝔽_q((t))) → H^1(𝔽_q, ℚ/ℤ) = ℚ/ℤ` is injective, under Convention 8 and under the Witt sequence
+  of ArithmeticGaloisDuality §R02.2.4 alike. Convention 8 sends the crossed product
+  `(L/K, Frob_q, t)` to `χ` with `χ(Frob_q) = 1/n` and `(L/K, Frob_q^{-1}, t)` to `−χ`; these two
+  classes are inverse to each other in `Br(K)`, both of order `n`. A residue with the geometric
+  normalisation exchanges the two values but has the same kernel, so it passes the exactness Checks
+  and fails only this one.
 
 ### 8.16 The residue sequence of a regular integral scheme
 
@@ -2227,19 +2291,22 @@ punctured spectrum, §8.10 describes `Br(ℤ_p⟦x⟧)` inside `Br(Frac ℤ_p⟦
 ### Dependencies
 
 §§0.1–0.5, 3.5, 6.5, 7.7, 7.10–7.12, 7.15; SchemeAndStackFoundations §§1.15, 2.1–2.3, 2.11, 2.15, 2.22;
-ModularCurves Layer 4D.
+ModularCurves Layer 4D; ArithmeticGaloisDuality §R02.2.4.
 
 ## Downstream consumers
 
-- SchemeAndStackFoundationsPartII and PrismaticCohomologyPartIII §6.0 use the flat cohomology of animated
-  rings, its deformation triangle, `p`-adic continuity and excision (Layer 3), the crystalline key formula
-  over perfect schemes (Layer 2), fppf cohomology with supports (§0.2) and the torsion of `𝔾_m`-cohomology
-  (§7.10).
-- EtaleDualityAndPerverseSheavesPartII uses the local duality statements on excellent regular local rings
-  and the local Lefschetz theorem (§§1.4–1.5).
-- DeformationAndDerivedPatchingAlgebra uses the virtual dimension and complete intersections (§1.1),
-  factoriality of regular local rings, parafactoriality and the local Grothendieck–Lefschetz theorem
-  (§§7.4–7.6).
+These roadmaps are later in the merge order; each imports the sections named from here, which own
+them (see Scope and ownership).
+
+- SchemeAndStackFoundationsPartII and PrismaticCohomologyPartIII §6.0 import the flat cohomology of
+  animated rings, its deformation triangle, `p`-adic continuity and excision (Layer 3), the crystalline
+  key formula over perfect schemes (Layer 2), fppf cohomology with supports (§0.2) and the torsion of
+  `𝔾_m`-cohomology (§7.10); SchemeAndStackFoundationsPartII also imports the Brauer comparison of §7.11.
+- EtaleDualityAndPerverseSheavesPartII imports the local duality statements on excellent regular local
+  rings and the local Lefschetz theorem (§§1.4–1.5).
+- DeformationAndDerivedPatchingAlgebra imports the virtual dimension and complete intersections (§1.1),
+  the counterexamples of §1.3, factoriality of regular local rings, parafactoriality and the local
+  Grothendieck–Lefschetz theorem (§§7.4–7.6).
 
 ## Worked examples
 
