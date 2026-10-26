@@ -4993,9 +4993,9 @@
     },
     {
       "slug": "rectangular-orbit-support",
-      "needs": "For a nonarchimedean characteristic-zero local field F, k,c≥1 and a nonzero finite-length admissible complex representation ρ of GL_(kc)(F), assume that each of the c successive highest Bernstein–Zelevinsky derivatives has order k; identify Hom_(U_(c^k))(ρ,ψ_(k,c)) with the linear dual of the terminal GL₀ derivative space, with the determinant-normalization conversion from SR.5.3 mirabolic-derivatives made explicit, and prove vanishing of Hom_(V(σ))(ρ,ψ′) for every partition σ greater than or incomparable with (k^c) and every generic ψ′ (MODELS Proposition 2 and proof, pp.3–4, MODELS lines 108–128; GGS17 Theorems E–F, pp.5–6, GGS17 lines 219–238).",
+      "needs": "For a nonarchimedean characteristic-zero local field F, k,c≥1 and a nonzero finite-length admissible complex representation ρ of GL_(kc)(F), assume that each of the c successive highest Bernstein–Zelevinsky derivatives has order k; identify Hom_(U_(c^k))(ρ,ψ_(k,c)) with the linear dual of the terminal GL₀ derivative space, with the determinant-normalization conversion between SR.5.1 mirabolic-derivatives and SR.5.3 highest-derivative-adapter made explicit, and prove vanishing of Hom_(V(σ))(ρ,ψ′) for every partition σ greater than or incomparable with (k^c) and every generic ψ′ (MODELS Proposition 2 and proof, pp.3–4, MODELS lines 108–128; GGS17 Theorems E–F, pp.5–6, GGS17 lines 219–238).",
       "supplier": "SmoothRepresentationsOfLocalGroups",
-      "section": "SR.2, SR.3.3 and SR.5.3"
+      "section": "SR.2, SR.3.3, SR.5.1 and SR.5.3"
     },
     {
       "slug": "standard-archimedean-transfer",
@@ -5098,6 +5098,12 @@
       "needs": "For irreducible Π of GL_N(F), F nonarchimedean of characteristic zero, generic τ of GL_k(F), b∈F× and ψ_b(x)=ψ(bx), prove that the canonical pair ε-factors of §10.29 satisfy ε(s,Π×τ,ψ_b)=ω_Π(b)^k ω_τ(b)^N |b|^(Nk(s−1/2)) ε(s,Π×τ,ψ), where ω denotes central characters (CPS94 Lemma 2.1 and proof, pp.161–163, for induced representations of Whittaker type; CPS94 line 249).",
       "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
       "section": "10.29"
+    },
+    {
+      "slug": "arbitrary-character-unitary-doubling",
+      "needs": "For a characteristic-zero local field F, a quadratic étale algebra E/F, a nondegenerate Hermitian space V of positive rank and an irreducible admissible π of U(V), smooth at finite places and Casselman–Wallach at infinity, construct the §6.10a doubling integrals, their continuation, normalized functional equation, standard local factors, good-section gcd and unramified denominator for the Siegel induction from χ∘det twisted by |det|_E^s, for every continuous quasi-character χ of E× with no condition on its restriction to F×, and for cuspidal π over a number field and every Hecke character χ of 𝔸_E×/E× the completed standard function with its meromorphic continuation and functional equation, in the supplier's own parabolic convention.",
+      "supplier": "MetaplecticAutomorphicForms",
+      "section": "6.10a and 6.11"
     }
   ],
   "sourceIssues": [
