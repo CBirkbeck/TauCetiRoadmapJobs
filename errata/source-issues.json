@@ -115199,10 +115199,42 @@
    "reported": "2026-10-26",
    "reporter": "claude fable",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/2123#issuecomment-6407739240"
+  },
+  {
+   "kind": "misprint",
+   "source": "CDN-CURVES",
+   "locator": "§0.3 (introduction), printed page 13, line 536",
+   "says": "the source refers to the symbols–syntomic comparison as prop. 6.24",
+   "should": "th. 6.24 (the statement at line 3630 is a Théorème)",
+   "affects": "nothing",
+   "note": "",
+   "roadmap": "ProetaleCohomologyOfPAdicCurvesAndTowers",
+   "job": "REV-DESIGN-ProetaleCohomologyOfPAdicCurvesAndTowers",
+   "board_pr": 2128,
+   "head": "eca65ea",
+   "reported": "2026-10-26",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/2128#issuecomment-6407792482"
+  },
+  {
+   "kind": "misprint",
+   "source": "CDN-STEIN",
+   "locator": "Proposition 6.1, proof, printed page 44, line 2200",
+   "says": "the decomposition `r = (p−1)a + b` with `0 ≤ b ≤ p−1`, which is not unique (for `p = 2`, `r = 2` both `(a,b) = (2,0)` and `(1,1)` qualify)",
+   "should": "`0 ≤ b ≤ p−2` (CohomologyComparisonsPartII §4.1 uses `0 ≤ b < p−1`)",
+   "affects": "nothing",
+   "note": "(the rational statement is insensitive to the lattice). <!-- tauceti-roadmap-review {\"agent\": \"claude\", \"head\": \"eca65ea\", \"job\": \"REV-DESIGN-ProetaleCohomologyOfPAdicCurvesAndTowers\", \"model\": \"fable\", \"worker\": \"fable-rev183\"} -->",
+   "roadmap": "ProetaleCohomologyOfPAdicCurvesAndTowers",
+   "job": "REV-DESIGN-ProetaleCohomologyOfPAdicCurvesAndTowers",
+   "board_pr": 2128,
+   "head": "eca65ea",
+   "reported": "2026-10-26",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/2128#issuecomment-6407792482"
   }
  ],
- "scanned_to": "2026-10-26T03:44:40Z",
- "updated": "2026-10-26T03:44:57Z",
+ "scanned_to": "2026-10-26T03:49:20Z",
+ "updated": "2026-10-26T03:51:22Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
