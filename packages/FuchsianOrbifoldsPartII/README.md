@@ -452,24 +452,24 @@ Interior maps are local orbifold isometries; boundary maps are isometric half-di
 
 ### 2.3 Elliptic lift spacing
 
-Define V(x)=2arsinh(x/2) for real x. For x≥0 this equals arcosh(1+x²/2) and log(1+(x/2)(√(x²+4)+x)). For positive digit n, V(n)=distℍ(a+i,a+n+i), independent of a. It is strictly increasing. These are distances of specified lifts in ℍ; they are not asserted to be distances of the corresponding cone points in F_A.
+Define V(x)=2arsinh(x/2) for real x. For every real x it equals log(1+(x/2)(√(x²+4)+x)) and satisfies cosh V(x)=1+x²/2; for x≥0 it equals arcosh(1+x²/2), while for x<0 that expression is −V(x). For positive digit n, V(n)=distℍ(a+i,a+n+i), independent of a. It is strictly increasing. These are distances of specified lifts in ℍ; they are not asserted to be distances of the corresponding cone points in F_A.
 
-Use x≥0 for the arcosh and logarithmic comparisons; the real-bodied arsinh definition is total.
+Use x≥0 for the arcosh comparison only; the real-bodied arsinh definition and its logarithmic form are total.
 
 (DIT16, Last paragraph of Theorem 1 proof, p.959, display V(x), DIT16 line 394.)
 
-One route is to proceed as follows. Substitute the two height-one points into the existing UpperHalfPlane.dist_eq. The elementary hyperbolic-function identities give the two alternate expressions on the nonnegative half-line. Strict monotonicity follows from arsinh, with positive scaling.
+One route is to proceed as follows. Substitute the two height-one points into the existing UpperHalfPlane.dist_eq. The identities arsinh t=log(t+√(t²+1)) and cosh 2u=1+2sinh²u give the logarithmic form and the cosh identity on all of ℝ; the arcosh form follows on the nonnegative half-line, where V≥0. Strict monotonicity follows from arsinh, with positive scaling.
 
 The construction has the following API.
 
 - For n≥0, dist(a+i,a+n+i)=V(n).
 - V is strictly increasing on ℝ.
-- For x≥0, cosh(V(x))=1+x²/2.
+- For every real x, cosh(V(x))=1+x²/2, and V(x)=arcosh(1+x²/2) exactly when x≥0.
 - V(0)=0.
 
 **Checks.**
 
-- V(0)=0. This fixes the coincident-lift boundary case.
+- V(−2)=2arsinh(−1)≈−1.7627=−V(2), and the logarithmic form gives the same value log(3−2√2), whereas arcosh(1+(−2)²/2)=arcosh 3≈+1.7627. This fixes the sign of V on the negative half-line and rejects the even arcosh expression as a total definition; only the arcosh form needs x≥0.
 - cosh(V(2))=3 and V(2)>0. This detects a factor-two error in hyperbolic distance.
 - For [4], i and 4+i represent the same cone point of F_A; their intrinsic distance is 0 although their lift spacing V(4)>0. This separates lift spacing from intrinsic quotient distance.
 
@@ -618,7 +618,7 @@ The construction has the following API.
 - i∈F_DIT although i∉fdo. This rejects using the strict open domain as the half-open representative set.
 - −1/2+2i belongs and 1/2+2i does not. This fixes which vertical tie is retained.
 - −1/2+(√3/2)i belongs, while 1/2+(√3/2)i and the positive-real-part open semicircle do not. This fixes which circular tie is retained.
-- μ_mod(∅)=0 and μ_mod({π_mod(i)})=0, while μ_mod(M)=π/3>0. This rejects an atom at the order-two cone point or a zero quotient measure.
+- μ_mod({π_mod(i)})=0 while μ_mod(M)=π/3>0, which is −2π times the orbifold Euler characteristic 2−1−(1/2+2/3)=−1/6 of the modular orbifold. This rejects an atom at the order-two cone point, a zero quotient measure, and the value π/6 obtained by dividing once more by the centre {±I} of SL₂(ℤ).
 - Replacing fdo by F_DIT changes its area by 0 and changes neither μ_mod nor its integrals. Deleting the two cone points leaves paths joined by small detours, whereas deleting a separating curve need not preserve connectedness.
 
 The point i is included, and positive-real-part points on the unit semicircle are excluded. All subsequent measure equalities are independent of this null boundary choice.
@@ -646,7 +646,7 @@ The construction has the following API.
 **Checks.**
 
 - The principal D=28 core has projected mass 2π, whatever its overlapping image looks like. This detects replacing pushforward mass by image area.
-- ν_A(∅)=0 and ν_A(M)=πℓ_A>0. This fixes zero mass on the empty set and positive full mass.
+- ν_A(M)=πℓ_A≥π>π/3 for every narrow class, since ℓ_A≥1; for D=12 the two classes have masses π and 2π. Every restriction of μ_mod to a subset of M, the image-area measure on p_A(F_A) included, has mass at most π/3, and a class-independent normalization cannot give two different masses. This fixes a finite positive full mass that depends on ℓ_A and rejects image area for every class, not only at D=28.
 - When A²=J, the exact family-cover theorem gives ν_A=3ℓ_A μ_mod; replacing it by area on its image would lose the factor 3ℓ_A. This detects losing reciprocal sheet multiplicity.
 
 ν_A(M)=πℓ_A, not π/3 merely because the image covers M. Equality is an equality of Borel measures, not only an identity on one test disc.
