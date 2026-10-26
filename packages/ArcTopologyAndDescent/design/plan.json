@@ -5934,12 +5934,6 @@
     "needs": "Extend the §2.6 comparison to the image of every p-complete integral perfectoid A in A[1/p] by comparing Spa(A[1/p],A) with Spa(A[1/p],(A[1/p])°), compatibly with open restriction and the étale-site tilting equivalence of PerfectoidSpaces §P3.20.",
     "supplier": "ClassicalAdicEtaleCohomology",
     "section": "§2.6 (integral-model and restriction compatibility)"
-  },
-  {
-    "slug": "bounded-torsion-punctured-approximation",
-    "needs": "Extend henselian finite étale approximation to a-henselian rings with bounded a-power torsion on every open containing D(a), and to complements of finitely generated ideals in noetherian henselian pairs, compatibly with restriction and finite affine-open descent.",
-    "supplier": "AdicEtaleGeometry",
-    "section": "§A1.0.5"
   }
 ],
   "sourceIssues": [

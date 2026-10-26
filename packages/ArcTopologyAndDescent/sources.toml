@@ -66,7 +66,7 @@ year = 2024
 doi = "10.4007/annals.2024.199.1.2"
 arxiv = "1912.10932v3"
 locator_scheme = "section"
-locator = "Lemma 3.1.2 p. 30; CS24 line 1207; CS24 §2.2.1 pp. 18–19 (aic completion p. 18); CS24 lines 692 and 733; CS24 Lemmas 2.2.3–2.2.4 pp. 19–20 (principal case); §2.2.1 for finite I; CS24 line 764; CS24 Theorem 2.2.5 and Remark 2.2.6, pp. 20–21; CS24 line 800; Lemma 2.2.2, p. 19; CS24 line 755; Lemma 4.2.6 and proof, pp. 41–42; CS24 line 1717"
+locator = "Lemma 3.1.2 p. 30; CS24 line 1207; CS24 §2.2.1 pp. 18–19 (aic completion p. 18); CS24 lines 692 and 733; CS24 Lemmas 2.2.3–2.2.4 pp. 19–20 (principal case); §2.2.1 for finite I; CS24 line 764; CS24 Theorem 2.2.5 and Remark 2.2.6, pp. 20–21; CS24 line 800; proof of Theorem 2.2.5, p. 20; CS24 line 808; Remark 2.2.6, p. 21; CS24 line 821; Lemma 2.2.2, p. 19; CS24 line 755; Lemma 4.2.6 and proof, pp. 41–42; CS24 line 1717"
 url = "https://arxiv.org/abs/1912.10932v3"
 fetched_from = "https://arxiv.org/pdf/1912.10932v3"
 fetched_at = "2026-10-24T00:22:38Z"
@@ -75,7 +75,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-24"
 version_note = "arXiv:1912.10932v3, 2023; Ann. Math. 199 (2024); locators use this arXiv version, not unverified journal renumbering."
-cited_for = ["§8.4", "§8.9", "§11.1", "§11.2", "§11.5", "§12.6", "§12.7"]
+cited_for = ["§8.4", "§8.9", "§9.5", "§11.1", "§11.2", "§11.5", "§12.6", "§12.7"]
 
 [[source]]
 id = "GR24"
@@ -142,7 +142,7 @@ year = 2022
 doi = "10.48550/arXiv.1908.07480"
 arxiv = "1908.07480v4"
 locator_scheme = "section"
-locator = "Theorem 2.3.4 and Corollary 2.3.5(e), pp. 29–31; BC22 line 1209"
+locator = "Theorem 2.3.4 and Corollary 2.3.5(e), pp. 29–31; BC22 line 1209; proof of Theorem 2.3.4, p. 30; BC22 line 1230"
 url = "https://arxiv.org/abs/1908.07480v4"
 fetched_from = "https://arxiv.org/pdf/1908.07480v4"
 fetched_at = "2026-10-24T00:23:02Z"
