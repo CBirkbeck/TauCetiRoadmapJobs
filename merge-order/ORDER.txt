@@ -222,6 +222,7 @@ ModularIwasawaMainConjecturesPartII
 HabiroNumberFields
 HabiroRings
 RefinedTraceMethods
+RefinedTraceMethodsPartII
 AnalyticStacks
 StableHomotopyKTheoryPartII
 GeneralAlgebraicKTheoryPartII
