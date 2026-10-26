@@ -12,7 +12,7 @@ at these pins using only a few simple definitions on native carriers.
 
 - PA.0.7 — Non-separated Chow lemma: not statable. Projective morphisms, modifications and pseudo-projective factorizations lack pinned geometric carriers.
 
-- PA.0.10–PA.0.12 — Universal resolvability in dimensions one and two (projective sense) and of separated threefolds (proper sense): not statable. Quasi-excellence and excellence, projective morphisms and SNC boundaries lack pinned carriers.
+- PA.0.10–PA.0.12 — Universal resolvability of quasi-excellent schemes of dimension at most two (projective sense) and of separated quasi-excellent threefolds (proper sense): not statable. Quasi-excellence, projective morphisms and SNC boundaries lack pinned carriers.
 
 - PA.1.4 — Compactness and valuative description of pointed Riemann–Zariski spaces: not statable. The pointed locally ringed limit and its valuative-point comparison are heavy constructions absent at the pins.
 
@@ -48,7 +48,7 @@ at these pins using only a few simple definitions on native carriers.
 
 - PA.6.3 — Separable desingularization over a perfect field: not statable. Separable scheme alterations, SNC supports and the log smooth resolution diagram are absent.
 
-- PA.6.4 — Desingularization by residue-characteristic alterations: not statable. Quasi-excellence and excellence, projective morphisms and SNC boundaries are absent.
+- PA.6.4 — Desingularization by residue-characteristic alterations: not statable. Quasi-excellence, projective morphisms and SNC boundaries are absent.
 
 - PA.6.5–PA.6.6 — Residue-characteristic desingularization of morphisms and source refinement: not statable. The prime-supported alteration diagram, SNC boundaries and log smoothness carriers are absent; scheme-theoretic images exist (`AlgebraicGeometry.Scheme.Hom.image`, `AlgebraicGeometry.Scheme.Hom.imageι`, `AlgebraicGeometry.Scheme.Hom.toImage`).
 

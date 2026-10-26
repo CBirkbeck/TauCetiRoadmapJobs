@@ -151,7 +151,7 @@ authors = "The Stacks project authors"
 title = "The Stacks project"
 year = 2026
 locator_scheme = "tag"
-locator = "Tags 081R, 0815, 052A, 0AVK, 0C45, 0BI4, 05K0; Fields Lemma 9.26.11 (037J); Varieties Lemma 33.7.14 (04KV), Definition 33.9.1 (020H)"
+locator = "Tags 081R, 0815, 052A, 0AVK, 0C45, 0BI4, 05K0; Fields Lemma 9.26.11 (037J); Varieties Lemma 33.7.14 (04KV), Definition 33.9.1 (020H); Resolution of Surfaces Theorem 54.14.5 (0BGP), Definitions 54.5.1 (0BBS) and 54.14.2 (0BGL)"
 url = "https://stacks.math.columbia.edu/download/fields.pdf"
 fetched_from = "https://stacks.math.columbia.edu/download/fields.pdf"
 fetched_at = "2026-10-25T12:00:58Z"
@@ -160,7 +160,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "Chapter-qualified line locators distinguish the official Fields, Varieties, More on Flatness, Morphisms, Resolution of Surfaces and More on Morphisms extractions. The Fields metadata records the additional fetch; the earlier chapter URLs and hashes are retained below."
-cited_for = ["Layers PA.0–PA.6", "5.5a generic constants and degree preservation"]
+cited_for = ["Layers PA.0–PA.6", "5.5a generic constants and degree preservation", "0.11 Lipman resolution of two-dimensional quasi-excellent schemes"]
 additional_fetched_from = ["https://stacks.math.columbia.edu/download/flat.pdf#nameddest=081R", "https://stacks.math.columbia.edu/download/morphisms.pdf#nameddest=052A", "https://stacks.math.columbia.edu/download/varieties.pdf#nameddest=0C45", "https://stacks.math.columbia.edu/download/resolve.pdf#nameddest=0BI4", "https://stacks.math.columbia.edu/download/more-morphisms.pdf#nameddest=05K0"]
 additional_sha256 = ["553b6d1e2eb22bcf1dfbb8167356c184f41b48089f72cf93acf94e0fb143212e", "0bebe1d93baa7e4e99cb4f36fe50c7bcb6094772b8a2f760885a492892eca75f", "ed339c312c86721e3f830876da14cabe89a96e83e454a78b7cd355555f4bca45", "6c6efffce73e982fa6c090792042a1842e7f53816a18c24ea172749571fa3db7", "59df05f5d52f453b17677398c72a51fe156367f460f6dcfdf764d9631b7c787c"]
 
