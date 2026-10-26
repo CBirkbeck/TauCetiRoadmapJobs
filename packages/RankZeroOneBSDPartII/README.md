@@ -4,17 +4,17 @@
 
 ## Scope and ownership
 
-This is the Eisenstein-converse continuation of RankZeroOneBSD: the base direction stops at the forward low-analytic-rank theorem and the Iwasawa equalities; the new implication starts from Selmer corank. Ownership of the imported inputs is specified by the supplier sections below. The CM newform and elliptic converses belong to CMRankZeroConverse §§C.0–C.6, and the irreducible-residual localization criteria belong to RankOneConverse §§PC.0–PC.6. Their hypotheses are not imposed on this branch.
+The forward direction from which this roadmap starts is supplied by named owners: ArithmeticStatisticsPartVI's supporting targets “Heegner logarithm and low rank” and “Elliptic p-parity” give the forward low-analytic-rank theorem and the elliptic root-number parity, and HeegnerPointEulerSystems §§8b.2 and 8b.10 give the anticyclotomic Iwasawa equalities at Eisenstein primes. The new implication here starts from Selmer corank. Ownership of the imported inputs is specified by the supplier sections below. The CM newform and elliptic converses belong to CMRankZeroConverse §§C.0–C.6, and the irreducible-residual localization criteria belong to RankOneConverse §§PC.0–PC.6. Their hypotheses are not imposed on this branch.
 
 The fixed-isogeny hypothesis predicate, complementary-field assembly, augmentation consequence, traced Heegner comparison, two converses and admissible statistical conversion are owned here. The Howard unit-line and level-zero normalization comparison is imported from HeegnerPointEulerSystems §8.13. The traced comparison here differs from its §8.32: it is an exact identity at the trivial character after the full Hilbert-class-field trace, rather than a finite-coefficient congruence for near-trivial characters.
 
 The generic isogeny, degree, Tate module, Weil pairing, quadratic twist, minimal model, height and finite generation constructions are already in the library at the modules named below. EllipticCurves Layers 2, 4, 5 and 7 retain their general Galois, local-reduction, twist and descent APIs. SelmerIwasawaCohomology §§2.9–2.12a, 3.9–3.11, 4.26 and 4.29 own the Selmer carriers, control machinery, Kummer comparisons and alternating Cassels–Tate pairing modulo divisible kernels. No second pairing or Selmer theory is constructed here.
 
-HeegnerPointEulerSystems §§8.6–8.6a, 8.24, 8.31, 8.34, 8b.2 and 8b.10 own the arithmetic tower, source class, rank-one paired-torsion theorem and Eisenstein main-conjecture equality. GrossZagierAndArithmeticHeights §§0.1, 8.14 and 8.17–8.19 own the height normalization and general explicit formula, including the classical X₀(N) specialization. ModularIwasawaMainConjectures §6.1 owns the comparison formulation, not a second proof of the Eisenstein equality.
+HeegnerPointEulerSystems §§8.6–8.6a, 8.24, 8.31, 8.34, 8b.2 and 8b.10 own the arithmetic tower, source class, rank-one paired-torsion theorem and Eisenstein main-conjecture equality. GrossZagierAndArithmeticHeights §§0.1, 8.14, 8.18 and 8.19 own the height normalization, the general explicit formula, the non-torsion criterion for the trace point and the elliptic X₀(N) specialization; its squarefree-level §8.17 is not used. ModularIwasawaMainConjectures §6.1 owns the comparison formulation, not a second proof of the Eisenstein equality.
 
-ArithmeticStatisticsPartI §§0.1 and 0.5 own squareclasses, height, squarefree residue counts, local families and density towers. ArithmeticStatisticsPartVII §5.10 owns the Selmer ratio, local formulas, stratum density and restricted three-Selmer bounds; Part III owns the orbit-counting input. ArithmeticStatisticsPartVI's supporting “Heegner logarithm and low rank” and “Elliptic p-parity” own the forward theorem and elliptic corank parity. Family parity between two arithmetic points in SelmerIwasawaCohomology §4.28 is not substituted for this root-number parity theorem. EllipticCurveModularity Layers R29.3–R29.6 and ModularForms Layer 7 own the actual newform and continued elliptic L-functions. These generic statements are imports, not targets here.
+ArithmeticStatisticsPartI owns relative density (§0.1), families defined by local conditions (§0.2), squareclasses, their height and the twist family (§0.5), squarefree residue counts (§0.6) and the positive squareclass denominator (§0.15). ArithmeticStatisticsPartVII §5.10 owns the Selmer ratio, the local Tamagawa formula, stratum density and restricted three-Selmer bounds, and its §5.32 owns the attainable local three-isogeny ratios; Part III owns the orbit-counting input. ArithmeticStatisticsPartVI's supporting “Heegner logarithm and low rank” and “Elliptic p-parity” own the forward theorem and elliptic corank parity. Family parity between two arithmetic points in SelmerIwasawaCohomology §4.28 is not substituted for this root-number parity theorem. EllipticCurveModularity Layers R29.3–R29.6 and ModularForms Layer 7 own the actual newform and continued elliptic L-functions. These generic statements are imports, not targets here.
 
-The concrete nineteen-a3 equation is a worked specialization of native coefficients. Its local density and the no-good-twist obstruction are owned here. The elementary coefficient, invariant, point-count and tangent Checks remain mathematical examples, not headline acceptance theorems.
+The concrete nineteen-a3 equation is a worked specialization of native coefficients. Its local density and the no-good-twist obstruction are owned here as scope diagnostics. They, and the elementary coefficient, invariant, point-count and tangent Checks, are mathematical examples, not headline acceptance theorems.
 
 ## Conventions
 
@@ -30,7 +30,7 @@ Count each squareclass in ℚˣ/ℚˣ² by its unique nonzero signed squarefree 
 
 **Checks.**
 
-- At p=3 the permitted unramified character η takes Frobenius to −1 and inertia to 1; its dual ωη has inertia −1. Their product is ω. The alternatives 1 and ω fail the exclusion, including a rational p-torsion kernel.
+- At p=3 the permitted unramified character η takes Frobenius to −1 and inertia to 1; its dual ωη has inertia −1. Their product is ω. The alternatives 1 and ω fail the exclusion, including a kernel generated by a rational point of order p (φ=1).
 - The character projectors over a quadratic extension are (1+c)/2 and (1−c)/2. On eigenvectors with c=1 and c=−1 they give (1,0) and (0,1); at p=2 division by 2 is not an integral projector.
 - In Λ=ℤ₃⟦T⟧, T=γ−1 remains a nonunit in Λ[1/3], while 3 becomes a unit. For the contragredient action γ↦γ⁻¹, T↦−T/(1+T); its order at T=0 is still one. Inverting T would discard that prime.
 - For h_(O)(P)=1 and h_(O)(2P)=4, h_x(P)=2, h_x(2P)=8 and B_x(P,P)=(8−2−2)/2=2. Using the half polar form of h_(O) would give 1.
@@ -44,7 +44,7 @@ The following contracts fix mathematical objects and their normalizations. A gap
 
 Consume `WeierstrassCurve`, its five coefficients, `WeierstrassCurve.Δ`, `WeierstrassCurve.c₄`, `WeierstrassCurve.c₆`, `WeierstrassCurve.map`, `WeierstrassCurve.IsElliptic` and `WeierstrassCurve.j` from `Mathlib/AlgebraicGeometry/EllipticCurve/Weierstrass.lean`. The carrier allows singular equations over arbitrary rings; ellipticity means the discriminant is a unit, not merely nonzero over a ring. All arithmetic statements here explicitly restrict to characteristic-zero fields and elliptic curves.
 
-Consume `WeierstrassCurve.minimal`, `WeierstrassCurve.HasGoodReduction` and `WeierstrassCurve.hasGoodReduction_iff_isElliptic_reduction` from `Mathlib/AlgebraicGeometry/EllipticCurve/Reduction.lean`. The good-reduction class includes minimality and multiplicative discriminant valuation one. Apply it to the chosen minimal model after base change to ℚ₃, rather than to an arbitrary raw twist equation. Consume `NumberField.finite_setOfPred_logHeight₁_le` from `Mathlib/NumberTheory/Height/NumberField.lean` and `WeierstrassCurve.Affine.finite_naiveHeight_le` from `Mathlib/NumberTheory/Height/EllipticCurve.lean` for Northcott.
+Consume `WeierstrassCurve.minimal`, `WeierstrassCurve.HasGoodReduction` and `WeierstrassCurve.hasGoodReduction_iff_isElliptic_reduction` from `Mathlib/AlgebraicGeometry/EllipticCurve/Reduction.lean`. The good-reduction class includes minimality and multiplicative discriminant valuation one. Apply it to the chosen minimal model after base change to ℚ₃, rather than to an arbitrary raw twist equation. Consume `NumberField.finite_setOfPred_logHeight₁_le` from `Mathlib/NumberTheory/Height/NumberField.lean` and `WeierstrassCurve.Affine.finite_naiveHeight_le` from `Mathlib/NumberTheory/Height/EllipticCurve.lean` for Northcott. Consume `le_liminf_mul` from `Mathlib/Topology/Algebra/Order/LiminfLimsup.lean`: for real functions u,v that are eventually nonnegative along a nontrivial filter, with u bounded above and v cobounded for ≥ (which holds when v is bounded above), (liminf u)(liminf v)≤liminf(uv). It is applied to cutoff ratios, which lie in [0,1].
 
 `WeierstrassCurve.LSeries` in `Mathlib/AlgebraicGeometry/EllipticCurve/LFunction.lean` is the literal L-series built from its arithmetic coefficient function; continuation and finite central order are the separate elliptic modularity contract. `ContinuousCohomology.tateShafarevich` in `Mathlib/RepresentationTheory/Homological/ContCohomology/Sha.lean` is a localization kernel for supplied topological Galois data; its identification with classical elliptic Sha and Kummer local conditions is the Selmer supplier's contract.
 
@@ -84,11 +84,11 @@ Layer 4 supplies Λ, its power-series coordinate, height-one localization, chara
 
 ### From TauCetiRoadmap.GrossZagierAndArithmeticHeights
 
-Use §0.1's pinned x-height comparison and §§8.14, 8.17–8.19 for the general explicit Gross–Zagier identity, specialized to ℚ, trivial ring-class character and all level primes split. It identifies the height of the specified trace point, using the same modular parametrization, with the central derivative times a nonzero explicit constant. The Hodge, unit-index, degree and differential normalizations are retained. No squarefree-conductor restriction is imposed by this specialization.
+Use §0.1's pinned x-height comparison and §§8.14, 8.18 and 8.19 for the general explicit Gross–Zagier identity, specialized to ℚ, trivial ring-class character, conductor c=1, odd D and all level primes split. Section 8.19 identifies the K-relative height of the specified trace point, using the same modular parametrization, with the central derivative times a nonzero explicit constant; its classical case (N,D)=1 is the elliptic formula it imports from EffectiveClassNumbers §2.8 “Gross–Zagier with exact constants”, stated there for every level N with all primes of N split. Section 8.18 with F=ℚ, A=E and B=M₂(ℚ) gives that the trace point has infinite order exactly when the central order over K is one. The Hodge, unit-index, degree and differential normalizations are retained. Section 8.17 assumes squarefree N and is not used; no squarefree-conductor restriction enters this specialization.
 
 ### From TauCetiRoadmap.ArithmeticStatisticsPartI
 
-Use §0.1 “Relative density” and “Relative density is multiplicative in towers”, and §0.5 “Quadratic twist squareclass family”, “Family defined by local conditions”, “Positive squareclass denominator” and “Squarefree integers in residue classes”. For rational signed squarefree d, each compatible nonempty finite local rectangle has positive density; finite unions have the sum of their disjoint masses. The modulus-three residue count gives the mass 3/8 for a fixed nonsquare unit class. The limiting denominator is positive before any conditional proportion is formed.
+Use §0.1 “Relative density” for the cutoff ratios r_X(S | T), their bounds 0≤r_X≤1 and lower and upper relative densities; §0.2 “Family defined by local conditions”; §0.5 “Quadratic twist squareclass family”; §0.6 “Squarefree integers in residue classes”; and §0.15 “Positive squareclass denominator”. The tower theorem of §0.1 assumes both relative densities exist and is not applied to analytic-rank sets, whose limiting density is not known. For rational signed squarefree d, each compatible nonempty finite local rectangle has positive density; finite unions have the sum of their disjoint masses. The modulus-three residue count gives the mass 3/8 for a fixed nonsquare unit class. The limiting denominator is positive before any conditional proportion is formed.
 
 ### From TauCetiRoadmap.ArithmeticStatisticsPartVI
 
@@ -98,7 +98,7 @@ What ArithmeticStatisticsPartVI must provide (gap:complementary-heegner-twists):
 
 ### From TauCetiRoadmap.ArithmeticStatisticsPartVII and TauCetiRoadmap.ArithmeticStatisticsPartIII
 
-Part VII §5.10 supplies “Selmer ratio of an isogeny”, “Local Selmer ratio via Tamagawa numbers”, “Selmer ratio classes are locally defined”, the three-isogeny parity theorem and both restricted zero/one three-Selmer bounds. Their corrected rank is dim Sel₃−dim E(ℚ)[3]. On the admissible family the torsion term is exactly zero. At 3 the good ordinary ratio is 1 or 3 according to the étale/connected kernel, the two real signs give 1 and 1/3, and for every ℓ≠3 a local twist with ratio 1 is needed, including ℓ=2 (BKLOS Propositions 10.1, 10.7 and Theorem 10.5, pp. 14–17; BKLOS line 674, line 713 and line 764). The required instances of the latter local table are part of this local-ratio contract.
+Part VII §5.10 supplies “Selmer ratio of an isogeny”, “Local Selmer ratio via Tamagawa numbers”, “Selmer ratio classes are locally defined”, the three-isogeny parity theorem and both restricted zero/one three-Selmer bounds. Their corrected rank is dim Sel₃−dim E(ℚ)[3]. On the admissible family the torsion term is exactly zero. By the Tamagawa formula of §5.10, at 3 the good ordinary ratio is |φ′(0)|₃⁻¹, equal to 1 or 3 according to the étale/connected kernel, and the two real signs give 1 and 1/3. Part VII §5.32 “Attainable local three-isogeny ratios” supplies the Kodaira/twist and differential tables and the existence, at every finite prime ℓ≠3 including ℓ=2, of a local quadratic twist with ratio 1 (BKLOS Propositions 10.1, 10.7 and Theorem 10.5, pp. 14–17; BKLOS line 674, line 713 and line 764). Section 5.10 supplies the ratio definition, the Tamagawa formula, the strata and the statistical bounds.
 
 The Part VII means and low-Selmer proportions retain the seven-part counting condition C(F,ι,Σ) of Part III's “Windowed cubic counting contract”. The following rational instance supplies it for the unconditional endpoints here; a numerical average with C assumed does not discharge this contract.
 
@@ -140,7 +140,7 @@ A proof route is to bundle the existing predicates and kernel-character equality
 - A nonsplit residual extension with the permitted actual kernel is admitted; splitting E[p] as a Galois module is not required.
 - Good ordinarity and E(ℚ_p)[p]=0 are consequences supplied by the local dictionary; no irreducibility or parity condition on φ at infinity is added.
 
-(CGLS Introduction, Theorem E and standing hypotheses, pp. 517–521; Theorem 5.2.1, p. 574; CGLS line 2145.)
+(CGLS Introduction, standing hypotheses, pp. 518–521, and Theorem E, p. 522; Theorem 5.2.1, p. 574; CGLS line 79, line 219 and line 2145.)
 
 *Needs:* EllipticCurves Layers 1–2, 4–5 and gap:eisenstein-local-dictionary.
 
@@ -264,7 +264,7 @@ A proof route is to apply the supplied CGLS prototype equality, including its ex
 
 (CGLS Corollary 4.2.3, p. 570; Theorem 5.2.1 proof, p. 574; CGLS line 2001.)
 
-*Needs:* §§2.1–2.2; HeegnerPointEulerSystems §§8b.2, 8b.10; PadicMeasuresIwasawaAlgebras Layer 4; GrossZagierAndArithmeticHeights §§0.1, 8.14, 8.17–8.19; native Northcott and canonical-height theorems; gap:quadratic-analytic-factorization.
+*Needs:* §§2.1–2.2; HeegnerPointEulerSystems §§8b.2, 8b.10; PadicMeasuresIwasawaAlgebras Layer 4; GrossZagierAndArithmeticHeights §§0.1, 8.14, 8.18, 8.19; native Northcott and canonical-height theorems; gap:quadratic-analytic-factorization.
 
 ### Examples
 
@@ -272,7 +272,7 @@ In R=ℚ₃⟦T⟧, X=R has coinvariant dimension 1 and torsion length 0, wherea
 
 ### Dependencies
 
-Layers 0–1; SelmerIwasawaCohomology §§3.9–3.11; HeegnerPointEulerSystems §§8.6–8.6a, 8.24, 8.31, 8.34, 8b.2, 8b.10; PadicMeasuresIwasawaAlgebras Layer 4; GrossZagierAndArithmeticHeights §§0.1, 8.14, 8.17–8.19; native height finiteness.
+Layers 0–1; SelmerIwasawaCohomology §§3.9–3.11; HeegnerPointEulerSystems §§8.6–8.6a, 8.24, 8.31, 8.34, 8b.2, 8b.10; PadicMeasuresIwasawaAlgebras Layer 4; GrossZagierAndArithmeticHeights §§0.1, 8.14, 8.18, 8.19; native height finiteness.
 
 ## Layer 3: The Eisenstein-prime converses
 
@@ -355,7 +355,7 @@ A proof route is to pull back the good-reduction and local-character conditions 
 
 **Checks.**
 
-- For good ordinary E at 3 with rational isogeny kernel, local classes represented by 1,2,3,6 have exactly the class 2 admissible: class 1 fails exclusion, and classes 3,6 fail good reduction.
+- For good ordinary E at 3 whose isogeny kernel is generated by a rational point of order 3 (φ|G₃=1), local classes represented by 1,2,3,6 have exactly the class 2 admissible: class 1 fails exclusion, class 2 gives the unramified character η, and classes 3,6 fail good reduction. Every rational isogeny has a Galois-stable kernel, so this pointwise-rational hypothesis is what separates the case from the Check below with φ|G₃ nontrivial unramified, where class 1 is the admissible one.
 - For that E the signed squareclasses of 2 and 18 are equal and both admissible; counting both as distinct is rejected.
 - If v₃(j(E))<0 then A₃(E,ι) is empty, regardless of its residual character twists.
 - If E is good ordinary and φ|G₃ is nontrivial unramified, the identity squareclass is admissible and the unramified nonsquare twist becomes excluded. The rule d≡2 mod 3 is not universal.
@@ -363,7 +363,7 @@ A proof route is to pull back the good-reduction and local-character conditions 
 
 (CGLS Corollary 5.2.3 and proof, p. 575; BKLOS §2, family and height conventions, pp. 2–3; BKLOS line 94.)
 
-*Needs:* §0.1; EllipticCurves Layers 2, 4–5 and gap:eisenstein-local-dictionary; ArithmeticStatisticsPartI §0.5.
+*Needs:* §0.1; EllipticCurves Layers 2, 4–5 and gap:eisenstein-local-dictionary; ArithmeticStatisticsPartI §0.2 family defined by local conditions and §0.5 quadratic twist squareclass family.
 
 ### 4.2 Positive Selmer-ratio strata within the admissible family
 
@@ -371,7 +371,7 @@ Suppose E/ℚ has a rational 3-isogeny and at least one quadratic twist with goo
 
 ι:E→E′ is a rational cyclic 3-isogeny. There exists d₀ with E^d₀ good at 3. No explicit numerical lower density independent of E is asserted.
 
-A proof route first fixes at 3 a local squareclass d₀u for which the twist is good ordinary and the kernel character is allowed: among the two unramified twists of a good model exactly one avoids both 1 and ω. This also kills local 3-torsion on the chosen twists of E and E′. Use the existing local Selmer-ratio formula: at 3 the good-model ratio is 1 or 3, depending on whether the kernel lies in the formal group. It stays fixed on this chosen local class. At each bad prime ℓ≠3 choose a local twist with c_ℓ=1 by BKLOS Proposition 10.7; outside the finite set of primes dividing 6N every twist has ratio 1. Include 2 in the finite local prescription even when E is good there. At the real place the two signs give ratios 1 and 1/3. Hence the two choices give global ratios (1,1/3) or (3,1), providing both the zero and an odd signed stratum while preserving the chosen 3-adic class. Weak approximation makes each compatible finite local prescription nonempty. Apply the rational squarefree local-density count with its nonuniform local squareclass masses to obtain positive density. The argument is directly on E’s family; translating by d₀ is not assumed to preserve height.
+A proof route first fixes at 3 a local squareclass d₀u for which the twist is good ordinary and the kernel character is allowed: among the two unramified twists of a good model exactly one avoids both 1 and ω. This also kills local 3-torsion on the chosen twists of E and E′. Use the existing local Selmer-ratio formula: at 3 the good-model ratio is 1 or 3, depending on whether the kernel lies in the formal group. It stays fixed on this chosen local class. At each bad prime ℓ≠3, and at ℓ=2, choose a local twist with c_ℓ=1 by ArithmeticStatisticsPartVII §5.32 “Attainable local three-isogeny ratios” (BKLOS Proposition 10.7); outside the finite set of primes dividing 6N every twist has ratio 1. Include 2 in the finite local prescription even when E is good there. At the real place the two signs give ratios 1 and 1/3. Hence the two choices give global ratios (1,1/3) or (3,1), providing both the zero and an odd signed stratum while preserving the chosen 3-adic class. Weak approximation makes each compatible finite local prescription nonempty. Apply the rational squarefree local-density count with its nonuniform local squareclass masses to obtain positive density. The argument is directly on E’s family; translating by d₀ is not assumed to preserve height.
 
 **Checks.**
 
@@ -380,7 +380,7 @@ A proof route first fixes at 3 a local squareclass d₀u for which the twist is 
 
 (BKLOS Proposition 10.1, p. 14; Theorem 10.5, pp. 15–16; Proposition 10.7, p. 17; §11 proof of Theorem 2.6, p. 18; CGLS Corollary 5.2.3 proof, p. 575; BKLOS line 800.)
 
-*Needs:* §4.1; ArithmeticStatisticsPartVII §5.10 local Selmer ratios and stratum density; ArithmeticStatisticsPartI §0.5 positive squareclass denominator; gap:eisenstein-local-dictionary.
+*Needs:* §4.1; ArithmeticStatisticsPartVII §5.10 local Selmer ratios and stratum density and §5.32 “Attainable local three-isogeny ratios”; ArithmeticStatisticsPartI §0.2 family defined by local conditions and §0.15 positive squareclass denominator; gap:eisenstein-local-dictionary.
 
 ### 4.3 Analytic-rank bounds in prescribed admissible families
 
@@ -388,16 +388,17 @@ Let Σ⊂A₃ be a nonempty family defined by finitely many local conditions. Pu
 
 ι:E→E′ is a rational cyclic 3-isogeny. The finite local prescriptions defining Σ are globally compatible. Each displayed conditional proportion is asserted only when its denominator stratum is nonempty.
 
-A proof route is to import ArithmeticStatisticsPartVII §5.10’s restricted-family 3-Selmer-rank-zero and rank-one bounds, with their signed/absolute ratio convention. For d∈A₃ the local exclusion gives E^d(ℚ)[3]=0, so the supplier’s adjusted 3-Selmer rank equals the actual F₃ dimension. Apply §3.3 to the zero- and one-dimensional subsets. Use the existing relative-density tower theorem. The stratum densities exist by finite local conditions; multiplication by their fixed density yields the absolute lower bounds, without asserting existence of an analytic-rank limiting density.
+A proof route is to import ArithmeticStatisticsPartVII §5.10’s restricted-family 3-Selmer-rank-zero and rank-one bounds, with their signed/absolute ratio convention. For d∈A₃ the local exclusion gives E^d(ℚ)[3]=0, so the supplier’s adjusted 3-Selmer rank equals the actual F₃ dimension. Apply §3.3 to the zero- and one-dimensional subsets. Let B₀⊆Σ₀ be the twists in Σ₀ with both ranks 0 and finite Sha, and B₁⊆Σ₁ the rank-one analogue. Since B₀ contains the d∈Σ₀ with r₃(E^d)=0, r_X(B₀ | Σ₀) is at least the supplier's rank-zero proportion at every cutoff, so its lower limit is at least 1/2; likewise for B₁ with 5/6. For the absolute bounds, B_i⊆Σ_i gives r_X(B_i | all)=r_X(B_i | Σ_i)·r_X(Σ_i | all) at every cutoff, both sides vanishing when Σ_i has no element of height at most X. Both factors lie in [0,1], and r_X(Σ_i | all)→μ(Σ_i) because Σ_i is a finite union of local-condition families (ArithmeticStatisticsPartVII §5.10 “Selmer ratio classes are locally defined”). Mathlib's `le_liminf_mul` then gives liminf r_X(B_i | all)≥(liminf r_X(B_i | Σ_i))·μ(Σ_i). No limiting density of B_i is asserted or used, and the tower theorem of ArithmeticStatisticsPartI §0.1, which assumes both limits, is not invoked.
 
 **Checks.**
 
 - Keep the Σ₀ and Σ₁ denominators, and multiply by their actual densities before reporting percentages among all twists.
 - These are lower proportions, not exact Goldfeld densities or percentages for the original unrestricted ratio strata.
+- If r_X(B₀ | Σ₀) alternates between 1/2 and 1 along successive cutoff blocks and μ(Σ₀)=1/8, B₀ has no relative density in Σ₀, so a tower theorem requiring two limits does not apply; the lower-limit product still gives absolute lower proportion at least (1/2)(1/8)=1/16, and on the odd stratum with μ(Σ₁)=1/4 it gives (5/6)(1/4)=5/24.
 
 (BKLOS Theorem 2.5, p. 4; §9.1–§9.2, p. 14; CGLS Corollaries 5.2.2–5.2.3, p. 575; BKLOS line 654.)
 
-*Needs:* §4.1; §3.3; ArithmeticStatisticsPartVII §5.10 restricted zero/one three-Selmer bounds; ArithmeticStatisticsPartI §0.1 density towers; ArithmeticStatisticsPartIII gap:rational-three-isogeny-count.
+*Needs:* §4.1; §3.3; ArithmeticStatisticsPartVII §5.10 restricted zero/one three-Selmer bounds and locally defined ratio classes; ArithmeticStatisticsPartI §0.1 relative density; Mathlib `le_liminf_mul`; ArithmeticStatisticsPartIII gap:rational-three-isogeny-count.
 
 ### 4.4 Positive proportions of rank-zero and rank-one twists
 
@@ -421,7 +422,7 @@ With the fixed admissible local class at 3, finite-place ratio 1 gives global ra
 
 ### Dependencies
 
-Layers 0, 3; EllipticCurves Layers 2, 4–5; ArithmeticStatisticsPartI §§0.1, 0.5; ArithmeticStatisticsPartVII §5.10; ArithmeticStatisticsPartIII rational counting contract.
+Layers 0, 3; EllipticCurves Layers 2, 4–5; ArithmeticStatisticsPartI §§0.1, 0.2, 0.5, 0.15; ArithmeticStatisticsPartVII §§5.10, 5.32; Mathlib `le_liminf_mul`; ArithmeticStatisticsPartIII rational counting contract.
 
 ## Layer 5: Concrete models and scope diagnostics
 
@@ -469,7 +470,7 @@ A proof route is to compute Δ=−19, hence good reduction at 3. Count six point
 
 (CGLS Remark 5.2.4, p. 575; BKLOS §2, pp. 2–5; §9.2, p. 14; CGLS line 2206.)
 
-*Needs:* §5.1; §§4.1, 4.3; EllipticCurves Layers 1–2, 4–5 and gap:eisenstein-local-dictionary; ArithmeticStatisticsPartI §0.5 squarefree residue counts and §0.1 density.
+*Needs:* §5.1; §§4.1, 4.3; EllipticCurves Layers 1–2, 4–5 and gap:eisenstein-local-dictionary; ArithmeticStatisticsPartI §0.6 squarefree residue counts and §0.1 relative density.
 
 ### 5.3 A three-isogeny does not guarantee a good-at-three twist
 
@@ -477,17 +478,17 @@ The rational Weierstrass curve W:y²+xy+3y=x³ has a rational cyclic 3-isogeny, 
 
 W has coefficients (1,0,3,0,0) over ℚ and ι is the isogeny with kernel generated by (0,0).
 
-A proof route is to the tangent at (0,0) is y=0; its intersection with the cubic has multiplicity3, proving the nonidentity point has order 3. Use upstream quotient-by-stable-kernel to obtain the actual isogeny. Compute the invariant formulas and v₃(j)=−3. Use existing twist invariance of j and the local integral-j consequence of good reduction to exclude every twist. Apply the definition of A₃. This is a counterexample to the claim that the converse method’s good-reduction hypotheses can always be reached by quadratic twisting, not to the full printed analytic density conclusion by other methods.
+A proof route is to observe that the tangent at (0,0) is y=0; its intersection with the cubic has multiplicity3, proving the nonidentity point has order 3. Use upstream quotient-by-stable-kernel to obtain the actual isogeny. Compute the invariant formulas and v₃(j)=−3. Use existing twist invariance of j and the local integral-j consequence of good reduction to exclude every twist. Apply the definition of A₃. This is a counterexample to the claim that the converse method’s good-reduction hypotheses can always be reached by quadratic twisting, not to the full printed analytic density conclusion by other methods.
 
 **Checks.**
 
 - Twisting can change the residual kernel character, but it cannot change j or make a negative valuation integral.
 
-(CGLS Corollary 5.2.3 proof, p. 575; standing good-reduction hypothesis, pp. 517–519; CGLS line 2198.)
+(CGLS Corollary 5.2.3 proof, p. 575; standing good-reduction hypothesis, p. 518; CGLS line 79 and line 2198.)
 
 *Needs:* §4.1 for the empty-admissible-set interpretation; native Weierstrass invariants, quadraticTwistOf, minimal and HasGoodReduction; EllipticCurves Layers 1, 4–5 for the quotient isogeny and integral-j consequence.
 
-The native coefficient definition needed by the acceptance statement is `scopeObstructionCurve` on the native rational Weierstrass carrier, with fields (1,0,3,0,0). Its required API is:
+Define the obstruction model W on the native rational Weierstrass carrier `WeierstrassCurve` ℚ by the five coefficient fields (1,0,3,0,0). It is a diagnostic model, not a headline object. Its required API is:
 
 - Its five coefficient projections have those values, and Δ=−2160 proves ellipticity over ℚ.
 - Its c₄ and c₆ values are −71 and −1837; the native j equals 357911/2160.
@@ -499,7 +500,7 @@ The native coefficient definition needed by the acceptance statement is `scopeOb
 - The denominator 2160=2⁴·3³·5 is nonzero in ℚ and ℚ₃. Its 3-valuation is 3, while 71³=357911 has valuation 0, giving −3 rather than +3.
 - d=0 gives discriminant parameter 0 and a singular raw equation, so it is excluded from quadratic twisting. For d=1 and d=3 the raw discriminant valuations are respectively 3 and 9; j has valuation −3 in both cases.
 
-The headline `no_good_three_twist` states the local form for every d∈ℚ₃ with d≠0: the minimal model over ℤ₃ of the base-changed curve's trace-zero, norm-−d native twist fails `WeierstrassCurve.HasGoodReduction`. It includes every rational quadratic twist, and tests the curve after minimalization rather than inferring curve reduction from a raw discriminant (CGLS Corollary 5.2.3 proof, p. 575, CGLS line 2198; the displayed invariant and valuation computation).
+Prove the obstruction in its local form for every d∈ℚ₃ with d≠0: the minimal model over ℤ₃ (`WeierstrassCurve.minimal`) of the trace-zero, norm-−d native twist of W base-changed to ℚ₃ fails `WeierstrassCurve.HasGoodReduction`. This scope diagnostic is a negative control for the good-at-three-twist hypothesis of §§4.2–4.4, not a headline theorem. It includes every rational quadratic twist, and tests the curve after minimalization rather than inferring curve reduction from a raw discriminant (CGLS Corollary 5.2.3 proof, p. 575, CGLS line 2198; the displayed invariant and valuation computation).
 
 ### Examples
 
@@ -507,7 +508,7 @@ For the nineteen-a3 integral tuple, x=0,1,2 in 𝔽₃ gives respectively 2,2,1 
 
 ### Dependencies
 
-Layer 4; native Weierstrass invariants, twists and minimal-model reduction; EllipticCurves Layers 1–2, 4–5; ArithmeticStatisticsPartI §§0.1, 0.5.
+Layer 4; native Weierstrass invariants, twists and minimal-model reduction; EllipticCurves Layers 1–2, 4–5; ArithmeticStatisticsPartI §§0.1, 0.5, 0.6.
 
 ## Downstream consumers
 
