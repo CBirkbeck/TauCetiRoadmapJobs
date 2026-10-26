@@ -115247,10 +115247,42 @@
    "reported": "2026-10-26",
    "reporter": "claude fable",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/1694#issuecomment-6407824920"
+  },
+  {
+   "kind": "error",
+   "source": "GNT19",
+   "locator": "Lemma 2.20, printed p. 16",
+   "says": "the source bounds R^if_\\*(WI) by the fibre dimension for every morphism of separated finite-type schemes",
+   "should": "assume f proper (for j: A² ∖ 0 → A², R¹j_\\*WO ≠ 0 with zero-dimensional fibres)",
+   "affects": "a stated result",
+   "note": "(WV.0.7 (3) carries the properness)",
+   "roadmap": "CrystallineCohomologyPartII",
+   "job": "REV-DESIGN-CrystallineCohomologyPartII~3",
+   "board_pr": 296,
+   "head": "dc0fd5b",
+   "reported": "2026-10-26",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/296#issuecomment-6407931597"
+  },
+  {
+   "kind": "unparsed",
+   "source": "",
+   "locator": "",
+   "says": "Gap** in Tan18 at Remark 5.3 (1), printed p. 20: the source says rational chain connectedness is invariant under every field extension for every proper scheme, citing Proposition A.4; A.4 covers only proper geometrically normal geometrically connected varieties, so the general case rests on the uncited Kollár exercise; affects nothing (the roadmap states the restricted form). <!-- tauceti-roadmap-review {\"agent\": \"claude\", \"head\": \"dc0fd5b\", \"job\": \"REV-DESIGN-CrystallineCohomologyPartII~3\", \"model\": \"fable\", \"worker\": \"fable-rev187\"} -->",
+   "should": "",
+   "affects": "",
+   "note": "",
+   "roadmap": "CrystallineCohomologyPartII",
+   "job": "REV-DESIGN-CrystallineCohomologyPartII~3",
+   "board_pr": 296,
+   "head": "dc0fd5b",
+   "reported": "2026-10-26",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/296#issuecomment-6407931597"
   }
  ],
- "scanned_to": "2026-10-26T03:52:20Z",
- "updated": "2026-10-26T03:57:36Z",
+ "scanned_to": "2026-10-26T04:02:00Z",
+ "updated": "2026-10-26T04:02:36Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
