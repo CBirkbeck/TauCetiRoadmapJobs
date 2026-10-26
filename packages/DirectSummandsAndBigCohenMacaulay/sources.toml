@@ -45,7 +45,7 @@ authors = "Melvin Hochster"
 title = "Big Cohen–Macaulay algebras in dimension three via Heitmann's theorem"
 year = 2002
 locator_scheme = "theorem"
-locator = "Definition 3.1, p. 6 of the author preprint; §4.1, p. 8 of the author preprint; Theorem 4.2 and the paragraph before it, p. 9 of the author preprint; Lemma 5.1 and its proof, pp. 9–10 of the author preprint; Lemma 5.1 and Theorem 4.2, pp. 9–10"
+locator = "Definition 3.1 and §3, pp. 6–7 of the author preprint; §4.1, p. 8 of the author preprint; Theorem 4.2 and the paragraph before it, p. 9 of the author preprint; Lemma 5.1 and its proof, pp. 9–10 of the author preprint; Lemma 5.1 and Theorem 4.2, pp. 9–10"
 url = "https://sites.lsa.umich.edu/hochster/wp-content/uploads/sites/1337/2024/09/bigcm3.pdf"
 fetched_from = "https://sites.lsa.umich.edu/hochster/wp-content/uploads/sites/1337/2024/09/bigcm3.pdf"
 fetched_at = "2026-10-23T12:05:12Z"
@@ -64,7 +64,7 @@ venue = "Alg. Number Th. 12 (2018) 1659-1674"
 doi = "10.2140/ant.2018.12.1659"
 arxiv = "1703.08281v2"
 locator_scheme = "theorem"
-locator = "§1.2, discussion after Theorem 1.6, p. 4; §1.2, p. 3; Theorem 1.6 and the discussion after it, pp. 3–4; Theorem 1.6, pp. 3–4"
+locator = "§1.2, discussion after Theorem 1.6, p. 4; §1.2, p. 3; Theorem 1.6 and the discussion after it, pp. 3–4; Theorem 1.6, pp. 3–4; Theorem 3.1, p. 7; Corollary 4.3, p. 13"
 url = "https://arxiv.org/abs/1703.08281v2"
 fetched_from = "https://arxiv.org/pdf/1703.08281v2"
 fetched_at = "2026-10-23T12:05:16Z"
@@ -186,7 +186,7 @@ authors = "Sándor J. Kovács"
 title = "A characterization of rational singularities"
 year = 2000
 locator_scheme = "theorem"
-locator = "Theorem 1, p. 187; Theorem 2 and proof, pp. 188–191; main ingredients, Grauert–Riemenschneider vanishing, p. 189"
+locator = "Theorem 1, p. 187; Theorem 2, p. 188; Theorem 5, p. 190"
 url = "https://sites.math.washington.edu/~kovacs/current/papers/Kovacs__A_characterization_of_rtl_singularities.pdf"
 fetched_from = "https://sites.math.washington.edu/~kovacs/current/papers/Kovacs__A_characterization_of_rtl_singularities.pdf"
 fetched_at = "2026-10-23T12:05:50Z"
@@ -211,7 +211,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 cited_for = ["DS.7/proper-cohomology-perfect", "7.2", "Conventions; 6.2", "7.4; gap:perfectoid-base-modification-domination"]
-additional_texts = [{ url = "https://stacks.math.columbia.edu/download/algebra.pdf#nameddest=030O", sha256 = "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947", licence_class = "open-repository", line_locator = "030O line 4671" }, { url = "https://stacks.math.columbia.edu/download/more-algebra.pdf#nameddest=0A6A", sha256 = "ab69179738e642603ddbde651f2838e1cb5d8711e8bcd7c447cbf02a8bb6a5d2", licence_class = "open-repository", line_locator = "0A6A line 13484" }, { url = "https://stacks.math.columbia.edu/download/coherent.pdf#nameddest=01XH", sha256 = "b4980a08a8cce98fed6a420364b18c119364a9436577031b28a16863bcbdbfb8", licence_class = "open-repository", line_locator = "01XI line 290; 02O5 line 2350" }]
+additional_texts = [{ url = "https://stacks.math.columbia.edu/download/algebra.pdf#nameddest=030O", sha256 = "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947", licence_class = "open-repository", line_locator = "030O line 4671" }, { url = "https://stacks.math.columbia.edu/download/more-algebra.pdf#nameddest=0A6A", sha256 = "ab69179738e642603ddbde651f2838e1cb5d8711e8bcd7c447cbf02a8bb6a5d2", licence_class = "open-repository", line_locator = "0A6A line 13484" }, { url = "https://stacks.math.columbia.edu/download/coherent.pdf#nameddest=01XH", sha256 = "b4980a08a8cce98fed6a420364b18c119364a9436577031b28a16863bcbdbfb8", licence_class = "open-repository", line_locator = "01XI line 290; 02O5 line 2350; 02O6 line 2413" }]
 
 [[source]]
 id = "HOCHSTER73"

@@ -17,9 +17,9 @@ equivalence and the derived direct summand theorem.
 The following headlines are not statable at the pins:
 * Perfectoid covers and their almost faithful flatness: integral perfectoid
   algebras and the almost module category are missing.
-* The full/partial modification criterion, including double sequences: the
-  degree-bounded pointed modification and full algebra modification carriers,
-  their finite sequences and their comparison are missing.
+* Hochster's algebra-modification criterion, including double sequences: the
+  algebra modification carrier, its finite sequences and their badness are
+  missing.
 * Finite covers killing positive relative coherent cohomology: the canonical
   finite-cover comparison between the two derived pushforward functors, with
   its coherent positive-truncation interface, is missing. The bounded-below

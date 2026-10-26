@@ -3909,7 +3909,7 @@
   },
   {
    "slug": "parameter-systems",
-   "needs": "For a Noetherian local ring R, a parameter system maps to one of its maximal-adic completion. For a prime P with dim(R/P)=dim R, it maps to one of R/P. For a finite injective local map R\u2192B of Noetherian local rings, it maps to one of B.",
+   "needs": "For a Noetherian local ring R, a parameter system maps to one of its maximal-adic completion. For a prime P with dim(R/P)=dim R, it maps to one of R/P. For a finite injective local map R\u2192B of Noetherian local rings, it maps to one of B. For a flat local map R\u2192R\u2032 of Noetherian local rings with m_R R\u2032=m_{R\u2032}, it maps to one of R\u2032.",
    "supplier": "DeformationAndDerivedPatchingAlgebraPartII",
    "section": "K0.3"
   },
@@ -3918,12 +3918,6 @@
    "needs": "For a quasi-compact quasi-separated scheme S, a quasi-compact open U\u2286S and a proper X\u2192S that is an isomorphism over U, supply a U-admissible blow-up S\u2032\u2192S with finite-type centre and a factorization S\u2032\u2192X\u2192S (Stacks tag 081T).",
    "supplier": "SchemeAndStackFoundations",
    "section": "4.12"
-  },
-  {
-   "slug": "grauert-riemenschneider",
-   "needs": "For a proper birational morphism \u03c1:Y\u2192X of varieties over a characteristic-zero field, with Y smooth, supply Grauert\u2013Riemenschneider vanishing R\u2071\u03c1_*\u03c9_Y=0 for i>0.",
-   "supplier": "ResolutionOfSingularitiesCharacteristicZero",
-   "section": "5.5"
   }
  ],
  "sourceIssues": [
