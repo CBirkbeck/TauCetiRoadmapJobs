@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-7086 mistakes recorded on the board: 4326 misprints, 1794 errors, 710 gaps, 256 unparsed bullets.
+7090 mistakes recorded on the board: 4327 misprints, 1795 errors, 711 gaps, 257 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -264,6 +264,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Unparsed** (CrystallineCohomologyPartII, #296 at dc0fd5b, 2026-10-26): Gap** in Tan18 at Remark 5.3 (1), printed p. 20: the source says rational chain connectedness is invariant under every field extension for every proper scheme, citing Proposition A.4; A.4 covers only proper geometrically normal geometrically connected varieties, so the general case rests on the uncited Kollár exercise; affects nothing (the roadmap states the restricted form). <!-- tauceti-roadmap-review {"agent": "claude", "head": "dc0fd5b", "job": "REV-DESIGN-CrystallineCohomologyPartII~3", "model": "fable", "worker": "fable-rev187"} -->
 - **Unparsed** (GSp4NonregularModularityLifting, #1219 at d923256, 2026-10-26): Misprint** in CG20 at Theorem 7.11, printed page 853 (line 2058): the source says p−2 > a; the section's standing hypothesis and the proof use only p > a−2 (line 1988, 1998); affects nothing, since oddness makes a even and p−1 > a then gives a ≤ p−3.
 - **Unparsed** (AdicCoefficientsAndComparisonsPartII, #1109 at 74a0736, 2026-10-26): Gap** in ilo14 at Exposé X, Remark 3.3.4(ii), arXiv v1 page 159: the source says every quasi-excellent scheme of dimension at most two is universally resolvable, citing Cossart–Jannsen–Saito; that paper's theorems assume excellence, and the quasi-excellent case needs Lipman's theorem (Stacks 0BGP) before the snc step; affects nothing (already recorded in round 4; re-verified at ilo14 lines 7320–7322 and cjs lines 40–43). <!-- tauceti-roadmap-review {"agent": "claude", "head": "74a0736", "job": "REV-PKG-AdicCoefficientsAndComparisonsPartII~5", "model": "fable", "worker": "fable-rev188"} -->
+- **Unparsed** (RationalAnalyticPrismatization, #2065 at 60f0a62, 2026-10-26): The two source issues of round 2 (ALRS Remark 5.4.4's ABLB citation, Corollary 5.6.12's "cofiltered") and the three of round 1 stand. <!-- tauceti-roadmap-review {"agent": "claude", "head": "60f0a62", "job": "REV-DESIGN-RationalAnalyticPrismatization~3", "model": "fable", "worker": "fable-rev191"} -->
 
 ## A
 
@@ -329,6 +330,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## ABGHR
 
 - **Misprint** at Theorem 3.19 proof, printed p. 17 (ABGHR line 813): the source says the pullback square has B(QG) above E(QG); it should be E(QG) above B(QG), so QX maps to the classifying space and P̂ is the pulled-back principal bundle; affects the proof. Found by EllipticCohomology (ERRATA-EllipticCohomology at f0df48d, 2026-10-24, codex gpt-6-astra).
+
+## ABLB
+
+- **Gap** at Proposition 3.3.5, printed page 35: the source says the source derives the Fredholm property of Gelfand rings by citing And21 Theorem 5.50 for the Banach uniform completion; it should be supply the argument for the structure induced from ℚ_{p,■} without sheafiness, since And21 §5 assumes a sheafy pair and the solid Huber structure; affects the proof. Found by RationalAnalyticPrismatization (#2065 at 60f0a62, 2026-10-26, claude fable).
 
 ## AC
 
@@ -623,7 +628,9 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at Corollary 5.6.12, printed page 125 (ALRS line 6825): the source says a cofiltered family of p-adically complete animated O_K-algebras with B their colimit; it should be a filtered family (the colimit is taken over it); affects nothing. Found by RationalAnalyticPrismatization (#2065 at 8ddf5f1, 2026-10-26, claude fable).
 - **Misprint** at Remark 2.1.6, printed page 15 (ALRS line 794): the source says the source cites ABLB Lemma 3.6.2 for "strictly totally disconnected with A^{†-red} = A^u is nilperfectoid"; it should be ABLB v2 Lemma 3.1.17 (ABLB line 1428); affects nothing. Found by RationalAnalyticPrismatization (#2065 at ab278cd, 2026-10-25, claude fable).
 - **Misprint** at Remark 5.4.4, printed page 110 (ALRS line 5868): the source says the source cites ABLB "Lemma 3.2.8 and Proposition 3.2.11" for the equivalence of sites; in ABLB v2 the first is Definition 3.2.8 (ABLB line 1658), the definition of Berkovich-étale maps; it should be Definition 3.2.8; affects nothing. Found by RationalAnalyticPrismatization (#2065 at 8ddf5f1, 2026-10-26, claude fable).
+- **Error** at Remark 6.5.5, printed page 163: the source says the restriction of the mirabolic modulus to ℚ_p^× sends a to |a|⁻¹; with the generalized index [gKg⁻¹ : K] of HM Example 5.3.21 it is |a|; it should be |a|, with the character–isocrystal dictionary adjusted; affects the proof; (the remark's alternative computation), not the stated result. Found by RationalAnalyticPrismatization (#2065 at 60f0a62, 2026-10-26, claude fable).
 - **Error** at Remark 6.5.6, printed page 163: the source says a map represented in smooth rigid spaces of pure dimension d has ω_g ≅ L_g[d]; it should be det(L_g)[d], since for 𝔸² over a point L[2] = O²[2] is not invertible; affects nothing; (every use in that remark has d = 1). <!-- tauceti-roadmap-review {"agent": "claude", "head": "a33e98f35c13546d1a8eb1be5177bda38ffe1756", "job": "REV-DESIGN-AnalyticStacks", "model": "fable", "worker": "chris-i"} -->. Found by AnalyticStacks (#2123 at a33e98f, 2026-10-26, claude fable).
+- **Misprint** at Remark 6.5.6, printed page 163: the source says the dualizing complex of a map represented in smooth rigid spaces of pure dimension d as L_g[d]; it should be det(L_g)[d], which agrees for the d = 1 maps the remark uses; affects nothing. Found by RationalAnalyticPrismatization (#2065 at 60f0a62, 2026-10-26, claude fable).
 - **Misprint** at Theorem 5.2.14, printed page 101 (ALRS line 5314): the source says the source cites Lazard "Corollary I.3.9"; it should be Chapitre III, (1.3.9) Corollaire, printed page 77 (Laz65 line 2873); affects nothing. Found by RationalAnalyticPrismatization (#2065 at ab278cd, 2026-10-25, claude fable).
 - **Misprint** at Theorem 6.5.4, printed page 161 (ALRS lines 8746–8753): the source says part (1) writes the dualizing complex as O⟨1⟩ with the shift [2] absorbed into O⟨1⟩, part (3) writes O{1}[2] with the shift outside; it should be use one convention (the design's: O⟨1⟩ unshifted, [2] written); affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "ab278cd", "job": "REV-DESIGN-RationalAnalyticPrismatization", "model": "fable", "worker": "fable-rev164"} -->. Found by RationalAnalyticPrismatization (#2065 at ab278cd, 2026-10-25, claude fable).
 
