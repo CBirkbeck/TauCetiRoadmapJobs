@@ -229,7 +229,7 @@
         "ArithmeticLocallySymmetricSpacesPartII:WM.5/sl2-base-change-count (§5.5)",
         "ArithmeticLocallySymmetricSpacesPartII:WM.5/base-change-linear-count (§5.6)",
         "ArithmeticLocallySymmetricSpacesPartII:WM.5/bianchi-lower (§5.7)",
-        "Source correction E1"
+        "Source corrections E1, E10"
       ]
     }
   ],
@@ -1604,11 +1604,14 @@
       ],
       "title": "Classical fixed-type dimension estimate",
       "kind": "theorem",
-      "statement": "Fix N≥1 and a finite-dimensional complex representation σ of G_N=SL₂(ℤ/Nℤ). For all k≥2 with σ(−I)=(-1)^k on σ, dim Hom_{G_N}(σ,S_k(Γ(N)))=(k−1)dim σ/12+O_{N,σ}(1). The error is uniform in k along the admitted parity classes. Its exact periodic terms are determined by the unipotent-invariant dimension and the traces at the order-three and order-four elliptic elements, plus a weight-two invariant correction. For a fixed finite collection of σ, one error constant works for all of them. G_N acts on S_k(Γ(N)) by g·f=f|_kγ⁻¹ for any lift γ∈SL₂(ℤ) of g; the dimension assertion is for this action.",
-      "hypotheses": [],
+      "statement": "Fix N≥1 and a finite-dimensional complex representation σ of G_N=SL₂(ℤ/Nℤ) with σ^ι≃σ, where ι=diag(−1,1) and σ^ι=σ∘Ad ι; this holds for the restriction to G_N of every representation of GL₂(ℤ/Nℤ). G_N acts on S_k(Γ(N)) by g·f=f|_kγ⁻¹ for any lift γ∈SL₂(ℤ) of g. Let U_N be the upper unipotent subgroup and S₃=(0 −1;1 −1), S₄=(0 −1;1 0). For every k≥2 with σ(−I)=(−1)^k on σ, dim Hom_{G_N}(σ,S_k(Γ(N)))=(k−1)dim σ/12−½dim σ^{U_N}+ε_k tr σ(S₄)+μ_k tr σ(S₃)+δ_{k,2}dim σ^{G_N}, where ε_k=(−1)^{k/2}/4 for k even and 0 for k odd, and μ_k is 0, −1/3, 1/3 for k≡1, 2, 0 mod 3. In particular the multiplicity is (k−1)dim σ/12+O_{N,σ}(1), uniformly in k along the admitted parity classes, and for a fixed finite collection of σ one error constant works for all of them.",
+      "hypotheses": [
+        "σ^ι≃σ for ι=diag(−1,1), as for every restriction of a GL₂(ℤ/Nℤ)-representation",
+        "σ(−I)=(−1)^k on σ, k≥2"
+      ],
       "proofSteps": [
         "Use ModularSymbolsPadicLFunctions §0.7 at Γ(N): its compatibility with the normaliser action of SL₂(ℤ) makes S_k⊕S̄_k≃H¹_par(Γ(N),V_{k−2}(ℂ)) an isomorphism of G_N-representations for every N≥1. Since f↦f^c(z)=overline(f(−z̄)) is antilinear and intertwines γ with ιγι for ι=diag(−1,1), S̄_k is S_k twisted by conjugation by ι; hence dim Hom_{G_N}(σ,H¹_par)=m(σ)+m(σ^ι), where m(σ)=dim Hom_{G_N}(σ,S_k(Γ(N))) and σ^ι=σ∘Ad ι. ModularForms §10C supplies the classical spaces, the automorphy line bundle and Riemann–Roch.",
-        "Apply the genus-zero modular-orbifold cohomology calculation: the cusp stabilizer contributes its unipotent-invariant term and the two elliptic stabilizers contribute finite-order character traces. The parabolic cohomology Euler characteristic from SL₂(ℤ)=C₄*_{C₂}C₆ and the induced coefficient system computes m(σ)+m(σ^ι), hence 2m(σ) when σ^ι≃σ, in particular for every restriction of a GL₂(ℤ/Nℤ)-representation, which is the case §5.6 consumes through the types of §5.4. For general σ the cohomology does not separate σ from σ^ι, and the holomorphic Lefschetz (equivariant Riemann–Roch) count for the G_N-action on the weight-k automorphy line bundle of X(Γ(N)) gives m(σ) itself. This explicit calculation is the fixed-type refinement owned here; ordinary dimension formulas alone do not identify isotypic multiplicities.",
+        "Apply the genus-zero modular-orbifold cohomology calculation: the cusp stabilizer contributes its unipotent-invariant term and the two elliptic stabilizers contribute finite-order character traces. The parabolic cohomology Euler characteristic from SL₂(ℤ)=C₄*_{C₂}C₆ and the induced coefficient system computes m(σ)+m(σ^ι), hence 2m(σ) under the hypothesis σ^ι≃σ; §5.6 consumes only tensor products of the §5.4 types, which are restrictions of GL₂(ℤ/Nℤ)-representations. The hypothesis σ^ι≃σ is used exactly here: without it the cohomology computes only m(σ)+m(σ^ι). This explicit calculation is the fixed-type refinement owned here; ordinary dimension formulas alone do not identify isotypic multiplicities.",
         "Separate the linear term (k−1)dim σ/12. The elliptic coefficients range over finitely many residue classes modulo twelve, all fixed-type traces and invariant dimensions are constant, and the k=2 correction is bounded."
       ],
       "acceptance": [
@@ -1616,7 +1619,8 @@
         "Opposite central parity gives zero multiplicity and is excluded from the linear estimate.",
         "Fixing N and σ is necessary for the bounded remainder.",
         "For N=1, σ=1 and k=12, the periodic expression is 11/12−1/2+1/4+1/3=1; at k=2 it is 1/12−1/2−1/4−1/3+1=0.",
-        "At N=3, k=4: X(Γ(3)) has genus 0 and four regular cusps, so dim S₄(Γ(3))=3·(0−1)+(4/2−1)·4=1. Since S₄(SL₂(ℤ))=0, SL₂(𝔽₃) acts on this line by a nontrivial character, one of the two order-three characters ω, ω̄ (trivial on −I∈Q₈, as k is even); so m(ω) and m(ω̄) are 1 and 0 in some order. Conjugation by ι inverts T=(1 1;0 1), so ω^ι=ω̄, and H¹_par(Γ(3),V₂(ℂ))≃ω⊕ω̄ gives 1 for both: a route through the cohomology character alone cannot separate them."
+        "At N=3, k=4: X(Γ(3)) has genus 0 and four regular cusps, so dim S₄(Γ(3))=3·(0−1)+(4/2−1)·4=1. Since S₄(SL₂(ℤ))=0, SL₂(𝔽₃) acts on this line by a nontrivial character, one of the two order-three characters ω, ω̄ (trivial on −I∈Q₈, as k is even); so m(ω) and m(ω̄) are 1 and 0 in some order. Conjugation by ι inverts T=(1 1;0 1), so ω^ι=ω̄, and H¹_par(Γ(3),V₂(ℂ))≃ω⊕ω̄ gives 1 for both: a route through the cohomology character alone cannot separate them. This is the negative control for the hypothesis σ^ι≃σ: for σ=ω (dim σ^{U_3}=0, σ(S₄)=1 as S₄∈Q₈, μ_4=0) the periodic expression gives 3/12+1/4=½, not an integer, whereas for the ι-stable σ=ω⊕ω̄ it gives 6/12+2/4=1=m(ω)+m(ω̄).",
+        "At N=2, G_2≅S₃ and every type is ι-stable (ι≡I mod 2). Γ(2) has genus 0, three cusps and no elliptic points, so dim S_k(Γ(2))=k/2−2 for even k≥4. At k=6 the trivial, sign and two-dimensional types (U_2-invariants 1, 0, 1; S₄-traces 1, −1, 0; S₃-traces 1, 1, −1) give 5/12−1/2−1/4+1/3=0, 5/12+1/4+1/3=1 and 10/12−1/2−1/3=0, total 0+1+2·0=1; at k=8 they give 0, 0 and 1, total 2. A formula with the sign of ε_k reversed gives 1/2 for the trivial type at k=6."
       ],
       "prerequisites": [
         "ModularForms §10C",
@@ -1747,7 +1751,7 @@
       "hypotheses": [],
       "proofSteps": [
         "Use the owned SL₂ base-change multiplicity count and ramified finite types; the general transfer and type uniqueness inputs are precisely GL2AutomorphicRepresentationsAndTransfer §§R17.4.2–R17.4.6 and §R16.2.9.",
-        "Use the equivariant classical modular-form dimension calculation FGT Proposition 4.18: its leading term is (k−1)dim σ/12, while the unipotent invariant, elliptic trace and weight-two terms are bounded for the fixed finite types. Sum the finitely many admitted local types with the base-change fibre multiplicities, as in FGT Theorem 4.17. Their leading coefficients are A_F±B_F; the class-number and exceptional CM corrections are bounded.",
+        "Use the equivariant classical modular-form dimension calculation of §5.3 (FGT Proposition 4.18), whose hypothesis σ^ι≃σ holds because every summed type is a tensor product of §5.4 types and so the restriction of a GL₂(ℤ/Nℤ)-representation: its leading term is (k−1)dim σ/12, while the unipotent invariant, elliptic trace and weight-two terms are bounded for the fixed finite types. Sum the finitely many admitted local types with the base-change fibre multiplicities, as in FGT Theorem 4.17. Their leading coefficients are A_F±B_F; the class-number and exceptional CM corrections are bounded.",
         "If B_F≠0, each odd ramified prime contributes at least 6 to the product, and the possible 2-factor is at least 5. If 2∉R, A_F/B_F≥(2/3)·3^s>1; if 2∈R, A_F/B_F≥(5/3)·3^{s−1}>1. If B_F=0, positivity is immediate.",
         "Take a positive fraction of A_F−B_F and absorb the bounded R_F(n) by choosing one threshold. No asymptotic leading constant is inferred for the entire cuspidal space."
       ],
@@ -2124,6 +2128,18 @@
       "affects": "a stated result",
       "checks": [
         "For ramification index 2, p=uϖ² lies in 𝔪², so 0=p+(−p) belongs to p+𝔪²; over ℤ_p the corresponding p+p²Λ cannot contain zero."
+      ]
+    },
+    {
+      "id": "ArithmeticLocallySymmetricSpacesPartII/E10",
+      "kind": "error",
+      "locator": "Finis–Grunewald–Tirao arXiv:0808.1204v1, §4.3, Proposition 4.18, p. 25",
+      "printed": "The isotypic multiplicity formula is stated for every representation σ of SL₂(ℤ/Nℤ) with σ(−I)=(−1)^k.",
+      "correction": "Restrict the formula to σ with σ∘Ad(diag(−1,1))≃σ; the application in Theorem 4.17 uses restrictions of GL₂-types only and is unaffected.",
+      "reason": "The periodic coefficients are real and the Eichler–Shimura route computes only m(σ)+m(σ^ι); for σ not isomorphic to its ι-conjugate the formula can fail.",
+      "affects": "a stated result",
+      "checks": [
+        "At N=3, k=4 and σ an order-three character of SL₂(𝔽₃), the formula gives 3/12+1/4=½, while the true multiplicities of the two order-three characters in the one-dimensional S₄(Γ(3)) are 1 and 0."
       ]
     }
   ],
