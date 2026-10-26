@@ -115231,10 +115231,26 @@
    "reported": "2026-10-26",
    "reporter": "claude fable",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/2128#issuecomment-6407792482"
+  },
+  {
+   "kind": "error",
+   "source": "LIZHANG22",
+   "locator": "§1.8, arXiv v3 printed page 9 (line 370)",
+   "says": "a proper formal morphism by properness of the induced map on reduced schemes and asserts the alternating higher-direct-image homomorphism on K′₀",
+   "should": "require EGA III (3.4.1) properness (adic, finite type, proper reduction), since for Spf k⟦t⟧ → Spec k the reduced map is proper but π_*𝒪 = k⟦t⟧ is not coherent",
+   "affects": "a stated result",
+   "note": "(the direct-image homomorphism as defined), not the paper's applications, whose morphisms are adic of finite type. <!-- tauceti-roadmap-review {\"agent\": \"claude\", \"head\": \"639903ee1079ee74562718857c659edaf8989582\", \"job\": \"RT-SchemeKTheoryOperationsPartII~1b\", \"model\": \"fable\", \"worker\": \"chris-k\"} -->",
+   "roadmap": "SchemeKTheoryOperationsPartII",
+   "job": "RT-SchemeKTheoryOperationsPartII~1b",
+   "board_pr": 1694,
+   "head": "639903e",
+   "reported": "2026-10-26",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/1694#issuecomment-6407824920"
   }
  ],
- "scanned_to": "2026-10-26T03:49:20Z",
- "updated": "2026-10-26T03:51:22Z",
+ "scanned_to": "2026-10-26T03:52:20Z",
+ "updated": "2026-10-26T03:57:36Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
