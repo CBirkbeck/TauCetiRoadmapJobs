@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-6952 mistakes recorded on the board: 4268 misprints, 1770 errors, 685 gaps, 229 unparsed bullets.
+6955 mistakes recorded on the board: 4270 misprints, 1770 errors, 685 gaps, 230 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -237,6 +237,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Unparsed** (PadicLocalLanglandsForGL2QpPartII, #392 at 6dc9a62, 2026-10-26): Gap** in DLB17 at Remarque 11.13, arXiv v2 pp. 65–66: the source says agreement on two filtration lines forces the comparison; two lines leave a diagonal projectivity and three distinct lines are needed; affects the proof.
 - **Unparsed** (PadicLocalLanglandsForGL2QpPartII, #392 at 6dc9a62, 2026-10-26): Gap** in DLB17 at the proof of Théorème 1.10, §12.1, arXiv v2 p. 66: the source says Théorème 1.2 applies to every nontrivial type ρ_i; it applies to supercuspidal types with trivial central character only; affects the proof.
 - **Unparsed** (PadicLocalLanglandsForGL2QpPartII, #392 at 6dc9a62, 2026-10-26): Misprint** in CDN20 at Lemme 2.18, proof, authors' copy p. 30: the source says the completing column is σ_ne₁+⋯+σ₁e_n; the coefficients should alternate in sign; affects the proof.
+- **Unparsed** (RationalAnalyticPrismatization, #2065 at 8ddf5f1, 2026-10-26): The three source issues of round 1 (ALRS Remark 2.1.6's ABLB citation, Theorem 5.2.14's Lazard citation, Theorem 6.5.4's two conventions for O⟨1⟩) stand; the design records the first two and adopts one convention for the third. <!-- tauceti-roadmap-review {"agent": "claude", "head": "8ddf5f1", "job": "REV-DESIGN-RationalAnalyticPrismatization~2", "model": "fable", "worker": "fable-rev171"} -->
 
 ## A
 
@@ -593,7 +594,9 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## ALRS
 
+- **Misprint** at Corollary 5.6.12, printed page 125 (ALRS line 6825): the source says a cofiltered family of p-adically complete animated O_K-algebras with B their colimit; it should be a filtered family (the colimit is taken over it); affects nothing. Found by RationalAnalyticPrismatization (#2065 at 8ddf5f1, 2026-10-26, claude fable).
 - **Misprint** at Remark 2.1.6, printed page 15 (ALRS line 794): the source says the source cites ABLB Lemma 3.6.2 for "strictly totally disconnected with A^{†-red} = A^u is nilperfectoid"; it should be ABLB v2 Lemma 3.1.17 (ABLB line 1428); affects nothing. Found by RationalAnalyticPrismatization (#2065 at ab278cd, 2026-10-25, claude fable).
+- **Misprint** at Remark 5.4.4, printed page 110 (ALRS line 5868): the source says the source cites ABLB "Lemma 3.2.8 and Proposition 3.2.11" for the equivalence of sites; in ABLB v2 the first is Definition 3.2.8 (ABLB line 1658), the definition of Berkovich-étale maps; it should be Definition 3.2.8; affects nothing. Found by RationalAnalyticPrismatization (#2065 at 8ddf5f1, 2026-10-26, claude fable).
 - **Misprint** at Theorem 5.2.14, printed page 101 (ALRS line 5314): the source says the source cites Lazard "Corollary I.3.9"; it should be Chapitre III, (1.3.9) Corollaire, printed page 77 (Laz65 line 2873); affects nothing. Found by RationalAnalyticPrismatization (#2065 at ab278cd, 2026-10-25, claude fable).
 - **Misprint** at Theorem 6.5.4, printed page 161 (ALRS lines 8746–8753): the source says part (1) writes the dualizing complex as O⟨1⟩ with the shift [2] absorbed into O⟨1⟩, part (3) writes O{1}[2] with the shift outside; it should be use one convention (the design's: O⟨1⟩ unshifted, [2] written); affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "ab278cd", "job": "REV-DESIGN-RationalAnalyticPrismatization", "model": "fable", "worker": "fable-rev164"} -->. Found by RationalAnalyticPrismatization (#2065 at ab278cd, 2026-10-25, claude fable).
 
