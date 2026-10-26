@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-7058 mistakes recorded on the board: 4314 misprints, 1786 errors, 707 gaps, 251 unparsed bullets.
+7065 mistakes recorded on the board: 4316 misprints, 1789 errors, 708 gaps, 252 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -259,6 +259,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Unparsed** (ExcursionOperatorsAndSpectralActionPartII, #1289 at 913f271, 2026-10-26): Gap** in H26 at §2.1 and Lemma 2.3, printed p. 6, H26 lines 281 and 287: the source writes z(f) = (z∗f)(1) with no convolution convention; with left convolution this is z(f^vee), so the argument needs inversion invariance of null and unstable functions; affects the proof.
 - **Unparsed** (ExcursionOperatorsAndSpectralActionPartII, #1289 at 913f271, 2026-10-26): Misprint** in H26 at §2.3, printed p. 11, H26 line 501: the source applies the stable projection to any Θ ∈ D(G); it was defined on D_temp(G) at line 466, which contains the Ξ used; affects the proof.
 - **Unparsed** (FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII, #1244 at e5dbe2c, 2026-10-26): Error** in Kisin17 at (1.5.2)–(1.5.3), §1.5 (the section's printed page is not recoverable from the extraction; the erratum is at Kisin17 line 4253, author p.96): the Frobenius-stability of Lie H under h↦φhφ⁻¹ is omitted, so the recursion need not stay in Lie H and (1.5.3) is false as stated; affects the proof; corrected in print at Kisin17 Errata E.1–E.4, author p.96.
+- **Unparsed** (SmoothRepresentationsOfLocalGroupsPartII, #1642 at e4d41bc, 2026-10-26): Misprint** in CH26 at §6, the parenthesis after (6.2), printed page 17: with s_ν = exp(ν log q) and (6.1) as printed, L(ν) for dominant ν is the unique irreducible subrepresentation of X(ν) (PGL₂, ν = ρ gives X(ρ) = Ind_B 1 containing the constants); the source says quotient; affects nothing.
 
 ## A
 
@@ -2917,7 +2918,9 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## CH26
 
 - **Misprint** at (6.5), p. 17: the source says the list of coroot types with `w₀ = −1` omits `A₁` and `D_{2n}`; it should be `A₁, B, C, D_{2n}, G₂, F₄, E₇, E₈`; affects nothing. Found by SmoothRepresentationsOfLocalGroupsPartII (#1642 at 96a72c9, 2026-10-25, claude fable).
+- **Gap** at (6.5), printed page 17: the source says the list of types for which w₀ = −1 omits A₁ and D_{2m}; it should be include them; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "e4d41bc", "job": "RT-SmoothRepresentationsOfLocalGroupsPartII~1b", "model": "fable", "worker": "fable-rt207"} -->. Found by SmoothRepresentationsOfLocalGroupsPartII (#1642 at e4d41bc, 2026-10-26, claude fable).
 - **Error** at Corollary 6.32(1), p. 25 (inherited by Corollary 7.5, p. 26): the source says stated for an arbitrary compact part `s_c`; for split `G₂`, the involution `s_c` with `(aα₁^∨+bα₂^∨)(s_c) = (−1)^a` and `ν = ½ω₂` gives an irreducible, hermitian, unitary (deformation from `t = 0`), generic `X(s)` with `s` geometric for every representation and `ν ≠ 0`; it should be restrict to `s_c = 1` or central, or replace `U₀^g` by the region of the centraliser of `s_c`; affects a stated result. Found by SmoothRepresentationsOfLocalGroupsPartII (#1642 at 96a72c9, 2026-10-25, claude fable).
+- **Error** at Theorem 8.5(3), B₃ row, printed page 28: the source says the F₄, B₃ extraneous real part as ω₁+ω₂+½ω₃+½ω₄, whose squared norm 19.5 puts it outside the stratum's complementary series (all its real parts have squared norm 7 + 2t² with t < 1); it should be ω₁+½ω₃+½ω₄ = (5/2, 1, ½, 0); affects a stated result. Found by SmoothRepresentationsOfLocalGroupsPartII (#1642 at e4d41bc, 2026-10-26, claude fable).
 - **Error** at Theorem 8.5(3), p. 28, row `O^∨ = B₃` of `F₄`: the source says the real part is printed as `ω₁+ω₂+½ω₃+½ω₄` (Euclidean norm² 19.5 in the coordinates of (6.21)); it should be `ω₁+½ω₃+½ω₄`, Weyl-conjugate to `½h^∨ + ν` with `½h^∨ ~ (5/2,½,½,½)`, `ν` on the `A₁` centraliser with root value ½ (norm² 7 + ½ = 7.5); affects a stated result. Found by SmoothRepresentationsOfLocalGroupsPartII (#1642 at 96a72c9, 2026-10-25, claude fable).
 
 ## CHANG14
@@ -3007,6 +3010,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Cho–Yamauchi, v2
 
 - **Error** at §3.1, p. 12: the source says a point over an arbitrary base algebra is primitive as soon as one maximal minor is a unit; it should be that the maximal minors generate the unit ideal, i.e. a split injection, since one unit minor suffices only over local rings; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## CiF4
+
+- **Misprint** at §3.2, B₃ row of the maximal-parabolic table, printed page 14: the source says the second coordinate as 3/2 + ν, which is not orthogonal to the central point; it should be 3/2 − ν, as the orthogonality in the C₃ rows shows; affects nothing. Found by SmoothRepresentationsOfLocalGroupsPartII (#1642 at e4d41bc, 2026-10-26, claude fable).
 
 ## CL18
 
@@ -3605,6 +3612,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at Lemma 3.9(2), proof, printed page 11: the source says `V_a` contains the neighbourhood `V_{E|F}` "of `q_a`"; it should be of the valuation `w`; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "d1776cf", "job": "REV-PKG-QuadraticFormInvariantsPartII", "model": "fable", "worker": "fable-rev175"} -->. Found by QuadraticFormInvariantsPartII (#2099 at d1776cf, 2026-10-26, claude fable).
 - **Misprint** at Proposition 3.2(2), proof, printed page 7: the source says the source expands `q_{π,ε}` with coefficients `∏ πᵢ^{χ(i)}`; it should be carry the signs `(−1)^{|χ|}` from `⟨⟨π⟩⟩ = x₁² − π x₂²`; affects nothing; (units). Found by QuadraticFormInvariantsPartII (#2099 at d1776cf, 2026-10-26, claude fable).
 - **Error** at Proposition 3.2(3), proof of the Claim, printed page 7: the source says the source bounds the local compositum through `cd(E′) ≤ dim(E′) + 1`, which fails when `E′` is formally real (its `cd₂` is infinite); it should be bound `cd₂(E′k′_v)` directly by `trdeg(E′/k′) + 2` at finite places; affects the proof; (repaired in 6.2). Found by QuadraticFormInvariantsPartII (#2099 at d1776cf, 2026-10-26, claude fable).
+- **Error** at Proposition 3.2(3), proof of the Claim, printed page 7: the source says the source bounds the nonreal local compositum through `cd(E′) ≤ dim(E′) + 1`, which fails when `E′` is formally real (its `cd₂` is infinite); it should be bound `cd₂(E′k′_v)` directly by `trdeg(E′/k′) + 2` at finite places; affects the proof; (repaired in 6.2). Found by QuadraticFormInvariantsPartII (#2099 at 4f64e3f, 2026-10-26, claude fable).
 - **Misprint** at §3, printed page 6: the source says the outer factors `⟨⟨aᵢ⟩⟩` as quadratic forms `x₁² − a x₂²` also in characteristic two; it should be take them as the bilinear forms `⟨1, −aᵢ⟩_b` of EKM §9.B, since quadratic forms do not multiply; affects nothing. Found by QuadraticFormInvariantsPartII (#2099 at d1776cf, 2026-10-26, claude fable).
 
 ## DPS
@@ -4572,6 +4580,8 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## GS23
 
 - **Error** at Proposition 11.6, p. 33: the source says the statement says an irreducible σ weakly contained in `⊕̂ πₙ` is the limit of a subsequence of the πₙ; it should be σ lies in the Fell closure of `{πₙ}` (the proof produces a sequence in the union of coefficient sets, which may repeat one index); with `π₁ = σ = St_{G₂(ℚ₅)}` and `πₙ = 1` for `n ≥ 2` no subsequence converges to the isolated St; affects a stated result; (Corollary 11.7 is unaffected). Found by SmoothRepresentationsOfLocalGroupsPartII (#1642 at 96a72c9, 2026-10-25, claude fable).
+- **Error** at Proposition 11.6, printed page 33: the source says the source concludes that σ is the limit of a subsequence of the πₙ; it should be conclude that [σ] lies in the Fell closure of {[πₙ]} (G₂(ℚ₅), π₁ = St, πₙ = 1 refutes the printed form); affects a stated result; (Corollary 11.7 survives). Found by SmoothRepresentationsOfLocalGroupsPartII (#1642 at e4d41bc, 2026-10-26, claude fable).
+- **Misprint** at the definition of f_τ before Lemma 11.4, printed page 32: the source says the source normalises f_τ by the volume of K only; it should be carry the factor dim τ for π(f_τ) to be the τ-isotypic projector; affects nothing; (only non-vanishing is used). Found by SmoothRepresentationsOfLocalGroupsPartII (#1642 at e4d41bc, 2026-10-26, claude fable).
 - **Misprint** at §11.1, p. 32 (paragraph before Lemma 11.4): the source says the function `f_τ` is defined as the conjugate character of τ divided by `vol K`, and `π(f_τ)` is called the τ-isotypic projector; it should be carry the factor `dim τ`, otherwise `π(f_τ)` is the projector divided by `dim τ`; affects nothing; (the proof only uses nonvanishing). Found by SmoothRepresentationsOfLocalGroupsPartII (#1642 at 96a72c9, 2026-10-25, claude fable).
 
 ## GSWZ2024
