@@ -3791,119 +3791,100 @@
   ],
   "gaps": [
     {
-      "title": "Scope of the signed PEL estimate",
-      "detail": "The BPS degree lower bound cannot be multiplied by a negative terminal weight without reversing its direction. This plan proves the stated positive-terminal-weight region with nonnegative eigenvalue slopes; extending to the paper’s unrestricted signed-weight formulation needs a separate estimate.",
-      "neededBy": [
-        "PadicFamiliesPartII:P1/strict-slope",
-        "PadicFamiliesPartII:P1/contraction",
-        "PadicFamiliesPartII:P1/classicality"
-      ]
+      "slug": "bounded-section-gluing",
+      "needs": "For a smooth rigid space over a complete discretely valued field of characteristic zero with a locally free coherent sheaf and an integral model, Bartenwerfer's extension of bounded sections across the complement of a quasi-compact open (BPS Proposition 4.1.2), and gluing of compatible integral sections modulo p^(A_N), A_N→∞, on finite admissible covers by strict neighbourhoods into a bounded section.",
+      "supplier": "AdicSpacesPartIII",
+      "section": "§R3.2"
     },
     {
-      "title": "Dimension-one PEL reduction",
-      "detail": "The original source invokes modular-curve continuation in dimension one. A classification/reduction covering every possible dimension-one PEL factor has not been supplied; the new theorem is restricted to components of dimension>1.",
-      "neededBy": [
-        "PadicFamiliesPartII:P1/classicality"
-      ]
+      "slug": "higher-coherent-hecke",
+      "needs": "Extend the geometric Hecke operators to cohomological correspondences on RΓ of canonical and subcanonical extensions in every degree, including the correspondences at p at Iwahori, Klingen and mixed parahoric level, with composition matching convolution, independence of common fan refinements, and integral normalization through the fundamental-class trace.",
+      "supplier": "AutomorphicBundles",
+      "section": "§B5.10"
     },
     {
-      "title": "Finite-block topology in torsion comparison",
-      "detail": "The source’s bounded-cocycle argument must be strengthened by continuity and boundedness of the finite-slope projection on cohomology modulo boundaries. The target records this proof obligation; bounded cocycles alone do not prove the required bounded classes.",
-      "neededBy": [
-        "PadicFamiliesPartII:K2/torsion-continuation"
-      ]
+      "slug": "hilbert-siegel-kodaira-spencer",
+      "needs": "On toroidal models of Res_(F/ℚ)GSp₄ over ℤ_(p), the O_F-linear Kodaira–Spencer identification of the canonical sheaf with ⊗_v det(ω_v)³ compatible with prime-to-p quasi-isogenies and their polarization factor, and the normalized integral p-correspondence identities of BCGP21 Propositions 5.5.2–5.5.3 and 5.6.1.",
+      "supplier": "AutomorphicBundles",
+      "section": "§B2.8"
     },
     {
-      "title": "Euler characteristic versus torsion",
-      "detail": "Pilloni Remark 1.4 and Remark 15.2.1 formulate stronger torsion/support-dimension predictions. No torsion theorem is inferred from virtual rank zero; packet-balance and local-level comparison remain explicit supplier contracts.",
-      "neededBy": [
-        "PadicFamiliesPartII:K2/euler-zero"
-      ]
+      "slug": "coherent-automorphic-realization",
+      "needs": "For Res_(F/ℚ)GSp₄, F totally real (F=ℚ included), at neat level, identify interior coherent cohomology of the canonical and subcanonical extensions of ω^κ in every degree, Hecke-equivariantly and after localization at a non-Eisenstein maximal ideal, with the sum over discrete automorphic representations of m(π)·H^q(𝔭_h,K_h;π_∞⊗V_κ)⊗π_f^K in the sense of AutomorphicFormsOnReductiveGroups §6.2.",
+      "supplier": "AutomorphicBundles",
+      "section": "§B4.9"
     },
     {
-      "title": "Integral Hilbert descent with p-torsion deck quotient",
-      "detail": "The direct-factor descent used in BCGP21 Proposition 4.4.3 needs derived invariants if the deck/unit quotient has p-torsion. Neatness does not imply p∤|Δ|. The integral common-similitude theorem here imposes p∤|Δ|; extending to all levels requires a separate descent argument.",
-      "neededBy": [
-        "PadicFamiliesPartII:H3/universal-coefficients",
-        "PadicFamiliesPartII:H3/family-complex",
-        "PadicFamiliesPartII:H3/derived-control"
-      ]
+      "slug": "igusa-boundary-eisenstein",
+      "needs": "For the ordinary genus-two Igusa tower, the normalization of its boundary into ordinary GL₂ boundary towers and the factorization of the prime-to-p Hecke action on boundary coherent and completed cohomology through the Levi Hecke algebra, so that every boundary Hecke polynomial is reducible.",
+      "supplier": "AutomorphicBundles",
+      "section": "§B3.4"
     },
     {
-      "title": "Multivariable Hasse powers",
-      "detail": "The simultaneous-powers exact sequence invoked in Proposition 4.6.19 fails for two independent parameters. The corrected single-exponent induction needs the precise regular-sequence and supported-acyclicity input requested from C5; until supplied, this control proof is not closed.",
-      "neededBy": [
-        "PadicFamiliesPartII:H3/trace-control",
-        "PadicFamiliesPartII:H3/derived-control"
-      ]
+      "slug": "completed-eichler-shimura",
+      "needs": "For GSp₄/ℚ, attach a four-dimensional Galois representation to every prime-to-p Hecke eigensystem of localized ordinary completed cohomology with absolutely irreducible residual representation, prove the Eichler–Shimura relation on the completed tower, and under the Zariski-closure alternatives of BCGP25 §4.11 the multiplicity decomposition V[m]≅ρ_m⊗W (BCGP25 Propositions 4.11.1–4.11.2 and Lemma 4.12.3).",
+      "supplier": "AutomorphicGaloisRepresentationsPartII",
+      "section": "Layer AG2.7"
     },
     {
-      "title": "Finite-block completion and analytic intersections",
-      "detail": "The exact continuous finite-block projection on the completed Čech complex, and acyclicity of every cube intersection for the analytic coefficient, are needed for injectivity and amplitude. Neither follows merely from projectivity of charts. Supplier statements and proof obligations are explicit.",
-      "neededBy": [
-        "PadicFamiliesPartII:C5/analytic-amplitude",
-        "PadicFamiliesPartII:C5/multi-continuation",
-        "PadicFamiliesPartII:C5/one-place-comparison"
-      ]
+      "slug": "analytic-localization",
+      "needs": "For M in the BGG category O(𝔤,𝔟)_(λ-alg), the canonical completion M⊗_(U(𝔤))Û(𝔤), its continuous dual and the λ-twisted analytic localization on the adic flag variety, with the comparison of RHom_𝔤(M,RLA(V)) and the localization, non-Liouville exactness, dual-Verma fibres and the rank-one localization triangle (BCGP25 Theorem 2.2.39, §3.4, Theorems 3.5.11 and 3.6.9).",
+      "supplier": "CompletedCohomologyPartII",
+      "section": "§F.4"
     },
     {
-      "title": "Strength of Hilbert rational comparison",
-      "detail": "The two-term Euler argument applies to |I|=1 after non-Eisenstein localization and individual-operator integrality. A full classical comparison for arbitrary |I| or an integral comparison without the stated deck condition is not a consequence of these sources.",
-      "neededBy": [
-        "PadicFamiliesPartII:C5/one-place-comparison"
-      ]
+      "slug": "hilbert-siegel-partial-igusa",
+      "needs": "On the Hilbert–Siegel mixed-level ordinary loci, the partial Igusa towers trivializing T_p(H_(∞,v)^D) at every v∈S_p and T_p((G_v^m/H_(∞,v))^D) at the Iwahori places, with affine étale transitions outside the fully ordinary locus, and the Hilbert–Siegel canonical-subgroup frame torsor with modified lattice p^(1/(p−1))ω⊂ω^mod⊂ω and radius-change estimates compatible with determinant and boundary.",
+      "supplier": "HodgeTateAndCanonicalSubgroups",
+      "section": "§5.1"
     },
     {
-      "title": "Completed analytic localization carrier",
-      "detail": "The current algebraic highest-weight roadmap does not supply the canonical completion, continuous dual, λ-action twist and analytic localization of O(𝔤,𝔟)_{λ-alg}. Their completion and non-Liouville exactness comparisons need a dedicated LieHighestWeight continuation before E6 closes. No comparison for arbitrary topological coefficients is inferred.",
-      "neededBy": [
-        "PadicFamiliesPartII:E6/completed-functor",
-        "PadicFamiliesPartII:E6/localization-comparison",
-        "PadicFamiliesPartII:E6/spectral-sequence"
-      ]
+      "slug": "bgg-category-o",
+      "needs": "For a split reductive Lie algebra 𝔤 over a field of characteristic zero with Borel 𝔟 and λ a character of 𝔟, the BGG category O(𝔤,𝔟)_(λ-alg) of finitely generated 𝔤-modules that are 𝔟-locally finite with weights in λ plus algebraic characters, its Verma and parabolic Verma objects and their 𝔲_P-homology.",
+      "supplier": "LieHighestWeight",
+      "section": "Layer 3"
     },
     {
-      "title": "Exact eigenpacket and packet balance",
-      "detail": "Taking m-annihilated eigenspaces is not exact. BCGP25 Theorem 4.12.4(3) assumes four equal graded eigenspace dimensions independently of the image hypotheses; Lemma 4.12.3 proves only total tensor multiplicity. The corrected classicality target retains that balance as a hypothesis. Applying it requires a separate verification, such as the multiplicity-one bounds in Remark 4.12.5, as well as the stable classical automorphic-packet comparison.",
-      "neededBy": [
-        "PadicFamiliesPartII:S7/multiplicity-balance",
-        "PadicFamiliesPartII:S7/de-rham-classicality"
-      ]
+      "slug": "pel-iwahori-correspondences",
+      "needs": "For PEL data of type A or C satisfying BPS Hypothesis 1.1.1, describe the characteristic-zero Iwahori-level problem by flags of O_B-stable totally isotropic finite flat subgroups of A[p], and construct at each place above p the correspondence of complements with its quotient isogeny, the polarization transported by a totally positive element of valuation one at that place, the induced tame structure, and finite étale projections.",
+      "supplier": "PELModuli",
+      "section": "§M1.13"
     },
     {
-      "title": "Full-torus and tame descent refinement",
-      "detail": "The projectivity argument needs the cofinal full-torus integral control and tame-boundary stabilizer calculation, including p=2 and p-divisible Δ. These are requested explicitly; semisimple finite-character splitting or averaging would not close this stage.",
-      "neededBy": [
-        "PadicFamiliesPartII:F8/projectivity",
-        "PadicFamiliesPartII:F8/tame-projectivity",
-        "PadicFamiliesPartII:F8/central-character"
-      ]
+      "slug": "hilbert-siegel-mixed-models",
+      "needs": "For Res_(F/ℚ)GSp₄ with F totally real and p>2 split completely in F, integral models at mixed Klingen and Iwahori level at the places above p as moduli of chains of O_F-stable isotropic finite flat subgroups, their p-rank stratification place by place, the open loci where the distinguished height-one subgroup is multiplicative, and the comparison with the normalized models of §§M4.5–M4.6.",
+      "supplier": "PELModuli",
+      "section": "§M4.5"
     },
     {
-      "title": "Singular localization overlap kernel",
-      "detail": "BCGP25 Proposition 3.6.15 uses injectivity of (x+1)∂_x+1 at an overlap fiber. The germ 1/(1+x) is an ambient kernel element. Its membership in the constrained fiber is not established, so this is a proof gap rather than a counterexample to the proposition. Supply the missing fiber restriction or a different nonzero intertwiner before closing the Sen–Cousin theorem or its classicality application. This independently reproduces the reviewed extraction finding PAPER-BOXER-CALEGARI-GEE-PILLONI-25/E015.",
-      "neededBy": [
-        "PadicFamiliesPartII:S7/rank-one-localization",
-        "PadicFamiliesPartII:S7/sen-cousin",
-        "PadicFamiliesPartII:S7/de-rham-classicality"
-      ]
+      "slug": "vb-sen-period",
+      "needs": "The solid analytic automorphic vector-bundle functor VB_red from equivariant sheaves on the flag variety, its compatibility with Chevalley–Eilenberg complexes and localization, and the identification of the arithmetic Sen operator on completed cohomology with the horizontal action (BCGP25 Theorems 4.5.20 and 4.7.1).",
+      "supplier": "PerfectoidShimuraVarieties",
+      "section": "§3.6"
     },
     {
-      "title": "Klingen integral analytic lattice estimates",
-      "detail": "Pilloni §13.3.1 needs the higher-Klingen-level vanishing for the ++ sheaf and a bounded-torsion Čech-to-derived comparison for its completed analytic coefficient lattice, not only the finite-rank O⁺ case. These are the substantive obligations behind reviewed extraction findings E115–E116; the requested toroidal/radius estimates must include them.",
-      "neededBy": [
-        "PadicFamiliesPartII:K2/bgg-scaling",
-        "PadicFamiliesPartII:K2/torsion-continuation"
-      ]
+      "slug": "lci-fundamental-class",
+      "needs": "For a proper morphism f:X→Y of Noetherian schemes of the same pure dimension with X Cohen–Macaulay and Y regular, the fundamental class identifying f^!O_Y with the relative dualizing sheaf in degree zero and the induced trace Rf_*O_X→O_Y extending the finite locally free trace, compatible with composition and flat base change.",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "§2.21"
     },
     {
-      "title": "Integral fundamental-class trace extension",
-      "detail": "The coherent-duality construction is already a written supplier node and is imported by its exact identifier. Its general shriek/finite-duality API does not alone provide the integral fundamental-class divisibilities, compatible Kodaira–Spencer maps or all required base-change identities for these singular correspondences. Request those precise extensions in SF.2; do not treat duality as baseline or replace it with a data assumption.",
-      "neededBy": [
-        "PadicFamiliesPartII:K2/spherical",
-        "PadicFamiliesPartII:D4/kodaira-spencer",
-        "PadicFamiliesPartII:D4/second-operator"
-      ]
+      "slug": "partial-hasse-invariants",
+      "needs": "On the special fibres of the Hilbert–Siegel models, the partial Hasse invariants Ha_v (v∈S_p) on toroidal and minimal compactifications, their regularity as a sequence on every supported stratum also after replacing any of them by an arbitrary power, and affineness of the rank strata of the minimal compactification.",
+      "supplier": "ShimuraCompactifications",
+      "section": "§C6.44"
+    },
+    {
+      "slug": "hilbert-siegel-minimal-acyclicity",
+      "needs": "For the Siegel and Hilbert–Siegel toroidal-to-minimal maps at the p-levels used here, vanishing of higher direct images of subcanonical coefficients (also modulo p^n, and for the analytic Banach coefficients after a Hodge–Tate trivialization), the two-affine cover of the rank-at-least-one minimal special fibre in genus two, and the 2^|I| cube of affinoid charts of the mixed locus with acyclic finite intersections.",
+      "supplier": "ShimuraCompactifications",
+      "section": "§C5.16"
+    },
+    {
+      "slug": "tame-boundary-stabilizers",
+      "needs": "For normal neat tame levels K₁⊂K₂ with finite quotient Δ, the toroidal map as a Δ-quotient whose geometric stabilizers on boundary strata have order prime to p, with the trace and pullback identifications on canonical and subcanonical coefficients.",
+      "supplier": "ShimuraCompactifications",
+      "section": "§C3.2"
     }
   ],
   "sourceIssues": [
