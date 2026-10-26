@@ -17,7 +17,9 @@ criterion, `C_i` fields and the Tsen–Lang theorem, Jannsen's Hasse principle i
 and Dittmann–Pop's theorem that a unit Pfister form of fold `dim(K) + 1` over a henselian field is
 isotropic as soon as it is isotropic at the real closures of the constant field; it ends with the
 patch openness of henselian isotropy loci in the valuation spectrum. The end theorems are the
-Hauptsatz, the invariant-zero criterion, the three Dittmann–Pop criteria and the openness theorem.
+Hauptsatz, the invariant-zero criterion, the three parts of Dittmann–Pop's Proposition 3.2 (the
+principal-unit criterion, the independent-value criterion with unit reduction as its case without
+values, and the dimension theorem) and the openness theorem.
 
 ## Scope and ownership
 
@@ -43,9 +45,10 @@ This roadmap owns:
   function field of a quadric, the subform theorem and the Arason–Pfister Hauptsatz, in every
   characteristic (Layer 2);
 - the coefficient groups `H_qⁿ(F)` of the quadratic invariants, including Kato's group in
-  characteristic two; the Milnor homomorphism and Morel's proof that it is injective; Kato's
-  comparison in characteristic two; the Pfister invariant `eₙ`, its naturality and the
-  invariant-zero criterion (Layer 3);
+  characteristic two; the Milnor homomorphism, its bijectivity in degrees at most two and over the
+  prime fields, and Morel's proof that it is injective in every degree; Kato's comparison in
+  characteristic two; the Pfister invariant `eₙ`, its naturality and the invariant-zero criterion
+  (Layer 3);
 - unit reduction, the principal-unit criterion and the independent-value criterion over henselian
   valued fields of arbitrary rank (Layer 4);
 - `C_i` fields, the projective dimension theorem in the form used for systems of forms, finite
@@ -60,9 +63,9 @@ This roadmap owns:
 It leaves to named owners, and imports:
 
 - `QuadraticFormInvariants` Layer 1 (hyperbolic planes, Witt decomposition, cancellation and
-  extension with `2` invertible), Layer 4 (the Witt ring, the fundamental ideal, Pfister forms and
-  the generation of `Iⁿ`), §7A (the `μ₂` adapters and Kummer classes), §7B (the comparison of
-  quaternion classes with `H²`) and Layer 9 (Scharlau transfer);
+  extension with `2` invertible), Layer 4 (the Witt ring, the fundamental ideal, Pfister forms,
+  the generation of `Iⁿ` and the signature `W(ℝ) ≅ ℤ`), §7A (the `μ₂` adapters and Kummer
+  classes), §7B (the comparison of quaternion classes with `H²`) and Layer 9 (Scharlau transfer);
 - `ProfiniteCohomology` Layer 10 (continuous cohomology in all degrees), Layer 11 (cohomological
   dimension) and Layer 12 (the graded cup product);
 - `ClassFieldTheory` Layer 6 (`cd_ℓ G_K = 2` for a finite extension `K` of `ℚ_p`);
@@ -80,8 +83,9 @@ It leaves to named owners, and imports:
   `W_b(F)`; Layer 0 adds the product and the fundamental ideal). The Witt groups `Wq(R)` and
   `Ws(R)` of quadratic and symmetric forms over Dedekind rings and their comparison belong to
   `GeometryOfNumbersAndQuadraticArithmeticPartII` §DA.0; Layer 0 here works over fields only;
-- `K2SymbolsBrauer` §§5.4–5.8 (Milnor K-theory of a field and its functoriality), Layer 9 (residues)
-  and Layer 10 (the Bass–Tate sequence and Milnor norms);
+- `K2SymbolsBrauer` §§5.4–5.8 (Milnor K-theory of a field and its functoriality), §5.12 (Milnor
+  K-theory of finite fields), Layer 9 (residues) and Layer 10 (the Bass–Tate sequence, Milnor norms
+  and, §10.32, Milnor K-theory of number fields in degrees at least three);
 - `KTheoryFiniteLocalFields` §3.0 (the inverse Cartier operator on the Kähler forms of a field of
   characteristic `p`, the logarithmic forms `ν_F(n)` and the Bloch–Gabber–Kato isomorphism
   `blochGabberKato`) and §3.0a (the norm-residue isomorphism and the motivic–étale comparison
@@ -130,7 +134,7 @@ quadric-level computations of Benoist–Wittenberg) belong to `RealSurfacePeriod
   gives `[1, (1 − b)/4] ≅ ⟨1, −b⟩`, so the parent's minus-sign Pfister form
   `⟨⟨a₁, …, aₙ⟩⟩ = ⟨1, −a₁⟩ ⊗ ⋯ ⊗ ⟨1, −aₙ⟩` (Tau Ceti's `TauCeti.presentedForm` of
   `TauCeti.pfisterForm a`) is isometric to `quadraticPfister (a₁, …, aₙ₋₁) ((1 − aₙ)/4)`. For `n ≥ 1`
-  the Witt class of an `n`-fold quadratic Pfister form lies in `I_qⁿ = I_bⁿ⁻¹ · I_q`.
+  the Witt class of a nonsingular `n`-fold quadratic Pfister form lies in `I_qⁿ = I_bⁿ⁻¹ · I_q`.
 - **Coefficient groups.** For `n ≥ 1`, `H_qⁿ(F)` denotes `Hⁿ(F, ℤ/2(n − 1))`. When `char F ≠ 2` it is
   `Hⁿ(G_F, μ₂^{⊗(n−1)})`, identified with `Hⁿ(G_F, 𝔽₂)` through the canonical `μ₂ ≅ ℤ/2`; the
   Kummer class of `a ∈ Fˣ` is `(a) ∈ H¹(G_F, 𝔽₂)` (Tau Ceti's `TauCeti.kummerClass`). When
@@ -202,6 +206,8 @@ with the same scope. All Witt-ring declarations assume `Invertible (2 : K)`.
 - `RegularFormClass/Basic.lean`: `TauCeti.RegularFormClass`, `TauCeti.presentedForm` (the diagonal
   form of a tuple of units), `TauCeti.formClass` (the class of a regular form on a finite-dimensional
   space).
+- `Witt/BaseChange.lean`: `TauCeti.WittRing.baseChange` (the ring map `W(K) → W(L)` of a field extension)
+  and `TauCeti.WittRing.baseChange_mem_fundamentalIdeal_pow` (it maps `I(K)ⁿ` into `I(L)ⁿ`).
 - `Witt/Round.lean`, `Witt/Pfister/Hyperbolic.lean`, `Witt/Pfister/BaseChange.lean`:
   `TauCeti.oneFoldPfister_smul_equivalent_of_mem_unitValueSet`,
   `TauCeti.twoFoldPfister_smul_equivalent_of_mem_unitValueSet`, `TauCeti.pfisterFormClass_two_tfae`,
@@ -231,9 +237,10 @@ with the same scope. All Witt-ring declarations assume `Invertible (2 : K)`.
 
 ### From TauCetiRoadmap.QuadraticFormInvariants
 
-Layer 1, Layer 4, §7A, §7B and Layer 9, through the Tau Ceti declarations listed above. Assumed:
-everything there holds with `2` invertible and the minus-sign Pfister convention; nothing is
-assumed in characteristic two. §7B supplies the identification of the quaternion class `[(a, b)]`
+Layer 1, Layer 4, §7A, §7B and Layer 9, through the Tau Ceti declarations listed above, and Layer
+4's signature isomorphism `W(ℝ) ≅ ℤ` (sending `⟨1⟩` to `1`), which 3.2a uses. Assumed: everything
+there holds with `2` invertible and the minus-sign Pfister convention; nothing is assumed in
+characteristic two. §7B supplies the identification of the quaternion class `[(a, b)]`
 with `(a) ∪ (b)` used to pin `e₂`.
 
 ### From TauCetiRoadmap.ProfiniteCohomology
@@ -294,9 +301,11 @@ forms, in every characteristic. Assumed: no product structure; Layer 0 adds the 
 ### From TauCetiRoadmap.K2SymbolsBrauer
 
 §5.4 (Milnor K-theory `K_*ᴹ(F)` as the tensor algebra on `Fˣ` modulo the Steinberg relations), §§5.6–5.8
-(grading, symbol API and maps induced by field homomorphisms), Layer 9 (tame symbols and last-slot
-Milnor residues) and Layer 10 (§10.5 the Bass–Tate sequence for `F(t)`, §§10.6–10.9 Milnor transfers
-and the projection formula). Assumed for every field, inseparable extensions included.
+(grading, symbol API and maps induced by field homomorphisms), §5.12 (`Kₙᴹ(𝔽_q) = 0` for `n ≥ 2`),
+Layer 9 (tame symbols and last-slot Milnor residues) and Layer 10 (§10.5 the Bass–Tate sequence for
+`F(t)`, §§10.6–10.9 Milnor transfers and the projection formula, and §10.32: for a number field with
+`r₁` real places and `n ≥ 3`, `Kₙᴹ ≅ (ℤ/2)^{r₁}` through the signs at the real places). Assumed as
+stated there; §§5.4–5.8 and Layers 9–10 for every field, inseparable extensions included.
 
 ### From TauCetiRoadmap.KTheoryFiniteLocalFields
 
@@ -343,8 +352,9 @@ identified with the parent's. Layer 1 defines quadratic Pfister forms uniformly 
 roundness and the isotropy criterion in every fold and characteristic. Layer 2 develops polynomial
 representation, transfer and the similarity theorems, the function field of a quadric and the
 subform theorem, and proves the Arason–Pfister Hauptsatz. Layer 3 builds the coefficient groups,
-the odd-characteristic Milnor map with Morel's injectivity proof, Kato's characteristic-two
-comparison, the Pfister invariant and the invariant-zero criterion. Layer 4 turns to henselian
+the odd-characteristic Milnor map, its bijectivity in low degrees and over the prime fields, Morel's
+injectivity proof, Kato's characteristic-two comparison, the Pfister invariant and the
+invariant-zero criterion. Layer 4 turns to henselian
 valued fields; Layer 5 to `C_i` fields and the Kronecker dimension; Layer 6 combines Layers 3–5 with
 Jannsen's Hasse principle into Dittmann–Pop's dimension theorem; Layer 7 proves the openness of
 henselian loci and uses only Layer 0 and the valuation suppliers. The chain is
@@ -588,8 +598,9 @@ Define `quadraticPfister a a₀ = ⟨⟨a₁, …, aₘ⟩⟩_b ⊗ [1, a₀]` f
 orthogonal sum over the `2ᵐ` weights `∏_{i ∈ S}(−aᵢ)` of Tau Ceti's `TauCeti.pfisterForm a` of the
 weighted block `[1, a₀]`, on `F^{2ᵐ} × F²` (EKM, Examples 9.3–9.4 and §9.B, pp. 52–53;
 Dittmann–Pop, §3, p. 6). It has dimension `2^{m+1}`, represents `1`, is nonsingular exactly when
-`1 − 4a₀ ≠ 0`, and its class lies in `I_q^{m+1}(F)`. In characteristic two it is EKM's
-`⟨⟨a₁, …, aₘ, a₀]]`; with `2` invertible, `quadraticPfister a a₀ ≅ ⟨⟨a₁, …, aₘ, 1 − 4a₀⟩⟩` in the
+`1 − 4a₀ ≠ 0`, and then its class lies in `I_q^{m+1}(F)`. In characteristic two it is EKM's
+`⟨⟨a₁, …, aₘ, a₀]]`; with `2` invertible and `1 − 4a₀ ≠ 0`,
+`quadraticPfister a a₀ ≅ ⟨⟨a₁, …, aₘ, 1 − 4a₀⟩⟩` in the
 parent's minus-sign convention, so the family of nonsingular quadratic Pfister forms is the parent's
 `TauCeti.pfisterForm` family. Prove that scaled `n`-fold forms generate `I_qⁿ(F)` additively for
 `n ≥ 1` and that unscaled forms already do for `n ≥ 2`, through
@@ -604,14 +615,15 @@ API:
 - representation: it represents `1` at the first basis vector;
 - nonsingularity: it is nonsingular exactly when `1 − 4a₀ ≠ 0`;
 - scalar extension: its coordinate extension along `K → L` is `quadraticPfister` of the mapped slots;
-- comparison: with `2` invertible it is isometric to the parent's `⟨⟨a₁, …, aₘ, 1 − 4a₀⟩⟩`;
+- comparison: with `2` invertible and `1 − 4a₀ ≠ 0` it is isometric to the parent's
+  `⟨⟨a₁, …, aₘ, 1 − 4a₀⟩⟩`; with `1 − 4a₀ = 0` it is singular and has no parent counterpart;
 - generation: scaled `n`-fold forms generate `I_qⁿ(F)` for `n ≥ 1`; unscaled ones generate it for
   `n ≥ 2`, and for `n = 1` exactly when `2` is invertible.
 
 **Checks.**
 
-- `m = 0`: `quadraticPfister` of the empty tuple is `[1, a₀]`, two-dimensional (the sanity
-  computation in the acceptance file); it is never the one-dimensional `⟨1⟩`.
+- `m = 0`: `quadraticPfister` of the empty tuple is `[1, a₀]`, two-dimensional; it is never the
+  one-dimensional `⟨1⟩`.
 - Over `𝔽₂` with `a₀ = 1` the one-fold form `[1, 1]` is anisotropic; with `a₀ = 0` it is `[1, 0]`,
   hyperbolic, and every outer tensor of it is hyperbolic.
 - With `2` invertible, the two-fold form with outer slot `a` and `a₀ = (1 − b)/4` is isometric to
@@ -619,7 +631,7 @@ API:
   convention `⟨1, a, b, ab⟩` would differ already for `a = b = −1` over `ℚ`, where the minus-sign form
   `⟨1, 1, 1, 1⟩` is anisotropic and `⟨1, −1, −1, 1⟩` is hyperbolic.
 - In characteristic two, unscaled one-fold forms do not generate `I_q(F)`: by
-  `[1, d] ⊥ [1, e] ≅ [1, d + e] ⊥ ℍ` (EKM, Example 7.23, p. 45) they span only the classes `[1, d]`,
+  `[1, d] ⊥ [1, e] ≅ [1, d + e] ⊥ ℍ` (EKM, Example 7.23, p. 44) they span only the classes `[1, d]`,
   and over `𝔽₂(t)` the class of `t [1, 1]` is not one of them, since `t [1, 1]` does not represent
   `1` (a value `t (f² + f g + g²)` has odd degree in `t`). With `2` invertible they do generate:
   `⟨a, b⟩ = ⟨⟨−b⟩⟩ − ⟨⟨a⟩⟩` in `W(F)`, which is Tau Ceti's
@@ -1020,15 +1032,28 @@ API:
 For `char F ≠ 2`, construct the graded ring homomorphism
 `s : K_*ᴹ(F)/2 → ⊕ₙ I(F)ⁿ/I(F)ⁿ⁺¹` sending `{a₁, …, aₙ}` to the class of `⟨⟨a₁, …, aₙ⟩⟩`, using the
 relations `⟨⟨u⟩⟩ ⟨⟨1 − u⟩⟩ = 0` and `⟨⟨u⟩⟩ + ⟨⟨v⟩⟩ − ⟨⟨uv⟩⟩ = ⟨⟨u⟩⟩⟨⟨v⟩⟩ ∈ I²` (Morel, §1, (1)–(2),
-p. 64); it is surjective in every degree by `TauCeti.fundamentalIdeal_pow_eq_addClosure`, an
-isomorphism in degrees at most two (Morel, p. 64, recalling Milnor), and natural for field
-extensions. *Needs:* `K2SymbolsBrauer` §§5.4–5.8; Tau Ceti `TauCeti.pfisterClass`,
-`TauCeti.fundamentalIdeal`, `TauCeti.fundamentalIdeal_pow_eq_addClosure`; 1.1.
+p. 64; EKM, (5.1), p. 28); prove that it is surjective in every degree by
+`TauCeti.fundamentalIdeal_pow_eq_addClosure` and natural for field extensions. Prove that `s₀`, `s₁`
+and `s₂` are isomorphisms for every field of characteristic different from two (EKM, (4.11) and
+Proposition 4.13, p. 25, and Proposition 5.3, p. 29). In degrees zero and one the inverses are the
+dimension index `TauCeti.WittRing.dimMod2` and the signed discriminant `TauCeti.signedDiscrHom`, whose
+kernel is `I²`. In degree two, prove the presentation of `I(F)²` as the abelian group on the two-fold
+classes `⟨⟨a, b⟩⟩`, `a, b ∈ Fˣ`, subject to `⟨⟨1, 1⟩⟩ = 0` and
+`⟨⟨ab, c⟩⟩ + ⟨⟨a, b⟩⟩ = ⟨⟨a, bc⟩⟩ + ⟨⟨b, c⟩⟩` (EKM, Theorem 4.22, p. 27); show that isometric two-fold
+Pfister forms have equal symbols in `K₂ᴹ(F)/2`, by Witt cancellation and the relation
+`{a, x² − a y²} = 0` that the Steinberg relation gives modulo two (EKM, Lemma 5.2, p. 29). Then
+`⟨⟨a, b⟩⟩ ↦ {a, b}` is a homomorphism `I(F)² → K₂ᴹ(F)/2`; it kills every three-fold generator, since
+`⟨⟨a, b, c⟩⟩ = ⟨⟨a, c⟩⟩ + ⟨⟨b, c⟩⟩ − ⟨⟨ab, c⟩⟩` and the symbol is bilinear, hence kills `I(F)³`, and it
+is inverse to `s₂`. *Needs:* `K2SymbolsBrauer` §§5.4–5.8; Tau Ceti `TauCeti.pfisterClass`,
+`TauCeti.fundamentalIdeal`, `TauCeti.fundamentalIdeal_pow_eq_addClosure`, `TauCeti.WittRing.dimMod2`,
+`TauCeti.signedDiscrHom`, `TauCeti.equivalent_of_equivalent_prod`; 1.1.
 
 API:
 
 - symbols: `s{a₁, …, aₙ} = ⟨⟨a₁, …, aₙ⟩⟩ mod Iⁿ⁺¹`;
-- surjectivity in every degree; naturality for field homomorphisms.
+- surjectivity in every degree; naturality for field homomorphisms;
+- low degrees: `s₀`, `s₁` and `s₂` are isomorphisms for every field of characteristic different from
+  two, and the inverse of `s₂` sends the class of `⟨⟨a, b⟩⟩` to `{a, b}`.
 
 **Checks.**
 
@@ -1036,6 +1061,46 @@ API:
 - `{u, 1 − u} ↦ ⟨⟨u, 1 − u⟩⟩ = 0` for `u ≠ 0, 1`: `⟨1, −u, −(1 − u), u(1 − u)⟩` is isotropic at
   `(1, 1, 1, 0)` and therefore hyperbolic.
 - Degree one: `{a} ↦ ⟨1, −a⟩ mod I²`; `{a²} = 2{a} = 0` maps to `⟨1, −a²⟩ ≅ ℍ`, zero.
+- Degree two over `ℝ`: `s₂{−1, −1} = ⟨1, 1, 1, 1⟩` has signature `4`, while every element of `I(ℝ)³`
+  has signature in `8ℤ`; so `s₂{−1, −1} ≠ 0`, as injectivity requires of the nonzero symbol
+  `{−1, −1}`. A candidate inverse `⟨⟨a, b⟩⟩ ↦ {a, −b}` (the plus-sign convention) would send the
+  hyperbolic `⟨⟨2, −1⟩⟩ = ⟨1, −2, 1, −2⟩` (zero at `(1, 1, 1, 0)`) to `{2, 1} = 0` but the hyperbolic
+  `⟨⟨−1, 2⟩⟩` to `{−1, −2} = {−1, −1} ≠ 0`, so it is not well defined.
+
+### 3.2a The Milnor conjecture for the prime fields
+
+Prove: for `k = 𝔽_p` with `p` an odd prime and for `k = ℚ`, the Milnor homomorphism
+`sₙ(k) : Kₙᴹ(k)/2 → I(k)ⁿ/I(k)ⁿ⁺¹` of 3.2 is an isomorphism for every `n ≥ 0` (Morel, proof of
+Theorem 1.1 from Theorem 1.3, p. 66, where it is attributed to Milnor). This is hypothesis `H1(N)` of
+Morel's Theorem 1.3 (p. 65) at the prime field, for every `N`, the base of the induction of 3.5. In
+degrees `n ≤ 2` it is the low-degree statement of 3.2, which holds over every field of characteristic
+different from two. For `k = 𝔽_p` and `n ≥ 2`, `Kₙᴹ(𝔽_p) = 0` (`K2SymbolsBrauer` §5.12), so the
+surjection `sₙ` has zero source, hence zero target, and is an isomorphism. For `k = ℚ` and `n ≥ 3`,
+`Kₙᴹ(ℚ) ≅ ℤ/2` through the sign at the real place (`K2SymbolsBrauer` §10.32 with `r₁ = 1`), so
+`Kₙᴹ(ℚ)/2` has order two and the surjection `sₙ` is bijective once its target is nonzero. The target
+is nonzero because `⟨⟨−1, …, −1⟩⟩ = 2ⁿ⟨1⟩` does not lie in `I(ℚ)ⁿ⁺¹`: base change
+`TauCeti.WittRing.baseChange` to `ℝ` maps `I(ℚ)ⁿ⁺¹` into `I(ℝ)ⁿ⁺¹`
+(`TauCeti.WittRing.baseChange_mem_fundamentalIdeal_pow`), and the signature `W(ℝ) ≅ ℤ` maps `I(ℝ)ⁿ⁺¹`
+into `2ⁿ⁺¹ℤ`, because its additive generators, the `(n + 1)`-fold Pfister classes
+(`TauCeti.fundamentalIdeal_pow_eq_addClosure`), have signature `2ⁿ⁺¹` when every slot is negative and
+`0` otherwise, while `2ⁿ⟨1⟩` has signature `2ⁿ`. *Needs:* 3.2; `K2SymbolsBrauer` §§5.4, 5.12 and
+10.32; `QuadraticFormInvariants` Layer 4 (the signature isomorphism `W(ℝ) ≅ ℤ`); Tau Ceti
+`TauCeti.WittRing.baseChange`, `TauCeti.WittRing.baseChange_mem_fundamentalIdeal_pow`,
+`TauCeti.fundamentalIdeal_pow_eq_addClosure`.
+
+**Checks.**
+
+- `𝔽₃`, degrees one and two: `⟨⟨−1⟩⟩ = ⟨1, 1⟩` is anisotropic over `𝔽₃` (`x² + y² = 0` forces
+  `x = y = 0`, `−1` not being a square mod `3`), so `s₁{−1} ≠ 0`, matching `𝔽₃ˣ/𝔽₃ˣ² = {±1}`; and
+  `⟨⟨−1, −1⟩⟩ = ⟨1, 1, 1, 1⟩` vanishes at `(1, 1, 1, 0)`, so it is hyperbolic, matching
+  `K₂ᴹ(𝔽₃) = 0`. A model treating `𝔽₃` like `ℝ`, where `⟨1, 1, 1, 1⟩` is anisotropic, would keep a
+  nonzero class in degree two.
+- `ℚ`, degree three: `K₃ᴹ(ℚ)/2 = ℤ/2` is generated by `{−1, −1, −1}`, whose image
+  `⟨⟨−1, −1, −1⟩⟩ = 8⟨1⟩` has signature `8 ∉ 16ℤ` and so is nonzero in `I³/I⁴`. The tempting claim
+  `I(ℚ)³ = 0`, true over every `ℚ_p`, fails at the real place.
+- `ℚ`, degree two: `{−1, 2} = 0` because `2 = 1² + 1²` is a norm from `ℚ(√−1)`, and correspondingly
+  `⟨⟨−1, 2⟩⟩ = ⟨1, 1, −2, −2⟩` vanishes at `(1, 1, 1, 0)` and is hyperbolic; while `{−1, −1}` maps to
+  `⟨1, 1, 1, 1⟩` of signature `4 ∉ 8ℤ`, nonzero in `I²/I³`.
 
 ### 3.3 Unramified Witt sheaves
 
@@ -1102,16 +1167,15 @@ Compose `sₙ⁻¹` with the norm-residue isomorphism `Kₙᴹ(F)/2 ≅ Hⁿ(G_F
 `KTheoryFiniteLocalFields` §3.0a to obtain `exists_addEquiv_quotient_fundamentalIdeal_pow`: for
 `n ≥ 0` there is an additive isomorphism `I(F)ⁿ⁺¹/I(F)ⁿ⁺² ≅ Hⁿ⁺¹(G_F, 𝔽₂)` sending the class of
 `⟨⟨a₁, …, aₙ₊₁⟩⟩` to `kummerSymbol n a` (EKM, Fact 16.2, p. 68); it is unique, Pfister classes
-generating `Iⁿ⁺¹` additively. The route chooses `k` the prime field, where `sₙ` is an isomorphism by
-Milnor's computation (Morel, proof of Theorem 1.1 from Theorem 1.3, p. 66, citing Milnor); deduces the
+generating `Iⁿ⁺¹` additively. The route chooses `k` the prime field, where `sₙ` is an isomorphism in
+every weight by 3.2a, which is Morel's hypothesis `H1(N)` (Theorem 1.3, p. 65); deduces the
 `τ`-surjectivity from the motivic–étale comparison (Morel, p. 66); lifts the extension
 `0 → i_N → W/I^{N+1} → W/I^N → 0` to an extension by `k_N` with 3.4; and builds a left inverse of `s_N`
 from the presentation of `W` by units on opens of tori (Morel, §3.4, Lemmas 3.11–3.16 and Corollary
 3.17, pp. 89–93), passing to arbitrary fields by filtered colimits. The norm-residue theorem enters
 only after the Witt-ring statement; the characteristic-zero route of Orlov–Vishik–Voevodsky is not
-extended to positive characteristic. *Needs:* 3.2–3.4; `KTheoryFiniteLocalFields` §3.0a;
-`K2SymbolsBrauer` §10.32 (Milnor K-theory of global fields, for the prime field `ℚ`); Tau Ceti
-`TauCeti.pfisterClass`, `TauCeti.pfisterClass_mem_fundamentalIdeal_pow`, `TauCeti.kummerClass`,
+extended to positive characteristic. *Needs:* 3.2, 3.2a, 3.3, 3.4; `KTheoryFiniteLocalFields` §3.0a;
+Tau Ceti `TauCeti.pfisterClass`, `TauCeti.pfisterClass_mem_fundamentalIdeal_pow`, `TauCeti.kummerClass`,
 `TauCeti.trivialF2TopPairing`.
 
 **Checks.**
@@ -1211,10 +1275,11 @@ and indeed `(−1)³` vanishes in `H³(G_{ℚ₂}, 𝔽₂) = 0`.
 
 ### Dependencies
 
-Layers 0–2; Tau Ceti's continuous cohomology, Kummer classes, cup products and restriction;
-`ProfiniteCohomology` Layers 10 and 12; `QuadraticFormInvariants` §§7A–7B; `K2SymbolsBrauer` §§5.4–5.8,
-Layers 9–10 and §10.32; `KTheoryFiniteLocalFields` §§3.0–3.0a; `MotivesAndAlgebraicCycles` §0.5b, §§4.1–4.6
-and §4.14; `SchemeAndStackFoundations` §§2.11, 2.15; Mathlib `KaehlerDifferential`.
+Layers 0–2; Tau Ceti's Witt ring, its base change, continuous cohomology, Kummer classes, cup
+products and restriction; `ProfiniteCohomology` Layers 10 and 12; `QuadraticFormInvariants` Layer 4
+and §§7A–7B; `K2SymbolsBrauer` §§5.4–5.8, §5.12, Layers 9–10 and §10.32; `KTheoryFiniteLocalFields`
+§§3.0–3.0a; `MotivesAndAlgebraicCycles` §0.5b, §§4.1–4.6 and §4.14; `SchemeAndStackFoundations`
+§§2.11, 2.15; Mathlib `KaehlerDifferential`.
 
 ## Layer 4: henselian unit and value criteria
 
@@ -1254,9 +1319,14 @@ the statement. *Needs:* 0.1, 0.2, 1.1; Mathlib `ValuationSubring`, `HenselianLoc
 
 ### 4.2 The principal-unit criterion
 
-Prove: if `m ≥ 1` and some outer slot satisfies `εᵢ ≡ 1 mod 𝔪`, the unit Pfister form is isotropic
-over `K` (Dittmann–Pop, Proposition 3.2(1), pp. 6–7). The residual form has outer factor
-`⟨1, −1⟩_b`, metabolic, so it contains `ρ̄ ⊥ −ρ̄` and is isotropic; lift by 4.1. *Needs:* 4.1, 1.5.
+State `not_anisotropic_quadraticPfister_of_residue_eq_one`: let `quadraticPfister ε a₀` be a unit
+Pfister form, with `ε : Fin m → Oˣ`, `a₀ ∈ O` and `1 − 4a₀ ∈ Oˣ`; if some outer slot is a principal
+unit, `εᵢ ≡ 1 mod 𝔪` (so `m ≥ 1`), the form is isotropic over `K` (Dittmann–Pop, Proposition 3.2(1),
+pp. 6–7, stated there for the outer slot next to the terminal one; the outer slots play symmetric
+roles). The residual form has outer factor `⟨1, −1⟩_b` at slot `i`: pairing each set `S` of outer
+slots not containing `i` with `S ∪ {i}`, the two weights are `w_S` and `−w_S`, so the vector equal to
+some `v ≠ 0` in both blocks and zero elsewhere has value `w_S q̄(v) − w_S q̄(v) = 0`. The reduction is
+nonsingular, as `1 − 4ā₀ ≠ 0`, so 4.1 lifts this residual zero to `K`. *Needs:* 1.1, 4.1.
 
 **Checks.**
 
@@ -1264,6 +1334,11 @@ over `K` (Dittmann–Pop, Proposition 3.2(1), pp. 6–7). The residual form has 
   `𝔽₂((t))` reduces to `[1, 1] ⊥ [1, 1]`, isotropic at `(v, v)`.
 - No claim for a terminal principal unit alone: over `𝔽₂((t))`, `[1, 1 + t]` reduces to `[1, 1]` and is
   anisotropic.
+- Henselianity is needed: over `ℚ` with `O = ℤ_{(3)}`, take `ε = 7 ≡ 1 mod 3` and `a₀ = 1/2`, so
+  `1 − 4a₀ = −1` is a unit and `quadraticPfister (7) (1/2) ≅ ⟨⟨7, −1⟩⟩ = ⟨1, 1, −7, −7⟩`. Its reduction
+  is isotropic over `𝔽₃`, but the form is anisotropic over `ℚ`: a nonzero zero would make `7` a
+  quotient of two sums of two squares, that is a norm from `ℚ(√−1)`, while `7 ≡ 3 mod 4` is inert in
+  `ℤ[√−1]` and has odd valuation.
 
 ### 4.3 The independent-value criterion
 
@@ -1705,7 +1780,8 @@ in every henselization; the trivial valuation lies outside, and so does every `p
 - **ekm** — Richard Elman, Nikita Karpenko and Alexander Merkurjev, *The Algebraic and Geometric Theory of
   Quadratic Forms*, AMS Colloquium Publications 56 (2008), [author copy](https://www.math.ucla.edu/~merkurev/Book/Kniga-final/Kniga.pdf);
   printed page numbers. §§1–2 (bilinear Witt ring, Lemma 2.1, Proposition 2.4, Corollary 2.5, pp. 19–20),
-  §4 (Theorem 4.8, p. 23), Fact 5.15 (p. 31), §7 (Notation 7.3, Examples 7.5–7.6, Lemma 7.15,
+  §4 (Theorem 4.8, p. 23; (4.11) and Proposition 4.13, p. 25; Theorem 4.22, p. 27), §5 ((5.1), p. 28;
+  Lemma 5.2 and Proposition 5.3, p. 29; Fact 5.15, p. 31), §7 (Notation 7.3, Examples 7.5–7.6, Lemma 7.15,
   Proposition 7.19, Example 7.23, Propositions 7.29 and 7.31, pp. 40–46), §8 (Theorems 8.3–8.5, (8.7),
   Lemma 8.16, Remarks 8.17–8.18, pp. 47–51), §9 (Examples 9.3–9.4, (9.5), Proposition 9.8, Corollaries 9.9–9.10,
   Lemma 9.11, pp. 52–54), §16 (Proposition 16.1, Fact 16.2, pp. 67–68), §17 (Theorem 17.3, Corollary 17.7,

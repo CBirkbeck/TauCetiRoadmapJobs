@@ -22,7 +22,8 @@ Stated here:
 * the Milnor conjecture for the Witt ring in cohomological form, `Iⁿ/Iⁿ⁺¹ ≅ Hⁿ(G_K, 𝔽₂)` with
   Pfister classes going to cup products of Kummer classes, and the invariant-zero criterion for
   Pfister forms, when `2` is invertible (Layer 3);
-* Dittmann–Pop's independent-value criterion over a henselian valued field (Layer 4);
+* Dittmann–Pop's principal-unit criterion and independent-value criterion over a henselian valued
+  field, the latter containing unit reduction as its case without values (Layer 4);
 * the Tsen–Lang theorem (Layer 5);
 * Dittmann–Pop's dimension theorem for unit Pfister forms (Layer 6).
 
@@ -164,6 +165,19 @@ theorem not_anisotropic_pfisterForm_iff_kummerSymbol_eq_zero {K : Type u} [Field
   sorry
 
 /-! ## Layer 4: henselian unit and value criteria -/
+
+/-- **The principal-unit criterion** (Dittmann–Pop, Proposition 3.2(1), pp. 6–7), over a field with
+a henselian valuation ring `O` of arbitrary rank. Let `ε` be units of `O` and `a₀ ∈ O` with `1 − 4a₀`
+a unit, so that the unit Pfister form `⟨⟨ε⟩⟩_b ⊗ [1, a₀]` has nonsingular reduction. If some outer
+slot `εᵢ` is a principal unit, that is reduces to `1` in the residue field, the form is isotropic
+over `K`: its reduction has the metabolic outer factor `⟨1, −1⟩_b`, and unit reduction lifts the
+residual zero. The slot `i : Fin m` forces `m ≥ 1`; a principal unit in the terminal block alone
+gives nothing, as `[1, 1 + t]` over `𝔽₂((t))` is anisotropic. -/
+theorem not_anisotropic_quadraticPfister_of_residue_eq_one {K : Type u} [Field K]
+    (O : ValuationSubring K) [HenselianLocalRing O] {m : ℕ} (ε : Fin m → Oˣ) (a₀ : O)
+    (ha₀ : IsUnit (1 - 4 * a₀)) (i : Fin m) (hi : IsLocalRing.residue O (ε i : O) = 1) :
+    ¬ (quadraticPfister (fun j => Units.map O.subtype.toMonoidHom (ε j)) (a₀ : K)).Anisotropic := by
+  sorry
 
 /-- **The independent-value criterion** (Dittmann–Pop, Proposition 3.2(2) and its proof,
 pp. 6–7), over a field with a henselian valuation ring `O` of arbitrary rank. Let `ε` be units of
