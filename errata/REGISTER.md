@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-6972 mistakes recorded on the board: 4277 misprints, 1775 errors, 690 gaps, 230 unparsed bullets.
+6976 mistakes recorded on the board: 4277 misprints, 1775 errors, 690 gaps, 234 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -238,6 +238,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Unparsed** (PadicLocalLanglandsForGL2QpPartII, #392 at 6dc9a62, 2026-10-26): Gap** in DLB17 at the proof of Théorème 1.10, §12.1, arXiv v2 p. 66: the source says Théorème 1.2 applies to every nontrivial type ρ_i; it applies to supercuspidal types with trivial central character only; affects the proof.
 - **Unparsed** (PadicLocalLanglandsForGL2QpPartII, #392 at 6dc9a62, 2026-10-26): Misprint** in CDN20 at Lemme 2.18, proof, authors' copy p. 30: the source says the completing column is σ_ne₁+⋯+σ₁e_n; the coefficients should alternate in sign; affects the proof.
 - **Unparsed** (RationalAnalyticPrismatization, #2065 at 8ddf5f1, 2026-10-26): The three source issues of round 1 (ALRS Remark 2.1.6's ABLB citation, Theorem 5.2.14's Lazard citation, Theorem 6.5.4's two conventions for O⟨1⟩) stand; the design records the first two and adopts one convention for the third. <!-- tauceti-roadmap-review {"agent": "claude", "head": "8ddf5f1", "job": "REV-DESIGN-RationalAnalyticPrismatization~2", "model": "fable", "worker": "fable-rev171"} -->
+- **Unparsed** (AdicCoefficientsAndComparisonsPartII, #1109 at 290931e, 2026-10-26): Gap** in temkin17 at proof of Theorem 4.2.1, Step 4, p. 122: the source says tame distillation of the base alteration yields a P-alteration; the wild primes set it produces lies in char(S), while only char(X) ⊆ P is assumed, so a prior restriction to an open S₀ with char(S₀) = char(X) is needed; affects the proof.
+- **Unparsed** (AdicCoefficientsAndComparisonsPartII, #1109 at 290931e, 2026-10-26): Gap** in temkin17 at §3.2.4, p. 116: the source says P-tameness of L/K equals Spec(Z_{P′})-tameness for every algebraic extension; the pointed scheme exists only when char K is zero or lies in P; affects nothing.
+- **Unparsed** (AdicCoefficientsAndComparisonsPartII, #1109 at 290931e, 2026-10-26): Gap** in temkin17 at §1.2.7, pp. 99–100: the source says the cusp's boundary monoid is not finitely generated because of the elements x² + a x³; this needs k infinite, since over a finite field the stalk is finitely generated though not saturated; affects nothing.
+- **Unparsed** (AdicCoefficientsAndComparisonsPartII, #1109 at 290931e, 2026-10-26): Gap** in ilo14 at Exposé X, Remark 3.3.4(ii), p. 159: the source says every quasi-excellent scheme of dimension at most two is universally resolvable, citing Cossart–Jannsen–Saito, whose theorems assume excellence; the quasi-excellent case needs Lipman's theorem; affects nothing. <!-- tauceti-roadmap-review {"agent": "claude", "head": "290931e65d6592c94a99483d4cd0f445f141d19d", "job": "REV-PKG-AdicCoefficientsAndComparisonsPartII~4", "model": "fable", "worker": "chris-i"} -->
 
 ## A
 
