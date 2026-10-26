@@ -1563,7 +1563,7 @@
      "hypotheses": [],
      "locator": {
       "source": "CDN-STEIN",
-      "where": "Proposition 6.5, Corollary 6.6, Theorem 6.28; GK07 Proposition 4.5, Theorem 4.4"
+      "where": "Proposition 6.5, Corollary 6.6, Theorem 6.28; GK05-RT Theorem 4.5; GK07 Proposition 4.5"
      },
      "prerequisites": [
       "target:6.1",
@@ -1604,6 +1604,7 @@
      "prerequisites": [
       "roadmap:AInfCohomology §AI.6.2",
       "roadmap:AInfCohomology §AI.3.1",
+      "roadmap:PrismaticCohomologyPartIII §6.25",
       "roadmap:PrismaticCohomologyPartIII §6.3",
       "roadmap:ClassicalAdicEtaleCohomology §1.3"
      ],
@@ -1858,13 +1859,14 @@
      "id": "7.4",
      "kind": "theorem",
      "name": "DrinfeldTower.hyodoKatoMultiplicity",
-     "statement": "For supercuspidal rank-two M: H¹_HK(M_∞)[M]≅M̆⊗̂_L LL(M)^* and H¹_dR(M_∞)[M]≅(C⊗_FM_dR)⊗̂_L LL(M)^*, compatible with ι_HK, W_F, φ, G.",
+     "statement": "For supercuspidal (WD(M) irreducible, slope 1/2) rank-two M: H¹_HK(M_∞)[M]≅M̆⊗̂_L LL(M)^* and H¹_dR(M_∞)[M]≅(C⊗_FM_dR)⊗̂_L LL(M)^*, compatible with ι_HK, W_F, φ, G.",
      "hypotheses": [
-      "M supercuspidal"
+      "M supercuspidal: WD(M) irreducible",
+      "M of slope 1/2"
      ],
      "locator": {
       "source": "CDN20",
-      "where": "Théorème 0.4; CDN-CURVES Remarque 0.16(iii)"
+      "where": "Théorème 0.4 with the slope hypothesis of §2.1 (lines 644, 654); CDN23 line 328; CDN-CURVES Remarque 0.16(iii)"
      },
      "prerequisites": [
       "target:4.6",
@@ -1887,6 +1889,11 @@
        "name": "slope",
        "kind": "computation",
        "statement": "slope 1/2, not slope one"
+      },
+      {
+       "name": "unramified_twist",
+       "kind": "non-example",
+       "statement": "M′=M⊗(φe=pe): WD(M′) irreducible, slope 3/2, same multiplicity φ-module as M (slope 1/2) by reciprocity through π₀; the slope hypothesis cannot be dropped"
       }
      ]
     },
@@ -1894,13 +1901,14 @@
      "id": "7.5",
      "kind": "theorem",
      "name": "DrinfeldTower.multiplicityDiagram",
-     "statement": "For every F and supercuspidal M: 0→O(M_∞)[M]→H¹_proét(M_∞,L(1))[M]→X^+_st(M)⊗̂LL(M)^*→0 over 0→O(M_∞)[M]→Ω¹(M_∞)[M]→(C⊗M_dR)⊗̂LL(M)^*→0; G-bounded vectors give H¹_ét(M_∞,L(1))[M]↪X^+_st(M)⊗̂L̂L(M)^*.",
+     "statement": "For every F and supercuspidal M of slope 1/2: 0→O(M_∞)[M]→H¹_proét(M_∞,L(1))[M]→X^+_st(M)⊗̂LL(M)^*→0 over 0→O(M_∞)[M]→Ω¹(M_∞)[M]→(C⊗M_dR)⊗̂LL(M)^*→0; G-bounded vectors give H¹_ét(M_∞,L(1))[M]↪X^+_st(M)⊗̂L̂L(M)^*.",
      "hypotheses": [
-      "M supercuspidal"
+      "M supercuspidal: WD(M) irreducible",
+      "M of slope 1/2"
      ],
      "locator": {
       "source": "CDN20",
-      "where": "Théorème 0.8, Remarque 0.10; CDN23 proof of Théorème 2.14"
+      "where": "Théorème 0.8 with the slope hypothesis of Corollaire 2.1 (line 654), Remarque 0.10; CDN23 proof of Théorème 2.14"
      },
      "prerequisites": [
       "target:7.4",
@@ -1920,6 +1928,11 @@
        "name": "Qp",
        "kind": "compatibility",
        "statement": "F=ℚ_p, slope 1/2: consumed by PadicLocalLanglandsForGL2QpPartII §4.1"
+      },
+      {
+       "name": "slope_three_halves",
+       "kind": "non-example",
+       "statement": "for M′ of slope 3/2, X^+_st(M′)=(B_cris^+)^{φ²=p^{−1}}=0 while H¹_ét(M_∞,L(1))[M′]≠0 is not in the image of exp; the first row fails without slope 1/2"
       }
      ]
     },
@@ -2288,9 +2301,10 @@
   {
    "roadmap": "PrismaticCohomologyPartIII",
    "sections": [
+    "§6.25",
     "§6.3"
    ],
-   "what": "Artin–Schreier–Witt comparison for perfectoid rings, used for the pro-étale Artin–Schreier sequence of §6.7"
+   "what": "integral étale comparison RΓ_ét(Spec S,ℤ/p^n)≃(Δ_{S/A}/p^n)^{φ=1} for perfectoid S (§6.25) with Δ_{S/A}=A_inf(S) by tilting (§6.3), used for the pro-étale Artin–Schreier sequence of §6.7"
   }
  ],
  "consumers": [
@@ -2329,7 +2343,8 @@
    "neededBy": [
     "1.2",
     "1.3",
-    "3.2"
+    "3.2",
+    "3.3"
    ],
    "detail": "PadicPeriodRings §4.1 builds the period rings for C=C_K and §4.3 states only 0→ℚ_p→B_cris^{φ=1}→B_dR/Fil⁰→0 and the fixed fields; the curve layers work over any complete algebraically closed C with v_p(C^×)=ℚ and use the plus-ring sequences.",
    "needs": "A_cris, B_cris^+, B_st^+, θ, θ_0, φ, N, the exact sequence 0→ℚ_p t→(B_cris^+)^{φ=p}→C→0, (B_cris^+)^{φ=1}=ℚ_p and (B_cris^+)^{φ=p^{−1}}=0, over an arbitrary complete algebraically closed C without a chosen discretely valued K.",
