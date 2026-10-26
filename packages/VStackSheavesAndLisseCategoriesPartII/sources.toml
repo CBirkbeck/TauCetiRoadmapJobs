@@ -1,0 +1,148 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "VStackSheavesAndLisseCategoriesPartII"
+
+[[source]]
+id = "HKW22"
+arxiv = "1709.06651v4"
+version_note = "Page locators refer to the published 79-page article; statement numbers agree with arXiv v4, whose pagination differs."
+authors = "David Hansen, Tasho Kaletha, Jared Weinstein"
+title = "On the Kottwitz conjecture for local shtuka spaces"
+year = 2022
+venue = "Forum of Mathematics, Pi 10"
+doi = "10.1017/fmp.2022.7"
+locator_scheme = "section"
+locator = "§§4–4.6, §5.3, Appendix B (published pp. 21–44, 47–50, 72–74)"
+url = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/33A94496879999F3D63C2997F2D50D9D/S2050508622000075a.pdf/div-class-title-on-the-kottwitz-conjecture-for-local-shtuka-spaces-div.pdf"
+fetched_from = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/33A94496879999F3D63C2997F2D50D9D/S2050508622000075a.pdf/div-class-title-on-the-kottwitz-conjecture-for-local-shtuka-spaces-div.pdf"
+fetched_at = "2026-10-25T16:08:05Z"
+sha256 = "d05a7f84ce98862d470d114946b7002e8d5ab1df3c4d77fb4851ff45f5d80049"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["VS6–VS11"]
+
+[[source]]
+id = "GHW22"
+authors = "Daniel Gulotta, David Hansen, Jared Weinstein"
+title = "An enhanced six-functor formalism for diamonds and v-stacks"
+year = 2022
+arxiv = "2202.12467v1"
+locator_scheme = "section"
+locator = "§§3–4, Theorem 4.9"
+url = "https://arxiv.org/abs/2202.12467v1"
+fetched_from = "https://arxiv.org/pdf/2202.12467v1"
+fetched_at = "2026-10-25T16:05:59Z"
+sha256 = "f18fe09401cd4d9f7e458a1fbfb51cdc6d3352d08bcecbe91985281024149d1e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v1"
+cited_for = ["VS6–VS7"]
+
+[[source]]
+id = "LZ22"
+authors = "Qing Lu, Weizhe Zheng"
+title = "Categorical traces and a relative Lefschetz-Verdier formula"
+year = 2020
+venue = "Forum Math. Sigma 10 (2022), e10"
+doi = "10.1017/fms.2022.2"
+arxiv = "2005.08522v4"
+locator_scheme = "section"
+locator = "§1, §2.2–2.4"
+url = "https://arxiv.org/abs/2005.08522v4"
+fetched_from = "https://arxiv.org/pdf/2005.08522v4"
+fetched_at = "2026-10-25T16:06:05Z"
+sha256 = "be71f418bdc0a5524e50aff00f2105313efc4759575276e252821b721a56db98"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v4"
+cited_for = ["VS9–VS10"]
+
+[[source]]
+id = "Sch17"
+authors = "Peter Scholze"
+title = "Etale cohomology of diamonds"
+year = 2017
+arxiv = "1709.07343v3"
+locator_scheme = "section"
+locator = "§§10, 18, 23, 27"
+url = "https://arxiv.org/abs/1709.07343v3"
+fetched_from = "https://arxiv.org/pdf/1709.07343v3"
+fetched_at = "2026-10-25T16:06:13Z"
+sha256 = "0f81c3f05daafeffd1ea4a98b84a84503b501e7eb2d85ef07257c340856112ef"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v3"
+cited_for = ["VS6, VS10"]
+
+[[source]]
+id = "FS21"
+authors = "Laurent Fargues, Peter Scholze"
+title = "Geometrization of the local Langlands correspondence"
+year = 2021
+arxiv = "2102.13459v4"
+locator_scheme = "section"
+locator = "IV.1.1–IV.1.12, IV.2.23–IV.2.33, V.1.1–V.1.4, V.7.1–V.7.2"
+url = "https://arxiv.org/abs/2102.13459v4"
+fetched_from = "https://arxiv.org/pdf/2102.13459v4"
+fetched_at = "2026-10-25T16:06:24Z"
+sha256 = "1f8040751d3424f59ae56651d990d7b2d5030e6b7cae58bc2fc683358dfc2027"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v4"
+cited_for = ["VS6.2–6.3, VS6.8, VS9.9, VS11.1"]
+
+[[source]]
+id = "LiuZhengEnhanced"
+authors = "Yifeng Liu, Weizhe Zheng"
+title = "Enhanced six operations and base change theorem for higher Artin stacks"
+year = 2012
+arxiv = "1211.5948v4"
+locator_scheme = "section"
+locator = "§§2.2–2.3, §3.4, Proposition 2.2.4, Theorem 4.1.8(1)"
+url = "https://arxiv.org/abs/1211.5948v4"
+fetched_from = "https://arxiv.org/pdf/1211.5948v4"
+fetched_at = "2026-10-25T16:06:32Z"
+sha256 = "ceac019a2be786cd2168ac2ea5e88e97136c0c1e7780684967d6cd09fd1a0e0d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v4"
+cited_for = ["VS7.4–7.5 supplier gaps"]
+
+[[source]]
+id = "LiuZhengGluing"
+authors = "Yifeng Liu, Weizhe Zheng"
+title = "Gluing restricted nerves of ∞-categories"
+year = 2012
+arxiv = "1211.5294v4"
+locator_scheme = "section"
+locator = "Theorem 5.4, Corollary 0.4"
+url = "https://arxiv.org/abs/1211.5294v4"
+fetched_from = "https://arxiv.org/pdf/1211.5294v4"
+fetched_at = "2026-10-25T16:06:38Z"
+sha256 = "5f0e5c3aa8706789de1c093f030fbe6fe7d873385204bbebe69f9a51c05d10fb"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v4"
+cited_for = ["VS7.4–7.5 supplier gap"]
+
+[[source]]
+id = "Stacks07LT"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, More on Algebra"
+year = 2026
+locator_scheme = "tag"
+locator = "07LT (Proposition 80.3)"
+url = "https://stacks.math.columbia.edu/tag/07LT"
+fetched_from = "https://stacks.math.columbia.edu/download/more-algebra.pdf#nameddest=07LT"
+fetched_at = "2026-10-25T16:06:48Z"
+sha256 = "ab69179738e642603ddbde651f2838e1cb5d8711e8bcd7c447cbf02a8bb6a5d2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["VS9.4 compact implies perfect"]
