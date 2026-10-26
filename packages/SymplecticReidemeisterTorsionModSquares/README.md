@@ -8,7 +8,7 @@ This roadmap owns the signed Poincaré-complex and determinant-root adapters, ce
 
 The graded-line category, tensor signs, parity reduction and general perfect-complex determinant functor are stated by KTheoryLowDegrees §§14.1–14.4 and PadicMeasuresIwasawaAlgebras §5.1. Their coherent exact-triangle, acyclic, shift, cone and base-change maps are inputs. Only the reverse-wedge and right-evaluation normalization comparisons are developed here. The orthogonal group and spinor norm are already in the library: `TauCeti.QuadraticMap.orthogonalGroup`, `CliffordAlgebra.orthogonalSpinorNorm` and `CliffordAlgebra.spinorNorm`. The reflection value at the pins is [Q(v)]; no second norm or star-norm conversion is constructed.
 
-TangentialBordism B1–B2 owns labelled smooth bordism, its fundamental-class map and its skeletal filtration; B3.1 owns its low coefficient groups. This roadmap proves their degree-at-most-three orientation comparison as a consequence, rather than constructing another bordism theory. AlgebraicTopology Stages 2, 4, 5 and 6 owns local coefficients, cellular comparison, Wang/transfer and duality. GeometricTopology Layers 1 and 11 and its smoothing-and-triangulation comparison own the geometric cell changes.
+TangentialBordism B1–B2 owns labelled smooth bordism, its fundamental-class map and its skeletal filtration; B3.1 owns its low coefficient groups. This roadmap proves their degree-at-most-three orientation comparison as a consequence, rather than constructing another bordism theory. AlgebraicTopology Stages 2, 4, 5 and 6 owns local coefficients, cellular comparison, the constant-coefficient Wang sequence, finite-cover transfer and duality. GeometricTopology Layers 1 and 11 and its smoothing-and-triangulation comparison own the geometric cell changes.
 
 KTheoryFiniteLocalFields §§1.5, 1.8–1.9 owns finite-field restriction/transfer, universal equivariant finite Chern classes and the finite-rank degree-three Chern isomorphism. K3BlochGroups §§2.4–2.5 and 6.7 owns indecomposable K₃ and its stable Hurewicz and coefficient comparisons. SchemeAndStackFoundations §2.11 owns Kummer torsors as line pairs; §§0.9 and 0.21 own approximation and finite normalization. Chebotarev Layers 7, 11 and 13 owns number-field weighted density; the arithmetic-scheme detection input is its explicit supplier extension below. RepresentationTheory/LieGroups Layer 5 owns universal covering groups, and MetaplecticAutomorphicForms §2.4b owns the metaplectic cover. This roadmap owns the application to real Chern components, without reconstructing either cover.
 
@@ -52,7 +52,7 @@ Section 5.1: the finite-projective determinant line with quasi-isomorphism, exac
 
 ### From TauCetiRoadmap.AlgebraicTopology
 
-Stage 2: local systems and coefficient pullbacks; Stage 4: cellular chains; Stage 6.1: local-system cellular cochains and their singular comparison. Section 4.7 derives its presentation-specific crossed-homomorphism description from that cellular model. Stage 5: the Wang cone for a mapping torus with a chosen coefficient intertwiner and integral finite-cover transfer with inclusion after transfer equal to subgroup index. Stage 6.2: cup and cap products; Stage 6.3: the orientation local system and fundamental classes; Stage 6.4: Poincaré–Lefschetz duality, including `compactTriadPoincareLefschetz`. The chain-level boundary-pairing comparison is the additional contract below. The orientation on an interval gives endpoint coefficients −1,+1. For an index-three transfer, the composite on integral homology modulo two is multiplication by 3, hence identity.
+Stage 2: local systems and coefficient pullbacks; Stage 4: cellular chains; Stage 6.1: local-system cellular cochains and their singular comparison. Section 4.7 derives its presentation-specific crossed-homomorphism description from that cellular model. Stage 5: the constant-coefficient Wang cone of a mapping torus, with endomorphism id − f_*, and integral finite-cover transfer with inclusion after transfer equal to subgroup index. Section 4.6 derives the local-coefficient Wang triangle for a mapping torus with a chosen coefficient intertwiner from Stage 6.1's Mayer–Vietoris sequence of a binary open cover; for f = id with intertwiner −I its endomorphism is 1 − T = 2, whereas id − f_* is zero. Stage 6.2: cup and cap products; Stage 6.3: the orientation local system and fundamental classes; Stage 6.4: Poincaré–Lefschetz duality, including `compactTriadPoincareLefschetz`. The chain-level boundary-pairing comparison is the additional contract below. The orientation on an interval gives endpoint coefficients −1,+1. For an index-three transfer, the composite on integral homology modulo two is multiplication by 3, hence identity.
 
 The following contract extends Stage 6.4’s `compactTriadPoincareLefschetz`.
 
@@ -364,7 +364,7 @@ The API has the following consequences under these hypotheses.
 
 - The zero complex is strongly even.
 - K —id→ K is acyclic with Euler characteristic zero but is not strongly even.
-- Any complex whose nonzero terms are K² is strongly even, independently of its differential.
+- K² concentrated in degree −1 is strongly even with Euler characteristic −2, and its shift to degree 0 has Euler characteristic +2: an odd shift preserves strong evenness and the parity of the Euler characteristic but changes its sign, so only parity, not the value, is shift-invariant.
 - The complex K²→K² in degrees zero and one with differential diag(1,0) is strongly even, but both cohomology groups have dimension one.
 
 *Needs:* `CochainComplex`.
@@ -496,7 +496,7 @@ The API has the following consequences under these hypotheses.
 - Reversing one edge in even rank does not change its determinant generator.
 - For a rank-one system over Q, reversing a cell orientation changes its generator by −1; the even-rank hypothesis is necessary.
 
-*Needs:* §2.1; §1.5; AlgebraicTopology Stage 4; AlgebraicTopology Stages 6.1–6.4.1.
+*Needs:* §2.1; §1.5; AlgebraicTopology Stage 4; AlgebraicTopology Stage 6.1.
 
 ### 2.3 Subdivision and simple cellular invariance
 
@@ -510,7 +510,7 @@ A proof route is as follows. Compute the two-term acyclic cell pair of an elemen
 - Replacing that matrix by −I₂ still has determinant 1, whereas the rank-one matrix −1 has determinant −1.
 - The based acyclic complex K —2→ K has torsion scalar 2; its quasi-isomorphism to zero does not by itself send a based generator to an acyclic generator.
 
-*Needs:* §2.2; §1.6; GeometricTopology Layer 11 and smoothing comparison; AlgebraicTopology Stage 4; AlgebraicTopology Stages 6.1–6.4.1.
+*Needs:* §2.2; §1.6; GeometricTopology Layer 11 and smoothing comparison; AlgebraicTopology Stage 4; AlgebraicTopology Stages 6.1–6.4.
 
 ### 2.4 Poincaré duality and cellular volumes
 
@@ -695,7 +695,7 @@ The API has the following consequences under these hypotheses.
 
 - The homomorphism from integral H₃ modulo two.
 - It commutes with maps of normal Z[1/2]-domains.
-- For every odd finite field it is the finite-rank K-theoretic isomorphism.
+- For every odd finite field and every symplectic rank r≥1 it is the finite-rank K-theoretic isomorphism; at r=0 its source is zero and it is the zero map.
 - Block inclusion of symplectic groups preserves the evaluated class.
 
 **Checks.**
@@ -703,6 +703,7 @@ The API has the following consequences under these hypotheses.
 - The zero integral cycle maps to the trivial torsor.
 - The nonzero element of H₃(Sp₂(F₃);ℤ)/2 maps to its nonsquare class.
 - Do not identify integral H₃/2 with H₃(F₂) over a general ring; the UCT H₂[2] term need not vanish.
+- At rank zero over 𝔽₃, Sp₀ is trivial, so the source H₃(BSp₀;ℤ)/2 is zero while H¹(𝔽₃,μ₂)=𝔽₃ˣ/𝔽₃ˣ² has two elements; the map is not an isomorphism there, so the isomorphism claim needs r≥1.
 
 *Needs:* KTheoryFiniteLocalFields §1.8; SchemeAndStackFoundations §2.11; gap:normal-torsor-gluing; StableHomotopyKTheory §§1.17, 1.30, 1.32; KTheoryFiniteLocalFields §§1.5, 1.8–1.9.
 
@@ -822,15 +823,18 @@ A proof route is as follows. Poincaré duality gives H²=0 and the symmetric per
 
 With Σ,ρ as above, an orientation-preserving diffeomorphism f and a specified symplectic intertwiner f*ρ≃ρ define ρ_f on M_f and T on H¹(Σ;ρ). For every field of characteristic ≠2, h=dim ker(1−T)=dim H¹(M_f;ρ_f) is even and `(-1)^(h/2) * RT(M_f,rho_f) = theta(T)`. Also θ(T)=det(1−T|V₊⊥)disc(V₊), where V₊ is the generalized 1-eigenspace, not merely the fixed space. (AV-v1, Appendix C.2, Lemma C.2.1, (C.1)–(C.4), pp. 87–88, line 4073).
 
-A proof route is as follows. Use the two-cylinder Mayer–Vietoris model or the Wang triangle C*(M_f)→V[−1]→(1−T)V[−1]. Track the cellular numerator through the cylinder decompositions; identical unknown transport determinants occur twice and cancel modulo squares. Track Poincaré pairings with the fixed shift. Apply the circle formula to V and T, then the equivalent plus-one Zassenhaus formula. The Wang sequence gives H⁰(M_f)=0 and H¹(M_f)=ker(1−T).
+The local-coefficient Wang comparison is part of this target: cover M_f by two cylinders over Σ meeting in two copies of Σ; the Mayer–Vietoris sequence with coefficients ρ_f, the specified intertwiner identifying the second restriction with T, gives the triangle C*(M_f;ρ_f)→C*(Σ;ρ)→(1−T)C*(Σ;ρ), naturally in the intertwiner.
+
+A proof route is as follows. Use that triangle, whose H¹ part is V[−1]→(1−T)V[−1]. Track the cellular numerator through the cylinder decompositions; identical unknown transport determinants occur twice and cancel modulo squares. Track Poincaré pairings with the fixed shift. Apply the circle formula to V and T, then the equivalent plus-one Zassenhaus formula. The local-coefficient Wang triangle gives H⁰(M_f;ρ_f)=0 and H¹(M_f;ρ_f)=ker(1−T).
 
 **Checks.**
 
 - For T=1 on the four-dimensional genus-two cohomology space, h=4 and θ(T)=1, so raw and normalized torsion are 1.
 - For T with characteristic polynomial x⁴+1, h=0 and det(1−T)=2, giving normalized torsion [2].
 - For the hyperbolic four-dimensional 𝔽₃ unipotent model, h=2 and the fixed-space restricted form has determinant 0; its generalized +1 space is the whole nondegenerate space, with discriminant 1. This is the linear-algebra control for the generalized-space formula.
+- For f=id with intertwiner −I on genus-two rank-two coefficients, T=−1 on the four-dimensional H¹, so 1−T=2I, h=0 and θ(T)=det(2I₄)=16, a square; the constant-coefficient endomorphism id−f_* would be zero and give h=4.
 
-*Needs:* §4.5; §4.4; AlgebraicTopology Stage 5; §2.2.
+*Needs:* §4.5; §4.4; AlgebraicTopology Stage 6.1; §2.2.
 
 ### 4.7 A genus-two cocycle model
 
@@ -847,11 +851,11 @@ The API has the following consequences under these hypotheses.
 
 **Checks.**
 
-- φ(g⁻¹)=−ρ(g)⁻¹φ(g); dropping either factor fails the relator expansion.
+- Over ℚ take a₁=a₂=b₂=I₂, b₁=diag(2,1/2), φ(b₁)=e₁ and the other generator values zero; the relator evaluates to I₂ and its cocycle value is e₁−e₁=0. Then φ(b₁⁻¹)=−e₁/2; omitting the minus sign gives e₁/2 and omitting the inverse gives −e₁, and either makes the relator value nonzero.
 - The cocycle φ_v(g)=ρ(g)v−v is sent by T̃ to `phi_(M^(-1)*v)`.
 - For rank-two coefficients satisfying the hypothesis, the relator imposes two independent equations on eight generator coordinates: the cellular cocycle space has dimension 6, principal cocycles have dimension 2, and dim H¹=6−2=4, matching the genus-two Euler calculation.
 
-*Needs:* AlgebraicTopology Stage 2; AlgebraicTopology Stage 4; AlgebraicTopology Stages 6.1–6.4.1; §4.5.
+*Needs:* AlgebraicTopology Stage 2; AlgebraicTopology Stage 4; AlgebraicTopology Stage 6.1; §4.5.
 
 ### 4.8 A nonsquare Gaussian torsion class
 
@@ -876,7 +880,7 @@ The rotation plane and the nonsemisimple hyperbolic 𝔽₃ model test the circl
 
 ### Dependencies
 
-Earlier local inputs: Layer 0, Layer 1, Layer 2. AlgebraicTopology Stages 6.1–6.4; AlgebraicTopology Stage 5; AlgebraicTopology Stage 2; AlgebraicTopology Stage 4; GeometricTopology Layer 3; gap:marked-surface-twists. The subsection Needs lines separate statement inputs from the indicated proof route.
+Earlier local inputs: Layer 0, Layer 1, Layer 2. AlgebraicTopology Stages 6.1–6.4; AlgebraicTopology Stage 2; AlgebraicTopology Stage 4; GeometricTopology Layer 3; gap:marked-surface-twists. The subsection Needs lines separate statement inputs from the indicated proof route.
 
 ## Layer 5: transfer and controlling extensions
 
@@ -916,7 +920,7 @@ The API has the following consequences under these hypotheses.
 **Checks.**
 
 - The trivial torsor is liftable by the zero cycle.
-- Every square class over an odd finite field is liftable by the finite-field isomorphism.
+- Every square class over an odd finite field is liftable by the finite-field isomorphism at any rank r≥1; rank zero lifts only the trivial class.
 - The product of classes represented by x and y is represented by x+y after stabilization, rather than by multiplying bar cycles.
 
 *Needs:* §3.6; SchemeAndStackFoundations §2.11; gap:normal-torsor-gluing.
@@ -1176,7 +1180,7 @@ A proof route is as follows. Choose a symplectic frame over K and apply the tran
 
 For any closed smooth oriented surface Σ, field K of characteristic ≠2, symplectic local system ρ with H⁰(Σ;ρ)=0, orientation-preserving diffeomorphism f and specified symplectic isomorphism f*ρ≃ρ, let T on H¹ and ρ_f on M_f be induced by that choice. Then θ(T)=⟨ρ_f*c_et,[M_f]⟩. This includes all odd finite coefficient fields. (AV-v1, §1.1, (1.5), p. 3; Appendix C.2, Lemma C.2.1, pp. 87–88, line 94).
 
-A proof route is as follows. The Wang sequence gives χ₁/₂(M_f)=−h, h=dim ker(1−T), so its half-sign agrees with `(-1)^(h/2)`. Combine the all-odd mapping-torus formula with the topological theorem. Keep the chosen intertwiner as part of the data: f*ρ≃ρ without a choice does not specify T or ρ_f.
+A proof route is as follows. The local-coefficient Wang triangle of §4.6 gives χ₁/₂(M_f)=−h, h=dim ker(1−T), so its half-sign agrees with `(-1)^(h/2)`. Combine the all-odd mapping-torus formula with the topological theorem. Keep the chosen intertwiner as part of the data: f*ρ≃ρ without a choice does not specify T or ρ_f.
 
 **Checks.**
 
