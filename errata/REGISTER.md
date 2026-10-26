@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-6930 mistakes recorded on the board: 4259 misprints, 1769 errors, 680 gaps, 222 unparsed bullets.
+6932 mistakes recorded on the board: 4261 misprints, 1769 errors, 680 gaps, 222 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -8029,8 +8029,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at V §7, p. 116 (SGA1 line 4763): the source says the image-point condition is a′ = f(a); it should be the condition is a = f(a′); affects nothing. Found by ConstructibleEtale (ERRATA-ConstructibleEtale at 4bd7237, 2026-10-23, codex gpt-6-astra).
 - **Misprint** at V §7, p. 116 (SGA1 lines 4726–4734): the source says π₁(S;a′,a) denotes paths from a to a′ after the opposite order was defined immediately above; it should be retain the preceding convention and write π₁(S;a,a′); affects nothing. Found by ConstructibleEtale (ERRATA-ConstructibleEtale at 4bd7237, 2026-10-23, codex gpt-6-astra).
 - **Misprint** at V §7, p. 117 (SGA1 lines 4776–4777): the source says the displayed map Π₁ˢ′ → f•Π₁ˢ is between pro-groups over S; it should be both pro-groups are over S′; affects nothing. Found by ConstructibleEtale (ERRATA-ConstructibleEtale at 4bd7237, 2026-10-23, codex gpt-6-astra).
+- **Misprint** at XIII Proposition 4.1, printed p. 306 (SGA1 line 12121–12122): the source says the parenthetical says that for a coherent locally 0-acyclic morphism, 0-acyclicity amounts to connected geometric fibres; it should be nonempty and connected, the empty scheme over `S` being a coherent locally 0-acyclic morphism with (Bourbaki-)connected fibres that is not 0-acyclic; affects nothing; The round-6 entry calling this an error is withdrawn: the standing hypothesis of local 0-acyclicity covers the round-6 counterexample. Found by EtaleHomotopyTypes (#1304 at 6962204, 2026-10-26, claude fable).
 - **Error** at XIII Proposition 4.1, printed p. 306 (SGA1 line 12121–12123): the source says for a coherent morphism, 0-acyclicity amounts to connectedness of the geometric fibres; it should be add nonemptiness and an openness hypothesis (or test the base changes to strict localizations), since a residue-field point disjoint union a generic point over a discrete valuation ring has one-point geometric fibres and doubles the sections of a constant sheaf; affects the proof; of Proposition 4.6 only through the flatness of its projection, which holds. Found by EtaleHomotopyTypes (#1304 at f3b9acd, 2026-10-25, claude fable).
 - **Misprint** at XIII Proposition 4.6, proof, printed p. 311 (SGA1 line 12307): the source says the composite ending in the fundamental group of `Y` is an isomorphism; it should be the composite ending in the fundamental group of `X`, since the one written is trivial by 4.0; affects nothing. Found by EtaleHomotopyTypes (#1304 at 04e3c3c, 2026-10-25, claude fable).
+- **Misprint** at XIII Theorem 3.3, proof, printed p. 303 (SGA1 line 11998): the source says flatness with geometrically separable fibres makes the morphism universally 0-acyclic; it should be universally locally 0-acyclic, the property the paragraph announces; affects nothing. Found by EtaleHomotopyTypes (#1304 at 6962204, 2026-10-26, claude fable).
 
 ## SGA3-III
 
