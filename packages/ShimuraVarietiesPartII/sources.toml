@@ -8,7 +8,7 @@ title = "Independence of ℓ for Frobenius conjugacy classes attached to abelian
 year = 2024
 arxiv = "2103.09945v2"
 locator_scheme = "section"
-locator = "§§3–5; Theorems 4.1.11, 4.2.6, 4.4.6, 5.1.4; Corollaries 4.3.4, 4.4.13, 5.2.7"
+locator = "§§2.4, 3–5; Propositions 2.4.6, 2.4.8, 2.4.10; Lemma 4.3.8; Theorems 4.1.11, 4.2.6, 4.4.6, 5.1.4; Corollaries 4.3.4, 4.4.13, 5.2.7"
 url = "https://arxiv.org/abs/2103.09945v2"
 fetched_from = "https://arxiv.org/pdf/2103.09945v2"
 fetched_at = "2026-10-25T16:47:45Z"
@@ -22,7 +22,7 @@ cited_for = ["SV2.0–SV2.7"]
 [[source]]
 id = "HT"
 locator_scheme = "section"
-locator = "§§1.3–2.1; Lemma 1.3.6; Proposition 1.3.12; Corollaries 1.3.13, 1.3.16, 2.1.9; Appendix A"
+locator = "§§1.3–2.1; Lemmas 1.3.6, 2.1.4; Propositions 1.3.7, 1.3.12; §2.1.8; Corollaries 1.3.13, 1.3.16, 2.1.9; Appendix A, Corollary A.7"
 url = "https://math.berkeley.edu/~swshin/HT.pdf"
 fetched_from = "https://math.berkeley.edu/~swshin/HT.pdf"
 fetched_at = "2026-10-25T16:48:00Z"
@@ -39,7 +39,7 @@ version_note = "Author PDF dated 27 January 2021, 41 pages; published Duke Math.
 [[source]]
 id = "KPZ"
 locator_scheme = "section"
-locator = "§§5–7; Corollary 5.3.16; Theorems 7.1.3, 7.1.8, 7.2.21; Corollary 7.2.24; §7.3"
+locator = "§2.1.4, §§5–7; Proposition 2.1.5; Corollary 5.3.16; Theorems 7.1.3, 7.1.8, 7.2.21; Lemmas 7.2.5, 7.2.8, 7.2.11; Corollary 7.2.24; §7.3"
 url = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/6C2640CC5856BDF975AF97EE30CA7906/S2050508626100316a.pdf/div-class-title-integral-models-of-shimura-varieties-with-parahoric-level-structure-ii-div.pdf"
 fetched_from = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/6C2640CC5856BDF975AF97EE30CA7906/S2050508626100316a.pdf/div-class-title-integral-models-of-shimura-varieties-with-parahoric-level-structure-ii-div.pdf"
 fetched_at = "2026-10-25T16:48:03Z"
@@ -56,7 +56,7 @@ version_note = "Published Forum Math. Pi 14 (2026), e14; 89-page publisher PDF"
 [[source]]
 id = "KP"
 locator_scheme = "section"
-locator = "§§4.2–4.6; Theorem 4.2.7; Lemma 4.6.13; Corollaries 4.6.15, 4.6.18"
+locator = "§§4.2–4.6; Theorem 4.2.7; (4.6.3); Lemma 4.6.13; Corollaries 4.6.15, 4.6.18"
 url = "https://www.numdam.org/item/10.1007/s10240-018-0100-0.pdf"
 fetched_from = "https://www.numdam.org/item/10.1007/s10240-018-0100-0.pdf"
 fetched_at = "2026-10-25T16:48:05Z"

@@ -170,7 +170,7 @@
         {
           "name": "zarhin",
           "kind": "discriminating",
-          "statement": "For a symplectic lattice Λ the lattice in (V⊕V∨)^4 furnished by the Zarhin enlargement is self-dual (KZ §4.3.5, lines 1761–1763). On an elliptic curve E with principal polarization the enlargement is E⁸, of dimension 8, with product principal polarization; using only E×E∨ would give dimension 2."
+          "statement": "For a symplectic lattice Λ the lattice in (V⊕V∨)^4 furnished by the Zarhin enlargement is self-dual (KZ §4.3.5, p.40). On an elliptic curve E with principal polarization the enlargement is E⁸, of dimension 8, with product principal polarization; using only E×E∨ would give dimension 2."
         }
       ],
       "uses": [
@@ -439,7 +439,7 @@
         "ShimuraVarietiesPartII:SV2.0/etale-tensors",
         "AbelianSchemesAndArithmeticModuli:§A4.3",
         "FiniteFlatGroupsAndIntegralPadicHodgeTheory:§R07.2",
-        "gap:crystalline-hodge-families"
+        "gap:cr-crystalline-parallel-transport"
       ],
       "sources": [
         {
@@ -465,6 +465,10 @@
         {
           "where": "ShimuraVarietiesPartII:SV2.4/tensor-isogeny-group",
           "how": "Consume lift-independent crystalline tensors."
+        },
+        {
+          "where": "ShimuraVarietiesPartII:SV2.4/hecke-orbit-tensor-injectivity",
+          "how": "Consume lift-independent crystalline tensors."
         }
       ]
     },
@@ -488,7 +492,7 @@
       ],
       "prerequisites": [
         "ShimuraVarietiesPartII:SV2.0/lift-independent-crystalline-tensors",
-        "gap:crystalline-hodge-families",
+        "gap:cr-isocrystal-tensor-descent",
         "MotivesAndAlgebraicCycles:Layer 6",
         "BunGAndNewtonStrata:§0.8"
       ],
@@ -665,12 +669,7 @@
         }
       ],
       "implementationStatus": "unchecked",
-      "uses": [
-        {
-          "where": "ShimuraVarietiesPartII:SV2.4/hecke-orbit-tensor-injectivity",
-          "how": "Consume tensors distinguish normalization points."
-        }
-      ]
+      "uses": []
     },
     {
       "id": "ShimuraVarietiesPartII:SV2.1/de-rham-frame-diagram",
@@ -1112,9 +1111,11 @@
         "ShimuraData:Layer 4",
         "gap:hodge-cover-refinement",
         "ReductiveGroupsPartII:§RG2.1",
-        "gap:hodge-representation-algebra",
+        "gap:fundamental-invariant-form",
+        "gap:multiplier-exact-sequences",
         "ReductiveGroupsPartII:§RG2.3",
-        "gap:r-smooth-integral-groups",
+        "gap:rg3-r-smooth-tori",
+        "gap:rg3-r-smooth-abelian-type",
         "gap:ffg-nonexceptional",
         "gap:ffg-polarized-chain",
         "PadicDifferentialEquationsAndRigidCohomology:§RD.5.116"
@@ -1191,9 +1192,12 @@
         "ShimuraData:Layer 4",
         "gap:hodge-cover-refinement",
         "ReductiveGroupsPartII:§RG2.1",
-        "gap:hodge-representation-algebra",
+        "gap:fundamental-invariant-form",
+        "gap:multiplier-exact-sequences",
         "ReductiveGroupsPartII:§RG2.3",
-        "gap:r-smooth-integral-groups",
+        "gap:rg3-r-smooth-tori",
+        "gap:rg3-r-smooth-abelian-type",
+        "gap:rg3-stabilizer-closed-immersion",
         "gap:ffg-exceptional",
         "gap:ffg-polarized-chain",
         "PadicDifferentialEquationsAndRigidCohomology:§RD.5.116"
@@ -1269,9 +1273,11 @@
         "ShimuraVarietiesPartII:SV2.2/nonexceptional-cover",
         "ShimuraVarietiesPartII:SV2.2/exceptional-cover",
         "ReductiveGroupsPartII:§RG2.1",
-        "gap:hodge-representation-algebra",
+        "gap:multiplier-exact-sequences",
         "ReductiveGroupsPartII:§RG2.3",
-        "gap:r-smooth-integral-groups"
+        "gap:rg3-r-smooth-tori",
+        "gap:rg3-r-smooth-abelian-type",
+        "gap:rg3-stabilizer-closed-immersion"
       ],
       "sources": [
         {
@@ -1351,7 +1357,7 @@
         "ShimuraVarietiesPartII:SV2.2/strongly-acceptable-triple",
         "ShimuraVarietiesPartII:SV2.2/general-abelian-cover",
         "ReductiveGroupsPartII:§RG2.3",
-        "gap:r-smooth-integral-groups",
+        "gap:rg3-r-smooth-tori",
         "ReductiveGroupsPartII:§RG2.1"
       ],
       "sources": [
@@ -1381,7 +1387,7 @@
       ],
       "title": "Integral component-action groups",
       "kind": "definition",
-      "statement": "Import the characteristic-zero groups A(G), A(G)° and their actions from V6. Set A_int(G)=G(A_f^p)/closure(Z°(Z_(p))) *_(G°(Z_(p))_+/Z°(Z_(p))) G_ad°(Z_(p))_+ and define A_int(G)° by replacing the adelic numerator with the closure of G°(Z_(p))_+ in G(A_f^p). Here the star denotes the quotient of the semidirect product by the diagonal relation, with the integral adjoint parahoric group used in the gluing theorem. Retain the auxiliary tilde groups that also carry the p-adic parahoric factor when comparing kernels and cosets.",
+      "statement": "Import the characteristic-zero groups A(G), A(G)° and their actions from V6. Set A_int(G)=G(A_f^p)/closure(Z(Z_(p))) *_(G°(Z_(p))_+/Z(Z_(p))) G_ad°(Z_(p))_+, where Z is the Zariski closure of the centre Z_G in the full model G_Z(p) and the closure is taken in G(A_f^p), and define A_int(G)° by replacing the adelic numerator with the closure of G°(Z_(p))_+ in G(A_f^p). Here the star denotes the quotient of the semidirect product by the diagonal relation, with the integral adjoint parahoric group used in the gluing theorem. Retain the auxiliary tilde groups that also carry the p-adic parahoric factor when comparing kernels and cosets.",
       "hypotheses": [
         "Corrected Hodge setup (KPZ 7.1.2): p>2; G^fix is the stabilizer at a point generic in its facet; K_p=G^fix(Z_p); G_Qp is R-smooth and p does not divide |π₁(G_der,Qp)|; the Hodge embedding extends to a very-good integral embedding G^fix→GL(Λ), with Λ contained in its symplectic dual. Prime-to-p levels are sufficiently small and compatible with the Siegel embedding.",
         "Condition (D): for C=ker(G_sc→G_der), every class c∈H¹(Q,C) whose localization is trivial at every finite ℓ≠p has trivial localization at p.",
@@ -2628,25 +2634,25 @@
       ],
       "title": "Tensor detection on a prime-to-p Hecke orbit",
       "kind": "theorem",
-      "statement": "For the neat integral Hodge tower, two points obtained from the same A_x by prime-to-p tensor-compatible quasi-isogenies are equal exactly when the quasi-isogeny relating their complete prime-to-p level structures also identifies the canonical crystalline tensors. Thus the Hecke-orbit relation injects into the tensor-quasi-isogeny quotient relation. This is the prime-to-p statement needed in the rank argument; it is not a classification of all geometric isogeny classes or an ADLV uniformization theorem.",
+      "statement": "For the neat integral Hodge tower, let x be a geometric special-fibre point with abelian variety A_x up to prime-to-p isogeny, and let g₁,g₂∈G(A_f^p). If x·g₁=x·g₂, the unique automorphism of A_x relating the two prime-to-p level structures fixes the canonical prime-to-p étale and crystalline tensors, so g₁ and g₂ have the same image in I_x(Z_(p))\\G(A_f^p), where I_x(Z_(p))=I_x(Q)∩Aut(A_x). Thus g↦x·g induces a well-defined surjection from the Hecke orbit x·G(A_f^p) onto I_x(Z_(p))\\G(A_f^p). Equality of two points is asserted only in this direction: the converse, that g₁ and g₂ with the same class give the same normalization point, needs the very-good hypotheses of SV2.1/tensor-separation and is not used here. This is the prime-to-p statement needed in the rank argument; it is not a classification of all geometric isogeny classes or an ADLV uniformization theorem.",
       "hypotheses": [],
       "proofSteps": [
-        "HT uses the promoted prime-to-p level structure and crystalline tensors to detect equality in the normalization.",
-        "Apply the Siegel moduli comparison and then tensor separation of normalization points."
+        "Read the relating automorphism of A_x off the Siegel moduli interpretation of x·g₁=x·g₂.",
+        "It fixes the prime-to-p étale tensors because it intertwines the level structures, and the crystalline tensors by lift independence, so it lies in I_x(Z_(p))."
       ],
       "acceptance": [
-        "Equality in the Siegel moduli space alone must not prove equality in the Hodge normalization."
+        "At hyperspecial GL₂ level with g₂=−g₁ the points agree and the relating automorphism −1 lies in I_x(Z_(p)); the statement never infers equality of normalization points from equality of classes."
       ],
       "prerequisites": [
         "ShimuraVarietiesPartII:SV2.4/tensor-isogeny-group",
         "ShimuraVarietiesPartII:SV2.0/prime-to-p-tower",
-        "ShimuraVarietiesPartII:SV2.1/tensor-separation"
+        "ShimuraVarietiesPartII:SV2.0/lift-independent-crystalline-tensors"
       ],
       "sources": [
         {
           "sourceId": "HT",
-          "locator": "§2.1.4, p.22; Proposition 2.1.6, pp.22–23",
-          "match": "HT uses the promoted prime-to-p level structure and crystalline tensors to detect equality in the normalization."
+          "locator": "Lemma 2.1.4, p.22; Proposition 2.1.6, pp.22–23",
+          "match": "HT reads the relating automorphism off the Siegel moduli interpretation and places it in I_x(Z_(p))."
         }
       ],
       "implementationStatus": "unchecked",
@@ -2725,7 +2731,7 @@
         "ShimuraVarietiesPartII:SV2.4/isogeny-realizations",
         "gap:noot-coarse-comparison",
         "ReductiveGroupsPartII:§RG2.1",
-        "gap:hodge-representation-algebra"
+        "gap:rg3-conj-prime-centralizer-dimension"
       ],
       "sources": [
         {
@@ -2793,7 +2799,7 @@
       "hypotheses": [],
       "proofSteps": [
         "KZ uses the common-adjoint, common-multiplier fibre product to compare an arbitrary target Hodge embedding with the auxiliary one.",
-        "Use generic fibre-product and centre calculations from the group supplier; check the Hodge homomorphism factors through the identity component.",
+        "Use the fibre-product centre calculation and the multiplier sequences supplied by ShimuraData; check the Hodge homomorphism factors through the identity component.",
         "The block direct-sum form has one similitude factor exactly when the two nonzero blocks have the same multiplier."
       ],
       "acceptance": [
@@ -2803,7 +2809,8 @@
         "ShimuraVarietiesPartII:SV2.2/strong-auxiliary-cover",
         "ShimuraVarietiesPartII:SV2.2/strongly-acceptable-triple",
         "ReductiveGroupsPartII:§RG2.1",
-        "gap:hodge-representation-algebra",
+        "gap:matched-fibre-product-centre",
+        "gap:multiplier-exact-sequences",
         "ShimuraData:Layer 4",
         "gap:hodge-cover-refinement"
       ],
@@ -2880,7 +2887,9 @@
         "ShimuraVarietiesPartII:SV2.3/conjugate-level-gluing",
         "BunGAndNewtonStrata:§1.28",
         "ReductiveGroupsPartII:§RG2.3",
-        "gap:r-smooth-integral-groups",
+        "gap:rg3-r-smooth-tori",
+        "gap:rg3-r-smooth-abelian-type",
+        "gap:matched-fibre-product-centre",
         "gap:ffg-nonexceptional",
         "gap:ffg-polarized-chain"
       ],
@@ -3005,7 +3014,7 @@
         "ShimuraVarietiesPartII:SV2.5/product-abelian-comparison",
         "ShimuraVarietiesPartII:SV2.4/all-prime-tate-comparison",
         "ReductiveGroupsPartII:§RG2.1",
-        "gap:hodge-representation-algebra"
+        "gap:matched-fibre-product-centre"
       ],
       "sources": [
         {
@@ -3537,7 +3546,7 @@
         "AbelianSchemesAndArithmeticModuli:§A4.1",
         "AbelianSchemesAndArithmeticModuli:§A6.21",
         "ReductiveGroupsPartII:§RG2.1",
-        "gap:hodge-representation-algebra"
+        "MotivesAndAlgebraicCycles:§6.3"
       ],
       "sources": [
         {
@@ -3671,7 +3680,8 @@
       "stageId": "ShimuraVarietiesPartII:SV2.0",
       "status": "planned",
       "gaps": [
-        "gap:crystalline-hodge-families"
+        "gap:cr-crystalline-parallel-transport",
+        "gap:cr-isocrystal-tensor-descent"
       ]
     },
     {
@@ -3691,10 +3701,13 @@
       "status": "planned",
       "gaps": [
         "gap:hodge-cover-refinement",
-        "gap:hodge-representation-algebra",
-        "gap:r-smooth-integral-groups",
+        "gap:fundamental-invariant-form",
+        "gap:multiplier-exact-sequences",
+        "gap:rg3-r-smooth-tori",
+        "gap:rg3-r-smooth-abelian-type",
         "gap:ffg-nonexceptional",
         "gap:ffg-polarized-chain",
+        "gap:rg3-stabilizer-closed-immersion",
         "gap:ffg-exceptional"
       ]
     },
@@ -3716,7 +3729,7 @@
         "gap:rg3-cyclic-torus-and-neatness",
         "gap:compact-quotient-borel",
         "gap:noot-coarse-comparison",
-        "gap:hodge-representation-algebra"
+        "gap:rg3-conj-prime-centralizer-dimension"
       ]
     },
     {
@@ -3725,9 +3738,11 @@
       "gaps": [
         "gap:integral-local-shimura",
         "gap:local-models",
-        "gap:hodge-representation-algebra",
+        "gap:matched-fibre-product-centre",
+        "gap:multiplier-exact-sequences",
         "gap:hodge-cover-refinement",
-        "gap:r-smooth-integral-groups",
+        "gap:rg3-r-smooth-tori",
+        "gap:rg3-r-smooth-abelian-type",
         "gap:ffg-nonexceptional",
         "gap:ffg-polarized-chain",
         "gap:ffg-very-good",
@@ -3749,7 +3764,6 @@
       "status": "planned",
       "gaps": [
         "gap:rg3-conjugacy-quotient",
-        "gap:hodge-representation-algebra",
         "gap:open-curve-companions",
         "gap:rg3-faithful-quotient-finite",
         "gap:rg3-character-separation",
@@ -3866,7 +3880,7 @@
       "id": "gap:open-curve-companions",
       "supplier": "GlobalShtukasAndFunctionFieldLanglands",
       "section": "§§6.1–6.2, Constant twists and Compatible systems on curves",
-      "needs": "Supply the stated algebraic p-plain companion theorem on smooth geometrically connected open curves over the original F_q, extended to semisimple sheaves by direct sums and allowing constant twists and finite coefficient extensions; the roadmap lies outside the prescribed merge order.",
+      "needs": "Extend the algebraic p-plain companion theorem of §§6.1–6.2 to semisimple lisse sheaves on smooth geometrically connected open curves over the original F_q by direct sums, allowing a constant twist and a finite coefficient extension.",
       "stageId": "ShimuraVarietiesPartII",
       "neededBy": [
         "ShimuraVarietiesPartII:SV2.7/representationwise-independence"
@@ -3895,13 +3909,22 @@
       ]
     },
     {
-      "id": "gap:crystalline-hodge-families",
+      "id": "gap:cr-crystalline-parallel-transport",
       "supplier": "CrystallineCohomology",
-      "section": "§CR.7",
-      "needs": "Supply absolute-Hodge crystalline–de Rham compatibility and horizontal transport on normal formal branches, and the log-Dieudonné comparison, semistable-alteration descent and full faithfulness in the possibly singular and nonproper family scope used by HT Proposition 1.3.12 and Appendix A.",
+      "section": "§CR.7.3, rigid-analytic transport (new target)",
+      "needs": "For an abelian scheme over the formal deformation space of A_(s0)[p∞] at a point s0 over a perfect field k of characteristic p, formally smooth over W(k), prove that for any two points s, s′ of its rigid generic fibre over finite extensions of W(k)[1/p] the composite of the Berthelot–Ogus isomorphisms H¹_dR(A_s) ≅ D(A_(s0))[1/p] ≅ H¹_dR(A_(s′)) after scalar extension equals Gauss–Manin parallel transport on the rigid open ball, as used in the proof of HT Proposition 1.3.7, pp.17–18.",
       "stageId": "ShimuraVarietiesPartII",
       "neededBy": [
-        "ShimuraVarietiesPartII:SV2.0/lift-independent-crystalline-tensors",
+        "ShimuraVarietiesPartII:SV2.0/lift-independent-crystalline-tensors"
+      ]
+    },
+    {
+      "id": "gap:cr-isocrystal-tensor-descent",
+      "supplier": "CrystallineCohomology",
+      "section": "§CR.7.1, log coefficients and descent (new target)",
+      "needs": "For a flat normal finite-type W(k)-scheme S with a relative Cartier divisor D, U = S − D, and an abelian scheme over U extending to a semi-abelian scheme over S, prove that every global section s of the tensor algebra of R¹π_*Q_p on the generic fibre of U determines a unique morphism of convergent F-isocrystals 1 → E^⊗ on U, E the isocrystal of the p-divisible group, whose value at every point ξ of U over the ring of integers of a finite extension equals D_cris(ξ*s) (HT Corollary A.7, p.39, by Lemma A.4 and Proposition A.6, pp.38–39).",
+      "stageId": "ShimuraVarietiesPartII",
+      "neededBy": [
         "ShimuraVarietiesPartII:SV2.0/global-crystalline-realization"
       ]
     },
@@ -3938,7 +3961,7 @@
     {
       "id": "gap:component-specialization",
       "supplier": "ShimuraCompactifications",
-      "section": "Layer C6, integral component specialization beyond the boundary construction",
+      "section": "Layer C5, Hodge-type integral extension (new section)",
       "needs": "For the normal Hodge models S_K defined in Layer 0 at neat tame level over the completed maximal unramified local reflex ring, assuming their geometric special fibre is locally integral, prove that the special fibre of each connected integral component is geometrically irreducible, compatibly with specialization, as used in the proof of HT Corollary 1.3.16.",
       "stageId": "ShimuraVarietiesPartII",
       "neededBy": [
@@ -3957,6 +3980,42 @@
         "ShimuraVarietiesPartII:SV2.2/nonexceptional-cover",
         "ShimuraVarietiesPartII:SV2.2/exceptional-cover",
         "ShimuraVarietiesPartII:SV2.5/matched-multiplier-datum"
+      ]
+    },
+    {
+      "id": "gap:multiplier-exact-sequences",
+      "supplier": "ShimuraData",
+      "section": "Layer 4, Hodge-type multiplier sequences (new target)",
+      "needs": "For a Hodge-type datum (G,X) with G^ad Q-simple, with G^c generated by G^der and the largest compact subtorus Z_(G,0) of Z_G and Z^c_G generated by Z_(G^der) and Z_(G,0), prove that the multiplier c of any Hodge embedding gives exact sequences 1 → G^c → G → G_m → 1 and 1 → Z^c_G → Z_G → G_m → 1 (KPZ Lemma 7.2.5, p.78), and hence that the common-multiplier subgroup of a finite product of such data has centre an extension of G_m by the product of the Z^c.",
+      "stageId": "ShimuraVarietiesPartII",
+      "neededBy": [
+        "ShimuraVarietiesPartII:SV2.2/nonexceptional-cover",
+        "ShimuraVarietiesPartII:SV2.2/exceptional-cover",
+        "ShimuraVarietiesPartII:SV2.2/general-abelian-cover",
+        "ShimuraVarietiesPartII:SV2.5/matched-multiplier-datum"
+      ]
+    },
+    {
+      "id": "gap:matched-fibre-product-centre",
+      "supplier": "ShimuraData",
+      "section": "Layer 4, matched fibre products (new target)",
+      "needs": "For Hodge-type data (G,X) and (G_2,X_2) with Z^c_G and Z^c_(G_2) tori and G^der → G_2^der a central isogeny inducing (G^ad,X^ad) ≅ (G_2^ad,X_2^ad), let G_3 be the identity component of G ×_(G^ad × G_m) G_2; prove that Z^c_(G_3) ≅ Z^c_(G_2) × Z^c_G, that G_3^der → G^der is an isomorphism with Z_(G_3^der) embedded diagonally, and that 1 → Z^c_(G_2) → Z^c_(G_3)/Z_(G_3^der) → Z^c_G/Z_(G^der) → 1 is exact (KZ Lemma 4.3.8 and its proof, pp.40–41).",
+      "stageId": "ShimuraVarietiesPartII",
+      "neededBy": [
+        "ShimuraVarietiesPartII:SV2.5/matched-multiplier-datum",
+        "ShimuraVarietiesPartII:SV2.5/matched-integral-comparison",
+        "ShimuraVarietiesPartII:SV2.5/isogeny-group-exact-sequences"
+      ]
+    },
+    {
+      "id": "gap:fundamental-invariant-form",
+      "supplier": "ShimuraData",
+      "section": "Layer 4, fundamental Hodge embeddings (new target)",
+      "needs": "For a fundamental Hodge embedding (G,X) → (GSp(V),S^±) in the sense of KPZ Definition 7.2.7, p.78, with V an F-vector space for a totally real field F and H′ ⊂ GL_F(V) generated by H^c and F^×, prove that the alternating form can be chosen as Tr_(F/Q) ∘ Ψ with Ψ an F-bilinear alternating form and H′ → GL_F(V) factoring through GSp_F(V,Ψ) (KPZ Lemma 7.2.8, p.79).",
+      "stageId": "ShimuraVarietiesPartII",
+      "neededBy": [
+        "ShimuraVarietiesPartII:SV2.2/nonexceptional-cover",
+        "ShimuraVarietiesPartII:SV2.2/exceptional-cover"
       ]
     },
     {
@@ -4027,10 +4086,10 @@
       "availability": "board design outside the prescribed merge order"
     },
     {
-      "id": "gap:r-smooth-integral-groups",
+      "id": "gap:rg3-r-smooth-tori",
       "supplier": "ReductiveGroupsPartIII",
-      "section": "RG3.2, required local-integral extension",
-      "needs": "For reductive groups over finite extensions of Q_p, supply R-smooth tori and centralizers, fixer closed immersions, arbitrary adjoint association independent of central lifts, R-smooth central-extension exactness and connected-fixer criteria with the exact hypotheses of KZ §§2.3–2.4 and KPZ §§7.2.5–7.2.14; these are not assertions of the existing RG3.2 targets.",
+      "section": "RG3.2, R-smooth tori (new target)",
+      "needs": "For a torus T over a finite extension F of Q_p, R-smooth meaning that the Zariski closure of T in the Weil restriction of the lft Néron model of T over a splitting field is smooth, prove that a finite product of Weil restrictions of tori split by tamely ramified extensions is R-smooth and that an extension of an R-smooth torus by an R-smooth torus is R-smooth (KZ Proposition 2.4.6, p.14; KPZ Proposition 2.1.5(1)–(2), p.10).",
       "stageId": "ShimuraVarietiesPartII",
       "neededBy": [
         "ShimuraVarietiesPartII:SV2.2/nonexceptional-cover",
@@ -4038,39 +4097,61 @@
         "ShimuraVarietiesPartII:SV2.2/general-abelian-cover",
         "ShimuraVarietiesPartII:SV2.2/strong-auxiliary-cover",
         "ShimuraVarietiesPartII:SV2.5/matched-integral-comparison"
-      ]
+      ],
+      "availability": "board design outside the prescribed merge order"
+    },
+    {
+      "id": "gap:rg3-r-smooth-abelian-type",
+      "supplier": "ReductiveGroupsPartIII",
+      "section": "RG3.2, R-smooth centralizers (new target)",
+      "needs": "For p>2 and a reductive group G over Q_p whose adjoint group is a product of Weil restrictions of groups split by tamely ramified extensions and whose centre Z_G is an R-smooth torus, prove that the centralizer of a maximal Q̆_p-split torus of G is R-smooth (KPZ Lemma 7.2.11, pp.80–81).",
+      "stageId": "ShimuraVarietiesPartII",
+      "neededBy": [
+        "ShimuraVarietiesPartII:SV2.2/nonexceptional-cover",
+        "ShimuraVarietiesPartII:SV2.2/exceptional-cover",
+        "ShimuraVarietiesPartII:SV2.2/general-abelian-cover",
+        "ShimuraVarietiesPartII:SV2.5/matched-integral-comparison"
+      ],
+      "availability": "board design outside the prescribed merge order"
+    },
+    {
+      "id": "gap:rg3-stabilizer-closed-immersion",
+      "supplier": "ReductiveGroupsPartIII",
+      "section": "RG3.2, stabilizer closed immersions (new target)",
+      "needs": "For p>2, a closed immersion G → G′ of reductive groups over a finite extension K of Q_p inducing an isomorphism of derived groups with G R-smooth, a finite extension K̃/K and x ∈ B(G,K) with image x′ ∈ B(G′,K̃), prove that G → Res_(K̃/K) G′_K̃ extends to a closed immersion of Bruhat–Tits stabilizer schemes G_x → Res_(O_K̃/O_K) G′_(x′) (KPZ Proposition 2.1.5(3), p.10; KZ Propositions 2.4.8 and 2.4.10, pp.15–16).",
+      "stageId": "ShimuraVarietiesPartII",
+      "neededBy": [
+        "ShimuraVarietiesPartII:SV2.2/exceptional-cover",
+        "ShimuraVarietiesPartII:SV2.2/general-abelian-cover"
+      ],
+      "availability": "board design outside the prescribed merge order"
+    },
+    {
+      "id": "gap:rg3-conj-prime-centralizer-dimension",
+      "supplier": "ReductiveGroupsPartIII",
+      "section": "RG3.0, the quotient Conj′ (new target)",
+      "needs": "For a connected reductive group H over a field F of characteristic zero, with Out′(H) the finite F-group scheme acting on Conj(H) through the orthogonal outer automorphisms of the geometric simple factors isomorphic to SO(2n), n ≥ 4, and Conj′(H) the quotient by this action (HT §2.1.8, p.24; proof of Corollary 2.1.9, pp.24–25), prove that two semisimple geometric points with the same image in Conj′(H) have centralizers of the same dimension.",
+      "stageId": "ShimuraVarietiesPartII",
+      "neededBy": [
+        "ShimuraVarietiesPartII:SV2.4/all-prime-tate-comparison"
+      ],
+      "availability": "board design outside the prescribed merge order"
     },
     {
       "id": "gap:compact-quotient-borel",
       "supplier": "ReductiveGroupsPartIII",
       "section": "RG3.2, required split-group extension",
-      "needs": "For a connected split reductive group over a nonarchimedean local field and a reductive subgroup with compact homogeneous quotient, supply the Borel-containment argument used in K17 Proposition 2.1.6 and the resulting equality for a reductive centralizer; this input is absent from the existing point-topology scope.",
+      "needs": "For a connected split reductive group over a nonarchimedean local field and a reductive subgroup with compact homogeneous quotient, supply the Borel-containment argument used in K17 Proposition 2.1.6 and the resulting equality for a reductive centralizer.",
       "stageId": "ShimuraVarietiesPartII",
       "neededBy": [
         "ShimuraVarietiesPartII:SV2.4/auxiliary-prime-rank"
       ]
     },
     {
-      "id": "gap:hodge-representation-algebra",
-      "supplier": "ReductiveGroupsPartIII",
-      "section": "RG3.0 and RG3.2, required representation extension",
-      "needs": "Supply the fundamental symplectic Hodge representations, faithful tensor generation, matched-central-fibre-product calculations and type-D outer-orbit centralizer-dimension comparison used in KPZ §7.2 and HT §2.1.8; these extensions are not claimed as existing RG3.0 or RG3.2 targets.",
-      "stageId": "ShimuraVarietiesPartII",
-      "neededBy": [
-        "ShimuraVarietiesPartII:SV2.2/nonexceptional-cover",
-        "ShimuraVarietiesPartII:SV2.2/exceptional-cover",
-        "ShimuraVarietiesPartII:SV2.2/general-abelian-cover",
-        "ShimuraVarietiesPartII:SV2.4/all-prime-tate-comparison",
-        "ShimuraVarietiesPartII:SV2.5/matched-multiplier-datum",
-        "ShimuraVarietiesPartII:SV2.5/isogeny-group-exact-sequences",
-        "ShimuraVarietiesPartII:SV2.7/representation-unit-eigenvalues"
-      ]
-    },
-    {
       "id": "gap:arbitrary-dvr-good-reduction",
       "supplier": "NeronModelsAndSemistableAbelianVarieties",
       "section": "§§5.1–5.2, extension beyond excellent traits",
-      "needs": "Extend the good-reduction criterion and descent to an arbitrary mixed-characteristic DVR in the full prime-to-p level situation of HT Lemma 1.3.6, or supply descent from an excellent complete trait; the existing §§5.1–5.2 only state the excellent-DVR case.",
+      "needs": "Extend the good-reduction criterion and descent to an arbitrary mixed-characteristic DVR in the full prime-to-p level situation of HT Lemma 1.3.6, or supply descent from an excellent complete trait; §§5.1–5.2 state the excellent-DVR case.",
       "stageId": "ShimuraVarietiesPartII",
       "neededBy": [
         "ShimuraVarietiesPartII:SV2.1/pro-dvr-property"
