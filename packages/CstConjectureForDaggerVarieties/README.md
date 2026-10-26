@@ -11,8 +11,8 @@ The following mathematical objects have one supplier and are not reconstructed h
 - Mathlib supplies the algebraic period-ring carriers `BDeRhamPlus` and `BDeRham`, finite generation `Module.Finite`, freeness `Module.Free`, bundled modules `ModuleCat`, the Witt-fraction-field Frobenius carrier `WittVector.Isocrystal` with its one-dimensional classification `WittVector.isocrystal_classification`, and the categorical predicate `CategoryTheory.BicartesianSq`.
 - Tau Ceti supplies adic spaces and absolute Fargues–Fontaine period-domain and topological quotient geometry. The coherent geometric curve and its bundle theory are VectorBundlesAndIsocrystals VB1 and VB2 classification.
 - AdicSpacesPartII R0–R1 owns morphisms, completed tensors and analytification. Dagger spaces, their de Rham complex, strict differentials, the dagger–rigid comparison, logarithmic forms and formal tubes are AdicSpacesPartIV F1.7–F1.12 and F1.16. Its strict-differential, finiteness and Künneth theorems have discretely valued bases and its resolution lemma is affinoid; the C-valued extensions are exact contracts below. Resolution of proper rigid pairs is PadicHodgeTheory §2.7's analytic log resolution.
-- PadicHodgeTheory §§0.2–0.5, 3.4–3.7 and 5.2 owns generic rational period structures, arithmetic filtered modules, admissibility and arithmetic period functors; its §2.7 owns analytic log resolution of proper rigid spaces. VectorBundlesAndIsocrystals VB0–VB3 owns finite isocrystals, geometric bundle classification, slope cohomology and finite Banach–Colmez theory. Reasonable Pairs and qBC form the Part II extension of that finite BC direction, specified by the contract below rather than a second finite BC theory here.
-- LocallyAnalyticDistributions §§0.0–0.2 owns nonarchimedean locally convex categories, strict derived categories, their left hearts and compact-type duality. Its distribution-algebra extensions do not supply the additional derived-limit and extension-duality contracts below.
+- PadicHodgeTheory §§0.2–0.5, 3.4–3.7 and 5.2 owns generic rational period structures, arithmetic filtered modules, admissibility and arithmetic period functors; its §2.7 owns analytic log resolution of proper rigid spaces. CrystallineCohomology §CR.4.7 owns the slope decomposition of finite Witt isocrystals over perfect residue fields. VectorBundlesAndIsocrystals VB1–VB3 owns geometric bundle classification, slope cohomology and finite Banach–Colmez theory. Reasonable Pairs and qBC form the Part II extension of that finite BC direction, specified by the contract below rather than a second finite BC theory here.
+- LocallyAnalyticDistributions §§0.0–0.2 owns nonarchimedean locally convex categories, strict derived categories, their left hearts and compact-type duality. Its distribution-algebra extensions do not supply the additional derived-limit contract below.
 - CohomologyComparisons §§4.8–4.9 owns algebraic period comparison and dual descriptions. Its §4.9a owns analytic Hyodo–Kato realization, and the overconvergent crystalline complex of §2.8 is an exact contract below; §§4.10–4.11 state proper rigid comparison over K and C. Those two comparison targets are imported, including their induced filtration, and have no duplicate theorem section here. The proper fundamental square remains an application in Layer 1.
 - ClassicalAdicEtaleCohomology §§1.3–1.4, 8.4 and 9.7 owns the analytic coefficient, proper-base-change and trace framework. Its integral proper-factor contract below is stronger than a prime-to-p torsion statement.
 
@@ -24,7 +24,7 @@ Fix a prime p. Let K be complete discretely valued of characteristic zero, with 
 
 Use Nφ=pφN, diagonal tensor operators and the period coordinate u with N(u)=−1 and φ(u)=pu. The Fontaine period t satisfies φ(t)=pt and g(t)=χ(g)t. Twisting M by {−r} multiplies φ by p⁻ʳ and leaves N unchanged. The degree of the associated filtered bundle is t_H−t_N; it is this degree that is used for nonnegative slopes. Cohomological shifts are cohomological shifts: a group in degree i is placed at [−i]. All spaces and functor categories live in fixed universes, with the category of sympathetic C-algebras made small in a larger universe; no arbitrary enlargement is used to replace its natural transformations by all C-point maps (CN25 §5.1, pp.31–33, lines 1600–1677; §5.3, p.36, lines 1798–1832).
 
-Let LH(C_Q_p) be the abelian left heart of the strict derived category of locally convex Q_p spaces. Tildes denote its cohomology; untilded objects denote their classical realizations. VS denotes the source's Vector Space category on sympathetic algebras. TVS consists of functors from those algebras to LH(C_Q_p) satisfying the boundedness condition on algebra maps in Definition 4.1; its maps are natural transformations. Evaluation at C yields an ordinary locally convex space only for classical objects. Hom_VS and Hom_TVS are neither arbitrary linear maps of C-points nor maps required to be period-linear (CN25 Definition 4.1, p.20, line 960; Definition 4.5, pp.21–22, line 1007).
+Let LH(C_Q_p) be the abelian left heart of the bounded-below strict derived category of locally convex Q_p spaces. Tildes denote its cohomology; untilded objects denote their classical realizations. VS denotes the source's Vector Space category on sympathetic algebras. TVS consists of functors from those algebras to LH(C_Q_p) satisfying the boundedness condition on algebra maps in Definition 4.1; its maps are natural transformations. Evaluation at C yields an ordinary locally convex space only for classical objects. Hom_VS and Hom_TVS are neither arbitrary linear maps of C-points nor maps required to be period-linear (CN25 Definition 4.1, p.20, line 960; Definition 4.5, pp.21–22, line 1007).
 
 A torsion period Pair means the left-heart object represented by an injection W₁→W₂ of topological B_m-modules for some m≥1, where B_m=B_dR⁺/tᵐ, followed by the specified completed scalar extension to sympathetic algebras. A reasonable B_m-module has its module Fréchet topology or is a c-compact inductive limit of Banach B_m-modules. A reasonable Pair has both terms reasonable and of the same type. The qBC category consists of TVS objects with positive finite-BC subobject, such a torsion Pair as middle graded piece, and negative finite-BC final quotient; its height is the sum of the two finite-BC heights. These are the imported meanings, including the natural transformations and the original topologies (CN25 Definitions 4.4–4.5, CN25 lines 992–1025; §§4.3–4.4, CN25 lines 1259–1263, 1339–1341).
 
@@ -47,7 +47,7 @@ Write Fʳⁱ=Hⁱ(FʳRΓ_dR), Bⁱ=Hⁱ_dR(X/B_dR⁺), Filʳⁱ=im(Fʳⁱ→Bⁱ
 
 Use `BDeRhamPlus` and `BDeRham` in `Mathlib/RingTheory/Perfectoid/BDeRham.lean:75` and `:88`, under a commutative ring R, prime p, p nonunit in R, and p-adic completeness. The first is the completion of the p-inverted Witt tilt along the theta kernel. The second localizes at completed images of generators of that kernel. The geometric Fontaine complete-DVR and field identifications and their natural topologies are part of the rational-period supplier contract. At p=0 in R these carriers are zero, so the geometric nonzero field hypotheses cannot be omitted.
 
-Use `WittVector.Isocrystal` and `WittVector.isocrystal_classification` in `Mathlib/RingTheory/WittVector/Isocrystal.lean:112` and `:180` for Frobenius-linear automorphisms over the Witt fraction field and the one-dimensional classification over an algebraically closed residue field. The carrier itself has no finite-dimensionality, monodromy, descent or filtration condition; the classification theorem requires dimension one. General finite coefficients and higher-rank slopes are the specified suppliers below.
+Use `WittVector.Isocrystal` and `WittVector.isocrystal_classification` in `Mathlib/RingTheory/WittVector/Isocrystal.lean:113` and `:180` for Frobenius-linear automorphisms over the Witt fraction field and the one-dimensional classification over an algebraically closed residue field. The carrier itself has no finite-dimensionality, monodromy, descent or filtration condition; the classification theorem requires dimension one. General finite coefficients and higher-rank slopes are the specified suppliers below.
 
 Use `Module.Free` from `Mathlib/LinearAlgebra/FreeModule/Basic.lean:43` for existence of a basis and `Module.Finite` from `Mathlib/RingTheory/Finiteness/Defs.lean:121` for finite generation of the top submodule. They are separate conditions. `ModuleCat` in `Mathlib/Algebra/Category/ModuleCat/Basic.lean` gives bundled algebraic modules and linear maps. Use `CategoryTheory.BicartesianSq` in `Mathlib/CategoryTheory/Limits/Shapes/Pullback/IsPullback/BicartesianSq.lean:56` for a square that is both a pullback and a pushout; strict exactness must be interpreted in the supplied left heart.
 
@@ -61,9 +61,9 @@ R0.5, completed tensor products of Banach modules, supplies the separated comple
 
 ### From TauCetiRoadmap.AdicSpacesPartIV
 
-F1.7–F1.9 supplies dagger spaces, completion, strict neighbourhoods, continuous differentials and the overconvergent de Rham complex. F1.9 supplies strict differentials in its stated discretely valued range; F1.11 supplies its stated finiteness and discretely valued quasi-compact Künneth theorems. F1.12 and F1.16 supplies logarithmic complexes and formal generic fibres and tubes; these contracts keep their own resolution and finiteness hypotheses. Only de Rham statements are requested below: finiteness of Hyodo–Kato and B_dR⁺-cohomology, the Hyodo–Kato side of each tube comparison and the induced lattice maps are derived here from them through the natural Hyodo–Kato comparisons of the analytic-syntomic-descent contract (CN25 Proposition 8.4 proof, line 2564).
+F1.7–F1.9 supplies dagger spaces, completion, strict neighbourhoods, continuous differentials and the overconvergent de Rham complex. F1.9 supplies strict differentials in its stated discretely valued range; F1.11 supplies its stated finiteness and discretely valued quasi-compact Künneth theorems. F1.12 and F1.16 supplies logarithmic complexes and formal generic fibres and tubes; these contracts keep their own resolution and finiteness hypotheses. Only de Rham statements are requested below: finiteness of Hyodo–Kato and B_dR⁺-cohomology, the Hyodo–Kato side of each tube comparison and the induced lattice maps are derived here from them through the natural Hyodo–Kato comparisons of the dagger-analytic-complexes contract (CN25 Proposition 8.4 proof, line 2564).
 
-What AdicSpacesPartIV must provide (gap:dagger-de-rham-finiteness-over-c): Provide finite-dimensional de Rham cohomology over C in every degree for three classes of smooth dagger spaces over C: quasi-compact ones, naive interiors of smooth quasi-compact dagger spaces (in the sense of CN25 line 2291, footnote at line 2302), and dagger analytifications of smooth finite-type C-schemes.
+What AdicSpacesPartIV must provide (gap:dagger-de-rham-finiteness-over-c): Provide finite-dimensional de Rham cohomology over C in every degree for three classes of smooth dagger spaces over C: quasi-compact ones, naive interiors of smooth dagger affinoids (defined in §1.2), and dagger analytifications of smooth finite-type C-schemes.
 
 What AdicSpacesPartIV must provide (gap:dagger-strictness-kunneth-over-c): Provide over C the strictness and closed image of every de Rham differential on global sections of a smooth dagger affinoid or smooth dagger Stein space, for its fringe, respectively Fréchet, topology, and the cup-product Künneth isomorphism `⊕_(p+q=n) H^p_dR(X)⊗_C H^q_dR(Y)≅H^n_dR(X×Y)` for smooth dagger spaces X,Y over C whose de Rham cohomology is finite dimensional in every degree.
 
@@ -85,38 +85,53 @@ What PadicHodgeTheory must provide (gap:galois-period-hom-vanishing): Provide th
 
 ### From TauCetiRoadmap.VectorBundlesAndIsocrystals
 
-VB0, Coefficient category and rational blocks, supplies Dieudonné–Manin decomposition and tensor/dual slopes. VB1, The exact tensor isocrystal-to-bundle functor, Slope-sensitive cohomology of standard bundles, Untilts and completed local rings, and Harder–Narasimhan filtration of geometric bundles, supplies the curve, its local period rings and slope cohomology. VB2 classification, Geometric classification of vector bundles and Hom and extension calculus for geometric bundles, identifies slope-zero bundles with sums of O. VB3, Sympathetic algebras and the classical category, Curvature, the tilted coherent heart and HN invariants, and Period modules and curvature calculus, supplies finite BC, its curvature filtration, Le Bras realization and the formula ht(H⁰E)−ht(H¹E)=rank E. Within VB3 Period modules and curvature calculus, Curvature-zero finite-length modules identifies finite-length B_dR⁺-modules with the curvature-zero BC objects, so that natural VS maps between them are exactly the B_dR⁺-linear maps (CN25 Proposition 3.17), and VS Hom vanishing from torsion period modules proves that every natural VS map from a BC object killed by a power of t to B_dR⁺ or to B_dR is zero, its bounded-image step included and without assuming the map period-linear (CN25 Corollary 3.18). In particular H¹(O(−1)) has height −1, whereas O has H⁰=Q_p of height 1. A torsion sheaf at a point other than ∞ has height 0 and positive curvature, so positive curvature alone gives no strict height inequality.
+VB1, The exact tensor isocrystal-to-bundle functor, Slope-sensitive cohomology of standard bundles, Untilts and completed local rings, and Harder–Narasimhan filtration of geometric bundles, supplies the curve, its local period rings and slope cohomology. VB2 classification, Geometric classification of vector bundles and Hom and extension calculus for geometric bundles, identifies slope-zero bundles with sums of O. VB3, Sympathetic algebras and the classical category, Curvature, the tilted coherent heart and HN invariants, and Period modules and curvature calculus, supplies finite BC, its curvature filtration, Le Bras realization and the formula ht(H⁰E)−ht(H¹E)=rank E. Within VB3 Period modules and curvature calculus, Curvature-zero finite-length modules identifies finite-length B_dR⁺-modules with the curvature-zero BC objects, so that natural VS maps between them are exactly the B_dR⁺-linear maps (CN25 Proposition 3.17), and VS Hom vanishing from torsion period modules proves that every natural VS map from a BC object killed by a power of t to B_dR⁺ or to B_dR is zero, its bounded-image step included and without assuming the map period-linear (CN25 Corollary 3.18). In particular H¹(O(−1)) has height −1, whereas O has H⁰=Q_p of height 1. A torsion sheaf at a point other than ∞ has height 0 and positive curvature, so positive curvature alone gives no strict height inequality.
 
 What VectorBundlesAndIsocrystals must provide (gap:period-lattice-gluing): Provide effective gluing of a finite projective B_e-module to a full B_dR⁺ lattice over their identified B_dR realization, compatibly with tensor, dual and cohomology, and identify the bounded simultaneous period eigenspace for every finite (φ,N)-module of slopes in [0,r] with the sections of its nonnegative-slope modification.
 
-What VectorBundlesAndIsocrystals must provide (gap:qbc-pairs): Extend finite BC theory to the natural TVS category on sympathetic algebras, reasonable torsion B_dR⁺-Pairs and qBC objects, with canonical curvature filtration, signed additive height, dense finite-torsion presentations, compatibility with finite BC and vanishing of countable derived inverse limits of BC systems.
+What VectorBundlesAndIsocrystals must provide (gap:qbc-pairs): Extend finite BC theory to the natural TVS category on sympathetic algebras, reasonable torsion B_dR⁺-Pairs and qBC objects, with canonical curvature filtration, signed additive height, dense finite-torsion presentations and compatibility with finite BC.
+
+What VectorBundlesAndIsocrystals must provide (gap:bc-countable-inverse-limits): Provide that every decreasing sequence of sub-BC objects of a finite BC object is stationary and, consequently, that R¹lim vanishes for every countable inverse system of finite BC objects with BC transition maps, in the natural VS realization and in the left heart (CN25 Remark 3.15, line 764).
 
 What VectorBundlesAndIsocrystals must provide (gap:natural-period-hom): Provide vanishing of natural VS Ext¹ into B_dR from finite BC objects of curvature ≤0, in particular from finite-length B_dR⁺-modules (CN25 Lemma 3.26(i)), the rank-equals-height theorem for natural VS Hom into B_dR from finite BC objects of curvature ≤0 (CN25 Proposition 3.27(i)), and the comparison of VS Hom with TVS Hom on the objects used in geometric recovery.
+
+### From TauCetiRoadmap.CrystallineCohomology
+
+§CR.4.7, Slope decomposition on the existing isocrystal carrier, supplies for a perfect field k of characteristic p the canonical decomposition of a finite-dimensional `WittVector.Isocrystal` over the fraction field of W(k) into isoclinic pieces, the vanishing of Hom between distinct slopes, and over algebraically closed k its decomposition into standard blocks. Here it is applied over k̄: the completion F̂ⁿʳ of Fⁿʳ is W(k̄)[1/p] with Frobenius σ, and a finite Frobenius module over Fⁿʳ is extended to F̂ⁿʳ before the classification is applied. VectorBundlesAndIsocrystals VB0's Dieudonné–Manin classification has coefficient field the completion of the maximal unramified extension of a local field with residue field F̄_q, so it does not cover a residue field such as the perfection of F_p(z), whose algebraic closure has transcendence degree one over F̄_p.
 
 ### From TauCetiRoadmap.LocallyAnalyticDistributions
 
 §0.0 supplies the nonarchimedean locally convex categories, projective and inductive tensors, strict derived categories and abelian left hearts; §0.2 supplies strict-sequence and three-space results. Use its non-Hausdorff category when forming the heart, with Hausdorffness imposed where used. Compact-type regularity and strong duality are used with their coefficient-field hypotheses, rather than transferred from finite extensions of Q_p to arbitrary C without proof.
 
-The ordinary projective limits of §0.0 and the strict countable inverse-limit theorem of §0.2 (Fréchet complexes, strict Roos surjectivity, finite-dimensional Mittag–Leffler cohomology) do not supply derived limits of the analytic towers of Layer 4: their terms, such as O(D_n)/C, are infinite dimensional, and their R¹lim terms are obstructions computed in Layer 4 rather than hypotheses. The derived-limit calculus in the left heart is the contract below.
+The ordinary projective limits of §0.0 and the strict countable inverse-limit theorem of §0.2 (Fréchet complexes, strict Roos surjectivity, finite-dimensional Mittag–Leffler cohomology) do not supply derived limits of the analytic towers of Layer 4: their terms, such as O(D_n)/C, are infinite dimensional, and their R¹lim terms are obstructions computed in Layer 4 rather than hypotheses. §0.0 builds the strict derived category from bounded complexes, whereas the analytic complexes of a non-quasi-compact space can have unbounded amplitude: for the countable disjoint union of the polyannuli Aᵐ, m≥0, de Rham cohomology is nonzero in every degree. The bounded-below strict derived category and the derived-limit calculus in its left heart are the contract below.
 
-What LocallyAnalyticDistributions must provide (gap:strict-countable-derived-limits): Provide, for countable towers of uniformly bounded complexes in the quasi-abelian category of nonarchimedean locally convex Q_p-spaces, exactness of countable products, the Roos derived limit Rlim C_n=Cone(1−shift)[−1] in the strict derived category, that is, the homotopy fibre of 1−shift:∏C_n→∏C_n, (a_n)↦(a_n−τ_n(a_(n+1))) for the transition maps τ_n, which for a tower of spaces V_n placed in degree zero is the complex [∏V_n→∏V_n] in degrees 0 and 1, its compatibility with left-heart cohomology, the Milnor short exact sequences 0→R¹lim H̃^(i−1)(C_n)→H̃^i(Rlim C_n)→lim H̃^i(C_n)→0 and the six-term lim/R¹lim sequence of a short exact sequence of towers in the left heart, and vanishing of R^q lim for q≥2, all without Fréchet, Mittag–Leffler or finite-dimensionality hypotheses and objectwise for functors from sympathetic algebras to the left heart.
-
-What LocallyAnalyticDistributions must provide (gap:compact-extension-duality): Prove strictness of the strong-dual sequence and continuity of the bidual comparison for the compact-type extensions occurring in the syntomic splitting, with their actual coefficient-field hypotheses, or supply an alternative valid continuous period-linear splitting argument.
+What LocallyAnalyticDistributions must provide (gap:strict-countable-derived-limits): Provide, for countable towers of complexes with a common lower cohomological bound in the quasi-abelian category of nonarchimedean locally convex Q_p-spaces, the bounded-below strict derived category with its left t-structure, extending the bounded construction of §0.0; exactness of countable products; the Roos derived limit Rlim C_n=Cone(1−shift)[−1] in that category, that is, the homotopy fibre of 1−shift:∏C_n→∏C_n, (a_n)↦(a_n−τ_n(a_(n+1))) for the transition maps τ_n, which for a tower of spaces V_n placed in degree zero is the complex [∏V_n→∏V_n] in degrees 0 and 1; the truncation compatibility τ_≤i Rlim C_n≅τ_≤i Rlim τ_≤i C_n for every integer i; its compatibility with left-heart cohomology; the Milnor short exact sequences 0→R¹lim H̃^(i−1)(C_n)→H̃^i(Rlim C_n)→lim H̃^i(C_n)→0 and the six-term lim/R¹lim sequence of a short exact sequence of towers in the left heart; and vanishing of R^q lim for q≥2; all without Fréchet, Mittag–Leffler or finite-dimensionality hypotheses and objectwise for functors from sympathetic algebras to the left heart.
 
 ### From TauCetiRoadmap.CohomologyComparisons
 
 §§4.8–4.9 supplies algebraic comparison and dual period descriptions, and §4.9a supplies analytic HK with its algebraic unramified coefficients and model agreement. §§4.10–4.11 supplies smooth proper rigid C_st comparison without a semistable-model assumption over K and C, including the induced filtration. The proper arithmetic dual Hom is strict for the weak topology, as in CN25 Remark 6.7, p.41, line 2047. Over C the comparison uses F⁰ of localized cohomology for its modification, as in CN25 Theorem 6.8 proof, p.42, line 2086. This is the input to the proper case of the fundamental square.
 
-What CohomologyComparisons must provide (gap:analytic-syntomic-descent): Provide the model-free smooth dagger HK, B_dR⁺ and syntomic complexes with their cup products and their strict derived completed comparisons, slope bound [0,min(i,dim X)], natural VS and TVS realizations, stable-range syntomic/pro-étale period map, filtered fiber triangle, Stein/affinoid syntomic diagram over C with its strict maps and cohomological topologies, and countable exhaustion descent, including comparison of derived systems with rigid completions after cofinal strict shrinkings.
+What CohomologyComparisons must provide (gap:dagger-analytic-complexes): Provide, for a smooth dagger space X over C, the model-free overconvergent Hyodo–Kato, B_dR⁺-de Rham and syntomic complexes with their cup products, as objects of the bounded-below strict derived category; the strict derived completed comparisons RΓ_HK(X)⊗̂C≃RΓ_dR(X) and RΓ_HK(X)⊗̂B_dR⁺≃RΓ_dR(X/B_dR⁺), natural in X and multiplicative; the identity τ_≤i F^(r+1)RΓ_dR(X/B_dR⁺)=tFʳRΓ_dR(X/B_dR⁺) for i≤r; the filtered fiber triangle defining syntomic cohomology from the Frobenius eigenspace of Hyodo–Kato cohomology and the de Rham filtration; and, for quasi-compact X, Frobenius slopes of Hⁱ_HK(X) in [0,min(i,dim X)] (CN25 Proposition 6.1, line 1954; Remark 6.23(ii), line 2231; Lemma 7.13 proof, line 2405).
+
+What CohomologyComparisons must provide (gap:stable-range-period-map): Provide, for a smooth dagger space X over C and integers 0≤i≤r, the syntomic-to-pro-étale period map α_r, an isomorphism on cohomology in degrees ≤r, together with the natural VS and TVS realizations on sympathetic algebras of pro-étale cohomology, of the Hyodo–Kato eigenspace and of filtered B_dR⁺-cohomology, and the compatibility of the left-heart comparison sequence with these realizations (CN25 Proposition 6.1, line 1954; Definition 4.1, line 960; footnote 22, line 2647).
+
+What CohomologyComparisons must provide (gap:stein-affinoid-syntomic-diagram): Provide, for a smooth dagger Stein space or smooth dagger affinoid X over C and r≥0, the degree-r syntomic diagram of CN25 Theorem 6.14: its two strictly exact rows, strict vertical maps with closed image, and the Fréchet, respectively LB, topology on degree-r syntomic cohomology, compatibly with α_r (CN25 Theorem 6.14, line 2098).
+
+What CohomologyComparisons must provide (gap:analytic-exhaustion-descent): Provide, for a smooth dagger space X over C with a countable increasing admissible exhaustion by small quasi-compact open dagger subspaces X_n, the derived-limit descent RΓ(X)≃Rlim_n RΓ(X_n) for the Hyodo–Kato, filtered B_dR⁺-de Rham, syntomic and pro-étale complexes; the vanishing R¹lim_n X_n^(r,i)=0 and R¹lim_n Fbar_n^(r,i)=0; and, for a Stein exhaustion by affinoids, the identification of the derived inverse systems of the dagger pieces with those of their rigid completions after cofinal strict shrinkings (CN25 Remark 8.9(i), line 2601; Proposition 8.12 proof, line 2664).
+
+What CohomologyComparisons must provide (gap:de-rham-quotient-splitting): Provide, for a smooth quasi-compact dagger space X over C, every finite covering of X by smooth dagger affinoids and every integer q, with RΓ^q the degree-q term of the associated Čech–de Rham complex computing RΓ_dR(X/B_dR⁺) in its natural topology, E_q=RΓ^q/im(d^(q−1)), H_q=ker(d^q)/im(d^(q−1))=H^q_dR(X/B_dR⁺) and Q_q=RΓ^q/ker(d^q) with their quotient and subspace topologies, a continuous B_dR⁺-linear retraction E_q→H_q of the inclusion, for the finite-free topology on H_q, whose kernel maps homeomorphically onto Q_q (CN25 Proposition 7.15 proof, lines 2439–2444).
 
 What CohomologyComparisons must provide (gap:overconvergent-crystalline-complex): Provide, for a smooth quasi-compact dagger space X over C, a functorial overconvergent log-crystalline complex RΓ_cris(X) built from semistable weak formal hypercoverings, with its Frobenius, its completion map to the filtered complex RΓ_dR(X/B_dR⁺), and a Frobenius-compatible strict quasi-isomorphism RΓ_cris(X)≃RΓ_HK(X)⊗̂B_cris⁺, not Galois equivariant, with the Hyodo–Kato complex over the completion of Fⁿʳ and compatible with its Fⁿʳ version, distinct from ordinary completed log-crystalline cohomology of a nonproper model (CN25 §7.3, lines 2394–2402).
 
-What CohomologyComparisons must provide (gap:geometric-log-periods): Provide algebraic comparison over C, analytic HK GAGA and the proper logarithmic period sequence for smooth proper rigid pairs with simple normal crossings boundary, retaining the map from the logarithmic filtration to the naive analytic filtration and its compatibility with the common HK and unfiltered de Rham realizations.
+What CohomologyComparisons must provide (gap:algebraic-comparison-over-c): Provide, for a smooth finite-type scheme V over C and every i, weak admissibility of the filtered (φ,N)-module (Hⁱ_HK(V),F⁰Hⁱ_dR(V/B_dR)) over C given by the algebraic geometric period comparison (CN25 Theorem 8.1(b) proof, line 2491).
+
+What CohomologyComparisons must provide (gap:analytic-hk-gaga): Provide, for a smooth finite-type scheme V over C and every i, Hyodo–Kato GAGA: the natural map Hⁱ_HK(V)→Hⁱ_HK(Vᵃⁿ) to the Hyodo–Kato cohomology of the dagger analytification is an isomorphism compatible with φ, N and the de Rham comparisons (CN25 Theorem 8.1(b) proof, line 2493).
+
+What CohomologyComparisons must provide (gap:proper-log-period-sequence): Provide, for a smooth proper rigid space X′ over C with a strict normal crossings divisor D, U=X′∖D and 0≤i≤r, the exact sequence Hⁱ⁻¹_dR(X′,log D/B_dR⁺)→Hⁱ_ét(U,Q_p(r))→`(Hⁱ_HK(U)⊗̂B_st⁺)^(N=0,φ=pʳ)`⊕Hⁱ(FʳRΓ_dR(X′,log D/B_dR⁺))→Hⁱ_dR(X′,log D/B_dR⁺)→0 in LH(C_Q_p), the identification of the Hyodo–Kato and unfiltered B_dR⁺-de Rham cohomology of the log pair with those of U, and the map from the logarithmic filtration to the naive analytic filtration of U compatible with these identifications (CN25 Theorem 8.1(c) proof, lines 2507–2525).
 
 ### From TauCetiRoadmap.ClassicalAdicEtaleCohomology
 
 §§1.3–1.4 supplies the analytic étale/pro-étale coefficient dictionary. §8.4 supplies proper base change and the projection formula in its stated coefficient range; §9.7 supplies proper pairings and integral traces. The perfect integral p-adic coefficient object needed in Layer 4 is the cohomology of the proper factor, not of an arbitrary second factor.
-
 
 What ClassicalAdicEtaleCohomology must provide (gap:proper-rigid-integral-etale): Provide perfect integral Z_p-cohomology for a smooth proper rigid space over C, proper base change for its projection to any smooth rigid factor and the compatible rational étale/pro-étale realization on the quasi-compact completions used in strict Stein exhaustions.
 
@@ -128,7 +143,7 @@ Layer 0 constructs the C-lattice module and its bounded period-Hom calculations.
 
 ### 0.1 filtered modules with a de Rham lattice
 
-A filtered (φ,N)-module over C is a pair (M,L): M is finite dimensional over Fⁿʳ, φ is a bijective σ-semilinear map, N is Fⁿʳ-linear with Nφ=pφN, and L is a finite free B_dR⁺-submodule of M⊗B_dR spanning that module after inverting t. Morphisms are φ,N-equivariant maps carrying L into L′. The topology and period embeddings are the imported ones; C is not embedded canonically in B_dR⁺.
+A filtered (φ,N)-module over C is a pair (M,L): M is finite dimensional over Fⁿʳ, φ is a bijective σ-semilinear map, N is Fⁿʳ-linear with Nφ=pφN, and L is a finite free B_dR⁺-submodule of M⊗B_dR spanning that module after inverting t. Morphisms are φ,N-equivariant maps carrying L into L′. The topology and period embeddings are the imported ones; C is not embedded canonically in B_dR⁺. No Galois action is part of the data over C.
 
 (CN25 §5.3.1, p. 36, CN25 line 1798.)
 
@@ -148,11 +163,6 @@ The defining data and their natural maps have the following API.
 - The zero module with zero lattice has rank 0 and is an object; requiring a positive rank would exclude it.
 - For M=Fⁿʳ, φ=σ, N=0, every tᵐB_dR⁺, m∈Z, is a full lattice; changing m changes the embedded lattice.
 - The zero submodule of B_dR is not a lattice in the rank-one trivial module.
-
-**Checks.**
-
-- Identity and composition preserve the lattice.
-- No Galois action is required over C.
 
 *Needs:* PadicHodgeTheory §3.4, finite Frobenius–monodromy modules; PadicHodgeTheory §§0.2–0.5, coefficient embeddings and period structures; Mathlib `Module.Free` and `Module.Finite`.
 
@@ -178,15 +188,11 @@ The defining data and their natural maps have the following API.
 - For the same M and L=tᵐB_dR⁺ the bundle is O(−m); m=1 has negative slope.
 - The zero pair gives the zero bundle and zero sections.
 
-**Checks.**
-
-- Recover the prescribed two restrictions and their common localization.
-
 *Needs:* §0.1; VectorBundlesAndIsocrystals VB1, Untilts and completed local rings; the period-lattice-gluing contract.
 
-### 0.3 weak admissibility and acyclicity over c
+### 0.3 weak admissibility and acyclicity over C
 
-A pair (M,L) is weakly admissible when E(M,L) is semistable of slope zero; it is acyclic when every Harder–Narasimhan slope of E(M,L) is nonnegative. Both predicates hold for the zero object. The associated-bundle degree is t_H−t_N. It is opposite to the filtered degree t_N−t_H in PadicHodgeTheory §3.4; its destabilizing slopes use t_H−t_N and fix the dictionary for arithmetic comparison. Bundle slopes and BC curvature are distinct invariants.
+A pair (M,L) is weakly admissible when E(M,L) is semistable of slope zero; it is acyclic when every Harder–Narasimhan slope of E(M,L) is nonnegative. Both predicates hold for the zero object. The associated-bundle degree is t_H−t_N. It is opposite to the filtered degree t_N−t_H in PadicHodgeTheory §3.4; its destabilizing slopes use t_H−t_N and fix the dictionary for arithmetic comparison. Bundle slopes and BC curvature are distinct invariants. With this sign, every subobject D′ of a weakly admissible pair satisfies t_H(D′)≤t_N(D′), with equality for the whole module.
 
 (CN25 Definition 5.13 and Remark 5.14(i), p. 36; §5.1.2, p. 32, CN25 line 1807.)
 
@@ -205,10 +211,6 @@ The defining data and their natural maps have the following API.
 - The zero pair has the empty slope list and is acyclic and weakly admissible; requiring a slope-zero nonzero summand fails.
 - The trivial M with L=t⁻¹B_dR⁺ gives O(1): it is acyclic and is not weakly admissible.
 - The trivial M with L=tB_dR⁺ gives O(−1) and is not acyclic.
-
-**Checks.**
-
-- The degree sign matches weak admissibility t_H(D′)≤t_N(D′).
 
 *Needs:* §0.2; VectorBundlesAndIsocrystals VB1, Harder–Narasimhan filtration of geometric bundles; PadicHodgeTheory §5.2, the arithmetic sign dictionary.
 
@@ -235,7 +237,7 @@ A proof route uses the following steps. Apply classification and H⁰/H¹ of slo
 
 ### 0.5 bounded eigenspaces and period kernels
 
-For r∈N, M with φ-slopes in [0,r], and a lattice L satisfying M⊗tʳB_dR⁺⊆tʳL⊆M⊗B_dR⁺, define the VS-valued X_stʳ(M)=`(M⊗B_st⁺)^(N=0,φ=pʳ)` and V_stʳ(M,L)=ker(X_stʳ(M)→(M⊗B_dR⁺)/tʳL). The bounded positive ring is essential: the displayed quotient map is not defined on the unrestricted B_st eigenspace. In the acyclic case this is a short exact sequence and V_stʳ=tʳV_st inside M⊗B_dR. More generally for k≥0 the t⁻ᵏB_st⁺-version maps onto (M⊗t⁻ᵏB_dR⁺)/tʳL iff the pair is acyclic, with the same kernel. For any such M, X_stʳ(M) is a finite BC object of curvature ≤0 and height dim M: it is H⁰ of the nonnegative-slope bundle attached to M{−r} with lattice M⊗B_dR⁺.
+For r∈N, M with φ-slopes in [0,r], and a lattice L satisfying M⊗tʳB_dR⁺⊆tʳL⊆M⊗B_dR⁺, define the VS-valued X_stʳ(M)=`(M⊗B_st⁺)^(N=0,φ=pʳ)` and V_stʳ(M,L)=ker(X_stʳ(M)→(M⊗B_dR⁺)/tʳL). The bounded positive ring is essential: the displayed quotient map is not defined on the unrestricted B_st eigenspace. In the acyclic case this is a short exact sequence and V_stʳ=tʳV_st inside M⊗B_dR. More generally for k≥0 the t⁻ᵏB_st⁺-version maps onto (M⊗t⁻ᵏB_dR⁺)/tʳL iff the pair is acyclic, with the same kernel. For any such M, X_stʳ(M) is a finite BC object of curvature ≤0 and height dim M: it is H⁰ of the nonnegative-slope bundle attached to M{−r} with lattice M⊗B_dR⁺. All maps are natural VS maps whose C-evaluations are the indicated period maps.
 
 The period quotient is a finite-length B_dR⁺ module; after multiplying by tʳ its length is determined by the embedded lattice, not just its abstract free rank. The finite-BC height assertion follows from the identified bundle and the Euler-height theorem; the later period-Hom comparison additionally needs the rank-equals-height Hom theorem.
 
@@ -258,10 +260,6 @@ The defining data and their natural maps have the following API.
 - For r=0 and L=t⁻¹B_dR⁺ the upper bound fails, although the pair is acyclic; do not apply the bounded theorem.
 - Take φ(e₀)=e₀, φ(e₁)=pe₁, N(e₀)=0 and N(e₁)=e₀. With φ(u)=pu and N_B=−d/du, e₁+ue₀ belongs to X_st¹(M); e₁−ue₀ has diagonal monodromy 2e₀ and does not. This tests the imported monodromy sign.
 
-**Checks.**
-
-- All maps are natural Vector Space maps, whose C-evaluations are the indicated period maps.
-
 *Needs:* §§0.1–0.4; PadicHodgeTheory §§0.4–0.5, positive periods; the period-lattice-gluing contract; VectorBundlesAndIsocrystals VB1, Slope-sensitive cohomology of standard bundles, and VB3, Le Bras equivalence and Euler–Poincaré height formula.
 
 ### 0.6 generation of the de Rham lattice
@@ -275,8 +273,9 @@ A proof route uses the following steps. Reduce modulo t by Nakayama. Use the imp
 **Checks.**
 
 - A slope-zero trivial rank-one block at r=0 already generates the whole lattice.
+- Negative control for the slope bound: for M=Fⁿʳe with φ(e)=pe (slope 1) and r=0, X_st⁰(M)=`(B_cris⁺)^(φ=p⁻¹)`e=0, which spans nothing; the hypothesis that the slopes lie in [0,r] cannot be dropped.
 
-*Needs:* §0.5; VectorBundlesAndIsocrystals VB0, Dieudonné–Manin classification of finite isocrystals, and VB3, The fundamental untilt sequence and degree-one divisors; PadicHodgeTheory §0.5, polynomial semistable coordinate.
+*Needs:* §0.5; CrystallineCohomology §CR.4.7, Slope decomposition on the existing isocrystal carrier, applied to M⊗F̂ⁿʳ; VectorBundlesAndIsocrystals VB3, The fundamental untilt sequence and degree-one divisors; PadicHodgeTheory §0.5, polynomial semistable coordinate.
 
 ### 0.7 period-valued Hom from an eigenspace
 
@@ -288,7 +287,9 @@ A proof route uses the following steps. Use generation for injectivity. Use the 
 
 **Checks.**
 
-- The identifications are the evaluation pairings and are functorial in M.
+- For the trivial line M=Fⁿʳe (φ(e)=e, N=0) and r=0, X_st⁰(M)=Q_p·e and both Hom modules are free of rank one, generated by the map sending e to 1, which is the evaluation of e∨⊗1; the zero map is not an isomorphism onto either module.
+- For M=0 both sides are zero.
+- For the trivial line and r=1, X_st¹(M)=`(B_cris⁺)^(φ=p)`, the extension of C by Q_p·t given by θ. Natural VS Hom and Ext¹ from C into B_dR vanish, so Hom_VS(X_st¹(M),B_dR)≅Hom_VS(Q_p·t,B_dR)=B_dR, of rank one as the theorem asserts; Q_p-linear maps of C-points form a far larger module, since C has uncountable Q_p-dimension.
 
 *Needs:* §§0.4–0.6; the natural-period-hom contract, Proposition 3.27(i) rank equality.
 
@@ -302,7 +303,8 @@ A proof route uses the following steps. Apply Hom into B_dR to 0→V_stʳ→X_st
 
 **Checks.**
 
-- The sublattice direction is L′⊆L. The required Ext¹ has target B_dR.
+- Trivial line, r=1, L=B_dR⁺e: the pair is acyclic (bundle O), V_st¹=ker(`(B_cris⁺)^(φ=p)`→C)=Q_p·t, and Hom_VS(Q_p·t,B_dR)=B_dR has rank one, as M∨⊗B_dR does. With L=t⁻¹B_dR⁺e the bounds still hold, the period quotient is zero, V_st¹=`(B_cris⁺)^(φ=p)` and the rank is again one.
+- Negative control for acyclicity: M=Fⁿʳe with φ(e)=pe, r=1 and L=B_dR⁺e satisfy the bounds but give O(−1). Here φ(xe)=pxe forces φ(x)=x, so X_st¹(M)=Q_p·e, which injects into (M⊗B_dR⁺)/tL=C·e; hence V_st¹=0 and both Hom modules vanish instead of having rank one.
 
 *Needs:* §§0.4–0.5 and 0.7; VectorBundlesAndIsocrystals VB3, Curvature-zero finite-length modules and VS Hom vanishing from torsion period modules, for Hom from the finite-length quotient into B_dR; the natural-period-hom contract, for natural Ext¹ from that quotient into B_dR.
 
@@ -317,6 +319,7 @@ A proof route uses the following steps. Choose an admissible L′ between M⊗B_
 **Checks.**
 
 - For r=0 the asserted annihilators are 1, so the map is an isomorphism.
+- Trivial line, L=B_dR⁺e, r=1, k=2: V_st¹=Q_p·t, Hom_VS(Q_p·t,B_dR⁺/t²)=B_dR⁺/t² by evaluation at t, and the evaluation map is multiplication by t on B_dR⁺/t². Its kernel tB_dR⁺/t² is killed by t=tʳ and its cokernel B_dR⁺/t=C is killed by t, within the bound t²ʳ; the map is not an isomorphism, so no finite-k isomorphism is asserted.
 
 *Needs:* §§0.4–0.5 and 0.8; the bounded sublattice refinement in §0.4; VectorBundlesAndIsocrystals VB3, Curvature-zero finite-length modules, identifying natural VS maps between finite-length B_dR⁺-modules with B_dR⁺-linear maps, and VS Hom vanishing from torsion period modules.
 
@@ -326,13 +329,13 @@ For M=Fⁿʳ with φ=σ and N=0, the lattices tᵐB_dR⁺ for m=−1,0,1 give O(
 
 ### Dependencies
 
-Mathlib module and period carriers; PadicHodgeTheory §§0.2–0.5, 3.4–3.7 and 5.2; VectorBundlesAndIsocrystals VB0–VB3; period-lattice-gluing, natural-period-hom and bounded-arithmetic-filtration contracts.
+Mathlib module and period carriers; PadicHodgeTheory §§0.2–0.5, 3.4–3.7 and 5.2; VectorBundlesAndIsocrystals VB1–VB3; CrystallineCohomology §CR.4.7; period-lattice-gluing, natural-period-hom and bounded-arithmetic-filtration contracts.
 
 ## Layer 1: the analytic fundamental diagram
 
 ### 1.1 filtered cohomology and its image filtration
 
-For a smooth dagger X/C use the analytic cohomology package of the exact analytic-syntomic-descent contract to set Bⁱ=Hⁱ_dR(X/B_dR⁺), Fʳⁱ=Hⁱ(FʳRΓ_dR(X/B_dR⁺)), DRʳⁱ=Hⁱ(RΓ_dR/Fʳ), Filʳⁱ=im(Fʳⁱ→Bⁱ) and Aʳⁱ=ker(Fʳⁱ→Bⁱ). Set Hʳⁱ=Hⁱ_proét(X,Q_p(r)) for i≤r and Xʳⁱ=`(Hⁱ_HK(X)⊗̂B_st⁺)^(N=0,φ=pʳ)`; joint invariants at complex level are derived. Tildes denote left-heart cohomology, ordinary letters its classical part, and bold letters the natural TVS/VS realization when supplied. Filter Bⁱ[1/t] by images of filtered complexes. Fʳⁱ is not identified with Filʳⁱ.
+For a smooth dagger X/C use the analytic complexes of the dagger-analytic-complexes contract and the period map of the stable-range-period-map contract to set Bⁱ=Hⁱ_dR(X/B_dR⁺), Fʳⁱ=Hⁱ(FʳRΓ_dR(X/B_dR⁺)), DRʳⁱ=Hⁱ(RΓ_dR/Fʳ), Filʳⁱ=im(Fʳⁱ→Bⁱ) and Aʳⁱ=ker(Fʳⁱ→Bⁱ). Set Hʳⁱ=Hⁱ_proét(X,Q_p(r)) for i≤r and Xʳⁱ=`(Hⁱ_HK(X)⊗̂B_st⁺)^(N=0,φ=pʳ)`; joint invariants at complex level are derived. Tildes denote left-heart cohomology, ordinary letters its classical part, and bold letters the natural TVS/VS realization when supplied. Filter Bⁱ[1/t] by images of filtered complexes. Fʳⁱ is not identified with Filʳⁱ.
 
 (CN25 §7.1.1 and §§7.2.1–7.2.2, pp. 46–47; Proposition 6.1, pp. 39–40 (import contract), CN25 line 2294.)
 
@@ -352,15 +355,11 @@ The defining data and their natural maps have the following API.
 - For a positive-dimensional smooth dagger affinoid at degree r=1, A¹¹≅O(X)/ker d; for a disc this is O(X)/C and is nonzero.
 - For i<0 all the listed cohomology groups vanish; in particular the degree-zero failure sequence has no H⁻¹ term.
 
-**Checks.**
-
-- The diagram is first formed in the left heart; taking classical parts is explicitly labelled.
-
-*Needs:* AdicSpacesPartIV F1.7 and F1.9, dagger spaces and de Rham complexes; LocallyAnalyticDistributions §0.0, strict derived left heart; CohomologyComparisons §4.9a and the analytic-syntomic-descent contract.
+*Needs:* AdicSpacesPartIV F1.7 and F1.9, dagger spaces and de Rham complexes; LocallyAnalyticDistributions §0.0, strict derived left heart; CohomologyComparisons §4.9a; the dagger-analytic-complexes contract, for the complexes and their filtered triangle; the stable-range-period-map contract, for Hʳⁱ with i≤r; the bounded-below strict derived category of the strict-countable-derived-limits contract, for complexes of unbounded amplitude.
 
 ### 1.2 small dagger varieties
 
-A smooth dagger variety X/C is small when Bⁱ=Hⁱ_dR(X/B_dR⁺) is finite free over B_dR⁺ for every i≥0, as in the operational convention of §7.2. The analytic Hyodo–Kato isomorphism then identifies its rank with dim_Fⁿʳ Hⁱ_HK(X) and with dim_C Hⁱ_dR(X). Quasi-compact smooth dagger spaces, naive interiors of quasi-compact spaces, and algebraic analytifications are the source examples; those examples require the corresponding finiteness and base-change inputs, not a definition by quasi-compactness.
+A smooth dagger variety X/C is small when Bⁱ=Hⁱ_dR(X/B_dR⁺) is finite free over B_dR⁺ for every i≥0, as in the operational convention of §7.2. The analytic Hyodo–Kato isomorphism then identifies its rank with dim_Fⁿʳ Hⁱ_HK(X) and with dim_C Hⁱ_dR(X). Quasi-compact smooth dagger spaces, naive interiors of smooth dagger affinoids, and algebraic analytifications are the source examples; a naive interior of a smooth dagger affinoid Y is a Stein open subvariety of Y whose complement in Y is open and quasi-compact (CN1 Corollary 3.6 proof, p.26, CN1 line 1163; CN25 footnote 20, line 2302). For the closed dagger disc, the open unit disc is a naive interior, with complement the affinoid annulus {|T|=1}; the closed disc itself is not, since Stein spaces are partially proper and an affinoid of positive dimension is not. These examples require the corresponding finiteness and base-change inputs, not a definition by quasi-compactness.
 
 (CN25 §7.2, p. 46; §1.2.3 and Remark 1.10, pp. 5–6, CN25 line 2289.)
 
@@ -380,17 +379,13 @@ The defining data and their natural maps have the following API.
 - The dagger closed disc is small although its H¹_proét is infinite dimensional over Q_p.
 - A countable disjoint union of geometric points is not small: B⁰ is the product of countably many B_dR⁺ modules and is not finite free.
 
-**Checks.**
-
-- Smallness is required in all degrees and is not a bound on Q_p-dimension of pro-étale cohomology.
-
-*Needs:* §1.1; Mathlib `Module.Free` and `Module.Finite`; the dagger-de-rham-finiteness-over-c contract, finite de Rham cohomology of the three example classes; the Hyodo–Kato and B_dR⁺ comparisons of the analytic-syntomic-descent contract.
+*Needs:* §1.1; Mathlib `Module.Free` and `Module.Finite`; the dagger-de-rham-finiteness-over-c contract, finite de Rham cohomology of the three example classes; the Hyodo–Kato and B_dR⁺ comparisons of the dagger-analytic-complexes contract.
 
 ### 1.3 the fundamental diagram
 
 For every smooth dagger X/C and 0≤i≤r form the natural commutative square with upper row H̃ʳⁱ→X̃ʳⁱ and lower row F̃ʳⁱ→B̃ⁱ, using the syntomic period map and the map of triangles with common term RΓ_dR/Fʳ. The associated two maps are u=(a,b):H̃ʳⁱ→X̃ʳⁱ⊕F̃ʳⁱ and v=(c,−d):X̃ʳⁱ⊕F̃ʳⁱ→B̃ⁱ. Thus vu=0. X̃ and B̃ are classical. The general assertion that this square is bicartesian is Conjecture 6.21, not an unconditional theorem.
 
-(CN25 §6.4 and Conjecture 6.21, pp. 43–44; square (6.16) and sequence (6.17), p.43 (difference-map convention), CN25 line 2185.)
+(CN25 §6.4 and Conjecture 6.21, pp. 43–44; square (6.16) and sequence (6.17), p.43, CN25 lines 2117–2128 and 2185, whose plus sign is replaced here by the difference map, so that v∘u=0.)
 
 A proof route uses the following steps. Form the syntomic and filtered de Rham triangles and their compatible maps. Take left-heart cohomology and the truncation isomorphism α_r. Use the existing BicartesianSq predicate; in the abelian left heart it is equivalent to the sequence 0→H̃→X̃⊕F̃→B̃→0 being exact, with the stated minus sign.
 
@@ -408,11 +403,7 @@ The defining data and their natural maps have the following API.
 - For that square v(1,1)=0; using c+d instead gives 2≠0.
 - Exactness of a sequence of underlying vector spaces alone does not certify BicartesianSq in LH(C_Q_p); a dense nonclosed inclusion must retain its left-heart cokernel.
 
-**Checks.**
-
-- Both routes around the square agree; their difference, rather than their sum, kills u.
-
-*Needs:* §1.1; Mathlib `CategoryTheory.BicartesianSq`; the stable-range period morphism and triangle of the analytic-syntomic-descent contract; LocallyAnalyticDistributions §0.0, strict left-heart cohomology.
+*Needs:* §1.1; Mathlib `CategoryTheory.BicartesianSq`; the stable-range period morphism of the stable-range-period-map contract and the filtered triangle of the dagger-analytic-complexes contract; LocallyAnalyticDistributions §0.0, strict left-heart cohomology.
 
 ### 1.4 twist invariance and the surjectivity reduction
 
@@ -424,9 +415,10 @@ A proof route uses the following steps. Apply the exact rows and columns for t m
 
 **Checks.**
 
-- Surjectivity at a single isolated degree is not used to infer injectivity at the same degree.
+- Point at i=0, from r=0 to r=1: multiplication by t sends H̃⁰⁰=Q_p onto H̃¹⁰=Q_p·t and F⁰⁰=B_dR⁺ onto F¹⁰=tB_dR⁺, and X¹⁰/tX⁰⁰=`(B_cris⁺)^(φ=p)`/Q_p·t≅C=B⁰/tB⁰ through θ, as the Hyodo–Kato identification requires in degree zero.
+- Point at i=r=0: X⁰⁰⊕F⁰⁰=Q_p⊕B_dR⁺→B_dR⁺, (x,f)↦x−f, is onto with kernel the diagonal Q_p=H⁰⁰; the degree −1 groups are zero, so this surjectivity alone gives the short exact sequence in degree zero, whereas in degree one the induction also uses the degree-zero surjectivity.
 
-*Needs:* §1.3; §0.5, successive t-level comparisons; the filtered-complex t-shift and HK comparison of the analytic-syntomic-descent contract.
+*Needs:* §1.3; §0.5, successive t-level comparisons; the filtered-complex t-shift and HK comparison of the dagger-analytic-complexes contract.
 
 ### 1.5 the simplified Stein and affinoid diagram
 
@@ -442,7 +434,7 @@ A proof route uses the following steps. Import the syntomic Stein diagram and α
 
 - The top row is pro-étale, and its differential-form kernel on a disc is nonzero.
 
-*Needs:* §1.3; AdicSpacesPartIV F1.9 and the dagger-strictness-kunneth-over-c contract, strict differentials over C; the Stein syntomic diagram, period comparison and natural topologies of the analytic-syntomic-descent contract.
+*Needs:* §1.3; AdicSpacesPartIV F1.9 and the dagger-strictness-kunneth-over-c contract, strict differentials over C; the Stein and affinoid syntomic diagram, its strict maps and natural topologies of the stein-affinoid-syntomic-diagram contract.
 
 ### 1.6 bicartesian diagrams for proper, Stein and affinoid spaces
 
@@ -464,13 +456,13 @@ For a geometric point at i=r=0 the square has upper identity Q_p→Q_p and lower
 
 ### Dependencies
 
-Layer 0; AdicSpacesPartIV F1.7–F1.12; CohomologyComparisons §§4.9a–4.11; LocallyAnalyticDistributions §0.0; analytic-syntomic-descent, dagger-de-rham-finiteness-over-c and dagger-strictness-kunneth-over-c contracts.
+Layer 0; AdicSpacesPartIV F1.7–F1.12; CohomologyComparisons §§4.9a–4.11; LocallyAnalyticDistributions §0.0; dagger-analytic-complexes, stable-range-period-map, stein-affinoid-syntomic-diagram, strict-countable-derived-limits, dagger-de-rham-finiteness-over-c and dagger-strictness-kunneth-over-c contracts.
 
 ## Layer 2: the qBC filtration and comparison criteria
 
 ### 2.1 bundle cohomology measuring the diagram
 
-For small X, i≥0, r≥0 and n=0,1 put hⁿ_i(r)=Hⁿ(X_FF,E(Hⁱ_HK(X){−r},FilʳHⁱ_dR(X/B_dR))), as a finite BC object. Here {−r} multiplies φ by p⁻ʳ and leaves N fixed, and the lattice is the induced Filʳ lattice in Bⁱ[1/t]. Use hⁿ₋₁(r)=0. In the range 0≤i≤r, and also in every nonnegative degree for quasi-compact X when r≥dim X, the tʳ-period isomorphism identifies this modified bundle with the untwisted pair (Hⁱ_HK,F⁰Hⁱ_dR(X/B_dR)); the simultaneous change of φ and lattice is essential.
+For small X, i≥0, r≥0 and n=0,1 put hⁿ_i(r)=Hⁿ(X_FF,E(Hⁱ_HK(X){−r},FilʳHⁱ_dR(X/B_dR))), as a finite BC object. Here {−r} multiplies φ by p⁻ʳ and leaves N fixed, and the lattice is the induced Filʳ lattice in Bⁱ[1/t]. Use hⁿ₋₁(r)=0. In the range 0≤i≤r, and also in every nonnegative degree for quasi-compact X when r≥dim X, the tʳ-period isomorphism identifies this modified bundle with the untwisted pair (Hⁱ_HK,F⁰Hⁱ_dR(X/B_dR)); the simultaneous change of φ and lattice is essential. The lattice is the image filtration Filʳ; the torsion kernel Aʳⁱ is not part of it.
 
 (CN25 §7.2.2 and Lemma 7.7, p. 47; proof of Proposition 7.10, p. 48, CN25 line 2333.)
 
@@ -490,10 +482,6 @@ The defining data and their natural maps have the following API.
 - For a point at i=0,r=1, φ=p⁻¹ and lattice tB_dR⁺ cancel to give O again; twisting only the lattice would give O(−1).
 - A zero HK group with zero lattice gives h⁰=h¹=0; adjoining a constant Q_p summand to the construction would fail.
 
-**Checks.**
-
-- The lattice uses the image filtration; Aʳⁱ is not part of that lattice.
-
 *Needs:* §§0.2 and 1.1–1.2; §1.4, simultaneous twists; VectorBundlesAndIsocrystals VB3, finite BC realization of coherent cohomology.
 
 ### 2.2 kernel and cokernel descriptions
@@ -507,8 +495,10 @@ A proof route uses the following steps. The two-chart cohomology complex gives t
 **Checks.**
 
 - At i=0 the preceding-degree kernel is zero.
+- Point, i=0, r=1: X¹⁰⊕Fil¹⁰=`(B_cris⁺)^(φ=p)`⊕tB_dR⁺→B_dR⁺, (x,f)↦x−f, has kernel the diagonal copy of `(B_cris⁺)^(φ=p)`∩tB_dR⁺=Q_p·t, which is h⁰₀(1)=H⁰(O) realized through t, and it is onto because θ maps `(B_cris⁺)^(φ=p)` onto C, matching h¹₀(1)=H¹(O)=0.
+- Dagger disc D, i=r=1: HK¹=0 and B¹=0, so h⁰₁(1)=h¹₁(1)=0, and ker(H¹¹→X¹¹⊕F¹¹)=ker(O(D)/C→0⊕O(D)/C)=0=h¹₀(1).
 
-*Needs:* §§2.1 and 1.3; §0.5, two-chart period quotient; natural TVS lift from the analytic-syntomic-descent contract.
+*Needs:* §§2.1 and 1.3; §0.5, two-chart period quotient; natural TVS lift from the stable-range-period-map contract.
 
 ### 2.3 the canonical qBC filtration on pro-étale cohomology
 
@@ -535,15 +525,11 @@ The defining data and their natural maps have the following API.
 - For the dagger disc at i=r=1, HK¹=0, so both finite pieces vanish while A¹¹=O(X)/C and H¹_proét≅A¹¹.
 - For a point in degree zero the negative piece is Q_p of height one, not curvature zero merely because it has C-dimension zero.
 
-**Checks.**
-
-- The assertion does not replace an infinite torsion Pair by a finite-length module.
-
 *Needs:* §2.2; §1.1; the qbc-pairs contract, recognition and uniqueness of the curvature filtration.
 
 ### 2.4 the exact sequence with two failure terms
 
-For small X and 0≤i≤r there is a natural exact sequence of TVS objects 0→h¹ᵢ₋₁(r)→Hʳⁱ→Fʳⁱ⊕Xʳⁱ→Bⁱ→h¹_i(r)→0, where H→F⊕X is (b,a) and F⊕X→B sends (f,x) to c(x)−d(f). Consequently the fundamental diagram in degree i is bicartesian exactly when both h¹ᵢ₋₁(r) and h¹_i(r) vanish.
+For small X and 0≤i≤r there is a natural exact sequence of TVS objects 0→h¹ᵢ₋₁(r)→Hʳⁱ→Fʳⁱ⊕Xʳⁱ→Bⁱ→h¹_i(r)→0, where H→F⊕X is (b,a) and F⊕X→B sends (f,x) to c(x)−d(f). Consequently the fundamental diagram in degree i is bicartesian exactly when both h¹ᵢ₋₁(r) and h¹_i(r) vanish. Surjectivity of F⊕X→B alone controls only h¹_i(r); the preceding term h¹ᵢ₋₁(r) is the kernel of H→F⊕X.
 
 (CN25 Corollary 7.9(ii), p. 47; Proposition 7.10(a)–(b), p. 48, CN25 line 2354.)
 
@@ -551,9 +537,10 @@ A proof route uses the following steps. Combine the kernel description with the 
 
 **Checks.**
 
-- The criterion requires the preceding-degree failure term as well as the degree-i term.
+- Point, i=0, r=1: the sequence is 0→0→Q_p·t→tB_dR⁺⊕`(B_cris⁺)^(φ=p)`→B_dR⁺→0→0, exact, with kernel of (f,x)↦x−f the diagonal copy of Q_p·t.
+- Dagger disc D, i=r=1: the sequence is 0→0→O(D)/C→O(D)/C⊕0→0→0→0, exact; the horizontal kernel ker(H→X) is all of O(D)/C although both failure terms vanish.
 
-*Needs:* §§2.2–2.3; §1.3; the TVS and left-heart compatibility of the analytic-syntomic-descent contract.
+*Needs:* §§2.2–2.3; §1.3; the TVS and left-heart compatibility of the stable-range-period-map contract.
 
 ### 2.5 the height formula and its sign
 
@@ -567,7 +554,7 @@ A proof route uses the following steps. The Pair piece has height zero and qBC h
 
 **Checks.**
 
-- Height is a signed BC/qBC invariant, not the ordinary dimension of an infinite Q_p-vector space.
+- Point, r=0: ht(H⁰⁰)=ht(Q_p)=1=dim HK⁰+0+0. Dagger disc, r=1: ht(H¹¹)=ht(O(D)/C)=0=dim HK¹+0+0, although O(D)/C has infinite Q_p-dimension; Q_p-dimension in place of height would put ∞ on the left.
 
 *Needs:* §2.3; §1.2, HK rank comparison; VectorBundlesAndIsocrystals VB3, Euler–Poincaré height formula, and VB1, Slope-sensitive cohomology of standard bundles; signed height additivity of the qbc-pairs contract.
 
@@ -583,9 +570,10 @@ A proof route uses the following steps. Use the failure exact sequence and acycl
 
 **Checks.**
 
-- The single-degree curvature condition is not substituted for the pair of degree-r and degree-(r+1) conditions.
+- Point, r=0: the square is bicartesian; h¹₋₁(0)=0 and h¹₀(0)=H¹(O)=0; the pair (Fⁿʳ,B_dR⁺) is acyclic; H⁰⁰=Q_p has curvature <0, and H_syn¹(pt,0)=coker(Q_p⊕B_dR⁺→B_dR⁺)=0 because 1−φ is onto B_cris⁺ and F⁰=B_dR⁺; ht(H⁰⁰)=1=dim_C H⁰_dR. All five conditions hold.
+- Dagger disc, r=1: the square is bicartesian (§1.6); h¹₀(1)=h¹₁(1)=0; the pairs in degrees 0 and 1 are O and the zero pair; ht(H¹¹)=0=dim_C H¹_dR(D).
 
-*Needs:* §§2.1 and 2.4–2.5; §0.4; the adjacent syntomic positive piece obtained from the analytic-syntomic-descent triangle and the qbc-pairs recognition theorem.
+*Needs:* §§2.1 and 2.4–2.5; §0.4; the adjacent syntomic positive piece obtained from the filtered fiber triangle of the dagger-analytic-complexes contract and the qbc-pairs recognition theorem.
 
 ### 2.7 the four conjectural properties for a small variety
 
@@ -599,7 +587,8 @@ A proof route uses the following steps. Vary r in the degreewise equivalence and
 
 **Checks.**
 
-- All degrees are quantified; a height identity in one degree is not used to prove acyclicity in every degree.
+- Dagger disc: degree 0 gives the pair O and ht(Q_p)=1=dim_C H⁰_dR; degree 1 gives the zero pair and ht(O(D)/C)=0=dim_C H¹_dR; higher degrees vanish. All four families hold.
+- Negative control for the quantifier over all degrees: height bookkeeping with the pair O in degree 0 and a rank-one degree-2 pair with bundle O(−1) satisfies the identity in degree 0 (1=1) but not in degree 2, where the height is 1+ht(h¹₂(2))=1−1=0≠1. A single-degree identity does not give acyclicity in every degree.
 
 *Needs:* §2.6; §1.4; §2.1, simultaneous twists of finite failure objects.
 
@@ -613,25 +602,26 @@ A proof route uses the following steps. Use the non-equivariant crystalline–HK
 
 **Checks.**
 
-- Changing cocycle lifts may change the splitting; no naturality assertion is added.
 - For a point (dim X=0, r=0) the complex is B_cris⁺ in degree 0; its derived φ=1 eigenspace [B_cris⁺ —(1−φ)→ B_cris⁺] has H⁰=Q_p and H¹=0, since 1−φ is onto B_cris⁺, matching `(B_st⁺)^(N=0,φ=1)`=Q_p. At r=1 the same point gives `(B_cris⁺)^(φ=p)` in degree 0 and again nothing in degree 1.
 - On the closed dagger disc the overconvergent realization has HK¹=0, as the formula requires. Ordinary completed crystalline cohomology of the smooth formal disc is built from the Tate algebra, whose de Rham H¹ contains the class of ω=Σ_(n≥1) pⁿT^(pⁿ−1)dT: its coefficients tend to 0, but its formal primitive Σ_(n≥1) T^(pⁿ) does not converge on the closed unit disc, while ω is a limit of the exact partial sums. Substituting that complex would add a nonzero, non-Hausdorff degree-one term.
 
-*Needs:* §0.6; §1.2; VectorBundlesAndIsocrystals VB0, Dieudonné–Manin classification; the overconvergent-crystalline-complex contract, for RΓ_cris(X), its Frobenius and its comparison with the completed-unramified Hyodo–Kato complex.
+*Needs:* §0.6; §1.2; CrystallineCohomology §CR.4.7, Slope decomposition on the existing isocrystal carrier, applied to Hⁱ_HK(X) over F̂ⁿʳ; the slope bound of the dagger-analytic-complexes contract; the overconvergent-crystalline-complex contract, for RΓ_cris(X), its Frobenius and its comparison with the completed-unramified Hyodo–Kato complex.
 
 ### 2.9 a noncanonical decomposition of syntomic cohomology
 
-For smooth quasi-compact dagger X/C and r≥dim X, every natural syntomic TVS H_synⁱ(X,r) is isomorphic, noncanonically, to h¹ᵢ₋₁(r)⊕h⁰_i(r)⊕P_i, where P_i is a reasonable B_dR⁺-Pair representing the curvature-zero piece. For i≤r this decomposes pro-étale cohomology through α_r. It does not prove that the canonical qBC filtration splits canonically or that every qBC splits.
+For smooth quasi-compact dagger X/C and r≥dim X, every natural syntomic TVS H_synⁱ(X,r) is isomorphic, noncanonically, to h¹ᵢ₋₁(r)⊕h⁰_i(r)⊕P_i, where P_i is a reasonable B_dR⁺-Pair representing the curvature-zero piece. For i≤r this decomposes pro-étale cohomology through α_r. It does not prove that the canonical qBC filtration splits canonically or that every qBC splits. The comparison classes of Layer 3 and the theorems of Layers 4–5 do not depend on this decomposition.
 
 (CN25 Proposition 7.15, pp. 49–50, CN25 line 2424.)
 
-A proof route uses the following steps. Replace the crystalline eigenspace complex by its split cohomology complex. Represent the syntomic fiber by the explicit three-term total complex and remove an acyclic differential-image complex. Use finite free de Rham cohomology, compact-type reflexivity, extension of continuous forms and the open mapping theorem to choose period-linear complements. The remaining kernel and cokernel are h⁰_i and h¹ᵢ₋₁; reduce the middle Pair modulo tʳ.
+A proof route uses the following steps. Replace the crystalline eigenspace complex by its split cohomology complex. Represent the syntomic fiber by the explicit three-term total complex and remove an acyclic differential-image complex. Choose a continuous B_dR⁺-linear complement of Hⁱ⁻¹_dR(X/B_dR⁺) in RΓ^(i−1)/im d mapping homeomorphically onto RΓ^(i−1)/ker d, as in the de-rham-quotient-splitting contract; the source's route uses finite free de Rham cohomology, compact-type reflexivity, extension of continuous forms and the open mapping theorem. The remaining kernel and cokernel are h⁰_i and h¹ᵢ₋₁; reduce the middle Pair modulo tʳ.
 
 **Checks.**
 
-- The theorem is independent of the proofs of the final comparison cases: do not make Theorem 8.1 depend on it.
+- Point, r=i=0: H_syn⁰=Q_p=h¹₋₁(0)⊕h⁰₀(0)⊕P₀ with h¹₋₁(0)=0, h⁰₀(0)=Q_p and P₀=0.
+- Dagger disc D, i=r=1: h¹₀(1)=0 and h⁰₁(1)=0 since HK¹=0, so H_syn¹(D,1)≅H¹_proét(D,Q_p(1))≅O(D)/C is the Pair term P₁ alone, of height 0.
+- The splitting input in degree q=0 on the dagger disc: E₀=O(D)⊗̂B_dR⁺ (there is no image in degree 0), H₀=B_dR⁺ the constants and Q₀=E₀/B_dR⁺. Evaluation at the origin, f↦f(0), is a continuous B_dR⁺-linear retraction onto H₀; its kernel, the functions vanishing at 0, maps bijectively and homeomorphically onto Q₀. For a point, E₀=H₀=B_dR⁺ and Q₀=0.
 
-*Needs:* §§2.3 and 2.8; LocallyAnalyticDistributions §§0.0–0.2, compact-type duality and open mapping; the compact-extension-duality contract; reasonable Pairs from the qbc-pairs contract.
+*Needs:* §§2.3 and 2.8; LocallyAnalyticDistributions §§0.0–0.2, compact-type duality and open mapping; the de-rham-quotient-splitting contract, for the continuous complement in degree i−1; reasonable Pairs from the qbc-pairs contract.
 
 ### Examples
 
@@ -639,7 +629,7 @@ At a point, h⁰=Q_p, h¹=0 and A=0, so the qBC graded pieces are (0,0,Q_p) and 
 
 ### Dependencies
 
-Layers 0–1; finite BC and coherent bundle cohomology from VectorBundlesAndIsocrystals VB1–VB3; qbc-pairs and analytic-syntomic-descent contracts. Only the splitting branch uses compact-extension-duality.
+Layers 0–1; finite BC and coherent bundle cohomology from VectorBundlesAndIsocrystals VB1–VB3; qbc-pairs, dagger-analytic-complexes and stable-range-period-map contracts. Only the splitting branch uses de-rham-quotient-splitting and overconvergent-crystalline-complex.
 
 ## Layer 3: geometric classes with nonnegative de Rham slopes
 
@@ -665,10 +655,6 @@ The defining data and their natural maps have the following API.
 - A smooth dagger affinoid has the predicate by the elementary diagram, smallness and §2.7; in particular the dagger disc does.
 - The countable disjoint union of points does not have the predicate, because it is not small even though its components have it.
 
-**Checks.**
-
-- The smallness condition is included, even when acyclicity is used as shorthand.
-
 *Needs:* §§0.3 and 1.2; §2.7 for the API equivalences.
 
 ### 3.2 nonnegative de Rham slopes for products
@@ -681,9 +667,10 @@ A proof route uses the following steps. The de Rham Künneth isomorphism over C 
 
 **Checks.**
 
-- The claim is about de Rham/HK Künneth, not a general algebraic tensor-product formula for pro-étale cohomology.
+- Two dagger discs: each factor and D×D have de Rham dimensions (1,0,0), as Künneth requires. Pro-étale cohomology has no such tensor formula: H¹_proét(D×D,Q_p(1))≅O(D×D)/C, and the class of TS is not in the span of the two pulled-back copies of O(D)/C, since ∂²(TS)/∂T∂S=1 whereas f(T)+g(S) has mixed derivative 0.
+- Two dagger annuli: dimensions (1,1) and (1,1) give (1,2,1) for the product, with degree-two generator dT/T∧dS/S.
 
-*Needs:* §3.1; §0.4, tensor acyclicity and torsion modification; the de Rham Künneth isomorphism over C of the dagger-strictness-kunneth-over-c contract; cup products and their compatibility with the HK and filtered B_dR⁺ comparisons from the analytic-syntomic-descent contract.
+*Needs:* §3.1; §0.4, tensor acyclicity and torsion modification; the de Rham Künneth isomorphism over C of the dagger-strictness-kunneth-over-c contract; cup products and their compatibility with the HK and filtered B_dR⁺ comparisons from the dagger-analytic-complexes contract.
 
 ### 3.3 algebraic analytifications have nonnegative slopes
 
@@ -695,9 +682,10 @@ A proof route uses the following steps. Use the algebraic period comparison to o
 
 **Checks.**
 
-- The result includes nonproper V; it does not replace analytic pro-étale cohomology by algebraic étale cohomology.
+- V=A¹: algebraic and analytic de Rham cohomology are both (1,0), and the degree-zero pair is O. Algebraic étale H¹(A¹_C,Q_p)=0, whereas H¹_proét(A¹ᵃⁿ,Q_p(1))≅O(A¹ᵃⁿ)/C≠0 by the Stein diagram with HK¹=0; replacing analytic pro-étale cohomology by algebraic étale cohomology loses this group.
+- V=G_m: H¹_HK is a line with φ=p and H¹_dR is spanned by dT/T with Hodge jump 1; the algebraic and analytic pairs coincide, with lattice t⁻¹B_dR⁺ and bundle degree 1−1=0, so the pair is O.
 
-*Needs:* §3.1; §0.4, torsion modifications; AdicSpacesPartIV F1.8, dagger analytification; CohomologyComparisons §4.8 and the geometric-log-periods contract, algebraic comparison over C and HK GAGA.
+*Needs:* §3.1; §0.4, torsion modifications; AdicSpacesPartIV F1.8, dagger analytification; CohomologyComparisons §4.8; the algebraic-comparison-over-c and analytic-hk-gaga contracts.
 
 ### 3.4 almost proper varieties have nonnegative slopes
 
@@ -711,7 +699,7 @@ A proof route uses the following steps. First discard the connected components o
 
 - For Z=∅ the result is the proper case. For Z=X the complement is empty and every cohomology group is 0. A singular or nonreduced boundary has the same complement as its reduced support, while the resolution input must still cover the proper rigid pair.
 
-*Needs:* §3.1; §1.4, surjectivity induction; PadicHodgeTheory §2.7, `properRigidLogResolution`, through the proper-pair-resolution-over-c contract; the exact logarithmic sequence of geometric-log-periods and its identification of HK and unfiltered de Rham cohomology of U with those of the proper log pair, whose finiteness gives smallness.
+*Needs:* §3.1; §1.4, surjectivity induction; PadicHodgeTheory §2.7, `properRigidLogResolution`, through the proper-pair-resolution-over-c contract; the exact logarithmic sequence of the proper-log-period-sequence contract and its identification of HK and unfiltered de Rham cohomology of U with those of the proper log pair, whose finiteness gives smallness.
 
 ### 3.5 the logarithmic and naive filtration discrepancy
 
@@ -725,7 +713,7 @@ A proof route uses the following steps. Compare the logarithmic period and analy
 
 - For a proper pair with empty boundary both discrepancy complexes are zero.
 
-*Needs:* §3.4; §1.3; the compatible logarithmic and naive triangles of geometric-log-periods.
+*Needs:* §3.4; §1.3; the compatible logarithmic and naive filtrations of the proper-log-period-sequence contract.
 
 ### 3.6 comparison for semistable tube complements
 
@@ -739,10 +727,10 @@ A proof route uses the following steps. Use Grosse-Klönne Corollary 3.8(a),(c) 
 
 **Checks.**
 
-- Both intersection and union versions require the stated coordinate description; an arbitrary closed formal subscheme is not covered.
+- Empty intersection (m=s): the boundary is the whole model, so 𝔛_K∖𝔝_K and U are both empty and the restriction is the zero map of zero complexes. Empty union: U is the whole generic fibre and the restriction is the identity.
 - For the weak formal projective line and the infinity section, restriction from the affine line to the dagger closed unit disc is not a quasi-isomorphism on gr⁰ of the naive Hodge filtration: (1−πT)⁻¹ is overconvergent on the disc but has a pole on the affine line. This rules out the stronger filtered-complex claim without affecting unfiltered de Rham invariance or the lattice-inclusion argument.
 
-*Needs:* §3.4; §0.4, lattice enlargement; AdicSpacesPartIV F1.16, formal tubes; geometric-finiteness-tubes, the unfiltered de Rham quasi-isomorphism of the semistable tube restriction over K and over C; the natural Hyodo–Kato comparison of analytic-syntomic-descent and §1.1 pullback of filtered cohomology, for the HK identification and the full-lattice inclusion; dagger-de-rham-finiteness-over-c, smallness of the quasi-compact U_C.
+*Needs:* §3.4; §0.4, lattice enlargement; AdicSpacesPartIV F1.16, formal tubes; geometric-finiteness-tubes, the unfiltered de Rham quasi-isomorphism of the semistable tube restriction over K and over C; the natural Hyodo–Kato comparison of dagger-analytic-complexes and §1.1 pullback of filtered cohomology, for the HK identification and the full-lattice inclusion; dagger-de-rham-finiteness-over-c, smallness of the quasi-compact U_C.
 
 ### 3.7 small tubular neighbourhoods in projective space
 
@@ -765,15 +753,11 @@ The tube Z(ε) has the following API.
 - Non-unit rescaling: the equation πT with the same ε gives {|T|≤1}, the whole chart, which contains T=1; a definition that ignored rescaling of the equations would not determine the radius.
 - Monotonicity: the radius |π|² gives {|T|≤|π|²}, which contains T=π² but not T=π, whereas both points lie in the tube of radius |π|.
 - Degenerate index sets: with c=0 equations the intersection tube is the whole chart and its complement is empty; the empty union of tubes is empty and its complement is the whole chart.
+- On P¹ with Z=∞, coordinate S=1/T near ∞, f=S and ε=|π|: the closed tube is {|S|≤|π|}, its complement is the open disc {|T|<|π|⁻¹}, and the pieces U_ε′={|S|≥ε′}={|T|≤1/ε′} for |π|<ε′<1 are closed discs exhausting it. Each has de Rham cohomology (K,0), as do the open disc and A¹=P¹∖Z. Grosse-Klönne's U for the radius |π| itself is the closed disc {|T|≤|π|⁻¹}, which also contains the circle |T|=|π|⁻¹ and so is strictly larger than the complement of the closed tube.
 
-A proof route uses the following steps. Use the local normal-coordinate description along the smooth complete intersection and the unfiltered tube invariance of de Rham cohomology in Grosse-Klönne Proposition 3.7. Transfer to HK through its comparison and naturality; check analytic Čech descent for all strata used in the union statement. The precise radius and descent compatibility are part of the geometric-finiteness-tubes contract. Use the unfiltered HK/de Rham comparisons and the period comparison to establish finite freeness and smallness of the tube complement; naturality includes the induced lattice of the almost proper complement in that of the tube complement. The resulting injective bundle map has torsion cokernel at ∞; its cohomology sequence transfers H¹=0 as in the semistable tube case.
+A proof route uses the following steps. For every ε′∈|K̄×| with ε′<ε₀, Grosse-Klönne Proposition 3.7, applied with the local normal-coordinate description along the smooth complete intersection, gives the quasi-isomorphism RΓ_dR(X∖Z)→RΓ_dR(U_ε′) for U_ε′={x : |f_j(x)|≥ε′ for some j}; it removes the open polydisc tube {|f_j|<ε′ for all j}. The complement of the closed tube Z(ε) is the increasing union of the quasi-compact U_ε′ over ε<ε′<ε₀ in the divisible value group |K̄×|, which is nonempty even when |K×| has no element strictly between ε and ε₀. Along a sequence ε′_n in |K̄×| decreasing to ε, its de Rham complex is the derived limit of theirs; the transition maps are quasi-isomorphisms, so the R¹lim terms vanish and the limit is again a quasi-isomorphism. Transfer to HK through its comparison and naturality; check analytic Čech descent for all strata used in the union statement. The precise radius and descent compatibility are part of the geometric-finiteness-tubes contract. Use the unfiltered HK/de Rham comparisons and the period comparison to establish finite freeness and smallness of the tube complement; naturality includes the induced lattice of the almost proper complement in that of the tube complement. The resulting injective bundle map has torsion cokernel at ∞; its cohomology sequence transfers H¹=0 as in the semistable tube case. The maps on HK and on the induced B_dR⁺ lattices commute with restriction on every Čech intersection at the common radius; unfiltered de Rham invariance gives no equality of filtrations.
 
-**Checks.**
-
-- No theorem for every radius or for a singular complete intersection is asserted.
-- The maps on HK and the induced B_dR⁺ lattices commute with restriction on every Čech intersection at a common sufficiently small radius. Underlying de Rham invariance alone supplies no equality of filtrations.
-
-*Needs:* §3.4; §0.4, lattice enlargement; geometric-finiteness-tubes, unfiltered de Rham quasi-isomorphisms for the integral tube models with simultaneous Čech-radius control; the natural Hyodo–Kato comparison of analytic-syntomic-descent and §1.1 pullback of filtered cohomology, for the HK quasi-isomorphisms and the lattice inclusion; dagger-de-rham-finiteness-over-c, smallness of the tube complement.
+*Needs:* §3.4; §0.4, lattice enlargement; geometric-finiteness-tubes, unfiltered de Rham quasi-isomorphisms for the integral tube models with simultaneous Čech-radius control; the natural Hyodo–Kato comparison of dagger-analytic-complexes and §1.1 pullback of filtered cohomology, for the HK quasi-isomorphisms and the lattice inclusion; §3.4, smallness of X∖Z, transported to the tube complement by the de Rham quasi-isomorphism and the Hyodo–Kato comparison; the derived limit over the exhaustion by the U_ε′ from strict-countable-derived-limits.
 
 ### Examples
 
@@ -781,7 +765,7 @@ A point and a dagger disc have nonnegative de Rham slopes. The product of two an
 
 ### Dependencies
 
-Layers 0–2 except the splitting branch; AdicSpacesPartIV F1.11–F1.12 and F1.16; CohomologyComparisons §§4.8–4.11; PadicHodgeTheory §2.7; geometric-log-periods, dagger-de-rham-finiteness-over-c, dagger-strictness-kunneth-over-c, proper-pair-resolution-over-c and geometric-finiteness-tubes contracts.
+Layers 0–2 except the splitting branch; AdicSpacesPartIV F1.11–F1.12 and F1.16; CohomologyComparisons §§4.8–4.11; PadicHodgeTheory §2.7; algebraic-comparison-over-c, analytic-hk-gaga, proper-log-period-sequence, dagger-analytic-complexes, dagger-de-rham-finiteness-over-c, dagger-strictness-kunneth-over-c, proper-pair-resolution-over-c and geometric-finiteness-tubes contracts.
 
 ## Layer 4: inverse limits and proper times Stein
 
@@ -805,13 +789,9 @@ The defining data and their natural maps have the following API.
 - For a constant exhaustion X_n=X the derived-limit complex is the original complex and the R¹lim terms vanish.
 - Degree of the Roos model: for the constant tower Q_p placed in degree 0, 1−shift on ∏Q_p is onto, with section (b_n)↦(a_n), a₀=0, a_n=−Σ_(k<n)b_k, and kernel the diagonal Q_p; so Cone(1−shift)[−1]=[∏Q_p→∏Q_p] in degrees 0 and 1 has (H⁰,H¹)=(Q_p,0), while the unshifted cone has (H⁻¹,H⁰)=(Q_p,0) and puts the limit in degree −1. For a constant tower V placed in degree 1 the only nonzero group is H¹=V, as the Milnor sequence requires.
 - For an exhaustion of the dagger open disc, `F_n^(1,1)` can have a nonzero torsion kernel although `Fbar_n^(1,1)`=0; replacing F by F̄ loses that kernel.
-- Replacing X_n by X₂ₙ preserves the resulting global complex, not merely its underlying set of points.
+- Unbounded amplitude: for X the disjoint union of the polyannuli Aᵐ, m≥0, with A a dagger annulus, and X_n the union of those with m≤n, each X_n is quasi-compact with nonnegative de Rham slopes and Hⁿ_dR(X_n) contains the nonzero class of dT₁/T₁∧⋯∧dT_n/T_n. No common upper bound exists, so the derived limits are formed in the bounded-below category; in each degree i the truncations τ_≤i RΓ_dR(X_n) have the common amplitude [0,i] and compute the same degree-i group.
 
-**Checks.**
-
-- The exhaustion is specified data; no countability assertion for arbitrary dagger spaces is made.
-
-*Needs:* §§1.1 and 3.1; the strict-countable-derived-limits contract, Roos derived limits of towers in the left heart; analytic-syntomic-descent, exhaustion descent and period-limit vanishing; finite BC inverse-limit vanishing from qbc-pairs.
+*Needs:* §§1.1 and 3.1; the strict-countable-derived-limits contract, Roos derived limits of towers of bounded-below complexes in the left heart and their truncation compatibility; the analytic-exhaustion-descent contract, exhaustion descent and period-limit vanishing; the bc-countable-inverse-limits contract, finite BC inverse-limit vanishing.
 
 ### 4.2 the inverse-limit obstruction sequence
 
@@ -824,7 +804,6 @@ A proof route uses the following steps. Apply the Milnor sequences of the Roos d
 **Checks.**
 
 - At degree zero all negative-degree groups vanish.
-- Do not suppress R¹lim before proving its vanishing.
 - For the constant tower `F_n^(1,1)`=O(D)/C of a dagger disc, 1−shift on the countable product is onto, with the continuous section (b_n)↦(−Σ_(k<n) b_k); hence lim=O(D)/C and R¹lim=R²lim=0, although O(D)/C is infinite dimensional over Q_p, so the finite-dimensional Mittag–Leffler limit theorem does not apply to it.
 - For the tower V_n=⊕_(j≥n)Q_p with inclusions, lim=0 while R¹lim≅Q_p^N/⊕Q_p contains the nonzero class of (1,1,1,…); the Milnor sequence places such a class in the next degree of the global group, so the obstruction terms are not zero in general.
 
@@ -840,9 +819,11 @@ A proof route uses the following steps. The de Rham long exact sequence expresse
 
 **Checks.**
 
-- A system of arbitrary topological Q_p-vector spaces is not assumed R¹lim-acyclic.
+- Constant exhaustion X_n=X: every tower is constant, 1−shift is onto with section (b_n)↦(−Σ_(k<n)b_k), and all three R¹lim terms vanish, as the chain of implications predicts.
+- Constant exhaustion of a dagger disc at r=i=1: A_n¹¹=H_n¹¹=O(D)/C and the quotient H_n¹¹/A_n¹¹=0 is trivially finite BC, so its R¹lim vanishes with no hypothesis on DR.
+- The tower ⊕_(j≥n)Q_p of §4.2 has R¹lim≠0, so the criterion depends on the de Rham towers and their finite BC quotients, not on a property of all towers of Q_p-spaces.
 
-*Needs:* §§4.1–4.2; the filtered long exact sequence of §1.1; R²lim=0 and the six-term lim/R¹lim sequence from the strict-countable-derived-limits contract; the finite BC quotient realization of §2.3 and countable BC inverse-limit vanishing in qbc-pairs.
+*Needs:* §§4.1–4.2; the filtered long exact sequence of §1.1; R²lim=0 and the six-term lim/R¹lim sequence from the strict-countable-derived-limits contract; the finite BC quotient realization of §2.3 and countable BC inverse-limit vanishing from the bc-countable-inverse-limits contract.
 
 ### 4.4 étale Künneth with a proper factor
 
@@ -856,7 +837,8 @@ A proof route uses the following steps. Apply proper base change to the projecti
 
 **Checks.**
 
-- The proper factor has finite-dimensional Q_p-cohomology; no analogous formula for two arbitrary nonproper factors is inferred.
+- Y=P¹: Hʲ_ét(P¹,Q_p) is Q_p, 0, Q_p(−1) for j=0,1,2, so Hⁱ(P¹×T)=Hⁱ(T)⊕Hⁱ⁻²(T)(−1) for every smooth T, a finite sum even when Hⁱ(T) is infinite dimensional. For Y a point the map is the identity.
+- T a disjoint union of countably many points and Y=P¹: H⁰(Y×T)=∏Q_p=Q_p⊗∏Q_p, so finiteness is needed only on the proper factor; for two nonproper factors no formula is asserted.
 
 *Needs:* ClassicalAdicEtaleCohomology §8.4, proper base change and projection formula; the proper-rigid-integral-etale contract, perfect proper-factor Z_p-cohomology and rationalization.
 
@@ -870,9 +852,9 @@ A proof route uses the following steps. Compare the derived inverse systems of d
 
 **Checks.**
 
-- The comparison between dagger and completed systems is a derived-limit statement; do not assert it for every single non-partially-proper dagger space.
+- Y=P¹ and S the dagger open disc exhausted by closed dagger discs S_n: by §4.4, H⁰(X_n)=Q_p and H²(X_n)=Q_p(−1), since H²(S_n)=0 for the one-dimensional S_n with HK²=0; these are constant towers with R¹lim=0 and limits Q_p and Q_p(−1).
 
-*Needs:* §4.4; §1.5, Stein limit computation; the proper-rigid-integral-etale and analytic-syntomic-descent contracts, derived-system comparison after cofinal strict shrinkings; the Milnor sequences of the strict-countable-derived-limits contract.
+*Needs:* §4.4; §1.5, Stein limit computation; the proper-rigid-integral-etale contract; the analytic-exhaustion-descent contract, derived-system comparison after cofinal strict shrinkings; the Milnor sequences of the strict-countable-derived-limits contract.
 
 ### 4.6 pro-étale Künneth for proper times Stein
 
@@ -884,7 +866,7 @@ A proof route uses the following steps. Pass the proper-factor étale Künneth m
 
 **Checks.**
 
-- There is no general pro-étale Künneth assertion for two nonproper factors.
+- Y=P¹ and S a dagger open disc: the cup-product formula gives Q_p, H¹(S), Q_p(−1) and H¹(S)(−1) in degrees 0–3 and zero above, since H²(S)=0; the degree-three group is the tensor of the finite H²(P¹)=Q_p(−1) with the infinite-dimensional H¹(S).
 
 *Needs:* §§4.4–4.5; proper-factor finiteness from proper-rigid-integral-etale.
 
@@ -900,7 +882,7 @@ A proof route uses the following steps. Each X_n=Y×S_n has nonnegative de Rham 
 
 **Checks.**
 
-- Neither the small-variety height equality nor the finite-HK recovery theorem is automatically extended to this non-small case.
+- Y a point and S a countable disjoint union of points, a smooth dagger Stein space that is not small: at i=r=0 the square is ∏Q_p→∏Q_p over ∏B_dR⁺→∏B_dR⁺, the difference map ∏Q_p⊕∏B_dR⁺→∏B_dR⁺ is onto with kernel the diagonal ∏Q_p, and the sequence is exact although B⁰ is not finite free.
 
 *Needs:* §§4.2 and 4.5; §§1.6 and 3.2, comparison of exhaustion stages; §1.3, classical corners and left-heart exactness.
 
@@ -910,7 +892,7 @@ For a constant exhaustion, every derived inverse-limit error is 0. For Y=P¹ and
 
 ### Dependencies
 
-Layers 1–3 except the splitting branch; LocallyAnalyticDistributions §0.0; ClassicalAdicEtaleCohomology §§1.3–1.4, 8.4 and 9.7; strict-countable-derived-limits, analytic-syntomic-descent, qbc-pairs and proper-rigid-integral-etale contracts.
+Layers 1–3 except the splitting branch; LocallyAnalyticDistributions §0.0; ClassicalAdicEtaleCohomology §§1.3–1.4, 8.4 and 9.7; strict-countable-derived-limits, analytic-exhaustion-descent, bc-countable-inverse-limits and proper-rigid-integral-etale contracts.
 
 ## Layer 5: arithmetic and geometric period recovery
 
@@ -924,7 +906,7 @@ A proof route uses the following steps. Reduce smooth B_st maps to B_dR maps equ
 
 **Checks.**
 
-- Continuity and density are essential; unrestricted algebraic Hom is not used.
+- i=0: Ω⁻¹=0 and both Hom groups vanish trivially. Dagger disc over K, i=1: the class of T in O(X)/K is nonzero, but for a continuous G_K-equivariant map ψ the map c↦ψ(T⊗c) is a continuous G_K-map C→B_dR, hence zero; density of algebraic tensors then gives ψ=0.
 
 *Needs:* AdicSpacesPartIV F1.9, strict differential quotients; LocallyAnalyticDistributions §0.0, completed tensors and density; the galois-period-hom-vanishing contract and the smooth Galois Hom interface of bounded-arithmetic-filtration.
 
@@ -938,9 +920,9 @@ A proof route uses the following steps. Express A as a quotient of the preceding
 
 **Checks.**
 
-- This is not obtained by pretending A is a finite BC object.
+- Dagger disc over K at i=r=1: A¹¹=O(X_C)/C is infinite dimensional of height 0 and is not finite BC; it is the image of the differential term Ω⁰/ker d, so both Hom groups vanish by §5.1. For a point, A=0.
 
-*Needs:* §5.1; §1.1, filtered triangle; §1.2, finite free cohomology of the small X_C; the B_dR⁺ complexes and their cohomological topologies from analytic-syntomic-descent, on which the strict Čech presentations with B_dR⁺/t^k coefficients are formed in this section; AdicSpacesPartIV F1.7, dagger affinoid coverings; PadicHodgeTheory §3.7, Galois period-Hom topology.
+*Needs:* §5.1; §1.1, filtered triangle; §1.2, finite free cohomology of the small X_C; the B_dR⁺ complexes and their cohomological topologies from dagger-analytic-complexes, on which the strict Čech presentations with B_dR⁺/t^k coefficients are formed in this section; AdicSpacesPartIV F1.7, dagger affinoid coverings; PadicHodgeTheory §3.7, Galois period-Hom topology.
 
 ### 5.3 arithmetic pro-étale-to-de Rham recovery
 
@@ -952,8 +934,9 @@ A proof route uses the following steps. Choose r≥i, use bicartesian comparison
 
 **Checks.**
 
-- The general smooth-dagger statement of Conjecture 9.1 remains open in this source.
-- For proper X this specializes to the proper comparison without a semistable-model hypothesis.
+- X a point over K, i=0: the smooth Hom from Q_p to B_st is the union of the B_st^(G_L), which is Fⁿʳ, and Hom_(G_K)(Q_p,B_dR)=K; these are the duals of H⁰_HK and H⁰_dR.
+- P¹ over K, i=2: H²=Q_p(−1); its smooth Hom into B_st is Fⁿʳ·t⁻¹ with φ(t⁻¹)=p⁻¹t⁻¹, dual to φ=p on H²_HK, and its G_K-Hom into B_dR is K·t⁻¹ in filtration degree −1, dual to the Hodge jump 1. A covariant reading would give φ=p and jump 1.
+- Dagger disc over K, i=1: H¹_proét(X_C,Q_p)≠0, but both Hom groups vanish, matching H¹_HK=H¹_dR=0.
 
 *Needs:* §§5.1–5.2; §2.7; §0.8; the bounded-arithmetic-filtration contract; PadicHodgeTheory §§3.4–3.7 and 5.2, arithmetic acyclic period reconstruction.
 
@@ -967,8 +950,8 @@ A proof route uses the following steps. Use the canonical qBC filtration and the
 
 **Checks.**
 
-- The theorem’s input is X over C; there is no further base change X_C to define.
-- Retain the full natural Topological Vector Space functor in Hom; neither arbitrary continuous C-point maps nor period-linear maps on H are the specified Hom.
+- Point: Hom_TVS(Q_p,B_st)=B_st=Hom_(Fⁿʳ)(Fⁿʳ,B_st) and Hom_TVS(Q_p,B_dR)=B_dR=Hom_(B_dR⁺)(B_dR⁺,B_dR).
+- Dagger disc in degree one: H=O(D)/C is a torsion Pair with no nonzero natural maps to B_st or B_dR, matching M=0 and B=0, although continuous Q_p-linear maps of its C-points to Q_p⊆B_dR exist by Hahn–Banach.
 
 *Needs:* §2.3; §2.7; §§0.8–0.9; the dense finite-torsion presentation in qbc-pairs; VectorBundlesAndIsocrystals VB3, VS Hom vanishing from torsion period modules, for the finite torsion pieces; the VS/TVS comparison in natural-period-hom.
 
@@ -984,8 +967,8 @@ A proof route uses the following steps. Apply eigenspace generation and the weak
 
 **Checks.**
 
-- Prove the exact positive equality, not just the t⁻ⁱ sandwich.
-- Keep the completed coefficient extension and distinguish it from recovery of the original Fⁿʳ descent datum.
+- Point, i=0: Hom(Q_p,B_cris⁺)=B_cris⁺=M∨⊗B_cris⁺ for M=Fⁿʳ, and Fil^kB=t^kB_dR⁺=t^kB for k≥0.
+- i=1: t⁻¹ lies in the outer bound t⁻¹B_cris⁺ but not in B_cris⁺, so the sandwich is strict on the right and does not decide the equality.
 
 *Needs:* §5.4; §§0.6–0.8, crystalline untwisting and the bounded Hom sandwich; §1.5, affinoid differential quotient; VectorBundlesAndIsocrystals VB3, VS Hom vanishing from torsion period modules, into B_dR⁺⊇B_cris⁺; the positive-crystalline-hom contract.
 
@@ -1001,7 +984,7 @@ A proof route uses the following steps. Specialize geometric recovery to a const
 
 **Checks.**
 
-- No universal recovery statement or impossibility theorem is promoted from CN25’s discussion.
+- A good-reduction elliptic curve and a Tate elliptic curve over C both give free geometric period-Hom modules of rank two in degree one, while their monodromy operators have ranks 0 and 1: the geometric Hom modules alone do not see N.
 
 *Needs:* §§5.3–5.4; CohomologyComparisons §§4.10–4.11, proper finite-dimensional realization.
 
@@ -1030,5 +1013,6 @@ For the projective line with the infinity section, the functions `Σ_(n≥0)`π�
 ## References
 
 - **CN25.** Pierre Colmez and Wiesława Nizioł, *On the cohomology of p-adic analytic spaces, II: The C_st-conjecture*. [Author CN5 manuscript](https://webusers.imj-prg.fr/~wieslawa.niziol/CN5.pdf), 24 November 2024, 61 pages; [arXiv:2108.12785v4](https://arxiv.org/abs/2108.12785v4). Published in Duke Mathematical Journal 174 (2025), 2203–2301, [DOI](https://doi.org/10.1215/00127094-2024-0074). All page and line locators here refer to the author manuscript, not the journal pagination. Principal locators are §§5.3–5.4, pp.36–39; Proposition 6.1, pp.39–40; Theorem 6.14 and §6.4, pp.43–45; §§7.2–7.3, pp.46–50; §§8–9, pp.50–58; Appendix A, pp.58–60.
+- **CN1.** Pierre Colmez and Wiesława Nizioł, *On the cohomology of p-adic analytic spaces, I: The basic comparison theorem*. [arXiv:2104.13448v3](https://arxiv.org/abs/2104.13448v3), 1 November 2023. Only the definition of a naive interior in the proof of Corollary 3.6, p.26, line 1163, is used; pages and lines refer to this preprint.
 - **GK04.** Elmar Grosse-Klönne, *De Rham cohomology of rigid spaces*, Mathematische Zeitschrift 247 (2004), 223–240. [arXiv:1408.3330v1](https://arxiv.org/abs/1408.3330v1), 14 August 2014. Proposition 3.7, pp.14–16, line 499, and Corollary 3.8(a),(c), p.16, line 556; pages and lines refer to this preprint.
 - **BKV22.** Federico Binda, Hiroki Kato and Alberto Vezzani, *On the p-adic weight-monodromy conjecture for complete intersections in toric varieties*. [arXiv:2207.00369v2](https://arxiv.org/abs/2207.00369v2), §4, pp.25–26, especially the tube definition preceding Corollary 4.6, lines 1176–1187. Only the tube definition and its integral-trivialization independence are used here; the motive comparison does not replace the HK comparison contract.

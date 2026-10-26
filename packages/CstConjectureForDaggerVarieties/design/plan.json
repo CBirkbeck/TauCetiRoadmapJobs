@@ -2749,7 +2749,7 @@
   "gaps": [
     {
       "slug": "dagger-de-rham-finiteness-over-c",
-      "needs": "Provide finite-dimensional de Rham cohomology over C in every degree for three classes of smooth dagger spaces over C: quasi-compact ones, naive interiors of smooth quasi-compact dagger spaces (in the sense of CN25 line 2291, footnote at line 2302), and dagger analytifications of smooth finite-type C-schemes.",
+      "needs": "Provide finite-dimensional de Rham cohomology over C in every degree for three classes of smooth dagger spaces over C: quasi-compact ones, naive interiors of smooth dagger affinoids (defined in §1.2), and dagger analytifications of smooth finite-type C-schemes.",
       "supplier": "AdicSpacesPartIV",
       "section": "F1.11 finiteness"
     },
@@ -2797,7 +2797,13 @@
     },
     {
       "slug": "qbc-pairs",
-      "needs": "Extend finite BC theory to the natural TVS category on sympathetic algebras, reasonable torsion B_dR⁺-Pairs and qBC objects, with canonical curvature filtration, signed additive height, dense finite-torsion presentations, compatibility with finite BC and vanishing of countable derived inverse limits of BC systems.",
+      "needs": "Extend finite BC theory to the natural TVS category on sympathetic algebras, reasonable torsion B_dR⁺-Pairs and qBC objects, with canonical curvature filtration, signed additive height, dense finite-torsion presentations and compatibility with finite BC.",
+      "supplier": "VectorBundlesAndIsocrystals",
+      "section": "VB3, Sympathetic algebras and the classical category; Curvature, the tilted coherent heart and HN invariants"
+    },
+    {
+      "slug": "bc-countable-inverse-limits",
+      "needs": "Provide that every decreasing sequence of sub-BC objects of a finite BC object is stationary and, consequently, that R¹lim vanishes for every countable inverse system of finite BC objects with BC transition maps, in the natural VS realization and in the left heart (CN25 Remark 3.15, line 764).",
       "supplier": "VectorBundlesAndIsocrystals",
       "section": "VB3, Sympathetic algebras and the classical category; Curvature, the tilted coherent heart and HN invariants"
     },
@@ -2809,21 +2815,39 @@
     },
     {
       "slug": "strict-countable-derived-limits",
-      "needs": "Provide, for countable towers of uniformly bounded complexes in the quasi-abelian category of nonarchimedean locally convex Q_p-spaces, exactness of countable products, the Roos derived limit Rlim C_n=Cone(1−shift)[−1] in the strict derived category, that is, the homotopy fibre of 1−shift:∏C_n→∏C_n, (a_n)↦(a_n−τ_n(a_(n+1))) for the transition maps τ_n, which for a tower of spaces V_n placed in degree zero is the complex [∏V_n→∏V_n] in degrees 0 and 1, its compatibility with left-heart cohomology, the Milnor short exact sequences 0→R¹lim H̃^(i−1)(C_n)→H̃^i(Rlim C_n)→lim H̃^i(C_n)→0 and the six-term lim/R¹lim sequence of a short exact sequence of towers in the left heart, and vanishing of R^q lim for q≥2, all without Fréchet, Mittag–Leffler or finite-dimensionality hypotheses and objectwise for functors from sympathetic algebras to the left heart.",
+      "needs": "Provide, for countable towers of complexes with a common lower cohomological bound in the quasi-abelian category of nonarchimedean locally convex Q_p-spaces, the bounded-below strict derived category with its left t-structure, extending the bounded construction of §0.0; exactness of countable products; the Roos derived limit Rlim C_n=Cone(1−shift)[−1] in that category, that is, the homotopy fibre of 1−shift:∏C_n→∏C_n, (a_n)↦(a_n−τ_n(a_(n+1))) for the transition maps τ_n, which for a tower of spaces V_n placed in degree zero is the complex [∏V_n→∏V_n] in degrees 0 and 1; the truncation compatibility τ_≤i Rlim C_n≅τ_≤i Rlim τ_≤i C_n for every integer i; its compatibility with left-heart cohomology; the Milnor short exact sequences 0→R¹lim H̃^(i−1)(C_n)→H̃^i(Rlim C_n)→lim H̃^i(C_n)→0 and the six-term lim/R¹lim sequence of a short exact sequence of towers in the left heart; and vanishing of R^q lim for q≥2; all without Fréchet, Mittag–Leffler or finite-dimensionality hypotheses and objectwise for functors from sympathetic algebras to the left heart.",
       "supplier": "LocallyAnalyticDistributions",
       "section": "§0.0 strict derived categories and left hearts; §0.2 strict countable inverse limits"
     },
     {
-      "slug": "compact-extension-duality",
-      "needs": "Prove strictness of the strong-dual sequence and continuity of the bidual comparison for the compact-type extensions occurring in the syntomic splitting, with their actual coefficient-field hypotheses, or supply an alternative valid continuous period-linear splitting argument.",
-      "supplier": "LocallyAnalyticDistributions",
-      "section": "§§0.0–0.2, strict sequences and compact-type duality"
+      "slug": "dagger-analytic-complexes",
+      "needs": "Provide, for a smooth dagger space X over C, the model-free overconvergent Hyodo–Kato, B_dR⁺-de Rham and syntomic complexes with their cup products, as objects of the bounded-below strict derived category; the strict derived completed comparisons RΓ_HK(X)⊗̂C≃RΓ_dR(X) and RΓ_HK(X)⊗̂B_dR⁺≃RΓ_dR(X/B_dR⁺), natural in X and multiplicative; the identity τ_≤i F^(r+1)RΓ_dR(X/B_dR⁺)=tFʳRΓ_dR(X/B_dR⁺) for i≤r; the filtered fiber triangle defining syntomic cohomology from the Frobenius eigenspace of Hyodo–Kato cohomology and the de Rham filtration; and, for quasi-compact X, Frobenius slopes of Hⁱ_HK(X) in [0,min(i,dim X)] (CN25 Proposition 6.1, line 1954; Remark 6.23(ii), line 2231; Lemma 7.13 proof, line 2405).",
+      "supplier": "CohomologyComparisons",
+      "section": "§4.9a Analytic Hyodo–Kato realization"
     },
     {
-      "slug": "analytic-syntomic-descent",
-      "needs": "Provide the model-free smooth dagger HK, B_dR⁺ and syntomic complexes with their cup products and their strict derived completed comparisons, slope bound [0,min(i,dim X)], natural VS and TVS realizations, stable-range syntomic/pro-étale period map, filtered fiber triangle, Stein/affinoid syntomic diagram over C with its strict maps and cohomological topologies, and countable exhaustion descent, including comparison of derived systems with rigid completions after cofinal strict shrinkings.",
+      "slug": "stable-range-period-map",
+      "needs": "Provide, for a smooth dagger space X over C and integers 0≤i≤r, the syntomic-to-pro-étale period map α_r, an isomorphism on cohomology in degrees ≤r, together with the natural VS and TVS realizations on sympathetic algebras of pro-étale cohomology, of the Hyodo–Kato eigenspace and of filtered B_dR⁺-cohomology, and the compatibility of the left-heart comparison sequence with these realizations (CN25 Proposition 6.1, line 1954; Definition 4.1, line 960; footnote 22, line 2647).",
       "supplier": "CohomologyComparisons",
       "section": "§4.9a Analytic Hyodo–Kato realization and §§4.10–4.11"
+    },
+    {
+      "slug": "stein-affinoid-syntomic-diagram",
+      "needs": "Provide, for a smooth dagger Stein space or smooth dagger affinoid X over C and r≥0, the degree-r syntomic diagram of CN25 Theorem 6.14: its two strictly exact rows, strict vertical maps with closed image, and the Fréchet, respectively LB, topology on degree-r syntomic cohomology, compatibly with α_r (CN25 Theorem 6.14, line 2098).",
+      "supplier": "CohomologyComparisons",
+      "section": "§4.9a Analytic Hyodo–Kato realization"
+    },
+    {
+      "slug": "analytic-exhaustion-descent",
+      "needs": "Provide, for a smooth dagger space X over C with a countable increasing admissible exhaustion by small quasi-compact open dagger subspaces X_n, the derived-limit descent RΓ(X)≃Rlim_n RΓ(X_n) for the Hyodo–Kato, filtered B_dR⁺-de Rham, syntomic and pro-étale complexes; the vanishing R¹lim_n X_n^(r,i)=0 and R¹lim_n Fbar_n^(r,i)=0; and, for a Stein exhaustion by affinoids, the identification of the derived inverse systems of the dagger pieces with those of their rigid completions after cofinal strict shrinkings (CN25 Remark 8.9(i), line 2601; Proposition 8.12 proof, line 2664).",
+      "supplier": "CohomologyComparisons",
+      "section": "§4.9a Analytic Hyodo–Kato realization and §§4.10–4.11"
+    },
+    {
+      "slug": "de-rham-quotient-splitting",
+      "needs": "Provide, for a smooth quasi-compact dagger space X over C, every finite covering of X by smooth dagger affinoids and every integer q, with RΓ^q the degree-q term of the associated Čech–de Rham complex computing RΓ_dR(X/B_dR⁺) in its natural topology, E_q=RΓ^q/im(d^(q−1)), H_q=ker(d^q)/im(d^(q−1))=H^q_dR(X/B_dR⁺) and Q_q=RΓ^q/ker(d^q) with their quotient and subspace topologies, a continuous B_dR⁺-linear retraction E_q→H_q of the inclusion, for the finite-free topology on H_q, whose kernel maps homeomorphically onto Q_q (CN25 Proposition 7.15 proof, lines 2439–2444).",
+      "supplier": "CohomologyComparisons",
+      "section": "§4.9a Analytic Hyodo–Kato realization"
     },
     {
       "slug": "overconvergent-crystalline-complex",
@@ -2832,10 +2856,22 @@
       "section": "§4.9a Analytic Hyodo–Kato realization"
     },
     {
-      "slug": "geometric-log-periods",
-      "needs": "Provide algebraic comparison over C, analytic HK GAGA and the proper logarithmic period sequence for smooth proper rigid pairs with simple normal crossings boundary, retaining the map from the logarithmic filtration to the naive analytic filtration and its compatibility with the common HK and unfiltered de Rham realizations.",
+      "slug": "algebraic-comparison-over-c",
+      "needs": "Provide, for a smooth finite-type scheme V over C and every i, weak admissibility of the filtered (φ,N)-module (Hⁱ_HK(V),F⁰Hⁱ_dR(V/B_dR)) over C given by the algebraic geometric period comparison (CN25 Theorem 8.1(b) proof, line 2491).",
       "supplier": "CohomologyComparisons",
-      "section": "§§4.8–4.11"
+      "section": "§4.8 algebraic comparison"
+    },
+    {
+      "slug": "analytic-hk-gaga",
+      "needs": "Provide, for a smooth finite-type scheme V over C and every i, Hyodo–Kato GAGA: the natural map Hⁱ_HK(V)→Hⁱ_HK(Vᵃⁿ) to the Hyodo–Kato cohomology of the dagger analytification is an isomorphism compatible with φ, N and the de Rham comparisons (CN25 Theorem 8.1(b) proof, line 2493).",
+      "supplier": "CohomologyComparisons",
+      "section": "§4.9a Analytic Hyodo–Kato realization"
+    },
+    {
+      "slug": "proper-log-period-sequence",
+      "needs": "Provide, for a smooth proper rigid space X′ over C with a strict normal crossings divisor D, U=X′∖D and 0≤i≤r, the exact sequence Hⁱ⁻¹_dR(X′,log D/B_dR⁺)→Hⁱ_ét(U,Q_p(r))→`(Hⁱ_HK(U)⊗̂B_st⁺)^(N=0,φ=pʳ)`⊕Hⁱ(FʳRΓ_dR(X′,log D/B_dR⁺))→Hⁱ_dR(X′,log D/B_dR⁺)→0 in LH(C_Q_p), the identification of the Hyodo–Kato and unfiltered B_dR⁺-de Rham cohomology of the log pair with those of U, and the map from the logarithmic filtration to the naive analytic filtration of U compatible with these identifications (CN25 Theorem 8.1(c) proof, lines 2507–2525).",
+      "supplier": "CohomologyComparisons",
+      "section": "§§4.10–4.11"
     },
     {
       "slug": "proper-rigid-integral-etale",

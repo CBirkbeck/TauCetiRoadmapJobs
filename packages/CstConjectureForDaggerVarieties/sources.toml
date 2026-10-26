@@ -8,7 +8,6 @@ title = "On the cohomology of p-adic analytic spaces, II: The C_st-conjecture"
 year = 2025
 doi = "10.1215/00127094-2024-0074"
 arxiv = "2108.12785v4"
-version_note = "All locators use the 61-page CN5 author manuscript of 24 November 2024; journal pagination was not collated."
 locator_scheme = "section"
 locator = "Proposition 2.14(iv); Proposition 3.27(i); Definitions 4.1–4.5; Sections 5–9 and Appendix A, author CN5 manuscript, 24 November 2024"
 url = "https://webusers.imj-prg.fr/~wieslawa.niziol/CN5.pdf"
@@ -18,6 +17,7 @@ sha256 = "bb1628cf1f4321243e6070be2abae99f72a41e237e70a7eb1ec1fc03cc2cd52a"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-25"
+version_note = "All locators use the 61-page CN5 author manuscript of 24 November 2024; journal pagination was not collated."
 cited_for = ["Layers 0–5"]
 
 [[source]]
@@ -56,3 +56,21 @@ status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v2"
 cited_for = ["Layer 3, projective tube complements"]
+
+[[source]]
+id = "CN1"
+authors = "Pierre Colmez, Wiesława Nizioł"
+title = "On the cohomology of p-adic analytic spaces, I: The basic comparison theorem"
+year = 2021
+arxiv = "2104.13448v3"
+locator_scheme = "theorem"
+locator = "Corollary 3.6 and its proof, p. 26 of arXiv v3 (definition of a naive interior)"
+url = "https://arxiv.org/abs/2104.13448v3"
+fetched_from = "https://arxiv.org/pdf/2104.13448v3"
+fetched_at = "2026-10-26T22:46:08Z"
+sha256 = "f4798bc39e556c7f3439c0037783986842ebe03498bf425500c4b9f6ef1ed25d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v3 of 1 November 2023; locators use its 78-page pagination, not a journal pagination."
+cited_for = ["Layer 1, small varieties"]

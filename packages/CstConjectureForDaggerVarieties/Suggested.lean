@@ -47,10 +47,7 @@ Proper rigid comparison over K and C is consumed from CohomologyComparisons
 §§4.10–4.11, rather than stated a second time. The unrestricted smooth-dagger
 C_st and period-recovery conjectures are not unconditional theorem targets.
 The positive crystalline refinement retains its separate positivity proof
-obligation; the syntomic splitting retains its continuous-duality obligation.
-
-No weaker algebraic substitute, arbitrary assertion parameter or admitted data
-object represents a missing headline theorem.
+obligation; the syntomic splitting retains its continuous-splitting obligation.
 -/
 
 namespace TauCetiRoadmap.CstConjectureForDaggerVarieties
