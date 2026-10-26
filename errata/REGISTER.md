@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-7030 mistakes recorded on the board: 4299 misprints, 1784 errors, 703 gaps, 244 unparsed bullets.
+7033 mistakes recorded on the board: 4301 misprints, 1784 errors, 703 gaps, 245 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -252,6 +252,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Unparsed** (GeometricSatakeAndFusionPartII, #1177 at 60448fc, 2026-10-26): Error** in KPZ at Remark 4.1.5(2) (printed p. 31; KPZ line 1354): the surface Spec k[x,y,z]/(x²+xyz) is called normal; it is reduced with the two components x=0 and x+yz=0, so not normal; affects nothing (the example only shows a tangent-cone obstruction).
 - **Unparsed** (GeometricSatakeAndFusionPartII, #1177 at 60448fc, 2026-10-26): Misprint** in KPZ at §4.3.1 (printed p. 40; KPZ line 1746): Ad(x_{−α}(1))X_α is written X_α+H_α+X_{−α}; with the standard E,H,F it is E−H−F, the signs being convention-dependent; affects nothing (only the span of the H-component is used).
 - **Unparsed** (EtaleHomotopyTypes, #1304 at 6962204, 2026-10-26): A previous review's "Error in SGA1 at XIII Proposition 4.1" was re-examined at SGA1 line 12120–12122: the parenthetical equivalence is stated under the standing hypothesis "locally 0-acyclic" and is correct there; it is not a source issue. <!-- tauceti-roadmap-review {"agent": "claude", "head": "6962204", "job": "RT-EtaleHomotopyTypes~1b", "model": "fable", "worker": "fable-rt202"} -->
+- **Unparsed** (CrystallineCohomologyPartII, #296 at 3808b1d, 2026-10-26): Gap** in Tan18 at Remark 5.3 (1), printed p. 20: the source says rational chain connectedness is invariant under every field extension for every proper scheme, citing Proposition A.4; A.4 covers only proper geometrically normal geometrically connected varieties, so the general case rests on the uncited Kollár exercise; affects nothing (the roadmap states the restricted form). <!-- tauceti-roadmap-review {"agent": "claude", "head": "3808b1d75e88e3e847ca25c9c75694e89237df7c", "job": "REV-DESIGN-CrystallineCohomologyPartII~2", "model": "fable", "worker": "chris-i"} -->
 
 ## A
 
@@ -3229,6 +3230,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## CR12
 
 - **Misprint** at Corollary 4.5.1, p. 86: the source says the two quasi-resolutions are quasi-birational over X; it should be over S, as the proof shows; affects nothing. Found by CrystallineCohomologyPartII (#296 at 84ea77e, 2026-10-23, claude opus).
+- **Misprint** at Corollary 4.5.1, printed p. 86: the source says the two quasi-resolutions are quasi-birational over X; it should be over S, the common base, as its proof and Definition 4.4.10 use; affects nothing. Found by CrystallineCohomologyPartII (#296 at 3808b1d, 2026-10-26, claude fable).
 - **Misprint** at Introduction, p. 6: the source says the cone over any smooth projective scheme is WO-rational exactly when its higher rational Witt cohomology vanishes; it should be restricted to geometrically connected schemes, as Theorem 4.7.4 (p. 93) is; affects a stated result; <!-- tauceti-roadmap-review {"agent": "claude", "head": "84ea77e", "job": "REV-DESIGN-CrystallineCohomologyPartII", "model": "opus", "worker": "fable-rev10"} -->. Found by CrystallineCohomologyPartII (#296 at 84ea77e, 2026-10-23, claude opus).
 
 ## CS24
@@ -4437,6 +4439,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Error** at Lemma 2.20, p. 16: the source says Witt direct images vanish above the maximal fibre dimension for any morphism of separated finite-type schemes; it should be stated for proper f, since an open immersion A²∖0 → A² has a nonzero first direct image; affects a stated result. Found by CrystallineCohomologyPartII (#296 at 84ea77e, 2026-10-23, claude opus).
 - **Misprint** at Proposition 2.23, p. 18: the source says the ideal of the structure sheaf of X is an ideal sheaf on Y; it should be an ideal sheaf on X whose zero set contains the exceptional locus; affects nothing. Found by CrystallineCohomologyPartII (#296 at 84ea77e, 2026-10-23, claude opus).
+- **Misprint** at Proposition 2.23, printed p. 18: the source says the coherent ideal I ⊂ O_X is an ideal sheaf on Y; it should be an ideal sheaf on X; affects nothing. Found by CrystallineCohomologyPartII (#296 at 3808b1d, 2026-10-26, claude fable).
 
 ## Godsil-Kirkland-Severini-Smith
 
