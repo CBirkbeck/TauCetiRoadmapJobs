@@ -138,7 +138,9 @@
       "mathlib:LocallyConstant.comap",
       "mathlib:ContinuousMap",
       "mathlib:Submodule.mkQ",
-      "mathlib:Matrix.GeneralLinearGroup"
+      "mathlib:Matrix.GeneralLinearGroup",
+      "roadmap:LocallyAnalyticDistributions §0.0",
+      "roadmap:SmoothRepresentationsOfLocalGroups SR.0"
      ],
      "api": [
       {
@@ -201,7 +203,8 @@
      },
      "prerequisites": [
       "target:0.3",
-      "roadmap:SmoothRepresentationsOfLocalGroups SR.3"
+      "roadmap:SmoothRepresentationsOfLocalGroups SR.3",
+      "roadmap:LocallyAnalyticDistributions §0.0"
      ],
      "api": [],
      "tests": [
@@ -230,7 +233,8 @@
       "where": "Proposition 5.6 and §5.4.1, lines 2046–2054"
      },
      "prerequisites": [
-      "target:0.3"
+      "target:0.3",
+      "mathlib:LocallyConstant"
      ],
      "api": [],
      "tests": [
@@ -349,7 +353,9 @@
       "target:1.2",
       "roadmap:VectorBundlesAndIsocrystals VB3",
       "roadmap:PadicPeriodRings §4.3",
-      "gap:period-rings-general-C"
+      "gap:period-rings-general-C",
+      "roadmap:PadicPeriodRings §4.1",
+      "roadmap:VectorBundlesAndIsocrystals VB0"
      ],
      "api": [
       {
@@ -453,7 +459,9 @@
      "prerequisites": [
       "roadmap:TropicalAndBerkovichArithmetic §2.11",
       "roadmap:TropicalAndBerkovichArithmetic §2.16",
-      "target:2.1"
+      "target:2.1",
+      "target:0.1",
+      "roadmap:TropicalAndBerkovichArithmetic §2.13"
      ],
      "api": [
       {
@@ -558,7 +566,7 @@
      "id": "2.5",
      "kind": "theorem",
      "name": "ellAdic.filtration",
-     "statement": "For ℓ≠p, H¹_ét(Y,ℤ_ℓ(1)) has a filtration with pieces H¹(Γ,ℤ_ℓ(1)), ∏_{s∈Σ(Y)}H¹_ét(Y_s^sp,ℤ_ℓ(1)), H¹_c(Γ,ℤ_ℓ)^*; Picard–Lefschetz: changing r↦p^r by ζ changes the splitting by t_ζN; inertia acts by c↦c+t_σN(c).",
+     "statement": "For ℓ≠p, H¹_ét(Y,ℤ_ℓ(1)) has a filtration with pieces H¹(Γ,ℤ_ℓ(1)), ∏_{s∈Σ(Y)}H¹_ét(Y_s^sp,ℤ_ℓ(1)), H¹_c(Γ,ℤ_ℓ)^*; r↦p^r gives a section of H¹_ét(Y,ℚ_ℓ(1))→H¹_ét(Y,ℚ_ℓ(1))/H¹(Γ,ℚ_ℓ(1)); Picard–Lefschetz: changing r↦p^r to r↦ζ(r)p^r adds t_ζN to the section; inertia acts by c↦c+t_σN(c).",
      "hypotheses": [
       "ℓ≠p"
      ],
@@ -700,7 +708,9 @@
      },
      "prerequisites": [
       "target:2.4",
-      "target:3.2"
+      "target:3.2",
+      "roadmap:PadicPeriodRings §4.1",
+      "gap:period-rings-general-C"
      ],
      "api": [
       {
@@ -916,7 +926,8 @@
      },
      "prerequisites": [
       "target:2.2",
-      "roadmap:TropicalAndBerkovichArithmetic §2.16"
+      "roadmap:TropicalAndBerkovichArithmetic §2.16",
+      "roadmap:TropicalAndBerkovichArithmetic §2.17"
      ],
      "api": [
       {
@@ -962,7 +973,8 @@
      },
      "prerequisites": [
       "target:4.3",
-      "target:4.4"
+      "target:4.4",
+      "roadmap:ClassicalAdicEtaleCohomology §1.4"
      ],
      "api": [
       {
@@ -1201,7 +1213,9 @@
      "prerequisites": [
       "target:5.1",
       "roadmap:CrystallineCohomology §CR.6.5",
-      "roadmap:LocallyAnalyticDistributions §0.CR.6.6"
+      "roadmap:LocallyAnalyticDistributions §0.CR.6.6",
+      "roadmap:LocallyAnalyticDistributions §0.2",
+      "roadmap:EnhancedDerivedSheaves E2"
      ],
      "api": [
       {
@@ -1247,7 +1261,10 @@
       "roadmap:CohomologyComparisonsPartII §4.4",
       "roadmap:CohomologyComparisonsPartII §4.5",
       "gap:formal-syntomic-period-comparison",
-      "roadmap:ClassicalAdicEtaleCohomology §4.6"
+      "roadmap:ClassicalAdicEtaleCohomology §4.6",
+      "roadmap:CohomologyComparisonsPartII §4.1",
+      "roadmap:EnhancedDerivedSheaves E2",
+      "roadmap:LocallyAnalyticDistributions §0.2"
      ],
      "api": [
       {
@@ -1290,7 +1307,8 @@
       "target:5.2",
       "target:5.3",
       "target:1.3",
-      "roadmap:LocallyAnalyticDistributions §0.0"
+      "roadmap:LocallyAnalyticDistributions §0.0",
+      "roadmap:PadicPeriodRings §4.1"
      ],
      "api": [],
      "tests": [
@@ -1370,7 +1388,8 @@
       "target:5.1",
       "roadmap:EndoscopicTransferAndUnitaryTraceComparison §12.4",
       "roadmap:ReductiveGroupsPartII RG2.2",
-      "roadmap:HilbertModularVarietiesAndShimuraCurves §R18.5.3"
+      "roadmap:HilbertModularVarietiesAndShimuraCurves §R18.5.3",
+      "roadmap:AdicSpacesPartIV §F1.5"
      ],
      "api": [
       {
@@ -1413,7 +1432,9 @@
       "target:0.4",
       "target:0.5",
       "target:6.1",
-      "target:1.1"
+      "target:1.1",
+      "target:0.3",
+      "roadmap:ClassicalAdicEtaleCohomology §1.4"
      ],
      "api": [],
      "tests": [
@@ -1435,17 +1456,19 @@
      "name": "GrosseKlonne.frobenius",
      "statement": "φ^f=q^s on H^s_rig(M/S₀) for strata M; de Shalit's resolution; φ^f=q^s on H^s_HK(Y), H^s_dR≅H^s_HK⊗K, hence N=0.",
      "hypotheses": [
-      "K finite over ℚ_p"
+      "K finite over ℚ_p",
+      "d≥1"
      ],
      "locator": {
       "source": "GK05",
-      "where": "Theorem 6.3, Proposition 6.5, Corollary 6.6; DS01 Theorems 5.7, 7.7"
+      "where": "Theorem 6.3, Proposition 6.5, Corollary 6.6 (under GK05's standing d≥2, line 1209); CDN-STEIN §5.5 line 2157 and Lemma 5.11 for every d≥1; DS01 Theorems 5.7, 7.7"
      },
      "prerequisites": [
       "target:6.1",
       "target:5.2",
       "roadmap:PadicDifferentialEquationsAndRigidCohomology §RD.4.29",
-      "roadmap:PadicDifferentialEquationsAndRigidCohomology §RD.4.34"
+      "roadmap:PadicDifferentialEquationsAndRigidCohomology §RD.4.34",
+      "target:4.3"
      ],
      "api": [],
      "tests": [
@@ -1479,7 +1502,9 @@
      "prerequisites": [
       "target:6.2",
       "target:6.3",
-      "target:0.4"
+      "target:0.4",
+      "target:0.5",
+      "roadmap:LocallyAnalyticDistributions §0.2"
      ],
      "api": [],
      "tests": [
@@ -1508,7 +1533,8 @@
      "prerequisites": [
       "target:5.5",
       "target:6.4",
-      "target:1.3"
+      "target:1.3",
+      "target:6.3"
      ],
      "api": [],
      "tests": [
@@ -1573,11 +1599,13 @@
      ],
      "locator": {
       "source": "CDN-DUKE",
-      "where": "Theorem 2.9, Corollary 2.13, Lemmas 2.11–2.12, (1.4), (5.2)"
+      "where": "Theorem 2.9, Corollary 2.13, Lemmas 2.11–2.12 (Lemma 2.11(b) for the sheaf sequence 0→Ẑ_p→A_inf→A_inf→0 with μ^i and 1−ξ^iφ^{−1}), (1.4), (5.2)"
      },
      "prerequisites": [
       "roadmap:AInfCohomology §AI.6.2",
-      "roadmap:AInfCohomology §AI.3.1"
+      "roadmap:AInfCohomology §AI.3.1",
+      "roadmap:PrismaticCohomologyPartIII §6.3",
+      "roadmap:ClassicalAdicEtaleCohomology §1.3"
      ],
      "api": [],
      "tests": [
@@ -1642,7 +1670,8 @@
       "target:6.7",
       "target:6.8",
       "target:6.5",
-      "target:0.4"
+      "target:0.4",
+      "target:6.2"
      ],
      "api": [],
      "tests": [
@@ -1730,7 +1759,8 @@
      "prerequisites": [
       "roadmap:EndoscopicTransferAndUnitaryTraceComparison §12.3",
       "roadmap:EndoscopicTransferAndUnitaryTraceComparison §12.11",
-      "roadmap:EndoscopicTransferAndUnitaryTraceComparison §12.2"
+      "roadmap:EndoscopicTransferAndUnitaryTraceComparison §12.2",
+      "roadmap:EndoscopicTransferAndUnitaryTraceComparison §12.4"
      ],
      "api": [],
      "tests": [
@@ -1771,7 +1801,8 @@
       "roadmap:HilbertModularVarietiesAndShimuraCurves §R18.5.3",
       "roadmap:TropicalAndBerkovichArithmetic §2.16",
       "roadmap:TropicalAndBerkovichArithmetic §2.17",
-      "roadmap:EndoscopicTransferAndUnitaryTraceComparison §12.19"
+      "roadmap:EndoscopicTransferAndUnitaryTraceComparison §12.19",
+      "roadmap:EndoscopicTransferAndUnitaryTraceComparison §12.14"
      ],
      "api": [],
      "tests": [
@@ -1783,7 +1814,7 @@
       {
        "name": "orbit",
        "kind": "computation",
-       "statement": "components of M_0^ϖ form one G-orbit with open stabilizers"
+       "statement": "components of M_0^ϖ are pairs (vertex, copy index mod 2); type plus index mod 2 is G-invariant, so two G-orbits and one G×Ǧ-orbit; stabilizer GL₂(O_F)ϖ^ℤ, open image in G′"
       },
       {
        "name": "GLn",
@@ -1806,7 +1837,8 @@
       "target:4.2",
       "target:7.1",
       "target:7.2",
-      "roadmap:EndoscopicTransferAndUnitaryTraceComparison §12.7"
+      "roadmap:EndoscopicTransferAndUnitaryTraceComparison §12.7",
+      "roadmap:EndoscopicTransferAndUnitaryTraceComparison §12.19"
      ],
      "api": [],
      "tests": [
@@ -1841,7 +1873,8 @@
       "roadmap:ClassicalAdicEtaleCohomology §9.6",
       "roadmap:PadicHodgeTheory §5.3",
       "roadmap:PadicLocalLanglandsForGL2Qp §6.9",
-      "roadmap:GL2AutomorphicRepresentationsAndTransfer R16.3"
+      "roadmap:GL2AutomorphicRepresentationsAndTransfer R16.3",
+      "roadmap:ClassicalAdicEtaleCohomology §9.7"
      ],
      "api": [],
      "tests": [
@@ -1873,7 +1906,8 @@
       "target:7.4",
       "target:7.3",
       "target:7.1",
-      "target:1.3"
+      "target:1.3",
+      "roadmap:LocallyAnalyticDistributions §0.0"
      ],
      "api": [],
      "tests": [
@@ -1949,7 +1983,8 @@
       "roadmap:ClassicalAdicEtaleCohomology §4.7",
       "roadmap:ClassicalAdicEtaleCohomology §4.1",
       "roadmap:CrystallineCohomology §CR.5.1",
-      "roadmap:ModpRepresentationsOfGL2OverLocalFields MP.0"
+      "roadmap:ModpRepresentationsOfGL2OverLocalFields MP.0",
+      "roadmap:ClassicalAdicEtaleCohomology §4.6"
      ],
      "api": [],
      "tests": [
@@ -1969,20 +2004,22 @@
      "id": "7.8",
      "kind": "theorem",
      "name": "DrinfeldTower.nonAdmissible",
-     "statement": "If F≠ℚ_p and Π_M(V)≠0, then Π_M(V^+_k) is smooth and not admissible for every k≥1; such V exist; hence for n>0, H¹_ét(M^ϖ_{n,K},k_L)^∨ is not admissible for K/F finite large enough.",
+     "statement": "If F≠ℚ_p and Π_M(V)≠0, then Π_M(V^+_k) is smooth and not admissible for every k≥1; for every supercuspidal M of level ≤n (JL(M) trivial on Ǧ_n) on which ϖ acts trivially such V exist; hence for n>0, H¹_ét(M^ϖ_{n,K},k_L)^∨ is not admissible for K/F finite large enough.",
      "hypotheses": [
       "F≠ℚ_p",
-      "n>0"
+      "n>0",
+      "M supercuspidal of level ≤n with ϖ acting trivially (for the existence of V)"
      ],
      "locator": {
       "source": "CDN23",
-      "where": "Théorèmes 2.13–2.14, Lemmes 2.16–2.17, Proposition 2.18, Remarque 2.15; NAK84 Theorem 4"
+      "where": "Théorèmes 2.13–2.14, Lemmes 2.16–2.17, Proposition 2.18, Remarque 2.15 (line 1494 for level ≤n); NAK84 Theorem 4"
      },
      "prerequisites": [
       "target:7.5",
       "target:7.7",
       "target:4.7",
-      "roadmap:ModpRepresentationsOfGL2OverLocalFields MP.2"
+      "roadmap:ModpRepresentationsOfGL2OverLocalFields MP.2",
+      "roadmap:AdicSpacesPartIII §R3.7"
      ],
      "api": [],
      "tests": [
@@ -1995,6 +2032,11 @@
        "name": "n0",
        "kind": "degenerate",
        "statement": "n=0: no supercuspidal M"
+      },
+      {
+       "name": "level",
+       "kind": "non-example",
+       "statement": "n=1, M of level 2: Ǧ_1 acts trivially on M_1^ϖ, so Π_M(V)=0 for every V; the level hypothesis cannot be dropped"
       }
      ]
     }
@@ -2104,7 +2146,7 @@
     "§AI.6.2",
     "§AI.6.3"
    ],
-   "what": "A_inf period sheaves and semistable AΩ"
+   "what": "the A_inf period sheaf with its Frobenius (§AI.3.1) and semistable AΩ (§§AI.6.2–AI.6.3)"
   },
   {
    "roadmap": "PadicPeriodRings",
@@ -2112,7 +2154,7 @@
     "§4.1",
     "§4.3"
    ],
-   "what": "period rings and fundamental exact sequence"
+   "what": "period rings (§4.1); fixed fields and the sequence 0→ℚ_p→B_cris^{φ=1}→B_dR/Fil⁰→0 (§4.3)"
   },
   {
    "roadmap": "PadicHodgeTheory",
@@ -2242,6 +2284,13 @@
     "RG2.2"
    ],
    "what": "Bruhat–Tits building"
+  },
+  {
+   "roadmap": "PrismaticCohomologyPartIII",
+   "sections": [
+    "§6.3"
+   ],
+   "what": "Artin–Schreier–Witt comparison for perfectoid rings, used for the pro-étale Artin–Schreier sequence of §6.7"
   }
  ],
  "consumers": [
@@ -2282,8 +2331,8 @@
     "1.3",
     "3.2"
    ],
-   "detail": "PadicPeriodRings §4.1 builds the period rings for C=C_K; the curve layers work over any complete algebraically closed C with v_p(C^×)=ℚ.",
-   "needs": "A_cris, B_cris^+, B_st^+, θ, θ_0, φ, N and the fundamental exact sequence over an arbitrary complete algebraically closed C without a chosen discretely valued K.",
+   "detail": "PadicPeriodRings §4.1 builds the period rings for C=C_K and §4.3 states only 0→ℚ_p→B_cris^{φ=1}→B_dR/Fil⁰→0 and the fixed fields; the curve layers work over any complete algebraically closed C with v_p(C^×)=ℚ and use the plus-ring sequences.",
+   "needs": "A_cris, B_cris^+, B_st^+, θ, θ_0, φ, N, the exact sequence 0→ℚ_p t→(B_cris^+)^{φ=p}→C→0, (B_cris^+)^{φ=1}=ℚ_p and (B_cris^+)^{φ=p^{−1}}=0, over an arbitrary complete algebraically closed C without a chosen discretely valued K.",
    "supplier": "PadicPeriodRings",
    "section": "§§4.1, 4.3"
   },
