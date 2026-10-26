@@ -8,8 +8,8 @@ headline theorems against the pinned APIs whenever their carriers can be express
 with a few elementary definitions on native objects.
 
 Regular ordinary unitary finiteness and selected symplectic support are inputs
-from OrdinaryAutomorphicFormsAndModularityLiftingPartII OL.1–OL.3 (p=2) and
-OL.4–OL.5 (p>2), respectively; the singular support application remains §11.4.
+from OrdinaryAutomorphicFormsAndModularityLiftingPartII §§4.7–4.8 (p=2) and
+§§6.3–6.4 (p>2), respectively; the singular support application remains §11.4.
 
 No headline theorem is statable at the pins. The missing carriers are:
 * Integral normalized Siegel p-actions (§1.1), secondary Hasse geometry
@@ -32,7 +32,7 @@ No headline theorem is statable at the pins. The missing carriers are:
 * Variable-weight ordinary R=T and control (§9.2), ordinary p-adic modularity
   (§9.3), and parallel parabolic lifting (§9.4) lack Siegel Hida families and
   their universal ordinary deformation rings.
-* Characteristic-zero local freeness (§10.8), multiplicity one over residue fields
+* Characteristic-zero local freeness (§10.7), multiplicity one over residue fields
   at regular points (§11.3), component support and four-chamber rank one (§11.4–5), and classical
   weight-two modularity lifting (§11.6) lack the actual four higher-Hida modules,
   their arithmetic specialization, Hecke support and higher-Coleman comparison.

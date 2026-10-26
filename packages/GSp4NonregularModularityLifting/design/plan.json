@@ -3721,9 +3721,9 @@
     },
     {
       "slug": "integral-enormity-and-oddness",
-      "needs": "Provide BCGP25 integral enormousness, near adequacy, strongly residual oddness and GSp₄-reasonableness with their exact adjoint conditions, coefficient fields and restriction behavior, without identifying them with CG big image or ACC enormousness.",
+      "needs": "Provide BCGP25 integral enormousness (Definition 7.1.1) with its exact adjoint condition, coefficient field and restriction behavior, without identifying it with CG big image or ACC enormousness.",
       "supplier": "ArithmeticGaloisRepresentations",
-      "section": "§§7.4, 7.9–7.12"
+      "section": "§§7.10–7.11"
     },
     {
       "slug": "gsp4-cg-selmer-presentation",
@@ -3806,14 +3806,14 @@
     {
       "slug": "dyadic-ordinary-support",
       "supplier": "OrdinaryAutomorphicFormsAndModularityLiftingPartII",
-      "section": "OL.1–OL.3",
-      "needs": "Supply OL.1–OL.3 at p=2, including the arbitrary-rank definite-unitary ordinary tower and arithmetic control, the ordinary global dimension bound, and the finiteness and sufficiently-deep-level reduced R=T of BCGP25 Theorem 5.7.14 under all six hypotheses."
+      "section": "§§1.3, 2.1–2.2, 3.1–3.2, 4.7–4.8",
+      "needs": "Supply §§1.3, 2.1–2.2, 3.1–3.2 and 4.7–4.8 at p=2, including near adequacy, the arbitrary-rank definite-unitary ordinary Hecke algebra with Hida theory and arithmetic control, the ordinary global problem with its dimension bound, and the finiteness and sufficiently-deep-level reduced R=T of BCGP25 Theorem 5.7.14 under all six hypotheses."
     },
     {
       "slug": "symplectic-ordinary-component-support",
       "supplier": "OrdinaryAutomorphicFormsAndModularityLiftingPartII",
-      "section": "OL.4–OL.5",
-      "needs": "Supply OL.4–OL.5, including the selected ordinary deformation problem and Hida Hecke map, and the finiteness and reduced R=T of BCGP25 Theorem 6.3.4 on the seed-selected components under Hypothesis 6.3.1, retaining q_v≡1 modulo 9 when p=3."
+      "section": "§§5.2, 5.4–5.6, 6.3–6.4",
+      "needs": "Supply §§5.2, 5.4–5.6 and 6.3–6.4, including GSp₄-reasonableness, the ordinary seed datum, the selected ordinary deformation problem and Hida–Hecke Galois representation, and the reduced R=T and finiteness of BCGP25 Theorem 6.3.4 on the seed-selected components under Hypothesis 6.3.1, retaining q_v≡1 modulo 9 when p=3."
     }
   ],
   "sourceIssues": [
