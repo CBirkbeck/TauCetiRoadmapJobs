@@ -1492,18 +1492,18 @@
      "id": "4.5",
      "kind": "theorem",
      "name": "TauCeti.Gelfand.cotangentComplex",
-     "statement": "For a map A → B of solid animated ℤ-algebras let L_{B/A} ∈ D_{≥0}(B) corepresent A-linear derivations into connective modules, with base change, colimit, transitivity and idempotent-vanishing properties (ALRS Lemma A.1.1, p. 175, ALRS line 9427). Prove that for a descendable map A → A_0 of solid animated R-algebras with Čech conerve A^•, ∧^m_A L_{A/R} → Tot(∧^m_{A^•} L_{A^•/R}) is an equivalence for all m (ALRS Lemma A.1.2, p. 175, ALRS line 9435), and that for discrete A, L_{A/ℤ} is discrete with L_{A/ℤ}(*) = L_{A(*)/ℤ}, while for p-complete A, L_{A/ℤ_p} is p-complete and L_{A[1/p]/ℚ_p} = (lim_n L_{(A/p^n)/(ℤ/p^n)})[1/p] (ALRS Lemma A.1.3, p. 175, ALRS line 9462).",
+     "statement": "With the solid cotangent complex of the contract `solid-cotangent-complex` (AnalyticStacks §§5.1–5.2): for a map A → B of solid animated ℤ-algebras, L_{B/A} ∈ D_{≥0}(B) corepresents A-linear derivations into connective modules, with base change, colimit, transitivity and idempotent-vanishing properties (ALRS Lemma A.1.1, p. 175, ALRS line 9427), and for discrete A, L_{A/ℤ} is discrete with L_{A/ℤ}(*) = L_{A(*)/ℤ} (ALRS Lemma A.1.3(1), p. 175, ALRS line 9463). AnalyticStacks §5.3 gives, for a descendable map A → A_0 of solid animated R-algebras with Čech conerve A^•, the equivalence ∧^m_A L_{A/R} → Tot(∧^m_{A^•} L_{A^•/R}) for all m (ALRS Lemma A.1.2, p. 175, ALRS line 9435). Prove that for a p-complete solid animated ℤ-algebra A, L_{A/ℤ_p} is p-complete and L_{A[1/p]/ℚ_p} = (lim_n L_{(A/p^n)/(ℤ/p^n)})[1/p] (ALRS Lemma A.1.3(2), p. 175, ALRS line 9464).",
      "hypotheses": [
-      "A → B is a map of solid animated ℤ-algebras; in Lemma A.1.2 A → A_0 is descendable"
+      "A → B is a map of solid animated ℤ-algebras; in the proved clause A is a p-complete solid animated ℤ-algebra"
      ],
      "locator": {
       "source": "ALRS",
-      "where": "Lemmas A.1.1–A.1.3, p. 175; ALRS line 9427"
+      "where": "Lemma A.1.3, p. 175; ALRS line 9462"
      },
      "prerequisites": [
       "roadmap:EnhancedDerivedSheaves §E5:cotangent-export.1",
-      "roadmap:EnhancedDerivedSheaves §E5:descent",
       "roadmap:DerivedModuleAlgebra §0.4",
+      "roadmap:RefinedTraceMethods §1.10",
       "gap:solid-cotangent-complex"
      ],
      "api": [],
@@ -1527,6 +1527,11 @@
        "name": "cotangent_identity",
        "kind": "degenerate",
        "statement": "L_{A/A} = 0."
+      },
+      {
+       "name": "cotangent_not_p_complete",
+       "kind": "non-example",
+       "statement": "For the solid ℤ_p-algebra ℤ_p[T] = ⊕_{n ≥ 0} ℤ_p·T^n, which is not p-complete, base change gives L_{ℤ_p[T]/ℤ_p} = ℤ_p[T]·dT, a countable direct sum of copies of ℤ_p and not p-complete (its p-completion is ℤ_p⟨T⟩·dT): the p-completeness hypothesis on A cannot be dropped."
       }
      ]
     },
@@ -1791,7 +1796,7 @@
      "id": "5.3",
      "kind": "theorem",
      "name": "TauCeti.GelfandStack.formalCone_deRham",
-     "statement": "Use the realization of algebraic stacks as analytic stacks, under which sheaves on BG_m^alg, A^{1,alg}/G_m^alg and Â¹/G_m^alg over an analytic stack are graded, filtered and complete filtered modules, and Â¹/G_m^alg = BG_a[−1]/G_m^alg with the Beilinson t-structure (ALRS Remark 2.9.1, p. 35, ALRS line 1866; ALRS Remark 2.9.2, p. 36, ALRS line 1900). Prove that for a formally smooth map f: Y → X of Berkovich spaces with Ω¹_{Y/X} = L_{Y/X} a vector bundle, the map h: Y^{cone^/X} → |Y|^Betti × Â¹/G_m^alg is prim, so Mod_{h_*1}(D(|Y|^Betti × Â¹/G_m^alg)) → D(Y^{cone^/X}) is fully faithful; that the underlying graded algebra of h_*1 is ⊕_i ∧^i Ω^i_{Y/X}[−i](i); and that if f factors through a formally étale Y → A^n_X then, after shearing, h_*1 ≅ (Ω^•_{A^n/ℚ_p}, d) ⊗ O_Y (ALRS Proposition 2.9.3, p. 36, ALRS line 1914). Prove that for a smooth rigid space X over a Banach field K which is a Berkovich space, h_*1 lies in the heart of the Beilinson t-structure and is, after shearing, the de Rham complex (Ω^•_{X/K}, d) with its structure of commutative differential graded algebra, so that filtered flat connections with Griffiths transversality embed fully faithfully into D(X^{cone^/K}) (ALRS Corollary 2.9.4, p. 38, ALRS line 2010; ALRS Example 2.9.5, p. 38, ALRS line 2021). Prove the relative version over a Cartier divisor D ⊆ W with W complete along D and a lift X̃ → W of a formally smooth X → D: X^{cone^/(D,W)} → |X|^Betti × W is prim, and for X̃ formally étale over A^n_W and D static, h_*1 is the D-de Rham complex O → Ω¹(D) → Ω²(2D) → ⋯ (ALRS Proposition 2.9.9, p. 40, ALRS line 2119).",
+     "statement": "Use the realization of algebraic stacks as analytic stacks, under which sheaves on BG_m^alg, A^{1,alg}/G_m^alg and Â¹/G_m^alg over an analytic stack are graded, filtered and complete filtered modules, and Â¹/G_m^alg = BG_a[−1]/G_m^alg with the Beilinson t-structure (ALRS Remark 2.9.1, p. 35, ALRS line 1866; ALRS Remark 2.9.2, p. 36, ALRS line 1900). Prove that for a formally smooth map f: Y → X of Berkovich spaces with Ω¹_{Y/X} = L_{Y/X} a vector bundle, the map h: Y^{cone^/X} → |Y|^Betti × Â¹/G_m^alg is prim, so Mod_{h_*1}(D(|Y|^Betti × Â¹/G_m^alg)) → D(Y^{cone^/X}) is fully faithful; that the underlying graded algebra of h_*1 is ⊕_i Ω^i_{Y/X}[−i](i) with Ω^i_{Y/X} = ∧^i Ω¹_{Y/X}; and that if f factors through a formally étale Y → A^n_X then, after shearing, h_*1 ≅ (Ω^•_{A^n/ℚ_p}, d) ⊗ O_Y (ALRS Proposition 2.9.3, p. 36, ALRS line 1914). Prove that for a smooth rigid space X over a Banach field K which is a Berkovich space, h_*1 lies in the heart of the Beilinson t-structure and is, after shearing, the de Rham complex (Ω^•_{X/K}, d) with its structure of commutative differential graded algebra, so that filtered flat connections with Griffiths transversality embed fully faithfully into D(X^{cone^/K}) (ALRS Corollary 2.9.4, p. 38, ALRS line 2010; ALRS Example 2.9.5, p. 38, ALRS line 2021). Prove the relative version over a Cartier divisor D ⊆ W with W complete along D and a lift X̃ → W of a formally smooth X → D: X^{cone^/(D,W)} → |X|^Betti × W is prim, and for X̃ formally étale over A^n_W and D static, h_*1 is the D-de Rham complex O → Ω¹(D) → Ω²(2D) → ⋯ (ALRS Proposition 2.9.9, p. 40, ALRS line 2119).",
      "hypotheses": [
       "f: Y → X is a formally smooth morphism of Berkovich spaces with Ω¹_{Y/X} a vector bundle; in Corollary 2.9.4 X is smooth rigid over a Banach field K and a Berkovich space"
      ],
@@ -4631,6 +4636,13 @@
     "§6.10"
    ],
    "what": "Checks only. The integral prismatic logarithm (§6.10), a normalization Check for 9.9."
+  },
+  {
+   "roadmap": "RefinedTraceMethods",
+   "sections": [
+    "§1.10"
+   ],
+   "what": "The derived HKR filtration on Hochschild homology of commutative rings, complete, left Kan extended from polynomial rings, with graded pieces ∧^n L[n] (§1.10); 4.5 uses it for p-completeness of the solid cotangent complex."
   }
  ],
  "consumers": [],
@@ -4764,8 +4776,8 @@
    "neededBy": [
     "4.5"
    ],
-   "detail": "Supply, for maps A → B of solid animated ℤ-algebras (and of analytic rings with induced structure), L_{B/A} ∈ D_{≥0}(B) corepresenting M ↦ Der_A(B, M), with L_{B′/A′} = L_{B/A} ⊗_B B′ for pushouts, compatibility with colimits, the transitivity fibre sequence and L_{B/A} = 0 for idempotent A → B (RCSolid Definition 7.4.1 and Lemma 7.4.3, RCSolid line 5257, RCSolid line 5276; ALRS Lemma A.1.1, ALRS line 9427). EnhancedDerivedSheaves §E5:cotangent-export.1 supplies the animated cotangent complex of discrete animated rings, which this contract must agree with on discrete rings.",
-   "needs": "The cotangent complex of maps of solid (and analytic) animated rings, corepresenting derivations into connective modules, with base change, colimit, transitivity and idempotent-vanishing properties.",
+   "detail": "Supply, for maps A → B of solid animated ℤ-algebras (and of analytic rings with induced structure), L_{B/A} ∈ D_{≥0}(B) corepresenting M ↦ Der_A(B, M), with L_{B′/A′} = L_{B/A} ⊗_B B′ for pushouts, compatibility with colimits, the transitivity fibre sequence and L_{B/A} = 0 for idempotent A → B (RCSolid Definition 7.4.1 and Lemma 7.4.3, RCSolid line 5257, RCSolid line 5276; ALRS Lemma A.1.1, ALRS line 9427). EnhancedDerivedSheaves §E5:cotangent-export.1 supplies the animated cotangent complex of discrete animated rings, which this contract must agree with on discrete rings. For discrete A this agreement says that L_{A/ℤ} is discrete with L_{A/ℤ}(*) = L_{A(*)/ℤ}, the §5.1 comparison (RCSolid Example 7.4.4(1), RCSolid line 5295). Descent of ∧^m L along descendable maps of solid animated R-algebras, and of analytic rings with the induced structure, is §5.3 (ALRS Lemma A.1.2, ALRS line 9435).",
+   "needs": "The cotangent complex of maps of solid (and analytic) animated rings, corepresenting derivations into connective modules, with base change, colimit, transitivity and idempotent-vanishing properties, agreement with the animated cotangent complex on discrete rings, and descent of its exterior powers along descendable maps: ∧^m_A L_{A/R} ≃ Tot(∧^m_{A^•} L_{A^•/R}).",
    "supplier": "AnalyticStacks",
    "section": "§§5.1–5.3"
   },
