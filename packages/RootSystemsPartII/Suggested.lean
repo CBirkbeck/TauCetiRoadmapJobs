@@ -24,23 +24,18 @@ variable {ι : Type u} {M : Type v} {N : Type w}
 
 /-! ## Layer 1: integral dominance and the Stembridge step -/
 
-/-- Integral root dominance uses the native monoid of natural simple-root sums. -/
-def rootLE (P : RootPairing ι ℝ M N) (b : P.Base) (x y : M) : Prop :=
-  y - x ∈ TauCeti.posRootCone P b
-
-/-- Distinct dominant integral weights with a positive integral root difference
-admit a positive-root increment staying dominant and below the upper endpoint.
-Extra central directions are allowed. Rapoport, Lemma 2.3, (2.10)–(2.13). -/
+/-- Distinct dominant real weights whose difference is a natural sum of simple
+roots admit a positive-root increment staying dominant and below the upper
+endpoint; integrality of the endpoints is not needed. Extra central directions
+are allowed. Rapoport, Lemma 2.3, (2.10)–(2.13). -/
 theorem stembridge_step (P : RootPairing ι ℝ M N) [Finite ι]
     [P.IsReduced] [P.IsCrystallographic] (b : P.Base) (lam mu : M)
     (hlam : lam ∈ TauCeti.dominantChamber P b)
     (hmu : mu ∈ TauCeti.dominantChamber P b)
-    (hlam_int : ∀ i ∈ b.support, ∃ z : ℤ, P.coroot' i lam = (z : ℝ))
-    (hmu_int : ∀ i ∈ b.support, ∃ z : ℤ, P.coroot' i mu = (z : ℝ))
-    (hne : lam ≠ mu) (hle : rootLE P b lam mu) :
+    (hne : lam ≠ mu) (hle : mu - lam ∈ TauCeti.posRootCone P b) :
     ∃ i : ι, b.IsPos i ∧ lam + P.root i ∈ TauCeti.dominantChamber P b ∧
-      rootLE P b lam (lam + P.root i) ∧ lam ≠ lam + P.root i ∧
-      rootLE P b (lam + P.root i) mu := by
+      P.root i ∈ TauCeti.posRootCone P b ∧ lam ≠ lam + P.root i ∧
+      mu - (lam + P.root i) ∈ TauCeti.posRootCone P b := by
   sorry
 
 /-! ## Layer 2: distinct root orbits -/
@@ -55,10 +50,6 @@ noncomputable def orbitSum (P : RootPairing ι ℝ M N) [Finite ι]
     (sigma : P.Aut) (i : ι) : M :=
   ∑ j ∈ orbitIndices P sigma i, P.root j
 
-/-- The native fixed submodule of the weight map. -/
-def fixedSpace (P : RootPairing ι ℝ M N) (sigma : P.Aut) : Submodule ℝ M :=
-  LinearMap.fixedSubmodule sigma.weightMap
-
 /-- The distinct image of root-orbit sums, used as an index type rather than a
 possibly noninjective quotient of root orbits. -/
 def foldedIndices (P : RootPairing ι ℝ M N) [Finite ι] (sigma : P.Aut) : Set M :=
@@ -70,8 +61,8 @@ evaluation, and its base consists exactly of the simple-orbit sums. -/
 structure OrbitSumRealization (P : RootPairing ι ℝ M N) [Finite ι]
     (b : P.Base) (sigma : P.Aut) where
   /-- The native pairing on the fixed space and its linear dual. -/
-  pairing : RootPairing (foldedIndices P sigma) ℝ (fixedSpace P sigma)
-    (Module.Dual ℝ (fixedSpace P sigma))
+  pairing : RootPairing (foldedIndices P sigma) ℝ (LinearMap.fixedSubmodule sigma.weightMap)
+    (Module.Dual ℝ (LinearMap.fixedSubmodule sigma.weightMap))
   /-- Its finite simple base. -/
   base : pairing.Base
   /-- Both root and coroot families span. -/
@@ -106,8 +97,8 @@ theorem fixed_weyl_group (P : RootPairing ι ℝ M N) [Finite ι]
       i ≠ j → P.pairing i j = 0)
     (F : OrbitSumRealization P b sigma) :
     ∃ e : fixedWeylGroup P sigma ≃* F.pairing.weylGroup,
-      ∀ (w : fixedWeylGroup P sigma) (x : fixedSpace P sigma),
-        ((e w • x : fixedSpace P sigma) : M) =
+      ∀ (w : fixedWeylGroup P sigma) (x : LinearMap.fixedSubmodule sigma.weightMap),
+        ((e w • x : LinearMap.fixedSubmodule sigma.weightMap) : M) =
           ((w : P.weylGroup) • (x : M)) := by
   sorry
 
@@ -160,7 +151,7 @@ theorem invariant_weight_transport (P : RootPairing ι ℝ M N) [Finite ι]
     [P.IsRootSystem] [P.IsReduced] [P.IsCrystallographic]
     (b : P.Base) (sigma : P.Aut)
     (hbase : ∀ i : ι, i ∈ b.support ↔ sigma.indexEquiv i ∈ b.support)
-    (F : OrbitSumRealization P b sigma) (x : fixedSpace P sigma) :
+    (F : OrbitSumRealization P b sigma) (x : LinearMap.fixedSubmodule sigma.weightMap) :
     ((x : M) ∈ TauCeti.dominantChamber P b ↔
       x ∈ TauCeti.dominantChamber F.pairing F.base) ∧
     ((∀ i ∈ b.support, ∃ z : ℤ, P.coroot' i (x : M) = (z : ℝ)) →
@@ -174,15 +165,16 @@ theorem invariant_cone_transport (P : RootPairing ι ℝ M N) [Finite ι]
     [P.IsRootSystem] [P.IsReduced] [P.IsCrystallographic]
     (b : P.Base) (sigma : P.Aut)
     (hbase : ∀ i : ι, i ∈ b.support ↔ sigma.indexEquiv i ∈ b.support)
-    (F : OrbitSumRealization P b sigma) (x : fixedSpace P sigma) :
+    (F : OrbitSumRealization P b sigma) (x : LinearMap.fixedSubmodule sigma.weightMap) :
     ((x : M) ∈ TauCeti.posRootCone P b ↔
       x ∈ TauCeti.posRootCone F.pairing F.base) ∧
     ((x : M) ∈ AddSubgroup.closure (Set.range P.root) ↔
       x ∈ AddSubgroup.closure (Set.range F.pairing.root)) := by
   sorry
 
-/-- Invariant distinct dominant integral endpoints admit a positive-root orbit
-sum that stays dominant and within the integral root budget. -/
+/-- Invariant distinct dominant real endpoints whose difference is a natural sum
+of simple roots admit a positive-root orbit sum that stays dominant and within
+that integral root budget. -/
 theorem invariant_step (P : RootPairing ι ℝ M N) [Finite ι]
     [P.IsRootSystem] [P.IsReduced] [P.IsCrystallographic]
     (b : P.Base) (sigma : P.Aut)
@@ -192,43 +184,40 @@ theorem invariant_step (P : RootPairing ι ℝ M N) [Finite ι]
     (hfixed_mu : sigma.weightMap mu = mu)
     (hlam : lam ∈ TauCeti.dominantChamber P b)
     (hmu : mu ∈ TauCeti.dominantChamber P b)
-    (hlam_int : ∀ i ∈ b.support, ∃ z : ℤ, P.coroot' i lam = (z : ℝ))
-    (hmu_int : ∀ i ∈ b.support, ∃ z : ℤ, P.coroot' i mu = (z : ℝ))
-    (hne : lam ≠ mu) (hle : rootLE P b lam mu) :
+    (hne : lam ≠ mu) (hle : mu - lam ∈ TauCeti.posRootCone P b) :
     ∃ i : ι, b.IsPos i ∧ orbitSum P sigma i ≠ 0 ∧
       sigma.weightMap (lam + orbitSum P sigma i) = lam + orbitSum P sigma i ∧
       lam + orbitSum P sigma i ∈ TauCeti.dominantChamber P b ∧
-      rootLE P b lam (lam + orbitSum P sigma i) ∧
+      orbitSum P sigma i ∈ TauCeti.posRootCone P b ∧
       lam ≠ lam + orbitSum P sigma i ∧
-      rootLE P b (lam + orbitSum P sigma i) mu := by
+      mu - (lam + orbitSum P sigma i) ∈ TauCeti.posRootCone P b := by
   sorry
 
 /-- The invariant step in a finite-dimensional ambient pairing retains the central
-component, without a spanning or central finite-order hypothesis. Apply it to the
-flipped pairing for coroot increments. -/
+component, without a spanning or central finite-order hypothesis; the additive
+subgroup only needs to contain the roots. Apply it to the flipped pairing for
+coroot increments. -/
 theorem ambient_coroot_step (P : RootPairing ι ℝ M N) [Finite ι]
     [FiniteDimensional ℝ M] [FiniteDimensional ℝ N]
     [P.IsReduced] [P.IsCrystallographic]
     (b : P.Base) (sigma : P.Aut)
     (hbase : ∀ i : ι, i ∈ b.support ↔ sigma.indexEquiv i ∈ b.support)
     (L : AddSubgroup M) (hroots : ∀ i : ι, P.root i ∈ L)
-    (hstable : ∀ x : M, x ∈ L ↔ sigma.weightMap x ∈ L)
     (lam mu : L)
     (hfixed_lam : sigma.weightMap (lam : M) = lam)
     (hfixed_mu : sigma.weightMap (mu : M) = mu)
     (hlam : (lam : M) ∈ TauCeti.dominantChamber P b)
     (hmu : (mu : M) ∈ TauCeti.dominantChamber P b)
-    (hlam_int : ∀ i ∈ b.support, ∃ z : ℤ, P.coroot' i (lam : M) = (z : ℝ))
-    (hmu_int : ∀ i ∈ b.support, ∃ z : ℤ, P.coroot' i (mu : M) = (z : ℝ))
-    (hne : lam ≠ mu) (hle : rootLE P b (lam : M) (mu : M)) :
+    (hne : lam ≠ mu) (hle : (mu : M) - lam ∈ TauCeti.posRootCone P b) :
     ∃ i : ι, b.IsPos i ∧ orbitSum P sigma i ≠ 0 ∧
       (lam : M) + orbitSum P sigma i ∈ L ∧
       sigma.weightMap ((lam : M) + orbitSum P sigma i) =
         (lam : M) + orbitSum P sigma i ∧
       (lam : M) + orbitSum P sigma i ∈ TauCeti.dominantChamber P b ∧
-      rootLE P b (lam : M) ((lam : M) + orbitSum P sigma i) ∧
+      orbitSum P sigma i ∈ TauCeti.posRootCone P b ∧
       (lam : M) ≠ (lam : M) + orbitSum P sigma i ∧
-      rootLE P b ((lam : M) + orbitSum P sigma i) (mu : M) := by
+      (mu : M) - ((lam : M) + orbitSum P sigma i) ∈
+        TauCeti.posRootCone P b := by
   sorry
 
 /-- Lift the ambient orbit step to an abelian group with possible torsion. The real
@@ -248,8 +237,6 @@ theorem torsion_lattice_coroot_step
     (lam mu : A) (hfixed_lam : tau lam = lam) (hfixed_mu : tau mu = mu)
     (hlam : f lam ∈ TauCeti.dominantChamber P b)
     (hmu : f mu ∈ TauCeti.dominantChamber P b)
-    (hlam_int : ∀ i ∈ b.support, ∃ z : ℤ, P.coroot' i (f lam) = (z : ℝ))
-    (hmu_int : ∀ i ∈ b.support, ∃ z : ℤ, P.coroot' i (f mu) = (z : ℝ))
     (hne : lam ≠ mu)
     (hle : mu - lam ∈ AddSubmonoid.closure (r '' (b.support : Set ι))) :
     ∃ i : ι, b.IsPos i ∧
