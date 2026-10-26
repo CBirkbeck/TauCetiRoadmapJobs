@@ -1839,15 +1839,15 @@
     },
     {
       "slug": "elliptic-quadratic-analytic-identities",
-      "needs": "export the full quadratic base-change factorization L(A/K,s)=L(A,s)L(Aᶜʰⁱ_K,s), equality of all local factors under isogeny, finite analytic order, and the congruent-number root numbers +1 for positive squarefree residues 1,2,3 modulo eight and −1 for 5,6,7, including ramified factors.",
+      "needs": "for every elliptic A/ℚ and every quadratic field K, export the identity L(A_K,s)=L(A,s)L(Aᶜʰⁱ_K,s) of entire continuations, including the local factors at primes dividing the conductor and at primes ramified in K.",
       "supplier": "EllipticCurveModularity",
-      "section": "R29.6"
+      "section": "R29.4 and R29.6"
     },
     {
-      "slug": "isogeny-corank-all-primes",
-      "needs": "for every number field, elliptic isogeny φ and prime p, give maps on classical p∞ Kummer Selmer groups respecting all local images whose composites with the dual maps are multiplication by deg φ, so finite-cotype kernels and cokernels have equal rationalized dual corank even when p divides deg φ.",
-      "supplier": "EllipticCurves",
-      "section": "Layers 5 and 7"
+      "slug": "congruent-number-root-numbers",
+      "needs": "for every positive squarefree n, export the sign of the functional equation of y²=x³−n²x, namely +1 for n≡1,2,3 modulo eight and −1 for n≡5,6,7, including the local contributions at two and at the primes dividing n.",
+      "supplier": "EllipticCurveModularity",
+      "section": "R29.6"
     },
     {
       "slug": "pointed-cubic-model-comparison",
@@ -1868,10 +1868,10 @@
       "section": "3.15–3.16 and 4.26"
     },
     {
-      "slug": "central-finite-conditions-and-descent",
-      "needs": "export the central modular finite/unramified comparison at every bad prime away from p, finite-condition Shapiro and faithful coefficient extension at all places, and rational quadratic restriction/corestriction for the classical p∞ Selmer group with composites 2, keeping the dyadic errors until rationalization.",
+      "slug": "finite-condition-shapiro",
+      "needs": "for a finite extension F′/F of number fields and a finite-dimensional continuous p-adic representation V of G_F′, export that the global Shapiro isomorphism H¹(F′,V)≅H¹(F,Ind V) matches the Bloch–Kato finite conditions place by place through the semilocal decomposition, with the unramified condition at places away from p, and therefore restricts to H_f¹(F′,V)≅H_f¹(F,Ind V).",
       "supplier": "SelmerIwasawaCohomology",
-      "section": "3.15–3.16 and 4.26"
+      "section": "2.7 and 3.6"
     },
     {
       "slug": "central-modular-local-dimensions",
