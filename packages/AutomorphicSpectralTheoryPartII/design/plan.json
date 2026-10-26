@@ -4177,16 +4177,28 @@
       "needs": "Supply real descent on the abstract Cartan root datum, Weyl change of Cartan identification and the split/compact eigenspaces of each maximal real torus, compatibly with infinitesimal characters."
     },
     {
-      "slug": "real-plancherel-characters",
+      "slug": "real-plancherel-decomposition",
       "supplier": "AutomorphicFormsOnReductiveGroups",
-      "section": "§§2.2–2.4, 2.7",
-      "needs": "Supply real reductive Plancherel decomposition with the chosen Haar measure, Fourier faithfulness on the Nash Schwartz algebra and containment of tempered infinitesimal characters in the realized real-torus spectral strips, retaining finite real components."
+      "section": "§§2.4, 2.7",
+      "needs": "Supply Harish-Chandra's Plancherel decomposition of the Nash Schwartz algebra of a real reductive group with the chosen Haar measure, retaining finitely many real components."
+    },
+    {
+      "slug": "tempered-characters-in-torus-strips",
+      "supplier": "AutomorphicFormsOnReductiveGroups",
+      "section": "§§2.2–2.4",
+      "needs": "Supply containment of every tempered infinitesimal character in the union, over realized maximal real tori, of the shifted spectral lattice strips of §0.4 with purely imaginary split part."
     },
     {
       "slug": "rapid-semisimple-centre",
       "supplier": "AutomorphicSpectralTheory",
       "section": "§§6.1–6.3",
-      "needs": "Supply the semisimple rapid-symbol multiplier from compact smooth finite-K-type stages to Schwartz stages and the split-centre Fourier–Laplace multiplier, with the nuclear Nash product comparison used in BPLZZ Appendix A."
+      "needs": "Supply the semisimple rapid-symbol multiplier from compact smooth finite-K-type stages to Schwartz stages of a semisimple real reductive group, for W-invariant rapidly decreasing symbols."
+    },
+    {
+      "slug": "split-centre-fourier-laplace",
+      "supplier": "AutomorphicSpectralTheory",
+      "section": "§§6.1–6.3",
+      "needs": "Supply the Fourier–Laplace multiplier of a rapidly decreasing symbol on a split real torus, continuous on each fixed finite-type, fixed-support Schwartz stage."
     },
     {
       "slug": "kostant-centralizer",
@@ -4255,10 +4267,16 @@
       "needs": "Supply the normalized-intertwiner comparison and hereditary polynomial parameter and derivative estimates (HP), including (UT) and (WR) for every Levi, unconditionally for finite products of restrictions of scalars of GL_n."
     },
     {
-      "slug": "discrete-polynomial-counting",
+      "slug": "refined-langlands-discrete-data",
       "supplier": "AutomorphicSpectralTheory",
-      "section": "§§4.7–4.14",
-      "needs": "Supply the refined discrete-data Langlands decomposition and fixed-level finite-K-type polynomial discrete-spectrum Casimir counting bound with central disintegration and residual summands explicit."
+      "section": "§§4.11–4.14",
+      "needs": "Supply the decomposition of the fixed-level central-character L² space by Langlands discrete data (M,σ) with σ discrete, with its normalized-twist and Weyl equivalence, central disintegration and residual summands explicit."
+    },
+    {
+      "slug": "discrete-spectrum-casimir-counting",
+      "supplier": "AutomorphicSpectralTheory",
+      "section": "§§4.7–4.9",
+      "needs": "Supply the fixed-level finite-K-type polynomial bound for the number, with multiplicity, of discrete-spectrum Casimir eigenvalues of absolute value at most R."
     },
     {
       "slug": "central-character-affine-lattice",
@@ -4270,7 +4288,7 @@
       "slug": "satake-exponential-family",
       "supplier": "SmoothRepresentationsOfLocalGroups",
       "section": "SR.4.1–SR.4.2",
-      "needs": "Supply normalized spherical Hecke characters under parabolic induction and restriction to an unramified Levi, with each fixed Hecke value a finite exponential polynomial in the common complex twist parameter and central convolution preserving finite-support finite-level Schwartz stages."
+      "needs": "Supply normalized spherical Hecke characters under parabolic induction and restriction to an unramified Levi, with each fixed Hecke value a finite exponential polynomial in the common complex twist parameter."
     },
     {
       "slug": "compact-eisenstein-comparison",
