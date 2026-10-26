@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-7083 mistakes recorded on the board: 4325 misprints, 1794 errors, 709 gaps, 255 unparsed bullets.
+7086 mistakes recorded on the board: 4326 misprints, 1794 errors, 710 gaps, 256 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -263,6 +263,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Unparsed** (ShimuraVarietiesPartII, #428 at 27bfec4, 2026-10-26): Misprint** in KZ at the proofs of Proposition 4.2.3 and Lemma 4.3.8, pp.34 and 41: the source cites KPZ Propositions 7.2.14, 7.2.18 and Lemma 7.2.6 by preprint numbers; in the published KPZ these are Proposition 7.2.19 and Lemma 7.2.11; affects nothing.
 - **Unparsed** (CrystallineCohomologyPartII, #296 at dc0fd5b, 2026-10-26): Gap** in Tan18 at Remark 5.3 (1), printed p. 20: the source says rational chain connectedness is invariant under every field extension for every proper scheme, citing Proposition A.4; A.4 covers only proper geometrically normal geometrically connected varieties, so the general case rests on the uncited Kollár exercise; affects nothing (the roadmap states the restricted form). <!-- tauceti-roadmap-review {"agent": "claude", "head": "dc0fd5b", "job": "REV-DESIGN-CrystallineCohomologyPartII~3", "model": "fable", "worker": "fable-rev187"} -->
 - **Unparsed** (GSp4NonregularModularityLifting, #1219 at d923256, 2026-10-26): Misprint** in CG20 at Theorem 7.11, printed page 853 (line 2058): the source says p−2 > a; the section's standing hypothesis and the proof use only p > a−2 (line 1988, 1998); affects nothing, since oddness makes a even and p−1 > a then gives a ≤ p−3.
+- **Unparsed** (AdicCoefficientsAndComparisonsPartII, #1109 at 74a0736, 2026-10-26): Gap** in ilo14 at Exposé X, Remark 3.3.4(ii), arXiv v1 page 159: the source says every quasi-excellent scheme of dimension at most two is universally resolvable, citing Cossart–Jannsen–Saito; that paper's theorems assume excellence, and the quasi-excellent case needs Lipman's theorem (Stacks 0BGP) before the snc step; affects nothing (already recorded in round 4; re-verified at ilo14 lines 7320–7322 and cjs lines 40–43). <!-- tauceti-roadmap-review {"agent": "claude", "head": "74a0736", "job": "REV-PKG-AdicCoefficientsAndComparisonsPartII~5", "model": "fable", "worker": "fable-rev188"} -->
 
 ## A
 
@@ -3157,6 +3158,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## COLMEZ19POIDS
 
 - **Misprint** at Remarque 0.2(ii), author's copy p. 4: the source says Π(Δ) is an extension of Π(M,−k) by LL_p(M)⊗Sym^{k−1}; it should be an extension of Π(M,−k)⊗x^k, as Théorème 0.6(iii) states; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "6dc9a62", "job": "REV-DESIGN-PadicLocalLanglandsForGL2QpPartII~3", "model": "fable", "worker": "fable-rev167"} -->. Found by PadicLocalLanglandsForGL2QpPartII (#392 at 6dc9a62, 2026-10-26, claude fable).
+- **Misprint** at Remarque 0.2(ii), lines 161–163 (page 4 of the author's copy): the source says Π(Δ) is an extension of Π(M,−k) by LL_p(M)⊗Sym^{k−1} for de Rham nontrianguline Δ of weights 0 and k; it should be an extension of Π(M,−k)⊗x^k, as Théorème 0.6(iii) (line 234) prints, since the central characters x^kω and x^{−k}ω differ; affects nothing; (the roadmap's §2.3 uses the twisted form). <!-- tauceti-roadmap-review {"agent": "claude", "head": "b81ec27", "job": "REV-DESIGN-PadicLocalLanglandsForGL2QpPartII~5", "model": "fable", "worker": "fable-rev189"} -->. Found by PadicLocalLanglandsForGL2QpPartII (#392 at b81ec27, 2026-10-26, claude fable).
 
 ## Colmez–Dospinescu–Nizioł (CDN), Drinfeld-tower paper,
 
@@ -9269,6 +9271,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## temkin17
 
+- **Gap** at Theorem 1.2.5 and §4.3.2, printed pages 99 and 124: the source says a scheme of finite type over a qe S of dimension ≤ 3 has a projective char(X)-alteration, with S universally resolvable by Cossart–Piltant; universal P-resolvability as defined in §4.1.4 yields only proper alterations, and the published Cossart–Piltant theorem assumes S separated and gives projectivity only over an affine cover; it should be proper (projective over affine opens) for separated S of dimension 3, projective for dim S ≤ 2; affects a stated result. Found by AdicCoefficientsAndComparisonsPartII (#1109 at 74a0736, 2026-10-26, claude fable).
 - **Misprint** at Theorem 4.2.1, proof Step 10, p. 123: the source says a composite morphism is called log regular, T is undefined, and the target is written (X, S); it should be log smooth, with T = Z̄ ∪ f̄⁻¹(W̄) and target (S, W); affects nothing. Found by AdicCoefficientsAndComparisonsPartII (#1109 at a485141, 2026-10-24, claude opus).
 - **Gap** at Theorem 4.2.1, proof Step 4, p. 122: the source says the source assumes only char(X) ⊆ P, yet applies Theorem 3.3.6, whose degrees lie on the wild primes of S̄ → S, a subset of char(S) possibly outside P; it should be assume char(S) ⊆ P, or run Step 4 over the open S₀ with char(S₀) = char(X); affects the proof. Found by AdicCoefficientsAndComparisonsPartII (#1109 at a485141, 2026-10-24, claude opus).
 - **Gap** at Theorem 4.2.1, proof Step 4, p. 122: the source says the separable alternative is asserted, but Theorem 3.3.6 can return an inseparable P-alteration when the characteristic lies in P; it should be use separable variants of Theorems 3.2.12 and 3.3.6 inside a maximal separable P-extension; affects the proof. Found by AdicCoefficientsAndComparisonsPartII (#1109 at a485141, 2026-10-24, claude opus).
