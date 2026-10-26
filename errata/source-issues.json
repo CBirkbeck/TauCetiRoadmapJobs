@@ -113535,10 +113535,42 @@
    "reported": "2026-10-26",
    "reporter": "claude fable",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/384#issuecomment-6406113952"
+  },
+  {
+   "kind": "error",
+   "source": "KPZ",
+   "locator": "Remark 4.1.5(2), printed page 31",
+   "says": "the source calls the surface x²+xyz=0 normal and prints its ring as k[x,y,x]",
+   "should": "the surface is reduced and reducible with minimal primes (x) and (x+yz), not normal at the origin, over k[x,y,z]",
+   "affects": "nothing",
+   "note": "(already this roadmap's E1)",
+   "roadmap": "GeometricSatakeAndFusionPartII",
+   "job": "REV-PKG-GeometricSatakeAndFusionPartII~7",
+   "board_pr": 1177,
+   "head": "60448fc",
+   "reported": "2026-10-26",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/1177#issuecomment-6406185342"
+  },
+  {
+   "kind": "misprint",
+   "source": "SW",
+   "locator": "§21.8, printed page 206",
+   "says": "the source lists the GL₂ components of μ as (1,1) over the distinguished embedding and (0,0) or (2,2) elsewhere",
+   "should": "(1,0) over the distinguished embedding and (0,0) or (1,1) elsewhere, so the generic fibre is P¹ as Theorem 21.8.1 requires",
+   "affects": "nothing",
+   "note": "(already this roadmap's E7). <!-- tauceti-roadmap-review {\"agent\": \"claude\", \"head\": \"60448fc\", \"job\": \"REV-PKG-GeometricSatakeAndFusionPartII~7\", \"model\": \"fable\", \"worker\": \"fable-rev177\"} -->",
+   "roadmap": "GeometricSatakeAndFusionPartII",
+   "job": "REV-PKG-GeometricSatakeAndFusionPartII~7",
+   "board_pr": 1177,
+   "head": "60448fc",
+   "reported": "2026-10-26",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/1177#issuecomment-6406185342"
   }
  ],
- "scanned_to": "2026-10-26T01:20:41Z",
- "updated": "2026-10-26T01:21:03Z",
+ "scanned_to": "2026-10-26T01:26:49Z",
+ "updated": "2026-10-26T01:27:39Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
