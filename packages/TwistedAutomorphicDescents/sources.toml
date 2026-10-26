@@ -7,7 +7,6 @@ authors = "Dihua Jiang; Lei Zhang"
 title = "Arthur parameters and cuspidal automorphic modules of classical groups"
 year = 2020
 doi = "10.4007/annals.2020.191.3.2"
-version_note = "Published Annals version; all journal-page locators use this version."
 locator_scheme = "theorem"
 locator = "Sections 2, 4–7; Appendices A–B, pp. 748–820"
 url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v191-n3-p02-s.pdf"
@@ -17,6 +16,7 @@ sha256 = "c016d9729f7f0cdca451e14a62015bd85cde861a9e07d3135e8feff071d0b15f"
 licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-10-25"
+version_note = "Published Annals version; all journal-page locators use this version."
 cited_for = ["Layers 0–7"]
 
 [[source]]
@@ -24,7 +24,6 @@ id = "Zhang2022"
 authors = "Lei Zhang"
 title = "Note on the unramified computation of Rankin-Selberg integrals for quasi-split classical groups of Bessel model case"
 year = 2022
-version_note = "RIMS Kokyuroku 2230 institutional PDF; PDF-page numbering; OCR extraction."
 locator_scheme = "theorem"
 locator = "Theorem 1.1, Proposition 2.1; Sections 3–5"
 url = "https://www.kurims.kyoto-u.ac.jp/~kyodo/kokyuroku/contents/pdf/2230-10.pdf"
@@ -34,6 +33,7 @@ sha256 = "3a0b766dd859ae0faf2f8a7816a5a3034bf90c85ad3bccf315d869617b35b710"
 licence_class = "institutional"
 status = "certified"
 accessed = "2026-10-25"
+version_note = "RIMS Kokyuroku 2230 institutional PDF; PDF-page numbering; OCR extraction."
 cited_for = ["3.4"]
 
 [[source]]
@@ -119,13 +119,13 @@ authors = "David Ginzburg; Stephen Rallis; David Soudry"
 title = "The descent map from automorphic representations of GL(n) to classical groups"
 year = 2011
 doi = "10.1142/9789814304993"
-url = "https://doi.org/10.1142/9789814304993"
 locator_scheme = "theorem"
 locator = "Theorems 5.1, 5.4, 5.6 and 7.3, as cited by JZ2020"
-cited_for = ["1.3", "5.4", "5.7", "6.3", "7.3"]
+url = "https://doi.org/10.1142/9789814304993"
 licence_class = "none"
 status = "uncertified"
 version_note = "Publisher book unavailable to the sources service; cited only by the secondary theorem locators in JZ2020, without the proof text."
+cited_for = ["1.3", "5.4", "5.7", "6.3", "7.3"]
 note = "Sources service reached the publisher DOI landing page and received HTTP 403; no proof text was read and no licence or hash is asserted. The open JZ2020 extraction supplies the secondary locators."
 
 [[source]]
@@ -133,6 +133,7 @@ id = "GGP2012"
 authors = "Wee Teck Gan, Benedict H. Gross, Dipendra Prasad"
 title = "Symplectic local root numbers, central critical L-values, and restriction problems in the representation theory of classical groups"
 year = 2012
+arxiv = "0909.2999v1"
 locator_scheme = "section"
 locator = "Published Theorem 14.1(i), p.57; Theorem 15.1, pp.59–62; Corollary 15.3 and following remark, pp.62–63"
 url = "https://www.numdam.org/item/AST_2012__346__1_0/"
@@ -142,6 +143,43 @@ sha256 = "bbabe7bf4a53eacc9123d63751e211dab6f000e7bed1009096ea4b2132beb022"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["1.4 Orthogonal local Bessel uniqueness"]
-arxiv = "0909.2999v1"
 version_note = "Published Astérisque 346 (2012), 1–109, read from Numdam; uses Corollary 15.3. The earlier arXiv v1 has Corollary 15.2 and a narrower SO discussion; its numbering is not used."
+cited_for = ["1.4 Orthogonal local Bessel uniqueness"]
+
+[[source]]
+id = "Waldspurger2012"
+authors = "Jean-Loup Waldspurger"
+title = "Une variante d'un résultat de Aizenbud, Gourevitch, Rallis et Schiffmann"
+year = 2012
+venue = "Astérisque 346 (2012), 313-318"
+version_note = "Published Astérisque text read from Numdam; Théorème 1 on printed p.313."
+locator_scheme = "theorem"
+locator = "Théorème 1"
+url = "https://www.numdam.org/item/AST_2012__346__313_0/"
+fetched_from = "https://www.numdam.org/item/AST_2012__346__313_0.pdf"
+fetched_at = "2026-10-26T22:31:40Z"
+sha256 = "651c1d05e626ec0ec027f64d2e271f2994907880a65366b94aa618eeb44143a4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["1.4"]
+
+[[source]]
+id = "SunZhu2012"
+authors = "Binyong Sun, Chen-Bo Zhu"
+title = "Multiplicity one theorems: the Archimedean case"
+year = 2009
+venue = "Ann. of Math. (2) 175 (2012), no. 1, 23-44"
+doi = "10.4007/annals.2012.175.1.2"
+arxiv = "0903.1413v2"
+locator_scheme = "theorem"
+locator = "Theorem B"
+url = "https://arxiv.org/abs/0903.1413v2"
+fetched_from = "https://arxiv.org/pdf/0903.1413v2"
+fetched_at = "2026-10-26T22:32:13Z"
+sha256 = "032c6e55c9bcb1dd89f770c5edfcb6d1b8318948e7b633228aad587a1befb874"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2 (2011); its Theorem B is the multiplicity-one theorem of the published Annals version, which is not checked line by line."
+cited_for = ["1.4"]

@@ -3335,7 +3335,7 @@
     },
     {
       "slug": "bessel-restriction-growth",
-      "needs": "Supply convergence and continuity of cuspidal Bessel periods against moderate-growth forms and restriction estimates into fixed-central-character or split-center-quotient Hilbert carriers, with all archimedean and split-torus cases.",
+      "needs": "Supply absolute convergence and continuity of Bessel periods when the form on the ambient group is cuspidal and the form on the stabilizer has moderate growth, and when the stabilizer form is cuspidal and the stabilizer has trivial F-split centre; for a split SO₂ stabilizer, the finite asymptotic expansions of Bessel coefficients of moderate-growth forms along the split torus and the truncation-regularized period with its exponent corrections, agreeing with the ordinary integral where that converges; and restriction estimates into fixed-central-character or split-center-quotient Hilbert carriers, with all archimedean cases.",
       "supplier": "AutomorphicFormsOnReductiveGroups",
       "section": "4.1–4.2, restriction and cuspidal realization"
     },
@@ -3404,6 +3404,18 @@
       "needs": "Identify the standard isobaric base change of each generic-parameter discrete automorphic member, with uniqueness of the GL isobaric target from its almost-everywhere standard Satake parameters, retaining even-orthogonal outer labels on the source and the classification scope of Section 5.2.",
       "supplier": "ModularityAndLanglandsExtensions",
       "section": "3.8, 3.12, 3.15–3.18, 3.23"
+    },
+    {
+      "slug": "orthogonal-auxiliary-induction",
+      "needs": "For every finite extension k of Q_p, every nondegenerate quadratic space W over k, every t≥1, every irreducible admissible σ_W of SO(W)(k) and every irreducible supercuspidal τ of GL_t(k), prove that the normalized induction of τ|det|^s⊗σ_W from the maximal parabolic of SO(W⊥H^t) with Levi GL_t×SO(W) is irreducible for s outside a finite subset of C/(2πi/log q)Z, and that for each irreducible π_V of SO(V)(k), V⊂W⊥H^t of codimension one, τ can be chosen so that no Bernstein component of SO(V)(k) containing π_V has τ, up to unramified twist, in its GL_t cuspidal support.",
+      "supplier": "SmoothRepresentationsOfLocalGroups",
+      "section": "SR.3.1, generic-irreducibility"
+    },
+    {
+      "slug": "oriented-even-orthogonal-packets",
+      "needs": "For special orthogonal groups of even-dimensional quadratic spaces, within the classification scope of Section 5.2, refine the outer-orbit packets to oriented local packets of SO-conjugacy classes of parameters, with every member of the oriented local fibre of an outer-stable parameter isomorphic to its outer conjugate, and prove that every discrete automorphic member with a given outer orbit of generic global parameters lies in the restricted tensor product of the localized oriented packets of one of its at most two coherent global orientations, which the rational outer action exchanges.",
+      "supplier": "ModularityAndLanglandsExtensions",
+      "section": "3.13, 3.15 and 3.17"
     }
   ],
   "sourceIssues": [
