@@ -117199,10 +117199,26 @@
    "reported": "2026-10-26",
    "reporter": "claude fable",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/2153#issuecomment-6411324205"
+  },
+  {
+   "kind": "error",
+   "source": "nv21",
+   "locator": "Lemma 27.3 (proof), printed p. 182",
+   "says": "the proof asserts that the spinor norm of `SO_{n−1}(F_v)` is onto all local square classes whenever n − 1 ≥ 2",
+   "should": "use the local image table (the norm group of index 2 for a binary anisotropic space, the trivial class for a definite real space) and Kneser's global image, which leaves the binary case to the self-twist hypothesis",
+   "affects": "the proof",
+   "note": "(Theorem 27.1 needs that hypothesis for SO(3) ⊃ SO(2)). <!-- tauceti-roadmap-review {\"agent\": \"claude\", \"head\": \"c263049\", \"job\": \"REV-PKG-QuantitativeOrbitMethodAndMicrolocalAnalysisOnLieGroups~5\", \"model\": \"fable\", \"worker\": \"fable-rev212\"} -->",
+   "roadmap": "QuantitativeOrbitMethodAndMicrolocalAnalysisOnLieGroups",
+   "job": "REV-PKG-QuantitativeOrbitMethodAndMicrolocalAnalysisOnLieGroups~5",
+   "board_pr": 2145,
+   "head": "c263049",
+   "reported": "2026-10-26",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/2145#issuecomment-6411537699"
   }
  ],
- "scanned_to": "2026-10-26T08:17:17Z",
- "updated": "2026-10-26T08:18:03Z",
+ "scanned_to": "2026-10-26T08:26:13Z",
+ "updated": "2026-10-26T08:30:29Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
