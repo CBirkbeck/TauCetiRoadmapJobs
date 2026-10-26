@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-7096 mistakes recorded on the board: 4329 misprints, 1799 errors, 711 gaps, 257 unparsed bullets.
+7100 mistakes recorded on the board: 4330 misprints, 1802 errors, 711 gaps, 257 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -594,6 +594,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## AIP (Andreatta–Iovita–Pilloni), Hilbert adic paper, author final version
 
 - **Error** at Lemma 8.1, §8.1, printed p. 34: the source says the proof applies level rigidity to α/ᾱ without showing that this quotient fixes the level marking; it should be supplemented by a proved freeness hypothesis: in the ℚ(√3), N = 7 CM example the quotient is −1, which moves the marking; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## akn-delta
+
+- **Error** at Proposition 8.6, p. 43: the source says the finite-stage formula holds when (p−1)j ≥ i; it should be require (p−1)j > pi, the hypothesis of Lemma 8.5 (for the Breuil–Kisin pair (ℤ_2⟦z⟧, ℤ_2), i = 1, j ∈ {1,2} the displayed fibre has the wrong H¹); affects a stated result; <!-- tauceti-roadmap-review {"agent": "claude", "head": "c46202f", "job": "REV-DESIGN-RefinedTraceMethodsPartII", "model": "fable", "worker": "fable-rev193"} -->. Found by RefinedTraceMethodsPartII (#2143 at c46202f, 2026-10-26, claude fable).
 
 ## akq
 
@@ -8630,6 +8634,12 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Soulé, Opérations en K-théorie algébrique (Canad. J. Math.)
 
 - **Gap** at the proof of Théorème 7, step 2, pp. 534–539: the source says the correction factor is k^(−d+dim S) with d the absolute ambient dimension, tacitly equating d − dim S with the relative dimension; it should be the componentwise relative cotangent rank, index dim S + rank Ω_{M/S}, giving k^(−j) on each stratum; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## speirs-axes
+
+- **Error** at Lemma 15, p. 13: the source says the lax map T^{tC_p} ⊗ (Σ^∞X)^{tC_p} → (T ⊗ Σ^∞X)^{tC_p} is an equivalence for every bounded-below T; it should be after p-completion of the source (T = 𝕊, X = S⁰ has source π₀ = ℤ_p ⊗ ℤ_p), or for T^{tC_p} an H𝔽_p-module as in the paper's use; affects the proof. Found by RefinedTraceMethodsPartII (#2143 at c46202f, 2026-10-26, claude fable).
+- **Misprint** at Proposition 26(2), p. 22: the source says the homotopy fixed points in degree 2r+1 are W_{v−u+1}(k) when 2r ≥ m; it should be 2r+1 ≥ m, as the definition of t_od and the proof of Proposition 28 use; affects nothing. Found by RefinedTraceMethodsPartII (#2143 at c46202f, 2026-10-26, claude fable).
+- **Error** at Theorem 1 and Theorem 2 (p = 2, odd degrees, printed pp. 2 and 4) and the final display of §5.1 (p. 28): the source says the odd-degree p = 2 answer is a product over 0 ≤ v ≤ t_ev of k^{⊕cyc_d(s′)} for every odd m′; it should be one copy of k^{⊕cyc_d(s′)} for each odd m′ ≤ 2r+1 (the staircase kernel is A_{t_od−1} = k), the printed form being an infinite product that gives K_1 ≠ 0 for d = 3; affects a stated result. Found by RefinedTraceMethodsPartII (#2143 at c46202f, 2026-10-26, claude fable).
 
 ## Spencer
 
