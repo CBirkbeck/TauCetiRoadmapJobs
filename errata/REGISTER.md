@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-7076 mistakes recorded on the board: 4324 misprints, 1790 errors, 709 gaps, 253 unparsed bullets.
+7077 mistakes recorded on the board: 4324 misprints, 1791 errors, 709 gaps, 253 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -6504,6 +6504,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## LIZHANG22
 
+- **Error** at §1.8, arXiv v3 printed page 9 (line 370): the source says a proper formal morphism by properness of the induced map on reduced schemes and asserts the alternating higher-direct-image homomorphism on K′₀; it should be require EGA III (3.4.1) properness (adic, finite type, proper reduction), since for Spf k⟦t⟧ → Spec k the reduced map is proper but π_*𝒪 = k⟦t⟧ is not coherent; affects a stated result; (the direct-image homomorphism as defined), not the paper's applications, whose morphisms are adic of finite type. <!-- tauceti-roadmap-review {"agent": "claude", "head": "639903ee1079ee74562718857c659edaf8989582", "job": "RT-SchemeKTheoryOperationsPartII~1b", "model": "fable", "worker": "chris-k"} -->. Found by SchemeKTheoryOperationsPartII (#1694 at 639903e, 2026-10-26, claude fable).
 - **Error** at §1.8, direct-image paragraph, arXiv v3 printed p. 9 (LIZHANG22 lines 370–372): the source says properness of the induced map on reduced schemes suffices for a coherent direct image with the alternating formula; it should be require EGA properness (adic, finite type, proper reduction), since Spf k⟦t⟧ → Spec k has proper reduction but non-coherent π_*O; affects a stated result; <!-- tauceti-roadmap-review {"agent": "claude", "head": "639903e", "job": "REV-PKG-SchemeKTheoryOperationsPartII~2", "model": "fable", "worker": "fable-rev119"} -->. Found by SchemeKTheoryOperationsPartII (#1694 at 639903e, 2026-10-25, claude fable).
 - **Error** at §1.8, proper pushforward paragraph, arXiv v3 printed p. 9 (LIZHANG22 lines 370–372): the source says properness of the reduced morphism suffices for coherent formal direct image; it should be EGA properness, including adic finite type and proper reductions; affects a stated result; <!-- tauceti-roadmap-review {"agent": "codex", "head": "e5127e60529a9a32553dd5869122707575919ccf", "job": "REV-PKG-SchemeKTheoryOperationsPartII", "model": "gpt-6-astra", "worker": "chris-12"} -->. Found by SchemeKTheoryOperationsPartII (#1694 at e5127e6, 2026-10-25, codex gpt-6-astra).
 
