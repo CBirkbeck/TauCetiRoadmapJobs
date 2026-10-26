@@ -6,7 +6,7 @@
 
 This roadmap owns the group-level octonion comparisons, null-space orbit geometry, exceptional Jordan families, their rational forms, minimal representations, exceptional Jacquet filtrations, cubic and enhanced period comparisons, the three local correspondences and the exceptional local/global kernel comparisons. Each retained comparison is about these particular exceptional models, rather than another construction of the generic operation it uses.
 
-The split octonions, their norm, trace, imaginary module and composition identities are already in the library, in `TauCeti.Algebra.Octonion.Basic`; the split Albert carrier is in `TauCeti.Algebra.AlbertAlgebra.Basic`. The positive real octonion and compact Albert constructions, including their complexifications, are stated by RepresentationTheory/LieHighestWeight, Layer 8, “The positive division-octonion algebra and its invariant tensors” and its compact Albert sublane. The split derivation dimension and imaginary Lie-module irreducibility are native results in `TauCeti.Algebra.Octonion.Derivation` and `TauCeti.Algebra.Octonion.Fundamental`; the group comparison uses them. Their algebraic identities are consumed here; descent over a general number field and the Koecher–Tits group comparisons belong here. The abstract group-scheme, centralizer, component and Chevalley theories are ReductiveGroups Layers 3 and 9, with dual groups in ReductiveGroupsPartII RG2.5. Spin modules and triality are RepresentationTheory/SpinRepresentations Layers 4 and 8. Compact branching is RepresentationTheory/ClassicalGroups Layer 6. The Weil group is ClassFieldTheory Layer 9. RepresentationTheory/LieGroups Layers 2 and 7 supply the closed-subgroup theorem and real-form/complexification theory. RepresentationTheory/CompactGroups Layers 3–5 supply matrix coefficients, Schur orthogonality and Peter–Weyl; this roadmap supplies their quaternion-period application.
+The split octonions, their norm, trace, imaginary module and composition identities are already in the library, in `TauCeti.Algebra.Octonion.Basic`; the split Albert carrier is in `TauCeti.Algebra.AlbertAlgebra.Basic`. The positive real octonion and compact Albert constructions, including their complexifications, are stated by RepresentationTheory/LieHighestWeight, Layer 8, “The positive division-octonion algebra and its invariant tensors” and its compact Albert sublane. The split derivation dimension and imaginary Lie-module irreducibility are native results in `TauCeti.Algebra.Octonion.Derivation` and `TauCeti.Algebra.Octonion.Fundamental`; the group comparison uses them. Their algebraic identities are consumed here; descent over a general number field and the Koecher–Tits group comparisons belong here. The abstract group-scheme, centralizer, component and Chevalley theories are ReductiveGroups Layers 3 and 9, with dual groups in ReductiveGroupsPartII RG2.5. Spin modules and triality are RepresentationTheory/SpinRepresentations Layers 4 and 8. Compact branching is RepresentationTheory/ClassicalGroups Layer 6. The local invariant, local existence and the Weil group are ClassFieldTheory Layers 5, 8 and 9. RepresentationTheory/LieGroups Layers 2 and 7 supply the closed-subgroup theorem and real-form/complexification theory. RepresentationTheory/CompactGroups Layers 3–5 supply matrix coefficients, Schur orthogonality and Peter–Weyl; this roadmap supplies their quaternion-period application.
 
 SmoothRepresentationsOfLocalGroups §§SR.0.2, SR.0.4, SR.2.1–SR.2.3, SR.2a.1, SR.3.1–SR.3.4 and SR.5.1 own smoothness, admissibility, induction, Jacquet functors, adjunctions, Bernstein decomposition, Langlands classification and twisted coinvariants. Its regular-isotypic quotient theorem is in SR.3.4. Its SR.3.3 Harish–Chandra tempered-support target is consumed along with the conditional standard-quotient theorem, including its stated support hypothesis. The extra generic representation-theoretic inputs are exact supplier gaps below, not new generic constructions in this roadmap. SmoothRepresentationsOfLocalGroupsPartII SRU.1–SRU.4 owns the unitary topology and isolation theory; no proof of local exceptional Howe duality here uses its Fell-topology arguments.
 
@@ -66,7 +66,7 @@ Consume LieGroups Layer 2 for the Lie structure on a closed subgroup of a real m
 
 ### From TauCetiRoadmap.ClassFieldTheory and TauCetiRoadmap.LanglandsParameterStacks
 
-ClassFieldTheory Layer 9 supplies the topological Weil group and degree map; the normalization of Fr and |Fr| is the one in Conventions. LanglandsParameterStacks LP0.5 supplies its classical admissible-parameter definition, and LP1.11–LP1.12 its coefficient-valued WD parameter and monodromy comparison. Its LP0.4 uses geometric degree deg_LP=−deg_arithmetic, so its arithmetic Frobenius scales N by q. Section 0.7 supplies the LP-normalized WD conversion from W_F×SL₂ parameters, with r_LP(w)=φ(w,diag(|w|⁻¹ᐟ²,|w|¹ᐟ²)) and unchanged N. Compare this pair with LP1.11–LP1.12 after fixing ℓ≠p and a field isomorphism ℂ≅Q̄ℓ; the inertia image is finite. This conversion changes the diagonal twist, and does not identify r_LP with r or invert Weil-group elements. The wild-parameter stack does not by itself provide the exceptional complex split-group specializations of §0.7.
+ClassFieldTheory Layer 5 supplies the local invariant (a degree-n extension splits a central division algebra of degree n), Layer 8 the local existence theorem for open subgroups of finite index, and Layer 9 the topological Weil group and degree map; the normalization of Fr and |Fr| is the one in Conventions. LanglandsParameterStacks LP0.5 supplies its classical admissible-parameter definition, and LP1.11–LP1.12 its coefficient-valued WD parameter and monodromy comparison. Its LP0.4 uses geometric degree deg_LP=−deg_arithmetic, so its arithmetic Frobenius scales N by q. Section 0.7 supplies the LP-normalized WD conversion from W_F×SL₂ parameters, with r_LP(w)=φ(w,diag(|w|⁻¹ᐟ²,|w|¹ᐟ²)) and unchanged N. Compare this pair with LP1.11–LP1.12 after fixing ℓ≠p and a field isomorphism ℂ≅Q̄ℓ; the inertia image is finite. This conversion changes the diagonal twist, and does not identify r_LP with r or invert Weil-group elements. The wild-parameter stack does not by itself provide the exceptional complex split-group specializations of §0.7.
 
 ### From TauCetiRoadmap.SmoothRepresentationsOfLocalGroups
 
@@ -82,7 +82,9 @@ What SmoothRepresentationsOfLocalGroupsPartII must provide (gap:wavefront-all-re
 
 What SmoothRepresentationsOfLocalGroupsPartII must provide (gap:steinberg-unipotent): For a split connected reductive group H over the fixed characteristic-zero nonarchimedean F and a maximal unipotent U, identify the restriction St_H|U with the left regular module C_c^∞(U(F)) and deduce (St_H)_(N,χ)≠0 for every closed subgroup N⊂U(F) and smooth character χ:N→ℂˣ. The contract belongs to SRU.4, Steinberg extensions. (LL, proof of Lemma 10.3, p. 28 (LL lines 1152–1154).)
 
-What SmoothRepresentationsOfLocalGroupsPartII must provide (gap:rank-one-plancherel): For a maximal parabolic with unitary supercuspidal inducing data, provide the rank-one Harish-Chandra–Silberger reducibility criterion at nonzero real exponents with the chosen normalization of its meromorphic Plancherel scalar. The contract belongs to SRU.3, extension of reducibility inputs.
+What SmoothRepresentationsOfLocalGroupsPartII must provide (gap:rank-one-plancherel): For a connected reductive group over a characteristic-zero nonarchimedean local field, provide for a maximal parabolic of the group or of one of its Levi subgroups with unitary supercuspidal inducing data the rank-one Harish-Chandra–Silberger reducibility criterion at nonzero real exponents, with the chosen normalization of its meromorphic Plancherel scalar, and for unitary discrete-series data σ on any parabolic the Harish-Chandra commuting-algebra theorem: the commuting algebra of the normalized induction has dimension |R(σ)|, where R(σ) is the stabilizer W(σ) modulo the subgroup generated by the reflections whose rank-one Plancherel scalar vanishes at σ. The contract belongs to SRU.3, extension of reducibility inputs. The Levi-subgroup case is needed for the non-maximal P₁₃ series of §1.11, and the commuting-algebra theorem for the zero-exponent assertions of §§1.1, 1.4, 1.11 and 1.12, including the Steinberg-data Siegel induction of §1.12.
+
+What SmoothRepresentationsOfLocalGroupsPartII must provide (gap:prime-degree-torus-distinction): For a characteristic-zero nonarchimedean local field F of residue characteristic p, a central division F-algebra D of odd prime degree ℓ≠p, and every irreducible smooth complex representation τ of D× trivial on F× of dimension greater than one, prove that τ has a nonzero vector fixed by K× for some maximal subfield K⊂D, by the admissible-pair parametrization of such τ and the zero-weight dimension formula for unramified and totally ramified K. The contract belongs to SRU.3, extension of local character theory. (LT, Theorem 1.4.2, printed pp. 6–7 (LT lines 309–330).) For ℓ=3, p=2, q=2 and conductor parameter m=1, an unramified admissible pair tested against a totally ramified K gives fixed-space dimension q^m=2. The one-dimensional representations χ∘Nrd are treated in §5.2 by local class field theory.
 
 What SmoothRepresentationsOfLocalGroupsPartII must provide (gap:isotypic-parabolic): For a smooth H×M module W with maximal irreducible admissible τ-isotypic quotient τ⊗V, the maximal τ-isotypic quotient of normalized parabolic induction from M to G is τ⊗Ind_P^G V. The contract belongs to SRU.0, extension of commuting-action interfaces.
 
@@ -100,7 +102,7 @@ SmoothRepresentationsOfLocalGroups §SR.5.2, “classical-llc-normalization”, 
 
 ### From TauCetiRoadmap.AutomorphicLFunctionsAndLocalFactors and TauCetiRoadmap.AutomorphicLFunctionsAndLocalFactorsPartII
 
-Consume AutomorphicLFunctionsAndLocalFactors AL.4 for unramified L-group Euler factors and the degree-eight spin representation of Spin₇ after §0.6 fixes the dual group; its “Central periods”, target normalized-rs-period, supplies the nonzero adjacent-rank invariant functional for generic irreducible admissible inputs with opposite Whittaker characters. Its specialization to W∨⊗V gives the generic GLₙ↓GLₙ₋₁ quotient in §5.7. The two additional spin contracts extend the Part II local-factor layer D.6 beyond its classical doubling factors.
+Consume AutomorphicLFunctionsAndLocalFactors AL.4 for unramified L-group Euler factors det(1−T r(t)) of a supplied finite-dimensional representation r; take r to be the degree-eight spin representation of Spin₇ constructed by RepresentationTheory/SpinRepresentations Layer 4 (the exterior algebra of a three-dimensional isotropic summand, of dimension 1+3+3+1=8) and compared with the exceptional inclusion in §0.6. At t=1 this r gives (1−T)⁸, whereas the trivial representation gives 1−T, so AL.4 alone does not select r; its “Central periods”, target normalized-rs-period, supplies the nonzero adjacent-rank invariant functional for generic irreducible admissible inputs with opposite Whittaker characters. Its specialization to W∨⊗V gives the generic GLₙ↓GLₙ₋₁ quotient in §5.7. The two additional spin contracts extend the Part II local-factor layer D.6 beyond its classical doubling factors.
 
 What AutomorphicLFunctionsAndLocalFactorsPartII must provide (gap:ramified-spin-factor): For generic irreducible admissible complex σ of PGSp₆(F), with F characteristic-zero nonarchimedean, construct Shahidi’s degree-eight L(s,σ,Spin) from the Heisenberg parabolic P₄=M₄N₄ of split F₄ with M₄=GSp₆, normalized by δP₄=|sim|⁸ and I(σ,s)=Ind_P₄^F₄(σ⊗|sim|^(s+4)) in unnormalized induction, and prove for supercuspidal σ that a pole at s=0 is equivalent to reducibility of I(σ,−1). The contract belongs to D.6, extension to the exceptional Langlands–Shahidi spin factor. (SW, §5.1, Lemma 5.4, p. 38 (SW lines 1966–1982).)
 
@@ -114,7 +116,7 @@ What AutomorphicFormsOnReductiveGroups must provide (gap:regular-real-unitarity)
 
 ## How to read the build
 
-Layer 0 fixes groups, coordinates and parameter bookkeeping; Layer 1 gives every normalized inducing family used by the lift tables. Layer 2 constructs the exceptional ambient models. Layer 3 calculates their Jacquet modules and positive-exponent supports. Layer 4 establishes cubic-period existence and uniqueness before exclusion. Layer 5 proves the two E₆ correspondences; Layer 6 proves independent noncuspidal finiteness and the dichotomy. Layer 7 supplies the enhanced period bound and tempered E₇ Howe theorem. Layer 8 completes all lift tables and the discrete-series trichotomy. Layer 9 produces the quaternion relative models, and Layer 10 builds the global kernels and their nonvanishing and cuspidality theorems. A Needs line names the statement carriers and the inputs for the described proof route; the route is a proof sketch, not a restriction on other proofs.
+Layer 0 fixes groups, coordinates and parameter bookkeeping; Layer 1 gives every normalized inducing family used by the lift tables. Layer 2 constructs the exceptional ambient models. Layer 3 calculates their Jacquet modules and positive-exponent supports, and decomposes the division minimal model as a G₂ module. Layer 4 establishes cubic-period existence and uniqueness before exclusion. Layer 5 proves the two E₆ correspondences; Layer 6 proves independent noncuspidal finiteness and the dichotomy. Layer 7 supplies the enhanced period bound and tempered E₇ Howe theorem. Layer 8 completes all lift tables and the discrete-series trichotomy. Layer 9 produces the quaternion relative models, and Layer 10 builds the global kernels and their nonvanishing and cuspidality theorems. A Needs line names the statement carriers and the inputs for the described proof route; the route is a proof sketch, not a restriction on other proofs.
 
 
 ## Layer 0: octonion geometry and complex parameters
@@ -311,7 +313,7 @@ A proof route is to take scheme-theoretic centralizers, then components over C; 
 
 ### 0.9 The 15-dimensional PGSp₆ Jordan model
 
-Let V=F⁶ with symplectic pairs (1,6),(2,5),(3,4). Put J=∧²V⊗ν⁻¹ with its Pfaffian cubic, unit e=x16+x25+x34, and reduced structure group SL₆/μ₂, meaning its cubic-norm isometry group. The unit stabilizer is PGSp₆. The stabilizers P_i of standard isotropic i-planes have M₃≅GL₃ via its action on ⟨x12,x13,x23⟩, M₂≅(GL₂×GL₂)/{(z,z⁻¹)}, M₁≅GSp₄. The three maximal parabolics P₃, P₂, P₁ have moduli |det|², |det α det β|⁵, |ν|³ respectively; P₁₃=P₁∩P₃ has Levi M₁₃≅GL₂×GL₁. (GS, §9, pp. 29–31 (GS line 1070); GS, §13.4, p. 44 (GS line 1650)).
+Let V=F⁶ with symplectic pairs (1,6),(2,5),(3,4). Put J=∧²V⊗ν⁻¹ with its Pfaffian cubic, unit e=x16+x25+x34, and reduced structure group SL₆/μ₂, meaning its cubic-norm isometry group. The unit stabilizer is PGSp₆. The stabilizers P_i of standard isotropic i-planes have M₃≅GL₃ via its action on ⟨x12,x13,x23⟩, M₂≅(GL₂×GL₂)/{(z,z⁻¹)}, M₁≅GSp₄ via its action on ⟨x12,x13,x14,x15⟩. In this coordinate a Levi element acting by t on e₁, by h of similitude ν on ⟨e₂,…,e₅⟩ and by ν/t on e₆ has GSp₄ coordinate (t/ν)h, of similitude t²/ν. The three maximal parabolics P₃, P₂, P₁ have moduli |det|², |det α det β|⁵, |ν|³ respectively; P₁₃=P₁∩P₃ has Levi M₁₃≅GL₂×GL₁. (GS, §9, pp. 29–31 (GS line 1070); GS, §13.4, p. 44 (GS line 1650)).
 
 The construction has the following API.
 
@@ -327,7 +329,7 @@ A proof route computes the wedge-cubic and unit stabilizers; determine Levi weig
 
 - A scalar z acts by z² on ∧²V and by z⁻² on ν⁻¹, so its product action is 1; omitting the twist leaves z².
 - The exterior square has dimension 6·5/2=15; the Albert carrier has dimension 27 and cannot be substituted.
-- At m₃=diag(ϖ,1,1) the P₃ modulus is q⁻²; at (α,β)=(diag(ϖ,1),I₂) the P₂ modulus is q⁻⁵; at ν(m₁)=ϖ the P₁ modulus is q⁻³. These are three values for three maximal parabolics, and specify no modulus for P₁₃. On a diagonal Jordan element with coordinates (1,2,3), the normalized Pfaffian is 6; at the unit it is 1.
+- At m₃=diag(ϖ,1,1) the P₃ modulus is q⁻²; at (α,β)=(diag(ϖ,1),I₂) the P₂ modulus is q⁻⁵; at ν(m₁)=ϖ the P₁ modulus is q⁻³. The P₁ radical has determinant t⁴ν⁻²·t²ν⁻¹=t⁶ν⁻³, equal to (t²/ν)³ in the ⟨x12,…,x15⟩ coordinate; the coordinate t⁻¹h on ⟨x26,…,x56⟩ has similitude ν/t², so an element with similitude ϖ there has modulus q³. The coordinate is therefore part of the convention. These are three values for three maximal parabolics, and specify no modulus for P₁₃. On a diagonal Jordan element with coordinates (1,2,3), the normalized Pfaffian is 6; at the unit it is 1.
 
 ### 0.10 The PGSp₆ Weyl chamber
 
@@ -458,6 +460,8 @@ A proof route uses the parahoric quotient and cuspidal type criterion, compute t
 **Checks.**
 
 - The three unipotent labels comprise one label 1 and two distinct labels ω,ω² with ω³=1 and ω≠1; inversion exchanges the last two and fixes the first.
+- For each of the three cuspidal unipotent representations σ of the finite reductive quotient G₂(𝔽_q), the invariants under the unipotent radical of every proper parabolic of G₂(𝔽_q) are 0, whereas for the trivial representation they have dimension 1. Inflating the trivial representation instead would produce a compact induction with nonzero hyperspecial-fixed vectors, which is not supercuspidal.
+- In c-Ind_K^G σ, with K the hyperspecial maximal compact subgroup and σ inflated from K/K⁺, the functions supported on K form a K-stable subspace mapped isomorphically onto σ by evaluation at 1, so none of the three labelled representations is zero. Since σ is a nontrivial irreducible representation, Hom_K(1,σ)=0, and every double coset KgK with g∉K contributes 0 by cuspidality, so the K-fixed space is 0 while the K⁺-fixed space contains σ.
 
 ### 1.9 The parameter labels needed by theta
 
@@ -489,7 +493,7 @@ One proof route starts with a nongeneric infinite-dimensional G₂ representatio
 
 For unitary supercuspidal τ of GL₂, I₂(s,τ⊗τ) has the same reducibility cases as I_Q(s,τ): determinant-trivial at ±1/2 with generic DS δ₂(τ), S₃ dihedral at ±1 with generic DS σgen[τ], and other selfdual determinant-nontrivial at 0 with generic⊕nongeneric splitting. For τ=stχ, I₂ reduces only for χ=1 at ±5/2,±1/2 and nontrivial quadratic χ at ±1/2. At +5/2 the bottom is St_H; at χ=1,+1/2 it is I₃(St)gen; at quadratic χ,+1/2 it is DS σgen[χ], always with standard quotient on top. I₁₃(s,τ⊗1) for supercuspidal τ reduces only for selfdual τ with ωτ=1,s=±1/2 (length four, unique generic DS submodule δ₁₃(τ)), or ωτ≠1,im φτ≠S₃,s=0 (two summands). (GS, Propositions 10.1–10.2, pp. 31–32 (GS line 1147)).
 
-A proof route is to calculate the dual radical factors and rank-one intertwining scalars; resolve the Steinberg segment and compare Jacquet exponents. Keep the anti-diagonal central quotient on M₂ explicit.
+A proof route is to calculate the dual radical factors and rank-one intertwining scalars; resolve the Steinberg segment and compare Jacquet exponents. Keep the anti-diagonal central quotient on M₂ explicit. The I₁₃ assertions apply the rank-one criterion on the maximal parabolics of the Levi subgroups M₁ and M₃ containing M₁₃ and then proceed by induction in stages through the GSp₄ Siegel series and the P₁ series of §1.13.
 
 *Needs:* §0.9; §0.10; §1.4; §1.5; SmoothRepresentationsOfLocalGroups §§SR.2.1–SR.2.3; SmoothRepresentationsOfLocalGroups §§SR.3.1–SR.3.4; EndoscopicTransferAndUnitaryTraceComparison §§4.7a, 10.30–10.31; SmoothRepresentationsOfLocalGroupsPartII, gap rank-one-plancherel.
 
@@ -499,15 +503,16 @@ A proof route is to calculate the dual radical factors and rank-one intertwining
 
 ### 1.12 Siegel induction on PGSp₆
 
-For a GL₃ discrete-series τ with trivial central character, I₃(τ)=I₃(τ∨) is irreducible if τ is not selfdual; for selfdual τ it is the direct sum of generic and nongeneric tempered irreducibles. For GL₃ Borel series χ₁×χ₂×χ₃ with product 1 the irreducibility exceptions are χᵢ=|·|^±1 or χᵢ/χⱼ=|·|^±1 and the distinct nontrivial quadratic triple, in which last case I₃ is generic⊕nongeneric. (GS, Proposition 10.3, pp. 32–33 (GS line 1184)).
+For a GL₃ discrete-series τ with trivial central character, I₃(τ)=I₃(τ∨) is irreducible if τ is not selfdual; for selfdual τ it is the direct sum of generic and nongeneric tempered irreducibles. For GL₃ Borel series χ₁×χ₂×χ₃ with product 1 the irreducibility exceptions are χᵢ=|·|^±1 or χᵢ/χⱼ=|·|^±1 and the distinct nontrivial quadratic triple, in which last case I₃ is generic⊕nongeneric. (GS, Proposition 10.3, pp. 32–33 (GS line 1184)). For σ a unitary discrete series of PGL₂, that is σ supercuspidal with ωσ=1 or σ=stχ with χ²=1, the Siegel induction I₃(σ×1)=I₁₃(0,σ⊗1) is irreducible. Together with the Borel case, these cover every selfdual tempered τ of PGL₃ whose parameter contains 1, since such a parameter is φ₀⊕1 with φ₀ two-dimensional, selfdual, tempered and of determinant 1. (GS, Theorem 15.2(ii), pp. 52–53 (GS lines 2021–2025), which uses this irreducibility.)
 
-A proof route computes the Siegel R-group and normalized intertwiners; compare Tadić’s classification with the GL₃/μ₂ coordinate convention.
+A proof route computes the Siegel R-group and normalized intertwiners; compare Tadić’s classification with the GL₃/μ₂ coordinate convention. For I₃(σ×1) the supercuspidal case is §1.11 at s=0 with ωσ=1. For σ=stχ the stabilizer of σ⊗1 is generated by the two reflections attached to the GL₂ and GL₁ blocks; the first has vanishing Plancherel scalar at 0 because the dual-radical factor L(2s,ωσ)=L(2s,1) has a pole at s=0, and the second because the PGL₂ principal series of the trivial character is irreducible. The R-group is therefore trivial, and the commuting-algebra theorem gives irreducibility.
 
-*Needs:* §0.9; §0.10; SmoothRepresentationsOfLocalGroups §§SR.2.1–SR.2.3; SmoothRepresentationsOfLocalGroups §§SR.3.1–SR.3.4; EndoscopicTransferAndUnitaryTraceComparison §§4.7a, 10.30–10.31.
+*Needs:* §0.9; §0.10; §1.11; SmoothRepresentationsOfLocalGroups §§SR.2.1–SR.2.3; SmoothRepresentationsOfLocalGroups §§SR.3.1–SR.3.4; EndoscopicTransferAndUnitaryTraceComparison §§4.7a, 10.30–10.31; SmoothRepresentationsOfLocalGroupsPartII, gap rank-one-plancherel.
 
 **Checks.**
 
 - A selfdual GL₃ discrete series gives two Siegel summands with generic dimensions 1 and 0; a nonselfdual discrete series gives one summand.
+- Parameter centralizer for τ=st×1: composed with G₂→SO₇, the parameter of I₃(st×1) decomposes as `Sp₂ ⊗ C² ⊕ 1 ⊗ C³` (the standard two-dimensional SL₂ piece with multiplicity two, plus three trivial lines). Its centralizer in SO₇ is the product of Sp₂ acting on the multiplicity plane C² and SO₃ on C³; both factors are connected, so the component group is trivial and the tempered parameter has a single member, matching irreducibility of I₃(st×1). The discrete-series splitting rule would wrongly predict two summands, since st×1 is selfdual but not discrete series.
 
 ### 1.13 P₁ reducibility including the nongeneric SK case
 
@@ -577,7 +582,7 @@ A proof route uses root group integration, Jordan descent and the lattice maps o
 
 **Checks.**
 
-- The connected partner has dimensions 8 for J=M₃⁺ and 21 for the fifteen-dimensional J; the E₆ outer extension adds two components, not an extra Lie dimension.
+- The connected partner has dimensions 8 for J=M₃⁺ and 21 for the fifteen-dimensional J; the E₆ outer extension E₆⋊C₂ has two components (one added by the involution), not an extra Lie dimension.
 - For D of invariant 1/3, Dop has invariant 2/3 but the identical Jordan product: (xy+yx)/2=(yx+xy)/2. Thus D⁺ and (Dop)⁺ give the same E₆^D and the same embedded G₂. The partner identification PD×→P(Dop)× is x↦x⁻¹; it transports JL_Dop(τ) to JL_D(τ)∨, as in §5.3 (LL lines 620–625, 658–663).
 - For split J=M₃(F)⁺ the connected partner has dimension 8, whereas J=H₃(M₂(F)) has dimension 15 and partner dimension 21; their ambient groups have dimensions 78 and 133. Replacing the fifteen-dimensional Jordan model by the 27-dimensional Albert algebra gives the wrong ambient dimension.
 
@@ -813,13 +818,27 @@ A proof route is to combine the forward and reverse support computations and the
 
 - An occurring pair has temperedness indicators (1,1) or (0,0); the mixed indicators (1,0),(0,1) are excluded by the two support implications.
 
+### 3.12 The division minimal model as a G₂ module
+
+Let D be a cubic division algebra and Π_D the minimal representation of E₆^D from §2.4. Since PD× is compact, Π_D restricted to PD×× G₂ is the direct sum over τ∈Irr(PD×) of τ⊠Θ_D(τ). Prove, from the division minimal model and its Jacquet modules alone, without Howe duality, finite cubic periods or the triality exact sequences: the G₂ Jacquet modules of Π_D along N and U agree with its Jacquet modules along the radicals of the corresponding maximal parabolics of E₆^D, and are isomorphic as Levi modules to the Jacquet modules of πdeg[1]; πdeg[1] is a direct summand of Θ_D(1), detected by its minimal K-type in the reflection representation of the reductive quotient of the special maximal compact subgroup of E₆^D. Consequently Θ_D(1)=πdeg[1]⊕C₁ with C₁ supercuspidal, and Θ_D(τ) is supercuspidal (all proper Jacquet modules zero, possibly the zero module) for every τ≠1. (Sav, Proposition 5.1 and Corollary 5.2, pp. 398–399 (Sav lines 234–270); Sav, §6, p. 400 (Sav lines 303–318); GS, Proposition 7.1(i)–(ii), p. 23 (GS lines 829–834)).
+
+A proof route uses minimality of Π_D to show that no nontrivial character of N/Z(N) trivial on U∩N supports a twisted coinvariant, giving Π_N=Π_U along each radical, and compares the resulting Steinberg and trivial Levi modules with those of πdeg[1]. Exactness of Jacquet functors on the direct sum, together with the summand πdeg[1] of Θ_D(1), forces every other summand to have zero Jacquet modules.
+
+*Needs:* §2.2; §2.4; §0.3; §1.3; ReductiveGroups Layer 9; SmoothRepresentationsOfLocalGroups §§SR.2.1–SR.2.3; SmoothRepresentationsOfLocalGroups §§SR.3.1–SR.3.4.
+
+**Checks.**
+
+- The trivial τ occurs with τ^(PE×) of dimension 1 for every cubic field E⊂D, so the decomposition of Θ_D(1_(PE×)) below contains exactly one copy of πdeg[1]; a nontrivial τ contributes τ^(PE×)⊗Θ_D(τ), which is supercuspidal and contains no copy of πdeg[1].
+- For τ≠1 the Jacquet modules of Θ_D(τ) along N and U are 0, whereas πdeg[1] has a nonzero, generic Jacquet module along the Q radical. Hence πdeg[1] is not a summand of any Θ_D(τ) with τ≠1.
+- Replacing the division model by the split E₆ minimal model fails: by §3.3 its G₂-P Jacquet module contains two regular GL₂ pieces, so the lifts of nontrivial representations of the split partner are not all supercuspidal.
+
 ### Examples
 
 On a regular GL₂ coefficient the left/right action on a character quotient is χ(a)/χ(b). On det=ϖ the top P twists are q⁻¹ᐟ² and q⁻³ᐟ². The Q middle twist evaluates to q⁻¹ᐟ² at (ϖ,1) and q⁻¹ at (1,ϖ). In the H P₂ Levi, (zI,z⁻¹I) has determinant product 1, preserving descent.
 
 ### Dependencies
 
-The statement carriers and construction inputs are RepresentationTheory/SpinRepresentations Layer 4; RepresentationTheory/LieHighestWeight Layer 8; SmoothRepresentationsOfLocalGroups §§SR.2.1–SR.2.3; SmoothRepresentationsOfLocalGroups §§SR.3.1–SR.3.4; SmoothRepresentationsOfLocalGroups §SR.2a.1; MetaplecticAutomorphicForms §§3.4–3.8, 3.34, 3.37–3.40. The internal inputs are §2.2, §2.4, §0.3, §0.9, §3.1, §0.2, §2.6, §3.2, §1.7, §3.4, §3.5, §3.9, §3.7, §3.8, §3.6, §0.10, §3.10, §3.3. The exact additional supplier gaps are those on the individual Needs lines.
+The statement carriers and construction inputs are RepresentationTheory/SpinRepresentations Layer 4; RepresentationTheory/LieHighestWeight Layer 8; ReductiveGroups Layer 9; SmoothRepresentationsOfLocalGroups §§SR.2.1–SR.2.3; SmoothRepresentationsOfLocalGroups §§SR.3.1–SR.3.4; SmoothRepresentationsOfLocalGroups §SR.2a.1; MetaplecticAutomorphicForms §§3.4–3.8, 3.34, 3.37–3.40. The internal inputs are §2.2, §2.4, §0.3, §0.9, §3.1, §0.2, §2.6, §3.2, §1.7, §3.4, §3.5, §3.9, §3.7, §3.8, §3.6, §0.10, §3.10, §3.3, §1.3. The exact additional supplier gaps are those on the individual Needs lines.
 
 ## Layer 4: triality and finite cubic periods
 
@@ -860,14 +879,15 @@ A proof route computes the degenerate intertwiner image and kernel, identifies t
 
 ### 4.3 The division-period Ext obstruction
 
-For a cubic field E, Ext¹_G₂(RD(E),π)=0 when π is tempered or when π has supercuspidal support other than that of πdeg[1]. The ambient Ext is in the full smooth category. In the tempered case use the exact supplier comparison between smooth Ext and Schwartz Ext and discrete-series projectivity in the tempered Schwartz category; never assert that every discrete series is projective among all smooth representations. (GS, Proposition 5.3 and proof, pp. 17–18 (GS line 595)).
+For a cubic field E, RD(E) restricted to G₂ is isomorphic to πdeg[1]⊕C_E, where C_E is a direct sum of supercuspidal representations. Consequently Ext¹_G₂(RD(E),π)=0 when π is tempered or when π has supercuspidal support other than that of πdeg[1]. The ambient Ext is in the full smooth category. In the tempered case use the exact supplier comparison between smooth Ext and Schwartz Ext and discrete-series projectivity in the tempered Schwartz category; never assert that every discrete series is projective among all smooth representations. (GS, Proposition 5.3 and proof, pp. 17–18 (GS lines 628–643)).
 
-A proof route is to separate Bernstein blocks, identify the relevant quotient as a discrete-series module in the tempered category, and transport the vanishing across the supplier’s exact Ext comparison. Treat nonmatching cuspidal support by block splitting.
+A proof route takes PE×-coinvariants, equal to PE×-invariants since PE× is compact, in the decomposition of §3.12: RD(E) is the direct sum over τ of τ^(PE×)⊗Θ_D(τ), the trivial τ contributes Θ_D(1)=πdeg[1]⊕C₁ once and every other summand is supercuspidal. Since G₂ has trivial center, each supercuspidal is projective by compact-center cuspidal splitting, and Ext¹ out of a direct sum is the product of the Ext¹ groups, so C_E contributes 0 against every π. For πdeg[1], separate Bernstein blocks for nonmatching support, and in the tempered case transport discrete-series projectivity across the supplier’s exact Ext comparison. This uses no statement of Layer 5.
 
-*Needs:* §4.2; §1.3; SmoothRepresentationsOfLocalGroups §§SR.3.1–SR.3.4; SmoothRepresentationsOfLocalGroupsPartII, gap schwartz-ext.
+*Needs:* §3.12; §4.1; §4.2; §1.3; SmoothRepresentationsOfLocalGroups §§SR.3.1–SR.3.4; SmoothRepresentationsOfLocalGroupsPartII, gap schwartz-ext.
 
 **Checks.**
 
+- The summand πdeg[1] occurs in RD(E) with multiplicity dim 1^(PE×)=1; every other summand has zero proper Jacquet modules.
 - For nonmatching exact cuspidal supports the Ext¹ dimension is 0. In the tempered matching case the Schwartz comparison also yields dimension 0; this does not imply projectivity against nontempered targets.
 
 ### 4.4 The G₂ restriction of I_E(s)
@@ -948,7 +968,7 @@ For E=F³,F×K,and a field, the number of F factors is 3,1,0. The common P bound
 
 ### Dependencies
 
-The statement carriers and construction inputs are SmoothRepresentationsOfLocalGroups §§SR.2.1–SR.2.3; SmoothRepresentationsOfLocalGroups §§SR.3.1–SR.3.4; SmoothRepresentationsOfLocalGroupsPartII, gap schwartz-ext; SmoothRepresentationsOfLocalGroups §SR.2a.1. The internal inputs are §2.3, §2.5, §4.1, §2.4, §4.2, §1.3, §0.3, §0.4, §4.4, §4.3, §4.6, §4.5, §1.10, §4.7, §3.11. The exact additional supplier gaps are those on the individual Needs lines.
+The statement carriers and construction inputs are SmoothRepresentationsOfLocalGroups §§SR.2.1–SR.2.3; SmoothRepresentationsOfLocalGroups §§SR.3.1–SR.3.4; SmoothRepresentationsOfLocalGroupsPartII, gap schwartz-ext; SmoothRepresentationsOfLocalGroups §SR.2a.1. The internal inputs are §2.3, §2.5, §4.1, §2.4, §4.2, §1.3, §3.12, §0.3, §0.4, §4.4, §4.3, §4.6, §4.5, §1.10, §4.7, §3.11. The exact additional supplier gaps are those on the individual Needs lines.
 
 ## Layer 5: the two E₆ correspondences
 
@@ -958,9 +978,9 @@ The division group PD× is compact. The split E₆ partner is the disconnected H
 
 For every τ∈Irr(PD×), ΘD(τ) is finite length, is nongeneric, and is either zero or irreducible; distinct nonzero lifts are inequivalent. ΘD(1)=πdeg[1]. If τ≠1 its nonzero lift is supercuspidal. It is nonzero exactly when τ has a nonzero PE×-fixed vector for some cubic field E embedded in D. Thus the G₂-to-PD× small lift is injective on its domain, which consists of discrete series. (GS, Proposition 7.1 and Theorem 7.2 with proof, p. 23 (GS line 817); Sav, §5, pp. 398–399 (Sav line 223)).
 
-A proof route uses compactness of PD×, the division minimal model and the Jacquet calculation to isolate πdeg[1]; all other lifts have zero proper Jacquet modules. Use a nonzero cubic coefficient to obtain the torus criterion, then the preliminary uniqueness theorem to prove irreducibility and injectivity.
+A proof route takes from §3.12 the summand πdeg[1] of ΘD(1) and the supercuspidality of the lifts of τ≠1; the equality ΘD(1)=πdeg[1] follows by comparing cubic coefficient dimensions through §4.6 (Sav lines 314–317). Use a nonzero cubic coefficient to obtain the torus criterion, then the preliminary uniqueness theorem to prove irreducibility and injectivity; only these last two steps use §4.8.
 
-*Needs:* §4.8; §4.6; §3.3; SmoothRepresentationsOfLocalGroups §§SR.3.1–SR.3.4; §2.5; §1.3.
+*Needs:* §3.12; §4.8; §4.6; SmoothRepresentationsOfLocalGroups §§SR.3.1–SR.3.4; §2.5; §1.3.
 
 **Checks.**
 
@@ -970,15 +990,16 @@ A proof route uses compactness of PD×, the division minimal model and the Jacqu
 
 If the residue characteristic p is not 3, every irreducible representation of PD× has a fixed vector for the image PE× of some cubic field E⊂D; consequently ΘD(τ)≠0 for every τ. Independently of this bound, the trivial τ and the unramified nontrivial cubic norm characters lift nontrivially; for such a character ω, ΘD(ω∘Nrd)=πsc[ω], with the two inverse characters giving two distinct supercuspidals; matching their individual eigenvalue labels requires a fixed convention. (GS, Proposition 7.1(iii) and Theorem 7.2(iii) with proof, p. 23 (GS line 817); Sav, §6, pp. 399–400 (Sav line 263)).
 
-The joint torus-distinction dimension formula is also stated as Theorem 1.4.2 in Lonka’s institutional thesis, printed pp. 6–7 (LT line 309). For ℓ=3 the displayed nonzero dimension in the unramified inducing-field, totally ramified test-field case is q^m; taking q=2,m=1 gives 2. One-dimensional norm characters are handled separately. The locator here is the thesis theorem number.
+For representations of PD× of dimension greater than one the input is the prime-degree torus-distinction theorem of the supplier contract prime-degree-torus-distinction (LT, Theorem 1.4.2, printed pp. 6–7 (LT lines 309–330)), applied with ℓ=3≠p. For ℓ=3 its dimension in the unramified inducing-field, totally ramified test-field case is q^m; taking q=2,m=1 gives 2. The one-dimensional representations of PD× are χ∘Nrd with χ³=1, since Nrd(a)=a³ on F×; they are treated here. For χ=1 every cubic field E⊂D works. For χ≠1, ker χ is an open subgroup of index 3, hence by local existence the norm group N(E×) of a cyclic cubic E; E splits D, so embeds in D as a maximal subfield, and χ∘Nrd is trivial on E× because Nrd restricts to N_E/F on E. This case holds for every p.
 
-A proof route applies the prime-degree torus-distinction theorem with degree 3 and p≠3. For the two nontrivial unramified cubic norm characters compute the division-model coefficients and identify the unordered pair of two distinct depth-zero representations; fix an eigenvalue convention before ordering it.
+A proof route applies the supplied torus-distinction theorem with degree 3 and p≠3 to the representations of dimension greater than one and the class-field argument above to the characters. For the two nontrivial unramified cubic norm characters compute the division-model coefficients and identify the unordered pair of two distinct depth-zero representations; fix an eigenvalue convention before ordering it.
 
-*Needs:* §5.1; §1.8.
+*Needs:* §5.1; §1.8; SmoothRepresentationsOfLocalGroupsPartII, gap prime-degree-torus-distinction; ClassFieldTheory Layer 5; ClassFieldTheory Layer 8.
 
 **Checks.**
 
 - For degree 3, gcd(3,2)=1 and gcd(3,3)=3; universal torus distinction applies at p=2 and does not assert it at p=3. The trivial input still has a nonzero lift at both primes.
+- For an unramified nontrivial cubic χ, ker χ consists of the elements of valuation divisible by 3, the norm group of the unramified cubic E; χ∘Nrd is then trivial on E×, whereas on a totally ramified cubic E′ the uniformizer has norm of valuation 1 and χ∘Nrd is nontrivial on E′×. The choice of E depends on χ.
 
 ### 5.3 Opposite division algebras and contragredients
 
@@ -1082,7 +1103,7 @@ The PD× trivial input gives πdeg[1]. The two inverse nontrivial unramified cub
 
 ### Dependencies
 
-The statement carriers and construction inputs are SmoothRepresentationsOfLocalGroups §§SR.3.1–SR.3.4; EndoscopicTransferAndUnitaryTraceComparison §§4.7a, 10.30–10.31; SmoothRepresentationsOfLocalGroups §§SR.2.1–SR.2.3; MetaplecticAutomorphicForms §§0.15–0.17, 1.1, 2.4a–2.7; MetaplecticAutomorphicForms §§3.4–3.8, 3.34, 3.37–3.40. The adjacent-rank restriction input is AutomorphicLFunctionsAndLocalFactors, “Central periods”, target normalized-rs-period. The internal inputs are §4.8, §4.6, §3.3, §2.5, §1.3, §5.1, §1.8, §2.1, §5.2, §0.8, §2.6, §5.4, §2.4, §5.5, §5.7, §1.1, §1.2, §1.4, §1.5, §1.6, §1.9, §5.8, §5.6, §3.11, §3.6. The exact additional supplier gaps are those on the individual Needs lines.
+The statement carriers and construction inputs are SmoothRepresentationsOfLocalGroups §§SR.3.1–SR.3.4; EndoscopicTransferAndUnitaryTraceComparison §§4.7a, 10.30–10.31; SmoothRepresentationsOfLocalGroups §§SR.2.1–SR.2.3; MetaplecticAutomorphicForms §§0.15–0.17, 1.1, 2.4a–2.7; MetaplecticAutomorphicForms §§3.4–3.8, 3.34, 3.37–3.40. The adjacent-rank restriction input is AutomorphicLFunctionsAndLocalFactors, “Central periods”, target normalized-rs-period. The division nonvanishing for characters uses ClassFieldTheory Layers 5 and 8. The internal inputs are §3.12, §4.8, §4.6, §3.3, §2.5, §1.3, §5.1, §1.8, §2.1, §5.2, §0.8, §2.6, §5.4, §2.4, §5.5, §5.7, §1.1, §1.2, §1.4, §1.5, §1.6, §1.9, §5.8, §5.6, §3.11, §3.6. The exact additional supplier gaps are those on the individual Needs lines.
 
 ## Layer 6: independent finiteness and dichotomy
 
@@ -1098,11 +1119,12 @@ A proof route uses the explicit restricted oscillator and its Jacquet sequence f
 
 **Checks.**
 
-- The omitted odd Weil case has nonzero split ternary first occurrence; for the admitted σ that first occurrence is 0 and its Fourier–Jacobi output is σ∨. Taking the dual twice recovers σ.
+- For the odd Weil representation ω⁻ attached to the trivial character, the Whittaker support is the square class F×², which contains 1, and the split SO₃ lift is the Steinberg representation of PGL₂. For a nontrivial quadratic χ with nonsquare class a_χ, the odd Weil ω⁻χ has Whittaker support a_χF×², which omits 1, so its split SO₃ lift is 0 and its anisotropic ternary lift is the one-dimensional χ∘Nrd (GG, Propositions 6.5, 6.8 and 6.11, pp. 22–23 (GG lines 745–799)). Thus ω⁻χ also has zero split SO₃ lift and is excluded only by the explicit not-odd-Weil hypothesis.
+- For an admitted σ the split SO₃ lift is 0 and the Fourier–Jacobi module of its G₂ lift is σ∨; taking the smooth dual twice recovers σ, while the unmodified σ would be the wrong output whenever σ is not selfdual.
 
 ### 6.2 Comparison with the owned orthogonal theta input
 
-Identify the D₅,D₆ minimal factors in the E₇ Jacquet modules with the exact orthogonal-minimal theta models imported from Metaplectic MP.3. For a tempered G₂ input use its finite-length lifts for the relevant SO₁₀/SO₁₂ restrictions and between Sp₂ and Sp₆ in SO₁₂. Derive the exceptional comparison maps with the full algebraic dual on one side and the conjugate ψ on its rank-one oscillator; retain the finite-length assertion at exactly those hypotheses. (GS, Proposition 14.2 and identity (14.3), pp. 50–51; §14.3, pp. 51–52 (GS line 1910)).
+Identify the D₅,D₆ minimal factors in the E₇ Jacquet modules with the exact orthogonal-minimal theta models imported from MetaplecticAutomorphicForms §3.39. For a tempered G₂ input use its finite-length lifts for the relevant SO₁₀/SO₁₂ restrictions and between Sp₂ and Sp₆ in SO₁₂. Derive the exceptional comparison maps with the full algebraic dual on one side and the conjugate ψ on its rank-one oscillator; retain the finite-length assertion at exactly those hypotheses. (GS, Proposition 14.2 and identity (14.3), pp. 50–51; §14.3, pp. 51–52 (GS line 1910)).
 
 A proof route is to match spinor/orthogonal embeddings and central quotients before applying the supplier. Apply the mixed-module Fourier–Jacobi comparison to identify the G₂ factor and check all contragredients.
 
@@ -1326,7 +1348,7 @@ A proof route is to the positive-exponent comparison identifies the full module 
 
 ### 8.2 The E₆-to-E₇ tempered Siegel table
 
-For tempered τ of PGL₃ and π=θM₃(τ±) nonzero, θH(π) is I₃(τ) if τ is nonselfdual or if its selfdual parameter contains 1. In the remaining selfdual cases, θH(θM₃(τ+))=I₃(τ)gen and θH(θM₃(τ−))=I₃(τ)deg. In the contains-1 case I₃(τ) is irreducible by the applicable non-discrete-series criterion; do not apply the discrete-series splitting rule outside its hypothesis. (GS, Theorem 15.2, pp. 52–53 (GS line 1989)).
+For tempered τ of PGL₃ and π=θM₃(τ±) nonzero, θH(π) is I₃(τ) if τ is nonselfdual or if its selfdual parameter contains 1. In the remaining selfdual cases, θH(θM₃(τ+))=I₃(τ)gen and θH(θM₃(τ−))=I₃(τ)deg. In the contains-1 case I₃(τ) is irreducible by §1.12; do not apply the discrete-series splitting rule outside its hypothesis. (GS, Theorem 15.2, pp. 52–53 (GS line 1989)).
 
 A proof route uses the P₃ Jacquet top E₆ term to produce the quotient, compare genericity and finite length, then use the PGSp₆ reducibility table to distinguish the two signs.
 
@@ -1363,7 +1385,7 @@ A proof route is to construct maps using the two G₂ Jacquet bottom pieces and 
 
 ### 8.5 The nongeneric πρ family
 
-For a supercuspidal ρ of PGL₂ let σρ be its classical theta lift on Mp₂ through the anisotropic ternary group using JL(ρ). Its mixed Mp₂×G₂ lift πρ is irreducible nongeneric supercuspidal and determines ρ. These πρ exhaust the supercuspidals outside the PD× and PGL₃ images which have a nonzero reverse Mp₂ mixed lift. The odd-Weil case is excluded by this ternary-first-occurrence construction. (GS, §15.1 and Lemma 15.4, p. 54 (GS line 2065); GG, Theorem 9.1(d), p. 33 (GG line 1071)).
+For a supercuspidal ρ of PGL₂ let σρ be its classical theta lift on Mp₂ through the anisotropic ternary group using JL(ρ). Its mixed Mp₂×G₂ lift πρ is irreducible nongeneric supercuspidal and determines ρ. These πρ exhaust the supercuspidals outside the PD× and PGL₃ images which have a nonzero reverse Mp₂ mixed lift. No odd Weil representation is of the form σρ: the anisotropic ternary lift of ω⁻χ (χ≠1) is the one-dimensional χ∘Nrd, whose Jacquet–Langlands antecedent is the quadratic twist of Steinberg St⊗χ and not a supercuspidal ρ, and the lift of ω⁻ attached to the trivial character to the anisotropic ternary group is 0. (GS, §15.1 and Lemma 15.4, p. 54 (GS line 2065); GG, Theorem 9.1(d), p. 33 (GG line 1071)).
 
 A proof route uses the imported division-ternary theta theorem and the mixed-module first-occurrence criterion, then recover σρ from the Fourier–Jacobi module and ρ from the classical inverse correspondence. Nonvanishing, irreducibility and injectivity of σ ↦ θ(σ) on genuine supercuspidals are MetaplecticAutomorphicForms §3.38a; this node adds the description of the family π_ρ and its exhaustion property (GS Lemma 15.4(iii)).
 
@@ -1371,7 +1393,7 @@ A proof route uses the imported division-ternary theta theorem and the mixed-mod
 
 **Checks.**
 
-- The inverse classical lift recovers one ρ from πρ, so two inequivalent ρ cannot give the same πρ. The excluded odd Weil first-occurrence case contributes 0 admitted inputs.
+- The inverse classical lift recovers one ρ from πρ, so two inequivalent ρ cannot give the same πρ. An odd Weil representation contributes 0 admitted inputs: its anisotropic ternary lift is 0 or one-dimensional, never JL(ρ) for supercuspidal ρ.
 
 ### 8.6 The πρ lift to the D₆ factor
 
@@ -1425,7 +1447,7 @@ The construction has the following API.
 
 One proof route combines §5.6 with this E₈ calculation and the supplied F₄ reducibility criterion for the Shalika-to-pole direction. For the reverse direction use the Bump–Ginzburg–Vo functional equation and the supplied zero/pole divisor formula in terms of the Shahidi L-factor: a pole of L at 0 gives a zero of γ_BG at 0, and the residue of a section at 0 gives a nonzero Shalika functional. The latter residue argument is proved here, rather than assumed in the spin-factor contract. (SW, Proposition 5.8 and Theorem 5.10, pp. 45–47 (SW lines 2415–2426, 2473–2490)).
 
-*Needs:* §5.6; §7.2; §8.3; §2.4; RepresentationTheory/LieHighestWeight Layer 8; ReductiveGroups Layer 9; SmoothRepresentationsOfLocalGroups §§SR.2.1–SR.2.3; AutomorphicLFunctionsAndLocalFactors §AL.4; AutomorphicLFunctionsAndLocalFactorsPartII, gaps ramified-spin-factor and bg-spin-integral.
+*Needs:* §5.6; §7.2; §8.3; §2.4; RepresentationTheory/LieHighestWeight Layer 8; ReductiveGroups Layer 9; SmoothRepresentationsOfLocalGroups §§SR.2.1–SR.2.3; AutomorphicLFunctionsAndLocalFactors §AL.4; RepresentationTheory/SpinRepresentations Layer 4; AutomorphicLFunctionsAndLocalFactorsPartII, gaps ramified-spin-factor and bg-spin-integral.
 
 **Checks.**
 
@@ -1454,7 +1476,7 @@ For a selfdual GL₃ parameter containing 1 only the plus E₆ extension lifts, 
 
 ### Dependencies
 
-The statement carriers and construction inputs are EndoscopicTransferAndUnitaryTraceComparison §§4.7a, 10.30–10.31; SmoothRepresentationsOfLocalGroups §§SR.3.1–SR.3.4; MetaplecticAutomorphicForms §§3.4–3.8, 3.34, 3.37–3.40; AutomorphicLFunctionsAndLocalFactors §AL.4; ReductiveGroups Layer 9. The spin-pole comparison also uses ReductiveGroups Layer 9, RepresentationTheory/LieHighestWeight Layer 8, SmoothRepresentationsOfLocalGroups §§SR.2.1–SR.2.3 and the two Part II spin contracts above. The internal inputs are §3.9, §3.10, §1.7, §1.11, §7.8, §0.6, §0.7, §5.8, §3.6, §1.12, §1.9, §5.1, §5.2, §5.9, §8.1, §6.7, §8.2, §1.1, §1.2, §1.3, §1.4, §1.5, §6.1, §8.5, §6.2, §8.6, §1.13, §3.7, §6.4, §5.6, §8.3, §8.4, §8.7, §6.6, §7.2. The exact additional supplier gaps are those on the individual Needs lines.
+The statement carriers and construction inputs are EndoscopicTransferAndUnitaryTraceComparison §§4.7a, 10.30–10.31; SmoothRepresentationsOfLocalGroups §§SR.3.1–SR.3.4; MetaplecticAutomorphicForms §§3.4–3.8, 3.34, 3.37–3.40; AutomorphicLFunctionsAndLocalFactors §AL.4; ReductiveGroups Layer 9. The spin-pole comparison also uses ReductiveGroups Layer 9, RepresentationTheory/LieHighestWeight Layer 8, RepresentationTheory/SpinRepresentations Layer 4 for the spin representation, SmoothRepresentationsOfLocalGroups §§SR.2.1–SR.2.3 and the two Part II spin contracts above. The internal inputs are §3.9, §3.10, §1.7, §1.11, §7.8, §0.6, §0.7, §5.8, §3.6, §1.12, §1.9, §5.1, §5.2, §5.9, §8.1, §6.7, §8.2, §1.1, §1.2, §1.3, §1.4, §1.5, §6.1, §8.5, §6.2, §8.6, §1.13, §3.7, §6.4, §5.6, §8.3, §8.4, §8.7, §6.6, §7.2. The exact additional supplier gaps are those on the individual Needs lines.
 
 ## Layer 9: quaternion relative models
 
@@ -1573,6 +1595,8 @@ One proof route for split O starts from the split Albert algebra carrier TauCeti
 **Checks.**
 
 - The totally definite case has k-rank 3 and compact real G₂, whereas the split case has rank 7. The rank difference is 4 and cannot be suppressed by identifying the real octonions.
+- Over a splitting field the Albert carrier has dimension 27, its structure algebra has dimension 78+1=79 and the Koecher–Tits Lie algebra has dimension 27+79+27=133, the dimension of E₇. The quaternionic Hermitian 3×3 model has dimension 15 and would give the Lie algebra of dimension 15+36+15=66 of type D₆, so it cannot be substituted. Restricted to Aut(O)×PGSp₆ the 133-dimensional Lie algebra is 14+21+7·14, with the seven-dimensional G₂ module tensored with the fourteen-dimensional kernel of contraction with the symplectic form on ∧²F⁶, on which the central −1 of Sp₆ acts trivially, so that it descends to PGSp₆; the dimensions 14+21=35 alone leave 98 unaccounted for.
+- For the diagonal frame elements, E₁∘E₁=E₁ and E₁∘E₂=0, and the cubic norm of diag(1,2,3) is 6 with N(1)=1; replacing N by N² gives 36 and fails the cubic homogeneity N(λx)=λ³N(x) at λ=2 (64 instead of 8 at the unit).
 
 ### 10.2 The global minimal residual representation
 

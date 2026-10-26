@@ -102,7 +102,7 @@ cited_for = ["minimal-models"]
 [[source]]
 id = "GG"
 locator_scheme = "section"
-locator = "§8 Propositions 8.1, 8.3, 8.4 pp. 27–28; §9 Theorem 9.1 and its proof, including §9.5, pp. 33–37; Lemma 9.4 pp. 34–36"
+locator = "§6 Propositions 6.5, 6.8, 6.11 pp. 22–23; §8 Propositions 8.1, 8.3, 8.4 pp. 27–28; §9 Theorem 9.1 and its proof, including §9.5, pp. 33–37; Lemma 9.4 pp. 34–36"
 url = "https://math.bgu.ac.il/~ngur/Publications/sl2g2.pdf"
 fetched_from = "https://math.bgu.ac.il/~ngur/Publications/sl2g2.pdf"
 fetched_at = "2026-10-25T00:05:51Z"
@@ -184,7 +184,7 @@ version_note = "Published version, pp. 183–201; text extraction has damaged ma
 [[source]]
 id = "Sav"
 locator_scheme = "theorem"
-locator = "§3 (Theorem 3.4), pp. 396–397; §§5–6, pp. 398–400"
+locator = "§3 (Theorem 3.4), pp. 396–397; §5 (Proposition 5.1, Corollary 5.2), pp. 398–399; §6, pp. 399–400"
 url = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/CE9F949BF8D96C551E8C40D7EA71DC42/S0008439500010699a.pdf/a-class-of-supercuspidal-representations-of-g2k.pdf"
 fetched_from = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/CE9F949BF8D96C551E8C40D7EA71DC42/S0008439500010699a.pdf/a-class-of-supercuspidal-representations-of-g2k.pdf"
 fetched_at = "2026-10-25T00:06:17Z"
@@ -192,7 +192,7 @@ sha256 = "1a8aa3b7a1598d93b98b78fa2e8b36ef9ac74742c488a9b946138dca37a8329a"
 licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["minimal-models", "division-correspondence", "division-nonvanishing"]
+cited_for = ["minimal-models", "division-ext-vanishing", "division-correspondence", "division-nonvanishing"]
 authors = "Gordan Savin"
 title = "A class of supercuspidal representations of G₂(k)"
 year = 1999
