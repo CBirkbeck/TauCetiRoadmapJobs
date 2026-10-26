@@ -4,9 +4,13 @@ import Mathlib
 # Deligne weights and purity, part II: target signatures
 
 The roadmap is README.md; this file is not the roadmap. It states the roadmap's
-headline theorems against the pinned APIs. The native complementary-pair form of
-the equivariant Poincaré splitting is statable; applying it in each degree gives
-the graded splitting of README §4.4, including a nontrivial top-degree character.
+headline theorems against the pinned APIs. None of them is statable at the pins,
+so the file declares nothing.
+
+The equivariant Poincaré splitting (§4.4) is elementary linear algebra on free
+carriers (perfect pairings and representations), not a headline about the
+roadmap's objects; it is kept as a README target, and its geometric application
+(§4.5) lacks the comparison map named below.
 
 The following headlines are not statable at the pins:
 * Detection on closed subgroups, transport, direct-summand purity, finite-extension
@@ -40,36 +44,5 @@ constructions or predicates. No abstract proposition is used in their place.
 -/
 
 namespace TauCetiRoadmap.DeligneWeightsAndPurityPartII
-
-/-! ## Layer 4: The comparison and toric complete intersections -/
-
-/-- A map of complementary perfect pairings which multiplies the top coordinate
-by a nonzero scalar is injective in both arguments. Its first image has as a
-complement the annihilator of its second image. If both maps intertwine group
-representations and the target pairing transforms by the top character, the two
-complementary subspaces are stable. Applied degree by degree to cup products,
-this is the equivariant Poincaré splitting used in Scholze's Theorem 9.6. -/
-theorem duality_splitting
-    {E G U U' V V' : Type*} [Field E] [Group G]
-    [AddCommGroup U] [Module E U] [FiniteDimensional E U]
-    [AddCommGroup U'] [Module E U'] [FiniteDimensional E U']
-    [AddCommGroup V] [Module E V] [FiniteDimensional E V]
-    [AddCommGroup V'] [Module E V'] [FiniteDimensional E V']
-    (p : U →ₗ[E] U' →ₗ[E] E) (q : V →ₗ[E] V' →ₗ[E] E)
-    [p.IsPerfPair] [q.IsPerfPair]
-    (a : U →ₗ[E] V) (b : U' →ₗ[E] V') (c : E) (hc : c ≠ 0)
-    (hpair : ∀ x y, q (a x) (b y) = c * p x y)
-    (ρU : Representation E G U) (ρU' : Representation E G U')
-    (ρV : Representation E G V) (ρV' : Representation E G V')
-    (ha : ∀ g x, a (ρU g x) = ρV g (a x))
-    (hb : ∀ g y, b (ρU' g y) = ρV' g (b y))
-    (χ : G →* Eˣ)
-    (hq : ∀ g x y, q (ρV g x) (ρV' g y) = (χ g : E) * q x y) :
-    Function.Injective a ∧ Function.Injective b ∧
-      IsCompl (LinearMap.range a) (LinearMap.ker ((q.flip.comp b).flip)) ∧
-      (∀ (g : G) (x : V), x ∈ LinearMap.range a → ρV g x ∈ LinearMap.range a) ∧
-      (∀ (g : G) (x : V), x ∈ LinearMap.ker ((q.flip.comp b).flip) →
-        ρV g x ∈ LinearMap.ker ((q.flip.comp b).flip)) := by
-  sorry
 
 end TauCetiRoadmap.DeligneWeightsAndPurityPartII

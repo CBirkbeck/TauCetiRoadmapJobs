@@ -2340,6 +2340,18 @@
     "needs": "For a proper variety defined over a complete field K, the algebraic–adic cohomology comparison over its completed algebraic closure C commutes with every continuous K-automorphism of C, with cup products and coefficient reductions.",
     "supplier": "ClassicalAdicEtaleCohomology",
     "section": "8.2, 11.1"
+  },
+  {
+    "slug": "adapted-plurinodal-alteration",
+    "needs": "For a proper surjective morphism of Noetherian excellent integral schemes with irreducible geometric generic fibre and a dense open of the source, integral alterations of source and base and a factorization of the altered map into nodal curves adapted to dense opens at every stage (smooth over the lower open, with an étale marked boundary in the smooth locus), whose top open lies in the inverse image of the given open (de Jong, Theorem 5.9; ITO20 Theorem 3.3).",
+    "supplier": "ClassicalAdicEtaleCohomology",
+    "section": "5.4"
+  },
+  {
+    "slug": "huber-smooth-relative-duality",
+    "needs": "For a smooth separated quasi-compact morphism g of pure relative dimension N from a finite-type analytic adic space to an annulus over an algebraically closed complete rank-one field, and its base change over the pseudo-adic subspace D(b) ∩ B(a,b), with n invertible and every R^i g_! Z/n locally constant constructible, the trace gives R^j g_*(Z/n(N)) ≅ Hom(R^(2N−j) g_! Z/n, Z/n) for every j (Huber, Corollary 7.5.5).",
+    "supplier": "ClassicalAdicEtaleCohomology",
+    "section": "9.6–9.7"
   }
 ],
  "restructure": [
