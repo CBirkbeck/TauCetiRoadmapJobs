@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-7270 mistakes recorded on the board: 4418 misprints, 1832 errors, 735 gaps, 285 unparsed bullets.
+7280 mistakes recorded on the board: 4423 misprints, 1833 errors, 736 gaps, 288 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -293,6 +293,9 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Unparsed** (ProbabilisticAndMetricNumberTheoryPartII, #2200 at 12545ad, 2026-10-26): Misprint** in GMR19 arXiv v3 at the proof of (5.5), its p.49: the source writes `C₁ ≤ C_k` from `w₁ ≤ w_k`; the column sums decrease in `w_k`, so it should be `C₁ ≥ C_k` (which is what the conclusion "C₁ is maximal" needs); affects nothing.
 - **Unparsed** (RankOneConverse, #1780 at 33cda60, 2026-10-26): Misprint** in bfh-1990 at the introductory Theorem, printed p.544: both assertions are labelled (i) in the scan; the second should be (ii); affects nothing (the sources manifest records the correction). <!-- tauceti-roadmap-review {"agent": "claude", "head": "33cda60", "job": "RT-RankOneConverse~1b", "model": "fable", "worker": "fable-rt221"} -->
 - **Unparsed** (ProfiniteCohomologyPartII, #2203 at adfb460, 2026-10-26): Error** in HW at Proposition 7.3, printed page 26 (lines 1114–1117): the source asserts a bijection between all defining systems of the classes and the lifts of one homomorphism `α`; the proof gives it for the defining systems whose adjacent entries are the cocycles determined by `α`; affects a stated result.
+- **Unparsed** (ProbabilisticAndMetricNumberTheoryPartII, #2200 at 12545ad, 2026-10-26): Misprint** in GMR19 at §4.5, proof of Proposition 43, printed p.799: the source bounds the branch sum by `2(n−2)‖f‖_∞ Σ (A+3)^{−s}`; the factor should be `2^s`, since `(1 + (A+1)/2)^{−s} = 2^s (A+3)^{−s}`; affects nothing.
+- **Unparsed** (ProbabilisticAndMetricNumberTheoryPartII, #2200 at 12545ad, 2026-10-26): Gap** in GMR19 at §4.2, printed p.794: the image of the coding map is called a compact attractor; for `n = 3` the image omits `w₁ = 0`, the limit of the branch fixed points, so it should be the closure of the image; affects the support statement of the proof.
+- **Unparsed** (ProbabilisticAndMetricNumberTheoryPartII, #2200 at 12545ad, 2026-10-26): Misprint** in GMR19 at (5.5), printed p.801, and (5.9), printed p.802 (also in arXiv v3's displays): the denominators are printed unsquared; they should be `(3 + b − 2w_j)²` and `(5 + b − 4w_{n−2})²`, as the arXiv proofs and the value `4/9` at `(0,0,1)` show; affects nothing.
 
 ## A
 
@@ -4585,10 +4588,15 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## GMR19
 
 - **Misprint** at Lemma 46, printed p.798: the source says the two-norm inequality is written with the complex operator `L_s` on the right side; it should be use the real operator `L_{Re s}` for an order inequality; affects the proof; 's statement only, not its use. Found by ProbabilisticAndMetricNumberTheoryPartII (#2200 at 12545ad, 2026-10-26, claude fable).
+- **Misprint** at Lemma 46, printed p.798: the source says the right side of the two-norm inequality uses the complex operator `L_s`; it should be `L_{Re s}` for an order inequality between real quantities; affects the proof. Found by ProbabilisticAndMetricNumberTheoryPartII (#2200 at 12545ad, 2026-10-26, claude fable).
 - **Misprint** at Table 1, printed p.804: the source says the third surviving-coordinate row of the derivative of `γ_i` repeats `w₂` in the exceptional column; it should be carry `w₃`; affects nothing. Found by ProbabilisticAndMetricNumberTheoryPartII (#2200 at 12545ad, 2026-10-26, claude fable).
+- **Misprint** at Table 1, printed p.804: the source says the third surviving-coordinate row repeats `w₂` in the exceptional column; it should be `w₃`; affects nothing. Found by ProbabilisticAndMetricNumberTheoryPartII (#2200 at 12545ad, 2026-10-26, claude fable).
 - **Error** at §4.3 item (1), printed p.797, and in LAL89 at Proposition 7.2, (7.7), printed p.25: the source says the resolvent decomposition adds the full remainder resolvent to the eigenterm, counting the eigendirection twice (on `h` it returns `(1−λ)^{−1}h + h`); it should be subtract the projection, equivalently `(λ/(1−λ))P + (1−L′)^{−1}`; affects the proof; (the residue at the pole is unchanged). Found by ProbabilisticAndMetricNumberTheoryPartII (#2200 at 12545ad, 2026-10-26, claude fable).
+- **Error** at §4.3 item (1), printed p.797, and in LAL89 at Proposition 7.2, (7.7), printed p.25: the source says the resolvent is written as the eigenterm plus the full inverse `(1 − L′_s)^{−1}`, which on the eigenvector returns `(1−λ)^{−1}h + h`; it should be `(λ/(1−λ))P + (1−L′)^{−1}`, since (7.5) holds only for `n ≥ 1`; affects the proof; , not the residue. Found by ProbabilisticAndMetricNumberTheoryPartII (#2200 at 12545ad, 2026-10-26, claude fable).
 - **Misprint** at §4.3, printed p.797: the source says with the normalisations of Theorem 39 the leading coefficient of `N(w, r)` is written as `h_β`; it should be `h_β/(β|λ′_β|)`; affects a stated result; only up to the constant that Theorem 13 leaves free. Found by ProbabilisticAndMetricNumberTheoryPartII (#2200 at 12545ad, 2026-10-26, claude fable).
+- **Misprint** at §4.3, printed p.797: the source says the leading coefficient of `N(w, r)` is written as the `ν`-normalised `h_{β₀}`; it should be `h_β/(β|λ′_β|)`; affects a stated result; up to the constant Theorem 13 leaves free. Found by ProbabilisticAndMetricNumberTheoryPartII (#2200 at 12545ad, 2026-10-26, claude fable).
 - **Misprint** at §5.1, printed p.801: the source says the cusp inequality `w_{n−1} > (1 + w_{n−2})/2` strictly; it should be non-strict, since the cusp is defined by `≥` and `(1/5, 1/5, 3/5)` attains equality; affects nothing. Found by ProbabilisticAndMetricNumberTheoryPartII (#2200 at 12545ad, 2026-10-26, claude fable).
+- **Misprint** at §5.1, printed p.801: the source says the cusp inequality is printed strict, `w_{n−1} > (1 + w_{n−2})/2`; it should be `≥`, attained at `(1/5, 1/5, 3/5)`; affects nothing. Found by ProbabilisticAndMetricNumberTheoryPartII (#2200 at 12545ad, 2026-10-26, claude fable).
 
 ## GN22
 
@@ -5023,6 +5031,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## HEN95
 
 - **Gap** at Proposition 5.1(v), printed p.19: the source says `χ(A + K₀) = χ(A)` for compact `K₀` without a nonemptiness hypothesis, which its proof uses; it should be assume `K₀` nonempty (`A + ∅ = ∅`); affects a stated result; in the degenerate case only. Found by ProbabilisticAndMetricNumberTheoryPartII (#2200 at 12545ad, 2026-10-26, claude fable).
+- **Gap** at Proposition 5.1(v), printed p.19: the source says `γ(A + K) = γ(A)` for compact `K` is stated without nonemptiness, which the proof assumes; it should be require `K` nonempty; affects a stated result; in the degenerate case only. Found by ProbabilisticAndMetricNumberTheoryPartII (#2200 at 12545ad, 2026-10-26, claude fable).
 
 ## Henk, Successive minima and lattice points, arXiv:math/0204158v1
 
@@ -6479,6 +6488,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## LAL89
 
 - **Misprint** at §7, before Proposition 7.2, printed p.25: the source says the source invokes lower semicontinuity of the spectral radius to keep nearby spectral radii below a bound; it should be upper semicontinuity (or a finite-power Gelfand bound); affects the proof; only. <!-- tauceti-roadmap-review {"agent": "claude", "head": "12545ad", "job": "REV-PKG-ProbabilisticAndMetricNumberTheoryPartII", "model": "fable", "worker": "fable-rev213"} -->. Found by ProbabilisticAndMetricNumberTheoryPartII (#2200 at 12545ad, 2026-10-26, claude fable).
+- **Misprint** at §7, before Propositions 7.2–7.3, printed p.25: the source says lower semicontinuity of the spectral radius is invoked to keep nearby radii below a bound; it should be upper semicontinuity or a finite-power Gelfand bound; affects the proof; only. <!-- tauceti-roadmap-review {"agent": "claude", "head": "12545ad", "job": "RT-ProbabilisticAndMetricNumberTheoryPartII~1b", "model": "fable", "worker": "fable-rt224"} -->. Found by ProbabilisticAndMetricNumberTheoryPartII (#2200 at 12545ad, 2026-10-26, claude fable).
 
 ## Lan, Arithmetic compactifications of PEL-type Shimura varieties (thesis)
 
