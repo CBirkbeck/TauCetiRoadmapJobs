@@ -4,7 +4,8 @@ import Mathlib
 # Anticyclotomic local units: target signatures
 
 The roadmap is README.md; this file is not the roadmap. It states the roadmap's headline theorems that can be expressed against the
-pinned APIs: the auxiliary imaginary quadratic field existence theorem of §4.1.
+pinned APIs: the auxiliary imaginary quadratic field existence theorem of §4.1,
+stated for every odd prime.
 
 The following headline theorems are not statable at the pins:
 
@@ -49,10 +50,12 @@ namespace TauCetiRoadmap.AnticyclotomicLocalUnits
 
 /-! ## Layer 4: An optimal plus unit from early CM values -/
 
-/-- For every prime p at least five there is an imaginary quadratic number field
-in which 2 splits into distinct prime ideals, p is inert, and p does not divide
-its class number (BKO21, Lemma 3.1, pp.950–951). -/
-theorem exists_auxiliaryQuadraticField (p : ℕ) (hp : p.Prime) (hp5 : 5 ≤ p) :
+/-- For every odd prime p there is an imaginary quadratic number field in which 2
+splits into distinct prime ideals, p is inert, and p does not divide its class
+number (BKO21, Lemma 3.1, pp.950–951, stated there for p at least five; at p = 3
+the field of discriminant −7 is a witness). At p = 2 the splitting and inertness
+clauses are incompatible. -/
+theorem exists_auxiliaryQuadraticField (p : ℕ) (hp : p.Prime) (hp2 : p ≠ 2) :
     ∃ (K : Type) (hK : Field K),
       letI := hK
       ∃ hNF : NumberField K,

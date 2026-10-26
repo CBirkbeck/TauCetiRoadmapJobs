@@ -23,7 +23,7 @@ Fix a prime p≥5. Let Φ/ℚ_p be the unramified quadratic extension, O its nat
 
 Use the supplied Lubin–Tate formal O-module F for π, with normalized logarithm λ′(0)=1 and free rank-one Tate module T=T_πF. Formal points F(L) mean points in the maximal ideal of the native integer ring of L. Formal addition, scalar multiplication and traces use this formal module. A notation such as pⁿF(L) means formal multiplication, not ordinary coordinate multiplication. The π-adic basis satisfies [π]v_(n+1)=v_n; if w is a p-adic basis, then v_n=[(−1)^n]w_n up to a single fixed O-unit. For the two consecutive levels n=0,1, [−p](−w_1)=w_0, whereas [−p]w_1=−w_0 (BKO21 §2, footnote 2, p.948; BKO21 line 272).
 
-Write Φ_n=Φ(F[π^(n+1)]), Δ=Gal(Φ_0/Φ), ω=κ|Δ, and Γ=Gal(Φ∞/Φ_0)=Γ⁺×Γ⁻. The supplied character κ is the actual Tate action. Arithmetic reciprocity sends a uniformizer to arithmetic Frobenius and satisfies κ(Art_Φ(u))=u⁻¹ on Oˣ. Thus an Artin unit a acts on T by a⁻¹ and on its inverse twist by a. Conjugation c of Φ/ℚ_p fixes Γ⁺ and inverts Γ⁻: for u∈Γ⁻, c u c⁻¹=u⁻¹, and the product is 1. These comparisons are fixed by LubinTateFormalModulesAndQuasiCanonicalLifts LT.2 and LT.8 and ClassFieldTheory §§2.5–2.6, Layer 7.
+Write Φ_n=Φ(F[π^(n+1)]), Δ=Gal(Φ_0/Φ), ω=κ|Δ, and Γ=Gal(Φ∞/Φ_0)=Γ⁺×Γ⁻. The supplied character κ is the actual Tate action. Arithmetic reciprocity sends a uniformizer to arithmetic Frobenius and satisfies κ(Art_Φ(u))=u⁻¹ on Oˣ. Thus an Artin unit a acts on T by a⁻¹ and on its inverse twist by a, and χ_cyc(Art_Φ(u))=N_(Φ/ℚ_p)(u)⁻¹ (ClassFieldTheory §2.6). PadicHodgeRegulators normalizes by geometric reciprocity rec_geo(u)=Art_Φ(u)⁻¹; its supplier contract below fixes the conversion used in §4.3. Conjugation c of Φ/ℚ_p fixes Γ⁺ and inverts Γ⁻: for u∈Γ⁻, c u c⁻¹=u⁻¹, and the product is 1. These comparisons are fixed by LubinTateFormalModulesAndQuasiCanonicalLifts LT.2 and LT.8 and ClassFieldTheory §§2.5–2.6, Layer 7.
 
 Use Θ_n=Φ_n^Δ and Ψ_n=Θ_n^(Γ⁺), so [Θ_n:Φ]=p^(2n), [Ψ_n:Φ]=pⁿ and Θ_0=Ψ_0=Φ. The full first tame degree is p²−1, while the primed ring-class tame degree is p+1: at p=5 these are 24 and 6. Put Λ₂=O[[Γ⁺×Γ⁻]] and Λ=O[[Γ⁻]], on the native completed group algebra. A quotient of a compact module uses the closed relation image. Completed actions are continuous and all compact modules are Hausdorff. Discrete point modules used in continuous cohomology have the discrete direct-limit topology, even though each finite extension of Φ also has its valued topology.
 
@@ -104,6 +104,8 @@ ArithmeticGaloisDuality §R02.1.2 supplies Tate’s inverse-limit sequence inclu
 NonordinaryCMSpecialValues NCM.0 supplies the good CM period, canonical root sign, auxiliary prime and its finite characters; NCM.1 supplies the early normalized zeta class, its reciprocity and norm-twist comparison; NCM.2 supplies the torsion/ring-class compositum, disjointness, semilocal splitting and inert −p comparison; NCM.3 supplies the conductor-dependent root sign and central vanishing; NCM.4 supplies Finis’s unit-value specialization with the inert correction terms zero and auxiliary Euler factors one. NCM.5/unramified-cm-coefficients supplies the precise canonical unramified coefficient and period field-of-definition comparison, and NCM.5/scalar-tensor-character-comparison supplies injectivity of tensor multiplication with the totally ramified LT field. Section 4.4 must first place the derivative and character values in that tensor. Arbitrary finite freeness is not the contract. For ramified W=O[ζ_p], ζ_p⊗1−1⊗ζ_p is nonzero before scalar multiplication and zero afterwards.
 
 PadicHodgeRegulators §1.4 supplies the de Rham dual exponential H¹(K,V)→Fil⁰D_dR(V), with kernel H¹_g and the ordered positive adjunction to the exponential for V*(1); §1.7 supplies restriction/corestriction and trace compatibility. On the trivial representation the normalized map takes log χ_cyc to 1. Section 4.3 identifies this supplied normalization with the actual Coleman derivative; it does not take that identification as a definition.
+
+The supplier's ordered pairing is normalized geometrically (PadicHodgeRegulators, Conventions). For u∈Φˣ let κ_Kum(u)∈H¹(Φ,ℚ_p(1)) be the Kummer class of the cocycle g↦gα/α on compatible p-power roots α of u, and let P be the supplier's ordered cup-product pairing followed by its invariant. For ψ∈H¹(Φ,ℚ_p)=Hom_cts(G_Φ,ℚ_p) the supplier fixes P(κ_Kum(u),ψ)=ψ(rec_geo(u)), which equals −ψ(Art_Φ(u)) in the arithmetic convention used here; interchanging the two degree-one entries gives P(ψ,κ_Kum(u))=ψ(Art_Φ(u)). The dual exponential is cup product with log χ_cyc and does not depend on the reciprocity normalization, so exp*(log χ_cyc)=1 in both conventions; renormalizing the invariant to arithmetic reciprocity would change the sign of P, and with it the duality side of the adjunction, but not exp*. Section 4.3 transports this ordered identity, the coefficient trace and the Cartier evaluation of §2.1 before it applies the adjunction.
 
 ### From TauCetiRoadmap.EllipticCurves
 
@@ -628,16 +630,17 @@ Use the standing local data and an imaginary quadratic K satisfying §4.1. The c
 
 ### 4.1 An auxiliary CM field and character
 
-For every prime p≥5, construct an imaginary quadratic K in which 2 splits, p is inert and p∤h_K. The headline `exists_auxiliaryQuadraticField` states this on native number fields: [K:ℚ]=2, K is totally complex, (2)=PQ for distinct prime ideals P,Q of its integer ring, (p) is prime, and p does not divide its class number. Apply the canonical-character and auxiliary-prime contracts of NonordinaryCMSpecialValues NCM.0 and NCM.2 to this K: choose φ of type (1,0), conductor f supported at ramified primes, φ(pO_K)=−p and W(φ)=+1, its compatible CM elliptic realization over H and good differential period Ω, and a split prime l≥5 with l∤p h_K N(f) and p∤(l−1). This target owns the auxiliary-field existence and its assembly with those supplied objects.
+For every odd prime p, construct an imaginary quadratic K in which 2 splits, p is inert and p∤h_K (the source states this under its standing p≥5; p=3 follows by the same route). The headline `exists_auxiliaryQuadraticField` states this on native number fields for every prime p≠2: [K:ℚ]=2, K is totally complex, (2)=PQ for distinct prime ideals P,Q of its integer ring, (p) is prime, and p does not divide its class number. At the standing p≥5, apply the canonical-character and auxiliary-prime contracts of NonordinaryCMSpecialValues NCM.0 and NCM.2 to this K: choose φ of type (1,0), conductor f supported at ramified primes, φ(pO_K)=−p and W(φ)=+1, its compatible CM elliptic realization over H and good differential period Ω, and a split prime l≥5 with l∤p h_K N(f) and p∤(l−1). This target owns the auxiliary-field existence and its assembly with those supplied objects.
 
 (BKO21, Lemma 3.1 and §3.0.1, pp.950–951; Theorem 3.4, pp.953–954; BKO21 line 339.)
 
-A proof route is as follows. Choose 1≤a≤p−1 with (−a/p)=−1, and 0≤k≤7 with a+kp≡7 modulo 8. The squarefree part d of −(a+kp) is 1 modulo 8, has (d/p)=−1 and |d|<8p. The class-number bound in the supplier contract gives h(d)<p for p≥53. The explicit reduced-form and Euler-criterion examples below handle 5≤p≤47. Apply the early CM contracts to that field.
+A proof route is as follows. Choose 1≤a≤p−1 with (−a/p)=−1, and 0≤k≤7 with a+kp≡7 modulo 8. The squarefree part d of −(a+kp) is 1 modulo 8, has (d/p)=−1 and |d|<8p. The class-number bound in the supplier contract gives h(d)<p for p≥53. The explicit reduced-form and Euler-criterion examples below handle 3≤p≤47. Apply the early CM contracts to that field.
 
 **Checks.**
 
 - In K=ℚ(√−7), α=(1+√−7)/2 has polynomial X²−X+2. Modulo 2 this is X(X−1), giving distinct primes (2,α) and (2,α−1); modulo 5 its discriminant is 3, a nonsquare, so (5) is prime. Here h_K=1 and 5∤1.
 - In K=ℚ(√−15), 2 splits and h_K=2, but at p=5 the discriminant is 0 modulo 5: (5) ramifies and is not prime, so this field fails the inertness clause.
+- At p=3 the route takes a=1 and k=2, so a+kp=7 and d=−7: modulo 3 the discriminant is 2, a nonsquare, so (3) is prime in ℚ(√−7), and 3∤1. At p=2 no field qualifies: if (2)=PQ with P,Q prime and (2) itself prime, then (2) contains P or Q and is contained in both, so it equals that factor; cancelling the nonzero principal ideal (2) makes the other factor the unit ideal, which is not prime. Hence the hypothesis p≠2 cannot be dropped.
 - The complete small-prime discriminant choices and the class numbers 1,2,3 are computed in the worked examples. At p=53, sqrt(424)(2+log(424))/π_real≈52.7612<53, and the corresponding ratio is decreasing.
 
 *Needs:* §0.1; ImaginaryQuadraticClassNumber H1.3, H2.1–H2.3 (gap:quadratic-class-number-upper-bound); NonordinaryCMSpecialValues NCM.0, NCM.2.
@@ -669,17 +672,18 @@ Its API consists of the following facts on these same carriers and with these sa
 
 ### 4.3 Wiles reciprocity in dual-exponential form
 
-For the projected class x∈U∞*⊗_O R, transport its finite Kummer class through the specified CM coefficient identification to H¹(Φ_n,T_φ⁻¹(1)). Compare the imported dual exponential, normalized by the chosen invariant differential ω_E, with the invariant Coleman derivative: its finite coefficient is π^(−n−1)δ_n(x), and the χ-weighted semilocal sum is δ_χ(x)ω_E. The ordered local Tate pairing, coefficient trace and differential comparison are part of this comparison theorem; the formula does not define a rescaled exponential.
+For the projected class x∈U∞*⊗_O R, transport its finite Kummer class through the specified CM coefficient identification to H¹(Φ_n,T_φ⁻¹(1)). Compare the imported dual exponential, normalized by the chosen invariant differential ω_E, with the invariant Coleman derivative: its finite coefficient is π^(−n−1)δ_n(x), and the χ-weighted semilocal sum is δ_χ(x)ω_E. The ordered local Tate pairing, coefficient trace and differential comparison are part of this comparison theorem: the supplier's geometric identity P(κ_Kum(u),ψ)=ψ(rec_geo(u))=−ψ(Art_Φ(u)) of the supplier contract is converted before it is compared with the arithmetically normalized Kummer pairing of §2.1. The formula does not define a rescaled exponential.
 
 (Kato93, Chapter II, Theorem 2.1.7, uncertified; BKO21, Equations (3.4)–(3.6), pp.952–953; BKO21 line 422; BKO21 line 467.)
 
-A proof route is as follows. Apply PadicHodgeRegulators §1.4 with its ordered positive adjunction. Transport the CM Tate representation, good differential and semilocal trace through the supplied coefficient comparison, and prove finite explicit reciprocity with the π^(−n−1) factor. This is a distinct rational comparison from the Φ/O-valued formula of §2.5.
+A proof route is as follows. Apply PadicHodgeRegulators §1.4 with its ordered positive adjunction, after converting its geometric reciprocity identity to Art_Φ as in the supplier contract. Transport the CM Tate representation, good differential and semilocal trace through the supplied coefficient comparison, and prove finite explicit reciprocity with the π^(−n−1) factor. This is a distinct rational comparison from the Φ/O-valued formula of §2.5.
 
 **Checks.**
 
 - On the trivial representation the supplied dual exponential sends log χ_cyc to 1. At p=5,n=0 the finite coefficient multiplying δ_0 is −1/5; at n=1 it is 1/25. Replacing it by 1 or −1/25 changes the normalization.
+- At p=5 take u=6∈ℤ₅ˣ⊂Oˣ, with N_(Φ/ℚ₅)(6)=36 and log₅(6)=5−25/2+125/3−⋯ of valuation 1, so nonzero. Arithmetic reciprocity gives log χ_cyc(Art_Φ(6))=log₅(36⁻¹)=−2log₅(6). The supplier's ordered pairing gives P(κ_Kum(6),log χ_cyc)=log χ_cyc(rec_geo(6))=2log₅(6), and reversing the two degree-one entries gives −2log₅(6). On the de Rham side, with d₁ the supplier's invariant basis of D_dR(ℚ₅(1)) over Φ, κ_Kum(6)=exp(log₅(6)·d₁) and exp*(log χ_cyc)=1, so the trace pairing is Tr_(Φ/ℚ₅)(log₅(6))=2log₅(6), agreeing with P. Reading the supplier identity with Art_Φ in place of rec_geo would give −2log₅(6) on the duality side against +2log₅(6) on the de Rham side, a sign error in the derivative comparison.
 
-*Needs:* §4.2; §1.3; §2.1; PadicHodgeRegulators §1.4; NonordinaryCMSpecialValues NCM.0–NCM.2; §2.5.
+*Needs:* §4.2; §1.3; §2.1; PadicHodgeRegulators §1.4; ClassFieldTheory Layer 7; NonordinaryCMSpecialValues NCM.0–NCM.2; §2.5.
 
 ### 4.4 CM-class derivative values and sign
 
@@ -715,7 +719,7 @@ For p=5 take discriminant −7 and h=1. Exact order l means conductor l², and �
 
 ### Dependencies
 
-The subsection *Needs:* lines give the internal dependencies. External inputs: ImaginaryQuadraticClassNumber H1.3, H2.1–H2.3 (gap:quadratic-class-number-upper-bound); NonordinaryCMSpecialValues NCM.0, NCM.2; NonordinaryCMSpecialValues NCM.1–NCM.2; PadicHodgeRegulators §1.4; NonordinaryCMSpecialValues NCM.0–NCM.2; §2.5; NonordinaryCMSpecialValues NCM.3, NCM.5; PadicMeasuresIwasawaAlgebras §5.2; NonordinaryCMSpecialValues NCM.4–NCM.5.
+The subsection *Needs:* lines give the internal dependencies. External inputs: ImaginaryQuadraticClassNumber H1.3, H2.1–H2.3 (gap:quadratic-class-number-upper-bound); NonordinaryCMSpecialValues NCM.0, NCM.2; NonordinaryCMSpecialValues NCM.1–NCM.2; PadicHodgeRegulators §1.4; ClassFieldTheory Layer 7; NonordinaryCMSpecialValues NCM.0–NCM.2; §2.5; NonordinaryCMSpecialValues NCM.3, NCM.5; PadicMeasuresIwasawaAlgebras §5.2; NonordinaryCMSpecialValues NCM.4–NCM.5.
 
 ## Layer 5: A primitive modular formal point
 
@@ -1147,7 +1151,7 @@ InertAnticyclotomicCMMainConjecture imports §0.1’s conductor parity, §2.4’
 
 ## Worked examples
 
-For the auxiliary field, take D=−7 for p=5,13,17,19,31,41,47; D=−15 for p=7,11,29,37,43; and D=−31 for p=23. The reduced primitive positive-definite forms are (1,1,2) at −7; (1,1,4),(2,1,2) at −15; and (1,1,8),(2,−1,4),(2,1,4) at −31. The reduction conditions |b|≤a≤c, b²−4ac=D, primitivity, and the nonnegative-b boundary convention give exactly 1,2,3 classes. Each D≡1 modulo 8, so 2 splits; each selected p has (D/p)=−1 and does not divide its selected class number. The choices make every small prime p≥5 part of the same field-existence theorem (BKO21 Lemma 3.1, pp.950–951; BKO21 line 339; ImaginaryQuadraticClassNumber H1.3, H2.1).
+For the auxiliary field, take D=−7 for p=3,5,13,17,19,31,41,47; D=−15 for p=7,11,29,37,43; and D=−31 for p=23. The reduced primitive positive-definite forms are (1,1,2) at −7; (1,1,4),(2,1,2) at −15; and (1,1,8),(2,−1,4),(2,1,4) at −31. The reduction conditions |b|≤a≤c, b²−4ac=D, primitivity, and the nonnegative-b boundary convention give exactly 1,2,3 classes. Each D≡1 modulo 8, so 2 splits; each selected p has (D/p)=−1 and does not divide its selected class number. The choices make every odd prime p≤47, including p=3 outside the standing range, part of the same field-existence theorem (BKO21 Lemma 3.1, pp.950–951; BKO21 line 339; ImaginaryQuadraticClassNumber H1.3, H2.1).
 
 At p=5 an exact-order-5 character belongs to Ξ⁺ because c=2. Its derivative on a plus generator is nonzero, while its logarithm on every plus point is zero. For N=27, μ=36, the ramification bound is 6 and the exceptional fibre has at least 12 points. Level M=6 is fine with φ(M)=2, and the rescaling multiplier is 36. The trace system starts at y=6Q, y_0=0 and Tr_(Ψ_1/Φ)y_1=−6Q, not at a zero first trace (BKO21 Theorems 5.5, 5.8, pp.959–960; BKO21 line 746).
 
