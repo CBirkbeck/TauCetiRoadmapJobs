@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-7071 mistakes recorded on the board: 4320 misprints, 1790 errors, 709 gaps, 252 unparsed bullets.
+7074 mistakes recorded on the board: 4322 misprints, 1790 errors, 709 gaps, 253 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -260,6 +260,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Unparsed** (ExcursionOperatorsAndSpectralActionPartII, #1289 at 913f271, 2026-10-26): Misprint** in H26 at §2.3, printed p. 11, H26 line 501: the source applies the stable projection to any Θ ∈ D(G); it was defined on D_temp(G) at line 466, which contains the Ξ used; affects the proof.
 - **Unparsed** (FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII, #1244 at e5dbe2c, 2026-10-26): Error** in Kisin17 at (1.5.2)–(1.5.3), §1.5 (the section's printed page is not recoverable from the extraction; the erratum is at Kisin17 line 4253, author p.96): the Frobenius-stability of Lie H under h↦φhφ⁻¹ is omitted, so the recursion need not stay in Lie H and (1.5.3) is false as stated; affects the proof; corrected in print at Kisin17 Errata E.1–E.4, author p.96.
 - **Unparsed** (SmoothRepresentationsOfLocalGroupsPartII, #1642 at e4d41bc, 2026-10-26): Misprint** in CH26 at §6, the parenthesis after (6.2), printed page 17: with s_ν = exp(ν log q) and (6.1) as printed, L(ν) for dominant ν is the unique irreducible subrepresentation of X(ν) (PGL₂, ν = ρ gives X(ρ) = Ind_B 1 containing the constants); the source says quotient; affects nothing.
+- **Unparsed** (ShimuraVarietiesPartII, #428 at 27bfec4, 2026-10-26): Misprint** in KZ at the proofs of Proposition 4.2.3 and Lemma 4.3.8, pp.34 and 41: the source cites KPZ Propositions 7.2.14, 7.2.18 and Lemma 7.2.6 by preprint numbers; in the published KPZ these are Proposition 7.2.19 and Lemma 7.2.11; affects nothing.
 
 ## A
 
@@ -7625,6 +7626,8 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at Lemma 6.3.21, printed page 89: the source says the proof says the functor C₁ → C₂ and Shv(C₁) → Shv(C₂); it should be C and Shv(C), as in the statement; affects nothing. Found by AnalyticStacks (#2123 at a33e98f, 2026-10-26, claude fable).
 - **Misprint** at Lemma 6.4.13, printed page 96: the source says the kernel of π₀(A) → π₀(A); it should be the kernel of π₀(A) → π₀(B); affects nothing. Found by AnalyticStacks (#2123 at a33e98f, 2026-10-26, claude fable).
 - **Misprint** at Lemma 6.4.15, printed page 96: the source says the fully faithful functor j_* lands in D(Z); it should be D(X), as the proof (line 4731) computes; affects nothing. Found by AnalyticStacks (#2123 at a33e98f, 2026-10-26, claude fable).
+- **Misprint** at Proposition 5.4.11, printed page 62: the source says the solidification functor from animated rings to analytic rings commutes with colimits; it should be non-empty colimits, since the initial ring goes to ℤ_■ while ℤ^cond is initial; affects nothing. Found by AnalyticStacks (#2123 at 83c6939, 2026-10-26, claude fable).
+- **Misprint** at Proposition 5.5.6, printed page 65: the source says the functor from discrete Huber pairs to analytic rings is colimit preserving; it should be non-empty colimits, as Man22 Proposition 2.9.6(ii) does; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "83c693990026fb1d2033b7ae9c0a800c3157c8d7", "job": "REV-DESIGN-AnalyticStacks~2", "model": "fable", "worker": "chris-i"} -->. Found by AnalyticStacks (#2123 at 83c6939, 2026-10-26, claude fable).
 
 ## Redden
 
