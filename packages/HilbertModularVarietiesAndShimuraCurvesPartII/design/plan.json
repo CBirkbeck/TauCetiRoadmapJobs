@@ -3342,6 +3342,12 @@
     "supplier": "DeformationAndDerivedPatchingAlgebra",
     "section": "R03.3 (Layer 3, §§3.1–3.4)",
     "needs": "For commutative local rings A and B, an abstract ring isomorphism A⟦x⟧ ≅ B⟦x⟧ implies A ≅ B, with an isomorphism fixing any shared coefficient ring when the given isomorphism fixes it; when A is a complete Noetherian local W(𝔽)-algebra with residue field 𝔽 and B=W(𝔽)⟦X₁,…,X_n⟧, supply the coefficient correction making the resulting isomorphism W(𝔽)-linear (HAM75 Theorem 4, p. 155)."
+  },
+  {
+    "slug": "quaternionic-component-realization",
+    "supplier": "PotentialAutomorphyInfrastructurePartII",
+    "section": "PL.5 (Potential ordinary automorphy and potentially diagonalizable lifting)",
+    "needs": "Let p>2, F totally real and r̄:G_F→GL₂(𝔽) modular (the reduction of the Galois representation of a parallel weight two Hilbert eigenform) with r̄|`G_{F(ζ_p)}` absolutely irreducible and, when p=5, projective image of r̄|`G_{F(ζ_5)}` not A₅; fix a totally even finite-order ψ with det r̄ = ψε⁻¹ modulo p, a finite set S of finite places containing those above p and those where r̄ or ψ ramifies, inertial types τ_v with det τ_v=ψ|`I_{F_v}`, and an irreducible component of the generic fibre of each fixed-determinant framed type ring (potentially Barsotti–Tate of type τ_v at v | p, of type τ_v at v ∤ p); then after a finite extension of coefficients there is a modular lift ρ of r̄ with det ρ=ψε⁻¹, unramified outside S, whose restriction to every v∈S is a point of the chosen component (GK14 Lemma 5.2.5, p. 27; GK14 line 1253), the totally real GL₂ form of lifting with prescribed local components, extending PL.5/ordinary-lifts-prescribed-local and PL.5/pd-automorphy-lifting."
   }
 ],
  "sourceIssues": [
