@@ -4771,10 +4771,10 @@
       ]
     },
     {
-      "slug": "kak-integration-volume-growth",
+      "slug": "algebraic-norm-volume-growth",
       "supplier": "AutomorphicSpectralTheory",
-      "section": "Layers 0–2: local estimates extension (Ξ-function, tempered coefficient bounds, KAK integration)",
-      "needs": "for a real reductive group with Cartan decomposition G = KAK, the KAK integration formula with its Haar Jacobian, and polynomial volume growth `vol{g : ‖g‖ ≤ R} ≪ R^A` for an algebraic norm `‖g‖ = max(‖R(g)‖, ‖R(g^{−1})‖)` of a faithful algebraic representation R.",
+      "section": "Layers 0–2: local estimates extension (Ξ-function, tempered coefficient bounds, volume growth)",
+      "needs": "for the real points G of a reductive group over ℝ with a fixed Haar measure, and a faithful algebraic representation ρ of G with the algebraic norm `‖g‖ = max(‖ρ(g)‖, ‖ρ(g^{−1})‖)`, there are A and C, depending only on G, ρ and the Haar measure, with `vol{g ∈ G : ‖g‖ ≤ T} ≤ C T^A` for all T ≥ 1.",
       "neededBy": [
         "5.8"
       ]
