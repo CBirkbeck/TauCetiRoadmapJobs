@@ -9,7 +9,10 @@ theorems against the pinned Mathlib and Tau Ceti APIs, where their carriers exis
 Stated below: the restricted-diagonal theorem of Liu and Zheng (README 0.3(1); LZ12b
 Theorem 4.27, SixFF Theorem 4.8), on Mathlib's simplicial sets, quasicategories, internal Homs
 and homotopy categories. The few definitions it needs (the bisimplices, the subobjects `Cpt_n`,
-the restricted diagonal and the restriction map) have real bodies on these carriers.
+the restricted diagonal and the restriction map) have real bodies on these carriers. Also
+stated: Stone duality for spectral spaces (README 2.10; GvG24 Theorems 5.38 and 6.4), on
+Mathlib's `SpectralSpace`, `SpectralMap`, `TopologicalSpace.CompactOpens` and `BddDistLat`,
+with the category of spectral spaces bundled here.
 
 The other headline theorems are not statable at these pins, for the following missing carriers.
 
@@ -103,6 +106,39 @@ theorem restrictedDiagonalMap_isEquivalence_hoFunctor
     (X : SimplexCategoryᵒᵖ × SimplexCategoryᵒᵖ ⥤ Type u) (Q : SSet.{u}) [Q.Quasicategory] :
     (SSet.hoFunctor.map
       ((MonoidalClosed.pre (restrictedDiagonalMap X)).app Q)).toFunctor.IsEquivalence := by
+  sorry
+
+/-! ## Layer 2: Light analytic rings -/
+
+/-- The category of spectral spaces: a type with a topology that is a `SpectralSpace` (T0,
+compact, quasi-sober, quasi-separated, with a basis of compact opens), the morphisms being
+Mathlib's `SpectralMap`s (continuous maps under which preimages of compact opens are compact). -/
+structure SpectralSpaceCat : Type (u + 1) where
+  /-- The underlying type. -/
+  carrier : Type u
+  [str : TopologicalSpace carrier]
+  [isSpectral : SpectralSpace carrier]
+
+attribute [instance] SpectralSpaceCat.str SpectralSpaceCat.isSpectral
+
+instance : CoeSort SpectralSpaceCat.{u} (Type u) := ⟨SpectralSpaceCat.carrier⟩
+
+instance : Category SpectralSpaceCat.{u} where
+  Hom X Y := SpectralMap X Y
+  id X := SpectralMap.id X
+  comp f g := g.comp f
+  id_comp f := SpectralMap.comp_id f
+  comp_id f := SpectralMap.id_comp f
+  assoc f g h := (SpectralMap.comp_assoc h g f).symm
+
+/-- **Stone duality for spectral spaces.** The category of spectral spaces and spectral maps is
+equivalent to the opposite of the category of bounded distributive lattices, by an equivalence
+sending a spectral space to a lattice order-isomorphic to its lattice of quasi-compact open
+subsets (GvG24 Theorems 5.38 and 6.4; RCSolid Theorem 5.1.13). -/
+theorem spectralStoneDuality :
+    ∃ e : SpectralSpaceCat.{u} ≌ BddDistLat.{u}ᵒᵖ,
+      ∀ X : SpectralSpaceCat.{u},
+        Nonempty ((e.functor.obj X).unop ≃o TopologicalSpace.CompactOpens X) := by
   sorry
 
 end TauCetiRoadmap.AnalyticStacks
