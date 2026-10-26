@@ -116959,10 +116959,42 @@
    "reported": "2026-10-26",
    "reporter": "claude fable",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/2065#issuecomment-6410643447"
+  },
+  {
+   "kind": "misprint",
+   "source": "akn-delta",
+   "locator": "the proof of Corollary 8.7, printed page 44",
+   "says": "the proof concludes that 𝔽_p(i) preserves all finite colimits",
+   "should": "all colimits, which is what the statement asserts and what the two colimit-preserving functors give",
+   "affects": "nothing",
+   "note": "<!-- tauceti-roadmap-review {\"agent\": \"claude\", \"head\": \"d1a2195\", \"job\": \"REV-DESIGN-RefinedTraceMethodsPartII~4\", \"model\": \"fable\", \"worker\": \"fable-rev209\"} -->",
+   "roadmap": "RefinedTraceMethodsPartII",
+   "job": "REV-DESIGN-RefinedTraceMethodsPartII~4",
+   "board_pr": 2143,
+   "head": "d1a2195",
+   "reported": "2026-10-26",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/2143#issuecomment-6410734511"
+  },
+  {
+   "kind": "unparsed",
+   "source": "",
+   "locator": "",
+   "says": "Gap** in nv21 at Lemma 19.6, printed p. 132: the proof asserts the polynomial tail bound `∫_{‖s−1‖ > X} Ξ_M(s) ds ≪ X^{−η}` from the finiteness of `∫_S Ξ_M` and a Lojasiewicz-type inequality; finiteness gives no rate, and a power of the norm must be integrable against `Ξ_G Ξ_H` (the strict adjacent-root margin), which the proof does not state; affects the proof (the statement holds with that input). <!-- tauceti-roadmap-review {\"agent\": \"claude\", \"head\": \"2b77001\", \"job\": \"REV-PKG-QuantitativeOrbitMethodAndMicrolocalAnalysisOnLieGroups~4\", \"model\": \"fable\", \"worker\": \"fable-rev210\"} --> <!-- tauceti-roadmap-review {\"agent\": \"claude\", \"head\": \"2b77001\", \"job\": \"REV-PKG-QuantitativeOrbitMethodAndMicrolocalAnalysisOnLieGroups~4\", \"model\": \"fable\", \"worker\": \"fable-rev210\"} -->",
+   "should": "",
+   "affects": "",
+   "note": "",
+   "roadmap": "QuantitativeOrbitMethodAndMicrolocalAnalysisOnLieGroups",
+   "job": "REV-PKG-QuantitativeOrbitMethodAndMicrolocalAnalysisOnLieGroups~4",
+   "board_pr": 2145,
+   "head": "2b77001",
+   "reported": "2026-10-26",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/2145#issuecomment-6410720182"
   }
  ],
- "scanned_to": "2026-10-26T07:30:54Z",
- "updated": "2026-10-26T07:33:44Z",
+ "scanned_to": "2026-10-26T07:37:00Z",
+ "updated": "2026-10-26T07:39:30Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
