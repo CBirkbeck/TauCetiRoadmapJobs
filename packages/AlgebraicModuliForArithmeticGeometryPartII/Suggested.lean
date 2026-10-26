@@ -10,14 +10,13 @@ headline theorems against the pinned APIs.
 
 Murre–Oort representability and finite type of the torsion component lack the fppf Picard sheaf and Picard group scheme.
 The affinization Brauer obstruction lacks the scheme units sheaf on the fppf site
-and its Leray comparison. The semiample contraction dictionary, numerical
-uniqueness and projective contraction descent lack relative global generation,
-the section algebra and relative Proj.
+and its Leray comparison. The semiample contraction dictionary and numerical
+uniqueness lack relative global generation, the section algebra and relative Proj.
 Openness of ampleness lacks algebraic spaces and relative ampleness.
 Geometric exceptional negativity and Zariski's lemma lack the geometric intersection
 pairing, although their matrix inequalities are supplied by Tau Ceti.
-Negative-curve, fibre-graph and label descent and rationality of reducible-fibre
-image points lack that pairing and the proper Hilbert algebraic space. The ampleness assertion for complete-DVR lifts lacks relative ampleness.
+Negative-curve descent and intersection-label descent lack that pairing.
+The ampleness assertion for complete-DVR lifts lacks relative ampleness.
 Cone identification over a discrete valuation ring lacks the real space of curve
 classes, its closed cones and the restriction map of numerical groups. Nef-and-big
 specialization lacks the relative projective-morphism and positivity interfaces. Semiample numerical descent and
@@ -148,8 +147,10 @@ theorem constantNumericalClasses_iff_positivePowerDescent
 /-- On a proper scheme over an algebraic extension of a finite field, every
 numerically trivial invertible sheaf has finite order in the Picard group.
 No reducedness, projectivity or geometric integrality is assumed.
-Keel, Lemma 2.16, extended from projective to proper schemes by the proper
-finite-type numerical Picard component. -/
+Keel, Lemma 2.16, is stated for projective schemes over the algebraic closure of a
+finite field; it extends to every algebraic extension of `𝔽_p` by spreading out to a
+finite subfield, and to proper schemes by the proper finite-type numerical Picard
+component. -/
 theorem numericallyTrivial_torsion_of_algebraic_finiteField
     (p : ℕ) [Fact p.Prime] (k : Type u) [Field k]
     [Algebra (ZMod p) k] [Algebra.IsAlgebraic (ZMod p) k]
@@ -188,6 +189,39 @@ theorem contraction_descends_purelyInseparable
       f' ≫ v = pullback.fst x (Spec.map (CommRingCat.ofHom (algebraMap k K))) ≫ f := by
   sorry
 
+/-- A scheme `Y` with structure morphism `y` to `Spec K`, for a field `K`, is projective
+over `K` when for some `n` it admits a closed immersion over `K` into projective
+`n`-space, the homogeneous spectrum of `K[T₀, …, Tₙ]` graded by total degree. -/
+noncomputable def IsProjectiveOver (K : Type u) [Field K] (Y : Scheme.{u})
+    (y : Y ⟶ Spec (CommRingCat.of K)) : Prop :=
+  ∃ n : ℕ,
+    letI : GradedAlgebra (MvPolynomial.homogeneousSubmodule (Fin (n + 1)) K) :=
+      MvPolynomial.gradedAlgebra
+    ∃ i : Y ⟶ Proj (MvPolynomial.homogeneousSubmodule (Fin (n + 1)) K),
+      IsClosedImmersion i ∧
+        i ≫ Proj.toSpecZero _ ≫ Spec.map (CommRingCat.ofHom (algebraMap K _)) = y
+
+/-- Schröer, Theorem 1.3: if the numerical local system of a proper `k`-scheme `X` is
+constant, every contraction of the base change of `X` to an algebraic closure onto a
+projective target is the base change of a contraction of `X` onto a projective
+`k`-scheme. The target square is cartesian and the source square commutes under the
+prescribed identification of the source with its base change. -/
+theorem contraction_descends_of_constantNumericalClasses
+    (k K : Type u) [Field k] [Field K] [Algebra k K] [IsAlgClosure k K]
+    (X : Scheme.{u}) (x : X ⟶ Spec (CommRingCat.of k)) [IsProper x]
+    (hnum : HasTrivialNumericalGaloisAction k K X x)
+    (Y' : Scheme.{u}) (y' : Y' ⟶ Spec (CommRingCat.of K)) (hY' : IsProjectiveOver K Y' y')
+    (f' : pullback x (Spec.map (CommRingCat.ofHom (algebraMap k K))) ⟶ Y')
+    (hf' : IsContraction f')
+    (hover : f' ≫ y' = pullback.snd x
+      (Spec.map (CommRingCat.ofHom (algebraMap k K)))) :
+    ∃ (Y : Scheme.{u}) (y : Y ⟶ Spec (CommRingCat.of k))
+      (f : X ⟶ Y) (v : Y' ⟶ Y),
+      IsProjectiveOver k Y y ∧ IsContraction f ∧ f ≫ y = x ∧
+      IsPullback v y' y (Spec.map (CommRingCat.ofHom (algebraMap k K))) ∧
+      f' ≫ v = pullback.fst x (Spec.map (CommRingCat.ofHom (algebraMap k K))) ≫ f := by
+  sorry
+
 /-! ## Layer 4: component graphs and contractions of smooth surfaces -/
 
 /-- The simple intersection graph of the irreducible components of a scheme.
@@ -219,6 +253,46 @@ theorem constantNumericalClasses_iff_componentGraphDescent
     HasTrivialNumericalGaloisAction k K X x ↔
       ∃ e : componentGraph (pullback x b) ≃g componentGraph X,
         ∀ C, closure ((pullback.fst x b) '' C.1) = (e C).1 := by
+  sorry
+
+/-- Schröer, Theorem 2.1(i): let `S` be a smooth proper surface over `k` with
+`H⁰(S, O_S) = k` and constant numerical local system, `f : S → Z` a contraction onto a
+proper `k`-scheme and `ā` a geometric point of `Z` with image `a`. If the geometric
+fibre `S ×_Z Spec Ω` is one-dimensional, its component graph is isomorphic to that of
+the schematic fibre over `κ(a)`, each geometric component having the same closure in
+`S` as the schematic component it is sent to. -/
+theorem fibreComponentGraph_descends_of_constantNumericalClasses
+    (k K : Type u) [Field k] [Field K] [Algebra k K] [IsAlgClosure k K]
+    (S : Scheme.{u}) (s : S ⟶ Spec (CommRingCat.of k)) [IsProper s] [Smooth s]
+    (hsurf : ∀ C : Set S, C ∈ irreducibleComponents S → topologicalKrullDim C = 2)
+    (hconst : IsIso (s.app ⊤))
+    (hnum : HasTrivialNumericalGaloisAction k K S s)
+    (Z : Scheme.{u}) (z : Z ⟶ Spec (CommRingCat.of k)) [IsProper z]
+    (f : S ⟶ Z) (hf : IsContraction f) (hfz : f ≫ z = s)
+    (Ω : Type u) [Field Ω] [IsAlgClosed Ω] (ā : Spec (CommRingCat.of Ω) ⟶ Z)
+    (hfib : topologicalKrullDim (pullback f ā : Scheme.{u}) = 1) :
+    ∃ e : componentGraph (pullback f ā) ≃g
+        componentGraph (f.fiber (ā (IsLocalRing.closedPoint Ω))),
+      ∀ C, closure ((pullback.fst f ā) '' C.1) =
+        closure ((f.fiberι (ā (IsLocalRing.closedPoint Ω))) '' (e C).1) := by
+  sorry
+
+/-- Rationality of reducible-fibre image points: in the situation of the fibre-graph
+theorem, if the one-dimensional geometric fibre is reducible, the map from `Spec κ(a)`
+to `Spec k` is an isomorphism, so `κ(a) = k` and `a` is a closed point. This strengthens
+the purely inseparable residue extension of Schröer, Theorem 2.1(iii). -/
+theorem residueField_eq_of_reducible_geometricFibre
+    (k K : Type u) [Field k] [Field K] [Algebra k K] [IsAlgClosure k K]
+    (S : Scheme.{u}) (s : S ⟶ Spec (CommRingCat.of k)) [IsProper s] [Smooth s]
+    (hsurf : ∀ C : Set S, C ∈ irreducibleComponents S → topologicalKrullDim C = 2)
+    (hconst : IsIso (s.app ⊤))
+    (hnum : HasTrivialNumericalGaloisAction k K S s)
+    (Z : Scheme.{u}) (z : Z ⟶ Spec (CommRingCat.of k)) [IsProper z]
+    (f : S ⟶ Z) (hf : IsContraction f) (hfz : f ≫ z = s)
+    (Ω : Type u) [Field Ω] [IsAlgClosed Ω] (ā : Spec (CommRingCat.of Ω) ⟶ Z)
+    (hfib : topologicalKrullDim (pullback f ā : Scheme.{u}) = 1)
+    (hred : ¬ IrreducibleSpace (pullback f ā : Scheme.{u})) :
+    IsIso (Z.fromSpecResidueField (ā (IsLocalRing.closedPoint Ω)) ≫ z) := by
   sorry
 
 /-! ## Layer 5: numerical theory in families and descent along contractions -/

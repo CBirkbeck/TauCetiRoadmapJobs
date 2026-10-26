@@ -3874,7 +3874,7 @@
   },
   {
     "slug": "proper-bigness-birational-comparison",
-    "needs": "For a proper birational morphism π : V′ → V of integral proper schemes of dimension n over a field and an invertible sheaf L on V, prove h⁰(V, L^m) ≤ h⁰(V′, π*L^m) for every m ≥ 1, with difference at most C·m^(n−1) for a constant C and all m ≥ 1 when n ≥ 1, and prove ((π*L)^n·V′) = (L^n·V) for the top first-Chern intersections.",
+    "needs": "For a proper birational morphism π : V′ → V of integral proper schemes of dimension n over a field and an invertible sheaf L on V, prove h⁰(V, L^m) ≤ h⁰(V′, π*L^m) for every m ≥ 1, with difference at most C·m^(n−1) for a constant C and all m ≥ 1 when n ≥ 1.",
     "supplier": "AlgebraicModuliForArithmeticGeometry",
     "section": "§1.6"
   },
