@@ -24,8 +24,10 @@ No headline theorem of this roadmap is statable at these pins:
 * The coefficient-box modularity lower density (§8.1) lacks the genus-two
   coefficient-family modularity predicate on its actual Jacobians.
 * Odd potentially abelian rank-four automorphy and modularity of 32 of 34 Galois
-  types (§§8.2–8.4) lack the isobaric automorphic representation and compatible
-  system carriers, and the endomorphism-type realization dictionary.
+  types (§§8.2–8.4) lack the de Rham condition on p-adic Galois representations,
+  automorphic induction, the isobaric automorphic representation and compatible
+  system carriers, and the endomorphism-type realization dictionary; the pinned
+  algebraic Hecke characters alone do not supply them.
 * Prescribed-mod-2 ordinary realization and residual weight-two modularity
   (§§8.7–8.8) lack ordinary finite flat group schemes with integral Cartier
   self-duality, polarized abelian-surface torsion and ordinary GSp₄ attachment.

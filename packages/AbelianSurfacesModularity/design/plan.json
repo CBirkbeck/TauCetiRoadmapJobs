@@ -3031,12 +3031,6 @@
     "needs": "Provide BCGP25 Definition 7.1.1 integral enormousness and Corollary 7.1.4, including its Sp₄ and induced SL₂ × SL₂ alternatives and the residual regular-semisimple and cyclotomic restriction hypotheses."
   },
   {
-    "slug": "finite-tate-lift-local-control",
-    "supplier": "ArithmeticGaloisRepresentations",
-    "section": "7.6",
-    "needs": "Construct the finite-image complex Tate lift of the projective A₅ representation with its prescribed mod-2 projectivization, and kill its finite scalar ramification above 2 after solvable totally real base change preserving A₅ image."
-  },
-  {
     "slug": "dyadic-weight-one-change",
     "supplier": "OrdinaryAutomorphicFormsAndModularityLifting",
     "section": "2.11",
@@ -3079,22 +3073,10 @@
     "needs": "Supply existence and equality of every finite local factor for the established small-rank exterior-power and tensor transfers of normalized H¹ constituents, including GL₂ + GL₂ and character decompositions."
   },
   {
-    "slug": "odd-rank-two-system-modularity",
-    "supplier": "ModularityAndLanglandsExtensions",
-    "section": "1.9",
-    "needs": "Provide weight-two newform modularity of every odd irreducible regular weakly compatible rank-two system over ℚ with Hodge–Tate weights {0,1}, with the local and normalization comparisons used in the endomorphism-type decomposition."
-  },
-  {
-    "slug": "induced-character-client",
-    "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
-    "section": "13.2",
-    "needs": "Provide the rank-two potentially abelian de Rham dichotomy over a number field, finite up to character twist or automorphically induced from an algebraic Hecke character, with its cuspidality and local comparisons."
-  },
-  {
     "slug": "dyadic-selfdual-polarized-lift",
     "supplier": "AbelianSchemesAndArithmeticModuli",
     "section": "A4.13",
-    "needs": "Prove that the ordinary finite flat self-dual order-16 model required here admits the skew self-duality and polarized symmetric Serre–Tate extension lift used by A4.13, distinguishing arbitrary Cartier self-duality, skew self-duality and strong alternation."
+    "needs": "For the ordinary finite flat group scheme W/ℤ₂ of order 16 killed by 2 in §8.7, prove that existence of a Cartier self-duality implies existence of a skew self-duality to which A4.13 applies, retaining the specified underlying W and distinguishing this from lifting an arbitrarily prescribed self-duality or asserting strong alternation."
   },
   {
     "slug": "strong-odd-symplectic-criterion",
