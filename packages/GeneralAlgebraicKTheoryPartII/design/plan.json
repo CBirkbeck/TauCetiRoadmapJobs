@@ -4255,14 +4255,8 @@
   ],
   "gaps": [
     {
-      "slug": "witt-characteristic-series",
-      "needs": "Supply the natural characteristic-series identification χ:W_(ℕ>0)(R)≃1+tR[[t]], χ(a)=∏_(d≥1)(1−a_dt^d), with Witt addition given by series multiplication, Witt multiplication determined by (1−at)*(1−bt)=1−abt, zero series 1, unit series 1−t, ghost identity −tχ′/χ=∑_(n≥1)w_n(a)t^n and the finite-restriction topology.",
-      "supplier": "QWittVectors",
-      "section": "§1.3"
-    },
-    {
       "slug": "multiplicative-postnikov",
-      "needs": "Supply coherent connective E₁-ring Postnikov sections and their derivation-classified square-zero pullbacks, with the bimodule structures and tensor-connectivity bounds used in the finite-stage truncation argument.",
+      "needs": "For a connective E₁-ring R and k≥1, supply the E₁-ring structure on τ≤kR natural in R, with E₁ maps R→τ≤kR→τ≤(k−1)R; the derivation of τ≤(k−1)R into the bimodule Σ^(k+1)Hπ_kR whose RefinedTraceMethods §4.14 pullback algebra τ≤(k−1)R×_(τ≤(k−1)R⊕Σ^(k+1)Hπ_kR)τ≤(k−1)R is τ≤kR; and the bound that I⊗_A J is (a+b)-connective for an a-connective right module I and a b-connective left module J over a connective E₁-ring A.",
       "supplier": "EnhancedDerivedSheaves",
       "section": "E5:abstract.2"
     },
@@ -4346,7 +4340,7 @@
     },
     {
       "slug": "suslin-algebraically-closed-comparison",
-      "needs": "Prove K(L)^∧p≃ku^∧p for every algebraically closed field L of characteristic zero and every prime p.",
+      "needs": "Identify K(L)^∧p with ku^∧p as homotopy ring spectra, for every algebraically closed field L of characteristic zero and every prime p, by a map sending the §1.2 Bott class of a compatible system of p-power roots of unity to the Bott generator; the coefficient groups π_*K(L)^∧p=ℤ_p[β] in nonnegative degrees already follow from §6.5a's separably closed case d=0 and §1.6's completion.",
       "supplier": "KTheoryFiniteLocalFields",
       "section": "§6.5a"
     },

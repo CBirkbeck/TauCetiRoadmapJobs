@@ -37,7 +37,7 @@ are absent. The precise missing carriers are listed below.
 - Sifted-colimit preservation and cyclic TC/K assembly: lacks ring-spectral K/TC and coherent orbit diagrams.
 - Hopkins–Mahowald and James-filtered Thom comparisons and acyclicity: lacks units of spectral rings, E-two Thom spectra, their coherent multiplicative colimits and the spectral Adams/Margolis comparisons.
 - Uniform height locality and elliptic chromatic comparison: lacks chromatic localization of oriented spectral rings and elliptic spectral sheaves.
-- Chromatic field maps and ordinary-homology unit detection: lacks chromatic E-infinity fields, H-infinity rings and spectral ordinary homology.
+- Lubin–Tate covers, chromatic field maps and ordinary-homology unit detection: lacks Lubin–Tate rings of perfect algebras, chromatic E-infinity fields, H-infinity rings and spectral ordinary homology.
 - Even equivariant Morava free-complex construction: lacks Morava spectra, semilinear modules and spectral coinduction.
 
 The ordinary quasicategory, Karoubi, exact-structure and triangulated t-structure

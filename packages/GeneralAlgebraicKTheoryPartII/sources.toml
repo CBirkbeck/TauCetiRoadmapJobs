@@ -42,6 +42,7 @@ id = "lt"
 authors = "Markus Land and Georg Tamme"
 title = "On the K-theory of pullbacks"
 year = 2019
+venue = "Ann. of Math. (2) 190 (2019), no. 3, 877-930"
 arxiv = "1808.05559v3"
 locator_scheme = "theorem"
 locator = "Notation 1.1 and Definition 1.2, manuscript p.5; Lemma 1.10 and proof, manuscript p.9; Lemma 2.4 and proof, manuscript pp.16–17; Theorem 1.3 and proof, manuscript pp.6–14; Definition 3.1, manuscript p.28; Theorem 3.3 and Corollary 3.5 with proofs, manuscript pp.29–30; Theorem 3.3, p.29; Theorem A.2 and proof, manuscript pp.35–37"
@@ -54,7 +55,6 @@ status = "certified"
 accessed = "2026-10-24"
 version_note = "Theorem and section numbering of arXiv:1808.05559v3."
 cited_for = ["Exact supplier contracts", "1.1 General linear groups of connective ring spectra", "2.1 Truncating invariants on acyclic rings", "2.2 Excision and nilinvariance for truncating invariants", "2.3 Rational and p-adic truncation", "9.2 Nilinvariance, Milnor excision and cdh-descent"]
-venue = "Ann. of Math. (2) 190 (2019), no. 3, 877-930"
 
 [[source]]
 id = "cmnn20"
@@ -96,6 +96,7 @@ id = "barwick"
 authors = "Clark Barwick"
 title = "On exact infinity-categories and the theorem of the heart"
 year = 2015
+venue = "Compositio Mathematica 151 (2015) 2160-2186"
 doi = "10.1112/S0010437X15007447"
 arxiv = "1212.5232v4"
 locator_scheme = "theorem"
@@ -109,7 +110,6 @@ status = "certified"
 accessed = "2026-10-24"
 version_note = "Theorem and section numbering of arXiv:1212.5232v4."
 cited_for = ["3.1 Bounded t-structures on stable ∞-categories", "3.3 The theorem of the heart and noetherian extension"]
-venue = "Compositio Mathematica 151 (2015) 2160-2186"
 
 [[source]]
 id = "agh"
@@ -134,6 +134,7 @@ id = "hs"
 authors = "Fabian Hebestreit and Wolfgang Steimle"
 title = "Stable moduli spaces of hermitian forms"
 year = 2021
+venue = "Forum of Mathematics, Pi 14 (2026) e17"
 doi = "10.1017/fmp.2026.10032"
 arxiv = "2103.13911v5"
 locator_scheme = "theorem"
@@ -147,7 +148,6 @@ status = "certified"
 accessed = "2026-10-24"
 version_note = "Theorem and section numbering of arXiv:2103.13911v5."
 cited_for = ["1.2 Additive ∞-categories and group-completion K-theory", "3.2 Stable envelopes and additive nonconnective K-theory"]
-venue = "Forum of Mathematics, Pi 14 (2026) e17"
 
 [[source]]
 id = "pp"
@@ -209,7 +209,7 @@ title = "The Chromatic Nullstellensatz"
 year = 2022
 arxiv = "2207.09929v1"
 locator_scheme = "theorem"
-locator = "Proposition 9.12 and proof, manuscript p.89; Corollary 5.2 (Theorem D), pp.3 and 55; Theorem 9.11 and Remark 9.13, manuscript pp.88–90"
+locator = "Proposition 9.12 and proof, manuscript p.89; Corollary 5.2 (Theorem D), pp.3 and 55; Theorem 9.11 and Remark 9.13, manuscript pp.88–90; Theorem 2.38, p.20; Definitions 4.11 and 4.29, Corollary 4.37, Theorem 4.40, Corollary 4.44, pp.42–51; Theorems 5.1 and 5.3, Propositions 5.9, 5.15 and 5.17, pp.55–60"
 url = "https://arxiv.org/abs/2207.09929v1"
 fetched_from = "https://arxiv.org/pdf/2207.09929v1"
 fetched_at = "2026-10-24T15:21:59Z"
@@ -218,7 +218,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-24"
 version_note = "Theorem and section numbering of arXiv:2207.09929v1."
-cited_for = ["6.4 The height-zero lower bound", "6.5 Redshift at nonnegative height", "6.2 Chromatic field maps", "10.5 Telescopic Farrell–Jones assembly"]
+cited_for = ["6.4 The height-zero lower bound", "6.5 Redshift at nonnegative height", "6.1a Lubin–Tate theories of perfect algebras and Lubin–Tate covers", "6.2 Chromatic field maps", "10.5 Telescopic Farrell–Jones assembly"]
 
 [[source]]
 id = "weibel"
@@ -421,6 +421,7 @@ id = "mm"
 authors = "Akhil Mathew and Lennart Meier"
 title = "Affineness and chromatic homotopy theory"
 year = 2015
+venue = "J. Topol. 8 (2015), no. 2, 476--528"
 doi = "10.1112/jtopol/jtv005"
 arxiv = "1311.0514v5"
 locator_scheme = "theorem"
@@ -434,7 +435,6 @@ status = "certified"
 accessed = "2026-10-24"
 version_note = "Theorem and section numbering of arXiv:1311.0514v5."
 cited_for = ["4.30 Chromatic bounds for modular forms"]
-venue = "J. Topol. 8 (2015), no. 2, 476--528"
 
 [[source]]
 id = "behrens"
@@ -476,6 +476,7 @@ id = "thom"
 authors = "Omar Antolín-Camarena and Tobias Barthel"
 title = "A simple universal property of Thom ring spectra"
 year = 2014
+venue = "Journal of Topology (2019), 12: 56-78"
 doi = "10.1112/topo.12084"
 arxiv = "1411.7988v4"
 locator_scheme = "theorem"
@@ -489,7 +490,6 @@ status = "certified"
 accessed = "2026-10-24"
 version_note = "Theorem and section numbering of arXiv:1411.7988v4."
 cited_for = ["4.31 Hopkins–Mahowald Thom theorem"]
-venue = "Journal of Topology (2019), 12: 56-78"
 
 [[source]]
 id = "akq"
@@ -532,6 +532,7 @@ id = "may-nilpotence"
 authors = "Akhil Mathew, Niko Naumann and Justin Noel"
 title = "On a nilpotence conjecture of J. P. May"
 year = 2015
+venue = "J. Topol. 8 (2015), no. 4, 917--932"
 doi = "10.1112/jtopol/jtv021"
 arxiv = "1403.2023v3"
 locator_scheme = "theorem"
@@ -545,4 +546,37 @@ status = "certified"
 accessed = "2026-10-24"
 version_note = "Theorem and section numbering of arXiv:1403.2023v3."
 cited_for = ["4.27 Hahn’s acyclicity theorem", "4.34 Ordinary-homology detection of the H∞ unit"]
-venue = "J. Topol. 8 (2015), no. 4, 917--932"
+
+[[source]]
+id = "mil81"
+authors = "Haynes R. Miller"
+title = "On relations between Adams spectral sequences, with an application to the stable homotopy of a Moore space"
+year = 1981
+version_note = "Published version, Journal of Pure and Applied Algebra 20 (1981) 287–312, author-hosted."
+locator_scheme = "theorem"
+locator = "Theorem 4.11 and Corollary 4.12, pp.294–295"
+url = "https://math.mit.edu/~hrm/papers/miller-relations-between-adams-spectral-sequences.pdf"
+fetched_from = "https://math.mit.edu/~hrm/papers/miller-relations-between-adams-spectral-sequences.pdf"
+fetched_at = "2026-10-26T17:17:54Z"
+sha256 = "2f94bf4110a424f10b44d80b62b78b46b0bf613a456f32037edd6d95fed08a48"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["4.20 Separation above height one"]
+
+[[source]]
+id = "mah81"
+authors = "Mark Mahowald"
+title = "bo-resolutions"
+year = 1981
+version_note = "Published version, Pacific Journal of Mathematics 92 (1981), publisher open archive."
+locator_scheme = "theorem"
+locator = "Theorem 1.1, pp.365–366; Theorem 6.3, p.382"
+url = "https://msp.org/pjm/1981/92-2/pjm-v92-n2-p11-s.pdf"
+fetched_from = "https://msp.org/pjm/1981/92-2/pjm-v92-n2-p11-s.pdf"
+fetched_at = "2026-10-26T17:18:09Z"
+sha256 = "e4be950d3643d3bd0e9ebd3517bcfb26fc0f27df74c5528e630c2e92eafa3bfb"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["4.20 Separation above height one"]
