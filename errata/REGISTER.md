@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-7200 mistakes recorded on the board: 4377 misprints, 1822 errors, 725 gaps, 276 unparsed bullets.
+7204 mistakes recorded on the board: 4381 misprints, 1822 errors, 725 gaps, 276 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -1551,15 +1551,18 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Gap** at Proposition 2.3.3 proof, printed page 316 (BHS19 lines 705–707): the source says flatness over the discrete valuation ring and a Cohen–Macaulay special fibre make the whole integral model Cohen–Macaulay; it should be add an argument reaching the points of the generic fibre, such as the scaling specialisation; affects the proof. Found by SpringerResolutionAndCharacteristicCycles (#1623 at 02f336a, 2026-10-25, claude fable).
 - **Gap** at Proposition 3.7.2 proof, printed p. 367 (BHS19 lines 2691–2694): the source says reducedness makes the completed map at one chosen point upstairs injective; it should be a justified injective product over branches, followed by descent of the ideal; affects the proof. Found by TriangulineVarietyAndItsLocalModel (#1547 at 9df63cc, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at Theorem 1.9, printed p. 305, Conjecture 4.3.4, p. 381, (4.12), p. 382, and the proofs of Proposition 4.3.7 and Theorem 4.3.8, pp. 383–385: the source says the full-character cycles have codimension [K:ℚₚ]n(n+3)/2 in the framed deformation space; it should be [K:ℚₚ]n(n+1)/2+n, the two agreeing only for K=ℚₚ; affects a stated result. Found by TriangulineVarietyAndItsLocalModel (#1547 at 6d21a0c, 2026-10-25, claude fable).
+- **Misprint** at Theorem 1.9, printed p. 305, and §4.3 from (4.10) on, pp. 381–385: the source says the full-character cycles have codimension [K:ℚₚ]n(n+3)/2 in the framed deformation space; it should be n+[K:ℚₚ]n(n+1)/2, the two agreeing only for K=ℚₚ; affects a stated result. Found by TriangulineVarietyAndItsLocalModel (#1547 at fe88ef7, 2026-10-26, claude fable).
 - **Misprint** at Theorem 2.4.7 proof, p. 323 (BHS19 line 1001): the source says the unprefixed KL polynomial vanishes outside the reversed Bruhat inequality; it should be the polynomial with both longest-element prefixes; affects the proof. Found by SpringerResolutionAndCharacteristicCycles (#1623 at 892285f, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at proof of Lemma 2.5.2, printed p. 326: the source says the generic point of the completed graph component lies in Spec of the completed local ring of X; it should be Spec of the completed local ring of T at the image point; affects nothing. Found by SpringerResolutionAndCharacteristicCycles (#1623 at 02f336a, 2026-10-26, claude fable).
 - **Gap** at proof of Proposition 2.3.3, printed p. 316: the source says CM of the A-flat model with CM special fibre gives CM of the generic fibre; it should be add that generic points not specializing into the special fibre are reached by the G_m-scaling of the operator (or use BR12 Remark 2.2.2(2)); affects the proof. Found by SpringerResolutionAndCharacteristicCycles (#1623 at 02f336a, 2026-10-26, claude fable).
 - **Misprint** at §2.1, printed p. 309: the source says the hypothesis "char 0 or char > Coxeter number" is the characteristic being good for G; it should be very good or simply p>h, since good characteristic is the weaker standard notion; affects nothing. Found by SpringerResolutionAndCharacteristicCycles (#1623 at 02f336a, 2026-10-26, claude fable).
+- **Misprint** at §3.4, definition of T₀ⁿ, printed p. 352: the source says T₀ⁿ is the complement of the tuples with δ_iδ_j⁻¹ and εδ_iδ_j⁻¹ both algebraic; it should be either one algebraic (as its first description, δ_i/δ_j ∈ T₀, says); affects nothing. Found by TriangulineVarietyAndItsLocalModel (#1547 at fe88ef7, 2026-10-26, claude fable).
 
 ## BHSsmooth17
 
 - **Gap** at Lemma 2.10 proof, author p. 15 (BHSsmooth17 lines 642–648): the source says the individual gap bounds force its summed permutation inequality; it should be justified using the geometric hypotheses when dominance has not been assumed; affects the proof; <!-- tauceti-roadmap-review {"agent": "codex", "head": "9df63ccddf879ccbb2ed1688d6a3ab3e7e0d9903", "job": "REV-PKG-TriangulineVarietyAndItsLocalModel", "model": "gpt-6-astra", "worker": "chris-7"} -->. Found by TriangulineVarietyAndItsLocalModel (#1547 at 9df63cc, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at the proof of Lemma 2.10, printed p. 15: the source says the prefix product of the saturated parameter at ϖ_K has absolute value at least one; it should be at most one (valuation at least zero), which is what its inequality (2.13) uses; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "6d21a0c906003ca49e0925744c9c95139d4aad56", "job": "REV-PKG-TriangulineVarietyAndItsLocalModel~2", "model": "fable", "worker": "chris-i"} -->. Found by TriangulineVarietyAndItsLocalModel (#1547 at 6d21a0c, 2026-10-25, claude fable).
+- **Misprint** at the proof of Lemma 2.10, printed p. 15: the source says the saturated prefix product at ϖ_K has absolute value at least 1; it should be at most 1 (valuation at least 0), which is what its inequality (2.13) uses; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "fe88ef7", "job": "RT-TriangulineVarietyAndItsLocalModel~1b", "model": "fable", "worker": "fable-rt216"} -->. Found by TriangulineVarietyAndItsLocalModel (#1547 at fe88ef7, 2026-10-26, claude fable).
 
 ## BHW
 
@@ -7253,6 +7256,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at Lemma 2.4 proof, printed p. 29 (NT21 lines 1105–1107): the source says the next graded parameter is indexed for every i through n; it should be indexed only for 0≤i<n; affects the proof. Found by TriangulineVarietyAndItsLocalModel (#1547 at 9df63cc, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at the proof of Lemma 2.4, printed p. 29: the source says the strictness condition runs over 0≤i≤n, where i=n names a parameter δ_{n+1} that does not exist; it should be 0≤i≤n−1; affects nothing. Found by TriangulineVarietyAndItsLocalModel (#1547 at fe88ef7, 2026-10-25, claude fable).
+- **Misprint** at the proof of Lemma 2.4, printed p. 29: the source says the strictness condition runs over 0≤i≤n, naming a nonexistent δ_(n+1); it should be 0≤i≤n−1; affects nothing. Found by TriangulineVarietyAndItsLocalModel (#1547 at fe88ef7, 2026-10-26, claude fable).
 
 ## nv21
 
