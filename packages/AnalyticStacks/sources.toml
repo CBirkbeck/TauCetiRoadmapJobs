@@ -35,7 +35,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v1"
-cited_for = ["0", "4"]
+cited_for = ["0", "1", "4"]
 
 [[source]]
 id = "SixFF"
@@ -294,7 +294,7 @@ title = "Gluing restricted nerves of $\\infty$-categories"
 year = 2012
 arxiv = "1211.5294v4"
 locator_scheme = "theorem"
-locator = "Theorem 0.1, Notation 4.1, Definition 4.26, Theorem 4.27, Example 4.28, Theorem 5.4"
+locator = "Theorem 0.1, Notation 4.1, Definition 4.26, Theorem 4.27, Example 4.28, Theorem 5.4, Remark 5.5"
 url = "https://arxiv.org/abs/1211.5294v4"
 fetched_from = "https://arxiv.org/pdf/1211.5294v4"
 fetched_at = "2026-10-26T01:26:55Z"
