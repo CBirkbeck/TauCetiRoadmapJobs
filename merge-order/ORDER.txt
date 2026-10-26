@@ -237,6 +237,7 @@ HodgeTateAndCanonicalSubgroups
 PerfectoidShimuraVarieties
 PadicFamiliesPartII
 OverconvergentAutomorphicForms
+HigherHidaAndColemanTheory
 TorsionCohomologyInfrastructure
 IgusaVarietiesAndTorsionConcentration
 SelmerIwasawaCohomologyPartII
