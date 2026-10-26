@@ -2612,10 +2612,10 @@
     "section": "R0.18"
   },
   {
-    "slug": "analytic-topology-dimension",
-    "needs": "For a d-dimensional rigid analytic space over a complete nonarchimedean field, cohomology of every abelian sheaf in the analytic topology vanishes in degrees greater than d.",
-    "supplier": "ClassicalAdicEtaleCohomology",
-    "section": "1.1"
+    "slug": "local-almost-finite-image",
+    "needs": "For a smooth affinoid V over Spa(C,O_C), C complete algebraically closed of characteristic zero, with good coordinates (an étale map to a torus factoring as finite étale maps and rational embeddings), an F_p-local system L on V and a rational subset U strictly contained in V, the image of H^i(V_ét,L⊗O⁺/p)→H^i(U_ét,L⊗O⁺/p) is almost finitely generated over O_C for every i≥0.",
+    "supplier": "AInfCohomology",
+    "section": "AI.3.1"
   },
   {
     "slug": "arithmetic-stein-hochschild-serre",

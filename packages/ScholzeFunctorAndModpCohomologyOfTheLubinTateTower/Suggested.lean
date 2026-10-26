@@ -18,9 +18,12 @@ The following headlines are not statable at the pins:
   missing.
 * Frobenius rigidity: valuation-ring almost modules and their scalar-extension
   interface are missing.
-* Fust's Ext comparison, reductive finiteness and block vanishing: the derived
-  smooth category, general reductive rational-point carrier and mod-p blocks
-  are missing.
+* Fust's Ext comparison and reductive finiteness: the derived smooth category
+  and the general reductive rational-point carrier are missing.
+* SL₂(ℚ_p)-cohomology vanishing outside the excluded twists: absolutely
+  irreducible smooth mod-p representations of GL₂(ℚ_p), the Steinberg
+  representation and the principal series Ind_B^G α, with their twist
+  classes, are not carriers at the pins.
 * Cartan–Leray, its multiplicity form and the degree-one comparison: tower
   étale cohomology and Scholze's functor are missing.
 * Ludwig's quotient and vanishing: the perfectoid Borel quotient and its
