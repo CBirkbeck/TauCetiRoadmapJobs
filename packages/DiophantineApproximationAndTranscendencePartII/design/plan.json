@@ -2016,18 +2016,24 @@
     }
   ],
   "gaps": [
-    {
-      "id": "DiophantineApproximationAndTranscendencePartII/G1",
-      "title": "A valid arbitrary-compact replacement for (2.5.28)",
-      "detail": "The stated arbitrary-compact formula is false, even for a positive-capacity disc and a positive denominator (E2). The centred-circle/disc version is proved by rescaling. Identify a source-supported base-point-sensitive generalization with exact geometric hypotheses and a backward-closed proof, or obtain a maintainer decision to remove the false general target. Neither cap(K)>0 nor positivity of the printed denominator alone suffices. No false theorem is included as a promised declaration.",
-      "nodes": [
-        "DiophantineApproximationAndTranscendencePartII:AA.5/compact-counterexample"
-      ],
-      "stages": [
-        "DiophantineApproximationAndTranscendencePartII:AA.5"
-      ]
-    }
-  ],
+  {
+    "id": "DiophantineApproximationAndTranscendencePartII/G1",
+    "title": "A valid arbitrary-compact replacement for (2.5.28)",
+    "detail": "The stated arbitrary-compact formula is false, even for a positive-capacity disc and a positive denominator (E2). The centred-circle/disc version is proved by rescaling. Identify a source-supported base-point-sensitive generalization with exact geometric hypotheses and a backward-closed proof, or obtain a maintainer decision to remove the false general target. Neither cap(K)>0 nor positivity of the printed denominator alone suffices. No false theorem is included as a promised declaration.",
+    "nodes": [
+      "DiophantineApproximationAndTranscendencePartII:AA.5/compact-counterexample"
+    ],
+    "stages": [
+      "DiophantineApproximationAndTranscendencePartII:AA.5"
+    ]
+  },
+  {
+    "slug": "complex-logarithmic-equilibrium",
+    "needs": "For every nonempty compact K⊆ℂ, provide logarithmic energy of Borel probabilities with diagonal value +∞ via bounded-below kernel truncations, weak lower semicontinuity and a minimizing measure, identify exp(−inf I) with the transfinite diameter of §6.18, prove uniqueness of the minimizer when this value is positive, and identify the equilibrium probabilities of every circle and closed disc of positive radius as normalized boundary arc measure, compatibly with nonzero affine changes of coordinates.",
+    "supplier": "ClassicalArithmeticCompletion",
+    "section": "§§6.18,6.40 (energy/equilibrium extension)"
+  }
+],
   "sourceIssues": [
     {
       "id": "DiophantineApproximationAndTranscendencePartII/E1",

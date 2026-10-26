@@ -1,0 +1,57 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "DiophantineApproximationAndTranscendencePartII"
+
+[[source]]
+id = "CDT25"
+authors = "Frank Calegari, Vesselin Dimitrov and Yunqing Tang"
+title = "The unbounded denominators conjecture"
+year = 2025
+doi = "10.1090/jams/1053"
+version_note = "Published author offprint; locators use journal pagination 627–702."
+locator_scheme = "theorem"
+locator = "Theorem 2.0.1; Lemma 2.1.2; Lemma 2.3.1, pp.639–641; equation (2.0.3), Corollary 2.0.5; Sections 2.2, 2.4, 2.5, pp.629–649"
+url = "https://www.math.uchicago.edu/~fcale/papers/UDC.pdf"
+fetched_from = "https://www.math.uchicago.edu/~fcale/papers/UDC.pdf"
+fetched_at = "2026-10-25T05:57:16Z"
+sha256 = "867026fbcc5592728173e5c4d6a87f58d57a55b0d0d8b0109b9774e84290ee1e"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["Layers 0–5"]
+
+[[source]]
+id = "BB11"
+authors = "Yuri Bilu, Alexander Borichev"
+title = "Remarks on Eisenstein"
+year = 2011
+arxiv = "1112.2290v2"
+locator_scheme = "theorem"
+locator = "Section 1, p.1; Theorem 6.1, pp.10–11; Section 8, p.14"
+url = "https://arxiv.org/abs/1112.2290v2"
+fetched_from = "https://arxiv.org/pdf/1112.2290v2"
+fetched_at = "2026-10-25T05:57:40Z"
+sha256 = "31a6d216243dacc754b7040c1b1cbc20df2c4969745fdb6409346c6297bf9af1"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v2"
+cited_for = ["Layer 0, Eisenstein denominators"]
+
+[[source]]
+id = "Saff10"
+authors = "E. B. Saff"
+title = "Logarithmic Potential Theory with Applications to Approximation Theory"
+year = 2010
+venue = "Surveys in Approximation Theory, 5 (2010), 165--200"
+arxiv = "1010.3760v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.9; Examples 1.10–1.11; Theorem 1.18, Section 1"
+url = "https://arxiv.org/abs/1010.3760v1"
+fetched_from = "https://arxiv.org/pdf/1010.3760v1"
+fetched_at = "2026-10-25T05:58:37Z"
+sha256 = "cfbeaad8cf695fc1b5528fd56295d7e3053056634c6841765a434ce9b074d862"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v1"
+cited_for = ["General potential-theory supplier contract; Layers 3 and 5"]
