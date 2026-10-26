@@ -134,7 +134,8 @@
      },
      "prerequisites": [
       "target:1.1",
-      "mathlib:Nat.Prime"
+      "mathlib:Nat.Prime",
+      "mathlib:Nat.Coprime"
      ],
      "api": [
       {
@@ -232,7 +233,8 @@
       "where": "Theorem 5.2, line 2074; lines 437-452; Remark 5.4, line 2078"
      },
      "prerequisites": [
-      "mathlib:Nat.ceil"
+      "mathlib:Nat.ceil",
+      "mathlib:Rat"
      ],
      "api": [
       {
@@ -659,7 +661,7 @@
      "id": "3.4",
      "kind": "theorem",
      "name": "perfectoid coefficient tower",
-     "statement": "For perfectoid R with ker theta=(d): pi_* THH(R;Z_p)^{hC_{p^n}} = A_inf[u,v]/(uv-d, d~_n v); pi_* THH(R;Z_p)^{tC_{p^n}} = A_inf[v^{+-1}]/(d~_n), A_inf/d~_n = W_n(R); transfers are V (multiplication by r d~_n/d~_{n-1}); phi^{hC_{p^n}} iso in degrees >=0, can iso in degrees <0; prime-to-p parts of C_m irrelevant p-adically.",
+     "statement": "For perfectoid R with ker theta=(d): pi_* THH(R;Z_p)^{hC_{p^n}} = A_inf[u,v]/(uv-d, d~_n v); pi_* THH(R;Z_p)^{tC_{p^n}} = A_inf[v^{+-1}]/(d~_n), A_inf/d~_n = W_n(R); transfers are V (multiplication by r d~_n/d~_{n-1}): V:W_{n-1}->W_n on Tate in all even degrees and on hC in negative even degrees, V:W_n->W_{n+1} on hC in even degrees >=0 (pi_0 hC_{p^n} = A_inf/(d d~_n) = W_{n+1}); phi^{hC_{p^n}} iso in degrees >=0, can iso in degrees <0; prime-to-p parts of C_m irrelevant p-adically.",
      "hypotheses": [
       "R perfectoid",
       "n>=0 (n>=1 for Tate)"
@@ -686,7 +688,7 @@
       {
        "name": "Fp_n2",
        "kind": "computation",
-       "statement": "pi_0=Z/p^2, transfer from n=1 is multiplication by p"
+       "statement": "pi_0 THH(F_p)^{tC_{p^2}}=Z/p^2=W_2, pi_0 THH(F_p)^{hC_{p^2}}=Z/p^3=W_3; transfer from n=1 is multiplication by p, V:W_1->W_2 on Tate and V:W_2->W_3 on hC"
       },
       {
        "name": "n0",
@@ -709,7 +711,9 @@
       "where": "lines 330-349; speirs-axes lines 1025-1046; riggenbach-trunc lines 1266-1272"
      },
      "prerequisites": [
-      "mathlib:AddCommGroup"
+      "mathlib:AddCommGroup",
+      "mathlib:Pi.addCommGroup",
+      "roadmap:RefinedTraceMethods §2.9"
      ],
      "api": [],
      "tests": [
@@ -856,7 +860,7 @@
       {
        "name": "non_milnor",
        "kind": "non-example",
-       "statement": "Z->Z/p is not a Milnor square case"
+       "statement": "A=Z, B=Z/p, f the reduction, I=pZ: f(I)=0, so not a Milnor square; birelative term is K(Z,pZ), not TC(Z,pZ)"
       }
      ]
     },
@@ -877,7 +881,8 @@
       "target:1.1",
       "target:4.1",
       "target:4.2",
-      "mathlib:Polynomial"
+      "mathlib:Polynomial",
+      "mathlib:Ideal"
      ],
      "api": [],
      "tests": [
@@ -1051,7 +1056,9 @@
       "target:3.6",
       "target:4.2",
       "target:4.4",
-      "roadmap:KTheoryFiniteLocalFields §5.1"
+      "roadmap:KTheoryFiniteLocalFields §5.1",
+      "target:3.2",
+      "target:3.3"
      ],
      "api": [],
      "tests": [
@@ -1098,7 +1105,8 @@
       "target:4.4",
       "roadmap:RefinedTraceMethods §1.4",
       "roadmap:RefinedTraceMethods §1.9",
-      "roadmap:RefinedTraceMethods §4.18"
+      "roadmap:RefinedTraceMethods §4.18",
+      "roadmap:RefinedTraceMethods §4.17"
      ],
      "api": [],
      "tests": [
@@ -1329,7 +1337,8 @@
       "roadmap:PrismaticCohomology §0.56",
       "roadmap:PrismaticCohomology §0.73",
       "roadmap:PrismaticCohomology §0.76",
-      "roadmap:DerivedDeRhamCohomology Layer 5"
+      "roadmap:DerivedDeRhamCohomology Layer 5",
+      "roadmap:PrismaticCohomology §0.74"
      ],
      "api": [
       {
@@ -1370,14 +1379,14 @@
      "id": "8.2",
      "kind": "definition",
      "name": "prismatic packages and syntomic complexes",
-     "statement": "C_A of quadruples (H,N,c,phi); Z_p(i)(H,N,c,phi)=fib(can-c phi: N^{>=i}{i}->N^{>=0}{i}); colimits; for i>=0 and (p-1)j>pi, can-c phi on N^{>=j}{i}/p is an automorphism of N^{>=j}{i}/p followed by can into N^{>=j-i}{i}/p (Lemma 8.5), hence F_p(i)=fib(can-c phi: (N^{>=i}/N^{>=j}){i}/p -> (N^{>=0}/N^{>=j}){i}/p) (Proposition 8.6 with the strict bound replacing the printed (p-1)j>=i); Z_p(i), F_p(i) preserve limits and colimits.",
+     "statement": "C_A of quadruples (H,N,c,phi) with H, N p-complete and complete filtered graded E_infty-A-algebras (N constant in nonpositive filtration degrees), c: H -> sc_p(N) a phi_A-semilinear map of (N,>=)xZ-filtered graded modules, sc_p(N) the Day convolution of N^{>=p*} with the p-adic filtration p^*Z (mod p it maps to N^{>=p*}/p), phi: N -> sh(H); Z_p(i)(H,N,c,phi)=fib(can-c phi: N^{>=i}{i}->N^{>=0}{i}); colimits; for i>=0 and (p-1)j>pi, the mod-p map c phi: N^{>=j}{i}/p -> H^{>=j-i}{i}/p -> N^{>=p(j-i)}{i}/p -> N^{>=j-i}{i}/p (defined only mod p) makes can-c phi an automorphism of N^{>=j}{i}/p followed by can into N^{>=j-i}{i}/p (Lemma 8.5), hence F_p(i)=fib(can-c phi: (N^{>=i}/N^{>=j}){i}/p -> (N^{>=0}/N^{>=j}){i}/p) (Proposition 8.6 with the strict bound replacing the printed (p-1)j>=i); Z_p(i), F_p(i) preserve limits and colimits.",
      "hypotheses": [
       "A bounded delta-ring",
       "i integer"
      ],
      "locator": {
       "source": "akn-delta",
-      "where": "Definition 1.1, line 89; Definitions 8.1, 8.4; Proposition 8.3; Lemma 8.5; Proposition 8.6; Corollary 8.7, lines 1701-1791"
+      "where": "Definition 1.1, line 89; Construction 7.3, line 1557; lines 1689-1699; Definitions 8.1, 8.4; Proposition 8.3; Lemma 8.5; Proposition 8.6; Corollary 8.7, lines 1701-1791"
      },
      "prerequisites": [
       "roadmap:EnhancedDerivedSheaves E5",
@@ -1411,7 +1420,7 @@
       {
        "name": "F2_weight1",
        "kind": "non-example",
-       "statement": "absolute F_2, i=1: Z_2(1)=0; formula with j=3 gives 0; j=1 (allowed by printed bound) gives F_2+F_2[-1]"
+       "statement": "absolute F_2, i=1: Z_2(1)=0; j=3: can N^{>=3}/2->N^{>=2}/2 is 0 and the sc_p-induced c phi factors through can N^{>=4}/2->N^{>=2}/2 = 0, formula gives 0; the naive reduction 8b->4b of the integral divided Frobenius is nonzero, so the factorization needs the filtered c; j=1 (allowed by printed bound) gives F_2+F_2[-1]"
       },
       {
        "name": "BK_p2_i1",
@@ -1429,13 +1438,13 @@
      "id": "8.3",
      "kind": "construction",
      "name": "prismatic cohomology relative to a delta-ring",
-     "statement": "Functorial Delta_{R/A} in C_A for bounded delta-pairs via prismatic crystals on WCart, with properties (1)-(8) of akn-delta Theorem 1.2, uniqueness by (4), (6) and agreement with Bhatt-Scholze on relatively qrsp pairs with a chosen prism (or by (4), (5) and that agreement), delta-conjugate filtration on Hodge-Tate cohomology with gr_u = L Omega^u tensor fib(i-u)[-u], site-theoretic comparison for Tor-amplitude [0,1].",
+     "statement": "Functorial Delta_{R/A} in C_A for bounded delta-pairs via prismatic crystals on WCart, with c the filtered semilinear map Delta^{[*]}_{R/A}{*} -> sc_p(N^{>=*} hat-Delta^(1)_{R/A}{*}) of akn-delta Lemma 7.5, with properties (1)-(8) of akn-delta Theorem 1.2, uniqueness by (4), (6) and agreement with Bhatt-Scholze on relatively qrsp pairs with a chosen prism (or by (4), (5) and that agreement), delta-conjugate filtration on Hodge-Tate cohomology with gr_u = L Omega^u tensor fib(i-u)[-u], site-theoretic comparison for Tor-amplitude [0,1].",
      "hypotheses": [
       "(A,R) bounded delta-pair"
      ],
      "locator": {
       "source": "akn-delta",
-      "where": "Theorem 1.2, line 126; Proposition 1.6, line 200; Theorem 1.7, line 211; Proposition 9.15, line 2010"
+      "where": "Theorem 1.2, line 126; Lemma 7.5, line 1579; Proposition 1.6, line 200; Theorem 1.7, line 211; Proposition 9.15, line 2010"
      },
      "prerequisites": [
       "target:8.1",
@@ -1448,7 +1457,28 @@
       "roadmap:PrismaticCohomologyPartII §4.22",
       "roadmap:PrismaticCohomologyPartII §4.29",
       "roadmap:PrismaticCohomologyPartII §4.31",
-      "roadmap:DerivedDeRhamCohomology Layer 5"
+      "roadmap:DerivedDeRhamCohomology Layer 5",
+      "roadmap:PrismaticCohomology §1.2",
+      "roadmap:PrismaticCohomology §1.3",
+      "roadmap:PrismaticCohomology §2.1",
+      "roadmap:PrismaticCohomology §2.2",
+      "roadmap:PrismaticCohomology §2.3",
+      "roadmap:PrismaticCohomology §2.4",
+      "roadmap:PrismaticCohomology §2.5",
+      "roadmap:PrismaticCohomology §2.6",
+      "roadmap:PrismaticCohomology §2.7",
+      "roadmap:PrismaticCohomology §2.8",
+      "roadmap:PrismaticCohomology §2.9",
+      "roadmap:PrismaticCohomology §2.10",
+      "roadmap:PrismaticCohomology §2.12",
+      "roadmap:PrismaticCohomologyPartII §4.4",
+      "roadmap:PrismaticCohomologyPartII §4.5",
+      "roadmap:PrismaticCohomologyPartII §4.6",
+      "roadmap:PrismaticCohomologyPartII §4.7",
+      "roadmap:PrismaticCohomologyPartII §4.8",
+      "roadmap:PrismaticCohomologyPartII §4.9",
+      "roadmap:PrismaticCohomologyPartII §4.19",
+      "roadmap:PrismaticCohomologyPartII §4.25"
      ],
      "api": [
       {
@@ -1609,7 +1639,9 @@
       "target:8.5",
       "roadmap:PrismaticCohomologyPartII §4.22",
       "roadmap:PrismaticCohomologyPartII §4.29",
-      "roadmap:DerivedDeRhamCohomology Layer 2"
+      "roadmap:DerivedDeRhamCohomology Layer 2",
+      "target:8.3",
+      "target:8.4"
      ],
      "api": [],
      "tests": [
@@ -1653,7 +1685,12 @@
       "roadmap:KTheoryFiniteLocalFields §1.1",
       "roadmap:KTheoryFiniteLocalFields §2.1",
       "roadmap:KTheoryFiniteLocalFields §5.1",
-      "roadmap:PrismaticCohomologyPartIII §7.0"
+      "roadmap:PrismaticCohomologyPartIII §7.0",
+      "roadmap:KTheoryFiniteLocalFields §1.2",
+      "roadmap:KTheoryFiniteLocalFields §1.3",
+      "roadmap:KTheoryFiniteLocalFields §1.4",
+      "roadmap:KTheoryFiniteLocalFields §1.5",
+      "roadmap:KTheoryFiniteLocalFields §1.6"
      ],
      "api": [],
      "tests": [
@@ -1695,7 +1732,8 @@
       "roadmap:PrismaticCohomologyPartII §3.19",
       "roadmap:PrismaticCohomologyPartII §3.24",
       "roadmap:PrismaticCohomologyPartII §4.23",
-      "roadmap:CrystallineCohomology CR.2"
+      "roadmap:CrystallineCohomology CR.2",
+      "roadmap:PrismaticCohomologyPartIII §7.0"
      ],
      "api": [],
      "tests": [
@@ -1776,7 +1814,11 @@
       "roadmap:PrismaticCohomology §0.93",
       "roadmap:PrismaticCohomology §2.13",
       "roadmap:PrismaticCohomologyPartII §3.6",
-      "roadmap:PrismaticCohomologyPartII §3.9"
+      "roadmap:PrismaticCohomologyPartII §3.9",
+      "target:8.2",
+      "roadmap:PrismaticCohomology §0.73",
+      "roadmap:PrismaticCohomology §0.74",
+      "roadmap:PrismaticCohomology §0.76"
      ],
      "api": [],
      "tests": [
@@ -1816,7 +1858,12 @@
       "target:9.1",
       "target:9.3",
       "target:9.4",
-      "roadmap:KTheoryFiniteLocalFields §1.1"
+      "roadmap:KTheoryFiniteLocalFields §1.1",
+      "roadmap:KTheoryFiniteLocalFields §1.2",
+      "roadmap:KTheoryFiniteLocalFields §1.3",
+      "roadmap:KTheoryFiniteLocalFields §1.4",
+      "roadmap:KTheoryFiniteLocalFields §1.5",
+      "roadmap:KTheoryFiniteLocalFields §1.6"
      ],
      "api": [],
      "tests": [
