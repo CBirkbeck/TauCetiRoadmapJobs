@@ -6,7 +6,7 @@
 
 This roadmap owns the arithmetic lattices, the germ relation, uniform inverse-coordinate denominators, arithmetic auxiliary functions, all three integrated-rank arguments, circular discrepancy adapters, the circle Vandermonde equality and discrepancy gap, and the arithmetic holonomic ring with its two scalar spans, including closure with full meromorphic local bases. The holonomic theorem controls W, the ℚ(p)-span of the arithmetic generators; V is their ℚ(x)-span. It also owns the centred-disc specialization and the explicit obstruction to an unrestricted compact-set formula.
 
-DiophantineApproximationAndTranscendence §§0.2–0.3,2.8,5.1–5.3 retain heights, general Siegel estimates, D-finiteness, differential equations and E-/G-functions. ConformalMappingPartII §§0.1–0.6,1.3–1.4,3.5–3.7 supplies scalar-equation germs, continuation, full meromorphic local bases, rational pole clearing, hyperbolic conformal radius and normalized quotient representation. ProbabilisticAndMetricNumberTheory §2.7 supplies interval star discrepancy, Koksma and Erdős–Turán; only the circular-coordinate comparisons live here. GeometryOfNumbersAndQuadraticArithmetic §0.1 supplies the general complex Hadamard bound; the retained Fekete variant adds the regular-polygon equality characterization. ClassicalArithmeticCompletion §§6.18–6.19,6.40 owns finite Fekete diameters, their limiting capacity normalization and elementary compact-set values; its energy and equilibrium extension is specified in the supplier contract below.
+DiophantineApproximationAndTranscendence §§0.2–0.3,2.8,5.1–5.3 retain heights, general Siegel estimates, D-finiteness, differential equations and E-/G-functions. ConformalMappingPartII §§0.1–0.6,1.3–1.4,3.5–3.7 supplies scalar-equation germs, continuation, full meromorphic local bases, rational pole clearing, hyperbolic conformal radius and normalized quotient representation. ProbabilisticAndMetricNumberTheory §2.7 supplies interval star discrepancy, Koksma and Erdős–Turán; only the circular-coordinate comparisons live here. SuccessiveMinima §0.1 supplies the general complex Hadamard bound; the retained Fekete variant adds the regular-polygon equality characterization. ClassicalArithmeticCompletion §§6.18–6.19,6.40 owns finite Fekete diameters, their limiting capacity normalization and elementary compact-set values; its energy and equilibrium extension is specified in the supplier contract below.
 
 Power-series rescaling, substitution, Laurent embeddings, rational-function extension degree, integer-matrix Siegel bounds, finite-dimensional domain field structure, one-variable Cauchy and Jensen estimates, finite empirical measures, the C¹ metric-variation identity, and the polydisc Cauchy formula are already in the libraries listed below. They are inputs, not additional constructions. The lattice predicates specialize native series; the holonomic spans use the native Laurent-series field. The arithmetic mean-rank theorem is distinct from general Nevanlinna quotient representation and from general potential theory. Modular functions and their benchmark identities are used as examples from CDT25; modular curves, modularity and unbounded denominators for modular forms are outside this ownership.
 
@@ -58,9 +58,9 @@ Consume §§1.3–1.4 for the pointed hyperbolic conformal radius R(U,0), its de
 
 Consume §2.7, “Discrepancy and quadrature”: strict-cut star discrepancy of [0,1) samples, the guarded empty value, the one-dimensional Koksma inequality with native finite variation and actual sampled jump values, and Erdős–Turán with constant 3. At a fixed cut a singleton at 1/2 has star discrepancy 1/2; taking all circular cuts gives 1. Rotating a kth Fourier mean multiplies it by exp(−2πika), of modulus one. Circle Koksma uses the same probability normalization, and a constant test function has zero variation and zero error.
 
-### From TauCetiRoadmap.GeometryOfNumbersAndQuadraticArithmetic
+### From TauCetiRoadmap.SuccessiveMinima
 
-Consume §0.1.1, “Gram determinants and the Hadamard inequality”, for the coordinate determinant bound ‖det_b(v)‖≤∏‖v_i‖ in a normed RCLike inner-product space with a full orthonormal basis, allowing dependent and empty families. Consume §0.1.2 for nonnegative Hermitian Gram determinants in arbitrary ambient dimension. Orthogonal columns (2,0),(0,3) give 6=2·3; columns (1,0),(1,1) give 1<√2; the empty determinant and product are both 1. The circle equality analysis in §3.6 concerns geometric-series rows, not a new general determinant inequality.
+Consume SuccessiveMinima §0.1, “Gram determinants and the Hadamard inequality”: target 0.1.1, `orthonormal_coordinate_hadamard`, for the coordinate determinant bound ‖det_b(v)‖≤∏‖v_i‖ in a normed RCLike inner-product space with a full orthonormal basis, allowing dependent and empty families; target 0.1.2, `hermitian_gram_hadamard`, for nonnegative Hermitian Gram determinants in arbitrary ambient dimension. Orthogonal columns (2,0),(0,3) give 6=2·3; columns (1,0),(1,1) give 1<√2; the empty determinant and product are both 1. The circle equality analysis in §3.6 concerns geometric-series rows, not a new general determinant inequality.
 
 ### From TauCetiRoadmap.ClassicalArithmeticCompletion
 
@@ -494,7 +494,7 @@ Let g:𝕋→ℝ have finite native variation V(g)=eVariationOn(t↦g(exp(2πit)
 
 Choose arguments in [0,1) and pull g back to the closed unit interval, including the common periodic endpoint. Apply ProbabilisticAndMetricNumberTheory §2.7 Koksma theorem, whose strict-cut star discrepancy and native variation have the matching pointwise conventions. Use D*≤D_circ and identify normalized Lebesgue angular integration with normalized circle Haar integration.
 
-The variation is computed in turns, retaining the actual values at sample discontinuities. A constant function has zero variation and exact quadrature. For a continuous C¹ periodic function the variation is ∫_0^1 |d/dt g(exp(2πit))|dt; an arclength derivative requires the corresponding 2π factor.
+The variation is computed in turns, retaining the actual values at sample discontinuities. A constant function has zero variation and exact quadrature. For a continuous C¹ periodic function the variation is ∫_0^1 |d/dt g(exp(2πit))|dt, by `TauCeti.eVariationOn_eq_lintegral_enorm_derivWithin` applied to the real angular pullback on [0,1] (the endpoints are null, so the within derivative may be replaced by the ordinary one); an arclength derivative requires the corresponding 2π factor.
 
 **Checks.**
 
@@ -502,7 +502,7 @@ The variation is computed in turns, retaining the actual values at sample discon
 
 - For a constant c, quadrature c minus mean c is 0 and variation is 0; multiplying arclength by 2π again would spoil the convention.
 
-*Needs:* §3.1; ProbabilisticAndMetricNumberTheory §2.7; Mathlib `eVariationOn`; §3.5 for the C¹ specialization.
+*Needs:* §3.1; ProbabilisticAndMetricNumberTheory §2.7; Mathlib `eVariationOn`; Tau Ceti `TauCeti.eVariationOn_eq_lintegral_enorm_derivWithin` for the C¹ specialization.
 
 ### 3.4 Erdős–Turán for circular arcs
 
@@ -544,7 +544,7 @@ The expression log|h| without the positive cutoff can have logarithmic singulari
 
 For d≥1 and z_j∈𝕋, let V(z)=∏_(i<j)(z_i−z_j). Then |V(z)|≤d^(d/2), with equality precisely when the tuple, up to permutation, is a rotation of all dth roots of unity. For d=1 every singleton is such a rotation; repeated points give zero when d≥2. (CDT25, (2.5.2), Lemma 2.5.3, p.644, CDT25 line 1063.)
 
-Apply GeometryOfNumbersAndQuadraticArithmetic §0.1.1 to the native Vandermonde rows, each of Euclidean norm √d; dependent rows give determinant zero. This supplies the upper bound without constructing another general Hadamard theorem. For equality, inspect the Gram–Schmidt norm factors: equality forces the rows to be pairwise orthogonal. Their pairwise inner products are the finite sums Σ_(k=0)^(d−1)(z_i/z_j)^k. Thus every distinct ratio is a nontrivial dth root of unity. Fixing one row and using distinctness gives every vertex of a rotated regular d-gon, and the converse follows from the same finite geometric sums.
+Apply SuccessiveMinima §0.1, target 0.1.1, to the native Vandermonde rows, each of Euclidean norm √d; dependent rows give determinant zero. This supplies the upper bound without constructing another general Hadamard theorem. For equality, inspect the Gram–Schmidt norm factors: equality forces the rows to be pairwise orthogonal. Their pairwise inner products are the finite sums Σ_(k=0)^(d−1)(z_i/z_j)^k. Thus every distinct ratio is a nontrivial dth root of unity. Fixing one row and using distinctness gives every vertex of a rotated regular d-gon, and the converse follows from the same finite geometric sums.
 
 The determinant identity fixes the sign; its modulus bound and polygon equality require the norm argument. d=2 gives |z₁−z₂|≤2 with equality at antipodal pairs.
 
@@ -556,7 +556,7 @@ The determinant identity fixes the sign; its modulus bound and polygon equality 
 
 - For z=(1,1), the product and determinant vanish, below 2; an equality statement without distinctness through the polygon condition would fail.
 
-*Needs:* Mathlib `Matrix.det_vandermonde`; GeometryOfNumbersAndQuadraticArithmetic §0.1.1 and Mathlib `InnerProductSpace.gramSchmidtOrthonormalBasis_det` for equality.
+*Needs:* Mathlib `Matrix.det_vandermonde`; SuccessiveMinima §0.1 (target 0.1.1) and Mathlib `InnerProductSpace.gramSchmidtOrthonormalBasis_det` for equality.
 
 ### 3.7 Haar equilibrium and the circle energy gap
 
@@ -630,7 +630,7 @@ A singleton has circular discrepancy 1; an antipodal pair has 1/2; the regular d
 
 ### Dependencies
 
-Layer 1 auxiliary functions and integral jets; ProbabilisticAndMetricNumberTheory §2.7 for the interval inequalities; GeometryOfNumbersAndQuadraticArithmetic §0.1 for Hadamard; ClassicalArithmeticCompletion §§6.18,6.40 and its energy/equilibrium contract; native weak-measure compactness, product continuity and variation; Tau Ceti empirical measures, the C¹ metric-variation identity and the polydisc Cauchy formula. Erdős–Turán is a circle comparison, not an input to the damping gap.
+Layer 1 auxiliary functions and integral jets; ProbabilisticAndMetricNumberTheory §2.7 for the interval inequalities; SuccessiveMinima §0.1 for Hadamard; ClassicalArithmeticCompletion §§6.18,6.40 and its energy/equilibrium contract; native weak-measure compactness, product continuity and variation; Tau Ceti empirical measures, the C¹ metric-variation identity and the polydisc Cauchy formula. Erdős–Turán is a circle comparison, not an input to the damping gap.
 
 ## Layer 4: holonomic rings and scalar spans
 
@@ -650,7 +650,7 @@ Its API comprises:
 
 - For open U′⊆U containing 0, H(U,χ,ℤ)⊆H(U′,χ,ℤ).
 
-- For χ=t the ring is a ℤ[x]-algebra; when p has no poles in U and p∘χ is integral it is a ℤ[p]-algebra.
+- For χ=t the ring is a ℤ[x]-algebra; when p∈ℚ(x) is regular at 0 and p∘χ is integral it is a ℤ[p]-algebra.
 
 - Membership implies D-finiteness over ℚ̄ and, because f has rational coefficients, D-finiteness over ℚ by the coefficient descent proved in this subsection.
 
@@ -682,9 +682,9 @@ A pole is allowed for other local solutions; it is only the chosen formal f that
 
 ### 4.2 Ring closure and rational multipliers
 
-For U,χ as above, H(U,χ,ℤ) is a subring of ℚ[[x]]. If p∈ℚ(x) is regular throughout U and p∘χ is integral, then multiplication by p preserves H; hence it is a ℤ[p]-algebra. For χ=t, multiplication by x preserves H and it is a ℤ[x]-algebra. (CDT25, Ring and module assertions following Definition 2.0.4, pp.635–636; rational differential-module closure spells out the property used there, CDT25 line 473.)
+For U,χ as above, H(U,χ,ℤ) is a subring of ℚ[[x]]. If p∈ℚ(x) is regular at 0 (as the integrality of p∘χ presupposes) and p∘χ is integral, then multiplication by p preserves H, whether or not p has poles in U; hence it is a ℤ[p]-algebra. For χ=t, multiplication by x preserves H and it is a ℤ[x]-algebra. (CDT25, Ring and module assertions following Definition 2.0.4, pp.635–636; rational differential-module closure spells out the property used there, CDT25 line 473.)
 
-Integral pullbacks are closed under the ring operations. Part I §5.1 supplies finite-dimensional derivative spans. Here form the direct sum and tensor product of the finite-dimensional ℚ̄(x) differential modules generated by f and g. Take the cyclic submodules generated by f⊕g and f⊗g, respectively, and obtain scalar annihilators of f+g and fg from linear dependence of successive derivatives. Tracking full meromorphic local bases through these constructions is part of this closure target. On a punctured neighbourhood the input differential modules have full horizontal meromorphic bases. Their direct sums and tensors do too. The cyclic differential subquotient defining the resulting scalar equation inherits this property: a horizontal frame identifies these modules and their subquotients with constant finite-dimensional spaces. This also covers any new apparent singularities of the cyclic presentation. The rational function p has a first-order meromorphic solution module (or is constant). Tensor with it; at its zeros a basis can still be meromorphic. The assumption of no poles in U ensures p itself is holomorphic at zero and that p∘χ multiplication stays within formal power series. For χ=t, x has integral pullback and is regular everywhere.
+Integral pullbacks are closed under the ring operations. Part I §5.1 supplies finite-dimensional derivative spans. Here form the direct sum and tensor product of the finite-dimensional ℚ̄(x) differential modules generated by f and g. Take the cyclic submodules generated by f⊕g and f⊗g, respectively, and obtain scalar annihilators of f+g and fg from linear dependence of successive derivatives. Tracking full meromorphic local bases through these constructions is part of this closure target. On a punctured neighbourhood the input differential modules have full horizontal meromorphic bases. Their direct sums and tensors do too. The cyclic differential subquotient defining the resulting scalar equation inherits this property: a horizontal frame identifies these modules and their subquotients with constant finite-dimensional spaces. This also covers any new apparent singularities of the cyclic presentation. A nonzero rational p spans the solution space of py′−p′y=0, which has the meromorphic basis p at every zero and pole of p. Replacing L by y↦L(p⁻¹y) (equivalently, tensoring with this rank-one module) gives an annihilator of pf with coefficients in ℚ̄(x) and leading coefficient a_n/p≠0; its local solution bases are p times those of L, hence meromorphic at every singular point in U, including the zeros and poles of p. The case p=0 is trivial. Regularity of p at 0 keeps p∘χ and pf inside formal power series, and (pf)∘χ=(p∘χ)(f∘χ) is integral. For χ=t, x has integral pullback and is regular everywhere.
 
 The derivative need not preserve the arithmetic ring for arbitrary χ; no derivative-closure API is asserted. An arbitrary rational multiplier can destroy integral coefficients and is available only after taking the scalar spans.
 
@@ -693,6 +693,8 @@ The derivative need not preserve the arithmetic ring for arbitrary χ; no deriva
 - For χ=t, multiplying 1 by x gives x∈H; multiplying 1 by the rational constant 1/2 gives nonintegral constant coefficient 1/2.
 
 - For χ=t and f=g=1/(1−x), write D=d/dx. The sum 2/(1−x) has annihilator (1−x)D−1 and the product (1−x)⁻² has annihilator (1−x)D−2. Their full local bases have pole orders 1 and 2 at 1; a construction retaining only the selected holomorphic germ would miss these poles.
+
+- For U=ℂ, χ=t and p=1/(1−x), p∘χ=Σtⁿ is integral and p·1=1/(1−x) belongs to H(ℂ,t,ℤ) with annihilator (1−x)D−1 and full basis {1/(1−x)} at 1, although p has a pole at 1∈U; requiring p to be regular on U would wrongly exclude it. Regularity on U is a hypothesis only of §4.3 and the rank theorems built on it, where p∘φ must be holomorphic.
 
 - For f=1 and g=−1, f+g=0 admits the order-zero annihilator 1 and its solution space has dimension 0. The cyclic module generated by (1,−1) instead has dimension 1 and annihilator D; passage to the sum can lower order.
 
