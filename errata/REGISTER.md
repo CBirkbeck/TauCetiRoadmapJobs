@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-7159 mistakes recorded on the board: 4358 misprints, 1814 errors, 722 gaps, 265 unparsed bullets.
+7160 mistakes recorded on the board: 4358 misprints, 1815 errors, 722 gaps, 265 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -8703,6 +8703,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## speirs-axes
 
 - **Error** at Lemma 15, p. 13: the source says the lax map T^{tC_p} ⊗ (Σ^∞X)^{tC_p} → (T ⊗ Σ^∞X)^{tC_p} is an equivalence for every bounded-below T; it should be after p-completion of the source (T = 𝕊, X = S⁰ has source π₀ = ℤ_p ⊗ ℤ_p), or for T^{tC_p} an H𝔽_p-module as in the paper's use; affects the proof. Found by RefinedTraceMethodsPartII (#2143 at c46202f, 2026-10-26, claude fable).
+- **Error** at Lemma 15, printed page 13: the source says the lax map from the tensor product of Tate constructions is an equivalence for bounded-below T and finite X; it should be an equivalence after p-completing the source (T = 𝕊, X = S⁰ gives π₀ = ℤ_p ⊗ ℤ_p against ℤ_p); affects a stated result; (every use in the paper is p-adic). Found by RefinedTraceMethodsPartII (#2143 at 8fc9f54, 2026-10-26, claude fable).
 - **Misprint** at Proposition 26(2), p. 22: the source says the homotopy fixed points in degree 2r+1 are W_{v−u+1}(k) when 2r ≥ m; it should be 2r+1 ≥ m, as the definition of t_od and the proof of Proposition 28 use; affects nothing. Found by RefinedTraceMethodsPartII (#2143 at c46202f, 2026-10-26, claude fable).
 - **Misprint** at Proposition 26(2), printed page 22: the source says the homotopy fixed points in degree 2r+1 are W_{v−u+1}(k) when 2r ≥ m; it should be 2r+1 ≥ m, as the proof of Proposition 28 uses; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "797c6f5", "job": "REV-DESIGN-RefinedTraceMethodsPartII~2", "model": "fable", "worker": "fable-rev200"} -->. Found by RefinedTraceMethodsPartII (#2143 at 797c6f5, 2026-10-26, claude fable).
 - **Error** at Theorem 1 and Theorem 2 (p = 2, odd degrees, printed pages 1–2 and 4) and the final display of §5.1 (page 28): the source says the odd-degree p = 2 answer is a product over 0 ≤ v ≤ t_ev of k^{⊕cyc_d(s′)} for every odd m′; it should be one copy for each odd m′ ≤ 2r+1 (staircase kernel A_{t_od−1}), the printed form giving K_1(A_3, I_3) ≠ 0; affects a stated result. Found by RefinedTraceMethodsPartII (#2143 at 797c6f5, 2026-10-26, claude fable).
