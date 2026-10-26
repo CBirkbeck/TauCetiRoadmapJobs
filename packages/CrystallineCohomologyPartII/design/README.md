@@ -25,6 +25,7 @@ Rigid cohomology belongs to PadicDifferentialEquationsAndRigidCohomology. Scheme
 7. 'Connected fibres' means connected after every base change to a field-valued point; a universal homeomorphism is integral, surjective and radicial; a finite universal homeomorphism has finiteness in addition.
 8. A quasi-resolution of an integral scheme Y is a projective, surjective, generically finite morphism with purely inseparable function-field extension from a topological finite quotient.
 9. CH_0-triviality is with rational coefficients: deg: CH_0(X_L) ⊗ ℚ → ℚ is an isomorphism for every field extension L.
+10. In WV.4 and WV.5, finite-type k-schemes, including bases and auxiliary schemes, are quasi-projective over k, as in CR12 §§2–4; a generic fibre or scalar extension is quasi-projective over its own ground field.
 
 **Checks.**
 
@@ -41,19 +42,19 @@ From Tau Ceti at a91d3aaf: no additional declaration is consumed.
 
 - From AbelianSchemesAndArithmeticModuli: A2.4, `ampleCohomologyAndDegree`.
 - From AdicSpacesPartIII: F0.6, graded-cohomology-finiteness.
-- From ClassicalAdicEtaleCohomology: 2, PlurinodalAlteration.exists.
+- From ClassicalAdicEtaleCohomology: 5.4, PlurinodalAlteration.exists.
 - From CrystallineCohomology: CR.3:duality.1, crysTrace_etale_local; CR.3:duality.1, crysTrace_iso; CR.4.4, Witt Frobenius lift; CR.4.4, Witt structural identities; CR.4.4, divided powers on Verschiebung; CR.4.6, Witt localization and descent; CR.4.6, classical de Rham–Witt; CR.4.6, wittScheme; CR.4.7, Witt slope spectral sequence; CR.4.7, crystalline comparison; CR.4.7, isocrystal slope decomposition; CR.4.8, logarithmic Witt sheaves.
 - From DerivedDeRhamCohomology: PD.6, completed-pd-envelopes-and-derived-completion-comparison; PD.6, universal-base-compatible-divided-power-envelope.
 - From DerivedModuleAlgebra: 1.T.1, mittag-leffler-lim-one.
-- From EnhancedDerivedSheaves: E1, enhanced-derived-category; E1, presentability-and-derived-tensor; E2, bounded-below-hypercover-descent; E2, proper-surjection-inductive-level; E2.8, descendableCover_fppf; E2.8, moduleDescent; E5:animation, animated-commutative-rings; E5:animation, bounded-totalization-colimits; E5:animation, derived-witt-adapter; E5:animation, frobenius-and-perfection.
+- From EnhancedDerivedSheaves: E1, enhanced-derived-category; E1, presentability-and-derived-tensor; E2, bounded-below-hypercover-descent; E2, proper-surjection-inductive-level; E2.8, descendableCover_fppf; E5:descent, moduleDescent; E5:animation.1, animated-commutative-rings; E5:animation.3, bounded-totalization-colimits; E5:animation.2, simplicialWitt and wittFrobeniusLocalization; E5:animation.2, frobenius_zero_on_positive_homotopy.
 - From EtaleCohomologyFoundations: G.2, nagataCompactification.
-- From MotivesAndAlgebraicCycles: 0.1, Chow correspondences; 0.1, composition of Chow correspondences; 0.6, diagonal-decomposition; 2.2, Chow groups under field extension; 2.2, chow-groups-under-field-extension.
+- From MotivesAndAlgebraicCycles: 0.1, Chow correspondences; 0.1, composition of Chow correspondences; 0.6, diagonal-decomposition; 2.2, continuity of Chow groups over algebraic extensions and torsion kernel of base change to an algebraic closure (smooth projective schemes).
 - From PadicDifferentialEquationsAndRigidCohomology: RD.3.1, frame; RD.3.2, tube; RD.4.1 and RD.4.24, monsky washnitzer cohomology; RD.4.12, compactly supported rigid cohomology; RD.4.17, frobenius vector space; RD.4.18, frobenius on rigid cohomology; RD.4.19, excision sequence; RD.4.36, tube-to-envelope-comparison-map; RD.4.37, comparison-map-quasi-isomorphism; RD.4.38, rigid-crystalline-comparison; RD.4.5, overconvergent de rham complex; RD.5.67, smooth proper hypercovering; RD.5.73, cohomological descent for proper hypercoverings; RD.5.74, proper hypercover descent spectral sequence; RD.5.77, frobenius bijective on cohomology; RD.5.78, compact support vanishing above twice dimension; RD.5.89, poincare duality; RD.5.90, finiteness of compactly supported rigid cohomology; RD.6.22, closed points and zeta function; RD.6.23, lefschetz trace formula; RD.6.58, slope interval of isocrystal; RD.7.4, rational zeta descent and fatou.
 - From SchemeAndStackFoundations: 0.20, nagata normalization finite; 0.23, universal homeomorphism criteria; 0.29, relative frobenius; 2.19, upper shriek compactification independence; 2.20, cm serre duality; 2.21, scheme dualizing; 2.21, sheafified grothendieck duality; 2.21, trace_finite; 2.6, ample serre vanishing; 2.6, projective space cohomology; 2.6, qcoh higher direct images; 2.7, sheaf cohomology with supports; 4.12, modification domination; 4.14, hilbert scheme; 4.16, alteration; 4.19, de jong alteration theorem; 4.9, stein factorization; 5.1, chow group; 5.1, rational equivalence; 5.2, chow localization; 5.2, chow proper push; 5.2, degree; 5.2, flat pullback; 5.5, gysin interchange; 5.5, gysin proper flat; 5.5, refined gysin.
 
 What SchemeAndStackFoundations must provide (gap:qcqs-frobenius-factorization): For every finite finitely presented universal homeomorphism f: X → Y of qcqs F_p-schemes, provide N ≥ 0 and g: Y → X with f ∘ g = F_Y^N and g ∘ f = F_X^N. Its §0.26 covers schemes finite type over F_p; the qcqs extension is required in WV.0 and WV.1.
 
-What ArcTopologyAndDescent must provide (gap:h-descent-formalism): Provide the h-site of finitely presented schemes, its refinement by fppf covers and proper surjections, and universal-descent dévissage with the abstract-blowup h-descent criterion over a noetherian finite-dimensional base. The contract refers to its design §§1.1, 1.3–1.4; it requires an available earlier supplier before this roadmap can consume it.
+What ArcTopologyAndDescent must provide (gap:h-descent-formalism): Provide the h-topology on finitely presented S-schemes generated by finitely presented v-covers (its §1.3), Rydh's refinement of a finitely presented v-cover of an affine scheme by a quasi-compact open cover followed by a proper finitely presented surjection (its §1.6), and the universal-descent class with its cancellation and composition laws (its §1.1). The inductive level of proper surjections is EnhancedDerivedSheaves §E2.8, `properSurjective_inductiveLevel`; the abstract-blowup criterion of its §1.4 is not consumed.
 
 ## How to read the build
 
@@ -110,7 +111,6 @@ A proof route is the following.
 - W_2O_X is not killed by p when X ≠ ∅ (p·1 = V(1) ≠ 0 in W_2(F_p) = ℤ/p²), so it is not an O_X-module.
 - W_nI is not the ideal generated by Teichmüller lifts of I: for I = (t) ⊂ F_p[t] and n = 2, V(t) = (0, t) lies in W_2(I), but every element of the ideal [t]·W_2(F_p[t]) has second Witt component divisible by t^p.
 - For X = Spec F_p[t] and n = 2, the open D(t) on the imported W_2X has sections W_2(F_p[t,t⁻¹]); Witt ideal sheaves restrict on this same open.
-- W_n(Spec F_p) = Spec ℤ/p^n and WO(Spec F_p) has global sections ℤ_p.
 - For X of finite type over k and I = 0, W_nI = 0; for I = O_X, W_nI = W_nO_X.
 
 These results apply to BBE07, §2, pp. 6–9: the sheaves WI_K = WI ⊗ ℚ define Witt vector cohomology with compact supports; BS17, Proposition 11.41, p. 51: RΓ(X, WO_X)[1/F] is the presheaf whose h-descent is proved; CR12, §4, p. 82: WO_{X,ℚ} and its higher direct images define WO-rational singularities; Hacon–Witaszek 2023, Corollary 4.7, p. 19: the exact sequence 0 → WI_{S,ℚ} → WO_{Y,ℚ} → u_\*WO_{S,ℚ} → 0 for a divisor S; WV.2/witt-compact-support-cohomology: RΓ(X, WI) for an ideal I of a compactification.
@@ -150,7 +150,6 @@ A proof route is the following.
 - On X = Spec F_p, End(WO_{X,ℚ}) ≅ ℚ_p (ℤ_p with p inverted).
 - On the empty scheme Sh(X)_ℚ is the zero category.
 - For Z proper over k, the two conventions give the same vanishing of H^i(Z, WO_Z)_ℚ.
-- For the constant sheaf ⊕_{n≥1} ℤ/p^n on a point, the tensor rationalization is 0 but the isogeny rationalization is not.
 - For f proper and I coherent, R^if_\*(WI)_ℚ ≅ (R^if_\*(WI))_ℚ (GNT Remark 2.17 (2)).
 - At p = 2 the constant sheaf ℤ/3 is in T(X), although no power of 2 kills it. Thus the general Serre quotient uses nonzero integers; the power-of-p criterion requires Witt-module coefficients.
 
@@ -276,7 +275,7 @@ A proof route is the following.
 
 **Checks.**
 
-- For a resolution f of a rational singularity, R^if_\*O_X = 0 for i > 0 gives R^if_\*WO_X = 0 and hence WO-rationality of the target (WV.5/rational-implies-witt-rational).
+- For a resolution f of a normal S with rational singularities, R^if_\*O_X = 0 for i > 0 gives R^if_\*WO_X = 0 and hence WO-rationality of the target (WV.5/rational-implies-witt-rational).
 - For j: A² ∖ {0} → A² and I = O, fibres have dimension 0 but the Čech class [x⁻¹y⁻¹] on D(xy) has nonzero first component in H¹(D(x) ∪ D(y), O). Its compatible Teichmüller lifts give R¹j_\*WO ≠ 0; properness in (3) cannot be dropped.
 - For X = A² ∖ {0}, dim X = 2 and H^i(X, WO) = 0 for i > 2; the nonzero H¹ above is consistent with the absolute dimension bound.
 
@@ -310,7 +309,7 @@ A proof route is the following.
 - For X = Spec k[ε]/(ε²), W(k[ε]/(ε²)) ≠ W(k) but H^0(X, WO_{X,K}) = K = H^0(Spec k, WO_K).
 - Spec F_{q²} → Spec F_q is finite surjective with connected fibre but W(F_q)_ℚ → W(F_{q²})_ℚ is not an isomorphism: its fibre is not geometrically connected.
 - For two lines meeting at a point in A², H^0 of WO_K of the union is the fibre product of W(k[x])_K and W(k[y])_K over K.
-- For a resolution f of a rational singularity, R^if_\*O_X = 0 for i > 0 gives R^if_\*WO_X = 0 and hence WO-rationality of the target (WV.5/rational-implies-witt-rational).
+- For a resolution f of a normal S with rational singularities, R^if_\*O_X = 0 for i > 0 gives R^if_\*WO_X = 0 and hence WO-rationality of the target (WV.5/rational-implies-witt-rational).
 - H^1(E, WO_E)_K is one-dimensional of slope 0 for an ordinary elliptic curve E and two-dimensional of slope 1/2 for a supersingular one (H^1(E, WO_E) is the Dieudonné module of the formal group of E, of height 1 resp. 2).
 
 ### Dependencies
@@ -332,11 +331,11 @@ On qcqs F_p-schemes, the presheaves X ↦ RΓ(X, W_nO_X) (n ≥ 1), X ↦ RΓ(X,
 
 qcqs F_p-schemes; values are coconnective (complexes in cohomological degrees ≥ 0).
 
-*Needs:* WV.0/witt-sheaf; WV.0/frobenius-inverted-witt; EnhancedDerivedSheaves §E2.8, moduleDescent; EnhancedDerivedSheaves §E5:animation.3, bounded totalizations; EnhancedDerivedSheaves §E2.8, descendableCover_fppf.
+*Needs:* WV.0/witt-sheaf; WV.0/frobenius-inverted-witt; EnhancedDerivedSheaves §E5:descent, `moduleDescent`; EnhancedDerivedSheaves §E5:animation.3, bounded totalizations; EnhancedDerivedSheaves §E2.8, descendableCover_fppf.
 
 A proof route is the following.
 
-1. For W_n: induction on n using 0 → F^{n−1}_\*O →(V^{n−1}) W_nO → W_{n−1}O → 0, where the kernel is O_X viewed through the (n−1)-st Frobenius, a quasi-coherent sheaf, so fpqc descent for quasi-coherent cohomology applies (EnhancedDerivedSheaves §E2.8, descendableCover_fppf and moduleDescent).
+1. For W_n: induction on n using 0 → F^{n−1}_\*O →(V^{n−1}) W_nO → W_{n−1}O → 0, where the kernel is O_X viewed through the (n−1)-st Frobenius, a quasi-coherent sheaf, so fpqc descent for quasi-coherent cohomology applies (EnhancedDerivedSheaves §E2.8, `descendableCover_fppf`; EnhancedDerivedSheaves §E5:descent, `moduleDescent`).
 2. For W = lim W_n, exchange the limit over n with the totalization.
 3. For [1/F]: the values are coconnective, so π_k of a totalization is computed by a finite partial totalization (EnhancedDerivedSheaves §E5:animation.3, bounded totalizations); hence totalization commutes with the sequential colimit inverting F, and it suffices to check descent on affines before inverting F.
 
@@ -352,13 +351,13 @@ Let Y = Spec A be an affine F_p-scheme and f: X → Y, Z → Y morphisms with X,
 
 Y affine, X, X′ qcqs over Y; derived tensor products of simplicial commutative rings. Only the affine-local form is used: no general theory of derived schemes is planned here.
 
-*Needs:* WV.0/frobenius-inverted-witt; EnhancedDerivedSheaves §E5:animation.1, animated commutative rings; EnhancedDerivedSheaves §E5:animation.2, derived Witt adapter; EnhancedDerivedSheaves §E5:animation.2, Frobenius and perfection; EnhancedDerivedSheaves §E1.4, tensor and derived functors.
+*Needs:* WV.0/frobenius-inverted-witt; EnhancedDerivedSheaves §E5:animation.1, animated commutative rings; EnhancedDerivedSheaves §E5:animation.2, `simplicialWitt` and `wittFrobeniusLocalization`; EnhancedDerivedSheaves §E5:animation.2, `frobenius_zero_on_positive_homotopy`; EnhancedDerivedSheaves §E1.4, tensor and derived functors.
 
 A proof route is the following.
 
 1. (a) Choose finite affine covers (hypercovers if X, X′ are not separated). The alternating Čech complexes are finite complexes, whose terms are the rings of the affine pieces Spec B, Spec B′ (no higher quasi-coherent cohomology on affines); the Čech complex of the product cover of X ×^L_Y X′ has terms B ⊗^L_A B′, and since ⊗^L_A is exact in each variable it commutes with these finite totalizations (EnhancedDerivedSheaves §E1.4, tensor and derived functors). This is the derived base change used by Bhatt–Scholze for coherent cohomology over an affine base.
-2. (b) On each affine piece, W(R)[1/F] ≅ W(π_0R)[1/F] for a simplicial commutative F_p-algebra R, because W(R) has underlying simplicial set R^ℕ with π_i(W(R)) = ∏ π_i(R) for i > 0, killed by F since Frobenius kills π_i(R) for i > 0 (EnhancedDerivedSheaves §E5:animation.2, derived Witt adapter, EnhancedDerivedSheaves §E5:animation.2, Frobenius and perfection); π_0 of the affine derived product is the classical tensor product B ⊗_A B′. Glue along the Čech cover.
-3. (c) is the p-nullhomotopy recorded with E5:animation/derived-witt-adapter, from VF = p.
+2. (b) On each affine piece, W(R)[1/F] ≅ W(π_0R)[1/F] for a simplicial commutative F_p-algebra R, because W(R) has underlying simplicial set R^ℕ with π_i(W(R)) = ∏ π_i(R) for i > 0, killed by F since Frobenius kills π_i(R) for i > 0 (EnhancedDerivedSheaves §E5:animation.2, `simplicialWitt` and `wittFrobeniusLocalization`; `frobenius_zero_on_positive_homotopy`); π_0 of the affine derived product is the classical tensor product B ⊗_A B′. Glue along the Čech cover.
+3. (c) is the statement that p kills the fibre of W(R) → W(π_0R), recorded with EnhancedDerivedSheaves §E5:animation.2, `simplicialWitt`, from VF = p.
 
 **Checks.**
 
@@ -372,7 +371,7 @@ Let Y = Spec A be a noetherian affine F_p-scheme, J ⊂ A an ideal with Z = V(J)
 
 Y noetherian affine of characteristic p; J an ideal; the thickening is chosen with H^i(X, O_X(−E)) = 0 for i > 0 (Serre vanishing for the relatively ample O_X(−E)). E → Z is proper but in general not finite, so the pushout is not a Ferrand pinching; the explicit B′ supplies it.
 
-*Needs:* SchemeAndStackFoundations §2.6, ample serre vanishing; SchemeAndStackFoundations §0.23, universal homeomorphism criteria; SchemeAndStackFoundations §4.12, modification domination; Mathlib `AlgebraicGeometry.IsFinite`; gap:qcqs-frobenius-factorization.
+*Needs:* SchemeAndStackFoundations §2.6, ample serre vanishing; SchemeAndStackFoundations §0.23, universal homeomorphism criteria; SchemeAndStackFoundations §4.12, modification domination; Mathlib `AlgebraicGeometry.IsFinite`.
 
 The construction has the following API.
 
@@ -426,14 +425,14 @@ A proof route is the following.
 
 Let S be a noetherian F_p-scheme of finite Krull dimension. The functor X ↦ RΓ(X, WO_X)[1/F] on the category Sch^fp_S of finitely presented S-schemes is a sheaf of spectra for the h-topology: for every h-cover X → Y in Sch^fp_S with Čech nerve X^{•/Y}, RΓ(Y, WO)[1/F] ≅ Tot RΓ(X^{•/Y}, WO)[1/F]. (BS17, Proposition 11.41, p. 51, and its proof, pp. 53–54; BS17, §2, Definition 2.5, Lemma 2.6, Theorem 2.9, Lemma 2.10, pp. 5–8).
 
-S noetherian of finite Krull dimension; h-topology generated by finitely presented v-covers (gap:h-descent-formalism). Correction carried: the pushout Y′ used in the inductive step is the finite universal homeomorphism of WV.1/witt-pushout (the finite-pushout construction).
+S noetherian of finite Krull dimension; h-topology generated by finitely presented v-covers (gap:h-descent-formalism). The pushout Y′ used in the inductive step is the finite universal homeomorphism of WV.1/witt-pushout.
 
-*Needs:* WV.0/frobenius-inverted-witt; WV.0/witt-universal-homeomorphism-invariance; WV.1/witt-fppf-descent; WV.1/witt-pushout; WV.1/witt-blowup-excision; gap:h-descent-formalism; gap:h-descent-formalism; gap:h-descent-formalism; EnhancedDerivedSheaves §E2.8, `properSurjective_inductiveLevel`; gap:qcqs-frobenius-factorization.
+*Needs:* WV.0/frobenius-inverted-witt; WV.0/witt-universal-homeomorphism-invariance; WV.1/witt-fppf-descent; WV.1/witt-pushout; WV.1/witt-blowup-excision; gap:h-descent-formalism; EnhancedDerivedSheaves §E2.8, `properSurjective_inductiveLevel`; gap:qcqs-frobenius-factorization.
 
 A proof route is the following.
 
 1. Write F(X) = RΓ(X, WO_X)[1/F]. F inverts finite universal homeomorphisms, in particular nilimmersions (WV.0/witt-universal-homeomorphism-invariance), and is an fppf sheaf (WV.1/witt-fppf-descent).
-2. The h-descent criterion (gap:h-descent-formalism: fppf descent plus pullback along abstract blowup squares) is not applied as a black box, because excision is needed for every self-product of the blowup; its proof is followed instead. Reduce, by Rydh refinement and the dévissage of Lemma 2.10 of BS17 (gap:h-descent-formalism, EnhancedDerivedSheaves §E2.8, `properSurjective_inductiveLevel`), to proper surjective X → Y with Y affine, and argue by induction on dim Y; dim Y = 0 is fppf descent.
+2. The route follows the proof of BS17 Theorem 2.9 rather than applying an abstract-blowup criterion, because excision is needed for every self-product of the blowup. Reduce, by Rydh refinement and the cancellation and composition laws of universal descent (BS17 Lemma 2.10; both from gap:h-descent-formalism) and the inductive level (EnhancedDerivedSheaves §E2.8, `properSurjective_inductiveLevel`), to proper surjective X → Y with Y affine, and argue by induction on dim Y; dim Y = 0 is fppf descent.
 3. In the inductive step arrange X → Y to be the blowup of Y along Z with dim Z \< dim Y and, after thickening, H^i(X, O_X(−E)) = 0 for i > 0; replace Y by the pushout Y′ of WV.1/witt-pushout (F(Y) = F(Y′) and F(X^{•/Y}) = F(X^{•/Y′}) since Y′ → Y is a finite universal homeomorphism).
 4. By induction F(Z) ≅ Tot F(E^{•/Z}); as in the proof of BS17 Theorem 2.9 it suffices that F(Y′) → F(X^{n/Y′}) ⊕ F(Z) → F(E^{n/Y′}) is a fibre sequence for every n, which is WV.1/witt-blowup-excision applied to the structure-sheaf fibre sequence of WV.1/witt-pushout (iv).
 
@@ -474,7 +473,7 @@ A proof route is the following.
 
 ### Dependencies
 
-WV.0/witt-sheaf; WV.0/frobenius-inverted-witt; EnhancedDerivedSheaves §E2.8, moduleDescent; EnhancedDerivedSheaves §E5:animation.3, bounded totalizations; EnhancedDerivedSheaves §E2.8, descendableCover_fppf; EnhancedDerivedSheaves §E5:animation.1, animated commutative rings; EnhancedDerivedSheaves §E5:animation.2, derived Witt adapter; EnhancedDerivedSheaves §E5:animation.2, Frobenius and perfection; EnhancedDerivedSheaves §E1.4, tensor and derived functors; SchemeAndStackFoundations §2.6, ample serre vanishing; SchemeAndStackFoundations §0.23, universal homeomorphism criteria; SchemeAndStackFoundations §4.12, modification domination; gap:qcqs-frobenius-factorization; WV.1/affine-derived-self-products; WV.0/witt-universal-homeomorphism-invariance; WV.1/witt-fppf-descent; WV.1/witt-pushout; WV.1/witt-blowup-excision; gap:h-descent-formalism; gap:h-descent-formalism; gap:h-descent-formalism; EnhancedDerivedSheaves §E2.8, `properSurjective_inductiveLevel`; WV.1/frobenius-inverted-witt-h-descent.
+WV.0/witt-sheaf; WV.0/frobenius-inverted-witt; EnhancedDerivedSheaves §E5:descent, `moduleDescent`; EnhancedDerivedSheaves §E5:animation.3, bounded totalizations; EnhancedDerivedSheaves §E2.8, descendableCover_fppf; EnhancedDerivedSheaves §E5:animation.1, animated commutative rings; EnhancedDerivedSheaves §E5:animation.2, `simplicialWitt` and `wittFrobeniusLocalization`; EnhancedDerivedSheaves §E5:animation.2, `frobenius_zero_on_positive_homotopy`; EnhancedDerivedSheaves §E1.4, tensor and derived functors; SchemeAndStackFoundations §2.6, ample serre vanishing; SchemeAndStackFoundations §0.23, universal homeomorphism criteria; SchemeAndStackFoundations §4.12, modification domination; WV.1/affine-derived-self-products; WV.0/witt-universal-homeomorphism-invariance; WV.1/witt-fppf-descent; WV.1/witt-pushout; WV.1/witt-blowup-excision; gap:h-descent-formalism; EnhancedDerivedSheaves §E2.8, `properSurjective_inductiveLevel`; gap:qcqs-frobenius-factorization; WV.1/frobenius-inverted-witt-h-descent.
 
 
 <a id="layer-wv2"></a>
@@ -562,8 +561,6 @@ A proof route is the following.
 - For U proper, RΓ_c(U, WO_{U,K}) = RΓ(U, WO_{U,K}); for U = ∅ it is 0.
 - For U = A¹_k, H^0(U, WO_{U,K}) = W(k[t]) ⊗ ℚ is infinite-dimensional while H^0_c(U, WO_K) = 0: compact supports differ from ordinary Witt cohomology for nonproper U.
 - For U = A¹ over F_q, det(1 − tφ | H^\*_c(A¹, WO_K)) gives ζ^W = 1, the slope \< 1 factor of ζ(A¹, t) = 1/(1 − qt).
-- H^\*_c(A¹_k, WO_K) = 0, while H^0(A¹_k, WO_K) = W(k[t])_K is infinite-dimensional.
-- H^1_c(G_{m,k}, WO_K) = K and H^i_c(G_{m,k}, WO_K) = 0 for i ≠ 1.
 
 These results apply to BBE07, Theorem 1.1, p. 2: the target of the comparison with the slope \< 1 part of rigid cohomology with compact supports; BBE07, Corollary 1.3 and (1.4), p. 5: defines the Witt zeta function ζ^W(X, t) through det(1 − tφ | H^i_c(X, WO_{X,K})); BBE07, Corollary 1.2, p. 4: vanishing for affine smooth U outside degree dim U; WV.3/rigid-to-witt-morphism: receives the morphism a_U from rigid cohomology with compact supports; WV.6/witt-zeta-function: the characteristic polynomials P_i^W.
 
@@ -616,7 +613,6 @@ A proof route is the following.
 - For the nodal cubic X, the normalization P¹ → X is proper surjective and étale (an isomorphism) over the smooth locus, and its Čech nerve truncated at level 1 refines to a 1-truncated simplicial resolution with X_1 = P¹ ×_X P¹ = P¹ ⊔ two points.
 - The Čech nerve of the identity of a singular X is a proper hypercovering but not a simplicial resolution, since its terms are not smooth.
 - A simplicial resolution is a proper hypercovering in the sense of PadicDifferentialEquationsAndRigidCohomology §RD.5.74, proper hypercover descent spectral sequence, so rigid descent applies to it.
-- A smooth quasi-projective X is its own simplicial resolution (constant simplicial scheme).
 
 These results apply to BBE07, Proposition 3.2, p. 18: descent for Witt cohomology with compact supports along truncated resolutions; BBE07, Lemma 5.1, p. 28: the resolution is embedded in a simplicial smooth formal scheme with Frobenius lifts; WV.3/berthelot-bloch-esnault-comparison: reduction of Theorem 1.1 to smooth projective schemes.
 
@@ -628,11 +624,11 @@ Let X be a reduced k-scheme of finite type, N ∈ ℕ, f_•: X_• → X an N-t
 
 U_• → U an N-truncated étale hypercovering; the comparison holds below degree N.
 
-*Needs:* WV.2/simplicial-resolution; WV.2/witt-ideal-vanishing; WV.2/witt-compact-support-cohomology; WV.0/witt-limit-lemmas; AdicSpacesPartIII §F0.6, graded-cohomology-finiteness; EnhancedDerivedSheaves §E2.6, bounded-below hypercover descent; EnhancedDerivedSheaves §E2.8, moduleDescent.
+*Needs:* WV.2/simplicial-resolution; WV.2/witt-ideal-vanishing; WV.2/witt-compact-support-cohomology; WV.0/witt-limit-lemmas; AdicSpacesPartIII §F0.6, graded-cohomology-finiteness; EnhancedDerivedSheaves §E2.6, bounded-below hypercover descent; EnhancedDerivedSheaves §E5:descent, `moduleDescent`.
 
 A proof route is the following.
 
-1. For the complexes L_n^{•,r}: 0 → W_n(I^r) → f_{0\*}W_n(I_0^r) → ⋯, the direct sum over r of the n = 1 complexes is a complex of finite graded modules over ⊕ I^r (EGA III 3.3.1); over U it is acyclic in degrees \< N by étale cohomological descent for quasi-coherent sheaves (bounded-below hypercover descent, EnhancedDerivedSheaves §E2.6, bounded-below hypercover descent, for the étale topology, on which quasi-coherent sheaves satisfy descent, EnhancedDerivedSheaves §E2.8, moduleDescent), so a power of I kills the cohomology and the transition maps H^{q,r+b} → H^{q,r} vanish for some b.
+1. For the complexes L_n^{•,r}: 0 → W_n(I^r) → f_{0\*}W_n(I_0^r) → ⋯, the direct sum over r of the n = 1 complexes is a complex of finite graded modules over ⊕ I^r (EGA III 3.3.1); over U it is acyclic in degrees \< N by étale cohomological descent for quasi-coherent sheaves (bounded-below hypercover descent, EnhancedDerivedSheaves §E2.6, bounded-below hypercover descent, for the étale topology, on which quasi-coherent sheaves satisfy descent, EnhancedDerivedSheaves §E5:descent, `moduleDescent`), so a power of I kills the cohomology and the transition maps H^{q,r+b} → H^{q,r} vanish for some b.
 2. Induction on n with the ideals W_n^{r,r+b} of BBE Lemma 2.5 and the diagram lemma shows H^{q,r+2b}_n → H^{q,r}_n is zero, so a power of F kills H^q_n for r ≥ 1, hence on Rlim and the limit complex WI_• → in degrees \< N; F becomes invertible after ⊗K, giving acyclicity.
 3. Each f_q is proper and its restriction U_q → U is étale and proper, hence finite, so WV.2/witt-ideal-vanishing (i) gives R^if_{q\*}(WI_{q,K}) = 0 for i ≥ 1; thus f_{•\*}WI_{•,K} computes Rf_{•\*}WI_{•,K}, and (i) gives the statement on H^q.
 
@@ -652,7 +648,7 @@ A proof route is the following.
 
 ### Dependencies
 
-WV.0/witt-sheaf; WV.0/rational-witt-sheaves; WV.0/witt-limit-lemmas; WV.0/witt-nil-invariance; AdicSpacesPartIII §F0.6, graded-cohomology-finiteness; SchemeAndStackFoundations §2.6, qcoh higher direct images; WV.2/witt-ideal-vanishing; WV.0/witt-finiteness-slopes; EtaleCohomologyFoundations §G.2, nagataCompactification; WV.2/witt-compact-support-cohomology; SchemeAndStackFoundations §4.19, de jong alteration theorem; PadicDifferentialEquationsAndRigidCohomology §RD.5.67, smooth proper hypercovering; WV.2/simplicial-resolution; EnhancedDerivedSheaves §E2.6, bounded-below hypercover descent; EnhancedDerivedSheaves §E2.8, moduleDescent.
+WV.0/witt-sheaf; WV.0/rational-witt-sheaves; WV.0/witt-limit-lemmas; WV.0/witt-nil-invariance; AdicSpacesPartIII §F0.6, graded-cohomology-finiteness; SchemeAndStackFoundations §2.6, qcoh higher direct images; WV.2/witt-ideal-vanishing; WV.0/witt-finiteness-slopes; EtaleCohomologyFoundations §G.2, nagataCompactification; WV.2/witt-compact-support-cohomology; SchemeAndStackFoundations §4.19, de jong alteration theorem; PadicDifferentialEquationsAndRigidCohomology §RD.5.67, smooth proper hypercovering; WV.2/simplicial-resolution; EnhancedDerivedSheaves §E2.6, bounded-below hypercover descent; EnhancedDerivedSheaves §E5:descent, `moduleDescent`.
 
 
 <a id="layer-wv3"></a>
@@ -692,8 +688,6 @@ A proof route is the following.
 - For H²_rig(P¹/K) = K(−1) (F = pσ), (H²)^{\<1} = 0: the top cohomology of P¹ is not in the slope \< 1 part.
 - Over F_p, for P(t) = 1 − a_1t + pt² with p ∤ a_1 (ordinary elliptic curve), P^{\<1}(t) = 1 − αt with α the p-adic unit root; for a_1 ≡ 0 mod p (supersingular), both reciprocal roots have slope 1/2, so P^{\<1} = P.
 - For an object of Mathlib's WittVector.Isocrystal over algebraically closed k that is a standard slope-λ block, slopePart λ is everything and slopePart μ = 0 for μ ≠ λ.
-- For E = K with F = p^aσ (a ∈ ℤ), E^{\<1} = E iff a ≤ 0.
-- For H² of P¹ (one-dimensional, F = pσ), E^{\<1} = 0.
 
 These results apply to BBE07, Theorem 1.1, p. 2: the comparison isomorphism is on the slope \< 1 part of rigid cohomology with compact supports; BBE07, (6.2), p. 34: P_i^{\<1} = P_i^W relates the slope \< 1 factor of the zeta function to Witt cohomology; WV.6/witt-zeta-function: slope factors ζ^{\<ρ}.
 
@@ -727,7 +721,6 @@ A proof route is the following.
 - For X = ∅ both sides are 0.
 - For A = ℤ_p[t] with φ(t) = t^p, s_φ(t) = [t] (the Teichmüller lift), since its ghost components are t^{p^i}.
 - The map O_{P_n} → W_nO_X does not kill J_n: it sends J_n into V W_{n−1}O_X, nonzero for n ≥ 2, so the divided powers of V are needed to factor through P(J_n).
-- For X = P_0 = Spec k and P = Spf W with F = σ, the map is the identity K → W(k)[1/p].
 - For X smooth with P a lift, composing with the augmentation recovers the map used for the crystalline–de Rham–Witt comparison.
 
 These results apply to BBE07, Proposition 4.4 (ii)–(iii), p. 23: composition with the augmentation of the de Rham complex defines a_{X,P,F}; BBE07, 5.2, p. 32: on a simplicial frame with Frobenius lifts it gives the morphism of descent spectral sequences; WV.3/rigid-to-witt-morphism: the local building block.
@@ -765,8 +758,6 @@ A proof route is the following.
 - For U = ∅, a_U = 0 → 0.
 - For X = P¹, H²(a_X): K(−1) → H²(P¹, WO_K) = 0 is not injective: a_U is not an isomorphism before passing to slope \< 1 parts.
 - For an ordinary elliptic curve E over k, H¹(a_E) is surjective onto H¹(E, WO_K) = K with kernel the slope-1 line of H¹_rig(E).
-- For U = Spec k, a_U is the identity of K.
-- For X = P¹, a_X is an isomorphism on H⁰ and the zero map H²_rig(P¹) = K(−1) → H²(P¹, WO_K) = 0.
 
 These results apply to BBE07, 5.2, p. 30: induces b^q_X: H^q_{rig,c}(X/K)^{\<1} → H^q_c(X, WO_{X,K}), the isomorphism of Theorem 1.1; WV.3/berthelot-bloch-esnault-comparison: the map shown to be an isomorphism on slope \< 1 parts.
 
@@ -823,7 +814,7 @@ A proof route is the following.
 
 1. H^q_{rig,c}(X/K) is finite-dimensional with bijective Frobenius (PadicDifferentialEquationsAndRigidCohomology §RD.5.90, finiteness of compactly supported rigid cohomology, PadicDifferentialEquationsAndRigidCohomology §RD.5.77, frobenius bijective on cohomology), so the slope \< 1 part is defined and a_X induces b^q_X; the slope \< 1 functor is exact.
 2. Induction on d = dim X. By the reduction compatibility assume X reduced; dimension 0 is the smooth proper case (WV.3/smooth-proper-slope-identification). If the theorem holds below dimension d, excision triangles (WV.3/rigid-to-witt-morphism (iii)) and the five lemma show it for open subsets of smooth proper schemes of dimension d, and allow replacing X by any dense open neighbourhood of its generic points, hence by an irreducible affine U, hence by a projective compactification X̄.
-3. For X̄ ⊂ P with Frobenius lift, take N ≥ 2d and the simplicial data of WV.3/simplicial-frobenius-embedding; on a dense open U the restriction U_• is an étale hypercovering. The Frobenius lift gives a morphism of descent spectral sequences E_1^{i,j} = H^j_{rig,c}(U_i/K)^{\<1} ⇒ H^{i+j}_{rig,c}(U_•/K)^{\<1} and E_1^{i,j} = H^j_c(U_i, WO_K) ⇒ H^{i+j}_c(U_•, WO_K), which is an isomorphism on E_1 for i ≤ N because each U_i is an open of a smooth projective X_i of dimension d.
+3. For X̄ ⊂ P with Frobenius lift, take N ≥ 2d and the simplicial data of WV.3/simplicial-frobenius-embedding; on a dense open U the restriction U_• is an étale hypercovering. The Frobenius lift gives a morphism of descent spectral sequences E_1^{i,j} = H^j_{rig,c}(U_i/K)^{\<1} ⇒ H^{i+j}_{rig,c}(U_•/K)^{\<1} and E_1^{i,j} = H^j_c(U_i, WO_K) ⇒ H^{i+j}_c(U_•, WO_K), which is an isomorphism on E_1 for i ≤ N because each U_i, being étale over U, has dimension d and is a dense open of the union of the d-dimensional components of the smooth projective X_i, to which the case of opens of smooth proper schemes of dimension d applies.
 4. The augmentations are isomorphisms in degrees ≤ N: on the rigid side by Tsuzuki's proper descent (PadicDifferentialEquationsAndRigidCohomology §RD.5.74 for the proper compactification X and its proper closed complement Y = X ∖ U, combined by excision §RD.4.19, PadicDifferentialEquationsAndRigidCohomology §RD.5.73, proper cohomological descent), on the Witt side by WV.2/witt-proper-hypercover-descent; both sides vanish above 2d (PadicDifferentialEquationsAndRigidCohomology §RD.5.78, compact support vanishing above twice dimension, WV.2/compact-support-finiteness).
 5. For the compact-support rigid descent step, the chosen X and Y = X ∖ U are proper. Apply ordinary proper-hypercover descent (PadicDifferentialEquationsAndRigidCohomology §RD.5.74) to X and Y separately and take the cone using excision §RD.4.19; no unprovided compact-support descent theorem is assumed.
 
@@ -880,21 +871,21 @@ Finite-type k-schemes in this layer, including bases and auxiliary schemes, are 
 
 ### WV.4.1 The Witt canonical system and Ekedahl duality
 
-The finite-type k-schemes in this target are quasi-projective over k; schemes obtained by extending the ground field are quasi-projective over that field. Let k be a perfect field and X a k-scheme of finite type of pure dimension d with structure map π: X → Spec k. For n ≥ 1 let K_{X,n} := W_n(π)^!(W_n(k)) be the dualizing complex of the W_n(k)-scheme W_nX (upper shriek of the finite type morphism W_nX → Spec W_n(k)); the K_{X,n} form a projective system (a Witt dualizing system) with Frobenius, Verschiebung and restriction. The Witt canonical system is W_nω_X := H^{−d}(K_{X,n}) and Wω_X := lim_n W_nω_X. Properties: (1) W_1ω_X is the canonical sheaf ω_X when X is normal; (2) K_{X,n} is concentrated in degrees [−d, 0], and W_nω_X[d] → K_{X,n} is a quasi-isomorphism when X is Cohen–Macaulay; (3) W_nω_X is a coherent S2 sheaf on W_nX; (4) for X smooth, use W_•ω_X ≅ W_•Ω^d_X from CrystallineCohomology §CR.3:duality.1 (crysTrace_iso and crysTrace_etale_local), and W_•Ω^•_X is self-dual: the product pairing W_nΩ^i ⊗ W_nΩ^{d−i} → W_nΩ^d induces an isomorphism of the Cousin complex of W_•Ω_X with its dual (Ekedahl); (5) for a proper morphism f: X → Y between k-schemes of the same pure dimension there is a trace f_\*: f_\*W_•ω_X → W_•ω_Y, compatible with composition and localization; (6) 0 → W_{n−1}ω_X →(p) W_nω_X →(F^{n−1}) ω_X is exact, and right exact if X is CM. (CR12, Definition 4.1.2, Remark 4.1.3, Proposition 4.1.4 and proof, pp. 73–75; CR12, §1.6–1.10, in particular Corollaries 1.10.5–1.10.6, pp. 16–33; CR12, Introduction 0.3, p. 4).
+Let k be a perfect field and X a k-scheme of finite type of pure dimension d with structure map π: X → Spec k. For n ≥ 1 let K_{X,n} := W_n(π)^!(W_n(k)) be the dualizing complex of the W_n(k)-scheme W_nX (upper shriek of the finite type morphism W_nX → Spec W_n(k)); the K_{X,n} form a projective system (a Witt dualizing system) with Frobenius, Verschiebung and restriction. The Witt canonical system is W_nω_X := H^{−d}(K_{X,n}) and Wω_X := lim_n W_nω_X. Properties: (1) W_1ω_X is the canonical sheaf ω_X when X is normal; (2) K_{X,n} is concentrated in degrees [−d, 0], and W_nω_X[d] → K_{X,n} is a quasi-isomorphism when X is Cohen–Macaulay; (3) W_nω_X is a coherent S2 sheaf on W_nX; (4) for X smooth, use W_•ω_X ≅ W_•Ω^d_X from CrystallineCohomology §CR.3:duality.1 (crysTrace_iso and crysTrace_etale_local), and W_•Ω^•_X is self-dual: the product pairing W_nΩ^i ⊗ W_nΩ^{d−i} → W_nΩ^d induces an isomorphism of the Cousin complex of W_•Ω_X with its dual (Ekedahl); (5) for a proper morphism f: X → Y between k-schemes of the same pure dimension there is a trace f_\*: f_\*W_•ω_X → W_•ω_Y, compatible with composition and localization; (6) 0 → W_{n−1}ω_X →(p) W_nω_X →(F^{n−1}) ω_X is exact, and right exact if X is CM. (CR12, Definition 4.1.2, Remark 4.1.3, Proposition 4.1.4 and proof, pp. 73–75; CR12, §1.6–1.10, in particular Corollaries 1.10.5–1.10.6, pp. 16–33; CR12, Introduction 0.3, p. 4).
 
-The base, source, target and finite-type auxiliary k-schemes are quasi-projective over k (CR12 §§2, 3, 4). Generic fibres and other field extensions use their own ground field. k perfect; X of finite type and pure dimension d; duality for the finite type W_n(k)-schemes W_nX. The smooth top-form trace identification is imported from CrystallineCohomology §CR.3:duality.1; full product self-duality uses CR12 §1.10.
+k perfect; X of finite type and pure dimension d; duality for the finite type W_n(k)-schemes W_nX. The smooth top-form trace identification is imported from CrystallineCohomology §CR.3:duality.1; full product self-duality uses CR12 §1.10.
 
 *Needs:* WV.0/witt-sheaf; SchemeAndStackFoundations §2.21, scheme dualizing; SchemeAndStackFoundations §2.19, upper shriek compactification independence; SchemeAndStackFoundations §2.21, sheafified grothendieck duality; CrystallineCohomology §CR.4.6, classical de Rham–Witt; CrystallineCohomology §CR.3:duality.1, crysTrace_iso; CrystallineCohomology §CR.3:duality.1, crysTrace_etale_local.
 
 The construction has the following API.
 
-- For the quasi-projective schemes of this target: K_{X,n} = W_n(π)^!W_n(k), as a projective system with F, V and restriction.
-- For the quasi-projective schemes of this target: W_nω_X := H^{−d}(K_{X,n}) and Wω_X := lim_n W_nω_X for X of pure dimension d.
-- For the quasi-projective schemes of this target: For X normal, W_1ω_X ≅ ω_X (the canonical sheaf of SchemeAndStackFoundations:SF.2).
-- For the quasi-projective schemes of this target: If X is Cohen–Macaulay, W_nω_X[d] ≅ K_{X,n}.
-- For the quasi-projective schemes of this target: Proper f: X → Y of the same pure dimension gives f_\*: f_\*W_•ω_X → W_•ω_Y, with (g ∘ f)_\* = g_\* ∘ g_\*(f_\*) and compatibility with restriction to opens.
-- For the quasi-projective schemes of this target: 0 → W_{n−1}ω_X →(p) W_nω_X →(F^{n−1}) ω_X is exact, and surjective on the right for X CM.
-- For the quasi-projective schemes of this target: For X smooth, the product pairing induces E(W_•Ω_X) ≅ Hom(W_•Ω_X, K_X)(−N)[−N].
+- K_{X,n} = W_n(π)^!W_n(k), as a projective system with F, V and restriction.
+- W_nω_X := H^{−d}(K_{X,n}) and Wω_X := lim_n W_nω_X for X of pure dimension d.
+- For X normal, W_1ω_X ≅ ω_X (the canonical sheaf of SchemeAndStackFoundations:SF.2).
+- If X is Cohen–Macaulay, W_nω_X[d] ≅ K_{X,n}.
+- Proper f: X → Y of the same pure dimension gives f_\*: f_\*W_•ω_X → W_•ω_Y, with (g ∘ f)_\* = g_\* ∘ g_\*(f_\*) and compatibility with restriction to opens.
+- 0 → W_{n−1}ω_X →(p) W_nω_X →(F^{n−1}) ω_X is exact, and surjective on the right for X CM.
+- For X smooth, the product pairing induces E(W_•Ω_X) ≅ Hom(W_•Ω_X, K_X)(−N)[−N].
 
 A proof route is the following.
 
@@ -909,7 +900,6 @@ A proof route is the following.
 - For X a smooth curve, W_1ω_X = Ω¹_X and W_nω_X = W_nΩ¹_X; for X = P¹, H¹(P¹, Wω) = W(k) via the trace.
 - n = 1 recovers the Grothendieck dualizing complex π^!k of X and its H^{−d}.
 - For a non-CM X (e.g. two planes in A⁴ meeting in a point), K_{X,1} has cohomology outside degree −d, so W_1ω_X[d] → K_{X,1} is not a quasi-isomorphism.
-- For X = Spec k, W_nω_X = W_n(k).
 - For X smooth of dimension d, W_1ω_X = Ω^d_X.
 - For X = P¹, the point cycle has trace 1 and the product pairs H⁰(WO) = W(k) with H¹(WΩ¹) = W(k); this agrees with the parent’s top-form trace, whose dimension-one sign is (−1)^0 = 1.
 
@@ -919,21 +909,21 @@ These results apply to CR12, Definition 4.4.4 (3), p. 82: Witt-rational singular
 
 ### WV.4.2 Pushforward on Hodge–Witt cohomology with supports
 
-The finite-type k-schemes in this target are quasi-projective over k; schemes obtained by extending the ground field are quasi-projective over that field. Let S be a k-scheme. Let Sm\*/S be the category of pairs (X, Φ) with X an S-scheme smooth over k and Φ a family of supports on X, morphisms f: (X, Φ) → (Y, Ψ) being S-morphisms with f|_Φ proper and f(Φ) ⊂ Ψ. For f between pure-dimensional X, Y of relative dimension r = dim X − dim Y there is a pushforward f_\*: Ĥ((X, Φ)/S) → Ĥ((Y, Ψ)/S)(−r), where Ĥ((X, Φ)/S) = ⊕_{i,q} R^i(a_X)_Φ W Ω^q_X (a_X: X → S), the twist (−r) shifting the bidegree (q, i) to (q − r, i − r). It is defined from Ekedahl duality and the trace for the compactly supported direct image, makes (X, Φ) ↦ Ĥ((X, Φ)/S) a functor, commutes with F, V and d, is compatible with restriction to opens of S, and for open immersions is the excision isomorphism. For a finite morphism f: X → Y of connected smooth k-schemes, f_\* ∘ f^\* = deg(f) on W_•Ω_Y. (CR12, §2.3, Definition 2.3.1, Proposition 2.3.3, Proposition 2.3.4, pp. 39–40; CR12, Remark 2.3.2, p. 40).
+Let S be a k-scheme. Let Sm\*/S be the category of pairs (X, Φ) with X an S-scheme smooth over k and Φ a family of supports on X, morphisms f: (X, Φ) → (Y, Ψ) being S-morphisms with f|_Φ proper and f(Φ) ⊂ Ψ. For f between pure-dimensional X, Y of relative dimension r = dim X − dim Y there is a pushforward f_\*: Ĥ((X, Φ)/S) → Ĥ((Y, Ψ)/S)(−r), where Ĥ((X, Φ)/S) = ⊕_{i,q} R^i(a_X)_Φ W Ω^q_X (a_X: X → S), the twist (−r) shifting the bidegree (q, i) to (q − r, i − r). It is defined from Ekedahl duality and the trace for the compactly supported direct image, makes (X, Φ) ↦ Ĥ((X, Φ)/S) a functor, commutes with F, V and d, is compatible with restriction to opens of S, and for open immersions is the excision isomorphism. For a finite morphism f: X → Y of connected smooth k-schemes, f_\* ∘ f^\* = deg(f) on W_•Ω_Y. (CR12, §2.3, Definition 2.3.1, Proposition 2.3.3, Proposition 2.3.4, pp. 39–40; CR12, Remark 2.3.2, p. 40).
 
-The base, source, target and finite-type auxiliary k-schemes are quasi-projective over k (CR12 §§2, 3, 4). Generic fibres and other field extensions use their own ground field. X, Y smooth over k (not necessarily proper); f proper on the supports. The ˆ indicates the inverse limit over n of the de Rham–Witt systems.
+X, Y smooth over k (not necessarily proper); f proper on the supports. The ˆ indicates the inverse limit over n of the de Rham–Witt systems.
 
 *Needs:* WV.4/witt-canonical-system; SchemeAndStackFoundations §2.7, sheaf cohomology with supports; SchemeAndStackFoundations §2.21, trace_finite; CrystallineCohomology §CR.4.6, classical de Rham–Witt; Mathlib `AlgebraicGeometry.Smooth`.
 
 The construction has the following API.
 
-- For the quasi-projective schemes of this target: Ĥ((X, Φ)/S) = ⊕_{i,q} R^i(a_X)_Φ WΩ^q_X as a de Rham–Witt module over S.
-- For the quasi-projective schemes of this target: f_\*: Ĥ((X, Φ)/S) → Ĥ((Y, Ψ)/S)(−r) for f in Sm\*/S of relative dimension r.
-- For the quasi-projective schemes of this target: (g ∘ f)_\* = g_\* ∘ f_\* and id_\* = id.
-- For the quasi-projective schemes of this target: f_\* commutes with F, V and d.
-- For the quasi-projective schemes of this target: For U ⊂ S open, (f_U)_\* = (f_\*)|_U.
-- For the quasi-projective schemes of this target: For an open immersion j: (U, Φ) → (X, Φ), j_\* is the excision isomorphism.
-- For the quasi-projective schemes of this target: For finite f: X → Y of connected smooth k-schemes, f_\* ∘ f^\* = deg(f) · id on W_•Ω_Y.
+- Ĥ((X, Φ)/S) = ⊕_{i,q} R^i(a_X)_Φ WΩ^q_X as a de Rham–Witt module over S.
+- f_\*: Ĥ((X, Φ)/S) → Ĥ((Y, Ψ)/S)(−r) for f in Sm\*/S of relative dimension r.
+- (g ∘ f)_\* = g_\* ∘ f_\* and id_\* = id.
+- f_\* commutes with F, V and d.
+- For U ⊂ S open, (f_U)_\* = (f_\*)|_U.
+- For an open immersion j: (U, Φ) → (X, Φ), j_\* is the excision isomorphism.
+- For finite f: X → Y of connected smooth k-schemes, f_\* ∘ f^\* = deg(f) · id on W_•Ω_Y.
 
 A proof route is the following.
 
@@ -947,7 +937,6 @@ A proof route is the following.
 - id_\* = id.
 - At level n = 1, f_\* is the pushforward on Hodge cohomology with supports of Chatzistamatiou–Rülling 2011 (Grothendieck duality trace).
 - For the relative Frobenius F: A¹ → A¹^{(1)} (finite of degree p), F_\*F^\* = p ≠ 1 on W_•O: the pushforward is not an inverse of pullback for nontrivial finite maps.
-- For π: P¹ → Spec k, π_\*: H¹(P¹, WΩ¹) → W(k) is the trace, an isomorphism.
 - For the Frobenius-twisted F_{X/k}: X → X^{(1)} of degree p^{dim X}, F_\* F^\* = p^{dim X}.
 
 These results apply to CR12, Proposition 3.5.6 (ii), p. 64: the graph of a proper morphism acts by the pushforward; CR12, Lemmas 3.6.1–3.6.2, pp. 67–68: pushforward along a smooth alteration of a closed subset shifts bidegree by its codimension; CR12, Lemma 4.2.4, p. 77: u_\*u^\* = deg u for universal homeomorphisms between normal schemes.
@@ -956,20 +945,20 @@ These results apply to CR12, Proposition 3.5.6 (ii), p. 64: the graph of a prope
 
 ### WV.4.3 Cycle classes in Hodge–Witt cohomology with supports
 
-The finite-type k-schemes in this target are quasi-projective over k; schemes obtained by extending the ground field are quasi-projective over that field. For X smooth over k and an integral closed subscheme Z ⊂ X of codimension c, Gros's cycle class ĉl(Z) ∈ H^c_Z(X, WΩ^c_X) is the image of the logarithmic cycle class cl_log(Z) ∈ H^c_Z(X_ét, W_•Ω^c_{X,log}) (the Gysin image of 1 on the smooth locus of Z, extended by purity). Extended linearly, these classes form the unique morphism of weak cohomology theories with supports from Chow groups with supports (CH_\*, CH^\*, ×, 1) to (PĤ_\*, PĤ^\*, T, e), where PĤ(X, Φ) = ⊕_p R^pΓ_Φ WΩ^p_X. In particular cycle classes are compatible with proper pushforward, flat and Gysin pullback, exterior products, ĉl(X) = 1, and ĉl of a divisor {0} ⊂ P¹ is c_1(O(1)). (CR12, 3.2.1–3.2.3 (the cycle class of Gros), pp. 50–51; CR12, Theorem 3.3.10 and Proposition 3.4.3, pp. 56–58; CR11, §1.1–1.2, Definition 1.1.1 and Theorem 1.2.3, pp. 5–15).
+For X smooth over k and an integral closed subscheme Z ⊂ X of codimension c, Gros's cycle class ĉl(Z) ∈ H^c_Z(X, WΩ^c_X) is the image of the logarithmic cycle class cl_log(Z) ∈ H^c_Z(X_ét, W_•Ω^c_{X,log}) (the Gysin image of 1 on the smooth locus of Z, extended by purity). Extended linearly, these classes form the unique morphism of weak cohomology theories with supports from Chow groups with supports (CH_\*, CH^\*, ×, 1) to (PĤ_\*, PĤ^\*, T, e), where PĤ(X, Φ) = ⊕_p R^pΓ_Φ WΩ^p_X. In particular cycle classes are compatible with proper pushforward, flat and Gysin pullback, exterior products, ĉl(X) = 1, and ĉl of a divisor {0} ⊂ P¹ is c_1(O(1)). (CR12, 3.2.1–3.2.3 (the cycle class of Gros), pp. 50–51; CR12, Theorem 3.3.10 and Proposition 3.4.3, pp. 56–58; CR11, §1.1–1.2, Definition 1.1.1 and Theorem 1.2.3, pp. 5–15).
 
-The base, source, target and finite-type auxiliary k-schemes are quasi-projective over k (CR12 §§2, 3, 4). Generic fibres and other field extensions use their own ground field. X smooth over k; classes live in Hodge–Witt cohomology with supports in Z; uniqueness is among morphisms of weak cohomology theories with supports.
+X smooth over k; classes live in Hodge–Witt cohomology with supports in Z; uniqueness is among morphisms of weak cohomology theories with supports.
 
 *Needs:* WV.4/hodge-witt-pushforward; SchemeAndStackFoundations §5.1, chow group; SchemeAndStackFoundations §5.5, refined gysin; SchemeAndStackFoundations §5.2, chow proper push; SchemeAndStackFoundations §5.2, flat pullback; CrystallineCohomology §CR.4.8, logarithmic Witt sheaves; WV.4/proper-correspondence-category.
 
 The construction has the following API.
 
-- For the quasi-projective schemes of this target: ĉl(Z) ∈ H^c_Z(X, WΩ^c_X) for Z ⊂ X closed integral of codimension c, X smooth.
-- For the quasi-projective schemes of this target: The unique morphism of weak cohomology theories with supports CH → PĤ extending ĉl.
-- For the quasi-projective schemes of this target: ĉl(f_\*α) = f_\*ĉl(α) for f proper on supports.
-- For the quasi-projective schemes of this target: ĉl(f^!α) = f^\*ĉl(α) for refined Gysin pullback along morphisms of smooth schemes.
-- For the quasi-projective schemes of this target: ĉl(α × β) = ĉl(α) × ĉl(β).
-- For the quasi-projective schemes of this target: ĉl([X]) = 1.
+- ĉl(Z) ∈ H^c_Z(X, WΩ^c_X) for Z ⊂ X closed integral of codimension c, X smooth.
+- The unique morphism of weak cohomology theories with supports CH → PĤ extending ĉl.
+- ĉl(f_\*α) = f_\*ĉl(α) for f proper on supports.
+- ĉl(f^!α) = f^\*ĉl(α) for refined Gysin pullback along morphisms of smooth schemes.
+- ĉl(α × β) = ĉl(α) × ĉl(β).
+- ĉl([X]) = 1.
 
 A proof route is the following.
 
@@ -982,8 +971,6 @@ A proof route is the following.
 - For a k-point x of P¹, π_\*ĉl(x) = 1 ∈ W(k).
 - For an effective Cartier divisor D = div(t) on smooth X, ĉl(D) is the image of d log[t] under the boundary H⁰(X ∖ D, WΩ¹) → H¹_D(X, WΩ¹), i.e. the first Chern class of O(D).
 - ĉl does not distinguish rationally equivalent cycles: ĉl({0}) = ĉl({∞}) in H¹(P¹, WΩ¹), although {0} ≠ {∞} as cycles.
-- ĉl(X) = 1 ∈ H⁰(X, WO_X).
-- For a k-point x ∈ P¹, ĉl(x) ∈ H¹(P¹, WΩ¹) has trace 1 under π_\*.
 
 These results apply to CR12, §3.5, p. 61: Cor_ĉl turns proper correspondences into maps of relative Hodge–Witt cohomology; CR12, Lemma 3.5.5 and §3.5.7, pp. 63–64: local cup product with ĉl(Z).
 
@@ -991,21 +978,21 @@ These results apply to CR12, §3.5, p. 61: Cor_ĉl turns proper correspondences 
 
 ### WV.4.4 The category of proper correspondences over a base
 
-The finite-type k-schemes in this target are quasi-projective over k; schemes obtained by extending the ground field are quasi-projective over that field. Let S be a k-scheme. For a smooth k-scheme T and a family Φ of supports, define CH(T, Φ) as the free abelian group on integral closed subsets in Φ modulo divisors of rational functions on integral closed subsets that also lie in Φ (CR11 Definition 1.1.14, p. 10, lines 430–435). The category C_S has objects k-morphisms f: X → S with X smooth and quasi-projective over k; Hom_{C_S}(X, Y) := CH(X ×_k Y, P(X ×_S Y)), the Chow group with supports in the family P(X ×_S Y) of closed subsets of X ×_S Y that are proper over Y; composition is β ∘ α := p_{13\*}(p_{12}^\*α · p_{23}^\*β) computed with the refined intersection product inside X × Y × Z with supports proper over Z. The identity of X is the diagonal Δ_X. If X and Y are proper over S, Hom_{C_S}(X, Y) = CH(X ×_S Y). (CR12, 3.5.1–3.5.2, p. 62; CR11, §1.3 (Correspondences), p. 18).
+Let S be a k-scheme. For a smooth k-scheme T and a family Φ of supports, define CH(T, Φ) as the free abelian group on integral closed subsets in Φ modulo divisors of rational functions on integral closed subsets that also lie in Φ (CR11 Definition 1.1.14, p. 10, lines 430–435). The category C_S has objects k-morphisms f: X → S with X smooth and quasi-projective over k; Hom_{C_S}(X, Y) := CH(X ×_k Y, P(X ×_S Y)), the Chow group with supports in the family P(X ×_S Y) of closed subsets of X ×_S Y that are proper over Y; composition is β ∘ α := p_{13\*}(p_{12}^\*α · p_{23}^\*β) computed with the refined intersection product inside X × Y × Z with supports proper over Z. The identity of X is the diagonal Δ_X. If X and Y are proper over S, Hom_{C_S}(X, Y) = CH(X ×_S Y). (CR12, 3.5.1–3.5.2, p. 62; CR11, §1.3 (Correspondences), p. 18).
 
-The base, source, target and finite-type auxiliary k-schemes are quasi-projective over k (CR12 §§2, 3, 4). Generic fibres and other field extensions use their own ground field. X, Y, Z smooth quasi-projective over k; supports proper over the target; the supported Chow groups defined here from the ordinary cycle and rational-equivalence operations of SchemeAndStackFoundations §§5.1–5.2.
+X, Y, Z smooth quasi-projective over k; supports proper over the target; the supported Chow groups defined here from the ordinary cycle and rational-equivalence operations of SchemeAndStackFoundations §§5.1–5.2.
 
 *Needs:* SchemeAndStackFoundations §5.1, chow group; SchemeAndStackFoundations §5.5, refined gysin; SchemeAndStackFoundations §5.5, gysin interchange; SchemeAndStackFoundations §5.5, gysin proper flat; SchemeAndStackFoundations §5.2, chow proper push; MotivesAndAlgebraicCycles §0.1, Chow correspondences; MotivesAndAlgebraicCycles §0.1, composition of Chow correspondences.
 
 The construction has the following API.
 
 - For T smooth quasi-projective and a family Φ of supports, CH(T, Φ) is the supported Chow group just defined; a map of support families induces the natural map.
-- For the quasi-projective schemes of this target: The category C_S of smooth quasi-projective S-schemes and proper correspondences.
-- For the quasi-projective schemes of this target: Composition via refined intersection products; associative with identity Δ_X.
-- For the quasi-projective schemes of this target: An S-morphism h: X → Y gives [Γ_h^t] ∈ Hom(Y, X); a proper h gives [Γ_h] ∈ Hom(X, Y).
-- For the quasi-projective schemes of this target: [Γ_{g∘h}] = [Γ_g] ∘ [Γ_h] for proper h, g.
-- For the quasi-projective schemes of this target: If X, Y are proper over S then Hom(X, Y) = CH(X ×_S Y).
-- For the quasi-projective schemes of this target: Restriction to opens U ⊂ S defines a functor C_S → C_U.
+- The category C_S of smooth quasi-projective S-schemes and proper correspondences.
+- Composition via refined intersection products; associative with identity Δ_X.
+- An S-morphism h: X → Y gives [Γ_h^t] ∈ Hom(Y, X); a proper h gives [Γ_h] ∈ Hom(X, Y).
+- [Γ_{g∘h}] = [Γ_g] ∘ [Γ_h] for proper h, g.
+- If X, Y are proper over S then Hom(X, Y) = CH(X ×_S Y).
+- Restriction to opens U ⊂ S defines a functor C_S → C_U.
 
 A proof route is the following.
 
@@ -1016,7 +1003,6 @@ A proof route is the following.
 
 - The identity of X is [Δ_X].
 - For a finite flat h: X → Y of degree d between smooth integral schemes over S = Y, [Γ_h] ∘ [Γ_h^t] = d·[Δ_Y].
-- For S = Spec k and smooth projective X, Y, after ⊗ ℚ the composition agrees with that of MotivesAndAlgebraicCycles §0.1, composition of Chow correspondences on the rational correspondences of MotivesAndAlgebraicCycles §0.1, Chow correspondences.
 - For S = Spec k, the graph of the structure map A¹ → Spec k is not proper over the target, so it is not an element of Hom_{C_k}(A¹, Spec k), while its transpose lies in Hom_{C_k}(Spec k, A¹): pushforward correspondences exist only for proper maps.
 - For S = Spec k and X, Y smooth projective, Hom_{C_k}(X, Y) ⊗ ℚ is the space of rational Chow correspondences of MotivesAndAlgebraicCycles §0.1, Chow correspondences (all degrees together), and the compositions agree; C_k refines that category integrally and to quasi-projective schemes with supports proper over the target.
 - For Φ = {∅}, CH(T, Φ) = 0, whereas for all closed supports it is CH(T).
@@ -1028,20 +1014,20 @@ These results apply to CR12, Proposition 3.5.4, p. 63: the source category of th
 
 ### WV.4.5 Action of proper correspondences on relative Hodge–Witt cohomology
 
-The finite-type k-schemes in this target are quasi-projective over k; schemes obtained by extending the ground field are quasi-projective over that field. Let S be a k-scheme. There is a functor Ĥ(?/S): C_S → (de Rham–Witt modules over S), sending f: X → S to ⊕_{p,q} R^qf_\*WΩ^p_X and a ∈ Hom_{C_S}(X, Y) of degree i to the sheafification of the maps Cor_ĉl(a_U): Ĥ(f^{−1}U)(−i) → Ĥ(g^{−1}U) on opens U ⊂ S, given by α ↦ pr_{2\*}(pr_1^\*α ∪ ĉl(a_U)). It is compatible with F, V and d. If Z is the transpose of the graph of an S-morphism h, Ĥ([Z]/S) = h^\*; if Z is the graph of a proper h, Ĥ([Z]/S) = h_\*. For h: S → T and Z ⊂ X ×_S Y integral, finite and surjective over Y (X, Y integral, f, g affine), Ĥ([Z]/T) = ⊕_i R^ih_\* Ĥ([Z]/S). (CR12, Theorem 1 (introduction), p. 3; 3.5.2–3.5.3, Proposition 3.5.4, pp. 62–63; CR12, Proposition 3.5.6 and Proposition 3.5.10, pp. 64–66).
+Let S be a k-scheme. There is a functor Ĥ(?/S): C_S → (de Rham–Witt modules over S), sending f: X → S to ⊕_{p,q} R^qf_\*WΩ^p_X and a ∈ Hom_{C_S}(X, Y) of degree i to the sheafification of the maps Cor_ĉl(a_U): Ĥ(f^{−1}U)(−i) → Ĥ(g^{−1}U) on opens U ⊂ S, given by α ↦ pr_{2\*}(pr_1^\*α ∪ ĉl(a_U)). It is compatible with F, V and d. If Z is the transpose of the graph of an S-morphism h, Ĥ([Z]/S) = h^\*; if Z is the graph of a proper h, Ĥ([Z]/S) = h_\*. For h: S → T and Z ⊂ X ×_S Y integral, finite and surjective over Y (X, Y integral, f, g affine), Ĥ([Z]/T) = ⊕_i R^ih_\* Ĥ([Z]/S). (CR12, Theorem 1 (introduction), p. 3; 3.5.2–3.5.3, Proposition 3.5.4, pp. 62–63; CR12, Proposition 3.5.6 and Proposition 3.5.10, pp. 64–66).
 
-The base, source, target and finite-type auxiliary k-schemes are quasi-projective over k (CR12 §§2, 3, 4). Generic fibres and other field extensions use their own ground field. Objects smooth quasi-projective over k; the twist (−i) shifts bidegree by the degree i of the correspondence.
+Objects smooth quasi-projective over k; the twist (−i) shifts bidegree by the degree i of the correspondence.
 
 *Needs:* WV.4/proper-correspondence-category; WV.4/hodge-witt-cycle-class; WV.4/hodge-witt-pushforward.
 
 The construction has the following API.
 
-- For the quasi-projective schemes of this target: Ĥ(a/S): Ĥ(X/S)(−i) → Ĥ(Y/S) for a ∈ Hom_{C_S}(X, Y) of degree i.
-- For the quasi-projective schemes of this target: Ĥ(b ∘ a/S) = Ĥ(b/S) ∘ Ĥ(a/S) and Ĥ(Δ_X/S) = id.
-- For the quasi-projective schemes of this target: Ĥ(a/S) commutes with F, V and d.
-- For the quasi-projective schemes of this target: Ĥ([Γ_h^t]/S) = h^\*.
-- For the quasi-projective schemes of this target: Ĥ([Γ_h]/S) = h_\* for proper h.
-- For the quasi-projective schemes of this target: For h: S → T and Z finite surjective over Y, Ĥ([Z]/T) = ⊕_i R^ih_\*Ĥ([Z]/S).
+- Ĥ(a/S): Ĥ(X/S)(−i) → Ĥ(Y/S) for a ∈ Hom_{C_S}(X, Y) of degree i.
+- Ĥ(b ∘ a/S) = Ĥ(b/S) ∘ Ĥ(a/S) and Ĥ(Δ_X/S) = id.
+- Ĥ(a/S) commutes with F, V and d.
+- Ĥ([Γ_h^t]/S) = h^\*.
+- Ĥ([Γ_h]/S) = h_\* for proper h.
+- For h: S → T and Z finite surjective over Y, Ĥ([Z]/T) = ⊕_i R^ih_\*Ĥ([Z]/S).
 
 A proof route is the following.
 
@@ -1055,8 +1041,6 @@ A proof route is the following.
 - For a finite flat degree-d S-morphism h between integral smooth schemes, Ĥ([Γ_h] ∘ [Γ_h^t]/S) = d·id on Ĥ(Y/S).
 - For S = Spec k and h: X → Y, Ĥ([Γ_h^t]/k) is the pullback H^q(Y, WΩ^p) → H^q(X, WΩ^p).
 - For S = Spec k, X = Y = P¹ and a k-point x: [P¹ × {x}] acts by 0 on H⁰(P¹, WO) and sends α ∈ H¹(P¹, WΩ¹) to (∫α)·ĉl(x), while [{x} × P¹] acts as the identity on H⁰(P¹, WO) = W(k) and by 0 on H¹(P¹, WΩ¹); neither is the identity, but their sum is, as [Δ] = [{x} × P¹] + [P¹ × {x}] in CH¹(P¹ × P¹).
-- The diagonal acts as the identity.
-- For a finite flat h of degree d, Ĥ([Γ_h] ∘ [Γ_h^t]/S) = d.
 
 These results apply to CR12, Theorem 4.3.3, p. 79: the correspondences α, β, γ between finite covers act on R^if_\*WO_ℚ and give inverse isomorphisms up to degree; CR12, Proposition 4.2.7, p. 78: a universal homeomorphism and a finite cover combine into a projector; CR12, Theorem 4.8.1, p. 96: a correspondence decomposing the diagonal of the generic fibre kills positive-degree WO cohomology.
 
@@ -1064,9 +1048,9 @@ These results apply to CR12, Theorem 4.3.3, p. 79: the correspondences α, β, �
 
 ### WV.4.6 Correspondences supported in positive codimension kill WO-cohomology up to bounded torsion
 
-The finite-type k-schemes in this target are quasi-projective over k; schemes obtained by extending the ground field are quasi-projective over that field. Let S be a k-scheme, X → S and Y → S in C_S, Z ⊂ X ×_S Y a closed subset proper over Y, and r ≥ 0. (i) If every point of Z maps to a point of codimension ≥ r in Y, there is N ≥ 1 with N · image(Ĥ([Z]/S)) ⊂ ⊕_{p ≥ r, q ≥ r} R^qg_\*WΩ^p_Y. (ii) If X is equidimensional of dimension d and every point of Z maps to a point of codimension ≥ r in X, there is N ≥ 1 with N · ⊕_{p > d−r or q > d−r} R^qf_\*WΩ^p_X ⊂ ker Ĥ([Z]/S). In particular, for r ≥ 1, a correspondence supported over a proper closed subset of Y (resp. of X) acts by a bounded-torsion map on ⊕_q R^qf_\*WO_X (resp. on ⊕_q R^qf_\*Wω_X). (CR12, Lemma 3.6.1 and Lemma 3.6.2 with proofs, Remark 3.6.3, pp. 67–68).
+Let S be a k-scheme, X → S and Y → S in C_S, Z ⊂ X ×_S Y a closed subset proper over Y, and r ≥ 0. (i) If every point of Z maps to a point of codimension ≥ r in Y, there is N ≥ 1 with N · image(Ĥ([Z]/S)) ⊂ ⊕_{p ≥ r, q ≥ r} R^qg_\*WΩ^p_Y. (ii) If X is equidimensional of dimension d and every point of Z maps to a point of codimension ≥ r in X, there is N ≥ 1 with N · ⊕_{p > d−r or q > d−r} R^qf_\*WΩ^p_X ⊂ ker Ĥ([Z]/S). In particular, for r ≥ 1, a correspondence supported over a proper closed subset of Y (resp. of X) acts by a bounded-torsion map on ⊕_q R^qf_\*WO_X (resp. on ⊕_q R^qf_\*Wω_X). (CR12, Lemma 3.6.1 and Lemma 3.6.2 with proofs, Remark 3.6.3, pp. 67–68).
 
-The base, source, target and finite-type auxiliary k-schemes are quasi-projective over k (CR12 §§2, 3, 4). Generic fibres and other field extensions use their own ground field. Z proper over Y; N is the degree of a field extension coming from an alteration (N = 1 under resolution of singularities).
+Z proper over Y; N is the degree of a field extension coming from an alteration (N = 1 under resolution of singularities).
 
 *Needs:* WV.4/hodge-witt-correspondence-action; WV.4/hodge-witt-pushforward; SchemeAndStackFoundations §4.19, de jong alteration theorem.
 
@@ -1106,20 +1090,20 @@ Finite-type k-schemes in this layer, including bases and auxiliary schemes, are 
 
 ### WV.5.1 Finite quotients and topological finite quotients
 
-The finite-type k-schemes in this target are quasi-projective over k; schemes obtained by extending the ground field are quasi-projective over that field. Let k be a perfect field of characteristic p. A normal equidimensional k-scheme of finite type X is a finite quotient if there is a finite surjective morphism Y → X from a smooth k-scheme Y; a tame finite quotient if Y → X can be chosen of degree prime to p (as a locally constant function on Y); a topological finite quotient if there is a universal homeomorphism u: X → X′ onto a finite quotient X′. Equivalently (for X normal equidimensional) there is a universal homeomorphism X′ → X from a finite quotient X′. A universal homeomorphism u: X → Y of integral schemes with Y normal has degree p^n and factors the n-th relative Frobenius: there is v: Y → X^{(n)} with v ∘ u = F^n_{X/k} and (u × id) ∘ v = F^n_{Y/k}. (CR12, 4.2.1–4.2.2, Lemma 4.2.3, Definition 4.2.5, Remark 4.2.6, pp. 76–77; CR12, Introduction 0.2, p. 3).
+Let k be a perfect field of characteristic p. A normal equidimensional k-scheme of finite type X is a finite quotient if there is a finite surjective morphism Y → X from a smooth k-scheme Y; a tame finite quotient if Y → X can be chosen of degree prime to p (as a locally constant function on Y); a topological finite quotient if there is a universal homeomorphism u: X → X′ onto a finite quotient X′. Equivalently (for X normal equidimensional) there is a universal homeomorphism X′ → X from a finite quotient X′. A universal homeomorphism u: X → Y of integral schemes with Y normal has degree p^n and factors the n-th relative Frobenius: there is v: Y → X^{(n)} with v ∘ u = F^n_{X/k} and (u × id) ∘ v = F^n_{Y/k}. (CR12, 4.2.1–4.2.2, Lemma 4.2.3, Definition 4.2.5, Remark 4.2.6, pp. 76–77; CR12, Introduction 0.2, p. 3).
 
-The base, source, target and finite-type auxiliary k-schemes are quasi-projective over k (CR12 §§2, 3, 4). Generic fibres and other field extensions use their own ground field. A universal homeomorphism is integral, surjective and radicial. The morphisms here are finite type, hence these universal homeomorphisms are finite; for integral schemes with normal target they are exactly finite surjective maps with purely inseparable function-field extension.
+A universal homeomorphism is integral, surjective and radicial. The morphisms here are finite type, hence these universal homeomorphisms are finite; for integral schemes with normal target they are exactly finite surjective maps with purely inseparable function-field extension.
 
 *Needs:* SchemeAndStackFoundations §0.23, universal homeomorphism criteria; SchemeAndStackFoundations §0.29, relative frobenius; Mathlib `AlgebraicGeometry.IsFinite`; Mathlib `AlgebraicGeometry.Surjective`; Mathlib `AlgebraicGeometry.Smooth`.
 
 The construction has the following API.
 
-- For the quasi-projective schemes of this target: X normal equidimensional with a finite surjective Y → X, Y smooth over k.
-- For the quasi-projective schemes of this target: As above with degree prime to p.
-- For the quasi-projective schemes of this target: X admits a universal homeomorphism to a finite quotient.
-- For the quasi-projective schemes of this target: Smooth integral schemes are finite quotients.
-- For the quasi-projective schemes of this target: For X normal equidimensional, X is a topological finite quotient iff some finite quotient admits a universal homeomorphism to X.
-- For the quasi-projective schemes of this target: A universal homeomorphism u: X → Y of integral schemes with Y normal has deg u = p^n and factors F^n_{X/k} and F^n_{Y/k} as stated.
+- X normal equidimensional with a finite surjective Y → X, Y smooth over k.
+- As above with degree prime to p.
+- X admits a universal homeomorphism to a finite quotient.
+- Smooth integral schemes are finite quotients.
+- For X normal equidimensional, X is a topological finite quotient iff some finite quotient admits a universal homeomorphism to X.
+- A universal homeomorphism u: X → Y of integral schemes with Y normal has deg u = p^n and factors F^n_{X/k} and F^n_{Y/k} as stated.
 
 A proof route is the following.
 
@@ -1128,7 +1112,6 @@ A proof route is the following.
 
 **Checks.**
 
-- A smooth connected curve is a finite quotient (Y = X).
 - For p odd, the quadric cone Spec k[x², xy, y²] = A²/{±1} is a tame finite quotient (degree 2).
 - The affine cone over a smooth plane cubic is normal but not a topological finite quotient: finite quotients are WO-rational (WV.5/finite-quotients-witt-rational), while the cone is not (WV.5/isolated-singularity-criterion), since H¹(E, WO_{E,ℚ}) ≠ 0 for every elliptic curve E.
 - If X is a finite quotient then X^{(1)} is one, and the relative Frobenius X → X^{(1)} is a universal homeomorphism of degree p^{dim X}.
@@ -1141,24 +1124,24 @@ These results apply to CR12, Definition 4.3.1, p. 79: the source of a quasi-reso
 
 ### WV.5.2 Quasi-resolutions
 
-The finite-type k-schemes in this target are quasi-projective over k; schemes obtained by extending the ground field are quasi-projective over that field. A morphism f: X → Y between integral k-schemes is a quasi-resolution if its source X is a topological finite quotient, f is projective and surjective and finite over a dense open of Y, and the function-field extension k(Y) ⊂ k(X) is purely inseparable. Every integral k-scheme of finite type Y admits a quasi-resolution of the form X″/G → Y′ → Y, with Y′ → Y finite surjective from a normal integral Y′ with k(Y′)/k(Y) purely inseparable, X″ smooth integral quasi-projective with a finite group G acting, and X″/G → Y′ projective birational. Any two quasi-resolutions of Y are dominated by a third. For X, Y integral normal, a projective surjective generically finite f factors as X → Y′ → Y through the normalization Y′ of Y in k(X), with X → Y′ birational and Y′ → Y finite, a universal homeomorphism when k(X)/k(Y) is purely inseparable. (CR12, Definition 4.3.1, the factorization remark and Remark 4.3.2, p. 79; CR12, proof of Proposition 4.4.6 and of Corollary 4.5.1, pp. 83, 86; GNT19, Remark 3.1 and the following paragraph, p. 19; dJ97, Corollary 5.15 and proof, p. 620; dJ96, Corollary 7.4, pp. 88–89).
+A morphism f: X → Y between integral k-schemes is a quasi-resolution if its source X is a topological finite quotient, f is projective and surjective and finite over a dense open of Y, and the function-field extension k(Y) ⊂ k(X) is purely inseparable. Every integral k-scheme of finite type Y admits a quasi-resolution of the form X″/G → Y′ → Y, with Y′ → Y finite surjective from a normal integral Y′ with k(Y′)/k(Y) purely inseparable, X″ smooth integral quasi-projective with a finite group G acting, and X″/G → Y′ projective birational. Any two quasi-resolutions of Y are dominated by a third. For X, Y integral normal, a projective surjective generically finite f factors as X → Y′ → Y through the normalization Y′ of Y in k(X), with X → Y′ birational and Y′ → Y finite, a universal homeomorphism when k(X)/k(Y) is purely inseparable. (CR12, Definition 4.3.1, the factorization remark and Remark 4.3.2, p. 79; CR12, proof of Proposition 4.4.6 and of Corollary 4.5.1, pp. 83, 86; GNT19, Remark 3.1 and the following paragraph, p. 19; dJ97, Corollary 5.15 and proof, p. 620; dJ96, Corollary 7.4, pp. 88–89).
 
-The base, source, target and finite-type auxiliary k-schemes are quasi-projective over k (CR12 §§2, 3, 4). Generic fibres and other field extensions use their own ground field. k perfect; de Jong's alteration theorem in its equivariant form (Galois alterations) gives existence. In the existence assertion, purely inseparable refers to k(Y′)/k(Y); Y′ → Y is a universal homeomorphism when Y is normal, not for arbitrary nonnormal Y.
+k perfect; de Jong's alteration theorem in its equivariant form (Galois alterations) gives existence. In the existence assertion, purely inseparable refers to k(Y′)/k(Y); Y′ → Y is a universal homeomorphism when Y is normal, not for arbitrary nonnormal Y.
 
-*Needs:* WV.5/topological-finite-quotient; SchemeAndStackFoundations §4.19, de jong alteration theorem; SchemeAndStackFoundations §4.16, alteration; SchemeAndStackFoundations §0.20, nagata normalization finite; Mathlib `AlgebraicGeometry.IsProper`; ClassicalAdicEtaleCohomology §2, PlurinodalAlteration.exists.
+*Needs:* WV.5/topological-finite-quotient; SchemeAndStackFoundations §4.19, de jong alteration theorem; SchemeAndStackFoundations §4.16, alteration; SchemeAndStackFoundations §0.20, nagata normalization finite; Mathlib `AlgebraicGeometry.IsProper`; ClassicalAdicEtaleCohomology §5.4, PlurinodalAlteration.exists.
 
 The construction has the following API.
 
-- For the quasi-projective schemes of this target: f: X → Y between integral k-schemes with X a topological finite quotient, f projective surjective generically finite, k(Y) ⊂ k(X) purely inseparable.
-- For the quasi-projective schemes of this target: Every integral k-scheme of finite type admits a quasi-resolution of the form X″/G → Y′ → Y.
-- For the quasi-projective schemes of this target: Any two quasi-resolutions of Y are dominated by a third over Y.
-- For the quasi-projective schemes of this target: A projective birational morphism from a smooth integral scheme is a quasi-resolution.
-- For the quasi-projective schemes of this target: If f is a quasi-resolution and u: Y → Y′ a universal homeomorphism of integral schemes, u ∘ f is a quasi-resolution.
-- For the quasi-projective schemes of this target: For X, Y normal, f factors as a birational projective X → Y′ followed by a universal homeomorphism Y′ → Y.
+- f: X → Y between integral k-schemes with X a topological finite quotient, f projective surjective generically finite, k(Y) ⊂ k(X) purely inseparable.
+- Every integral k-scheme of finite type admits a quasi-resolution of the form X″/G → Y′ → Y.
+- Any two quasi-resolutions of Y are dominated by a third over Y.
+- A projective birational morphism from a smooth integral scheme is a quasi-resolution.
+- If f is a quasi-resolution and u: Y → Y′ a universal homeomorphism of integral schemes, u ∘ f is a quasi-resolution.
+- For X, Y normal, f factors as a birational projective X → Y′ followed by a universal homeomorphism Y′ → Y.
 
 A proof route is the following.
 
-1. Existence over every perfect field k is a target here over the excellent base Spec k. The construction extends the algebraically closed-field statement discussed in the separate alteration design; that design is not an input. Apply the plurinodal alteration of ClassicalAdicEtaleCohomology, Layer 2 (PlurinodalAlteration.exists), and the quotient construction in dJ97, proof of Corollary 5.15, p. 620 (cf. dJ96 Corollary 7.4, p. 88), in the form of CR12 Remark 4.3.2, p. 79. Normalize Y in the purely inseparable invariant function field to get finite Y′ → Y; the quotient X″/G → Y′ is projective birational. The finite map Y′ → Y need not be radicial when Y is not normal.
+1. Existence over every perfect field k is a target here over the excellent base Spec k. Apply the plurinodal alteration of ClassicalAdicEtaleCohomology §5.4 (PlurinodalAlteration.exists), and the quotient construction in dJ97, proof of Corollary 5.15, p. 620 (cf. dJ96 Corollary 7.4, p. 88), in the form of CR12 Remark 4.3.2, p. 79. Normalize Y in the purely inseparable invariant function field to get finite Y′ → Y; the quotient X″/G → Y′ is projective birational. The finite map Y′ → Y need not be radicial when Y is not normal.
 2. Domination: given two quasi-resolutions, apply existence to the closure of the image of Spec L in X_1 ×_Y X_2, where L is the residue field of the local artinian algebra k(X_1) ⊗_{k(Y)} k(X_2) (purely inseparable over k(Y)).
 3. Factorization through the normalization in k(X) (finiteness of normalization: SchemeAndStackFoundations §0.20, nagata normalization finite).
 
@@ -1178,9 +1161,9 @@ These results apply to CR12, Definition 4.4.4, p. 82: WO- and Witt-rationality a
 
 ### WV.5.3 Finite covers and universal homeomorphisms realize Witt cohomology as a direct factor
 
-The finite-type k-schemes in this target are quasi-projective over k; schemes obtained by extending the ground field are quasi-projective over that field. (i) For a universal homeomorphism u: X → Y between integral normal schemes, u_\*u^\* = deg(u) on WO_Y ⊕ Wω_Y and u^\*u_\* = deg(u) on u_\*(WO_X ⊕ Wω_X); hence u^\* and u_\* are isomorphisms after passing to the isogeny category. (ii) Let f: X → Y be finite surjective with X smooth integral, Y, Z normal integral, u: Z → Y a universal homeomorphism and a: Y → S a morphism; put β = pr_{13\*}[X ×_Y Z ×_Y X] ∈ Hom_{C_S}(X, X). Then f^\* ∘ u_\* induces isomorphisms R^i(au)_\*(WO_Z ⊕ Wω_Z)_ℚ ≅ Ĥ(β/S)(R^i(af)_\*(WO_X ⊕ Wω_X)_ℚ) for all i. (CR12, Definition 4.1.5, Lemma 4.1.6, Lemma 4.2.4 and proof, pp. 75–77; CR12, Proposition 4.2.7 and proof, pp. 78–79).
+(i) For a universal homeomorphism u: X → Y between integral normal schemes, u_\*u^\* = deg(u) on WO_Y ⊕ Wω_Y and u^\*u_\* = deg(u) on u_\*(WO_X ⊕ Wω_X); hence u^\* and u_\* are isomorphisms after passing to the isogeny category. (ii) Let f: X → Y be finite surjective with X smooth integral, Y, Z normal integral, u: Z → Y a universal homeomorphism and a: Y → S a morphism; put β = pr_{13\*}[X ×_Y Z ×_Y X] ∈ Hom_{C_S}(X, X). Then f^\* ∘ u_\* induces isomorphisms R^i(au)_\*(WO_Z ⊕ Wω_Z)_ℚ ≅ Ĥ(β/S)(R^i(af)_\*(WO_X ⊕ Wω_X)_ℚ) for all i. (CR12, Definition 4.1.5, Lemma 4.1.6, Lemma 4.2.4 and proof, pp. 75–77; CR12, Proposition 4.2.7 and proof, pp. 78–79).
 
-The base, source, target and finite-type auxiliary k-schemes are quasi-projective over k (CR12 §§2, 3, 4). Generic fibres and other field extensions use their own ground field. X smooth integral; Y, Z normal integral; pullback and pushforward on WO ⊕ Wω of normal schemes as in CR12 Definition 4.1.5.
+X smooth integral; Y, Z normal integral; pullback and pushforward on WO ⊕ Wω of normal schemes as in CR12 Definition 4.1.5.
 
 *Needs:* WV.4/hodge-witt-correspondence-action; WV.4/hodge-witt-pushforward; WV.4/witt-canonical-system; WV.5/topological-finite-quotient; WV.0/rational-witt-sheaves.
 
@@ -1197,9 +1180,9 @@ A proof route is the following.
 
 ### WV.5.4 Witt cohomology of a quasi-resolution of a topological finite quotient
 
-The finite-type k-schemes in this target are quasi-projective over k; schemes obtained by extending the ground field are quasi-projective over that field. For a quasi-resolution f: X → Y of a topological finite quotient Y, pullback and pushforward give isomorphisms in the derived category of de Rham–Witt modules over Y up to isogeny: f^\*: WO_{Y,ℚ} ≅ Rf_\*WO_{X,ℚ} and Rf_\*Wω_{X,ℚ} ≅ f_\*Wω_{X,ℚ}[0] ≅ Wω_{Y,ℚ}. In particular R^if_\*WO_{X,ℚ} = 0 and R^if_\*Wω_{X,ℚ} = 0 for i ≥ 1: there is N with p^N R^if_\*WO_X = 0 for all i ≥ 1. (CR12, Theorem 2 (introduction), p. 3, and the paragraph after it, p. 4; CR12, Theorem 4.3.3 with proof, and Lemma 4.3.4, pp. 79–81).
+For a quasi-resolution f: X → Y of a topological finite quotient Y, pullback and pushforward give isomorphisms in the derived category of de Rham–Witt modules over Y up to isogeny: f^\*: WO_{Y,ℚ} ≅ Rf_\*WO_{X,ℚ} and Rf_\*Wω_{X,ℚ} ≅ f_\*Wω_{X,ℚ}[0] ≅ Wω_{Y,ℚ}. In particular R^if_\*WO_{X,ℚ} = 0 and R^if_\*Wω_{X,ℚ} = 0 for i ≥ 1: there is N with p^N R^if_\*WO_X = 0 for all i ≥ 1. (CR12, Theorem 2 (introduction), p. 3, and the paragraph after it, p. 4; CR12, Theorem 4.3.3 with proof, and Lemma 4.3.4, pp. 79–81).
 
-The base, source, target and finite-type auxiliary k-schemes are quasi-projective over k (CR12 §§2, 3, 4). Generic fibres and other field extensions use their own ground field. Y a topological finite quotient (not just normal); f a quasi-resolution; isogeny convention.
+Y a topological finite quotient (not just normal); f a quasi-resolution; isogeny convention.
 
 *Needs:* WV.5/quasi-resolution; WV.5/finite-quotient-projector; WV.4/correspondence-vanishing; WV.4/hodge-witt-correspondence-action; WV.4/proper-correspondence-category; WV.4/witt-canonical-system; SchemeAndStackFoundations §5.2, chow localization.
 
@@ -1219,21 +1202,21 @@ A proof route is the following.
 
 ### WV.5.5 WO-rational and Witt-rational singularities
 
-The finite-type k-schemes in this target are quasi-projective over k; schemes obtained by extending the ground field are quasi-projective over that field. An integral k-scheme S has Witt-rational singularities if for every quasi-resolution f: X → S: (1) f^\*: WO_{S,ℚ} → f_\*WO_{X,ℚ} is an isomorphism; (2) R^if_\*WO_{X,ℚ} = 0 for all i ≥ 1; (3) R^if_\*Wω_{X,ℚ} = 0 for all i ≥ 1. If only (1) and (2) hold, S has WO-rational singularities. Here the subscript ℚ is the isogeny convention: (2) means that a power of p kills R^if_\*WO_X. Equivalently, it suffices that one quasi-resolution satisfies the conditions (one quasi-resolution suffices), and for normal S condition (1) is automatic; in particular, if S is normal and has a resolution of singularities, S is WO-rational iff R^if_\*WO_{X,ℚ} = 0 for i > 0 for that resolution. (CR12, Definition 4.4.4, Remark 4.4.5, Proposition 4.4.6 and the sentence after it, pp. 82–83; CR12, Corollary 4.5.1 and Definition 4.5.2, pp. 86–87; HW23, §2, p. 5; GNT19, §3 condition (a) and Remark 3.1, p. 19).
+An integral k-scheme S has Witt-rational singularities if for every quasi-resolution f: X → S: (1) f^\*: WO_{S,ℚ} → f_\*WO_{X,ℚ} is an isomorphism; (2) R^if_\*WO_{X,ℚ} = 0 for all i ≥ 1; (3) R^if_\*Wω_{X,ℚ} = 0 for all i ≥ 1. If only (1) and (2) hold, S has WO-rational singularities. Here the subscript ℚ is the isogeny convention: (2) means that a power of p kills R^if_\*WO_X. Equivalently, it suffices that one quasi-resolution satisfies the conditions (one quasi-resolution suffices), and for normal S condition (1) is automatic; in particular, if S is normal and has a resolution of singularities, S is WO-rational iff R^if_\*WO_{X,ℚ} = 0 for i > 0 for that resolution. (CR12, Definition 4.4.4, Remark 4.4.5, Proposition 4.4.6 and the sentence after it, pp. 82–83; CR12, Corollary 4.5.1 and Definition 4.5.2, pp. 86–87; HW23, §2, p. 5; GNT19, §3 condition (a) and Remark 3.1, p. 19).
 
-The base, source, target and finite-type auxiliary k-schemes are quasi-projective over k (CR12 §§2, 3, 4). Generic fibres and other field extensions use their own ground field. S integral of finite type over a perfect field k; the conditions are local on S. BE-Witt-rational singularities (Blickle–Esnault: a splitting of WO_S ⊗ ℚ → Rf_\*WO_X ⊗ ℚ for a generically étale alteration) are a weaker notion and are not used to define this one.
+S integral of finite type over a perfect field k; the conditions are local on S. BE-Witt-rational singularities (Blickle–Esnault: a splitting of WO_S ⊗ ℚ → Rf_\*WO_X ⊗ ℚ for a generically étale alteration) are a weaker notion and are not used to define this one.
 
 *Needs:* WV.5/quasi-resolution; WV.5/quasi-resolution-invariance; WV.5/finite-quotient-projector; WV.0/rational-witt-sheaves; WV.4/witt-canonical-system.
 
 The construction has the following API.
 
-- For the quasi-projective schemes of this target: S integral; every quasi-resolution f satisfies (1) and (2).
-- For the quasi-projective schemes of this target: S integral; every quasi-resolution satisfies (1), (2) and (3).
-- For the quasi-projective schemes of this target: S is WO-rational iff some quasi-resolution satisfies (1) and (2) (one quasi-resolution suffices).
-- For the quasi-projective schemes of this target: If f: X → S is a resolution of singularities of a normal S, S is WO-rational iff R^if_\*WO_{X,ℚ} = 0 for i > 0, iff some p^N kills every R^if_\*WO_X, i > 0.
-- For the quasi-projective schemes of this target: S is WO-rational iff WS_{0,S} ≅ WO_{S,ℚ} (WV.5/witt-singularity-complexes).
-- For the quasi-projective schemes of this target: Witt-rational ⇒ WO-rational.
-- For the quasi-projective schemes of this target: For S normal, condition (1) holds for every quasi-resolution.
+- S integral; every quasi-resolution f satisfies (1) and (2).
+- S integral; every quasi-resolution satisfies (1), (2) and (3).
+- S is WO-rational iff some quasi-resolution satisfies (1) and (2) (one quasi-resolution suffices).
+- If f: X → S is a resolution of singularities of a normal S, S is WO-rational iff R^if_\*WO_{X,ℚ} = 0 for i > 0, iff some p^N kills every R^if_\*WO_X, i > 0.
+- S is WO-rational iff WS_{0,S} ≅ WO_{S,ℚ} (WV.5/witt-singularity-complexes).
+- Witt-rational ⇒ WO-rational.
+- For S normal, condition (1) holds for every quasi-resolution.
 
 A proof route is the following.
 
@@ -1242,13 +1225,11 @@ A proof route is the following.
 
 **Checks.**
 
-- A smooth integral k-scheme has Witt-rational singularities (the identity is a quasi-resolution).
 - For p odd, the quadric cone A²/{±1} has Witt-rational singularities; its minimal resolution has exceptional curve P¹ with H¹(P¹, WO_ℚ) = 0.
 - The cone over an elliptic curve E is not WO-rational: R¹f_\*WO_ℚ = H¹(E, WO_{E,ℚ}) ≠ 0 at the vertex (dimension 1 of slope 0 if E is ordinary, dimension 2 of slope 1/2 if supersingular).
 - WO-rational does not imply Cohen–Macaulay: for G = ℤ/p^n acting linearly on V with dim V > dim V^G + 2 over algebraically closed k, A(V)/G is a finite quotient (hence Witt-rational) but not CM, hence not a rational singularity.
 - For a resolution with proper exceptional fibre E over an isolated singularity, the isogeny condition R¹f_\*WO_ℚ = 0 agrees with H¹(E, WO_E) ⊗ ℚ = 0 (WV.0/rational-witt-sheaves, proper case).
 - Smooth schemes and topological finite quotients are Witt-rational (WV.5/finite-quotients-witt-rational).
-- The cone over a smooth projective curve of genus g ≥ 1 is not WO-rational (WV.5/isolated-singularity-criterion).
 
 These results apply to HW23, Corollary 4.7, p. 19: Q-factorial klt fourfolds with log resolutions have WO-rational singularities; HW23, proof of Corollary 1.3, pp. 19–20: WO-rationality of X and BBE Proposition 6.9 give |X(F_q)| ≡ |Y(F_q)| mod q for a resolution Y; GNT19, Theorem 3.16, p. 26: klt threefolds (p > 5) have WO-rational singularities; CR12, Corollary 4.4.16, p. 85: point counts of quasi-birational WO-rational projective schemes agree mod q; WV.6/witt-rational-point-congruence: the point-count consequence.
 
@@ -1256,9 +1237,9 @@ These results apply to HW23, Corollary 4.7, p. 19: Q-factorial klt fourfolds wit
 
 ### WV.5.6 Topological finite quotients are Witt-rational; invariance under universal homeomorphisms
 
-The finite-type k-schemes in this target are quasi-projective over k; schemes obtained by extending the ground field are quasi-projective over that field. (i) Every topological finite quotient over k has Witt-rational singularities. (ii) If u: Y → Y′ is a universal homeomorphism between normal schemes, Y has Witt-rational (resp. WO-rational) singularities iff Y′ has. (CR12, Theorem 3 (introduction), p. 4; Corollary 4.4.7, Remark 4.4.8, Proposition 4.4.9 with proof, p. 83).
+(i) Every topological finite quotient over k has Witt-rational singularities. (ii) If u: Y → Y′ is a universal homeomorphism between normal schemes, Y has Witt-rational (resp. WO-rational) singularities iff Y′ has. (CR12, Theorem 3 (introduction), p. 4; Corollary 4.4.7, Remark 4.4.8, Proposition 4.4.9 with proof, p. 83).
 
-The base, source, target and finite-type auxiliary k-schemes are quasi-projective over k (CR12 §§2, 3, 4). Generic fibres and other field extensions use their own ground field. k perfect; Y, Y′ normal integral in (ii).
+k perfect; Y, Y′ normal integral in (ii).
 
 *Needs:* WV.5/quasi-resolution-invariance; WV.5/wo-rational-singularities; WV.5/topological-finite-quotient.
 
@@ -1275,20 +1256,20 @@ A proof route is the following.
 
 ### WV.5.7 The Witt singularity complexes of an integral scheme
 
-The finite-type k-schemes in this target are quasi-projective over k; schemes obtained by extending the ground field are quasi-projective over that field. Let S be an integral k-scheme of dimension d. For quasi-resolutions f: X → S and g: Y → S, X and Y are quasi-birational over S, and every quasi-birational correspondence (Z, π_X, π_Y) induces the same isomorphisms Rf_\*WO_{X,ℚ} ≅ Rg_\*WO_{Y,ℚ} and Rf_\*Wω_{X,ℚ} ≅ Rg_\*Wω_{Y,ℚ} in the derived category of de Rham–Witt modules over S up to isogeny, compatibly with composition for three quasi-resolutions. Hence WS_{0,S} := Rf_\*WO_{X,ℚ} and WS_{d,S} := Rf_\*Wω_{X,ℚ} are well defined up to canonical isomorphism, with F and V, and S is WO-rational iff WO_{S,ℚ} → WS_{0,S} is an isomorphism, Witt-rational iff in addition H^i(WS_{d,S}) = 0 for i ≥ 1. (CR12, Definition 4.4.10, Corollary 4.4.11 with proof, pp. 83–84; CR12, Corollary 4.5.1 with proof, Definition 4.5.2, pp. 86–87).
+Let S be an integral k-scheme of dimension d. For quasi-resolutions f: X → S and g: Y → S, X and Y are quasi-birational over S, and every quasi-birational correspondence (Z, π_X, π_Y) induces the same isomorphisms Rf_\*WO_{X,ℚ} ≅ Rg_\*WO_{Y,ℚ} and Rf_\*Wω_{X,ℚ} ≅ Rg_\*Wω_{Y,ℚ} in the derived category of de Rham–Witt modules over S up to isogeny, compatibly with composition for three quasi-resolutions. Hence WS_{0,S} := Rf_\*WO_{X,ℚ} and WS_{d,S} := Rf_\*Wω_{X,ℚ} are well defined up to canonical isomorphism, with F and V, and S is WO-rational iff WO_{S,ℚ} → WS_{0,S} is an isomorphism, Witt-rational iff in addition H^i(WS_{d,S}) = 0 for i ≥ 1. (CR12, Definition 4.4.10, Corollary 4.4.11 with proof, pp. 83–84; CR12, Corollary 4.5.1 with proof, Definition 4.5.2, pp. 86–87).
 
-The base, source, target and finite-type auxiliary k-schemes are quasi-projective over k (CR12 §§2, 3, 4). Generic fibres and other field extensions use their own ground field. S integral of finite type over a perfect field. Two integral S-schemes are quasi-birational over S if they admit quasi-resolutions from a common Z.
+S integral of finite type over a perfect field. Two integral S-schemes are quasi-birational over S if they admit quasi-resolutions from a common Z.
 
 *Needs:* WV.5/quasi-resolution; WV.5/quasi-resolution-invariance; WV.5/wo-rational-singularities.
 
 The construction has the following API.
 
-- For the quasi-projective schemes of this target: WS_{0,S} ∈ D⁺(de Rham–Witt modules over S up to isogeny), with WS_{0,S} ≅ Rf_\*WO_{X,ℚ} for any quasi-resolution f.
-- For the quasi-projective schemes of this target: WS_{d,S} ≅ Rf_\*Wω_{X,ℚ}.
-- For the quasi-projective schemes of this target: For each quasi-resolution f an isomorphism ι_f: WS_{0,S} ≅ Rf_\*WO_{X,ℚ}, with ι_g ∘ ι_f^{−1} induced by any quasi-birational correspondence.
-- For the quasi-projective schemes of this target: The natural map WO_{S,ℚ} → WS_{0,S}.
-- For the quasi-projective schemes of this target: S is WO-rational iff WO_{S,ℚ} → WS_{0,S} is an isomorphism.
-- For the quasi-projective schemes of this target: F and V act on WS_{0,S} and WS_{d,S} compatibly with the isomorphisms ι_f.
+- WS_{0,S} ∈ D⁺(de Rham–Witt modules over S up to isogeny), with WS_{0,S} ≅ Rf_\*WO_{X,ℚ} for any quasi-resolution f.
+- WS_{d,S} ≅ Rf_\*Wω_{X,ℚ}.
+- For each quasi-resolution f an isomorphism ι_f: WS_{0,S} ≅ Rf_\*WO_{X,ℚ}, with ι_g ∘ ι_f^{−1} induced by any quasi-birational correspondence.
+- The natural map WO_{S,ℚ} → WS_{0,S}.
+- S is WO-rational iff WO_{S,ℚ} → WS_{0,S} is an isomorphism.
+- F and V act on WS_{0,S} and WS_{d,S} compatibly with the isomorphisms ι_f.
 
 A proof route is the following.
 
@@ -1298,7 +1279,6 @@ A proof route is the following.
 
 **Checks.**
 
-- For S smooth, WS_{0,S} ≅ WO_{S,ℚ} via the identity quasi-resolution.
 - For S with an isolated singularity s and a resolution f that is an isomorphism over S ∖ {s} with exceptional fibre E, H^i(WS_{0,S}) = H^i(E, WO_{E,ℚ}) at s for i > 0.
 - For the cone S over an elliptic curve E, H¹(WS_{0,S}) ≠ 0, so WO_{S,ℚ} → WS_{0,S} is not an isomorphism.
 - For S smooth and the quasi-resolution F_{S/k}: S → S^{(1)}, ι agrees with the pullback along Frobenius up to the isogeny p^{dim S}.
@@ -1310,9 +1290,9 @@ These results apply to CR12, Theorem 4.8.1, p. 96: the higher direct images alon
 
 ### WV.5.8 Quasi-birational invariance of Witt cohomology for Witt-rational schemes
 
-The finite-type k-schemes in this target are quasi-projective over k; schemes obtained by extending the ground field are quasi-projective over that field. Over a k-scheme S, take integral S-schemes f: X → S and g: Y → S, both with WO-rational singularities and quasi-birational over S. A quasi-birational correspondence induces Rf_\*WO_{X,ℚ} ≅ Rg_\*WO_{Y,ℚ} (and Rf_\*Wω_{X,ℚ} ≅ Rg_\*Wω_{Y,ℚ} when X, Y are Witt-rational), compatible with F and V. In particular, for S = Spec k: H^i(X, WO_{X,ℚ}) ≅ H^i(Y, WO_{Y,ℚ}) for all i, and if X, Y are projective, H^i_rig(X/K)^{\<1} ≅ H^i_rig(Y/K)^{\<1} Frobenius-equivariantly. (CR12, Corollary 1 (introduction), p. 5; Corollary 4.4.11, Remark 4.4.14, Corollary 4.4.15 with proof, pp. 84–85).
+Over a k-scheme S, take integral S-schemes f: X → S and g: Y → S, both with WO-rational singularities and quasi-birational over S. A quasi-birational correspondence induces Rf_\*WO_{X,ℚ} ≅ Rg_\*WO_{Y,ℚ} (and Rf_\*Wω_{X,ℚ} ≅ Rg_\*Wω_{Y,ℚ} when X, Y are Witt-rational), compatible with F and V. In particular, for S = Spec k: H^i(X, WO_{X,ℚ}) ≅ H^i(Y, WO_{Y,ℚ}) for all i, and if X, Y are projective, H^i_rig(X/K)^{\<1} ≅ H^i_rig(Y/K)^{\<1} Frobenius-equivariantly. (CR12, Corollary 1 (introduction), p. 5; Corollary 4.4.11, Remark 4.4.14, Corollary 4.4.15 with proof, pp. 84–85).
 
-The base, source, target and finite-type auxiliary k-schemes are quasi-projective over k (CR12 §§2, 3, 4). Generic fibres and other field extensions use their own ground field. X, Y integral with WO-rational singularities, quasi-birational over S.
+X, Y integral with WO-rational singularities, quasi-birational over S.
 
 *Needs:* WV.5/witt-singularity-complexes; WV.5/wo-rational-singularities; WV.3/berthelot-bloch-esnault-comparison; WV.0/rational-witt-sheaves.
 
@@ -1329,29 +1309,30 @@ A proof route is the following.
 
 ### WV.5.9 Rational singularities are Witt-rational
 
-The finite-type k-schemes in this target are quasi-projective over k; schemes obtained by extending the ground field are quasi-projective over that field. For an integral k-scheme S: rational singularities (a resolution f with R^if_\*O_X = 0 = R^if_\*ω_X for i > 0) ⇒ Witt-rational ⇒ WO-rational ⇒ BE-Witt-rational (WO_S ⊗ ℚ → Rg_\*WO_X ⊗ ℚ splits for every alteration g from a smooth scheme). The first implication is strict. (CR12, Definitions 4.4.1–4.4.2, Proposition 4.4.3, Proposition 4.4.17 with proof, pp. 81–86; GNT19, Lemma 2.19, p. 16).
+Let S be an integral k-scheme. (1) If S is normal and has rational singularities, that is, admits a resolution f: X → S (f projective and birational, X smooth) with R^if_\*O_X = 0 = R^if_\*ω_X for i > 0, then S is Witt-rational. (2) Witt-rational ⇒ WO-rational ⇒ BE-Witt-rational (WO_S ⊗ ℚ → Rg_\*WO_X ⊗ ℚ splits for every alteration g from a smooth scheme). The implication (1) is strict. (CR12, Definitions 4.4.1–4.4.2, Proposition 4.4.3, Proposition 4.4.17 with proof, pp. 81–86; GNT19, Lemma 2.19, p. 16).
 
-The base, source, target and finite-type auxiliary k-schemes are quasi-projective over k (CR12 §§2, 3, 4). Generic fibres and other field extensions use their own ground field. S integral of finite type over a perfect field; the first implication assumes a resolution exists (as part of the definition of rational singularities).
+S integral of finite type over a perfect field; in (1) S is normal and a resolution exists (both are part of the definition of rational singularities). Normality is needed: the normalization P¹ → S of a split nodal cubic is finite, so all its higher direct images vanish, yet S is not WO-rational.
 
 *Needs:* WV.5/wo-rational-singularities; WV.5/finite-quotients-witt-rational; WV.5/finite-quotient-projector; WV.0/witt-limit-lemmas; WV.4/witt-canonical-system.
 
 A proof route is the following.
 
-1. Rational ⇒ Witt-rational: from 0 → W_{n−1}O_X →(V) W_nO_X → O_X → 0 and R^if_\*O_X = 0, R^if_\*W_nO_X = 0 and W_nO_S ≅ f_\*W_nO_X; with 0 → W_{n−1}ω_X →(p) W_nω_X → ω_X → 0 (WV.4/witt-canonical-system) and duality on the CM scheme S, the same for Wω; pass to the limit with WV.0/witt-limit-lemmas.
+1. Rational ⇒ Witt-rational: S is normal and f projective birational, so f_\*O_X = O_S; from 0 → W_{n−1}O_X →(V) W_nO_X → O_X → 0, R^if_\*O_X = 0 and induction on n, R^if_\*W_nO_X = 0 for i > 0 and W_nO_S ≅ f_\*W_nO_X; with 0 → W_{n−1}ω_X →(p) W_nω_X → ω_X → 0 (WV.4/witt-canonical-system) and duality on the CM scheme S, the same for Wω; pass to the limit with WV.0/witt-limit-lemmas.
 2. WO-rational ⇒ BE: choose a quasi-resolution by a finite quotient X with a smooth finite cover X′ → X; the pushforward splits the pullback up to the degree (WV.5/finite-quotient-projector), a fortiori after ⊗ℚ.
 3. Strictness: WV.5/finite-quotients-witt-rational with the non-CM finite quotients of Ellingsrud–Skjelbred.
 
 **Checks.**
 
 - A rational surface singularity (e.g. a du Val singularity in characteristic p with a rational resolution) is Witt-rational.
+- Negative control for normality: for the split nodal cubic S and its normalization f: P¹ → S, f is finite, so R^{>0}f_\*O_{P¹} = 0 = R^{>0}f_\*ω_{P¹}; but f_\*O_{P¹} ≠ O_S, and H¹(S, WO_S)_K = K while H¹(P¹, WO)_K = 0, so S is not WO-rational: the node has two points in its fibre and condition (1) of WV.5/wo-rational-singularities fails.
 
 <a id="wv5-isolated-singularity-criterion"></a>
 
 ### WV.5.10 WO-rationality of isolated singularities through the exceptional fibre
 
-The finite-type k-schemes in this target are quasi-projective over k; schemes obtained by extending the ground field are quasi-projective over that field. Let S be an integral normal k-scheme with an isolated singular point s and f: X → S a resolution of singularities that is an isomorphism over S ∖ {s}, with exceptional fibre E = f^{−1}(s). Then S has WO-rational singularities iff H^i(E, WO_{E,ℚ}) = 0 for all i > 0 (equivalently H^i(E, WO_E) ⊗ ℚ = 0, E being proper). In particular the cone over a smooth projective geometrically connected variety Z ⊂ P^N (with a resolution by the blowup of the vertex, E ≅ Z) is WO-rational iff H^i(Z, WO_{Z,ℚ}) = 0 for i > 0. (CR12, Corollary 4.6.4, p. 90; introduction, pp. 5–6; CR12, Theorem 4.7.4, p. 93).
+Let S be an integral normal k-scheme with an isolated singular point s and f: X → S a resolution of singularities that is an isomorphism over S ∖ {s}, with exceptional fibre E = f^{−1}(s). Then S has WO-rational singularities iff H^i(E, WO_{E,ℚ}) = 0 for all i > 0 (equivalently H^i(E, WO_E) ⊗ ℚ = 0, E being proper). In particular the cone over a smooth projective geometrically connected variety Z ⊂ P^N (with a resolution by the blowup of the vertex, E ≅ Z) is WO-rational iff H^i(Z, WO_{Z,ℚ}) = 0 for i > 0. (CR12, Corollary 4.6.4, p. 90; introduction, pp. 5–6; CR12, Theorem 4.7.4, p. 93).
 
-The base, source, target and finite-type auxiliary k-schemes are quasi-projective over k (CR12 §§2, 3, 4). Generic fibres and other field extensions use their own ground field. S normal with an isolated singularity; a resolution that is an isomorphism away from s exists (an assumption).
+S normal with an isolated singularity; a resolution that is an isomorphism away from s exists (an assumption).
 
 *Needs:* WV.2/witt-exceptional-reduction; WV.5/wo-rational-singularities; WV.0/rational-witt-sheaves; WV.0/witt-closed-mayer-vietoris; WV.0/witt-universal-homeomorphism-invariance.
 
@@ -1371,11 +1352,11 @@ A proof route is the following.
 
 ### WV.5.11 Decomposition of the diagonal for CH_0-trivial varieties
 
-The finite-type k-schemes in this target are quasi-projective over k; schemes obtained by extending the ground field are quasi-projective over that field. This is the rational-coefficient extension of MotivesAndAlgebraicCycles §0.6, whose fixed-support input is integral. Let X be a smooth projective geometrically integral variety of dimension d over a field k, and suppose CH_0(X_Ω) ⊗ ℚ = ℚ via the degree, where Ω is an algebraic closure of k(X). Then there are N ≥ 1, a zero-cycle ξ on X, a divisor D ⊂ X and a d-dimensional cycle Γ supported on X × D such that N·[Δ_X] = [ξ × X] + Γ in CH^d(X × X). More generally, for a smooth projective family X′_η over the generic point of a base, with CH_0 trivial over every field extension, the same holds for the generic fibre with N, D, ξ over η, which spreads out over a dense open of the base up to cycles supported over a divisor of the base. (ESN03, §1, (1.1) and the argument after it, p. 1; CR12, proof of Theorem 4.8.1, (4.8.5)–(4.8.7), pp. 98–99).
+This is the rational-coefficient extension of MotivesAndAlgebraicCycles §0.6, whose fixed-support input is integral. Let X be a smooth projective geometrically integral variety of dimension d over a field k, and suppose CH_0(X_Ω) ⊗ ℚ = ℚ via the degree, where Ω is an algebraic closure of k(X). Then there are N ≥ 1, a zero-cycle ξ on X, a divisor D ⊂ X and a d-dimensional cycle Γ supported on X × D such that N·[Δ_X] = [ξ × X] + Γ in CH^d(X × X). More generally, for a smooth projective family X′_η over the generic point of a base, with CH_0 trivial over every field extension, the same holds for the generic fibre with N, D, ξ over η, which spreads out over a dense open of the base up to cycles supported over a divisor of the base. (ESN03, §1, (1.1) and the argument after it, p. 1; CR12, proof of Theorem 4.8.1, (4.8.5)–(4.8.7), pp. 98–99).
 
-The base, source, target and finite-type auxiliary k-schemes are quasi-projective over k (CR12 §§2, 3, 4). Generic fibres and other field extensions use their own ground field. X smooth projective geometrically integral; the CH_0 hypothesis over an algebraic closure of k(X) (or over every extension of the base field).
+X smooth projective geometrically integral; the CH_0 hypothesis over an algebraic closure of k(X) (or over every extension of the base field).
 
-*Needs:* SchemeAndStackFoundations §5.1, chow group; SchemeAndStackFoundations §5.2, chow localization; SchemeAndStackFoundations §5.2, flat pullback; MotivesAndAlgebraicCycles §2.2, Chow groups under field extension; MotivesAndAlgebraicCycles §2.2, chow-groups-under-field-extension; MotivesAndAlgebraicCycles §0.1, Chow correspondences; MotivesAndAlgebraicCycles §0.6, diagonal-decomposition.
+*Needs:* SchemeAndStackFoundations §5.1, chow group; SchemeAndStackFoundations §5.2, chow localization; SchemeAndStackFoundations §5.2, flat pullback; MotivesAndAlgebraicCycles §2.2, torsion kernel of base change to an algebraic closure; MotivesAndAlgebraicCycles §0.1, Chow correspondences; MotivesAndAlgebraicCycles §0.6, diagonal-decomposition.
 
 A proof route is the following.
 
@@ -1391,9 +1372,9 @@ A proof route is the following.
 
 ### WV.5.12 Vanishing of higher direct images of WO for fibrations with CH_0-trivial generic fibre
 
-The finite-type k-schemes in this target are quasi-projective over k; schemes obtained by extending the ground field are quasi-projective over that field. Let X be an integral k-scheme with Witt-rational singularities and f: X → Y a projective morphism to an integral normal scheme Y, with generic point η and smooth generic fibre X_η, such that, for each field L containing k(η), degree identifies CH_0(X_η ×_{k(η)} L) with rational coefficients with ℚ. Then ⊕_{i>0} R^if_\*WO_{X,ℚ} ≅ ⊕_{i>0} H^i(WS_{0,Y}) and ⊕_{i>0} R^if_\*Wω_{X,ℚ} ≅ ⊕_{i>0} H^i(WS_{dim Y,Y}). When Y is itself Witt-rational, all these positive-degree direct images vanish; for Y = Spec k: H^i(X, WO_{X,ℚ}) = 0 for i > 0. (CR12, Theorem 5 (introduction), p. 6; Theorem 4.8.1, 4.8.2, Lemma 4.8.3, Proposition 4.8.4 and the proof of Theorem 4.8.1, pp. 96–99).
+Let X be an integral k-scheme with Witt-rational singularities and f: X → Y a projective morphism to an integral normal scheme Y, with generic point η and smooth generic fibre X_η, such that, for each field L containing k(η), degree identifies CH_0(X_η ×_{k(η)} L) with rational coefficients with ℚ. Then ⊕_{i>0} R^if_\*WO_{X,ℚ} ≅ ⊕_{i>0} H^i(WS_{0,Y}) and ⊕_{i>0} R^if_\*Wω_{X,ℚ} ≅ ⊕_{i>0} H^i(WS_{dim Y,Y}). When Y is itself Witt-rational, all these positive-degree direct images vanish; for Y = Spec k: H^i(X, WO_{X,ℚ}) = 0 for i > 0. (CR12, Theorem 5 (introduction), p. 6; Theorem 4.8.1, 4.8.2, Lemma 4.8.3, Proposition 4.8.4 and the proof of Theorem 4.8.1, pp. 96–99).
 
-The base, source, target and finite-type auxiliary k-schemes are quasi-projective over k (CR12 §§2, 3, 4). Generic fibres and other field extensions use their own ground field. X Witt-rational (e.g. smooth); f projective; Y normal integral; X_η smooth; universal CH_0-triviality of X_η after ⊗ℚ.
+X Witt-rational (e.g. smooth); f projective; Y normal integral; X_η smooth; universal CH_0-triviality of X_η after ⊗ℚ.
 
 *Needs:* WV.5/bloch-srinivas-decomposition; WV.5/witt-singularity-complexes; WV.5/quasi-resolution; WV.5/finite-quotient-projector; WV.4/correspondence-vanishing; WV.4/hodge-witt-correspondence-action; WV.5/wo-rational-singularities.
 
@@ -1426,7 +1407,7 @@ A proof route is the following.
 
 ### Dependencies
 
-SchemeAndStackFoundations §0.23, universal homeomorphism criteria; SchemeAndStackFoundations §0.29, relative frobenius; WV.5/topological-finite-quotient; SchemeAndStackFoundations §4.19, de jong alteration theorem; SchemeAndStackFoundations §4.16, alteration; SchemeAndStackFoundations §0.20, nagata normalization finite; ClassicalAdicEtaleCohomology §2, PlurinodalAlteration.exists; WV.4/hodge-witt-correspondence-action; WV.4/hodge-witt-pushforward; WV.4/witt-canonical-system; WV.0/rational-witt-sheaves; WV.5/quasi-resolution; WV.5/finite-quotient-projector; WV.4/correspondence-vanishing; WV.4/proper-correspondence-category; SchemeAndStackFoundations §5.2, chow localization; WV.5/quasi-resolution-invariance; WV.5/wo-rational-singularities; WV.5/witt-singularity-complexes; WV.3/berthelot-bloch-esnault-comparison; WV.5/finite-quotients-witt-rational; WV.0/witt-limit-lemmas; WV.2/witt-exceptional-reduction; WV.0/witt-closed-mayer-vietoris; WV.0/witt-universal-homeomorphism-invariance; SchemeAndStackFoundations §5.1, chow group; SchemeAndStackFoundations §5.2, flat pullback; MotivesAndAlgebraicCycles §2.2, Chow groups under field extension; MotivesAndAlgebraicCycles §2.2, chow-groups-under-field-extension; MotivesAndAlgebraicCycles §0.1, Chow correspondences; MotivesAndAlgebraicCycles §0.6, diagonal-decomposition; WV.5/bloch-srinivas-decomposition.
+SchemeAndStackFoundations §0.23, universal homeomorphism criteria; SchemeAndStackFoundations §0.29, relative frobenius; WV.5/topological-finite-quotient; SchemeAndStackFoundations §4.19, de jong alteration theorem; SchemeAndStackFoundations §4.16, alteration; SchemeAndStackFoundations §0.20, nagata normalization finite; ClassicalAdicEtaleCohomology §5.4, PlurinodalAlteration.exists; WV.4/hodge-witt-correspondence-action; WV.4/hodge-witt-pushforward; WV.4/witt-canonical-system; WV.0/rational-witt-sheaves; WV.5/quasi-resolution; WV.5/finite-quotient-projector; WV.4/correspondence-vanishing; WV.4/proper-correspondence-category; SchemeAndStackFoundations §5.2, chow localization; WV.5/quasi-resolution-invariance; WV.5/wo-rational-singularities; WV.5/witt-singularity-complexes; WV.3/berthelot-bloch-esnault-comparison; WV.5/finite-quotients-witt-rational; WV.0/witt-limit-lemmas; WV.2/witt-exceptional-reduction; WV.0/witt-closed-mayer-vietoris; WV.0/witt-universal-homeomorphism-invariance; SchemeAndStackFoundations §5.1, chow group; SchemeAndStackFoundations §5.2, flat pullback; MotivesAndAlgebraicCycles §2.2, torsion kernel of base change to an algebraic closure; MotivesAndAlgebraicCycles §0.1, Chow correspondences; MotivesAndAlgebraicCycles §0.6, diagonal-decomposition; WV.5/bloch-srinivas-decomposition.
 
 
 <a id="layer-wv6"></a>
@@ -1466,8 +1447,6 @@ A proof route is the following.
 - ζ^W(A¹, t) = 1 although ζ(A¹, t) = 1/(1 − qt): Witt cohomology only sees slopes \< 1.
 - ζ^W(∅, t) = 1.
 - For an elliptic curve E/F_q with P_1(E, t) = 1 − a t + q t²: P^W_1(E, t) = 1 − αt with α the unit root if p ∤ a (ordinary), and P^W_1(E, t) = P_1(E, t) if p | a (supersingular, both slopes 1/2).
-- ζ^W(Spec F_q, t) = 1/(1 − t).
-- ζ^W(P¹, t) = 1/(1 − t), while ζ(P¹, t) = 1/((1 − t)(1 − qt)).
 
 These results apply to BBE07, Corollary 1.3, p. 5: ζ^{\<1}(X, t) = ζ^W(X, t); BBE07, Proposition 6.4, p. 35: ζ^{\<1}(X, t) = ζ^{\<1}(D, t) P^{\<1}_n(X, t)^{(−1)^{n+1}} for a theta-type divisor; WV.6/ax-congruence-criterion: congruences mod q^r are read off from ζ^{\<1}.
 
@@ -1636,15 +1615,17 @@ A proof route is the following.
 
 ### WV.6.10 Universally CH_0-trivial varieties
 
-A proper k-scheme X is universally CH_0-trivial (rationally) if for every field extension L ⊃ k the degree map deg: CH_0(X_L) ⊗ ℚ → ℚ is an isomorphism. It suffices to check algebraically closed L ⊃ k. For X smooth projective geometrically integral, universal CH_0-triviality gives a decomposition of the diagonal N[Δ_X] = [ξ × X] + Γ with Γ supported on X × D for a divisor D (WV.5/bloch-srinivas-decomposition). For a family f: X → Y, the condition is imposed on the generic fibre over k(η). (CR12, Theorem 4.8.1, p. 96; ESN03, §1, p. 1, and Theorem 1.1, p. 2).
+A proper k-scheme X is universally CH_0-trivial (rationally) if for every field extension L ⊃ k the degree map deg: CH_0(X_L) ⊗ ℚ → ℚ is an isomorphism. It suffices to check algebraically closed L ⊃ k. For X smooth projective geometrically integral, universal CH_0-triviality gives a decomposition of the diagonal N[Δ_X] = [ξ × X] + Γ with Γ supported on X × D for a divisor D (WV.5/bloch-srinivas-decomposition). For a family f: X → Y, the condition is imposed on the generic fibre over k(η). Two elementary facts on zero-cycles under field extension are proved here for every proper k-scheme X: for an algebraic extension L̄/L, CH_0(X_{L̄}) is the colimit of CH_0(X_{L′}) over the finite subextensions L′/L (Stacks, Lemma 45.8.2, tag 0FH6); and for L′/L finite, the projection π: X_{L′} → X_L is finite locally free of degree [L′ : L] and π_\*π^\* is multiplication by [L′ : L] on cycles and on Chow groups (Stacks, Lemma 42.15.2, tag 02RH). (CR12, Theorem 4.8.1, p. 96; ESN03, §1, p. 1, and Theorem 1.1, p. 2).
 
 Rational coefficients; X proper so that deg is defined. Esnault's hypothesis (CH_0(X_Ω) = ℤ for Ω an algebraic closure of k(X) only) implies universal triviality through the decomposition of the diagonal and the moving lemma for zero-cycles; that implication is not used in this roadmap, whose theorems assume universal triviality.
 
-*Needs:* WV.5/bloch-srinivas-decomposition; SchemeAndStackFoundations §5.2, degree; SchemeAndStackFoundations §5.1, chow group; MotivesAndAlgebraicCycles §2.2, chow-groups-under-field-extension; MotivesAndAlgebraicCycles §2.2, Chow groups under field extension.
+*Needs:* WV.5/bloch-srinivas-decomposition; SchemeAndStackFoundations §5.2, degree; SchemeAndStackFoundations §5.1, chow group; SchemeAndStackFoundations §5.2, chow proper push; SchemeAndStackFoundations §5.2, flat pullback.
 
 The construction has the following API.
 
 - ∀ L/k, deg: CH_0(X_L) ⊗ ℚ → ℚ is bijective.
+- For an algebraic extension L̄/L, CH_0(X_{L̄}) is the filtered colimit of CH_0(X_{L′}) over the finite subextensions L′/L.
+- For a finite extension L′/L and π: X_{L′} → X_L, π_\*π^\* = [L′ : L] on CH_0(X_L); hence the kernel of CH_0(X_L) → CH_0(X_{L̄}) is torsion.
 - X is universally CH_0-trivial iff deg: CH_0(X_L) ⊗ ℚ ≅ ℚ for every algebraically closed L ⊃ k.
 - For X smooth projective geometrically integral and universally CH_0-trivial, the diagonal decomposes rationally (WV.5/bloch-srinivas-decomposition).
 - Preserved by field extension k′/k.
@@ -1652,8 +1633,9 @@ The construction has the following API.
 
 A proof route is the following.
 
-1. Reduction to algebraically closed L: for any L, let L̄ be an algebraic closure; a class in the kernel of CH_0(X_L) → CH_0(X_{L̄}) dies over a finite subextension L′/L (MotivesAndAlgebraicCycles §2.2, Chow groups under field extension), and pushforward along the finite flat X_{L′} → X_L after pullback is multiplication by [L′ : L] (MotivesAndAlgebraicCycles §2.2, chow-groups-under-field-extension), so the kernel is torsion; deg is surjective after ⊗ℚ because X_L has a zero-cycle of positive degree.
-2. The decomposition of the diagonal is WV.5/bloch-srinivas-decomposition applied with Ω an algebraic closure of k(X), an algebraically closed extension of k.
+1. Field-extension lemmas: a zero-cycle on X_{L̄} and a rational equivalence between two such cycles involve finitely many closed points, curves and rational functions, each defined over a finite subextension, which gives the colimit description. For L′/L finite, π is the base change of Spec L′ → Spec L, hence finite locally free of degree [L′ : L]; for a closed point x of X_L, π^\*[x] is the cycle of Spec(κ(x) ⊗_L L′) and π_\*π^\*[x] = dim_{κ(x)}(κ(x) ⊗_L L′)·[x] = [L′ : L]·[x] by the residue-degree weights of proper pushforward; both operations respect rational equivalence (SchemeAndStackFoundations §5.2, chow proper push and flat pullback).
+2. Reduction to algebraically closed L: for any L, let L̄ be an algebraic closure; a class in the kernel of CH_0(X_L) → CH_0(X_{L̄}) dies over a finite subextension L′/L by the colimit description, and applying π_\* shows that [L′ : L] kills it, so the kernel is torsion; deg is surjective after ⊗ℚ because X_L has a zero-cycle of positive degree.
+3. The decomposition of the diagonal is WV.5/bloch-srinivas-decomposition applied with Ω an algebraic closure of k(X), an algebraically closed extension of k.
 
 **Checks.**
 
@@ -1661,7 +1643,7 @@ A proof route is the following.
 - Spec k is universally CH_0-trivial.
 - A smooth projective curve C of genus g ≥ 1 is not: over an algebraic closure L of k(C), the generic point gives a point of the Jacobian J(L) of infinite order, so Pic⁰(C_L) ⊗ ℚ ≠ 0. Over F̄_p alone the test would fail to detect this (J(F̄_p) is torsion, so CH_0(C_{F̄_p}) ⊗ ℚ = ℚ): the definition needs transcendental extensions.
 - If X is smooth projective and universally CH_0-trivial over F_q then ζ^W(X, t) = 1/(1 − t) (WV.6/esnault-witt-vanishing).
-- P^n is universally CH_0-trivial.
+- For X = P¹_{F_q} and L′ = F_{q²}, a rational point x pulls back to one rational point of P¹_{F_{q²}} with multiplicity one, whose pushforward is [F_{q²} : F_q]·[x] = 2[x]; a closed point y of degree 2 pulls back to two conjugate rational points, pushing forward to 2[y]. A pushforward without residue-degree weights would give [x] and 2[y], so π_\*π^\* would not be multiplication by the degree.
 
 These results apply to CR12, Theorem 4.8.1, p. 96: hypothesis on the generic fibre for the vanishing of higher direct images of WO_ℚ; ESN03, Theorem 1.1, p. 2: hypothesis for the vanishing of the slope [0, 1) part of H^i, i > 0; WV.6/esnault-witt-vanishing: the hypothesis of the theorem.
 
@@ -1669,7 +1651,7 @@ These results apply to CR12, Theorem 4.8.1, p. 96: hypothesis on the generic fib
 
 ### WV.6.11 Rationally chain connected varieties
 
-A k-scheme X of finite type is rationally chain connected if there are a k-variety Y, a family g: U → Y of geometrically connected proper algebraic curves whose geometric fibres have only rational components, and a cycle morphism u: U → X such that u^{(2)}: U ×_Y U → X ×_k X is dominant. For X proper, geometrically normal and geometrically connected, this property is invariant under every field extension k′/k: X is rationally chain connected iff X ×_k k′ is (Tan18, Proposition A.4, arXiv v3, p. 30). Over an uncountable algebraically closed field, X is rationally chain connected iff a pair of general closed points can be joined by a chain of rational curves. (GNT19, Definition 4.5 and Remark 4.6, p. 29; ESN03, §1, p. 2; HW23, Corollary 1.3, p. 2; Tan18, Proposition A.4, arXiv v3, p. 30; Kol96, IV.3.2.5; IV.3.6; V.2.13).
+A k-scheme X of finite type is rationally chain connected if there are a k-variety Y, a family g: U → Y of geometrically connected proper algebraic curves whose geometric fibres have only rational components, and a cycle morphism u: U → X such that u^{(2)}: U ×_Y U → X ×_k X is dominant. For X proper, geometrically normal and geometrically connected, this property is invariant under every field extension k′/k: X is rationally chain connected iff X ×_k k′ is (Tan18, Remark 5.3 (1), arXiv v3, p. 20, from Proposition A.4, p. 30). Over an uncountable algebraically closed field, X is rationally chain connected iff a pair of general closed points can be joined by a chain of rational curves. (GNT19, Definition 4.5 and Remark 4.6, p. 29; ESN03, §1, p. 2; HW23, Corollary 1.3, p. 2; Tan18, Proposition A.4, arXiv v3, p. 30; Kol96, IV.3.2.5; IV.3.6; V.2.13).
 
 X of finite type over a field k; the family of curves is a 'cycle-theoretic' family in Kollár's sense. The field-extension equivalence assumes X proper, geometrically normal and geometrically connected; it applies to smooth projective geometrically connected consumers.
 
@@ -1691,9 +1673,7 @@ A proof route is the following.
 
 - P^n_k is RCC: the family of lines through pairs of points, with u^{(2)} dominant.
 - Spec k is RCC: take U = P¹_k over Y = Spec k and the constant morphism u.
-- An elliptic curve is not RCC: it contains no rational curves (every map P¹ → E is constant).
 - The projective cone over any projective variety Z is RCC (any two points are joined through the vertex by two lines), although it need not be WO-rational when H^{>0}(Z, WO_ℚ) ≠ 0: the singular point-count theorem needs WO-rationality as a separate hypothesis.
-- P^n and smooth cubic surfaces are rationally chain connected.
 - A smooth cubic surface over F_q is proper, geometrically normal and geometrically connected; it remains RCC after each field extension, and CH_0 over every algebraically closed extension is ℤ.
 - An elliptic curve is smooth projective geometrically connected but contains no nonconstant rational curve, so the base-change equivalence does not assert that all such varieties are RCC.
 
@@ -1778,19 +1758,11 @@ A proof route is the following.
 
 ### Dependencies
 
-WV.2/witt-compact-support-cohomology; WV.2/compact-support-finiteness; WV.3/slope-subspace; PadicDifferentialEquationsAndRigidCohomology §RD.6.23, lefschetz trace formula; PadicDifferentialEquationsAndRigidCohomology §RD.6.22, closed points and zeta function; WV.3/berthelot-bloch-esnault-comparison; WV.6/witt-zeta-function; PadicDifferentialEquationsAndRigidCohomology §RD.7.4, rational zeta descent and fatou; WV.6/slope-zeta-identity; WV.6/ax-congruence-criterion; WV.0/witt-sheaf; WV.5/quasi-birational-witt-invariance; WV.5/wo-rational-singularities; WV.6/witt-isomorphism-point-congruence; WV.0/rational-witt-sheaves; WV.0/witt-closed-mayer-vietoris; SchemeAndStackFoundations §2.6, projective space cohomology; WV.3/affine-witt-vanishing; SchemeAndStackFoundations §2.20, cm serre duality; WV.6/theta-divisor-criterion; AbelianSchemesAndArithmeticModuli §A2.4, `ampleCohomologyAndDegree`; WV.6/serre-bockstein-vanishing; WV.5/bloch-srinivas-decomposition; SchemeAndStackFoundations §5.2, degree; SchemeAndStackFoundations §5.1, chow group; MotivesAndAlgebraicCycles §2.2, chow-groups-under-field-extension; MotivesAndAlgebraicCycles §2.2, Chow groups under field extension; SchemeAndStackFoundations §4.14, hilbert scheme; WV.6/rationally-chain-connected; WV.6/universal-chow-zero-triviality; SchemeAndStackFoundations §5.1, rational equivalence; WV.5/chow-trivial-fibration-vanishing; WV.5/finite-quotients-witt-rational; WV.3/smooth-proper-slope-identification; CrystallineCohomology §CR.4.7, Witt slope spectral sequence; WV.6/esnault-witt-vanishing; WV.6/witt-rational-point-congruence.
+WV.2/witt-compact-support-cohomology; WV.2/compact-support-finiteness; WV.3/slope-subspace; PadicDifferentialEquationsAndRigidCohomology §RD.6.23, lefschetz trace formula; PadicDifferentialEquationsAndRigidCohomology §RD.6.22, closed points and zeta function; WV.3/berthelot-bloch-esnault-comparison; WV.6/witt-zeta-function; PadicDifferentialEquationsAndRigidCohomology §RD.7.4, rational zeta descent and fatou; WV.6/slope-zeta-identity; WV.6/ax-congruence-criterion; WV.0/witt-sheaf; WV.5/quasi-birational-witt-invariance; WV.5/wo-rational-singularities; WV.6/witt-isomorphism-point-congruence; WV.0/rational-witt-sheaves; WV.0/witt-closed-mayer-vietoris; SchemeAndStackFoundations §2.6, projective space cohomology; WV.3/affine-witt-vanishing; SchemeAndStackFoundations §2.20, cm serre duality; WV.6/theta-divisor-criterion; AbelianSchemesAndArithmeticModuli §A2.4, `ampleCohomologyAndDegree`; WV.6/serre-bockstein-vanishing; WV.5/bloch-srinivas-decomposition; SchemeAndStackFoundations §5.2, degree; SchemeAndStackFoundations §5.1, chow group; SchemeAndStackFoundations §5.2, chow proper push; SchemeAndStackFoundations §5.2, flat pullback; SchemeAndStackFoundations §4.14, hilbert scheme; WV.6/rationally-chain-connected; WV.6/universal-chow-zero-triviality; SchemeAndStackFoundations §5.1, rational equivalence; WV.5/chow-trivial-fibration-vanishing; WV.5/finite-quotients-witt-rational; WV.3/smooth-proper-slope-identification; CrystallineCohomology §CR.4.7, Witt slope spectral sequence; WV.6/esnault-witt-vanishing; WV.6/witt-rational-point-congruence.
 
 ## Downstream consumers
 
-The birational-geometry continuation of SchemeAndStackFoundations consumes WV.0–WV.6 for the WO-rationality and rational-point consequences of its minimal model program. The cohomological inputs are the connected-fibre criterion, Witt ideal vanishing, exceptional-fibre reduction, rigid comparison, one-quasi-resolution criterion and point-count congruences. The minimal model program and its klt singularity theorems remain with that continuation.
-
-## Source corrections
-
-- GNT19 Lemma 2.20, p. 16, needs properness for its relative fibre-dimension bound; the punctured-plane Check in WV.0 distinguishes this from absolute Grothendieck vanishing.
-- BS17, proof of Proposition 11.41, p. 53: the finite pushout used there is constructed in WV.1 by the fibre product of section rings.
-- CR12 Corollary 4.5.1, p. 86: the quasi-birational correspondence is over S, the common base.
-- CR12, introduction p. 6: the cone criterion uses geometrically connected Z, as in Theorem 4.7.4, p. 93.
-- GNT19 Proposition 2.23, p. 18: the coherent ideal is on X, where it is a subsheaf of O_X.
+The WO-rationality criteria and the point-count congruences are stated for consumption by a roadmap on the minimal model program in positive characteristic, whose klt singularity theorems in dimensions three and four use the connected-fibre criterion, Witt ideal vanishing, exceptional-fibre reduction, the rigid comparison, the one-quasi-resolution criterion and the congruences modulo q, as in GNT19 and HW23. The minimal model program itself is not planned here.
 
 ## References
 
@@ -1802,7 +1774,7 @@ The birational-geometry continuation of SchemeAndStackFoundations consumes WV.0�
 - NT20: Yusuke Nakamura, Hiromu Tanaka, *A Witt Nadel vanishing theorem for threefolds*, 2017. §2.1; Remark 2.2; Lemmas 2.17–2.18. arXiv v2
 - ESN03: Hélène Esnault, *Varieties over a finite field with trivial Chow group of 0-cycles have a rational point*, 2002. Theorem 1.1; Corollaries 1.2–1.3; §1 p. 2. arXiv v2
 - HW23: Christopher Hacon, Jakub Witaszek, *On the relative Minimal Model Program for fourfolds in positive and mixed characteristic*, 2020. §2; Corollary 4.6 and proof (v2). Certified text: arXiv v2, Corollary 4.6. Published Corollary 4.7 is the corresponding result. Published Corollary 1.3 and pp. 19–20 are cited by locator only; they are absent from v2 and are not certified by this extraction.
-- Tan18: Hiromu Tanaka, *Behavior of canonical divisors under purely inseparable base changes*, 2018. Proposition A.4, p. 30. arXiv:1502.01381v3, Proposition A.4, p. 30; published J. Reine Angew. Math. 744 (2018), 237–264. Locators use arXiv v3.
+- Tan18: Hiromu Tanaka, *Behavior of canonical divisors under purely inseparable base changes*, 2018. Remark 5.3 (1), p. 20; Proposition A.4, p. 30. arXiv:1502.01381v3, Proposition A.4, p. 30; published J. Reine Angew. Math. 744 (2018), 237–264. Locators use arXiv v3.
 - dJ97: A. J. de Jong, *Families of curves and alterations*, 1997. Theorem 5.9; Corollaries 5.10, 5.15, p. 620.
 - dJ96: A. J. de Jong, *Smoothness, semi-stability and alterations*, 1996. Corollary 7.4, p. 88.
 - Gro85: Michel Gros, *Classes de Chern et classes de cycles en cohomologie de Hodge–Witt logarithmique*, 1985. II, Définition 4.1.7, p. 50.
@@ -1818,3 +1790,4 @@ The birational-geometry continuation of SchemeAndStackFoundations consumes WV.0�
 - BS83: Spencer Bloch; V. Srinivas, *Remarks on correspondences and algebraic cycles*, 1983. Proposition 1, pp. 1235–1253. Uncertified publisher text; cited by locator.
 - Tsu04: Nobuo Tsuzuki, *Cohomological descent in rigid cohomology*, 2004. §7.3.3, pp. 931–981. Uncertified publisher text; cited by locator.
 - EGAIII1: Alexander Grothendieck; Jean Dieudonné, *Éléments de géométrie algébrique III, première partie*, 1961. Proposition 3.3.1 and Corollary 3.3.2, pp. 117–118.
+- Stacks: The Stacks project authors, *The Stacks project*. Lemma 45.8.2 (tag 0FH6); Lemma 42.15.2 (tag 02RH).

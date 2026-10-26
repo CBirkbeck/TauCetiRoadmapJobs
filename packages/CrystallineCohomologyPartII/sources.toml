@@ -156,7 +156,7 @@ title = "Behavior of canonical divisors under purely inseparable base changes"
 year = 2018
 arxiv = "1502.01381v3"
 locator_scheme = "theorem"
-locator = "Proposition A.4, p. 30"
+locator = "Remark 5.3 (1), p. 20; Proposition A.4, p. 30"
 url = "https://arxiv.org/abs/1502.01381v3"
 fetched_from = "https://arxiv.org/pdf/1502.01381v3"
 fetched_at = "2026-10-25T14:51:15Z"
@@ -380,6 +380,9 @@ cited_for = ["WV.3/simplicial-frobenius-embedding"]
 
 [[source]]
 id = "EGAIII1"
+authors = "Alexander Grothendieck; Jean Dieudonné"
+title = "Éléments de géométrie algébrique III, première partie"
+year = 1961
 locator_scheme = "theorem"
 locator = "Proposition 3.3.1 and Corollary 3.3.2, pp. 117–118"
 url = "https://www.numdam.org/item/PMIHES_1961__11__5_0/"
@@ -390,7 +393,19 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 cited_for = ["WV.2/witt-ideal-vanishing", "WV.2/witt-proper-hypercover-descent"]
-authors = "Alexander Grothendieck; Jean Dieudonné"
-title = "Éléments de géométrie algébrique III, première partie"
-year = 1961
 
+[[source]]
+id = "Stacks"
+authors = "The Stacks project authors"
+title = "The Stacks project"
+year = 2026
+locator_scheme = "tag"
+locator = "0FH6 (Lemma 45.8.2); 02RH (Lemma 42.15.2)"
+url = "https://stacks.math.columbia.edu/tag/0FH6"
+fetched_from = "https://stacks.math.columbia.edu/download/weil.pdf#nameddest=0FH6"
+fetched_at = "2026-10-26T03:16:10Z"
+sha256 = "01f8d89f2c09649af2e0355b4798a71ee8c31ff97f8f2fa13a5b907e0db7caa2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["WV.6.10"]
