@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-7497 mistakes recorded on the board: 4523 misprints, 1889 errors, 780 gaps, 305 unparsed bullets.
+7504 mistakes recorded on the board: 4528 misprints, 1889 errors, 782 gaps, 305 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -6643,6 +6643,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## KZ25
 
+- **Misprint** at Lemma 5.2.5, printed p. 52 (KZ25 line 2317): the source says the translation representative lies in the power-series points of the group; it should be lie in the Laurent-series points, as in the proposition's use of a general nonzero translation; affects a stated result. Found by RootSystemsPartII (#1714 at fb5342d, 2026-10-26, codex gpt-6-astra).
 - **Misprint** at Lemma 6.2.6(2) proof, printed p.58 (lines 2603–2609): the source says `h⁻¹gh=g` and then `h₁gh₁⁻¹=g′`; it should be `h⁻¹gh=g′` with one consistent orientation; affects nothing. Found by ReductiveGroupsPartIII (#2088 at 6a83d3d, 2026-10-26, claude fable).
 - **Gap** at Lemma 6.3.3 proof, printed p.60 (lines 2683–2685): the source says any lift `γ̃₁∈G(ℂ)` has eigenvalues of absolute value one and so lies in a maximal compact subgroup; it should be take a semisimple lift (a unipotent lift has eigenvalue `1` and unbounded powers); affects the proof; , not the statement. Found by ReductiveGroupsPartIII (#2088 at 6a83d3d, 2026-10-26, claude fable).
 - **Misprint** at Proposition 3.3.2(1), p.25, line 1087: the source says a frame from the dual Tate module transports the crystalline tensor sα,0; it should be the étale tensor in that source module; affects nothing. Found by FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII (#1244 at 62d1f62, 2026-10-25, codex gpt-6-astra).
@@ -6652,8 +6653,11 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Gap** at Proposition 5.2.3, proof, printed pages 49–50 (author preprint, lines 2197–2206): the source says the source passes from the individual bounds λ + σⁱ(α∨) ⋞ μ for every i to the bound for the full orbit sum λ + Σᵢ σⁱ(α∨) ⋞ μ by "it follows"; it should be choose α so that the orbit sum itself fits (for instance by the Stembridge step in the folded root system, this roadmap's §4.3), since in a triality form of D₄ with λ = 2ρ∨, μ = λ + θ∨ (θ∨ = (1,2,1,1)) the root α₁ + α₂ satisfies every individual bound while its orbit sum (1,3,1,1) exceeds the budget by one at the central node; affects the proof; <!-- tauceti-roadmap-review {"agent": "claude", "head": "fb5342d", "job": "RT-RootSystemsPartII~1b", "model": "fable", "worker": "fable-rt48"} -->. Found by RootSystemsPartII (#1714 at fb5342d, 2026-10-25, claude fable).
 - **Misprint** at proof of Lemma 6.2.6(2), arXiv v2 p.58: the source says the conjugation hypothesis as `h⁻¹gh = g` and then uses `h₁ g h₁⁻¹ = g′`; it should be `h⁻¹gh = g′` with one consistent orientation; affects nothing. Found by ReductiveGroupsPartIII (#2088 at 6a83d3d, 2026-10-26, claude fable).
 - **Gap** at proof of Lemma 6.3.3, arXiv v2 p.60: the source says an arbitrary complex lift of the normalized class and places it in a compact subgroup because its eigenvalues have modulus one; it should be first choose a semisimple lift, since a unipotent lift with eigenvalues one has unbounded powers; affects the proof. Found by ReductiveGroupsPartIII (#2088 at 6a83d3d, 2026-10-26, claude fable).
+- **Gap** at proof of Proposition 5.2.3, printed pp. 49–50 (KZ25 line 2197 through line 2206): the source says the individual translated root bounds imply the bound for their distinct-orbit sum; it should be establish an existential invariant root-orbit choice respecting the same integral budget; the separate bounds alone do not imply this; affects the proof. Found by RootSystemsPartII (#1714 at fb5342d, 2026-10-26, codex gpt-6-astra).
 - **Misprint** at §3.2.5, p.23, line 1035: the source says the first-order comparison has unreduced coefficient ring on its target; it should be base-changed to the same first-order quotient on both sides; affects nothing. Found by FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII (#1244 at 62d1f62, 2026-10-25, codex gpt-6-astra).
 - **Error** at §5.1.3, printed p.47 (lines 2094–2096): the source says the `F`-points of `Conj_H` are the semisimple `H(F)`-conjugacy classes for any field `F` of characteristic zero; it should be for `F` algebraically closed (over `ℚ`, trace-zero elements of `SL₂(ℚ)` give one point and two classes, and `5/2∈Conj(SL₁(D))(ℚ)` has no lift); affects nothing; (the paper uses only quotient points, cf. its Remark 5.3.7). Found by ReductiveGroupsPartIII (#2088 at 6a83d3d, 2026-10-26, claude fable).
+- **Misprint** at §5.2.1, printed p. 48 (KZ25 line 2152 through line 2154): the source says the dominance difference is an integral linear combination of positive coroots; it should be require nonnegative integer coefficients, since unrestricted integer coefficients make distinct root-lattice translates comparable in both directions; affects a stated result. Found by RootSystemsPartII (#1714 at fb5342d, 2026-10-26, codex gpt-6-astra).
+- **Misprint** at §5.2.6, printed p. 52 (KZ25 line 2330): the source says its local-model input is Theorem 5.2.1.1; it should be refer to the local-model diagram (5.2.1.1); affects nothing; <!-- tauceti-roadmap-review {"agent": "codex", "head": "fb5342d3d9cdac6c46236a2cfb9300b25e8a1e58", "job": "RT-RootSystemsPartII~1a", "model": "gpt-6-astra", "worker": "chris-4"} -->. Found by RootSystemsPartII (#1714 at fb5342d, 2026-10-26, codex gpt-6-astra).
 - **Misprint** at §6.1.1, printed p.55 (lines 2447–2448): the source says `H¹_B(A(ℂ),ℚ)` has Hodge types `(0,−1),(−1,0)`; it should be `(1,0),(0,1)` (those are the types of `H₁`, Deligne82 lines 1008–1009); affects nothing; once the convention is fixed. Found by ReductiveGroupsPartIII (#2088 at 6a83d3d, 2026-10-26, claude fable).
 
 ## L08
@@ -7973,6 +7977,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Ramakrishnan, A theorem on GL(n) à la Tchebotarev, arXiv:1806.08429
 
 - **Error** at Lemma 4.1: the source says the lemma with no hypothesis at the real places; it should be stated with a real-place hypothesis, which the instance over ℚ(i) with the quaternion algebra (−1,−1) shows is needed; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Rap00
+
+- **Misprint** at Lemma 2.3, printed p. 157 (Rap00 line 194): the source says the chosen variable is a positive coroot and subsequently decorates that same variable with a further coroot symbol; it should be consistently name the chosen positive coroot β∨; affects nothing. Found by RootSystemsPartII (#1714 at fb5342d, 2026-10-26, codex gpt-6-astra).
 
 ## RC
 
@@ -9447,6 +9455,8 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Stem08
 
 - **Misprint** at Claim 3 proof, printed p.2 (Stem08 line 59 through Stem08 line 67): the source says the block-reflection difference is the neighboring-root sum without excluding vertices in that block; it should be restricted to vertices outside the block, with the inside case giving minus twice the original simple root; affects the proof. Found by RootSystemsPartII (#1714 at fb5342d, 2026-10-25, codex gpt-6-astra).
+- **Misprint** at proof of Claim 3, printed p. 2 (Stem08 line 60 through line 67): the source says a block reflection product changes a simple root by the sum of its neighbors in that block; it should be restrict this formula to roots outside the block; inside the block the change is minus twice that simple root; affects the proof. Found by RootSystemsPartII (#1714 at fb5342d, 2026-10-26, codex gpt-6-astra).
+- **Gap** at proof of Claim 3, printed p. 2 (Stem08 line 68 through line 70): the source says agreement on the folded span and Coxeter reflection faithfulness produce the homomorphism into the original Weyl group; it should be additionally establish the lifted Coxeter relations or faithfulness of restriction on the block-generated subgroup; affects the proof. Found by RootSystemsPartII (#1714 at fb5342d, 2026-10-26, codex gpt-6-astra).
 
 ## sternberg
 
