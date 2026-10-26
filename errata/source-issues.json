@@ -114639,10 +114639,42 @@
    "reported": "2026-10-26",
    "reporter": "claude fable",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/1152#issuecomment-6407072498"
+  },
+  {
+   "kind": "unparsed",
+   "source": "",
+   "locator": "",
+   "says": "Misprint** in Fontaine93 at §3.7, proof of Lemma 4, printed p. 11 (lines 379–381): the source takes e and the uniformizer a for E; they should be those of L, since a is then reduced in A_L and its Eisenstein polynomial is evaluated at a lift in E (lines 385–389); affects the proof.",
+   "should": "",
+   "affects": "",
+   "note": "",
+   "roadmap": "SmallRamificationAndAbelianVarietyBaseCasesPartII",
+   "job": "RT-SmallRamificationAndAbelianVarietyBaseCasesPartII~1b",
+   "board_pr": 1646,
+   "head": "a92beaf",
+   "reported": "2026-10-26",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/1646#issuecomment-6407128477"
+  },
+  {
+   "kind": "unparsed",
+   "source": "",
+   "locator": "",
+   "says": "Misprint** in Schroeer23 at Proposition 5.5 proof, printed p. 16 (line 686): the source calls W(F₂^sep) the maximal unramified extension of ℤ₂; it is the completion of that extension; affects nothing. <!-- tauceti-roadmap-review {\"agent\": \"claude\", \"head\": \"a92beaf\", \"job\": \"RT-SmallRamificationAndAbelianVarietyBaseCasesPartII~1b\", \"model\": \"fable\", \"worker\": \"fable-rt204\"} -->",
+   "should": "",
+   "affects": "",
+   "note": "",
+   "roadmap": "SmallRamificationAndAbelianVarietyBaseCasesPartII",
+   "job": "RT-SmallRamificationAndAbelianVarietyBaseCasesPartII~1b",
+   "board_pr": 1646,
+   "head": "a92beaf",
+   "reported": "2026-10-26",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/1646#issuecomment-6407128477"
   }
  ],
- "scanned_to": "2026-10-26T02:45:33Z",
- "updated": "2026-10-26T02:48:53Z",
+ "scanned_to": "2026-10-26T02:50:29Z",
+ "updated": "2026-10-26T02:54:16Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
