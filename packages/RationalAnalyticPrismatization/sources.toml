@@ -52,7 +52,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v1. Expanded seminar notes on the Clausen–Scholze analytic stacks course; used as the citable account of the unowned analytic-stack prerequisite."
-cited_for = ["Scope", "Suppliers: unowned analytic-stack prerequisite", "Risks", "Design: required contracts analytic-stacks, analytic-stacks-betti-nuclear, solid-cotangent-complex, solid-serre-duality; 12.1"]
+cited_for = ["Scope", "Suppliers: unowned analytic-stack prerequisite", "Risks", "Design: required contracts light-solid-analytic-rings, analytic-stack-topos, qcoh-six-functors, betti-realization, solid-cotangent-complex, algebraic-stacks-condensed, formal-cone-adic-filtration, regular-immersion-suave, solid-smooth-duality; 12.1"]
 
 [[source]]
 id = "HM"
@@ -61,7 +61,7 @@ title = "6-Functor Formalisms and Smooth Representations"
 year = 2024
 arxiv = "2410.13038v1"
 locator_scheme = "theorem"
-locator = "Theorem 3.4.11; Definitions 4.4.1, 4.5.1 and 4.6.1; Lemmas 4.4.8–4.4.10, 4.5.7–4.5.8, 4.6.3 and 4.6.4; Remarks 4.4.11; Corollary 4.5.18; Example 5.3.21"
+locator = "Proposition 3.3.3; Theorem 3.4.11; Definitions 4.4.1, 4.5.1 and 4.6.1; Lemmas 4.4.5–4.4.6, 4.4.8–4.4.10, 4.5.7–4.5.8, 4.6.3 and 4.6.4; Remarks 4.4.11; Corollary 4.5.18; Example 5.3.21"
 url = "https://arxiv.org/abs/2410.13038v1"
 fetched_from = "https://arxiv.org/pdf/2410.13038v1"
 fetched_at = "2026-10-25T21:22:52Z"
@@ -70,7 +70,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v1"
-cited_for = ["Suppliers: unowned analytic-stack prerequisite", "Final targets T12", "Design: 2.2, 3.3, 12.2–12.4; required contract analytic-stacks"]
+cited_for = ["Suppliers: unowned analytic-stack prerequisite", "Final targets T12", "Design: 2.2, 3.3, 12.2–12.4; required contracts qcoh-six-functors, suave-prim-calculus, classifying-stack-dualizing"]
 
 [[source]]
 id = "SixFF"
@@ -88,7 +88,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v2 (22 January 2026)"
-cited_for = ["Suppliers: unowned analytic-stack prerequisite", "Design: required contract analytic-stacks"]
+cited_for = ["Suppliers: unowned analytic-stack prerequisite", "Design: required contract qcoh-six-functors"]
 
 [[source]]
 id = "Gest"
@@ -96,7 +96,7 @@ authors = "Peter Scholze"
 title = "Geometry and higher category theory"
 year = 2026
 locator_scheme = "theorem"
-locator = "Definitions 6.5 and 6.12; Proposition 6.13; Proposition 9.5; Corollary 9.8"
+locator = "Definitions 6.5, 6.9 and 6.12; Propositions 6.6, 6.10, 6.13, 7.9 and 9.5; Corollary 9.8"
 url = "https://people.mpim-bonn.mpg.de/scholze/Gestalten.pdf"
 fetched_from = "https://people.mpim-bonn.mpg.de/scholze/Gestalten.pdf"
 fetched_at = "2026-10-25T21:24:43Z"
@@ -105,7 +105,7 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "Author-page lecture notes (121 pages); the numbering cited by ALRS Construction 2.1.2 agrees with this file."
-cited_for = ["Scope", "Risks", "Design: Scope and ownership (the construction is not used)"]
+cited_for = ["Scope", "Risks", "Design: Scope and ownership; 2.2, 2.7, 10.3, 12.1, 12.2; required contracts gestalten-affine-proper, gestalten-transmutation"]
 
 [[source]]
 id = "ALBM"
@@ -322,7 +322,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v3. ALRS cites the first statement as Theorem 3.2.27; it is Proposition 3.2.27 in v3."
-cited_for = ["Design: required contract analytic-cartier-duality; 5.3"]
+cited_for = ["Design: required contracts vector-group-cartier-duality, stacky-cartier-duality; 5.3"]
 
 [[source]]
 id = "Zav"
@@ -358,7 +358,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v2"
-cited_for = ["Design: required contract analytic-stacks-betti-nuclear; 10.2"]
+cited_for = ["Design: required contract nuclear-modules; 10.2"]
 
 [[source]]
 id = "Man26"
@@ -393,7 +393,7 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "Draft from the author's page (91 pages), prepared for a seminar; numbering is that of the file with the recorded sha256."
-cited_for = ["Design: 1.7, 2.3, 3.5; required contract analytic-stacks (Fredholm property, !-descent of perfect amplitude)"]
+cited_for = ["Design: 1.7, 2.3, 3.5; required contract fredholm-criteria (Fredholm property, !-descent of perfect amplitude)"]
 
 [[source]]
 id = "Laz65"
