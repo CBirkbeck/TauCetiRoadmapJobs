@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-7122 mistakes recorded on the board: 4341 misprints, 1806 errors, 715 gaps, 260 unparsed bullets.
+7124 mistakes recorded on the board: 4341 misprints, 1807 errors, 716 gaps, 260 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -2596,6 +2596,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## CDN-CURVES
 
 - **Misprint** at §0.3 (introduction), printed page 13, line 536: the source says the source refers to the symbols–syntomic comparison as prop. 6.24; it should be th. 6.24 (the statement at line 3630 is a Théorème); affects nothing. Found by ProetaleCohomologyOfPAdicCurvesAndTowers (#2128 at eca65ea, 2026-10-26, claude fable).
+- **Gap** at §1.2.2, printed page 19 (line 753): the source says the function spaces on vertices and edges are the duals of the finitely supported ones for an abelian group of coefficients; it should be for a ring of coefficients with linear duals (false for the Klein four-group); affects nothing; (every use has ring coefficients). Found by ProetaleCohomologyOfPAdicCurvesAndTowers (#2128 at fdd03ed, 2026-10-26, claude fable).
 
 ## CDN-STEIN
 
@@ -2610,6 +2611,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at Proposition 2.5, proof (author p.22): the source says the Hom has dimension 0 or 1 according as D_pst(V*) is or is not M[−1]*; it should be 1 or 0 respectively; affects nothing. Found by PadicLocalLanglandsForGL2QpPartII (#392 at 3e0777d, 2026-10-23, claude opus).
 - **Misprint** at Proposition 2.5, proof, authors' copy p. 22: the source says the Hom has dimension 0 or 1 according as D_pst(V*) is or is not M[−1]*; it should be 1 or 0 respectively; affects nothing. Found by PadicLocalLanglandsForGL2QpPartII (#392 at 642e432, 2026-10-25, claude fable).
 - **Error** at Théorème 0.4 and Théorème 0.8, printed pages 6–7 (lines 199–213, 246–261): the source says the statements are printed for every supercuspidal rank-two `M`, supercuspidal meaning only that `WD(M)` is irreducible (line 182); it should be `M` of slope `1/2`, as the paper's own §2.1 (lines 644, 654, 702), footnote 10 (line 664) and the later CDN23 definition (line 328) require, since an unramified twist changes the slope of `M̆` but not that of the multiplicity module; affects a stated result; <!-- tauceti-roadmap-review {"agent": "claude", "head": "c479bd5", "job": "REV-DESIGN-ProetaleCohomologyOfPAdicCurvesAndTowers~2", "model": "fable", "worker": "fable-rev192"} -->. Found by ProetaleCohomologyOfPAdicCurvesAndTowers (#2128 at c479bd5, 2026-10-26, claude fable).
+- **Error** at Théorème 0.4 and Théorème 0.8, printed pages 6–7 (lines 199–213, 252–261): the source says the statements are printed for every supercuspidal rank-two `M`, supercuspidal meaning only that `WD(M)` is irreducible (line 182); it should be `M` of slope `1/2`, as the paper's own §2.1 (lines 644, 654, 702), footnote 10 (line 664) and the later CDN23 definition (line 328) require; affects a stated result; <!-- tauceti-roadmap-review {"agent": "claude", "head": "fdd03ed", "job": "REV-DESIGN-ProetaleCohomologyOfPAdicCurvesAndTowers~3", "model": "fable", "worker": "fable-rev198"} -->. Found by ProetaleCohomologyOfPAdicCurvesAndTowers (#2128 at fdd03ed, 2026-10-26, claude fable).
 
 ## CDN23
 
