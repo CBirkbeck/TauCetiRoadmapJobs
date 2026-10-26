@@ -649,14 +649,14 @@
      "id": "2.3",
      "kind": "theorem",
      "name": "TauCeti.GelfandStack.perf_eq_dualizable",
-     "statement": "Prove that for integers a ≤ b the prestack of categories A ↦ Perf^{[a,b]}(A) of perfect A-modules of amplitude [a,b] extends uniquely to a sheaf of categories Perf^{[a,b]}(−) on GelfStk, inverting !-equivalences (ABLB Lemma 4.2.11, p. 43, ABLB line 2235), and that for every Gelfand stack X the category Perf(X) ⊂ D(X) is exactly the full subcategory of dualizable objects (ALRS §2.1, p. 16, ALRS line 809). Prove that locally eventually connective modules D^+(−) and nuclear modules Nuc(D(−)) form sheaves of categories on GelfStk (ALRS Lemma 2.1.8, p. 16, ALRS line 820; ALRS Lemma 2.1.10, p. 17, ALRS line 861), and prove the criterion used for D^+ and Nuc: a sheaf of categories on an ∞-topos descends to a cotopological localization if and only if it is fully faithful along the localizing maps (ALRS Lemma 2.1.9, p. 16, ALRS line 841).",
+     "statement": "Since every Gelfand ring is Fredholm (1.7), AnalyticStacks §4.5 applied to C₀ = GelfRing_{ω₁}^op gives, for integers a ≤ b, the sheaf of categories Perf^{[a,b]}(−) on GelfStk extending A ↦ Perf^{[a,b]}(A) and inverting !-equivalences, a module being perfect of amplitude [a, b] when its pullback to every affinoid is (ABLB Lemma 4.2.11 and Definition 4.2.12, p. 43, ABLB line 2235, ABLB line 2253, stated there for Gelfand rings). Prove that for every Gelfand stack X the category Perf(X) ⊂ D(X) is exactly the full subcategory of dualizable objects (ALRS §2.1, p. 16, ALRS line 809). Prove that locally eventually connective modules D^+(−) and nuclear modules Nuc(D(−)) form sheaves of categories on GelfStk (ALRS Lemma 2.1.8, p. 16, ALRS line 820; ALRS Lemma 2.1.10, p. 17, ALRS line 861), and prove the criterion used for D^+ and Nuc: a sheaf of categories on an ∞-topos descends to a cotopological localization if and only if it is fully faithful along the localizing maps (ALRS Lemma 2.1.9, p. 16, ALRS line 841).",
      "hypotheses": [
       "X is a Gelfand stack",
       "a ≤ b are integers"
      ],
      "locator": {
-      "source": "ABLB",
-      "where": "Lemma 4.2.11; ALRS Lemmas 2.1.8–2.1.10, p. 43; ABLB line 2235"
+      "source": "ALRS",
+      "where": "§2.1 and Lemmas 2.1.8–2.1.10, pp. 16–17; ALRS line 809"
      },
      "prerequisites": [
       "target:1.7",
@@ -665,7 +665,7 @@
       "roadmap:EnhancedDerivedSheaves §E5:descent",
       "roadmap:EnhancedDerivedSheaves §E5:presentability.4",
       "gap:analytic-stack-topos",
-      "gap:hypercover-inversion",
+      "gap:perfect-complexes-fredholm-stacks",
       "gap:nuclear-modules",
       "gap:fredholm-criteria"
      ],
@@ -1691,6 +1691,7 @@
       "target:4.6",
       "target:4.8",
       "target:4.1",
+      "target:2.1",
       "roadmap:SchemeAndStackFoundations §5.5",
       "gap:formal-cone-adic-filtration"
      ],
@@ -2288,7 +2289,7 @@
      "id": "7.5",
      "kind": "theorem",
      "name": "TauCeti.Prism.perfFF_pullback",
-     "statement": "Define the sheaves of categories Perf^{[n,m]} on Gelfand stacks and Perf^{[n,m],FF} on perfect δ-spaces, (S, 𝒳) ↦ Perf^{[n,m]}(𝒳/φ^ℤ) (ALRS Definition 3.6.1, p. 53, ALRS line 2797). Prove that for a nilperfectoid (or uniformly perfectoid) A the square Perf(FF_A) → Perf(FF_{A^u}), Perf(GSpec A) → Perf(GSpec A^u) is cartesian; consequently A ↦ Perf(FF_A) is a sheaf of categories on Gelfand stacks and (Perf^≃_FF)^real = Perf^≃ ×_{Perf^{≃,dR}} (Perf^≃_FF)^{dR,real} (ALRS Proposition 3.6.3, p. 54, ALRS line 2822); the same holds for D^+ and fixed amplitudes (ALRS Remark 3.6.4, p. 54, ALRS line 2838), for Perf on perfect δ-spaces and on δ-spaces (ALRS Remark 3.6.7, p. 55, ALRS line 2857), and for global sections: Γ(FF_A, E) = Γ(FF_{A^u}, E) ×_{Γ(A^u, E)} Γ(A, E) (ALRS Corollary 3.6.5, p. 54, ALRS line 2841). For a strictly totally disconnected nilperfectoid A deduce Γ(GSpec A, O_{FF_A}) ≅ A ×_{A^u} ℚ_p^dR(A) = ℚ_p^la(A) (ALRS Example 3.6.6, p. 54, ALRS line 2847).",
+     "statement": "With Perf^{[n,m]} on Gelfand stacks as in 2.3 (AnalyticStacks §4.5), define the sheaf of categories Perf^{[n,m],FF} on perfect δ-spaces, (S, 𝒳) ↦ Perf^{[n,m]}(𝒳/φ^ℤ) (ALRS Definition 3.6.1, p. 53, ALRS line 2797). Prove that for a nilperfectoid (or uniformly perfectoid) A the square Perf(FF_A) → Perf(FF_{A^u}), Perf(GSpec A) → Perf(GSpec A^u) is cartesian; consequently A ↦ Perf(FF_A) is a sheaf of categories on Gelfand stacks and (Perf^≃_FF)^real = Perf^≃ ×_{Perf^{≃,dR}} (Perf^≃_FF)^{dR,real} (ALRS Proposition 3.6.3, p. 54, ALRS line 2822); the same holds for D^+ and fixed amplitudes (ALRS Remark 3.6.4, p. 54, ALRS line 2838), for Perf on perfect δ-spaces and on δ-spaces (ALRS Remark 3.6.7, p. 55, ALRS line 2857), and for global sections: Γ(FF_A, E) = Γ(FF_{A^u}, E) ×_{Γ(A^u, E)} Γ(A, E) (ALRS Corollary 3.6.5, p. 54, ALRS line 2841). For a strictly totally disconnected nilperfectoid A deduce Γ(GSpec A, O_{FF_A}) ≅ A ×_{A^u} ℚ_p^dR(A) = ℚ_p^la(A) (ALRS Example 3.6.6, p. 54, ALRS line 2847).",
      "hypotheses": [
       "A is a nilperfectoid ℚ_p-algebra (or uniformly perfectoid)"
      ],
@@ -4329,7 +4330,6 @@
     "§0.9",
     "§0.10",
     "§0.11",
-    "§0.13",
     "§1.6",
     "§1.7",
     "§2.1",
@@ -4343,6 +4343,7 @@
     "§4.2",
     "§4.3",
     "§4.4",
+    "§4.5",
     "§5.1",
     "§5.2",
     "§5.3",
@@ -4355,7 +4356,7 @@
     "§7.6",
     "§7.7"
    ],
-   "what": "Light analytic rings and ℚ_{p,■} (§§2.3, 2.11, 3.6), light condensed anima (§2.1), analytic stacks and the quasi-coherent six-functor formalism (§§0.5–0.6, 0.8–0.11, 0.13, 3.2–3.3), the realization of algebraic stacks with graded, filtered and sheared modules (§§1.6–1.7, 3.8), Betti stacks, classifying stacks of locally profinite groups, nuclear modules and Fredholm criteria (§§4.1–4.4), the cotangent complex of analytic rings (§§5.1–5.3), regular immersions, the solid affine line, the deformation to the normal cone and Serre duality (§§6.3–6.6), and Cartier duality (§§7.2, 7.5–7.7), each consumed through the declared gap named under Declared gaps. Its nuclear modules (§4.3) rest on its own declared gap `nuclear-hom-criterion` to RefinedTraceMethods §4.3."
+   "what": "Light analytic rings and ℚ_{p,■} (§§2.3, 2.11, 3.6), light condensed anima (§2.1), analytic stacks and the quasi-coherent six-functor formalism (§§0.5–0.6, 0.8–0.11, 3.2–3.3), the realization of algebraic stacks with graded, filtered and sheared modules (§§1.6–1.7, 3.8), Betti stacks, classifying stacks of locally profinite groups, nuclear modules, Fredholm criteria and perfect complexes on analytic stacks of Fredholm rings (§§4.1–4.5), the cotangent complex of analytic rings (§§5.1–5.3), regular immersions, the solid affine line, the deformation to the normal cone and Serre duality (§§6.3–6.6), and Cartier duality (§§7.2, 7.5–7.7), each consumed through the declared gap named under Declared gaps. Its nuclear modules (§4.3) rest on its own declared gap `nuclear-hom-criterion` to RefinedTraceMethods §4.3."
   },
   {
    "roadmap": "EnhancedDerivedSheaves",
@@ -4710,15 +4711,15 @@
    "section": "§4.2"
   },
   {
-   "slug": "hypercover-inversion",
-   "title": "The hypercover criterion for sheaves of categories",
+   "slug": "perfect-complexes-fredholm-stacks",
+   "title": "Perfect complexes on analytic stacks of Fredholm rings",
    "neededBy": [
     "2.3"
    ],
-   "detail": "Supply: the hypercover criterion used in ABLB Lemma 4.2.11 (ABLB line 2235), at the generality of analytic stacks over ℚ_{p,■}.",
-   "needs": "For the quasi-coherent formalism on analytic stacks, a sub-prestack of full subcategories of D(−) that is a sheaf for the !-topology and is fully faithful along !-hypercovers inverts every !-equivalence.",
+   "detail": "Supply: ABLB Lemma 4.2.11, Definition 4.2.12 and Remark 4.2.13 (ABLB line 2235, ABLB line 2253, ABLB line 2257), stated there for Gelfand rings, in the generality of Fredholm C₀; used here for C₀ = GelfRing_{ω₁}^op, every Gelfand ring being Fredholm by 1.7.",
+   "needs": "For an essentially small category C₀ of affinoid analytic stacks of Fredholm analytic rings, closed under finite limits and finite coproducts, and integers a ≤ b, the unique extension of A ↦ Perf^{[a,b]}(A) to a sheaf of categories on AnStk(C₀) inverting !-equivalences, perfectness and amplitude being tested on a jointly surjective family of affinoids.",
    "supplier": "AnalyticStacks",
-   "section": "§0.13(6), with §3.3"
+   "section": "§4.5"
   },
   {
    "slug": "betti-realization",
