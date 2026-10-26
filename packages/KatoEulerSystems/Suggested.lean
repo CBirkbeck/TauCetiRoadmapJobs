@@ -1,18 +1,27 @@
 import Mathlib
 import TauCeti.AlgebraicGeometry.EllipticCurve.Affine.Point.Galois
+import TauCeti.AlgebraicGeometry.EllipticCurve.TateModule.Galois
+import TauCeti.AlgebraicGeometry.EllipticCurve.Isogeny.Hom.Ring
 
 /-!
 # KatoEulerSystems: target signatures
 
 The roadmap is README.md; this file is not the roadmap. It states the roadmap's headline
-theorems against the pinned Mathlib and Tau Ceti APIs. The elliptic cases of §7.9 are statable:
+theorems against the pinned Mathlib and Tau Ceti APIs. Serre's open-image theorem of §4.7 is
+statable on the Tau Ceti Tate-module representation, with non-CM expressed through the Tau Ceti
+endomorphism ring of the curve over the algebraic closure. The elliptic cases of §7.9 are statable:
 finite generation over every fixed cyclotomic tower, and finiteness of the Mordell–Weil χ-part
 over cyclotomic fields when the continued twisted L-function is nonzero at 1, whose case m = 1
 is finiteness of rational points at analytic rank zero. They carry no modularity hypothesis:
 every elliptic curve over ℚ is modular (EllipticCurveModularity, R29.6).
 
-The canonical zeta morphisms (§§5.1, 5.4, 5.6), non-torsion and cohomological bound
-(§§7.1–7.2) lack Iwasawa cohomology and the modular Galois realization. The regulator
+Beilinson's real regulator formula (§3.4) lacks the K₂ group of the modular curve with its
+regulator map and the operator-valued zeta function. The canonical zeta morphisms
+(§§5.1, 5.4, 5.6), the module structure of Iwasawa cohomology (§4.4), the finite index of the
+smoothed integral span (§5.2), the critical interpolation (§5.3), non-torsion and the
+cohomological bound (§§7.1–7.2) lack Iwasawa cohomology and the modular Galois realization.
+Perrin-Riou's map for de Rham representations (§6.1) lacks Iwasawa cohomology of local Galois
+representations, D_crys and D_dR, and the distribution algebras ℋ_h. The regulator
 equality (§6.4) lacks the Kato zeta morphism and analytic p-adic L-function. The
 ordinary and multiplicative divisibility (§7.4) lacks the Iwasawa Selmer module over
 ℚ_∞ and the Mazur–Swinnerton-Dyer p-adic L-function; absence of finite submodules
@@ -27,6 +36,25 @@ maps, although Mathlib has ContinuousCohomology.tateShafarevich for supplied Gal
 -/
 
 namespace TauCetiRoadmap.KatoEulerSystems
+
+/-! ## Layer 4: image, nonvanishing and Iwasawa inputs before the canonical map -/
+
+/-- Serre's open-image theorem for an elliptic curve over ℚ without complex multiplication,
+that is, every endomorphism of the curve over the algebraic closure of ℚ is multiplication by
+an integer. For every prime ℓ the image of the absolute Galois group in the automorphism group
+of the ℓ-adic Tate module has finite index (equivalently it is open, being compact), and it is
+the whole automorphism group for all but finitely many ℓ (Serre 1972, Théorèmes 2–3). -/
+theorem serre_openImage (W : WeierstrassCurve ℚ) [W.IsElliptic]
+    [DecidableEq (AlgebraicClosure ℚ)]
+    (hW : ∀ φ : TauCeti.Isogeny.Hom (W.baseChange (AlgebraicClosure ℚ)).toAffine
+        (W.baseChange (AlgebraicClosure ℚ)).toAffine, ∃ n : ℤ, φ = n) :
+    (∀ (ℓ : ℕ) [Fact ℓ.Prime],
+      ((W.tateModuleGaloisRepresentation (K := AlgebraicClosure ℚ) ℓ).asGroupHom.range
+        ).FiniteIndex) ∧
+    {ℓ : ℕ | ∃ _ : Fact ℓ.Prime,
+      (W.tateModuleGaloisRepresentation (K := AlgebraicClosure ℚ) ℓ).asGroupHom.range
+        ≠ ⊤}.Finite := by
+  sorry
 
 /-! ## Layer 7: divisibility and elliptic applications -/
 
