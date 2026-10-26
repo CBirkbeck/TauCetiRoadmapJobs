@@ -431,3 +431,55 @@ status = "certified"
 accessed = "2026-10-26"
 version_note = "arXiv v5 (pre-publication version of the 2024 Cambridge University Press book); theorem numbers are cited from this version"
 cited_for = ["2.8"]
+
+[[source]]
+id = "MW"
+authors = "Samuel Meyer, Ferdinand Wagner"
+title = "q-Hodge complexes and refined TC−"
+year = 2024
+arxiv = "2410.23115"
+locator_scheme = "theorem"
+locator = "Theorem 2.4"
+url = "https://arxiv.org/abs/2410.23115"
+fetched_from = "https://arxiv.org/pdf/2410.23115"
+fetched_at = "2026-10-26T03:07:03Z"
+sha256 = "4479788e04da71cfb76596b4375b6b1e4c9bcd940ad92e1ab7c8ededba446dd4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v4 (8 October 2025); theorem numbers are cited from this version"
+cited_for = ["4.3"]
+
+[[source]]
+id = "HA"
+authors = "Jacob Lurie"
+title = "Higher Algebra"
+year = 2017
+locator_scheme = "theorem"
+locator = "Theorem 4.8.4.6; Corollary 4.8.5.13"
+url = "https://www.math.ias.edu/~lurie/papers/HA.pdf"
+fetched_from = "https://www.math.ias.edu/~lurie/papers/HA.pdf"
+fetched_at = "2026-10-26T03:07:51Z"
+sha256 = "112b145a95a62daefb8275851cac9ab6430004cfc8f751a33a8d981fd7ad68c3"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "author version of 18 September 2017; numbers are cited from this version"
+cited_for = ["1.1", "2.3"]
+
+[[source]]
+id = "SAG"
+authors = "Jacob Lurie"
+title = "Spectral Algebraic Geometry"
+year = 2018
+locator_scheme = "theorem"
+locator = "Propositions 25.2.4.1 and 25.3.6.1"
+url = "https://www.math.ias.edu/~lurie/papers/SAG-rootfile.pdf"
+fetched_from = "https://www.math.ias.edu/~lurie/papers/SAG-rootfile.pdf"
+fetched_at = "2026-10-26T03:08:22Z"
+sha256 = "515109098ae5cd73bf266fa97bf498b4e8c7adb6e936be67e6fa9a86bb69020d"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "author version of 3 February 2018; numbers are cited from this version"
+cited_for = ["5.2"]

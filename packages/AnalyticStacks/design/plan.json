@@ -269,7 +269,7 @@
      "id": "0.6",
      "kind": "theorem",
      "name": "extendToSheaves",
-     "statement": "A sheafy presentable six-functor formalism on a subcanonical site extends uniquely to (Shv(C), E′) for a minimal class E′ that is local on the target, local on source and target for universal !-descent, tame and stable under disjoint unions; same for hypersheaves.",
+     "statement": "A sheafy presentable six-functor formalism on a subcanonical site extends uniquely to (Shv(C), E′) for a minimal class E′ that is local on the target, local on source and target for universal !-descent, tame, and stable under disjoint unions when ∗ → ∗ ⊔ ∗ lies in E′; same for hypersheaves.",
      "hypotheses": [
       "(C, E) a geometric setup, C subcanonical site",
       "D presentable, sheafy"
@@ -295,7 +295,7 @@
       {
        "name": "disjointUnions",
        "kind": "computation",
-       "statement": "Infinite disjoint unions of E-maps lie in E′ with D(⊔X_i) = ∏ D(X_i)."
+       "statement": "When ∗ → ∗ ⊔ ∗ lies in E′, infinite disjoint unions of E-maps lie in E′ with D(⊔X_i) = ∏ D(X_i)."
       },
       {
        "name": "constantNotSheafy",
@@ -934,7 +934,7 @@
      "id": "1.7",
      "kind": "theorem",
      "name": "formalLineShearing",
-     "statement": "𝔸̂¹ ≃ BG_a[−1] with G_a[−1] = Spec ℤ[ε₁], 𝔾_m-equivariantly with ε₁ of weight −1; over ℚ-linear V, D(BG_a[−1]/𝔾_m) ⊗ V ≃ graded objects with d: M_n → M_{n−1}[1], Beilinson t-structure with heart chain complexes of V♡.",
+     "statement": "𝔸̂¹ ≃ BG_a[−1] with G_a[−1] = Spec ℤ[ε₁], 𝔾_m-equivariantly with ε₁ of weight −1; over ℚ-linear V, D(BG_a[−1]/𝔾_m) ⊗ V ≃ graded objects with d: M_n → M_{n−1}[1], Beilinson t-structure with heart chain complexes of V♡; for V = D(A), A a ℚ-algebra, the t-structure and heart are those of DerivedDeRhamCohomology §§1.18–1.19 on complete filtered objects (imported), extended here to general ℚ-linear V.",
      "hypotheses": [
       "V presentable stable symmetric monoidal QCoh(ℚ)-linear for the shearing part"
      ],
@@ -946,7 +946,9 @@
       "target:1.4",
       "target:1.5",
       "target:1.6",
-      "roadmap:EnhancedDerivedSheaves §E5:abstract.4"
+      "roadmap:EnhancedDerivedSheaves §E5:abstract.4",
+      "roadmap:DerivedDeRhamCohomology §1.18",
+      "roadmap:DerivedDeRhamCohomology §1.19"
      ],
      "api": [],
      "tests": [
@@ -1642,7 +1644,7 @@
       {
        "name": "zSolidComparison",
        "kind": "compatibility",
-       "statement": "(A, ℤ)_■ agrees with VS2.2 ZSolidAnalytification on common light presentations; A_■ is smaller."
+       "statement": "(A, ℤ)_■ agrees with VS2.2 ZSolidAnalytification on common light presentations; A_■ is strictly smaller for A = ℤ[T], ℤ[1/p] and equal for A integral over ℤ (𝔽_p, ℤ/p^s)."
       }
      ]
     },
@@ -1985,13 +1987,13 @@
      "id": "4.4",
      "kind": "definition",
      "name": "IsFredholm",
-     "statement": "An analytic ring is Fredholm if every dualizable object of D(A) is perfect; cone criterion; Assumption 9.8 generation; conservative base change detects f.g. static modules and amplitude; !-local perfectness; Nakayama passage; sheafy analytic complete Huber pairs are Fredholm; filtered colimits.",
+     "statement": "An analytic ring is Fredholm if every dualizable object of D(A) is perfect; cone criterion; Assumption 9.8 generation; conservative base change detects f.g. static modules through the ordinary tensor product, and amplitude; !-local perfectness; Nakayama passage; sheafy analytic complete Huber pairs are Fredholm (light form of the κ-condensed theorem of And21); filtered colimits.",
      "hypotheses": [
       "A analytic ring"
      ],
      "locator": {
       "source": "Sch24",
-      "where": "Definition VI.1.6, Propositions VI.1.2, VI.1.5, VI.1.7, Corollaries VI.1.3–VI.1.4, Sch24 line 1720 to Sch24 line 1755; CS22 Definition 9.7, Propositions 9.4, 9.10; And21 Theorem 5.50, Corollary 5.51.1"
+      "where": "Definition VI.1.6, Propositions VI.1.2, VI.1.5, VI.1.7, Corollaries VI.1.3–VI.1.4, Sch24 line 1720 to Sch24 line 1755; CS22 Definition 9.7, Propositions 9.4, 9.10; And21 Lemmas 5.46–5.47, Theorem 5.50, Lemma 5.51, Corollary 5.51.1"
      },
      "prerequisites": [
       "target:2.2",
@@ -2669,7 +2671,7 @@
      "id": "7.4",
      "kind": "theorem",
      "name": "latticeTorusDuality",
-     "statement": "ℤ^Betti and 𝔾_m: g_!1 = ⊕_ℤ ℤ; B𝔾_m !-able; [B𝔾_m]_! ≅ [ℤ^Betti]_*, [𝔾_m]_! ≅ [Bℤ^Betti]_*; stacky form over Latt with tori 𝔾_m ⊗ V*.",
+     "statement": "ℤ^Betti and 𝔾_m: g_!1 = ⊕_ℤ ℤ; B𝔾_m represents invertible objects of D(A) that become isomorphic to the unit after a !-cover, and e: S → B𝔾_m is prim and descendable; [B𝔾_m]_! ≅ [ℤ^Betti]_*, [𝔾_m]_! ≅ [Bℤ^Betti]_*; stacky form over Latt with tori 𝔾_m ⊗ V*.",
      "hypotheses": [],
      "locator": {
       "source": "RC26a",
@@ -2748,7 +2750,8 @@
      "name": "stackyCartierDuality",
      "statement": "Transmutation along ring stacks; for 𝔾_a, G_{a,■}, D^{≤1}_R, G^an_{a,R}, ℤ_p^la: 1-categorical Cartier dualities of transmuted universal vector bundles and duals over Vect^R; gerbe version over B²M.",
      "hypotheses": [
-      "R/S one of the ring stacks of RC26a Example 3.2.36"
+      "R/S one of the ring stacks of RC26a Example 3.2.36",
+      "for the gerbe statement: R !-able over S, M, N !-able R-modules over S, D(R) a !-able R-module with exp: D(R) → 𝔾_m giving [R]_* ≅ [B(D(R))]_!"
      ],
      "locator": {
       "source": "RC26a",
@@ -2885,6 +2888,14 @@
     "§2.18"
    ],
    "what": "Stacks, quotient stacks, [𝔸¹/𝔾_m], abelian quasi-coherent sheaves and comodules, derived quasi-coherent complexes."
+  },
+  {
+   "roadmap": "DerivedDeRhamCohomology",
+   "sections": [
+    "§1.18",
+    "§1.19"
+   ],
+   "what": "The Beilinson t-structure on filtered derived categories of a commutative ring and its heart Ch(A)."
   },
   {
    "roadmap": "AdicSpaces",
