@@ -8,7 +8,7 @@ title = "Notes on Solid Geometry"
 year = 2026
 arxiv = "2603.03012v1"
 locator_scheme = "theorem"
-locator = "Definition 4.1.1; Propositions 4.1.11, 4.1.14, 6.3.18, 6.4.7, 6.4.12, 7.1.5, 7.1.11; Theorems 5.2.3, 7.7.1, 7.7.21; Definitions 5.4.7, 6.3.2, 6.3.13, 6.3.23, 7.1.1, 7.4.1; Corollaries 6.3.4, 6.3.15, 6.3.19, 7.7.23; Lemmas 6.3.5, 6.4.16, 7.4.3; Remark 6.4.1; Example 7.7.8"
+locator = "Definitions, propositions and theorems of Sections 4.0-7.6 (Definition 4.0.1 to Definition 7.6.3); exact numbers at each target"
 url = "https://arxiv.org/abs/2603.03012v1"
 fetched_from = "https://arxiv.org/pdf/2603.03012v1"
 fetched_at = "2026-10-25T23:55:49Z"
@@ -17,7 +17,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v1"
-cited_for = ["AS.1", "AS.2", "AS.3", "AS.4", "AS.5", "AS.6"]
+cited_for = ["0", "1", "2", "3", "4", "5", "6"]
 
 [[source]]
 id = "HM"
@@ -26,7 +26,7 @@ title = "6-Functor Formalisms and Smooth Representations"
 year = 2024
 arxiv = "2410.13038v1"
 locator_scheme = "theorem"
-locator = "Proposition 3.3.3; Theorem 3.4.11; Proposition 3.5.22; Theorem 4.2.4; Definitions 4.4.1, 4.5.1, 4.6.1; Example 4.4.3; Lemma 4.6.4; Proposition 5.3.19; Example 5.3.21"
+locator = "Definitions 2.1.1, 2.2.10, 3.1.1, 3.2.1, 3.3.2, 3.4.1, 4.1.3, 4.4.1, 4.5.1, 4.6.1, 5.2.1, 5.3.17; Propositions 2.3.3, 2.3.5, 2.4.1, 3.1.8, 3.2.2, 3.3.3, 4.1.4, 4.1.5, 4.2.1, 4.3.1, 5.1.12, 5.3.19; Theorems 3.4.11, 4.2.4; Lemmas 3.3.4, 3.4.13, 4.4.5-4.4.19, 4.5.4-4.5.10, 4.6.3, 4.6.4, 4.7.1, 4.7.4, 5.3.20; Corollary 4.5.11; Examples 4.4.3, 5.3.18, 5.3.21, 5.3.22"
 url = "https://arxiv.org/abs/2410.13038v1"
 fetched_from = "https://arxiv.org/pdf/2410.13038v1"
 fetched_at = "2026-10-25T23:56:23Z"
@@ -35,7 +35,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v1"
-cited_for = ["AS.0", "AS.4"]
+cited_for = ["0", "4"]
 
 [[source]]
 id = "SixFF"
@@ -44,7 +44,7 @@ title = "Six-Functor Formalisms"
 year = 2025
 arxiv = "2510.26269v2"
 locator_scheme = "theorem"
-locator = "Definitions 2.3-2.5, 5.1, 6.1, 6.10, 6.12; Theorems 4.6, 5.5, 5.19, 9.7, 9.15, 9.17, 9.18, 10.6"
+locator = "Definitions 2.3-2.5, 5.1, 6.1, 6.10, 6.12; Definition/Proposition 3.2; Theorems 4.6, 4.8, 4.10, 5.5, 5.12, 5.19, 9.6-9.8, 9.10, 9.15, 9.17, 9.18; Propositions 6.5, 6.6, 6.8, 6.9, 6.14; Remarks 4.2, 5.4; Warning 9.11"
 url = "https://arxiv.org/abs/2510.26269v2"
 fetched_from = "https://arxiv.org/pdf/2510.26269v2"
 fetched_at = "2026-10-25T23:56:31Z"
@@ -53,7 +53,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v2"
-cited_for = ["AS.0", "AS.3", "AS.6", "AS.7"]
+cited_for = ["0", "2", "3", "6"]
 
 [[source]]
 id = "RC26a"
@@ -62,7 +62,7 @@ title = "Cartier duality for gerbes of vector bundles"
 year = 2025
 arxiv = "2512.24967v3"
 locator_scheme = "theorem"
-locator = "Definition 2.1.6; Proposition 2.1.9; Theorem 2.3.2; Propositions 2.4.3, 2.4.4; Definition 2.4.7; Theorem 2.5.15; Proposition 3.1.3; Theorem 3.1.4; Propositions 3.2.6, 3.2.11, 3.2.21, 3.2.27, 3.2.32; Example 3.2.36; Theorem 3.2.37; Proposition 3.3.3"
+locator = "Definitions 2.1.1, 2.1.6, 2.4.7, 2.5.1, 2.5.4, 2.5.7, 3.2.13, 3.2.14, 3.2.17, 3.2.22, 3.2.29, 3.2.33; Theorems 2.3.2, 2.5.15, 3.1.4, 3.2.37; Propositions 2.1.9, 2.4.3, 2.4.4, 2.5.13, 3.1.3, 3.2.6, 3.2.11, 3.2.21, 3.2.27, 3.2.32, 3.3.3; Lemmas 2.1.10, 2.2.5, 2.5.3, 2.5.5, 2.5.9, 2.5.12, 3.0.3, 3.1.1, 3.1.2, 3.2.1, 3.2.3, 3.2.5, 3.2.8, 3.2.10, 3.2.16, 3.2.18, 3.2.19, 3.2.24, 3.2.25, 3.2.30, 3.2.31, 3.2.34, 3.3.2; Constructions 2.4.1, 3.2.2, 3.2.9, 3.2.20, 3.2.26, 3.2.35, 3.3.1; Remarks 2.4.5, 2.4.6, 3.2.28; Corollary 3.2.7; Example 3.2.36"
 url = "https://arxiv.org/abs/2512.24967v3"
 fetched_from = "https://arxiv.org/pdf/2512.24967v3"
 fetched_at = "2026-10-25T23:56:37Z"
@@ -71,7 +71,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v3; ALRS cites Proposition 3.2.27 of this version as Theorem 3.2.27"
-cited_for = ["AS.7"]
+cited_for = ["0", "1", "3", "7"]
 
 [[source]]
 id = "ABLB"
@@ -80,7 +80,7 @@ title = "Analytic de Rham stacks of Fargues-Fontaine curves"
 year = 2025
 arxiv = "2510.15196v2"
 locator_scheme = "theorem"
-locator = "Definition 4.2.1; Lemmas 4.2.9, 4.2.11; Proposition 3.3.5; Lemmas A.0.6-A.0.9, A.0.13"
+locator = "Definitions 3.3.1, 4.2.1, 4.2.12, A.0.4; Remarks 4.2.2-4.2.5, 4.2.13; Lemmas 4.2.9, 4.2.11, A.0.6-A.0.9, A.0.13; Example A.0.5; Proposition 3.3.5"
 url = "https://arxiv.org/abs/2510.15196v2"
 fetched_from = "https://arxiv.org/pdf/2510.15196v2"
 fetched_at = "2026-10-25T23:56:48Z"
@@ -89,7 +89,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v2"
-cited_for = ["AS.3", "AS.4"]
+cited_for = ["0", "3", "4"]
 
 [[source]]
 id = "Gest"
@@ -97,7 +97,7 @@ authors = "Peter Scholze"
 title = "Geometry and higher category theory"
 year = 2026
 locator_scheme = "chapter"
-locator = "Lectures VII and IX"
+locator = "Lectures VI-IX"
 url = "https://people.mpim-bonn.mpg.de/scholze/Gestalten.pdf"
 fetched_from = "https://people.mpim-bonn.mpg.de/scholze/Gestalten.pdf"
 fetched_at = "2026-10-25T23:57:03Z"
@@ -124,25 +124,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
 version_note = "arXiv v5"
-cited_for = ["AS.7"]
-
-[[source]]
-id = "AM24"
-authors = "Johannes Anschütz, Lucas Mann"
-title = "Descent for solid quasi-coherent sheaves on perfectoid spaces"
-year = 2024
-arxiv = "2403.01951v2"
-locator_scheme = "theorem"
-locator = "Lemma 3.29"
-url = "https://arxiv.org/abs/2403.01951"
-fetched_from = "https://arxiv.org/pdf/2403.01951"
-fetched_at = "2026-10-26T00:04:11Z"
-sha256 = "fc8c18ea88717e06a89b44f1d54b010cca85b249488f8cb0bab3c348934e63b7"
-licence_class = "open-repository"
-status = "certified"
-accessed = "2026-10-26"
-version_note = "arXiv v2"
-cited_for = ["AS.4"]
+cited_for = ["7"]
 
 [[source]]
 id = "Sch24"
@@ -159,7 +141,7 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-26"
 version_note = "author-page draft version used for the ARGOS seminar"
-cited_for = ["AS.4"]
+cited_for = ["4"]
 
 [[source]]
 id = "CSCond"
@@ -168,7 +150,7 @@ title = "Lectures on Condensed Mathematics"
 year = 2026
 arxiv = "2605.03658v1"
 locator_scheme = "theorem"
-locator = "Theorems 8.1, 8.2, 11.1, 11.6; Proposition 11.5; Lectures VII-X"
+locator = "Examples 7.3; Theorems 11.1, 11.6; Proposition 11.5"
 url = "https://arxiv.org/abs/2605.03658"
 fetched_from = "https://arxiv.org/pdf/2605.03658"
 fetched_at = "2026-10-26T00:04:47Z"
@@ -177,7 +159,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
 version_note = "arXiv v1, stable version of the 2019 lectures"
-cited_for = ["AS.2", "AS.3", "AS.6"]
+cited_for = ["2", "3", "6"]
 
 [[source]]
 id = "CSAnal"
@@ -186,7 +168,7 @@ title = "Lectures on Analytic Geometry"
 year = 2026
 arxiv = "2605.03655v1"
 locator_scheme = "theorem"
-locator = "Definition 12.1; Propositions 12.20, 13.13"
+locator = "Definition 12.1; Propositions 12.19, 12.20"
 url = "https://arxiv.org/abs/2605.03655"
 fetched_from = "https://arxiv.org/pdf/2605.03655"
 fetched_at = "2026-10-26T00:04:54Z"
@@ -195,7 +177,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
 version_note = "arXiv v1, stable version of the 2019/20 lectures"
-cited_for = ["AS.2", "AS.4"]
+cited_for = ["2"]
 
 [[source]]
 id = "CS22"
@@ -204,7 +186,7 @@ title = "Condensed Mathematics and Complex Geometry"
 year = 2026
 arxiv = "2605.11731v1"
 locator_scheme = "theorem"
-locator = "Theorem 8.6; Definition 9.7; Assumption 9.8; Proposition 9.11"
+locator = "Propositions 5.3, 6.5, 9.3, 9.4, 9.10, 9.11; Theorems 6.7, 8.6; Definitions 8.5, 9.7; Assumption 9.8; Example 9.6"
 url = "https://arxiv.org/abs/2605.11731"
 fetched_from = "https://arxiv.org/pdf/2605.11731"
 fetched_at = "2026-10-26T00:07:28Z"
@@ -213,7 +195,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
 version_note = "arXiv v1, revised 2022 lectures"
-cited_for = ["AS.4"]
+cited_for = ["2", "4"]
 
 [[source]]
 id = "ALRS"
@@ -230,7 +212,7 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-26"
 version_note = "author-page preprint"
-cited_for = ["AS.1", "AS.5", "AS.6", "Consumers"]
+cited_for = ["1", "3", "5", "6", "Downstream consumers"]
 
 [[source]]
 id = "BZSV"
@@ -248,7 +230,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
 version_note = "arXiv v1"
-cited_for = ["AS.1"]
+cited_for = ["1"]
 
 [[source]]
 id = "Mou"
@@ -267,7 +249,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
 version_note = "arXiv v2"
-cited_for = ["AS.1"]
+cited_for = ["1"]
 
 [[source]]
 id = "And21"
@@ -276,7 +258,7 @@ title = "Pseudocoherent and Perfect Complexes and Vector Bundles on Analytic Adi
 year = 2021
 arxiv = "2105.12591v1"
 locator_scheme = "theorem"
-locator = "Proposition 3.34; Theorem 4.1"
+locator = "Proposition 3.34; Theorems 4.1, 5.50; Corollary 5.51.1"
 url = "https://arxiv.org/abs/2105.12591v1"
 fetched_from = "https://arxiv.org/pdf/2105.12591v1"
 fetched_at = "2026-10-26T00:10:22Z"
@@ -285,7 +267,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
 version_note = "arXiv v1"
-cited_for = ["AS.2"]
+cited_for = ["2", "3", "4"]
 
 [[source]]
 id = "Man22"
@@ -294,7 +276,7 @@ title = "A $p$-Adic 6-Functor Formalism in Rigid-Analytic Geometry"
 year = 2022
 arxiv = "2206.02022v1"
 locator_scheme = "theorem"
-locator = "Proposition A.5.10; Definition 2.9.3; Proposition 2.9.6"
+locator = "Propositions 2.9.6, A.3.21, A.5.10, A.5.12, A.5.14"
 url = "https://arxiv.org/abs/2206.02022v1"
 fetched_from = "https://arxiv.org/pdf/2206.02022v1"
 fetched_at = "2026-10-26T00:10:56Z"
@@ -303,4 +285,201 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
 version_note = "arXiv v1"
-cited_for = ["AS.0", "AS.2"]
+cited_for = ["0", "2"]
+
+[[source]]
+id = "LZ12b"
+authors = "Yifeng Liu, Weizhe Zheng"
+title = "Gluing restricted nerves of $\\infty$-categories"
+year = 2012
+arxiv = "1211.5294v4"
+locator_scheme = "theorem"
+locator = "Theorems 4.27, 5.4"
+url = "https://arxiv.org/abs/1211.5294v4"
+fetched_from = "https://arxiv.org/pdf/1211.5294v4"
+fetched_at = "2026-10-26T01:26:55Z"
+sha256 = "5f0e5c3aa8706789de1c093f030fbe6fe7d873385204bbebe69f9a51c05d10fb"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v4"
+cited_for = ["0.2"]
+
+[[source]]
+id = "ABFJ22"
+authors = "Mathieu Anel, Georg Biedermann, Eric Finster, André Joyal"
+title = "Left-exact Localizations of $\\infty$-Topoi I: Higher Sheaves"
+year = 2021
+venue = "Advances in Mathematics, Volume 400, 2022, 108268"
+doi = "10.1016/j.aim.2022.108268"
+arxiv = "2101.02791v4"
+locator_scheme = "theorem"
+locator = "Theorem 4.3.3"
+url = "https://arxiv.org/abs/2101.02791v4"
+fetched_from = "https://arxiv.org/pdf/2101.02791v4"
+fetched_at = "2026-10-26T01:27:07Z"
+sha256 = "984807ef605b4c03b2e309bfb642148ec20e05ae3d9f1f4908672703dd875d41"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v4"
+cited_for = ["3.3"]
+
+[[source]]
+id = "Bos23"
+authors = "Guido Bosco"
+title = "Rational $p$-adic Hodge theory for rigid-analytic varieties"
+year = 2023
+arxiv = "2306.06100v1"
+locator_scheme = "theorem"
+locator = "Theorem A.17"
+url = "https://arxiv.org/abs/2306.06100v1"
+fetched_from = "https://arxiv.org/pdf/2306.06100v1"
+fetched_at = "2026-10-26T01:27:14Z"
+sha256 = "a142fc46709b8a54ef552a052f8a0c96006b578ef2565bbe4bcea6100505c7e9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v1"
+cited_for = ["4.3"]
+
+[[source]]
+id = "Mat16"
+authors = "Akhil Mathew"
+title = "The Galois group of a stable homotopy theory"
+year = 2014
+arxiv = "1404.2156v2"
+locator_scheme = "theorem"
+locator = "Propositions 3.20, 3.31, 3.34"
+url = "https://arxiv.org/abs/1404.2156v2"
+fetched_from = "https://arxiv.org/pdf/1404.2156v2"
+fetched_at = "2026-10-26T01:27:20Z"
+sha256 = "c5304ca64c64d549a40ac5e3f2648749262c18863bd07807169fc0e65603ea00"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2"
+cited_for = ["1.2"]
+
+[[source]]
+id = "BHL17"
+authors = "Bhargav Bhatt, Daniel Halpern-Leistner"
+title = "Tannaka duality revisited"
+year = 2015
+arxiv = "1507.01925v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.10"
+url = "https://arxiv.org/abs/1507.01925v1"
+fetched_from = "https://arxiv.org/pdf/1507.01925v1"
+fetched_at = "2026-10-26T01:27:34Z"
+sha256 = "f30130525d945c09cbe39c6e0c33da79959398c01d18e16cf1e51db27632a628"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v1"
+cited_for = ["1.2"]
+
+[[source]]
+id = "Mao21"
+authors = "Zhouhang Mao"
+title = "Revisiting derived crystalline cohomology"
+year = 2021
+arxiv = "2107.02921v2"
+locator_scheme = "theorem"
+locator = "Corollary 3.61"
+url = "https://arxiv.org/abs/2107.02921v2"
+fetched_from = "https://arxiv.org/pdf/2107.02921v2"
+fetched_at = "2026-10-26T01:27:42Z"
+sha256 = "66a7bef89a0b6ea7055b141f65525d23ff65b2774580a7e8ad282a42b7187b84"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2"
+cited_for = ["6.4"]
+
+[[source]]
+id = "Lur18a"
+authors = "Jacob Lurie"
+title = "Elliptic Cohomology I: Spectral Abelian Varieties"
+year = 2018
+locator_scheme = "theorem"
+locator = "Propositions 3.8.1, 3.8.5, 3.9.9"
+url = "https://www.math.ias.edu/~lurie/papers/Elliptic-I.pdf"
+fetched_from = "https://www.math.ias.edu/~lurie/papers/Elliptic-I.pdf"
+fetched_at = "2026-10-26T01:28:28Z"
+sha256 = "591f7ca0dc78b0b24cf6dfbb1e84202777c91cfb8901488534d9f940eb6e9c45"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "author-page version of February 2018; numbering of Section 3 checked against the text read"
+cited_for = ["7.1"]
+
+[[source]]
+id = "GvG24"
+authors = "Mai Gehrke, Sam van Gool"
+title = "Topological Duality for Distributive Lattices: Theory and Applications"
+year = 2022
+arxiv = "2203.03286v5"
+locator_scheme = "theorem"
+locator = "Theorem 6.4"
+url = "https://arxiv.org/abs/2203.03286v5"
+fetched_from = "https://arxiv.org/pdf/2203.03286v5"
+fetched_at = "2026-10-26T01:32:21Z"
+sha256 = "23dc86f73e765d9dd0765566943a35961b56175e443e11a2ecd9c29142be7312"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v5 (pre-publication version of the 2024 Cambridge University Press book); theorem numbers are cited from this version"
+cited_for = ["2.8"]
+
+[[source]]
+id = "MW"
+authors = "Samuel Meyer, Ferdinand Wagner"
+title = "q-Hodge complexes and refined TC−"
+year = 2024
+arxiv = "2410.23115"
+locator_scheme = "theorem"
+locator = "Theorem 2.4"
+url = "https://arxiv.org/abs/2410.23115"
+fetched_from = "https://arxiv.org/pdf/2410.23115"
+fetched_at = "2026-10-26T03:07:03Z"
+sha256 = "4479788e04da71cfb76596b4375b6b1e4c9bcd940ad92e1ab7c8ededba446dd4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v4 (8 October 2025); theorem numbers are cited from this version"
+cited_for = ["4.3"]
+
+[[source]]
+id = "HA"
+authors = "Jacob Lurie"
+title = "Higher Algebra"
+year = 2017
+locator_scheme = "theorem"
+locator = "Theorem 4.8.4.6; Corollary 4.8.5.13"
+url = "https://www.math.ias.edu/~lurie/papers/HA.pdf"
+fetched_from = "https://www.math.ias.edu/~lurie/papers/HA.pdf"
+fetched_at = "2026-10-26T03:07:51Z"
+sha256 = "112b145a95a62daefb8275851cac9ab6430004cfc8f751a33a8d981fd7ad68c3"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "author version of 18 September 2017; numbers are cited from this version"
+cited_for = ["1.1", "2.3"]
+
+[[source]]
+id = "SAG"
+authors = "Jacob Lurie"
+title = "Spectral Algebraic Geometry"
+year = 2018
+locator_scheme = "theorem"
+locator = "Propositions 25.2.4.1 and 25.3.6.1"
+url = "https://www.math.ias.edu/~lurie/papers/SAG-rootfile.pdf"
+fetched_from = "https://www.math.ias.edu/~lurie/papers/SAG-rootfile.pdf"
+fetched_at = "2026-10-26T03:08:22Z"
+sha256 = "515109098ae5cd73bf266fa97bf498b4e8c7adb6e936be67e6fa9a86bb69020d"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "author version of 3 February 2018; numbers are cited from this version"
+cited_for = ["5.2"]

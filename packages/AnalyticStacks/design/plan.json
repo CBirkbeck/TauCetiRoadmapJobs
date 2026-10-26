@@ -1,0 +1,3002 @@
+{
+ "roadmap": "AnalyticStacks",
+ "title": "Analytic stacks and their six-functor formalisms",
+ "parent": null,
+ "summary": "Abstract three- and six-functor formalisms (correspondences, Liu–Zheng gluing, the construction and extension theorems, the kernel bicategory, suave/prim/étale/proper calculus, !-equivalence topoi); quasi-coherent formalism of algebraic stacks in the !-topology; light analytic animated rings, smashing localizations, solid structures and solid Huber rings; analytic stacks AnStk(C₀) with their quasi-coherent formalism and the realization of algebraic stacks; Betti and classifying stacks, nuclear modules and Fredholm rings; the cotangent complex of analytic rings; solid smoothness and Serre duality f^!1 ≅ det(L)[n]; Cartier duality in Künneth formalisms and its instances.",
+ "baseline": {
+  "mathlib": "6b7abb3c7686292736be2955bd3eb9ebf63b456a",
+  "tauceti": "a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039"
+ },
+ "layers": [
+  {
+   "key": "0",
+   "title": "Abstract six-functor formalisms",
+   "targets": [
+    {
+     "id": "0.1",
+     "kind": "definition",
+     "name": "GeometricSetup",
+     "statement": "A geometric setup is a pair (C, E) of an ∞-category C and a class E of morphisms containing equivalences, closed under composition, admitting and closed under pullback along arbitrary maps, and containing the diagonal of each of its members.",
+     "hypotheses": [
+      "C an ∞-category (quasicategory)"
+     ],
+     "locator": {
+      "source": "HM",
+      "where": "Definition 2.1.1 and Lemma 2.1.5, HM line 877"
+     },
+     "prerequisites": [
+      "roadmap:EnhancedDerivedSheaves §E0.4",
+      "mathlib:SSet.Quasicategory"
+     ],
+     "api": [
+      {
+       "name": "rightCancel",
+       "role": "lemma",
+       "statement": "If f and f∘g lie in E then g lies in E (RCSolid Lemma 6.1.3)."
+      },
+      {
+       "name": "sliceFull",
+       "role": "construction",
+       "statement": "((C_E)/S, all) is a geometric setup for every S."
+      },
+      {
+       "name": "intersect",
+       "role": "lemma",
+       "statement": "The intersection of two setup classes is a setup class."
+      }
+     ],
+     "tests": [
+      {
+       "name": "surjectionsNotSetup",
+       "kind": "non-example",
+       "statement": "Surjections of sets fail the diagonal axiom: {a,b} → {a,b}×{a,b} is not surjective."
+      },
+      {
+       "name": "openImmersionsSetup",
+       "kind": "compatibility",
+       "statement": "Open immersions of schemes form a setup class; Mathlib IsStableUnderBaseChange, IsMultiplicative, diagonal hold."
+      },
+      {
+       "name": "smoothNotSetup",
+       "kind": "non-example",
+       "statement": "Smooth morphisms of schemes: diagonal of 𝔸¹ → Spec ℤ is not smooth; right cancellation fails for the zero section."
+      }
+     ]
+    },
+    {
+     "id": "0.2",
+     "kind": "construction",
+     "name": "Corr",
+     "statement": "The ∞-category Corr(C, E) of spans X ← W → Y with W → Y in E, composed by pullback, as the restricted nerve of cartesian Σ_n-diagrams; symmetric monoidal by the product when C has finite limits; functorial in setups; objects self-dual for E = all.",
+     "hypotheses": [
+      "(C, E) a geometric setup; C with finite limits for the monoidal structure"
+     ],
+     "locator": {
+      "source": "HM",
+      "where": "Definitions 2.2.1–2.2.10, Propositions 2.2.9, 2.3.3, 2.3.5, 2.4.1, HM line 990 to HM line 1380"
+     },
+     "prerequisites": [
+      "target:0.1",
+      "target:0.3",
+      "roadmap:EnhancedDerivedSheaves §E0.3",
+      "roadmap:EnhancedDerivedSheaves §E5:abstract.1"
+     ],
+     "api": [
+      {
+       "name": "fromOp",
+       "role": "functor",
+       "statement": "C^op → Corr(C, E) and C_E → Corr(C, E), symmetric monoidal (HM Proposition 2.3.7)."
+      },
+      {
+       "name": "factorization",
+       "role": "lemma",
+       "statement": "Every span is a C_E-map after a C^op-map, uniquely up to contractible choice."
+      },
+      {
+       "name": "selfDual",
+       "role": "lemma",
+       "statement": "For E = all, Corr(C)^op ≃ Corr(C) reversing spans."
+      }
+     ],
+     "tests": [
+      {
+       "name": "spanBicatCompare",
+       "kind": "compatibility",
+       "statement": "For ordinary C, hCorr(C,E) is Mathlib SpanBicat with isomorphic 1-morphisms identified."
+      },
+      {
+       "name": "isoClassIsOp",
+       "kind": "degenerate",
+       "statement": "For E = equivalences, Corr(C, E) ≃ C^op."
+      },
+      {
+       "name": "compositionCardinality",
+       "kind": "computation",
+       "statement": "Composite of {1} ← {1,2} → {1} with itself has apex of cardinality 4."
+      }
+     ]
+    },
+    {
+     "id": "0.3",
+     "kind": "theorem",
+     "name": "liuZhengGluing",
+     "statement": "(1) δ*₂X → δ*₂∇X is a categorical equivalence for every bisimplicial set X. (2) Under admissibility and factorization hypotheses on E₀, …, E_k, the map of restricted multisimplicial nerves δ*_k C^cart_{E₁,…,E_k} → δ*_{k−1} C^cart_{E₀,E₃,…,E_k} is a categorical equivalence, also with opposites in directions L ⊆ {3,…,k}.",
+     "hypotheses": [
+      "C an ∞-category with pullbacks",
+      "E₁, E₂ admissible, E₁,E₂ ⊆ E₀, E₀ = E₁∘E₂, E_i (i ≥ 3) stable under pullback along E₁"
+     ],
+     "locator": {
+      "source": "LZ12b",
+      "where": "Theorem 4.27, LZ12b line 1887; Theorem 5.4 and Theorem 0.1, LZ12b line 110"
+     },
+     "prerequisites": [
+      "roadmap:EnhancedDerivedSheaves §E0.3",
+      "roadmap:EnhancedDerivedSheaves §E0.5",
+      "roadmap:EnhancedDerivedSheaves §E3.1",
+      "mathlib:SSet.Quasicategory"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "pointCase",
+       "kind": "degenerate",
+       "statement": "For the constant point both nerves are Δ⁰."
+      },
+      {
+       "name": "nagata",
+       "kind": "compatibility",
+       "statement": "Proper/open-immersion decomposition of separated finite type maps satisfies the hypotheses."
+      },
+      {
+       "name": "surjectionsNotAdmissible",
+       "kind": "non-example",
+       "statement": "Surjections are not admissible: p∘q = id with q not surjective."
+      }
+     ]
+    },
+    {
+     "id": "0.4",
+     "kind": "definition",
+     "name": "ThreeFunctorFormalism",
+     "statement": "A three-functor formalism is a lax symmetric monoidal functor D: Corr(C, E) → Cat∞; stable/presentable variants; extracted f*, f_!, ⊗; a six-functor formalism has closed D(X), right adjoints f_* and f^!. Morphisms are symmetric monoidal transformations.",
+     "hypotheses": [
+      "(C, E) a geometric setup"
+     ],
+     "locator": {
+      "source": "HM",
+      "where": "Definitions 3.1.1, 3.1.4, 3.2.1, HM line 1633, HM line 1651, HM line 1806"
+     },
+     "prerequisites": [
+      "target:0.2",
+      "roadmap:EnhancedDerivedSheaves §E5:abstract.1",
+      "roadmap:EnhancedDerivedSheaves §E5:abstract.2",
+      "roadmap:EnhancedDerivedSheaves §E5:presentability.2",
+      "roadmap:EnhancedDerivedSheaves §E3.2"
+     ],
+     "api": [
+      {
+       "name": "baseChange",
+       "role": "lemma",
+       "statement": "g*f_! ≅ f′_!g′*, f* monoidal, projection formula (HM Proposition 3.1.8)."
+      },
+      {
+       "name": "sixFunctorIdentities",
+       "role": "lemma",
+       "statement": "(gf)_* = g_*f_*, (gf)^! = f^!g^!, exceptional base change, internal Hom identities (HM Proposition 3.2.2)."
+      },
+      {
+       "name": "linearOverPoint",
+       "role": "lemma",
+       "statement": "Presentable formalisms factor through Pr^L_{D(∗)} (HM Lemma 3.1.9)."
+      },
+      {
+       "name": "restrict",
+       "role": "construction",
+       "statement": "Restriction along a morphism of setups and to slices."
+      }
+     ],
+     "tests": [
+      {
+       "name": "finiteSets",
+       "kind": "computation",
+       "statement": "On finite sets with D(X) = Fun(X, D(Λ)), f_! is the fibrewise sum; for {1,2} → {1}, f_!(M₁,M₂) = M₁ ⊕ M₂."
+      },
+      {
+       "name": "constantDegenerate",
+       "kind": "degenerate",
+       "statement": "The constant formalism X ↦ D(Λ) with identities is a three-functor formalism; D(∅) = 0 is not forced."
+      },
+      {
+       "name": "pushforwardNotShriek",
+       "kind": "non-example",
+       "statement": "f_! := f_* for all maps of locally compact spaces fails base change for (0,1) ⊆ [0,1] at 0."
+      }
+     ]
+    },
+    {
+     "id": "0.5",
+     "kind": "theorem",
+     "name": "constructionPrinciple",
+     "statement": "For a suitable decomposition (I, P) of E and D₀: C^op → CAlg(Cat∞) with left adjoints j_♮ (j ∈ I) and right adjoints p_* (p ∈ P) satisfying base change, projection formula and j_♮p′_* ≅ p_*j′_♮, D₀ extends canonically to a three-functor formalism with j_! = j_♮ and p_! = p_*.",
+     "hypotheses": [
+      "C has pullbacks",
+      "I, P stable under composition and pullback, right cancellative, E = P∘I",
+      "every map of I ∩ P truncated"
+     ],
+     "locator": {
+      "source": "HM",
+      "where": "Proposition 3.3.3, HM line 1924; Man22 Proposition A.5.10; SixFF Theorem 4.6"
+     },
+     "prerequisites": [
+      "target:0.2",
+      "target:0.3",
+      "target:0.4",
+      "roadmap:EnhancedDerivedSheaves §E3.4",
+      "roadmap:EnhancedDerivedSheaves §E0.7",
+      "roadmap:EnhancedDerivedSheaves §E5:abstract.1"
+     ],
+     "api": [
+      {
+       "name": "conditionCAutomatic",
+       "role": "lemma",
+       "statement": "Condition (c) holds on objects f′*N ⊗ j′*N′ (HM Lemma 3.3.4) and for j a monomorphism (SixFF Remark 4.2)."
+      },
+      {
+       "name": "jShriekFF",
+       "role": "lemma",
+       "statement": "j_! is fully faithful for monomorphisms j ∈ I."
+      }
+     ],
+     "tests": [
+      {
+       "name": "finiteSetsRecovered",
+       "kind": "compatibility",
+       "statement": "Recovers the finite-set formalism with I = identities, P = all."
+      },
+      {
+       "name": "monoCase",
+       "kind": "computation",
+       "statement": "For j: 𝔾_m → 𝔸¹ and p: ℙ¹ → ∗, (c) holds since j is mono."
+      },
+      {
+       "name": "conditionCNeeded",
+       "kind": "non-example",
+       "statement": "Sets with I = P = all and Fun(X, D(Λ)): (c) fails for ℕ → ∗ (⊕∏ → ∏⊕ misses the identity matrix)."
+      }
+     ]
+    },
+    {
+     "id": "0.6",
+     "kind": "theorem",
+     "name": "extendToSheaves",
+     "statement": "A sheafy presentable six-functor formalism on a subcanonical site extends uniquely to (Shv(C), E′) for a minimal class E′ that is local on the target, local on source and target for universal !-descent, tame, and stable under disjoint unions when ∗ → ∗ ⊔ ∗ lies in E′; same for hypersheaves.",
+     "hypotheses": [
+      "(C, E) a geometric setup, C subcanonical site",
+      "D presentable, sheafy"
+     ],
+     "locator": {
+      "source": "HM",
+      "where": "Theorem 3.4.11 and Lemma 3.4.13, HM line 2258; SixFF Theorem 5.19, SixFF line 1576"
+     },
+     "prerequisites": [
+      "target:0.4",
+      "roadmap:EnhancedDerivedSheaves §E2.6",
+      "roadmap:EnhancedDerivedSheaves §E2.7",
+      "roadmap:EnhancedDerivedSheaves §E3.1",
+      "roadmap:EnhancedDerivedSheaves §E5:presentability.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "morphismOfSetups",
+       "kind": "compatibility",
+       "statement": "E ⊆ E′ and D agrees on C."
+      },
+      {
+       "name": "disjointUnions",
+       "kind": "computation",
+       "statement": "When ∗ → ∗ ⊔ ∗ lies in E′, infinite disjoint unions of E-maps lie in E′ with D(⊔X_i) = ∏ D(X_i)."
+      },
+      {
+       "name": "constantNotSheafy",
+       "kind": "non-example",
+       "statement": "The constant formalism is not sheafy: the empty cover forces D(∅) terminal."
+      }
+     ]
+    },
+    {
+     "id": "0.7",
+     "kind": "construction",
+     "name": "kernelBicategory",
+     "statement": "The Mathlib bicategory hK_{D,S}: objects E-maps X → S, 1-morphisms Y → X the homotopy category of D(X ×_S Y), composition by convolution π₁₃!(π₁₂* ⊗ π₂₃*), identity Δ!1; pseudofunctors Φ from spans and Ψ = Fun_S(S, −) to categories with Ψ∘Φ = D.",
+     "hypotheses": [
+      "D a three-functor formalism on (C, E)",
+      "S ∈ C"
+     ],
+     "locator": {
+      "source": "HM",
+      "where": "Definition 4.1.3 and Propositions 4.1.4–4.1.5, HM line 2836 to HM line 2876"
+     },
+     "prerequisites": [
+      "target:0.4",
+      "mathlib:CategoryTheory.Bicategory",
+      "mathlib:CategoryTheory.Pseudofunctor",
+      "mathlib:CategoryTheory.Bicategory.Equivalence",
+      "roadmap:EnhancedDerivedSheaves §E5:presentability.2"
+     ],
+     "api": [
+      {
+       "name": "selfDuality",
+       "role": "equivalence",
+       "statement": "hK^op ≃ hK (HM Proposition 4.1.4)."
+      },
+      {
+       "name": "starShriekDual",
+       "role": "lemma",
+       "statement": "f_! and f* are dual 1-morphisms; Ψ sends them to f_! and f*."
+      },
+      {
+       "name": "functoriality",
+       "role": "pseudofunctor",
+       "statement": "Induced by morphisms of formalisms and by base change S′ → S; conservative for universal ∗-descent (HM Propositions 4.2.1, 4.3.1)."
+      },
+      {
+       "name": "kunnethFullyFaithful",
+       "role": "lemma",
+       "statement": "Under Künneth, D(X ×_S Y) ≃ Fun^L_{D(S)}(D(Y), D(X)) (RCSolid Lemma 6.3.6)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "pointDelooping",
+       "kind": "computation",
+       "statement": "For S = ∗ = X, hK is the delooping of hD(Λ) with ⊗."
+      },
+      {
+       "name": "matrices",
+       "kind": "computation",
+       "statement": "For finite sets, convolution is matrix multiplication and Δ!1 the identity matrix."
+      },
+      {
+       "name": "starConvolutionWrong",
+       "kind": "non-example",
+       "statement": "Using π₁₃* gives k[T] instead of π_!O = T⁻¹k[[T⁻¹]][−1] for 𝔸¹_k, breaking Ψ."
+      }
+     ]
+    },
+    {
+     "id": "0.8",
+     "kind": "definition",
+     "name": "IsSuave",
+     "statement": "M ∈ D(X) is f-suave (resp. f-prim) if, as a 1-morphism X → S of hK_{D,S}, it is a left (resp. right) adjoint (Mathlib Bicategory.Adjunction); the adjoint is the suave (prim) dual.",
+     "hypotheses": [
+      "f: X → S in E",
+      "D a three-functor formalism"
+     ],
+     "locator": {
+      "source": "HM",
+      "where": "Definition 4.4.1, HM line 3225; SixFF Definition 6.1"
+     },
+     "prerequisites": [
+      "target:0.7",
+      "mathlib:CategoryTheory.Bicategory.Adjunction"
+     ],
+     "api": [
+      {
+       "name": "identityCase",
+       "role": "lemma",
+       "statement": "For f = id, suave = prim = dualizable, dual = M^∨ (HM Example 4.4.3)."
+      },
+      {
+       "name": "criterion",
+       "role": "lemma",
+       "statement": "M f-suave iff p₁*M ⊗ p₂*D_f(M) → Hom(p₂*M, p₁^!M) is an equivalence; then SD_f(M) ⊗ f* ≅ Hom(M, f^!) (SixFF Proposition 6.6)."
+      },
+      {
+       "name": "primCriterion",
+       "role": "lemma",
+       "statement": "Dual criterion for prim objects (SixFF Proposition 6.9)."
+      },
+      {
+       "name": "stability",
+       "role": "lemma",
+       "statement": "Stable under base change, dualizable twists, retracts and finite colimits (HM Lemmas 4.4.8–4.4.19)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "unitDualizable",
+       "kind": "degenerate",
+       "statement": "For f = id, 1 is suave and prim; ⊕_ℕ Λ is not."
+      },
+      {
+       "name": "zeroObject",
+       "kind": "degenerate",
+       "statement": "The zero object is suave and prim with zero duals."
+      },
+      {
+       "name": "rowColumn",
+       "kind": "computation",
+       "statement": "For finite sets and f: {1,2} → ∗, the row (Λ, 0) has right adjoint the column (Λ, 0)ᵀ with explicit unit and counit; (Λ^{⊕ℕ}, 0) is not suave."
+      }
+     ]
+    },
+    {
+     "id": "0.9",
+     "kind": "definition",
+     "name": "IsSuaveMap",
+     "statement": "f ∈ E is D-suave (resp. D-prim) if 1_X is f-suave (resp. f-prim), with dualizing ω_f (codualizing δ_f); D-smooth if suave with ω_f invertible; equivalent to cohomological smoothness; trace criterion for cohomological smoothness.",
+     "hypotheses": [
+      "D a six-functor formalism for the smooth and trace statements"
+     ],
+     "locator": {
+      "source": "HM",
+      "where": "Definition 4.5.1, HM line 3505; SixFF Definition 5.1 and Theorem 5.5, SixFF line 1152, SixFF line 1195"
+     },
+     "prerequisites": [
+      "target:0.8",
+      "target:0.5",
+      "target:0.6"
+     ],
+     "api": [
+      {
+       "name": "stability",
+       "role": "lemma",
+       "statement": "Stable under base change and composition, ω_{gf} = ω_f ⊗ f*ω_g (HM Lemmas 4.5.4–4.5.5)."
+      },
+      {
+       "name": "locality",
+       "role": "lemma",
+       "statement": "Local on target for universal ∗-descent; suave/prim covers (HM Lemmas 4.5.6–4.5.8)."
+      },
+      {
+       "name": "detectByPushforward",
+       "role": "lemma",
+       "statement": "For prim f with π₂* conservative, P is f-suave iff f_!P dualizable (HM Lemma 4.5.10)."
+      },
+      {
+       "name": "constructionClasses",
+       "role": "lemma",
+       "statement": "Maps of I are smooth with ω = 1; maps of P are prim with δ = 1."
+      }
+     ],
+     "tests": [
+      {
+       "name": "identity",
+       "kind": "degenerate",
+       "statement": "id_S is D-smooth with ω = 1."
+      },
+      {
+       "name": "finiteSetsAllSmooth",
+       "kind": "computation",
+       "statement": "In the finite-set formalism all maps are suave and prim with ω = δ = 1."
+      },
+      {
+       "name": "zpDualizing",
+       "kind": "computation",
+       "statement": "∗/ℤ_p → ∗ with Λ = 𝔽_p has ω = 𝔽_p[1], not 1 (HM Example 5.3.22)."
+      }
+     ]
+    },
+    {
+     "id": "0.10",
+     "kind": "definition",
+     "name": "IsEtaleMap",
+     "statement": "For truncated f ∈ E: D-étale if D-suave with Δ_f D-étale or an equivalence; D-proper if D-prim with Δ_f D-proper or an equivalence; open (closed) maps are étale (proper) monomorphisms.",
+     "hypotheses": [
+      "f truncated"
+     ],
+     "locator": {
+      "source": "HM",
+      "where": "Definition 4.6.1, HM line 3731; RCSolid Definition 6.2.16, RCSolid line 3970"
+     },
+     "prerequisites": [
+      "target:0.9"
+     ],
+     "api": [
+      {
+       "name": "stability",
+       "role": "lemma",
+       "statement": "Base change, composition, right cancellation, locality (HM Lemma 4.6.3)."
+      },
+      {
+       "name": "comparison",
+       "role": "lemma",
+       "statement": "f^! ≅ f* for étale f, f_! ≅ f_* for proper f (HM Lemma 4.6.4)."
+      },
+      {
+       "name": "openClosed",
+       "role": "lemma",
+       "statement": "Open/closed maps give open/closed immersions of symmetric monoidal categories and Künneth (RCSolid Proposition 6.2.17)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "equivalences",
+       "kind": "degenerate",
+       "statement": "Equivalences are étale, proper, open and closed."
+      },
+      {
+       "name": "finiteSets",
+       "kind": "computation",
+       "statement": "In the finite-set formalism all maps are étale and proper, injections open and closed."
+      },
+      {
+       "name": "zariskiOpenIsClosed",
+       "kind": "non-example",
+       "statement": "In 1.1, Spec ℤ[1/p] → Spec ℤ is a closed map, not étale: (∏ ℤ/pⁿ)[1/p] ≠ 0 = ∏(ℤ/pⁿ)[1/p]."
+      }
+     ]
+    },
+    {
+     "id": "0.11",
+     "kind": "theorem",
+     "name": "exceptionalDescent",
+     "statement": "(i) For D-suave f, f^! conservative iff colim f_{n!}f_n^!1 → 1 is an equivalence, then universal ∗- and !-descent; (ii) for stable D, D-prim f with f_*1 descendable has universal ∗- and !-descent.",
+     "hypotheses": [
+      "D a six-functor formalism with countable limits and colimits; stable for (ii)"
+     ],
+     "locator": {
+      "source": "HM",
+      "where": "Lemmas 4.7.1 and 4.7.4, HM line 3826, HM line 3858; RCSolid Proposition 6.2.8"
+     },
+     "prerequisites": [
+      "target:0.9",
+      "roadmap:EnhancedDerivedSheaves §E5:descent",
+      "roadmap:EnhancedDerivedSheaves §E5:abstract.5"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "foldMap",
+       "kind": "computation",
+       "statement": "X ⊔ X → X has a section and the Čech nerve splits."
+      },
+      {
+       "name": "splitAffine",
+       "kind": "computation",
+       "statement": "Spec(A × A) → Spec A: f_*1 descendable of index 1."
+      },
+      {
+       "name": "rationalsFail",
+       "kind": "non-example",
+       "statement": "Spec ℚ → Spec ℤ: ℚ not descendable, descent fails."
+      }
+     ]
+    },
+    {
+     "id": "0.12",
+     "kind": "theorem",
+     "name": "kunnethShriekDescent",
+     "statement": "For a Künneth presentable formalism, a family of !-able maps has universal ∗/!-descent iff !-descent iff colim D_!(Y_•) ≃ D(X) in Pr^L_{D(X)} iff Pr^L_{D(X)} ≃ Tot Pr^L_{D(Y_•)} iff fully faithful; finite subfamilies suffice when units are compact; the !-topology.",
+     "hypotheses": [
+      "D Künneth: D preserves pushouts",
+      "units compact for the finiteness clause"
+     ],
+     "locator": {
+      "source": "RCSolid",
+      "where": "Proposition 6.3.7, Lemma 6.3.10 and Definition 6.3.9, RCSolid line 4146, RCSolid line 4244, RCSolid line 4237"
+     },
+     "prerequisites": [
+      "target:0.4",
+      "target:0.7",
+      "roadmap:EnhancedDerivedSheaves §E5:presentability.2",
+      "roadmap:EnhancedDerivedSheaves §E5:presentability.4"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "descendableAffine",
+       "kind": "compatibility",
+       "statement": "For 1.1, !-covers are descendable maps; ℤ → ℤ[1/p] × ℤ_p is one (fracture square)."
+      },
+      {
+       "name": "emptyFamily",
+       "kind": "degenerate",
+       "statement": "The empty family covers X iff D(X) = 0."
+      },
+      {
+       "name": "partialCover",
+       "kind": "non-example",
+       "statement": "ℤ → ℤ[1/p] is not a !-cover (𝔽_p ⊗ ℤ[1/p] = 0)."
+      }
+     ]
+    },
+    {
+     "id": "0.13",
+     "kind": "construction",
+     "name": "shriekEquivalenceTopos",
+     "statement": "!-equivalences (every pullback of every iterated diagonal inverted by D_!) and gShv(C_E), gShv(C): an ∞-topos, cotopological localization between hypersheaves and sheaves; D* inverts !-equivalences; D extends to (gShv(C), E′); comparison functors; sheaves of full subcategories fully faithful along !-hypercovers invert !-equivalences.",
+     "hypotheses": [
+      "C small with finite limits, finite coproducts, final object",
+      "∗ → ∗ ⊔ ∗ in E",
+      "D Künneth, Hypothesis 6.3.11"
+     ],
+     "locator": {
+      "source": "RCSolid",
+      "where": "Definitions 6.3.13, 6.3.16, Lemma 6.3.14, Corollaries 6.3.15, 6.3.19, Proposition 6.3.18, Lemmas 6.3.20–6.3.21, RCSolid line 4295 to RCSolid line 4381; ABFJ22 Theorem 4.3.3; ABLB Lemma 4.2.11"
+     },
+     "prerequisites": [
+      "target:0.6",
+      "target:0.12",
+      "target:0.7",
+      "roadmap:EnhancedDerivedSheaves §E2.6",
+      "roadmap:EnhancedDerivedSheaves §E2.7",
+      "roadmap:EnhancedDerivedSheaves §E3.2",
+      "roadmap:EnhancedDerivedSheaves §E5:presentability.2"
+     ],
+     "api": [
+      {
+       "name": "imageEquivalence",
+       "role": "lemma",
+       "statement": "Image of a !-descent family is a !-equivalence onto X."
+      },
+      {
+       "name": "toposStructure",
+       "role": "theorem",
+       "statement": "gShv is an ∞-topos (ABFJ22 Theorem 4.3.3)."
+      },
+      {
+       "name": "dStarInverts",
+       "role": "lemma",
+       "statement": "D* inverts !-equivalences (RCSolid Proposition 6.3.18)."
+      },
+      {
+       "name": "hypercoverCriterion",
+       "role": "lemma",
+       "statement": "Sheaf of full subcategories fully faithful along !-hypercovers inverts !-equivalences (Man22 Proposition A.3.21)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "identityAndEmpty",
+       "kind": "degenerate",
+       "statement": "The identity is a !-equivalence; ∅ → X is one iff D(X) = 0."
+      },
+      {
+       "name": "splitImage",
+       "kind": "computation",
+       "statement": "Image of Spec(ℤ × ℤ) → Spec ℤ is a !-equivalence onto Spec ℤ."
+      },
+      {
+       "name": "diagonalNeeded",
+       "kind": "non-example",
+       "statement": "Without the diagonal condition the class is not diagonal-stable and ABFJ22 does not apply (ABLB footnote 26)."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "1",
+   "title": "Quasi-coherent six functors on algebraic stacks",
+   "targets": [
+    {
+     "id": "1.1",
+     "kind": "theorem",
+     "name": "affineQCohFormalism",
+     "statement": "On (Sch^aff, all) with I = equivalences, R ↦ Mod_R(D(ℤ)) and R ↦ Mod_R(D(ℤ^cond)) are Künneth presentable six-functor formalisms with f_! = f_*, related by a morphism; D^cond = Fun_{D(ℤ)}(D_!, D(ℤ^cond)).",
+     "hypotheses": [
+      "animated commutative rings"
+     ],
+     "locator": {
+      "source": "RCSolid",
+      "where": "§6.4 and Remark 6.4.1, RCSolid line 4457, RCSolid line 4465"
+     },
+     "prerequisites": [
+      "target:0.5",
+      "target:0.12",
+      "roadmap:EnhancedDerivedSheaves §E5:abstract.2",
+      "roadmap:EnhancedDerivedSheaves §E5:presentability.2",
+      "roadmap:SolidAnalyticRings §1.5",
+      "roadmap:EnhancedDerivedSheaves §E5:animation.4"
+     ],
+     "api": [
+      {
+       "name": "allPrim",
+       "role": "lemma",
+       "statement": "Every map prim with δ = 1, f^! = Hom_A(B, −)."
+      },
+      {
+       "name": "suaveIffPerfect",
+       "role": "lemma",
+       "statement": "Spec B → Spec A suave iff B perfect over A."
+      },
+      {
+       "name": "discreteEmbedding",
+       "role": "lemma",
+       "statement": "D → D^cond fully faithful onto discrete objects."
+      }
+     ],
+     "tests": [
+      {
+       "name": "gorenstein",
+       "kind": "computation",
+       "statement": "ℤ[T]/(T²) over ℤ: suave with ω ≅ B invertible; ℤ[x,y]/(x²,xy,y²): suave, ω not invertible."
+      },
+      {
+       "name": "polynomialNotSuave",
+       "kind": "non-example",
+       "statement": "ℤ → ℤ[T] is not suave (ℤ[T] not perfect)."
+      },
+      {
+       "name": "zeroRing",
+       "kind": "degenerate",
+       "statement": "Spec 0 → Spec ℤ is suave with ω = 0."
+      }
+     ]
+    },
+    {
+     "id": "1.2",
+     "kind": "definition",
+     "name": "AlgStk",
+     "statement": "AlgStk = gShv(Sch^aff) for the affine formalism; !-covers are descendable families; ω₁-compact faithfully flat maps are descendable of index ≤ 2; ω₁-fpqc hypercovers are !-equivalences; !-hypercovers are homeomorphisms; schemes embed fully faithfully.",
+     "hypotheses": [
+      "animated rings"
+     ],
+     "locator": {
+      "source": "RCSolid",
+      "where": "Remark 6.4.2, Lemma 6.4.3, Proposition 6.4.5, Corollary 6.4.6, Lemma 6.4.8, Proposition 6.4.9, RCSolid line 4490 to RCSolid line 4614"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:0.12",
+      "target:0.13",
+      "roadmap:EnhancedDerivedSheaves §E5:descent",
+      "roadmap:SchemeAndStackFoundations §2.18"
+     ],
+     "api": [
+      {
+       "name": "topos",
+       "role": "lemma",
+       "statement": "AlgStk is an ∞-topos with D extended."
+      },
+      {
+       "name": "pretopology",
+       "role": "lemma",
+       "statement": "Descendable maps compose and base change."
+      },
+      {
+       "name": "schemeQCoh",
+       "role": "lemma",
+       "statement": "D(X) of a scheme is SchemeAndStackFoundations §2.18 quasi-coherent complexes."
+      }
+     ],
+     "tests": [
+      {
+       "name": "fracture",
+       "kind": "computation",
+       "statement": "ℤ → ℤ[1/p] × ℤ_p is a !-cover; ℤ → ℚ is not."
+      },
+      {
+       "name": "finiteFieldExtension",
+       "kind": "computation",
+       "statement": "k → l finite: descendable of index 1."
+      },
+      {
+       "name": "emptyCover",
+       "kind": "degenerate",
+       "statement": "The empty family covers Spec A only for A = 0."
+      }
+     ]
+    },
+    {
+     "id": "1.3",
+     "kind": "theorem",
+     "name": "qcqsMapsPrim",
+     "statement": "Every qcqs morphism of schemes is !-able for D and D^cond, D-prim, with δ_f ≅ 1.",
+     "hypotheses": [
+      "f qcqs morphism of schemes"
+     ],
+     "locator": {
+      "source": "RCSolid",
+      "where": "Proposition 6.4.7, RCSolid line 4568"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "target:0.9",
+      "target:0.10",
+      "target:0.11"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "openAffine",
+       "kind": "computation",
+       "statement": "𝔾_m → 𝔸¹ is affine, prim with j_! = j_*."
+      },
+      {
+       "name": "projectiveLine",
+       "kind": "computation",
+       "statement": "ℙ¹ → Spec ℤ: f_*O = ℤ, δ ≅ 1."
+      },
+      {
+       "name": "notSuave",
+       "kind": "non-example",
+       "statement": "ℙ¹ → Spec ℤ is not D-suave in the algebraic formalism."
+      }
+     ]
+    },
+    {
+     "id": "1.4",
+     "kind": "theorem",
+     "name": "formalCompletion",
+     "statement": "Formal completions X^∧_C; colim Spec A/^L(f^k) ≃ X^∧_Z; Spec B → X^∧_Z is a !-epimorphism iff A/^L(f) → B descendable; X^∧_Z → X is an open map with j_* fully faithful onto derived I-complete sheaves; Z → X^∧_Z a suave cover; 𝔸̂¹ → Spec ℤ suave with f^!ℤ ≅ O[1].",
+     "hypotheses": [
+      "I locally finitely generated"
+     ],
+     "locator": {
+      "source": "RCSolid",
+      "where": "Definition 6.4.10, Proposition 6.4.12, Lemma 6.4.13, Corollary 6.4.14, Lemmas 6.4.15–6.4.16, RCSolid line 4641 to RCSolid line 4736"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "target:1.3",
+      "target:0.9",
+      "target:0.10",
+      "roadmap:EnhancedDerivedSheaves §E4.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "openSubscheme",
+       "kind": "degenerate",
+       "statement": "X^∧_U = U for U open."
+      },
+      {
+       "name": "pAdic",
+       "kind": "computation",
+       "statement": "D of Spec ℤ completed at p is derived p-complete modules; ℚ_p excluded."
+      },
+      {
+       "name": "shiftSign",
+       "kind": "computation",
+       "statement": "f^!ℤ = O[1] has π₁ = ℤ[[T]]; zero section has ℤ[−1]."
+      }
+     ]
+    },
+    {
+     "id": "1.5",
+     "kind": "theorem",
+     "name": "classifyingStackComodules",
+     "statement": "For a flat affine group G = Spec R over a static ring A with counit of finite Tor amplitude, D(BG) = Tot D(R^{⊗•}) has heart R-comodules, D(BG) = R-comodules in D(A), left completion of D⁻; e is a !-cover for ω₁-compact R, descendable when the trivial comodule splits off.",
+     "hypotheses": [
+      "A static",
+      "R flat Hopf algebra, counit finite Tor amplitude"
+     ],
+     "locator": {
+      "source": "RC26a",
+      "where": "Lemma 2.2.5, RC26a line 583; Lemma 3.1.2, RC26a line 1486"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "target:0.11",
+      "roadmap:EnhancedDerivedSheaves §E5:abstract.5",
+      "roadmap:SchemeAndStackFoundations §1.22"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "gradedModules",
+       "kind": "compatibility",
+       "statement": "For 𝔾_m, heart = graded modules, agreeing with SchemeAndStackFoundations §1.22."
+      },
+      {
+       "name": "trivialGroup",
+       "kind": "degenerate",
+       "statement": "Trivial G gives A-modules."
+      },
+      {
+       "name": "additiveNotReductive",
+       "kind": "non-example",
+       "statement": "For 𝔾_a over 𝔽_p no comodule retraction of the unit exists; e is still a !-cover."
+      }
+     ]
+    },
+    {
+     "id": "1.6",
+     "kind": "theorem",
+     "name": "gradedFilteredQCoh",
+     "statement": "D(B𝔾_m) ≃ graded objects, D(𝔸¹/𝔾_m) ≃ filtered objects (t of weight −1, Rees module ⊕ Fil^n t^{−n}), D(𝔸̂¹/𝔾_m) ≃ complete filtered objects; fibres at 0 and 1 are gr and underlying; linear over any D(R)-linear V.",
+     "hypotheses": [
+      "R animated ring"
+     ],
+     "locator": {
+      "source": "Mou",
+      "where": "Theorems 4.1 and 1.1, Mou line 168, Mou line 26; RCSolid Remark 7.7.6, Example 7.7.8; ALRS Remark 2.9.1"
+     },
+     "prerequisites": [
+      "target:1.4",
+      "target:1.5",
+      "roadmap:EnhancedDerivedSheaves §E5:presentability.2",
+      "roadmap:SchemeAndStackFoundations §1.21"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "structureSheaf",
+       "kind": "computation",
+       "statement": "O corresponds to Fil^n = R (n ≤ 0), 0 (n > 0), Rees R[t]."
+      },
+      {
+       "name": "zeroSectionWitness",
+       "kind": "computation",
+       "statement": "ι₀^!1 = t^{−1}R[−1]."
+      },
+      {
+       "name": "constantNotComplete",
+       "kind": "non-example",
+       "statement": "Constant filtration ℤ is not complete; pⁿℤ_p is."
+      }
+     ]
+    },
+    {
+     "id": "1.7",
+     "kind": "theorem",
+     "name": "formalLineShearing",
+     "statement": "𝔸̂¹ ≃ BG_a[−1] with G_a[−1] = Spec ℤ[ε₁], 𝔾_m-equivariantly with ε₁ of weight −1; over ℚ-linear V, D(BG_a[−1]/𝔾_m) ⊗ V ≃ graded objects with d: M_n → M_{n−1}[1], Beilinson t-structure with heart chain complexes of V♡; for V = D(A), A a ℚ-algebra, the t-structure and heart are those of DerivedDeRhamCohomology §§1.18–1.19 on complete filtered objects (imported), extended here to general ℚ-linear V.",
+     "hypotheses": [
+      "V presentable stable symmetric monoidal QCoh(ℚ)-linear for the shearing part"
+     ],
+     "locator": {
+      "source": "ALRS",
+      "where": "Remarks 2.9.1–2.9.2, ALRS line 1893 to ALRS line 1906; BZSV §6.3"
+     },
+     "prerequisites": [
+      "target:1.4",
+      "target:1.5",
+      "target:1.6",
+      "roadmap:EnhancedDerivedSheaves §E5:abstract.4",
+      "roadmap:DerivedDeRhamCohomology §1.18",
+      "roadmap:DerivedDeRhamCohomology §1.19"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "loopHomotopy",
+       "kind": "computation",
+       "statement": "π₀ = π₁ = ℤ for ℤ ⊗^L_{ℤ[T]} ℤ; π₂ = 0."
+      },
+      {
+       "name": "beilinsonHeart",
+       "kind": "computation",
+       "statement": "Weight-one static object enters the heart only as M₁[1]."
+      },
+      {
+       "name": "rationalHypothesis",
+       "kind": "non-example",
+       "statement": "Over 𝔽_p only the complete-filtered form is asserted."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "2",
+   "title": "Light analytic rings",
+   "targets": [
+    {
+     "id": "2.1",
+     "kind": "definition",
+     "name": "CondensedAnimatedRing",
+     "statement": "Cond(C) = C-valued hypersheaves on light profinite sets (T(∅) final, finite products, hypercover descent); CondAni, CondRing; D(A▷) = Mod_{θA▷}(D(ℤ^cond)).",
+     "hypotheses": [
+      "C with countable limits"
+     ],
+     "locator": {
+      "source": "RCSolid",
+      "where": "Definition 4.0.1 and Example 4.0.2, RCSolid line 1392, RCSolid line 1408"
+     },
+     "prerequisites": [
+      "mathlib:LightProfinite",
+      "mathlib:LightCondensed",
+      "roadmap:EnhancedDerivedSheaves §E2.6",
+      "roadmap:EnhancedDerivedSheaves §E2.7",
+      "roadmap:EnhancedDerivedSheaves §E5:animation.1",
+      "roadmap:EnhancedDerivedSheaves §E5:animation.4",
+      "roadmap:EnhancedDerivedSheaves §E5:abstract.2",
+      "roadmap:SolidAnalyticRings §1.5"
+     ],
+     "api": [
+      {
+       "name": "presentable",
+       "role": "lemma",
+       "statement": "Cond(C) presentable with sectionwise limits; discrete objects."
+      },
+      {
+       "name": "discreteRing",
+       "role": "lemma",
+       "statement": "D(R^cond) = D(R) ⊗ D(ℤ^cond)."
+      },
+      {
+       "name": "freeHom",
+       "role": "lemma",
+       "statement": "RHom_{A▷}(A▷[S], M) = RHom_ℤ(ℤ[S], M)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "emptyValue",
+       "kind": "non-example",
+       "statement": "A presheaf with nonzero value at ∅ is excluded."
+      },
+      {
+       "name": "twoPoints",
+       "kind": "computation",
+       "statement": "ℤ[{1,2}] = ℤ², ℤ[∅] = 0."
+      },
+      {
+       "name": "convergentSequence",
+       "kind": "compatibility",
+       "statement": "π₀ ℤ[ℕ∪{∞}](∗) lacks the all-one vector, unlike its solidification (SolidAnalyticRings §1.5)."
+      }
+     ]
+    },
+    {
+     "id": "2.2",
+     "kind": "definition",
+     "name": "AnalyticRing",
+     "statement": "An uncompleted analytic ring is (A▷, D(A)) with D(A) ⊆ D(A▷) closed under limits, colimits and RHom_ℤ(C, −), with connectivity-preserving left adjoint; analytic if A▷ ∈ D(A); morphisms restrict complete modules.",
+     "hypotheses": [
+      "A▷ ∈ CondRing"
+     ],
+     "locator": {
+      "source": "RCSolid",
+      "where": "Definition 4.1.1, RCSolid line 1431; CSAnal Definition 12.1, Proposition 12.20"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "roadmap:EnhancedDerivedSheaves §E3.2",
+      "roadmap:EnhancedDerivedSheaves §E5:abstract.3"
+     ],
+     "api": [
+      {
+       "name": "trivialStructure",
+       "role": "functor",
+       "statement": "CondRing → AnRing^un fully faithful, left adjoint to (−)▷ (RCSolid Lemma 4.1.5)."
+      },
+      {
+       "name": "tensor",
+       "role": "lemma",
+       "statement": "Unique symmetric monoidal ⊗_A; base change B ⊗_A − left adjoint to restriction (RCSolid Proposition 4.1.6)."
+      },
+      {
+       "name": "discreteModules",
+       "role": "lemma",
+       "statement": "A[∗] compact projective, D(A▷(∗)) ⊆ D(A) (RCSolid Remark 4.1.7)."
+      },
+      {
+       "name": "homotopyTest",
+       "role": "lemma",
+       "statement": "Completeness detected on π_i (RCSolid Proposition 4.1.8)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "solidIntegers",
+       "kind": "computation",
+       "statement": "ℤ_■[S] = lim ℤ[S_n]."
+      },
+      {
+       "name": "zeroStructure",
+       "kind": "degenerate",
+       "statement": "{0} is uncompleted analytic; analytic only for A▷ = 0."
+      },
+      {
+       "name": "perfectNot",
+       "kind": "non-example",
+       "statement": "Perfect modules and discrete objects fail the closure axioms."
+      }
+     ]
+    },
+    {
+     "id": "2.3",
+     "kind": "theorem",
+     "name": "analyticRingColimits",
+     "statement": "Induced structures, intersections, small colimits of uncompleted analytic rings, sifted colimits with B[S] = colim A_i[S], Tate vanishing and Frobenius, completion left adjoint, D: AnRing → CAlg(Pr^L_{D(ℤ^cond)}) preserves colimits (Künneth).",
+     "hypotheses": [],
+     "locator": {
+      "source": "RCSolid",
+      "where": "Lemmas 4.1.9–4.1.10, Proposition 4.1.11, Corollary 4.1.12, Lemma 4.3.1, Theorem 4.3.2, Proposition 4.2.6, Corollary 4.2.7, Theorem 4.1.13, Proposition 4.1.14, RCSolid line 1558 to RCSolid line 1888"
+     },
+     "prerequisites": [
+      "target:2.2",
+      "roadmap:EnhancedDerivedSheaves §E5:animation.1",
+      "roadmap:EnhancedDerivedSheaves §E5:abstract.2",
+      "roadmap:EnhancedDerivedSheaves §E5:abstract.3",
+      "roadmap:EnhancedDerivedSheaves §E5:presentability.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "inducedPolynomial",
+       "kind": "computation",
+       "statement": "(ℤ[T], ℤ)_■[S] = (∏ℤ)[T], not ∏ℤ[T]."
+      },
+      {
+       "name": "rationalSolid",
+       "kind": "computation",
+       "statement": "ℤ_■ ⊔_{ℤ^cond} ℚ^cond = ℚ_{ℤ_■/}."
+      },
+      {
+       "name": "idempotentCoproduct",
+       "kind": "degenerate",
+       "statement": "ℤ_■ ⊔_{ℤ^cond} ℤ_■ = ℤ_■."
+      }
+     ]
+    },
+    {
+     "id": "2.4",
+     "kind": "theorem",
+     "name": "analyticStructureInvariance",
+     "statement": "Uncompleted analytic ring structures on A▷ correspond to suitable abelian subcategories of π₀A▷-modules; invariance under π₀-isomorphisms and nilpotent thickenings; π₀ criterion for maps.",
+     "hypotheses": [],
+     "locator": {
+      "source": "RCSolid",
+      "where": "Theorem 4.4.1, Proposition 4.4.2, Corollary 4.4.4, Propositions 4.4.5 and 4.5.1, RCSolid line 1898 to RCSolid line 2004"
+     },
+     "prerequisites": [
+      "target:2.2",
+      "target:2.3"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "dualNumbers",
+       "kind": "computation",
+       "statement": "Solid structure on ℤ corresponds to underlying-solid modules over ℤ[ε]/ε²."
+      },
+      {
+       "name": "extremes",
+       "kind": "degenerate",
+       "statement": "All modules ↔ trivial structure; {0} ↔ zero structure."
+      },
+      {
+       "name": "torsionNot",
+       "kind": "non-example",
+       "statement": "Torsion groups are not closed under products."
+      }
+     ]
+    },
+    {
+     "id": "2.5",
+     "kind": "definition",
+     "name": "IdempotentAlgebra",
+     "statement": "Idempotent algebras 1 → A with A ≃ A ⊗ A; smashing spectrum Sm(C) a locale; closed/open immersions of presentably symmetric monoidal stable categories correspond to idempotents; open covers form a topology for which C is a sheaf; localization killing an algebra.",
+     "hypotheses": [
+      "C ∈ CAlg(Pr^L_st)"
+     ],
+     "locator": {
+      "source": "RCSolid",
+      "where": "Definitions 5.1.1, 5.1.3, Propositions 5.1.2, 5.1.4, Theorem 5.1.6, Lemma 4.6.1, Proposition 4.6.2, RCSolid line 2212 to RCSolid line 2292; CS22 Propositions 5.3, 6.5, Theorem 6.7"
+     },
+     "prerequisites": [
+      "roadmap:EnhancedDerivedSheaves §E5:abstract.2",
+      "roadmap:EnhancedDerivedSheaves §E5:abstract.3",
+      "roadmap:EnhancedDerivedSheaves §E5:presentability.3",
+      "mathlib:Locale"
+     ],
+     "api": [
+      {
+       "name": "moduleProperty",
+       "role": "lemma",
+       "statement": "Being an A-module is a property; mapping anima between idempotents are empty or contractible."
+      },
+      {
+       "name": "baseChange",
+       "role": "lemma",
+       "statement": "Open/closed immersions stable under base change and composition."
+      },
+      {
+       "name": "dualizableSplit",
+       "role": "lemma",
+       "statement": "Dualizable idempotent splits 1 = A × fib(1 → A) (RCSolid Lemma 7.6.6)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "zariski",
+       "kind": "computation",
+       "statement": "R[1/f] is idempotent; complement = derived f-complete modules."
+      },
+      {
+       "name": "polynomialNot",
+       "kind": "non-example",
+       "statement": "R[T] is not idempotent: R[T] ⊗ R[T] = R[T,T′]."
+      },
+      {
+       "name": "unionCover",
+       "kind": "computation",
+       "statement": "Union of closed subsets of ℤ[1/2], ℤ[1/3] is ℤ (1/6 = 1/2 − 1/3), covering Sm(D(ℤ))."
+      }
+     ]
+    },
+    {
+     "id": "2.6",
+     "kind": "theorem",
+     "name": "spectralAnalyticComparison",
+     "statement": "Analytic rings over ℤ_■ on solid A▷ correspond, through SolidAnalyticRings §2.3, to completed spectral analytic structures of SolidAnalyticRings §7.1 on θA▷, compatibly with free modules, tensor and scalar extension; the §7.3 structures are the (R, R⁺)_■.",
+     "hypotheses": [
+      "A▷ with solid underlying group"
+     ],
+     "locator": {
+      "source": "RCSolid",
+      "where": "Definition 4.1.1 and Remark 4.1.2, RCSolid line 1431, RCSolid line 1457; Definition 5.2.1"
+     },
+     "prerequisites": [
+      "target:2.2",
+      "target:2.3",
+      "roadmap:SolidAnalyticRings §2.3",
+      "roadmap:SolidAnalyticRings §7.1",
+      "roadmap:SolidAnalyticRings §7.2",
+      "roadmap:SolidAnalyticRings §7.3"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "integers",
+       "kind": "degenerate",
+       "statement": "ℤ_■ ↔ D(ℤ_■)."
+      },
+      {
+       "name": "inducedPolynomial",
+       "kind": "compatibility",
+       "statement": "(ℤ[T], ℤ)_■ ↔ §7.3 with F = ∅."
+      },
+      {
+       "name": "condensedNot",
+       "kind": "non-example",
+       "statement": "ℤ^cond has no spectral counterpart."
+      }
+     ]
+    },
+    {
+     "id": "2.7",
+     "kind": "theorem",
+     "name": "solidDiscreteRings",
+     "statement": "ℤ((T⁻¹)) idempotent with complement ℤ[T]_■; free modules lim ℤ[T][S_n]; R_■ for finite type R (induced, free modules, heart, flatness, Ind-fp, integral maps); completions idempotent; R_■ for all animated R fully faithful and colimit-preserving; open immersions, Zariski open covers, D_■(X) sheaf, locale surjections.",
+     "hypotheses": [
+      "R animated commutative ring; finite type over ℤ where stated"
+     ],
+     "locator": {
+      "source": "RCSolid",
+      "where": "Proposition 5.2.2, Theorem 5.2.3, Proposition 5.3.3, Theorem 5.3.2, Corollaries 5.3.4, 5.3.9, Proposition 5.3.7, Proposition 5.3.12, Lemma 5.3.13, Definition 5.4.7, Proposition 5.4.11, Lemmas 5.4.12–5.4.14, Proposition 5.4.15, Theorem 5.4.16, Corollaries 5.4.4, 5.4.17, Proposition 5.4.6, RCSolid line 2419 to RCSolid line 3212"
+     },
+     "prerequisites": [
+      "target:2.2",
+      "target:2.3",
+      "target:2.4",
+      "target:2.5",
+      "target:2.6",
+      "roadmap:SolidAnalyticRings §1.5",
+      "roadmap:SolidAnalyticRings §7.3",
+      "roadmap:EnhancedDerivedSheaves §E4.1",
+      "roadmap:SchemeAndStackFoundations §2.18"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "discreteComplete",
+       "kind": "computation",
+       "statement": "j*j_*ℤ[T] = ℤ[T]."
+      },
+      {
+       "name": "pAdicNullSequence",
+       "kind": "computation",
+       "statement": "ℚ_p with T = p⁻¹ is not ℤ[T]_■-complete (pⁿ killed by 1 − Tσ*); with T = p it is."
+      },
+      {
+       "name": "rationalsNotLimit",
+       "kind": "non-example",
+       "statement": "ℚ_■[S] is not lim ℚ[S_n] (SixFF Warning 9.11)."
+      }
+     ]
+    },
+    {
+     "id": "2.8",
+     "kind": "theorem",
+     "name": "discreteHuberPairs",
+     "statement": "Discrete Huber pairs: colimits and compact generators; (A, S)_■ = (A, R⁺[S])_■; fully faithful colimit-preserving (R, R⁺) ↦ (R, R⁺)_■; Spa, rational subsets, sheafy structure presheaves, descent of D on rational covers.",
+     "hypotheses": [
+      "R⁺ ⊆ π₀R integrally closed"
+     ],
+     "locator": {
+      "source": "RCSolid",
+      "where": "Definitions 5.5.1, 5.5.4, 5.6.1, Lemmas 5.5.2, 5.5.5, 5.6.7, Propositions 5.5.6, 5.6.4, 5.6.6, Theorem 5.6.8, RCSolid line 3236 to RCSolid line 3426; SixFF Theorems 9.8, 9.10, 9.15"
+     },
+     "prerequisites": [
+      "target:2.7",
+      "roadmap:AdicSpaces §2.1",
+      "roadmap:AdicSpaces §2.2",
+      "roadmap:AdicSpaces §3.1",
+      "roadmap:SolidAnalyticRings §7.3"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "polynomialPairs",
+       "kind": "computation",
+       "statement": "Mapping spaces out of (ℤ[T],ℤ) and (ℤ[T],ℤ[T]) are R and R ×_{π₀R} R⁺."
+      },
+      {
+       "name": "notProjective",
+       "kind": "non-example",
+       "statement": "(ℤ[T], ℤ[T]) compact but not projective."
+      },
+      {
+       "name": "integralClosure",
+       "kind": "computation",
+       "statement": "εT is integral over 𝔽₂ in 𝔽₂[ε]/ε²[T]."
+      }
+     ]
+    },
+    {
+     "id": "2.9",
+     "kind": "definition",
+     "name": "SolidHuberRing",
+     "statement": "Solid pre-analytic Huber pairs, (A▷, S)_■, solid elements A⁺ = G_{a,■}(A), solid Huber rings ((A▷, A⁺)_■ ≅ A), topologically nilpotent elements, solid Tate algebras.",
+     "hypotheses": [
+      "A analytic over ℤ_■"
+     ],
+     "locator": {
+      "source": "RCSolid",
+      "where": "Definitions 7.1.1, 7.1.6, 7.1.9, RCSolid line 4779, RCSolid line 4841, RCSolid line 4857"
+     },
+     "prerequisites": [
+      "target:2.7",
+      "target:2.8",
+      "roadmap:AdicSpaces §2.1"
+     ],
+     "api": [
+      {
+       "name": "ringStack",
+       "role": "lemma",
+       "statement": "G_{a,■} ring stack; A°° ⊆ A⁺ submodule (RCSolid Remark 7.1.2, Lemma 7.1.7)."
+      },
+      {
+       "name": "embeddings",
+       "role": "lemma",
+       "statement": "Discrete and complete Huber pairs embed fully faithfully (And21 Proposition 3.34)."
+      },
+      {
+       "name": "rightAdjoint",
+       "role": "lemma",
+       "statement": "Inclusion into analytic rings over ℤ_■ has right adjoint; compact generators (RCSolid Proposition 7.1.5)."
+      },
+      {
+       "name": "tateAlgebra",
+       "role": "lemma",
+       "statement": "Shapes of A[T]_■ (RCSolid Example 7.1.10)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "integersAndZp",
+       "kind": "computation",
+       "statement": "ℤ_■: A⁺ = ℤ, A°° = 0; (ℤ_p, ℤ_p)_■: A°° = pℤ_p."
+      },
+      {
+       "name": "inducedPolynomial",
+       "kind": "degenerate",
+       "statement": "(ℤ[T], ℤ)_■ is solid Huber with A⁺ = ℤ."
+      },
+      {
+       "name": "compactNotFinite",
+       "kind": "non-example",
+       "statement": "Sym ℤ_■[S] is compact but not of solid finite type."
+      }
+     ]
+    },
+    {
+     "id": "2.10",
+     "kind": "theorem",
+     "name": "solidSpectrum",
+     "statement": "Stone duality (spectral spaces ↔ bounded distributive lattices); standard and iterated rational localizations are open immersions, compact, stable; Spec_■(A); filtered colimits, nilpotent invariance, standard covers; comparison with Spa for discrete and sheafy Tate pairs with analytic descent.",
+     "hypotheses": [
+      "A solid Huber ring"
+     ],
+     "locator": {
+      "source": "RCSolid",
+      "where": "Theorem 5.1.13, Definition 7.2.1, Lemmas 7.2.3–7.2.6, Definition 7.2.7, Lemmas 7.2.9, 7.2.10, 7.2.15, Proposition 7.2.12, RCSolid line 2340 to RCSolid line 5155; GvG24 Theorems 5.38, 6.4; And21 Theorem 4.1"
+     },
+     "prerequisites": [
+      "target:2.5",
+      "target:2.9",
+      "target:2.8",
+      "mathlib:SpectralSpace",
+      "roadmap:AdicSpaces §2.2",
+      "roadmap:AdicSpaces §3.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "fieldPoint",
+       "kind": "computation",
+       "statement": "Spec_■(k_■) is a point; Spec_■(ℤ_■) maps onto |Spec ℤ|."
+      },
+      {
+       "name": "rationalVsClassical",
+       "kind": "computation",
+       "statement": "ℤ[T]_■ → ℤ[T^{±1}]_■ rational; (ℤ[T],ℤ) → (ℤ[T^{±1}],ℤ) not open."
+      },
+      {
+       "name": "nonDistributive",
+       "kind": "non-example",
+       "statement": "M₃ is not a lattice of quasi-compact opens."
+      }
+     ]
+    },
+    {
+     "id": "2.11",
+     "kind": "example",
+     "name": "nonarchimedeanFieldSolid",
+     "statement": "E_■ = (E, O_E)_■ for complete nonarchimedean E over ℚ_p; ℚ_{p,■} = (ℚ_p, ℤ_p)_■ is induced from ℤ_■; induced structures on ℚ_{p,■}-algebras closed under colimits and base change; affinoid algebras as base changes of solid Tate algebras.",
+     "hypotheses": [
+      "E complete nonarchimedean over ℚ_p"
+     ],
+     "locator": {
+      "source": "RCSolid",
+      "where": "Example 3.5.2 (RCSolid line 1309), Example 7.1.10; CSCond Examples 7.3(ii)"
+     },
+     "prerequisites": [
+      "target:2.3",
+      "target:2.9",
+      "target:2.10",
+      "roadmap:AdicSpacesPartII §R1.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "completedSums",
+       "kind": "computation",
+       "statement": "⊕̂_I ℚ_p ⊗ ⊕̂_J ℚ_p = ⊕̂_{I×J} ℚ_p (RCSolid Example 3.5.4)."
+      },
+      {
+       "name": "boundedDenominators",
+       "kind": "compatibility",
+       "statement": "ℚ_{p,■}[S] = (∏ ℤ_p)[1/p], matching SolidAnalyticRings §7.4 and VS2.2 SolidECoefficients."
+      },
+      {
+       "name": "discreteField",
+       "kind": "non-example",
+       "statement": "Discrete ℚ_p with (ℚ_p, ℤ)_■ is a different ring (no null sequence pⁿ)."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "3",
+   "title": "Analytic stacks and the quasi-coherent six-functor formalism",
+   "targets": [
+    {
+     "id": "3.1",
+     "kind": "definition",
+     "name": "ShriekAble",
+     "statement": "On AnStk^aff: P = induced structure, I = open immersions in the smashing spectrum, E = maps with B▷_{A/} → B open; E = P∘I, I monomorphisms, adjoint and base change properties.",
+     "hypotheses": [],
+     "locator": {
+      "source": "RCSolid",
+      "where": "Definition 6.3.2 and Lemma 6.3.3, RCSolid line 4025, RCSolid line 4034"
+     },
+     "prerequisites": [
+      "target:2.3",
+      "target:2.5",
+      "target:0.1"
+     ],
+     "api": [
+      {
+       "name": "suitable",
+       "role": "lemma",
+       "statement": "(I, P) is a suitable decomposition."
+      },
+      {
+       "name": "examples",
+       "role": "lemma",
+       "statement": "Rational and Zariski localizations in I; induced maps in P; ℤ_■ → ℤ[T]_■ in E."
+      },
+      {
+       "name": "diagonals",
+       "role": "lemma",
+       "statement": "E contains diagonals and is right cancellative."
+      }
+     ],
+     "tests": [
+      {
+       "name": "affineLineFactor",
+       "kind": "computation",
+       "statement": "ℤ_■ → (ℤ[T],ℤ)_■ → ℤ[T]_■ factors as P then I."
+      },
+      {
+       "name": "pAdicInduced",
+       "kind": "computation",
+       "statement": "ℤ_■ → ℤ_{p,■} → ℚ_{p,■} are in P; the first is a closed immersion."
+      },
+      {
+       "name": "openNotInduced",
+       "kind": "non-example",
+       "statement": "(ℤ[T],ℤ)_■ → ℤ[T]_■ is in I but not in P."
+      }
+     ]
+    },
+    {
+     "id": "3.2",
+     "kind": "theorem",
+     "name": "affinoidQCohFormalism",
+     "statement": "A ↦ D(A) is a presentable Künneth six-functor formalism on (AnStk^aff, E) with j_! = j_♮, p_! = p_*; trivial-structure maps suave iff dualizable; Hypothesis 6.3.11 holds; induced maps are !-covers iff descendable.",
+     "hypotheses": [],
+     "locator": {
+      "source": "RCSolid",
+      "where": "Corollary 6.3.4, Lemmas 6.3.5, 6.3.6, 6.3.22, RCSolid line 4101 to RCSolid line 4418"
+     },
+     "prerequisites": [
+      "target:3.1",
+      "target:0.5",
+      "target:0.7",
+      "target:0.9",
+      "target:0.12",
+      "target:2.3"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "dualNumbers",
+       "kind": "computation",
+       "statement": "ℤ^cond → ℤ[T]/(T²)^cond suave with ω ≅ B."
+      },
+      {
+       "name": "polynomialContrast",
+       "kind": "non-example",
+       "statement": "ℤ^cond → ℤ[T]^cond not suave; ℤ_■ → ℤ[T]_■ is."
+      },
+      {
+       "name": "splitCover",
+       "kind": "degenerate",
+       "statement": "ℤ_■ → ℤ_■ × ℤ_■ is a !-cover."
+      }
+     ]
+    },
+    {
+     "id": "3.3",
+     "kind": "definition",
+     "name": "AnalyticStack",
+     "statement": "AnStk(C₀) = gShv(C₀) for essentially small C₀ closed under finite limits and coproducts: an ∞-topos with extended six-functor formalism, descendable maps as !-covers, comparison functors, sheaves of full subcategories.",
+     "hypotheses": [
+      "C₀ essentially small, finite limits and coproducts"
+     ],
+     "locator": {
+      "source": "RCSolid",
+      "where": "Definitions 6.3.13, 6.3.16, 6.3.23, RCSolid line 4295 to RCSolid line 4435; ABLB Definition 4.2.1, Remarks 4.2.2–4.2.5"
+     },
+     "prerequisites": [
+      "target:3.2",
+      "target:0.13",
+      "target:0.6"
+     ],
+     "api": [
+      {
+       "name": "yoneda",
+       "role": "lemma",
+       "statement": "AnSpec fully faithful, finite-limit preserving, D(AnSpec A) = D(A)."
+      },
+      {
+       "name": "openMaps",
+       "role": "lemma",
+       "statement": "Open immersions are étale monomorphisms with fully faithful j_!."
+      },
+      {
+       "name": "kunneth",
+       "role": "lemma",
+       "statement": "Künneth over affinoid bases for !-able maps (RC26a Lemma 2.1.10)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "emptyStack",
+       "kind": "degenerate",
+       "statement": "∅ has D = 0."
+      },
+      {
+       "name": "finiteSetsSite",
+       "kind": "computation",
+       "statement": "C₀ = finite products of ℤ_■ gives AnStk(C₀) ≃ Ani, D(K) = Fun(K, D(ℤ_■))."
+      },
+      {
+       "name": "allRingsNotBuilt",
+       "kind": "non-example",
+       "statement": "C₀ = all analytic rings is not constructed (RCSolid Warning 6.3.24)."
+      }
+     ]
+    },
+    {
+     "id": "3.4",
+     "kind": "theorem",
+     "name": "schemeSolidSixFunctors",
+     "statement": "Solid formalism D_■ on schemes almost of finite type (P proper, I open, E separated) and on discrete adic spaces, as restriction of AnStk; proper pushforward preserves pseudocoherent, coherent and (finite Tor) perfect; discrete subcategory; localization triangles for formal completions.",
+     "hypotheses": [
+      "schemes almost of finite type over ℤ; discrete adic spaces"
+     ],
+     "locator": {
+      "source": "SixFF",
+      "where": "Theorems 9.7, 9.15, 9.18, SixFF line 3208, SixFF line 3369, SixFF line 3444; RCSolid Theorem 5.6.8, Example 7.3.4(4)"
+     },
+     "prerequisites": [
+      "target:3.3",
+      "target:2.7",
+      "target:2.8",
+      "target:0.5",
+      "mathlib:AlgebraicGeometry.IsProper",
+      "mathlib:AlgebraicGeometry.IsSeparated",
+      "roadmap:SchemeAndStackFoundations §2.18"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "affineLineCompact",
+       "kind": "computation",
+       "statement": "𝔸¹: f_!1 = T⁻¹ℤ[[T⁻¹]][−1], not discrete."
+      },
+      {
+       "name": "artinianCoefficients",
+       "kind": "compatibility",
+       "statement": "Over ℤ/p^s, proper pushforward of discrete coherent is ordinary coherent cohomology."
+      },
+      {
+       "name": "zSolidComparison",
+       "kind": "compatibility",
+       "statement": "(A, ℤ)_■ agrees with VS2.2 ZSolidAnalytification on common light presentations; A_■ is strictly smaller for A = ℤ[T], ℤ[1/p] and equal for A integral over ℤ (𝔽_p, ℤ/p^s)."
+      }
+     ]
+    },
+    {
+     "id": "3.5",
+     "kind": "definition",
+     "name": "SolidHuberStack",
+     "statement": "SolHubStk = AnStk(Aff^Hub); solid adic topology, |X|_■, open immersions, solid adic spaces; functors from schemes, formal schemes, sheafy Tate adic spaces (rigid spaces) and discrete adic spaces.",
+     "hypotheses": [
+      "Aff^Hub essentially small (e.g. κ-compact solid Huber rings)"
+     ],
+     "locator": {
+      "source": "RCSolid",
+      "where": "Definitions 7.3.1–7.3.2 and Example 7.3.4, RCSolid line 5180 to RCSolid line 5235"
+     },
+     "prerequisites": [
+      "target:3.3",
+      "target:2.9",
+      "target:2.10",
+      "roadmap:AdicSpacesPartII §R1.1"
+     ],
+     "api": [
+      {
+       "name": "rationalCovers",
+       "role": "lemma",
+       "statement": "Rational covers are !-covers."
+      },
+      {
+       "name": "spectrumFunctor",
+       "role": "lemma",
+       "statement": "|−|_■ sends AnSpec A to Spec_■(A)."
+      },
+      {
+       "name": "rigidDescent",
+       "role": "lemma",
+       "statement": "D of rigid spaces glues by analytic descent (And21 Theorem 4.1)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "closedDisc",
+       "kind": "computation",
+       "statement": "Closed disc over ℚ_p: ℚ_p⟨T⟩_■ with Spa(ℚ_p⟨T⟩, ℤ_p⟨T⟩)."
+      },
+      {
+       "name": "discreteNotOpen",
+       "kind": "non-example",
+       "statement": "Spa(ℤ[T^{±1}],ℤ) ⊆ Spa(ℤ[T],ℤ) is not an open immersion of solid adic spaces."
+      },
+      {
+       "name": "empty",
+       "kind": "degenerate",
+       "statement": "Empty solid adic space has D = 0."
+      }
+     ]
+    },
+    {
+     "id": "3.6",
+     "kind": "definition",
+     "name": "QpAnalyticStack",
+     "statement": "Analytic stacks over ℚ_{p,■}: AnStk(C₀) for C₀ of induced animated ℚ_{p,■}-algebras; all affinoid maps !-able and prim.",
+     "hypotheses": [
+      "C₀ essentially small of induced ℚ_{p,■}-algebras"
+     ],
+     "locator": {
+      "source": "ABLB",
+      "where": "Definition 4.2.1, ABLB line 2109; RCSolid Definition 6.3.23"
+     },
+     "prerequisites": [
+      "target:3.3",
+      "target:2.11"
+     ],
+     "api": [
+      {
+       "name": "colimits",
+       "role": "lemma",
+       "statement": "Colimits and base change computed on algebras."
+      },
+      {
+       "name": "enlarge",
+       "role": "functor",
+       "statement": "Inclusions C₀ ⊆ C₁ induce functors of topoi."
+      }
+     ],
+     "tests": [
+      {
+       "name": "finiteProducts",
+       "kind": "computation",
+       "statement": "Finite products of ℚ_{p,■} give Ani with D(K) = Fun(K, D(ℚ_{p,■}))."
+      },
+      {
+       "name": "tateNotInduced",
+       "kind": "non-example",
+       "statement": "ℚ_p⟨T⟩_■ is not induced from ℚ_{p,■}."
+      },
+      {
+       "name": "bettiProfinite",
+       "kind": "compatibility",
+       "statement": "AnSpec C^lc(S, ℚ_p) is the Betti stack of S."
+      }
+     ]
+    },
+    {
+     "id": "3.7",
+     "kind": "theorem",
+     "name": "analyticCoefficientQCoh",
+     "statement": "For an analytic ring A, R ↦ Mod_R(D(A)) is a Künneth formalism with D_A! = D_! ⊗ D(A), and D_A = Fun(D_!, D(A)) for compactly generated D(A); !-equivalences for D and D^cond agree.",
+     "hypotheses": [
+      "A analytic ring"
+     ],
+     "locator": {
+      "source": "RCSolid",
+      "where": "Remarks 6.4.1–6.4.2, RCSolid line 4471 to RCSolid line 4500"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:1.2",
+      "target:2.2",
+      "roadmap:EnhancedDerivedSheaves §E5:presentability.2",
+      "roadmap:EnhancedDerivedSheaves §E5:presentability.4"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "condensed",
+       "kind": "degenerate",
+       "statement": "A = ℤ^cond gives D^cond."
+      },
+      {
+       "name": "solidPolynomial",
+       "kind": "computation",
+       "statement": "A = ℤ_■, R = ℤ[T] gives D((ℤ[T], ℤ)_■)."
+      },
+      {
+       "name": "zeroRing",
+       "kind": "degenerate",
+       "statement": "A = 0 gives 0."
+      }
+     ]
+    },
+    {
+     "id": "3.8",
+     "kind": "construction",
+     "name": "algebraicStackRealization",
+     "statement": "(−)^cond: AlgStk → AnStk(C₀), left exact colimit-preserving, Spec R ↦ AnSpec R^cond; D(X^cond) = Fun_{QCoh(ℤ)}(QCoh^!(X), D(ℤ^cond)), = QCoh(X) ⊗ D(ℤ^cond) for !-able X; morphism of six-functor formalisms; graded, filtered, complete filtered descriptions on B𝔾_m × Y, 𝔸¹/𝔾_m × Y, 𝔸̂¹/𝔾_m × Y; shearing over ℚ.",
+     "hypotheses": [
+      "C₀ containing the trivial structures considered"
+     ],
+     "locator": {
+      "source": "RCSolid",
+      "where": "(6.4.1) and Corollary 6.4.6, RCSolid line 4480, RCSolid line 4562; ALRS Remark 2.9.1, ALRS line 1866"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "target:1.6",
+      "target:1.7",
+      "target:3.3",
+      "target:3.7",
+      "target:0.13"
+     ],
+     "api": [
+      {
+       "name": "affine",
+       "role": "lemma",
+       "statement": "D(Spec R^cond) = Mod_R(D(ℤ^cond))."
+      },
+      {
+       "name": "sixFunctorMorphism",
+       "role": "lemma",
+       "statement": "QCoh → D((−)^cond) is a morphism of formalisms."
+      },
+      {
+       "name": "filteredDescriptions",
+       "role": "corollary",
+       "statement": "Graded/filtered/complete filtered objects on Y."
+      }
+     ],
+     "tests": [
+      {
+       "name": "affineCase",
+       "kind": "computation",
+       "statement": "X = Spec R gives Mod_R(D(ℤ^cond))."
+      },
+      {
+       "name": "gradedSolid",
+       "kind": "computation",
+       "statement": "B𝔾_m × AnSpec ℤ_■: graded solid groups, t of weight −1."
+      },
+      {
+       "name": "formalLine",
+       "kind": "compatibility",
+       "statement": "𝔸̂¹ (!-able): derived T-complete modules tensored with D(ℤ^cond)."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "4",
+   "title": "Betti stacks, classifying stacks, nuclear modules and Fredholm rings",
+   "targets": [
+    {
+     "id": "4.1",
+     "kind": "construction",
+     "name": "bettiRealization",
+     "statement": "(−)^Betti: CondAni → AnStk(C₀) via S ↦ Spec C(S, ℤ), left adjoint in a morphism of topoi; recovers the light condensed-anima formalism; over ℚ_{p,■}, S ↦ AnSpec C^lc(S, ℚ_p).",
+     "hypotheses": [
+      "light profinite sets; C₀ containing the needed affinoids"
+     ],
+     "locator": {
+      "source": "RCSolid",
+      "where": "§6.5, RCSolid line 4750 to RCSolid line 4765; ABLB Lemma 4.2.9, ABLB line 2214"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "target:3.8",
+      "target:3.6",
+      "target:0.13",
+      "roadmap:EnhancedDerivedSheaves §E2.6",
+      "roadmap:EnhancedDerivedSheaves §E2.7"
+     ],
+     "api": [
+      {
+       "name": "exactness",
+       "role": "lemma",
+       "statement": "Preserves colimits and finite limits; right adjoint X ↦ (S ↦ X(AnSpec C(S,ℤ)^cond))."
+      },
+      {
+       "name": "profiniteModules",
+       "role": "lemma",
+       "statement": "D(S^Betti) = Mod_{C(S,ℤ)}(D(ℤ^cond)); over ℚ_{p,■}, Mod_{C^lc(S,ℚ_p)}."
+      },
+      {
+       "name": "fineMaps",
+       "role": "lemma",
+       "statement": "Fine maps go to !-able maps by a morphism of formalisms."
+      }
+     ],
+     "tests": [
+      {
+       "name": "pointEmpty",
+       "kind": "degenerate",
+       "statement": "∗^Betti = AnSpec ℤ^cond, ∅^Betti = ∅."
+      },
+      {
+       "name": "twoPoints",
+       "kind": "computation",
+       "statement": "{1,2}^Betti = AnSpec(ℤ × ℤ)."
+      },
+      {
+       "name": "convergentSequence",
+       "kind": "non-example",
+       "statement": "C(ℕ∪{∞}, ℤ) = eventually constant sequences; (pⁿ) is not locally constant."
+      }
+     ]
+    },
+    {
+     "id": "4.2",
+     "kind": "theorem",
+     "name": "classifyingStackDuality",
+     "statement": "For second-countable locally profinite G: D(∗/G, Λ) ≃ left completion of derived smooth representations; ∗/G suave iff locally Λ-Poincaré; ℤ[1/p]-algebras and locally pro-p G: ω = Λ with modulus δ(g) = [gKg⁻¹:K]; ℤ/pⁿ and p-adic Lie G: ω = Λ[d] ⊗ d_G; transferred to (∗/G)^Betti over ℚ_{p,■}.",
+     "hypotheses": [
+      "G second-countable locally profinite",
+      "locally finite Λ-cohomological dimension"
+     ],
+     "locator": {
+      "source": "HM",
+      "where": "Proposition 5.1.12, Definition 5.3.17, Proposition 5.3.19, Examples 5.3.21–5.3.22, HM line 4386 to HM line 4928"
+     },
+     "prerequisites": [
+      "target:4.1",
+      "target:3.7",
+      "target:0.7",
+      "target:0.9",
+      "roadmap:SmoothRepresentationsOfLocalGroups §SR.0.1",
+      "roadmap:SmoothRepresentationsOfLocalGroups §SR.0.2",
+      "roadmap:SmoothRepresentationsOfLocalGroups §SR.0d.1",
+      "roadmap:SmoothRepresentationsOfLocalGroups §SR.0d.2",
+      "roadmap:SmoothRepresentationsOfLocalGroups §SR.1.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "borelModulus",
+       "kind": "computation",
+       "statement": "δ(diag(p,1)) = p⁻¹ for the Borel of GL₂(ℚ_p), matching SR conventions."
+      },
+      {
+       "name": "finiteGroups",
+       "kind": "degenerate",
+       "statement": "Finite G of invertible order: étale and proper; ℤ/p with 𝔽_p not fine."
+      },
+      {
+       "name": "freeProP",
+       "kind": "non-example",
+       "statement": "Free pro-p group on an infinite set: cd 1 but not Poincaré, not suave."
+      }
+     ]
+    },
+    {
+     "id": "4.3",
+     "kind": "theorem",
+     "name": "nuclearModuleDescent",
+     "statement": "For solid ℚ_p-algebras A: Nuc(A) closed under colimits, tensor, base change, ω₁-compact = basic nuclear; for nuclear A, nuclearity tested over ℚ_p and on π_i, countable limits, Hom from ω₁-compact; descent along countable !-equivalences of nuclear algebras (∗-pullbacks; !-pullbacks for basic nuclear).",
+     "hypotheses": [
+      "A an induced ℚ_{p,■}-algebra; nuclear where stated"
+     ],
+     "locator": {
+      "source": "ABLB",
+      "where": "Definition A.0.4, Lemmas A.0.6–A.0.9, A.0.13, ABLB line 6767 to ABLB line 6850; Bos23 Theorem A.17; CS22 Theorem 8.6"
+     },
+     "prerequisites": [
+      "target:2.11",
+      "target:3.3",
+      "target:3.6",
+      "roadmap:RefinedTraceMethods §4.2",
+      "roadmap:RefinedTraceMethods §4.3",
+      "gap:nuclear-hom-criterion"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "dualizableNuclear",
+       "kind": "compatibility",
+       "statement": "ℚ_p and finite free modules are nuclear; ∏_ℕ ℚ_p is nuclear (Fréchet)."
+      },
+      {
+       "name": "compactNotNuclear",
+       "kind": "non-example",
+       "statement": "ℚ_{p,■}[S] is compact but not nuclear (not dualizable)."
+      },
+      {
+       "name": "degenerateDiagram",
+       "kind": "degenerate",
+       "statement": "I a point: identity; I empty: A = 0."
+      }
+     ]
+    },
+    {
+     "id": "4.4",
+     "kind": "definition",
+     "name": "IsFredholm",
+     "statement": "An analytic ring is Fredholm if every dualizable object of D(A) is perfect; cone criterion; Assumption 9.8 generation; conservative base change detects f.g. static modules through the ordinary tensor product, and amplitude; !-local perfectness; Nakayama passage; sheafy analytic complete Huber pairs are Fredholm (light form of the κ-condensed theorem of And21); filtered colimits.",
+     "hypotheses": [
+      "A analytic ring"
+     ],
+     "locator": {
+      "source": "Sch24",
+      "where": "Definition VI.1.6, Propositions VI.1.2, VI.1.5, VI.1.7, Corollaries VI.1.3–VI.1.4, Sch24 line 1720 to Sch24 line 1755; CS22 Definition 9.7, Propositions 9.4, 9.10; And21 Lemmas 5.46–5.47, Theorem 5.50, Lemma 5.51, Corollary 5.51.1"
+     },
+     "prerequisites": [
+      "target:2.2",
+      "target:2.3",
+      "target:2.9",
+      "target:2.10",
+      "roadmap:RefinedTraceMethods §4.2",
+      "roadmap:EnhancedDerivedSheaves §E5:presentability.1"
+     ],
+     "api": [
+      {
+       "name": "truncation",
+       "role": "lemma",
+       "statement": "A Fredholm if π₀A is (Sch24 line 1765)."
+      },
+      {
+       "name": "closure",
+       "role": "lemma",
+       "statement": "Closed under filtered colimits and the Nakayama passage."
+      },
+      {
+       "name": "coincidence",
+       "role": "lemma",
+       "statement": "For Fredholm A: perfect = dualizable = compact nuclear."
+      }
+     ],
+     "tests": [
+      {
+       "name": "zeroRing",
+       "kind": "degenerate",
+       "statement": "The zero ring is Fredholm."
+      },
+      {
+       "name": "qpSolid",
+       "kind": "computation",
+       "statement": "ℚ_{p,■} is Fredholm: dualizables are perfect ℚ_p-complexes."
+      },
+      {
+       "name": "liquidNonExample",
+       "kind": "non-example",
+       "statement": "CS22 Example 9.6: a dualizable non-discrete module over liquid ℂ[T]."
+      }
+     ]
+    },
+    {
+     "id": "4.5",
+     "kind": "theorem",
+     "name": "perfectComplexSheaf",
+     "statement": "For C₀ of Fredholm rings, Perf^{[a,b]} extends to a sheaf on AnStk(C₀); perfect modules and vector bundles on stacks, testable on jointly surjective families.",
+     "hypotheses": [
+      "every A ∈ C₀ Fredholm"
+     ],
+     "locator": {
+      "source": "ABLB",
+      "where": "Lemma 4.2.11, Definition 4.2.12, Remark 4.2.13, ABLB line 2235 to ABLB line 2257"
+     },
+     "prerequisites": [
+      "target:4.4",
+      "target:3.3",
+      "target:0.13"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "pointBundles",
+       "kind": "computation",
+       "statement": "Vector bundles on AnSpec ℚ_{p,■} are finite-dimensional ℚ_p-spaces."
+      },
+      {
+       "name": "empty",
+       "kind": "degenerate",
+       "statement": "Perf(∅) = 0."
+      },
+      {
+       "name": "fredholmNeeded",
+       "kind": "non-example",
+       "statement": "Without Fredholmness the sheaf property can fail (CS22 Example 9.6)."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "5",
+   "title": "The cotangent complex of analytic rings",
+   "targets": [
+    {
+     "id": "5.1",
+     "kind": "definition",
+     "name": "analyticCotangentComplex",
+     "statement": "L_{B/A} ∈ D_{≥0}(B) corepresents Der_A(B, M) = sections of B ⊕ M → B (induced structure) on connective complete B-modules; exists and is functorial in arrows.",
+     "hypotheses": [
+      "A → B map of analytic rings"
+     ],
+     "locator": {
+      "source": "RCSolid",
+      "where": "Definition 7.4.1 and Remark 7.4.2, RCSolid line 5257, RCSolid line 5266"
+     },
+     "prerequisites": [
+      "target:2.2",
+      "target:2.3",
+      "roadmap:EnhancedDerivedSheaves §E5:cotangent-export.1",
+      "roadmap:EnhancedDerivedSheaves §E3.2",
+      "roadmap:DerivedModuleAlgebra §0.4",
+      "roadmap:DerivedModuleAlgebra §0.6"
+     ],
+     "api": [
+      {
+       "name": "squares",
+       "role": "functor",
+       "statement": "Squares induce B′ ⊗ L_{B/A} → L_{B′/A′}."
+      },
+      {
+       "name": "inducedReduction",
+       "role": "lemma",
+       "statement": "L_{B/A} = B ⊗ L_{B▷_{A/}/A} = L_{B/A▷^cond} (RCSolid Example 7.4.4(2))."
+      },
+      {
+       "name": "discreteAgreement",
+       "role": "compatibility",
+       "statement": "For trivial structures, L agrees with E5:cotangent-export.1 and DerivedModuleAlgebra §0.4."
+      },
+      {
+       "name": "mappingSpace",
+       "role": "lemma",
+       "statement": "Der_A(B, M) ≃ Map(L_{B/A}, M)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "solidLine",
+       "kind": "computation",
+       "statement": "L_{ℤ[T]_■/ℤ_■} ≅ ℤ[T]."
+      },
+      {
+       "name": "identity",
+       "kind": "degenerate",
+       "statement": "L_{A/A} = 0 and L_{0/A} = 0."
+      },
+      {
+       "name": "finiteField",
+       "kind": "computation",
+       "statement": "L_{𝔽_p/ℤ_■} = 𝔽_p[1]; a static definition would lose it."
+      }
+     ]
+    },
+    {
+     "id": "5.2",
+     "kind": "theorem",
+     "name": "cotangentProperties",
+     "statement": "Base change along pushouts, colimits of arrows, transitivity, vanishing for idempotent maps; connectivity of Sym^m and ∧^m; B ⊗ cofib(f) → L_{B/A} estimates; isomorphism criterion; square-zero lifting connectivity.",
+     "hypotheses": [],
+     "locator": {
+      "source": "RCSolid",
+      "where": "Lemma 7.4.3, Lemma 7.4.5, Corollary 7.4.6, Proposition 7.4.7, Corollary 7.4.8, Lemma 7.4.9, RCSolid line 5276 to RCSolid line 5347; ALRS Lemma A.1.1"
+     },
+     "prerequisites": [
+      "target:5.1",
+      "target:2.3",
+      "roadmap:EnhancedDerivedSheaves §E5:cotangent-export.1",
+      "roadmap:EnhancedDerivedSheaves §E5:cotangent-export.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "idempotentKernel",
+       "kind": "computation",
+       "statement": "L of (ℤ[T],ℤ)_■ → ℤ((T⁻¹)) vanishes."
+      },
+      {
+       "name": "structureChange",
+       "kind": "computation",
+       "statement": "L_{ℤ_■/ℤ^cond} = 0."
+      },
+      {
+       "name": "transitivity",
+       "kind": "computation",
+       "statement": "L_{A/A[T]_■} = A[1]."
+      }
+     ]
+    },
+    {
+     "id": "5.3",
+     "kind": "theorem",
+     "name": "exteriorPowerDescent",
+     "statement": "For descendable A → A⁰ of solid animated R-algebras (or analytic rings with induced A⁰), ∧^m L_{A/R} ≃ Tot(∧^m L_{A^•/R}).",
+     "hypotheses": [
+      "A → A⁰ descendable"
+     ],
+     "locator": {
+      "source": "ALRS",
+      "where": "Lemma A.1.2 and the following sentence, ALRS line 9435 to ALRS line 9440"
+     },
+     "prerequisites": [
+      "target:5.2",
+      "roadmap:EnhancedDerivedSheaves §E5:descent",
+      "roadmap:EnhancedDerivedSheaves §E5:cotangent-export.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "degreeZero",
+       "kind": "degenerate",
+       "statement": "m = 0 is descent A ≃ Tot(A^•)."
+      },
+      {
+       "name": "split",
+       "kind": "computation",
+       "statement": "A → A × A: both sides ∧^m L_{A/R}."
+      },
+      {
+       "name": "nonDescendable",
+       "kind": "non-example",
+       "statement": "ℤ → ℚ fails at m = 0."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "6",
+   "title": "Solid smoothness and Serre duality",
+   "targets": [
+    {
+     "id": "6.1",
+     "kind": "definition",
+     "name": "SolidFinitePresentation",
+     "statement": "Solid finite type (π₀B a quotient of a solid Tate algebra with induced structure), solid (almost) finite presentation (L_{B/A} from a perfect, resp. almost perfect, B▷(∗)-module); permanence.",
+     "hypotheses": [
+      "A → B map of solid Huber rings"
+     ],
+     "locator": {
+      "source": "RCSolid",
+      "where": "Definitions 7.5.1, 7.5.4, Remark 7.5.3, Lemma 7.5.7, RCSolid line 5435 to RCSolid line 5498"
+     },
+     "prerequisites": [
+      "target:2.9",
+      "target:5.2",
+      "roadmap:DerivedModuleAlgebra §1.E.0"
+     ],
+     "api": [
+      {
+       "name": "schemes",
+       "role": "compatibility",
+       "statement": "A → B of finite presentation iff A_■ → B_■ solid finite presentation (RCSolid Example 7.5.5(1))."
+      },
+      {
+       "name": "formalRigid",
+       "role": "lemma",
+       "statement": "Topologically finite type and affinoid maps are of solid almost finite presentation."
+      },
+      {
+       "name": "baseChange",
+       "role": "lemma",
+       "statement": "Solid finite type is detected on π₀ and stable under base change."
+      }
+     ],
+     "tests": [
+      {
+       "name": "affineLine",
+       "kind": "computation",
+       "statement": "ℤ_■ → ℤ[T]_■: L free of rank one."
+      },
+      {
+       "name": "compactNotFinite",
+       "kind": "non-example",
+       "statement": "ℤ_■ → Sym ℤ_■[S] not of solid finite type."
+      },
+      {
+       "name": "zpNotFinite",
+       "kind": "non-example",
+       "statement": "ℤ_■ → ℤ_{p,■} has L = 0 but is not of solid finite type."
+      }
+     ]
+    },
+    {
+     "id": "6.2",
+     "kind": "definition",
+     "name": "SolidSmooth",
+     "statement": "Solid smooth (L finite projective) and solid étale (L = 0) maps of solid finite presentation; local versions; relative dimension; standard smooth/étale charts; Proposition 7.6.5 and Theorem 7.6.7 (local structure).",
+     "hypotheses": [
+      "A → B of solid finite presentation"
+     ],
+     "locator": {
+      "source": "RCSolid",
+      "where": "Definitions 7.6.1, 7.6.3, Proposition 7.6.5, Theorem 7.6.7, RCSolid line 5589 to RCSolid line 5766"
+     },
+     "prerequisites": [
+      "target:6.1",
+      "target:2.10",
+      "target:5.2",
+      "target:2.5",
+      "roadmap:AdicSpacesPartII §R0.16",
+      "mathlib:AlgebraicGeometry.Smooth",
+      "mathlib:AlgebraicGeometry.SmoothOfRelativeDimension"
+     ],
+     "api": [
+      {
+       "name": "dimension",
+       "role": "lemma",
+       "statement": "Relative dimension additive and base-change stable."
+      },
+      {
+       "name": "schemeComparison",
+       "role": "compatibility",
+       "statement": "Locally solid smooth iff classically smooth (Mathlib Smooth, SmoothOfRelativeDimension)."
+      },
+      {
+       "name": "rigidComparison",
+       "role": "compatibility",
+       "statement": "Agrees with smoothness of rigid spaces (AdicSpacesPartII §R0.16)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "rationalEtale",
+       "kind": "computation",
+       "statement": "A⟨f/g⟩ has Jacobian diag(g), standard étale."
+      },
+      {
+       "name": "squaringMap",
+       "kind": "non-example",
+       "statement": "T ↦ T² is not étale over ℤ (Jacobian 2T)."
+      },
+      {
+       "name": "dualNumbersNotSmooth",
+       "kind": "computation",
+       "statement": "ℤ[T]_■/(T²): L = [B →2T B dT] with π₁ = Tℤ, not smooth, but suave."
+      }
+     ]
+    },
+    {
+     "id": "6.3",
+     "kind": "theorem",
+     "name": "regularImmersionSuave",
+     "statement": "Trivial-structure maps suave iff dualizable; regular immersions suave with dualizing det(I/I²)^∨[−c]; finite Tor-dimension maps of derived schemes suave; lci maps cohomologically smooth with f^!1 ≅ det L.",
+     "hypotheses": [],
+     "locator": {
+      "source": "RCSolid",
+      "where": "Lemma 6.3.5, RCSolid line 4111, proof of Proposition 7.7.2, RCSolid line 5874; SixFF Theorem 9.17; CSCond Proposition 11.5"
+     },
+     "prerequisites": [
+      "target:3.2",
+      "target:3.4",
+      "target:0.9",
+      "roadmap:DerivedModuleAlgebra §0.K.1",
+      "roadmap:DerivedModuleAlgebra §0.13"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "zeroSection",
+       "kind": "computation",
+       "statement": "Hom_{ℤ[T]}(ℤ, ℤ[T]) = ℤ[−1]; origin of 𝔸ⁿ gives ℤ[−n]."
+      },
+      {
+       "name": "nonRegular",
+       "kind": "non-example",
+       "statement": "ℤ[x,y]/(x², xy): suave, RHom has Ext¹ and Ext², not smooth."
+      },
+      {
+       "name": "modP",
+       "kind": "computation",
+       "statement": "ℤ → 𝔽_p: f^!1 = 𝔽_p[−1]."
+      }
+     ]
+    },
+    {
+     "id": "6.4",
+     "kind": "theorem",
+     "name": "solidSmoothCohomologicallySmooth",
+     "statement": "ℤ_■ → ℤ[T]_■ is cohomologically smooth with dualizing ℤ[T][1]; locally solid smooth maps of solid Huber rings of dimension d are cohomologically smooth with f^!1 locally a line bundle in degree d; locally solid étale maps are cohomologically étale.",
+     "hypotheses": [
+      "f locally solid smooth"
+     ],
+     "locator": {
+      "source": "RCSolid",
+      "where": "Proposition 7.1.11, RCSolid line 4874; Theorem 7.7.1, RCSolid line 5827"
+     },
+     "prerequisites": [
+      "target:6.2",
+      "target:6.3",
+      "target:3.2",
+      "target:2.7",
+      "target:0.9",
+      "target:0.10"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "degreeSign",
+       "kind": "computation",
+       "statement": "ℤ[T][1] has π₁ = ℤ[T]; ι^!f^! = id with ℤ[−1]."
+      },
+      {
+       "name": "trace",
+       "kind": "computation",
+       "statement": "f_!f^!1 = T⁻¹ℤ[[T⁻¹]] with trace the T⁻¹-coefficient."
+      },
+      {
+       "name": "openEtale",
+       "kind": "degenerate",
+       "statement": "ℤ[T]_■ → ℤ[T^{±1}]_■ has f^!1 = 1."
+      }
+     ]
+    },
+    {
+     "id": "6.5",
+     "kind": "construction",
+     "name": "deformationToNormalCone",
+     "statement": "Zero section of the universal bundle: ι₀^!1[n] ≅ det V up to sign; adic filtration of pairs, positive truncation, gr = Sym_B(L[−1]); Ñ_f = Spec_{𝔸¹/𝔾_m} Fil_ad(A → B) equals the cone Y^{cone/X}; analytic promotion; base change and composite properties; lci case: f̃ complete intersection, g prim with g* fully faithful, ι₀*(f̃^!1 ⊗ O(n)) ≅ det(N_f)[−n].",
+     "hypotheses": [
+      "pairs: maps surjective on π₀ with induced structure"
+     ],
+     "locator": {
+      "source": "RCSolid",
+      "where": "Proposition 7.7.2, Lemmas 7.7.10, 7.7.14, Proposition 7.7.12, Construction 7.7.15, Remarks 7.7.16–7.7.18, Lemmas 7.7.19–7.7.20, RCSolid line 5849 to RCSolid line 6162; Mao21 Corollary 3.61"
+     },
+     "prerequisites": [
+      "target:1.5",
+      "target:1.6",
+      "target:3.8",
+      "target:5.2",
+      "target:6.3",
+      "roadmap:EnhancedDerivedSheaves §E5:animation.1"
+     ],
+     "api": [
+      {
+       "name": "adicFiltration",
+       "role": "functor",
+       "statement": "Pair → Fil^{≥0}(Ring) fully faithful with right adjoint (Fil⁰ → gr⁰)."
+      },
+      {
+       "name": "coneComparison",
+       "role": "lemma",
+       "statement": "Cone of a closed immersion is Spec_{𝔸¹/𝔾_m} of the adic filtration."
+      },
+      {
+       "name": "lciComputation",
+       "role": "lemma",
+       "statement": "ι₀*(f̃^!1 ⊗ O(n)) ≅ det(N_f)[−n]."
+      }
+     ],
+     "tests": [
+      {
+       "name": "lineBundleWeight",
+       "kind": "computation",
+       "statement": "n = 1 over B𝔾_m: ι₀^!1 = t^{−1}ℤ[−1], δ = identity."
+      },
+      {
+       "name": "signTorsor",
+       "kind": "computation",
+       "statement": "Hom(GL_n, 𝔾_m) = ℤ·det; ambiguity ±1."
+      },
+      {
+       "name": "adicOfKernel",
+       "kind": "computation",
+       "statement": "ℤ[x] → ℤ: gr = ℤ[x̄]; ℤ[x] → ℤ[x]/(x²): gr = B[u] with u = class of x²."
+      }
+     ]
+    },
+    {
+     "id": "6.6",
+     "kind": "theorem",
+     "name": "solidSerreDuality",
+     "statement": "For locally solid smooth f: A → B of relative dimension n, f^!1 ≅ det(L_{B/A})[n] canonically up to a sign depending on n; smooth maps of schemes and rigid spaces have ω ≅ det Ω¹[n]; coherent duality for proper smooth schemes; over ℤ/p^s, q^!A ≅ Ω^d[d].",
+     "hypotheses": [
+      "f locally solid smooth of relative dimension n"
+     ],
+     "locator": {
+      "source": "RCSolid",
+      "where": "Theorem 7.7.21, RCSolid line 6208; Corollary 7.7.23, Remark 7.7.24; CSCond Theorems 11.1, 11.6"
+     },
+     "prerequisites": [
+      "target:6.4",
+      "target:6.5",
+      "target:6.2",
+      "target:3.4",
+      "target:3.5",
+      "mathlib:KaehlerDifferential",
+      "mathlib:AlgebraicGeometry.IsProper",
+      "roadmap:DerivedModuleAlgebra §0.12"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "dimensionOne",
+       "kind": "compatibility",
+       "statement": "det L = L for n = 1, agreeing with ALRS Remark 6.5.6."
+      },
+      {
+       "name": "dimensionTwo",
+       "kind": "non-example",
+       "statement": "𝔸²: det L ≅ O, while L[2] = O²[2] is not invertible."
+      },
+      {
+       "name": "projectiveLine",
+       "kind": "computation",
+       "statement": "ℙ¹: ω = O(−2)[1]; H⁰(O) dual to H¹(O(−2))."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "7",
+   "title": "Cartier duality in six-functor formalisms",
+   "targets": [
+    {
+     "id": "7.1",
+     "kind": "theorem",
+     "name": "bialgebraCartierDuality",
+     "statement": "Cartier duality D(H) = Hom(H, A¹_C) on presheaves of commutative monoids on CAlg(C)^op: grouplike reduction; on dualizable bialgebras corepresented by A^∨, an involution; Hopf iff dual Hopf; pairing criterion via the duality unit θ.",
+     "hypotheses": [
+      "C small symmetric monoidal ∞-category"
+     ],
+     "locator": {
+      "source": "RC26a",
+      "where": "Theorem 2.3.2, RC26a line 678; Lur18a Propositions 3.8.1, 3.8.5, 3.9.9, Remark 3.8.4"
+     },
+     "prerequisites": [
+      "roadmap:EnhancedDerivedSheaves §E5:abstract.1",
+      "roadmap:EnhancedDerivedSheaves §E5:abstract.2",
+      "roadmap:EnhancedDerivedSheaves §E5:presentability.1",
+      "roadmap:EnhancedDerivedSheaves §E5:presentability.4"
+     ],
+     "api": [
+      {
+       "name": "rightAdjoint",
+       "role": "lemma",
+       "statement": "D sends colimits to limits and fibre sequences of grouplike objects to fibre sequences."
+      },
+      {
+       "name": "involution",
+       "role": "lemma",
+       "statement": "D∘D ≃ id on dualizable bialgebras."
+      },
+      {
+       "name": "monoidalFunctors",
+       "role": "lemma",
+       "statement": "Bialgebras and Hopf condition preserved by symmetric monoidal functors."
+      }
+     ],
+     "tests": [
+      {
+       "name": "muN",
+       "kind": "computation",
+       "statement": "D(μ_n) = ℤ/n via ℤ[ℤ/n]^∨ = ℤ^{ℤ/n}."
+      },
+      {
+       "name": "trivial",
+       "kind": "degenerate",
+       "statement": "D(∗) = ∗."
+      },
+      {
+       "name": "additiveNotDualizable",
+       "kind": "non-example",
+       "statement": "𝔾_a over ℤ: characters trivial, ℤ[T] not dualizable."
+      }
+     ]
+    },
+    {
+     "id": "7.2",
+     "kind": "definition",
+     "name": "OneCategoricalCartierDuality",
+     "statement": "In a Künneth formalism over S: [X]_* and [X]_! bialgebras in Pr_{D,S}; Cartier duality exchanges them; Fourier–Mukai transform FM_h: [Y]_! → [X]_* of a pairing h with kernel F_h, monoidal from convolution to tensor; base change and descent; h induces a 1-categorical Cartier duality if FM_h is an isomorphism.",
+     "hypotheses": [
+      "D κ-presentable, Künneth over S",
+      "X, Y commutative monoids in C_E/S"
+     ],
+     "locator": {
+      "source": "RC26a",
+      "where": "Construction 2.4.1, Propositions 2.4.3–2.4.4, Remarks 2.4.5–2.4.6, Definition 2.4.7, RC26a line 721 to RC26a line 861"
+     },
+     "prerequisites": [
+      "target:7.1",
+      "target:0.7",
+      "target:0.12",
+      "target:3.3",
+      "roadmap:EnhancedDerivedSheaves §E5:presentability.2",
+      "roadmap:EnhancedDerivedSheaves §E5:presentability.4"
+     ],
+     "api": [
+      {
+       "name": "dualObjects",
+       "role": "lemma",
+       "statement": "[X]_* and [X]_! are dual; FM_h invertible iff its kernel is invertible."
+      },
+      {
+       "name": "monoidalEquivalence",
+       "role": "lemma",
+       "statement": "A duality gives (D(Y), ⋆_!) ≃ (D(X), ⊗) carrying e_!1 to 1."
+      },
+      {
+       "name": "baseChangeDescent",
+       "role": "lemma",
+       "statement": "Preserved by base change; descends along universal ∗-descent."
+      }
+     ],
+     "tests": [
+      {
+       "name": "trivialMonoids",
+       "kind": "degenerate",
+       "statement": "X = Y = S: FM_h is the identity."
+      },
+      {
+       "name": "trivialPairing",
+       "kind": "non-example",
+       "statement": "h ≡ 1 between ℤ^Betti and itself is not faithful (skyscrapers at 0 and 1 have equal image)."
+      },
+      {
+       "name": "finiteFlatTauCeti",
+       "kind": "compatibility",
+       "statement": "For finite locally free G, recovers TauCeti cartierDuality: [BG]_! ≅ [G^D]_*."
+      }
+     ]
+    },
+    {
+     "id": "7.3",
+     "kind": "definition",
+     "name": "OneSuaveMap",
+     "statement": "In 1Aff_V = CAlg(Pr_V)^op: 1-suave (Pr_X-linear left adjoint of base change), 1-étale (diagonals to sphere cotensors 1-suave), 0-suave, 0-prim, 0-étale, 0-proper; permanence; 1-étale topology with A¹, GL₁ and Cartier duals sheaves; fibre sequence duality; the descent criterion for quasi-affinoid grouplike monoids.",
+     "hypotheses": [
+      "V κ-presentable symmetric monoidal stable"
+     ],
+     "locator": {
+      "source": "RC26a",
+      "where": "Definition 2.5.1, Lemmas 2.5.3, 2.5.5, 2.5.9, 2.5.12, Definitions 2.5.4, 2.5.7, Proposition 2.5.13, Theorem 2.5.15, RC26a line 897 to RC26a line 1318"
+     },
+     "prerequisites": [
+      "target:7.1",
+      "target:7.2",
+      "target:0.12",
+      "target:3.3",
+      "roadmap:EnhancedDerivedSheaves §E5:presentability.2",
+      "roadmap:EnhancedDerivedSheaves §E5:presentability.4",
+      "roadmap:EnhancedDerivedSheaves §E5:descent"
+     ],
+     "api": [
+      {
+       "name": "permanence",
+       "role": "lemma",
+       "statement": "Base change, composition, right cancellation (RC26a Lemma 2.5.3)."
+      },
+      {
+       "name": "kunnethSuave",
+       "role": "lemma",
+       "statement": "Künneth formalisms make !-able maps 1-suave, 1-étale with Künneth diagonals."
+      },
+      {
+       "name": "descentCriterion",
+       "role": "theorem",
+       "statement": "RC26a Theorem 2.5.15."
+      }
+     ],
+     "tests": [
+      {
+       "name": "identity",
+       "kind": "degenerate",
+       "statement": "The identity is 1-suave, 1-étale, 0-suave and 0-prim."
+      },
+      {
+       "name": "splitProduct",
+       "kind": "computation",
+       "statement": "Spec(Λ × Λ) → Spec Λ is 0-étale and 0-proper."
+      },
+      {
+       "name": "polynomialNotZeroSuave",
+       "kind": "non-example",
+       "statement": "Spec ℤ[T] → Spec ℤ: 1-suave and 0-prim, not 0-suave (∏ not colimit-preserving)."
+      }
+     ]
+    },
+    {
+     "id": "7.4",
+     "kind": "theorem",
+     "name": "latticeTorusDuality",
+     "statement": "ℤ^Betti and 𝔾_m: g_!1 = ⊕_ℤ ℤ; B𝔾_m represents invertible objects of D(A) that become isomorphic to the unit after a !-cover, and e: S → B𝔾_m is prim and descendable; [B𝔾_m]_! ≅ [ℤ^Betti]_*, [𝔾_m]_! ≅ [Bℤ^Betti]_*; stacky form over Latt with tori 𝔾_m ⊗ V*.",
+     "hypotheses": [],
+     "locator": {
+      "source": "RC26a",
+      "where": "Lemmas 3.0.3, 3.1.1, 3.1.2, Proposition 3.1.3, Theorem 3.1.4, RC26a line 1461 to RC26a line 1518"
+     },
+     "prerequisites": [
+      "target:7.3",
+      "target:4.1",
+      "target:1.5",
+      "target:3.8"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "gradedConvolution",
+       "kind": "compatibility",
+       "statement": "Convolution and tensor exchange between graded objects and families on ℤ^Betti."
+      },
+      {
+       "name": "rankZero",
+       "kind": "degenerate",
+       "statement": "Zero lattice: trivial duality."
+      },
+      {
+       "name": "signOfCharacter",
+       "kind": "computation",
+       "statement": "Class of the pairing is (Tⁿ); (T⁻ⁿ) reverses the grading."
+      }
+     ]
+    },
+    {
+     "id": "7.5",
+     "kind": "theorem",
+     "name": "additiveCartierDualities",
+     "statement": "1-categorical Cartier dualities: Ĝ_a vs G_a^♯ via exp(XT) (and over ℚ); G_{a,■} vs Ĝ^♯_{a,■}; overconvergent divided-power discs vs open discs over ℤ((π)); G^{♯,†}_a vs G^an_a; ℤ_p^la vs 1 + D^{<1} via the Amice transform.",
+     "hypotheses": [
+      "R = ℤ((π)) with |π| = 1/2 for the disc cases"
+     ],
+     "locator": {
+      "source": "RC26a",
+      "where": "Lemmas 3.2.1–3.2.31, Propositions 3.2.6, 3.2.11, 3.2.21, 3.2.27, 3.2.32, Corollary 3.2.7, RC26a line 1550 to RC26a line 2013"
+     },
+     "prerequisites": [
+      "target:7.3",
+      "target:1.4",
+      "target:1.5",
+      "target:2.7",
+      "target:2.9",
+      "target:2.11",
+      "target:6.4",
+      "roadmap:LocallyAnalyticDistributions §1.1",
+      "mathlib:AbstractMeasure.amiceTransformEquiv"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "exponentialBasis",
+       "kind": "computation",
+       "statement": "exp(XT) sends (Xⁿ)^∨ to Tⁿ/n!; ℤ[T] would not contain the image."
+      },
+      {
+       "name": "radiusShift",
+       "kind": "computation",
+       "statement": "Over ℚ_p, D^{♯,≤r} = D^{≤r p^{−1/(p−1)}}."
+      },
+      {
+       "name": "amiceNormalisation",
+       "kind": "computation",
+       "statement": "δ₁ ↦ 1 + X, δ₀ ↦ 1."
+      }
+     ]
+    },
+    {
+     "id": "7.6",
+     "kind": "theorem",
+     "name": "stackyCartierDuality",
+     "statement": "Transmutation along ring stacks; for 𝔾_a, G_{a,■}, D^{≤1}_R, G^an_{a,R}, ℤ_p^la: 1-categorical Cartier dualities of transmuted universal vector bundles and duals over Vect^R; gerbe version over B²M.",
+     "hypotheses": [
+      "R/S one of the ring stacks of RC26a Example 3.2.36",
+      "for the gerbe statement: R !-able over S, M, N !-able R-modules over S, D(R) a !-able R-module with exp: D(R) → 𝔾_m giving [R]_* ≅ [B(D(R))]_!"
+     ],
+     "locator": {
+      "source": "RC26a",
+      "where": "Definition 3.2.33, Lemma 3.2.34, Construction 3.2.35, Example 3.2.36, Theorem 3.2.37, Construction 3.3.1, Lemma 3.3.2, Proposition 3.3.3, RC26a line 2025 to RC26a line 2171"
+     },
+     "prerequisites": [
+      "target:7.5",
+      "target:7.2",
+      "target:7.4",
+      "target:3.8",
+      "target:1.5"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "rankZero",
+       "kind": "degenerate",
+       "statement": "Rank zero: identity."
+      },
+      {
+       "name": "rankOne",
+       "kind": "compatibility",
+       "statement": "Rank one over the point recovers 7.5."
+      },
+      {
+       "name": "dualNeeded",
+       "kind": "non-example",
+       "statement": "Pairing St_n with St_n is not GL_n-invariant (λ²)."
+      }
+     ]
+    },
+    {
+     "id": "7.7",
+     "kind": "theorem",
+     "name": "analyticMultiplicativeClassifyingStack",
+     "statement": "D([AnSpec A/𝔾_m^an]) ≃ modules over A ⊗ ℓ^temp_{ℤ,K}; D(AnSpec A × 𝔾_m^an) ≃ D([AnSpec A/ℤ^temp]); D(BV^{♯,†}) ≃ D(V^{∨,an}).",
+     "hypotheses": [
+      "K complete nonarchimedean over ℚ_p",
+      "A animated solid K_■-algebra"
+     ],
+     "locator": {
+      "source": "RJRC",
+      "where": "Proposition 4.4.8, RJRC line 2134"
+     },
+     "prerequisites": [
+      "target:7.6",
+      "target:6.4",
+      "target:0.9",
+      "target:2.11",
+      "roadmap:EnhancedDerivedSheaves §E5:abstract.5"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "zero",
+       "kind": "degenerate",
+       "statement": "A = 0: both sides vanish."
+      },
+      {
+       "name": "temperate",
+       "kind": "computation",
+       "statement": "1 ∈ ℓ^temp, p^{−n²} ∉ ℓ^temp."
+      },
+      {
+       "name": "pointwiseAlgebra",
+       "kind": "computation",
+       "statement": "ℓ^temp closed under pointwise product, not under convolution."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "suppliers": [
+  {
+   "roadmap": "EnhancedDerivedSheaves",
+   "sections": [
+    "§E0.3",
+    "§E0.4",
+    "§E0.5",
+    "§E0.7",
+    "§E0.8",
+    "§0.1",
+    "§0.2",
+    "§0.3",
+    "§E1.3",
+    "§E1.8",
+    "§E2.6",
+    "§E2.7",
+    "§E3.1",
+    "§E3.2",
+    "§E3.3",
+    "§E3.4",
+    "§E4.1",
+    "§E5:abstract.1",
+    "§E5:abstract.2",
+    "§E5:abstract.3",
+    "§E5:abstract.4",
+    "§E5:abstract.5",
+    "§E5:presentability.1",
+    "§E5:presentability.2",
+    "§E5:presentability.3",
+    "§E5:presentability.4",
+    "§E5:descent",
+    "§E5:animation.1",
+    "§E5:animation.4",
+    "§E5:cotangent-export.1",
+    "§E5:cotangent-export.2"
+   ],
+   "what": "Quasicategorical higher category theory, presentable categories, operads, algebras and modules, descendable algebras, animation and the cotangent complex of animated rings, enhanced derived sheaf categories, derived completion."
+  },
+  {
+   "roadmap": "DerivedModuleAlgebra",
+   "sections": [
+    "§0.4",
+    "§0.6",
+    "§0.12",
+    "§0.13",
+    "§0.14",
+    "§0.K.1",
+    "§1.E.0"
+   ],
+   "what": "Classical cotangent complex, smooth and regular-quotient cases, exterior powers, Koszul complexes, perfect complexes."
+  },
+  {
+   "roadmap": "SchemeAndStackFoundations",
+   "sections": [
+    "§1.15",
+    "§1.18",
+    "§1.19",
+    "§1.20",
+    "§1.21",
+    "§1.22",
+    "§2.18"
+   ],
+   "what": "Stacks, quotient stacks, [𝔸¹/𝔾_m], abelian quasi-coherent sheaves and comodules, derived quasi-coherent complexes."
+  },
+  {
+   "roadmap": "DerivedDeRhamCohomology",
+   "sections": [
+    "§1.18",
+    "§1.19"
+   ],
+   "what": "The Beilinson t-structure on filtered derived categories of a commutative ring and its heart Ch(A)."
+  },
+  {
+   "roadmap": "AdicSpaces",
+   "sections": [
+    "§2.1",
+    "§2.2",
+    "§3.1"
+   ],
+   "what": "Huber pairs, Spa, rational subsets and rational localization."
+  },
+  {
+   "roadmap": "AdicSpacesPartII",
+   "sections": [
+    "§R0.16",
+    "§R1.1"
+   ],
+   "what": "Smooth and étale morphisms of adic spaces, rigid-analytic spaces."
+  },
+  {
+   "roadmap": "SolidAnalyticRings",
+   "sections": [
+    "§1.5",
+    "§2.1",
+    "§2.2",
+    "§2.3",
+    "§2.4",
+    "§7.1",
+    "§7.2",
+    "§7.3",
+    "§7.4"
+   ],
+   "what": "Light solid abelian groups and D(Ab_light), Hℤ-linear comparison, spectral analytic structures, summability structures of discrete Huber pairs, integer-linear comparison."
+  },
+  {
+   "roadmap": "RefinedTraceMethods",
+   "sections": [
+    "§4.1",
+    "§4.2",
+    "§4.3"
+   ],
+   "what": "Dualizable categories, trace-class maps, nuclear objects."
+  },
+  {
+   "roadmap": "SmoothRepresentationsOfLocalGroups",
+   "sections": [
+    "§SR.0.1",
+    "§SR.0.2",
+    "§SR.0d.1",
+    "§SR.0d.2",
+    "§SR.1.1"
+   ],
+   "what": "Smooth representations, derived smooth category, Haar measures and modulus."
+  },
+  {
+   "roadmap": "LocallyAnalyticDistributions",
+   "sections": [
+    "§1.1"
+   ],
+   "what": "Amice transform of locally analytic distributions."
+  },
+  {
+   "roadmap": "VStackSheavesAndLisseCategories",
+   "sections": [
+    "§VS2.2"
+   ],
+   "what": "Comparison Checks only (SolidECoefficients, ZSolidAnalytification) through SolidAnalyticRings §7.4."
+  }
+ ],
+ "consumers": [
+  {
+   "roadmap": "MotivesAndAlgebraicCyclesPartII",
+   "what": "Interface AnalyticStacks:0 (0.4–0.6, 0.9–0.10) and AnalyticStacks:1 (1.1–1.5)."
+  },
+  {
+   "roadmap": "AutomorphicBundlesPartII",
+   "what": "Gap G-solid: 3.4 and 6.6."
+  },
+  {
+   "roadmap": "HigherHidaAndColemanTheory",
+   "what": "D1/solid-scheme-operations: 3.4, 6.6(4); solid-localization-kernel: 2.7; discrete-adic-solid-comparison: 2.8, 3.4."
+  },
+  {
+   "roadmap": "RationalAnalyticPrismatization",
+   "what": "Contracts mapped in the README (Layers 0–7), except the Gestalten contracts."
+  },
+  {
+   "roadmap": "LocallyAnalyticRepresentationsOfLocalGroups",
+   "what": "E_■ and affinoid solid structures: 2.9, 2.11."
+  }
+ ],
+ "gaps": [
+  {
+   "slug": "nuclear-hom-criterion",
+   "title": "Hom criterion for nuclear objects",
+   "neededBy": [
+    "4.3"
+   ],
+   "detail": "For C compactly generated presentably symmetric monoidal stable with compact unit, X nuclear in the sense of RefinedTraceMethods §4.3 (every map from a compact object trace-class) iff (P^∨ ⊗ X)(1) → Hom(P, X) is an equivalence of mapping spectra for every compact P (CS22 Definition 8.5).",
+   "needs": "RefinedTraceMethods §4.3 must prove the equivalence of its nuclearity with the CS22 Definition 8.5 Hom criterion.",
+   "supplier": "RefinedTraceMethods",
+   "section": "§4.3"
+  }
+ ]
+}
