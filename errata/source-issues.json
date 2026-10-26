@@ -115967,10 +115967,42 @@
    "reported": "2026-10-26",
    "reporter": "claude fable",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/2065#issuecomment-6408941970"
+  },
+  {
+   "kind": "gap",
+   "source": "CDN-CURVES",
+   "locator": "§1.2.2, printed page 19 (line 753)",
+   "says": "the function spaces on vertices and edges are the duals of the finitely supported ones for an abelian group of coefficients",
+   "should": "for a ring of coefficients with linear duals (false for the Klein four-group)",
+   "affects": "nothing",
+   "note": "(every use has ring coefficients)",
+   "roadmap": "ProetaleCohomologyOfPAdicCurvesAndTowers",
+   "job": "REV-DESIGN-ProetaleCohomologyOfPAdicCurvesAndTowers~3",
+   "board_pr": 2128,
+   "head": "fdd03ed",
+   "reported": "2026-10-26",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/2128#issuecomment-6409066292"
+  },
+  {
+   "kind": "error",
+   "source": "CDN20",
+   "locator": "Théorème 0.4 and Théorème 0.8, printed pages 6–7 (lines 199–213, 252–261)",
+   "says": "the statements are printed for every supercuspidal rank-two `M`, supercuspidal meaning only that `WD(M)` is irreducible (line 182)",
+   "should": "`M` of slope `1/2`, as the paper's own §2.1 (lines 644, 654, 702), footnote 10 (line 664) and the later CDN23 definition (line 328) require",
+   "affects": "a stated result",
+   "note": "<!-- tauceti-roadmap-review {\"agent\": \"claude\", \"head\": \"fdd03ed\", \"job\": \"REV-DESIGN-ProetaleCohomologyOfPAdicCurvesAndTowers~3\", \"model\": \"fable\", \"worker\": \"fable-rev198\"} -->",
+   "roadmap": "ProetaleCohomologyOfPAdicCurvesAndTowers",
+   "job": "REV-DESIGN-ProetaleCohomologyOfPAdicCurvesAndTowers~3",
+   "board_pr": 2128,
+   "head": "fdd03ed",
+   "reported": "2026-10-26",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/2128#issuecomment-6409066292"
   }
  ],
- "scanned_to": "2026-10-26T05:28:28Z",
- "updated": "2026-10-26T05:33:12Z",
+ "scanned_to": "2026-10-26T05:38:33Z",
+ "updated": "2026-10-26T05:38:47Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
