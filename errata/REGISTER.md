@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-7112 mistakes recorded on the board: 4335 misprints, 1805 errors, 713 gaps, 259 unparsed bullets.
+7118 mistakes recorded on the board: 4339 misprints, 1806 errors, 714 gaps, 259 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -2413,6 +2413,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Error** at Lemma 6.5, pp. 47–48 (proof step at arXiv lines 2714–2715): the source says the printed character ψ fails the step at the uniformizer: for F=ℚ₅ with κ(5) the Teichmüller lift of 2, ψ(5)=1 whereas κ̄(5)=2; it should be a corrected choice of ψ compatible with κ̄ at the uniformizer, as the repaired step requires; affects the proof. Found by  (#252 at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
+## C19
+
+- **Gap** at Proposition 2.2, printed p. 4 (lines 130–146): the source says injectivity of `H^1(V, G) → H^1(V_{R′}, G)` for a smooth affine group `G` and argues through the exact sequence of pointed sets, which for noncommutative `G` gives only the fibre over the trivial class; it should be assume `G` commutative, as both uses (Proposition 2.3, Corollary 2.4) do; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "abded8a", "job": "REV-PKG-PurityForFlatCohomology", "model": "fable", "worker": "fable-rev195"} -->. Found by PurityForFlatCohomology (#2153 at abded8a, 2026-10-26, claude fable).
+
 ## C24
 
 - **Error** at Lemma 5.3.1 parenthesis, printed page 405, C24 lines 4193–4195: the source says nonzero (b-trace,ab-trace) implies non-dihedral type; it should be require at least two nonzero entries in the full trace triple; affects nothing. Found by ArithmeticDynamicsPartII (#1041 at 15c525e, 2026-10-25, codex gpt-6-astra).
@@ -3293,10 +3297,15 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at Example 5.6.7, printed p.75: the source says an opening “for i at least 2” contradicts the displayed degree-one surjectivity; it should be carry no restriction (surjective for i≥1, bijective for i≥2); affects a stated result. Found by SchemeAndStackFoundationsPartII (#420 at accb0a0, 2026-10-23, claude opus).
 - **Misprint** at Example 5.6.7, printed p.75: the source says the display is introduced as a statement for degrees at least two but asserts surjectivity in degree one; it should be carry no opening restriction (surjective for i≥1, bijective for i≥2); affects a stated result; Already recorded as the plan's source issue E3; confirmed at CS24 lines 3166–3170. <!-- tauceti-roadmap-review {"agent": "claude", "head": "9022ef2", "job": "REV-DESIGN-SchemeAndStackFoundationsPartII~2", "model": "fable", "worker": "fable-rev158"} -->. Found by SchemeAndStackFoundationsPartII (#420 at 9022ef2, 2026-10-25, claude fable).
+- **Misprint** at Lemma 4.1.12, printed p. 40 (lines 1636–1642): the source says the source carries the hypothesis `n < dim R`, unused in its proof and violated by the application with `n = dim R` in the proof of Theorem 6.2.7 (line 3579); it should be the lemma for every integer `n`; affects the proof; (of Theorem 6.2.7, formally). Found by PurityForFlatCohomology (#2153 at abded8a, 2026-10-26, claude fable).
+- **Error** at Theorem 7.1.2, printed p. 87 (text line 3630): the source says the source allows local rings regular of dimension `≥ d − 1`, which for `d = 1` admits fields, where injectivity of `H^0` fails (`Spec k ⊔ Spec k`); it should be regular of dimension `≥ max(d − 1, 1)`, as its proof via Theorem 6.2.7 needs; affects a stated result. Found by PurityForFlatCohomology (#2153 at abded8a, 2026-10-26, claude fable).
 - **Misprint** at proof of Lemma 5.4.2, step (3), printed p.65: the source says the torsion comparison names the unprimed ring's π₀; it should be name π₀ of the primed (semiperfect) algebra; affects nothing. Found by SchemeAndStackFoundationsPartII (#420 at accb0a0, 2026-10-23, claude opus).
+- **Misprint** at proof of Theorem 3.3.1(b), printed p. 35 (line 1453): the source says `vdim(R_d) ≥ 3`; it should be `vdim(R) ≥ 3`; affects nothing. Found by PurityForFlatCohomology (#2153 at abded8a, 2026-10-26, claude fable).
 - **Misprint** at proof of Theorem 5.7.2, printed p.80: the source says the truncation used in a base change is written without its ring argument; it should be τ≤n(A); affects nothing. Found by SchemeAndStackFoundationsPartII (#420 at accb0a0, 2026-10-23, claude opus).
 - **Misprint** at proof of Theorem 5.7.2, printed p.81: the source says faithful flatness is taken modulo (a₁,…,a_n), using the power index; it should be modulo (a₁,…,a_r); affects nothing. Found by SchemeAndStackFoundationsPartII (#420 at accb0a0, 2026-10-23, claude opus).
 - **Gap** at proof of Theorem 5.7.2, printed p.81: the source says geometric support cohomology over the non-Noetherian Witt ring is computed by Stacks 0954, which concerns the derived torsion functor; it should be use the extended Čech/dual-Koszul model (Stacks 0A6R) or prove weak proregularity; affects the proof. Found by SchemeAndStackFoundationsPartII (#420 at accb0a0, 2026-10-23, claude opus).
+- **Misprint** at proof of Theorem 6.2.7, printed p. 85 (line 3578): the source says `f ∈ (p, x_1, …, x_n)²`; it should be `(p, x_1, …, x_d)²`; affects nothing. Found by PurityForFlatCohomology (#2153 at abded8a, 2026-10-26, claude fable).
+- **Misprint** at proofs of Theorems 7.2.1 and 7.2.5, printed pp. 89–90 (lines 3726, 3774): the source says `n ≥ 0`; it should be `n ≥ 1`; affects nothing. Found by PurityForFlatCohomology (#2153 at abded8a, 2026-10-26, claude fable).
 - **Misprint** at §5.2.1, printed p.53: the source says the displayed tensor formula has the full graded homotopy on the left but a single degree on the right; it should be graded on both sides, π_*(N)⊗π₀(M); affects nothing. Found by SchemeAndStackFoundationsPartII (#420 at accb0a0, 2026-10-23, claude opus).
 
 ## CT20
