@@ -106,7 +106,6 @@ EllipticCurvesPartII
 ArithmeticKTheory
 GeometryOfNumbersAndQuadraticArithmeticPartII
 K3BlochGroups
-ZagierConjecturePolylogarithms
 K2SymbolsBrauerPartII
 ConformalMappingPartII
 EulerSystemsAndKolyvaginSystems
@@ -228,6 +227,7 @@ MotivesAndAlgebraicCyclesPartII
 ChromaticHomotopyTheory
 ArithmeticKTheoryPartII
 Polylogarithms
+ZagierConjecturePolylogarithms
 HabiroCohomologyFoundationsPartII
 HabiroNahmSeries
 GrossZagierAndArithmeticHeights
