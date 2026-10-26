@@ -116255,10 +116255,42 @@
    "reported": "2026-10-26",
    "reporter": "claude fable",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/2143#issuecomment-6409280830"
+  },
+  {
+   "kind": "misprint",
+   "source": "ALRS",
+   "locator": "Proposition 2.9.3(2), printed page 36",
+   "says": "the i-th graded piece of h_*1 as the i-th exterior power of Ω^i_{Y/X}",
+   "should": "the i-th exterior power of Ω¹_{Y/X}, that is Ω^i_{Y/X}, as Corollary 2.9.4 and Remark 2.9.2 use",
+   "affects": "nothing",
+   "note": "",
+   "roadmap": "RationalAnalyticPrismatization",
+   "job": "REV-DESIGN-RationalAnalyticPrismatization~5",
+   "board_pr": 2065,
+   "head": "b00918d",
+   "reported": "2026-10-26",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/2065#issuecomment-6409526228"
+  },
+  {
+   "kind": "misprint",
+   "source": "ALRS",
+   "locator": "Remark 6.5.6, printed page 163",
+   "says": "the dualizing complex of a smooth map of pure dimension d as L_g[d]",
+   "should": "det(L_g)[d], which agrees for the d = 1 maps the remark uses",
+   "affects": "nothing",
+   "note": "(round 3, re-confirmed)",
+   "roadmap": "RationalAnalyticPrismatization",
+   "job": "REV-DESIGN-RationalAnalyticPrismatization~5",
+   "board_pr": 2065,
+   "head": "b00918d",
+   "reported": "2026-10-26",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/2065#issuecomment-6409526228"
   }
  ],
- "scanned_to": "2026-10-26T05:57:53Z",
- "updated": "2026-10-26T05:59:04Z",
+ "scanned_to": "2026-10-26T06:14:22Z",
+ "updated": "2026-10-26T06:16:01Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
