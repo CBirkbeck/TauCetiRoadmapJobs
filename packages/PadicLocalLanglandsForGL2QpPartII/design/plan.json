@@ -762,7 +762,7 @@
      "statement": "Let ρ be trivial on 1+pO_D = 1+ϖ_D²O_D but not on 1+ϖ_DO_D. Its sector on the first cover is 0, since 1+ϖ_DO_D acts trivially there, so Teitelbaum's model of §7.3 gives no Hyodo–Kato structure on it. (a) at n = 2 does give one."
     },
     {
-     "statement": "Over the unramified base ℤ_{p²}, the first cover has the local equation y^{p²−1} = p(z−z^p)^{p−1}, whose special fibre y^{p²−1} = 0 is not reduced (§7.3). So the finite extension K in (a) cannot be dropped."
+     "statement": "Over the unramified base ℤ_{p²}, the first cover has the local equation y^{p²−1} = p(z−z^p)^{p−1}, whose special fibre y^{p²−1} = 0 is not reduced (§7.3). That excludes this model only. By TEI90 lines 256–259 the minimal regular model over ℤ_{p²} has no component of multiplicity one, whereas a semistable model over ℤ_{p²} has reduced special fibre and its components keep multiplicity one in the minimal regular model. So no semistable model exists over ℤ_{p²}, and the finite extension K in (a) cannot be dropped."
     },
     {
      "statement": "On H¹_HK(Ω) the class dlog(z−a) has φ = p, of slope 1, as for an open annulus (LocallyAnalyticDistributions §0.CR.6.6). The supercuspidal multiplicity in (b) has slope 1/2. Transporting the half-plane's Hyodo–Kato structure to every sector would give the wrong slope."
@@ -782,13 +782,14 @@
    ],
    "title": "Pro-étale cohomology of Stein curves and of the tower",
    "kind": "theorem",
-   "statement": "Let X be a smooth Stein curve over C with finitely many connected components, and ν: X_proét → X_ét the projection. Prove the following (CDN20, Lemme 3.2, line 1209; §3.2, lines 1220–1234; Théorème 3.3, line 1235; Proposition 3.12, line 1440; Proposition 5.12, line 1996, and §5.4.2, lines 2046ff):",
+   "statement": "Let X be a smooth rigid analytic curve over C and ν: X_proét → X_ét the projection. Define H̃K(X) as the kernel of the composite H¹_proét(X, (𝔹⁺_cris)^{φ=p}) → H¹_proét(X, Ô) → H⁰(X, R¹ν_*Ô) ≅ Ω¹(X)(−1), where 𝔹⁺_cris is the crystalline period sheaf built from 𝔸_inf,X, the first map is induced by θ and the second is the edge map of the Leray spectral sequence of ν, whose kernel is H¹(X, O_X) (CDN20, Lemme 3.2, line 1209, and §3.2, lines 1232–1234). Prove the following, with X Stein with finitely many connected components in (a) and (b) (CDN20, Théorème 3.3, line 1235; Proposition 3.12, line 1440; Proposition 5.12, line 1996, and §5.4.2, lines 2046ff):",
    "prerequisites": [
     "PadicLocalLanglandsForGL2QpPartII:GR.3/semistable-models-hyodo-kato",
     "AInfCohomology §§AI.3.1 and AI.5.1",
     "AdicSpacesPartIII §R3.4",
     "PadicPeriodRings §4.3",
     "PadicHodgeTheory §§5.1–5.3 and 8.1",
+    "WeightsInEtaleCohomology R34.3 (the geometric semistable-period comparison)",
     "HilbertModularVarietiesAndShimuraCurves §§R18.4.24a and R18.5.21",
     "GL2AutomorphicRepresentationsAndTransfer R17.3",
     "LocallyAnalyticDistributions §§0.0 and 0.2",
@@ -804,6 +805,9 @@
     },
     {
      "statement": "The Stein hypothesis in (a) cannot be dropped. For the analytification E of an elliptic curve over C, H¹(E, O) = C and H²(E, O) = 0. Hence H¹_proét(E, Ô) is an extension of Ω¹(E)(−1) by C and has dimension 2, not dim Ω¹(E)(−1) = 1."
+    },
+    {
+     "statement": "The edge map in the definition of H̃K cannot be dropped for proper curves. Let E be an elliptic curve over K with good ordinary reduction, so D = D_cris(H¹_ét(E_C, ℚ_p)) has φ-slopes 0 and 1. The kernel of H¹_proét(E_C, (𝔹⁺_cris)^{φ=p}) → H¹_proét(E_C, Ô) is H¹_ét(E_C, ℚ_p(1)), a ℚ_p-space of dimension 2 and C-dimension 0. H̃K(E_C), the kernel of the composite to Ω¹(E_C)(−1), is an extension of H¹(E_C, O) = C by it. This matches (c): (B⁺_cris⊗D)^{φ=p} = (B⁺_cris)^{φ=p} ⊕ (B⁺_cris)^{φ=1} = (B⁺_cris)^{φ=p} ⊕ ℚ_p, of C-dimension 1 and ℚ_p-height 2."
     }
    ],
    "gaps": [
@@ -1750,7 +1754,7 @@
      "statement": "The cocycle identity holds for every k ∈ ℤ: for g′ = (a′ b′; c′ d′), (a−c∂)(a′−c′·g∂g⁻¹) = (aa′+bc′)−(ca′+dc′)∂, whose coefficients are the left column of gg′. Since g∂g⁻¹ = (d∂−b)(a−c∂)⁻¹ (§2.2), this is the identity a′(a−cz)−c′(dz−b) = (aa′+bc′)−(ca′+dc′)z."
     },
     {
-     "statement": "Under §3.1 the strong dual of E_π[k] realises O(k)(Σ_r)^ρ (DLB17, Remarque 11.12, line 2718; COLMEZ19POIDS lines 310–321 give the same twist in a right-action convention)."
+     "statement": "Under §3.1, E_π[k] realises O(k)(Σ_r)^ρ, the space of §7.2 with its twisted action; its strong dual is the locally analytic representation that replaces Π(π,0) in DLB17 Théorème 1.2 for the bundle O(k) (DLB17, Remarque 11.12, lines 2718–2720; COLMEZ19POIDS lines 310–321 give the same twist in a right-action convention). At k = 0 this is E_π ≅ O(Σ_r)^ρ of §3.3(i), with dual Π(π,0)."
     }
    ],
    "tests": [
@@ -1776,7 +1780,7 @@
    ],
    "title": "Weighted realisation and the BGG row",
    "kind": "theorem",
-   "statement": "For k ≥ 0, prove the strict exact sequence of G-Fréchet spaces 0 → O(−k)(Σ_r)^ρ → O(k+2)(Σ_r)^ρ⊗det^{k+1} → H¹_dR(Σ_r)^ρ⊗Sym^k → 0, whose first map is (u⁺)^{k+1} = (d/dz)^{k+1} (DLB17, Remarque 11.12, lines 2718–2725). For the identification H¹_dR(Σ_r)^ρ ≅ π′⊗M*_dR of the base §6.9(iii), prove that the preimage of ℒ^⊥⊗(π′⊗Sym^k) in O(k+2)(Σ_r)^ρ⊗det^{k+1} is, up to the twist by the power of x∘det that matches central characters, the strong dual of Π(Δ_{k+1,ℒ}) of §2.4. That representation is Π(V^{(k+1)}_{M,ℒ})^an⊗δ_{k+1}⁻¹, where V^{(k+1)}_{M,ℒ} is the representation of weights {0,k+1} of §2.4 and δ_{k+1} its unramified twist; these V^{(k+1)}_{M,ℒ} are the representations of weights 0 and k+1 of DLB17 Remarque 11.12 (line 2723). For k ≥ 1, Δ_{k+1,ℒ} itself is not étale, so the twist by δ_{k+1} cannot be omitted. This is COLMEZ19POIDS Conjecture 0.10 (lines 328–332), which its Remarque 0.11(i) and (iii) (lines 333–340) derive from the case k = 0 and its Théorèmes 0.6 and 0.8. For every supercuspidal M ∈ ΦNᵖ_n the same holds on M^p_n, with the identification of §3.3(ii) and the lines ℒ⊗(π′⊗Sym^k). The route takes the case k = 0 from §3.3. Under the twisted actions of §7.1 it identifies the multiplicity space of O(k) with the strong dual of Π(M,k−1) of §2.4, up to a twist, because the operator ∂ of §2.2 corresponds to the operator ∂ of §2.4 (COLMEZ19POIDS Remarque 0.11(ii), lines 335–336). The exact sequences of §2.4(ii) for Π(M,k+1) then give the preimage statement, the first map of the row being u⁺ (Remarque 0.11(i)). Exactness of the row is justified as indicated in DLB17 Remarque 11.12.",
+   "statement": "For k ≥ 0, prove the strict exact sequence of G-Fréchet spaces 0 → O(−k)(Σ_r)^ρ → O(k+2)(Σ_r)^ρ⊗det^{k+1} → H¹_dR(Σ_r)^ρ⊗Sym^k → 0, whose first map is (u⁺)^{k+1} = (−d/dz)^{k+1}, with the same image as (d/dz)^{k+1} (DLB17, Remarque 11.12, lines 2718–2725). For the identification H¹_dR(Σ_r)^ρ ≅ π′⊗M*_dR of the base §6.9(iii), prove that the preimage of ℒ^⊥⊗(π′⊗Sym^k) in O(k+2)(Σ_r)^ρ⊗det^{k+1} is, up to the twist by the power of x∘det that matches central characters, the strong dual of Π(Δ_{k+1,ℒ}) of §2.4. That representation is Π(V^{(k+1)}_{M,ℒ})^an⊗δ_{k+1}⁻¹, where V^{(k+1)}_{M,ℒ} is the representation of weights {0,k+1} of §2.4 and δ_{k+1} its unramified twist; these V^{(k+1)}_{M,ℒ} are the representations of weights 0 and k+1 of DLB17 Remarque 11.12 (line 2723). For k ≥ 1, Δ_{k+1,ℒ} itself is not étale, so the twist by δ_{k+1} cannot be omitted. This is COLMEZ19POIDS Conjecture 0.10 (lines 328–332), which its Remarque 0.11(i) and (iii) (lines 333–340) derive from the case k = 0 and its Théorèmes 0.6 and 0.8. For every supercuspidal M ∈ ΦNᵖ_n the same holds on M^p_n, with the identification of §3.3(ii) and the lines ℒ⊗(π′⊗Sym^k). The route takes the case k = 0 from §3.3. Under the twisted actions of §7.1 it identifies the multiplicity space of O(k) with the strong dual of Π(M,k−1) of §2.4, up to a twist, because the operator ∂ of §2.2 corresponds to the operator ∂ of §2.4 (COLMEZ19POIDS Remarque 0.11(ii), lines 335–336). The exact sequences of §2.4(ii) for Π(M,k+1) then give the preimage statement, the first map of the row being u⁺ (Remarque 0.11(i)). Exactness of the row is justified as indicated in DLB17 Remarque 11.12.",
    "prerequisites": [
     "PadicLocalLanglandsForGL2QpPartII:GR.2/homography",
     "PadicLocalLanglandsForGL2QpPartII:GR.2/weight-change",
