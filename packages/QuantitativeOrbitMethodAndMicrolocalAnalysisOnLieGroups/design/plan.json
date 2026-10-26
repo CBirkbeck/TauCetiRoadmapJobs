@@ -4897,6 +4897,24 @@
       "neededBy": [
         "8.7"
       ]
+    },
+    {
+      "slug": "unitary-xi-polynomial-tail",
+      "supplier": "GanGrossPrasadUnitaryGroups",
+      "section": "2.7 Adjacent tempered integrability: polynomially weighted form",
+      "needs": "over ℝ or ℂ, for a codimension-one unitary pair H = U(W) ⊂ G = U(V) (split or nonsplit), there is η > 0 depending only on the pair with `∫_H Ξ_G(h) Ξ_H(h) |h|^η dh < ∞`, `|h| = max(‖R(h)‖, ‖R(h^{−1})‖)` the algebraic norm of §5.8.",
+      "neededBy": [
+        "6.3"
+      ]
+    },
+    {
+      "slug": "orthogonal-xi-polynomial-tail",
+      "supplier": "GanGrossPrasadUnitaryGroups",
+      "section": "Scope and ownership (orthogonal endpoints of GanGrossPrasadUnitaryGroups, Part II): counterpart of §2.7, polynomially weighted form",
+      "needs": "the counterpart of gap:unitary-xi-polynomial-tail: over ℝ or ℂ, for a codimension-one special orthogonal pair H ⊂ G, there is η > 0 depending only on the pair with `∫_H Ξ_G(h) Ξ_H(h) |h|^η dh < ∞`, `|h|` the algebraic norm of §5.8.",
+      "neededBy": [
+        "6.3"
+      ]
     }
   ],
   "sourceIssues": [
