@@ -28,7 +28,7 @@ Globally, F/F⁺ is CM, Φ is the selected CM type, r the unitary signature, v�
 2. In the unramified mixed construction at n=2, signatures add as (1,1)+(0,1)=(1,2). Adding the unconjugated rank-one source gives (2,1). In the same construction at q=3, the source product polarization has degree 9·9 and the principal target forces the isogeny degree to be 9, not q^(n+1)=27. The first generic projection instead has degree 4. For a global representative retain away-p degree factors as well.
 3. On the special fibre, the nonzero matrix [[0,1],[0,0]] over 𝔽₃ has characteristic polynomial T² and square zero. Thus the characteristic polynomial T² does not imply that the action itself is zero. The actual Eisenstein endomorphism equations in U0 and U6 must be imposed.
 4. A crossing over a DVR is uv=ϖ. After a ramified coefficient extension ϖ=tᵉ with e>1, uv=tᵉ has embedding dimension 3 and local dimension 2 at (u,v,t), so is not regular there. Smoothness can transfer under arbitrary base change, but this regularity argument cannot.
-5. In the rank-two Krämer chart y(1+x²)=2u, every geometric root of 1+x² is simple because p is odd. Taking z=(1+x²)/2 gives yz=u étale locally. This proves the local rank-two crossing; by worked check 4 it does not give a regular global rank-two model after the ramified base change of RSZ21 Remark 6.8.
+5. In the rank-two Krämer chart y(1+x²)=2u, every geometric root of 1+x² is simple because p is odd. Taking z=(1+x²)/2 gives yz=u étale locally. This proves the local rank-two crossing. The chart lives over O_L̆=O_{F̆_{v₀}}, where u stays a uniformizer after an unramified extension E_ν/F_{v₀}, so it gives a regular global rank-two Krämer model (U7/ramified-global-geometry); the ramified base change of RSZ21 Remark 6.8 concerns the wedge model, whose rank-two chart uv=ϖ lives over O_{F⁺_{v₀}} and fails by worked check 4.
 6. For U1’s graph with n=4, relative dimensions are 2 and 5, whereas arithmetic dimensions are 3 and 6. The half-dimensional assertion uses the latter convention.
 7. For a complex smooth model of rank N=3, the source Hodge subspace at τ∞ is zero. Requiring maps to carry it into the target Hodge subspace imposes no condition and leaves dimension 3. The period line is instead Hom_ℂ(H₁^dR(A₀)_{τ∞},ω_{A∨,τ∞}), of dimension 1.
 8. In the exotic global setting at n=2, the global and local forms on the same Hom space differ by u²/ϖ: with val_u(ϖ)=1 this is a unit and lattice duality agrees; with val_u(ϖ)=0 the dual of a self-dual lattice moves by one valuation.
@@ -131,9 +131,9 @@ What ReductiveGroupsPartII must provide (gap:unitary-multichain-stabilizer): For
 
 ### From ShimuraCompactifications
 
-§C5.5 (properness of the integral toroidal model for a complete cone system, hence of the moduli itself when the PEL datum has no cusp label) and §C5.18 (quasi-projectivity of the neat PEL moduli of PELModuli §M2.8), both over a base of good primes in Lan’s sense (its standing hypothesis (C4-b)). U7/localized-smoothness and U8/smooth-geometry-tangent consume them through finite comparison morphisms from CM-pair moduli to the PEL moduli of the product A₀×A.
+§C5.5 (properness of the integral toroidal model for a complete cone system, hence of the moduli itself when the PEL datum has no cusp label) and §C5.18 (quasi-projectivity of the neat PEL moduli of PELModuli §M2.8), both over a base of good primes in Lan’s sense (its standing hypothesis (C4-b)). U8/smooth-geometry-tangent, and U7/localized-smoothness on a base all of whose primes are good for the product datum, consume them through finite comparison morphisms from CM-pair moduli to the PEL moduli of the product A₀×A; U7/localized-smoothness on a base with a bad prime, U7/exotic-global-smoothness and U8/asd-completed-local-rings consume gap:bad-prime-projectivity through the same kind of finite comparison morphism, into the multichain moduli that contract names.
 
-What ShimuraCompactifications must provide (gap:bad-prime-projectivity): For PEL moduli at a neat level over an integral base containing a prime at which ShimuraCompactifications Layer C5 does not apply (a prime dividing the discriminant of the PEL order, in particular a prime ramified in the PEL algebra, or a prime whose local level is the stabilizer of a polarized lattice multichain other than a single self-dual lattice), prove quasi-projectivity over that base through an ample Hodge line, and properness when the generic fibre is proper.
+What ShimuraCompactifications must provide (gap:bad-prime-projectivity): Pose the PEL moduli problem of PELModuli §M1.7 (Lan, Definition 1.4.1.4) over an integral base, a localization of the ring of integers of the reflex field or the ring of integers of one of its completions, that contains primes at which ShimuraCompactifications Layer C5 does not apply (primes dividing the discriminant of the PEL order, or primes whose local level is not the stabilizer of a single self-dual lattice), replacing the abelian scheme at each such prime by a multichain of abelian schemes indexed by a polarized lattice multichain of the PEL order and taking the level there to be the stabilizer of that multichain, as in RZ96 Definition 6.9, p. 279; prove that this moduli problem is represented by a separated Deligne–Mumford stack of finite type over the base, at neat level by a quasi-projective scheme through an ample Hodge line, and that it is proper over the base when its generic fibre is proper.
 
 ## Layers and targets
 
@@ -1654,9 +1654,9 @@ For a polarized CM pair (A₀,A) and nonsplit finite place v, define inv_v using
 
 ## U7 — RSZ integral models and local geometry
 
-Construct localized and semi-global CM-pair models, the polarized multichain local-model diagram and their self-dual, split and almost self-dual geometry with exact coefficient restrictions. Construct ramified wedge/Krämer and exotic even-rank models, their geometry and global level gluing, importing the split Drinfeld levels. In rank two no regular global Krämer model is asserted; normalizations alone imply no regularity.
+Construct localized and semi-global CM-pair models, the polarized multichain local-model diagram and their self-dual, split and almost self-dual geometry with exact coefficient restrictions. Construct ramified wedge/Krämer and exotic even-rank models, their geometry and global level gluing, importing the split Drinfeld levels. In rank two the regular global Krämer model comes from the Krämer local charts, not from the blowup description of RSZ21 Theorem 6.7(ii); normalizations alone imply no regularity.
 
-*Needs:* Layers U0, U1, U2, U3, U4, U5, U6; PELModuli §M1.7; PELModuli §M1.1; PELModuli §M2.8; SchemeAndStackFoundations Layer 1; AbelianSchemesAndArithmeticModuli §A4.7; `gap:bad-prime-projectivity`; PELModuli §M1.6; SchemeAndStackFoundations Layer 4; AlgebraicModuliForArithmeticGeometry §1.3; AbelianSchemesAndArithmeticModuli §A4.3; `gap:unitary-multichain-stabilizer`; ShimuraCompactifications §C5.18; PELModuli §§M4.5–M4.6; IgusaVarietiesAndTorsionConcentration §IG.0.31; EndoscopicTransferAndUnitaryTraceComparison §10.2.
+*Needs:* Layers U0, U1, U2, U3, U4, U5, U6; PELModuli §M1.7; PELModuli §M1.1; PELModuli §M2.8; SchemeAndStackFoundations Layer 1; AbelianSchemesAndArithmeticModuli §A4.7; `gap:bad-prime-projectivity`; PELModuli §M1.6; SchemeAndStackFoundations Layer 4; AlgebraicModuliForArithmeticGeometry §1.3; AbelianSchemesAndArithmeticModuli §A4.3; `gap:unitary-multichain-stabilizer`; ShimuraCompactifications §§C5.5, C5.18; PELModuli §§M4.5–M4.6; IgusaVarietiesAndTorsionConcentration §IG.0.31; EndoscopicTransferAndUnitaryTraceComparison §10.2.
 
 ### Localized RSZ moduli
 
@@ -1698,22 +1698,23 @@ Let D contain all places of residual characteristic 2, all ramified quadratic pl
 
 **Target:** `PELModuliPartII:U7/localized-smoothness` (theorem).
 
-The localized RSZ functor is a smooth separated finite-type Deligne–Mumford stack over O_E[1/d] of relative dimension n−1. For sufficiently small levels on both the CM and unitary factors it is represented by a quasi-projective scheme, and sending a point to the product A₀×A with the action of O_F×O_F, the product polarization and the level structure induced by η₀ and η (through V(A)≅V(A₀,A)⊗V(A₀), V(A₀) being free of rank one) is a finite morphism to the PEL moduli of PELModuli §M2.8 for the product datum. The theorem uses the prescribed good local types and Eisenstein condition, not just the generic Kottwitz signature.
+The localized RSZ functor is a smooth separated finite-type Deligne–Mumford stack over O_E[1/d] of relative dimension n−1. For sufficiently small levels on both the CM and unitary factors it is represented by a quasi-projective scheme, and sending a point to the product A₀×A with the action of O_F×O_F, the product polarization and the level structure induced by η₀ and η (through V(A)≅V(A₀,A)⊗V(A₀), V(A₀) being free of rank one) is a finite morphism to the PEL moduli of the product datum: the moduli of PELModuli §M2.8 when every residue characteristic of O_E[1/d] is unramified in F⁺ (then every prime of the base is good for the product datum in Lan’s sense), and otherwise the multichain moduli of gap:bad-prime-projectivity, whose multichain at every prime of the base is generated by the single self-dual lattice Λ₀⊕Λ. The theorem uses the prescribed good local types and Eisenstein condition, not just the generic Kottwitz signature.
 
 *Needs:* `PELModuliPartII:U7/localized-rsz`; `PELModuliPartII:U0/relative-framed-comparison`; PELModuli §M2.8; SchemeAndStackFoundations Layer 1; AbelianSchemesAndArithmeticModuli §A4.7; ShimuraCompactifications §C5.18; `gap:bad-prime-projectivity`.
 
-**Source:** Zhang21, Theorem 6.2, p. 905; Stacks, Tags 0B3H, 0C4M, 0C4N (quasi-projectivity along finite morphisms).
+**Source:** Zhang21, Theorem 6.2, p. 905; Stacks, Tags 0B3G, 0B3H, 0C4M (quasi-projectivity along finite morphisms and under base change); RZ96, Definition 6.9, p. 279 (the multichain moduli problem of the bad case).
 
 **Construction or proof:**
 
 1. Apply PELModuli §M2.8 and U6/cm-moduli-integral and impose the local conditions.
 2. Compute formal deformations through the relative comparison and the line-Grassmannian chart.
-3. Kill stabilizers by sufficiently small levels on both factors. For quasi-projectivity prove the comparison with the product PEL moduli finite (the pair is recovered from its image: A₀ and A as the images of the two idempotents of O_F×O_F, η from the product level structure and η₀; the conditions defining the source are closed, so the comparison is proper and quasi-finite) and pull back quasi-projectivity of that PEL moduli (Stacks Tags 0B3H, 0C4M, 0C4N): it is ShimuraCompactifications §C5.18 when every residue characteristic of O_E[1/d] is unramified in F⁺, so good in Lan’s sense, and gap:bad-prime-projectivity when O_E[1/d] keeps a prime ramified in F⁺; quasi-projectivity is not local on the base, so the second case is not reduced to the first prime by prime.
+3. Kill stabilizers by sufficiently small levels on both factors. For quasi-projectivity prove the comparison with the product PEL moduli finite (the pair is recovered from its image: A₀ and A as the images of the two idempotents of O_F×O_F, η from the product level structure and η₀; the conditions defining the source are closed, so the comparison is proper and quasi-finite) and pull back quasi-projectivity of that PEL moduli, base-changed to O_E[1/d] (a finite morphism is quasi-affine of finite type, hence quasi-projective; quasi-projective morphisms compose over a quasi-compact base and are stable under base change: Stacks Tags 0B3H, 0C4M, 0B3G): it is ShimuraCompactifications §C5.18 when every residue characteristic of O_E[1/d] is unramified in F⁺, so good in Lan’s sense, and gap:bad-prime-projectivity for the multichain generated by Λ₀⊕Λ when O_E[1/d] keeps a prime ramified in F⁺; quasi-projectivity is not local on the base, so the second case is not reduced to the first prime by prime.
 
 **Checks.**
 
 - For n=2 relative dimension is 1.
 - Small unitary level alone does not remove a nontrivial CM automorphism.
+- For F⁺=ℚ(√3), F=F⁺(i) and p=3: 3 is ramified in F⁺ and the place of F⁺ above 3 is inert in F (−1 is not a square modulo 3), so 3 need not divide d; it divides the discriminant of O_F×O_F, Lan’s goodness fails at 3, and the comparison lands in the multichain moduli of gap:bad-prime-projectivity, not in that of PELModuli §M2.8. On a base all of whose residue characteristics are unramified in F⁺ the target is the PELModuli §M2.8 moduli and ShimuraCompactifications §C5.18 applies unchanged.
 
 ### Semi-global RSZ moduli
 
@@ -1822,6 +1823,7 @@ Assume p odd, F_{v₀}/F⁺_{v₀} ramified quadratic, F⁺_{v₀}/ℚ_p unramif
 
 - PELModuliPartII:U7/ramified-global-geometry: Supplies this datum to the consumer’s construction or proof: Identify the distinguished wedge local-model factor and the trivial banal factors.
 - PELModuliPartII:U7/global-integral-gluing: Supplies this datum to the consumer’s construction or proof: Specify the global integral abelian-scheme groupoid with all local conditions and sign components.
+- PELModuliPartII:U9/kramer-formal-comparison: Supplies this datum to the consumer’s construction or proof: Apply the formal deformation comparison to the underlying polarized ramified pair.
 
 ### Unitary local-model comparison
 
@@ -1863,43 +1865,46 @@ For the semi-global functor, construct its torsor of trivializations of the pola
 
 **Target:** `PELModuliPartII:U7/exotic-global-smoothness` (theorem).
 
-Under U7/exotic-global-model’s hypotheses and sufficiently small/neat levels, the model is smooth over O_K of relative dimension n−1; it is projective in the compact Li–Liu setting F⁺≠ℚ. Changes of split prime-to-p level are finite étale. The absolute-to-relative identification used for its formal basic factor requires F⁺_u/ℚ_p unramified and is U4’s comparison.
+Under U7/exotic-global-model’s hypotheses and sufficiently small/neat levels, the model is smooth over O_K of relative dimension n−1. Sending a point to the product A₀×A with the action of O_F×O_F, the product polarization and the induced level structure is a finite morphism to the multichain moduli of gap:bad-prime-projectivity for the product datum, base-changed to O_K, whose multichain at u is generated by Λ₀⊕Λ_u with Λ_u π-modular (Λ_u^♯=π⁻¹Λ_u for a uniformizer π of F_u, matching ker λ[u^∞]=A[π]) and at the other places above p by the lattices of U7/exotic-global-model; hence the model is quasi-projective over O_K. It is projective in the compact Li–Liu setting F⁺≠ℚ: V is then definite at a real place, hence anisotropic, so the product datum has no cusp label and its generic fibre is proper. Changes of split prime-to-p level are finite étale. The absolute-to-relative identification used for its formal basic factor requires F⁺_u/ℚ_p unramified and is U4’s comparison.
 
-*Needs:* `PELModuliPartII:U7/exotic-global-model`; `PELModuliPartII:U7/unitary-local-model-diagram`; `PELModuliPartII:U3/exotic-smoothness`; `PELModuliPartII:U4/exotic-framed-comparison`; `PELModuliPartII:U6/auxiliary-cm-generic-comparison`; SchemeAndStackFoundations Layer 1; `gap:bad-prime-projectivity`.
+*Needs:* `PELModuliPartII:U7/exotic-global-model`; `PELModuliPartII:U7/unitary-local-model-diagram`; `PELModuliPartII:U3/exotic-smoothness`; `PELModuliPartII:U4/exotic-framed-comparison`; `PELModuliPartII:U6/auxiliary-cm-generic-comparison`; SchemeAndStackFoundations Layer 1; `gap:bad-prime-projectivity`; `PELModuliPartII:U7/localized-smoothness`; ShimuraCompactifications §C5.5.
 
-**Source:** LL22, §4.5, p. 66; RSZ21 Theorem 5.7, p. 27.
+**Source:** LL22, §4.5, p. 66, and Assumption 1.3, p. 4; RSZ21 Theorem 5.7, p. 27; RZ96, Definition 6.9, p. 279 (the multichain moduli problem); Stacks, Tags 0B3G, 0B3H, 0C4M, 01WN, 0BCL (quasi-projectivity and properness along finite morphisms).
 
 **Construction or proof:**
 
 1. Use the even-rank π-modular local-model smoothness theorem at the distinguished place.
 2. Use the banal smooth factors and the étale CM base at the other p-places.
-3. Apply gap:bad-prime-projectivity in the compact case, and the prime-to-p level torsor for finite étaleness.
+3. Prove the comparison with the product PEL moduli finite as in U7/localized-smoothness (the pair is recovered from the two idempotents of O_F×O_F; the exotic Lie and polarization conditions are closed, so the comparison is proper and quasi-finite) and pull back the quasi-projectivity of gap:bad-prime-projectivity (Stacks Tags 0B3G, 0B3H, 0C4M). For F⁺≠ℚ the generic fibre of the product datum is proper (ShimuraCompactifications §C5.5 over the reflex field, no cusp label), so the gap’s properness clause makes its moduli proper, the model is proper as it is finite over it (Stacks Tag 01WN), and proper quasi-projective is projective (Stacks Tag 0BCL). Use the prime-to-p level torsor for finite étaleness.
 
 **Checks.**
 
 - Smooth relative dimension is n−1, not the absolute p-divisible-group dimension nf.
 - The projectivity assertion retains the compact global hypotheses.
+- The multichain of the comparison at u is Λ₀⊕Λ_u⊂Λ₀⊕π⁻¹Λ_u up to the periodicity by π on the second factor, so its multichain of abelian schemes is determined by A₀×A and λ; the comparison separates λ from cλ for c≠1, since λ₀×cλ is not a rational multiple of λ₀×λ.
+- For F⁺=ℚ and even n≥4, V of signature (n−1,1) has a trace form that is an indefinite rational quadratic form in 2n≥8 variables, isotropic by Meyer’s theorem, so V is isotropic, the product datum has a cusp label and the projectivity clause would fail; this is why it keeps F⁺≠ℚ.
 
 ### Ramified wedge and Krämer geometry
 
 **Target:** `PELModuliPartII:U7/ramified-global-geometry` (theorem).
 
-The self-dual ramified wedge model is flat, with isolated singularities; the global model is smooth away from ramified quadratic places (subject to its other local types). For n≥3 the Krämer enhancement is the blowup of those isolated singularities, and is regular with semistable reduction at ν when E_ν/F_{v₀} is unramified. For n=2 no regularity or semistability of the global model over O_{E,ν} is asserted: the local model has reflex field F⁺_{v₀} and is semistable over O_{F⁺_{v₀}}, but E_ν contains F_{v₀}, which is ramified over F⁺_{v₀}.
+The self-dual ramified wedge model is flat, with isolated singularities; the global model is smooth away from ramified quadratic places (subject to its other local types). For every n≥2 the Krämer enhancement is regular with semistable reduction at ν when E_ν/F_{v₀} is unramified; for n≥3 it is moreover the blowup of those isolated singularities. For n=2 the wedge model itself is not regular over O_{E,ν}: its local model has reflex field F⁺_{v₀} and is semistable over O_{F⁺_{v₀}}, but E_ν contains F_{v₀}, which is ramified over F⁺_{v₀}; the Krämer local model is defined over O_{F_{v₀}} and keeps its crossing chart after an unramified extension.
 
-*Needs:* `PELModuliPartII:U7/ramified-kramer-model`; `PELModuliPartII:U7/unitary-local-model-diagram`; `PELModuliPartII:U5/kramer-geometry`; SchemeAndStackFoundations Layer 4.
+*Needs:* `PELModuliPartII:U7/ramified-kramer-model`; `PELModuliPartII:U7/unitary-local-model-diagram`; `PELModuliPartII:U5/kramer-geometry`; `PELModuliPartII:U5/kramer-local-charts`; SchemeAndStackFoundations Layer 4.
 
-**Source:** RSZ21, Theorem 6.7(ii), its proof and Remark 6.8, pp. 32–33; LZ22 §11.6, p. 77.
+**Source:** RSZ21, Theorem 6.7(ii), its proof and Remark 6.8, pp. 32–33; HLSY23, §10.2, p. 78 (regular semistable Krämer models for every n≥2); LZ22 §11.6, p. 77.
 
 **Construction or proof:**
 
 1. Identify the distinguished wedge local-model factor and the trivial banal factors.
 2. Use the explicit Krämer local-model resolution and the equal-dimension smooth chart.
-3. Verify the local reflex field and the unramifiedness of the coefficient extension for n≥3, and record the failure for n=2.
+3. Transfer the Krämer charts of U5/kramer-local-charts (étale locally yz=u times n−2 smooth parameters over O_{F̆_{v₀}}) through the local-model diagram; u stays a uniformizer over O_{Ĕ_ν} because E_ν/F_{v₀} is unramified, so the charts remain regular crossings for every n≥2. For n≥3 identify the enhancement with the blowup through the local reflex field F_{v₀}; for n=2 record that the wedge model loses semistability.
 
 **Checks.**
 
 - For n≥3 the resolved relative dimension is n−1.
-- At n=2 the local model has a chart uv=ϖ over O_{F⁺_{v₀}}; after the ramified extension with ϖ=t²·(unit) it becomes uv=t²·(unit), whose maximal ideal at u=v=t=0 needs three generators in a ring of dimension 2, so it is not regular: semistability is lost, as RSZ21 Remark 6.8 states.
+- At n=2 the wedge local model has a chart uv=ϖ over O_{F⁺_{v₀}}; after the ramified extension with ϖ=t²·(unit) it becomes uv=t²·(unit), whose maximal ideal at u=v=t=0 needs three generators in a ring of dimension 2, so it is not regular: semistability is lost, as RSZ21 Remark 6.8 states.
+- At n=2 the Krämer chart yz=u lives over O_{F̆_{v₀}}; after an unramified extension E_ν/F_{v₀} the element u is still a uniformizer, so at y=z=0 the maximal ideal is generated by y and z in a ring of dimension 2: the Krämer model is regular and strictly semistable there, unlike the wedge chart of the previous Check.
 
 ### Self-dual and almost self-dual geometry
 
@@ -2000,6 +2005,7 @@ Use the special inert setting of LTXZZ22 Definition 3.3.4: p is odd, inert and u
 - PELModuliPartII:U8/ltxzz-asd-moduli: Supplies this datum to the consumer’s construction or proof: Keep the same CM factor and arrows as in the smooth adapter.
 - PELModuliPartII:U8/integral-hecke-system: Supplies this datum to the consumer’s construction or proof: Restrict the existing adelic level category to prime-to-p compact opens preserving the chosen integral local type.
 - PELModuliPartII:U8/smooth-geometry-tangent: Supplies this datum to the consumer’s construction or proof: Compute the polarized Hodge deformation using the rank-one distinguished quotient; the other factors are banal.
+- PELModuliPartII:U8/asd-completed-local-rings: Supplies this datum to the consumer’s construction or proof: Prove the comparison with the product PEL moduli finite by the argument of its step 4.
 
 ### Neat almost self-dual moduli
 
@@ -2040,11 +2046,11 @@ Under the same special inert and neat coefficient hypotheses, fix the standard d
 
 **Target:** `PELModuliPartII:U8/asd-completed-local-rings` (theorem).
 
-Over a perfect residue field k of a point of T_p, the completed local ring of the almost self-dual model is either W(k)[[t₁,…,t_{N−1}]], or, for N≥2, W(k)[[x₁,…,x_N]]/(x₁x_N−p). Thus the model is regular and strictly semistable of relative dimension N−1 over the unramified coefficient ring. The N=1 model has only the first type. Quasi-projectivity does not follow from the local rings; it is part of gap:bad-prime-projectivity. The balloon, ground and link geometry and the tangent exact sequences of Theorem 5.2.5(2)–(5) are planned by SelmerIwasawaCohomologyPartII §2.3; this target gives only the ambient local equations.
+Over a perfect residue field k of a point of T_p, the completed local ring of the almost self-dual model is either W(k)[[t₁,…,t_{N−1}]], or, for N≥2, W(k)[[x₁,…,x_N]]/(x₁x_N−p). Thus the model is regular and strictly semistable of relative dimension N−1 over the unramified coefficient ring. The N=1 model has only the first type. Quasi-projectivity does not follow from the local rings. For the uniformization datum (V′,j,Λ′_p) of U8/asd-generic-datum, sending a pair to (A₀×A, i₀×i, λ₀×λ) with the induced away-p level structure is a finite morphism to the multichain moduli of gap:bad-prime-projectivity for the product datum (the algebra F×F with its involution, V₀⊕V′, a common similitude factor), base-changed to the coefficient ring, whose multichain at p is generated by Λ₀⊕Λ′_p⊂Λ₀⊕Λ′_p^♯; hence the model is quasi-projective over T_p, and it is projective over T_p exactly when its generic fibre is proper, that is, when V′ is anisotropic. The balloon, ground and link geometry and the tangent exact sequences of Theorem 5.2.5(2)–(5) are planned by SelmerIwasawaCohomologyPartII §2.3; this target gives only the ambient local equations.
 
-*Needs:* `PELModuliPartII:U8/ltxzz-asd-moduli`; `PELModuliPartII:U7/unitary-local-model-diagram`; AbelianSchemesAndArithmeticModuli §A4.7; SchemeAndStackFoundations Layer 4; `gap:bad-prime-projectivity`.
+*Needs:* `PELModuliPartII:U8/ltxzz-asd-moduli`; `PELModuliPartII:U7/unitary-local-model-diagram`; AbelianSchemesAndArithmeticModuli §A4.7; SchemeAndStackFoundations Layer 4; `gap:bad-prime-projectivity`; `PELModuliPartII:U8/asd-generic-datum`; `PELModuliPartII:U8/ltxzz-smooth-moduli`; ShimuraCompactifications §C5.5.
 
-**Source:** LTXZZ22, Theorem 5.2.5(1) and its local-model proof, pp. 190–193.
+**Source:** LTXZZ22, Theorem 5.2.5(1) and its local-model proof, pp. 190–193; RZ96, Definition 6.9, p. 279 (the multichain moduli problem); Stacks, Tags 0B3G, 0B3H, 0C4M, 0C4N, 01WN, 0BCL (quasi-projectivity and properness along finite morphisms, and over T_p).
 
 **Construction or proof:**
 
@@ -2052,12 +2058,16 @@ Over a perfect residue field k of a point of T_p, the completed local ring of th
 2. Describe simultaneous Hodge line/hyperplane lifts and their orthogonality relation by Grothendieck–Messing.
 3. In the crossing chart eliminate the remaining variables to obtain x₁x_N=p; in the other admissible charts solve for one variable to obtain a smooth power-series ring.
 4. Check the impossible fourth rank case and the N=1 boundary before concluding semistability.
+5. Prove the comparison with the product PEL moduli finite as in U8/ltxzz-smooth-moduli (the pair is recovered from the two idempotents of O_F×O_F and λ; the kernel condition on λ is closed). Pull back the gap’s quasi-projectivity to obtain quasi-projectivity over the coefficient ring (Stacks Tags 0B3G, 0B3H, 0C4M), hence over T_p, since the model is quasi-compact over T_p (Stacks Tag 0C4N). If the generic fibre is proper then V′ is anisotropic, the product datum has no cusp label, its generic fibre is proper (ShimuraCompactifications §C5.5 over the reflex field), the gap makes its moduli proper, the model is proper as it is finite over it (Stacks Tag 01WN), and proper quasi-projective is projective (Stacks Tag 0BCL); the converse is base change to the generic fibre.
 
 **Checks.**
 
 - For N=2 the crossing ring is W(k)[[x₁,x₂]]/(x₁x₂−p).
 - The ambient local rings are reduced and regular although the special fibre can cross.
 - After a ramified coefficient extension p=t^e with e>1, this argument supplies flatness but not regularity.
+- For N=1, V′ has rank one and is anisotropic, so the product datum has no cusp label and the model is finite over T_p, hence projective, in agreement with its zero-dimensional boundary case.
+- For F⁺=ℚ and N=2, V′ has signature (1,1) and is isotropic exactly when −det V′ is a norm from F; then the product datum has a cusp label, the generic fibre is a non-proper Shimura curve and the model is quasi-projective but not projective.
+- The multichain of the comparison at p is Λ₀⊕Λ′_p⊂Λ₀⊕Λ′_p^♯⊂p⁻¹(Λ₀⊕Λ′_p), with Λ′_p^♯/Λ′_p of order p², so its multichain of abelian schemes is A₀×A followed by A₀×A^∨ through λ; a p-principal λ would give the single self-dual lattice of U8/ltxzz-smooth-moduli instead.
 
 ### Almost self-dual generic comparison
 
@@ -2091,6 +2101,7 @@ Choose an indefinite Hermitian V′ with the distinguished signature, an away-p 
 **Uses:**
 
 - PELModuliPartII:U8/integral-hecke-system: Supplies this datum to the consumer’s construction or proof: Restrict the existing adelic level category to prime-to-p compact opens preserving the chosen integral local type.
+- PELModuliPartII:U8/asd-completed-local-rings: Supplies this datum to the consumer’s construction or proof: Take the product datum of the comparison from the uniformization datum (V′,j,Λ′_p).
 
 ### Integral level and Hecke system
 
@@ -2166,12 +2177,12 @@ The neat smooth unitary model is a smooth quasi-projective scheme over T_p of re
 
 *Needs:* `PELModuliPartII:U8/ltxzz-smooth-moduli`; `PELModuliPartII:U7/localized-smoothness`; AbelianSchemesAndArithmeticModuli §A4.7; AbelianSchemesAndArithmeticModuli §A4.3; ShimuraVarieties §§2.5–2.7; SchemeAndStackFoundations Layer 4; ShimuraCompactifications §§C5.5, C5.18.
 
-**Source:** LTXZZ22, Theorem 4.2.3 and formula (4.2), pp. 161–163; Remark 4.2.5, p. 163 (corrected period line); Stacks, Tags 0B3H, 0C4M, 0C4N, 01WN, 0BCL (quasi-projectivity and properness along finite morphisms).
+**Source:** LTXZZ22, Theorem 4.2.3 and formula (4.2), pp. 161–163; Remark 4.2.5, p. 163 (corrected period line); Stacks, Tags 0B3G, 0B3H, 0C4M, 0C4N, 01WN, 0BCL (quasi-projectivity and properness along finite morphisms, and over T_p).
 
 **Construction or proof:**
 
 1. Compute the polarized Hodge deformation using the rank-one distinguished quotient; the other factors are banal.
-2. Use neat levels for scheme representability; for quasi-projectivity pull back the quasi-projectivity of ShimuraCompactifications §C5.18 along the finite comparison of U8/ltxzz-smooth-moduli (a finite morphism is quasi-affine of finite type, hence quasi-projective, and quasi-projective morphisms compose over a quasi-compact base: Stacks Tags 0B3H, 0C4M, 0C4N).
+2. Use neat levels for scheme representability; for quasi-projectivity pull back the quasi-projectivity of ShimuraCompactifications §C5.18 along the finite comparison of U8/ltxzz-smooth-moduli (a finite morphism is quasi-affine of finite type, hence quasi-projective, and quasi-projective morphisms compose over a quasi-compact base and are stable under base change: Stacks Tags 0B3H, 0C4M, 0B3G); this gives quasi-projectivity over the coefficient ring, and over T_p because the model is quasi-compact over T_p (Stacks Tag 0C4N).
 3. Identify the generic canonical model. For the projectivity clause: if the generic fibre is proper then V is anisotropic, the product datum has no cusp label, its PEL moduli is proper by ShimuraCompactifications §C5.5, the model is proper as it is finite over that moduli (Stacks Tag 01WN), and a proper quasi-projective morphism is projective (Stacks Tag 0BCL); the converse is base change to the generic fibre.
 
 **Checks.**
@@ -2423,11 +2434,11 @@ For the RSZ completion the CM projection is the discrete quotient Z^ℚ(ℚ)\Z^�
 
 **Target:** `PELModuliPartII:U9/kramer-formal-comparison` (comparison).
 
-In the n≥3 unramified-coefficient ramified setting of U7/ramified-global-geometry, the global Krämer enhancement completed along a selected basic component is the corresponding principal ramified framed completion with the U5 Krämer filtration, times its CM and other discrete local factors and modulo the global framing group. The comparison conjugates the local Lie labels as specified in U7 and preserves the forgetful map to the wedge model. For n=2 no global comparison is asserted, since U7/ramified-global-geometry asserts no regular global model in that rank.
+For every n≥2, in the ramified setting of U7/ramified-kramer-model with E_ν/F_{v₀} unramified, the global Krämer enhancement completed along a selected basic component is the corresponding principal ramified framed completion with the U5 Krämer filtration, times its CM and other discrete local factors and modulo the global framing group. The comparison conjugates the local Lie labels as specified in U7 and preserves the forgetful map to the wedge model. It uses the moduli functor and Θ, not the regularity of either side.
 
-*Needs:* `PELModuliPartII:U7/ramified-global-geometry`; `PELModuliPartII:U5/kramer-rz`; `PELModuliPartII:U9/uniformization-morphism`; `PELModuliPartII:U0/signature-conjugation`.
+*Needs:* `PELModuliPartII:U7/ramified-kramer-model`; `PELModuliPartII:U5/kramer-rz`; `PELModuliPartII:U9/uniformization-morphism`; `PELModuliPartII:U0/signature-conjugation`.
 
-**Source:** HLSY23, §10.1–10.2, pp. 76–79; RSZ21 Definition 6.10 and Lemma 6.11, pp. 33–34.
+**Source:** HLSY23, §10.2, pp. 77–79 (the global Krämer model and its condition (H4)); RSZ21 Definition 6.10 and Lemma 6.11, pp. 33–34 (the Krämer–Eisenstein condition); RZ96, Theorem 6.30, p. 293, through U9/uniformization-morphism (the completion of the underlying model). No cited text states the comparison with the Krämer filtration; its transport to the completion (step 2) is this roadmap’s own.
 
 **Construction or proof:**
 
@@ -2438,7 +2449,7 @@ In the n≥3 unramified-coefficient ramified setting of U7/ramified-global-geome
 **Checks.**
 
 - The completed subbundle has rank n−1 with the declared local conjugate action.
-- The comparison is restricted to the rank/base range certified in U7.
+- At n=2 the comparison is asserted as for n≥3: both sides are étale locally yz=u over O_{Ĕ_ν} (U5/kramer-local-charts), and nothing in the comparison uses the blowup description of RSZ21 Theorem 6.7(ii), which needs n≥3.
 
 ### Mixed basic-locus comparison
 
@@ -2657,7 +2668,7 @@ SHA-256: `2364b23e456a8a6cad4ad5ffc7971e24e20619953cff342d8d24274f24938742`.
 
 Michael Rapoport and Thomas Zink. *Period Spaces for p-divisible Groups*. Annals of Mathematics Studies 141, Princeton University Press, 1996; public author-hosted scan. [Source](https://www.math.uni-bonn.de/people/rapoport/myalggeom/preprints/Rapoport_Period%20spaces.pdf).
 
-Read locators: Definition 3.21, pp. 81–82; Theorem 3.25, p. 88; local-model definition 3.27, p. 89; §§6.13–6.16, pp. 282–284; Theorems 6.24, 6.27 and 6.30, pp. 291–295; Propositions 2.34–2.37, pp. 64–67; Theorem 6.23, p. 289.
+Read locators: Definition 3.21, pp. 81–82; Theorem 3.25, p. 88; local-model definition 3.27, p. 89; §§6.13–6.16, pp. 282–284; Theorems 6.24, 6.27 and 6.30, pp. 291–295; Propositions 2.34–2.37, pp. 64–67; Theorem 6.23, p. 289; Definition 6.9, p. 279.
 
 SHA-256: `8ced3dfc636857d2bdd98b06f33586a30735a0820523fa1d001e6aa21cfa5a66`.
 
@@ -2697,7 +2708,7 @@ SHA-256: `cd8bf04054b1afd88f70018a002e152e8c421ecb3a9c4fe9003380f378a97290`.
 
 The Stacks project authors. *The Stacks project*, chapter Morphisms of Schemes (version ed88ff78). [Source](https://stacks.math.columbia.edu/download/morphisms.pdf).
 
-Read locators: Tags 0B3H, 0C4M, 0C4N (quasi-projective morphisms), 01WN (finite morphisms), 0BCL (projective morphisms).
+Read locators: Tags 0B3G, 0B3H, 0C4M, 0C4N (quasi-projective morphisms), 01WN (finite morphisms), 0BCL (projective morphisms).
 
 SHA-256: `0bebe1d93baa7e4e99cb4f36fe50c7bcb6094772b8a2f760885a492892eca75f`.
 
