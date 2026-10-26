@@ -50,22 +50,24 @@ def transferIdeal {A : Type*} [CommRing A] (p : ℕ) (σ : A ≃+* A) :
     Ideal (fixedSubring σ) :=
   Ideal.span {b | ∃ a : A, (b : A) = cyclicTransfer p σ a}
 
-/-- For a commutative ring of characteristic p and a p-periodic automorphism,
-the norm induces a unique unital ring homomorphism to invariants modulo transfer.
+/-- For a commutative ring, a prime p and a p-periodic automorphism, the norm
+induces a unique unital ring homomorphism to invariants modulo transfer. No
+characteristic hypothesis is needed, since p times a fixed element is its transfer.
 The quotient may be the zero ring. Feng, Definition 5.14, p.42. -/
 theorem algebra_tate_diagonal (p : ℕ) [Fact p.Prime]
-    {A : Type*} [CommRing A] (hpA : (p : A) = 0)
+    {A : Type*} [CommRing A]
     (σ : A ≃+* A) (hσ : σ ^ p = 1) :
     ∃! δ : A →+* (fixedSubring σ ⧸ transferIdeal p σ),
       ∀ a : A, ∃ b : fixedSubring σ,
         (b : A) = cyclicNorm p σ a ∧ δ a = Ideal.Quotient.mk (transferIdeal p σ) b := by
   sorry
 
-/-- A character on a fixed subring containing every norm and transfer extends
-uniquely to the whole ring if it kills transfers and the target is a perfect field
-of characteristic p. Feng, Lemma 5.15, p.42; Treumann–Venkatesh, (3.4.1). -/
+/-- For a commutative ring with a p-periodic automorphism, a character on a subring
+of the fixed subring containing every norm and transfer extends uniquely to the
+whole ring if it kills transfers and the target is a perfect field of
+characteristic p. Feng, Lemma 5.15, p.42; Treumann–Venkatesh, (3.4.1). -/
 theorem tate_character_extension (p : ℕ) [Fact p.Prime]
-    {A : Type*} [CommRing A] (hpA : (p : A) = 0)
+    {A : Type*} [CommRing A]
     {κ : Type*} [Field κ] [CharP κ p] [PerfectRing κ p]
     (σ : A ≃+* A) (hσ : σ ^ p = 1)
     (S : Subring A) (hS : S ≤ fixedSubring σ)

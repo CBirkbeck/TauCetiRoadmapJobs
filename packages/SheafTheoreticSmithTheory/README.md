@@ -19,7 +19,7 @@ The modular exotic/Soergel comparison used to prove parity perversity belongs to
 
 ## Conventions
 
-Fix a prime p and a separably closed geometric field F of characteristic different from p. Write k=F̄_p, O=W(k), C_p=⟨σ⟩ with a specified generator, A_Λ=Λ[C_p], and N=1+σ+⋯+σᵖ⁻¹. Schemes are separated and locally of finite type over F. Geometric equivariance means sheaves on [Y/C_p]; only a trivial geometric action identifies these with A_Λ-sheaves. Arithmetic semilinear actions are separately specified. Unless a theorem states otherwise, Λ is k or O; O/pᵐ occurs at finite adic levels with m≥1. The algebraic Layer 8 permits every prime, including 2, and every commutative F_p-algebra, including the zero ring; in Lean its source coefficient hypothesis is the equation p·1=0 rather than an exact-characteristic typeclass. The sheaf Smith construction also precedes the odd-prime hypothesis. Oddness and goodness are imposed for the normalized cyclic Satake comparison.
+Fix a prime p and a separably closed geometric field F of characteristic different from p. Write k=F̄_p, O=W(k), C_p=⟨σ⟩ with a specified generator, A_Λ=Λ[C_p], and N=1+σ+⋯+σᵖ⁻¹. Schemes are separated and locally of finite type over F. Geometric equivariance means sheaves on [Y/C_p]; only a trivial geometric action identifies these with A_Λ-sheaves. Arithmetic semilinear actions are separately specified. Unless a theorem states otherwise, Λ is k or O; O/pᵐ occurs at finite adic levels with m≥1. The algebraic Layer 8 permits every prime, including 2, and every commutative ring, including the zero ring; it imposes no characteristic hypothesis on the source ring, because p·b=Tr(b) for every fixed b, so the transfer quotient is automatically an F_p-algebra. The sheaf Smith construction also precedes the odd-prime hypothesis. Oddness and goodness are imposed for the normalized cyclic Satake comparison.
 
 A good prime does not divide a coefficient of a highest root in any irreducible factor of the root system. Type A excludes none; B, C and D exclude 2; G₂, F₄, E₆ and E₇ exclude 2 and 3; E₈ excludes 2, 3 and 5. This condition agrees for dual root systems. No such restriction is imposed on the general modular Satake or tilting tensor theorems (Feng24 §4.6.1, p.24, Feng24 line 1039; MR18 Corollary 1.6, p.6, MR18 line 273).
 
@@ -60,7 +60,7 @@ F.1, *Bounded constructible and ctf categories*, supplies bounded constructibili
 
 ### From TauCetiRoadmap.EtaleDualityAndPerverseSheaves
 
-Sections 0.1–0.2 extend finite-coefficient biduality to self-injective coefficients and retain the finite-Tor domain for general Noetherian torsion rings. Sections 2.2 and 2.4–2.5 provide recollement and perverse functors with noetherian coefficients; §§3.1–3.2 provide normalized ramified adic systems and strict reduction for O_E finite over ℤ_p. Section 7.3 supplies tame fixed subschemes on smooth pieces. Section 5.2, Curve Euler–Poincaré with Swan conductors, supplies the Artin–Schreier negative control used in §4.4, including its finite-coefficient conductor calculation. Use purity only for a smooth fixed subscheme inside a smooth stratum, with its twist and even codimension shift.
+Sections 0.1–0.2 extend finite-coefficient biduality to self-injective coefficients and retain the finite-Tor domain for general Noetherian torsion rings. Sections 2.2 and 2.4–2.5 provide recollement and perverse functors with noetherian coefficients; §§3.1–3.2 provide normalized ramified adic systems and strict reduction for O_E finite over ℤ_p. Section 7.3, *Tame fixed subschemes*, supplies the full scheme fixed locus of a tame finite-order automorphism and the absence of fixed points on its punctured normal cone; it asserts no smoothness, which comes from the ReductiveGroupsPartII contract below. Section 5.2, Curve Euler–Poincaré with Swan conductors, supplies the Artin–Schreier negative control used in §4.4, including its finite-coefficient conductor calculation. Use purity only for a smooth fixed subscheme inside a smooth stratum, with its twist and even codimension shift.
 
 What EtaleDualityAndPerverseSheaves must provide (gap:witt-adic-uniform-operations): Extend the normalized systems of §§3.1–3.2 to O=W(F̄_p) with common finite strata and degree/Tor intervals, coherent coefficient reduction, biduality, compact-support projection and derived-limit comparison, and a uniform ambient local bound for Rj* on the finite-dimensional schemes used here.
 
@@ -94,15 +94,17 @@ GS0, *Equal-characteristic Schubert models and coefficient comparison*, supplies
 
 ### From TauCetiRoadmap.ReductiveGroups and TauCetiRoadmap.ReductiveGroupsPartII
 
-ReductiveGroups Layers 1, 4 and 9 and §§10A–10B supply rational representations as algebraic comodules, tensor/dual, torus character decomposition, pinned split integral group schemes, induced/Weyl modules and their canonical map, and the ordinary-dual versus contravariant-dual conventions. ReductiveGroupsPartII §RG2.0a, *weil-restriction-separable-splitting*, supplies separable product splitting with its Galois permutation. Sections RG2.5.1–RG2.5.2, *langlands-dual-group*, *galois-action-on-dual-group* and *dual-isogenies-and-products*, supply integral dual root data, product duality and the pinned Galois action with the common cyclotomic normalization. Rational representations in the statements below are not arbitrary representations of the discrete group of geometric points.
+ReductiveGroups Layers 1, 4 and 9 and §§10A–10B supply rational representations as algebraic comodules, tensor/dual, torus character decomposition, pinned split integral group schemes, induced/Weyl modules and their canonical map, and the ordinary-dual versus contravariant-dual conventions. ReductiveGroupsPartII §RG2.0a, *weil-restriction-separable-splitting*, supplies separable product splitting with its Galois permutation. The same section's *Edixhoven's tame fixed-point theorem* (*tame-fixed-points-of-weil-restriction*) states that, for a discrete valuation ring R, an R-algebra R′ finite free over R with an action of a finite group Γ of order invertible in R by R-algebra automorphisms, and X smooth affine over R′ with a semilinear Γ-action, the fixed scheme of the Weil restriction of X along R→R′ is smooth over R. Apply it with R′=R=F[[t]], Γ=C_p acting trivially on F[[t]], and X the base change of a C_p-invariant affine open of a smooth F-scheme; fixed subschemes commute with base change, so the closed fibre gives smoothness over F of the fixed subscheme of a tame C_p-action on a smooth F-scheme. Sections RG2.5.1–RG2.5.2, *langlands-dual-group*, *galois-action-on-dual-group* and *dual-isogenies-and-products*, supply integral dual root data, product duality and the pinned Galois action with the common cyclotomic normalization. Rational representations in the statements below are not arbitrary representations of the discrete group of geometric points.
 
 ### From TauCetiRoadmap.LanglandsParameterStacks
 
-Using the Weyl modules Δ(λ), induced modules ∇(λ) and their canonical map of ReductiveGroups §10B, section LP3.0, *Highest-weight modules and good filtrations*, supplies good/Weyl filtrations and the Donkin–Wang–Mathieu tensor theorem over a split connected reductive group in characteristic p. Only finite-dimensional representations and finite filtrations are used in Layer 3.
+Using the Weyl modules Δ(λ), induced modules ∇(λ) and their canonical map of ReductiveGroups §10B, section LP3.0, *Highest-weight modules and good filtrations*, supplies good/Weyl filtrations and the Donkin–Wang–Mathieu tensor theorem over a split connected reductive group in characteristic p. It also states that H^i(G,∇(λ)⊗∇(μ)) is the coefficient field for i=0 and μ=−w₀λ and zero otherwise; since Δ(λ)=∇(−w₀λ)* and Ext^i_G(Δ(λ),V)=H^i(G,∇(−w₀λ)⊗V) for finite-dimensional V (the identification used in its good-filtration criterion), this is the computation that Hom(Δ(λ),∇(μ)) is the coefficient field for λ=μ and zero otherwise, with all higher Δ-to-∇ Ext zero. That computation is consumed here, not requested. Only finite-dimensional representations and finite filtrations are used in Layer 3.
 
-What LanglandsParameterStacks must provide (gap:finite-highest-weight-ideals): Provide the finite saturated highest-weight-ideal categories associated to LP3.0, with Hom(Δ(λ),∇(μ)) equal to the coefficient field for λ=μ and zero otherwise, all higher Δ-to-∇ Ext vanishing, enough tiltings and finite standard-to-tilting resolutions, compatibly with field extension.
+What LanglandsParameterStacks must provide (gap:finite-highest-weight-ideals): Provide the finite saturated highest-weight-ideal categories associated to LP3.0, namely the finite-dimensional rational modules all of whose composition factors L(μ) have μ in a finite saturated set of dominant weights, with enough tiltings (modules with both a Δ-filtration and a ∇-filtration) and finite standard-to-tilting resolutions in each, compatibly with inclusions of ideals and with field extension.
 
-What LanglandsParameterStacks must provide (gap:integral-tilting-lifts): For O=W(k), k=F̄_p, and a split connected reductive group over O, extend the finite saturated highest-weight-ideal categories of LP3.0 to split highest-weight O-orders with finite free standards/costandards, Hom(Δ(λ),∇(μ))=O for λ=μ and zero otherwise and Extⁿ(Δ(λ),∇(μ))=0 for n>0, finite projective generators and p-adically complete finite Hom modules; prove existence of tilting lifts, finite freeness and reduction base change for Hom between tiltings, lifting of idempotents in their endomorphism orders, detection of tilting on O-free objects by reduction, and a bijection on isomorphism classes of indecomposable tiltings under reduction to k, compatibly with inclusions of finite ideals, duals and external products.
+What LanglandsParameterStacks must provide (gap:integral-highest-weight-orders): For O=W(k), k=F̄_p, and a split connected reductive group over O, extend the finite saturated highest-weight-ideal categories of LP3.0 to split highest-weight O-orders whose standards and costandards are the finite free integral Weyl lattices of ReductiveGroups §10B and their duals under its perfect integral evaluation pairing, with Hom(Δ(λ),∇(μ))=O for λ=μ and zero otherwise, Extⁿ(Δ(λ),∇(μ))=0 for n>0, finite projective generators and p-adically complete finite Hom modules, compatibly with inclusions of finite ideals.
+
+What LanglandsParameterStacks must provide (gap:integral-tilting-lifts): In the split highest-weight O-orders of gap:integral-highest-weight-orders, prove existence of tilting lifts, finite freeness and reduction base change for Hom between tiltings, lifting of idempotents in their endomorphism orders, detection of tilting on O-free objects by reduction, and a bijection on isomorphism classes of indecomposable tiltings under reduction to k, compatibly with inclusions of finite ideals, duals and external products.
 
 The generic highest-weight inputs precede their parameter-stack applications; no theorem about parameters is a prerequisite for this roadmap.
 
@@ -174,7 +176,7 @@ The API:
 
 ### 0.3 Equivariant and ind-constructible derived categories
 
-Set D_σ(Y;Λ)=D([Y/C_p];Λ) in the imported enhanced étale sheaf theory. Its bounded constructible subcategory has bounded constructible cohomology on Y; ind-constructible means the filtered-colimit enlargement with a uniform cohomological bound on the bounded part. If the geometric action is trivial, identify this with the derived category of sheaves of A_Λ-modules. For a nontrivial action keep the quotient-stack category: a coefficient C_p-action alone is different. Extra L^+G-equivariance means equivariant derived sheaves before passage to the constructible homotopy category; parentheses around L^+G mean constructibility for its orbits after forgetting this extra equivariance. (Feng24, §1.5 (Notation), p.7; §3.2, p.15, display (3.2), Feng24 line 656; Feng24, §4.2, p.20, Feng24 line 656.)
+Set D_σ(Y;Λ)=D([Y/C_p];Λ) in the imported enhanced étale sheaf theory. Its bounded constructible subcategory has bounded constructible cohomology on Y; ind-constructible means the filtered-colimit enlargement with a uniform cohomological bound on the bounded part. If the geometric action is trivial, identify this with the derived category of sheaves of A_Λ-modules. For a nontrivial action keep the quotient-stack category: a coefficient C_p-action alone is different. Extra L^+G-equivariance means equivariant derived sheaves before passage to the constructible homotopy category; parentheses around L^+G mean constructibility for its orbits after forgetting this extra equivariance. (Feng24, §1.5 (Notation), p.7; §3.2, p.15, display (3.2), Feng24 line 656; Feng24, §4.2, p.20, Feng24 line 900.)
 
 The API:
 
@@ -245,7 +247,7 @@ The API:
 
 ### 0.6 Flat resolutions and stalkwise Tor detection
 
-Apply the supplied common-interval geometric-stalk Tor criterion to A_Λ-sheaves. Over k[C_p] and (O/pᵐ)[C_p], a bounded complex of finite Tor amplitude has a bounded flat representative, using the nilpotent-local-ring theorem on its final syzygy. For finite modules, finite projective dimension implies projectivity; the arbitrary-rank argument uses nilpotence and flatness, rather than finite Nakayama. Integral O-complexes retain finite Tor dimension and the separate uniform adic passage. (Stacks, Tag 08G1 (Lemma 21.46.3); Tag 0DJJ (Lemma 21.46.10); Tag 0A5N (Definition 15.70.1, More on Algebra, Stacks line 8130); Tag 051E (Lemma 10.101.3), Stacks line 5207; Feng24, proof of Lemma 3.2, pp.13–14, Feng24 line 601.)
+Apply the supplied common-interval geometric-stalk Tor criterion to A_Λ-sheaves. Over k[C_p] and (O/pᵐ)[C_p], a bounded complex of finite Tor amplitude has a bounded flat representative, using the nilpotent-local-ring theorem on its final syzygy. For finite modules, finite projective dimension implies projectivity; the arbitrary-rank argument uses nilpotence and flatness, rather than finite Nakayama. Integral O-complexes retain finite Tor dimension and the separate uniform adic passage. (Stacks, Tag 08G1 (Lemma 21.46.3, Cohomology on Sites, Stacks line 5207); Tag 0DJJ (Lemma 21.46.10, Cohomology on Sites, Stacks line 5300); Tag 0A5N (Definition 15.70.1, More on Algebra, Stacks line 8130); Tag 051H (Lemma 10.101.3, in Algebra §10.101, Tag 051E), Stacks line 11356; Feng24, proof of Lemma 3.2, pp.13–14, Feng24 line 601.)
 
 *Proof route.* Use the supplied geometric-stalk criterion and K-flat resolution; truncate by the Tor-vanishing syzygy argument. Keep a common interval in every global assertion and prove the O-adic passage by the stated uniform coefficient comparisons.
 
@@ -639,7 +641,7 @@ Fix a Borel and dominant λ. Under §3.1, the perverse standard ^pj_!Λ[dim Gr^�
 
 *Proof route.* Use the universal properties on each saturated highest-weight ideal, evaluated by the λ-weight functor. Compare standard/costandard maps and integral projective generators before extending scalars. Track derived tensor for torsion objects.
 
-*Needs:* §3.1; ReductiveGroups §10B; LanglandsParameterStacks §LP3.0 and its finite-highest-weight-ideals and integral-tilting-lifts contracts; EnhancedDerivedSheaves §§0.1–0.4, E1.3–E1.4.
+*Needs:* §3.1; ReductiveGroups §10B; LanglandsParameterStacks §LP3.0 and its finite-highest-weight-ideals, integral-highest-weight-orders and integral-tilting-lifts contracts; EnhancedDerivedSheaves §§0.1–0.4, E1.3–E1.4.
 
 **Checks.**
 
@@ -650,9 +652,9 @@ Fix a Borel and dominant λ. Under §3.1, the perverse standard ^pj_!Λ[dim Gr^�
 
 ### 3.3 The category of rational tilting representations
 
-Using the Weyl and dual-Weyl modules of ReductiveGroups §10B and the filtrations, finite-highest-weight-ideal and integral-tilting-lifts contracts with LanglandsParameterStacks §LP3.0, Tilt_Λ(Ĥ) is the full additive subcategory of finite free rational Ĥ_Λ-modules admitting both a finite Δ-filtration and a finite ∇-filtration. For Λ=k, finite free means finite-dimensional. Its exact structure is inherited from rational representations on the finite free coefficient domain; it is closed under direct summands, not under all kernels and cokernels. Use the integral reductive group representation carrier, not arbitrary representations of the discrete group of k-points. (JMW16, §1.1 and Theorem 1.1, p.1, JMW16 line 24; Feng24, §4.5, p.23, Feng24 line 993.)
+Using the Weyl and dual-Weyl modules of ReductiveGroups §10B and the filtrations, finite-highest-weight-ideal, integral-highest-weight-orders and integral-tilting-lifts contracts with LanglandsParameterStacks §LP3.0, Tilt_Λ(Ĥ) is the full additive subcategory of finite free rational Ĥ_Λ-modules admitting both a finite Δ-filtration and a finite ∇-filtration. For Λ=k, finite free means finite-dimensional. Its exact structure is inherited from rational representations on the finite free coefficient domain; it is closed under direct summands, not under all kernels and cokernels. Use the integral reductive group representation carrier, not arbitrary representations of the discrete group of k-points. (JMW16, §1.1 and Theorem 1.1, p.1, JMW16 line 24; Don93, Theorem 1.1; Feng24, §4.5, p.23, Feng24 line 993.)
 
-The field classification is the cited JMW16 theorem. For O, existence, classification, summand closure and Hom reduction use the integral-tilting-lifts supplier contract; they are not consequences of defining the intersection of two filtration predicates.
+The field classification is Donkin's theorem (Don93, Theorem 1.1), the algebraic-group case of Ringel's existence theorem for highest-weight categories, as recalled in JMW16 Theorem 1.1 (JMW16 lines 22–27). For O, existence, classification, summand closure and Hom reduction use the integral-tilting-lifts supplier contract; they are not consequences of defining the intersection of two filtration predicates.
 
 The API:
 
@@ -662,9 +664,9 @@ The API:
 
 - Finite sums, duals and direct summands preserve tilting.
 
-*Proof route.* Import the highest-weight predicates, and define their intersection as a full subcategory. For the integral API use the split highest-weight O-orders in the supplier contract: Δ-to-∇ Ext vanishing makes Hom between tiltings finite free with reduction base change; lift finite-ideal tilting generators and split lifted idempotents in their complete endomorphism orders. Reduction then identifies indecomposable labels and detects tilting on coefficient-free objects. Morphisms retain the algebraic comodule structure. This input precedes the parity comparison of §4.5.
+*Proof route.* Import the highest-weight predicates, and define their intersection as a full subcategory. For the integral API use the split highest-weight O-orders of the integral-highest-weight-orders contract: Δ-to-∇ Ext vanishing makes Hom between tiltings finite free with reduction base change; lift finite-ideal tilting generators and split lifted idempotents in their complete endomorphism orders. Reduction then identifies indecomposable labels and detects tilting on coefficient-free objects. Morphisms retain the algebraic comodule structure. This input precedes the parity comparison of §4.5.
 
-*Needs:* ReductiveGroups §§10A–10B; LanglandsParameterStacks §LP3.0 and its finite-highest-weight-ideals and integral-tilting-lifts contracts; ReductiveGroupsPartII §§RG2.5.1–RG2.5.2; ReductiveGroups Layer 1.
+*Needs:* ReductiveGroups §§10A–10B; LanglandsParameterStacks §LP3.0 and its finite-highest-weight-ideals, integral-highest-weight-orders and integral-tilting-lifts contracts; ReductiveGroupsPartII §§RG2.5.1–RG2.5.2; ReductiveGroups Layer 1.
 
 **Checks.**
 
@@ -717,7 +719,7 @@ For dual SL₂ in characteristic 3, Δ(3) has dimension 4 and is not tilting. Th
 
 ### Dependencies
 
-Layer 0; GlobalShtukasAndFunctionFieldLanglands §§1.1–1.5, 1.8–1.9, 1.14 and its field-extension contract; GeometricSatakeAndFusion GS0; ReductiveGroups Layers 1, 4, 9; ReductiveGroupsPartII §§RG2.5.1–RG2.5.2; LanglandsParameterStacks §LP3.0 and the finite-highest-weight-ideals and integral-tilting-lifts contracts; EnhancedDerivedSheaves E1.4; EtaleDualityAndPerverseSheaves §§2.4–2.5 and the adic contract.
+Layer 0; GlobalShtukasAndFunctionFieldLanglands §§1.1–1.5, 1.8–1.9, 1.14 and its field-extension contract; GeometricSatakeAndFusion GS0; ReductiveGroups Layers 1, 4, 9; ReductiveGroupsPartII §§RG2.5.1–RG2.5.2; LanglandsParameterStacks §LP3.0 and the finite-highest-weight-ideals, integral-highest-weight-orders and integral-tilting-lifts contracts; EnhancedDerivedSheaves E1.4; EtaleDualityAndPerverseSheaves §§2.4–2.5 and the adic contract.
 
 
 ## Layer 4: Parity, integral Tate Hom and normalized lifting
@@ -794,11 +796,11 @@ In the finite JMW setting with complete local coefficient ring Λ, parity object
 
 ### 4.4 Parity extensions on the equal-characteristic Grassmannian
 
-The L^+H-orbit stratification of every finite Schubert union in Gr_H satisfies the JMW condition for Λ=k,O with constant local systems on the strata, equivalently L^+H-equivariant ones, since the stabilizers are connected; these are the only local systems used. In characteristic 0 the strata are simply connected. Over a field of positive characteristic ℓ the condition fails for arbitrary étale local systems, so the orbit-constructible category is taken with constant restrictions to strata. Its normalized parity extensions exist for all dominant coweights and trivial finite free local systems. They admit compatible L^+H-equivariant structures in the precise non-torsion-prime setting of JMW16 Theorem 1.4. Under the odd good-prime hypothesis of Feng24, prove that the orbit-constructible normalized category used below has the required equivariant realization; do not identify the full equivariant derived category with the orbit-constructible one. (Feng24, §4.1, p.20; §4.5, pp.22–23, Feng24 line 983; JMW16, Theorem 1.4 and footnote 3, p.2, JMW16 line 72.)
+The L^+H-orbit stratification of every finite Schubert union in Gr_H satisfies the JMW condition for Λ=k,O with constant local systems on the strata, equivalently L^+H-equivariant ones, since the stabilizers are connected; these are the only local systems used. In characteristic 0 the strata are simply connected. Over a field of positive characteristic ℓ the condition fails for arbitrary étale local systems, so the orbit-constructible category is taken with constant restrictions to strata. Its normalized parity extensions exist for all dominant coweights and trivial finite free local systems. They admit compatible L^+H-equivariant structures in the precise non-torsion-prime setting of JMW16 Theorem 1.4; for every good prime the equivariant realization of the normalized category is part of §4.5. Do not identify the full equivariant derived category with the orbit-constructible one. (Feng24, §4.1, p.20; §4.5, pp.22–23, Feng24 line 983; JMW16, Theorem 1.4 and footnote 3, p.2, JMW16 line 72.)
 
-*Proof route.* Build Bott–Samelson parity pushforwards on affine flag varieties, then take the appropriate summands on the partial flag/Grassmannian. Check evenness, the local-system condition and integral lifting on each bounded piece. Compare étale and complex proofs, including non-torsion/good-prime equivariance and passage to separably closed F. These proof inputs are the explicit transport contract the étale transport theorem.
+*Proof route.* Build Bott–Samelson parity pushforwards on affine flag varieties, then take the appropriate summands on the partial flag/Grassmannian. Check evenness, the local-system condition and integral lifting on each bounded piece. Carry out these arguments directly for étale sheaves on the scheme-theoretic Grassmannian over F, in place of the complex topology: Iwahori orbits on the affine flag variety are affine spaces, the projection to the Grassmannian restricts on strata to projections between affine spaces and is therefore even, and proper even pushforward preserves parity (JMW14, Proposition 2.34, p.15, JMW14 line 668; §4.1, p.29, JMW14 line 1340; Proposition 4.10, p.33, JMW14 line 1505), using proper base change, Künneth and purity for the étale cohomology of fibres. Every target of Layers 4–6 is stated for étale sheaves over F and proved here; none imports a complex-topological statement as a theorem.
 
-*Needs:* §4.3; GlobalShtukasAndFunctionFieldLanglands §§1.1–1.3, 1.5, 1.14 and the arbitrary-geometric-field contract; EnhancedDerivedSheaves §§0.1–0.4, E1.3–E1.4.
+*Needs:* §4.3; GlobalShtukasAndFunctionFieldLanglands §§1.1–1.3, 1.5, 1.14 and the arbitrary-geometric-field contract; GeometricSatakeAndFusion GS0, *Equal-characteristic Schubert models and coefficient comparison*; EtaleCohomologyFoundations §§F.2–F.3, F.5–F.6; EnhancedDerivedSheaves §§0.1–0.4, E1.3–E1.4.
 
 **Checks.**
 
@@ -811,19 +813,21 @@ The L^+H-orbit stratification of every finite Schubert union in Gr_H satisfies t
 
 ### 4.5 Normalized parity sheaves are tilting Satake objects
 
-For odd p good for the root system of Ĥ (equivalently H), every normalized k- or O-parity sheaf on Gr_H is perverse. Modular Satake induces `Parity^0_(L^+H)(Gr_H;k)`≅Tilt_k(Ĥ), with the chosen equivariant realization when required. The integral version uses O-flat perverse sheaves. The characteristic assumption is goodness, not the larger bounds in JMW16 Theorem 1.8. (Feng24, Theorem 4.8 and Remark 4.9, p.23, Feng24 line 997; MR18, Theorem 1.1, p.3; Corollary 1.6, p.6; §6.5, p.60, MR18 line 273.)
+For every prime p good for the root system of Ĥ (equivalently H), including p=2 when every irreducible factor has type A, every normalized k- or O-parity sheaf on Gr_H is perverse. Being perverse and constructible for the L^+H-orbits with constant restrictions to strata, each carries its canonical L^+H-equivariant structure; this is the equivariant realization used below. Modular Satake induces `Parity^0_(L^+H)(Gr_H;k)`≅Tilt_k(Ĥ). The integral version uses O-flat perverse sheaves. The characteristic assumption is goodness; neither very goodness nor the larger bounds of JMW16 Theorem 1.8 is required. (Feng24, Theorem 4.8 and Remark 4.9, p.23, Feng24 line 997; MR18, Corollary 1.6, p.6, MR18 line 273; §6.5, p.60, MR18 line 2734; MV07, Proposition 2.1, p.6, MV07 line 259.)
 
-Build the good-prime perversity engine at its full stated generality: the modular exotic highest-weight category on the dual Springer resolution, the Kostant–Whittaker/Soergel comparison, its graded tilting generators and the central-isogeny/product reductions. In the complex model the equivalence sends E_λ to the exotic tilting with label −λ and [1] to grading shift ⟨−1⟩ (MR18 Theorem 1.1, p.3, MR18 line 105). Prove the étale transport of the constructible side and the O-flat lifting from the residue-field assertion. Another proof of the same good-prime theorem may replace this route; a stronger numerical bound does not prove the target.
+Build the good-prime perversity engine at its full stated generality: the modular exotic highest-weight category on the dual Springer resolution, the Kostant–Whittaker/Soergel comparison, its graded tilting generators and the derived-group, central-quotient and product reductions. In the complex model, for Ĥ a product of simply connected quasi-simple groups and general linear groups, with p very good for each quasi-simple factor, the equivalence between Iwahori-constructible parity sheaves on the Grassmannian of H and graded exotic tilting sheaves sends E_λ to the exotic tilting with label −λ and [1] to grading shift ⟨−1⟩ (MR18, §1.1, p.2, MR18 line 20; Theorem 1.1, p.3, MR18 line 105). Perversity for every Ĥ and every good p follows by the reductions, which replace Ĥ by a product of simply connected quasi-simple groups not of type A, for which good and very good agree, and of general linear groups (MR18, §6.5, p.60, MR18 line 2751; JMW16, Lemma 3.6, p.10, JMW16 line 415). Prove the constructible side for étale sheaves over F, where the one step of MR18 §3 that uses the complex loop-group presentation (the factorization of the equivariant-cohomology map through the diagonal) needs a characteristic-free argument (Feng24, proof of Theorem 4.8, p.23, Feng24 line 1007), and prove the O-flat lifting from the residue-field assertion. Another proof of the same good-prime theorem may replace this route; a stronger numerical bound does not prove the target.
 
-*Proof route.* Use MR18 Theorem 1.1: the mixed/parity affine-Grassmannian category is related to the exotic coherent category on the Springer resolution of the dual group, compatibly with grading and tilting generators. Its Corollary 1.6 establishes perversity for every good prime, reducing along central isogenies and products. The exotic/Soergel proof engine and its étale transport are not supplied by the characteristic-zero Springer roadmap; §4.5 supplies this comparison. Once perversity holds, Δ/∇-filtrations characterize the Satake images as tilting.
+*Proof route.* Use MR18 Theorem 1.1 under its hypotheses: the mixed/parity affine-Grassmannian category is related to the exotic coherent category on the Springer resolution of the dual group, compatibly with grading and tilting generators. Its Corollary 1.6 establishes perversity for every good prime: a Verdier self-dual object with no Hom to its shifts by n<−1 is perverse (MR18, Lemma 6.6, p.60), and the exotic side gives this vanishing for E_λ. The orbit-constructible and equivariant spherical perverse categories agree on each finite Schubert support (the étale form of MV07 Proposition 2.1), which gives the equivariant realization. The exotic/Soergel proof engine and its étale constructible side are not supplied by the characteristic-zero Springer roadmap; §4.5 supplies this comparison. Once perversity holds, Δ/∇-filtrations characterize the Satake images as tilting.
 
-*Needs:* §4.4; §3.2; §3.3.
+*Needs:* §4.4; §3.1; §3.2; §3.3.
 
 **Checks.**
 
-- For the GL₂ minuscule P¹ stratum, k[1] is perverse and maps to the corresponding fundamental tilting representation. Check the hypothesis is odd good p, with exactly the good-prime hypothesis.
+- For the GL₂ minuscule P¹ stratum, k[1] is perverse and maps to the corresponding two-dimensional fundamental tilting representation, both for p=3 and for p=2; both primes are good for GL₂, and Theorem 1.1 of MR18 applies to Ĥ=GL₂ directly, since it has no quasi-simple factor.
 
-- k[1] perverse and standard tilting dimension 2; p=3 divides a highest-root coefficient 3 in G₂; zero maps to zero. Goodness is the exact theorem hypothesis; the general library remains unrestricted.
+- For Ĥ=SL₂ (H=PGL₂) at p=2, the prime is good but not very good for A₁ (2 divides 2), so MR18 Theorem 1.1 does not apply to SL₂ itself; perversity comes from Theorem 1.1 for GL₂, whose derived group is SL₂, through the derived-group reduction (JMW16, Lemma 3.6(1), JMW16 line 415). A statement requiring very good p would wrongly exclude this case.
+
+- For G₂, p=3 divides the highest-root coefficient 3, so 3 is bad and lies outside the theorem; p=2 is also bad for G₂. Zero maps to zero. Goodness is the exact theorem hypothesis; the general library remains unrestricted.
 
 
 ### 4.6 External products of normalized Grassmannian parity sheaves
@@ -832,7 +836,7 @@ For G=H^r, every normalized O-parity object on Gr_G≅(Gr_H)^r is a finite direc
 
 *Proof route.* Use the Künneth theorem for finite free stalks and costalks, and dense-stratum normalization. Indecomposability follows either from the product tilting classification under Satake, using §3.3 and the integral-tilting-lifts contract for O and external products, or from the local endomorphism criterion. This direct-sum argument controls norm stalks without applying a nonadditive functor or a non-t-exact restriction to a perverse filtration.
 
-*Needs:* §4.4; §4.5; §3.3; §3.4; LanglandsParameterStacks §LP3.0, gap:integral-tilting-lifts; EnhancedDerivedSheaves §§0.1–0.4, E1.3–E1.4.
+*Needs:* §4.4; §4.5; §3.3; §3.4; LanglandsParameterStacks §LP3.0, gap:integral-highest-weight-orders, gap:integral-tilting-lifts; EnhancedDerivedSheaves §§0.1–0.4, E1.3–E1.4.
 
 **Checks.**
 
@@ -845,9 +849,9 @@ For G=H^r, every normalized O-parity object on Gr_G≅(Gr_H)^r is a finite direc
 
 For bounded constructible O-complexes E,F in the LL integral Tate setting, with trivial coefficient C_p-action and the finite-support coefficient hypotheses, the group of morphisms from T*ε*E to T*ε*F in Perf(Y;TO) is naturally the direct sum over i∈ℤ of the groups of morphisms from k⊗^L E to (k⊗^L F)[2i] in D^b(Y;k). Composition adds the indices using shifts. Require the stratified version with finite Hom groups and nilpotence of the positive-degree endomorphism ideal for normalized parity inputs. The *-Tate-even and !-Tate-even subcategories, and hence the Tate-parity category, are Krull–Schmidt under the stated finite-stratification, finite-Hom and local-system hypotheses. (LL21, Proposition 4.6.1, p.14; Proposition 5.5.2, p.22, LL21 line 641; Feng24, display (4.2), p.22, Feng24 line 950.)
 
-For the étale realization, replace topological simple connectivity by the specified constant-local-system class where appropriate, and prove restriction, composition, coefficient and periodicity compatibility on each finite Schubert support. This is part of the transport theorem here.
+For the étale realization, replace topological simple connectivity by the specified constant-local-system class where appropriate, and prove restriction, composition, coefficient and periodicity compatibility on each finite Schubert support. This étale realization is part of the present target, proved directly for étale sheaves rather than imported from the complex topology.
 
-*Proof route.* Compare the periodic complete resolution with derived reduction, then compute quotient morphisms by stabilized Hom. Check naturality and the index-addition composition formula before projecting any grading. Carry the proof through the étale coefficient setting via the étale transport theorem. Finite support and bounded Hom ensure the nonnegative endomorphism algebra has nilpotent positive ideal in the perverse case.
+*Proof route.* Compare the periodic complete resolution with derived reduction, then compute quotient morphisms by stabilized Hom. Check naturality and the index-addition composition formula before projecting any grading. Run the argument in the étale coefficient setting itself, using the étale stalk and costalk computations of §4.4 on each finite Schubert support. Finite support and bounded Hom ensure the nonnegative endomorphism algebra has nilpotent positive ideal in the perverse case.
 
 *Needs:* §1.6; §1.2; EnhancedDerivedSheaves §§0.1–0.4, E1.3–E1.4; §4.3.
 
@@ -975,7 +979,7 @@ On the GL₂ minuscule Schubert P¹, E=O[1] is normalized and perverse. Its inte
 
 ### Dependencies
 
-Layers 0–3; the equal-characteristic Schubert/Demazure geometry; EnhancedDerivedSheaves E1.4; EtaleCohomologyFoundations recollement and smooth-pair purity. The modular exotic/Soergel comparison and its transport are §4.5 targets here.
+Layers 0–3; the equal-characteristic Schubert/Demazure geometry; EnhancedDerivedSheaves E1.4; EtaleCohomologyFoundations recollement and smooth-pair purity. The modular exotic/Soergel comparison and its étale constructible side are §4.5 targets here.
 
 
 ## Layer 5: Cyclic norm and linear base change
@@ -1031,7 +1035,7 @@ The API:
 
 For odd p good for Ĥ and E a normalized O-parity object on `Gr_(H^p)`, the stalk and costalk cohomology of Nm(E) at every diagonal fixed point has a C_p-stable filtration whose associated graded is a direct sum of trivial O-free modules and free O[C_p]-modules. The statement here is restricted to the normalized Grassmannian parity objects used in BC. The direct-product basis argument applies to these normalized parity inputs. (Feng24, Lemma 4.14 and its proof, pp.24–25, Feng24 line 1059.)
 
-*Proof route.* Decompose E into finite sums of external products of normalized parity extensions. Under the odd good-prime parity–tilting comparison of §4.5, for one external product, rotation and factorwise convolution give an external p-th power of a single parity object on H, whose finite free stalk and costalk cohomology have a Künneth basis. Cyclic permutation of basis tensors has orbits of size one or p. Koszul signs on a constant p-tuple multiply to +1 for odd p; on a length-p orbit absorb signs into a regular-module basis. Mixed summands from expanding a direct sum form induced cyclic orbits. No perverse filtration is pulled back through i*, and Nm is never applied to an exact sequence as an additive functor.
+*Proof route.* Decompose E into finite sums of external products of normalized parity extensions. Under the good-prime parity–tilting comparison of §4.5, for one external product, rotation and factorwise convolution give an external p-th power of a single parity object on H, whose finite free stalk and costalk cohomology have a Künneth basis. Cyclic permutation of basis tensors has orbits of size one or p. Koszul signs on a constant p-tuple multiply to +1 for odd p; on a length-p orbit absorb signs into a regular-module basis. Mixed summands from expanding a direct sum form induced cyclic orbits. No perverse filtration is pulled back through i*, and Nm is never applied to an exact sequence as an additive functor.
 
 *Needs:* §5.2; §4.6; §3.4.
 
@@ -1048,9 +1052,9 @@ Let Y be a finite-dimensional smooth-stratified JMW variety with tame admissible
 
 If a fixed stratum is disconnected, refine it into its smooth connected components and restrict the induced pariversity to each component. Smooth-pair purity is used only for the cohomologically locally constant restriction on a smooth stratum, with i! identified with i*(−c)[−2c].
 
-*Proof route.* For stalks use the trivial/free Tate formulas and the long exact sequence. For costalks use the !-presentation of Smith and the smooth-pair Gysin comparison. A tame finite-order automorphism has smooth fixed subschemes on a smooth stratum: formal lifting obstructions are averaged because p is invertible in F; its tangent is the fixed tangent subspace. The codimension purity shift is even. On the Grassmannian with odd p, p d_λ≡d_λ mod 2, while the difference of the two normalization shifts is even and hence disappears only in the Tate quotient.
+*Proof route.* For stalks use the trivial/free Tate formulas and the long exact sequence. For costalks use the !-presentation of Smith and the smooth-pair Gysin comparison. The fixed subscheme of the tame C_p-action on a smooth invariant stratum is smooth: apply ReductiveGroupsPartII §RG2.0a, *Edixhoven's tame fixed-point theorem*, as in the supplier contract, on invariant affine opens of the stratum around its fixed points (the norm of a function cutting out a basic open neighbourhood is invariant). Its tangent space is the fixed tangent subspace. The codimension purity shift is even. On the Grassmannian with odd p, p d_λ≡d_λ mod 2, while the difference of the two normalization shifts is even and hence disappears only in the Tate quotient.
 
-*Needs:* §2.6; §5.3; §1.4; §4.8; EtaleCohomologyFoundations §§0.10, F.6; EtaleDualityAndPerverseSheaves §7.3; §5.1.
+*Needs:* §2.6; §5.3; §1.4; §4.8; EtaleCohomologyFoundations §§0.10, F.6; ReductiveGroupsPartII §RG2.0a, *Edixhoven's tame fixed-point theorem*; EtaleDualityAndPerverseSheaves §7.3; §5.1.
 
 **Checks.**
 
@@ -1109,7 +1113,7 @@ The ordinary normalized k-parity category on Gr_G has a specified F_p-form compa
 
 Construct the scalar-extension equivalence on the additive category of normalized generators and all ordinary Hom groups, allowing the idempotent completion if needed. Its compatibility with the geometric norm/Smith maps and with CT is a target, rather than a field-of-definition claim about arbitrary étale sheaves.
 
-*Proof route.* Use the F_p-Chevalley dual group and its tilting generators, then transport the form through Satake. Check scalar extension on finite-support Hom and descent of the normalized parity generators. This must agree with the geometric form on the norm/Smith construction and its automorphism actions; the comparison is included in the étale transport theorem.
+*Proof route.* Use the F_p-Chevalley dual group and its tilting generators, then transport the form through Satake. Check scalar extension on finite-support Hom and descent of the normalized parity generators. This must agree with the geometric form on the norm/Smith construction and its automorphism actions; that comparison, on each finite Schubert support of the étale Grassmannian over F, is part of the present target.
 
 *Needs:* §4.10; §3.1; ReductiveGroupsPartII §§RG2.5.1–RG2.5.2; §5.6.
 
@@ -1155,7 +1159,7 @@ A rank-two free stalk with basis e₀,e₁ has eight tensor words for p=3: two c
 
 ### Dependencies
 
-Layers 2–4; GlobalShtukasAndFunctionFieldLanglands §1.5 convolution/fusion; the pinned Frobenius automorphism; ReductiveGroupsPartII §RG2.5.1. The construction uses ordinary parity Hom base change, graded integral Tate Hom and cyclic transfer factorization.
+Layers 2–4; GlobalShtukasAndFunctionFieldLanglands §1.5 convolution/fusion; the pinned Frobenius automorphism; ReductiveGroupsPartII §RG2.0a (tame fixed-point smoothness) and §RG2.5.1. The construction uses ordinary parity Hom base change, graded integral Tate Hom and cyclic transfer factorization.
 
 
 ## Layer 6: Constant terms and natural diagonal restriction
@@ -1175,9 +1179,9 @@ The API:
 
 - Definitions agree on nested finite Schubert supports and commute with permitted coefficient change.
 
-*Proof route.* Use the imported loop/Schubert geometry but construct these equal-characteristic modular functors here. Apply Braden’s natural transformation on equivariant linear/projective ambient models containing each bounded piece; the contraction lemma and open–closed localization prove it invertible on weakly equivariant generators, then on their triangulated closure. Patch bounded supports and finite coefficient levels, using the uniform adic and étale transport theorems for O. The normalized shift convention is positive [⟨2ρ,ν⟩], so weight cohomology is in degree zero.
+*Proof route.* Use the imported loop/Schubert geometry but construct these equal-characteristic modular functors here. Apply Braden’s natural transformation on equivariant linear/projective ambient models containing each bounded piece; the contraction lemma and open–closed localization prove it invertible on weakly equivariant generators, then on their triangulated closure. Patch bounded supports and finite coefficient levels, using the uniform adic contract gap:witt-adic-uniform-operations for O; the contraction and localization arguments are run directly for étale sheaves on the bounded pieces. The normalized shift convention is positive [⟨2ρ,ν⟩], so weight cohomology is in degree zero.
 
-*Needs:* GlobalShtukasAndFunctionFieldLanglands §§1.1–1.3, 1.5, 1.14 and the arbitrary-geometric-field contract; EtaleCohomologyFoundations §§F.1–F.3, F.5–F.6; EtaleDualityAndPerverseSheaves §§0.1–0.2, 2.2; §2.2; §2.8.
+*Needs:* GlobalShtukasAndFunctionFieldLanglands §§1.1–1.3, 1.5, 1.14 and the arbitrary-geometric-field contract; EtaleCohomologyFoundations §§F.1–F.3, F.5–F.6; EtaleDualityAndPerverseSheaves §§0.1–0.2, 2.2 and its contract gap:witt-adic-uniform-operations; §2.2; §2.8.
 
 **Checks.**
 
@@ -1196,7 +1200,7 @@ For dominant λ and the chosen positive Borel, the semi-infinite orbit indexed b
 
 The dimension formula is asserted only for a nonempty intersection S_ν∩Gr_H^μ, with μ dominant and ν a coweight in its Weyl polytope and component. Empty intersections have no dimension prescribed by that expression.
 
-*Proof route.* Compute the antidominant intersection using loop-unipotent factorization; the opposite positive loops fix its coweight point. Use the Schubert order and torus weight polytope for the support exclusion. Apply the equal-characteristic base-change/étale transport in the étale transport theorem.
+*Proof route.* Compute the antidominant intersection using loop-unipotent factorization; the opposite positive loops fix its coweight point. Use the Schubert order and torus weight polytope for the support exclusion. These are statements about the scheme-theoretic Grassmannian over F, proved with the supplied equal-characteristic geometry and its arbitrary-geometric-field contract, not transported from the complex Grassmannian.
 
 *Needs:* §6.1; GlobalShtukasAndFunctionFieldLanglands §§1.1–1.3, 1.5, 1.14 and the arbitrary-geometric-field contract.
 
@@ -1241,7 +1245,7 @@ For G=H^p and odd p, take the diagonal κ-action commuting with cyclic rotation.
 
 On normalized integral Tate parity objects of Gr_H, CT_H^norm commutes naturally with L after passage to the normalized torus parity category. Consequently CT_H^norm BC≅BC_T CT_G^norm naturally on ordinary normalized k-parity objects. The proof must use the graded Hom formula with composition and coefficient-change compatibility, rather than essential surjectivity of T*ε* alone. (Feng24, Lemma A.2 and its proof, diagrams (A.3)–(A.5), pp.59–60, Feng24 line 2648.)
 
-*Proof route.* For inflated ordinary parity objects compare both composites with ordinary reduced CT. Under §4.7 the normalized CT map preserves the integer index, because the construction commutes with coefficients and the periodicity class. Its target is a finite sum of point-supported degree-zero modules, so positive-index ordinary Hom there is zero. Projection to index zero therefore commutes with CT on every Tate morphism. Extend across decompositions by naturality, then use the full ordinary reduction equivalence for BC, tensor compatibility for Nm and the fixed prime-field form. This avoids asserting that inflation is full. The étale transport theorem includes proving the stated graded comparison in the étale realization.
+*Proof route.* For inflated ordinary parity objects compare both composites with ordinary reduced CT. Under §4.7 the normalized CT map preserves the integer index, because the construction commutes with coefficients and the periodicity class. Its target is a finite sum of point-supported degree-zero modules, so positive-index ordinary Hom there is zero. Projection to index zero therefore commutes with CT on every Tate morphism. Extend across decompositions by naturality, then use the full ordinary reduction equivalence for BC, tensor compatibility for Nm and the fixed prime-field form. This avoids asserting that inflation is full. The graded comparison is proved in the étale realization, using the étale form of the Hom formula of §4.7.
 
 *Needs:* §6.3; §6.4; §4.12; §4.7; §5.8.
 
@@ -1320,7 +1324,7 @@ For the minuscule GL₂ P¹, the two weights are ν₊=(1,0) and ν₋=(0,1). Th
 
 ### Dependencies
 
-Layers 1–5; equal-characteristic bounded Schubert geometry; EtaleCohomologyFoundations compact supports; the explicit adic and transport comparisons. The natural reductive endpoint additionally needs §6.8 root-subgroup equivariance.
+Layers 1–5; equal-characteristic bounded Schubert geometry; EtaleCohomologyFoundations compact supports; the explicit adic contract and the étale forms of §§4.4–4.7. The natural reductive endpoint additionally needs §6.8 root-subgroup equivariance.
 
 
 ## Layer 7: Exactness, descent and the integral norm image
@@ -1360,13 +1364,13 @@ The morphism-level transfer argument is also proved on all k-Satake maps used he
 
 ### 7.3 Continuous equivariantization of the parity category
 
-For a discrete group Γ acting coherently on an additive category C, define the equivariantization of C by objects with maps u_γ:γE→E satisfying the cocycle law and morphisms commuting with every u_γ. For profinite Γ and the k-parity categories here require continuity on the finite coefficient/support data; formulate O-descent as a compatible adic system. A coherently Γ-equivariant functor induces a functor of these equivariantizations. For enhanced derived sheaves use homotopy-coherent descent before taking the desired parity subcategory: fixed objects of an ordinary derived homotopy category are not asserted to equal the equivariant derived category. (Feng24, §4.6.4, p.28, Feng24 line 1234.)
+For a discrete group Γ acting coherently on an additive category C, define the equivariantization of C by objects E with isomorphisms u_γ:γE→E such that u₁ is the unit isomorphism 1E≅E of the action and u_γδ=u_γ∘γ(u_δ) after inserting the action's composition isomorphism γ(δE)≅(γδ)E, and by morphisms commuting with every u_γ. For profinite Γ and the k-parity categories here require continuity on the finite coefficient/support data; formulate O-descent as a compatible adic system. A coherently Γ-equivariant functor induces a functor of these equivariantizations. For enhanced derived sheaves use homotopy-coherent descent before taking the desired parity subcategory: fixed objects of an ordinary derived homotopy category are not asserted to equal the equivariant derived category. (Feng24, §4.6.4, p.28, Feng24 line 1234.)
 
 The API:
 
 - The forgetful functor retains an object of C and exposes each descent map.
 
-- The structure map for γδ is u_γ∘γ(u_δ), using the coherence isomorphisms of the action.
+- The structure map for γδ is u_γ∘γ(u_δ), using the composition isomorphisms of the action, and u₁ is its unit isomorphism; every u_γ is invertible.
 
 - A coherently Γ-equivariant functor sends descent data to descent data and intertwining maps to intertwining maps.
 
@@ -1376,7 +1380,7 @@ The API:
 
 **Checks.**
 
-- For Γ trivial, equivariantization recovers C.
+- For Γ trivial, equivariantization recovers C: u₁ must be the identity of E. The pair (k,0) on finite-dimensional k-vector spaces satisfies the multiplication law u₁=u₁∘u₁ but violates the unit law and is not invertible, so it is excluded; without the unit law the equivariantization would contain such extra objects.
 
 - For a trivial action on finite-dimensional k-vector spaces and finite Γ, equivariant objects are actual k[Γ]-representations and intertwining maps.
 
@@ -1431,7 +1435,7 @@ Prove this natural comparison on every ordinary normalized integral source map. 
 
 **Checks.**
 
-- Use an ordinary source morphism f, expand Psm Nm(f) in the graded Hom formula, and check the proposed square term by term. Arbitrary positive-index Tate endomorphisms are an explicit failing control; proving all norm-generated cases is the integral norm-image theorem.
+- At p=3 take H=G_m, the point object O² at the coweight (0,0,0) of `Gr_(H^3)`, and the endomorphism f with matrix [[1,[β]],[0,1]], where [β] is the Teichmüller lift of the F₂₇ witness β of §5.6. In f^⊗3 the eight tensor words are the two fixed words e₁e₁e₁, e₂e₂e₂ and two free orbits of size three; f^⊗3(e₂e₂e₂)=[β]³e₁e₁e₁+[β]²N(e₁e₁e₂)+[β]N(e₁e₂e₂)+e₂e₂e₂, and the two orbit terms lie in the norm image. In the bases of the fixed words, F_T D(f) and I_k L D(f) are both [[1,β+1],[0,1]] over k, since β³=β+1; a comparison identifying D(f) with the reduction [[1,β],[0,1]] of f fails the square. At a point all Tate Hom has index zero, so this Check tests the fixed-word computation and the Frobenius power, while the next Check tests the restriction of the domain.
 
 - norm scalar 2³ mod 3=2 on both sides; arbitrary h gives F_T(h)=h but I_k L(h)=0. Prove a separate natural square on the norm-generated domain.
 
@@ -1450,7 +1454,7 @@ Layers 2–6; EnhancedDerivedSheaves E3.4 coherent descent; ReductiveGroupsPartI
 
 ### 8.1 The Tate diagonal of a commutative algebra
 
-For a commutative F_p-algebra A, a prime p and a ring automorphism σ with σᵖ=1, define `fixedSubring` as the equalizer of σ and the identity. Define `cyclicTransfer` by Tr(a)=Σᵢ₌₀ᵖ⁻¹ σⁱ(a) and `cyclicNorm` by Nm(a)=Πᵢ₌₀ᵖ⁻¹ σⁱ(a). Define `transferIdeal` as the ideal in the fixed subring generated by transfer values, and prove that it is exactly the transfer image. Put T⁰(A)=A^σ/Tr(A). Prove `algebra_tate_diagonal`: there is a unique unital ring homomorphism Δ_p:A→T⁰(A) whose value at a is the class of Nm(a). Its F_p-linearity is automatic; if A is a k-algebra and σ is k-linear, Δ_p(λa)=λᵖΔ_p(a). This includes p=2 and the zero quotient. The underlying additive quotient is compared with the pinned module Tate group. (Feng24, Definition 5.14, p.42, Feng24 line 1863.)
+For a commutative ring A, a prime p and a ring automorphism σ with σᵖ=1, define `fixedSubring` as the equalizer of σ and the identity. Define `cyclicTransfer` by Tr(a)=Σᵢ₌₀ᵖ⁻¹ σⁱ(a) and `cyclicNorm` by Nm(a)=Πᵢ₌₀ᵖ⁻¹ σⁱ(a). Define `transferIdeal` as the ideal in the fixed subring generated by transfer values, and prove that it is exactly the transfer image. Put T⁰(A)=A^σ/Tr(A). Prove `algebra_tate_diagonal`: there is a unique unital ring homomorphism Δ_p:A→T⁰(A) whose value at a is the class of Nm(a). No characteristic hypothesis on A is imposed: p·b=Tr(b) for fixed b, so p lies in the transfer ideal and T⁰(A) is always an F_p-algebra. Feng24 states the definition for algebras in characteristic p; the orbit proof uses only primality of p and σᵖ=1. When A is an F_p-algebra the F_p-linearity of Δ_p is automatic; if A is a k-algebra and σ is k-linear, Δ_p(λa)=λᵖΔ_p(a). This includes p=2 and the zero quotient. The underlying additive quotient is compared with the pinned module Tate group. (Feng24, Definition 5.14, p.42, Feng24 line 1863.)
 
 The API:
 
@@ -1486,11 +1490,13 @@ The API:
 
 - Primality is essential for the stated orbit proof: for length four and an automorphism of order two on F₂[x,y] interchanging x,y, the four-term transfer is zero but Nm(x+y)−Nm(x)−Nm(y)=(x+y)⁴≠0. Length four is outside the theorem, even though four is zero in this ring.
 
+- No characteristic hypothesis on the source: for A=ℤ, σ=id and p=2 the fixed subring is ℤ, the transfer ideal is 2ℤ and Δ₂(a)=a² mod 2=a mod 2 is reduction. For A=ℤ[i] with complex conjugation and p=2 the fixed subring is ℤ, Tr(a+bi)=2a, the transfer ideal is 2ℤ, and Δ₂(a+bi)=a²+b² mod 2=a+b mod 2 is the ring homomorphism ℤ[i]→F₂ with kernel (1+i). A hypothesis p·1=0 in A would exclude both, although the theorem holds.
+
 
 
 ### 8.2 Unique extension of a Tate character
 
-For a commutative F_p-algebra A and σᵖ=1, let κ be a perfect field of characteristic p and A′ a unital subring of A^σ containing every norm and transfer. Prove `tate_character_extension`: each unital ring homomorphism χ:A′→κ annihilating transfers has exactly one unital ring-homomorphism extension χ̃:A→κ. Its value is Frob_κ⁻¹(χ(Nm(a))). If A is a k-algebra, σ is k-linear, κ=k and χ is k-linear, the extension is k-linear. For A′=A^σ this gives the restriction bijection between σ-invariant k-algebra characters of A and k-algebra characters of T⁰(A). (Feng24, Lemma 5.15 and display (5.20), p.42, Feng24 line 1869; TV16, §3.4, display (3.4.1), pp.11–12, TV16 line 512.)
+For a commutative ring A and σᵖ=1, with p prime, let κ be a perfect field of characteristic p and A′ a unital subring of A^σ containing every norm and transfer. Prove `tate_character_extension`: each unital ring homomorphism χ:A′→κ annihilating transfers has exactly one unital ring-homomorphism extension χ̃:A→κ. Its value is Frob_κ⁻¹(χ(Nm(a))). As in §8.1 no characteristic hypothesis on A is needed: χ kills Tr(1)=p·1 in any case. If A is a k-algebra, σ is k-linear, κ=k and χ is k-linear, the extension is k-linear. For A′=A^σ this gives the restriction bijection between σ-invariant k-algebra characters of A and k-algebra characters of T⁰(A). (Feng24, Lemma 5.15 and display (5.20), p.42, Feng24 line 1869; TV16, §3.4, display (3.4.1), pp.11–12, TV16 line 512.)
 
 *Proof route.* The additive-defect transfer formula and multiplicativity prove the displayed map is a ring homomorphism. For a′∈A′ use Nm(a′)=a′^p to check extension. Any other extension annihilates all transfers, so the sum of its p cyclic translates is zero. If its orbit had length p these would be distinct multiplicative characters, contradicting the existing linear-independence theorem; hence it is σ-invariant. Taking the p-th power then determines its value uniquely by perfectness.
 
@@ -1503,6 +1509,8 @@ For a commutative F_p-algebra A and σᵖ=1, let κ be a perfect field of charac
 - For A=k^p with cyclic rotation, the p coordinate characters are permuted freely, so no character is σ-invariant, matching T^0(A)=0 having no characters; for trivial σ the bijection is the identity of Hom(A,k).
 
 - Frob⁻¹χ(aᵖ)=χ(a); the cyclic product has 1 in transfer so no character exists. Without perfectness take trivial σ on A=F_p[x], A′=F_p[xᵖ] and κ=F_p(t): χ(xᵖ)=t admits no extension since t∉κᵖ. Keep perfectness and all containment/annihilation hypotheses explicit.
+
+- For A=ℤ, σ=id, p=2, A′=ℤ, κ=F₂ and χ reduction mod 2, χ kills every transfer 2a and its unique extension is χ itself, given by Frob⁻¹(χ(a²))=χ(a); the source ring has characteristic zero.
 
 
 ### 8.3 Frobenius twist and linearization of algebras
@@ -1571,10 +1579,11 @@ Every statement is expressed in the roadmap's words. Line locators refer to the 
 
 - **Feng24.** Tony Feng, with Appendix A jointly with Gus Lonergan, [*Smith theory and cyclic base change functoriality*](https://doi.org/10.1017/fmp.2023.32), Forum of Mathematics, Pi 12 (2024), e1, pp.1–66. Version of record; §§3–4, pp.13–30, Definition 5.14 and Lemma 5.15, p.42, Construction 5.17, p.43, Appendix A, pp.56–61. The source arguments are used with the hypotheses and map-level comparisons stated above.
 - **LL21.** Spencer Leslie and Gus Lonergan, [*Parity sheaves and Smith theory*](https://arxiv.org/abs/1708.08174v4), J. reine angew. Math. 777 (2021). Locators use arXiv v4: Corollary 4.5.2, p.14; Proposition 4.6.1, pp.14–15; §§5.5–5.6, pp.21–25.
-- **JMW14.** Daniel Juteau, Carl Mautner and Geordie Williamson, [*Parity sheaves*](https://arxiv.org/abs/0906.2994v3), JAMS 27 (2014), pp.1169–1212. Locators use arXiv v3: §2.1 and Definitions 2.3–2.4, pp.4–5; Theorem 2.12 and Definition 2.14, pp.7–8; Proposition 2.39 and (2.13), pp.17–18.
-- **JMW16.** The same authors, [*Parity sheaves and tilting modules*](https://arxiv.org/abs/1403.1647v1), Ann. Sci. ENS 49 (2016), pp.257–275. Locators use arXiv v1: Theorems 1.1–1.5, pp.1–2; Theorems 5.1 and 5.3, p.16.
-- **MR18.** Carl Mautner and Simon Riche, [*Exotic tilting sheaves, parity sheaves on affine Grassmannians, and the Mirković–Vilonen conjecture*](https://arxiv.org/abs/1501.07369v3), JEMS 20 (2018), pp.2259–2332. Locators use arXiv v3: Theorem 1.1, p.3; Corollary 1.6, p.6; §6.5, p.60.
-- **MV07.** Ivan Mirković and Kari Vilonen, [*Geometric Langlands duality and representations of algebraic groups over commutative rings*](https://arxiv.org/abs/math/0401222v5), Ann. of Math. 166 (2007), pp.95–143. Locators use arXiv v5: Theorem 3.2 and (3.6), p.9; Theorems 3.5–3.6 and Corollary 3.7, pp.10–12; Propositions 6.3–6.4, pp.20–21; Proposition 11.1, p.31; Theorem 12.1, p.33; Proposition 13.1 and Corollary 13.2, pp.39–40; Theorem 14.1, p.40.
-- **Stacks.** The Stacks Project Authors, [*The Stacks Project*](https://stacks.math.columbia.edu/): Algebra §10.101, Tag 051E, especially Lemmas 10.101.1–10.101.3, Stacks line 11331; Cohomology on Sites Lemmas 21.46.3 and 21.46.10, Tags 08G1 and 0DJJ, Stacks lines 5207 and 5300; More on Algebra Definition 15.70.1, Tag 0A5N, Stacks line 8130; Fields Lemma 9.13.1, Tag 0CKL in §0CKK, Stacks line 728.
+- **JMW14.** Daniel Juteau, Carl Mautner and Geordie Williamson, [*Parity sheaves*](https://arxiv.org/abs/0906.2994v3), JAMS 27 (2014), pp.1169–1212. Locators use arXiv v3: §2.1 and Definitions 2.3–2.4, pp.4–5; Theorem 2.12 and Definition 2.14, pp.7–8; Proposition 2.34, p.15; Proposition 2.39 and (2.13), pp.17–18; §4.1, p.29, and Proposition 4.10, p.33.
+- **JMW16.** The same authors, [*Parity sheaves and tilting modules*](https://arxiv.org/abs/1403.1647v1), Ann. Sci. ENS 49 (2016), pp.257–275. Locators use arXiv v1: Theorems 1.1–1.5, pp.1–2; Lemma 3.6, p.10; Theorems 5.1 and 5.3, p.16.
+- **MR18.** Carl Mautner and Simon Riche, [*Exotic tilting sheaves, parity sheaves on affine Grassmannians, and the Mirković–Vilonen conjecture*](https://arxiv.org/abs/1501.07369v3), JEMS 20 (2018), pp.2259–2332. Locators use arXiv v3: §1.1, p.2; Theorem 1.1, p.3; Corollary 1.6, p.6; §6.5 and Lemma 6.6, p.60; §6.6, p.61.
+- **MV07.** Ivan Mirković and Kari Vilonen, [*Geometric Langlands duality and representations of algebraic groups over commutative rings*](https://arxiv.org/abs/math/0401222v5), Ann. of Math. 166 (2007), pp.95–143. Locators use arXiv v5: Proposition 2.1, p.6; Theorem 3.2 and (3.6), p.9; Theorems 3.5–3.6 and Corollary 3.7, pp.10–12; Propositions 6.3–6.4, pp.20–21; Proposition 11.1, p.31; Theorem 12.1, p.33; Proposition 13.1 and Corollary 13.2, pp.39–40; Theorem 14.1, p.40.
+- **Stacks.** The Stacks Project Authors, [*The Stacks Project*](https://stacks.math.columbia.edu/): Algebra §10.101, Tag 051E, especially Lemmas 10.101.1–10.101.3, Stacks line 11331, with Lemma 10.101.3 (Tag 051H) at Stacks line 11356; Cohomology on Sites Lemmas 21.46.3 and 21.46.10, Tags 08G1 and 0DJJ, Stacks lines 5207 and 5300; More on Algebra Definition 15.70.1, Tag 0A5N, Stacks line 8130; Fields Lemma 9.13.1, Tag 0CKL in §0CKK, Stacks line 728.
+- **Don93.** Stephen Donkin, [*On tilting modules for algebraic groups*](https://doi.org/10.1007/bf02571640), Math. Z. 212 (1993). Cited by its locator, Theorem 1.1, for existence and classification of indecomposable tilting modules, as recalled in JMW16 Theorem 1.1.
 - **Braden03.** Tom Braden, [*Hyperbolic localization of intersection cohomology*](https://arxiv.org/abs/math/0202251v5), Transformation Groups 8 (2003), pp.209–216. Locators use arXiv v5: Theorem 1, p.2, and Lemma 6, p.5; weak equivariance and normality are retained.
 - **TV16.** David Treumann and Akshay Venkatesh, [*Functoriality, Smith theory, and the Brauer homomorphism*](https://arxiv.org/abs/1407.2346v1), Ann. of Math. 183 (2016), pp.177–228. Locators use arXiv v1: §2.1, p.5, and §3.4, (3.4.1), pp.11–12.
