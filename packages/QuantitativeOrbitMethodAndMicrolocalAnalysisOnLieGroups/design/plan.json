@@ -4735,11 +4735,19 @@
       "slug": "local-plancherel",
       "supplier": "AutomorphicSpectralTheory",
       "section": "Layers 0–2: local spectral extension (Plancherel formula for real and p-adic reductive groups)",
-      "needs": "for a reductive group over ℝ, ℂ or a nonarchimedean local field of characteristic zero with a fixed Haar measure, the Plancherel measure on the tempered dual with `f(1) = ∫ tr π(f) dμ(π)` for every smooth compactly supported f; at p-adic places, on each component of the tempered dual induced from a square-integrable datum, μ is a bounded continuous density with respect to Haar measure on the compact torus of unitary unramified twists, divided by the finite stabilizer.",
+      "needs": "for a reductive group over ℝ, ℂ or a nonarchimedean local field of characteristic zero with a fixed Haar measure, the Plancherel measure μ on the tempered dual with `f(1) = ∫ tr π(f) dμ(π)` for every smooth compactly supported f.",
       "neededBy": [
         "4.2",
         "4.4",
-        "5.10",
+        "5.10"
+      ]
+    },
+    {
+      "slug": "padic-plancherel-density",
+      "supplier": "AutomorphicSpectralTheory",
+      "section": "Layers 0–2: local spectral extension (Plancherel formula for real and p-adic reductive groups)",
+      "needs": "for a reductive group over a nonarchimedean local field of characteristic zero with a fixed Haar measure, on each component of the tempered dual induced from a square-integrable datum, the Plancherel measure of gap:local-plancherel is a bounded continuous density with respect to Haar measure on the compact torus of unitary unramified twists, divided by the finite stabilizer.",
+      "neededBy": [
         "7.7"
       ]
     },
@@ -4756,59 +4764,145 @@
       "slug": "tempered-xi-bounds",
       "supplier": "AutomorphicSpectralTheory",
       "section": "Layers 0–2: local estimates extension (Ξ-function, tempered coefficient bounds, KAK integration)",
-      "needs": "for a real reductive group with maximal compact K, Harish-Chandra's function Ξ, the Cowling–Haagerup–Howe bound `|⟨π(g)u, v⟩| ≤ Ξ(g) (dim K·u)^{1/2} (dim K·v)^{1/2} ‖u‖ ‖v‖` for K-finite vectors of every tempered unitary π, and the KAK integration formula with its Haar Jacobian and polynomial volume growth `vol{g : ‖g‖ ≤ R} ≪ R^A` for an algebraic norm.",
+      "needs": "for a real reductive group with maximal compact K, Harish-Chandra's function Ξ and the Cowling–Haagerup–Howe bound `|⟨π(g)u, v⟩| ≤ Ξ(g) (dim K·u)^{1/2} (dim K·v)^{1/2} ‖u‖ ‖v‖` for K-finite vectors u, v of every tempered irreducible unitary π.",
       "neededBy": [
         "4.1",
-        "4.3",
+        "4.3"
+      ]
+    },
+    {
+      "slug": "kak-integration-volume-growth",
+      "supplier": "AutomorphicSpectralTheory",
+      "section": "Layers 0–2: local estimates extension (Ξ-function, tempered coefficient bounds, KAK integration)",
+      "needs": "for a real reductive group with Cartan decomposition G = KAK, the KAK integration formula with its Haar Jacobian, and polynomial volume growth `vol{g : ‖g‖ ≤ R} ≪ R^A` for an algebraic norm `‖g‖ = max(‖R(g)‖, ‖R(g^{−1})‖)` of a faithful algebraic representation R.",
+      "neededBy": [
         "5.8"
       ]
     },
     {
-      "slug": "compact-quotient-spectral-estimates",
+      "slug": "kernel-spectral-expansion",
       "supplier": "AutomorphicSpectralTheory",
       "section": "4.7 Compact quotient discrete spectral specialization",
-      "needs": "for the compact quotients of §4.7 at a fixed central quotient and fixed finite level, the absolutely convergent spectral expansion of every smooth two-variable kernel in all derivatives, polynomial counting `#{π : |λ_π| ≤ x} ≪ (1 + x)^A` with multiplicity, and Sobolev estimates for restriction of smooth automorphic functions to closed subgroup orbits.",
+      "needs": "for the compact quotients of §4.7 at a fixed central quotient and fixed finite level, every smooth two-variable kernel on the quotient has an absolutely convergent spectral expansion over the irreducible constituents of the discrete spectrum, convergent with all derivatives.",
       "neededBy": [
         "9.2"
       ]
     },
     {
-      "slug": "unitary-exponents-minimal-ktypes",
+      "slug": "polynomial-eigenvalue-count",
+      "supplier": "AutomorphicSpectralTheory",
+      "section": "4.7 Compact quotient discrete spectral specialization",
+      "needs": "for the compact quotients of §4.7 at a fixed central quotient and fixed finite level, `#{π : |λ_π| ≤ x} ≪ (1 + x)^A` for the irreducible constituents π counted with multiplicity, A depending on the group and the level.",
+      "neededBy": [
+        "9.2"
+      ]
+    },
+    {
+      "slug": "orbit-restriction-sobolev",
+      "supplier": "AutomorphicSpectralTheory",
+      "section": "4.7 Compact quotient discrete spectral specialization",
+      "needs": "for the compact quotients of §4.7 and a closed subgroup H whose orbit `[H]` in the quotient is closed, the restriction of smooth automorphic functions to `[H]` is bounded from a fixed Sobolev norm on the quotient to `L²([H])`, compatibly with differentiation along H.",
+      "neededBy": [
+        "9.2"
+      ]
+    },
+    {
+      "slug": "unitary-exponent-bound",
       "supplier": "AutomorphicFormsOnReductiveGroups",
       "section": "2.4 Temperedness, discrete series and Langlands quotients",
-      "needs": "for a real reductive group G, (i) a bound, depending only on G, on the real parts of the Langlands exponents of all irreducible unitary representations, and (ii) Vogan's minimal K-type estimate: every irreducible unitary π has a K-type τ with `|τ|² ≤ C(1 + |λ_π|²)` for the Casimir norm, C depending only on G.",
+      "needs": "for a real reductive group G, a bound, depending only on G, on the real parts of the Langlands exponents of all irreducible unitary representations.",
       "neededBy": [
-        "2.3",
+        "2.3"
+      ]
+    },
+    {
+      "slug": "vogan-minimal-ktype",
+      "supplier": "AutomorphicFormsOnReductiveGroups",
+      "section": "2.4 Temperedness, discrete series and Langlands quotients",
+      "needs": "for a real reductive group G with maximal compact K, Vogan's minimal K-type estimate: every irreducible unitary π has a K-type τ with `|τ|² ≤ C(1 + |λ_π|²)` for the Casimir norm, C depending only on G.",
+      "neededBy": [
         "2.4"
       ]
     },
     {
-      "slug": "orthogonal-ggp-inputs",
+      "slug": "orthogonal-multiplicity-one",
       "supplier": "GanGrossPrasadUnitaryGroups",
-      "section": "Scope and ownership (orthogonal endpoints of GanGrossPrasadUnitaryGroups, Part II): counterparts of §§2.6, 2.7, 3.3, 4.2 and 7.4",
-      "needs": "the counterparts of §§2.6, 2.7, 3.3, 4.2 and 7.4 for the special orthogonal pairs `SO(V_H) ⊂ SO(V)` of codimension one over every local field of characteristic zero and every number field (multiplicity one, absolute convergence of tempered coefficients against `Ξ_G Ξ_H`, the local period form, and the global period identity), which its scope assigns to GanGrossPrasadUnitaryGroups, Part II.",
+      "section": "Scope and ownership (orthogonal endpoints of GanGrossPrasadUnitaryGroups, Part II): counterpart of §2.6",
+      "needs": "the counterpart of §2.6: over a local field of characteristic zero, for irreducible smooth representations π of G and σ of H (Casselman–Wallach at archimedean places), `dim Hom_H(π ⊗ σ̄, ℂ) ≤ 1`.",
+      "neededBy": [
+        "9.1"
+      ]
+    },
+    {
+      "slug": "orthogonal-xi-integrability",
+      "supplier": "GanGrossPrasadUnitaryGroups",
+      "section": "Scope and ownership (orthogonal endpoints of GanGrossPrasadUnitaryGroups, Part II): counterpart of §2.7",
+      "needs": "the counterpart of §2.7: over a local field of characteristic zero, `∫_H Ξ_G(h) Ξ_H(h) (1 + log‖h‖)^d dh < ∞` for every d ≥ 0, so that `∫_H ⟨π(h)v, v′⟩⟨σ(h)w, w′⟩ dh` converges absolutely for smooth vectors of tempered irreducible unitary π of G and σ of H.",
       "neededBy": [
         "4.5",
-        "6.3",
+        "6.3"
+      ]
+    },
+    {
+      "slug": "orthogonal-local-period-form",
+      "supplier": "GanGrossPrasadUnitaryGroups",
+      "section": "Scope and ownership (orthogonal endpoints of GanGrossPrasadUnitaryGroups, Part II): counterpart of §3.3",
+      "needs": "the counterpart of §3.3 in codimension one: over a local field of characteristic zero, for tempered irreducible unitary π of G and σ of H, the absolutely convergent integral `∫_H ⟨π(h)v, v′⟩⟨w, σ(h)w′⟩ dh` defines a continuous Hermitian form on `π^∞ ⊗ σ̄^∞`, invariant under H in each variable, which is nonzero exactly when `Hom_H(π ⊗ σ̄, ℂ) ≠ 0`.",
+      "neededBy": [
+        "4.5"
+      ]
+    },
+    {
+      "slug": "orthogonal-period-factorization",
+      "supplier": "GanGrossPrasadUnitaryGroups",
+      "section": "Scope and ownership (orthogonal endpoints of GanGrossPrasadUnitaryGroups, Part II): counterpart of §4.2",
+      "needs": "the counterpart of §4.2: over a number field, for irreducible cuspidal automorphic representations Π of G and Σ of H with restricted tensor factorizations and nonzero period `∫_{[H]} φ ψ̄`, the period factors as a nonzero constant times a product over places of local H-invariant functionals, through multiplicity one at every place.",
+      "neededBy": [
         "9.1"
+      ]
+    },
+    {
+      "slug": "induced-multiplicity-one",
+      "supplier": "GanGrossPrasadUnitaryGroups",
+      "section": "2.6 Multiplicity one in every relevant odd codimension",
+      "needs": "for codimension-one unitary and orthogonal pairs (G, H) over a p-adic field, a tempered irreducible π of G and a square-integrable representation τ of a Levi subgroup M = M_P of H, the full normalized induction `I = Ind_P^H τ` satisfies `dim Hom_H(π ⊗ Ī, ℂ) ≤ 1`, so each fibre of the inducing-datum map contains at most one π-distinguished tempered representation.",
+      "neededBy": [
+        "7.5"
+      ]
+    },
+    {
+      "slug": "distinction-upper-semicontinuity",
+      "supplier": "GanGrossPrasadUnitaryGroups",
+      "section": "2.6 Multiplicity one in every relevant odd codimension",
+      "needs": "for codimension-one unitary and orthogonal pairs over a p-adic field and fixed tempered π of G, `σ ↦ dim Hom_H(π ⊗ σ̄, ℂ)` is upper semicontinuous on each family of tempered representations of H normally induced from unitary unramified twists of one square-integrable datum.",
+      "neededBy": [
+        "7.5"
       ]
     },
     {
       "slug": "relative-character-positivity",
       "supplier": "GanGrossPrasadUnitaryGroups",
-      "section": "2.6 Multiplicity one in every relevant odd codimension; 3.3 Regularized tempered Bessel forms",
-      "needs": "for codimension-one unitary and orthogonal pairs over p-adic fields, multiplicity one for the full normalized induction of a square-integrable representation (so each fibre of the inducing-datum map contains at most one π-distinguished tempered representation), upper semicontinuity of the multiplicity in families of tempered representations, and nonvanishing on rank-one positive operators of the local relative character of every distinguished tempered representation, with its nonnegativity on positive operators.",
+      "section": "3.3 Regularized tempered Bessel forms",
+      "needs": "for codimension-one unitary and orthogonal pairs over a p-adic field and tempered irreducible unitary π of G and σ of H, the local relative character `H_σ` of §4.5 is nonnegative on positive operators, and nonzero on some rank-one positive operator whenever σ is π-distinguished.",
       "neededBy": [
         "4.5",
-        "7.5",
         "7.7"
+      ]
+    },
+    {
+      "slug": "local-spinor-images",
+      "supplier": "OrthogonalSpinGroups",
+      "section": "Layer 2: local topology, transvections, and local spinor norms (2F–2G, extended to every finite extension of ℚ_p)",
+      "needs": "for a nondegenerate quadratic space V of dimension at least 2 over a local field F_v of characteristic zero (a finite extension of ℚ_p, ℝ or ℂ), the image `θ_v(SO(V)(F_v)) ⊆ F_v^×/F_v^{×2}` of the spinor norm: all square classes when V is isotropic, or of dimension ≥ 3 over a nonarchimedean field; the norm group of `F_v(√(−disc V))` when dim V = 2; and the positive class alone when F_v = ℝ and V is definite.",
+      "neededBy": [
+        "8.7"
       ]
     },
     {
       "slug": "global-spinor-image",
       "supplier": "OrthogonalSpinGroups",
       "section": "Layer 3: localization and adelic points",
-      "needs": "for a nondegenerate quadratic space V over a number field F, the local spinor images `θ_v(SO(V)(F_v))` at every completion (every finite extension of ℚ_p, ℝ and ℂ) and, for dim V ≥ 3, Kneser's theorem that `θ(SO(V)(F))` consists of the classes of `c ∈ F^×` with `c ∈ θ_v(SO(V)(F_v))` for every place v.",
+      "needs": "for a nondegenerate quadratic space V of dimension at least 3 over a number field F, Kneser's theorem that `θ(SO(V)(F))` consists of the classes of `c ∈ F^×` with `c ∈ θ_v(SO(V)(F_v))` for every place v.",
       "neededBy": [
         "8.7"
       ]

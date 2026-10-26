@@ -6,9 +6,9 @@
 
 This roadmap owns: the representation-theoretic symbol and operator calculus (Sobolev scales indexed by all integers, commutator operator classes, symbol families with a semiclassical parameter, the quantization map and its star product, the order-zero bound and the rescaled composition calculus); the real infinitesimal quotient of the imaginary dual and the localization theorems for eigenfunctionals; normalized regular coadjoint multiorbits, their weak topology, Rossmann's character formula and the uniform orbit trace expansion; the representation-smooth refinement of the Schatten ideals; the uniform K-type, Plancherel–Sobolev and Ξ-integrable extensions of the Plancherel formula; local relative characters of GGP pairs and their Plancherel disintegration; stability, torsors and volume forms for the coadjoint action of a GGP subgroup; the stable relative-character expansion; positive inverse branching at archimedean and p-adic places; smooth operator states, semiclassical limit states and their equidistribution; and the truncated period identity with the weighted asymptotic formula. Every one of these is a statement about general Lie groups, real reductive groups or GGP pairs; no target is restricted to a particular group beyond what its source theorem states.
 
-It consumes, and does not plan again: the exponential map, adjoint actions, Baker–Campbell–Hausdorff, real forms and the Cartan/Iwasawa/KAK decompositions (RepresentationTheory/LieGroups Layers 0, 1, 3, 5, 7 and 9, realized at the pin by Tau Ceti `mulInvariantExp` and `lieExp`); PBW, the symmetrization isomorphism, the Casimir, the Weyl dimension formula and the Harish-Chandra and Chevalley isomorphisms (RepresentationTheory/LieHighestWeight Layers 3, 5, 6 and 7); normalized Haar measure, Peter–Weyl and characters of compact groups (RepresentationTheory/CompactGroups Layers 0, 5 and 6); Jacobson–Morozov and the regular nilpotent orbit over ℂ (NilpotentOrbits N1–N2); moment maps, the Kirillov–Kostant–Souriau form on coadjoint orbits and symplectic reduction (SymplecticGeometry/HamiltonianReduction R1–R3) and the Liouville measure (SymplecticGeometry/ConvexityToric T4); Schatten ideals (OperatorTheory/OperatorIdeals Parts B–C) and the Hilbert-space trace (AutomorphicSpectralTheory §0.9); densities and the coarea formula (DifferentialGeometry Layer 5, GeometricMeasureTheory G2); spinor norms and their local images (OrthogonalSpinGroups Layers 1–3). The Gårding space, the differentiated representation, essential self-adjointness of the Nelson operator `N = 1 − Σ dπ(X_i)²` and its power cores are NoncompactQuantumSymmetry M0; they are not stated again here. The countable almost-orthogonality (Cotlar–Stein) lemma and the Schwartz kernel theorem are PseudodifferentialOperators P5 and P3. Unbounded functional calculus is UnboundedOperators Part A. Admissible (𝔤,K)-modules, infinitesimal characters and the real Langlands classification are AutomorphicFormsOnReductiveGroups §§2.1–2.4. The smooth category, Hecke algebras, induction, Jacquet modules, the Bernstein centre, uniform admissibility and the tempered support theorem at p-adic places are SmoothRepresentationsOfLocalGroups SR.0–SR.3a; the unitary dual is SmoothRepresentationsOfLocalGroupsPartII SRU.0–SRU.2. Good compact open subgroups are ReductiveGroupsPartII RG2.3–RG2.4. Adelic measures, compactness of anisotropic quotients and strong approximation are AdelicAlgebraicGroups §§2–4. Ratner's measure classification, ergodic decomposition and Borel density are GeometryOfNumbersAndQuadraticArithmetic §4.2. Compact-quotient automorphic spectra are AutomorphicSpectralTheory §4.7. Local multiplicity one, tempered integrability, local relative forms and the global period identity for unitary pairs are GanGrossPrasadUnitaryGroups §§2.6, 2.7, 3.3, 4.2 and 7.4.
+It consumes, and does not plan again: the exponential map, adjoint actions, Baker–Campbell–Hausdorff, real forms and the Cartan/Iwasawa/KAK decompositions (RepresentationTheory/LieGroups Layers 0, 1, 3, 5, 7 and 9, realized at the pin by Tau Ceti `mulInvariantExp` and `lieExp`); PBW, the symmetrization isomorphism, the Casimir, the Weyl dimension formula and the Harish-Chandra and Chevalley isomorphisms (RepresentationTheory/LieHighestWeight Layers 3, 5, 6 and 7); normalized Haar measure, Peter–Weyl and characters of compact groups (RepresentationTheory/CompactGroups Layers 0, 5 and 6); Jacobson–Morozov and the regular nilpotent orbit over ℂ (NilpotentOrbits N1–N2); moment maps, the Kirillov–Kostant–Souriau form on coadjoint orbits and symplectic reduction (SymplecticGeometry/HamiltonianReduction R1–R3) and the Liouville measure (SymplecticGeometry/ConvexityToric T4); Schatten ideals (OperatorTheory/OperatorIdeals Parts B–C) and the Hilbert-space trace (AutomorphicSpectralTheory §0.9); densities and the coarea formula (DifferentialGeometry Layer 5, GeometricMeasureTheory G2); spinor norms and their local images (OrthogonalSpinGroups Layers 1–3). The Gårding space, the differentiated representation, essential self-adjointness of the Nelson operator `N = 1 − Σ dπ(X_i)²` and its power cores are NoncompactQuantumSymmetry M0; they are not stated again here. The countable almost-orthogonality (Cotlar–Stein) lemma and the Schwartz kernel theorem are PseudodifferentialOperators P5 and P3. Unbounded functional calculus is UnboundedOperators Part A. Admissible (𝔤,K)-modules, infinitesimal characters and the real Langlands classification are AutomorphicFormsOnReductiveGroups §§2.1–2.4. The smooth category, Hecke algebras, induction, Jacquet modules, the Bernstein centre, uniform admissibility and the tempered support theorem at p-adic places are SmoothRepresentationsOfLocalGroups SR.0–SR.3a; the unitary dual is SmoothRepresentationsOfLocalGroupsPartII SRU.0–SRU.2. Good compact open subgroups are ReductiveGroupsPartII RG2.3–RG2.4. Adelic measures, compactness of anisotropic quotients and strong approximation are AdelicAlgebraicGroups §§2–4. Ratner's measure classification, ergodic decomposition and Borel density are GeometryOfNumbersAndQuadraticArithmetic §4.2. Compact-quotient automorphic spectra are AutomorphicSpectralTheory §4.7. Local multiplicity one, tempered integrability, local relative forms and the factorization of global periods for unitary pairs are GanGrossPrasadUnitaryGroups §§2.6, 2.7, 3.3 and 4.2.
 
-The following inputs are stated by no roadmap at the pins or heads read here and are requested from their natural owners as supplier gaps (see the contracts): the real and p-adic Plancherel formulas, Harish-Chandra's distribution characters, the Cowling–Haagerup–Howe bound with the Ξ-function and the Cartan integration formula (AutomorphicSpectralTheory); uniform exponents and minimal K-types of unitary representations (AutomorphicFormsOnReductiveGroups); the smooth spectral estimates on compact automorphic quotients (AutomorphicSpectralTheory); the countable strong-convergence form of almost orthogonality (PseudodifferentialOperators); the orthogonal GGP inputs and the positivity, strong multiplicity one and semicontinuity of local relative characters (GanGrossPrasadUnitaryGroups, whose Part II owns the orthogonal endpoints); and Kneser's global spinor image together with local spinor images over all completions (OrthogonalSpinGroups).
+The following inputs are stated by no roadmap at the pins or heads read here and are requested from their natural owners as supplier gaps (see the contracts): the real and p-adic Plancherel formulas, Harish-Chandra's distribution characters, the Cowling–Haagerup–Howe bound with the Ξ-function and the Cartan integration formula (AutomorphicSpectralTheory); uniform exponents and minimal K-types of unitary representations (AutomorphicFormsOnReductiveGroups); the kernel expansion, polynomial eigenvalue count and restriction Sobolev bound on compact automorphic quotients (AutomorphicSpectralTheory); the countable strong-convergence form of almost orthogonality (PseudodifferentialOperators); the orthogonal counterparts of local multiplicity one, Ξ-integrability, local period forms and period factorization, and the positivity, strong multiplicity one and semicontinuity of local relative characters (GanGrossPrasadUnitaryGroups, whose Part II owns the orthogonal endpoints); and Kneser's global spinor image together with local spinor images over all completions (OrthogonalSpinGroups).
 
 The normalized unweighted asymptotic formula of the source's §31 (Theorem 31.11, dividing by the family size and passing to central L-values) is QuantitativeOrbitMethodAndMicrolocalAnalysisOnLieGroups, Part II; it begins where Layer 9 here ends, from the smoothly weighted formula of §9.5. The analytic GGP period identities themselves, Ichino–Ikeda normalizations and the L-function theory are not planned here.
 
@@ -46,13 +46,14 @@ A contract marked `gap:` is mathematics the named supplier must provide; it is n
 - `RealRMK.integral_rieszMeasure` (`Mathlib/MeasureTheory/Integral/RieszMarkovKakutani/Real.lean`): a positive linear functional on compactly supported continuous real functions on a locally compact Hausdorff space is integration against its Riesz measure. Used in §8.3.
 - `MeasureTheory.norm_integral_le_integral_norm` (`Mathlib/MeasureTheory/Integral/Bochner/Basic.lean`): the Bochner norm bound, giving the L¹ estimate of §0.5.
 - `MeasureTheory.Measure.IsHaarMeasure` and `MeasureTheory.Measure.IsMulRightInvariant`: unimodularity of G is the existence of a right-invariant Haar measure.
-- `MvPolynomial.zeroLocus` (`Mathlib/RingTheory/Nullstellensatz.lean`), `Matrix.charpoly`, `Matrix.fromBlocks`, `Matrix.toBlocks₁₁`, `Matrix.GeneralLinearGroup`, `IsCoprime` and `Polynomial.divByMonic`: the carriers of the matrix models of §§5.2–5.3. Mathlib's `Matrix.specialOrthogonalGroup` is defined through `star`, which over ℂ is complex conjugation and gives the special unitary group; the transpose special orthogonal group of §5.2 is therefore `specialOrthogonalMatrices`.
+- `MvPolynomial.zeroLocus` (`Mathlib/RingTheory/Nullstellensatz.lean`), `Matrix.charpoly`, `Matrix.fromBlocks`, `Matrix.toBlocks₁₁`, `Matrix.GeneralLinearGroup`, `IsCoprime` and `Polynomial.divByMonic`: the carriers of the matrix models of §§5.2–5.3.
+- `Matrix.specialOrthogonalGroup` with `Matrix.mem_specialOrthogonalGroup_iff` and `Matrix.mem_orthogonalGroup_iff'` (`Mathlib/LinearAlgebra/UnitaryGroup.lean`): for any commutative ring R, the submonoid of square matrices h with `hᵀh = 1` and det h = 1. It is defined through the trivial star `starRingOfComm`, not through the ring's own star, so over ℂ it is SO_n(ℂ) and not the special unitary group; its docstring records that it is the intended group only when 2 is invertible, which holds in characteristic zero. It is the group H of the orthogonal standard model of §5.2.
 
 ### From Tau Ceti
 
 - `mulInvariantExp` (`TauCeti/Geometry/Lie/Exponential/Basic.lean`): the exponential of a finite-dimensional real Lie group on the tangent space at 1, the time-one value of the invariant one-parameter subgroup, together with `lieExp` on left-invariant derivations and the one-parameter subgroup laws. It needs the `C³` regularity supplied by `LieGroup.minSmoothnessThree` (`TauCeti/Geometry/Lie/Basic.lean`), a local instance in Suggested.lean.
 - `TauCeti.ContRepresentation.IsUnitary` (`TauCeti/RepresentationTheory/Continuous/Unitary/Basic.lean`): every operator of the representation preserves the inner product.
-- `CliffordAlgebra.spinorNorm` and `CliffordAlgebra.range_spinToSpecialOrthogonal_eq_ker_spinorNorm` (`TauCeti/LinearAlgebra/CliffordAlgebra/Spin/SpinorNorm/Basic.lean`): the spinor norm `SO(Q) → K^×/K^{×2}` of a nondegenerate quadratic form over a field, and the identification of the image of Spin with its kernel. Used in §8.7.
+- `CliffordAlgebra.spinorNorm` and `CliffordAlgebra.range_spinToSpecialOrthogonal_eq_ker_spinorNorm` (`TauCeti/LinearAlgebra/CliffordAlgebra/Spin/SpinorNorm/Basic.lean`): the spinor norm `SO(Q) → K^×/K^{×2}` (valued in `Multiplicative (SquareClassGroup K)`) of a nondegenerate quadratic form Q on a finite-dimensional vector space V over a field K in which 2 is invertible (`[FiniteDimensional K V] [Invertible (2 : K)]`, `hQ : Q.Nondegenerate`), and the identification of the image of Spin with its kernel. Used in §8.7.
 - The quadratic-form Witt extension and cancellation theorems (`TauCeti/LinearAlgebra/QuadraticForm/Witt/`), used in §5.3 for real points of orthogonal fibres.
 
 ### From TauCetiRoadmap.RepresentationTheory.LieGroups
@@ -87,7 +88,9 @@ DifferentialGeometry Layer 5 (integration of top forms, 5.2, and densities, 5.5)
 
 Layer 1 (1D the spinor norm; 1E the image of Spin is the spinor kernel), Layer 2 (2F the local spinor-image table over ℚ_p, including the binary anisotropic row with image the norm subgroup of index 2; 2G the real place, trivial image for definite forms and all square classes for indefinite ones; 2H localization) and Layer 3 (3C–3F local and adelic spinor norms).
 
-What OrthogonalSpinGroups must provide (gap:global-spinor-image): for a nondegenerate quadratic space V over a number field F, the local spinor images `θ_v(SO(V)(F_v))` at every completion (every finite extension of ℚ_p, ℝ and ℂ) and, for dim V ≥ 3, Kneser's theorem that `θ(SO(V)(F))` consists of the classes of `c ∈ F^×` with `c ∈ θ_v(SO(V)(F_v))` for every place v.
+What OrthogonalSpinGroups must provide (gap:local-spinor-images): for a nondegenerate quadratic space V of dimension at least 2 over a local field F_v of characteristic zero (a finite extension of ℚ_p, ℝ or ℂ), the image `θ_v(SO(V)(F_v)) ⊆ F_v^×/F_v^{×2}` of the spinor norm: all square classes when V is isotropic, or of dimension ≥ 3 over a nonarchimedean field; the norm group of `F_v(√(−disc V))` when dim V = 2; and the positive class alone when F_v = ℝ and V is definite.
+
+What OrthogonalSpinGroups must provide (gap:global-spinor-image): for a nondegenerate quadratic space V of dimension at least 3 over a number field F, Kneser's theorem that `θ(SO(V)(F))` consists of the classes of `c ∈ F^×` with `c ∈ θ_v(SO(V)(F_v))` for every place v.
 
 ### From TauCetiRoadmap.NoncompactQuantumSymmetry
 
@@ -111,19 +114,29 @@ What PseudodifferentialOperators must provide (gap:cotlar-stein-strong): for a c
 
 §2.1 (compact-finite vectors, admissible and Harish-Chandra modules), §2.2 (infinitesimal characters: the centre acts through the Harish-Chandra isomorphism with ρ-shift, and irreducible unitary representations have admissible Harish-Chandra modules with `dim Hom_K(τ, π) ≤ dim τ` on connected linear groups, proved in §2.3), §2.4 (temperedness, discrete series and the Langlands classification) and §2.7 (smooth Fréchet globalizations and Sobolev seminorms).
 
-What AutomorphicFormsOnReductiveGroups must provide (gap:unitary-exponents-minimal-ktypes): for a real reductive group G, (i) a bound, depending only on G, on the real parts of the Langlands exponents of all irreducible unitary representations, and (ii) Vogan's minimal K-type estimate: every irreducible unitary π has a K-type τ with `|τ|² ≤ C(1 + |λ_π|²)` for the Casimir norm, C depending only on G.
+What AutomorphicFormsOnReductiveGroups must provide (gap:unitary-exponent-bound): for a real reductive group G, a bound, depending only on G, on the real parts of the Langlands exponents of all irreducible unitary representations.
+
+What AutomorphicFormsOnReductiveGroups must provide (gap:vogan-minimal-ktype): for a real reductive group G with maximal compact K, Vogan's minimal K-type estimate: every irreducible unitary π has a K-type τ with `|τ|² ≤ C(1 + |λ_π|²)` for the Casimir norm, C depending only on G.
 
 ### From TauCetiRoadmap.AutomorphicSpectralTheory
 
 §0.9 (the trace on trace-class operators, cyclicity and `‖BC‖₁ ≤ ‖B‖_HS ‖C‖_HS`), §0.13 (the nuclear LF kernel theorem), §0.14 (vector-valued Schwartz spaces), §4.5 (finite multiplicity of the discrete spectrum) and §4.7 (for a cocompact lattice, `L²(Γ\G)` is a Hilbert direct sum of irreducibles with finite multiplicities and smooth compactly supported convolution operators are trace class with smooth kernels).
 
-What AutomorphicSpectralTheory must provide (gap:local-plancherel): for a reductive group over ℝ, ℂ or a nonarchimedean local field of characteristic zero with a fixed Haar measure, the Plancherel measure on the tempered dual with `f(1) = ∫ tr π(f) dμ(π)` for every smooth compactly supported f; at p-adic places, on each component of the tempered dual induced from a square-integrable datum, μ is a bounded continuous density with respect to Haar measure on the compact torus of unitary unramified twists, divided by the finite stabilizer.
+What AutomorphicSpectralTheory must provide (gap:local-plancherel): for a reductive group over ℝ, ℂ or a nonarchimedean local field of characteristic zero with a fixed Haar measure, the Plancherel measure μ on the tempered dual with `f(1) = ∫ tr π(f) dμ(π)` for every smooth compactly supported f.
+
+What AutomorphicSpectralTheory must provide (gap:padic-plancherel-density): for a reductive group over a nonarchimedean local field of characteristic zero with a fixed Haar measure, on each component of the tempered dual induced from a square-integrable datum, the Plancherel measure of gap:local-plancherel is a bounded continuous density with respect to Haar measure on the compact torus of unitary unramified twists, divided by the finite stabilizer.
 
 What AutomorphicSpectralTheory must provide (gap:harish-chandra-characters): for an irreducible admissible representation π of a real reductive group, `π(f)` is trace class for smooth compactly supported f and `tr π(f) = ∫ θ_π f` for a locally integrable conjugation-invariant function θ_π that is real analytic on the regular semisimple set.
 
-What AutomorphicSpectralTheory must provide (gap:tempered-xi-bounds): for a real reductive group with maximal compact K, Harish-Chandra's function Ξ, the Cowling–Haagerup–Howe bound `|⟨π(g)u, v⟩| ≤ Ξ(g) (dim K·u)^{1/2} (dim K·v)^{1/2} ‖u‖ ‖v‖` for K-finite vectors of every tempered unitary π, and the KAK integration formula with its Haar Jacobian and polynomial volume growth `vol{g : ‖g‖ ≤ R} ≪ R^A` for an algebraic norm.
+What AutomorphicSpectralTheory must provide (gap:tempered-xi-bounds): for a real reductive group with maximal compact K, Harish-Chandra's function Ξ and the Cowling–Haagerup–Howe bound `|⟨π(g)u, v⟩| ≤ Ξ(g) (dim K·u)^{1/2} (dim K·v)^{1/2} ‖u‖ ‖v‖` for K-finite vectors u, v of every tempered irreducible unitary π.
 
-What AutomorphicSpectralTheory must provide (gap:compact-quotient-spectral-estimates): for the compact quotients of §4.7 at a fixed central quotient and fixed finite level, the absolutely convergent spectral expansion of every smooth two-variable kernel in all derivatives, polynomial counting `#{π : |λ_π| ≤ x} ≪ (1 + x)^A` with multiplicity, and Sobolev estimates for restriction of smooth automorphic functions to closed subgroup orbits.
+What AutomorphicSpectralTheory must provide (gap:kak-integration-volume-growth): for a real reductive group with Cartan decomposition G = KAK, the KAK integration formula with its Haar Jacobian, and polynomial volume growth `vol{g : ‖g‖ ≤ R} ≪ R^A` for an algebraic norm `‖g‖ = max(‖R(g)‖, ‖R(g^{−1})‖)` of a faithful algebraic representation R.
+
+What AutomorphicSpectralTheory must provide (gap:kernel-spectral-expansion): for the compact quotients of §4.7 at a fixed central quotient and fixed finite level, every smooth two-variable kernel on the quotient has an absolutely convergent spectral expansion over the irreducible constituents of the discrete spectrum, convergent with all derivatives.
+
+What AutomorphicSpectralTheory must provide (gap:polynomial-eigenvalue-count): for the compact quotients of §4.7 at a fixed central quotient and fixed finite level, `#{π : |λ_π| ≤ x} ≪ (1 + x)^A` for the irreducible constituents π counted with multiplicity, A depending on the group and the level.
+
+What AutomorphicSpectralTheory must provide (gap:orbit-restriction-sobolev): for the compact quotients of §4.7 and a closed subgroup H whose orbit `[H]` in the quotient is closed, the restriction of smooth automorphic functions to `[H]` is bounded from a fixed Sobolev norm on the quotient to `L²([H])`, compatibly with differentiation along H.
 
 ### From TauCetiRoadmap.SmoothRepresentationsOfLocalGroups
 
@@ -147,11 +160,23 @@ RG2.3.6 (Moy–Prasad subgroups `G_{x,r}`, r > 0, normal in `G_{x,0}`, pro-p and
 
 ### From TauCetiRoadmap.GanGrossPrasadUnitaryGroups
 
-§2.6 (local multiplicity one for unitary pairs), §2.7 (absolute convergence of tempered matrix coefficients over U(W) and `∫ Ξ_{U(V)} Ξ_{U(W)} (1 + log‖t‖)^d < ∞`), §3.3 (regularized tempered Bessel forms; in codimension one the local period `∫_H ⟨π(h)v,v′⟩⟨σ(h)w,w′⟩ dh`), §4.2 (factorization of global periods through local forms) and §7.4 (the completed unitary period identity with Tamagawa measures).
+§2.6 (local multiplicity one for unitary pairs), §2.7 (absolute convergence of tempered matrix coefficients over U(W) and `∫ Ξ_{U(V)} Ξ_{U(W)} (1 + log‖t‖)^d < ∞`), §3.3 (regularized tempered Bessel forms; in codimension one the local period `∫_H ⟨π(h)v,v′⟩⟨σ(h)w,w′⟩ dh`), and §4.2 (factorization of global periods through local forms, using local multiplicity one).
 
-What GanGrossPrasadUnitaryGroups must provide (gap:orthogonal-ggp-inputs): the counterparts of §§2.6, 2.7, 3.3, 4.2 and 7.4 for the special orthogonal pairs `SO(V_H) ⊂ SO(V)` of codimension one over every local field of characteristic zero and every number field (multiplicity one, absolute convergence of tempered coefficients against `Ξ_G Ξ_H`, the local period form, and the global period identity), which its scope assigns to GanGrossPrasadUnitaryGroups, Part II.
+The orthogonal counterparts below are assigned by the scope of GanGrossPrasadUnitaryGroups to GanGrossPrasadUnitaryGroups, Part II; each concerns a codimension-one special orthogonal pair `H = SO(V_H) ⊂ G = SO(V)`.
 
-What GanGrossPrasadUnitaryGroups must provide (gap:relative-character-positivity): for codimension-one unitary and orthogonal pairs over p-adic fields, multiplicity one for the full normalized induction of a square-integrable representation (so each fibre of the inducing-datum map contains at most one π-distinguished tempered representation), upper semicontinuity of the multiplicity in families of tempered representations, and nonvanishing on rank-one positive operators of the local relative character of every distinguished tempered representation, with its nonnegativity on positive operators.
+What GanGrossPrasadUnitaryGroups must provide (gap:orthogonal-multiplicity-one): the counterpart of §2.6: over a local field of characteristic zero, for irreducible smooth representations π of G and σ of H (Casselman–Wallach at archimedean places), `dim Hom_H(π ⊗ σ̄, ℂ) ≤ 1`.
+
+What GanGrossPrasadUnitaryGroups must provide (gap:orthogonal-xi-integrability): the counterpart of §2.7: over a local field of characteristic zero, `∫_H Ξ_G(h) Ξ_H(h) (1 + log‖h‖)^d dh < ∞` for every d ≥ 0, so that `∫_H ⟨π(h)v, v′⟩⟨σ(h)w, w′⟩ dh` converges absolutely for smooth vectors of tempered irreducible unitary π of G and σ of H.
+
+What GanGrossPrasadUnitaryGroups must provide (gap:orthogonal-local-period-form): the counterpart of §3.3 in codimension one: over a local field of characteristic zero, for tempered irreducible unitary π of G and σ of H, the absolutely convergent integral `∫_H ⟨π(h)v, v′⟩⟨w, σ(h)w′⟩ dh` defines a continuous Hermitian form on `π^∞ ⊗ σ̄^∞`, invariant under H in each variable, which is nonzero exactly when `Hom_H(π ⊗ σ̄, ℂ) ≠ 0`.
+
+What GanGrossPrasadUnitaryGroups must provide (gap:orthogonal-period-factorization): the counterpart of §4.2: over a number field, for irreducible cuspidal automorphic representations Π of G and Σ of H with restricted tensor factorizations and nonzero period `∫_{[H]} φ ψ̄`, the period factors as a nonzero constant times a product over places of local H-invariant functionals, through multiplicity one at every place.
+
+What GanGrossPrasadUnitaryGroups must provide (gap:induced-multiplicity-one): for codimension-one unitary and orthogonal pairs (G, H) over a p-adic field, a tempered irreducible π of G and a square-integrable representation τ of a Levi subgroup M = M_P of H, the full normalized induction `I = Ind_P^H τ` satisfies `dim Hom_H(π ⊗ Ī, ℂ) ≤ 1`, so each fibre of the inducing-datum map contains at most one π-distinguished tempered representation.
+
+What GanGrossPrasadUnitaryGroups must provide (gap:distinction-upper-semicontinuity): for codimension-one unitary and orthogonal pairs over a p-adic field and fixed tempered π of G, `σ ↦ dim Hom_H(π ⊗ σ̄, ℂ)` is upper semicontinuous on each family of tempered representations of H normally induced from unitary unramified twists of one square-integrable datum.
+
+What GanGrossPrasadUnitaryGroups must provide (gap:relative-character-positivity): for codimension-one unitary and orthogonal pairs over a p-adic field and tempered irreducible unitary π of G and σ of H, the local relative character `H_σ` of §4.5 is nonnegative on positive operators, and nonzero on some rank-one positive operator whenever σ is π-distinguished.
 
 ## How to read the build
 
@@ -515,11 +540,11 @@ For every compact subset Ω of the regular part `[i𝔤^*]_reg` there is `h₀ >
 
 *Proof route.* By the Langlands classification a nontempered irreducible unitary π is a quotient of an induced representation with a nonzero real exponent; real parts of unitary exponents are bounded in terms of G alone, and the Hermitian structure forces a Weyl symmetry of the parameter. If h → 0 with `hλ_π` in Ω, the bounded real parts force a nontrivial Weyl stabilizer at the limit, contradicting regularity.
 
-*Needs:* §2.2; AutomorphicFormsOnReductiveGroups §2.4 (Langlands classification) and gap:unitary-exponents-minimal-ktypes (i).
+*Needs:* §2.2; AutomorphicFormsOnReductiveGroups §2.4 (Langlands classification) and gap:unitary-exponent-bound.
 
 **Checks.**
 
-- For SL₂(ℝ), complementary series with parameter `s ∈ (0, 1/2)` have `λ` real and of size ≤ 1/2, so `hλ → 0`, the irregular point; a compact Ω in the regular set excludes them for small h.
+- For SL₂(ℝ), with λ evaluated at `H = diag(1, −1)` (so ρ(H) = 1), the complementary series have `λ(H) ∈ (0, 1)`, real and bounded by 1, so `hλ → 0`, the irregular point; a compact Ω in the regular set excludes them for small h.
 - Ω must have positive distance from the discriminant; for Ω containing 0 the trivial representation, with `hλ → 0`, gives a counterexample.
 
 ### 2.4 The spectral Laplacian bound and central leading symbols
@@ -528,7 +553,7 @@ For every compact subset Ω of the regular part `[i𝔤^*]_reg` there is `h₀ >
 
 *Proof route.* (i) In a Cartan-compatible basis `Δ = 2Δ_K − C_𝔤 + 1` up to normalization, with Casimir `C_𝔤` acting by a quadratic expression in λ_π; a minimal K-type gives the eigenvalue bound. (ii) Use PBW and the ρ-translation: the top homogeneous component of `γ(sym p)` is p.
 
-*Needs:* NoncompactQuantumSymmetry M0 (Nelson operator); §2.1; LieHighestWeight Layers 3, 5 and 7; gap:unitary-exponents-minimal-ktypes (ii).
+*Needs:* NoncompactQuantumSymmetry M0 (Nelson operator); §2.1; LieHighestWeight Layers 3, 5 and 7; gap:vogan-minimal-ktype.
 
 **Checks.**
 
@@ -570,11 +595,11 @@ Let H ⊂ G be reductive and ℓ an h-uniformly continuous functional on `Ψ^{�
 
 ### Examples
 
-For G = SL₂(ℝ) the quotient `[i𝔤^*]` is a line with parameter `λ² ∈ ℝ` up to normalization; principal series have `λ ∈ iℝ`, complementary series real `λ ∈ (0, 1/2)` and discrete series nonzero integral `λ`. §2.3 says that for small h only tempered representations have `hλ` in a fixed compact set avoiding 0.
+For G = SL₂(ℝ) the quotient `[i𝔤^*]` is a line with parameter `λ² ∈ ℝ`; evaluate λ at `H = diag(1, −1)`, so that ρ(H) = 1 and the normalized principal series `I(s)` has `λ(H) = ±s`. Unitary principal series have `λ(H) ∈ iℝ`, complementary series real `λ(H) ∈ (0, 1)`, and the discrete series `D_k` of lowest weight k ≥ 2 has the infinitesimal character of the (k − 1)-dimensional representation, `λ(H) = k − 1 ∈ {1, 2, 3, …}`. Halving λ(H) would put the complementary series in (0, 1/2) and the discrete series at half-integers; the two ranges belong to one normalization only together. §2.3 says that for small h only tempered representations have `hλ` in a fixed compact set avoiding 0.
 
 ### Dependencies
 
-Layers 0–1; AutomorphicFormsOnReductiveGroups §§2.1–2.4; LieHighestWeight Layers 3, 5 and 7; NoncompactQuantumSymmetry M0; gap:unitary-exponents-minimal-ktypes.
+Layers 0–1; AutomorphicFormsOnReductiveGroups §§2.1–2.4; LieHighestWeight Layers 3, 5 and 7; NoncompactQuantumSymmetry M0; gap:unitary-exponent-bound; gap:vogan-minimal-ktype.
 
 ## Layer 3: Coadjoint multiorbits and trace asymptotics
 
@@ -729,7 +754,7 @@ Uniform K-type and matrix-coefficient bounds, uniform Sobolev summability of the
 
 ### 4.1 Uniform K-type and matrix-coefficient bounds
 
-Let F be archimedean with maximal compact K, and for L large put `κ = (1 − Σ_{x∈B(𝔨)} x²)^L ∈ U(𝔨)`. Then κ acts on each irreducible K-type τ by a scalar `κ_τ ≥ 1` with `dim τ ≤ κ_τ^{1/2}` and `Σ_τ κ_τ^{−1} < ∞`. For every irreducible admissible π, `π(κ)` is positive and invertible and `tr π(κ)^{−2} ≤ C` with C depending only on G; a τ-isotypic vector v satisfies `dim(K·v)^{1/2} ‖v‖ ≤ ‖π(κ)v‖`, the dimension of the K-span counting multiplicity. For tempered π and smooth u, v, `|⟨π(g)u, v⟩| ≤ c Ξ_G(g) ‖u‖_s ‖v‖_s` with c and s depending only on G (NV21 Lemmas A.1–A.2 and §A.2, pp. 136–138; the source's κ is a positive multiple of the K-Casimir, which does not satisfy `dim τ ≤ κ_τ^{1/2}` with a fixed constant; a high power of `1 − Σx²` does).
+Let F be archimedean with maximal compact K, and for L large put `κ = (1 − Σ_{x∈B(𝔨)} x²)^L ∈ U(𝔨)`. Then κ acts on each irreducible K-type τ by a scalar `κ_τ ≥ 1` with `dim τ ≤ κ_τ^{1/2}` and `Σ_τ κ_τ^{−1} < ∞`. For every irreducible admissible π, `π(κ)` is positive and invertible and `tr π(κ)^{−2} ≤ C` with C depending only on G; a τ-isotypic vector v satisfies `dim(K·v)^{1/2} ‖v‖ ≤ ‖π(κ)v‖`, the dimension of the K-span counting multiplicity. For tempered π and smooth u, v, `|⟨π(g)u, v⟩| ≤ c Ξ_G(g) ‖u‖_s ‖v‖_s` with c and s depending only on G (NV21 Lemmas A.1–A.2 and §A.2, pp. 136–138; the source's explicit κ = −c Σ x², a positive multiple of the K-Casimir, vanishes on the trivial K-type, so π(κ) is not invertible on representations with K-fixed vectors; moreover, when K has rank ≥ 2 the sum `Σ_τ κ_τ^{−1}` diverges for it, and when K has two or more positive roots `κ_τ^{1/2}` does not dominate dim τ for any c; a high power of `1 − Σx²` has all three properties).
 
 *Proof route.* The highest-weight dimension formula and the Casimir eigenvalue give `dim τ ≪ |μ_τ + ρ_K|^{dim n}` and `κ_τ ≍ (1 + |μ_τ + ρ_K|²)^L`; choose L so that both domination and summability hold. Uniform admissibility `dim Hom_K(τ, π) ≤ C dim τ`, with C depending only on the component group of G, bounds the K-span. Expand K-finite vectors in K-types, apply the Cowling–Haagerup–Howe bound to each pair and sum by weighted Cauchy–Schwarz; pass to smooth vectors by continuity and the Sobolev comparison of §0.2.
 
@@ -792,7 +817,7 @@ Let (G, H) be a GGP pair over F with Haar measures fixed, and π, σ tempered ir
 - For F archimedean and N large in terms of G, `H_σ` extends to `Ψ^{−N}(π)` continuously, uniformly in π and σ, by `H_σ(T) = Σ_u ∫_H tr(π(s)T)⟨u, σ(s)u⟩ ds` (NV21 Lemma 18.1(iii), p. 121).
 - `H_σ(T*) = conj(H_σ(T))`: the form is Hermitian. Its nonnegativity on positive operators is not part of the construction; at p-adic places it is the input gap:relative-character-positivity, and at archimedean places it is not used (NV21 Remark 18.2, p. 122).
 
-*Needs:* §3.9, §4.3, §4.4; GanGrossPrasadUnitaryGroups §2.7 (unitary convergence) and §3.3 (local period form), gap:orthogonal-ggp-inputs (orthogonal convergence and form).
+*Needs:* §3.9, §4.3, §4.4; GanGrossPrasadUnitaryGroups §2.7 (unitary convergence) and §3.3 (local period form), gap:orthogonal-xi-integrability and gap:orthogonal-local-period-form (orthogonal convergence and form).
 
 **Checks.**
 
@@ -820,7 +845,7 @@ For the compact GGP pair SO(3) ⊃ SO(2) with π the spin-l representation, `H_�
 
 ### Dependencies
 
-Layers 0–3; CompactGroups Layers 5–6; LieHighestWeight Layers 5–6; AutomorphicFormsOnReductiveGroups §§2.2–2.3; AutomorphicSpectralTheory §§0.9, 0.14, gap:local-plancherel and gap:tempered-xi-bounds; SmoothRepresentationsOfLocalGroups SR.1.1; GanGrossPrasadUnitaryGroups §§2.7 and 3.3; gap:orthogonal-ggp-inputs; gap:relative-character-positivity.
+Layers 0–3; CompactGroups Layers 5–6; LieHighestWeight Layers 5–6; AutomorphicFormsOnReductiveGroups §§2.2–2.3; AutomorphicSpectralTheory §§0.9, 0.14, gap:local-plancherel and gap:tempered-xi-bounds; SmoothRepresentationsOfLocalGroups SR.1.1; GanGrossPrasadUnitaryGroups §§2.7 and 3.3; gap:orthogonal-xi-integrability; gap:orthogonal-local-period-form; gap:relative-character-positivity.
 
 ## Layer 5: Stable Hamiltonian reduction for GGP pairs
 
@@ -852,7 +877,7 @@ On the standard models the theorem is `isStable_iff_isCoprime_orthogonal` and `i
 
 *Proof route.* By the Hilbert–Mumford criterion x is unstable if and only if a nontrivial cocharacter of H has only nonnegative weights on x. An isotropic eigenvector `v ∈ V_H^+` gives such a cocharacter after completing v to a hyperbolic pair in V_H (Witt). Conversely the positive and negative weight spaces of a destabilizing cocharacter are isotropic, in duality and x-stable, giving an isotropic eigenvector. For the cyclicity criterion, `(k₁[x]e)^⊥` is a k₁[x]-stable subspace of V_H that is nondegenerate exactly when `k₁[x]e` is.
 
-*Needs:* §2.1, §5.1; Tau Ceti quadratic-form Witt theorems; Mathlib `Matrix.charpoly`, `MvPolynomial.zeroLocus`.
+*Needs:* §2.1, §5.1; Tau Ceti quadratic-form Witt theorems; Mathlib `Matrix.charpoly`, `MvPolynomial.zeroLocus`, `Matrix.specialOrthogonalGroup`.
 
 The matrix models use the following definitions.
 
@@ -868,17 +893,13 @@ The matrix models use the following definitions.
 - For infinite k and n ≥ 2, `{x : x₁₂ ≠ 0}` is not Zariski closed: a polynomial vanishing on it vanishes everywhere.
 - The integers, as 1 × 1 matrices over ℂ, form a Euclidean-closed set that is not Zariski closed, since a nonzero polynomial in one variable has finitely many roots.
 
-**`specialOrthogonalMatrices`.** The ι × ι matrices h over k with `hᵀh = 1` and det h = 1, defined with the transpose and no star structure.
-
-- The set contains 1 and is closed under products and inverses, the inverse being the transpose.
-- `ggpBlock` maps it into the corresponding set for `ι ⊕ Unit`.
-- For k = ℝ, with its trivial star, it is Mathlib's `Matrix.specialOrthogonalGroup`.
+The orthogonal model uses Mathlib's transpose-defined `Matrix.specialOrthogonalGroup` for H = SO(k^ι) and for SO(k^ι ⊕ k) (Exact supplier contracts); `ggpBlock` maps the first into the second, since `ggpBlock h` has determinant det h and `(ggpBlock h)ᵀ = ggpBlock hᵀ`.
 
 **Checks.**
 
-- Over ℂ, `h = [[√2, i], [−i, √2]]` has `hᵀh = 1` and det h = 1, but `h*h ≠ 1`; conversely `diag(i, −i)` is special unitary but `hᵀh = −1`. Mathlib's star-based `Matrix.specialOrthogonalGroup` over ℂ is the special unitary group, not SO_n(ℂ).
-- For ι empty the set is {1}.
-- −1 lies in the set for ι of size 2 and not of size 3, where det(−1) = −1.
+- Over ℂ, `h = [[√2, i], [−i, √2]]` has `hᵀh = 1` and det h = 2 − 1 = 1, so it lies in `Matrix.specialOrthogonalGroup` although `h*h = h² ≠ 1`; a star-based special unitary group would exclude it.
+- `diag(i, −i)` is special unitary, but `hᵀh = diag(−1, −1) ≠ 1`, so it is not in the group; a star-based reading would include it.
+- −1 lies in the group for size 2 and not for size 3, where det(−1) = −1; for the empty index type the group is {1}.
 
 **`ggpBlock`.** For an ι × ι matrix h, `ggpBlock h = fromBlocks h 0 0 1`, the endomorphism of `k^ι ⊕ k` acting by h on `V_H = k^ι` and fixing the last basis vector e.
 
@@ -920,7 +941,7 @@ On the standard models the algebraically closed statement is `stableFibre_isTors
 
 *Needs:* §5.1, §5.2; Tau Ceti quadratic-form Witt theorems; NilpotentOrbits N1.1 (fibres of the adjoint quotient).
 
-**`InvariantlyEquivalent`.** For a set A of matrices and a set Γ of invertible matrices, x and y are invariantly equivalent if every polynomial in the entries whose restriction to A is invariant under conjugation by Γ takes the same value at x and y. With A the skew-symmetric matrices and Γ = `specialOrthogonalMatrices`, or A all matrices and Γ the invertible ones, this is `[x] = [y]` in the GIT quotient over an algebraically closed field.
+**`InvariantlyEquivalent`.** For a set A of matrices and a set Γ of invertible matrices, x and y are invariantly equivalent if every polynomial in the entries whose restriction to A is invariant under conjugation by Γ takes the same value at x and y. With A the skew-symmetric matrices and Γ = `Matrix.specialOrthogonalGroup`, or A all matrices and Γ the invertible ones, this is `[x] = [y]` in the GIT quotient over an algebraically closed field.
 
 - It is an equivalence relation.
 - For g ∈ Γ and x ∈ A, x is invariantly equivalent to `g x g^{−1}`.
@@ -1005,7 +1026,7 @@ For a compact subset C of the H-stable locus in 𝔤^∧ there are c, ε > 0 wit
 
 *Proof route.* The stable locus is the nonvanishing locus of a resultant (§5.2); the orbit map `H × Z → Z × Z` is a closed immersion by §5.3, so the coordinates of s are polynomials in z and s·z, with denominators bounded on C; polynomial volume growth of the algebraic norm then absorbs Schwartz decay.
 
-*Needs:* §5.2, §5.3; AutomorphicSpectralTheory gap:tempered-xi-bounds (KAK integration and volume growth).
+*Needs:* §5.2, §5.3; AutomorphicSpectralTheory gap:kak-integration-volume-growth.
 
 **Checks.**
 
@@ -1044,7 +1065,7 @@ For SO(3) ⊃ SO(2) over ℝ with V definite, `𝔤^∧ ≅ ℝ³`, a stable fib
 
 ### Dependencies
 
-Layers 0–3; Tau Ceti quadratic-form Witt theorems; Mathlib `Matrix.charpoly`, `Matrix.fromBlocks`, `Matrix.toBlocks₁₁`, `MvPolynomial.zeroLocus`, `Matrix.GeneralLinearGroup`; LieGroups Layer 1; LieHighestWeight Layer 7; NilpotentOrbits N1.1; SymplecticGeometry HamiltonianReduction R3; DifferentialGeometry Layer 5; GeometricMeasureTheory G2; AutomorphicSpectralTheory gap:local-plancherel and gap:tempered-xi-bounds.
+Layers 0–3; Tau Ceti quadratic-form Witt theorems; Mathlib `Matrix.charpoly`, `Matrix.fromBlocks`, `Matrix.toBlocks₁₁`, `MvPolynomial.zeroLocus`, `Matrix.GeneralLinearGroup`, `Matrix.specialOrthogonalGroup`; LieGroups Layer 1; LieHighestWeight Layer 7; NilpotentOrbits N1.1; SymplecticGeometry HamiltonianReduction R3; DifferentialGeometry Layer 5; GeometricMeasureTheory G2; AutomorphicSpectralTheory gap:local-plancherel and gap:kak-integration-volume-growth.
 
 ## Layer 6: Stable relative trace asymptotics
 
@@ -1082,7 +1103,7 @@ Outside a neighbourhood of the identity of radius `h^{1/2−η}` (η > 0 fixed i
 
 *Proof route.* By §5.8 and freeness of the stable action, a compact stable support and its translate by s are separated when s is away from 1; compose with the translated support and apply §1.11 and the disjoint-support case of §1.12; beyond near covariance insert a one-parameter convolution and integrate by parts; cut off at a large power of the group norm and bound the tail by `Ξ_G Ξ_H`-integrability with polynomial decay and §3.9.
 
-*Needs:* §1.11, §1.12, §3.9, §4.1, §5.8, §6.1; GanGrossPrasadUnitaryGroups §2.7 and gap:orthogonal-ggp-inputs (`Ξ_G Ξ_H`-integrability).
+*Needs:* §1.11, §1.12, §3.9, §4.1, §5.8, §6.1; GanGrossPrasadUnitaryGroups §2.7 and gap:orthogonal-xi-integrability (`Ξ_G Ξ_H`-integrability).
 
 **Checks.**
 
@@ -1107,7 +1128,7 @@ For SO(3) ⊃ SO(2), the spin-l representation π and the character `e^{imθ}` �
 
 ### Dependencies
 
-Layers 0–5; GanGrossPrasadUnitaryGroups §2.7; gap:orthogonal-ggp-inputs.
+Layers 0–5; GanGrossPrasadUnitaryGroups §2.7; gap:orthogonal-xi-integrability.
 
 ## Layer 7: Positive inverse branching
 
@@ -1179,7 +1200,7 @@ For a p-adic reductive H let l send a tempered irreducible σ to the conjugacy c
 - l is injective on Ω (strong multiplicity one for full inductions of square-integrable representations).
 - The J-visible part of Ω is compact.
 
-*Needs:* §4.5, §7.4; SmoothRepresentationsOfLocalGroups SR.3.1–SR.3.3, SR.3a.2; gap:relative-character-positivity (strong multiplicity one and upper semicontinuity).
+*Needs:* §4.5, §7.4; SmoothRepresentationsOfLocalGroups SR.3.1–SR.3.3, SR.3a.2; gap:induced-multiplicity-one and gap:distinction-upper-semicontinuity.
 
 **Checks.**
 
@@ -1212,7 +1233,7 @@ Fix tempered π over a p-adic field and a distinguished l-component D. D is allo
 
 *Proof route.* (i) Cover the compact set by neighbourhoods where a positive rank-one relative character is nonzero (gap:relative-character-positivity) and sum. (ii) Construct the antiholomorphic involution of the Bernstein variety induced by the Hermitian contragredient from SR.0.4 and SR.3.2, whose fixed points contain the unitary locus; a nontrivial effective stabilizer has a lower-dimensional fixed subtorus and there are finitely many, so after removing Weyl elements acting trivially the nontempered closure is null; apply real Stone–Weierstrass with a small cutoff around that null set. No explicit Laurent polynomial is needed.
 
-*Needs:* §7.4, §7.5; SmoothRepresentationsOfLocalGroups SR.0.4, SR.3.1–SR.3.3; AutomorphicSpectralTheory gap:local-plancherel (Plancherel density); gap:relative-character-positivity.
+*Needs:* §7.4, §7.5; SmoothRepresentationsOfLocalGroups SR.0.4, SR.3.1–SR.3.3; AutomorphicSpectralTheory gap:padic-plancherel-density; gap:relative-character-positivity.
 
 **Checks.**
 
@@ -1238,7 +1259,7 @@ For H anisotropic, hence compact, over a p-adic field, every irreducible σ is f
 
 ### Dependencies
 
-Layers 0–6; SmoothRepresentationsOfLocalGroups SR.0.4, SR.1.1, SR.1.4, SR.2.2–SR.2.3, SR.3.1–SR.3.3, SR.3a.2; SmoothRepresentationsOfLocalGroupsPartII SRU.0.6, SRU.2.7; ReductiveGroupsPartII RG2.3.6, RG2.4.2; AutomorphicSpectralTheory gap:local-plancherel; gap:relative-character-positivity.
+Layers 0–6; SmoothRepresentationsOfLocalGroups SR.0.4, SR.1.1, SR.1.4, SR.2.2–SR.2.3, SR.3.1–SR.3.3, SR.3a.2; SmoothRepresentationsOfLocalGroupsPartII SRU.0.6, SRU.2.7; ReductiveGroupsPartII RG2.3.6, RG2.4.2; AutomorphicSpectralTheory gap:local-plancherel and gap:padic-plancherel-density; gap:induced-multiplicity-one; gap:distinction-upper-semicontinuity; gap:relative-character-positivity.
 
 ## Layer 8: Limit states and arithmetic equidistribution
 
@@ -1343,7 +1364,7 @@ In the global setting, for a compact open level U the set `ε = G(F)G_∞^+U\G(�
 
 *Proof route.* Strong approximation for the simply connected cover makes `G(𝔸)^+ ⊆ G(F)G_∞^+U` and the quotient abelian, so conjugate levels have equal image and all orbits equal measure (NV21 (27.2) and Lemma 27.4). For U(V) realize every norm-one determinant on a nondegenerate line of V_H and identify the kernel with the SU image. For SO(V) use the spinor kernel theorem, the local spinor tables and the global spinor image.
 
-*Needs:* §8.5; AdelicAlgebraicGroups §4.2; OrthogonalSpinGroups Layers 1–3 and gap:global-spinor-image; Tau Ceti `CliffordAlgebra.spinorNorm`, `CliffordAlgebra.range_spinToSpecialOrthogonal_eq_ker_spinorNorm`.
+*Needs:* §8.5; AdelicAlgebraicGroups §4.2; OrthogonalSpinGroups Layers 1–3, gap:local-spinor-images and gap:global-spinor-image; Tau Ceti `CliffordAlgebra.spinorNorm`, `CliffordAlgebra.range_spinToSpecialOrthogonal_eq_ker_spinorNorm`.
 
 **Checks.**
 
@@ -1370,7 +1391,7 @@ For `SO(3) ⊃ SO(2)` with V anisotropic over a totally real F, definite at ever
 
 ### Dependencies
 
-Layers 0–3; NilpotentOrbits N2; LieGroups Layers 1, 5, 7, 9; GeometryOfNumbersAndQuadraticArithmetic §4.2; AdelicAlgebraicGroups §§2.4, 3.4, 4.2; OrthogonalSpinGroups Layers 1–3 and gap:global-spinor-image; PseudodifferentialOperators P3; AutomorphicSpectralTheory §§0.9, 0.14; Mathlib `RealRMK.integral_rieszMeasure`; Tau Ceti `CliffordAlgebra.spinorNorm`, `CliffordAlgebra.range_spinToSpecialOrthogonal_eq_ker_spinorNorm`.
+Layers 0–3; NilpotentOrbits N2; LieGroups Layers 1, 5, 7, 9; GeometryOfNumbersAndQuadraticArithmetic §4.2; AdelicAlgebraicGroups §§2.4, 3.4, 4.2; OrthogonalSpinGroups Layers 1–3, gap:local-spinor-images and gap:global-spinor-image; PseudodifferentialOperators P3; AutomorphicSpectralTheory §§0.9, 0.14; Mathlib `RealRMK.integral_rieszMeasure`; Tau Ceti `CliffordAlgebra.spinorNorm`, `CliffordAlgebra.range_spinToSpecialOrthogonal_eq_ker_spinorNorm`.
 
 ## Layer 9: Truncated periods and the weighted asymptotic formula
 
@@ -1386,7 +1407,7 @@ For the fixed Π and auxiliary T′, and an automorphic representation Σ of H, 
 - With the supplied normalization, `P_Σ = L(Π, Σ) H_σ ⊗ H_{σ′}`.
 - Repeated constituents Σ of `L²([H])` contribute the sum of their projections.
 
-*Needs:* §4.5, §8.1; AutomorphicSpectralTheory §§4.5, 4.7; GanGrossPrasadUnitaryGroups §§4.2, 7.4; gap:orthogonal-ggp-inputs.
+*Needs:* §4.5, §8.1; AutomorphicSpectralTheory §§4.5, 4.7; GanGrossPrasadUnitaryGroups §§2.6, 4.2 (unitary multiplicity one and factorization); gap:orthogonal-multiplicity-one; gap:orthogonal-period-factorization.
 
 **Checks.**
 
@@ -1401,7 +1422,7 @@ For T ∈ `Ψ^{−∞}(π)`, `∫_{[H]} [T] = Σ_Σ P_Σ(T)`, absolutely converg
 
 *Proof route.* For positive finite-rank T apply Parseval in `L²([H])` to each restricted vector and sum the auxiliary decomposition; for general smoothing T use the smooth two-variable kernel and its absolutely convergent spectral expansion, with high elliptic Sobolev powers dominating the tail (smoothness of the diagonal alone does not suffice); count with the polynomial eigenvalue bound.
 
-*Needs:* §8.1, §9.1; AutomorphicSpectralTheory §4.7 and gap:compact-quotient-spectral-estimates.
+*Needs:* §8.1, §9.1; AutomorphicSpectralTheory §4.7, gap:kernel-spectral-expansion, gap:polynomial-eigenvalue-count and gap:orbit-restriction-sobolev (restriction to `[H]`).
 
 **Checks.**
 
@@ -1453,7 +1474,7 @@ For `U(2) ⊃ U(1)` with `G_q = U(1,1)`, d = 1 and Σ runs through automorphic c
 
 ### Dependencies
 
-Layers 0–8; AutomorphicSpectralTheory §§4.5, 4.7 and gap:compact-quotient-spectral-estimates; GanGrossPrasadUnitaryGroups §§4.2, 7.4; gap:orthogonal-ggp-inputs.
+Layers 0–8; AutomorphicSpectralTheory §§4.5, 4.7, gap:kernel-spectral-expansion, gap:polynomial-eigenvalue-count and gap:orbit-restriction-sobolev; GanGrossPrasadUnitaryGroups §§2.6, 4.2; gap:orthogonal-multiplicity-one; gap:orthogonal-period-factorization.
 
 ## Downstream consumers
 

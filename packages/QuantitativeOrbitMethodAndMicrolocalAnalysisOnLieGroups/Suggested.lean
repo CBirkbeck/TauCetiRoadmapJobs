@@ -24,9 +24,10 @@ Stated here:
   Theorem 14.5): over a stable pair of invariants the joint fibre is a torsor of the subgroup.
 
 The GGP statements use the standard models of README Conventions, to which every GGP pair over an
-algebraically closed field is isometric: `V = k^ι ⊕ k` with the dot product and `e` the last
-basis vector in the orthogonal case, and `H = GL(k^ι)` acting on `𝔤𝔩(k^ι ⊕ k)` through
-`h ↦ diag(h, 1)` in the unitary case.
+algebraically closed field is isometric: `V = k^ι ⊕ k` with the dot product, `e` the last
+basis vector and `H = SO(k^ι)` Mathlib's `Matrix.specialOrthogonalGroup ι k` (defined through the
+trivial star, so its members are the `h` with `hᵀ * h = 1` and `det h = 1`) in the orthogonal
+case, and `H = GL(k^ι)` acting on `𝔤𝔩(k^ι ⊕ k)` through `h ↦ diag(h, 1)` in the unitary case.
 
 Headline theorems that are not statable at the pins, and what each lacks:
 
@@ -123,13 +124,6 @@ def IsZariskiClosedMatrixSet {k : Type*} [Field k] {n : Type*} (S : Set (Matrix 
   ∃ I : Ideal (MvPolynomial (n × n) k),
     S = (fun x : Matrix n n k => fun ij : n × n => x ij.1 ij.2) ⁻¹' MvPolynomial.zeroLocus k I
 
-/-- The special orthogonal group of the dot product on `k^ι`: matrices `h` with `hᵀ h = 1` and
-`det h = 1`. Mathlib's `Matrix.specialOrthogonalGroup` is defined with `star`, which over `ℂ`
-gives the special unitary group instead. -/
-def specialOrthogonalMatrices {k : Type*} [Field k] (ι : Type*) [Fintype ι] [DecidableEq ι] :
-    Set (Matrix ι ι k) :=
-  {h | hᵀ * h = 1 ∧ h.det = 1}
-
 /-- The GGP embedding `h ↦ diag(h, 1)` of endomorphisms of `V_H = k^ι` into endomorphisms of
 `V = k^ι ⊕ k`, fixing the last basis vector `e`. The restriction `x_H` of `x` is
 `x.toBlocks₁₁`. -/
@@ -159,14 +153,15 @@ def InvariantlyEquivalent {k : Type*} [Field k] {n : Type*} [Fintype n] [Decidab
 
 /-- **Disjoint-spectrum stability, orthogonal case** (NV21 Theorem 14.2). For a skew-symmetric
 `x` in `𝔰𝔬(k^ι ⊕ k)` over an algebraically closed field of characteristic zero, the orbit of `x`
-under `SO(k^ι)` is Zariski closed and its stabilizer is finite exactly when the spectral
-polynomials of `x` and of its restriction `x_H` are coprime. -/
+under `SO(k^ι) = Matrix.specialOrthogonalGroup ι k`, acting through `h ↦ diag(h, 1)`, is Zariski
+closed and its stabilizer is finite exactly when the spectral polynomials of `x` and of its
+restriction `x_H` are coprime. -/
 theorem isStable_iff_isCoprime_orthogonal {k : Type*} [Field k] [IsAlgClosed k] [CharZero k]
     {ι : Type*} [Fintype ι] [DecidableEq ι] (x : Matrix (ι ⊕ Unit) (ι ⊕ Unit) k)
     (hx : xᵀ = -x) :
     (IsZariskiClosedMatrixSet
-        {w | ∃ h ∈ specialOrthogonalMatrices ι, w = ggpBlock h * x * (ggpBlock h)ᵀ} ∧
-      {h | h ∈ specialOrthogonalMatrices ι ∧ ggpBlock h * x * (ggpBlock h)ᵀ = x}.Finite) ↔
+        {w | ∃ h ∈ Matrix.specialOrthogonalGroup ι k, w = ggpBlock h * x * (ggpBlock h)ᵀ} ∧
+      {h | h ∈ Matrix.specialOrthogonalGroup ι k ∧ ggpBlock h * x * (ggpBlock h)ᵀ = x}.Finite) ↔
     IsCoprime (ggpSpectralPolynomial x) (ggpSpectralPolynomial x.toBlocks₁₁) := by
   sorry
 
@@ -188,18 +183,21 @@ theorem isStable_iff_isCoprime_unitary {k : Type*} [Field k] [IsAlgClosed k] [Ch
 characteristic zero, with coprime spectral polynomials, so that their invariants form a stable
 pair. The joint fibre, the skew-symmetric `x` invariantly equivalent to `y` under `SO(k^ι ⊕ k)`
 whose restriction `x_H` is invariantly equivalent to `z` under `SO(k^ι)`, is nonempty, stable
-under `SO(k^ι)`, and `SO(k^ι)` acts simply transitively on it. -/
+under `SO(k^ι)`, and `SO(k^ι)` acts simply transitively on it. Both groups are Mathlib's
+transpose-defined `Matrix.specialOrthogonalGroup`. -/
 theorem stableFibre_isTorsor_orthogonal {k : Type*} [Field k] [IsAlgClosed k] [CharZero k]
     {ι : Type*} [Fintype ι] [DecidableEq ι] (y : Matrix (ι ⊕ Unit) (ι ⊕ Unit) k)
     (hy : yᵀ = -y) (z : Matrix ι ι k) (hz : zᵀ = -z)
     (hyz : IsCoprime (ggpSpectralPolynomial y) (ggpSpectralPolynomial z)) :
     let F : Set (Matrix (ι ⊕ Unit) (ι ⊕ Unit) k) :=
       {x | xᵀ = -x ∧
-        InvariantlyEquivalent {w | wᵀ = -w} (specialOrthogonalMatrices (ι ⊕ Unit)) x y ∧
-        InvariantlyEquivalent {w | wᵀ = -w} (specialOrthogonalMatrices ι) x.toBlocks₁₁ z}
+        InvariantlyEquivalent {w | wᵀ = -w}
+          (Matrix.specialOrthogonalGroup (ι ⊕ Unit) k : Set (Matrix (ι ⊕ Unit) (ι ⊕ Unit) k)) x y ∧
+        InvariantlyEquivalent {w | wᵀ = -w}
+          (Matrix.specialOrthogonalGroup ι k : Set (Matrix ι ι k)) x.toBlocks₁₁ z}
     F.Nonempty ∧
-      (∀ x ∈ F, ∀ h ∈ specialOrthogonalMatrices ι, ggpBlock h * x * (ggpBlock h)ᵀ ∈ F) ∧
-      ∀ x ∈ F, ∀ x' ∈ F, ∃! h, h ∈ specialOrthogonalMatrices ι ∧
+      (∀ x ∈ F, ∀ h ∈ Matrix.specialOrthogonalGroup ι k, ggpBlock h * x * (ggpBlock h)ᵀ ∈ F) ∧
+      ∀ x ∈ F, ∀ x' ∈ F, ∃! h, h ∈ Matrix.specialOrthogonalGroup ι k ∧
         x' = ggpBlock h * x * (ggpBlock h)ᵀ := by
   sorry
 
