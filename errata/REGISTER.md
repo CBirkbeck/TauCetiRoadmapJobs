@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-7234 mistakes recorded on the board: 4396 misprints, 1827 errors, 728 gaps, 283 unparsed bullets.
+7251 mistakes recorded on the board: 4405 misprints, 1829 errors, 732 gaps, 285 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -291,6 +291,8 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Unparsed** (ProbabilisticAndMetricNumberTheoryPartII, #2200 at 12545ad, 2026-10-26): Misprint** in GMR19 at (5.5), printed p.801, and (5.9), printed p.802: the source prints the denominators `3 + b − 2w_j` and `5 + b − 4w_{n−2}` unsquared; they should be squared, as the arXiv v3 proofs on its pp.49 and 52 show and as the value `4/9` at `(0,0,1)` confirms; affects nothing (the final bounds `4/5`, `32/49` use the squared form).
 - **Unparsed** (ProbabilisticAndMetricNumberTheoryPartII, #2200 at 12545ad, 2026-10-26): Gap** in GMR19 at §4.2, printed p.794: the source calls the image of the coding map a compact attractor; for `n = 3` the image omits `x = 0`, the limit of the branch fixed points, so the attractor should be the closure of the image; affects the proof of the support statement only.
 - **Unparsed** (ProbabilisticAndMetricNumberTheoryPartII, #2200 at 12545ad, 2026-10-26): Misprint** in GMR19 arXiv v3 at the proof of (5.5), its p.49: the source writes `C₁ ≤ C_k` from `w₁ ≤ w_k`; the column sums decrease in `w_k`, so it should be `C₁ ≥ C_k` (which is what the conclusion "C₁ is maximal" needs); affects nothing.
+- **Unparsed** (RankOneConverse, #1780 at 33cda60, 2026-10-26): Misprint** in bfh-1990 at the introductory Theorem, printed p.544: both assertions are labelled (i) in the scan; the second should be (ii); affects nothing (the sources manifest records the correction). <!-- tauceti-roadmap-review {"agent": "claude", "head": "33cda60", "job": "RT-RankOneConverse~1b", "model": "fable", "worker": "fable-rt221"} -->
+- **Unparsed** (ProfiniteCohomologyPartII, #2203 at adfb460, 2026-10-26): Error** in HW at Proposition 7.3, printed page 26 (lines 1114–1117): the source asserts a bijection between all defining systems of the classes and the lifts of one homomorphism `α`; the proof gives it for the defining systems whose adjacent entries are the cocycles determined by `α`; affects a stated result.
 
 ## A
 
@@ -5458,6 +5460,18 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at Chapter 18, §3, Example 3.4: the source says (via "respectively") discriminant −64 for the infinite-height case p≡3 mod 4 and −p² for the other case; it should be the reverse: −p² for infinite height (rank 22, p-elementary), −64 for the other; affects a stated result. Found by  (#563 at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
+## HW
+
+- **Error** at Lemma 4.7 (and its proof), printed page 14 (lines 566–567, 583): the source says the outer exponent of `U¹` equals `p` for `2 ≤ n ≤ 6`, and that it is divisible by `p`; for `p = 2` the proof shows every element conjugate to its inverse, so by Definition 3.2 the least admissible divisor is `1`; it should be the action factors through `(ℤ/p)*`; affects a stated result; (the value), not its use. Found by ProfiniteCohomologyPartII (#2203 at adfb460, 2026-10-26, claude fable).
+- **Gap** at Lemma 5.5, printed page 19 (lines 830–837): the source says the source treats `Hom(C, A)` as a discrete module for an arbitrary discrete `C`; it should be assume `C` finitely generated (the pointwise topology is not discrete otherwise); affects the proof; as stated, not its application with finite `C`. Found by ProfiniteCohomologyPartII (#2203 at adfb460, 2026-10-26, claude fable).
+- **Gap** at Proposition 5.3 and the proof of Theorem 5.1, printed pages 19 and 22: the source says the source proves the proposition for nonarchimedean local fields and applies it at every place of the number field; it should be also cover `ℝ` and `ℂ` (the same argument works with the `C₂` pairing in place of local duality); affects the proof. Found by ProfiniteCohomologyPartII (#2203 at adfb460, 2026-10-26, claude fable).
+- **Misprint** at proof of Lemma 4.13, printed page 17 (line 729): the source says the displayed factorization of `Q` has the factor `e₀₃` with parameter `1`; it should be have parameter `a₂`, since `Q₀₃ = a₂`; affects nothing. Found by ProfiniteCohomologyPartII (#2203 at adfb460, 2026-10-26, claude fable).
+- **Misprint** at proof of Lemma 4.7, printed page 14 (line 571): the source says the exponent of `U¹` is divisible by `9` at `p = 3`, `n = 6`; it should be divides `9`; affects nothing. Found by ProfiniteCohomologyPartII (#2203 at adfb460, 2026-10-26, claude fable).
+- **Misprint** at proof of Proposition 5.3, printed page 19 (line 846): the source says in the easy case a homomorphism to `U/Z` lifts to `Z`; it should be lifts to `U`; affects nothing. Found by ProfiniteCohomologyPartII (#2203 at adfb460, 2026-10-26, claude fable).
+- **Misprint** at proof of Proposition 5.3, printed page 21 (lines 915, 925): the source says the retraction with its arguments interchanged, `ρ_{v,u}`; it should be `ρ_{u,v}`, row first, as in (5.5); affects nothing. Found by ProfiniteCohomologyPartII (#2203 at adfb460, 2026-10-26, claude fable).
+- **Misprint** at proof of Proposition 6.1, printed page 23 (lines 985–986): the source says the source calls the subgroup on indices `j ≤ 4` a copy of the `4 × 4` unitriangular group; it should be `5 × 5`; affects nothing. Found by ProfiniteCohomologyPartII (#2203 at adfb460, 2026-10-26, claude fable).
+- **Misprint** at §7, printed page 28 (lines 1189–1195): the source says the source displays `P_{r,s}` as an external direct sum of the last-column and first-row Hom summands, counting `Hom(N_n, N_0)` twice; it should be the internal sum meeting in the corner; affects nothing. Found by ProfiniteCohomologyPartII (#2203 at adfb460, 2026-10-26, claude fable).
+
 ## HW23
 
 - **Misprint** at Corollary 4.6 proof (arXiv v2; published Corollary 4.7), p. 21: the source says the restrictions of the divisorial contraction to S and its normalization map to X; it should be the contraction target Z; affects nothing. Found by CrystallineCohomologyPartII (#296 at 84ea77e, 2026-10-23, claude opus).
@@ -6964,6 +6978,11 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Meyer–Wagner, q-Hodge complexes and refined TC⁻, arXiv:2410.23115v4
 
 - **Error** at the proof of Lemma 3.7, p. 32: the source says the rationalisations vanish (the finite-coefficient rational corner); it should be that the non-completed rational corner is nonzero and must be kept: for the zero ring, polynomial animation gives dR_(0/ℚ) = ℚ; affects the proof. Found by  (#149 at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Michailov
+
+- **Misprint** at Theorem 3.1, Case II, printed page 8 (line 295): the source says the source expands the minimal-distance wedge with the element `t_{i,i+1}`, which does not lie in `UT^ℓ_n` for `ℓ ≥ 2`; it should be use `t_{i,i+ℓ}` and `t_{i+ℓ,i+2ℓ}`; affects the proof; (one step). <!-- tauceti-roadmap-review {"agent": "claude", "head": "adfb460", "job": "REV-PKG-ProfiniteCohomologyPartII", "model": "fable", "worker": "fable-rev214"} -->. Found by ProfiniteCohomologyPartII (#2203 at adfb460, 2026-10-26, claude fable).
+- **Error** at §3, printed page 5 (lines 164–165): the source says `γ_{n−1}(UT_n(𝔽_p))` is trivial; it should be `γ_n`, since `γ_{n−1}` is the corner subgroup; affects nothing. Found by ProfiniteCohomologyPartII (#2203 at adfb460, 2026-10-26, claude fable).
 
 ## Miller–Sturmfels
 
@@ -8730,13 +8749,17 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## skinner-2020
 
 - **Gap** at Lemma 2.2.2, printed p.338: the source says freeness of the rational point module over the semilocal coefficient algebra is used to get injectivity of restriction at each coefficient place; it should be use nonvanishing of the eigenlogarithm at every embedding (bsw-2026, Theorem 2.3); affects the proof. Found by RankOneConverse (#1780 at 33cda60, 2026-10-25, claude fable).
+- **Gap** at Lemma 2.2.2, printed p.338: the source says freeness of the rational point module over the semilocal coefficient algebra is used for injectivity at each coefficient place; it should be use nonvanishing of the eigenlogarithm at every embedding (bsw-2026 Theorem 2.3); affects the proof. Found by RankOneConverse (#1780 at 33cda60, 2026-10-26, claude fable).
 - **Gap** at Lemma 2.2.2, printed p.338 (lines 388–392): the source says freeness of A_f(K)⊗ℚ_p over M_{f,p} does not give injectivity of the restriction at each λ-component; it should be use nonvanishing of the eigenlogarithm at every embedding (bsw-2026, Theorem 1.1); affects the proof. Found by RankOneConverse (#1780 at 7925ead, 2026-10-25, claude fable).
 - **Misprint** at Lemma 2.8.1, printed p.347: the source says the tame-inertia generator is said to be at a prime q while the prime under discussion is ℓ; it should be ℓ throughout; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "33cda60", "job": "REV-PKG-RankOneConverse~2", "model": "fable", "worker": "fable-rev134"} -->. Found by RankOneConverse (#1780 at 33cda60, 2026-10-25, claude fable).
+- **Misprint** at Lemma 2.8.1, printed p.347: the source says the tame-inertia generator is placed at a prime q while the prime under discussion is ℓ; it should be ℓ throughout; affects nothing. Found by RankOneConverse (#1780 at 33cda60, 2026-10-26, claude fable).
 - **Misprint** at Lemma 2.8.1, printed p.347 (line 749): the source says the tame inertia generator is said to be at q while the prime is ℓ; it should be ℓ throughout; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "7925eadd4333fd9a93bddd6a07b463f22c64982a", "job": "REV-PKG-RankOneConverse", "model": "fable", "worker": "chris-i"} -->. Found by RankOneConverse (#1780 at 7925ead, 2026-10-25, claude fable).
 - **Misprint** at §2.6, printed p.341 (line 523): the source says the Heegner point with field and form exchanged; it should be the point P_K(f) defined in §2.4; affects nothing. Found by RankOneConverse (#1780 at 7925ead, 2026-10-25, claude fable).
 - **Misprint** at §2.7, printed p.346: the source says the source calls the two Iwasawa algebras unique factorization ideals; it should be unique factorization domains; affects nothing. Found by RankOneConverse (#1780 at 33cda60, 2026-10-25, claude fable).
+- **Misprint** at §2.7, printed p.346: the source says the two Iwasawa algebras are called unique factorization ideals; it should be unique factorization domains; affects nothing. Found by RankOneConverse (#1780 at 33cda60, 2026-10-26, claude fable).
 - **Misprint** at §2.7, printed p.346 (line 705): the source says the two Iwasawa algebras are unique factorization ideals; it should be unique factorization domains; affects nothing. Found by RankOneConverse (#1780 at 7925ead, 2026-10-25, claude fable).
 - **Gap** at §2.7, printed pp.346–347: the source says from a diagram that the mod-(γ−1) Selmer group has finite index in the γ−1-torsion of the big Selmer group, without computing that the local invariant term is finite; it should be derive finiteness from the ordinary filtration (Teichmüller inertia on the plus part, a unit root different from 1 on the minus part); affects the proof. Found by RankOneConverse (#1780 at 33cda60, 2026-10-25, claude fable).
+- **Gap** at §2.7, printed pp.346–347: the source says finiteness of the index of the mod-(γ−1) Selmer group in the (γ−1)-torsion of the big Selmer group off a diagram without computing that the local invariant term is finite; it should be derive it from the ordinary filtration (Teichmüller inertia on the sub, unit root different from 1 on the quotient); affects the proof. Found by RankOneConverse (#1780 at 33cda60, 2026-10-26, claude fable).
 - **Gap** at §2.7, printed pp.346–347 (lines 716–729): the source says the finite-index claim for Sel_p inside Sel_∞[γ−1] rests on finiteness of the G_{K_𝔭}-invariants of the inertia-invariant coinvariants, asserted from the diagram without computation; it should be shown from the ordinary filtration (Teichmüller inertia kills the T⁺ part, unit root α≠1 on the T⁻ part); affects the proof. Found by RankOneConverse (#1780 at 7925ead, 2026-10-25, claude fable).
 
 ## skinner-published
