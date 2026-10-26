@@ -20,11 +20,11 @@ It leaves to other roadmaps, and imports from them:
 
 Not in scope: the computation of local terms of Satake sheaves on affine Grassmannians and the Kottwitz conjecture (Hansen–Kaletha–Weinstein §§5–6), which consume this roadmap; ℓ-adic sheaf theory on algebraic stacks; and the general ∞-categorical machinery of Liu–Zheng, required through the supplier gaps below.
 
-The ordinary trace, cyclicity, multiplicativity, unit value and comparison with linear traces are supplied by PivotalSpherical Layers 2 and 7. Finite-projective module traces and their categorical realization are supplied by AdicSpacesPartIII §R3.8, projective-module-trace and projective-trace-realization. DGAInfinity Layer 5 supplies compact = perfect for D(Λ); VS9.4 proves the dualizability equivalence. VS9.1–9.3 own only the bicategorical extension of the ordinary trace, its trace morphisms and Grothendieck construction (Lu–Zheng §1).
+The ordinary trace, cyclicity, multiplicativity, unit value and comparison with linear traces are supplied by PivotalSpherical Layers 2 and 7. Finite-projective module traces and their categorical realization are supplied by AdicSpacesPartIII §R3.8, projective-module-trace and projective-trace-realization. DGAInfinity Layer 5 supplies compact = perfect for D(Λ); VS9.4 proves the dualizability equivalence. VS9.1–9.3 own only the bicategorical extension of the ordinary trace, its trace morphisms and Grothendieck construction (Lu–Zheng §1). This roadmap also owns the Λ-valued distribution character of VS11.3: for a smooth representation M placed in degree 0 whose invariants M^K are finite projective over Λ (for instance Λ a field and M admissible of finite length), tr.dist(M) is h ⊗ μ ↦ tr(I_{h,μ} | M^K); no roadmap on main or earlier in the order defines it, and complex Harish-Chandra characters lie outside the torsion coefficient convention.
 
 VStackSheavesAndLisseCategories VS4/classifying-stack-equivalence supplies derived invariants and the derived smooth dual. SmoothRepresentationsOfLocalGroups §SR.0d.2 supplies admissibility and §SR.1.1 supplies HaarMeasureWithValues and integration; VS8.5 equips this supplied carrier with the module and modulus identifications used by the geometric operations. Mathlib’s Module.IsReflexive supplies the reflexivity predicate. Its finite-projective instance in Mathlib/LinearAlgebra/Dual/Lemmas.lean:262 and Module.instFiniteDimensionalOfIsReflexive at line 284 cover the projective and residue-field cases; VS9.5 extends the equivalence to arbitrary modules over truncated DVRs.
 
-EtaleDualityAndPerverseSheaves §§6.1–6.3 supplies scheme correspondences, cohomological correspondences, pullback and restriction, and local terms for finite ℓ-power-torsion coefficient rings and bounded constructible finite-Tor complexes. The adic coefficient ranges there lie outside this roadmap’s torsion convention. Its extension to arbitrary prime-to-p n-torsion rings and f-ULA complexes is the explicit supplier gap below; VS10.7–10.8 retain that generality.
+EtaleDualityAndPerverseSheaves §§6.1–6.3 supplies scheme correspondences, cohomological correspondences, pullback and restriction, and local terms for finite ℓ-power-torsion coefficient rings and bounded constructible finite-Tor complexes. The adic coefficient ranges there lie outside this roadmap’s torsion convention. Its extension to arbitrary prime-to-p n-torsion rings, arbitrary complexes for correspondences and f-ULA complexes for local terms is the content of the two explicit supplier gaps below; VS10.7–10.8 retain that generality.
 
 ## Conventions
 
@@ -173,9 +173,11 @@ What EnhancedDerivedSheaves must provide (gap:VS-PII/G-restricted-nerves): §E3.
 
 What EnhancedDerivedSheaves must provide (gap:VS-PII/G-descent): §E3.4 (extension beyond ringed diagrams): Input I satisfying P0–P5bis must extend to Output I with those properties, in the abstract setting of LiuZhengEnhanced Theorem 4.1.8(1) and its GHW22 Theorem 4.9 specialization.
 
-What EtaleDualityAndPerverseSheaves must provide (gap:VS-PII/G-scheme-local-terms): §§6.2–6.3 (extension of coefficient and complex range): For every commutative n-torsion Λ with n prime to p, scheme cohomological correspondences and their pullback and restriction must extend to arbitrary D_ét complexes, while trace classes, local terms and base change must extend to f-ULA complexes on separated finite-type models, compatibly with perfection.
+What EtaleDualityAndPerverseSheaves must provide (gap:VS-PII/G-scheme-correspondences): §6.2 (extension of coefficient and complex range): For every commutative ring Λ with nΛ = 0 for an integer n invertible in k, cohomological correspondences between arbitrary objects of D(X_ét, Λ) on separated finite-type k-schemes must be defined, with composition, pullback along morphisms of correspondences and restriction to opens.
 
-These are required extensions of the named supplier sections, not claims that those sections state the results. VS7.4–7.5 depend on the four EnhancedDerivedSheaves gaps. VS10.7–10.8 depend on the EtaleDualityAndPerverseSheaves gap.
+What EtaleDualityAndPerverseSheaves must provide (gap:VS-PII/G-scheme-local-terms): §6.3 (extension of coefficient and complex range): For the same Λ and k separably closed, trace classes Tr_c(u) ∈ H⁰(Fix(c), K_{Fix(c)}) and local terms of cohomological correspondences between f-ULA complexes on separated finite-type k-schemes must be defined, compatibly with base change along extensions of separably closed fields.
+
+These are required extensions of the named supplier sections, not claims that those sections state the results. VS7.4–7.5 depend on the four EnhancedDerivedSheaves gaps. VS10.7–10.8 depend on gap:VS-PII/G-scheme-correspondences and VS10.8 also on gap:VS-PII/G-scheme-local-terms; the passage from perfect schemes to their finite-type models is VS10.8's own step, from SchemeAndStackFoundations §§0.24 and 0.23a.
 
 ## How to read the build
 
@@ -241,7 +243,7 @@ A proof route is as follows.
 
 1. Clean charts: refine U by an open cover by separated spatial pieces on which the chart is separated and smooth and take the disjoint union (GHW22 Remark 1.2(ii)).
 2. Fibre products of test diamonds: T ×_X T′ = (T × T′) ×_{X×X} X, and T × T′ is a locally separated locally spatial diamond (GHW22 Remark 1.2(i)).
-3. Hansen–Kaletha–Weinstein's restatement (HKW22 Definition 4.1.7) asks for a strictly surjective chart that is locally compactifiable of finite dim.trg; the conventions use the public GHW22 Definition 1.1 and records the difference in Corrections to the sources.
+3. Hansen–Kaletha–Weinstein's restatement (HKW22 Definition 4.1.7) asks for a strictly surjective chart that is locally compactifiable of finite dim.trg; the conventions use the public GHW22 Definition 1.1 and record the difference in Corrections to the sources.
 
 The source locators are: Gulotta–Hansen–Weinstein, Definition 1.1 and Remark 1.2, p. 2: Defines decent v-stacks by the diagonal condition and the existence of a surjective, locally separated and cohomologically smooth chart from a locally separated locally spatial diamond, and introduces clean charts. Hansen–Kaletha–Weinstein, Definition 4.1.7, p. 23: Restates decency (with charts that are strictly surjective and locally compactifiable of finite dim.trg) as the class of geometric objects for the stacky six-functor formalism.
 
@@ -310,7 +312,7 @@ A proof route is as follows.
 
 The source locators are: Gulotta–Hansen–Weinstein, Proposition 4.5 and proof, pp. 20–21: Proves fibre products of decent v-stacks are decent, building charts from charts and handling the diagonal by cancellation. Hansen–Kaletha–Weinstein, §4.1, list after Definition 4.1.7, p. 24: Records that absolute products and fibre products of decent v-stacks are decent.
 
-*Needs:* Layer VS6 *decent-v-stack*; Layer VS6 *decent-is-artin*; Layer VS6 *locally-separated-representability*; DiamondSixOperations:S4.4; DiamondSixOperations:S4.4.
+*Needs:* Layer VS6 *decent-v-stack*; Layer VS6 *decent-is-artin*; Layer VS6 *locally-separated-representability*; DiamondSixOperations:S4.4.
 
 **Checks.**
 
@@ -356,7 +358,7 @@ A proof route is as follows.
 
 The source locators are: Gulotta–Hansen–Weinstein, Definition 1.3(i), p. 3; Remarks 4.6–4.7, pp. 21–23; Proposition 4.8(o), p. 23: Defines fine morphisms through charts with a locally compactifiable finite-dim.trg top map, shows clean and Cartesian charts suffice, and that the condition holds for every square of charts. Hansen–Kaletha–Weinstein, Definition 4.1.7 (second paragraph), p. 23: Restates fine morphisms as the maps for which exceptional functors exist.
 
-*Needs:* Layer VS6 *decent-v-stack*; DiamondSixOperations:S0.1; DiamondSixOperations:S0.2; DiamondSixOperations:S0.2; DiamondSixOperations:S0.2; DiamondSixOperations:S4.3.
+*Needs:* Layer VS6 *decent-v-stack*; DiamondSixOperations:S0.1; DiamondSixOperations:S0.2; DiamondSixOperations:S4.3.
 
 These facts enter the following constructions.
 
@@ -398,7 +400,7 @@ A proof route is as follows.
 
 The source locators are: Gulotta–Hansen–Weinstein, Proposition 4.8 and proof, pp. 23–26: Proves composition, base change, cancellation and the separated-representable criterion for fine maps. Hansen–Kaletha–Weinstein, §4.1 list after Definition 4.1.7, p. 24, and footnote 4, p. 28: Uses composition and cancellation to see that both legs of a correspondence are fine.
 
-*Needs:* Layer VS6 *fine-morphism*; Layer VS6 *decent-fibre-products*; DiamondSixOperations:S0.2; DiamondSixOperations:S0.2; DiamondSixOperations:S4.3.
+*Needs:* Layer VS6 *fine-morphism*; Layer VS6 *decent-fibre-products*; DiamondSixOperations:S0.2; DiamondSixOperations:S4.3.
 
 **Checks.**
 
@@ -421,7 +423,7 @@ A proof route is as follows.
 
 The source locators are: Gulotta–Hansen–Weinstein, Definition 1.3(ii), p. 3; Remark 4.6, last paragraph, p. 22: Defines ℓ-cohomologically smooth maps of decent v-stacks through charts and notes agreement with Fargues–Scholze Definition IV.1.11. Hansen–Kaletha–Weinstein, Paragraph after Theorem 4.1.8, p. 24: Recalls the extrinsic and intrinsic notions of smoothness for fine maps.
 
-*Needs:* Layer VS6 *fine-morphism*; Layer VS6 *fine-permanence*; DiamondSixOperations:S4.2; DiamondSixOperations:S4.4; DiamondSixOperations:S4.4; DiamondSixOperations:S4.4; VStackSheavesAndLisseCategories VS0 *shriek-pullback-for-smooth-stacky-maps*; VStackSheavesAndLisseCategories VS0 *point-to-classifying-stack-not-smooth*.
+*Needs:* Layer VS6 *fine-morphism*; Layer VS6 *fine-permanence*; DiamondSixOperations:S4.2; DiamondSixOperations:S4.4; VStackSheavesAndLisseCategories VS0 *shriek-pullback-for-smooth-stacky-maps*; VStackSheavesAndLisseCategories VS0 *point-to-classifying-stack-not-smooth*.
 
 These facts enter the following constructions.
 
@@ -494,7 +496,7 @@ Work under the following hypotheses: X, Y are small v-stacks; Λ is a commutativ
 
 A proof route is as follows.
 
-1. D_ét(−, Λ) is a v-sheaf of ∞-categories on small v-stacks (Sch17 §17, recorded in DiamondEtaleCohomology and EnhancedDerivedSheaves E2), so f ↦ f^* is a pseudo-functor out of the (2,1)-category of small v-stacks; α^* is its value on α.
+1. D_ét(−, Λ) is a v-sheaf of ∞-categories on small v-stacks (Sch17 §17, recorded in EnhancedDerivedSheaves E2), so f ↦ f^* is a pseudo-functor out of the (2,1)-category of small v-stacks; α^* is its value on α.
 2. α_* is the mate of (α^{-1})^* under the adjunctions f^* ⊣ Rf_*, g^* ⊣ Rg_*; the two stated diagrams are the defining identities of a mate (EnhancedDerivedSheaves:E3.4).
 
 The source locators are: Hansen–Kaletha–Weinstein, Remark 4.1.2, p. 22: States that the pullback/pushforward adjunction is compatible with a 2-morphism through the unit and counit diagrams. Hansen–Kaletha–Weinstein, Definition 4.3.4, verification on p. 30: Uses the two diagrams to show 2-morphisms of cohomological correspondences are well defined.
@@ -560,7 +562,7 @@ The interface consists of the following facts.
 
 ### Dependencies
 
-This layer uses `VStackSheavesAndLisseCategories:VS0`, `VStackSheavesAndLisseCategories:VS1`, `DiamondSixOperations:S0`, `DiamondSixOperations:S4`, `DiamondsAndVStacks:D4`, `DiamondsAndVStacks:D5`, `DiamondsAndVStacks:D6`.
+This layer uses `VStackSheavesAndLisseCategories:VS0`, `VStackSheavesAndLisseCategories:VS1`, `DiamondSixOperations:S0`, `DiamondSixOperations:S1`, `DiamondSixOperations:S4`, `DiamondSixOperations:S5`, `DiamondsAndVStacks:D4`, `DiamondsAndVStacks:D5`, `DiamondsAndVStacks:D6`, `EnhancedDerivedSheaves:E2`, `EnhancedDerivedSheaves:E3`.
 
 ## Layer VS7: exceptional functors for fine maps
 
@@ -648,7 +650,7 @@ A proof route is as follows.
 
 The source locators are: Gulotta–Hansen–Weinstein, Definition 3.11, Lemma 3.12, Scholium 3.13 and the following paragraph, p. 16: Defines strongly and weakly compactifiable maps, states their permanence (proofs of (i)–(iv) left to the reader) and the properties of Rf_! = h_! ∘ Rp_* ∘ j_!.
 
-*Needs:* Layer VS7 *prespatial-diamond*; Layer VS7 *prespatial-cohomological-amplitude*; DiamondSixOperations:S0.1; DiamondSixOperations:S0.2; DiamondSixOperations:S0.2; DiamondSixOperations:S1.2; DiamondSixOperations:S1.5; DiamondSixOperations:S1.5; DiamondSixOperations:S1.5; DiamondSixOperations:S1.5.
+*Needs:* Layer VS7 *prespatial-diamond*; Layer VS7 *prespatial-cohomological-amplitude*; DiamondSixOperations:S0.1; DiamondSixOperations:S0.2; DiamondSixOperations:S1.2; DiamondSixOperations:S1.5.
 
 These facts enter the following constructions.
 
@@ -729,7 +731,7 @@ A proof route is as follows.
 
 The source locators are: Gulotta–Hansen–Weinstein, Theorem 1.4, pp. 3–4; Theorem 2.6, p. 12: States the existence of Rf_! for fine maps of decent v-stacks with agreement, pseudo-functoriality, projection formula, proper base change and a right adjoint, from an enhanced operation map. Gulotta–Hansen–Weinstein, §§4.2–4.6, Theorem 4.9, Lemmas 4.10–4.11, Propositions 4.12–4.13, pp. 26–30: Runs three iterations of Liu–Zheng's DESCENT and identifies the result with D_ét and Scholze's functors. Hansen–Kaletha–Weinstein, Theorem 4.1.8, p. 24: Recalls the theorem as the input for stacky maps.
 
-*Needs:* Layer VS7 / enhanced-operations-for-qcqs-v-sheaves; Layer VS6 / fine-morphism; Layer VS6 / fine-permanence; Layer VS6 / decent-fibre-products; DiamondSixOperations §S2.3; DiamondSixOperations §S2.4; DiamondSixOperations §S2.4; DiamondSixOperations §S3.1; EnhancedDerivedSheaves §E3.2; VStackSheavesAndLisseCategories §VS0/enhanced-smooth-descent; gap:VS-PII/G-enhanced-operation-map; gap:VS-PII/G-partial-adjoints; gap:VS-PII/G-restricted-nerves; gap:VS-PII/G-descent.
+*Needs:* Layer VS7 / enhanced-operations-for-qcqs-v-sheaves; Layer VS6 / fine-morphism; Layer VS6 / fine-permanence; Layer VS6 / decent-fibre-products; DiamondSixOperations §S2.3; DiamondSixOperations §S2.4; DiamondSixOperations §S3.1; EnhancedDerivedSheaves §E3.2; VStackSheavesAndLisseCategories §VS0/enhanced-smooth-descent; gap:VS-PII/G-enhanced-operation-map; gap:VS-PII/G-partial-adjoints; gap:VS-PII/G-restricted-nerves; gap:VS-PII/G-descent.
 
 **Checks.**
 
@@ -754,7 +756,7 @@ A proof route is as follows.
 
 The source locators are: Hansen–Kaletha–Weinstein, Theorems 4.1.4–4.1.5, pp. 22–23; Theorem 4.1.8, p. 24: Lists (P1)–(P5) and (BC1)–(BC2) for maps representable in nice diamonds and asserts them for fine maps. Gulotta–Hansen–Weinstein, Theorem 1.4, pp. 3–4: Provides the projection formula, proper base change and the right adjoint from which the rest is derived. Hansen–Kaletha–Weinstein, Definition 4.3.4, tensor product of 1-morphisms, p. 30: Uses the Künneth isomorphism for !-pushforward to define tensor products of cohomological correspondences.
 
-*Needs:* Layer VS7 *fine-shriek-functors*; DiamondSixOperations:S3.4; DiamondSixOperations:S3.2; DiamondSixOperations:S3.3; DiamondSixOperations:S3.2; EnhancedDerivedSheaves:E3.4; EnhancedDerivedSheaves:E1.4.
+*Needs:* Layer VS7 *fine-shriek-functors*; DiamondSixOperations:S3.4; DiamondSixOperations:S3.2; DiamondSixOperations:S3.3; EnhancedDerivedSheaves:E3.4; EnhancedDerivedSheaves:E1.4.
 
 **Checks.**
 
@@ -801,7 +803,7 @@ A proof route is as follows.
 
 The source locators are: Gulotta–Hansen–Weinstein, Proposition 4.14 and proof, p. 31: Characterises ℓ-cohomological smoothness of fine maps intrinsically through Rf^!F_ℓ. Fargues–Scholze, Proposition IV.2.33, p. 129: Characterises cohomological smoothness of representable compactifiable maps by ULA-ness of F_ℓ and invertibility of the dualizing object. Hansen–Kaletha–Weinstein, Paragraph after Theorem 4.1.8 and equation (4.1.2), pp. 23–24: Uses the twisted-pullback isomorphism and smooth base change for smooth fine maps.
 
-*Needs:* Layer VS6 *fine-cohomologically-smooth*; Layer VS7 *fine-shriek-functors*; Layer VS7 *fine-six-functor-identities*; DiamondSixOperations:S4.2; DiamondSixOperations:S4.1; DiamondSixOperations:S4.5; DiamondSixOperations:S4.5; VStackSheavesAndLisseCategories VS1 *smooth-ula-criterion*; VStackSheavesAndLisseCategories VS0 *shriek-pullback-for-smooth-stacky-maps*.
+*Needs:* Layer VS6 *fine-cohomologically-smooth*; Layer VS7 *fine-shriek-functors*; Layer VS7 *fine-six-functor-identities*; DiamondSixOperations:S4.2; DiamondSixOperations:S4.1; DiamondSixOperations:S4.5; VStackSheavesAndLisseCategories VS1 *smooth-ula-criterion*; VStackSheavesAndLisseCategories VS0 *shriek-pullback-for-smooth-stacky-maps*.
 
 **Checks.**
 
@@ -904,7 +906,7 @@ The source locators are: Hansen–Kaletha–Weinstein, Lemma 4.1.11, equation (4
 
 ### Dependencies
 
-This layer uses `VStackSheavesAndLisseCategoriesPartII:VS6`, `VStackSheavesAndLisseCategories:VS0`, `DiamondSixOperations:S1`, `DiamondSixOperations:S2`, `DiamondSixOperations:S3`, `DiamondSixOperations:S4`, `EnhancedDerivedSheaves:E2`, `EnhancedDerivedSheaves:E3`, `EnhancedDerivedSheaves:E5:abstract`.
+This layer uses `VStackSheavesAndLisseCategoriesPartII:VS6`, `VStackSheavesAndLisseCategories:VS0`, `VStackSheavesAndLisseCategories:VS1`, `DiamondsAndVStacks:D4`, `DiamondsAndVStacks:D5`, `DiamondSixOperations:S0`, `DiamondSixOperations:S1`, `DiamondSixOperations:S2`, `DiamondSixOperations:S3`, `DiamondSixOperations:S4`, `EnhancedDerivedSheaves:E1`, `EnhancedDerivedSheaves:E2`, `EnhancedDerivedSheaves:E3`, `EnhancedDerivedSheaves:E5:abstract`.
 
 ## Layer VS8: locally profinite sets and classifying stacks
 
@@ -1032,7 +1034,7 @@ A proof route is as follows.
 
 The source locators are: Hansen–Kaletha–Weinstein, Example 4.2.1, p. 25: Identifies D_ét(T_S, Λ) with the derived category of smooth C(T, Λ)-modules and computes the four operations of T_S → S, with H^0(T_S, f^!Λ) = Dist(T, Λ).
 
-*Needs:* Layer VS8 *sheaves-on-locally-profinite-sets*; Layer VS8 *locally-profinite-distributions*; DiamondsAndVStacks D4 *compact-hausdorff-diamonds*; DiamondSixOperations:S1.3; DiamondSixOperations:S1.3; DiamondSixOperations:S2.3; DiamondSixOperations:S3.1; DiamondSixOperations:S5.4; Layer VS6 *decent-v-stack-examples*.
+*Needs:* Layer VS8 *sheaves-on-locally-profinite-sets*; Layer VS8 *locally-profinite-distributions*; DiamondsAndVStacks D4 *compact-hausdorff-diamonds*; DiamondSixOperations:S1.3; DiamondSixOperations:S2.3; DiamondSixOperations:S3.1; DiamondSixOperations:S5.4; Layer VS6 *decent-v-stack-examples*.
 
 **Checks.**
 
@@ -1162,7 +1164,7 @@ A proof route is as follows.
 
 The source locators are: Hansen–Kaletha–Weinstein, Example 4.2.4, p. 27: Shows [S/G_S] → S is fine and cohomologically smooth and computes f^*, Rf_*, Rf_!, Rf^!, with K = Haar(G, Λ)^∗.
 
-*Needs:* Layer VS8 *classifying-stack-operations*; Layer VS8 *haar-module*; Layer VS6 *fine-cohomologically-smooth*; Layer VS7 *fine-smoothness-and-dualizing-objects*; Layer VS7 *relative-dualizing-complex*; SmoothRepresentationsOfLocalGroups SR.0:derived-extension *derived-invariants*; DiamondSixOperations:S5.4. VStackSheavesAndLisseCategories VS4/classifying-stack-equivalence.
+*Needs:* Layer VS8 *classifying-stack-operations*; Layer VS8 *haar-module*; Layer VS6 *fine-cohomologically-smooth*; Layer VS7 *fine-smoothness-and-dualizing-objects*; Layer VS7 *relative-dualizing-complex*; SmoothRepresentationsOfLocalGroups SR.0:derived-extension *derived-invariants*; DiamondSixOperations:S5.4; VStackSheavesAndLisseCategories VS4/classifying-stack-equivalence.
 
 **Checks.**
 
@@ -1201,7 +1203,7 @@ The source locators are: Hansen–Kaletha–Weinstein, Example 4.2.5 and equatio
 
 ### Dependencies
 
-This layer uses `VStackSheavesAndLisseCategoriesPartII:VS6`, `VStackSheavesAndLisseCategoriesPartII:VS7`, `VStackSheavesAndLisseCategories:VS4`, `SmoothRepresentationsOfLocalGroups:SR.0`, `SmoothRepresentationsOfLocalGroups:SR.1`, `SmoothRepresentationsOfLocalGroups:SR.2`, `DiamondSixOperations:S1`, `DiamondSixOperations:S5`.
+This layer uses `VStackSheavesAndLisseCategoriesPartII:VS6`, `VStackSheavesAndLisseCategoriesPartII:VS7`, `VStackSheavesAndLisseCategories:VS4`, `SmoothRepresentationsOfLocalGroups:SR.0`, `SmoothRepresentationsOfLocalGroups:SR.1`, `SmoothRepresentationsOfLocalGroups:SR.2`, `DiamondsAndVStacks:D4`, `DiamondSixOperations:S1`, `DiamondSixOperations:S2`, `DiamondSixOperations:S3`, `DiamondSixOperations:S5`.
 
 ## Layer VS9: categorical traces and cohomological correspondences
 
@@ -1412,7 +1414,7 @@ The interface consists of the following facts.
 
 ### VS9.7 The symmetric monoidal 2-category of cohomological correspondences (*cohomological-correspondence-bicategory*, construction)
 
-CoCorr_S has objects (X, A) with X ∈ Corr_S and A ∈ D_ét(X, Λ); 1-morphisms (X, A) → (X′, A′) are pairs (c, u) with c a correspondence and u : c₁^*A → c₂^!A′, composed as (d′₁)^*c₁^*A → (d′₁)^*c₂^!A′ → (c′₂)^!d₁^*A′ → (c′₂)^!d₂^!A″ (the middle map adjoint to base change); 2-morphisms (c, u) ⇒ (d, v) are the 2-morphisms (p, α₁, α₂) of Corr_S for which the composite d₁^*A → p_*p^*d₁^*A ≅ p_*c₁^*A → p_*c₂^!A′ ≅ p_*p^!d₂^!A′ ≅ p_!p^!d₂^!A′ → d₂^!A′ equals v. The tensor product is (X, A) ⊗ (X′, A′) = (X ×_S X′, A ⊠_S A′) with unit (S, Λ_S), and (c, u) ⊗ (d, v) uses the Künneth map into (c₂ ×_S d₂)^!(A′₁ ⊠_S A′₂). The monoidal structure is closed with Hom((X₁, A₁), (X₂, A₂)) = (X₁ ×_S X₂, RHom(pr₁^*A₁, pr₂^!A₂)). Equivalently, CoCorr_S is the Grothendieck construction of the right-lax symmetric monoidal functor Corr_S → Cat^co, X ↦ D_ét(X, Λ), c ↦ c₂!c₁^*. ΩCoCorr_S has objects (X, ω) with X fine over S and ω ∈ H^0(X, K_{X/S}), and morphisms proper p with p_∗ω = ω′.
+CoCorr_S has objects (X, A) with X ∈ Corr_S and A ∈ D_ét(X, Λ); 1-morphisms (X, A) → (X′, A′) are pairs (c, u) with c a correspondence and u : c₁^*A → c₂^!A′, composed as (d′₁)^*c₁^*A → (d′₁)^*c₂^!A′ → (c′₂)^!d₁^*A′ → (c′₂)^!d₂^!A″ (the middle map adjoint to base change); 2-morphisms (c, u) ⇒ (d, v) are the 2-morphisms (p, α₁, α₂) of Corr_S for which the composite d₁^*A → p_*p^*d₁^*A ≅ p_*c₁^*A → p_*c₂^!A′ ≅ p_*p^!d₂^!A′ ≅ p_!p^!d₂^!A′ → d₂^!A′ equals v. The tensor product is (X, A) ⊗ (X′, A′) = (X ×_S X′, A ⊠_S A′) with unit (S, Λ_S), and (c, u) ⊗ (d, v) uses the Künneth map into (c₂ ×_S d₂)^!(A′₁ ⊠_S A′₂). The monoidal structure is closed with Hom((X₁, A₁), (X₂, A₂)) = (X₁ ×_S X₂, RHom(pr₁^*A₁, pr₂^!A₂)). Equivalently, CoCorr_S is the Grothendieck construction of the right-lax symmetric monoidal functor Corr_S → Cat^co, X ↦ D_ét(X, Λ), c ↦ c₂!c₁^*. ΩCoCorr_S has objects (X, ω) with X fine over S and ω ∈ H^0(X, K_{X/S}), and morphisms proper nice p with p_∗ω = ω′.
 
 Work under the following hypotheses: S is a decent v-stack; Λ is a commutative ring with nΛ = 0 for an integer n prime to p. The exceptional functors are those of VS7/fine-shriek-functors; proper 2-morphisms use Rp_∗ = Rp_! (VS7/proper-nice-shriek-is-pushforward).
 
@@ -1420,7 +1422,7 @@ A proof route is as follows.
 
 1. Composition and its associativity: base change (BC1) and its compatibility with composition (VS7/fine-six-functor-identities).
 2. 2-morphisms depend only on the equivalence class of (p, α₁, α₂): the five squares of HKW22 p. 30 commute by VS6/two-morphism-adjunction-compatibility, by β_i = (id ∗ γ) ∘ α_i with the pseudo-functor structures, and by γ_∗ = γ_! for proper maps.
-3. Tensor products: the Künneth isomorphism (c₂ ×_S d₂)_!(B₁ ⊠_S B₂) ≅ c₂!B₁ ⊠_S d₂!B₂ (VS7/fine-six-functor-identities); the target is (c₂ ×_S d₂)^!(A′₁ ⊠_S A′₂) (HKW22 the corrected tensor target in Corrections to the sources corrected).
+3. Tensor products: the Künneth isomorphism (c₂ ×_S d₂)_!(B₁ ⊠_S B₂) ≅ c₂!B₁ ⊠_S d₂!B₂ (VS7/fine-six-functor-identities); the target is (c₂ ×_S d₂)^!(A′₁ ⊠_S A′₂) (HKW22 Definition 4.3.4, with the target corrected in Corrections to the sources).
 4. Closedness: Hom from (X, A) ⊗ (Y, B) to (Z, C) and from (X, A) to (Y ×_S Z, RHom(pr^*B, pr^!C)) agree through RHom(a ⊗ b, c) ≅ RHom(a, RHom(b, c)) and (P5) (the analogue of LZ22 Lemma 2.8).
 5. Grothendieck construction: the functor X ↦ D_ét(X, Λ), c ↦ c₂!c₁^*, p ↦ counit, is right-lax symmetric monoidal with Künneth isomorphisms; apply VS9/symmetric-monoidal-grothendieck-construction (LZ22 Remark 2.7).
 
@@ -1442,9 +1444,9 @@ The interface consists of the following facts.
 - A 2-morphism of Corr_S whose induced composite carries u to v.
 - (X, A) ⊗ (X′, A′) = (X ×_S X′, A ⊠_S A′), unit (S, Λ_S).
 - Hom((X₁, A₁), (X₂, A₂)) = (X₁ ×_S X₂, RHom(pr₁^*A₁, pr₂^!A₂)).
-- For proper q, p with a correspondence C′ → X′ ×_S X′ compatible with c, an endomorphism over c induces a unique endomorphism of (X′, q_∗A) over C′ with p a 2-morphism (VS9/symmetric-monoidal-grothendieck-construction, liftAlong).
+- For proper nice q, p with a correspondence C′ → X′ ×_S X′ compatible with c, an endomorphism over c induces a unique endomorphism of (X′, q_∗A) over C′ with p a 2-morphism (VS9/symmetric-monoidal-grothendieck-construction, the unique lift of Lu–Zheng Lemma 1.11).
 - The symmetric monoidal forgetful functor CoCorr_S → Corr_S.
-- ΩCoCorr_S has objects (X, ω ∈ H^0(X, K_{X/S})) and morphisms proper p with p_∗ω = ω′.
+- ΩCoCorr_S has objects (X, ω ∈ H^0(X, K_{X/S})) and morphisms proper nice p with p_∗ω = ω′.
 
 **Checks.**
 
@@ -1614,7 +1616,7 @@ The source locators are: Hansen–Kaletha–Weinstein, Lemma 4.3.7, p. 32: State
 
 ### Dependencies
 
-This layer uses `VStackSheavesAndLisseCategoriesPartII:VS6`, `VStackSheavesAndLisseCategoriesPartII:VS7`, `VStackSheavesAndLisseCategories:VS1`, `EnhancedDerivedSheaves:E5:spectra-comparison`.
+This layer uses `VStackSheavesAndLisseCategoriesPartII:VS6`, `VStackSheavesAndLisseCategoriesPartII:VS7`, `VStackSheavesAndLisseCategories:VS1`, `EnhancedDerivedSheaves:E5:abstract`, `PivotalSpherical:2`, `PivotalSpherical:7`, `AdicSpacesPartIII:R3.8`, `DGAInfinity:5`.
 
 ## Layer VS10: the lefschetz–verdier trace formula and local terms
 
@@ -1632,10 +1634,10 @@ Work under the following hypotheses: S is a decent v-stack; Λ is a commutative 
 
 A proof route is as follows.
 
-1. Uniqueness and existence of 𝔣′: lift (c, u) along the 2-morphism given by p (VS9/symmetric-monoidal-grothendieck-construction, Lu–Zheng Lemma 1.11; VS9/cohomological-correspondence-bicategory, pushAlongProper).
+1. Uniqueness and existence of 𝔣′: lift (c, u) along the 2-morphism given by p (VS9/symmetric-monoidal-grothendieck-construction, Lu–Zheng Lemma 1.11; VS9/cohomological-correspondence-bicategory, the pushed endomorphism).
 2. Dualizability of (X′, Rq_∗A): q♮ is right adjointable in Corr_S (VS9/correspondence-bicategory) and X′ is dualizable in Corr_S, so Lu–Zheng Remark 1.12(b) applies; equivalently (X′, Rq_∗A) has dual (X′, Rq_∗𝔻_{X/S}A) by the internal-Hom argument of Lu–Zheng Proposition 2.23.
 3. The two triangles (𝔮 ⊗ (𝔮^!)^∨) ∘ coev_𝔛 ⇒ coev_{𝔛′} and ev_𝔛 ⇒ ev_{𝔛′} ∘ ((𝔮^!)^∨ ⊗ 𝔮) and the square p̃ with the mate on the dual factor paste to tr(p̃) (VS9/trace-functoriality, Lu–Zheng Construction 1.7); uniqueness holds because 2-morphisms in CoCorr_S over a given proper nice map are unique.
-4. The concrete form reads off the 2-morphism in ΩCoCorr_S (VS9/cohomological-correspondence-bicategory, omega).
+4. The concrete form reads off the 2-morphism in ΩCoCorr_S (VS9/cohomological-correspondence-bicategory, the description of ΩCoCorr_S).
 
 The source locators are: Hansen–Kaletha–Weinstein, Theorem 4.3.8 and proof, pp. 32–33: States and proves the relative Lefschetz–Verdier trace formula in CoCorr_S: dualizability of (X′, q_∗A), the unique pushed endomorphism and the 2-morphism tr(f) ⇒ tr(f′) over tr(p). Lu–Zheng, Theorem 2.21, Corollary 2.22, Proposition 2.23, pp. 18–19: Proves the scheme version, of which the v-stack proof is formally the same.
 
@@ -1806,7 +1808,7 @@ For a perfect field k of characteristic p and the category PSch^ft_k of perfect 
 
 Work under the following hypotheses: k is a perfect field of characteristic p; Λ is a commutative ring with nΛ = 0 for an integer n prime to p.
 
-The general coefficient and f-ULA scheme interface is required by gap:VS-PII/G-scheme-local-terms; the supplied finite-ring bounded constructible finite-Tor instance uses EtaleDualityAndPerverseSheaves §§6.2–6.3.
+The general-coefficient scheme correspondence interface is required by gap:VS-PII/G-scheme-correspondences; the supplied finite-ring bounded constructible finite-Tor instance uses EtaleDualityAndPerverseSheaves §6.2.
 
 A proof route is as follows.
 
@@ -1816,7 +1818,7 @@ A proof route is as follows.
 
 The source locators are: Hansen–Kaletha–Weinstein, §5.3, discussion before Proposition 5.3.2, p. 49: Introduces (−)^♢ on perfect schemes, the fully faithful comparison c_X^* of Sch17 §27 with its RHom and Rf^! comparisons, and the induced correspondence u^♢.
 
-*Needs:* AdicCoefficientsAndComparisons §L1/char-p-scheme-diamond-and-comparison-functor; AdicCoefficientsAndComparisons §L1/comparison-pullback; AdicCoefficientsAndComparisons §L3/full-faithfulness-27-2; AdicCoefficientsAndComparisons §L3/rf-shriek-comparison-27-4; AdicCoefficientsAndComparisons §L3/commutation-and-adjoints-27-1-27-3; AdicCoefficientsAndComparisons §L3/internal-Hom-right-adjoint; EtaleDualityAndPerverseSheaves §6.1 (scheme correspondences and fixed schemes); EtaleDualityAndPerverseSheaves §6.2 (cohomological correspondences and composition); Layer VS9 / cohomological-correspondence-bicategory; gap:VS-PII/G-scheme-local-terms.
+*Needs:* AdicCoefficientsAndComparisons §L1/char-p-scheme-diamond-and-comparison-functor; AdicCoefficientsAndComparisons §L1/comparison-pullback; AdicCoefficientsAndComparisons §L3/full-faithfulness-27-2; AdicCoefficientsAndComparisons §L3/rf-shriek-comparison-27-4; AdicCoefficientsAndComparisons §L3/commutation-and-adjoints-27-1-27-3; AdicCoefficientsAndComparisons §L3/internal-Hom-right-adjoint; EtaleDualityAndPerverseSheaves §6.1 (scheme correspondences and fixed schemes); EtaleDualityAndPerverseSheaves §6.2 (cohomological correspondences and composition); Layer VS9 / cohomological-correspondence-bicategory; gap:VS-PII/G-scheme-correspondences.
 
 These facts enter the following constructions.
 
@@ -1837,7 +1839,7 @@ The interface consists of the following facts.
 - Hom_{CoCorr}((X, F), (X, F)) over a correspondence c injects into the corresponding Hom over c^♢, by full faithfulness of c^*.
 - For a non-separated perfect scheme (the line with doubled origin) the correspondence category of PSch^ft_k does not contain it, and the representability statement used for c₂^♢ fails.
 
-- For Λ = F_ℓ[t], ℓ ≠ p, the coefficient condition nΛ = 0 holds with n = ℓ; the general supplier gap is required, since §6.3’s finite-ring range does not contain Λ.
+- For Λ = F_ℓ[t], ℓ ≠ p, the coefficient condition nΛ = 0 holds with n = ℓ; gap:VS-PII/G-scheme-correspondences is required, since §6.2’s finite-ring range does not contain Λ.
 
 <a id="VS10-local-terms-perfect-schemes"></a>
 
@@ -1847,7 +1849,7 @@ Let k be perfect, X ∈ PSch^ft_k with f : X → Spec k, c : C → X ×_k X a co
 
 Work under the following hypotheses: k is a perfect field of characteristic p; Λ is a commutative ring with nΛ = 0 for an integer n prime to p. c₁ and f ∘ c′ are perfectly proper; F is f-ULA. The scheme-theoretic local term is that of EtaleDualityAndPerverseSheaves §6.3 for the finite-type models, with the general coefficient extension specified in gap:VS-PII/G-scheme-local-terms, after base change to an algebraic closure of k.
 
-The general coefficient and f-ULA scheme interface is required by gap:VS-PII/G-scheme-local-terms; the supplied finite-ring bounded constructible finite-Tor instance uses EtaleDualityAndPerverseSheaves §§6.2–6.3.
+The general-coefficient scheme correspondence and f-ULA local-term interfaces are required by gap:VS-PII/G-scheme-correspondences and gap:VS-PII/G-scheme-local-terms; the supplied finite-ring bounded constructible finite-Tor instance uses EtaleDualityAndPerverseSheaves §§6.2–6.3.
 
 A proof route is as follows.
 
@@ -1857,14 +1859,14 @@ A proof route is as follows.
 
 The source locators are: Hansen–Kaletha–Weinstein, Proposition 5.3.2 and proof, pp. 49–50: Proves that local terms of perfect schemes agree with those of their associated v-sheaves, by the symmetric monoidality of diamondification on cohomological correspondences.
 
-*Needs:* Layer VS10 / diamondification-of-scheme-correspondences; Layer VS10 / local-terms; Layer VS10 / local-terms-base-change; Layer VS9 / trace-functoriality; EtaleDualityAndPerverseSheaves §6.3 (trace maps and local terms); EtaleDualityAndPerverseSheaves §6.2 (CohCorr.pullbackAlong and CohCorr.restrictOpen); AdicCoefficientsAndComparisons §L3/rf-shriek-comparison-27-4; SchemeAndStackFoundations §0.24 (perfection_universalHomeomorphism) and §0.23a (étale topological invariance); gap:VS-PII/G-scheme-local-terms.
+*Needs:* Layer VS10 / diamondification-of-scheme-correspondences; Layer VS10 / local-terms; Layer VS10 / local-terms-base-change; Layer VS9 / trace-functoriality; EtaleDualityAndPerverseSheaves §6.3 (trace maps and local terms); EtaleDualityAndPerverseSheaves §6.2 (CohCorr.pullbackAlong and CohCorr.restrictOpen); AdicCoefficientsAndComparisons §L3/rf-shriek-comparison-27-4; SchemeAndStackFoundations §0.24 (perfection_universalHomeomorphism) and §0.23a (étale topological invariance); gap:VS-PII/G-scheme-correspondences; gap:VS-PII/G-scheme-local-terms.
 
 **Checks.**
 
 - For X = Spec k and c = id, both sides are the Euler characteristic of F.
 - For Frobenius correspondences on perfect varieties, the v-sheaf local terms recover the scheme local terms.
 
-- For X = Spec k and Λ = F_ℓ[t], the two traces of id on Λ[0] are 1; deriving their scheme trace comparison requires the general supplier gap.
+- For X = Spec k and Λ = F_ℓ[t], the two traces of id on Λ[0] are 1; deriving their scheme trace comparison requires gap:VS-PII/G-scheme-local-terms.
 
 ### Examples
 
@@ -1875,7 +1877,7 @@ The source locators are: Hansen–Kaletha–Weinstein, Proposition 5.3.2 and pro
 
 ### Dependencies
 
-This layer uses `VStackSheavesAndLisseCategoriesPartII:VS9`, `VStackSheavesAndLisseCategoriesPartII:VS7`, `EtaleDualityAndPerverseSheaves:6.1–6.3`, `AdicCoefficientsAndComparisons:L1`, `AdicCoefficientsAndComparisons:L3`, `SchemeAndStackFoundations:0.24 and 0.23a`.
+This layer uses `VStackSheavesAndLisseCategoriesPartII:VS6`, `VStackSheavesAndLisseCategoriesPartII:VS7`, `VStackSheavesAndLisseCategoriesPartII:VS9`, `EtaleDualityAndPerverseSheaves:6.1–6.3`, `AdicCoefficientsAndComparisons:L1`, `AdicCoefficientsAndComparisons:L3`, `SchemeAndStackFoundations:0.24 and 0.23a`.
 
 ## Layer VS11: characteristic classes on classifying and quotient stacks
 
@@ -1900,7 +1902,7 @@ A proof route is as follows.
 
 The source locators are: Hansen–Kaletha–Weinstein, Proposition 4.4.1 and proof, pp. 34–35; Definition 4.4.2, p. 35: Proves the equivalence of dualizability, ULA-ness and perfectness of pro-p invariants on [S/G_S], with dual Haar(G, Λ)^∗ ⊗ M^∨, sketches a direct proof of (3) ⇒ (1) through the integration map, and calls such M admissible. Fargues–Scholze, Theorem V.7.1, p. 183; Corollary V.1.4, p. 170; Proposition IV.2.32, p. 129: The Bun_G version of the admissibility criterion, the identification of RHom(−, Λ) with derived smooth duality, and the ULA criterion for smooth maps of Artin v-stacks.
 
-*Needs:* Layer VS9 *dualizable-iff-ula*; Layer VS9 *dualizability-criterion*; Layer VS9 *perfect-complexes-are-dualizable*; Layer VS8 *classifying-stack-structure-map*; Layer VS8 *restriction-and-induction-as-operations*; Layer VS8 *haar-module*; VStackSheavesAndLisseCategories VS1 *smooth-ula-criterion*; VStackSheavesAndLisseCategories VS5 *ula-equals-admissibility*; SmoothRepresentationsOfLocalGroups SR.0:derived-extension *derived-smooth-dual*; SmoothRepresentationsOfLocalGroups SR.0:derived-extension *compact-generation*; SmoothRepresentationsOfLocalGroups SR.0:derived-extension *derived-invariants*. VStackSheavesAndLisseCategories VS4/classifying-stack-equivalence.
+*Needs:* Layer VS9 *dualizable-iff-ula*; Layer VS9 *dualizability-criterion*; Layer VS9 *perfect-complexes-are-dualizable*; Layer VS8 *classifying-stack-structure-map*; Layer VS8 *restriction-and-induction-as-operations*; Layer VS8 *haar-module*; VStackSheavesAndLisseCategories VS1 *smooth-ula-criterion*; VStackSheavesAndLisseCategories VS5 *ula-equals-admissibility*; SmoothRepresentationsOfLocalGroups SR.0:derived-extension *derived-smooth-dual*; SmoothRepresentationsOfLocalGroups SR.0:derived-extension *compact-generation*; SmoothRepresentationsOfLocalGroups SR.0:derived-extension *derived-invariants*; VStackSheavesAndLisseCategories VS4/classifying-stack-equivalence.
 
 **Checks.**
 
@@ -1952,7 +1954,6 @@ These facts enter the following constructions.
 
 - HKW22 Proposition 4.4.3, p. 35: trace distributions are characteristic classes.
 - HKW22 §6, pp. 62–68: trace distributions of ρ ∈ Rep G_b(F) and of RΓ(G, b, μ)[ρ] enter the Kottwitz conjecture through the transfer T^{G_b→G}_{b,μ}.
-- SmoothRepresentationsOfLocalGroups:SR.3: for admissible finite-length representations the trace distribution is the Harish-Chandra distribution character.
 
 The interface consists of the following facts.
 
@@ -2101,7 +2102,7 @@ Work under the following hypotheses: S is a decent v-stack; Λ is a commutative 
 
 A proof route is as follows.
 
-1. Composition: the composite of two diagrams (4.5.6) is the diagram for the composite; the 2-isomorphism compares the two composites of (4.5.7) using compatibility of the Künneth maps with base change (VS7/fine-six-functor-identities), compatibility of κ_{U/T} with composition of smooth maps U″ → U′ → T (VS11/modified-kunneth-map, comp), and the identification K_{U″/T} ≅ K_{U″/U′} ⊗ K_{U′/T}.
+1. Composition: the composite of two diagrams (4.5.6) is the diagram for the composite; the 2-isomorphism compares the two composites of (4.5.7) using compatibility of the Künneth maps with base change (VS7/fine-six-functor-identities), compatibility of κ_{U/T} with composition of smooth maps U″ → U′ → T (VS11/modified-kunneth-map, compatibility of κ with composition), and the identification K_{U″/T} ≅ K_{U″/U′} ⊗ K_{U′/T}.
 2. Monoidality: (X₁ ×_T X₂) ×_S (X′₁ ×_{T′} X′₂) ≅ (X₁ ×_S X′₁) ×_{T ×_S T′} (X₂ ×_S X′₂), with the sheaves matched by the symmetric monoidal structure of ⊠ and B^{-1} ⊠ B′^{-1} = (B ⊠ B′)^{-1}.
 3. Coherence (associativity of the 2-isomorphisms) reduces to the coherence of base change isomorphisms in the enhanced operation map (VS7/fine-shriek-functors).
 4. The source states these as straightforward but tedious and omits them; they are planned here as proof obligations.
@@ -2254,13 +2255,13 @@ The source locators are: Hansen–Kaletha–Weinstein, §4.6, closing remark, p.
 
 ### Dependencies
 
-This layer uses `VStackSheavesAndLisseCategoriesPartII:VS8`, `VStackSheavesAndLisseCategoriesPartII:VS9`, `VStackSheavesAndLisseCategoriesPartII:VS10`, `VStackSheavesAndLisseCategories:VS1`, `VStackSheavesAndLisseCategories:VS5`, `SmoothRepresentationsOfLocalGroups:SR.0`, `SmoothRepresentationsOfLocalGroups:SR.1`.
+This layer uses `VStackSheavesAndLisseCategoriesPartII:VS6`, `VStackSheavesAndLisseCategoriesPartII:VS7`, `VStackSheavesAndLisseCategoriesPartII:VS8`, `VStackSheavesAndLisseCategoriesPartII:VS9`, `VStackSheavesAndLisseCategoriesPartII:VS10`, `VStackSheavesAndLisseCategories:VS1`, `VStackSheavesAndLisseCategories:VS4`, `VStackSheavesAndLisseCategories:VS5`, `SmoothRepresentationsOfLocalGroups:SR.0`, `SmoothRepresentationsOfLocalGroups:SR.1`.
 
 ## Corrections to the sources
 
 The statements above use corrected versions of the following points of the sources. Each is described in our own words at its locator.
 
-- **Liu–Zheng, Enhanced six operations, arXiv:1211.5948v4, Proposition 2.2.4, pp. 79–80** (numbering). The partial-adjoint theorem cited as Proposition 1.4.4 in GHW22 is Proposition 2.2.4 in the version used here; Remark 1.4.4 in that version concerns a different construction. DESCENT remains Theorem 4.1.8(1).
+- **Gulotta–Hansen–Weinstein, §1.2, item (3), p. 5** (misprint). The source attributes the partial-adjoint theorem to the gluing paper (arXiv:1211.5294) as Proposition 1.4.4. Correction: in the arXiv v4 texts it is *Enhanced six operations* (arXiv:1211.5948v4) Proposition 2.2.4, pp. 79–80; the gluing paper contains no such proposition, and its Remark 1.4.4 concerns a different construction. DESCENT remains *Enhanced six operations* Theorem 4.1.8(1).
 
 - **Hansen–Kaletha–Weinstein, §4.6, closing remark, p. 44 (published version; the same in arXiv v4)** (error). The source asserts that if every element of a conjugation-invariant open U ⊂ G has only isolated fixed points on X, then the restricted inertia In_S([X/G])_U is étale over [U//G], so its dualizing complex is canonically trivial and the characteristic class is the function (x, g) ↦ loc_x(g, A). Correction: Add the hypothesis that the fixed locus Fix(c̃)_U → U is étale (equivalently that In_S([X/G])_U → [U//G] is étale); the conclusion then holds. In the paper's application (§5.4) this étaleness is supplied by the explicit description of the inertia in Proposition 5.4.1. Reason: Let G be the smooth rigid group of matrices [[a, b], [0, 1]] with a ∈ 1 + ϖO_C (0 < |ϖ| < 1), b ∈ O_C acting on P¹ over C, and U = G ∖ {1}. Elements with a ≠ 1 fix ∞ and b/(1 − a); elements with a = 1, b ≠ 0 fix only ∞. All fixed points are isolated, but the reduced fixed locus over U is two sections of P¹ × U → U meeting along a = 1, a double cover branched there, not étale over U; in the coordinate w = 1/z the fixed equation is w(bw + a − 1) = 0, which has a double root at w = 0 when a = 1 and b ≠ 0.
 - **Hansen–Kaletha–Weinstein, Theorem 4.1.8, p. 24 (published version; the same in arXiv v4)** (gap). The source attributes to Gulotta–Hansen–Weinstein Theorem 1.4 the properties (P1)–(P5), (BC1)–(BC2) for fine maps and a pseudo-natural isomorphism Rf_! ≅ Rf_* on proper fine maps. Correction: Gulotta–Hansen–Weinstein Theorem 1.4 (arXiv v1, the public version) gives agreement with Scholze, pseudo-functoriality, the projection formula, proper base change and the right adjoint. (P4), (P5) and (BC2) follow formally (VS7/fine-six-functor-identities). The proper comparison holds for proper maps representable in locally spatial diamonds, since proper maps of v-stacks are 0-truncated (Scholze Definition 10.7(iii) and Remark 10.8) and Gulotta–Hansen–Weinstein's functor agrees with Scholze's there; for a general proper fine map the representability is not established, and the targets restrict to proper nice maps, which covers every use in the paper. Reason: Comparison of HKW22 Theorem 4.1.8 with GHW22 Theorem 1.4 (pp. 3–4). For a stacky structure map such as [S/G] → S with G finite of order divisible by ℓ, Rf_! is group homology and Rf_* group cohomology, which differ; such maps are excluded only because Scholze's proper maps are 0-truncated.

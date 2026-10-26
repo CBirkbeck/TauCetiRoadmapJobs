@@ -11,7 +11,7 @@
   "VStackSheavesAndLisseCategoriesPartII:VS11"
  ],
  "status": "complete",
- "summary": "Complete target-level plan of all six layers of the Part II. VS6 defines decent v-stacks and fine morphisms after Gulotta–Hansen–Weinstein, with classifying stacks, 2-morphisms and proper nice maps. VS7 constructs the exceptional functors for fine maps (prespatial diamonds, the enhanced operation map on qcqs v-sheaves, DESCENT to decent v-stacks), the six-functor identities, the proper comparison, intrinsic smoothness and relative dualizing complexes. VS8 identifies sheaves on constant locally profinite diamonds and on classifying stacks with smooth modules and representations, with all four operations and Haar-measure twists. VS9 plans the generic trace formalism of Lu–Zheng, D(Λ)-dualizability, the 2-categories Corr_S and CoCorr_S, dualizability as ULA-ness, trace classes and characteristic classes. VS10 proves the relative Lefschetz–Verdier trace formula, proper pushforward of characteristic classes, the Lefschetz formula for proper diamonds, local terms and their base change and perfect-scheme comparison. VS11 treats admissible objects and trace distributions on classifying stacks, the Künneth formula through based cohomological correspondences, and universal local terms for group actions. The general Liu–Zheng machinery and the general-coefficient scheme local-term interface are explicit supplier gaps, and the plan corrects one stated remark of Hansen–Kaletha–Weinstein (étaleness of inertia at isolated fixed points).",
+ "summary": "Complete target-level plan of all six layers of the Part II. VS6 defines decent v-stacks and fine morphisms after Gulotta–Hansen–Weinstein, with classifying stacks, 2-morphisms and proper nice maps. VS7 constructs the exceptional functors for fine maps (prespatial diamonds, the enhanced operation map on qcqs v-sheaves, DESCENT to decent v-stacks), the six-functor identities, the proper comparison, intrinsic smoothness and relative dualizing complexes. VS8 identifies sheaves on constant locally profinite diamonds and on classifying stacks with smooth modules and representations, with all four operations and Haar-measure twists. VS9 plans the generic trace formalism of Lu–Zheng, D(Λ)-dualizability, the 2-categories Corr_S and CoCorr_S, dualizability as ULA-ness, trace classes and characteristic classes. VS10 proves the relative Lefschetz–Verdier trace formula, proper pushforward of characteristic classes, the Lefschetz formula for proper diamonds, local terms and their base change and perfect-scheme comparison. VS11 treats admissible objects and trace distributions on classifying stacks, the Künneth formula through based cohomological correspondences, and universal local terms for group actions. The general Liu–Zheng machinery and the general-coefficient scheme correspondence and local-term interfaces are explicit supplier gaps, and the plan corrects one stated remark of Hansen–Kaletha–Weinstein (étaleness of inertia at isolated fixed points).",
  "baseline": {
   "tauceti": "a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039",
   "mathlib": "6b7abb3c7686292736be2955bd3eb9ebf63b456a",
@@ -464,7 +464,7 @@
    "proofSteps": [
     "Clean charts: refine U by an open cover by separated spatial pieces on which the chart is separated and smooth and take the disjoint union (GHW22 Remark 1.2(ii)).",
     "Fibre products of test diamonds: T ×_X T′ = (T × T′) ×_{X×X} X, and T × T′ is a locally separated locally spatial diamond (GHW22 Remark 1.2(i)).",
-    "Hansen–Kaletha–Weinstein's restatement (HKW22 Definition 4.1.7) asks for a strictly surjective chart that is locally compactifiable of finite dim.trg; the conventions use the public GHW22 Definition 1.1 and records the difference in Corrections to the sources."
+    "Hansen–Kaletha–Weinstein's restatement (HKW22 Definition 4.1.7) asks for a strictly surjective chart that is locally compactifiable of finite dim.trg; the conventions use the public GHW22 Definition 1.1 and record the difference in Corrections to the sources."
    ],
    "acceptance": [
     "Every locally separated locally spatial diamond is decent, with the identity as chart.",
@@ -637,7 +637,6 @@
     "VStackSheavesAndLisseCategoriesPartII:VS6/decent-v-stack",
     "VStackSheavesAndLisseCategoriesPartII:VS6/decent-is-artin",
     "VStackSheavesAndLisseCategoriesPartII:VS6/locally-separated-representability",
-    "DiamondSixOperations:S4.4",
     "DiamondSixOperations:S4.4"
    ],
    "sources": [
@@ -720,8 +719,6 @@
    "prerequisites": [
     "VStackSheavesAndLisseCategoriesPartII:VS6/decent-v-stack",
     "DiamondSixOperations:S0.1",
-    "DiamondSixOperations:S0.2",
-    "DiamondSixOperations:S0.2",
     "DiamondSixOperations:S0.2",
     "DiamondSixOperations:S4.3"
    ],
@@ -841,7 +838,6 @@
     "VStackSheavesAndLisseCategoriesPartII:VS6/fine-morphism",
     "VStackSheavesAndLisseCategoriesPartII:VS6/decent-fibre-products",
     "DiamondSixOperations:S0.2",
-    "DiamondSixOperations:S0.2",
     "DiamondSixOperations:S4.3"
    ],
    "sources": [
@@ -883,8 +879,6 @@
     "VStackSheavesAndLisseCategoriesPartII:VS6/fine-morphism",
     "VStackSheavesAndLisseCategoriesPartII:VS6/fine-permanence",
     "DiamondSixOperations:S4.2",
-    "DiamondSixOperations:S4.4",
-    "DiamondSixOperations:S4.4",
     "DiamondSixOperations:S4.4",
     "VStackSheavesAndLisseCategories:VS0/shriek-pullback-for-smooth-stacky-maps",
     "VStackSheavesAndLisseCategories:VS0/point-to-classifying-stack-not-smooth"
@@ -1083,7 +1077,7 @@
     "X, Y are small v-stacks; Λ is a commutative ring with nΛ = 0 for an integer n prime to p."
    ],
    "proofSteps": [
-    "D_ét(−, Λ) is a v-sheaf of ∞-categories on small v-stacks (Sch17 §17, recorded in DiamondEtaleCohomology and EnhancedDerivedSheaves E2), so f ↦ f^* is a pseudo-functor out of the (2,1)-category of small v-stacks; α^* is its value on α.",
+    "D_ét(−, Λ) is a v-sheaf of ∞-categories on small v-stacks (Sch17 §17, recorded in EnhancedDerivedSheaves E2), so f ↦ f^* is a pseudo-functor out of the (2,1)-category of small v-stacks; α^* is its value on α.",
     "α_* is the mate of (α^{-1})^* under the adjunctions f^* ⊣ Rf_*, g^* ⊣ Rg_*; the two stated diagrams are the defining identities of a mate (EnhancedDerivedSheaves:E3.4)."
    ],
    "acceptance": [
@@ -1405,11 +1399,7 @@
     "VStackSheavesAndLisseCategoriesPartII:VS7/prespatial-cohomological-amplitude",
     "DiamondSixOperations:S0.1",
     "DiamondSixOperations:S0.2",
-    "DiamondSixOperations:S0.2",
     "DiamondSixOperations:S1.2",
-    "DiamondSixOperations:S1.5",
-    "DiamondSixOperations:S1.5",
-    "DiamondSixOperations:S1.5",
     "DiamondSixOperations:S1.5"
    ],
    "sources": [
@@ -1626,7 +1616,6 @@
     "VStackSheavesAndLisseCategoriesPartII:VS6/decent-fibre-products",
     "DiamondSixOperations:S2.3",
     "DiamondSixOperations:S2.4",
-    "DiamondSixOperations:S2.4",
     "DiamondSixOperations:S3.1",
     "EnhancedDerivedSheaves:E3.2",
     "VStackSheavesAndLisseCategories:VS0/enhanced-smooth-descent",
@@ -1686,7 +1675,6 @@
     "DiamondSixOperations:S3.4",
     "DiamondSixOperations:S3.2",
     "DiamondSixOperations:S3.3",
-    "DiamondSixOperations:S3.2",
     "EnhancedDerivedSheaves:E3.4",
     "EnhancedDerivedSheaves:E1.4"
    ],
@@ -1781,7 +1769,6 @@
     "VStackSheavesAndLisseCategoriesPartII:VS7/fine-six-functor-identities",
     "DiamondSixOperations:S4.2",
     "DiamondSixOperations:S4.1",
-    "DiamondSixOperations:S4.5",
     "DiamondSixOperations:S4.5",
     "VStackSheavesAndLisseCategories:VS1/smooth-ula-criterion",
     "VStackSheavesAndLisseCategories:VS0/shriek-pullback-for-smooth-stacky-maps"
@@ -2288,7 +2275,6 @@
     "VStackSheavesAndLisseCategoriesPartII:VS8/sheaves-on-locally-profinite-sets",
     "VStackSheavesAndLisseCategoriesPartII:VS8/locally-profinite-distributions",
     "DiamondsAndVStacks:D4/compact-hausdorff-diamonds",
-    "DiamondSixOperations:S1.3",
     "DiamondSixOperations:S1.3",
     "DiamondSixOperations:S2.3",
     "DiamondSixOperations:S3.1",
@@ -3111,7 +3097,7 @@
    ],
    "title": "The symmetric monoidal 2-category of cohomological correspondences",
    "kind": "construction",
-   "statement": "CoCorr_S has objects (X, A) with X ∈ Corr_S and A ∈ D_ét(X, Λ); 1-morphisms (X, A) → (X′, A′) are pairs (c, u) with c a correspondence and u : c₁^*A → c₂^!A′, composed as (d′₁)^*c₁^*A → (d′₁)^*c₂^!A′ → (c′₂)^!d₁^*A′ → (c′₂)^!d₂^!A″ (the middle map adjoint to base change); 2-morphisms (c, u) ⇒ (d, v) are the 2-morphisms (p, α₁, α₂) of Corr_S for which the composite d₁^*A → p_*p^*d₁^*A ≅ p_*c₁^*A → p_*c₂^!A′ ≅ p_*p^!d₂^!A′ ≅ p_!p^!d₂^!A′ → d₂^!A′ equals v. The tensor product is (X, A) ⊗ (X′, A′) = (X ×_S X′, A ⊠_S A′) with unit (S, Λ_S), and (c, u) ⊗ (d, v) uses the Künneth map into (c₂ ×_S d₂)^!(A′₁ ⊠_S A′₂). The monoidal structure is closed with Hom((X₁, A₁), (X₂, A₂)) = (X₁ ×_S X₂, RHom(pr₁^*A₁, pr₂^!A₂)). Equivalently, CoCorr_S is the Grothendieck construction of the right-lax symmetric monoidal functor Corr_S → Cat^co, X ↦ D_ét(X, Λ), c ↦ c₂!c₁^*. ΩCoCorr_S has objects (X, ω) with X fine over S and ω ∈ H^0(X, K_{X/S}), and morphisms proper p with p_∗ω = ω′.",
+   "statement": "CoCorr_S has objects (X, A) with X ∈ Corr_S and A ∈ D_ét(X, Λ); 1-morphisms (X, A) → (X′, A′) are pairs (c, u) with c a correspondence and u : c₁^*A → c₂^!A′, composed as (d′₁)^*c₁^*A → (d′₁)^*c₂^!A′ → (c′₂)^!d₁^*A′ → (c′₂)^!d₂^!A″ (the middle map adjoint to base change); 2-morphisms (c, u) ⇒ (d, v) are the 2-morphisms (p, α₁, α₂) of Corr_S for which the composite d₁^*A → p_*p^*d₁^*A ≅ p_*c₁^*A → p_*c₂^!A′ ≅ p_*p^!d₂^!A′ ≅ p_!p^!d₂^!A′ → d₂^!A′ equals v. The tensor product is (X, A) ⊗ (X′, A′) = (X ×_S X′, A ⊠_S A′) with unit (S, Λ_S), and (c, u) ⊗ (d, v) uses the Künneth map into (c₂ ×_S d₂)^!(A′₁ ⊠_S A′₂). The monoidal structure is closed with Hom((X₁, A₁), (X₂, A₂)) = (X₁ ×_S X₂, RHom(pr₁^*A₁, pr₂^!A₂)). Equivalently, CoCorr_S is the Grothendieck construction of the right-lax symmetric monoidal functor Corr_S → Cat^co, X ↦ D_ét(X, Λ), c ↦ c₂!c₁^*. ΩCoCorr_S has objects (X, ω) with X fine over S and ω ∈ H^0(X, K_{X/S}), and morphisms proper nice p with p_∗ω = ω′.",
    "hypotheses": [
     "S is a decent v-stack; Λ is a commutative ring with nΛ = 0 for an integer n prime to p.",
     "The exceptional functors are those of VS7/fine-shriek-functors; proper 2-morphisms use Rp_∗ = Rp_! (VS7/proper-nice-shriek-is-pushforward)."
@@ -3119,7 +3105,7 @@
    "proofSteps": [
     "Composition and its associativity: base change (BC1) and its compatibility with composition (VS7/fine-six-functor-identities).",
     "2-morphisms depend only on the equivalence class of (p, α₁, α₂): the five squares of HKW22 p. 30 commute by VS6/two-morphism-adjunction-compatibility, by β_i = (id ∗ γ) ∘ α_i with the pseudo-functor structures, and by γ_∗ = γ_! for proper maps.",
-    "Tensor products: the Künneth isomorphism (c₂ ×_S d₂)_!(B₁ ⊠_S B₂) ≅ c₂!B₁ ⊠_S d₂!B₂ (VS7/fine-six-functor-identities); the target is (c₂ ×_S d₂)^!(A′₁ ⊠_S A′₂) (HKW22 the corrected tensor target in Corrections to the sources corrected).",
+    "Tensor products: the Künneth isomorphism (c₂ ×_S d₂)_!(B₁ ⊠_S B₂) ≅ c₂!B₁ ⊠_S d₂!B₂ (VS7/fine-six-functor-identities); the target is (c₂ ×_S d₂)^!(A′₁ ⊠_S A′₂) (HKW22 Definition 4.3.4, with the target corrected in Corrections to the sources).",
     "Closedness: Hom from (X, A) ⊗ (Y, B) to (Z, C) and from (X, A) to (Y ×_S Z, RHom(pr^*B, pr^!C)) agree through RHom(a ⊗ b, c) ≅ RHom(a, RHom(b, c)) and (P5) (the analogue of LZ22 Lemma 2.8).",
     "Grothendieck construction: the functor X ↦ D_ét(X, Λ), c ↦ c₂!c₁^*, p ↦ counit, is right-lax symmetric monoidal with Künneth isomorphisms; apply VS9/symmetric-monoidal-grothendieck-construction (LZ22 Remark 2.7)."
    ],
@@ -3201,7 +3187,7 @@
     {
      "name": "CoCorr.pushAlongProper",
      "role": "universal-property",
-     "statement": "For proper q, p with a correspondence C′ → X′ ×_S X′ compatible with c, an endomorphism over c induces a unique endomorphism of (X′, q_∗A) over C′ with p a 2-morphism (VS9/symmetric-monoidal-grothendieck-construction, liftAlong)."
+     "statement": "For proper nice q, p with a correspondence C′ → X′ ×_S X′ compatible with c, an endomorphism over c induces a unique endomorphism of (X′, q_∗A) over C′ with p a 2-morphism (VS9/symmetric-monoidal-grothendieck-construction, the unique lift of Lu–Zheng Lemma 1.11)."
     },
     {
      "name": "CoCorr.forget",
@@ -3211,7 +3197,7 @@
     {
      "name": "CoCorr.omega",
      "role": "characterisation",
-     "statement": "ΩCoCorr_S has objects (X, ω ∈ H^0(X, K_{X/S})) and morphisms proper p with p_∗ω = ω′."
+     "statement": "ΩCoCorr_S has objects (X, ω ∈ H^0(X, K_{X/S})) and morphisms proper nice p with p_∗ω = ω′."
     }
    ],
    "tests": [
@@ -3613,10 +3599,10 @@
     "q : X → X′ and p : C → C′ are proper nice maps over S (VS6/proper-nice-maps) compatible with the correspondences."
    ],
    "proofSteps": [
-    "Uniqueness and existence of 𝔣′: lift (c, u) along the 2-morphism given by p (VS9/symmetric-monoidal-grothendieck-construction, Lu–Zheng Lemma 1.11; VS9/cohomological-correspondence-bicategory, pushAlongProper).",
+    "Uniqueness and existence of 𝔣′: lift (c, u) along the 2-morphism given by p (VS9/symmetric-monoidal-grothendieck-construction, Lu–Zheng Lemma 1.11; VS9/cohomological-correspondence-bicategory, the pushed endomorphism).",
     "Dualizability of (X′, Rq_∗A): q♮ is right adjointable in Corr_S (VS9/correspondence-bicategory) and X′ is dualizable in Corr_S, so Lu–Zheng Remark 1.12(b) applies; equivalently (X′, Rq_∗A) has dual (X′, Rq_∗𝔻_{X/S}A) by the internal-Hom argument of Lu–Zheng Proposition 2.23.",
     "The two triangles (𝔮 ⊗ (𝔮^!)^∨) ∘ coev_𝔛 ⇒ coev_{𝔛′} and ev_𝔛 ⇒ ev_{𝔛′} ∘ ((𝔮^!)^∨ ⊗ 𝔮) and the square p̃ with the mate on the dual factor paste to tr(p̃) (VS9/trace-functoriality, Lu–Zheng Construction 1.7); uniqueness holds because 2-morphisms in CoCorr_S over a given proper nice map are unique.",
-    "The concrete form reads off the 2-morphism in ΩCoCorr_S (VS9/cohomological-correspondence-bicategory, omega)."
+    "The concrete form reads off the 2-morphism in ΩCoCorr_S (VS9/cohomological-correspondence-bicategory, the description of ΩCoCorr_S)."
    ],
    "acceptance": [
     "For X′ = C′ = S and q, p the structure maps (X, C proper nice over S) this is the Lefschetz formula of VS10/lefschetz-for-proper-diamonds.",
@@ -4010,7 +3996,7 @@
    "statement": "For a perfect field k of characteristic p and the category PSch^ft_k of perfect schemes separated and perfectly of finite type over k, X ↦ X^♢ ((Spec R)^♢(A, A⁺) = Hom_k(R, A)) commutes with finite limits, carries separated perfectly finite type maps to maps representable in locally spatial diamonds, compactifiable of finite dim.trg, and the fully faithful symmetric monoidal c_X^* : D_ét(X, Λ) → D_ét(X^♢, Λ) with comparisons c^*RHom → RHom(c^*, c^*) and c^*Rf^! → Rf^{♢!}c^* turns a scheme cohomological correspondence (c, u) into (c^♢, u^♢) with Fix(c)^♢ = Fix(c^♢); this is a symmetric monoidal functor from scheme cohomological correspondences over Spec k to CoCorr_{Spd k}.",
    "hypotheses": [
     "k is a perfect field of characteristic p; Λ is a commutative ring with nΛ = 0 for an integer n prime to p.",
-    "The general coefficient and f-ULA scheme interface is required by gap:VS-PII/G-scheme-local-terms; the supplied finite-ring bounded constructible finite-Tor instance uses EtaleDualityAndPerverseSheaves §§6.2–6.3."
+    "The general-coefficient scheme correspondence interface is required by gap:VS-PII/G-scheme-correspondences; the supplied finite-ring bounded constructible finite-Tor instance uses EtaleDualityAndPerverseSheaves §6.2."
    ],
    "proofSteps": [
     "(−)^♢ commutes with finite limits and has the stated representability (AdicCoefficientsAndComparisons L1/char-p-scheme-diamond-and-comparison-functor).",
@@ -4031,7 +4017,7 @@
     "EtaleDualityAndPerverseSheaves:§6.1 (scheme correspondences and fixed schemes)",
     "EtaleDualityAndPerverseSheaves:§6.2 (cohomological correspondences and composition)",
     "VStackSheavesAndLisseCategoriesPartII:VS9/cohomological-correspondence-bicategory",
-    "gap:VS-PII/G-scheme-local-terms"
+    "gap:VS-PII/G-scheme-correspondences"
    ],
    "sources": [
     {
@@ -4096,7 +4082,7 @@
     },
     {
      "kind": "computation",
-     "statement": "For Λ = F_ℓ[t], ℓ ≠ p, the coefficient condition nΛ = 0 holds with n = ℓ; the general supplier gap is required, since §6.3’s finite-ring range does not contain Λ."
+     "statement": "For Λ = F_ℓ[t], ℓ ≠ p, the coefficient condition nΛ = 0 holds with n = ℓ; gap:VS-PII/G-scheme-correspondences is required, since §6.2’s finite-ring range does not contain Λ."
     }
    ]
   },
@@ -4113,7 +4099,7 @@
     "k is a perfect field of characteristic p; Λ is a commutative ring with nΛ = 0 for an integer n prime to p.",
     "c₁ and f ∘ c′ are perfectly proper; F is f-ULA.",
     "The scheme-theoretic local term is that of EtaleDualityAndPerverseSheaves §6.3 for the finite-type models, with the general coefficient extension specified in gap:VS-PII/G-scheme-local-terms, after base change to an algebraic closure of k.",
-    "The general coefficient and f-ULA scheme interface is required by gap:VS-PII/G-scheme-local-terms; the supplied finite-ring bounded constructible finite-Tor instance uses EtaleDualityAndPerverseSheaves §§6.2–6.3."
+    "The general-coefficient scheme correspondence and f-ULA local-term interfaces are required by gap:VS-PII/G-scheme-correspondences and gap:VS-PII/G-scheme-local-terms; the supplied finite-ring bounded constructible finite-Tor instance uses EtaleDualityAndPerverseSheaves §§6.2–6.3."
    ],
    "proofSteps": [
     "Reduce to k algebraically closed by base change of local terms on both sides (VS10/local-terms-base-change and the scheme analogue of §6.2 (CohCorr.pullbackAlong and CohCorr.restrictOpen)); perfect schemes perfectly of finite type are perfections of schemes of finite type, with the same étale sites, so §6.3’s trace maps apply (SchemeAndStackFoundations §0.24 (perfection_universalHomeomorphism) and §0.23a (étale topological invariance)).",
@@ -4133,6 +4119,7 @@
     "EtaleDualityAndPerverseSheaves:§6.2 (CohCorr.pullbackAlong and CohCorr.restrictOpen)",
     "AdicCoefficientsAndComparisons:L3/rf-shriek-comparison-27-4",
     "SchemeAndStackFoundations:§0.24 (perfection_universalHomeomorphism) and §0.23a (étale topological invariance)",
+    "gap:VS-PII/G-scheme-correspondences",
     "gap:VS-PII/G-scheme-local-terms"
    ],
    "sources": [
@@ -4146,7 +4133,7 @@
    "tests": [
     {
      "kind": "computation",
-     "statement": "For X = Spec k and Λ = F_ℓ[t], the two traces of id on Λ[0] are 1; deriving their scheme trace comparison requires the general supplier gap."
+     "statement": "For X = Spec k and Λ = F_ℓ[t], the two traces of id on Λ[0] are 1; deriving their scheme trace comparison requires gap:VS-PII/G-scheme-local-terms."
     }
    ]
   },
@@ -4289,10 +4276,6 @@
     {
      "where": "HKW22 §6, pp. 62–68",
      "how": "trace distributions of ρ ∈ Rep G_b(F) and of RΓ(G, b, μ)[ρ] enter the Kottwitz conjecture through the transfer T^{G_b→G}_{b,μ}"
-    },
-    {
-     "where": "SmoothRepresentationsOfLocalGroups:SR.3",
-     "how": "for admissible finite-length representations the trace distribution is the Harish-Chandra distribution character"
     }
    ],
    "api": [
@@ -4643,7 +4626,7 @@
     "S is a decent v-stack; Λ is a commutative ring with nΛ = 0 for an integer n prime to p."
    ],
    "proofSteps": [
-    "Composition: the composite of two diagrams (4.5.6) is the diagram for the composite; the 2-isomorphism compares the two composites of (4.5.7) using compatibility of the Künneth maps with base change (VS7/fine-six-functor-identities), compatibility of κ_{U/T} with composition of smooth maps U″ → U′ → T (VS11/modified-kunneth-map, comp), and the identification K_{U″/T} ≅ K_{U″/U′} ⊗ K_{U′/T}.",
+    "Composition: the composite of two diagrams (4.5.6) is the diagram for the composite; the 2-isomorphism compares the two composites of (4.5.7) using compatibility of the Künneth maps with base change (VS7/fine-six-functor-identities), compatibility of κ_{U/T} with composition of smooth maps U″ → U′ → T (VS11/modified-kunneth-map, compatibility of κ with composition), and the identification K_{U″/T} ≅ K_{U″/U′} ⊗ K_{U′/T}.",
     "Monoidality: (X₁ ×_T X₂) ×_S (X′₁ ×_{T′} X′₂) ≅ (X₁ ×_S X′₁) ×_{T ×_S T′} (X₂ ×_S X′₂), with the sheaves matched by the symmetric monoidal structure of ⊠ and B^{-1} ⊠ B′^{-1} = (B ⊠ B′)^{-1}.",
     "Coherence (associativity of the 2-isomorphisms) reduces to the coherence of base change isomorphisms in the enhanced operation map (VS7/fine-shriek-functors).",
     "The source states these as straightforward but tedious and omits them; they are planned here as proof obligations."
@@ -4965,7 +4948,7 @@
    "status": "planned",
    "remaining": [
     "State at lemma level the scheme-side reduction of perfect-scheme local terms to finite-type models over an algebraic closure used in VS10/local-terms-perfect-schemes.",
-    "The general-coefficient scheme trace interface is required through gap:VS-PII/G-scheme-local-terms."
+    "The general-coefficient scheme correspondence and trace interfaces are required through gap:VS-PII/G-scheme-correspondences and gap:VS-PII/G-scheme-local-terms."
    ]
   },
   {
@@ -5023,18 +5006,44 @@
    ]
   },
   {
-   "id": "VS-PII/G-scheme-local-terms",
-   "title": "Scheme local terms for general prime-to-p torsion coefficients",
+   "id": "VS-PII/G-scheme-correspondences",
+   "title": "Scheme cohomological correspondences for general prime-to-p torsion coefficients",
    "supplier": "EtaleDualityAndPerverseSheaves",
-   "section": "§§6.2–6.3 (extension of coefficient and complex range)",
-   "needs": "For every commutative n-torsion Λ with n prime to p, scheme cohomological correspondences and their pullback and restriction must extend to arbitrary D_ét complexes, while trace classes, local terms and base change must extend to f-ULA complexes on separated finite-type models, compatibly with perfection.",
+   "section": "§6.2 (extension of coefficient and complex range)",
+   "needs": "For every commutative ring Λ with nΛ = 0 for an integer n invertible in k, cohomological correspondences between arbitrary objects of D(X_ét, Λ) on separated finite-type k-schemes must be defined, with composition, pullback along morphisms of correspondences and restriction to opens.",
    "neededBy": [
     "VStackSheavesAndLisseCategoriesPartII:VS10/diamondification-of-scheme-correspondences",
+    "VStackSheavesAndLisseCategoriesPartII:VS10/local-terms-perfect-schemes"
+   ]
+  },
+  {
+   "id": "VS-PII/G-scheme-local-terms",
+   "title": "Scheme trace classes and local terms for general prime-to-p torsion coefficients",
+   "supplier": "EtaleDualityAndPerverseSheaves",
+   "section": "§6.3 (extension of coefficient and complex range)",
+   "needs": "For the same Λ and k separably closed, trace classes Tr_c(u) ∈ H⁰(Fix(c), K_{Fix(c)}) and local terms of cohomological correspondences between f-ULA complexes on separated finite-type k-schemes must be defined, compatibly with base change along extensions of separably closed fields.",
+   "neededBy": [
     "VStackSheavesAndLisseCategoriesPartII:VS10/local-terms-perfect-schemes"
    ]
   }
  ],
  "sourceIssues": [
+  {
+   "id": "VStackSheavesAndLisseCategoriesPartII/E11",
+   "source": "GHW22",
+   "kind": "misprint",
+   "locator": "§1.2, item (3), p. 5 (arXiv:2202.12467v1)",
+   "printed": "The source attributes the partial-adjoint input to [LZ12b, Proposition 1.4.4], where [LZ12b] is the gluing paper arXiv:1211.5294.",
+   "correction": "The partial-adjoint theorem is Proposition 2.2.4, pp. 79–80, of Enhanced six operations (arXiv:1211.5948v4); the gluing paper v4 contains no Proposition 1.4.4 and no partial-adjoint statement.",
+   "reason": "Comparison of the GHW22 bibliography entries [LZ12a], [LZ12b] with the arXiv v4 texts of both Liu–Zheng papers.",
+   "affects": "nothing",
+   "known": "new",
+   "searched": [
+    "arXiv:1211.5294 v4",
+    "arXiv:1211.5948 v4",
+    "arXiv:2202.12467 (only v1)"
+   ]
+  },
   {
    "id": "VStackSheavesAndLisseCategoriesPartII/E1",
    "source": "HKW22",
