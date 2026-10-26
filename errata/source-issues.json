@@ -116559,10 +116559,26 @@
    "reported": "2026-10-26",
    "reporter": "claude fable",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/1219#issuecomment-6409717149"
+  },
+  {
+   "kind": "error",
+   "source": "speirs-axes",
+   "locator": "Lemma 15, printed page 13",
+   "says": "the lax map from the tensor product of Tate constructions is an equivalence for bounded-below T and finite X",
+   "should": "an equivalence after p-completing the source (T = 𝕊, X = S⁰ gives π₀ = ℤ_p ⊗ ℤ_p against ℤ_p)",
+   "affects": "a stated result",
+   "note": "(every use in the paper is p-adic)",
+   "roadmap": "RefinedTraceMethodsPartII",
+   "job": "REV-DESIGN-RefinedTraceMethodsPartII~3",
+   "board_pr": 2143,
+   "head": "8fc9f54",
+   "reported": "2026-10-26",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/2143#issuecomment-6409946128"
   }
  ],
- "scanned_to": "2026-10-26T06:27:48Z",
- "updated": "2026-10-26T06:32:50Z",
+ "scanned_to": "2026-10-26T06:43:32Z",
+ "updated": "2026-10-26T06:44:08Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
