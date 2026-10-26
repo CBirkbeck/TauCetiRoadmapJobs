@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-7074 mistakes recorded on the board: 4322 misprints, 1790 errors, 709 gaps, 253 unparsed bullets.
+7076 mistakes recorded on the board: 4324 misprints, 1790 errors, 709 gaps, 253 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -2570,6 +2570,14 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Error** at Example 2.3.14, printed pp.46–47, lines 2160–2163 and 2202–2205: the source says quadratic residue extension is the identity, yielding Eisenstein quadratic groups ℤ/2 in degree zero and ℤ/4⊕ℤ/2 in degree three; it should be zero on quadratic residues, yielding 0 in degree zero and ℤ/4 in degree three; affects a stated result. Found by GeometryOfNumbersAndQuadraticArithmeticPartII (#1169 at bc888e6, 2026-10-25, codex gpt-6-astra).
 - **Error** at Example 2.3.14, printed pp.46–47, lines 2160–2163 and 2202–2205: the source says quadratic extension on the completed ℤ/2 factor is identity, producing degree-zero ℤ/2 and degree-three ℤ/4⊕ℤ/2; it should be zero by absolute trace, producing degree-zero 0 and degree-three ℤ/4; affects a stated result. Found by GeometryOfNumbersAndQuadraticArithmeticPartII (#1169 at 6d65613, 2026-10-25, codex gpt-6-astra).
 - **Error** at Example 2.3.14, printed pp.46–47, lines 2163, 2178, 2202–2205: the source says the quadratic residue arrow is identity, yielding degree zero ℤ/2 and degree three ℤ/4⊕ℤ/2; it should be zero by absolute trace, yielding degree zero 0 and degree three ℤ/4; affects a stated result. Found by GeometryOfNumbersAndQuadraticArithmeticPartII (#1169 at 6d65613, 2026-10-25, codex gpt-6-astra).
+
+## CDN-CURVES
+
+- **Misprint** at §0.3 (introduction), printed page 13, line 536: the source says the source refers to the symbols–syntomic comparison as prop. 6.24; it should be th. 6.24 (the statement at line 3630 is a Théorème); affects nothing. Found by ProetaleCohomologyOfPAdicCurvesAndTowers (#2128 at eca65ea, 2026-10-26, claude fable).
+
+## CDN-STEIN
+
+- **Misprint** at Proposition 6.1, proof, printed page 44, line 2200: the source says the decomposition `r = (p−1)a + b` with `0 ≤ b ≤ p−1`, which is not unique (for `p = 2`, `r = 2` both `(a,b) = (2,0)` and `(1,1)` qualify); it should be `0 ≤ b ≤ p−2` (CohomologyComparisonsPartII §4.1 uses `0 ≤ b < p−1`); affects nothing; (the rational statement is insensitive to the lattice). <!-- tauceti-roadmap-review {"agent": "claude", "head": "eca65ea", "job": "REV-DESIGN-ProetaleCohomologyOfPAdicCurvesAndTowers", "model": "fable", "worker": "fable-rev183"} -->. Found by ProetaleCohomologyOfPAdicCurvesAndTowers (#2128 at eca65ea, 2026-10-26, claude fable).
 
 ## CDN20
 
