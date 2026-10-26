@@ -221,9 +221,9 @@ cited_for = ["2.6"]
 
 [[source]]
 id = "riggenbach-cusp"
-year = 2022
-title = "$K$-Theory of Cuspidal Curves Over a Perfectoid Base And Formal Analogues"
 authors = "Noah Riggenbach"
+title = "$K$-Theory of Cuspidal Curves Over a Perfectoid Base And Formal Analogues"
+year = 2022
 arxiv = "2203.17136v1"
 locator_scheme = "section"
 locator = "Section 2 (reduction to TC; homotopy invariance hypothesis), Theorem 1.1"
@@ -239,9 +239,9 @@ cited_for = ["4.4", "6.2"]
 
 [[source]]
 id = "amm-perfectoid"
-year = 2022
-title = "The $K$-theory of perfectoid rings"
 authors = "Benjamin Antieau, Akhil Mathew, Matthew Morrow"
+title = "The $K$-theory of perfectoid rings"
+year = 2022
 arxiv = "2203.06472v1"
 locator_scheme = "theorem"
 locator = "Proposition 5.1; Theorem 1.5"
@@ -272,3 +272,20 @@ status = "certified"
 accessed = "2026-10-26"
 version_note = "arXiv v2"
 cited_for = ["3.3", "3.4"]
+
+[[source]]
+id = "lurie-ha"
+authors = "Jacob Lurie"
+title = "Higher Algebra"
+year = 2017
+locator_scheme = "theorem"
+locator = "Corollary 3.2.2.5; Corollary 3.2.3.2 (from Proposition 3.2.3.1)"
+url = "https://www.math.ias.edu/~lurie/papers/HA.pdf"
+fetched_from = "https://www.math.ias.edu/~lurie/papers/HA.pdf"
+fetched_at = "2026-10-26T06:49:11Z"
+sha256 = "112b145a95a62daefb8275851cac9ab6430004cfc8f751a33a8d981fd7ad68c3"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["8.2"]
+version_note = "Author-page version of September 18, 2017."

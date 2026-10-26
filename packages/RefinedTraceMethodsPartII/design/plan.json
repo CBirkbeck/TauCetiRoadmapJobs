@@ -464,10 +464,11 @@
      "id": "2.5",
      "kind": "theorem",
      "name": "cell types of coordinate-axes cyclic bar constructions",
-     "statement": "B^cy(Pi_d)=wedge over cyclic words B(omega); birelative THH(A_d,B_d,I_d)=sum over words of period>=2 of THH(k) tensor B(omega); B(omega) contractible if omega has a cyclic repetition; otherwise for length m, period s, i=m/s: s even: Sigma B = S^{lambda_{m/2}} smash (T/C_i)_+; s,i odd: B=S^{lambda_{(m-1)/2}} smash (T/C_i)_+; s odd, i even: B=S^{lambda_{(m-2)/2}} smash RP^2(i); homology and Connes operator as in Proposition 12; psi_p: B(omega)->B(omega^{*p})^{C_p} homeomorphism.",
+     "statement": "B^cy(Pi_d)=wedge over cyclic words B(omega); birelative THH(A_d,B_d,I_d)=sum over words of period>=2 of THH(k) tensor B(omega); B(omega) contractible if omega has period s>=2 and a cyclic repetition; period-1 words x_j^m have B=(T/C_m)_+ (not contractible, cells of k[x_j], omitted from the birelative sum); for s>=2 without repetition, length m, i=m/s: s even: Sigma B = S^{lambda_{m/2}} smash (T/C_i)_+; s,i odd: B=S^{lambda_{(m-1)/2}} smash (T/C_i)_+; s odd, i even: B=S^{lambda_{(m-2)/2}} smash RP^2(i); homology and Connes operator as in Proposition 12; psi_p: B(omega)->B(omega^{*p})^{C_p} homeomorphism.",
      "hypotheses": [
       "d>=2",
-      "k any ring for the birelative splitting"
+      "k any ring for the birelative splitting",
+      "s>=2 for contractibility and cell types (speirs-axes Lemma 9)"
      ],
      "locator": {
       "source": "speirs-axes",
@@ -494,7 +495,7 @@
       {
        "name": "repetition",
        "kind": "non-example",
-       "statement": "x1x1 contributes nothing"
+       "statement": "x1x1x2 (period 3, repetition) contractible, contributes nothing; x1x1 (period 1) has B=(T/C_2)_+, H~_0=H~_1=Z, not contractible, excluded from the birelative sum as a cell of k[x1]"
       }
      ]
     },
@@ -1379,14 +1380,14 @@
      "id": "8.2",
      "kind": "definition",
      "name": "prismatic packages and syntomic complexes",
-     "statement": "C_A of quadruples (H,N,c,phi) with H, N p-complete and complete filtered graded E_infty-A-algebras (N constant in nonpositive filtration degrees), c: H -> sc_p(N) a phi_A-semilinear map of (N,>=)xZ-filtered graded modules, sc_p(N) the Day convolution of N^{>=p*} with the p-adic filtration p^*Z (mod p it maps to N^{>=p*}/p), phi: N -> sh(H); Z_p(i)(H,N,c,phi)=fib(can-c phi: N^{>=i}{i}->N^{>=0}{i}); colimits; for i>=0 and (p-1)j>pi, the mod-p map c phi: N^{>=j}{i}/p -> H^{>=j-i}{i}/p -> N^{>=p(j-i)}{i}/p -> N^{>=j-i}{i}/p (defined only mod p) makes can-c phi an automorphism of N^{>=j}{i}/p followed by can into N^{>=j-i}{i}/p (Lemma 8.5), hence F_p(i)=fib(can-c phi: (N^{>=i}/N^{>=j}){i}/p -> (N^{>=0}/N^{>=j}){i}/p) (Proposition 8.6 with the strict bound replacing the printed (p-1)j>=i); Z_p(i), F_p(i) preserve limits and colimits.",
+     "statement": "C_A of quadruples (H,N,c,phi) with H, N p-complete and complete filtered graded E_infty-A-algebras (N constant in nonpositive filtration degrees), c: H -> sc_p(N) a phi_A-semilinear map of (N,>=)xZ-filtered graded modules, sc_p(N) the Day convolution of N^{>=p*} with the p-adic filtration p^*Z (mod p it maps to N^{>=p*}/p), phi: N -> sh(H); Z_p(i)(H,N,c,phi)=fib(can-c phi: N^{>=i}{i}->N^{>=0}{i}); colimits; for i>=0 and (p-1)j>pi, the mod-p map c phi: N^{>=j}{i}/p -> H^{>=j-i}{i}/p -> N^{>=p(j-i)}{i}/p -> N^{>=j-i}{i}/p (defined only mod p) makes can-c phi an automorphism of N^{>=j}{i}/p followed by can into N^{>=j-i}{i}/p (Lemma 8.5), hence F_p(i)=fib(can-c phi: (N^{>=i}/N^{>=j}){i}/p -> (N^{>=0}/N^{>=j}){i}/p) (Proposition 8.6 with the strict bound replacing the printed (p-1)j>=i); on G_A (same quadruples, H, N modules) Z_p(i), F_p(i) preserve all limits and colimits (Corollary 8.7); on C_A (E_infty-algebras in G_A) they preserve limits and sifted colimits (computed underlying, lurie-ha Corollaries 3.2.2.5, 3.2.3.2), not all colimits (the initial unit package has Z_p(0)=Z_p+Z_p[-1]).",
      "hypotheses": [
       "A bounded delta-ring",
       "i integer"
      ],
      "locator": {
       "source": "akn-delta",
-      "where": "Definition 1.1, line 89; Construction 7.3, line 1557; lines 1689-1699; Definitions 8.1, 8.4; Proposition 8.3; Lemma 8.5; Proposition 8.6; Corollary 8.7, lines 1701-1791"
+      "where": "Definition 1.1, line 89; Construction 7.3, line 1557; lines 1689-1699; Definitions 8.1, 8.4; Proposition 8.3; Lemma 8.5; Proposition 8.6; Corollary 8.7, lines 1701-1791; Remark 8.2(ii), line 1723"
      },
      "prerequisites": [
       "roadmap:EnhancedDerivedSheaves E5",
@@ -1408,7 +1409,7 @@
       {
        "name": "exactness",
        "role": "continuity",
-       "statement": "syntomic functors preserve limits and colimits"
+       "statement": "syntomic functors preserve limits and colimits on G_A, limits and sifted colimits on C_A"
       }
      ],
      "tests": [
@@ -1430,7 +1431,7 @@
       {
        "name": "zero",
        "kind": "degenerate",
-       "statement": "zero package gives zero"
+       "statement": "zero object of G_A gives zero (empty colimit); unit package of C_{Z_p} is initial with Z_p(0)=Z_p+Z_p[-1] != 0, so not all colimits of C_A are preserved"
       }
      ]
     },
