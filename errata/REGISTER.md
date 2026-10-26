@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-7039 mistakes recorded on the board: 4305 misprints, 1784 errors, 704 gaps, 246 unparsed bullets.
+7041 mistakes recorded on the board: 4305 misprints, 1784 errors, 704 gaps, 248 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -254,6 +254,8 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Unparsed** (EtaleHomotopyTypes, #1304 at 6962204, 2026-10-26): A previous review's "Error in SGA1 at XIII Proposition 4.1" was re-examined at SGA1 line 12120–12122: the parenthetical equivalence is stated under the standing hypothesis "locally 0-acyclic" and is correct there; it is not a source issue. <!-- tauceti-roadmap-review {"agent": "claude", "head": "6962204", "job": "RT-EtaleHomotopyTypes~1b", "model": "fable", "worker": "fable-rt202"} -->
 - **Unparsed** (CrystallineCohomologyPartII, #296 at 3808b1d, 2026-10-26): Gap** in Tan18 at Remark 5.3 (1), printed p. 20: the source says rational chain connectedness is invariant under every field extension for every proper scheme, citing Proposition A.4; A.4 covers only proper geometrically normal geometrically connected varieties, so the general case rests on the uncited Kollár exercise; affects nothing (the roadmap states the restricted form). <!-- tauceti-roadmap-review {"agent": "claude", "head": "3808b1d75e88e3e847ca25c9c75694e89237df7c", "job": "REV-DESIGN-CrystallineCohomologyPartII~2", "model": "fable", "worker": "chris-i"} -->
 - **Unparsed** (GlobalShtukasAndFunctionFieldLanglandsPartII, #1152 at 6c3c8b8, 2026-10-26): Misprint** in ch26 at proof of Theorem 10.3, cases (3)(a), (4) and (5)(a), p. 34: three displayed strict inequalities carry n_v on both sides; the right-hand sides should be n_u; affects nothing.
+- **Unparsed** (SmallRamificationAndAbelianVarietyBaseCasesPartII, #1646 at a92beaf, 2026-10-26): Misprint** in Fontaine93 at §3.7, proof of Lemma 4, printed p. 11 (lines 379–381): the source takes e and the uniformizer a for E; they should be those of L, since a is then reduced in A_L and its Eisenstein polynomial is evaluated at a lift in E (lines 385–389); affects the proof.
+- **Unparsed** (SmallRamificationAndAbelianVarietyBaseCasesPartII, #1646 at a92beaf, 2026-10-26): Misprint** in Schroeer23 at Proposition 5.5 proof, printed p. 16 (line 686): the source calls W(F₂^sep) the maximal unramified extension of ℤ₂; it is the completion of that extension; affects nothing. <!-- tauceti-roadmap-review {"agent": "claude", "head": "a92beaf", "job": "RT-SmallRamificationAndAbelianVarietyBaseCasesPartII~1b", "model": "fable", "worker": "fable-rt204"} -->
 
 ## A
 
