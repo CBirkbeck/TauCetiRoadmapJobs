@@ -24,6 +24,7 @@ id = "CDN-STEIN"
 authors = "Pierre Colmez, Gabriel Dospinescu, Wieslawa Niziol"
 title = "Cohomology of $p$-adic Stein spaces"
 year = 2018
+venue = "Invent. Math. 219 (2020), 873-985"
 arxiv = "1801.06686v2"
 locator_scheme = "theorem"
 locator = "Proposition 1.11; Example 1.9; Theorems 1.3, 4.12, 5.8, 5.10, 5.13, 6.45; Corollary 5.9; Lemma 5.11; §§5.2-5.5"
@@ -35,7 +36,6 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v2 (January 2019); locators use the arXiv v2 numbering, not collated with the journal version"
-venue = "Invent. Math. 219 (2020), 873-985"
 cited_for = ["Final targets T5-T6: semistable Stein spaces and Drinfeld half-spaces"]
 
 [[source]]
@@ -43,6 +43,8 @@ id = "CDN20"
 authors = "Pierre Colmez, Gabriel Dospinescu, Wiesława Nizioł"
 title = "Cohomologie p-adique de la tour de Drinfeld: le cas de la dimension 1"
 year = 2017
+venue = "J. Amer. Math. Soc. 33 (2020), 311-362"
+doi = "10.1090/jams/935"
 arxiv = "1704.08928v2"
 locator_scheme = "theorem"
 locator = "Proposition 0.1; Théorèmes 0.4, 0.6, 0.8; Remarque 0.10; Proposition A.1"
@@ -54,8 +56,6 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v2 (7 June 2018); locators use the preprint numbering, as EndoscopicTransferAndUnitaryTraceComparison also does"
-venue = "J. Amer. Math. Soc. 33 (2020), 311-362"
-doi = "10.1090/jams/935"
 cited_for = ["Final targets T7: the Drinfeld tower in dimension one over any finite extension of Qp"]
 
 [[source]]
@@ -63,6 +63,8 @@ id = "CDN23"
 authors = "Pierre Colmez, Gabriel Dospinescu, Wiesława Nizioł"
 title = "Factorisation de la cohomologie étale p-adique de la tour de Drinfeld"
 year = 2022
+venue = "Forum Math. Pi 11 (2023), e16"
+doi = "10.1017/fmp.2023.15"
 arxiv = "2204.11214v2"
 locator_scheme = "theorem"
 locator = "Théorème 0.5 = Théorème 2.1; Proposition 2.7; §2.1.3 with Lemmes 2.8-2.9; Corollaire 2.12; Théorèmes 2.13-2.14"
@@ -74,8 +76,6 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v2; theorem numbers agree with the Forum Math. Pi version as cited by the ScholzeFunctorAndModpCohomologyOfTheLubinTateTower design (Théorème 2.1, Corollaire 2.12); page numbers differ, so cite by number"
-venue = "Forum Math. Pi 11 (2023), e16"
-doi = "10.1017/fmp.2023.15"
 cited_for = ["Final targets T7: finite copresentation and non-admissibility for the Drinfeld levels"]
 
 [[source]]
@@ -103,6 +103,7 @@ id = "THO24"
 authors = "Jack A. Thorne"
 title = "A $p$-adic approach to the existence of level-raising congruences"
 year = 2022
+venue = "Proc. Lond. Math. Soc. (3) 128 (2024), no. 2, e12584"
 doi = "10.1112/plms.12584"
 arxiv = "2212.03591v2"
 locator_scheme = "section"
@@ -115,7 +116,6 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v2"
-venue = "Proc. Lond. Math. Soc. (3) 128 (2024), no. 2, e12584"
 cited_for = ["Consumers: the Drinfeld half-space input requested by ModularityAndLanglandsExtensionsPartII G3"]
 
 [[source]]
@@ -138,6 +138,11 @@ cited_for = ["Scope: duality and compact supports for curves, proposed for a Par
 
 [[source]]
 id = "DAT06"
+authors = "Jean-François Dat"
+title = "Espaces symétriques de Drinfeld et correspondance de Langlands locale"
+year = 2006
+venue = "Ann. Sci. École Norm. Sup. (4) 39 (2006), no. 1, 1-74"
+doi = "10.1016/j.ansens.2005.11.002"
 locator_scheme = "theorem"
 locator = "Théorème 3.1.1; §4.1.3; Théorème 4.1.5; Proposition 4.2.2"
 url = "https://www.numdam.org/item/ASENS_2006_4_39_1_1_0/"
@@ -147,11 +152,6 @@ sha256 = "0ddaa01e0c187da69feb595be7040fdc12929631f63de1c404c04c225a22ad53"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
-authors = "Jean-François Dat"
-title = "Espaces symétriques de Drinfeld et correspondance de Langlands locale"
-year = 2006
-venue = "Ann. Sci. École Norm. Sup. (4) 39 (2006), no. 1, 1-74"
-doi = "10.1016/j.ansens.2005.11.002"
 cited_for = ["Final targets T6: compactly supported l-adic cohomology of Drinfeld half-spaces as complexes of smooth representations"]
 
 [[source]]
@@ -193,6 +193,8 @@ id = "CN-II"
 authors = "Pierre Colmez, Wiesława Nizioł"
 title = "On the cohomology of p-adic analytic spaces, II: The $C_{\\rm st}$-conjecture"
 year = 2021
+venue = "Duke Math. J. 174 (2025), 2203-2301"
+doi = "10.1215/00127094-2024-0074"
 arxiv = "2108.12785v4"
 locator_scheme = "theorem"
 locator = "Theorem 6.14"
@@ -204,8 +206,6 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v4; locators use the arXiv v4 numbering, as CstConjectureForDaggerVarieties does"
-venue = "Duke Math. J. 174 (2025), 2203-2301"
-doi = "10.1215/00127094-2024-0074"
 cited_for = ["Scope: boundary with CstConjectureForDaggerVarieties CS.1 (simplified fundamental diagram)"]
 
 [[source]]
@@ -225,3 +225,101 @@ status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v3"
 cited_for = ["Scope: the model-free syntomic comparison stays outside this roadmap"]
+
+[[source]]
+id = "STR08"
+authors = "Matthias Strauch"
+title = "Geometrically connected components of Lubin-Tate deformation spaces with level structures"
+year = 2008
+venue = "Pure Appl. Math. Q. 4 (2008), no. 4, 1215-1232"
+arxiv = "math/0611121v1"
+locator_scheme = "theorem"
+locator = "Theorems 4.3, 4.4"
+url = "https://arxiv.org/abs/math/0611121v1"
+fetched_from = "https://arxiv.org/pdf/math/0611121v1"
+fetched_at = "2026-10-26T02:36:40Z"
+sha256 = "4d9d09cb6db952a07c0f1cdbdfe15cdd9d87a44ed261f402bc5ce2bcd4aa90a3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v1"
+cited_for = ["7.1"]
+
+[[source]]
+id = "GK14"
+authors = "Elmar Grosse-Klönne"
+title = "On special representations of p-adic reductive groups"
+year = 2014
+venue = "Duke Math. J. 163 (2014), no. 12, 2179-2216"
+arxiv = "1408.3370"
+locator_scheme = "theorem"
+locator = "Corollaries 4.3, 4.5"
+url = "https://arxiv.org/abs/1408.3370"
+fetched_from = "https://arxiv.org/pdf/1408.3370"
+fetched_at = "2026-10-26T02:40:17Z"
+sha256 = "9560d0fe9f239c2b4eb693ce641bc8a7d5891fabf7dbdda7d7fb6f0d6f4dddea"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv, latest version"
+cited_for = ["0.4"]
+
+[[source]]
+id = "GK07"
+authors = "Elmar Grosse-Klönne"
+title = "Sheaves of bounded p-adic logarithmic differential forms"
+year = 2007
+venue = "Ann. Sci. École Norm. Sup. (4) 40 (2007), 351-386"
+locator_scheme = "theorem"
+locator = "Theorem 4.4, Proposition 4.5"
+url = "https://www.numdam.org/item/ASENS_2007_4_40_3_351_0"
+fetched_from = "https://www.numdam.org/item/ASENS_2007_4_40_3_351_0.pdf"
+fetched_at = "2026-10-26T02:40:18Z"
+sha256 = "3d509625e2c2fcffe0742ebbe66883bd550254d145620328a65fbfb20cfb5f41"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["6.6"]
+
+[[source]]
+id = "IS01"
+authors = "Adrian Iovita, Michael Spiess"
+title = "Logarithmic differential forms on p-adic symmetric spaces"
+year = 2001
+venue = "Duke Math. J. 110 (2001), no. 2, 253-278"
+doi = "10.1215/S0012-7094-01-11023-5"
+locator_scheme = "theorem"
+locator = "Theorem 4.5"
+url = "https://doi.org/10.1215/S0012-7094-01-11023-5"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text; restated in CDN-STEIN Theorem 5.10, the readable account used here"
+cited_for = ["6.2"]
+
+[[source]]
+id = "DS01"
+authors = "Ehud de Shalit"
+title = "Residues on buildings and de Rham cohomology of p-adic symmetric domains"
+year = 2001
+venue = "Duke Math. J. 106 (2001), no. 1, 123-191"
+doi = "10.1215/S0012-7094-01-10615-7"
+locator_scheme = "theorem"
+locator = "Theorems 5.7, 7.7"
+url = "https://doi.org/10.1215/S0012-7094-01-10615-7"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text; restated in GK05 Proposition 6.5, the readable account used here"
+cited_for = ["6.3"]
+
+[[source]]
+id = "NAK84"
+authors = "Shōichi Nakajima"
+title = "On Galois module structure of the cohomology groups of an algebraic variety"
+year = 1984
+venue = "Invent. Math. 75 (1984), 1-8"
+locator_scheme = "theorem"
+locator = "Theorem 4"
+licence_class = "none"
+status = "uncertified"
+version_note = "Springer journal, not read; cited by its locator as used in CDN23 Remarque 2.15(ii) (CDN23 line 2961)"
+cited_for = ["7.8"]
