@@ -43,7 +43,7 @@ Use the native cyclic differential σ−1 in even cochain degree and 1+σ in odd
 
 ### From Mathlib
 
-Use `GenLoop` in `Mathlib/Topology/Homotopy/HomotopyGroup.lean`, with its actual boundary condition on continuous cubical maps and its native higher homotopy groups. The definition imposes neither Hausdorffness nor a CW hypothesis. `ContinuousMap.HomotopyEquiv` supplies actual continuous maps and both homotopies; `ContinuousMap.HomotopyRel` in `Mathlib/Topology/Homotopy/Basic.lean` fixes every point of its specified subset at every time. Use `Metric.sphere`, `EuclideanSpace`, `MvPolynomial`, `MvPolynomial.pderiv`, `MvPolynomial.eval`, `Ideal.span`, `Ideal.Quotient.mk`, `Algebra.lmul` and `Module.End.maxGenEigenspace` for the Jacobian algebra and critical-value summands, and `Polynomial.Monic`, `Squarefree` and `UniqueFactorizationMonoid.normalizedFactors` for the native geometric and polynomial carriers.
+Use `GenLoop` in `Mathlib/Topology/Homotopy/HomotopyGroup.lean`, with its actual boundary condition on continuous cubical maps, the subspace topology of the compact-open topology, and its native higher homotopy groups. The definition imposes neither Hausdorffness nor a CW hypothesis. `SimplyConnectedSpace` in `Mathlib/AlgebraicTopology/FundamentalGroupoid/SimplyConnected.lean` asserts that the fundamental groupoid is equivalent to the one-object trivial groupoid; it includes nonemptiness and path-connectedness. `ContinuousMap.HomotopyEquiv` supplies actual continuous maps and both homotopies; `ContinuousMap.HomotopyRel` in `Mathlib/Topology/Homotopy/Basic.lean` fixes every point of its specified subset at every time. Use `Metric.sphere`, `EuclideanSpace`, `MvPolynomial`, `MvPolynomial.pderiv`, `MvPolynomial.eval`, `Ideal.span`, `Ideal.Quotient.mk`, `Algebra.lmul` and `Module.End.maxGenEigenspace` for the Jacobian algebra and critical-value summands, and `Polynomial.Monic`, `Squarefree` and `UniqueFactorizationMonoid.normalizedFactors` for the native geometric and polynomial carriers.
 
 Use `Algebra.lmul` in `Mathlib/Algebra/Algebra/Bilinear.lean` and `Module.End.maxGenEigenspace` in `Mathlib/LinearAlgebra/Eigenspace/Basic.lean` for the critical-value operator. Use `IsArtinianRing.quotNilradicalPowEquivPi` in `Mathlib/RingTheory/Artinian/Module.lean` and `IsArtinianRing.isNilpotent_nilradical` in `Mathlib/RingTheory/Artinian/Ring.lean` for the finite local-factor decomposition, retaining nilpotents.
 
@@ -85,7 +85,7 @@ Consume Layer 3's polynomial semialgebraic description and Layer 6's projection/
 
 ### From TauCetiRoadmap.AffineMorseLefschetz and TauCetiRoadmap.RealAnalyticGeometry
 
-Consume AffineMorseLefschetz A2–A3 for the smooth complex affine CW bound of real dimension at most the complex dimension and its constant-coefficient cohomological vanishing. Consume A4.1’s finite marked-family triangulation and semialgebraic dimension over ℝ; RealAnalyticGeometry §R2.1 supplies the bounded affine triangulation with analytic maps on open simplices.
+Consume AffineMorseLefschetz A2–A3 for the smooth complex affine CW bound of real dimension at most the complex dimension and its constant-coefficient cohomological vanishing. Consume A4.1’s finite marked-family triangulation and semialgebraic dimension over ℝ; RealAnalyticGeometry §R2.1 supplies the bounded affine triangulation with analytic maps on open simplices. Consume A4.0’s noncompact Poincaré–Lefschetz duality H_c^k(M;L)≃H_(m−k)(M;L⊗or_M) for second-countable smooth manifolds without boundary, with its proper-map naturality; §3.5 applies it to the orientation-preserving permutation action on PConf_m(ℂ).
 
 What AffineMorseLefschetz must provide (gap:real-closed-semialgebraic-geometry): Extend A4.1’s finite compatible semialgebraic triangulation and dimension comparison to every real closed field, with compatibility for finite marked families and real closed extensions; noncompact locally closed sets are unions of open simplices in finite models.
 
@@ -513,13 +513,27 @@ Let n≥4,j,d,N≥0 and d(n−3)≥j. Then `sum_(m=0)^d dim((H_c^(mn-m-j)(PConf_
 
 A proof can proceed as follows. Take the weighted diagonal i=m(n−2)−j of the bivariate identity. For m>0, the upper support bound H_c^a(PConf_m)=0 for a>2m excludes m(n−3)>j, since a=m(n−1)−j. For m=0 only compact degree zero contributes. Thus truncating at d does not change the coefficient. Use t=q⁻¹ only on the extracted diagonal; the positive exponents r(n−2)−1 make the resulting product locally finite.
 
+The same identity holds in ordinary cohomology. PConf_m(ℂ) is a complex m-manifold on which S_m acts holomorphically, hence preserving orientation, so noncompact Poincaré duality and rational universal coefficients identify H_c^(mn−m−j) S_m-equivariantly with the dual of H^(j−m(n−3)); since every character of S_m is rational, the m-th summand is the multiplicity of V^⊗m⊗sgn^ε_n in H^(j−m(n−3))(PConf_m(ℂ),ℚ), zero when m(n−3)>j. By §2.3 that multiplicity is `(1/m!) sum_(sigma in S_m) N^(c(sigma)) sgn(sigma)^(epsilon_n) Tr(sigma | H^(j-m(n-3)))`. The ordinary form also follows without this duality step from the ordinary-degree trace formula of §2.4, by the coefficient comparison of §3.4 read in ordinary degree a=m−i.
+
+For n≥4 and r≥1, define `doubleLoopFactor` by substituting (−1)^(r(n−2))t^(r(n−2)−1) in the integral binomial series with exponent −e_r(n,N), then extending its coefficients to ℚ. It is the r-th factor of the product above; §5.1 identifies the same product with a double-loop Poincaré series.
+
+- In the range n≥4,r≥1 its constant coefficient is 1 and its first possible positive degree is r(n−2)−1.
+- It is the formal integer-power expansion of 1−(−t)^(r(n−2)−1), with exponent −e_r, including positive, negative and zero exponents.
+- A coefficient of degree j in the infinite product equals that in its first j factors; no analytic convergence or evaluation at a scalar is involved.
+
+The acceptance theorem `stableConfigurationDiagonal` states the ordinary-degree form with n=s+4, so n−3=s+1 and ε_n=(s+5) mod 2, for every N, every j and d with j≤d(s+1). Each multiplicity is the character average above, with trace of pullback by the inverse permutation as in `configurationTraceFormula`; the summands with m(s+1)>j are written as zero, so truncated subtraction never enters a degree. The coefficient is taken from the finite product of `doubleLoopFactor` for 1≤r≤j, and finite dimensionality of every H^a(PConf_m(ℂ),ℚ) is included.
+
 **Checks.**
 
-- This is an equality after diagonal extraction, not equality of the full bivariate series. Check j=0 and d=0.
+- This is an equality after diagonal extraction, not equality of the full bivariate series. Check j=0 and d=0. The range d(n−3)≥j is needed: at (n,N,j,d)=(4,1,1,0) the truncated sum is H¹(pt)=0 while the coefficient of t in 1+t is 1. At (6,1,3,1), with n−3=3, only m=1 contributes, by 1 from H⁰(ℂ), and the product is 1+t³.
 - At (n,m,j)=(4,2,0), the compact degree is 6>2m=4, so the term vanishes; the lower bound 3≤6 would not exclude it. At (4,1,1), the compact degree is 2=2m and its N=1 contribution is 1.
 - For n=4, N=1 the series is 1+t, so the j=1 diagonal has value 1 already at d=1. For n=5,N=1 it begins 1+t²+t⁴+t⁵; for j=2,d=1 both sides are 1. For j=d=0 both sides are 1.
+- In ordinary degrees at (n,N,j,d)=(4,2,2,2), m=0 and m=1 meet H²(pt)=H¹(ℂ)=0, and m=2 gives ½(2²·1+2·(−1)·1)=1 from H⁰(PConf₂(ℂ)); the coefficient of t² in (1+t)²(1+t³) is 1. The opposite sign power sgn^(1−ε_n) would give ½(4+2)=3. Reading the m-th summand in degree mn−m−j instead of j−m(n−3) would use H³(ℂ)=0 at (4,1,1,1) and give 0 instead of 1.
+- At (n,N,j,d)=(4,2,3,3), m=0 and m=1 meet H³(pt)=H²(ℂ)=0, and m=2 meets H¹(PConf₂(ℂ))=ℚ, on which the swap acts trivially because z↦−z on ℂ* is homotopic to the identity: ½(4−2)=1. The m=3 term is the multiplicity of sgn in V^⊗3, the third exterior power of a plane, 0. The coefficient of t³ in (1+t)²(1+t³)(1+t⁵)² is 1. A swap acting by −1 on H¹ would give ½(4+2)=3.
+- The factors `doubleLoopFactor` for n=4,N=1 give 1+t at r=1 and 1 for r>1. For n=5,N=1 the first two factors are (1−t²)⁻¹ and 1+t⁵. For n=4,N=2 the first three are (1+t)², 1+t³ and (1+t⁵)², from e₁,e₂,e₃=−2,−1,−2.
+- At n=4,r=2 the first possible degree is 3, so it cannot change degree 2. The definition takes the hypotheses n≥4 and r≥1 explicitly, excluding substitution at a nonzero constant after truncated subtraction.
 
-*Needs:* §3.4; §2.1.
+*Needs:* §3.4; §2.1; §2.3; Mathlib `PowerSeries.binomialSeries` and `PowerSeries.subst`; for the duality route TauCetiRoadmap.AffineMorseLefschetz A4.0 (noncompact Poincaré–Lefschetz duality with proper-map naturality) and the rational universal coefficients of TauCetiRoadmap.AlgebraicTopology Stage 6.
 
 ### Examples
 
@@ -527,7 +541,7 @@ For even n,N=2, e₁,e₂,e₃=−2,−1,−2; for odd n,N=2 they are 2,−3,2. 
 
 ### Dependencies
 
-Mathlib `ArithmeticFunction.sum_eq_iff_sum_smul_moebius_eq`; §3.1; §3.2; Mathlib `Polynomial.Monic`; Mathlib `UniqueFactorizationMonoid.normalizedFactors`; §2.4; §2.3; §3.3; §3.4; §2.1.
+Mathlib `ArithmeticFunction.sum_eq_iff_sum_smul_moebius_eq`; §3.1; §3.2; Mathlib `Polynomial.Monic`; Mathlib `UniqueFactorizationMonoid.normalizedFactors`; §2.4; §2.3; §3.3; §3.4; §2.1; Mathlib `PowerSeries.binomialSeries` and `PowerSeries.subst`; TauCetiRoadmap.AffineMorseLefschetz A4.0; TauCetiRoadmap.AlgebraicTopology Stage 6.
 
 ## Layer 4: tame fibres and rational homotopy
 
@@ -558,11 +572,11 @@ The construction has the following API, with the hypotheses of this section.
 
 ### 4.2 Tame fibre bouquet theorem
 
-For tame f:ℂⁿ→ℂ, n≥2, every fibre f⁻¹(a), including a critical fibre, has the homotopy type of a finite wedge of μ(f)−μᵃ(f) spheres Sⁿ⁻¹. Here μ is the sum of all local Milnor numbers and μᵃ is the sum at critical points with f(p)=a. Tameness makes the critical locus compact algebraic, hence finite. At a regular value μᵃ=0; a nonconstant linear f has μ=0. (BROUGHTON, Theorem 1.2, p.219, BROUGHTON line 115; equation (2.1), p.220, BROUGHTON line 152.)
+For tame f:ℂⁿ→ℂ, n≥1, every fibre f⁻¹(a), including a critical fibre, has the homotopy type of a finite wedge of μ(f)−μᵃ(f) spheres Sⁿ⁻¹; for n=1 these are zero-spheres and the fibre is a finite set. Here μ is the sum of all local Milnor numbers and μᵃ is the sum at critical points with f(p)=a. Tameness makes the critical locus compact algebraic, hence finite. At a regular value μᵃ=0; a nonconstant linear f has μ=0. (BROUGHTON, Theorem 1.2, p.219, BROUGHTON line 115; equation (2.1), p.220, BROUGHTON line 152.)
 
 Define `jacobianAlgebra` as J_f=ℂ[z₁,…,z_n]/(∂f/∂z_i), and `milnorNumber` as dim_ℂ J_f. Define `fiberMilnorNumber` at a as the dimension of the maximal generalized a-eigenspace of multiplication by the class of f on J_f. When J_f is finite dimensional, its decomposition into local Artinian factors identifies this eigenspace with exactly the factors at critical points of value a. This gives the local sum μᵃ, rather than the Tjurina quotient J_f/(f−a). Define `polynomialFiber` as the native polynomial-evaluation level subtype. The theorem `tameFibreBouquet` includes finite dimensionality of J_f and the homotopy equivalence for every a and every chosen point of the model sphere. (BROUGHTON equation (2.1) and its total-multiplicity consequence, p.220, BROUGHTON lines 152–169; the critical-value eigenspace identification follows by the finite Artinian decomposition.)
 
-The algebra and fibre definitions have the following API under tameness and n≥2.
+The algebra and fibre definitions have the following API under tameness and n≥1.
 
 - The Jacobian quotient kills every partial derivative; its dimension is the sum of the dimensions of the local Jacobian algebras at the critical points.
 - Multiplication by f on a local factor has the unique eigenvalue f(p); the generalized eigenspace at a is the direct sum of factors with f(p)=a. Thus 0≤μᵃ≤μ, the fibre numbers sum to μ, and regular values have μᵃ=0.
@@ -573,9 +587,10 @@ A proof can proceed as follows. Use gradient-controlled flow to exclude changes 
 **Checks.**
 
 - For f=∑z_iᵏ−1, k≥2, J_f has basis the monomials with every exponent <k−1, so μ=(k−1)ⁿ. Multiplication by f is −1: μ⁻¹=μ and μ⁰=0. The critical fibre at −1 contracts by scaling, while the fibre at 0 is the Fermat bouquet with μ spheres.
-- For f=z₁, the Jacobian ideal contains 1, J_f=0 and μ=μᵃ=0 at every a. Each level is ℂⁿ⁻¹, homotopy equivalent to the zero-sphere-count bouquet, a point. Constant polynomials for n≥2 fail tameness because their critical locus is all of noncompact ℂⁿ; their infinite-dimensional Jacobian algebra has native finrank zero, which cannot replace the finite-dimensionality conclusion.
+- For f=z₁, the Jacobian ideal contains 1, J_f=0 and μ=μᵃ=0 at every a. Each level is ℂⁿ⁻¹, homotopy equivalent to the zero-sphere-count bouquet, a point. Constant polynomials for n≥1 fail tameness because their critical locus is all of noncompact ℂⁿ; their infinite-dimensional Jacobian algebra has native finrank zero, which cannot replace the finite-dimensionality conclusion.
 - For f=x³−3x+y², the gradient is (3x²−3,2y), so its norm grows at infinity. J_f=ℂ[x]/(x²−1) has dimension 2, with f acting by the values −2 and 2. Thus μ=2, μ⁻²=μ²=1 and μ⁰=0; the critical fibres have one circle in their bouquet and the regular fibre at zero has two. The quotient by f−a would happen to work here because the factors are reduced; in the Artinian local algebra ℂ[t]/(t³), multiplication by t² has generalized zero-eigenspace dimension 3 but its kernel and quotient by t² have dimension 2. This excludes either replacement for the generalized eigenspace.
-- The equivalence is stronger than homology alone. In n=1 the regular fibre of zᵏ has k points; the sphere-bouquet convention for S⁰ gives μ+1=k points, but the headline retains the source's n≥2 range for connected fibres.
+- The equivalence is stronger than homology alone. In n=1, f=zᵏ with k≥1 has J_f=ℂ[z]/(zᵏ⁻¹), μ=k−1 and the single critical value 0. At a≠0 the fibre has k points and μᵃ=0, and a wedge of k−1 copies of S⁰ has k points; at a=0, μ⁰=k−1 and the fibre and the empty wedge are both one point. For a general nonconstant f of degree k with s distinct roots of f−a, μ−μᵃ=(k−1)−(k−s)=s−1, again s points.
+- The source's range is one or more variables, and n=0 is excluded: ℂ⁰ is a point, every constant f=c is tame there with μ=1, and at a≠c the fibre is empty while μ−μᵃ=1 and n−1 is read as 0 in the natural numbers, so the bouquet would be one S⁰, two points.
 
 *Needs:* §4.1; TauCetiRoadmap.AlgebraicTopology Stage 4; TauCetiRoadmap.AlgebraicTopology Stage 8; TauCetiRoadmap.RealAlgebraicGeometry Layers 3 and 6; TauCetiRoadmap.AffineMorseLefschetz A4.1 (the real-closed triangulation and dimension contract); TauCetiRoadmap.DifferentialGeometry Layer 3; Mathlib `IsArtinianRing.quotNilradicalPowEquivPi` and `IsArtinianRing.isNilpotent_nilradical`; the local-factor identification for the Jacobian algebra, local Milnor fibres, thimbles and controlled attachment in this section.
 
@@ -672,24 +687,17 @@ The full double-loop Betti formula, finite joins, the explicit Fermat retraction
 
 For n≥4 and X≃∨_N Sⁿ⁻¹, `sum_(j>=0) dim_QQ H^j(Omega^2 X,QQ)*t^j=prod_(r>=1) (1-(-t)^(r*(n-2)-1))^(-e_r(n,N))`. In the range d(n−3)≥j its coefficient is the stable configuration diagonal in Layer 3. n≥4, N≥0 and X≃∨_N Sⁿ⁻¹. (BS, Lemma 7.6, pp.944–945, BS line 2354.)
 
-For n≥4 and r≥1, define `doubleLoopFactor` by substituting (−1)^(r(n−2))t^(r(n−2)−1) in the integral binomial series with exponent −e_r(n,N), then extending its coefficients to ℚ.
-
-- In the range n≥4,r≥1 its constant coefficient is 1 and its first possible positive degree is r(n−2)−1.
-- It is the formal integer-power expansion of 1−(−t)^(r(n−2)−1), with exponent −e_r, including positive, negative and zero exponents.
-- A coefficient of degree j in the infinite product equals that in its first j factors; no analytic convergence or evaluation at a scalar is involved.
-
-The acceptance theorem `doubleLoopBetti` takes an actual homotopy equivalence of a space Y with `sphereBouquet`, an arbitrary base point of Y, n=s+4 and any j≥0. It includes finite dimensionality. The coefficient is taken from the finite product of `doubleLoopFactor` for 1≤r≤j: every later factor starts above degree j.
+The product is the one of §3.5, with factors `doubleLoopFactor`. The acceptance theorem `doubleLoopBetti` takes an actual homotopy equivalence of a space Y with `sphereBouquet`, an arbitrary base point of Y, n=s+4 and any j≥0. It includes finite dimensionality. The coefficient is taken from the finite product of `doubleLoopFactor` for 1≤r≤j: every later factor starts above degree j.
 
 A proof can proceed as follows. Connectivity follows from π₂X=0. Use the preceding model and ranks: an even-degree generator gives (1−t^a)⁻¹, an odd-degree generator gives 1+t^a. Multiply degreewise; the growth of degrees ensures each coefficient is finite.
 
 **Checks.**
 
 - n=4,N=1 gives 1+t; n=5,N=1 gives (1+t⁵)/(1−t²). For n=3,N>0 the full double loop has infinitely many components, so this formula is not asserted.
-- The factors `doubleLoopFactor` for n=4,N=1 give 1+t at r=1 and 1 for r>1.
-- For n=5,N=1 the first two factors are (1−t²)⁻¹ and 1+t⁵.
-- At n=4,r=2 the first possible degree is 3, so it cannot change degree 2. The definition takes the hypotheses n≥4 and r≥1 explicitly, excluding substitution at a nonzero constant after truncated subtraction.
+- At j=0 the empty product has constant coefficient 1, the rank of H⁰ of the connected space Ω²X; a formula with a spurious factor in degree 0 would give a second component. For N=0, X is a point and the ranks are 1,0,0,…, matching e_r(n,0)=0 for every r.
+- For X=S⁴ (n=5,N=1) the ranks in degrees 0,…,6 are 1,0,1,0,1,1,1, the coefficients of (1+t⁵)/(1−t²); for n=4,N=2 the ranks in degrees 0,1,2,3 are 1,2,1,1, the coefficients of (1+t)²(1+t³). Exponent +e_r instead of −e_r would turn the first n=4,N=2 factor into (1+t)⁻², with degree-one coefficient −2.
 
-*Needs:* §4.6; §3.5.
+*Needs:* §4.6; §3.5 for the product and `doubleLoopFactor`.
 
 ### 5.2 Finite joins and sphere bouquets
 
@@ -705,9 +713,9 @@ A proof can proceed as follows. Realize the join as a finite CW complex of simpl
 
 ### 5.3 Fermat fibre and finite join
 
-For n≥2 and a family of positive integers k_i≥1, X={z∈ℂⁿ:∑ᵢzᵢ^(kᵢ)=1} strongly deformation retracts onto S={z∈X: every zᵢ^(kᵢ) is real and nonnegative}, equivariantly for ∏ᵢμₖᵢ. The skeleton S is canonically homeomorphic to the join of the μₖᵢ; hence X≃∨_N Sⁿ⁻¹ with N=∏ᵢ(k_i−1). Moreover {z:∑ᵢzᵢ^(kᵢ)∈(0,∞)}≅X×(0,∞). (PHAM, Part I §§1–2, pp.335–338, PHAM lines 118–125, 175–221; the product identification follows by positive scaling.)
+For every n≥0 and every family of positive integers k_i≥1, X={z∈ℂⁿ:∑ᵢzᵢ^(kᵢ)=1} strongly deformation retracts onto S={z∈X: every zᵢ^(kᵢ) is real and nonnegative}, equivariantly for ∏ᵢμₖᵢ; for n=0 both are empty and for n=1 X=S=μₖ₁. For n≥2 the skeleton S is canonically homeomorphic to the join of the μₖᵢ; hence X≃∨_N Sⁿ⁻¹ with N=∏ᵢ(k_i−1). Moreover {z:∑ᵢzᵢ^(kᵢ)∈(0,∞)}≅X×(0,∞). (PHAM, Part I §§1–2, pp.335–338, PHAM lines 118–125, 175–221; the product identification follows by positive scaling.)
 
-Define `fermatFiber` as the level-one subtype of Fin n→ℂ for this indexed power sum, `phamSkeleton` as its subtype with zero imaginary and nonnegative real coordinate powers, and `phamInclusion` as the continuous subtype inclusion S→X. The theorem `phamStrongRetraction` asserts the equivariant strong retraction for n≥2 and every k_i≥1 on these native carriers. The finite-join identification is a separate target.
+Define `fermatFiber` as the level-one subtype of Fin n→ℂ for this indexed power sum, `phamSkeleton` as its subtype with zero imaginary and nonnegative real coordinate powers, and `phamInclusion` as the continuous subtype inclusion S→X. The theorem `phamStrongRetraction` asserts the equivariant strong retraction for every n and every k_i≥1 on these native carriers. The finite-join identification is a separate target. The bouquet type of X is also the case f=∑ᵢzᵢ^(kᵢ), a=1 of `tameFibreBouquet`: the gradient (kᵢzᵢ^(kᵢ−1))ᵢ has norm at least 1 outside a ball, the only possible critical point is 0, with value 0, and J_f=⊗ᵢℂ[zᵢ]/(zᵢ^(kᵢ−1)) has dimension ∏ᵢ(k_i−1), so μ¹=0.
 
 - Fibre membership is precisely the indexed sum equal to 1, with coordinatewise equality and the inherited subspace topology.
 - Multiplication in coordinate i by a k_i-th root of unity preserves X and S. A coordinate permutation transports the exponent family with it; it preserves a fixed family only when it preserves its exponents.
@@ -725,6 +733,7 @@ A proof can proceed as follows. Retract the hyperplane ∑u_i=1, together with i
 - For k=(2,3), S is K₂,₃, with 5 vertices and 6 edges, so its bouquet has 6−5+1=2 circles. At t=8 the point (0,2) scales to (0,1): its cubic term scales by 8⁻¹. Using a common square root would instead give cube 1/(2√2), not 1.
 - For k=(1,3), the singleton μ₁ factor makes S contractible and N=(1−1)(3−1)=0; X is the graph z₁=1−z₂³, homeomorphic to ℂ. Exponent 1 is included, while exponent 0 is excluded from the theorem. The total subtype at n=0 is empty since its sum is 0, and at n=2,k=(0,0) it is empty since its sum is 2.
 - At a zero coordinate every phase gives the same skeleton point. For common k=2,n=3 the fibre has type S²; for common k=3,n=2 its bouquet has 4 circles, retaining the equal-exponent cases.
+- For n=1 and k=(3), X={z:z³=1}=μ₃ and every point has z³=1 real and positive, so S=X, the retraction is the identity, the homotopy is constant and multiplication by a cube root of unity commutes with both. For n=0 the empty sum is 0≠1, so X and S are empty and every clause holds vacuously; neither case needs a lower bound on n.
 
 *Needs:* §5.2; Mathlib `ContinuousMap.HomotopyRel` for the acceptance signature.
 
@@ -732,7 +741,7 @@ A proof can proceed as follows. Retract the hyperplane ∑u_i=1, together with i
 
 For n≥5 and k_i≥1, with X={∑ᵢzᵢ^(kᵢ)=1}, π₂X=π₃X=0. Therefore Ω²X is connected and simply connected, using the existing path-component and homotopy-shift equivalences. (PHAM, Part I §2, deformation-retraction lemma, pp.337–338, PHAM lines 204–221; §§5.2–5.3 and the supplied native homotopy-loop shifts.)
 
-The simple-connectivity statement holds for native generalized double loops based at every point of the Fermat fibre.
+The acceptance theorem `fermatDoubleLoopSimplyConnected` states this for n≥5, every k_i≥1 and the native generalized double-loop space of `fermatFiber`, the `GenLoop` space with cube index Fin 2, based at every point y of the fibre, as `SimplyConnectedSpace`, which includes path-connectedness. Since Ω²X is path-connected, triviality of π₁ at the constant loop gives it at every base point.
 
 A proof can proceed as follows. The join is (n−2)-connected with n−2≥3. Transport vanishing across the fibre homotopy equivalence. Apply the pinned zeroth-homotopy equivalence and π₁(Ω²X)≃π₃X.
 
@@ -741,7 +750,7 @@ A proof can proceed as follows. The join is (n−2)-connected with n−2≥3. Tr
 - At n=5 and every k_i=2, X≃S⁴ has π₂=π₃=0, hence π₀Ω²X is a singleton and π₁Ω²X=0. A singleton root factor instead gives a contractible X and the same vanishings.
 - n=4,k=2 gives X≃S³ and π₁Ω²X≅ℤ, so n≥5 is required for simple connectivity.
 
-*Needs:* §5.3; Tau Ceti `HomotopyGroup.zerothHomotopyEquiv`; Tau Ceti `HomotopyGroup.piLoopSpaceMulEquiv`; TauCetiRoadmap.AlgebraicTopology Stage 8.
+*Needs:* §5.3; Tau Ceti `HomotopyGroup.zerothHomotopyEquiv`; Tau Ceti `HomotopyGroup.piLoopSpaceMulEquiv`; Mathlib `GenLoop` and `SimplyConnectedSpace`; TauCetiRoadmap.AlgebraicTopology Stage 8.
 
 ### Examples
 
@@ -749,7 +758,7 @@ The joins of two and three two-point sets are S¹ and S². Fermat fibres with k=
 
 ### Dependencies
 
-§4.6; §3.5; TauCetiRoadmap.InverseGaloisAndArithmeticFundamentalGroups §IG.5.1; TauCetiRoadmap.AlgebraicTopology Stage 4; TauCetiRoadmap.AlgebraicTopology Stage 8; §5.2; §5.3; Tau Ceti `HomotopyGroup.zerothHomotopyEquiv`; Tau Ceti `HomotopyGroup.piLoopSpaceMulEquiv`.
+§4.6; §3.5; TauCetiRoadmap.InverseGaloisAndArithmeticFundamentalGroups §IG.5.1; TauCetiRoadmap.AlgebraicTopology Stage 4; TauCetiRoadmap.AlgebraicTopology Stage 8; §5.2; §5.3; Tau Ceti `HomotopyGroup.zerothHomotopyEquiv`; Tau Ceti `HomotopyGroup.piLoopSpaceMulEquiv`; Mathlib `ContinuousMap.HomotopyRel`, `GenLoop` and `SimplyConnectedSpace`.
 
 ## Layer 6: semialgebraic equivariant carriers
 
@@ -915,7 +924,9 @@ A proof can proceed as follows. The composite of purity, restriction and multipl
 
 **Checks.**
 
-- The section of the complement quotient is the kernel of this retraction; disconnected real loci give distinct indicators.
+- For X=Spec R and i=d=0, X(C) is a fixed point and U is empty: the support group and H_G⁰(X(C),𝔽₂) are both 𝔽₂, the support map and the retraction are the identity, and the complement group is zero.
+- For X=Spec C over R and i=d=0, X(R) is empty and X(C) is one free orbit: the support group is zero, H_G⁰(X(C),𝔽₂)=𝔽₂, the retraction is zero and the map to H_G⁰(U,𝔽₂)=𝔽₂ is the identity. The section of the complement quotient is the kernel of the retraction, here everything.
+- For X=ℙ² over ℝ, d=2, i=3, write a for the generator of H¹(RP²,𝔽₂). The supported class with coordinate ω in H_G¹(RP²,𝔽₂)=H⁰⊕H¹ restricts to total coordinates γ=1+a+a²; multiplying by γ⁻¹=1+a gives 1 modulo a³, and keeping p≤i−d=1 returns ω. Truncation without γ⁻¹ would return ω+a, a different supported class, so the composite would not be a retraction. On a real locus with two components the classes s_V are distinct, each restricting to its own component's indicator.
 
 *Needs:* §9.2; TauCetiRoadmap.MotivesAndAlgebraicCycles §7.6a; §9.1.
 
@@ -928,6 +939,8 @@ A proof can proceed as follows. Use purity to convert the support coefficients t
 **Checks.**
 
 - For X=A¹, i=j=1 the wrong parity allows an infinite support group mapping into order-two ambient cohomology, ruling out an unrestricted splitting.
+- For X=A¹ over ℝ in the allowed parity j=0, i=2: ℂ retracts equivariantly onto the fixed point 0 and U=ℂ∖ℝ is a free orbit of two half-planes, so H_G²(ℂ,ℤ)=H²(G,ℤ)=𝔽₂ and H_G²(U,ℤ)=0. The support group H_G¹(ℝ,ℤ(1))=𝔽₂ maps isomorphically onto the ambient group, the retraction is its inverse, and reduction modulo 2 carries it to the mod-two retraction of §9.3.
+- For d=0 and odd j: on X=Spec R the support and ambient groups are both H^i(G,ℤ(1)), 𝔽₂ for odd i and 0 for even i, and the retraction is the identity; on X=Spec C over R the support group is zero, the ambient group is ℤ in degree 0 and zero above, and the retraction is zero.
 
 *Needs:* §9.3; §7.5; §7.6.
 
@@ -1127,7 +1140,7 @@ A proof can proceed as follows. Prove the relative affine bound for finite torsi
 
 ### Examples
 
-A real-empty affine zero-dimensional variety has degree-zero equivariant cohomology ℤ while its real restriction is zero; every positive-degree group vanishes. This separates i>d from i≥d. The relative bound requires its own degree-d boundary argument. (BW v3 Lemma 1.16 and Remark 1.17(ii), pp.25–26, BW lines 978, 1012.)
+For U=Spec C over R with constant coefficients ℤ, U(C) is one free orbit, H_G⁰(U(C),ℤ)=ℤ and the restriction to the empty real locus is zero; every positive-degree group vanishes. A real-empty zero-dimensional U with r points, each with residue field C, has U(C) a union of r free orbits and degree-zero group ℤʳ; the empty variety gives 0→0. This separates i>d from i≥d. The relative bound requires its own degree-d boundary argument. (BW v3 Lemma 1.16 and Remark 1.17(ii), pp.25–26, BW lines 978, 1012.)
 
 ### Dependencies
 
@@ -1196,8 +1209,9 @@ A proof can proceed as follows. Use the parity-restricted splitting with i=2d−
 
 **Checks.**
 
-- Keep the integral class and its reduced coordinate condition separate.
-- For d=2 the allowed low parity set is empty and the source is the entire H_G² with twist 1; the support summand is H_G⁰(X(R),or(1))=0. For d=3, the condition is α₀=0; the degree-zero coordinate detects the possible support summand.
+- For X=ℙ², d=2, the window p<1 with p odd is empty and A is the whole of H_G²(X(C),ℤ(1)); the support summand is H_G⁰(RP²,or(1))=0, since σ acts by −1 on its stalks. The integral class and its reduced coordinates are kept separate: no coordinate condition is imposed.
+- For X=ℙ³, d=3, the window is p=0. The support summand is H_G¹(RP³,ℤ(1))=H⁰(RP³,𝔽₂)=𝔽₂, RP³ being orientable; its nonzero class has ambient image with α₀=1 and is not in A, while 0 is. The support map is split injective here (j=2≡d−1), so the ambient group is A⊕𝔽₂ and A has index 2.
+- For X=(ℙ¹)⁴, d=4, the real locus is the four-torus and the window is p=1 (p odd, p<3). The support summand is H_G²((S¹)⁴,ℤ(1))=H¹((S¹)⁴,𝔽₂)=𝔽₂⁴; the supported class of the first circle generator has α₁ equal to that generator and is excluded from A. Vanishing at real points alone, the test that suffices for ℙ³, imposes no condition here because no coordinate of degree 0 has the parity d−1, and would wrongly admit it.
 
 *Needs:* §9.4; §9.5.
 
