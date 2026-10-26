@@ -412,3 +412,21 @@ status = "certified"
 accessed = "2026-10-25"
 version_note = "Numdam scan (216 pages, OCR text), pp. 5–219 of the journal. ALRS Theorem 5.2.14 cites this statement as Corollary I.3.9."
 cited_for = ["Design: 10.4"]
+
+[[source]]
+id = "And21"
+authors = "Grigory Andreychev"
+title = "Pseudocoherent and Perfect Complexes and Vector Bundles on Analytic Adic Spaces"
+year = 2021
+arxiv = "2105.12591v1"
+locator_scheme = "theorem"
+locator = "Theorem 5.50"
+url = "https://arxiv.org/abs/2105.12591v1"
+fetched_from = "https://arxiv.org/pdf/2105.12591v1"
+fetched_at = "2026-10-26T04:36:06Z"
+sha256 = "9ba7858be358a67c6e8d7670e0986a2e99db27931b181dceb8cf9def26b2c7e5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v1"
+cited_for = ["Design: 1.7"]

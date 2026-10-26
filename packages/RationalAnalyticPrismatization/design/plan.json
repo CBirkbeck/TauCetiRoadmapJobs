@@ -402,8 +402,9 @@
      "id": "1.7",
      "kind": "theorem",
      "name": "TauCeti.Gelfand.isFredholm",
-     "statement": "Prove that every Gelfand ring A is Fredholm: every dualizable object of D(A) is discrete, that is, it lies in the image of the fully faithful embedding of perfect complexes over the abstract ring A(*) (ABLB Definition 3.3.1, p. 33, ABLB line 1724; ABLB Proposition 3.3.5, p. 35, ABLB line 1828). More generally, a bounded affinoid ℚ_p-algebra whose uniform completion is Fredholm is Fredholm.",
+     "statement": "Prove that every Banach ℚ_p-algebra B with the analytic ring structure induced from ℚ_{p,■} is Fredholm, and that a bounded affinoid ℚ_p-algebra whose uniform completion is Fredholm is Fredholm; hence every Gelfand ring A is Fredholm: every dualizable object of D(A) is discrete, that is, it lies in the image of the fully faithful embedding of perfect complexes over the abstract ring A(*) (ABLB Definition 3.3.1, p. 33, ABLB line 1724; ABLB Proposition 3.3.5, p. 35, ABLB line 1828, whose proof takes the Banach case from And21 Theorem 5.50, p. 39, And21 line 2733, stated there for (B, B⁺)_■ with (B, B⁺) a sheafy Huber pair).",
      "hypotheses": [
+      "B is a Banach ℚ_p-algebra with the analytic ring structure induced from ℚ_{p,■}",
       "A is a Gelfand ring"
      ],
      "locator": {
@@ -431,6 +432,16 @@
        "name": "fredholm_notDualizable",
        "kind": "non-example",
        "statement": "The solid ℚ_p-vector space ℚ_p⟨T⟩ is not dualizable over ℚ_p, consistent with the Fredholm property since it is not a perfect ℚ_p-complex."
+      },
+      {
+       "name": "fredholm_twoStructures",
+       "kind": "non-example",
+       "statement": "On the Banach algebra ℚ_p⟨T⟩ the structure induced from ℚ_{p,■} and (ℚ_p⟨T⟩, ℤ_p⟨T⟩)_■ are different analytic rings, T being solid only in the second (AnalyticStacks §3.6); both are Fredholm, the first by this target and the second by AnalyticStacks §4.4(6), and only the first is the structure the uniform completion of a Gelfand ring carries, so the Huber-pair case alone does not give 1.7."
+      },
+      {
+       "name": "fredholm_dualNumbers",
+       "kind": "non-example",
+       "statement": "Over the non-uniform Banach algebra B = ℚ_p[ε]/ε² the residue field ℚ_p = B/ε is not dualizable, its minimal free resolution being infinite; a notion of Fredholm asking only that dualizable objects have finite-dimensional fibres at the points of M(B) would wrongly allow it, while perfectness excludes it."
       }
      ]
     },
@@ -638,7 +649,7 @@
      "id": "2.3",
      "kind": "theorem",
      "name": "TauCeti.GelfandStack.perf_eq_dualizable",
-     "statement": "Prove that for integers a ≤ b the prestack of categories A ↦ Perf^{[a,b]}(A) of perfect A-modules of amplitude [a,b] extends uniquely to a sheaf of categories Perf^{[a,b]}(−) on GelfStk, inverting !-equivalences (ABLB Lemma 4.2.11, p. 43, ABLB line 2235), and that for every Gelfand stack X the category Perf(X) ⊂ D(X) is exactly the full subcategory of dualizable objects (ALRS §2.1, p. 16, ALRS line 809). Prove that locally eventually connective modules D^+(−) and nuclear modules Nuc(D(−)) form sheaves of categories on GelfStk (ALRS Lemma 2.1.8, p. 16, ALRS line 820; ALRS Lemma 2.1.10, p. 17, ALRS line 861), using the criterion that a sheaf of categories on an ∞-topos descends to a cotopological localization if and only if it is fully faithful along the localizing maps (ALRS Lemma 2.1.9, p. 16, ALRS line 841).",
+     "statement": "Prove that for integers a ≤ b the prestack of categories A ↦ Perf^{[a,b]}(A) of perfect A-modules of amplitude [a,b] extends uniquely to a sheaf of categories Perf^{[a,b]}(−) on GelfStk, inverting !-equivalences (ABLB Lemma 4.2.11, p. 43, ABLB line 2235), and that for every Gelfand stack X the category Perf(X) ⊂ D(X) is exactly the full subcategory of dualizable objects (ALRS §2.1, p. 16, ALRS line 809). Prove that locally eventually connective modules D^+(−) and nuclear modules Nuc(D(−)) form sheaves of categories on GelfStk (ALRS Lemma 2.1.8, p. 16, ALRS line 820; ALRS Lemma 2.1.10, p. 17, ALRS line 861), and prove the criterion used for D^+ and Nuc: a sheaf of categories on an ∞-topos descends to a cotopological localization if and only if it is fully faithful along the localizing maps (ALRS Lemma 2.1.9, p. 16, ALRS line 841).",
      "hypotheses": [
       "X is a Gelfand stack",
       "a ≤ b are integers"
@@ -961,7 +972,7 @@
       {
        "name": "hat_notFinal",
        "kind": "non-example",
-       "statement": "The left adjoint X ↦ X̂ preserves fibre products but not the final object (ALRS line 1015): the final arc-stack Marc(ℚ_p) is not sent to the final Gelfand stack GSpec(ℚ_p), so X̂ is not the inverse image of a geometric morphism."
+       "statement": "The left adjoint X ↦ X̂ preserves fibre products but not the final object (ALRS line 1015): the final arc-stack Marc(ℚ_p) is not sent to the final Gelfand stack GSpec(ℚ_p), so X̂ is not the inverse image of a geometric morphism into GelfStk; it is one into the slice of GelfStk over the image of Marc(ℚ_p) (ABLB Proposition 4.5.5, p. 52, ABLB line 2737)."
       }
      ]
     }
@@ -1164,7 +1175,7 @@
      "id": "3.5",
      "kind": "theorem",
      "name": "TauCeti.GelfandStack.analytification",
-     "statement": "For an affinoid Gelfand stack S = GSpec(R) and an affine derived scheme Spec(R′) over Spec(R(*)) define (Spec R′)^an(A) = Map_{R(*)}(R′, A(*)). Prove that this extends uniquely to a colimit-preserving and finite-limit-preserving functor (−)^an from étale sheaves on affine derived schemes over Spec(R(*)) to Gelfand stacks over S, the !-sheafification of A ↦ X(A(*)) (ALRS Lemma 2.4.1, p. 20, ALRS line 1053). Define Tannakian, strongly Tannakian and perfect étale algebraic stacks (ALRS Definition 2.4.2, p. 21, ALRS line 1092). Prove that for a perfect strongly Tannakian X over Spec(R(*)) the presheaf A ↦ X(Spec A(*)) is already a Gelfand stack equal to X^an, and that maps Y → X^an from a Gelfand stack Y over S are the Perf(R)-linear symmetric monoidal functors Perf(X) → Perf(Y) whose extension to QCoh(X) sends connective pseudo-coherent objects to locally connective objects (ALRS Proposition 2.4.5, p. 22, ALRS line 1143).",
+     "statement": "For an affinoid Gelfand stack S = GSpec(R) and an affine derived scheme Spec(R′) over Spec(R(*)) define (Spec R′)^an(A) = Map_{R(*)}(R′, A(*)). Prove that this extends uniquely to a colimit-preserving and finite-limit-preserving functor (−)^an from étale sheaves on affine derived schemes over Spec(R(*)) to Gelfand stacks over S, the !-sheafification of A ↦ X(A(*)) (ALRS Lemma 2.4.1, p. 20, ALRS line 1053). Define Tannakian, strongly Tannakian and perfect étale algebraic stacks (ALRS Definition 2.4.2, p. 21, ALRS line 1092). Prove that for a perfect strongly Tannakian X over Spec(R(*)) the presheaf A ↦ X(Spec A(*)) is already a Gelfand stack equal to X^an, and that maps Y → X^an from a Gelfand stack Y over S are the Perf(R)-linear symmetric monoidal functors Perf(X) → Perf(Y) whose extension to QCoh(X) carries connective pseudo-coherent objects to objects that are locally connective (ALRS Proposition 2.4.5, p. 22, ALRS line 1143).",
      "hypotheses": [
       "S = GSpec(R) is an affinoid Gelfand stack over ℚ_p; X is an étale algebraic stack over Spec(R(*)); for the Tannakian statement X is perfect and strongly Tannakian"
      ],
@@ -1667,7 +1678,7 @@
      "id": "5.1",
      "kind": "construction",
      "name": "TauCeti.GelfandStack.cone",
-     "statement": "For a Gelfand stack Y define its cone Y^cone → A¹/G_m as the functor sending a Gelfand stack Z with a Cartier divisor D ⊆ Z to Y(D), its overconvergent cone Y^{†-cone} = Y^cone ×_{A¹/G_m} A^{1,†}/G_m, its formal cone Y^{cone^} = Y^cone ×_{A¹/G_m} Â¹/G_m and its special fibre Y^cone_s = Y^cone ×_{A¹/G_m} BG_m; for f: Y → X define the relative cone Y^{cone/X} = Y^cone ×_{X^cone} (X × A¹/G_m) (ALRS Definition 2.8.1, p. 30, ALRS line 1598). Prove that Y^cone is a Gelfand stack (ALRS Lemma 2.8.2, p. 30, ALRS line 1609), that it is g_* f^* for f: BG_m → GSpec(ℚ_p) and g: BG_m → A¹/G_m and so commutes with limits (ALRS Remark 2.8.4, p. 30, ALRS line 1621), that there is a natural map Y^cone_s → Y × BG_m induced by R ⊕ I[1] → R (ALRS Remark 2.8.3, p. 30, ALRS line 1618), that Y^{cone/X} ×_{A¹/G_m} G_m/G_m ≅ X and, when f admits a cotangent complex, Y^{cone/X}_s ≅ T_{Y/X}[1](−1) over Y × BG_m, with G_m acting through t ↦ t^{-1} (ALRS Lemma 2.8.6, p. 31, ALRS line 1653), and that for †-formally étale Y → X the squares relating Y^{†-cone}, X^{†-cone}, their de Rham stacks and Y^dR, X^dR are cartesian, likewise for formal cones (ALRS Lemma 2.8.7, p. 31, ALRS line 1677). For a Cartier divisor D → W and Y → D define the relative cone Y^{cone/(D,W)} = Y^cone ×_{D^cone} W along the natural map W → D^cone (ALRS Definition 2.8.9, p. 32, ALRS line 1700).",
+     "statement": "For a Gelfand stack Y define its cone Y^cone → A¹/G_m as the functor sending a Gelfand stack Z with a Cartier divisor D ⊆ Z to Y(D), its overconvergent cone Y^{†-cone} = Y^cone ×_{A¹/G_m} A^{1,†}/G_m, its formal cone Y^{cone^} = Y^cone ×_{A¹/G_m} Â¹/G_m and its special fibre Y^cone_s = Y^cone ×_{A¹/G_m} BG_m; for f: Y → X define the relative cone Y^{cone/X} = Y^cone ×_{X^cone} (X × A¹/G_m) (ALRS Definition 2.8.1, p. 30, ALRS line 1598). Prove that Y^cone is a Gelfand stack (ALRS Lemma 2.8.2, p. 30, ALRS line 1609), that it is g_* f^* for f: BG_m → GSpec(ℚ_p) and g: BG_m → A¹/G_m and so commutes with limits (ALRS Remark 2.8.4, p. 30, ALRS line 1621), that there is a natural map Y^cone_s → Y × BG_m induced by R ⊕ I[1] → R (ALRS Remark 2.8.3, p. 30, ALRS line 1618), that Y^{cone/X} ×_{A¹/G_m} G_m/G_m ≅ X and, when f admits a cotangent complex, Y^{cone/X}_s ≅ T_{Y/X}[1](−1) over Y × BG_m, with G_m acting through t ↦ t^{-1} (ALRS Lemma 2.8.6, p. 31, ALRS line 1653), and that for †-formally étale Y → X the squares relating Y^{†-cone}, X^{†-cone}, their de Rham stacks and Y^dR, X^dR are cartesian, likewise for formal cones (ALRS Lemma 2.8.7, p. 31, ALRS line 1677). For a Cartier divisor D → W and Y → D define the relative cone Y^{cone/(D,W)} = Y^cone ×_{D^cone} W along the natural map W → D^cone (ALRS Definition 2.8.9, p. 32, ALRS line 1700). For an analytic stack X (in particular X^An for a Gelfand stack X, 2.1) define the algebraic cone X^{cone-alg} → A^{1,alg}/G_m^alg as the sheafification of the functor sending an affinoid analytic stack AnSpec(A) with a Cartier divisor I → A to X(A/I), its algebraic formal cone X^{cone-alg^} over Â¹/G_m^alg and their relative versions (ALRS Remark 2.9.7(1), p. 39, ALRS line 2062). Prove that for a !-Zariski closed map f: Z → X of Gelfand stacks (f Toën-affine and O_X → f_*O_Z !-locally a surjection of connective rings) the algebraic formal cone Z^{cone-alg^/X} → X × Â¹/G_m^alg is the relative spectrum of the adic filtration of O_X → f_*O_Z, defined by descent from the affinoid case of the contract `formal-cone-adic-filtration` (ALRS Remark 2.9.7(2), p. 39, ALRS line 2086).",
      "hypotheses": [
       "Y → X is a map of Gelfand stacks; for the special-fibre identification it admits a cotangent complex"
      ],
@@ -1680,7 +1691,8 @@
       "target:4.6",
       "target:4.8",
       "target:4.1",
-      "roadmap:SchemeAndStackFoundations §5.5"
+      "roadmap:SchemeAndStackFoundations §5.5",
+      "gap:formal-cone-adic-filtration"
      ],
      "api": [
       {
@@ -1729,6 +1741,11 @@
        "name": "cone_weight",
        "kind": "non-example",
        "statement": "The weight convention is t ↦ t^{-1} on the tangent direction: with weight +1 the special fibre of A¹ would be BG_a(1), which is not the classifying stack of the ideal sheaf I of the universal divisor (3.6)."
+      },
+      {
+       "name": "cone_adicFiltration_zeroSection",
+       "kind": "computation",
+       "statement": "For the zero section Z = GSpec(ℚ_p) → X = GSpec(ℚ_p⟨x⟩) the adic filtration is (x^n)_n with associated graded Sym(I/I²) = ℚ_p[x̄], so the special fibre of the algebraic formal cone is the line Spec ℚ_p[x̄], the normal bundle T_{Z/X}[1] of the special-fibre law of this section; for the identity of X the adic filtration is constant with associated graded O_X in degree 0 and the cone is X × Â¹/G_m^alg, so a construction that always returned the normal line of a point is excluded."
       }
      ]
     },
@@ -1815,7 +1832,7 @@
      "id": "5.4",
      "kind": "theorem",
      "name": "TauCeti.GelfandStack.filteredDeRham",
-     "statement": "For a Gelfand stack X define the filtered de Rham stack X^{dR,+} → A¹/G_m as the sheafification of (I → R) ↦ X(R/(I ⊗_R Nil†(R))), with relative versions Y^{dR,+/X} and X^{dR,+/(D,W)} (ALRS Definition 3.1.1, p. 42, ALRS line 2195). Prove that for a †-cohesive map Y → X the square relating Y^{dR,+/X}, Y^{cone/X}, (Y × A¹/G_m)^dR and (Y^{cone/X})^dR is cartesian (ALRS Proposition 3.1.3, p. 42, ALRS line 2221), that over G_m/G_m the filtered de Rham stack is X^dR and, for X with a cotangent complex, over BG_m it is the Hodge stack, the classifying stack of the overconvergent shifted tangent bundle T^†_X[1](−1) (ALRS Remark 3.1.4, p. 43, ALRS line 2230). For a nilperfectoid A let Ã¹_A = A¹_{A^u} ⊔_{GSpec A^u} GSpec(A), a degree-one divisor on Ã¹_A being a Cartier divisor whose pullback to A¹_{A^u} is a section; define Div¹_{A¹} and X^{Div¹_{A¹}} (ALRS Definition 3.1.5, p. 43, ALRS line 2240). Prove the cartesian square (3.1.1) and Div¹_{A¹} ≅ A¹/G_m^†, and, for †-cohesive X, X^{Div¹_{A¹}} = X^{dR,+} ×_{A¹/G_m} A¹/G_m^† (ALRS §3.1, p. 43, ALRS line 2255).",
+     "statement": "For a Gelfand stack X define the filtered de Rham stack X^{dR,+} → A¹/G_m as the sheafification of (I → R) ↦ X(R/(I ⊗_R Nil†(R))), with relative versions Y^{dR,+/X} and X^{dR,+/(D,W)} (ALRS Definition 3.1.1, p. 42, ALRS line 2195). Prove that for a †-cohesive map Y → X the square relating Y^{dR,+/X}, Y^{cone/X}, (Y × A¹/G_m)^dR and (Y^{cone/X})^dR is cartesian (ALRS Proposition 3.1.3, p. 42, ALRS line 2221), that over G_m/G_m the filtered de Rham stack is X^dR and, for X with a cotangent complex, over BG_m it is the Hodge stack, the classifying stack of the shifted tangent bundle T_X[1](−1) restricted to its overconvergent neighbourhood of zero, T^†_X[1](−1) (ALRS Remark 3.1.4, p. 43, ALRS line 2230). For a nilperfectoid A let Ã¹_A = A¹_{A^u} ⊔_{GSpec A^u} GSpec(A), a degree-one divisor on Ã¹_A being a Cartier divisor whose pullback to A¹_{A^u} is a section; define Div¹_{A¹} and X^{Div¹_{A¹}} (ALRS Definition 3.1.5, p. 43, ALRS line 2240). Prove the cartesian square (3.1.1) and Div¹_{A¹} ≅ A¹/G_m^†, and, for †-cohesive X, X^{Div¹_{A¹}} = X^{dR,+} ×_{A¹/G_m} A¹/G_m^† (ALRS §3.1, p. 43, ALRS line 2255).",
      "hypotheses": [
       "X is a Gelfand stack; the cartesian descriptions need †-cohesiveness"
      ],
@@ -4105,6 +4122,11 @@
        "name": "dual_wrongTwist",
        "kind": "non-example",
        "statement": "If the dualizing complex of Div¹ were O⟨1⟩[2] everywhere, its pullback to FF_{Q_p^⋄} would be the slope-one line bundle rather than the Tate twist ℚ_p(1) (9.8), contradicting the dualizing complex of FF_{Marc(ℚ_p)} in 6.4(2)."
+      },
+      {
+       "name": "tateDuality_modulusWitness",
+       "kind": "convention",
+       "statement": "On the mirabolic ℚ_p ⋊ ℚ_p^×, with a acting on ℚ_p by multiplication as BC(O)^× acts on BC(O(1)) (ALRS line 4175) and K = ℤ_p ⋊ (1 + pℤ_p), the generalized index gives δ(a) = [aℤ_p : ℤ_p] = |a|_p, so δ(p) = p⁻¹, as in AnalyticStacks Conventions (4); ALRS Remark 6.5.5 (ALRS line 8819) writes the inverse |a|⁻¹_p. With δ(p) = p⁻¹ the character α^*δ⁻¹ takes the value p at p, and since the result of (1) is O⟨1⟩[2] with O⟨1⟩ = (ℚ_p, p^{-1}φ), the route must send a character χ to the isocrystal (ℚ_p, χ(p)^{-1}φ); combining |a|⁻¹_p with that dictionary would give O⟨−1⟩[2], contradicting the dualizing complex of FF_{Marc(ℚ_p)} in 6.4(2)."
       }
      ]
     },
@@ -4297,6 +4319,43 @@
     "§1.5"
    ],
    "what": "Light solid abelian groups, the light null test, solidification and solid tensor (§1.5); the solid group algebras ℤ_■[Π] of Layer 10 are built on them."
+  },
+  {
+   "roadmap": "AnalyticStacks",
+   "sections": [
+    "§0.5",
+    "§0.6",
+    "§0.8",
+    "§0.9",
+    "§0.10",
+    "§0.11",
+    "§0.13",
+    "§1.6",
+    "§1.7",
+    "§2.1",
+    "§2.3",
+    "§2.11",
+    "§3.2",
+    "§3.3",
+    "§3.6",
+    "§3.8",
+    "§4.1",
+    "§4.2",
+    "§4.3",
+    "§4.4",
+    "§5.1",
+    "§5.2",
+    "§5.3",
+    "§6.3",
+    "§6.4",
+    "§6.5",
+    "§6.6",
+    "§7.2",
+    "§7.5",
+    "§7.6",
+    "§7.7"
+   ],
+   "what": "Light analytic rings and ℚ_{p,■} (§§2.3, 2.11, 3.6), light condensed anima (§2.1), analytic stacks and the quasi-coherent six-functor formalism (§§0.5–0.6, 0.8–0.11, 0.13, 3.2–3.3), the realization of algebraic stacks with graded, filtered and sheared modules (§§1.6–1.7, 3.8), Betti stacks, classifying stacks of locally profinite groups, nuclear modules and Fredholm criteria (§§4.1–4.4), the cotangent complex of analytic rings (§§5.1–5.3), regular immersions, the solid affine line, the deformation to the normal cone and Serre duality (§§6.3–6.6), and Cartier duality (§§7.2, 7.5–7.7), each consumed through the declared gap named under Declared gaps. Its nuclear modules (§4.3) rest on its own declared gap `nuclear-hom-criterion` to RefinedTraceMethods §4.3."
   },
   {
    "roadmap": "EnhancedDerivedSheaves",
@@ -4589,8 +4648,8 @@
    ],
    "detail": "Supply: ℚ_{p,■} as a light analytic ring and the induced analytic ring structure on animated commutative algebras in light solid ℚ_p-vector spaces, base change and colimits of induced analytic rings being computed on the underlying algebras (RCSolid §§3–4, RCSolid line 732, RCSolid line 1417).",
    "needs": "The light solid analytic ring ℚ_{p,■} and, on every solid ℚ_p-algebra, the analytic ring structure induced from it, compatible with base change and colimits.",
-   "supplier": "none",
-   "section": "none: proposed new roadmap AnalyticStacks"
+   "supplier": "AnalyticStacks",
+   "section": "§2.11, with §2.3(1), (7) and §3.6"
   },
   {
    "slug": "analytic-stack-topos",
@@ -4603,8 +4662,8 @@
    ],
    "detail": "Supply: analytic stacks as the presheaves of anima on such a category that invert countably presented !-equivalences, a map being a !-equivalence when every base change of every iterated diagonal induces an equivalence on !-categories; that they form an ∞-topos; that descendable maps of analytic rings are !-covers; and !-descent of D(−) (ABLB Definition 4.2.1, ABLB line 2109; RCSolid Definition 6.3.13 and Corollary 6.3.15, RCSolid line 4295, RCSolid line 4330).",
    "needs": "For a small category of analytic rings stable under pushouts and finite products, the ∞-topos of analytic stacks obtained by inverting countably presented !-equivalences, in which descendable maps are !-covers and D(−) satisfies !-descent.",
-   "supplier": "none",
-   "section": "none: proposed new roadmap AnalyticStacks"
+   "supplier": "AnalyticStacks",
+   "section": "§3.3"
   },
   {
    "slug": "qcoh-six-functors",
@@ -4615,8 +4674,8 @@
    ],
    "detail": "Supply: the six-functor formalism on affinoid analytic stacks with induced analytic structure and f_! = f_* (RCSolid Corollary 6.3.4, RCSolid line 4101), with base change and the projection formula; its extension along HM Theorem 3.4.11 (HM line 2258; RCSolid Theorem 6.2.11, RCSolid line 3924; SixFF Proposition 5.16); and the construction of a 3-functor formalism from a geometric setup in which pullback along the maps of a class P has base-changing right adjoints (HM Proposition 3.3.3, HM line 1924).",
    "needs": "The quasi-coherent six-functor formalism D(−) on analytic stacks, with f_! = f_* for maps of affinoid analytic stacks with induced structure, base change and the projection formula, extended to a larger !-able class by the Heyer–Mann extension theorem.",
-   "supplier": "none",
-   "section": "none: proposed new roadmap AnalyticStacks, interface AS.0 (MotivesAndAlgebraicCyclesPartII Interface 5 requests the same interface)"
+   "supplier": "AnalyticStacks",
+   "section": "§§3.2–3.3, with §§0.5–0.6"
   },
   {
    "slug": "suave-prim-calculus",
@@ -4635,8 +4694,8 @@
    ],
    "detail": "Supply: f-suave and f-prim objects, D-suave, D-prim, D-smooth, D-proper and D-étale maps (HM Definitions 4.4.1, 4.5.1, 4.6.1, HM line 3225, HM line 3505, HM line 3731) with HM Lemmas 4.4.5–4.4.11, 4.5.7–4.5.18 and 4.6.3–4.6.4 (HM line 3288, HM line 3339, HM line 3569, HM line 3783).",
    "needs": "For a six-functor formalism, suave and prim objects and maps and the cohomologically smooth, proper and étale maps, with their stability, locality and dualizing-complex calculus.",
-   "supplier": "none",
-   "section": "none: proposed new roadmap AnalyticStacks, interface AS.0 (MotivesAndAlgebraicCyclesPartII Interface 5 requests the same interface)"
+   "supplier": "AnalyticStacks",
+   "section": "§§0.8–0.11"
   },
   {
    "slug": "classifying-stack-dualizing",
@@ -4646,9 +4705,9 @@
     "12.2"
    ],
    "detail": "Supply: HM Example 5.3.21 (HM line 4911) in the quasi-coherent formalism of analytic stacks over ℚ_{p,■}, for the classifying stacks of locally constant ℚ_p-valued functions on the group.",
-   "needs": "For a locally pro-p group G and ℚ_p-coefficients, !-ability and cohomological smoothness of the classifying stack BG^sm of locally constant ℚ_p-valued functions, with dualizing complex the unit object in degree 0 on which G acts through the modulus character δ(g) = [gKg⁻¹ : K], K an open pro-p subgroup.",
-   "supplier": "none",
-   "section": "none: proposed new roadmap AnalyticStacks"
+   "needs": "For a second-countable locally pro-p group G and ℚ_p-coefficients, !-ability and cohomological smoothness of the classifying stack BG^sm of locally constant ℚ_p-valued functions, with dualizing complex the unit object in degree 0 on which G acts through the modulus character δ(g) = [gKg⁻¹ : K], K an open pro-p subgroup.",
+   "supplier": "AnalyticStacks",
+   "section": "§4.2"
   },
   {
    "slug": "hypercover-inversion",
@@ -4657,9 +4716,9 @@
     "2.3"
    ],
    "detail": "Supply: the hypercover criterion used in ABLB Lemma 4.2.11 (ABLB line 2235), at the generality of analytic stacks over ℚ_{p,■}.",
-   "needs": "A sheaf of categories for the !-topology on analytic stacks that is fully faithful along countably presented !-equivalences sends them to equivalences.",
-   "supplier": "none",
-   "section": "none: proposed new roadmap AnalyticStacks"
+   "needs": "For the quasi-coherent formalism on analytic stacks, a sub-prestack of full subcategories of D(−) that is a sheaf for the !-topology and is fully faithful along !-hypercovers inverts every !-equivalence.",
+   "supplier": "AnalyticStacks",
+   "section": "§0.13(6), with §3.3"
   },
   {
    "slug": "betti-realization",
@@ -4669,34 +4728,34 @@
    ],
    "detail": "Supply: (−)^Betti: CondAni → AnStk_{ℚ_{p,■}} with these properties and the descent of D along hypercovers of light profinite sets (RCSolid §6.5, RCSolid line 4745; ABLB Lemma 4.2.9, ABLB line 2214).",
    "needs": "The Betti realization of light condensed anima in analytic stacks over ℚ_{p,■}, preserving colimits and finite limits, with S^Betti = AnSpec(C^lc(S, ℚ_p)) for light profinite S.",
-   "supplier": "none",
-   "section": "none: proposed new roadmap AnalyticStacks"
+   "supplier": "AnalyticStacks",
+   "section": "§4.1"
   },
   {
    "slug": "nuclear-modules",
-   "title": "Nuclear modules and their descent",
+   "title": "Nuclear modules over solid ℚ_p-algebras",
    "neededBy": [
     "2.3",
     "3.2",
     "10.2"
    ],
-   "detail": "Supply: ABLB Appendix A (ABLB line 6767) and AM24 Lemma 3.29 (AM24 line 1713).",
-   "needs": "Nuclear modules over solid ℚ_p-algebras, their descent along descendable maps, and their identification on a light profinite set S with nuclear C(S, ℚ_p)-modules.",
-   "supplier": "none",
-   "section": "none: proposed new roadmap AnalyticStacks"
+   "detail": "Supply: ABLB Definition A.0.4 and Lemmas A.0.6–A.0.9 (ABLB line 6767, ABLB line 6781, ABLB line 6789). Descent of nuclear modules along descendable maps of Gelfand rings is 2.3.",
+   "needs": "Nuclear objects of D(A) for a solid ℚ_p-algebra A: the Hom criterion, closure under colimits and tensor products, ω₁-compact nuclear objects basic nuclear, and, for nuclear A, nuclearity tested on the underlying ℚ_p-module and on homotopy groups with closure under countable limits.",
+   "supplier": "AnalyticStacks",
+   "section": "§4.3(1)–(2)"
   },
   {
    "slug": "fredholm-criteria",
-   "title": "Scholze's Fredholm criteria",
+   "title": "Scholze's criteria for perfectness and Fredholmness",
    "neededBy": [
     "1.7",
     "2.3",
     "3.5"
    ],
-   "detail": "Supply: for a map of analytic rings A → B with − ⊗ B conservative, descent of connectivity and of perfect amplitude; an analytic ring is Fredholm if compact complexes that become perfect after a nilpotent-type thickening are perfect; Banach ℚ_p-algebras are Fredholm (Sch24 Proposition VI.1.2, Corollaries VI.1.3–VI.1.4, Propositions VI.1.5 and VI.1.7, Sch24 line 1720, Sch24 line 1755).",
-   "needs": "Scholze's criteria for perfectness over analytic rings: descent of connectivity and perfect amplitude along maps with conservative base change, and the Fredholm property of Banach ℚ_p-algebras.",
-   "supplier": "none",
-   "section": "none: proposed new roadmap AnalyticStacks"
+   "detail": "Supply: for a map of analytic rings A → B with − ⊗ B conservative, descent of connectivity and of perfect amplitude, and !-local perfectness over Fredholm rings (Sch24 Proposition VI.1.2, Corollaries VI.1.3–VI.1.4, Sch24 line 1720); A is Fredholm if and only if the cone of 1 − f is perfect for every trace-class endomorphism f of a compact object (Sch24 Proposition VI.1.5, Sch24 line 1743); for A → Ā surjective on π₀ with Ā Fredholm and the Nakayama condition on finitely presented static modules, A is Fredholm (Sch24 Proposition VI.1.7, Sch24 line 1755). The Fredholm property of Banach ℚ_p-algebras with the induced structure is 1.7.",
+   "needs": "Scholze's criteria for perfectness over analytic rings: descent of connectivity and perfect amplitude along maps with conservative base change, the trace-class characterization of Fredholm rings and the surjection criterion.",
+   "supplier": "AnalyticStacks",
+   "section": "§4.4(1), (3)–(5)"
   },
   {
    "slug": "solid-cotangent-complex",
@@ -4706,8 +4765,8 @@
    ],
    "detail": "Supply, for maps A → B of solid animated ℤ-algebras (and of analytic rings with induced structure), L_{B/A} ∈ D_{≥0}(B) corepresenting M ↦ Der_A(B, M), with L_{B′/A′} = L_{B/A} ⊗_B B′ for pushouts, compatibility with colimits, the transitivity fibre sequence and L_{B/A} = 0 for idempotent A → B (RCSolid Definition 7.4.1 and Lemma 7.4.3, RCSolid line 5257, RCSolid line 5276; ALRS Lemma A.1.1, ALRS line 9427). EnhancedDerivedSheaves §E5:cotangent-export.1 supplies the animated cotangent complex of discrete animated rings, which this contract must agree with on discrete rings.",
    "needs": "The cotangent complex of maps of solid (and analytic) animated rings, corepresenting derivations into connective modules, with base change, colimit, transitivity and idempotent-vanishing properties.",
-   "supplier": "none",
-   "section": "none: proposed new roadmap AnalyticStacks, interface AS.3"
+   "supplier": "AnalyticStacks",
+   "section": "§§5.1–5.3"
   },
   {
    "slug": "vector-group-cartier-duality",
@@ -4721,8 +4780,8 @@
    ],
    "detail": "Supply: RC26a Proposition 3.2.27 (RC26a line 1936). ALRS cites the statement as RC26a Theorem 3.2.27; it is Proposition 3.2.27 in the version read.",
    "needs": "The 1-categorical Cartier duality between the overconvergent group G_a^{♯,†} and the analytic group G_a^an through the pairing G_a^{♯,†} × G_a^an → G_m.",
-   "supplier": "none",
-   "section": "none: proposed new roadmap AnalyticStacks"
+   "supplier": "AnalyticStacks",
+   "section": "§7.5(4), with §7.2(3)"
   },
   {
    "slug": "stacky-cartier-duality",
@@ -4736,8 +4795,8 @@
    ],
    "detail": "Supply: RC26a Theorem 3.2.37 (RC26a line 2085).",
    "needs": "Stacky Cartier duality for transmuted vector bundles over the ring stacks of RC26a Example 3.2.36, exchanging ∗- and !-functors in the category of kernels.",
-   "supplier": "none",
-   "section": "none: proposed new roadmap AnalyticStacks"
+   "supplier": "AnalyticStacks",
+   "section": "§7.6"
   },
   {
    "slug": "qcoh-bgm-description",
@@ -4747,8 +4806,8 @@
    ],
    "detail": "Supply: RJRC Proposition 4.4.8 (RJRC line 2134).",
    "needs": "The identification of D(BG_m) with modules over the dual nuclear Fréchet algebra of sequences (a_n)_{n∈ℤ} with |a_n| r^{|n|} → 0 for some r > 0.",
-   "supplier": "none",
-   "section": "none: proposed new roadmap AnalyticStacks"
+   "supplier": "AnalyticStacks",
+   "section": "§7.7"
   },
   {
    "slug": "algebraic-stacks-condensed",
@@ -4760,8 +4819,8 @@
    ],
    "detail": "Supply: the pullback of topoi (−)^cond: AlgStk → AnStk with D(X^cond) = Fun_{QCoh(ℤ)}(QCoh^!(X), D(ℤ^cond)) and, for !-able X, D(X^cond) = QCoh(X) ⊗_{QCoh(ℤ)} D(ℤ^cond) (RCSolid §6.4 and Remark 6.4.1, RCSolid line 4457, RCSolid line 4465), with the resulting descriptions of sheaves on BG_m^alg, A^{1,alg}/G_m^alg and Â¹/G_m^alg (ALRS Remark 2.9.1, ALRS line 1866).",
    "needs": "The realization (−)^cond of algebraic stacks as analytic stacks, with D(X^cond) = QCoh(X) ⊗_{QCoh(ℤ)} D(ℤ^cond) for !-able X, identifying sheaves on BG_m^alg, A^{1,alg}/G_m^alg and Â¹/G_m^alg with graded, filtered and complete filtered modules.",
-   "supplier": "none",
-   "section": "none: proposed new roadmap AnalyticStacks"
+   "supplier": "AnalyticStacks",
+   "section": "§3.8, with §1.6"
   },
   {
    "slug": "formal-line-shearing",
@@ -4771,19 +4830,20 @@
    ],
    "detail": "Supply: ALRS Remarks 2.9.1–2.9.2 (ALRS line 1866, ALRS line 1900) at the generality of analytic stacks over ℚ_{p,■}.",
    "needs": "Over ℚ_{p,■}, the identification Â¹ = BG_a[−1] and the shearing equivalence identifying the heart of the Beilinson t-structure on BG_a[−1]/G_m^alg with chain complexes of solid ℚ_p-vector spaces.",
-   "supplier": "none",
-   "section": "none: proposed new roadmap AnalyticStacks"
+   "supplier": "AnalyticStacks",
+   "section": "§1.7, with §3.8"
   },
   {
    "slug": "formal-cone-adic-filtration",
-   "title": "Formal cones of Zariski closed maps",
+   "title": "Algebraic cones of pairs of analytic rings",
    "neededBy": [
+    "5.1",
     "9.5"
    ],
-   "detail": "Supply: RCSolid Remark 7.7.17 (RCSolid line 6063), as used in ALRS Remark 2.9.7(2) (ALRS line 2062).",
-   "needs": "The formal cone of a !-Zariski closed map of analytic stacks is the relative spectrum of its adic filtration.",
-   "supplier": "none",
-   "section": "none: proposed new roadmap AnalyticStacks"
+   "detail": "Supply: RCSolid Remark 7.7.17 (RCSolid line 6063) with its promotion to pairs of analytic rings (RCSolid Remark 7.7.18, RCSolid line 6072). The extension to !-Zariski closed maps of Gelfand stacks by descent (ALRS Remark 2.9.7(2), ALRS line 2086) is 5.1.",
+   "needs": "For a map A → B of analytic rings with induced structure, surjective on π₀, the algebraic cone of AnSpec B → AnSpec A is the relative spectrum over A^{1,alg}/G_m^alg of the adic filtration of A → B, and its algebraic formal cone is the restriction to Â¹/G_m^alg.",
+   "supplier": "AnalyticStacks",
+   "section": "§6.5(3)–(4)"
   },
   {
    "slug": "regular-immersion-suave",
@@ -4794,8 +4854,8 @@
    ],
    "detail": "Supply: RCSolid Lemma 6.3.5 (RCSolid line 4111).",
    "needs": "A regular Zariski closed immersion of analytic rings with trivial analytic structure is suave, with the expected dualizing complex.",
-   "supplier": "none",
-   "section": "none: proposed new roadmap AnalyticStacks"
+   "supplier": "AnalyticStacks",
+   "section": "§6.3(1)"
   },
   {
    "slug": "solid-smooth-duality",
@@ -4804,10 +4864,10 @@
     "3.3",
     "12.2"
    ],
-   "detail": "Supply: RCSolid Theorems 7.7.1 and 7.7.21 (RCSolid line 5827, RCSolid line 6208), as used in ALRS Remark 6.5.6 (ALRS line 8825); the identification Ω^d[d] = L[d] holds up to the determinant convention.",
-   "needs": "For a locally solid smooth map of solid Huber rings of relative dimension d, cohomological smoothness with dualizing complex Ω^d[d], so that ω_g ≅ L_g[d] for maps represented in smooth rigid spaces.",
-   "supplier": "none",
-   "section": "none: proposed new roadmap AnalyticStacks"
+   "detail": "Supply: RCSolid Theorems 7.7.1 and 7.7.21 (RCSolid line 5827, RCSolid line 6208), as used in ALRS Remark 6.5.6 (ALRS line 8825), which writes L_g[d] for det(L_g)[d]; the two agree for the one-dimensional maps the remark applies it to.",
+   "needs": "For a locally solid smooth map g of solid Huber rings of relative dimension d, cohomological smoothness with dualizing complex ω_g ≅ det(L_g)[d] = Ω^d_g[d], canonical up to a sign depending only on d; in relative dimension one, ω_g ≅ L_g[1].",
+   "supplier": "AnalyticStacks",
+   "section": "§§6.4 and 6.6"
   },
   {
    "slug": "gestalten-affine-proper",
@@ -4820,7 +4880,7 @@
    "detail": "Supply: Gest Definition 6.5 (n-affine, p. 50, Gest line 1862); Proposition 6.6 (stability under colimits, hence retracts, and under base change, composition and diagonals, Gest line 1878); Definition 6.9 (n-prim: pullback has an internal right adjoint at every categorical level above n, p. 52, Gest line 1944) and Proposition 6.10 (Gest line 1952); Definition 6.12 (n-proper: every iterated diagonal is n-prim, p. 54, Gest line 2057) and Proposition 6.13 (countably presented n-affine maps are n-proper, and n-proper maps are stable under countable colimits and base change; left cancellation, p. 55, Gest line 2061), stated there for κ = ℵ₁ and needed with κ-small presentations and κ-small colimits for the fixed cardinal κ of the Conventions, the adaptation ALRS Construction 2.1.2 asserts (ALRS line 705); Proposition 7.9 (all these properties are local on the target for effective epimorphisms, Gest line 2479).",
    "needs": "For n ≥ 0, the n-affine, n-prim and n-proper maps of Stefanich rings and Gestalten, with their stability under base change, composition, diagonals and retracts, left cancellation, locality on the target, and the implication from κ-small presented n-affine to n-proper (κ the cardinal of the Conventions; countably presented in Gest, where κ = ℵ₁).",
    "supplier": "none",
-   "section": "none: proposed new roadmap AnalyticStacks"
+   "section": "none: no roadmap owns Gestalten; AnalyticStacks (Scope and ownership, Left to other roadmaps) assigns them to a roadmap of their own placed after it"
   },
   {
    "slug": "gestalten-transmutation",
@@ -4831,7 +4891,7 @@
    "detail": "Supply: Gest Proposition 9.5 (p. 81, Gest line 3082) and Corollary 9.8 (p. 83, Gest line 3166), stated there for κ = ℵ₁ and used by ALRS Construction 2.1.2 (ALRS line 704) for the fixed cardinal κ of the Conventions, applied to affinoid Gelfand stacks, all of whose maps are !-able with f_! = f_*.",
    "needs": "For a six-functor formalism D on a small category with finite limits in which every map is !-able, the transmutation functor X ↦ [X]_D from D-sheaves to Gestalten, commuting with countable colimits and finite limits and recovering pullback and tensor product through 1-sheaves.",
    "supplier": "none",
-   "section": "none: proposed new roadmap AnalyticStacks"
+   "section": "none: no roadmap owns Gestalten; AnalyticStacks (Scope and ownership, Left to other roadmaps) assigns them to a roadmap of their own placed after it"
   },
   {
    "slug": "proetale-v-comparison",
