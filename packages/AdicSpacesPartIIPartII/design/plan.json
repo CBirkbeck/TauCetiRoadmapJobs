@@ -3856,6 +3856,24 @@
     "needs": "For a smooth finite-type affine group G over a field of characteristic zero and a closed subgroup scheme H whose fppf quotient G/H is represented by a scheme, the quotient morphism G → G/H is smooth and surjective.",
     "supplier": "ReductiveGroups",
     "section": "Layer 3"
+  },
+  {
+    "slug": "regular-local-flat-transfer",
+    "needs": "For a flat local homomorphism R → S of noetherian local rings, if S is regular then R is regular, and if R is regular and the closed fibre S/m_R S is a regular ring then S is regular.",
+    "supplier": "SchemeAndStackFoundations",
+    "section": "0.21"
+  },
+  {
+    "slug": "regular-map-composition-descent",
+    "needs": "For ring maps A → B → C with B and C noetherian, if A → B and B → C are regular then A → C is regular, if A → C is regular and B → C is faithfully flat then A → B is regular, and A → B is regular as soon as A → B_n is regular for every maximal ideal n of B.",
+    "supplier": "SchemeAndStackFoundations",
+    "section": "0.21"
+  },
+  {
+    "slug": "complete-local-formal-smoothness-regular",
+    "needs": "For a local homomorphism A → B of complete noetherian local rings that is formally smooth for the m_B-adic topology, A → B is a regular ring map.",
+    "supplier": "SchemeAndStackFoundations",
+    "section": "0.21"
   }
 ],
  "sourceIssues": [

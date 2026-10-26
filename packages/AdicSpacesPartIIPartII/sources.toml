@@ -121,21 +121,6 @@ accessed = "2026-10-24"
 cited_for = ["Layer 4"]
 
 [[source]]
-id = "ANDRE74"
-authors = "Michel André"
-title = "Localisation de la lissité formelle"
-year = 1974
-venue = "Manuscripta Mathematica 13"
-doi = "10.1007/bf01168230"
-locator_scheme = "page"
-locator = "pp. 297–307; localization of formal smoothness"
-url = "https://doi.org/10.1007/bf01168230"
-licence_class = "none"
-status = "uncertified"
-version_note = "paywalled; cited by its locator without the text"
-cited_for = ["0.5"]
-
-[[source]]
 id = "CONRAD06"
 authors = "Brian Conrad"
 title = "Relative ampleness in rigid-analytic geometry"
@@ -159,7 +144,7 @@ authors = "The Stacks Project Authors"
 title = "The Stacks Project"
 year = 2026
 locator_scheme = "tag"
-locator = "054L"
+locator = "054L (Lemma 29.37.21); 00OF, 031E (Lemmas 10.110.9, 10.112.8); 07QI, 07NT, 07C0 (Lemmas 15.42.4, 15.42.7, 15.42.2); 07PM (Proposition 15.50.2)"
 url = "https://stacks.math.columbia.edu/tag/054L"
 fetched_from = "https://stacks.math.columbia.edu/download/morphisms.pdf#nameddest=054L"
 fetched_at = "2026-10-25T15:58:12Z"
@@ -167,4 +152,4 @@ sha256 = "0bebe1d93baa7e4e99cb4f36fe50c7bcb6094772b8a2f760885a492892eca75f"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["6.4 algebraic-point analytic atlas"]
+cited_for = ["6.4 algebraic-point analytic atlas", "SchemeAndStackFoundations regularity contracts; 0.5; 2.1"]
