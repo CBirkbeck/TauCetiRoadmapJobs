@@ -1,6 +1,7 @@
 import Mathlib
 
-/-!+# Drinfeld modules and t-modules, Part II: target signatures
+/-!
+# Drinfeld modules and t-modules, Part II: target signatures
 
 The roadmap is README.md; this file is not the roadmap. It states the roadmap's
 headline theorems against the pinned APIs. The series below use native polynomials,
