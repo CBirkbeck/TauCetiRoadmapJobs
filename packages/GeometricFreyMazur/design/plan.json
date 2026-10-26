@@ -5445,7 +5445,7 @@
     },
     {
       "slug": "cyclic-surface-resolution-and-contraction",
-      "needs": "For projective surfaces over algebraically closed characteristic-zero fields, provide Hirzebruch–Jung resolutions of 1/n(1,a) charts with rational exceptional chains, sufficiently ample smooth connected curve sections transverse to finitely many fixed curves and avoiding a finite set, and Castelnuovo contraction of smooth rational (−1)-curves with smooth projective target and termination by decreasing Picard number.",
+      "needs": "Over algebraically closed characteristic-zero fields: for a normal projective surface whose singular points are isolated cyclic quotient charts 1/n(1,a) with n≥2, 1≤a<n and gcd(a,n)=1, provide the Hirzebruch–Jung resolution with exceptional chains of smooth rational curves; for a smooth connected projective surface, extend §4.13 `bertini_smoothness` so that a general member of the complete linear system of a sufficiently ample line bundle is a smooth connected curve meeting each of finitely many given reduced curves only at their smooth points and transversely, and avoiding a given finite set; for a smooth projective surface, provide Castelnuovo contraction of a smooth rational curve of self-intersection −1 with smooth projective target, and termination of successive contractions by strict decrease of the Picard number.",
       "supplier": "SchemeAndStackFoundations",
       "section": "§§4.11–4.13"
     },

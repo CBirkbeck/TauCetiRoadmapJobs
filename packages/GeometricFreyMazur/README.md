@@ -75,7 +75,7 @@ Use §§0.8–0.9 for finite-presentation models and spreading, §0.11 for finit
 
 What SchemeAndStackFoundations must provide (gap:free-locus-and-relative-cycle): For a finite group acting on a projective characteristic-zero scheme, prove that its finite quotient is étale over the image of the free locus, and construct the base-change-compatible norm cycle morphism of a finite flat degree-n family to the permutation quotient SymⁿZ with every fibre length retained.
 
-What SchemeAndStackFoundations must provide (gap:cyclic-surface-resolution-and-contraction): For projective surfaces over algebraically closed characteristic-zero fields, provide Hirzebruch–Jung resolutions of 1/n(1,a) charts with rational exceptional chains, sufficiently ample smooth connected curve sections transverse to finitely many fixed curves and avoiding a finite set, and Castelnuovo contraction of smooth rational (−1)-curves with smooth projective target and termination by decreasing Picard number.
+What SchemeAndStackFoundations must provide (gap:cyclic-surface-resolution-and-contraction): Over algebraically closed characteristic-zero fields: for a normal projective surface whose singular points are isolated cyclic quotient charts 1/n(1,a) with n≥2, 1≤a<n and gcd(a,n)=1, provide the Hirzebruch–Jung resolution with exceptional chains of smooth rational curves; for a smooth connected projective surface, extend §4.13 `bertini_smoothness` so that a general member of the complete linear system of a sufficiently ample line bundle is a smooth connected curve meeting each of finitely many given reduced curves only at their smooth points and transversely, and avoiding a given finite set; for a smooth projective surface, provide Castelnuovo contraction of a smooth rational curve of self-intersection −1 with smooth projective target, and termination of successive contractions by strict decrease of the Picard number.
 
 What SchemeAndStackFoundations must provide (gap:surface-contraction-intersections): Provide the negative continued-fraction intersection matrix for a cyclic-quotient resolution and the intersection update C_new²=C_old²+(C_old·E)² when a smooth rational (−1)-curve E on a smooth projective characteristic-zero surface is contracted.
 
@@ -402,11 +402,13 @@ One proof route proceeds as follows. If M=I+pA has determinant one then tr M=2�
 
 In the compact metric, distinct cusps have distance at least 2 log p−C. A ball of radius log p−C around a cusp is an embedded hyperbolic disc built from its incident triangle tiles. C is independent of p and the selected component. (BT16 Lemma 6, p. 720 (tiling set up on p. 719); BT16 line 450.)
 
-One proof route proceeds as follows. Use the triangle coordinates to bound the distance from the p-vertex to its opposite side by log p−O(1). The incident p triangles give the full local disc in X(p). Disjoint interiors of the cusp-star tiles imply separation. Transport between components with the G-action. This estimate precedes the global injectivity-radius lower bound.
+One proof route proceeds as follows. Use the triangle coordinates to bound the distance from the p-vertex to its opposite side by log p−O(1). The cusp has p fundamental domains Δ₂,₃,ₚ around it, that is 2p incident triangles of Σ, each of angle π/p at the cusp, so their angles fill 2p·π/p=2π and give the full local disc in X(p). Disjoint interiors of the cusp-star tiles imply separation. Transport between components with the G-action. This estimate precedes the global injectivity-radius lower bound.
 
 **Checks.**
 
 - d(i,iy_p)=log y_p=log(p/π)+o(1), so the cusp star has radius log p−O(1); the two cusps iy_p and i/y_p exchanged by the order-2 rotation about i are 2 log y_p apart.
+
+- At p=7 each triangle of Σ has angle π/7 at the cusp vertex: seven incident triangles fill only an angle π, while the fourteen triangles of the seven incident fundamental domains fill 2π. A cusp star counted with p triangles would leave a half-disc uncovered.
 
 *Needs:* §1.2; §1.1; FuchsianOrbifolds Layer 2.
 
@@ -460,13 +462,17 @@ Statement prerequisites from other layers: §0.1, §0.6. The subsection Needs li
 
 ### 2.1 Integral height uses the existing entrywise norm
 
-For an integral or real 2×2 matrix the paper’s height is max_(i,j)|M_ij|, exactly Mathlib’s entrywise supremum norm after the standard scalar embedding. It is not the operator or Frobenius norm. Use this existing norm with h(MN)≤2h(M)h(N), h(M⁻¹)=h(M) in SL₂, and entrywise bounds for integral minors. (BT16 §3.3, p. 721; BT16 line 537.)
+For an integral or real 2×2 matrix the paper’s height is max_(i,j)|M_ij|, exactly Mathlib’s entrywise supremum norm after the standard scalar embedding. It is not the operator or Frobenius norm. Use this existing norm with h(MN)≤2h(M)h(N), h(M⁻¹)=h(M) in SL₂, and entrywise bounds for integral minors. (BT16 §3.3, p. 721; BT16 lines 533–534.)
 
 One proof route proceeds as follows. Read Matrix.norm_eq_sup_sup_nnnorm at the pin, fix its local entrywise instance, and specialize to Fin 2. Use the two-term multiplication formula and the adjugate inverse. These comparisons provide the arithmetic convention; no competing general matrix-height theory is defined.
 
 **Checks.**
 
-- The all-ones 2×2 matrix has entrywise height 1, not Frobenius norm 2.
+- The all-ones 2×2 matrix J has entrywise height 1, while its Frobenius norm and its ℓ² operator norm both equal 2; a height defined by either of those norms would double this value.
+
+- For M=[[2,1],[1,1]]∈SL₂(Z) the inverse is the adjugate [[1,−1],[−1,2]], so h(M⁻¹)=h(M)=2; outside SL₂ the identity fails, since diag(2,1) has height 2 and inverse of height 1.
+
+- J²=2J has height 2=2·h(J)·h(J), so the product bound h(MN)≤2h(M)h(N) is attained and its factor 2 cannot be dropped; for M=N=I it reads 1≤2.
 
 *Needs:* `Matrix.norm_eq_sup_sup_nnnorm`; `Matrix.norm_entry_le_entrywise_sup_norm`.
 
@@ -624,15 +630,15 @@ One proof route proceeds as follows. Take the set image under the antiholomorphi
 
 - T̄₁ is the graph of complex conjugation on X(p); its tangent planes contain no complex line, and it meets the complex curve T₁ along the points fixed by conjugation.
 
-- A Heegner point becomes anti-Heegner under c₂ and lies on the transported locus.
+- On the lift to H×H, the branch of T̄₁ through the fixed reflection R(z)=−z̄ is {(z,−z̄)}: the pair (1+i,−1+i) lies on it and (1+i,1+i) does not, whereas (1+i,1+i) lies on the diagonal branch of T₁. A definition that forgot c₂ would accept the second pair.
 
-- An attempted divisor intersection C·T̄₁ is rejected; its ε-tube volume is meaningful.
+- Applying c₂ to (1+i,1+i) gives (1+i,−1+i), and applying it again returns (1+i,1+i). Conjugating both factors instead sends (1+i,1+i) to (−1+i,−1+i), again on the diagonal: two-factor conjugation preserves T₁ and does not produce T̄₁.
 
 *Needs:* §0.6; §0.3; §3.3; ComplexKahlerGeometry K6.1, gap:hyperbolic-cycle-volume-comparisons; §3.1; ModularCurvesPartII §8.4 (`complexConjugationComparison`); ModularCurvesPartII §8.5 (`genericBaseChangeAndLevelCompatibility`).
 
 ### 3.5 Hecke curves avoid anti-Heegner CM points
 
-For p∤m one has T_m∩CM⁻=∅. The genuine cyclic isogeny intertwines the compatible automorphism on tangent spaces, so the CM signs agree. This does not imply that distinct anti-Heegner points repel in the ordinary Hecke sense. (BT16 Remark 16, p. 727; erratum §1, p. 1; BT16 line 746; BTE §§1–4, pp. 1–4; BTE lines 11, 104, 139.)
+For p∤m one has T_m∩CM⁻=∅. The genuine cyclic isogeny intertwines the compatible automorphism on tangent spaces, so the CM signs agree. This does not imply that distinct anti-Heegner points repel in the ordinary Hecke sense. (BT16 Remark 16, p. 727; erratum §1, p. 1; BT16 line 747; BTE §§1–4, pp. 1–4; BTE lines 11, 104, 139.)
 
 One proof route proceeds as follows. An ordinary Hecke point in CM must have both elliptic curves of the same CM type: different imaginary-quadratic endomorphism algebras cannot be isogenous. Over C identify the two j=1728 curves, or the two j=0 curves, by an isomorphism. The isogeny becomes an element of the commutative CM endomorphism ring, hence intertwines the automorphisms with equal tangent eigenvalue. The opposite automorphism cannot induce the same torsion intertwining when p>3 and the isogeny is prime to p. A nonzero complex-linear derivative preserves the chosen CM tangent eigenvalue, excluding the opposite character.
 
@@ -856,7 +862,7 @@ One proof route proceeds as follows. Use the projectionwise total-measure formul
 
 ### 5.7 Hecke tubes away from cusps
 
-Prime-to-p Hecke branches are local isometries for h_Y. Outside compact cusp balls of radius (1/2−Aδ)ρ_X, compact and cusped metrics have a uniform comparison sufficient to carry an O(δρ_X) compact Hecke tube to an O(δρ_X) cusped tube. Apply the Hecke pull-push and then replace cusped by compact volumes with the uniform O(p⁻¹) error. The resulting ordinary diagonal tube estimate requires that the projected curve have no Hecke component, so its pull-push has no diagonal component. For a conjugate Hecke tube use the same holomorphic pull-push followed by the imported relative conjugate-diagonal bound. It needs no false divisor intersection with the real analytic locus; the large-radius sinh denominator gives the same p^(−1) gain. (BT16 Proof of Proposition 27, pp. 738–739; BT16 line 1280.)
+Prime-to-p Hecke branches are local isometries for h_Y. Outside compact cusp balls of radius (1/2−Aδ)ρ_X, compact and cusped metrics have a uniform comparison sufficient to carry an O(δρ_X) compact Hecke tube to an O(δρ_X) cusped tube. Apply the Hecke pull-push and then replace cusped by compact volumes with the uniform O(p⁻¹) error. The resulting ordinary diagonal tube estimate requires that the projected curve have no Hecke component, so its pull-push has no diagonal component. For a conjugate Hecke tube use the same holomorphic pull-push followed by the imported relative conjugate-diagonal bound. It needs no false divisor intersection with the real analytic locus; the large-radius sinh denominator gives the same p^(−1) gain. (BT16 Proof of Proposition 27, pp. 738–739; BT16 line 1283.)
 
 One proof route proceeds as follows. Uniformize a branch of the isogeny correspondence by a positive real Möbius transformation; it is an isometry of the cusped metric. Use the compact comparison and cusp-ball enlargement to ensure that each compared path stays in the allowed complement. Enlarge the constant A before fixing δ. Apply the finite correspondence integration formula and the relative-diagonal estimate to the weighted pull-push. Check the no-diagonal-component condition by tracing it back to the original Hecke locus.
 
@@ -964,7 +970,7 @@ One proof route proceeds as follows. Apply the relative cycle map to the finite 
 
 - For n=1, φ is the original rational curve map.
 
-- Two distinct generic fibres cannot have the same cycle if f is birational; dropping that hypothesis requires the image reduction first.
+- Take B=P¹, n=1, h=id, and f the squaring map t↦t² followed by the normalization P¹→Z(p) of the diagonal component of H₁ (the j-line). Then φ=f has generic degree two onto its image and φ(1)=φ(−1), so the degree-one conclusion fails without birationality of f; the image reduction of §6.2 is applied first.
 
 *Needs:* §6.1; §6.2; AlgebraicCurves Layer 12, gap:gonality-norm-and-base-change; AlgebraicCurves Layer 12; SchemeAndStackFoundations §1.17 and gap:free-locus-and-relative-cycle.
 
@@ -1585,7 +1591,7 @@ V(t)/a(t)=1+a²(1−q)/(1−a²q),
 
 which decreases. Thus the theorem deliberately keeps its fixed constant and linear factor in r. The proof uses gap:analytic-cycle-current-transport for normalization and sublevel Green/Stokes transport, and the imported current calculus and weighted analytic-cycle integration of ComplexComparisonPartII C5.4, together with the explicit Green/coarea bridge in gap:relative-point-ball-volume. It also gives the point-multiplicity lower bound: N(s) is at least the multiplicity at zero, and integrating h″ from −∞ gives V(R)≥4πsinh²(R/2)mult₀C.
 
-(BT16 Proposition 27 proof, p. 739, BT16 line 1280; the Green/coarea estimate is proved above rather than attributed to Proposition 23.)
+(BT16 Proposition 27 proof, p. 739, BT16 line 1330; the Green/coarea estimate is proved above rather than attributed to Proposition 23.)
 
 ### From the pencil to the Hurwitz contradiction
 
