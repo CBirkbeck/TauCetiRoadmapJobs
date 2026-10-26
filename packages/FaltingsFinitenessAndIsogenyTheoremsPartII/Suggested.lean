@@ -57,19 +57,22 @@ theorem class_index_bound
 
 /-! ## Layer 6: Quadratic elliptic isogeny estimates -/
 
-/-- Geometrically isogenous elliptic curves over a number field of degree at least
- two admit a geometric isogeny of degree at most an absolute constant times
- D²(log D)²(1 + h(j(E₁)))². Both CM and non-CM curves are included.
- Masser–Zannier, Lemma 2.2, p. 644; Gaudron–Rémond, Theorem 1.4, p. 347. -/
+/-- Geometrically isogenous elliptic curves over a number field `k` of degree `D` admit
+a geometric isogeny of degree at most an absolute constant times
+`D² max(1, log D)² (1 + h(j(E₁)))²`. This covers every `D ≥ 1`; for `D ≥ 2` it is the
+form `D² (log D)² (1 + h(j(E₁)))²` after enlarging the constant. Both CM and non-CM
+curves are included. Masser–Zannier, Lemma 2.2, p. 644; Gaudron–Rémond, Theorem 1.4,
+p. 347. -/
 theorem elliptic_isogeny_j_height_bound :
-    ∃ C : ℝ, 0 < C ∧ ∀ (k : Type*) [Field k] [NumberField k], 2 ≤ Module.finrank ℚ k →
+    ∃ C : ℝ, 0 < C ∧ ∀ (k : Type*) [Field k] [NumberField k],
       ∀ (E₁ E₂ : WeierstrassCurve k) [E₁.IsElliptic] [E₂.IsElliptic],
         Nonempty (TauCeti.Isogeny (E₁.baseChange (AlgebraicClosure k)).toAffine
           (E₂.baseChange (AlgebraicClosure k)).toAffine) →
         ∃ φ : TauCeti.Isogeny (E₁.baseChange (AlgebraicClosure k)).toAffine
             (E₂.baseChange (AlgebraicClosure k)).toAffine,
           (φ.degree : ℝ) ≤ C * (Module.finrank ℚ k : ℝ) ^ 2 *
-            Real.log (Module.finrank ℚ k) ^ 2 * (1 + NumberField.absLogHeight₁ E₁.j) ^ 2 := by
+            max 1 (Real.log (Module.finrank ℚ k)) ^ 2 *
+            (1 + NumberField.absLogHeight₁ E₁.j) ^ 2 := by
   sorry
 
 end TauCetiRoadmap.FaltingsFinitenessAndIsogenyTheoremsPartII

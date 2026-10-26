@@ -7,7 +7,7 @@ authors = "David Masser and Gisbert Wüstholz"
 title = "Periods and minimal abelian subvarieties"
 year = 1993
 locator_scheme = "theorem"
-locator = "Main theorem, pp 407–409; equation (7.4), p 436; Lemmas 8.4 and 8.6, pp 439–440; matrix-height input, §9, Lemma 9.6"
+locator = "Main theorem, pp 407–409; Lemma 5.3; equation (7.4), p 436; Lemmas 8.4 and 8.6, pp 439–440; matrix-height input, §9, Lemma 9.6"
 licence_class = "none"
 status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/379#issuecomment-6389935806"
@@ -187,7 +187,7 @@ year = 1985
 [[source]]
 id = "mw94-preprint"
 locator_scheme = "theorem"
-locator = "§2, internal pp 2–4, equation(2.1) and Lemmas2.2–2.3; §1 and §2 Lemma 2.1, internal pp 1–3; Lemma 2.2, internal p3; §6 internal p12, equation (6.2); Lemma 2.3, internal p4; §4, internal p6, restatement of MW period theorem; §4 internal p6, restatement of the MW93 period theorem; §4 internal p7, application to the basis of periods; §§3–5, Proposition in §4 internal pp 6–9 and §5 pp 9–10; Main Theorem internal p1, Lemma 2.1 pp2–3, Lemma 5.1 p10; §6, internal pp 11–12, equations(6.1)–(6.4)"
+locator = "§2, internal pp 2–4, equation(2.1) and Lemmas2.2–2.3; §1 and §2 Lemma 2.1, internal pp 1–3; Lemma 2.2, internal p3; Lemma 2.3 and its proof, internal p4; §6, internal p11, homogeneous degree polynomial; §5, internal p9, principalization and field degree; §4, internal p6, restatement of MW period theorem; §4 internal p6, restatement of the MW93 period theorem; §4 internal p7, application to the basis of periods; §§3–5, Proposition in §4 internal pp 6–9 and §5 pp 9–10; Main Theorem internal p1, Lemma 2.1 pp2–3, Lemma 5.1 p10; §6, internal pp 11–12, equations(6.1)–(6.4)"
 url = "https://archive.mpim-bonn.mpg.de/1350/1/preprint_1991_51.pdf"
 fetched_from = "https://archive.mpim-bonn.mpg.de/id/eprint/1350/1/preprint_1991_51.pdf"
 fetched_at = "2026-10-24T22:15:00Z"
