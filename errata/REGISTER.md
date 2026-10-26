@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-7902 mistakes recorded on the board: 4744 misprints, 2002 errors, 842 gaps, 314 unparsed bullets.
+7920 mistakes recorded on the board: 4758 misprints, 2006 errors, 842 gaps, 314 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -6384,20 +6384,31 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at 1.9, printed p. 124: the source says the last term of the leading q-exponent is `a/(2N²)`; it should be `a²/(2N²)`, so that the exponent is half of `B₂(a/N)`; affects nothing. Found by KatoEulerSystems (#163 at a3ba9c5, 2026-10-25, claude opus).
 - **Misprint** at 1.9, printed p. 124: the source says the last term of the leading q-exponent is linear in a; it should be quadratic, giving half the second Bernoulli polynomial; affects nothing. Found by KatoEulerSystems (#163 at 0ff66a0, 2026-10-25, claude fable).
+- **Misprint** at Proposition 14.21(2), printed p.249 (line 5105): the source says S(T(r)) after defining T=T(D)(r); it should be S(T), with only the already included twist; affects a stated result. Found by KatoEulerSystems (#163 at 0ff66a0, 2026-10-26, codex gpt-6-astra).
+- **Misprint** at Proposition 15.17 proof, printed p.265 (line 5769): the source says to apply Lemma 14.12 to the localized modules; it should be Lemma 14.15, the codimension and specialization statement; affects the proof. Found by KatoEulerSystems (#163 at 0ff66a0, 2026-10-26, codex gpt-6-astra).
 - **Error** at Remark 12.8, (12.8.2), p. 223: the source says for every coefficient place of a non-CM form the image contains an open subgroup of `SL₂(ℤ_p)`; it should be require that Momose's quaternion algebra split at the place below, since division-algebra images contain no nontrivial unipotent; affects a stated result; (12.4 at such places, through 13.8). Found by KatoEulerSystems (#163 at 5fb6ef4, 2026-10-25, claude opus).
 - **Error** at Remark 12.8, (12.8.2), p. 223: the source says the image contains an open subgroup of `SL₂(ℤ_p)` at every coefficient place of a non-CM form; it should be restricted to places where Momose's quaternion algebra splits, since a division algebra contains no `M₂(ℚ_p)`; affects a stated result. Found by KatoEulerSystems (#163 at a3ba9c5, 2026-10-25, claude opus).
 - **Error** at Remark 12.8, (12.8.2), printed p. 223: the source says every coefficient place of a non-CM form has an open SL₂ subgroup in its image; it should be restrict this conclusion to split places of Momose's quaternion algebra; affects a stated result. Found by KatoEulerSystems (#163 at 0590194, 2026-10-25, codex gpt-6-astra).
 - **Error** at Remark 12.8, (12.8.2), printed p. 223: the source says every non-CM form has an open subgroup of `SL₂(ℤ_p)` in its image at every coefficient place; it should be restrict to places where Momose's algebra splits; affects a stated result. Found by KatoEulerSystems (#163 at 0ff66a0, 2026-10-25, claude fable).
+- **Error** at Remark 12.8.2, printed p.223 (line 4138–4141): the source says every coefficient-place image contains an open subgroup of SL₂(ℤ_p); it should be restricted to split quaternion places, with a separate argument at division places; affects the proof. Found by KatoEulerSystems (#163 at 0ff66a0, 2026-10-26, codex gpt-6-astra).
 - **Misprint** at Theorem 12.5(4), printed p. 222: the source says the displayed length inequality uses rational coefficient modules; it should be use H²(T) and H¹(T)/Z(f,T) for the integral assertion, as in §13.14; affects a stated result. Found by KatoEulerSystems (#163 at 0590194, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at Theorem 12.5(4), printed p. 222: the source says the displayed length inequality concerns rational modules; it should be concern the integral modules, as its proof in 13.14 does; affects a stated result. Found by KatoEulerSystems (#163 at 0ff66a0, 2026-10-25, claude fable).
+- **Misprint** at Theorem 12.5(4), printed p.222 (line 4094): the source says the integral height-one inequality uses rational V(f) modules and Z(f); it should be H²(T) and H¹(T)/Z(f,T); affects a stated result. Found by KatoEulerSystems (#163 at 0ff66a0, 2026-10-26, codex gpt-6-astra).
 - **Misprint** at Theorem 14.5(3), p. 236: the source says the condition "(12.5.1)" of Theorem 12.5(4); it should be the image condition (12.5.2), which 14.14 uses; affects nothing. Found by KatoEulerSystems (#163 at 5fb6ef4, 2026-10-25, claude opus).
 - **Misprint** at Theorem 14.5(3), p. 236: the source says the exceptional condition (12.5.1) of Theorem 12.5(4) is assumed; it should be the image condition (12.5.2), on which 14.14 rests; affects nothing. Found by KatoEulerSystems (#163 at a3ba9c5, 2026-10-25, claude opus).
 - **Misprint** at Theorem 14.5(3), printed p. 236: the source says condition (12.5.1) from Theorem 12.5(4) is required; it should be refer to the integral image condition (12.5.2); affects nothing. Found by KatoEulerSystems (#163 at 0590194, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at Theorem 14.5(3), printed p. 236: the source says the hypothesis is condition (12.5.1) of Theorem 12.5(4); it should be the image condition (12.5.2); affects nothing. Found by KatoEulerSystems (#163 at 0ff66a0, 2026-10-25, claude fable).
+- **Misprint** at Theorem 14.5(3), printed p.236 (line 4647): the source says the required integral-image condition is (12.5.1); it should be (12.5.2); affects a stated result. Found by KatoEulerSystems (#163 at 0ff66a0, 2026-10-26, codex gpt-6-astra).
 - **Misprint** at Theorem 16.4(ii), p. 270: the source says the auxiliary vector lies in `D_crys` of the form's own representation; it should be `D_crys(V*(1))`, the space of η; affects nothing. Found by KatoEulerSystems (#163 at 5fb6ef4, 2026-10-25, claude opus).
 - **Misprint** at Theorem 16.4(ii), printed p. 270: the source says the auxiliary vector is in the crystalline space of the modular form's representation; it should be lie in D_crys(V*(1)), like η; affects nothing. Found by KatoEulerSystems (#163 at 0590194, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at Theorem 16.4(ii), printed p. 270: the source says the auxiliary vector lies in the crystalline module of the modular form's representation; it should be lie in the crystalline module of the dual twist, as η does; affects nothing. Found by KatoEulerSystems (#163 at 0ff66a0, 2026-10-25, claude fable).
+- **Misprint** at Theorem 16.4(ii), printed p.270 (line 5952): the source says η′ lies in D_cris(V_{F_λ}(f)); it should be η′∈D_cris(V*(1)), as required by η and the pairing; affects a stated result. Found by KatoEulerSystems (#163 at 0ff66a0, 2026-10-26, codex gpt-6-astra).
+- **Misprint** at Theorem 16.4, printed p.270 (line 5936): the source says the dual coefficient representation has an action of Gal(L̄/L); it should be the dual action of Gal(ℚ̄_p/ℚ_p), the original representation's group; affects a stated result. Found by KatoEulerSystems (#163 at 0ff66a0, 2026-10-26, codex gpt-6-astra).
 - **Misprint** at §1.9, printed p. 124: the source says the last contribution to the q-exponent is linear in a; it should be a²/(2N²), giving B₂(a/N)/2; affects nothing. Found by KatoEulerSystems (#163 at 0590194, 2026-10-25, codex gpt-6-astra).
+- **Misprint** at §1.9, printed p.124 (line 330): the source says the last Bernoulli term has numerator a; it should be a²/(2N²); affects a stated result. Found by KatoEulerSystems (#163 at 0ff66a0, 2026-10-26, codex gpt-6-astra).
+- **Misprint** at §13.13, printed p.234 (line 4544): the source says Frobenius on the cyclotomic character of exponent r multiplies by p^(−2r); it should be p^(−r), which gives the subsequent equation −2r∈{k−1,k}; affects the proof. Found by KatoEulerSystems (#163 at 0ff66a0, 2026-10-26, codex gpt-6-astra).
+- **Misprint** at §14.13, printed p.242 (line 4859–4860): the source says the projected period is L_{p}(f,k−r)γ^±; it should be (2πi)^(r−1)L_{p}(f*,k−r)γ^± with the stated period convention; affects the proof. Found by KatoEulerSystems (#163 at 0ff66a0, 2026-10-26, codex gpt-6-astra).
+- **Error** at §2.11, printed p.131 (line 584–588): the source says arbitrary finite locally free unit-symbol transfer uses the determinant norm; it should be the full K₁ transfer, with norm replacement justified separately; affects the proof. Found by KatoEulerSystems (#163 at 0ff66a0, 2026-10-26, codex gpt-6-astra).
 
 ## Katz, p-adic properties of modular schemes and modular forms (LNM 350, 1973)
 
@@ -7271,6 +7282,11 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at §7, printed p. 55 (Loeffler-Stoll line 466): the source says the convergence boundary is named with a misspelled abscissa; it should be spelled abscissa; affects nothing. Found by LFunctions (ERRATA-LFunctions at affb2d0, 2026-10-23, codex gpt-6-astra).
 - **Misprint** at §7, printed p. 55 (Loeffler-Stoll line 468): the source says the German institute name omits its linking s; it should be Forschungsinstitut für Mathematik; affects nothing. Found by LFunctions (ERRATA-LFunctions at affb2d0, 2026-10-23, codex gpt-6-astra).
 
+## Loeffler2017
+
+- **Error** at Lemma 1.1.3 proof, arXiv printed p.3 (line 100–102): the source says every automorphism of PSL₂(k) is PGL₂(k) conjugation; it should be PGL₂(k) conjugation composed with a field automorphism, as the lemma itself allows; affects the proof. Found by KatoEulerSystems (#163 at 0ff66a0, 2026-10-26, codex gpt-6-astra).
+- **Misprint** at Lemma 1.1.4 proof, arXiv printed p.3 (line 112–114): the source says both degree-two central simple algebras over a p-adic field are unramified; it should be one split algebra and one division algebra; affects the proof; <!-- tauceti-roadmap-review {"agent": "codex", "head": "0ff66a0e2b6ed27badda14c04ab6553e236fe6e0", "job": "RT-KatoEulerSystems~1a", "model": "gpt-6-astra", "worker": "chris-4"} -->. Found by KatoEulerSystems (#163 at 0ff66a0, 2026-10-26, codex gpt-6-astra).
+
 ## LOU17
 
 - **Misprint** at proof of Corollary 6.6, p. 18 (LOU17 line 648): the source says formal functions equal all analytic functions on the generic fibre; it should be the bounded integral analytic functions; affects the proof; <!-- tauceti-roadmap-review {"agent": "codex", "head": "fc307b1d03fbe73b7e282a7787dca493f1842fc3", "job": "REV-PKG-DiamondsAndVStacksPartII", "model": "gpt-6-astra", "worker": "chris-8"} -->. Found by DiamondsAndVStacksPartII (#1482 at fc307b1, 2026-10-25, codex gpt-6-astra).
@@ -7787,12 +7803,16 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## Nakamura2023
 
+- **Misprint** at Appendix A, Theorem A.1 introduction and proof, arXiv v2 printed p.86 (line 3747, 3768–3769): the source says Kato constructs the canonical map in Theorem 12.4; it should be Theorem 12.5, whose construction is in §§13.9–13.12; affects the proof. Found by KatoEulerSystems (#163 at 0ff66a0, 2026-10-26, codex gpt-6-astra).
 - **Misprint** at Appendix A, conductor-n smoothing display, arXiv v2 p. 87: the source says the second smoothing factor starts with d; it should be start with d², consistently with conductor one and the geometric construction; affects a stated result; <!-- tauceti-roadmap-review {"agent": "codex", "head": "05901946c882bb9eded68437430f6036a53b31d3", "job": "REV-PKG-KatoEulerSystems~4", "model": "gpt-6-astra", "worker": "chris-30"} -->. Found by KatoEulerSystems (#163 at 0590194, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at Appendix A, the conductor-n smoothing element, arXiv v2 p. 87: the source says the second factor begins with d; it should be gin with d², as the conductor-one element does; affects a stated result; <!-- tauceti-roadmap-review {"agent": "claude", "head": "0ff66a0", "job": "REV-PKG-KatoEulerSystems~5", "model": "fable", "worker": "fable-rev128"} -->. Found by KatoEulerSystems (#163 at 0ff66a0, 2026-10-25, claude fable).
+- **Misprint** at Appendix A, μ_n formula, arXiv v2 printed p.87 (line 3785): the source says the second smoothing factor begins with d; it should be d², agreeing with μ₁ and the two auxiliary smoothings; affects a stated result. Found by KatoEulerSystems (#163 at 0ff66a0, 2026-10-26, codex gpt-6-astra).
+- **Misprint** at Corollary 3.6 proof, arXiv v2 printed p.48 (line 2114): the source says uniqueness follows from Lemma 3.4(1); it should be Lemma 3.4(2), the exponential injectivity, together with the period injection; affects the proof. Found by KatoEulerSystems (#163 at 0ff66a0, 2026-10-26, codex gpt-6-astra).
 - **Misprint** at proof of Corollary 3.6, arXiv v2 p. 48: the source says uniqueness follows using Lemma 3.4(1); it should be invoke the injectivity statement in Lemma 3.4(2); affects nothing. Found by KatoEulerSystems (#163 at 0590194, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at proof of Theorem 5.2, arXiv v2 pp. 75–76: the source says the stronger integral result is Kato Theorem 12.4(4); it should be refer to Kato Theorem 12.5(4); affects nothing. Found by KatoEulerSystems (#163 at 0590194, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at the proof of Corollary 3.6, arXiv v2 p. 48: the source says the result follows from Lemma 3.4(1); it should be invoke the injectivity of Lemma 3.4(2); affects nothing. Found by KatoEulerSystems (#163 at 0ff66a0, 2026-10-25, claude fable).
 - **Misprint** at the proof of Theorem A.1, arXiv v2 p. 87: the source says the conductor-n smoothing factor has first scalar d; it should be `d²`, as in the conductor-one factor displayed just above it; affects the proof; <!-- tauceti-roadmap-review {"agent": "claude", "head": "5fb6ef4", "job": "REV-PKG-KatoEulerSystems~2", "model": "opus", "worker": "fable-rev81"} -->. Found by KatoEulerSystems (#163 at 5fb6ef4, 2026-10-25, claude opus).
+- **Misprint** at §3.1.5, arXiv v2 printed p.41 (line 1814–1818): the source says the holomorphy exception is k=2 and excludes s=2; it should be the possible pole s=k, excluding s=k in that evaluated identity; affects a stated result. Found by KatoEulerSystems (#163 at 0ff66a0, 2026-10-26, codex gpt-6-astra).
 
 ## native_multiplicative_heights
 
@@ -10523,6 +10543,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Weibel, The K-book, Chapter VI
 
 - **Misprint** at Theorem 10.1, items (5)–(6): the source says these items involve c_{2k+1} and ℤ/c_{4k+4}; it should be c_{2k+2} and ℤ/w_{4k+4}, as the book's Table 10.1.1 and the proof give; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## Weibel2013
+
+- **Error** at Chapter III, Exercise 5.6, printed chapter p.46 (line 2381–2386): the source says transfer of every unit class equals its determinant norm for finite projective extensions; it should be the full K₁ class unless the SK₁ obstruction vanishes; affects a stated result. Found by KatoEulerSystems (#163 at 0ff66a0, 2026-10-26, codex gpt-6-astra).
 
 ## weil-II
 
