@@ -105,6 +105,8 @@ The defining API is:
 - On coefficient-three M over F₅, R₂(1,1,1)=(1,1,2).
 - The permutation swapping coordinates 0 and 1 fixes the root; it is included in Γ by construction, without identifying it with a named Vieta generator.
 - Over F₃ the coefficient-one X* is empty but coefficient-three M* has eight points; no twist equivalence is asserted.
+- Over ℤ on the coefficient-one surface the one-step reversing successors of (3,3,3) are (3,3,3) itself, reached by each transposition, and (6,3,3), (3,6,3), (3,3,6). The point (3,6,15) is only a two-step image; a relation that composed two generators per step would wrongly admit it.
+- The six one-step reversing successors of (3,6,15) are (87,6,15), (3,39,15), (3,6,3) from the three Vieta moves and (6,3,15), (15,6,3), (3,15,6) from the transpositions. No generator fixes (3,6,15), so it is not its own successor, unlike (3,3,3).
 
 One proof route is as follows. Restrict the imported involutions to the nonzero locus; each fixes the origin and is bijective. Use Subgroup.closure in the permutation group, and conjugate R_i by coordinate permutations to obtain normality of V in Γ.
 
@@ -225,7 +227,7 @@ Separate semisimple, zero-trace and repeated-root fibres before counting.
 
 ### 2.1 Conic sections and rotations
 
-For odd prime p and a∈F_p set C_i(a)={x∈X*(F_p):x_i=a}. Rotation ρ₀(a,b,c)=(a,c,ac−b) fixes C₀(a), with cyclic analogues. On (b,c) it has matrix [[0,1],[-1,a]] and characteristic polynomial T²−aT+1. For a≠±2 define its order by the order of either root λ in `F_(p^2)^*`; inversion leaves this order unchanged. At a=±2 use the actual unipotent matrix order, not the eigenvalue order. (BGS16, §2, equations (6)–(15), pp. 4–6; BGS16 line 136.)
+For odd prime p and a∈F_p set C_i(a)={x∈X*(F_p):x_i=a}. Rotation ρ₀(a,b,c)=(a,c,ac−b) fixes C₀(a), with cyclic analogues. On (b,c) it has matrix [[0,1],[-1,a]] and characteristic polynomial T²−aT+1. For a≠±2 define its order by the order of either root λ in `F_(p^2)^*`; inversion leaves this order unchanged. At a=±2 use the actual unipotent matrix order, not the eigenvalue order. The definition `traceOrder` is this matrix order over an arbitrary field; §6.2 develops it over all finite fields. (BGS16, §2, equations (6)–(15), pp. 4–6; BGS16 line 136.)
 
 The defining API is:
 
@@ -342,9 +344,13 @@ One proof route is as follows. Use normality of V to move every coordinate permu
 
 For sufficiently large odd p, a point of X*(F_p) lies in the cage if some coordinate is a nondegenerate split trace of eigenvalue order p−1 or a nondegenerate nonsplit trace of order p+1; also include the nonempty parabolic slices at ±2, whose containment in the large orbit is recorded in EFLMT24, p. 4 (EFLMT24 line 141). The cage is a union of complete rotation cycles, not by definition a Γ-orbit. Its nonemptiness and membership in a single Γ-orbit are theorem obligations. (BGS16, §3.2, p. 11; endgame §3.1, pp. 7–11; BGS16 line 502.)
 
+The predicate `IsCagePoint` states membership on native triples for every prime p: some coordinate a equals 2 or −2, or the order n_p(a) of the rotation matrix [[0,1],[−1,a]] of §2.1 equals p−1 or p+1; the definition `traceOrder` gives this order over any field. For a≠±2 it is the eigenvalue order, so the two maximal values select the split and nonsplit maximal tori; for a=±2 it is p or 2p, neither of which is p±1 when p>3.
+
 The defining API is:
 
 - Membership is the disjunction of the maximal-order slice and stated parabolic cases.
+- For p>3 the cage is nonempty: for a primitive root r the trace a=r+r⁻¹ has n_p(a)=p−1, and its slice y²−ayz+z²=−a² is nonempty: it has p−1 points when a≠0, and 2(p−1) points when a=0, which happens only at p=5.
+- For p>3 some cage point has all four double-sign translates in the cage: when p≡1 mod 4 the negative of a trace of order p−1 again has order p−1, and when p≡3 mod 4 the same holds for order p+1.
 - A rotation fixing a selected maximal coordinate preserves its cage slice.
 - The eventual giant orbit containing the cage is stable under the Klein four sign action, by uniqueness and commutation/normalization.
 
@@ -531,21 +537,48 @@ One proof route is as follows. Filter the finite divisor set by the displayed ma
 
 *Needs:* Mathlib `Nat.divisors`.
 
-### 5.3 The signed complement
+### 5.3 The signed complement and the cage–endgame condition
 
-For p>3 in the explicit cage range, let C be the Γ-orbit containing the cage, and assume C is invariant under double sign changes. Then 4p divides # (X*(F_p)∖C). The invariance follows either from uniqueness of a giant orbit or from the explicit maximal-order signed points and normalization by Γ. The latter proof is required for an explicit numerical range. (EFLMT24, Lemma 2.2, p. 5; EFLMT24 line 188.)
+Fix a prime p>3 and c∈X*(F_p), and let C be its Γ-orbit. Assume every cage point of §3.1 lies in C. Then C is invariant under every double sign change, and 4p divides #(X*(F_p)∖C). (EFLMT24, Lemma 2.2, p. 5; EFLMT24 line 188.)
 
-One proof route is as follows. Double sign changes normalize the action and preserve X*. Their action is free: a fixed nonidentity sign change would force two coordinates to vanish. Cage points of maximal order and their double-sign translates lie in the same cage orbit; propagate using normalization to get sign stability of C. The complement is a disjoint union of four-element sign orbits and a Vieta-stable set; combine divisibility by 4 and p.
+Say that p satisfies the cage–endgame condition when there is c∈X*(F_p) whose Γ-orbit C has two properties. First, every cage point lies in C; in particular no point outside C has a coordinate ±2. Second, every x∈X*(F_p)∖C and every coordinate a=x_i satisfy n_p(a)≤K_p⁻ when n_p(a) divides p−1 and n_p(a)≤K_p⁺ when n_p(a) divides p+1, with K_p^± the endgame cutoff of §5.4. The predicate `cageEndgameCondition` states this on native triples with Γ-reachability `gammaStep`. The condition is a hypothesis of §§5.4, 5.13 and 5.14, not a theorem with a numerical range: §§3.2–3.6 prove cage containment and the endgame only for sufficiently large p, and the incidence step BGS16 Proposition 6 is stated only for large p (BGS16 line 320). EFLMT24, Appendix Proposition 6.1, pp. 28–30 (EFLMT24 line 1306), derives the endgame clause from that step and the curve estimate.
 
-*Needs:* §1.4; §3.1; §3.3.
+The defining API is:
+
+- `cageEndgameCondition p` asks for a nonzero coefficient-one point c, containment of every `IsCagePoint` in the Γ-reachability class of c, and the two order bounds outside that class.
+- If it holds, C is the unique Γ-orbit containing the cage, since the cage is nonempty for p>3.
+- Under it, C is sign invariant and its complement has size divisible by 4p, by the theorem above.
+
+**Checks.**
+
+- At p=5 with c=(3,3,3), C is all 40 points of X*(F₅); the cage is contained in it and the order clause has no instances, so the condition holds. The complement has 0 points, divisible by 20.
+- For every prime 5≤p≤251 the order clause holds automatically: K_p^±≥16√p because τ(p±1)≥2 and (p±1)/φ(p±1)≥1, while every companion order dividing p−1 or p+1 is at most p+1≤16√p. The clause has content only for larger p.
+- At p=13, (0,1,8) is outside the cage but inside C, which has all 208 points; the condition concerns the orbit containing the cage, not cage membership itself.
+- If C were allowed to be a sign block rather than a Γ-orbit, then at p=5 the four-point block of (3,3,3) would leave a complement of 36 points, which is not divisible by 20.
+
+One proof route is as follows. Double sign changes normalize Γ: each commutes with every Vieta move as an element of Δ, and conjugating a coordinate permutation by one gives a permutation composed with another sign change. They preserve X*, and their action is free, since a fixed nonidentity sign change would force two coordinates, and then the third, to vanish. By the second API bullet of §3.1 some cage point c₀ has its four translates in the cage, hence in C. For x=g·c₀∈C and a sign change σ, σx=g′·σc₀ with g′=σgσ⁻¹∈Γ, so σx∈C. The complement is then a disjoint union of four-element sign orbits and is Vieta-stable; combine divisibility by 4 with §1.4 through the coefficient twist, which is invertible since p≠3.
+
+*Needs:* §1.4; §2.1; §3.1; §0.1; ClassicalArithmeticCompletion §4.108.
 
 ### 5.4 Effective order obstruction
 
-For a prime p>3 in the explicitly proved cage/endgame range, disconnectedness implies the existence of d dividing p−1 or p+1 with either 2√(2p)/M_d(p)<d≤108M_d(p)³, or p/(24M_d(p))≤d≤K_p^±, where K_p^±=8√p(p±1)τ(p±1)/φ(p±1) and the sign matches the chosen torus. Here M_d(p)=#M_d(p−1)+#M_d(p+1), with multiplicity. Both alternatives retain their displayed boundary inequalities. The denominators are nonzero: φ(p±1)>0, and M_d(p)≥2 because d≥1 and each positive divisor set below d has a maximal element. (EFLMT24, Proposition 2.4, pp. 5–6; Theorem 3.2, p. 7; Appendix Proposition 6.1, pp. 28–29; EFLMT24 line 301.)
+For a prime p>3 satisfying the cage–endgame condition of §5.3, disconnectedness of G_p implies the existence of d dividing p−1 or p+1 with either 2√(2p)/M_d(p)<d≤108M_d(p)³, or p/(24M_d(p))≤d≤K_p^±, where K_p^±=8√p(p±1)τ(p±1)/φ(p±1) and the sign matches the chosen torus. Here M_d(p)=#M_d(p−1)+#M_d(p+1), with multiplicity. Both alternatives retain their displayed boundary inequalities. The denominators are nonzero: φ(p±1)>0, and M_d(p)≥2 because d≥1 and each positive divisor set below d has a maximal element. (EFLMT24, Proposition 2.4, pp. 5–6; Theorem 3.2, p. 7; Appendix Proposition 6.1, pp. 28–29; EFLMT24 line 301.)
 
-One proof route is as follows. Take the largest order d in the complement; rotations cannot increase it without leaving the complement. Cover its lower coordinate orders by maximal divisors and sum the local intersection estimate: d≤(3/2)M max((32d²)^(1/3),16d²/p). The two terms give d≤108M³ or d≥p/(24M). Count all low-order points and compare with 4p to obtain the lower bound in the first case. Use the explicit endgame cutoff K_p^± for the upper bound in the second. Recheck equality cases instead of importing the source’s strict inequalities unchanged.
+One proof route is as follows. Disconnectedness and §3.0a, through the coefficient twist, give a point outside C. Take the largest order d among points outside C; such points have no parabolic coordinate, and rotations cannot increase d without leaving the complement. Cover its lower coordinate orders by maximal divisors and sum the local intersection estimate: d≤(3/2)M max((32d²)^(1/3),16d²/p). The two terms give d≤108M³ or d≥p/(24M). Count all low-order points and compare with 4p to obtain the lower bound in the first case. The order clause of the condition gives the upper bound d≤K_p^± in the second. Recheck equality cases instead of importing the source’s strict inequalities unchanged.
 
-*Needs:* §5.1; §5.2; §5.3; §3.3; §3.0 elementary totient comparison.
+The endgame cutoff `endgameBound` assigns to p and s the real number 8√p·s·τ(s)/φ(s); it is used with s=p−1 or s=p+1. Its API is:
+
+- For a prime p>3 and s=p±1 it is positive, since s≥4 and φ(s)≥1.
+- It is at least 8√p·τ(s), hence at least 16√p, because s/φ(s)≥1.
+- Using §3.0, n/φ(n)≤τ(n), it is at most 8√p·τ(s)².
+
+**Checks.**
+
+- At p=5, s=4: τ(4)=3 and φ(4)=2, so the cutoff is 8√5·4·3/2=48√5≈107.3; at s=6 it is 8√5·6·4/2=96√5≈214.7.
+- At p=5 every companion order is at most 6, far below 48√5, so the second interval p/(24M_d(p))≤d≤K_5⁻ contains d=1: M₁(5)=2 and 5/48≤1.
+- The zero-denominator model is excluded: s=p±1≥4 for p>3, so φ(s)>0, whereas the library value at s=0 would give 0/0=0.
+
+*Needs:* §5.1; §5.2; §5.3; §3.0a; §3.3; §3.0 elementary totient comparison.
 
 ### 5.5 Reducing functions
 
@@ -646,7 +679,7 @@ One proof route is as follows. Construct a symmetric-chain decomposition of the 
 
 ### 5.13 Uniform connectivity intervals
 
-For integers 3≤L<U, assume the cage/endgame and sign-invariance hypotheses of §§5.3–5.4 hold for every prime L<p≤U. Assume also that for each such prime, each sign and every d∣p±1, the second interval p/(24M_d(p))≤d≤K_p^± is empty. For every reduced n with L≤n≤4U−2, put C(n)=C_(floor(Ω(n)/2))(n) and require n+2≥1492992C(n)⁸. Prove that G_p is connected for every prime L<p≤U. The hypotheses are universal rank inequalities. (EFLMT24, Theorem 4.2 and proof, pp. 21–22, with the local constants of §5.1; EFLMT24 line 974.)
+For integers 3≤L<U, assume the cage–endgame condition of §5.3 holds at every prime L<p≤U. Assume also that for each such prime, each sign and every d∣p±1, the second interval p/(24M_d(p))≤d≤K_p^± is empty. For every reduced n with L≤n≤4U−2, put C(n)=C_(floor(Ω(n)/2))(n) and require n+2≥1492992C(n)⁸. Prove that G_p is connected for every prime L<p≤U. The headline is `uniform_connectivity_interval`; its hypotheses are the cage–endgame condition and universal rank inequalities, all on native finite triples, orders and divisor sets. (EFLMT24, Theorem 4.2 and proof, pp. 21–22, with the local constants of §5.1; EFLMT24 line 974.)
 
 The criterion has the following API:
 
@@ -660,15 +693,15 @@ The criterion has the following API:
 - If both central ranks are at most C, then M≤2C and d≤108(2C)³=864C³. The cutoff 162C³ is insufficient for this bound.
 - Combining 2√(2p)/M<d≤108M³ gives p<1458M⁸≤373248C⁸ and then n+2<1492992C⁸; equality n+2=1492992C⁸ therefore excludes the obstruction.
 
-One proof route is as follows. Choose reduced representatives n₋,n₊ from §5.8 and select n among them with larger central rank C. Section 5.10 bounds M_d(p) by 2C. The first order interval gives the strict inequality in the last Check, while n+2≤4p. Its contradiction and the assumed exclusion of the second interval eliminate every obstruction in §5.4.
+One proof route is as follows. Choose reduced representatives n₋,n₊ from §5.8 and select n among them with larger central rank C. Section 5.10 bounds M_d(p) by 2C. The first order interval gives the strict inequality in the last Check, while n+2≤4p. Its contradiction and the assumed exclusion of the second interval eliminate every obstruction in §5.4, which applies at p because the cage–endgame condition holds there.
 
 *Needs:* §5.10; §5.8; §5.4; §3.0a.
 
 ### 5.14 Connectivity above a uniform threshold
 
-Let L≥3 be an integer. Suppose the cage/endgame and sign-invariance hypotheses of §§5.3–5.4 hold for every prime p>L, the second order interval is empty at every such prime, and n+2≥1492992C(n)⁸ for every reduced integer n≥L. Prove connectivity and positive integral lifting for every prime p>L. The endpoint is specified by these uniform inequalities, without an asserted numerical value. (EFLMT24, Theorem 4.2, pp. 21–22; EFLMT24 line 974; the constants follow from §5.1.)
+Let L≥3 be an integer. Suppose the cage–endgame condition of §5.3 holds at every prime p>L, the second order interval is empty at every such prime, and n+2≥1492992C(n)⁸ for every reduced integer n≥L. Prove connectivity and positive integral lifting for every prime p>L. The endpoint is specified by these uniform inequalities, without an asserted numerical value. (EFLMT24, Theorem 4.2, pp. 21–22; EFLMT24 line 974; the constants follow from §5.1.)
 
-One proof route is as follows. Apply §5.13 with U=p and then §3.0a. The effective divisor-subpower estimate supplies thresholds for the rank and second-interval inequalities: once τ(n)≤n^(1/16), the rank bound follows for n≥1492992². Writing B_p=τ(p−1)+τ(p+1), §5.4 gives K_p^±≤8√p·τ(p±1)². Thus K_p^±<p/(24B_p) follows from 384(p+1)^(3/16)<√p, which holds for all sufficiently large p. Since M_d(p)≤B_p, this excludes the second interval. These estimates do not replace the separately quantified cage/endgame hypothesis.
+One proof route is as follows. Apply §5.13 with U=p and then §3.0a. The effective divisor-subpower estimate supplies thresholds for the rank and second-interval inequalities: once τ(n)≤n^(1/16), the rank bound follows for n≥1492992². Writing B_p=τ(p−1)+τ(p+1), §5.4 gives K_p^±≤8√p·τ(p±1)². Thus K_p^±<p/(24B_p) follows from 384(p+1)^(3/16)<√p, which holds for all sufficiently large p. Since M_d(p)≤B_p, this excludes the second interval. These estimates do not supply the cage–endgame condition, which remains a hypothesis.
 
 **Checks.**
 
@@ -684,7 +717,7 @@ For 12 the rank polynomial is 1+2T+2T²+T³ and M₆(12)={4,6}. At n=4 the rank-
 
 ### Dependencies
 
-§2.2; §3.0 function-field gcd bound; Mathlib `Nat.divisors`; Mathlib `Nat.totient`; Mathlib `Nat.card_divisors`; Mathlib `ArithmeticFunction.cardFactors`; §1.4; §3.1; §3.3; Mathlib `Nat.minFac`; §3.0a; ErdosProgressionPowers §0.9, “Prime estimates in the progression factorial argument”.
+§0.1; §2.1; §2.2; §3.0 function-field gcd bound; Mathlib `Nat.divisors`; Mathlib `Nat.totient`; Mathlib `Nat.card_divisors`; Mathlib `ArithmeticFunction.cardFactors`; §1.4; §3.1; §3.3; Mathlib `Nat.minFac`; §3.0a; ClassicalArithmeticCompletion §4.108; ErdosProgressionPowers §0.9, “Prime estimates in the progression factorial argument”.
 
 ## Layer 6: oriented traces and level structures
 
@@ -733,6 +766,8 @@ The trace and oriented-action API is:
 - The matrices A=[[1,1],[0,1]] and B=[[1,0],[1,1]] give traces (2,2,3) and commutator trace 3, so 4+4+9−12−2=3.
 - The identity pair gives (2,2,2) and trace 2: 4+4+4−8−2=2. It is reducible and excluded from the t≠2 dictionary.
 - Over 𝔽₇ take A=diag(2,4) and B=[[0,6],[1,0]]. The trace triple is (6,0,0) and the commutator trace is 6≠2. It is absolutely irreducible of dihedral type, excluded by the two-nonzero-coordinate condition.
+- Over ℤ, (3,3,6) is an oriented step from (3,3,3): a transposition fixes (3,3,3) and the third Vieta move follows. The oriented successors of (3,3,3) are its four reversing successors together with the six orderings of (3,6,15).
+- From (3,6,15), which no generator fixes, the Vieta image (87,6,15) and the transposition image (3,15,6) are reversing steps but not oriented steps: neither shares a one-step reversing neighbour with (3,6,15). Identifying oriented steps with single reversing steps would admit both.
 
 ### 6.2 Trace order
 
@@ -893,6 +928,8 @@ One proof route is as follows. Use the parabolic p-cycle and its intersections f
 ### 7.4a Alternating containment for the Markoff block action
 
 Prove parabolic alternating containment: for every prime q≥5 with q≡1 modulo 4, if Q_q is transitive on Y*(q), then A(Y*(q))≤Q_q. The first rotation on Y*(q) has exactly one q-cycle and every other cycle has length prime to q. Raising it to the least common multiple of those other cycle lengths leaves a single q-cycle. Section 7.4 gives primitivity from the stated block transitivity, and #Y*(q)=q(q+3)/4≥q+3. Apply the pinned Jordan theorem to this permutation in Q_q. (MP18, Theorem 1.3, p. 3, and proof in §3, p. 9; MP18 line 90 and line 460.)
+
+The headline `parabolic_alternating_containment` states this on native carriers. Y*(q) is the quotient of the nonzero coefficient-one triples by the equivalence relation generated by `signStep`; transitivity of Q_q is Γ-reachability up to a sign change; and membership in Q_q of a permutation π of Y*(q) means that some composite of Vieta moves and coordinate permutations, an element of the submonoid of self-maps they generate, maps every nonzero triple to a nonzero triple in the block π assigns. Since every generator is an involution, this submonoid acts through the group Q_q.
 
 Prove also exceptional-prime alternating containment A(Y*(11))=A₂₂≤Q₁₁ for the finite action at 11. Prove directly that this 22-point block action is primitive, and use the single 3-cycle in the Check below with the pinned Jordan theorem. This supplies the separate input for the equal-order pair (11,5); it does not follow from the parabolic argument or the MP order condition at 11. (MP18, Lemma 5.13 proof, p. 26; MP18 line 1420.)
 
