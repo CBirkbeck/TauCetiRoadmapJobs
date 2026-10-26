@@ -8,7 +8,7 @@ EtaleCohomologyFoundations §§F.0–F.8 and EtaleDualityAndPerverseSheaves §§
 
 Ownership is by mathematical object:
 
-- SchemeAndStackFoundations §§0.12–0.16, 0.20–0.21, 2.12, 2.15–2.16 and 4.16–4.20 own henselization, Elkik, Popescu, excellence, normalization, Nisnevich covers, ordinary proper descent, alterations, snc divisors and ordinary curve-family alterations. AlgebraicModuliForArithmeticGeometry §§6.0–6.1 own polynomial Artin approximation. Section 0.5 adds the higher-graded comparison of finite-type schemes, with controlled loss of approximation order; §2.1 adds equivariance and the birational quotient conclusion over arbitrary excellent integral bases.
+- SchemeAndStackFoundations §§0.12–0.16, 0.20–0.21, 2.12, 2.15–2.16 and 4.16–4.20 own henselization, Elkik, Popescu, excellence, normalization, Nisnevich covers, ordinary proper descent, alterations, snc divisors and ordinary curve-family alterations. AlgebraicModuliForArithmeticGeometry §§6.0–6.1 own polynomial Artin approximation. Section 0.5 adds the higher-graded comparison of finite-type schemes, with controlled loss of approximation order. ClassicalAdicEtaleCohomology §5.4 owns the marked stable-extension, flattening, marked-section, simultaneous-translate equivariance and nodal-quotient steps of the curve step of `PlurinodalAlteration.exists`; §2.1 states the single-curve theorem with the étale marking divisor, the exceptional base locus, the control of the boundary Z, generically étale alterations and the birational quotient conclusion over arbitrary excellent integral bases.
 
 - AdicCoefficientsAndComparisonsPartII §§PA.0.2–PA.0.8, PA.0.11, PA.1.2–PA.1.4, PA.4.1–PA.4.8 and PA.5.1–PA.5.4 own maximally dominating morphisms, alterations and their degree conditions, flattening, snc supports, excellent-surface resolution, Riemann–Zariski spaces, logarithmic modifications and stable modifications. Here the new objects are the alteration sites and the quasi-excellent uniformization theorems.
 
@@ -18,7 +18,7 @@ Ownership is by mathematical object:
 
 - SchemeAndStackFoundations §0.7 and EtaleCohomologyFoundations §F.8 supply finite-type field dimension and middle perversity. Section 5.1 develops étale dimension functions on general locally noetherian schemes. Section 6.5 supplies a t-structure for every monotone perversity on a noetherian scheme; EtaleDualityAndPerverseSheaves §2.11 states only the finite-type-field nonconstructible conditions.
 
-- ArcTopologyAndDescent §§3.6, 8.3, 8.6–8.9, 11.1–11.2, 11.5 and 12.6 own valuation-product components, henselian completion, formal glueing and complete arc descent; §11.2 also owns the splitting of every étale cover of a quasi-compact open in the spectrum of a product of valuation rings with algebraically closed fraction fields. PerfectoidQuotients §§0.4–0.6 own integral perfectoid operations and p-integral closure. PerfectoidQuotientsPartII §§Q5.1–Q5.3 and Q6.3–Q6.7 own the integral multiplicative tilt, product tilts, sharp quotients and valuation tilting. Section 8.2 adds the multiplicative identification after inverting ϖ; §8.4 uses the supplied product objects and split-cover theorem to compare their cohomology.
+- ArcTopologyAndDescent §§3.6, 8.3, 8.6–8.9, 11.1–11.2, 11.5 and 12.6 own valuation-product components, henselian completion, formal glueing and complete arc descent; §11.2 also owns the splitting of every étale cover of a quasi-compact open in the spectrum of a product of valuation rings with algebraically closed fraction fields. PerfectoidQuotients §§0.4–0.6 own integral perfectoid operations and p-integral closure. PerfectoidQuotientsPartII §§Q5.1–Q5.3, Q6.2 and Q6.3–Q6.7 own the integral multiplicative tilt, product tilts, sharp quotients, completeness transfer under tilting and valuation tilting. Section 8.2 adds the multiplicative identification after inverting ϖ; §8.4 uses the supplied product objects and split-cover theorem to compare their cohomology.
 
 Flat cohomology, virtual dimension and finite flat group schemes belong to PurityForFlatCohomology; there is no dependency on that consumer.
 
@@ -63,7 +63,11 @@ The mixed-characteristic signature also uses `Algebra.IsEtaleAt` in `Mathlib.Rin
 
 ### From TauCetiRoadmap.SchemeAndStackFoundations
 
-Sections 0.12–0.14 supply henselian pairs, their henselizations, finite étale invariance and Elkik's algebraization theorem. Section 0.15 supplies Néron–Popescu for regular noetherian ring maps; §§0.16, 0.20–0.21 supply universal catenarity, finite normalization in the Nagata domain and excellent/quasi-excellent permanence, including henselization. Section 2.11 supplies the Artin–Schreier sequence used by the characteristic-primary negative control in Layer 4; §§2.12, 2.15–2.16 supply Nisnevich covers, torsion étale continuity, Hochschild–Serre and proper hypercover descent. Sections 4.16–4.20 supply alterations, snc divisors, ordinary nodal families and semistable alterations over traits. No purity theorem is inferred from the word “regular.”
+Sections 0.12–0.14 supply henselian pairs, their henselizations, finite étale invariance and Elkik's algebraization theorem. Section 0.15 supplies Néron–Popescu for regular noetherian ring maps; §§0.16, 0.20–0.21 supply universal catenarity, finite normalization in the Nagata domain and excellent/quasi-excellent permanence under finite type and localization. Section 2.11 supplies the Artin–Schreier sequence used by the characteristic-primary negative control in Layer 4; §§2.12, 2.15–2.16 supply Nisnevich covers, torsion étale continuity, Hochschild–Serre and proper hypercover descent. Sections 4.16–4.20 supply alterations, snc divisors, ordinary nodal families and semistable alterations over traits. No purity theorem is inferred from the word “regular.”
+
+What SchemeAndStackFoundations must provide (gap:henselian-quasi-excellent-catenary): For every quasi-excellent noetherian local ring A, prove that its henselization and strict henselization are quasi-excellent, and that every henselian quasi-excellent local ring is universally catenary, hence excellent, with no reducedness, normality or finiteness assumption on A.
+
+The sources are ILO14, I Théorème 8.1(iii)–(iv) and the paragraph after it, p. 16 (printed), for henselization and strict henselization (ILO14 line 850), and I Corollaire 6.3(ii), p. 14, with XIV Proposition 1.3.2, p. 209, for catenarity (ILO14 lines 768, 9860). Sections 0.6–0.7, 5.1–5.2, 5.4, 5.6 and 6.1 consume it, wherever a quasi-excellent or excellent scheme is replaced by a henselization or strict henselization; Nagata's catenary, not universally catenary local domain shows that quasi-excellence, not catenarity alone, is what the second clause uses.
 
 ### From TauCetiRoadmap.AlgebraicModuliForArithmeticGeometry
 
@@ -115,7 +119,7 @@ Section 3.6 supplies ultraproduct components of products of valuation rings, wit
 
 ### From TauCetiRoadmap.ClassicalAdicEtaleCohomology
 
-Section 5.4 supplies `OrientedEtaleProduct` for scheme maps X → S ← Y, its projections and specialization two-cell, the site including Cartesian refinements of the middle neighborhood, and its universal property. It also supplies the scheme-point and shred descriptions and the coherent qcqs case. §3.1 uses that scheme object and proves agreement with the oriented product for general finite-limit sites; §§3.2–3.6 add the coherent-topos tube theorem and alteration-diagram descent. No nearby-cycle constructibility theorem from this supplier is used to prove Gabber finiteness.
+Section 5.4 supplies `OrientedEtaleProduct` for scheme maps X → S ← Y, its projections and specialization two-cell, the site including Cartesian refinements of the middle neighborhood, and its universal property. It also supplies the scheme-point and shred descriptions and the coherent qcqs case. §3.1 uses that scheme object and proves agreement with the oriented product for general finite-limit sites; §§3.2–3.6 add the coherent-topos tube theorem and alteration-diagram descent. The same section supplies the curve step of `PlurinodalAlteration.exists`: marked stable extension of a generic pointed curve after alteration, flattening and marked sections, preservation of finite group actions by simultaneous translates, and nodality of quotients of projective nodal curves over normal excellent bases; §2.1 uses it and adds the boundary control, generic étaleness and birational quotient conclusion. No nearby-cycle constructibility theorem from this supplier is used to prove Gabber finiteness.
 
 ### From TauCetiRoadmap.PerfectoidQuotients
 
@@ -123,7 +127,7 @@ Sections 0.4–0.6 supply bounded torsion, the torsion-free quotient, p-integral
 
 ### From TauCetiRoadmap.PerfectoidQuotientsPartII
 
-Sections Q5.1–Q5.3 supply the multiplicative p-power inverse limit, products, sharp quotients and completeness of the tilt. Sections Q6.3–Q6.7 supply tilting of valuation rings, transfer of adic completeness and preservation of algebraically closed fraction fields. The sharp quotient has exponent p before applying Frobenius. The induced equality of quotient spectra determines the closed complements used in Layer 8.
+Sections Q5.1–Q5.3 supply the multiplicative p-power inverse limit, products, sharp quotients and completeness of the tilt. Section Q6.2 supplies the transfer of classical adic completeness along tilting, under its hypothesis that ϖ^♭ divides the image of ξ_0. Sections Q6.3–Q6.7 supply tilting of p-adically complete and perfectoid valuation rings, completeness of their localizations and preservation of algebraically closed fraction fields. The sharp quotient has exponent p before applying Frobenius. The induced equality of quotient spectra determines the closed complements used in Layer 8.
 
 ## How to read the build
 
@@ -273,15 +277,19 @@ Consider the uniformization statement U(X): for every nowhere dense closed Z ⊂
 
 Z nowhere dense (rare) closed; snc supports in the sense of AdicCoefficientsAndComparisonsPartII §§PA.0.2–PA.0.8, PA.0.11.
 
-A proof route is as follows. Normalisation is an alt_ℓ′-covering and preserves rareness of Z, so reduce to X normal integral. For x ∈ X the henselisation X_(x) is excellent (SchemeAndStackFoundations §0.21) with Z_(x) rare; a uniformizing family over X_(x) is dominated by a standard covering (§0.3) which spreads out to an étale neighbourhood of x by limit arguments. Noetherian induction and quasi-compactness assemble the local families (ILO II 4.1.1–4.1.2, 4.3.3).
+A proof route is as follows. Normalisation is an alt_ℓ′-covering and preserves rareness of Z, so reduce to X normal integral. For x ∈ X the henselisation X_(x) is quasi-excellent and henselian, hence excellent (SchemeAndStackFoundations §0.21, gap:henselian-quasi-excellent-catenary), and normal because henselization is a regular map (SchemeAndStackFoundations §0.21), with Z_(x) rare; a uniformizing family over X_(x) is dominated by a standard covering (§0.3) which spreads out to an étale neighbourhood of x by limit arguments. Noetherian induction and quasi-compactness assemble the local families (ILO II 4.1.1–4.1.2, 4.3.3).
 
-*Needs:* §0.3; SchemeAndStackFoundations §§0.12–0.14; SchemeAndStackFoundations §0.21; AdicCoefficientsAndComparisonsPartII §§PA.0.2–PA.0.8, PA.0.11; SchemeAndStackFoundations §§0.12–0.16, 0.21.
+*Needs:* §0.3; SchemeAndStackFoundations §§0.12–0.14; SchemeAndStackFoundations §0.21, gap:henselian-quasi-excellent-catenary; AdicCoefficientsAndComparisonsPartII §§PA.0.2–PA.0.8, PA.0.11; SchemeAndStackFoundations §§0.12–0.16, 0.21.
 
 **Checks.**
 
 - For regular connected X and an snc support Z, the identity family witnesses the instance (X, Z) of U. For disconnected noetherian regular X, use the finitely many connected components; this checks the connected-source requirement without asserting U for every rare Z.
 
-- The dimension bound is preserved: a family produced for X of dimension ≤ d uses only local schemes of dimension ≤ d.
+- For X empty, the only closed subset is Z = ∅ and the empty family is covering, since no point needs a lift; U(∅) holds with zero members. A definition demanding a nonempty family would fail here.
+
+- For X = Spec k[x,y]/(xy) and Z its node, the identity family fails because X is not regular at the node. The normalisation, two copies of 𝔸¹_k mapping to the two branches, is finite, surjective and birational on each component, hence alt-covering; each line is regular and connected and the preimage of Z in each is one reduced point, an snc support. The witness has two members.
+
+- For X = Spec(k × k), two points, and Z = ∅, no single connected source can cover both open-and-closed points, while the two inclusions of the points do. The connected-source requirement forces exactly two members here.
 
 ### 0.7 Reduction of uniformization to complete local rings
 
@@ -289,9 +297,9 @@ If the uniformization statement U(T) of §0.6 (for alt, resp. alt_ℓ′ with �
 
 Uniformization for complete local rings is assumed in the relevant topology; ℓ invertible for the prime-to-ℓ version.
 
-A proof route is as follows. By §0.6 reduce to T local, excellent and henselian (a henselian quasi-excellent local scheme is excellent). Uniformize the completion T̂; approximate the finitely many regular schemes and snc divisors of the family by models over T using §0.5, keeping regularity near the closed fibre and the combinatorics of the divisors. Check the approximated family is still covering using the standard forms (§0.3) and the valuative criterion.
+A proof route is as follows. By §0.6 reduce to T local, excellent and henselian (a henselian quasi-excellent local scheme is excellent: SchemeAndStackFoundations §0.21, gap:henselian-quasi-excellent-catenary). Uniformize the completion T̂; approximate the finitely many regular schemes and snc divisors of the family by models over T using §0.5, keeping regularity near the closed fibre and keeping each branch equation part of a regular system of parameters, so that the approximated divisors remain snc with the same branches. Check the approximated family is still covering using the standard forms (§0.3) and the valuative criterion.
 
-*Needs:* §0.6; §0.5; §0.3; §0.4.
+*Needs:* §0.6; §0.5; §0.3; §0.4; SchemeAndStackFoundations §0.21, gap:henselian-quasi-excellent-catenary.
 
 **Checks.**
 
@@ -505,9 +513,9 @@ Let f : X → Y be a proper morphism of excellent integral noetherian schemes an
 
 Y excellent integral noetherian; X_η smooth geometrically irreducible of dimension 1; Z_η étale over η. A nodal curve is flat with geometrically connected one-dimensional fibres whose only singularities are ordinary double points.
 
-A proof route is as follows. Apply de Jong's Theorem 2.4 (Families of curves and alterations, 1997) to the triple (f, G = 1, Z): after an alteration of Y with group action and a stable-curve modification, the family becomes a projective semistable curve with disjoint sections through the smooth locus covering Z (de Jong 1997, 2.4 (i)–(vii)(a)); the extra boundary is T′ and the sections form D. Read off the stated properties (ILO IX 1.2); the stable modification is also available from AdicCoefficientsAndComparisonsPartII §§PA.5.1–PA.5.4.
+A proof route is as follows. Apply de Jong's Theorem 2.4 to the triple (f, G = 1, Z): after an alteration of Y with group action and a stable-curve modification, the family becomes a projective semistable curve with disjoint sections through the smooth locus covering Z (DJ97, 2.4 (i)–(vii)(a)); the extra boundary is T′ (Remark 2.5) and the sections form D. The marked stable extension, flattening, marked-section construction, preservation of group actions by simultaneous translates and the nodal quotient are the curve step of `PlurinodalAlteration.exists` in ClassicalAdicEtaleCohomology §5.4, which rests on the same Theorem 2.4 and Remark 2.5; they are used here, not rebuilt, and the stable modification is also available from AdicCoefficientsAndComparisonsPartII §§PA.5.1–PA.5.4. What this section adds is read off from Theorem 2.4 (iv)–(vi) under the stated hypotheses (ILO IX 1.2). Geometric irreducibility of X_η gives condition (2.1.5) and smoothness with Z_η étale gives (2.1.1), so the alteration satisfies (2.2.1) and (2.2.5): the invariant function field of Y′ is purely inseparable over that of Y by (2.2.1) and separable over it by (2.2.5), hence equal to it, and then (2.2.1) makes the invariant function field of X′ equal to that of X. This is the birational quotient conclusion; the supplier's plurinodal corollary records only a purely inseparable invariant extension.
 
-*Needs:* AdicCoefficientsAndComparisonsPartII §§PA.5.1–PA.5.4; AdicCoefficientsAndComparisonsPartII §§PA.0.2–PA.0.8, PA.0.11; SchemeAndStackFoundations §§4.16–4.20; SchemeAndStackFoundations §0.21.
+*Needs:* ClassicalAdicEtaleCohomology §5.4 for the curve step of `PlurinodalAlteration.exists`; AdicCoefficientsAndComparisonsPartII §§PA.5.1–PA.5.4; AdicCoefficientsAndComparisonsPartII §§PA.0.2–PA.0.8, PA.0.11; SchemeAndStackFoundations §§4.16–4.20; SchemeAndStackFoundations §0.21.
 
 **Checks.**
 
@@ -555,13 +563,15 @@ Let X be a noetherian quasi-excellent scheme, Z ⊂ X a closed subset with dense
 
 X noetherian quasi-excellent; Z rare; ℓ invertible on X for the alt_ℓ′ version; only the truncation in degrees ≤ N is controlled.
 
-A proof route is as follows. the inductive hypercover construction of EnhancedDerivedSheaves §E2: at each stage cover the relevant fibre product (cosk_n X_•)ₙ₊₁, an object of alt/X, by §2.2 (resp. §2.3) applied with the preimage of Z and of the degeneracy loci. Zariski-refine each stage to affine pieces (ILO XIII 2.2.2, XV 3.1.2).
+A proof route is as follows. Build a split hypercovering degree by degree, as in the hypercover construction of EnhancedDerivedSheaves §E2 (the classical split construction that ILO XIII 2.2.1 invokes; ILO14 line 9329). At stage n + 1 the matching object M = (cosk_n X_•)ₙ₊₁ is an object of alt/X: it is reduced, of finite type over the quasi-excellent X, and maximally dominant, so its maximal points lie over maximal points of X, which lie in the dense open U. Hence the preimage of Z in M is nowhere dense, and §2.2 (resp. §2.3) applied to M with boundary the preimage of Z alone gives the new nondegenerate summand N_(n+1), refined to finitely many affine regular connected pieces by a Zariski refinement. Set Xₙ₊₁ = N_(n+1) ⊔ (the degenerate summands forced by the degeneracy maps), each a copy of some N_k with k ≤ n, already regular with snc boundary. No degeneracy image is added to the boundary: it can be all of M, as for X = Spec k, Z = ∅, where X₀ ×_X X₀ = X (ILO XIII 2.2.2, XV 3.1.2).
 
 *Needs:* §2.2; §2.3; §0.2; §0.1; EnhancedDerivedSheaves §E2.
 
 **Checks.**
 
 - For X regular with Z an snc support, the constant hypercovering X_• = X works.
+
+- For X = Spec k and Z = ∅, the matching object at stage 1 is X₀ ×_X X₀; for X₀ = X it is a point whose degeneracy image is all of it. A construction that added degeneracy images to the boundary would ask §2.2 for a boundary equal to the whole scheme, which is not nowhere dense. The split construction takes the new summand and the forced degenerate summand to be points with empty boundary.
 
 - The truncation bound N ≥ q + 1 suffices for the stated control in degree q: it uses levels 0 and 1 for q = 0, and levels 0, 1 and 2 for q = 1. The constant hypercover does not require this many levels to compute its own cohomology (ILO XIII 2.2.1–2.2.3).
 
@@ -571,7 +581,7 @@ The quadratic cone xy=z² is resolved by blowing up its vertex, including in cha
 
 ### Dependencies
 
-Layers 0–1; AdicCoefficientsAndComparisonsPartII §§PA.4.1–PA.4.8, PA.5.1–PA.5.4; SchemeAndStackFoundations §§4.16–4.20; EnhancedDerivedSheaves §E2 for hypercovers.
+Layers 0–1; AdicCoefficientsAndComparisonsPartII §§PA.4.1–PA.4.8, PA.5.1–PA.5.4; SchemeAndStackFoundations §§4.16–4.20; ClassicalAdicEtaleCohomology §5.4 for the curve step; EnhancedDerivedSheaves §E2 for hypercovers.
 
 ## Layer 3: Oriented products and oriented cohomological descent
 
@@ -783,7 +793,7 @@ Its interface consists of the following facts.
 
 - The difference of two dimension functions is locally constant; dimension functions form a torsor under locally constant ℤ-valued functions wherever one exists.
 
-- For X strictly local, noetherian and universally catenary, δ(t) = dim closure{t} is the normalized dimension function with δ(closed point) = 0 (ILO XIV 2.4.5). This applies to strictly local quasi-excellent schemes by XIV Proposition 1.3.2 (ILO14 line 9860).
+- For X strictly local, noetherian and universally catenary, δ(t) = dim closure{t} is the normalized dimension function with δ(closed point) = 0 (ILO XIV 2.4.5). This applies to strictly local quasi-excellent schemes, which are universally catenary by the supplied gap:henselian-quasi-excellent-catenary (ILO XIV Proposition 1.3.2; ILO14 line 9860).
 
 - On an integral universally catenary X, x ↦ −dim O_(X,x) is a dimension function (ILO XIV 2.2.2).
 
@@ -793,7 +803,7 @@ Its interface consists of the following facts.
 
 A proof route is as follows. Definition (ILO XIV 2.1.1–2.1.2, 2.1.8); étale immediate specializations are detected on strict henselizations of the closure (ILO XIV 2.1.3) and, for quasi-excellent X, on the completion (ILO XIV 2.1.7).
 
-*Needs:* SchemeAndStackFoundations §§0.12–0.14; SchemeAndStackFoundations §§0.12–0.16, 0.21; Mathlib `ringKrullDim`; EtaleCohomologyFoundations §F.8; EtaleDualityAndPerverseSheaves §§2.4, 2.11.
+*Needs:* SchemeAndStackFoundations §§0.12–0.14; SchemeAndStackFoundations §§0.12–0.16, 0.21, gap:henselian-quasi-excellent-catenary; Mathlib `ringKrullDim`; EtaleCohomologyFoundations §F.8; EtaleDualityAndPerverseSheaves §§2.4, 2.11.
 
 **Checks.**
 
@@ -813,9 +823,9 @@ A proof route is as follows. Definition (ILO XIV 2.1.1–2.1.2, 2.1.8); étale i
 
 Noetherian (1); quasi-excellent (2), (3).
 
-A proof route is as follows. (1) ⇒: on an integral universally catenary scheme −dim O is a dimension function, and the local choices on components glue on an open neighbourhood (ILO XIV 2.2.2, 2.2.4). ⇐: a dimension function forces catenarity (ILO XIV 2.2.5), and then Ratliff's theorem on formal catenarity of henselian local rings gives universal catenarity (ILO XIV 1.2.2, 1.3.1, 2.2.6). (3) for normal quasi-excellent X: the henselisation is quasi-excellent and universally catenary (ILO XIV 1.3.2) and unibranch, so Zariski and étale immediate specializations agree (ILO XIV 2.3.3). (2) glue over irreducible components étale-locally (ILO XIV 2.3.2) and reduce to normal integral X via the normalisation (ILO XIV 2.3.4–2.3.5).
+A proof route is as follows. (1) ⇒: on an integral universally catenary scheme −dim O is a dimension function, and the local choices on components glue on an open neighbourhood (ILO XIV 2.2.2, 2.2.4). ⇐: a dimension function forces catenarity (ILO XIV 2.2.5), and then Ratliff's theorem on formal catenarity of henselian local rings gives universal catenarity (ILO XIV 1.2.2, 1.3.1, 2.2.6). (3) for normal quasi-excellent X: the henselisation is quasi-excellent and universally catenary by the supplied gap:henselian-quasi-excellent-catenary (ILO XIV 1.3.2) and unibranch, so Zariski and étale immediate specializations agree (ILO XIV 2.3.3). (2) glue over irreducible components étale-locally (ILO XIV 2.3.2) and reduce to normal integral X via the normalisation (ILO XIV 2.3.4–2.3.5).
 
-*Needs:* §5.1; SchemeAndStackFoundations §0.21; SchemeAndStackFoundations §§0.12–0.14; SchemeAndStackFoundations §§0.12–0.16, 0.21.
+*Needs:* §5.1; SchemeAndStackFoundations §0.21, gap:henselian-quasi-excellent-catenary; SchemeAndStackFoundations §§0.12–0.14; SchemeAndStackFoundations §§0.12–0.16, 0.21.
 
 **Checks.**
 
@@ -849,7 +859,7 @@ Let δ_X be a dimension function on a noetherian scheme X. (1) For f : Y → X o
 
 A proof route is as follows. (1) Reduce to X, Y integral and f dominant; X is universally catenary by §5.2, so δ_X = −dim O_X + const, and the dimension formula gives δ_Y = −dim O_Y + trdeg(κ(Y)/κ(X)) + const (ILO XIV 2.5.1–2.5.2). (2) Reduce to a local regular map between strictly local excellent schemes. The regular fibres are universally catenary. On each fibre the difference between the displayed function and an existing dimension function is locally constant; regular base change on H⁰ shows that these fibres are connected in this strictly local situation. The difference therefore descends to X, where the Hauptidealsatz makes it constant along immediate specializations (ILO XIV 2.5.3–2.5.4, pp. 217–218).
 
-*Needs:* §5.1; §5.2; §5.3.
+*Needs:* §5.1; §5.2; §5.3; SchemeAndStackFoundations §0.21, gap:henselian-quasi-excellent-catenary.
 
 **Checks.**
 
@@ -877,15 +887,21 @@ Let X be a quasi-excellent scheme with a dimension function δ_X, f : Y → X an
 
 X quasi-excellent with a dimension function; f affine of finite type; n invertible on X; F constructible.
 
-A proof route is as follows. Reformulate stalkwise at geometric points and reduce to the strictly local statement; reduce to an affine open immersion and constant coefficients by the coefficient and open-immersion reductions of ILO XV 1.2.1–1.2.4. Reduce to X complete by regular base change along the completion (§5.3, ILO XV 1.2.5). Take an alteration hypercovering X_• with regular terms and snc boundary in degrees ≤ N (§2.4); by absolute purity, the cohomology of U depends only on the combinatorics of the boundary along the closed fibre (ILO XV 2.1.7, 2.2.2–2.2.4, via §3.6). Approximate X_• over the henselisation of an affine space over a Cohen ring by Popescu (§0.5), keeping regularity and combinatorics; specialise along a section close to the identity to a scheme essentially of finite type over a trait, and conclude by §5.5 (ILO XV 3).
+A proof route is as follows. Reformulate stalkwise at geometric points and reduce to the strictly local statement; reduce to an affine open immersion and constant coefficients by the coefficient and open-immersion reductions of ILO XV 1.2.1–1.2.4. Reduce to X complete by regular base change along the completion (§5.3, ILO XV 1.2.5). Take an alteration hypercovering X_• with regular terms and snc boundary in degrees ≤ N (§2.4). By oriented descent (§3.6) and the branch comparison below, H^q(U, ℤ/n) for q ≤ N is unchanged along a local morphism of strictly local schemes X′ → X whenever, for every level q ≤ N + 1, the boundary of X_q and of its base change X′_q have the same combinatorics along the closed fibre (ILO XV 2.2.2–2.2.4, pp. 221–222). Approximate X_• over the henselisation of an affine space over a Cohen ring by Popescu (§0.5), choosing the approximation fine enough that each level stays regular near the closed fibre and the images of the branch equations stay linearly independent in m/m², which gives the same-combinatorics hypothesis at every geometric point of the closed fibre; specialise along a section close to the identity to a scheme essentially of finite type over a trait, and conclude by §5.5 (ILO XV 3).
 
-*Needs:* §5.5; §5.4; §5.3; §2.4; §3.6; §0.5; §0.3; LefschetzPencilsAndVanishingCycles §0.10; EtaleCohomologyFoundations §§F.0–F.1, 0.7.
+Branch comparison. Let g : X′ → X be a morphism of schemes, j : U → X an open immersion with closed complement Z, j′ : U′ = g⁻¹(U) → X′ its base change with complement Z′, and F ⊆ Z a closed subset with preimage F′. Say that (Z ⊂ X) and (Z′ ⊂ X′) have the same combinatorics along F if for every geometric point z′ of F′ with image z: the strict henselizations X_(z) and X′_(z′) are regular; Z_(z) is a strict normal crossings divisor with branch equations f₁, …, f_r forming part of a regular system of parameters; and the images of g*f₁, …, g*f_r in m/m², for m the maximal ideal of X′_(z′), are linearly independent over the residue field. Then Z′_(z′) is a strict normal crossings divisor with branches V(g*f_i), of the same codimension as Z_(z). Prove that, under this hypothesis, for every n invertible on X the base-change map g*(Rj_*ℤ/n)|F′ → (Rj′_*ℤ/n)|F′ is an isomorphism (ILO14, Exposé XV, Définition 2.1.4, 2.1.5 and Proposition 2.1.7, pp. 220–221 (printed); ILO14 line 10400; in 2.1.4(iii) the maximal ideal is that of X′_(z′), since every g*f_i vanishes on Z′_(z′)). Route: localize at z′ and z to a local morphism of strictly local schemes; by absolute purity (LefschetzPencilsAndVanishingCycles §0.10) both RΓ(U, ℤ/n) and RΓ(U′, ℤ/n) are exterior algebras on their H¹, which are free on the Kummer classes of the branches; the Kummer class of V(f_i) restricts to the Kummer class of V(g*f_i), a branch of Z′_(z′) by the cotangent condition, so the map on H¹, hence on every H^q, is an isomorphism.
+
+*Needs:* §5.5; §5.4; §5.3; §2.4; §3.6; §0.5; §0.3; LefschetzPencilsAndVanishingCycles §0.10; EtaleCohomologyFoundations §§F.0–F.1, 0.7; SchemeAndStackFoundations §0.21, gap:henselian-quasi-excellent-catenary.
 
 **Checks.**
 
 - For X = Spec k (k separably closed) this is Artin vanishing H^q(Y, F) = 0 for q > dim Supp F on affine Y.
 
 - For X a strictly henselian regular local scheme of dimension 2 and U = X − V(f), H^q(U, ℤ/n) = 0 for q > 2.
+
+- Branch comparison, negative control: let X and X′ be strictly henselian traits with uniformizers t and u, ℓ a prime invertible on both, g given by t ↦ u^ℓ, Z and Z′ the closed points and F = Z. Both boundaries have exactly one branch, but g*t = u^ℓ lies in m², so its image in m/m² is zero and the cotangent condition fails. Indeed H¹(U, ℤ/ℓ(1)) = ℤ/ℓ is generated by the Kummer class of t, which pulls back to the class of u^ℓ, that is ℓ times the generator, which is 0: the comparison map on H¹ is zero. Equal numbers of branches do not suffice.
+
+- Branch comparison, positive case: for g given by t ↦ v·u with v a unit, g*t has nonzero image in m/m², and the Kummer class of t pulls back to that of u plus the class of the unit v, which is 0 because a unit of a strictly henselian ring is an ℓ-th power; the map on H¹ is the identity of ℤ/ℓ.
 
 ### 5.7 Local form of the affine Lefschetz theorem
 
@@ -959,7 +975,7 @@ Its interface consists of the following facts.
 
 A proof route is as follows. On a strictly henselian trait compute RΓ_s(K) by the complex F(K) of XVII 1.2.2.1. The map from K_η̄(−1) first uses K_η̄ → K_η̄^S and then tame evaluation; the generator-change homotopy makes the induced derived map independent of the choice (1.2.3.1–1.2.3.2, pp. 260–262). For an integral strictly local excellent curve normalize to a strictly henselian trait and insert the factor 1/[s̃:s] (1.3.1, p. 262). For an immediate specialization on X use the closure of the generizing point and i^! (1.4.1). Codimension-zero transport and immediate maps compose when the total codimension is at most one (1.4.2, p. 263). The higher group maps and their general composition law belong to the joint induction of 3.1.1–3.1.2 in the joint top-class theorem.
 
-*Needs:* EtaleCohomologyFoundations §F.5; EtaleDualityAndPerverseSheaves §§0.1–0.2; EtaleCohomologyFoundations §0.7 and EnhancedDerivedSheaves §§0.3–0.4 for open-immersion tensor–Hom exchange; EtaleCohomologyFoundations §§F.0–F.1, 0.7; LefschetzPencilsAndVanishingCycles §§0.2–0.5; §5.1; SchemeAndStackFoundations §0.21.
+*Needs:* EtaleCohomologyFoundations §F.5; EtaleDualityAndPerverseSheaves §§0.1–0.2; EtaleCohomologyFoundations §0.7 and EnhancedDerivedSheaves §§0.3–0.4 for open-immersion tensor–Hom exchange; EtaleCohomologyFoundations §§F.0–F.1, 0.7; LefschetzPencilsAndVanishingCycles §§0.2–0.5; §5.1; SchemeAndStackFoundations §0.21, gap:henselian-quasi-excellent-catenary.
 
 **Checks.**
 
@@ -1047,7 +1063,7 @@ A proof route is as follows. The pinnings exist by absolute purity for the regul
 
 ### 6.5 Gabber's perverse t-structures for a perversity function
 
-Let X be a noetherian scheme and p : X → ℤ ∪ {+∞} a perversity function: p(x) ≥ p(y) for every specialization ȳ → x̄ of geometric points. The pair (`D^(<=p)`, `D^(>=p)`) with K ∈ `D^(<=p)`(X_ét, Λ) iff K|_x ∈ `D^(<=p(x))`(x_ét, Λ) for all x, and K ∈ `D^(>=p)` iff RΓ_x(K) ∈ `D^(>=p(x))`(x_ét, Λ) for all x, is a t-structure on D⁺(X_ét, Λ). Its heart Perv^p(X, Λ) is a stack for the étale topology: objects and morphisms glue. (ILO14, Exposé XVII, §5.2, p. 287 (printed); ILO14 line 13886; G04, §§1, 4–6, pp. 1, 3–8; §8, Théorème 8.2, pp. 10–12; G04 lines 26, 72, 139).
+Let X be a noetherian scheme and p : X → ℤ ∪ {+∞} a perversity function: p(x) ≥ p(y) for every specialization ȳ → x̄ of geometric points. The pair (`D^(<=p)`, `D^(>=p)`) with K ∈ `D^(<=p)`(X_ét, Λ) iff K|_x ∈ `D^(<=p(x))`(x_ét, Λ) for all x, and K ∈ `D^(>=p)` iff RΓ_x(K) ∈ `D^(>=p(x))`(x_ét, Λ) for all x, is a t-structure on D⁺(X_ét, Λ), with heart Perv^p(X, Λ). (ILO14, Exposé XVII, §5.2, p. 287 (printed); ILO14 line 13886; G04, §§1, 4–6, pp. 1, 3–8; §8, Théorème 8.2, pp. 10–12; G04 lines 26, 72, 139).
 
 X noetherian; p monotone along specializations; Λ = ℤ/n.
 
@@ -1059,13 +1075,11 @@ Its interface consists of the following facts.
 
 - K ∈ `D^(>=p)` iff RΓ_x(K) ∈ `D^(>=p(x))` for every point x.
 
-- The heart Perv^p is an étale stack: Hom sheaves of objects of the heart are sheaves and objects glue.
-
 - Étale pullback is t-exact for the restricted perversity.
 
 - `D^(<=p+k)` = `D^(<=p)`[−k] and `D^(>=p+k)` = `D^(>=p)`[−k].
 
-A proof route is as follows. Use Gabber’s weak-perversity construction, valid for noetherian X with p monotone under specialization. Iteratively modify a Godement resolution by the sheaf of sections with supports in the specialization-closed families determined by p; the depth estimates and truncation arguments give orthogonality and the truncation triangle (G04 §§4–6, pp. 3–8). This construction covers perversities that do not come from a finite constructible stratification. Stalk and local-support conditions are étale-local, so restriction is t-exact. Descent for derived étale sheaves together with vanishing of negative Hom between heart objects makes the heart an ordinary étale stack (ILO XVII §5.2, p. 287). Proposition 5.2.2 concerns pseudo-open immersions and perverse adjoints, not stack descent. For the finite-type-field middle-perversity comparison use the owner’s EtaleCohomologyFoundations §F.8 contract. Constructibility requires its separate hypotheses; G04 §8, Théorème 8.2, pp. 10–12 treats the constructible restriction. No general constructibility assertion for an arbitrary p is made.
+A proof route is as follows. Use Gabber’s weak-perversity construction, valid for noetherian X with p monotone under specialization. Iteratively modify a Godement resolution by the sheaf of sections with supports in the specialization-closed families determined by p; the depth estimates and truncation arguments give orthogonality and the truncation triangle (G04 §§4–6, pp. 3–8). This construction covers perversities that do not come from a finite constructible stratification. Stalk and local-support conditions are étale-local, so restriction is t-exact. Proposition 5.2.2 of ILO XVII adds that pullback along a pseudo-open immersion is t-exact and has a perverse right adjoint τ_(≤p)Rf_*. For the finite-type-field middle-perversity comparison use the owner’s EtaleCohomologyFoundations §F.8 contract. Constructibility requires its separate hypotheses; G04 §8, Théorème 8.2, pp. 10–12 treats the constructible restriction. No general constructibility assertion for an arbitrary p is made.
 
 *Needs:* EtaleCohomologyFoundations §§F.0–F.1, 0.7; Mathlib `CategoryTheory.Triangulated.TStructure`; EtaleCohomologyFoundations §F.8; EtaleDualityAndPerverseSheaves §§2.4, 2.11.
 
@@ -1085,7 +1099,7 @@ Let X be an excellent ℤ[1/n]-scheme with a dimension function δ. Then (X, δ)
 
 X noetherian excellent over ℤ[1/n] with a global dimension function.
 
-A proof route is as follows. Uniqueness and the τ_(≤0) statement: two potential dualizing complexes lie in `Perv^(-2*delta)` and isomorphisms between them form an étale sheaf with a unique section compatible with pinnings (§6.5; ILO XVII 5.2–5.3). For normal X, let j : U → X be a dense regular open. With the normalized generic dimension, use the perverse extension T = j_*^φΛ for φ(x) = max(0, 2 codim(x) − 2). The localization triangle and the top local class identify its stalks and local supports with the prescribed pinnings; compatibility with immediate transitions proves potentiality (ILO XVII 5.3.1). Twists and shifts handle other dimension functions. For general reduced X use finite normalization X̃ → X and a closed complement Z of the normal locus. Combine the potential complexes on X̃, Z and X̃ ×_X Z by the explicit cone construction of XVII 5.4.1; finite-surjective shriek detection verifies the pinnings and their compatibility. Nilpotents do not change the étale topos. Étale descent in the perverse heart glues the resulting local objects. This is not a claim that pushing a potential complex forward along normalization preserves it.
+A proof route is as follows. Uniqueness and the τ_(≤0) statement in the normal case: every potential dualizing complex K lies in Perv^φ and in `Perv^(-2*delta)`, the induced map K → T to the perverse extension below is an isomorphism compatible with pinnings, and Λ → τ_(≤0)RHom(K, K) is an isomorphism (ILO XVII 5.3.1(b)–(c), p. 288). In general, uniqueness on X̃, Z and X̃ ×_X Z gives uniqueness of the cone construction of XVII 5.4.1. For normal X, let j : U → X be a dense regular open. With the normalized generic dimension, use the perverse extension T = j_*^φΛ for φ(x) = max(0, 2 codim(x) − 2). The localization triangle and the top local class identify its stalks and local supports with the prescribed pinnings; compatibility with immediate transitions proves potentiality (ILO XVII 5.3.1). Twists and shifts handle other dimension functions. For general reduced X use finite normalization X̃ → X and a closed complement Z of the normal locus. Combine the potential complexes on X̃, Z and X̃ ×_X Z by the explicit cone construction of XVII 5.4.1; finite-surjective shriek detection verifies the pinnings and their compatibility. Nilpotents do not change the étale topos. This is not a claim that pushing a potential complex forward along normalization preserves it.
 
 *Needs:* §6.3; §6.5; §6.2; §6.4; EtaleCohomologyFoundations §F.5; EtaleDualityAndPerverseSheaves §§0.1–0.2; EtaleCohomologyFoundations §0.7 and EnhancedDerivedSheaves §§0.3–0.4 for open-immersion tensor–Hom exchange.
 
@@ -1329,9 +1343,7 @@ A proof route is as follows. The supplier Q5 gives A^♭/(ϖ^♭)^p ≅ Â/ϖ^p.
 
 **Checks.**
 
-- Spec A is matched with Spec A^♭.
-
-- Spec A[1/ϖ] is matched with Spec A^♭[1/ϖ^♭].
+- For C an algebraically closed perfectoid field, A = 𝒪_C × 𝒪_C and ϖ = (ϖ₀, ϖ₀) with ϖ₀^p | p, Spec A has two closed points s₁, s₂ and V(ϖ) = {s₁, s₂}, so exactly four opens contain Spec A[1/ϖ], one for each subset of V(ϖ) as complement. The open U = Spec 𝒪_C ⊔ Spec C has complement {s₂} and is matched with Spec 𝒪_(C^♭) ⊔ Spec C^♭. The swapped open Spec C^♭ ⊔ Spec 𝒪_(C^♭) has complement the other closed point and is not the match; a matching that saw only the number of points in the complement, or exchanged the factors, would pair U with it. The two factors are henselian and torsion-free, and A is its own perfectoid ϖ-adic completion.
 
 - For k = 𝔽̄_p and the p-adically completed ring A = W(k)⟦`x^(1/p^infty)`⟧/(p − x), with ϖ = `x^(1/p)`, A and its tilt are rank-one valuation rings and Spec A/ϖ is a point. Exactly two matched pairs exist, the whole spectra and their generic opens; the tilt is the t-adically completed perfection of k⟦t⟧.
 
@@ -1375,9 +1387,9 @@ Let A = ∏_(i∈I) V_i with each V_i a ϖ-adically complete valuation ring of r
 
 V_i complete of rank ≤ 1 with algebraically closed fraction fields; G a torsion abelian group.
 
-A proof route is as follows. Use the supplied perfectoidness and product tilt (PerfectoidQuotients §0.6; PerfectoidQuotientsPartII §§Q6.3–Q6.7). Apply the split-cover theorem of ArcTopologyAndDescent §11.2 to the quasi-compact opens of both valuation products. The splitting makes the global-sections functor exact, so higher cohomology vanishes; sections of the constant sheaf G are locally constant G-valued functions. The ultraproduct components are those of ArcTopologyAndDescent §3.6. For matched opens, §8.3 identifies their Boolean algebras of clopens compatibly with disjointness, and hence their locally constant functions, giving the new functorial comparison.
+A proof route is as follows. Use the supplied perfectoidness and product tilt (PerfectoidQuotients §0.6; PerfectoidQuotientsPartII §§Q6.3–Q6.7), with ϖ^♭-adic completeness of the product tilt from the completeness transfer of PerfectoidQuotientsPartII §Q6.2. Apply the split-cover theorem of ArcTopologyAndDescent §11.2 to the quasi-compact opens of both valuation products. The splitting makes the global-sections functor exact, so higher cohomology vanishes; sections of the constant sheaf G are locally constant G-valued functions. The ultraproduct components are those of ArcTopologyAndDescent §3.6. For matched opens, §8.3 identifies their Boolean algebras of clopens compatibly with disjointness, and hence their locally constant functions, giving the new functorial comparison.
 
-*Needs:* §8.3; ArcTopologyAndDescent §3.6; ArcTopologyAndDescent §§11.1–11.2, 11.5; PerfectoidQuotients §§0.4–0.6; PerfectoidQuotientsPartII §§Q6.3–Q6.7.
+*Needs:* §8.3; ArcTopologyAndDescent §3.6; ArcTopologyAndDescent §§11.1–11.2, 11.5; PerfectoidQuotients §§0.4–0.6; PerfectoidQuotientsPartII §§Q6.2–Q6.7.
 
 **Checks.**
 
@@ -1393,9 +1405,9 @@ In the setting of §8.1, for every matched pair (U, U^♭) and every torsion abe
 
 As in §8.1; G torsion.
 
-A proof route is as follows. Replace A by its completion (ArcTopologyAndDescent §§8.6–8.9). By formal glueing for étale cohomology (ArcTopologyAndDescent §§8.6–8.9) and ϖ-complete arc descent (CS24 Theorem 2.2.5; ArcTopologyAndDescent §11.5), reduce to U = Spec A and U = Spec A[1/ϖ]. Products of complete valuation rings with algebraically closed fraction fields form a basis of the ϖ-complete arc topology (ArcTopologyAndDescent §11.2), matched with the analogous basis of A^♭ by tilting (PerfectoidQuotientsPartII §§Q6.3–Q6.7, ArcTopologyAndDescent §12.6); conclude from §8.4 by descent.
+A proof route is as follows. Replace A by its completion (ArcTopologyAndDescent §§8.6–8.9). By formal glueing for étale cohomology (ArcTopologyAndDescent §§8.6–8.9) and ϖ-complete arc descent (CS24 Theorem 2.2.5; ArcTopologyAndDescent §11.5), reduce to U = Spec A and U = Spec A[1/ϖ]. Products of complete valuation rings with algebraically closed fraction fields form a basis of the ϖ-complete arc topology (ArcTopologyAndDescent §11.2), matched with the analogous basis of A^♭ by tilting (PerfectoidQuotientsPartII §Q6.2 for completeness and §§Q6.3–Q6.7 for the valuation rings, ArcTopologyAndDescent §12.6); conclude from §8.4 by descent.
 
-*Needs:* §8.4; §8.3; §8.1; ArcTopologyAndDescent §§8.3, 8.6–8.9; ArcTopologyAndDescent §§11.1–11.2, 11.5; ArcTopologyAndDescent §12.6; PerfectoidQuotientsPartII §§Q6.3–Q6.7.
+*Needs:* §8.4; §8.3; §8.1; ArcTopologyAndDescent §§8.3, 8.6–8.9; ArcTopologyAndDescent §§11.1–11.2, 11.5; ArcTopologyAndDescent §12.6; PerfectoidQuotientsPartII §§Q6.2–Q6.7.
 
 **Checks.**
 
@@ -1425,7 +1437,7 @@ For a ϖ-adically complete perfect characteristic-p algebra the tilting comparis
 
 ### Dependencies
 
-PerfectoidQuotients §§0.4–0.6; PerfectoidQuotientsPartII §§Q5.1–Q5.3, Q6.3–Q6.7; ArcTopologyAndDescent §§3.6, 8.6–8.9, 11.1–11.2, 11.5, 12.6; EtaleCohomologyFoundations §0.7; EnhancedDerivedSheaves §§0.1–0.4, E2.
+PerfectoidQuotients §§0.4–0.6; PerfectoidQuotientsPartII §§Q5.1–Q5.3, Q6.2–Q6.7; ArcTopologyAndDescent §§3.6, 8.6–8.9, 11.1–11.2, 11.5, 12.6; EtaleCohomologyFoundations §0.7; EnhancedDerivedSheaves §§0.1–0.4, E2.
 
 ## Downstream consumers
 

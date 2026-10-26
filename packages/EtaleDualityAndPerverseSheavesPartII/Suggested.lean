@@ -38,6 +38,9 @@ geometric carriers and operations:
 
 There are no weakened stand-ins for these headlines. Absolute purity is supplied
 by LefschetzPencilsAndVanishingCycles §0.10, rather than stated again here.
+Epp's elimination of wild ramification (README §1.3) is an intermediate theorem
+of the mixed-characteristic Cohen–Gabber proof, not a headline, so it is not
+stated here.
 -/
 
 open scoped TensorProduct

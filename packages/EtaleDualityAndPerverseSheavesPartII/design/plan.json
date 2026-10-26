@@ -3599,6 +3599,12 @@
    "needs": "For a finite-type morphism of finite-type schemes over a noetherian base S and a constructible ℤ/n-sheaf with n invertible on S, provide a dense open V of S over which all higher direct images are constructible, eventually zero and compatible with every base change to V, without a properness assumption.",
    "supplier": "EtaleCohomologyFoundations",
    "section": "F.3"
+  },
+  {
+   "slug": "henselian-quasi-excellent-catenary",
+   "needs": "For every quasi-excellent noetherian local ring A, prove that its henselization and strict henselization are quasi-excellent, and that every henselian quasi-excellent local ring is universally catenary, hence excellent, with no reducedness, normality or finiteness assumption on A.",
+   "supplier": "SchemeAndStackFoundations",
+   "section": "0.21"
   }
  ],
  "sourceIssues": [
