@@ -319,7 +319,7 @@
       {
        "name": "trivial",
        "kind": "degenerate",
-       "statement": "k({0,1})=k"
+       "statement": "k({0,1})=k, while unquotiented MonoidAlgebra k {0,1} = k x k has rank 2"
       },
       {
        "name": "cusp",
@@ -444,7 +444,7 @@
       {
        "name": "Q_t",
        "kind": "computation",
-       "statement": "Pi_1 over Q weight m: homology Q in degrees 0,1, Connes operator m"
+       "statement": "Pi=<t>_+ over Q, weight m>=1: homology Q in degrees 0,1, Connes operator m surjective; weight-m HC is Q t^m in degree 0 and zero in degrees >=1 (HC_0=HH_0 never vanishes)"
       },
       {
        "name": "F2_torsion",
@@ -516,7 +516,8 @@
       "target:2.4",
       "roadmap:RefinedTraceMethods §1.2",
       "roadmap:RefinedTraceMethods §1.3",
-      "target:1.1"
+      "target:1.1",
+      "target:2.3"
      ],
      "api": [],
      "tests": [
@@ -1344,7 +1345,7 @@
       {
        "name": "amitsur",
        "role": "example",
-       "statement": "completed Amitsur complex of W(k)->W(k)[[z0]] is cosimplicial delta-ring mapping to O_K/varpi^n"
+       "statement": "p-complete Amitsur complex of W(k)->W(k)<z0>, each term completed along the augmentation z_i->0, with delta(z_i)=0, is a cosimplicial delta-ring W(k)[[z0]] -> W(k)[[z0,z1]] -> ... mapping to O_K/varpi^n"
       }
      ],
      "tests": [
@@ -1369,7 +1370,7 @@
      "id": "8.2",
      "kind": "definition",
      "name": "prismatic packages and syntomic complexes",
-     "statement": "C_A of quadruples (H,N,c,phi); Z_p(i)(H,N,c,phi)=fib(can-c phi: N^{>=i}{i}->N^{>=0}{i}); colimits; finite-stage formula for (p-1)j>pi with target quotient N^{>=j-i}; Z_p(i), F_p(i) preserve limits and colimits.",
+     "statement": "C_A of quadruples (H,N,c,phi); Z_p(i)(H,N,c,phi)=fib(can-c phi: N^{>=i}{i}->N^{>=0}{i}); colimits; for i>=0 and (p-1)j>pi, can-c phi on N^{>=j}{i}/p is an automorphism of N^{>=j}{i}/p followed by can into N^{>=j-i}{i}/p (Lemma 8.5), hence F_p(i)=fib(can-c phi: (N^{>=i}/N^{>=j}){i}/p -> (N^{>=0}/N^{>=j}){i}/p) (Proposition 8.6 with the strict bound replacing the printed (p-1)j>=i); Z_p(i), F_p(i) preserve limits and colimits.",
      "hypotheses": [
       "A bounded delta-ring",
       "i integer"
@@ -1410,7 +1411,12 @@
       {
        "name": "F2_weight1",
        "kind": "non-example",
-       "statement": "F_2, i=1: zero; printed finite-stage form gives F_2[-1]"
+       "statement": "absolute F_2, i=1: Z_2(1)=0; formula with j=3 gives 0; j=1 (allowed by printed bound) gives F_2+F_2[-1]"
+      },
+      {
+       "name": "BK_p2_i1",
+       "kind": "computation",
+       "statement": "(Z_2[[z]],Z_2), E=z-2, i=1 mod 2: truth H0=k, H1=k^2; formula with j=3 gives (k,k^2); j=2 gives (0,k); target quotient by N^{>=j-i} with j=3 gives (k,k)"
       },
       {
        "name": "zero",
@@ -1423,7 +1429,7 @@
      "id": "8.3",
      "kind": "construction",
      "name": "prismatic cohomology relative to a delta-ring",
-     "statement": "Functorial Delta_{R/A} in C_A for bounded delta-pairs via prismatic crystals on WCart, with properties (1)-(8) of akn-delta Theorem 1.2, uniqueness, delta-conjugate filtration on Hodge-Tate cohomology with gr_u = L Omega^u tensor fib(i-u)[-u], site-theoretic comparison for Tor-amplitude [0,1].",
+     "statement": "Functorial Delta_{R/A} in C_A for bounded delta-pairs via prismatic crystals on WCart, with properties (1)-(8) of akn-delta Theorem 1.2, uniqueness by (4), (6) and agreement with Bhatt-Scholze on relatively qrsp pairs with a chosen prism (or by (4), (5) and that agreement), delta-conjugate filtration on Hodge-Tate cohomology with gr_u = L Omega^u tensor fib(i-u)[-u], site-theoretic comparison for Tor-amplitude [0,1].",
      "hypotheses": [
       "(A,R) bounded delta-pair"
      ],
@@ -1527,7 +1533,7 @@
      "id": "8.5",
      "kind": "construction",
      "name": "filtered prismatic cohomology",
-     "statement": "Filtered delta-rings (delta(F^m) in F^{pm}), filtered prisms, filtered delta-pairs; filtered prismatic package and filtered syntomic complexes; gr and F^0 base change (Prop 10.46, Cor 10.47); filtered Hodge-Tate comparison; filtered prismatic envelopes are discrete filtered prisms.",
+     "statement": "Filtered delta-rings (delta(F^m) in F^{pm}), filtered prisms (prism structure (A,I) on F^0A with each gr^i A (I tensor gr^0 A)-torsion free and complete; equivalently strict flat filtration on A/I), filtered delta-pairs; filtered prismatic package and filtered syntomic complexes; gr and F^0 base change (Prop 10.46, Cor 10.47); filtered Hodge-Tate comparison; filtered prismatic envelopes are discrete filtered prisms.",
      "hypotheses": [
       "strict filtrations",
       "relatively quasisyntomic for comparisons"
@@ -1574,6 +1580,11 @@
        "statement": "z-adic W(k)[[z]], k[[z]]: graded pair (W(k)[z],k[z])"
       },
       {
+       "name": "BK_filtered_prism",
+       "kind": "computation",
+       "statement": "z-adic W(k)[[z]], I=(E): gr^u=W(k), I tensor gr^0=(p), p-torsion free and complete, so a filtered prism; trivial filtration reduces to the prism axioms"
+      },
+      {
        "name": "delta_condition",
        "kind": "non-example",
        "statement": "delta(z)=1 not allowed for z of weight 1"
@@ -1610,7 +1621,7 @@
       {
        "name": "incomplete",
        "kind": "non-example",
-       "statement": "Z_p[z] z-adic not complete: filtration on Z_p(1) not complete"
+       "statement": "Z_p<z> z-adic separated not complete: filtration on Z_p(1) not complete; H1 is p-completed Z_p<z>^x (contains 1+pz, not 1+z) versus 1+zZ_p[[z]] for Z_p[[z]]"
       },
       {
        "name": "chain_ring",
@@ -2041,12 +2052,7 @@
    "what": "stable and presentable infinity-categories, filtered objects, modules"
   }
  ],
- "consumers": [
-  {
-   "roadmap": "GeneralAlgebraicKTheoryPartII",
-   "what": "height-one Checks: L_{T(1)}K(Z/p^n)=0 from the v1-nilpotence theorem"
-  }
- ],
+ "consumers": [],
  "gaps": [
   {
    "slug": "bigwitt-ptypical-decomposition",
