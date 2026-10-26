@@ -1,95 +1,91 @@
 # FIX-RT-RootSystemsPartII~1
 
-Merged findings: F02 of review r1a and F05 of review r1b are the same claim (realization uniqueness re-derives a pinned theorem). They are settled together under F05 of review r1b, and the r1a F02 section points there.
+Two reviews are covered. Review r1a has F01 and F02. Review r1b has F01 to F07. The sections follow that order, and each heading carries the id the review gave the finding.
 
-Sections below follow review r1a (its F01, F02) and then review r1b (its F01 to F07); each heading carries the id the review gave the finding.
+F02 of r1a and F05 of r1b make the same claim: realization uniqueness re-derives a pinned theorem. That claim is settled once, under F05 of r1b.
 
 ## F01 (P3) — applied
 
-§4.2 Check, old: "taking a full period sum would incorrectly change the latter to 1" (no starting root, no period). New: A₂ reversal, δ = 2(α₁+α₂), original coefficients (2,2), folded coefficient 2. The period-4 sum starting at α₁ is 2(α₁+α₂), and using it as the simple root gives coefficient 1. At period 2 the full sum and the distinct sum agree.
+Review r1a, §4.2 Check. Old text: "taking a full period sum would incorrectly change the latter to 1", with no starting root and no period. New text: A₂ reversal, δ = 2(α₁+α₂), original coefficients (2,2), folded coefficient 2. The period-4 sum starting at α₁ is 2(α₁+α₂), and using it as the simple root gives coefficient 1. At period 2 the full and distinct sums coincide.
 
 ## F02 (P3) — applied
 
-Same as F05 of review r1b; see that section.
+Review r1a. This is the same claim as F05 of review r1b, and it is settled there.
 
 ## F01 (P1) — applied
 
-The roadmaps RootSystemsPartIIDominanceAndDemazure and RootSystemsPartIIMinusculeBounds exist nowhere: `roadmaps grep` finds no match, and there is no board package. Scope (old line 13): both names removed. The text now says these directions extend RootSystems elsewhere and supply nothing here. Downstream consumers (old line 362): reworded the same way, without names. The `restructure` entry in `design/plan.json` is outside the editable `gaps` list and was left unchanged.
+Review r1b. RootSystemsPartIIDominanceAndDemazure and RootSystemsPartIIMinusculeBounds exist nowhere. `roadmaps grep` finds no match on main or at any open head, and there is no board package. Both names were removed from Scope and from Downstream consumers. These directions are now described as extensions of RootSystems that supply nothing here.
 
 ## F02 (P1) — applied differently
 
-The gap is real: the §4.4 route applied §4.3 "on E" without naming a root pairing on the root span. The reviewer's witness is wrong, though: "no root-pairing-valued declaration on the root span" is false at the pin. Mathlib `RootPairing.restrictScalars` (`Mathlib/LinearAlgebra/RootSystem/BaseChange.lean:131`), taken with K = L = ℝ, is a `RootPairing ι ℝ (span ℝ (range P.root)) (span ℝ (range P.coroot))`. It has an `IsRootSystem` instance (:92) and keeps roots, coroots and pairings (`restrictScalars_coe_root`, `restrictScalars_coe_coroot`, `restrictScalars_pairing`). `IsBalanced` comes from the instance at `Finite/Nondegenerate.lean:304`, and anisotropy from `instIsAnisotropicOfLinearOrderedCommRing` (:407). I checked mechanically that `(P.restrictScalars ℝ).IsRootSystem` is inferred for a finite crystallographic real pairing.
-
-So no new `restrictRootSpan` construction is needed. Changes:
-- Added the Mathlib supplier contract.
-- Added a prose target in §4.4, "The root-span restriction". It covers reducedness, crystallographicity, the base with the same support, the restricted based automorphism, and agreement of simple-coroot values, chamber and Q⁺ on E. It has API bullets and three Checks: GL₂, a torus, and the spanning case.
-- The §4.4 route and *Needs:* now cite it.
-- Pattern repair: the line 31 remark on `cartanMatrix_nondegenerate` now applies it to this restriction.
+Review r1b. The gap is real: §4.4 applied §4.3 "on E" without naming a root pairing there. The witness is wrong, though. At the pin, `RootPairing.restrictScalars` (`BaseChange.lean`, an abbrev of `restrictScalars'`) with K = L = ℝ is a pairing on `span ℝ (range P.root)` and `span ℝ (range P.coroot)`, and its `IsRootSystem` instance is in the same file. So no new construction is needed. Instead, §4.4 gained a prose target "The root-span restriction", with API bullets and three Checks; the route, the *Needs:* line, the Mathlib contract and the line-31 `cartanMatrix_nondegenerate` remark were updated to match. This round also corrects one detail: the `IsBalanced` and anisotropy instances in `Finite/Nondegenerate.lean` need `[Fintype ι]`, so the contract and the §4.4 *Needs:* line now say to use `Fintype.ofFinite`.
 
 ## F03 (P3) — applied
 
-Verified. The Rap00 route (lines 195–214) uses only two sign tests: ⟨β,αᵢ∨⟩ ≥ 0 from the root-sum lemma, and dominance of μ together with nonpositive Cartan entries. Integrality of λ and μ never enters. A₁ instance: λ = α/10, μ = 11α/10, values 1/5 and 11/5, step α, budget 0.
-
-Changes:
-- Removed `hlam_int` and `hmu_int` from `stembridge_step`, `invariant_step`, `ambient_coroot_step` and `torsion_lattice_coroot_step`.
-- README §1.2, §4.3 and §4.4, the torsion paragraph and the Conventions (L no longer assumed integral) changed to match.
-- §4.3 *Needs:* now uses only the chamber equivalence of §4.1. That equivalence holds for all fixed real vectors.
-- Added the A₁ non-integral Check to §1.2, with the non-comparable pair 0, α/2 as a negative control.
+Review r1b. Rap00 lines 195–214 use only sign tests: (2.11)–(2.12) for ⟨α,β∨⟩ ≥ 0, and (2.13) with nonpositive Cartan entries. Endpoint integrality is never used. `hlam_int` and `hmu_int` were removed from `stembridge_step`, `invariant_step`, `ambient_coroot_step` and `torsion_lattice_coroot_step`. README §1.2, §4.3, §4.4 and the Conventions were changed to match. An A₁ check with non-integral endpoints was added, together with the non-comparable pair 0, α/2.
 
 ## F04 (P3) — applied
 
-Verified: λ + β ∈ L follows from `hroots` and closure under addition, and fixedness is stated through `sigma.weightMap` on M. Removed `hstable` and "σ-stable" from §4.4.
-
-Pattern repair at two more places:
-- §4.3: "σ preserving L" → "no σ-stability of L is needed".
-- §2.1 *Needs:*: "if σ preserves L" dropped, because an orbit sum is a sum of roots.
+Review r1b. λ + β ∈ L follows from `hroots` and closure under addition, so `hstable` was removed from `ambient_coroot_step` and "σ-stable" from §4.4. The same pattern was repaired in two more places: in §4.3 ("no σ-stability of L is needed") and in the §2.1 *Needs:* line, where the clause "if σ preserves L" was dropped.
 
 ## F05 (P3) — applied
 
-Verified at the pin. `RootPairing.IsRootSystem.ext` (`Basic.lean:197`, with `[Finite ι] [CharZero R] [IsDomain R]` and both pairings root systems) and `Module.Dual.eq_of_preReflection_mapsTo` (`Reflection.lean:339`) apply. The evaluation fields give equal `toLinearMap`, and `root_eq` gives equal roots. `foldedIndices` is finite.
+Review r1b; this also settles r1a F02. Both declarations were checked at the pin:
+- `RootPairing.IsRootSystem.ext` (`Basic.lean:197`; `[Finite ι]` comes from line 81).
+- `Module.Dual.eq_of_preReflection_mapsTo` (`Reflection.lean:339`).
 
-Changes:
-- Replaced the averaging-route paragraph of §2.2 with consumption of these declarations.
-- The base is determined by its support because its other fields are propositions (`Base.lean:68`).
-- Updated the uniqueness API bullet.
-- Added both names to the Mathlib supplier contracts and to §2.2 *Needs:*.
+The averaging route in §2.2 was replaced. The evaluation fields identify the perfect pairings and `root_eq` identifies the roots, so `ext` makes the pairings equal. A `Base` is fixed by its `support`, since its other fields are propositions (`Base.lean:68–76`). Both names were added to the Mathlib contract and to the §2.2 *Needs:* line.
 
-## F06 (P3) — applied differently
+## F06 (P3) — disputed
 
-The claim is disputed as stated. In the standard meaning, a tree's centre is one vertex or two adjacent vertices, and both of the latter are "central vertices". The D₅ fork exchange fixes the central vertices 2 and 3, so it falls under the first alternative, and the argument holds. The reviewer's repair also contains an error: "except the two fixed endpoints" is wrong, because in a tree adjacent vertices always differ by exactly 1 in distance from any vertex.
-
-I still made the wording unambiguous. The text now defines the centre, says the automorphism either fixes a vertex of it (naming the D₅ fork case) or exchanges a two-vertex centre, and states the distance-parity fact explicitly.
+Review r1b. The witness does not refute the text. The D₅ tree 1–2–3, 3–4, 3–5 has diameter 3, and its centre is the two adjacent vertices {2,3}, both of which are central vertices. The fork exchange fixes 2 and 3, so the first alternative ("fixes a central vertex") holds. §3.1 now spells out what the centre is, without changing the mathematics. The reviewer's repair is also correct, because it measures distance to the central edge.
 
 ## F07 (P3) — applied
 
-Verified: neither definition is needed to state any headline, and each body is one library term. Changes:
-- Deleted `rootLE` and `fixedSpace` from `Suggested.lean`.
-- Inlined their bodies: `y - x ∈ TauCeti.posRootCone P b` and `LinearMap.fixedSubmodule sigma.weightMap`. Increments are stated as `P.root i ∈ …` and `orbitSum P sigma i ∈ …`, which is equivalent to `(lam + β) - lam ∈ …`.
-- README: §1.1 defines the order in prose as membership in `TauCeti.posRootCone`. The Conventions and §2.2 name E^σ as `LinearMap.fixedSubmodule` of the weight map. No backticked own name for either remains.
+Review r1b. `rootLE` and `fixedSpace` each had a one-term body and were not needed to state any headline. Both were deleted, and their bodies were inlined:
+- `y - x ∈ TauCeti.posRootCone P b`;
+- `LinearMap.fixedSubmodule sigma.weightMap`.
+
+Increments are now written as `P.root i ∈ …` and `orbitSum P sigma i ∈ …`; this is equivalent by `add_sub_cancel_left`. The README now describes both notions in prose, with no backticked own name.
 
 ## Checks run
 
-- `lake env lean packages/RootSystemsPartII/Suggested.lean`: exit 0, with exactly 10 `declaration uses sorry` warnings (the ten theorems). No errors.
-- Signature audit: a scratch file with `#check @` for all 15 remaining declarations, elaborated once. Each type matches its README statement. The only differences from before are the deleted hypotheses (`hlam_int`, `hmu_int`, `hstable`) and the inlined bodies. No section binder was lost; every instance hypothesis is in each declaration's own signature. The same file confirmed `(P.restrictScalars ℝ).IsRootSystem` by `inferInstance`, plus the signatures of `IsRootSystem.ext`, `Dual.eq_of_preReflection_mapsTo`, `restrictScalars_coe_root` and `restrictScalars_coe_coroot`.
-- Dependency check: `depcheck: 56 roadmaps, 641 edges, 0 problem(s)`. No UPWARD or CYCLE line.
-- `roadmaps resolve`: no cross-roadmap citations or Lean names found nowhere.
+- `lake env lean packages/RootSystemsPartII/Suggested.lean`: exit 0. There are exactly 10 warnings, all `declaration uses sorry`, at lines 31, 91, 109, 121, 138, 150, 164, 178, 200 and 226. There are no errors.
+- Signature audit: one scratch file held the module and `#check @` for all 15 declarations, and it was elaborated once. Each elaborated type matches its README statement. No section binder was dropped: every instance and hypothesis sits in the declaration's own signature. Nothing changed in `Suggested.lean` this round.
+- The same scratch file tested the library claims:
+  - With only `[Finite ι]`, `(P.restrictScalars ℝ)` fails, because `P.IsBalanced` cannot be synthesized.
+  - With `Fintype.ofFinite`, both `IsBalanced` and `(P.restrictScalars ℝ).IsRootSystem` are inferred.
+  - `restrictScalars_coe_root`, `restrictScalars_coe_coroot` and `restrictScalars_pairing` (equal pairings) elaborate.
+  - `(P.restrictScalars ℝ).IsReduced` is not an instance. This matches the README, which lists reducedness as something to prove.
+- Dependency check, output:
+
+      depcheck: 56 roadmaps, 641 edges, 0 problem(s)
+
+  There is no UPWARD, CYCLE or moved line.
+- `roadmaps resolve`: no cross-roadmap citation and no Lean name is found nowhere.
+- Supplier citations were re-resolved:
+  - RootSystems Layers 1, 2, 4, 5 and 6 on main (README lines 218, 245, 296, 321, 356).
+  - ReductiveGroups §9A.1b on main (line 1290) and its three named parts (lines 1339, 1371, 1457).
+  - ReductiveGroupsPartII §RG2.1.4 and §RG2.4.3 at the head of its open pull request (README lines 2421 and 5994). That roadmap is earlier in the merge order.
+- Ownership: `roadmaps grep` for the root-span restriction finds only LieHighestWeight's use of `RootPairing.restrictScalarsRat`, which restricts to ℚ for a different purpose. No roadmap owns the based restriction with chamber and cone transfer, so this roadmap owns that adapter.
 
 ## Adversarial pass on changed statements
 
-| Statement | Instances | Values | Result |
+| Statement | Instances | Values computed | Result |
 |---|---|---|---|
-| `stembridge_step` without integrality | A₁ λ=α/10, μ=11α/10; A₂ λ=0, μ=α₁+α₂; λ=μ | values 1/5, 11/5, β=α, budget 0; θ gives (1,1), budget 0; equal endpoints excluded by `hne` | true |
-| `invariant_step` without integrality | A₂ reversal λ=f/4, μ=5f/4 (f=α₁+α₂) | original values (1/4,1/4) and (5/4,5/4), both dominant; orbit sum f, budget 0 | true |
-| `ambient_coroot_step` without `hstable` / integrality | GL₂ L=ℤ², σ = 2 on the central line; λ=(0,0), μ=(1,−1) | β=(1,−1) ∈ L, λ+β=μ; σ(1,0)=(3/2,1/2) ∉ L, so L is not σ-stable, yet the conclusion holds | true |
-| `torsion_lattice_coroot_step` without integrality | A=ℤ⊕ℤ/2, r=(2,0), f(n,t)=n; λ=(0,1), μ=(2,1) | β=(2,0), remaining budget 0, torsion 1 kept; fλ≠fμ forced by injectivity on ⟨r⟩ | true |
-| Root-span restriction | GL₂; torus; spanning A₂ | E line, values ±2 agree in P and P_E; E=0, Q⁺={0}; P_E=P, diagonal Cartan 2 | true |
-| §2.2 uniqueness via `IsRootSystem.ext` | A₃ fold; rank 0 | equal evaluation and roots force entries (−2,−1), and the alternative −2 is excluded; empty index gives equal pairings | true |
-| §4.2 period Check | A₂, δ=2f, periods 2 and 4 from α₁ | period 2: sum f, coefficient 2; period 4: sum 2f, coefficient 1 | consistent with §2.1 m/d formula |
-| §3.1 tree centre | D₅ fork; A₄ reversal; A₃ reversal | fixes 2 and 3 (first case); exchanges the centre {2,3} (second case); fixes vertex 2 | true |
+| `stembridge_step` without endpoint integrality | A₁, λ=α/10, μ=11α/10; A₂, λ=f/2, μ=3f/2 (f=α₁+α₂); rank 0 | ⟨λ,α∨⟩=0.2, ⟨μ,α∨⟩=2.2, β=α, budget 0. A₂: values (½,½) and (3/2,3/2); simple increments give (5/2,−½) and (−½,5/2), both rejected; θ gives (3/2,3/2), budget 0. Rank 0: Q⁺={0}, so `hne` and `hle` cannot both hold | true |
+| `invariant_step` without endpoint integrality | A₂ reversal, λ=f/4, μ=5f/4; D₄ triality, λ=2ρ, μ=λ+θ | values (¼,¼) and (5/4,5/4); orbit sum f gives λ+f=μ, fixed, budget 0. D₄: bad orbit (1,3,1,1) leaves (0,−1,0,0); θ leaves 0 | true |
+| `ambient_coroot_step` without `hstable` | GL₂, L=ℤ², σ = 2 on the central line; real endpoints with L=⊤ | σ(1,0)=(3/2,1/2)∉L, yet λ=(0,0), μ=(1,−1) gives β=(1,−1)∈L and λ+β=μ. Real case: λ=(0.1,−0.1), μ=(1.1,−1.1) have values 0.2 and 2.2, β=(1,−1), budget 0 | true |
+| `torsion_lattice_coroot_step` without integrality | A=ℤ⊕ℤ/2, r=(2,0), f(n,t)=n, τ=id | λ=(0,1), μ=(2,1): β=(2,0), λ+β=μ, torsion 1 kept. fμ−fλ=2≠0, as forced by injectivity on ⟨r⟩ | true |
+| Root-span restriction P_E | GL₂ roots ±(1,−1); torus; spanning A₂ | E=E′=ℝ(1,−1), pairing 2 in P and P_E, (−1,1) gives −2 in both; pairing E with all of V∨ has kernel ℝ(1,1). Torus: E=0, Q⁺={0}. A₂: E=V, Cartan [[2,−1],[−1,2]] unchanged | true |
+| §2.2 uniqueness via `IsRootSystem.ext` | A₃ fold; rank 0 | norms 4 and 2, inner product −2, entries −2,−1. The alternative −2 would send β₂ to β₂+2β₁, of norm 2+16−8=10, which is not a root. Empty index: equal pairings on 0 | true |
+| §4.2 period Check | A₂, δ=2f, start α₁, periods 2 and 4 | period 2: sum f, coefficient 2; period 4: sum 2f, coefficient 1; m/d gives 2/2=1 and 4/2=2 | consistent with §2.1 |
+| §3.1 tree centre | D₅ fork; A₄, A₃ and E₆ reversal; D₄ triality | D₅: centre {2,3} fixed, distances from 2 are 1,1,2,2, and leaves 4 and 5 are not adjacent. A₄: centre {2,3} exchanged, n=2. A₃: centre {2}. E₆: centre {4}. D₄: centre {2} | true |
+| `rootLE`/`fixedSpace` inlined | A₂, λ=0, β=θ | (λ+θ)−λ=θ, the same membership; fixed vectors (t,t) under `LinearMap.fixedSubmodule` | elaborated types unchanged apart from the inlined bodies |
 
 ## Notes for the maintainer
 
-- Lean names removed: `TauCetiRoadmap.RootSystemsPartII.rootLE` and `TauCetiRoadmap.RootSystemsPartII.fixedSpace`. Four theorems lost hypotheses: `stembridge_step`, `invariant_step`, `ambient_coroot_step` and `torsion_lattice_coroot_step`. A roadmap citing those binders (ReductiveGroupsPartII §RG2.4.3 as consumer of the export) now has fewer hypotheses to check.
-- `design/plan.json` still carries node names `rootLE_*` and the restructure proposal naming the two nonexistent continuations. Only its `gaps` list was editable, and no gap was needed.
-- Ownership: the root-span restriction is a pinned Mathlib declaration. The adapter facts are stated here because no roadmap on main or at the supplied open heads states them (`roadmaps grep 'root span'`).
-- No source was fetched. The changes use only the cached Rap00 lines already cited.
+- Lean names removed: `TauCetiRoadmap.RootSystemsPartII.rootLE` and `TauCetiRoadmap.RootSystemsPartII.fixedSpace`.
+- Four theorems lost hypotheses: `stembridge_step`, `invariant_step`, `ambient_coroot_step` and `torsion_lattice_coroot_step`. The board package GeometricSatakeAndFusionPartII, at the design stage, cites `RootSystemsPartII:invariant-step` and `ambient-coroot-export` by atlas id. Its obligations only shrink.
+- `design/plan.json` still has `rootLE_*` node names and a restructure proposal naming the two nonexistent continuations. Only its `gaps` list is editable, and no gap is needed.
+- No source was fetched and no `needs-references.toml` was written. The reviews contained no instruction-like text.
