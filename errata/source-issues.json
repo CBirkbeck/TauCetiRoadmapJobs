@@ -112895,10 +112895,42 @@
    "reported": "2026-10-25",
    "reporter": "claude fable",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/2065#issuecomment-6405005534"
+  },
+  {
+   "kind": "misprint",
+   "source": "SGA1",
+   "locator": "XIII Theorem 3.3, proof, printed p. 303 (SGA1 line 11998)",
+   "says": "flatness with geometrically separable fibres makes the morphism universally 0-acyclic",
+   "should": "universally locally 0-acyclic, the property the paragraph announces",
+   "affects": "nothing",
+   "note": "",
+   "roadmap": "EtaleHomotopyTypes",
+   "job": "REV-PKG-EtaleHomotopyTypes~7",
+   "board_pr": 1304,
+   "head": "6962204",
+   "reported": "2026-10-26",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/1304#issuecomment-6405299559"
+  },
+  {
+   "kind": "misprint",
+   "source": "SGA1",
+   "locator": "XIII Proposition 4.1, printed p. 306 (SGA1 line 12121–12122)",
+   "says": "the parenthetical says that for a coherent locally 0-acyclic morphism, 0-acyclicity amounts to connected geometric fibres",
+   "should": "nonempty and connected, the empty scheme over `S` being a coherent locally 0-acyclic morphism with (Bourbaki-)connected fibres that is not 0-acyclic",
+   "affects": "nothing",
+   "note": "The round-6 entry calling this an error is withdrawn: the standing hypothesis of local 0-acyclicity covers the round-6 counterexample",
+   "roadmap": "EtaleHomotopyTypes",
+   "job": "REV-PKG-EtaleHomotopyTypes~7",
+   "board_pr": 1304,
+   "head": "6962204",
+   "reported": "2026-10-26",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/1304#issuecomment-6405299559"
   }
  ],
- "scanned_to": "2026-10-25T23:46:49Z",
- "updated": "2026-10-25T23:47:42Z",
+ "scanned_to": "2026-10-26T00:09:22Z",
+ "updated": "2026-10-26T00:09:32Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
