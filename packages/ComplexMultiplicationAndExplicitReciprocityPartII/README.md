@@ -8,7 +8,7 @@ ComplexMultiplicationAndExplicitReciprocity stops at reflex pairs and orders (§
 
 The native CM field and conjugation, class number, regulator ratio, Minkowski representatives and coarse ideal count are already in the library, as are complex abelian varieties, their endomorphism rings, isogenies and the rank of a finite flat morphism. Their exact declarations are in the supplier contracts. The field-order index-square discriminant identity is stated by GlobalNumberFields Layer 11; the finite étale order extension belongs to that supplier. The class-group norm cokernel bound is stated by IntegralIwasawaTheory §3.4, in the case n=0. The varying-base quadratic Hecke estimates and near-linear ideal count are stated by AnalyticNumberTheoryPartI §§2.31f, 2.44–2.46 and 3.27. The general ramified component determinant comparison belongs to ArakelovGeometryAndAbelianHeights §4.7. These are consumed here; the CM decomposition, different-graph application and exponent argument are the kept specializations.
 
-ArakelovGeometryAndAbelianHeights §§1.11, 2.7, 3.4–3.5, 4.6–4.8 and 6.5 own weighted degrees, metric adapters, stable heights, component lines and the uniform lower bound. FaltingsFinitenessAndIsogenyTheoremsPartII QI.5 owns geometric isogeny estimates. AbelianSchemesAndArithmeticModuli owns abelian schemes, polarizations, Tate and de Rham realizations and the CM isotypic decomposition. ShimuraVarieties owns canonical CM stacks and reciprocity; HilbertModularVarietiesAndShimuraCurves owns quaternionic integral models and its saturated integral Kodaira–Spencer line. Only the comparison to the actual CM Hodge determinants is built here. Generic admissible intersections and analytic/arithmetic kernels belong to GrossZagierAndArithmeticHeights, quantitative hermitian/Siegel reduction to GeometryOfNumbersAndQuadraticArithmetic, and the absolute scalar height, minimal-polynomial comparison and bounded-degree Northcott theorem to DiophantineApproximationAndTranscendence §§0.2–0.3. IntegralLattices and OrthogonalSpinGroups own lattice duality and orthogonal group algebra. The orthogonal special-divisor intersection and support theorems in §§4.2–4.2c, 4.3 and 4.5 are included here: no separate accepted orthogonal-height supplier provides it.
+ArakelovGeometryAndAbelianHeights §§1.11, 2.7, 3.4–3.5, 4.6–4.8 and 6.5 own weighted degrees, metric adapters, stable heights, component lines and the uniform lower bound. FaltingsFinitenessAndIsogenyTheoremsPartII QI.5 owns geometric isogeny estimates. AbelianSchemesAndArithmeticModuli owns abelian schemes, polarizations, Tate and de Rham realizations and the CM isotypic decomposition. ShimuraVarieties owns canonical CM stacks and reciprocity; HilbertModularVarietiesAndShimuraCurves owns quaternionic integral models and its saturated integral Kodaira–Spencer line. Only the comparison to the actual CM Hodge determinants is built here. Generic admissible intersections and analytic/arithmetic kernels belong to GrossZagierAndArithmeticHeights, quantitative hermitian/Siegel reduction to GeometryOfNumbersAndQuadraticArithmetic, successive minima and the basis from the minima to SuccessiveMinima Layer 1, IntegralLattices milestone 2F and HeightsAndUnits §2.1, and the absolute scalar height, minimal-polynomial comparison and bounded-degree Northcott theorem to DiophantineApproximationAndTranscendence §§0.2–0.3. IntegralLattices and OrthogonalSpinGroups own lattice duality and orthogonal group algebra. The orthogonal special-divisor intersection and support theorems in §§4.2–4.2c, 4.3 and 4.5 are included here: no separate accepted orthogonal-height supplier provides it.
 
 The arithmetic adjunction identity i₀(P,P)/e=−h_L(P_U) is stated by GrossZagierAndArithmeticHeights §7.78. Its §0a.4 supplies the quaternionic CM point and its Artin action; §7.2 here defines only its normalized Hodge height. Its §§6.56, 7.15, 7.65–7.66 and 7.77 supply the analytic derivative, nonvanishing theta input, full height-series decomposition and local comparison with the noncuspidal terms retained. PELModuli §§M6.1, M6.8 and M6.10 supply bounded polarized descent with marked 3-torsion and finite level-forgetting.
 
@@ -24,7 +24,7 @@ The symbol h_Falt means the unscaled squared volume metric, with squared norm |�
 
 `mean_Phi h_Falt(E,Phi) = -ell(0)/2 - log(D_E/D_F)/4 - g*log(2*pi)/2`.
 
-Arithmetic degrees on CM stacks include stabilizer weights and divide by the matching weighted complex degree. Component heights divide by [K:ℚ]; quaternionic heights divide by [F(P):F]. All finite level or field changes act on numerator and denominator together. The constant lower bound b_g is a real number and can be negative. Trace-one top de Rham periods, rather than arbitrary integral generators, fix the determinant metric.
+For a CM stack Y over O_E (the total reflex stack Y₀ of Layer 3 and the CM cycle Y of Layer 4), deg_C Y=Σ_(y∈Y(ℂ))1/|Aut(y)| is the weighted count of complex points of Y viewed as an E-stack through the fixed embedding of E, so that Y×_ℤℂ has 2d·deg_C Y weighted points ([A], §6.3, pp. 472–473; A lines 3403–3414). The arithmetic degree deĝ is taken over Spec O_E with stabilizer weights: finite places of E, and an archimedean term summed over all weighted complex points of Y×_ℤℂ, that is over all 2d embeddings of E. Every normalized degree deĝ(·)/deg_C Y uses this pair. Component heights divide by [K:ℚ]; quaternionic heights divide by [F(P):F]. All finite level or field changes act on numerator and denominator together. The constant lower bound b_g is a real number and can be negative. Trace-one top de Rham periods, rather than arbitrary integral generators, fix the determinant metric.
 
 For x∈A_g, the center order R_x is Z(End(A_x)), with one CM field per distinct simple isogeny factor and one copy for each repeated isotypic block. Nonisogenous factors with abstractly isomorphic CM fields remain separate. Put D_x=|disc R_x| and J_x=[O_x:R_x]. Absolute polarized coarse orbits, marked relative orbits and fields defining objects are distinct. H_abs is absolute multiplicative Weil height; h₀(Z)=max(max|z_ij|,1/det Im Z) is a separate analytic quantity.
 
@@ -33,6 +33,7 @@ For x∈A_g, the center order R_x is Z(End(A_x)), with one CM field per distinct
 - On the square elliptic torus ℂ/(ℤ+iℤ), |∫dz∧d z̄|=2. The three squared metrics are 2, 1 and 1/π; their height shifts are −log 2/2 and log(2π)/2 as above. Applying the latter twice gives an erroneous extra log(2π)/2.
 - For arithmetic Artin over ℚ₅, the unit 2 acts on Lubin–Tate 5-torsion by 2⁻¹=3 modulo 5, whereas the supplied geometric Artin action gives 2. Substituting 2⁻¹=3 into the geometric formula recovers the arithmetic action by 3. A uniformizer acts trivially on that torsion field.
 - A degree-two base change takes normalized degree a/d to 2a/(2d)=a/d; with [F:ℚ]=2, replacing [F(P):F] by [F(P):ℚ] changes a/d to a/(2d).
+- For d=1 and E=ℚ(i), the total reflex stack Y₀ has one complex point as an E-stack, with automorphism group O_E×=μ₄, so deg_C Y₀=1/4, while Y₀×_ℤℂ has weighted count 2·(1/4)=1/2. A CM elliptic curve over O_E of Faltings height h has unweighted arithmetic degree [E:ℚ]h=2h over Spec O_E, so the weighted degree is deĝ(Ω♯)=2h/4 and deĝ(Ω♯)/deg_C Y₀=2h=Σ_Φ h_Falt(E,Φ), as §3.8 states; dividing instead by the weighted count of Y₀×_ℤℂ gives h, half the stated value.
 - For E=ℚ(i), D_E=4, D_F=1, d_E/F=4. For an elliptic order of conductor 2 the center-order discriminant is 16, while its maximal-field discriminant stays 4.
 
 ## Exact supplier contracts
@@ -131,7 +132,11 @@ What GlobalNumberFields must provide (gap:etale-order-discriminant): Extend the 
 
 ### From TauCetiRoadmap.GeometryOfNumbersAndQuadraticArithmetic
 
-Consume §§0.1–0.3, 1.2, 1.5 and 2.2, 2.7–2.9 for covolumes, successive minima, integral hermitian forms and local comparisons. In ordinary Lebesgue measure on ℂ^g the CM ideal covolume is 2^(−g)√D_E[O_E:I]; ℤ[i] gives 1. The CM order-sensitive rescaling argument and its algebraic-coordinate conversion are §13.2–§13.4 here.
+Consume §1.2 for the comparison 1.2.14 of the real successive minima of a positive definite integral lattice in its real model with its squared-norm minima (λ_i²=successive squared minimum), and §§2.2, 2.7–2.9 for integral quadratic and hermitian lattices and local comparisons. The CM order-sensitive rescaling argument and its algebraic-coordinate conversion are §13.2–§13.4 here.
+
+### From TauCetiRoadmap.SuccessiveMinima, TauCetiRoadmap.IntegralLattices and TauCetiRoadmap.HeightsAndUnits
+
+Consume SuccessiveMinima Layer 1 for the real successive minima of a discrete full lattice with respect to a symmetric convex body and their simultaneous attainment by independent lattice vectors (its 1.5); IntegralLattices milestone 2F for the squared-norm successive minima of a positive definite integral lattice of rank n and Minkowski's second theorem ∏_i λ_i≤γ_n^n det L; and HeightsAndUnits §2.1, minima form, for a ℤ-basis b with b_i∈max(1,(i+1)/2)·λ_i·K. These are roadmap targets, not declarations at the pinned Tau Ceti, which has the `TauCeti.IntegralLattice` carrier (`TauCeti/LinearAlgebra/IntegralLattice/Basic.lean`, line 63) but no successive minima. For a full lattice I⊂O_E the form β(x,y)=Tr_E/ℚ(x̄y) is positive definite and integral of determinant D_E[O_E:I]², and every nonzero x∈I has β(x,x)≥2g|Nm x|^(1/g)≥2g. In ordinary Lebesgue measure on ℂ^g the CM ideal covolume is 2^(−g)√D_E[O_E:I], from Mathlib `NumberField.mixedEmbedding.covolume_integerLattice` (`Mathlib/NumberTheory/NumberField/Discriminant/Basic.lean`, line 124) and `ZLattice.covolume_div_covolume_eq_relIndex'` (`Mathlib/Algebra/Module/ZLattice/Covolume.lean`, line 170); ℤ[i] gives 1.
 
 What GeometryOfNumbersAndQuadraticArithmetic must provide (gap:quantitative-siegel-hermitian-reduction): For each fixed g≥1 there are C_g,a_g>0 such that every Z in genus-g Siegel space admits γ∈Sp_(2g)(ℤ) with γZ in the chosen standard fundamental set and every entry of γ bounded in absolute value by C_g max(1,max_ij|z_ij|,1/det Im Z)^a_g.
 
@@ -369,7 +374,7 @@ ComplexMultiplicationAndExplicitReciprocity §§0.1–0.2; ShimuraVarieties §§
 
 ### 2.1 Local CM representations are crystalline
 
-Prove the following. At q|p of E and a geometric point y of Y_K, every K_p-stable lattice N_p in an algebraic T_Qp-representation N gives a crystalline ℚ_p-representation of Γ_y. The reciprocity character factors through the image T_q of Res_Eq/ℚ_p G_m, and restricting to K_q=K_p∩T_q(ℚ_p) recovers the same representation functor. ([A], Proposition 3.5.2 and Remark 3.5.3, pp. 422–424; A line 1277.)
+Prove the following. At q|p of E and a geometric point y of Y_K, every K_p-stable lattice N_p in an algebraic T_Qp-representation N gives a crystalline ℚ_p-representation of Γ_y. The reciprocity character factors through the image T_q of Res_Eq/ℚ_p G_m, and restricting to K_q=K_p∩T_q(ℚ_p) recovers the same representation functor. The statement and its proof apply equally to T_E=Res_E G_m and its CM curve Ỹ_K̃ of §2.5, whose local image torus at q is Res_(E_q/ℚ_p)G_m; §2.7 uses this case for H₀. ([A], Proposition 3.5.2 and Remark 3.5.3, pp. 422–424; A line 1277.)
 
 One proof route is as follows. Identify the inertia character with the unit character of local reciprocity in the fixed Artin convention. Use the Lubin–Tate character and tensor, dual and direct-summand stability of crystalline representations. Retain the finite-index subgroup Γ_y and the image torus rather than identifying it with Res_Eq G_m.
 
@@ -409,7 +414,7 @@ The global F-crystal assertion is restricted to the étale locus; the filtered i
 
 ### 2.5 Integral Hecke and torus actions
 
-Prove the following. The T-action on A_H is a faithful rational action T→Aut⁰(A_H)=(End(A_H)⊗ℚ)×, and level-changing Hecke isogenies extend over the integral CM models with compatible de Rham and crystalline realization maps. Integral endomorphisms and rational quasi-isogenies are distinguished. For the tautological H₀=E, the torus T_E acts by multiplication and the lattice is O_E. ([A], Proposition 3.5.6, pp. 427–428; A line 1481.)
+Prove the following. The T-action on A_H is a faithful rational action T→Aut⁰(A_H)=(End(A_H)⊗ℚ)×, and level-changing Hecke isogenies extend over the integral CM models with compatible de Rham and crystalline realization maps. Integral endomorphisms and rational quasi-isogenies are distinguished. For the tautological H₀=E, the torus T_E=Res_E G_m acts by multiplication and the lattice is O_E. For d≥2, H₀ is not a T-representation: ker N_F/ℚ acts on E by multiplication, nontrivially. Its global realizations live on the finite cover Ỹ_K̃→Y_K attached to T_E and a level K̃ whose image in T(A_f) lies in K, and only the conjugate-semilinear V₀⊂End(H₀) of §2.6, on which T_E acts through T_so, descends to Y_K. ([A], Proposition 3.5.6 and its proof, pp. 427–428; A lines 1481 and 1522–1542.)
 
 One proof route is as follows. Descend the generic homomorphisms using the canonical CM family. Extend over the good-reduction models and compare Tate modules. Use the realization comparison to identify the extended actions.
 
@@ -443,13 +448,13 @@ The squared norm is positive on every nonzero Hodge vector.
 
 ### 2.7 Tautological CM crystal
 
-Prove the following. At a geometric y over q|p, with W the Witt vectors of its algebraically closed residue field, the cohomological tautological crystal decomposes by primes q′|p of E. The q-factor is the Dieudonné crystal of the Lubin–Tate O_Eq-module, with the dual-Tate convention fixed above; every q′≠q factor is W⊗ℤ_p O_Eq′ with Frobenius Fr⊗1. Applying conjugate-semilinear endomorphisms gives the corresponding decomposition of V₀,cris by primes of F. ([A], §3.6, pp. 428–429, preceding Proposition 3.6.1; A line 1520.)
+Prove the following. At a geometric y over q|p, with W the Witt vectors of its algebraically closed residue field, let H₀,cris,y be the Breuil–Kisin crystalline realization of the Γ_y-representation H₀⊗ℚ_p with lattice O_E⊗ℤ_p, where Γ_y acts through the local Artin map into E_q×⊂T_E(ℚ_p). This is the local construction of §§2.1–2.2 applied to the torus T_E, whose local image torus at q is Res_(E_q/ℚ_p)G_m itself; it is not an output of the global functor of §2.4, since H₀ does not factor through T when d≥2. Then H₀,cris,y decomposes by primes q′|p of E. The q-factor is the Dieudonné crystal of the Lubin–Tate O_Eq-module, with the dual-Tate convention fixed above; every q′≠q factor is W⊗ℤ_p O_Eq′ with Frobenius Fr⊗1. Applying conjugate-semilinear endomorphisms gives the corresponding decomposition of V₀,cris,y by primes of F; since V₀ is a T-representation, this V₀,cris,y is the fibre at y of the crystal of §2.4. ([A], §3.6, pp. 428–429, preceding Proposition 3.6.1; A lines 1520 and 1584–1586.)
 
-One proof route is as follows. Apply the local reciprocity character to the q-factor. Show inertia is trivial on the other factors and identify their unramified Frobenius. Apply the tensor-compatible realization to conjugate-semilinear Hom.
+One proof route is as follows. Apply the local reciprocity character to the q-factor. Show inertia is trivial on the other factors and identify their unramified Frobenius. Apply the tensor-compatible realization to conjugate-semilinear Hom, and compare with §2.4 through the inclusion V₀⊂End(H₀), which is T_E-equivariant.
 
 The local decomposition includes factors not above q, rather than treating the whole representation as one Lubin–Tate character.
 
-*Needs:* §2.2 cm breuil–kisin comparison; §2.6 the standard cm quadratic line; LubinTateFormalModulesAndQuasiCanonicalLifts LT.2, “Comparison with local reciprocity”; FiniteFlatGroupsAndIntegralPadicHodgeTheory Layer R07.4.
+*Needs:* §2.1 local cm representations are crystalline; §2.2 cm breuil–kisin comparison; §2.4 cm bundles and crystals; §2.6 the standard cm quadratic line; LubinTateFormalModulesAndQuasiCanonicalLifts LT.2, “Comparison with local reciprocity”; FiniteFlatGroupsAndIntegralPadicHodgeTheory Layer R07.4.
 
 ### 2.8 Nonsplit CM crystals and supersingularity
 
@@ -464,6 +469,8 @@ A split quadratic local algebra must not satisfy the full-invariant-span or supe
 ### Examples
 
 For the Gaussian CM elliptic curve at a split prime 5 the weight-one slopes are 0 and 1; at inert 3 they are 1/2 and 1/2. A geometric crystalline fiber uses W(𝔽̄₃), not W(𝔽₃). The étale summands at primes different from the distinguished one have slope 0 before applying the specified representation and duality.
+
+For F=ℚ(√2) and E=ℚ(√2,i), the unit 3+2√2 has norm 9−8=1, so it lies in ker N_F/ℚ, yet it multiplies E by 3+2√2≠1: H₀ is a T_E-representation that is not a T-representation, and §2.7 builds its crystal locally. Its conjugate-semilinear V₀ is a T-representation: t∈T_E acts on f_a by t∘f_a∘t⁻¹=f_(a t/t̄), and t/t̄=1 for t∈F×. For d=1, T=T_E and the distinction is vacuous.
 
 ### Dependencies
 
@@ -785,7 +792,7 @@ Local monogenic generators are chosen after the permitted unramified extension o
 
 ### 5.3 Nearby CM types and their height
 
-Use the following definition. Two types Φ₁,Φ₂ of a degree-2g CM field are nearby when their symmetric difference is {τ₁,τ₂}, with τ₂=cτ₁. For the unordered edge {Φ₁,Φ₂} set h_near=(h(Φ₁,τ₁)+h(Φ₂,τ₂))/2. Every type has g neighbors and the type cube has g·2^(g−1) unordered edges. ([Y], §2.2, p. 548; §1.2, p. 537; Y line 652.)
+Use the following definition. Two types Φ₁,Φ₂ of a degree-2g CM field are nearby when each difference Φ_i∖Φ_(3−i) is a singleton. Let τ_i be its unique member, so τ_i∈Φ_i and τ₂=cτ₁; the labels are attached to their endpoints, not read off the symmetric difference. For the unordered edge {Φ₁,Φ₂} set h_near=(h(Φ₁,τ₁)+h(Φ₂,τ₂))/2, both terms lying in the domain τ∈Φ of §5.1. Every type has g neighbors and the type cube has g·2^(g−1) unordered edges. ([Y], §2.2, p. 548; §1.2, p. 537; Y lines 674–677.)
 
 One proof route is as follows. Identify a type with one choice in each conjugate embedding pair. Define adjacency by flipping precisely one pair. Check swapping endpoints exchanges the two summands and preserves the value.
 
@@ -804,6 +811,7 @@ Edges are counted once; nearby does not mean disjoint unless g=1.
 - For g=1 the two complementary types form one edge.
 - For g=2 there are four vertices and four unordered edges, not eight.
 - For g=2 opposite vertices have symmetric difference of size four and fail adjacency.
+- For E=ℚ(i), Φ₁={i↦i} and Φ₂={i↦−i}, the definition forces τ₁=(i↦i) and τ₂=(i↦−i). The swapped labelling τ₁=(i↦−i), τ₂=(i↦i) also lists the symmetric difference and satisfies τ₂=cτ₁, but τ₁∉Φ₁, so h(Φ₁,τ₁) is undefined; a definition by symmetric difference alone does not determine the summands.
 
 *Needs:* ComplexMultiplicationAndExplicitReciprocity §§0.1–0.2; §5.1 cm component-height invariance.
 
@@ -846,8 +854,8 @@ The datum is strictly stronger than merely requiring A to be O_E-isogenous to A�
 **Checks.**
 
 - If δ_E/F is the unit ideal, both ideal-torsion groups and the graph kernel are zero.
-- An arbitrary nonzero multiplication-by-n kernel is rejected unless it equals the required graph.
-- At a ramified quadratic local place the two projection images equal δ⁻¹Λ_i/Λ_i, not all n-torsion for an unrelated n.
+- For E=ℚ(√−3), F=ℚ, the relative different δ=(√−3) has norm 3 and O_E/δ≅𝔽₃. Over a field splitting the torsion, identify both A₁[δ] and A₂[δ] with C₃=ℤ/3. The graph of the identity has three elements, whereas the full product A₁[δ]×A₂[δ] has nine and is not a graph: its first projection is not injective.
+- With the same identifications, the graphs of the two O_E-linear isomorphisms 1 and −1 are {(0,0),(1,1),(2,2)} and {(0,0),(1,2),(2,1)}. Each projects bijectively onto C₃ in both factors, yet (1,1) lies only in the first and (1,2) only in the second; projection images alone do not determine the specified graph, which is why the datum records the isomorphism.
 
 *Needs:* §5.3 nearby cm types and their height; ComplexMultiplicationAndExplicitReciprocity §§2.1–2.3; AbelianSchemesAndArithmeticModuli §§A6.22, A6.25, A6.37–A6.38; FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.2.15–R07.2.16, R07.2.20.
 
@@ -1193,11 +1201,11 @@ For real/imaginary coordinates the field is enlarged by i; degree and height con
 
 Prove the following. Fix g. If I⊂O_E is a full ℤ-lattice for a degree-2g CM field, it admits a ℤ-basis whose conjugates are bounded by a polynomial in D_E[O_E:I]. If I has multiplier order R, first scale it by ν∈E× so that νI⊂O_E and [O_E:νI] is polynomially bounded in |disc R|. In the canonical C^g embedding, covolume(I)=2^(−g)√D_E[O_E:I]. Nonmaximal lattices need not be invertible O_E-ideals. For an arbitrary full lattice in E with multiplier order R, put J=O_EI and e_R=[O_E:R]; then e_RJ⊂I⊂J and [J:I]≤e_R^(2g). Scale the ideal J by the Minkowski representative bound before applying successive minima. This keeps the order index throughout, without assuming I invertible over O_E. ([PT], Pila–Tsimerman (2013), Lemmas 3.2–3.3, preprint pp. 3–5; PT line 80.)
 
-One proof route is as follows. Apply the ideal-class bound to J=O_E I and use [O_E:R]J⊂I⊂J for scaling. Use the corrected covolume and the norm lower bound for a nonzero integral vector. Apply the owner’s successive-minima/bounded-basis theorem in fixed rank, then compare all archimedean conjugates.
+One proof route is as follows. Apply the ideal-class bound to J=O_E I and use [O_E:R]J⊂I⊂J for scaling. Use the corrected covolume and the norm lower bound for a nonzero integral vector. On the trace form β(x,y)=Tr_E/ℚ(x̄y) of rank n=2g, the lower bound λ₁≥2g and Minkowski's second theorem give λ_i≤γ_n^n D_E[O_E:I]²/(2g)^(n−1) for every squared minimum; pass to the real minima √λ_i, take the basis from the minima, and bound each conjugate by |σ(b)|²≤β(b,b).
 
 For ℚ(i), O_E has covolume 1: 2⁻¹√4=1; the printed discriminant without its square root gives 4.
 
-*Needs:* ComplexMultiplicationAndExplicitReciprocity §§2.1–2.3; GeometryOfNumbersAndQuadraticArithmetic §§1.2, 1.5; GlobalNumberFields Layer 11; `NumberField.exists_ideal_in_class_of_norm_le`; GeometryOfNumbersAndQuadraticArithmetic §§0.1–0.3.
+*Needs:* ComplexMultiplicationAndExplicitReciprocity §§2.1–2.3; SuccessiveMinima Layer 1; IntegralLattices milestone 2F; HeightsAndUnits §2.1; GeometryOfNumbersAndQuadraticArithmetic §1.2; GlobalNumberFields Layer 11; `NumberField.exists_ideal_in_class_of_norm_le`; `NumberField.mixedEmbedding.covolume_integerLattice`; `ZLattice.covolume_div_covolume_eq_relIndex'`.
 
 ### 13.3 CM period height under Siegel reduction
 
@@ -1242,7 +1250,7 @@ The safe real-coordinate degree bounds 2(2g)! are 4 for g=1 and 48 for g=2. A si
 
 ### Dependencies
 
-§12.1 the center order of a cm point; ComplexMultiplicationAndExplicitReciprocity §§2.1–2.3; AbelianSchemesAndArithmeticModuli §§A6.22, A6.25, A6.37–A6.38; GeometryOfNumbersAndQuadraticArithmetic §§1.2, 1.5; GeometryOfNumbersAndQuadraticArithmetic §2.7 (gap:quantitative-siegel-hermitian-reduction; gap:quantitative-hermitian-lattice-balancing); GlobalNumberFields Layer 11; `NumberField.exists_ideal_in_class_of_norm_le`; GeometryOfNumbersAndQuadraticArithmetic §§0.1–0.3; HeightsRationalPointsAndObstructions §§0.11–0.13, 0.16; §12.5 galois-orbit bound for every cm point.
+§12.1 the center order of a cm point; ComplexMultiplicationAndExplicitReciprocity §§2.1–2.3; AbelianSchemesAndArithmeticModuli §§A6.22, A6.25, A6.37–A6.38; SuccessiveMinima Layer 1; IntegralLattices milestone 2F; HeightsAndUnits §2.1; GeometryOfNumbersAndQuadraticArithmetic §1.2; GeometryOfNumbersAndQuadraticArithmetic §2.7 (gap:quantitative-siegel-hermitian-reduction; gap:quantitative-hermitian-lattice-balancing); GlobalNumberFields Layer 11; `NumberField.exists_ideal_in_class_of_norm_le`; `NumberField.mixedEmbedding.covolume_integerLattice`; `ZLattice.covolume_div_covolume_eq_relIndex'`; HeightsRationalPointsAndObstructions §§0.11–0.13, 0.16; §12.5 galois-orbit bound for every cm point.
 
 ## Downstream consumers
 

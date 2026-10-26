@@ -4254,13 +4254,13 @@
       "slug": "quantitative-siegel-hermitian-reduction",
       "needs": "For each fixed g≥1 there are C_g,a_g>0 such that every Z in genus-g Siegel space admits γ∈Sp_(2g)(ℤ) with γZ in the chosen standard fundamental set and every entry of γ bounded in absolute value by C_g max(1,max_ij|z_ij|,1/det Im Z)^a_g.",
       "supplier": "GeometryOfNumbersAndQuadraticArithmetic",
-      "section": "§§1.2, 1.5, 2.7"
+      "section": "§2.7"
     },
     {
       "slug": "quantitative-hermitian-lattice-balancing",
       "needs": "For fixed n,r≥1 there are C_n,r,a_n,r>0 such that, for every degree-2n CM field E, conjugation-stable full order R⊂E, full R-stable lattice L⊂E^r, hermitian form h positive definite at every archimedean place, and integer N≥1 for which q=N Tr_E/ℚ h is integral on L, setting D=max(2,|disc R|,N,det Gram_L(q)), there are E-linearly independent v₁,…,v_r∈L for which every |σ(h(v_i,v_j))| and the finite index [L:Σ_i Rv_i] are at most C_n,r D^a_n,r.",
       "supplier": "GeometryOfNumbersAndQuadraticArithmetic",
-      "section": "§§1.2, 1.5, 2.7"
+      "section": "§2.7"
     },
     {
       "slug": "ramified-quaternionic-bridge",
