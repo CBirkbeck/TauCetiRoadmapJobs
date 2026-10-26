@@ -7,7 +7,7 @@ authors = "Peter Scholze"
 title = "Perfectoid spaces"
 year = 2012
 locator_scheme = "theorem"
-locator = "Theorems 1.5, 1.13 and Lemma 1.16; Proposition 5.20; Lemma 6.5 and Remark 6.6; Definition 7.14, Proposition 7.16, Theorem 7.17, Corollaries 7.18–7.19; Definition/Proposition 8.4, Theorem 8.5, Propositions 8.6–8.7 and Corollary 8.8, pp. 247, 249–251, 280, 288–290, 302–307"
+locator = "Theorems 1.5, 1.13 and Lemma 1.16; Definition 3.1; Proposition 5.20; Lemma 6.5 and Remark 6.6; Definition 7.14, Proposition 7.16, Theorem 7.17, Corollaries 7.18–7.19; Definition/Proposition 8.4, Theorem 8.5, Propositions 8.6–8.7 and Corollary 8.8, pp. 247, 249–251, 263, 280, 288–290, 302–307"
 doi = "10.1007/s10240-012-0042-x"
 arxiv = "1111.4914"
 version_note = "Published IHES pagination; the fetched published version is used throughout."
@@ -18,7 +18,7 @@ sha256 = "7e7f7a3b6309ead9d8ee376106c92c644f25b22d75ffa6d7382508a36cf7814a"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-24"
-cited_for = ["Layers 0–6"]
+cited_for = ["Conventions", "Layers 0–6"]
 
 [[source]]
 id = "FS94"
