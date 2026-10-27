@@ -5,7 +5,7 @@ Verdict: needs changes
 
 1. **F01** (P1) The formal-localization gap is addressed to a roadmap that cannot own it
 
-   - **Location.** `packages/AdicSpacesPartIIPartII/README.md` line 81 and `design/plan.json` `gaps[0]`: "What AdicSpacesPartII must provide (gap:formal-affinoid-localization): For every quasi-separated quasi-paracompact rigid K-space X, every weakly Shilov affinoid neighbourhood W of x can …".
+   - **Location.** `packages/AdicSpacesPartV/README.md` line 81 and `design/plan.json` `gaps[0]`: "What AdicSpacesPartII must provide (gap:formal-affinoid-localization): For every quasi-separated quasi-paracompact rigid K-space X, every weakly Shilov affinoid neighbourhood W of x can …".
    - **Claim.** AdicSpacesPartII R1.7 is a "formal-model localization interface" that can supply this realization. The README also files the formal-model contract under the AdicSpacesPartII heading (lines 79, 83), and its Needs lines (640 §4.1, 687 §4.3, 744 §4.6) name no roadmap.
    - **Witness.** `TauCetiRoadmap/AdicSpacesPartII/README.md` line 9806: R1.7 is the rigid–adic comparison, with no formal schemes. Formal models are `TauCetiRoadmap/AdicSpacesPartIII/README.md` R2.2–R2.5, and AdicSpacesPartIII consumes AdicSpacesPartII (line 490).
    - **Consequence.** As declared, AdicSpacesPartII could honour the gap only by consuming its own consumer, plus this roadmap's §4.4 notion "weakly Shilov"; `x` is unbound. The gap is therefore effectively unowned. The real edge to AdicSpacesPartIII (ORDER.txt #11, after this roadmap at #10) is invisible to the dependency check. On line 14, "above" should read "below".
@@ -112,7 +112,7 @@ Verdict: needs changes
 12. **F12** (P3) README title (non-blocking naming note)
 
    - **Location.** Line 1: "…, part II". Line 7: "This is a Part II extension of AdicSpacesPartII".
-   - **Witness.** The roadmap continues AdicSpacesPartII, so its own title is inconsistent with the folder name AdicSpacesPartIIPartII. The name is already a recorded naming question.
+   - **Witness.** The roadmap continues AdicSpacesPartII, so its own title is inconsistent with the folder name AdicSpacesPartV. The name is already a recorded naming question.
    - **Repair.** Align the title with whatever the maintainer decides; nothing else changes.
 
 13. **F13** (P3) Duplicated Checks, and a Check that names a Lean declaration
@@ -135,14 +135,14 @@ Verdict: needs changes
    - **Witness.** ResolutionOfSingularitiesCharacteristicZero §§7.1 and 7.5–7.8 (at its head) state no countability, and §7.5 covers reduced schemes only. Countability is part of gap:generically-reduced-functorial-resolution, which TEMKIN12 line 99 (Theorem 1.2.1) otherwise supports.
    - **Repair.** Say on line 91 that countability belongs to the declared gap. In the gap sentence, make explicit that the countable-invariant clause also applies to the reduced functor, which §5.3 needs for non-quasi-compact reduced X.
 
-Scope of this review: `packages/AdicSpacesPartIIPartII/README.md` (1015 lines), `Suggested.lean`, `metadata.toml`, `sources.toml`, read against the content repository at main, the open roadmap pull requests through the roadmaps tool (333 heads), the board packages, `merge-order/ORDER.txt`, and the pinned Mathlib and Tau Ceti of the content repository's `lake-manifest.json`. No previous review exists. The folder name is a recorded naming question and is not treated as a finding (R12 only notes the README title).
+Scope of this review: `packages/AdicSpacesPartV/README.md` (1015 lines), `Suggested.lean`, `metadata.toml`, `sources.toml`, read against the content repository at main, the open roadmap pull requests through the roadmaps tool (333 heads), the board packages, `merge-order/ORDER.txt`, and the pinned Mathlib and Tau Ceti of the content repository's `lake-manifest.json`. No previous review exists. The folder name is a recorded naming question and is not treated as a finding (R12 only notes the README title).
 
 ## Verified sound
 
 ### Elaboration and Lean form
 
-- `lake env lean` on `packages/AdicSpacesPartIIPartII/Suggested.lean`, run from the content checkout, gives exactly three "declaration uses `sorry`" warnings (lines 46, 63, 95), no errors, in about 7 s. No `TauCeti.*` object file was missing.
-- Form: single `import Mathlib` plus one Tau Ceti module that is actually used; no `set_option`, no `lemma`, no sorry'd data. `IsUnitGaussPoint` has a real body. Every declaration has a docstring, layer section comments are present, and the namespace is `TauCetiRoadmap.AdicSpacesPartIIPartII`.
+- `lake env lean` on `packages/AdicSpacesPartV/Suggested.lean`, run from the content checkout, gives exactly three "declaration uses `sorry`" warnings (lines 46, 63, 95), no errors, in about 7 s. No `TauCeti.*` object file was missing.
+- Form: single `import Mathlib` plus one Tau Ceti module that is actually used; no `set_option`, no `lemma`, no sorry'd data. `IsUnitGaussPoint` has a real body. Every declaration has a docstring, layer section comments are present, and the namespace is `TauCetiRoadmap.AdicSpacesPartV`.
 - `#check @` on all four declarations, in one scratch file: the elaborated binders match README §§3.4, 6.1 and 6.5. The file has no `variable` block, so no binder was lost, and nothing changed.
 - One-tactic probes on a scratch copy (`simp`, `rfl`, `infer_instance`, `aesop`, `fun_prop`) fail on all three theorems. No single pinned lemma closes them: Mathlib's isolated-zeros theorem is one-variable, and no constant-rank theorem exists at the pin (the `Submersion.lean` docstring defers the rank criterion). No padding was found.
 - Headlines in the Summary and their status:
@@ -153,7 +153,7 @@ Scope of this review: `packages/AdicSpacesPartIIPartII/README.md` (1015 lines), 
 
 ### Dependency check
 
-`tauceti-roadmap … gate --depcheck packages/AdicSpacesPartIIPartII/README.md --name AdicSpacesPartIIPartII --order merge-order/ORDER.txt --movable` printed:
+`tauceti-roadmap … gate --depcheck packages/AdicSpacesPartV/README.md --name AdicSpacesPartV --order merge-order/ORDER.txt --movable` printed:
 
     depcheck: 30 roadmaps, 266 edges, 0 problem(s)
 
@@ -280,4 +280,4 @@ Tau Ceti:
 
 - **Error** in CONRAD99 at §2.2, author p. 14 (line 648): the source says Spec of a local ring is irreducible exactly when a single irreducible component passes through the point; it should say only that local irreducibility implies a unique component, and is equivalent to a single normalization point over it (nodal cubic: one component, two local branches); affects nothing.
 
-<!-- tauceti-roadmap-review {"agent": "claude", "head": "a39708a", "job": "REV-PKG-AdicSpacesPartIIPartII", "model": "opus", "worker": "fable-rev53"} -->
+<!-- tauceti-roadmap-review {"agent": "claude", "head": "a39708a", "job": "REV-PKG-AdicSpacesPartV", "model": "opus", "worker": "fable-rev53"} -->

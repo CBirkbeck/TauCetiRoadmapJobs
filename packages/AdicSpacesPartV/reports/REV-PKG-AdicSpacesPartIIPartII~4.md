@@ -6,7 +6,7 @@ Conditional on the announced gaps: `adic-proper-kiehl-proper`, `formal-affinoid-
 
 1. **F01** (P3) §6.4 does not cite Mathlib's native analytic group structure on units of a normed algebra
 
-   **Location.** `packages/AdicSpacesPartIIPartII/README.md` lines 43–45 (From Mathlib) and 964–984 (§6.4), Check at line 982: "For GL₂ and ℝ ⊆ ℂ, the four entries of g − I are compatible coordinates near I."
+   **Location.** `packages/AdicSpacesPartV/README.md` lines 43–45 (From Mathlib) and 964–984 (§6.4), Check at line 982: "For GL₂ and ℝ ⊆ ℂ, the four entries of g − I are compatible coordinates near I."
 
    **Claim.** The From Mathlib contract lists every native analytic carrier the atlas of §6.4 touches, and each definition's Checks compare it with the library notion where one exists.
 
@@ -16,7 +16,7 @@ Conditional on the announced gaps: `adic-proper-kiehl-proper`, `formal-affinoid-
 
 2. **F02** (P3) dead anchor in the RigidAnalyticGeometry contract link
 
-   **Location.** `packages/AdicSpacesPartIIPartII/README.md` line 66: "[RigidAnalyticGeometry §§1.1–1.3](../RigidAnalyticGeometry/README.md#layer-1-affinoid-algebras)".
+   **Location.** `packages/AdicSpacesPartV/README.md` line 66: "[RigidAnalyticGeometry §§1.1–1.3](../RigidAnalyticGeometry/README.md#layer-1-affinoid-algebras)".
 
    **Claim.** The relative link resolves to the supplier's Layer 1 heading.
 
@@ -113,7 +113,7 @@ Rows cover the sampled targets, the three Lean headlines, the repaired passages 
 
 Headline inventory from the Summary and deep targets: proper images and nowhere density; finite normalization and global components; Riemann extension and connected complements; regular and smooth loci and finite stratifications; Gauss-point closure; Shilov characterizations, maximal residue transcendence and avoidance; rigid blow-ups and functorial resolution; connectedness of the resolution of an irreducible space; rational-point manifolds and the algebraic-point atlas; analytic constant rank and submersions; subfield detection in coordinates and on G(C). Statable at the pins: Gauss-point closure (`gaussPoint_mem_closure_rationalPoints`, with `IsUnitGaussPoint` as the one simple definition it needs, a real body on the native polydisc), analytic constant rank (`analytic_constantRank`) and the scalar subfield theorem (`analytic_germ_eq_zero_of_subfield`); all three are stated. The module docstring names every other headline group and the missing carrier (rigid-space, affinoid-algebra, coherent-ideal, analytic-morphism, rational-point-manifold and algebraic-point-atlas carriers). No statable headline is absent and none is forced through a stand-in; the GL_n special case of the group form, which Mathlib's `Units` atlas would make statable, is a special case and not the headline, so its absence is correct.
 
-Ran `lake env lean` on `packages/AdicSpacesPartIIPartII/Suggested.lean` from the pinned content checkout: exit 0; the complete diagnostics are three "declaration uses `sorry`" warnings at 51:8, 68:8 and 100:8. No `TauCeti.*` object file was missing. Imports are `import Mathlib` and the single module `TauCeti.AlgebraicGeometry.AdicSpace.Spa.Polydisc.Basic`, which exists at the pin.
+Ran `lake env lean` on `packages/AdicSpacesPartV/Suggested.lean` from the pinned content checkout: exit 0; the complete diagnostics are three "declaration uses `sorry`" warnings at 51:8, 68:8 and 100:8. No `TauCeti.*` object file was missing. Imports are `import Mathlib` and the single module `TauCeti.AlgebraicGeometry.AdicSpace.Spa.Polydisc.Basic`, which exists at the pin.
 
 Appended `#check @` for the four declarations to one scratch copy and elaborated it once (exit 0): `IsUnitGaussPoint` keeps `NontriviallyNormedField`, `IsUltrametricDist`, `NonarchimedeanRing`, `n` and the native `closedPolydisc` point; `gaussPoint_mem_closure_rationalPoints` keeps `CompleteSpace K`, `Infinite` of the native residue quotient, `n` and the base point; `analytic_constantRank` keeps `CompleteSpace`, `CharZero`, `k ≤ m`, `k ≤ n`, both `IsManifold … ω` structures (printed as `⊤` of `ℕ∞ω`), the analytic germ and the eventual rank; `analytic_germ_eq_zero_of_subfield` keeps completeness and `CharZero` of both fields and `NormedAlgebra E C`. Each agrees with its README statement (lines 624, 907, 1003); nothing changed.
 
@@ -157,9 +157,9 @@ Cross-roadmap citations resolved this round, on main unless marked:
 
 ### Supplier direction
 
-Every `*Needs:*` line and supplier citation was read; no citation of a roadmap later in the merge order remains (ReductiveGroupsPartII, DiamondsAndVStacks, AbelianSchemesAndArithmeticModuliPartII and LieGroupoidsPoisson appear only under Downstream consumers). Neither AdicSpacesPartIII nor AdicEtaleGeometry, which precede the package after the move, mentions AdicSpacesPartIIPartII (grep count 0 in both READMEs, and in RigidAnalyticGeometry and AdicSpacesPartII). The prescribed dependency check exited 0 and printed exactly:
+Every `*Needs:*` line and supplier citation was read; no citation of a roadmap later in the merge order remains (ReductiveGroupsPartII, DiamondsAndVStacks, AbelianSchemesAndArithmeticModuliPartII and LieGroupoidsPoisson appear only under Downstream consumers). Neither AdicSpacesPartIII nor AdicEtaleGeometry, which precede the package after the move, mentions AdicSpacesPartV (grep count 0 in both READMEs, and in RigidAnalyticGeometry and AdicSpacesPartII). The prescribed dependency check exited 0 and printed exactly:
 
-    moved: AdicSpacesPartIIPartII moved in the merge order from #9 to #11, right after its last supplier AdicEtaleGeometry (AdicSpacesPartIII also came after it); checked as moved (the worker moves it there when it submits)
+    moved: AdicSpacesPartV moved in the merge order from #9 to #11, right after its last supplier AdicEtaleGeometry (AdicSpacesPartIII also came after it); checked as moved (the worker moves it there when it submits)
     depcheck: 56 roadmaps, 635 edges, 0 problem(s)
 
 No UPWARD or CYCLE line; the `moved:` line is the permitted insertion after the last supplier, not a defect. The merge-order file was not edited.
@@ -179,4 +179,4 @@ No UPWARD or CYCLE line; the `moved:` line is the permitted insertion after the 
 
 These three were recorded by the previous round and are confirmed at the same lines; the package avoids all of them (README lines 350, 372, 676, 682). No new source issue was found in the passages read this round.
 
-<!-- tauceti-roadmap-review {"agent": "claude", "head": "2fad3dd", "job": "REV-PKG-AdicSpacesPartIIPartII~4", "model": "fable", "worker": "fable-rev118"} -->
+<!-- tauceti-roadmap-review {"agent": "claude", "head": "2fad3dd", "job": "REV-PKG-AdicSpacesPartV~4", "model": "fable", "worker": "fable-rev118"} -->

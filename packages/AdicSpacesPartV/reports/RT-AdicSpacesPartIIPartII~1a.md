@@ -5,7 +5,7 @@ Verdict: needs_changes
 
 1. **F01** (P2) Finite-residue failure needs positive dimension
 
-   **Location:** packages/AdicSpacesPartIIPartII/README.md:624: “If L̃ is finite the conclusion fails.”
+   **Location:** packages/AdicSpacesPartV/README.md:624: “If L̃ is finite the conclusion fails.”
 
    **Claim:** The Gauss-point closure conclusion fails for finite residue fields, with n still arbitrary.
 
@@ -17,7 +17,7 @@ Verdict: needs_changes
 
 2. **F02** (P3) The Hodge-exceptional Check confuses closed and Zariski closed
 
-   **Location:** packages/AdicSpacesPartIIPartII/README.md:793: “a countable union of proper Zariski closed Hodge loci”.
+   **Location:** packages/AdicSpacesPartV/README.md:793: “a countable union of proper Zariski closed Hodge loci”.
 
    **Claim:** HK2 supplies a countable decomposition into individual proper coherent Zariski Hodge loci.
 
@@ -29,7 +29,7 @@ Verdict: needs_changes
 
 3. **F03** (P1) Faithfully flat descent of regular ring maps is not supplied
 
-   **Location:** packages/AdicSpacesPartIIPartII/README.md:244: “faithful flatness of B_n → B̂_n descends regularity of A_m → B_n”; supplier contract at :111 and Needs at :246.
+   **Location:** packages/AdicSpacesPartV/README.md:244: “faithful flatness of B_n → B̂_n descends regularity of A_m → B_n”; supplier contract at :111 and Needs at :246.
 
    **Claim:** SchemeAndStackFoundations §0.21 supplies descent of regularity of A → B along a faithfully flat target extension B → C.
 
@@ -41,7 +41,7 @@ Verdict: needs_changes
 
 4. **F04** (P1) André's localization input has no implementation owner
 
-   **Location:** packages/AdicSpacesPartIIPartII/README.md:244: “André’s localization theorem over the excellent source turns this into regularity of the ring map”.
+   **Location:** packages/AdicSpacesPartV/README.md:244: “André’s localization theorem over the excellent source turns this into regularity of the ring map”.
 
    **Claim:** The smooth-affinoid proof can pass from maximal-adic formal smoothness of completed local maps to regularity using the listed suppliers.
 
@@ -53,7 +53,7 @@ Verdict: needs_changes
 
 5. **F05** (P3) Five Check bullets contain no discriminating test
 
-   **Location:** packages/AdicSpacesPartIIPartII/README.md:174, :236, :343, :407 and :423; the last says “No claim that X becomes connected or normal after extending K is used.”
+   **Location:** packages/AdicSpacesPartV/README.md:174, :236, :343, :407 and :423; the last says “No claim that X becomes connected or normal after extending K is used.”
 
    **Claim:** These are Checks of the respective definitions or theorems.
 
@@ -71,7 +71,7 @@ Verdict: needs_changes
 
 6. **F06** (P1) The Shilov proof imports an unowned reconstruction from models
 
-   **Location:** packages/AdicSpacesPartIIPartII/README.md:682: “describe Spa(A, A°) as the limit of the special fibres … with O⁺ the t-completed colimit of structure sheaves”; Needs at :684.
+   **Location:** packages/AdicSpacesPartV/README.md:682: “describe Spa(A, A°) as the limit of the special fibres … with O⁺ the t-completed colimit of structure sheaves”; Needs at :684.
 
    **Claim:** The listed formal-model suppliers provide the topological inverse-limit description and integral structure-sheaf reconstruction used in the singleton-fibre/completed-local-ring equivalence.
 
@@ -88,7 +88,7 @@ Verdict: needs_changes
 
 7. **F07** (P1) Local-ring regularity transfer is not supplied
 
-   **Location:** packages/AdicSpacesPartIIPartII/README.md:469: “regularity ascends along regular maps and descends along faithfully flat local maps”; the same proof also uses invariance under completion.
+   **Location:** packages/AdicSpacesPartV/README.md:469: “regularity ascends along regular maps and descends along faithfully flat local maps”; the same proof also uses invariance under completion.
 
    **Claim:** The named suppliers supply the local-ring regularity transfers needed to identify and glue singular loci, including their smooth-pullback API at line 465.
 
@@ -117,7 +117,7 @@ Here D denotes the native closed unit polydisc; π has 0 < |π| < 1. Model space
 
 ### Sampled adversarial computations
 
-Representative rows from the completed target and Check review are retained below. All four Lean declaration rows above are retained. README line numbers refer to packages/AdicSpacesPartIIPartII/README.md. K has the standing complete, nontrivial, rank-one nonarchimedean valuation; D is the unit disc, C=Spa(K⟨X,Y⟩/(XY)) is the crossing, and Q=Spa(K⟨u²,u³⟩) is the cusp. These computations test statements; they do not constitute proofs.
+Representative rows from the completed target and Check review are retained below. All four Lean declaration rows above are retained. README line numbers refer to packages/AdicSpacesPartV/README.md. K has the standing complete, nontrivial, rank-one nonarchimedean valuation; D is the unit disc, C=Spa(K⟨X,Y⟩/(XY)) is the crossing, and Q=Spa(K⟨u²,u³⟩) is the cusp. These computations test statements; they do not constitute proofs.
 
 | Target; README line | Context, instances and computed values on the claimed sides | Result/change |
 |---|---|---|
@@ -211,7 +211,7 @@ All five declared gaps have exactly the same slug, supplier, section and needs s
 The mechanical dependency check returned:
 
 ```text
-moved: AdicSpacesPartIIPartII moved in the merge order from #9 to #11, right after its last supplier AdicEtaleGeometry (AdicSpacesPartIII also came after it); checked as moved (the worker moves it there when it submits)
+moved: AdicSpacesPartV moved in the merge order from #9 to #11, right after its last supplier AdicEtaleGeometry (AdicSpacesPartIII also came after it); checked as moved (the worker moves it there when it submits)
 depcheck: 56 roadmaps, 645 edges, 0 problem(s)
 ```
 
@@ -272,7 +272,7 @@ The following 33 groups were checked against the cached legal text, including th
 
 The report's computed examples also fix conventions shared across these sources: reduction sends ring maps contravariantly; unit Gauss norms use max of coefficient norms; tangent maps point from source to target; rank-k normal forms keep the first k coordinates; a unit-ideal blow-up is identity while a zero-ideal blow-up is empty; a Cartier centre is retained in a marked sequence. The GL₂ determinant and G_m inverse calculations fix the two signs appearing in the atlas examples. There are no Frobenius, Tate-twist or Haar-normalization conventions in these statements to test.
 
-The pull-request diff contains nine files, all under packages/AdicSpacesPartIIPartII. The README and Lean contain no pull-request-number narrative, computational algorithm, prohibited option or extra roadmap import. The source manifest uses one key per cited work and specifies preprint numbering where applicable. No previously settled non-actionable finding is re-raised.
+The pull-request diff contains nine files, all under packages/AdicSpacesPartV. The README and Lean contain no pull-request-number narrative, computational algorithm, prohibited option or extra roadmap import. The source manifest uses one key per cited work and specifies preprint numbering where applicable. No previously settled non-actionable finding is re-raised.
 
 ## Not verifiable
 
@@ -290,4 +290,4 @@ No newly missing source was required, and no settled reference was reopened. Fin
 - **Error** in CONRAD99 at paragraph following Definition 2.2.2, printed p. 14 (lines 648–649): the source says local-ring irreducibility is equivalent to uniqueness of the global component through the point; it should be uniqueness of the local analytic branch, since an integral nodal cubic has one global component but two branches; affects nothing.
 - **Misprint** in BH22 at Proposition 2.2, proof of (1) ⇒ (2), printed p. 6 (lines 266–270): the source says the localized reduction is a rank-one valuation ring with pseudo-uniformizer t; it should be the integral-ring localization at the inverse-image prime, with completion where needed; affects the proof.
 
-<!-- tauceti-roadmap-review {"agent": "codex", "head": "2fad3dd6aa712ac3515b400b513752bf5f12aeeb", "job": "RT-AdicSpacesPartIIPartII~1a", "model": "gpt-6-astra", "worker": "chris-3"} -->
+<!-- tauceti-roadmap-review {"agent": "codex", "head": "2fad3dd6aa712ac3515b400b513752bf5f12aeeb", "job": "RT-AdicSpacesPartV~1a", "model": "gpt-6-astra", "worker": "chris-3"} -->

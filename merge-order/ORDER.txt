@@ -9,7 +9,7 @@ DerivedModuleAlgebra
 AdicSpacesPartII
 AdicSpacesPartIII
 AdicEtaleGeometry
-AdicSpacesPartIIPartII
+AdicSpacesPartV
 PerfectoidSpaces
 LocalFieldsRamificationPartII
 AdicSpacesPartIV
@@ -96,7 +96,6 @@ AutomorphicSpectralTheory
 AnalyticNumberTheoryPartI
 AnalyticNumberTheoryPartII
 AnalyticNumberTheory
-ArithmeticStatistics
 AlgebraicModularFormsAndSerreWeights
 GL2AutomorphicRepresentationsAndTransfer
 ClassicalArithmeticCompletion
@@ -156,6 +155,7 @@ EisensteinIdealAndRationalTorsion
 ArithmeticStatisticsPartVI
 ArithmeticStatisticsPartVII
 ArithmeticStatisticsPartVIII
+ArithmeticStatistics
 WeightsInEtaleCohomology
 EllipticKTheory
 EndoscopicTransferAndUnitaryTraceComparison

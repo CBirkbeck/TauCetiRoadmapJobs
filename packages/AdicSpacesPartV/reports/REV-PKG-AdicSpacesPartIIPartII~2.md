@@ -84,7 +84,7 @@ Verdict: needs changes
    - **Witness.** For |c| = 1 the disc contains T = 0, which is not in G_m^an.
    - **Repair.** Write "for 0 < |c| < 1". Test: |c| = 1/p gives |T| = 1 on the disc, which then lies in G_m^an.
 
-Scope: `packages/AdicSpacesPartIIPartII/README.md` (1003 lines), `Suggested.lean` (102 lines), `metadata.toml`, `sources.toml`, and `design/plan.json` (gaps only). I read them against the content repository at main, the open roadmap pull requests through the roadmaps tool (352 heads), the board packages, `merge-order/ORDER.txt`, and the pinned Mathlib and Tau Ceti of the content `lake-manifest.json`. The previous review and its repair report were read first. All fifteen previous findings are repaired or settled. The repairs introduced two new defects (R01, R03). The fresh pass adds one blocking duplication (R02) and four non-blocking notes.
+Scope: `packages/AdicSpacesPartV/README.md` (1003 lines), `Suggested.lean` (102 lines), `metadata.toml`, `sources.toml`, and `design/plan.json` (gaps only). I read them against the content repository at main, the open roadmap pull requests through the roadmaps tool (352 heads), the board packages, `merge-order/ORDER.txt`, and the pinned Mathlib and Tau Ceti of the content `lake-manifest.json`. The previous review and its repair report were read first. All fifteen previous findings are repaired or settled. The repairs introduced two new defects (R01, R03). The fresh pass adds one blocking duplication (R02) and four non-blocking notes.
 
 ## Previous findings
 
@@ -109,7 +109,7 @@ Scope: `packages/AdicSpacesPartIIPartII/README.md` (1003 lines), `Suggested.lean
 ## Verified sound
 
 **Elaboration.**
-- `lake env lean` on `packages/AdicSpacesPartIIPartII/Suggested.lean`, run from the content checkout, exits 0 in about 4 s. Its only diagnostics are three "declaration uses `sorry`" warnings (ll. 45, 62, 94). No `TauCeti.*` object file was missing.
+- `lake env lean` on `packages/AdicSpacesPartV/Suggested.lean`, run from the content checkout, exits 0 in about 4 s. Its only diagnostics are three "declaration uses `sorry`" warnings (ll. 45, 62, 94). No `TauCeti.*` object file was missing.
 - Form: one `import Mathlib` plus one used Tau Ceti module; no `set_option`, `lemma`, sorry'd data, `#eval` or `True`. `IsUnitGaussPoint` has a real body. Every declaration has a docstring. Layer section comments are present.
 
 **Binder check.**
@@ -127,7 +127,7 @@ Scope: `packages/AdicSpacesPartIIPartII/README.md` (1003 lines), `Suggested.lean
 
 **Dependency check.**
 
-    moved: AdicSpacesPartIIPartII moved in the merge order from #9 to #10, right after its last supplier AdicSpacesPartIII; checked as moved (the worker moves it there when it submits)
+    moved: AdicSpacesPartV moved in the merge order from #9 to #10, right after its last supplier AdicSpacesPartIII; checked as moved (the worker moves it there when it submits)
     depcheck: 48 roadmaps, 541 edges, 0 problem(s)
 
 There are no UPWARD or CYCLE lines. `roadmaps resolve` reports no citations or Lean names found nowhere.
@@ -257,4 +257,4 @@ Also verified for the repaired passages:
 - **Misprint** in HK2 at proof of Theorem 9.1.3, p. 58 (line 2600): the source says the orbit K₀·y is an element of V(C); it should be a subset of V(C); affects nothing.
 - **Error** in CONRAD99 at §2.2, author p. 14 (line 648): the source says Spec O_{X,x} is irreducible exactly when one irreducible component passes through x; it should be only the forward implication (the nodal cubic has one component and two branches); affects nothing.
 
-<!-- tauceti-roadmap-review {"agent": "claude", "head": "1988e25", "job": "REV-PKG-AdicSpacesPartIIPartII~2", "model": "opus", "worker": "fable-rev92"} -->
+<!-- tauceti-roadmap-review {"agent": "claude", "head": "1988e25", "job": "REV-PKG-AdicSpacesPartV~2", "model": "opus", "worker": "fable-rev92"} -->

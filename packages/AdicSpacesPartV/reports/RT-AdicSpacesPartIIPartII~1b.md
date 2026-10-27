@@ -5,7 +5,7 @@ Verdict: needs_changes
 
 1. **F01** (P2) §4.1 surjectivity of the specialisation map is attributed to a supplier that states it only for closed points
 
-   Location: `packages/AdicSpacesPartIIPartII/README.md:662`, "formal specialization is surjective onto the special fibre by the formal-model contract", and the API bullet at line 658 "sp is surjective".
+   Location: `packages/AdicSpacesPartV/README.md:662`, "formal specialization is surjective onto the special fibre by the formal-model contract", and the API bullet at line 658 "sp is surjective".
 
    Claim: the proof route of §4.1 derives surjectivity of sp : Spa(A, A°) → Spec Ã onto every point of Spec Ã from AdicSpacesPartIII R2.4–R2.5.
 
@@ -15,7 +15,7 @@ Verdict: needs_changes
 
 2. **F02** (P2) ascent and descent of regularity, and finiteness of normalisation, are cited to SchemeAndStackFoundations §0.21, which states neither
 
-   Location: `packages/AdicSpacesPartIIPartII/README.md:111`, "Use ascent and faithfully flat descent of regularity and normality and finiteness of normalization for Nagata rings"; line 244, "faithful flatness of B_n → B̂_n descends regularity of A_m → B_n"; line 290, "A excellent, hence Nagata and Japanese, SchemeAndStackFoundations §0.21"; line 468, "regularity ascends along regular maps and descends along faithfully flat local maps".
+   Location: `packages/AdicSpacesPartV/README.md:111`, "Use ascent and faithfully flat descent of regularity and normality and finiteness of normalization for Nagata rings"; line 244, "faithful flatness of B_n → B̂_n descends regularity of A_m → B_n"; line 290, "A excellent, hence Nagata and Japanese, SchemeAndStackFoundations §0.21"; line 468, "regularity ascends along regular maps and descends along faithfully flat local maps".
 
    Claim: the §0.5 and §2.1 proof routes rest on (a) descent of regularity of local rings along flat local homomorphisms and (b) ascent of regularity along flat maps with regular fibres, and §1.1 on finiteness of integral closure for Nagata rings, all supplied by SchemeAndStackFoundations §0.21.
 
@@ -25,7 +25,7 @@ Verdict: needs_changes
 
 3. **F03** (P3) the universal property of normalisation in §1.1 has no proof route and needs the later §1.7
 
-   Location: `packages/AdicSpacesPartIIPartII/README.md:287`, "Every morphism g : Y → X from a normal rigid space that is dominant on each connected component … factors uniquely through p."
+   Location: `packages/AdicSpacesPartV/README.md:287`, "Every morphism g : Y → X from a normal rigid space that is dominant on each connected component … factors uniquely through p."
 
    Claim: this API bullet is a consequence of the construction in §1.1 with the *Needs:* line at 292.
 
@@ -40,11 +40,11 @@ Declarations read: 4 of 4 in `Suggested.lean`. README targets read: all 40 subse
 Dependency check output:
 
 ```
-moved: AdicSpacesPartIIPartII moved in the merge order from #9 to #11, right after its last supplier AdicEtaleGeometry (AdicSpacesPartIII also came after it); checked as moved (the worker moves it there when it submits)
+moved: AdicSpacesPartV moved in the merge order from #9 to #11, right after its last supplier AdicEtaleGeometry (AdicSpacesPartIII also came after it); checked as moved (the worker moves it there when it submits)
 depcheck: 56 roadmaps, 642 edges, 0 problem(s)
 ```
 
-Policy: the pull request changes only `packages/AdicSpacesPartIIPartII/`; no `lemma`, no `set_option`, no `#eval`/`#print`, no pull-request numbers or process words in README or docstrings; single `import Mathlib` plus one existing Tau Ceti module; every target has a locator; every Lean name occurs in the README once and the README's own backticked names are the four declarations. Declared gaps: all five have a named supplier, a single precise `needs` sentence, the same slug in `design/plan.json` and the README; none asks for what Mathlib, Tau Ceti or an earlier roadmap provides (AdicSpacesPartIII R3.6 explicitly takes Kiehl-properness as a hypothesis for general K, lines 10962–10968; R2.4 has no quasi-paracompact realisation; ResolutionOfSingularitiesCharacteristicZero §§7.5–7.6 are stated for reduced schemes; ReductiveGroups Layer 3 says representability and smoothness are theorems with hypotheses).
+Policy: the pull request changes only `packages/AdicSpacesPartV/`; no `lemma`, no `set_option`, no `#eval`/`#print`, no pull-request numbers or process words in README or docstrings; single `import Mathlib` plus one existing Tau Ceti module; every target has a locator; every Lean name occurs in the README once and the README's own backticked names are the four declarations. Declared gaps: all five have a named supplier, a single precise `needs` sentence, the same slug in `design/plan.json` and the README; none asks for what Mathlib, Tau Ceti or an earlier roadmap provides (AdicSpacesPartIII R3.6 explicitly takes Kiehl-properness as a hypothesis for general K, lines 10962–10968; R2.4 has no quasi-paracompact realisation; ResolutionOfSingularitiesCharacteristicZero §§7.5–7.6 are stated for reduced schemes; ReductiveGroups Layer 3 says representability and smoothness are theorems with hypotheses).
 
 Headlines and padding: the Summary's headlines are Gauss-point closure (stated), functorial rigid resolution, connectedness of the resolution, rational-point manifolds (each named as unstatable in the module docstring, correctly: Tau Ceti at the pin has `PreAdicSpace`, `spa` and the polydisc but no rigid-space category, coherent ideals, blow-ups or smoothness), the constant-rank normal form (stated), subfield detection in coordinates (stated) and on G(C) (named unstatable: no algebraic-group carrier with a points topology at the pin). One-tactic probe: `IsUnitGaussPoint` is a definition with a real body needed by the headline; the three theorems are not instances of any pinned lemma (Tau Ceti's `gaussPoint` is one-variable and has no closure statement; Mathlib has the inverse function theorem but no constant-rank theorem, `Manifold.IsSubmersionAt` being a definition with its rank criterion listed as a TODO at `Mathlib/Geometry/Manifold/Submersion.lean:64–73`; no identity theorem across a subfield). No padding.
 
@@ -113,4 +113,4 @@ Adversarial mathematics pass (statement; instances; values on each side; result;
 - **Misprint** in BH22 at Proposition 2.2 proof, p. 6 (line 243): the source says the chosen open bounded subalgebra is contained in itself; it should be contained in the power-bounded subring A°; affects nothing.
 - **Misprint** in BH22 at Corollary 2.10 proof, p. 8 (line 349): the source says the local-dimension inequality of Z against X holds for all points of X; it should be for all points of Z, where dim_x Z is defined; affects nothing.
 
-<!-- tauceti-roadmap-review {"agent": "claude", "head": "2fad3dd6aa712ac3515b400b513752bf5f12aeeb", "job": "RT-AdicSpacesPartIIPartII~1b", "model": "fable", "worker": "chris-k"} -->
+<!-- tauceti-roadmap-review {"agent": "claude", "head": "2fad3dd6aa712ac3515b400b513752bf5f12aeeb", "job": "RT-AdicSpacesPartV~1b", "model": "fable", "worker": "chris-k"} -->

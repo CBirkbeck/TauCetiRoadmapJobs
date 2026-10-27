@@ -5,7 +5,7 @@ Verdict: needs_changes
 
 1. **F01** (P1) Adic properness is silently strengthened to Kiehl properness
 
-   **Location.** packages/AdicSpacesPartIIPartII/README.md:81, 219–223: “coherence of f_*F for proper f and coherent F”; “f proper in the sense of AdicSpacesPartII R0.10–R0.12”.
+   **Location.** packages/AdicSpacesPartV/README.md:81, 219–223: “coherence of f_*F for proper f and coherent F”; “f proper in the sense of AdicSpacesPartII R0.10–R0.12”.
 
    **Claim.** The cited suppliers provide coherent direct image for every adic-proper rigid morphism over every standing field K, without another properness hypothesis.
 
@@ -23,7 +23,7 @@ Verdict: needs_changes
 
 2. **F02** (P2) The group identity theorem uses nonarchimedean charts over arbitrary normed fields
 
-   **Location.** packages/AdicSpacesPartIIPartII/README.md:966–972: “Let E ⊆ C be complete nontrivially normed fields of characteristic 0”; “choose a chart of G(E) at 1 coming from a polydisc neighbourhood”.
+   **Location.** packages/AdicSpacesPartV/README.md:966–972: “Let E ⊆ C be complete nontrivially normed fields of characteristic 0”; “choose a chart of G(E) at 1 coming from a polydisc neighbourhood”.
 
    **Claim.** The group consequence is stated at the same all-complete-normed-field generality as the scalar theorem, using §§6.2–6.3 to construct the requisite compatible charts.
 
@@ -37,7 +37,7 @@ Verdict: needs_changes
 
 3. **F03** (P3) The repaired Layer 4 dependency is still printed in reverse build order
 
-   **Location.** packages/AdicSpacesPartIIPartII/README.md:679–681: “by §4.3(2) each generic point has exactly one preimage”; “*Needs:* §4.1; §4.3”.
+   **Location.** packages/AdicSpacesPartV/README.md:679–681: “by §4.3(2) each generic point has exactly one preimage”; “*Needs:* §4.1; §4.3”.
 
    **Claim.** The numbered subsections follow the build order promised in How to read the build.
 
@@ -49,7 +49,7 @@ Verdict: needs_changes
 
 4. **F04** (P3) The Banach spectrum has an existing owner missing from the contracts
 
-   **Location.** packages/AdicSpacesPartIIPartII/README.md:693–699: “the seminorm |·|_x lies in the Shilov boundary of the Banach K-algebra A”; “Compare the rank-one multiplicative seminorms with the Banach spectrum”.
+   **Location.** packages/AdicSpacesPartV/README.md:693–699: “the seminorm |·|_x lies in the Shilov boundary of the Banach K-algebra A”; “Compare the rank-one multiplicative seminorms with the Banach spectrum”.
 
    **Claim.** The specified inputs suffice to state the fourth characterization and its comparison, while the supplier table lists only AdicSpacesPartIII R2.2–R2.5 and R3.1–R3.3, R3.6.
 
@@ -169,7 +169,7 @@ The headline inventory from the Summary and deep layer targets is: proper images
 
 Three headlines are statable on the pinned native carriers and are present: gaussPoint_mem_closure_rationalPoints, analytic_constantRank and analytic_germ_eq_zero_of_subfield. The sole additional definition, IsUnitGaussPoint, has a real body fixing the native valuation class and is necessary for the first statement. The module docstring names all the other groups of headlines and their missing rigid/affinoid/coherent/morphism/point-atlas carriers, including resolution connectedness and the group consequence. A few words of a source alone would not supply those missing native structures. No statable headline was found absent and no headline was forced through a stand-in.
 
-Ran the prescribed lake env lean command on the original packages/AdicSpacesPartIIPartII/Suggested.lean from the pinned content checkout, with its absolute input path. It exited 0. The complete diagnostics were three “declaration uses sorry” warnings at lines 49, 66 and 98. No TauCeti object file was missing, so no build was needed.
+Ran the prescribed lake env lean command on the original packages/AdicSpacesPartV/Suggested.lean from the pinned content checkout, with its absolute input path. It exited 0. The complete diagnostics were three “declaration uses sorry” warnings at lines 49, 66 and 98. No TauCeti object file was missing, so no build was needed.
 
 Appended #check @ for all four declarations to one scratch copy and elaborated it once. All four types retained the expected binders; no author file or signature changed:
 
@@ -248,7 +248,7 @@ Read every Needs line and supplier citation. The explicit internal section graph
 
 The prescribed dependency check exited 0 and reported exactly:
 
-    moved: AdicSpacesPartIIPartII moved in the merge order from #9 to #11, right after its last supplier AdicEtaleGeometry (AdicSpacesPartIII also came after it); checked as moved (the worker moves it there when it submits)
+    moved: AdicSpacesPartV moved in the merge order from #9 to #11, right after its last supplier AdicEtaleGeometry (AdicSpacesPartIII also came after it); checked as moved (the worker moves it there when it submits)
     depcheck: 51 roadmaps, 585 edges, 0 problem(s)
 
 No UPWARD or CYCLE line. This movement is allowed by the brief; the merge-order file was not edited. The citation resolver reported no cross-roadmap citations or roadmap Lean names found nowhere. Library names were checked independently at the pins, as listed above.
@@ -291,4 +291,4 @@ No directly cited unsettled source was unread. Works cited only inside the sourc
 
 The package already avoids these source issues: it distinguishes local branches from global components, uses the power-bounded ring before completion, and requires proper or nowhere dense closed subsets. No published correction was established in this review.
 
-<!-- tauceti-roadmap-review {"agent": "codex", "head": "61492b571d305eb9cae2a83938bfe7dd897306cc", "job": "REV-PKG-AdicSpacesPartIIPartII~3", "model": "gpt-6-astra", "worker": "chris-12"} -->
+<!-- tauceti-roadmap-review {"agent": "codex", "head": "61492b571d305eb9cae2a83938bfe7dd897306cc", "job": "REV-PKG-AdicSpacesPartV~3", "model": "gpt-6-astra", "worker": "chris-12"} -->
