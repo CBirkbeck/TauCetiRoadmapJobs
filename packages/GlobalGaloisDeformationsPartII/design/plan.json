@@ -5008,6 +5008,12 @@
       "section": "§7.7"
     },
     {
+      "slug": "levi-restricted-adjoint-h1",
+      "needs": "At §7.7: For each split connected reductive root datum there is B, depending only on it, such that for finite k of characteristic p>B, a Levi subgroup L of a parabolic of G over k and a finite Γ⊂L(k)×k× whose projection to L(k) is absolutely L-irreducible, H¹(Γ,W∨⊗χ)=0 for every absolutely irreducible k[Γ]-subquotient W of Lie(Gᵈᵉʳ)⊗k restricted to Γ through the first projection, χ being the second projection; hence H¹ of Γ vanishes with coefficients in the dual of the semisimplification of that restriction, twisted by χ.",
+      "supplier": "ArithmeticGaloisRepresentations",
+      "section": "§7.7"
+    },
+    {
       "slug": "small-dimensional-extension-splitting",
       "needs": "At §7.7: for each n≥2 there is B(n) such that, for finite k of characteristic p>B(n), every Γ⊂P(k) for the (n₁,n₂) block parabolic of GLₙ, n₁,n₂>0 and n₁+n₂=n, with absolutely irreducible diagonal block modules and injective projection to its Levi image, has a Γ-stable complement to the first block in kⁿ.",
       "supplier": "ArithmeticGaloisRepresentations",

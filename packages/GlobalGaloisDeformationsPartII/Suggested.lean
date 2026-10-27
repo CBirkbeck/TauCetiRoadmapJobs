@@ -8,8 +8,9 @@ headline theorems against the pinned APIs.
 
 The general reducible lifting headlines and their applications retain the
 arithmetic selection hypothesis of README §3.2; the irreducible number-field
-theorem in §6.6 uses its independent FKP19 route. No headline theorem is statable
-at the pins.
+theorem in §6.6 uses its independent FKP19 route, and the ordinary symplectic
+lifts of §§10.1–10.3 rest on §6.6 without that hypothesis. No headline theorem is
+statable at the pins.
 
 The following headline theorems are not statable at the pins:
 * Controlled G-valued finite-level towers: the fixed-quotient arithmetic lifting
