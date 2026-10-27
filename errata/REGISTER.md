@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-7956 mistakes recorded on the board: 4781 misprints, 2012 errors, 849 gaps, 314 unparsed bullets.
+7966 mistakes recorded on the board: 4787 misprints, 2016 errors, 849 gaps, 314 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -1377,6 +1377,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## bennett-siksek-2020
 
+- **Misprint** at §2, definition preceding Theorem3, printed p.358, line174: the source says ord_q(x) is the largest prime power dividing x; it should be the exponent v_q(x); affects a stated result. Found by EllipticModularityEffectiveComparisons (#1361 at f72311b, 2026-10-27, codex gpt-6-astra).
 - **Misprint** at §2, gloss after eq. (3), p. 358 (line 174): the source says ord_q(x) is the largest power of q dividing x; it should be the exponent of that power; affects nothing. Found by EllipticModularityEffectiveComparisons (#1361 at 29422ea, 2026-10-25, claude opus).
 - **Misprint** at §2, gloss after equation (3), printed p.358 (line 174): the source says the source describes ord_q as a prime power; it should be denote its exponent; affects nothing. Found by EllipticModularityEffectiveComparisons (#1361 at 249b80c, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at §2, gloss after equation (3), printed p.358 (line 174): the source says ord_q is a prime power; it should be the exponent of that prime; affects nothing. Found by EllipticModularityEffectiveComparisons (#1361 at b2c37f3, 2026-10-25, codex gpt-6-astra).
@@ -1741,6 +1742,8 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Gap** at Proposition 5.9, p. 979 (line 971), and in the abstract: the source says the range is stated as 11 ⩽ p, but the proof uses Corollary 5.7, which assumes p > 11; it should be 11 < p, as in Theorem 1.1 and Corollary 5.10; affects a stated result. Found by EllipticModularityEffectiveComparisons (#1361 at 29422ea, 2026-10-25, claude opus).
 - **Gap** at Proposition 5.9, printed p.979 (lines 971–977): the source says the source includes p=11 although its criterion requires p>11; it should be use the strict boundary of Theorem 1.1 and Corollary 5.10; affects a stated result. Found by EllipticModularityEffectiveComparisons (#1361 at 249b80c, 2026-10-25, codex gpt-6-astra).
 - **Gap** at Proposition 5.9, printed p.979 (lines 971–977): the source says the proposition includes p=11 although its criterion requires p>11; it should be restricted to the strict boundary of Theorem 1.1 and Corollary 5.10; affects a stated result. Found by EllipticModularityEffectiveComparisons (#1361 at b2c37f3, 2026-10-25, codex gpt-6-astra).
+- **Misprint** at Theorem3.1 proof, printed p.968, line572: the source says an integer j has height log|j|; it should be log max(1,|j|), including j=0; affects nothing. Found by EllipticModularityEffectiveComparisons (#1361 at f72311b, 2026-10-27, codex gpt-6-astra).
+- **Error** at §5.1.2, printed p.975, line812: the source says supersingular curve classes biject with maximal-order types; it should be ideal-class data, since distinct Frobenius-conjugate j-values can have the same endomorphism-order type; affects the proof. Found by EllipticModularityEffectiveComparisons (#1361 at f72311b, 2026-10-27, codex gpt-6-astra).
 
 ## BIP
 
@@ -3728,11 +3731,14 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## darmon-merel
 
+- **Misprint** at Lemma8.2 proof, author-version p.23, lines753–755: the source says dt/t is a basis of the ordinary cotangent at t=0; it should be dt, with the modular differential's width factor retained; affects the proof. Found by EllipticModularityEffectiveComparisons (#1361 at f72311b, 2026-10-27, codex gpt-6-astra).
 - **Misprint** at Proposition 7.1 proof, author-version p.21 (line 660): the source says the positive normalized integral along 0 to i∞ for L(f,1); it should be give its negative; affects nothing. Found by EllipticModularityEffectiveComparisons (#1361 at 249b80c, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at Proposition 7.1 proof, author-version p.21 (lines 660–663): the source says the normalized path integral equals L(f,1); it should be its negative for the path from zero to i∞; affects nothing. Found by EllipticModularityEffectiveComparisons (#1361 at b2c37f3, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at Proposition 7.1, proof, author-version p. 21 (line 660): the source says the source equates L(f,1) with 2πi times the integral of f from 0 to i∞; it should be carry a minus sign, L(f,1) = −2πi∫; affects nothing. Found by EllipticModularityEffectiveComparisons (#1361 at 29422ea, 2026-10-25, claude opus).
 - **Misprint** at Proposition 7.2 proof, author-version p.22 (line 696): the source says the source identifies the transferred boundary ∞−0 with D; it should be −D by Corollary 6.4 and the definition of D; affects nothing. Found by EllipticModularityEffectiveComparisons (#1361 at 249b80c, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at Proposition 7.2 proof, author-version p.22 (line 696): the source says the boundary infinity minus zero maps to D; it should be −D with the stated divisor convention; affects nothing. Found by EllipticModularityEffectiveComparisons (#1361 at b2c37f3, 2026-10-25, codex gpt-6-astra).
+- **Misprint** at Proposition7.1 proof, author-version p.21, lines660–663: the source says the normalized integral from 0 to i∞ equals L(f,1); it should be −L(f,1), with that orientation; affects a stated result. Found by EllipticModularityEffectiveComparisons (#1361 at f72311b, 2026-10-27, codex gpt-6-astra).
+- **Misprint** at Proposition7.2 proof, author-version p.22, line696: the source says α_r((∞)−(0)) equals D; it should be −D under Corollary6.4; affects nothing. Found by EllipticModularityEffectiveComparisons (#1361 at f72311b, 2026-10-27, codex gpt-6-astra).
 
 ## DarmonMerel2001
 
@@ -4199,6 +4205,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Elkies
 
 - **Misprint** at the paragraph after equation (153), author p. 55, Elkies line 2505: the source says the upper double-cover curve has seven finite rational points; it should be the lower elliptic quotient `X₀⁺⁺(75)`; affects nothing. Found by EllipticCurveModularityWild3Adic (#135 at b3316c7, 2026-10-23, codex gpt-6-astra).
+
+## elkik-1990
+
+- **Error** at §II, printed p.62, lines135–148: the source says logarithmic differentials pull back isomorphically for a finite map of smooth open curves; it should be restricted to maps étale off the boundary, or include interior ramification; affects the proof; <!-- tauceti-roadmap-review {"agent": "codex", "head": "f72311b68918682528907159ff522a4193020420", "job": "RT-EllipticModularityEffectiveComparisons~1a", "model": "gpt-6-astra", "worker": "chris-4"} -->. Found by EllipticModularityEffectiveComparisons (#1361 at f72311b, 2026-10-27, codex gpt-6-astra).
 
 ## Ellenberg–Venkatesh–Westerland, Homological stability for Hurwitz spaces and the Cohen–Lenstra conjecture over function fields II, arXiv:1212.0923v1
 
@@ -7065,13 +7075,16 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## lemos-2017
 
+- **Misprint** at Proposition2.4 proof, p.7, line280: the source says the S-unit parameter must be p^k; it should be ±p^k, retaining negative units; affects the proof. Found by EllipticModularityEffectiveComparisons (#1361 at f72311b, 2026-10-27, codex gpt-6-astra).
 - **Gap** at Theorem 3.3, p.9 (line 349): the source says the source attributes the isogeny for r=5,7,13 directly to Darmon–Merel Theorem 6.1; it should be justify extending the stated r=1,2,3 argument using genus zero; affects the proof. Found by EllipticModularityEffectiveComparisons (#1361 at 249b80c, 2026-10-25, codex gpt-6-astra).
 - **Gap** at Theorem 3.3, p.9 (line 349): the source says the r=5,7,13 isogenies follow directly from Darmon–Merel's three-level theorem; it should be an explicitly justified extension of the mixed-level comparison; affects the proof. Found by EllipticModularityEffectiveComparisons (#1361 at b2c37f3, 2026-10-25, codex gpt-6-astra).
+- **Error** at Theorem1.1 proof, p.5, lines193–194: the source says J₀(37) has rank zero; it should be positive rank, with a conductor-37 rank-one elliptic quotient; affects the proof. Found by EllipticModularityEffectiveComparisons (#1361 at f72311b, 2026-10-27, codex gpt-6-astra).
 - **Misprint** at §1, p.1 (line 34): the source says the source attributes split-Cartan exclusion starting at p=11 to Bilu–Parent–Rebolledo; it should be start strictly above 11, still excluding 13; affects nothing; <!-- tauceti-roadmap-review {"agent": "codex", "head": "249b80c88330b84c0676b6d3c2d9d946f9c34f63", "job": "REV-PKG-EllipticModularityEffectiveComparisons~2", "model": "gpt-6-astra", "worker": "chris-10"} -->. Found by EllipticModularityEffectiveComparisons (#1361 at 249b80c, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at §1, p.1 (line 34): the source says Bilu–Parent–Rebolledo excludes the split-Cartan case beginning at p=11; it should be strictly above 11, still excluding 13; affects nothing; <!-- tauceti-roadmap-review {"agent": "codex", "head": "b2c37f36014fad2ba75cf428be470830040636b8", "job": "REV-PKG-EllipticModularityEffectiveComparisons~3", "model": "gpt-6-astra", "worker": "chris-32"} -->. Found by EllipticModularityEffectiveComparisons (#1361 at b2c37f3, 2026-10-25, codex gpt-6-astra).
 - **Error** at §2, proof of Theorem 1.1, p.5: the source says the Jacobian of X₀(37) has rank zero; it should be that a rank-zero quotient exists while the Jacobian itself has positive rank, with the rational points of X₀(37) determined separately; affects the proof; <!-- tauceti-roadmap-review {"agent": "claude", "head": "f72311b", "job": "REV-PKG-EllipticModularityEffectiveComparisons~4", "model": "fable", "worker": "fable-rev130"} -->. Found by EllipticModularityEffectiveComparisons (#1361 at f72311b, 2026-10-25, claude fable).
 - **Error** at §2, proof of Theorem 1.1, p.5 (lines 193–194): the source says the source assigns rank zero to J₀(37); it should be allow its rank-one elliptic quotient and use the independent rational-point exhaustion; affects the proof. Found by EllipticModularityEffectiveComparisons (#1361 at 249b80c, 2026-10-25, codex gpt-6-astra).
 - **Error** at §2, proof of Theorem 1.1, p.5 (lines 193–194): the source says J₀(37) has rank zero; it should be a positive-rank Jacobian, with an independent rational-point exhaustion used instead; affects the proof. Found by EllipticModularityEffectiveComparisons (#1361 at b2c37f3, 2026-10-25, codex gpt-6-astra).
+- **Error** at §3, p.8, lines308–309: the source says the degree-p pullback d* preserves divisor degree; it should be multiplication of degree by p, which still preserves degree zero; affects nothing. Found by EllipticModularityEffectiveComparisons (#1361 at f72311b, 2026-10-27, codex gpt-6-astra).
 
 ## Lemos2017
 
