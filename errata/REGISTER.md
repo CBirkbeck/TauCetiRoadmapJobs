@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-8414 mistakes recorded on the board: 5039 misprints, 2161 errors, 900 gaps, 314 unparsed bullets.
+8431 mistakes recorded on the board: 5052 misprints, 2163 errors, 902 gaps, 314 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -1215,6 +1215,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## BC1
 
 - **Misprint** at §1.2 following (1.2.2), printed p.2, BC1 line 78: the source says X*(H) consists of homomorphisms from F× to H; it should be X_*(H), the cocharacter lattice; affects nothing. Found by SmoothRepresentationsOfLocalGroupsPartII (#1642 at e4d41bc, 2026-10-27, codex gpt-6-astra).
+
+## BC22
+
+- **Misprint** at proof of Lemma 2.3.2, printed page 27 (BC22 line 1134): the source says the supported cohomology functors are left derived functors; it should be right derived functors, computed using injectives; affects the proof. Found by PurityForFlatCohomology (#2153 at 84e8f65, 2026-10-27, codex gpt-6-astra).
 
 ## BCDT
 
@@ -2803,6 +2807,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Gap** at Proposition 2.2, printed p. 4 (lines 130–146): the source says injectivity of `H^1(V, G) → H^1(V_{R′}, G)` for a smooth affine group `G` and argues through the exact sequence of pointed sets, which for noncommutative `G` gives only the fibre over the trivial class; it should be assume `G` commutative, as both uses (Proposition 2.3, Corollary 2.4) do; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "abded8a", "job": "REV-PKG-PurityForFlatCohomology", "model": "fable", "worker": "fable-rev195"} -->. Found by PurityForFlatCohomology (#2153 at abded8a, 2026-10-26, claude fable).
 - **Gap** at Proposition 2.2, printed page 4: the source says for a noncommutative smooth affine `G` the argument controls only the fibre of `H^1(V, G) → H^1(V_{R′}, G)` over the trivial class (twisting by a torsor over `V` destroys hypotheses (1)–(2), which are over `R`); it should be assume `G` commutative or state triviality of that fibre; affects the proof; only (both uses, Proposition 2.3 and Corollary 2.4, have commutative `G`; already recorded by the package). <!-- tauceti-roadmap-review {"agent": "claude", "head": "84e8f65", "job": "RT-PurityForFlatCohomology~1b", "model": "fable", "worker": "fable-rt215"} -->. Found by PurityForFlatCohomology (#2153 at 84e8f65, 2026-10-26, claude fable).
+- **Gap** at proof of Proposition 2.2, printed page 4 (C19 lines 140–146): the source says triviality of the neutral fibre proves injectivity for possibly noncommutative G; it should be supplemented by a twisting argument controlling every fibre, or restricted to commutative G; affects the proof. Found by PurityForFlatCohomology (#2153 at 84e8f65, 2026-10-27, codex gpt-6-astra).
 
 ## C24
 
@@ -3842,17 +3847,23 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at Example 5.6.7, printed p.75: the source says the display is introduced as a statement for degrees at least two but asserts surjectivity in degree one; it should be carry no opening restriction (surjective for i≥1, bijective for i≥2); affects a stated result; Already recorded as the plan's source issue E3; confirmed at CS24 lines 3166–3170. <!-- tauceti-roadmap-review {"agent": "claude", "head": "9022ef2", "job": "REV-DESIGN-SchemeAndStackFoundationsPartII~2", "model": "fable", "worker": "fable-rev158"} -->. Found by SchemeAndStackFoundationsPartII (#420 at 9022ef2, 2026-10-25, claude fable).
 - **Misprint** at Lemma 3.2.3 proof, p.33 (CS24 line 1377): the source says the shifted dual complex vanishes in degrees i>−dim R; it should be i<−dim R, obtained by subtracting 2dim R from the affine bound; affects nothing. Found by EtaleDualityAndPerverseSheavesPartII (#1338 at 9665b07, 2026-10-26, codex gpt-6-astra).
 - **Misprint** at Lemma 4.1.12, printed p. 40 (lines 1636–1642): the source says the source carries the hypothesis `n < dim R`, unused in its proof and violated by the application with `n = dim R` in the proof of Theorem 6.2.7 (line 3579); it should be the lemma for every integer `n`; affects the proof; (of Theorem 6.2.7, formally). Found by PurityForFlatCohomology (#2153 at abded8a, 2026-10-26, claude fable).
+- **Gap** at Lemma 4.1.12, printed page 40, and proof of Theorem 6.2.7, printed page 85 (CS24 lines 1637,3576): the source says n<dim R in the lemma but later uses n=dim R; it should be the same descent lemma for arbitrary integer n, as its proof establishes; affects the proof. Found by PurityForFlatCohomology (#2153 at 84e8f65, 2026-10-27, codex gpt-6-astra).
 - **Error** at Theorem 7.1.2, printed p. 87 (text line 3630): the source says the source allows local rings regular of dimension `≥ d − 1`, which for `d = 1` admits fields, where injectivity of `H^0` fails (`Spec k ⊔ Spec k`); it should be regular of dimension `≥ max(d − 1, 1)`, as its proof via Theorem 6.2.7 needs; affects a stated result. Found by PurityForFlatCohomology (#2153 at abded8a, 2026-10-26, claude fable).
 - **Error** at Theorem 7.1.2, printed page 87: the source says the regular alternative allows local rings of dimension `d − 1 = 0`, i.e. fields, when `d = 1`, and then `H^0(X, G) → H^0(X ∖ Z, G)` need not be injective (`X = Spec k ⊔ Spec k`, `Z` one point); it should be "regular of dimension `≥ max(d − 1, 1)`" (the proof uses Theorem 6.2.7, which excludes fields); affects a stated result; (already recorded by the package). Found by PurityForFlatCohomology (#2153 at 84e8f65, 2026-10-26, claude fable).
+- **Error** at Theorem 7.1.2, printed page 87 (CS24 line 3630): the source says regular local dimension at least d−1 suffices, admitting fields at d=1; it should be regular dimension at least max(d−1,1); affects a stated result. Found by PurityForFlatCohomology (#2153 at 84e8f65, 2026-10-27, codex gpt-6-astra).
 - **Misprint** at proof of Lemma 5.4.2, step (3), printed p.65: the source says the torsion comparison names the unprimed ring's π₀; it should be name π₀ of the primed (semiperfect) algebra; affects nothing. Found by SchemeAndStackFoundationsPartII (#420 at accb0a0, 2026-10-23, claude opus).
 - **Misprint** at proof of Theorem 3.3.1(b), printed p. 35 (line 1453): the source says `vdim(R_d) ≥ 3`; it should be `vdim(R) ≥ 3`; affects nothing. Found by PurityForFlatCohomology (#2153 at abded8a, 2026-10-26, claude fable).
 - **Misprint** at proof of Theorem 3.3.1(b), printed page 35: the source says "`vdim(R_d) ≥ 3`" names an undefined ring; it should be `vdim(R) ≥ 3`; affects nothing; (OCR-uncertain, see above). Found by PurityForFlatCohomology (#2153 at 84e8f65, 2026-10-26, claude fable).
+- **Misprint** at proof of Theorem 3.3.1(b), printed page 35 (CS24 line 1453): the source says the virtual dimension bound applies to R_d; it should be the bound for R; affects the proof. Found by PurityForFlatCohomology (#2153 at 84e8f65, 2026-10-27, codex gpt-6-astra).
 - **Misprint** at proof of Theorem 5.7.2, printed p.80: the source says the truncation used in a base change is written without its ring argument; it should be τ≤n(A); affects nothing. Found by SchemeAndStackFoundationsPartII (#420 at accb0a0, 2026-10-23, claude opus).
 - **Misprint** at proof of Theorem 5.7.2, printed p.81: the source says faithful flatness is taken modulo (a₁,…,a_n), using the power index; it should be modulo (a₁,…,a_r); affects nothing. Found by SchemeAndStackFoundationsPartII (#420 at accb0a0, 2026-10-23, claude opus).
 - **Gap** at proof of Theorem 5.7.2, printed p.81: the source says geometric support cohomology over the non-Noetherian Witt ring is computed by Stacks 0954, which concerns the derived torsion functor; it should be use the extended Čech/dual-Koszul model (Stacks 0A6R) or prove weak proregularity; affects the proof. Found by SchemeAndStackFoundationsPartII (#420 at accb0a0, 2026-10-23, claude opus).
 - **Misprint** at proof of Theorem 6.2.7, printed p. 85 (line 3578): the source says `f ∈ (p, x_1, …, x_n)²`; it should be `(p, x_1, …, x_d)²`; affects nothing. Found by PurityForFlatCohomology (#2153 at abded8a, 2026-10-26, claude fable).
 - **Gap** at proof of Theorem 6.2.7, printed page 85: the source says it applies Lemma 4.1.12 with `n = dim R` although the lemma assumes `n < dim R`; it should be either drop that hypothesis from the lemma (its proof never uses it) or cite the lemma's proof; affects the proof; (already recorded by the package). Found by PurityForFlatCohomology (#2153 at 84e8f65, 2026-10-26, claude fable).
 - **Misprint** at proof of Theorem 6.2.7, printed page 85: the source says `f ∈ (p, x_1, …, x_n)²` names an undefined `n`; it should be `(p, x_1, …, x_d)²`; affects nothing. Found by PurityForFlatCohomology (#2153 at 84e8f65, 2026-10-26, claude fable).
+- **Misprint** at proof of Theorem 6.2.7, printed page 85 (CS24 line 3578): the source says the last parameter is x_n; it should be x_d, matching the presentation's d parameters; affects the proof. Found by PurityForFlatCohomology (#2153 at 84e8f65, 2026-10-27, codex gpt-6-astra).
+- **Misprint** at proof of Theorem 7.2.1, printed page 89 (CS24 line 3726): the source says the Kummer argument ranges over n≥0; it should be n≥1; affects the proof. Found by PurityForFlatCohomology (#2153 at 84e8f65, 2026-10-27, codex gpt-6-astra).
+- **Misprint** at proof of Theorem 7.2.5, printed page 90 (CS24 line 3774): the source says the Kummer argument ranges over n≥0; it should be n≥1; affects the proof. Found by PurityForFlatCohomology (#2153 at 84e8f65, 2026-10-27, codex gpt-6-astra).
 - **Misprint** at proofs of Theorems 7.2.1 and 7.2.5, printed pages 89 and 90: the source says "for some `n ≥ 0`" and "for `n ≥ 0`" include `n = 0`, for which `μ_0` and `Br[0]` are meaningless; it should be `n ≥ 1`; affects nothing. Found by PurityForFlatCohomology (#2153 at 84e8f65, 2026-10-26, claude fable).
 - **Misprint** at proofs of Theorems 7.2.1 and 7.2.5, printed pp. 89–90 (lines 3726, 3774): the source says `n ≥ 0`; it should be `n ≥ 1`; affects nothing. Found by PurityForFlatCohomology (#2153 at abded8a, 2026-10-26, claude fable).
 - **Misprint** at §5.2.1, printed p.53: the source says the displayed tensor formula has the full graded homotopy on the left but a single degree on the right; it should be graded on both sides, π_*(N)⊗π₀(M); affects nothing. Found by SchemeAndStackFoundationsPartII (#420 at accb0a0, 2026-10-23, claude opus).
@@ -4357,6 +4368,14 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at §4.1 and Theorem 4.2 proof, pp. 20–21: the source says M_d is the cardinality of a union of the two maximal-divisor sets; it should be the sum of their cardinalities, retaining common divisors twice, as in Theorem 3.2; affects the proof. Found by ArithmeticDynamicsPartII (#1041 at cd26b10, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at §4.1, p. 20: the source says the first interval of Theorem 3.14 should be empty; it should be Theorem 3.2; affects nothing. Found by ArithmeticDynamicsPartII (#1041 at 4ba5ef1, 2026-10-24, claude opus).
 - **Misprint** at §4.1, p. 20: the source says the first obstruction interval belongs to Theorem 3.14; it should be Theorem 3.2; affects nothing. Found by ArithmeticDynamicsPartII (#1041 at cd26b10, 2026-10-25, codex gpt-6-astra).
+
+## EGA2
+
+- **Error** at the sentence following Definition 4.5.3, printed page 84 (EGA2 line 3210): the source says restriction to every open preserves ampleness although its definition requires quasi-compactness; it should be restriction to every quasi-compact open, or a definition without that requirement; affects nothing; <!-- tauceti-roadmap-review {"agent": "codex", "head": "84e8f65c9884a2bd7c5440ed8a4a55913dece76f", "job": "RT-PurityForFlatCohomology~1a", "model": "gpt-6-astra", "worker": "chris-4"} -->. Found by PurityForFlatCohomology (#2153 at 84e8f65, 2026-10-27, codex gpt-6-astra).
+
+## EGA44
+
+- **Misprint** at proof of Proposition 21.13.10, printed page 319 (EGA44 line 13120): the source says injectivity of O_X→j_*O_U is equivalent to the depth-two condition; it should be bijectivity; affects the proof. Found by PurityForFlatCohomology (#2153 at 84e8f65, 2026-10-27, codex gpt-6-astra).
 
 ## EGS15
 
@@ -6391,6 +6410,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at XVII Theorem 0.9, printed p. 257 (ILO14 line 12220): the source says regular-morphism functoriality uses exceptional pullback; it should be use ordinary pullback, as in XVII 4.1.1; affects nothing. Found by EtaleDualityAndPerverseSheavesPartII (#1338 at 86986bb, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at XVII Théorème 0.9, second item, printed p. 257: the source says exceptional pullback for a flat morphism with geometrically regular fibres, which need not be of finite type; it should be ordinary pullback, as in XVII 4.1.1; affects nothing. Found by EtaleDualityAndPerverseSheavesPartII (#1338 at b61ddc0, 2026-10-25, claude opus).
 - **Error** at XVIII-A Lemma 2.2 proof, p.333 (ILO14 line 16277): the source says the coniveau support filtration terminates above codim(Y); it should be terminate above dim(X), allowing closed points when Y=X; affects nothing. Found by EtaleDualityAndPerverseSheavesPartII (#1338 at 9665b07, 2026-10-26, codex gpt-6-astra).
+- **Misprint** at proof of Exposé XVIII-A Lemma 2.2, printed page 333 (ILO14 line 16277): the source says supports of codimension at least p disappear above codim(Y); it should be above dim(X), with only empty support remaining; affects the proof. Found by PurityForFlatCohomology (#2153 at 84e8f65, 2026-10-27, codex gpt-6-astra).
 
 ## Iohara–Lehrer–Zhang
 
@@ -9635,6 +9655,15 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## sga2
 
 - **Misprint** at XIV Lemma 2.1.1, printed p. 178 (sga2 line 6596): the source says its dimension inequality is an inequality exactly when both displayed invariants agree; it should be an equality exactly when both invariants agree; affects nothing; The package already avoids the SS cylinder/totalization errors, uses the IStr properness repair and corrects the SGA1 product projection. The DAG13 connectivity error concerns n≤0; §6.5 uses n=2. For the latter counterexample, a two-point p-finite space is 0-connective but H⁰=𝔽_p², so the unit 𝔽_p→H⁰ is not an isomorphism. <!-- tauceti-roadmap-review {"agent": "codex", "head": "6962204af0eb231b30302be0bb10a6ea19c9f9ea", "job": "RT-EtaleHomotopyTypes~1a", "model": "gpt-6-astra", "worker": "chris-4"} -->. Found by EtaleHomotopyTypes (#1304 at 6962204, 2026-10-27, codex gpt-6-astra).
+
+## SGA2
+
+- **Misprint** at Exposé XI Corollary 3.10(ii)(a), printed page 104 (SGA2 line 3721): the source says O_X,p is factorial while quantifying over y; it should be O_X,y; affects nothing. Found by PurityForFlatCohomology (#2153 at 84e8f65, 2026-10-27, codex gpt-6-astra).
+- **Misprint** at Exposé XI Lemma 3.17(e), printed page 107 (SGA2 line 3833): the source says the extra parafactoriality assumption concerns closed points in Y; it should be closed points outside Y, as the subsequent invocation of Proposition 3.12 requires; affects a stated result. Found by PurityForFlatCohomology (#2153 at 84e8f65, 2026-10-27, codex gpt-6-astra).
+- **Misprint** at Exposé XIV Proposition 5.2, printed page 199 (SGA2 lines 7422,7424): the source says the quotient term is J/I although J⊂I; it should be I/J; affects the proof. Found by PurityForFlatCohomology (#2153 at 84e8f65, 2026-10-27, codex gpt-6-astra).
+- **Misprint** at proof of Exposé XI Lemma 3.16, printed page 106 (SGA2 line 3820): the source says depth A equals 3+1; it should be depth A equals depth B+1, which is at least4; affects the proof. Found by PurityForFlatCohomology (#2153 at 84e8f65, 2026-10-27, codex gpt-6-astra).
+- **Misprint** at proof of Exposé XI Lemma 3.17, printed page 107 (SGA2 line 3837): the source says H¹ vanishes for i=1 or2; it should be Hⁱ vanishes for i=1 or2; affects the proof. Found by PurityForFlatCohomology (#2153 at 84e8f65, 2026-10-27, codex gpt-6-astra).
+- **Misprint** at proof of Exposé XI Theorem 3.13(i), printed page 106 (SGA2 lines 3791,3793): the source says resolve L′ by free O_X-modules and restrict to X′; it should be resolve over X′ and restrict to X; affects the proof. Found by PurityForFlatCohomology (#2153 at 84e8f65, 2026-10-27, codex gpt-6-astra).
 
 ## SGA3-III
 
