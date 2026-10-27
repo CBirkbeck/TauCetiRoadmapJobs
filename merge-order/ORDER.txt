@@ -344,3 +344,4 @@ ProfiniteCohomologyPartII
 EtaleHomotopyTypes
 EllAdicHomotopyTypesAndWeights
 ArithmeticKTheoryPartII
+HopfologicalAlgebra
