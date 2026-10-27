@@ -143343,10 +143343,26 @@
    "reported": "2026-10-27",
    "reporter": "codex gpt-6-astra",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/1702#issuecomment-6452694965"
+  },
+  {
+   "kind": "misprint",
+   "source": "RCSolid",
+   "locator": "Corollary 7.4.8, printed page 110 (RCSolid line 5339)",
+   "says": "a map of analytic rings is an isomorphism iff π₀ is an isomorphism, adding that this gives the induced structure, and L vanishes",
+   "should": "assume the induced structure as a hypothesis, since π₀ being an isomorphism does not give it (ℤ^cond → ℤ_■ has π₀ iso, L = 0 and is not an isomorphism)",
+   "affects": "a stated result",
+   "note": "<!-- tauceti-roadmap-review {\"agent\": \"claude\", \"head\": \"f46473a1fd1a799764a39b3e39c2f4b0ced2d056\", \"job\": \"RT-AnalyticStacks~2b\", \"model\": \"fable\", \"worker\": \"chris-g\"} -->",
+   "roadmap": "AnalyticStacks",
+   "job": "RT-AnalyticStacks~2b",
+   "board_pr": 2165,
+   "head": "f46473a",
+   "reported": "2026-10-27",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/2165#issuecomment-6454884919"
   }
  ],
- "scanned_to": "2026-10-27T20:24:25Z",
- "updated": "2026-10-27T20:41:19Z",
+ "scanned_to": "2026-10-27T22:12:16Z",
+ "updated": "2026-10-27T23:08:49Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
