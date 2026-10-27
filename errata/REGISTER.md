@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-8554 mistakes recorded on the board: 5114 misprints, 2202 errors, 924 gaps, 314 unparsed bullets.
+8562 mistakes recorded on the board: 5119 misprints, 2205 errors, 924 gaps, 314 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -688,6 +688,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## akq
 
 - **Misprint** at the proof of Proposition 2.22, printed p.15 (akq line 648): the source says raw z(n) has π₀=ℤ₂; it should be π₀=ℤ before localization, ℤ_(2) after localization, and ℤ₂ only after completion; affects the proof. Found by GeneralAlgebraicKTheoryPartII (#1197 at f0cf796, 2026-10-26, codex gpt-6-astra).
+- **Misprint** at the proof of Proposition 2.22, printed p.15 (akq line 648): the source says the raw integral z(n) has π₀=ℤ₂; it should be ℤ before localization, ℤ_(2) after localization, and ℤ₂ only after completion; affects the proof. Found by GeneralAlgebraicKTheoryPartII (#1197 at c410d39, 2026-10-27, codex gpt-6-astra).
 - **Misprint** at §1.2, printed p.4 (akq line 156): the source says the Milnor primitive Q_i has degree 2^i−1; it should be 2^(i+1)−1, with Q₀=Sq¹ in degree1; affects nothing. Found by ChromaticHomotopyTheory (#986 at f29de2d, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at §1.2, printed p.4 (akq line 156): the source says Q_i has degree 2^i−1; it should be 2^(i+1)−1, since Q₀=Sq¹ has degree1; affects nothing. Found by ChromaticHomotopyTheory (#986 at 069778d, 2026-10-25, codex gpt-6-astra).
 - **Error** at §2.1's integral connected-cover Thom identification, printed p.5 (akq lines 199–203): the source says the sign Thom spectrum over the integral sphere is Hℤ; it should be Hℤ_(2) after 2-localization; at 3 the null twist retains a sphere retract with nonzero π₃; affects a stated result. Found by GeneralAlgebraicKTheoryPartII (#1197 at f0cf796, 2026-10-26, codex gpt-6-astra).
@@ -695,6 +696,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Error** at §2.1, manuscript p.5 (akq line 199 through line 203): the source says the source identifies the integral connected-cover sign Thom spectrum with Hℤ; it should be identify its 2-localization with Hℤ_(2); affects a stated result; These are the inherited source issues rechecked where used here. The package accounts for them. The witnesses are respectively the one-periodic characteristic-two Tate ring at odd p, the degree-one class of ΣHA, the all-height module action, and the odd-prime sphere retract. No published correction was established in this review. <!-- tauceti-roadmap-review {"agent": "codex", "head": "f0cf796419574218f8ebb11ecd8a00a717b118d2", "job": "REV-PKG-GeneralAlgebraicKTheoryPartII~3", "model": "gpt-6-astra", "worker": "chris-12"} -->. Found by GeneralAlgebraicKTheoryPartII (#1197 at f0cf796, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at §2.1, manuscript p.5 (akq line 199–203): the source says the Thom spectrum of Ω²(S³⟨3⟩)→Ω²S³→BO→BGL₁S is HZ with no localization; it should be the 2-local (or 2-complete) statement, since 3-locally the map is null and the Thom spectrum retracts onto S_(3) with π₃=ℤ/3; affects nothing; (the paper works 2-locally). <!-- tauceti-roadmap-review {"agent": "claude", "head": "f0cf796419574218f8ebb11ecd8a00a717b118d2", "job": "RT-GeneralAlgebraicKTheoryPartII~1b", "model": "fable", "worker": "chris-k"} -->. Found by GeneralAlgebraicKTheoryPartII (#1197 at f0cf796, 2026-10-25, claude fable).
 - **Error** at §2.1, p.5, attributing Mahowald's Proposition 2.8: the source says the Thom spectrum of Ω²(S³⟨3⟩)→BO→BGL₁S is Hℤ; it should be Hℤ_(2) after 2-localization, since at odd primes the twist is null and the Thom spectrum is the suspension spectrum; affects nothing; (all later uses are 2-local). <!-- tauceti-roadmap-review {"agent": "claude", "head": "1916a38", "job": "REV-PKG-GeneralAlgebraicKTheoryPartII", "model": "opus", "worker": "fable-rev65"} -->. Found by GeneralAlgebraicKTheoryPartII (#1197 at 1916a38, 2026-10-24, claude opus).
+- **Error** at §2.1, printed p.5 (akq lines 199–203): the source says the integral connected-cover sign Thom spectrum is Hℤ; it should be Hℤ_(2) after 2-localization; at3 the null sign twist retains a sphere retract with π₃=ℤ/3; affects a stated result. Found by GeneralAlgebraicKTheoryPartII (#1197 at c410d39, 2026-10-27, codex gpt-6-astra).
 
 ## AKY
 
@@ -1175,6 +1177,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Barnet-Lamb–Gee–Geraghty–Taylor (BLGGT), arXiv:1010.2561
 
 - **Error** at p. 32 (l. 1388) and p. 34: the source says the polarizing multiplier the sign µ_v(−1) = (−1)^n and calls ε^{1−n}r(χ) odd by definition; it should be (−1)^{n+w}, as BLGGT's own §A.2 formula (p. 87) gives; the CM character of weight (1,0) is a witness; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## barwick-lawson
+
+- **Misprint** at Corollary 4.2 proof, manuscript p.7 (barwick-lawson lines 303–306): the source says Δ itself generates a multiplicative subset of π_*tmf; it should be a surviving power such as Δ²⁴; Δ supports nonzero differentials at2 and3; affects the proof; <!-- tauceti-roadmap-review {"agent": "codex", "head": "c410d3995c7b456e73d569fd2520ef469b8cfb6d", "job": "RT-GeneralAlgebraicKTheoryPartII~2a", "model": "gpt-6-astra", "worker": "chris-4"} -->. Found by GeneralAlgebraicKTheoryPartII (#1197 at c410d39, 2026-10-27, codex gpt-6-astra).
 
 ## Bary-Soroker–Koukoulopoulos–Kozma, Irreducibility of random polynomials: general measures, arXiv:2007.14567v3
 
@@ -3007,6 +3013,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## cdh
 
+- **Misprint** at §4.4 before Lemma 4.4.11, printed p.89 (cdh lines 4320–4326): the source says perfect parametrized spectra are all suspension spectra of finitely dominated retractive spaces; it should be their Spanier–Whitehead stabilization, including desuspensions, as the next sentence specifies; affects nothing. Found by GeneralAlgebraicKTheoryPartII (#1197 at c410d39, 2026-10-27, codex gpt-6-astra).
 - **Misprint** at §4.4's comparison preceding Lemma 4.4.11, printed p.89 (cdh lines 4320–4326): the source says all perfect parametrized spectra are suspension spectra of finitely dominated retractive spaces; it should be their Spanier–Whitehead stabilization, including desuspensions, as the following sentence specifies; affects nothing; <!-- tauceti-roadmap-review {"agent": "codex", "head": "f0cf796419574218f8ebb11ecd8a00a717b118d2", "job": "RT-GeneralAlgebraicKTheoryPartII~1a", "model": "gpt-6-astra", "worker": "chris-30"} -->. Found by GeneralAlgebraicKTheoryPartII (#1197 at f0cf796, 2026-10-26, codex gpt-6-astra).
 
 ## CDHHLMNNS-II-v5
@@ -3669,6 +3676,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## cm-tate
 
 - **Error** at the explanation after Theorem 2.5, printed p.3 (cm-tate line 113): the source says the suspension spectrum of BΣ_p becomes the sphere after inverting p; it should be BC_p in that assertion; BΣ₃ retains mod-2 H₁ after inverting 3; affects the proof. Found by GeneralAlgebraicKTheoryPartII (#1197 at f0cf796, 2026-10-26, codex gpt-6-astra).
+- **Error** at the explanation after Theorem 2.5, printed p.3 (cm-tate line 113): the source says inverting p makes the suspension spectrum of BΣ_p the sphere; it should be BC_p there; BΣ₃ retains nonzero mod-2 first homology after inverting3; affects the proof. Found by GeneralAlgebraicKTheoryPartII (#1197 at c410d39, 2026-10-27, codex gpt-6-astra).
 
 ## cmnn
 
@@ -3678,6 +3686,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## cmnn24
 
 - **Misprint** at Lemma 4.7, printed p.19 (cmnn24 lines 831–834): the source says the displayed quotient by p followed by inversion of v_i gives k((v_i)) throughout the i≥0 argument; it should be interpreted separately at i=0 as W(k)[1/p], with no quotient by p; affects the proof. Found by GeneralAlgebraicKTheoryPartII (#1197 at f0cf796, 2026-10-26, codex gpt-6-astra).
+- **Misprint** at Lemma 4.7, printed p.19 (cmnn24 lines 831–834): the source says quotienting by the displayed list beginning with p then inverting v_i works also at i=0; it should be W(k)[1/p] at i=0, without first quotienting by p; affects the proof. Found by GeneralAlgebraicKTheoryPartII (#1197 at c410d39, 2026-10-27, codex gpt-6-astra).
 
 ## CN25
 
@@ -5724,6 +5733,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Error** at introduction preceding Theorem1.6, printed p.2 (hahn line 54): the source says the operation of every relative Dₚ-E-algebra is multiplicative; it should be multiplicativity under compatible coherent data; multiplying the factorization by 1+z otherwise changes P(1) to a nonidempotent; affects a stated result. Found by ChromaticHomotopyTheory (#986 at 069778d, 2026-10-25, codex gpt-6-astra).
 - **Error** at introduction, printed p.2 (hahn line 54): the source says the power operation of any relative Dₚ-E-algebra is multiplicative; it should be restricted to a coherent multiplicative factorization, since θ′=(1+z)θ gives non-idempotent P′(1)=1+z; affects a stated result. Found by ChromaticHomotopyTheory (#986 at f29de2d, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at the proof of Proposition 4.3, printed p.8 (hahn lines 358–359): the source says the coefficient power-series variable in the Eisenstein argument is u_n; it should be u_h, as in the proposition and the polynomial's constant term; affects nothing. Found by GeneralAlgebraicKTheoryPartII (#1197 at f0cf796, 2026-10-26, codex gpt-6-astra).
+- **Misprint** at the proof of Proposition 4.3, printed p.8 (hahn lines 358–359): the source says the Eisenstein coefficient parameter is u_n; it should be u_h, matching the preceding proposition and constant coefficient; affects nothing. Found by GeneralAlgebraicKTheoryPartII (#1197 at c410d39, 2026-10-27, codex gpt-6-astra).
 - **Error** at §1, p.2 (hahn line 54): the source says the power operation of a general local Dₚ-E-algebra is multiplicative; it should be restricted to suitably multiplicative extended-power data, such as the coherent E∞ specialization; affects a stated result; For the second issue, the explicit relative-factorization twist and computation a²−a=z²+z≠0 are recorded above. Definition 3.1 permits that twist. The package does not import the overstrong introductory assertion; it uses Theorem 3.3's zero-detection statement at the weaker hypotheses. No claim of a published correction is made. <!-- tauceti-roadmap-review {"agent": "codex", "head": "f29de2de3c59a1daef558204776e0c177c7c36f1", "job": "REV-PKG-ChromaticHomotopyTheory~3", "model": "gpt-6-astra", "worker": "chris-12"} -->. Found by ChromaticHomotopyTheory (#986 at f29de2d, 2026-10-25, codex gpt-6-astra).
 
 ## ham15
@@ -7802,6 +7812,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Gap** at proof of Proposition 3.6, printed p.1023 (`lmmt` lines 621–623): the source says p-power coefficient vanishing for arbitrary torsion coefficient rings and mentions only height one; it should be supply the K(ℤ/pʳ)-module argument in every required positive height; affects the proof. Found by GeneralAlgebraicKTheoryPartII (#1197 at 11a21b5, 2026-10-25, codex gpt-6-astra).
 - **Gap** at proof of Proposition 3.6, printed p.1023 (lmmt line 621 through line 623): the source says the source invokes discrete torsion-coefficient vanishing while mentioning only height one; it should be supply the K(ℤ/pʳ)-module argument at every required positive height; affects the proof. Found by GeneralAlgebraicKTheoryPartII (#1197 at f0cf796, 2026-10-25, codex gpt-6-astra).
 - **Error** at the introduction, printed p.4 (lmmt line 167–181): the source says a nonzero T(0)-localization yields a map to an even-periodic characteristic-zero field theory and that telescopic and chromatic graded-piece vanishing agree for rings with no height-zero qualification; it should be restrict height zero to nonzero rationalization or p-local inputs, since H𝔽_q with q≠p has nonzero T(0)-smash and zero K(0)-smash; affects a stated result; (Recorded by pass a of round 1; re-confirmed, the README's §10.3 Check on H𝔽_q is the counterexample.) <!-- tauceti-roadmap-review {"agent": "claude", "head": "069778d", "job": "RT-ChromaticHomotopyTheory~2b", "model": "fable", "worker": "fable-rt42"} -->. Found by ChromaticHomotopyTheory (#986 at 069778d, 2026-10-25, claude fable).
+- **Error** at the introductory field-map assertion and Redshift Theorem, printed p.1014 (lmmt lines 172–176): the source says nonzero global p-inversion suffices for characteristic-zero field detection and height-zero redshift; it should be nonzero rationalization at height zero; affects a stated result. Found by GeneralAlgebraicKTheoryPartII (#1197 at c410d39, 2026-10-27, codex gpt-6-astra).
 - **Error** at the introductory field-map claim and Redshift Theorem, printed p.1014 (lmmt lines 172–176): the source says nonzero global T(0)-localization suffices for a characteristic-zero field map and height-zero redshift; it should be nonzero rationalization at height zero; affects a stated result. Found by GeneralAlgebraicKTheoryPartII (#1197 at f0cf796, 2026-10-26, codex gpt-6-astra).
 
 ## LND-ZETALIKE
