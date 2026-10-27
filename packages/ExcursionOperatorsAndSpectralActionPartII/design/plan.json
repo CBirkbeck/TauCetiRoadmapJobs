@@ -2151,6 +2151,18 @@
     "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
     "section": "§§1.6, 1.13, 2.11 and 2.16",
     "needs": "For each extended pure inner form G of quasi-split G*, provide stable tempered character transfer with elliptic value e(G)Θ(g*), its elliptic isomorphism, compatibility with induction from relevant Levis, vanishing on irrelevant Levi summands, and Θ(f*)=Trans_G(Θ)(f) for Θ∈SD_temp(G*) and f*, f with matching stable orbital integrals for the factor e(G) (H26, §2.4, pp. 12–13; H26 line 586, line 594, line 597 and line 632)."
+  },
+  {
+    "slug": "irreducible-character-independence",
+    "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
+    "section": "§2.16, irreducible-character independence",
+    "needs": "For every connected reductive G over E/ℚ_p finite and pairwise nonisomorphic irreducible smooth complex representations π_1,…,π_n of G(E), prove that ∑_i a_iΘ_(π_i)=0 in Dist(G) with a_i∈ℂ forces every a_i=0, so that the complexified Grothendieck group of finite-length smooth representations maps isomorphically onto D(G) (H26, §2.1, p. 5, and proof of Lemma 2.4, p. 7; H26 line 218 and line 318)."
+  },
+  {
+    "slug": "general-parabolic-excursion-comparison",
+    "supplier": "HeckeStacksAndLocalShtukas",
+    "section": "§HS4.6, general parabolic excursion comparison",
+    "needs": "For every connected reductive G/E, not necessarily quasi-split, E-rational parabolic P=MU, ℓ-power-torsion ℤ_ℓ[√q]-algebra Λ and smooth Λ-representation σ of M(E), prove that each HS4.2 excursion operator of G acts on the unnormalized induction Ind_P^G σ as the excursion operator of M pulled back along φ↦(w↦(2ρ_Ĝ−2ρ_M̂)(√q)^|w| φ(w)), |geometric Frobenius|=1, extending the quasi-split single-stratum theorem of §HS4.6 by a z-embedding into a group with connected centre and a quasi-split basic inner form (FS24, §IX.7.1, proof of Theorem IX.7.2 and Corollary IX.7.3, pp. 334–338; FS24 line 12973, line 12996 and line 13097)."
   }
 ],
   "restructure": [
