@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-8036 mistakes recorded on the board: 4820 misprints, 2048 errors, 854 gaps, 314 unparsed bullets.
+8056 mistakes recorded on the board: 4833 misprints, 2053 errors, 856 gaps, 314 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -1505,6 +1505,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at §5.2 forget-support maps, printed p.34 (BF line 1566–1567): the source says forgetting support lands in the complex of twist p; it should be twist p+q, matching the source complex and the product; affects a stated result; The first six source issues persist from the preceding review and were checked at their lines; the seventh was found in this round's product-diagram reading. For the product issue, BF line 689 uses a smooth diagonal pullback before the broader proposition header. For the K-comparison issue, Spec ℂ[ε]/(ε²) has rational K₁ classes 1+εℂ, whereas cycles are nilpotent-invariant. The package retains smoothness where needed and keeps the correct homotopy degree, twist and support index. No published correction was established. These source errata are not package findings. <!-- tauceti-roadmap-review {"agent": "codex", "head": "1064583686e6fc7de5bd3c3c648d490a62c5b3c1", "job": "REV-PKG-MotivicEtaleKTheory~3", "model": "gpt-6-astra", "worker": "chris-3"} -->. Found by MotivicEtaleKTheory (#1047 at 1064583, 2026-10-24, codex gpt-6-astra).
 - **Misprint** at §5.2 support notation, printed p.32 (BF line 1508): the source says the X-support indexed by n is obtained from supports indexed by m; it should be indexed by n consistently with the X×□ⁿ factor; affects nothing; For the second source issue, X=Spec ℂ[ε]/(ε²) is a concrete obstruction: K₁ contains the nonzero additive group 1+εℂ after rationalization, while higher-cycle groups are invariant under this nilpotent thickening. The README correctly avoids that broad theorem header. No published correction to these preprint issues was established in this review. <!-- tauceti-roadmap-review {"agent": "codex", "head": "18a7b4d7056c6e7f88aa9f634dac7c55278ad1b3", "job": "REV-PKG-MotivicEtaleKTheory", "model": "gpt-6-astra", "worker": "chris-3"} -->. Found by MotivicEtaleKTheory (#1047 at 18a7b4d, 2026-10-24, codex gpt-6-astra).
 
+## bfh-1990
+
+- **Misprint** at §9, p.617 (bfh-1990 line 3215): the source says to combine equations (9.2) and (9.3) to cancel the polar terms; it should be equations (9.5) and (9.10), multiplied by M₃(2) and M₂(2) respectively; affects the proof. Found by RankOneConverse (#1780 at 33cda60, 2026-10-27, codex gpt-6-astra).
+
 ## BFLS
 
 - **Misprint** at §3.2, condition (i), printed p15 (BFLS line 622): the source says the divergence input β has horizontal degree n; it should be β must have horizontal degree n−1, so d_Hβ belongs to the bracket’s domain; affects a stated result. Found by LocalVariationalFieldTheory (ERRATA-LocalVariationalFieldTheory at a38ee99, 2026-10-24, codex gpt-6-astra).
@@ -2376,6 +2380,18 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at Propositions 8.12–8.13: the source says the displayed formula without a square; it should be squared, as the preceding formula shows; affects a stated result. Found by  (#147 at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
+## brooks-2015
+
+- **Error** at Proposition 8.13 and its preceding descent claim, p.4239 (brooks-2015 line 2113): the source says the weighted projected cycle is K-rational for every central-critical χ of type (1,1); it should be over the relevant class field; K-rationality follows for trivial finite part χN⁻¹, or for the zero cycle; affects a stated result; <!-- tauceti-roadmap-review {"agent": "codex", "head": "33cda60a8e6616dd1518e9cea8cb12ba325f7414", "job": "RT-RankOneConverse~1a", "model": "gpt-6-astra", "worker": "chris-4"} -->. Found by RankOneConverse (#1780 at 33cda60, 2026-10-27, codex gpt-6-astra).
+- **Misprint** at Propositions 8.12–8.13, p.4239 (brooks-2015 lines 2108 and 2115): the source says the squared Euler factor multiplies a first power of the logarithm; it should be the squared logarithm, as in Theorem 8.11; affects a stated result. Found by RankOneConverse (#1780 at 33cda60, 2026-10-27, codex gpt-6-astra).
+- **Misprint** at the proof of Theorem 7.3, p.4228 (brooks-2015 line 1716): the source says ΘG_i=−(ρ−i+1)G_(i−1)=0 for i<ρ; it should be ΘG_i+(ρ−i+1)G_(i−1)=0 for 1≤i≤ρ, with ΘG₀=F; affects the proof. Found by RankOneConverse (#1780 at 33cda60, 2026-10-27, codex gpt-6-astra).
+- **Misprint** at the proof of Theorem 8.11, p.4238 (brooks-2015 lines 2065 and 2094): the source says the cited results 7.3 and 7.4 are lemmas; it should be Theorem 7.3 and Proposition 7.4; affects nothing. Found by RankOneConverse (#1780 at 33cda60, 2026-10-27, codex gpt-6-astra).
+- **Misprint** at the proof of Theorem 8.11, p.4238 (brooks-2015 lines 2074 and 2089): the source says to apply θ^(−1−j) again to the Coleman component after substituting that component for θ^(−1−j)f; it should be the component alone, with the displayed 1/j! retained; affects the proof. Found by RankOneConverse (#1780 at 33cda60, 2026-10-27, codex gpt-6-astra).
+- **Misprint** at the pullback identity before Proposition 8.13, p.4239 (brooks-2015 line 2112): the source says P belongs to C′ while applying φ:C→C′ to P; it should be P∈C, with φ(P)∈C′; affects a stated result. Found by RankOneConverse (#1780 at 33cda60, 2026-10-27, codex gpt-6-astra).
+- **Misprint** at the weight-two explanation following Theorem 8.11, p.4239 (brooks-2015 line 2099): the source says the χ-weighted sum uses P_χ in every summand; it should be the CM point P_a indexed by the summed ideal class a; affects a stated result. Found by RankOneConverse (#1780 at 33cda60, 2026-10-27, codex gpt-6-astra).
+- **Error** at §2.7, p.4190 (brooks-2015 line 514): the source says defining the transfer differentially over O_F[1/N] makes its scalar ambiguity a unit; it should be a primitive generator of a specified integral eigenline; integrality alone permits nonunit scalar multiplication; affects a stated result. Found by RankOneConverse (#1780 at 33cda60, 2026-10-27, codex gpt-6-astra).
+- **Misprint** at §8.1, p.4230 (brooks-2015 line 1780): the source says ψ_t has infinity type (6h,−6h) although its defining exponents contain t; it should be (6ht,−6ht), which also makes the subsequent large-t argument work; affects the proof. Found by RankOneConverse (#1780 at 33cda60, 2026-10-27, codex gpt-6-astra).
+
 ## Brouwer-Haemers
 
 - **Misprint** at §2.3, draft p. 32 (Brouwer-Haemers line 1457): the source says the block indices range from zero to an undefined d; it should be indices from 1 to m, matching the partition defined immediately above; affects nothing. Found by EquitableOperatorReduction (ERRATA-EquitableOperatorReduction at 62d083f, 2026-10-23, codex gpt-6-astra).
@@ -2533,6 +2549,11 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at end of proof of Proposition 8.10, p. 68 (BS22 lines 2660–2661): the source says X→Y supplies the quotient map and descends a map from Y; it should be Y→X and the descended map should have source X; affects nothing; <!-- tauceti-roadmap-review {"agent": "codex", "head": "9af1fe1682bee639fad990cd2e1c4ed3fd031f50", "job": "REV-PKG-ArcTopologyAndDescent~4", "model": "gpt-6-astra", "worker": "chris-30"} -->. Found by ArcTopologyAndDescent (#1051 at 9af1fe1, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at proof of Theorem 9.1, footnote 15, printed p. 72 (BS22 line 2807): the source says algebraically closed residue fields suffice for splitting arbitrary finite covers of the valuation factors; it should be algebraically closed fraction fields, as in the chosen basis; affects the proof; <!-- tauceti-roadmap-review {"agent": "codex", "head": "9af1fe1682bee639fad990cd2e1c4ed3fd031f50", "job": "RT-ArcTopologyAndDescent~1a", "model": "gpt-6-astra", "worker": "chris-4"} -->. Found by ArcTopologyAndDescent (#1051 at 9af1fe1, 2026-10-26, codex gpt-6-astra).
+
+## bsw-2026
+
+- **Error** at Theorem 3.2, p.10 (bsw-2026 line 439): the source says every x, including torsion, admits B with a field embedding into End⁰(B); it should be restricted to non-torsion x, or allow B=0 without an embedding: x=0,W=0 otherwise forces the impossible embedding into End⁰(0); affects a stated result. Found by RankOneConverse (#1780 at 33cda60, 2026-10-27, codex gpt-6-astra).
+- **Misprint** at §4.1, p.10 (bsw-2026 lines 447 and 469): the source says the embedding index is Σ_F and the contradicted hypothesis is (ii); it should be Σ_E and hypothesis (b) of Theorem 2.3; affects nothing. Found by RankOneConverse (#1780 at 33cda60, 2026-10-27, codex gpt-6-astra).
 
 ## BT
 
@@ -9554,12 +9575,17 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## skinner-2020
 
+- **Gap** at Corollary 2.6.2, p.344 (skinner-2020 line 619): the source says point and p-adic value nonvanishing are equivalent after establishing only the value-to-point implication; it should be justified in the reverse direction by the actual-point eigenlogarithm theorem; affects the proof. Found by RankOneConverse (#1780 at 33cda60, 2026-10-27, codex gpt-6-astra).
+- **Gap** at Lemma 2.2.2, p.338 (skinner-2020 line 387): the source says coefficientwise localization injectivity follows from scalar extension and freeness; it should be supplemented by nonvanishing of every eigenlogarithm of an actual non-torsion generator; affects the proof. Found by RankOneConverse (#1780 at 33cda60, 2026-10-27, codex gpt-6-astra).
 - **Gap** at Lemma 2.2.2, printed p.338: the source says freeness of the rational point module over the semilocal coefficient algebra is used to get injectivity of restriction at each coefficient place; it should be use nonvanishing of the eigenlogarithm at every embedding (bsw-2026, Theorem 2.3); affects the proof. Found by RankOneConverse (#1780 at 33cda60, 2026-10-25, claude fable).
 - **Gap** at Lemma 2.2.2, printed p.338: the source says freeness of the rational point module over the semilocal coefficient algebra is used for injectivity at each coefficient place; it should be use nonvanishing of the eigenlogarithm at every embedding (bsw-2026 Theorem 2.3); affects the proof. Found by RankOneConverse (#1780 at 33cda60, 2026-10-26, claude fable).
 - **Gap** at Lemma 2.2.2, printed p.338 (lines 388–392): the source says freeness of A_f(K)⊗ℚ_p over M_{f,p} does not give injectivity of the restriction at each λ-component; it should be use nonvanishing of the eigenlogarithm at every embedding (bsw-2026, Theorem 1.1); affects the proof. Found by RankOneConverse (#1780 at 7925ead, 2026-10-25, claude fable).
 - **Misprint** at Lemma 2.8.1, printed p.347: the source says the tame-inertia generator is said to be at a prime q while the prime under discussion is ℓ; it should be ℓ throughout; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "33cda60", "job": "REV-PKG-RankOneConverse~2", "model": "fable", "worker": "fable-rev134"} -->. Found by RankOneConverse (#1780 at 33cda60, 2026-10-25, claude fable).
 - **Misprint** at Lemma 2.8.1, printed p.347: the source says the tame-inertia generator is placed at a prime q while the prime under discussion is ℓ; it should be ℓ throughout; affects nothing. Found by RankOneConverse (#1780 at 33cda60, 2026-10-26, claude fable).
 - **Misprint** at Lemma 2.8.1, printed p.347 (line 749): the source says the tame inertia generator is said to be at q while the prime is ℓ; it should be ℓ throughout; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "7925eadd4333fd9a93bddd6a07b463f22c64982a", "job": "REV-PKG-RankOneConverse", "model": "fable", "worker": "chris-i"} -->. Found by RankOneConverse (#1780 at 7925ead, 2026-10-25, claude fable).
+- **Misprint** at the proof of Lemma 2.8.1, p.347 (skinner-2020 line 753): the source says to suppose the global residual representation is reducible; it should be the restriction to G_K is reducible; affects the proof. Found by RankOneConverse (#1780 at 33cda60, 2026-10-27, codex gpt-6-astra).
+- **Misprint** at the proof of Proposition 2.7.2, p.346 (skinner-2020 line 706): the source says the two coefficient rings are unique factorization ideals; it should be unique factorization domains; affects nothing. Found by RankOneConverse (#1780 at 33cda60, 2026-10-27, codex gpt-6-astra).
+- **Misprint** at §2.4, p.340 (skinner-2020 line 478): the source says Brooks's rational transfer normalization is in §2.8; it should be §2.7, p.4190; affects nothing. Found by RankOneConverse (#1780 at 33cda60, 2026-10-27, codex gpt-6-astra).
 - **Misprint** at §2.6, printed p.341 (line 523): the source says the Heegner point with field and form exchanged; it should be the point P_K(f) defined in §2.4; affects nothing. Found by RankOneConverse (#1780 at 7925ead, 2026-10-25, claude fable).
 - **Misprint** at §2.7, printed p.346: the source says the source calls the two Iwasawa algebras unique factorization ideals; it should be unique factorization domains; affects nothing. Found by RankOneConverse (#1780 at 33cda60, 2026-10-25, claude fable).
 - **Misprint** at §2.7, printed p.346: the source says the two Iwasawa algebras are called unique factorization ideals; it should be unique factorization domains; affects nothing. Found by RankOneConverse (#1780 at 33cda60, 2026-10-26, claude fable).
@@ -9567,10 +9593,15 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Gap** at §2.7, printed pp.346–347: the source says from a diagram that the mod-(γ−1) Selmer group has finite index in the γ−1-torsion of the big Selmer group, without computing that the local invariant term is finite; it should be derive finiteness from the ordinary filtration (Teichmüller inertia on the plus part, a unit root different from 1 on the minus part); affects the proof. Found by RankOneConverse (#1780 at 33cda60, 2026-10-25, claude fable).
 - **Gap** at §2.7, printed pp.346–347: the source says finiteness of the index of the mod-(γ−1) Selmer group in the (γ−1)-torsion of the big Selmer group off a diagram without computing that the local invariant term is finite; it should be derive it from the ordinary filtration (Teichmüller inertia on the sub, unit root different from 1 on the quotient); affects the proof. Found by RankOneConverse (#1780 at 33cda60, 2026-10-26, claude fable).
 - **Gap** at §2.7, printed pp.346–347 (lines 716–729): the source says the finite-index claim for Sel_p inside Sel_∞[γ−1] rests on finiteness of the G_{K_𝔭}-invariants of the inertia-invariant coinvariants, asserted from the diagram without computation; it should be shown from the ordinary filtration (Teichmüller inertia kills the T⁺ part, unit root α≠1 on the T⁻ part); affects the proof. Found by RankOneConverse (#1780 at 7925ead, 2026-10-25, claude fable).
+- **Misprint** at §2.9, p.348 (skinner-2020 line 772): the source says unrestricted H¹ of the abelian Tate module becomes the finite coefficient Selmer group after scalar extension; it should be H¹_f on the abelian Tate-module side too; affects the proof. Found by RankOneConverse (#1780 at 33cda60, 2026-10-27, codex gpt-6-astra).
 
 ## skinner-published
 
 - **Error** at §2.6, printed p.343, skinner-published line 595: the source says an odd power of 2πi times real factors equals the real archimedean constant; it should be compare that constant together with the CM-period normalization; affects a stated result. Found by GrossZagierAndArithmeticHeights (#147 at b5527a0, 2026-10-23, codex gpt-6-astra).
+
+## skinner-urban-author
+
+- **Error** at §3.1.6, p.19 (skinner-urban-author line 738): the source says a nontorsion finite module over an arbitrary Noetherian ring has zero Fitting ideal; it should be restricted to domains: over A=k×k, M=k×0 is regular-torsion-free with Fitt_A(M)=0×k≠0; affects a stated result. Found by RankOneConverse (#1780 at 33cda60, 2026-10-27, codex gpt-6-astra).
 
 ## Skinner–Wiles (Publ. IHES 1999)
 
@@ -10614,6 +10645,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Error** at the triple-product display in §8.4, p.80, line 4074–4079: the source says a partial global L-ratio uses full zeta factors and normalized local integrals; it should be a consistent full-ratio/normalized or partial-ratio/raw formula; affects a stated result. Found by AutomorphicCongruences (#129 at b9d6195, 2026-10-25, codex gpt-6-astra).
 - **Error** at §8.4 triple-product formula, printed p.80 (Wan-2020 line 4074–4079): the source says partial global L-functions multiply already normalized local integrals; it should be use full global L-functions, or consistently partial zeta/L-functions with raw local integrals; affects a stated result. Found by AutomorphicCongruences (#129 at 08f531f, 2026-10-25, codex gpt-6-astra).
+
+## wan-2020
+
+- **Error** at §2B, p.392 (wan-2020 line 399): the source says nontorsion implies zero Fitting ideal for arbitrary Noetherian A; it should be restricted to domains: A=k×k and M=k×0 give nonzero Fitting ideal despite no regular-element torsion; affects a stated result. Found by RankOneConverse (#1780 at 33cda60, 2026-10-27, codex gpt-6-astra).
 
 ## wazir-2006
 
