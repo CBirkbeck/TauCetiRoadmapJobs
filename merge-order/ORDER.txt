@@ -343,3 +343,4 @@ ImplicitAtlases
 CalibratedGeometry
 CategoricalOperatorAlgebras
 AlgebraicCurves
+CStarClassification
