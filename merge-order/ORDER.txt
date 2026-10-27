@@ -349,3 +349,4 @@ AutomorphicLFunctionsAndLocalFactorsPartII
 ExceptionalThetaCorrespondencesForG2
 LocalLanglandsCorrespondenceForG2
 TensorProductCombinatorics
+LFunctions
