@@ -338,3 +338,4 @@ MorseTheory
 GaugeQuiltFieldTheory
 FukayaTheory
 OperatorTheory
+QuaternionicAnalysis
