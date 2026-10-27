@@ -59,7 +59,7 @@ doi = "10.1090/tran/7198"
 [[source]]
 id = "darmon-merel"
 locator_scheme = "section"
-locator = "Theorem 6.1; Proposition 6.5; Propositions 7.1–7.2; Lemmas 8.2–8.3, author-version pp.16–24"
+locator = "Theorem 6.1; Proposition 6.5; Propositions 7.1–7.2; §8, proof of Theorem 8.1 and Lemmas 8.2–8.3, author-version pp.16–24"
 url = "https://www.math.mcgill.ca/darmon/pub/Articles/Research/18.Merel/paper.pdf"
 fetched_from = "https://www.math.mcgill.ca/darmon/pub/Articles/Research/18.Merel/paper.pdf"
 fetched_at = "2026-10-25T01:34:44Z"
@@ -95,7 +95,7 @@ cited_for = ["Layer 4 rational cyclic-degree classification"]
 [[source]]
 id = "serre-1981"
 locator_scheme = "section"
-locator = "§8.4, Lemmas 18–18′, printed pp.397–398 / archive pp.197–198"
+locator = "§8.4, Lemmas 18–18′ and proof of Lemme 19, printed pp.397–399 / archive pp.197–199"
 url = "https://www.numdam.org/article/PMIHES_1981__54__123_0.pdf"
 fetched_from = "https://www.numdam.org/article/PMIHES_1981__54__123_0.pdf"
 fetched_at = "2026-10-25T01:34:50Z"
@@ -103,7 +103,7 @@ sha256 = "bfcda9821742b02801e4f1264750aebeb656141fbd53fb61b8662333e1491830"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["Layer 5 projective inertia"]
+cited_for = ["Layer 5 projective inertia", "§5.25a witness bound"]
 authors = "Jean-Pierre Serre"
 title = "Quelques applications du théorème de densité de Chebotarev"
 year = 1981
@@ -111,7 +111,7 @@ year = 1981
 [[source]]
 id = "bilu-parent-rebolledo"
 locator_scheme = "section"
-locator = "Theorem 1.1, pp.958–959; Theorem 3.1, p.964, proof pp.968–970; Theorems 4.1–4.2 and Propositions 4.3–4.4, pp.970–972; Proposition 5.6, Corollary 5.7, Proposition 5.9, pp.976–979; §6 table"
+locator = "Theorem 1.1, pp.958–959; Theorem 3.1, p.964, proof pp.968–970; Theorems 4.1–4.2 and Propositions 4.3–4.4, pp.970–972; §§5.1.1–5.1.2, Propositions 5.1, 5.2, 5.5 and Corollary 5.3, pp.973–975; Proposition 5.6, Corollary 5.7, Proposition 5.9, pp.976–979; §6 table"
 url = "https://www.numdam.org/item/10.5802/aif.2781.pdf"
 fetched_from = "https://www.numdam.org/item/10.5802/aif.2781.pdf"
 fetched_at = "2026-10-25T01:34:51Z"

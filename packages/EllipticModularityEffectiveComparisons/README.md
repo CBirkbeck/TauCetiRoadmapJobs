@@ -6,7 +6,7 @@
 
 This Part II continues EllipticCurveModularity: its Layers R29.3–R29.6 end at modularity, exact arithmetic conductor, modular quotients and parametrisations. Here the new conclusions are effective residual comparisons and uniform image bounds. EllipticCurveModularity R29.1’s finiteness of the reducible-prime set for each fixed curve has no dependency on the uniform bounds here.
 
-The following objects retain their existing owners. Mathlib supplies prime factorization, Möbius convolution, integer and field norms and the Minkowski ideal-class bound. Tau Ceti supplies the actual newspace, diamond eigenspaces, characteristic-zero Sturm equality, geometric torsion action, isogenies and geometric kernels. ModularForms Layers 4, 8G and 10 supply primitive decomposition, coefficient-field orbit degree and the full Γ₀ dimension formula. The coefficient-degree estimate is consumed as the dimension consequence of the independent conjugate eigenlines in Layer 8G. SerreWeightAndLevelOptimisation §§2.8, 4.8, 6.1–6.3 owns optimized lifts and the deletion level. NeronModelsAndSemistableAbelianVarieties §5.3h owns the full residual conductor formula. ModularCurvesPartII §§16.2–16.6 and AutomorphicGaloisRepresentations §§6.1, 6.4 own rational-newform elliptic quotients, their Tate comparison and exact conductor. EisensteinIdealAndRationalTorsion §§2.3, 6.3–6.4 and 7.9 owns the nonzero finite Eisenstein quotient, its cusp formal immersion and the potential-good-reduction consequence. HeightsRationalPointsAndObstructions §§1.15b–1.18 owns the full torsion specialization under e<q−1. ImaginaryQuadraticClassNumber H1.1–H1.4, H3.5 and H3.6 owns quadratic integral models, the six values γ₂(τ_D)∈{0,−32,−96,−960,−5280,−640320}, the certified singular values j(τ_D)=γ₂(τ_D)³ with recovery of the order from its CM j-value, and the exhaustive class-number-one classification. These results are imports rather than targets below.
+The following objects retain their existing owners. Mathlib supplies prime factorization, Möbius convolution, integer and field norms and the Minkowski ideal-class bound. Tau Ceti supplies the actual newspace, diamond eigenspaces, characteristic-zero Sturm equality, geometric torsion action, isogenies and geometric kernels. ModularForms Layers 4, 8G and 10 supply primitive decomposition, coefficient-field orbit degree and the full Γ₀ dimension formula. The coefficient-degree estimate is consumed as the dimension consequence of the independent conjugate eigenlines in Layer 8G. SerreWeightAndLevelOptimisation §§2.8, 4.8, 6.1–6.3 owns optimized lifts and the deletion level. NeronModelsAndSemistableAbelianVarieties §5.3h owns the full residual conductor formula. ModularCurvesPartII §§16.2–16.6 and AutomorphicGaloisRepresentations §§6.1, 6.4 own rational-newform elliptic quotients, their Tate comparison and exact conductor. EisensteinIdealAndRationalTorsion §§2.3, 6.3–6.4 and 7.9 owns the nonzero finite Eisenstein quotient, its cusp formal immersion and the potential-good-reduction consequence. HeightsRationalPointsAndObstructions §§1.15b–1.18 owns the full torsion specialization under e<q−1. ImaginaryQuadraticClassNumber H1.1–H1.4, H3.5 and H3.6 owns quadratic integral models, the six values γ₂(τ_D)∈{0,−32,−96,−960,−5280,−640320}, the certified singular values j(τ_D)=γ₂(τ_D)³ with recovery of the order from its CM j-value, and the exhaustive class-number-one classification; its H3.2 owns the general Siegel functions with their transformation law, modular-product criterion and integrality. These results are imports rather than targets below.
 
 Layers 0–5 supply the effective residual comparisons used by continuations of EllipticCurveModularity. The newspace correction formula, the arithmetic norm comparison, Kraus’s filters and realization arguments, the prime and composite rational cyclic-degree classification, and the five-level Cartan argument belong here. The general ideal-valued Sturm comparison and the quantitative elliptic-isogeny bound required by those arguments are explicit targets, with full coefficient and number-field generality. The general geometric cuspidal-divisor torsion theorem and the four exceptional-prime point exhaustions belong here. The winding application retains its specific mixed-level boundary and nonvanishing calculation; general modular curves, integral Hecke pairings and Jacobian quotients are supplied by their named owners. The finite rational-point and residual-image conclusions are mathematical exhaustiveness theorems, with all primes in their quantified ranges.
 
@@ -95,11 +95,11 @@ What AutomorphicGaloisRepresentations must provide (gap:all-embedding-frobenius)
 
 ### From TauCetiRoadmap.EisensteinIdealAndRationalTorsion
 
-Consume §§2.3, 6.3–6.4 for the actual optimal Eisenstein quotient with finite rational group, and §7.9 for formal immersion at the cusp in every residue characteristic different from two and the potential-good-reduction consequence for prime r=11 or r≥17. Its §8.9 excludes invariant vectors; the invariant-line classification and the composite cyclic-degree list are targets of Layer 4.
+Consume §§2.3, 6.3–6.4 for the actual optimal Eisenstein quotient with finite rational group, and §7.9 for its squarefree cusp-difference torsion `squarefree_cusp_difference_torsion` and formal immersion at the cusp in every residue characteristic different from two and the potential-good-reduction consequence for prime r=11 or r≥17. Its §8.9 excludes invariant vectors; the invariant-line classification and the composite cyclic-degree list are targets of Layer 4.
 
 ### From TauCetiRoadmap.ImaginaryQuadraticClassNumber, TauCetiRoadmap.ComplexMultiplicationAndExplicitReciprocity and TauCetiRoadmap.ClassFieldTheory
 
-Consume ImaginaryQuadraticClassNumber H1.1–H1.4 for the actual quadratic integer rings, discriminants and splitting, H3.5 for the six values of γ₂(τ_D) in the cube-root branch, and H3.6 for the certified singular values of the reduced representatives, the recovery of the imaginary quadratic order from its CM j-value, and the exhaustive nine imaginary quadratic fields of class number one. Nothing here recomputes a singular value. Consume ComplexMultiplicationAndExplicitReciprocity §§3.1, 5.1–5.5 for integral class polynomials, CM reduction and exact endomorphism comparisons. ClassFieldTheory Layer 13 supplies the triviality of finite characters of G_ℚ unramified at every finite prime; thus the global character conclusion is independent of local Raynaud inertia.
+Consume ImaginaryQuadraticClassNumber H1.1–H1.4 for the actual quadratic integer rings, discriminants and splitting, H3.2 for the Siegel functions g_r (r∈ℚ²∖ℤ²), their SL₂ transformation with its root-of-unity factor, the congruence criterion for a finite exponent product to be a modular function of level N and integrality over ℤ[j], H3.5 for the six values of γ₂(τ_D) in the cube-root branch, and H3.6 for the certified singular values of the reduced representatives, the recovery of the imaginary quadratic order from its CM j-value, and the exhaustive nine imaginary quadratic fields of class number one. Nothing here recomputes a singular value. Consume ComplexMultiplicationAndExplicitReciprocity §§3.1, 5.1–5.5 for integral class polynomials, CM reduction and exact endomorphism comparisons. ClassFieldTheory Layer 13’s narrow Hilbert class field `narrowHilbertClassField` and `gal_rayClassField_equiv_rayClassGroup`, together with the trivial narrow class group of ℚ, give the triviality of finite characters of G_ℚ unramified at every finite prime; thus the global character conclusion is independent of local Raynaud inertia.
 
 ### From TauCetiRoadmap.ModularSymbolsPadicLFunctions
 
@@ -363,7 +363,7 @@ A proof route is as follows. Use the native dimension comparison. The level-one 
 
 The comparison is with Γ₀, not Γ₁; 35 is the composite equality case.
 
-*Needs:* Layer 0.5 Identification with the actual trivial-character newspace; Layer 0.2 The weight-two arithmetic dimension expression; Layer 0.8 The sharp estimate at prime levels; Layer 0.9 Large composite levels with at most two prime factors; Layer 0.10 Finite low-level composite check; Layer 0.11 Levels divisible by a sixth prime power; Layer 0.12 At least two large prime factors; Layer 0.13 A large prime together with a factor of six; Layer 0.14 The remaining small levels in the large-prime case; Layer 0.15 The residual finite family of levels.
+*Needs:* Layer 0.5 Identification with the actual trivial-character newspace; Layer 0.2 The weight-two arithmetic dimension expression; Layer 0.8 The sharp estimate at prime levels; Layer 0.9 Large composite levels with at most two prime factors; Layer 0.10 Small composite levels; Layer 0.11 Levels divisible by a sixth prime power; Layer 0.12 At least two large prime factors; Layer 0.13 A large prime together with a factor of six; Layer 0.14 The remaining small levels in the large-prime case; Layer 0.15 The residual finite family of levels.
 
 ### Examples
 
@@ -392,7 +392,7 @@ At the forbidden p=1, c=2 and s=1 give α=0. Divisibility of a zero norm would p
 
 ### 1.2 Congruences force divisibility of the integer norm
 
-Let K be a number field, λ a nonzero prime ideal of O_K lying above a rational prime ℓ, and x∈λ. Then ℓ divides the integer Algebra.norm(ℤ,x). If x≠0, this integer norm is nonzero and ℓ≤|Norm_Z(x)|. (bennett-siksek-2020, §2, proof of Lemma 2.1, p.359, bennett-siksek-2020 line 199.)
+Let K be a number field, λ a nonzero prime ideal of O_K lying above a rational prime ℓ, and x∈λ. Then ℓ divides the integer Algebra.norm(ℤ,x). If x≠0, this integer norm is nonzero and ℓ≤|Norm_Z(x)|. (bennett-siksek-2020, §2, proof of Lemma 2.2, p.359, bennett-siksek-2020 lines 198–201.)
 
 Work under the following standing conditions for this assertion: K is a number field; ℓ is a rational prime; λ is a nonzero prime ideal of O_K whose contraction to ℤ is (ℓ); x∈λ; The final nonzero-norm inequality additionally assumes x≠0.
 
@@ -416,7 +416,7 @@ A bound at only the preferred embedding is not sufficient for the product.
 
 ### 1.4 The removed-prime bound with coefficient degree
 
-Let E/ℚ have conductor M, ℓ≥3 prime and irreducible E[ℓ]. Let M₀ be the exact deletion level of SerreWeightAndLevelOptimisation §6.1. If p≠ℓ is prime, p∥M and ℓ divides the integer exponent v_p(Δ_min(E)), then ℓ≤(√p+1)^(2[K_f:ℚ]) for the SerreWeightAndLevelOptimisation §6.2 normalized weight-two trivial-character newform f at M₀. (bennett-siksek-2020, §2, Lemma 2.1, pp.358–359, bennett-siksek-2020 line 191.)
+Let E/ℚ have conductor M, ℓ≥3 prime and irreducible E[ℓ]. Let M₀ be the exact deletion level of SerreWeightAndLevelOptimisation §6.1. If p≠ℓ is prime, p∥M and ℓ divides the integer exponent v_p(Δ_min(E)), then ℓ≤(√p+1)^(2[K_f:ℚ]) for the SerreWeightAndLevelOptimisation §6.2 normalized weight-two trivial-character newform f at M₀. (bennett-siksek-2020, §2, Lemma 2.1(ii), p.359, bennett-siksek-2020 line 193, for the congruence; proof of Lemma 2.2, p.359, bennett-siksek-2020 lines 198–203, for the norm bound.)
 
 Work under the following standing conditions for this assertion: E/ℚ is elliptic of conductor M; ℓ≥3 is prime and E[ℓ] is irreducible; M₀ is the exact deletion level of SerreWeightAndLevelOptimisation §6.1; p≠ℓ is prime with p∥M and ℓ|v_p(Δ_min(E)); f is the supplied normalized weight-two trivial-character newform at M₀.
 
@@ -551,7 +551,7 @@ Use the optimized exact weight-two lift from the supplier contract. Rational coe
 
 ### 3.1 Finite-prime recognition of rational coefficients
 
-Prove newform_integral_of_small_primes. If a normalized weight-two newform f of level N and trivial character has a_q(f)∈ℤ for every prime q≤I(N)/6, then all its coefficients lie in ℤ and K_f=ℚ. (kraus-1997, §3.2, Lemme 1 and its proof, pp.1144–1145, kraus-1997 line 294.)
+Prove `newform_integral_of_small_primes`. If a normalized weight-two newform f of level N and trivial character has a_q(f)∈ℤ for every prime q≤I(N)/6, then every Fourier coefficient a_n(f), n≥0, lies in ℤ; equivalently K_f=ℚ. (kraus-1997, §3.2, Lemme 1 and its proof, pp.1144–1145, kraus-1997 line 294.)
 
 Work under the following standing conditions for this assertion: N>0; f is a normalized weight-two newform of level N and trivial character; For every prime q≤I(N)/6, a_q(f)∈ℤ; I is the Γ₀ index, not the Möbius function.
 
@@ -650,7 +650,7 @@ At p=2 the first filter removes the even coefficients; the second acts on the od
 
 ### 3.7a Integral ideal Sturm recognition
 
-Prove integral_ideal_sturm for every positive level N, natural weight k, character χ:(ℤ/N)ˣ→ℂˣ, number field K with embedding σ:K→ℂ, and actual modular form f in the χ-character subspace whose entire q-expansion is σ(a_n) with a_n∈O_K. For every ideal J⊂O_K, if a_n∈J for all natural n with 12n≤kI(N), including n=0, then a_n∈J for every n. This includes J=0, J=O_K and arbitrary prime-power ideals, with no restriction to good coefficient primes. (kraus-1997, Appendix II, Proposition 1, p.1158, kraus-1997 line 1060.)
+Prove `integral_ideal_sturm` for every positive level N, natural weight k, character χ:(ℤ/N)ˣ→ℂˣ, number field K with embedding σ:K→ℂ, and actual modular form f in the χ-character subspace whose entire q-expansion is σ(a_n) with a_n∈O_K. For every ideal J⊂O_K, if a_n∈J for all natural n with 12n≤kI(N), including n=0, then a_n∈J for every n. This includes J=0, J=O_K and arbitrary prime-power ideals, with no restriction to good coefficient primes. (kraus-1997, Appendix II, Proposition 1, p.1158, kraus-1997 line 1060.)
 
 Apply the integral Sturm argument to the given characteristic-zero form with its actual integral coefficient realization; prove the coefficient-ideal comparison over O_K using the integral q-expansion tools and conjugates, with the exact index bound and constant term. At primes dividing the level, do not identify infinity-integral coefficients with a global integral model without proving the comparison. That bad-prime comparison is part of this target. The coefficient sequence is tied to the actual form by its embedding.
 
@@ -688,7 +688,7 @@ No condition is needed at p=2 or at p²|N; include constant coefficient zero in 
 
 ### 3.10 Kraus’s global prime-power coefficient congruence
 
-Prove kraus_prime_power_congruence. Under the finite-prime hypotheses of §3.9, one has a_q(f)≡q+1 mod λ^m for every prime q∤2N. (kraus-1997, Appendix II, Proposition 2 and conclusion of §8.1, pp.1158–1160, kraus-1997 line 1082.)
+Prove `kraus_prime_power_congruence`. Let K be any number field with an embedding σ:K→ℂ and a:ℕ→O_K a sequence with σ(a_n)=a_n(f) for every n, so that f has coefficients in O_K; let λ be a prime ideal of O_K and m≥1. Under the finite-prime hypotheses of §3.9 for this λ, one has a_q≡q+1 mod λ^m for every prime q∤2N. (kraus-1997, Appendix II, Proposition 2 and conclusion of §8.1, pp.1158–1160, kraus-1997 line 1082.)
 
 Work under the following standing conditions for this assertion: All the finite-prime hypotheses, coefficient-ring data and exponent m≥1 of §3.9 hold.
 
@@ -760,7 +760,7 @@ The quadratic compositum argument includes identical fields; it does not require
 
 ### 3.16 The full-two curve in the two-isogeny class
 
-If C/ℚ has 4|#C(F_q) at every good odd prime, then there is a ℚ-isogeny C→F of degree one or two with F[2](ℚ)≅(ℤ/2ℤ)². Prove four_divisible_isogeny_realization for every integral Weierstrass model W whose rationalization is elliptic: four-divisible native point counts at every odd prime not dividing Δ(W) suffice. The finite set of extra discriminant primes of a nonminimal model can be avoided in the Chebotarev argument; an integral model exists for every rational elliptic curve. (kraus-1997, §3.3 proof of Théorème 4, p.1146, kraus-1997 lines 435–441.)
+If C/ℚ has 4|#C(F_q) at every good odd prime, then there is a ℚ-isogeny C→F of degree one or two with F[2](ℚ)≅(ℤ/2ℤ)². Prove `four_divisible_isogeny_realization` for every integral Weierstrass model W whose rationalization is elliptic: four-divisible native point counts at every odd prime not dividing Δ(W) suffice. The finite set of extra discriminant primes of a nonminimal model can be avoided in the Chebotarev argument; an integral model exists for every rational elliptic curve. (kraus-1997, §3.3 proof of Théorème 4, p.1146, kraus-1997 lines 435–441.)
 
 Work under the following standing conditions for this assertion: C/ℚ is elliptic; 4 divides #C(F_q) for every prime q of good odd reduction.
 
@@ -772,7 +772,7 @@ The selected rational two-point determines the quotient; other rational two-poin
 
 ### 3.17 Kraus’s full rational two-torsion realization
 
-Let E/ℚ have full rational two-torsion, ℓ≥5 prime, irreducible E[ℓ] of Serre weight two, and prime-to-ℓ residual conductor N. If ℓ>H(N)=max(F(N),G(N)), there is a modular elliptic curve F/ℚ of conductor exactly N, with full rational two-torsion and F[ℓ]≅E[ℓ]. (kraus-1997, Théorème 4 and proof, pp.1145–1146, kraus-1997 line 284.)
+Let E/ℚ have full rational two-torsion, ℓ≥5 prime, irreducible E[ℓ] of Serre weight two, and prime-to-ℓ residual conductor N. If ℓ>H(N)=max(F(N),G(N)), there is a modular elliptic curve F/ℚ of conductor exactly N, with full rational two-torsion and F[ℓ]≅E[ℓ]. (kraus-1997, Théorème 4, p.1144, kraus-1997 line 284; its proof §3.3, pp.1145–1146, kraus-1997 lines 374–441.)
 
 Work under the following standing conditions for this assertion: E/ℚ has full rational two-torsion; ℓ≥5 is prime; E[ℓ] is irreducible of Serre weight two; N is its full prime-to-ℓ Artin conductor; ℓ>H(N).
 
@@ -856,7 +856,7 @@ For E/ℚ with a prime r-isogeny, r=11 or r≥17, its kernel character has the f
 
 Work under the following standing conditions for this assertion: E/ℚ has a rational cyclic isogeny of prime degree r, with r=11 or r≥17; χ_r is the mod-r cyclotomic character; m=(r−1)/2 and t=gcd(m,6); fractional exponents are interpreted modulo m only when the denominator is invertible.
 
-A proof route is as follows. Use EisensteinIdealAndRationalTorsion §§6.3–6.4 and 7.9 at r and the fundamental-character description after an extension of absolute ramification index 2e0, e0∈{2,3}. Raynaud’s finite-flat bound gives 0≤(e0 k)_m≤e0, which yields the listed residues. The remaining finite-order character is everywhere unramified after its 2t-th power; the rational class field has no nontrivial everywhere-unramified finite extension. The determinant computes the dual character.
+A proof route is as follows. Use EisensteinIdealAndRationalTorsion §§6.3–6.4 and 7.9 at r and the fundamental-character description after an extension of absolute ramification index 2e0, e0∈{2,3}. Raynaud’s finite-flat bound gives 0≤(e0 k)_m≤e0, which yields the listed residues. The remaining finite-order character is everywhere unramified after its 2t-th power; the narrow Hilbert class field of ℚ is ℚ itself, because the narrow class group of ℚ is trivial, so this character is trivial. The determinant computes the dual character.
 
 The notation 1/2 and 1/3 means multiplicative inverses modulo m; no inverse is used when it does not exist.
 
@@ -1137,7 +1137,7 @@ The non-CM proper-image alternatives reduce to a nonsplit normalizer after the B
 
 ### 5.0 Geometric endomorphisms and nonsplit image containment
 
-Define `GeometricallyNonCM E` by requiring every geometric endomorphism in the native isogeny Hom ring to be an integer scalar. Define NonsplitNormalizerImage E p by the existence of a cyclic subgroup C of the additive automorphism group of E[p](ℚ̄), with |C|=p²−1, such that every actual Galois operator normalizes C. Its nonsplit interpretation is used only for prime p. An element of order p²−1 has irreducible quadratic minimal polynomial: a split semisimple element has order dividing p−1 and a nonsemisimple element order dividing p(p−1). Thus C is the unit group of a quadratic field in End_(𝔽_p)(E[p]). (lemos-2017, §2, equation (2.1), pp.4–5, lemos-2017 line 168.)
+Define `GeometricallyNonCM E` by requiring every geometric endomorphism in the native isogeny Hom ring to be an integer scalar. Define `NonsplitNormalizerImage E p` by the existence of a cyclic subgroup C of the additive automorphism group of E[p](ℚ̄), with |C|=p²−1, such that every actual Galois operator normalizes C. Its nonsplit interpretation is used only for prime p. An element of order p²−1 has irreducible quadratic minimal polynomial: a split semisimple element has order dividing p−1 and a nonsemisimple element order dividing p(p−1). Thus C is the unit group of a quadratic field in End_(𝔽_p)(E[p]). (lemos-2017, §2, equation (2.1), pp.4–5, lemos-2017 line 168.)
 
 The non-CM predicate has the following API.
 
@@ -1151,7 +1151,7 @@ The non-CM predicate has the following API.
 - For y²=x³+1, j=0 and the cube-root automorphism has order three, so the non-CM predicate fails.
 - For y²+y=x³−x²−10x−20, Δ=−11⁵ and j=−2¹²·31³/11⁵ is nonintegral; CM integrality excludes CM and the non-CM predicate holds.
 
-Define `SplitNormalizerImage E p` to mean that the actual Galois action preserves an unordered pair of distinct subgroups of order p in E[p](ℚ̄). At prime p these are distinct lines in a two-dimensional vector space and hence complementary; this is the split Cartan normalizer condition. (ArithmeticGaloisRepresentations §4.2; bilu-parent-rebolledo, Theorem 1.1, pp.958–959, bilu-parent-rebolledo line 104.)
+Define `SplitNormalizerImage E p` to mean that the actual Galois action preserves an unordered pair of distinct subgroups of order p in E[p](ℚ̄). At prime p these are distinct lines in a two-dimensional vector space and hence complementary. For odd primes p this is containment in the normalizer of the split Cartan subgroup fixing the two lines; at p=2 the split Cartan subgroup is trivial, its normalizer is all of GL₂(𝔽₂), and the line-pair condition is strictly stronger. (ArithmeticGaloisRepresentations §4.2; bilu-parent-rebolledo, Theorem 1.1, pp.958–959, bilu-parent-rebolledo line 104.)
 
 - The predicate is invariant under transport of torsion and change of basis.
 - For every Galois operator the two lines are either both fixed or exchanged, and inverse operators preserve the same pair.
@@ -1269,7 +1269,7 @@ A proof route uses the difference of the two p-isogeny maps to the finite Eisens
 
 For every prime p>3 and integral noncuspidal point P∈Y_s⁺(p)(ℤ), prove h(j(P))≤2π√p+6log p+21(log p)²/√p, where h is the absolute logarithmic Weil height. This includes CM points and, for j∈ℤ, h(j)=log max(1,|j|). (bilu-parent-rebolledo, Theorem 3.1, p.964, bilu-parent-rebolledo lines 328–330; proof, pp.968–970, bilu-parent-rebolledo lines 560–622.)
 
-A proof route constructs the modular units from Siegel functions, proves their divisors and integral q-expansions, and bounds their two cusp expansions on a fundamental domain. The product formula at an integral point and the explicit tail estimates give the displayed constants. This arithmetic estimate is a target here on the supplied modular curve.
+A proof route imports the Siegel functions of ImaginaryQuadraticClassNumber H3.2 with their exact transformation law, finite exponent-product modularity criterion and integrality over ℤ[j], forms the split-Cartan orbit products of these functions at level p, computes their cusp divisors, and bounds their two cusp expansions on a fundamental domain. The product formula at an integral point and the explicit tail estimates give the displayed constants. This arithmetic estimate is a target here on the supplied modular curve.
 
 **Checks.**
 
@@ -1277,7 +1277,7 @@ A proof route constructs the modular units from Siegel functions, proves their d
 - At p=17 the right side is approximately 83.790; replacing √p by p gives a different bound and loses the stated scale.
 - At p=3 the hypothesis fails, and at a nonintegral rational value j=1/2 the height is log 2; the integral-point hypothesis cannot be dropped when applying the product-formula argument.
 
-*Needs:* ModularCurvesPartII §§9.5–9.6; ModularForms Layers 1 and 10 for modular units, q-expansions and divisors; ArakelovGeometryAndAbelianHeights §1.12 for absolute logarithmic height.
+*Needs:* ModularCurvesPartII §§9.5–9.6; ImaginaryQuadraticClassNumber H3.2 for Siegel functions, their transformations, the modular-product criterion and integrality; ModularForms Layers 1 and 10 for q-expansions and divisors; ArakelovGeometryAndAbelianHeights §1.12 for absolute logarithmic height.
 
 ### 5.4 The large-prime split Cartan exclusion
 
@@ -1291,17 +1291,40 @@ Use the exact stable height comparison of ArakelovGeometryAndAbelianHeights §§
 
 *Needs:* ModularCurvesPartII §§5.2, 5.5; EllipticCurves Layer 4; EllipticCurves Layer 1; ArakelovGeometryAndAbelianHeights §4.4; ArakelovGeometryAndAbelianHeights §5.9; FaltingsFinitenessAndIsogenyTheorems §§R28.4.5–R28.4.7; Layer 5 §5.3a quantitative elliptic isogenies; Layer 5.3b Integrality of split Cartan rational points; Layer 5.3c The explicit Runge inequality.
 
+### 5.4a The generalized Jacobian of X₀(p) and Heegner–Gross vectors
+
+Throughout, p>11 is prime with p≠13, S is the finite set of isomorphism classes of supersingular elliptic curves over 𝔽̄_p, and R_s=End(E_s) for s∈S. These are the prerequisites of the Heegner–Gross criterion in §5.5; each is a target here. (bilu-parent-rebolledo, §§5.1.1–5.1.2, Propositions 5.1, 5.2 and 5.5 with Corollary 5.3, pp.973–975, bilu-parent-rebolledo lines 731–833.)
+
+Define J₀(p)♯ as the generalized Jacobian of the smooth projective curve X₀(p)/ℚ with respect to the reduced modulus (0)+(∞) of its two rational cusps: the semi-abelian variety of degree-zero divisor classes on Y₀(p) modulo divisors of functions congruent to 1 at both cusps. Prove that it is an extension of J₀(p) by the split one-dimensional torus 𝔾_m, that the Hecke correspondences T_n act on it compatibly with J₀(p), and define the winding ideal I♯_e as the annihilator in this Hecke algebra of the rational winding class of the relative homology of X₀(p) relative to its cusps, and J♯_e=J₀(p)♯/I♯_e J₀(p)♯ as the winding quotient. The general smooth-curve generalized Jacobian with a reduced rational modulus is constructed here for this curve; an ordinary Picard Jacobian does not substitute for it, since it loses the toric direction.
+
+Prove the following, for a noncuspidal non-CM rational point P of X₀⁺(p²), a point x∈Y₀(p²)(K) above P over a number field K with [K:ℚ]≤2, π_p:X₀(p²)→X₀(p) the degeneracy map preserving j, x₁=π_p(w_(p²)x) and x₂=w_p(π_p x):
+
+- x₁=x₂ in X₀(p)(K) forces the elliptic curve underlying x to have geometric CM (bilu-parent-rebolledo lines 734–737).
+- K is a quadratic field in which p splits, and at every prime of K above p the sections s₁,s₂ of the Deligne–Rapoport model defined by x₁,x₂ are not supersingular and have the same reduction (bilu-parent-rebolledo, Proposition 5.1, line 750).
+- The map Y₀(p)→J♯_e sending Q to the class of (Q)−(x₁) extends to a morphism φ_P from the smooth locus of Y₀(p) over O_K to the Néron model of J♯_e over O_K, and φ_P(s₂) is a torsion section; hence, since p splits in K and e=1<p−1, if φ_P is a formal immersion at the common reduction of s₁ and s₂ then s₁=s₂ (bilu-parent-rebolledo lines 757–771).
+- There is a Hecke-equivariant isomorphism between the cotangent space at the origin of the special fibre of J₀(p)♯ at p and 𝔽_p^S; under it v=Σλ_s[s] gives a cotangent vector ω_v of J♯_e exactly when I♯_e v=0, and with j as local parameter at an ordinary point of Y₀(p) over 𝔽_p the pullback of ω_v is Σλ_s/(j(P)−j(s)) dj (bilu-parent-rebolledo lines 773–781). Consequently, if some v∈ℤ^S with I♯_e v=0 has Σλ_s/(j(P)−j(s))≠0 in 𝔽_(p²), then φ_P is a formal immersion at s₁ (Proposition 5.2, line 783).
+- For a negative discriminant −D with p inert or ramified in ℚ(√−D), let h_s(−D) be the number of optimal embeddings of the order O_(−D) into R_s modulo conjugation by R_s^×, and e_D=|O_(−D)^×|^(−1)Σ_s h_s(−D)[s]. Then I♯_e e_D=0, and on the ordinary locus the differential attached to e_D is the logarithmic derivative H′_(−D)(j)/H_(−D)(j) dj of the Hilbert class polynomial modulo p (Proposition 5.5 and equation (5.2), lines 805–833). The set S is indexed by curves, not by maximal-order types: Frobenius-conjugate supersingular j-invariants can have isomorphic endomorphism rings, and h_s(−D) is counted on each curve separately.
+
+**Checks.**
+
+- The generalized Jacobian has dimension g+1, where g is the genus of X₀(p), and its toric part is one-dimensional because the modulus has two rational points; at p=17, g=1, so J₀(17)♯ has dimension two while J₀(17) has dimension one.
+- At p=17 and D=3, 17≡2 mod 3 is inert in ℚ(√−3), j=0 is the only supersingular invariant carrying e_3, and H_(−3)=X gives H′/H=1/j. Every ordinary j₀∈𝔽₁₇ is nonzero, so Σλ_s/(j₀−j(s)) is a nonzero multiple of 1/j₀ and the formal-immersion criterion holds at every ordinary point once I♯_e e_3=0 is known.
+- At p=17 and D=4, 17≡1 mod 4 splits in ℚ(i), so O_(−4) has no embedding into the quaternion algebra ramified at 17 and at infinity; every h_s(−4) is zero, e_4=0, and its differential is zero. The inert-or-ramified hypothesis cannot be dropped.
+- If P were a CM point, x₁=x₂ could hold; the non-CM hypothesis is what turns s₁=s₂ into a contradiction.
+
+*Needs:* ModularCurvesPartII §§5.2, 5.5 for X₀(p), X₀(p²), their degeneracy maps and Atkin–Lehner involutions; ModularCurvesPartII §§9.1, 13.1–13.3, 17.3 for Jacobians, Abel maps and Hecke correspondences; ModularSymbolsPadicLFunctions §§0.6–0.8 for the relative homology and the rational winding class; NeronModelsAndSemistableAbelianVarieties §§5.2, 6.4d for Néron models and cotangent comparisons of the abelian part; HeightsRationalPointsAndObstructions §§1.15b–1.18 for torsion specialization at e<p−1; ComplexMultiplicationAndExplicitReciprocity §3.1 and §§5.1–5.5 for class polynomials, supersingular CM reduction and endomorphism comparisons; EllipticCurves Layer 4.
+
 ### 5.5 The Heegner–Gross criterion for split Cartan points
 
 For prime p>11, p≠13, suppose there is a negative fundamental discriminant −D with χ_D(p)∈{0,−1} and p not dividing gcd_(2≤c≤7)Res(H′_(−D),H′_(−c²D)). Then every point of X0^+(p²)(ℚ) is cusp or CM. (bilu-parent-rebolledo, Corollary 5.7, p.976, with p>11, bilu-parent-rebolledo line 847.)
 
 Work under the following standing conditions for this assertion: p>11 is prime and p≠13; −D is a negative fundamental discriminant; χ_D(p)∈{0,−1}; p does not divide gcd_(2≤c≤7) Res(H′_(−D),H′_(−c²D)), with H the actual Hilbert class polynomials.
 
-A proof route is as follows. The resultant condition gives a conductor c∈{2,…,7} for which the two derivatives have no common zero modulo p. At every ordinary j₀ at least one derivative is nonzero. The CM embedding and winding-cotangent comparison then give the Heegner–Gross formal-immersion criterion, forcing a rational point to be cuspidal or CM.
+A proof route is as follows. The resultant condition gives a conductor c∈{2,…,7} for which the two derivatives have no common zero modulo p. At every ordinary j₀ at least one of H′_(−D)(j₀), H′_(−c²D)(j₀) is nonzero, and p is inert or ramified in ℚ(√−D)=ℚ(√−c²D). Take a noncuspidal non-CM rational point P with its quadratic lift x and the sections s₁,s₂ of §5.4a. By §5.4a the vectors e_D and e_(c²D) satisfy I♯_e e=0, and their differentials are the logarithmic derivatives of H_(−D) and H_(−c²D); at the ordinary common reduction j₀ of s₁ one of them is nonzero, so φ_P is a formal immersion there. Then s₁=s₂, so x₁=x₂ and P is CM, a contradiction (bilu-parent-rebolledo, Proposition 5.6 and proof of Corollary 5.7, p.976, lines 839–859).
 
-The class-polynomial argument uses the ordinary j-map and the specified supersingular reduction of CM points on the same modular curve. Its divisor comparison takes place in a generalized Jacobian.
+The divisor comparison takes place in the generalized Jacobian J₀(p)♯ of §5.4a, not in the Picard Jacobian of X₀(p).
 
-*Needs:* ModularCurvesPartII §§5.2, 5.5; ModularCurvesPartII §§13.1–13.3, 17.3; ModularCurvesPartII §§9.1, 13.1–13.3; ComplexMultiplicationAndExplicitReciprocity §3.1 and §5.1.
+*Needs:* Layer 5.4a The generalized Jacobian of X₀(p) and Heegner–Gross vectors; ModularCurvesPartII §§5.2, 5.5; ComplexMultiplicationAndExplicitReciprocity §3.1 and §5.1.
 
 ### 5.6 The finite split Cartan exclusion
 
@@ -1335,7 +1358,7 @@ A proof route is as follows. Identify Xsplit(p)≅X0^+(p²). For p>1.4·10^7 use
 
 ### 5.8 Every remaining proper image is in a non-split Cartan normalizer
 
-Prove proper_image_nonsplit. For non-CM E/ℚ and prime p>37, if the image of E[p] is proper in GL₂(F_p), it is contained in the normalizer of a non-split Cartan. (lemos-2017, Theorem 2.3, p.6, lemos-2017 line 223.)
+Prove `proper_image_nonsplit`. For geometrically non-CM E/ℚ and prime p>37, if the image of E[p] is proper in GL₂(F_p), then `NonsplitNormalizerImage E p` holds: the image is contained in the normalizer of a non-split Cartan. (lemos-2017, Theorem 2.3, p.6, lemos-2017 line 223.)
 
 Work under the following standing conditions for this assertion: E/ℚ is geometrically non-CM; p>37 is prime; the image of E[p] is a proper subgroup of GL₂(F_p).
 
@@ -1375,7 +1398,7 @@ For every number field K and every smooth projective geometrically connected con
 
 A proof route starts on a fine full-level component at level N≥3. The rational Drinfeld–Manin projector, a polynomial in geometric Hecke correspondences, preserves the Hodge filtration. Transport the splitting through geometric duality to a rational projection H₁(X(ℂ),cusps;ℚ)→H₁(X(ℂ),ℚ), and prove that this projection preserves integration of holomorphic differentials. Thus an integral relative chain with boundary D has integration functional in Λ⊗ℚ, where Λ is the image of H₁(X(ℂ),ℤ) in H⁰(X,Ω¹) dual. This compatibility is a target here, using the relative symbol comparison and the actual Abel–Jacobi period identification; an abstract rational retraction alone is insufficient. Clearing its denominator by an integer n>0 puts that functional in Λ, so n[D]=0 in the actual geometric Jacobian.
 
-For a general congruence curve choose a finite full-level map π:X′→X of positive degree after a finite field extension and work componentwise. Pullback sends D to an integral degree-zero cuspidal divisor. If nπ*[D]=0, the norm identity π_*π*=[deg π] gives n deg(π)[D]=0. An embedding K̄→ℂ detects equality of these geometric divisor classes, so this proves geometric torsion over K̄. The argument retains ramification multiplicities in pullback and norm. (elkik-1990, reduction to full level, p.60, elkik-1990 line 49; Hodge functoriality, §§II–III, elkik-1990 lines 135–173, 225–239.)
+For a general congruence curve choose a finite full-level map π:X′→X of positive degree after a finite field extension and work componentwise. Pullback sends D to an integral degree-zero cuspidal divisor. If nπ*[D]=0, the norm identity π_*π*=[deg π] gives n deg(π)[D]=0. An embedding K̄→ℂ detects equality of these geometric divisor classes, so this proves geometric torsion over K̄. The argument retains ramification multiplicities in pullback and norm. For squarefree N the Γ₀(N) case is EisensteinIdealAndRationalTorsion §7.9’s cusp-difference torsion theorem `squarefree_cusp_difference_torsion`, consumed rather than re-proved; the general congruence-curve statement is the target here. (elkik-1990, reduction to full level, p.60, elkik-1990 line 49; Hodge functoriality, §§II–III, elkik-1990 lines 135–173, 225–239.)
 
 **Checks.**
 
@@ -1384,7 +1407,7 @@ For a general congruence curve choose a finite full-level map π:X′→X of pos
 - For a finite map of degree three, if the pulled-back class is killed by five, norm gives 15[D]=0. It does not give exact order 15: D=0 still has order one.
 - In ℝ/ℤ, a=√2 and b=1/11−√2 have a+b=1/11, killed by 11, although neither a nor b is torsion. Torsion of the sum in §5.12 cannot replace torsion of every individual cusp difference.
 
-*Needs:* ModularSymbolsPadicLFunctions §§0.6–0.8 for duality, periods and the rational projector; ModularCurvesPartII §§3.8, 5.2, 13.1–13.3, 14.11–14.12 for full-level maps, Jacobian pullback/norm and geometric relative symbols; MordellLawrenceVenkatesh §8.11 for the actual Abel–Jacobi period lattice.
+*Needs:* ModularSymbolsPadicLFunctions §§0.6–0.8 for duality, periods and the rational projector; ModularCurvesPartII §§3.8, 5.2, 13.1–13.3, 14.11–14.12 for full-level maps, Jacobian pullback/norm and geometric relative symbols; MordellLawrenceVenkatesh §8.11 for the actual Abel–Jacobi period lattice; EisensteinIdealAndRationalTorsion §7.9’s squarefree cusp-difference torsion for the squarefree Γ₀(N) case.
 
 ### 5.11 The winding class selects exactly nonvanishing central periods
 
@@ -1466,21 +1489,35 @@ A(ℚ) finite does not directly imply A(K) finite; the cuspidal Galois argument 
 
 *Needs:* Layer 5.10a Geometric cuspidal-divisor torsion; Layer 5.13 The nonzero finite winding quotient; ModularCurvesPartII §§9.1, 13.1–13.3; ModularCurvesPartII §§3.8, 5.2, 9.5–9.7; ModularSymbolsPadicLFunctions §§0.6–0.8.
 
+### 5.16a Moving the specialization cusp to infinity
+
+For r∈{2,3,5,7,13}, prime p outside that set, a prime q∤rp and a rational noncuspidal point P of X₀,ns⁺(r,p) that specializes at a prime above q to a cusp c, prove that there are an isomorphism α:X₀,ns⁺(r,p)→X₀,ns⁺(r,p)′ over ℚ, given by a change of the nonsplit Cartan subgroup (conjugation in GL₂(𝔽_p)) composed if necessary with w_r, and the corresponding fibre-product curve with its own choice of cusp ∞, such that α(P) is a rational noncuspidal point specializing to ∞ at the same prime. Prove that α commutes with the Hecke correspondences T_n for n prime to rp, carries the full-new winding quotient, its Hecke annihilator and the specified quotient A of §5.13 to the corresponding objects, and carries the integral cusp charts at q to each other. The elliptic curve underlying α(P) is E or its quotient by the rational r-isogeny kernel, so its j-invariant has a denominator at q exactly when j(E) does. (darmon-merel, §8, proof of Theorem 8.1, author-version p.22, darmon-merel lines 716–725.)
+
+A proof route is as follows. The (p−1)/2 cusps of X_ns⁺(p) index the choices of nonsplit Cartan subgroup in the source's normalization; conjugation by g∈GL₂(𝔽_p) acts on the full-level moduli problem over ℚ and so induces an isomorphism over ℚ from the quotient curve of one Cartan normalizer to that of its conjugate, carrying a chosen cusp to the cusp ∞ of the target curve. Galois conjugation over ℚ(ζ_p)⁺ moves cusps only within the fibre lying over one cusp of X₀(r); w_r exchanges the fibres over 0 and ∞. The Hecke statements follow from commutation of these operators with T_n for (n,rp)=1 and from w_r(e)=−e (§5.12), which preserves the annihilator. The j-statement uses isogeny invariance of potentially multiplicative reduction (NeronModelsAndSemistableAbelianVarieties §5.2).
+
+**Checks.**
+
+- At r=5, p=11 the curve has 2·(11−1)/2=10 geometric cusps, five over each of the two cusps of X₀(5), each fibre conjugate over ℚ(ζ₁₁)⁺ of degree five. A cusp over 0 cannot be moved to the fibre over ∞ by Galois conjugation or by a change of Cartan; w₅ is needed.
+- At q=23≡1 mod 11 every cusp is 𝔽₂₃-rational, so a denominator point can reduce to a cusp in either fibre; §5.14 alone does not decide which.
+- Without the transport, the base-point map φ_∞ sends P to a class reducing to π[c−∞], a torsion cuspidal class by §5.10a that need not vanish: by §5.12 the class of the difference of the two fibres has exact order p. The transported map specializes α(P) to φ(∞)=0 by construction.
+
+*Needs:* ModularCurvesPartII §§3.8, 5.2, 9.5–9.7 for the Cartan curves, their moduli and cusps; ModularCurvesPartII §§13.1–13.3 for Hecke correspondences; ModularForms Layer 6 for w_r; gap:mixed-cusp-charts; Layer 5.12 Nonvanishing of the new winding class; Layer 5.13 The nonzero finite winding quotient; NeronModelsAndSemistableAbelianVarieties §5.2.
+
 ### 5.17 Formal immersion excludes every denominator away from p
 
 For r∈{2,3,5,7,13}, prime p outside that set, and E/ℚ with a rational r-isogeny and residual image contained in a non-split Cartan normalizer, j(E) lies in ℤ[1/p]. (lemos-2017, Theorem 1.4 and §3 concluding proof, pp.3,10, lemos-2017 line 107.)
 
 Work under the following standing conditions for this assertion: E/ℚ admits a rational r-isogeny with r∈{2,3,5,7,13}; p is prime outside that set; the image of E[p] is contained in a non-split Cartan normalizer.
 
-A proof route is as follows. A denominator prime q≠p gives potentially multiplicative reduction. Apply §5.9 to get q≡±1 mod p. Since p≥11, an odd prime q≡±1 satisfies q≥2p−1>r,3. Now §5.14 applies on the smooth cusp model. The real-cyclotomic field is unramified at q and A has good reduction there; torsion specialization is injective for e=1<q−1. Since φ(P) reduces to φ(∞)=0, §5.16 gives φ(P)=0. Formal immersion at the common reduction point forces the two sections to coincide, so the noncuspidal point would be the cusp, a contradiction.
+A proof route is as follows. A denominator prime q≠p gives potentially multiplicative reduction. Apply §5.9 to get q≡±1 mod p. Since p≥11, an odd prime q≡±1 satisfies q≥2p−1>r,3. Now §5.14 applies on the smooth cusp model: P specializes to some cusp c at a prime above q. By §5.16a replace P by α(P), which is noncuspidal, specializes to ∞ and still has a denominator at q; write P for it. The real-cyclotomic field is unramified at q and A has good reduction there; torsion specialization is injective for e=1<q−1. Since P specializes to ∞, φ(P) reduces to φ(∞)=0, and §5.16 makes φ(P) torsion, so φ(P)=0. Formal immersion at the common reduction point forces the two sections to coincide, so the noncuspidal point would be the cusp, a contradiction.
 
 The same denominator exclusion holds throughout the stated range p∉{2,3,5,7,13}: its possible denominator primes satisfy the required characteristic bound.
 
-*Needs:* Layer 5.14 The cusp residue-field constraint; Layer 5.15 Formal immersion into the winding quotient at a cusp; Layer 5.16 The rational modular point has torsion quotient image; ModularCurvesPartII §§13.1–13.3, 17.3; NeronModelsAndSemistableAbelianVarieties §§5.3h, 6.4d; Layer 5.9 Potentially multiplicative primes under a non-split image.
+*Needs:* Layer 5.14 The cusp residue-field constraint; Layer 5.15 Formal immersion into the winding quotient at a cusp; Layer 5.16 The rational modular point has torsion quotient image; Layer 5.16a Moving the specialization cusp to infinity; ModularCurvesPartII §§13.1–13.3, 17.3; NeronModelsAndSemistableAbelianVarieties §§5.3h, 6.4d; Layer 5.9 Potentially multiplicative primes under a non-split image.
 
 ### 5.18 A proper residual image forces integral j
 
-For geometrically non-CM E/ℚ with a rational r-isogeny, r∈{2,3,5,7,13}, and prime p>37, a proper mod-p image forces j(E)∈ℤ. Prove the source’s more general cyclic_isogeny_integral_j: whenever p is prime outside {2,3,5,7,13} and the torsion image lies in a nonsplit normalizer, a rational r-isogeny for r in this set forces integral j, without a non-CM hypothesis. The same integral cusp argument applies since p≥11 gives q≥2p−1>r,3. (lemos-2017, Proposition 2.1 and proof, pp.4–5, lemos-2017 line 136.)
+For geometrically non-CM E/ℚ with a rational r-isogeny, r∈{2,3,5,7,13}, and prime p>37, a proper mod-p image forces j(E)∈ℤ. Prove the source’s more general `cyclic_isogeny_integral_j`: whenever p is prime outside {2,3,5,7,13} and `NonsplitNormalizerImage E p` holds, a rational cyclic r-isogeny for r in this set forces j(E)∈ℤ, without a non-CM hypothesis. The same integral cusp argument applies since p≥11 gives q≥2p−1>r,3. (lemos-2017, Proposition 2.1 and proof, pp.4–5, lemos-2017 line 136.)
 
 Work under the following standing conditions for this assertion: E/ℚ is non-CM and admits a rational r-isogeny with r∈{2,3,5,7,13}; p>37 is prime; the mod-p image is proper.
 
@@ -1603,17 +1640,31 @@ There are six non-CM values after excluding −2^15; a Jacobian rank assertion a
 
 *Needs:* Layer 4.7 Mazur’s rational prime-isogeny theorem; ModularCurvesPartII §§5.2, 5.5; ComplexMultiplicationAndExplicitReciprocity §3.1 and §5.1; EllipticCurves Layers 6–7; HeightsRationalPointsAndObstructions §§1.4–1.7, 1.13–1.15, 1.18–1.19; ModularCurvesPartII §§13.1–13.3, 16.2–16.6, 17.3; EisensteinIdealAndRationalTorsion §7.9; ModularSymbolsPadicLFunctions §§0.6–0.8, 1.1–1.2; gap:modular-rank-zero.
 
+### 5.25a A witness bound for nonsurjective primes
+
+Let E/ℚ be geometrically non-CM with set S of primes of bad reduction. For a prime p≥17 with `NonsplitNormalizerImage E p`, let C be the nonsplit Cartan subgroup and ε_p:G_ℚ→N(C)/C≅{±1} the induced quadratic character. Prove: (i) ε_p is nontrivial and odd, and unramified at every prime outside S, including p; (ii) for every prime q∉S∪{p} with ε_p(Frob_q)=−1, p divides a_q(E). Then for every odd quadratic character ε unramified outside S there is a prime q_ε∉S with ε(Frob_(q_ε))=−1 and a_(q_ε)(E)≠0. For any such choice put B(E)=max_ε max(q_ε,|a_(q_ε)(E)|), the maximum over the finitely many odd quadratic characters unramified outside S (and B(E)=1 if there are none). Prove that every prime p≥17 with `NonsplitNormalizerImage E p` satisfies p≤B(E), and hence, with §5.8, every prime p>37 at which E[p] is not surjective satisfies p≤B(E). (serre-1981, §8.4, proof of Lemme 19, printed pp.398–399 / archive pp.198–199, serre-1981 lines 2569–2594; the unconditional part used here is the character and trace argument, not the GRH bound for q_ε.)
+
+A proof route is as follows. Complex conjugation has eigenvalues 1 and −1 on E[p], whereas an element of C with both eigenvalues in 𝔽_p is scalar; so it lies outside C and ε_p is odd. At q∉S∪{p} the representation is unramified. At p, Lemos's Proposition 2.2 (§5.9) gives potentially good reduction with ramification index e∈{1,2,3,4,6}, so inertia acts through a cyclic tame quotient. An element of N(C)∖C has square in 𝔽_p^×, hence order dividing 2(p−1), and an element of N(C) with both eigenvalues in 𝔽_p has eigenvalue ratio ±1. In the level-one case the eigenvalue ratio is χ_pψ^(−2) with ψ of order dividing e, of order greater than two once p∉{3,7}; in the level-two case the inertia image has order at least (p²−1)/6>2(p−1) for p>11, so its generator lies in C. Thus for p≥17 the inertia image lies in C and ε_p is unramified at p. If ε_p(Frob_q)=−1, ρ(Frob_q) lies in N(C)∖C, whose elements have trace zero, so a_q(E)≡0 mod p. For the witnesses: if a_q(E)=0 at every good q with ε(Frob_q)=−1, then E and its twist E^ε have equal traces at all good primes and are ℚ-isogenous by FaltingsFinitenessAndIsogenyTheorems §R28.4.7; composing with the twisting isomorphism over the quadratic field of ε gives an endomorphism that Galois conjugation negates, contradicting geometric non-CM. Finally, if p is a nonsplit prime, ε_p is one of the characters ε, and either p=q_ε or p divides the nonzero integer a_(q_ε)(E); in both cases p≤B(E).
+
+**Checks.**
+
+- For E₁₁: y²+y=x³−x²−10x−20, S={11}; the only odd quadratic character unramified outside 11 is that of ℚ(√−11), and 2 is inert there since −11≡5 mod 8. Counting gives #E₁₁(𝔽₂)=5, so a₂=−2≠0 and B(E₁₁)=2: E₁₁ has no prime p≥17 with nonsplit-normalizer image, consistent with its nonintegral j and §5.18.
+- For the CM curve y²=x³−x and ε the character of ℚ(i), every good q with ε(Frob_q)=−1 is ≡3 mod 4 and has a_q=0, so no witness exists; indeed the image at every p≡3 mod 4 lies in a nonsplit normalizer. The non-CM hypothesis is essential.
+- The lower bound p≥17 is used at p itself: at p=7 a potentially ordinary curve with e=3 can have eigenvalue ratio χ₇ψ^(−2) with ψ=χ₇² of order three; this ratio is χ₇³, of order two, so the inertia argument gives nothing there. At p=11 an element of the order-120 nonsplit Cartan with eigenvalues in 𝔽₁₁ is a scalar, and complex conjugation has eigenvalues 1 and −1; an even character, such as that of ℚ(√5), can therefore never be ε_p, and a zero trace a_q=0 would give the empty condition p|0, which is why the witness must have a_q≠0.
+
+*Needs:* Layer 5.0 Geometric endomorphisms and nonsplit image containment; Layer 5.2 Serre’s projective inertia bound; Layer 5.8 Every remaining proper image is in a non-split Cartan normalizer; Layer 5.9 Potentially multiplicative primes under a non-split image; ArithmeticGaloisRepresentations §§2.3–2.4, 4.2–4.5, 5.1, 6.1–6.4; FaltingsFinitenessAndIsogenyTheorems §R28.4.7; EllipticCurves Layers 4–5.
+
 ### 5.26 Residual-image theorems for the six large-isogeny j-values
 
 For each of the six non-CM j-values in §5.25, every E/ℚ with that j-value has surjective mod-p representation for every prime p>37. (lemos-2017, §2, LMFDB check of the seven j-values, pp.5–6, lemos-2017 line 204.)
 
 Work under the following standing conditions for this assertion: j is one of the six non-CM values in §5.25; E/ℚ has j(E)=j; p>37 is prime.
 
-A proof route is as follows. For every one of the six non-CM j-values prove an upper bound for all nonsurjective primes and exclude every candidate above 37 using the actual local and finite-image alternatives. Transport the resulting theorem to all curves with that j by quadratic twisting.
+A proof route is as follows. For one rational model E of each of the six non-CM j-values, apply §5.25a: every nonsurjective prime p>37 is a nonsplit prime with p≤B(E). For each of the finitely many primes 37<p≤B(E) and each odd quadratic character ε unramified outside S, exhibit a good prime q≠p with ε(Frob_q)=−1 and p∤a_q(E); this shows ε_p≠ε for every ε, so p is surjective. Transport the resulting theorem to all curves with that j by quadratic twisting.
 
 A finite set of sampled Frobenius traces cannot by itself certify all p>37.
 
-*Needs:* Layer 5.25 The finite j-table at prime degrees 11,17,37; Layer 5.24 Surjectivity is invariant under quadratic twist; ArithmeticGaloisRepresentations §§4.2–4.5; ArithmeticGaloisRepresentations §§6.1–6.4.
+*Needs:* Layer 5.25 The finite j-table at prime degrees 11,17,37; Layer 5.25a A witness bound for nonsurjective primes; Layer 5.24 Surjectivity is invariant under quadratic twist; ArithmeticGaloisRepresentations §§4.2–4.5; ArithmeticGaloisRepresentations §§6.1–6.4.
 
 ### 5.27 Residual-image theorems for the integral j-lists
 
@@ -1621,11 +1672,11 @@ For each non-CM integer j in the union of lemosIntegralJ(r) over r∈{2,3,5,7,13
 
 Work under the following standing conditions for this assertion: r∈{2,3,5,7,13}; j∈lemosIntegralJ(r) is non-CM; E/ℚ has j(E)=j; p>37 is prime.
 
-A proof route is as follows. For every non-CM integer j in the five finite sets, prove a bound on every possible nonsurjective prime and exclude the entire range above 37. Distinguish CM by geometric endomorphisms. Quadratic twisting then gives the theorem for every rational model with that j.
+A proof route is as follows. For one rational model E of every non-CM integer j in the five finite sets, apply §5.25a to bound every nonsurjective prime p>37 by B(E), and exclude each remaining prime 37<p≤B(E) by a good prime q≠p with ε(Frob_q)=−1 and p∤a_q(E) for every odd quadratic character ε unramified outside the bad primes of E. Distinguish CM by geometric endomorphisms. Quadratic twisting then gives the theorem for every rational model with that j.
 
 The original five set sizes do not imply how many distinct non-CM twist classes remain after intersections.
 
-*Needs:* Layer 5.22 The finite integral j-candidate sets; Layer 5.24 Surjectivity is invariant under quadratic twist; ArithmeticGaloisRepresentations §§4.2–4.5; ArithmeticGaloisRepresentations §§6.1–6.4; ComplexMultiplicationAndExplicitReciprocity §§5.1–5.5.
+*Needs:* Layer 5.22 The finite integral j-candidate sets; Layer 5.25a A witness bound for nonsurjective primes; Layer 5.24 Surjectivity is invariant under quadratic twist; ArithmeticGaloisRepresentations §§4.2–4.5; ArithmeticGaloisRepresentations §§6.1–6.4; ComplexMultiplicationAndExplicitReciprocity §§5.1–5.5.
 
 ### 5.28 Lemos’s rational cyclic-isogeny surjectivity theorem
 
@@ -1645,7 +1696,7 @@ At residual p=11 and local q=3, a quadratic Tate twist has squared diagonal eige
 
 ### Dependencies
 
-Layer 4; EllipticCurves Layers 1–5; ArithmeticGaloisRepresentations §§2.3–2.4,4.2–4.5,6.1–6.4; ModularCurvesPartII §§9.5–9.7,13.1–13.3,14.11–14.12,16.2–16.6; MordellLawrenceVenkatesh §8.11; ModularSymbolsPadicLFunctions §§0.6–0.8,1.1–1.2; ComplexMultiplicationAndExplicitReciprocity §§3.1,5.1–5.5; ImaginaryQuadraticClassNumber H3.5–H3.6; ArakelovGeometryAndAbelianHeights §§4.4,5.9; FaltingsFinitenessAndIsogenyTheorems §§R28.4.5–R28.4.7; EulerSystemsAndKolyvaginSystems §§4.7,5.13; gap:mixed-cusp-charts, gap:chen-winding-comparison, gap:positive-characteristic-support, gap:modular-rank-zero and gap:quantitative-abelian-periods; the owned geometric cuspidal-torsion, exceptional-prime point-exhaustion, mixed-boundary and split-height targets; and the full-torsion specialization theorem of HeightsRationalPointsAndObstructions §1.18. Each finite image theorem includes an exhaustive all-primes bound.
+Layer 4; EllipticCurves Layers 1–5; ArithmeticGaloisRepresentations §§2.3–2.4,4.2–4.5,6.1–6.4; ModularCurvesPartII §§9.5–9.7,13.1–13.3,14.11–14.12,16.2–16.6; MordellLawrenceVenkatesh §8.11; ModularSymbolsPadicLFunctions §§0.6–0.8,1.1–1.2; ComplexMultiplicationAndExplicitReciprocity §§3.1,5.1–5.5; ImaginaryQuadraticClassNumber H3.2, H3.5–H3.6; ArakelovGeometryAndAbelianHeights §§4.4,5.9; FaltingsFinitenessAndIsogenyTheorems §§R28.4.5–R28.4.7; EulerSystemsAndKolyvaginSystems §§4.7,5.13; gap:mixed-cusp-charts, gap:chen-winding-comparison, gap:positive-characteristic-support, gap:modular-rank-zero and gap:quantitative-abelian-periods; the owned geometric cuspidal-torsion, exceptional-prime point-exhaustion, mixed-boundary and split-height targets; and the full-torsion specialization theorem of HeightsRationalPointsAndObstructions §1.18. Each finite image theorem includes an exhaustive all-primes bound.
 
 ## Downstream consumers
 
