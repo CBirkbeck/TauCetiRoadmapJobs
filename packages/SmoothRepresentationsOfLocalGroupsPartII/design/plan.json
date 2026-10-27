@@ -6009,15 +6009,9 @@
  ],
  "gaps": [
   {
-    "slug": "triple-centralizers-and-orbit-tables",
-    "supplier": "LieHighestWeightPartII",
-    "section": "N0–N3",
-    "needs": "Supply reductivity and component groups of algebraic sl₂-triple centralizers, the finite-orbit and unique-open-orbit theorem for the q-eigenspace of a semisimple automorphism, and the semantic nilpotent-orbit and reductive-centralizer tables used in SRU.7."
-  },
-  {
     "slug": "steinberg-equivariant-k-theory",
     "supplier": "SpringerResolutionAndCharacteristicCycles",
-    "section": "S and H",
+    "section": "S",
     "needs": "Supply coherent G^∨ × ℂ^×-equivariant K-theory convolution on the Steinberg variety, its affine-Hecke-algebra identification and fixed-point standard modules with the Springer enhancement criterion used by the Kazhdan–Lusztig classification."
   },
   {
@@ -6061,6 +6055,48 @@
     "supplier": "ExcursionOperatorsAndSpectralActionPartII",
     "section": "SC4 and SC3",
     "needs": "Supply the semisimple local-parameter map on irreducible smooth representations over every nonarchimedean local field and its compatibility with normalized parabolic induction and cuspidal support, with the square-root and reciprocity conventions fixed."
+  },
+  {
+    "slug": "triple-centralizers",
+    "supplier": "LieHighestWeightPartII",
+    "section": "N0",
+    "needs": "Supply reductivity of the centralizer of an algebraic sl₂-triple in a connected complex reductive group, with its identity component and its component group."
+  },
+  {
+    "slug": "graded-open-orbit",
+    "supplier": "LieHighestWeightPartII",
+    "section": "N0–N1",
+    "needs": "Supply, for a semisimple element s of a connected complex reductive group and a complex number q that is not a root of unity, finiteness of the orbits of the centralizer of s on the q-eigenspace of Ad(s) and the existence of exactly one open orbit."
+  },
+  {
+    "slug": "orbit-tables",
+    "supplier": "LieHighestWeightPartII",
+    "section": "N3",
+    "needs": "Supply the Bala–Carter lists of nilpotent orbits of the complex groups of types F₄, E₇ and E₈ with the types of the reductive centralizers of their sl₂-triples, including the C₄ centralizer of the E₈ orbit 4A₁."
+  },
+  {
+    "slug": "whittaker-multiplicity-one",
+    "supplier": "SmoothRepresentationsOfLocalGroups",
+    "section": "SR.2.3",
+    "needs": "Supply, for every quasi-split connected reductive group over a nonarchimedean local field of characteristic zero, every nondegenerate Whittaker datum (U, ψ) and every irreducible admissible complex representation V, the bound dim Hom_U(V, ψ) ≤ 1, extending the GL₂ multiplicity-one theorem of SR.2.3."
+  },
+  {
+    "slug": "sigma-finite-l1-duality",
+    "supplier": "BanachSpaceTheory",
+    "section": "B5",
+    "needs": "Supply the isometric complex-linear identification (L¹(μ))* ≃ L∞(μ) by the integral pairing for every σ-finite measure μ, with its norm equality and weak-star evaluation laws."
+  },
+  {
+    "slug": "shahidi-local-coefficient",
+    "supplier": "AutomorphicLFunctionsAndLocalFactors",
+    "section": "AL.4",
+    "needs": "Supply, for a quasi-split connected reductive group over a p-adic field of characteristic zero, a standard parabolic P = MN and an irreducible generic tempered representation τ of M with a compatible Whittaker datum, the meromorphic Shahidi local coefficient in ν ∈ a_M^* ⊗ ℂ with its normalisation, and its holomorphy on the negative chamber (HO Theorem 1.1)."
+  },
+  {
+    "slug": "heiermann-muic-implication",
+    "supplier": "AutomorphicLFunctionsAndLocalFactors",
+    "section": "AL.4",
+    "needs": "Supply the theorem that negative-chamber holomorphy of these local coefficients for all generic tempered data implies that a Langlands quotient J(τ, ν) with τ generic tempered is generic exactly when its standard module i_P(τ_ν) is irreducible (HM07, as used in HO Corollary 1.2)."
   }
 ],
  "restructure": [

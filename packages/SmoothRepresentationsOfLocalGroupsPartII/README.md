@@ -10,15 +10,15 @@ SmoothRepresentationsOfLocalGroups SR.0.1–SR.0.4 owns smoothness, algebraic fi
 
 The monoid homomorphism into bounded operators is already in the library as Mathlib `ContRepresentation`; unitarity, unitary restriction and the inverse/adjoint identity are in Tau Ceti’s continuous representation API. Generic positive kernels, radical quotient, Hilbert completion, feature density and the Kolmogorov comparison isometry are already in the library: SRU.0 adds the nonabelian translation action and strong continuity, rather than a second Hilbert-space construction. Tau Ceti’s additive GNS action assumes an additive commutative group. Mathlib owns algebraic irreducibility, completion, orthogonal projection, Krein–Milman and Banach–Alaoglu. None is a theorem target here.
 
-NoncompactQuantumSymmetry M0 owns the shared strong-unitary convention, bounded Schur lemma and compact-group isotypic projectors; its section “Shared group C*-algebra and weak-support comparisons” owns the comparison to C*-kernel containment. SRU.0 uses these projectors on compact open subgroups and adds smooth-vector density and the comparison with smooth averaging. HilbertModules H5 owns the pure-state quotient for an abstract C*-algebra; the group-positive-type quotient and its coefficient neighborhoods here are a different realization. FactorRigidity’s correspondence Fell topology concerns von Neumann bimodules, rather than group representations. OperatorTheory/PolarDecomposition Part B owns the bounded rectangular polar factor and uniqueness. BanachSpaceTheory B5 owns the L¹/L∞ duality. AutomorphicSpectralTheory §7.0b owns the whole finite-place GLₙ unitary classification; the type-A formula here is its adjoint spherical specialization within the all-type theorem.
+NoncompactQuantumSymmetry M0 owns the shared strong-unitary convention, bounded Schur lemma and compact-group isotypic projectors; its section “Shared group C*-algebra and weak-support comparisons” owns the comparison to C*-kernel containment. SRU.0 uses these projectors on compact open subgroups and adds smooth-vector density and the comparison with smooth averaging. HilbertModules H5 owns the pure-state quotient for an abstract C*-algebra; the group-positive-type quotient and its coefficient neighborhoods here are a different realization. FactorRigidity’s correspondence Fell topology concerns von Neumann bimodules, rather than group representations. OperatorTheory/PolarDecomposition Part B owns the bounded rectangular polar factor and uniqueness. BanachSpaceTheory B5 owns the L¹/L∞ duality for finite measures; its σ-finite form is requested by the supplier contract below. AutomorphicSpectralTheory §7.0b owns the whole finite-place GLₙ unitary classification; the type-A formula here is its adjoint spherical specialization within the all-type theorem.
 
-LieHighestWeight Layers 0, 2 and 4 own sl₂ theory, weights and finite-dimensional highest-weight representations. LieHighestWeightPartII N0–N2 owns Jacobson–Morozov, triple conjugacy and classical recognition, and N5 owns the highest-weight half-integrality test. That test is consumed, not planned again in SRU.5. SpringerResolutionAndCharacteristicCycles S and H owns Springer/Steinberg geometry and homological convolution. The additional supplier contracts below separate reductive centralizer tables and coherent equivariant K-theory from those established scopes. EndoscopicTransferAndUnitaryTraceComparison §2.16 owns distribution characters. Globalization and global Ramanujan–Arthur consequences belong to the named consumers.
+LieHighestWeight Layers 0, 2 and 4 own sl₂ theory, weights and finite-dimensional highest-weight representations. LieHighestWeightPartII N0–N2 owns Jacobson–Morozov, triple conjugacy and classical recognition, and N5 owns the highest-weight half-integrality test and the positive real part of a torus element. Both are consumed, not planned again in SRU.5. SpringerResolutionAndCharacteristicCycles Layer S owns the Springer resolution and the reduced Steinberg variety with its components; its Layer H owns holonomic D-modules and characteristic cycles and is not consumed here. The additional supplier contracts below request triple centralizers, graded orbits and orbit tables from LieHighestWeightPartII, convolution and coherent equivariant K-theory on the Steinberg variety from SpringerResolutionAndCharacteristicCycles, and the Shahidi local coefficient used by the standard-module theorem from AutomorphicLFunctionsAndLocalFactors. EndoscopicTransferAndUnitaryTraceComparison §2.16 owns distribution characters. Globalization and global Ramanujan–Arthur consequences belong to the named consumers.
 
 ## Conventions
 
 Hilbert spaces are complex and complete; invariant forms on smooth modules need not be complete. Inner products are conjugate-linear in the first slot. Write c(π,v)(g) = ⟪v,π(g)v⟫ and Kφ(a,b) = φ(a⁻¹b). Algebraic positive type means positivity of this kernel; continuity is an additional condition. P(G), P₁(G), P≤1(G) mean the continuous positive-type cone, its value-one slice and its identity-value-at-most-one slice. Convexity and extreme points use real scalars. A topologically irreducible Hilbert representation is nonzero and has no nontrivial closed invariant subspace. Its algebraic irreducibility is a separate property.
 
-Definitions in SRU.0 and the coefficient definition in SRU.1 allow any topological group. The analytic comparison theorems use second-countable locally compact Hausdorff groups, Borel measurable structure and a nonzero left Haar measure μ. This includes finite central covers and finite products with compact groups. Haar probability is used on compact subgroups. For a nonunimodular group the L¹ involution is f*(g) = Δ(g⁻¹) conjugate(f(g⁻¹)); no unimodularity is implicit. Smooth representations have complex coefficients. SRU.2 uses connected reductive groups over all nonarchimedean local fields; SRU.3 and the Steinberg-isolation argument in SRU.4 use characteristic zero. Howe–Moore is stated in all characteristics. There is no lower bound on the residue characteristic.
+Definitions in SRU.0 and the coefficient definition in SRU.1 allow any topological group. Raikov's theorem and the single-coefficient approximation of SRU.1.5–SRU.1.6 hold for every locally compact Hausdorff group. The integrated-form, compactness and Fell-closure theorems use second-countable locally compact Hausdorff groups, Borel measurable structure and a nonzero left Haar measure μ. This includes finite central covers and finite products with compact groups. Haar probability is used on compact subgroups. For a nonunimodular group the L¹ involution is f*(g) = Δ(g⁻¹) conjugate(f(g⁻¹)); no unimodularity is implicit. Smooth representations have complex coefficients. SRU.2 uses connected reductive groups over all nonarchimedean local fields; SRU.3 and the Steinberg-isolation argument in SRU.4 use characteristic zero. Howe–Moore is stated in all characteristics. There is no lower bound on the residue characteristic.
 
 For SRU.5 and the simplified SRU.7 dictionary, G is quasi-simple, split and adjoint, with fixed B ⊃ T and hyperspecial K. The residue cardinality q is an integer ≥ 2. Normalize val(ϖ) = 1, |ϖ| = q⁻¹, δ_P(m) = |det(Ad(m)|Lie N)|, and normalized induction by δ_P^(1/2). Put χ_s = s ∘ val_T, s = s_c q^ν, where s_c is compact and ν is real. In this sign convention, dominant ν gives the spherical subrepresentation of X(ν), equivalently the quotient of X(−ν). The trivial representation has ν = ρ. On PGL₂, t = q^(1/2) in diag(t,t⁻¹) gives χ_s = δ_B^(−1/2), so X(s) = Ind_B^G 1 contains 1. On a compact unitary character with value i, c(π,1)(g) = i while Tau Ceti’s opposite-slot matrix coefficient is −i; evaluation at g⁻¹ reconciles them. These two-term witnesses fix both conventions wherever used.
 
@@ -78,6 +78,8 @@ Consume SR.0.1–SR.0.4 (smooth category, compact-open invariants, normalized av
 
 What SmoothRepresentationsOfLocalGroups must provide (gap:tempered-dual-local-topology): Supply the finite-level topology of the tempered dual in Harish–Chandra tempered-support coordinates and the separation of a square-integrable point from proper-Levi induction at fixed unitary central character.
 
+What SmoothRepresentationsOfLocalGroups must provide (gap:whittaker-multiplicity-one): Supply, for every quasi-split connected reductive group over a nonarchimedean local field of characteristic zero, every nondegenerate Whittaker datum (U, ψ) and every irreducible admissible complex representation V, the bound dim Hom_U(V, ψ) ≤ 1, extending the GL₂ multiplicity-one theorem of SR.2.3.
+
 ### From TauCetiRoadmap.ReductiveGroupsPartII
 
 Consume RG2.0 rational-point topology; RG2.3 hyperspecial vertices and reductive special-fiber quotient; RG2.4 Iwasawa and Cartan decomposition; RG2.5 Langlands dual group, pinned automorphisms and Galois action. Hyperspecial reduction K → 𝐆(𝔽_q), with I the inverse image of a Borel, is the map used in SRU.4. Keep the full dual root datum under fixed points in SRU.6.
@@ -98,7 +100,9 @@ Consume Part B, PD-B24–PD-B34 and PD-B36: the bounded rectangular polar factor
 
 ### From TauCetiRoadmap.BanachSpaceTheory
 
-Consume B5’s isometric identification (L¹(μ))* ≃ L∞(μ) via the integral pairing. Apply it to the σ-finite regular left Haar space furnished by the standing second-countability hypotheses. The scalar pairing is complex bilinear in the L¹ argument; positivity is a real cone condition.
+B5 constructs the isometric identification (L¹(μ))* ≃ L∞(μ) by the integral pairing on finite measure spaces. A left Haar measure on a second-countable locally compact group is σ-finite but in general infinite (counting measure on ℤ has infinite mass), so the identification is consumed in the σ-finite form requested below. The scalar pairing is complex bilinear in the L¹ argument; positivity is a real cone condition.
+
+What BanachSpaceTheory must provide (gap:sigma-finite-l1-duality): Supply the isometric complex-linear identification (L¹(μ))* ≃ L∞(μ) by the integral pairing for every σ-finite measure μ, with its norm equality and weak-star evaluation laws.
 
 ### From TauCetiRoadmap.OperatorAlgebraDynamics
 
@@ -120,13 +124,17 @@ Consume Layers 0, 2 and 4 of RepresentationTheory/LieHighestWeight: finite-dimen
 
 ### From TauCetiRoadmap.LieHighestWeightPartII
 
-Consume N0, Jacobson–Morozov and conjugacy of adapted triples; N1, restriction and graded weights; N2, classical partitions and spin comparisons; and N5, the highest-weight half-integrality test and positive-real-part convention. N3’s verified adjoint profiles do not by themselves identify all Bala–Carter labels or their reductive centralizers. The extra contract below requests exactly that mathematical data and the graded-open-orbit input.
+Consume N0, Jacobson–Morozov and conjugacy of adapted triples; N1, restriction and graded weights; N2, classical partitions and spin comparisons; and N5, the highest-weight half-integrality test and N5 positive-real-part: for a complex torus with character lattice X and s in it, the positive part r(s) with |χ(s)| = χ(r(s)) for every χ ∈ X, the compact part s/r(s), multiplicativity and Weyl equivariance. N3’s verified adjoint profiles do not by themselves identify all Bala–Carter labels or their reductive centralizers. The three contracts below request exactly that mathematical data.
 
-What LieHighestWeightPartII must provide (gap:triple-centralizers-and-orbit-tables): Supply reductivity and component groups of algebraic sl₂-triple centralizers, the finite-orbit and unique-open-orbit theorem for the q-eigenspace of a semisimple automorphism, and the semantic nilpotent-orbit and reductive-centralizer tables used in SRU.7.
+What LieHighestWeightPartII must provide (gap:triple-centralizers): Supply reductivity of the centralizer of an algebraic sl₂-triple in a connected complex reductive group, with its identity component and its component group.
+
+What LieHighestWeightPartII must provide (gap:graded-open-orbit): Supply, for a semisimple element s of a connected complex reductive group and a complex number q that is not a root of unity, finiteness of the orbits of the centralizer of s on the q-eigenspace of Ad(s) and the existence of exactly one open orbit.
+
+What LieHighestWeightPartII must provide (gap:orbit-tables): Supply the Bala–Carter lists of nilpotent orbits of the complex groups of types F₄, E₇ and E₈ with the types of the reductive centralizers of their sl₂-triples, including the C₄ centralizer of the E₈ orbit 4A₁.
 
 ### From TauCetiRoadmap.SpringerResolutionAndCharacteristicCycles
 
-Consume Layer S, the Springer resolution, reduced Steinberg variety and its components; and H, convolution and its homological conventions. Coherent equivariant K-theory realization is specified by the additional contract below.
+Consume Layer S, the Springer resolution, the reduced Steinberg variety and its components. Convolution on the Steinberg variety and its coherent equivariant K-theory realization are specified by the additional contract below.
 
 What SpringerResolutionAndCharacteristicCycles must provide (gap:steinberg-equivariant-k-theory): Supply coherent G^∨ × ℂ^×-equivariant K-theory convolution on the Steinberg variety, its affine-Hecke-algebra identification and fixed-point standard modules with the Springer enhancement criterion used by the Kazhdan–Lusztig classification.
 
@@ -142,25 +150,33 @@ Consume SC4’s atomic character and semisimple-parameter interface with SC3’s
 
 What ExcursionOperatorsAndSpectralActionPartII must provide (gap:semisimple-parameter-cuspidal-support): Supply the semisimple local-parameter map on irreducible smooth representations over every nonarchimedean local field and its compatibility with normalized parabolic induction and cuspidal support, with the square-root and reciprocity conventions fixed.
 
+### From TauCetiRoadmap.AutomorphicLFunctionsAndLocalFactors
+
+No declared target is consumed. The two contracts below request the Langlands–Shahidi inputs of SRU.3.8, which no roadmap states for general quasi-split groups; local factors are that roadmap's subject (AL.4, parameters and local determinant comparisons).
+
+What AutomorphicLFunctionsAndLocalFactors must provide (gap:shahidi-local-coefficient): Supply, for a quasi-split connected reductive group over a p-adic field of characteristic zero, a standard parabolic P = MN and an irreducible generic tempered representation τ of M with a compatible Whittaker datum, the meromorphic Shahidi local coefficient in ν ∈ a_M^* ⊗ ℂ with its normalisation, and its holomorphy on the negative chamber (HO Theorem 1.1).
+
+What AutomorphicLFunctionsAndLocalFactors must provide (gap:heiermann-muic-implication): Supply the theorem that negative-chamber holomorphy of these local coefficients for all generic tempered data implies that a Langlands quotient J(τ, ν) with τ generic tempered is generic exactly when its standard module i_P(τ_ν) is irreducible (HM07, as used in HO Corollary 1.2).
+
 ### From TauCetiRoadmap.AutomorphicSpectralTheory
 
 Consume §7.0b, the finite-place GLₙ unitary classification and its unitary induction/Speh blocks. Only its real spherical adjoint specialization is used in the type-A line of SRU.5. Over function fields the characteristic-independent Hecke proof in SRU.5 supplies the corresponding all-type assertion.
 
 ## How to read the build
 
-SRU.0 constructs the coefficient and Hilbert-space objects; SRU.1 turns them into weak containment and Fell closure. SRU.2 compares this analytic theory with the supplied smooth category. SRU.3 studies limits and SRU.4 proves isolation. SRU.5 can begin its root and spherical-parameter calculations from the smooth and invariant-form interfaces without waiting for isolation; SRU.6 extends that classification to nonsplit unramified groups. SRU.7 uses the general Aubert involution and enhanced Hecke classification to organize all spherical complementary series. Each Needs line separates a statement’s carriers from the additional inputs of the indicated proof route.
+SRU.0 constructs the coefficient and Hilbert-space objects; SRU.1 turns them into weak containment and Fell closure. SRU.2 compares this analytic theory with the supplied smooth category. SRU.3 studies limits and SRU.4 proves isolation. SRU.5 can begin its root and spherical-parameter calculations from the smooth and invariant-form interfaces without waiting for isolation; SRU.6 extends that classification to nonsplit unramified groups. SRU.7 uses the general Aubert involution and enhanced Hecke classification to organize all spherical complementary series. Each Needs line separates a statement’s carriers from the additional inputs of the indicated proof route. Within a layer the subsections are grouped by topic; where a Needs line cites a later subsection of the same layer (SRU.3.4 uses SRU.3.5, which uses SRU.3.6; SRU.4.1, 4.4 and 4.5 use the inputs of SRU.4.9; SRU.5.3 uses SRU.5.4; SRU.5.4 and 5.8–5.10 use SRU.5.28; SRU.7.4 uses SRU.7.5; SRU.7.11 uses SRU.7.12), the cited subsection does not depend on the citing one, so the internal dependency graph is acyclic. The explicit regions of SRU.5.29 depend on SRU.5.28 and the root data only, and SRU.5.11 consumes them.
 
 ## Layer SRU.0: Unitary representations and functions of positive type
 
-### 0.1 Strongly continuous unitary representations and unitary equivalence
+### 0.1 Strongly continuous unitary representations and unitary equivalence (*strongly-continuous-unitary*)
 
-Let G be a topological group and H a complex Hilbert space (NormedAddCommGroup, InnerProductSpace ℂ, CompleteSpace), with Mathlib's inner product ⟪x, y⟫, conjugate-linear in x. A strongly continuous unitary representation of G on H is π : ContRepresentation ℂ G H such that (i) Tau Ceti's ContRepresentation.IsUnitary π holds (⟪π g v, π g w⟫ = ⟪v, w⟫ for all g, v, w), and (ii) π is strongly continuous: for every v ∈ H the orbit map g ↦ π g v is continuous G → H. The predicate (ii) is ContRepresentation.strong continuity; it is weaker than continuity of g ↦ π g in the operator norm, the hypothesis of Tau Ceti's ContRepresentation.matrixCoeff. Two such representations (π, H), (ρ, H') are unitarily equivalent, π ≃ᵤ ρ, when there is a linear isometric equivalence T : H ≃ₗᵢ[ℂ] H' with T (π g v) = ρ g (T v) for all g and v. A closed subspace W ⊆ H is invariant when π g W ⊆ W for all g; π is topologically irreducible when H ≠ 0 and the only closed invariant subspaces are 0 and H (the convention of NoncompactQuantumSymmetry M0, distinct from algebraic irreducibility Representation.IsIrreducible). (BHV, Definitions A.1.1 and A.1.7, PDF pp. 316 and 319; BHV line 11667 and line 11764)
+Let G be a topological group and H a complex Hilbert space (NormedAddCommGroup, InnerProductSpace ℂ, CompleteSpace), with Mathlib's inner product ⟪x, y⟫, conjugate-linear in x. A strongly continuous unitary representation of G on H is π : ContRepresentation ℂ G H such that (i) Tau Ceti's ContRepresentation.IsUnitary π holds (⟪π g v, π g w⟫ = ⟪v, w⟫ for all g, v, w), and (ii) π is strongly continuous: for every v ∈ H the orbit map g ↦ π g v is continuous G → H. Condition (ii) is the predicate `IsStronglyContinuous`; it is weaker than continuity of g ↦ π g in the operator norm, the hypothesis of Tau Ceti's ContRepresentation.matrixCoeff. Two such representations (π, H), (ρ, H') are unitarily equivalent, π ≃ᵤ ρ, when there is a linear isometric equivalence T : H ≃ₗᵢ[ℂ] H' with T (π g v) = ρ g (T v) for all g and v. A closed subspace W ⊆ H is invariant when π g W ⊆ W for all g; π is topologically irreducible when H ≠ 0 and the only closed invariant subspaces are 0 and H (the convention of NoncompactQuantumSymmetry M0, distinct from algebraic irreducibility Representation.IsIrreducible). (BHV, Definitions A.1.1 and A.1.7, PDF pp. 316 and 319; BHV line 11667 and line 11764)
 
 G a topological group; no local compactness or separation is required for the definitions. H a complex Hilbert space; inner products are linear in the second variable.
 
 The acceptance signatures are `IsStronglyContinuous`, `IsTopologicallyIrreducible`.
 
-One proof route is as follows. Define strong continuity π :⇔ ∀ v, Continuous (fun g ↦ π g v), as a Prop on Mathlib's ContRepresentation, beside Tau Ceti's IsUnitary rather than bundled into a new carrier (OperatorAlgebraDynamics, Scope and conventions, and NoncompactQuantumSymmetry M0 use the same pair of conditions). Define unitary equivalence through Mathlib's LinearIsometryEquiv and an intertwining equation; reflexivity, symmetry and transitivity are composition of isometric equivalences. Norm continuity implies strong continuity because evaluation at v is continuous on V →L[ℂ] V; the converse fails (unit test 3). For a closed invariant W the restricted action is a ContRepresentation on W (Tau Ceti ContRepresentation.subrepresentation, IsUnitary.subrepresentation), strongly continuous for the subspace topology; the orthogonal complement of an invariant closed subspace is invariant because π g* = π g⁻¹ (Tau Ceti IsUnitary.adjoint_eq_inv).
+One proof route is as follows. Define `IsStronglyContinuous` π :⇔ ∀ v, Continuous (fun g ↦ π g v), as a Prop on Mathlib's ContRepresentation, beside Tau Ceti's IsUnitary rather than bundled into a new carrier (OperatorAlgebraDynamics, Scope and conventions, and NoncompactQuantumSymmetry M0 use the same pair of conditions). Define unitary equivalence through Mathlib's LinearIsometryEquiv and an intertwining equation; reflexivity, symmetry and transitivity are composition of isometric equivalences. Norm continuity implies strong continuity because evaluation at v is continuous on V →L[ℂ] V; the converse fails (unit test 3). For a closed invariant W the restricted action is a ContRepresentation on W (Tau Ceti ContRepresentation.subrepresentation, IsUnitary.subrepresentation), strongly continuous for the subspace topology; the orthogonal complement of an invariant closed subspace is invariant because π g* = π g⁻¹ (Tau Ceti IsUnitary.adjoint_eq_inv).
 
 The defining object has the following API.
 
@@ -177,7 +193,7 @@ The defining object has the following API.
 - The trivial representation of a topological group G on ℂ is unitary, strongly continuous and topologically irreducible.
 - ℚ_p acting on ℓ²(ℚ_p) (counting measure) by translation is unitary but not strongly continuous: ‖λ(g)δ₀ − δ₀‖ = √2 for every g ≠ 0.
 - ℤ_p acting diagonally on ℓ²(ℕ) by e_n ↦ χ_n(g) e_n, with χ_n the character x ↦ exp(2πi {x/pⁿ}), is strongly continuous but not continuous in the operator norm: ‖π(p^m) − 1‖ ≥ |`e^(2πi/p)` − 1| for every m.
-- For unitary equivalences T : π ≃ᵤ ρ, T.trans T.symm = refl as linear isometric equivalences.
+- For C₄ = ⟨g⟩ acting on ℂ by g ↦ i, the scalar map T(z) = iz is a unitary self-equivalence with inverse z ↦ −iz; their composite sends 1 to 1, as the composite of an equivalence with its inverse must, whereas T composed with itself sends 1 to −1.
 
 The trivial representation of any G on ℂ is a topologically irreducible strongly continuous unitary representation. For a finite-dimensional H, topological irreducibility coincides with Representation.IsIrreducible of π.toRepresentation, since every subspace is closed.
 
@@ -185,9 +201,9 @@ Additional inputs for this route are located at GS23, §11, opening paragraph, p
 
 *Needs:* Mathlib `ContRepresentation`; Tau Ceti `TauCeti.ContRepresentation.IsUnitary`; Tau Ceti `TauCeti.ContRepresentation.IsUnitary.subrepresentation`; Tau Ceti `TauCeti.ContRepresentation.IsUnitary.adjoint_eq_inv`; Tau Ceti `TauCeti.ContRepresentation.subrepresentation`; Mathlib `Representation.IsIrreducible`.
 
-### 0.2 Hilbert direct sums of unitary representations
+### 0.2 Hilbert direct sums of unitary representations (*hilbert-direct-sum*)
 
-For a family `(πᵢ, Hᵢ)_(i ∈ ι)` of strongly continuous unitary representations of G, the Hilbert direct sum ⊕̂ᵢ πᵢ acts coordinatewise on Mathlib's lp (fun i ↦ Hᵢ) 2: (⊕̂ πᵢ)(g) f = (i ↦ πᵢ g (f i)). It is a strongly continuous unitary representation; the coordinate inclusions Hᵢ → lp (fun i ↦ Hᵢ) 2 are isometric intertwiners onto mutually orthogonal closed invariant subspaces whose closed span is the whole space, and the coordinate projections are intertwiners. (BHV, Exercise F.6.4, PDF p. 455; BHV line 16976)
+For a family `(πᵢ, Hᵢ)_(i ∈ ι)` of strongly continuous unitary representations of G, the Hilbert direct sum ⊕̂ᵢ πᵢ acts coordinatewise on Mathlib's lp (fun i ↦ Hᵢ) 2: (⊕̂ πᵢ)(g) f = (i ↦ πᵢ g (f i)). It is a strongly continuous unitary representation; the coordinate inclusions Hᵢ → lp (fun i ↦ Hᵢ) 2 are isometric intertwiners onto mutually orthogonal closed invariant subspaces whose closed span is the whole space, and the coordinate projections are intertwiners. (BHV, Definition A.1.6 and the Hilbert direct sum defined before it, printed p. 310, PDF p. 319; BHV line 11742)
 
 ι an arbitrary index type; each πᵢ strongly continuous unitary.
 
@@ -214,7 +230,7 @@ Additional inputs for this route are located at GS23, §11.2, Proposition 11.6 a
 
 *Needs:* SRU.0 / strongly-continuous-unitary; Mathlib `lp`.
 
-### 0.3 Functions of positive type on a group
+### 0.3 Functions of positive type on a group (*positive-type-function*)
 
 Let G be a group. A function φ : G → ℂ is of positive type when for every n, every c : Fin n → ℂ and every g : Fin n → G, 0 ≤ Σᵢ Σⱼ cᵢ · conj(cⱼ) · φ(gⱼ⁻¹ gᵢ) in the order of ℂ (real and nonnegative); equivalently the kernel (a, b) ↦ φ(a⁻¹ b) is Matrix.PosSemidef. For a topological group, P(G) is the set of continuous φ of positive type (BHV Definition C.4.1 requires continuity), P₁(G) = {φ ∈ P(G) : φ(e) = 1} and P≤1(G) = {φ ∈ P(G) : φ(e) ≤ 1}. Basic properties: φ(e) is real and ≥ 0, φ(g⁻¹) = conj φ(g), |φ(g)| ≤ φ(e), and |φ(g) − φ(h)|² ≤ 2 φ(e) (φ(e) − Re φ(g⁻¹h)), so every φ ∈ P(G) is left and right uniformly continuous. P(G) is a convex cone closed under pointwise products, conjugation and pointwise limits that remain continuous; P₁(G) and P≤1(G) are convex. On G = Multiplicative A for an additive commutative group A, positive type agrees with Tau Ceti's IsPositiveDefiniteSub. (BHV, Definition C.4.1 and Proposition C.4.2, PDF p. 384; BHV line 14301)
 
@@ -253,7 +269,7 @@ Additional inputs for this route are located at GS23, §11.2, proof of Propositi
 
 *Needs:* Mathlib `Matrix.PosSemidef`; Tau Ceti `TauCeti.IsPositiveDefiniteSub`; Mathlib `Multiplicative`.
 
-### 0.4 Positive-type coefficients of unitary representations
+### 0.4 Positive-type coefficients of unitary representations (*positive-type-coefficient*)
 
 For a strongly continuous representation π of a topological group G on a complex Hilbert space H and v, w ∈ H, the coefficient π w v ∈ C(G, ℂ) is g ↦ ⟪w, π g v⟫; the positive-type coefficient of v is c(π,v) := the coefficient π v v, g ↦ ⟪v, π g v⟫ (Bekka–de la Harpe–Valette's ⟨π(g)v, v⟩). If π is unitary, c(π,v) is of positive type and lies in P(G), with c(π,v) (e) = ‖v‖²; c(π,v) ∈ P₁(G) for unit vectors v. It is invariant under unitary equivalence, additive on orthogonal sums of invariant subspaces, and ‖c(π,v) − c(π,w)‖_∞ ≤ (‖v‖ + ‖w‖)‖v − w‖. When g ↦ π g is norm continuous, c(π,v) g = Tau Ceti's matrixCoeff π hπ v v (g⁻¹) = conj (matrixCoeff π hπ v v g). (BHV, Proposition C.4.3, PDF p. 385; BHV line 14340)
 
@@ -278,7 +294,7 @@ The defining object has the following API.
 
 - For the trivial representation of G on ℂ and v ∈ ℂ, c(π,v) is the constant function |v|².
 - For a unitary character χ acting on ℂ and v = 1, c π 1 = χ.
-- For a finite-dimensional norm-continuous unitary representation, c(π,v) g = matrixCoeff π hπ v v g⁻¹.
+- For C₄ = ⟨g⟩ acting on ℂ by g ↦ i and v = 1: c(π,1)(g) = ⟪1, i⟫ = i, Tau Ceti's opposite-slot coefficient ⟪π g 1, 1⟫ equals −i, and its value at g⁻¹ is i; a definition with the two slots exchanged would give −i at g.
 - For the trivial representation on ℂ, the off-diagonal coefficient the coefficient π (−1) 1 is the constant −1, which is not of positive type.
 
 For the trivial representation on ℂ, c(π,v) is the constant |v|². For a unit vector v of a one-dimensional representation given by a unitary character χ, c(π,v) = χ.
@@ -287,7 +303,7 @@ Additional inputs for this route are located at GS23, §11.1, definition of limi
 
 *Needs:* SRU.0 / strongly-continuous-unitary; SRU.0 / positive-type-function; Tau Ceti `TauCeti.ContRepresentation.matrixCoeff`; Tau Ceti `TauCeti.ContRepresentation.matrixCoeff_apply`; Mathlib `ContinuousMap`.
 
-### 0.5 The GNS construction for functions of positive type
+### 0.5 The GNS construction for functions of positive type (*gns-construction*)
 
 Let G be a topological group and φ ∈ P(G). There is a triple (π_φ, H_φ, ξ_φ) with H_φ a complex Hilbert space, π_φ a strongly continuous unitary representation of G on H_φ and ξ_φ ∈ H_φ a cyclic vector (its orbit spans a dense subspace) such that φ = c π_φ ξ_φ. It is unique: for any triple (π, H, ξ) with ξ cyclic and c π ξ = φ there is a unique unitary equivalence T : π_φ ≃ᵤ π with T ξ_φ = ξ. Concretely H_φ is Tau Ceti's Kolmogorov space of the positive semidefinite kernel K(a, b) = φ(a⁻¹ b), with feature map Φ : G → H_φ satisfying ⟪Φ a, Φ b⟫ = φ(a⁻¹b); π_φ(g) Φ(a) = Φ(g a) and ξ_φ = Φ(e). For any strongly continuous unitary π and v ∈ H, the GNS representation of c(π,v) is unitarily equivalent to the cyclic subrepresentation on the closed span of π(G)v. If φ = φ₁ + φ₂ with φ₁, φ₂ ∈ P(G), then `π_(φ₁)` is unitarily equivalent to a subrepresentation of π_φ (BHV Proposition C.5.1). (BHV, Theorem C.4.10 and Proposition C.5.1, PDF p. 387; BHV line 14433)
 
@@ -315,21 +331,21 @@ For φ = 1, H_φ is one-dimensional and π_φ is trivial. For G discrete and φ 
 
 *Needs:* SRU.0 / positive-type-function; SRU.0 / positive-type-coefficient; SRU.0 / strongly-continuous-unitary; Tau Ceti `Matrix.PosSemidef.KolmogorovSpace`; Tau Ceti `Matrix.PosSemidef.kolmogorovFeature`; Tau Ceti `Matrix.PosSemidef.inner_kolmogorovFeature`; Tau Ceti `Matrix.PosSemidef.kolmogorovFeature_dense`; Tau Ceti `Matrix.PosSemidef.kolmogorovIsometry`; Tau Ceti `Matrix.PosSemidef.kolmogorovEquiv`; OperatorTheory/PolarDecomposition Part B.
 
-### 0.6 The unitary dual
+### 0.6 The unitary dual (*unitary-dual*)
 
 For a topological group G, the unitary dual Ĝ is the set of unitary-equivalence classes of topologically irreducible strongly continuous unitary representations of G. To avoid quantifying over Hilbert spaces in all universes, Ĝ is realised as the quotient of the set of φ ∈ P₁(G) whose GNS representation π_φ is topologically irreducible by the relation φ ∼ ψ :⇔ π_φ ≃ᵤ π_ψ. For a topologically irreducible strongly continuous unitary (π, H) and a unit vector v, [π] := the class of c(π,v), which does not depend on v; [π] = [ρ] iff π ≃ᵤ ρ; every class is [π_φ] for any representative φ. (BHV, Remark C.4.13 and §F.2, PDF p. 389; BHV line 14471)
 
 G a topological group; for the Fell topology and the theorems of SRU.1 G is locally profinite.
 
-One proof route is as follows. Independence of v: in a topologically irreducible π every nonzero v is cyclic (strongly-continuous-unitary, topological irreducibility.cyclic), so by uniqueness in the GNS construction `π_(c(π,v))` ≃ᵤ π for every unit v. Hence [π] = [ρ] iff `π_(c(π,v))` ≃ᵤ `π_(c ρ w)` iff π ≃ᵤ ρ. Every class is realised by its GNS representation, which is topologically irreducible by definition of the set.
+One proof route is as follows. Independence of v: in a topologically irreducible π every nonzero v is cyclic (every nonzero vector of a topologically irreducible representation is cyclic, SRU.0.1), so by uniqueness in the GNS construction `π_(c(π,v))` ≃ᵤ π for every unit v. Hence [π] = [ρ] iff `π_(c(π,v))` ≃ᵤ `π_(c ρ w)` iff π ≃ᵤ ρ. Every class is realised by its GNS representation, which is topologically irreducible by definition of the set.
 
 The defining object has the following API.
 
-- the unitary dual G : Type u for G : Type u, the quotient of {φ ∈ P₁ G | (the GNS representation φ).topological irreducibility} by φ ∼ ψ ↔ Nonempty (the GNS representation φ ≃ᵤ the GNS representation ψ).
-- the unitary dual.mk π hπ hirr v hv : the unitary dual G for topologically irreducible strongly continuous unitary π and ‖v‖ = 1.
-- the unitary dual.mk π … v … = the unitary dual.mk ρ … w … ↔ Nonempty (π ≃ᵤ ρ).
-- the unitary dual.mk π … v … does not depend on the unit vector v.
-- A representative strongly continuous unitary representation (the GNS representation of a representative) with the unitary dual.mk (rep x) = x.
+- Ĝ, a type in the universe of G: the quotient of the set of φ ∈ P₁(G) whose GNS representation is topologically irreducible by the relation φ ∼ ψ iff their GNS representations are unitarily equivalent.
+- For a topologically irreducible strongly continuous unitary π and a unit vector v, the class [π] ∈ Ĝ of the coefficient c(π,v).
+- [π] = [ρ] iff π ≃ᵤ ρ.
+- [π] does not depend on the unit vector v.
+- Every x ∈ Ĝ has a representative strongly continuous unitary representation rep x, the GNS representation of a representative φ, with [rep x] = x.
 - The class of the trivial representation, [1_G].
 
 **Checks.**
@@ -337,7 +353,7 @@ The defining object has the following API.
 - For G trivial, the unitary dual G has exactly one element.
 - For G finite abelian with the discrete topology, the unitary dual G is in bijection with the Pontryagin dual (characters G →* circle).
 - For G = ℤ/2 the classes of the trivial and the sign character are different, although both are one-dimensional.
-- For a topologically irreducible π and unit vectors v ≠ w, the unitary dual.mk π v = the unitary dual.mk π w.
+- For C₂ = {e, g} with the trivial representation on ℂ, the unit vectors 1 and i both give the coefficient with values (1, 1) at (e, g), so they define the same class, whereas the sign representation gives (1, −1) and a different class.
 
 For G abelian the unitary dual is in bijection with the continuous unitary characters, every topologically irreducible strongly continuous unitary representation being one-dimensional (Schur's lemma). For G compact the classes are those of finite-dimensional irreducibles, matching the index set of Peter–Weyl in RepresentationTheory/CompactGroups.
 
@@ -345,7 +361,7 @@ Additional inputs for this route are located at GS23, §11, opening paragraph an
 
 *Needs:* SRU.0 / gns-construction; SRU.0 / positive-type-coefficient; SRU.0 / strongly-continuous-unitary.
 
-### 0.7 Pure functions of positive type and irreducibility
+### 0.7 Pure functions of positive type and irreducibility (*pure-iff-irreducible*)
 
 Let G be a topological group. (1) For φ ∈ P₁(G), φ is an extreme point of P₁(G) iff its GNS representation π_φ is topologically irreducible (BHV Theorem C.5.2). (2) The extreme points of P≤1(G) are 0 and the extreme points of P₁(G) (BHV Theorem C.5.5(i)). (3) If π is topologically irreducible, strongly continuous and unitary, every normalised coefficient c(π,v), ‖v‖ = 1, is an extreme point of P₁(G) and of P≤1(G). Extreme points are taken in Mathlib's sense, Set.extremePoints ℝ. (BHV, Theorems C.5.2 and C.5.5(i), PDF p. 391; BHV line 14570)
 
@@ -361,7 +377,7 @@ Additional inputs for this route are located at GS23, §11.2, proof of Propositi
 
 *Needs:* SRU.0 / gns-construction; SRU.0 / positive-type-function; SRU.0 / positive-type-coefficient; Mathlib `Set.extremePoints`; NoncompactQuantumSymmetry M0.
 
-### 0.8 Smooth vectors and K-type projectors of unitary representations of locally profinite groups
+### 0.8 Smooth vectors and K-type projectors of unitary representations of locally profinite groups (*smooth-vectors-unitary*)
 
 Let G be locally profinite (compact open subgroups form a neighbourhood basis of e) and π a strongly continuous unitary representation on H. For a compact open subgroup K: H^K is a closed subspace and e_K is the orthogonal projection onto it; for every open normal K' ⊆ K, e_K = [K : K']⁻¹ `Σ_(k ∈ K/K')` π(k) `e_(K')`, and e_K v is the average of k ↦ π(k)v for the Haar probability measure of K. The smooth vectors H^∞ = ⋃_K H^K form a dense G-stable subspace; with the restricted action they are a smooth representation in the sense of SR.0 with (H^∞)^K = H^K, on which e_K is SR.0's averaging projector. For a smooth irreducible representation τ of K, trivial on an open normal K' ⊆ K, the K-type projector e_τ := (dim τ / [K : K']) `Σ_(k ∈ K/K')` conj(χ_τ(k)) π(k) `e_(K')` is the orthogonal projection onto the τ-isotypic subspace H(τ); the H(τ) are mutually orthogonal and H is their Hilbert sum. Equivalently e_τ = π(f_τ) for the smooth function f_τ on G supported on K with f_τ = (dim τ / vol K) conj χ_τ on K; Gan–Savin's normalisation omits the factor dim τ. (GS23, Lemma 11.4 and its preceding projector, PDF p. 32; GS23 line 1364)
 
@@ -400,7 +416,7 @@ The statement carriers and the proposed proof inputs are the individual Needs li
 
 ## Layer SRU.1: Weak containment and the Fell topology
 
-### 1.1 Weak containment of unitary representations
+### 1.1 Weak containment of unitary representations (*weak-containment*)
 
 Let G be a topological group and σ, π strongly continuous unitary representations on Hσ, Hπ. σ is weakly contained in π, σ ≺ π, when for every v ∈ Hσ, every compact Q ⊆ G and every ε > 0 there are w₁, …, wₙ ∈ Hπ with |c(σ,v) g − Σᵢ c(π,w)ᵢ g| < ε for all g ∈ Q (BHV Definition F.1.1). Equivalently (normalised convex form, Gan–Savin Definition 11.5, BHV Remark F.1.2): every normalised coefficient c(σ,v), ‖v‖ = 1, is a uniform limit on compact sets of convex combinations of normalised coefficients c(π,w), ‖w‖ = 1. σ and π are weakly equivalent, σ ∼ π, if σ ≺ π and π ≺ σ. It suffices to test v in a subset whose G-translates span a dense subspace (BHV Lemma F.1.3). (BHV, Definition F.1.1 and Lemma F.1.3, PDF p. 431; BHV line 16025)
 
@@ -408,11 +424,11 @@ G a topological group; all representations strongly continuous and unitary.
 
 The acceptance signatures are `WeaklyContainedIn`.
 
-One proof route is as follows. Equivalence of the two forms: if a sum Σ ψᵢ of coefficients of π approximates a normalised φ uniformly on a compact Q ∋ e, then Σ ψᵢ(e) is close to 1 and Σ (ψᵢ(e)/Σⱼψⱼ(e)) (ψᵢ/ψᵢ(e)) is a convex combination of normalised coefficients close to φ on Q; the converse rescales (BHV Remark F.1.2). Reflexivity and invariance under unitary equivalence are immediate; transitivity substitutes approximations, using that coefficients of π are uniformly continuous in the vector (dist_ptCoeff_le). A closed invariant subrepresentation or a Hilbert summand of π is weakly contained in π; a Hilbert sum ⊕̂ σᵢ ≺ π iff every σᵢ ≺ π, because the coefficient of a finitely supported vector is the sum of the coefficients of its components and finitely supported vectors are dense. For Lemma F.1.3, first fix one test vector: expand coefficients of its finite linear combinations of translates, on the enlarged compact sets gᵢ⁻¹Qgⱼ. For different test vectors use the argument of BHV pp. 421–423: the vectors with approximable coefficients form a closed G-invariant subspace; to prove closure under addition, project one cyclic subspace into the orthogonal complement of the other and use Proposition A.1.4 to identify the resulting cyclic representation with a subrepresentation of the second. Orthogonal sums then give coefficient sums. Expanding cross terms for two unrelated test vectors does not suffice.
+One proof route is as follows. Equivalence of the two forms: if a sum Σ ψᵢ of coefficients of π approximates a normalised φ uniformly on a compact Q ∋ e, then Σ ψᵢ(e) is close to 1 and Σ (ψᵢ(e)/Σⱼψⱼ(e)) (ψᵢ/ψᵢ(e)) is a convex combination of normalised coefficients close to φ on Q; the converse rescales (BHV Remark F.1.2). Reflexivity and invariance under unitary equivalence are immediate; transitivity substitutes approximations, using that coefficients of π are uniformly continuous in the vector (the estimate ‖c(π,v) − c(π,w)‖_∞ ≤ (‖v‖ + ‖w‖)‖v − w‖ of SRU.0.4). A closed invariant subrepresentation or a Hilbert summand of π is weakly contained in π; a Hilbert sum ⊕̂ σᵢ ≺ π iff every σᵢ ≺ π, because the coefficient of a finitely supported vector is the sum of the coefficients of its components and finitely supported vectors are dense. For Lemma F.1.3, first fix one test vector: expand coefficients of its finite linear combinations of translates, on the enlarged compact sets gᵢ⁻¹Qgⱼ. For different test vectors use the argument of BHV pp. 421–423: the vectors with approximable coefficients form a closed G-invariant subspace; to prove closure under addition, project one cyclic subspace into the orthogonal complement of the other and use Proposition A.1.4 to identify the resulting cyclic representation with a subrepresentation of the second. Orthogonal sums then give coefficient sums. Expanding cross terms for two unrelated test vectors does not suffice.
 
 The defining object has the following API.
 
-- For a family (πᵢ): σ ≺ ⊕̂ πᵢ :⇔ ∀ v, ∀ Q compact, ∀ ε > 0, ∃ finitely many (i_j, w_j), ∀ g ∈ Q, ‖c(σ,v) g − Σ_j c `π_(i_j)` w_j g‖ < ε; σ ≺ π is the case of a one-member family.
+- `WeaklyContainedInFamily`: for a family (πᵢ), σ is weakly contained in the family when ∀ v, ∀ Q compact, ∀ ε > 0, ∃ finitely many (i_j, w_j), ∀ g ∈ Q, ‖c(σ,v) g − Σ_j c `π_(i_j)` w_j g‖ < ε; this is equivalent to σ ≺ ⊕̂ πᵢ, and `WeaklyContainedIn` is the case of a one-member family.
 - σ ≺ π iff each normalised c(σ,v) lies in the closure, for uniform convergence on compacta, of the convex hull of the normalised coefficients of π.
 - σ ≺ σ.
 - σ ≺ π → π ≺ ρ → σ ≺ ρ.
@@ -424,7 +440,7 @@ The defining object has the following API.
 
 **Checks.**
 
-- Every strongly continuous unitary representation is weakly contained in itself.
+- The zero representation is weakly contained in every π, through the empty sum (n = 0); conversely, a unit-vector coefficient of the trivial representation is not approximated by the zero representation on Q = {e} with ε = ½, since the error is 1.
 - For G = ℤ (discrete), the trivial representation is weakly contained in the left regular representation on ℓ²(ℤ): the unit vectors `(2N+1)^(-1/2)` `1_([−N, N])` have coefficients tending to 1 uniformly on finite sets.
 - For G = ℤ the left regular representation on ℓ²(ℤ) has no nonzero invariant vector, so weak containment of the trivial representation is not containment.
 - For G finite and σ irreducible, σ ≺ π iff Hom_G(σ, π) ≠ 0.
@@ -435,13 +451,11 @@ Additional inputs for this route are located at GS23, §11.2, Definition 11.5, p
 
 *Needs:* SRU.0 / positive-type-coefficient; SRU.0 / hilbert-direct-sum; SRU.0 / strongly-continuous-unitary; SRU.0 / gns-construction; OperatorTheory/PolarDecomposition Part B.
 
-### 1.2 Milman's converse to the Krein–Milman theorem
+### 1.2 Milman's converse to the Krein–Milman theorem (*milman-converse*)
 
 Let E be a real Hausdorff topological vector space that is locally convex (Mathlib's LocallyConvexSpace ℝ E), F ⊆ E, and suppose C := closure (convexHull ℝ F) is compact. Then every extreme point of C lies in closure F: Set.extremePoints ℝ C ⊆ closure F. Mathlib's closure_convexHull_extremePoints is the Krein–Milman theorem (C is the closed convex hull of its extreme points); this is its converse. (BHV, proof of Proposition F.1.4, PDF p. 434; BHV line 16155)
 
 E real, Hausdorff, locally convex; complex spaces are used through restriction of scalars. closure (convexHull ℝ F) compact.
-
-The acceptance signatures are `extremePoints_closure_convexHull_subset_closure`.
 
 One proof route is as follows. Let x ∈ ext C and suppose x ∉ closure F. Since closure F ⊆ C is compact, choose a closed convex neighbourhood U of 0 with x ∉ closure F + U + U (local convexity and regularity of the uniform structure). Cover closure F by finitely many translates yᵢ + U, yᵢ ∈ closure F, and put Cᵢ := closure (convexHull (closure F ∩ (yᵢ + U))) ⊆ yᵢ + U, a compact convex set. The convex hull of the finite union of compact convex Cᵢ is the image of a simplex times ∏ Cᵢ, hence compact; it contains F, so it equals C. Write x = Σ tᵢ cᵢ with cᵢ ∈ Cᵢ; extremality of x in C forces x = cᵢ for some i (Mathlib's extremePoints_convexHull_subset in the finite form), so x ∈ yᵢ + U ⊆ closure F + U, a contradiction.
 
@@ -451,7 +465,7 @@ Additional inputs for this route are located at GS23, §11.2, proof of Propositi
 
 *Needs:* Mathlib `LocallyConvexSpace`; Mathlib `convexHull`; Mathlib `Set.extremePoints`; Mathlib `extremePoints_convexHull_subset`.
 
-### 1.3 Positive type through the integrated form
+### 1.3 Positive type through the integrated form (*positive-type-integral-form*)
 
 Let G a second-countable locally compact group with a left Haar measure μ. This covers reductive groups over local fields, finite central covers such as Mp_2n(F_S), and finite products of these with compact groups, the generality Gan–Savin (Proposition 10.5) and Gan–Ichino (Proposition A.2) use. Every φ ∈ P(G) is bounded and continuous, so it defines an element of L^∞(G, μ) with ‖φ‖_∞ = φ(e). Conversely, φ ∈ L^∞(G, μ) agrees μ-almost everywhere with a continuous function of positive type iff ∫∫ f(x) conj(f(y)) φ(y⁻¹x) dμ(x) dμ(y) ≥ 0 for every f ∈ C_c(G), equivalently ⟨φ, f* ∗ f⟩ ≥ 0 for every f ∈ L¹(G) (BHV Lemma C.5.3, after Godement). (BHV, Lemma C.5.3, PDF p. 393; BHV line 14634)
 
@@ -469,11 +483,13 @@ For G discrete, the integrated condition with f = Σ cᵢ `δ_(gᵢ)` is literal
 
 *Needs:* SRU.0 / positive-type-function; SRU.0 / gns-construction; SRU.0 / positive-type-coefficient; Mathlib `MeasureTheory.Measure.haar`; Mathlib `MeasureTheory.Lp`; OperatorAlgebraDynamics D1–D2, integrated-L¹ GNS contract.
 
-### 1.4 Weak-* compactness of P≤1(G)
+### 1.4 Weak-* compactness of P≤1(G) (*positive-type-weak-star-compact*)
 
-Let G a second-countable locally compact group with a left Haar measure μ. This covers reductive groups over local fields, finite central covers such as Mp_2n(F_S), and finite products of these with compact groups, the generality Gan–Savin (Proposition 10.5) and Gan–Ichino (Proposition A.2) use. With L^∞(G, μ) identified with the dual of L¹(G, μ) through the integral pairing (BanachSpaceTheory B5), the set P≤1(G) is weak-* compact and convex; its extreme points are 0 and the pure functions of positive type (SRU.0 pure-iff-irreducible); the convex hull of ext P₁(G) is weak-* dense in P₁(G) (BHV Lemma C.5.4 and Theorem C.5.5). (BHV, Lemma C.5.4 and Theorem C.5.5, PDF p. 393; BHV line 14642)
+Let G a second-countable locally compact group with a left Haar measure μ. This covers reductive groups over local fields, finite central covers such as Mp_2n(F_S), and finite products of these with compact groups, the generality Gan–Savin (Proposition 10.5) and Gan–Ichino (Proposition A.2) use. With L^∞(G, μ) identified with the dual of L¹(G, μ) through the integral pairing (the σ-finite duality contract on BanachSpaceTheory B5), the set P≤1(G) is weak-* compact and convex; its extreme points are 0 and the pure functions of positive type (SRU.0 pure-iff-irreducible); the convex hull of ext P₁(G) is weak-* dense in P₁(G) (BHV Lemma C.5.4 and Theorem C.5.5). (BHV, Lemma C.5.4 and Theorem C.5.5, PDF p. 393; BHV line 14642)
 
 G a second-countable locally compact group with a left Haar measure μ. This covers reductive groups over local fields, finite central covers such as Mp_2n(F_S), and finite products of these with compact groups, the generality Gan–Savin (Proposition 10.5) and Gan–Ichino (Proposition A.2) use.
+
+The acceptance signatures are `isCompact_positiveTypeSubunit_integrals`: the image of P≤1(G) under the pairing map φ ↦ (f ↦ ∫ f φ dμ) is compact in the product topology on functions L¹(G, μ) → ℂ. On bounded sets of L^∞ this product topology is the weak-* topology, so the statement is the compactness assertion without the duality carrier.
 
 One proof route is as follows. P≤1(G) lies in the closed unit ball of L^∞(G) = L¹(G)* (positive-type-integral-form: ‖φ‖_∞ = φ(e) ≤ 1), which is weak-* compact (Mathlib's WeakDual.isCompact_closedBall, Banach–Alaoglu). P≤1(G) is weak-* closed: the integrated inequalities ⟨φ, f* ∗ f⟩ ≥ 0 are closed conditions, and positive-type-integral-form returns a continuous function of positive type; φ(e) ≤ 1 is ‖φ‖_∞ ≤ 1. Krein–Milman (Mathlib's closure_convexHull_extremePoints) gives density of the convex hull of ext P≤1(G) = ext P₁(G) ∪ {0} in P≤1(G); renormalising an approximating net as in BHV Theorem C.5.5(ii) gives density in P₁(G).
 
@@ -481,17 +497,17 @@ For G discrete, P₁(G) is itself weak-* compact, since φ(e) = ⟨φ, δ_e⟩ i
 
 Additional inputs for this route are located at GS23, §11.2, proof of Proposition 11.6, p. 33; GS23 line 1398.
 
-*Needs:* SRU.1 / positive-type-integral-form; SRU.0 / pure-iff-irreducible; Mathlib `WeakDual.isCompact_closedBall`; Mathlib `closure_convexHull_extremePoints`; BanachSpaceTheory B5; SRU.1.3.
+*Needs:* SRU.1 / positive-type-integral-form; SRU.0 / pure-iff-irreducible; Mathlib `WeakDual.isCompact_closedBall`; Mathlib `closure_convexHull_extremePoints`; BanachSpaceTheory B5, σ-finite duality contract.
 
-### 1.5 Raikov's theorem
+### 1.5 Raikov's theorem (*raikov*)
 
-Let G a second-countable locally compact group with a left Haar measure μ. This covers reductive groups over local fields, finite central covers such as Mp_2n(F_S), and finite products of these with compact groups, the generality Gan–Savin (Proposition 10.5) and Gan–Ichino (Proposition A.2) use. On P₁(G) the weak-* topology (from L^∞ = (L¹)*) and the topology of uniform convergence on compact subsets of G coincide (BHV Theorem C.5.6). Consequently the convex hull of the pure normalised functions of positive type is dense in P₁(G) for uniform convergence on compacta (Proposition C.5.8). (BHV, Theorem C.5.6 and Proposition C.5.8, PDF p. 395; BHV line 14690)
+Let G be a locally compact Hausdorff group with a left Haar measure μ; neither second countability nor σ-finiteness of μ is assumed. On P₁(G) the topology of convergence of all integrals ∫ f φ dμ, f ∈ L¹(G, μ) (the weak-* topology of L^∞ = (L¹)* when μ is σ-finite), and the topology of uniform convergence on compact subsets of G coincide (BHV Theorem C.5.6). Consequently the convex hull of the pure normalised functions of positive type is dense in P₁(G) for uniform convergence on compacta (Proposition C.5.8). (BHV, Theorem C.5.6 and Proposition C.5.8, PDF p. 395; BHV line 14690)
 
-G a second-countable locally compact group with a left Haar measure μ. This covers reductive groups over local fields, finite central covers such as Mp_2n(F_S), and finite products of these with compact groups, the generality Gan–Savin (Proposition 10.5) and Gan–Ichino (Proposition A.2) use.
+G a locally compact Hausdorff group with a left Haar measure μ; second countability is not assumed.
 
 The acceptance signatures are `raikov`.
 
-One proof route is as follows. Uniform on compacta ⇒ weak-*: for f ∈ L¹ and ε > 0 choose a compact Q carrying all but ε of ∫|f|; on Q the functions are uniformly close, off Q they are bounded by 1 (BHV proof of C.5.6, first part). Weak-* ⇒ uniform on compacta: for a net φᵢ → φ in P₁(G) weak-*, choose f ∈ C_c(G) with f ≥ 0, ∫ f = 1 supported near e so that φ is close to 1 there; the convolutions f ∗ φᵢ converge to f ∗ φ uniformly on compacta (equicontinuity of translates of f in L¹), and the estimate |ψ(x) − (f ∗ ψ)(x)|² ≤ 2 Re(1 − ⟨ψ, f⟩)-type bound from positive-type-function (C.4.2(iii)) controls φᵢ − f ∗ φᵢ uniformly once ⟨φᵢ, f⟩ → ⟨φ, f⟩ is close to 1 (BHV proof of C.5.6, second part). Density: combine with positive-type-weak-star-compact.
+One proof route is as follows. First reduce to σ-compact open subgroups H: every compact subset of G lies in one, every f ∈ L¹(G, μ) vanishes almost everywhere outside one (inner regularity of μ on sets of finite measure), and positive type and normalisation restrict to H; on such H the Haar measure is σ-finite and the duality contract applies. Uniform on compacta ⇒ weak-*: for f ∈ L¹ and ε > 0 choose a compact Q carrying all but ε of ∫|f|; on Q the functions are uniformly close, off Q they are bounded by 1 (BHV proof of C.5.6, first part). Weak-* ⇒ uniform on compacta: for a net φᵢ → φ in P₁(G) weak-*, choose f ∈ C_c(G) with f ≥ 0, ∫ f = 1 supported near e so that φ is close to 1 there; the convolutions f ∗ φᵢ converge to f ∗ φ uniformly on compacta (equicontinuity of translates of f in L¹), and the estimate |ψ(x) − (f ∗ ψ)(x)|² ≤ 2 Re(1 − ⟨ψ, f⟩)-type bound from positive-type-function (C.4.2(iii)) controls φᵢ − f ∗ φᵢ uniformly once ⟨φᵢ, f⟩ → ⟨φ, f⟩ is close to 1 (BHV proof of C.5.6, second part). Density: combine with positive-type-weak-star-compact.
 
 **Checks.**
 
@@ -501,25 +517,25 @@ The statement fails on P≤1(G): for G = S¹ the characters χₙ ∈ P₁ conve
 
 Additional inputs for this route are located at GS23, §11.2, proof of Proposition 11.6, p. 33; GS23 line 1398.
 
-*Needs:* SRU.0 / positive-type-function; SRU.1 / positive-type-weak-star-compact; SRU.1 / positive-type-integral-form; Mathlib `MeasureTheory.Measure.haar`; BanachSpaceTheory B5.
+*Needs:* SRU.0 / positive-type-function; SRU.1 / positive-type-weak-star-compact; SRU.1 / positive-type-integral-form; Mathlib `MeasureTheory.Measure.haar`; BanachSpaceTheory B5, σ-finite duality contract.
 
-### 1.6 Irreducible weak containment by single coefficients
+### 1.6 Irreducible weak containment by single coefficients (*irreducible-weak-containment*)
 
-Let G a second-countable locally compact group with a left Haar measure μ. This covers reductive groups over local fields, finite central covers such as Mp_2n(F_S), and finite products of these with compact groups, the generality Gan–Savin (Proposition 10.5) and Gan–Ichino (Proposition A.2) use. Let σ be topologically irreducible and σ ≺ π. Then for every unit v ∈ Hσ the normalised coefficient c(σ,v) is a uniform limit on compact subsets of normalised coefficients c(π,w), ‖w‖ = 1, of π itself, not only of their convex combinations (BHV Proposition F.1.4). For a family (πᵢ) and σ ≺ ⊕̂ᵢ πᵢ, the approximating coefficients can be chosen each a normalised coefficient of a single πᵢ. (BHV, Proposition F.1.4, PDF p. 434; BHV line 16155)
+Let G be a locally compact Hausdorff group; second countability is not assumed. Let σ be topologically irreducible and σ ≺ π. Then for every unit v ∈ Hσ the normalised coefficient c(σ,v) is a uniform limit on compact subsets of normalised coefficients c(π,w), ‖w‖ = 1, of π itself, not only of their convex combinations (BHV Proposition F.1.4). For a family (πᵢ) such that σ is weakly contained in the family (equivalently in ⊕̂ᵢ πᵢ), every normalised coefficient of σ is approximated, on each compact set and within each ε > 0, by one normalised coefficient of one member πᵢ. (BHV, Proposition F.1.4, PDF p. 434; BHV line 16155)
 
-G a second-countable locally compact group with a left Haar measure μ. This covers reductive groups over local fields, finite central covers such as Mp_2n(F_S), and finite products of these with compact groups, the generality Gan–Savin (Proposition 10.5) and Gan–Ichino (Proposition A.2) use. σ topologically irreducible; π strongly continuous unitary.
+G a locally compact Hausdorff group. σ topologically irreducible; π and every πᵢ strongly continuous unitary; all Hilbert spaces complete.
 
-The acceptance signatures are `exists_coeff_approx_of_weaklyContainedIn`.
+The acceptance signatures are `exists_coeff_approx_of_weaklyContainedIn`, `exists_coeff_approx_of_weaklyContainedInFamily`.
 
-One proof route is as follows. Let F be the set of normalised coefficients of π (for a family, the union over i of those of πᵢ), and C the weak-* closure of its convex hull in L^∞(G) = L¹(G)* (BanachSpaceTheory B5, the supplier contract); C ⊆ P≤1(G) is compact and convex (positive-type-weak-star-compact). By weak containment c(σ,v) ∈ C (uniform convergence on compacta implies weak-* convergence for bounded functions: raikov, easy half). c(σ,v) is extreme in P≤1(G) (pure-iff-irreducible), hence in C; milman-converse puts it in the weak-* closure of F. A net in F ⊆ P₁(G) converging weak-* to a point of P₁(G) converges uniformly on compacta (raikov). For G locally profinite this last step is elementary (Gan–Savin, proof of Proposition 11.6): taking v and the approximants fixed by a small compact open K, the coefficients are K-bi-invariant and uniform convergence on compacta is pointwise convergence on K-double cosets, tested against the normalised indicators of KgK (smooth-vectors-unitary).
+One proof route is as follows. Let F be the set of normalised coefficients of π (for a family, the union over i of those of πᵢ), and C the closure of the image of its convex hull under the pairing map φ ↦ (f ↦ ∫ f φ dμ) into the product space of functions L¹(G, μ) → ℂ, a Hausdorff locally convex real space. C is compact by Tychonoff, since the pairings of P≤1(G) are bounded by ‖f‖₁. C lies in the image of P≤1(G): a pointwise limit of such pairings is a bounded positive functional on L¹(G, μ), which the integrated-L¹ GNS contract represents by a continuous function of positive type. No L¹/L∞ duality and no σ-finiteness of μ is used. By weak containment c(σ,v) ∈ C (uniform convergence on compacta implies weak-* convergence for bounded functions: raikov, easy half). c(σ,v) is extreme in P≤1(G) (pure-iff-irreducible), hence in C; milman-converse puts it in the weak-* closure of F. A net in F ⊆ P₁(G) converging weak-* to a point of P₁(G) converges uniformly on compacta (raikov). For G locally profinite this last step is elementary (Gan–Savin, proof of Proposition 11.6): taking v and the approximants fixed by a small compact open K, the coefficients are K-bi-invariant and uniform convergence on compacta is pointwise convergence on K-double cosets, tested against the normalised indicators of KgK (smooth-vectors-unitary).
 
-For G finite, σ irreducible and σ ≺ π, the statement gives a unit vector of π whose coefficient equals c(σ,v) exactly, since uniform approximation on the finite set G by a compact set of coefficients attains the limit. The conclusion fails for reducible σ: for G = ℤ/2, σ the regular representation on ℓ²(ℤ/2) with basis δ₀, δ₁, and the family π₁ = 1, π₂ = sgn, σ ≺ π₁ ⊕ π₂ but the coefficient of δ₀ in σ, the indicator of 0, is not a normalised coefficient of a single πᵢ (those are the constant 1 and the sign character).
+For G finite, σ irreducible and σ ≺ π, the statement gives a unit vector of π whose coefficient equals c(σ,v) exactly, since uniform approximation on the finite set G by a compact set of coefficients attains the limit. The conclusion fails for reducible σ: for G = ℤ/2, σ the regular representation on ℓ²(ℤ/2) with basis δ₀, δ₁, and the family π₁ = 1, π₂ = sgn, σ ≺ π₁ ⊕ π₂ but the coefficient of δ₀ in σ, the indicator of 0, is not a normalised coefficient of a single πᵢ (those are the constant 1 and the sign character). For irreducible σ = sgn and the same family, with Q = ℤ/2 and ε < 2, the member must be sgn: the coefficient of the trivial member differs from sgn by 2 at the nonidentity element.
 
 Additional inputs for this route are located at GS23, §11.2, proof of Proposition 11.6, p. 33; GS23 line 1398.
 
-*Needs:* SRU.1 / weak-containment; SRU.1 / milman-converse; SRU.1 / positive-type-weak-star-compact; SRU.1 / raikov; SRU.0 / pure-iff-irreducible; SRU.0 / smooth-vectors-unitary; SRU.0 / positive-type-coefficient; BanachSpaceTheory B5; NoncompactQuantumSymmetry M0.
+*Needs:* SRU.1 / weak-containment; SRU.1 / milman-converse; SRU.1 / positive-type-weak-star-compact; SRU.1 / raikov; SRU.0 / pure-iff-irreducible; SRU.0 / smooth-vectors-unitary; SRU.0 / positive-type-coefficient; OperatorAlgebraDynamics D1–D2, integrated-L¹ GNS contract; NoncompactQuantumSymmetry M0.
 
-### 1.7 The Fell topology on the unitary dual
+### 1.7 The Fell topology on the unitary dual (*fell-topology*)
 
 Let G be a topological group and Ĝ its unitary dual (SRU.0). For x = [π] ∈ Ĝ, positive-type coefficients φ₁, …, φₙ of π, a compact Q ⊆ G and ε > 0, let W(x, φ₁, …, φₙ, Q, ε) be the set of y = [ρ] ∈ Ĝ such that each φᵢ is within ε on Q of a finite sum of positive-type coefficients of ρ. These sets form a basis of the Fell topology on Ĝ (BHV Definition F.2.1). A net yⱼ converges to x iff π ≺ `⊕̂_(k)` ρ_k for the representatives ρ_k of every subnet (BHV Proposition F.2.2); for G as in SRU.1 irreducible-weak-containment, single normalised coefficients of ρ suffice in W (BHV Proposition F.2.4). For a sequence (xₙ), the limit points L[xₙ] (xₙ → x) and cluster points C[xₙ] (x a limit point of a subsequence) satisfy L ⊆ C; x ∈ L[xₙ] iff for some, equivalently every, unit v there are unit vₙ with c πₙ vₙ → c(π,v) uniformly on compacta (Gan–Savin §11.1). x is isolated when {x} is open. The support of a unitary representation π is supp π = {x ∈ Ĝ : rep x ≺ π}, a closed subset (BHV Definition F.2.6). Ĝ is not Hausdorff in general, so L[xₙ] can have several points. (BHV, Definition F.2.1 and Propositions F.2.2–F.2.4, PDF p. 438; BHV line 16321)
 
@@ -535,7 +551,7 @@ The defining object has the following API.
 - For G second-countable locally compact, a sequence xₙ → x iff for some (equivalently every) unit v there are unit vₙ with c (rep xₙ) vₙ → c (rep x) v uniformly on compacta.
 - L[x] := {y | Tendsto x atTop (𝓝 y)} for a sequence x : ℕ → the unitary dual G.
 - C[x] := {y | ∃ φ strictly monotone, Tendsto (x ∘ φ) atTop (𝓝 y)}; limit points ⊆ cluster points.
-- isolation x :⇔ IsOpen {x}.
+- x is isolated iff {x} is open.
 - For a family (πᵢ) of representations: σ lies in the Fell closure of {[πᵢ]} iff every basic neighbourhood W(σ, φ₁…φₙ, Q, ε) built from coefficients of σ contains some [πᵢ]; this is the set-closure formulation of Proposition 11.6.
 - σ is isolated relative to a family (πᵢ) iff some basic neighbourhood of σ contains only members unitarily equivalent to σ.
 - supp π := {x | rep x ≺ π}, a closed subset of the unitary dual G.
@@ -546,7 +562,7 @@ The defining object has the following API.
 
 - For G = ℤ/3 every point of the unitary dual G is isolated.
 - For G = ℤ, the bijection between the unitary dual G and the circle (unit-modulus characters n ↦ zⁿ) is a homeomorphism for the Fell topology and the usual topology of the circle, as for the compact-open topology on PontryaginDual ℤ (BHV Example F.2.5(i)).
-- For every sequence x, limit points x ⊆ cluster points x.
+- In the discrete dual of C₂, the alternating sequence of the trivial and sign characters has no limit point and has both characters as cluster points, while a constant sequence has its character as its only limit point and only cluster point; a definition of cluster points that did not pass to subsequences would make the two sets equal.
 - For SL₂(ℚ_p) the Fell topology is not Hausdorff: a sequence of complementary-series representations has both 1 and St as limit points.
 
 For G finite (discrete and compact) the Fell topology on Ĝ is discrete (BHV Example F.2.5(ii)). For SL₂ or PGL₂ over a p-adic field, the end of the spherical complementary series converges to both the trivial and the Steinberg representation, so L[xₙ] has two points and Ĝ is not Hausdorff (see SRU.4 steinberg-isolated, rank-one non-example).
@@ -555,13 +571,13 @@ Additional inputs for this route are located at GS23, §11.1, limit and cluster 
 
 *Needs:* SRU.0 / unitary-dual; SRU.1 / weak-containment; SRU.1 / irreducible-weak-containment; Mathlib `TopologicalSpace.generateFrom`.
 
-### 1.8 Weak containment of sums and Fell closure
+### 1.8 Weak containment of sums and Fell closure (*weak-containment-sum-closure*)
 
 Let G a second-countable locally compact group with a left Haar measure μ. This covers reductive groups over local fields, finite central covers such as Mp_2n(F_S), and finite products of these with compact groups, the generality Gan–Savin (Proposition 10.5) and Gan–Ichino (Proposition A.2) use. For subsets S, T ⊆ Ĝ, the Hilbert sum `⊕_(x∈S)` rep x is weakly contained in `⊕_(y∈T)` rep y iff S ⊆ closure T in the Fell topology; in particular the two sums are weakly equivalent iff closure S = closure T (BHV Exercise F.6.4). Weak containment ignores multiplicities: ⊕̂ᵢ πᵢ ∼ `⊕_(y ∈ T)` rep y for T the set of classes of the πᵢ. (BHV, Exercise F.6.4, PDF p. 455; BHV line 16976)
 
 G a second-countable locally compact group with a left Haar measure μ. This covers reductive groups over local fields, finite central covers such as Mp_2n(F_S), and finite products of these with compact groups, the generality Gan–Savin (Proposition 10.5) and Gan–Ichino (Proposition A.2) use.
 
-One proof route is as follows. (⇐) If x ∈ closure T, every basic neighbourhood W(x, φ, Q, ε) meets T, so each coefficient of rep x is approximated by sums of coefficients of a single summand of ⊕_T; hence rep x ≺ ⊕_T, and hilbertSum_weaklyContained_iff gives ⊕_S ≺ ⊕_T. (⇒) For x ∈ S, rep x ≺ ⊕_T with rep x irreducible; irreducible-weak-containment (family form) approximates each normalised coefficient of rep x by a normalised coefficient of a single rep y, y ∈ T; so every basic neighbourhood of x meets T. Multiplicities: a coefficient of a finitely supported vector of ⊕̂ᵢ πᵢ is a sum of coefficients of the πᵢ, each of which is a coefficient of rep [πᵢ] by unitary equivalence; conversely each rep y, y ∈ T, is a summand.
+One proof route is as follows. (⇐) If x ∈ closure T, every basic neighbourhood W(x, φ, Q, ε) meets T, so each coefficient of rep x is approximated by sums of coefficients of a single summand of ⊕_T; hence rep x ≺ ⊕_T, and the Hilbert-sum criterion of SRU.1.1 gives ⊕_S ≺ ⊕_T. (⇒) For x ∈ S, rep x ≺ ⊕_T with rep x irreducible; irreducible-weak-containment (family form) approximates each normalised coefficient of rep x by a normalised coefficient of a single rep y, y ∈ T; so every basic neighbourhood of x meets T. Multiplicities: a coefficient of a finitely supported vector of ⊕̂ᵢ πᵢ is a sum of coefficients of the πᵢ, each of which is a coefficient of rep [πᵢ] by unitary equivalence; conversely each rep y, y ∈ T, is a summand.
 
 With S = T the statement is reflexivity; with T = ∅ it says only S = ∅ is weakly contained in the zero representation. For G = ℤ and T the set of characters n ↦ `e^(inθ)` with θ/2π rational, closure T is the whole circle, so the trivial representation, indeed every character, is weakly contained in ⊕_T.
 
@@ -569,7 +585,7 @@ Additional inputs for this route are located at GS23, §11.2, Proposition 11.6, 
 
 *Needs:* SRU.1 / irreducible-weak-containment; SRU.1 / fell-topology; SRU.1 / weak-containment; SRU.0 / hilbert-direct-sum.
 
-### 1.9 Gan–Savin Proposition 11.6, corrected
+### 1.9 Gan–Savin Proposition 11.6, corrected (*gan-savin-closure*)
 
 Let G a second-countable locally compact group with a left Haar measure μ. This covers reductive groups over local fields, finite central covers such as Mp_2n(F_S), and finite products of these with compact groups, the generality Gan–Savin (Proposition 10.5) and Gan–Ichino (Proposition A.2) use. Let `(πᵢ)_(i ∈ ι)` be topologically irreducible strongly continuous unitary representations, π = ⊕̂ᵢ πᵢ, and σ a topologically irreducible strongly continuous unitary representation with σ ≺ π. Then [σ] lies in the Fell closure of {[πᵢ] : i ∈ ι}. No convergence of a subsequence with increasing original indices is asserted: for G = G₂(ℚ₅), π₁ = σ = St_G and πₙ = 1_G for n ≥ 2, σ ≺ π while every increasing subsequence is eventually 1_G, which does not converge to the isolated point [St_G] (Proposition 11.3, SRU.4). (GS23, Proposition 11.6, PDF p. 33; GS23 line 1398)
 
@@ -583,17 +599,17 @@ Additional inputs for this route are located at BHV, Exercise F.6.4; BHV line 16
 
 *Needs:* SRU.1 / weak-containment-sum-closure; SRU.1 / irreducible-weak-containment.
 
-### 1.10 Isolated representations weakly contained in a sum are summands
+### 1.10 Isolated representations weakly contained in a sum are summands (*gan-savin-isolated-summand*)
 
 In the setting of gan-savin-closure, if moreover [σ] is isolated in Ĝ, or more generally isolated in a subset R ⊆ Ĝ with the induced Fell topology such that R contains [σ] and every [πᵢ], then σ is unitarily equivalent to πᵢ for some i (Gan–Savin Corollary 11.7; the relative form is the one Gan–Ichino use, with R the generic unitary representations of Mp_2n(F_S) with exponents bounded by c < ½). In particular, for G = G₁ × ⋯ × G_m × C with each Gⱼ a reductive p-adic group and C compact, an irreducible σ = σ₁ ⊗ ⋯ ⊗ σ_m ⊗ σ_C whose p-adic factors are isolated in the unitary duals of the Gⱼ and that is weakly contained in a Hilbert sum of irreducibles is one of the summands. (GS23, Corollary 11.7, PDF p. 33; GS23 line 1425)
 
 Setting of gan-savin-closure; [σ] isolated. For the product statement: isolation of [σ] in Ĝ follows from isolation of each [σⱼ] in Ĝⱼ and discreteness of Ĉ, via the product description of the unitary dual of a product with a compact factor (each irreducible of G × C is an outer tensor product with a finite-dimensional irreducible of C).
 
-One proof route is as follows. {[σ]} is open and meets closure {[πᵢ]} (gan-savin-closure), hence meets {[πᵢ]}: [σ] = [πᵢ] for some i, so σ ≃ᵤ πᵢ (the unitary dual.mk_eq_mk_iff). Relative form: {[σ]} is open in R and meets closure {[πᵢ]} ∩ R, the closure of {[πᵢ]} in R, hence meets {[πᵢ]}. For a compact factor C, its finite-dimensional irreducible τ-isotypic projector (NoncompactQuantumSymmetry M0) gives an open condition near σ⊗τ. Compactness and Schur identify the τ-isotypic part with a Hilbert multiplicity space tensored with τ, and the commuting G-action acts on that space. Test finitely many coefficients on a basis of τ to transfer isolation from G to G×C. For several reductive factors also use the type-I tensor-product and Fell-topology compatibility; this requires the precise product-dual theorem, recorded as the supplier contract. Discreteness of Ĉ alone does not prove a product homeomorphism.
+One proof route is as follows. {[σ]} is open and meets closure {[πᵢ]} (gan-savin-closure), hence meets {[πᵢ]}: [σ] = [πᵢ] for some i, so σ ≃ᵤ πᵢ ([π] = [ρ] iff π ≃ᵤ ρ, SRU.0.6). Relative form: {[σ]} is open in R and meets closure {[πᵢ]} ∩ R, the closure of {[πᵢ]} in R, hence meets {[πᵢ]}. For a compact factor C, its finite-dimensional irreducible τ-isotypic projector (NoncompactQuantumSymmetry M0) gives an open condition near σ⊗τ. Compactness and Schur identify the τ-isotypic part with a Hilbert multiplicity space tensored with τ, and the commuting G-action acts on that space. Test finitely many coefficients on a basis of τ to transfer isolation from G to G×C. For several reductive factors also use the type-I tensor-product and Fell-topology compatibility; this requires the precise product-dual theorem, recorded as the supplier contract. Discreteness of Ĉ alone does not prove a product homeomorphism.
 
 Without isolation the statement fails: the trivial representation of ℤ is weakly contained in the Hilbert sum of the characters n ↦ `e^(inθ)`, θ ≠ 0 rational multiples of 2π, without being one of them.
 
-Additional inputs for this route are located at GI18, Appendix A.1, proof of Proposition A.2, arXiv v3 pp. 31–32; GI18 line 1289.
+Additional inputs for this route are located at GI18, Appendix A.1, Proposition A.2 and its proof, arXiv v3 pp. 29–31; GI18 line 1289 (statement) and line 1319 (proof).
 
 *Needs:* SRU.1 / gan-savin-closure; SRU.1 / fell-topology; SRU.0 / unitary-dual; NoncompactQuantumSymmetry M0a and finite-product Fell-dual contract.
 
@@ -607,7 +623,7 @@ The statement carriers and the proposed proof inputs are the individual Needs li
 
 ## Layer SRU.2: Unitary structures on smooth representations
 
-### 2.1 Unitary structures on smooth representations
+### 2.1 Unitary structures on smooth representations (*unitary-structure*)
 
 Let G be locally profinite and (ρ, V) a smooth complex representation (SR.0). A unitary structure on V is a positive-definite hermitian form on V (an InnerProductSpace.Core ℂ V, conjugate-linear in the first variable) that is G-invariant: ⟪ρ g v, ρ g w⟫ = ⟪v, w⟫. V is not assumed complete ([Ber92] Definition 27). ρ is unitarizable, unitarizability of ρ, when a unitary structure exists. Subrepresentations and finite direct sums of unitarizable representations are unitarizable; twisting by a unitary smooth character preserves unitarizability; an irreducible unitarizable representation has a unitary central character ([Ber92] Proposition 40); for admissible unitarizable V the form gives a G-isomorphism from V onto the complex conjugate of the smooth dual Ṽ ([Ber92] Ch. IV §1.1, Remark 2; [Cas95] after Proposition 2.1.11). (Ber92, Definition 27 and Proposition 40, PDF p. 83; Ber92 line 2853)
 
@@ -620,7 +636,7 @@ The defining object has the following API.
 - ∃ c : InnerProductSpace.Core ℂ V, ∀ g v w, c.inner (ρ g v) (ρ g w) = c.inner v w.
 - A subrepresentation of a unitarizable representation is unitarizable.
 - Finite direct sums of unitarizable representations are unitarizable.
-- For a smooth character χ with |χ g| = 1 for all g, unitarizability ρ → unitarizability (Representation.charTwist χ ρ).
+- For a smooth character χ with |χ g| = 1 for all g, if ρ is unitarizable then so is the twist ρ ⊗ χ.
 - If ρ is irreducible and unitarizable then its central character takes values of modulus one.
 - For admissible unitarizable ρ, the form induces a conjugate-linear G-isomorphism V ≃ Ṽ.
 - The trivial representation on ℂ is unitarizable.
@@ -638,7 +654,7 @@ Additional inputs for this route are located at GS23, §11, opening paragraph, p
 
 *Needs:* SmoothRepresentationsOfLocalGroups SR.0 abelian-category / is-smooth; SmoothRepresentationsOfLocalGroups SR.0 abelian-category / smooth-dual; SmoothRepresentationsOfLocalGroups SR.3a.1, Schur's lemma for countable coset spaces; SmoothRepresentationsOfLocalGroups SR.0 abelian-category / smooth-character; Mathlib `InnerProductSpace.Core`.
 
-### 2.2 Uniqueness of the unitary structure
+### 2.2 Uniqueness of the unitary structure (*unitary-structure-unique*)
 
 Let G = 𝐆(F) with 𝐆 connected reductive over a nonarchimedean local field F, with the conventions of SmoothRepresentationsOfLocalGroups (SR) and complex coefficients. If V is an irreducible admissible representation of G (every irreducible is admissible, SR.3a), any two G-invariant positive-definite hermitian forms on V are proportional by a positive real constant ([Ber92] Ch. IV §1.1, Lemma 38; [Cas95] Proposition 2.1.15). (Ber92, Lemma 38, PDF p. 84; Ber92 line 2887)
 
@@ -652,7 +668,7 @@ Additional inputs for this route are located at Cas95, §2.1, Proposition 2.1.15
 
 *Needs:* SRU.2 / unitary-structure; SmoothRepresentationsOfLocalGroups SR.3a / admissibility-of-irreducibles; SmoothRepresentationsOfLocalGroups SR.0 abelian-category / smooth-dual.
 
-### 2.3 Admissible unitarizable representations are semisimple
+### 2.3 Admissible unitarizable representations are semisimple (*admissible-unitary-semisimple*)
 
 Let G be locally profinite and (ρ, V) admissible with a unitary structure. For every subrepresentation U ⊆ V the orthogonal complement U^⊥ is a subrepresentation and V = U ⊕ U^⊥ ([Cas95] Proposition 2.1.5). Consequently V is a direct sum of irreducible admissible unitarizable representations, each isomorphism class with finite multiplicity, countably many if G is second countable ([Cas95] Proposition 2.1.14; [Ber92] Proposition 41). In particular an admissible unitarizable representation of finite length is a finite direct sum of irreducibles. (Ber92, Proposition 41, PDF p. 86; Ber92 line 2934)
 
@@ -666,7 +682,7 @@ Additional inputs for this route are located at Cas95, §2.1, Propositions 2.1.5
 
 *Needs:* SRU.2 / unitary-structure; SmoothRepresentationsOfLocalGroups SR.0 abelian-category / admissible; SmoothRepresentationsOfLocalGroups SR.0 abelian-category / averaging-projector.
 
-### 2.4 Normalised parabolic induction preserves unitarity
+### 2.4 Normalised parabolic induction preserves unitarity (*unitary-induction*)
 
 Let G = 𝐆(F) with 𝐆 connected reductive over a nonarchimedean local field F, with the conventions of SmoothRepresentationsOfLocalGroups (SR) and complex coefficients. Let P = MN be a parabolic subgroup and σ a unitarizable smooth representation of M. Then the normalised induction i_P^G σ (SR.2) is unitarizable: ⟪f, f'⟫ := ∫_K ⟪f(k), f'(k)⟫_σ dk for a maximal compact K with G = PK and the Haar probability measure of K, which is G-invariant because of the `δ_P^(1/2)` normalisation ([Ber92] Proposition 38). If σ is moreover admissible of finite length, i_P^G σ is a finite direct sum of irreducible unitarizable representations; in particular unitary principal series i_B(χ) with |χ| = 1 are semisimple. (Ber92, Proposition 38, PDF p. 84; Ber92 line 2861)
 
@@ -680,7 +696,7 @@ Additional inputs for this route are located at CH26, §6, before (6.2), p. 17; 
 
 *Needs:* SRU.2 / unitary-structure; SRU.2 / admissible-unitary-semisimple; SmoothRepresentationsOfLocalGroups SR.2 / parabolic-induction; SmoothRepresentationsOfLocalGroups SR.2 / modulus-character; SmoothRepresentationsOfLocalGroups SR.3 / finite-length; ReductiveGroupsPartII RG2.4 / iwasawa-decomposition.
 
-### 2.5 Hilbert completion of a unitarizable representation
+### 2.5 Hilbert completion of a unitarizable representation (*hilbert-completion*)
 
 Let G be locally profinite and (ρ, V) smooth with a unitary structure. Its Hilbert completion Ĥ(V) (Mathlib's UniformSpace.Completion with the completed inner product) carries a unique strongly continuous unitary representation ρ̂ extending ρ. V ⊆ Ĥ(V)^∞, with equality Ĥ(V)^K = V^K for every compact open K when V is admissible; then Ĥ(V)^∞ = V. If V is irreducible and admissible, ρ̂ is topologically irreducible. Isomorphic irreducible unitarizable admissible representations have unitarily equivalent completions after rescaling the forms (unitary-structure-unique). (Cas95, §2.1, Propositions 2.1.5 and 2.1.14–2.1.15, pp. 20–23; Cas95 line 760 and line 858)
 
@@ -709,7 +725,7 @@ Additional inputs for this route are located at GS23, §11, opening paragraph, p
 
 *Needs:* SRU.2 / unitary-structure; SRU.2 / unitary-structure-unique; SRU.0 / strongly-continuous-unitary; SRU.0 / smooth-vectors-unitary; SmoothRepresentationsOfLocalGroups SR.0 abelian-category / admissible; Mathlib `UniformSpace.Completion`; Mathlib `UniformSpace.Completion.innerProductSpace`.
 
-### 2.6 Irreducible unitary representations are admissible
+### 2.6 Irreducible unitary representations are admissible (*unitary-irreducibles-admissible*)
 
 Let G = 𝐆(F) with 𝐆 connected reductive over a nonarchimedean local field F, with the conventions of SmoothRepresentationsOfLocalGroups (SR) and complex coefficients. Let (π, H) be a topologically irreducible strongly continuous unitary representation of G. Then the smooth vectors H^∞ form an admissible representation, irreducible as a smooth representation, and π is unitarily equivalent to the Hilbert completion of H^∞ (Bernstein 1974; Gan–Savin §11, opening paragraph). Two such representations are unitarily equivalent iff their smooth parts are isomorphic (the same smooth-vector comparison). (GS23, §11, opening paragraph, PDF p. 30; GS23 line 1277)
 
@@ -721,13 +737,13 @@ For G compact the theorem says irreducible unitary representations are finite-di
 
 *Needs:* SRU.2 / hilbert-completion; SRU.2 / unitary-structure-unique; SRU.0 / smooth-vectors-unitary; SmoothRepresentationsOfLocalGroups SR.3a / uniform-admissibility; SmoothRepresentationsOfLocalGroups SR.1 / hecke-module-equivalence; CStarAlgebras C2, polynomial-identity contract.
 
-### 2.7 The unitary dual as unitarizable smooth representations
+### 2.7 The unitary dual as unitarizable smooth representations (*unitary-dual-smooth*)
 
-Let G = 𝐆(F) with 𝐆 connected reductive over a nonarchimedean local field F, with the conventions of SmoothRepresentationsOfLocalGroups (SR) and complex coefficients. The maps [π] ↦ (π^∞ = H^∞) and V ↦ [completion of V] are inverse bijections between the unitary dual Ĝ (SRU.0) and the set of isomorphism classes of irreducible unitarizable smooth representations of G. Under this bijection the positive-type coefficient of a smooth unit vector v is g ↦ ⟪v, ρ(g)v⟫ computed in V; the Fell topology (SRU.1) is described by such coefficients of smooth vectors; and the trivial, Steinberg (SR.3.4), square-integrable and unitary-induced representations define points of Ĝ. (GS23, §11, opening paragraph, PDF p. 30; GS23 line 1277)
+Let G = 𝐆(F) with 𝐆 connected reductive over a nonarchimedean local field F, with the conventions of SmoothRepresentationsOfLocalGroups (SR) and complex coefficients. The maps [π] ↦ (π^∞ = H^∞) and V ↦ [completion of V] are inverse bijections between the unitary dual Ĝ (SRU.0) and the set of isomorphism classes of irreducible unitarizable smooth representations of G. Under this bijection the positive-type coefficient of a smooth unit vector v is g ↦ ⟪v, ρ(g)v⟫ computed in V; the Fell topology (SRU.1) is described by such coefficients of smooth vectors; and the trivial and Steinberg (SR.3.4) representations, the irreducible square-integrable representations and the irreducible constituents of unitarily induced admissible finite-length representations define points of Ĝ. A unitarily induced representation need not itself be irreducible: for G = P = F^× and σ = 1 ⊕ 1 the induction is σ, whose single constituent class [1] occurs twice. (GS23, §11, opening paragraph, PDF p. 30; GS23 line 1277)
 
 G = 𝐆(F) with 𝐆 connected reductive over a nonarchimedean local field F, with the conventions of SmoothRepresentationsOfLocalGroups (SR) and complex coefficients.
 
-One proof route is as follows. Well defined: unitary-irreducibles-admissible gives irreducible admissible π^∞, unitarizable by restriction of the inner product; hilbert-completion gives a topologically irreducible completion. The two composites are the identity up to isomorphism (unitary-irreducibles-admissible, last clause; hilbert-completion, smooth vectors). Coefficients of smooth vectors suffice for the Fell topology by density of smooth vectors and dist_ptCoeff_le. Square-integrable irreducible representations are unitarizable (SR.3.3 square-integrable-tempered), in particular the Steinberg representation of a split group (SR.3.4 steinberg); unitary induction gives the tempered ones (unitary-induction).
+One proof route is as follows. Well defined: unitary-irreducibles-admissible gives irreducible admissible π^∞, unitarizable by restriction of the inner product; hilbert-completion gives a topologically irreducible completion. The two composites are the identity up to isomorphism (unitary-irreducibles-admissible, last clause; hilbert-completion, smooth vectors). Coefficients of smooth vectors suffice for the Fell topology by density of smooth vectors and the estimate of SRU.0.4. Square-integrable irreducible representations are unitarizable (SR.3.3 square-integrable-tempered), in particular the Steinberg representation of a split group (SR.3.4 steinberg); unitary induction and the semisimplicity of SRU.2.3 give the irreducible constituents of unitary inductions, in particular the tempered representations (unitary-induction).
 
 For G = F^× the bijection identifies Ĝ with the unitary smooth characters of F^×. The Steinberg representation of GL₂(ℚ_p), being square-integrable modulo a unitary central character, defines a point of the unitary dual of PGL₂(ℚ_p).
 
@@ -743,7 +759,7 @@ The statement carriers and the proposed proof inputs are the individual Needs li
 
 ## Layer SRU.3: Limits of characters and representations
 
-### 3.1 Weak convergence of distribution characters
+### 3.1 Weak convergence of distribution characters (*character-weak-convergence*)
 
 Let G = 𝐆(F) with 𝐆 connected reductive over a p-adic field F of characteristic zero (Gan–Savin take 𝐆 split simple), complex coefficients, a fixed Haar measure dg on G. For an admissible representation π of finite length, Θ_π(f) = tr π(f), f ∈ C_c^∞(G), is its distribution character (π(f) = ∫ f(g)π(g) dg has finite rank; EndoscopicTransferAndUnitaryTraceComparison §2.16). A sequence (πₙ) of admissible finite-length representations has weakly convergent characters when `Θ_(πₙ)(f)` converges for every f ∈ C_c^∞(G); the limit Θ := lim `Θ_(πₙ)` is a linear functional on C_c^∞(G), invariant under conjugation. Gan–Savin write C_c(G) for the test space; for a p-adic group the space on which characters are defined is C_c^∞(G) of locally constant compactly supported functions, the reading used here. Characters are additive in short exact sequences, so Θ factors through the Grothendieck group of finite-length representations. (GS23, §11.1, definition of weak convergence, PDF p. 31; GS23 line 1303)
 
@@ -770,7 +786,7 @@ Additional inputs for this route are located at Cas95, §2.3, definition of the 
 
 *Needs:* EndoscopicTransferAndUnitaryTraceComparison §2.16; SmoothRepresentationsOfLocalGroups SR.0 abelian-category / invariants-exact; SmoothRepresentationsOfLocalGroups SR.3a / admissibility-of-irreducibles; EndoscopicTransferAndUnitaryTraceComparison §2.16, induced-character continuity contract.
 
-### 3.2 Linear independence of characters
+### 3.2 Linear independence of characters (*characters-linearly-independent*)
 
 Let G be locally profinite and π₁, …, πₙ pairwise non-isomorphic irreducible admissible complex representations. Then `Θ_(π₁)`, …, `Θ_(πₙ)` are linearly independent functionals on C_c^∞(G) ([Cas95] Proposition 2.3.1). Consequently an admissible finite-length representation is determined up to semisimplification by its character, and a finite sum Σ n_σ Θ_σ with distinct σ determines the multiplicities n_σ. (Cas95, Proposition 2.3.1, PDF p. 25; Cas95 line 969)
 
@@ -782,7 +798,7 @@ For GL₂(ℚ_p), the reducible principal series i_B(`δ_B^(1/2)`) and 1 ⊕ St 
 
 *Needs:* SRU.3 / character-weak-convergence; SmoothRepresentationsOfLocalGroups SR.1 / corner-irreducibles; SmoothRepresentationsOfLocalGroups SR.1 / hecke-module-equivalence.
 
-### 3.3 Miličić's theorem on limits of unitary characters
+### 3.3 Miličić's theorem on limits of unitary characters (*milicic-limits*)
 
 Let G = 𝐆(F) with 𝐆 connected reductive over a p-adic field F of characteristic zero (Gan–Savin take 𝐆 split simple), complex coefficients, a fixed Haar measure dg on G. Let (πₙ) be irreducible unitarizable representations whose characters converge weakly. Then there are a finite set S of irreducible unitarizable representations and integers n_σ > 0 with lim `Θ_(πₙ)(f)` = `Σ_(σ∈S)` n_σ Θ_σ(f) for all f ∈ C_c^∞(G), and S = L[πₙ] = C[πₙ] in the Fell topology (Gan–Savin Theorem 11.1; Miličić 1973, Theorem 5). In particular, under weak convergence of characters, limit points and cluster points coincide and form a finite set. (GS23, Theorem 11.1, PDF p. 31; GS23 line 1306)
 
@@ -794,7 +810,7 @@ For a constant sequence πₙ = σ, S = {σ}, n_σ = 1 and L = C = {[σ]}. For S
 
 *Needs:* SRU.3 / character-weak-convergence; SRU.3 / characters-linearly-independent; SRU.1 / fell-topology; SRU.2 / unitary-dual-smooth; SmoothRepresentationsOfLocalGroups SR.3a / uniform-admissibility; CStarAlgebras C2, bounded-trace contract.
 
-### 3.4 Tadić: compactness of tempered characters and continuity of supports
+### 3.4 Tadić: compactness of tempered characters and continuity of supports (*tadic-tempered-limits*)
 
 For G reductive over a characteristic-zero nonarchimedean local field, every sequence of irreducible tempered representations of a Levi M has a subsequence whose distribution characters converge to that of an admissible finite-length tempered representation, which may be zero. If the limit is nonzero, the subsequence converges in Bernstein cuspidal-support coordinates to the support shared by its constituents; at any nonzero limit this is interpreted in its eventual Bernstein component. No support is assigned to the zero representation. At a fixed compact-open level, uniform admissibility supplies the finite-rank bounds used for extraction. (GS23, proof of Proposition 11.2, PDF p. 31; GS23 line 1319)
 
@@ -806,7 +822,7 @@ For M = T a split torus, the τₙ are unitary characters; the theorem reduces t
 
 *Needs:* SRU.3 / character-weak-convergence; SmoothRepresentationsOfLocalGroups SR.3; SmoothRepresentationsOfLocalGroups SR.3 / cuspidal-support; SmoothRepresentationsOfLocalGroups SR.3 / unramified-characters; SmoothRepresentationsOfLocalGroups SR.3 / bernstein-components; SmoothRepresentationsOfLocalGroups SR.3 / finite-type-corners; SRU.3 / milicic-limits; SRU.3 / fell-convergence-bernstein-centre; CStarAlgebras C2, bounded-trace contract; SmoothRepresentationsOfLocalGroups SR.3.3, tempered-local-topology contract.
 
-### 3.5 Fell convergence implies convergence in the Bernstein centre
+### 3.5 Fell convergence implies convergence in the Bernstein centre (*fell-convergence-bernstein-centre*)
 
 Let G = 𝐆(F) with 𝐆 connected reductive over a p-adic field F of characteristic zero (Gan–Savin take 𝐆 split simple), complex coefficients, a fixed Haar measure dg on G. If irreducible unitarizable πₙ converge in the Fell topology to an irreducible unitarizable π, then their infinitesimal characters (cuspidal supports in the Bernstein variety Ω(G), SR.3 bernstein-centre-blocks) converge to that of π: for every z in the Bernstein centre, z(πₙ) → z(π), and eventually πₙ lies in the Bernstein component of π. Consequently every irreducible constituent of a weak limit of characters of the πₙ has the cuspidal support of π (Gan–Savin §11.1, citing Tadić [Ta2]). (GS23, proof of Proposition 11.3, PDF p. 32; GS23 line 1357)
 
@@ -818,7 +834,7 @@ For G = ℚ_p^×, Fell convergence of unitary characters χₙ → χ means even
 
 *Needs:* SRU.3 / k-types-persist; SRU.1 / fell-topology; SRU.2 / unitary-dual-smooth; SmoothRepresentationsOfLocalGroups SR.3 / bernstein-centre-blocks; SmoothRepresentationsOfLocalGroups SR.3 / finite-type-corners; SmoothRepresentationsOfLocalGroups SR.3 / bernstein-decomposition.
 
-### 3.6 K-types persist in limits
+### 3.6 K-types persist in limits (*k-types-persist*)
 
 Let G be locally profinite, K a compact open subgroup and τ a smooth irreducible representation of K. If π is irreducible unitarizable, τ occurs in π|_K, and π is a limit point in Ĝ of irreducible unitarizable πₙ, then τ occurs in πₙ|_K for all but finitely many n (Gan–Savin Lemma 11.4). (GS23, Lemma 11.4, PDF p. 32; GS23 line 1364)
 
@@ -830,47 +846,47 @@ For K-spherical π (τ trivial), every limit of the πₙ that is K-spherical fo
 
 *Needs:* SRU.0 / smooth-vectors-unitary; SRU.1 / fell-topology; SRU.0 / positive-type-coefficient.
 
-### 3.7 Rodier's heredity of genericity
+### 3.7 Rodier's heredity of genericity (*rodier-heredity*)
 
-Let G be quasi-split reductive over F, B = TU a Borel subgroup, ψ a generic character of U (SR.2.3 whittaker-functionals), P = MN a standard parabolic and σ an admissible finite-length representation of M. Then dim Hom_U(i_P σ, ψ) = dim `Hom_(U∩M)(σ, ψ|_(U∩M))` for a compatible choice of ψ; in particular i_P σ is ψ-generic iff σ is, and for irreducible generic σ the induced representation i_P σ has exactly one ψ-generic irreducible subquotient, occurring with multiplicity one. (GS23, proof of Proposition 11.2 and Rodier genericity, PDF p. 31; GS23 line 1319)
+Let G be quasi-split reductive over F, B = TU a Borel subgroup, ψ a generic character of U (SR.2.3 whittaker-functionals), P = MN a standard parabolic and σ an admissible finite-length representation of M. Then dim Hom_U(i_P σ, ψ) = dim `Hom_(U∩M)(σ, ψ|_(U∩M))` for a compatible choice of ψ; in particular i_P σ is ψ-generic iff σ is. If moreover dim `Hom_(U∩M)(σ, ψ|_(U∩M))` = 1, then i_P σ has exactly one ψ-generic irreducible subquotient, occurring with multiplicity one; this holds for P = B, where U ∩ T = 1 and σ is a character, over every nonarchimedean local field, and for every irreducible generic σ over a field of characteristic zero by the Whittaker multiplicity-one contract. (GS23, proof of Proposition 11.2 and Rodier genericity, PDF p. 31; GS23 line 1319)
 
-G quasi-split; ψ generic, compatible with the Levi M (Shahidi's normalisation of the splitting).
+G quasi-split; ψ generic, compatible with the Levi M (Shahidi's normalisation of the splitting). For the uniqueness clause with P ≠ B, F of characteristic zero and the Whittaker multiplicity-one contract.
 
-One proof route is as follows. Filter i_P σ by the Bruhat cells PPwB (SR.2 mackey-filtration, geometric-lemma); only the open cell supports ψ-equivariant functionals for generic ψ, giving the dimension formula. Exactness of the twisted Jacquet functor V ↦ `V_(U,ψ)` (SR.2.3, coinvariants of the twist) makes generic multiplicity additive in short exact sequences, so a constituent count of one gives uniqueness of the generic subquotient.
+One proof route is as follows. Filter i_P σ by the Bruhat cells PPwB (SR.2 mackey-filtration, geometric-lemma); only the open cell supports ψ-equivariant functionals for generic ψ, giving the dimension formula. Exactness of the twisted Jacquet functor V ↦ `V_(U,ψ)` (SR.2.3, coinvariants of the twist) makes generic multiplicity additive in short exact sequences, so when the dimension formula gives the value one, exactly one constituent carries a ψ-functional, and only once. Heredity itself only equates two dimensions; the value one comes from P = B or from the multiplicity-one contract applied to σ.
 
-For GL₂(ℚ_p), i_B(`δ_B^(1/2)`) has the unique generic constituent St, and the trivial constituent is not generic. For every unitary character χ of T, i_B χ is generic.
+For GL₂(ℚ_p), i_B(`δ_B^(1/2)`) has the unique generic constituent St, and the trivial constituent is not generic. For every unitary character χ of T, i_B χ is generic. For P = G = G₂ heredity reads dim Hom_U(σ, ψ) = dim Hom_U(σ, ψ) and bounds nothing; the bound by one is the multiplicity-one contract.
 
 Additional inputs for this route are located at HO, §1, before Theorem 1.1, p. 2; HO line 88; BC1, §1.2, p. 2; BC1 line 43.
 
-*Needs:* SmoothRepresentationsOfLocalGroups SR.2 / whittaker-functionals; SmoothRepresentationsOfLocalGroups SR.2 / mackey-filtration; SmoothRepresentationsOfLocalGroups SR.2 / geometric-lemma; SmoothRepresentationsOfLocalGroups SR.2 / parabolic-induction.
+*Needs:* SmoothRepresentationsOfLocalGroups SR.2 / whittaker-functionals; SmoothRepresentationsOfLocalGroups SR.2 / mackey-filtration; SmoothRepresentationsOfLocalGroups SR.2 / geometric-lemma; SmoothRepresentationsOfLocalGroups SR.2 / parabolic-induction; SmoothRepresentationsOfLocalGroups SR.2.3, Whittaker multiplicity-one contract.
 
-### 3.8 Heiermann–Opdam: generic representations are standard modules
+### 3.8 Heiermann–Opdam: generic representations are standard modules (*heiermann-opdam-standard-module*)
 
-Let G be quasi-split reductive over a p-adic field F of characteristic zero. Let P = MN be a standard parabolic, τ an irreducible tempered generic representation of M and ν in the open positive chamber `a_M^(*+)` (SR.3.3 langlands-classification, Langlands convention). Then the Langlands quotient J(τ, ν) of the standard module i_P(τ_ν) is generic iff i_P(τ_ν) is irreducible (the standard module conjecture). Consequently every irreducible generic representation of G is isomorphic to an irreducible standard module i_P(τ_ν), with τ tempered generic and ν ∈ `a_M^(*+)`, and its differential is a positive combination `Σ_(α∈Δ∖S)` s_α ϖ_α of fundamental weights (Gan–Savin, proof of Proposition 11.2). (HO, Corollary 1.2, PDF p. 3; HO line 103)
+Let G be quasi-split reductive over a p-adic field F of characteristic zero. Let P = MN be a standard parabolic, τ an irreducible tempered generic representation of M and ν in the open positive chamber `a_M^(*+)` (SR.3.3 langlands-classification, Langlands convention). Then the Langlands quotient J(τ, ν) of the standard module i_P(τ_ν) is generic iff i_P(τ_ν) is irreducible (the standard module conjecture). Consequently every irreducible generic representation of G is isomorphic to an irreducible standard module i_P(τ_ν), with τ tempered generic and ν ∈ `a_M^(*+)`, and its real exponent decomposes as ν = ν_G + `Σ_(α∈Δ∖S)` s_α ϖ_α with every s_α > 0, where ν_G ∈ a_G^* is the central component and the sum, over the simple roots not in M, is the restriction of ν to the derived group (Gan–Savin, proof of Proposition 11.2, where G is split simple and a_G^* = 0). For unitary central character ν_G = 0. For G = F^× and π = |·| one has P = G, the root sum is empty and ν_G is the exponent of |·|, whose value at ϖ is q⁻¹. (HO, Corollary 1.2, PDF p. 3; HO line 103)
 
 F a p-adic field of characteristic zero; G quasi-split; the Langlands classification of SR.3.3 with its Harish–Chandra tempered-support hypothesis.
 
-One proof route is as follows. Heiermann–Opdam prove holomorphy of the local coefficient in the negative chamber and the tempered L-function conjecture (HO Theorem 1.1); with Heiermann–Muić this gives the standard module conjecture (HO Corollary 1.2). If π is irreducible generic, write π = J(τ, ν) by the Langlands classification; i_P(τ_ν) has π as a generic subquotient, so τ is generic (rodier-heredity), and by the standard module conjecture i_P(τ_ν) is irreducible, hence equal to π. The positive-chamber condition is ν = `Σ_(α∈Δ∖S)` s_α ϖ_α with s_α > 0, S the simple roots of M.
+One proof route is as follows. The Shahidi local coefficient and its holomorphy on the negative chamber (HO Theorem 1.1) are requested by the Shahidi local-coefficient contract, and the implication from that holomorphy to the standard module conjecture (HM07, as used in HO Corollary 1.2) by the Heiermann–Muić contract; together they give the standard module conjecture. If π is irreducible generic, write π = J(τ, ν) by the Langlands classification; i_P(τ_ν) has π as a generic subquotient, so τ is generic (rodier-heredity), and by the standard module conjecture i_P(τ_ν) is irreducible, hence equal to π. The positive-chamber condition says that the derived-group part of ν is `Σ_(α∈Δ∖S)` s_α ϖ_α with s_α > 0, S the simple roots of M; the central component ν_G is not constrained by the chamber.
 
-For GL₂(ℚ_p), the generic representation i_B(`|·|^(1/4)` ⊗ `|·|^(−1/4)`) is an irreducible standard module, while the non-generic trivial representation is the Langlands quotient of the reducible i_B(`δ_B^(1/2)`).
+For GL₂(ℚ_p), the generic representation i_B(`|·|^(1/4)` ⊗ `|·|^(−1/4)`) is an irreducible standard module, while the non-generic trivial representation is the Langlands quotient of the reducible i_B(`δ_B^(1/2)`). For a torus every irreducible representation is a character, the local coefficient is 1 and the standard module is irreducible.
 
 Additional inputs for this route are located at GS23, §11.1, proof of Proposition 11.2, p. 32; GS23 line 1319.
 
-*Needs:* SRU.3 / rodier-heredity; SmoothRepresentationsOfLocalGroups SR.3 / langlands-classification; SmoothRepresentationsOfLocalGroups SR.3.
+*Needs:* SRU.3 / rodier-heredity; SmoothRepresentationsOfLocalGroups SR.3 / langlands-classification; SmoothRepresentationsOfLocalGroups SR.3; AutomorphicLFunctionsAndLocalFactors AL.4, Shahidi local-coefficient contract; AutomorphicLFunctionsAndLocalFactors AL.4, Heiermann–Muić contract.
 
-### 3.9 Limits of generic unitary representations
+### 3.9 Limits of generic unitary representations (*gan-savin-generic-limits*)
 
-Let G = 𝐆(F) with 𝐆 connected reductive over a p-adic field F of characteristic zero (Gan–Savin take 𝐆 split simple), complex coefficients, a fixed Haar measure dg on G, and 𝐆 split simple. Let δ be generic unitarizable and (πₙ) generic unitarizable with δ ∈ L[πₙ]. After passing to a subsequence there are a parabolic P = MN and standard modules i_P(τₙ) with: πₙ ≅ i_P(τₙ) for all n; the characters of τₙ converge weakly to the character of a (possibly reducible) representation τ of M; and δ is a subquotient of i_P(τ). In particular τ is generic (Gan–Savin Proposition 11.2). (GS23, Proposition 11.2, PDF p. 31; GS23 line 1319)
+Let G = 𝐆(F) with 𝐆 connected reductive over a p-adic field F of characteristic zero (Gan–Savin take 𝐆 split simple), complex coefficients, a fixed Haar measure dg on G, and 𝐆 split simple. Fix a Whittaker datum (B, ψ). Let δ be ψ-generic unitarizable and (πₙ) ψ-generic unitarizable with δ ∈ L[πₙ]. After passing to a subsequence there are a parabolic P = MN and standard modules i_P(τₙ) with: πₙ ≅ i_P(τₙ) for all n; the characters of τₙ converge weakly to the character of a (possibly reducible) representation τ of M; and δ is a subquotient of i_P(τ). In particular τ is generic for the restriction of ψ to U ∩ M (Gan–Savin Proposition 11.2). (GS23, Proposition 11.2, PDF p. 31; GS23 line 1319)
 
 G = 𝐆(F) with 𝐆 connected reductive over a p-adic field F of characteristic zero (Gan–Savin take 𝐆 split simple), complex coefficients, a fixed Haar measure dg on G. 𝐆 split simple, as in Gan–Savin; δ, πₙ generic unitarizable.
 
-One proof route is as follows. By heiermann-opdam-standard-module each πₙ ≅ `i_(Pₙ)(τₙ)` with τₙ = τₙ° · χₙ; finitely many standard parabolics, so after a subsequence P is constant. By tadic-tempered-limits a subsequence of τₙ° has weakly convergent characters with limit τ°; unitarity of πₙ bounds the differentials dχₙ, because the coefficients of πₙ are bounded by ‖v‖² while along the negative cone they are asymptotic to combinations of the exponents of the Jacquet modules (SR.2 casselman-pairing), which grow with dχₙ; so a further subsequence has χₙ → χ; put τ = τ° · χ. The characters of i_P(τₙ) converge to that of i_P(τ) (character-weak-convergence, induction); by milicic-limits the limit points of (πₙ) are the constituents of i_P(τ), so δ is a subquotient; δ generic forces τ generic (rodier-heredity).
+One proof route is as follows. By heiermann-opdam-standard-module each πₙ ≅ `i_(Pₙ)(τₙ)` with τₙ = τₙ° · χₙ; finitely many standard parabolics, so after a subsequence P is constant. By tadic-tempered-limits a subsequence of τₙ° has weakly convergent characters with limit τ°; unitarity of πₙ bounds the differentials dχₙ, because the coefficients of πₙ are bounded by ‖v‖² while along the negative cone they are asymptotic to combinations of the exponents of the Jacquet modules (SR.2 casselman-pairing), which grow with dχₙ; so a further subsequence has χₙ → χ; put τ = τ° · χ. The characters of i_P(τₙ) converge to that of i_P(τ) (character-weak-convergence, induction); by milicic-limits the limit points of (πₙ) are the constituents of i_P(τ), so δ is a subquotient; δ ψ-generic forces τ generic for the restriction of ψ to U ∩ M (rodier-heredity with the compatible datum).
 
 For PGL₂(ℚ_p) and the generic complementary series πₙ = i_B(`|·|^(sₙ)` ⊗ `|·|^(−sₙ)`) with sₙ → 1/2, the generic limit point is St, a subquotient of i_B(`δ_B^(1/2)`) = lim i_B(τₙ).
 
 *Needs:* SRU.3 / heiermann-opdam-standard-module; SRU.3 / tadic-tempered-limits; SRU.3 / milicic-limits; SRU.3 / character-weak-convergence; SRU.3 / rodier-heredity; SmoothRepresentationsOfLocalGroups SR.2 / casselman-pairing; EndoscopicTransferAndUnitaryTraceComparison §2.16, induced-character continuity contract.
 
-### 3.10 Discrete series are isolated in the tempered dual
+### 3.10 Discrete series are isolated in the tempered dual (*discrete-series-isolated-tempered*)
 
 Let G be a reductive group over a p-adic field F of characteristic zero with compact centre (or work with a fixed unitary central character). Every irreducible square-integrable representation δ (SR.3.3) is an isolated point of the tempered part Ĝ_temp of Ĝ with the induced Fell topology: no sequence of tempered irreducible representations not isomorphic to δ converges to [δ]. (GS23, proof of Proposition 11.3, PDF p. 32; GS23 line 1357)
 
@@ -892,7 +908,7 @@ The statement carriers and the proposed proof inputs are the individual Needs li
 
 ## Layer SRU.4: Steinberg and supercuspidal isolation
 
-### 4.1 The Steinberg representation of a finite reductive group
+### 4.1 The Steinberg representation of a finite reductive group (*finite-steinberg*)
 
 Let Γ = 𝐆(𝔽_q) for a split connected reductive group 𝐆 over 𝔽_q, with Borel subgroup B = B(𝔽_q), Weyl group W, simple reflections S and N = |Φ⁺|. The Steinberg representation st_Γ is the irreducible complex representation whose character is `Σ_(J⊆S)` `(−1)^(|J|)` `Ind_(P_J)^(Γ)` 1 (P_J the standard parabolic subgroups); it has degree q^N, its B-fixed line is acted on by the Iwahori–Hecke algebra End_Γ(Ind_B^Γ 1) through the sign character T_s ↦ −1 (s ∈ S), and it is the unique constituent of Ind_B^Γ 1 with this property. For the reductive p-adic G of SRU.4, st_G denotes its inflation to K = 𝐆(O) along K → 𝐆(𝔽_q). (CIK71, Lemma 4.3 and Theorem 4.4, example (b), PDF p. 15; CIK71 line 502)
 
@@ -922,7 +938,7 @@ Additional inputs for this route are located at GS23, §11.1, proof of Propositi
 
 *Needs:* ReductiveGroups / Layer 7-structure-theory; SmoothRepresentationsOfLocalGroups SR.1 / iwahori-matsumoto; ReductiveGroupsPartII RG2.3 / reductive-quotient-of-special-fibre; ReductiveGroupsPartII RG2.3 / hyperspecial-vertices; SRU.4.9, finite Coxeter-complex identity.
 
-### 4.2 The Iwahori K-type of the Steinberg representation
+### 4.2 The Iwahori K-type of the Steinberg representation (*steinberg-k-types*)
 
 Let G = 𝐆(F) with 𝐆 a split, almost simple (Chevalley) group over a p-adic field F of characteristic zero, residue field 𝔽_q, hyperspecial K = 𝐆(O) with reduction K → 𝐆(𝔽_q), Iwahori subgroup I = preimage of a Borel B(𝔽_q), rank r. The restriction of the Steinberg representation St_G (SR.3.4) to K contains st_G with multiplicity one, and st_G is the only irreducible K-type of St_G having nonzero I-fixed vectors. (GS23, proof of Proposition 11.3, PDF p. 32; GS23 line 1357)
 
@@ -934,21 +950,21 @@ For GL₂(ℚ_p), St restricted to GL₂(ℤ_p) contains the q-dimensional st of
 
 *Needs:* SRU.4 / finite-steinberg; SmoothRepresentationsOfLocalGroups SR.3 / steinberg; SmoothRepresentationsOfLocalGroups SR.1 / iwahori-matsumoto; SmoothRepresentationsOfLocalGroups SR.2 / borel-casselman-invariants.
 
-### 4.3 Barbasch–Moy: the Steinberg K-type detects genericity
+### 4.3 Barbasch–Moy: the Steinberg K-type detects genericity (*barbasch-moy-genericity*)
 
-Let G = 𝐆(F) with 𝐆 a split, almost simple (Chevalley) group over a p-adic field F of characteristic zero, residue field 𝔽_q, hyperspecial K = 𝐆(O) with reduction K → 𝐆(𝔽_q), Iwahori subgroup I = preimage of a Borel B(𝔽_q), rank r. An irreducible admissible representation π of G whose restriction to K contains st_G is generic (admits a nonzero Whittaker functional for a generic character, SR.2.3). More precisely, for irreducible π with π^I ≠ 0, π is generic iff the H(K, I)-module π^I contains the sign character, iff π|_K contains st_G (Barbasch–Moy). (GS23, proof of Proposition 11.3, PDF p. 32; GS23 line 1357)
+Let G = 𝐆(F) with 𝐆 a split connected reductive group over a p-adic field F of characteristic zero, residue field 𝔽_q, a pinning (B, T, (x_α)) defined over O, hyperspecial K = 𝐆(O) with reduction K → 𝐆(𝔽_q), and Iwahori subgroup I = preimage of B(𝔽_q). Let ψ_K be a generic character of U = U(F) whose restriction to each simple root subgroup x_α(F) is trivial on x_α(𝔭) and nontrivial on x_α(O) (the Whittaker datum compatible with K, SR.2.3). For irreducible admissible π with π^I ≠ 0 the following are equivalent: π is ψ_K-generic; the H(K, I)-module π^I contains the sign character T_s ↦ −1; π|_K contains st_G (Barbasch–Moy). In particular an irreducible π whose restriction to K contains st_G is generic. Genericity for another Whittaker datum is reduced to this one by transporting K, I and st_G with the element of the adjoint torus that carries ψ_K to the given character; at a fixed K the converse implication fails for other data. For adjoint G the adjoint torus is T, so genericity does not depend on the datum and the three conditions are equivalent for every generic character. (BM94, cited by its locator; GS23, proof of Proposition 11.3, PDF p. 32; GS23 line 1357)
 
-G = 𝐆(F) with 𝐆 a split, almost simple (Chevalley) group over a p-adic field F of characteristic zero, residue field 𝔽_q, hyperspecial K = 𝐆(O) with reduction K → 𝐆(𝔽_q), Iwahori subgroup I = preimage of a Borel B(𝔽_q), rank r. π irreducible admissible.
+G = 𝐆(F) with 𝐆 split connected reductive over a p-adic field F of characteristic zero (its centre may be noncompact, as for Levi subgroups); pinning over O, hyperspecial K = 𝐆(O), Iwahori I; the K-compatible Whittaker character ψ_K. π irreducible admissible.
 
-One proof route is as follows. st_G has nonzero I-fixed vectors, so π^I ≠ 0 and π lies in the Iwahori block (SR.3.4 borel-casselman-block); π^I is a simple H(G, I)-module. Barbasch–Moy identify the Whittaker functionals on Iwahori-spherical π with the sign-isotypic part of π^I under the finite Hecke algebra: the Gelfand–Graev representation's I-fixed part is the induced module of the sign character of H(K, I) to H(G, I) (Barbasch–Moy 1994). Containing st_G is equivalent to the sign character occurring in π^I (steinberg-k-types).
+One proof route is as follows. st_G has nonzero I-fixed vectors, so π^I ≠ 0 and π lies in the Iwahori block (SR.3.4 borel-casselman-block); π^I is a simple H(G, I)-module. Barbasch–Moy identify the ψ_K-Whittaker functionals on Iwahori-spherical π with the sign-isotypic part of π^I under the finite Hecke algebra: with the conductor convention above, the I-fixed part of the Gelfand–Graev representation c-Ind_U^G ψ_K is the H(G, I)-module induced from the sign character of H(K, I) (BM94). This computation uses only the pinning, the Iwahori factorisation and H(K, I) ≅ H(W, q), so it applies to every split connected reductive group; for a Levi subgroup M the finite Hecke algebra of W_M is the tensor product of those of the simple factors, and its sign character is the tensor product of their sign characters. Containing st_G is equivalent to the sign character occurring in π^I (steinberg-k-types for almost simple G; for general split reductive G the same Bruhat computation of SRU.4.2 at the level of K/K⁺).
 
-The trivial representation does not contain st_G and is not generic; the Steinberg representation contains st_G and is generic. For GL₂(ℚ_p), an irreducible unramified principal series i_B(χ) contains st_G (its Iwahori invariants are the regular H(W, q)-module) and is generic.
+The trivial representation does not contain st_G and is not generic; the Steinberg representation contains st_G and is generic. For GL₂(ℚ_p), an irreducible unramified principal series i_B(χ) contains st_G (its Iwahori invariants are the regular H(W, q)-module) and is generic. For SL₂(ℚ₃) and the unramified quadratic character χ, i_B(χ) has two constituents; the K-spherical one has one-dimensional K- and I-fixed spaces on which T_s acts by q = 3, so it contains no sign character and is not ψ_K-generic, although it is generic for a Whittaker character of conductor ℤ₃; the other constituent is ψ_K-generic and contains st_G. For the Levi M of block type (2,2) in PGL₄, with one-dimensional split centre and W_M = S₂ × S₂, the sign type of H(W_M, q) is the tensor product of the two rank-one sign types, each of multiplicity one.
 
 Additional inputs for this route are located at BC1, §1.1–1.2, pp. 1–2; BC1 line 25.
 
 *Needs:* SRU.4 / finite-steinberg; SRU.4 / steinberg-k-types; SmoothRepresentationsOfLocalGroups SR.3 / borel-casselman-block; SmoothRepresentationsOfLocalGroups SR.2 / whittaker-functionals; SmoothRepresentationsOfLocalGroups SR.1 / iwahori-matsumoto.
 
-### 4.4 Rodier's decomposition of the principal series containing the Steinberg representation
+### 4.4 Rodier's decomposition of the principal series containing the Steinberg representation (*rodier-steinberg-series*)
 
 Let G = 𝐆(F) with 𝐆 a split, almost simple (Chevalley) group over a p-adic field F of characteristic zero, residue field 𝔽_q, hyperspecial K = 𝐆(O) with reduction K → 𝐆(𝔽_q), Iwahori subgroup I = preimage of a Borel B(𝔽_q), rank r. Let χ = `δ_B^(1/2)` (normalised induction), so that i_B(χ) has the Steinberg representation as a subrepresentation and the trivial representation as its unique irreducible quotient. Then i_B(χ) has exactly 2^r irreducible subquotients π_J, J ⊆ Δ (simple roots), each with multiplicity one, π_∅ = 1 and π_Δ = St_G, and r_B(π_J) has precisely the exponents wχ for which {α ∈ Δ : wα is positive} = J (Rodier; Casselman). (GS23, proof of Proposition 11.3, PDF p. 32; GS23 line 1357)
 
@@ -966,7 +982,7 @@ Additional inputs for this route are located at Cas80, §3, Theorem 3.1 (p. 397)
 
 *Needs:* SmoothRepresentationsOfLocalGroups SR.2 / principal-series-jacquet; SmoothRepresentationsOfLocalGroups SR.2 / parabolic-induction; SmoothRepresentationsOfLocalGroups SR.2 / first-adjointness; SmoothRepresentationsOfLocalGroups SR.3 / steinberg; SmoothRepresentationsOfLocalGroups SR.3 / finite-length; SRU.4.9, Rodier exponent convention.
 
-### 4.5 The Howe–Moore theorem over nonarchimedean local fields
+### 4.5 The Howe–Moore theorem over nonarchimedean local fields (*howe-moore*)
 
 Let 𝐆 be connected, almost simple and isotropic over a nonarchimedean local field F (any characteristic), G = 𝐆(F) and G⁺ the normal subgroup generated by the unipotent radicals of F-parabolic subgroups (G⁺ = G for 𝐆 simply connected; G/G⁺ is compact abelian in general, and finite in characteristic zero). If π is a strongly continuous unitary representation of G with no nonzero G⁺-invariant vector, then every coefficient g ↦ ⟪w, π(g)v⟫ vanishes at infinity on G. In particular, an infinite-dimensional irreducible unitary representation of G has coefficients vanishing at infinity. (CCLTV, §1, semisimple-group Howe–Moore statement, PDF p. 1; CCLTV line 18)
 
@@ -980,7 +996,7 @@ Additional inputs for this route are located at GS23, §11.1, end of the proof o
 
 *Needs:* ReductiveGroupsPartII RG2.4 / cartan-decomposition; SRU.0 / strongly-continuous-unitary; SRU.0 / positive-type-coefficient; ReductiveGroups / Layer 7-structure-theory; SRU.4.9, contraction and Mautner propagation.
 
-### 4.6 Unitary constituents of the Steinberg principal series
+### 4.6 Unitary constituents of the Steinberg principal series (*steinberg-series-unitary*)
 
 Let G = 𝐆(F) with 𝐆 a split, almost simple (Chevalley) group over a p-adic field F of characteristic zero, residue field 𝔽_q, hyperspecial K = 𝐆(O) with reduction K → 𝐆(𝔽_q), Iwahori subgroup I = preimage of a Borel B(𝔽_q), rank r. The only unitarizable irreducible subquotients of the principal series i_B(`δ_B^(1/2)`) of rodier-steinberg-series are the trivial representation and the Steinberg representation. (GS23, end of proof of Proposition 11.3, PDF p. 32; GS23 line 1357)
 
@@ -992,31 +1008,31 @@ For PGL₂ the statement is empty beyond 1 and St, which are the only constituen
 
 *Needs:* SRU.4 / rodier-steinberg-series; SRU.4 / howe-moore; SRU.2 / unitary-dual-smooth; SmoothRepresentationsOfLocalGroups SR.2 / casselman-pairing; SmoothRepresentationsOfLocalGroups SR.3 / square-integrable-tempered.
 
-### 4.7 The Steinberg representation is isolated
+### 4.7 The Steinberg representation is isolated (*steinberg-isolated*)
 
 Let G = 𝐆(F) with 𝐆 a split, almost simple (Chevalley) group over a p-adic field F of characteristic zero, residue field 𝔽_q, hyperspecial K = 𝐆(O) with reduction K → 𝐆(𝔽_q), Iwahori subgroup I = preimage of a Borel B(𝔽_q), rank r. If r ≥ 2, the Steinberg representation St_G is an isolated point of the unitary dual Ĝ (Gan–Savin Proposition 11.3). For r = 1 (SL₂, PGL₂) the statement is false: St_G is a limit point of the spherical complementary series. (GS23, Proposition 11.3, PDF p. 32; GS23 line 1357)
 
 G = 𝐆(F) with 𝐆 a split, almost simple (Chevalley) group over a p-adic field F of characteristic zero, residue field 𝔽_q, hyperspecial K = 𝐆(O) with reduction K → 𝐆(𝔽_q), Iwahori subgroup I = preimage of a Borel B(𝔽_q), rank r. r ≥ 2.
 
-One proof route is as follows. Suppose [St] ∈ L[πₙ] with πₙ irreducible unitarizable, πₙ ≇ St. By k-types-persist, st_G occurs in πₙ for n large, so πₙ is generic (barbasch-moy-genericity), and the gan-savin-generic-limits apply: after a subsequence πₙ ≅ i_P(τₙ), τₙ → τ, St a subquotient of i_P(τ), and every subquotient of i_P(τ) is a limit point (milicic-limits), hence unitarizable. πₙ is eventually nontempered (discrete-series-isolated-tempered), so P ≠ G. By fell-convergence-bernstein-centre every subquotient of i_P(τ) has the cuspidal support of St, i.e. lies in i_B(`δ_B^(1/2)`). If P = B, all 2^r ≥ 4 constituents of i_B(`δ_B^(1/2)`) would be unitarizable, contradicting steinberg-series-unitary. If B ⊊ P ⊊ G: τ has Iwahori-spherical cuspidal support because i_P(τ) has the cuspidal support of St; hence τ is Iwahori-spherical. Within that block τ is generic, so (barbasch-moy-genericity for M) st_M is a (K ∩ M)-type of τ; by the Iwasawa decomposition G = QK for a minimal parabolic Q ⊆ P (ReductiveGroupsPartII RG2.4), hence G = PK, i_P(τ)|_K = `Ind_(K∩P)`^K(`τ|_(K∩M)`) contains the inflation of the finite induced representation `Ind_(P(𝔽_q))^(Γ)(st_(M(𝔽_q)))`, whose B(𝔽_q)-fixed vectors form the H(W, q)-module induced from the sign character of H(W_M, q). It has dimension [W : W_M] > 1, contains the sign character once and the trivial character not at all (W_M ≠ 1), so it has an irreducible constituent different from both; this is a K-type with I-fixed vectors other than st_G and other than the trivial K-type. The constituent of i_P(τ) carrying it is unitarizable, is not St (steinberg-k-types) and not 1, contradicting steinberg-series-unitary. Gan–Savin call this step easy; the expansion here is the finite-Hecke-algebra computation.
+One proof route is as follows. Suppose [St] ∈ L[πₙ] with πₙ irreducible unitarizable, πₙ ≇ St. By k-types-persist, st_G occurs in πₙ for n large, so πₙ is ψ_K-generic (barbasch-moy-genericity), and the gan-savin-generic-limits apply with the fixed datum ψ_K: after a subsequence πₙ ≅ i_P(τₙ), τₙ → τ, St a subquotient of i_P(τ), and every subquotient of i_P(τ) is a limit point (milicic-limits), hence unitarizable. πₙ is eventually nontempered (discrete-series-isolated-tempered), so P ≠ G. By fell-convergence-bernstein-centre every subquotient of i_P(τ) has the cuspidal support of St, i.e. lies in i_B(`δ_B^(1/2)`). If P = B, all 2^r ≥ 4 constituents of i_B(`δ_B^(1/2)`) would be unitarizable, contradicting steinberg-series-unitary. If B ⊊ P ⊊ G: τ has Iwahori-spherical cuspidal support because i_P(τ) has the cuspidal support of St; hence τ is Iwahori-spherical. τ is generic for the restriction of ψ_K to U ∩ M, which satisfies the conductor convention for K ∩ M = 𝐌(O); barbasch-moy-genericity for the split connected reductive group M makes st_M a (K ∩ M)-type of τ; by the Iwasawa decomposition G = QK for a minimal parabolic Q ⊆ P (ReductiveGroupsPartII RG2.4), hence G = PK, i_P(τ)|_K = `Ind_(K∩P)`^K(`τ|_(K∩M)`) contains the inflation of the finite induced representation `Ind_(P(𝔽_q))^(Γ)(st_(M(𝔽_q)))`, whose B(𝔽_q)-fixed vectors form the H(W, q)-module induced from the sign character of H(W_M, q). It has dimension [W : W_M] > 1, contains the sign character once and the trivial character not at all (W_M ≠ 1), so it has an irreducible constituent different from both; this is a K-type with I-fixed vectors other than st_G and other than the trivial K-type. The constituent of i_P(τ) carrying it is unitarizable, is not St (steinberg-k-types) and not 1, contradicting steinberg-series-unitary. Gan–Savin call this step easy; the expansion here is the finite-Hecke-algebra computation.
 
 For PGL₂(ℚ_p) the complementary series i_B(`|·|^(s)` ⊗ `|·|^(−s)`), 0 < s < 1/2, converge as s → 1/2 to both 1 and St in the Fell topology, so St is not isolated in rank one. For G₂(ℚ₅) (rank 2) St is isolated; this is the input of the counterexample to the subsequence form of Gan–Savin Proposition 11.6 (SRU.1 gan-savin-closure).
 
 *Needs:* SRU.3 / k-types-persist; SRU.4 / barbasch-moy-genericity; SRU.3 / gan-savin-generic-limits; SRU.3 / milicic-limits; SRU.3 / discrete-series-isolated-tempered; SRU.3 / fell-convergence-bernstein-centre; SRU.4 / steinberg-series-unitary; SRU.4 / finite-steinberg; SRU.1 / fell-topology; ReductiveGroupsPartII RG2.4 / iwasawa-decomposition.
 
-### 4.8 Supercuspidal representations are isolated
+### 4.8 Supercuspidal representations are isolated (*supercuspidal-isolated*)
 
 Let G = 𝐆(F) be reductive over a nonarchimedean local field with compact centre. Every irreducible unitarizable supercuspidal representation σ of G is an isolated point of Ĝ. (With noncompact centre the same holds in the subset of Ĝ with a fixed unitary central character.) (GS23, proof of Proposition 10.5, PDF p. 28; GS23 line 1179)
 
 Z(G) compact, or a fixed unitary central character.
 
-One proof route is as follows. By the Bernstein decomposition (SR.3 bernstein-decomposition, cuspidal-splitting) the component of σ is {σ ⊗ ψ : ψ ∈ Ψ(G)}, Ψ(G) = Hom(G/G°, ℂ^×) with G° generated by all compact subgroups (SR.3 unramified-characters); for compact centre Z(G) ⊆ G°, so the lattice G/G° is finite, hence trivial, Ψ(G) = 1 and the component is {σ} up to isomorphism (Ber92, Ch. II §2.1, Proposition 22(2)–(4), p. 39; Ber92 line 1281); let e be the idempotent of the Bernstein centre cutting it out and K a compact open subgroup with σ^K ≠ 0. Then f := e ∗ 1_K (normalised) lies in C_c^∞(G). For an irreducible unitarizable π, π(f) ≠ 0 iff π is in the component of σ and π^K ≠ 0, iff π ≅ σ. The set {x ∈ Ĝ : rep x (f) ≠ 0} is open in the Fell topology (fell-topology, the unitary dual.isOpen_setOf_apply_ne_zero), so {[σ]} is open.
+One proof route is as follows. By the Bernstein decomposition (SR.3 bernstein-decomposition, cuspidal-splitting) the component of σ is {σ ⊗ ψ : ψ ∈ Ψ(G)}, Ψ(G) = Hom(G/G°, ℂ^×) with G° generated by all compact subgroups (SR.3 unramified-characters); for compact centre Z(G) ⊆ G°, so the lattice G/G° is finite, hence trivial, Ψ(G) = 1 and the component is {σ} up to isomorphism (Ber92, Ch. II §2.1, Proposition 22(2)–(4), p. 39; Ber92 line 1281); let e be the idempotent of the Bernstein centre cutting it out and K a compact open subgroup with σ^K ≠ 0. Then f := e ∗ 1_K (normalised) lies in C_c^∞(G). For an irreducible unitarizable π, π(f) ≠ 0 iff π is in the component of σ and π^K ≠ 0, iff π ≅ σ. The set {x ∈ Ĝ : rep x (f) ≠ 0} is open in the Fell topology (SRU.1.7, openness of {x : rep x (f) ≠ 0}), so {[σ]} is open.
 
 For PGL₂(ℚ_p), every depth-zero supercuspidal representation is isolated, while the unitary principal series are not. Negative control for the meaning of unramified: on PGL₂(ℚ_p) the character χ(g) = `(−1)^(v_p(det g))` is trivial on PGL₂(ℤ_p) but χ(w) = −1 for w = [[0,1],[p,0]], whose square is the central p·1, so w generates a compact subgroup of order 2; thus χ ∉ Ψ(G), and for σ supercuspidal with σ ⊗ χ ≇ σ the twist σ ⊗ χ lies in a different Bernstein component even though `(σ ⊗ χ)|_(PGL₂(ℤ_p))` = `σ|_(PGL₂(ℤ_p))`; the idempotent e, not e_K alone, separates them. For ℚ_p^× (noncompact centre) a unitary character is not isolated in the full unitary dual, being a limit of unramified twists; it is isolated among characters with a fixed value at p.
 
 *Needs:* SmoothRepresentationsOfLocalGroups SR.3 / unramified-characters; SmoothRepresentationsOfLocalGroups SR.3 / bernstein-decomposition; SmoothRepresentationsOfLocalGroups SR.3 / cuspidal-splitting; SmoothRepresentationsOfLocalGroups SR.3a / cuspidal-representations; SRU.1 / fell-topology; SRU.2 / unitary-dual-smooth.
 
-### 4.9 Coxeter and contraction inputs
+### 4.9 Coxeter and contraction inputs (*coxeter-contraction-inputs*)
 
 Prove the finite Coxeter-complex alternating-character identity identifying the parabolic sum in SRU.4.1 with the finite-Hecke sign constituent: for every split finite reductive group, its character is the alternating sum over all standard parabolics and its degree is q raised to the number of positive roots. The Coxeter complex has reduced top homology only; use its orientation character to fix the sign. For rank zero its reduced degree −1 convention gives the one-dimensional trivial representation, and in type A₁ the character is the permutation character on ℙ¹ minus 1, of degree q. The geometric constituent/exponent calculation in SRU.4.4 is the separate Rodier target, with the exact positivity-set convention stated there (CIK71 §4, pp. 93–95; GS23 proof of Proposition 11.3, p. 33).
 
@@ -1034,24 +1050,24 @@ The statement carriers and the proposed proof inputs are the individual Needs li
 
 ## Layer SRU.5: The generic unitary spherical dual
 
-### 5.1 Real parts of the supplied Satake parameters
+### 5.1 Real parts of the supplied Satake parameters (*real-satake-parameter*)
 
-Let k a nonarchimedean local field of any characteristic with residue field 𝔽_q, G = 𝐆(k) for 𝐆 quasi-simple, split and adjoint, K = 𝐆(O) hyperspecial, B ⊃ T a Borel subgroup and maximal split torus, based root datum (X, Φ, X^∨, Φ^∨, Π), Weyl group W, longest element w₀, Coxeter number h, dual group G^∨ over ℂ with maximal torus T^∨ = X ⊗ ℂ^× (Ciubotaru–Harris §6 setting). For s ∈ T^∨ = Hom(X^∨, ℂ^×), χ_s := s ∘ val_T : T(k) → ℂ^× with ⟨val_T(t), λ⟩ = val_k(λ(t)) (Ciubotaru–Harris (6.1)); X(s) := i_B(χ_s) (normalised, SR.2) and L(s) its unique K-spherical irreducible subquotient; s ↦ L(s) is a bijection from W-orbits in T^∨ to irreducible K-spherical representations, s being the Satake parameter (SR.4 spherical-parameter, satake-isomorphism, with complex coefficients and the positive square root `q^(1/2)` ∈ ℂ fixing normalised induction). Polar decomposition T^∨ = T^∨_ℝ · T^∨_c with T^∨_ℝ = X ⊗ `ℝ_(>0)`, T^∨_c = X ⊗ S¹; every s is uniquely s = s_c·s_ν with s_c ∈ T^∨_c, ν ∈ t^∨_ℝ = X ⊗ ℝ and s_ν = exp(ν log q); s_ν is a real Satake parameter, X(ν) := X(s_ν), L(ν) := L(s_ν). C₀ = {ν : ⟨α^∨, ν⟩ ≥ 0 for α ∈ Π}, `C_(0,h)` = {ν ∈ C₀ : w₀ν = −ν} (hermitian locus), A₀ = {ν ∈ C₀ : ⟨γ^∨, ν⟩ < 1} (γ^∨ the highest coroot), ρ = half the sum of positive roots; the trivial representation is L(ρ). Convention: with (6.1), `χ_(s_ν)(λ^∨(ϖ))` = `q^(⟨λ^∨, ν⟩)`, so for dominant ν the spherical L(ν) is the unique irreducible subrepresentation of X(ν) (and the unique quotient of X(−ν)); Barbasch–Ciubotaru's χ_ν(τ(a)) = `|a|^(⟨τ, ν⟩)` differs by ν ↦ −ν, which changes no statement of SRU.5–SRU.7 because L(ν) and L(−ν) are hermitian duals and unitarity is preserved. (CH26, §6, (6.1)–(6.6), PDF p. 16; CH26 line 775)
+Let k a nonarchimedean local field of any characteristic with residue field 𝔽_q, G = 𝐆(k) for 𝐆 quasi-simple, split and adjoint, K = 𝐆(O) hyperspecial, B ⊃ T a Borel subgroup and maximal split torus, based root datum (X, Φ, X^∨, Φ^∨, Π), Weyl group W, longest element w₀, Coxeter number h, dual group G^∨ over ℂ with maximal torus T^∨ = X ⊗ ℂ^× (Ciubotaru–Harris §6 setting). For s ∈ T^∨ = Hom(X^∨, ℂ^×), χ_s := s ∘ val_T : T(k) → ℂ^× with ⟨val_T(t), λ⟩ = val_k(λ(t)) (Ciubotaru–Harris (6.1)); X(s) := i_B(χ_s) (normalised, SR.2) and L(s) its unique K-spherical irreducible subquotient; s ↦ L(s) is a bijection from W-orbits in T^∨ to irreducible K-spherical representations, s being the Satake parameter (SR.4 spherical-parameter, satake-isomorphism, with complex coefficients and the positive square root `q^(1/2)` ∈ ℂ fixing normalised induction). Write s = s_c·s_ν with s_ν = r(s) the positive part and s_c = s/r(s) the compact part of LieHighestWeightPartII N5 positive-real-part (T^∨_ℝ = X ⊗ `ℝ_(>0)`, T^∨_c = X ⊗ S¹), and define the real part ν ∈ t^∨_ℝ = X ⊗ ℝ as the q-logarithm of r(s), so that s_ν = exp(ν log q) with q ≥ 2; s_ν is a real Satake parameter, X(ν) := X(s_ν), L(ν) := L(s_ν). C₀ = {ν : ⟨α^∨, ν⟩ ≥ 0 for α ∈ Π}, `C_(0,h)` = {ν ∈ C₀ : w₀ν = −ν} (hermitian locus), A₀ = {ν ∈ C₀ : ⟨γ^∨, ν⟩ < 1} (γ^∨ the highest coroot), ρ = half the sum of positive roots; the trivial representation is L(ρ). Convention: with (6.1), `χ_(s_ν)(λ^∨(ϖ))` = `q^(⟨λ^∨, ν⟩)`, so for dominant ν the spherical L(ν) is the unique irreducible subrepresentation of X(ν) (and the unique quotient of X(−ν)); Barbasch–Ciubotaru's χ_ν(τ(a)) = `|a|^(⟨τ, ν⟩)` differs by ν ↦ −ν, which changes no statement of SRU.5–SRU.7 because L(ν) and L(−ν) are hermitian duals and unitarity is preserved. (CH26, §6, (6.1)–(6.6), PDF p. 16; CH26 line 775)
 
 k a nonarchimedean local field of any characteristic with residue field 𝔽_q, G = 𝐆(k) for 𝐆 quasi-simple, split and adjoint, K = 𝐆(O) hyperspecial, B ⊃ T a Borel subgroup and maximal split torus, based root datum (X, Φ, X^∨, Φ^∨, Π), Weyl group W, longest element w₀, Coxeter number h, dual group G^∨ over ℂ with maximal torus T^∨ = X ⊗ ℂ^× (Ciubotaru–Harris §6 setting).
 
-One proof route is as follows. X(s)^K is one-dimensional by the Iwasawa decomposition (ReductiveGroupsPartII RG2.4), so X(s) has exactly one K-spherical constituent L(s) (SR.2 induced-invariants). The Hecke character of L(s) is evaluation of the Satake transform at s; the Satake isomorphism identifies H(G, K) with ℂ[T^∨]^W (SR.4), so L(s) ≅ L(s') iff s' ∈ W·s. Polar decomposition is that of ℂ^× = `ℝ_(>0)` × S¹ coordinatewise in X ⊗ ℂ^×. Sign of the convention: val_T(λ^∨(ϖ)) = λ^∨ gives `χ_(s_ν)(λ^∨(ϖ))` = `q^(⟨λ^∨, ν⟩)`; for PGL₂ and ν = ρ this is `δ_B^(−1/2)`, and i_B(`δ_B^(−1/2)`) = Ind_B 1 has the trivial representation as subrepresentation (SR.3.4 steinberg).
+One proof route is as follows. X(s)^K is one-dimensional by the Iwasawa decomposition (ReductiveGroupsPartII RG2.4), so X(s) has exactly one K-spherical constituent L(s) (SR.2 induced-invariants). The Hecke character of L(s) is evaluation of the Satake transform at s; the Satake isomorphism identifies H(G, K) with ℂ[T^∨]^W (SR.4), so L(s) ≅ L(s') iff s' ∈ W·s. The decomposition, its uniqueness and its Weyl equivariance are those of N5 positive-real-part; only the q-logarithm ν and its Satake and chamber specialisations are defined here. Sign of the convention: val_T(λ^∨(ϖ)) = λ^∨ gives `χ_(s_ν)(λ^∨(ϖ))` = `q^(⟨λ^∨, ν⟩)`; for PGL₂ and ν = ρ this is `δ_B^(−1/2)`, and i_B(`δ_B^(−1/2)`) = Ind_B 1 has the trivial representation as subrepresentation (SR.3.4 steinberg).
 
 The defining object has the following API.
 
-- The decomposition s = s_c · s_ν with s_c ∈ T^∨_c and ν ∈ X ⊗ ℝ, unique.
-- ν = log_q |s|, the real part, W-equivariant.
+- The real part ν = log_q r(s) ∈ X ⊗ ℝ of the N5 positive part r(s), with s = s_c · q^ν for the N5 compact part s_c.
+- ν(w·s) = w·ν(s) for w ∈ W, from the Weyl equivariance of r.
 - C₀, `C_(0,h)` = {ν ∈ C₀ | w₀ ν = −ν} and A₀ = {ν ∈ C₀ | ⟨γ^∨, ν⟩ < 1} as subsets of X ⊗ ℝ.
 
 **Checks.**
 
 - For G = PGL₂(ℚ_p), L(s_ρ) is the trivial representation and ⟨α^∨, ρ⟩ = 1.
-- For s = s_c s_ν = s'_c `s_(ν')` in T^∨, s_c = s'_c and ν = ν'.
+- At q = 2, s = diag(−2, −½) in the dual SL₂(ℂ) of PGL₂ has compact part −I and positive part diag(2, ½); deleting the compact factor changes the Satake parameter, since diag(2, ½) is not W-conjugate to diag(−2, −½), while for diag(i, −i) the real part is 0 and the compact part is the element itself.
 - For ν = 0, s = s_c is compact and X(s_c) is unitarily induced.
 - For PGL₂, s = `q^(1/4)` and s' = `q^(1/3)` are not W-conjugate, so L(s) ≇ L(s').
 
@@ -1059,9 +1075,9 @@ For G = PGL₂ the Satake parameters are s ∈ ℂ^× modulo s ↦ s⁻¹; the t
 
 Additional inputs for this route are located at BC1, §1.2, (1.2.1)–(1.2.2), p. 2; BC1 line 43.
 
-*Needs:* SmoothRepresentationsOfLocalGroups SR.4 / spherical-parameter; SmoothRepresentationsOfLocalGroups SR.4 / satake-isomorphism; SmoothRepresentationsOfLocalGroups SR.4 / torus-character-dictionary; SmoothRepresentationsOfLocalGroups SR.2 / parabolic-induction; SmoothRepresentationsOfLocalGroups SR.2 / induced-invariants; ReductiveGroupsPartII RG2.5 / langlands-dual-group; ReductiveGroupsPartII RG2.4 / iwasawa-decomposition.
+*Needs:* SmoothRepresentationsOfLocalGroups SR.4 / spherical-parameter; SmoothRepresentationsOfLocalGroups SR.4 / satake-isomorphism; SmoothRepresentationsOfLocalGroups SR.4 / torus-character-dictionary; SmoothRepresentationsOfLocalGroups SR.2 / parabolic-induction; SmoothRepresentationsOfLocalGroups SR.2 / induced-invariants; ReductiveGroupsPartII RG2.5 / langlands-dual-group; ReductiveGroupsPartII RG2.4 / iwasawa-decomposition; LieHighestWeightPartII N5 positive-real-part.
 
-### 5.2 Half-integral real parts and geometric Satake parameters
+### 5.2 Half-integral real parts and geometric Satake parameters (*half-integral-parameter*)
 
 In the setting of real-satake-parameter, let (V, ρ_V) be a finite-dimensional representation of g^∨ (equivalently of G^∨). A real parameter ν ∈ t^∨_ℝ is half-integral with respect to V if ⟨χ, ν⟩ ∈ ½ℤ for every weight χ of V; the Satake parameter s = s_c s_ν is then called geometric with respect to V (Ciubotaru–Harris Definition 6.3). This is a condition on the real part only, not algebraicity of s_c. For a fixed 0 ≤ ε < ½, `C₀^(½+ε)` := {ν ∈ C₀ : ⟨α^∨, ν⟩ ∈ ε + ½ℤ for all α^∨ ∈ Φ^∨} ((6.11)); `C₀^(½)` is the set of ν ∈ C₀ half-integral for the adjoint representation. In fundamental-weight coordinates ν = Σ νᵢ ωᵢ, ν ∈ `C₀^(½)` iff every νᵢ ∈ `½ℤ_(≥0)`. (CH26, Definition 6.3 and (6.11)–(6.13), PDF p. 17; CH26 line 802)
 
@@ -1089,7 +1105,7 @@ The defining object has the following API.
 
 *Needs:* SRU.5 / real-satake-parameter; RepresentationTheory/LieHighestWeight / Layer 2-weights-of-a-module-and-their-integrality.
 
-### 5.3 Tempered spherical representations
+### 5.3 Tempered spherical representations (*spherical-tempered-criterion*)
 
 In the setting of real-satake-parameter, L(s) is tempered iff its real part ν is 0; in that case L(s) = X(s) is the irreducible principal series unitarily induced from the unitary character χ_s (Ciubotaru–Harris Lemma 5.2, in local form). (CH26, Lemma 5.2, PDF p. 12; CH26 line 588)
 
@@ -1099,9 +1115,9 @@ One proof route is as follows. If ν=0, χ_s is unitary and normalised induction
 
 For PGL₂(ℚ_p), the spherical L(s) is tempered iff |s| = 1; the trivial representation L(`q^(1/2)`) is not tempered.
 
-*Needs:* SRU.5 / real-satake-parameter; SRU.2 / unitary-induction; SmoothRepresentationsOfLocalGroups SR.3 / casselman-criterion; SmoothRepresentationsOfLocalGroups SR.3 / langlands-classification; SmoothRepresentationsOfLocalGroups SR.3 / square-integrable-tempered.
+*Needs:* SRU.5 / real-satake-parameter; SRU.2 / unitary-induction; SRU.5 / unramified-principal-series-irreducibility; SmoothRepresentationsOfLocalGroups SR.3 / casselman-criterion; SmoothRepresentationsOfLocalGroups SR.3 / langlands-classification; SmoothRepresentationsOfLocalGroups SR.3 / square-integrable-tempered.
 
-### 5.4 Irreducibility of unramified principal series
+### 5.4 Irreducibility of unramified principal series (*unramified-principal-series-irreducibility*)
 
 In the setting of real-satake-parameter: (1) for s regular (trivial stabiliser in W), X(s) is irreducible iff α^∨(s) ≠ `q^(±1)` for every root α (Casselman 1980 Proposition 3.5(b)); (2) for general s and G adjoint (so G^∨ simply connected and every centraliser `Z_(G^∨)(s)` connected), X(s) is irreducible iff α^∨(s) ≠ `q^(±1)` for every root α (Kato81 Theorem 2.2, p. 935; Kato81 line 229; its second condition, that W_s be generated by reflections, holds automatically); (3) for a real dominant ν, X(ν) is irreducible iff ⟨α^∨, ν⟩ ≠ 1 for every positive coroot α^∨ (Ciubotaru–Harris p. 17; Barbasch–Ciubotaru §3.1). (Cas80, Theorem 3.1 and Proposition 3.5(b), PDF p. 16; Cas80 line 432)
 
@@ -1115,13 +1131,13 @@ Additional inputs for this route are located at CH26, §6, after Definition 6.3,
 
 *Needs:* SRU.5 / real-satake-parameter; SmoothRepresentationsOfLocalGroups SR.2 / principal-series-jacquet; SmoothRepresentationsOfLocalGroups SR.1 / iwahori-matsumoto; ReductiveGroupsPartII RG2.5 / langlands-dual-group; SRU.5.28, full-root-datum Hecke comparison.
 
-### 5.5 Generic spherical representations
+### 5.5 Generic spherical representations (*spherical-generic-criterion*)
 
 In the setting of real-satake-parameter, each X(s) has a unique generic irreducible subquotient (Rodier), and L(s) is generic iff X(s) is irreducible, i.e. iff L(s) = X(s) (Barbasch–Moy; Ciubotaru–Harris p. 17). Consequently a tempered L(s) is generic (Ciubotaru–Harris Corollary 5.7, local part). (CH26, §6, after Definition 6.3; Corollary 5.7, PDF p. 17; CH26 line 802)
 
 k a nonarchimedean local field of any characteristic with residue field 𝔽_q, G = 𝐆(k) for 𝐆 quasi-simple, split and adjoint, K = 𝐆(O) hyperspecial, B ⊃ T a Borel subgroup and maximal split torus, based root datum (X, Φ, X^∨, Φ^∨, Π), Weyl group W, longest element w₀, Coxeter number h, dual group G^∨ over ℂ with maximal torus T^∨ = X ⊗ ℂ^× (Ciubotaru–Harris §6 setting).
 
-One proof route is as follows. Uniqueness of the generic constituent: SRU.3 rodier-heredity for P = B. If X(s) is irreducible, L(s) = X(s) is generic (every principal series is generic). If L(s) is generic, its Iwahori-fixed H(K, I)-module contains both the trivial character (spherical) and the sign character (generic, SRU.4 barbasch-moy-genericity); for adjoint G Barbasch–Moy show this forces L(s) = X(s) (Barbasch–Ciubotaru §1.2, [BM4]). Tempered spherical: ν = 0 (spherical-tempered-criterion), so |α^∨(s)| = 1 ≠ `q^(±1)` and X(s) is irreducible (unramified-principal-series-irreducibility), hence generic.
+One proof route is as follows. Uniqueness of the generic constituent: SRU.3 rodier-heredity for P = B. If X(s) is irreducible, L(s) = X(s) is generic (every principal series is generic). If L(s) is generic, its Iwahori-fixed H(K, I)-module contains both the trivial character (spherical) and the sign character (generic, SRU.4 barbasch-moy-genericity; G is adjoint, so genericity does not depend on the Whittaker datum); for adjoint G Barbasch–Moy show this forces L(s) = X(s) (Barbasch–Ciubotaru §1.2, [BM4]). Tempered spherical: ν = 0 (spherical-tempered-criterion), so |α^∨(s)| = 1 ≠ `q^(±1)` and X(s) is irreducible (unramified-principal-series-irreducibility), hence generic.
 
 The trivial representation L(ρ) is not generic (rank ≥ 1), and X(ρ) is reducible. Every L(s_c) with s_c compact is generic and equal to X(s_c).
 
@@ -1129,7 +1145,7 @@ Additional inputs for this route are located at BC1, §1.2, p. 2; §3.1, pp. 16�
 
 *Needs:* SRU.5 / real-satake-parameter; SRU.5 / spherical-tempered-criterion; SRU.5 / unramified-principal-series-irreducibility; SRU.3 / rodier-heredity; SRU.4 / barbasch-moy-genericity.
 
-### 5.6 Hermitian spherical representations
+### 5.6 Hermitian spherical representations (*spherical-hermitian-criterion*)
 
 In the setting of real-satake-parameter, L(s) admits a nonzero G-invariant hermitian form iff some w ∈ W maps s to s̄⁻¹ (Barbasch–Ciubotaru §1.2); for a real dominant ν this means w₀ν = −ν (Ciubotaru–Harris (6.5)). When w₀ = −1 (types A₁, B, C, `D_(2m)`, G₂, F₄, E₇, E₈) every real ν is hermitian; Ciubotaru–Harris list B, C, G₂, F₄, E₇, E₈. (BC1, §§1.2 and 3.1, PDF p. 2; BC1 line 43)
 
@@ -1143,7 +1159,7 @@ Additional inputs for this route are located at CH26, §6, (6.5), p. 17; CH26 li
 
 *Needs:* SRU.5 / real-satake-parameter; SRU.2 / unitary-structure; SmoothRepresentationsOfLocalGroups SR.0 abelian-category / smooth-dual.
 
-### 5.7 The generic unitary spherical region
+### 5.7 The generic unitary spherical region (*generic-unitary-region*)
 
 In the setting of real-satake-parameter, U₀^g := {ν ∈ C₀ : ⟨α^∨, ν⟩ ≠ 1 for every α^∨ ∈ `Φ^(∨,+)` and L(ν) is unitary} parametrises the generic spherical unitary representations with real Satake parameter (Ciubotaru–Harris (6.4)); U₀^g ⊆ `C_(0,h)`. The hyperplanes ⟨α^∨, ν⟩ = 1, α^∨ ∈ `Φ^(∨,+)`, cut C₀ into m = ∏ᵢ (dᵢ + h)/dᵢ open regions (dᵢ the fundamental degrees of Φ^∨; 105 for F₄, 25 080 for E₈); the dominant alcoves include their faces on chamber walls through zero; U₀^g is a union of open regions intersected with `C_(0,h)`. Unitarity of L(s_c s_ν) for noncentral s_c is not governed by U₀^g. (CH26, §6, (6.4)–(6.6), PDF p. 17; CH26 line 805)
 
@@ -1171,7 +1187,7 @@ For PGL₂, U₀^g = {ν ∈ C₀ : ⟨α^∨, ν⟩ < 1} = A₀, the spherical 
 
 *Needs:* SRU.5 / real-satake-parameter; SRU.5 / spherical-generic-criterion; SRU.5 / spherical-hermitian-criterion; SRU.5 / unramified-principal-series-irreducibility; SRU.2 / unitary-structure.
 
-### 5.8 The fundamental alcove is unitary
+### 5.8 The fundamental alcove is unitary (*fundamental-alcove-unitary*)
 
 In the setting of real-satake-parameter, A₀ ∩ `C_(0,h)` ⊆ U₀^g: for hermitian dominant ν with ⟨γ^∨, ν⟩ < 1, L(ν) = X(ν) is generic and unitary (Ciubotaru–Harris Lemma 6.7). (CH26, Lemma 6.7, PDF p. 18; CH26 line 858)
 
@@ -1185,7 +1201,7 @@ Additional inputs for this route are located at BC1, §3.1–3.2, pp. 16–17; B
 
 *Needs:* SRU.5 / generic-unitary-region; SRU.2 / unitary-induction; SRU.5 / unramified-principal-series-irreducibility; SRU.5 / spherical-hermitian-criterion; SRU.5.28, signature constancy.
 
-### 5.9 Unbounded regions are not unitary
+### 5.9 Unbounded regions are not unitary (*unbounded-not-unitary*)
 
 In the setting of real-satake-parameter, if ν ∈ C₀ and ⟨αᵢ^∨, ν⟩ > 1 for some simple coroot αᵢ^∨, then ν ∉ U₀^g (Ciubotaru–Harris Lemma 6.8). (CH26, Lemma 6.8, PDF p. 18; CH26 line 865)
 
@@ -1199,33 +1215,33 @@ Additional inputs for this route are located at BCP, §5.2, Lemma (2) and follow
 
 *Needs:* SRU.5 / generic-unitary-region; SmoothRepresentationsOfLocalGroups SR.2 / principal-series-jacquet; SmoothRepresentationsOfLocalGroups SR.2 / casselman-pairing; SRU.5 / unramified-principal-series-irreducibility; SRU.5.28, detecting signatures.
 
-### 5.10 Barbasch–Moy: unitarity through the Iwahori–Hecke algebra
+### 5.10 Barbasch–Moy: unitarity through the Iwahori–Hecke algebra (*barbasch-moy-unitarity*)
 
-Let G be split over a nonarchimedean local field (characteristic zero is assumed by Barbasch–Moy and Barbasch–Ciubotaru; Ciubotaru–Harris §7 note the assumption is unnecessary for the Hecke-algebraic statements) and I an Iwahori subgroup. An irreducible representation π with π^I ≠ 0 is unitarizable iff the simple H(G, I)-module π^I is unitary for the *-structure f*(g) = conj f(g⁻¹) (Barbasch–Moy 1989); the Iwahori–Matsumoto involution preserves hermitian and unitary modules and exchanges spherical and generic ones; and the problem reduces to the graded affine Hecke algebra of the centraliser of s_c at the real infinitesimal character ν (Barbasch–Moy 1993). (BC1, §§1.1–1.2, PDF p. 1; BC1 line 24)
+Let G be split over a nonarchimedean local field (characteristic zero is assumed by Barbasch–Moy and Barbasch–Ciubotaru; Ciubotaru–Harris §7 note the assumption is unnecessary for the Hecke-algebraic statements) and I an Iwahori subgroup. An irreducible representation π with π^I ≠ 0 is unitarizable iff the simple H(G, I)-module π^I is unitary for the *-structure f*(g) = conj f(g⁻¹) (BM89, Theorems 1.1–1.2, cited by its locator); the Iwahori–Matsumoto involution preserves hermitian and unitary modules and exchanges spherical and generic ones; and the problem reduces to the graded affine Hecke algebra of the centraliser of s_c at the real infinitesimal character ν (BM93, Theorem 8.1, printed p. 634; BM93 line 973). (BC1, §§1.1–1.2, PDF p. 1; BC1 line 24)
 
 G split; π irreducible Iwahori-spherical.
 
-One proof route is as follows. The Borel–Casselman equivalence V ↦ V^I (SR.3.4 borel-casselman-block) matches invariant hermitian forms on V with H(G, I)-invariant forms on V^I, the *-operation being adjoint for unitary structures (positive-definiteness on V reduces to V^I by e_I-averaging over K-types: Barbasch–Moy 1989). The Iwahori–Matsumoto involution of H(G, I) (SR.1 iwahori-matsumoto) is a *-automorphism up to the sign twist, hence preserves unitarity; on the trivial character it gives the sign character. The reduction to real infinitesimal character and to the graded algebra of `Z_(G^∨)(s_c)` is Lusztig's reduction made *-compatible by Barbasch–Moy; it is cited.
+One proof route is as follows. The Borel–Casselman equivalence V ↦ V^I (SR.3.4 borel-casselman-block) matches invariant hermitian forms on V with H(G, I)-invariant forms on V^I, the *-operation being adjoint for unitary structures (positive-definiteness on V reduces to V^I by e_I-averaging over K-types: BM89). The Iwahori–Matsumoto involution of H(G, I) (SR.1 iwahori-matsumoto) is a *-automorphism up to the sign twist, hence preserves unitarity; on the trivial character it gives the sign character. The reduction to real infinitesimal character and to the graded algebra of `Z_(G^∨)(s_c)` is Lusztig's reduction made *-compatible by Barbasch–Moy; it is cited.
 
 The trivial and Steinberg representations correspond under the Iwahori–Matsumoto involution; both are unitary. For non-real s_c the unitarity of L(s_c s_ν) is decided in the graded Hecke algebra of `Z_(G^∨)(s_c)`, not of G^∨ (the noncentral-compact dependence).
 
 *Needs:* SmoothRepresentationsOfLocalGroups SR.3 / borel-casselman-block; SmoothRepresentationsOfLocalGroups SR.1 / iwahori-matsumoto; SmoothRepresentationsOfLocalGroups SR.1 / bernstein-presentation; SRU.2 / unitary-structure; SRU.5.28, characteristic-independent affine/graded comparison.
 
-### 5.11 Classification of the generic unitary spherical dual
+### 5.11 Classification of the generic unitary spherical dual (*generic-unitary-classification*)
 
-In the setting of real-satake-parameter, U₀^g is the intersection of `C_(0,h)` with a union of 2^d alcoves of C₀ including A₀, where d = 0 for PGL(n) and SO(2n+1), ⌊(n−1)/2⌋ for PSp(2n), n − 1 for PSO(4n) (n ≥ 2) and PSO(4n+2) (n ≥ 1), 1 for G₂, F₄, E₆, 3 for E₇ and 4 for E₈ (Ciubotaru–Harris Theorem 6.9, on the hermitian locus `C_(0,h)`). Explicitly (Barbasch–Ciubotaru §3.2–3.4): type A: ν = (ν₁, …, ν_k, (0,) −ν_k, …, −ν₁) with 0 ≤ ν₁ ≤ ⋯ ≤ ν_k < ½; type C: 0 ≤ ν₁ ≤ ⋯ ≤ νₙ < ½; types B, D: the alternating conditions of Barbasch–Ciubotaru Theorem 3.3; G₂: {3ν₁ + 2ν₂ < 1} ∪ {2ν₁ + ν₂ < 1 < 3ν₁ + ν₂}; F₄: {2ν₁ < 1} ∪ {ν₁ + ν₂ + ν₃ − ν₄ < 1 < ν₁ + ν₂ + ν₃ + ν₄}; E₆, E₇, E₈: the 2, 8 and 16 alcoves of Barbasch–Ciubotaru §7.2. The type-A case is part of Tadić's classification of the unitary dual of GL(n), owned upstream by AutomorphicSpectralTheory §7.0b. (CH26, Theorem 6.9, PDF p. 18; CH26 line 869)
+In the setting of real-satake-parameter, U₀^g is the intersection of `C_(0,h)` with a union of 2^d alcoves of C₀ including A₀, where d = 0 for PGL(n) and SO(2n+1), ⌊(n−1)/2⌋ for PSp(2n), n − 1 for PSO(4n) (n ≥ 2) and PSO(4n+2) (n ≥ 1), 1 for G₂, F₄, E₆, 3 for E₇ and 4 for E₈ (Ciubotaru–Harris Theorem 6.9, on the hermitian locus `C_(0,h)`). Explicitly (Barbasch–Ciubotaru §3.2–3.4), where the letters name the type of the root system Φ^∨ of the dual group, which is the root system of the Hecke algebra in BC1 §3.3 (BC1 line 784): the C formula applies to G = SO(2n+1) (dual Sp(2n)), the B formula to G = PSp(2n) (dual Spin(2n+1)), and type D is self-dual. Type A: ν = (ν₁, …, ν_k, (0,) −ν_k, …, −ν₁) with 0 ≤ ν₁ ≤ ⋯ ≤ ν_k < ½; dual type C (G = SO(2n+1)): 0 ≤ ν₁ ≤ ⋯ ≤ νₙ < ½; dual types B and D (G = PSp(2n), PSO(2n)): the alternating conditions of Barbasch–Ciubotaru Theorem 3.3, made precise in SRU.5.29; G₂: {3ν₁ + 2ν₂ < 1} ∪ {2ν₁ + ν₂ < 1 < 3ν₁ + ν₂}; F₄ (coordinates of BC1 §3.4): {2ν₁ < 1} ∪ {ν₁ + ν₂ + ν₃ − ν₄ < 1 < ν₁ + ν₂ + ν₃ + ν₄}; E₆, E₇, E₈: the 2, 8 and 16 alcoves of Barbasch–Ciubotaru §7.2. The type-A case is part of Tadić's classification of the unitary dual of GL(n), owned upstream by AutomorphicSpectralTheory §7.0b. (CH26, Theorem 6.9, PDF p. 18; CH26 line 869)
 
 k a nonarchimedean local field of any characteristic with residue field 𝔽_q, G = 𝐆(k) for 𝐆 quasi-simple, split and adjoint, K = 𝐆(O) hyperspecial, B ⊃ T a Borel subgroup and maximal split torus, based root datum (X, Φ, X^∨, Φ^∨, Π), Weyl group W, longest element w₀, Coxeter number h, dual group G^∨ over ℂ with maximal torus T^∨ = X ⊗ ℂ^× (Ciubotaru–Harris §6 setting).
 
 One proof route is as follows. By barbasch-moy-unitarity the question is the unitarity of spherical modules of the graded Hecke algebra at real parameter ν. The signature forms and the detecting Weyl types of SRU.5.28 determine the unitary regions; their constancy holds on each irreducible hermitian region. The case analysis is Barbasch (classical types), Ciubotaru (F₄, E₆) and Barbasch–Ciubotaru (E₇, E₈, and G₂, F₄ in their coordinates), and Tadić for GL(n); its Weyl-type signature calculations and characteristic-independent comparison are the targets of SRU.5.28, with the explicit output inequalities in SRU.5.29.
 
-For PGL₂, d = 0 and U₀^g = A₀. For G₂, d = 1: U₀^g has the fundamental alcove {3ν₁ + 2ν₂ < 1} and the second alcove {2ν₁ + ν₂ < 1 < 3ν₁ + ν₂} in Barbasch–Ciubotaru's coordinates.
+For PGL₂, d = 0 and U₀^g = A₀. For G = PSp₄ (dual type B₂), ν = (0, ¾) satisfies the B condition with i = 2, since ¾ < 1 − 0, and its highest-coroot value ¾ < 1 puts it in A₀; reading the C formula for G = PSp₄ would wrongly require ¾ < ½. For G₂, d = 1: U₀^g has the fundamental alcove {3ν₁ + 2ν₂ < 1} and the second alcove {2ν₁ + ν₂ < 1 < 3ν₁ + ν₂} in Barbasch–Ciubotaru's coordinates.
 
 Additional inputs for this route are located at BC1, §3.2 Theorem, §3.3 Theorem, §3.4 Proposition, pp. 17–18; BC1 line 761.
 
 *Needs:* SRU.5 / barbasch-moy-unitarity; SRU.5 / generic-unitary-region; SRU.5 / fundamental-alcove-unitary; SRU.5 / unbounded-not-unitary; SRU.5.28; AutomorphicSpectralTheory §7.0b.
 
-### 5.12 Nonzero integral root values are not unitary
+### 5.12 Nonzero integral root values are not unitary (*integral-root-wall*)
 
 In the setting of real-satake-parameter, if ν ∈ C₀ and ⟨α^∨, ν⟩ ∈ `ℤ_(>0)` for some positive coroot α^∨, then ν ∉ U₀^g (Ciubotaru–Harris Proposition 6.10). Equivalently, for a real or central-compact s with α^∨(s) = q^m, m ∈ ℤ ∖ {0}, the generic L(s) is not unitary (Corollary 6.32(2), in that sector; the real or central-compact sector). (CH26, Proposition 6.10, PDF p. 18; CH26 line 881)
 
@@ -1237,7 +1253,7 @@ For PGL₂, ν with ⟨α^∨, ν⟩ = 2 gives an irreducible non-unitary X(ν).
 
 *Needs:* SRU.5 / generic-unitary-classification.
 
-### 5.13 Reduction of half-integral parameters
+### 5.13 Reduction of half-integral parameters (*half-integral-reduction*)
 
 In the setting of real-satake-parameter, with 0 ≤ ε < ½: `C₀^(½+ε)` = ∅ unless ε ∈ {0, ¼}, and if G is quasi-simple of rank ≥ 2 then `C₀^(½+ε)` = ∅ unless ε = 0 ((6.12)). For ν = Σ νᵢωᵢ ∈ `C₀^(½)`, every νᵢ ∈ `½ℤ_(≥0)`, and if moreover ν ∈ U₀^g then every νᵢ ∈ {0, ½} ((6.13)). (CH26, §6.2, (6.11)–(6.13), PDF p. 19; CH26 line 887)
 
@@ -1249,7 +1265,7 @@ For PGL₂ (rank one) ε = ¼ is possible: ⟨α^∨, ν⟩ = ¼ gives ⟨±α^�
 
 *Needs:* SRU.5 / half-integral-parameter; SRU.5 / unbounded-not-unitary; SRU.5 / generic-unitary-region.
 
-### 5.14 Half-integral generic unitary points for PGL(n)
+### 5.14 Half-integral generic unitary points for PGL(n) (*half-integral-type-a*)
 
 For G = PGL(n) in the setting of real-satake-parameter, write a dominant hermitian ν in standard coordinates as (a₁, …, a_k, −a_k, …, −a₁) for n = 2k and (a₁, …, a_k, 0, −a_k, …, −a₁) for n = 2k + 1, with a₁ ≥ ⋯ ≥ a_k ≥ 0; the generic unitary region is 0 ≤ a_k ≤ ⋯ ≤ a₁ < ½ ((6.15), Tadić). Then `U₀^(g,½)` = {0, ½ω_k} for n = 2k (the point a₁ = ⋯ = a_k = ¼) and `U₀^(g,½)` = {0} for n odd (Ciubotaru–Harris §6.3). (CH26, §6.3, PDF p. 20; CH26 line 977)
 
@@ -1261,7 +1277,7 @@ For PGL₂ (k = 1), `U₀^(g,½)` = {0, ½ω₁}, the complementary-series point
 
 *Needs:* SRU.5 / half-integral-reduction; SRU.5 / generic-unitary-classification; SRU.5 / spherical-hermitian-criterion.
 
-### 5.15 Half-integral generic unitary points for SO(2n+1)
+### 5.15 Half-integral generic unitary points for SO(2n+1) (*half-integral-type-b*)
 
 For G = SO(2n+1), with coroots α₁^∨ = 2ε₁, αᵢ^∨ = −εᵢ₋₁ + εᵢ (2 ≤ i ≤ n), weights ω₁ = ½(ε₁ + ⋯ + εₙ), ωᵢ = εᵢ + ⋯ + εₙ and highest coroot γ^∨ = 2εₙ (Ciubotaru–Harris §6.4): the only coroot of the maximal level r₀ = 2n − 1 is γ^∨ (Barbasch, Theorem 3.1), the unitary bound reads ν₁ + 2ν₂ + ⋯ + 2νₙ < 1, and `U₀^(g,½)` = {0, ½ω₁}; ⟨γ^∨, ½ω₁⟩ = ½, so ½ω₁ lies in A₀. (CH26, §6.4, PDF p. 20; CH26 line 991)
 
@@ -1273,7 +1289,7 @@ For SO(3) ≅ PGL₂ (n = 1), the result agrees with half-integral-type-a: {0, �
 
 *Needs:* SRU.5 / half-integral-reduction; SRU.5 / generic-unitary-classification; SRU.5 / fundamental-alcove-unitary.
 
-### 5.16 Half-integral generic unitary points for PSp(2n)
+### 5.16 Half-integral generic unitary points for PSp(2n) (*half-integral-type-c*)
 
 For n ≥ 2, for G = PSp(2n), with coroots α₁^∨ = ε₁, αᵢ^∨ = −εᵢ₋₁ + εᵢ, weights ωᵢ = εᵢ + ⋯ + εₙ and highest coroot γ^∨ = εₙ₋₁ + εₙ (Ciubotaru–Harris §6.5): the maximal level is r₀ = n for n odd and n + 1 for n even, with the coroots (6.16), (6.17); the resulting bounds force ν₁ = ⋯ = `ν_(⌊n/2⌋)` = 0 and `Σ_(j > ⌊n/2⌋)` νⱼ < 1, leaving ½ωⱼ for j > ⌊n/2⌋, of which ½ωⱼ (j < n) lie on the wall ⟨γ^∨, ν⟩ = 1. Hence `U₀^(g,½)` = {0, ½ωₙ}, with ⟨γ^∨, ½ωₙ⟩ = ½. (CH26, §6.5, PDF p. 20; CH26 line 1000)
 
@@ -1285,7 +1301,7 @@ For PSp(2) ≅ PGL₂, {0, ½ω₁} as in type A. For PSp(4), the candidates ½�
 
 *Needs:* SRU.5 / half-integral-reduction; SRU.5 / generic-unitary-classification; SRU.5 / fundamental-alcove-unitary; SRU.5 / generic-unitary-region.
 
-### 5.17 Half-integral generic unitary points for PSO(2n)
+### 5.17 Half-integral generic unitary points for PSO(2n) (*half-integral-type-d*)
 
 For G = PSO(2n), with coroots α₁^∨ = ε₁ + ε₂, αᵢ^∨ = −εᵢ₋₁ + εᵢ, weights ω₁ = ½(ε₁ + ⋯ + εₙ), ω₂ = ½(−ε₁ + ε₂ + ⋯ + εₙ), ωᵢ = εᵢ + ⋯ + εₙ (i ≥ 3) and highest coroot γ^∨ = εₙ₋₁ + εₙ (Ciubotaru–Harris §6.6): for n even the maximal level is r₀ = n − 1 with the coroots (6.18), and `U₀^(g,½)` = {0, ½ω₁, ½ω₂, ½ωₙ}; for n odd hermitian parameters need ν₁ = ν₂, which excludes ½ω₁ and ½ω₂, and `U₀^(g,½)` = {0, ½ωₙ}. All listed nonzero points pair with γ^∨ to ½ and lie in A₀. (CH26, §6.6, PDF p. 21; CH26 line 1036)
 
@@ -1301,9 +1317,9 @@ For PSO(8) (n = 4) the three nonzero points ½ω₁, ½ω₂, ½ω₄ are permut
 
 *Needs:* SRU.5 / half-integral-reduction; SRU.5 / generic-unitary-classification; SRU.5 / fundamental-alcove-unitary; SRU.5 / spherical-hermitian-criterion.
 
-### 5.18 Half-integral generic unitary points for G₂
+### 5.18 Half-integral generic unitary points for G₂ (*half-integral-type-g2*)
 
-For G = G₂ in Bourbaki coordinates (6.19), the unique coroot of the maximal level r₀ = 3 is β^∨ = 2α₁^∨ + α₂^∨, giving the unitary bound 2ν₁ + ν₂ < 1 ((6.20)); hence ν₁ = 0, ν₂ ∈ {0, ½}, and ½ω₂ lies on the wall ⟨γ^∨, ν⟩ = 1 for the highest coroot γ^∨ = 3α₁^∨ + 2α₂^∨. So `U₀^(g,½)` = {0} (Ciubotaru–Harris §6.7). (CH26, §6.7, PDF p. 18; CH26 line 858)
+For G = G₂ in Bourbaki coordinates (6.19), the unique coroot of the maximal level r₀ = 3 is β^∨ = 2α₁^∨ + α₂^∨, giving the unitary bound 2ν₁ + ν₂ < 1 ((6.20)); hence ν₁ = 0, ν₂ ∈ {0, ½}, and ½ω₂ lies on the wall ⟨γ^∨, ν⟩ = 1 for the highest coroot γ^∨ = 3α₁^∨ + 2α₂^∨. So `U₀^(g,½)` = {0} (Ciubotaru–Harris §6.7). (CH26, §6.7, PDF p. 22; CH26 line 1060)
 
 G = G₂; coordinates (6.19).
 
@@ -1313,9 +1329,9 @@ One proof route is as follows. The level bound is from Ciubotaru's classificatio
 
 *Needs:* SRU.5 / half-integral-reduction; SRU.5 / generic-unitary-classification.
 
-### 5.19 Half-integral generic unitary points for F₄
+### 5.19 Half-integral generic unitary points for F₄ (*half-integral-type-f4*)
 
-For G = F₄ in the coordinates (6.21), the unique coroot of the maximal level r₀ = 9 is β^∨ = (1, 1, 1, −1) = α₁^∨ + 2α₂^∨ + 4α₃^∨ + 2α₄^∨, giving ν₁ + 2ν₂ + 4ν₃ + 2ν₄ < 1 ((6.22)); hence ν₂ = ν₃ = ν₄ = 0, ν₁ ∈ {0, ½}, and ½ω₁ lies on the wall of the highest coroot γ^∨ = (2, 0, 0, 0). So `U₀^(g,½)` = {0} (Ciubotaru–Harris §6.8). (CH26, §6.8, PDF p. 18; CH26 line 865)
+For G = F₄ in the coordinates (6.21), the unique coroot of the maximal level r₀ = 9 is β^∨ = (1, 1, 1, −1) = α₁^∨ + 2α₂^∨ + 4α₃^∨ + 2α₄^∨, giving ν₁ + 2ν₂ + 4ν₃ + 2ν₄ < 1 ((6.22)); hence ν₂ = ν₃ = ν₄ = 0, ν₁ ∈ {0, ½}, and ½ω₁ lies on the wall of the highest coroot γ^∨ = (2, 0, 0, 0). So `U₀^(g,½)` = {0} (Ciubotaru–Harris §6.8). (CH26, §6.8, PDF p. 22; CH26 line 1072)
 
 G = F₄; coordinates (6.21).
 
@@ -1325,7 +1341,7 @@ In the coordinates (6.21), ⟨(2,0,0,0), ½ω₁⟩ = ⟨(2,0,0,0), (½,0,0,0)�
 
 *Needs:* SRU.5 / half-integral-reduction; SRU.5 / generic-unitary-classification.
 
-### 5.20 Half-integral generic unitary points for E₆
+### 5.20 Half-integral generic unitary points for E₆ (*half-integral-type-e6*)
 
 For G = E₆ in the coordinates (6.28), hermitian parameters satisfy ν₁ = ν₆ and ν₃ = ν₅; the unique coroot of the maximal level r₀ = 9 is β^∨ = α₁^∨ + α₂^∨ + 2α₃^∨ + 2α₄^∨ + 2α₅^∨ + α₆^∨ ((6.29)), giving 2ν₃ < 1, 2ν₄ < 1, 2ν₅ < 1 and ν₁ + ν₂ + ν₆ < 1; hence the only nonzero candidate is ½ω₂, which lies on the wall of the highest coroot. So `U₀^(g,½)` = {0} (Ciubotaru–Harris §6.11). (CH26, §6.11, PDF p. 24; CH26 line 1140)
 
@@ -1337,9 +1353,9 @@ The hermitian condition is needed: ½ω₁ alone satisfies the level bound but i
 
 *Needs:* SRU.5 / half-integral-reduction; SRU.5 / generic-unitary-classification; SRU.5 / spherical-hermitian-criterion.
 
-### 5.21 Half-integral generic unitary points for E₇
+### 5.21 Half-integral generic unitary points for E₇ (*half-integral-type-e7*)
 
-For G = E₇ in the coordinates (6.26), the coroots of the maximal level r₀ = 9 are the four listed in (6.27) (labels 46–49 of Barbasch–Ciubotaru), giving 2ν₃, 2ν₄, 2ν₅, 2ν₆ < 1 and ν₁ + ν₂ + ν₇ < 1; the candidates ½ω₁, ½ω₂ lie on the wall of the highest coroot γ^∨ = −ε₇ + ε₈, while ⟨γ^∨, ½ω₇⟩ = ½. So `U₀^(g,½)` = {0, ½ω₇} (Ciubotaru–Harris §6.10). (CH26, §6.10, PDF p. 18; CH26 line 881)
+For G = E₇ in the coordinates (6.26), the coroots of the maximal level r₀ = 9 are the four listed in (6.27) (labels 46–49 of Barbasch–Ciubotaru), giving 2ν₃, 2ν₄, 2ν₅, 2ν₆ < 1 and ν₁ + ν₂ + ν₇ < 1; the candidates ½ω₁, ½ω₂ lie on the wall of the highest coroot γ^∨ = −ε₇ + ε₈, while ⟨γ^∨, ½ω₇⟩ = ½. So `U₀^(g,½)` = {0, ½ω₇} (Ciubotaru–Harris §6.10). (CH26, §6.10, PDF p. 23; CH26 line 1111)
 
 G = E₇; coordinates (6.26).
 
@@ -1349,7 +1365,7 @@ One proof route is as follows. The level bound is from Barbasch–Ciubotaru §7.
 
 *Needs:* SRU.5 / half-integral-reduction; SRU.5 / generic-unitary-classification; SRU.5 / fundamental-alcove-unitary.
 
-### 5.22 Half-integral generic unitary points for E₈
+### 5.22 Half-integral generic unitary points for E₈ (*half-integral-type-e8*)
 
 For G = E₈ in the coordinates (6.23)–(6.24), the coroots of the maximal level r₀ = 15 are the four listed in (6.25) (labels 89–92 of Barbasch–Ciubotaru), giving 2ν₂, 2ν₃, 4ν₄, 3ν₅, 2ν₆, 2ν₇ < 1 and ν₁ + ν₈ < 1; the candidates ½ω₁ and ½ω₈ lie on the wall of the highest coroot γ^∨ = ε₇ + ε₈. So `U₀^(g,½)` = {0} (Ciubotaru–Harris §6.9). (CH26, §6.9, PDF p. 22; CH26 line 1085)
 
@@ -1361,7 +1377,7 @@ In (6.24), ω₈ = ε₇ + ε₈, so ⟨ε₇ + ε₈, ½ω₈⟩ = 1.
 
 *Needs:* SRU.5 / half-integral-reduction; SRU.5 / generic-unitary-classification.
 
-### 5.23 Half-integral generic unitary spherical parameters
+### 5.23 Half-integral generic unitary spherical parameters (*half-integral-generic-unitary*)
 
 In the setting of real-satake-parameter, `U₀^(g,½)` := U₀^g ∩ `C₀^(½)` is {0, `½ω_(n/2)`} for PGL(n), n even, and {0} for n odd; {0, ½ω₁} for SO(2n+1); {0, ½ωₙ} for PSp(2n); {0, ½ω₁, ½ω₂, ½ωₙ} for PSO(2n), n even, and {0, ½ωₙ} for n odd; {0, ½ω₇} for E₇; {0} for G₂, F₄, E₆, E₈ (Ciubotaru–Harris Theorem 6.14, numbering of §§6.3–6.11); every nonzero element lies in the fundamental alcove A₀, and `U₀^(g,½)` = {0} unless G is of type `A_(n−1)` (n even), B, C, D or E₇. (CH26, Theorem 6.14, PDF p. 19; CH26 line 926)
 
@@ -1373,19 +1389,19 @@ For G₂, a generic unitary spherical L(ν) with real ν half-integral for the a
 
 *Needs:* SRU.5 / half-integral-type-a; SRU.5 / half-integral-type-b; SRU.5 / half-integral-type-c; SRU.5 / half-integral-type-d; SRU.5 / half-integral-type-g2; SRU.5 / half-integral-type-f4; SRU.5 / half-integral-type-e6; SRU.5 / half-integral-type-e7; SRU.5 / half-integral-type-e8.
 
-### 5.25 Fundamental representations separate the extra half-integral points
+### 5.25 Fundamental representations separate the extra half-integral points (*fundamental-separators*)
 
 In the setting of half-integral-generic-unitary: `½ω_(n/2)` is not half-integral for the defining representation V(ω₁^∨) of SL(n) (n even); ½ω₁ is not half-integral for the defining representation V(ωₙ^∨) of Sp(2n) (G = SO(2n+1)); ½ωₙ is not half-integral for the spin representation V(ω₁^∨) of Spin(2n+1) (G = PSp(2n)); for G = PSO(2n), ½ωₙ is not half-integral for the spin representation V(ω₁^∨) and ½ω₁, ½ω₂ are not for the defining representation V(ωₙ^∨); and ½ω₇ is not half-integral for the 56-dimensional V(ω₇^∨) of E₇ (Ciubotaru–Harris Proposition 6.31). The pairings are ¼ in the classical cases and ¾ for E₇. For type D both the spin and the defining representation are needed. (CH26, Proposition 6.31, PDF p. 24; CH26 line 1172)
 
 Numbering of Ciubotaru–Harris §§6.3–6.11.
 
-One proof route is as follows. By half-integrality-highest-weight it suffices to compute ⟨λ^∨, ν⟩ for the listed highest weights, which are ¼ (classical) and ¾ (E₇).
+One proof route is as follows. By the highest-weight half-integrality test of LieHighestWeightPartII N5 it suffices to compute ⟨λ^∨, ν⟩ for the listed highest weights, which are ¼ (classical) and ¾ (E₇).
 
 For PGL₂ (n = 2), ⟨ω₁^∨, ½ω₁⟩ = ¼ for the standard representation of SL₂(ℂ).
 
 *Needs:* LieHighestWeightPartII N5 (highest-weight half-integrality); SRU.5 / half-integral-generic-unitary; RepresentationTheory/LieHighestWeight / Layer 4-the-classification-of-finite-dimensional-irreducibles.
 
-### 5.26 The local generic temperedness test
+### 5.26 The local generic temperedness test (*generic-temperedness-test*)
 
 In the setting of real-satake-parameter, let s = s_c·s_ν with s_c = 1 or s_c central in G^∨ (the real or central-compact sector). If L(s) is generic and unitary, then s is geometric for the adjoint representation of G^∨ and for the fundamental representations of fundamental-separators iff ν = 0, i.e. iff L(s) = L(s_c) is tempered (Ciubotaru–Harris Corollary 6.32(1), corrected scope). As printed, for arbitrary s_c, the statement is false: see g2-noncentral-witness. (CH26, Corollary 6.32(1), PDF p. 25; CH26 line 1192)
 
@@ -1397,7 +1413,7 @@ For G = PGL₂ and s real with ν = ½ω₁ (a complementary-series point), the 
 
 *Needs:* SRU.5 / half-integral-generic-unitary; SRU.5 / fundamental-separators; SRU.5 / spherical-tempered-criterion; SRU.5 / generic-unitary-region.
 
-### 5.27 The G₂ witness for noncentral compact parts
+### 5.27 The G₂ witness for noncentral compact parts (*g2-noncentral-witness*)
 
 Let G be split G₂ over k and s_c ∈ T^∨ the involution with (aα₁^∨ + bα₂^∨)(s_c) = (−1)^a (α₁^∨ the short simple coroot); its centraliser in G^∨ has type A₁ × Ã₁. For ν = ½ω₂ and s = s_c s_ν, X(s) is irreducible, L(s) = X(s) is generic and unitary, s is geometric for every representation of G^∨, and ν ≠ 0. Hence Corollary 6.32(1) fails for noncentral s_c, and the real part ½ω₂ is an extraneous point of CS(G₂, 0). (CH26, Corollary 6.32(1), tested on the explicitly specified parameter, PDF p. 25; CH26 line 1192)
 
@@ -1409,7 +1425,7 @@ L(s_ν) itself (real part only) is not generic: ⟨3α₁^∨ + 2α₂^∨, ν�
 
 *Needs:* SRU.5 / unramified-principal-series-irreducibility; SRU.5 / fundamental-alcove-unitary; SRU.5 / half-integral-parameter; SRU.5 / spherical-hermitian-criterion; SRU.5.28, compact-centralizer signature comparison.
 
-### 5.28 Signature and characteristic-independent Hecke comparison
+### 5.28 Signature and characteristic-independent Hecke comparison (*signature-hecke-comparison*)
 
 For each reduced based root datum, each compact semisimple central character and its associated positive Hecke parameters, construct the long-intertwiner hermitian forms on spherical standard modules and compute their signatures on the detecting finite Weyl types. Prove constancy on each irreducible hermitian region and equivalence of positivity with unitarity of the corresponding spherical module. State the *-compatible affine-to-graded equivalence with the full lattice and centralizer action, not just a root-system type. These are the inputs used for the exclusion beyond a simple-root value 1 and for the all-type alcove theorem. Prove the comparison algebraically at the level of Hecke algebras, so it applies equally to mixed- and equal-characteristic local fields after the supplied Iwahori equivalence (BC1 §§1.2, 3.1–3.4 and 7.2; BCP §5.2, pp. 53–54; BC3 Theorems 1.3.1 and 1.4.1).
 
@@ -1423,9 +1439,9 @@ For each reduced based root datum, each compact semisimple central character and
 
 The highest-weight half-integrality test consumed from LieHighestWeightPartII N5 says that for adjoint-half-integral ν, all weights of V(λ^∨) pair in ½ℤ exactly when λ^∨ does. On PGL₂, the standard highest weight pairs with ½ω₁ to ¼, so that representation fails the test even though the adjoint test passes (CH26 Lemma 6.30, p. 24).
 
-### 5.29 Explicit classical and exceptional regions
+### 5.29 Explicit classical and exceptional regions (*explicit-regions*)
 
-The classical B and D condition in SRU.5.11 has the following precise meaning in the coordinates of BC1 §3.3. After the dominant ordering and, in type D, the sign symmetry of the first standard coordinate, write 0 ≤ a₁ ≤ ⋯ ≤ aₙ < 1. Put a₀ = 0 solely for this endpoint convention. There is an index 1 ≤ i ≤ n such that aᵢ < 1−aᵢ₋₁, and, if i < n, 1−aᵢ₋₁ < aᵢ₊₁ < ⋯ < aₙ. For each j with i ≤ j < n, the open interval (aⱼ,aⱼ₊₁) contains an odd number, counted with multiplicity, of the values 1−aₗ for 1 ≤ l < i. Retain the hermitian condition from SRU.5.6. This includes the rank-one range 0 ≤ a₁ < 1 without referring to an out-of-range coordinate (BC1 §3.3, p. 18; BC1 line 784).
+The condition for dual types B and D in SRU.5.11 (G = PSp(2n) and G = PSO(2n)) has the following precise meaning in the coordinates of BC1 §3.3. After the dominant ordering and, in type D, the sign symmetry of the first standard coordinate, write 0 ≤ a₁ ≤ ⋯ ≤ aₙ < 1. Put a₀ = 0 solely for this endpoint convention. There is an index 1 ≤ i ≤ n such that aᵢ < 1−aᵢ₋₁, and, if i < n, 1−aᵢ₋₁ < aᵢ₊₁ < ⋯ < aₙ. For each j with i ≤ j < n, the open interval (aⱼ,aⱼ₊₁) contains an odd number, counted with multiplicity, of the values 1−aₗ for 1 ≤ l < i. Retain the hermitian condition from SRU.5.6. This includes the rank-one range 0 ≤ a₁ < 1 without referring to an out-of-range coordinate (BC1 §3.3, p. 18; BC1 line 784).
 
 For E₆, E₇ and E₈, let bⱼ(ν) = ⟨βⱼ,ν⟩, where the coroots βⱼ are defined by the vectors below in the standard eight-coordinate realizations of CH26 §§6.9–6.11. Restrict throughout to dominant hermitian ν. A row (L,H) denotes the set on which every bⱼ with j in L is strictly below 1 and every bⱼ with j in H is strictly above 1. The unitary region is the union of the following rows. The dominant inequalities are imposed in every row, including chamber faces where a simple-root value is zero (BC1 §7.2.1–§7.2.4, pp. 46–47; BC1 line 2191).
 
@@ -1522,7 +1538,7 @@ The next table gives 2βⱼ, so every listed integer vector is divided by 2. The
 - The displayed E₆, E₇ and E₈ unions have respectively 2, 8 and 16 rows. Their highest coroots are β₃₆, β₆₃ and β₁₂₀; the Euclidean squared length of each is 2, matching the simply-laced normalization.
 - In type B₂, (a₁,a₂) = (0,¾) uses i = 2 and gives a₂ < 1−a₁. In B₃, (1/5,2/5,9/10) uses i = 2, and exactly the one number 4/5 lies between 2/5 and 9/10. A parity condition allowing zero such numbers would admit the wrong regions.
 
-*Needs:* SRU.5.11 and SRU.5.28; LieHighestWeight Layers 1–2 for the fixed root pairing; BC1 §7.2.
+*Needs:* SRU.5.28; LieHighestWeight Layers 1–2 for the fixed root pairing; BC1 §§3.3 and 7.2.
 
 ### Examples
 
@@ -1534,11 +1550,11 @@ The statement carriers and the proposed proof inputs are the individual Needs li
 
 ## Layer SRU.6: Unramified nonsplit groups
 
-### 6.1 The τ-fixed dual group and the split group G(τ)
+### 6.1 The τ-fixed dual group and the split group G(τ) (*tau-fixed-dual-group*)
 
-Let k a nonarchimedean local field, G = 𝐆(k) with 𝐆 quasi-simple of adjoint type, quasi-split and split over an unramified extension k'/k of degree d, not split; A a maximal split torus, M = Z_G(A), K a special maximal compact subgroup attached to A, B ⊃ A a Borel subgroup (Ciubotaru–Harris §7). The inner class of G gives a pinned automorphism τ of G^∨ of order d ∈ {2, 3}, normalised by τ(`X_(α^∨)`) = `X_(τ(α^∨))` on root vectors. Unramified characters of M form the torus T'^∨ = Spec ℂ[Λ(M)] with X^*(T'^∨) = X^*(T^∨)^τ and W(G, A) = W^τ ((7.1)); the map η' : T^∨ ⋊ ⟨τ⟩ → T'^∨, (s, τ) ↦ η(s), induces a bijection between τ-conjugacy classes of semisimple elements of G^∨ and W^τ-orbits in T'^∨ ((7.2)). X(s) = i_B(χ_s) and L(s) for s ∈ T'^∨ are as in SRU.5. G^∨(τ) := {g ∈ G^∨ : τ(g) = g} is connected reductive (G^∨ simply connected), and G(τ) is the split k-group with dual G^∨(τ): for the types `²A_(2n−1)`, `²A_(2n)`, ²D_n, ³D₄, ²E₆ of G, G(τ) has type B_n, C_n, `C_(n−1)`, G₂, F₄ respectively (Table 1). For real ν ∈ t'^∨_ℝ = (t^∨_ℝ)^τ write L^G(ν) and `L^(G(τ))(ν)`. (CH26, §7, (7.1)–(7.3) and Table 1, PDF p. 25; CH26 line 1210)
+Let k a nonarchimedean local field, G = 𝐆(k) with 𝐆 quasi-simple of adjoint type, quasi-split, split over an unramified extension and not split, with k'/k the unramified extension of least degree d splitting 𝐆; A a maximal split torus, M = Z_G(A), K a special maximal compact subgroup attached to A, B ⊃ A a Borel subgroup (Ciubotaru–Harris §7). The inner class of G gives a pinned automorphism τ of G^∨ of order d ∈ {2, 3}, normalised by τ(`X_(α^∨)`) = `X_(τ(α^∨))` on root vectors. Unramified characters of M form the torus T'^∨ = Spec ℂ[Λ(M)] with X^*(T'^∨) = X^*(T^∨)^τ and W(G, A) = W^τ ((7.1)); the map η' : T^∨ ⋊ ⟨τ⟩ → T'^∨, (s, τ) ↦ η(s), induces a bijection between τ-conjugacy classes of semisimple elements of G^∨ and W^τ-orbits in T'^∨ ((7.2)). X(s) = i_B(χ_s) and L(s) for s ∈ T'^∨ are as in SRU.5. G^∨(τ) := {g ∈ G^∨ : τ(g) = g} is connected reductive (G^∨ simply connected), and G(τ) is the split k-group with dual G^∨(τ): for the types `²A_(2n−1)`, `²A_(2n)`, ²D_n, ³D₄, ²E₆ of G, G(τ) has type B_n, C_n, `C_(n−1)`, G₂, F₄ respectively (Table 1). For real ν ∈ t'^∨_ℝ = (t^∨_ℝ)^τ write L^G(ν) and `L^(G(τ))(ν)`. (CH26, §7, (7.1)–(7.3) and Table 1, PDF p. 25; CH26 line 1210)
 
-k a nonarchimedean local field, G = 𝐆(k) with 𝐆 quasi-simple of adjoint type, quasi-split and split over an unramified extension k'/k of degree d, not split; A a maximal split torus, M = Z_G(A), K a special maximal compact subgroup attached to A, B ⊃ A a Borel subgroup (Ciubotaru–Harris §7).
+k a nonarchimedean local field, G = 𝐆(k) with 𝐆 quasi-simple of adjoint type, quasi-split, split over an unramified extension and not split, with k'/k the unramified extension of least degree d splitting 𝐆; A a maximal split torus, M = Z_G(A), K a special maximal compact subgroup attached to A, B ⊃ A a Borel subgroup (Ciubotaru–Harris §7).
 
 One proof route is as follows. (7.1)–(7.2) are Borel's description of the unramified L-group parameters (Corvallis, §6, Lemma 6.4 and Proposition 6.7), which SR.4 frobenius-component-invariants and spherical-parameter state for unramified groups. Connectedness of G^∨(τ): fixed points of a semisimple automorphism of a simply connected group are connected (Steinberg, Endomorphisms of linear algebraic groups, 8.1, cited); its type is read off from the folded Dynkin diagram, giving Table 1.
 
@@ -1555,6 +1571,7 @@ The defining object has the following API.
 
 - For G = PSU(2,2), the split companion G is of type B₂ (SO₅).
 - For G of type ³D₄, τ has order 3 and the split companion G is of type G₂.
+- The quasi-split PSU₃ splits over the unramified quadratic extension and therefore also over the unramified extension of degree 4; the least splitting degree is d = 2, the order of τ, whereas the quartic extension would give 4.
 - For τ = id (G split), G^∨(τ) = G^∨ and the split companion G = G.
 - The split companion is defined by the dual fixed-group root datum; for PSU₃ its dual is SO₃ and its companion is SL₂. No subgroup embedding into PSU₃ is part of this construction: a root-system label alone does not define such an embedding.
 - For PSU₃ the fixed dual is SO₃ and the split companion is Sp₂=SL₂, not PGL₂. Type A₁ alone does not determine the isogeny.
@@ -1565,11 +1582,11 @@ Additional inputs for this route are located at BC3, §6.2 before Corollary 6.2.
 
 *Needs:* SmoothRepresentationsOfLocalGroups SR.4 / frobenius-component-invariants; SmoothRepresentationsOfLocalGroups SR.4 / spherical-parameter; ReductiveGroupsPartII RG2.5 / pinned-automorphisms; ReductiveGroupsPartII RG2.5 / galois-action-on-dual-group; SRU.5 / real-satake-parameter.
 
-### 6.2 Unitary transfer from nonsplit unramified to split groups
+### 6.2 Unitary transfer from nonsplit unramified to split groups (*nonsplit-unitary-transfer*)
 
 In the setting of tau-fixed-dual-group, for every real ν ∈ t'^∨_ℝ, L^G(ν) is unitary iff `L^(G(τ))(ν)` is unitary, and generic unitary iff `L^(G(τ))(ν)` is generic unitary (Ciubotaru–Harris Theorem 7.4, a case of Barbasch–Ciubotaru 2013 Corollary 6.2.6). Barbasch–Ciubotaru assume characteristic zero (§1.3); Ciubotaru–Harris note that the assumption is unnecessary, the statement being one about graded Hecke algebras. (CH26, Theorem 7.4, PDF p. 26; CH26 line 1265)
 
-k a nonarchimedean local field, G = 𝐆(k) with 𝐆 quasi-simple of adjoint type, quasi-split and split over an unramified extension k'/k of degree d, not split; A a maximal split torus, M = Z_G(A), K a special maximal compact subgroup attached to A, B ⊃ A a Borel subgroup (Ciubotaru–Harris §7). ν real.
+k a nonarchimedean local field, G = 𝐆(k) with 𝐆 quasi-simple of adjoint type, quasi-split, split over an unramified extension and not split, with k'/k the unramified extension of least degree d splitting 𝐆; A a maximal split torus, M = Z_G(A), K a special maximal compact subgroup attached to A, B ⊃ A a Borel subgroup (Ciubotaru–Harris §7). ν real.
 
 One proof route is as follows. Use the arbitrary-root-datum unitary equivalences of BC3 Theorems 1.3.1 and 1.4.1 and Corollary 6.2.6, retaining the sign type that detects genericity. Prove the affine-to-graded *-comparison on root data and positive parameters, independently of local-field characteristic. Identify the Hecke parameters and lattice of G with those of its split companion; transport invariant hermitian forms and the spherical and sign types in both directions. This includes the Sp(2n) versus PSp(2n) isogeny adapter, rather than silently applying an adjoint-only classification.
 
@@ -1579,11 +1596,11 @@ Additional inputs for this route are located at BC3, §1.3, p. 3; Corollary 6.2.
 
 *Needs:* SRU.6 / tau-fixed-dual-group; SRU.5 / barbasch-moy-unitarity; SRU.5 / spherical-generic-criterion; SmoothRepresentationsOfLocalGroups SR.3; SRU.5.28, lattice and generic/sign comparison.
 
-### 6.3 The generic temperedness test for nonsplit unramified groups
+### 6.3 The generic temperedness test for nonsplit unramified groups (*nonsplit-generic-temperedness*)
 
 In the setting of tau-fixed-dual-group, assume G is not the quasi-split form of PSU(2n+1), and let s = s_c s_ν ∈ T'^∨ with s_c = 1 or central. If L^G(s) is generic and unitary, then s is geometric with respect to all finite-dimensional representations of G^∨ ⋊ ⟨τ⟩ iff ν = 0, i.e. iff L^G(s) = L^G(s_c) is tempered (Ciubotaru–Harris Corollary 7.5, with the parameter hypotheses of SRU.5 generic-temperedness-test; the noncentral-compact counterexample). The representations used are the adjoint representation (τ-stable, whose restriction contains the adjoint representation of G^∨(τ)), V ⊕ V^τ for G^∨ = SL(2n) (restricting to two copies of the defining representation of Sp(2n)), and the sum of the two half-spin representations for G^∨ = Spin(2n) (restricting to two copies of the spin representation of Spin(2n−1)). (CH26, Corollary 7.5, PDF p. 26; CH26 line 1268)
 
-k a nonarchimedean local field, G = 𝐆(k) with 𝐆 quasi-simple of adjoint type, quasi-split and split over an unramified extension k'/k of degree d, not split; A a maximal split torus, M = Z_G(A), K a special maximal compact subgroup attached to A, B ⊃ A a Borel subgroup (Ciubotaru–Harris §7). G not the quasi-split PSU(2n+1) s_c = 1 or central. A compact part called central means central in the full L-dual group and compatible with a unitary unramified character twist; being central merely in the abelian parameter torus is insufficient. Otherwise keep the compact part equal to one.
+k a nonarchimedean local field, G = 𝐆(k) with 𝐆 quasi-simple of adjoint type, quasi-split, split over an unramified extension and not split, with k'/k the unramified extension of least degree d splitting 𝐆; A a maximal split torus, M = Z_G(A), K a special maximal compact subgroup attached to A, B ⊃ A a Borel subgroup (Ciubotaru–Harris §7). G not the quasi-split PSU(2n+1) s_c = 1 or central. A compact part called central means central in the full L-dual group and compatible with a unitary unramified character twist; being central merely in the abelian parameter torus is insufficient. Otherwise keep the compact part equal to one.
 
 One proof route is as follows. By nonsplit-unitary-transfer, `L^(G(τ))(ν)` is generic unitary. Restrictions to G^∨(τ) of the listed representations of G^∨ ⋊ ⟨τ⟩ contain the adjoint representation of G^∨(τ) and the fundamental representations of SRU.5 fundamental-separators for the type of G(τ); for the exceptional G(τ) (G₂, F₄) the adjoint representation suffices since `U₀^(g,½)` = {0}. SRU.5 generic-temperedness-test applied to G(τ) gives ν = 0.
 
@@ -1591,7 +1608,7 @@ For G of type ²E₆, G(τ) = F₄ and the adjoint representation alone forces �
 
 *Needs:* SRU.6 / nonsplit-unitary-transfer; SRU.5 / generic-temperedness-test; SRU.5 / fundamental-separators.
 
-### 6.4 The residual candidate for the odd quasi-split unitary group
+### 6.4 The residual candidate for the odd quasi-split unitary group (*odd-unitary-residual*)
 
 Let G be the quasi-split form of PSU(2n+1): G^∨ = SL(2n+1, ℂ), G^∨(τ) = SO(2n+1, ℂ), G(τ) = Sp(2n). Assume L^G(ν) is generic and unitary, ν is real, and the geometric half-integrality test holds for every finite-dimensional representation of the ambient dual SL(2n+1,ℂ). Under these hypotheses, the argument of nonsplit-generic-temperedness leaves the two possibilities ν = 0 and ν = ½ωₙ (the G(τ)-weight in the numbering of Ciubotaru–Harris §6.5): the adjoint representation of G^∨ restricts to contain the adjoint representation of G^∨(τ), which leaves {0, ½ωₙ} (SRU.5 half-integral-type-c for PSp(2n)), and ½ωₙ is excluded for PSp(2n) only by the spin representation of Spin(2n+1, ℂ), which does not factor through SO(2n+1, ℂ) and so does not occur in any representation of SL(2n+1, ℂ) (Ciubotaru–Harris Remark 7.6). This is not an automorphic counterexample. (CH26, Remark 7.6, PDF p. 27; CH26 line 1288)
 
@@ -1613,9 +1630,9 @@ The statement carriers and the proposed proof inputs are the individual Needs li
 
 ## Layer SRU.7: Kazhdan–Lusztig parameters and spherical complementary series
 
-### 7.1 The Aubert–Zelevinsky involution
+### 7.1 The Aubert–Zelevinsky involution (*aubert-involution*)
 
-Let G = 𝐆(F) be reductive over a nonarchimedean local field with minimal parabolic B and simple roots Δ, and R(G) the Grothendieck group of finite-length smooth complex representations. D_G := `Σ_(J⊆Δ)` `(−1)^(|J|)` `i_(P_J)` ∘ `r_(P_J)` on R(G), with normalised induction and Jacquet functors of the standard parabolics P_J (Aubert Définition 1.5). D_G commutes with the contragredient, satisfies D_G ∘ `i_(P_J)` = `i_(P_J)` ∘ `D_(L_J)` and `r_(P_J)` ∘ D_G = Ad(w_J) ∘ `D_(L_(J'))` ∘ `r_(P_(J'))` for the conjugate subset J' = w_J(J) (Théorème 1.7(1)–(2)), is an involution, D_G² = id (1.7(3)), and acts on an irreducible cuspidal π by `(−1)^(|Δ|)` (1.7(4)). For irreducible π, ±D_G(π) is irreducible for a unique sign (Corollaire 3.9); AZ(π) denotes this irreducible representation. AZ preserves cuspidal support, AZ(1_G) = St_G for split G, and for GL_n it is Zelevinsky's involution (Théorème 2.3), the involution of SR.5.3. Use Aubert’s corrected exact resolution in the 1996 erratum to prove irreducibility up to sign. The same target over positive-characteristic local fields uses exact complex Jacquet functors and the same Bruhat filtration; no characteristic-zero assumption is inserted into that algebraic argument. (Aub96, corrected exact resolution theorem, pp. 4687–4690, PDF p. 1; Aub96 line 27)
+Let G = 𝐆(F) be reductive over a nonarchimedean local field with minimal parabolic B and simple roots Δ, and R(G) the Grothendieck group of finite-length smooth complex representations. D_G := `Σ_(J⊆Δ)` `(−1)^(|J|)` `i_(P_J)` ∘ `r_(P_J)` on R(G), with normalised induction and Jacquet functors of the standard parabolics P_J (Aubert Définition 1.5). D_G commutes with the contragredient, satisfies D_G ∘ `i_(P_J)` = `i_(P_J)` ∘ `D_(L_J)` and `r_(P_J)` ∘ D_G = Ad(w) ∘ `D_(L_(J'))` ∘ `r_(P_(J'))`, where w is the longest element of {x ∈ W : x⁻¹(J) ⊂ Φ⁺}, J' = w⁻¹(J), and Ad(w) transports representations of `L_(J')` to L_J (Théorème 1.7(1)–(2); Ban02 Theorem 3.1(3), Ban02 line 254), is an involution, D_G² = id (1.7(3)), and acts on an irreducible cuspidal π by `(−1)^(|Δ|)` (1.7(4)). For irreducible π, ±D_G(π) is irreducible for a unique sign (Corollaire 3.9); AZ(π) denotes this irreducible representation. AZ preserves cuspidal support, AZ(1_G) = St_G for split G, and for GL_n it is Zelevinsky's involution (Théorème 2.3), the involution of SR.5.3. Use Aubert’s corrected exact resolution in the 1996 erratum to prove irreducibility up to sign. The same target over positive-characteristic local fields uses exact complex Jacquet functors and the same Bruhat filtration; no characteristic-zero assumption is inserted into that algebraic argument. (Aub96, corrected exact resolution theorem, pp. 4687–4690, PDF p. 1; Aub96 line 27)
 
 G reductive over a nonarchimedean local field; representations of finite length.
 
@@ -1626,7 +1643,7 @@ The defining object has the following API.
 - D_G : R(G) →+ R(G), `Σ_(J ⊆ Δ)` `(−1)^(|J|)` [`i_(P_J)` (`r_(P_J)` π)].
 - D_G (D_G x) = x.
 - D_G ∘ `i_(P_J)` = `i_(P_J)` ∘ `D_(L_J)`.
-- `r_(P_J)` ∘ D_G = Ad(w_J) ∘ `D_(L_(J'))` ∘ `r_(P_(J'))` with J' = w_J(J).
+- `r_(P_J)` ∘ D_G = Ad(w) ∘ `D_(L_(J'))` ∘ `r_(P_(J'))`, with w the longest element of W satisfying w⁻¹(J) ⊂ Φ⁺ and J' = w⁻¹(J).
 - D_G [π] = `(−1)^(|Δ|)` [π] for irreducible cuspidal π.
 - AZ(π), the irreducible representation with [AZ(π)] = ± D_G [π].
 - AZ(π) and π have the same cuspidal support.
@@ -1637,6 +1654,7 @@ The defining object has the following API.
 
 - For G = GL₂(ℚ_p), D_G[1] = [i_B(`δ_B^(−1/2)`)] − [1] = [St], so AZ(1) = St.
 - For G a torus (Δ = ∅), D_G = id.
+- In type A₂ with J = {α₁}, the longest w with w⁻¹(α₁) > 0 is s₂s₁, and w⁻¹(α₁) = α₂, so J' = {α₂} and the comparison runs from `L_(α₂)` to `L_(α₁)`; reading J' = w(J) would give {−α₁ − α₂}, which is not a set of simple roots.
 - For a supercuspidal π of GL₂(ℚ_p), D_G[π] = −[π] and AZ(π) = π.
 - D_G[1] is the class of an irreducible only up to sign in general: for PGL₃, D_G[1] = [St] while for a supercuspidal of PGL₂ it is −[π]; AZ takes the irreducible representative, not D_G itself.
 - In rank one D_G[1] = [i_B(δ_B^(−1/2))] − [1] = [St], while D_G[σ] = −[σ] for a supercuspidal σ. In rank two D_G[1] = [St] and D_G[σ] = [σ]; these values fix the global sign convention.
@@ -1647,7 +1665,7 @@ Additional inputs for this route are located at Aub95, §1, Définition 1.5 and 
 
 *Needs:* SmoothRepresentationsOfLocalGroups SR.2 / parabolic-induction; SmoothRepresentationsOfLocalGroups SR.2 / jacquet-module; SmoothRepresentationsOfLocalGroups SR.2 / jacquet-lemma; SmoothRepresentationsOfLocalGroups SR.2 / jacquet-invariants; SmoothRepresentationsOfLocalGroups SR.2 / geometric-lemma; SmoothRepresentationsOfLocalGroups SR.3 / finite-length; SmoothRepresentationsOfLocalGroups SR.3 / cuspidal-support; SmoothRepresentationsOfLocalGroups SR.3 / steinberg; SRU.4 / rodier-steinberg-series; SmoothRepresentationsOfLocalGroups SR.5 / highest-derivative-adapter; SRU.4.4; the corrected resolution of Aub96.
 
-### 7.2 Aubert duality preserves the semisimple parameter
+### 7.2 Aubert duality preserves the semisimple parameter (*aubert-semisimple-parameter*)
 
 Let G be connected reductive over a nonarchimedean local field and π irreducible (Ciubotaru–Harris state it for tempered π). Then π and AZ(π) are constituents of the same normalised parabolically induced representation of a cuspidal datum; hence their semisimple local parameters (the semisimple-parameter supplier contract) coincide: L^ss(AZ(π)) = L^ss(π) (Ciubotaru–Harris Proposition 4.5). No equality of monodromy operators is asserted. (CH26, Proposition 4.5, PDF p. 12; CH26 line 563)
 
@@ -1659,13 +1677,13 @@ For GL₂, L^ss(1) = L^ss(St) = `|·|^(1/2)` ⊕ `|·|^(−1/2)`, while the Weil
 
 *Needs:* SRU.7 / aubert-involution; ExcursionOperatorsAndSpectralActionPartII SC4 and its semisimple-parameter contract; ExcursionOperatorsAndSpectralActionPartII SC4, normalized-induction parameter contract.
 
-### 7.3 Kazhdan–Lusztig parameters
+### 7.3 Kazhdan–Lusztig parameters (*kazhdan-lusztig-parameters*)
 
 Let k a nonarchimedean local field (any characteristic) with residue field 𝔽_q, G = 𝐆(k) with 𝐆 quasi-simple, adjoint and split, I ⊂ K = 𝐆(O) an Iwahori subgroup, G^∨ the complex dual group with Lie algebra g^∨ (Ciubotaru–Harris §8 setting). A Kazhdan–Lusztig triple is (s, e, ρ) with s ∈ G^∨ semisimple, e ∈ g^∨ nilpotent with Ad(s)e = q·e, and ρ an irreducible representation of the component group A(s, e) = π₀(`Z_(G^∨)(s, e)`) of Springer type (occurring in the homology of the variety of Borel subalgebras containing e and fixed by s), on which the centre of G^∨ acts trivially; triples are taken up to G^∨-conjugacy. g^∨_q denotes the q-eigenspace of Ad(s); G^∨(s) = `Z_(G^∨)(s)` acts on it with finitely many orbits and a unique open orbit. For an s-adapted Lie triple (e, h, f) with h ∈ t^∨_ℝ and s ∈ T^∨, s₀ := s `q^(−h/2)` commutes with the triple. (CH26, §8.1, Kazhdan–Lusztig parameters, PDF p. 27; CH26 line 1307)
 
-k a nonarchimedean local field (any characteristic) with residue field 𝔽_q, G = 𝐆(k) with 𝐆 quasi-simple, adjoint and split, I ⊂ K = 𝐆(O) an Iwahori subgroup, G^∨ the complex dual group with Lie algebra g^∨ (Ciubotaru–Harris §8 setting). For connected-centre G the classification is Kazhdan–Lusztig's; general isogeny is Reeder's.
+k a nonarchimedean local field (any characteristic) with residue field 𝔽_q, G = 𝐆(k) with 𝐆 quasi-simple, adjoint and split, I ⊂ K = 𝐆(O) an Iwahori subgroup, G^∨ the complex dual group with Lie algebra g^∨ (Ciubotaru–Harris §8 setting). G is adjoint, so its centre is connected and the classification is Kazhdan–Lusztig's (KL87, Theorem 7.12).
 
-One proof route is as follows. Finiteness of G^∨(s)-orbits on g^∨_q and the open orbit are the graded (Vinberg–Lusztig) version of finiteness of nilpotent orbits. The Springer-type condition uses the Springer correspondence on the component groups; it is a definition here, with the geometric inputs (nilpotent orbits, sl₂-triples, Springer fibres) specified in the supplier contracts (the triple-centralizer contract).
+One proof route is as follows. Finiteness of G^∨(s)-orbits on g^∨_q and the open orbit are the graded (Vinberg–Lusztig) version of finiteness of nilpotent orbits. The Springer-type condition uses the Springer correspondence on the component groups; it is a definition here, with the geometric inputs (nilpotent orbits, sl₂-triples, Springer fibres) specified in the supplier contracts (the triple-centralizer and graded-open-orbit contracts).
 
 The defining object has the following API.
 
@@ -1685,21 +1703,21 @@ The defining object has the following API.
 
 For PGL₂: triples (s, 0, triv) for all s, and (s, e ≠ 0, triv) for s with eigenvalue ratio q, the latter giving the Steinberg representation and its twist by g ↦ `(−1)^(v(det g))`. The spherical triples are exactly those with e = 0 and ρ trivial.
 
-*Needs:* ReductiveGroupsPartII RG2.5 / langlands-dual-group; RepresentationTheory/LieHighestWeight / Layer 0-sl₂-representation-theory-the-engine; LieHighestWeightPartII N0–N3, triple-centralizer contract; SpringerResolutionAndCharacteristicCycles S.
+*Needs:* ReductiveGroupsPartII RG2.5 / langlands-dual-group; RepresentationTheory/LieHighestWeight / Layer 0-sl₂-representation-theory-the-engine; LieHighestWeightPartII N0, triple-centralizer contract; LieHighestWeightPartII N0–N1, graded-open-orbit contract; SpringerResolutionAndCharacteristicCycles S.
 
-### 7.4 The Kazhdan–Lusztig classification of Iwahori-spherical representations
+### 7.4 The Kazhdan–Lusztig classification of Iwahori-spherical representations (*kazhdan-lusztig-classification*)
 
-Let k a nonarchimedean local field (any characteristic) with residue field 𝔽_q, G = 𝐆(k) with 𝐆 quasi-simple, adjoint and split, I ⊂ K = 𝐆(O) an Iwahori subgroup, G^∨ the complex dual group with Lie algebra g^∨ (Ciubotaru–Harris §8 setting). Irreducible smooth representations of G with nonzero Iwahori-fixed vectors are in bijection, π(s, e, ρ) ↔ (s, e, ρ), with G^∨-conjugacy classes of Kazhdan–Lusztig triples (Kazhdan–Lusztig 1987 Theorem 7.12 for connected centre; Reeder 2002 in general). Moreover: (1) π(s, e, ρ) is K-spherical iff e = 0, and then ρ is trivial and π(s, 0, triv) = L(s) with s the Satake parameter; (2) π(s, e, ρ) is tempered iff s₀ is compact; (3) π(s, e, ρ) is generic iff ρ is trivial and e lies in the open G^∨(s)-orbit of g^∨_q; (4) AZ(L(s)) = π(s, e, triv) with e in that open orbit (Ciubotaru–Harris §5 and §8.1). (CH26, §8.1 and proof of Corollary 5.7, PDF p. 27; CH26 line 702)
+Let k a nonarchimedean local field (any characteristic) with residue field 𝔽_q, G = 𝐆(k) with 𝐆 quasi-simple, adjoint and split, I ⊂ K = 𝐆(O) an Iwahori subgroup, G^∨ the complex dual group with Lie algebra g^∨ (Ciubotaru–Harris §8 setting). Irreducible smooth representations of G with nonzero Iwahori-fixed vectors are in bijection, π(s, e, ρ) ↔ (s, e, ρ), with G^∨-conjugacy classes of Kazhdan–Lusztig triples (KL87, Theorem 7.12, cited by its locator; G adjoint has connected centre). Moreover: (1) π(s, e, ρ) is K-spherical iff e = 0, and then ρ is trivial and π(s, 0, triv) = L(s) with s the Satake parameter; (2) π(s, e, ρ) is tempered iff s₀ is compact; (3) π(s, e, ρ) is generic iff ρ is trivial and e lies in the open G^∨(s)-orbit of g^∨_q; (4) AZ(L(s)) = π(s, e, triv) with e in that open orbit (Ciubotaru–Harris §5 and §8.1). (CH26, §8.1, PDF p. 27; CH26 line 1307; proof of Corollary 5.7, PDF p. 15; CH26 line 702)
 
 k a nonarchimedean local field (any characteristic) with residue field 𝔽_q, G = 𝐆(k) with 𝐆 quasi-simple, adjoint and split, I ⊂ K = 𝐆(O) an Iwahori subgroup, G^∨ the complex dual group with Lie algebra g^∨ (Ciubotaru–Harris §8 setting).
 
-One proof route is as follows. The Iwahori block is equivalent to H(G, I)-modules (SR.3.4 borel-casselman-block), and H(G, I) is the affine Hecke algebra with Bernstein presentation (SR.1). Kazhdan–Lusztig realise H(G, I) in the equivariant K-theory of the Steinberg variety of G^∨ and classify simple modules by standard modules in the homology of fixed-point varieties; use the coherent equivariant K-theory supplier contract. (1) Spherical modules contain the trivial H(K, I)-character, which occurs exactly for e = 0; (2) Casselman's criterion in terms of the exponents of the standard module; (3) Barbasch–Moy, Reeder; (4) on Iwahori-spherical modules the Aubert involution is the Iwahori–Matsumoto involution (az-iwahori-matsumoto), which exchanges spherical and generic modules with the same s. The adjoint hypothesis is essential to the simplified spherical criterion as written. With arbitrary isogeny e=0 need not force the component-group representation to be trivial. A general dictionary must impose e=0 and trivial enhancement, and keep the Whittaker datum in the generic criterion; that extension is not claimed here.
+One proof route is as follows. The Iwahori block is equivalent to H(G, I)-modules (SR.3.4 borel-casselman-block), and H(G, I) is the affine Hecke algebra with Bernstein presentation (SR.1). Kazhdan–Lusztig realise H(G, I) in the equivariant K-theory of the Steinberg variety of G^∨ and classify simple modules by standard modules in the homology of fixed-point varieties; use the coherent equivariant K-theory supplier contract. (1) Spherical modules contain the trivial H(K, I)-character, which occurs exactly for e = 0; (2) Casselman's criterion in terms of the exponents of the standard module; (3) Barbasch–Moy (BM94) for the generic criterion; (4) on Iwahori-spherical modules the Aubert involution is the Iwahori–Matsumoto involution (az-iwahori-matsumoto), which exchanges spherical and generic modules with the same s. The adjoint hypothesis is essential to the simplified spherical criterion as written. With arbitrary isogeny e=0 need not force the component-group representation to be trivial. A general dictionary must impose e=0 and trivial enhancement, and keep the Whittaker datum in the generic criterion; that extension is not claimed here.
 
 For PGL₂: L(s) = π(s, 0, triv); St = π(diag(`q^(1/2)`, `q^(−1/2)`), e, triv); at s = diag(`q^(1/2)`, `q^(−1/2)`) the q-eigenspace is the line of e, the open orbit is e ≠ 0, so AZ(1) = St. Tempered spherical representations have s₀ = s compact and g^∨_q = 0, so they are the only irreducible representations with that s (Ciubotaru–Harris, proof of Corollary 5.7).
 
-*Needs:* SRU.7 / kazhdan-lusztig-parameters; SRU.7 / az-iwahori-matsumoto; SmoothRepresentationsOfLocalGroups SR.3 / borel-casselman-block; SmoothRepresentationsOfLocalGroups SR.1 / bernstein-presentation; SmoothRepresentationsOfLocalGroups SR.3 / casselman-criterion; SRU.5 / spherical-generic-criterion; SpringerResolutionAndCharacteristicCycles S and H, coherent equivariant K-theory contract; LieHighestWeightPartII N0–N3, triple-centralizer contract.
+*Needs:* SRU.7 / kazhdan-lusztig-parameters; SRU.7 / az-iwahori-matsumoto; SmoothRepresentationsOfLocalGroups SR.3 / borel-casselman-block; SmoothRepresentationsOfLocalGroups SR.1 / bernstein-presentation; SmoothRepresentationsOfLocalGroups SR.3 / casselman-criterion; SRU.5 / spherical-generic-criterion; SpringerResolutionAndCharacteristicCycles S, coherent equivariant K-theory contract; LieHighestWeightPartII N0–N1, graded-open-orbit contract.
 
-### 7.5 Aubert duality on the Iwahori block preserves unitarity
+### 7.5 Aubert duality on the Iwahori block preserves unitarity (*az-iwahori-matsumoto*)
 
 Let k a nonarchimedean local field (any characteristic) with residue field 𝔽_q, G = 𝐆(k) with 𝐆 quasi-simple and split, I ⊂ K = 𝐆(O) an Iwahori subgroup, G^∨ the complex dual group with Lie algebra g^∨ (Ciubotaru–Harris §8 setting). On irreducible Iwahori-spherical representations, AZ corresponds under V ↦ V^I to the central-character-preserving Iwahori–Matsumoto involution of H(G, I) specified below, which preserves hermitian and unitary modules. Hence AZ(π) is unitarizable iff π is, for Iwahori-spherical π; in particular AZ of a tempered Iwahori-spherical representation is unitarizable. (La24, Definition 4.2 and Theorem 4.3, PDF p. 18; La24 line 790)
 
@@ -1713,13 +1731,13 @@ Additional inputs for this route are located at BC1, §1.1, p. 1; BC1 line 25; C
 
 *Needs:* SRU.7 / aubert-involution; SRU.5 / barbasch-moy-unitarity; SmoothRepresentationsOfLocalGroups SR.1 / iwahori-matsumoto; SRU.2 / unitary-induction; SmoothRepresentationsOfLocalGroups SR.3 / square-integrable-tempered.
 
-### 7.6 The nilpotent partition of the spherical dual
+### 7.6 The nilpotent partition of the spherical dual (*nilpotent-partition*)
 
 Let k a nonarchimedean local field (any characteristic) with residue field 𝔽_q, G = 𝐆(k) with 𝐆 quasi-simple, adjoint and split, I ⊂ K = 𝐆(O) an Iwahori subgroup, G^∨ the complex dual group with Lie algebra g^∨ (Ciubotaru–Harris §8 setting). For a nilpotent G^∨-orbit O^∨ ⊆ g^∨, Sph(G, O^∨) is the set of G^∨-classes of s with AZ(L(s)) = π(s, e, triv), e ∈ O^∨ ((8.1)); these sets partition the K-spherical dual. For a Lie triple (e^∨, h^∨, f^∨) of O^∨, s = `q^(h^∨/2)` ∈ Sph(G, O^∨) is the central point. For s ∈ T^∨ write s = `q^(ℜ(s))` s_c with ℜ(s) ∈ t^∨_ℝ and Sph(G, O^∨)₀ for the set of real parts. SU(G) is the spherical unitary dual (s with L(s) unitarizable), CS(G, O^∨) = SU(G) ∩ Sph(G, O^∨) the spherical complementary series attached to O^∨, and CS(G, O^∨)₀ its real parts; SU(G) = ⊔ CS(G, O^∨). Z(O^∨) = `C_(G^∨)(e^∨, h^∨, f^∨)` is reductive, possibly disconnected, with Lie algebra z(O^∨); G(O^∨) is the split group dual to Z(O^∨)°; choosing a Cartan subalgebra a^∨ ⊆ z(O^∨) inside t^∨, for s with trivial or central compact part, ℜ(s) ∈ Sph(G, O^∨)₀ can be written ℜ(s) = ½h^∨ + ν with ν ∈ a^∨_ℝ, regarded as a parameter in Sph(G(O^∨), 0)₀ ((8.2)). (CH26, §8.1, (8.1)–(8.2), PDF p. 27; CH26 line 1317)
 
 k a nonarchimedean local field (any characteristic) with residue field 𝔽_q, G = 𝐆(k) with 𝐆 quasi-simple, adjoint and split, I ⊂ K = 𝐆(O) an Iwahori subgroup, G^∨ the complex dual group with Lie algebra g^∨ (Ciubotaru–Harris §8 setting).
 
-One proof route is as follows. The partition: each L(s) has exactly one AZ dual, whose KL triple has e in the open orbit of g^∨_q (kazhdan-lusztig-classification (4)); its G^∨-saturation is O^∨. Central point: for s = `q^(h^∨/2)`, Ad(s)e^∨ = qe^∨ and the triple has s₀ = 1 compact, so π(s, e^∨, triv) is tempered and L(s) is its AZ dual (Barbasch–Ciubotaru §1.3, (1.3.1)). Use LieHighestWeightPartII N0 for existence and conjugacy of triples and its centralizer-and-orbit-table supplier contract for the reductive centralizer and the open graded orbit. The real-character decomposition is the Barbasch–Moy orbit construction (BC1 §1.3, (1.3.1)–(1.3.2)).
+One proof route is as follows. The partition: each L(s) has exactly one AZ dual, whose KL triple has e in the open orbit of g^∨_q (kazhdan-lusztig-classification (4)); its G^∨-saturation is O^∨. Central point: for s = `q^(h^∨/2)`, Ad(s)e^∨ = qe^∨ and the triple has s₀ = 1 compact, so π(s, e^∨, triv) is tempered and L(s) is its AZ dual (Barbasch–Ciubotaru §1.3, (1.3.1)). Use LieHighestWeightPartII N0 for existence and conjugacy of triples, its triple-centralizer contract for the reductive centralizer and its graded-open-orbit contract for the open graded orbit. The real-character decomposition is the Barbasch–Moy orbit construction (BC1 §1.3, (1.3.1)–(1.3.2)).
 
 The defining object has the following API.
 
@@ -1742,9 +1760,9 @@ For O^∨=0, the real slice {ν | q^ν∈CS(G,0)} equals U₀^g up to W. This do
 
 Additional inputs for this route are located at BC1, §1.3, (1.3.1)–(1.3.2), p. 3; BC1 line 91.
 
-*Needs:* SRU.7 / kazhdan-lusztig-classification; SRU.7 / aubert-involution; SRU.5 / real-satake-parameter; SRU.2 / unitary-structure; RepresentationTheory/LieHighestWeight / Layer 0-sl₂-representation-theory-the-engine; LieHighestWeightPartII N0–N3, triple-centralizer contract.
+*Needs:* SRU.7 / kazhdan-lusztig-classification; SRU.7 / aubert-involution; SRU.5 / real-satake-parameter; SRU.2 / unitary-structure; RepresentationTheory/LieHighestWeight / Layer 0-sl₂-representation-theory-the-engine; LieHighestWeightPartII N0, triple-centralizer contract; LieHighestWeightPartII N0–N1, graded-open-orbit contract.
 
-### 7.7 The central point is unitary
+### 7.7 The central point is unitary (*central-point-unitary*)
 
 In the setting of nilpotent-partition, for every nilpotent O^∨ the spherical representation L(`q^(h^∨/2)`) at the central point is unitarizable (Ciubotaru–Harris §8.1). (CH26, §8.1, central-point argument, PDF p. 28; CH26 line 1333)
 
@@ -1756,7 +1774,7 @@ For O^∨ regular the central point is the trivial representation; for O^∨ = 0
 
 *Needs:* SRU.7 / nilpotent-partition; SRU.7 / az-iwahori-matsumoto.
 
-### 7.8 Complementary series reduce to the triple centraliser
+### 7.8 Complementary series reduce to the triple centraliser (*centralizer-reduction*)
 
 In the setting of nilpotent-partition, with G split adjoint: assuming s has trivial or central compact part, if O^∨ is not the orbit 4A₁ of E₈, s ∈ CS(G, O^∨) and ℜ(s) = ½h^∨ + ν with ν ∈ Sph(G(O^∨), 0)₀, then ν ∈ CS(G(O^∨), 0)₀ (Ciubotaru–Harris Theorem 8.3). For 4A₁ in E₈ the complementary series has an extra region beyond that of the centraliser C₄ (e8-4a1-exclusion). (CH26, Theorem 8.3, PDF p. 28; CH26 line 1352)
 
@@ -1766,9 +1784,9 @@ One proof route is as follows. Strip a central compact part using its unitary un
 
 For O^∨ = 0, G(O^∨) = G and the statement is the definition of U₀^g. For O^∨ regular, Z(O^∨) is the centre, G(O^∨) is trivial and ν = 0.
 
-*Needs:* SRU.7 / nilpotent-partition; SRU.5 / barbasch-moy-unitarity; SRU.5 / generic-unitary-classification; LieHighestWeightPartII N0–N3, orbit tables contract.
+*Needs:* SRU.7 / nilpotent-partition; SRU.5 / barbasch-moy-unitarity; SRU.5 / generic-unitary-classification; LieHighestWeightPartII N3, orbit-tables contract; LieHighestWeightPartII N0, triple-centralizer contract.
 
-### 7.9 Extraneous real parts
+### 7.9 Extraneous real parts (*extraneous-point*)
 
 In the setting of nilpotent-partition, let s = φ(Frob) ∈ CS(G, O^∨) be geometric in the sense of SRU.5 half-integral-parameter (for every representation of G^∨). Its real part ℜ(s) is extraneous if it is not W-conjugate to the central point ½h^∨ (Ciubotaru–Harris Definition 8.4). (CH26, Definition 8.4 and Remark 8.6, PDF p. 28; CH26 line 1356)
 
@@ -1778,21 +1796,21 @@ One proof route is as follows. Well defined: ℜ(s) is defined up to W, and the 
 
 The defining object has the following API.
 
-- extraneousness O s :⇔ s ∈ CS(G, O), s geometric, and ℜ(s) ∉ W • {½h^∨}.
+- s is extraneous for O iff s ∈ CS(G, O), s is geometric, and ℜ(s) ∉ W • {½h^∨}.
 - The central point is not extraneous.
 - For G^∨ = Sp(6), O = (2,2,2), the real part (0, ½, 1) is extraneous.
 
 **Checks.**
 
 - For G^∨ = Sp(6) and O^∨ = (2,2,2), the real part (0, ½, 1) ≠ (½, ½, ½) up to W, and it is the extraneous point of Remark 8.6.
-- For every O^∨ the central point ½h^∨ is not extraneous.
-- A unitary s in CS(G, O^∨) whose real part is not half-integral is not extraneous: the definition requires geometricity.
+- For G^∨ = Sp(6) and O^∨ = (2,2,2), the central real part (½, ½, ½) is geometric and unitary but not extraneous: its squared distance from the central point is 0, while that of (0, ½, 1) is ¾ (squared norms ¾ and 5/4), so omitting the comparison with the central point would make the central point extraneous.
+- For PGL₂ and O^∨ = 0, the real part ν = ¼ω has root pairing ¼; its spherical representation is generic and unitary (¼ < 1) but ν is not adjoint-half-integral, hence not extraneous; omitting geometricity from the definition would make it extraneous.
 
 The central point itself is never extraneous. For Sp(6) and O^∨ = (2,2,2), ½h^∨ = (½, ½, ½) and the point (0, ½, 1) is extraneous (Remark 8.6).
 
 *Needs:* SRU.7 / nilpotent-partition; SRU.5 / half-integral-parameter; SRU.7 / central-point-unitary.
 
-### 7.10 Extraneous points for symplectic and spin duals
+### 7.10 Extraneous points for symplectic and spin duals (*extraneous-classical*)
 
 In the setting of extraneous-point, with G of connected centre and s = s_c q^ν with s_c = 1 or s_c central in G^∨: (1) if G^∨ = Sp(2n) and O^∨ has partition with rᵢ parts equal to i (Σ i rᵢ = 2n, rᵢ even for i odd), so that Z(O^∨) = `∏_(i odd)` Sp(rᵢ) × `∏_(j even)` O(rⱼ), the extraneous real parts are ½h^∨ + ½ `Σ_(j even, rⱼ ≥ 3)` εⱼ `ω^j_(⌊rⱼ/2⌋)`, εⱼ ∈ {0, 1} not all zero; (2) if G^∨ = Spin(n) and O^∨ has rᵢ parts equal to i (Σ i rᵢ = n, rᵢ even for i even), the extraneous real parts are ½h^∨ + ½ `Σ_(i odd, rᵢ ≥ 3)` εᵢ `ω^i_(⌊rᵢ/2⌋)` with Σ εᵢ even and not all εᵢ zero (Ciubotaru–Harris Theorem 8.5(1)–(2)). These lists are not asserted for noncentral compact parts. (CH26, Theorem 8.5(1)–(2), PDF p. 28; CH26 line 1359)
 
@@ -1802,21 +1820,21 @@ One proof route is as follows. Write ℜ(s) = ½h^∨ + ν with ν ∈ CS(G(O^�
 
 Remark 8.6: for Sp(6) and O^∨ = (2,2,2) (r₂ = 3), the unique extraneous real part is ½h^∨ + ½ω^2_1 = (0, ½, 1) up to W. For O^∨ with every rⱼ ≤ 2 (j even), there are no extraneous points.
 
-*Needs:* SRU.7 / centralizer-reduction; SRU.7 / extraneous-point; SRU.5 / half-integral-generic-unitary; SRU.5 / fundamental-separators; RepresentationTheory/LieHighestWeight / Layer 0-sl₂-representation-theory-the-engine; LieHighestWeightPartII N2 and triple-centralizer contract.
+*Needs:* SRU.7 / centralizer-reduction; SRU.7 / extraneous-point; SRU.5 / half-integral-generic-unitary; SRU.5 / fundamental-separators; RepresentationTheory/LieHighestWeight / Layer 0-sl₂-representation-theory-the-engine; LieHighestWeightPartII N2; LieHighestWeightPartII N0, triple-centralizer contract.
 
-### 7.11 Extraneous points for exceptional duals
+### 7.11 Extraneous points for exceptional duals (*extraneous-exceptional*)
 
 In the setting of extraneous-point, with G of connected centre and s = s_c q^ν with s_c = 1 or s_c central in G^∨: the extraneous real parts occur only for O^∨ = B₃ (real part ω₁ + ½ω₃ + ½ω₄) and Ã₁ + A₁ (½ω₁ + ½ω₄) in F₄; D₅(a₁) + A₁ in E₇ (½(ω₁ + ω₂ + ω₃ + ω₆ + ω₇)); and the following four E₈ points: D₆ (centraliser B₂), ω₁+½ω₄+½ω₆+ω₈; A₆ (centraliser 2A₁), ½ω₁+½ω₄+½ω₇+½ω₈; A₄+A₂ (centraliser 2A₁), ½ω₁+½ω₅+½ω₈; A₂+2A₁ (centraliser B₃+A₁), ½ω₂+½ω₈ (Ciubotaru–Harris Theorem 8.5(3)–(5)); there are none for G₂ and E₆ in this sector. Without the restriction on s_c the list is not exhaustive: the G₂ witness (SRU.5 g2-noncentral-witness) gives a geometric unitary s ∈ CS(G₂, 0) with real part ½ω₂ ≠ 0. (CH26, Theorem 8.5(3)–(5), PDF p. 28; CH26 line 1359)
 
 k a nonarchimedean local field (any characteristic) with residue field 𝔽_q, G = 𝐆(k) with 𝐆 quasi-simple and split, I ⊂ K = 𝐆(O) an Iwahori subgroup, G^∨ the complex dual group with Lie algebra g^∨ (Ciubotaru–Harris §8 setting). G of connected centre s = s_c q^ν with s_c = 1 or s_c central in G^∨.
 
-One proof route is as follows. As in extraneous-classical, ν ∈ CS(G(O^∨), 0)₀ is, on each simple factor of z(O^∨), 0 or an exception of Theorem 6.14; the exceptional orbits and centraliser types come from the tables of nilpotent orbits (the triple-centralizer supplier contract). For each remaining candidate compute the simple-root and fundamental-weight pairings of G^∨; the survivors are those listed (Ciubotaru–Harris, proof of Theorem 8.5, case (4)); the F₄, B₃ coordinate is corrected by comparison with Ciubotaru's F₄ classification (CiF4, §3.2, the B₃ row of the maximal-parabolic spherical unitary parameters, p. 14; CiF4 line 584).
+One proof route is as follows. As in extraneous-classical, ν ∈ CS(G(O^∨), 0)₀ is, on each simple factor of z(O^∨), 0 or an exception of Theorem 6.14; the exceptional orbits and centraliser types come from the tables of nilpotent orbits (the orbit-tables contract). For each remaining candidate compute the simple-root and fundamental-weight pairings of G^∨; the survivors are those listed (Ciubotaru–Harris, proof of Theorem 8.5, case (4)); the F₄, B₃ coordinate is corrected by an orthogonal decomposition. The Levi of type B₃ has ½h^∨ = ω₁ + ω₂ = (5/2, ½, ½, ½) in (6.21), and its centraliser direction (0, 0, 1, −1) is orthogonal to it, so the stratum's real parts are ω₁ + ω₂ + t(0, 0, 1, −1), of squared norm 7 + 2t², with complementary series 0 ≤ t < 1. The point ω₁ + ½ω₃ + ½ω₄ = (5/2, 1, ½, 0) is a coordinate permutation, hence a Weyl conjugate, of ω₁ + ω₂ + ½(0, 0, 1, −1) = (5/2, ½, 1, 0), the stratum point with t = ½ and squared norm 15/2; the printed ω₁ + ω₂ + ½ω₃ + ½ω₄ = (4, 3/2, 1, ½) has squared norm 39/2, which in this stratum would force t = 5/2, outside the complementary series. Ciubotaru's B₃ row (CiF4, §3.2, p. 14; CiF4 line 584) is read with 3/2 − ν in its second coordinate: as printed, with 3/2 + ν, its direction is not orthogonal to the central point (3/2, 3/2, 3/2, ½), which is recorded as a misprint.
 
-For F₄ and O^∨ = B₃ the corrected point ω₁ + ½ω₃ + ½ω₄ has Euclidean coordinates (5/2, 1, ½, 0) in (6.21), Weyl-conjugate to the B₃ complementary-series parameter at ν = ½. For G₂ the restricted sector has no extraneous point, while the noncentral witness s_c `s_(½ω₂)` is extraneous.
+For F₄ and O^∨ = B₃ the corrected point ω₁ + ½ω₃ + ½ω₄ has Euclidean coordinates (5/2, 1, ½, 0) in (6.21). After the sign correction it is Weyl-conjugate to Ciubotaru's B₃ parameter at ν = ½, namely (2, 1, 3/2, ½): the reflection in α₁^∨ = (1, −1, −1, −1) sends it to (5/2, ½, 1, 0), a coordinate permutation of (5/2, 1, ½, 0). The printed value of CH26 Theorem 8.5(3) has squared norm 39/2 and lies outside the stratum's complementary series. For G₂ the restricted sector has no extraneous point, while the noncentral witness s_c `s_(½ω₂)` is extraneous.
 
-*Needs:* SRU.7 / centralizer-reduction; SRU.7 / extraneous-point; SRU.5 / half-integral-generic-unitary; SRU.5 / g2-noncentral-witness; SRU.7 / e8-4a1-exclusion; LieHighestWeightPartII N3 and semantic orbit-table contract.
+*Needs:* SRU.7 / centralizer-reduction; SRU.7 / extraneous-point; SRU.5 / half-integral-generic-unitary; SRU.5 / g2-noncentral-witness; SRU.7 / e8-4a1-exclusion; LieHighestWeightPartII N3, orbit-tables contract.
 
-### 7.12 The extra E₈, 4A₁ region has no half-integral points
+### 7.12 The extra E₈, 4A₁ region has no half-integral points (*e8-4a1-exclusion*)
 
 For G of type E₈ and O^∨ = 4A₁ (Z(O^∨) of type C₄), in the coordinates ℜ(s) = ½h^∨ + (0, 0, ν₁, ν₁, ν₂, ν₂, −ν₃ + ν₄, ν₃ + ν₄) with 0 ≤ ν₁ ≤ ν₂ ≤ ν₃ ≤ ν₄, the complementary series is {ν₄ < ½} ∪ {ν₁ + ν₄ < 1, ν₂ + ν₃ < 1, ν₂ + ν₄ > 1, −ν₁ + ν₃ + ν₄ < 3/2 < ν₁ + ν₃ + ν₄} ((8.8)), and its extra region (the second set) contains no parameter half-integral for the adjoint representation (Ciubotaru–Harris §8.3; both coordinate lattices are tested separately). (CH26, §8.3, (8.8), PDF p. 30; CH26 line 1451)
 
@@ -1830,11 +1848,11 @@ One proof route is as follows. Adjoint half-integrality imposes two lattice poss
 
 The point ν = (½, ½, ½, ½) violates ν₁ + ν₄ < 1; the point (¼, ¾, ¾, ¾) violates ν₂ + ν₃ < 1.
 
-*Needs:* SRU.7 / nilpotent-partition; SRU.5 / half-integral-parameter.
+*Needs:* SRU.7 / nilpotent-partition; SRU.5 / half-integral-parameter; LieHighestWeightPartII N3, orbit-tables contract.
 
-### 7.13 Unitarity with noncentral compact part reduces to the centraliser of s_c
+### 7.13 Unitarity with noncentral compact part reduces to the centraliser of s_c (*noncentral-compact-reduction*)
 
-Let k a nonarchimedean local field (any characteristic) with residue field 𝔽_q, G = 𝐆(k) with 𝐆 quasi-simple and split, I ⊂ K = 𝐆(O) an Iwahori subgroup, G^∨ the complex dual group with Lie algebra g^∨ (Ciubotaru–Harris §8 setting). For s = s_c q^ν with s_c compact (noncentral allowed) and ν real, L(s) is unitarizable iff the spherical module of the graded affine Hecke algebra attached to the centraliser `Z_(G^∨)(s_c)` (its root datum and the Hecke parameters determined by s_c) at the real parameter ν is unitary (Barbasch–Moy 1993). Unitarity of L(s) is therefore not governed by U₀^g of G when s_c is noncentral; the generic temperedness test and the extraneous-point lists of SRU.5 and SRU.7 are stated only for real or central-compact s. (BC1, §1.2, reduction to real infinitesimal character, PDF p. 2; BC1 line 43)
+Let k a nonarchimedean local field (any characteristic) with residue field 𝔽_q, G = 𝐆(k) with 𝐆 quasi-simple and split, I ⊂ K = 𝐆(O) an Iwahori subgroup, G^∨ the complex dual group with Lie algebra g^∨ (Ciubotaru–Harris §8 setting). For s = s_c q^ν with s_c compact (noncentral allowed) and ν real, L(s) is unitarizable iff the spherical module of the graded affine Hecke algebra attached to the centraliser `Z_(G^∨)(s_c)` (its root datum and the Hecke parameters determined by s_c) at the real parameter ν is unitary (BM93, Theorem 8.1, printed p. 634; BM93 line 973). Unitarity of L(s) is therefore not governed by U₀^g of G when s_c is noncentral; the generic temperedness test and the extraneous-point lists of SRU.5 and SRU.7 are stated only for real or central-compact s. (BC1, §1.2, reduction to real infinitesimal character, PDF p. 2; BC1 line 43)
 
 k a nonarchimedean local field (any characteristic) with residue field 𝔽_q, G = 𝐆(k) with 𝐆 quasi-simple and split, I ⊂ K = 𝐆(O) an Iwahori subgroup, G^∨ the complex dual group with Lie algebra g^∨ (Ciubotaru–Harris §8 setting). s_c compact, possibly noncentral.
 
@@ -1852,7 +1870,7 @@ For PGL₂, AZ exchanges 1 and St. Their semisimple parameters are |·|^(1/2) �
 
 ### Dependencies
 
-The statement carriers and the proposed proof inputs are the individual Needs lines above. This layer consumes SRU.0; SRU.1; SRU.2; SRU.3; SRU.4; SRU.5; SRU.6. The coherent equivariant K-theory and triple-centralizer contracts are proof inputs for enhanced parameters and the orbit tables, rather than statements inferred from a source citation.
+The statement carriers and the proposed proof inputs are the individual Needs lines above. This layer consumes SRU.0; SRU.1; SRU.2; SRU.3; SRU.4; SRU.5; SRU.6. The coherent equivariant K-theory, triple-centralizer, graded-open-orbit and orbit-tables contracts are proof inputs for enhanced parameters and the orbit tables, rather than statements inferred from a source citation.
 
 ## Downstream consumers
 
@@ -1880,4 +1898,9 @@ Types and Moy–Prasad extensions, parahoric centers, density and trace Paley–
 - Ban02: Dubravka Ban, *The Aubert involution and R-groups*. Ann. Sci. ÉNS (4) 35 (2002), 673–693 [Legal source](https://www.numdam.org/item/ASENS_2002_4_35_5_673_0.pdf).
 - CiF4: Dan Ciubotaru, *The unitary I-spherical dual for split p-adic groups of type F4*. Author version, pp. 1–49; published Represent. Theory 9 (2005), 94–137, DOI 10.1090/S1088-4165-05-00206-2 [Legal source](https://www.math.utah.edu/~ptrapa/math-library/ciubotaru/ciubotaru_F4.pdf).
 - Aub96: Anne-Marie Aubert, *Erratum to Dualité dans le groupe de Grothendieck…*, Transactions of the American Mathematical Society 348 (1996), 4687–4690. [Publisher open archive](https://doi.org/10.1090/S0002-9947-96-01776-X).
+- BM89: Dan Barbasch and Allen Moy, *A unitarity criterion for p-adic groups*, Inventiones Mathematicae 98 (1989), 19–37, Theorems 1.1–1.2; paywalled, cited by its locator. [Publisher page](https://doi.org/10.1007/BF01388842).
+- BM93: Dan Barbasch and Allen Moy, *Reduction to real infinitesimal character in affine Hecke algebras*, Journal of the American Mathematical Society 6 (1993), 611–635, Theorem 8.1. [Publisher open archive](https://www.ams.org/journals/jams/1993-06-03/S0894-0347-1993-1186959-0/S0894-0347-1993-1186959-0.pdf).
+- BM94: Dan Barbasch and Allen Moy, *Whittaker models with an Iwahori fixed vector*, 1994; cited by its locator.
+- KL87: David Kazhdan and George Lusztig, *Proof of the Deligne–Langlands conjecture for Hecke algebras*, Inventiones Mathematicae 87 (1987), 153–215, Theorem 7.12; paywalled, cited by its locator. [Publisher page](https://doi.org/10.1007/BF01389157).
+- HM07: Volker Heiermann and Goran Muić, *On the standard modules conjecture*, Mathematische Zeitschrift 255 (2007), 847–853; paywalled, cited by its locator as used in HO Corollary 1.2.
 - Kato81: Shin-ichi Kato, *Irreducibility of principal series representations for Hecke algebras of affine type*, Journal of the Faculty of Science, University of Tokyo 28, 929–943, Theorem 2.2. [Institutional source](https://doi.org/10.15083/00039616).

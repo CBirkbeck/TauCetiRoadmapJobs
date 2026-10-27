@@ -9,8 +9,7 @@ The roadmap is README.md; this file is not the roadmap. It states headline theor
 against the pinned APIs, using the native continuous representations and Kolmogorov spaces.
 
 The following headlines are not statable with these APIs and a few simple definitions.
-Weak-star compactness needs the integrated positive-type embedding into the L-infinity/weak-dual
-model. The sum/closure and isolated-summand theorems need the unitary-equivalence quotient,
+The sum/closure and isolated-summand theorems need the unitary-equivalence quotient,
 its Fell topology, and its Hilbert-sum comparison. Bernstein admissibility, the smooth/unitary
 dual bijection, character-limit theorems of Milicic and Tadic, and Gan–Savin's generic-limit
 result require the reductive rational-point smooth categories, Hecke/distribution characters,
@@ -19,7 +18,11 @@ of Steinberg and supercuspidals need those rational-point groups and their named
 The spherical unitary classification, half-integral classification and split/nonsplit generic
 temperedness tests need the Satake spherical constituent, affine/graded Hecke categories and
 unitarity comparison. Aubert duality and parameter compatibility need the finite-length
-Grothendieck group and semisimple local-parameter functor. Kazhdan–Lusztig classification,
+Grothendieck group and semisimple local-parameter functor. Rodier heredity and the generic
+standard-module theorem need the general Whittaker and normalized parabolic functors and the
+Shahidi local coefficient. General finite Steinberg irreducibility and degree, the Whittaker/sign
+comparison and Rodier's Steinberg-series constituent and exponent theorem need the finite
+reductive flag/Hecke and p-adic Jacquet carriers. Kazhdan–Lusztig classification,
 central-point unitarity, complementary-series reduction and the extraneous-point lists need
 enhanced Springer parameters and the spherical/graded-Hecke dictionary. The E8 extra-region
 exclusion belongs to that dictionary; a theorem about four unrelated scalars would not state it.
@@ -32,7 +35,7 @@ noncomputable section
 open scoped InnerProductSpace ComplexOrder ENNReal
 open MeasureTheory Filter
 
-universe u v w
+universe u v w w'
 
 /-! ## Layer SRU.0: Unitary representations and functions of positive type -/
 
@@ -103,14 +106,28 @@ def WeaklyContainedIn {G : Type u} [Group G] [TopologicalSpace G]
     ∃ n : ℕ, ∃ z : Fin n → H', ∀ g ∈ Q,
       ‖ptCoeff σ v g - ∑ j, ptCoeff π (z j) g‖ < ε
 
-/-- Milman's converse: the extreme points of a compact closed convex hull lie in the
-closure of its generating set. This is the convex-geometric input for single coefficients. -/
-theorem extremePoints_closure_convexHull_subset_closure
-    {E : Type u} [AddCommGroup E] [Module ℝ E] [TopologicalSpace E]
-    [IsTopologicalAddGroup E] [ContinuousSMul ℝ E] [T2Space E]
-    [LocallyConvexSpace ℝ E] (S : Set E)
-    (hcompact : IsCompact (closure (convexHull ℝ S))) :
-    Set.extremePoints ℝ (closure (convexHull ℝ S)) ⊆ closure S := by
+/-- Weak containment in a family: every coefficient of `σ` is approximated on every compact set
+by a finite sum of coefficients of members of the family. This is weak containment in the
+Hilbert sum of the family, without the Hilbert-sum carrier (BHV F.1.1). -/
+def WeaklyContainedInFamily {G : Type u} [Group G] [TopologicalSpace G]
+    {H : Type v} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
+    {ι : Type w'} {H' : ι → Type w} [∀ i, NormedAddCommGroup (H' i)]
+    [∀ i, InnerProductSpace ℂ (H' i)]
+    (σ : ContRepresentation ℂ G H) (π : ∀ i, ContRepresentation ℂ G (H' i)) : Prop :=
+  ∀ v : H, ∀ Q : Set G, IsCompact Q → ∀ ε : ℝ, 0 < ε →
+    ∃ n : ℕ, ∃ a : Fin n → ι, ∃ z : ∀ j, H' (a j), ∀ g ∈ Q,
+      ‖ptCoeff σ v g - ∑ j, ptCoeff (π (a j)) (z j) g‖ < ε
+
+/-- Weak-star compactness of the positive-type subunit ball: the image of the continuous
+positive-type functions with value at most one at the identity under the pairing with `L¹`
+is compact in the product topology on functions `L¹ → ℂ`, which is the weak-star topology
+on that image (BHV Lemma C.5.4). -/
+theorem isCompact_positiveTypeSubunit_integrals
+    {G : Type u} [Group G] [TopologicalSpace G] [IsTopologicalGroup G]
+    [T2Space G] [LocallyCompactSpace G] [SecondCountableTopology G]
+    [MeasurableSpace G] [BorelSpace G] (μ : Measure G) [μ.IsHaarMeasure] :
+    IsCompact ((fun φ : G → ℂ => fun f : Lp ℂ 1 μ => ∫ g, f g * φ g ∂μ) ''
+      {φ | Continuous φ ∧ IsPositiveType φ ∧ (φ 1).re ≤ 1}) := by
   sorry
 
 /-- Godement's integrated criterion: an essentially bounded function has a continuous
@@ -127,9 +144,10 @@ theorem godement {G : Type u} [Group G] [TopologicalSpace G] [IsTopologicalGroup
   sorry
 
 /-- Raikov's theorem: for normalized positive-type functions, convergence against every
-L1 test function is equivalent to compact-open convergence (BHV C.5.6). -/
+L1 test function is equivalent to compact-open convergence, on every locally compact group
+(BHV C.5.6). -/
 theorem raikov {G : Type u} [Group G] [TopologicalSpace G] [IsTopologicalGroup G]
-    [T2Space G] [LocallyCompactSpace G] [SecondCountableTopology G]
+    [T2Space G] [LocallyCompactSpace G]
     [MeasurableSpace G] [BorelSpace G] (μ : Measure G) [μ.IsHaarMeasure]
     {ι : Type v} (l : Filter ι) (φ : ι → C(G, ℂ)) (ψ : C(G, ℂ))
     (hφ : ∀ i, (φ i : G → ℂ) ∈ positiveTypeOne G)
@@ -143,7 +161,7 @@ theorem raikov {G : Type u} [Group G] [TopologicalSpace G] [IsTopologicalGroup G
 approximable by a single unit-vector coefficient of π (BHV F.1.4). -/
 theorem exists_coeff_approx_of_weaklyContainedIn
     {G : Type u} [Group G] [TopologicalSpace G] [IsTopologicalGroup G]
-    [T2Space G] [LocallyCompactSpace G] [SecondCountableTopology G]
+    [T2Space G] [LocallyCompactSpace G]
     {H : Type v} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
     {H' : Type w} [NormedAddCommGroup H'] [InnerProductSpace ℂ H'] [CompleteSpace H']
     (σ : ContRepresentation ℂ G H) (π : ContRepresentation ℂ G H')
@@ -152,6 +170,24 @@ theorem exists_coeff_approx_of_weaklyContainedIn
     (hirr : IsTopologicallyIrreducible σ) (hweak : WeaklyContainedIn σ π)
     (v : H) (hv : ‖v‖ = 1) (Q : Set G) (hQ : IsCompact Q) (ε : ℝ) (hε : 0 < ε) :
     ∃ w : H', ‖w‖ = 1 ∧ ∀ g ∈ Q, ‖ptCoeff σ v g - ptCoeff π w g‖ < ε := by
+  sorry
+
+/-- An irreducible representation weakly contained in a family has every unit-vector
+coefficient approximable by one unit-vector coefficient of one member of the family; finite
+sums spread over several members are not needed (BHV F.1.4 and its proof). -/
+theorem exists_coeff_approx_of_weaklyContainedInFamily
+    {G : Type u} [Group G] [TopologicalSpace G] [IsTopologicalGroup G]
+    [T2Space G] [LocallyCompactSpace G]
+    {H : Type v} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
+    {ι : Type w'} {H' : ι → Type w} [∀ i, NormedAddCommGroup (H' i)]
+    [∀ i, InnerProductSpace ℂ (H' i)] [∀ i, CompleteSpace (H' i)]
+    (σ : ContRepresentation ℂ G H) (π : ∀ i, ContRepresentation ℂ G (H' i))
+    (hσu : TauCeti.ContRepresentation.IsUnitary σ)
+    (hπu : ∀ i, TauCeti.ContRepresentation.IsUnitary (π i))
+    (hσc : IsStronglyContinuous σ) (hπc : ∀ i, IsStronglyContinuous (π i))
+    (hirr : IsTopologicallyIrreducible σ) (hweak : WeaklyContainedInFamily σ π)
+    (v : H) (hv : ‖v‖ = 1) (Q : Set G) (hQ : IsCompact Q) (ε : ℝ) (hε : 0 < ε) :
+    ∃ i, ∃ w : H' i, ‖w‖ = 1 ∧ ∀ g ∈ Q, ‖ptCoeff σ v g - ptCoeff (π i) w g‖ < ε := by
   sorry
 
 end
