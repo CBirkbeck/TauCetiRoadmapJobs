@@ -1,5 +1,6 @@
 import Mathlib
 import TauCeti.AlgebraicGeometry.LineBundle.Class
+import TauCeti.RingTheory.RegularLocalRing.Basic
 
 /-!
 # Purity for flat cohomology and the conjectures of Gabber: target signatures
@@ -11,7 +12,10 @@ semilocal ring (README §0.1), Cohen presentations, complete intersections and t
 dimension (§1.1), and pullback of finite étale schemes (§1.8). The stated headlines are
 Zariski–Nagata purity in virtual dimension `≥ 2` and `≥ 3` (Česnavičius–Scholze, *Purity for flat
 cohomology*, Theorem 3.3.1; README §1.8) and Gabber's conjecture on the local Picard group
-(*loc. cit.* Theorem 7.2.1; README §7.7).
+(*loc. cit.* Theorem 7.2.1; README §7.7), together with three classical inputs the roadmap proves:
+Katz's theorem on Frobenius-fixed vectors over an algebraically closed field (README §5.6),
+Auslander's freeness criterion through endomorphisms (§7.2) and the factoriality of regular local
+rings (§7.4).
 
 The following headline theorems are not statable at the pinned libraries.
 
@@ -20,10 +24,19 @@ The following headline theorems are not statable at the pinned libraries.
   extension to all finite étale coefficients (Theorems 3.2.4 and 6.2.4; §§1.6, 6.3) and global
   purity (Theorem 7.1.2; §7.1). They need fppf (and étale) cohomology with supports, or at least
   restriction maps on fppf cohomology of a scheme along an open immersion. Mathlib's
-  `CategoryTheory.Sheaf.cohomologyPresheaf` takes values in abelian groups of the universe of the
-  site's morphisms, in which the big fppf and étale sites have no sheafification instance at the
-  pin; `CategoryTheory.Sheaf.H` has no restriction maps; and there is no functor from commutative
+  `CategoryTheory.Sheaf.cohomologyPresheaf` requires its input sheaf to take values in
+  `AddCommGrpCat.{v}`, `v` the universe of the site's morphisms, with a sheafification instance at
+  that coefficient universe, which the big fppf and étale sites lack at the pin (its output universe
+  `w′` is a separate parameter); `CategoryTheory.Sheaf.H` has no restriction maps; and there is no functor from commutative
   group schemes to abelian fppf sheaves.
+* The crystalline key formula over perfect schemes (Theorem 4.1.8; §2.4): it needs, in addition,
+  the crystalline Dieudonné module of a finite locally free group over a perfect scheme and the
+  pro-fppf site.
+* The deformation triangle of flat cohomology of animated rings (Theorem 5.2.8; §3.3), `p`-adic
+  continuity (Theorem 5.3.5; §3.4), excision (Theorem 5.4.4 and Corollary 5.4.5; §3.5) and fpqc
+  hyperdescent and descent modulo `p` (Theorem 5.5.2 and Corollary 5.5.3; §3.6): there are no
+  animated rings, no points of a group scheme with values in an animated ring and no fppf cohomology
+  over them.
 * The key formula and purity for perfectoid rings (Theorems 6.1.1 and 6.1.2; §§5.9, 5.10) and
   `p`-complete arc descent of flat cohomology (Theorem 5.5.1; §5.8): they need, in addition,
   prismatic Dieudonné modules of finite locally free group schemes and the `p`-complete arc site.
@@ -37,14 +50,16 @@ The following headline theorems are not statable at the pinned libraries.
 * Purity for groups of multiplicative type and for tori (Theorems 7.2.8–7.2.9; Česnavičius,
   Theorems 1.4 and 6.1; §§7.16, 7.17, 8.3, 8.6): there are no groups of multiplicative type over
   a base scheme.
-* Picard groups of global complete intersections (Corollary 7.2.3; §7.9): there is no grading on
-  the quotient of a polynomial ring by a homogeneous ideal, so the global complete intersection as
-  a `Proj` is not available.
+* Picard groups of global complete intersections (Corollary 7.2.3; §7.9): the grading on the
+  quotient of a polynomial ring by a homogeneous ideal exists
+  (`TauCeti.GradedAlgebra.gradedAlgebraQuotientPiece`), so the global complete intersection is
+  available as a `Proj`, but its twisting line bundle `𝒪(1)` and that bundle's class in
+  `TauCeti.AlgebraicGeometry.LineBundleClass` are not.
 * The fundamental-group clauses of Theorem 3.3.1: finite étale schemes over a connected scheme are
   not given the structure of a Galois category with a fibre functor.
 -/
 
-universe u
+universe u v
 
 namespace TauCetiRoadmap.PurityForFlatCohomology
 
@@ -129,7 +144,40 @@ theorem zariskiNagata_isEquivalence (R : Type u) [CommRing R] [IsLocalRing R]
     (finiteEtalePullback (puncturedSpectrum R).ι).IsEquivalence := by
   sorry
 
+/-! ## Layer 5: Perfectoid rings: Dieudonné modules and the key formula -/
+
+/-- **Katz: Frobenius-fixed vectors over an algebraically closed field.** For an algebraically
+closed field `K` of characteristic `p` and a finite-dimensional `K`-vector space `M` with a
+bijective Frobenius-semilinear endomorphism `F`, `M` has a basis of `F`-fixed vectors;
+equivalently `M^{F=1} ⊗_{𝔽_p} K → M` is an isomorphism. Katz, *p-adic properties of modular
+schemes and modular forms*, Proposition 4.1.1 (field case); Česnavičius–Scholze, proof of
+Claim 4.2.10.1. README §5.6. -/
+theorem frobeniusSemilinear_exists_fixed_basis (p : ℕ) [Fact p.Prime]
+    (K : Type u) [Field K] [CharP K p] [IsAlgClosed K]
+    (M : Type v) [AddCommGroup M] [Module K M] [FiniteDimensional K M]
+    (F : M →ₛₗ[frobenius K p] M) (hF : Function.Bijective F) :
+    ∃ b : Module.Basis (Fin (Module.finrank K M)) K M, ∀ i, F (b i) = b i := by
+  sorry
+
 /-! ## Layer 7: Global purity and the conjectures of Gabber -/
+
+/-- **Auslander's freeness criterion.** Over a regular local ring `R`, a finitely generated
+reflexive module `M` whose endomorphism module is isomorphic to a finite direct sum of copies of
+`M` is free. Auslander, *On the purity of the branch locus*, Theorem 1.3, as invoked in
+Česnavičius–Scholze, proof of Theorem 7.1.3. README §7.2. -/
+theorem free_of_endomorphisms_iso_pi (R : Type u) [CommRing R] [IsRegularLocalRing R]
+    (M : Type v) [AddCommGroup M] [Module R M] [Module.Finite R M] [Module.IsReflexive R M]
+    (r : ℕ) (h : Nonempty ((M →ₗ[R] M) ≃ₗ[R] (Fin r → M))) :
+    Module.Free R M := by
+  sorry
+
+/-- **Regular local rings are factorial** (Auslander–Buchsbaum). A regular local ring is a unique
+factorization domain; it is a domain by `TauCeti.IsRegularLocalRing.isDomain`. Applied to the
+strict henselization, which is again regular, it gives geometric factoriality. SGA 2, Exposé XI,
+Théorème 3.13(i). README §7.4. -/
+theorem isRegularLocalRing_uniqueFactorizationMonoid (R : Type u) [CommRing R]
+    [IsRegularLocalRing R] : UniqueFactorizationMonoid R := by
+  sorry
 
 /-- **Gabber's conjecture on the local Picard group.** For a Noetherian local ring `R` that is a
 complete intersection of dimension at least `3`, the Picard group of the punctured spectrum is

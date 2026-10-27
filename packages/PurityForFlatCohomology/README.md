@@ -41,7 +41,11 @@ ArithmeticGaloisDuality ──────────────────�
 
 The headline theorems stated in `Suggested.lean` are Zariski–Nagata purity in virtual dimension
 `≥ 2` and `≥ 3` (`zariskiNagata_full_faithful_connected`, `zariskiNagata_isEquivalence`, §1.8) and
-Gabber's local Picard conjecture (`localPicard_torsion_eq_one`, `localPicard_subsingleton`, §7.7).
+Gabber's local Picard conjecture (`localPicard_torsion_eq_one`, `localPicard_subsingleton`, §7.7), with
+three classical inputs proved here: Katz's theorem on Frobenius-fixed vectors
+(`frobeniusSemilinear_exists_fixed_basis`, §5.6), Auslander's freeness criterion
+(`free_of_endomorphisms_iso_pi`, §7.2) and factoriality of regular local rings
+(`isRegularLocalRing_uniqueFactorizationMonoid`, §7.4).
 The flat-cohomological headline theorems are specified in this README; the module docstring of
 `Suggested.lean` names the carrier each of them lacks at the pinned libraries.
 
@@ -50,8 +54,9 @@ The flat-cohomological headline theorems are specified in this README; the modul
 **This roadmap owns** the punctured spectrum of a semilocal ring; fppf cohomology with supports on
 the big fppf site of a scheme with its local-to-global spectral sequence, excision, finite flat
 descent and continuity; the non-Noetherian vanishing and Hartogs lemmas of [CS24] §7.2; Cohen
-presentations, complete intersections as a predicate on local rings (used only for Noetherian
-ones), and the virtual dimension; the local étale duality statements on excellent regular local rings used for the local
+presentations, the Lean restatement `IsCompleteIntersection` of the absolute case of
+DerivedDeRhamCohomology §0.19's complete-intersection homomorphisms (used only for Noetherian local
+rings), and the virtual dimension; the local étale duality statements on excellent regular local rings used for the local
 Lefschetz theorem; Gabber's bound on the étale depth; algebraization over punctured spectra and
 Zariski–Nagata purity in virtual dimension `≥ 3`; the crystalline key formula over perfect schemes
 ([CS24] §4.1); fppf cohomology of animated rings with its deformation triangle, `p`-adic continuity,
@@ -108,25 +113,25 @@ residue descriptions ([C19] §§2, 5, 6 and Appendix A).
   `p`-completely faithfully flat maps, Dieudonné theory over perfect fields*:
   FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.1.40, R07.1.41, R07.2.8.
 
-**Owned here and imported by later roadmaps.** Four roadmaps later in the merge order plan statements
-of this roadmap; each is owned here, and each of those roadmaps imports it from the section named
-rather than planning it.
+**Owned here and to be imported by later roadmaps.** Four roadmaps later in the merge order plan
+statements of this roadmap; each is owned here, and each of those roadmaps is to import it from the
+section named instead of planning it.
 
 - The crystalline key formula over perfect schemes with its pro-fppf site and the covariant Dieudonné
-  module over a perfect base (Layer 2, §§2.1–2.4): imported by PrismaticCohomologyPartIII §6.0 (its
+  module over a perfect base (Layer 2, §§2.1–2.4): to be imported by PrismaticCohomologyPartIII §6.0 (its
   perfect-base Dieudonné comparison) and by SchemeAndStackFoundationsPartII.
 - Fppf cohomology of animated rings, its deformation triangle, `p`-adic continuity and excision
-  (Layer 3, §§3.1–3.5): imported by PrismaticCohomologyPartIII §6.0 (its `p`-adic continuity,
+  (Layer 3, §§3.1–3.5): to be imported by PrismaticCohomologyPartIII §6.0 (its `p`-adic continuity,
   excision and animated flat cohomology) and by SchemeAndStackFoundationsPartII (its animated group
   points and cotangent deformation).
-- The local étale duality statements and the local Lefschetz theorem (§§1.4–1.5): imported by
+- The local étale duality statements and the local Lefschetz theorem (§§1.4–1.5): to be imported by
   EtaleDualityAndPerverseSheavesPartII (its local Lefschetz hyperplane theorem).
-- The virtual dimension and complete intersections (§1.1), the counterexamples of §1.3, factoriality
-  of regular local rings, parafactoriality and the local Grothendieck–Lefschetz theorem (§§7.4–7.6):
-  imported by DeformationAndDerivedPatchingAlgebra (its parafactoriality of local complete
-  intersections of dimension `≥ 4`).
-- The Brauer comparison of Gabber and de Jong for schemes with an ample line bundle (§7.11): imported
-  by SchemeAndStackFoundationsPartII (its Layer 1 Brauer comparison).
+- Complete intersections with the independence of the presentation (§1.1), parafactoriality and the
+  local Grothendieck–Lefschetz theorem (§§7.5–7.6): to be imported by DeformationAndDerivedPatchingAlgebra
+  (its absolute local complete intersections and its parafactoriality of local complete intersections
+  of dimension `≥ 4`).
+- The Brauer comparison of Gabber and de Jong for schemes with an ample line bundle (§7.11): to be
+  imported by SchemeAndStackFoundationsPartII (its Layer 1 Brauer comparison).
 
 ## Conventions
 
@@ -184,8 +189,10 @@ Pinned at `6b7abb3c7686292736be2955bd3eb9ebf63b456a`; each declaration was read 
   None of them carries cohomology with supports.
 - `CategoryTheory.Sheaf.H`, `CategoryTheory.Sheaf.cohomologyPresheaf` and the long exact and
   Mayer–Vietoris sequences (`Mathlib/CategoryTheory/Sites/SheafCohomology/`): sheaf cohomology as
-  Ext from the constant sheaf. `cohomologyPresheaf` takes values in abelian groups of the universe
-  of the site's morphisms, in which the big fppf site has no sheafification instance at the pin.
+  Ext from the constant sheaf. `cohomologyPresheaf` requires its input sheaf to take values in
+  `AddCommGrpCat.{v}`, with `v` the universe of the site's morphisms, together with `HasSheafify` at that
+  coefficient universe, which the big fppf site lacks at the pin; its output takes values in
+  `AddCommGrpCat.{w′}`, the universe of the Ext groups, a separate parameter.
 - `localCohomology` (`Mathlib/Algebra/Homology/LocalCohomology.lean`): local cohomology of modules
   as a colimit of Ext groups; compared with Zariski supports by SchemeAndStackFoundations §2.7.
 - `IsRegularLocalRing` (`Mathlib/RingTheory/RegularLocalRing/Defs.lean`): a Noetherian local ring
@@ -202,7 +209,7 @@ Pinned at `6b7abb3c7686292736be2955bd3eb9ebf63b456a`; each declaration was read 
 - `CategoryTheory.PreGaloisCategory`, `CategoryTheory.PreGaloisCategory.functorToContAction`
   (`Mathlib/CategoryTheory/Galois/Equivalence.lean`): the fundamental theorem of Galois categories.
 - `WittVector`, `WittVector.teichmuller`, `PreTilt`, `WittVector.fontaineTheta`, `frobenius`,
-  `PerfectRing`, `IsAlgClosed`, `Module.FinitePresentation`, `Module.Free`, `Module.IsReflexive`,
+  `PerfectRing`, `IsAlgClosed`, `Module.FinitePresentation`, `Module.Free`, `Module.Basis`, `Module.IsReflexive`,
   `IsAzumaya`, `IsDiscreteValuationRing`, `UniqueFactorizationMonoid`, `ValuationRing`,
   `CategoryTheory.Abelian.Ext`, `DerivedCategory`.
 
@@ -222,11 +229,20 @@ Pinned at `a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039`.
   multiplicative type and tori over a field; §7.15 extends them to a base scheme.
 - `TauCeti.HopfAlgebra.pointsFppfSheaf` (`TauCeti/Algebra/AlgebraicGroup/Fppf/Basic.lean`): the
   points of an affine group as an fppf sheaf on affine schemes over `Spec R`.
+- `TauCeti.GradedAlgebra.gradedAlgebraQuotientPiece`
+  (`TauCeti/RingTheory/GradedAlgebra/Homogeneous/Quotient.lean`): the grading induced on the quotient by
+  a homogeneous ideal, the degree-`i` piece being the image of the degree-`i` piece; it grades the
+  homogeneous coordinate ring of §7.9. The twisting sheaf `𝒪(1)` on `Proj` is not at the pin.
+- `TauCeti.IsRegularLocalRing.isDomain` (`TauCeti/RingTheory/RegularLocalRing/Basic.lean`): the instance
+  making a regular local ring a domain, so that `UniqueFactorizationMonoid R` is meaningful in §7.4.
 
 ### From TauCetiRoadmap.SchemeAndStackFoundations
 
-§0.4 `coherent_extension` (coherence of `j_*F` across closed subsets of depth `≥ 2`, EGA IV
-5.11.4); §0.6 `coherent_hartogs`, `reflexive_extension_normal`; §§0.12–0.13 the henselization of a
+§0.4 `coherent_extension` (a coherent sheaf on an open of a Noetherian scheme is the restriction of a
+coherent sheaf on the whole scheme; it does not assert coherence of `j_*F`); §0.6 `coherent_hartogs`,
+`reflexive_extension_normal`, `reflexive_extension_of_depth` (for an open `j : U → X` of a locally
+Noetherian `X` with `depth 𝒪_{X,x} ≥ 2` at every `x ∉ U`, `j^*` and `j_*` are inverse equivalences between
+coherent reflexive modules on `X` and on `U`; in particular `j_*F` is coherent for coherent reflexive `F`); §§0.12–0.13 the henselization of a
 pair, `henselization_flat`, `henselization_noetherian`; §0.14 `henselian_finiteEtale_equivalence`;
 §0.17 `Module.depth`, `IsLocalRing.depth`, `Ring.IsCohenMacaulay`; §0.24 perfect schemes and
 perfection; §1.15 torsors; §1.18 stacks in groupoids and gerbes; §§2.1–2.3 cohomology on sites,
@@ -547,8 +563,10 @@ Mathlib `RingTheory.Sequence.IsWeaklyRegular`, `Localization.Away`.
 For `R = k⟦x, y⟧` and `G = μ_p`, §0.5 gives `Γ(U_R, 𝒪) = R`, so `μ_p(U_R) = μ_p(R)` and the Kummer
 sequence (SchemeAndStackFoundations §2.11) embeds `H^1(R, μ_p) = R^×/R^{×p}` into `H^1(U_R, μ_p)`;
 the long exact sequence of §0.2 then gives `H^0_𝔪(R, μ_p) = H^1_𝔪(R, μ_p) = 0`, and the vanishing of
-`H^2_𝔪(R, μ_p)` amounts to surjectivity of `H^1(R, μ_p) → H^1(U_R, μ_p)`, which needs
-`Pic(U_R)[p] = 0` (§7.7). For a discrete valuation ring `R` with fraction field `K` the same
+`H^2_𝔪(R, μ_p)` is equivalent to surjectivity of `H^1(R, μ_p) → H^1(U_R, μ_p)` together with
+injectivity of `H^2(R, μ_p) → H^2(U_R, μ_p)`; the former needs `Pic(U_R)[p] = 0` (§7.7), and surjectivity
+alone gives only `H^2_𝔪(R, μ_p) ↪ H^2(R, μ_p)`, a group that can be nonzero (for `k = ℝ` and `p = 2` the
+Kummer sequence and `Pic R = 0` identify it with `Br(R)[2] = Br(ℝ)[2] = ℤ/2`). The vanishing itself holds by §6.5. For a discrete valuation ring `R` with fraction field `K` the same
 sequence gives `H^0_𝔪 = H^1_𝔪 = 0` and an injection `K^×/(R^× K^{×p}) ≅ ℤ/p ↪ H^2_𝔪(R, μ_p)` through
 the valuation modulo `p`, so the bound `i ≤ dim R` of §6.5 is sharp in dimension one.
 
@@ -600,6 +618,11 @@ API (each a target):
 - For `f_1, …, f_r ∈ 𝔪`, `virtualDimension (R/(f_1, …, f_r)) ≥ virtualDimension R − r`.
 - A regular local ring is a complete intersection with `virtualDimension R = dim R`; a quotient of a
   regular local ring by one nonzero element of its maximal ideal is a complete intersection.
+- `IsCompleteIntersection R` holds iff the structure map from `ℤ` localized at the residue
+  characteristic (`ℚ` in residue characteristic `0`) to `R` is complete intersection at `𝔪` in the sense
+  of DerivedDeRhamCohomology §0.19: the target `R′` of a Cohen factorization of that map to `R̂` is flat
+  over a regular base with regular closed fibre, hence regular, so it is a Cohen presentation, and
+  gap:complete-intersection-presentations makes the choice of presentation irrelevant.
 - A complete intersection is Cohen–Macaulay, every Cohen presentation of it has kernel generated
   by a regular sequence, and complete intersections are stable under completion, henselization and
   strict henselization (gap:complete-intersection-presentations, gap:flat-local-complete-intersection).
@@ -669,9 +692,10 @@ then `H^i_ét(Spec R[1/f], ℤ/ℓ) = 0` for `i > d` ([ILO14] XV, Corollaire 1.2
 absolute purity, its restriction to an open `j : V → Spec R` is `j^*((μ_ℓ^{⊗d})[2d])` and is dualizing
 on `V`, and `Rj_* ∘ D ≅ D ∘ j_!` ([ILO14] XVII, Théorème 0.2 of the published version, Théorème 0.9 of
 arXiv v1; [ILO14] XVI, Théorème 3.1.1);
-(c) local duality: for bounded constructible `K`, `H^i_𝔪(R, K)` is Pontryagin dual to the stalk at
-the closed point of `H^{−i}(RHom(K, (μ_ℓ^{⊗d})[2d]))` (SGA 5 I, (4.2.2), as used in [CS24] proof of
-Lemma 3.2.3, p. 33).
+(c) local duality: if `R` is strictly henselian, then for a bounded constructible complex `K` of
+`ℤ/ℓ`-modules, `H^i_𝔪(R, K)` is Pontryagin dual to the stalk at the closed point of
+`H^{−i}(RHom(K, (μ_ℓ^{⊗d})[2d]))` (SGA 5 I, (4.2.2), as used in [CS24] proof of Lemma 3.2.3, p. 33,
+which first reduces to strictly henselian `R`).
 *Needs:* EtaleCohomologyFoundations §F.5 (exceptional inverse image, biduality and duality on
 traits); LefschetzPencilsAndVanishingCycles §0.10 (absolute purity, which normalises (b));
 SchemeAndStackFoundations §§0.21, 2.15 (excellence, Gabber's affine proper base change).
@@ -685,6 +709,9 @@ SchemeAndStackFoundations §§0.21, 2.15 (excellence, Gabber's affine proper bas
 - The twist and shift in (b) are forced by absolute purity: for `R` strictly henselian,
   `H^{2d}_𝔪(R, μ_ℓ^{⊗d}) ≅ ℤ/ℓ` and `H^i_𝔪(R, ℤ/ℓ) = 0` for `i ≠ 2d`; a shift by `[d]` would put the
   class in the wrong degree.
+- Strict henselianity is needed in (c): for the finite field `R = 𝔽_2` (`d = 0`), `ℓ = 3`, `K = ℤ/3` and
+  `i = 1`, `H^1_𝔪(R, K) = H^1(𝔽_2, ℤ/3) = Hom(Ẑ, ℤ/3) ≅ ℤ/3`, while `RHom(K, ℤ/3)` is `ℤ/3` in degree `0`,
+  so its stalk in degree `−1` is `0`; over the separable closure `𝔽̄_2` both sides are `0`.
 
 ### 1.5 The local Lefschetz theorem
 
@@ -732,13 +759,14 @@ ModularCurves Layer 4D.
 
 ### 1.7 Algebraization over punctured spectra
 
-Prove, for a Noetherian local ring `(A, 𝔪)` with a dualizing complex, `U = Spec A ∖ {𝔪}`, an ideal
-`I ⊂ A` and the `I`-adic formal completion of `U`: (a) if `A` is `I`-adically complete and every
-associated point `x` of a coherent `𝒪_U`-module `F` has `dim \overline{\{x\}} > cd(A, I) + 1`, then
+Prove, for a Noetherian local ring `(A, 𝔪)` with a dualizing complex, `X = Spec A`, `U = X ∖ {𝔪}`, an
+ideal `I ⊂ 𝔪` and the `I`-adic formal completion of `U`; this is Stacks Situation 0EHC with `𝔞 = 𝔪`, so
+that `V(𝔞) = {𝔪}` has dimension `0`: (a) if `A` is `I`-adically complete and every associated point
+`x` of a coherent `𝒪_U`-module `F` has `dim \overline{\{x\}} > cd(A, I) + 1`, the closure taken in `X`, then
 `colim_V H^0(V, F) ≅ lim_n H^0(U, F/I^n F)` over open `V ⊃ U ∩ V(I)` (Stacks, Lemma 0DXR), and
 `cd(A, I)` is at most the number of generators of `I` (Stacks, Lemma 0DX9); (b) if `Spec A` is
 equidimensional, `Spec A ∖ V(I)` is Cohen–Macaulay, `I` is generated by `d` elements,
-`dim A − dim V(𝔞) > d + 2` in Stacks Situation 0EHC, and `(F_n)` is a coherent formal module on
+`dim A − dim V(𝔞) = dim A > d + 2`, and `(F_n)` is a coherent formal module on
 `(U, I𝒪_U)` whose completed stalks at points of `U ∩ V(I)` are locally free off `V(I)` (for instance
 every `F_n` finite locally free over `𝒪_U/I^n`), then `(F_n)` extends to `Spec A` and, if `A` is
 `I`-adically complete, algebraizes to a coherent module on `U` (Stacks, Lemma 0EJP). These are the
@@ -751,8 +779,9 @@ on punctured spectra).
 - For `I = 𝔪`, `U ∩ V(I) = ∅`: the colimit over opens containing `∅` is `H^0(∅, F) = 0` and every
   `F/𝔪ⁿF` vanishes on `U`, so both sides of (a) are zero.
 - For a complete regular local `A` of dimension `4` and `I` generated by one element, (b) applies
-  with `d = 1` and `dim V(𝔞) = 0`, since `4 > 3`; for dimension `3` it does not, matching the
-  threshold `vdim ≥ 3` of §1.8.
+  with `d = 1`, since `dim A = 4 > 3`; for dimension `3` it does not (`3 > 3` fails), matching the
+  threshold `vdim ≥ 3` of §1.8. Taking `𝔞 = 0` instead would give `dim V(𝔞) = 4` and `4 − 4 > 3`
+  false: the closed set `V(𝔞)` must be the closed point, as fixed above.
 - The dimension bound in (a) cannot be dropped: for `A = k⟦x, y⟧`, `I = (x)` and `F = 𝒪_U`,
   `cd(A, I) = 1` and the generic point has closure of dimension `2 = cd + 1`, and indeed
   `Σ_n y^{−n²} xⁿ ∈ lim_n Γ(U, 𝒪/xⁿ) = k((y))⟦x⟧` is not the expansion of a function on any open
@@ -874,8 +903,11 @@ isomorphisms change `m` by elements of `(V − 1)𝕄(G)`.
 *Needs:* §2.1; SchemeAndStackFoundations §§2.1–2.3, 2.10.
 
 **Checks.**
-- For `G = ℤ/p` over `S = Spec A`: `ℤ/p(A) = {a : a^p = a}` and the étale `ℰxt^1` is
-  `A/(φ − 1)A`, the Artin–Schreier description (SchemeAndStackFoundations §2.11).
+- For `G = ℤ/p` over `S = Spec A`: `ℤ/p(A) = {a : a^p = a}`, and the presheaf value `A/(φ − 1)A` is
+  `H^1_fppf(A, ℤ/p)`, the Artin–Schreier description (SchemeAndStackFoundations §2.11); but the étale
+  `ℰxt^1` is the étale sheafification of this quotient presheaf, which is `0`, since every
+  Artin–Schreier equation acquires a root étale-locally. For `A = 𝔽_p` the presheaf value is `𝔽_p`
+  while the sheaf is `0`; for `A = 𝔽̄_p` both are `0`. Reading `ℰxt^1` sectionwise is the wrong model.
 - For `G = μ_p` over perfect `A`: `V − 1 = pφ^{-1} − 1 = −1` on `A`, invertible, so both sheaves vanish,
   matching `μ_p(A) = 0` and `A^×/A^{×p} = 0` for perfect `A`.
 - Without passing to `V = 1`: for `A = 𝔽̄_p` and `G = ℤ/p`, `𝕄(G) = 𝔽̄_p ≠ ℤ/p = G(A)`.
@@ -913,7 +945,9 @@ API (each a target):
 - For a perfect `𝔽_p`-algebra `A` and `a = b^p ∈ A`, the `α_p`-torsor `A[t]/(t^p − a) ≅ A[s]/(s^p)` is
   not reduced, hence not perfect, and its perfection is `A`: covers must be perfected, as Lemma 4.1.6
   does, to stay on perfect schemes where `𝕄` is defined.
-- A pro-fppf cover is an fpqc cover, so fpqc sheaves such as `𝕄(G)` are pro-fppf sheaves.
+- Faithful flatness is part of a cover: `Spec 0 → Spec ℤ` is pro-ppf (`0 = ℤ/(1)` is flat and finitely
+  presented over `ℤ`) but not a pro-fppf cover, since its image is empty and `ℤ → 0` is not faithfully
+  flat; admitting it would make the empty family cover every scheme and every sheaf zero.
 
 ### 2.4 The key formula over perfect schemes
 
@@ -957,7 +991,7 @@ and their modules are EnhancedDerivedSheaves E5:animation; the cotangent complex
 
 Prove: for `G` flat, affine and of finite presentation over `R` with unit section `e`, and a square-zero
 extension `A′ ↠ A` of animated `R`-algebras with ideal `M`, there is a functorial fibre sequence of
-animated abelian groups `G(A′) → G(A) → Hom_R(e^*L_{G/R}, M[1])` ([CS24] Theorem 5.1.13, p. 51). Prove
+animated abelian groups `G(A′) → G(A) → Hom_R(e^*L_{G/R}, M[1])` ([CS24] Theorem 5.1.13, p. 52). Prove
 its discrete smooth form: for `G` smooth commutative over a ring `B` and a closed immersion
 `j : Spec B/J → Spec B` with `J² = 0`, the sequence `0 → Hom(e^*Ω^1_{G/B}, J) → G → j_*G → 0` is exact on
 `(Spec B)_ét` ([Čes15] Lemma B.14, as used in [CS24] proof of Lemma 4.1.11, p. 39).
@@ -988,8 +1022,11 @@ E5:animation; SchemeAndStackFoundations §2.10; Tau Ceti
 `TauCeti.FiniteLocallyFreeCommAffineGroupSchemeCat.cartierDual`.
 
 API (each a target):
-- Functoriality in `A`, in `G` and in the support; long exact sequences for short exact sequences of
-  coefficients and the support triangle `RΓ_Z(A, G) → RΓ(A, G) → RΓ(Spec(π_0 A) ∖ Z, G)`.
+- For an open `U ⊂ Spec π_0(A)`, `RΓ(U_A, G)` is the derived limit of `RΓ_fppf(A′, G)` over the animated
+  `A`-algebras `A′` fppf over `A` such that `Spec π_0(A′) → Spec π_0(A)` factors through `U` ([CS24]
+  §5.2.5, p. 55); it is not the classical flat cohomology of the scheme `U`. Functoriality in `A`, in `G`
+  and in the support; long exact sequences for short exact sequences of coefficients and the support
+  triangle `RΓ_Z(A, G) → RΓ(A, G) → RΓ(U_A, G)` with `U = Spec π_0(A) ∖ Z`.
 - Base change to `π_0` is an equivalence on étale and on finite étale algebras ([CS24] Proposition
   5.2.4).
 - fppf hyperdescent and Postnikov convergence `RΓ_fppf(A, G) ≅ Rlim_n RΓ_fppf(τ_{≤n}A, G)` for smooth or
@@ -998,6 +1035,9 @@ API (each a target):
 
 **Checks.**
 - For discrete `A` the construction agrees with §0.2.
+- The open in the support triangle is animated: for `A = k ⊕ k[1]`, `G = 𝔾_a` and `Z = ∅`, the triangle
+  gives `RΓ_∅(A, 𝔾_a) = fib(RΓ(A, 𝔾_a) → RΓ(U_A, 𝔾_a)) = fib(id) = 0`, whereas the classical open
+  `Spec k` would give `fib(A → k) = k[1]`, with `H^{−1} = k ≠ 0`.
 - For `G = μ_n`, `G^* = ℤ/n` and the Bégueri resolution is `0 → μ_n → Res_{(ℤ/n)/R}(𝔾_m) = 𝔾_m^n → Q → 0`
   with `ζ ↦ (ζ^i)_{i ∈ ℤ/n}`, the map adjoint to the Cartier pairing; the diagonal `ζ ↦ (ζ, …, ζ)` is not
   this map.
@@ -1055,7 +1095,7 @@ Prove: for `G` commutative finite locally free, a map `A → A′` of animated `
 generated ideal `I ⊂ π_0(A)` with `π_0(A)/I ≅ (π_0(A)/I) ⊗^L_A A′`, `RΓ_I(A, G) ≅ RΓ_I(A′, G)` ([CS24]
 Theorem 5.4.4, p. 67, through Lemmas 5.4.1–5.4.3, pp. 62–67); in particular, for a Noetherian local ring
 `(R, 𝔪)` and commutative finite flat `G`, `H^i_𝔪(R, G) ≅ H^i_𝔪(R̂, G)` for every `i` ([CS24] Corollary
-5.4.5, p. 67).
+5.4.5, p. 68).
 *Needs:* §§2.4, 3.3, 3.4; DerivedModuleAlgebra §1.5 (derived completion along a principal ideal).
 
 **Checks.**
@@ -1079,8 +1119,15 @@ along `p`-completely faithfully flat covers); FiniteFlatGroupsAndIntegralPadicHo
 - For an fppf cover the statement is fppf descent (§3.2).
 - For `ℤ_(p) → ℤ_p`, reduction modulo `p` is an isomorphism, so the Čech nerve is an fpqc hypercover
   modulo `p` and Corollary 5.5.3 recovers `RΓ_{V(p)}(ℤ_(p), G) ≅ RΓ_{V(p)}(ℤ_p, G)` of §3.5.
-- For `G = μ_p` and `A → A^•` the Čech nerve of `ℤ_p → ℤ_p[p^{1/p^∞}]^∧`, the descent computes
-  `RΓ_{(p)}(ℤ_p, μ_p)` from perfectoid terms, the pattern used in §6.2.
+- For a perfectoid `A`, a `p`-completely faithfully flat map of perfectoid rings `A → A′` and `A^•` the
+  termwise `p`-adically completed Čech nerve, the terms `A′ ⊗̂_A ⋯ ⊗̂_A A′` are perfectoid
+  (PerfectoidQuotients §0.6, `perfectoid_completed_tensor`) and `A/p → A^•/p` is the Čech nerve of the
+  fpqc cover `A/p → A′/p`, so Corollary 5.5.3 computes `RΓ_Z(A, G)` from perfectoid terms: the pattern
+  used in §6.2. The base must be perfectoid and the tensor powers completed: for
+  `ℤ_p → B = ℤ_p[p^{1/p^∞}]^∧` the uncompleted term `B ⊗_{ℤ_p} B` is not `p`-adically complete (the partial sums
+  of `Σ_i p^i b_i ⊗ b_i` with `b_i = p^{1/p^i}` are `p`-adically Cauchy without a limit, since every
+  element of `B ⊗_{ℤ_p} B` gives a coefficient matrix of finite rank), hence not perfectoid, although
+  the descent statement itself holds for it since only the reduction modulo `p` enters.
 
 ### Examples
 
@@ -1284,7 +1331,9 @@ change is right exact and products are exact.
 
 **Checks.**
 - For `M = R` it is the identity `R = ∏ R_i`.
-- Finite presentation is needed: for infinite `I` and `M = ⊕_i R_i`, `M → ∏_i R_i` is not surjective.
+- Finite presentation is needed: for `I = ℕ`, `R_i = 𝔽_2` for every `i` and `M = ⊕_i 𝔽_2`, the map
+  `M → ∏_i M ⊗_R R_i = ∏_i 𝔽_2` misses `(1, 1, …)`. Infinitely many nonzero factors are needed: with all
+  `R_i = 0` the map is `0 → 0`, and with only `R_0 = 𝔽_2` nonzero it is the identity of `𝔽_2`.
 - For `M = R/J` with `J = ∏ J_i` finitely generated, it gives `R/J = ∏ R_i/J_i`.
 
 ### 5.5 Dieudonné modules over a product of perfectoid rings
@@ -1304,9 +1353,11 @@ gap:prismatic-dieudonne-perfectoid; Mathlib `WittVector`.
 
 ### 5.6 Frobenius-fixed vectors over an algebraically closed field
 
-Prove (Katz): for an algebraically closed field `K` of characteristic `p` and a finite-dimensional
-`K`-vector space `M` with a bijective Frobenius-semilinear `F`, `M^{F=1}` is a finite-dimensional
-`𝔽_p`-space and `M^{F=1} ⊗_{𝔽_p} K → M` is an isomorphism compatible with `F`; consequently `V − 1` is
+Prove `frobeniusSemilinear_exists_fixed_basis` (Katz): for an algebraically closed field `K` of
+characteristic `p` and a finite-dimensional `K`-vector space `M` with a bijective Frobenius-semilinear
+`F`, `M` has a basis of `F`-fixed vectors; equivalently `M^{F=1}` is an `𝔽_p`-space of dimension
+`dim_K M` and `M^{F=1} ⊗_{𝔽_p} K → M` is an isomorphism compatible with `F` (an `F`-fixed `K`-combination
+of a fixed basis has its coefficients in `𝔽_p`); consequently `V − 1` is
 surjective for every bijective `φ^{-1}`-semilinear `V`, and `x ↦ ξ x − x^p` is surjective on `K` for
 `ξ ∈ K^×` ([Kat73] Proposition 4.1.1, field case, pp. 142–145; [CS24] proof of Claim 4.2.10.1, p. 45).
 Route: in a basis `F(x) = Ax^{(p)}` with `A` invertible; `x ↦ Ax^{(p)} − x` is finite étale of degree
@@ -1346,8 +1397,11 @@ fields); FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.1.40; Mathlib `Valuat
 
 **Checks.**
 - For `I` a singleton, `A = 𝒪_C` and `a = p`: `H^j(C, G) = 0` for `j ≥ 1` and `G(𝒪_C) = G(C)`.
-- For `G = μ_p`: `(𝕄(μ_p)[1/[a^♭]])^{V=1} = μ_p(K) = ∏ μ_p(K_i)`, with `μ_p(K_i) = ℤ/p` if `K_i` has
-  characteristic `0` and `0` if it has characteristic `p`.
+- For `G = μ_p` and `a` a nonzerodivisor (every component `a_i ≠ 0`):
+  `(𝕄(μ_p)[1/[a^♭]])^{V=1} ≅ μ_p(A[1/a]) = μ_p(K) = ∏ μ_p(K_i)`, with `μ_p(K_i) = ℤ/p` if `K_i` has
+  characteristic `0` and `0` if it has characteristic `p`. For `a = 0` the localization is the zero
+  module and `A[1/a] = 0`, so both sides are `0`, not `μ_p(K)`: the nonzerodivisor hypothesis of the
+  bijectivity clause is needed.
 - Algebraic closedness is needed for surjectivity of `V − 1`: over a perfectoid field `C` that is not
   algebraically closed, `H^1(C, ℤ/p)` can be nonzero.
 - For `I` infinite, `Spec ∏ V_i` has the Stone–Čech compactification of `I` as its space of components,
@@ -1596,14 +1650,15 @@ ModularCurves Layer 4D.
   `i < c` and `H^c(X, μ_p) ↪ H^c(X ∖ Z, μ_p)`, also in characteristic `p`. For `c = 2`, a point on a
   smooth surface, this is bijectivity on `H^1` (purity for `μ_p`-torsors, §7.3) and injectivity on
   `H^2`. The bound is sharp at `c = 1`: for `X = 𝔾_m` over an algebraically closed field of
-  characteristic `≠ p` and `Z = {1}`, `H^0` is bijective and `H^1(X, μ_p) = ℤ/p · [t] ↪
-  H^1(X ∖ Z, μ_p) = (ℤ/p)² = ⟨[t], [t − 1]⟩` (Kummer; both Picard groups vanish) is injective but
+  characteristic `≠ p` and `Z = {1}`, `H^0` is bijective and `H^1(X, μ_p) = ℤ/p · [t]`
+  `↪ H^1(X ∖ Z, μ_p) = (ℤ/p)² = ⟨[t], [t − 1]⟩` (Kummer; both Picard groups vanish) is injective but
   not onto.
 
 ### 7.2 Auslander's freeness criterion through endomorphisms
 
-Prove: for a regular local ring `R` and a finitely generated reflexive `R`-module `M` (Mathlib
-`Module.IsReflexive`) with `Hom_R(M, M) ≅ M^{⊕r}` for some `r`, `M` is free ([Aus62] Theorem 1.3, as
+Prove `free_of_endomorphisms_iso_pi`: for a regular local ring `R` and a finitely generated reflexive
+`R`-module `M` (Mathlib `Module.IsReflexive`) with `Hom_R(M, M) ≅ M^{⊕r}` as `R`-modules for some `r`,
+`M` is free ([Aus62] Theorem 1.3, as
 invoked in [CS24] proof of Theorem 7.1.3, p. 88). The homological proof of Auslander is part of this
 target; the Auslander–Buchsbaum formula alone does not show that the endomorphism condition forces
 maximal depth.
@@ -1626,11 +1681,16 @@ closed subset with `j : X ∖ Z → X` quasi-compact and every `𝒪_{X,z}`, `z 
 every `G`-gerbe `𝔅` over `X`, `𝔅(X) → 𝔅(X ∖ Z)` is an equivalence; in particular
 `ker(H²(X, G) → H²(X ∖ Z, G))` is trivial ([CS24] Theorem 7.1.3, pp. 87–88, extending [MB85] Lemme 2).
 Route: gerbes are étale locally `BG`, which is smooth; Zariski-locally reduce to `X` local Noetherian;
-full faithfulness by §0.5(b) (torsors are affine); for essential surjectivity, `j_*(𝒪_Y)` is coherent
-(SchemeAndStackFoundations §0.4, `coherent_extension`) and flat by §7.2, because
-`Hom(j_*𝒪_Y, j_*𝒪_Y) ≅ (j_*𝒪_Y)^{⊕r}` may be checked over `X ∖ Z` for reflexive modules
-(SchemeAndStackFoundations §0.6), where the action gives `Hom(𝒪_G ⊗ 𝒪_Y, 𝒪_Y) ≅ Hom(𝒪_Y, 𝒪_Y)`.
-*Needs:* §§0.1, 0.5, 7.2; SchemeAndStackFoundations §§0.4, 0.6, 1.15, 1.18.
+full faithfulness by §0.5(b) (torsors are affine); for essential surjectivity, with `Z` the closed point
+of a regular local `X` of dimension `≥ 2` (so `depth 𝒪_X ≥ 2` along `Z`) and `Y` a torsor over `X ∖ Z`,
+`𝒪_Y` is finite locally free, hence coherent reflexive, over `X ∖ Z`, so `j_*(𝒪_Y)` is coherent and
+reflexive and `j^*`, `j_*` are inverse equivalences on coherent reflexive modules
+(SchemeAndStackFoundations §0.6, `reflexive_extension_of_depth`). It is flat by §7.2, because
+`Hom(j_*𝒪_Y, j_*𝒪_Y) ≅ (j_*𝒪_Y)^{⊕r}` (both sides reflexive) may be checked over `X ∖ Z`, where `𝒪_G` is
+free of rank `r` and the coaction `a : 𝒪_Y → 𝒪_G ⊗ 𝒪_Y` induces `Hom(𝒪_G, 𝒪_Y) ≅ Hom(𝒪_Y, 𝒪_Y)`,
+sending `f` to the composite of `(f ⊗ id) ∘ a` with multiplication `𝒪_Y ⊗ 𝒪_Y → 𝒪_Y` ([CS24] proof of
+Theorem 7.1.3, p. 88); its source is `𝒪_Y^{⊕r}`.
+*Needs:* §§0.1, 0.5, 7.2; SchemeAndStackFoundations §§0.6 (`reflexive_extension_of_depth`), 1.15, 1.18.
 
 **Checks.**
 - For `X = Spec R`, `R` regular local of dimension `2` and `G = ℤ/n` with `n` invertible, this is
@@ -1638,18 +1698,23 @@ full faithfulness by §0.5(b) (torsors are affine); for essential surjectivity, 
 - For `G = α_p` over `𝔽_p⟦x, y⟧` every `α_p`-torsor on `U_R` extends, consistent with §6.5 in degree `1`.
 - Regularity cannot be weakened to normality: the `μ_2`-torsor `ℂ⟦x, y⟧` over the punctured spectrum of
   `ℂ⟦x, y⟧^{μ_2}` does not extend.
+- The Hom identification has source `Hom(𝒪_G, 𝒪_Y)`: for the trivial torsor `Y = G = (ℤ/2)_k` over a
+  field, `Hom_k(𝒪_G, 𝒪_Y)` and `Hom_k(𝒪_Y, 𝒪_Y)` both have dimension `4`, while `Hom_k(𝒪_G ⊗ 𝒪_Y, 𝒪_Y)` has
+  dimension `8`, so no isomorphism with the latter exists.
 
 ### 7.4 Regular local rings are factorial
 
-Prove: a regular local ring is a unique factorization domain (Mathlib `UniqueFactorizationMonoid`), and so
-is its strict henselization (Auslander–Buchsbaum; [SGA2] XI, Théorème 3.13(i), p. 105). Route: the strict
+Prove `isRegularLocalRing_uniqueFactorizationMonoid`: a regular local ring is a unique factorization
+domain (Mathlib `UniqueFactorizationMonoid`; it is a domain by Tau Ceti `TauCeti.IsRegularLocalRing.isDomain`),
+and so is its strict henselization (Auslander–Buchsbaum; [SGA2] XI, Théorème 3.13(i), p. 105). Route: the strict
 henselization of a regular local ring is regular (ModularCurves Layer 4D: it is Noetherian, flat with
 closed fibre a field, so its dimension and embedding dimension are those of `R`); induct on the
 dimension: for `x ∈ 𝔪 ∖ 𝔪²`, `x` is prime, a height-one prime `P` of `R` gives a rank-one projective
 module `P[1/x]` over `R[1/x]` (locally principal by induction), which has a finite free resolution
 (PurityOfBranchLocus §0.3), hence is stably free of rank one, hence free; Nagata's criterion concludes.
 *Needs:* PurityOfBranchLocus §0.3; ModularCurves Layer 4D; SchemeAndStackFoundations §3.4 (Weil
-divisors and Picard groups); Mathlib `IsRegularLocalRing`, `UniqueFactorizationMonoid`.
+divisors and Picard groups); Mathlib `IsRegularLocalRing`, `UniqueFactorizationMonoid`; Tau Ceti
+`TauCeti.IsRegularLocalRing.isDomain`.
 
 **Checks.**
 - A discrete valuation ring is factorial.
@@ -1692,13 +1757,24 @@ API (each a target):
 Prove: a Noetherian local complete intersection of dimension `≥ 4` is parafactorial ([SGA2] XI, Théorème
 3.13(ii), p. 105; used in [CS24] Theorem 7.2.1 and [C19] proof of Corollary 2.5). Route: SGA 2's argument —
 reduce to complete `R` (§7.5, descent from the completion); write `R = R′/(f)` with `R′` a complete
-intersection of dimension `≥ 5` and `f` regular; the conditions Lef and Leff for `(Spec R′, V(f))` (SGA 2 X
-§2), the infinitesimal Picard sequence (SGA 2 XI 1.1) and the comparison of `Pic(U_{R′})` with the
-formal Picard group along `V(f)` (SGA 2 XI 2.1–2.2) give injectivity of `Pic(U_{R′}) → Pic(U_R)` and,
-by induction on the number of equations from the regular case (§7.4), parafactoriality (SGA 2 XI 3.12,
-3.16–3.17).
+intersection of dimension `≥ 5` with fewer equations, complete along `(f)`, and `f` regular, and argue by
+induction on the number of equations from the regular case (§7.4). Put `X = U_{R′}` and `Y = U_R ⊂ X`.
+The hypersurface Picard isomorphism `Pic(X) ≅ Pic(Y)` ([SGA2] XI, Lemme 3.17, p. 107) needs: depth
+`≥ 2` at closed points of `X` and depth `≥ 3` at closed points of `Y` (these give Leff`(X, Y)`, SGA 2 X
+2.1), `depth R ≥ 4` (so `H^1(Y, 𝒪_Y) = H^2(Y, 𝒪_Y) = 0` and the infinitesimal Picard sequence of SGA 2
+XI 1.1 gives bijectivity on every thickening), and parafactoriality of the local rings at the closed
+points of `X` outside `Y` (for SGA 2 XI 3.12 on the opens `V ⊃ Y`). The local rings of `X` at closed
+points are complete intersections of dimension `≥ 4` with fewer equations, hence Cohen–Macaulay of depth
+`≥ 4` and, by induction, parafactorial, and `depth R = dim R ≥ 4`; so all hypotheses hold, the
+induction hypothesis `Pic(X) = 0` gives `Pic(Y) = 0`, and `depth R ≥ 2` with §7.5 gives
+parafactoriality. The Lef/Leff conditions, the infinitesimal lifting of line bundles and their
+algebraization (SGA 2 X §2, XI §§1–3) are part of this target. An injection `Pic(X) → Pic(Y)` alone
+(SGA 2 XI, Lemme 3.16) would not suffice: it transfers parafactoriality from `R` to `R′`, the wrong
+direction.
 *Needs:* §§0.1, 1.1, 7.4, 7.5; SchemeAndStackFoundations §§2.7, 3.4, 4.7–4.10 (formal completion and
-algebraization); DerivedDeRhamCohomology gap:complete-intersection-presentations.
+algebraization); PurityOfBranchLocus §0.3 (`IsRegularLocalRing.isRegularLocalRing_localization`, so that
+localizations of complete intersections are complete intersections); DerivedDeRhamCohomology
+gap:complete-intersection-presentations.
 
 **Checks.**
 - A regular local ring of dimension `4` is parafactorial (also by §7.4 and §7.5).
@@ -1759,13 +1835,17 @@ homogeneous coordinate ring `R = k[x_0, …, x_n]/(f_1, …, f_{n−d})` with `f
 satisfies `R ≅ ⊕_{m≥0} Γ(X, 𝒪(m))`, a line bundle `L` gives the graded module `⊕_m Γ(X, L(m))` restricting to
 a line bundle on `U_{R_𝔪}`, compatibly with tensor products, which gives an injection
 `Pic(X)/ℤ·[𝒪(1)] → Pic(U_{R_𝔪})`; `R_𝔪` is a complete intersection of dimension `d + 1`, and §7.7 applies.
-*Needs:* §7.7; SchemeAndStackFoundations §§0.3, 3.4; Mathlib `AlgebraicGeometry.Proj`.
+*Needs:* §7.7; SchemeAndStackFoundations §§0.3, 3.4; Mathlib `AlgebraicGeometry.Proj`; Tau Ceti
+`TauCeti.GradedAlgebra.gradedAlgebraQuotientPiece` (the grading of `R` induced from the polynomial ring).
 
 **Checks.**
 - A cubic threefold `X ⊂ ℙ⁴` has `Pic(X) = ℤ[𝒪(1)]`.
 - The quadric surface `xw − yz = 0` is `ℙ¹ × ℙ¹` with `Pic(X)/ℤ[𝒪(1)] ≅ ℤ`, torsion free but nonzero: the
   torsion restriction cannot be dropped in dimension `2`.
-- A plane cubic curve over `k̄` has infinite `(Pic(X)/ℤ[𝒪(1)])_tors`: dimension `≥ 2` is needed.
+- A smooth plane cubic over an algebraically closed field has infinite `(Pic(X)/ℤ[𝒪(1)])_tors` (its
+  prime-to-characteristic torsion points; [CS24] p. 89 uses an elliptic curve): dimension `≥ 2` is
+  needed. Smoothness matters for this Check: for the cuspidal cubic `y²z = x³` over `ℂ`,
+  `Pic^0(X) ≅ (ℂ, +)` is torsion free and, as `deg 𝒪(1) = 3`, the torsion subgroup is `ℤ/3`.
 
 ### 7.10 Torsion of 𝔾_m-cohomology for schemes with factorial strict henselizations
 
@@ -1901,11 +1981,18 @@ intersection of dimension `≥ 4` or regular of dimension `≥ 2`, `H²(X, 𝔾_
 Theorem 7.2.8, pp. 91–92; announced as Theorem 1.1.4, p. 4; footnotes 26–27). Route: (a) §0.5 gives degrees
 `≤ 1` (parafactorial rings have depth `≥ 2`); reduce by §0.2 to strictly local `X` and by §7.15 to `T = 𝔾_m`,
 where it says that `j_*L` is a line bundle for every line bundle `L` on `X ∖ Z`, which holds by Noetherian
-induction and parafactoriality. (b) injectivity from (a); for surjectivity on a class killed by `n`, choose
+induction and parafactoriality. (b) injectivity in degree `1` from §0.5(b) applied to `T`-torsors, which are affine: a complete
+intersection of dimension `≥ 3` or a regular ring of dimension `≥ 2` has depth `≥ 2`, so a torsor trivial
+on `X ∖ Z` has a section that extends ([CS24] Lemma 7.2.7(b)); injectivity in degree `2` from (a), whose
+hypothesis holds for complete intersections of dimension `≥ 4` (§7.6 applied to the strict
+henselization, again a complete intersection of the same dimension) and for regular rings of dimension
+`≥ 2` (§§7.4–7.5); (a) is not available in degree `1` for complete intersections of dimension `3`, which
+need not be parafactorial (the three-dimensional node has `Pic(U_R) ≅ ℤ`); for surjectivity on a class killed by `n`, choose
 `m` as in §7.15, lift through `[n] ∘ q : T → S` with finite locally free kernel `T[mn]`, and extend by §§6.2,
 6.5 and Noetherian induction; in the regular dimension-two case use (a) in degree `1` and §7.13 with Kummer
 in degree `2`.
-*Needs:* §§0.2, 0.5, 6.2, 6.5, 7.5, 7.13, 7.15; ModularCurves Layer 4D.
+*Needs:* §§0.2, 0.5, 6.2, 6.5, 7.4, 7.5, 7.6, 7.13, 7.15; ModularCurves Layer 4D;
+DerivedDeRhamCohomology gap:flat-local-complete-intersection.
 
 **Checks.**
 - For `X = Spec R`, `R` regular local of dimension `2`, `T = 𝔾_m`: `H²(R, 𝔾_m)_tors ≅ H²(U_R, 𝔾_m)_tors`, that
@@ -2295,18 +2382,18 @@ ModularCurves Layer 4D; ArithmeticGaloisDuality §R02.2.4.
 
 ## Downstream consumers
 
-These roadmaps are later in the merge order; each imports the sections named from here, which own
-them (see Scope and ownership).
+These roadmaps are later in the merge order; each is to import the sections named from here, which own
+them, instead of planning them (see Scope and ownership).
 
-- SchemeAndStackFoundationsPartII and PrismaticCohomologyPartIII §6.0 import the flat cohomology of
+- SchemeAndStackFoundationsPartII and PrismaticCohomologyPartIII §6.0 are to import the flat cohomology of
   animated rings, its deformation triangle, `p`-adic continuity and excision (Layer 3), the crystalline
   key formula over perfect schemes (Layer 2), fppf cohomology with supports (§0.2) and the torsion of
-  `𝔾_m`-cohomology (§7.10); SchemeAndStackFoundationsPartII also imports the Brauer comparison of §7.11.
-- EtaleDualityAndPerverseSheavesPartII imports the local duality statements on excellent regular local
+  `𝔾_m`-cohomology (§7.10); SchemeAndStackFoundationsPartII also the Brauer comparison of §7.11.
+- EtaleDualityAndPerverseSheavesPartII is to import the local duality statements on excellent regular local
   rings and the local Lefschetz theorem (§§1.4–1.5).
-- DeformationAndDerivedPatchingAlgebra imports the virtual dimension and complete intersections (§1.1),
-  the counterexamples of §1.3, factoriality of regular local rings, parafactoriality and the local
-  Grothendieck–Lefschetz theorem (§§7.4–7.6).
+- DeformationAndDerivedPatchingAlgebra is to import complete intersections and the independence of
+  their presentations (§1.1), parafactoriality and the local Grothendieck–Lefschetz theorem
+  (§§7.5–7.6).
 
 ## Worked examples
 
@@ -2328,7 +2415,8 @@ them (see Scope and ownership).
 
 ## Source corrections
 
-The following concern the arXiv versions read ([CS24] arXiv:1912.10932v3, [C19] arXiv:1711.06456v4).
+The following concern the arXiv versions read ([CS24] arXiv:1912.10932v3, [C19] arXiv:1711.06456v4) and
+the 2005 edition of [SGA2].
 
 - [CS24] Theorem 7.1.2, p. 87 (text line 3630): the regular clause "regular of dimension `≥ d − 1`" admits
   fields when `d = 1`, and then the conclusion fails (`X = Spec k ⊔ Spec k`, `Z` one point); the proof uses
@@ -2342,6 +2430,9 @@ The following concern the arXiv versions read ([CS24] arXiv:1912.10932v3, [C19] 
   `H^1(V, G) → H^1(V_{R′}, G)` over the trivial class; both uses (Proposition 2.3, Corollary 2.4) have `G`
   commutative, and §8.2(b) is stated for commutative `G`. This is a gap in the argument, not a
   counterexample.
+- [SGA2] XI, Lemme 3.17(e), p. 107: the extra parafactoriality hypothesis is printed for closed points of
+  `X` lying in `Y`; the proof applies XI, Théorème 3.12 to the finitely many closed points of `X` outside
+  an open `V ⊃ Y`, so it is needed at closed points outside `Y`. §7.6 verifies it at every closed point.
 
 ## References
 
