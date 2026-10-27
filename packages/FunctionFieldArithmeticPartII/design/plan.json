@@ -42250,6 +42250,12 @@
     "needs": "For every algebraically closed field k, proper normal irreducible k-scheme X, morphism g:X→ℙʳ_k with dim g(X)≥2 and hyperplane H, prove that Y=X×_(ℙʳ)H is connected and π₁(Y)→π₁(X) is surjective, equivalently every connected finite étale cover of X pulls back to a connected cover of Y (SGA1 Exposé X, Lemme 2.10 and Corollaire 2.11).",
     "supplier": "EtaleCohomologyFoundations",
     "section": "F.0.2"
+  },
+  {
+    "slug": "zero-dimensional-dm-residual-gerbes",
+    "needs": "For an algebraically closed field K, the reduction of a finite-type Deligne–Mumford stack over K whose underlying space is finite and discrete is the disjoint union of its residual gerbes, and a chosen K-object of each component identifies that component with the classifying stack of its finite constant automorphism group.",
+    "supplier": "SchemeAndStackFoundations",
+    "section": "1.20"
   }
 ],
   "restructure": [

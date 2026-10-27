@@ -12,7 +12,7 @@ The following headline theorems are not statable at the pins with a few simple d
   coherent root pseudofunctor and the represented band-action quotient.
 * Infinite affine coinvariants lack the coherent root-colimit coaction and its rational-character
   grading; constructing that coaction is a substantial roadmap target.
-* The infinite DVR reduced gerbe, fpqc Kummer classification and non-fppf torsor lack the
+* The infinite DVR zero-section gerbe, fpqc Kummer classification and non-fppf torsor lack the
   relative infinite gerbe and fpqc torsor groupoid carriers.
 * The root Picard square quotient and signed adelic equivalence lack the root Picard stack,
   its degree components and the completed-lattice gluing functor.
@@ -86,6 +86,17 @@ theorem rootChartComparison_injective_iff (A : Type u) [CommRing A] (f : A)
 theorem rootChartComparison_surjective_iff (A : Type u) [CommRing A] (f : A)
     (n : ℕ) (hn : 0 < n) :
     Function.Surjective (rootChartComparison A f n) ↔ n = 1 ∨ IsUnit f := by
+  sorry
+
+/-! ## Layer 2: Relative finite-root geometry -/
+
+/-- Invariants of the affine root chart: for every commutative ring A, every f ∈ A and every
+positive n, including n divisible by the residue characteristic, an element of A[t]/(tⁿ − f) is
+fixed by the universal root-chart coaction exactly when it is a coefficient. -/
+theorem rootChartCoaction_eq_includeRight_iff (A : Type u) [CommRing A] (f : A) (n : ℕ)
+    (hn : 0 < n) (b : rootChart A f n) :
+    rootChartCoaction A f n b = Algebra.TensorProduct.includeRight b ↔
+      b ∈ (algebraMap A (rootChart A f n)).range := by
   sorry
 
 end TauCetiRoadmap.FunctionFieldArithmeticPartII
