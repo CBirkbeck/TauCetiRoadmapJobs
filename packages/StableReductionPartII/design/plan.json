@@ -32454,12 +32454,6 @@
   ],
   "gaps": [
   {
-    "slug": "perfect-arbitrary-base",
-    "needs": "For a proper flat finitely presented morphism and a perfect complex, provide perfect pushforward and arbitrary derived base change, fibre-amplitude local-freeness criteria and the unit splitting used for geometrically reduced connected curve fibres.",
-    "supplier": "SchemeAndStackFoundations",
-    "section": "§2.18"
-  },
-  {
     "slug": "cm-duality-arbitrary-base",
     "needs": "Extend rigid relative duality to arbitrary-base flat finitely presented Cohen–Macaulay maps of pure relative dimension d, with a base-flat dualizing module in degree −d, Gorenstein invertibility and coherent arbitrary base change.",
     "supplier": "SchemeAndStackFoundations",
@@ -32601,7 +32595,7 @@
     "slug": "surface-low-genus-positivity",
     "supplier": "SchemeAndStackFoundations",
     "section": "§5.10",
-    "needs": "For a relatively minimal smooth projective surface fibred over a smooth projective curve over an algebraically closed field, with smooth geometrically connected generic fibre, supply the genus-zero Hodge-index section argument and, in genus one with a section, the elliptic canonical-bundle formula and χ(O_S)≥0 used to prove nefness of the weighted pluricanonical direct images, including positive characteristic; permit finite surjective base change to acquire a section and retain the actual pushforward comparisons."
+    "needs": "For a relatively minimal smooth projective surface fibred over a smooth projective curve over an algebraically closed field, with smooth geometrically connected generic fibre, supply the genus-zero Hodge-index section argument and, in genus one with a section, χ(O_S)≥0 and the resulting nefness of the weighted pluricanonical direct images, using the canonical formula of K3SurfacesAndSymplecticBoundedness §6.0b, including positive characteristic; permit finite surjective base change to acquire a section and retain the actual pushforward comparisons."
   },
   {
     "slug": "relative-node-branch-data",
@@ -32620,6 +32614,12 @@
     "supplier": "SchemeAndStackFoundations",
     "section": "§§5.1–5.10",
     "needs": "For a projective integral d-dimensional scheme X over any field and an invertible line L, provide field-extension invariance of nefness and bigness, detection on the normalized reduced geometric components with their generic multiplicities, for finite surjective h:Y→X with Y integral, the degree formula (c₁(h*L)^d·[Y])=deg(Y/X)(c₁(L)^d·[X]), and the criterion that a nef L is big exactly when (c₁(L)^d·[X])>0, including d=0."
+  },
+  {
+    "slug": "stable-tricanonical-embedding",
+    "needs": "For every geometrically connected projective nodal stable curve C of arithmetic genus g≥2 over an algebraically closed field of any characteristic, including reducible curves and curves with self-nodes, prove that ω_C³ is very ample and H¹(C,ω_C³)=0.",
+    "supplier": "StableReduction",
+    "section": "Layer 8"
   }
 ],
   "sourceIssues": [

@@ -8,8 +8,9 @@ headline theorems against the pinned APIs.
 
 Not statable at the pins:
 * The formally versal pointed-node hull lacks nodal deformation groupoids and formal hulls.
-* Relative stable reflexivity with arbitrary-coefficient Hom exchange and completed
-  local transfer lacks coherent sheaf Ext and completion comparison interfaces.
+* The coherent-sheaf globalization of relative stable reflexivity on nodal families and
+  its completed-local transfer lack coherent sheaf Ext on schemes and the geometric
+  completion comparison interfaces; the module-level criterion is stated below.
 * Expansion–contraction and the universal-curve equivalence lack pointed stable
   families, their moduli stacks, and relative Proj of the expansion sheaf.
 * Decorated boundary normalization and smoothing conormal descent lack clutching,
@@ -30,6 +31,8 @@ for any of these geometric theorems.
 -/
 
 namespace TauCetiRoadmap.StableReductionPartII
+
+open CategoryTheory TensorProduct
 
 /-! ## Layer 2: universal curves and the full pointed stable range -/
 
@@ -72,6 +75,42 @@ def nodePsi (A : Type u) [CommRing A] (γ δ s t : A) :
   Matrix.of ![![v - ι t, -(u + ι s + ι γ * ι t)],
     ![u - ι s, ι δ * v + ι δ * ι t + ι γ * u]]
 
+/-- Stable reflexivity (Ile, Definition 3.1): canonical biduality together with vanishing of
+every positive Ext of M and of its dual into R. No finiteness is imposed. -/
+def IsStablyReflexive (R : Type u) [CommRing R] (M : Type u) [AddCommGroup M] [Module R M] :
+    Prop :=
+  Module.IsReflexive R M ∧ ∀ n : ℕ,
+    Limits.IsZero (((Ext R (ModuleCat.{u} R) (n + 1)).obj
+      (Opposite.op (ModuleCat.of R M))).obj (ModuleCat.of R R)) ∧
+    Limits.IsZero (((Ext R (ModuleCat.{u} R) (n + 1)).obj
+      (Opposite.op (ModuleCat.of R (Module.Dual R M)))).obj (ModuleCat.of R R))
+
+/-- Stable reflexivity relative to A → R (Ile, Definition 3.4): M is A-flat and, for every
+maximal ideal q of R with contraction p to A, the fibre `M ⊗_A κ(p)`, written as the base
+change of M to `R ⊗_A κ(p)`, is stably reflexive over `R ⊗_A κ(p)`. -/
+def IsRelativelyStablyReflexive (A R : Type u) [CommRing A] [CommRing R] [Algebra A R]
+    (M : Type u) [AddCommGroup M] [Module R M] [Module A M] [IsScalarTower A R M] : Prop :=
+  Module.Flat A M ∧ ∀ (q : Ideal R) [q.IsMaximal],
+    IsStablyReflexive (R ⊗[A] (q.comap (algebraMap A R)).ResidueField)
+      ((R ⊗[A] (q.comap (algebraMap A R)).ResidueField) ⊗[R] M)
+
+/-- Universal coefficients over A: for every A-module N the canonical maps
+`f ⊗ n ↦ (m ↦ f m ⊗ n)` from `M* ⊗_A N` to `Hom_R(M, R ⊗_A N)` and `m ⊗ n ↦ (f ↦ f m ⊗ n)`
+from `M ⊗_A N` to `Hom_R(M*, R ⊗_A N)` are bijective, and every positive Ext of M and of M*
+into `R ⊗_A N` vanishes. -/
+def HasUniversalCoefficients (A R : Type u) [CommRing A] [CommRing R] [Algebra A R]
+    (M : Type u) [AddCommGroup M] [Module R M] [Module A M] [IsScalarTower A R M] : Prop :=
+  ∀ (N : Type u) [AddCommGroup N] [Module A N],
+    (∃ e : Module.Dual R M ⊗[A] N ≃ₗ[A] (M →ₗ[R] R ⊗[A] N),
+      ∀ (f : Module.Dual R M) (n : N) (m : M), e (f ⊗ₜ n) m = f m ⊗ₜ n) ∧
+    (∃ e : M ⊗[A] N ≃ₗ[A] (Module.Dual R M →ₗ[R] R ⊗[A] N),
+      ∀ (m : M) (n : N) (f : Module.Dual R M), e (m ⊗ₜ n) f = f m ⊗ₜ n) ∧
+    ∀ i : ℕ,
+      Limits.IsZero (((Ext R (ModuleCat.{u} R) (i + 1)).obj
+        (Opposite.op (ModuleCat.of R M))).obj (ModuleCat.of R (R ⊗[A] N))) ∧
+      Limits.IsZero (((Ext R (ModuleCat.{u} R) (i + 1)).obj
+        (Opposite.op (ModuleCat.of R (Module.Dual R M)))).obj (ModuleCat.of R (R ⊗[A] N)))
+
 /-- The node-section complex and its transpose remain exact after tensoring over A
 with any A-module. No discriminant, Noetherian, domain, or flatness hypothesis is
 needed for this polynomial theorem. Knudsen §3 gives the nodal starting point;
@@ -97,6 +136,25 @@ theorem pointedSection_reflexive
     Module.IsReflexive (pointedNodeRing A γ δ s t) (pointedSectionIdeal A γ δ s t) ∧
       Module.IsReflexive (pointedNodeRing A γ δ s t)
         (Module.Dual (pointedNodeRing A γ δ s t) (pointedSectionIdeal A γ δ s t)) := by
+  sorry
+
+/-- The pointed section ideal has universal coefficients over A: for every A-module N the
+canonical maps `J* ⊗_A N → Hom_R(J, R ⊗_A N)` and `J ⊗_A N → Hom_R(J*, R ⊗_A N)` are
+bijective and all positive Ext of J and of J* into `R ⊗_A N` vanish. No flatness of N,
+Noetherian, discriminant or nontriviality hypothesis is needed. -/
+theorem pointedSection_universalCoefficients (A : Type u) [CommRing A] (γ δ s t : A) :
+    HasUniversalCoefficients A (pointedNodeRing A γ δ s t) (pointedSectionIdeal A γ δ s t) := by
+  sorry
+
+/-- Universal coefficient criterion (Ile, Definition 3.4, Proposition 3.5 and Remark 3.6):
+for a flat map of Noetherian rings A → R and a finite R-module M, M is stably reflexive
+relative to A exactly when it has universal coefficients over A. -/
+theorem relativelyStablyReflexive_iff_universalCoefficients
+    (A R : Type u) [CommRing A] [CommRing R] [IsNoetherianRing A] [IsNoetherianRing R]
+    [Algebra A R] [Module.Flat A R]
+    (M : Type u) [AddCommGroup M] [Module R M] [Module A M] [IsScalarTower A R M]
+    [Module.Finite R M] :
+    IsRelativelyStablyReflexive A R M ↔ HasUniversalCoefficients A R M := by
   sorry
 
 end
