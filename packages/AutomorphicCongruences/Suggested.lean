@@ -37,6 +37,24 @@ and the carrier it lacks:
   cyclotomic theorems (README §6.6, §7.9 and §7.10) need the Pontryagin dual of the p-primary
   ordinary Selmer group of an elliptic curve over the cyclotomic ℤ_p-extension as a module over
   `ℤ_p⟦Gal(ℚ_∞/ℚ)⟧`, its characteristic ideal, and the Mazur–Swinnerton-Dyer p-adic L-function.
+
+The deep intermediate theorems the roadmap owns are not statable at the pins either:
+
+* the polarized three-block lattice-to-Selmer theorem (README §0.7) needs the Σ-primitive ordinary
+  Selmer groups over Iwasawa towers, their characteristic ideals, and the orbit module of a
+  pseudo-representation congruent to χ′ ⊕ ρ ⊕ χ;
+* Ichino's triple product formula, Harris's exclusion of Klingen-type CAP eigensystems and Ikeda's
+  dense-image theorem for Fourier–Jacobi coefficients (README §§2.4, 2.6 and 2.12) need cuspidal
+  automorphic representations of unitary groups, their Galois representations, Jacobi forms with
+  the Weil representation, and the integral local pairings;
+* the Yager-module theorem and the bounded exponential along the unramified ℤ_p-extension
+  (README §2.19) need the Bloch–Kato exponential and the integral Iwasawa cohomology of a
+  crystalline representation over that tower;
+* the identification of the universal deformation ring with the Hecke algebra (README §3.2)
+  needs universal deformation rings of residual Galois representations and localized Hecke
+  algebras of modular forms;
+* Nakamura's universal zeta morphism (README §3.7) needs completed Borel–Moore homology of modular
+  curves and Kato's zeta elements over the universal deformation ring.
 -/
 
 namespace TauCetiRoadmap.AutomorphicCongruences

@@ -178,7 +178,7 @@ title = "Zeta morphisms for rank two universal deformations"
 year = 2020
 arxiv = "2006.13647v2"
 locator_scheme = "theorem"
-locator = "Theorems 2.2, 4.7, 5.2, 5.7–5.10, 5.13; Corollary 2.5, 5.14; (78)–(79) (arXiv v2)"
+locator = "Theorems 2.2, 4.3, 4.7, 5.2, 5.7–5.10, 5.13; Corollaries 2.5, 5.6, 5.14; (68)–(79), (91)–(93) (arXiv v2)"
 url = "https://arxiv.org/abs/2006.13647v2"
 fetched_from = "https://arxiv.org/pdf/2006.13647v2"
 fetched_at = "2026-10-25T00:17:33Z"
@@ -251,7 +251,7 @@ title = "Mazur's main conjecture at Eisenstein primes"
 year = 2023
 arxiv = "2303.04373v1"
 locator_scheme = "theorem"
-locator = "Definition 1.2.2, Remark 1.2.3, Proposition 1.2.4, Lemma 1.4.4, Proposition 1.4.5, Theorem 3.1.1, Corollary 3.1.3, Proposition 3.2.1 (arXiv v1; v2 numbering also noted)"
+locator = "Definition 1.2.2, Remark 1.2.3, Proposition 1.2.4, Lemma 1.4.4, Proposition 1.4.5, Theorem 3.1.1, Corollary 3.1.3, Proposition 3.2.1 (arXiv v1); Definition 2.2.2, Remark 2.2.3, Proposition 2.2.4 (arXiv v2)"
 url = "https://arxiv.org/abs/2303.04373v1"
 fetched_from = "https://arxiv.org/pdf/2303.04373v1"
 fetched_at = "2026-10-25T00:17:57Z"
@@ -259,7 +259,7 @@ sha256 = "bd1e6c36d1fbe243dc6d41756abbd0773a5175200801e719e345e1a027bd2b8d"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
-version_note = "arXiv v1 (cited as CGS-v1); arXiv v2 (cited as CGS-v2) renumbers §1 as §2"
+version_note = "arXiv v1 (cited as CGS-v1; the recorded text); arXiv v2 (cited as CGS-v2), read from https://arxiv.org/pdf/2303.04373v2 (open-repository, sha256 5046d7571ed3a1b13baa56b2c94186d9c9488d76181062f4ba82b8ab5158af90), renumbers §1 as §2"
 cited_for = ["0.9", "6.1", "6.5", "7.4"]
 
 [[source]]
