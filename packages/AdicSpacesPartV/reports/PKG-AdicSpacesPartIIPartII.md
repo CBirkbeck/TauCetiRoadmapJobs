@@ -1,6 +1,6 @@
-# PKG-AdicSpacesPartIIPartII
+# PKG-AdicSpacesPartV
 
-The package expands the 43 accepted design targets into seven prose layers in packages/AdicSpacesPartIIPartII/README.md, with the APIs, Checks and worked examples retained either as owned targets, supplier contracts or explicitly directed downstream applications. The standalone packages/AdicSpacesPartIIPartII/design/review.json and pre-existing reports were absent; the accepted review embedded in packages/AdicSpacesPartIIPartII/design/plan.json was read in full and its mathematical claims checked. Only the top-level gaps value of that JSON changed; all other keys compare equal to the original.
+The package expands the 43 accepted design targets into seven prose layers in packages/AdicSpacesPartV/README.md, with the APIs, Checks and worked examples retained either as owned targets, supplier contracts or explicitly directed downstream applications. The standalone packages/AdicSpacesPartV/design/review.json and pre-existing reports were absent; the accepted review embedded in packages/AdicSpacesPartV/design/plan.json was read in full and its mathematical claims checked. Only the top-level gaps value of that JSON changed; all other keys compare equal to the original.
 
 The content checkout is main commit edbb842cc069de4a6e319d2d458f4ab047b1b2cd. The actual pins are Mathlib 6b7abb3c7686292736be2955bd3eb9ebf63b456a and Tau Ceti a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039, rather than the older baseline recorded in the immutable design. Upstream shapes were read in AdicSpacesPartII, AdicSpacesPartIII, RigidAnalyticGeometry, RestrictedPowerSeries and RealAnalyticGeometry. No content checkout file was edited.
 
@@ -463,19 +463,19 @@ The tables contain 38 owned subsection rows, a scalar-extension row, a hypersequ
 
 ## Elaboration and dependency validation
 
-Ran the prescribed command from the content checkout: lake env lean on the absolute location of packages/AdicSpacesPartIIPartII/Suggested.lean. The initial missing-object error was resolved by the permitted targeted command lake build TauCeti.AlgebraicGeometry.AdicSpace.Spa.Polydisc.Basic. That targeted build completed successfully. An unqualified IsPowerBounded in the first statement draft was corrected to TauCeti.Huber.IsPowerBounded; the diagnostic body was: “Function expected at IsPowerBounded” and “The identifier `IsPowerBounded` is unknown”. A scratch-generation attempt from the content working directory also had an incorrect relative input path; it made no source edit and was rerun from the board directory.
+Ran the prescribed command from the content checkout: lake env lean on the absolute location of packages/AdicSpacesPartV/Suggested.lean. The initial missing-object error was resolved by the permitted targeted command lake build TauCeti.AlgebraicGeometry.AdicSpace.Spa.Polydisc.Basic. That targeted build completed successfully. An unqualified IsPowerBounded in the first statement draft was corrected to TauCeti.Huber.IsPowerBounded; the diagnostic body was: “Function expected at IsPowerBounded” and “The identifier `IsPowerBounded` is unknown”. A scratch-generation attempt from the content working directory also had an incorrect relative input path; it made no source edit and was rerun from the board directory.
 
 Final Suggested.lean elaboration: exit 0, exactly 3 warnings and no other message. Each warning's message is verbatim:
 
     warning: declaration uses `sorry`
 
-They occur at lines 46, 63 and 95 of packages/AdicSpacesPartIIPartII/Suggested.lean. The file has no other warnings and no errors.
+They occur at lines 46, 63 and 95 of packages/AdicSpacesPartV/Suggested.lean. The file has no other warnings and no errors.
 
 A separate scratch copy appended #check @name for every one of the four declarations and pinned the library names used in the README. It elaborated successfully. Comparing the printed types with the prose confirmed NontriviallyNormedField, ultrametric/nonarchimedean structure, CompleteSpace, Infinite of the actual residue quotient, n and the canonical base point in the Gauss theorem; CompleteSpace, CharZero, both rank inequalities, both topological/ChartedSpace/analytic IsManifold structures, local ContMDiffAt and neighbourhood mfderiv rank in the constant-rank theorem; and both field/completeness/characteristic structures and NormedAlgebra in the subfield theorem. No binder was silently dropped. The Gauss predicate itself intentionally has no completeness or infinite-residue assumption: those belong to the existence/closure theorem, not its defining comparison. The model-space draft was strengthened to the full analytic-manifold signature, then the binder audit was repeated successfully.
 
 The source manifest checker reports “0 problem(s)”. The citation resolver reports no missing cross-roadmap citations and no missing own Lean names. Its external-library warning says it has no pinned Lake packages on its service host; the separate local #check run and file/line inspections perform that part of the audit at the actual pins. The README's four backticked owned names are exactly its four Lean declarations, and there is no copied fully qualified declaration name from another roadmap.
 
-Dependency command: tauceti-roadmap gate --depcheck packages/AdicSpacesPartIIPartII/README.md --name AdicSpacesPartIIPartII --order merge-order/ORDER.txt --movable (with the configured service). Output:
+Dependency command: tauceti-roadmap gate --depcheck packages/AdicSpacesPartV/README.md --name AdicSpacesPartV --order merge-order/ORDER.txt --movable (with the configured service). Output:
 
     depcheck: 30 roadmaps, 266 edges, 0 problem(s)
 

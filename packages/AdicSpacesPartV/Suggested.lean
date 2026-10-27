@@ -25,7 +25,7 @@ detection of analytic germs use native carriers below. The rigid-space applicati
 rank needs the missing rational-point atlas.
 -/
 
-namespace TauCetiRoadmap.AdicSpacesPartIIPartII
+namespace TauCetiRoadmap.AdicSpacesPartV
 
 open Filter
 open scoped Topology ContDiff Manifold
@@ -105,4 +105,4 @@ theorem analytic_germ_eq_zero_of_subfield
     ∀ᶠ z in 𝓝 (0 : Fin m → C), f z = 0 := by
   sorry
 
-end TauCetiRoadmap.AdicSpacesPartIIPartII
+end TauCetiRoadmap.AdicSpacesPartV

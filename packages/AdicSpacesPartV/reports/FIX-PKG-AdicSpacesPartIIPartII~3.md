@@ -1,4 +1,4 @@
-# Repair report: AdicSpacesPartIIPartII
+# Repair report: AdicSpacesPartV
 
 ## F01 (P2) — applied
 
@@ -30,7 +30,7 @@ Unbounded disc-radius Check → 0 < abs(c) < 1, with the positive and negative w
 
 ## Required checks and mechanical consistency
 
-- Elaborated packages/AdicSpacesPartIIPartII/Suggested.lean with the prescribed `lake env lean` invocation from the pinned content checkout: exit 0. Its complete diagnostics were the three expected warnings that declarations use `sorry`, at lines 49, 66 and 98. No object file was missing; no module build was needed.
+- Elaborated packages/AdicSpacesPartV/Suggested.lean with the prescribed `lake env lean` invocation from the pinned content checkout: exit 0. Its complete diagnostics were the three expected warnings that declarations use `sorry`, at lines 49, 66 and 98. No object file was missing; no module build was needed.
 - Appended `#check @name` for each of the four declarations to one scratch copy and elaborated it once successfully: exit 0, the same three warnings, and all four elaborated types. An initial scratch-generation attempt used the wrong working directory and produced no file; correcting its input path resolved that preliminary invocation. No package statement needed a binder repair.
 - Compared every elaborated type against README §§3.4, 6.1 and 6.5, as recorded below. Only the module docstring changed in Suggested.lean; all four signatures and names are unchanged.
 - JSON and both TOML files parse. All four gap sentences match the README verbatim. Comparing the parsed plan against its original verifies that only its top-level gaps changed; the textual diff also contains only that list.
@@ -49,7 +49,7 @@ Unbounded disc-radius Check → 0 < abs(c) < 1, with the positive and negative w
 The required dependency command exited 0 with exactly:
 
 ```text
-moved: AdicSpacesPartIIPartII moved in the merge order from #10 to #11, right after its last supplier AdicEtaleGeometry; checked as moved (the worker moves it there when it submits)
+moved: AdicSpacesPartV moved in the merge order from #10 to #11, right after its last supplier AdicEtaleGeometry; checked as moved (the worker moves it there when it submits)
 depcheck: 51 roadmaps, 585 edges, 0 problem(s)
 ```
 

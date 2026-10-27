@@ -130,7 +130,7 @@ No section binder was lost and no theorem signature changed. No Lean declaration
 
 ## Validation outcomes
 
-- Prescribed `lake env lean` elaboration of packages/AdicSpacesPartIIPartII/Suggested.lean, from the pinned content checkout: exit 0. Diagnostics are exactly three “declaration uses sorry” warnings at 51:8, 68:8 and 100:8. No missing TauCeti object file and no targeted build required.
+- Prescribed `lake env lean` elaboration of packages/AdicSpacesPartV/Suggested.lean, from the pinned content checkout: exit 0. Diagnostics are exactly three “declaration uses sorry” warnings at 51:8, 68:8 and 100:8. No missing TauCeti object file and no targeted build required.
 - All four `#check @name` signature checks in one scratch copy: exit 0; all hypotheses and conclusions agree as above.
 - Prescribed dependency check with the supplied order and movable mode: exit 0. Its complete output is:
 

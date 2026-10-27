@@ -189,12 +189,12 @@ The rows cover definitions, target assertions, their API laws, conventions, chan
 
 ## Exact validation outcomes
 
-- Required elaboration, from the content checkout: `lake env lean <Suggested.lean>` exited 0. Diagnostics were exactly `packages/AdicSpacesPartIIPartII/Suggested.lean:45:8`, `:62:8`, and `:94:8`: `warning: declaration uses sorry`. No errors and no missing TauCeti object file; no module build was needed.
+- Required elaboration, from the content checkout: `lake env lean <Suggested.lean>` exited 0. Diagnostics were exactly `packages/AdicSpacesPartV/Suggested.lean:45:8`, `:62:8`, and `:94:8`: `warning: declaration uses sorry`. No errors and no missing TauCeti object file; no module build was needed.
 - Mechanical binder check: copied the final acceptance file to scratch and appended `#check @` for all four declarations, then elaborated once from content. Exit 0, the same three admitted-proof warnings, and all four complete types printed. `IsUnitGaussPoint` retains its field, ultrametric and nonarchimedean assumptions; the closure theorem additionally retains completeness and infinite residue field; constant rank retains completeness, characteristic zero, both rank bounds, both analytic manifold structures, local analyticity and the eventual rank condition; the subfield theorem retains both complete characteristic-zero fields and the normed-algebra embedding. These match README §§3.4, 6.1, 6.5. No binder or signature changed. An initial scratch invocation from board exited 1 with “no default toolchain configured”; rerunning from the required content checkout succeeded. No toolchain settings were changed.
-- Dependency direction: the prescribed command, with README `packages/AdicSpacesPartIIPartII/README.md`, name `AdicSpacesPartIIPartII`, order `merge-order/ORDER.txt` and `--movable`, exited 0 and printed:
+- Dependency direction: the prescribed command, with README `packages/AdicSpacesPartV/README.md`, name `AdicSpacesPartV`, order `merge-order/ORDER.txt` and `--movable`, exited 0 and printed:
 
 ```text
-moved: AdicSpacesPartIIPartII moved in the merge order from #9 to #10, right after its last supplier AdicSpacesPartIII; checked as moved (the worker moves it there when it submits)
+moved: AdicSpacesPartV moved in the merge order from #9 to #10, right after its last supplier AdicSpacesPartIII; checked as moved (the worker moves it there when it submits)
 depcheck: 48 roadmaps, 539 edges, 0 problem(s)
 ```
 

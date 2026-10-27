@@ -1,4 +1,4 @@
-# FIX-RT-AdicSpacesPartIIPartII~1: red-team round 1 repairs
+# FIX-RT-AdicSpacesPartV~1: red-team round 1 repairs
 
 Two reviews were merged: review r1a (findings F01–F07, headed by their own ids below) and review r1b (findings F01–F03, headed r1b/F01–r1b/F03 below to keep them apart from r1a's ids). Where findings overlap, they are settled once and cross-referenced: F03, F07 and r1b/F02 all concern the regularity transfers; F06 and r1b/F01 both concern the formal-model inputs of §§4.1–4.2.
 
@@ -53,7 +53,7 @@ The bullet stays in §1.1 with a purely algebraic proof route, so it does not ne
 
 ## Checks run
 
-- Elaboration: `lake env lean packages/AdicSpacesPartIIPartII/Suggested.lean` from the content checkout ended with exit 0. The only output was the three expected `declaration uses 'sorry'` warnings, at lines 51, 68 and 100. Suggested.lean is unchanged this round. The four elaborated signatures in the worker's signature file still match their README statements (§§3.4, 6.1, 6.6), so no fresh `#check` file was needed.
+- Elaboration: `lake env lean packages/AdicSpacesPartV/Suggested.lean` from the content checkout ended with exit 0. The only output was the three expected `declaration uses 'sorry'` warnings, at lines 51, 68 and 100. Suggested.lean is unchanged this round. The four elaborated signatures in the worker's signature file still match their README statements (§§3.4, 6.1, 6.6), so no fresh `#check` file was needed.
 - Dependency check output:
 
 ```text
