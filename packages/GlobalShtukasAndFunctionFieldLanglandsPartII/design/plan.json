@@ -3531,16 +3531,28 @@
  ],
  "gaps": [
   {
-    "slug": "function-field-globalization",
+    "slug": "function-field-simple-trace-formula",
     "supplier": "FunctionFieldArithmetic",
     "section": "§§6.4–6.6",
-    "needs": "The general connected-reductive function-field simple trace formula for elliptically supported test functions with a supercuspidal factor, including finiteness, and prescribed-central-character Poincaré-series globalization with tame auxiliary components."
+    "needs": "The connected-reductive function-field Deligne–Kazhdan simple trace formula, with finiteness of both sides, for test functions supported on regular elliptic classes and having a supercuspidal matrix-coefficient factor."
   },
   {
-    "slug": "elliptic-pseudo-coefficients",
+    "slug": "poincare-series-globalization",
+    "supplier": "FunctionFieldArithmetic",
+    "section": "§§6.4–6.6",
+    "needs": "Prescribed-central-character Poincaré-series globalization of finitely many supercuspidal local components of a connected reductive group over a global function field, every other component being a constituent of a principal series induced from a minimal parabolic."
+  },
+  {
+    "slug": "discrete-series-pseudo-coefficients",
     "supplier": "SmoothRepresentationsOfLocalGroups",
     "section": "§SR.3.3",
-    "needs": "Pseudo-coefficients for discrete series over every local function field, the common-cuspidal-support implication of nonzero trace, and elliptic character orthogonality on finite-index open subgroups."
+    "needs": "Pseudo-coefficients for discrete series of every connected reductive group over every local function field, and the implication that nonzero trace against one forces common cuspidal support."
+  },
+  {
+    "slug": "elliptic-orthogonality-open-subgroups",
+    "supplier": "SmoothRepresentationsOfLocalGroups",
+    "section": "§SR.3.3",
+    "needs": "Orthogonality of elliptic discrete-series characters on finite-index open subgroups of the rational points, giving nonvanishing of some elliptic regular orbital integral of a pseudo-coefficient."
   },
   {
     "slug": "discrete-series-number-field-model",
@@ -3555,16 +3567,28 @@
     "needs": "Reduction of reductive discrete series through unramified central twists and central isogenies or z-extensions, preserving discrete series and the fixed-embedding adjoint parameter, with unitary central part giving bounded full Weil part."
   },
   {
-    "slug": "spherical-adjoint-transfer",
+    "slug": "spherical-isogeny-transfer",
     "supplier": "SmoothRepresentationsOfLocalGroups",
     "section": "§SR.4.2",
-    "needs": "Transport of spherical unitarity and genericity under central isogenies using the actual finite-index image on rational points and lifted Satake classes, together with genericity of tempered spherical representations for every unramified quasi-split group and the specified Whittaker datum."
+    "needs": "Transport of spherical unitarity and genericity under central isogenies using the actual finite-index image on rational points and lifted Satake classes."
+  },
+  {
+    "slug": "tempered-spherical-generic",
+    "supplier": "SmoothRepresentationsOfLocalGroups",
+    "section": "§SR.4.2",
+    "needs": "Genericity of every tempered spherical representation of every unramified quasi-split group for the specified Whittaker datum."
   },
   {
     "slug": "parameter-square-root-transport",
     "supplier": "SmoothRepresentationsOfLocalGroups",
     "section": "§SR.4.2",
     "needs": "Comparison of the two normalized c-group charts under every coefficient automorphism, identifying their canonical finite central unramified normalization cocycle and its compatibility with local excursion parameters."
+  },
+  {
+    "slug": "normal-image-l-homomorphisms",
+    "supplier": "ReductiveGroupsPartII",
+    "section": "§RG2.5.2",
+    "needs": "For a homomorphism Υ:G₁→G₂ of connected reductive groups over a field whose image N is normal and whose kernel contains a smooth connected normal subgroup K₀ of G₁ with ker(Υ)/K₀ central in G₁/K₀, the pinned Γ-equivariant L-homomorphism ᴸΥ:ᴸG₂→ᴸG₁, well defined up to Ĝ₁-conjugacy and compatible with composition, central isogenies, products and Levi inclusions."
   },
   {
     "slug": "stack-integer-weights",
