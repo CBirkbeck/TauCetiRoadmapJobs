@@ -5317,7 +5317,7 @@
     },
     {
       "slug": "formal-dvr-point-detection",
-      "needs": "For a reduced p-torsion-free complete Noetherian local O_Ĕ-algebra R with residue k, the continuous local maps R→O_K for finite K/Ĕ are jointly injective; for any Noetherian ring B complete for (T) with T∈Jac(B), every ideal I is T-adically closed, ∩ₙ(I+TⁿB)=I, and if B/I is p-torsion-free then I=B∩I[1/p].",
+      "needs": "For a reduced p-torsion-free complete Noetherian local O_Ĕ-algebra R with residue k, the continuous local maps R→O_K for finite K/Ĕ are jointly injective.",
       "supplier": "SchemeAndStackFoundations",
       "section": "4.7–4.8"
     },
