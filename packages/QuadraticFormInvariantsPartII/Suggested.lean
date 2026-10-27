@@ -17,14 +17,15 @@ Stated here:
 
 * roundness of quadratic Pfister forms, and the equivalence of isotropy with hyperbolicity, in every
   characteristic (Layer 1);
-* the Cassels–Pfister theorem and Springer's odd-degree theorem in every characteristic, and the
+* the Cassels–Pfister theorem, the representation theorem, Springer's odd-degree theorem, the
+  similarity norm principle and the quadratic similarity theorem in every characteristic, and the
   Arason–Pfister Hauptsatz when `2` is invertible (Layer 2);
 * the Milnor conjecture for the Witt ring in cohomological form, `Iⁿ/Iⁿ⁺¹ ≅ Hⁿ(G_K, 𝔽₂)` with
   Pfister classes going to cup products of Kummer classes, and the invariant-zero criterion for
   Pfister forms, when `2` is invertible (Layer 3);
 * Dittmann–Pop's principal-unit criterion and independent-value criterion over a henselian valued
   field, the latter containing unit reduction as its case without values (Layer 4);
-* the Tsen–Lang theorem (Layer 5);
+* the Lang–Nagata theorem for systems of forms and the Tsen–Lang theorem (Layer 5);
 * Dittmann–Pop's dimension theorem for unit Pfister forms (Layer 6).
 
 Headline theorems of the roadmap that are not statable at the pins, with what each lacks:
@@ -105,6 +106,17 @@ theorem exists_extendScalars_polynomial_eq {K : Type u} [Field K] {n : ℕ}
     ∃ w : Fin n → Polynomial K, extendScalars Q (Polynomial K) w = h := by
   sorry
 
+/-- **The representation theorem** (EKM, Theorem 17.12, pp. 73–74), in every characteristic: for
+anisotropic quadratic forms `ψ` and `Q`, `ψ` is isometric to a subform of `Q` exactly when every
+nonzero value of `ψ` over every field extension `E` is a value of `Q` over `E`. The zero-dimensional
+`ψ` satisfies both sides. -/
+theorem isRepresentedBy_iff_forall_represents_extendScalars {K : Type u} [Field K] {m n : ℕ}
+    (ψ : QuadraticForm K (Fin m → K)) (Q : QuadraticForm K (Fin n → K)) (hψ : ψ.Anisotropic)
+    (hQ : Q.Anisotropic) :
+    ψ.IsRepresentedBy Q ↔ ∀ (E : Type u) [Field E] [Algebra K E] (c : E), c ≠ 0 →
+      (extendScalars ψ E).Represents c → (extendScalars Q E).Represents c := by
+  sorry
+
 /-- **Springer's theorem** (EKM, Corollary 18.5, p. 77), in every characteristic and including
 inseparable extensions: an anisotropic quadratic form stays anisotropic over every finite field
 extension of odd degree. -/
@@ -112,6 +124,43 @@ theorem anisotropic_extendScalars_of_odd_finrank {K : Type u} [Field K] {n : ℕ
     (Q : QuadraticForm K (Fin n → K)) (hQ : Q.Anisotropic) (L : Type v) [Field L] [Algebra K L]
     [FiniteDimensional K L] (hodd : Odd (Module.finrank K L)) :
     (extendScalars Q L).Anisotropic := by
+  sorry
+
+/-- **The similarity norm principle** (EKM, Theorem 20.14, p. 86), in every characteristic and for
+inseparable extensions: if `Q` is a nondegenerate quadratic form of even dimension `2k` and a unit
+`c` of a finite extension `E` is a similarity factor of `Q` over `E`, then its norm `N_{E/K}(c)` is
+a similarity factor of `Q`. -/
+theorem smul_equivalent_of_smul_equivalent_extendScalars {K : Type u} [Field K] {k : ℕ}
+    (Q : QuadraticForm K (Fin (2 * k) → K)) (hQ : Q.Nondegenerate) (E : Type v) [Field E]
+    [Algebra K E] [FiniteDimensional K E] (c : Eˣ)
+    (hc : ((c : E) • extendScalars Q E).Equivalent (extendScalars Q E)) :
+    (Algebra.norm K (c : E) • Q).Equivalent Q := by
+  sorry
+
+/-- **The quadratic similarity theorem** (EKM, Theorem 20.16, pp. 86–87), in every characteristic.
+Let `Q` be a nondegenerate quadratic form of even dimension `2k` and `f` a nonzero polynomial in
+`t₁, …, tₙ` (the variable `t₁`, index `0`, is the most significant in the lexicographic order, as in
+EKM, p. 77). The following are equivalent: `f* f` is a similarity factor of `Q` over `K(T)`, where
+`f*` is the lexicographic leading coefficient; `a f` is one for some `a ∈ Kˣ`; and for every
+irreducible `p` dividing `f` to an odd power, `Q` is hyperbolic over the residue field `K(p)`. The
+last clause is phrased through every field receiving `K[T]` with kernel exactly `(p)`: such a field
+contains `K(p)`, and `K(p)` is one of them. -/
+theorem quadraticSimilarity_tfae {K : Type u} [Field K] {k n : ℕ}
+    (Q : QuadraticForm K (Fin (2 * k) → K)) (hQ : Q.Nondegenerate) (f : MvPolynomial (Fin n) K)
+    (hf : f ≠ 0) :
+    [((algebraMap (MvPolynomial (Fin n) K) (FractionRing (MvPolynomial (Fin n) K))
+          (MvPolynomial.C (MonomialOrder.lex.leadingCoeff f) * f)) •
+          extendScalars Q (FractionRing (MvPolynomial (Fin n) K))).Equivalent
+        (extendScalars Q (FractionRing (MvPolynomial (Fin n) K))),
+      ∃ a : Kˣ, ((algebraMap (MvPolynomial (Fin n) K) (FractionRing (MvPolynomial (Fin n) K))
+          (MvPolynomial.C (a : K) * f)) •
+          extendScalars Q (FractionRing (MvPolynomial (Fin n) K))).Equivalent
+        (extendScalars Q (FractionRing (MvPolynomial (Fin n) K))),
+      ∀ p : MvPolynomial (Fin n) K, Irreducible p → Odd (multiplicity p f) →
+        ∀ (L : Type u) [Field L] [Algebra K L] [Algebra (MvPolynomial (Fin n) K) L]
+          [IsScalarTower K (MvPolynomial (Fin n) K) L],
+          RingHom.ker (algebraMap (MvPolynomial (Fin n) K) L) = Ideal.span {p} →
+          (extendScalars Q L).Equivalent (QuadraticForm.dualProd L (Fin k → L))].TFAE := by
   sorry
 
 /-- **The Arason–Pfister Hauptsatz** (EKM, Theorem 23.7(1), p. 100) for a field in which `2` is
@@ -167,15 +216,17 @@ theorem not_anisotropic_pfisterForm_iff_kummerSymbol_eq_zero {K : Type u} [Field
 /-! ## Layer 4: henselian unit and value criteria -/
 
 /-- **The principal-unit criterion** (Dittmann–Pop, Proposition 3.2(1), pp. 6–7), over a field with
-a henselian valuation ring `O` of arbitrary rank. Let `ε` be units of `O` and `a₀ ∈ O` with `1 − 4a₀`
-a unit, so that the unit Pfister form `⟨⟨ε⟩⟩_b ⊗ [1, a₀]` has nonsingular reduction. If some outer
-slot `εᵢ` is a principal unit, that is reduces to `1` in the residue field, the form is isotropic
-over `K`: its reduction has the metabolic outer factor `⟨1, −1⟩_b`, and unit reduction lifts the
-residual zero. The slot `i : Fin m` forces `m ≥ 1`; a principal unit in the terminal block alone
-gives nothing, as `[1, 1 + t]` over `𝔽₂((t))` is anisotropic. -/
+a henselian valuation ring `O` of arbitrary rank. Let `ε` be units of `O` and `a₀ ∈ O`. If some outer
+slot `εᵢ` is a principal unit, that is reduces to `1` in the residue field, the form
+`⟨⟨ε⟩⟩_b ⊗ [1, a₀]` is isotropic over `K`. In residue characteristic different from two, `εᵢ` is a
+square `c²` by Hensel's lemma and the outer factor `⟨1, −c²⟩_b` makes the form isotropic whatever
+`a₀`; in residue characteristic two, `1 − 4a₀` is automatically a unit, the reduction is nonsingular
+with the metabolic outer factor `⟨1, 1⟩_b`, and unit reduction lifts the residual zero. The slot
+`i : Fin m` forces `m ≥ 1`; a principal unit in the terminal block alone gives nothing, as
+`[1, 1 + t]` over `𝔽₂((t))` is anisotropic. -/
 theorem not_anisotropic_quadraticPfister_of_residue_eq_one {K : Type u} [Field K]
     (O : ValuationSubring K) [HenselianLocalRing O] {m : ℕ} (ε : Fin m → Oˣ) (a₀ : O)
-    (ha₀ : IsUnit (1 - 4 * a₀)) (i : Fin m) (hi : IsLocalRing.residue O (ε i : O) = 1) :
+    (i : Fin m) (hi : IsLocalRing.residue O (ε i : O) = 1) :
     ¬ (quadraticPfister (fun j => Units.map O.subtype.toMonoidHom (ε j)) (a₀ : K)).Anisotropic := by
   sorry
 
@@ -186,7 +237,8 @@ nonsingular reduction; let `π₁, …, πₛ` have values that are `𝔽₂`-in
 value group. Then the reduced form is isotropic over the residue field, the form is isotropic over
 `K`, and `⟨⟨π⟩⟩_b ⊗ ⟨⟨ε⟩⟩_b ⊗ [1, a₀]` is isotropic over `K`, all at once. The empty `π` gives unit
 reduction. When the valuation is non-dyadic every unit Pfister form `⟨⟨ε_r, …, ε₀⟩⟩` has this
-shape, with `a₀ = (1 − ε₀)/4`. -/
+shape: with `a₀ = (1 − ε₀)/4` when `2` is a unit of `O`, and with `a₀ = ε₀` in equal characteristic
+two, where the terminal block is `[1, ε₀]` itself. -/
 theorem quadraticPfister_isotropic_tfae_of_independent_values {K : Type u} [Field K]
     (O : ValuationSubring K) [HenselianLocalRing O] {m s : ℕ} (ε : Fin m → Oˣ) (a₀ : O)
     (ha₀ : IsUnit (1 - 4 * a₀)) (π : Fin s → Kˣ)
@@ -210,6 +262,15 @@ def IsCi (i : ℕ) (F : Type u) [Field F] : Prop :=
 of transcendence degree `t` of a `C_i` field is `C_{i+t}`, with no finite-generation hypothesis. -/
 theorem IsCi.of_trdeg {i t : ℕ} {F : Type u} {E : Type v} [Field F] [Field E] [Algebra F E]
     (hF : IsCi i F) (ht : Algebra.trdeg F E = t) : IsCi (i + t) E := by
+  sorry
+
+/-- **The Lang–Nagata theorem for systems** (EKM, Lemma 97.1 and Theorem 97.2, p. 385): over a
+`C_i` field, `r` homogeneous polynomials of the same positive degree `d` in more than `r dⁱ`
+variables have a common nonzero zero. -/
+theorem IsCi.exists_common_zero {i : ℕ} {F : Type u} [Field F] (hF : IsCi i F) {r N d : ℕ}
+    (f : Fin r → MvPolynomial (Fin N) F) (hd : 0 < d) (hf : ∀ j, (f j).IsHomogeneous d)
+    (hN : r * d ^ i < N) :
+    ∃ x : Fin N → F, x ≠ 0 ∧ ∀ j, MvPolynomial.eval x (f j) = 0 := by
   sorry
 
 /-- The Kronecker dimension of a field: its absolute transcendence degree, that is over the prime

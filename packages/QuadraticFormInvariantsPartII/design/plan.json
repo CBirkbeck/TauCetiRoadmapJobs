@@ -3206,6 +3206,12 @@
       "supplier": "MotivesAndAlgebraicCycles",
       "section": "0.5b",
       "needs": "Rost's cycle modules over a perfect field: the cycle complexes with coefficients and their Zariski sheaves on smooth schemes, with Rost's Gersten resolution, homotopy invariance and contraction M ↦ M₋₁, and the identification of the unramified mod-two Milnor K-theory sheaf as the sheaf of the cycle module K_*ᴹ/2."
+    },
+    {
+      "slug": "real-closure-uniqueness",
+      "supplier": "RealAlgebraicGeometry",
+      "section": "Layer 1",
+      "needs": "For an ordered field (k, ≤) and an ordered algebraic extension (k″, ≤″), every real closed field algebraic over k whose ordering restricts to ≤ receives a unique order-preserving k-embedding of k″; in particular any two real closures of (k, ≤) are uniquely k-isomorphic."
     }
   ],
   "sourceVersions": [
