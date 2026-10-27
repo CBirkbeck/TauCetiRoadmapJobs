@@ -346,3 +346,4 @@ MotivicStructuresInModuliOfCurves
 ModularIwasawaMainConjecturesPartII
 CMRankZeroConverse
 RankZeroOneBSDPartII
+GlobalQuadraticForms
