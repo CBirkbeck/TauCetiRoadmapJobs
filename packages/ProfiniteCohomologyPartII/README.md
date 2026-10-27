@@ -12,7 +12,8 @@ stop. It then proves refined lifting through the two-boundary subgroups `P_(r,s)
 field, archimedean or not, for constant and for rank-one twisted coefficients, and constructs three
 characters of `Γ_ℚ` with values in `ℤ/8` whose triple Massey product is defined and does not
 contain zero. The end theorems are Dwyer's criteria (`masseyDefined_iff_exists_lift`,
-`masseyContainsZero_iff_exists_lift`), the vanishing of the Bogomolov multiplier of `U¹`
+`masseyContainsZero_iff_exists_lift`), outer powering on the conjugacy classes of `U¹` in rank at
+most six (`isConj_pow_superdiagonalSubgroup_two`), the vanishing of the Bogomolov multiplier of `U¹`
 (`bogomolovMultiplier_superdiagonalSubgroup_two_eq_bot`), refined local lifting
 (`refinedLocalLifting`, HW Proposition 5.3 extended to `ℝ` and `ℂ`), local Massey vanishing
 (`localMasseyVanishing`), its rank-one twisted form (`twistedRefinedLocalLifting`), and the `ℤ/8`
@@ -161,11 +162,19 @@ duality theorems; groups whose Bogomolov multiplier is taken live in `Type`, as 
 - `ConjClasses` and `IsConj.pow` (powering on conjugacy classes, Layer 3); `FreeGroup` and
   `PresentedGroup` (the exterior square of Layer 4); `CharacterModule.dual_surjective_of_injective`
   (extension of characters into `ℚ/ℤ`, Layer 4).
-- `Subgroup.center`, `Subgroup.normalClosure`, `QuotientGroup.mk`, `Matrix.IsUpperUnitriangular`,
-  `ContinuousMap` and `ContinuousMap.ext`, `Finset.Ioo`.
+- `Subgroup.center`, `Subgroup.normalClosure`, `QuotientGroup.mk`, `ContinuousMap` and
+  `ContinuousMap.ext`, `Finset.Ioo`, `IsConj`.
 
 ### From Tau Ceti
 
+- Unitriangular matrices: `Matrix.IsUpperUnitriangular` (`LinearAlgebra/Matrix/Triangular.lean`).
+- DG carriers: `TauCeti.IsDGAlgebra` (`Algebra/Homology/DG/Algebra/Defs.lean`: a degree-raising,
+  square-zero differential with the graded Leibniz rule on an internally `ℤ`-graded algebra),
+  `TauCeti.DGCategoryData` (`CategoryTheory/DG/HomComplexData.lean`: Hom complexes, bilinear
+  composition, Leibniz rule, associativity and units) and `TauCeti.DGCategory`
+  (`CategoryTheory/DG/Basic.lean`). These are the generic carriers of DGAInfinity Layer 1; the
+  cochain algebra of Layer 0 and the Hom-coefficient category of Layer 9 are constructed here as
+  objects of them.
 - Unitriangular and triangular groups: `TauCeti.upperUnitriangularGroup`,
   `TauCeti.UpperUnitriangularGroup.ext` (equality from strictly upper entries),
   `TauCeti.UpperUnitriangularGroup.map`, `TauCeti.UpperUnitriangularGroup.superdiagonalSubgroup`
@@ -222,8 +231,9 @@ duality theorems; groups whose Bogomolov multiplier is taken live in `Type`, as 
 ### From TauCetiRoadmap.DGAInfinity
 
 - Layer 1: unital DG algebras and DG categories over a commutative ring, with the Leibniz sign
-  `d(ab) = d(a)b + (−1)^{|a|} a d(b)`; the cochain algebra of Layer 0 and the Hom-coefficient DG
-  category of Layer 9 are objects of these carriers.
+  `d(ab) = d(a)b + (−1)^{|a|} a d(b)`, implemented at the pin by Tau Ceti's `TauCeti.IsDGAlgebra`
+  and `TauCeti.DGCategoryData`; the cochain algebra of Layer 0 and the Hom-coefficient DG category
+  of Layer 9 are objects of these carriers.
 - Layer 8: matric Massey products and their defining systems, defined only when lower products and
   defining systems make them defined, with their indeterminacy recorded. Layer 0 uses them with all
   degrees one and Kraines' sign.
@@ -303,13 +313,14 @@ strictly associative unital DG algebra over `ℤ`, and over the invariant subrin
 `d(f ∪ g) = df ∪ g + (−1)^r f ∪ dg` for arbitrary cochains of degree `r` and `s`,
 `(f ∪ g) ∪ h = f ∪ (g ∪ h)` on the nose, and the constant `1 ∈ C⁰` is a two-sided unit. When the
 action is trivial it is an `R`-DG algebra; in general the differential is not `R`-linear. Construct
-it as an object of DGAInfinity Layer 1's DG algebra carrier. Give every `C^q` and the cohomology
+it as an object of DGAInfinity Layer 1's DG algebra carrier: the internal direct sum `⊕_q C^q` with
+this grading, differential and cup satisfies Tau Ceti's `TauCeti.IsDGAlgebra`. Give every `C^q` and the cohomology
 groups the discrete topology; for compact `Γ^q` and discrete `R` this is the compact-open topology of
 `C(Γ^q, R)`. In degrees at most two the cochains and differentials are the parent's:
 `ContCohomology.C1`, `ContCohomology.d0`, `ContCohomology.d1`. (HW, Introduction, p. 1, for DG rings
 and defining systems; HW, Remark 7.1, p. 25, for the translated cup.)
 *Needs:* ProfiniteCohomology Layers 0 and 2; DGAInfinity Layer 1; Mathlib `ContinuousMap`; Tau Ceti
-`ContCohomology.C1`, `ContCohomology.d0`, `ContCohomology.d1`.
+`TauCeti.IsDGAlgebra`, `ContCohomology.C1`, `ContCohomology.d0`, `ContCohomology.d1`.
 
 API:
 
@@ -357,10 +368,15 @@ homogeneous cochain `F(g₀, …, g_q) = g₀·f(g₀⁻¹g₁, …, g_{q−1}�
 finite powers are locally compact, identifies continuous equivariant homogeneous cochains with the
 complex `TopRep.homogeneousCochains` that defines `continuousCohomology`; check the
 two chain-map identities and the identity augmentation, and translate the Alexander–Whitney formula
-of the parent's cup into the inhomogeneous cup. (HW, Introduction, pp. 1–2, which computes Galois
-cohomology by this model.)
+of the parent's cup into the inhomogeneous cup. This is the explicit comparison with Mathlib's
+`TopRep.resolutionX` and `TopRep.homogeneousCochains`
+(`RepresentationTheory/Homological/ContCohomology/Basic.lean`), extending the degree-one and
+degree-two comparisons of Tau Ceti (`RepresentationTheory/Homological/ContCohomology/CohomologyComparison.lean`,
+`ContCohomology.explicitH1AddEquivContinuousCohomology` and
+`ContCohomology.explicitH2AddEquivContinuousCohomology`); the chain maps in all degrees and their
+compatibility with the cups are proved here.
 *Needs:* 0.1; ProfiniteCohomology Layers 1, 3, 10 and 12; Mathlib `continuousCohomology`,
-`TopRep.homogeneousCochains`; Tau Ceti
+`TopRep.resolutionX`, `TopRep.homogeneousCochains`; Tau Ceti
 `ContCohomology.explicitH1AddEquivContinuousCohomology`,
 `ContCohomology.explicitH2AddEquivContinuousCohomology`, `ContCohomology.explicitCup11`.
 
@@ -384,10 +400,12 @@ pairing the ring multiplication, in Kraines' sign (HW, Introduction, p. 1 and fo
 convention differs by a sign). When `Γ` acts trivially on `R`, `d⁰ = 0` (Tau Ceti
 `ContCohomology.B1_eq_bot_of_smul_eq_self`), so every class of `H¹(Γ, R)` has exactly one
 representative, a continuous homomorphism `Γ → (R, +)`; the definition then reads as the structure
-`DefiningSystem` of `Suggested.lean`, with fields `DefiningSystem.entry`,
-`DefiningSystem.continuous_entry`, `DefiningSystem.entry_castSucc_succ` and the defining equation
-`DefiningSystem.entry_mul`, which is `d a_ij = −Σ a_im ∪ a_mj` written out:
-`a_ij(gh) = a_ij(g) + a_ij(h) + Σ_{i<m<j} a_im(g)a_mj(h)`. Its value is `DefiningSystem.value`,
+`DefiningSystem` of `Suggested.lean` (for a discrete commutative ring `R`), with fields
+`DefiningSystem.entry`, `DefiningSystem.continuous_entry`, `DefiningSystem.entry_castSucc_succ`, the
+defining equation `DefiningSystem.entry_mul`, which is `d a_ij = −Σ a_im ∪ a_mj` written out:
+`a_ij(gh) = a_ij(g) + a_ij(h) + Σ_{i<m<j} a_im(g)a_mj(h)`, and the normalization
+`DefiningSystem.entry_eq_zero`: the entries with `j ≤ i`, and for `n ≥ 2` the corner `(0, n)`, are
+zero. For `n = 1` the corner is the adjacent entry and is not normalized. Its value is `DefiningSystem.value`,
 `(g, h) ↦ −Σ_{0<m<n} a_0m(g)a_mn(h)`, and `MasseyDefined` and `MasseyContainsZero` are the two
 conditions, the second asking that some value be the coboundary `(g, h) ↦ f(h) − f(gh) + f(g)` of a
 continuous cochain `f`.
@@ -409,8 +427,9 @@ API:
 - Restriction along a continuous homomorphism `Γ′ → Γ` carries defining systems to defining systems
   and values to restricted values, so it maps the Massey product into the Massey product of the
   restricted classes.
-- Two defining systems over the same adjacent cocycles are equal as families when their permitted
-  entries agree; the equations and continuity are propositions.
+- Two defining systems over the same adjacent cocycles are equal when their permitted entries agree:
+  the other entries are zero by the normalization, and the equations and continuity are
+  propositions.
 
 **Checks.**
 
@@ -427,6 +446,10 @@ API:
 - For `n = 1` the structure `DefiningSystem` imposes no equation and its value is the empty sum, so
   `MasseyContainsZero` holds for every cochain, homomorphism or not. This is why Dwyer's criteria
   assume `n ≥ 2`.
+- For `Γ = 1`, `R = 𝔽₂`, `n = 2` and `χ = 0` there is exactly one defining system, all of whose
+  entries are zero. Without the normalization, setting the diagonal entry `(0,0)` to the constant
+  `1` would give a second family with the same permitted entries and the same lift, and the
+  correspondence of 1.5 would not be injective.
 
 ### 0.4 Independence of representatives
 
@@ -449,8 +472,11 @@ Layer 2.
 **Checks.**
 
 - For `n = 2` the gauge changes the value by
-  `−(du₀ ∪ a₁₂ + a₀₁ ∪ du₁ + du₀ ∪ du₁) = −d(u₀ ∪ a₁₂ + a₀₁ ∪ u₁ + u₀ ∪ du₁)`, a coboundary, as `a₀₁`
-  and `a₁₂` are cocycles: the class `−α₀ ∪ α₁` depends only on the classes.
+  `−(du₀ ∪ a₁₂ + a₀₁ ∪ du₁ + du₀ ∪ du₁) = −d(u₀ ∪ a₁₂ − a₀₁ ∪ u₁ + u₀ ∪ du₁)`, a coboundary, as `a₀₁`
+  and `a₁₂` are cocycles: the class `−α₀ ∪ α₁` depends only on the classes. The middle sign comes
+  from `d(a₀₁ ∪ u₁) = −a₀₁ ∪ du₁` (Leibniz rule with `(−1)¹`): for `Γ = ℤ/2` acting on `𝔽₉` by
+  `i ↦ −i`, `u₀ = a₁₂ = 0`, `u₁ = i` and `a₀₁ = d⁰i`, both sides are `−1 = 2` at `(σ, σ)`, while
+  `+a₀₁ ∪ u₁` would give `1`.
 - For `Γ = ℤ/2` acting on `𝔽₉ = 𝔽₃(i)` by `i ↦ −i`, the coboundary `d⁰u(σ) = σ(u) − u` is `−2i = i`
   for `u = i`, so a class of `H¹` has several representatives and the statement has content; for
   trivial action `d⁰ = 0` and it is empty.
@@ -489,7 +515,7 @@ K2SymbolsBrauer §6.14. (HW, §2, p. 4, for generation of `Uᵐ` by elementary m
 §3, p. 5.)
 *Needs:* Tau Ceti `TauCeti.upperUnitriangularGroup`, `TauCeti.UpperUnitriangularGroup.ext`,
 `TauCeti.transvectionUnit`, `TauCeti.commutatorElement_transvectionUnit`,
-`TauCeti.commute_transvectionUnit`; Mathlib `Matrix.IsUpperUnitriangular`.
+`TauCeti.commute_transvectionUnit`, `Matrix.IsUpperUnitriangular`.
 
 **Checks.**
 
@@ -584,8 +610,9 @@ API:
 Let `Γ` be a topological group, `R` a discrete commutative ring with trivial action, `n ≥ 2`, and
 `χ₀, …, χ_{n−1} : Γ → R` continuous homomorphisms, with `α = (χ_i) : Γ → A`. Prove: (1) defining
 systems with adjacent entries `χ_i` (structures `DefiningSystem` over `χ`) correspond bijectively to
-continuous homomorphisms `β : Γ → U/Z` lifting `α`, by `a_ij(g) = β(g)_ij` for `(i, j) ≠ (0, n)`,
-which is well defined because multiplying by `Z` changes only the corner; (2) the value of the
+continuous homomorphisms `β : Γ → U/Z` lifting `α`, by `a_ij(g) = β(g)_ij` for `i < j`,
+`(i, j) ≠ (0, n)`, the other entries being zero by `DefiningSystem.entry_eq_zero`, which is well
+defined because multiplying by `Z` changes only the corner; (2) the value of the
 defining system attached to `β` is `−β*u`. (HW, Proposition 2.2, p. 5; Dwyer, Theorem 2.4, in the
 opposite sign convention.) Route: the `(i, j)` entry of `β(gh) = β(g)β(h)` is the equation
 `DefiningSystem.entry_mul`; continuity of every entry into the discrete `R` is openness of the kernel
@@ -816,7 +843,8 @@ Prove that for `p` prime, `g ∈ U¹ ⊆ Uₙ₊₁(𝔽_p)` and `m ≥ 0` with 
 - At `p = 3`, `n = 6`, `g = 1 + E₀₂ + E₂₄ + E₄₆` has `g³ = 1 + E₀₆ ≠ 1` and `g⁹ = 1`: the bound with
   `2·3 = 6 > 6` fails and the bound with `m = 2` holds.
 - At `p = 2` and `n ≤ 6` the exponent of `U¹` divides `4`.
-- At `n ≤ 2p − 1` the exponent of `U¹` is `p`.
+- For `2 ≤ n ≤ 2p − 1` the exponent of `U¹` is exactly `p`: it divides `p` by the bound with
+  `m = 1`, and `e₀₂(1)` has order `p`. For `n ≤ 1`, `U¹ = 1` and the exponent is `1`, not `p`.
 
 ### 3.3 The outer exponent
 
@@ -840,17 +868,19 @@ API:
 - The outer exponents of `C₁, C₂, C₄, C₆` are `1, 1, 4, 3`, computed from the definition. For `C₂`
   the unit group modulo two is trivial; for `C₄` inversion is nontrivial and does not factor through
   units modulo `1` or `2`; for `C₆` it factors through `(ℤ/3)ˣ` although the exponent is `6`.
-- For an elementary abelian `p`-group with `p` odd the outer exponent is `p`; for `p = 2` it is `1`,
-  smaller than the exponent `2`.
+- For a nontrivial elementary abelian `p`-group with `p` odd the outer exponent is `p`; for `p = 2`
+  it is `1`, smaller than the exponent `2`; for the trivial group it is `1` for every `p`.
 - The outer exponent depends on the conjugacy classes, not only on element orders: `C₄` and the
   quaternion group `Q₈` both have exponent `4`, but in `Q₈` every element is conjugate to its inverse,
   so its outer exponent is `1`, while that of `C₄` is `4`.
 
 ### 3.4 Outer powering in small rank
 
-Prove that for `2 ≤ n ≤ 6` and every prime `p`, the powering action on the conjugacy classes of
-`U¹ ⊆ Uₙ₊₁(𝔽_p)` factors through `(ℤ/p)ˣ`; hence the outer exponent of `U¹` is `p` for `p` odd and
-`1` for `p = 2`. Route: if `2p > n` the exponent of `U¹` is `p` (3.2) and there is nothing to prove.
+Prove `isConj_pow_superdiagonalSubgroup_two`: for every prime `p`, every `n ≤ 6`, every `Q` in
+`U¹ = UpperUnitriangularGroup.superdiagonalSubgroup 2 ⊆ Uₙ₊₁(𝔽_p)` and every natural number
+`a ≡ 1 (mod p)`, `Qᵃ` is conjugate to `Q` in `U¹` (Mathlib `IsConj`). Equivalently the powering
+action on the conjugacy classes of `U¹` factors through `(ℤ/p)ˣ`; hence for `2 ≤ n ≤ 6` the outer
+exponent of `U¹` is `p` for `p` odd and `1` for `p = 2`. For `n ≤ 1`, `U¹ = 1`. Route: if `2p > n` the exponent of `U¹` is `p` (3.2) and there is nothing to prove.
 At `p = 3`, `n = 6`, the exponent divides `9` (3.2), `(Q − 1)³ = Q₀₂Q₂₄Q₄₆ E₀₆`, so
 `Q⁴ = Q + Q₀₂Q₂₄Q₄₆ E₀₆`, and `e₂₆(t) Q⁴ e₂₆(t)⁻¹ = Q` for `t = Q₂₄Q₄₆`. At `p = 2`, `4 ≤ n ≤ 6`, the
 exponent divides `4`; the block-diagonal part `D` of `Q` with blocks of sizes `4` and `n − 3` and
@@ -859,7 +889,7 @@ smaller divisor is admissible, since the image of `Q` in `B` is multiplied by `a
 conjugation in `U¹` fixes it. (HW, Lemma 4.7, p. 14, which states the value `p` also for `p = 2` and
 quotes the exponent bound as divisibility by `9`; the factorization through `(ℤ/p)ˣ`, which is what is
 used, is unchanged.)
-*Needs:* 3.1, 3.2, 3.3; 1.1, 2.1.
+*Needs:* 3.1, 3.2, 3.3; 1.1, 2.1; Mathlib `IsConj`.
 
 **Checks.**
 
@@ -867,7 +897,10 @@ used, is unchanged.)
   `e₂₆(t)⁻¹Qe₂₆(t) = Q⁴` with `t = Q₂₄Q₄₆`.
 - For `Q = 1 + E₀₂ + E₂₄ + E₄₆` over `𝔽₃`, `Q⁴` differs from `Q` at `(0, 6)`: the cubic corner cannot be
   omitted.
-- For thirty random `Q ∈ U¹ ⊆ Uₙ₊₁(𝔽₂)`, `n = 2, …, 6`, `D² = O² = 1`, `D, O ∈ U¹` and `Q⁻¹ = OD`.
+- For thirty random `Q ∈ U¹ ⊆ Uₙ₊₁(𝔽₂)`, `n = 4, 5, 6`, the blocks of sizes `4` and `n − 3` give
+  `D² = O² = 1`, `D, O ∈ U¹` and `Q⁻¹ = OD`. For `n = 2, 3` the block sizes do not fit, and none is
+  needed: `U¹` has exponent dividing `2` (3.2), so `Q⁻¹ = Q`; for `Q = 1 + E₀₂` in `U₃(𝔽₂)`,
+  `Q² = 1`.
 
 ### Examples
 
@@ -908,8 +941,11 @@ API:
 - For `H = C₂ × C₂`, `H²(H, ℚ/ℤ) ≅ ℤ/2` and the nonzero class restricts to zero on every cyclic
   subgroup (cyclic groups have trivial Schur multiplier), but it is not in `B_Bog(H)`: tests by
   cyclic subgroups alone are not enough.
-- For finite `H`, the multiplier computed in Mathlib's `groupCohomology` and the one computed in the
-  explicit continuous `H²` correspond under the comparison of ProfiniteCohomology Layer 3.
+- For `H = D₈ = U₃(𝔽₂)`, `B_Bog(H) = 0` although `H²(H, ℚ/ℤ) ≅ ℤ/2`: the nonzero class is the
+  push-out of the central extension `1 → C₂ → Q₁₆ → D₈ → 1` along `C₂ ↪ ℚ/ℤ`, and on the abelian
+  subgroup `⟨ā², b̄⟩ ≅ C₂²` its preimage in `Q₁₆ = ⟨a, b | a⁸, b² = a⁴, bab⁻¹ = a⁻¹⟩` has
+  `[a², b] = a⁴ ↦ 1/2 ≠ 0`. A definition by restriction to cyclic subgroups only, or the whole
+  `H²`, would keep this class.
 
 ### 4.2 The commutativity-preserving exterior square
 
@@ -936,7 +972,9 @@ API:
 **Checks.**
 
 - For abelian `H` every generator is killed and `H ⋏ H = 1`.
-- `κ̃(x ⋏ y) = xyx⁻¹y⁻¹`, the convention of Tau Ceti's transvection commutators, not `x⁻¹y⁻¹xy`.
+- For `H = S₃`, `s = (12)`, `r = (123)`: `κ̃(s ⋏ r) = srs⁻¹r⁻¹ = r⁻² = r`, while the convention
+  `x⁻¹y⁻¹xy` would give `r²`; and `κ̃ : H ⋏ H → A₃` is an isomorphism, its kernel `B̃₀(S₃)` being
+  zero since the Schur multiplier of `S₃` is.
 - In `U₃(𝔽_p)`, `κ̃(e₀₁(a) ⋏ e₁₂(b)) = e₀₂(ab)`, which is nontrivial for `ab ≠ 0`.
 
 ### 4.3 Character duality
@@ -1061,7 +1099,9 @@ API:
 
 **Checks.**
 
-- For `χ = 1` the allowed `h̄` are the `σ`-fixed vectors of `H^ab`.
+- For `χ = 1` every allowed `h̄` is a `σ`-fixed vector of `H^ab`, but the converse fails: for
+  `H = U¹ ⊆ U₇(𝔽₂)` and `σ` acting through `a = (1, 1, 0, 0, 0, 1)` (6.1), `e₂₅` is fixed in
+  `H^ab = B` but is not the image of any `σ`-fixed conjugacy class.
 - The target `H¹(ℤ, μ_d)` carries the trivial action; keeping the cyclotomic action on `μ_d` would
   change the invariant condition and the value.
 - The zero class evaluates to `1` on every allowed class.
@@ -1215,9 +1255,10 @@ trivial cocycles and four coboundaries. (HW, Example 6.3, p. 24.)
 Let `V = 𝔽₂a ⊕ 𝔽₂b ⊕ 𝔽₂c ⊕ 𝔽₂d ⊕ 𝔽₂e` and `Q = C₂(s) × C₄(t) × C₂(r)`. Define the representation
 `s = 1 + N_s`, `t = 1 + N_t`, `r = 1` with `N_s(b) = d + e`, `N_s(c) = e`, `N_t(a) = d`,
 `N_t(b) = d + e`, and all other basis images zero. Prove `N_s² = N_t² = N_sN_t = N_tN_s = 0`, so this
-is a representation of `Q` in which `t` acts with order two. This explicit module and the cocycles of
-6.4–6.5 are constructed here as finite models of the phenomena discussed in HW, Remark 3.4, p. 10;
-they are not claimed to be HW's examples.
+is a representation of `Q` in which `t` acts with order two. This explicit module and the cocycle
+of 6.4 are this roadmap's own finite example of a nonzero `H¹_cyc` for an action through a
+non-cyclic quotient, in the sense of HW, Definition 4.3, p. 13, and of the same kind as HW,
+Example 6.3, p. 24; they are not HW's examples.
 *Needs:* 2.2; Tau Ceti `TauCeti.InternalHom`, `TauCeti.homAction`.
 
 API:
@@ -1229,9 +1270,18 @@ API:
 
 **Checks.**
 
-- `s(b) = b + d + e` and `s(c) = c + e`.
-- `t(a) = a + d` and `t(b) = b + d + e`.
-- `r` and `t²` act trivially although `t²` is a nontrivial element of `Q`.
+- The invariants are `V^Q = ⟨d, e⟩`, of dimension two: `N_s v = 0` forces the `b`- and
+  `c`-coordinates to vanish and `N_t v = 0` then forces the `a`-coordinate to vanish.
+- The kernel of the action is `⟨t², r⟩`, of order four: `s^i t^j` acts as `1 + iN_s + jN_t`, which
+  is the identity only for `i, j` even. In particular `t²` acts trivially although it is a
+  nontrivial element of `Q`.
+- On the dual, `(s − 1)d* = b*` and `(t − 1)e* = b*`, and `(s·d*)(s·b) = d*(b) = 0` whereas
+  `d*(s·b) = 1`: the contragredient action is not the transpose of the primal one read on the
+  same basis.
+- There is a cocycle `γ : Q → V` with `γ(s) = a`, `γ(t) = b + c`, `γ(r) = 0`, the relations holding
+  because `(1 + s)a = 0`, `(1 + t + t² + t³)(b + c) = 0` and `N_s(b + c) = N_t(a) = d`; its value
+  `γ(t²) = (1 + t)(b + c) = d + e` is nonzero although `t²` acts trivially, so a cocycle on `Q` is
+  not determined by the action of `Q/⟨t², r⟩`, and over `C₂(t)` this `γ` would not exist.
 - All four products of `N_s, N_t` vanish, by direct computation.
 
 ### 6.4 An explicit cyclically trivial class
@@ -1240,7 +1290,7 @@ Prove that `b*` is `Q`-invariant and that `β(s^i t^j r^l) = (i + j mod 2)·b*` 
 is a nonzero element of `H¹_cyc(Q, V^∨)`. For the parities `(i, j) = (1, 0)` and `(0, 1)`, `d*` and `e*`
 are cyclic coboundary witnesses; for `(0, 0)` and `(1, 1)`, `β = 0`. A global coboundary `m` with
 `d*, e*` coefficients `u, v` would need `(s − 1)m = (u + v)b* + vc* = b*` and
-`(t − 1)m = ua* + (u + v)b* = b*`, forcing `v = 0, u = 1` and `u = 0`.
+`(t − 1)m = ua* + (u + v)b* = b*`, forcing `v = 0, u = 1` and `u = 0`. (HW, Definition 4.3, p. 13, for `H¹_cyc`.)
 *Needs:* 6.3, 5.1.
 
 **Checks.**
@@ -1248,28 +1298,6 @@ are cyclic coboundary witnesses; for `(0, 0)` and `(1, 1)`, `β = 0`. A global c
 - The cocycle identity holds on all `256` pairs of elements of `Q`.
 - `β(g) ∈ (g − 1)V^∨` for all `16` elements `g`.
 - None of the `32` elements `m ∈ V^∨` has `(g − 1)m = β(g)` for every `g`.
-
-### 6.5 An auxiliary quartic cocycle
-
-Define `γ : Q → V` by `γ(s) = a`, `γ(t) = b + c`, `γ(r) = 0` and
-`γ(s^i t^j r^l) = ia + s^i Σ_{0≤h<j} t^h(b + c)` for `0 ≤ i, l < 2`, `0 ≤ j < 4`. Prove that it is a
-cocycle, that its `b`-coordinate is `j mod 2`, and that `γ(t²) = d + e`. The relations hold because
-`(1 + s)a = 0`, `(1 + t + t² + t³)(b + c) = 0` and `N_s(b + c) = N_t(a) = d`.
-*Needs:* 6.3.
-
-API:
-
-- `γ` is the displayed map `Q → V`, given on normal forms.
-- `γ(uv) = γ(u) + u·γ(v)` for all `u, v ∈ Q`.
-- The `b`-coordinate of `γ(s^i t^j r^l)` is `j mod 2`.
-
-**Checks.**
-
-- `γ(t²) = d + e ≠ 0` although `t²` acts trivially; computed.
-- `γ(s²) = 0` and `γ(r) = 0`.
-- Replacing `C₄(t)` by `C₂(t)` would require `(1 + t)(b + c) = 0`, but `(1 + t)(b + c) = d + e`; the
-  cyclic factor of order four is needed.
-- The cocycle identity holds on all `256` pairs, by computation.
 
 ### Examples
 
@@ -1311,8 +1339,9 @@ API:
 - The first-row and last-column parts meet exactly in `Z`.
 - At `r + s = n − 1`, `P_(r,s)` is abelian, but conjugation by `U` is nontrivial on it: for `n = 3`,
   `e₀₁ e₁₃ e₀₁⁻¹ = e₀₃ e₁₃`.
-- If `r + s ≥ n` there is `j` with `n − s ≤ j ≤ r` and `0 < j < n`, and `[e₀ⱼ(1), e_jn(1)] = e₀ₙ(1) ≠ 1`:
-  for `n = 4`, `r = s = 2`, `e₀₂` and `e₂₄`. Abelianness is not asserted in that range.
+- If `R` is nontrivial and `r + s ≥ n`, there is `j` with `n − s ≤ j ≤ r` and `0 < j < n`, and
+  `[e₀ⱼ(1), e_jn(1)] = e₀ₙ(1) ≠ 1`: for `n = 4`, `r = s = 2` over `𝔽₂`, `e₀₂` and `e₂₄`.
+  Abelianness is not asserted in that range. For the zero ring `U` and every `P_(r,s)` are trivial.
 - Over `𝔽₃` with `n = 4, r = 2, s = 1`, `P_(r,s)` has `3⁴ = 81` elements, by enumeration.
 
 ### 7.2 The twisted boundary sequence
@@ -1339,9 +1368,11 @@ API:
 
 - For `α̃ = 1` the action is trivial and `[γ] = 0`.
 - Changing the lift of `α̃(g)` by an element of `Z` does not change the action, `Z` being central.
-- For `Γ = ∏_ℕ ℤ/2` acting trivially, a sequence with infinite `⊕_ℕ 𝔽₂` as quotient has a splitting
-  cocycle that is not continuous into the discrete Hom (ArithmeticGaloisDuality §R02.1.4, Check
-  `torsor_discrete_fails`); the finite quotient here avoids this.
+- For `Γ = ∏_ℕ ℤ/2`, `A = 𝔽₂` and `C = ⊕_ℕ 𝔽₂` with trivial action, and `B = A ⊕ C` with
+  `g·(a, c) = (a + Σ gᵢcᵢ, c)`, the splitting cocycle `g ↦ (c ↦ Σ gᵢcᵢ)` is not continuous into the
+  discrete `Hom(C, A)`: its zero fibre is `{0}`, which is not open (ArithmeticGaloisDuality
+  §R02.1.4, Check `torsor_discrete_fails`). With trivial action on `B` as well the cocycle is zero;
+  the middle action is what matters. The finite quotient here avoids this.
 
 ### 7.3 The connecting map as a cup product
 
@@ -1587,11 +1618,13 @@ Define the continuous Hom-coefficient DG category with objects `0, …, n`, Hom 
 specialize DGAInfinity Layer 8's degree-one matric defining systems: entries `a_ij ∈ C¹(Γ, M_ij)`,
 `d a_ij = −Σ a_im ∪ a_mj`, value the class of `−Σ a_0m ∪ a_mn` in `H²(Γ, M_0n)`. (HW, §7, pp. 24–25,
 Remark 7.1 and Example 7.2.)
-*Needs:* 0.1; DGAInfinity Layers 1 and 8; Tau Ceti `TauCeti.homAction`, `TauCeti.InternalHom`.
+*Needs:* 0.1; DGAInfinity Layers 1 and 8; Tau Ceti `TauCeti.DGCategoryData`, `TauCeti.homAction`,
+`TauCeti.InternalHom`.
 
 API:
 
-- The DG category with the displayed Hom complexes, an object of DGAInfinity Layer 1's carrier.
+- The DG category with the displayed Hom complexes, an object of DGAInfinity Layer 1's carrier,
+  given by Tau Ceti's `TauCeti.DGCategoryData`.
 - The coefficient action on `M_ij` is `f ↦ χ_i f χ_j⁻¹`.
 - The composition cup has the translated formula above.
 - Degree-one defining systems and their values are DGAInfinity's, specialized.
@@ -1655,7 +1688,9 @@ API:
 
 **Checks.**
 
-- For trivial `χ` this is the adjacent homomorphism of 1.3.
+- For trivial `χ` and every `N_i` free of rank one over `R` with a chosen basis, this is the
+  adjacent homomorphism of 1.3. For `R = ℤ/4` and every `N_i = ℤ/2` the scalar model is over
+  `𝔽₂`, even with trivial actions: the adjacent Hom coordinates have order `2`, not `4`.
 - From `a = 0`, conjugation by `(−u, 1)` gives the cocycle `d⁰u`, not `−d⁰u`.
 - If every adjacent Hom is zero, `α` is the diagonal character.
 
@@ -1678,7 +1713,9 @@ API:
 
 **Checks.**
 
-- With trivial diagonal action, restricting to `U(W)` gives the corner extension of 1.4.
+- With trivial diagonal action and every `N_i` free of rank one over `R` with a chosen basis,
+  restricting to `U(W)` gives the corner extension of 1.4. For `R = ℤ/4`, `n = 3` and every
+  `N_i = ℤ/2`, `U(W) = U₄(𝔽₂)` has order `64`, not `|U₄(ℤ/4)| = 4096`.
 - Over `𝔽₃` with `d₀ = −1`, `dₙ = 1`, diagonal conjugation negates a nonzero corner: `Z(W)` is not
   central in `T(W)`.
 - If `Hom_R(Nₙ, N₀) = 0` the quotient by `Z(W)` changes nothing.
@@ -1716,7 +1753,7 @@ its use in Theorem 7.4.)
 
 **Checks.**
 
-- For trivial `χ` this is 1.6.
+- For trivial `χ` and every `N_i` free of rank one over `R` with a chosen basis, this is 1.6.
 - In the counterexample of 9.5 both representatives give defined products containing zero.
 - Over `Γ = ℤ/2`, `R = 𝔽₂`, rank one and trivial `χ`, `⟨χ′, χ′⟩` for the nonzero `χ′` is defined and
   does not contain zero, as in Layer 1.
@@ -1999,10 +2036,15 @@ API:
 Prove that `χ = (χ₀₁, χ₁₂, χ₂₃) : Γ_ℚ → (ℤ/8)³` has a continuous lift `Γ_{ℚ_v} → U₈` at every place `v`
 and no continuous lift `Γ_ℚ → U₈`. Over `ℚ` or any completion, a lift of `χ` exists exactly when `χ₁₂`
 is in the image of `H¹(P₈) → H¹(ℤ/8)`: since `U₈ = P₈ ⋊ C`, lifts of the endpoint pair are crossed
-homomorphisms to `P₈` times the section (InverseGaloisAndArithmeticFundamentalGroups §IG.4.2,
-*Twisting abelian-kernel solutions*), their middle coordinate is the image class, and equality of
-classes in `H¹(ℤ/8)` is equality of characters. (HW, (7.6) and proof of Theorem 7.5, p. 31.)
-*Needs:* 11.1, 11.8; InverseGaloisAndArithmeticFundamentalGroups §IG.4.2; ProfiniteCohomology Layer 5.
+homomorphisms to `P₈` times the section, their middle coordinate is the image class, and equality
+of classes in `H¹(ℤ/8)` is equality of characters. For the description of the lifts use
+InverseGaloisAndArithmeticFundamentalGroups §IG.4.1, *Finite abelian-kernel obstruction and
+pullback*, which allows any profinite source and a map that need not be surjective (at a real place
+the endpoint pair has image of order at most `2`): for the split extension `1 → P₈ → U₈ → C → 1`,
+if `β` is a lift of the endpoint pair `π` and `s` the section, `z(g) = β(g)s(π(g))⁻¹` satisfies
+`z(gh) = z(g)·(g·z(h))`, and conversely `z(g)s(π(g))` is a lift for every continuous crossed
+homomorphism `z`. (HW, (7.6) and proof of Theorem 7.5, p. 31.)
+*Needs:* 11.1, 11.8; InverseGaloisAndArithmeticFundamentalGroups §IG.4.1; ProfiniteCohomology Layer 5.
 
 **Checks.**
 
@@ -2035,7 +2077,8 @@ global lift excluded by 11.9. (HW, Theorem 7.5, p. 28, proof p. 31.)
 ### Dependencies
 
 Layers 0–1; ArithmeticGaloisDuality §§R02.3.0d, R02.4.5a and R02.4.5b;
-InverseGaloisAndArithmeticFundamentalGroups §IG.4.2; ProfiniteCohomology Layers 2, 5 and 9.
+InverseGaloisAndArithmeticFundamentalGroups §§IG.4.1 and IG.4.2; ProfiniteCohomology Layers 2, 5
+and 9.
 
 ## Downstream consumers
 

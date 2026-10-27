@@ -16,6 +16,9 @@ Headline theorems stated here:
   discrete commutative ring is defined exactly when the adjacent characters lift to `Uₙ₊₁(R)/Z`,
   and contains zero exactly when they lift to `Uₙ₊₁(R)`
   (`masseyDefined_iff_exists_lift`, `masseyContainsZero_iff_exists_lift`);
+* outer powering in small rank: for `n ≤ 6`, every power `Q ^ a` with `a ≡ 1 (mod p)` of an element
+  `Q` of the derived subgroup `U¹` of `Uₙ₊₁(𝔽_p)` is conjugate to `Q` in `U¹` (Layer 3,
+  `isConj_pow_superdiagonalSubgroup_two`);
 * the vanishing of the Bogomolov multiplier of the derived subgroup `U¹` of `Uₙ₊₁(𝔽_p)`
   (Layer 4, `bogomolovMultiplier_superdiagonalSubgroup_two_eq_bot`);
 * refined lifting through the two-boundary subgroup `P_{r,s}` at every local field, archimedean or
@@ -26,11 +29,20 @@ Headline theorems stated here:
 * a triple Massey product of three characters `Γ_ℚ → ℤ/8` that is defined and does not contain
   zero (Layer 11, `exists_masseyDefined_not_masseyContainsZero_zmod_eight`).
 
-Every headline theorem of the roadmap is stated. The defining systems here have trivial
-coefficients, which is the generality of every headline theorem; the general continuous cochain
-algebra, its comparison with continuous cohomology and the twisted defining systems of Layer 9 are
-README targets whose carriers (DGAInfinity's DG algebras and DG categories) are not in the pinned
-libraries, and none of them is a headline theorem.
+Every end theorem named in the README's summary is stated. The defining systems here have trivial
+coefficients in a discrete commutative ring, which is the generality of every headline theorem. The
+general continuous cochain algebra, its comparison with continuous cohomology and the twisted
+defining systems of Layer 9 are README targets, not headline theorems: the generic carriers exist at
+the pins (Tau Ceti's `TauCeti.IsDGAlgebra` and `TauCeti.DGCategoryData`), but the objects to be
+placed in them (the internally graded algebra of continuous inhomogeneous cochains with its
+translated cup, and the Hom-coefficient cochain category) are constructions of this roadmap and are
+not made here.
+
+Two finite-group results consumed downstream are not stated: the vanishing of `H¹_cyc(G, B_bdry^D)`
+(README 5.6) and fixed-class generation for `n = 4, 5` (README 5.7). Their carriers, the module
+`B = U¹/U³` with its action of `U/U¹`, the boundary submodule `B_bdry`, its dual twisted by a
+character and the cyclic restriction kernel `H¹_cyc`, are definitions of this roadmap and not of the
+pinned libraries.
 
 Continuity of a homomorphism into a finite (or discrete) group is written as openness of its
 kernel, as in Tau Ceti's `TauCeti.FiniteEmbeddingProblem`. The absolute Galois group is Tau Ceti's
@@ -44,17 +56,18 @@ open TauCeti CategoryTheory
 /-! ## Layer 0: continuous cochains and degree-one defining systems -/
 
 /-- A **defining system** for the `n`-fold Massey product of the cochains `χ 0, …, χ (n - 1)`,
-with coefficients in a commutative topological ring `R` on which `Γ` acts trivially.
+with coefficients in a discrete commutative ring `R` on which `Γ` acts trivially.
 
 The entries `entry i j : Γ → R` are continuous `1`-cochains. The adjacent entries are the given
 cochains, and for `i < j` with `(i, j) ≠ (0, n)` the entry satisfies Kraines' defining equation
 `d a_{ij} = - ∑_{i<m<j} a_{im} ∪ a_{mj}` (Harpaz–Wittenberg, Introduction, p. 1). With the
 inhomogeneous differential `(d f)(g, h) = f h - f (g * h) + f g` of trivial coefficients and the
 cup product `(a ∪ b)(g, h) = a g * b h`, that equation is `entry_mul`: the entries multiply like
-the entries of an upper unitriangular matrix. The entries with `i ≥ j` and the corner entry
-`(0, n)` are not constrained by any field. -/
+the entries of an upper unitriangular matrix. The entries with `i ≥ j`, and the corner entry
+`(0, n)` when `n ≥ 2`, are zero (`entry_eq_zero`), so a defining system is determined by its
+permitted entries; for `n = 1` the corner is the adjacent entry `χ 0`. -/
 structure DefiningSystem (Γ : Type*) [Group Γ] [TopologicalSpace Γ] (R : Type*) [CommRing R]
-    [TopologicalSpace R] (n : ℕ) (χ : Fin n → Γ → R) where
+    [TopologicalSpace R] [DiscreteTopology R] (n : ℕ) (χ : Fin n → Γ → R) where
   /-- The `(i, j)` entry, a `1`-cochain. -/
   entry : Fin (n + 1) → Fin (n + 1) → Γ → R
   /-- Every entry is continuous. -/
@@ -65,23 +78,28 @@ structure DefiningSystem (Γ : Type*) [Group Γ] [TopologicalSpace Γ] (R : Type
   entry_mul : ∀ i j : Fin (n + 1), i < j → ¬ (i = 0 ∧ j = Fin.last n) → ∀ g h : Γ,
     entry i j (g * h) =
       entry i j g + entry i j h + ∑ m ∈ Finset.Ioo i j, entry i m g * entry m j h
+  /-- The entries that are not permitted vanish: those on or below the diagonal, and the corner
+  `(0, n)` when it is not adjacent. -/
+  entry_eq_zero : ∀ i j : Fin (n + 1), (j ≤ i ∨ (i = 0 ∧ j = Fin.last n ∧ 2 ≤ n)) →
+    entry i j = 0
 
 /-- The **value** of a defining system: the `2`-cocycle `- ∑_{0<m<n} a_{0m} ∪ a_{mn}`, that is
 `(g, h) ↦ - ∑_{0<m<n} a_{0m}(g) a_{mn}(h)` (Harpaz–Wittenberg, Introduction, p. 1). -/
 def DefiningSystem.value {Γ : Type*} [Group Γ] [TopologicalSpace Γ] {R : Type*} [CommRing R]
-    [TopologicalSpace R] {n : ℕ} {χ : Fin n → Γ → R} (D : DefiningSystem Γ R n χ)
+    [TopologicalSpace R] [DiscreteTopology R] {n : ℕ} {χ : Fin n → Γ → R}
+    (D : DefiningSystem Γ R n χ)
     (x : Γ × Γ) : R :=
   -∑ m ∈ Finset.Ioo (0 : Fin (n + 1)) (Fin.last n), D.entry 0 m x.1 * D.entry m (Fin.last n) x.2
 
 /-- The `n`-fold Massey product of `χ` is **defined**: it has a defining system. -/
 def MasseyDefined {Γ : Type*} [Group Γ] [TopologicalSpace Γ] {R : Type*} [CommRing R]
-    [TopologicalSpace R] {n : ℕ} (χ : Fin n → Γ → R) : Prop :=
+    [TopologicalSpace R] [DiscreteTopology R] {n : ℕ} (χ : Fin n → Γ → R) : Prop :=
   Nonempty (DefiningSystem Γ R n χ)
 
 /-- The `n`-fold Massey product of `χ` **contains zero**: some defining system has value the
 coboundary `(g, h) ↦ f h - f (g * h) + f g` of a continuous cochain `f`. -/
 def MasseyContainsZero {Γ : Type*} [Group Γ] [TopologicalSpace Γ] {R : Type*} [CommRing R]
-    [TopologicalSpace R] {n : ℕ} (χ : Fin n → Γ → R) : Prop :=
+    [TopologicalSpace R] [DiscreteTopology R] {n : ℕ} (χ : Fin n → Γ → R) : Prop :=
   ∃ D : DefiningSystem Γ R n χ, ∃ f : Γ → R, Continuous f ∧
     ∀ g h : Γ, D.value (g, h) = f h - f (g * h) + f g
 
@@ -118,6 +136,19 @@ theorem masseyContainsZero_iff_exists_lift {Γ : Type*} [Group Γ] [TopologicalS
           ∀ (g : Γ) (i : Fin n),
             ((β g : GL (Fin (n + 1)) R) : Matrix (Fin (n + 1)) (Fin (n + 1)) R)
               i.castSucc i.succ = χ i g := by
+  sorry
+
+/-! ## Layer 3: nilpotent support and outer exponents -/
+
+/-- **Outer powering in small rank** (HW, Lemma 4.7, p. 14, with the least divisor `1` at
+`p = 2`). Let `p` be a prime and `n ≤ 6`. For every `Q` in the derived subgroup `U¹` of
+`Uₙ₊₁(𝔽_p)`, Tau Ceti's `UpperUnitriangularGroup.superdiagonalSubgroup 2`, and every `a ≡ 1 (mod p)`,
+the power `Q ^ a` is conjugate to `Q` inside `U¹`. Equivalently, powering by units on the conjugacy
+classes of `U¹` factors through `(ℤ/p)ˣ`. -/
+theorem isConj_pow_superdiagonalSubgroup_two (p : ℕ) [Fact p.Prime] {n : ℕ} (hn : n ≤ 6)
+    (Q : UpperUnitriangularGroup.superdiagonalSubgroup (R := ZMod p) (n := n + 1) 2) {a : ℕ}
+    (ha : a ≡ 1 [MOD p]) :
+    IsConj Q (Q ^ a) := by
   sorry
 
 /-! ## Layer 4: Bogomolov vanishing for the derived stabilizer -/
