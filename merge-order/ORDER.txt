@@ -330,6 +330,7 @@ TwistedAutomorphicDescents
 SpectralManifolds
 AutomorphicSpectralTheoryPartII
 OperatorAlgebraDynamics
+NoncompactQuantumSymmetry
 SmoothRepresentationsOfLocalGroupsPartII
 ExceptionalThetaCorrespondencesForG2
 LocalLanglandsCorrespondenceForG2
