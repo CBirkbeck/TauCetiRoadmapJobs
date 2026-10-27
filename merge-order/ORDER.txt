@@ -341,3 +341,4 @@ AutomorphicSpectralTheoryPartII
 ImplicitAtlases
 CalibratedGeometry
 CategoricalOperatorAlgebras
+TemperleyLiebOperatorAlgebras
