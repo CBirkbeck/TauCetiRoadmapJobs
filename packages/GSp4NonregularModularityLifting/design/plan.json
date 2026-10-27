@@ -3763,7 +3763,7 @@
     },
     {
       "slug": "gsp4-paramodular-newvector",
-      "needs": "Prove that a generic GSp₄ representation has a unique paramodular newvector line at its conductor, with the normalization used in BCGP25 Proposition 7.5.1.",
+      "needs": "For an irreducible admissible generic GSp₄(ℚ_ℓ)-representation over an algebraically closed characteristic-zero coefficient field with unramified central character, prove that its paramodular fixed space at the Artin conductor of its local parameter is one-dimensional and vanishes at smaller levels, with the normalization used in BCGP25 Proposition 7.5.1.",
       "supplier": "SmoothRepresentationsOfLocalGroups",
       "section": "SR.4.5"
     },

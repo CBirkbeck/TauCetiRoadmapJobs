@@ -139,5 +139,23 @@ sha256 = "f7b706eb2eb69354f5be3ce846193dc75f73ed46a7437eb54451b8f177af74c9"
 licence_class = "institutional"
 status = "certified"
 accessed = "2026-10-26"
-cited_for = ["Exact supplier contracts"]
 version_note = "Author manuscript of 16 March 2016 from the Cambridge institutional repository, 34 pages; numbering and pagination refer to this version."
+cited_for = ["Exact supplier contracts"]
+
+[[source]]
+id = "Yam14"
+authors = "Takuya Yamauchi"
+title = "The weight reduction of mod p Siegel modular forms for GSp4 and theta operators"
+year = 2014
+arxiv = "1410.7894v8"
+locator_scheme = "theorem"
+locator = "§3.2, pp.15–23; Propositions 3.10 and 3.13, pp.23–25; Theorem 4.7, p.42"
+url = "https://arxiv.org/abs/1410.7894v8"
+fetched_from = "https://arxiv.org/pdf/1410.7894v8"
+fetched_at = "2026-10-27T10:45:01Z"
+sha256 = "40ce383b7a1d1f947cd10afb97322708811211f0b2fe7ec9195790e4638efdd5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-27"
+version_note = "arXiv:1410.7894v8 of 18 October 2022; numbering and pagination refer to v8. CG20 cites an earlier version, whose Propositions 3.9 and 3.12 are the scalar and vector theta operators numbered 3.10 and 3.13 in v8."
+cited_for = ["4.2"]
