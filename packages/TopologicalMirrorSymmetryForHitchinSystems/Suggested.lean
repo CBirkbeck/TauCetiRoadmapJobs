@@ -17,6 +17,7 @@ The following headline theorems are not statable at the pins:
 * Stringy counts determine E-polynomials: lacks geometric compact-support cohomology, its mixed-Hodge realization, and the equivariant scissor/stringy realization carriers.
 * Principal splittings and constant Brauer classes: lacks represented relative Picard/Picτ and geometric Brauer sheaf cohomology and the principal splitting-torsor carrier.
 * Unitary and arithmetic principal splittings: lacks the relative splitting stack, its analytic principal torsor, and flat unitary gerbe splittings in families.
+* Evaluation of arithmetic gerbes on abelian varieties over local fields: lacks Brauer groups and gerbes on schemes (the pinned Brauer group is that of a field), the principal splitting torsor, and local Tate duality for abelian varieties.
 * Twisted counts as local integrals: lacks abstract dual Hitchin systems, relative gerbes, quotient-stack orbifold measures and compact-support inertia-fibre cohomology.
 * Equal volumes of dual regular fibres: lacks abstract dual Hitchin systems, relative gerbes, quotient-stack orbifold measures and compact-support inertia-fibre cohomology.
 * Fibrewise gerbe-character integrals: lacks abstract dual Hitchin systems, relative gerbes, quotient-stack orbifold measures and compact-support inertia-fibre cohomology.

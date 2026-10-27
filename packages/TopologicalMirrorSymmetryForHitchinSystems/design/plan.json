@@ -3772,7 +3772,7 @@
     },
     {
       "slug": "generic-orbifold-transgression",
-      "needs": "Extend AlgebraicModuliForArithmeticGeometry §4.5 quotient inertia and coherent gerbe transgression, using the tame-stack trace contract, by tangent age and normalized orbifold integration, the μ_(r|Γ|) Hasse and band-change comparison, integral-to-special-fibre cocycle compatibility, and arithmetic descent with Frobenius sector permutation for nonsplit finite étale commutative acting group schemes.",
+      "needs": "Extend AlgebraicModuliForArithmeticGeometry §4.5 quotient inertia and coherent gerbe transgression, using the finite-quotient stack trace contract, by tangent age and normalized orbifold integration, the μ_(r|Γ|) Hasse and band-change comparison, integral-to-special-fibre cocycle compatibility, and arithmetic descent with Frobenius sector permutation for nonsplit finite étale commutative acting group schemes.",
       "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
       "section": "3.10, 3.16"
     },
@@ -3796,7 +3796,7 @@
     },
     {
       "slug": "relative-picard-norm-duality",
-      "needs": "Provide relative Picτ for smooth projective families, its Pic0 identification on abelian torsors, norm-pullback Poincaré duality and represented spectral norm kernels and finite quotients with the required smoothness and base change.",
+      "needs": "Provide the Pic0 identification of relative Picτ with the dual abelian scheme on abelian-scheme torsors, norm-pullback Poincaré duality and represented spectral norm kernels and finite quotients with the required smoothness and base change.",
       "supplier": "AbelianSchemesAndArithmeticModuli",
       "section": "A2.2–A2.3; A3.3–A3.7"
     },
@@ -3825,8 +3825,8 @@
       "section": "9.1"
     },
     {
-      "slug": "tame-stack-trace",
-      "needs": "Provide bounded compact cohomology, proper base change and geometric-Frobenius trace for finite-monodromy sheaves on tame finite quotient stacks, with every rational torsor class weighted by its reciprocal automorphism order.",
+      "slug": "finite-quotient-stack-trace",
+      "needs": "Provide bounded compact cohomology with characteristic-zero ℓ-adic coefficients, ℓ invertible, proper base change and geometric-Frobenius trace for finite-monodromy sheaves on quotients of separated finite-type schemes by finite étale group schemes, including stabilizer orders divisible by the residue characteristic, with every rational torsor class weighted by its reciprocal automorphism order.",
       "supplier": "EtaleDualityAndPerverseSheaves",
       "section": "3.7; 6.3–6.4"
     },
