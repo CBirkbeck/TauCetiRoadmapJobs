@@ -346,3 +346,4 @@ EllAdicHomotopyTypesAndWeights
 ArithmeticKTheoryPartII
 RandomMatrices
 ComplexKahlerGeometry
+ClassFieldTheory
