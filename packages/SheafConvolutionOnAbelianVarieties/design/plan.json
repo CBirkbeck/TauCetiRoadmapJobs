@@ -3518,6 +3518,18 @@
       "needs": "For a pointed smooth projective curve C of genus at least one, a reduced connected parameter scheme T and a pointed T-map C×T→A×T to a constant abelian scheme, there is a unique factorization through a homomorphism J(C)×T→A×T, compatible with base change in T.",
       "supplier": "JacobianChallengePartII",
       "section": "2.3"
+    },
+    {
+      "slug": "stein-perverse-artin-vanishing",
+      "needs": "For a Stein complex manifold V and a bounded complex K of sheaves of F-vector spaces on V, constructible for a locally finite complex-analytic stratification and in the perverse range pD^(≥0), the compactly supported cohomology H^i_c(V,K) vanishes for i<0.",
+      "supplier": "ComplexComparisonPartII",
+      "section": "C6.1"
+    },
+    {
+      "slug": "microdifferential-localization",
+      "needs": "For a smooth complex variety X, the sheaf of microdifferential operators on T*X and the microlocalization of coherent D_X-modules, exact and compatible with proper direct image and external product, whose support is the characteristic variety and whose generic length along each component is the multiplicity of the characteristic cycle.",
+      "supplier": "SpringerResolutionAndCharacteristicCycles",
+      "section": "D"
     }
   ],
   "sourceIssues": [

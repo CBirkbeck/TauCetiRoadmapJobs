@@ -17,8 +17,11 @@ The following headline theorems are not statable at the pins:
   categories and the Tannaka reconstruction of their cohomological fibres.
 * Hypersurface Euler characteristics and the torsion-twist Hodge-Tate row lack
   smooth ample divisor cohomology, intersection degrees and geometric comparison.
-* Microlocal factorization, minuscule almost simplicity and classical convolution
-  monodromy lack the clean conormal cycle ring and the represented sheaf group.
+* The structure of exceptional character loci lacks the rank-one de Rham moduli
+  space with its holonomy map and the cohomology support loci of perverse sheaves.
+* The microlocal fibre functor, microlocal factorization, minuscule almost
+  simplicity and classical convolution monodromy lack the clean conormal cycle
+  ring, microdifferential modules and the represented sheaf group.
 * Constant-constituent rigidity, finite representation detection and generic
   simultaneous-twist monodromy lack the sheaf-generated algebraic groups and
   their relative constructible direct images and invariant spaces.
@@ -92,13 +95,6 @@ theorem threefold_exterior_classification {m k d : ℕ} (w : Fin m → ℤ) (s :
         ∃ v : ℤ, (∀ i, w i = v - 1 ∨ w i = v ∨ w i = v + 1) ∧
           (Finset.univ.filter fun i => w i = v - 1).card = 1 ∧
           (Finset.univ.filter fun i => w i = v + 1).card = 1 := by
-  sorry
-
-/-- No interior exterior power has a positive multiple of the fourfold Eulerian
-row (Lawrence–Sawin, Lemma B.9). -/
-theorem fourfold_exterior_impossible {m k d : ℕ} (w : Fin m → ℤ) (s : ℤ)
-    (hk : 1 < k) (hkm : k + 1 < m) (hd : 1 ≤ d) :
-    ¬ hasEulerianExteriorWeights w k 4 d s := by
   sorry
 
 /-! ## Layer 6: Eulerian exclusion and classical monodromy -/

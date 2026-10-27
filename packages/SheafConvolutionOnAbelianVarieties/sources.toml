@@ -46,7 +46,7 @@ title = "Characteristic cycles and the microlocal geometry of the Gauss map, I"
 year = 2016
 arxiv = "1604.02389v3"
 locator_scheme = "theorem"
-locator = "Corollary 1.10 and the paragraph and table before it, pp. 11–12"
+locator = "Theorem 1.5, Corollary 1.6 and Theorem 1.7, pp. 6–10; §1.d, p. 7; Corollary 1.10 and the paragraph and table before it, pp. 11–12; Theorem 5.10, p. 47"
 url = "https://arxiv.org/abs/1604.02389v3"
 fetched_from = "https://arxiv.org/pdf/1604.02389v3"
 fetched_at = "2026-10-25T12:41:43Z"
@@ -66,7 +66,7 @@ venue = "J. reine angew. Mathematik 774 (2021) 53-92"
 doi = "10.1515/crelle-2020-0048"
 arxiv = "1807.01929v2"
 locator_scheme = "theorem"
-locator = "Definition 1.2.2, p. 8, and Example 1.3.2, p. 9; §2, Definition 2.2.1, p. 13, with §§2.1–2.2, pp. 12–14 (arXiv v2 numbering; LS p. 22 cites it as Definition 2.1.1); Theorem 2.3.1, p. 15; Lemma 5.2.2 and its proof, pp. 25–26; Proposition 6.1.1, pp. 29–30; proof of Theorem 6.2.1, p. 30"
+locator = "Definition 1.2.2, p. 8, and Example 1.3.2, p. 9; §2, Definition 2.2.1, p. 13, with §§2.1–2.2, pp. 12–14 (arXiv v2 numbering; LS p. 22 cites it as Definition 2.1.1); Proposition 1.3.3, p. 10; Theorem 2.1.1, Corollaries 2.1.2 and 2.2.2, pp. 12–14; Theorem 2.2.3 and Corollary 2.2.4, pp. 14–15; Theorem 2.3.1 and Remark 2.3.2, pp. 15–16; Lemma 5.2.2 and its proof, pp. 25–26; Proposition 6.1.1, pp. 29–30; proof of Theorem 6.2.1, p. 30"
 url = "https://arxiv.org/abs/1807.01929v2"
 fetched_from = "https://arxiv.org/pdf/1807.01929v2"
 fetched_at = "2026-10-25T12:41:49Z"
@@ -79,9 +79,9 @@ cited_for = ["Layer 4"]
 
 [[source]]
 id = "EHS"
-year = 2007
-title = "On Nori’s fundamental group scheme"
 authors = "Hélène Esnault, Phùng Hô Hai and Xiaotao Sun"
+title = "On Nori’s fundamental group scheme"
+year = 2007
 locator_scheme = "theorem"
 locator = "Appendix A, Theorem A.1, pp. 20–21"
 url = "https://page.mi.fu-berlin.de/esnault/preprints/helene/83nori070514c.pdf"
@@ -131,9 +131,9 @@ cited_for = ["Layer 9"]
 
 [[source]]
 id = "JV"
-year = 2021
-title = "Jacobian Varieties"
 authors = "J. S. Milne"
+title = "Jacobian Varieties"
+year = 2021
 locator_scheme = "theorem"
 locator = "Proposition 6.1 and its proof, pp. 19–20; Theorem 12.1, p. 38"
 url = "https://www.jmilne.org/math/xnotes/JVs.pdf"
@@ -147,9 +147,9 @@ cited_for = ["Layer 4", "Layer 9"]
 
 [[source]]
 id = "BR"
-year = "undated"
-title = "An exposition of Jordan’s original proof of his theorem on finite subgroups of GL_n(C)"
 authors = "Emmanuel Breuillard"
+title = "An exposition of Jordan’s original proof of his theorem on finite subgroups of GL_n(C)"
+year = "undated"
 locator_scheme = "theorem"
 locator = "Theorem 1.1, p. 1, with the account of the Bieberbach–Frobenius proof on p. 1"
 url = "https://www.imo.universite-paris-saclay.fr/~emmanuel.breuillard/Jordan.pdf"
@@ -159,5 +159,63 @@ sha256 = "262d34715361673ac9ef892f1e3441250d1f85d996d154bea8340e0c8c9efa76"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["Layer 7"]
 version_note = "Undated author copy, eight PDF pages; no published pagination used."
+cited_for = ["Layer 7"]
+
+[[source]]
+id = "BSS"
+authors = "Bhargav Bhatt, Christian Schnell, Peter Scholze"
+title = "Vanishing theorems for perverse sheaves on abelian varieties, revisited"
+year = 2018
+venue = "Selecta Math. (N.S.) 24 (2018), 63–84"
+doi = "10.1007/s00029-017-0377-8"
+arxiv = "1702.06395v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.1, p. 1; §1.2, p. 2; Lemma 2.6, Proposition 2.7 and its proof, Lemma 2.8, Remark 2.9 and Corollary 2.10, pp. 4–5"
+url = "https://arxiv.org/abs/1702.06395"
+fetched_from = "https://arxiv.org/pdf/1702.06395"
+fetched_at = "2026-10-27T00:04:46Z"
+sha256 = "32ca6ae21c9ac7f0fc1c23f6da524e21d92575a5c78146e1cebddf32a8dc4e16"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-27"
+version_note = "Read arXiv v1 (2017), PDF pagination; published Selecta version not collated."
+cited_for = ["Layer 0"]
+
+[[source]]
+id = "Sch"
+authors = "Christian Schnell"
+title = "Holonomic D-modules on abelian varieties"
+year = 2015
+venue = "Publ. Math. Inst. Hautes Études Sci. 121 (2015), 1–55"
+arxiv = "1307.1937v1"
+locator_scheme = "theorem"
+locator = "Definition 2.3, p. 2; Theorem 7.3, p. 9; Corollary 7.5, p. 10; Theorems 10.5, 15.1, 16.1, Proposition 16.2, pp. 13–25; Definition 17.3, Theorem 17.4, Lemmas 17.5–17.6, Theorem 17.2, pp. 25–27"
+url = "https://arxiv.org/abs/1307.1937v1"
+fetched_from = "https://arxiv.org/pdf/1307.1937v1"
+fetched_at = "2026-10-27T00:07:01Z"
+sha256 = "62f2655ce4e4b171b20c7ccde9d2ffd25c1f3f57530a63c25ff53b83f859cbee"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-27"
+version_note = "Read arXiv v1 (2013), PDF pagination; published version not collated."
+cited_for = ["Layer 0"]
+
+[[source]]
+id = "Sim"
+authors = "Carlos Simpson"
+title = "Subspaces of moduli spaces of rank one local systems"
+year = 1993
+venue = "Annales scientifiques de l'École normale supérieure 26 (1993), 361–401"
+doi = "10.24033/asens.1675"
+locator_scheme = "theorem"
+locator = "Theorem 3.1(c) and Corollary 3.2, pp. 366–369; Theorem 3.3, p. 369; Theorem 6.1, p. 376"
+url = "https://doi.org/10.24033/asens.1675"
+fetched_from = "https://www.numdam.org/item/10.24033/asens.1675.pdf"
+fetched_at = "2026-10-27T00:09:54Z"
+sha256 = "7b62e9d741834dcf71079415b9f6a9edbb973fce9535128acccd4edad98eb968"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-27"
+version_note = "Published journal version from Numdam; journal pagination."
+cited_for = ["Layer 0"]
