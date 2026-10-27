@@ -1513,7 +1513,7 @@
     },
     {
       "slug": "fl-acris-truncation",
-      "needs": "Supply the killed-p A_cris realization, the explicit divided-power presentation and filtered Frobenius projection of Fontaine93 §3.1 to the strict valuation quotient, and its identification with the existing contravariant torsion functor on [0,r] for 0<r<p−1.",
+      "needs": "For prime p, perfect characteristic-p k, K=Frac W(k) and 0<r<p−1, supply the killed-p A_cris realization: the explicit divided-power presentation of A_cris/p over O(K̄)/p with its filtration and divided Frobenius maps φᵢ for 0≤i≤r (Fontaine93 §3.1), and its identification with the existing contravariant torsion functor Uₛ on the objects of MFₜₒᵣ[0,r] killed by p.",
       "supplier": "FiniteFlatGroupsAndIntegralPadicHodgeTheory",
       "section": "§§R07.3.6–R07.3.7, R07.3.15"
     },
@@ -1543,7 +1543,7 @@
     },
     {
       "slug": "finite-torsion-kernel-dictionary",
-      "needs": "Supply the finite continuous p-primary Galois-module and kernel-field dictionary, fixed-point/cardinality detection of a splitting field, compatibility with the cyclotomic degree/action identification at seven.",
+      "needs": "For a field K of characteristic zero and a finite abelian p-group U with continuous G(K)-action, kernel H and kernel field L=K̄^H: L/K is finite Galois and, for every algebraic E/K inside K̄, G(E) fixes U pointwise iff L⊆E; the kernel field of U⊕U′ is the compositum of the two kernel fields; and the kernel field of 𝔽₇(1) over ℚ is ℚ(ζ₇), of degree 6, with Galois group (ℤ/7)ˣ acting through χ₇ modulo 7.",
       "supplier": "ArithmeticGaloisRepresentations",
       "section": "§§1.1, 1.9, 2.2"
     },
