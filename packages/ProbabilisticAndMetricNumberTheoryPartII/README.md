@@ -16,8 +16,9 @@ lines from a non-lattice property of the delays, and a renewal Tauberian theorem
 a compact parameter. The end theorems are `conformal_exponent`, a unique `β = β(n) > 1` admitting a
 `β`-conformal probability on `Δ_n`, obtained from the pressure without arithmetic counting, and
 `uniform_counting`, `N(w, r) ~ B(w) e^{βr}` uniformly in `w` for a positive C¹ function
-`B = h_β / (β |λ′_β|)`. For `n = 3` the roadmap identifies `β(3) = 2` and `B(w) = 3/(π² w₂)`
-through the Gauss map; it proves `β(n) ≥ β(n − 1)` and explicit p-series bounds for `β(n)`.
+`B = h_β / (β |λ′_β|)`. For `n = 3` the roadmap identifies `β(3) = 2` and proves
+`counting_three`, `N(w, r) ~ 3e^{2r}/(π² w₂)` uniformly, through the Gauss map; it proves
+`β(n) ≥ β(n − 1)` and the p-series enclosure `conformal_exponent_pseries` of `β(n)`.
 
 ## Scope and ownership
 
@@ -42,7 +43,7 @@ and the Ruelle–Perron–Frobenius theorem (Layer 3); simple isolated eigendata
 perturbation and uniform gaps on compact parameter intervals (Layer 4); the non-lattice condition,
 its verification at branch fixed points, Wielandt separation and the pressure (Layer 5); uniform
 growth, the renewal transform and its simple pole, uniform smoothing, the uniform renewal
-Tauberian theorem, the counting theorem and the conformal-measure characterisation (Layer 6); the
+Tauberian theorem, the conformal-measure characterisation and the counting theorem (Layer 6); the
 parameter-dependent Gauss conjugacy, `β(3) = 2` with the explicit `n = 3` constant, the Rauzy
 gasket comparison, explicit bounds for `β(n)` and monotonicity in `n` (Layer 7).
 
@@ -62,12 +63,16 @@ It leaves the following to named owners.
   with transforms valued in `C(X; ℂ)`; their scalar cases are HP.3.
 - The scalar Wiener–Ikehara theorems are Tau Ceti's `TauCeti.LSeries.wienerIkehara` and its
   variants; they are not used.
-- Brouwer's fixed point theorem `exists_fixedPoint_closedBall` is DifferentialGeometry Layer 10.5;
-  Layer 3 consumes it for the finite-dimensional step of Schauder–Tychonoff.
+- Brouwer's fixed point theorem for nonempty compact convex subsets of finite-dimensional real
+  normed spaces, `brouwerFixedPoint_compactConvex_continuousOn`, is AlgebraicTopology Stage 2,
+  item 7 (DifferentialGeometry Layer 10.5 consumes it). Layer 3 consumes it for the
+  finite-dimensional step of Schauder–Tychonoff and extends the fixed-point conclusion to compact
+  convex subsets of Hausdorff locally convex spaces; the compact-map Schauder theorem on Banach
+  spaces is BanachAlgebras A8.
 - Hilbert's projective metric and Birkhoff's `tanh(Δ/4)` contraction for strictly positive finite
-  kernels are OptimalTransport Layer 13B, item 9. Layer 3 here differs in treating arbitrary closed
-  proper cones in real Banach spaces and the C¹ derivative cones; on positive vectors it agrees with
-  the finite case.
+  kernels are OptimalTransport Layer 13B, item 9. Layer 3 here differs in treating salient convex
+  cones in arbitrary real vector spaces and the C¹ derivative cones; on positive vectors it agrees
+  with the finite case.
 - The holomorphic functional calculus and Riesz idempotents for a finite partition of the spectrum,
   with the closed invariant direct-sum decomposition of a Banach-space operator, are BanachAlgebras
   A2. Layer 3 consumes them for the spectral splitting; the finite-cover estimate that bounds the
@@ -179,15 +184,22 @@ supplier's index `a ≥ 1` is `A + 1` here.
 
 Consume `HasLaplace f s z μ` for `f : ℝ → E` with `NormedSpace ℝ E` and `SMul ℂ E`: integrability
 of `t ↦ exp(−st) • f t` for `μ` together with the value `z`; its uniqueness, almost-everywhere
-congruence and linearity API (HP.0.1). Consume `squaredSinc λ`, its nonnegativity, evenness, mass
-one, triangle Fourier transform on `[−2λ, 2λ]` and tail concentration as `λ → ∞` (HP.1.1). The
+congruence and linearity API (HP.0.1). For `λ > 0`, consume `squaredSinc λ`, its nonnegativity,
+mass one (`squaredSinc_mass`), triangle Fourier transform on `[−2λ, 2λ]` (`squaredSinc_fourier`)
+and tail concentration as `λ → ∞`; evenness holds for every real `λ` (HP.1.1). At `λ = 0` the
+kernel is identically `0`, of mass `0`, and for `λ < 0` it is negative at `v = 0`
+(`squaredSinc (−1) 0 = −1/π`), so the positive scale is part of every use. The
 scalar statements `monotoneUnsmoothing` (HP.3.1) and `delangeLaplace` with `k = 0` (HP.3.2) are the
 one-point cases of Layer 6 and are used as consistency checks of its constants.
 
-### From TauCetiRoadmap.DifferentialGeometry Layer 10.5
+### From TauCetiRoadmap.AlgebraicTopology Stage 2, item 7
 
-Consume `exists_fixedPoint_closedBall`: a continuous self-map of the closed unit ball of a
-finite-dimensional real inner product space has a fixed point.
+Consume `brouwerFixedPoint_compactConvex_continuousOn`: for a nonempty compact convex subset `C` of
+a finite-dimensional real normed space and `f` continuous on `C` with `f(C) ⊆ C`, some point of
+`C` is fixed by `f`; no full-dimensionality of `C` is assumed. The finite-dimensional linear span
+of finitely many vectors of a Hausdorff topological vector space carries its unique Hausdorff
+vector topology, so Mathlib's `LinearEquiv.toContinuousLinearEquiv` transports a finite convex
+hull to a normed model where the theorem applies.
 
 ### From TauCetiRoadmap.OptimalTransport Layer 13B
 
@@ -213,8 +225,8 @@ Hennion's bound) and proves the real Ruelle–Perron–Frobenius theorem. Layer 
 leading eigendata holomorphically and makes the gap uniform on compact parameter intervals.
 Layer 5 proves that the delays are non-lattice, deduces Wielandt separation on vertical lines, and
 locates the unique exponent `β` from the pressure. Layer 6 turns the spectral data into a uniform
-growth bound, a meromorphic renewal transform with one simple pole on its abscissa, and the uniform
-counting theorem, and characterises `β` by conformal measures. Layer 7 compares with the Gauss map
+growth bound and a meromorphic renewal transform with one simple pole on its abscissa,
+characterises `β` by conformal measures, and proves the uniform counting theorem. Layer 7 compares with the Gauss map
 and the Rauzy gasket and bounds `β(n)`. The general theorems of Layers 3, 4 and 6 (fixed points,
 cones, noncompactness, perturbation, uniform Tauberian) depend on no transfer operator.
 
@@ -290,15 +302,18 @@ Its API consists of these facts.
 - `n = 3`, `w = (0, 1)`: `q = A + 2` and `F = (1/(A + 2), (A + 1)/(A + 2))`; `A = 0` is a genuine
   branch, with `F = (1/2, 1/2)`.
 - The bound `τ_a ≥ log(3/2)` is attained: `n = 3`, `w = (1/2, 1/2)`, `A = 0` gives `q = 3/2`.
-- Off the simplex the formula has no meaning: `w_j = 3`, `A = 0` gives `q = −1`, where `log q` and
-  the positive-base power are undefined.
+- Off the simplex the total Lean formulas need not describe a positive geometric weight:
+  `w_j = 3`, `A = 0` gives `q = −1`, `Real.log q = log 1 = 0`, and at `s = 3` the complex power
+  `q^{−s}` is `−1`, while `exp(−s log q) = 1`. The two agree, and the weight is meaningful, only
+  where `q > 0`, which holds on the simplex.
 
 *Needs:* §0.1.
 
 ### 0.3 Words, delays and the renewal count
 
-Define `wordDelay` on finite lists of letters, read chronologically: the empty word has delay `0`
-and `T_{a :: u}(w) = τ_a(w) + T_u(F_a w)`. Define `wordCount` `d x r = N(w, r)`, the number of
+Define `wordMap` on finite lists of letters, read chronologically: the empty word acts as the
+identity and `F_{a :: u} = F_u ∘ F_a`. Define `wordDelay` in the same order: the empty word has
+delay `0` and `T_{a :: u}(w) = τ_a(w) + T_u(F_a w)`. Define `wordCount` `d x r = N(w, r)`, the number of
 words `u`, the empty word included, with `T_u(w) ≤ r`. The Lean value is `Set.ncard` of the set of
 such lists, which is `0` on an infinite set; the finiteness theorem below is what gives the value
 its meaning. This is the count of GMR19 (1.7), p.759, over `Γ′ ∪ {e}`.
@@ -377,6 +392,10 @@ Its API consists of these facts.
   hypothesis is imposed.
 - For `d = 1`, `f(x) = x₀` satisfies the pointwise bound with `K = 3/2` on `[0, 1/2]`, attained at
   `x₀ = 1/2`, and fails it with `K = 1`.
+- For `d = 1`, the constant `1` has least pointwise bound `1`; a predicate that summed sup norms
+  would agree here, but one that dropped the value term would give `0`.
+- For `d = 1`, `f(x) = 2x₀ + 3` on `[0, 1/2]` has least pointwise bound `4 + 2 = 6`, attained at
+  `x₀ = 1/2`, so the bound `5` fails.
 
 *Needs:* Mathlib `ContDiffOn`, `fderivWithin`, `contDiffOn_succ_iff_fderivWithin`,
 `uniqueDiffOn_convex`, interval integration; §0.1.
@@ -387,9 +406,9 @@ Its API consists of these facts.
 in §0.4 and `Φ : K → J` a C¹ map, given by a jet. Then `f ↦ f ∘ Φ` is a bounded linear map
 `C¹(J; V) → C¹(K; V)` with `D(f ∘ Φ) = (Df ∘ Φ) DΦ` and
 `‖f ∘ Φ‖_{C¹} ≤ max(1, ‖DΦ‖_∞) ‖f‖_{C¹}`; pullback preserves identities and reverses composition.
-For `V = ℂ` the Leibniz rule holds, with `‖fg‖_{C¹} ≤ ‖f‖_{C¹} ‖g‖_{C¹}`, and the value inclusion
-`C¹(K; ℂ) → C(K; ℂ)` is compact (GMR19, Lemma 46 and its use in the proof of Lemma 38,
-pp.798–799). The chain rule holds without assuming that `Φ` maps interior points to interior
+For `V = ℂ` the Leibniz rule holds, with `‖fg‖_{C¹} ≤ ‖f‖_{C¹} ‖g‖_{C¹}` (chain rule and Leibniz:
+GMR19, Lemma 46 and its use in the proof of Lemma 38, pp.798–799), and the value inclusion
+`C¹(K; ℂ) → C(K; ℂ)` is compact (Arzelà–Ascoli, used by GMR19 in footnote 21, p.794). The chain rule holds without assuming that `Φ` maps interior points to interior
 points; one route uses the segment identity along chords and approximation from interior chords.
 Compactness follows from the Lipschitz bound of §0.4, which makes the unit ball equicontinuous with
 values in a compact disc, and Arzelà–Ascoli.
@@ -482,9 +501,11 @@ dominates, and for `j = 1` the displayed expression is a common upper bound.
 
 ### 1.3 Uniform contraction
 
-**Eventual uniform contraction.** For every `n ≥ 3` there are `D ≥ 1` and `0 < ρ < 1`, depending
+Prove `eventual_contraction`: for every `n ≥ 3` there are `D ≥ 1` and `0 < ρ < 1`, depending
 only on `n` and the chosen norm, such that every word `u` of length `m` satisfies
-`sup_{w∈Δ} ‖dF_u(w)‖ ≤ D ρ^m`; for `n ≥ 4`, every composition of two accelerated branches has
+`sup_{w∈Δ} ‖dF_u(w)‖ ≤ D ρ^m`, the derivative of `wordMap u` taken within the simplex. The Lean
+statement uses the operator norm of the sup norm on `ℝ^d`; any two norms on `ℝ^d` differ by a
+factor that `D` absorbs. For `n ≥ 4`, every composition of two accelerated branches has
 `ℓ¹` derivative norm at most `24/25` on `Δ₀` (GMR19, Proposition 45, p.798; Lemma 48 and proof,
 pp.802–803). One route writes a two-branch block as `γ_{n−1}^A γ_i γ_{n−1}^B γ_j`: if `A, B ≥ 1`,
 (5.2), (5.6) and (5.7) give `6/7`; if `B = 0`, (5.3)–(5.5) give `4/5`; if `A = 0`, `B ≥ 1` and
@@ -518,7 +539,9 @@ Its API consists of these facts.
   nested images of `Δ` have diameter at most `Dρ^m diam Δ`.
 - `K` is nonempty and compact, `F_a(K) ⊂ K` for every letter, and `K` is the closure of
   `⋃_a F_a(K)`.
-- The unique fixed point of every branch and of every finite word lies in `K` (periodic codes).
+- Every nonempty finite word `u` has a unique fixed point in `Δ`, and it lies in `K` (the periodic
+  code `u u u …`). The empty word acts as the identity and fixes every point of `Δ`; no uniqueness
+  or membership in `K` is asserted for it (for `n = 4` it fixes `(1/3, 1/3, 1/3) ∉ K`).
 - Every image `F_u(w)` with `|u| = m` lies within `D ρ^m diam Δ` of `K`.
 
 **Checks.**
@@ -591,10 +614,9 @@ Its API consists of these facts.
 the C⁰ operator norm of `L_σ` is `sup L_σ 1`, and `‖L_s‖_{C⁰} ≤ sup L_{Re s} 1` for complex `s`.
 Truncating at `A ≤ M` leaves a C⁰ tail at most
 `2^σ (n − 2) Σ_{A>M} (A + 3)^{−σ} ≤ 2^σ (n − 2)(M + 2)^{1−σ}/(σ − 1)`.
-Every eigenvalue of an eigenprobability (§3.2) lies between the
-two outer bounds (GMR19, Lemma 35, p.792, and proof of Proposition 43, §4.5, p.799, with the factor
-`2^σ`). One route uses both sides of `(A + 3)/2 ≤ q_a ≤ A + 2` term by term, positivity on
-constants, and integration against the eigenprobability; the tail bound is the integral test.
+(GMR19, Lemma 35, p.792, and proof of Proposition 43, §4.5, p.799, with the factor `2^σ`). One
+route uses both sides of `(A + 3)/2 ≤ q_a ≤ A + 2` term by term and positivity on constants; the
+tail bound is the integral test.
 
 **Checks.**
 
@@ -635,13 +657,17 @@ their C¹ derivatives converge uniformly in operator norm (GMR19, Lemma 38, p.79
 pp.798–799). One route truncates the `A`-sum: each truncation is entire, because `τ_a` is a fixed
 bounded C¹ function, and the tails, including logarithmic factors and their spatial derivatives,
 are dominated by `q^{−σ₀}` for `1 < σ₀ < inf Re s`; then `DifferentiableOn.analyticOnNhd` gives
-analyticity.
+analyticity. The claim is holomorphy in operator norm on C¹, not pointwise in `w`: the
+first-derivative series `Σ_a τ_a q_a^{−s} f ∘ F_a` converges in operator norm because
+`τ_a ≤ log(A + 2)` is absorbed by `q_a^{σ₀ − σ}`.
 
 **Checks.**
 
-- The claim is holomorphy in operator norm on C¹, not pointwise in `w`: the first-derivative
-  series `Σ_a τ_a q_a^{−s} f ∘ F_a` converges in operator norm because `τ_a ≤ log(A + 2)` is
-  absorbed by `q_a^{σ₀ − σ}`.
+- `n = 3`, `w = (0, 1)`, `f = 1`: `L_s 1(w) = Σ_{k≥2} k^{−s}`, and at real `s = 2` its derivative is
+  `−Σ_{k≥2} (log k)/k² = ζ′(2) ≈ −0.938 < 0`; dropping the sign of `(−τ_a)` in the first
+  derivative would make it positive.
+- The second derivative at the same point is `Σ_{k≥2} (log k)²/k² ≈ 1.989 > 0`, so
+  `σ ↦ L_σ 1(w)` is decreasing and convex there.
 
 *Needs:* §2.3; Mathlib `DifferentiableOn.analyticOnNhd`.
 
@@ -694,13 +720,16 @@ Layers 0–1; ArithmeticDirichletSeriesPartII HP.0.1.
 
 Prove `schauder_tychonoff`: let `V` be a Hausdorff locally convex real topological vector space,
 `C ⊂ V` nonempty, compact and convex, and `f` continuous on `C` with `f(C) ⊂ C`; then `f` has a fixed
-point in `C` (Morris–Noussair, Theorem 2.6, pp.166–167, which treats a continuous map of a convex
-set into a compact subset of it; the compact convex self-map is the case `F = A = C`). One route:
-for each convex balanced neighbourhood `U` of `0`, a finite `U`-net and a subordinate partition of
-unity give `p_U : C → conv{x₁, …, x_m}` with `x − p_U x ∈ U`; Brouwer's theorem on the finite
-convex hull, transported from the closed unit ball by nearest-point projection inside a containing
-Euclidean ball (affine dimension zero separately), gives a fixed point of `p_U ∘ f`; a cluster point
-of these approximate fixed points, as `U` shrinks, is a fixed point by Hausdorffness and continuity.
+point in `C` (Morris–Noussair, Theorem 2.6, p.167, with its proof on pp.167–168, which treats a
+continuous map of a convex set into a compact subset of it; the compact convex self-map is the case
+`F = A = C`). One route: for each convex balanced neighbourhood `U` of `0`, a finite `U`-net and a
+subordinate partition of unity give `p_U : C → conv{x₁, …, x_m}` with `x − p_U x ∈ U`; the finite
+convex hull is a nonempty compact convex subset of the finite-dimensional span of its vertices,
+whose induced topology is the unique Hausdorff vector topology, so
+`brouwerFixedPoint_compactConvex_continuousOn` (AlgebraicTopology Stage 2, item 7), applied after
+`LinearEquiv.toContinuousLinearEquiv` to a normed model, gives a fixed point of `p_U ∘ f`; a
+cluster point of these approximate fixed points, as `U` shrinks, is a fixed point by Hausdorffness
+and continuity. For a one-vertex hull the fixed point is the vertex itself.
 
 **Checks.**
 
@@ -708,14 +737,14 @@ of these approximate fixed points, as `U` shrinks, is a fixed point by Hausdorff
 - Compactness is needed: translation by `1` on the closed convex set `[0, ∞) ⊂ ℝ` has none.
 - Convexity is needed: rotation by `π` of the circle `{|z| = 1} ⊂ ℂ` has none.
 
-*Needs:* DifferentialGeometry Layer 10.5 (`exists_fixedPoint_closedBall`); Mathlib
-`LocallyConvexSpace`.
+*Needs:* AlgebraicTopology Stage 2, item 7 (`brouwerFixedPoint_compactConvex_continuousOn`);
+Mathlib `LocallyConvexSpace`, `LinearEquiv.toContinuousLinearEquiv`.
 
 ### 3.2 Positive eigenprobabilities
 
 Define `IsEigenprobability` `d σ c ν`: `ν` is a Borel probability on `ℝ^d` carried by the simplex
 with `∫ L_σ f dν = c ∫ f dν` for every continuous `f : ℝ^d → ℂ`. For `c = 1` the measure is
-`σ`-conformal (§6.7). Construct, for every real `σ > 1`, an eigenprobability with
+`σ`-conformal (its Jacobian form is §6.6). Construct, for every real `σ > 1`, an eigenprobability with
 `c = ∫ L_σ 1 dν > 0` as a fixed point of `μ ↦ L_σ^* μ / ∫ L_σ 1 dμ` on probability measures
 (GMR19, Corollary 36, p.792). One route realises probability measures as normalised positive
 functionals inside the Hausdorff locally convex space `ℝ^{C(Δ; ℝ)}`, where Prokhorov's theorem
@@ -728,7 +757,9 @@ Its API consists of these facts.
 - The eigenvalue is determined by the measure: testing `f = 1` gives `c = ∫ L_σ 1 dν`, so `c` lies
   between the bounds of §2.2 and is positive.
 - The identity for complex `f` follows from the identity for real `f` by real and imaginary parts.
-- The normalised pushforward sum agrees with the integral functional `f ↦ ∫ L_σ f dμ`.
+- The unnormalised weighted pushforward sum `Σ_a (q_a^{−σ} μ) ∘ F_a^{−1}` evaluates `f` as
+  `∫ L_σ f dμ`; its probability normalisation evaluates `f` as `(∫ L_σ f dμ)/(∫ L_σ 1 dμ)`. For
+  `n = 3`, `σ = 2`, `μ = δ₀` and `f = 1` the first is `ζ(2) − 1 ≈ 0.645` and the second is `1`.
 - No uniqueness is asserted here; uniqueness is part of §3.7.
 
 **Checks.**
@@ -764,9 +795,14 @@ Its API consists of these facts.
   `f(y) ≤ e^{a‖y − x‖} f(x)`, so `f` vanishing at one point vanishes everywhere.
 - For `0 < κ < 1`, `C_{κa} ∖ {0}` has finite diameter in `C_a`, at most
   `2 log((1 + κ)/(1 − κ)) + 2κa diam Δ`; constants lie in `C_a`.
-- **Birkhoff's contraction theorem.** If `T` is linear with `T(C₁) ⊂ C₂` and the image of
-  `C₁ ∖ {0}` has `d_{C₂}`-diameter `Δ < ∞`, then `d_{C₂}(Tf, Tg) ≤ tanh(Δ/4) d_{C₁}(f, g)`
-  (Liverani, Theorem 1.1, preprint p.4).
+- Prove `birkhoff_contraction`: let `C₁ ⊂ V` and `C₂ ⊂ W` be convex cones in real vector spaces
+  with `C_i ∩ −C_i = {0}` (no topology and no closedness is needed for this form), `T : V → W`
+  linear with `T(C₁) ⊂ C₂`, and `Δ ≥ 0` such that any two images `Tf`, `Tg` of nonzero elements
+  of `C₁` satisfy `a Tf ≤ Tg ≤ b Tf` for some `a > 0` with `log(b/a) ≤ Δ`. If `f ∈ C₁ ∖ {0}` and
+  `a f ≤ g ≤ b f` with `a > 0`, then `a′ Tf ≤ Tg ≤ b′ Tf` for some `a′ > 0` with
+  `log(b′/a′) ≤ tanh(Δ/4) log(b/a)`. Taking infima, `d_{C₂}(Tf, Tg) ≤ tanh(Δ/4) d_{C₁}(f, g)`
+  (Liverani, Theorem 1.1, preprint p.4, and its footnote 2 on the absence of topology). One route
+  applies the diameter bound to `g − af` and `bf − g` and rearranges.
 
 **Checks.**
 
@@ -774,6 +810,14 @@ Its API consists of these facts.
 - In `ℝ²_{≥0}`, `d((1, 1), (1, 4)) = log 4`, with `α = 1` and `β = 4`.
 - `(1, 0)` and `(0, 1)` are incomparable: `α = 0`.
 - On `[0, 1]`, `f(x) = 1 + x` lies in `C_1`, and not in `C_a` for `0 < a < 1`, since `|f′(0)| = 1`.
+- On `[0, 1]`, the constant `1` lies in every `C_a`, and `−1` lies in none, by the sign condition.
+- On `[0, 1]`, for `a > 0`, `e^{ax}` lies in `C_a` with equality `|f′| = af`, and `e^{(a+ε)x}`
+  with `ε > 0` does not, since `(a + ε)e^{(a+ε)x} > a e^{(a+ε)x}`; a cone without the derivative
+  condition would contain both.
+- `[[2, 1], [1, 2]]` on `ℝ²_{≥0}` has image diameter `log 4` and contracts by
+  `tanh(log 4/4) = 1/3` (the images `(2, 1)`, `(1, 2)` of the axes are at distance `log 4`): for
+  `f = (1, 1)`, `g = (1, 2)`, with `d = log 2`, the images `(3, 3)` and `(4, 5)` are at distance
+  `log(5/4) ≈ 0.223 ≤ (1/3) log 2 ≈ 0.231`.
 
 *Needs:* §0.4; OptimalTransport Layer 13B, item 9.
 
@@ -853,8 +897,9 @@ function `f` plus the constant `‖f‖_∞ + ‖Df‖_∞/a` lies in `C_a`, and
 
 **Checks.**
 
-- The conclusion is convergence in the C¹ norm, not only projective or C⁰ convergence: the
-  derivative of `λ^{−m} L_σ^m f − h ∫ f dν` is controlled.
+- C¹ convergence is strictly stronger than uniform convergence: on the chart segment,
+  `f_k(x) = sin(kx)/k` tends uniformly to `0` (sup at most `1/k`), but `f′_k(0) = 1`, so its C¹
+  norm never drops below `1`; a C⁰ form of the conclusion would not control derivatives.
 - For `n = 3`, `σ = 2`: `λ = 1`, `ν` is twice Lebesgue measure on `[0, 1/2]`, and
   `h(w) = 1/(2 log 2 · w₂)` has `∫ h dν = 1`.
 
@@ -893,7 +938,7 @@ the support inside `K`.
 
 ### Dependencies
 
-Layers 0–2; DifferentialGeometry Layer 10.5; OptimalTransport Layer 13B; BanachAlgebras A2.
+Layers 0–2; AlgebraicTopology Stage 2, item 7; OptimalTransport Layer 13B; BanachAlgebras A2.
 
 ## Layer 4: Analytic perturbation and uniform gaps
 
@@ -997,8 +1042,11 @@ Its API consists of these facts.
 **Checks.**
 
 - Constant delays `τ_a = c` are lattice: `G = 0`, `r = −tc` works for every `t`.
-- Delays in `c + δℤ` are lattice with `t = 2π/δ` and `r = −tc`; a definition without the common
-  phase `r` would wrongly call them non-lattice when `c ∉ δℤ`.
+- Delays in `c + δℤ` are lattice with `t = 2π/δ` and `r = −tc`. On a one-point space with two
+  branches of delays `√2` and `√2 + 1`, the common-phase condition holds with `t = 2π`, `G = 0`,
+  `r = −2π√2`; with the phase fixed to `0` no `t ≠ 0` works, since the difference forces
+  `t = 2πk` and then `k√2 ∈ ℤ` forces `k = 0`. So a definition without `r` is wrong when `c/δ` is
+  irrational; for delays `1/2` and `3/2` both definitions call them lattice (`t = 4π`, `r = 0`).
 - A sequence of fixed-point delays whose successive differences are positive and tend to `0` cannot
   lie in one coset `c + δℤ` with `δ > 0`.
 
@@ -1009,17 +1057,25 @@ Its API consists of these facts.
 **The GMR delays are non-lattice.** For the letters `a_A = (A, n − 2)` the branch has a fixed ray
 with multiplier `t_A = ((A + 1) + √((A + 1)² + 4))/2` and delay `log t_A`; these delays are strictly
 increasing with `log t_{A+1} − log t_A → 0`, so the delay cocycle is non-lattice on `K` (GMR19,
-Proposition 42 and proof, pp.795–796). One route: `γ_{n−1}^A γ_{n−2}` has characteristic polynomial
-`(1 − T)^{n−3}(−T)(T² − (A + 1)T − 1)`; the eigenvector `(0, …, 0, 1, t_A, t_A(t_A − A))` lies in
-`H_n`, nonnegative with zero coordinates, and its ray lies in `K` by periodic coding. The fixed ray
-is a boundary point of `Δ`; strict positivity of all coordinates is not asserted.
+Proposition 42 and proof, pp.795–796). One route: `det(γ_{n−1}^A γ_{n−2} − T·I_n)` equals
+`(1 − T)^{n−3}(−T)(T² − (A + 1)T − 1)` (GMR19, p.795), so the monic characteristic polynomial
+`det(T·I_n − γ_{n−1}^A γ_{n−2})` is `T(T − 1)^{n−3}(T² − (A + 1)T − 1)`; the roots agree. The
+eigenvector `(0, …, 0, 1, t_A, t_A(t_A − A))`, with `n − 3` leading zeros, is nonnegative and lies
+in `H_n` (its last coordinate is `t_A(t_A − A) = 1 + t_A`), and its ray lies in `K` by periodic
+coding. For `n ≥ 4` the fixed ray is a boundary point of `Δ` (`w₁ = 0`); for `n = 3` all three
+coordinates are positive and the chart point `1/(1 + t_A)` lies in the interior `(0, 1/2)`, since
+`t_A > 1`.
 
 **Checks.**
 
 - `t₀ = (1 + √5)/2 ≈ 1.618`, `t₁ = 1 + √2 ≈ 2.414`, `t₂ = (3 + √13)/2 ≈ 3.303`; the gaps
   `log t₁ − log t₀ ≈ 0.400` and `log t₂ − log t₁ ≈ 0.314` decrease.
 - `n = 3`: the eigenvector `(1, t_A, t_A(t_A − A))` satisfies the sum relation because
-  `t_A² − (A + 1)t_A − 1 = 0`.
+  `t_A² − (A + 1)t_A − 1 = 0`. At `A = 0` its chart point is `1/(1 + t₀) = (3 − √5)/2 ≈ 0.382`,
+  strictly inside `(0, 1/2)`.
+- `n = 3`, `A = 0`: the matrix `[[0, 1, 0], [0, 0, 1], [0, 1, 1]]` has `det(M − T·I) = −T³ + T² + T`
+  and monic characteristic polynomial `T³ − T² − T`; at `T = 2` they take the values `−2` and `2`,
+  so the two conventions differ by the sign `(−1)^n` in odd dimension, with the same roots.
 
 *Needs:* §5.1.
 
@@ -1089,7 +1145,7 @@ is at most the supremum up to `kc` plus `(min h_β)^{−1} e^{−βkc}`; sum the
 **Checks.**
 
 - `n = 3`, `w = (1/2, 1/2)`, `r = log 2`: `N(w, r) e^{−2r} = 3/4`, which exceeds `sup B = 6/π² ≈ 0.61`
-  (§6.6); the uniform constant `C` is a bound for all times, not the asymptotic constant.
+  (§6.7); the uniform constant `C` is a bound for all times, not the asymptotic constant.
 - The bound is proved before any smoothing; it is an input of §6.5, not a consequence of the
   asymptotic.
 
@@ -1149,7 +1205,7 @@ vanishing for `t < 0`, with `α_x(t) ≤ C e^{at}` uniformly in `x` for `t ≥ 0
 transform `F(s)(x) = ∫₀^∞ e^{−st} α_x(t) dt` is a holomorphic `C(X; ℂ)`-valued map on `Re s > a` and
 `F(s) − B/(s − a)` has a holomorphic `C(X; ℂ)`-valued germ at every point of `Re s = a`, with
 `B ∈ C(X; ℝ)`. Then for every even probability density `k` on `ℝ` whose Fourier transform is
-continuous, nonnegative and compactly supported (for instance `squaredSinc λ`, ArithmeticDirichletSeriesPartII HP.1.1),
+continuous, nonnegative and compactly supported (for instance `squaredSinc λ` with `λ > 0`, ArithmeticDirichletSeriesPartII HP.1.1),
 `∫ k(r − t) e^{−at} α_x(t) dt → B(x)` uniformly in `x` as `r → ∞` (Lalley, §8, proof of Theorem 1,
 (8.10)–(8.12), pp.30–32). One route damps `g_x(t) = e^{−at} α_x(t)` by `e^{−εt}`, writes the
 symmetrised convolution with `k(r − t) + k(−r − t)` as a frequency integral of
@@ -1165,6 +1221,8 @@ the Riemann–Lebesgue lemma for `C(X; ℂ)`-valued integrable functions (or by 
   the `C(X; ℂ)`-valued form is what gives the sup-norm limit.
 - One-point `X` with `α(t) = e^{at}`: `F(s) = 1/(s − a)`, `B = 1`, and the smoothed limit is
   `∫ k = 1`.
+- `squaredSinc 0` is identically `0`, of mass `0`, so it is not a probability density and is
+  excluded; the smoothed limit with it would be `0 ≠ B`.
 
 *Needs:* §2.5; ArithmeticDirichletSeriesPartII HP.1.1; Mathlib
 `Real.tendsto_integral_exp_smul_cocompact`,
@@ -1178,7 +1236,7 @@ Let `F : ℂ → C(X; ℂ)` be holomorphic on `Re s > a` with `F(s)(x) = ∫₀^
 and suppose that for every real `y` the difference `F(s) − B/(s − a)`, with `B ∈ C(X; ℝ)`, agrees on
 `Re s > a` near `a + iy` with a holomorphic `C(X; ℂ)`-valued function on a disc around `a + iy`.
 Then `e^{−ar} α_x(r) → B(x)` uniformly in `x` (Lalley, Lemma 8.2, p.30). When `min B > 0` this is a
-uniform relative asymptotic. One route: choose `k = squaredSinc λ` with mass at least `1 − ε` in
+uniform relative asymptotic. One route: choose `k = squaredSinc λ` with `λ > 0` and with mass at least `1 − ε` in
 `[−δ, δ]` (tail concentration); the uniform bound makes the omitted tails at most `Cε`;
 monotonicity on `[r, r + 2δ]` gives a lower bound `(1 − ε) e^{−2aδ} e^{−ar} α_x(r)` for the
 smoothed quantity at `r + δ`, and on `[r − 2δ, r]` an upper bound `e^{2aδ} e^{−ar} α_x(r) + Cε` at
@@ -1196,12 +1254,38 @@ agree; when `B(x) = 0` the squeeze applies directly.
 
 *Needs:* §6.4; ArithmeticDirichletSeriesPartII HP.1.1 and HP.3.2.
 
-### 6.6 The uniform counting theorem
+### 6.6 Conformal measures
+
+**Jacobian identity.** For every element `γ` of the semigroup, the projective action on `Δ` has
+`|Jac_w γ| = ((γy)_n / y_n)^{−(n−1)}`; in particular `|det dF_a| = q_a^{−(n−1)}`, although `Δ` has
+dimension `n − 2` (GMR19, Lemma 44, p.797). One route: on the span of `H_n` each `γ_i` has
+determinant `±1` in the basis `e_j + e_n`; projectivising divides by `q^{dim+1} = q^{n−1}`; compose
+with the cocycle.
+
+Prove `conformal_exponent`: for `d ≥ 1` there is exactly one real `β`, and it satisfies `β > 1`,
+such that some Borel probability `ν` on the simplex satisfies `∫ f dν = Σ_a ∫ f(F_a w) |Jac_w F_a|^{β/(n−1)} dν(w)` for every
+continuous `f`, that is, `ν` is an eigenprobability of `L_β` with eigenvalue `1`; at `β` this
+probability is unique, it is `ν_β`, and its support is `K` (GMR19, Theorem 10, Remarks 11–12,
+p.759). One route: the Jacobian identity turns the conformal equation into `L_s^* ν = ν`; for
+`s ≤ 1` testing `f = 1` is impossible, since the series `Σ_a q_a^{−s}` diverges (the native sum is
+the junk value `0`, which would give `0 = 1`), so `s > 1`; then testing the positive `h_s` of §3.7
+gives `λ_s = 1`, so `s = β` by §5.4; conversely `ν_β` works, and §3.7 gives
+uniqueness. The exponent `β` is not asserted to be a Hausdorff dimension.
+
+**Checks.**
+
+- `n = 3`: `dF_A/dw₁ = −q_A^{−2}`, so `|Jac F_A| = q_A^{−2} = q_A^{−(n−1)}`.
+- `n = 4`, chart point `(1/6, 1/3)`: `|det dγ₁| = 216/1331 = (11/6)^{−3}` and, for `a = (1, 2)`,
+  `|det dF_a| = 27/343 = (7/3)^{−3}`; the exponent is `n − 1 = 3`, not the dimension `2`.
+
+*Needs:* §0.2, §5.4, §3.7.
+
+### 6.7 The uniform counting theorem
 
 Prove `uniform_counting`: for `d ≥ 1`, if `ν` is a `β`-conformal probability (an eigenprobability
 of `L_β` with eigenvalue `1`), then there is a function `B`, C¹ and positive on the simplex, with
 `L_β B = B` there, such that `N(w, r)/(B(w) e^{βr}) → 1` uniformly for `w` in the simplex (GMR19,
-Theorem 13 and (1.8), pp.759–761; §4.3, pp.796–797). By §6.7, `β` is the exponent of §5.4 and
+Theorem 13 and (1.8), pp.759–761; §4.3, pp.796–797). By §6.6, `β` is the exponent of §5.4 and
 `B = h_β/(β|λ′_β|)` with `ν_β(1) = ν_β(h_β) = 1`. Pulled back by `y ↦ y/y_n`, `B` is a bounded,
 positive, degree-zero C¹ function on `H_n` with the same uniform asymptotic and
 `Σ_a ((γ_a y)_n/y_n)^{−β} B(γ_a y) = B(y)`. One route takes `X = Δ` and `a = β` in §6.5: §6.1 gives
@@ -1217,31 +1301,7 @@ identification with an arithmetic exponent is used.
 - The leading function is `B`, not the `ν`-normalised `h_β`: for `n = 3` they differ by the factor
   `6 log 2/π² ≈ 0.42`.
 
-*Needs:* §6.3, §6.5, §6.1, §6.7.
-
-### 6.7 Conformal measures
-
-**Jacobian identity.** For every element `γ` of the semigroup, the projective action on `Δ` has
-`|Jac_w γ| = ((γy)_n / y_n)^{−(n−1)}`; in particular `|det dF_a| = q_a^{−(n−1)}`, although `Δ` has
-dimension `n − 2` (GMR19, Lemma 44, p.797). One route: on the span of `H_n` each `γ_i` has
-determinant `±1` in the basis `e_j + e_n`; projectivising divides by `q^{dim+1} = q^{n−1}`; compose
-with the cocycle.
-
-Prove `conformal_exponent`: for `d ≥ 1` there is exactly one real `β`, and it satisfies `β > 1`,
-such that some Borel probability `ν` on the simplex satisfies `∫ f dν = Σ_a ∫ f(F_a w) |Jac_w F_a|^{β/(n−1)} dν(w)` for every
-continuous `f`, that is, `ν` is an eigenprobability of `L_β` with eigenvalue `1`; at `β` this
-probability is unique, it is `ν_β`, and its support is `K` (GMR19, Theorem 10, Remarks 11–12,
-p.759). One route: the Jacobian identity turns the conformal equation into `L_s^* ν = ν`; testing
-the positive `h_s` gives `λ_s = 1`, so `s = β` by §5.4; conversely `ν_β` works, and §3.7 gives
-uniqueness. The exponent `β` is not asserted to be a Hausdorff dimension.
-
-**Checks.**
-
-- `n = 3`: `dF_A/dw₁ = −q_A^{−2}`, so `|Jac F_A| = q_A^{−2} = q_A^{−(n−1)}`.
-- `n = 4`, chart point `(1/6, 1/3)`: `|det dγ₁| = 216/1331 = (11/6)^{−3}` and, for `a = (1, 2)`,
-  `|det dF_a| = 27/343 = (7/3)^{−3}`; the exponent is `n − 1 = 3`, not the dimension `2`.
-
-*Needs:* §0.2, §5.4, §3.7.
+*Needs:* §6.1, §6.3, §6.5, §6.6.
 
 ### Examples
 
@@ -1287,8 +1347,12 @@ positive leading eigenvalue and the uniform gaps of §4.3, transported by §7.1.
 `G₂(1/(1 + x)) = 1/(1 + x)` by the supplier's telescope, the invariant Gauss density is
 `1/((1 + x) log 2)` (`gaussMeasure`), the unnormalised leading eigenfunction of `L₂` is
 `(1 + x)²/(1 + x) = 1 + x = 1/w₂`, `λ′₂ = −π²/(12 log 2)` (one route: the Lebesgue eigenmeasure of
-`G₂` and `∫₀¹ log y/(1 + y) dy = −π²/12`), and the counting function of §6.6 is
-`B(w) = 3/(π² w₂)`.
+`G₂` and `∫₀¹ log y/(1 + y) dy = −π²/12`), and the counting function of §6.7 is
+`B(w) = 3/(π² w₂)`. Prove `counting_three`: on the chart segment `[0, 1/2]`,
+`N(w, r) / (3e^{2r}/(π² w₂)) → 1` uniformly, with `w₂ = 1 − w₁ ≥ 1/2` (GMR19, Theorem 13 at
+`n = 3`, p.759, with Example 37, pp.792–793). One route: `uniform_counting` with `ν₂` from
+`eigenprobability_three` gives the uniform asymptotic, and the residue formula of §6.3 with the
+constants above identifies `B`.
 
 **Checks.**
 
@@ -1296,8 +1360,11 @@ positive leading eigenvalue and the uniform gaps of §4.3, transported by §7.1.
   the `ν₂`-normalised `h₂ = 1/(2 log 2 · w₂)` are three different functions.
 - `n = 3`, `f(w) = w₁²`: `∫ f dν₂ = 2 · (1/2)³/3 = 1/12`, and `∫ L₂ f dν₂` has the same value.
 - `n = 3`, `w = (1/4, 3/4)`, `R = 150`: `N(w, log R) = 9124` against `3R²/(π² · 3/4) ≈ 9119`.
+- The constant of `counting_three` at the endpoints is `3/π² ≈ 0.304` at `w₁ = 0` and
+  `6/π² ≈ 0.608` at `w₁ = 1/2`; using `h₂` instead would give `1/(2 log 2) ≈ 0.721` and
+  `1/log 2 ≈ 1.443`, contradicting the counts `6858` and `13699` at `R = 150`.
 
-*Needs:* §7.1, §4.3, §5.4, §6.6, §6.7; ProbabilisticAndMetricNumberTheory §4.4 (density telescope,
+*Needs:* §7.1, §4.3, §5.4, §6.3, §6.6, §6.7; ProbabilisticAndMetricNumberTheory §4.4 (density telescope,
 `gaussMeasure`).
 
 ### 7.3 The Rauzy gasket comparison
@@ -1326,10 +1393,12 @@ equal sorted ones. One route decomposes unaccelerated words into maximal `γ₃`
 
 ### 7.4 Explicit bounds for the exponent
 
-**p-series enclosure.** For `n ≥ 3`, `β = β(n)` satisfies
-`(n − 2) Σ_{k≥2} k^{−β} ≤ 1 ≤ (n − 2) Σ_{k≥3} (2/k)^β`, that is
-`(n − 2)(ζ(β) − 1) ≤ 1 ≤ 2^β (n − 2)(ζ(β) − 1 − 2^{−β})`. One route: `λ_β = 1` lies between
-`inf L_β 1` and `sup L_β 1` (§2.2). Both sides are strictly decreasing in `β`, so `β(n)` lies between
+Prove `conformal_exponent_pseries`: if `ν` is a `β`-conformal probability for `d = n − 2` chart
+coordinates, then `d Σ_{A≥0} (A + 2)^{−β} ≤ 1 ≤ 2^β d Σ_{A≥0} (A + 3)^{−β}`, that is
+`(n − 2)(ζ(β) − 1) ≤ 1 ≤ 2^β (n − 2)(ζ(β) − 1 − 2^{−β})`; for `d = 0` no conformal probability
+exists, and for `β ≤ 1` the hypothesis cannot hold (§6.6), so both sums are genuine (GMR19,
+Lemma 35, p.792, and §4.5, p.799, with the factor `2^β`). One route: testing `f = 1` gives
+`1 = ∫ L_β 1 dν`, which lies between `inf L_β 1` and `sup L_β 1` (§2.2). Both sides are strictly decreasing in `β`, so `β(n)` lies between
 the roots of the two equations.
 
 **Checks.**
@@ -1341,7 +1410,7 @@ the roots of the two equations.
 - With the printed factor `2` in place of `2^β` the upper equation `2(n − 2)(ζ(β) − 1 − 2^{−β}) = 1`
   has root `≈ 1.882` for `n = 3`, which would exclude `β(3) = 2`; the corrected constant is needed.
 
-*Needs:* §2.2, §5.4.
+*Needs:* §2.2, §5.4, §6.6.
 
 ### 7.5 Monotonicity of the exponent
 
@@ -1350,7 +1419,7 @@ Prove `conformal_exponent_mono`: if `ν` is an `s`-conformal probability for `d`
 `β(n) ≥ 2` for all `n ≥ 3` (GMR19, Remark 14, p.761). One route: prepending a zero,
 `(w₁, …, w_{n−2}) ↦ (0, w₁, …, w_{n−2})`, embeds `Δ_{n−1}` in `Δ_n`, sends the letter `(A, j)` to
 `(A, j + 1)`, intertwines the branches and preserves `q` and all word delays; the induced injection
-of words gives `N_n(ιw, r) ≥ N_{n−1}(w, r)`, and §6.6 forces `β(n) ≥ β(n − 1)`.
+of words gives `N_n(ιw, r) ≥ N_{n−1}(w, r)`, and §6.7 forces `β(n) ≥ β(n − 1)`.
 
 **Checks.**
 

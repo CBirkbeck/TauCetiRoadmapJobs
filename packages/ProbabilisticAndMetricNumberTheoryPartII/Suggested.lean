@@ -6,23 +6,33 @@ import Mathlib
 The roadmap is `README.md`; this file is not the roadmap. It states the roadmap's headline
 theorems against the pinned Mathlib and Tau Ceti APIs, each with `sorry`, together with the few
 definitions they need: the ordered projective simplex in chart coordinates (`orderedSimplex`), the
-accelerated branches (`branchDenom`, `branchMap`), the chronological word delay and the renewal
-count (`wordDelay`, `wordCount`), a pointwise C¹ bound on the simplex (`C1BoundedOn`), the pointwise
-countable-branch transfer operator (`transferOp`) and the eigenprobability predicate
-(`IsEigenprobability`).
+accelerated branches (`branchDenom`, `branchMap`), chronological words with their maps, delays and
+renewal count (`wordMap`, `wordDelay`, `wordCount`), a pointwise C¹ bound on the simplex
+(`C1BoundedOn`), the pointwise countable-branch transfer operator (`transferOp`) and the
+eigenprobability predicate (`IsEigenprobability`).
 
 Chart conventions: for `n ≥ 3` put `d = n - 2`; a point of the ordered simplex is
 `x : Fin d → ℝ` with `x i = w_{i+1}` and `w_{d+1} = 1 - ∑ i, x i`; the letter `(A, j)` with
 `j : Fin d` is the accelerated branch `γ_{n-1}^A γ_{j+1}`.
 
-All headline theorems of the roadmap are statable at the pins. The Banach space `C¹(Δ; ℂ)` of
-jets, on which the transfer operators act as bounded operators, is a Layer 0 construction of the
-roadmap and is not a carrier at the pins. The spectral gap of the Ruelle–Perron–Frobenius theorem
-and Wielandt's separation on vertical lines are therefore stated in their equivalent forms, as
-exponential decay of iterates in the pointwise C¹ bound on native `ContDiffOn` functions, rather
-than through `spectralRadius` on `C¹(Δ; ℂ)`.
--/
+Stated headlines: eventual uniform contraction of the branches, Schauder–Tychonoff, Birkhoff's
+cone contraction, Hennion's essential-radius bound, the Ruelle–Perron–Frobenius theorem with a C¹
+gap, analytic perturbation of simple isolated eigenvalues, Wielandt separation, the pressure, the
+uniform renewal Tauberian theorem, the uniform counting theorem, the conformal exponent, the
+explicit `n = 3` eigenprobability and counting asymptotic, the p-series enclosure of the exponent
+and its monotonicity in `n`.
 
+The Banach space `C¹(Δ; ℂ)` of jets, on which the transfer operators act as bounded operators, is
+a Layer 0 construction of the roadmap and is not a carrier at the pins. The spectral gap of the
+Ruelle–Perron–Frobenius theorem and Wielandt's separation are therefore stated in their equivalent
+forms, as exponential decay of iterates in the pointwise C¹ bound on native `ContDiffOn`
+functions. The following headlines need that carrier as an operator space and are not statable at
+the pins: holomorphy of `s ↦ L_s` in operator norm on `C¹(Δ; ℂ)`, the spectral gap uniform on
+compact parameter intervals, and the meromorphic continuation of the renewal transform with its
+simple pole, each valued in operators on, or elements of, `C¹(Δ; ℂ)`. The Rauzy gasket comparison
+is not statable either: it needs the closed coding attractor and the attractor of the Rauzy
+iterated function system, whose existence as compact sets is itself a theorem of the roadmap.
+-/
 noncomputable section
 
 open MeasureTheory Filter Set Topology
@@ -52,6 +62,12 @@ def branchMap {d : ℕ} (a : ℕ × Fin d) (x : Fin d → ℝ) : Fin d → ℝ :
   fun i => (Fin.snoc (α := fun _ => ℝ) x (1 - ∑ k, x k) ((Fin.castSucc a.2).succAbove i)) /
     branchDenom a x
 
+/-- The map `F_u` of a word read chronologically: the first letter acts first,
+`F_{a :: u} = F_u ∘ F_a`, and the empty word acts as the identity. -/
+def wordMap {d : ℕ} : List (ℕ × Fin d) → (Fin d → ℝ) → (Fin d → ℝ)
+  | [], x => x
+  | a :: u, x => wordMap u (branchMap a x)
+
 /-- The delay of a word read chronologically: the first letter acts first, and
 `T_{a :: u}(w) = log q_a(w) + T_u(F_a w)`; the empty word has delay `0`. -/
 def wordDelay {d : ℕ} : List (ℕ × Fin d) → (Fin d → ℝ) → ℝ
@@ -68,6 +84,16 @@ at every point of `Δ`, the derivative taken within `Δ`. -/
 def C1BoundedOn (d : ℕ) (f : (Fin d → ℝ) → ℂ) (K : ℝ) : Prop :=
   ContDiffOn ℝ 1 f (orderedSimplex d) ∧
     ∀ x ∈ orderedSimplex d, ‖f x‖ + ‖fderivWithin ℝ f (orderedSimplex d) x‖ ≤ K
+
+/-! ## Layer 1: Explicit contraction and the coding attractor -/
+
+/-- **Eventual uniform contraction.** For `d ≥ 1` there are `D ≥ 1` and `0 < ρ < 1` such that
+the derivative within the simplex of every word map `F_u` has operator norm at most `D ρ^{|u|}`
+at every point of the simplex (Gamburd–Magee–Ronan 2019, Proposition 45 and Lemma 48). -/
+theorem eventual_contraction (d : ℕ) (hd : 1 ≤ d) :
+    ∃ D ρ : ℝ, 1 ≤ D ∧ 0 < ρ ∧ ρ < 1 ∧ ∀ (u : List (ℕ × Fin d)), ∀ x ∈ orderedSimplex d,
+      ‖fderivWithin ℝ (wordMap u) (orderedSimplex d) x‖ ≤ D * ρ ^ u.length := by
+  sorry
 
 /-! ## Layer 2: Transfer operators and convergent transforms -/
 
@@ -94,6 +120,24 @@ theorem schauder_tychonoff {V : Type*} [AddCommGroup V] [Module ℝ V] [Topologi
     {C : Set V} (hne : C.Nonempty) (hcpt : IsCompact C) (hconv : Convex ℝ C)
     {f : V → V} (hf : ContinuousOn f C) (hmaps : MapsTo f C C) :
     ∃ x ∈ C, f x = x := by
+  sorry
+
+/-- **Birkhoff's contraction theorem**, in the infimum form of the Hilbert distance. Let
+`C₁, C₂` be salient convex cones in real vector spaces and `T` a linear map with `T(C₁) ⊆ C₂`
+whose image of `C₁ ∖ {0}` has Hilbert diameter at most `Δ`: any two images are comparable with
+ratio `b / a` of logarithm at most `Δ`. If `a f ≤ g ≤ b f` in `C₁` with `a > 0` and `f ≠ 0`,
+then `a' T f ≤ T g ≤ b' T f` with `a' > 0` and `log (b' / a') ≤ tanh (Δ / 4) log (b / a)`
+(Liverani 1995, Theorem 1.1). -/
+theorem birkhoff_contraction {V W : Type*} [AddCommGroup V] [Module ℝ V] [AddCommGroup W]
+    [Module ℝ W] (C₁ : PointedCone ℝ V) (C₂ : PointedCone ℝ W)
+    (hC₁ : ∀ x ∈ C₁, -x ∈ C₁ → x = 0) (hC₂ : ∀ x ∈ C₂, -x ∈ C₂ → x = 0)
+    (T : V →ₗ[ℝ] W) (hT : ∀ f ∈ C₁, T f ∈ C₂) {Δ : ℝ} (hΔ₀ : 0 ≤ Δ)
+    (hΔ : ∀ f ∈ C₁, ∀ g ∈ C₁, f ≠ 0 → g ≠ 0 → ∃ a b : ℝ, 0 < a ∧
+      T g - a • T f ∈ C₂ ∧ b • T f - T g ∈ C₂ ∧ Real.log (b / a) ≤ Δ)
+    {f g : V} (hf : f ∈ C₁) (hf₀ : f ≠ 0) {a b : ℝ} (ha : 0 < a)
+    (hga : g - a • f ∈ C₁) (hgb : b • f - g ∈ C₁) :
+    ∃ a' b' : ℝ, 0 < a' ∧ T g - a' • T f ∈ C₂ ∧ b' • T f - T g ∈ C₂ ∧
+      Real.log (b' / a') ≤ Real.tanh (Δ / 4) * Real.log (b / a) := by
   sorry
 
 /-- **Essential spectral radius from a two-norm inequality** (Hennion). Let `p` be a seminorm
@@ -205,6 +249,14 @@ theorem uniform_renewal_tauberian {X : Type*} [TopologicalSpace X] [CompactSpace
     TendstoUniformly (fun r x => Real.exp (-(a * r)) * α x r) (fun x => B x) atTop := by
   sorry
 
+/-- **Conformal exponent.** For `d ≥ 1` there is a unique `β > 1` admitting a `β`-conformal
+probability on the simplex, and at `β` that probability is unique
+(Gamburd–Magee–Ronan 2019, Theorem 10, with the exponent obtained from the pressure). -/
+theorem conformal_exponent (d : ℕ) (hd : 1 ≤ d) :
+    ∃ β : ℝ, 1 < β ∧ (∃! ν : Measure (Fin d → ℝ), IsEigenprobability d β 1 ν) ∧
+      ∀ (s : ℝ) (ν : Measure (Fin d → ℝ)), IsEigenprobability d s 1 ν → s = β := by
+  sorry
+
 /-- **Uniform counting theorem.** If `ν` is a `β`-conformal probability, then there is a
 positive `C¹` function `B` on the simplex, invariant under `L_β`, with
 `N(w, r) / (B(w) e^{β r}) → 1` uniformly in `w ∈ Δ` (Gamburd–Magee–Ronan 2019, Theorem 13 and
@@ -218,14 +270,6 @@ theorem uniform_counting (d : ℕ) (hd : 1 ≤ d) {β : ℝ} {ν : Measure (Fin 
         (fun _ => 1) atTop (orderedSimplex d) := by
   sorry
 
-/-- **Conformal exponent.** For `d ≥ 1` there is a unique `β > 1` admitting a `β`-conformal
-probability on the simplex, and at `β` that probability is unique
-(Gamburd–Magee–Ronan 2019, Theorem 10, with the exponent obtained from the pressure). -/
-theorem conformal_exponent (d : ℕ) (hd : 1 ≤ d) :
-    ∃ β : ℝ, 1 < β ∧ (∃! ν : Measure (Fin d → ℝ), IsEigenprobability d β 1 ν) ∧
-      ∀ (s : ℝ) (ν : Measure (Fin d → ℝ)), IsEigenprobability d s 1 ν → s = β := by
-  sorry
-
 /-! ## Layer 7: Gauss, Rauzy and exponent comparisons -/
 
 /-- **The exponent for `n = 3` is `2`.** Twice Lebesgue measure on the chart segment
@@ -233,6 +277,25 @@ theorem conformal_exponent (d : ℕ) (hd : 1 ≤ d) :
 (Gamburd–Magee–Ronan 2019, Example 37). -/
 theorem eigenprobability_three :
     IsEigenprobability 1 2 1 ((2 : ℝ≥0∞) • volume.restrict (orderedSimplex 1)) := by
+  sorry
+
+/-- **The `n = 3` counting asymptotic.** On the chart segment `Δ₃ = [0, 1/2]`,
+`N(w, r) / (3 e^{2r} / (π² w₂)) → 1` uniformly, with `w₂ = 1 - w₁`
+(Gamburd–Magee–Ronan 2019, Theorem 13 at `n = 3`, with Example 37). -/
+theorem counting_three :
+    TendstoUniformlyOn
+      (fun r (x : Fin 1 → ℝ) =>
+        (wordCount 1 x r : ℝ) / (3 / (Real.pi ^ 2 * (1 - x 0)) * Real.exp (2 * r)))
+      (fun _ => 1) atTop (orderedSimplex 1) := by
+  sorry
+
+/-- **p-series enclosure of the exponent.** A `β`-conformal probability forces
+`d ∑_{A ≥ 0} (A + 2)^{-β} ≤ 1 ≤ 2^β d ∑_{A ≥ 0} (A + 3)^{-β}`; for `d = 0` no conformal
+probability exists (Gamburd–Magee–Ronan 2019, Lemma 35 and §4.5, with the factor `2^β`). -/
+theorem conformal_exponent_pseries (d : ℕ) {β : ℝ} {ν : Measure (Fin d → ℝ)}
+    (hν : IsEigenprobability d β 1 ν) :
+    (d : ℝ) * ∑' A : ℕ, ((A : ℝ) + 2) ^ (-β) ≤ 1 ∧
+      1 ≤ 2 ^ β * (d : ℝ) * ∑' A : ℕ, ((A : ℝ) + 3) ^ (-β) := by
   sorry
 
 /-- **Monotonicity of the exponent.** The conformal exponent for `n + 1` coordinates is at
