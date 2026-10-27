@@ -291,7 +291,6 @@ AlgebraicModularFormsAndSerreWeightsPartII
 ArithmeticDynamicsPartII
 ProbabilisticAndMetricNumberTheoryPartII
 NonabelianLevelStructures
-AutomorphicSpectralTheoryPartII
 AutomorphyLiftingBeyondTaylorWiles
 CMRankZeroConverse
 RankZeroOneBSDPartII
@@ -331,3 +330,4 @@ SymplecticReidemeisterTorsionModSquares
 TopologicalMirrorSymmetryForHitchinSystems
 TwistedAutomorphicDescents
 SpectralManifolds
+AutomorphicSpectralTheoryPartII
