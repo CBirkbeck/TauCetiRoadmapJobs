@@ -323,6 +323,7 @@ TopologicalMirrorSymmetryForHitchinSystems
 TwistedAutomorphicDescents
 SpectralManifolds
 OperatorAlgebraDynamics
+Subfactors
 MorseTheory
 GaugeQuiltFieldTheory
 FukayaTheory
