@@ -28,10 +28,12 @@ The following headline theorems are not statable at the pins:
 * Layer 6: the Moriwaki height machine, Northcott theorem, Néron–Tate kernel and
   specialization theorem. The arithmetic polarizations and their intersection
   heights are missing.
-* Layers 7 and 8: the canonical admissible curve metrics, their existence and
-  uniqueness, the canonical family extensions and the relative arithmetic
-  Hodge-index identity. The Berkovich curve-metric and relative admissible
-  adelic-bundle carriers are missing.
+* Layers 7 and 8: local Calabi uniqueness on curves, the canonical admissible
+  curve metrics, their existence and uniqueness, the canonical family
+  extensions, the relative arithmetic Hodge-index identity and the arithmetic
+  Hodge index inequality over finitely generated fields. The Berkovich
+  curve-metric, local intersection, relative admissible adelic-bundle and
+  adelic pseudo-effectivity carriers are missing.
 * Layer 9: relative arbitrary-degree theta pullbacks, canonical/difference/shift
   identities and nefness of the admissible canonical bundle. The canonical
   metrized theta and relative admissible-bundle carriers and their Deligne
