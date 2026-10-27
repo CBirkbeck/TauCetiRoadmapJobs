@@ -16,7 +16,7 @@ The following objects and results are stated by their owners and are consumed by
 - SpringerResolutionAndCharacteristicCycles Layers F, G, I, C, N, S, Y, K, P, T and E own flag schemes, the simultaneous resolution, incidence components, their normality, Cartan flatness, Steinberg cycles, KL identities and their completion. The targets here transfer those statements to Galois deformation spaces.
 - RigidAnalyticGeometry §§7.3, 8.1–8.3 and AdicSpacesPartII R1 own rigid spaces, local rings, completions, analytic excellence and rigid–adic comparison. SchemeAndStackFoundations §§0.16–0.21 and 4.3–4.5 own the general local algebra and Schlessinger theory. DeformationAndDerivedPatchingAlgebra §§1.6–1.14 and 2.1–2.7 supply their labelled coefficient and framing interfaces.
 - LocallyAnalyticRepresentationsOfLocalGroups LR.4–LR.5 own actual locally analytic inductions and Orlik–Strauch constituents; no formal labels replace those representations here. Completed cohomology, patched eigenvarieties and their socles belong to CompletedCohomologyAndLocalGlobalCompatibility, which precedes this roadmap; global eigenvarieties and automorphy statements are not stated here.
-- PadicLocalLanglandsForGL2QpPartII GR.1/nontrianguline-differential-control owns the rank-two nontrianguline connection statements over ℚₚ: for an absolutely irreducible two-dimensional de Rham V that is not trianguline, every nonzero P(∇) is injective on D_rig(V) and ∂=t⁻¹∇ is bijective on N_rig(V). No target here uses them.
+- PadicLocalLanglandsForGL2QpPartII GR.1/nontrianguline-differential-control owns the rank-two nontrianguline connection statements over ℚₚ: for an absolutely irreducible two-dimensional V over ℚₚ that is not trianguline, every nonzero P(∇) is injective on D_rig(V), and, when V is moreover de Rham, ∂=t⁻¹∇ is bijective on N_rig(V), the latter through PadicDifferentialEquationsAndRigidCohomology §RD.2.43 as that roadmap records. No target here uses them.
 
 Generic product maps, ranges, kernels, submodule quotients, dimension identities, adic completions, algebraic cycles and module lengths are already in Mathlib. There is no new abstract matched-range library or arithmetic slope adapter in this roadmap's acceptance file.
 
@@ -28,7 +28,7 @@ Write R_A for the coefficient Robba ring over K. An integral saturated flag has 
 
 In the BHS convention wt is the logarithmic derivative, with wt(ε)=+1. Here `eps=N_(K/Q_p)|N_(K/Q_p)|` is the character of K×, whereas ε in E[ε]/ε² denotes the dual-number variable when a coefficient algebra is specified. For increasing local-model weights `h_(tau,1)<...<h_(tau,n)`, the Hodge flag is evaluated at decreasing-filtration indices `-h_(tau,i)`. Ordered dominant parameter weights decrease. Newton–Thorne's weight is the negative derivative, so cyclotomic weight is −1 and its ordered noncritical k increases. Layers 10–13 use Ding's decreasing h. A two-term witness is the character x|x| over ℚₚ: its Robba Frobenius on the standard basis is 1, its Gamma character is cyclotomic, its BHS weight is +1, its NT weight is −1, and its invariant de Rham generator has filtration jump −1. The character x has Frobenius p instead. This is the character and Tate-line normalization of PhiGammaModulesAndIwasawaCohomology §§7.1–7.3 and PadicHodgeTheory §4.5.
 
-Normalize vₚ(p)=1. Large-gap saturation uses the local uniformizer ϖ_K and includes e; NT numerical noncriticality uses the rational prime p as an element of K×. For e=2, an unramified parameter with vₚ(δ(ϖ_K))=1 has vₚ(δ(p))=2; replacing one evaluation by the other changes a bound. NT reciprocity Art_K is arithmetic, so an unramified Galois character with value a on arithmetic Frobenius corresponds to a character of K× with uniformizer value a. Other reciprocity interfaces are transported through this dictionary.
+Normalize vₚ(p)=1. Large-gap saturation uses the local uniformizer ϖ_K and includes e; NT numerical noncriticality uses the rational prime p as an element of K×. For e=2, an unramified parameter with vₚ(δ(ϖ_K))=1 has vₚ(δ(p))=2; replacing one evaluation by the other changes a bound. Art_K:K×→W_K^ab is the cohomological normalization of NT, sending uniformizers to geometric Frobenius elements (NT21, Notation, p. 7; NT21 line 261). If rec_arith sends uniformizers to arithmetic Frobenius, then Art_K(x)=rec_arith(x)⁻¹. Thus an unramified Galois character η with η(Frob_arith)=a has parameter δ=η∘Art_K with δ(ϖ_K)=a⁻¹; over ℚ₃, η(Frob_arith)=2 gives δ(3)=1/2, its crystalline Frobenius is 1/2, and δ∘Art_K⁻¹ takes the value 2 on arithmetic Frobenius. The same normalization makes the cyclotomic character correspond to x|x| as in the witness above (Art_K(u) acts on p-power roots of unity through u for u∈ℤₚ×). Other reciprocity interfaces are transported through this dictionary.
 
 A period frame is a basis of D_pdR over A⊗K and has dn² parameters; a representation frame is over A and has n²; independent graded rank-one rigidifications have n parameters. For d=2,n=2 these counts are 8,4,2. Set `g=Res_(K/Q_p) gl_n,E`, g̃ its simultaneous resolution and X=g̃×_g g̃. Its components are X_w; Z_v denotes a Steinberg zero-fibre component. The ordered Cartan graph is (z,w⁻¹z), with permutation action `(wz)_i=z_(w^(-1)(i))`. For w=(123) and z=(ε,2ε,3ε), the second coordinate is (2ε,3ε,ε). The equation is imposed on all Artinian algebras, rather than only residue points.
 
@@ -70,7 +70,7 @@ What PhiGammaModulesAndIwasawaCohomology must provide (gap:general-character-spa
 
 ### From TauCetiRoadmap.LocalGaloisDeformationRings
 
-Use §0.4 for the finite-local coefficient Robba realization and tangent/Ext comparison, §§1.1, 1.4, 1.12, 1.18 for framed lifting, obstruction theory, residue extension and point completion, and §1.23 for individual noncritical crystabelline deformation rings. With rank n and degree d, their unrestricted, de Rham and refinement tangent dimensions are 1+n²d, 1+dn(n−1)/2 and 1+dn(n+1)/2. This contract requires its generic, all-refinement noncritical and scalar-endomorphism hypotheses; it is not used to prove general regular-locus geometry. Sections 3.4, 3.6 and 3.10 provide potentially semistable rings, filtered (φ,N)-deformations and regular crystalline generic fibres. Their monodromy relation is Nφ=pφN. For φ=diag(1,p) and N(e₂)=e₁, both sides on e₂ are p e₁.
+Use §0.4 for the finite-local coefficient Robba realization and tangent/Ext comparison, §§1.1, 1.4, 1.12, 1.18 for framed lifting, obstruction theory, residue extension and point completion, and §1.23 for individual noncritical crystabelline deformation rings. With rank n and degree d, their unrestricted, de Rham and refinement tangent dimensions are 1+n²d, 1+dn(n−1)/2 and 1+dn(n+1)/2. This contract requires its generic, all-refinement noncritical and scalar-endomorphism hypotheses; it is not used to prove general regular-locus geometry. Sections 3.4, 3.5, 3.6 and 3.10 provide potentially semistable rings, the finite-projective filtered period modules of potentially semistable families with their specialization comparisons (used with trivial inertia type and L=K), filtered (φ,N)-deformations and regular crystalline generic fibres. Their monodromy relation is Nφ=pφN. For φ=diag(1,p) and N(e₂)=e₁, both sides on e₂ are p e₁.
 
 ### From TauCetiRoadmap.SpringerResolutionAndCharacteristicCycles
 
@@ -160,7 +160,7 @@ The reusable interface has the following properties.
 
 - At A=E the reduction marking forces an automorphism to be 1, whereas over E[ε]/ε² the rank-one operators 0 and ε are distinct.
 
-- With N=0 and a rank-two frame change 1+εB, conjugation leaves N=0; equivalent framed objects must transport the frame, so matrix equality alone does not identify arbitrary markings.
+- With N=0 over E[ε]/ε², the frame change α′=α(1+εB) is transported by the period automorphism f=α′α⁻¹=α(1+εB)α⁻¹, which commutes with ν=0 and reduces to the identity; the two framed objects are isomorphic and both have matrix 0, as §1.2 requires. For N with [N,B]≠0 the matrices N and N+ε[N,B] differ and no compatible isomorphism exists; in rank one the distinct matrices 0 and ε give non-isomorphic framed objects.
 
 ### 1.2 The framed matrix deformation model
 
@@ -488,7 +488,7 @@ This branch uses Newton–Thorne’s weaker, ordered regularity condition and th
 
 ### 4.1 Ordered-regular parameters and ordinary flags
 
-Use NT-regularity of δ=(δ₁,…,δ_n), namely δ_i/δ_j≠∏ττ^aτ for every i<j and every aτ≥0. A parameter is ordinary when each δ_i(ϖ_K) is a p-adic unit. For an ordinary tuple, a Galois representation is trianguline of that parameter exactly when it has a G_K-stable flag whose graded characters are δ_i∘Art_K⁻¹. These conditions are ordered and use the arithmetic reciprocity normalization of NT.
+Use NT-regularity of δ=(δ₁,…,δ_n), namely δ_i/δ_j≠∏ττ^aτ for every i<j and every aτ≥0. A parameter is ordinary when each δ_i(ϖ_K) is a p-adic unit. For an ordinary tuple, a Galois representation is trianguline of that parameter exactly when it has a G_K-stable flag whose graded characters are δ_i∘Art_K⁻¹. These conditions are ordered and use NT's geometric normalization of Art_K fixed in the Conventions.
 
 (NT21 §2.3.1 before Lemma 2.4, p. 28; NT21 line 1098.)
 
@@ -515,6 +515,8 @@ The reusable interface has the following properties.
 - An ordinary parameter has zero individual uniformizer valuations, not just zero valuation of their product.
 
 - For n=2, uniformizer valuations (1,−1) sum to 0 but fail ordinarity; valuations (0,0) meet the ordinary requirement.
+
+- Over ℚ₃ and n=1, the unramified Galois character η with η(Frob_arith)=2 is ordinary of parameter δ with δ(3)=1/2, and δ∘Art_K⁻¹ evaluated at arithmetic Frobenius is 2 again; the arithmetic normalization would give δ(3)=2, a parameter whose crystalline Frobenius 2 disagrees with that of η.
 
 ### 4.2 Strictness and uniqueness for ordered-regular parameters
 
@@ -710,7 +712,7 @@ Glue the localized module to its period lattice. The two flags then meet in X=g�
 
 ### 6.1 Robba deformation gluing through the period lattice
 
-For D with M=D[1/t], W⁺=W_dR⁺(D) and W=W_dR(M), deformation groupoids satisfy `X_D ~= X_M x_(X_W) X_(W^(+))`. With a fixed localized flag, `X_(D,F) ~= X_(M,F) x_(X_W) X_(W^(+))`; the same identities hold with compatible D_pdR frames. The flag on D is required only after inverting t, not integrally.
+For D such that W⁺=W_dR⁺(D) is almost de Rham, with M=D[1/t] and W=W_dR(M) (hence almost de Rham), deformation groupoids satisfy `X_D ~= X_M x_(X_W) X_(W^(+))`. With a fixed localized flag, `X_(D,F) ~= X_(M,F) x_(X_W) X_(W^(+))`; the same identities hold with compatible D_pdR frames, which exist because W is almost de Rham. The flag on D is required only after inverting t, not integrally.
 
 (BHS19 Proposition 3.5.1 and Remark 3.5.2, pp. 355–356; BHS19 line 2256.)
 
@@ -724,11 +726,13 @@ One proof proceeds as follows. Apply coefficient Berger equivalence to reconstru
 
 - Over E[ε]/ε² a lattice identification 1+ε differs from 1; the fibre product retains that gluing isomorphism.
 
+- Negative control: over ℚ₃ with n=1, a rank-one D=R_E(δ) whose parameter has Sen weight 1/2 (δ(u)=exp((1/2)log u) on a small open subgroup of units) has D_pdR(W_dR(D))=0, so it is outside the domain and cannot carry a rank-one D_pdR frame; δ=x² has W_dR⁺(D) almost de Rham with period rank one and admits the frame.
+
 ### 6.2 Representability of the comparison morphisms
 
-Assume the localized triangulation has a parameter in T₀ⁿ. The morphisms X_M→X_W, `X_(M,F) -> X_(W,F)`, `X_D -> X_(W^(+))`, and `X_(D,F) -> X_(W^(+),F)` are relatively prorepresentable; the last two are base changes of the first two. They satisfy the relative Schlessinger fibre-product criterion and have finite-dimensional relative tangent spaces. The character-weight map T̂_δⁿ→t̂₀ is formally smooth of relative dimension n.
+Assume W_dR⁺(D) is almost de Rham as in §6.1 and the localized triangulation admits a locally algebraic parameter δ∈T₀ⁿ. The morphisms X_M→X_W, `X_(M,F) -> X_(W,F)`, `X_D -> X_(W^(+))`, and `X_(D,F) -> X_(W^(+),F)` are relatively prorepresentable; the last two are base changes of the first two. They satisfy the relative Schlessinger fibre-product criterion and have finite-dimensional relative tangent spaces. The character-weight map T̂_δⁿ→t̂₀ is formally smooth of relative dimension n.
 
-The localized triangulation of M admits a parameter in T₀ⁿ, the standing assumption of BHS19 from Lemma 3.5.3 on; finiteness of the relative tangent spaces uses dim H¹(R_E(δ)[1/t])=d for δ∈T₀.
+The localized triangulation of M admits a locally algebraic parameter (BHS19 line 2305), which makes W and W⁺ almost de Rham, and that parameter lies in T₀ⁿ, the standing assumption of BHS19 from Lemma 3.5.3 on (BHS19 line 2321); finiteness of the relative tangent spaces uses dim H¹(R_E(δ)[1/t])=d for δ∈T₀.
 
 (BHS19 Lemma 3.5.3, Corollary 3.5.4 and Lemma 3.5.5, pp. 356–358; BHS19 line 2322.)
 
@@ -741,6 +745,8 @@ One proof proceeds as follows. Identify relative fibres with deformations equipp
 - For n=2,d=2, full character dimension 6 minus weight dimension 4 is 2=n.
 
 - For δ=1 the localized H⁰ has dimension 1; the parameter lies outside T₀ and cannot be inserted into the generic finite-relative-tangent argument.
+
+- For n=1 the condition T₀¹ is vacuous, so the weight-1/2 rank-one character of §6.1 satisfies it; it is excluded only by the locally algebraic requirement, since its W_dR has D_pdR=0. The parameter x² satisfies both.
 
 ### 6.3 Framed localized deformation dimension
 
@@ -1078,13 +1084,13 @@ One proof proceeds as follows. Apply the formal smooth tangent-dimension identit
 
 Fix strictly dominant labelled weights k (equivalently increasing Hodge–Tate weights h with k=w₀(h)) and let `X^(k-cr)_(r_bar) subset X_(r_bar)` be the smooth rigid space of framed crystalline lifts of r̄ with labelled Hodge–Tate weights k. The refined space `X_tilde^(k-cr)_(r_bar)=X^(k-cr)_(r_bar) x_(T^rig/S_n) T^rig` parametrizes pairs (r,(φ₁,…,φ_n)) with (φ_i) an ordering of the eigenvalues of the linearized crystalline Frobenius `phi^([K_0:Q_p])`. It is reduced and equidimensional of the dimension of `X^(k-cr)_(r_bar)`. The locus where the φ_i are distinct is smooth, Zariski open and dense; on its dense open part W̃ where `phi_i phi_j^(-1) not in {1,p^([K_0:Q_p])}`, a local Frobenius-adapted basis of the family D_cris defines a smooth morphism h:W̃→(G/B)^rig recording the Hodge flag, whose Bruhat cell relative to the refinement flag is independent of the basis. The morphism `iota_k:(r,phi) |-> (r,z^(k) unr(phi))` is a closed immersion `X_tilde^(k-cr)_(r_bar) -> X_tri(r_bar)`, and the noncritical regular locus maps into U_tri.
 
-r̄:G_K→GL_n(k_E) is fixed and k is strictly dominant at every embedding. Kisin’s crystalline deformation spaces of fixed weight, with their families of filtered φ-modules, are imported from LocalGaloisDeformationRings §§3.6, 3.10.
+r̄:G_K→GL_n(k_E) is fixed and k is strictly dominant at every embedding. Kisin’s crystalline deformation spaces of fixed weight are imported from LocalGaloisDeformationRings §3.10; their finite-projective families of filtered φ-modules and the specialization comparisons come from LocalGaloisDeformationRings §3.5 with trivial inertia type and L=K, and §3.6 supplies the deformation theory of those filtered modules.
 
 (BHSsmooth17 §2.2, (2.4)–(2.9), Lemmas 2.2–2.4 and Corollary 2.5, author PDF pp. 8–12; BHSsmooth17 line 357; BHS19 Proof of Theorem 4.2.3, (4.2)–(4.5), pp. 376–377; BHS19 line 3040.)
 
 A proof route uses the smooth framed crystalline deformation space of weight k and the locally free family (D,Φ) of filtered φ-modules over it. Form the fibre product with T^rig→T^rig/S_n, the map to T/S_n being the characteristic polynomial of `Phi^([K_0:Q_p])`; reducedness follows because T→T/S_n is finite flat and generically étale and the map to T/S_n is open (BHSsmooth17 Lemmas 2.2–2.3). Locally choose a basis of D; the Frobenius matrix and the Hodge filtration define a smooth morphism to (Res GL_n×Flag)^rig, and distinct eigenvalues, the transversality condition and regularity of the ratios cut out smooth Zariski-open dense loci (BHSsmooth17 Lemma 2.4). On W̃ a Frobenius-adapted basis gives h, and changing the adapted basis acts through B, so Bruhat cells are well defined. At noncritical regular points Berger’s dictionary turns the ordered refinement into a triangulation with parameter `z^(k) unr(phi)`, so those points map into U_tri; reducedness and density then give ι_k into X_tri, a closed immersion because (r,φ)↦(r,z^kunr(φ)) is a closed immersion into `X_(r_bar) x T^n`.
 
-*Needs:* LocalGaloisDeformationRings §3.10; LocalGaloisDeformationRings §3.6; PadicHodgeTheory §5.2; SpringerResolutionAndCharacteristicCycles F/flag-scheme; CompletedCohomologyAndLocalGlobalCompatibility §5.2a (gap:unrestricted-trianguline-variety); PhiGammaModulesAndIwasawaCohomology §4.0; AdicSpacesPartII R1; RigidAnalyticGeometry §§7.3, 8.1 (gap:rigid-flat-openness).
+*Needs:* LocalGaloisDeformationRings §3.10; LocalGaloisDeformationRings §3.5; LocalGaloisDeformationRings §3.6; PadicHodgeTheory §5.2; SpringerResolutionAndCharacteristicCycles F/flag-scheme; CompletedCohomologyAndLocalGlobalCompatibility §5.2a (gap:unrestricted-trianguline-variety); PhiGammaModulesAndIwasawaCohomology §4.0; AdicSpacesPartII R1; RigidAnalyticGeometry §§7.3, 8.1 (gap:rigid-flat-openness).
 
 The reusable interface has the following properties.
 
@@ -1101,6 +1107,8 @@ The reusable interface has the following properties.
 **Checks.**
 
 - For n=1 the refined space equals the crystalline space and ι_k sends r to `(r,z^(k) unr(phi))` with φ its Frobenius eigenvalue.
+
+- In the unramified rank-one weight-zero family with arithmetic Frobenius 1+T, the imported period family has crystalline Frobenius (1+T)⁻¹, so its specialization at T=ε in E[ε]/ε² is 1−ε; reading 1+T as the crystalline eigenvalue would contradict the geometric normalization of Art_K in the Conventions.
 
 - For n=2 and a point with Frobenius eigenvalues φ₁≠φ₂, the fibre over r consists of exactly the two points (φ₁,φ₂) and (φ₂,φ₁).
 
@@ -1134,7 +1142,7 @@ For a rank-two prefix valuation b and ramification index e, a positive adjacent 
 
 ### Dependencies
 
-§7.4; SpringerResolutionAndCharacteristicCycles C/cartan-flatness; §6.2; CompletedCohomologyAndLocalGlobalCompatibility §5.2a (gap:unrestricted-trianguline-variety); LocalGaloisDeformationRings §3.10; RigidAnalyticGeometry §§1.2, 7.3; AdicSpacesPartII R1.9; PhiGammaModulesAndIwasawaCohomology §7.8; PadicHodgeTheory §5.2; PadicHodgeTheory §§4.4–4.5, 5.2; §7.5; PhiGammaModulesAndIwasawaCohomology §4.0 (gap:general-character-spaces); AdicSpacesPartII R1; RigidAnalyticGeometry §§1.2, 8.1 (gap:rigid-normal-cm-openness); RigidAnalyticGeometry §§7.3, 8.1 (gap:rigid-flat-openness); §6.9; SpringerResolutionAndCharacteristicCycles T/tangent-space-bound; SpringerResolutionAndCharacteristicCycles T/smoothness-criterion; LocalGaloisDeformationRings §3.6; SpringerResolutionAndCharacteristicCycles F/flag-scheme; SpringerResolutionAndCharacteristicCycles I/bruhat-support.
+§7.4; SpringerResolutionAndCharacteristicCycles C/cartan-flatness; §6.2; CompletedCohomologyAndLocalGlobalCompatibility §5.2a (gap:unrestricted-trianguline-variety); LocalGaloisDeformationRings §3.10; RigidAnalyticGeometry §§1.2, 7.3; AdicSpacesPartII R1.9; PhiGammaModulesAndIwasawaCohomology §7.8; PadicHodgeTheory §5.2; PadicHodgeTheory §§4.4–4.5, 5.2; §7.5; PhiGammaModulesAndIwasawaCohomology §4.0 (gap:general-character-spaces); AdicSpacesPartII R1; RigidAnalyticGeometry §§1.2, 8.1 (gap:rigid-normal-cm-openness); RigidAnalyticGeometry §§7.3, 8.1 (gap:rigid-flat-openness); §6.9; SpringerResolutionAndCharacteristicCycles T/tangent-space-bound; SpringerResolutionAndCharacteristicCycles T/smoothness-criterion; LocalGaloisDeformationRings §3.5; LocalGaloisDeformationRings §3.6; SpringerResolutionAndCharacteristicCycles F/flag-scheme; SpringerResolutionAndCharacteristicCycles I/bruhat-support.
 
 ## Layer 9: Local trianguline cycles and the crystalline multiplicity formula
 
@@ -1228,7 +1236,7 @@ The reusable interface has the following properties.
 
 **Checks.**
 
-- For n=2,d=1 each cycle has ambient dimension 3 and codimension 5.
+- For n=2,d=1 each cycle has dimension 3 in the ambient framed ring of dimension 8, hence codimension 5=1·2·3/2+2.
 
 - A constituent with zero multiplicity contributes zero to that particular equation, rather than forcing its intrinsic cycle to vanish in every other equation.
 
@@ -1352,7 +1360,7 @@ The second branch studies a module whose every refinement is noncritical, withou
 
 ### 10.1 Generic noncritical crystabelline Hodge parameters
 
-Fix φ and strictly decreasing h as in the Ding setting. ΦΓ_nc(φ,h) consists of rank-n crystabelline Robba modules with D[1/t]≅⊕_i R(φ_i)[1/t], weights h and all n! Frobenius refinements noncritical. For w∈S_n the corresponding integral triangulation has successive parameters `phi_(w^(-1)(i)) z^(h_i)`. No étaleness is required. The permutation is common to the embeddings, whereas the BHS weight permutation lies in (S_n)^Σ.
+Fix generic φ and labelled weights h that are weakly decreasing at every embedding (h_(τ,1)≥⋯≥h_(τ,n)), as in the Ding setting. ΦΓ_nc(φ,h) consists of rank-n crystabelline Robba modules with D[1/t]≅⊕_i R(φ_i)[1/t] and Hodge–Tate–Sen weights h such that each of the n! Frobenius refinements is noncritical, meaning its i-th graded piece has weights exactly h_i. Call such a module regular when every h_τ is strictly decreasing. The module D of Layers 10–13 is regular; its modification D_σ of §10.5 lies in ΦΓ_nc(φ,T_σh), where T_σh agrees with h at σ and has every weight at τ≠σ equal to h_(τ,n) (Ding25 line 554), without the regularity assumption. For w∈S_n the corresponding integral triangulation has successive parameters `phi_(w^(-1)(i)) z^(h_i)`. No étaleness is required. The permutation is common to the embeddings, whereas the BHS weight permutation lies in (S_n)^Σ.
 
 (Ding25 §2.1 and notation ΦΓ_nc(φ,h), pp. 9–10; Ding25 line 379.)
 
@@ -1381,6 +1389,8 @@ The reusable interface has the following properties.
 - For n=2, the identity refinement has `(phi_1 z^(h_1),phi_2 z^(h_2))` and the transposition has `(phi_2 z^(h_1),phi_1 z^(h_2))`; the weights stay in decreasing order.
 
 - For w=(123), the labels in positions 1,2,3 are (φ₃,φ₁,φ₂), using w⁻¹ rather than w.
+
+- Negative control for regularity: for d=2, n=3 and off-σ weights (3,1,0), the modified off-σ weights are (0,0,0). They are weakly but not strictly decreasing, so D_σ lies in ΦΓ_nc(φ,T_σh) but is not regular, while D with weights (3,1,0) is regular; a definition requiring strict decrease would leave T_σ without a target.
 
 ### 10.2 Canonical labelled crystabelline subquotients
 
@@ -1954,7 +1964,7 @@ One proof proceeds as follows. Express the image as the kernel of pullback to th
 
 ### 13.3 Self-extension images determine the injection line
 
-If ι:D₁→C₁ is injective, both Ext¹_ι image spaces have dimension 1+(n−1)(n−2)d and contain the relevant de Rham self-Ext space. For any ι′, equality of either image with the corresponding image of ι is equivalent to ι′=aι for a∈E×. For a de Rham M∈Ext¹(C₁,D₁), the smooth derivatives `kappa_(phi_1)(iota^(-)M)` and `kappa_(phi_1)(iota^(+)M)` agree.
+If ι:D₁→C₁ is injective, both Ext¹_ι image spaces have dimension 1+(n−1)(n−2)d and contain the relevant de Rham self-Ext space. For any ι′, equality of either image with the corresponding image of ι is equivalent to ι′=aι for a∈E×. Put φ_end=(φ₁,…,φₙ₋₁), the ordered refinement shared by D₁ and C₁, and T_end=(G_m)^(n−1). Let κ_end,D₁:Ext¹_g(D₁,D₁)→Hom_sm(T_end(K),E) and κ_end,C₁:Ext¹_g(C₁,C₁)→Hom_sm(T_end(K),E) be the §11.2 derivative maps of this ordered refinement restricted to de Rham self-extensions. For every M∈Ext¹_g(C₁,D₁), `kappa_end,D1(iota^(-)M)=kappa_end,C1(iota^(+)M)` as ordered (n−1)-tuples.
 
 (Ding25 Proposition 2.29 and Lemma 2.30, pp. 26–28; Ding25 line 1168.)
 
@@ -1967,6 +1977,8 @@ One proof proceeds as follows. Compute the kernel from torsion period invariants
 - At n=3,d=2 an injective image has dimension 1+2·1·2=5, whereas a noninjective pencil image has dimension 4; zero ι has dimension 0.
 
 - Scaling ι by 2 preserves the image; a nonproportional injection has a different image by the rigidity assertion.
+
+- At n=3, an unramified scalar twist direction ψ gives the ordered pair (ψ,ψ) on both endpoints; a map that reversed the endpoint order would send a general pair (ψ₁,ψ₂) to (ψ₂,ψ₁) and is not the derivative of the ordered refinement φ_end, so the comparison is between two coordinates in fixed order, not one character.
 
 ### 13.4 The signed matched-extension relation
 
@@ -2174,7 +2186,7 @@ The reusable interface has the following properties.
 
 - For K=ℚₚ this reduces to the original L relation.
 
-- The second endpoint is C₁,σ; replacing it by an unrelated D₂,σ does not type-check the pushout relation.
+- For d=2 and τ≠σ, the scalar coordinate ψ=log_τ is not σ-analytic: its derivative along the τ-direction of the units is 1, so ψ∉Hom_σ(K×,E) and no element of V_σ has scalar coordinates (ψ,−ψ), although ψ+(−ψ)=0; for ψ=log_σ that derivative is 0 and the pair is admissible. Cancellation of the scalar coordinates alone does not impose the σ-condition.
 
 - For n=2,d=2 use the zero modified de Rham kernel, not the one-dimensional full refinement kernel.
 
