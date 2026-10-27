@@ -337,3 +337,4 @@ QuantitativeOrbitMethodAndMicrolocalAnalysisOnLieGroups
 MorseTheory
 GaugeQuiltFieldTheory
 FukayaTheory
+PolynomialGaloisGroups
