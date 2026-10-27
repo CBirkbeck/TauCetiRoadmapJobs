@@ -6,9 +6,9 @@
 
 GeometricSatakeAndFusion GS0’s polynomial BD extension is the requested owner of the polynomial modification functor, its ind-projectivity and fibres, and its closed-immersion criterion (gap:polynomial-bd-projectivity; gap:polynomial-closed-immersion-criterion). This roadmap owns polynomial local-model closures and their comparisons with integral v-sheaves; the Hodge-induced scheme maps and their closedness; normal scheme representability; tangent spaces spanned by formal curves; same-residue-field curves; integral EL/PEL quotient models and Drinfeld comparisons; local-model tube connectedness; and the application of central nearby cycles to local-model trace functions. The final representability and tube theorems include wild ramification and primes 2 and 3. The classical and tame intermediate theorems retain their own hypotheses.
 
-GeometricSatakeAndFusion GS0, “Generic Schubert bounds”, “Integral parahoric ind-properness” and “Bounded admissible affine flag loci”, owns the Grassmannians, the v-closure local model, its functoriality, connected-level and central comparisons, and its reduced special fibre. Those constructions and the general v-special-fibre theorem are imported, including the comparison to the admissible Witt locus. Section 0.4 below fixes notation and tests that contract; §3.4 adds the comparison with the unperfected polynomial special fibre. GeometricSatakeAndFusion GS2 supplies convolution and the central-sheaf theory specified in the contracts; this roadmap proves its local-model consequences. The independent rational Gelfand commutativity proof, metaplectic Satake and rational Witt equivalence over larger algebraically closed residue fields are outside these layers.
+GeometricSatakeAndFusion GS0, “Generic Schubert bounds”, “Integral parahoric ind-properness” and “Bounded admissible affine flag loci”, owns the Grassmannians, the v-closure local model, its functoriality, connected-level and central comparisons, and its reduced special fibre. Those constructions and the general v-special-fibre theorem are imported, including the comparison to the admissible Witt locus. Section 0.4 below fixes notation and tests that contract; §3.4 adds the comparison with the unperfected polynomial special fibre and, for minuscule bounds, the identification of its perfection with the admissible Witt locus. GeometricSatakeAndFusion GS2 supplies convolution and the central-sheaf theory specified in the contracts; this roadmap proves its local-model consequences. The independent rational Gelfand commutativity proof, metaplectic Satake and rational Witt equivalence over larger algebraically closed residue fields are outside these layers.
 
-ReductiveGroupsPartII RG2.0a–RG2.4 owns Weil restriction, valued roots, buildings, full fixers, parahoric group schemes, Lang's theorem and admissible-set combinatorics. RootSystemsPartII §RS2.4 owns the invariant integral coroot-orbit step. Their representation and stabilizer extensions are supplier gaps. R-smooth full-fixer embeddings are requested from ReductiveGroupsPartII (gap:r-smooth-full-fixer-embeddings); the modular minuscule tests are requested from RootSystemsPartII, “Independent continuation briefs” (gap:minuscule-dominance-tests, gap:minuscule-root-coefficients, gap:minuscule-cartan-coefficients). The requests below do not enlarge the scope of RG2.3 or RS2.4. PELModuli M0 owns the rational endomorphism algebra, involution and trace pairing; Layer 6 adds ramified local chains with their polarization line, rather than another generic PEL datum. The trace form in §2.8 is a general finite-separable, multiple-summand restriction theorem, beyond the fixed arithmetic trace lattices in PELModuli M0.
+ReductiveGroups §10B owns induced modules, Weyl modules and their integral lattices. ReductiveGroupsPartII RG2.0a–RG2.4 owns Weil restriction, valued roots, buildings, full fixers, parahoric group schemes, Lang's theorem and admissible-set combinatorics. RootSystemsPartII §RS2.4 owns the invariant integral coroot-orbit step. Their representation and stabilizer extensions are supplier gaps. R-smooth full-fixer embeddings are requested from ReductiveGroupsPartII (gap:r-smooth-full-fixer-embeddings); the modular minuscule tests are requested from RootSystemsPartII, “Independent continuation briefs” (gap:minuscule-dominance-tests, gap:minuscule-root-coefficients, gap:minuscule-cartan-coefficients). The requests below do not enlarge the scope of RG2.3 or RS2.4. PELModuli M0 owns the rational endomorphism algebra, involution and trace pairing; Layer 6 adds ramified local chains with their polarization line, rather than another generic PEL datum. The trace form in §2.8 is a general finite-separable, multiple-summand restriction theorem, beyond the fixed arithmetic trace lattices in PELModuli M0.
 
 ModularCurves §0G owns represented finite Grassmannians. SchemeAndStackFoundations §§0.17–0.21, 0.30, 1.1 and 4.7–4.14 owns the commutative algebra, descent, normalization and algebraization used here. DiamondsAndVStacksPartII §§D10.8–D10.15 owns closure and recovery from v-sheaves; §§D11.1–D11.20 owns kimberlites, tubes and the normality criterion. This roadmap applies those theorems to local models without restating their general conclusions.
 
@@ -48,11 +48,11 @@ Section 0G supplies the represented relative Grassmannian, affine charts, gluing
 
 ### From TauCetiRoadmap.SchemeAndStackFoundations
 
-Sections 0.8, 0.17–0.21 and 0.30 supply DVR flatness, Serre conditions, depth, excellence, finite normalization and normal schemes; §1.1 supplies descent of modules and their maps, and §§4.7–4.10 supplies formal completion and proper algebraization. Section 4.13 supplies the scheme forms of Serre's criteria. Section 0.17’s regular-element depth formula supplies depth deformation in §7.3. Section 4.10’s algebraization of compatible morphisms supplies the scheme isomorphisms of §§6.5–6.6: algebraize a formal isomorphism and its inverse, then use uniqueness for both composites. Equivariance follows from the prescribed generic equivariance and schematic generic density of the flat group-action source. The application of these results requires normal generic fibre as well as reduced special fibre.
+Sections 0.8, 0.17–0.21 and 0.30 supply DVR flatness, Serre conditions, depth, excellence, finite normalization and normal schemes; §1.1 supplies descent of modules and their maps, and §§4.7–4.10 supplies formal completion and proper algebraization. Section 4.13 supplies the scheme forms of Serre's criteria. Sections 0.17–0.18 supply the Serre S₂ condition, its étale-local stability and connectedness after removing codimension ≥2, used in §7.3. Section 4.10’s algebraization of compatible morphisms supplies the scheme isomorphisms of §§6.5–6.6: algebraize a formal isomorphism and its inverse, then use uniqueness for both composites. Equivariance follows from the prescribed generic equivariance and schematic generic density of the flat group-action source. The application of these results requires normal generic fibre as well as reduced special fibre.
 
 What SchemeAndStackFoundations must provide (gap:pointed-tangent-chain-rule): Give the derivative of pointed scheme morphisms and its chain rule on Tau Ceti’s Zariski tangent carrier, for the formal curves of §4.1.
 
-What SchemeAndStackFoundations must provide (gap:trait-normality): For a noetherian scheme flat over a DVR with normal generic fibre and geometrically reduced special fibre, give the normality criterion used in §§0.5 and 1.3.
+What SchemeAndStackFoundations must provide (gap:trait-normality): For a noetherian scheme flat over a DVR with normal generic fibre and geometrically reduced special fibre, give the normality criterion used in §§0.5, 1.3 and 6.5.
 
 What SchemeAndStackFoundations must provide (gap:finite-weak-normalization): Give finite absolute weak normalization of the excellent flat local-model closures with characteristic-zero generic fibre used in §3.6.
 
@@ -60,21 +60,25 @@ What SchemeAndStackFoundations must provide (gap:s2ification-connectedness): In 
 
 What SchemeAndStackFoundations must provide (gap:fpqc-normality-descent): In §§0.30, 1.1 and 4.13, prove that normality descends along an fpqc covering of locally noetherian schemes, as used in §7.6.
 
+### From TauCetiRoadmap.ReductiveGroups
+
+Section 10B, “Induction, Weyl modules and simple heads”, supplies the induced modules ∇(λ)=Ind_(B⁻)^G k_λ and the Weyl modules Δ(λ)=∇(−w₀λ)* of a split connected reductive group over a field, their arbitrary-field base change, the integral Weyl lattices with their freeness and action equations, the highest-weight lines and the Weyl characters. Its distinction between the ordinary dual and the contravariant dual D_τ, with D_τΔ(λ)≅∇(λ), is retained: in characteristic p, Δ(λ) and ∇(λ) are not interchanged. This supplies the Weyl modules of §§4.6–4.9 and the split Weyl lattices of §2.2; for SL₂ the Weyl module of the fundamental weight is the standard representation k².
+
 ### From TauCetiRoadmap.ReductiveGroupsPartII
 
 RG2.0a.1–RG2.0a.2 supplies finite-flat Weil restriction of affine groups, torsors and their trivializations; use it for a polynomial finite-flat divisor, without asserting arbitrary nonaffine Weil restriction. RG2.1.2–RG2.1.5 supplies valued roots, multipliable unitary roots, π₁ and z-extensions. RG2.2.2–RG2.2.4 supplies facet comparisons, toral building maps, descent and classical lattice-chain realizations. RG2.3.3–RG2.3.5 supplies connected parahorics, full fixers, tame fixed points and classical stabilizer schemes; RG2.3.7 supplies Lang and compatible lifting. RG2.4.1–RG2.4.3 supplies affine Weyl groups, Bruhat order, lengths and admissible sets. Maps under central covers include the integral parahoric morphism and common reflex base.
 
 What ReductiveGroupsPartII must provide (gap:classical-hodge-cover-classification): Give the Galois-equivariant classical minuscule representation classification constructing the prime-to-p Hodge cover in §1.5.
 
-What ReductiveGroupsPartII must provide (gap:stable-weyl-lattices): Give uniqueness of stable minuscule Weyl lattices up to the representation centralizer, including repeated isotypic factors, for §§2.2 and 3.3.
+What ReductiveGroupsPartII must provide (gap:stable-weyl-lattices): For a split reductive Z_p-group H₀, a DVR R over Z_p with characteristic-zero fraction field L and a finite-dimensional minuscule representation V of H₀ over L, prove that any two full R-lattices in V to which the representation extends as group-scheme homomorphisms from H₀ over R are conjugate by the centralizer of the image of H₀ over L in GL(V), allowing repeated highest weights, for §§2.2 and 3.3 (KPZ Lemma 3.3.10, p. 22; KPZ line 977).
 
 What ReductiveGroupsPartII must provide (gap:r-smooth-full-fixer-embeddings): Give the R-smooth centralizer and integral full-fixer closed-embedding theorems with their field-extension hypotheses used in §7.7.
 
-What ReductiveGroupsPartII must provide (gap:symplectic-toral-factorization): Give the symplectic factorization of toral building embeddings, retaining division-centralizer multiplicities and each summand’s building translation, for §2.5.
+What ReductiveGroupsPartII must provide (gap:symplectic-toral-factorization): Give the symplectic factorization of toral building embeddings, retaining division-centralizer multiplicities and each summand’s building translation, for §2.6.
 
-What ReductiveGroupsPartII must provide (gap:polynomial-representation-descent): Give polynomial lifts of the toral integral representations with specialization to the prescribed lattice chains and equivariant descent for §§2.4–2.5 and 3.3.
+What ReductiveGroupsPartII must provide (gap:polynomial-representation-descent): Give polynomial lifts of the toral integral representations with specialization to the prescribed lattice chains and equivariant descent for §§2.4, 2.6 and 3.3.
 
-What ReductiveGroupsPartII must provide (gap:polynomial-parahoric-lifts): Give the polynomial parahoric lifts for the Weil-restricted tame factors and their central, fixed-point and divisor-specialization comparisons used by §§1.1–2.5 and the Iwahori comparison of §3.6.
+What ReductiveGroupsPartII must provide (gap:polynomial-parahoric-lifts): Give the polynomial parahoric lifts for the Weil-restricted tame factors and their central, fixed-point and divisor-specialization comparisons used by §§1.1–2.4 and 2.6 and the Iwahori comparison of §3.6.
 
 What ReductiveGroupsPartII must provide (gap:translation-stabilizer-jets): For a rational translation at the stated very special companion level, give smooth connected finite jet quotients of the positive-loop stabilizer intersection and compatible lifting along their pro-unipotent kernels.
 
@@ -106,13 +110,15 @@ What GeometricSatakeAndFusion must provide (gap:algebraic-schubert-normality): G
 
 What GeometricSatakeAndFusion must provide (gap:schubert-geometric-unibranchness): In GS0’s Witt affine flags, for every connected reductive G over a p-adic field, every parahoric level and every residue characteristic, prove that every Schubert perfect variety of the partial affine flag variety over the algebraically closed residue field is normal with perfectly smooth dense open orbit, so that every finite-type deperfection of it, and every irreducible component of a Bruhat-union Schubert scheme, is geometrically unibranch even when it is not normal; and deduce, through the Witt Grassmannian of the split form, that the generic Schubert bound Gr_≤μ over C has lowest IC cohomology sheaf H^(−〈2ρ,μ〉)(IC_μ)=F_ℓ (AGLR Proposition 3.7, p. 21, AGLR line 1222; GL Lemma 5.1, p. 10, GL line 420, and Lemma 5.4, pp. 10–11, GL line 459; HLR Theorem 1.1, p. 2, HLR line 69, and Proposition 3.4, p. 11, HLR line 526).
 
-What GeometricSatakeAndFusion must provide (gap:algebraic-compatible-schubert-splitting): For split SL_n and Sp_(2n) over an algebraically closed field of positive characteristic, supply Frobenius splittings of finite affine Schubert bounds compatible with every Schubert subvariety, so scheme-theoretic intersections of finite Schubert unions in a common bound are reduced. This is the affine-flag extension of GS0 “Equal-characteristic Schubert models and coefficient comparison” used in §2.6 (GORGL Corollary 3.4.4, p. 19, GORGL line 643; GORSP Theorem 3.3, p. 9, GORSP line 352).
+What GeometricSatakeAndFusion must provide (gap:algebraic-compatible-schubert-splitting): For split SL_n and Sp_(2n) over an algebraically closed field of positive characteristic, supply Frobenius splittings of finite affine Schubert bounds compatible with every Schubert subvariety, so scheme-theoretic intersections of finite Schubert unions in a common bound are reduced. This is the affine-flag extension of GS0 “Equal-characteristic Schubert models and coefficient comparison” used in §2.5 (GORGL Corollary 3.4.4, p. 19, GORGL line 643; GORSP Theorem 3.3, p. 9, GORSP line 352).
 
 What GeometricSatakeAndFusion must provide (gap:algebraic-demazure-fibres): In GS0’s algebraic extension of “Relative-position flag correspondences”, prove geometric connectedness of the fibres of the Iwahori-to-parahoric projection of admissible loci, using the reduced-word resolutions from “Equal-characteristic Schubert models and coefficient comparison” (GL Lemma 5.2, p. 10; GL line 430).
 
-What GeometricSatakeAndFusion must provide (gap:algebraic-coherence): In GS0’s algebraic Schubert prefix, prove two statements. (i) Coherence: for G=∏Res_(K_i/F)H_i with each H_i tamely split, any parahoric level, any dominant geometric cocharacter class μ and p∤|π₁(G^der)|, for n≫0 the dimension of global sections of the n-th power of the ample determinant line bundle on the reduced μ-admissible Schubert union in the companion affine flag over k((u)) equals that on the generic Schubert bound Gr_≤μ, so the special fibre of the polynomial closure of §1.2 is that reduced union (PZ (8.19), PZ line 2659; LEV Theorem 4.3.2, p. 29, LEV line 1243, and LEV line 1389). (ii) Cohen–Macaulay admissible loci: for a split group over k((t)) with simply connected derived group, Iwahori level and any dominant μ, the equal-characteristic local model is normal with Frobenius-split reduced special fibre, and that special fibre, the μ-admissible union, is Cohen–Macaulay, hence S₂ (GL Theorem 2.1, p. 4, GL line 149; GL Corollary 3.5, p. 7, GL line 288–297).
+What GeometricSatakeAndFusion must provide (gap:algebraic-coherence): In GS0’s algebraic Schubert prefix, for G=∏Res_(K_i/F)H_i with each H_i tamely split, any parahoric level, any dominant geometric cocharacter class μ and p∤|π₁(G^der)|, prove that for n≫0 the dimension of global sections of the n-th power of the ample determinant line bundle on the reduced μ-admissible Schubert union in the companion affine flag over k((u)) equals that on the generic Schubert bound Gr_≤μ, so the special fibre of the polynomial closure of §1.2 is that reduced union (PZ (8.19), PZ line 2659; LEV Theorem 4.3.2, p. 29, LEV line 1243, and LEV line 1389).
 
+What GeometricSatakeAndFusion must provide (gap:algebraic-admissible-cohen-macaulay): In GS0’s algebraic Schubert prefix, for a split group over k((t)) with simply connected derived group, Iwahori level and any dominant μ, prove that the equal-characteristic local model is normal with Frobenius-split reduced special fibre, and that this special fibre, the μ-admissible union, is Cohen–Macaulay, hence S₂ (GL Theorem 2.1, p. 4, GL line 149; GL Corollary 3.5, p. 7, GL line 288–297).
 
+What GeometricSatakeAndFusion must provide (gap:generic-algebraic-schubert-normality): In GS0’s algebraic Schubert prefix, for every connected reductive group over a characteristic-zero field and every geometric dominant bound μ defined over its reflex field, prove geometric normality of the algebraic affine Schubert bound Gr_≤μ, used as the normal generic fibre in §1.3 (PR Theorem 8.4, p. 38, PR line 1419; LEV line 1029).
 
 What GeometricSatakeAndFusion must provide (gap:polynomial-closed-immersion-criterion): Give the polynomial BD closed-immersion criterion from closed generic group maps and the specified neutral schematic-closure condition on the companion fibre.
 
@@ -178,13 +184,13 @@ What SmoothRepresentationsOfLocalGroups must provide (gap:companion-hecke-compar
 
 ## How to read the build
 
-Layer 0 fixes data, conventions and model specifications. Layer 1 constructs polynomial closures and their geometric comparison inputs. Layer 2 proves polynomial Hodge embeddings and restriction-of-scalars embeddings into possibly nonminuscule Schubert-bound closures before Layer 3 uses normal recovery to identify canonical schemes; the general weakly normal model is constructed there independently of connected tubes. Layer 4 studies root and Cartan tangent directions, and Layer 5 builds rational curves using the invariant coroot step. Layer 6 gives chain torsors and Drinfeld comparisons. In Layer 7, general tube cohomology precedes the Wakimoto stalk calculation, which precedes connected tubes and unrestricted minuscule normality; the acceptable good-embedding application follows that theorem. Layer 8 applies nearby cycles to monodromy and the normalized central test function. Each “Needs” line specifies the statement's data and the inputs of its displayed proof route; a different proof can use a different subset.
+Layer 0 fixes data, conventions and model specifications. Layer 1 constructs polynomial closures and their geometric comparison inputs. Layer 2 proves polynomial Hodge embeddings and restriction-of-scalars embeddings into possibly nonminuscule Schubert-bound closures before Layer 3 uses normal recovery to identify canonical schemes; the general weakly normal model and its smooth open of maximal orbits are constructed there independently of connected tubes. Layer 4 studies root and Cartan tangent directions, and Layer 5 builds rational curves using the invariant coroot step. Layer 6 gives chain torsors and Drinfeld comparisons. In Layer 7, general tube cohomology precedes the Wakimoto stalk calculation, which precedes connected tubes and unrestricted minuscule normality; the acceptable good-embedding application follows that theorem. Layer 8 applies nearby cycles to monodromy and the normalized central test function. Each “Needs” line specifies the statement's data and the inputs of its displayed proof route; a different proof can use a different subset.
 
 ## Layer 0: data and conventions
 
 ### 0.1 Local model data and morphisms
 
-A minuscule local model datum is (F,G,{μ},𝒢): F is a finite extension of Q_p, G/F is connected reductive, {μ} is a geometric minuscule conjugacy class, E/F is its reflex field, and 𝒢 is smooth affine with generic fibre G and connected component 𝒢° parahoric. Permit the full facet fixer as a quasiparahoric level. A local model datum with general bound is the same quadruple (F,G,{μ},𝒢) with {μ} any geometric dominant conjugacy class of cocharacters, E its reflex field; the minuscule datum is the special case, required exactly where a statement says minuscule; the polynomial Schubert-bound closures of §1.2, the imported v-models of §0.4, the kimberlites of §3.5, the tubes of §7.5 and the nearby cycles of Layer 8 use general bounds. A morphism is a group morphism carrying {μ} to the indicated class and extending over the specified integral models; it is not, by definition, a closed immersion on local models. (KPZ, §3.1.1, pp. 15–16; KPZ line 686; KZ, §3.1.1, p. 18; Definition 3.1.6(1), p. 19; KZ line 811).
+A minuscule local model datum is (F,G,{μ},𝒢): F is a finite extension of Q_p, G/F is connected reductive, {μ} is a geometric minuscule conjugacy class, E/F is its reflex field, and 𝒢 is smooth affine with generic fibre G and connected component 𝒢° parahoric. Permit the full facet fixer as a quasiparahoric level. A local model datum with general bound is the same quadruple (F,G,{μ},𝒢) with {μ} any geometric dominant conjugacy class of cocharacters, E its reflex field; the minuscule datum is the special case, required exactly where a statement says minuscule; the polynomial Schubert-bound closures of §1.2, the imported v-models of §0.4, the kimberlites of §3.5, the tubes of §7.5 and the nearby cycles of Layer 8 use general bounds. A morphism is a group morphism carrying {μ} to the indicated class and extending over the specified integral models; it is not, by definition, a closed immersion on local models. Write ℱ_(G,{μ}) for the generic flag variety: the E-variety of parabolic subgroups of G of the type determined by {μ} under the flag convention of §0.2, obtained by descent from a splitting field. Over a field over which G splits and μ has a representative it is the parabolic quotient G/P_μ; no E-rational representative of μ and no E-rational parabolic is assumed. If such a representative exists over E, ℱ_(G,{μ}) is identified with the corresponding quotient G/P_μ. (KP, §2.1, p. 150, KP line 1253; KPZ, §3.1.1, pp. 15–16; KPZ line 686; KZ, §3.1.1, p. 18; Definition 3.1.6(1), p. 19; KZ line 811).
 
 One proof proceeds as follows. Bundle the reductive-group, facet and connected-parahoric data; add the cocharacter orbit and its field of definition. Compose the generic and integral morphisms and check compatibility on generic fibres.
 
@@ -199,6 +205,7 @@ The construction has the following properties:
 
 - For GL₂ and μ=(1,0), E=F and the generic flag variety is P¹_F.
 - For μ=0 the generic flag variety is Spec F.
+- For a quaternion division algebra D over F, G=PGL₁(D)=D^×/F^× and the class of (1,0) on G over a splitting field, the class is Galois-stable, so E=F; ℱ_(G,{μ}) is the Severi–Brauer conic of D, which has no F-point because D is not split, while over a splitting field it is P¹. Writing G/P_μ over F with an F-parabolic would produce a rational coset that does not exist.
 - The GL₂ class (2,0) is excluded from the minuscule datum (〈(2,0),α〉=2 for the positive root α) but is a datum with general bound, the one used in the polynomial Schubert-bound construction of §1.2 and the general v-model of Layer 3; its reflex field is F and its generic Schubert bound has dimension 〈2ρ,(2,0)〉=2.
 
 Changing the connected component of the level is an explicit comparison, not equality of the ambient Grassmannians.
@@ -281,7 +288,7 @@ One proof proceeds as follows. Bundle the scheme and its specified diamond isomo
 
 The construction has the following properties:
 
-- Return M_E≅G/P_μ with its comparison map.
+- Return M_E≅ℱ_(G,{μ}) with its comparison map.
 - The integral level action is the unique action whose diamond is the action on the closure.
 - Two normal proper representatives with these specified maps are uniquely isomorphic over O_E.
 - Finite reflex-field base change agrees when the base-changed scheme remains normal with geometrically reduced special fibre.
@@ -291,7 +298,7 @@ The construction has the following properties:
 - For the one-lattice GL₂ line datum M=P¹_(O_F), with one irreducible special-fibre component.
 - Blow up P¹_(O_F) at a rational special-fibre point. The result is regular, flat and projective, and its special fibre has two reduced components, each of multiplicity 1. Its diamond maps onto Mᵛ but collapses the exceptional P¹ to that point. Distinct geometric points of this P¹ have the same image, so the comparison is not a monomorphism and the blow-up is excluded.
 - For a central cocharacter M=Spec O_E.
-- A projective flat model with a nonreduced special fibre does not satisfy this specification, even with the correct generic flag.
+- The conic x²=π_E yz in P²_(O_E) is flat, since its equation is not divisible by π_E, and its generic fibre is a smooth conic with the rational point [0:1:0], hence P¹_E. Its special fibre x²=0 is a double line, so it fails the reduced-fibre specification, although it is even normal: on z=1 the equation x²=π_E y is a rank-3 quadric cone in the coordinates x,π_E,y with an isolated singular point.
 
 Weak normalization alone does not certify the final scheme specification.
 
@@ -307,7 +314,6 @@ The construction has the following properties:
 
 - Return the closed local-model morphism and its prescribed generic flag map.
 - Transport of the integral representation and lattice along an isomorphism preserves goodness.
-- The chain embedding is good iff its period-total embedding is good, using the closed chain-to-total model map.
 - The local-model map restricts to the flag map of the Hodge representation.
 
 **Checks.**
@@ -344,7 +350,7 @@ Let K₀/F be finite unramified, P(u)∈O_(K₀)[u] monic and 𝓗 smooth affine
 
 ### 1.2 Schematic local-model closure
 
-For quasi-tame G with a specified polynomial parahoric lift and any dominant geometric cocharacter class {ν} with reflex field E, define M^pol_(𝒢,ν) as the schematic closure of the generic closed Schubert bound Gr_≤ν in the polynomial Grassmannian over O_E. Use the local model datum with general bound of §0.1. For ∏ Res_(K_i/F)H_i take the product of the factor closures after extension from each factor reflex field to E. This closure is flat and projective with generic fibre Gr_≤ν; when ν is minuscule this fibre is the flag G/P_ν. It is distinguished from both an EL/PEL naive determinant model and the canonical normal minuscule model. (LEV Definition 4.2.1 and Proposition 4.2.6, pp. 23–24; LEV line 949 and LEV line 1007; minuscule specialization: KPZ Definition 3.2.6 and §3.2.8, p. 19, KPZ line 839; KP §2.1.1, p. 150, KP line 1235).
+For quasi-tame G with a specified polynomial parahoric lift and any dominant geometric cocharacter class {ν} with reflex field E, define M^pol_(𝒢,ν) as the schematic closure of the generic closed Schubert bound Gr_≤ν in the polynomial Grassmannian over O_E. Use the local model datum with general bound of §0.1. For ∏ Res_(K_i/F)H_i take the product of the factor closures after extension from each factor reflex field to E. This closure is flat and projective with generic fibre Gr_≤ν; when ν is minuscule this fibre is the flag ℱ_(G,{ν}) of §0.1. It is distinguished from both an EL/PEL naive determinant model and the canonical normal minuscule model. (LEV Definition 4.2.1 and Proposition 4.2.6, pp. 23–24; LEV line 949 and LEV line 1007; minuscule specialization: KPZ Definition 3.2.6 and §3.2.8, p. 19, KPZ line 839; KP §2.1.1, p. 150, KP line 1235).
 
 One proof proceeds as follows. Choose a finite projective bounded piece containing Gr_≤ν. Take the schematic closure; torsion-freeness over O_E supplies flatness. Construct factorwise closure and compare generic Schubert bounds after reflex base change.
 
@@ -360,7 +366,7 @@ The construction has the following properties:
 - One-lattice GL₂, μ=(1,0), gives P¹_(O_F).
 - The zero bound gives Spec O_E.
 - For hyperspecial GL₂ and ν=(2,0), the generic Schubert bound has dimension 〈2ρ,ν〉=2, whereas the finite flag GL₂/P_ν is P¹ of dimension 1; only the Schubert bound defines this closure.
-- An EL/PEL determinant locus with vertical components is not the schematic closure of its generic fibre.
+- For K/F ramified quadratic, G=Res_(K/F)GL₂, Λ=O_K² and the central class with weights (1,1) at one embedding of K and (0,0) at the other: its reflex field is K, its generic Schubert bound is one point and its closure is Spec O_K. The EL determinant locus of §6.3 instead has the A¹-family of special-fibre quotients computed there, so it is not the schematic closure of its generic fibre.
 
 The construction does not assert normality when p divides the derived fundamental group.
 
@@ -370,13 +376,13 @@ The construction does not assert normality when p divides the derived fundamenta
 
 Use the local model datum with general bound of §0.1. If G is quasi-tame, μ is dominant and p∤|π₁(G^der)|, M^pol_(𝒢,μ) is normal and its geometric special fibre is reduced, with the μ-admissible orbit stratification in the companion twisted affine flag. Each geometric irreducible component is normal, Cohen–Macaulay and Frobenius split. After any finite reflex-field extension the base-changed model remains normal. No assertion here makes the whole reducible special fibre normal, and the component statement is not used as a proof of whole-fibre Cohen–Macaulayness. (LEV, Theorem 4.2.7, pp. 24–25, LEV line 1024, for every dominant μ, and Theorem 4.3.2, p. 29, LEV line 1243; minuscule specialization: KPZ, Theorem 3.2.9 and footnote 5, p. 19; KPZ line 859; KP, Theorem 2.1.2 and Corollary 2.1.3, pp. 150–151; KP line 1279).
 
-One proof proceeds as follows. Import the common algebraic affine-flag Schubert normality, Demazure, admissible-set and coherence interfaces specified at GS0. Use Levin’s global convolution/coherence argument to identify the reduced special fibre and its components. For finite reflex extension preserve geometric reducedness; apply the specified trait normality criterion to the normal generic flag.
+One proof proceeds as follows. Import the common algebraic affine-flag Schubert normality, Demazure, admissible-set and coherence interfaces specified at GS0. Use Levin’s global convolution/coherence argument to identify the reduced special fibre and its components. For finite reflex extension preserve geometric reducedness; apply the specified trait normality criterion, using geometric normality of the generic Schubert bound Gr_≤μ (gap:generic-algebraic-schubert-normality); for minuscule μ this bound is the smooth flag.
 
 An Iwahori special fibre can be reducible; test component normality separately.
 
 For hyperspecial GL₂ and the non-minuscule μ=(2,0), the admissible set is {t^(2,0),t^(1,1)} and the special fibre is the two-dimensional Schubert variety of t^(2,0) (dimension 〈2ρ,μ〉=〈(1,−1),(2,0)〉=2) containing the point of t^(1,1); it is irreducible, reduced and normal, with one singular point, and equals the special fibre of the constant model Gr_≤(2,0) over O_F. For μ=(1,0) the statement gives P¹_(O_F).
 
-*Needs:* §1.2; §0.1 (general bound); gap:algebraic-schubert-normality; GeometricSatakeAndFusion GS0, “Equal-characteristic Schubert models and coefficient comparison”; gap:algebraic-coherence; ReductiveGroupsPartII RG2.1; SchemeAndStackFoundations §§0.17, 0.30 and 4.13; gap:trait-normality; gap:polynomial-parahoric-lifts.
+*Needs:* §1.2; §0.1 (general bound); gap:algebraic-schubert-normality; GeometricSatakeAndFusion GS0, “Equal-characteristic Schubert models and coefficient comparison”; gap:algebraic-coherence; gap:generic-algebraic-schubert-normality; ReductiveGroupsPartII RG2.1; SchemeAndStackFoundations §§0.17, 0.30 and 4.13; gap:trait-normality; gap:polynomial-parahoric-lifts.
 
 ### 1.4 Polynomial adjoint and derived-isogeny comparisons
 
@@ -416,7 +422,7 @@ The one-lattice GL₂ closure is P¹ over O_F. At Iwahori level the GL₂ line m
 
 ### Dependencies
 
-ReductiveGroupsPartII RG2.0a; ReductiveGroupsPartII RG2.3; gap:polynomial-bd-projectivity; gap:polynomial-parahoric-lifts; SchemeAndStackFoundations §0.8; gap:algebraic-schubert-normality; GeometricSatakeAndFusion GS0, “Equal-characteristic Schubert models and coefficient comparison”; gap:algebraic-coherence; ReductiveGroupsPartII RG2.1; SchemeAndStackFoundations §§0.17, 0.30 and 4.13; gap:trait-normality; gap:prime-to-p-central-components; SchemeAndStackFoundations §§0.20–0.21 and 0.30; gap:classical-hodge-cover-classification; ModularCurves §0G; GeometricSatakeAndFusion GS0, “Integral parahoric ind-properness”; GeometricSatakeAndFusion GS0, “Generic Schubert bounds”; gap:algebraic-loop-representability. The internal section references above give the additional ordering within this layer.
+ReductiveGroupsPartII RG2.0a; ReductiveGroupsPartII RG2.3; gap:polynomial-bd-projectivity; gap:polynomial-parahoric-lifts; SchemeAndStackFoundations §0.8; gap:algebraic-schubert-normality; GeometricSatakeAndFusion GS0, “Equal-characteristic Schubert models and coefficient comparison”; gap:algebraic-coherence; gap:generic-algebraic-schubert-normality; ReductiveGroupsPartII RG2.1; SchemeAndStackFoundations §§0.17, 0.30 and 4.13; gap:trait-normality; gap:prime-to-p-central-components; SchemeAndStackFoundations §§0.20–0.21 and 0.30; gap:classical-hodge-cover-classification; ModularCurves §0G; GeometricSatakeAndFusion GS0, “Integral parahoric ind-properness”; GeometricSatakeAndFusion GS0, “Generic Schubert bounds”; gap:algebraic-loop-representability. The internal section references above give the additional ordering within this layer.
 
 ## Layer 2: polynomial Hodge and Schubert-bound embeddings
 
@@ -437,13 +443,13 @@ One proof proceeds as follows. Import the replacement x′, equality of full fix
 
 ### 2.2 Minuscule Weyl-lattice model embedding
 
-Retain all hypotheses of §2.1, its chosen replacement point x′ with 𝓗_(x′)=𝓗_x, and the tame Galois extension making x′ hyperspecial. For a faithful minuscule H-representation ρ₁ as in KPZ §3.3.11, whose composed cocharacter over K̃ is minuscule, choose the split Weyl-module Z_p-form H₀↪GL(Λ₀). It gives a closed immersion of the Weil-restricted polynomial BD Grassmannians, and consequently of the bounded closure models, after the appropriate reflex extension. The representation-theoretic input includes uniqueness of stable minuscule lattices up to the representation centralizer, not uniqueness of all stable lattices. (KPZ, §§3.3.9–3.3.13, Lemma 3.3.10, Proposition 3.3.14, pp. 22–23; KPZ line 958).
+Retain all hypotheses of §2.1, its chosen replacement point x′ with 𝓗_(x′)=𝓗_x, and the tame Galois extension making x′ hyperspecial. For a faithful minuscule H-representation ρ₁ as in KPZ §3.3.11, whose composed cocharacter over K̃ is minuscule, choose the split Weyl-module Z_p-form H₀↪GL(Λ₀). It gives a closed immersion of the Weil-restricted polynomial BD Grassmannians, and consequently of the bounded closure models, after the appropriate reflex extension. The representation-theoretic input is uniqueness, up to the representation centralizer, of lattices to which the minuscule representation extends as a group-scheme homomorphism over the DVR, not uniqueness of all lattices stable under integral points. (KPZ, §§3.3.9–3.3.13, Lemma 3.3.10, Proposition 3.3.14, pp. 22–23; KPZ line 958).
 
 One proof proceeds as follows. Use the integral minuscule Weyl-lattice and reductive closed-immersion theorems from the integral representation supplier. Compare the Γ-stable lattices of the hyperspecial model at x′ with the split Weyl lattices via their centralizer. Construct the torsor map; apply the closed-BD criterion and restrict to schematic generic closures.
 
-Repeated isotypic factors allow centralizer changes; a fixed chosen basis is not canonical.
+Repeated isotypic factors allow centralizer changes; a fixed chosen basis is not canonical. Stability under integral points is weaker than extension of the group scheme: let G_m act on Z₃³ with weights (0,2,1) and put Λ=Z₃e₁+Z₃(e₁+e₂)/3+Z₃e₃. A unit u sends (e₁+e₂)/3 to u²(e₁+e₂)/3+((1−u²)/3)e₁, and (1−u²)/3∈Z₃ because u²≡1 mod 3, so Λ is stable under G_m(Z₃); but the coaction coefficient (1−T²)/3 is not in Z₃[T,T⁻¹], so the representation does not extend to G_m over Z₃ on Λ. The diagonal centralizer preserves weight-split lattices, so Λ is not conjugate to Z₃³ by it.
 
-*Needs:* §2.1; ReductiveGroupsPartII RG2.0a; gap:algebraic-loop-representability; gap:polynomial-closed-immersion-criterion; gap:stable-weyl-lattices; gap:polynomial-parahoric-lifts.
+*Needs:* §2.1; ReductiveGroupsPartII RG2.0a; ReductiveGroups §10B, “Induction, Weyl modules and simple heads”; gap:algebraic-loop-representability; gap:polynomial-closed-immersion-criterion; gap:stable-weyl-lattices; gap:polynomial-parahoric-lifts.
 
 ### 2.3 Restriction of structure on local models
 
@@ -475,17 +481,7 @@ A theorem for the connected component must not be silently promoted to the origi
 
 *Needs:* §2.1; §2.2; §2.3; §0.2; ReductiveGroupsPartII RG2.3; SchemeAndStackFoundations §1.1; gap:polynomial-representation-descent.
 
-### 2.5 The tame symplectic lattice-chain embedding
-
-For the KP §2.3.1 symplectic Hodge representation over Q_p with p>2, G tamely split, p∤|π₁(G^der)|, x a building point and the constructed toral building maps ι,s satisfying (2.3.2), the integral fixer maps 𝒢_x↪GSp(𝓛)↪GL(𝓛) are closed and induce M^pol_G↪M^pol_(GSp,z)_(O_E)↪M^pol_(GL,y)_(O_E). The polynomial representation must specialize to the actual lattice chain of ι(x); an arbitrary lattice is not substituted. (KP, Lemma 2.3.3, Proposition 2.3.7, pp. 156–161; KP line 1474).
-
-One proof proceeds as follows. Import the symplectic factorization of the toral building map and the polynomial lift of its integral representation. These require the Satake symplectic classification and projective freeness contracts, recorded as supplier gaps. In the unramified splitting decomposition retain the degree m_j of every centralizer division algebra, every Galois twist and the m_j translated lattice-chain copies; otherwise the source representation and its building point have the wrong dimension. Over the maximal unramified extension verify the neutral-component closure condition (*) in k[[u]]. Apply the PZ criterion and descend closedness and the morphism via flat generic density.
-
-The condition (*) is over k[[u]], not a second generic fibre k((u)).
-
-*Needs:* §1.3; ReductiveGroupsPartII RG2.2; ReductiveGroupsPartII RG2.3; gap:polynomial-closed-immersion-criterion; §2.6; gap:symplectic-toral-factorization; gap:polynomial-representation-descent; gap:polynomial-parahoric-lifts.
-
-### 2.6 Standard GL and GSp chain incidence models
+### 2.5 Standard GL and GSp chain incidence models
 
 For a standard periodic O_F-lattice chain Λ_(i+r)=π_FΛ_i, with π_FΛ₀⊂Λ_(r−1)⊂⋯⊂Λ₀ in V and the standard minuscule bound of subspace rank d, the GL local model represents rank-d locally direct summands F_i⊂Λ_i⊗R, compatible with all transitions and period identifications. It is the flat closure of the diagonal generic Grassmannian in ∏_(i=0)^(r−1)Gr(d,Λ_i). Prove that this incidence scheme is flat over O_F and hence equals that flat closure; incidence equations alone do not establish flatness (GORGL Theorem 4.5.3 and Corollary 4.5.4, p. 37; GORGL line 1406). (KP, §2.3.4 and (2.3.9), pp. 157–159; KP line 1523; SW, Definitions 21.6.1,21.6.8, pp. 199–201; SW line 7622).
 
@@ -528,15 +524,27 @@ Its API consists of the following properties:
 
 *Needs:* §1.2; ReductiveGroupsPartII RG2.3; ModularCurves §0G; GeometricSatakeAndFusion GS0, “Equal-characteristic Schubert models and coefficient comparison”; gap:algebraic-loop-representability; gap:algebraic-schubert-normality; gap:algebraic-compatible-schubert-splitting; SchemeAndStackFoundations §§0.8 and 1.1. The route includes the ambient refinement projection, the scheme-theoretic Schubert-intersection realization of X_I and lifting of maximal component generic points.
 
+### 2.6 The tame symplectic lattice-chain embedding
+
+For the KP §2.3.1 symplectic Hodge representation over Q_p with p>2, G tamely split, p∤|π₁(G^der)|, x a building point and the constructed toral building maps ι,s satisfying (2.3.2), the integral fixer maps 𝒢_x↪GSp(𝓛)↪GL(𝓛) are closed and induce M^pol_G↪M^pol_(GSp,z)_(O_E)↪M^pol_(GL,y)_(O_E). The polynomial representation must specialize to the actual lattice chain of ι(x); an arbitrary lattice is not substituted. (KP, Lemma 2.3.3, Proposition 2.3.7, pp. 156–161; KP line 1474).
+
+One proof proceeds as follows. Import the symplectic factorization of the toral building map and the polynomial lift of its integral representation. These require the Satake symplectic classification and projective freeness contracts, recorded as supplier gaps. In the unramified splitting decomposition retain the degree m_j of every centralizer division algebra, every Galois twist and the m_j translated lattice-chain copies; otherwise the source representation and its building point have the wrong dimension. Over the maximal unramified extension verify the neutral-component closure condition (*) in k[[u]]. Apply the PZ criterion and descend closedness and the morphism via flat generic density.
+
+The condition (*) is over k[[u]], not a second generic fibre k((u)).
+
+*Needs:* §1.3; ReductiveGroupsPartII RG2.2; ReductiveGroupsPartII RG2.3; gap:polynomial-closed-immersion-criterion; §2.5; gap:symplectic-toral-factorization; gap:polynomial-representation-descent; gap:polynomial-parahoric-lifts.
+
 ### 2.7 Period-total Grassmannian embedding
 
 For lattices Λ_i of a finite determining segment and ranks d_i, the direct-sum map ∏Gr(d_i,Λ_i)→Gr(Σd_i,⊕Λ_i) is a closed immersion. Its image is the locus stable under the summand idempotents with the prescribed component ranks. Composing the chain incidence map with this map and the tame symplectic embedding proves KP Corollary 2.3.16. For the polarized total lattice of KP §2.3.15 retain the index range of 2r−1+a terms, its pairing and duality scalings; the target rank is half the total dimension. No argument changes a non-vertex building point into a hyperspecial vertex by just repeating its representation. (KP, §2.3.15 and Corollary 2.3.16, p. 162; KP line 1755; KPZ, Lemma 2.3.1, p. 12; chain variant after Definition 3.4.4, p. 29; KPZ line 562).
 
 One proof proceeds as follows. Cut out idempotent stability as closed equations; fixed summand ranks select open-and-closed components in that closed locus. Recover each summand by the idempotent image, proving the functorial inverse onto the image. Compose the symplectic, chain-incidence and product embeddings; generic density identifies the composite with the representation-induced map.
 
+Consequently a chain integral Hodge embedding of §0.6 is good if and only if its period-total embedding is good: the total model map is the chain model map followed by the closed immersion above, and a morphism whose composite with a closed immersion is a closed immersion is itself one. For r=2, h=2 and d=1 the closed map is P¹×P¹→Gr(2,4).
+
 For two rank 1 summands of rank 2 lattices the target is Gr(2,Λ₀⊕Λ₁); requiring only total rank 2 admits wrong component ranks.
 
-*Needs:* §2.6; §2.5; ModularCurves §0G.
+*Needs:* §2.5; §2.6; §0.6; ModularCurves §0G.
 
 ### 2.8 Trace symplectic restriction of scalars
 
@@ -554,7 +562,7 @@ For a two-lattice GL₂ period and d=1, the total ambient module has rank 4 and 
 
 ### Dependencies
 
-ReductiveGroupsPartII RG2.0a; ReductiveGroupsPartII RG2.2; ReductiveGroupsPartII RG2.3; gap:polynomial-closed-immersion-criterion; gap:polynomial-parahoric-lifts; gap:algebraic-loop-representability; gap:stable-weyl-lattices; SchemeAndStackFoundations §0.28; ModularCurves §0G; SchemeAndStackFoundations §1.1; gap:polynomial-representation-descent; gap:symplectic-toral-factorization; GeometricSatakeAndFusion GS0, “Equal-characteristic Schubert models and coefficient comparison”; gap:algebraic-schubert-normality; gap:algebraic-compatible-schubert-splitting; SchemeAndStackFoundations §§0.8 and 1.1; `Algebra.trace`. The internal section references above give the additional ordering within this layer.
+ReductiveGroupsPartII RG2.0a; ReductiveGroupsPartII RG2.2; ReductiveGroupsPartII RG2.3; gap:polynomial-closed-immersion-criterion; gap:polynomial-parahoric-lifts; gap:algebraic-loop-representability; ReductiveGroups §10B, “Induction, Weyl modules and simple heads”; gap:stable-weyl-lattices; SchemeAndStackFoundations §0.28; ModularCurves §0G; SchemeAndStackFoundations §1.1; gap:polynomial-representation-descent; gap:symplectic-toral-factorization; GeometricSatakeAndFusion GS0, “Equal-characteristic Schubert models and coefficient comparison”; gap:algebraic-schubert-normality; gap:algebraic-compatible-schubert-splitting; SchemeAndStackFoundations §§0.8 and 1.1; `Algebra.trace`. The internal section references above give the additional ordering within this layer.
 
 ## Layer 3: canonical and weakly normal representatives
 
@@ -583,13 +591,13 @@ The proof order is polynomial embeddings → normal recovery → canonical repre
 
 ### 3.2 Integral Hodge maps and normalizations of images
 
-For a standard datum and any integral Hodge embedding, the functorial scheme map M^can→Gr(d,Λ)_(O_E) identifies M^can with the normalization of its schematic image. Goodness is the stronger assertion that this map is a closed immersion. The diagram of geometric special-fibre points with the Witt Grassmannians commutes. (KPZ, §3.1.9 and diagram(3.1.10), p. 17; KPZ line 761).
+Let (F,G,{μ},𝒢) be a minuscule local model datum of Hodge type with an integral Hodge embedding 𝒢↪GL(Λ), and let M be a normal flat projective O_E-scheme with a specified isomorphism M^♦≅M^v as in §0.5. Then the functorial scheme map M→Gr(d,Λ)_(O_E) identifies M with the normalization of its schematic image. Goodness is the stronger assertion that this map is a closed immersion. The diagram of geometric special-fibre points with the Witt Grassmannians commutes. For standard data the theorem applies to M=M^can of §3.1; for the acceptable data of §7.7 it applies to the normal model of §7.6; its proof uses neither construction. (KPZ, §3.1.9 and diagram(3.1.10), p. 17; KPZ line 761).
 
 One proof proceeds as follows. Construct the diamond map and lift it by proper normal full faithfulness. Use generic closed immersion, properness and geometric-fibre injectivity to get a finite birational map onto the image. Normality of the source gives the normalization; identify the point map by specialization functoriality.
 
-Normalizing an image is not the same statement as image normality.
+Normalizing an image is not the same statement as image normality. The theorem does not require the standard range: for p=5, G=G_m×H with H simply connected of trialitarian type D₄ split by a tame cubic extension, V the scalar twist of the Galois-stable sum of the three eight-dimensional minuscule representations and μ(z)=(z,1), the datum is of Hodge type with h=d=24 but outside the standard range; the target Gr(24,Λ) is a point and the normalization map is the identity.
 
-*Needs:* §3.1; §0.6; DiamondsAndVStacksPartII §D10.12; GeometricSatakeAndFusion GS0, “Integral parahoric ind-properness”; SchemeAndStackFoundations §§0.20–0.21 and 0.30; ModularCurves §0G.
+*Needs:* §0.5; §0.6; DiamondsAndVStacksPartII §D10.12; GeometricSatakeAndFusion GS0, “Integral parahoric ind-properness”; SchemeAndStackFoundations §§0.20–0.21 and 0.30; ModularCurves §0G.
 
 ### 3.3 Good embeddings cut out by descent endomorphisms
 
@@ -603,13 +611,19 @@ Commuting with Γ alone misses the O_K̃-linearity equations.
 
 ### 3.4 Algebraic and Witt special-fibre interfaces
 
-For the quasi-tame prime-to-p polynomial model, identify its special fibre with the reduced admissible union in the equal-characteristic companion partial affine flag, with Bruhat closure relations, and identify its perfection with the admissible Witt locus. Compare that map with the reduced v-special-fibre identification supplied by GeometricSatakeAndFusion GS0. The resulting square of comparison morphisms commutes over the common residue base. This comparison does not assert equality of the unperfected companion scheme and the perfect Witt scheme. (KZ, §5.2.1, pp. 48–49; KZ line 2120; AGLR, Theorem 6.16, pp. 39–40; AGLR line 2214).
+For the quasi-tame prime-to-p polynomial model and every dominant bound, the special fibre is the reduced admissible union in the equal-characteristic companion partial affine flag, with Bruhat closure relations (§1.3). For a minuscule bound, and if p=2 assuming in addition that G has no odd unitary factor over the completed maximal unramified extension, identify the perfection of that special fibre with the admissible Witt locus. The identification is the unique equivariant isomorphism of depth-zero perfect Schubert schemes, on which the positive loop group acts through its reductive quotient, obtained after passing to the adjoint group; it retains the identification of the reductions of the Witt parahoric and of its equal-characteristic companion. Compare that map with the reduced v-special-fibre identification supplied by GeometricSatakeAndFusion GS0. The resulting square of comparison morphisms commutes over the common residue base. This comparison does not assert equality of the unperfected companion scheme and the perfect Witt scheme, and it makes no perfect-scheme identification for non-minuscule bounds; the general-bound v-special-fibre identification is the separate GS0 theorem. (KZ, §5.2.1, pp. 48–49; KZ line 2120; AGLR, Lemma 3.15, p. 24, AGLR line 1356, and the depth-zero step in the proof of Theorem 3.16, p. 25, AGLR line 1414; AGLR, Theorem 6.16, pp. 39–40; AGLR line 2214).
 
-One proof proceeds as follows. Apply the polynomial reduced-special-fibre theorem to the companion model. Use the imported admissible Witt and v-special-fibre identifications to construct and compare the perfection maps, retaining Frobenius descent.
+One proof proceeds as follows. Apply the polynomial reduced-special-fibre theorem to the companion model. For minuscule μ, pass to the adjoint group, check that every translation λ in the admissible set moves each affine root by at most 1, so the admissible locus has depth zero, and apply the depth-zero comparison of perfect Schubert schemes through Demazure resolutions and their Picard groups. Use the imported admissible Witt and v-special-fibre identifications to compare the perfection maps, retaining Frobenius descent.
 
 Keep generic flag, companion special scheme, perfected Witt locus and v-special fibre in different types.
 
-*Needs:* §1.3; §3.1; GeometricSatakeAndFusion GS0, “Bounded admissible affine flag loci”.
+**Checks.**
+
+- For hyperspecial GL₂ and μ=(1,0), the first congruence subgroup acts trivially on the lines of k², so the admissible locus P¹ has depth zero and both sides are the perfected P¹.
+- For hyperspecial GL₂ and μ=(2,0), (1+pE₁₂)e₂=e₂+pe₁ does not lie in p²We₁⊕We₂, so the first congruence subgroup moves the point t^(2,0) and the depth is positive; this bound receives no perfect-scheme identification here.
+- For μ=0 both sides are the base point.
+
+*Needs:* §1.3; §3.1; GeometricSatakeAndFusion GS0, “Bounded admissible affine flag loci”; GeometricSatakeAndFusion GS0, “Equal-characteristic Schubert models and coefficient comparison”; ReductiveGroupsPartII RG2.4.
 
 ### 3.5 General-bound local-model kimberlites
 
@@ -623,7 +637,7 @@ Specialization onto a nonempty closed stratum is surjective even for a nonminusc
 
 ### 3.6 General minuscule weak normal representability
 
-For any connected reductive G over F finite over Q_p, any parahoric 𝒢 and minuscule μ, there is a unique flat projective weakly normal O_E-model M^wn of G/P_μ, with a specified equivariant diamond isomorphism (M^wn)^♦≅M^v. No p≥5, tame or abelian-type restriction is present. This theorem stops at weak normality; Layer 7 proves normality and geometrically reduced special fibre. (AGLR, Theorem 7.22 and proof, pp. 49–50; AGLR line 2776).
+For any connected reductive G over F finite over Q_p, any parahoric 𝒢 and minuscule μ, there is a unique flat projective weakly normal O_E-model M^wn of ℱ_(G,{μ}), with a specified equivariant diamond isomorphism (M^wn)^♦≅M^v. No p≥5, tame or abelian-type restriction is present. This theorem stops at weak normality; Layer 7 proves normality and geometrically reduced special fibre. (AGLR, Theorem 7.22 and proof, pp. 49–50; AGLR line 2776).
 
 One proof proceeds as follows. In the polynomial-lift range compare generic and special fibres and their specialization maps at Iwahori level, using AGLR 7.13,7.19–7.21 and the D11 triple theorem. Descend through the Iwahori-to-parahoric v-cover; compare the actual closed equivalence relations on both sides. For arbitrary G embed into a Weil-restricted split group and take the absolute weak normalization of the flat flag closure in its scheme model. Use the polynomial-lift and weak-normalization supplier contracts for these comparisons.
 
@@ -631,13 +645,27 @@ This intermediate theorem must not use the final tube normality theorem in its p
 
 *Needs:* §3.5; §1.6; DiamondsAndVStacksPartII §D11.18; DiamondsAndVStacksPartII §D10.13; SchemeAndStackFoundations §§0.26 and 0.30; gap:finite-weak-normalization; SchemeAndStackFoundations §1.1; ReductiveGroupsPartII RG2.3; gap:polynomial-parahoric-lifts.
 
+### 3.7 The smooth open of maximal admissible orbits
+
+For every connected reductive G over F finite over Q_p, every parahoric 𝒢 and minuscule μ, the weakly normal representative M^wn of §3.6 has an open subscheme M^(wn,∘) that is smooth over O_E, whose geometric special fibre is the union of the maximal admissible orbits and is dense in the geometric special fibre of M^wn. The maximal orbits are those of the translations [λ] for the rational conjugates λ∈W₀·μ over the completed maximal unramified extension F̆. Over O_C, M^(wn,∘) is the union of the charts 𝒢_(O_C)/P⁻_λ, where P⁻_λ is the schematic closure in 𝒢_(O_C) of the repeller parabolic of λ in G_C; P⁻_λ is smooth affine with connected fibres and is the stabilizer of [λ]. The open is a scheme-level statement: smoothness of the perfected maximal strata alone does not provide it. (AGLR, Definition 7.5, Lemma 7.6 and Remark 7.7, p. 43, AGLR line 2395 and AGLR line 2405; AGLR (7.55), p. 51, AGLR line 2848; GL Lemma 1.2, p. 2, GL line 61).
+
+One proof proceeds as follows. Over a finite extension of F̆ splitting G and defining λ, construct P⁻_λ as the flat closure of the repeller parabolic and prove it smooth with connected fibres by decomposing it into flat closures of root groups, each a product of fibres of smooth maps between Weil restrictions of affine lines, together with the torus part; identify its special fibre with the stabilizer of the translation in the affine flag by a dimension count. Form the quotient of the parahoric model by this smooth closed subgroup over the DVR, base change to O_C and glue the charts along schematic gluing maps. The diamond of the union is the open sub-v-sheaf of M^v given by the maximal orbits; full faithfulness of the diamond functor on weakly normal schemes and the identification of the perfected special fibre with the admissible locus identify it with an open subscheme of M^wn and descend it to O_E. Density follows because every irreducible component of the admissible locus is the closure of a maximal orbit.
+
+**Checks.**
+
+- For hyperspecial GL₂ and μ=(1,0), M^wn=P¹_(O_E) is smooth and the open is all of P¹: the special fibre is a single orbit and P⁻_λ is the parabolic subgroup scheme of GL₂ over O_E.
+- At Iwahori level for GL₂ and μ=(1,0), the special fibre consists of two P¹ meeting at a point. The two maximal orbits are the complements of that point, and the open is the model minus the node, where the chart xy=π_E is smooth over O_E; the node itself, with special fibre xy=0, is not O_E-smooth and is excluded.
+- For a ramified quadratic extension O_E[t]/(t²−π_E), the scheme is normal and finite flat, its perfected special fibre is a smooth point, but its special fibre k[t]/t² is not smooth and it has no O_E-smooth open meeting the special fibre. Thus the assertion is not a consequence of normality together with smoothness of the perfected special fibre.
+
+*Needs:* §3.6; §3.5; GeometricSatakeAndFusion GS0, “Bounded admissible affine flag loci”; ReductiveGroupsPartII RG2.1; ReductiveGroupsPartII RG2.3.1, “Big-cell criteria”; ReductiveGroupsPartII RG2.3.1, “Quotients of group schemes over a DVR”; ReductiveGroupsPartII RG2.4; DiamondsAndVStacksPartII §D10.13; SchemeAndStackFoundations §1.1.
+
 ### Examples
 
 For a nodal cubic, normalization is finite and bijective away from the singular point but does not make the image normal. For the cusp Spec k[t²,t³] in characteristic zero, its normalization Spec k[t] is finite, birational and a universal homeomorphism, but the inclusion k[t²,t³]⊂k[t] is not surjective. This is the distinction used by the integral Hodge map: the existence of a closed diamond map does not prove a closed scheme immersion (FHLR Lemma 5.27, p. 34; FHLR line 1540; KPZ line 761).
 
 ### Dependencies
 
-GeometricSatakeAndFusion GS0, “Integral parahoric ind-properness”; DiamondsAndVStacksPartII §D10.15; DiamondsAndVStacksPartII §D10.12; SchemeAndStackFoundations §§0.20–0.21 and 0.30; ModularCurves §0G; gap:stable-weyl-lattices; gap:polynomial-representation-descent; GeometricSatakeAndFusion GS0, “Bounded admissible affine flag loci”; DiamondsAndVStacksPartII §D11.19; DiamondsAndVStacksPartII §D11.17; DiamondsAndVStacksPartII §D11.11; DiamondsAndVStacksPartII §D11.18; DiamondsAndVStacksPartII §D10.13; SchemeAndStackFoundations §§0.26 and 0.30; gap:finite-weak-normalization; SchemeAndStackFoundations §1.1; ReductiveGroupsPartII RG2.3; gap:polynomial-parahoric-lifts. The internal section references above give the additional ordering within this layer.
+GeometricSatakeAndFusion GS0, “Integral parahoric ind-properness”; DiamondsAndVStacksPartII §D10.15; DiamondsAndVStacksPartII §D10.12; SchemeAndStackFoundations §§0.20–0.21 and 0.30; ModularCurves §0G; gap:stable-weyl-lattices; gap:polynomial-representation-descent; GeometricSatakeAndFusion GS0, “Bounded admissible affine flag loci”; DiamondsAndVStacksPartII §D11.19; DiamondsAndVStacksPartII §D11.17; DiamondsAndVStacksPartII §D11.11; DiamondsAndVStacksPartII §D11.18; DiamondsAndVStacksPartII §D10.13; SchemeAndStackFoundations §§0.26 and 0.30; gap:finite-weak-normalization; SchemeAndStackFoundations §1.1; ReductiveGroupsPartII RG2.3; gap:polynomial-parahoric-lifts; GeometricSatakeAndFusion GS0, “Equal-characteristic Schubert models and coefficient comparison”; ReductiveGroupsPartII RG2.1; ReductiveGroupsPartII RG2.3.1, “Big-cell criteria”; ReductiveGroupsPartII RG2.3.1, “Quotients of group schemes over a DVR”; ReductiveGroupsPartII RG2.4. The internal section references above give the additional ordering within this layer.
 
 ## Layer 4: formal curves and Schubert tangent spaces
 
@@ -700,8 +728,8 @@ The construction has the following properties:
 
 **Checks.**
 
-- In C_n the tests use ω₁ and the coweight is rω_n∨.
-- The D^H family includes both spin coweights; it is excluded only by the all-points Cartan theorem.
+- In C₂ with coroots α₁∨=e₁−e₂, α₂∨=e₂ and ω₁=e₁, take μ=2ω₂∨=(1,1). For ν=0 the difference (1,1)=α₁∨+2α₂∨ is a nonnegative coroot combination and the ω₁-test is 1. For the dominant ν=(2,0) the difference (−1,1)=−α₁∨ lies in the coroot lattice, the ω₁-test is −1 and ν is rejected, whereas the wrong test weight ω₂=e₁+e₂ gives 0 and would accept it.
+- In D₄ take μ=2ω₄∨=(1,1,1,1) and ν=2ω₃∨=(1,1,1,−1), both in the D^H family. The difference 2e₄=α₄∨−α₃∨ has even coordinate sum, so it is in the coroot lattice, and its S_(D^H)-tests against ω₁,ω₃,ω₄ are (0,−1,1): ν is rejected by ω₃. Interchanging the endpoints gives (0,1,−1), rejected by ω₄. The singleton {ω₁}, or either spin weight alone, misses one of the two cases.
 - In B₃, μ=(2,0,0), ν=(1,1,0) lie in the same coroot coset: the spin test is (2−1−1)/2=0, and the other fundamental tests are 1 and 0. For μ=(1,0,0), ν=0 all tests are nonnegative but the difference has odd coordinate sum, so it is outside the coroot lattice; inequalities alone do not impose that congruence.
 
 B and C exchange the coweight and weight roles; test the listed spin and standard weights.
@@ -733,9 +761,9 @@ At j=0 the stated root-direction list does not acquire an extra zero-order tange
 
 ### 4.6 Finkelberg–Mirković representation bounds
 
-Let G be split connected reductive over the algebraically closed field k, and for a dominant weight ν∈X^*(T)^+ let V(ν)=Ind_B^G(−w₀ν)^* be the Weyl module. For an R-point (𝓔,φ) of Gr_G put 𝓔(ν)=𝓔×^G V(ν), and let 𝓔⁰(ν) be the bundle of the trivial torsor. The point lies in S^FM_μ when t^〈μ,−w₀ν〉φ(𝓔(ν))⊂𝓔⁰(ν)⊂t^〈μ,−ν〉φ(𝓔(ν)) inside 𝓔(ν)[1/t] for every dominant ν. Both inclusions are imposed. S^FM_μ is a closed projective subscheme of Gr_G containing S_μ, so T_(t^λ)S_μ⊂T_(t^λ)S^FM_μ. Neither equality of schemes nor reducedness of the FM bound is assumed in characteristic p. The reduction to G^der simply connected is made in the theorems that use the bound. (KPZ, Definition 4.2.6, (4.2.7), Remark 4.2.8, pp. 34–35; KPZ line 1481).
+Let G be split connected reductive over the algebraically closed field k, and for a dominant weight ν∈X^*(T)^+ let V(ν)=Δ(ν)=∇(−w₀ν)* be the Weyl module of ReductiveGroups §10B, where ∇(λ)=Ind_(B⁻)^G k_λ has highest weight λ for the positive Borel B. For an R-point (𝓔,φ) of Gr_G put 𝓔(ν)=𝓔×^G V(ν), and let 𝓔⁰(ν) be the bundle of the trivial torsor. The point lies in S^FM_μ when t^〈μ,−w₀ν〉φ(𝓔(ν))⊂𝓔⁰(ν)⊂t^〈μ,−ν〉φ(𝓔(ν)) inside 𝓔(ν)[1/t] for every dominant ν. Both inclusions are imposed. S^FM_μ is a closed projective subscheme of Gr_G containing S_μ, so T_(t^λ)S_μ⊂T_(t^λ)S^FM_μ. Neither equality of schemes nor reducedness of the FM bound is assumed in characteristic p. The reduction to G^der simply connected is made in the theorems that use the bound. (KPZ, Definition 4.2.6, (4.2.7), Remark 4.2.8, pp. 34–35; KPZ line 1481).
 
-One proof proceeds as follows. Use the specified integral Weyl-module tensor functors to translate a modification to lattices. Realize each inclusion as a closed condition in a bounded lattice Grassmannian; a faithful representation bounds the result in a projective piece. Verify the generic Schubert orbit satisfies both inequalities, then use closure.
+One proof proceeds as follows. Use the Weyl modules Δ(ν) of ReductiveGroups §10B, with their integral lattices and base change, and the associated-bundle functor to translate a modification to lattices. Realize each inclusion as a closed condition in a bounded lattice Grassmannian; a faithful representation bounds the result in a projective piece. Verify the generic Schubert orbit satisfies both inequalities, then use closure.
 
 The construction has the following properties:
 
@@ -752,7 +780,7 @@ The construction has the following properties:
 
 Do not replace Weyl-module duals by Weyl modules of dual highest weight in positive characteristic.
 
-*Needs:* §4.3; ReductiveGroupsPartII RG2.1; gap:algebraic-loop-representability; ModularCurves §0G.
+*Needs:* §4.3; ReductiveGroupsPartII RG2.1; ReductiveGroups §10B, “Induction, Weyl modules and simple heads”; gap:algebraic-loop-representability; ModularCurves §0G.
 
 ### 4.7 Root tangent equality using minuscule test modules
 
@@ -762,7 +790,7 @@ One proof proceeds as follows. Use the prime-to-p central-isogeny and product ta
 
 The theorem includes quaternionic D; the exclusion enters only the general Cartan statement.
 
-*Needs:* §4.5; §4.6; §4.4; ReductiveGroupsPartII RG2.1; gap:minuscule-root-coefficients.
+*Needs:* §4.5; §4.6; §4.4; ReductiveGroupsPartII RG2.1; ReductiveGroups §10B, “Induction, Weyl modules and simple heads”; gap:minuscule-root-coefficients.
 
 ### 4.8 Cartan directions from conjugated root curves
 
@@ -808,7 +836,7 @@ The detecting minimum has the following properties (KPZ §4.3.3 and proof of Pro
 - Over characteristic 3, replacing H_α by 2H_α changes derivatives (1,−1) to (2,1), keeps both nonzero and leaves the preceding minima 1 and 0 unchanged. Scaling by 0 instead gives the excluded empty detecting set.
 - For a Dᴴ detecting coefficient with m=1, −2m is 1 in F₃ and 0 in F₂, so the endpoint argument retains p≠2. There is no all-points D^H Cartan conclusion.
 
-*Needs:* §4.8; §4.6; §4.4; §4.7; ReductiveGroupsPartII RG2.1; gap:minuscule-cartan-coefficients.
+*Needs:* §4.8; §4.6; §4.4; §4.7; ReductiveGroupsPartII RG2.1; ReductiveGroups §10B, “Induction, Weyl modules and simple heads”; gap:minuscule-cartan-coefficients.
 
 ### 4.10 Curve-spanning theorem for affine Schubert varieties
 
@@ -836,13 +864,13 @@ At the SL₂ neutral translation in S_(α∨), each root contributes t⁻¹X_α,
 
 ### Dependencies
 
-`Submodule.span`; `TauCeti.AlgebraicGeometry.ZariskiTangentSpace`; gap:pointed-tangent-chain-rule; gap:algebraic-loop-representability; gap:negative-big-cells; `Derivation.adjointWeightSpace`; ReductiveGroupsPartII RG2.1; gap:minuscule-dominance-tests; ModularCurves §0G; gap:minuscule-root-coefficients; gap:minuscule-cartan-coefficients; GeometricSatakeAndFusion GS0, “Equal-characteristic Schubert models and coefficient comparison”; gap:algebraic-coherence. The internal section references above give the additional ordering within this layer.
+`Submodule.span`; `TauCeti.AlgebraicGeometry.ZariskiTangentSpace`; gap:pointed-tangent-chain-rule; gap:algebraic-loop-representability; gap:negative-big-cells; `Derivation.adjointWeightSpace`; ReductiveGroupsPartII RG2.1; gap:minuscule-dominance-tests; ReductiveGroups §10B, “Induction, Weyl modules and simple heads”; ModularCurves §0G; gap:minuscule-root-coefficients; gap:minuscule-cartan-coefficients; GeometricSatakeAndFusion GS0, “Equal-characteristic Schubert models and coefficient comparison”; gap:algebraic-coherence. The internal section references above give the additional ordering within this layer.
 
 ## Layer 5: same-residue-field Schubert curves
 
 ### 5.1 Frobenius orbit steps and rank-one local groups
 
-For the equal-characteristic companion at a very special parahoric, identify its Schubert order with the integral positive Σ-coroot order on the actual inertia-coinvariant cocharacter lattice. For distinct Frobenius-fixed dominant λ<μ, import the invariant coroot-step theorem to choose an orbit sum β with λ<λ+β≤μ. Identify this selected orbit with a short relative-root rank-one subgroup, retaining the valued-root normalization, possible multipliable roots, and the unchanged central cocharacter coordinate. The map from the orbit sum on the coroot lattice to the short relative-root subgroup is part of the valued-root comparison; it is not inferred merely from the order inequality. (KZ, §5.2.1 and proof of Proposition 5.2.3, pp. 48–50; KZ line 2120).
+For the equal-characteristic companion of a minuscule local abelian-type datum (p>2) at a very special parahoric, identify its Schubert order with the integral positive Σ-coroot order on the actual inertia-coinvariant cocharacter lattice. For distinct Frobenius-fixed dominant λ<μ, import the invariant coroot-step theorem to choose an orbit sum β with λ<λ+β≤μ. Identify this selected orbit with a short relative-root rank-one subgroup, retaining the valued-root normalization, possible multipliable roots, and the unchanged central cocharacter coordinate. The map from the orbit sum on the coroot lattice to the short relative-root subgroup is part of the valued-root comparison; it is not inferred merely from the order inequality. (KZ, §5.2.1 and proof of Proposition 5.2.3, pp. 48–50; KZ line 2120).
 
 One proof proceeds as follows. Use the actual root datum and valuation normalization of the companion group. Apply the finite invariant-step theorem; the sum ranges over distinct roots in the orbit, rather than repeating them to the automorphism order. Use the valued-root classification to distinguish SL₂ from standard and nonstandard SU₃ and identify the target translation increment.
 
@@ -964,7 +992,7 @@ The construction has the following properties:
 
 - For B=Q_p and a single lattice it is the quotient Grassmannian of rank d.
 - For h=3,d=1 its kernel has rank 2.
-- A naive ramified determinant model need not be flat; flat closure and the naive model are distinct targets.
+- Let K/F be ramified quadratic, V=K², Λ=O_K², and let the quotient have rank 2 at one embedding of K and rank 0 at the other, with reflex field K. On the generic fibre the only quotient is the projection onto the first eigenspace, one point. On the special fibre put A=O_K⊗_(O_F)k_K=k_K[ε]/ε². The A-linear quotients A²→A, (u,v)↦u+cv, c∈k_K, have distinct kernels and satisfy every determinant condition, since multiplication by a₀+a₁ε on A has characteristic polynomial (T−a₀)², equal to that of the generic weight-one space. They form an A¹-family, so this projective naive model has a special fibre of positive dimension over a zero-dimensional generic fibre: it is not flat and is larger than its flat closure.
 
 Checking determinants only at geometric points loses conditions on nilpotent bases.
 
@@ -984,11 +1012,22 @@ This does not identify the entire naive model with its flat closure.
 
 Let F/Q_p be finite, D/F the central division algebra of invariant 1/n, n≥2, V=B=D and 𝓛={Π^iO_D}. Let μ have type (1,0,…,0) at a distinguished embedding and be central with weights all 0 or all 1 at every other embedding, as specified by the RZ17 function r. Then the canonical local model is naturally 𝒢-equivariantly isomorphic to M_Dr⊗_(O_F)O_E, where M_Dr, for an O_F-algebra R, parametrizes O_D⊗_(O_F)R-linear quotients O_D⊗_(O_F)R↠M with M finite projective of R-rank n. The Eisenstein conditions are retained in the RZ17 comparison model. The isomorphism is obtained by adjoint comparison and algebraization, rather than an asserted explicit linear formula. (SW, §21.7, Theorem 21.7.1, Remark 21.7.2 and proof, pp. 203–204; SW line 7813 and SW line 7820; RZ17, §5, Lemma 5.1, Corollaries 5.2, 5.4 and 5.6, Remark 5.7, pp. 18–20; RZ17 line 1014).
 
-One proof proceeds as follows. Compare the generic adjoint cocharacter and connected level with the Drinfeld datum. Use the kernel comparison and the flat normal Eisenstein model with reduced special fibre. Apply integral Grassmannian central comparison, normal-scheme full faithfulness and GAGA to algebraize the isomorphism.
+**Flat Drinfeld and Eisenstein models.** Before the comparison, prove the geometry of the RZ17 model. Let F^t be the maximal unramified subfield of F, e=[F:F^t], π a uniformizer with Eisenstein polynomial Q over O_(F^t), and φ₀ the distinguished embedding of F, with ψ₀ its restriction to F^t. For an embedding ψ of F^t let A_ψ be the embeddings φ over ψ with r_φ=n, put Q_(A_ψ)(T)=∏_(φ∈A_ψ)(T−φ(π)) and Q₀(T)=T−φ₀(π). For an O_E-scheme S let M_r(S) be the set of O_D-stable locally direct summands F⊂Λ⊗_(Z_p)O_S whose quotient L satisfies the rank condition (R_r): after the decomposition of L by the embeddings ψ̃ of the unramified degree-n extension of F^t contained in D, each graded piece L_ψ̃ has rank n|A_ψ|+ε_ψ, with ε_ψ₀=1 and ε_ψ=0 otherwise, ψ the restriction of ψ̃; and the Eisenstein condition (E_r): (Q₀Q_(A_ψ₀))(ι(π)) vanishes on L_ψ₀, the (n+1)-st exterior power of Q_(A_ψ₀)(ι(π)) on L_ψ₀ vanishes, and Q_(A_ψ)(ι(π)) vanishes on L_ψ for ψ≠ψ₀. Prove that M_r is represented by a projective O_E-scheme whose geometric generic fibre is P^(n−1), the geometric μ-flag; that its geometric special fibre is reduced, with n irreducible components of dimension n−1 and local rings at closed points isomorphic to localizations of k̄[X₁,…,X_n]/(X₁⋯X_n); that M_r is flat over O_E; and that M_r is normal. After every finite extension E′/E, M_r⊗O_(E′) is flat with geometrically reduced special fibre and normal generic fibre, hence normal by the trait criterion of §0.5. The Drinfeld rank function, r_φ₀=1 and r_φ=0 otherwise, has E=F and gives M_Dr (RZ17 Definition 3.3, p. 8, RZ17 line 420; Definition 3.8, p. 10, RZ17 line 572; Lemma 5.1, Corollaries 5.2, 5.4 and 5.6, Lemma 5.5, pp. 19–20, RZ17 line 1014, RZ17 line 1080, RZ17 line 1087, RZ17 line 1093 and RZ17 line 1112).
+
+One proof of these properties proceeds as follows. Representability and projectivity follow because the rank and Eisenstein conditions are closed in a product of Grassmannians. On the generic fibre, decompose by embeddings and use Morita equivalence: the Eisenstein condition forces the trivial summands away from φ₀ and a hyperplane condition at φ₀. On the geometric special fibre, the Eisenstein conditions pin the summands away from ψ₀ and identify the remaining datum with the special fibre of the standard Iwahori local model for GL_n and (1,0,…,0), which is reduced by §2.5; compute its local rings in the standard semistable coordinates. Flatness follows from reducedness, equality of generic and special dimensions n−1, properness and the Z/n-action permuting the special components transitively, which brings every component into the closure of the generic fibre. Normality follows from flatness, regular generic fibre and reduced special fibre.
+
+One proof of the comparison proceeds as follows. Compare the generic adjoint cocharacter and connected level with the Drinfeld datum. Use the kernel comparison and the flat normal Eisenstein model above. Apply integral Grassmannian central comparison, normal-scheme full faithfulness and GAGA to algebraize the isomorphism.
 
 RZ17 Remark 5.7 does not establish regularity or semistability of its general model; neither is used (RZ17 Remark 5.7, p. 20; RZ17 line 1115).
 
-*Needs:* §6.4; §3.6; GeometricSatakeAndFusion GS0, “Integral parahoric ind-properness”; DiamondsAndVStacksPartII §D10.12; SchemeAndStackFoundations §§4.7–4.10.
+**Checks.**
+
+- For n=2 and the Drinfeld function, E=F and the Eisenstein condition forces ι(π) to act on the quotient through φ₀(π) (RZ17 Remarks 3.9(ii), p. 11, RZ17 line 581): a quotient on which O_F acts through a different embedding is excluded, although it has the same ranks.
+- For n=2 the geometric special fibre has two components P¹ of dimension 1 meeting at one point with local ring k̄[X₁,X₂]/(X₁X₂); the corresponding chart of M_r over O_Ĕ is xy=π, flat, regular and with reduced special fibre, as for the two-lattice line model.
+- After a ramified quadratic extension E′/E with uniformizer ϖ, ϖ²=π·unit, the chart becomes xy=ϖ²·unit: it is flat with reduced special fibre xy=0 and normal, its local ring at the origin has dimension 2 and embedding dimension 3, so it is not regular; only normality is claimed after base change.
+- For F/Q_p unramified the first and third Eisenstein conditions are empty and the second only bounds the rank of L_φ₀ by n (RZ17 Remarks 3.9(iii), p. 11, RZ17 line 588), so the Eisenstein conditions add nothing beyond the rank condition there; for ramified F they are genuine closed conditions.
+
+*Needs:* §6.4; §3.6; §2.5; §0.5; gap:trait-normality; GeometricSatakeAndFusion GS0, “Integral parahoric ind-properness”; DiamondsAndVStacksPartII §D10.12; SchemeAndStackFoundations §0.8; SchemeAndStackFoundations §§4.7–4.10.
 
 ### 6.6 The unitary Drinfeld local-model comparison
 
@@ -1000,18 +1039,18 @@ The ramified full fixer can have two components; use connected-level invariance 
 
 **Checks.**
 
-- At p=2 with F/F₀ unramified and distinguished signature (1,1), the adjoint flag is P¹ and Mᶜᵃⁿ has the Drinfeld diamond; the ramified p=2 case is excluded by this theorem’s hypotheses.
+- At p=2 with F/F₀ unramified and distinguished signature (1,1), the geometric adjoint flag, over a splitting field, is P¹ (over the reflex field it is its descended form ℱ, a conic) and Mᶜᵃⁿ has the Drinfeld diamond; the ramified p=2 case is excluded by this theorem’s hypotheses.
 - The Drinfeld model is regular over O_(F₀), but after a ramified base change a nodal chart can be xy=ϖ_E²: its dimension is 2 and its embedding dimension is 3. It remains normal with reduced special fibre xy=0; regularity of every base change is not asserted.
 
 *Needs:* §6.4; §6.5; §0.5 (p=2 canonical representative); GeometricSatakeAndFusion GS0, “Integral parahoric ind-properness”; DiamondsAndVStacksPartII §D10.12; ReductiveGroupsPartII RG2.3; SchemeAndStackFoundations §§4.7–4.10.
 
 ### Examples
 
-The one-lattice EL model for rank h=3 and quotient rank d=1 has a rank-2 kernel. The corresponding de Rham lattice is ξe₁⊕e₂⊕e₃ for the quotient onto e₁; its determinant modification is ξ. For the unitary distinguished signature (1,1), the actual GL₂ weights are (1,0) at each conjugate embedding and the generic adjoint flag is P¹; weights (1,1) would give a point (SW §§21.6–21.8, pp. 200–206; SW line 7710; SW line 7901; KRZ §2.1, p. 10).
+The one-lattice EL model for rank h=3 and quotient rank d=1 has a rank-2 kernel. The corresponding de Rham lattice is ξe₁⊕e₂⊕e₃ for the quotient onto e₁; its determinant modification is ξ. For the unitary distinguished signature (1,1), the actual GL₂ weights are (1,0) at each conjugate embedding and the geometric generic adjoint flag is P¹, with descended form ℱ over the reflex field; weights (1,1) would give a point (SW §§21.6–21.8, pp. 200–206; SW line 7710; SW line 7901; KRZ §2.1, p. 10).
 
 ### Dependencies
 
-PELModuli M0; gap:ramified-local-pel-data; ReductiveGroupsPartII RG2.2; SchemeAndStackFoundations §1.1; ReductiveGroupsPartII RG2.3; ModularCurves §0G; DiamondsAndVStacksPartII §D10.14; GeometricSatakeAndFusion GS0, “Integral parahoric ind-properness”; DiamondsAndVStacksPartII §D10.12; SchemeAndStackFoundations §§4.7–4.10. The internal section references above give the additional ordering within this layer.
+PELModuli M0; gap:ramified-local-pel-data; ReductiveGroupsPartII RG2.2; SchemeAndStackFoundations §1.1; ReductiveGroupsPartII RG2.3; ModularCurves §0G; DiamondsAndVStacksPartII §D10.14; GeometricSatakeAndFusion GS0, “Integral parahoric ind-properness”; DiamondsAndVStacksPartII §D10.12; gap:trait-normality; SchemeAndStackFoundations §0.8; SchemeAndStackFoundations §§4.7–4.10. The internal section references above give the additional ordering within this layer.
 
 ## Layer 7: connected tubes and general normality
 
@@ -1037,13 +1076,13 @@ This is not a bound of two on the number of maximal translations of the entire a
 
 ### 7.3 The admissible locus has Serre S₂
 
-At Iwahori level 𝒢=I, the perfected μ-admissible locus A_(I,μ) has a finite-type deperfection satisfying Serre S₂; its codimension ≤1 Bruhat open remains connected in every connected étale neighbourhood. Use the equivalent codimension 1 connectedness criterion for a Bruhat-union Schubert scheme together with the Cohen–Macaulay admissible-locus input (ii) of gap:algebraic-coherence. That input is used only on a split group G′ over k((t)) with simply connected derived group whose admissible set Adm(μ′) equals Adm(μ) after passing to the adjoint group, as GL Corollary 3.5 does, so it is applied in the prime-to-p range alone; no Cohen–Macaulay input is available for G itself (for PGL₂ at p=2 all but finitely many Schubert varieties of the affine flag variety are neither normal nor S₂, HLR Theorem 1.1, p. 2, HLR line 69). This is an application to admissible loci, not a new general definition of S₂. (GL, Lemma 3.3, Proposition 3.4 and Corollary 3.5, pp. 6–7; GL line 255).
+At Iwahori level 𝒢=I, the perfected μ-admissible locus A_(I,μ) has a finite-type deperfection satisfying Serre S₂; its codimension ≤1 Bruhat open remains connected in every connected étale neighbourhood. Use the equivalent codimension 1 connectedness criterion for a Bruhat-union Schubert scheme together with the Cohen–Macaulay admissible-locus input gap:algebraic-admissible-cohen-macaulay. That input is used only on a split group G′ over k((t)) with simply connected derived group whose admissible set Adm(μ′) equals Adm(μ) after passing to the adjoint group, as GL Corollary 3.5 does, so it is applied in the prime-to-p range alone; no Cohen–Macaulay input is available for G itself (for PGL₂ at p=2 all but finitely many Schubert varieties of the affine flag variety are neither normal nor S₂, HLR Theorem 1.1, p. 2, HLR line 69). This is an application to admissible loci, not a new general definition of S₂. (GL, Lemma 3.3, Proposition 3.4 and Corollary 3.5, pp. 6–7; GL line 255).
 
 One proof proceeds as follows. Use the canonical-module/local-cohomology criterion that a Schubert union is S₂ exactly when the indicated codimension 1 graph is connected. Transfer the codimension 1 criterion to the split group G′ with the same admissible set, where the admissible union is Frobenius split and Cohen–Macaulay, hence S₂, and transfer the connectedness back. Use étale stability of S₂ and connectedness after removing codimension ≥2. These general commutative-algebra inputs are explicit supplier requests.
 
 Connectedness of the whole admissible set alone is insufficient to give S₂.
 
-*Needs:* GeometricSatakeAndFusion GS0, “Bounded admissible affine flag loci”; SchemeAndStackFoundations §§0.17–0.18; gap:s2ification-connectedness; gap:schubert-geometric-unibranchness; gap:algebraic-coherence; ReductiveGroupsPartII RG2.1; ReductiveGroupsPartII RG2.4.
+*Needs:* GeometricSatakeAndFusion GS0, “Bounded admissible affine flag loci”; SchemeAndStackFoundations §§0.17–0.18; gap:s2ification-connectedness; gap:schubert-geometric-unibranchness; gap:algebraic-admissible-cohen-macaulay; ReductiveGroupsPartII RG2.1; ReductiveGroupsPartII RG2.4.
 
 ### 7.4 Extremal Wakimoto stalk bounds
 
@@ -1069,19 +1108,19 @@ The use of algebraicity concerns extending a tube splitting to an étale neighbo
 
 ### 7.6 General normal minuscule local models
 
-For every connected reductive G/F, F finite over Q_p, parahoric level and minuscule μ, the weakly normal representative is normal, flat and projective over O_E, with geometrically reduced special fibre and generic flag G/P_μ; its diamond is M^v. Work after completing with algebraically closed residue field when applying the D11 normality-via-tubes criterion, then descend. No p≥5 or tame hypothesis is present. Connected-level invariance gives the same normal model for a specified quasiparahoric full fixer with that connected component. Cohen–Macaulayness or Frobenius splitting in all cases is not included in this theorem. (GL, Lemma 1.2, Theorem 1.3 and Corollary 1.4, pp. 2–3; GL line 61; GLX, §3.2, p. 19 (v3); GLX line 749).
+For every connected reductive G/F, F finite over Q_p, parahoric level and minuscule μ, the weakly normal representative is normal, flat and projective over O_E, with geometrically reduced special fibre and generic flag ℱ_(G,{μ}); its diamond is M^v. Work after completing with algebraically closed residue field when applying the D11 normality-via-tubes criterion, then descend. No p≥5 or tame hypothesis is present. Connected-level invariance gives the same normal model for a specified quasiparahoric full fixer with that connected component. Cohen–Macaulayness or Frobenius splitting in all cases is not included in this theorem. (GL, Lemma 1.2, Theorem 1.3 and Corollary 1.4, pp. 2–3; GL line 61; GLX, §3.2, p. 19 (v3); GLX line 749).
 
-One proof proceeds as follows. Base change to a completed strict residue-field extension where the corrected D11 normality criterion applies. Apply connectedness of every geometric tube to get normality; descend by faithful flatness. Normal flat total space gives S₁ for the special fibre, and the dense smooth maximal strata give R₀, hence reducedness after every residue extension. Apply proper normal full faithfulness for uniqueness and equivariance.
+One proof proceeds as follows. Base change to a completed strict residue-field extension where the corrected D11 normality criterion applies. Apply connectedness of every geometric tube to get normality; descend by faithful flatness. Normal flat total space gives S₁ for the special fibre, and the O_E-smooth open of §3.7, dense in every geometric special fibre, gives R₀, hence reducedness after every residue extension. Apply proper normal full faithfulness for uniqueness and equivariance.
 
 The statement includes wildly ramified unitary groups at p=2 without asserting the excluded general Cohen–Macaulay claim.
 
-*Needs:* §3.6; §7.5; DiamondsAndVStacksPartII §D11.20; DiamondsAndVStacksPartII §D10.12; SchemeAndStackFoundations §§0.8, 0.30 and 4.13; SchemeAndStackFoundations §1.1; gap:fpqc-normality-descent.
+*Needs:* §3.6; §3.7; §7.5; DiamondsAndVStacksPartII §D11.20; DiamondsAndVStacksPartII §D10.12; SchemeAndStackFoundations §§0.8, 0.30 and 4.13; SchemeAndStackFoundations §1.1; gap:fpqc-normality-descent.
 
 ### 7.7 Good embeddings for acceptable Hodge data
 
 For p>2, an acceptable Hodge-type datum, p∤|π₁(G^der)|, and an R-smooth centralizer of a maximal breve-F-split torus, there is a good integral Hodge embedding 𝒢̃↪GL(Λ) into a single lattice, where 𝒢̃ is a stabilizer group scheme whose neutral component is the given parahoric 𝒢; the point may be moved within its facet and the representation replaced as in KZ Proposition 3.1.9. The construction may use a finite extension K/F that is not tame. The R-smooth centralizer and prime-to-p assumptions are retained. The closed-immersion assertion uses the wild admissible-locus closedness contract in Exact supplier contracts: normalization of the image alone does not establish goodness. (KZ, Proposition 3.1.9 and Lemma 3.1.10, pp. 19–20; KZ line 874).
 
-One proof proceeds as follows. Use the R-smooth full-fixer embedding contract gap:r-smooth-full-fixer-embeddings. Pass to a field K over which G splits, obtain a good embedding of the Weil-restricted datum by the power-lattice embedding theorem, and restrict scalars. Use normal full faithfulness first to obtain the finite scheme map and its identification with the normalization of the schematic image; reserve the closed-immersion conclusion for the next step. Apply gap:wild-admissible-closedness to the canonical deperfected special fibres. For this finite map, the generic-fibre closed immersion makes the cokernel of the local ring map vanish after inverting π_E, and special-fibre surjectivity makes it vanish modulo π_E; Nakayama at special points gives surjectivity everywhere. Compose the resulting closed immersion with the good embedding of the Weil-restricted split datum.
+One proof proceeds as follows. Use the R-smooth full-fixer embedding contract gap:r-smooth-full-fixer-embeddings. Pass to a field K over which G splits, obtain a good embedding of the Weil-restricted datum by the power-lattice embedding theorem, and restrict scalars. Apply §3.2 to the normal model of §7.6 to obtain the finite scheme map and its identification with the normalization of the schematic image; reserve the closed-immersion conclusion for the next step. Apply gap:wild-admissible-closedness to the canonical deperfected special fibres. For this finite map, the generic-fibre closed immersion makes the cokernel of the local ring map vanish after inverting π_E, and special-fibre surjectivity makes it vanish modulo π_E; Nakayama at special points gives surjectivity everywhere. Compose the resulting closed immersion with the good embedding of the Weil-restricted split datum.
 
 No p≥5 restriction is introduced, and no R-smoothness assumption is discarded. A finite universal homeomorphism onto the image need not be a closed immersion: the finite map to the Grassmannian is a closed immersion exactly when its schematic image is normal. Here the map has already been identified with the normalization of that image (§3.2; FHLR Lemma 5.27, p. 34, FHLR line 1540).
 
@@ -1091,7 +1130,7 @@ No p≥5 restriction is introduced, and no R-smoothness assumption is discarded.
 
 Assume p>2, the acceptable KZ Hodge datum, a good integral Hodge embedding with full fixer equal to its connected parahoric, and use the KZ inverse-cocharacter convention. For each g∈G(˘F), the class of ρ(g) in GL(˘F)/GL(O_˘F) belongs to the embedded geometric special model if and only if the parahoric double coset of g is μ-admissible. When π_FΛ⊂π_Fρ(g)Λ⊂Λ, its Grassmannian representative is π_Fρ(g)Λ/π_FΛ. For arbitrary g outside these lattice bounds, Grassmannian membership is false; one must not take an undefined reduction as a Grassmannian point. Under our weight-one convention transport μ by inversion and use the corresponding opposite flag. (KZ, Proposition 3.1.14, pp. 21–22; KZ line 948).
 
-One proof proceeds as follows. Use the good closed embedding to test special-fibre membership in the ordinary Grassmannian. Compare the geometric lattice-point diagram with the Witt and companion admissible loci. Use equality of full and connected fixers to identify precisely the same double cosets on both sides.
+One proof proceeds as follows. Use the good closed embedding to test special-fibre membership in the ordinary Grassmannian. Compare the geometric lattice-point diagram with the Witt and companion admissible loci through the minuscule comparison of §3.4. Use equality of full and connected fixers to identify precisely the same double cosets on both sides.
 
 Removing the connected-fixer hypothesis changes the orbit indexing and requires a different statement.
 
@@ -1103,7 +1142,7 @@ For the zero bound, the model is Spd O_E and the geometric tube is a point: both
 
 ### Dependencies
 
-DiamondsAndVStacksPartII §D11.5; DiamondsAndVStacksPartII D11; gap:general-tube-cohomology; gap:schubert-geometric-unibranchness; gap:central-nearby-cycles-algebraicity; GeometricSatakeAndFusion GS0, “Bounded admissible affine flag loci”; ReductiveGroupsPartII RG2.1; ReductiveGroupsPartII RG2.4; SchemeAndStackFoundations §§0.17–0.18; gap:s2ification-connectedness; gap:algebraic-coherence; gap:central-nearby-cycles-perversity; gap:extremal-wakimoto-filtration; gap:wakimoto-constant-term-multiplicities; gap:algebraic-loop-representability; EtaleDualityAndPerverseSheaves §§2.1–2.3, 2.6–2.10; gap:connected-fibre-tube-transfer; GeometricSatakeAndFusion GS0, “Equal-characteristic Schubert models and coefficient comparison”; GeometricSatakeAndFusion GS0, “Relative-position flag correspondences”; gap:algebraic-demazure-fibres; DiamondsAndVStacksPartII §D11.20; DiamondsAndVStacksPartII §D10.12; SchemeAndStackFoundations §§0.8, 0.30 and 4.13; SchemeAndStackFoundations §1.1; gap:fpqc-normality-descent; ReductiveGroupsPartII RG2.3; DiamondsAndVStacksPartII §D10.15; gap:r-smooth-full-fixer-embeddings; gap:wild-admissible-closedness. The internal section references above give the additional ordering within this layer.
+DiamondsAndVStacksPartII §D11.5; DiamondsAndVStacksPartII D11; gap:general-tube-cohomology; gap:schubert-geometric-unibranchness; gap:central-nearby-cycles-algebraicity; GeometricSatakeAndFusion GS0, “Bounded admissible affine flag loci”; ReductiveGroupsPartII RG2.1; ReductiveGroupsPartII RG2.4; SchemeAndStackFoundations §§0.17–0.18; gap:s2ification-connectedness; gap:algebraic-admissible-cohen-macaulay; gap:central-nearby-cycles-perversity; gap:extremal-wakimoto-filtration; gap:wakimoto-constant-term-multiplicities; gap:algebraic-loop-representability; EtaleDualityAndPerverseSheaves §§2.1–2.3, 2.6–2.10; gap:connected-fibre-tube-transfer; GeometricSatakeAndFusion GS0, “Equal-characteristic Schubert models and coefficient comparison”; GeometricSatakeAndFusion GS0, “Relative-position flag correspondences”; gap:algebraic-demazure-fibres; DiamondsAndVStacksPartII §D11.20; DiamondsAndVStacksPartII §D10.12; SchemeAndStackFoundations §§0.8, 0.30 and 4.13; SchemeAndStackFoundations §1.1; gap:fpqc-normality-descent; ReductiveGroupsPartII RG2.3; DiamondsAndVStacksPartII §D10.15; gap:r-smooth-full-fixer-embeddings; gap:wild-admissible-closedness. The internal section references above give the additional ordering within this layer.
 
 ## Layer 8: nearby cycles and central test functions
 
@@ -1127,7 +1166,7 @@ One proof of the monodromy assertion passes to a splitting extension and Iwahori
 
 For a finite unramified extension E_r/E, put q=|k_(E_r)|, let F_r/F be the maximal unramified subextension of E_r/F in the fixed algebraic closure, and put P_r=𝒢(O_(F_r)). Choose coefficients containing q^(1/2), and extend them to Q̄_ℓ when parametrizing irreducible representations. Define τ_q(x)=Σ_i(−1)^i Tr^ss(Fr_q,H^i(RΨIC_μ)_x), extended by zero from the admissible locus to G(F_r)/P_r. This is a compactly supported P_r-bi-invariant function with vol(P_r)=1. Semisimple trace means the sum of Frobenius traces on inertia invariants of admissible graded pieces, as in LefschetzPencilsAndVanishingCycles §1.10; it is independent of the filtration. For minuscule μ also define the unshifted constant-sheaf function φ_q, so τ_q=(−1)^d q^(−d/2)φ_q (AGLR §1.1, pp. 3–5, AGLR line 121; Lemmas 8.1–8.2, p. 52, AGLR line 2940; PZ §9.d.1–9.d.2, pp. 74–75 (v4), PZ line 3064; KP (4.7.7) in §4.7.4 and §4.7.8, p. 213, KP line 3722).
 
-One proof applies the imported additive semisimple trace to the constructible equivariant nearby cycles. The finite admissible bound gives finite double-coset support. Proper pushforward becomes the finite-fibre sum with Frobenius action on the fibre cohomology. For minuscule bounds, the scheme comparison and the IC shift and twist give the formula for φ_q. In the tame companion range, transport the function along the companion double-coset identification of PZ §9.d; the mixed-characteristic definition does not require that range.
+One proof applies the imported additive semisimple trace to the constructible equivariant nearby cycles. The finite admissible bound gives finite double-coset support. Proper pushforward becomes the finite-fibre sum with Frobenius action on the fibre cohomology. For minuscule bounds, the scheme comparison and the IC shift and twist give the formula for φ_q. In the tame companion range with minuscule μ, transport the function along the companion double-coset identification of PZ §9.d and the minuscule comparison of §3.4; the mixed-characteristic definition does not require that range.
 
 The construction has the following properties:
 
@@ -1142,7 +1181,7 @@ The construction has the following properties:
 - For the hyperspecial GL₂ line model, φ_q=1 on its support and d=1 gives τ_q=−q^(−1/2).
 - A two-dimensional nontrivial unipotent inertia block with Frobenius eigenvalues q^(−1),1 and N(e₂)=e₁ has semisimple trace 1+q^(−1), whereas raw inertia invariants have trace q^(−1).
 
-*Needs:* §8.1; GeometricSatakeAndFusion GS0, “Bounded admissible affine flag loci”; LefschetzPencilsAndVanishingCycles §1.10, `VanishingCycles.semisimpleTrace`, `VanishingCycles.semisimpleTrace_refinement`, `VanishingCycles.semisimpleTrace_additive`; gap:semisimple-proper-pushforward; SmoothRepresentationsOfLocalGroups SR.1; §3.4 (tame companion interpretation); gap:companion-hecke-comparison (tame companion interpretation).
+*Needs:* §8.1; GeometricSatakeAndFusion GS0, “Bounded admissible affine flag loci”; LefschetzPencilsAndVanishingCycles §1.10, `VanishingCycles.semisimpleTrace`, `VanishingCycles.semisimpleTrace_refinement`, `VanishingCycles.semisimpleTrace_additive`; gap:semisimple-proper-pushforward; SmoothRepresentationsOfLocalGroups SR.1; §3.4 (tame companion interpretation, minuscule μ); gap:companion-hecke-comparison (tame companion interpretation).
 
 ### 8.3 Centrality at every parahoric level
 
@@ -1186,7 +1225,7 @@ Integral Hodge embeddings and the curve-spanning theorems supply the tensor and 
 
 ## Worked examples
 
-**The two-lattice line model.** Let Λ₀=Oe₁⊕Oe₂ and Λ₁=Oe₁⊕πOe₂. For lines [a:b] in Λ₀ and [c:d] in Λ₁, inclusion Λ₁→Λ₀ has matrix diag(1,π), and πΛ₀→Λ₁ has matrix diag(π,1). The two chain conditions are the same equation πad−bc=0. In the special fibre this is bc=0, the union of two projective lines meeting at ([1:0],[0:1]). On the chart ac≠0 the generic fibre has d/c=b/(πa) and is the diagonal P¹ after the lattice identifications. On the chart a=d=1 at the intersection, the local equation is bc=π: modulo π the tangent has dimension 2, while the total space has the expected regular semistable node. Direct sum gives a rank-2 subspace in rank 4. This verifies the rank and incidence conventions of §§0.6, 2.6–2.7 and 6.1–6.4 (KP §2.3.4, p. 157; KP line 1523; SW Definitions 21.6.1 and 21.6.8, pp. 199–201; SW line 7622 and SW line 7685).
+**The two-lattice line model.** Let Λ₀=Oe₁⊕Oe₂ and Λ₁=Oe₁⊕πOe₂. For lines [a:b] in Λ₀ and [c:d] in Λ₁, inclusion Λ₁→Λ₀ has matrix diag(1,π), and πΛ₀→Λ₁ has matrix diag(π,1). The two chain conditions are the same equation πad−bc=0. In the special fibre this is bc=0, the union of two projective lines meeting at ([1:0],[0:1]). On the chart ac≠0 the generic fibre has d/c=b/(πa) and is the diagonal P¹ after the lattice identifications. On the chart a=d=1 at the intersection, the local equation is bc=π: modulo π the tangent has dimension 2, while the total space has the expected regular semistable node. Direct sum gives a rank-2 subspace in rank 4. This verifies the rank and incidence conventions of §§0.6, 2.5, 2.7 and 6.1–6.4 (KP §2.3.4, p. 157; KP line 1523; SW Definitions 21.6.1 and 21.6.8, pp. 199–201; SW line 7622 and SW line 7685).
 
 **A curve-span obstruction on a reduced surface.** In k[x,y,z]/(x²+xyz), the two minimal primes are (x) and (x+yz), so the origin is not normal. Substituting a pointed formal curve (f,g,h) gives f(f+gh)=0 in the domain k[[a]]. Hence f=0 or f=−gh; because g,h vanish at 0, the coefficient of a in f is 0. The y and z axes give the other two coordinate vectors. Thus the full tangent is k³, the derivative span is the plane x=0 and its dimension is 2. The tangent cone is x²=0 and its reduction is the same plane. No assertion that this surface is a local-model fibre is needed (KPZ Remark 4.1.5, p. 31; KPZ line 1350).
 

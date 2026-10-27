@@ -3940,7 +3940,7 @@
   "gaps": [
   {
     "slug": "algebraic-compatible-schubert-splitting",
-    "needs": "For split SL_n and Sp_(2n) over an algebraically closed field of positive characteristic, supply Frobenius splittings of finite affine Schubert bounds compatible with every Schubert subvariety, so scheme-theoretic intersections of finite Schubert unions in a common bound are reduced.",
+    "needs": "For split SL_n and Sp_(2n) over an algebraically closed field of positive characteristic, supply Frobenius splittings of finite affine Schubert bounds compatible with every Schubert subvariety, so scheme-theoretic intersections of finite Schubert unions in a common bound are reduced. This is the affine-flag extension of GS0 “Equal-characteristic Schubert models and coefficient comparison” used in §2.5 (GORGL Corollary 3.4.4, p. 19, GORGL line 643; GORSP Theorem 3.3, p. 9, GORSP line 352).",
     "supplier": "GeometricSatakeAndFusion",
     "section": "GS0, Equal-characteristic Schubert models and coefficient comparison (affine-flag extension)"
   },
@@ -3952,7 +3952,7 @@
   },
   {
     "slug": "trait-normality",
-    "needs": "For a noetherian scheme flat over a DVR with normal generic fibre and geometrically reduced special fibre, give the normality criterion used in §§0.5 and 1.3.",
+    "needs": "For a noetherian scheme flat over a DVR with normal generic fibre and geometrically reduced special fibre, give the normality criterion used in §§0.5, 1.3 and 6.5.",
     "supplier": "SchemeAndStackFoundations",
     "section": "§§0.8, 0.30 and 4.13"
   },
@@ -3982,7 +3982,7 @@
   },
   {
     "slug": "stable-weyl-lattices",
-    "needs": "Give uniqueness of stable minuscule Weyl lattices up to the representation centralizer, including repeated isotypic factors, for §§2.2 and 3.3.",
+    "needs": "For a split reductive Z_p-group H₀, a DVR R over Z_p with characteristic-zero fraction field L and a finite-dimensional minuscule representation V of H₀ over L, prove that any two full R-lattices in V to which the representation extends as group-scheme homomorphisms from H₀ over R are conjugate by the centralizer of the image of H₀ over L in GL(V), allowing repeated highest weights, for §§2.2 and 3.3 (KPZ Lemma 3.3.10, p. 22; KPZ line 977).",
     "supplier": "ReductiveGroupsPartII",
     "section": "RG2.1–RG2.3; integral-representation extension"
   },
@@ -3994,19 +3994,19 @@
   },
   {
     "slug": "symplectic-toral-factorization",
-    "needs": "Give the symplectic factorization of toral building embeddings, retaining division-centralizer multiplicities and each summand’s building translation, for §2.5.",
+    "needs": "Give the symplectic factorization of toral building embeddings, retaining division-centralizer multiplicities and each summand’s building translation, for §2.6.",
     "supplier": "ReductiveGroupsPartII",
     "section": "RG2.2; integral-representation extension"
   },
   {
     "slug": "polynomial-representation-descent",
-    "needs": "Give polynomial lifts of the toral integral representations with specialization to the prescribed lattice chains and equivariant descent for §§2.4–2.5 and 3.3.",
+    "needs": "Give polynomial lifts of the toral integral representations with specialization to the prescribed lattice chains and equivariant descent for §§2.4, 2.6 and 3.3.",
     "supplier": "ReductiveGroupsPartII",
     "section": "RG2.3; integral-representation extension"
   },
   {
     "slug": "polynomial-parahoric-lifts",
-    "needs": "Give the polynomial parahoric lifts for the Weil-restricted tame factors and their central, fixed-point and divisor-specialization comparisons used by §§1.1–2.5 and the Iwahori comparison of §3.6.",
+    "needs": "Give the polynomial parahoric lifts for the Weil-restricted tame factors and their central, fixed-point and divisor-specialization comparisons used by §§1.1–2.4 and 2.6 and the Iwahori comparison of §3.6.",
     "supplier": "ReductiveGroupsPartII",
     "section": "RG2.1–RG2.3"
   },
@@ -4072,7 +4072,7 @@
   },
   {
     "slug": "algebraic-coherence",
-    "needs": "In GS0’s algebraic Schubert prefix, prove two statements. (i) Coherence: for G=∏Res_(K_i/F)H_i with each H_i tamely split, any parahoric level, any dominant geometric cocharacter class μ and p∤|π₁(G^der)|, for n≫0 the dimension of global sections of the n-th power of the ample determinant line bundle on the reduced μ-admissible Schubert union in the companion affine flag over k((u)) equals that on the generic Schubert bound Gr_≤μ, so the special fibre of the polynomial closure of §1.2 is that reduced union (PZ (8.19), PZ line 2659; LEV Theorem 4.3.2, p. 29, LEV line 1243, and LEV line 1389). (ii) Cohen–Macaulay admissible loci: for a split group over k((t)) with simply connected derived group, Iwahori level and any dominant μ, the equal-characteristic local model is normal with Frobenius-split reduced special fibre, and that special fibre, the μ-admissible union, is Cohen–Macaulay, hence S₂ (GL Theorem 2.1, p. 4, GL line 149; GL Corollary 3.5, p. 7, GL line 288–297).",
+    "needs": "In GS0’s algebraic Schubert prefix, for G=∏Res_(K_i/F)H_i with each H_i tamely split, any parahoric level, any dominant geometric cocharacter class μ and p∤|π₁(G^der)|, prove that for n≫0 the dimension of global sections of the n-th power of the ample determinant line bundle on the reduced μ-admissible Schubert union in the companion affine flag over k((u)) equals that on the generic Schubert bound Gr_≤μ, so the special fibre of the polynomial closure of §1.2 is that reduced union (PZ (8.19), PZ line 2659; LEV Theorem 4.3.2, p. 29, LEV line 1243, and LEV line 1389).",
     "supplier": "GeometricSatakeAndFusion",
     "section": "GS0, algebraic Schubert prefix"
   },
@@ -4189,6 +4189,18 @@
     "needs": "In GS0’s Witt affine flags, for every connected reductive G over a p-adic field, every parahoric level and every residue characteristic, prove that every Schubert perfect variety of the partial affine flag variety over the algebraically closed residue field is normal with perfectly smooth dense open orbit, so that every finite-type deperfection of it, and every irreducible component of a Bruhat-union Schubert scheme, is geometrically unibranch even when it is not normal; and deduce, through the Witt Grassmannian of the split form, that the generic Schubert bound Gr_≤μ over C has lowest IC cohomology sheaf H^(−〈2ρ,μ〉)(IC_μ)=F_ℓ (AGLR Proposition 3.7, p. 21, AGLR line 1222; GL Lemma 5.1, p. 10, GL line 420, and Lemma 5.4, pp. 10–11, GL line 459; HLR Theorem 1.1, p. 2, HLR line 69, and Proposition 3.4, p. 11, HLR line 526).",
     "supplier": "GeometricSatakeAndFusion",
     "section": "GS0, Witt affine flags and components"
+  },
+  {
+    "slug": "algebraic-admissible-cohen-macaulay",
+    "needs": "In GS0’s algebraic Schubert prefix, for a split group over k((t)) with simply connected derived group, Iwahori level and any dominant μ, prove that the equal-characteristic local model is normal with Frobenius-split reduced special fibre, and that this special fibre, the μ-admissible union, is Cohen–Macaulay, hence S₂ (GL Theorem 2.1, p. 4, GL line 149; GL Corollary 3.5, p. 7, GL line 288–297).",
+    "supplier": "GeometricSatakeAndFusion",
+    "section": "GS0, algebraic Schubert prefix"
+  },
+  {
+    "slug": "generic-algebraic-schubert-normality",
+    "needs": "In GS0’s algebraic Schubert prefix, for every connected reductive group over a characteristic-zero field and every geometric dominant bound μ defined over its reflex field, prove geometric normality of the algebraic affine Schubert bound Gr_≤μ, used as the normal generic fibre in §1.3 (PR Theorem 8.4, p. 38, PR line 1419; LEV line 1029).",
+    "supplier": "GeometricSatakeAndFusion",
+    "section": "GS0, algebraic Schubert prefix"
   }
 ],
   "sourceIssues": [
