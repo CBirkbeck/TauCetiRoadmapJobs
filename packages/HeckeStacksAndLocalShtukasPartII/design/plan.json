@@ -3676,7 +3676,7 @@
     },
     {
       "slug": "finite-coxeter-basic-class",
-      "needs": "For an irreducible extended affine root datum, τ∈Ω, a σ-Coxeter element w∈W₀ and μ∈P∨ with κ(t^μ)=κ(τ), reduction of t^μw reaches a minimal cτ with J a maximal proper Ad(τ)σ-stable affine-simple subset, W_J finite and c∈W_J an Ad(τ)σ-twisted Coxeter element, where (J,c) may depend on (μ,w) (he14, Proposition 11.7, pp. 400–401).",
+      "needs": "For a semisimple extended affine root datum whose irreducible components are permuted transitively by the based σ (the datum of an F-simple adjoint quasi-split group), τ∈Ω, a σ-Coxeter element w∈W₀ and μ∈P∨ with κ(t^μ)=κ(τ), reduction of t^μw reaches a minimal cτ with J a maximal proper Ad(τ)σ-stable affine-simple subset, W_J finite and c∈W_J an Ad(τ)σ-twisted Coxeter element, where (J,c) may depend on (μ,w); this includes the reduction from a transitive σ-orbit of d irreducible components to one component with σ^d (he14, Proposition 11.7, pp. 400–401, stated for simple G).",
       "supplier": "RootSystemsPartII",
       "section": "RS2.1 (required affine-combinatorics extension)"
     },
@@ -3718,7 +3718,7 @@
     },
     {
       "slug": "levi-intersection-dimension",
-      "needs": "The general-Levi bound d(μ,μ_M) ≤ 〈ρ,μ+μ_M〉 − 〈2ρ_M,μ_M〉 and equality at M-maximal positions on compatible perfect models.",
+      "needs": "For an unramified reductive O_F-model, a standard Levi M, dominant μ and μ_M∈S_M(μ), put Σ(μ)={λ∈X_*(T): dom_G(λ)≤_ℤμ} and let Σ(μ)^(M-max) be the set of maximal elements of Σ(μ)∩X_*(T)^(M-dom) for the integral M-coroot order ≤_M; then d(μ,μ_M) ≤ 〈ρ,μ+μ_M〉 − 〈2ρ_M,μ_M〉, with equality when μ_M∈Σ(μ)^(M-max), on compatible classical and perfect models (ham15, Definition 2.5(3), Lemmas 2.6 and 2.8, arXiv v2, PDF pp. 4–5).",
       "supplier": "GeometricSatakeAndFusion",
       "section": "GS1, semi-infinite-affineness"
     },
