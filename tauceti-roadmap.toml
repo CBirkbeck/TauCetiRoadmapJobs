@@ -69,6 +69,11 @@ merge_order_file = "merge-order/ORDER.txt"
 # Label the port lane puts on every pull request it opens; the merge-order chain and the red-team
 # lanes find their pull requests by it.
 pr_label = "roadmap-worker"
+# Authors whose roadmap pull requests the project has taken over (with their agreement): their gate
+# rounds are assigned to the custodian, who pushes repairs onto their branches and answers the reviews
+# in their place. Their pull requests are marked like worker ports (the label above and the body marker).
+adopted_authors = ["kim-em"]
+custodian = "CBirkbeck"
 # Open the final pull request as a draft (today's rule). A human marks it ready, unless
 # redteam.ready_after says otherwise.
 open_as_draft = true
