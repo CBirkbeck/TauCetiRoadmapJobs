@@ -331,3 +331,4 @@ TopologicalMirrorSymmetryForHitchinSystems
 TwistedAutomorphicDescents
 SpectralManifolds
 AutomorphicSpectralTheoryPartII
+QuantumEnvelopingAlgebras
