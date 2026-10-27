@@ -41,6 +41,7 @@ KTheoryLowDegrees
 K2SymbolsBrauer
 PolylogarithmFunctions
 ComplexComparisonPartII
+FormalConnectionsOpers
 EtaleHomotopyTypes
 AlgebraicModuliForArithmeticGeometryPartII
 K3SurfacesAndSymplecticBoundedness
