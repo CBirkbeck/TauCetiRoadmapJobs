@@ -75,7 +75,7 @@ cited_for = ["Layers 0–6"]
 
 [[source]]
 id = "poonen-stoll"
-version_note = "MIT author-hosted text, 32 PDF pages; use its Theorem 5, Corollaries 6–9 and internal pages 10–12, not journal pagination."
+version_note = "MIT author-hosted text, 32 PDF pages; use its Theorems 5 and 8, Corollaries 6–7 and 9 and internal pages 10–12, not journal pagination."
 arxiv = "math/9911267"
 authors = "Bjorn Poonen and Michael Stoll"
 title = "The Cassels–Tate pairing on polarized abelian varieties"
