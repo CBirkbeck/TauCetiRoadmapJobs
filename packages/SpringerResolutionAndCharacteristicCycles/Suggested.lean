@@ -20,7 +20,7 @@ definitions on native carriers:
 - Finite holonomic length and intermediate extension (README §9.5–9.6) lacks the holonomic heart and its normalized image-extension functor.
 - Beilinson–Bernstein and equivariant principal-block equivalences (README §10.1–10.4) lacks the differential-operator sheaf, localisation functors and strict principal category O.
 - Verma cycles, simple triangularity and three integral bases (README §11.1–11.4) lacks the localised Verma/simple D-modules and the Springer component cycles.
-- Parabolic invariance of simple cycles (README §12.2) lacks the highest-weight parabolic and its action on the ambient incidence schemes.
+- Partial-flag saturation of simple cycles (README §12.2) lacks the double flag scheme with its parabolic quotient G/P_w, the highest-weight parabolic and the Steinberg components carrying the simple cycles.
 - Formal detection of the Cartan graph (README §13.3) lacks the incidence component, Cartan graph and induced morphism of completed local schemes.
 - Zero-operator tangent bound and smoothness criterion (README §13.4–13.5) lacks the actual incidence and Bruhat-closure tangent spaces.
 - Completion of module cycles and the completed KL identity (README §14.2–14.4) lacks the Springer zero-fibre sheaves, component coefficients and their completed local schemes.
