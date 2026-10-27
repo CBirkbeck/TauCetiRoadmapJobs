@@ -46,8 +46,8 @@ namespace TauCetiRoadmap.AutomorphicBundlesPartII
 
 /-! ## Layer 1: integral coefficients and coherent duality -/
 
-/-- The quotient O/(ϖ^n); the duality theorem requires O a complete DVR,
-ϖ irreducible and n positive. -/
+/-- The quotient O/(ϖ^n). The duality theorem below is stated for a DVR O, an
+irreducible ϖ and every n; at n = 0 the quotient is the zero ring. -/
 abbrev dvrCoefficientRing (O : Type u) [CommRing O] (ϖ : O) (n : ℕ) :=
   O ⧸ Ideal.span ({ϖ ^ n} : Set O)
 
@@ -58,16 +58,17 @@ noncomputable def integerCoherentCohomology (R : Type u) [CommRing R]
   if 0 ≤ i then ModuleCat.of R (TauCeti.AlgebraicGeometry.Scheme.Modules.Cohomology F i.toNat)
   else ModuleCat.of R (ULift.{u} PUnit)
 
-/-- For a smooth proper scheme of pure relative dimension d over O/(ϖ^n),
+/-- For a DVR O, an irreducible ϖ and a smooth proper scheme of pure relative
+dimension d over O/(ϖ^n),
 the coefficient-ring dual of H^i(Hom(F, det Ω)) is H^(d-i)(F), for a finite
 locally free coefficient F and every integer i. The quotient is Artinian
 Gorenstein; its chosen uniformizer identifies this dual with O-linear Matlis
-duality. This is the finite-coefficient duality of README §1.6
+duality. Completeness of O is not needed (O/(ϖ^n) is unchanged by completion),
+and at n = 0 both sides vanish over the zero ring. This is the finite-coefficient duality of README §1.6
 (CG18 §7.2, pp. 395–396, 399–400), not a trace isomorphism RΓ(ω)[d] ≃ A. -/
 theorem finiteCoefficientSerreDuality
     (O : Type u) [CommRing O] [IsDomain O] [IsDiscreteValuationRing O]
-    [IsAdicComplete (IsLocalRing.maximalIdeal O) O]
-    (ϖ : O) (hϖ : Irreducible ϖ) (n : ℕ) (hn : 0 < n)
+    (ϖ : O) (hϖ : Irreducible ϖ) (n : ℕ)
     (X : Scheme.{u}) [X.Over (Spec (.of (dvrCoefficientRing O ϖ n)))]
     (d : ℕ) [SmoothOfRelativeDimension d (X ↘ Spec (.of (dvrCoefficientRing O ϖ n)))]
     [IsProper (X ↘ Spec (.of (dvrCoefficientRing O ϖ n)))]
