@@ -1,6 +1,6 @@
 # Roadmap: diamonds and v-stacks, part II — integral recovery and kimberlite specialization
 
-**Summary.** This Part II develops the integral geometry of diamonds after DiamondsAndVStacks Layer D6: invariance under analytic universal homeomorphisms, full faithfulness on perfect schemes and perfect discrete sources, the olivine spectrum, reduction of v-sheaves, formal adicness, specializing v-sheaves and étale formal neighbourhoods. It recovers flat normal formal schemes locally formally of finite type, and proper flat normal schemes over a complete mixed-characteristic discrete valuation ring, from their v-sheaves; identifies flat Zariski closures with v-closures; and develops kimberlites, tubes and specialization of connected components. The last layer proves the quotient theorem for rich smelted kimberlites, the unrestricted component bijection, with the closed-specialization case as an intermediate theorem, and the specialization principle for π-adic kimberlites. The general analytic invariance theorem consumes the residue-field separation contract below; the normality criterion using connected tubes assumes algebraically closed residue field. Algebraic closedness is part of the normality statement (SW20 Propositions 10.2.1, 18.3.1, 18.4.1 and Theorem 18.4.2; GLE Theorem 2.32, Theorem 4.27 and Lemmas 4.53, 4.55; AGLR Theorem 2.37, with the correction to Proposition 2.39 in §D11.20).
+**Summary.** This Part II develops the integral geometry of diamonds after DiamondsAndVStacks Layer D6: invariance under analytic universal homeomorphisms, full faithfulness on perfect schemes and perfect discrete sources, the olivine spectrum, reduction of v-sheaves, formal adicness, specializing v-sheaves and étale formal neighbourhoods. It recovers flat normal formal schemes locally formally of finite type, and proper flat normal schemes over a complete mixed-characteristic discrete valuation ring, from their v-sheaves; identifies flat Zariski closures with v-closures; and develops kimberlites, tubes and specialization of connected components. The last layer proves the quotient theorem for rich smelted kimberlites, the component bijection under a closed-specialization hypothesis, and the specialization principle for π-adic kimberlites. The general analytic invariance theorem consumes the residue-field separation contract below; the normality criterion using connected tubes assumes algebraically closed residue field. Algebraic closedness is part of the normality statement (SW20 Propositions 10.2.1, 18.3.1, 18.4.1 and Theorem 18.4.2; GLE Theorem 2.32, Theorem 4.27 and Lemmas 4.53, 4.55; AGLR Theorem 2.37, with the correction to Proposition 2.39 in §D11.20).
 
 ## Scope and ownership
 
@@ -24,6 +24,8 @@ A formal Huber pair is (A, A), complete for an ideal-adic topology with a finite
 
 E is a complete discretely valued extension of ℚ_p, with ring O_E, uniformizer π and perfect residue field k. Equivalently, the π-adic layer allows any complete DVR O flat over ℤ_p with perfect residue field of characteristic p; F is its fraction field. The maps π ↦ π and 1 ↦ 1 fix the valuation normalization. “Locally formally of finite type” means locally a quotient of O_E[[q₁,…,qₙ]]⟨T₁,…,Tₘ⟩ with the (π,q₁,…,qₙ)-adic topology, allowing continuous non-adic structure maps. “Topologically of finite type” uses the π-adic topology and no formal variables qᵢ. Thus Spf O_E[[q]] has relative generic fibre the open disc, while its analytic locus also has characteristic-p points. Normality of a ring does not silently imply that the ring is a domain; complete local normal rings in D11.15 are domains. The normality test D11.20 explicitly assumes a domain.
 
+FS_O denotes AdicSpacesPartIII R2.9's `FormalScheme.FSC` with C = O_E: the full category over Spf O_E of locally noetherian adic formal schemes whose reduction is locally of finite type over k (de Jong's category, DJ95 Definition 7.0.1; DJ95 line 2427). Every formal scheme locally formally of finite type in the sense above is an object of FS_O, and its structure map need not be adic: Spf O_E[[q]] with the (π,q)-adic topology is one. "The standing FS convention" below refers to this paragraph.
+
 For X over Spd O, X_η = X ×_(Spd O) Spd F and X_s = X ×_(Spd O) Spd k. The specialization-triple theorem D11.18 uses the completed maximal unramified extension F̆ and its ring Ŏ; morphisms of triples commute with specialization after that base change. Connected means nonempty and preconnected; the empty space is preconnected. Empty tubes never establish connectedness at a closed point. A point y specializes to x when x lies in the closure of {y}; for Spec O the direction is (0) → (π). A closed-specialization assumption quantifies over all points of the reduction.
 
 **Checks.**
@@ -39,7 +41,7 @@ For X over Spd O, X_η = X ×_(Spd O) Spd F and X_s = X ×_(Spd O) Spd k. The sp
 
 Use the pinned `AlgebraicGeometry.Scheme` in `Mathlib/AlgebraicGeometry/Scheme.lean`, `PrimeSpectrum` in `Mathlib/RingTheory/Spectrum/Prime/Defs.lean`, its Zariski topology in `Mathlib/RingTheory/Spectrum/Prime/Topology.lean`, and `PrimeSpectrum.zeroLocus` in `Mathlib/RingTheory/Spectrum/Prime/Basic.lean`. Prime ideals are proper, so Spec 0 is empty. Use `PerfectRing` in `Mathlib/FieldTheory/Perfect.lean` together with characteristic p and primality of p; the class alone only asserts bijectivity of the specified power map. Use `PerfectClosure` in `Mathlib/FieldTheory/PerfectClosure.lean` for the colimit along Frobenius, not the inverse-limit construction called perfection elsewhere.
 
-Use `Valuation` in `Mathlib/RingTheory/Valuation/Basic.lean`, `Valuation.integer`, `Valuation.ltIdeal` and `Valuation.mem_ltIdeal_iff` in `Mathlib/RingTheory/Valuation/Integers.lean`; the last ideal is on the valuation's integer subring. For a merely bounded subring take its comap. Use `ValuationSubring.valuation_lt_one_iff` in `Mathlib/RingTheory/Valuation/ValuationSubring.lean` for the maximal ideal of a valuation subring. A bounded unit has value one; strict inequality singles out nonunits. `IsIntegrallyClosed` in `Mathlib/RingTheory/IntegralClosure/IntegrallyClosed.lean` refers to the general fraction ring and is combined with domain hypotheses where needed. `AlgebraicGeometry.Scheme.Pullback.exists_preimage_pullback` in `Mathlib/AlgebraicGeometry/PullbackCarrier.lean` gives, for x ∈ X and y ∈ Y with the same image in S, a point of X ×_S Y over both; D7.6 uses it to descend underlying maps along v-covers.
+Use `Valuation` in `Mathlib/RingTheory/Valuation/Basic.lean`, `Valuation.integer`, `Valuation.ltIdeal` and `Valuation.mem_ltIdeal_iff` in `Mathlib/RingTheory/Valuation/Integers.lean`; the last ideal is on the valuation's integer subring. For a merely bounded subring take its comap. Use `ValuationSubring.valuation_lt_one_iff` in `Mathlib/RingTheory/Valuation/ValuationSubring.lean` for the maximal ideal of a valuation subring. A bounded unit has value one; strict inequality singles out nonunits. `IsIntegrallyClosed` in `Mathlib/RingTheory/IntegralClosure/IntegrallyClosed.lean` refers to the general fraction ring and is combined with domain hypotheses where needed. `AlgebraicGeometry.Scheme.Pullback.exists_preimage_pullback` in `Mathlib/AlgebraicGeometry/PullbackCarrier.lean` gives, for x ∈ X and y ∈ Y with the same image in S, a point of X ×_S Y over both; D7.6 uses it to descend underlying maps along v-covers. `AlgebraicGeometry.ext_of_isDominant_of_isSeparated` in `Mathlib/AlgebraicGeometry/Morphisms/Separated.lean` says that two maps from a reduced scheme to a scheme separated over a common base, agreeing over the base and on a dominant source, are equal; D10.1 applies it to Spec R^♯ → Spec R^(♯+) (dominant since a pseudouniformizer is a nonzerodivisor of the reduced ring R^(♯+)). `Algebra.IsEffective.of_faithfullyFlat` in `Mathlib/RingTheory/TensorProduct/IncludeLeftSubRight.lean` gives, for a faithfully flat R-algebra S, exactness of R → S ⇉ S ⊗_R S (the effective-monomorphism form of faithfully flat descent); D10.11 applies it to unramified Galois extensions.
 
 Use `CategoryTheory.Adjunction` in `Mathlib/CategoryTheory/Adjunction/Basic.lean`, `CategoryTheory.IsPullback` in `Mathlib/CategoryTheory/Limits/Shapes/Pullback/IsPullback/Defs.lean`, and `CategoryTheory.Limits.PreservesLimitsOfShape` in `Mathlib/CategoryTheory/Limits/Preserves/Basic.lean`. Reduction is the right adjoint, hence preserves limits; diamondification is the left adjoint. No abstract adjunction theorem is a new target here.
 
@@ -48,6 +50,8 @@ Use `constructibleTopology` in `Mathlib/Topology/Spectral/ConstructibleTopology.
 ### From Tau Ceti
 
 Use `TauCeti.ValuationSpectrum.spa` in `TauCeti/AlgebraicGeometry/AdicSpace/Spa/Basic.lean` for continuous valuations bounded on the plus ring, and `TauCeti.ValuationSpectrum.IsAnalyticPoint` in `TauCeti/AlgebraicGeometry/AdicSpace/Spa/Analytic.lean` for non-open support. Use the pre-adic-space carriers of `TauCeti/AlgebraicGeometry/AdicSpace/PreAdicSpace/Basic.lean` and `TauCeti/AlgebraicGeometry/AdicSpace/PreAdicSpace/Sheaf.lean` through AdicSpaces and AdicSpacesPartII. These supply the ambient adic objects, not a perfectoid site or a v-sheaf category.
+
+Use the Huber pairs `TauCeti.Huber.Pair` in `TauCeti/RingTheory/Huber/Pair.lean` (a ring of integral elements on a Huber ring) and `TauCeti.Huber.IsTateRing` in `TauCeti/RingTheory/Huber/Basic.lean` (a Huber ring with a topologically nilpotent unit); D9.1 states the specialization theorem on these carriers. For a complete Hausdorff Huber pair, `TauCeti.ValuationSpectrum.exists_mem_spa_supp_eq_of_isMaximal` in `TauCeti/AlgebraicGeometry/AdicSpace/Spa/Support.lean` gives a point of Spa(A, A⁺) whose support is a prescribed maximal ideal; D10.7 uses it on complete rational localizations.
 
 For strongly noetherian complete separated Tate rings, use `TauCeti.Huber.PairOfDefinition.flat_toCompletionLoc` in `TauCeti/RingTheory/Huber/LocalizationTopology/Laurent/Flat.lean` for flat rational localization, retaining its rational-presentation and denominator-power hypotheses. The missing case with a noetherian ring of definition, including non-Tate sources and their Tate analytic charts, is gap:noetherian-definition-rational-flatness.
 
@@ -67,7 +71,6 @@ D0.1 and AdicSpacesPartII R0.19.1–R0.19.3 supply local spectrality, patch topo
 
 §1.5 supplies subcanonicity of the v-topology on qcqs perfect 𝔽_p-schemes; D7.6 extends it to arbitrary perfect schemes. §1.6 supplies right cancellation: if g ∘ f is a v-cover then g is a v-cover. §1.7 supplies the equivalence of v-covers with universally subtrusive maps, universal submersiveness of v-covers, and the adic valuation test: Spec B → Spec A is a v-cover if and only if Spa(B,B) → Spa(A,A), with discrete topologies, is surjective (GLE Lemma 3.5, GLE line 1129). §3.10 supplies, for every ring A, a v-cover Spec(∏ Vᵢ) → Spec A by absolutely integrally closed valuation domains Vᵢ of unrestricted rank, chosen of cardinality at most max(|A|, ℵ₀) through its §0.3. When A is perfect of characteristic p each Vᵢ is perfect: Frobenius is injective on a domain of characteristic p, and xᵖ − a has a root in Vᵢ (GLE Remark 3.8, GLE line 1144). §7.8 supplies arc-descent, hence v-descent, of Hom(−, Y) on perfect schemes for every qcqs perfect 𝔽_p-scheme Y, and the characterization of arc-covers of qcqs perfect 𝔽_p-schemes as universally effective epimorphisms.
 
-
 ### From TauCetiRoadmap.SchemeAndStackFoundations
 
 §0.14 supplies henselian-pair permanence and finite étale lifting; §0.21 supplies excellence, regularity of completion maps and preservation of normality; §§0.23–0.24 supplies universal homeomorphisms, unrestricted étale topological invariance and the perfection adjunction; §0.25 supplies perfectly finite type schemes. §§4.9–4.10 supply formal functions, proper-scheme existence and full faithfulness of completion on morphisms, through the formal-module adapters of AdicSpacesPartIII F0.6–F0.8. §0.26 supplies the characteristic-p weak-normality criterion and finite models with specified generic fields. The mixed-characteristic formal statements below extend that scheme interface.
@@ -82,7 +85,7 @@ What SchemeAndStackFoundations must provide (gap:absolute-weak-normality-formal)
 
 ### From TauCetiRoadmap.AdicSpacesPartII
 
-R0.6, R0.7, R0.13 supplies adic and finite maps and fibre products; R0.9 supplies K-affinoid Jacobson theory; R0.19.1–R0.19.4 supplies patch topology, proconstructible closure and quotient criteria. R1.2, “Huber's fibre product of a scheme and an adic space”, supplies relative analytification over Spa(O,O), by its noetherian-ring-of-definition case, with gluing and universal property; R1.3–R1.4 supplies field-base analytification and compatibilities; R1.7 supplies the rigid–adic comparison. The finite-morphism criterion is combined with completed residue fields from PerfectoidSpaces and AdicSpaces.
+R0.6, R0.7, R0.13 supplies adic and finite maps and fibre products; R0.9 supplies K-affinoid Jacobson theory; R1.9, *classical-points-constructible-density* (from RigidAnalyticGeometry §8.2), supplies patch density of the classical points Max A in Spa(A, A°) for a K-affinoid algebra A, used for the cJ property of D11.8; R0.19.1–R0.19.4 supplies patch topology, proconstructible closure and quotient criteria. R1.2, “Huber's fibre product of a scheme and an adic space”, supplies relative analytification over Spa(O,O), by its noetherian-ring-of-definition case, with gluing and universal property; R1.3–R1.4 supplies field-base analytification and compatibilities; R1.7 supplies the rigid–adic comparison. The finite-morphism criterion is combined with completed residue fields from PerfectoidSpaces and AdicSpaces.
 
 What AdicSpacesPartII must provide (gap:finite-residue-and-integral-stalks): In R0.13, for a finite morphism of analytic adic spaces locally of finite type over a complete nonarchimedean field K, with no residue-characteristic restriction, prove finiteness of completed residue extensions and identify the source valuation subring with the localization of the target valuation subring’s integral closure at the prime selected by the source point; for a unique prolongation this is the integral closure itself.
 
@@ -96,7 +99,7 @@ What AdicSpacesPartII must provide (gap:pseudorigid-jacobson-flatness): In R0.9 
 
 ### From TauCetiRoadmap.AdicSpacesPartIII
 
-F0.2–F0.5 supplies formal spectra, formal schemes of finite ideal type, adic morphisms and formal completions; in F0.3, `FormalScheme` has no noetherian hypothesis, and `FormalScheme.IsLocallyNoetherian` is a separate predicate. F0.6 supplies coherent formal modules and the formal-functions adapter of SchemeAndStackFoundations §4.9; F0.7–F0.8 supplies the adapters of SchemeAndStackFoundations §4.10 for existence and morphisms between given proper algebraic schemes and their completions. R2.2–R2.4 supplies admissible formal schemes, the locally noetherian formal-scheme comparison, the relative generic-fibre functor, classical specialization and tubes. R2.9 supplies the category FS and its rigid generic fibre, with its power-series open-disc example, plus étale formal-scheme lifting and site invariance. D10.2 uses these universal properties to identify the relative Huber generic fibre for the whole FS category. No algebraization of an arbitrary proper formal scheme is consumed.
+F0.2–F0.5 supplies formal spectra, formal schemes of finite ideal type, adic morphisms and formal completions; in F0.3, `FormalScheme` has no noetherian hypothesis, and `FormalScheme.IsLocallyNoetherian` is a separate predicate. F0.6 supplies coherent formal modules and the formal-functions adapter of SchemeAndStackFoundations §4.9; F0.7–F0.8 supplies the adapters of SchemeAndStackFoundations §4.10 for existence and morphisms between given proper algebraic schemes and their completions. R2.2–R2.4 supplies admissible formal schemes, the locally noetherian formal-scheme comparison, the relative generic-fibre functor, classical specialization and tubes. R2.9 supplies `FormalScheme.FSC` (FS_O for C = O_E) and its rigid generic fibre `rigOfFSC`, with its power-series open-disc example, plus étale formal-scheme lifting and site invariance. D10.2 uses these universal properties to identify the relative Huber generic fibre on all of FS_O. No algebraization of an arbitrary proper formal scheme is consumed.
 
 What AdicSpacesPartIII must provide (gap:finite-ideal-formal-schemes): Using F0.3's `FormalScheme`, for formal schemes over ℤ_p locally represented by complete separated I-adic rings A with finitely generated I containing p, without noetherian hypotheses, construct the reduction locally Spec((A/I)_red), independently of I and compatibly with open gluing, and extend R2.3's fully faithful comparison to pre-adic spaces with affine formula Spf A ↦ Spa(A,A), compatibly with open gluing and with R2.3 on locally noetherian objects (GLE Convention 1 and Proposition 4.16; GLE lines 1504 and 1514; SW13 Proposition 2.2.1, SW13 line 561).
 
@@ -187,14 +190,13 @@ The general statement uses AdicSpacesPartII R0.18 (gap:completed-residue-fields-
 
 *Proof sketch.* It suffices that for every affinoid perfectoid Y = Spa(S, S⁺) and every Y → X' (with Y the untilt) there is a unique factorization through f. The underlying map |Y| → |X'| = |X| is given; one needs a map of sheaves |f|\*O_X → O_Y compatible with the plus subsheaves. By D7/plus-sheaf-mod-p-comparison, O⁺_X/p^n = `O⁺_(X')`/p^n, giving maps |f|\*O⁺_X/p^n → O⁺_Y/p^n for all n. Passing to the limit and using that Y is perfectoid, so O⁺_Y = lim O⁺_Y/p^n (H^i(Y, O⁺_Y/ϖ^n) is almost S⁺/ϖ^n for i = 0 and almost zero for i > 0), gives the unique factorization; inverting p gives the map on O. Uniqueness and the sheaf property make f^♦ bijective on all test objects.
 
-For example, The normalization A¹ → {y² = x³} of the cuspidal cubic over ℚ_p induces an isomorphism of diamonds although it is not an isomorphism of rigid spaces (SW20 §10.2). Compatibility: for X^sn → X the seminormalization of a rigid space over K ⊇ ℚ_p this gives DiamondsAndVStacks D6.9's statement that diamondification factors through seminormalization. Non-example: a nontrivial finite étale cover of degree d > 1 is not a universal homeomorphism and its diamond map is not an isomorphism.
+For example, The normalization A¹ → {y² = x³} of the cuspidal cubic over ℚ_p induces an isomorphism of diamonds although it is not an isomorphism of rigid spaces (SW20 §10.2). Compatibility: for X^sn → X the seminormalization of a rigid space over K ⊇ ℚ_p, the theorem says that X^sn → X induces an isomorphism of diamonds. Non-example: a nontrivial finite étale cover of degree d > 1 is not a universal homeomorphism and its diamond map is not an isomorphism.
 
-Applications include SW20 Proposition 10.2.3: explains why full faithfulness of ♦ requires a seminormal source; DiamondsAndVStacks D6.9: the rigid seminormalization comparison sends the seminormalization map to an isomorphism.
+Applications include SW20 Proposition 10.2.3: explains why full faithfulness of ♦ requires a seminormal source. DiamondsAndVStacks D6.9's seminormalization comparison is the case f = X^sn → X of this theorem, proved there independently; D7.3 generalises it and is not an input to it.
 
 *Needs:* [D7.2](#d72-integral-structure-sheaves-modulo-pn-along-a-residue-preserving-homeomorphism), [D7.1](#d71-finite-universal-homeomorphisms-in-characteristic-zero-preserve-completed-residue-fields), DiamondsAndVStacks D6.4, DiamondsAndVStacks D2.7, DiamondsAndVStacks D2.8, AdicSpacesPartII R0.18 (gap:completed-residue-fields-general-universal-homeomorphisms).
 
 ([SW20](#references) Lecture 10, §10.2, Proposition 10.2.1 and proof, pp. 77–78; SW20 line 3120.)
-
 
 ### D7.4 The v-sheaf X^⋄ of a scheme over 𝔽_p
 
@@ -226,10 +228,9 @@ For example, Spec(𝔽_p)^⋄ is the final v-sheaf \*, and (Spec 𝔽_p[t])^⋄ 
 
 Applications include SW20 Proposition 18.3.1: the functor whose full faithfulness on perfect schemes is proved; SW20 proof of Proposition 18.4.1: the special fibre of 𝔛^♢ is (𝔛_red^perf)^⋄; Gleason §3: S ↦ S^⋄ is the left adjoint whose right adjoint is the reduction functor; GeometricSatakeAndFusion GS0 Witt geometry: v-sheaves of perfect Witt Grassmannians and affine flag varieties.
 
-*Needs:* DiamondsAndVStacks D6.6, DiamondsAndVStacks D3.8, DiamondsAndVStacks D4.7, SchemeAndStackFoundations:SF.0, Mathlib `PerfectRing`, Mathlib `PerfectClosure`, Mathlib `AlgebraicGeometry.Scheme`, DiamondsAndVStacks D3.7, DiamondsAndVStacks D3.9.
+*Needs:* DiamondsAndVStacks D6.6, DiamondsAndVStacks D3.8, DiamondsAndVStacks D4.7, SchemeAndStackFoundations §0.24, Mathlib `PerfectRing`, Mathlib `PerfectClosure`, Mathlib `AlgebraicGeometry.Scheme`, DiamondsAndVStacks D3.7, DiamondsAndVStacks D3.9.
 
 ([SW20](#references) Lecture 18, §18.3, first paragraph, p. 163; SW20 line 6282; [GLE](#references) §3.1, definition of S^⋄ and Remark 3.1, p. 22; Propositions 3.2–3.3, p. 22; GLE line 1108; [AGLR](#references) §2.2, Definition 2.10(2) and the paragraph after it, p. 10; AGLR line 598.)
-
 
 ### D7.5 Quasicompact spaces over a valuation spectrum have a minimal image point
 
@@ -271,14 +272,13 @@ The construction has the following properties:
 - Spo(𝔽_p, 𝔽_p) is one point.
 - For B = 𝔽_p[[u]] discrete, h is not injective, so Spo is not Huber's spectrum.
 
-For example, Spo(B, B⁺) has more points than Spa(B, B⁺) exactly over the discrete microbial points. Algebraic points (|·|^h trivial) correspond to the prime ideals of B/B°° that are open.
+For example, Spo(B, B⁺) has more points than Spa(B, B⁺) exactly over the discrete microbial points. Algebraic points (|·|^h trivial) correspond to the prime ideals of B/(B·B°°), equivalently to the open prime ideals of B: B°° itself need not be an ideal of B (for B = ℚ_p, p ∈ B°° but p⁻¹·p = 1 ∉ B°°), and a prime contains B·B°° exactly when it is open. For ℚ_p the ideal B·B°° is the unit ideal, so there are no algebraic points; for 𝔽_p[[u]] with the discrete topology B°° = 0 and the two primes (0) and (u) give the two algebraic points.
 
 Applications include Gleason Theorem 1 / Proposition 2.14: computes |Spd(B, B⁺)| as a set and, under finiteness conditions, as a space; Gleason Proposition 2.36 and Lemma 3.31: identifies schematic closed subsets with zero loci of open ideals; Gleason Proposition 4.9: formal specializations control uniqueness of formalizations; AGLR Proposition 2.39 footnote: the locus `N_(t≪1)` of a higher-rank valuation ring misses the generic fibre.
 
 *Needs:* Tau Ceti `TauCeti.ValuationSpectrum.spa`, Tau Ceti `TauCeti.ValuationSpectrum.IsAnalyticPoint`, Mathlib `Valuation`, DiamondsAndVStacks D0.1.
 
 ([GLE](#references) §2.1–2.2, Definitions 2.1, 2.2 and 2.4, Remark 2.3, pp. 10–11; GLE line 527.)
-
 
 ### D7.8 The olivine spectrum computes |Spd(B, B⁺)|
 
@@ -344,7 +344,6 @@ Applications include SW20 proof of Proposition 18.4.1: recovers (𝔛_red)^perf 
 
 ([SW20](#references) Lecture 18, §18.3, Proposition 18.3.1 and proof, pp. 163–166; SW20 line 6290; [GLE](#references) §3.2, Proposition 3.16(1), p. 25; GLE line 1253.)
 
-
 ### D7.11 Maps from perfect discrete adic spaces to pre-adic spaces
 
 **Theorem.** Let Y be a perfect discrete adic space over 𝔽_p (locally Spa(A, A⁺) with A perfect and discrete) and X a pre-adic space over ℤ_p. Then Hom(Y, X) → Hom(Y^♢, X^♢) is bijective. In particular ♢ is fully faithful on perfect discrete adic spaces over 𝔽_p, and every map Spd(A, A⁺) → Spd(B, B⁺) to a complete Huber pair over ℤ_p comes from a unique map of Huber pairs (B, B⁺) → (A, A⁺).
@@ -379,7 +378,7 @@ The functor S ↦ S^⋄ from perfect affine schemes is continuous for the v-topo
 
 Scheme-theoretic v-sheaves are sheaves on the category PCAlg^op of perfect affine 𝔽_p-schemes with the v-topology `PerfectScheme.vTopology` of SchemeKTheoryOperations §4.10, whose covers are the v-covers of PrismaticCohomology §2.0, made small through cutoff cardinals as in DiamondsAndVStacks D0.23 and D2.3.
 
-*Proof sketch.* Every morphism from a perfect affine scheme to a κ-small one factors through a κ-small v-cover (Gleason Lemma 3.10), so v-covers are filtered colimits of κ-small v-covers. Hence the inverse-image extension from the κ-small to the λ-small topos is fully faithful (Gleason Proposition 3.9), and the colimit over cutoff cardinals exists as in DiamondsAndVStacks D0.23. Subcanonicity: ArcTopologyAndDescent §1.5 gives it for qcqs perfect schemes, and the descent of the underlying map with gluing over affine opens in the proof of D7.6 extends it to every perfect scheme.
+*Proof sketch.* Given S → T with T κ-small, there are S → T′ → T with T′ κ-small and S → T′ a v-cover (Gleason Lemma 3.10). Hence every v-cover S′ → S of perfect affine schemes is a cofiltered inverse limit of v-covers between κ-small perfect affine schemes; equivalently, its map of coordinate rings is a filtered colimit of maps of κ-small rings, and evaluating a presheaf on it is a filtered colimit of its values on the κ-small covers. Hence the inverse-image extension from the κ-small to the λ-small topos is fully faithful (Gleason Proposition 3.9), and the colimit over cutoff cardinals exists as in DiamondsAndVStacks D0.23. Subcanonicity: ArcTopologyAndDescent §1.5 gives it for qcqs perfect schemes, and the descent of the underlying map with gluing over affine opens in the proof of D7.6 extends it to every perfect scheme.
 
 The construction has the following properties:
 
@@ -492,7 +491,6 @@ Applications include Gleason §4: target of the specialization map and of Heuer'
 
 ([GLE](#references) §3.1, Definition 3.12 and Remark 3.13, p. 24; GLE line 1224; [AGLR](#references) §2.3, Definition 2.19, p. 14; AGLR line 815.)
 
-
 ### D8.5 Reduced scheme-theoretic v-sheaves and full faithfulness of ⋄
 
 **Definition.** A small scheme-theoretic v-sheaf S is reduced if the unit S → (S^⋄)^red is an isomorphism. Every perfect scheme is reduced, and ⋄ is fully faithful on reduced objects: Hom(G^⋄, F^⋄) = Hom(G, F) for G arbitrary and F reduced.
@@ -512,7 +510,7 @@ The construction has the following properties:
 
 - Spec 𝔽_p is reduced.
 - The empty scheme-theoretic v-sheaf is reduced.
-- For perfect X, reducedness of X is SW20 Proposition 18.3.1.
+- For X = Spec(𝔽_p × 𝔽_p), evaluated on Spec 𝔽_p, X has two sections (the two component choices) and so does (X^⋄)^red, since its sections are the maps 𝔽_p × 𝔽_p → 𝔽_p; the unit is the bijection 2 = 2, for p = 2 and p = 3. A reduction that collapsed X to the terminal object would give 1 ≠ 2.
 - The counit (Spd(ℤ_p)^red)^⋄ = Spd 𝔽_p → Spd ℤ_p is not an isomorphism: Spd ℤ_p is not in the essential image of ⋄.
 
 For example, Reduced objects are closed under finite limits.
@@ -580,7 +578,6 @@ Applications include Gleason Definition 3.27: formally closed immersions are for
 
 ([GLE](#references) §3.2, Definition 3.20, Examples 3.21–3.22 and Proposition 3.24, pp. 26–27; GLE line 1293; [AGLR](#references) §2.3, Definition 2.20(1), p. 14; AGLR line 823.)
 
-
 ### D8.9 Formal adicness detects adicness for formal Huber pairs
 
 **Theorem.** For formal Huber pairs (A, A) and (B, B) over ℤ_p with ideals of definition I_A, I_B and a continuous map B → A, Spa(A) → Spa(B) is adic (some I_A^m ⊂ A·I_B) if and only if Spd(A) → Spd(B) is formally adic. For a Huber pair (A, A⁺) with a map to Spa(ℤ_p), if Spd(A, A⁺) → Spd ℤ_p is formally adic then Spa(A, A⁺) → Spa(ℤ_p) is adic.
@@ -625,7 +622,6 @@ Applications include Gleason Proposition 4.9: formal separatedness gives uniquen
 
 ([GLE](#references) §3.2, Definitions 3.25 and 3.27, p. 27; GLE line 1327.)
 
-
 ### D8.11 Spd ℤ_p is formally separated and formally p-adic sheaves have formally adic diagonal
 
 **Lemma.** Spd ℤ_p is formally separated. If F is formally p-adic then the diagonal F → F × F is formally adic.
@@ -666,7 +662,7 @@ Applications include Gleason Proposition 4.9: uniqueness of formalizations; Glea
 
 ### Examples
 
-Reduction sends Spd ℤ_p to Spec 𝔽_p and Spd ℚ_p to ∅. For Spd(ℤ_p[[T]]) with the (p,T)-adic topology, reduction is a point but the fibre over Spd 𝔽_p also has T ≠ 0 analytic points. This computes the failure of formal adicness of its structure map, in contrast with Spd(ℤ_p⟨T⟩) (GLE Example 3.21 and Proposition 3.23).
+Reduction sends Spd ℤ_p to Spec 𝔽_p and Spd ℚ_p to ∅. For Spd(ℤ_p[[T]]) with the (p,T)-adic topology, reduction is a point but the fibre over Spd 𝔽_p also has T ≠ 0 analytic points. This computes the failure of formal adicness of its structure map, in contrast with Spd(ℤ_p⟨T⟩) (GLE Proposition 3.23, GLE line 1307; the discrete-pair contrast Spd(𝔽_p((t)), 𝔽_p[[t]]) → Spd 𝔽_p is GLE Example 3.21, GLE line 1298).
 
 ### Dependencies
 
@@ -678,7 +674,9 @@ A v-sheaf behaves like a formal scheme when its maps from perfectoid spaces form
 
 ### D9.1 The specialization map of a Tate Huber pair
 
-**Construction.** For a Tate Huber pair (A, A⁺) over ℤ_p, sp_A : |Spa(A, A⁺)| → |Spec(A⁺_red)| sends x to the prime {a ∈ A⁺ : |a(x)| < 1} of A⁺, which contains A⁺°° and so is a point of Spec(A⁺/A⁺°°) = Spec(A⁺_red) (the perfection does not change the space). It is functorial in maps of Tate Huber pairs, continuous, surjective, spectral and closed; for a strictly totally disconnected perfectoid Spa(R, R⁺) it is a homeomorphism.
+**Construction.** For a Tate Huber pair (A, A⁺) (a Tate ring A with a ring of integral elements A⁺; neither completeness nor a ℤ_p-algebra structure is needed, the applications use pairs over ℤ_p), sp_A : |Spa(A, A⁺)| → |Spec(A⁺_red)| sends x to the prime {a ∈ A⁺ : |a(x)| < 1} of A⁺, which contains A⁺°° and so is a point of Spec(A⁺/A⁺°°) = Spec(A⁺_red) (the perfection does not change the space). It is functorial in maps of Tate Huber pairs, continuous, surjective, spectral and closed; for a strictly totally disconnected perfectoid Spa(R, R⁺) it is a homeomorphism.
+
+Define `reductionSpectrum A⁺` as the subspace of `PrimeSpectrum A⁺` of primes containing every element of A⁺ topologically nilpotent in A; it is the closed subset V(A⁺°°), homeomorphic to Spec(A⁺_red). Prove `exists_tate_specialization`: for A with `TauCeti.Huber.IsTateRing` and P a `TauCeti.Huber.Pair` on A, there is a map sp from `TauCeti.ValuationSpectrum.spa P.plus` to `reductionSpectrum P.plus` characterized by a ∈ sp(x) ⟺ |a(x)| < 1 for every a ∈ A⁺, and this map is surjective, spectral (`IsSpectralMap`) and closed (BHA17 Remark 7.4.12 for continuity and spectrality, and Theorem 8.1.2, which identifies Spa(A, A⁺) with the inverse limit of the special fibres of the proper models of Spec A⁺ that are isomorphisms over Spec A, for surjectivity and closedness; BHA17 lines 2883 and 3402). The characterization determines sp, so the existential statement is the theorem about the specialization map itself.
 
 A⁺_red = (A⁺/A⁺·A⁺°°)^perf; for perfectoid pairs A⁺°° is the radical of a pseudouniformizer.
 
@@ -708,9 +706,9 @@ For example, for (C, O_C) a perfectoid field sp_C maps the unique point to the c
 
 Applications include Gleason Definition 4.12: descends to the specialization map of specializing v-sheaves; Gleason Proposition 4.9: surjectivity forces formally closed subsheaves with dense generic fibre to be everything; AGLR Proposition 2.32: surjectivity of sp_A for A integrally closed in A[1/π].
 
-*Needs:* Tau Ceti `TauCeti.ValuationSpectrum.spa`, Mathlib `Valuation`, Mathlib `Ideal.IsPrime`, Mathlib `PrimeSpectrum`, DiamondsAndVStacks D1.4, AdicSpacesPartII R0.19.3.
+*Needs:* Tau Ceti `TauCeti.ValuationSpectrum.spa`, Tau Ceti `TauCeti.Huber.Pair`, Tau Ceti `TauCeti.Huber.IsTateRing`, Mathlib `Valuation`, Mathlib `Ideal.IsPrime`, Mathlib `PrimeSpectrum`, Mathlib `IsSpectralMap`, Mathlib `IsTopologicallyNilpotent`, DiamondsAndVStacks D1.4, AdicSpacesPartII R0.19.3.
 
-([GLE](#references) §4.1, Definition 4.1, Propositions 4.2 and 4.3, p. 28; GLE line 1393.)
+([GLE](#references) §4.1, Definition 4.1, Propositions 4.2 and 4.3, p. 28; GLE line 1393; [BHA17](#references) Remark 7.4.12 and Theorem 8.1.2 with proof, pp. 74–89; BHA17 lines 2883 and 3402.)
 
 ### D9.2 Formalizations and v-formalizing v-sheaves
 
@@ -783,7 +781,6 @@ Applications include Gleason Definition 4.12: these are the v-sheaves with a spe
 
 ([GLE](#references) §4.2, Definition 4.11 and Proposition 4.10, p. 29; GLE line 1471.)
 
-
 ### D9.5 The specialization map sp_F : |F| → |F^red|
 
 **Construction.** For a specializing v-sheaf F, sp_F : |F| → |F^red| is the unique map such that for every surjection ⨿ Spd(B_i) → F from formal Huber pairs, sp_F composed with |Spd(B_i)| → |F| equals |f^red| composed with the specialization |Spd(B_i)| → |Spec((B_i)_red)|. Concretely, represent x ∈ |F| by a formalizable Spa(K, K⁺) → F, take its unique formalization Spd(K⁺) → F, apply (−)^red to get Spec((K⁺)_red) → F^red, and take the image of the closed point. sp_F is continuous and functorial in maps of specializing v-sheaves.
@@ -813,7 +810,6 @@ Applications include SW20 Proposition 18.4.1 proof: the closure of a classical p
 
 ([GLE](#references) §4.2, Definition 4.12, Remark 4.13 and Proposition 4.14, p. 30; GLE line 1472.)
 
-
 ### D9.6 Prekimberlites and their analytic locus
 
 **Definition.** A prekimberlite is a specializing v-sheaf F such that F^red is represented by a (perfect) scheme and the counit (F^red)^⋄ → F is a closed immersion. Its analytic locus is the open complement F^an = F ∖ (F^red)^⋄.
@@ -842,7 +838,6 @@ Applications include Gleason Definition 4.18: formal neighbourhoods of locally c
 *Needs:* [D9.4](#d94-specializing-v-sheaves), [D8.5](#d85-reduced-scheme-theoretic-v-sheaves-and-full-faithfulness-of-), DiamondsAndVStacks D3.8, DiamondsAndVStacks D4.8.
 
 ([GLE](#references) §4.3, Definition 4.15, p. 30; GLE line 1498; [AGLR](#references) §2.3, Definition 2.23 and Proposition 2.24, p. 15; AGLR line 850.)
-
 
 ### D9.7 Formal schemes give prekimberlites
 
@@ -895,7 +890,6 @@ Applications include Gleason Definition 4.38: tubular neighbourhoods `D^⊚_(/S)
 *Needs:* [D9.6](#d96-prekimberlites-and-their-analytic-locus), [D9.5](#d95-the-specialization-map-sp_f--f--fred), AdicSpacesPartIII F0.5, DiamondsAndVStacks D3.10.
 
 ([GLE](#references) §1.1, topological v-sheaves, p. 7; §4.3, Definition 4.18, Propositions 4.19–4.21, p. 31; GLE line 1540; [AGLR](#references) §2.3, Definition 2.28 and Example 2.29, p. 16; AGLR line 884.)
-
 
 ### D9.9 Constructible formal neighbourhoods are open
 
@@ -976,7 +970,7 @@ Applications include Gleason Definition 4.30: valuative prekimberlites: SP_F par
 
 For example, for V → X an open immersion, `V^(⋄/◦)` → `X^(⋄/◦)` is an open immersion. For the identity residue algebra, R⁺ and R⁺ × R⁺[1/ϖ] are distinct ordinary étale lifts with the same reduction. Completion removes the second factor, so uniqueness must be formulated for completed lifts.
 
-*Needs:* [D9.10](#d910-heuers-v-sheaf-x-of-a-perfect-scheme), [D8.8](#d88-formally-adic-morphisms-of-v-sheaves), DiamondsAndVStacks D3.6, SchemeAndStackFoundations:SF.0, SchemeAndStackFoundations §0.14 / §0.23a (gap:completed-etale-lifts).
+*Needs:* [D9.10](#d910-heuers-v-sheaf-x-of-a-perfect-scheme), [D8.8](#d88-formally-adic-morphisms-of-v-sheaves), DiamondsAndVStacks D3.6, SchemeAndStackFoundations §0.23a, SchemeAndStackFoundations §0.14 / §0.23a (gap:completed-etale-lifts).
 
 ([GLE](#references) §4.4, Lemma 4.25 and proof, p. 33; GLE line 1623.)
 
@@ -999,7 +993,7 @@ The construction has the following properties:
 - For V = F^red, `F̂_(/V)` = F.
 - For F = Spd ℤ_p and V = Spec 𝔽_q, `F̂_(/V)` = Spd W(𝔽_q), a finite étale formal neighbourhood.
 - For F = 𝔛^♢ and V étale over (𝔛_red)^perf, `F̂_(/V)` = 𝔜^♢ for the formal scheme 𝔜 étale over 𝔛 lifting V (Gleason Corollary 4.28).
-- A nontrivial finite étale V → F^red gives `F̂_(/V)` → F that is étale but not an open immersion.
+- For F = Spd ℤ_p and V = Spec `𝔽_(p²)`, the finite étale formal neighbourhood Spd W(`𝔽_(p²)`) → Spd ℤ_p is not an open immersion: its geometric generic fibre has two points (p = 2 and p = 3 alike). By contrast, for F = Spd(ℤ_p × ℤ_p) and V = Spec 𝔽_p the first component of F^red, the finite étale map V → F^red is not the identity, yet `F̂_(/V)` is the open and closed first component Spd ℤ_p, an open immersion; finite étaleness alone does not exclude open immersions.
 
 For example, for V an open subscheme, `F̂_(/V)` is the open formal neighbourhood.
 
@@ -1013,13 +1007,13 @@ Applications include Gleason Theorem 4.27: reduction identifies étale formal ne
 
 **Theorem.** For a prekimberlite F, the reduction functor gives an equivalence between `(F)_(qc,for-ét)` and the category of quasicompact separated étale perfect schemes over F^red, restricting to an equivalence between injective objects (open formal neighbourhoods) and quasicompact open immersions; `F̂_(/V)` is a quasi-inverse. If F = 𝔛^♢ for a formal scheme 𝔛, every étale formal neighbourhood is 𝔜^♢ for a formal scheme 𝔜.
 
-*Proof sketch.* A morphism inducing an isomorphism on reductions is an isomorphism: the image is an open subsheaf containing (F^red)^⋄, hence everything, and injectivity is checked on geometric points Spa(C, C⁺) ⊂ Spd(C⁺) by counting components (Gleason Theorem 4.27, Step 1). Full faithfulness: maps over F correspond to open and closed subsheaves of the fibre product projecting isomorphically, and likewise for reductions (Step 2). Essential surjectivity: D9/etale-formal-neighbourhood (Step 3). Formal schemes: the étale site of a formal scheme is that of its reduction (AdicSpacesPartIII R2.9).
+*Proof sketch.* A morphism inducing an isomorphism on reductions is an isomorphism: the image is an open subsheaf containing (F^red)^⋄, hence everything, and injectivity is checked on geometric points Spa(C, C⁺) ⊂ Spd(C⁺) by counting components (Gleason Theorem 4.27, Step 1). Full faithfulness: maps over F correspond to open and closed subsheaves of the fibre product projecting isomorphically, and likewise for reductions (Step 2). Essential surjectivity: D9/etale-formal-neighbourhood (Step 3). Formal schemes, in the generality of D9.7 (no noetherian or finite-presentation hypothesis): on an affine chart Spf A, with A complete and separated for a finitely generated ideal I containing p, a quasicompact separated étale V → (Spec A/I)_red^perf comes from a unique étale scheme over (A/I)_red, because perfection is a universal homeomorphism (SchemeAndStackFoundations §0.24) and étale sites are invariant under universal homeomorphisms (SchemeAndStackFoundations §0.23a); the same invariance along the nil-thickenings Spec(A/I)_red → Spec A/Iⁿ⁺¹ lifts it uniquely to étale Vₙ over A/Iⁿ⁺¹ with Vₘ = Vₙ ×_(A/Iⁿ⁺¹) A/Iᵐ⁺¹ for m ≤ n. This is an adic inductive system, hence a formal scheme 𝔜 adic over Spf A (AdicSpacesPartIII F0.3, *adic-systems-equivalence-finite-ideal-type*); uniqueness of the lifts glues the charts. Then 𝔜^♢ → 𝔛^♢ is formally adic, étale and quasicompact with reduction V, so it is `F̂_(/V)` by the equivalence (Gleason Corollary 4.28). For locally noetherian or locally topologically finitely presented 𝔛 this agrees with the formal étale site invariance of AdicSpacesPartIII R2.9. Example outside that restriction: for A the p-adic completion of ℤ_p[T₁, T₂, …], neither noetherian nor topologically of finite presentation, the identity and the two-copy étale reduction lift to Spf A and Spf(A × A).
 
 For example, for F = Spd ℤ_p, étale formal neighbourhoods correspond to finite products of finite fields over 𝔽_p, i.e. to Spd of finite products of unramified extensions W(𝔽_q).
 
 Applications include GLX ¶4 (3): formal étale site and formal nearby cycles of kimberlites.
 
-*Needs:* [D9.13](#d913-étale-formal-neighbourhoods-of-a-prekimberlite), [D9.12](#d912-étale-maps-of-perfect-schemes-give-formally-adic-étale-maps-of-heuer-sheaves), [D9.3](#d93-formalizations-into-a-formally-separated-v-sheaf-are-unique), AdicSpacesPartIII R2.9, DiamondsAndVStacks D4.9.
+*Needs:* [D9.13](#d913-étale-formal-neighbourhoods-of-a-prekimberlite), [D9.12](#d912-étale-maps-of-perfect-schemes-give-formally-adic-étale-maps-of-heuer-sheaves), [D9.3](#d93-formalizations-into-a-formally-separated-v-sheaf-are-unique), [D9.7](#d97-formal-schemes-give-prekimberlites), SchemeAndStackFoundations §0.23a, SchemeAndStackFoundations §0.24, AdicSpacesPartIII F0.3 (*adic-systems-equivalence-finite-ideal-type*), AdicSpacesPartIII R2.9, DiamondsAndVStacks D4.9.
 
 ([GLE](#references) §4.4, Theorem 4.27 with Steps 1–3 and Corollary 4.28, pp. 33–34; Introduction, Theorem 7, p. 4; GLE line 1646.)
 
@@ -1041,7 +1035,7 @@ Flat normal formal schemes locally formally of finite type over Spf O_E, and pro
 
 O = O_E as in the D10 conventions. Both functors have domain all O-schemes; on locally finite-type schemes the analytic functor agrees with AdicCoefficientsAndComparisons L1/mixed-characteristic-scheme-diamond. The relative pre-adic realizations below are asserted only on that smaller domain.
 
-*Proof sketch.* On arbitrary affine O-schemes the marked-untilt section formula is a v-sheaf: untilts descend, and for a fixed untilt algebra maps descend sectionwise. This uses the parent’s pre-adic diamondification and v-descent of the untilted structure sheaves; no general adic analytification is assumed. Gluing: localization A → A[1/g] gives the open loci where g is a unit of R^♯, resp. of `R^(♯+)`. Two-step description for X locally of finite type: the forgetful functor from discrete adic spaces over Spa O_disc to O-schemes has adjoints Spec A ↦ Spa(A, A) and Spa(A, Õ) (Õ the integral closure of O in A); base change along O_disc → O and Huber's relative analytification over Spa(O,O), supplied by AdicSpacesPartII R1.2, gives X̂ and X^an (AGLR Lemma 2.11). Monomorphism: Spec A ⊂ Spec A⁺ is schematically dense, so maps agreeing on R^♯ agree on `R^(♯+)` (the separatedness criterion for maps agreeing on a schematically dense open). Open immersion for locally finite type: check on finite-type affine charts using affine space and a closed immersion into it, then glue. No quasicompactness of X is used. Isomorphism for proper X: surjective on points by the valuative criterion of properness.
+*Proof sketch.* On arbitrary affine O-schemes the marked-untilt section formula is a v-sheaf: untilts descend, and for a fixed untilt algebra maps descend sectionwise. This uses the parent’s pre-adic diamondification and v-descent of the untilted structure sheaves; no general adic analytification is assumed. Gluing: localization A → A[1/g] gives the open loci where g is a unit of R^♯, resp. of `R^(♯+)`. Two-step description for X locally of finite type: the forgetful functor from discrete adic spaces over Spa O_disc to O-schemes has adjoints Spec A ↦ Spa(A, A) and Spa(A, Õ) (Õ the integral closure of O in A); base change along O_disc → O and Huber's relative analytification over Spa(O,O), supplied by AdicSpacesPartII R1.2, gives X̂ and X^an (AGLR Lemma 2.11). Monomorphism: R^(♯+) is reduced and Spec R^♯ → Spec R^(♯+) is dominant, so for X separated two maps Spec R^(♯+) → X over O agreeing on Spec R^♯ are equal (Mathlib `AlgebraicGeometry.ext_of_isDominant_of_isSeparated`). Open immersion for locally finite type: check on finite-type affine charts using affine space and a closed immersion into it, then glue. No quasicompactness of X is used. Isomorphism for proper X: surjective on points by the valuative criterion of properness.
 
 The construction has the following properties:
 
@@ -1068,7 +1062,7 @@ For example, for X = Spec O, X^⋄ = X^♢ = Spd O.
 
 Applications include KPZ §3.1.9 and Lemma 3.4.1: local models and Grassmannians are proper, so their two v-sheaves agree; AGLR §2.2: ♢ is used for G_m-actions and nearby cycles, ⋄ for specialization maps; D10/proper-scheme-full-faithfulness: reduces proper schemes to formal schemes.
 
-*Needs:* DiamondsAndVStacks D6.6, AdicCoefficientsAndComparisons:L1/mixed-characteristic-scheme-diamond, AdicSpacesPartIII F0.5, SchemeAndStackFoundations:SF.0, Mathlib `AlgebraicGeometry.Scheme`, AdicSpacesPartII:R1, DiamondsAndVStacks D2.7, DiamondsAndVStacks D2.8, PerfectoidSpaces P1.
+*Needs:* DiamondsAndVStacks D6.6, AdicCoefficientsAndComparisons:L1/mixed-characteristic-scheme-diamond, AdicSpacesPartIII F0.5, Mathlib `AlgebraicGeometry.ext_of_isDominant_of_isSeparated`, Mathlib `AlgebraicGeometry.Scheme`, AdicSpacesPartII:R1, DiamondsAndVStacks D2.7, DiamondsAndVStacks D2.8, PerfectoidSpaces P1.
 
 ([AGLR](#references) §2.2, Definition 2.10, Lemma 2.11 and the following two paragraphs, pp. 10–11; AGLR line 598.)
 
@@ -1078,7 +1072,7 @@ Applications include KPZ §3.1.9 and Lemma 3.4.1: local models and Grassmannians
 
 Use the standing FS convention: continuous structure maps are allowed, including the (π,q)-adic formal disc.
 
-*Proof sketch.* On affine charts Spf A, 𝔛^ad_η(R, R⁺) for complete affinoid (E, O_E)-algebras is the sheafification of colim over open bounded R₀ ⊂ R⁺ of 𝔛(R₀) (Scholze–Weinstein 2013 Proposition 2.2.2), which is the functor represented by Berthelot's 𝔛^rig (de Jong Proposition 7.1.7, the FS universal property of AdicSpacesPartIII R2.9). Both constructions glue along open formal subschemes, giving the identification and its naturality. ♢ commutes with fibre products of pre-adic spaces (Gleason Proposition 1.21(4)); the diamond of an analytic adic space is locally spatial (DiamondsAndVStacks D6.5).
+*Proof sketch.* On affine charts Spf A, 𝔛^ad_η(R, R⁺) for complete affinoid (E, O_E)-algebras is the sheafification of colim over open bounded R₀ ⊂ R⁺ of 𝔛(R₀) (Scholze–Weinstein 2013 Proposition 2.2.2), which is the functor represented by Berthelot's 𝔛^rig (de Jong Proposition 7.1.7, the universal property of AdicSpacesPartIII R2.9's `rigOfFSC`). Both constructions glue along open formal subschemes, giving the identification and its naturality. ♢ commutes with fibre products of pre-adic spaces (Gleason Proposition 1.21(4)); the diamond of an analytic adic space is locally spatial (DiamondsAndVStacks D6.5).
 
 For example, for 𝔛 = Spf O_E[[q]] the generic fibre is the open unit disc over E, and 𝔛^♢_η its diamond. For 𝔛 = Spf O_E⟨T⟩ the generic fibre is the closed unit disc. Non-example: the analytic locus of Spa(O_E[[q]]) is strictly larger than the generic fibre (it contains points with π = 0, q ≠ 0); the comparison is with 𝔛^ad_η, not with 𝔛^ad_a.
 
@@ -1134,7 +1128,7 @@ For example, for 𝔛 = Spf O_E⟨T⟩ and the classical point T = a with |a| �
 
 ### D10.6 The analytic locus of 𝔛^♢ is its maximal diamond open subsheaf
 
-**Theorem.** For a separated locally noetherian formal scheme 𝔛 over Spf ℤ_p, the analytic locus (𝔛^♢)^an = (𝔛^ad_a)^♢ is the largest open sub-v-sheaf of 𝔛^♢ that is a diamond, and its closed complement is ((𝔛_red)^perf)^⋄. Hence for any map ψ : 𝔛^♢ → 𝔜^♢, ψ maps ((𝔛_red)^perf)^⋄ into ((𝔜_red)^perf)^⋄, and ψ^red is a map (𝔛_red)^perf → (𝔜_red)^perf.
+**Theorem.** For a separated formal scheme 𝔛 over Spf ℤ_p as in D9.7 (locally Spf A with A complete and separated for a finitely generated ideal of definition containing p; no noetherian hypothesis), the analytic locus (𝔛^♢)^an = (𝔛^ad_a)^♢ is the largest open sub-v-sheaf of 𝔛^♢ that is a diamond, and its closed complement is ((𝔛_red)^perf)^⋄. Hence for any map ψ : 𝔛^♢ → 𝔜^♢, ψ maps ((𝔛_red)^perf)^⋄ into ((𝔜_red)^perf)^⋄, and ψ^red is a map (𝔛_red)^perf → (𝔜_red)^perf.
 
 *Proof sketch.* The analytic locus is an open diamond, with reduction counit as complement (D9.7). If a diamond open U met this complement, choose a point x there and its perfect residue field k(x). The morphism Spec k(x) → (𝔛_red)^perf is a monomorphism, even when x is not closed; its diamondification lands in U. Thus Spd k(x) is a sub-v-sheaf of a diamond and would be a diamond. It is quasiseparated as the diamondification of an affine discrete pair; D8.6 gives its nonempty reduction Spec k(x), contradicting D8.7. No identification with the terminal sheaf is used. Functoriality of reduction and the counit gives ψ^red and the claimed preservation of the special locus.
 
@@ -1143,6 +1137,7 @@ For example, for 𝔛 = Spf O_E⟨T⟩ and the classical point T = a with |a| �
 - Spd 𝔽_p has one section on Spa(C,O_C) for algebraically closed perfectoid C of characteristic p. For k = 𝔽_(p²), Spd k has two, for p = 2 and p = 3; neither sheaf is a diamond, since its reduction is the nonempty Spec k.
 - At the generic point of the perfect affine line the residue-point map is a monomorphism and is not a closed immersion. The argument uses only the former property.
 - For 𝔛 = Spf ℤ_p the maximal diamond open is Spd ℚ_p; for the empty formal scheme it is empty.
+- For the nonnoetherian 𝔛 = Spf O_C, C a completed algebraic closure of ℚ_p with ideal of definition (p), the maximal diamond open is Spd(C, O_C) and its complement is Spd k_C: Spd k_C is quasiseparated with nonempty reduction Spec k_C, so it meets no diamond open.
 
 For example, for 𝔛 = Spf ℤ_p the analytic locus is Spd ℚ_p and its complement Spd 𝔽_p.
 
@@ -1156,11 +1151,11 @@ For example, for 𝔛 = Spf ℤ_p the analytic locus is Spd ℚ_p and its comple
 
 Use the standing FS convention: continuous structure maps are allowed, including the (π,q)-adic formal disc.
 
-*Proof sketch.* Reduce to 𝔛 = Spf B. Let Y ⊂ Spa(B[[t]]) be the punctured open unit ball {|t| ≠ 0} over Spa B; Y^♢ → Spd(B) is a v-cover and Y is analytic, so |Y| = |Y^♢| (DiamondsAndVStacks D6.5). A nonempty rational subset Spa(R, R⁺) ⊂ Y has R flat over O_E (gap:noetherian-definition-rational-flatness for the complete noetherian formal source, followed by the pinned flatness theorem on strongly noetherian Tate charts) and is a pseudorigid space, hence R is Jacobson (Lourenço Propositions 3.3, 4.6). π is not nilpotent in R, so a maximal ideal m ∌ π exists; the maximal-support valuation input of AdicSpacesPartII R0.18 gives a point with support m, which lies in the generic fibre.
+*Proof sketch.* Reduce to 𝔛 = Spf B. Let Y ⊂ Spa(B[[t]]) be the punctured open unit ball {|t| ≠ 0} over Spa B; Y^♢ → Spd(B) is a v-cover and Y is analytic, so |Y| = |Y^♢| (DiamondsAndVStacks D6.5). A nonempty rational subset Spa(R, R⁺) ⊂ Y has R flat over O_E (gap:noetherian-definition-rational-flatness for the complete noetherian formal source, followed by the pinned flatness theorem on strongly noetherian Tate charts) and is a pseudorigid space, hence R is Jacobson (Lourenço Propositions 3.3, 4.6). π is not nilpotent in R, so a maximal ideal m ∌ π exists; since (R, R⁺) is a complete Hausdorff Huber pair, Tau Ceti `TauCeti.ValuationSpectrum.exists_mem_spa_supp_eq_of_isMaximal` gives a point of Spa(R, R⁺) with support m, which lies in the generic fibre because π ∉ m.
 
 For example, for 𝔛 = Spf O_E, |Spd O_E| has two points and the generic point is dense. Non-example: for 𝔛 = Spf(O_E[[q]]/(π)), not flat, the generic fibre is empty. Non-example: for a higher-rank valuation ring V ⊃ O_E⟨t⟩ with the π-adic topology, Spd(V) is flat but the open `N_(t≪1)` misses the generic fibre, so density fails outside the noetherian setting (AGLR footnote 2).
 
-*Needs:* [D10.2](#d102-generic-fibres-of-formal-schemes-locally-formally-of-finite-type), DiamondsAndVStacks D6.5, DiamondsAndVStacks D4.8, AdicSpacesPartII R0.9, AdicSpacesPartII:R0, AdicSpacesPartII R0.9/R0.18 (gap:pseudorigid-jacobson-flatness), AdicSpacesPartII R0.18 (gap:noetherian-definition-rational-flatness).
+*Needs:* [D10.2](#d102-generic-fibres-of-formal-schemes-locally-formally-of-finite-type), DiamondsAndVStacks D6.5, DiamondsAndVStacks D4.8, Tau Ceti `TauCeti.ValuationSpectrum.exists_mem_spa_supp_eq_of_isMaximal`, AdicSpacesPartII R0.9, AdicSpacesPartII:R0, AdicSpacesPartII R0.9/R0.18 (gap:pseudorigid-jacobson-flatness), AdicSpacesPartII R0.18 (gap:noetherian-definition-rational-flatness).
 
 ([AGLR](#references) §2.2, Lemma 2.17 and proof, p. 13; AGLR line 763; [LOU17](#references) §3–4, Propositions 3.3 and 4.6, pp. 6 and 9; LOU17 line 186; [SW20](#references) Lecture 18, end of proof of Proposition 18.4.1, p. 168; SW20 line 6484.)
 
@@ -1213,7 +1208,6 @@ Applications include SW20 Definition 21.4.1 / AGLR Definition 4.11: v-sheaf loca
 
 ([AGLR](#references) §2.1, Definitions 2.2 and 2.3, Lemma 2.4, Example 2.5, Lemma 2.7, Proposition 2.8 and Corollary 2.9, pp. 9–10; AGLR line 496; [GLE](#references) §1.1, Proposition 1.9, p. 8; GLE line 381.)
 
-
 ### D10.10 Formal schemes are determined by their specialization triples (Lourenço)
 
 **Theorem.** Assume k is algebraically closed. Let `C_(O_E)` be the category of triples (X_η, X_s, sp) with X_η a rigid space over E, X_s a perfect scheme over k and sp : |X_η|_cl → X_s(k) a map of sets on classical points. The functor 𝔛 ↦ (𝔛^rig, (𝔛_red)^perf, sp_𝔛) from flat normal formal schemes locally formally of finite type over Spf O_E to `C_(O_E)` is fully faithful.
@@ -1228,25 +1222,35 @@ For example, The triple of Spf O_E⟨T⟩ is (closed disc, A¹_k^perf, reduction
 
 ([SW20](#references) Lecture 18, §18.4, Theorem 18.4.2 and Remark 18.4.3, p. 167; SW20 line 6492; [LOU17](#references) §6, Definition 6.4, Corollaries 6.5 and 6.6 with proofs, pp. 17–18; LOU17 line 642.)
 
-
 ### D10.11 Scholze–Weinstein: flat normal formal schemes are determined by their v-sheaves
 
 **Theorem.** The functor 𝔛 ↦ 𝔛^♢ from flat normal formal schemes locally formally of finite type over Spf O_E to small v-sheaves over Spd O_E is fully faithful.
 
 Use the standing FS convention: continuous structure maps are allowed, including the (π,q)-adic formal disc. Morphisms of v-sheaves are over Spd O_E. No separatedness is assumed: the comparison of graphs is made over affine opens of the target.
 
-*Proof sketch.* Reduce to k algebraically closed: base change to the completed maximal unramified extension and Galois descent for maps of formal schemes and of v-sheaves (DiamondsAndVStacks D6.7 for the integral Galois quotient). From ψ : 𝔛^♢ → 𝔜^♢ build a map of triples: on generic fibres via D10/lfft-generic-fibre-comparison and DiamondsAndVStacks D6.9 (the generic fibres are normal, D10/generic-fibre-of-normal-is-normal); on reductions via D8/reduction-functor and D7/perfect-scheme-full-faithfulness, applying D10/maximal-diamond-open on separated affine charts; compatibility with sp via D10/classical-specialization-compatibility. D10/specialization-triple-full-faithfulness gives faithfulness and a map f : 𝔛 → 𝔜 with f_η = ψ_η. Localize on 𝔜: for an affine open V ⊂ 𝔜, V^♢ is the open formal neighbourhood of V_red (D9/formal-neighbourhood), so `ψ^(-1)`(V^♢) = (`f^(-1)`V)^♢ by compatibility of ψ^red = f_red^perf with specialization; hence assume 𝔜 affine, in particular separated. ψ = f^♢: the graphs Γ_ψ, `Γ_(f^♢)` : 𝔛^♢ → (𝔛 `×_(Spf O_E)` 𝔜)^♢ are then closed immersions, so it suffices that their closed images agree (D10/v-closure); they agree on the generic fibre, which is dense in |𝔛^♢| (D10/generic-fibre-density).
+**Lemma (unramified descent).** Let Ĕ be the completion of the maximal unramified extension of E, Ŏ its ring of integers, with residue field k̄, and Γ = Gal(k̄/k) acting continuously on Ŏ. For a complete O_E-algebra A with finitely generated ideal of definition I ∋ π, write A_Ŏ for the I-adic completion of A ⊗_(O_E) Ŏ and 𝔛_Ŏ = 𝔛 ×_(Spf O_E) Spf Ŏ.
+
+1. A → A_Ŏ is injective with image (A_Ŏ)^Γ. For each n, A/Iⁿ is a module over some O_E/πᵐ, and Ŏ/πᵐ is the union of the finite étale Galois extensions O_(E_r)/πᵐ with groups Gal(k_r/k); O_(E_r) ⊗_(O_E) O_(E_r) ≅ ∏_(Gal(k_r/k)) O_(E_r), because both sides are finite étale over O_(E_r) with isomorphic reductions (k_r ⊗_k k_r ≅ ∏ k_r, then SchemeAndStackFoundations §0.23a). Faithfully flat descent (Mathlib `Algebra.IsEffective.of_faithfullyFlat`, applied to the base change of O_(E_r)/πᵐ to A/Iⁿ) identifies A/Iⁿ with the equalizer of the two maps to the product, that is with the Gal(k_r/k)-invariants of A/Iⁿ ⊗ O_(E_r); pass to the union over r and to the limit over n.
+2. For formal schemes 𝔛, 𝔜 locally formally of finite type over Spf O_E, base change Hom_(O_E)(𝔛, 𝔜) → Hom_Ŏ(𝔛_Ŏ, 𝔜_Ŏ)^Γ is bijective. Affine-locally, a Γ-equivariant continuous Ŏ-algebra map A_Ŏ → B_Ŏ carries A into (B_Ŏ)^Γ = B by (1), and is the completed base change of that restriction since A ⊗ Ŏ is dense in A_Ŏ. Globally, |𝔛_Ŏ| → |𝔛| is the map of reductions Spec(R ⊗_k k̄) → Spec R on affine charts, surjective with Γ-orbits as fibres, so Γ-stable opens descend and the affine maps glue.
+3. If 𝔛 is flat, normal and locally formally of finite type over Spf O_E, then so is 𝔛_Ŏ over Spf Ŏ: a presentation of A as a quotient of O_E[[q₁,…,qₙ]]⟨T₁,…,Tₘ⟩ base-changes to one of A_Ŏ over Ŏ, and flatness passes by (1). For normality, the maximal ideals of the noetherian ring A_Ŏ contain I, and the completion of A_Ŏ at one of them is the completed unramified extension of a complete local ring R of A (R ⊗̂ Ŏ over the unramified coefficient ring of R, residue field κ ⊂ k̄); this extension is flat, local, with closed fibre a field separable over κ, hence formally smooth and therefore regular (André's theorem for complete local rings; proved as part of this lemma). R is normal because A is normal and excellent (a quotient of O_E[[q₁,…,qₙ]]⟨T₁,…,Tₘ⟩), and regular maps preserve normality (SchemeAndStackFoundations §0.21, `regular_map_completion`); normality of A_Ŏ follows by faithfully flat descent from its completed local rings.
+4. Spd Ŏ → Spd O_E is surjective as a map of v-sheaves: for C a completed algebraic closure of Ĕ, Spd O_C → Spd O_E is a v-cover (DiamondsAndVStacks D6.7) and factors through Spd Ŏ. Moreover (𝔛_Ŏ)^♢ = 𝔛^♢ ×_(Spd O_E) Spd Ŏ, since on test objects both sides are pairs of compatible continuous maps from A and Ŏ to R^♯⁺, which extend uniquely to A_Ŏ because R^♯⁺ is complete.
+
+*Proof sketch.* Reduce to k algebraically closed by the lemma: faithfulness and fullness over Ŏ give, for ψ : 𝔛^♢ → 𝔜^♢, a unique f′ : 𝔛_Ŏ → 𝔜_Ŏ with f′^♢ = ψ ×_(Spd O_E) Spd Ŏ; for σ ∈ Γ, σ f′ σ⁻¹ has the same diamond, so f′ is Γ-equivariant by faithfulness and descends to f : 𝔛 → 𝔜 by (2); f^♢ and ψ agree after pullback along the surjection 𝔛^♢ ×_(Spd O_E) Spd Ŏ → 𝔛^♢ of (4), hence agree. Faithfulness over O_E follows in the same way from injectivity in (2). In the algebraically closed case, from ψ : 𝔛^♢ → 𝔜^♢ build a map of triples: on generic fibres via D10/lfft-generic-fibre-comparison and DiamondsAndVStacks D6.9 (the generic fibres are normal, D10/generic-fibre-of-normal-is-normal); on reductions via D8/reduction-functor and D7/perfect-scheme-full-faithfulness, applying D10/maximal-diamond-open on separated affine charts; compatibility with sp via D10/classical-specialization-compatibility. D10/specialization-triple-full-faithfulness gives faithfulness and a map f : 𝔛 → 𝔜 with f_η = ψ_η. Localize on 𝔜: for an affine open V ⊂ 𝔜, V^♢ is the open formal neighbourhood of V_red (D9/formal-neighbourhood), so `ψ^(-1)`(V^♢) = (`f^(-1)`V)^♢ by compatibility of ψ^red = f_red^perf with specialization; hence assume 𝔜 affine, in particular separated. ψ = f^♢: the graphs Γ_ψ, `Γ_(f^♢)` : 𝔛^♢ → (𝔛 `×_(Spf O_E)` 𝔜)^♢ are then closed immersions, so it suffices that their closed images agree (D10/v-closure); they agree on the generic fibre, which is dense in |𝔛^♢| (D10/generic-fibre-density).
 
 For example, for 𝔛 = 𝔜 = Spf O_E[[q]], endomorphisms of 𝔛^♢ over Spd O_E are the continuous O_E-algebra endomorphisms of O_E[[q]], q ↦ g with g ∈ (π, q). Non-example (normality): the normalization Spf O_E⟨t⟩ → Spf O_E⟨x, y⟩/(y² − x³), x = t², y = t³, induces an isomorphism of v-sheaves (D10/awn-full-faithfulness (1); D7/universal-homeomorphism-invariance on the generic fibre) but is not an isomorphism of formal schemes. Non-example (flatness and reducedness): the closed immersion Spf k → Spf(k[[q]]/(q²)) over Spf O_E induces an isomorphism of v-sheaves, both being Spd k, but is not an isomorphism.
 
-**Check.** On Spa(C,O_C), C algebraically closed perfectoid of characteristic p, k = 𝔽_(p²) gives two sections on each side of the nilpotent comparison: q maps to 0 and k has its two embeddings. Spd 𝔽_p has one section. This holds for p = 2 and p = 3.
+**Checks.**
+
+- On Spa(C,O_C), C algebraically closed perfectoid of characteristic p, k = 𝔽_(p²) gives two sections on each side of the nilpotent comparison: q maps to 0 and k has its two embeddings. Spd 𝔽_p has one section. This holds for p = 2 and p = 3.
+- Unramified descent for A = O_E = ℤ_p: A_Ŏ = W(𝔽̄_p) and its Γ-invariants are ℤ_p. At the finite level, ℤ_(p²) ⊗_(ℤ_p) ℤ_(p²) ≅ ℤ_(p²) × ℤ_(p²) (two factors, one per element of Gal(𝔽_(p²)/𝔽_p)), and the equalizer of the two inclusions is ℤ_p, for p = 2 and p = 3.
+- The product decomposition used in the lemma fails for ramified extensions, which is why the descent goes through Ŏ and not through O_C directly: for ℤ_p[√p], ℤ_p[√p] ⊗_(ℤ_p) ℤ_p[√p] ≅ ℤ_p[√p][y]/(y² − p) is local with nilpotents mod √p, not a product of two copies.
+- Faithfulness by itself does not descend maps: the two embeddings of 𝔽_(p²) into 𝔽̄_p are distinct Ŏ-points of Spf W(𝔽_(p²)) ×_(Spf ℤ_p) Spf Ŏ that Γ permutes; only Γ-invariant maps, here none from Spf ℤ_p to Spf W(𝔽_(p²)), come from O_E.
 
 Applications include KPZ §3.1.9, Lemma 3.4.1, §7.1.8: constructs ρ_\* : `M^loc_(G,μ)` → `Gr(d, Λ)_(O_E)` and proves uniqueness of local models; SW20 Lecture 21–25: uniqueness of local models and of integral models of local Shimura varieties.
 
-*Needs:* [D10.10](#d1010-formal-schemes-are-determined-by-their-specialization-triples-lourenço), [D10.6](#d106-the-analytic-locus-of-𝔛-is-its-maximal-diamond-open-subsheaf), [D10.7](#d107-the-generic-fibre-is-dense-in-the-v-sheaf-of-a-flat-formal-scheme), [D10.3](#d103-generic-fibres-of-normal-formal-schemes-are-normal), [D10.8](#d108-closed-immersions-of-small-v-stacks-and-proper-monomorphisms), [D10.9](#d109-the-v-closure-of-a-sub-v-sheaf), [D9.8](#d98-formal-neighbourhoods-of-locally-closed-subsets-of-the-reduction), [D7.6](#d76-full-faithfulness-of-x--x-on-perfect-schemes), DiamondsAndVStacks D6.9, DiamondsAndVStacks D6.7, DiamondsAndVStacks D3.8.
+*Needs:* [D10.10](#d1010-formal-schemes-are-determined-by-their-specialization-triples-lourenço), [D10.6](#d106-the-analytic-locus-of-𝔛-is-its-maximal-diamond-open-subsheaf), [D10.7](#d107-the-generic-fibre-is-dense-in-the-v-sheaf-of-a-flat-formal-scheme), [D10.3](#d103-generic-fibres-of-normal-formal-schemes-are-normal), [D10.8](#d108-closed-immersions-of-small-v-stacks-and-proper-monomorphisms), [D10.9](#d109-the-v-closure-of-a-sub-v-sheaf), [D9.8](#d98-formal-neighbourhoods-of-locally-closed-subsets-of-the-reduction), [D7.6](#d76-full-faithfulness-of-x--x-on-perfect-schemes), DiamondsAndVStacks D6.9, DiamondsAndVStacks D6.7, DiamondsAndVStacks D3.8, SchemeAndStackFoundations §0.21, SchemeAndStackFoundations §0.23a, AdicSpacesPartIII F0.3, Mathlib `Algebra.IsEffective.of_faithfullyFlat`.
 
 ([SW20](#references) Lecture 18, §18.4, Proposition 18.4.1 and proof, pp. 167–168; SW20 line 6484; [KPZ](#references) §3.1.9, p. 19; Lemma 3.4.1, arXiv v3 p. 29; KPZ line 1319.)
-
 
 ### D10.12 Proper flat normal schemes over O_E are determined by their v-sheaves
 
@@ -1258,7 +1262,7 @@ Use the standing FS convention: continuous structure maps are allowed, including
 
 For example, for X = Y = `P^n_(O_E)` the endomorphisms of (P^n)^♢ over Spd O_E are the endomorphisms of P^n over O_E. Non-example: the projective cuspidal cubic X ⊂ `P²_(O_E)` and its normalization `P¹_(O_E)` → X have isomorphic v-sheaves (AGLR Proposition 2.18(1): the normalization is the absolute weak normalization) although X is not isomorphic to `P¹_(O_E)`; normality cannot be dropped.
 
-*Needs:* [D10.11](#d1011-scholzeweinstein-flat-normal-formal-schemes-are-determined-by-their-v-sheaves), [D10.1](#d101-the-two-v-sheaves-x-and-x-of-an-o-scheme), SchemeAndStackFoundations §4.10, through AdicSpacesPartIII F0.8, SchemeAndStackFoundations:SF.0.
+*Needs:* [D10.11](#d1011-scholzeweinstein-flat-normal-formal-schemes-are-determined-by-their-v-sheaves), [D10.1](#d101-the-two-v-sheaves-x-and-x-of-an-o-scheme), SchemeAndStackFoundations §4.10, through AdicSpacesPartIII F0.8, SchemeAndStackFoundations §0.21.
 
 ([KPZ](#references) §3.1.9, p. 19; KPZ line 852; [AGLR](#references) §2.2, the discussion after (2.12) and Proposition 2.18(2), p. 13; AGLR line 778.)
 
@@ -1274,7 +1278,7 @@ For example, for normal A this recovers D10/formal-full-faithfulness in the topo
 
 Applications include AGLR Theorem 1.1 and §4: uniqueness and representability of scheme-theoretic local models.
 
-*Needs:* [D10.7](#d107-the-generic-fibre-is-dense-in-the-v-sheaf-of-a-flat-formal-scheme), [D10.10](#d1010-formal-schemes-are-determined-by-their-specialization-triples-lourenço), [D10.1](#d101-the-two-v-sheaves-x-and-x-of-an-o-scheme), [D7.6](#d76-full-faithfulness-of-x--x-on-perfect-schemes), DiamondsAndVStacks D6.9, SchemeAndStackFoundations:SF.0, SchemeAndStackFoundations §4.10, through AdicSpacesPartIII F0.8, SchemeAndStackFoundations §0.26 (gap:absolute-weak-normality-formal).
+*Needs:* [D10.7](#d107-the-generic-fibre-is-dense-in-the-v-sheaf-of-a-flat-formal-scheme), [D10.10](#d1010-formal-schemes-are-determined-by-their-specialization-triples-lourenço), [D10.1](#d101-the-two-v-sheaves-x-and-x-of-an-o-scheme), [D7.6](#d76-full-faithfulness-of-x--x-on-perfect-schemes), DiamondsAndVStacks D6.9, SchemeAndStackFoundations §0.21, SchemeAndStackFoundations §4.10, through AdicSpacesPartIII F0.8, SchemeAndStackFoundations §0.26 (gap:absolute-weak-normality-formal).
 
 ([AGLR](#references) §2.2, Definition 2.12, Lemma 2.13, Definition 2.14, Proposition 2.15, Theorem 2.16 and Proposition 2.18 with proofs, pp. 12–14; AGLR line 671.)
 
@@ -1294,10 +1298,9 @@ Applications include KPZ Lemma 3.4.1, Theorem 3.2.15: identifies (X̄_μ)^♢ wi
 
 ([KPZ](#references) Proof of Lemma 3.4.1, arXiv v3 p. 29 (published p. 28); KPZ line 1319; [AGLR](#references) §2.1, Lemma 2.7 and Proposition 2.8, pp. 9–10; Lemma 2.17, p. 13; AGLR line 541.)
 
-
 ### D10.15 Integral models and morphisms with prescribed v-sheaves are unique
 
-**Application.** (1) If X and X' are proper flat normal O_E-schemes with X^♢ ≅ X'^♢ over Spd O_E, then X ≅ X' by a unique isomorphism inducing the given one. Let `M^v_(𝒢,μ)` be the v-closure (D10/v-closure) of the Schubert diamond `Gr_(G,μ)` over Spd Ĕ in the integral Beilinson–Drinfeld Grassmannian `Gr_(𝒢,Spd O_E)` of GeometricSatakeAndFusion GS0, for a parahoric model 𝒢 and minuscule μ with reflex field E. Then a scheme-theoretic local model `M^loc_(𝒢,μ)` (proper, flat, normal, with (M^loc)^♢ = `M^v_(𝒢,μ)`) is unique if it exists. (2) Let ρ : 𝒢 ↪ GL(Λ) be a closed immersion extending a Hodge embedding (G, μ) ↪ (GL(V), μ_d), and assume, as Scholze–Weinstein prove, that `M^v_(GL(Λ),μ_d)` = Gr(d, Λ)^♢. Then there is a unique morphism ρ_\* : `M^loc_(𝒢,μ)` → `Gr(d, Λ)_(O_E)` of O_E-schemes whose diamond is the map `M^v_(𝒢,μ)` → `M^v_(GL(Λ),μ_d)` induced by ρ; if the Zariski closure X̄_μ of G/P_μ in `Gr(d, Λ)_(O_E)` is normal with reduced special fibre then X̄_μ = `M^loc_(𝒢,μ)` and ρ_\* is a closed immersion.
+**Application.** (1) If X and X' are proper flat normal O_E-schemes with X^♢ ≅ X'^♢ over Spd O_E, then X ≅ X' by a unique isomorphism inducing the given one. For a parahoric model 𝒢 and minuscule μ with reflex field E, let `M^v_(𝒢,μ)` be GeometricSatakeAndFusion GS0's integral v-sheaf local model (“Bounded admissible affine flag loci”): the v-closure of the generic Schubert bound in the integral Beilinson–Drinfeld Grassmannian `Gr_(𝒢,Spd O_E)`, with D10.9 as the v-closure construction it uses. Then a scheme-theoretic local model `M^loc_(𝒢,μ)` (proper, flat, normal, with reduced special fibre, and with (M^loc)^♢ = `M^v_(𝒢,μ)`, as in SW20 Conjecture 21.4.1) is unique if it exists. (2) Let ρ : 𝒢 ↪ GL(Λ) be a closed immersion extending a Hodge embedding (G, μ) ↪ (GL(V), μ_d), and assume, as Scholze–Weinstein prove, that `M^v_(GL(Λ),μ_d)` = Gr(d, Λ)^♢. Then there is a unique morphism ρ_\* : `M^loc_(𝒢,μ)` → `Gr(d, Λ)_(O_E)` of O_E-schemes whose diamond is the map `M^v_(𝒢,μ)` → `M^v_(GL(Λ),μ_d)` that GS0 attaches to ρ; if the Zariski closure X̄_μ of G/P_μ in `Gr(d, Λ)_(O_E)` is normal with reduced special fibre then X̄_μ = `M^loc_(𝒢,μ)` and ρ_\* is a closed immersion.
 
 Use the standing FS convention: continuous structure maps are allowed, including the (π,q)-adic formal disc. The integral Grassmannians, their bounded closed subfunctors and the closed immersion `Gr_(𝒢)` → `Gr_(GL(Λ))` induced by a closed representation are those of GeometricSatakeAndFusion GS0 (Witt geometry); this node only applies the recovery theorems to them. The identification `M^v_(GL(Λ),μ_d)` = Gr(d, Λ)^♢ (SW20 Corollary 21.6.10) is a hypothesis here.
 
@@ -1305,7 +1308,7 @@ Use the standing FS convention: continuous structure maps are allowed, including
 
 For example, for G = GL(Λ) and minuscule μ_d, M^loc = `Gr(d, Λ)_(O_E)` and ρ_\* is the identity.
 
-*Needs:* [D10.12](#d1012-proper-flat-normal-schemes-over-o_e-are-determined-by-their-v-sheaves), [D10.14](#d1014-the-v-sheaf-of-a-flat-zariski-closure-is-the-v-closure-of-its-generic-fibre), [D10.8](#d108-closed-immersions-of-small-v-stacks-and-proper-monomorphisms), [D10.9](#d109-the-v-closure-of-a-sub-v-sheaf), GeometricSatakeAndFusion GS0, “Integral parahoric ind-properness”, GeometricSatakeAndFusion GS0, “Integral bounded Grassmannian families”.
+*Needs:* [D10.12](#d1012-proper-flat-normal-schemes-over-o_e-are-determined-by-their-v-sheaves), [D10.14](#d1014-the-v-sheaf-of-a-flat-zariski-closure-is-the-v-closure-of-its-generic-fibre), [D10.8](#d108-closed-immersions-of-small-v-stacks-and-proper-monomorphisms), [D10.9](#d109-the-v-closure-of-a-sub-v-sheaf), GeometricSatakeAndFusion GS0, “Integral parahoric ind-properness”, GeometricSatakeAndFusion GS0, “Integral bounded Grassmannian families”, GeometricSatakeAndFusion GS0, “Bounded admissible affine flag loci”.
 
 ([SW20](#references) Lecture 21, §21.4, Conjecture 21.4.1, Remark 21.4.2 and the following paragraph, p. 195 (PDF p. 205); SW20 line 7494; [KPZ](#references) §3.1.9, p. 19; Lemma 3.4.1 and proof, arXiv v3 p. 29 (published p. 28); KPZ line 1319.)
 
@@ -1407,7 +1410,6 @@ Applications include GLX ¶4–6: v-sheaves of formal schemes and v-sheaf local 
 
 ([GLE](#references) §4.5, Definition 4.35(3) and Remark 4.37, p. 35; GLE line 1707; [AGLR](#references) §2.3, footnote 1, p. 14; AGLR line 799.)
 
-
 ### D11.4 Formal schemes give kimberlites
 
 **Theorem.** For a separated formal scheme 𝔛 over ℤ_p as in D9.7, with complete separated affine rings and finitely generated ideals of definition containing p, 𝔛^♢ is a kimberlite. On |(𝔛^♢)^an| its specialization sends a bounded valuation to the prime ideal of elements of value less than 1, viewed in |𝔛_red| = |(𝔛_red)^perf|. For locally noetherian 𝔛 this agrees with the classical specialization λ of AdicSpacesPartIII R2.
@@ -1455,7 +1457,6 @@ Applications include GLX ¶10, (3.10)–(3.11) and Theorem 3.8: tubes of integra
 
 ([GLE](#references) §4.5, Definition 4.38 and Proposition 4.39 with proof, p. 35; GLE line 1718; [AGLR](#references) §2.3, Definition 2.28 and Example 2.29, p. 16; AGLR line 884.)
 
-
 ### D11.6 Specialization maps of smelted kimberlites are spectral and closed for kimberlites
 
 **Theorem.** For a smelted kimberlite (F, D), sp_D : |D| → |F^red| is a specializing spectral map of locally spectral spaces (continuous for the constructible topologies). For a kimberlite G, `sp_(G^an)` : |G^an| → |G^red| is closed.
@@ -1490,7 +1491,7 @@ D8–D10; DiamondsAndVStacks D3–D6; DiamondEtaleCohomology C4; AdicSpacesPartI
 
 ## Layer D11b: Richness and connected components
 
-Richness adds constructible density and surjective specialization. D11.14 owns the unrestricted component theorem; the intermediate argument uses closed specializations.
+Richness adds constructible density and surjective specialization. D11.14 proves the component bijection for topologically normal rich smelted kimberlites whose reduction has closed specializations.
 
 ### D11.8 Constructibly Jacobson diamonds
 
@@ -1514,14 +1515,13 @@ The construction has the following properties:
 - Spd(C, C⁺) with C⁺ of rank two is not cJ: its closed point is a patch-open set without rank-one points.
 - For C of characteristic p, the perfectoid ball Spa(C⟨`T^(1/p^∞)`⟩) is cJ: Frobenius perfection identifies its diamond with that of the characteristic-p closed disc.
 - The empty diamond is cJ.
-- The predicate satisfied everywhere is constructibly dense.
 - In the two-point Sierpiński space the open point alone is not constructibly dense: the closed point is constructible (the space of Spa(C, C⁺) for C⁺ of rank two).
 
 For example, Spd(C, O_C) is a cJ-diamond (one rank-one point).
 
 Applications include Gleason Proposition 4.45: tubes are dense in specialization fibres; Gleason Definition 4.52: richness requires D to be cJ; GLX Theorem 3.7: local Shimura varieties at parahoric level are cJ (part of richness).
 
-*Needs:* DiamondsAndVStacks D5.1, DiamondsAndVStacks D5.7, DiamondsAndVStacks D3.10, AdicSpacesPartII R0.19.1, AdicSpacesPartII R0.9, Mathlib `constructibleTopology`.
+*Needs:* DiamondsAndVStacks D5.1, DiamondsAndVStacks D5.7, DiamondsAndVStacks D3.10, AdicSpacesPartII R0.19.1, AdicSpacesPartII R0.9 (K-affinoid carrier), AdicSpacesPartII R1.9 (*classical-points-constructible-density*, from RigidAnalyticGeometry §8.2), Mathlib `constructibleTopology`.
 
 ([GLE](#references) §4.6, Definition 4.44, Proposition 4.46, Theorem 4.47, Corollary 4.48 and Example 4.49, pp. 36–37; GLE line 1787.)
 
@@ -1555,7 +1555,7 @@ The construction has the following properties:
 
 - The closed disc over C has enough facets.
 - Spa(C, O_C) itself has enough facets.
-- Spd(C, C⁺) with C⁺ of rank two does not have enough facets: it is not cJ.
+- Let L be the completed perfection of C(T) for the Gauss norm, with residue field `k_C(T^(1/p^∞))`, and let L⁺ ⊂ O_L be the inverse image of the T-adic valuation ring of that residue field. Then O_C ⊂ L⁺, so Spd(L, L⁺) lies over Spa(C, O_C). It has two points, one of rank one; the rank-two closed point is a patch-open singleton without rank-one points, so Spd(L, L⁺) is not cJ and does not have enough facets. (Spa(C, C⁺) with C⁺ ⊊ O_C is not a test case here: the identity of C does not carry O_C into C⁺, so it has no structure map to Spa(C, O_C).)
 
 For example, Spd(C⟨T⟩, O_C⟨T⟩) has enough facets.
 
@@ -1597,7 +1597,6 @@ Applications include Gleason Lemma 4.53: sp_D is a quotient map for rich pairs; 
 
 ([GLE](#references) §4.6, Definition 4.52(1)–(2) and Proposition 4.54, pp. 37–38; GLE line 1856; [GLX](#references) §3.4, Theorem 3.7 and footnote 18, p. 21; GLX line 851.)
 
-
 ### D11.12 Topologically normal rich smelted kimberlites
 
 **Definition.** A rich smelted kimberlite (F, D) is topologically normal if for every closed point x ∈ |F^red| the tubular neighbourhood `D^⊚_(/x)` is connected. This predicate is separate from richness.
@@ -1624,7 +1623,6 @@ Applications include Gleason Lemma 4.55: the component bijection; GLX Theorem 3.
 
 ([GLE](#references) §4.6, Definition 4.52(3) and footnote 7, p. 37; GLE line 1856; [GLX](#references) §3.4, proof of Theorem 3.9 and footnote 20, p. 22; GLX line 891.)
 
-
 ### D11.13 Specialization of a rich smelted kimberlite is a quotient map
 
 **Theorem.** If K = (F, D) is a rich smelted kimberlite then sp_D : |D| → |F^red| is a quotient map.
@@ -1639,15 +1637,11 @@ For example, for (Spd ℤ_p⟨T⟩, closed disc) the quotient topology on `A¹_(
 
 ### D11.14 Gleason's connected-components theorem
 
-**Unrestricted target.** For every topologically normal rich smelted kimberlite K = (F,D), prove that π₀(sp_D) : π₀(|D|) → π₀(|F^red|) is bijective (GLE Lemma 4.55, GLE line 1881). D11.14 owns this theorem at its printed generality.
+**Theorem.** Let K = (F, D) be a topologically normal rich smelted kimberlite such that every point of |F^red| specializes to a closed point. Then π₀(sp_D) : π₀(|D|) → π₀(|F^red|) is bijective (GLE Lemma 4.55, GLE line 1881, whose proof uses a closed specialization at GLE line 1885).
 
-**Intermediate theorem.** Under the additional assumption that every point of |F^red| specializes to a closed point, the same component map is bijective. The condition holds for the perfection of a scheme locally of finite type over a field: closed points are dense in every closed subset of its Jacobson model.
+Closed-specialization condition: for each y ∈ |F^red| there is a closed point x of |F^red| with y specializing to x. It holds when |F^red| is quasicompact (a nonempty closed subset of a quasicompact sober space contains a closed point) and when F^red is the perfection of a scheme locally of finite type over a field (such a scheme is Jacobson, so closed points are dense in every closed subset). GLE prints the lemma without this condition, but local noetherianity of |F^red|, which richness provides, does not imply it (second Check below), and topological normality constrains only the tubes at closed points; the theorem is therefore stated with the condition, which every application below satisfies.
 
-Closed-specialization condition: for each y ∈ |F^red| there is a closed point x with y specializing to x. Local noetherianity of the underlying topology alone is not used as a substitute for the closed-specialization hypothesis.
-
-*Proof route for the unrestricted target.* Prove that for each connected component Z of |F^red|, its full inverse image in |D| is connected, using the valuative lifting property, constructible Jacobson density and the connected closed-point tubes together. This componentwise assertion is an obligation of D11.14 itself, not a consequence of local noetherian topology. A proof must either derive the required closed specializations from these full kimberlite axioms or avoid that step. GLE line 1885 supplies the step only with the intermediate hypothesis; it does not prove that hypothesis.
-
-*Proof of the intermediate theorem.* Surjectivity of sp_D gives surjectivity on connected components. For a clopen partition |D| = U ⊔ V, each image is stable under specialization because sp_D is specializing and U,V are closed. If the two images meet, use the closed-specialization condition to choose a common closed specialization x. Local noetherianity of the underlying topology makes {x} constructible. Tube density and topological normality make `sp_D^(-1)`(x) connected, contradicting the partition. Thus every clopen subset of |D| is saturated under sp_D. Apply D11/rich-quotient-theorem: saturated clopens descend to clopens of |F^red|. To pass from clopens to actual connected components, use that a locally noetherian space is locally connected and its components are open. Restrict to the open preimage of each base component; any disconnection there gives a clopen in |D|, whose descended partition would disconnect that base component. Each such preimage is therefore connected, giving injectivity on π₀.
+*Proof sketch.* Surjectivity of sp_D gives surjectivity on connected components. For a clopen partition |D| = U ⊔ V, each image is stable under specialization because sp_D is specializing and U,V are closed. If the two images meet, use the closed-specialization condition to choose a common closed specialization x. Local noetherianity of the underlying topology makes {x} constructible. Tube density and topological normality make `sp_D^(-1)`(x) connected, contradicting the partition. Thus every clopen subset of |D| is saturated under sp_D. Apply D11/rich-quotient-theorem: saturated clopens descend to clopens of |F^red|. To pass from clopens to actual connected components, use that a locally noetherian space is locally connected and its components are open. Restrict to the open preimage of each base component; any disconnection there gives a clopen in |D|, whose descended partition would disconnect that base component. Each such preimage is therefore connected, giving injectivity on π₀.
 
 For example, for a flat normal formal scheme 𝔛 topologically of finite type over Spf O with k algebraically closed, π₀(𝔛_η) = π₀(𝔛_red), the classical fact recovered here. Non-example: for 𝔛 = Spf ℤ_p⟨x, y⟩/(x(x − p)) the generic fibre is two disjoint closed discs while the reduction `A¹_(𝔽_p)` is connected; the pair is rich but not topologically normal and π₀(sp) is not injective.
 
@@ -1655,7 +1649,7 @@ For example, for a flat normal formal scheme 𝔛 topologically of finite type o
 
 - Spd O has component map 1 → 1 and satisfies the closed-specialization condition. The empty rich pair has component map ∅ → ∅ and satisfies it vacuously.
 - On the perfect valuation spectrum with primes 𝔭₀ ⊊ 𝔭₁ ⊊ ⋯ and maximal limit 𝔪, delete 𝔪. The remaining space has finite initial-segment open neighbourhoods, hence is locally noetherian, but every 𝔭ₙ specializes to 𝔭ₙ₊₁ and none is closed. Its number of closed points is 0 and its closed-specialization condition is false. This is a counterexample to the topological inference, not an asserted rich kimberlite.
-- For Spf ℤ_p⟨x,y⟩/(x(x−p)), the component map is 2 → 1 and every closed-point tube has two components; topological normality fails. Thus the unrestricted target retains topological normality.
+- For Spf ℤ_p⟨x,y⟩/(x(x−p)), the component map is 2 → 1 and every closed-point tube has two components; topological normality fails. Thus topological normality cannot be dropped.
 
 Applications include GLX Theorem 3.9 and §6: π₀(`Sht_((G,b,μ,K_p))` × Spd F) ≅ π₀(`X^(K_p)`_μ(b)); Gleason Theorem 5.1 / Theorem 11: normality of B_dR⁺-Grassmannians implies component results.
 
@@ -1665,11 +1659,11 @@ Applications include GLX Theorem 3.9 and §6: π₀(`Sht_((G,b,μ,K_p))` × Spd 
 
 ### Examples
 
-For O_E⟨x,y⟩/(x(x−π)), the reduction is the line with one component, while the generic fibre has two closed-disc components. Its closed-point tube has two open-disc components, so topological normality fails and the component map 2 → 1 is not injective. For Spd O_E the component map is 1 → 1 (GLE Definition 4.52 and Lemma 4.55 with the closed-specialization hypothesis).
+For O_E⟨x,y⟩/(x(x−π)), the reduction is the line with one component, while the generic fibre has two closed-disc components. Its closed-point tube has two open-disc components, so topological normality fails and the component map 2 → 1 is not injective. For Spd O_E the component map is 1 → 1 (GLE Definition 4.52 and Lemma 4.55; both reductions satisfy the closed-specialization condition).
 
 ### Dependencies
 
-D7–D9, D11a; DiamondsAndVStacks D0, D3, D5, D6; AdicSpacesPartII R0.9, R0.19; Mathlib constructible topology, quotient maps and connected components.
+D7–D9, D11a; DiamondsAndVStacks D0, D3, D5, D6; AdicSpacesPartII R0.9, R0.19, R1.9; Mathlib constructible topology, quotient maps and connected components.
 
 ## Layer D11c: π-adic kimberlites and specialization triples
 
@@ -1750,9 +1744,9 @@ E/ℚ_p complete discretely valued with perfect residue field k. Topologically o
 
 For example, for 𝔛 = Spf O_E⟨T⟩, the generic fibre is the connected closed disc and the reduction is A¹_k. The tube at a closed point x is an open disc over the finite unramified extension of E with residue field κ(x); it is an open E-disc when x is k-rational. Normality is needed: the flat non-normal Spf ℤ_p⟨x, y⟩/(x(x − p)) has disconnected tubes (D11/topologically-normal).
 
-*Needs:* [D11.11](#d1111-rich-smelted-kimberlites), [D11.12](#d1112-topologically-normal-rich-smelted-kimberlites), [D11.14](#d1114-gleasons-connected-components-theorem), [D11.4](#d114-formal-schemes-give-kimberlites), [D9.8](#d98-formal-neighbourhoods-of-locally-closed-subsets-of-the-reduction), [D11.17](#d1117-flat-π-adic-kimberlites), [D10.2](#d102-generic-fibres-of-formal-schemes-locally-formally-of-finite-type), DiamondsAndVStacks D6.5, SchemeAndStackFoundations:SF.0, [D10.4](#d104-connectedness-of-the-complete-local-generic-fibre).
+*Needs:* [D11.11](#d1111-rich-smelted-kimberlites), [D11.12](#d1112-topologically-normal-rich-smelted-kimberlites), [D11.14](#d1114-gleasons-connected-components-theorem), [D11.4](#d114-formal-schemes-give-kimberlites), [D9.8](#d98-formal-neighbourhoods-of-locally-closed-subsets-of-the-reduction), [D11.17](#d1117-flat-π-adic-kimberlites), [D10.2](#d102-generic-fibres-of-formal-schemes-locally-formally-of-finite-type), DiamondsAndVStacks D6.5, SchemeAndStackFoundations §0.21, [D10.4](#d104-connectedness-of-the-complete-local-generic-fibre).
 
-([DJ95](#references) §7.3, Lemma 7.3.5 and proof, p. 88 (journal pagination); DJ95 line 2899; [GLE](#references) Introduction, the paragraph after Remark 5.2 of the introduction (p. 6) and §4.6 motivation before Example 4.43, p. 36; GLE line 1771; [GLX](#references) §3.1, ¶6, p. 18; GLX line 714.)
+([DJ95](#references) §7.3, Lemma 7.3.5 and proof, p. 88 (journal pagination); DJ95 line 2899; [GLE](#references) Introduction, unnumbered paragraph on normal formal schemes and connected components, p. 6, GLE lines 267–270; §4.6, motivation before Example 4.43, p. 36, GLE lines 1773–1782; [GLX](#references) §3.1, ¶6, p. 18; GLX line 714.)
 
 ### D11.18 The specialization-triple theorem for π-adic kimberlites
 
@@ -1769,7 +1763,6 @@ Applications include AGLR Theorem 1.1 and §4: local models are determined by th
 *Needs:* [D11.17](#d1117-flat-π-adic-kimberlites), [D11.16](#d1116-π-adic-prekimberlites-and-kimberlites-over-spd-o), [D9.3](#d93-formalizations-into-a-formally-separated-v-sheaf-are-unique), [D9.5](#d95-the-specialization-map-sp_f--f--fred), DiamondsAndVStacks D4.9.
 
 ([AGLR](#references) §2.3, Definition 2.36, Theorem 2.37 and proof, pp. 17–18; AGLR line 983.)
-
 
 ### D11.19 Proper π-adic prekimberlites with dense generic fibre lie in 𝒦
 
@@ -1797,7 +1790,7 @@ For example, for A = O⟨T⟩ with k algebraically closed, the tubes at closed p
 
 Applications include AGLR §§4–7: normality of local models; Gleason footnote 7: motivates topological normality.
 
-*Needs:* [D11.17](#d1117-flat-π-adic-kimberlites), [D9.8](#d98-formal-neighbourhoods-of-locally-closed-subsets-of-the-reduction), [D11.5](#d115-tubular-neighbourhoods-of-smelted-kimberlites), SchemeAndStackFoundations:SF.0, SchemeAndStackFoundations §0.26 (gap:mixed-characteristic-weak-normality), SchemeAndStackFoundations §0.26 (gap:finite-geometric-fibre-radiciality).
+*Needs:* [D11.17](#d1117-flat-π-adic-kimberlites), [D9.8](#d98-formal-neighbourhoods-of-locally-closed-subsets-of-the-reduction), [D11.5](#d115-tubular-neighbourhoods-of-smelted-kimberlites), SchemeAndStackFoundations §0.21, SchemeAndStackFoundations §0.26 (gap:mixed-characteristic-weak-normality), SchemeAndStackFoundations §0.26 (gap:finite-geometric-fibre-radiciality).
 
 ([AGLR](#references) §2.3, Proposition 2.39 and proof, pp. 18–19; AGLR line 1044.)
 
@@ -1811,7 +1804,7 @@ D7–D10, D11a–D11b; SchemeAndStackFoundations §§0.21, 0.23, 0.25 and §0.26
 
 ## Downstream consumers
 
-GeometricSatakeAndFusionPartII applies D10 and D11 to integral local models. Its §0.4 uses the v-closure of D10.9; §§0.5, 3.2, 6.5 and 6.6 use D10.12's proper-scheme recovery theorem; §§3.1 and 7.7 use D10.15; §3.5 uses the kimberlite structure of D11.11, D11.17 and D11.19; §3.6 uses D10.13 and D11.18; §6.4 uses D10.14's flat-closure theorem; §§7.1 and 7.5 use the tubes of D11.5 and the tube theory of D11; and §7.6 uses the normality criterion D11.20. HeckeStacksAndLocalShtukas HS2.16 states a specialization criterion for open components of shtuka moduli that assumes an identification of finite-level components with the components of the special fibre; D11.14's component bijection for topologically normal rich smelted kimberlites is a theorem of that kind, as in GLX Theorem 3.9. The general theory here supplies these applications without assuming their local-model or shtuka comparison theorems.
+GeometricSatakeAndFusionPartII applies D10 and D11 to integral local models. Its §0.4 uses the v-closure of D10.9; §§0.5, 3.2, 6.5 and 6.6 use D10.12's proper-scheme recovery theorem; §§3.1 and 7.7 use D10.15; §3.5 uses the kimberlite structure of D11.11, D11.17 and D11.19; §3.6 uses D10.13 and D11.18; §6.4 uses D10.14's flat-closure theorem; §§7.1 and 7.5 use the tubes of D11.5 and the tube theory of D11; and §7.6 uses the normality criterion D11.20. HeckeStacksAndLocalShtukas HS2.16 states a specialization criterion for open components of shtuka moduli that assumes an identification of finite-level components with the components of the special fibre; D11.14's component bijection for topologically normal rich smelted kimberlites whose reduction has closed specializations (as perfectly finite-type reductions do) is a theorem of that kind, as in GLX Theorem 3.9. The general theory here supplies these applications without assuming their local-model or shtuka comparison theorems.
 
 ## Worked examples
 
@@ -1835,3 +1828,4 @@ The cuspidal normalization, the two formal discs, the discrete four-point olivin
 
 - **GLX**: Ian Gleason, Dong Gyu Lim and Yujie Xu, [The connected components of affine Deligne–Lusztig varieties](https://arxiv.org/abs/2208.07195v3). arXiv:2208.07195v3, 10 November 2025; Inventiones Mathematicae (2026). Exact theorem and page locators and extraction lines are attached to the targets above.
 
+- **BHA17**: Bhargav Bhatt, [Lecture notes for a class on perfectoid spaces](https://www.math.ias.edu/~bhatt/teaching/mat679w17/lectures.pdf). Author's lecture notes, 2017. Exact theorem and page locators and extraction lines are attached to the targets above.

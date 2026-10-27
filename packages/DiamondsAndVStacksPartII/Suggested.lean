@@ -1,16 +1,20 @@
 import Mathlib
+import TauCeti.RingTheory.Huber.Pair
+import TauCeti.AlgebraicGeometry.AdicSpace.Spa.Basic
 
 /-!
 # Diamonds and v-stacks, Part II: target signatures
 
-The roadmap is README.md; this file is not the roadmap. This acceptance test records
-which headline theorems can be stated against the pinned Mathlib and Tau Ceti APIs.
-None of the headline theorems below is statable at these pins. Native schemes,
-valuations, topological spaces, and pre-adic-space carriers do not provide the
-perfectoid v-site or its category of small v-sheaves. Constructing that site and the
-formal geometry is library work, rather than a simple definition for a signature.
+The roadmap is README.md; this file is not the roadmap. This acceptance test states the
+roadmap's headline theorems that can be stated against the pinned Mathlib and Tau Ceti APIs.
+One is statable: the specialization theorem for Tate Huber pairs (D9.1), which needs only
+Tau Ceti's Huber pairs and adic spectrum and Mathlib's prime spectrum. Its clause for strictly
+totally disconnected perfectoid spaces is not statable: perfectoid spaces are missing.
 
-The following headline theorems are not statable at the pins:
+The other headline theorems are not statable at the pins. Native schemes, valuations,
+topological spaces and pre-adic-space carriers do not provide the perfectoid v-site or its
+category of small v-sheaves. Constructing that site and the formal geometry is library work,
+rather than a simple definition for a signature.
 
 - D7.3: Universal homeomorphisms of arbitrary analytic pre-adic spaces over Spa ℚ_p induce isomorphisms of diamonds; the residue-preserving theorem is intermediate. Missing: analytic diamondification and its target category of v-sheaves.
 - D7.6: Diamondification is fully faithful on perfect schemes. Missing: the functor from schemes to small v-sheaves.
@@ -31,17 +35,41 @@ The following headline theorems are not statable at the pins:
 - D11.1 and D11.4: Separated formal schemes with finitely generated defining ideals give valuative prekimberlites and kimberlites, without noetherianity. Missing: general formal schemes, diamondification and kimberlites.
 - D11.6: Spectral specialization for smelted kimberlites and closed specialization for kimberlites. Missing: kimberlites and their specialization maps.
 - D11.13: Specialization for a rich smelted kimberlite is a quotient map. Missing: rich smelted kimberlites and their specialization maps.
-- D11.14: Connected components specialize bijectively for topologically normal rich pairs without a closed-specialization assumption; the case with that assumption is intermediate. Missing: rich smelted kimberlites and their tubes.
+- D11.14: Connected components specialize bijectively for topologically normal rich pairs whose reduction has closed specializations. Missing: rich smelted kimberlites and their tubes.
 - D11.15: Normal formal schemes have connected tubes and the same generic and special components. Missing: formal schemes, rigid generic fibres, diamondification and tubes.
 - D11.18: The specialization principle for the category of flat π-adic kimberlites. Missing: π-adic kimberlites, the category K and specialization triples.
 - D11.20: Connected closed-point tubes force normality over an algebraically closed residue field. Missing: tubular neighbourhoods and their rigid generic fibres.
 
 No topological or ring-theoretic consequence on arbitrary carriers substitutes for
 one of these theorems. The algebraically closed residue field of D11.20 belongs
-to its intended headline statement. D11.14 owns the unrestricted component theorem and its source proof
-obligation as well as the intermediate theorem with closed specializations.
+to its intended headline statement.
 -/
 
 namespace TauCetiRoadmap.DiamondsAndVStacksPartII
+
+open TauCeti
+
+/-! ## Layer D9: Specializing v-sheaves, prekimberlites and formal neighbourhoods -/
+
+/-- The space of the reduction of a plus ring: the primes of `A⁺` that contain every element of
+`A⁺` which is topologically nilpotent in `A`. This is the closed subset `V(A⁺°°)` of
+`Spec A⁺`, homeomorphic to `Spec(A⁺_red)` with `A⁺_red = (A⁺/A⁺°°)^perf`. -/
+def reductionSpectrum {A : Type*} [CommRing A] [TopologicalSpace A] (Aplus : Subring A) :
+    Set (PrimeSpectrum Aplus) :=
+  {𝔭 | ∀ a : Aplus, IsTopologicallyNilpotent (a : A) → a ∈ 𝔭.asIdeal}
+
+/-- **Specialization for Tate Huber pairs** (D9.1). For a Tate ring `A` with a ring of
+integral elements `A⁺`, the specialization map `x ↦ {a ∈ A⁺ : |a(x)| < 1}` from
+`Spa(A, A⁺)` to `Spec(A⁺_red)` is surjective, spectral and closed. The membership clause
+characterizes the map, so this is the statement about the specialization map itself
+(Gleason, Specialization maps for Scholze's category of diamonds, Definition 4.1 and
+Proposition 4.2; Bhatt, Lecture notes for a class on perfectoid spaces, Remark 7.4.12 and
+Theorem 8.1.2). -/
+theorem exists_tate_specialization {A : Type*} [CommRing A] [TopologicalSpace A]
+    [IsTopologicalRing A] [Huber.IsTateRing A] (P : Huber.Pair A) :
+    ∃ sp : ValuationSpectrum.spa P.plus → reductionSpectrum P.plus,
+      (∀ x a, a ∈ (sp x).1.asIdeal ↔ (x : ValuationSpectrum A).valuation (a : A) < 1) ∧
+      Function.Surjective sp ∧ IsSpectralMap sp ∧ IsClosedMap sp := by
+  sorry
 
 end TauCetiRoadmap.DiamondsAndVStacksPartII
