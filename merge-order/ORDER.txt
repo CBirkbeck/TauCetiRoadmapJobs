@@ -344,3 +344,4 @@ MotivicStructuresInModuliOfCurves
 SymplecticReidemeisterTorsionModSquares
 TopologicalMirrorSymmetryForHitchinSystems
 ProfiniteProPGroups
+ChevalleyGroups
