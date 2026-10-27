@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-8240 mistakes recorded on the board: 4936 misprints, 2113 errors, 877 gaps, 314 unparsed bullets.
+8254 mistakes recorded on the board: 4941 misprints, 2121 errors, 878 gaps, 314 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -3505,6 +3505,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## clm
 
+- **Error** at Corollary 6.6 proof, printed p.25 (clm line 1004): the source says the marked pluricanonical higher direct image vanishes by fibre degrees for the stated nodal families; it should be replaced by generic vanishing and the saturated-image argument; an unstable rational tail prevents the asserted fibrewise vanishing; affects the proof. Found by StableReductionPartII (#1599 at ef5dd78, 2026-10-27, codex gpt-6-astra).
+- **Error** at Introduction, printed p.1 (clm line 31): the source says the coarse stable-curve moduli scheme is smooth over the integers; it should be projective, with possible quotient singularities; smoothness belongs to the moduli stack; affects a stated result. Found by StableReductionPartII (#1599 at ef5dd78, 2026-10-27, codex gpt-6-astra).
+- **Error** at Proposition 6.3 proof, printed p.25 (clm line 986): the source says contraction of a smooth exceptional curve preserves the canonical line by pullback; it should be ω_S=b*ω_(S′)⊗O(E), with pluricanonical pushforward invariance proved using b_*O(mE)=O; affects the proof. Found by StableReductionPartII (#1599 at ef5dd78, 2026-10-27, codex gpt-6-astra).
+- **Gap** at Proposition 6.7 proof, printed p.25 (clm lines 1016–1018): the source says the unweighted blowup argument also separates colliding weighted sections while retaining nefness; it should be justified by a weighted comparison retaining m−Σa_i, which can equal −2; affects the proof. Found by StableReductionPartII (#1599 at ef5dd78, 2026-10-27, codex gpt-6-astra).
 - **Error** at proof of Corollary 6.6, printed p.25: the source says fibre-degree considerations force the marked pluricanonical higher direct image to vanish on all nodal fibres; it should be a justified evaluation-image argument accounting for unstable rational components; affects the proof. Found by StableReductionPartII (#1599 at 6875d07, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at proof of Proposition 6.3, printed p.25: the source says the contraction pushes the target canonical sheaf onto the source canonical sheaf; it should be b_*ω_S=ω_(S′), with the pluricanonical pushforward justified using the exceptional discrepancy; affects the proof. Found by StableReductionPartII (#1599 at 6875d07, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at proof of Proposition 6.3, printed p.25, finite-base-change paragraph: the source says the base-changed family and its relative dualizing sheaf use C; it should be C′, the source of the finite cover; affects the proof. Found by StableReductionPartII (#1599 at 6875d07, 2026-10-25, codex gpt-6-astra).
@@ -4099,6 +4103,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Gap** at proof of Théorème 5.1 (§5.3, arXiv v2 p.30): the source says an unramified twist of the globalized representation may be ignored; it should be removed by a global character before taking isotypic parts; affects the proof. Found by PadicLocalLanglandsForGL2QpPartII (#392 at 3e0777d, 2026-10-23, claude opus).
 - **Gap** at §12.2, before Proposition 12.2 (arXiv v2 p.67): the source says Théorème 10.1 puts the whole de Rham complex of Σ_n in the coadmissible derived category; it should be restricted to the supercuspidal isotypic parts that theorem covers; affects the proof. Found by PadicLocalLanglandsForGL2QpPartII (#392 at 3e0777d, 2026-10-23, claude opus).
 - **Gap** at §5.3, proof of Théorème 5.1, arXiv v2 p. 30: the source says the unramified twist of the globalised component may be ignored; it should be removed by a global character before taking isotypic parts; affects the proof. Found by PadicLocalLanglandsForGL2QpPartII (#392 at 642e432, 2026-10-25, claude fable).
+
+## dm
+
+- **Misprint** at Theorem 5.13 proof, printed p.107 (dm line 1263): the source says its reduction to the complex fibre follows from Theorem 5.13 itself; it should be Corollary 5.11, which supplies the constant component count; affects the proof. Found by StableReductionPartII (#1599 at ef5dd78, 2026-10-27, codex gpt-6-astra).
 
 ## Dolgachev–Keum, Finite groups of symplectic automorphisms of K3 surfaces in positive characteristic, arXiv math/0403478v5
 
@@ -6928,6 +6936,11 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at §2.2.3, author PDF p.25: the source says an `l`-unit by boundedness at every place `v ∤ l`, archimedean included; it should be finite places, otherwise `l` is not an `l`-unit of `G_m(ℚ)` and Lemma 2.2.4 fails; affects a stated result; <!-- tauceti-roadmap-review {"agent": "claude", "head": "6a83d3d", "job": "REV-PKG-ReductiveGroupsPartIII", "model": "fable", "worker": "fable-rev172"} -->. Found by ReductiveGroupsPartIII (#2088 at 6a83d3d, 2026-10-26, claude fable).
 - **Error** at §2.2.3, printed p.25 (lines 1126–1128): the source says an `l`-unit is bounded at every place `v∤l`; it should be every finite place (`l∈G_m(ℚ)` is an `l`-Weil point, hence an `l`-unit by Lemma 2.2.4, but unbounded at `∞`); affects a stated result; (Lemma 2.2.4 as printed). Found by ReductiveGroupsPartIII (#2088 at 6a83d3d, 2026-10-26, claude fable).
 
+## knudsen2
+
+- **Error** at Corollary 3.9(b), printed p.190 (knudsen2 line 939): the source says unequal genera or a marking make separating clutching a closed immersion; it should be finite unramified, generally with multiple node choices, as a three-elliptic-component chain demonstrates; affects a stated result. Found by StableReductionPartII (#1599 at ef5dd78, 2026-10-27, codex gpt-6-astra).
+- **Error** at Theorem 3.7 proof, printed p.189 (knudsen2 line 902; correction documented in ile, arXiv: the source says 1110.3909v3, Remark 6.4 and Example 6.5, pp.20–21): the source says the section ideal times its dual equals the section ideal for a moving nodal section; it should be restricted to a persistent singular section, with the moving-section image computed separately; affects the proof. Found by StableReductionPartII (#1599 at ef5dd78, 2026-10-27, codex gpt-6-astra).
+
 ## knudsen2012
 
 - **Misprint** at Proposition 3.1, printed p.12, and Corollary 3.2, printed p.13: the source says the dual fractional ideal has colon (J:R); it should be (R:J), the multipliers carrying J into R; affects a stated result. Found by StableReductionPartII (#1599 at 6875d07, 2026-10-25, codex gpt-6-astra).
@@ -7796,9 +7809,23 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Error** at Proposition 1.3.2(ii), p. 12, and the p = 2 branch of (H.4): the source says Nβ = α^{d/p^k}, and transverse self-duality for every p; it should be Nβ = ξ^{d(d−1)/2}α^{d/p^k} with ξ ∈ μ_{p^k}, so self-duality needs p odd or p^k | d(d−1)/2 (witness (−3,−3)₃ = −1, 𝔽₂ coefficients); affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
+## mc1-perf
+
+- **Misprint** at Lemma 75.25.4(2), tag 0CTM, printed p.62 (mc1-perf line 2811): the source says the sheaf is flat over S; it should be flat over Y; the immersion Spec k→Spec k[ε]/ε² over S=Spec k otherwise disproves perfectness; affects a stated result. Found by StableReductionPartII (#1599 at ef5dd78, 2026-10-27, codex gpt-6-astra).
+
+## mc1-stackdim
+
+- **Misprint** at Lemma 107.5.5 proof, tag 0DRJ, printed p.11 (mc1-stackdim line 485): the source says to add the atlas's relative dimension; it should be subtracted, as in the statement: dim(BG_m)=0−1=−1; affects the proof; <!-- tauceti-roadmap-review {"agent": "codex", "head": "ef5dd7894c649703e2d497f5bc558d02c73b1caa", "job": "RT-StableReductionPartII~1a", "model": "gpt-6-astra", "worker": "chris-3"} -->. Found by StableReductionPartII (#1599 at ef5dd78, 2026-10-27, codex gpt-6-astra).
+
 ## mc5-erikssonfreixas2024
 
 - **Gap** at Proposition 6.1(2), printed p. 311: the source says the symmetry isomorphism of the determinant-defined pairing (6.3) has sign (−1)^κ and refers to Deligne for the proof; it should be how that isomorphism is built, since the graded permutation of the determinant factors has sign (−1)^{χ(L_i)χ(L_j)}, differing by (−1)^{χ(O_X)}; affects the proof; <!-- tauceti-roadmap-review {"agent": "claude", "head": "73beb1cf7099222071aaf4e9aae9c92f90576fdc", "job": "REV-PKG-StableReductionPartII~2", "model": "fable", "worker": "chris-i"} -->. Found by StableReductionPartII (#1599 at 73beb1c, 2026-10-25, claude fable).
+- **Misprint** at Proposition 6.8 proof, printed p.317 (mc5-erikssonfreixas2024 lines 3192–3198): the source says the left projection-formula factor is [E]−r while the right factor has γ^(k₀); it should be γ^(k₀)([E]−r) on both sides; affects the proof. Found by StableReductionPartII (#1599 at ef5dd78, 2026-10-27, codex gpt-6-astra).
+
+## mc5-fredianineumann2004
+
+- **Error** at Proposition 2.14 proof, printed p.19 (mc5-fredianineumann2004 lines 780–786): the source says the Čech nerve and its realization are products with the classifying space; it should be the action-groupoid nerve and Borel construction, whose homotopy equivalence follows from contractibility; affects the proof. Found by StableReductionPartII (#1599 at ef5dd78, 2026-10-27, codex gpt-6-astra).
+- **Misprint** at §2, proof preceding Proposition 2.14, printed p.18 (mc5-fredianineumann2004 line 753): the source says the fibre over a fixed Teichmüller point is the whole Teichmüller space times the normalizer; it should be the normalizer, with the Teichmüller factor belonging to the total arrow space; affects the proof. Found by StableReductionPartII (#1599 at ef5dd78, 2026-10-27, codex gpt-6-astra).
 
 ## McLean
 
@@ -10209,6 +10236,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at §64.32 (03W2), printed p. 40, stacks line 1951: the source says σ∈Aut(X) permutes the algebraic Frobenius eigenvalues by σ(w_i); it should be σ∈Aut(Q̄/Q); affects a stated result. Found by CohomologicalPointCounting (ERRATA-CohomologicalPointCounting at 4bd7237, 2026-10-23, codex gpt-6-astra).
 - **Error** at §64.5 (03T2), printed p. 6, stacks line 269: the source says geometric H² is obtained from arithmetic fundamental-group coinvariants; it should be geometric fundamental-group coinvariants, with a Tate twist (−1) for the Galois action, as in Lemma 64.29.1; affects a stated result. Found by CohomologicalPointCounting (ERRATA-CohomologicalPointCounting at 4bd7237, 2026-10-23, codex gpt-6-astra).
 
+## stacks-projective-picard-review
+
+- **Error** at Lemma 31.29.5, tag 0BXJ, printed pp.70–71 (stacks-projective-picard-review line 3204): the source says Pic(ℙⁿ_R)=ℤ for a UFD without restricting n; it should be restricted to n≥1; Pic(ℙ⁰_k)=0; affects a stated result. Found by StableReductionPartII (#1599 at ef5dd78, 2026-10-27, codex gpt-6-astra).
+
 ## Stein, Modular Forms: A Computational Approach (2007)
 
 - **Misprint** at the formula for Δ near Theorem 9.18, pp. 171–172: the source says Δ with a sign typo; it should be the correctly signed expression in E₄ and E₆ normalized to constant term 1; affects nothing. Found by  (#131 at , 2026-10-23, backfill from earlier reviews (claude opus)).
@@ -11138,6 +11169,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Error** at §4.4.1, printed p. 78 (line 2645): the source says Bost's bound is h_Fal ≥ −g log √(2π) for the Faltings height normalised by (i^{g²}/2^g)∫α∧ᾱ as in Lemma 3.4; it should be −(g/2) log(2π²), since −(g/2)log(2π) is the bound in the (2π)^{−g} normalisation and the two differ by (g/2) log π (the g = 1 minimum ≈ −1.321 violates the printed bound); affects the proof; (the constant c; the roadmap's §13.7 uses the corrected constant). Found by ArakelovGeometryAndAbelianHeightsPartII (#1056 at 789d041, 2026-10-25, claude fable).
 - **Error** at §4.4.1, printed p. 78, also p. 84: the source says Bost's lower constant in its Faltings normalization is −(g/2)log(2π); it should be −(g/2)log(2π²), after the Deligne-to-Faltings shift; affects the proof. Found by ArakelovGeometryAndAbelianHeightsPartII (#1056 at 8f51f44, 2026-10-25, codex gpt-6-astra).
 - **Gap** at §4.4.3, printed p. 84 (lines 2825–2830): the source says the finitely many characteristics dividing N′ are dispatched with "Theorem 4.10 can be modified … we omit the details", while uniformity over every constant field of that characteristic needs a separate constant-field-extension argument; it should be proved from Theorem 4.2(2) with flat extension of a fixed section and degree bounds; affects the proof; the README §11.6 supplies that lemma. <!-- tauceti-roadmap-review {"agent": "claude", "head": "6536723", "job": "RT-HeightsRationalPointsAndObstructionsPartII~1b", "model": "fable", "worker": "fable-rt228"} -->. Found by HeightsRationalPointsAndObstructionsPartII (#1129 at 6536723, 2026-10-26, claude fable).
+
+## yuan-author-http
+
+- **Error** at §3.1.4, printed p.45 (yuan-author-http line 1538): the source says closing the covered base in level moduli gives its stable compactification; it should be a graph closure retaining the base function field and any required isomorphism extension; affects the proof. Found by StableReductionPartII (#1599 at ef5dd78, 2026-10-27, codex gpt-6-astra).
 
 ## yuan-bigness-pku
 
