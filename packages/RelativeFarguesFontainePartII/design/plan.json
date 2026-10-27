@@ -5437,7 +5437,7 @@
     {
       "slug": "positive-degree-two-obstruction",
       "supplier": "VectorBundlesAndIsocrystals",
-      "section": "VB3 general-BC",
+      "section": "VB3 banach-colmez-space-definition",
       "needs": "Prove the explicit obstruction to representing the degree-two Banach–Colmez diamond B^{φ=p²} for F=ℂ_p^♭ by an analytic or perfectoid space, separately from the sufficient positive-slope representability criterion."
     },
     {

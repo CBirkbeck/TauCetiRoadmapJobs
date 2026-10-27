@@ -5,7 +5,9 @@ import Mathlib
 
 The roadmap is README.md; this file is not the roadmap. It states the roadmap's
 headline theorems against the pinned APIs. The strict endomorphism theorem uses
-native Laurent series, normed algebraic closures and uniform completions.
+native Laurent series, normed algebraic closures and uniform completions; the exotic
+untilt theorem uses `ℂ_[p]`, its valuation ring `𝓞_ℂ_[p]` and `PreTilt`; the valued
+automorphism-extension theorem uses the Hahn field `HahnSeries ℚ (AlgebraicClosure (ZMod p))`.
 
 The following headline theorems are not statable at the pins:
 * Completed Newton product and weighted zero theorem: lacks ramified completed interval rings and classical primitive-point carrier.
@@ -21,10 +23,10 @@ The following headline theorems are not statable at the pins:
 * Rational functions, finite covers and coefficient change: lacks the period curve and its field/base-change comparison.
 * Degree and characters of Frobenius lines and positive-line Proj: lacks finite-projective modules on the actual global period ring with its Frobenius.
 * Runge approximation and reconstruction of the adic curve: lacks schematic period charts with radial norm data.
-* Nonprincipal positive period ideal: lacks the specific positive period subring and its tilt coefficients.
-* Exotic untilt residue field: lacks the native marked perfectoid untilt and tilt-equivalence carriers.
+* Nonprincipal positive period ideal: lacks the positive period subring B⁺ of the tilt `PreTilt 𝓞_ℂ_[p] p`; the headline is the B⁺ assertion.
+* Exotic untilt as a residue field of a closed point of the curve: lacks the curve; the field-theoretic statement is stated.
 * Weakly closed prime classification: lacks the general ramified integral period ring with its weak topology.
-* Valued-homogeneity primitive-point orbit theorem: lacks the primitive-point and marked-untilt action carriers.
+* Valued-homogeneity primitive-point orbit theorem: lacks the primitive-point and marked-untilt action carriers; the valued-field automorphism-extension theorem is stated.
 
 The p-typical algebraic Fontaine and de Rham APIs do not supply these general
 ramified annular carriers. No arbitrary-ring stand-ins are used for them.
@@ -54,5 +56,33 @@ theorem exists_strict_laurentClosure_endomorphism
       ¬ Function.Surjective f := by
   sorry
 
+/-- Kedlaya–Temkin: there is a complete algebraically closed nonarchimedean field `K` of
+characteristic zero and residue characteristic `p` whose tilt is isomorphic to that of `ℂ_[p]`,
+but which admits no continuous field isomorphism to `ℂ_[p]` (KT16, Theorem 1.3). The condition
+`0 < v p` excludes characteristic `p`, where the tilt of `ℂ_[p]` itself would be a trivial
+example; a continuous field isomorphism of such fields is automatically a homeomorphism. -/
+theorem exists_untilt_padicComplex_not_continuouslyIsomorphic
+    (p : ℕ) [Fact p.Prime] [Fact (¬ IsUnit ((p : ℕ) : 𝓞_ℂ_[p]))] :
+    ∃ (K : Type) (_ : Field K) (_ : Valued K NNReal),
+      CompleteSpace K ∧ IsAlgClosed K ∧
+      0 < Valued.v (p : K) ∧ Valued.v (p : K) < 1 ∧
+      (∃ _ : Fact (¬ IsUnit ((p : ℕ) : (Valued.v : Valuation K NNReal).valuationSubring)),
+        Nonempty (PreTilt (Valued.v : Valuation K NNReal).valuationSubring p ≃+*
+          PreTilt 𝓞_ℂ_[p] p)) ∧
+      ¬ ∃ e : K ≃+* ℂ_[p], Continuous e := by
+  sorry
+
+/-- Valued homogeneity of the Mal'cev–Neumann field `𝔽̄_p((t^ℚ))`: for `x, y` of positive
+order there is a field automorphism fixing the constants, sending `x` to `y` and multiplying
+the order of every element by `order y / order x` (Poonen93, Theorem 2 and Corollaries 5–6).
+For `z = 0` both sides are the junk order `0`. -/
+theorem exists_hahnSeries_automorphism_rescaling_order
+    (p : ℕ) [Fact p.Prime] (x y : HahnSeries ℚ (AlgebraicClosure (ZMod p)))
+    (hx : 0 < x.order) (hy : 0 < y.order) :
+    ∃ σ : HahnSeries ℚ (AlgebraicClosure (ZMod p)) ≃+* HahnSeries ℚ (AlgebraicClosure (ZMod p)),
+      (∀ c : AlgebraicClosure (ZMod p), σ (HahnSeries.C c) = HahnSeries.C c) ∧
+      σ x = y ∧
+      ∀ z, (σ z).order = (y.order / x.order) * z.order := by
+  sorry
 
 end TauCetiRoadmap.RelativeFarguesFontainePartII
