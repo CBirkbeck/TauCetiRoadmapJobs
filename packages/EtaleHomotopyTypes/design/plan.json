@@ -3149,7 +3149,7 @@
     },
     {
       "slug": "simplicial-covering-classification",
-      "needs": "For connected pointed simplicial sets, identify coverings with vertex-unique lifting with subgroups of π_1, compatibly with pullback and geometric realization as ordinary covering spaces.",
+      "needs": "For a connected pointed simplicial set K, classify connected pointed coverings with vertex-unique lifting by subgroups of π_1(K), with pullback followed by the component of the chosen vertex corresponding to inverse image of subgroups, and identify their geometric realizations with connected pointed ordinary covering spaces.",
       "supplier": "AlgebraicTopology",
       "section": "Stage 8"
     },
@@ -3239,7 +3239,13 @@
     },
     {
       "slug": "nonabelian-proper-base-change",
-      "needs": "For a proper morphism, prove base change for the direct image of an étale sheaf of sets and for R¹ with coefficients in an ind-finite sheaf of groups (SGA 4 XII 5.1), and for the direct image of every ind-finite stack, including the direct image along a coherent morphism of the stack of torsors under a finite constant group, which is not a torsor stack (SGA1 XIII Example 1.4 and Corollary 1.8); and prove that proper surjective morphisms of finite presentation are of universal effective descent for étale sheaves and their torsor stacks (SGA 4 VIII 9.4).",
+      "needs": "For a proper morphism, prove base change for the direct image of an étale sheaf of sets and for R¹ with coefficients in an ind-finite sheaf of groups (SGA 4 XII 5.1), and for the direct image of every ind-finite stack, including the direct image along a coherent morphism of the stack of torsors under a finite constant group, which is not a torsor stack (SGA1 XIII Example 1.4 and Corollary 1.8).",
+      "supplier": "EtaleCohomologyFoundations",
+      "section": "F.2.1"
+    },
+    {
+      "slug": "proper-surjective-torsor-descent",
+      "needs": "Prove that proper surjective morphisms of finite presentation are of universal effective descent for étale sheaves of sets and for their stacks of torsors under finite constant groups (SGA 4 VIII 9.4).",
       "supplier": "EtaleCohomologyFoundations",
       "section": "F.2.1"
     },
@@ -3254,6 +3260,18 @@
       "needs": "Prove that on a noetherian scheme every subsheaf of a constructible étale sheaf of sets is constructible (SGA 4 IX 2.9), and that a constructible étale sheaf of sets whose specialization maps are all bijective is locally constant (SGA 4 IX 2.11, as used in SGA1 XIII Corollary 1.16).",
       "supplier": "EtaleCohomologyFoundations",
       "section": "F.0.1"
+    },
+    {
+      "slug": "relative-etale-depth",
+      "needs": "For a flat morphism f:X→S of locally noetherian schemes with geometrically reduced fibres and a closed subset Y⊂X whose fibre Y_s is nowhere dense in X_s for every s∈f(Y), prove that restriction of finite étale covers from X to X∖Y is fully faithful when either the closure of f(Y) is nowhere dense in S or every fibre X_s is geometrically unibranch at the points of Y_s (SGA 2 XIV Corollary 1.19, étale depth at least 2 along Y).",
+      "supplier": "LocalPurity",
+      "section": "2.2"
+    },
+    {
+      "slug": "relative-homotopical-purity",
+      "needs": "For a regular morphism f:X→S of locally noetherian schemes and a closed subset Y⊂X such that every s∈f(Y) has codim(Y_s,X_s)≥2, or codim(Y_s,X_s)≥1 and étale depth of S at s at least 1, or homotopical depth of S at s at least 3, prove that restriction of finite étale covers from X to X∖Y is an equivalence of categories (SGA 2 XIV Corollary 1.20, homotopical depth at least 3 along Y).",
+      "supplier": "LocalPurity",
+      "section": "2.2"
     }
   ],
   "requests": [

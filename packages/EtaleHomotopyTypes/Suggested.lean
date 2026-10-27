@@ -42,6 +42,13 @@ Layer 3:
   closed field, and the homotopy exact sequence of fundamental groups it rests on lack the scheme
   finite-etale fiber-functor fundamental group and its geometric product comparison interface;
   Mathlib's finite etale algebras over a ring cover only affine schemes.
+* Strong desingularizability of finite-type schemes over an algebraically closed field of
+  characteristic zero lacks resolution of singularities and the strong-desingularizability
+  notion of SGA 5. Cohomological properness of normal-crossings complements over an arbitrary
+  base and of quasi-compact quasi-separated schemes, the relative Abhyankar step, universal
+  local 1-asphericity and 0-acyclicity of projections lack relative normal-crossings divisors,
+  stacks of etale torsors with their direct images and base change, strict localizations of
+  schemes and the relative purity of finite etale covers.
 
 Layer 4:
 * Open arithmetic image lacks the scheme finite-etale fiber-functor fundamental group.
