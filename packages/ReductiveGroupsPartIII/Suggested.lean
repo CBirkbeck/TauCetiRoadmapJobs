@@ -24,6 +24,9 @@ Stated here:
   regular class functions, injectivity and surjectivity (Steinberg; README §0.4);
 * the separation of semisimple classes by characters of finite-dimensional representations
   (README §0.5);
+* finiteness of the map of class-function algebras induced by a closed immersion of a connected
+  reductive group (README §0.6);
+* rational descent of a number field that embeds in `ℚ_ℓ` for almost every prime `ℓ` (README §1.2(a));
 * Harder's approximation of finitely many local maximal tori by one global maximal torus
   (README §2.2).
 
@@ -89,7 +92,8 @@ theorem isConj_iff_classFunctions {Ω : Type u} [Field Ω] [IsAlgClosed Ω]
 field `Ω`, every `Ω`-point of the conjugacy quotient, that is every `Ω`-algebra map from the regular
 class functions to `Ω`, is the restriction of evaluation at a semisimple point. Together with
 `isConj_iff_classFunctions` this identifies the semisimple conjugacy classes with the `Ω`-points of
-`Conj(G)` (Steinberg65, Theorem 6.11(d); README §0.4). -/
+`Conj(G)` (Steinberg65, Corollary 6.4 with lifting from `T/W` to `T`; uniqueness of the semisimple
+class in a fibre is Theorem 6.11(d); README §0.4). -/
 theorem exists_isSemisimplePoint_classFunctions {Ω : Type u} [Field Ω] [IsAlgClosed Ω]
     (H : TauCeti.FiniteTypeCommHopfAlgCat.{u, u} Ω)
     (hH : TauCeti.reductiveCommHopfAlgProperty Ω H)
@@ -112,6 +116,34 @@ theorem isConj_iff_trace_eq {Ω : Type u} [Field Ω] [IsAlgClosed Ω]
     IsConj x y ↔ ∀ M : TauCeti.FGComoduleCat.{u, u, u} Ω H,
       LinearMap.trace Ω _ (TauCeti.Comodule.endOfPoint M x.ofConv) =
         LinearMap.trace Ω _ (TauCeti.Comodule.endOfPoint M y.ofConv) := by
+  sorry
+
+
+/-- Finiteness of the quotient map of a closed immersion: let `G` be a connected reductive group over
+a field `k` and `G → H` a closed immersion into an affine group of finite type, given by a surjective
+bialgebra map `f : O(H) → O(G)`. The induced algebra map `q : C(H) → C(G)` of regular class functions,
+the restriction of `f` (pinned down by `hq`), is finite. Injectivity on quotient points is not
+claimed: `t ↦ diag(t, t⁻¹)` sends `2` and `1/2` to one point of `Conj(GL₂)` (KZ25 §5.3.2; README §0.6). -/
+theorem finite_classFunctions_map {k : Type u} [Field k]
+    (H G : TauCeti.FiniteTypeCommHopfAlgCat.{u, u} k)
+    (hG : TauCeti.reductiveCommHopfAlgProperty k G)
+    (f : H.obj →ₐc[k] G.obj) (hf : Function.Surjective f)
+    (q : classFunctions k H.obj →ₐ[k] classFunctions k G.obj)
+    (hq : (classFunctions k G.obj).val.comp q =
+      (f : H.obj →ₐ[k] G.obj).comp (classFunctions k H.obj).val) :
+    q.Finite := by
+  sorry
+
+/-! ## Layer 1: Arithmetic descent and quotient injections -/
+
+/-- Rational descent from local embeddings: a number field `K` that embeds in `ℚ_ℓ` for every prime
+`ℓ` outside a finite set `S` is `ℚ`. Route: Chebotarev puts every conjugacy class of the Galois group
+of a Galois closure into the Frobenius classes outside `S`, each meets the subgroup fixing `K`, and
+Jordan's lemma makes that subgroup everything. "Infinitely many `ℓ`" does not suffice: `ℚ(i)` embeds
+in `ℚ_ℓ` for every `ℓ ≡ 1 mod 4` (KZ25 §5.3.6; README §1.2(a)). -/
+theorem finrank_eq_one_of_embeddings_padic {K : Type u} [Field K] [NumberField K] (S : Finset ℕ)
+    (hK : ∀ (ℓ : ℕ) [Fact ℓ.Prime], ℓ ∉ S → Nonempty (K →+* ℚ_[ℓ])) :
+    Module.finrank ℚ K = 1 := by
   sorry
 
 /-! ## Layer 2: Global tori and real cocharacter adjustment -/

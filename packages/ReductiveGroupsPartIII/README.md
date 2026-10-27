@@ -90,12 +90,15 @@ of rational representatives.
   totally real field has odd degree.
 - Abelian varieties, the Serre tensor construction, the Betti, de Rham and étale realizations with their
   conventions, the `ℓ`-independent characteristic polynomial and Frobenius semisimplicity are
-  **AbelianSchemesAndArithmeticModuli** §§A1.3a, A5.1, A5.7, A6.11 and A6.21.
+  **AbelianSchemesAndArithmeticModuli** §§A1.3a, A3.7, A3.9, A4.1, A5.1, A5.7, A6.11 and A6.21.
 - Dirichlet-density Chebotarev is **Chebotarev** Layer 10 (on main); Artin–Whaples weak approximation is
   **GlobalNumberFields** Layer 1 (on main).
 - The split, simply-connected-derived Steinberg map over `ℤ` is planned in **GroupSchemesOverABase**
-  §GS8.2; the restriction theorem here holds for every connected reductive group over a field, with a
-  possibly non-split maximal torus, and adds the classification of semisimple classes.
+  §GS8.2, and the integral restriction isomorphism `ℤ[M]^M≅ℤ[T]^W` for split standard dual Levi groups
+  over `ℤ` in **LanglandsParameterStacks** §LP3.25; the restriction theorem here holds for every
+  connected reductive group over a field, with a possibly non-split maximal torus, and adds the
+  classification of semisimple classes. Neither of those statements covers a non-split torus or an
+  arbitrary base field.
 
 **Not in this roadmap.** The geometric independence-of-`ℓ` theorem for a good-reduction point of a
 Hodge-type Shimura variety with strongly acceptable datum (KZ25 Theorem 5.1.4, KZ25 lines 2104–2106)
@@ -131,6 +134,9 @@ roadmap.
   `c` is complex conjugation, and the matching coboundary convention is `g⁻¹σ(g)`.
 - Tate–Nakayama isomorphisms use EndoscopicTransferAndUnitaryTraceComparison §1.2's sign. Kottwitz's `H¹(F,T)≅(X_*(T)_{Γ})_tors`
   is the local isomorphism used in §2.1.
+- Abelian varieties have dimension `g≥1`. For `g=0` every realization is zero, the Mumford–Tate
+  group is trivial and every conjugacy class and Frobenius representative is the identity, while the
+  multiplier identities below fail (`1≠z²`); that case is trivial and is set aside.
 - Cohomology of an abelian variety means `H¹`. Its Betti realization has Hodge types `(1,0),(0,1)`;
   its `ℓ`-adic realization is `H¹_et(A_Ē,ℚ_ℓ)≅(T_ℓA⊗ℚ_ℓ)^∨`. The Hodge action of the Deligne torus
   `S` is `h(z)` acting on `V^{p,q}` by `z^{-p}z̄^{-q}`, so the weight acts on `H¹` by `z^{-1}`. The
@@ -178,9 +184,10 @@ roadmap.
 - `TauCeti.Comodule.endOfPoint` (`TauCeti/Algebra/Coalgebra/Comodule/PointsAction.lean`) and
   `TauCeti.FGComoduleCat` (`TauCeti/Algebra/Coalgebra/Comodule/Finite/Basic.lean`): the action of a
   point on the scalar extension of a comodule, and finite-dimensional comodules.
-- `TauCeti.HopfIdeal.IsMaximalTorus` (`TauCeti/Algebra/AlgebraicGroup/Torus/Maximal.lean`), with
-  `TauCeti.HopfIdeal.exists_isMaximalTorus` and `TauCeti.HopfIdeal.IsMaximalTorus.conjugate`: maximal
-  tori as Hopf ideals, their existence and their conjugates by rational points.
+- `TauCeti.HopfIdeal.IsMaximalTorus` (`TauCeti/Algebra/AlgebraicGroup/Torus/Maximal.lean`),
+  `TauCeti.HopfIdeal.exists_isMaximalTorus` (`…/Torus/Existence.lean`) and
+  `TauCeti.HopfIdeal.IsMaximalTorus.conjugate` (`…/Torus/Conjugation.lean`): maximal tori as Hopf
+  ideals, their existence and their conjugates by rational points.
 - `TauCeti.HopfIdeal.conjugate` (`TauCeti/Algebra/AlgebraicGroup/HopfIdeal/Conjugation.lean`) and
   `TauCeti.CommHopfAlgCat.baseChangeHopfIdeal`, `TauCeti.CommHopfAlgCat.baseChange`
   (`TauCeti/Algebra/AlgebraicGroup/HopfIdeal/BaseChange.lean`, `…/CommHopfAlgCat/BaseChange.lean`):
@@ -207,9 +214,14 @@ of split connected reductive groups, highest-weight order and Weyl characters.
 §RG2.0.1–RG2.0.2: the point topology on local points, the topological group `G(F_v)` and its
 analytic charts and inverse function theorem over characteristic-zero local fields. §RG2.0a.1–RG2.0a.2:
 Weil restriction of affine schemes and group schemes, with `Res_{k′/k}(G′)(R)≅G′(k′⊗R)`.
-§RG2.0a.3: the Deligne torus `S`. §RG2.1.1: quasi-split forms. §RG2.3.4: very special parahorics and
+§RG2.0a.3: the Deligne torus `S`. §RG2.1.1: quasi-split forms. §RG2.3.3:
 *compact-elements-in-hyperspecial-subgroups* (an element of `G(ℚ_p)` in a compact open subgroup lies in
-a hyperspecial parahoric over a finite splitting extension).
+a hyperspecial parahoric over a finite splitting extension) and *fixer-versus-parahoric* (5) (the
+fixer of a very special point is the connected parahoric when `G_der` is a product of Weil
+restrictions of split groups and `X_*(G_ab)_I` is torsion free). §RG2.3.4: very special points and
+parahorics.
+
+What ReductiveGroupsPartII must provide (gap:parahoric-intersection-same-derived): in §RG2.3.4, for a closed immersion H→H′ of connected reductive groups over a characteristic-zero nonarchimedean local field K that identifies the derived groups, and a point x of the building of H with image x′ in the building of H′, the fixer of x in H(K) is H(K)∩(fixer of x′ in H′(K)), and x is very special if and only if x′ is.
 
 What ReductiveGroupsPartII must provide (gap:regular-centralizer-openness): for a connected reductive group G over a characteristic-zero local field F and a maximal F-torus T, the set of regular semisimple X∈Lie(G)(F) whose centralizer is G(F)-conjugate to T is open, as a consequence of the submersion G/T×Lie(T)_reg→Lie(G) and the local inverse function theorem of §RG2.0.2.
 
@@ -253,7 +265,7 @@ Kottwitz's rational-realization criterion.
 
 What EndoscopicTransferAndUnitaryTraceComparison must provide (gap:quasi-split-torus-embedding-class): in §1.6, for a torus T and a quasi-split connected reductive G* over a field of characteristic zero, every Galois-stable geometric conjugacy class of embeddings of T as a maximal torus of G* contains an embedding defined over the field (Kottwitz82, Corollary 2.2).
 
-What EndoscopicTransferAndUnitaryTraceComparison must provide (gap:relative-global-obstruction): in §1.15, Kottwitz's obstruction and rational-realization criterion (Kottwitz86, Theorem 6.6) for an adelic tuple in an inner form G of a quasi-split G* with simply connected derived group, with γ₀∈G*(F) transported by the inner twist, together with the formula for the change of the obstruction when one local component is replaced.
+What EndoscopicTransferAndUnitaryTraceComparison must provide (gap:relative-global-obstruction): in §1.15, Kottwitz's obstruction and rational-realization criterion (Kottwitz86, Theorem 6.6, with the Hasse principle for `G_sc` in its full form in place of Kottwitz's no-`E₈` hypothesis) for an adelic tuple in an inner form G of a quasi-split G* with simply connected derived group, with γ₀∈G*(F) transported by the inner twist, together with the formula for the change of the obstruction when one local component is replaced.
 
 What EndoscopicTransferAndUnitaryTraceComparison must provide (gap:torus-localization-sequence): in §1.2, for a torus T over a number field F, exactness at the middle of H¹(F,T)→⊕_v H¹(F_v,T)→(X_*(T)_Γ)_tors, where the second map is the sum over v of the local Tate–Nakayama isomorphisms followed by the projections from local to global coinvariants (Kottwitz86, Proposition 2.6).
 
@@ -278,16 +290,22 @@ torsor, `Aut^⊗` of the second fibre is the twist of the first group, and no ra
 ### From TauCetiRoadmap.AbelianSchemesAndArithmeticModuli
 
 §A1.3a: the Serre tensor construction over an arbitrary base. §A5.1: `T_ℓA≅Λ⊗ℤ_ℓ` for the period lattice
-of a complex abelian variety. §A5.7: `H¹_et(A_K̄,ℚ_ℓ)=V_ℓ(A)^*`, `H¹=Λ^*` and the cohomological
-multiplier convention. §A6.11: the characteristic polynomial of an endomorphism on `V_ℓA` has integer
+of a complex abelian variety, for every prime `ℓ`. §A5.7: over `ℂ`, `H¹=Λ^*`; and, for `ℓ` prime to the
+characteristic and to the polarization degree, `H¹_et(A_K̄,ℚ_ℓ)=V_ℓ(A)^*` with cohomological multiplier
+`χ_ℓ⁻¹`; it is used only under that restriction. §A3.7 (the polarized Weil pairings), §A3.9 (the
+rational inverse `λ⁻¹∈Hom⁰(A^∨,A)` of a polarization) and §A4.1 (`AbelianTate.dualPairing`,
+`T_ℓ(A^∨)≅Hom(T_ℓA,ℤ_ℓ(1))`): tensored with `ℚ_ℓ`, they give for every `ℓ` prime to the characteristic,
+including primes dividing the polarization degree, a nondegenerate alternating pairing on `V_ℓA` with
+values in `ℚ_ℓ(1)`, hence the multiplier `χ_ℓ⁻¹` on `V_ℓ(A)^*`. §A6.11: the characteristic polynomial of an endomorphism on `V_ℓA` has integer
 coefficients independent of `ℓ≠p`. §A6.21: the `q`-Frobenius is semisimple on `V_ℓA` and satisfies
 `π^†π=q`.
 
 ### From TauCetiRoadmap.PELModuli
 
-§M3.2, *When the Hasse principle holds*: for a unitary PEL datum of Case A with CM centre `F/F⁺` and odd
-hermitian dimension, the map `ker¹(ℚ,Z)→ker¹(ℚ,G)` from the centre is a bijection, through
-`unitaryCentre_sha_vanishing`.
+§M3.2, *When the Hasse principle holds*: `hasseCases` (A) states that, for a unitary PEL datum of Case A
+with CM centre `F/F⁺` and odd hermitian dimension, the map `ker¹(ℚ,Z)→ker¹(ℚ,G)` from the centre is a
+bijection; `unitaryCentre_sha_vanishing`, the vanishing of the all-place obstruction groups of the
+finite centre `Z₀` of `G^der`, is an input of its proof and is not consumed directly.
 
 ### From TauCetiRoadmap.Chebotarev and TauCetiRoadmap.GlobalNumberFields
 
@@ -379,9 +397,10 @@ connected reductive, for every algebraically closed `Ω⊇k` and `x∈G(Ω)` wit
 `k`-algebra (§0.3). Invariance is tested as an equality of morphisms on `G×G`, not on `k`-points. Part
 (iv) is Steinberg65 Corollary 6.5, printed p.63 (Steinberg65 lines 626–627): every character takes the
 same value at `x` and at `x_s`, and the characters span the class functions by §0.3. The construction is
-KZ25 §5.1.3, p.47 (KZ25 lines 2091–2098).
+KZ25 §5.1.3, p.47 (KZ25 lines 2091–2098). Build order: (i)–(iii) from §0.1; then §0.3, which uses
+only (i)–(iii); then (iv) and (v) from §0.3.
 *Needs:* §0.1; ReductiveGroups Layer 0 (affine schemes and Hopf algebras), Layer 3 (closed subgroups),
-Layer 4 (Jordan decomposition); §0.3 for (iv) and (v).
+Layer 4 (Jordan decomposition); §0.3 for (iv) and (v) only.
 
 API:
 
@@ -431,7 +450,8 @@ commute with flat scalar extension. Finite generation follows from finite genera
 a finite group. The full character lattice `X` is used, including central directions; the result is
 not deduced from the simply connected case. (Steinberg65 Lemmas 6.2–6.3 and Corollary 6.4, printed
 pp.62–63, Steinberg65 lines 599–624, for semisimple groups over an algebraically closed field.)
-*Needs:* §§0.1–0.2; ReductiveGroups Layers 4, 6, 7 and 10B; SchemeKTheoryOperations §6.3.1.
+*Needs:* §0.1; §0.2(i)–(iii) (not (iv) or (v), which are deduced from this section); ReductiveGroups
+Layers 4, 6, 7 and 10B; SchemeKTheoryOperations §6.3.1.
 
 **Checks.**
 
@@ -440,8 +460,10 @@ pp.62–63, Steinberg65 lines 599–624, for semisimple groups over an algebraic
 - For `GL_n` the diagonal torus gives `k[x₁^{±1},…,x_n^{±1}]^{S_n}=k[e₁,…,e_n,e_n⁻¹]`, the coefficients of
   the characteristic polynomial with invertible constant term.
 - For `SL₂`, `X=ℤ` with `W` acting by `−1`, so `O(T)^W=k[a+a⁻¹]`; for `PGL₂`, with `α=a²`, it is
-  `k[α+α⁻¹]`. The induced map `Conj(SL₂)→Conj(PGL₂)` is `s↦s²−2`, so it is not injective on points:
-  `s` and `−s` collide, reflecting the centre `±1`.
+  `k[α+α⁻¹]`. The induced map `Conj(SL₂)→Conj(PGL₂)` is `s↦s²−2`. In characteristic different from two
+  it is not injective on points: `s` and `−s≠s` collide (`±5/2↦17/4`), reflecting the centre `±1`. In
+  characteristic two it is `s↦s²`, the Frobenius: bijective on points over an algebraically closed
+  field, since the centre `μ₂` is infinitesimal, but not an isomorphism of schemes.
 - For an anisotropic torus `T` (for example the norm-one torus of `ℚ(i)/ℚ`), `W=1` and `Conj(T)=T`,
   although `T` has no split maximal torus over `ℚ`.
 
@@ -457,8 +479,10 @@ to `x_s`. Route: by §0.3, restrict to a maximal torus `T`. Semisimple points ar
 `T(Ω)`, and two points of `T(Ω)` are `G(Ω)`-conjugate exactly when they are `W`-conjugate. Invariants of
 the finite group `W` separate its orbits on the affine variety `T`. Every point of `T/W` lifts to
 `T(Ω)` because `O(T)` is integral over `O(T)^W` and `Ω` is algebraically closed. (Steinberg65
-Corollary 6.6(a)⇔(b), printed p.63, Steinberg65 lines 628–642; Theorem 6.11(d), printed p.64,
-Steinberg65 lines 674–675; KZ25 §5.1.3, KZ25 lines 2094–2096.)
+Corollary 6.6(a)⇔(b), printed p.63, Steinberg65 lines 628–642, for injectivity; Corollary 6.4,
+printed p.63, Steinberg65 line 623, with the lifting from `T/W` to `T` above, for surjectivity;
+Theorem 6.11(d), printed p.64, Steinberg65 lines 674–675, for the uniqueness of the semisimple class in
+a fibre; KZ25 §5.1.3, KZ25 lines 2094–2096.)
 *Needs:* §§0.2–0.3; Tau Ceti `TauCeti.HopfAlgebra.IsSemisimplePoint`,
 `TauCeti.reductiveCommHopfAlgProperty`; ReductiveGroups Layers 4 and 7 (semisimple elements lie in
 maximal tori; conjugacy of maximal tori; `N_G(T)` acts on `T` through `W`).
@@ -501,16 +525,20 @@ classes.)
 ### 0.6 Finiteness of the quotient map of a faithful representation
 
 Let `G` be connected reductive over a field `k` and `ρ:G→GL(V)` a closed immersion, `V`
-finite-dimensional. Prove that `Conj(ρ):Conj(G)→Conj(GL(V))` is finite. Consequently, for a closed
-immersion `G→H` of connected reductive groups, `Conj(G)→Conj(H)` is finite: it is a morphism of affine
-schemes whose composite with the finite map `Conj(H)→Conj(GL(V))` is finite. Injectivity is not claimed.
+finite-dimensional. Prove that `Conj(ρ):Conj(G)→Conj(GL(V))` is finite. Consequently, prove
+`finite_classFunctions_map`: for a closed immersion `G→H` into an affine group `H` of finite type over
+`k` (not necessarily reductive), given by a surjective bialgebra map `f:O(H)→O(G)`, the induced
+algebra map `C(H)→C(G)`, the restriction of `f`, is finite. Indeed, choose a closed immersion
+`H→GL(V)`; the composite `C(GL(V))→C(H)→C(G)` is finite by the first statement, and the image of
+`C(GL(V))` in `C(G)` lies in the image of `C(H)`. Injectivity of `Conj(G)→Conj(H)` is not claimed.
 Route: pass to an algebraic closure and a maximal torus `T`. The weights of `V` generate `X^*(T)`
 because `ρ|_T` is a closed immersion. Each weight value is a root of the characteristic polynomial, hence
 integral over its coefficients; its inverse is integral once `det⁻¹` is adjoined, by the reciprocal
 polynomial. Thus `O(T)` is finite over the image of `C(GL(V))`, and the submodule `O(T)^W` is finite
 over that noetherian image. Finiteness descends along the field extension. (KZ25 §5.3.2, p.53, KZ25
 lines 2367–2391, use this to obtain algebraicity of Frobenius quotient points.)
-*Needs:* §§0.2–0.3; ReductiveGroups Layers 1 (faithful representations are closed immersions) and 4.
+*Needs:* §§0.2–0.3; ReductiveGroups Layers 1 (faithful representations are closed immersions, the
+embedding theorem) and 4; Mathlib `RingHom.Finite`.
 
 **Checks.**
 
@@ -567,8 +595,9 @@ API:
 ### Examples
 
 - `G_m`: `C=k[t,t⁻¹]`, `Conj=G_m`, the restriction theorem is trivial and every point is semisimple.
-- `GL_n`: `Conj(GL_n)=𝔸^{n−1}×G_m` by the coefficients of the characteristic polynomial (KZ25 lines
-  2097–2098); semisimple classes are characteristic polynomials.
+- `GL_n`, `n≥1`: `Conj(GL_n)=𝔸^{n−1}×G_m` by the coefficients of the characteristic polynomial (KZ25
+  lines 2097–2098); semisimple classes are characteristic polynomials. For `n=0`, `GL₀` is trivial,
+  `Conj(GL₀)=Spec k` and the characteristic polynomial is `1`.
 - `SL₂` and `PGL₂`: both quotients are `𝔸¹`, and `Conj(SL₂)→Conj(PGL₂)` is `s↦s²−2`.
 - `SL₁(D)` for a quaternion division algebra: `Conj≅𝔸¹`, with rational points that have no rational
   lift.
@@ -605,8 +634,8 @@ identity fixes all `[Γ:Δ]` cosets and every other element fixes at least one, 
 
 ### 1.2 Rational descent from local realizations
 
-(a) Let `K` be a number field such that, for all but finitely many primes `ℓ`, there is a field embedding
-`K→ℚ_ℓ`. Then `K=ℚ`. (b) Let `X` be an affine `ℚ`-scheme of finite type and `a∈X(ℚ̄)`. Suppose that for
+(a) Prove `finrank_eq_one_of_embeddings_padic`: let `K` be a number field such that, for all but finitely
+many primes `ℓ`, there is a field embedding `K→ℚ_ℓ`. Then `[K:ℚ]=1`, that is `K=ℚ`. (b) Let `X` be an affine `ℚ`-scheme of finite type and `a∈X(ℚ̄)`. Suppose that for
 all but finitely many primes `ℓ` there is an embedding `ι_ℓ:ℚ̄→ℚ̄_ℓ` with `ι_ℓ(a)∈X(ℚ_ℓ)`; the
 embeddings may vary with `ℓ`. Then `a∈X(ℚ)`. Route: (b) follows from (a) applied to the residue field
 `ℚ(a)` of the closed point under `a`, which `ι_ℓ` embeds in `ℚ_ℓ`. For (a), let `L` be a Galois closure,
@@ -623,16 +652,21 @@ set, so every class meets `Δ`, and §1.1 gives `Δ=Γ`. (KZ25 §5.3.6, p.55, KZ
   (a) fails, consistently with `K≠ℚ`.
 - "All but finitely many" cannot be weakened to "infinitely many": `ℚ(i)` embeds in `ℚ_ℓ` for every
   `ℓ≡1 mod 4`.
-- The hypothesis concerns one fixed geometric point: `X=Spec ℚ[x]/((x²−2)(x²−3)(x²−6))` has a
-  `ℚ_ℓ`-point for every `ℓ` and no rational point, while each of its six `ℚ̄`-points is `ℚ_ℓ`-rational only
-  for a set of primes of density one half.
+- The hypothesis concerns one fixed geometric point: `X=Spec ℚ[x]/((x²−2)(x²−17)(x²−34))` has a
+  `ℚ_ℓ`-point for every prime `ℓ` (at `2` because `17≡1 mod 8`, at `17` because `2≡6² mod 17`, at odd
+  `ℓ∤34` because the Legendre symbols of `2`, `17` and `34` multiply to `1`) and a real point, but no
+  rational point, while each of its six `ℚ̄`-points is `ℚ_ℓ`-rational only for a set of primes of density
+  one half. The superficially similar `(x²−2)(x²−3)(x²−6)` has no `ℚ₂`-point and no `ℚ₃`-point (`3≡3 mod 8`
+  is not a `2`-adic square, `2` is not a square mod `3`, and the other two have odd valuation).
 
 ### 1.3 Algebraicity above rational invariants
 
 Let `f:X→Y` be a finite morphism of affine `ℚ`-schemes of finite type, `y∈Y(ℚ)`, and `Ω⊇ℚ` a field.
-Every `x∈X(Ω)` with `f(x)=y` factors through the finite `ℚ`-scheme `X_y=X×_Y Spec ℚ`; its residue field
-is a finite extension of `ℚ`, so `x` is the image of a `ℚ̄`-point under an embedding `ℚ̄→Ω`, and there
-are finitely many such `x`. Applied to §0.6: for a closed immersion `G→GL(V)` of a connected reductive
+Every `x∈X(Ω)` with `f(x)=y` factors through the finite `ℚ`-scheme `X_y=X×_Y Spec ℚ`, hence through a
+closed point of `X_y` whose residue field `K` is a finite extension of `ℚ`, followed by a `ℚ`-embedding
+`K→Ω`. So `x` is algebraic: for an algebraic closure `Ω̄` of `Ω` and any embedding `ℚ̄→Ω̄` extending
+`K→Ω`, the image of `x` in `X(Ω̄)` comes from a `ℚ̄`-point. There are finitely many such `x`, at most
+`dim_ℚ O(X_y)`. No embedding `ℚ̄→Ω` is asserted: `Ω` may be `ℚ`. Applied to §0.6: for a closed immersion `G→GL(V)` of a connected reductive
 `ℚ`-group, a point of `Conj(G)(ℚ̄_ℓ)` whose characteristic polynomial has rational coefficients is
 algebraic. Equality of these algebraic points for different `ℓ` is a separate input. (KZ25 §5.3.2, p.53,
 KZ25 lines 2367–2391, and §5.3.6, KZ25 lines 2433–2434.)
@@ -645,7 +679,9 @@ many maximal ideals, each with finite residue field).
   `ℚ_ℓ`-point that is not algebraic.
 - For `G_m→GL₂`, `t↦diag(t,t⁻¹)`, the fibre over `(5/2,1)` is `{2,1/2}`; over `(s,1)` with `s²−4` not a
   square it is a pair of conjugate points over `ℚ(√(s²−4))`.
-- For the identity of `GL_n` the fibre is a single rational point.
+- For the identity of `GL_n` the fibre is a single rational point. For `X=Y=Spec ℚ`, `f=id` and `Ω=ℚ`
+  the fibre has one point with residue field `ℚ`, although no embedding `ℚ̄→ℚ` exists (`√2` has no
+  image): only the residue field of the point embeds in `Ω`.
 
 ### 1.4 Conjugacy quotients of inner forms
 
@@ -672,8 +708,11 @@ Layer 0 (Galois descent of affine schemes).
 
 Let `F/ℚ` be a finite extension, `G` connected reductive over `ℚ`, and `H⊂Res_{F/ℚ}G_F` a connected
 reductive `ℚ`-subgroup containing the diagonal image of `G`. Then `Conj(G)(ℚ̄)→Conj(H)(ℚ̄)` is injective
-and `Γ_ℚ`-equivariant. This applies to the common-multiplier fibre product
-`H=Res_{F/ℚ}G_F×_{Res_{F/ℚ}G_m}G_m` for a character `ν:G→G_m`. Route: over `ℚ̄`,
+and `Γ_ℚ`-equivariant. For a character `ν:G→G_m`, the common-multiplier fibre product
+`Res_{F/ℚ}G_F×_{Res_{F/ℚ}G_m}G_m` contains the diagonal `G`; the statement applies to its identity
+component, which is connected reductive and contains the diagonal because `G` is connected, and to the
+whole fibre product when `ker ν` is geometrically connected, since over `ℚ̄` it is then an extension of
+`G_m` by `∏_τ ker ν`. Route: over `ℚ̄`,
 `Res_{F/ℚ}G_F≅∏_{τ:F→ℚ̄}G` and the diagonal is `g↦(g,…,g)`. If the images of semisimple `g,g′` are
 conjugate by `h=(h_τ)∈H(ℚ̄)`, then `h_τ⁻¹gh_τ=g′` in each factor, so `g` and `g′` are conjugate in
 `G(ℚ̄)`; §0.4 turns this into injectivity on quotient points. Equivariance holds because every map is
@@ -685,10 +724,12 @@ formula on geometric points).
 **Checks.**
 
 - For `F=ℚ` the map is the identity.
-- For `G=G_m` and `F` quadratic, `H=Res_{F/ℚ}G_m×_{Res G_m}G_m` with `ν=id`; two distinct points of
-  `G_m(ℚ̄)` stay distinct in `H(ℚ̄)`.
-- The assertion is injectivity on geometric quotient points. It does not say that every semisimple class
-  of `H(ℚ̄)` meets the diagonal, which fails as soon as `[F:ℚ]>1`.
+- For `G=G_m`, `F` quadratic and `ν=id`, the fibre product is exactly the diagonal `G_m` and the map of
+  quotients is an isomorphism. For `ν(t)=t²` the fibre product is `{(x,y):x²=y²}≅G_m×μ₂` over `ℚ̄`,
+  disconnected; the statement applies to its identity component, the diagonal.
+- The assertion is injectivity on geometric quotient points, not surjectivity: for `G=SL₂`, `ν=1` and
+  `[F:ℚ]=2`, `H=Res_{F/ℚ}SL₂` is `SL₂×SL₂` over `ℚ̄`, and the quotient point with traces `(0,1)` is not
+  the image of a point of `Conj(SL₂)`, whose image consists of the pairs `(s,s)`.
 
 ### 1.6 Central-product injection
 
@@ -890,8 +931,11 @@ on `X_*(T)⊗ℚ` equals the `Γ_ℚ`-fixed subspace. Under the condition the `(
 `ℚ`-split. Route: `X_*(T_s)⊗ℚ` is the `(+1)`-eigenspace, and a subtorus is defined over `ℚ` and split
 exactly when its saturated cocharacter lattice is `Γ_ℚ`-fixed; the fixed space always lies in the
 `(+1)`-eigenspace because `c∈Γ_ℚ`. By semisimplicity of the rational `Γ_ℚ`-module, a stable complement of
-the fixed space is the `(−1)`-eigenspace. This is descent of the maximal real split torus, not equality of
-ranks. (KMPS22 §2.2.3, p.25, KMPS22 lines 1125–1126; proof of Lemma 2.2.4, KMPS22 lines 1138–1142.)
+the fixed space is the `(−1)`-eigenspace. The condition is the descent of the maximal real split torus.
+Since the `Γ_ℚ`-fixed subspace always lies in the `c`-fixed one, the condition is equivalent to
+the equality of ranks `rank_ℚ(T)=rank_ℝ(T_ℝ)`; the eigenspace formulation in addition identifies the
+descended subtori. (KMPS22 §2.2.3, p.25, KMPS22 lines 1125–1126; proof of Lemma 2.2.4, KMPS22 lines
+1138–1142.)
 *Needs:* ReductiveGroups Layers 4 and 7 (tori, cocharacters and the absolute root datum with Galois action).
 
 API:
@@ -911,8 +955,8 @@ API:
 - The norm-one torus of an imaginary quadratic field satisfies it: `X_*=ℤ` with `c=−1`, so `T_s=1` and
   `T_c=T`.
 - The norm-one torus of `ℚ(√3)/ℚ` fails it: `c` acts trivially on `X_*=ℤ` while `Γ_ℚ` acts by `−1`, so
-  `T` is split over `ℝ` but has no nontrivial `ℚ`-split subtorus. A rank comparison of `T_s` with the
-  maximal `ℚ`-split subtorus detects this only together with descent.
+  `T` is split over `ℝ` but has no nontrivial `ℚ`-split subtorus. The ranks already detect this:
+  `rank_ℝ=1` and `rank_ℚ=0`, and equality of the two ranks is equivalent to the condition.
 - `Res_{F/ℚ}G_m` for a CM field `F` of degree `2d`, `d>1`, fails it: the `c`-fixed subspace has dimension
   `d` and the `Γ_ℚ`-fixed subspace dimension one.
 
@@ -1014,13 +1058,14 @@ API:
 ### 3.5 Neatness and cyclic torus closures
 
 Let `F` be a number field with an embedding `F→ℂ`, `H` linear algebraic over `F`, and `γ∈H(F)` semisimple.
-The Zariski closure `S` of `{γⁿ}` is diagonalizable. Prove that `S` is connected, hence a torus, exactly when
+The Zariski closure `S` of `{γⁿ}` is of multiplicative type over `F` and diagonalizable over `F̄`, not
+in general over `F`. Prove that `S` is connected, hence an `F`-torus, exactly when
 the eigenvalues of `γ` in a faithful `F`-representation generate a torsion-free subgroup of `ℂ^×`, that is,
 when `γ` is neat in the sense `Neat.IsNeatAut` of AdelicAlgebraicGroups §4.3. So "neat" in the sense of
 KMPS22 §2.1.8 (semisimple with connected cyclic closure) means semisimple and neat. For a `ℚ`-torus `T`
 split by `L` and every `γ∈T(ℚ)`, `γ^m` is neat for `m=#μ(L)`. Route: after scalar extension `S` lies in a
-split diagonal torus `D`. The map `χ↦χ(γ)` identifies `X^*(S)` with the group generated by the eigenvalues,
-and `S` is connected exactly when `X^*(S)` is torsion free. Character values of a point of `T(ℚ)` lie in
+split diagonal torus `D`. The map `χ↦χ(γ)` identifies the geometric character group `X^*(S_F̄)` with the
+group generated by the eigenvalues, and `S` is connected exactly when `X^*(S_F̄)` is torsion free. Character values of a point of `T(ℚ)` lie in
 `L^×`, whose torsion is killed by `m`. Neatness over `F` differs from neatness after restriction of scalars
 to `ℚ`, which uses all Galois conjugate eigenvalues. (KMPS22 §2.1.8, p.24, KMPS22 lines 1093–1094; proof of
 Lemma 2.2.10, p.29, KMPS22 lines 1317–1322.)
@@ -1030,6 +1075,10 @@ ReductiveGroups Layer 4 (diagonalizable groups `D(M)`); Tau Ceti `TauCeti.HopfAl
 **Checks.**
 
 - `1` is neat, while `−1∈G_m(ℚ)` is not: its cyclic closure is `μ₂`.
+- The closure need not be split over the ground field: `γ=(3+4i)/5` in the norm-one torus `T` of
+  `ℚ(i)/ℚ` has infinite order, so its closure is `T`, with geometric character group `ℤ` on which complex
+  conjugation acts by `−1`; `T` is a connected anisotropic `ℚ`-torus with no nontrivial rational
+  character, diagonalizable only over `ℚ(i)`.
 - `diag(2,4)` has cyclic closure `{diag(t,t²)}`, a connected one-dimensional torus inside the
   two-dimensional diagonal torus.
 - A nontrivial unipotent has connected closure `G_a`, which is not a torus: semisimplicity is needed.
@@ -1171,7 +1220,11 @@ defined over a number field. It proves invariance of the class; choosing a ratio
 - If `Γ_F` acts trivially on `X` the statement is empty.
 - For `X=Hom(ℚ(√2),ℚ̄)` and either embedding `x`, the decomposition group at `ℓ` fixes a point only when `ℓ`
   splits in `ℚ(√2)`, half of the primes, so the hypothesis fails, consistently with `x` not being fixed.
-- The hypothesis allows the fixed point to depend on `v`: it need not be `x` itself.
+- The hypothesis is quantified as: for all `v` outside a finite set there is `y∈Γ_F·x` fixed by a
+  decomposition group at `v`; the conclusion then forces `Γ_F·x={x}`, so `y=x`. At a single place
+  another orbit point can be the fixed one: for `X=Hom(ℚ(∛2),ℚ̄)`, `X³−2≡(X−3)(X²+3X+4) mod 5` with an
+  irreducible quadratic factor, so Frobenius at `5` fixes exactly one of the three points; at `7`, where
+  `2` is not a cube, Frobenius acts as a `3`-cycle and fixes none, so the global hypothesis fails.
 
 ### 4.3 Rational embeddings in quasi-split groups
 
@@ -1240,9 +1293,13 @@ of `i_ℓ|_T` by §4.2 and realize it rationally in the quasi-split inner form `
 transfers to `G` at `ℓ≠p` through `i_ℓ`, at `p` because `G_{ℚ_p}` is quasi-split, and at `∞` through `i_∞`;
 (d) makes the image of `T` in `G_ad` anisotropic at `∞`, and §4.4 transfers it globally. The resulting
 rational embedding is geometrically, not necessarily locally rationally, conjugate to the `i_ℓ`.
-Hypotheses (b)–(d) are the realization theorem for isogeny groups of Hodge-type Shimura varieties (KMPS22
-Proposition 2.2.2, KMPS22 lines 1122–1123, proved there from Noot09 Theorem 2.4, Lemmas 2.5–2.6 and §3);
-they are hypotheses here, not consequences of a definition of `I`. Compactness modulo the ambient centre is
+For isogeny groups of Hodge-type Shimura varieties the three hypotheses come from three different
+inputs: (b) from KMPS22 Corollary 2.1.9 (KMPS22 lines 1095–1105, the identification of the `ℓ`-adic
+group with a centralizer, after passing to a sufficiently divisible Frobenius power); (c) from the
+realization theorem KMPS22 Proposition 2.2.2 (KMPS22 lines 1122–1123, proved there from Noot09
+Theorem 2.4, Lemmas 2.5–2.6 and §3); and (d) from the compactness modulo scalars of KMPS22 §2.1.3
+(KMPS22 lines 974–981) through the real realization used in Corollary 2.2.14. They are hypotheses here,
+not consequences of a definition of `I`. Compactness modulo the ambient centre is
 needed, not just a compact Cartan subgroup. (KMPS22 Corollary 2.2.14 and its proof, p.30, KMPS22 lines
 1372–1393.)
 *Needs:* §3.7; §§4.1–4.4; EndoscopicTransferAndUnitaryTraceComparison §1.6.
@@ -1264,16 +1321,16 @@ rational multiplier: `G(R)={(g,λ)∈GL_F(V⊗R)×R^× : ⟨gx,gy⟩=λ⟨x,y⟩
 PELModuli §M3.2, which for odd `n` identifies `ker¹(ℚ,G)` with `ker¹(ℚ,Z)` for the centre `Z` and records
 that it can be nontrivial; the vanishing under odd `d` is the content here. Route: the centre is the torus
 `Z≅T₁=Res_{F/ℚ}G_m×_{Res_{F⁺/ℚ}G_m}G_m` of scalars whose similitude factor is rational, and PELModuli
-§M3.2 gives `ker¹(ℚ,T₁)≅ker¹(ℚ,G)`. The exact sequence `1→T₁→Res_{F/ℚ}G_m×G_m→Res_{F⁺/ℚ}G_m→1`, with
+§M3.2 (`hasseCases` (A)) gives `ker¹(ℚ,T₁)≅ker¹(ℚ,G)`. The exact sequence `1→T₁→Res_{F/ℚ}G_m×G_m→Res_{F⁺/ℚ}G_m→1`, with
 `(e,λ)↦N_{F/F⁺}(e)λ⁻¹`, Shapiro and Hilbert 90 give
 `H¹(k,T₁)=(F⁺⊗k)^×/(N_{F/F⁺}((F⊗k)^×)·k^×)` for `k=ℚ` and every `ℚ_v`. By
 EndoscopicTransferAndUnitaryTraceComparison §1.11(b), `ker¹(ℚ,T₁)` is dual to `ker¹(ℚ,T̂₁)`, computed
 from the signed-permutation action of `Γ_ℚ` on the embeddings of `F`. Odd `n` enters through PELModuli
 §M3.2 (`T₁` itself does not depend on `n`), and odd `d` through the parity calculation. For `F=F⁺E` with `E` imaginary quadratic this is the calculation of Shin11 (Lemma 3.1
-and its proof, Remark 3.2, internal pp.12–14, Shin11 lines 696–727, there written Lemma 3.1.1); for
+and its proof, Remark 3.2, internal pp.12–14, Shin11 lines 696–727, author-version numbering, published as Lemma 3.1.1); for
 arbitrary CM `F` the same calculation runs with the full permutation action. (KMPS22 Remark 2.3.16(1),
 p.36, KMPS22 lines 1647–1651.)
-*Needs:* PELModuli §M3.2 (`ker¹(ℚ,Z)≅ker¹(ℚ,G)` for odd hermitian dimension);
+*Needs:* PELModuli §M3.2 (`hasseCases` (A): `ker¹(ℚ,Z)≅ker¹(ℚ,G)` for odd hermitian dimension);
 EndoscopicTransferAndUnitaryTraceComparison §§1.2 and 1.11(b); ReductiveGroupsPartII §RG2.5.1 (dual
 groups with Galois action).
 
@@ -1300,7 +1357,7 @@ Layer 10. ReductiveGroups Layers 7 and 8. ReductiveGroupsPartII §RG2.5.1. PELMo
 
 ## Layer 5: Mumford–Tate Frobenius classes and rational representatives
 
-Let `A` be an abelian variety of dimension `g` over a number field `E`, with a fixed embedding `E⊂ℂ`
+Let `A` be an abelian variety of dimension `g≥1` over a number field `E`, with a fixed embedding `E⊂ℂ`
 extended to `ℚ̄⊂ℂ`. Write `V_B=H¹_B(A(ℂ),ℚ)`, `G=MT(V_B)` for its Mumford–Tate group (ShimuraData §1.2),
 `ρ_ℓ:Γ_E→GL(H¹_et(A_Ē,ℚ_ℓ))` for the `ℓ`-adic representations, and, at a finite place `v` of good reduction
 with residue field `𝔽_q`, `q` a power of `p`, `Fr_v∈Γ_E` for a geometric Frobenius at `v`. The geometric
@@ -1317,13 +1374,17 @@ polarization embeds `G` in `GSp(V_B)` with multiplier `ν`; the scalar cocharact
 of the Hodge weight on `H¹`, satisfies `ν∘w_s(z)=z²`. Finally `Int(h(i))` is a Cartan involution of
 `G_ℝ/w_s(G_m)`, so `Z_G/w_s(G_m)` is anisotropic over `ℝ`, and a maximal torus `T⊂G_ℝ` containing `h(S)` is
 elliptic with `T/w_s(G_m)` anisotropic. Route: the comparison is AbelianSchemesAndArithmeticModuli §A5.1
-(`T_ℓA≅Λ⊗ℤ_ℓ`) and §A5.7 (`H¹_et=V_ℓ(A)^*`, `H¹=Λ^*`), with invariance of torsion points under `ℚ̄⊂ℂ`.
+(`T_ℓA≅Λ⊗ℤ_ℓ` for every `ℓ`) and §A5.7 over `ℂ` (`H¹=Λ^*`), with invariance of torsion points under `ℚ̄⊂ℂ`;
+the `ℓ`-adic realization is `V_ℓ(A)^*` by the convention above. The multiplier `χ_ℓ⁻¹` on `V_ℓ(A)^*` at
+every `ℓ`, including `ℓ` dividing the polarization degree, comes from the polarized Weil pairing of §A3.7
+with the rational inverse of §A3.9 and the dual pairing of §A4.1, tensored with `ℚ_ℓ`; §A5.7 gives the
+same convention directly when `ℓ` is prime to the degree.
 The Cartan statement is ShimuraData §4.3's `SV2*` argument: `Int(h(i))` is Cartan on `GSp_ℝ/G_m` and
 restricts to the stable reductive subgroup `G_ℝ/w_s(G_m)`. It acts trivially on `T`, so `T/w_s(G_m)` lies
 in a compact form. The source assigns `V_B` the homological types `(0,−1),(−1,0)`; with the dual Tate
 module realization those types belong to `H₁`, and the cohomological types are used here. (KZ25
 §§6.1.1–6.1.3, p.55, KZ25 lines 2445–2469; Deligne82 §§3.4–3.6, pp.24–25.)
-*Needs:* ShimuraData §§1.2–1.4 and 4.2–4.3; AbelianSchemesAndArithmeticModuli §§A5.1 and A5.7;
+*Needs:* ShimuraData §§1.2–1.4 and 4.2–4.3; AbelianSchemesAndArithmeticModuli §§A3.7, A3.9, A4.1, A5.1 and A5.7;
 ReductiveGroupsPartII §RG2.0a.3 (the Deligne torus).
 
 **Checks.**
@@ -1331,8 +1392,13 @@ ReductiveGroupsPartII §RG2.0a.3 (the Deligne torus).
 - For a CM elliptic curve with CM field `K`, `G=Res_{K/ℚ}G_m`; for a non-CM elliptic curve, `G=GL₂`.
 - `ν(w_s(z))=z²`: the scalar `z` on the `2g`-dimensional `V_B` multiplies the alternating form by `z²`.
 - The types `(−1,0),(0,−1)` belong to homology: on an elliptic curve `H^{1,0}=H⁰(Ω¹)` has type `(1,0)`.
-- For `GL₂` with `h(a+bi)=[[a,−b],[b,a]]`, the torus `ℂ^×` containing `h(S)` is elliptic, while the
-  diagonal torus is split modulo `w_s(G_m)`.
+- For `GL₂` acting on `H¹` in the basis dual to a homology basis, `h(a+bi)=(a²+b²)⁻¹[[a,−b],[b,a]]`,
+  with eigenvalues `z⁻¹,z̄⁻¹` for `z=a+bi≠0`; at `z=2` it is `(1/2)·id` with multiplier `1/4`, the
+  weight action on `H¹`. The matrix `[[a,−b],[b,a]]` without the factor is the action on `H₁` and gives
+  `2·id` at `z=2`, the wrong weight. The torus `ℂ^×` containing `h(S)` is elliptic, while the diagonal
+  torus is split modulo `w_s(G_m)`.
+- Positive dimension is needed for the multiplier identities: for `g=0`, `V_B=0`, `G=1`, and `ν∘w_s` is
+  trivial, so `ν(w_s(2))=1≠4` and `ν(Fr_v)=1≠q`; this is why `g≥1` is a standing hypothesis.
 
 ### 5.2 Absolute-Hodge comparison under a change of embedding
 
@@ -1382,7 +1448,7 @@ Hence fixing the family at one `ℓ` is fixing it at all `ℓ`, and the finitely
 one finite extension `E′`. The condition concerns all of `Γ_E`, not only the identity component of its
 algebraic monodromy group. (KZ25 §6.1.3 and Lemma 6.1.4 with its proof, pp.55–56, KZ25 lines 2463–2475;
 Deligne82 Main Theorem 2.11, p.19, Deligne82 line 848.)
-*Needs:* §5.1; ShimuraVarieties §7.0i; AutomorphicBundles §B1.1; AbelianSchemesAndArithmeticModuli §A5.7.
+*Needs:* §5.1; ShimuraVarieties §7.0i; AutomorphicBundles §B1.1; AbelianSchemesAndArithmeticModuli §A5.1 (the comparison of §5.1 at every `ℓ`).
 
 **Checks.**
 
@@ -1397,22 +1463,36 @@ Deligne82 Main Theorem 2.11, p.19, Deligne82 line 848.)
 Assume `ρ_ℓ` takes values in `G(ℚ_ℓ)` for all `ℓ`, and let `v|p` be a place of good reduction with residue
 field `𝔽_q`. Construct: a finite extension `F₀/ℚ_p` splitting `G` such that the image of a Frobenius lift
 `Fr_v` in `G(F₀)` lies in a hyperspecial parahoric subgroup; a totally real field `F` with `F_w≅F₀` for every
-place `w|p`; the common-multiplier group `H=Res_{F/ℚ}G_F×_{Res_{F/ℚ}G_m}G_m⊃G`, whose base change to `ℚ_p`
-is a product of Weil restrictions of split groups and has a very special parahoric subgroup containing the
-image of `Fr_v`; a maximal `ℚ`-torus `T⊂H` through which some `h` in the Hodge class factors, with
-`T_{ℚ_p}` of the prescribed `H(ℚ_p)`-conjugacy type; and the central product `H₁=(H×T)/Z_H`. Prove that the
-composite closed embedding `j:G→H₁` induces a `Γ_ℚ`-equivariant injection `Conj(G)(ℚ̄)→Conj(H₁)(ℚ̄)`. After
-replacing `E` by a finite extension `E′` with a place `v′|v` of the same residue field `𝔽_q`, the image of
-`Γ_{E′}` at `p` lies in that parahoric; a geometric Frobenius at `v′` is a geometric Frobenius at `v`, so
-`q` is not replaced by a power. The Serre tensor `A⊗O_F` (AbelianSchemesAndArithmeticModuli §A1.3a) is an
-abelian variety over `E′` with good reduction at `v′`, whose `H¹` realizes `H`. Route: ReductiveGroupsPartII §RG2.3.4
-(*compact-elements-in-hyperspecial-subgroups*) gives `F₀`; Weil restriction gives the product structure at
-`p`; §2.2 chooses `T`; §1.5 and §1.6 give the injection. That this datum is of Hodge type with
-strongly acceptable triple, and the resulting Shimura-variety point, are geometric statements outside this
-roadmap. (KZ25 Proposition 6.2.4 and its proof, pp.57–58, KZ25 lines 2559–2582; §6.2.5, KZ25 lines
-2583–2591; Lemma 6.2.6, KZ25 lines 2592–2618; proof of Theorem 6.2.7, KZ25 lines 2627–2646.)
-*Needs:* §1.5; §1.6; §2.2; §5.3; ReductiveGroupsPartII §§RG2.0a.1–RG2.0a.2 and RG2.3.4;
-AbelianSchemesAndArithmeticModuli §A1.3a.
+place `w|p`; the Weil restriction `H′=Res_{F/ℚ}G_F` and its common-multiplier subgroup
+`H=H′×_{Res_{F/ℚ}G_m}G_m⊃G` for the multiplier `ν`; a very special parahoric group scheme `𝓗` of `H_{ℚ_p}`
+with `𝓗(ℤ_p)=H(ℚ_p)∩𝓗′(ℤ_p)` containing the image of `Fr_v`, where `𝓗′` is the very special parahoric of
+`H′_{ℚ_p}≅∏_{w|p}Res_{F_w/ℚ_p}G_{F_w}` whose integral points are the product of the hyperspecial subgroups
+of the split groups `G_{F_w}≅G_{F₀}` containing `Fr_v`; a maximal `ℚ`-torus `T⊂H` through which some `h` in
+the Hodge class factors, with `T_{ℚ_p}` of the prescribed `H(ℚ_p)`-conjugacy type; and the central product
+`H₁=(H×T)/Z_H`. Prove that the composite closed embedding `j:G→H₁` induces a `Γ_ℚ`-equivariant injection
+`Conj(G)(ℚ̄)→Conj(H₁)(ℚ̄)`. After replacing `E` by a finite extension `E′` with a place `v′|v` of the same
+residue field `𝔽_q`, the image of `Γ_{E′}` at `p` lies in `𝓗(ℤ_p)`; a geometric Frobenius at `v′` is a
+geometric Frobenius at `v`, so `q` is not replaced by a power. The Serre tensor `A⊗O_F`
+(AbelianSchemesAndArithmeticModuli §A1.3a) is an abelian variety over `E′` with good reduction at `v′`, on
+whose `H¹` the group `H` acts naturally. Route: ReductiveGroupsPartII §RG2.3.3
+(*compact-elements-in-hyperspecial-subgroups*) gives `F₀`. The product decomposition is that of `H′`, not of
+`H`: Weil restriction gives `H′_{ℚ_p}≅∏_{w|p}Res_{F_w/ℚ_p}G_{F_w}`. `H` is connected, since
+`G=w_s(G_m)·Hdg` with the Hodge group `Hdg` connected, contained in `ker ν` and containing `−1=h(−1)`, so
+`ker(ν|_G)=Hdg` and §1.5 applies to the whole fibre product. `H` and `H′` have the same derived group
+`Res_{F/ℚ}G_der`, whose base change to `ℚ_p` is a product of Weil restrictions of split groups. With `I` the
+inertia group of `ℚ_p`, `X_*(H′_ab)` is a permutation module tensored with `X_*(G_ab)` on which
+`Γ_{F₀}` acts trivially, and `X_*(H_ab)` is the direct sum of its part killed by `ν_*` and the `I`-fixed
+line spanned by a diagonal cocharacter; so both `X_*(H′_ab)_I` and `X_*(H_ab)_I` are torsion free. Then
+gap:parahoric-intersection-same-derived identifies the fixer of the point of `H` with
+`H(ℚ_p)∩𝓗′(ℤ_p)` and makes it very special, and *fixer-versus-parahoric* (5), applied to `H` and to `H′`,
+makes both fixers connected parahorics; the image of `Fr_v` lies in it because `G(ℚ_p)⊂H(ℚ_p)`. §2.2
+chooses `T`; §1.5 and §1.6 give the injection. That this datum is of Hodge type with strongly acceptable
+triple, and the resulting Shimura-variety point, are geometric statements outside this roadmap. (KZ25
+Proposition 6.2.4 and its proof, pp.57–58, KZ25 lines 2559–2582; §6.2.5, KZ25 lines 2583–2591; Lemma
+6.2.6, KZ25 lines 2592–2618; proof of Theorem 6.2.7, KZ25 lines 2627–2646.)
+*Needs:* §1.5; §1.6; §2.2; §5.3; ReductiveGroupsPartII §§RG2.0a.1–RG2.0a.2, RG2.3.3
+(*compact-elements-in-hyperspecial-subgroups*, *fixer-versus-parahoric*) and RG2.3.4 (very special
+points) with gap:parahoric-intersection-same-derived; AbelianSchemesAndArithmeticModuli §A1.3a.
 
 **Checks.**
 
@@ -1420,6 +1500,10 @@ AbelianSchemesAndArithmeticModuli §A1.3a.
   `𝔽_{q^m}` would replace `Fr_v` by `Fr_v^m` and compare the wrong Frobenius.
 - For `F=ℚ`, `H=G` and `H₁=(G×T)/Z_G`, and the injection is §1.6 alone.
 - `H₁^der=H^der`: the central product changes only the centre, which now contains the torus `T`.
+- `H` is not `H′`: for `G=GL₂` and `F` quadratic, `H′=Res_{F/ℚ}GL₂` has dimension `8`, `H` (equal rational
+  determinants) dimension `7`, and both have the `6`-dimensional derived group `Res_{F/ℚ}SL₂`. At an inert
+  `p`, `H′_{ℚ_p}=Res_{F_w/ℚ_p}GL₂` is a Weil restriction of a split group, while `H_{ℚ_p}` is not: its
+  parahoric is cut out of `GL₂(O_{F_w})` by the condition that the determinant lie in `ℤ_p^×`.
 
 ### 5.5 Common rational Frobenius class from an auxiliary group
 
@@ -1439,7 +1523,7 @@ Kisin–Zhou's geometric theorem (KZ25 Theorem 5.1.4, KZ25 lines 2104–2106) ap
 point defined by the Serre tensor `A⊗O_F` (KZ25 lines 2641–2655). (KZ25 Theorem 6.2.7, Remark 6.2.8 and
 the proof of 6.2.7, p.59, KZ25 lines 2619–2655.)
 *Needs:* §0.6; §1.3; §5.2; §5.4 for the construction of `j`; AbelianSchemesAndArithmeticModuli
-§§A5.7 and A6.21.
+§A6.21, with the realization conventions of §5.1.
 
 **Checks.**
 
@@ -1485,7 +1569,7 @@ the `γ_v` of §5.5). Then `γ` has a representative in `G(ℝ)` lying in an ell
 embedding; apply §5.6 with `r=√q` and `ρ=V_B`. Elliptic means contained in a maximal torus anisotropic
 modulo the centre, not that the connected centralizer is compact modulo the centre. (KZ25 Lemma 6.3.3,
 p.60, KZ25 lines 2671–2673.)
-*Needs:* §5.1; §5.6; AbelianSchemesAndArithmeticModuli §§A5.7 and A6.21.
+*Needs:* §5.1; §5.6; AbelianSchemesAndArithmeticModuli §§A3.7, A3.9, A4.1 (the multiplier at every `ℓ`) and A6.21.
 
 **Checks.**
 
@@ -1511,7 +1595,9 @@ elliptic, the global obstruction group injects into the local group at an auxili
 in a splitting field is conjugate to complex conjugation; such primes have positive density
 (Chebotarev). Local duality (EndoscopicTransferAndUnitaryTraceComparison §1.11(a)) and the parametrization of rational classes in
 a stable class (EndoscopicTransferAndUnitaryTraceComparison §1.14(b), with Kneser's vanishing) allow the class at `ℓ₀` to be changed so as to cancel the
-obstruction, and Kottwitz's criterion produces `γ₀`. The prime comes from the argument's positive-density
+obstruction, and Kottwitz's criterion produces `γ₀`. Kottwitz states the criterion for `G_sc` without `E₈` factors; the
+proof uses that hypothesis only through the Hasse principle for `G_sc`, which holds in general
+(EndoscopicTransferAndUnitaryTraceComparison §1.9(c) and §1.15(b)), so no restriction on `G` is kept. The prime comes from the argument's positive-density
 set, not from an arbitrary prescribed one. (Kottwitz90 §7, auxiliary-prime argument on p.188, Kottwitz90 lines 6779–6803; Kottwitz86
 Theorem 6.6, Kottwitz86 line 706, and §§6.7–6.8, Kottwitz86 lines 757–761; KZ25 Corollary 6.3.4 and Remark
 6.3.5(3), pp.60–61, KZ25 lines 2694–2700 and 2716–2718.)
@@ -1563,8 +1649,8 @@ pp.60–61, KZ25 lines 2694–2718; for the compactness, KZ25 lines 2635–2638.
 
 §0.4, §0.6, §§1.3–1.6, §2.2. ShimuraData §§1.2–1.4, 4.2–4.3. ShimuraVarieties §§5.8 and
 7.0i. AutomorphicBundles §B1.1. MotivesAndAlgebraicCycles §6.8. AbelianSchemesAndArithmeticModuli §§A1.3a,
-A5.1, A5.7, A6.11, A6.21. EndoscopicTransferAndUnitaryTraceComparison §§1.9, 1.11, 1.14, 1.15. ReductiveGroupsPartII §§RG2.0a and
-RG2.3.4. Chebotarev Layer 10.
+A3.7, A3.9, A4.1, A5.1, A5.7, A6.11, A6.21. EndoscopicTransferAndUnitaryTraceComparison §§1.9, 1.11, 1.14, 1.15. ReductiveGroupsPartII §§RG2.0a,
+RG2.3.3 and RG2.3.4, with gap:parahoric-intersection-same-derived. Chebotarev Layer 10.
 
 ## Downstream consumers
 

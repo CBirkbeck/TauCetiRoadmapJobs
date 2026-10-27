@@ -2514,7 +2514,7 @@
       "slug": "relative-global-obstruction",
       "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
       "section": "1.15",
-      "needs": "Kottwitz's obstruction and rational-realization criterion (Kottwitz 1986, Theorem 6.6) for an adelic tuple in an inner form G of a quasi-split G* with simply connected derived group, with the base point in G*(F) transported by the inner twist, together with the formula for the change of the obstruction when one local component is replaced."
+      "needs": "Kottwitz's obstruction and rational-realization criterion (Kottwitz 1986, Theorem 6.6, with the Hasse principle for G_sc in its full form in place of Kottwitz's no-E8 hypothesis) for an adelic tuple in an inner form G of a quasi-split G* with simply connected derived group, with the base point in G*(F) transported by the inner twist, together with the formula for the change of the obstruction when one local component is replaced."
     },
     {
       "slug": "torus-localization-sequence",
@@ -2527,6 +2527,12 @@
       "supplier": "ReductiveGroupsPartII",
       "section": "RG2.0.2",
       "needs": "For a connected reductive group G over a characteristic-zero local field F and a maximal F-torus T, the set of regular semisimple elements of Lie(G)(F) whose centralizer is G(F)-conjugate to T is open."
+    },
+    {
+      "slug": "parahoric-intersection-same-derived",
+      "supplier": "ReductiveGroupsPartII",
+      "section": "RG2.3.4",
+      "needs": "For a closed immersion H→H′ of connected reductive groups over a characteristic-zero nonarchimedean local field K that identifies the derived groups, and a point x of the building of H with image x′ in the building of H′, the fixer of x in H(K) is H(K)∩(fixer of x′ in H′(K)), and x is very special if and only if x′ is."
     }
   ],
   "restructure": [
