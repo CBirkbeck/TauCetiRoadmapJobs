@@ -22,6 +22,8 @@ Stated here:
   spectral polynomial and that of its restriction are coprime.
 * `stableFibre_isTorsor_orthogonal`, `stableFibre_isTorsor_unitary` (README §5.3;
   Theorem 14.5): over a stable pair of invariants the joint fibre is a torsor of the subgroup.
+* `jointFibre_nonempty_orthogonal`, `jointFibre_nonempty_unitary` (README §5.3; Lemma 14.6):
+  over every pair of invariants, stable or not, the joint fibre is nonempty.
 
 The GGP statements use the standard models of README Conventions, to which every GGP pair over an
 algebraically closed field is isometric: `V = k^ι ⊕ k` with the dot product, `e` the last
@@ -37,6 +39,11 @@ Headline theorems that are not statable at the pins, and what each lacks:
   vectors and the closed Nelson operator, which are not at the pins; the BCH bidifferential
   coefficients `C_j` are Taylor coefficients of the Baker–Campbell–Hausdorff series, of which the
   pins have only the local logarithm, so writing them would be a long ad hoc encoding.
+* Uniform Plancherel–Sobolev summability, the Plancherel formula for Ξ-integrable functions and
+  the relative Plancherel disintegration (README §§4.2, 4.4, 4.6; Lemmas A.3, A.4 and 18.1): the
+  pins have no tempered duals of reductive groups with their Plancherel measures, no Sobolev
+  scale of the Nelson operator, no trace on trace-class operators of a Hilbert space and no local
+  relative characters.
 * Rossmann's character formula and the uniform orbit trace expansion (README §§3.3, 3.7, 3.9;
   Theorems 6.1, 6.3 and 12.2), and the orbit continuity theorem (README §3.5; Theorem 11.1): the
   pins have no tempered irreducible unitary representations of real reductive groups, no
@@ -217,6 +224,33 @@ theorem stableFibre_isTorsor_unitary {k : Type*} [Field k] [IsAlgClosed k] [Char
         ggpBlock (h : Matrix ι ι k) * x * ggpBlock ((h⁻¹ : GL ι k) : Matrix ι ι k) ∈ F) ∧
       ∀ x ∈ F, ∀ x' ∈ F, ∃! h : GL ι k,
         x' = ggpBlock (h : Matrix ι ι k) * x * ggpBlock ((h⁻¹ : GL ι k) : Matrix ι ι k) := by
+  sorry
+
+/-- **Joint fibres are nonempty, orthogonal case** (NV21 Lemma 14.6). Over an algebraically
+closed field of characteristic zero, for every skew-symmetric `y` of size `ι ⊕ Unit` and every
+skew-symmetric `z` of size `ι`, with no stability hypothesis, there is a skew-symmetric `x`
+invariantly equivalent to `y` under `SO(k^ι ⊕ k)` whose restriction `x_H` is invariantly
+equivalent to `z` under `SO(k^ι)`: the map `x ↦ ([x], [x_H])` is surjective. -/
+theorem jointFibre_nonempty_orthogonal {k : Type*} [Field k] [IsAlgClosed k] [CharZero k]
+    {ι : Type*} [Fintype ι] [DecidableEq ι] (y : Matrix (ι ⊕ Unit) (ι ⊕ Unit) k)
+    (hy : yᵀ = -y) (z : Matrix ι ι k) (hz : zᵀ = -z) :
+    ∃ x : Matrix (ι ⊕ Unit) (ι ⊕ Unit) k, xᵀ = -x ∧
+      InvariantlyEquivalent {w | wᵀ = -w}
+        (Matrix.specialOrthogonalGroup (ι ⊕ Unit) k : Set (Matrix (ι ⊕ Unit) (ι ⊕ Unit) k)) x y ∧
+      InvariantlyEquivalent {w | wᵀ = -w}
+        (Matrix.specialOrthogonalGroup ι k : Set (Matrix ι ι k)) x.toBlocks₁₁ z := by
+  sorry
+
+/-- **Joint fibres are nonempty, unitary case** (NV21 Lemma 14.6). Over an algebraically closed
+field of characteristic zero, for every `y` of size `ι ⊕ Unit` and every `z` of size `ι`, with no
+stability hypothesis, there is `x` with the same `GL(k^ι ⊕ k)`-invariants as `y` whose upper-left
+block has the same `GL(k^ι)`-invariants as `z`. -/
+theorem jointFibre_nonempty_unitary {k : Type*} [Field k] [IsAlgClosed k] [CharZero k]
+    {ι : Type*} [Fintype ι] [DecidableEq ι] (y : Matrix (ι ⊕ Unit) (ι ⊕ Unit) k)
+    (z : Matrix ι ι k) :
+    ∃ x : Matrix (ι ⊕ Unit) (ι ⊕ Unit) k,
+      InvariantlyEquivalent Set.univ {g | IsUnit g} x y ∧
+      InvariantlyEquivalent Set.univ {g | IsUnit g} x.toBlocks₁₁ z := by
   sorry
 
 end TauCetiRoadmap.QuantitativeOrbitMethodAndMicrolocalAnalysisOnLieGroups

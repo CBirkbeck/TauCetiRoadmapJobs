@@ -4752,19 +4752,10 @@
       ]
     },
     {
-      "slug": "harish-chandra-characters",
-      "supplier": "AutomorphicSpectralTheory",
-      "section": "Layers 0–2: local spectral extension (distribution characters)",
-      "needs": "for an irreducible admissible representation π of a real reductive group, `π(f)` is trace class for smooth compactly supported f and `tr π(f) = ∫ θ_π f` for a locally integrable conjugation-invariant function θ_π that is real analytic on the regular semisimple set.",
-      "neededBy": [
-        "3.3"
-      ]
-    },
-    {
       "slug": "tempered-xi-bounds",
       "supplier": "AutomorphicSpectralTheory",
       "section": "Layers 0–2: local estimates extension (Ξ-function, tempered coefficient bounds)",
-      "needs": "for a real reductive group with maximal compact K, Harish-Chandra's function Ξ and the Cowling–Haagerup–Howe bound `|⟨π(g)u, v⟩| ≤ Ξ(g) (dim K·u)^{1/2} (dim K·v)^{1/2} ‖u‖ ‖v‖` for K-finite vectors u, v of every tempered irreducible unitary π.",
+      "needs": "for a reductive group over ℝ, ℂ or a nonarchimedean local field of characteristic zero, with a maximal compact subgroup K (special maximal compact in the nonarchimedean case), Harish-Chandra's function Ξ and the Cowling–Haagerup–Howe bound `|⟨π(g)u, v⟩| ≤ Ξ(g) (dim K·u)^{1/2} (dim K·v)^{1/2} ‖u‖ ‖v‖` for K-finite vectors u, v of every tempered irreducible unitary π.",
       "neededBy": [
         "4.1",
         "4.3"
@@ -4874,7 +4865,7 @@
       "slug": "relative-character-positivity",
       "supplier": "GanGrossPrasadUnitaryGroups",
       "section": "3.3 Regularized tempered Bessel forms",
-      "needs": "for codimension-one unitary and orthogonal pairs over a p-adic field and tempered irreducible unitary π of G and σ of H, the local relative character `H_σ` of §4.5 is nonnegative on positive operators, and nonzero on some rank-one positive operator whenever σ is π-distinguished.",
+      "needs": "for codimension-one unitary and orthogonal pairs over a p-adic field and tempered irreducible unitary π of G and σ of H, the local relative character `H_σ(v₁ ⊗ v̄₂) = Σ_{u ∈ B(σ)} ∫_H ⟨π(s)v₁, v₂⟩⟨u, σ(s)u⟩ ds` (B(σ) an orthonormal basis of σ consisting of vectors fixed by compact open subgroups, inner products linear in the first variable), extended linearly to finite-rank smooth operators, is nonnegative on positive operators, and nonzero on some rank-one positive operator whenever σ is π-distinguished.",
       "neededBy": [
         "4.5",
         "7.7"
@@ -4883,8 +4874,8 @@
     {
       "slug": "local-spinor-images",
       "supplier": "OrthogonalSpinGroups",
-      "section": "Layer 2: local topology, transvections, and local spinor norms (2F–2G, extended to every finite extension of ℚ_p)",
-      "needs": "for a nondegenerate quadratic space V of dimension at least 2 over a local field F_v of characteristic zero (a finite extension of ℚ_p, ℝ or ℂ), the image `θ_v(SO(V)(F_v)) ⊆ F_v^×/F_v^{×2}` of the spinor norm: all square classes when V is isotropic, or of dimension ≥ 3 over a nonarchimedean field; the norm group of `F_v(√(−disc V))` when dim V = 2; and the positive class alone when F_v = ℝ and V is definite.",
+      "section": "Layer 2: local topology, transvections, and local spinor norms (2F, anisotropic rows extended to every finite extension of ℚ_p)",
+      "needs": "for an anisotropic nondegenerate quadratic space V over a finite extension F_v of ℚ_p (so dim V ≤ 4), the image `θ_v(SO(V)(F_v)) ⊆ F_v^×/F_v^{×2}` of the spinor norm: the image of the norm group of `F_v(√(−disc V))`, of index 2, when dim V = 2, and all square classes when dim V is 3 or 4.",
       "neededBy": [
         "8.7"
       ]
@@ -4914,6 +4905,24 @@
       "needs": "the counterpart of gap:unitary-xi-polynomial-tail: over ℝ or ℂ, for a codimension-one special orthogonal pair H ⊂ G, there is η > 0 depending only on the pair with `∫_H Ξ_G(h) Ξ_H(h) |h|^η dh < ∞`, `|h|` the algebraic norm of §5.8.",
       "neededBy": [
         "6.3"
+      ]
+    },
+    {
+      "slug": "hilbert-mumford-linear",
+      "supplier": "AlgebraicModuliForArithmeticGeometry",
+      "section": "GIT extension: reductive group quotients of affine varieties (stability, Hilbert–Mumford criterion, free stable quotients)",
+      "needs": "for a reductive group H over an algebraically closed field of characteristic zero acting linearly on a finite-dimensional vector space M, a point x ∈ M fails to be H-stable (its stabilizer is infinite or its orbit is not closed) if and only if some nontrivial cocharacter γ of H has only nonnegative weights on x, that is, `lim_{t→0} γ(t)·x` exists.",
+      "neededBy": [
+        "5.2"
+      ]
+    },
+    {
+      "slug": "free-stable-quotient-bundle",
+      "supplier": "AlgebraicModuliForArithmeticGeometry",
+      "section": "GIT extension: reductive group quotients of affine varieties (stability, Hilbert–Mumford criterion, free stable quotients)",
+      "needs": "for a reductive group H over an algebraically closed field of characteristic zero acting on an affine variety M, the invariant ring is finitely generated, the affine quotient `M → M//H` is surjective and universal for H-invariant morphisms, the H-stable locus `M^s` and its image are open, and when every point of `M^s` has trivial stabilizer the map `M^s → M^s//H` is a principal H-bundle, locally trivial in the étale topology.",
+      "neededBy": [
+        "5.3"
       ]
     }
   ],
