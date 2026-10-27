@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-8343 mistakes recorded on the board: 5006 misprints, 2138 errors, 885 gaps, 314 unparsed bullets.
+8348 mistakes recorded on the board: 5010 misprints, 2139 errors, 885 gaps, 314 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -4787,13 +4787,17 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## Fontaine93
 
+- **Misprint** at Plan before §1, printed page 4 (Fontaine93 line 125): the source says §3 proves Theorem 1; it should be §3 proves Theorem 2; affects nothing. Found by SmallRamificationAndAbelianVarietyBaseCasesPartII (#1646 at a92beaf, 2026-10-27, codex gpt-6-astra).
 - **Misprint** at the introductory plan for §3, printed p. 4 (Fontaine93 line 125): the source says the third section proves Theorem 1; it should be Theorem 2, as its heading and conclusion confirm; affects nothing. Found by SmallRamificationAndAbelianVarietyBaseCasesPartII (#1646 at 1da903c, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at the plan of the letter, printed p. 4 (line 125): the source says §3 proves Theorem 1; it should be Theorem 2, as §3's heading at line 284 confirms; affects nothing. Found by SmallRamificationAndAbelianVarietyBaseCasesPartII (#1646 at a92beaf, 2026-10-26, claude fable).
 - **Misprint** at §2.4, Lemma 2 proof, printed p. 6 (Fontaine93 lines 212–213, displayed range): the source says each character has a unique exponent between zero and six inclusive; it should be zero through five, since χ⁶=χ⁰; affects the proof. Found by SmallRamificationAndAbelianVarietyBaseCasesPartII (#1646 at 1da903c, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at §2.5, Lemma 3 proof, printed p. 7 (Fontaine93 lines 238–239, displayed root discriminant): the source says the root discriminant equals 7^(53/42) for j≤2; it should be at most that value, with equality only for j=2; affects the proof. Found by SmallRamificationAndAbelianVarietyBaseCasesPartII (#1646 at 1da903c, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at §3.6, printed p. 10 (Fontaine93 line 361): the source says the notation is that of Theorem 1; it should be Theorem 2, which defines the local field and filtered module; affects nothing. Found by SmallRamificationAndAbelianVarietyBaseCasesPartII (#1646 at 1da903c, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at §3.6, printed p. 10 (line 361): the source says the notation is that of Theorem 1; it should be Theorem 2, which introduces K, r and M; affects nothing. Found by SmallRamificationAndAbelianVarietyBaseCasesPartII (#1646 at a92beaf, 2026-10-26, claude fable).
+- **Misprint** at §3.6, printed page 10 (Fontaine93 line 361): the source says it resumes the notation of Theorem 1; it should be Theorem 2, which defines M, U and L; affects nothing. Found by SmallRamificationAndAbelianVarietyBaseCasesPartII (#1646 at a92beaf, 2026-10-27, codex gpt-6-astra).
 - **Misprint** at §3.7, Lemma 4 proof, printed p. 11 (Fontaine93 lines 376–381): the source says to use the ramification index and uniformizer of E; it should be those of L after reducing L/K to the totally ramified case; affects the proof. Found by SmallRamificationAndAbelianVarietyBaseCasesPartII (#1646 at 1da903c, 2026-10-25, codex gpt-6-astra).
+- **Misprint** at §3.7, proof of Lemma 4, printed page 11 (Fontaine93 lines 379–386): the source says e and the uniformizer a belong to E; it should be e and a belong to L, the source of the approximate homomorphism; affects the proof. Found by SmallRamificationAndAbelianVarietyBaseCasesPartII (#1646 at a92beaf, 2026-10-27, codex gpt-6-astra).
+- **Misprint** at §3.8, Remark, printed page 12 (Fontaine93 line 410): the source says the largest lower displacement is at most e⁻¹ in the wild case; it should be at least e⁻¹, as needed to bound u−i by u−e⁻¹; affects the proof. Found by SmallRamificationAndAbelianVarietyBaseCasesPartII (#1646 at a92beaf, 2026-10-27, codex gpt-6-astra).
 - **Misprint** at §3.8, concluding remark, printed p. 12 (Fontaine93 lines 410–411, display omitted by OCR): the source says the normalized lower displacement is at most 1/e; it should be at least 1/e, as needed to bound u−ι by u−1/e; affects the proof. Found by SmallRamificationAndAbelianVarietyBaseCasesPartII (#1646 at 1da903c, 2026-10-25, codex gpt-6-astra).
 
 ## Fouquet–Wan, The Iwasawa main conjecture for universal families of modular motives (FW)
@@ -9462,6 +9466,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Schroeer23
 
 - **Misprint** at Proposition 5.5 proof, printed p. 16 (Schroeer23 line 686): the source says W(F₂^sep) is the maximal unramified extension of ℤ₂; it should be the completion of that unramified extension; affects nothing; For the last Fontaine sign, ℚ₃(ζ₉)/ℚ₃ gives e=6 and ι=1/2>1/6, an explicit check. The package's main strict-bound route uses ι>0 and the refined upper bound, so it does not inherit the sign error. The package also explicitly distinguishes the completed Witt ring from the uncompleted union. No published correction was identified in the supplied versions. <!-- tauceti-roadmap-review {"agent": "codex", "head": "1da903c5f2a9862c0cf10d20a435d4de9892da27", "job": "REV-PKG-SmallRamificationAndAbelianVarietyBaseCasesPartII", "model": "gpt-6-astra", "worker": "chris-7"} -->. Found by SmallRamificationAndAbelianVarietyBaseCasesPartII (#1646 at 1da903c, 2026-10-25, codex gpt-6-astra).
+- **Error** at Proposition 5.5 proof, printed page 16 (Schroeer23 line 686): the source says W(𝔽₂^sep) is the maximal unramified extension of ℤ₂; it should be the completion of that maximal unramified extension; affects nothing; <!-- tauceti-roadmap-review {"agent": "codex", "head": "a92beafda684fd68962e782799b4fb2d14f612a8", "job": "RT-SmallRamificationAndAbelianVarietyBaseCasesPartII~1a", "model": "gpt-6-astra", "worker": "chris-3"} -->. Found by SmallRamificationAndAbelianVarietyBaseCasesPartII (#1646 at a92beaf, 2026-10-27, codex gpt-6-astra).
 
 ## Schröer, arXiv:2004.07025
 
