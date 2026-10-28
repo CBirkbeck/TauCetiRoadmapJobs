@@ -136,7 +136,7 @@ enabled = true
 label = "ai-approved"
 per_run = 5
 authors = []
-skip_authors = []
+skip_authors = ["bwangpj"]   # #196 is abandoned (user 2026-10-28): not tracked, not reviewed
 max_folders = 10
 
 [agents]
