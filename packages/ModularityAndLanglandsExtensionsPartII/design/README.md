@@ -6,7 +6,7 @@ There are four methods, and all four are needed for the parent's statements as t
 ## Scope
 
 **What the parent owns and this roadmap imports.** The automorphy predicate and normalisations of Newton–Thorne (ML.0, nodes ML.0/nt26-automorphy-predicate and ML.0/nt26-normalisation-bridge); accessible and n-regular refinements, the symmetric power lift, the statement SP_n and the low-rank cases SP_n for n ≤ 5 (ML.3 nodes accessible-regular-refinement, symmetric-power-lift-over-number-fields, sp-statement, low-rank-symmetric-powers); the finite-field projective image sandwich (ML.3/projective-image-sandwich); the eigenvariety machinery of the package's §4.3 (definite-unitary eigenvarieties with closed realization, Emerton's Jacquet functor, family triangulations, trianguline deformations and the global trianguline tangent bound, the symmetric-power character maps, classicality at non-critical points); Anastassiades–Thorne's level raising for GL_{2n} (§4.4); the one-prime criterion (§4.15); the Clozel–Thorne reductions with Newton–Thorne 2026 Proposition 6.1 and Thorne 2024 §8 (§4.22); Mok's and Kaletha–Mínguez–Shin–White's classifications (ML.4); cyclic and soluble base change for GL_n (ML.5).
-**What neighbouring roadmaps own.** PotentialAutomorphyInfrastructurePartII (PL.0–PL.9) owns ι-ordinarity, soluble descent, potential diagonalisability and the relation ∼, definite unitary groups with their algebraic modular forms, Hecke algebras and ordinary parts, Taylor–Wiles data, the ordinary and potentially diagonalisable lifting theorems (BLGGT Theorem 4.2.1), the residually reducible theory of Thorne and Allen–Newton–Thorne (generic primes, generic R = T, Thorne 2024 Theorem 7.5), and the pseudodeformation rings P with the vanishing of adjoint Bloch–Kato Selmer groups and the regularity of P at automorphic points. PadicFamilies owns the eigencurve and eigenvariety gluing; AdicSpacesPartIIPartII owns irreducible components of rigid spaces; SmoothRepresentationsOfLocalGroups (a Tau Ceti roadmap) owns Iwahori–Hecke algebras with their presentations, compact induction, Jacquet modules and cuspidal support; SmoothRepresentationsOfLocalGroupsPartII owns the Kazhdan–Lusztig classification; EndoscopicTransferAndUnitaryTraceComparison owns transfer factors, fundamental lemmas, the unitary trace formulas and unitary base change; GlobalGaloisDeformations, LocalGaloisDeformationRings and DeformationAndDerivedPatchingAlgebra own deformation problems, local rings and the commutative algebra of patching; GL2ModularityLifting owns quaternionic Taylor–Wiles modules and patching for GL_2; ArithmeticGaloisRepresentations owns adequacy (with the threshold a_0(p)), the mod-p semisimplified Clebsch–Gordan decompositions and characteristic-zero Pieri splittings and enormous subgroups.
+**What neighbouring roadmaps own.** PotentialAutomorphyInfrastructurePartII (PL.0–PL.9) owns ι-ordinarity, soluble descent, potential diagonalisability and the relation ∼, definite unitary groups with their algebraic modular forms, Hecke algebras and ordinary parts, Taylor–Wiles data, the ordinary and potentially diagonalisable lifting theorems (BLGGT Theorem 4.2.1), the residually reducible theory of Thorne and Allen–Newton–Thorne (generic primes, generic R = T, Thorne 2024 Theorem 7.5), and the pseudodeformation rings P with the vanishing of adjoint Bloch–Kato Selmer groups and the regularity of P at automorphic points. PadicFamilies owns the eigencurve and eigenvariety gluing; AdicSpacesPartV owns irreducible components of rigid spaces; SmoothRepresentationsOfLocalGroups (a Tau Ceti roadmap) owns Iwahori–Hecke algebras with their presentations, compact induction, Jacquet modules and cuspidal support; SmoothRepresentationsOfLocalGroupsPartII owns the Kazhdan–Lusztig classification; EndoscopicTransferAndUnitaryTraceComparison owns transfer factors, fundamental lemmas, the unitary trace formulas and unitary base change; GlobalGaloisDeformations, LocalGaloisDeformationRings and DeformationAndDerivedPatchingAlgebra own deformation problems, local rings and the commutative algebra of patching; GL2ModularityLifting owns quaternionic Taylor–Wiles modules and patching for GL_2; ArithmeticGaloisRepresentations owns adequacy (with the threshold a_0(p)), the mod-p semisimplified Clebsch–Gordan decompositions and characteristic-zero Pieri splittings and enormous subgroups.
 **What this roadmap does not plan.** Level-one change of weight and the cuspidal cohomology of GL_n(ℤ) (Boxer–Calegari–Gee) and the explicit local theory and Galois representations of GSp_4 (BCGP 2018, 2025) were routed to the same design brief; they are independent directions and are proposed as separate Part IIs (restructure entry R1). Equidistribution consequences (Sato–Tate) stay with the parent. The Bianchi and CM-field potential-automorphy results of the parent's §§4.19–4.21, 4.24–4.28, 4.33, 4.38–4.43 use other methods and are not touched.
 
 ## Conventions
@@ -59,7 +59,7 @@ In residually reducible lifting arguments, primitivity is the weak source notion
 
 **Sources.** Newton–Thorne I (arXiv:1912.11261v3) §2.1, §2.11.1, pp. 24, 30–31.
 
-*Requires:* `AdicSpacesPartII:R1`, `AdicSpacesPartII:R2`, `AdicSpacesPartIIPartII:RZ.1`, `GlobalGaloisDeformations:G7`, `GlobalGaloisDeformations:R04.1`, `IntegralHeckeAndGaloisDeterminants:IHG.0`, `PotentialAutomorphyInfrastructurePartII:PL.6`.
+*Requires:* `AdicSpacesPartII:R1`, `AdicSpacesPartII:R2`, `AdicSpacesPartV:RZ.1`, `GlobalGaloisDeformations:G7`, `GlobalGaloisDeformations:R04.1`, `IntegralHeckeAndGaloisDeterminants:IHG.0`, `PotentialAutomorphyInfrastructurePartII:PL.6`.
 
 <a id="sp-0-analytic-continuation-lemma"></a>
 ### SP.0.1 Analytic continuation along irreducible components of rigid spaces
@@ -79,7 +79,7 @@ Let E be a finite extension of ℚ\_p, α : 𝒳 → 𝒢 a closed immersion and
 *Proof route.*
 
 - β^{−1}(𝒳) is a Zariski closed analytic subspace of 𝒴 (pullback of a closed immersion).
-- Let 𝒞 be an irreducible component through y and 𝒞̃ → 𝒞 its normalization, which is connected (irreducible components are images of connected components of the normalization, AdicSpacesPartIIPartII RZ.1).
+- Let 𝒞 be an irreducible component through y and 𝒞̃ → 𝒞 its normalization, which is connected (irreducible components are images of connected components of the normalization, AdicSpacesPartV RZ.1).
 - The preimage of β^{−1}(𝒳) ∩ 𝒞 in 𝒞̃ is Zariski closed and contains a non-empty admissible open (the preimage of the affinoid neighbourhood meets 𝒞̃ in a set of full dimension at a point over y); by the irreducibility criterion of RZ.1 a proper Zariski closed subset of an irreducible space is nowhere dense, so it is all of 𝒞̃.
 - Conrad's Theorem 3.4.2 on irreducible components under base change of the ground field gives the second sentence; it is used to pass between components over E, over finite extensions and over ℂ\_p in SP.1 and SP.2.
 
@@ -97,7 +97,7 @@ Let E be a finite extension of ℚ\_p, α : 𝒳 → 𝒢 a closed immersion and
 - [con99] §3.4, Theorem 3.4.2, internal pp.26–27: Quasi-separated spaces have the stated component behavior under base extension; the simultaneous finite extension assertion requires finitely many components.
 
 
-*Needs.* `AdicSpacesPartIIPartII:RZ.1/irreducible-components`, `AdicSpacesPartIIPartII:RZ.1/irreducibility-criterion`, `AdicSpacesPartIIPartII:RZ.1/rigid-normalization`, `AdicSpacesPartII:R1/rigid-identity-principle`.
+*Needs.* `AdicSpacesPartV:RZ.1/irreducible-components`, `AdicSpacesPartV:RZ.1/irreducibility-criterion`, `AdicSpacesPartV:RZ.1/rigid-normalization`, `AdicSpacesPartII:R1/rigid-identity-principle`.
 
 <a id="sp-0-pseudocharacter-rigid-spaces"></a>
 ### SP.0.2 Rigid spaces of conjugate self-dual pseudocharacters and their absolutely irreducible loci
@@ -4111,7 +4111,7 @@ SP\_n holds for every n ≥ 1: for every totally real F and every non-CM RAESDC 
 
 ## Coverage
 
-- **SP.0 — planned**: Lemma-level decomposition of Conrad's base change of irreducible components (Conrad 1999, Theorem 3.4.2) inside AdicSpacesPartIIPartII RZ.1.
+- **SP.0 — planned**: Lemma-level decomposition of Conrad's base change of irreducible components (Conrad 1999, Theorem 3.4.2) inside AdicSpacesPartV RZ.1.
 - **SP.1 — planned**: Lemma-level decomposition of the tangent-space argument (the inclusion of ℰ\_n in the trianguline locus near z\_n) once the parent's §4.3 machinery is planned at lemma level.
 - **SP.2 — planned**: Lemma-level steps of Lemma 2.34 (Chevalley's theorem and finite étaleness of restriction of character spaces).
 - **SP.3 — planned**: Lemma-level decomposition of Buzzard–Kilford's overconvergent computation (Buzzard–Kilford §§2–4) and of the transfer to the cuspidal eigencurve (Pilloni §6; Buzzard–Calegari Lemma 7.4).

@@ -25,7 +25,7 @@ Verdict: needs_changes
 
    **Exact repair text:** Replace the first sentence of §4.1 by “Fix a complete nonarchimedean extension L/Q_p, with its nontrivial rank-one valuation.” Add a Check: “Over F₂((u)), T↦T² on the seminormal closed disc becomes an isomorphism after diamondification, although its inverse is not rigid analytic. Thus the mixed-characteristic base hypothesis is essential to this full-faithfulness assertion.”
 
-   **Repair test:** The characteristic-two disc is excluded from the theorem and retained as a negative control. The existing Q_p-disc and characteristic-zero cusp Checks remain in scope. The supplier's exact statement is `TauCetiRoadmap/DiamondsAndVStacks/README.md:9977` (fixed complete K/Q_p, seminormal source); the rigid-point supplier has the same restriction in `packages/AdicSpacesPartIIPartII/design/README.md:879`.
+   **Repair test:** The characteristic-two disc is excluded from the theorem and retained as a negative control. The existing Q_p-disc and characteristic-zero cusp Checks remain in scope. The supplier's exact statement is `TauCetiRoadmap/DiamondsAndVStacks/README.md:9977` (fixed complete K/Q_p, seminormal source); the rigid-point supplier has the same restriction in `packages/AdicSpacesPartV/design/README.md:879`.
 
 3. **F03** (P2) The Igusa gap requests an already-owned ordinary tower
 
@@ -234,7 +234,7 @@ The 23 headline groups in the module docstring were matched to the README. The m
 | HeckeStacksAndLocalShtukas | HS2.12 retains integral Kottwitz equality in admissible/weakly-admissible comparison; HS2.15 supplies reductive arbitrary-type nonemptiness, finite-extension points and connectedness. The nonreductive extension remains local work. |
 | AInfCohomology | AI.2.2–AI.2.3 supply valid BKF operations, crystalline rigidification and finite-free classification. No abelianness is imported for the unrigidified finitely presented category; rational rigidified modifications are the stated extension. |
 | PadicHodgeTheory | §5.5 gives arbitrary-perfect-residue crystalline functors and tensor torsors; §§7.1,7.4 give associated lattices, uniqueness and coefficient comparison. Tate jump −1 gives tR and φ=p⁻¹. The additional arbitrary-field criterion and strict-field openness are explicitly gaps. |
-| AdicSpacesPartIIPartII | The named RZ.0–RZ.6 targets occur in `packages/AdicSpacesPartIIPartII/design/README.md`, including finite-dimensional stratification, infinite-residue Gauss closure, reduced resolution, constant rank and subfield identity. RZ.3 rigid points require L/Q_p, confirming S02. |
+| AdicSpacesPartV | The named RZ.0–RZ.6 targets occur in `packages/AdicSpacesPartV/design/README.md`, including finite-dimensional stratification, infinite-residue Gauss closure, reduced resolution, constant rank and subfield identity. RZ.3 rigid points require L/Q_p, confirming S02. |
 | PerfectoidSpaces | P4.15.6 supplies a surjective universal perfectoid quotient and its integral plus model; P6.11 supplies strong closedness. The zero and unit ideals give whole and empty loci. |
 | GeometricSatakeAndFusion | GS0's Grassmannian, Schubert bounds, smooth truncated loops and action truncation occur at the named anchors. Split computations descend; the stabilizer uses weights ≤0, agreeing with the target's inverse-type first flag. |
 | DiamondSixOperations | S2.4 gives lower-shriek base change/projection formula; S3.2 and S4.2–S4.3 give duality and smooth pullback. The target retains separatedness, compactifiability, local finite target dimension and ℓ≠p. |
@@ -252,7 +252,7 @@ The nine slugs in the README are present with matching `needs` sentences and nam
 
 - No Lean build or elaboration was run, as required. There is no named local declaration, so the requested elaborated-signature audit has an empty domain; there is no inferred-binder result to claim.
 - The declared supplier extensions remain mathematical obligations. This review verifies their registration and the use of their hypotheses, not their truth or implementation. The Igusa registration additionally needs S03's ownership repair.
-- AdicSpacesPartIIPartII is available here as an earlier board design, not as a main/open roadmap returned by the service. Its cited targets were checked in that design; no nonexistent main-file witness is asserted.
+- AdicSpacesPartV is available here as an earlier board design, not as a main/open roadmap returned by the service. Its cited targets were checked in that design; no nonexistent main-file witness is asserted.
 - No missing primary text was encountered among the five manifest works. References cited only inside those works were not independently certified as separate sources; in particular, the prior claim about the sufficiency of Scholze–Weinstein Corollary 17.1.9 for localized B_dR descent is not reasserted as a source error without checking that text. The package already declares the relevant supplier obligation.
 
 ## Source issues
