@@ -157,7 +157,7 @@ Object searches covered active and completed roadmaps on main, board packages, t
 | HeckeStacksAndLocalShtukas | §§HS2.12,HS2.15: reductive admissibility/nonemptiness and period inputs; connected-linear extension remains here. |
 | AInfCohomology | §§AI.2.2–AI.2.3: BKF realizations and finite-free classification; rational rigidified modification equivalence remains the declared gap. |
 | PadicHodgeTheory | §§2.2–2.3,5.5,7.1,7.4: structural periods, perfect-residue functors, associated lattice and full faithfulness; two stated arithmetic gaps not silently supplied. |
-| AdicSpacesPartIIPartII | RZ.0–RZ.6 cited anchors: dimension, proper images, irreducibility, rank strata, classical/Gauss/Shilov points, resolution and analytic submersions. Infinite-residue hypothesis retained. |
+| AdicSpacesPartV | RZ.0–RZ.6 cited anchors: dimension, proper images, irreducibility, rank strata, classical/Gauss/Shilov points, resolution and analytic submersions. Infinite-residue hypothesis retained. |
 | PerfectoidSpaces | §§P4.15.6,P6.11: universal perfectoid quotient and strong Zariski closedness; not quotient by an arbitrary ideal without perfectoidization. |
 | GeometricSatakeAndFusion | GS0 loop geometry and Schubert-smoothness anchors: reductive Grassmannian, bounds, loop truncation, stabilizers and smoothness. Nonreductive extension remains here. |
 | DiamondSixOperations | §§S2.4,S3.2,S4.2,S4.3: connectedness/cohomology, duality and Künneth inputs; the connected product result is proved here. |
