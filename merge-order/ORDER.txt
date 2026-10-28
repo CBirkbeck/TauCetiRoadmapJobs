@@ -352,3 +352,4 @@ RankOneConverse
 ModularIwasawaMainConjecturesPartII
 CMRankZeroConverse
 RankZeroOneBSDPartII
+GlobalQuadraticForms
