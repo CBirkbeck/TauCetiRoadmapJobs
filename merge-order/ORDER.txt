@@ -253,6 +253,7 @@ MultiquadraticPartII
 EffectiveClassNumbers
 QSeriesPartitionsAndMockModularForms
 ComplexKahlerGeometry
+AlgebraicVectorBundles
 ClassFieldTheory
 ProfiniteCohomologyPartII
 FunctionFieldArithmetic
