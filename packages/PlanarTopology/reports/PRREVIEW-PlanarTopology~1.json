@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-PlanarTopology~1",
+    "head": "238d5dac9206bdb37cd0fb9cacbd964fee55b2df",
+    "pr": 271,
+    "folder": "PlanarTopology",
+    "date": "2026-10-28",
+    "findings": 20,
+    "blocking": 12,
+    "notes": "Reviewed the seeded source-heading sample and all target statements; recorded 151 adversarial rows, pinned declaration and ownership checks, and legal-source verification limits. Gate failures covered: six admitted data definitions, 23 admitted examples, four empty sections, LaTeX delimiters, malformed layer heading, and the GeometricTopology dependency cycle. Ran the dependency check, built the six required Tau Ceti imports, elaborated Suggested.lean and all 40 declaration signatures, tested all 23 proposition admissions with one-tactic probes, and elaborated three missing headline signatures. No PR files changed."
+  }
+}

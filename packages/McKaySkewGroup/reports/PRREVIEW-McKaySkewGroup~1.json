@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-McKaySkewGroup~1",
+    "head": "cdab583e17630514fa5914735bfd1845084f0f4c",
+    "pr": 223,
+    "folder": "McKaySkewGroup",
+    "date": "2026-10-28",
+    "findings": 12,
+    "blocking": 6,
+    "notes": "Reviewed all five files and all eight seeded sections (6.1–6.3 and 7.0–7.4); 77 computed adversarial rows, 13 pinned-library audit entries, 17 supplier groups. Worker gate passed; targeted build and direct Suggested elaboration passed with eight sorry warnings. All 21 main signatures inspected; eight one-tactic probes did not close. Companion files fail or depend on admitted data. Dependency check: 162 roadmaps, 1163 edges, 0 problems. Twelve cited works attempted; five readable, five missing, two uncertified. Missing source and geometric-locator limits recorded."
+  }
+}
