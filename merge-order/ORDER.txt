@@ -9,7 +9,6 @@ DerivedModuleAlgebra
 AdicSpacesPartII
 AdicSpacesPartIII
 AdicEtaleGeometry
-AdicSpacesPartV
 PerfectoidSpaces
 AdicSpacesPartIV
 DiamondsAndVStacks
@@ -55,14 +54,11 @@ LefschetzPencilsAndVanishingCycles
 ClassicalAdicEtaleCohomology
 AInfCohomology
 PrismaticCohomology
-PerfectoidQuotientsPartII
 PrismaticCohomologyPartII
-PurityForFlatCohomology
 PrismaticCohomologyPartIII
 DeformationAndDerivedPatchingAlgebraPartII
 DeformationAndDerivedPatchingAlgebra
 PerfectoidSpacesPartII
-DirectSummandsAndBigCohenMacaulay
 LanglandsParameterStacks
 ArithmeticLocallySymmetricSpaces
 AutomorphicFormsOnReductiveGroups
@@ -150,7 +146,6 @@ PadicFamilies
 OrdinaryAutomorphicFormsAndModularityLifting
 GL2ModularityLifting
 PotentialModularityAndCompatibleSystems
-PotentialAutomorphyDworkMotivesPartII
 AnabelianGeometryAndNonabelianChabauty
 EffectiveDiophantineMethods
 CompletedCohomologyPartII
@@ -158,7 +153,6 @@ ArithmeticLocallySymmetricSpacesPartII
 CohomologyComparisons
 CstConjectureForDaggerVarieties
 AutomorphicBundles
-ReductiveGroupsPartIII
 HodgeTateAndCanonicalSubgroups
 PerfectoidShimuraVarieties
 TorsionCohomologyInfrastructure
@@ -177,13 +171,9 @@ ErdosProgressionPowers
 ArithmeticDirichletSeriesPartII
 LocallyAnalyticDistributionsPartII
 NoncommutativeGeometry
-GanGrossPrasadUnitaryGroups
 RepresentationTheory
 MetaplecticAutomorphicFormsPartII
-LieHighestWeightPartII
-TwistedAutomorphicDescents
 ExcursionOperatorsAndSpectralActionPartII
-ClassicalAdicEtaleCohomologyPartII
 ClassicalGroupsPartII
 AbelianSchemesAndArithmeticModuliPartII
 QWittVectors
@@ -217,6 +207,11 @@ FourManifolds
 LocalVariationalFieldTheory
 CalibratedGeometry
 StableReduction
+DirectSummandsAndBigCohenMacaulay
+PerfectoidQuotientsPartII
+PurityForFlatCohomology
+AdicSpacesPartV
+ClassicalAdicEtaleCohomologyPartII
 GeometricTopology
 InverseGaloisAndArithmeticFundamentalGroupsPartII
 SmoothBundlesConnections
@@ -238,6 +233,11 @@ ChevalleyGroups
 EtaleHomotopyTypes
 RandomMatrices
 GlobalNumberFields
+GanGrossPrasadUnitaryGroups
+ReductiveGroupsPartIII
+LieHighestWeightPartII
+TwistedAutomorphicDescents
+PotentialAutomorphyDworkMotivesPartII
 PDE
 ConformalMappingPartII
 TemperleyLieb
