@@ -248,6 +248,7 @@ ProfiniteProPGroups
 ChevalleyGroups
 EtaleHomotopyTypes
 RandomMatrices
+HomotopySpheres
 IntegralLattices
 MultiquadraticPartII
 EffectiveClassNumbers
