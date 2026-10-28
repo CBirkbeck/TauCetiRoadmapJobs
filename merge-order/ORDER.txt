@@ -216,6 +216,7 @@ EllipticCurveModularityPartII
 OperatorTheory
 QuaternionicAnalysis
 ImplicitAtlases
+FourManifolds
 LocalVariationalFieldTheory
 CalibratedGeometry
 SmoothBundlesConnections
