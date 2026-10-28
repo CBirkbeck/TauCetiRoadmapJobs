@@ -206,6 +206,7 @@ Subfactors
 MorseTheory
 SymplecticFieldTheory
 GaugeQuiltFieldTheory
+VonNeumannAlgebras
 StochasticCalculus
 FukayaTheory
 GlobalHolomorphicFunctions
