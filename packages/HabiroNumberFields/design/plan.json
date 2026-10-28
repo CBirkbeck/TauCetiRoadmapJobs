@@ -1,0 +1,10 @@
+{
+  "gaps": [
+    {
+      "slug": "bloch-foundations",
+      "supplier": "K3BlochGroups",
+      "section": "§3.13 and the exceptional finite-field comparison adjoining §§5.4–5.5",
+      "needs": "The positive cyclic-class comparison B_old(𝔽₂)/3≃K₃(𝔽₂)/3≃ℤ/3 on [0], compatible with the unramified number-field reduction square at residue characteristic two, independently of HabiroNumberFields §§1.6 and 1.13."
+    }
+  ]
+}

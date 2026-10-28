@@ -1,0 +1,2277 @@
+{
+  "roadmapId": "ArithmeticLocallySymmetricSpacesPartII",
+  "protocol": "blueprint-v1",
+  "part": null,
+  "scope": [
+    "ArithmeticLocallySymmetricSpacesPartII:WM.0",
+    "ArithmeticLocallySymmetricSpacesPartII:WM.1",
+    "ArithmeticLocallySymmetricSpacesPartII:WM.2",
+    "ArithmeticLocallySymmetricSpacesPartII:WM.3",
+    "ArithmeticLocallySymmetricSpacesPartII:WM.4",
+    "ArithmeticLocallySymmetricSpacesPartII:WM.5"
+  ],
+  "status": "complete",
+  "summary": "Fixed-level weight-aspect SL₂ bounds, a common proper-face error for rational Iwasawa homology, and two-sided Bianchi growth, conditional on the explicitly named supplier gaps.",
+  "baseline": {
+    "tauceti": "a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039",
+    "mathlib": "6b7abb3c7686292736be2955bd3eb9ebf63b456a",
+    "declarations": [
+      {
+        "ref": "mathlib:Finset.prod",
+        "kind": "def",
+        "module": "Mathlib/Algebra/BigOperators/Group/Finset/Defs.lean",
+        "provides": "Ordinary finite product in a commutative monoid; no representation-theoretic content.",
+        "checked": "Read at the manifest pin in the named file."
+      },
+      {
+        "ref": "mathlib:Finset.powerset",
+        "kind": "def",
+        "module": "Mathlib/Data/Finset/Powerset.lean",
+        "provides": "The finite set of all subsets of a finite set, with its membership characterization.",
+        "checked": "Read at the manifest pin in the named file."
+      },
+      {
+        "ref": "mathlib:MvPolynomial",
+        "kind": "def",
+        "module": "Mathlib/Algebra/MvPolynomial/Basic.lean",
+        "provides": "The ordinary commutative multivariate polynomial carrier; it supplies neither a weight bound nor a degree drop.",
+        "checked": "Read at the manifest pin in the named file."
+      },
+      {
+        "ref": "tauceti:TauCeti.symPowerRep",
+        "kind": "def",
+        "module": "TauCeti/RepresentationTheory/ClassicalGroups/SymmetricPower.lean",
+        "provides": "The dth symmetric power of the standard GL_n representation, obtained from the existing Representation.symmetricPower.",
+        "checked": "Read at the manifest pin in the named file."
+      },
+      {
+        "ref": "tauceti:SymmetricPower.finrank_eq",
+        "kind": "theorem",
+        "module": "TauCeti/LinearAlgebra/SymmetricPower/Basis.lean",
+        "provides": "For finite free M over a commutative semiring with strong rank condition, the symmetric-power finrank is the multichoose number.",
+        "checked": "Read at the manifest pin in the named file."
+      },
+      {
+        "ref": "mathlib:Module.finrank_tensorProduct",
+        "kind": "theorem",
+        "module": "Mathlib/LinearAlgebra/Dimension/Constructions.lean",
+        "provides": "The finite-free tensor finrank product, specialized here to finite-dimensional vector spaces over a field.",
+        "checked": "Read at the manifest pin in the named file."
+      },
+      {
+        "ref": "mathlib:Module.finrank_baseChange",
+        "kind": "theorem",
+        "module": "Mathlib/LinearAlgebra/Dimension/Constructions.lean",
+        "provides": "Under the scalar-tower/freeness hypotheses in the source, scalar extension preserves finrank over the new base field.",
+        "checked": "Read at the manifest pin in the named file."
+      },
+      {
+        "ref": "mathlib:Fintype.prod_equiv",
+        "module": "Mathlib/Algebra/BigOperators/Group/Finset/Defs.lean",
+        "line": 741,
+        "checked": "Read at the manifest pin."
+      },
+      {
+        "ref": "mathlib:Fintype.prod_empty",
+        "module": "Mathlib/Algebra/BigOperators/Group/Finset/Defs.lean",
+        "line": 753,
+        "checked": "Read at the manifest pin."
+      },
+      {
+        "ref": "mathlib:Finset.prod_const_one",
+        "module": "Mathlib/Algebra/BigOperators/Group/Finset/Defs.lean",
+        "line": 391,
+        "checked": "Read at the manifest pin."
+      },
+      {
+        "ref": "mathlib:Finset.prod_update_of_mem",
+        "module": "Mathlib/Algebra/BigOperators/Group/Finset/Piecewise.lean",
+        "line": 247,
+        "checked": "Read at the manifest pin."
+      },
+      {
+        "ref": "mathlib:Finset.prod_pos",
+        "module": "Mathlib/Algebra/Order/BigOperators/GroupWithZero/Finset.lean",
+        "line": 157,
+        "checked": "Read at the manifest pin."
+      },
+      {
+        "ref": "mathlib:groupCohomology",
+        "module": "Mathlib/RepresentationTheory/Homological/GroupCohomology/Basic.lean",
+        "line": 184,
+        "checked": "Read at the manifest pin."
+      },
+      {
+        "ref": "tauceti:TauCeti.UniversalEnvelopingAlgebra.pbwFiltration",
+        "module": "TauCeti/Algebra/Lie/UniversalEnveloping/PBW/Basic.lean",
+        "checked": "Read at the manifest pin."
+      },
+      {
+        "ref": "tauceti:Module.Basis.pbwBasis",
+        "module": "TauCeti/Algebra/Lie/UniversalEnveloping/PBW/Basis.lean",
+        "checked": "Read at the manifest pin."
+      }
+    ],
+    "inspection": "The declarations are read at the content lake-manifest.json pins; ordinary group cohomology supplies the Bianchi acceptance carrier, whereas completed rational Iwasawa Tor is a supplier construction."
+  },
+  "sources": [
+    {
+      "id": "fu24",
+      "title": "Sharp bounds for multiplicities of Bianchi modular forms",
+      "authors": "Weibo Fu",
+      "edition": "arXiv:2201.11190v2, 15 February 2024, 25 pages; published Annals of Mathematics 200 (2024), 123–152",
+      "url": "https://arxiv.org/pdf/2201.11190v2",
+      "sha256": "d71e9d3f8d3a1217743c3ba72c9a9630981f054ecefd943ff4edb4879b842614",
+      "readSections": [
+        "Entire v2: §§1–7 and references, pp. 1–25. All locators in this roadmap use that version unless expressly marked."
+      ],
+      "cited_for": [
+        "ArithmeticLocallySymmetricSpacesPartII:WM.0/proper-face-majorant (§0.1)",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.0/minimum-weight-saving (§0.2)",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.0/local-algebraic-family (§0.3)",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.1/hom-coinvariant-dual (§1.1)",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.1/cyclic-torsion-bound (§1.2)",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.1/torsion-filtration (§1.3)",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.1/torsion-bound (§1.4)",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.2/free-approximation (§2.1)",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.2/rank-upper (§2.2)",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.2/rank-lower (§2.3)",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.2/rank-main-term (§2.4)",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.2/homological-shifting (§2.5)",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.2/common-homology-bound (§2.6)",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.2/canonical-dimension-zero (§2.7)",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.3/global-local-weights (§3.1)",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.3/split-auxiliary-prime (§3.2)",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.3/realization-comparison (§3.3)",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.3/spectral-dimension-bound (§3.4)",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.4/cuspidal-support-dictionary (§4.1)",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.4/sharp-global-bound (§4.2)",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.4/parallel-bound (§4.3)",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.4/bianchi-upper (§4.4)",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.5/cusp-torus-koszul (§5.1)",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.5/bianchi-boundary (§5.2)",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.5/base-change-linear-count (§5.6)",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.5/bianchi-lower (§5.7)",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.5/bianchi-two-sided (§5.8)",
+        "gap:flat-microlocalisation",
+        "gap:algebraic-quotient-comparison",
+        "gap:generic-cyclic-growth",
+        "gap:skew-rank",
+        "Source corrections E1–E9"
+      ]
+    },
+    {
+      "id": "aw14",
+      "title": "Verma modules for Iwasawa algebras are faithful",
+      "authors": "Konstantin Ardakov and Simon Wadsley",
+      "edition": "Author PDF, 19 pages; published Münster Journal of Mathematics 7 (2014), 5–26",
+      "url": "https://www.dpmms.cam.ac.uk/~sjw47/VermaIwasawa.pdf",
+      "sha256": "0d774ffa62a1429d4677253de4fcf0787fef7ba399945c6913686f0e82b8e850",
+      "readSections": [
+        "§§1.1–1.4, 3.1–3.3, 4.1–4.2, 4.5–4.6, 5.4–5.5; pp. 1–2, 6–8, 10–11, 16–17.",
+        "Page 16 image checked: the deformation index is n≥0, including the first congruence group."
+      ],
+      "cited_for": [
+        "ArithmeticLocallySymmetricSpacesPartII:WM.1/cyclic-torsion-bound (§1.2)",
+        "gap:integral-central-faithfulness",
+        "Source corrections E2–E3, E5"
+      ]
+    },
+    {
+      "id": "aw13",
+      "title": "On irreducible representations of compact p-adic analytic groups",
+      "authors": "Konstantin Ardakov and Simon Wadsley",
+      "edition": "Author preprint; published Annals of Mathematics 178 (2013), 453–557",
+      "url": "https://people.maths.ox.ac.uk/ardakov/Smith.pdf",
+      "sha256": "597f490e9c8521fdc8d740b32375c4d005531ada0be65a29cec0fc0eb811158d",
+      "readSections": [
+        "§§10.12–10.13, pp. 77–78: standing group hypotheses and canonical-dimension criterion."
+      ],
+      "cited_for": [
+        "ArithmeticLocallySymmetricSpacesPartII:WM.2/canonical-dimension-zero (§2.7)",
+        "gap:flat-microlocalisation",
+        "gap:canonical-dimension-zero"
+      ]
+    },
+    {
+      "id": "marshall12",
+      "title": "Bounds for multiplicities of automorphic forms of cohomological type on GL₂",
+      "authors": "Simon Marshall",
+      "edition": "arXiv:1103.2472v1, pp. 1–19",
+      "url": "https://arxiv.org/pdf/1103.2472v1",
+      "sha256": "99c00f0e4a8a3e501b86b6d286582eb7062f0e506eaee3cc353bd4279867e03f",
+      "readSections": [
+        "§2.1, pp. 3–4; §2.2, (7), p. 4; §5, (29) and Lemma 11, pp. 15–16."
+      ],
+      "version_note": "The v1 PDF title concerns GL₂; the published title is Bounds for the multiplicities of cohomological automorphic forms on SL₂ (Annals 175 (2012), 1629–1651); all theorem and page locators use v1.",
+      "cited_for": [
+        "ArithmeticLocallySymmetricSpacesPartII:WM.3/global-local-weights (§3.1)",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.3/realization-comparison (§3.3)",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.4/cuspidal-support-dictionary (§4.1)",
+        "Source correction E1; References (version distinction)"
+      ]
+    },
+    {
+      "id": "fgt10",
+      "title": "The cohomology of lattices in SL(2,C)",
+      "authors": "Tobias Finis, Fritz Grunewald and Paulo Tirao",
+      "edition": "arXiv:0808.1204v1, 8 August 2008; published Experimental Mathematics 19 (2010), 29–63",
+      "url": "https://arxiv.org/pdf/0808.1204v1",
+      "sha256": "bd83d8189ea02a7ed91c6e8b53f16b4a9eb1734f558d6dd2dd930c38e2e471e3",
+      "readSections": [
+        "§1, pp. 3–7; §§4.2–4.4, pp. 22–27: support conventions, Theorem 4.17, Proposition 4.18, Lemma 4.19 and Corollary 4.20."
+      ],
+      "cited_for": [
+        "ArithmeticLocallySymmetricSpacesPartII:WM.5/cusp-torus-koszul (§5.1)",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.5/bianchi-boundary (§5.2)",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.5/finite-type-dimension (§5.3)",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.5/ramified-finite-types (§5.4)",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.5/sl2-base-change-count (§5.5)",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.5/base-change-linear-count (§5.6)",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.5/bianchi-lower (§5.7)",
+        "Source corrections E1, E10"
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "ArithmeticLocallySymmetricSpacesPartII:WM.0/proper-face-majorant",
+      "parentStageId": "ArithmeticLocallySymmetricSpacesPartII:WM.0",
+      "realises": [
+        "ArithmeticLocallySymmetricSpacesPartII:WM.0"
+      ],
+      "title": "Nonnegative proper-face polynomials",
+      "kind": "definition",
+      "statement": "For m≥1 and coefficients c_s≥0 indexed by proper subsets s⊊I, define B_c(x)=Σ_{s⊊I}c_s∏ᵢ∈s xᵢ. Coefficients for the full subset are excluded. Thus B_c is multiaffine and has total degree at most m−1. An error function e(k) is controlled by c when |e(k)|≤B_c(k+1) for every k∈ℕᴵ. Nonnegative dimension functions may omit the absolute value. Coefficients and inequalities live in ℝ; finite sums and positive rescalings preserve this class.",
+      "hypotheses": [
+        "m≥1"
+      ],
+      "proofSteps": [
+        "Express the function as a finite sum over the powerset with the full set removed.",
+        "Expand xᵢ=kᵢ+1 to compare with a multiaffine polynomial in the unshifted k. Taking absolute values of coefficients gives a nonnegative majorant whenever the source supplies a possibly signed polynomial.",
+        "For a finite collection, add coefficient vectors; this produces one common bound independent of the weight and homological index."
+      ],
+      "acceptance": [
+        "The full monomial ∏xᵢ is absent, including after addition; constant errors are admitted for every m≥1."
+      ],
+      "prerequisites": [
+        "mathlib:Finset.prod",
+        "mathlib:Finset.powerset",
+        "mathlib:MvPolynomial"
+      ],
+      "sources": [
+        {
+          "sourceId": "fu24",
+          "locator": "Theorem 1.4, p. 3; Theorem 3.2, pp. 8–11; §6, pp. 21–23",
+          "match": "The source needs a common multiaffine error of degree less than the number of coordinates. This nonnegative normal form makes the inequalities reusable."
+        }
+      ],
+      "implementationStatus": "unchecked",
+      "library": {
+        "module": "TauCeti/NumberTheory/WeightMultiplicity/Bounds",
+        "namespace": "TauCeti.WeightMultiplicity"
+      },
+      "planet": {
+        "name": "Multiaffine error polynomial"
+      },
+      "api": [
+        {
+          "name": "faceMajorant",
+          "role": "data",
+          "statement": "Evaluate B_c(x) by its proper-subset sum."
+        },
+        {
+          "name": "faceMajorant_add",
+          "role": "relation",
+          "statement": "B_{c+d}=B_c+B_d and B_{a c}=aB_c for a≥0."
+        },
+        {
+          "name": "faceMajorant_reindex",
+          "role": "functoriality",
+          "statement": "Transporting the coefficients and x through a coordinate bijection preserves B."
+        },
+        {
+          "name": "faceMajorant_nonneg",
+          "role": "relation",
+          "statement": "B_c(x)≥0 if c_s≥0 and xᵢ≥0."
+        },
+        {
+          "name": "faceMajorant_single",
+          "role": "simp",
+          "statement": "One coefficient at s gives exactly c_s∏ᵢ∈s xᵢ; the full subset contributes zero."
+        },
+        {
+          "name": "faceMajorant_degree",
+          "role": "compatibility",
+          "statement": "The corresponding MvPolynomial has degree at most m−1 in total and degree at most one in each variable."
+        }
+      ],
+      "tests": [
+        {
+          "name": "faceMajorant_rank_one",
+          "kind": "degenerate",
+          "statement": "When m=1, B_c is constant; an error proportional to k+1 is rejected."
+        },
+        {
+          "name": "faceMajorant_three",
+          "kind": "computation",
+          "statement": "For m=3, coefficients c_{∅}=2 and c_{{0,2}}=3 give B(2,5,4)=26."
+        },
+        {
+          "name": "faceMajorant_no_full_term",
+          "kind": "non-example",
+          "statement": "For m=2, x₀x₁ cannot be bounded on all xᵢ≥1 by any fixed proper-face polynomial."
+        },
+        {
+          "name": "faceMajorant_small_strip",
+          "kind": "computation",
+          "statement": "For m=2 and c_{{1}}=7, B(1,t)=7t: keeping one coordinate minimal does not make the error bounded."
+        },
+        {
+          "name": "weightProduct_two",
+          "kind": "computation",
+          "statement": "For x=(2,4), D(x)=8, whereas the sum of the factors is 6."
+        },
+        {
+          "name": "weightProduct_empty",
+          "kind": "degenerate",
+          "statement": "For I empty, D(x)=1, not 0."
+        },
+        {
+          "name": "weightProduct_zero_weight",
+          "kind": "comparison",
+          "statement": "For k=(0,0), D(k+1)=1; using ∏kᵢ would incorrectly return 0."
+        }
+      ],
+      "uses": [
+        {
+          "where": "WM.1/torsion-bound",
+          "how": "Adds the finitely many cyclic quotient errors."
+        },
+        {
+          "where": "WM.2/common-homology-bound",
+          "how": "Takes one bound for every homological degree."
+        },
+        {
+          "where": "WM.4/sharp-global-bound",
+          "how": "Converts polynomial errors into a minimum-weight saving."
+        }
+      ]
+    },
+    {
+      "id": "ArithmeticLocallySymmetricSpacesPartII:WM.0/minimum-weight-saving",
+      "parentStageId": "ArithmeticLocallySymmetricSpacesPartII:WM.0",
+      "realises": [
+        "ArithmeticLocallySymmetricSpacesPartII:WM.0"
+      ],
+      "title": "A missing coordinate gives the saving",
+      "kind": "theorem",
+      "statement": "Let m≥1, xᵢ≥1 and c_s≥0 for proper s⊊I. For any a with 1≤a≤xᵢ for every i, B_c(x)≤(Σ_s c_s)D(x)/a. In particular take a=minᵢxᵢ. On the diagonal xᵢ=t≥1, B_c(x)≤(Σ_s c_s)t^(m−1). The constants depend on c and m, never on x.",
+      "hypotheses": [
+        "m≥1",
+        "All xᵢ≥1",
+        "c_s≥0"
+      ],
+      "proofSteps": [
+        "For each proper s choose j∉s. The product of omitted coordinates is at least xⱼ≥a; all other omitted factors are at least one.",
+        "Multiply ∏ᵢ∈s xᵢ≤D(x)/a by c_s and sum.",
+        "For parallel x, each monomial has degree |s|≤m−1."
+      ],
+      "acceptance": [
+        "For m=1 the diagonal exponent is zero.",
+        "For x=(1,t), the bound allows size t; it does not claim a saving in a coordinate that stays fixed."
+      ],
+      "prerequisites": [
+        "mathlib:Finset.prod",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.0/proper-face-majorant"
+      ],
+      "sources": [
+        {
+          "sourceId": "fu24",
+          "locator": "Theorem 1.2, pp. 2–3; §7, pp. 23–24",
+          "match": "This elementary inequality supplies the explicit passage from the local multiaffine bound to Fu’s global size bound."
+        }
+      ],
+      "implementationStatus": "unchecked",
+      "library": {
+        "module": "TauCeti/NumberTheory/WeightMultiplicity/Bounds",
+        "namespace": "TauCeti.WeightMultiplicity"
+      },
+      "planet": {
+        "name": "Minimum-weight saving"
+      }
+    },
+    {
+      "id": "ArithmeticLocallySymmetricSpacesPartII:WM.0/local-algebraic-family",
+      "parentStageId": "ArithmeticLocallySymmetricSpacesPartII:WM.0",
+      "realises": [
+        "ArithmeticLocallySymmetricSpacesPartII:WM.0"
+      ],
+      "title": "The external tensor coefficient family",
+      "kind": "construction",
+      "statement": "Fix an odd prime p, m≥1, G=∏_{i=1}^m ker(SL₂(ℤ_p)→SL₂(𝔽_p)), Λ=ℤ_p[[G]], and A=ℚ_p⊗_{ℤ_p}Λ. Use the existing symmetric-power representations and tensor products to form W_k=⊠ᵢ Sym^{kᵢ}(ℚ_p²), restricted to G, and W_k⁰=⊠ᵢ Sym^{kᵢ}(ℤ_p²). The latter is a G-stable full lattice. Specify absolute irreducibility, self-duality and dim W_k=D(k+1). The A-action is the continuous extension of this actual matrix action. This is a specialization of the supplied representation and Iwasawa-module APIs, not a new tensor or completed-group-ring construction. Prove that its rational action has image End_{ℚ_p}(W_k), hence A/Ann_A(W_k)≃End_{ℚ_p}(W_k).",
+      "hypotheses": [
+        "p odd",
+        "m≥1"
+      ],
+      "proofSteps": [
+        "Restrict the existing GL₂ symmetric-power action along SL₂ and the congruence subgroup. Take its external tensor over all factors.",
+        "Use the symmetric-power basis and tensor finrank formula for the dimension. The alternating pairing on the standard SL₂ representation induces the characteristic-zero self-duality.",
+        "Use the supplied sl₂ highest-weight irreducibility and Zariski density of this open subgroup to retain absolute irreducibility. Export continuity and the stable lattice before extending the group action to A.",
+        "Apply finite-dimensional density to the absolutely irreducible W_k: after algebraic closure its action algebra is the full matrix algebra, so faithful scalar extension gives the same equality over ℚ_p (fu24, (32), p. 22)."
+      ],
+      "acceptance": [
+        "Distinct k give distinct irreducibles; restriction to an arbitrary subgroup is not covered."
+      ],
+      "prerequisites": [
+        "mathlib:Finset.prod",
+        "tauceti:TauCeti.symPowerRep",
+        "tauceti:SymmetricPower.finrank_eq",
+        "mathlib:Module.finrank_tensorProduct",
+        "NoncommutativeAndEquivariantIwasawa §0.15",
+        "LieHighestWeight Layer 0"
+      ],
+      "sources": [
+        {
+          "sourceId": "fu24",
+          "locator": "§6, pp. 21–22, including equation (32)",
+          "match": "The local argument uses the actual algebraic W_k, its self-duality and irreducibility."
+        }
+      ],
+      "implementationStatus": "unchecked",
+      "library": {
+        "module": "TauCeti/NumberTheory/WeightMultiplicity/Bounds",
+        "namespace": "TauCeti.WeightMultiplicity"
+      },
+      "planet": {
+        "name": "Algebraic coefficient family"
+      },
+      "api": [
+        {
+          "name": "localAlgebraicFamily",
+          "role": "constructor",
+          "statement": "W_k with its G and continuous A actions, realized from the existing symmetric powers."
+        },
+        {
+          "name": "localAlgebraicFamily_lattice",
+          "role": "structure",
+          "statement": "W_k⁰ is finite free over ℤ_p, G-stable, and ℚ_p⊗W_k⁰≃W_k."
+        },
+        {
+          "name": "localAlgebraicFamily_finrank",
+          "role": "compatibility",
+          "statement": "dim W_k=D(k+1)."
+        },
+        {
+          "name": "localAlgebraicFamily_dual",
+          "role": "equivalence",
+          "statement": "A G-equivariant W_k≃W_k* with the contragredient action; choices of scalar normalization do not affect dimensions."
+        },
+        {
+          "name": "localAlgebraicFamily_baseChange",
+          "role": "functoriality",
+          "statement": "A finite coefficient extension commutes with this family, its lattice after extension of integers, and the matrix action."
+        },
+        {
+          "name": "algebraicAction_quotient",
+          "role": "compatibility",
+          "statement": "The rational action quotient A/Ann_A(W_k) is the full matrix algebra of dimension D(k+1)²; no equality with all integral lattice endomorphisms is asserted."
+        }
+      ],
+      "tests": [
+        {
+          "name": "family_trivial",
+          "kind": "degenerate",
+          "statement": "At k=0 the family is the one-dimensional trivial representation."
+        },
+        {
+          "name": "family_two_factors",
+          "kind": "computation",
+          "statement": "For k=(1,2), dimension is 2·3=6, not 2+3."
+        },
+        {
+          "name": "family_torus_restriction",
+          "kind": "non-example",
+          "statement": "The standard representation restricted to the diagonal torus is reducible; irreducibility requires the specified open SL₂ subgroup."
+        },
+        {
+          "name": "family_sym2",
+          "kind": "comparison",
+          "statement": "For m=1,k=2, recover the existing symmetric-square matrix action and dimension 3."
+        },
+        {
+          "name": "matrix_quotient",
+          "kind": "computation",
+          "statement": "For k=(1,2), the action quotient has dimension 6²=36; at k=0 it is ℚ_p of dimension 1."
+        },
+        {
+          "name": "integral_dual",
+          "kind": "non-example",
+          "statement": "At p=3 and k=3, rational self-duality holds, while the integral dual is a divided-power lattice; integral self-duality is not asserted."
+        }
+      ],
+      "uses": [
+        {
+          "where": "Fu §6, proof of Theorem 1.4",
+          "how": "Self-duality converts Hom estimates to coinvariants."
+        },
+        {
+          "where": "WM.3/realization-comparison",
+          "how": "Matches the p-adic family with algebraic local systems on the arithmetic quotient."
+        }
+      ]
+    },
+    {
+      "id": "ArithmeticLocallySymmetricSpacesPartII:WM.1/hom-coinvariant-dual",
+      "parentStageId": "ArithmeticLocallySymmetricSpacesPartII:WM.1",
+      "realises": [
+        "ArithmeticLocallySymmetricSpacesPartII:WM.1"
+      ],
+      "title": "Multiplicity and degree-zero homology",
+      "kind": "theorem",
+      "statement": "For a finitely generated left A-module M with its canonical finite-module topology and a finite-dimensional continuous G-representation W admitting a stable lattice, evaluation induces a natural isomorphism Hom_A(M,W)≃Hom_{ℚ_p}(H₀(G,M⊗W*),ℚ_p). Here the tensor has the diagonal action, W* has the contragredient action, and H₀ is rational completed coinvariants, identified with Tor₀^A(ℚ_p,−) by the supplied rationalization contract. For W=W_k, the supplied self-duality replaces W_k* by W_k. All spaces in the dimension identity are finite dimensional and the A-linear maps are continuous.",
+      "hypotheses": [
+        "M finitely generated over A",
+        "W finite dimensional continuous with stable lattice"
+      ],
+      "proofSteps": [
+        "Send f to the functional m⊗φ↦φ(f(m)); the G-invariance relation is exactly equivariance of f.",
+        "Use canonical finite-module topology and the supplied finite-dimensional continuous Hom comparison so the functional factors through the completed quotient.",
+        "Apply the imported lattice/completed-Tor rational comparison and then finite-dimensional duality. No duality between unrelated Banach categories is substituted for this evaluation map."
+      ],
+      "acceptance": [
+        "For M=A, both dimensions are dim W.",
+        "The dual representation is necessary before using self-duality."
+      ],
+      "prerequisites": [
+        "ArithmeticLocallySymmetricSpacesPartII:WM.0/local-algebraic-family",
+        "NoncommutativeAndEquivariantIwasawa §0.15",
+        "CompletedCohomologyPartII §3.1"
+      ],
+      "sources": [
+        {
+          "sourceId": "fu24",
+          "locator": "§6, p. 22, identities in the proof of Theorem 1.4",
+          "match": "Evaluation and contragredient tensoring give the Hom/coinvariant comparison."
+        }
+      ],
+      "implementationStatus": "unchecked",
+      "library": {
+        "module": "TauCeti/NumberTheory/WeightMultiplicity/Torsion",
+        "namespace": "TauCeti.WeightMultiplicity"
+      },
+      "planet": {
+        "name": "Hom and coinvariant duality"
+      }
+    },
+    {
+      "id": "ArithmeticLocallySymmetricSpacesPartII:WM.1/cyclic-torsion-bound",
+      "parentStageId": "ArithmeticLocallySymmetricSpacesPartII:WM.1",
+      "realises": [
+        "ArithmeticLocallySymmetricSpacesPartII:WM.1"
+      ],
+      "title": "Cyclic Iwasawa multiplicity estimate",
+      "kind": "theorem",
+      "statement": "For every nonzero δ∈A there are nonnegative proper-face coefficients c(δ) such that dim Hom_A(A/Aδ,W_k)≤B_c(k+1) for every k∈ℕ^m. Aδ is the left ideal generated by δ. The coefficients depend on δ, p and m, and are independent of k. The proof uses the four analytic gaps in the exact supplier contracts: flat microlocalisation, algebraic-quotient comparison, integral central faithfulness and generic cyclic growth.",
+      "hypotheses": [
+        "δ≠0",
+        "G,A,W_k as in WM.0"
+      ],
+      "proofSteps": [
+        "Under the algebraic-quotient comparison, Hom into W_k is unchanged by microlocalization A→Û. The cyclic module becomes Û/Ûδ.",
+        "Integral central faithfulness makes every nonzero δ generic in the sense required by the generic cyclic growth contract. Use Ardakov–Wadsley’s affinoid Verma route, not the unresolved large-radius central-quotient argument.",
+        "The generic cyclic growth contract supplies a uniform truncation multi-index α and the large-coordinate PBW estimate. Its all-weight repair is B(x)=2Σᵢαᵢ∏ⱼ≠ᵢxⱼ. For kᵢ<αᵢ, use dim Hom≤dim W_k≤αᵢ∏ⱼ≠ᵢ(kⱼ+1). These are infinite strips and remain in the bound."
+      ],
+      "acceptance": [
+        "The bound includes kᵢ=0 and m=1, where it is constant.",
+        "δ=1 gives the zero module; δ=0 is excluded, since Hom_A(A,W_k) has dimension D(k+1)."
+      ],
+      "prerequisites": [
+        "ArithmeticLocallySymmetricSpacesPartII:WM.0/proper-face-majorant",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.0/local-algebraic-family",
+        "gap:flat-microlocalisation",
+        "gap:algebraic-quotient-comparison",
+        "gap:integral-central-faithfulness",
+        "gap:generic-cyclic-growth"
+      ],
+      "sources": [
+        {
+          "sourceId": "fu24",
+          "locator": "§6, pp. 22–23; Theorem 4.3, p. 15; Theorem 3.2, pp. 8–11",
+          "match": "Fu transfers the cyclic quotient to the completed enveloping algebra and bounds its W_k multiplicity."
+        },
+        {
+          "sourceId": "aw14",
+          "locator": "§4.6, p. 11 and §5.4, p. 16 (author PDF)",
+          "match": "Affinoid Verma annihilators and faithfulness provide the central-faithfulness route."
+        }
+      ],
+      "implementationStatus": "unchecked",
+      "library": {
+        "module": "TauCeti/NumberTheory/WeightMultiplicity/Torsion",
+        "namespace": "TauCeti.WeightMultiplicity"
+      },
+      "planet": {
+        "name": "Cyclic torsion multiplicity bound"
+      }
+    },
+    {
+      "id": "ArithmeticLocallySymmetricSpacesPartII:WM.1/torsion-filtration",
+      "parentStageId": "ArithmeticLocallySymmetricSpacesPartII:WM.1",
+      "realises": [
+        "ArithmeticLocallySymmetricSpacesPartII:WM.1"
+      ],
+      "title": "Cyclic control of a finite torsion module",
+      "kind": "theorem",
+      "statement": "Let A be the supplied two-sided noetherian Ore domain and T a finitely generated left A-module of skew rank zero. There is a finite filtration 0=T₀⊂⋯⊂T_r=T with cyclic factors Q_j and nonzero δ_j∈A such that A/Aδ_j surjects onto Q_j. The quotients need not be isomorphic to principal quotients. For every finite-dimensional W, dim Hom_A(T,W)≤Σ_j dim Hom_A(A/Aδ_j,W).",
+      "hypotheses": [
+        "A two-sided noetherian Ore domain",
+        "rank_A T=0"
+      ],
+      "proofSteps": [
+        "Choose finitely many generators of T and filter by their successive spans.",
+        "Rank zero localizes every cyclic factor to zero. Clearing an Ore denominator gives a nonzero annihilator of its chosen cyclic generator, hence the indicated surjection.",
+        "Apply left exactness of Hom(−,W) to each short exact filtration sequence, and use the injection induced by the principal-quotient surjection."
+      ],
+      "acceptance": [
+        "Over ℚ_p[X,Y], A/(X,Y) is controlled by A/(X) but is not equal to it.",
+        "The filtration is finite because T is finitely generated, not because its underlying vector space is finite."
+      ],
+      "prerequisites": [
+        "NoncommutativeAndEquivariantIwasawa §F.1",
+        "NoncommutativeAndEquivariantIwasawa §1.12",
+        "gap:skew-rank"
+      ],
+      "sources": [
+        {
+          "sourceId": "fu24",
+          "locator": "§6, p. 23, torsion case",
+          "match": "The argument bounds a finitely generated torsion module by finitely many cyclic quotients."
+        }
+      ],
+      "implementationStatus": "unchecked",
+      "library": {
+        "module": "TauCeti/NumberTheory/WeightMultiplicity/Torsion",
+        "namespace": "TauCeti.WeightMultiplicity"
+      }
+    },
+    {
+      "id": "ArithmeticLocallySymmetricSpacesPartII:WM.1/torsion-bound",
+      "parentStageId": "ArithmeticLocallySymmetricSpacesPartII:WM.1",
+      "realises": [
+        "ArithmeticLocallySymmetricSpacesPartII:WM.1"
+      ],
+      "title": "The torsion-module weight bound",
+      "kind": "theorem",
+      "statement": "For every finitely generated rank-zero A-module T, there are nonnegative proper-face coefficients c_T such that dim H₀(G,T⊗W_k)=dim Hom_A(T,W_k)≤B_{c_T}(k+1) for all k. The same conclusion holds for a finite collection of torsion modules with one common coefficient vector.",
+      "hypotheses": [],
+      "proofSteps": [
+        "Use torsion-filtration to reduce to its principal cyclic upper bounds.",
+        "Use cyclic-torsion-bound for each δ_j and add the finitely many proper-face coefficient vectors.",
+        "Use hom-coinvariant-dual and self-duality of W_k."
+      ],
+      "acceptance": [
+        "Zero module admits zero coefficients.",
+        "When m=1 all degree-zero torsion multiplicities are uniformly bounded."
+      ],
+      "prerequisites": [
+        "ArithmeticLocallySymmetricSpacesPartII:WM.1/torsion-filtration",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.1/cyclic-torsion-bound",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.1/hom-coinvariant-dual",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.0/proper-face-majorant"
+      ],
+      "sources": [
+        {
+          "sourceId": "fu24",
+          "locator": "§6, pp. 22–23, torsion case of Theorem 1.4",
+          "match": "The cyclic estimates are additive along a finite torsion filtration."
+        }
+      ],
+      "implementationStatus": "unchecked",
+      "library": {
+        "module": "TauCeti/NumberTheory/WeightMultiplicity/Torsion",
+        "namespace": "TauCeti.WeightMultiplicity"
+      },
+      "planet": {
+        "name": "Torsion weight bound"
+      }
+    },
+    {
+      "id": "ArithmeticLocallySymmetricSpacesPartII:WM.2/free-approximation",
+      "parentStageId": "ArithmeticLocallySymmetricSpacesPartII:WM.2",
+      "realises": [
+        "ArithmeticLocallySymmetricSpacesPartII:WM.2"
+      ],
+      "title": "Free approximations with their ranks",
+      "kind": "construction",
+      "statement": "For a finitely generated left module M of skew rank a over the supplied two-sided noetherian Ore domain A, choose (i) 0→A^a→M→T→0 with T finitely generated of rank zero, and (ii) 0→N→A^ℓ→M→0 with N finitely generated of rank ℓ−a. These are choices of actual maps and exact sequences. They are not claimed canonical or functorial in M. Noncommutative localization is on the left for M; denominator clearing uses the compatible right/left Ore calculus.",
+      "hypotheses": [],
+      "proofSteps": [
+        "Choose a basis of Q(A)⊗_A M, lift its vectors after clearing denominators, and check independence after localization. A nonzero kernel in the finite free domain module would remain detectable in the localization.",
+        "Choose a finite generating set of M to obtain the second sequence; noetherianity makes N finitely generated.",
+        "Exact localization gives rank T=0 and rank N=ℓ−a. The rank may be smaller than the chosen number of generators."
+      ],
+      "acceptance": [
+        "The choices are exported with their exactness and rank equalities, not merely as two unspecified modules."
+      ],
+      "prerequisites": [
+        "NoncommutativeAndEquivariantIwasawa §F.1",
+        "NoncommutativeAndEquivariantIwasawa §1.12",
+        "gap:skew-rank"
+      ],
+      "sources": [
+        {
+          "sourceId": "fu24",
+          "locator": "§6, pp. 22–23, equations (33)–(34)",
+          "match": "The two exact sequences support different sides of the rank estimate."
+        }
+      ],
+      "implementationStatus": "unchecked",
+      "library": {
+        "module": "TauCeti/NumberTheory/WeightMultiplicity/Homology",
+        "namespace": "TauCeti.WeightMultiplicity"
+      },
+      "planet": {
+        "name": "Free approximations"
+      },
+      "api": [
+        {
+          "name": "freeApproximation",
+          "role": "constructor",
+          "statement": "Choose an injection A^a→M and a rank-zero cokernel T."
+        },
+        {
+          "name": "finitePresentation",
+          "role": "constructor",
+          "statement": "Choose a surjection A^ℓ→M and its finitely generated kernel N."
+        },
+        {
+          "name": "freeApproximation_rank",
+          "role": "relation",
+          "statement": "The first free rank equals rank_A M; rank_A N=ℓ−a."
+        },
+        {
+          "name": "freeApproximation_exact",
+          "role": "characterisation",
+          "statement": "Export kernels, images and quotient identifications for both chosen sequences."
+        }
+      ],
+      "tests": [
+        {
+          "name": "approximation_free",
+          "kind": "comparison",
+          "statement": "For M=A^a, identity maps give T=N=0 and ℓ=a."
+        },
+        {
+          "name": "approximation_torsion",
+          "kind": "degenerate",
+          "statement": "For M=A/Aδ with δ nonzero nonunit, a=0 but one generator suffices; ℓ need not equal a."
+        },
+        {
+          "name": "approximation_nongenerator_rank",
+          "kind": "non-example",
+          "statement": "The ideal (X,Y) over ℚ_p[X,Y] has rank one and needs two generators; an assertion that ℓ=a for every module is false."
+        }
+      ],
+      "uses": [
+        {
+          "where": "WM.2/rank-upper",
+          "how": "The free submodule and torsion quotient give the upper bound."
+        },
+        {
+          "where": "WM.2/rank-lower",
+          "how": "The finite presentation gives the lower bound."
+        },
+        {
+          "where": "WM.2/homological-shifting",
+          "how": "The same kernel is used in the long exact homology sequence."
+        }
+      ]
+    },
+    {
+      "id": "ArithmeticLocallySymmetricSpacesPartII:WM.2/rank-upper",
+      "parentStageId": "ArithmeticLocallySymmetricSpacesPartII:WM.2",
+      "realises": [
+        "ArithmeticLocallySymmetricSpacesPartII:WM.2"
+      ],
+      "title": "Upper rank estimate",
+      "kind": "theorem",
+      "statement": "For M of skew rank a there is a nonnegative proper-face polynomial U_M with dim H₀(G,M⊗W_k)≤aD(k+1)+U_M(k+1) for all k. It may be chosen as the torsion-bound polynomial of the cokernel T of a free approximation. Applying H₀ to A^a→M need not be injective.",
+      "hypotheses": [],
+      "proofSteps": [
+        "Apply the right-exact coinvariant functor to 0→A^a⊗W_k→M⊗W_k→T⊗W_k→0.",
+        "The image of H₀(A^a⊗W_k) has dimension at most aD; bound the quotient by H₀(T⊗W_k).",
+        "Use NoncommutativeAndEquivariantIwasawa §0.15 and torsion-bound; no control of H₁(T⊗W_k) is needed."
+      ],
+      "acceptance": [
+        "For a free M the upper error is zero.",
+        "The argument uses right exactness alone.",
+        "For ℓ=1 and k=(1,2), the imported free twist has H₀ of dimension 6 and all positive homology zero; on g⊗w the untwisting uses g⁻¹w."
+      ],
+      "prerequisites": [
+        "ArithmeticLocallySymmetricSpacesPartII:WM.2/free-approximation",
+        "NoncommutativeAndEquivariantIwasawa §0.15",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.1/torsion-bound"
+      ],
+      "sources": [
+        {
+          "sourceId": "fu24",
+          "locator": "§6, p. 22, equation (33) and its following inequality",
+          "match": "The torsion cokernel controls the upper error."
+        }
+      ],
+      "implementationStatus": "unchecked",
+      "library": {
+        "module": "TauCeti/NumberTheory/WeightMultiplicity/Homology",
+        "namespace": "TauCeti.WeightMultiplicity"
+      },
+      "planet": {
+        "name": "Upper rank estimate"
+      }
+    },
+    {
+      "id": "ArithmeticLocallySymmetricSpacesPartII:WM.2/rank-lower",
+      "parentStageId": "ArithmeticLocallySymmetricSpacesPartII:WM.2",
+      "realises": [
+        "ArithmeticLocallySymmetricSpacesPartII:WM.2"
+      ],
+      "title": "Lower rank estimate",
+      "kind": "theorem",
+      "statement": "For M of skew rank a and a chosen finite presentation with kernel N of rank ℓ−a, dim H₀(G,M⊗W_k)≥aD(k+1)−U_N(k+1), where U_N is the already proved upper-error polynomial for N. No higher-homology estimate is used in this step.",
+      "hypotheses": [],
+      "proofSteps": [
+        "Right exactness of H₀(N⊗W_k)→H₀(A^ℓ⊗W_k)→H₀(M⊗W_k)→0 gives dim H₀(M⊗W_k)≥ℓD−dim H₀(N⊗W_k).",
+        "Use rank-upper for N and rank N=ℓ−a, then cancel the main terms."
+      ],
+      "acceptance": [
+        "For a=0 the estimate is a valid lower bound, not a claim of nonzero homology.",
+        "The leading coefficient is a, not ℓ."
+      ],
+      "prerequisites": [
+        "ArithmeticLocallySymmetricSpacesPartII:WM.2/free-approximation",
+        "NoncommutativeAndEquivariantIwasawa §0.15",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.2/rank-upper"
+      ],
+      "sources": [
+        {
+          "sourceId": "fu24",
+          "locator": "§6, p. 23, equation (34) and following inequalities",
+          "match": "The presentation kernel supplies the lower error, independently of dimension shifting."
+        }
+      ],
+      "implementationStatus": "unchecked",
+      "library": {
+        "module": "TauCeti/NumberTheory/WeightMultiplicity/Homology",
+        "namespace": "TauCeti.WeightMultiplicity"
+      },
+      "planet": {
+        "name": "Lower rank estimate"
+      }
+    },
+    {
+      "id": "ArithmeticLocallySymmetricSpacesPartII:WM.2/rank-main-term",
+      "parentStageId": "ArithmeticLocallySymmetricSpacesPartII:WM.2",
+      "realises": [
+        "ArithmeticLocallySymmetricSpacesPartII:WM.2"
+      ],
+      "title": "Two-sided degree-zero rank error",
+      "kind": "theorem",
+      "statement": "For every finitely generated A-module M of rank a, there is a nonnegative proper-face polynomial E_M such that |dim H₀(G,M⊗W_k)−aD(k+1)|≤E_M(k+1) for every k∈ℕ^m. One choice is U_M+U_N from a fixed presentation kernel N.",
+      "hypotheses": [],
+      "proofSteps": [
+        "Combine rank-upper and rank-lower.",
+        "The sum of the two nonnegative errors dominates each one, retaining proper-face degree at most m−1."
+      ],
+      "acceptance": [
+        "For M=A^a the difference is identically zero.",
+        "For m=1 the deviation is uniformly bounded."
+      ],
+      "prerequisites": [
+        "ArithmeticLocallySymmetricSpacesPartII:WM.2/rank-upper",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.2/rank-lower",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.0/proper-face-majorant"
+      ],
+      "sources": [
+        {
+          "sourceId": "fu24",
+          "locator": "Theorem 1.4, p. 3; §6, pp. 22–23",
+          "match": "These two inequalities establish the main-term part of the local theorem."
+        }
+      ],
+      "implementationStatus": "unchecked",
+      "library": {
+        "module": "TauCeti/NumberTheory/WeightMultiplicity/Homology",
+        "namespace": "TauCeti.WeightMultiplicity"
+      },
+      "planet": {
+        "name": "Rank main term"
+      }
+    },
+    {
+      "id": "ArithmeticLocallySymmetricSpacesPartII:WM.2/homological-shifting",
+      "parentStageId": "ArithmeticLocallySymmetricSpacesPartII:WM.2",
+      "realises": [
+        "ArithmeticLocallySymmetricSpacesPartII:WM.2"
+      ],
+      "title": "Syzygy bounds in positive degrees",
+      "kind": "theorem",
+      "statement": "For 0→N→A^ℓ→M→0 and x=k+1, dim H₁(G,M⊗W_k)≤U_N(x)+U_M(x), while H_i(G,M⊗W_k)≃H_{i−1}(G,N⊗W_k) for every i≥2. In the first bound U_N and U_M are upper-error polynomials, and rank N=ℓ−rank M. The bound follows from the exact dimension identity dim H₁(M⊗W_k)=dim H₀(N⊗W_k)−ℓD(x)+dim H₀(M⊗W_k).",
+      "hypotheses": [],
+      "proofSteps": [
+        "Use the long exact Tor sequence and NoncommutativeAndEquivariantIwasawa §0.15.",
+        "For i=1 use its four-term exact portion to get the displayed identity. Apply rank-upper to N and M; their main terms cancel.",
+        "For i≥2 the adjacent regular-module homology groups vanish, giving the shift isomorphism."
+      ],
+      "acceptance": [
+        "The degree-one term is a difference of three dimensions; simply bounding H₁ by H₀(N) would leave a degree-m main term.",
+        "The shift at i=1 is not an isomorphism with all of H₀(N)."
+      ],
+      "prerequisites": [
+        "ArithmeticLocallySymmetricSpacesPartII:WM.2/free-approximation",
+        "NoncommutativeAndEquivariantIwasawa §0.15",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.2/rank-upper"
+      ],
+      "sources": [
+        {
+          "sourceId": "fu24",
+          "locator": "§6, p. 23, last paragraph of the proof of Theorem 1.4",
+          "match": "The source reduces higher homology to finitely many syzygy degree-zero estimates."
+        }
+      ],
+      "implementationStatus": "unchecked",
+      "library": {
+        "module": "TauCeti/NumberTheory/WeightMultiplicity/Homology",
+        "namespace": "TauCeti.WeightMultiplicity"
+      }
+    },
+    {
+      "id": "ArithmeticLocallySymmetricSpacesPartII:WM.2/common-homology-bound",
+      "parentStageId": "ArithmeticLocallySymmetricSpacesPartII:WM.2",
+      "realises": [
+        "ArithmeticLocallySymmetricSpacesPartII:WM.2"
+      ],
+      "title": "Fu’s local homology theorem",
+      "kind": "theorem",
+      "statement": "Let p be odd, m≥1, G the product of m first-congruence SL₂ groups, A=ℚ_p⊗ℤ_p[[G]], and M a finitely generated left A-module of skew rank a. There is a single nonnegative proper-face polynomial B_M of total degree ≤m−1 such that for every k∈ℕ^m, |dim H₀(G,M⊗W_k)−aD(k+1)|≤B_M(k+1), and dim H_i(G,M⊗W_k)≤B_M(k+1) for every i≥1. All dimensions are finite; homology is zero for i>3m. The polynomial may depend on M, p and m, but not on i or k.",
+      "hypotheses": [],
+      "proofSteps": [
+        "Choose finite free presentations recursively for the first 3m syzygies, which remain finitely generated by noetherianity.",
+        "Use homological-shifting and the rank-error estimates on this finite list; add their nonnegative proper-face polynomials together with the degree-zero error.",
+        "Use the supplied rational Iwasawa global dimension 3m to eliminate every i>3m. This gives one common polynomial for all positive degrees without requiring an infinite sum."
+      ],
+      "acceptance": [
+        "m=1 gives constant errors in all degrees.",
+        "A finite direct sum permits the sum of the individual error polynomials.",
+        "For M=A^a higher homology is zero and the main term is exact.",
+        "At p=2, −I lies in the first congruence kernel and has order 2; in its rational group algebra (1−g)(1+g)=0 for g=−I, so the domain and uniform-group hypotheses used here cannot be transferred to that kernel."
+      ],
+      "prerequisites": [
+        "ArithmeticLocallySymmetricSpacesPartII:WM.2/rank-main-term",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.2/homological-shifting",
+        "NoncommutativeAndEquivariantIwasawa §0.12",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.0/proper-face-majorant"
+      ],
+      "sources": [
+        {
+          "sourceId": "fu24",
+          "locator": "Theorem 1.4, p. 3; §6, pp. 21–23",
+          "match": "This is the exact local endpoint, with the quantifiers and the common polynomial made explicit."
+        }
+      ],
+      "implementationStatus": "unchecked",
+      "library": {
+        "module": "TauCeti/NumberTheory/WeightMultiplicity/Homology",
+        "namespace": "TauCeti.WeightMultiplicity"
+      },
+      "planet": {
+        "name": "Fu’s local homology bound"
+      }
+    },
+    {
+      "id": "ArithmeticLocallySymmetricSpacesPartII:WM.2/canonical-dimension-zero",
+      "parentStageId": "ArithmeticLocallySymmetricSpacesPartII:WM.2",
+      "realises": [
+        "ArithmeticLocallySymmetricSpacesPartII:WM.2"
+      ],
+      "title": "Finite-dimensional multiplicity support",
+      "kind": "theorem",
+      "statement": "For a nonzero finitely generated A-module M of canonical dimension zero, the supplied canonical-dimension criterion makes M finite dimensional over ℚ_p. Only finitely many W_k can be simple quotients of M, and dim Hom_A(M,W_k)≤length_A M≤dim_{ℚ_p}M for all k. Thus its degree-zero weight multiplicities admit a constant bound, stronger than degree m−1. This assertion does not classify all finite-dimensional A-modules as algebraic, nor assert that they are all semisimple.",
+      "hypotheses": [],
+      "proofSteps": [
+        "Use gap:canonical-dimension-zero, sourced at aw13 Lemma 10.13, for the finite-dimensional criterion.",
+        "Use a finite composition series of the finite-dimensional A-module. The W_k are pairwise nonisomorphic absolutely simple modules, so a nonzero Hom forces W_k to occur as a composition factor.",
+        "Left exactness of Hom and End_A(W_k)=ℚ_p bound its dimension by the composition length."
+      ],
+      "acceptance": [
+        "A nontrivial finite smooth twist is not silently identified with an algebraic representation.",
+        "The zero module has zero multiplicities and is handled separately from the canonical dimension of a nonzero module."
+      ],
+      "prerequisites": [
+        "ArithmeticLocallySymmetricSpacesPartII:WM.0/local-algebraic-family",
+        "gap:canonical-dimension-zero"
+      ],
+      "sources": [
+        {
+          "sourceId": "fu24",
+          "locator": "§1, p. 4, discussion following Theorem 1.4",
+          "match": "The source identifies the sharper dimension-zero case."
+        },
+        {
+          "sourceId": "aw13",
+          "locator": "§10.12–10.13, pp. 77–78 (author preprint), Lemma in §10.13",
+          "match": "For the admitted uniform semisimple congruence group, canonical dimension zero is equivalent to finite coefficient-field dimension."
+        }
+      ],
+      "implementationStatus": "unchecked",
+      "library": {
+        "module": "TauCeti/NumberTheory/WeightMultiplicity/Homology",
+        "namespace": "TauCeti.WeightMultiplicity"
+      }
+    },
+    {
+      "id": "ArithmeticLocallySymmetricSpacesPartII:WM.3/global-local-weights",
+      "parentStageId": "ArithmeticLocallySymmetricSpacesPartII:WM.3",
+      "realises": [
+        "ArithmeticLocallySymmetricSpacesPartII:WM.3"
+      ],
+      "title": "Archimedean weights and split-prime indices",
+      "kind": "definition",
+      "statement": "For a number field F of signature (r₁,r₂), d=r₁+2r₂, use an archimedean tuple κ_v of even integers ≥2. Set Δ(κ)=∏_{v real}κ_v·∏_{v complex}κ_v². The complex coefficient system is V_κ=⊠_{real v}Sym^{κ_v−2}(ℂ²) ⊠_{complex v}(Sym^{κ_v/2−1}(ℂ²)⊗conjugate Sym^{κ_v/2−1}(ℂ²)). After choosing a completely split prime, index the p-adic tensor by all d embeddings: t_σ=κ_v−2 at a real place and t_σ=κ_v/2−1 at each of the two embeddings of a complex place. Put x_σ=t_σ+1. Then D(x)=∏_{real v}(κ_v−1)∏_{complex v}(κ_v/2)², D(x)≤Δ(κ), and min_σ x_σ≥(min_vκ_v)/2. The tuple κ=(2,…,2) is exactly the trivial coefficient system.",
+      "hypotheses": [],
+      "proofSteps": [
+        "Use the coefficient conventions of Fu and Marshall, keeping the place tuple separate from the embedding tuple.",
+        "Use evenness to make κ_v/2 integral; doubling each complex factor gives d p-adic factors.",
+        "Compute the dimension by the imported symmetric-power and tensor finrank formulas; compare each factor with κ_v and κ_v/2."
+      ],
+      "acceptance": [
+        "The number of local variables is d, not r₁+r₂."
+      ],
+      "prerequisites": [
+        "mathlib:Finset.prod",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.0/local-algebraic-family",
+        "ArithmeticLocallySymmetricSpaces §ALS.1.1"
+      ],
+      "sources": [
+        {
+          "sourceId": "fu24",
+          "locator": "§1, pp. 1–2; §7, pp. 23–24",
+          "match": "The source changes from places to embeddings for the local argument; this definition keeps both indices explicit."
+        },
+        {
+          "sourceId": "marshall12",
+          "locator": "§2.1, pp. 3–4 (arXiv:1103.2472v1)",
+          "match": "The algebraic representation uses κ−2 at real places and κ/2−1 in the conjugate pair at complex places."
+        }
+      ],
+      "implementationStatus": "unchecked",
+      "library": {
+        "module": "TauCeti/NumberTheory/WeightMultiplicity/Descent",
+        "namespace": "TauCeti.WeightMultiplicity"
+      },
+      "planet": {
+        "name": "Global and local weight dictionary"
+      },
+      "api": [
+        {
+          "name": "weightSize",
+          "role": "data",
+          "statement": "Evaluate Δ on the archimedean tuple with complex factors squared."
+        },
+        {
+          "name": "splitLocalWeight",
+          "role": "constructor",
+          "statement": "Construct the d-entry nonnegative integral t, with a chosen indexing by embeddings."
+        },
+        {
+          "name": "splitLocalWeight_reindex",
+          "role": "functoriality",
+          "statement": "Changing the embedding ordering permutes t and preserves D and every minimum."
+        },
+        {
+          "name": "coefficientDimension",
+          "role": "compatibility",
+          "statement": "dim V_κ=D(t+1), using the actual supplied algebraic representation."
+        },
+        {
+          "name": "weightSize_comparison",
+          "role": "relation",
+          "statement": "D(t+1)≤Δ(κ) and every t_σ+1≥min_vκ_v/2."
+        },
+        {
+          "name": "weightSize_parallel",
+          "role": "simp",
+          "statement": "If all κ_v=κ, Δ(κ)=κ^d."
+        }
+      ],
+      "tests": [
+        {
+          "name": "weights_bianchi_six",
+          "kind": "computation",
+          "statement": "For (r₁,r₂)=(0,1), κ=6 gives t=(2,2), dim V=9, Δ=36, and min x=3."
+        },
+        {
+          "name": "weights_mixed",
+          "kind": "computation",
+          "statement": "For signature (1,1) and κ=(4,6), t=(2,2,2), dim V=27 and Δ=144."
+        },
+        {
+          "name": "weights_trivial",
+          "kind": "degenerate",
+          "statement": "At κ=(2,…,2), t=0 and dim V=1, even though Δ=2^d."
+        },
+        {
+          "name": "weights_reject_odd",
+          "kind": "non-example",
+          "statement": "A complex κ_v=3 is inadmissible: integer division must not manufacture an algebraic weight from this input."
+        }
+      ],
+      "uses": [
+        {
+          "where": "WM.3/realization-comparison",
+          "how": "Defines the common algebraic coefficient system over a finite number field."
+        },
+        {
+          "where": "WM.4/sharp-global-bound",
+          "how": "Converts the local minimum and product into Δ/min κ."
+        }
+      ]
+    },
+    {
+      "id": "ArithmeticLocallySymmetricSpacesPartII:WM.3/split-auxiliary-prime",
+      "parentStageId": "ArithmeticLocallySymmetricSpacesPartII:WM.3",
+      "realises": [
+        "ArithmeticLocallySymmetricSpacesPartII:WM.3"
+      ],
+      "title": "One auxiliary prime for a fixed level",
+      "kind": "theorem",
+      "statement": "For a fixed compact open K_f⊂SL₂(𝔸_F^∞), choose an odd rational prime p splitting completely in a normal closure of F and outside all primes where a product compact open subgroup contained in K_f is nonmaximal. There is a neat product level K′_f=G K^p⊂K_f, with G exactly the product of d first-congruence SL₂(ℤ_p) groups. Pullback gives S_κ(K_f)↪S_κ(K′_f) for every weight. At neat levels the cohomology pullback has the normalized trace as a left inverse; finite stabilizers at other levels are handled by characteristic-zero invariants. Every index and resulting dimension constant is fixed independently of κ.",
+      "hypotheses": [],
+      "proofSteps": [
+        "Use the identity Frobenius class in the normal closure and avoid the finite exceptional prime set. Chebotarev supplies infinitely many such primes.",
+        "A compact open contains a product open with maximal factors outside finitely many primes. Replace its p factor by G and shrink its away-p part to an admitted neat level, using the parent’s standard levels.",
+        "Right-invariant automorphic functions at K_f are right-invariant at K′_f. For topological comparison use the parent pullback and trace; the finite degree is invertible over characteristic zero."
+      ],
+      "acceptance": [
+        "The auxiliary prime and refinement are fixed before varying κ.",
+        "The argument gives an upper bound at arbitrary K_f; it does not transport a lower bound from a smaller to a larger level."
+      ],
+      "prerequisites": [
+        "Chebotarev Layer 10",
+        "ArithmeticLocallySymmetricSpaces §ALS.0.10",
+        "ArithmeticLocallySymmetricSpaces §ALS.0.9",
+        "ArithmeticLocallySymmetricSpaces §ALS.1.8",
+        "ArithmeticLocallySymmetricSpaces §ALS.3.6",
+        "NoncommutativeAndEquivariantIwasawa §F.1"
+      ],
+      "sources": [
+        {
+          "sourceId": "fu24",
+          "locator": "§7, pp. 23–24, before (38); Theorem 1.2, pp. 2–3",
+          "match": "The descent proof is at the product level. This explicit refinement supplies the fixed-level reduction missing from that passage."
+        }
+      ],
+      "implementationStatus": "unchecked",
+      "library": {
+        "module": "TauCeti/NumberTheory/WeightMultiplicity/Descent",
+        "namespace": "TauCeti.WeightMultiplicity"
+      },
+      "planet": {
+        "name": "Split auxiliary prime"
+      }
+    },
+    {
+      "id": "ArithmeticLocallySymmetricSpacesPartII:WM.3/realization-comparison",
+      "parentStageId": "ArithmeticLocallySymmetricSpacesPartII:WM.3",
+      "realises": [
+        "ArithmeticLocallySymmetricSpacesPartII:WM.3"
+      ],
+      "title": "Coefficient realizations over a number field",
+      "kind": "construction",
+      "statement": "Choose a finite number field E containing the embeddings needed for V_κ and embeddings E→ℂ and E→ℚ_p at the auxiliary split prime. Construct the algebraic local system V_{κ,E} on the actual quotient at a neat level from the parent’s coefficient functor. Its complex scalar extension is V_κ and its p-adic extension is W_t with t from global-local-weights. Finite chain models and flat coefficient change identify the corresponding homology and cohomology after these scalar extensions; their dimensions over ℂ and ℚ_p agree degree by degree. For any finite p-adic coefficient extension L/ℚ_p, the analogous dimensions over L agree with those over ℚ_p; as ℚ_p dimensions they are multiplied by [L:ℚ_p].",
+      "hypotheses": [],
+      "proofSteps": [
+        "Use the restriction-of-scalars algebraic representation over E, with one factor for each embedding. The split-prime indexing identifies its matrices over ℚ_p with W_t.",
+        "Apply the finite-complex and coefficient-change theorems of ALS.1 to the same E-linear cellular differentials; flat scalar extension commutes with homology.",
+        "For cohomology/homology dimension comparisons retain the dual local system until the supplied self-duality is used. No topological or field isomorphism ℂ≃ℚ_p is invoked."
+      ],
+      "acceptance": [
+        "The comparison is an equality of dimensions of scalar extensions of one finite complex."
+      ],
+      "prerequisites": [
+        "ArithmeticLocallySymmetricSpacesPartII:WM.3/global-local-weights",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.3/split-auxiliary-prime",
+        "ArithmeticLocallySymmetricSpaces §ALS.1.6",
+        "ArithmeticLocallySymmetricSpaces §ALS.1.7",
+        "ArithmeticLocallySymmetricSpaces §ALS.1.1",
+        "mathlib:Module.finrank_baseChange"
+      ],
+      "sources": [
+        {
+          "sourceId": "fu24",
+          "locator": "§7, p. 23, equation (37)",
+          "match": "The arithmetic coefficient systems have equal dimensions after complex and p-adic realizations."
+        },
+        {
+          "sourceId": "marshall12",
+          "locator": "§2.2, equation (7), p. 4; §5, equation (29) and Lemma 11, pp. 15–16 (arXiv:1103.2472v1)",
+          "match": "Both realizations are attached to the same algebraic representation."
+        }
+      ],
+      "implementationStatus": "unchecked",
+      "library": {
+        "module": "TauCeti/NumberTheory/WeightMultiplicity/Descent",
+        "namespace": "TauCeti.WeightMultiplicity"
+      },
+      "planet": {
+        "name": "Coefficient realization comparison"
+      },
+      "api": [
+        {
+          "name": "coefficientRealization",
+          "role": "constructor",
+          "statement": "The E-linear algebraic local system, its finite complex, and its two identified scalar extensions."
+        },
+        {
+          "name": "coefficientRealization_baseChange",
+          "role": "functoriality",
+          "statement": "A finite extension E′/E and compatible embeddings give the scalar extension of the same complex."
+        },
+        {
+          "name": "coefficientRealization_dimensions",
+          "role": "compatibility",
+          "statement": "Each cohomology or homology degree has equal dimension over its own realization field."
+        },
+        {
+          "name": "coefficientRealization_level",
+          "role": "compatibility",
+          "statement": "The comparisons commute with the supplied pullback and trace on level changes."
+        }
+      ],
+      "tests": [
+        {
+          "name": "realization_trivial",
+          "kind": "degenerate",
+          "statement": "At κ=2 this is the constant E-local system, not a zero coefficient space."
+        },
+        {
+          "name": "realization_finite_extension",
+          "kind": "comparison",
+          "statement": "A one-dimensional ℚ_p cohomology group stays one-dimensional over L and has ℚ_p-dimension [L:ℚ_p]."
+        },
+        {
+          "name": "realization_bianchi",
+          "kind": "computation",
+          "statement": "At Bianchi κ=6 the chain coefficient in both realizations has dimension 9."
+        },
+        {
+          "name": "realization_torsion_warning",
+          "kind": "non-example",
+          "statement": "For the integral complex O --p→ O, mod-p base change has an extra homology group; flat field comparison must not be generalized to arbitrary reduction."
+        }
+      ],
+      "uses": [
+        {
+          "where": "WM.3/spectral-dimension-bound",
+          "how": "Transfers the completed-homology estimate to complex Betti dimensions."
+        },
+        {
+          "where": "WM.5/bianchi-boundary",
+          "how": "Uses the same complex coefficient normalization on cusp tori."
+        }
+      ]
+    },
+    {
+      "id": "ArithmeticLocallySymmetricSpacesPartII:WM.3/spectral-dimension-bound",
+      "parentStageId": "ArithmeticLocallySymmetricSpacesPartII:WM.3",
+      "realises": [
+        "ArithmeticLocallySymmetricSpacesPartII:WM.3"
+      ],
+      "title": "Weight bounds through completed-homology descent",
+      "kind": "theorem",
+      "statement": "For F with r₂>0 and the fixed split auxiliary level, let M_j=ℚ_p⊗H̃_j be the supplied completed ordinary homology modules. They are finitely generated A-modules of rank zero. The supplied homological descent sequence E²_{i,j}=H_i(G,M_j⊗W_t)⇒H_{i+j}(Y(K′_f),W_t) yields one proper-face polynomial Q_{F,K′} in d variables such that dim H_n(Y(K′_f),W_t)≤Q_{F,K′}(t+1) for every n and every admissible κ. The same bound applies to complex ordinary cohomology with the appropriate dual coefficient; self-duality removes the dual in this case. The polynomial is independent of n and κ. Apply CompletedCohomologyPartII §§5.6–5.7 over base field ℚ to Res_{F/ℚ}SL₂ and the prime ideal (p), so its compact local group is K₀=∏_{v|p}G_v=G of analytic dimension 3d.",
+      "hypotheses": [],
+      "proofSteps": [
+        "The real group SL₂(ℝ)^{r₁}×SL₂(ℂ)^{r₂} has no discrete series when r₂>0; apply CompletedCohomologyPartII §5.7 to Res_{F/ℚ}SL₂ over ℚ at (p), with K₀ the full product of d first-congruence factors.",
+        "Use CC.5 finite generation and CC.6 rational homological descent with its completed-Tor convention. The lifted finite complex bounds the possible j; local homology vanishes above 3d.",
+        "For each of the finitely many M_j apply common-homology-bound with rank zero. For a fixed total degree, E∞ terms are subquotients of E² terms and the abutment has a finite filtration. Sum their dimensions, then sum a finite envelope over j and 0≤i≤3d to obtain one Q.",
+        "Use realization-comparison and dual coefficient homology/cohomology over a field. Do not claim degeneration of the spectral sequence."
+      ],
+      "acceptance": [
+        "Every E² term in a total-degree diagonal contributes to an upper bound.",
+        "No isomorphism between the abutment and a direct sum of E² terms is asserted.",
+        "The totally real case is excluded precisely at the torsion input.",
+        "For F imaginary quadratic, d=2 and dim K₀=6=3d, rather than the dimension 3 of a single prime of F; the local homology cutoff is 6."
+      ],
+      "prerequisites": [
+        "ArithmeticLocallySymmetricSpacesPartII:WM.2/common-homology-bound",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.3/realization-comparison",
+        "CompletedCohomologyPartII §5.1",
+        "CompletedCohomologyPartII §5.7",
+        "CompletedCohomologyPartII §6.3",
+        "CompletedCohomologyPartII §4.2",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.0/proper-face-majorant"
+      ],
+      "sources": [
+        {
+          "sourceId": "fu24",
+          "locator": "§7, pp. 23–24, equations (38)–(39)",
+          "match": "Fu inserts the torsion local estimates into the homological descent sequence and bounds finite-level dimensions."
+        }
+      ],
+      "implementationStatus": "unchecked",
+      "library": {
+        "module": "TauCeti/NumberTheory/WeightMultiplicity/Descent",
+        "namespace": "TauCeti.WeightMultiplicity"
+      },
+      "planet": {
+        "name": "Completed-homology weight estimate"
+      }
+    },
+    {
+      "id": "ArithmeticLocallySymmetricSpacesPartII:WM.4/cuspidal-support-dictionary",
+      "parentStageId": "ArithmeticLocallySymmetricSpacesPartII:WM.4",
+      "realises": [
+        "ArithmeticLocallySymmetricSpacesPartII:WM.4"
+      ],
+      "title": "SL₂ cuspidal dimensions and support conventions",
+      "kind": "theorem",
+      "statement": "Put q=r₁+r₂. For a neat level K_f of the SL₂/F quotient and V_κ in Fu’s weight convention, when dim V_κ>1, the Eichler–Shimura–Harder comparison identifies the cuspidal degree-q contribution with the holomorphic/antiholomorphic real-place cohomological pieces and the complex-place cohomological pieces, giving dim H_cusp^q(Y(K_f),V_κ)=2^{r₁}dim S_κ(K_f). Use the parent’s injective H_cusp^q→H^q, with image in H_!^q=im(H_c^q→H^q). The symbol H_c^q here always means compact support; Marshall’s subscript c denotes the interior subspace. The finite-dimensional trivial-coefficient case κ=(2,…,2) is treated separately, so the stated nontrivial-coefficient identity is never used there.",
+      "hypotheses": [
+        "K_f neat"
+      ],
+      "proofSteps": [
+        "Import the parent’s cuspidal decomposition and its injection into ordinary cohomology.",
+        "For each contributing archimedean type, use AutomorphicFormsOnReductiveGroups §1.1 relative Lie cochains and §§5.2–5.3 coefficient and tempered-range computations. At each real place the holomorphic and antiholomorphic pieces give the factor two in the stated cusp-form convention; each complex place gives its degree-one factor. Take the relative-Lie Künneth product in degree q, and match the fixed finite-level invariants.",
+        "The support interpretation is fixed by Marshall §2.1 (4), which defines the subspace by vanishing near the cusps. Keep compact support separate via the parent support triangle.",
+        "For trivial V_κ use finite dimensionality at the one fixed tuple, absorbing that value into the global upper constant."
+      ],
+      "acceptance": [
+        "At signature (0,1), the cusp-form and degree-one cuspidal dimensions agree.",
+        "At one real place, the comparison counts holomorphic and antiholomorphic contributions.",
+        "The parent’s genus-zero four-cusp modular-curve example rules out identifying ordinary cohomology with cuspidal cohomology."
+      ],
+      "prerequisites": [
+        "ArithmeticLocallySymmetricSpacesPartII:WM.3/global-local-weights",
+        "ArithmeticLocallySymmetricSpaces §ALS.5b.5",
+        "ArithmeticLocallySymmetricSpaces §ALS.5b.4",
+        "AutomorphicFormsOnReductiveGroups §1.1",
+        "AutomorphicFormsOnReductiveGroups §§5.2–5.3"
+      ],
+      "sources": [
+        {
+          "sourceId": "fu24",
+          "locator": "§1, equation (2), p. 2; Theorem 1.2, pp. 2–3",
+          "match": "The dimension identity is used for the global estimate; its compact-support wording must be corrected to the cuspidal/interior convention."
+        },
+        {
+          "sourceId": "marshall12",
+          "locator": "§2.1, equation (4), pp. 3–4 (arXiv:1103.2472v1)",
+          "match": "The nontrivial coefficient hypothesis and interior-support convention are explicit in the cited comparison."
+        }
+      ],
+      "implementationStatus": "unchecked",
+      "library": {
+        "module": "TauCeti/NumberTheory/WeightMultiplicity/Automorphic",
+        "namespace": "TauCeti.WeightMultiplicity"
+      },
+      "planet": {
+        "name": "Eichler–Shimura–Harder dimension formula"
+      }
+    },
+    {
+      "id": "ArithmeticLocallySymmetricSpacesPartII:WM.4/sharp-global-bound",
+      "parentStageId": "ArithmeticLocallySymmetricSpacesPartII:WM.4",
+      "realises": [
+        "ArithmeticLocallySymmetricSpacesPartII:WM.4"
+      ],
+      "title": "The fixed-level sharp global bound",
+      "kind": "theorem",
+      "statement": "For a fixed number field F with r₂>0 and every fixed compact open K_f⊂SL₂(𝔸_F^∞), there is C_{F,K_f}>0 such that dim_ℂ S_κ(K_f)≤C_{F,K_f} Δ(κ)/(min_vκ_v) for every tuple of even archimedean weights κ_v≥2. The minimum runs over the r₁+r₂ places. The constant is uniform over the whole weight orthant. At any fixed neat level, the same size bound holds for ordinary Betti dimensions in every degree, and for cuspidal/interior dimensions by inclusion. No leading constant or asymptotic equality is asserted.",
+      "hypotheses": [],
+      "proofSteps": [
+        "At the auxiliary level use spectral-dimension-bound and cuspidal-support-dictionary for nontrivial coefficients.",
+        "Set x=t+1. By global-local-weights, D(x)≤Δ and min x≥min κ/2. Apply minimum-weight-saving to Q to obtain Q(x)≤2(Σc_s)Δ/min κ.",
+        "Use pullback to pass the cusp-form bound from K′_f to K_f. At neat levels, the normalized trace gives cohomology injectivity for the ordinary bound.",
+        "Increase the fixed constant to include κ=(2,…,2) using finite dimensionality; this is one tuple, not an infinite exceptional family."
+      ],
+      "acceptance": [
+        "If only one weight grows and another remains minimal, the theorem still has one uniform constant but need not improve that particular growth exponent.",
+        "No r₂=0 instance is produced by this proof."
+      ],
+      "prerequisites": [
+        "ArithmeticLocallySymmetricSpacesPartII:WM.3/spectral-dimension-bound",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.4/cuspidal-support-dictionary",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.3/split-auxiliary-prime",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.3/global-local-weights",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.0/minimum-weight-saving"
+      ],
+      "sources": [
+        {
+          "sourceId": "fu24",
+          "locator": "Theorem 1.2, pp. 2–3; §7, pp. 23–24",
+          "match": "The source’s degree-one saving follows from torsion completed homology and the local degree drop; the arbitrary-level passage is supplied explicitly here."
+        }
+      ],
+      "implementationStatus": "unchecked",
+      "library": {
+        "module": "TauCeti/NumberTheory/WeightMultiplicity/Automorphic",
+        "namespace": "TauCeti.WeightMultiplicity"
+      },
+      "planet": {
+        "name": "Sharp weight-aspect multiplicity bound"
+      }
+    },
+    {
+      "id": "ArithmeticLocallySymmetricSpacesPartII:WM.4/parallel-bound",
+      "parentStageId": "ArithmeticLocallySymmetricSpacesPartII:WM.4",
+      "realises": [
+        "ArithmeticLocallySymmetricSpacesPartII:WM.4"
+      ],
+      "title": "Parallel weights and the degree drop",
+      "kind": "theorem",
+      "statement": "Under sharp-global-bound, if κ_v=κ at every archimedean place, κ even and ≥2, then dim S_κ(K_f)≤C_{F,K_f} κ^{d−1}, d=[F:ℚ]. The exponent is d−1, with no ε loss. This follows from Δ(κ)=κ^d and min_vκ_v=κ, not from a separate limit theorem.",
+      "hypotheses": [],
+      "proofSteps": [
+        "Apply the exact parallel-size identity and the global inequality.",
+        "Keep the same level-dependent constant."
+      ],
+      "acceptance": [
+        "For signature (1,1), the exponent is 2, not 1.",
+        "No claim that κ^{1−d}dim S_κ converges is made."
+      ],
+      "prerequisites": [
+        "ArithmeticLocallySymmetricSpacesPartII:WM.4/sharp-global-bound",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.3/global-local-weights"
+      ],
+      "sources": [
+        {
+          "sourceId": "fu24",
+          "locator": "Theorem 1.2, p. 3, parallel-weight assertion",
+          "match": "The degree-one saving specializes to exponent [F:ℚ]−1."
+        }
+      ],
+      "implementationStatus": "unchecked",
+      "library": {
+        "module": "TauCeti/NumberTheory/WeightMultiplicity/Automorphic",
+        "namespace": "TauCeti.WeightMultiplicity"
+      },
+      "planet": {
+        "name": "Parallel-weight degree saving"
+      }
+    },
+    {
+      "id": "ArithmeticLocallySymmetricSpacesPartII:WM.4/bianchi-upper",
+      "parentStageId": "ArithmeticLocallySymmetricSpacesPartII:WM.4",
+      "realises": [
+        "ArithmeticLocallySymmetricSpacesPartII:WM.4"
+      ],
+      "title": "The Bianchi linear upper bound",
+      "kind": "theorem",
+      "statement": "For imaginary quadratic F and every fixed compact open K_f, dim S_κ(K_f)=O_{F,K_f}(κ) for even κ≥2. At a fixed neat congruence level Γ, dim H^i(Γ,E_n)=O_{F,Γ}(n+1) for i=1,2, where E_n=Sym^n(ℂ²)⊗conjugate Sym^n(ℂ²), n=κ/2−1. Cuspidal and interior dimensions satisfy the same bound by inclusion.",
+      "hypotheses": [],
+      "proofSteps": [
+        "Use d=2 in parallel-bound for cusp forms.",
+        "Use the ordinary cohomology part of sharp-global-bound at the corresponding fixed level; convert κ=2(n+1)."
+      ],
+      "acceptance": [
+        "κ=6 corresponds to E₂, of dimension 9.",
+        "This is an upper bound at arbitrary level; a lower bound requires the separate base-change level hypothesis."
+      ],
+      "prerequisites": [
+        "ArithmeticLocallySymmetricSpacesPartII:WM.4/parallel-bound",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.4/sharp-global-bound",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.3/global-local-weights"
+      ],
+      "sources": [
+        {
+          "sourceId": "fu24",
+          "locator": "Theorem 1.2 and Corollary 1.3, p. 3; §7, p. 24",
+          "match": "This is the imaginary-quadratic specialization of the global upper estimate."
+        }
+      ],
+      "implementationStatus": "unchecked",
+      "library": {
+        "module": "TauCeti/NumberTheory/WeightMultiplicity/Automorphic",
+        "namespace": "TauCeti.WeightMultiplicity"
+      },
+      "planet": {
+        "name": "Bianchi linear upper bound"
+      }
+    },
+    {
+      "id": "ArithmeticLocallySymmetricSpacesPartII:WM.5/cusp-torus-koszul",
+      "parentStageId": "ArithmeticLocallySymmetricSpacesPartII:WM.5",
+      "realises": [
+        "ArithmeticLocallySymmetricSpacesPartII:WM.5"
+      ],
+      "title": "Cohomology of a Bianchi cusp torus",
+      "kind": "theorem",
+      "statement": "Let Γ be a neat Bianchi congruence subgroup and T one torus component of its Borel–Serre boundary. With E_n, n≥0, as above, dim H^j(T,E_n) is 1,2,1 for j=0,1,2 and is zero otherwise. These dimensions use complex coefficients and unipotent cusp monodromy, rather than a trivial rank-(n+1)² local system. For c cusp components the boundary dimensions are c,2c,c. Finite non-neat cusp stabilizers require taking characteristic-zero invariants and are not asserted to preserve these equalities.",
+      "hypotheses": [],
+      "proofSteps": [
+        "Import the actual boundary stratum and its arithmetic unipotent group from ALS.2/ALS.4. At a neat Bianchi cusp this group is a lattice in ℂ≃ℝ².",
+        "Two lattice generators z₁,z₂ give commuting nilpotent logarithms zᵢ e⊗1+conjugate(zᵢ)1⊗e on E_n. Real linear independence makes the 2×2 coefficient matrix invertible over ℂ.",
+        "The Koszul complex of exp(Nᵢ)−1 is isomorphic to that of Nᵢ, since (exp(Nᵢ)−1)/Nᵢ is an invertible polynomial in Nᵢ. Change generators to e⊗1 and 1⊗e.",
+        "For Sym^n, the raising operator has kernel and cokernel dimension one, including n=0. The tensor of the two one-operator complexes has cohomology dimensions 1,2,1 by the field Künneth formula. Sum over the c tori."
+      ],
+      "acceptance": [
+        "For n=0 the two operators vanish on a one-dimensional space, giving 1,2,1.",
+        "For n=2, H¹(T,E₂) has dimension 2, not 18.",
+        "At a non-neat cusp with a nontrivial finite-unit action, equalities must be replaced by invariants.",
+        "For z₁=1,z₂=i the logarithm matrix has determinant −2i; at n=2 the Koszul dimensions are (9,18,9), the differential ranks are (8,8) and the cohomology dimensions are (1,2,1)."
+      ],
+      "prerequisites": [
+        "ArithmeticLocallySymmetricSpacesPartII:WM.3/global-local-weights",
+        "ArithmeticLocallySymmetricSpaces §ALS.2.5",
+        "ArithmeticLocallySymmetricSpaces §ALS.2.8",
+        "ArithmeticLocallySymmetricSpaces §§ALS.4.5–ALS.4.7",
+        "LieHighestWeight Layer 0"
+      ],
+      "sources": [
+        {
+          "sourceId": "fu24",
+          "locator": "Corollary 1.3 and equation (2), pp. 2–3",
+          "match": "The support correction requires a weight-uniform boundary estimate."
+        },
+        {
+          "sourceId": "fgt10",
+          "locator": "§1, pp. 3–4, equations (1.2)–(1.8)",
+          "match": "The boundary restriction and the Bianchi coefficient system supply the setting. The displayed Koszul calculation here is the explicit rank-one derivation."
+        }
+      ],
+      "implementationStatus": "unchecked",
+      "library": {
+        "module": "TauCeti/NumberTheory/WeightMultiplicity/Bianchi",
+        "namespace": "TauCeti.WeightMultiplicity"
+      },
+      "planet": {
+        "name": "Bianchi cusp-torus cohomology"
+      }
+    },
+    {
+      "id": "ArithmeticLocallySymmetricSpacesPartII:WM.5/bianchi-boundary",
+      "parentStageId": "ArithmeticLocallySymmetricSpacesPartII:WM.5",
+      "realises": [
+        "ArithmeticLocallySymmetricSpacesPartII:WM.5"
+      ],
+      "title": "The bounded-boundary support bridge",
+      "kind": "theorem",
+      "statement": "For a neat Bianchi quotient Y with c cusps and E_n, n≥0, write H_!^i=im(H_c^i→H^i). The support triangle gives 0≤dim H^i−dim H_!^i≤b_i and 0≤dim H_c^i−dim H_!^i≤b_{i−1}, where (b₀,b₁,b₂)=(c,2c,c). Hence |dim H_c^i−dim H^i|≤3c for i=1,2, uniformly in n. In these degrees the Bianchi cuspidal comparison identifies H_!^i with H_cusp^i. Use Poincaré–Lefschetz duality to pair the two interior degrees with the dual coefficients. For n=0, the degree-two restriction onto boundary has a one-dimensional cokernel on a connected quotient; for n>0 the degree-three compact-support term vanishes. Do not assert the nontrivial-coefficient surjectivity statement at n=0.",
+      "hypotheses": [],
+      "proofSteps": [
+        "Import the parent support triangle and take its long exact sequence. The kernel of H_c^i→H^i is an image of H^{i−1}(∂), and its cokernel in H^i is a subspace of H^i(∂).",
+        "Insert cusp-torus-koszul; subtract the two possible nonnegative errors. Their sum gives the stated safe bound 3c.",
+        "Use the Bianchi boundary-kernel/cuspidal comparison in FGT §1 (1.3)–(1.6); retain the ordinary, interior and compact-support maps as distinct objects.",
+        "Import the parent finite-level duality before the automorphic interpretation. H_c³ is dual to H⁰ with dual coefficients; the latter is zero for n>0 and one-dimensional in the connected trivial case."
+      ],
+      "acceptance": [
+        "The difference from interior is controlled separately on both sides of H_c^i→H^i.",
+        "At n=0 a connected quotient has H_c³≃ℂ; a proof that deletes it would give a false boundary surjectivity statement.",
+        "At a neat Bianchi level, degree-one boundary restriction has image dimension c, half of b₁=2c; hence dim H¹−dim H¹_!=c≤2c."
+      ],
+      "prerequisites": [
+        "ArithmeticLocallySymmetricSpacesPartII:WM.5/cusp-torus-koszul",
+        "ArithmeticLocallySymmetricSpaces §ALS.4.1",
+        "ArithmeticLocallySymmetricSpaces §ALS.5a.2",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.4/cuspidal-support-dictionary"
+      ],
+      "sources": [
+        {
+          "sourceId": "fu24",
+          "locator": "§1, equation (2), p. 2; Corollary 1.3, p. 3",
+          "match": "The compact-support interpretation is justified only after bounding the boundary contribution."
+        },
+        {
+          "sourceId": "fgt10",
+          "locator": "§1, pp. 3–4, equations (1.3)–(1.6) and discussion of degree two",
+          "match": "For Bianchi lattices the boundary kernel is the cuspidal subspace, the two degrees are dual, and trivial coefficients have a degree-two boundary exception."
+        }
+      ],
+      "implementationStatus": "unchecked",
+      "library": {
+        "module": "TauCeti/NumberTheory/WeightMultiplicity/Bianchi",
+        "namespace": "TauCeti.WeightMultiplicity"
+      },
+      "planet": {
+        "name": "Bounded-boundary comparison"
+      }
+    },
+    {
+      "id": "ArithmeticLocallySymmetricSpacesPartII:WM.5/finite-type-dimension",
+      "parentStageId": "ArithmeticLocallySymmetricSpacesPartII:WM.5",
+      "realises": [
+        "ArithmeticLocallySymmetricSpacesPartII:WM.5"
+      ],
+      "title": "Classical fixed-type dimension estimate",
+      "kind": "theorem",
+      "statement": "Fix N≥1 and a finite-dimensional complex representation σ of G_N=SL₂(ℤ/Nℤ) with σ^ι≃σ, where ι=diag(−1,1) and σ^ι=σ∘Ad ι; this holds for the restriction to G_N of every representation of GL₂(ℤ/Nℤ). G_N acts on S_k(Γ(N)) by g·f=f|_kγ⁻¹ for any lift γ∈SL₂(ℤ) of g. Let U_N be the upper unipotent subgroup and S₃=(0 −1;1 −1), S₄=(0 −1;1 0). For every k≥2 with σ(−I)=(−1)^k on σ, dim Hom_{G_N}(σ,S_k(Γ(N)))=(k−1)dim σ/12−½dim σ^{U_N}+ε_k tr σ(S₄)+μ_k tr σ(S₃)+δ_{k,2}dim σ^{G_N}, where ε_k=(−1)^{k/2}/4 for k even and 0 for k odd, and μ_k is 0, −1/3, 1/3 for k≡1, 2, 0 mod 3. In particular the multiplicity is (k−1)dim σ/12+O_{N,σ}(1), uniformly in k along the admitted parity classes, and for a fixed finite collection of σ one error constant works for all of them.",
+      "hypotheses": [
+        "σ^ι≃σ for ι=diag(−1,1), as for every restriction of a GL₂(ℤ/Nℤ)-representation",
+        "σ(−I)=(−1)^k on σ, k≥2"
+      ],
+      "proofSteps": [
+        "Use ModularSymbolsPadicLFunctions §0.7 at Γ(N): its compatibility with the normaliser action of SL₂(ℤ) makes S_k⊕S̄_k≃H¹_par(Γ(N),V_{k−2}(ℂ)) an isomorphism of G_N-representations for every N≥1. Since f↦f^c(z)=overline(f(−z̄)) is antilinear and intertwines γ with ιγι for ι=diag(−1,1), S̄_k is S_k twisted by conjugation by ι; hence dim Hom_{G_N}(σ,H¹_par)=m(σ)+m(σ^ι), where m(σ)=dim Hom_{G_N}(σ,S_k(Γ(N))) and σ^ι=σ∘Ad ι. ModularForms §10C supplies the classical spaces, the automorphy line bundle and Riemann–Roch.",
+        "Apply the genus-zero modular-orbifold cohomology calculation: the cusp stabilizer contributes its unipotent-invariant term and the two elliptic stabilizers contribute finite-order character traces. The parabolic cohomology Euler characteristic from SL₂(ℤ)=C₄*_{C₂}C₆ and the induced coefficient system computes m(σ)+m(σ^ι), hence 2m(σ) under the hypothesis σ^ι≃σ; §5.6 consumes only tensor products of the §5.4 types, which are restrictions of GL₂(ℤ/Nℤ)-representations. The hypothesis σ^ι≃σ is used exactly here: without it the cohomology computes only m(σ)+m(σ^ι). This explicit calculation is the fixed-type refinement owned here; ordinary dimension formulas alone do not identify isotypic multiplicities.",
+        "Separate the linear term (k−1)dim σ/12. The elliptic coefficients range over finitely many residue classes modulo twelve, all fixed-type traces and invariant dimensions are constant, and the k=2 correction is bounded."
+      ],
+      "acceptance": [
+        "Taking the trivial type recovers the admitted-parity leading term for level-one cusp forms.",
+        "Opposite central parity gives zero multiplicity and is excluded from the linear estimate.",
+        "Fixing N and σ is necessary for the bounded remainder.",
+        "For N=1, σ=1 and k=12, the periodic expression is 11/12−1/2+1/4+1/3=1; at k=2 it is 1/12−1/2−1/4−1/3+1=0.",
+        "At N=3, k=4: X(Γ(3)) has genus 0 and four regular cusps, so dim S₄(Γ(3))=3·(0−1)+(4/2−1)·4=1. Since S₄(SL₂(ℤ))=0, SL₂(𝔽₃) acts on this line by a nontrivial character, one of the two order-three characters ω, ω̄ (trivial on −I∈Q₈, as k is even); so m(ω) and m(ω̄) are 1 and 0 in some order. Conjugation by ι inverts T=(1 1;0 1), so ω^ι=ω̄, and H¹_par(Γ(3),V₂(ℂ))≃ω⊕ω̄ gives 1 for both: a route through the cohomology character alone cannot separate them. This is the negative control for the hypothesis σ^ι≃σ: for σ=ω (dim σ^{U_3}=0, σ(S₄)=1 as S₄∈Q₈, μ_4=0) the periodic expression gives 3/12+1/4=½, not an integer, whereas for the ι-stable σ=ω⊕ω̄ it gives 6/12+2/4=1=m(ω)+m(ω̄).",
+        "At N=2, G_2≅S₃ and every type is ι-stable (ι≡I mod 2). Γ(2) has genus 0, three cusps and no elliptic points, so dim S_k(Γ(2))=k/2−2 for even k≥4. At k=6 the trivial, sign and two-dimensional types (U_2-invariants 1, 0, 1; S₄-traces 1, −1, 0; S₃-traces 1, 1, −1) give 5/12−1/2−1/4+1/3=0, 5/12+1/4+1/3=1 and 10/12−1/2−1/3=0, total 0+1+2·0=1; at k=8 they give 0, 0 and 1, total 2. A formula with the sign of ε_k reversed gives 1/2 for the trivial type at k=6."
+      ],
+      "prerequisites": [
+        "ModularForms §10C",
+        "ModularSymbolsPadicLFunctions §0.7"
+      ],
+      "sources": [
+        {
+          "sourceId": "fgt10",
+          "locator": "§4.3, Proposition 4.18, pp. 25–26 (arXiv:0808.1204v1)",
+          "match": "The equivariant dimension formula supplies a uniform bounded remainder after extracting the linear coefficient."
+        }
+      ],
+      "implementationStatus": "unchecked",
+      "library": {
+        "module": "TauCeti/NumberTheory/WeightMultiplicity/Bianchi",
+        "namespace": "TauCeti.WeightMultiplicity"
+      }
+    },
+    {
+      "id": "ArithmeticLocallySymmetricSpacesPartII:WM.5/ramified-finite-types",
+      "parentStageId": "ArithmeticLocallySymmetricSpacesPartII:WM.5",
+      "realises": [
+        "ArithmeticLocallySymmetricSpacesPartII:WM.5"
+      ],
+      "title": "Ramified finite local types",
+      "kind": "construction",
+      "statement": "Fix imaginary quadratic F, ramified rational primes R, ν_ℓ=v_ℓ(disc F), and the quadratic local character ω_ℓ. For ℓ∈R use the three local classes of fgt10 Definition 4.3: unramified principal series, PS(α,ω_ℓβ) with α,β unramified, and AI_{F_ℓ/ℚ_ℓ}(θ_ℓ) up to unramified twist with θ_ℓ/θ_ℓ^c unramified quadratic. For the supercuspidal class choose the minimal model of Lemma 4.19: a character θ′_ℓ of the unramified quadratic extension with θ′_ℓ/(θ′_ℓ)^τ=ω_ℓ∘N and conductor exponent ν_ℓ, and choose θ_ℓ giving the same induction. Construct the finite GL₂(ℤ/ℓ^{ν_ℓ}ℤ) types of these fixed classes and restrict them to SL₂. Denote by S₃=(0 −1;1 −1) and S₄=(0 −1;1 0) the order-three and order-four elements. Prove the following dimensions, invariant dimensions, traces and central parities, including ℓ=2 with ν₂=2 or 3.",
+      "hypotheses": [],
+      "proofSteps": [
+        "Construct the principal-series type by finite Borel induction and use the supplied uniqueness of the supercuspidal type to identify its explicit finite model. The finite Borel and supercuspidal constructions are owned here with the stated minimal-conductor normalization.",
+        "Compute characters by the action on lines for principal series and the finite cuspidal or dyadic type model for supercuspidals, as in fgt10 Lemma 4.19. Unramified twists are trivial on GL₂(ℤ_ℓ)."
+      ],
+      "acceptance": [
+        "At ℓ=2, ν₂=2, the principal-series type has dimension 6 and traces (S₃,S₄)=(0,0); the supercuspidal type has dimension 2 and traces (2,0), with central parity −1.",
+        "At ℓ=2, ν₂=3, the corresponding dimensions are 12 and 4, while the supercuspidal traces are (−2,0).",
+        "At ℓ=3 the principal-series type has dimension 4, two unipotent invariants and traces (1,0); the supercuspidal type has dimension 2, no unipotent invariants and traces (S₃,S₄)=(−1,2), since the S₄ formula gives 2(−1)^0=2 at ℓ=3, and central parity −ω₃(−1)=+1. Independently, this type factors through GL₂(𝔽₃)/Q₈≅S₃, whose kernel contains S₄, so σ(S₄)=1; a sign slip giving −2 would force σ(S₄)=−1 although S₄ lies in the kernel. At ℓ=7 the same formula gives 2(−1)^1=−2.",
+        "Twisting by a character of ℚ_ℓ× with conductor beyond ν_ℓ changes the compact type and is excluded by the fixed minimal-conductor model; unramified twists have compact character 1."
+      ],
+      "prerequisites": [
+        "GL2AutomorphicRepresentationsAndTransfer §R16.2.9"
+      ],
+      "sources": [
+        {
+          "sourceId": "fgt10",
+          "locator": "Definition 4.3, p. 20; discussion following Proposition 4.18 and Lemma 4.19, pp. 25–26",
+          "match": "The specialized finite types and their character data are inputs to the owned sum."
+        }
+      ],
+      "implementationStatus": "unchecked",
+      "library": {
+        "module": "TauCeti/NumberTheory/WeightMultiplicity/Bianchi",
+        "namespace": "TauCeti.WeightMultiplicity"
+      },
+      "api": [
+        {
+          "name": "unramifiedFiniteType_data",
+          "role": "",
+          "statement": "The unramified type is trivial, of dimension 1, with one unipotent invariant, both traces 1 and central parity +1."
+        },
+        {
+          "name": "principalSeriesFiniteType_data",
+          "role": "",
+          "statement": "The principal-series type has dimension ℓ^{ν_ℓ−1}(ℓ+1), two upper-unipotent invariants and parity ω_ℓ(−1); its S₃ trace is 0 for ℓ≡2 mod 3, 1 for ℓ=3 and 2 for ℓ≡1 mod 3, and its S₄ trace is 2(−1)^{(ℓ−1)/4} for ℓ≡1 mod 4 and zero otherwise."
+        },
+        {
+          "name": "supercuspidalFiniteType_dimensionsAndCubicTrace",
+          "role": "",
+          "statement": "The supercuspidal type has dimension ℓ^{ν_ℓ−1}(ℓ−1) and no upper-unipotent invariants; its S₃ trace is 0 for ℓ≡1 mod 3, −2 for odd ℓ≡2 mod 3 or (ℓ,ν_ℓ)=(2,3), −1 for ℓ=3 and 2 for (ℓ,ν_ℓ)=(2,2)."
+        },
+        {
+          "name": "supercuspidalFiniteType_quarticTraceAndParity",
+          "role": "",
+          "statement": "Its S₄ trace is 2(−1)^{(ℓ−3)/4} for ℓ≡3 mod 4 and zero otherwise; its parity is −ω_ℓ(−1), except at (ℓ,ν_ℓ)=(2,2), where it is −1."
+        },
+        {
+          "name": "finiteType_tensorProduct",
+          "role": "",
+          "statement": "For tensor products, dimensions, central signs and character values multiply, and upper-unipotent invariants vanish as soon as a supercuspidal factor occurs."
+        }
+      ]
+    },
+    {
+      "id": "ArithmeticLocallySymmetricSpacesPartII:WM.5/sl2-base-change-count",
+      "parentStageId": "ArithmeticLocallySymmetricSpacesPartII:WM.5",
+      "realises": [
+        "ArithmeticLocallySymmetricSpacesPartII:WM.5"
+      ],
+      "title": "The SL₂ base-change multiplicity count",
+      "kind": "theorem",
+      "statement": "For imaginary quadratic F and n≥0, let 𝒜_ℚ(n) consist of the cuspidal GL₂/ℚ classes with holomorphic weight n+2, unramified outside R and with the three ramified local classes just specified, and let R(π)⊆R be the primes where π is ramified. Put Z_F(n)=Σ_{π∈𝒜_ℚ(n)}2^{−|R(π)|}. Write h_L for the class number of an imaginary quadratic field L and ν_{L,n}=1 except that ν_{ℚ(i),n} is 1 exactly for n odd and ν_{ℚ(√−3),n} is 1 exactly for n≡2 mod 3. Let ℒ(F) be the imaginary quadratic fields L≠F with LF/F unramified and R_L the ramified primes of L. For a finite-index open determinant subgroup 𝒟⊆Ô_F× with 𝒟∩O_F×={1}, let X(𝒟) be the characters of the finite quotient 𝔸_{F,f}×/(F×𝒟), with |X(𝒟)|≥1 since it contains the trivial character, and 𝒜_F^{bc}(n,𝒟) the cuspidal twisted-base-change classes of infinity type corresponding to E_n with K(𝒟)-fixed vectors, where K(𝒟)={g∈GL₂(Ô_F):det g∈𝒟}. Prove |𝒜_F^{bc}(n,𝒟)|/|X(𝒟)|=Z_F(n)−ν_{F,n}h_F/2−Σ_{L∈ℒ(F)}ν_{L,n}2^{|R|−|R_L|−2}h_L and that the normalized number of classes fixed by the twist ω_L∘N_{F/ℚ} is ν_{L,n}2^{|R|−|R_L|−2}h_L. Define H_bc¹ as the image in ordinary group cohomology of these actual cuspidal base-change classes via the comparison of fgt10 §3.3; taking the principal ideal component gives dim H_bc¹(SL₂(O_F),E_n)=Z_F(n)−ν_{F,n}h_F/2. This is the specialized finite-level count, including the CM correction.",
+      "hypotheses": [],
+      "proofSteps": [
+        "Use the supplied quadratic base-change cuspidality and descent fibres, then identify the admissible local classes with the specified finite types.",
+        "Count non-CM fibres with weight 2^{−|R(π)|}; count the quadratic self-twist exceptions by their ideal classes and the unit constraints encoded in ν.",
+        "Apply character orthogonality to the X(𝒟)-action on normalized eigenforms: traces are fixed-class counts; in the principal ideal component all the quadratic characters evaluate to +1, cancelling the displayed ℒ(F) corrections."
+      ],
+      "acceptance": [
+        "A non-CM fibre with |R(π)|=2 has four descents, each weighted 1/4, so its total normalized contribution is 1, rather than 4.",
+        "For F=ℚ(i), ℒ(F) is empty and the principal-component correction is ν_{F,n}/2: it is 0 at n=0 and 1/2 at n=1.",
+        "For F=ℚ(√−3), ν_{F,n} at n=0,1,2 is (0,0,1); the CM correction is therefore (0,0,1/2), not a constant in n."
+      ],
+      "prerequisites": [
+        "GL2AutomorphicRepresentationsAndTransfer §§R17.4.2–R17.4.6",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.5/ramified-finite-types"
+      ],
+      "sources": [
+        {
+          "sourceId": "fgt10",
+          "locator": "§3.3, (3.9)–(3.10), p. 17; §4.1, (4.4), pp. 18–19; Definition 4.3, p. 20; Propositions 4.10–4.11, pp. 22–23",
+          "match": "Own the specialized SL₂ restriction and fixed-twist count."
+        }
+      ],
+      "implementationStatus": "unchecked",
+      "library": {
+        "module": "TauCeti/NumberTheory/WeightMultiplicity/Bianchi",
+        "namespace": "TauCeti.WeightMultiplicity"
+      }
+    },
+    {
+      "id": "ArithmeticLocallySymmetricSpacesPartII:WM.5/base-change-linear-count",
+      "parentStageId": "ArithmeticLocallySymmetricSpacesPartII:WM.5",
+      "realises": [
+        "ArithmeticLocallySymmetricSpacesPartII:WM.5"
+      ],
+      "title": "Positive linear base-change contribution",
+      "kind": "theorem",
+      "statement": "For imaginary quadratic F, let R be the set of rational primes ramified in F, s=|R|, and ν_ℓ=v_ℓ(disc F). Put A_F=(1/24)∏_{ℓ∈R}(ℓ^{ν_ℓ}+1), and put B_F=2^{s−4} if every odd ℓ∈R is 1 modulo 4, otherwise B_F=0. The base-change subspace at SL₂(O_F) has dimension (A_F+B_F(−1)^{n+1})(n+1)+R_F(n), where R_F(n) is bounded independently of n. In particular A_F>B_F≥0, so this cuspidal subspace has dimension ≥c_F(n+1) for all sufficiently large n. This node owns the specialized multiplicity count and positivity argument; general cyclic base change, descent ambiguity and type uniqueness keep their supplier owners; the finite types are computed here.",
+      "hypotheses": [],
+      "proofSteps": [
+        "Use the owned SL₂ base-change multiplicity count and ramified finite types; the general transfer and type uniqueness inputs are precisely GL2AutomorphicRepresentationsAndTransfer §§R17.4.2–R17.4.6 and §R16.2.9.",
+        "Use the equivariant classical modular-form dimension calculation of §5.3 (FGT Proposition 4.18), whose hypothesis σ^ι≃σ holds because every summed type is a tensor product of §5.4 types and so the restriction of a GL₂(ℤ/Nℤ)-representation: its leading term is (k−1)dim σ/12, while the unipotent invariant, elliptic trace and weight-two terms are bounded for the fixed finite types. Sum the finitely many admitted local types with the base-change fibre multiplicities, as in FGT Theorem 4.17. Their leading coefficients are A_F±B_F; the class-number and exceptional CM corrections are bounded.",
+        "If B_F≠0, each odd ramified prime contributes at least 6 to the product, and the possible 2-factor is at least 5. If 2∉R, A_F/B_F≥(2/3)·3^s>1; if 2∈R, A_F/B_F≥(5/3)·3^{s−1}>1. If B_F=0, positivity is immediate.",
+        "Take a positive fraction of A_F−B_F and absorb the bounded R_F(n) by choosing one threshold. No asymptotic leading constant is inferred for the entire cuspidal space."
+      ],
+      "acceptance": [
+        "For F=ℚ(i), s=1 and ν₂=2, so A_F=5/24, B_F=1/8 and A_F−B_F=1/12>0.",
+        "The full cusp space may contain non-base-change classes.",
+        "The parity dependence prevents replacing this argument with one universal asymptotic coefficient."
+      ],
+      "prerequisites": [
+        "ArithmeticLocallySymmetricSpacesPartII:WM.5/sl2-base-change-count",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.5/ramified-finite-types",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.5/finite-type-dimension"
+      ],
+      "sources": [
+        {
+          "sourceId": "fgt10",
+          "locator": "§4.3, Theorem 4.17, pp. 24–25; Proposition 4.18 and Lemma 4.19, pp. 25–26; §4.4, Corollary 4.20, p. 27 (arXiv:0808.1204v1)",
+          "match": "The base-change count has two parity-dependent positive linear coefficients and bounded corrections. Corollary 4.20 states the resulting ordinary lower bound; the proof through the base-change subspace supplies the cuspidal bound."
+        },
+        {
+          "sourceId": "fu24",
+          "locator": "§1, pp. 2–3, base-change discussion",
+          "match": "The Bianchi sharpness assertion uses this independent lower-bound input."
+        }
+      ],
+      "implementationStatus": "unchecked",
+      "library": {
+        "module": "TauCeti/NumberTheory/WeightMultiplicity/Bianchi",
+        "namespace": "TauCeti.WeightMultiplicity"
+      },
+      "planet": {
+        "name": "Base-change linear lower bound"
+      }
+    },
+    {
+      "id": "ArithmeticLocallySymmetricSpacesPartII:WM.5/bianchi-lower",
+      "parentStageId": "ArithmeticLocallySymmetricSpacesPartII:WM.5",
+      "realises": [
+        "ArithmeticLocallySymmetricSpacesPartII:WM.5"
+      ],
+      "title": "Lower bounds at the admitted levels",
+      "kind": "theorem",
+      "statement": "Let Γ be any congruence subgroup of finite index in SL₂(O_F), F imaginary quadratic. There exist c_{F,Γ}>0 and n₀ such that dim H¹(Γ,E_n)≥c_{F,Γ}(n+1) for all n≥n₀; the injected base-change subspace is represented by cuspidal automorphic forms. Restriction from SL₂(O_F) is injective because corestriction after restriction is the nonzero scalar [SL₂(O_F):Γ]. At neat Γ this subspace lies in H_cusp¹=H_!¹ and gives the same lower bound there and in degree two by self-dual interior duality. The cusp-form interpretation at the corresponding level follows directly by inclusion of fixed vectors, including at non-neat level.",
+      "hypotheses": [],
+      "proofSteps": [
+        "Apply the maximal-level base-change count and finite-index restriction/corestriction in ordinary group cohomology; this step needs no neatness (fgt10, §3.2, pp. 16–17).",
+        "Restrict the actual cuspidal automorphic forms to the smaller level; at neat Γ identify their cohomological images with the parent’s cuspidal carrier.",
+        "At neat levels apply the self-dual interior pairing for degree two; for cusp-form dimensions use κ=2(n+1)."
+      ],
+      "acceptance": [
+        "Shrinking an admitted level preserves the lower bound.",
+        "Injectivity of pullback does not give a lower bound at a larger arbitrary compact open level.",
+        "For Γ=SL₂(O_F), the index is 1 and restriction/corestriction is the identity; the lower bound applies despite torsion in Γ."
+      ],
+      "prerequisites": [
+        "ArithmeticLocallySymmetricSpacesPartII:WM.5/base-change-linear-count",
+        "ArithmeticLocallySymmetricSpaces §ALS.1.8",
+        "ArithmeticLocallySymmetricSpaces §ALS.3.6",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.4/cuspidal-support-dictionary",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.5/bianchi-boundary"
+      ],
+      "sources": [
+        {
+          "sourceId": "fgt10",
+          "locator": "Theorem 4.17, pp. 24–25; Corollary 4.20, p. 27; §1, pp. 3–4 (arXiv:0808.1204v1)",
+          "match": "The maximal-level base-change subspace has linear growth; finite-index restriction gives the stated smaller-level consequence."
+        },
+        {
+          "sourceId": "fu24",
+          "locator": "Corollary 1.3, p. 3",
+          "match": "The sufficiently small Bianchi levels in the corollary must retain a justified lower-bound class."
+        }
+      ],
+      "implementationStatus": "unchecked",
+      "library": {
+        "module": "TauCeti/NumberTheory/WeightMultiplicity/Bianchi",
+        "namespace": "TauCeti.WeightMultiplicity"
+      }
+    },
+    {
+      "id": "ArithmeticLocallySymmetricSpacesPartII:WM.5/bianchi-two-sided",
+      "parentStageId": "ArithmeticLocallySymmetricSpacesPartII:WM.5",
+      "realises": [
+        "ArithmeticLocallySymmetricSpacesPartII:WM.5"
+      ],
+      "title": "Bianchi growth in four support conventions",
+      "kind": "theorem",
+      "statement": "For the fixed neat congruence levels Γ⊂SL₂(O_F) of finite index, there exist 0<c≤C and n₀ such that for n≥n₀ and i=1,2, c(n+1)≤dim H_cusp^i(Γ,E_n)=dim H_!^i(Γ,E_n)≤C(n+1), and the same two-sided inequalities, after changing c,C,n₀, hold for H^i and H_c^i. Equivalently these dimensions have two-sided linear growth in even κ=2(n+1). At arbitrary fixed adelic level the roadmap asserts the upper bound alone. All constants depend on the field and the fixed level. There is no claim of a ratio tending to one. The ordinary H¹ and H² bounds are the acceptance-test headlines, on Mathlib group cohomology with the actual E_n representation.",
+      "hypotheses": [],
+      "proofSteps": [
+        "Combine bianchi-upper and bianchi-lower for the cuspidal/interior spaces in degrees one and two.",
+        "Ordinary cohomology contains the interior subspace and has the established linear upper bound.",
+        "Compact-support cohomology surjects onto the interior image; bianchi-boundary supplies a uniform upper discrepancy. Equivalently use its 3c bound with ordinary dimensions.",
+        "Absorb the fixed boundary constants by enlarging the threshold and the upper constant."
+      ],
+      "acceptance": [
+        "The result is stable under changing a finite number of small weights.",
+        "The three cohomology spaces may have different dimensions at every weight despite having the same growth order."
+      ],
+      "prerequisites": [
+        "ArithmeticLocallySymmetricSpacesPartII:WM.4/bianchi-upper",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.5/bianchi-lower",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.5/bianchi-boundary"
+      ],
+      "sources": [
+        {
+          "sourceId": "fu24",
+          "locator": "Corollary 1.3, p. 3",
+          "match": "The source’s two-sided growth notation is made explicit, with the support correction and lower-level hypotheses retained."
+        }
+      ],
+      "implementationStatus": "unchecked",
+      "library": {
+        "module": "TauCeti/NumberTheory/WeightMultiplicity/Bianchi",
+        "namespace": "TauCeti.WeightMultiplicity"
+      },
+      "planet": {
+        "name": "Bianchi two-sided linear growth"
+      }
+    }
+  ],
+  "requests": [],
+  "coverage": [
+    {
+      "stageId": "ArithmeticLocallySymmetricSpacesPartII:WM.0",
+      "status": "planned",
+      "remaining": [
+        "The exact supplier contracts and named gaps govern the prerequisites."
+      ]
+    },
+    {
+      "stageId": "ArithmeticLocallySymmetricSpacesPartII:WM.1",
+      "status": "planned",
+      "remaining": [
+        "The exact supplier contracts and named gaps govern the prerequisites."
+      ]
+    },
+    {
+      "stageId": "ArithmeticLocallySymmetricSpacesPartII:WM.2",
+      "status": "planned",
+      "remaining": [
+        "The exact supplier contracts and named gaps govern the prerequisites."
+      ]
+    },
+    {
+      "stageId": "ArithmeticLocallySymmetricSpacesPartII:WM.3",
+      "status": "planned",
+      "remaining": [
+        "The exact supplier contracts and named gaps govern the prerequisites."
+      ]
+    },
+    {
+      "stageId": "ArithmeticLocallySymmetricSpacesPartII:WM.4",
+      "status": "planned",
+      "remaining": [
+        "The exact supplier contracts and named gaps govern the prerequisites."
+      ]
+    },
+    {
+      "stageId": "ArithmeticLocallySymmetricSpacesPartII:WM.5",
+      "status": "planned",
+      "remaining": [
+        "The exact supplier contracts and named gaps govern the prerequisites."
+      ]
+    }
+  ],
+  "gaps": [
+    {
+      "slug": "flat-microlocalisation",
+      "supplier": "NoncommutativeAndEquivariantIwasawa",
+      "section": "Layer 0, after §0.15",
+      "needs": "For odd p and G the product of m≥1 first-congruence SL₂(ℤ_p) groups, construct the rationalized p-adic completed enveloping algebra Û of sl₂(ℤ_p)^m and its natural algebra map A→Û, flat as a right A-module.",
+      "neededBy": [
+        "ArithmeticLocallySymmetricSpacesPartII:WM.1/cyclic-torsion-bound"
+      ],
+      "source": "fu24, (17)–(18), p. 14; aw13, §§10.2–10.4",
+      "checks": [
+        "For g=1+pe in one factor, its image is exp(pe), which acts on Sym¹ by the same matrix 1+pe.",
+        "For M=A, Û⊗_A M=Û; for M=0 it is zero, so the extension is unital and respects the zero module.",
+        "For a ramified coefficient extension of index e≥2, p∈𝔪² and 0∈p+𝔪²; the displayed denominator set is used over ℤ_p, then extended by flat scalar change."
+      ]
+    },
+    {
+      "slug": "algebraic-quotient-comparison",
+      "supplier": "NoncommutativeAndEquivariantIwasawa",
+      "section": "Layer 0, after §0.15",
+      "needs": "For finitely generated left A-module M and W_k, the natural map M/Ann_A(W_k)M→(Û⊗_A M)/Ann_Û(W_k)(Û⊗_A M) is an isomorphism, natural in M.",
+      "neededBy": [
+        "ArithmeticLocallySymmetricSpacesPartII:WM.1/cyclic-torsion-bound"
+      ],
+      "source": "fu24, Theorem 4.3, p. 15",
+      "checks": [
+        "For M=A and k=(1,2), both quotients are End(W_k) of dimension 36, by Layer 0’s rational action quotient.",
+        "For M=0 both quotients have dimension zero; for M=W_k both have dimension D(k+1).",
+        "For M=A/Aδ the comparison identifies the two Hom multiplicities into W_k; δ=1 gives zero on both sides."
+      ]
+    },
+    {
+      "slug": "integral-central-faithfulness",
+      "supplier": "NoncommutativeAndEquivariantIwasawa",
+      "section": "Layer 0, after §0.15",
+      "needs": "For every λ∈ℤ_p^m the composite A→Û→Û/(Δ_i−λ_i)_i is injective, using Δ_i=½h_i²−h_i+2e_if_i and a finite coefficient extension followed by descent when needed.",
+      "neededBy": [
+        "ArithmeticLocallySymmetricSpacesPartII:WM.1/cyclic-torsion-bound"
+      ],
+      "source": "aw14, Theorems 4.6 and 5.4, pp. 11, 16",
+      "checks": [
+        "For p=3 and λ=1, the equation ½μ(μ+2)=λ has μ=−1±√3 after a finite extension; 1+2λ=3 is not a square in ℚ₃.",
+        "For k=0 and k=1 the algebraic Casimir values are 0 and 3/2; reversing ef to fe without the compensating linear term changes the latter value.",
+        "For a nonzero element a∈A, faithful scalar extension sends a to a nonzero element; injectivity after a finite extension therefore descends to ℚ_p."
+      ]
+    },
+    {
+      "slug": "generic-cyclic-growth",
+      "supplier": "NoncommutativeAndEquivariantIwasawa",
+      "section": "Layer 0, after §0.15",
+      "needs": "For δ∈Û whose image is nonzero in every integral central reduction, there is α∈ℕ^m with α_i≥1 such that dim Hom_Û(Û/Ûδ,W_k)≤2Σ_iα_i∏_{j≠i}(k_j+1) for every k∈ℕ^m.",
+      "neededBy": [
+        "ArithmeticLocallySymmetricSpacesPartII:WM.1/cyclic-torsion-bound"
+      ],
+      "source": "fu24, Lemma 3.3, Proposition 3.4 and Theorem 3.2, pp. 8–11",
+      "checks": [
+        "In the PBW rectangle at d=(1,2), the central-reduction rank is (1+1)²(2+1)²=36; at d=0 it is 1.",
+        "For α=(3,3) and k=(1,t), the small-coordinate strip has dim Hom≤2(t+1), while the stated bound is 6(t+1)+12.",
+        "For m=1 and k≥α, ((k+1)²−(k−α+1)²)/(k+1)=2α−α²/(k+1)≤2α; δ=0 fails genericity and would give k+1."
+      ]
+    },
+    {
+      "slug": "skew-rank",
+      "supplier": "NoncommutativeAndEquivariantIwasawa",
+      "section": "§F.1",
+      "needs": "For a two-sided noetherian domain R, construct its classical Ore division ring Q(R) and the finite skew rank dim_{Q(R)}(Q(R)⊗_R M) on finitely generated left R-modules, additive on exact sequences, zero exactly for torsion modules and equal to a on R^a.",
+      "neededBy": [
+        "ArithmeticLocallySymmetricSpacesPartII:WM.1/torsion-filtration",
+        "ArithmeticLocallySymmetricSpacesPartII:WM.2/free-approximation"
+      ],
+      "source": "fu24, §6, pp. 21–23, (33)–(34); NoncommutativeAndEquivariantIwasawa §1.12 for exact Ore scalar extension",
+      "checks": [
+        "For R a division ring, Q(R)=R and rank(R^a)=a, including a=0.",
+        "For R=ℚ_p[X,Y], the ideal (X,Y) has rank 1, its two-generator presentation has kernel rank 1, and R/(X,Y) has rank 0.",
+        "For R=M₂(ℚ_p), nonzero matrices can multiply to zero; the domain hypothesis excludes a nonexistent classical division ring."
+      ]
+    },
+    {
+      "slug": "canonical-dimension-zero",
+      "supplier": "NoncommutativeAndEquivariantIwasawa",
+      "section": "§F.1",
+      "needs": "For a nonzero finitely generated rational Iwasawa module in the semisimple congruence-kernel setting of aw13 §10.12, including deformation index zero, canonical dimension zero is equivalent to finite dimension over the coefficient field.",
+      "neededBy": [
+        "ArithmeticLocallySymmetricSpacesPartII:WM.2/canonical-dimension-zero"
+      ],
+      "source": "aw13, Lemma 10.13, p. 77",
+      "checks": [
+        "For M=W_k, canonical dimension is 0 and coefficient-field dimension is D(k+1), not necessarily 1.",
+        "For M=A, canonical dimension is 3m>0 and coefficient-field dimension is infinite; rank_A A=1 is a different invariant.",
+        "The zero module has all multiplicities zero and is excluded from the nonzero canonical-dimension equivalence."
+      ]
+    }
+  ],
+  "restructure": [
+    {
+      "action": "split",
+      "roadmaps": [
+        "ArithmeticLocallySymmetricSpacesPartII"
+      ],
+      "detail": "The issue explicitly allows one continuation to be planned when the four routes split into independent directions. Weight multiplicity needs completed homology and analytic Iwasawa estimates; Smith/Tate localization, derived Hecke reciprocity and o-minimal quotient geometry have different carriers and endpoints. Their shared arithmetic quotient remains in the parent.",
+      "proposal": "Keep ArithmeticLocallySymmetricSpacesPartII for PAPER-FU-24’s WeightAspectAutomorphicMultiplicity route, planned by WM.0–WM.5 here. Create separate design jobs for (1) SmithTheoryAndModPFunctoriality, title Arithmetic locally symmetric spaces, Part III: Smith theory and mod p functoriality, routing the 37 items of PAPER-TREUMANN-VENKATESH-16 and ending at Theorems 4.4, 5.8, 6.5; (2) DerivedHeckeReciprocity, title Arithmetic locally symmetric spaces, Part IV: derived Hecke operators and reciprocity, routing the 45 items currently addressed to this id in PAPER-VENKATESH-19, with strict global derived Hecke, generation Theorem 7.6, Selmer exterior action Theorem 8.5 and rank-one Proposition 8.6, keeping Conjecture 8.8 conjectural; (3) ArithmeticQuotientDefinability, title Arithmetic locally symmetric spaces, Part V: tame arithmetic quotients, routing the 22 PAPER-BKT-20 items and retaining fixed-K Siegel charts, Cartan-compatible maps preserving the chosen compact subgroups, and the extraction’s unresolved proof gates. Each imports parent quotients and its own suppliers; none is asserted planned by this packet. No queue, reserved id or other packet is edited."
+    }
+  ],
+  "sourceIssues": [
+    {
+      "id": "ArithmeticLocallySymmetricSpacesPartII/E1",
+      "kind": "error",
+      "locator": "Fu arXiv:2201.11190v2 (15 February 2024), §1, equation (2), p. 2; Corollary 1.3, p. 3",
+      "printed": "The dimension comparison labels the group by compact support.",
+      "correction": "Use cuspidal/interior cohomology in the dimension comparison; derive the compact-support growth through the bounded boundary maps.",
+      "reason": "Marshall §2.1 defines the relevant subspace inside ordinary cohomology, and FGT §1 retains a boundary contribution.",
+      "affects": "a stated result",
+      "checks": [
+        "At a neat Bianchi level with c cusps, dim H¹−dim H¹_!=c, and b₁(∂)=2c; compact support cannot be identified with the interior image merely by notation."
+      ]
+    },
+    {
+      "id": "ArithmeticLocallySymmetricSpacesPartII/E2",
+      "kind": "error",
+      "locator": "Fu arXiv:2201.11190v2 (15 February 2024), Theorem 1.5, p. 4; §5, Remark 5.8, p. 21",
+      "printed": "The specialization discussion identifies integral central parameters with those induced by integral torus weights.",
+      "correction": "Induced SL₂ parameters satisfy that 2λ+1 is a square in ℤ_p; not every integral parameter does. Use the AW14 route for the all-integral contract.",
+      "reason": "For p=3, λ=1 is integral while 2λ+1=3 has no square root in ℚ_3. Only the implication from induced to integral holds.",
+      "affects": "a stated result",
+      "checks": [
+        "At p=3, λ=1 gives v₃(1+2λ)=1, whereas every nonzero square has even valuation; after adjoining √3, μ=−1+√3 gives ½μ(μ+2)=1."
+      ]
+    },
+    {
+      "id": "ArithmeticLocallySymmetricSpacesPartII/E3",
+      "kind": "gap",
+      "locator": "Fu arXiv:2201.11190v2 (15 February 2024), Proof of Theorem 5.7, p. 20, used in Theorem 5.1, p. 21",
+      "printed": "The large-radius central-quotient argument infers a domain from an auxiliary associated graded calculation.",
+      "correction": "Supply separatedness or the ideal-contraction identity between the two radii before drawing the domain conclusion. The all-integral faithfulness input is supplied through the independent AW14 route.",
+      "reason": "A zero intersection in the completion does not follow from density, and the filtration on the quotient must be separated. The needed large radii are not covered by the smaller-radius calculation.",
+      "affects": "the proof",
+      "checks": [
+        "In ℚ_p[x] the ideal (1−px) is proper, while 1−px is a unit in ℚ_p⟨x⟩ with inverse Σ_{n≥0}p^n x^n; density alone therefore does not give contraction of ideals."
+      ]
+    },
+    {
+      "id": "ArithmeticLocallySymmetricSpacesPartII/E4",
+      "kind": "misprint",
+      "locator": "Fu arXiv:2201.11190v2 (15 February 2024), Theorem 1.2, pp. 2–3; Corollary 1.3, p. 3",
+      "printed": "The global minimum uses the field-degree index and the Bianchi growth symbol does not specify its normalization.",
+      "correction": "Take the minimum over archimedean places, and state two positive constant bounds for the growth order.",
+      "reason": "There are r₁+r₂ place weights; a two-sided bound does not imply an asymptotic equivalent.",
+      "affects": "nothing",
+      "checks": [
+        "For signature (1,1) there are two place weights and three embedding weights; at parallel κ=4 the upper size is 4³/4=16, and a two-sided estimate permits normalized values alternating between 1 and 2."
+      ]
+    },
+    {
+      "id": "ArithmeticLocallySymmetricSpacesPartII/E5",
+      "kind": "error",
+      "locator": "Fu arXiv:2201.11190v2 (15 February 2024), Theorem 5.7, p. 20",
+      "printed": "The central-radius domain claim allows unrestricted infinitesimal characters.",
+      "correction": "At least restrict to the integral parameter regime used downstream and prove its separatedness; a nonintegral central character can give the zero quotient.",
+      "reason": "If the scalar parameter has norm larger than the Casimir, subtracting it gives a unit, so the central quotient is zero and cannot be a domain.",
+      "affects": "a stated result",
+      "checks": [
+        "If ‖Δ/λ‖<1, then (Δ−λ)⁻¹=−λ⁻¹Σ_{n≥0}(Δ/λ)^n and the central quotient is zero; a domain conclusion must exclude this parameter regime."
+      ]
+    },
+    {
+      "id": "ArithmeticLocallySymmetricSpacesPartII/E6",
+      "kind": "gap",
+      "locator": "Fu arXiv:2201.11190v2 (15 February 2024), Theorem 3.2 and proof, pp. 8–11",
+      "printed": "The proof bounds the PBW rectangle only when every k_i is at least the truncation index α_i.",
+      "correction": "For a small coordinate use D(k+1)≤α_i∏_{j≠i}(k_j+1); the common bound 2Σ_iα_i∏_{j≠i}(k_j+1) covers both regimes.",
+      "reason": "The excluded weights form infinite coordinate strips, so they cannot be absorbed as a finite set of exceptions.",
+      "affects": "the proof",
+      "checks": [
+        "At α=(3,3), k=(1,t), D(k+1)=2(t+1)≤3(t+1), while the common bound is 6(t+1)+12 for every t≥0."
+      ]
+    },
+    {
+      "id": "ArithmeticLocallySymmetricSpacesPartII/E7",
+      "kind": "gap",
+      "locator": "Fu arXiv:2201.11190v2 (15 February 2024), Theorem 1.2, pp. 2–3; §7, pp. 23–24",
+      "printed": "The global proof treats only levels with the selected first-congruence p-component.",
+      "correction": "Choose p split outside the nonmaximal primes of a product subgroup in the given fixed level; refine to a neat product level and use pullback injection.",
+      "reason": "The theorem ranges over arbitrary fixed compact opens, and the refinement index is independent of the weight.",
+      "affects": "the proof",
+      "checks": [
+        "If K′⊂K has index r, trace after pullback is r·id and the normalized composite is id; r is independent of κ, so one constant serves the entire weight orthant."
+      ]
+    },
+    {
+      "id": "ArithmeticLocallySymmetricSpacesPartII/E8",
+      "kind": "misprint",
+      "locator": "Fu arXiv:2201.11190v2 (15 February 2024), §4, equation (16), p. 13",
+      "printed": "The displayed weighted-series description imposes boundedness.",
+      "correction": "For the Banach completion require weighted coefficients to tend to zero; do not use the larger bounded-series space.",
+      "reason": "A series in the norm completion of finite sums must have vanishing weighted tails.",
+      "affects": "a stated result",
+      "checks": [
+        "For r=1/p, coefficients λ_n=p^{−n} give |λ_n|r^n=1 for every n; successive partial sums have distance 1, and so are not Cauchy."
+      ]
+    },
+    {
+      "id": "ArithmeticLocallySymmetricSpacesPartII/E9",
+      "kind": "error",
+      "locator": "Fu arXiv:2201.11190v2 (15 February 2024), §4, equation (17), p. 14",
+      "printed": "The displayed microlocal denominator set is described over a general coefficient ring of integers.",
+      "correction": "Use ℤ_p or an unramified base for that displayed set and obtain finite ramified extensions by the separately proved scalar-extension comparison.",
+      "reason": "In a ramified coefficient ring, p lies in the square of its maximal ideal, so the purported denominator description can contain zero.",
+      "affects": "a stated result",
+      "checks": [
+        "For ramification index 2, p=uϖ² lies in 𝔪², so 0=p+(−p) belongs to p+𝔪²; over ℤ_p the corresponding p+p²Λ cannot contain zero."
+      ]
+    },
+    {
+      "id": "ArithmeticLocallySymmetricSpacesPartII/E10",
+      "kind": "error",
+      "locator": "Finis–Grunewald–Tirao arXiv:0808.1204v1, §4.3, Proposition 4.18, p. 25",
+      "printed": "The isotypic multiplicity formula is stated for every representation σ of SL₂(ℤ/Nℤ) with σ(−I)=(−1)^k.",
+      "correction": "Restrict the formula to σ with σ∘Ad(diag(−1,1))≃σ; the application in Theorem 4.17 uses restrictions of GL₂-types only and is unaffected.",
+      "reason": "The periodic coefficients are real and the Eichler–Shimura route computes only m(σ)+m(σ^ι); for σ not isomorphic to its ι-conjugate the formula can fail.",
+      "affects": "a stated result",
+      "checks": [
+        "At N=3, k=4 and σ an order-three character of SL₂(𝔽₃), the formula gives 3/12+1/4=½, while the true multiplicities of the two order-three characters in the one-dimensional S₄(Γ(3)) are 1 and 0."
+      ]
+    }
+  ],
+  "routeCoverage": [
+    {
+      "item": "PAPER-FU-24/weight-size",
+      "node": "ArithmeticLocallySymmetricSpacesPartII:WM.3/global-local-weights"
+    },
+    {
+      "item": "PAPER-FU-24/sharp-global-bound",
+      "node": "ArithmeticLocallySymmetricSpacesPartII:WM.4/sharp-global-bound"
+    },
+    {
+      "item": "PAPER-FU-24/parallel-bound",
+      "node": "ArithmeticLocallySymmetricSpacesPartII:WM.4/parallel-bound"
+    },
+    {
+      "item": "PAPER-FU-24/bianchi-upper",
+      "node": "ArithmeticLocallySymmetricSpacesPartII:WM.4/bianchi-upper"
+    },
+    {
+      "item": "PAPER-FU-24/bianchi-lower",
+      "node": "ArithmeticLocallySymmetricSpacesPartII:WM.5/bianchi-lower"
+    },
+    {
+      "item": "PAPER-FU-24/bianchi-cohomological-sharpness",
+      "node": "ArithmeticLocallySymmetricSpacesPartII:WM.5/bianchi-two-sided"
+    },
+    {
+      "item": "PAPER-FU-24/multiaffine-bound",
+      "node": "ArithmeticLocallySymmetricSpacesPartII:WM.0/proper-face-majorant"
+    },
+    {
+      "item": "PAPER-FU-24/rank-main-term",
+      "node": "ArithmeticLocallySymmetricSpacesPartII:WM.2/rank-main-term"
+    },
+    {
+      "item": "PAPER-FU-24/higher-homology-bound",
+      "node": "ArithmeticLocallySymmetricSpacesPartII:WM.2/common-homology-bound"
+    },
+    {
+      "item": "PAPER-FU-24/hom-coinvariant-dual",
+      "node": "ArithmeticLocallySymmetricSpacesPartII:WM.1/hom-coinvariant-dual"
+    },
+    {
+      "item": "PAPER-FU-24/cyclic-iwasawa-bound",
+      "node": "ArithmeticLocallySymmetricSpacesPartII:WM.1/cyclic-torsion-bound"
+    },
+    {
+      "item": "PAPER-FU-24/torsion-module-filtration",
+      "node": "ArithmeticLocallySymmetricSpacesPartII:WM.1/torsion-filtration"
+    },
+    {
+      "item": "PAPER-FU-24/fg-torsion-weight-bound",
+      "node": "ArithmeticLocallySymmetricSpacesPartII:WM.1/torsion-bound"
+    },
+    {
+      "item": "PAPER-FU-24/free-approximation",
+      "node": "ArithmeticLocallySymmetricSpacesPartII:WM.2/free-approximation"
+    },
+    {
+      "item": "PAPER-FU-24/homological-shifting",
+      "node": "ArithmeticLocallySymmetricSpacesPartII:WM.2/homological-shifting"
+    },
+    {
+      "item": "PAPER-FU-24/canonical-dimension-zero",
+      "node": "ArithmeticLocallySymmetricSpacesPartII:WM.2/canonical-dimension-zero"
+    },
+    {
+      "item": "PAPER-FU-24/split-auxiliary-prime",
+      "node": "ArithmeticLocallySymmetricSpacesPartII:WM.3/split-auxiliary-prime"
+    },
+    {
+      "item": "PAPER-FU-24/coefficient-realization-comparison",
+      "node": "ArithmeticLocallySymmetricSpacesPartII:WM.3/realization-comparison"
+    },
+    {
+      "item": "PAPER-FU-24/spectral-dimension-bound",
+      "node": "ArithmeticLocallySymmetricSpacesPartII:WM.3/spectral-dimension-bound"
+    },
+    {
+      "item": "PAPER-FU-24/global-local-weight-dictionary",
+      "node": "ArithmeticLocallySymmetricSpacesPartII:WM.3/global-local-weights"
+    },
+    {
+      "item": "PAPER-FU-24/cuspidal-support-dictionary",
+      "node": "ArithmeticLocallySymmetricSpacesPartII:WM.4/cuspidal-support-dictionary"
+    },
+    {
+      "item": "PAPER-FU-24/bianchi-boundary-estimate",
+      "node": "ArithmeticLocallySymmetricSpacesPartII:WM.5/bianchi-boundary"
+    },
+    {
+      "item": "PAPER-FU-24/rank-upper-coinvariants",
+      "node": "ArithmeticLocallySymmetricSpacesPartII:WM.2/rank-upper"
+    },
+    {
+      "item": "PAPER-FU-24/rank-lower-coinvariants",
+      "node": "ArithmeticLocallySymmetricSpacesPartII:WM.2/rank-lower"
+    }
+  ],
+  "ownership": {
+    "parent": "ArithmeticLocallySymmetricSpaces",
+    "own": "Proper-face rank-error calculus and specialized arithmetic weight applications, including the SL₂ finite-level base-change count, finite ramified-type character data and the fixed-type multiplicity formula.",
+    "imports": "Arithmetic quotients, local systems, boundary, level maps and finite duality: ArithmeticLocallySymmetricSpaces. Completed homology, finiteness, torsion and descent: CompletedCohomologyPartII Layers 3–6. Rational Iwasawa and analytic gaps: NoncommutativeAndEquivariantIwasawa. sl₂ highest weights: LieHighestWeight Layer 0; ordinary PBW: the native interface recorded in its Layer 3. General quadratic transfer and type uniqueness: GL2AutomorphicRepresentationsAndTransfer."
+  },
+  "agent": "Codex",
+  "session": "codex-y4I9ML",
+  "acceptanceTest": {
+    "headlines": [
+      {
+        "target": "ArithmeticLocallySymmetricSpacesPartII:WM.2/common-homology-bound",
+        "statableAtPins": false,
+        "missing": "Completed rational Iwasawa homology carrier."
+      },
+      {
+        "target": "ArithmeticLocallySymmetricSpacesPartII:WM.4/sharp-global-bound",
+        "statableAtPins": false,
+        "missing": "Adelic cusp-form space S_κ(K_f)."
+      },
+      {
+        "target": "ArithmeticLocallySymmetricSpacesPartII:WM.5/bianchi-two-sided",
+        "statableAtPins": true,
+        "statement": "For every imaginary quadratic number field F with a complex embedding and every neat subgroup Γ≤SL₂(O_F) containing a principal congruence kernel for a nonzero ideal, the actual E_n representation has finite-dimensional ordinary group cohomology in degrees 1 and 2, with constants 0<c≤C and n₀ such that c(n+1)≤dim_ℂ H^i(Γ,E_n)≤C(n+1) for all n≥n₀ and i∈{1,2}.",
+        "simpleDefinitions": "Restrict TauCeti.symPowerRep along the complex matrix action of Γ and its entrywise complex conjugate, tensor the two representations, and bundle the result in Rep ℂ Γ; use the ordinary principal-kernel containment and neat eigenvalue condition, without a free Prop-valued placeholder."
+      },
+      {
+        "target": "Cuspidal, interior and compact-support Bianchi growth",
+        "statableAtPins": false,
+        "missing": "Support-labelled arithmetic and cuspidal cohomology carriers."
+      }
+    ],
+    "rule": "Suggested.lean states only statable headlines, each with sorry, and the simple real-body definitions they require; its module docstring names every nonstatable headline and missing carrier. Scalar bounds and numerical symmetric-power examples remain README Checks. Use one import Mathlib, the actually used TauCeti symmetric-power module, namespace TauCetiRoadmap.ArithmeticLocallySymmetricSpacesPartII, a single module docstring and docstrings on declarations; no set_option or sorry-defined data."
+  }
+}

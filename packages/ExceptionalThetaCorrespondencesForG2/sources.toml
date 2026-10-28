@@ -1,0 +1,25 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ExceptionalThetaCorrespondencesForG2"
+
+[[source]]
+id = "GS05"
+authors = "Wee Teck Gan; Gordan Savin"
+title = "On minimal representations definitions and properties"
+year = 2005
+locator_scheme = "section"
+locator = "§§3–5"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/390#issuecomment-6391012621"
+
+[[source]]
+id = "HPS"
+authors = "Jing-Song Huang; Pavle Pandzic; Gordan Savin"
+title = "New dual pair correspondences"
+year = 1996
+doi = "10.1215/S0012-7094-96-08219-X"
+locator_scheme = "section"
+locator = "infinitesimal-character correspondence, pp. 447–471"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/390#issuecomment-6391012621"

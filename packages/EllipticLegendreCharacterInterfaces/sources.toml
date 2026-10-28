@@ -1,0 +1,50 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "EllipticLegendreCharacterInterfaces"
+
+[[source]]
+id = "BS20"
+authors = "Michael A. Bennett and Samir Siksek"
+title = "A conjecture of Erdős, supersingular primes and short character sums"
+year = 2020
+doi = "10.4007/annals.2020.191.2.2"
+locator_scheme = "theorem"
+locator = "§5 Lemma 5.2 p.366; §6 equation (17) and Lemmas 6.2, 6.3, 6.5, 6.6 pp.367–371"
+url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v191-n2-p02-s.pdf"
+fetched_from = "https://annals.math.princeton.edu/wp-content/uploads/annals-v191-n2-p02-s.pdf"
+fetched_at = "2026-10-25T02:36:22Z"
+sha256 = "3920a7524a37870942fe3591ac858db23cb604f4331bccd2a6dc5f11a1671fbf"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Publisher version of record; all theorem numbers and printed pages refer to this version."
+cited_for = ["Layers 0–5"]
+
+[[source]]
+id = "K84"
+authors = "Neal Koblitz"
+title = "Introduction to Elliptic Curves and Modular Forms"
+year = 1984
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4684-0255-1"
+locator_scheme = "page"
+locator = "p. 41"
+url = "https://doi.org/10.1007/978-1-4684-0255-1"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["5.1"]
+
+[[source]]
+id = "S09"
+authors = "Joseph H. Silverman"
+title = "The Arithmetic of Elliptic Curves"
+year = 2009
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-0-387-09494-6"
+locator_scheme = "section"
+locator = "III.1 (Weierstrass invariants); III.2 (negation and two-torsion); V.1 (finite-field point counting); X.1, Proposition 1.4 (split two-descent)"
+url = "https://doi.org/10.1007/978-0-387-09494-6"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["0.4–0.5", "0.9–0.10", "1.1", "2.1–2.8", "5.1–5.2"]

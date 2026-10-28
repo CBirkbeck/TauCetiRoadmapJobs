@@ -1,0 +1,219 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "CompletedCohomologyAndLocalGlobalCompatibilityPartII"
+
+[[source]]
+id = "BIP"
+authors = "Gebhard Böckle, Ashwin Iyengar, Vytautas Paškūnas"
+title = "On local Galois deformation rings"
+year = 2023
+doi = "10.1017/fmp.2023.25"
+arxiv = "2110.01638v2"
+locator_scheme = "theorem"
+locator = "Theorem 6.1; Remark 6.2; Lemmas 6.3–6.7; Theorem 6.8; Corollaries 4.19, 4.21–4.22"
+url = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/24192052AB575F076F7D40B4AFF4862E/S2050508623000252a.pdf/on_local_galois_deformation_rings.pdf"
+fetched_from = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/24192052AB575F076F7D40B4AFF4862E/S2050508623000252a.pdf/on_local_galois_deformation_rings.pdf"
+fetched_at = "2026-10-25T12:36:49Z"
+sha256 = "7cfc0e539d38bf3ea5751b19e2f7d0715bdb5fcfca97ad291e3aa1b689c4b43b"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Published 2023 PDF, pp. 1–54; checked theorem numbering against arXiv:2110.01638v2, whose pagination differs."
+cited_for = ["Layers 1, 2, 4–6", "Layers 1–6"]
+
+[[source]]
+id = "EP"
+authors = "Matthew Emerton and Vytautas Paškūnas"
+title = "On the density of supercuspidal points of fixed regular weight in local deformation rings and global Hecke algebras"
+year = 2020
+doi = "10.5802/jep.119"
+locator_scheme = "theorem"
+locator = "Proposition 2.11; Proposition 3.1; Corollary 3.2; Propositions 3.7, 3.19, 3.26; Theorem 5.3; Proposition 6.9"
+url = "https://www.numdam.org/item/10.5802/jep.119.pdf"
+fetched_from = "https://www.numdam.org/item/10.5802/jep.119.pdf"
+fetched_at = "2026-10-25T12:34:36Z"
+sha256 = "0da254e0c562727b3cbd816087b1426beb8860b8aea5277a33d82e088cb791a6"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Published J. Éc. polytech. Math. 7 (2020), pp. 337–371; published pagination."
+cited_for = ["Layers 3, 5, 6"]
+
+[[source]]
+id = "CEGGPS"
+authors = "Ana Caraiani, Matthew Emerton, Toby Gee, David Geraghty, Vytautas Paškūnas and Sug Woo Shin"
+title = "Patching and the p-adic local Langlands correspondence"
+year = 2016
+arxiv = "1310.0831v5"
+locator_scheme = "theorem"
+locator = "§1.8; Lemma 2.2; Theorem 3.7; Lemma 4.18; Corollary 4.26; Appendix A"
+url = "https://arxiv.org/abs/1310.0831v5"
+fetched_from = "https://arxiv.org/pdf/1310.0831v5"
+fetched_at = "2026-10-25T12:34:41Z"
+sha256 = "32acd023be82598de73c1757aba877fbeb89e5b82c23a64bcb378cc0f83b1077"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv:1310.0831v5, 1 July 2016; all locators use that version and its author pagination."
+cited_for = ["Layers 1–6"]
+
+[[source]]
+id = "EG"
+authors = "Matthew Emerton and Toby Gee"
+title = "Moduli stacks of étale (phi, Gamma)-modules and the existence of crystalline lifts"
+year = 2023
+locator_scheme = "theorem"
+locator = "Theorem 1.2.2; Definition 6.4.2; Theorem 6.4.4"
+url = "https://www.math.uchicago.edu/~emerton/pdffiles/moduli.pdf"
+fetched_from = "https://www.math.uchicago.edu/~emerton/pdffiles/moduli.pdf"
+fetched_at = "2026-10-25T12:34:46Z"
+sha256 = "b8c522277ac29f85f4ab901d772acd5d4f9d3d733e36931cf6f4fbbf81c70b7e"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Author copy of Annals of Mathematics Studies 215; printed pp. 3 and 168–169, not PDF page numbers."
+cited_for = ["Layer 1", "gap:crystalline-lift-prescribed-determinant"]
+
+[[source]]
+id = "DPS"
+authors = "Gabriel Dospinescu, Vytautas Paškūnas, Benjamin Schraen"
+title = "Infinitesimal characters in arithmetic families"
+year = 2020
+arxiv = "2012.01041v1"
+locator_scheme = "theorem"
+locator = "Example 5.13; Remark 5.14; Theorem 7.4; Corollary 7.8"
+url = "https://arxiv.org/abs/2012.01041v1"
+fetched_from = "https://arxiv.org/pdf/2012.01041v1"
+fetched_at = "2026-10-25T12:34:50Z"
+sha256 = "91912457f89c75901a57e638849c4f13fd218a75b4030dfcf16892e71c3ad92e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv:2012.01041v1, 2 December 2020; locators use that version and its author pagination."
+cited_for = ["Layers 1, 3"]
+
+[[source]]
+id = "ST"
+authors = "Peter Schneider, Jeremy Teitelbaum"
+title = "Banach space representations and Iwasawa theory"
+year = 2000
+arxiv = "math/0005066v1"
+locator_scheme = "theorem"
+locator = "Lemma 2.1; Corollary 2.2; Theorem 2.3"
+url = "https://arxiv.org/abs/math/0005066v1"
+fetched_from = "https://arxiv.org/pdf/math/0005066v1"
+fetched_at = "2026-10-25T12:34:52Z"
+sha256 = "28dfe78dc1fcbe908641523a17ee1fdec5f330494dfdd5e4a48ac7b181c78747"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv:math/0005066v1 (2000); locators use preprint pagination; published in Israel J. Math. 127 (2002)."
+cited_for = ["Layer 3"]
+
+[[source]]
+id = "NAK"
+authors = "Kentaro Nakamura"
+title = "Zariski density of crystalline representations for any p-adic field"
+year = 2014
+locator_scheme = "theorem"
+locator = "Lemma 4.2"
+url = "https://www.ms.u-tokyo.ac.jp/journal/pdf/jms210103.pdf"
+fetched_from = "https://www.ms.u-tokyo.ac.jp/journal/pdf/jms210103.pdf"
+fetched_at = "2026-10-25T12:34:54Z"
+sha256 = "282b9d442c6423e493996c1170f884a300a8b6cc3de633a13098d75b7fc0660b"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Published J. Math. Sci. Univ. Tokyo 21 (2014), pp. 79–127; Lemma 4.2 on printed pp. 120–122."
+cited_for = ["Layer 6 supplier contract", "6.1 local route", "gap:local-benign-crystalline-points"]
+
+[[source]]
+id = "HP"
+authors = "Yongquan Hu and Vytautas Paškūnas; appendix by Jack Shotton"
+title = "On crystabelline deformation rings of Gal(Q̄_p/ℚ_p)"
+year = 2018
+doi = "10.1007/s00208-018-1671-2"
+arxiv = "1702.06019v2"
+locator_scheme = "theorem"
+locator = "Appendix A, Lemmas A.1 and A.5"
+url = "https://arxiv.org/abs/1702.06019v2"
+fetched_from = "https://arxiv.org/pdf/1702.06019v2"
+fetched_at = "2026-10-25T12:39:35Z"
+sha256 = "40fc1d788e9633f8cc674a48170428f0aaec08aebce9edd54353bad362448dcb"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv:1702.06019v2, 7 March 2018, Appendix A pp. 48–50; cited in this pagination, rather than the 2019 published pagination."
+cited_for = ["Layer 2 completed tensor and geometric splitting supplier gaps"]
+
+[[source]]
+id = "BIPD"
+authors = "Gebhard Böckle, Ashwin Iyengar, Vytautas Paškūnas"
+title = "Zariski density of crystalline points"
+year = 2022
+doi = "10.1073/pnas.2221042120"
+arxiv = "2206.06944v1"
+locator_scheme = "theorem"
+locator = "Propositions 2.6–2.7; Corollary 2.8; Theorem 3.3; proof of Theorem 4.2; Lemma 5.1; Corollary 5.2"
+url = "https://arxiv.org/abs/2206.06944v1"
+fetched_from = "https://arxiv.org/pdf/2206.06944v1"
+fetched_at = "2026-10-25T22:08:59Z"
+sha256 = "a52a55f1185869db58c2d1b87cc0c09b2a91c400481b1c8a3e411c1014590a65"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv:2206.06944v1, 14 June 2022, 12 pp.; locators use that version's numbering and author pagination. Published as Proc. Natl. Acad. Sci. USA 120 (2023); cited in the arXiv numbering."
+cited_for = ["5.2 local route", "6.1 local route", "gap:crystalline-lift-prescribed-determinant", "gap:crystalline-closure-components", "gap:berthelot-points-components"]
+
+[[source]]
+id = "IYE"
+authors = "Ashwin Iyengar"
+title = "Deformation theory of the trivial mod p Galois representation for GL_n"
+year = 2020
+arxiv = "1904.05996v4"
+locator_scheme = "theorem"
+locator = "Propositions 5.9–5.10"
+url = "https://arxiv.org/abs/1904.05996v4"
+fetched_from = "https://arxiv.org/pdf/1904.05996v4"
+fetched_at = "2026-10-25T22:15:37Z"
+sha256 = "6664e8c1e3ec2c4e95ab9dcd135aaa9960d7c802316a5e8a8585bd7629764eea"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv:1904.05996v4, 4 October 2021, 30 pp.; locators use that version's numbering and pagination. Published in Int. Math. Res. Not. IMRN (2020)."
+cited_for = ["gap:crystalline-closure-components"]
+
+[[source]]
+id = "DEJ"
+authors = "A. J. de Jong"
+title = "Crystalline Dieudonné module theory via formal and rigid geometry"
+year = 1995
+doi = "10.1007/BF02698637"
+locator_scheme = "theorem"
+locator = "Lemma 7.1.9"
+url = "http://www.numdam.org/item?id=PMIHES_1995__82__5_0"
+fetched_from = "https://www.numdam.org/item/10.1007/BF02698637.pdf"
+fetched_at = "2026-10-25T22:16:14Z"
+sha256 = "7295b9cb11cb2fed09c139738f71d3983199373d7bf91e21f4278e9c0954cb7d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Publ. Math. IHÉS 82 (1995), pp. 5–96; printed pagination, Lemma 7.1.9 on p. 78."
+cited_for = ["gap:berthelot-points-components"]
+
+[[source]]
+id = "CON"
+authors = "Brian Conrad"
+title = "Irreducible components of rigid spaces"
+year = 1999
+doi = "10.5802/aif.1681"
+locator_scheme = "theorem"
+locator = "Theorem 2.3.1"
+url = "http://www.numdam.org/item?id=AIF_1999__49_2_473_0"
+fetched_from = "https://www.numdam.org/item/10.5802/aif.1681.pdf"
+fetched_at = "2026-10-25T22:16:15Z"
+sha256 = "018cba424595fdfa3a7e817fa3cce46d50f744a27c40ce55fda241ae4d919853"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Ann. Inst. Fourier 49 (1999), no. 2, pp. 473–541; printed pagination, Theorem 2.3.1 on pp. 500–501."
+cited_for = ["gap:berthelot-points-components"]

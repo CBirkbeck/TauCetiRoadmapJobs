@@ -35,7 +35,7 @@ library = "TauCetiProject/TauCeti"
 # Who may file targets: org teams ("team:org/slug") and bare logins. Other target issues are closed by board sync.
 target_filers = ["team:TauCetiProject/humans", "roed-math"]
 # Logins whose open roadmap pull requests count as ours in merge-order chains (the hosted workflow runs as a bot).
-operators = ["CBirkbeck"]
+operators = ["CBirkbeck", "roed-math", "kim-em"]
 # Label every job issue carries, so that a board inside the content repository stays separable.
 namespace_label = "roadmap-job"
 # Folder (in the packages repository) holding one sub-folder per roadmap: packages/<Name>/.
@@ -69,6 +69,10 @@ merge_order_file = "merge-order/ORDER.txt"
 # Label the port lane puts on every pull request it opens; the merge-order chain and the red-team
 # lanes find their pull requests by it.
 pr_label = "roadmap-worker"
+# The pool: operators who act for one another on managed roadmap pull requests (the label above and the
+# body marker). A pull request whose author is in the pool gets gate rounds any pool member may take; a
+# pool member's reply counts as the author's; the repair is pushed onto the pull request's own branch.
+pool = ["CBirkbeck", "kim-em", "roed-math"]
 # Open the final pull request as a draft (today's rule). A human marks it ready, unless
 # redteam.ready_after says otherwise.
 open_as_draft = true
@@ -122,6 +126,16 @@ ready_after = false
 # The design lane is the only expensive one: at most this many design jobs per operator per day.
 daily_cap = 10
 
+# AI review of every open roadmap pull request (any author): one PRREVIEW job per new head, the
+# `ai-approved` label while the latest review accepts the current head; a human still approves and merges.
+[prreview]
+enabled = true
+label = "ai-approved"
+per_run = 5
+authors = []
+skip_authors = []
+require_single_folder = true
+
 [agents]
 # Default agent for every lane: "codex" or "claude". Operators override per run with --agent.
 default = "codex"
@@ -133,6 +147,10 @@ timeout_minutes = 360
 # Per-lane overrides: `agent` pins the family, `model` its model; `codex_model` and `claude_model` pin
 # the model per family and leave the family to the worker. Reviews run only on the review models.
 [agents.lanes.review]
+codex_model = "gpt-6-astra"
+claude_model = "fable"
+
+[agents.lanes.prreview]
 codex_model = "gpt-6-astra"
 claude_model = "fable"
 

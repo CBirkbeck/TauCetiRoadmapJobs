@@ -2,15 +2,240 @@ schema = "tauceti-roadmap-sources/v1"
 roadmap = "GrossZagierAndArithmeticHeights"
 
 [[source]]
-id = "yzz-book"
-authors = "['Xinyi Yuan', 'Shou-Wu Zhang', 'Wei Zhang']"
-title = "The Gross–Zagier Formula on Shimura Curves"
-year = 2013
+id = "muller-stoll"
+authors = "J. Steffen Müller and Michael Stoll"
+title = "Computing canonical heights on elliptic curves in quasi-linear time"
+year = 2015
+venue = "LMS J. Comput. Math. 19 (2016) 391-405"
+doi = "10.1112/S1461157016000139"
+arxiv = "1509.08748v2"
 locator_scheme = "theorem"
-locator = "Proposition 5.8; Theorem 7.8(4); Chapters 1, 5–8 as cited in the README"
-licence_class = "none"
-status = "waived"
-resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/209#issuecomment-6324326191"
+locator = "Remark 3.1, p. 4 (arXiv v2); §3, p. 3 (arXiv v2); J. Steffen Müller and Michael Stoll; arXiv:1509.08748v2 (22 Dec 2015); published in LMS J. Comput. Math. 19 (2016)."
+url = "https://arxiv.org/abs/1509.08748v2"
+fetched_from = "https://arxiv.org/pdf/1509.08748v2"
+fetched_at = "2026-10-22T18:00:53Z"
+sha256 = "10576e85c77e8e7c590671840586bc4680e638d03daf7802e230a4897ac3384c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v2"
+cited_for = ["0.1", "Dependencies"]
+
+[[source]]
+id = "lmfdb"
+authors = "The LMFDB Collaboration"
+title = "The L-functions and modular forms database"
+year = 2026
+locator_scheme = "theorem"
+locator = "Elliptic curve 37.a1, BSD invariants (accessed 2026-09-28); 37.a1 curve page, Mordell–Weil generators and BSD invariants/computation conventions (accessed 2026-10-10); 37.a1 curve page, Mordell–Weil generators and BSD invariants/computation conventions (accessed2026-10-10); The LMFDB Collaboration; Curve 37.a1, Mordell–Weil generators and BSD invariants, accessed 10 October 2026."
+url = "https://www.lmfdb.org/EllipticCurve/Q/37a1/"
+fetched_from = "https://www.lmfdb.org/EllipticCurve/Q/37a1/"
+fetched_at = "2026-10-22T18:00:54Z"
+sha256 = "02f658be6f4783440044c35a9f3706b27bf598b9bbf0d786261a74f722b45f82"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["0.1", "0.6", "Dependencies"]
+
+[[source]]
+id = "gross84"
+authors = "Benedict H. Gross"
+title = "Heegner points on X₀(N)"
+year = 1984
+locator_scheme = "theorem"
+locator = "§I.4, (4.1)–(4.2), pp.89–90, for conjugation, ring-class rationality and arithmetic Artin action; the tower square is the order-inclusion specialization of the cited class-field functoriality; §§I.1–I.4, pp.87–90, especially the lattice construction in I.2 and (4.2); §§I.1–I.3, pp.87–89, lattice and quadratic-equation descriptions; §I.5, (5.1)–(5.2), p.90; Benedict H. Gross; in *Modular Forms*, Ellis Horwood (1984), pp.87–105; §§I.1–I.5, pp.87–90 supply the proper-ideal cyclic pairs and Artin convention."
+url = "https://www.wstein.org/papers/bib/gross-heegner_points_on_X0N.pdf"
+fetched_from = "https://www.wstein.org/papers/bib/gross-heegner_points_on_X0N.pdf"
+fetched_at = "2026-10-22T18:07:03Z"
+sha256 = "3779965e64fa6d0bfbe27f8499d11748945a2badffdbdfcd2be24201dd7d5432"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["0a.1", "0a.2", "0a.3", "0.12", "Dependencies"]
+
+[[source]]
+id = "conrad"
+authors = "Brian Conrad (with an appendix by W. R. Mann)"
+title = "Gross–Zagier revisited"
+year = 2004
+locator_scheme = "theorem"
+locator = "§1, 'Some conventions', p. 69; with u equal to half the full automorphism count; §1, 'Some conventions', p. 69; Published MSRI 49 (2004), §9, Theorem 9.2, pp. 123–125; Definition 9.5, pp. 126–127; §9, (9.9)–(9.12), printed pp.126–127; §10, (10.2)–(10.3), pp.130–131; Theorem9.6, (9.16)–(9.18), pp.129–130; Lemma10.1 and its proof, pp.131–133; Theorem10.5(1), pp.134–139; Theorem10.5(2), pp.134–139; Theorem10.5(3), pp.134–139; Lemma10.1 and Theorem10.4, pp.131–134; (9.18), p.130; TheoremA.1 and (A.9)–(A.10), pp.139–140; TheoremA.1, p.139; (A.9)–(A.10), p.140; Theorem A.17, pp.156–161; Theorem A.20, p.162; Brian Conrad (with an appendix by W. R. Mann); Heegner Points and Rankin L-Series, MSRI Publications 49 (2004) 67–163; SLMath library PDF; printed page = PDF page + 65."
+url = "https://library.slmath.org/books/Book49/files/05conrad.pdf"
+fetched_from = "https://library.slmath.org/books/Book49/files/05conrad.pdf"
+fetched_at = "2026-10-22T18:07:08Z"
+sha256 = "31396cc7f513d6237155b6afa923c6ef76d2f37101db598d58bea25f0aa677ca"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["0.4", "0.5", "7.63", "7.76", "7.83", "7.85", "7.89", "7.90", "7.91", "7.92", "7.93", "7.97", "7.98", "7.99", "Dependencies"]
+
+[[source]]
+id = "cst"
+authors = "Li Cai, Jie Shu and Ye Tian"
+title = "Explicit Gross–Zagier and Waldspurger formulae"
+year = 2014
+venue = "Algebra Number Theory 8 (2014) 2523-2572"
+doi = "10.2140/ant.2014.8.2523"
+arxiv = "1408.1733v2"
+locator_scheme = "theorem"
+locator = "arXiv v2: §§1.1–1.2, pp. 1–12, Theorems 1.1, 1.5–1.6, 1.8–1.9, Definitions 1.3–1.4, Special cases 1–2; §2, equation (2.1), pp. 12–13; §2.1, Proposition 2.1 and equation (2.2), p. 14; §2.3, Lemma 2.3 and equation (2.4), pp. 17–19; §2.4, p. 19; §§3.1–3.4, pp. 21–31, Lemmas 3.1, 3.5, 3.13–3.14, Propositions 3.7, 3.11–3.12."
+url = "https://arxiv.org/abs/1408.1733v2"
+fetched_from = "https://arxiv.org/pdf/1408.1733v2"
+fetched_at = "2026-10-22T18:07:15Z"
+sha256 = "8d908543404abfbd9c1708ad9af696c4fb71595701bd67cb5bff11b3a8d6ac43"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v2"
+cited_for = ["0a.2", "0a.4", "0.2", "0.3", "0.4", "0.9", "0.10", "1.2", "1.5", "3.2", "3.3", "3.4", "3.6", "4.1", "4.2", "4.3", "4.4", "4.5", "4.6", "4.7", "5.3", "5.4", "5.5", "5.6", "8.2", "8.4", "8.5", "8.7", "8.8", "8.9", "8.10", "8.11", "8.12", "8.14", "8.15", "8.16", "8.17", "8.18", "8.19", "Dependencies", "9.9 dyadic constants"]
+
+[[source]]
+id = "gz86"
+authors = "Benedict H. Gross and Don B. Zagier"
+title = "Heegner points and derivatives of L-series"
+year = 1986
+locator_scheme = "theorem"
+locator = "Published edition: I §§3–6, 9, pp. 227–233, especially (4.2)–(4.3), (5.3)–(5.5), Theorems (6.1)–(6.3), (6.4)–(6.5), Proposition (9.1), (9.2); II §§1–5, pp. 235–252; III introduction and §§1–9, pp. 252–267; IV introduction and §§1–6, pp. 267–305, especially (0.1)–(0.4), Propositions (1.2), (2.4), (3.2)–(3.3), Corollary (3.4), Propositions (4.3)–(4.6), (5.1), Theorems (5.6), (5.8), Proposition (6.2), (6.6), Propositions (6.7)–(6.8), Theorem (6.9); V §§1–3, pp. 306–314, especially Corollaries (1.1)–(1.3), Theorem (2.1)."
+url = "https://people.mpim-bonn.mpg.de/zagier/files/doi/10.1007/BF01388809/fulltext.pdf"
+fetched_from = "https://people.mpim-bonn.mpg.de/zagier/files/doi/10.1007/BF01388809/fulltext.pdf"
+fetched_at = "2026-10-22T18:07:20Z"
+sha256 = "8afee839cdc0e2056c6dcbe348e39c0a6aa27344125d8c3b80dd735f2e6d9521"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["0a.2", "0a.3", "0.4", "0.8", "0.11", "0.12", "1.3", "1.4", "2.1", "2.5", "2.11", "2.12", "2.15", "3.5", "3.9", "3.11", "3.12", "3.13", "5.3", "6.1", "6.2", "6.10", "6.11", "6.12", "6.13", "6.14", "6.15", "6.16", "6.17", "6.18", "6.19", "6.26", "6.27", "6.28", "6.29", "6.30", "6.31", "6.32", "6.33", "6.34", "6.35", "6.36", "6.37", "6.41", "6.42", "6.43", "6.44", "6.45", "6.46", "6.47", "6.48", "6.53", "6.54", "6.55", "6.58", "6.59", "6.60", "6.62", "6.63", "6.64", "6.65", "6.66", "6.67", "6.68", "6.69", "6.70", "6.71", "6.72", "6.73", "6.74", "6.75", "6.76", "6.77", "6.78", "7.1", "7.3", "7.17", "7.18", "7.19", "7.20", "7.21", "7.22", "7.23", "7.24", "7.36", "7.37", "7.38", "7.39", "7.40", "7.41", "7.42", "7.43", "7.44", "7.45", "7.46", "7.54", "7.55", "7.56", "7.57", "7.58", "7.59", "7.60", "7.61", "7.62", "7.64", "7.68", "7.69", "7.70", "7.71", "7.72", "7.73", "7.74", "7.75", "7.79", "7.80", "7.81", "7.82", "7.83", "7.84", "7.85", "7.87", "7.88", "7.89", "7.90", "7.91", "7.92", "7.93", "7.94", "7.95", "7.96", "7.97", "7.98", "7.99", "7.100", "7.101", "7.102", "7.103", "7.104", "7.105", "7.106", "7.107", "7.108", "7.109", "8.4", "8.6", "8.8", "8.15", "8.19", "8.20", "Dependencies"]
+
+[[source]]
+id = "zhang-survey"
+authors = "Shou-Wu Zhang"
+title = "Arithmetic of Shimura curves"
+year = 2010
+locator_scheme = "theorem"
+locator = "§4.3, Theorem 4.3.1(2), p. 588; §4.2, p. 586; §4.2, p. 587; §4.2, Theorem 4.2.1, p. 587; §4.3, Theorem 4.3.1, p. 588; §4.3, Theorem 4.3.1, p. 588; Shou-Wu Zhang; Science China Mathematics 53 (2010), no. 3, 573–592, doi:10.1007/s11425-010-0046-2; author's PDF."
+url = "https://web.math.princeton.edu/~shouwu/publications/crmnote.pdf"
+fetched_from = "https://web.math.princeton.edu/~shouwu/publications/crmnote.pdf"
+fetched_at = "2026-10-22T18:07:22Z"
+sha256 = "1f46be497752b0795dbef8b06b423ef7bea5203096d3480c6da2642c333e73f0"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["8.2", "8.3", "8.8", "8.9", "8.11", "8.13", "8.18", "Dependencies"]
+
+[[source]]
+id = "yzz-erratum-pku"
+authors = "X. Yuan, S.-W. Zhang and W. Zhang"
+title = "Erratum to The Gross–Zagier Formula on Shimura Curves"
+year = 2026
+locator_scheme = "theorem"
+locator = "items 4, 5, 10, 13, 15; item30 and §2; items8,30,31; items18,19,30; X. Yuan, S.-W. Zhang and W. Zhang; 28 June 2026."
+url = "http://faculty.bicmr.pku.edu.cn/~yxy/preprints/erratum-GZSC.pdf"
+fetched_from = "https://faculty.bicmr.pku.edu.cn/~yxy/preprints/erratum-GZSC.pdf"
+fetched_at = "2026-10-22T18:07:29Z"
+sha256 = "e4c4eaeb197ceaf18b02955d90a56e52e4776eca1f31c88c16074adaf19d8d1e"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["0.7", "6.3", "6.20", "6.39", "Dependencies"]
+
+[[source]]
+id = "jetchev"
+authors = "D. Jetchev"
+title = "Global divisibility of Heegner points and Tamagawa numbers"
+year = 2008
+locator_scheme = "theorem"
+locator = "§1, p.812; D. Jetchev; Compositio Math. 144 (2008)."
+url = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/475417137355BE27B3888862CADB0286/S0010437X08003497a.pdf/global_divisibility_of_heegner_points_and_tamagawa_numbers.pdf"
+fetched_from = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/475417137355BE27B3888862CADB0286/S0010437X08003497a.pdf/global_divisibility_of_heegner_points_and_tamagawa_numbers.pdf"
+fetched_at = "2026-10-22T18:07:30Z"
+sha256 = "f887790bbbf0a1831685f697cfe20b403ca515be4c4176705efa24e3077307ed"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["3.7", "Dependencies"]
+
+[[source]]
+id = "cns"
+authors = "K. Česnavičius, M. Neururer and A. Saha"
+title = "The Manin constant and the modular degree"
+year = 2022
+arxiv = "1911.09446v3"
+locator_scheme = "theorem"
+locator = "§5 Proposition 5.14 and Theorem 5.15, pp. 39–40, Remark 5.16, p. 40; §6 Proposition 6.2, p. 41, Example 6.7, p. 43, Remark 6.11, p. 45, Theorem 6.12 and Corollary 6.14, p. 46; §7 Theorem 7.2, p. 47; Introduction, p.2; Introduction p.2; Lemma6.5; Theorems1.1–1.2, p.3; §3, Theorems 3.14–3.15, p.21; Theorem 4.6, p.30; Introduction pp.2–3; K. Česnavičius, M. Neururer and A. Saha; arXiv:1911.09446, 3 November 2022.; Theorems 3.14–3.15, pp. 21–22; Theorem 4.6, p. 30"
+url = "https://arxiv.org/abs/1911.09446v3"
+fetched_from = "https://arxiv.org/pdf/1911.09446v3"
+fetched_at = "2026-10-22T18:07:38Z"
+sha256 = "4d76a0daf4ffa103a4a96f6fafe6de22c44e194cd2c47489c75be8967f1d5448"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v3"
+cited_for = ["3.1", "3.5", "3.7", "3.8", "3.10", "Dependencies", "3.1 local and cusp bounds"]
+
+[[source]]
+id = "dit"
+authors = "W. Duke, Ö. İmamoğlu and Á. Tóth"
+title = "Geometric invariants for real quadratic fields"
+year = 2016
+locator_scheme = "theorem"
+locator = "published Annals 184 (2016), §5 Theorem4 pp.965–966 and (5.17) p.966; W. Duke, Ö. İmamoğlu and Á. Tóth; Ann. Math. 184 (2016), 949–990."
+url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v184-n3-p08-p.pdf"
+fetched_from = "https://annals.math.princeton.edu/wp-content/uploads/annals-v184-n3-p08-p.pdf"
+fetched_at = "2026-10-22T18:07:42Z"
+sha256 = "a67de7157f76ee700bc2e6a0034a920adc390022d4ff528aa80084f829f35f61"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["5.2", "Dependencies"]
+
+[[source]]
+id = "yuan-zhang"
+authors = "X. Yuan and S. Zhang"
+title = "On the averaged Colmez conjecture"
+year = 2018
+locator_scheme = "theorem"
+locator = "Published edition: §6.2, equation (6.2.1), pp. 579–581; Lemma 6.1, pp. 582–583; §7.1, Assumption 7.1 and Theorem 7.2, pp. 583–590; §7.2, Lemma 7.3, pp. 590–592; §7.3, Lemmas 7.4–7.6, pp. 592–604; §8.1, Theorem 8.1, pp. 605–609; §§8.2–8.3, Propositions 8.2–8.3, Lemma 8.4, Proposition 8.5, Theorem 8.6, Lemmas 8.7–8.9 and Remark 8.10, pp. 609–624; §9.1, Proposition 9.2, pp. 625–628; §9.2, Theorem 9.3 and Lemmas 9.4–9.5, pp. 629–635; §1.3, p. 540."
+url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v187-n2-p04-p.pdf"
+fetched_from = "https://annals.math.princeton.edu/wp-content/uploads/annals-v187-n2-p04-p.pdf"
+fetched_at = "2026-10-22T18:07:48Z"
+sha256 = "29dfd5f19dec401116f1eaf0305305acf5f2fc68aa3c90d4eb6e5222de50d507"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["2.14", "6.1", "6.3", "6.4", "6.5", "6.6", "6.7", "6.8", "6.9", "6.20", "6.21", "6.22", "6.23", "6.24", "6.25", "6.38", "6.40", "6.49", "6.50", "6.51", "6.52", "6.56", "6.57", "6.61", "7.1", "7.2", "7.4", "7.6", "7.7", "7.8", "7.9", "7.10", "7.11", "7.12", "7.13", "7.14", "7.15", "7.16", "7.25", "7.26", "7.27", "7.28", "7.29", "7.30", "7.31", "7.32", "7.33", "7.34", "7.35", "7.47", "7.48", "7.49", "7.50", "7.51", "7.52", "7.53", "7.65", "7.66", "7.67", "7.77", "7.78", "7.86", "Dependencies"]
+
+[[source]]
+id = "gqt"
+authors = "W. T. Gan, Y. Qiu and S. Takeda"
+title = "The regularized Siegel–Weil formula (the second term identity) and the Rallis inner product formula"
+year = 2013
+arxiv = "1207.4709v3"
+locator_scheme = "theorem"
+locator = "arXiv:1207.4709v3 §1.7, pp.3–4; W. T. Gan, Y. Qiu and S. Takeda; arXiv:1207.4709v3."
+url = "https://arxiv.org/abs/1207.4709v3"
+fetched_from = "https://arxiv.org/pdf/1207.4709v3"
+fetched_at = "2026-10-22T18:07:55Z"
+sha256 = "cde6b7ad22b974d4159f8cedd1e14a00bf4b05ec977ab750b54fdceb067adac5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v3"
+cited_for = ["5.1", "Dependencies"]
+
+[[source]]
+id = "yuan-bigness-pku"
+authors = "X. Yuan"
+title = "Arithmetic bigness and a uniform Bogomolov-type result"
+year = 2024
+locator_scheme = "theorem"
+locator = "21 August 2024 author manuscript, §A.1, p.102; 21 August 2024 author manuscript, §A.1, p.103; 21 August 2024 author manuscript, §A.6, p.119; X. Yuan; author manuscript 21 August 2024; Ann. Math. 203 (2026), 15–119 (the author manuscript supplies the locators here)."
+url = "http://faculty.bicmr.pku.edu.cn/~yxy/preprints/bigness_and_bogomolov.pdf"
+fetched_from = "https://faculty.bicmr.pku.edu.cn/~yxy/preprints/bigness_and_bogomolov.pdf"
+fetched_at = "2026-10-22T18:08:03Z"
+sha256 = "b36f4860cc0f098ef062523e8a5147e8172d1e4e357fc76a63cd7c0d782a813e"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["2.2", "2.4", "2.6", "2.7", "2.8", "2.10", "2.13", "Dependencies"]
 
 [[source]]
 id = "yzz-draft"
@@ -22,3 +247,338 @@ locator = "Proposition 2.2.1, pp.47–49; Theorems 7.1.1–7.1.2 and Proposition
 licence_class = "none"
 status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/209#issuecomment-6324326191"
+
+[[source]]
+id = "saito"
+authors = "Hiroshi Saito"
+title = "On Tunnell’s formula for characters of GL(2)"
+year = 1993
+locator_scheme = "theorem"
+locator = "§1, pp.99–100; §2 proof, pp.100–108; Hiroshi Saito; Compositio Mathematica 85 (1993), 99–108, Numdam published scan."
+url = "https://www.numdam.org/article/CM_1993__85_1_99_0.pdf"
+fetched_from = "https://www.numdam.org/article/CM_1993__85_1_99_0.pdf"
+fetched_at = "2026-10-22T18:08:04Z"
+sha256 = "a408e77de59464ed1a365169302c7a5518ec6628d9d2df59ac55395d90b366ea"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["4.2", "Dependencies"]
+
+[[source]]
+id = "waldspurger"
+authors = "Jean-Loup Waldspurger"
+title = "Sur les valeurs de certaines fonctions L automorphes en leur centre de symétrie"
+year = 1985
+locator_scheme = "theorem"
+locator = "II.1 Theorem 1, p. 184; II.2 Proposition 3 and corollary, pp. 184–187; Jean-Loup Waldspurger; Compositio Mathematica 54 (1985), 173–242, Numdam published scan."
+url = "https://www.numdam.org/item/CM_1985__54_2_173_0.pdf"
+fetched_from = "https://www.numdam.org/item/CM_1985__54_2_173_0.pdf"
+fetched_at = "2026-10-22T18:08:06Z"
+sha256 = "8617e704eceacf3ee5aa7c266b6f51db44b64e7d59622fc3a7de542e425a3158"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["5.1", "5.3", "Dependencies"]
+
+[[source]]
+id = "edixhoven"
+authors = "Bas Edixhoven"
+title = "Edixhoven, Minimal resolution and stable reduction of X₀(N)"
+year = 1990
+locator_scheme = "theorem"
+locator = "Bas Edixhoven; Ann. Inst. Fourier40 (1990), pp.31–67."
+url = "https://www.numdam.org/item/10.5802/aif.1202.pdf"
+fetched_from = "https://www.numdam.org/item/10.5802/aif.1202.pdf"
+fetched_at = "2026-10-22T18:08:08Z"
+sha256 = "cff6a257adcae5ca95a9859ec7a0319a363718bac3a40fe8afe146e59da5926a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["Dependencies"]
+
+[[source]]
+id = "yzz-book"
+authors = "['Xinyi Yuan', 'Shou-Wu Zhang', 'Wei Zhang']"
+title = "The Gross–Zagier Formula on Shimura Curves"
+year = 2013
+locator_scheme = "theorem"
+locator = "Proposition 5.8; Theorem 7.8(4); Chapters 1, 5–8 as cited in the README"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/209#issuecomment-6324326191"
+
+[[source]]
+id = "skinner-published"
+authors = "Christopher Skinner"
+title = "A converse to a theorem of Gross, Zagier, and Kolyvagin"
+year = 2020
+doi = "10.4007/annals.2020.191.2.1"
+arxiv = "1405.7294v1"
+locator_scheme = "theorem"
+locator = "Published §2.6, pp. 342–343, Proposition 2.6.1, Corollary 2.6.2; arXiv v1 §2.6, pp. 13–14"
+url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v191-n2-p01-s.pdf"
+fetched_from = "https://annals.math.princeton.edu/wp-content/uploads/annals-v191-n2-p01-s.pdf"
+fetched_at = "2026-10-22T18:08:10Z"
+sha256 = "cfdfab6e62ac507be40d1f0bc8d9cb8371d95b42c5ae259fde054c70fb20c214"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "Published §2.6 pp. 342–343 uses O^ur; arXiv v1 §2.6 pp. 13–14 uses O. Published locators refer to the linked Annals edition."
+
+[[source]]
+id = "jsw"
+authors = "Dimitar Jetchev, Christopher Skinner and Xin Wan"
+title = "The Birch and Swinnerton-Dyer formula for elliptic curves of analytic rank one"
+year = 2015
+arxiv = "1512.06894v1"
+locator_scheme = "theorem"
+locator = "§4.1, after (gen-H), p. 25; proof of Proposition 5.1.7, pp. 34–35; §5.1, list after (5.1.a), p. 32; §5.1.5, Proposition 5.1.6, p. 34; §5.1.5, p. 34; §5.1, p. 31; §5.1, display (5.1.a), p. 32; §5.1, Remark 5.1.1(c), p. 32; §5.1.5, Proposition 5.1.7, p. 34; §5.1.5, proof of Proposition 5.1.7, pp. 34–35; Dimitar Jetchev, Christopher Skinner and Xin Wan; arXiv:1512.06894v1 (21 Dec 2015), published in Cambridge Journal of Mathematics 5 (2017) 369–434."
+url = "https://arxiv.org/abs/1512.06894v1"
+fetched_from = "https://arxiv.org/pdf/1512.06894v1"
+fetched_at = "2026-10-22T18:08:16Z"
+sha256 = "908562efdddaf46b2653317294cb65ae627802bc996400a779b1cd51b5a7d49d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v1"
+cited_for = ["8.3", "9.1", "9.6", "9.7", "9.10", "9.11", "9.15", "9.16", "9.18", "Dependencies"]
+
+[[source]]
+id = "bdp"
+authors = "Massimo Bertolini, Henri Darmon and Kartik Prasanna (appendix by Brian Conrad)"
+title = "Generalized Heegner cycles and p-adic Rankin L-series"
+year = 2013
+locator_scheme = "theorem"
+locator = "Remark 2.6 and Proposition 2.7, published p. 1063; §5.2, (5.2.3) and Proposition 5.10, pp. 1134–1135; §5.3, Theorem 5.13, p. 1137; Introduction, p. 1038; Massimo Bertolini, Henri Darmon and Kartik Prasanna (appendix by Brian Conrad); Duke Mathematical Journal 162 (2013), no. 6, 1033–1148, doi:10.1215/00127094-2142056 (published version, from Darmon's publication page)."
+url = "https://www.math.mcgill.ca/darmon/pub/Articles/Research/51.BDP1/duke-publishedversion.pdf"
+fetched_from = "https://www.math.mcgill.ca/darmon/pub/Articles/Research/51.BDP1/duke-publishedversion.pdf"
+fetched_at = "2026-10-22T18:08:21Z"
+sha256 = "223bfdad6571c211a1b3e11c4688f2831f06a642eafef7c3552c9506a7188fbc"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["9.8", "9.15", "9.17", "Dependencies"]
+
+[[source]]
+id = "castella-hsieh"
+authors = "Francesc Castella and Ming-Lun Hsieh"
+title = "Heegner cycles and p-adic L-functions"
+year = 2017
+arxiv = "1505.08165v2"
+locator_scheme = "theorem"
+locator = "§3.3, Definition 3.7, p. 13; §3.3, Proposition 3.8, p. 13; §4.5, p. 19; §4.5, Theorem 4.9, p. 20; §3.3, Proposition 3.8, p. 13; Francesc Castella and Ming-Lun Hsieh; arXiv:1505.08165v2 (7 Jan 2017); published in Mathematische Annalen 370 (2018) 567–628."
+url = "https://arxiv.org/abs/1505.08165v2"
+fetched_from = "https://arxiv.org/pdf/1505.08165v2"
+fetched_at = "2026-10-22T18:08:27Z"
+sha256 = "a98f9f37a45f46b55968e1fde8fc952b909dda91e6239dafc1dd3688fd8b9755"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v2"
+cited_for = ["9.14", "9.20", "9.21", "Dependencies"]
+
+[[source]]
+id = "castella-exceptional"
+authors = "Francesc Castella"
+title = "On the exceptional specializations of big Heegner points"
+year = 2015
+arxiv = "1507.04260v1"
+locator_scheme = "theorem"
+locator = "§§2.2–2.5, Proposition 2.7, pp. 11–13, Theorems 2.10–2.11, p. 15; §2.5, Theorem 2.11, p. 15; Introduction, Theorem and (0.4), pp. 2–3; Francesc Castella; arXiv:1507.04260v1 (15 Jul 2015; manuscript dated 19 Sep 2018); published in Journal of the Institute of Mathematics of Jussieu."
+url = "https://arxiv.org/abs/1507.04260v1"
+fetched_from = "https://arxiv.org/pdf/1507.04260v1"
+fetched_at = "2026-10-22T18:08:32Z"
+sha256 = "f58fcad0d1869ee6888d97b4b73b9a86a806abb95170e7800ae800d62e13a2cf"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v1"
+cited_for = ["9.5", "9.12", "Dependencies"]
+
+[[source]]
+id = "castella-multiplicative"
+authors = "Francesc Castella"
+title = "On the p-part of the Birch–Swinnerton-Dyer formula for multiplicative primes"
+year = 2017
+arxiv = "1704.06608v2"
+locator_scheme = "theorem"
+locator = "Theorem 3.2 and proof, p. 9; §3, Theorem 3.2, p. 9; Francesc Castella; arXiv:1704.06608v2 (14 Jun 2017); published in Cambridge Journal of Mathematics 6 (2018)."
+url = "https://arxiv.org/abs/1704.06608v2"
+fetched_from = "https://arxiv.org/pdf/1704.06608v2"
+fetched_at = "2026-10-22T18:08:38Z"
+sha256 = "23e3ab4e9d99ceba88d3aaf0fa0612b60ac728086f82555f951f4e1853323081"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v2"
+cited_for = ["9.5", "9.12", "Dependencies"]
+
+[[source]]
+id = "bsw"
+authors = "Ashay Burungale, Christopher Skinner and Xin Wan"
+title = "A refined non-vanishing of the p-adic logarithm of a rational point on an abelian variety"
+year = 2026
+arxiv = "2603.20886v2"
+locator_scheme = "theorem"
+locator = "§3, Theorems 3.1–3.2, pp. 9–10; their use in Theorem 1.1, §2; §1.4, Theorem 1.1, p. 3; §1.3, p. 3; §2.3, Theorem 2.8(i), p. 6; Ashay Burungale, Christopher Skinner and Xin Wan; arXiv:2603.20886v2 (10 May 2026)."
+url = "https://arxiv.org/abs/2603.20886v2"
+fetched_from = "https://arxiv.org/pdf/2603.20886v2"
+fetched_at = "2026-10-22T18:08:43Z"
+sha256 = "f2b4a020bf5dbcd33df3a4b30cbf27230dc0d0775312f5e543b03b2486f6a994"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v2"
+cited_for = ["9.2", "9.13", "Dependencies"]
+
+[[source]]
+id = "burungale"
+authors = "Ashay A. Burungale"
+title = "On the non-triviality of generalised Heegner cycles modulo p, II: Shimura curves"
+year = 2015
+doi = "10.1017/S147474801500016X"
+arxiv = "1504.02342v1"
+locator_scheme = "theorem"
+locator = "§5.2 Lemma 5.5, pp. 27–29, for this unramified CM coefficient ring; §5.2 Lemma 5.5 and equation (5.8), pp. 27–29; §5.2 pp.27–29, Lemma 5.5 and (5.8); §5.2, Lemma 5.5 and (5.8), pp.27–29; Ashay A. Burungale; arXiv:1504.02342v1, 9 April 2015."
+url = "https://arxiv.org/abs/1504.02342v1"
+fetched_from = "https://arxiv.org/pdf/1504.02342v1"
+fetched_at = "2026-10-22T18:08:51Z"
+sha256 = "ebbfda7c2b0f341754a3fcb7dba993846d2101fd8eecb978e0ee1e768350f464"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v1"
+cited_for = ["9.3", "9.4", "9.11", "9.21", "Dependencies"]
+
+[[source]]
+id = "yuan-modular"
+authors = "Xinyi Yuan"
+title = "Modular heights of quaternionic Shimura curves"
+year = 2024
+arxiv = "2205.13995v3"
+locator_scheme = "theorem"
+locator = "arXiv v3: §1.5, pp. 7–8, footnote 7; §4.2, pp. 58–61; §4.3, Lemma 4.2, pp. 63–66; §4.4, Theorem 4.3 and Remark 4.4, pp. 67–69; §4.5, Proposition 4.5 and Remark 4.6, pp. 70–71."
+url = "https://arxiv.org/abs/2205.13995v3"
+fetched_from = "https://arxiv.org/pdf/2205.13995v3"
+fetched_at = "2026-10-22T18:09:00Z"
+sha256 = "7dbf684fa65122ba3a15364079b6c3b1c7fdc2893bf2114a55ca9b448090762c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v3"
+cited_for = ["2.9", "6.52", "7.4", "7.11", "7.16", "7.48", "7.65", "8.1", "Dependencies"]
+
+[[source]]
+id = "disegni"
+authors = "Daniel Disegni"
+title = "The p-adic Gross–Zagier formula on Shimura curves"
+year = 2019
+venue = "Compositio Math. 153 (2017) 1987-2074"
+doi = "10.1112/S0010437X17007308"
+arxiv = "1510.02114v3"
+locator_scheme = "theorem"
+locator = "arXiv v3: §1.9, p. 17; §5.3, p. 48; Theorems 5.4.1–5.4.2 and Proposition 5.4.3, pp. 49–50; §6.1, pp. 50–51; Lemma 8.2.1, p. 56; Proposition 8.3.1 and Theorem 8.3.2, pp. 57–58; proof of Theorem 5.4.2, p. 58."
+url = "https://arxiv.org/abs/1510.02114v3"
+fetched_from = "https://arxiv.org/pdf/1510.02114v3"
+fetched_at = "2026-10-22T18:09:10Z"
+sha256 = "b0279d384db574e26ba479d4ed7c99f2ba20e616d265e8207e3d79fc951e2913"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v3"
+cited_for = ["6.38", "6.39", "7.4", "7.5", "7.47", "8.1", "Dependencies"]
+
+[[source]]
+id = "argos"
+authors = "ARGOS seminar contributors"
+title = "ARGOS seminar on intersections of modular correspondences"
+year = 2007
+locator_scheme = "theorem"
+locator = "Meusers, Chapter 9 §2 Proposition 2.1, p. 102, §3 Propositions 3.4–3.5, pp. 104–105; Wewers, Chapter 8 §1 Theorem 1.4, p. 79, §3 Theorem 3.2, p. 84; Vollaard, Chapter 11 §2 Theorems 2.1 and 2.3, pp. 114–115"
+url = "https://www.math.uni-bonn.de/people/rapoport/myalggeom/preprints/argos.pdf"
+licence_class = "none"
+status = "uncertified"
+version_note = "cited by its locator without the text"
+cited_for = ["7.1", "7.2"]
+
+[[source]]
+id = "prasanna"
+authors = "Kartik Prasanna"
+title = "Integrality of a ratio of Petersson norms and level-lowering congruences"
+year = 2006
+locator_scheme = "theorem"
+locator = "§2.1 standing assumptions, p. 907; §2.2 Theorem 2.3, p. 910; Theorem 2.4, p. 912; Kartik Prasanna; Annals of Mathematics 163 (2006), 901–967."
+url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v163-n3-p04.pdf"
+fetched_from = "https://annals.math.princeton.edu/wp-content/uploads/annals-v163-n3-p04.pdf"
+fetched_at = "2026-10-22T18:09:17Z"
+sha256 = "de372f2c5232850bee72d344a7626dfec6a9c49907684ed807a4bbe1cd0c94fd"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["9.6", "Dependencies"]
+
+[[source]]
+id = "blr"
+authors = "Siegfried Bosch, Werner Lütkebohmert and Michel Raynaud"
+title = "Néron Models"
+year = 1990
+doi = "10.1007/978-3-642-51438-8"
+locator_scheme = "theorem"
+locator = "§7.5 Theorem 4, pp. 186–188"
+url = "https://doi.org/10.1007/978-3-642-51438-8"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+
+[[source]]
+id = "conrad-trace"
+authors = "Brian Conrad"
+title = "Chow's K/k-image and K/k-trace, and the Lang–Néron theorem"
+year = 2006
+locator_scheme = "theorem"
+locator = "§9: the canonical pairing A(K̄)×A∨(K̄)→ℝ and its bilinearity, p. 33; the field-extension factor (9.8), the adjointness (9.9), Remark 9.9 (the identification with the canonical height of the Poincaré bundle) and Theorem 9.10 (the polarization identity), p. 34; Brian Conrad; L'Enseignement Mathématique 52 (2006), 37–108; author's copy."
+url = "https://math.stanford.edu/~conrad/papers/Kktrace.pdf"
+fetched_from = "https://math.stanford.edu/~conrad/papers/Kktrace.pdf"
+fetched_at = "2026-10-22T18:09:22Z"
+sha256 = "f73508a447bd0110aa5c2646f2cde9a70f96055b6a5f6846112b88c8d15611ec"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["1.1", "Dependencies"]
+
+[[source]]
+id = "fuchs-pham"
+authors = "Clemens Fuchs and Duc Hiep Pham"
+title = "The p-adic analytic subgroup theorem revisited"
+year = 2015
+venue = "Ultrametric Analysis and Applications 7 (2015), 143-156"
+arxiv = "1502.00768v1"
+locator_scheme = "theorem"
+locator = "C. Fuchs and D. H. Pham, §2 Theorem 2.2, p. 2, Proposition 2.5, p. 3, §§3.2–3.3, p. 4, §4.2, p. 7, §4.4, p. 12; Clemens Fuchs and Duc Hiep Pham; arXiv:1502.00768v1 (3 Feb 2015); published in p-Adic Numbers, Ultrametric Analysis and Applications 7 (2015), 143–156."
+url = "https://arxiv.org/abs/1502.00768v1"
+fetched_from = "https://arxiv.org/pdf/1502.00768v1"
+fetched_at = "2026-10-22T18:09:27Z"
+sha256 = "f208a43e4e1c152965453f27a403ff1f45129240ae157c2c4cd2526a6af86f1a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v1"
+cited_for = ["9.2", "Dependencies"]
+
+[[source]]
+id = "brooks"
+authors = "Ernest Hunter Brooks"
+title = "Shimura curves and special values of p-adic L-functions"
+year = 2015
+doi = "10.1093/imrn/rnu062"
+locator_scheme = "theorem"
+locator = "§§2.1–2.5 pp.4182–4188, Theorem 2.2 p.4185 and Proposition 2.3 pp.4185–4186; §8.3 p.4233 for triples and transport; §8.4 p.4236 for the chosen H-differential and its periods. General PEL fibres, CM reciprocity and stack descent are imported from the named supplier targets; §3, Serre–Tate theory and p-adic differential operators; §8.2, after Theorem 8.2, p. 4232; §8.6, Proposition 8.12, p. 4239; §6.4, p. 4224; §7, Lemma 7.5, p. 4229; §8.2, Theorem 8.2, p. 4232; §8.3, Proposition 8.5, p. 4235; §8.6, before Proposition 8.13, p. 4239; §8.4, definition before Proposition 8.9, p. 4237; §8.5, Proposition 8.10, p. 4237; §8.6, Proposition 8.13, p. 4239; §8.5, Theorem 8.11, p. 4238; Ernest Hunter Brooks; International Mathematics Research Notices 2015, no. 12, 4177–4241, doi:10.1093/imrn/rnu062 (published version, EPFL Infoscience copy)."
+url = "https://infoscience.epfl.ch/server/api/core/bitstreams/c151dcd9-ff05-4c82-90d5-de19eec6f189/content"
+fetched_from = "https://cf002.cdn.4science.cloud/4s-assetstore-epfl-prod/87/42/20/87422022126541257393721858835452522330"
+fetched_at = "2026-10-22T18:14:10Z"
+sha256 = "90898527cf2e7e69bb6eba200dc7646e7f61837fa310299852ea2b958f925219"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "Published IMRN version; institutional EPFL copy. The CDN fetch URL is recorded without its expiring query."
+cited_for = ["0a.5", "9.4", "9.6", "9.7", "9.8", "9.9", "9.10", "9.11", "9.16", "Dependencies"]

@@ -1,0 +1,79 @@
+# ArithmeticKTheory: human review response
+
+Reviewed head: `8d6efc7bc7947bd9b71f6dc0cb3aedd305cd76d6`. The remaining finding concerns the pull-request description and its merge-order declaration; those changes remain necessary and are outside this job's authorized edits. Neither `TauCetiRoadmap/ArithmeticKTheory/README.md` nor `TauCetiRoadmap/ArithmeticKTheory/Suggested.lean` required a change, and no commit was created.
+
+## H01 (CBirkbeck) — answered
+
+The fourth stable stem vanishes by HomotopySpheres Stage 9, item 2 at `0b90c9b`, exactly the input consumed at `TauCetiRoadmap/ArithmeticKTheory/README.md:468` and `TauCetiRoadmap/ArithmeticKTheory/README.md:3713`. The worker must add the already-selected HomotopySpheres #1287 before #1418 in both description-level declarations; #284 is the overlapping predecessor, not an additional selected supplier.
+
+## H02 (CBirkbeck) — answered
+
+The determinant, semilocal K₁ and field K₂ inputs really come from AlgebraicKTheory A2/A4/A5 at `e5df75b`, through KTheoryFiniteLocalFields' foundational supplier contract at `afe02e8`, and are already acknowledged at `TauCetiRoadmap/ArithmeticKTheory/README.md:398`. The worker must add AlgebraicKTheory #1142 to the description and place it before KTheoryFiniteLocalFields #1281, as well as before StableHomotopyKTheory #1227, whose own supplier contract consumes A0–A1.
+
+## H03 (CBirkbeck) — answered
+
+The broader transitive omissions are confirmed: StableHomotopyKTheory at `00bfbf7` consumes TangentialBordism B4.1–B4.2, while IntegralIwasawaTheory at `5d2ed25` consumes LFunctions Layers 3–5 and LinearFormsInLogarithms §8.10, and both pull-request descriptions explicitly declare these prerequisites. The worker must include #942 before #1227 and #248/#451 before #1306 in the whole-roadmap merge prerequisites; these inherited dependencies must not become new direct mathematical imports or duplicate targets in ArithmeticKTheory.
+
+## H04 (CBirkbeck) — answered
+
+The assertion that no other author's open pull request is required is false: the registry lists #1287/#1142/#942 under kim-em, #248 under roed-math and #451 under mkaratarakis, and none of their five roadmap folders occurs on main at `82e5289`. Replace that assertion with an explicit acknowledgement of those prerequisites and distinguish the README's section-level mathematical imports from the whole-roadmap merge order; this report does not claim that the prohibited description edit has been made.
+
+## Concrete description corrections for the worker
+
+Retain the existing dependency list, add HomotopySpheres #1287, AlgebraicKTheory #1142, TangentialBordism #942, LFunctions #248 and LinearFormsInLogarithms #451, and replace its introductory scope sentence with: “The README specifies the mathematical inputs by roadmap and section; the merge-order declaration also includes the inherited whole-roadmap prerequisites identified below.” This avoids claiming that the existing list is a certified exhaustive transitive closure.
+
+The additional required precedence constraints are:
+
+| Supplier | Consumer |
+| --- | --- |
+| TangentialBordism #942 | StableHomotopyKTheory #1227 |
+| AlgebraicKTheory #1142 | StableHomotopyKTheory #1227 and KTheoryFiniteLocalFields #1281 |
+| LFunctions #248 and LinearFormsInLogarithms #451 | IntegralIwasawaTheory #1306 |
+| HomotopySpheres #1287 | ArithmeticKTheory #1418 |
+
+Replace the categorical assertion about other authors with: “These prerequisites include other authors' open roadmap pull requests: #1287, #1142, #942, #248 and #451; each must precede its consumers.” All five are listed as open new-roadmap pull requests in the supplied registry snapshot; this is not a proposal to consume revisions of existing roadmaps.
+
+The description evidence is independently readable in [ArithmeticKTheory #1418](https://github.com/TauCetiProject/TauCetiRoadmap/pull/1418), [StableHomotopyKTheory #1227](https://github.com/TauCetiProject/TauCetiRoadmap/pull/1227) and [IntegralIwasawaTheory #1306](https://github.com/TauCetiProject/TauCetiRoadmap/pull/1306). Their inspected heads were respectively `8d6efc7`, `00bfbf7` and `5d2ed25`.
+
+## Mathematical and signature checks
+
+No mathematical statement, definition or convention was added or changed. The following focused adversarial pass covers the consumed low-degree contracts, the fourth-stem application and all four existing acceptance declarations; it does not claim a fresh proof-by-proof audit of the entire roadmap.
+
+| Statement | Instances tried | Values on each side | Result and change |
+| --- | --- | --- | --- |
+| `sUnitSubmonoid` is the inverse image of S-integer units | ℤ with S empty, S={(2)}, S all primes; R=𝔽₂ | Empty S gives {−1,1}; at {(2)}, 2 maps to a unit and 3 does not; all primes give ℤ excluding 0; 𝔽₂ gives {1}. In every case 1 belongs and 0 does not. | Support direction and nontriviality agree; unchanged. |
+| `integer_isLocalization_iff` | ℤ with S empty and M={±1}; S={(2)} with M generated by 2 or by 3; S all primes with M=nonzero integers | First case: localization ℤ, unit condition true, prime condition empty. Powers of 2: localization ℤ[1/2], both conditions true. Powers of 3: localization ℤ[1/3] differs from ℤ[1/2], 3 is not a unit in ℤ[1/2], and no 3-power lies in (2). All primes: localization ℚ and every (p) meets M at p. | Positive and negative directions agree; unchanged. |
+| `integer_isLocalization_of_torsion_classGroup` | Cl(ℤ)=0 with S empty or all primes; the nonprincipal prime P=(2,1+√−5) in ℤ[√−5] | For ℤ the results are ℤ and ℚ. In the quadratic example, P²=(2), [P] has order 2, and 2 has support {P}, giving the required denominator despite P not being principal. | Torsion, rather than principality of each prime, is the relevant condition; unchanged. |
+| `regularPrime_dividedBernoulli_num` | (p,k)=(3,1),(3,3),(5,5),(7,7); negative controls (37,16) and k=0 | B₂/1=1/6, B₆/3=1/126, B₁₀/5=1/66 and B₁₄/7=1/6: all reduced numerators are 1. B₃₂/16=−7709321041217/8160 has numerator divisible by 37. At k=0 total division gives 0 with numerator 0. | Prime-divisible indices are retained; regularity and k≥1 exclude the failures; unchanged. |
+| AlgebraicKTheory A2 determinant comparison | diag(2,3) over 𝔽₅; the unit 2 over 𝔽₅ | det(diag(2,3))=6=1 mod 5, so its K₁ class is zero; 2 has order 4, agreeing with K₁(𝔽₅)≃𝔽₅× of order 4. | The inherited determinant normalization agrees; unchanged. |
+| AlgebraicKTheory A4 stable, rather than finite-rank, K₁ | 𝔽₂; the commutative semilocal ring ℤ/4 | GL₂(𝔽₂)≃S₃ has abelianization ℤ/2, whereas stable K₁(𝔽₂)=𝔽₂×=0. For ℤ/4, units {1,3} give K₁≃ℤ/2. | Stabilization and semilocal hypotheses are meaningful; unchanged. |
+| AlgebraicKTheory A5 finite-field K₂ | 𝔽₂ and 𝔽₅ | For 𝔽₂ every unit is 1, hence every symbol is zero. For 𝔽₅ let g={2,2}; bilinearity gives 4g=0, and the Steinberg relation {3,3}=0 gives 9g=0, hence g=0 and K₂=0. | Matches the supplied field result; kbook line 13284 and kbook line 13295; unchanged. |
+| Fourth-stem input in the K₄(ℤ) conclusion | Odd localization and the dyadic arithmetic parameters for ℚ | π₄ˢ=0 gives 0⊗ℤ[1/2]=0; the dyadic 2-rank is s+u−1=1+0−1=0. Together with the stated finite-generation and Hurewicz inputs these leave K₄(ℤ)=0, matching rognes-k4 line 11. | The stable-stem supplier is required by the retained route; unchanged. |
+
+Compared the supplied mechanically elaborated signatures of all four declarations with README §§1.1 and 7.2. The definition and two localization theorems retain the Dedekind-domain, field, algebra and fraction-field binders; the torsion theorem retains its torsion hypothesis, and the Bernoulli theorem retains primality, oddness, cyclotomic-class-number nondivisibility and k≥1. No binder or statement changed; the unchanged file was rebuilt.
+
+The native S-integer definition at Mathlib pin `6b7abb3` is `IsDedekindDomain.Set.integer`, in `Mathlib/RingTheory/DedekindDomain/SInteger.lean:65`: it uses valuation integrality outside S, without a finite-S condition. Its empty and full-set identifications are at lines 94 and 88; the inspected Tau Ceti pin was `a91d3aa`.
+
+The citation scan resolved every cross-roadmap identifier. Its pre-supplied warning about `VanishingCycles.etaleTateTwists` is not a missing supplier: `TauCetiRoadmap/EtaleCohomologyFoundations/README.md:233` explicitly names that target in §F.0.3 on main; ArithmeticKTheory cites it as planned supplier material, not as an implemented pinned declaration. No construction moved and no later roadmap became a supplier. Ownership against open pull requests without supplied files was not checked beyond reading the specifically cited supplier contracts for these findings; no new construction requires an ownership assignment.
+
+## Validation
+
+`lake build TauCetiRoadmap.ArithmeticKTheory.Suggested` exited 0 with exactly three admitted-theorem warnings, at `TauCetiRoadmap/ArithmeticKTheory/Suggested.lean:47`, `:53` and `:66`:
+
+```text
+Build completed successfully (8976 jobs).
+```
+
+The dependency-direction command with `--movable` exited 0 and emitted exactly:
+
+```text
+depcheck: 33 roadmaps, 308 edges, 0 problem(s)
+```
+
+There was no UPWARD, CYCLE or moved line. This check does not certify completeness of the separate pull-request description.
+
+The full gate against `origin/main` exited 0:
+
+```text
+gate ArithmeticKTheory: set_option=0 blob=0 latex=0 tex=0 prnum=0 sorry-data=0 sorry-examples=0 residue=0 private-paths=0 imports=0 mathlib-subimports=0 no-import-mathlib=0 lean-lines=0 forbidden=0 dropped=0 readme-ids-missing=0 empty-sections=0 round-labels=0 long-fences=0 layer-ids=0 target-ids=0 depcheck=0 metadata=0 dirty=0 outside-folder=0 source-material=0 OK
+```

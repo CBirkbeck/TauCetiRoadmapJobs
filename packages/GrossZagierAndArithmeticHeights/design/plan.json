@@ -1,0 +1,28 @@
+{
+  "gaps": [
+    {
+      "slug": "polarized-skeleton-green",
+      "supplier": "TropicalAndBerkovichArithmetic",
+      "section": "TB.2, TB.3 and TB.6",
+      "needs": "Supply the polarized semistable skeleton, model-metric Laplacian, probability admissible measure and normalized graph Green kernel, including genus one, refinement and field extension."
+    },
+    {
+      "slug": "ideal-zeta-genus-factorization",
+      "supplier": "AnalyticNumberTheory",
+      "section": "AN.4",
+      "needs": "Supply partial ideal zeta series and the imaginary-quadratic genus-character dictionary and factorization with the normalizations of Gross–Zagier IV, equations (0.3)–(0.4)."
+    },
+    {
+      "slug": "point-kummer-logarithm",
+      "supplier": "PadicHodgeRegulators",
+      "section": "L0–L1",
+      "needs": "For nonelliptic abelian varieties, supply the point Kummer/exponential/logarithm diagram with explicit de Rham and twist conventions, and in good reduction identify the rational local Kummer image with H¹_f; the elliptic comparison is SelmerIwasawaCohomology §4.26."
+    },
+    {
+      "slug": "normalized-e2-family",
+      "supplier": "QSeriesPartitionsAndMockModularForms",
+      "section": "Layer 8 (real-analytic modular forms)",
+      "needs": "Supply E₂*(z)=1−24Σ_(n≥1)σ₁(n)qⁿ−3/(π Im z), its weight-two modular equation and the continued Eisenstein derivative family used by Gross–Zagier IV §6."
+    }
+  ]
+}

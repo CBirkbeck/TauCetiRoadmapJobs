@@ -1,0 +1,54 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "GenericDoublePointInterpolation"
+
+[[source]]
+id = "BO"
+authors = "Maria Chiara Brambilla, Giorgio Ottaviani"
+title = "On the Alexander-Hirschowitz Theorem"
+year = 2007
+arxiv = "math/0701409v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.1; Proposition 2.1; Lemmas 2.2–2.3; Theorems 2.4, 4.1, 5.1; Propositions 5.2–5.4; Lemmas 6.1, 6.3; Theorem 6.4; section 7.1"
+url = "https://arxiv.org/abs/math/0701409v2"
+fetched_from = "https://arxiv.org/pdf/math/0701409v2"
+fetched_at = "2026-10-22T17:03:29Z"
+sha256 = "7d3dd9e6268431f4be53740bbf57ebf46d9a76b13c3472d6911d7f6deb530aa7"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v2"
+cited_for = ["Layers 0–5: double points, Horace induction and Alexander–Hirschowitz"]
+
+[[source]]
+id = "COU"
+authors = "Jean-Marc Couveignes"
+title = "Enumerating number fields"
+year = 2020
+version_note = "Published article, Annals of Mathematics 192 (2020), 487–497"
+locator_scheme = "section"
+locator = "section 3, printed pages 491–493"
+url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf"
+fetched_from = "https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf"
+fetched_at = "2026-10-22T17:03:53Z"
+sha256 = "8d63bd3a14f0d61f421695f1d93559d18fb674240c6dee872c23bf5902e1a104"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["Layers 0, 1, 5: coefficient spaces, first jets, minors, integer grids"]
+
+[[source]]
+id = "VAK"
+authors = "Ravi Vakil"
+title = "The Rising Sea: Foundations of Algebraic Geometry"
+year = 2017
+version_note = "18 November 2017 author draft; numbering of this version"
+locator_scheme = "theorem"
+locator = "Definition 12.6.2, p.355; section 21.2.20 and Theorem 21.2.24, pp.572–574; Theorem 25.3.1, p.681"
+url = "https://math.stanford.edu/~vakil/216blog/FOAGnov1817public.pdf"
+fetched_from = "https://math.stanford.edu/~vakil/216blog/FOAGnov1817public.pdf"
+fetched_at = "2026-10-24T07:18:51Z"
+sha256 = "b956026cc9caddd372332b94f6ecdb77932a08ab0d90dc802bad37b7a6ee62c4"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["Exact supplier contracts: relative generic smoothness and the diagonal cotangent square-zero algebra"]

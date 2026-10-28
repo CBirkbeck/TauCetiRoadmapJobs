@@ -1,0 +1,82 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "SmoothRepresentationsOfLocalGroupsPartII"
+
+[[source]]
+id = "BM94"
+authors = "Barbasch"
+title = "Whittaker models with an Iwahori fixed vector"
+year = 1994
+doi = "10.1090/conm/177/01917"
+locator_scheme = "theorem"
+locator = "Whittaker and sign type"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/1643#issuecomment-6399032036"
+
+[[source]]
+id = "KS71"
+authors = "Knapp"
+title = "Knapp and Stein, The existence of complementary series, 1970"
+year = 1970
+locator_scheme = "theorem"
+locator = "Theorem 3.3"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/1643#issuecomment-6399032036"
+
+[[source]]
+id = "Mi73"
+authors = "Milicic"
+title = "Milicic, On C*-algebras with bounded trace, 1973"
+year = 1973
+locator_scheme = "theorem"
+locator = "Theorem 5"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/1643#issuecomment-6399032036"
+
+[[source]]
+id = "Rodier81"
+authors = "Rodier"
+title = "Decomposition of principal series for reductive p-adic groups and the Langlands classification"
+year = 1984
+locator_scheme = "theorem"
+locator = "principal series decomposition"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/1643#issuecomment-6399032036"
+
+[[source]]
+id = "Steinberg68"
+authors = "Steinberg"
+title = "Endomorphisms of linear algebraic groups"
+year = 1968
+doi = "10.1090/memo/0080"
+locator_scheme = "theorem"
+locator = "8.1"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/1643#issuecomment-6399032036"
+
+[[source]]
+id = "Borel79"
+authors = "Borel"
+title = "Automorphic 𝐿-functions"
+year = 1979
+doi = "10.1090/pspum/033.2/546608"
+locator_scheme = "theorem"
+locator = "Lemma 6.4 and Proposition 6.7"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/1643#issuecomment-6399032036"
+
+[[source]]
+id = "Ber74"
+authors = "Bernstein"
+title = "Bernstein, All reductive p-adic groups are tame, 1974"
+year = 1974
+locator_scheme = "theorem"
+locator = "Theorem 1"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/1643#issuecomment-6399032036"

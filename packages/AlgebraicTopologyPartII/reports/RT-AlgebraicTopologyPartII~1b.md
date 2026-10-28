@@ -1,0 +1,133 @@
+<!-- from @CBirkbeck, https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/1073#issuecomment-6398851857 -->
+Red team round 1 pass b (claude) of a8a4623
+
+Verdict: needs changes
+
+1. **F01** (P2) §12.2 builds the theorem its supplier needs for what the supplier owns
+
+   **Location.** `packages/AlgebraicTopologyPartII/README.md:1125` ("extend the supplied compatibility on admissible cycle degrees to every equivariant mod-two cohomology degree … Sq∘f_(R,*)∘Sq⁻¹"), *Needs:* line 1134 (MotivesAndAlgebraicCycles §7.6b); ownership line 7.
+
+   **Claim.** §12.2 owns BW Proposition 1.22 (restriction of complex equivariant Gysin equals Sq∘f_{R,*}∘Sq⁻¹ in every degree) as an extension of a cycle-degree compatibility supplied by MotivesAndAlgebraicCycles §7.6b.
+
+   **Witness.** MotivesAndAlgebraicCycles README (head 79b02f6) §7.6b, line 1395, contracts "the real-locus component equations of Benoist–Wittenberg I Theorem 1.18, including Theorem 1.21's proper-pushforward compatibility". BW line 1127: Theorem 1.21 follows from Proposition 1.22; BW line 1109–1110: Theorem 1.18 is in turn deduced from 1.21. So the supplier's owned theorem is, in the only proof the source gives, a corollary of the theorem this roadmap claims to own, and this roadmap's §12.2 *Needs* that supplier. Either MotivesAndAlgebraicCycles builds Proposition 1.22 (two owners of one object, this roadmap rebuilding it) or it cannot discharge its §7.6b contract without a later roadmap (a hidden cycle). The README's framing "extend the supplied compatibility on admissible cycle degrees" inverts the source's logical order.
+
+   **Repair.** Make §12.2 consumed, not owned. Replace the target paragraph at line 1125 by a declared gap in the MotivesAndAlgebraicCycles supplier subsection and in `design/plan.json` `gaps`:
+   `What MotivesAndAlgebraicCycles must provide (gap:steenrod-conjugated-real-pushforward): In §7.6b, for a proper map f:Y→X of smooth irreducible R-varieties over any real closed R and every degree n, prove that restriction of the complex equivariant mod-two Gysin map to total fixed-locus coordinates equals Sq∘f_{R,*}∘Sq⁻¹ (BW Proposition 1.22, the statement from which §7.6b's Theorem 1.21 follows), compatibly with real closed extension.`
+   Keep in §12.2 only what is new here: nothing, or the explicit Check pair (identity; pt→ℙ¹ with Sq(a)=a). Repoint §12.3's and §12.4's inputs from "§12.2" to this gap; update the ownership sentence at line 7 ("Layers 14–16" list is unaffected). Tested on the instance that exposed it: with the gap declared, Theorem 1.21 (MAC) ⇐ Proposition 1.22 (MAC) and this roadmap consumes both; no edge from MAC §7.6b to this roadmap remains.
+
+2. **F02** (P3) gap:finite-group-ext-stalk names a carrier its supplier does not have
+
+   **Location.** `packages/AlgebraicTopologyPartII/README.md:76` ("For a finite group acting trivially on a base site with exact filtered stalks, identify the stalk of the sheaf Ext …"); consumer §14.4, line 1289 ("restricted to a real circle C with trivial C₂-action").
+
+   **Claim.** SchemeAndStackFoundations §2.23 can supply the stalk formula on "a base site with exact filtered stalks", and §14.4 specializes it to the semialgebraic site of a real circle over any real closed R.
+
+   **Witness.** SchemeAndStackFoundations README (main) §2.23, line 4561: the carrier is "a ringed space X (a scheme) with a left action of a discrete group Γ by ringed-space automorphisms", objects `EquivariantModules X Γ act` of O_X-modules; nothing there is stated for a Grothendieck site. The semialgebraic site over non-Archimedean R is not the open-set topology of a space (README line 198 says so itself), and the site theory is contracted to MotivesAndAlgebraicCycles §7.6a (line 171).
+
+   **Repair.** Make the contract precise about carriers: `What SchemeAndStackFoundations must provide (gap:finite-group-ext-stalk): For a finite group Γ acting trivially on a ringed space X and an equivariant abelian sheaf F, identify the stalk at every point of the sheaf Ext^q from the constant equivariant ℤ to F with H^q(Γ,F_x), naturally in restriction to opens, using the degreewise finite-rank periodic resolution.` In §14.4 add the transport step as an owned sentence: "Transport to the semialgebraic site of C through the site-to-space comparison supplied by MotivesAndAlgebraicCycles §7.6a; over ℝ this is the ordinary topological space." Tested on the instance: the regular stalk ℤ[C₂]^k gives Ext stalks 0 in positive degree on either carrier (Check at line 1296 unchanged).
+
+3. **F03** (P3) the permutation-action law is attributed to IG.5.1, which does not state it
+
+   **Location.** `packages/AlgebraicTopologyPartII/README.md:127` and `:135` ("(σ·x)(i)=x(σ⁻¹i); identity and multiplication satisfy the left-action laws" listed under "The consumed API provides these facts"), repeated as the convention at line 30.
+
+   **Claim.** InverseGaloisAndArithmeticFundamentalGroups §IG.5.1 provides the left action (σ·x)(i)=x(σ⁻¹i) and its action laws.
+
+   **Witness.** IG README (head 740b9cc) §IG.5.1, lines 5223–5226: defines `Conf_n(T) = PConf_n(T)/S_n` with the quotient topology and the covering property, for Hausdorff T; no action formula is written there, and the declared gap at line 124 (generality to all spaces, formal monic polynomials over every ring) does not ask for one. The acceptance file fixes the convention itself (`configurationPermutation`, `z.val ∘ σ.symm`).
+
+   **Repair.** Move the bullet at line 135 out of the "consumed API" list into this roadmap's own text: in Layer 1 (line 368) add "This roadmap fixes the left action (σ·x)(i)=x(σ⁻¹i) on the supplied ordered configurations; `configurationPermutation` is its acceptance form", and append to the gap sentence at line 124: ", with the S_m action exposed as the left action (σ·x)(i)=x(σ⁻¹i)". Tested on the instance σ=(123), τ=(12), x=(a,b,c): σ·(τ·x)=(c,b,a)=(στ)·x holds for this formula and fails for (σ·x)(i)=x(σi), which gives (a,c,b).
+
+4. **F04** (P3) orphan source entry: SULLIVAN is recorded but cited nowhere
+
+   **Location.** `packages/AlgebraicTopologyPartII/sources.toml`, entry `SULLIVAN` (`cited_for = []`); README References (lines 1498–1515) list no Sullivan entry; §4.6 (line 641) cites BS lines 2393–2401 and StableHomotopyKTheory §3.37 only.
+
+   **Claim.** The manifest records every cited work and only cited works.
+
+   **Witness.** `grep -c SULLIVAN README.md` is 0; the design node for §4.6 routed through Sullivan minimal models (plan.json node "Finite-type rational double-loop model", proof obligation G3), the package rerouted through the H-space Hopf contract and dropped the citation but not the manifest entry. This is also the origin of a sibling's citation of "§AT2.4" for Sullivan minimal-model theory: neither §4.6 nor any other target of this package states, owns or cites minimal models.
+
+   **Repair.** Either delete the `SULLIVAN` table from `sources.toml`, or (preferred, since BS p.945 relies on it) cite it once in §4.6 as background: "(SULLIVAN §11, pp.311–312, for the loop model of a nilpotent finite-type space, used only as background; the route here is the H-space Hopf contract)" and set `cited_for = ["4.6"]`. In either case §4.6 remains a consumer of StableHomotopyKTheory §3.37 and owns no minimal-model theorem; a consumer wanting Sullivan theory must be repointed to that supplier, not to §AT2.4.
+
+5. **F05** (P3) StableHomotopyKTheory §4.6 is cited for a double-loop statement it does not make
+
+   **Location.** `packages/AlgebraicTopologyPartII/README.md:12` ("§4.6 applies that theory to connected double loops").
+
+   **Witness.** StableHomotopyKTheory README (head 00bfbf7) §4.6, line 1484, "Group completions of homotopy-commutative H-spaces": `IsHomotopyAssocHSpace`, `IsHomotopyCommHSpace`, `IsGroupCompletion`; the words "double loop" and Ω² occur nowhere in that README.
+
+   **Repair.** Replace the clause by "§4.6 supplies the homotopy-associative and homotopy-commutative H-space predicates; the double-loop instance of them is proved in §4.6 of this roadmap", and add StableHomotopyKTheory §4.6 to the *Needs* of this roadmap's §4.6 (line 651) if those predicates are the carrier used there, otherwise delete the clause.
+
+6. **F06** (P3) §13.2 narrows BW Lemma 3.15 by an unused hypothesis d ≥ 2
+
+   **Location.** `packages/AlgebraicTopologyPartII/README.md:1191` ("smooth proper geometrically connected pure-d, d≥2").
+
+   **Witness.** BW Proposition 3.14/Lemma 3.15 (BW lines 1830–1844) impose no lower bound on d; the proof (lines 1871–1886) uses only odd order of H^{2d−1}, 2ω=0, the real-complex sequence, H^{2d}(X(C),ℤ(d))=ℤ with norm∘forget = 2, and a real point for the last map. Instance d=1, X=ℙ¹_R: H¹(ℙ¹(C),ℤ)=0 (odd order 1); cup-ω: H⁰_G(ℤ)=ℤ → H¹_G(ℤ(1))[2]=ℤ/2 is onto with kernel 2ℤ = norm image; H¹_G(ℤ(1))[2]=ℤ/2 → H²_G(ℤ(2))=H²(C₂,ℤ)=ℤ/2 is an isomorphism; with ℙ¹(R)≠∅, H²_G(ℤ(2))=ℤ/2 → H³_G(ℤ(3))=H³(C₂,ℤ(1))=ℤ/2 is an isomorphism. The statement holds at d=1.
+
+   **Repair.** Delete "d≥2" from §13.2 (keep it in §13.1, where the admissibility set needs it) and add the ℙ¹ computation above as a Check.
+
+7. **F07** (P3) SERRE is cited without line locators
+
+   **Location.** `packages/AlgebraicTopologyPartII/README.md:599` ("SERRE, Chapter V §3 Proposition 3, pp.492–494; §6 Corollary 2, p.498") — the only certified source cited without `<id> line N`.
+
+   **Witness.** Verified in the cache: Proposition 3 (finiteness of π_i(S^n), i>n, n odd) is SERRE line 2700 (printed p.494; §3 begins at line 2623, p.492); Corollary 2 (even spheres) is SERRE line 2852 (p.498), resting on Lemma 7 and the Stiefel fibration at line 2819.
+
+   **Repair.** Append "SERRE lines 2623–2700, 2852" to the citation at line 599.
+
+8. **F08** (P3) §11.1's transfer step is a colloquial milestone without its quantifiers
+
+   **Location.** `packages/AlgebraicTopologyPartII/README.md:1048` ("Prove the parameter-uniform semialgebraic finite-model comparison and transport this bound by real-closed transfer; an embedding of R into ℝ is not assumed"), *Needs:* line 1057 ("the … parameter-uniform finite-model comparison of this section").
+
+   **Claim.** The vanishing H^i(U(C),M)=0 for i>d, U singular affine over an arbitrary real closed R, is obtained from the ℝ-case by a transfer argument owned in this section.
+
+   **Witness.** BW's own route (BW lines 956–958) is the étale comparison plus Artin vanishing, which the README excludes (line 1040); the README's replacement route needs, for a variety not defined over any subfield of ℝ, a semialgebraic triviality statement over the universal parameter family (a Hardt-type theorem over every real closed field, defined over the real algebraic numbers) so that each fibre is semialgebraically homeomorphic, after extension, to the extension of a fibre over ℝ_alg. No layer, supplier section (RealAlgebraicGeometry Layers 3 and 6 are sign conditions and CAD; AffineMorseLefschetz A4.1's contract is triangulation) or pinned declaration names that theorem; it is hidden in the phrase quoted above.
+
+   **Repair.** State the milestone in §11.1 with its quantifiers: "For the universal family of affine varieties of bounded degree in bounded ambient dimension, parametrized by a ℚ-definable semialgebraic parameter space P, prove semialgebraic local triviality over a finite partition of P into semialgebraic pieces defined over the real algebraic numbers, valid over every real closed field; each piece contains a real-algebraic point, so every fibre over R is semialgebraically homeomorphic after extension to the extension of a fibre over ℝ_alg, whose complex locus has the homotopy type of a CW complex of dimension d over ℝ." Name it as an owned target in the *Needs* line (replacing "parameter-uniform finite-model comparison"), and cite the real-closed-extension invariance of cohomology from MotivesAndAlgebraicCycles §7.6a.
+
+9. **F09** (P3) supplier-contract blocks plan the supplier's work in the imperative
+
+   **Location.** `packages/AlgebraicTopologyPartII/README.md:287` ("specialize the generic derived proper-image construction … Prove finite cohomological dimension and the bounded-below restriction of the adjunction"), `:325` ("Construct natural Sq^a … satisfying Sq⁰=id, instability, …"), `:270` ("Set `or_(V/W)`=…"), and the "consumed API provides these facts" lists at lines 185–341.
+
+   **Claim.** These paragraphs are supplier contracts.
+
+   **Witness.** The binding principle "what another roadmap plans is imported by name and section, never planned again"; the twelve gap sentences already carry every ask (lines 76–181). The imperative paragraphs restate MotivesAndAlgebraicCycles §§7.6a–7.6b (head 79b02f6, lines 1382–1404) with their own API bullets and Checks, so a reader cannot tell which roadmap builds `or_(V/W)`, `f!` or `Sq^a`.
+
+   **Repair.** In each bold supplier paragraph of lines 183–341 keep the statement in the indicative as a description of what is consumed ("MotivesAndAlgebraicCycles §7.6b supplies …") plus the convention Checks that pin signs and shifts; delete the imperative sentences ("Prove …", "Construct …", "Set …") and the "The consumed API provides these facts" bullet lists, or move any bullet that is genuinely an ask into the matching gap sentence.
+
+Scope of this pass: the whole of `packages/AlgebraicTopologyPartII/README.md` (1515 lines) and `Suggested.lean` (169 lines), `design/plan.json` (gaps, errata, baseline), `sources.toml`; every cross-roadmap citation resolved on main or at the open head named by the brief (StableHomotopyKTheory, MotivesAndAlgebraicCycles, EtaleDualityAndPerverseSheaves, InverseGaloisAndArithmeticFundamentalGroups, ComplexComparisonPartII, SmoothBundlesConnections, CharacteristicClasses, TangentialBordism via `roadmaps show`; QWittVectors at its listed head; the rest on main); every library declaration read at the manifest pins (Tau Ceti `a91d3aa`, Mathlib `6b7abb3`); every certified source line locator opened in the cache. Lean: not built (no Lake environment is set up in the board checkout; `#check` elaboration was therefore not run). Pass a was not read.
+
+## Verified sound
+
+Counts: 15 Lean declarations read (10 definitions/abbreviations, 5 theorems or defs with bodies; 4 `sorry` theorems); 56 numbered README targets read in full (all of Layers 1–16) plus 13 supplier-contract statements; 93 source line locators opened and verified (BS 12, BW 37, B19 15, CEF 2, BROUGHTON 4, PHAM 3, EP 1, MATHER 1, MILNOR-STASHEFF 2, GM 3, SERRE 2 by page, all page numbers checked against the scan markers); 112 README Checks evaluated (every Check of every section computed; none false); 46 sibling citations resolved (every roadmap, section, layer, item and backticked declaration cited exists at the head or on main named in the brief: AlgebraicTopology Stages 2–8 and Stage 5 item 5, StableHomotopyKTheory §§3.36, 3.37, 4.6, MorseNovikov N6 (Lefschetz formula at its line 499), SchemeAndStackFoundations §§0.1, 0.2, 0.7, 2.7, 2.19, 2.23 with `forget_injective`/`coind_injective`, ComplexComparisonPartII §C−1.1, EtaleDualityAndPerverseSheaves §§3.5–3.8, 4.7 (hypersurface formula gives (3⁵−3)/4=60), 6.5 (compact-support Frobenius trace formula at its line 7123, inside §6.5), RealAlgebraicGeometry Layers 3, 6, AffineMorseLefschetz A2, A3, A4.1, RealAnalyticGeometry §R2.1, DifferentialGeometry Layers 2, 3, 10 (10.2 Sard), GeometricTopology Layer 1, SmoothBundlesConnections §B1 item 5 (Ehresmann), CharacteristicClasses §C2 item 3 (e(TM)[M]=χ) and §C3 item 2 (w₁ orientation-cover class, w_n=e mod 2), TangentialBordism §B4 item 3 (w(TM)=Sq(v)), QWittVectors §1.4a, InverseGaloisAndArithmeticFundamentalGroups §IG.5.1, MotivesAndAlgebraicCycles §§7.6a, 7.6b, Layer 2); 20 pinned declarations confirmed at the manifest pins with their files (`TauCeti.WedgeSum`, `.base`, `TopCat.singularCohomology` (R k M) (X) (n) and `singularCohomologyMap` contravariant, `Equiv.Perm.fullCycleType = cycleType + replicate (card − support.card) 1`, `TauCeti.FiniteField.fullCycleType_eq_map_natDegree_normalizedFactors` with hypotheses `Squarefree g`, `π x = x^card F`, `HomotopyGroup.zerothHomotopyEquiv`, `.loopSpaceEquiv`, `.piLoopSpaceMulEquiv (m n) : π_(m+1)(Ω^(Fin n) X x) ≃* π_(m+1+n) X x`, `TauCeti.IsSemialgebraic` under `[CommRing R] [LinearOrder R]`, `Rep.FiniteCyclicGroup.homResolutionIso/groupCohomologyIsoEven (i) [NeZero i] (Even i)/groupCohomologyIsoOdd` under `[CommRing k] [CommGroup G] [Fintype G]`, with d^even = ρ(g)−1 and d^odd = N as the README's §7.3 convention says, `IsArtinianRing.quotNilradicalPowEquivPi`, `isNilpotent_nilradical`, `PowerSeries.binomialSeries`, `ArithmeticFunction.sum_eq_iff_sum_smul_moebius_eq` (∀ n > 0), `Representation.char_tensor`, `card_inv_mul_sum_char_eq_finrank`, `CategoryTheory.Sheaf.H`, `Algebra.lmul`, `Module.End.maxGenEigenspace`, `GenLoop`, `HomotopyGroup.group [DecidableEq N] [Nonempty N]`, `.commGroup [Nontrivial N]`). Dependency check output: `depcheck: 52 roadmaps, 588 edges, 0 problem(s)` (no UPWARD or CYCLE line; SmoothBundlesConnections, CharacteristicClasses and TangentialBordism are other-author open pull requests adding new folders, which the brief allows). Gap declarations: all twelve README gap sentences are byte-identical to `plan.json` `gaps`, each with a named supplier and a section that exists at the supplier's head; none asks for what Mathlib, Tau Ceti or an earlier roadmap already provides. Ownership by object (`roadmaps grep` over main and all open heads): no other roadmap states tame polynomials/Broughton, the Church–Ellenberg–Farb trace formula, the double-loop Betti product, Fermat joins, γ_X, the corrected localization sequence, the trace-quotient lift or the circle extension; no roadmap on main or at an open head cites AlgebraicTopologyPartII. Policy: no `lemma`, no `set_option`, single `import Mathlib` plus three Tau Ceti modules that exist at the pin, no pull-request numbers, no process words, no computational algorithms, every target has a locator; the pull request changes only `packages/AlgebraicTopologyPartII/`.
+
+Declaration table (section; context; instances with computed values):
+
+| Declaration | Section | Binders/instances | Instances tried, values | Result |
+|---|---|---|---|---|
+| `orderedConfiguration m` | §2.4 | `m : ℕ`; subtype of `Fin m → ℂ` | m=0: singleton; m=1: ℂ; m=2: (0,1) in, (0,0) out | sound |
+| `configurationPermutation m σ` | §2.4 | `C(_, _)`, `z.val ∘ σ.symm` | σ=(123), τ=(12), x=(a,b,c): σ·(τ·x)=(c,b,a)=(στ)·x; with σ in place of σ⁻¹: (a,c,b) | left action as README |
+| `configurationTraceFormula F m χ` | §2.4 | `[Field F] [Fintype F]`, `χ : Multiset ℕ → ℚ`, finsum, `Finset.range (m+1)` | m=0: both sides χ(∅); m=1: q·χ({1}) both sides (H¹(ℂ)=0); m=2, χ=1: q²−q (H¹(ℂ×ℂ*)=ℚ with trivial swap action, average 1); q^(m−a) never truncated since a≤m; trace at a>m−1 is 0 | sound; matches CEF (15) with geometric Frobenius |
+| `eulerExponent n N r` | §3.1–3.2 | ℤ, Euclidean `/`, `r.divisors` | r=0: 0; even n, N=1: e₁=−1, e₂=0; odd n, N=1: 1,−1,0; even n, N=2: −2,−1,−2; odd n, N=2: 2,−3,2; N=0: 0; divisibility holds (necklace identity) | sound |
+| `unitSphere s` | §4.4 | `Metric.sphere 0 1` in `EuclideanSpace ℝ (Fin (s+1))` | s=0: {±1}; s=1: (1,0) in, (0,0) out | sound |
+| `sphereBouquet s N x` | §4.3 | `TauCeti.WedgeSum (fun _ : Fin N => x)` | N=0: singleton (`Subsingleton` under `IsEmpty ι`); N=1: the sphere | sound |
+| `IsTame f` | §4.1 | compact K, critical set ⊂ interior K, ε-bound off K | z₁: K=∅, ε=1, tame; constant, n≥2: critical set ℂⁿ not in a compact interior, not tame; x²y−x: no critical point, gradient (0,t²) at (t,1/(2t)), not tame | equals Broughton Def. 3.1 |
+| `jacobianAlgebra`, `milnorNumber` | §4.2 | quotient by `Ideal.span (range pderiv)`, `finrank` | ∑z_iᵏ−1: basis exponents <k−1, μ=(k−1)ⁿ; z₁: ideal contains 1, μ=0; x³−3x+y²: ℂ[x]/(x²−1), μ=2 | sound |
+| `fiberMilnorNumber f a` | §4.2 | `(Algebra.lmul ℂ _ (mk f)).maxGenEigenspace a` | ∑z_iᵏ−1: f acts by −1, μ⁻¹=μ, μ⁰=0; x³−3x+y²: eigenvalues ±2, μ^{±2}=1, μ⁰=0; ℂ[t]/(t³), t²: generalized eigenspace 3 vs kernel 2 | distinguishes the Tjurina model |
+| `polynomialFiber f a` | §4.2 | subtype `eval z f = a` | n=0: empty; z₁: ℂⁿ⁻¹ ≃ point ≃ bouquet of 0 spheres | sound |
+| `tameFibreBouquet n hn f hf a x` | §4.2 | `2 ≤ n`, `IsTame f`, `x : unitSphere (n−1)`; conclusion includes `FiniteDimensional` | x³−3x+y²: critical fibres are affine nodal cubics ≃ S¹ (μ−μᵃ=1), regular fibre ≃ S¹∨S¹ (2) — χ check 0 and −1; z₁: 0 spheres | matches BROUGHTON Thm 1.2 (reindexed ℂⁿ, Sⁿ⁻¹) |
+| `rationalBouquetRanks s N k x Y y hY` | §4.5 | sphere dim s+2 (n=s+3≥3), degree k+2≥2, `ℚ ⊗[ℤ] Additive π`, `.toNat` | S² (s=0,N=1): k=0→1, k=1→1, k=2→e₃(3,1)=0; S³ (s=1,N=1): k=1→1, k=3→e₂(4,1)=0; N=2, s=0: 2,3,2 = Witt numbers of the free graded Lie algebra on two odd generators; N=0: 0; `toNat` cannot hide a sign error (rank ≠ 0 would refute) | matches Hilton–Milnor plus PBW; sign (−1)^k = (−1)^{r k_R −1} |
+| `doubleLoopFactor n N r hn hr` | §5.1 | `PowerSeries.subst (C((−1)^{r(n−2)}) · X^{r(n−2)−1}) (binomialSeries ℚ (−e_r))`, exponent ≥1 so `subst` is legitimate | n=4,N=1: r=1 gives 1+t, r>1 gives 1; n=5,N=1: (1−t²)⁻¹, 1+t⁵ | equals (1−(−t)^{r(n−2)−1})^{−e_r} |
+| `doubleLoopBetti s N j x Y y hY` | §5.1 | n=s+4≥4, `Ω^(Fin 2) Y y`, product over r=1..j | factor r>j starts in degree r(n−2)−1≥2j+1>j, so truncation exact; j=0: coefficient 1 = H⁰ of the connected Ω²X; N=0: all e_r=0, Betti 1,0,0,…; S³: 1+t; S⁴: (1+t⁵)/(1−t²) = ℚ[y₂]⊗Λ(z₅) | sound; parity rule odd generator (1+t^m), even (1−t^m)⁻¹ checked against ℓ_r=(−1)^{rk−1}e_r |
+
+Mathematics computed on README targets (one row per statement with values): §2.1 compact range m+1≤a≤2m from duality on PConf₂ (ordinary 1,1 in 0,1; compact 1,1 in 4,3); §2.3 characters 4, 2s_n, 2, 8, 0⁰=1; §3.3 c=1: (1−qU²)/(1−qU) = 1+qU+(q²−q)U², c=−1: 1−qU; §3.4 sign: m=2, even n, N=1 gives 0=0 (anti-invariants of trivial swap actions), odd n gives 1,1 = coefficients (−1)^i[q^iU²] of (1−qU)⁻¹(1−qU²); §3.5 truncation: d(n−3)≥j suffices since m(n−3)>j kills the term and (d+1)(n−3)>j; n=4,N=1,j=1,d=1: 1=1; n=5,N=1,j=2,d=1: 1=1; §4.3 Witt counts 2,1,2; §5.2 K_{k₁,k₂} has b₁=(k₁−1)(k₂−1); §5.3 N=(k−1)ⁿ agrees with μ; §5.4 π₃(S³)=ℤ at n=4; §7.3 u_q=1,−1,−1,1 intertwines σ−1/1+σ with 1−σ/1+σ; §7.5 parity isomorphism: j odd reindexes p≡i−1, p≤i−1 exactly; j even needs i>dim Y to kill H^i(Y,ℤ); §7.6 b_i=β(a_{i−1})+(k−i)a_i from β(ω^j)=jω^{j+1}; §8.5 RP¹ has H¹=ℤ ≠ H¹(C₂,ℤ)=0; §9.2 (1+a+a²)(1+a)=1 mod a³; §9.5 d=2,i=4,j=1 window {1}; §10.1 pairing on (X(C)∖X(R))/G with or=ℤ(d) (BW (1.45) verified); §10.3 windows at d=1: H^{i−1}, H^i; §10.5 deg(a·1·γ)=1 vs 0; §11.1 ℂ* has H¹=ℤ so the bound is strict; §11.5 𝔾_m: H¹_G(S¹ with reflection)=𝔽₂² ≅ H¹_G(two fixed points), matrix [[1,0],[1,1]], relative H²=0; §12.3 Klein bottle: form diag(1,1), w₁=(1,1), w₁²=0=χ; §13.1 k=d−1 reduces Definition 1.19 to α_p=0 for p<d−1, p≡d−1 (BW Remark 1.20(i)); §13.3 traces 1−1+1−1=0, (60+0)/2=30; §14.3 trace at the branch point is 2, H¹(punctured disc, sign)=ℤ/2; §15.1–15.4 ψ[(1,0,0,0)]=(−3,1,1,1), trace 0, reduction (1,1,1,1); b=p*η−ψ(ζ) reduces to p*(η−φζ) since ψ≡diag∘φ mod n and (7.2) has (1,−φ) (B19 line 1380); §15.5 H¹=A/2A→𝔽₂ identity, H²=A[2]∋n/2↦n/2 mod 2; §15.6 n=2 stalk (𝔽₂⊕ℤ)/⟨(1,2)⟩≅ℤ/4, n=4 stalk 𝔽₂² (anti-invariants of ℤ⁴/diag have rank 2, relations (0,x)=(1,0)=(0,y), 2(0,z)=0); §16.3 2ℤ⊂ℤ index 2; §16.4 ℤ[G]⊗ℤ[G] diagonal = ℤ[G]², degrees 2+1+1=4. Headline coverage: the four stated theorems are the statable headlines (trace formula, tame bouquet, bouquet ranks, double-loop Betti); every other headline (stable diagonal, Hilton, joins and Fermat retraction, arrangement purity, all equivariant real-locus theorems, Wu/Stiefel–Whitney, transport, chases) lacks a carrier at the pins and is named in the module docstring; no declaration is padding (each definition is used by a stated headline, no Check mirrors, no boundary theorems). Lean-versus-README generality agrees for all four theorems (arbitrary finite field; arbitrary space homotopy equivalent to the bouquet with any base point; every a and every model point). Narrowings that exclude only vacuous cases and are not raised: §10.4 "geometrically connected, d≥1" against BW's "irreducible, dimension d" (the excluded cases have X(R)=∅ or H^{2d−1}_G(X(R))=0, both sides 0).
+
+## Not verifiable
+
+- Lean elaboration of `Suggested.lean` and the `#check @name` comparison: not built (no Lake environment in the board checkout; the brief forbids builds). The signatures were compared by reading the pinned sources only.
+- HILTON Theorem A and Corollary 4.10, DIMCA Lemma 4, BRUMFIEL pp.163–169, SCHEIDERER Corollary 18.11: uncertified publisher locators, not read; KRASNOV Theorem 2.1: waived. The claims attributed to them (Hilton decomposition and basic-word count; equivariant Ehresmann; semialgebraic fixed-point theorem; relative affine torsion vanishing; γ=w(TX(ℝ)) over ℝ) are standard and consistent with BS line 2363, B19 line 1257, BW lines 2472–2473, BW lines 1012–1014 and BW line 699 respectively, which is as far as the cache allows.
+- EP Theorem 4.1 is cited with arXiv-internal pagination (pp.46–47); the cache is the arXiv text, verified at EP line 2127; the published numbering was not checked.
+- The design baseline in `plan.json` pins Tau Ceti `f790474…`/Mathlib `082e2d3…`, which differ from the content manifest pins used here; all declarations were checked at the manifest pins only.
+- Ownership against open pull requests was checked by object with `roadmaps grep` across all open heads and main; the two board designs that cite this roadmap (`AT2.1`, `AT2.2`, `AT2.5` node ids) were not reviewed.
+
+## Source issues
+
+- **Error** in BS at Lemma 7.6, printed pp.944–945: the source states the double-loop Betti series for every n>2; it should require n≥4, since for n=3 and N>0 the double loop has infinitely many components and H⁰ is not finite dimensional; affects a stated result.
+- **Misprint** in B19 at Lemma 7.3, printed pp.98–99: the source writes the integral lift as p*η plus ψ(ζ); it should be p*η minus ψ(ζ), because (7.2) uses (1,−φ) and ψ reduces to diag∘φ modulo n; affects a stated result.
+- **Misprint** in B19 at displays (7.8)–(7.9), printed p.100: the lower coefficient-reduction arrow is drawn as the identity on both positive sign-cohomology coordinates; it should be the identity on H¹ and multiplication by n/2 mod 2 on H², which vanishes for n≡0 mod 4; affects the proof.
+
+<!-- tauceti-roadmap-review {"agent": "claude", "head": "a8a4623", "job": "RT-AlgebraicTopologyPartII~1b", "model": "fable", "worker": "fable-rt37"} -->

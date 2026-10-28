@@ -1,5 +1,70 @@
 schema = "tauceti-roadmap-sources/v1"
-roadmap = "PeriodsAndSpecialValues"
+
+[[source]]
+id = "BCGP"
+authors = "George Boxer, Frank Calegari, Toby Gee and Vincent Pilloni"
+title = "Abelian surfaces over totally real fields are potentially modular"
+year = 2021
+arxiv = "1812.09269v3"
+locator_scheme = "section"
+locator = "§2.8, pp. 35–38: Proposition 2.8.1, (2.8.4)–(2.8.5), Conjecture 2.8.6 and Corollary 2.8.7; Conjecture 1.1.1, pp. 3–4 (arXiv v3)"
+url = "https://arxiv.org/abs/1812.09269v3"
+fetched_from = "https://arxiv.org/pdf/1812.09269v3"
+fetched_at = "2026-10-22T20:45:31Z"
+sha256 = "7c8d74b0628d8b9cc841a853372ca2d0bc18c086ab46d138f75afd15f35689ed"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v3"
+cited_for = ["Conventions", "Exact supplier contracts", "PS.1.1", "PS.1.2", "PS.1.7", "PS.1.8", "Corrections to the sources"]
+
+[[source]]
+id = "B"
+authors = "Francis Brown"
+title = "Mixed Tate motives over ℤ"
+year = 2011
+arxiv = "1102.1312v1"
+locator_scheme = "section"
+locator = "Introduction, Theorem 1.1 and Corollary 1.2, p. 1; §§2.1–2.5 with Theorem 2.4 and Lemma 2.5, pp. 3–7; §§3.1–3.2 with (3.7)–(3.8) and Theorem 3.3, pp. 7–9; Lemma 3.8 and its proof, pp. 10–11; Theorem 4.3 and Corollary 4.4, pp. 12–13; §5 with Lemma 5.5 and Definitions 5.8–5.9, pp. 13–15; §6 with Theorem 6.1 and Corollary 6.2, pp. 14–17; Lemma 7.1, Theorems 7.3–7.4 and Corollary 7.5, pp. 17–19 (arXiv v1)"
+url = "https://arxiv.org/abs/1102.1312v1"
+fetched_from = "https://arxiv.org/pdf/1102.1312v1"
+fetched_at = "2026-10-22T20:45:35Z"
+sha256 = "e795b842a6820ed87685db81e0eeadfc220394d52ec88a95696111b4b0cd8367"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v1"
+cited_for = ["Conventions", "PS.9.1", "PS.9.9", "PS.9.11", "PS.9.12", "PS.9.13", "PS.9.14", "PS.9.15", "PS.9.16", "PS.9.17", "PS.9.18", "PS.9.19", "PS.9.20", "PS.9.21", "PS.9.22", "PS.9.23", "Corrections to the sources"]
+
+[[source]]
+id = "BG"
+authors = "David Burns and Cornelius Greither"
+title = "On the equivariant Tamagawa number conjecture for Tate motives"
+year = 2003
+doi = "10.1007/s00222-003-0291-x"
+locator_scheme = "section"
+locator = "The abelian Tate theorem as recorded in BF Remark 10, p. 537"
+url = "https://doi.org/10.1007/s00222-003-0291-x"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["PS.5.4"]
+
+[[source]]
+id = "BK"
+authors = "Spencer Bloch and Kazuya Kato"
+title = "L-functions and Tamagawa numbers of motives"
+year = 1990
+locator_scheme = "section"
+locator = "Theorem 4.1(iii), p. 362; Proposition 5.4, pp. 370–371; Definitions 5.5 and 5.5.1, pp. 371–372; (5.6)–(5.8), Definition 5.9 and (5.9.1), pp. 372–374; global points and triples of weights ≤ −3, p. 374; Lemma 5.10, (5.11)–(5.13), Proposition 5.14, Conjecture 5.15 and Remark 5.15.2, pp. 375–377; motives of pure weight −1 and the height discriminant, pp. 382–383"
+url = "https://virtualmath1.stanford.edu/~conrad/BSDseminar/refs/BKTamagawa.pdf"
+fetched_from = "https://virtualmath1.stanford.edu/~conrad/BSDseminar/refs/BKTamagawa.pdf"
+fetched_at = "2026-10-22T20:45:44Z"
+sha256 = "ec89c6436c7e16580791eddd562c8c04a12442d8a8484f8ac75c5ea8dc04f5e5"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["PS.6.1", "PS.6.2", "PS.6.3", "PS.6.5"]
 
 [[source]]
 id = "BV-final"
@@ -19,6 +84,420 @@ status = "certified"
 accessed = "2026-10-21"
 version_note = "arXiv v2"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/183#issuecomment-6316507841"
+
+[[source]]
+id = "Deligne"
+authors = "Pierre Deligne"
+title = "Valeurs de fonctions L et périodes d'intégrales"
+year = 2018
+locator_scheme = "section"
+locator = "English translation: §0.2.5, p. 3; §0.4, p. 4; §§1.1–1.3 with Definition 1.3, pp. 6–7; Proposition 1.4, p. 7; §§1.5–1.7 and Conjecture 1.8, p. 8; §2.1, p. 9; Proposition–Definition 2.3(ii), p. 10; §2.6, p. 11; Conjecture 2.8, p. 12; §§3.1–3.2, pp. 13–14; §4.1, p. 14; §5.1 with (5.1.8), pp. 15–16; §§5.2–5.3, pp. 17–18; §§6.1–6.7, pp. 20–22; §§7.6–7.8 with (7.8.3), pp. 24–26"
+url = "https://mathweb.tifr.res.in/~eghate/Deligne.pdf"
+fetched_from = "https://mathweb.tifr.res.in/~eghate/Deligne.pdf"
+fetched_at = "2026-10-22T20:45:48Z"
+sha256 = "08fbc56b42d829e3fc16067217001351962690921a7ffd20895b7ac1d9fac7f7"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["Conventions", "PS.0.1", "PS.0.2", "PS.0.3", "PS.0.4", "PS.0.5", "PS.1.1", "PS.1.2", "PS.1.3", "PS.1.4", "PS.1.5", "PS.1.6", "PS.2.2", "PS.3.2a", "PS.7.2", "PS.7.3", "Corrections to the sources"]
+
+[[source]]
+id = "DG"
+authors = "Pierre Deligne and Alexander Goncharov"
+title = "Groupes fondamentaux motiviques de Tate mixte"
+year = 2005
+locator_scheme = "section"
+locator = "Printed pages of the IAS preprint: §§1.1–1.9 with Proposition 1.9, pp. 3–17; §§2.1–2.3 with Propositions 2.2–2.3, pp. 18–20; Proposition 2.14, p. 25; Proposition 3.10 and §§3.11–3.13, pp. 40–45; Theorem 4.4, pp. 47–50; §§4.13–4.18 and §5.3, pp. 53–57"
+url = "https://www.math.ias.edu/files/deligne/Tate.pdf"
+fetched_from = "https://www.math.ias.edu/files/deligne/Tate.pdf"
+fetched_at = "2026-10-22T20:45:49Z"
+sha256 = "42039a170972f033f28eb481929aca3fc411a7e041c0f867157a769484ea21a4"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["PS.9.3", "PS.9.8", "PS.9.9", "PS.9.10"]
+
+[[source]]
+id = "H"
+authors = "Heinrich Hartmann"
+title = "Period- and mirror-maps for the quartic K3"
+year = 2011
+venue = "Manuscripta Mathematica (2013) Volume 141, Issue 3-4 , pp 391-422"
+doi = "10.1007/s00229-012-0577-7"
+arxiv = "1101.4601v1"
+locator_scheme = "section"
+locator = "§4.1, Propositions 4.1–4.4, pp. 10–11; §4.2, Propositions 4.6–4.7 and formula (5), pp. 12–13; Theorem 4.8, Theorems 4.10–4.12 and Corollary 4.13, pp. 13–16; Proposition 4.14, pp. 16–17; Propositions 4.21–4.25, pp. 18–21; Proposition 4.26 and Example 4.27, p. 21; §4.7 with Theorems 4.28–4.29 and Proposition 4.30, pp. 21–23; §4.8, Theorem 4.37 and Proposition 4.38, pp. 25–26 (arXiv v1)"
+url = "https://arxiv.org/abs/1101.4601v1"
+fetched_from = "https://arxiv.org/pdf/1101.4601v1"
+fetched_at = "2026-10-22T20:45:53Z"
+sha256 = "11e54e5ed83a516011217fa7f6fb40d4d890fb7ecf276d7ae398b5ae97a49909"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v1"
+cited_for = ["Exact supplier contracts", "PS.8.1", "PS.8.2", "PS.8.3", "PS.8.4", "PS.8.5", "PS.8.6", "PS.8.7", "PS.8.8", "PS.8.9", "Corrections to the sources"]
+
+[[source]]
+id = "HMS"
+authors = "Annette Huber and Stefan Müller-Stach"
+title = "On the relation between Nori motives and Kontsevich periods"
+year = 2014
+arxiv = "1105.0865v5"
+locator_scheme = "section"
+locator = "Theorem 0.2, p. 2; Definition 2.8, Remark 2.9, Theorem 2.10 and Corollary 2.11, pp. 10–11; §3 with Lemmas 3.1–3.2, pp. 12–13 (arXiv v5)"
+url = "https://arxiv.org/abs/1105.0865v5"
+fetched_from = "https://arxiv.org/pdf/1105.0865v5"
+fetched_at = "2026-10-22T20:45:59Z"
+sha256 = "e55d85bf168c4eedb79949c37d648ea5c071af50d18a2c7ccc316d460e96c563"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v5"
+cited_for = ["PS.2.1", "PS.2.2", "PS.2.3", "PS.7.4"]
+
+[[source]]
+id = "HMS-book"
+authors = "Annette Huber and Stefan Müller-Stach, with contributions by Benjamin Friedrich and Jonas von Wangenheim"
+title = "Periods and Nori Motives"
+year = 2016
+locator_scheme = "section"
+locator = "Propositions 3.2.9 and 3.2.13 and Lemma 3.2.14, pp. 78–80; Definition 5.4.1 and Lemma 5.4.2, pp. 103–104; Theorem 14.5.3, Corollary 14.5.4, Theorem 14.5.6 and Examples 14.5.7, pp. 277–279 (author draft of 13 May 2016)"
+url = "https://home.mathematik.uni-freiburg.de/arithgeom/preprints/buch-alt/buch-v2.pdf"
+fetched_from = "https://home.mathematik.uni-freiburg.de/arithgeom/preprints/buch-alt/buch-v2.pdf"
+fetched_at = "2026-10-22T20:46:02Z"
+sha256 = "5310c1700e0738edc2395c082226ba445a6851a14e891f2932520e4ab70422a7"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["PS.0.5", "PS.2.1"]
+
+[[source]]
+id = "Huybrechts"
+authors = "Daniel Huybrechts"
+title = "Lectures on K3 Surfaces"
+year = 2016
+locator_scheme = "section"
+locator = "Chapter 1, §3 and Proposition 3.5, pp. 15–17"
+url = "https://www.math.uni-bonn.de/people/huybrech/K3Global.pdf"
+fetched_from = "https://www.math.uni-bonn.de/people/huybrech/K3Global.pdf"
+fetched_at = "2026-10-22T20:46:10Z"
+sha256 = "59da72d5807fd05d08ce28ceaf30a030cfc7e52b92e27778d824ac86cb1dd287"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["Exact supplier contracts", "PS.8.4"]
+
+[[source]]
+id = "IKZ"
+authors = "Kentaro Ihara, Masanobu Kaneko and Don Zagier"
+title = "Derivation and double shuffle relations for multiple zeta values"
+year = 2006
+locator_scheme = "section"
+locator = "§1, pp. 307–309; Proposition 1, p. 309; §2 with (2.1)–(2.2), pp. 309–311; Theorem 1 and its proof, pp. 310–312; §3, pp. 312–314; Theorem 2 and Conjecture 1, pp. 314–315"
+url = "https://people.mpim-bonn.mpg.de/zagier/files/doi/10.1112/S0010437X0500182X/fulltext.pdf"
+fetched_from = "https://people.mpim-bonn.mpg.de/zagier/files/doi/10.1112/S0010437X0500182X/fulltext.pdf"
+fetched_at = "2026-10-22T20:46:11Z"
+sha256 = "0f2ca065e44b28dd8d51d825a46f06e34abf2c2fe9892bdcd01b8a511e692c77"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["PS.9.1", "PS.9.2", "PS.9.3", "PS.9.4", "PS.9.5", "PS.9.6", "PS.9.7"]
+
+[[source]]
+id = "K"
+authors = "Kiran S. Kedlaya"
+title = "Frobenius structures on hypergeometric equations"
+year = 2021
+arxiv = "1912.13073v3"
+locator_scheme = "section"
+locator = "Lemma 2.3.6, p. 4; Lemma 2.3.8, pp. 4–5; Proposition 3.1.11, pp. 9–10; Remark 4.1.3, p. 17; Example 4.4.1, pp. 20–21 (arXiv v3)"
+url = "https://arxiv.org/abs/1912.13073v3"
+fetched_from = "https://arxiv.org/pdf/1912.13073v3"
+fetched_at = "2026-10-22T20:46:22Z"
+sha256 = "0e8374f0013d339dd764f182b0bd0be73210b94cd853a4d480154db4ff03c380"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v3"
+cited_for = ["PS.8.17"]
+
+[[source]]
+id = "LYA"
+authors = "Bong H. Lian and Shing-Tung Yau"
+title = "Arithmetic properties of mirror map and quantum coupling"
+year = 1994
+venue = "Commun.Math.Phys. 176 (1996) 163-192"
+doi = "10.1007/BF02099367"
+arxiv = "hep-th/9411234v3"
+locator_scheme = "section"
+locator = "§4.1, (4.3), printed p. 8; §5.1, (5.3)–(5.4), printed p. 16; §5.5, (5.18)–(5.19), printed p. 21; §6, (6.1)–(6.4), printed pp. 22–23 (arXiv v3)"
+url = "https://arxiv.org/abs/hep-th/9411234v3"
+fetched_from = "https://arxiv.org/pdf/hep-th/9411234v3"
+fetched_at = "2026-10-22T20:46:41Z"
+sha256 = "dcf9ee72c383e88d539a710e45947392514e78a1aaa3e4a023fd7a371e8394d0"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v3"
+cited_for = ["PS.8.10", "PS.8.11"]
+
+[[source]]
+id = "LYH"
+authors = "Bong H. Lian and Shing-Tung Yau"
+title = "Mirror maps, modular relations and hypergeometric series I"
+year = 1995
+arxiv = "hep-th/9507151v1"
+locator_scheme = "section"
+locator = "Proposition 3.1 and its proof, printed pp. 3–4 (arXiv v1)"
+url = "https://arxiv.org/abs/hep-th/9507151v1"
+fetched_from = "https://arxiv.org/pdf/hep-th/9507151v1"
+fetched_at = "2026-10-22T20:46:47Z"
+sha256 = "3f4aa8fcc1d5cd45cb130a4f1a05c09038eaa45621546fdb82d48af53ff410e6"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v1"
+cited_for = ["PS.8.7"]
+
+[[source]]
+id = "NS"
+authors = "Masaru Nagura and Katsuyuki Sugiyama"
+title = "Mirror symmetry of K3 and torus"
+year = 1993
+venue = "Int.J.Mod.Phys. A10 (1995) 233-252"
+doi = "10.1142/S0217751X95000115"
+arxiv = "hep-th/9312159v1"
+locator_scheme = "section"
+locator = "§3.3, formula (26), printed p. 9; §5.2, formula (39), printed p. 14 (arXiv v1)"
+url = "https://arxiv.org/abs/hep-th/9312159v1"
+fetched_from = "https://arxiv.org/pdf/hep-th/9312159v1"
+fetched_at = "2026-10-22T20:46:53Z"
+sha256 = "3d5b118a8db84976a344e9c13408cefc229853641bb9fae7255b71f322ab6d6d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v1"
+cited_for = ["PS.8.8", "Corrections to the sources"]
+
+[[source]]
+id = "Serre"
+authors = "Jean-Pierre Serre"
+title = "Facteurs locaux des fonctions zêta des variétés algébriques (définitions et conjectures)"
+year = 1970
+locator_scheme = "section"
+locator = "§§3.1–3.3, printed pp. 19-10–19-11; §4.1, (26)–(29), (5)–(7) and Conjecture C9, printed pp. 19-12–19-13"
+url = "https://numdam.org/article/SDPP_1969-1970__11_2_A4_0.pdf"
+fetched_from = "https://numdam.org/article/SDPP_1969-1970__11_2_A4_0.pdf"
+fetched_at = "2026-10-22T20:46:54Z"
+sha256 = "7ed71db99ff8cf5e24d2c45056048dadfc29ce4b2e3a387061ccfb7baa875754"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["PS.1.1", "PS.1.2", "PS.1.8"]
+
+[[source]]
+id = "Qian"
+authors = "Lie Qian"
+title = "Ordinarity of local Galois representation arising from Dwork motives"
+year = 2021
+arxiv = "2103.00106v1"
+locator_scheme = "section"
+locator = "Theorem 1.6, p. 4; Lemma 2.1 and Remark 2.2, pp. 4–8; Theorem 3.2 and its proof, pp. 14–18 (arXiv v1)"
+url = "https://arxiv.org/abs/2103.00106v1"
+fetched_from = "https://arxiv.org/pdf/2103.00106v1"
+fetched_at = "2026-10-22T20:46:59Z"
+sha256 = "87c4ee8499f3a615a81307e17d38d6f00ab544da9d22384f213bbc06052722e9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v1"
+cited_for = ["PS.8.17"]
+
+[[source]]
+id = "SG"
+authors = "Albert Schwarz and Ilya Shapiro"
+title = "p-adic superspaces and Frobenius"
+year = 2012
+arxiv = "math/0605310v5"
+locator_scheme = "section"
+locator = "Lemma 4.11, pp. 21–22; Lemmas 4.14–4.15, p. 26; Theorems 4.16 and 4.18, pp. 27–28; Lemma 5.6, p. 30 (arXiv v5)"
+url = "https://arxiv.org/abs/math/0605310v5"
+fetched_from = "https://arxiv.org/pdf/math/0605310v5"
+fetched_at = "2026-10-22T20:47:05Z"
+sha256 = "7d35766f388151c3daac093d63a2242d8b18c9ae9043ff678b046d01340385a5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v5"
+cited_for = ["PS.8.17"]
+
+[[source]]
+id = "SH"
+authors = "Ilya Shapiro"
+title = "Frobenius map for quintic threefolds"
+year = 2008
+arxiv = "0809.3742v2"
+locator_scheme = "section"
+locator = "§§3.1–3.3, pp. 3–5; §4.1; Definition 4.2, p. 5; Lemma 4.8, pp. 6–7, and Corollary 4.10; Lemma 4.12, pp. 8–9; §4.3, pp. 9–10; Theorem 5.13, pp. 13–14; Definition 6.1 and Lemma 6.2, pp. 14–15; Lemma 6.3 and §§6.1–6.4, pp. 16–19 (arXiv v2, which has no Theorem 6.1)"
+url = "https://arxiv.org/abs/0809.3742v2"
+fetched_from = "https://arxiv.org/pdf/0809.3742v2"
+fetched_at = "2026-10-22T20:47:11Z"
+sha256 = "cc57d22b1c173ef1837c6d31af4e76546233f0d9ac053cffa403e6017e551e16"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v2"
+cited_for = ["PS.8.12", "PS.8.13", "PS.8.14", "PS.8.15", "PS.8.16", "PS.8.17", "Corrections to the sources"]
+
+[[source]]
+id = "SO"
+authors = "Ismaël Soudères"
+title = "Motivic double shuffle"
+year = 2008
+arxiv = "0808.0248v3"
+locator_scheme = "section"
+locator = "§3.2, Definition 3.7 and Proposition 3.8, pp. 10–12; §4.4, Proposition 4.24 and its proof, pp. 23–26 (arXiv v3)"
+url = "https://arxiv.org/abs/0808.0248v3"
+fetched_from = "https://arxiv.org/pdf/0808.0248v3"
+fetched_at = "2026-10-22T20:48:52Z"
+sha256 = "91259e395f1a550088e297a006a0e8ab811d48982e25d78c7599e1a596e85f0e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v3"
+cited_for = ["PS.9.15"]
+
+[[source]]
+id = "SS"
+authors = "Albert Schwarz and Ilya Shapiro"
+title = "Twisted de Rham cohomology, homological definition of the integral and \"Physics over a ring\""
+year = 2008
+venue = "Nucl.Phys.B809:547-560,2009"
+doi = "10.1016/j.nuclphysb.2008.10.005"
+arxiv = "0809.0086v1"
+locator_scheme = "section"
+locator = "§2, pp. 11–12; §3, pp. 12–13 (arXiv v1)"
+url = "https://arxiv.org/abs/0809.0086v1"
+fetched_from = "https://arxiv.org/pdf/0809.0086v1"
+fetched_at = "2026-10-22T20:48:55Z"
+sha256 = "733ff216eec53ce563c69e31957cb028775646c76e225c18562f052b7a3981d8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v1"
+cited_for = ["PS.8.13", "PS.8.17"]
+
+[[source]]
+id = "Z"
+authors = "Don Zagier"
+title = "Evaluation of the multiple zeta values ζ(2, …, 2, 3, 2, …, 2)"
+year = 2012
+locator_scheme = "section"
+locator = "(5)–(6), p. 979; Theorem 1, p. 981; §§2–4, pp. 982–990, with Propositions 1–3, pp. 982–985, Propositions 4–6, pp. 985–989, and Lemma 2, p. 989"
+url = "https://people.mpim-bonn.mpg.de/zagier/files/doi/10.4007/annals.2012.175.2.11/fulltext.pdf"
+fetched_from = "https://people.mpim-bonn.mpg.de/zagier/files/doi/10.4007/annals.2012.175.2.11/fulltext.pdf"
+fetched_at = "2026-10-22T20:48:56Z"
+sha256 = "28a98d968fe6998979008164252b5a9711a780c3f009ae6dfa55aae7c41014cd"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["PS.9.16", "PS.9.17"]
+
+[[source]]
+id = "BF"
+authors = "David Burns and Matthias Flach"
+title = "Tamagawa numbers for motives with (non-commutative) coefficients"
+year = 2001
+locator_scheme = "section"
+locator = "§2.4, Remark 1, p. 508; §2.8, Proposition 2.5, pp. 514–515; §2.9, (12)–(15), pp. 516–517; §3.1, pp. 517–519; §3.2 with Conjecture 1 and (19)–(24), pp. 519–523; §3.3, pp. 524–525; §3.4 with (29) and Lemmas 5–6, pp. 526–529; Theorem 3.1, p. 531, with proof pp. 531–533; Remark 7, p. 534; §4.2, Lemma 9, pp. 534–535; Conjecture 4, pp. 535–536; Conjectures 5–6, pp. 536–537; Remark 10, p. 537; Theorem 4.1, p. 539, with proof pp. 539–541"
+url = "https://ems.press/content/serial-article-files/25892?nt=1"
+fetched_from = "https://ems.press/content/serial-article-files/25892?nt=1"
+fetched_at = "2026-10-22T20:50:24Z"
+sha256 = "d9caa72585d3ae77f34fd1798289345ca2d7a0f4284933c1c0945cb0f0994e5b"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["PS.3.1", "PS.3.2", "PS.3.3", "PS.4.1", "PS.4.2", "PS.4.3", "PS.4.4", "PS.5.1", "PS.5.2", "PS.5.3", "PS.5.4", "PS.6.3", "PS.6.4", "PS.7.4", "Corrections to the sources"]
+
+[[source]]
+id = "IL"
+authors = "Tau Ceti contributors"
+title = "Integral lattices, discriminant forms, and overlattices"
+year = 2026
+locator_scheme = "section"
+locator = "Completed Layers 1–5 (discriminant forms and gluing); primitive embeddings and indefinite classification require the Part II gap"
+url = "https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/Completed/IntegralLattices/README.md"
+fetched_from = "https://github.com/TauCetiProject/TauCetiRoadmap/blob/main/Completed/IntegralLattices/README.md"
+fetched_at = "2026-10-22T20:50:24Z"
+sha256 = "be33d04acc1b9344fbcbbe66df6ee417cf79acf9628ca58361b61c13706f2f48"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["References"]
+
+[[source]]
+id = "LTXZZ"
+authors = "Yifeng Liu, Yichao Tian, Liang Xiao, Wei Zhang and Xinwen Zhu"
+title = "On the Beilinson–Bloch–Kato conjecture for Rankin–Selberg motives"
+year = 2022
+locator_scheme = "section"
+locator = "§1.1, Definition 1.1.3 and Theorems 1.1.5 and 1.1.9, pp. 110–113; Proposition 3.2.4 and Definition 3.2.5, pp. 144–145; §8.3 with Conjecture 8.3.1, pp. 315–316"
+url = "https://par.nsf.gov/servlets/purl/10323568"
+fetched_from = "https://par.nsf.gov/servlets/purl/10323568"
+fetched_at = "2026-10-22T20:50:33Z"
+sha256 = "dd821abd2b06233cb69cdc88de242b689686d5f2ce0c2072128abcd54ec89d97"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["Exact supplier contracts", "PS.6.6", "PS.6.7"]
+
+[[source]]
+id = "Park"
+authors = "Junyeong Park"
+title = "On a comparison between Dwork and rigid cohomologies of projective complements"
+year = 2024
+locator_scheme = "section"
+locator = "§1.1, (1.1), p. 423; Lemmas 2.2–2.3 and Proposition 2.4, pp. 430–432; Definition 3.1, p. 433; Definition 4.8, Remark 4.9, Theorem 4.11 and Corollary 4.12, pp. 442–445; Proposition 5.2, p. 449"
+url = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/E76A045EC6FA83669757B9F24B2F4FA2/S0027763023000326a.pdf/on_a_comparison_between_dwork_and_rigid_cohomologies_of_projective_complements.pdf"
+fetched_from = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/E76A045EC6FA83669757B9F24B2F4FA2/S0027763023000326a.pdf/on_a_comparison_between_dwork_and_rigid_cohomologies_of_projective_complements.pdf"
+fetched_at = "2026-10-22T20:50:34Z"
+sha256 = "0812392b6c39b0213e820069c5ec271336881a7ddc643e7757cdeaefa7f1dd25"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["PS.8.14", "PS.8.17"]
+
+[[source]]
+id = "Burgos"
+authors = "José Ignacio Burgos Gil"
+title = "The regulators of Beilinson and Borel"
+year = 2002
+locator_scheme = "theorem"
+locator = "Theorem 10.9 and its proof, printed pp. 95–97 (PDF pages 101–103)"
+url = "https://www.icmat.es/miembros/burgos/files/brbr.pdf"
+fetched_from = "https://www.icmat.es/miembros/burgos/files/brbr.pdf"
+fetched_at = "2026-10-22T20:50:36Z"
+sha256 = "da6ba8c4b08bf447d1575788c33b96c52d8d0d0a377e8f2990ead6aed73f65ea"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["Exact supplier contracts", "PS.3.2a"]
+
+[[source]]
+id = "Stacks"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project: Commutative Algebra"
+year = 2026
+locator_scheme = "tag"
+locator = "Tag 00OC, Proposition 10.110.5 (regular local rings and finite global dimension)"
+url = "https://stacks.math.columbia.edu/tag/00OC"
+fetched_from = "https://stacks.math.columbia.edu/download/algebra.pdf#nameddest=00OC"
+fetched_at = "2026-10-22T20:55:56Z"
+sha256 = "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["PS.4.1"]
 
 [[source]]
 id = "Tate-legal"
