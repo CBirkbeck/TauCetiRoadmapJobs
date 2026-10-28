@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-SurfaceTopology~1",
+    "head": "238d5dac9206bdb37cd0fb9cacbd964fee55b2df",
+    "pr": 271,
+    "folder": "SurfaceTopology",
+    "date": "2026-10-28",
+    "findings": 14,
+    "blocking": 8,
+    "notes": "Reviewed all 15 seeded labels across their occurrences; 3 of 14 full source texts read, 11 not verifiable. Adversarial table has 254 rows; exhaustive finite probes covered 570 generalized maps. Built six imported Tau Ceti modules, direct elaboration passed with sorry warnings, inspected 82 signatures, and ran 11 one-tactic probes. Gate fails: sorry-data 28, admitted examples 11, prnum 7, empty sections 2, and a cycle diagnostic identified as a false supply reading of consumer mentions. Existing graph/polygon/chain owners and named suppliers resolved. No PR file changed."
+  }
+}
