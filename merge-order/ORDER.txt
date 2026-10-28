@@ -256,6 +256,7 @@ CalibratedGeometry
 DifferentialGeometry
 CategoricalOperatorAlgebras
 AlgebraicCurves
+HilbertModules
 AbelianSurfacesModularity
 ColemanIntegrationPartII
 TropicalAndBerkovichArithmetic
