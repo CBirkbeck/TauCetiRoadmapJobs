@@ -274,6 +274,7 @@ K3BlochGroups
 EllipticKTheory
 SymplecticReidemeisterTorsionModSquares
 ProfiniteProPGroups
+ChevalleyGroups
 GlobalGaloisDeformationsPartII
 ProfiniteCohomologyPartII
 EtaleHomotopyTypes
