@@ -217,6 +217,7 @@ ImplicitAtlases
 FourManifolds
 LocalVariationalFieldTheory
 CalibratedGeometry
+GeometricTopology
 SmoothBundlesConnections
 DifferentialGeometry
 AlgebraicTopologyPartII
