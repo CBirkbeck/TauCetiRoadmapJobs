@@ -329,6 +329,7 @@ HabiroNahmSeries
 KatoEulerSystems
 CountingBundlesAndHallAlgebrasOfCurves
 ArithmeticKTheoryPartII
+McKaySkewGroup
 AutomorphicCongruences
 ModularIwasawaMainConjectures
 HeegnerPointEulerSystems
