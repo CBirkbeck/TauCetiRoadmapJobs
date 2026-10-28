@@ -344,6 +344,7 @@ HabiroNahmSeries
 KatoEulerSystems
 CountingBundlesAndHallAlgebrasOfCurves
 ArithmeticKTheoryPartII
+HopfologicalAlgebra
 McKaySkewGroup
 AutomorphicCongruences
 ModularIwasawaMainConjectures
