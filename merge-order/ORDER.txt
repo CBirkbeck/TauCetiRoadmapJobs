@@ -250,6 +250,7 @@ Subfactors
 MorseTheory
 GaugeQuiltFieldTheory
 FukayaTheory
+PolynomialGaloisGroups
 OperatorTheory
 SmoothRepresentationsOfLocalGroupsPartII
 ImplicitAtlases
