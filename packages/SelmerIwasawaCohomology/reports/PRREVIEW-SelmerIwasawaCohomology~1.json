@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-SelmerIwasawaCohomology~1",
+    "head": "1fa1c7d7447988efdf08df5936d6da2ffc2a009f",
+    "pr": 869,
+    "folder": "SelmerIwasawaCohomology",
+    "date": "2026-10-28",
+    "findings": 7,
+    "blocking": 4,
+    "notes": "Read both target files, repository checklist and contributing rules; verified all 15 seeded source targets (Deligne visually), recorded access limits and nine source errata; 130 computed adversarial rows; ownership and supplier-order audit. Targeted build and direct Lean elaboration pass with six sorry warnings; all 17 signatures checked; six single-simp probes close none. Supplied gate fails dependency checking: substantive upward LFunctions edge; ClassFieldTheory and ProfiniteProPGroups edges are main/completed-supplier false positives. No PR files changed."
+  }
+}
