@@ -245,6 +245,7 @@ QuadraticFormInvariantsPartII
 TwistedAutomorphicDescents
 SpectralManifolds
 OperatorAlgebraDynamics
+NoncompactQuantumSymmetry
 Subfactors
 MorseTheory
 GaugeQuiltFieldTheory
