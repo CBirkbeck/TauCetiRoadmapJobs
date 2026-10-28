@@ -252,6 +252,7 @@ FukayaTheory
 OperatorTheory
 SmoothRepresentationsOfLocalGroupsPartII
 ImplicitAtlases
+LocalVariationalFieldTheory
 CalibratedGeometry
 DifferentialGeometry
 CategoricalOperatorAlgebras
