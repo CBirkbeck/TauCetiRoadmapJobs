@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-ECM~1",
+    "head": "655a34020322b44b0b1cf806253edf568d117f34",
+    "pr": 419,
+    "folder": "ECM",
+    "date": "2026-10-28",
+    "findings": 5,
+    "blocking": 2,
+    "notes": "Worker gate passed all checks; direct Lean elaboration passed; dependency check: 162 roadmaps, 1170 edges, 0 problems. No seeded target identifiers supplied; fifteen explicit assertions audited across all twelve milestones. EFD and Lenstra read; Montgomery primary scan and GMP-ECM mathematical text not verifiable. Adversarial sweep: 134 curves, 1400 doubles, 16544 point-pair tests, no failures. Three original signatures and native headline probes checked; generic library duplicate probes passed. Main/open/package ownership checked."
+  }
+}
