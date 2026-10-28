@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-SporadicOrders~1",
+    "head": "e16fe9d37e24942c636f6fce12adf010833cc9b2",
+    "pr": 599,
+    "folder": "SporadicOrders",
+    "date": "2026-10-28",
+    "findings": 6,
+    "blocking": 2,
+    "notes": "Worker gate passes; independent depcheck: 162 roadmaps, 1169 edges, 0 problems. Target elaborates with only three sorry warnings. Computed all ten ATLAS model orders; false M24 orbit-length Check. All ten model definitions and thirty analogous signatures elaborate in scratch; eighteen primary headlines absent. Brief supplies no identifiable seeded sample: checked all ten O1 rows plus five explicit targets; source and map-validation limits recorded in Markdown."
+  }
+}
