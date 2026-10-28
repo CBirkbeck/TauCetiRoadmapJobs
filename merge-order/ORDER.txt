@@ -184,6 +184,7 @@ PolynomialGaloisGroupsPartII
 ArithmeticDynamicsPartII
 QuaternionicAnalysis
 ImplicitAtlases
+EllipticCohomology
 TangentialBordism
 FourManifolds
 LocalVariationalFieldTheory
