@@ -291,6 +291,7 @@ LevelOneAutomorphicFormsForClassicalGroups
 AutomorphicLFunctionsAndLocalFactorsPartII
 ExceptionalThetaCorrespondencesForG2
 TensorProductCombinatorics
+ZerosOfLFunctions
 LFunctions
 BorelRegulators
 Polylogarithms
