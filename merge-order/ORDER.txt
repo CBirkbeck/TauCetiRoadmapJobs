@@ -236,6 +236,7 @@ ECM
 ChevalleyGroups
 EtaleHomotopyTypes
 RandomMatrices
+GlobalNumberFields
 PDE
 ConformalMappingPartII
 TemperleyLieb
