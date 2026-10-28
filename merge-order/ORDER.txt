@@ -252,6 +252,7 @@ GaugeQuiltFieldTheory
 FukayaTheory
 PolynomialGaloisGroups
 OperatorTheory
+QuaternionicAnalysis
 SmoothRepresentationsOfLocalGroupsPartII
 ImplicitAtlases
 LocalVariationalFieldTheory
