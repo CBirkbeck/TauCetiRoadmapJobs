@@ -236,6 +236,7 @@ ECM
 ChevalleyGroups
 EtaleHomotopyTypes
 RandomMatrices
+PDE
 TemperleyLieb
 HomotopySpheres
 IntegralLattices
