@@ -4877,13 +4877,19 @@
       "slug": "very-tame-local-quotient",
       "supplier": "LefschetzPencilsAndVanishingCycles",
       "section": "0.10",
-      "needs": "(a) The log structure of the quotient q : X → X/G of VanishingCycles.veryTameQuotient is (q_*M_X)^G; (b) at a geometric point x of an admissible, generically free, very tame action on a log regular fs scheme, G_x is abelian of order invertible in κ(x) and the strict localization of q at x is a standard Kummer étale cover of group G_x; (c) the very tame locus of a finite group action on a log regular fs scheme is open; (d) VanishingCycles.equivariantLogResolution commutes with restriction to G-stable opens and with strict localization at a geometric point x for the group G_x."
+      "needs": "(a) The log structure of the quotient q : X → X/G of the very tame quotient theorem of §0.10 is (q_*M_X)^G; (b) at a geometric point x of an admissible, generically free, very tame action on a log regular fs scheme, G_x is abelian of order invertible in κ(x) and the strict localization of q at x is a standard Kummer étale cover of group G_x; (c) the very tame locus of a finite group action on a log regular fs scheme is open; (d) The equivariant log resolution of §0.10 commutes with restriction to G-stable opens and with strict localization at a geometric point x for the group G_x."
     },
     {
       "slug": "log-blowup-universal-property",
       "supplier": "LefschetzPencilsAndVanishingCycles",
       "section": "0.10",
       "needs": "The log blow-up carrier of §0.10 has the universal property for making a coherent log ideal invertible, and its fs saturation supplies the saturated log blow-up on the same shared log-scheme carrier."
+    },
+    {
+      "slug": "normalization-finite-field-identification",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "0.20",
+      "needs": "For an integral scheme X and a finite field extension L/k(X), the native relative normalization Nor_L(X) is normal, and the canonical map Spec L → Nor_L(X) identifies L with its function field compatibly with the specified embedding of k(X)."
     }
   ],
   "sourceIssues": [

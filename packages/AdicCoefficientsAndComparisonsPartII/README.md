@@ -11,11 +11,12 @@ AdicCoefficientsAndComparisons Layer L5 uses alterations in scheme–v-sheaf com
 The following subjects have their own owners and are consumed here.
 
 - SchemeAndStackFoundations §§0.9, 0.16–0.21 supplies scheme limits, noetherian approximation, catenarity, excellence and finite normalization. Its §§4.11–4.20 supplies modifications, strict transforms, proper flattening, separated Chow, regularity, integral alterations, strict normal crossings divisors and de Jong’s field and trait theorems. The alteration and boundary notions here extend those integral/divisor carriers to reducible schemes and reduced supports; their integral and divisor specializations use the supplied objects.
-- Normalization in a finite function-field extension is Mathlib’s relative normalization, with finiteness from SchemeAndStackFoundations §0.20. No normalization construction or second normal-scheme carrier is a target here.
+- Normalization in a finite function-field extension is Mathlib’s relative normalization, with finiteness and gap:normalization-finite-field-identification from SchemeAndStackFoundations §0.20. No normalization construction or second normal-scheme carrier is a target here.
 - EtaleCohomologyFoundations §F.0.A1 supplies decomposition and inertia groups of a normalization in a finite Galois extension; PA.3 extends them to finite group actions on arbitrary schemes.
 - LocalFieldsRamificationPartII GF.0–GF.6 supplies prime-supported integers and extensions, henselization, arbitrary-rank tame and unramified extensions, their tower, base-change and composition laws, Abhyankar's inequality, and both full and separable prime-supported closed-field tameness. The pointwise tameness export is consumed there; this roadmap owns its compact-set globalization.
 - CrystallineCohomology CR.5:log-algebra.1–4 supplies monoids, log structures, charts, fs fibre products, log smoothness, log regularity and logarithmic Abhyankar. The closed-subset log structure contract below extends its divisorial interface. This roadmap’s pair retains its exact boundary, rather than merely a chosen fs log structure.
 - LefschetzPencilsAndVanishingCycles §0.10 supplies logarithmic group actions, very tameness, very tame quotients, log blow-ups, regular log resolution and the separated absolute and relative Gabber modification theorems. Those targets are not reconstructed here. PA.4 adds normalized blow-up comparison, functoriality on monoidally smooth maps and the inertia specializing non-separated variants.
+- ResolutionOfSingularitiesCharacteristicZero §§7.5–7.6 supplies regular-functorial resolution of reduced noetherian quasi-excellent Q-schemes. PA.4.3 owns the fan and logarithmic comparisons derived from this tower.
 - ClassicalAdicEtaleCohomology §2.4 supplies the affine Zariski–Riemann model-limit presentation. PA.1 compares its space with the pointed locally ringed limit, including centres and stalks.
 - Tau Ceti supplies the valuation spectrum and its patch compactness, residue degrees of scheme morphisms with their tower law, and affine invariant quotients. StableReduction Layer 2 supplies projective morphisms, relative Proj and proper-curve dualizing theory, Layer 4 blow-ups of quasi-coherent finite-type ideals and normalized blow-up resolution of normal proper models of smooth curves over a discrete valuation ring, which §PA.0.11 extends to every two-dimensional quasi-excellent scheme, and Layer 3 proper pointed prestable families and the pointed stability criterion. PA.5 retains non-proper curves, the local complete-intersection extension of dualizing sheaves, and stability relative to the modification, with ordered markings only after an étale splitting. Its semistability means nodality with étale smooth-locus markings; it does not imply the genus bound and absence of rational tails required by the supplier’s semistability predicate.
 
@@ -39,7 +40,7 @@ All diagrams and field embeddings live in fixed universes, enlarged for small in
 
 Use `algebraicClosure` (Mathlib/FieldTheory/AlgebraicClosure.lean), the relative algebraic closure as an intermediate field, for §PA.5.5a; the scheme-level factorization and degree-preservation theorem there use this carrier. Use `AlgebraicGeometry.Scheme` and `AlgebraicGeometry.Scheme.residueField` (Mathlib/AlgebraicGeometry/ResidueField.lean), `ringChar`, `Module.finrank`, `Nat.primeFactors`, `Algebra.IsSeparable`, `IsGalois` and `IsPurelyInseparable` for residue characteristics and finite generic degrees. `AlgebraicGeometry.Scheme.Hom.residueDegree` (Mathlib/AlgebraicGeometry/ResidueField.lean) is the degree [κ(x) : κ(f(x))] of a morphism f at a point x, with the value 0 when that residue extension is infinite; it is used only at maximal points of alterations, where the extension is finite. The scheme predicates are `AlgebraicGeometry.IsNoetherian`, `AlgebraicGeometry.IsProper`, `AlgebraicGeometry.IsFinite`, `AlgebraicGeometry.IsDominant`, `AlgebraicGeometry.IsOpenImmersion`, `AlgebraicGeometry.IsSeparated`, `AlgebraicGeometry.Flat` and `AlgebraicGeometry.Etale`. IsNoetherian includes local noetherianness and compactness, but does not supply separatedness. Keep that distinction on non-separated bases.
 
-Use `AlgebraicGeometry.Scheme.Hom.normalization`, `AlgebraicGeometry.Scheme.Hom.toNormalization`, `AlgebraicGeometry.Scheme.Hom.fromNormalization` and `AlgebraicGeometry.Scheme.Hom.normalizationObjIso` in Mathlib/AlgebraicGeometry/Normalization.lean for relative normalization and its affine integral-closure comparison. For Spec L → X with X integral and L finite over k(X), denote this object by Nor_L(X). Its function field is L, it is normal, and inclusions of finite extensions and compatible modifications induce maps of normalizations. For X normal, `Nor_{k(X)}(X)` → X is an isomorphism; finiteness uses the Nagata contract below (stacks, tag 0AVK; temkin17 §3.3.3, p. 119, temkin17 line 895).
+Use `AlgebraicGeometry.Scheme.Hom.normalization`, `AlgebraicGeometry.Scheme.Hom.toNormalization`, `AlgebraicGeometry.Scheme.Hom.fromNormalization` and `AlgebraicGeometry.Scheme.Hom.normalizationObjIso` in Mathlib/AlgebraicGeometry/Normalization.lean for relative normalization and its affine integral-closure comparison. For Spec L → X with X integral and L finite over k(X), denote this object by Nor_L(X). Normality and the marked identification of its function field with L use gap:normalization-finite-field-identification below, rather than a pinned geometric export. The universal property `AlgebraicGeometry.Scheme.Hom.normalizationDesc` and uniqueness `AlgebraicGeometry.Scheme.Hom.normalization.hom_ext` induce maps along compatible field inclusions and modifications: the target normalization is integral over the original base. For normal X and L = k(X), the affine comparison identifies each integral closure with the original normal domain; these comparisons glue to `Nor_{k(X)}(X)` ≅ X. Finiteness uses the Nagata contract below (stacks, tag 0AVK; temkin17 §3.3.3, p. 119, temkin17 line 895).
 
 **Checks.**
 
@@ -48,11 +49,13 @@ Use `AlgebraicGeometry.Scheme.Hom.normalization`, `AlgebraicGeometry.Scheme.Hom.
 - Over F_p, normalization in F_p(t^(1/p)) is Spec F_p[t^(1/p)] of degree p; inseparable extensions are included.
 - A non-Japanese DVR can have nonfinite normalization in a finite inseparable extension; finiteness cannot be inferred from normality of the DVR alone (SchemeAndStackFoundations §0.22).
 
-The normalization API in this contract includes normality, the marked function-field identification, maps along compatible field inclusions and modifications, and the identity comparison for a normal base; all are used on this same relative-normalization object.
+The pinned normalization API supplies the relative carrier, affine integral-closure comparison, universal property and smooth base change. Its reducedness and integrality instances do not assert normality or the marked function-field identification; the latter use the supplier gap below. All comparisons use this same relative-normalization object.
 
 Use `AlgebraicGeometry.Scheme.Hom.image`, `AlgebraicGeometry.Scheme.Hom.imageι` and `AlgebraicGeometry.Scheme.Hom.toImage` in Mathlib/AlgebraicGeometry/IdealSheaf/Subscheme.lean for the scheme-theoretic image and its factorization. For Spec k → Spec k[ε]/(ε²), the kernel is (ε), and the image is Spec k; the topological image alone does not recover this reduced closed subscheme. These objects supply the graph closure in §PA.6.1 and the image factorization in §PA.6.6.
 
 Use `ValuationSubring`, `LocalSubring.exists_le_valuationSubring`, `WithConstructibleTopology` and `compactSpace_withConstructibleTopology` for valuative centres and compactness. The last instance requires a compact, quasi-sober, quasi-separated prespectral space, not an arbitrary topological space (Mathlib/Topology/Spectral/ConstructibleTopology.lean). Use `AlgebraicGeometry.IsProper.eq_valuativeCriterion`, `AlgebraicGeometry.IsSeparated.valuativeCriterion`, `AlgebraicGeometry.Flat.generalizingMap`, `AlgebraicGeometry.isOpenMap_of_generalizingMap` and `AlgebraicGeometry.Scheme.Hom.isConstructible_image` with their quasi-compactness, finite-presentation and target hypotheses. Use `Algebra.IsEtaleAt.exists_isStandardEtale` in Mathlib/RingTheory/Unramified/LocalStructure.lean on a finitely presented algebra étale at the chosen prime; first choose that finite-presentation neighborhood inside the essentially étale valuation-ring extension, and retain the subsequent minimal-polynomial argument. `MulAction.stabilizer` supplies point stabilizers; the residue-field kernel is additional geometric data.
+
+For §PA.5.2b(ii), use `NormedField.valuation` (Mathlib/Topology/Algebra/Valued/NormedValued.lean), `Subfield.topologicalClosure` (Mathlib/Topology/Algebra/Field.lean), `IntermediateField.adjoin`, `Valuation.valuationSubring`, `ValuationSubring.comap`, `IsLocalRing.ResidueField`, `IsLocalRing.residue`, `Subfield.closure`, `Transcendental` and `Algebra.Etale`. Étaleness means formally étale and finitely presented (Mathlib/RingTheory/Etale/Basic.lean); a finite field degree is not implicit in that class.
 
 ### From Tau Ceti
 
@@ -66,6 +69,8 @@ Use `ValuationSubring`, `LocalSubring.exists_le_valuationSubring`, `WithConstruc
 
 Consume §0.9, limits, noetherian approximation and finite-presentation descent; §§0.16–0.18, regular implies Cohen–Macaulay implies universally catenary; §0.20, Japanese, universally Japanese and Nagata rings and finite normalization in every finite function-field extension; §0.21, quasi-excellent and excellent schemes, quasi-excellent implies Nagata, openness of regular loci for J-2 rings, and normality of the completion of a normal local G-ring (`regular_map_completion`). In §0.20 the Nagata predicate includes noetherianness; universally Japanese alone does not. The regular local rings obtained in PA.0 are therefore excellent when quasi-excellent.
 
+What SchemeAndStackFoundations must provide (gap:normalization-finite-field-identification): For an integral scheme X and a finite field extension L/k(X), the native relative normalization Nor_L(X) is normal, and the canonical map Spec L → Nor_L(X) identifies L with its function field compatibly with the specified embedding of k(X). This is a contract on §0.20's normalization in finite field extensions; it imposes no Nagata hypothesis and asserts no finiteness of the normalization morphism.
+
 What SchemeAndStackFoundations must provide (gap:finite-type-fp-factorization): Every finite-type quasi-separated morphism X → S with S qcqs factors as a closed immersion X → X₀ followed by a finitely presented morphism X₀ → S; if X → S is of finite presentation over a quasi-compact open U ⊆ S, then X₀ can be chosen with X ×_S U → X₀ ×_S U an isomorphism.
 
 For §§PA.5.3–PA.5.4 consume §4.16 `Formal.IsAlteration` and `Formal.IsAlteration.IsGenericallyEtale` on integral schemes without a noetherian hypothesis; the former records properness, dominance and finiteness on a nonempty open. This carrier is distinct from §PA.0.3's noetherian, potentially reducible generalization.
@@ -73,6 +78,10 @@ For §§PA.5.3–PA.5.4 consume §4.16 `Formal.IsAlteration` and `Formal.IsAlter
 Consume §§2.4, 2.6 and 2.11 for cohomological boundaries, quasi-coherent cohomology and the identification of Picard groups with first cohomology of the multiplicative group; §§3.3–3.4 supply Euler degrees of line bundles on proper curves and Picard groups, and §3.6 supplies their map into rational points of the Jacobian for §PA.6.11a.
 
 Consume §1.17 finite-group quotients for projective schemes over noetherian bases. Consume §§4.11–4.12 modifications, strict transforms with their dense-open witness, generic flatness, proper flattening by admissible blow-up, domination of modifications and separated Chow. Consume §4.13 regular schemes, Serre’s normality criterion, curve resolution and Bertini; §§4.16–4.17 integral alterations, their function-field maps and generic degrees (`genericDegree`, multiplicative by `genericDegree_comp`), SNC data and passage to subfamilies of components; §§4.18–4.20 split nodal curve families, their resolution and de Jong’s field and trait alteration theorems. The two generalizations in PA.0 keep finite-type, quasi-separated flattening and non-separated Chow at their full stated generality.
+
+### From TauCetiRoadmap.ResolutionOfSingularitiesCharacteristicZero
+
+Consume §§7.5–7.6, `qeResolution` and `qeResolution_regularFunctorial`: on reduced noetherian quasi-excellent Q-schemes, a projective resolving tower in regular centres preserving the entire regular locus, functorial for regular morphisms after deletion of empty steps. PA.4.3 restricts this tower to toric Q-schemes, normalizes it, and constructs the fan and log-scheme comparisons (ilo14 VIII §§2.3.9–2.3.12, pp. 93–94, ilo14 lines 4071–4099).
 
 ### From TauCetiRoadmap.LocalFieldsRamificationPartII
 
@@ -92,15 +101,15 @@ Consume CR.5:log-algebra.1–4: étale log structures, fine/saturated monoids, c
 
 What CrystallineCohomology must provide (gap:closed-subset-log-structure): (a) For a reduced locally noetherian X and a nowhere dense closed Z with complement j : U → X, the subsheaf O_X ∩ j_*O_U^× of O_X is a log structure on the étale site of X; (b) when X is regular and Z = |D| for a strict normal crossings divisor D, it equals the divisorial log structure M_D of CR.5:log-algebra.4. That a log regular fs log scheme is recovered from its triviality locus is §PA.4.1's own statement, not part of this contract.
 
-This contract includes the non-fine boundary structure of the cusp, rather than extending the fs divisorial carrier by assumption (ilo14 VI §1.4 and X §3.2.1, pp. 69 and 158, ilo14 lines 3070, 7271; temkin17 §1.2.7, pp. 99–100, temkin17 line 117).
+This contract includes the non-fine boundary structure of the cusp, rather than extending the fs divisorial carrier by assumption (ilo14 VI §1.4 and X §3.2.1, pp. 69 and 158, ilo14 lines 3070, 7271; temkin17 §1.2.7, pp. 99–100, temkin17 line 119).
 
 ### From TauCetiRoadmap.LefschetzPencilsAndVanishingCycles
 
 Consume §0.10, the logarithmic action and quotient construction, the very tame quotient theorem, separated absolute and relative Gabber modification and regular log blow-up resolution. An action is very tame at a geometric point when inertia has invertible order, acts trivially on its characteristic monoid, and acts trivially on its strict-local logarithmic stratum. The quotient of an admissible generically free very tame action on a log regular fs scheme is fs log regular and the projection is Kummer étale. Its log structure is the subject of the gap below. The supplied Gabber construction enlarges the boundary to the inverse image of the old boundary and the nonfree locus; its map to the original log scheme need not be log smooth (ilo14 VI §3, VIII Theorem 1.1, X Theorem 1.1, pp. 73–75, 85–86 and 135–136, ilo14 lines 3263, 3681, 6117).
 
-What LefschetzPencilsAndVanishingCycles must provide (gap:very-tame-local-quotient): four statements about §0.10. (a) The log structure of the quotient q : X → X/G of `VanishingCycles.veryTameQuotient` is the invariant direct image (q_*M_X)^G. (b) At a geometric point x of an admissible, generically free, very tame action on a log regular fs scheme, the inertia group G_x is abelian of order invertible in κ(x), and the strict localization of q at x is a standard Kummer étale cover of group G_x. (c) For a finite group acting on a log regular fs scheme, the set of points at which the action is very tame is open. (d) `VanishingCycles.equivariantLogResolution` commutes with restriction to G-stable open subschemes and with strict localization at a geometric point x, the group there being G_x (ilo14 VI Corollary 3.3, Proposition 3.5 and Corollary 3.6, ilo14 lines 3290, 3306, 3324; ilo14 VIII Theorem 5.6.1(ii), ilo14 line 5863, as used in ilo14 X Theorem 3.1.5, ilo14 line 7194).
+What LefschetzPencilsAndVanishingCycles must provide (gap:very-tame-local-quotient): four statements about §0.10. (a) The log structure of the quotient q : X → X/G of §0.10's very tame quotient theorem is the invariant direct image (q_*M_X)^G. (b) At a geometric point x of an admissible, generically free, very tame action on a log regular fs scheme, the inertia group G_x is abelian of order invertible in κ(x), and the strict localization of q at x is a standard Kummer étale cover of group G_x. (c) For a finite group acting on a log regular fs scheme, the set of points at which the action is very tame is open. (d) §0.10's equivariant log resolution commutes with restriction to G-stable open subschemes and with strict localization at a geometric point x, the group there being G_x (ilo14 VI Corollary 3.3, Proposition 3.5 and Corollary 3.6, ilo14 lines 3290, 3306, 3324; ilo14 VIII Theorem 5.6.1(ii), ilo14 line 5863, as used in ilo14 X Theorem 3.1.5, ilo14 line 7194).
 
-The fine log blow-up of a coherent log ideal I is universal among maps on which its pullback becomes invertible; its saturated form is the fs saturation. Both maps have source the appropriate blow-up log scheme and target (X, M). The unit ideal and every invertible log ideal give the identity (ilo14 VIII §§3.3.7–3.3.11, pp. 107–108, ilo14 line 4761).
+Through gap:log-blowup-universal-property, the fine log blow-up of a coherent log ideal I is universal among maps on which its pullback becomes invertible; its saturated form is the fs saturation. Both maps have source the appropriate blow-up log scheme and target (X, M). The unit ideal and every invertible log ideal give the identity (ilo14 VIII §§3.3.7–3.3.11, pp. 107–108, ilo14 line 4761).
 
 What LefschetzPencilsAndVanishingCycles must provide (gap:log-blowup-universal-property): The log blow-up carrier of §0.10 has the universal property for making a coherent log ideal invertible, and its fs saturation supplies the saturated log blow-up on the same shared log-scheme carrier. This includes the empty ideal, whose blow-up is empty; the universal property alone does not assert that the blow-up is a modification.
 
@@ -183,7 +192,7 @@ The API records the following facts.
 
 One proof route is as follows. Define maximal points as generic points of irreducible components (Mathlib's irreducible components and generic points of irreducible closed subsets). Equivalence with density of X ×_S η_S: the maximal points of X lying over maximal points of S are exactly the maximal points of the generic fibre. The generic fibre is stable under generization in X, and a generization-stable subset of a noetherian space is dense exactly when it contains every maximal point (an arbitrary dense subset, such as the set of closed points of A^1_k, need not contain one).
 
-(temkin17, §4.1.1, pp. 120–121 (temkin17 line 970); ilo14, Exposé X, §2 opening paragraph, arXiv v1 p. 148 (citing Exposé II 1.1.2) (ilo14 line 1150).)
+(temkin17, §4.1.1, pp. 120–121 (temkin17 line 970); ilo14, Exposé II, Definition 1.1.2 (ilo14 line 1158); Exposé X, §2 opening paragraph, arXiv v1 p. 148 (ilo14 lines 6782–6787).)
 
 **Checks.**
 
@@ -247,7 +256,7 @@ The API records the following facts.
 
 One proof route is as follows. Define the generic degrees from the finite residue extensions at maximal points (finiteness: the generic fibre is finite). Composition: maximal points map to maximal points and residue degrees multiply in towers (Tau Ceti `TauCeti.AlgebraicGeometry.residueDegree_comp`; in the integral case SchemeAndStackFoundations §4.16 `genericDegree_comp`), so a composite of P-alterations is a P-alteration (P-numbers are closed under products, GF.0). Degree one at every maximal point, for integral X and S, is SchemeAndStackFoundations' criterion for a modification.
 
-(temkin17, §1.2.1, p. 98 (temkin17 line 71); ilo14, Exposé X, §2 opening paragraph, arXiv v1 p. 148; §3.3.1, p. 158 (ilo14 line 6790).)
+(temkin17, §1.2.1, p. 98 (temkin17 line 71); ilo14, Exposé X, §2 opening paragraph, arXiv v1 p. 148 (ilo14 line 6783); §3.3.1, p. 158 (ilo14 line 7288).)
 
 **Checks.**
 
@@ -404,12 +413,13 @@ Every noetherian quasi-excellent scheme S of dimension at most two is universall
 
 Work under these precise hypotheses: S noetherian, quasi-excellent, dim S ≤ 2.
 
-One proof route is as follows. An alteration Y → S is proper and generically finite, so Y is noetherian, quasi-excellent (of finite type over S) and of dimension ≤ 2. The map from the disjoint union of its finitely many reduced components Y_i to Y is finite, hence projective, and an isomorphism over the dense open complement of the pairwise intersections, so it is a degree-one alteration. A component of dimension 0 is the spectrum of a field, and a component of dimension 1 is resolved by its finite normalization as in §PA.0.10. For a component Y_i of dimension 2 apply Lipman's theorem in the form (4) ⇒ (3) of stacks Tag 0BGP: if the normalization Y_i^ν → Y_i is finite, Y_i^ν has finitely many singular points and the completed local rings there are normal, then a finite sequence of normalized blow-ups in closed points, starting from Y_i^ν, ends at a regular Y′_i. The three conditions hold because Y_i is quasi-excellent. Quasi-excellent schemes are Nagata (SchemeAndStackFoundations §0.20, `Excellence.IsQuasiExcellentRing.isNagata`), so Y_i^ν → Y_i is finite. Y_i^ν is quasi-excellent, so its singular locus is closed by the J-2 property (§0.21); it contains no point of codimension at most one, because a normal scheme satisfies (R_1) (§4.13, Serre's criterion); and in a noetherian scheme of dimension 2 a closed set of points of codimension 2 is a finite set of closed points. The local ring of Y_i^ν at each singular point is a normal local G-ring, so its completion is normal (§0.21, `regular_map_completion`). A normalized blow-up is the blow-up of a closed point, which is projective (StableReduction Layer 4), followed by the normalization of that quasi-excellent, hence Nagata, blow-up, which is finite; so Y′_i → Y_i is a projective modification. Put Y₁ = ⊔ Y′_i. The composite Y₁ → Y is a projective degree-one alteration and an isomorphism over a dense open of Y_red containing every maximal point. Y₁ is regular and quasi-excellent, hence Cohen–Macaulay, universally catenary and excellent (SchemeAndStackFoundations §§0.16–0.21). Let D ⊆ Y₁ be the reduced preimage of Z. Maximal points of Y₁ map to maximal points of Y, which Z avoids, so D is nowhere dense and of dimension ≤ 1. Cossart–Jannsen–Saito Corollary 0.4, applied to the regular excellent Y₁ and D, gives a projective surjective π : Y′ → Y₁, an isomorphism off D, with Y′ regular and π⁻¹(D)_red a strict normal crossings divisor (its proof applies cjs Theorem 0.3 with empty boundary and then blows up the regular strict transform). The composite Y′ → Y is a projective degree-one alteration with Y′ regular, the preimage of Z is π⁻¹(D), an snc support (§PA.0.8), and W_i = π⁻¹(Y′_i) is a projective modification of Y_i. Over an excellent S, Cossart–Jannsen–Saito Theorem 0.1 gives the first step canonically, by blow-ups of Y_red in permissible centres inside its singular locus; the route above does not need excellence of S.
+One proof route is as follows. An alteration Y → S is proper and generically finite, so Y is noetherian, quasi-excellent (of finite type over S) and of dimension ≤ 2. The map from the disjoint union of its finitely many reduced components Y_i to Y is finite, hence projective, and an isomorphism to Y_red over the dense open complement of the pairwise intersections. Its residue degrees at the maximal points of Y are 1, so it is a degree-one alteration to Y. A component of dimension 0 is the spectrum of a field, and a component of dimension 1 is resolved by its finite normalization as in §PA.0.10. For a component Y_i of dimension 2 apply Lipman's theorem in the form (4) ⇒ (3) of stacks Tag 0BGP: if the normalization Y_i^ν → Y_i is finite, Y_i^ν has finitely many singular points and the completed local rings there are normal, then a finite sequence of normalized blow-ups in closed points, starting from Y_i^ν, ends at a regular Y′_i. The three conditions hold because Y_i is quasi-excellent. Quasi-excellent schemes are Nagata (SchemeAndStackFoundations §0.20, `Excellence.IsQuasiExcellentRing.isNagata`), so Y_i^ν → Y_i is finite. Y_i^ν is quasi-excellent, so its singular locus is closed by the J-2 property (§0.21); it contains no point of codimension at most one, because a normal scheme satisfies (R_1) (§4.13, Serre's criterion); and in a noetherian scheme of dimension 2 a closed set of points of codimension 2 is a finite set of closed points. The local ring of Y_i^ν at each singular point is a normal local G-ring, so its completion is normal (§0.21, `regular_map_completion`). A normalized blow-up is the blow-up of a closed point, which is projective (StableReduction Layer 4), followed by the normalization of that quasi-excellent, hence Nagata, blow-up, which is finite; so Y′_i → Y_i is a projective modification. Put Y₁ = ⊔ Y′_i. The composite Y₁ → Y is a projective degree-one alteration and an isomorphism over a dense open of Y_red containing every maximal point. Y₁ is regular and quasi-excellent, hence Cohen–Macaulay, universally catenary and excellent (SchemeAndStackFoundations §§0.16–0.21). Let D ⊆ Y₁ be the reduced preimage of Z. Maximal points of Y₁ map to maximal points of Y, which Z avoids, so D is nowhere dense and of dimension ≤ 1. Cossart–Jannsen–Saito Corollary 0.4, applied to the regular excellent Y₁ and D, gives a projective surjective π : Y′ → Y₁, an isomorphism off D, with Y′ regular and π⁻¹(D)_red a strict normal crossings divisor (its proof applies cjs Theorem 0.3 with empty boundary and then blows up the regular strict transform). The composite Y′ → Y is a projective degree-one alteration with Y′ regular, the preimage of Z is π⁻¹(D), an snc support (§PA.0.8), and W_i = π⁻¹(Y′_i) is a projective modification of Y_i. Over an excellent S, Cossart–Jannsen–Saito Theorem 0.1 gives the first step canonically, by blow-ups of Y_red in permissible centres inside its singular locus; the route above does not need excellence of S.
 
 (stacks, Resolution of Surfaces, Theorem 54.14.5 (Tag 0BGP), Definitions 54.5.1 (Tag 0BBS) and 54.14.2 (Tag 0BGL) (stacks, Resolution of Surfaces lines 1880, 488, 1752); cjs, Theorem 0.1 and Corollary 0.4 (with Theorem 0.3), arXiv v2 pp. 3–5 (cjs lines 43, 131); ilo14, Exposé X, Remark 3.3.4(ii), arXiv v1 p. 159 (ilo14 line 7318); temkin17, Remark 1.2.3, p. 99 (temkin17 line 94).)
 
 **Checks.**
 
+- For Y = Spec k[x,y,ε]/(ε²), the single reduced component is Spec k[x,y]. The map has kernel (ε) ≠ 0, so it is not an isomorphism to Y on any nonempty open, but its comparison with Y_red is the identity and its generic residue degree is 1.
 - For S = Y = Spec k[[x, y]] (complete, hence excellent) and Z the closed point: Y is regular, its normalization is the identity and Lipman's sequence is empty, so Y₁ = Y and D = Z has codimension 2. Corollary 0.4 blows up the closed point; the preimage of Z is the exceptional curve ≅ P¹_k, one regular component, so an snc support. The identity is not a solution: a point of codimension 2 is not an snc support.
 - For S = Y = Spec k[u, v, w]/(uw − v²) and Z = ∅: Y is normal with the vertex as its only singular point. One blow-up of the vertex has the regular charts k[u, v₁] (v = uv₁, w = uv₁²), k[w, v₂] (symmetrically) and k[v, s, s⁻¹] (u = vs, w = vs⁻¹), so it is already normal and Lipman's sequence has length one; Y′ is this blow-up with exceptional curve P¹, of degree 1, and π is the identity since D = ∅.
 - For S = Y = Spec k[x, y, z]/(xz, yz), the plane z = 0 and the z-axis meeting at the origin, with Z the origin: Y is not regular at the origin. The components give Y₁ = A²_k ⊔ A¹_k, of degree 1 at both maximal points; D is the origin in each. In A¹_k it is already an snc support, while in A²_k it has codimension 2 and is blown up, so Y′ = Bl₀A²_k ⊔ A¹_k and the preimage of Z is the exceptional curve together with one point. Components of different dimensions are resolved separately.
@@ -423,7 +433,7 @@ Every separated noetherian quasi-excellent scheme S with dim S ≤ 3 is universa
 
 Work under these precise hypotheses: S separated, noetherian, quasi-excellent, dim S ≤ 3.
 
-One proof route is as follows. An alteration Y → S is proper, so Y is separated, noetherian, quasi-excellent (of finite type over S) and of dimension ≤ 3 (generically finite over S). Cossart–Piltant Theorem 1.1, applied to the reduced separated Y_red, gives a proper birational π₁ : Y₁ → Y_red with Y₁ regular, π₁ an isomorphism over the regular locus Reg(Y_red), which is a dense open since Y_red is reduced and quasi-excellent, and π₁⁻¹(Sing Y_red) a strict normal crossings divisor; when Y is affine, the one-member affine cover makes π₁ projective (cp19 Theorem 1.1, last clause; Remark 1.4). Let D ⊆ Y₁ be the reduced preimage of Z. It lies in π₁⁻¹(Z ∩ Reg(Y_red)) ∪ π₁⁻¹(Sing Y_red), a union of two nowhere dense closed subsets, so D is nowhere dense and of dimension ≤ 2. A regular quasi-excellent scheme is Cohen–Macaulay, hence universally catenary, hence excellent (SchemeAndStackFoundations §§0.16–0.21), so Cossart–Jannsen–Saito Corollary 0.4 gives a projective surjective π₂ : Y′ → Y₁, an isomorphism off D, with Y′ regular (its proof ends by blowing up a regular centre in a regular scheme) and π₂⁻¹(D)_red a strict normal crossings divisor, as in §PA.0.11. The composite Y′ → Y₁ → Y_red → Y is proper and an isomorphism over a dense open of Y_red containing every maximal point, so it is a degree-one alteration and a modification of each reduced component; the preimage of Z is π₂⁻¹(D), an snc support (§PA.0.8). When Y is affine the three maps are projective, and so is their composite over the noetherian affine Y.
+One proof route is as follows. An alteration Y → S is proper, so Y is separated, noetherian, quasi-excellent (of finite type over S) and of dimension ≤ 3 (generically finite over S). Cossart–Piltant Theorem 1.1, applied to the reduced separated Y_red, gives a proper birational π₁ : Y₁ → Y_red with Y₁ regular, π₁ an isomorphism over the regular locus Reg(Y_red), which is a dense open since Y_red is reduced and quasi-excellent, and π₁⁻¹(Sing Y_red) a strict normal crossings divisor; when Y is affine, the one-member affine cover makes π₁ projective (cp19 Theorem 1.1, last clause; Remark 1.4). Let D ⊆ Y₁ be the reduced preimage of Z. D is closed. Every maximal point of Y₁ maps to a maximal point of Y_red, and Z avoids these points. Hence D contains no maximal point of Y₁, so it is nowhere dense and has dimension ≤ 2. A regular quasi-excellent scheme is Cohen–Macaulay, hence universally catenary, hence excellent (SchemeAndStackFoundations §§0.16–0.21), so Cossart–Jannsen–Saito Corollary 0.4 gives a projective surjective π₂ : Y′ → Y₁, an isomorphism off D, with Y′ regular (its proof ends by blowing up a regular centre in a regular scheme) and π₂⁻¹(D)_red a strict normal crossings divisor, as in §PA.0.11. The composite Y′ → Y₁ → Y_red → Y is proper and an isomorphism over a dense open of Y_red containing every maximal point, so it is a degree-one alteration and a modification of each reduced component; the preimage of Z is π₂⁻¹(D), an snc support (§PA.0.8). When Y is affine the three maps are projective, and so is their composite over the noetherian affine Y.
 
 (cp19, Theorem 1.1, arXiv v2 pp. 3–4 (cp19 line 93); Corollary 1.2 and Remark 1.4, p. 4 (cp19 lines 111, 124); temkin17, Remark 1.2.3, p. 99; §4.3.2, p. 124 (temkin17 lines 94, 1107); cjs, Corollary 0.4 (with Theorem 0.3), arXiv v2 p. 5 (cjs line 131).)
 
@@ -431,6 +441,7 @@ One proof route is as follows. An alteration Y → S is proper, so Y is separate
 
 - For S = Spec A with A a reduced complete noetherian local ring of dimension three, the alteration Y = S is affine and Cossart–Piltant Corollary 1.2 gives a projective good resolution, as the affine clause predicts.
 - For S the affine plane over Z with its zero section doubled (two copies of Spec Z[x, y] glued along the complement of V(x, y)), S is noetherian, quasi-excellent and of dimension three but not separated; the identity Y = S is an alteration to which Cossart–Piltant Theorem 1.1 does not apply. The separatedness hypothesis is needed for the stated route and is not dropped.
+- For Y = Spec k[u,v,w,t]/(uw−v²) and Z = V(v,w), Z ∩ Reg(Y) omits the singular line V(u,v,w) and is not closed. The reduced full inverse image D is closed, avoids every generic point and has dimension at most 2, including its exceptional specialization points.
 - For S regular and Z = ∅, the identity of Y = S already satisfies the conclusion, with degree 1 at every maximal point.
 
 *Needs:* §PA.0.3; §PA.0.8; §PA.0.9; §PA.0.11; TauCetiRoadmap.SchemeAndStackFoundations §§0.9, 0.16–0.21; TauCetiRoadmap.SchemeAndStackFoundations §§4.11–4.20; TauCetiRoadmap.StableReduction Layer 2.
@@ -462,7 +473,7 @@ The API records the following facts.
 
 One proof route is as follows. Define the category of pointed schemes and the full subcategory of modifications of a fixed ε. Filteredness: two modifications X_1, X_2 of ε are dominated by the schematic image of Spec K in X_1 ×_X X_2, which is again proper over X. Tight modifications are cofinal: any modification is dominated by the schematic image of Spec K in it (a closed subscheme, hence proper over X).
 
-(temkin17, §3.1.1, pp. 112–113; §3.1.5, p. 114 (temkin17 line 645); temkin10, §3.2, arXiv v3 (temkin10 line 665).)
+(temkin17, §3.1.1, pp. 112–113; §3.1.5, p. 114 (temkin17 line 645); temkin10, §3.2, arXiv v3 (temkin10 line 679).)
 
 **Checks.**
 
@@ -520,7 +531,7 @@ The API records the following facts.
 
 One proof route is as follows. Define Val_K(X) as pairs (O, g) with O a valuation subring of K and g : Spec O → X with g restricted to Spec K equal to ε, modulo isomorphism (O is a subring of K, so isomorphisms are identities). Topologies on Val_K(X) are transported from RZ_K(X) along the bijection of §PA.1.4.
 
-(temkin17, §3.1.2, p. 113 (temkin17 line 663); temkin10, §3.2, arXiv v3 (temkin10 line 665).)
+(temkin17, §3.1.2, p. 113 (temkin17 line 663); temkin10, §3.2, arXiv v3 (temkin10 line 742).)
 
 **Checks.**
 
@@ -559,6 +570,7 @@ The API records the following facts.
 - ψ is functorial: `ψ_{(j,f)∘(j′,f′)}` = `ψ_{(j,f)}` ∘ `ψ_{(j′,f′)}`.
 - ψ of the identity is the identity.
 - The limit map RZ_L(Y) → RZ_K(X) corresponds to ψ under the bijections of §PA.1.4.
+- This limit map is also continuous for the constructible topologies, without a finite-type hypothesis on f: a basic constructible subset π_i⁻¹(C) pulls back to λ_j⁻¹(g⁻¹(C)) on a tight model Y_j → X_i. Both models are qcqs, so g is qcqs and g⁻¹(C) is constructible (temkin17 §3.1.5 and proof of Lemma 3.1.6, temkin17 lines 686, 717–720).
 
 One proof route is as follows. Restriction: the generic point of Spec O maps into Spec K, so Spec O → X factors through Spec(O ∩ K) by the valuative property of O ∩ K ⊆ K. Limit map: for every modification X_i → X of ε_K there is a tight modification Y_j → Y of ε_L through which Y_j → Y → X factors via Y_j → X_i, uniquely because ε_L is schematically dominant in Y_j and X_i → X is separated; these assemble to RZ_L(Y) → RZ_K(X). Compatibility of the two maps with the bijections of §PA.1.4 follows from the valuative criterion of properness.
 
@@ -606,7 +618,7 @@ The API records the following facts.
 - `ψ_{L/K}` is open and continuous (§PA.1.6).
 - For L/K algebraic, `ψ_{L/K}` is surjective (Chevalley extension of valuations).
 
-One proof route is as follows. Identify Val_K with the points of Tau Ceti's ValuationSpectrum K of the field (a valuation up to equivalence is determined by its valuation ring), and transport its spectral topology; its patch topology is compact (ValuationSpectrum.compactSpace_patchTopology). Val_K(X)′ is the image of the constructibly compact Val_K(X) (§PA.1.4) under a continuous map, hence constructibly compact and Zariski quasi-compact. `ψ_{L/K}` is the restriction map of §PA.1.5 for X = Y = Spec Z, so it is continuous and open by §PA.1.6; it agrees with Tau Ceti's ValuationSpectrum.comap along K → L. Injectivity for separated X is the valuative criterion of separatedness.
+One proof route is as follows. Identify Val_K with the points of Tau Ceti's ValuationSpectrum K of the field (a valuation up to equivalence is determined by its valuation ring), and transport its spectral topology; its patch topology is compact (ValuationSpectrum.compactSpace_patchTopology). Val_K(X)′ is the image of the constructibly compact Val_K(X) (§PA.1.4) under the map of §PA.1.5, continuous in the constructible topology, hence constructibly compact and Zariski quasi-compact. `ψ_{L/K}` is the restriction map of §PA.1.5 for X = Y = Spec Z, so it is continuous and open by §PA.1.6; it agrees with Tau Ceti's ValuationSpectrum.comap along K → L. Injectivity for separated X is the valuative criterion of separatedness.
 
 (temkin17, §3.1.7, p. 115 (temkin17 line 760).)
 
@@ -614,13 +626,14 @@ One proof route is as follows. Identify Val_K with the points of Tau Ceti's Valu
 
 - Val_Q = {Q} ∪ {Z_(p) : p prime}. No archimedean absolute value defines a valuation ring.
 - `Val_{F_q}` = {F_q}. The space has one point, not zero.
+- For X = Spec Z_(p), K = Q, Val_K(X) = {Q, Z_(p)}. The preimage of {V : 1/p ∈ V} under the forgetful map is {Q}, clopen in the two-point constructible topology, although X → Spec Z is not of finite type.
 - Val_K(Spec Z)′ = Val_K: every valuation ring contains the image of Z. The prime ring lies in every valuation ring.
 - For X = Spec Z[1/p] and K = Q, Val_Q(X)′ = Val_Q ∖ {Z_(p)}. Inverting p removes precisely its nontrivial p-adic valuation.
 - `ψ_{Q(i)/Q}` is not injective: Z_(5) has two preimages. At 2 the fibre has size 1 and at 5 it has size 2.
 
 Val_Q consists of Q and the Z_(p); `ψ_{Q(i)/Q}` is surjective with fibres of size 1 or 2.
 
-*Needs:* §PA.1.3; §PA.1.4; §PA.1.6; Tau Ceti `TauCeti.ValuationSpectrum`; Tau Ceti `TauCeti.ValuationSpectrum.continuous_comap`; Tau Ceti `TauCeti.ValuationSpectrum.compactSpace_patchTopology`; Mathlib `ValuationSubring`; TauCetiRoadmap.ClassicalAdicEtaleCohomology §2.4, normal models and the Zariski–Riemann limit.
+*Needs:* §PA.1.3; §PA.1.4; §PA.1.5; §PA.1.6; Tau Ceti `TauCeti.ValuationSpectrum`; Tau Ceti `TauCeti.ValuationSpectrum.continuous_comap`; Tau Ceti `TauCeti.ValuationSpectrum.compactSpace_patchTopology`; Mathlib `ValuationSubring`; TauCetiRoadmap.ClassicalAdicEtaleCohomology §2.4, normal models and the Zariski–Riemann limit.
 
 ### 1.8 Comparison with the affine Zariski–Riemann limit
 
@@ -630,7 +643,7 @@ Work under these precise hypotheses: A a ring; K a field; ε dominant (schematic
 
 One proof route is as follows. Projective integral models (X, f, g) with f projective and g dominant are tight modifications of ε, and they are cofinal among all modifications. Since tight modifications are cofinal (§PA.1.1), it suffices to dominate a tight modification X_i → Spec A: X_i is integral, because Spec K → X_i is schematically dominant, so it has one maximal point, and it is proper, hence of finite type and qcqs, over the qcqs Spec A. The non-separated Chow lemma (§PA.0.7) gives a blow-up X′ → X_i along a finitely generated ideal with nowhere dense support such that X′ → Spec A is pseudo-projective; X′ is integral, the point lifts to its generic point, and X′ → Spec A is proper, so it is projective by §PA.0.5 (ilo14 X Remark 3.1.7(ii), ilo14 line 7243). No noetherian hypothesis on A is used; SchemeAndStackFoundations §4.12 `chow_lemma` needs a noetherian base and is not used here. Hence the two limits agree on underlying spaces; under the bijection of §PA.1.4 both correspond to the valuation rings V of K containing s(A).
 
-(temkin17, §3.1.1, pp. 112–113 (temkin17 line 645); temkin10, §3.2, arXiv v3 (temkin10 line 665).)
+(temkin17, §3.1.1, pp. 112–113 (temkin17 line 645); temkin10, §3.2, arXiv v3 (temkin10 line 679).)
 
 For A = Z and K = Q both sides are Val_Q.
 
@@ -945,7 +958,7 @@ The statements and routes use §PA.0.1; §PA.0.3; §PA.0.4; §PA.1.4; §PA.1.7; 
 
 ### 4.1 Log regular pairs
 
-A pair (X, Z), X a reduced locally noetherian scheme and Z ⊆ X closed with complement j : U → X, is log regular if the log structure `M_{(X,Z)}` := O_X ∩ j_*O_U^× associated with Z (the log structure of a closed subset, requested from CrystallineCohomology CR.5:log-algebra.4 as gap:closed-subset-log-structure) is fine and saturated, the fs log scheme (X, `M_{(X,Z)}`) is log regular (CR.5:log-algebra.4, Log regular schemes), and Z is exactly the complement of the triviality locus of `M_{(X,Z)}`. Conversely every log regular fs log scheme is of this form, with U its triviality locus (ILO VI §1.4).
+A pair (X, Z), X a reduced locally noetherian scheme and Z ⊆ X closed with complement j : U → X, is log regular if Z is nowhere dense and the log structure `M_{(X,Z)}` := O_X ∩ j_*O_U^× associated with Z (the log structure of a closed subset, requested from CrystallineCohomology CR.5:log-algebra.4 as gap:closed-subset-log-structure) is fine and saturated, the fs log scheme (X, `M_{(X,Z)}`) is log regular (CR.5:log-algebra.4, Log regular schemes), and Z is exactly the complement of the triviality locus of `M_{(X,Z)}`. Construct this boundary log structure only after verifying that Z is nowhere dense. Conversely every log regular fs log scheme is of this form, with U its dense triviality locus (ILO VI §1.4).
 
 Work under these precise hypotheses: X reduced locally noetherian; Z closed.
 
@@ -953,6 +966,7 @@ The API records the following facts.
 
 - The log regular pair predicate requires `M_{(X,Z)}` fs, logarithmic regularity and Z exactly its nontriviality locus.
 - X regular and Z an snc support ⇒ (X, Z) log regular.
+- For X = Spec F₂ and Z = X, the nowhere-dense condition is false. No boundary log structure is requested from the supplier at this input; the pair is not log regular.
 - (X, ∅) is log regular ⇔ X is regular.
 - If (X, Z) is log regular then X ∖ Z is dense and X is normal.
 - A log regular fs log scheme (X, M) is (X, `M_{(X,Z)}`) for Z the non-triviality locus of M.
@@ -960,18 +974,19 @@ The API records the following facts.
 
 One proof route is as follows. Build `M_{(X,Z)}` as an étale log structure of CrystallineCohomology CR.5:log-algebra.1 through gap:closed-subset-log-structure; for X regular and Z an snc support it is the divisorial log structure M_D of CR.5:log-algebra.4 (Divisorial log structures), with étale-local charts N^s. Recovery: if (X, M) is a log regular fs log scheme with triviality locus j : U → X, then U is dense and M = O_X ∩ j_*O_U^× inside O_X, so (X, M) is the log scheme of the pair (X, X ∖ U) (ilo14 VI §1.4, ilo14 line 3070, after Nizioł). Log regularity is CR.5's definition at geometric points: O_x/I_x regular and dim O_x = dim O_x/I_x + rank M̄_x^gp. If X is regular and Z an snc support, (X, Z) is log regular; if (X, ∅) is log regular then X is regular (CrystallineCohomology CR.5:log-algebra.4, Log regular schemes, `LogCrystalline.IsLogRegular.trivial_iff`).
 
-(ilo14, Exposé VI, §§1.2–1.4, arXiv v1 p. 69 (ilo14 line 3050); ilo14, Exposé X, §3.2.1, arXiv v1 p. 158 (ilo14 line 7271); temkin17, §1.2.7, pp. 99–100 (temkin17 line 117).)
+(ilo14, Exposé VI, §§1.2–1.4, arXiv v1 p. 69 (ilo14 line 3050); ilo14, Exposé X, §3.2.1, arXiv v1 p. 158 (ilo14 line 7271); temkin17, §1.2.7, pp. 99–100 (temkin17 line 119).)
 
 **Checks.**
 
 - (A^2_k, V(xy)) is log regular, with M̄ ≅ N² at the origin. The dimension formula is 2 = 0 + 2.
+- For X = Spec F₂ and Z = X, the nowhere-dense condition is false. No boundary log structure is requested from the supplier at this input; the pair is not log regular.
 - (X, ∅) is log regular for X regular, e.g. (Spec Z, ∅). The rank term is 0.
 - (Spec k[x², x³], {x = 0}) is not log regular, over any field k: the boundary log structure is not fine. Its stalk at the geometric point over the origin is computed in the strict local ring, whose residue field is the separable closure k^s, an infinite field; the classes of x² + a x³ with a ∈ k^s are infinitely many indecomposable elements of the characteristic monoid. A boundary does not automatically give an fs chart.
 - Over F₂ the Zariski local ring of the cusp at the origin gives the monoid of nonzero elements modulo units {0} ∪ {(n, a) : n ≥ 2, a ∈ F₂}, with (n, a) the class of xⁿ(1 + a x), generated by the classes of x², x² + x³, x³ and x³ + x⁴: finitely generated, but not saturated, since the class of x lies in its group and twice it is the class of x². A Zariski-site definition would call this boundary structure fine; on the étale site of the Conventions the residue field becomes F̄₂ and fineness fails as in the previous Check.
 - For Y = Spec k[u, v, w]/(uw − v²), the quotient of A^2_k by ±1 with u = x², v = xy, w = y² (char k ≠ 2), the pair (Y, V(v)) is log regular although Y is singular at the vertex; V(v) is the image of the axes V(xy). At the vertex the log dimension formula is 2 = 0 + 2, while the embedding dimension is 3.
 - (A^2_k, {0}) is not log regular: the non-triviality locus of a log regular structure has pure codimension one. The point has codimension 2.
 
-For the cusp over an infinite field k the classes of x² + a x³, a ∈ k, already give infinitely many indecomposable boundary sections modulo units in the Zariski stalk; over every field the étale stalk does, so the boundary log structure is not fine. The cusp also fails log regularity because log regular schemes are normal (temkin17 §1.2.7, temkin17 line 117; ilo14 VI §1.6).
+For the cusp over an infinite field k the classes of x² + a x³, a ∈ k, already give infinitely many indecomposable boundary sections modulo units in the Zariski stalk; over every field the étale stalk does, so the boundary log structure is not fine. The cusp also fails log regularity because log regular schemes are normal (temkin17 §1.2.7, temkin17 line 126; ilo14 VI §1.6).
 
 *Needs:* TauCetiRoadmap.CrystallineCohomology CR.5:log-algebra.1 (Étale log structures); TauCetiRoadmap.CrystallineCohomology CR.5:log-algebra.4 (Divisorial log structures); TauCetiRoadmap.CrystallineCohomology CR.5:log-algebra.4 (Log regular schemes); TauCetiRoadmap.CrystallineCohomology CR.5:log-algebra.1 (Saturated monoids); TauCetiRoadmap.CrystallineCohomology CR.5:log-algebra.1 (Fine monoids); TauCetiRoadmap.CrystallineCohomology CR.5:log-algebra.4 (gap:closed-subset-log-structure); §PA.0.8.
 
@@ -1007,7 +1022,7 @@ For (A^2_k, V(xy)) and I the maximal ideal of N², the log blow-up is the blow-u
 
 ### 4.3 Functorial saturated monoidal desingularization
 
-There is a saturated monoidal desingularization functor F̃^log: to every log regular fs log scheme (X, M) (more generally every monoidally torsion-free fine log scheme) it assigns a tower of saturated log blow-ups X′ → X, finite on quasi-compact sources, after which every stalk of M̄ is free; for a log regular source, X′ is regular and its non-triviality locus is a normal crossings divisor (snc when the log structure is Zariski). It is functorial for monoidally smooth morphisms: for monoidally smooth φ : Y → X, F̃^log(Y) is the contraction of the strict transform of F̃^log(X), and for strict φ it is the pullback. For quasi-excellent noetherian X the underlying morphism X′ → X is a projective modification. On arbitrary log regular schemes retain the normalized tower and its functoriality, without inferring finite normalization. For a non-quasi-compact fine log scheme the tower is locally finite; a quasi-compact source has a finite tower. Freeness of characteristic monoids implies underlying regularity only under the log-regular hypothesis, not for arbitrary fine log schemes.
+There is a saturated monoidal desingularization functor F̃^log: to every log regular fs log scheme (X, M) (more generally every monoidally torsion-free fine log scheme) it assigns a tower of saturated log blow-ups X′ → X, finite on quasi-compact sources, after which every stalk of M̄ is free; for a log regular source, X′ is regular and its non-triviality locus is a normal crossings divisor (snc when the log structure is Zariski). It is functorial for monoidally smooth morphisms: for monoidally smooth φ : Y → X, F̃^log(Y) is the contraction, deleting empty blow-up steps, of the induced pullback of the saturated log blow-up tower F̃^log(X) along φ, using fs fibre products on fs log schemes. The same contraction rule applies to strict morphisms; strictness alone does not ensure that all centres are met. For quasi-excellent noetherian X the underlying morphism X′ → X is a projective modification. On arbitrary log regular schemes retain the normalized tower and its functoriality, without inferring finite normalization. For a non-quasi-compact fine log scheme the tower is locally finite; a quasi-compact source has a finite tower. Freeness of characteristic monoids implies underlying regularity only under the log-regular hypothesis, not for arbitrary fine log schemes.
 
 Work under these precise hypotheses: (X, M) log regular fs, or a fine log scheme whose characteristic groups are torsion free. A log morphism f : (Y, N) → (X, M) is monoidally smooth if, for every geometric y of Y over x of X, the characteristic map M̄_x → N̄_y extends to an isomorphism M̄_x ⊕ ℕ^r ≅ N̄_y for some nonnegative integer r, with the given map the first-factor inclusion (ilo14 VIII §3.3.14, p. 109, ilo14 line 4847).
 
@@ -1017,7 +1032,7 @@ The API for monoidally smooth morphisms records the following facts.
 - Every strict log morphism is monoidally smooth with r = 0. No smoothness of its underlying scheme morphism is required.
 - The criterion is stalkwise at geometric points and invariant under isomorphisms of the source and target log schemes: it asks for a splitting that identifies the actual characteristic map with the first-factor inclusion, not merely an abstract isomorphism between its source and a factor of its target.
 
-One proof route is as follows. Resolve fans: a functorial saturated desingularization of fine torsion-free fans (ILO VIII §3.1–3.2, toric resolution through characteristic-zero functorial resolution of toric varieties, VIII §2). Descend to log schemes with fan charts by pullback, uniquely and functorially for monoidally smooth morphisms (VIII 3.3.15). The fan blow-up centres have nonempty stalks, and their pullbacks retain this property (ilo14 VIII §3.1.19, ilo14 line 4451). For log regular log schemes the tower is a normalized blow-up tower of X (§PA.4.2), giving the desingularization F̃ with the stated functoriality (VIII 3.4.9); M̄ free means X regular with normal crossings boundary (VIII 3.4.4, VI 1.7).
+One proof route is as follows. Consume ResolutionOfSingularitiesCharacteristicZero §§7.5–7.6, `qeResolution` and `qeResolution_regularFunctorial`, on reduced noetherian quasi-excellent Q-schemes. Restrict the supplied tower to toric Q-schemes and normalize it; regular-functoriality gives the compatibility used to construct functorial saturated desingularization of fine torsion-free fans (ILO VIII §§2.3 and 3.1–3.2). Descend to log schemes with fan charts by pullback, uniquely and functorially for monoidally smooth morphisms (VIII 3.3.15). The fan blow-up centres have nonempty stalks, and their pullbacks retain this property (ilo14 VIII §3.1.19, ilo14 line 4451). For log regular log schemes the tower is a normalized blow-up tower of X (§PA.4.2), giving the desingularization F̃ with the stated functoriality (VIII 3.4.9); M̄ free means X regular with normal crossings boundary (VIII 3.4.4, VI 1.7).
 
 (ilo14, Exposé VIII, Theorem 3.3.15, arXiv v1 p. 109 (ilo14 line 4849); ilo14, Exposé VIII, §3.4.8 and Theorem 3.4.9, arXiv v1 p. 111 (ilo14 line 4967); temkin17, proof of Theorem 4.2.1, Step 10, p. 123; Remark 4.3.4, p. 124 (temkin17 line 1074).)
 
@@ -1026,11 +1041,12 @@ One proof route is as follows. Resolve fans: a functorial saturated desingulariz
 - The strict closed immersion Spec k → A¹_k at the origin with trivial logs has characteristic map 0 → 0 and group cokernel 0 at its source point. It is monoidally smooth with r = 0, although its underlying morphism is not smooth.
 - The projection (A²_k, V(xy)) → (A¹_k, V(t)), t ↦ x, has at the origin the characteristic inclusion ℕ → ℕ², 1 ↦ (1,0), with group cokernel ℤ and r = 1. Along x = 0 away from the origin it is ℕ → ℕ, the identity; along y = 0 with x ≠ 0 it is 0 → ℕ; elsewhere it is 0 → 0. All stalks satisfy the criterion, although the map is not strict.
 - Over a field of characteristic 3, the square map of (A¹_k, V(t)) has at the origin characteristic map ℕ → ℕ, 1 ↦ 2, and group cokernel ℤ/2. It is Kummer étale, since 2 is invertible in k, but not monoidally smooth: equal ranks force r = 0 and multiplication by 2 is not an isomorphism.
+- For the strict open immersion of the torus into (Spec k[u,v,w]/(uw−v²), V(v)), the vertex resolution has empty pulled-back centre: its log ideal becomes the unit ideal. Contracting that step gives the identity tower on the torus; strictness does not prevent empty steps. Over Q this also tests the supplied characteristic-zero tower: the cone has a singular vertex and the torus has none.
 - With trivial characteristic monoid, the singular cusp remains singular under every monoidal blow-up. Freeness alone gives regularity only for a log regular source.
 
 For X regular with snc boundary, F̃^log(X) is the identity. For the log regular pair (Spec k[u, v, w]/(uw − v²), V(v)), F̃^log is the toric resolution given by subdividing the cone of the A_1 singularity, whose underlying morphism is the blow-up of the vertex. (ILO VIII 1.2(b) identifies the log blow-up of the vertex with the canonical resolution of this toric singularity.)
 
-*Needs:* §PA.4.2; §PA.4.1; TauCetiRoadmap.CrystallineCohomology CR.5:log-algebra.1 (Log charts); TauCetiRoadmap.CrystallineCohomology CR.5:log-algebra.1 (Saturated monoids); TauCetiRoadmap.LefschetzPencilsAndVanishingCycles §0.10.
+*Needs:* TauCetiRoadmap.ResolutionOfSingularitiesCharacteristicZero §§7.5–7.6; §PA.4.2; §PA.4.1; TauCetiRoadmap.CrystallineCohomology CR.5:log-algebra.1 (Log charts); TauCetiRoadmap.CrystallineCohomology CR.5:log-algebra.1 (Saturated monoids); TauCetiRoadmap.LefschetzPencilsAndVanishingCycles §0.10.
 
 ### 4.4 Gabber modification for inertia specializing actions
 
@@ -1040,7 +1056,7 @@ Work under these precise hypotheses: X noetherian, quasi-excellent, log regular 
 
 One proof route is as follows. Use the separated modification of LefschetzPencilsAndVanishingCycles §0.10 and its compatibility with G-stable opens and strict localization, which is part (d) of gap:very-tame-local-quotient. The ILO X Theorem 3.1.5(i) proof checks the construction at local schemes, compatibility under specialization, descent of the resulting normalized blow-up tower, and a uniform normalization bound. Each specialization uses precisely the inclusion of inertia groups; this replaces separatedness.
 
-(ilo14, Exposé VIII, Theorem 1.1, arXiv v1 p. 85; proof §§4–5, pp. 116–130 (ilo14 line 3681); ilo14, Exposé X, Theorem 3.1.5(i), arXiv v1 p. 156 (ilo14 line 7194); ilo14, Exposé VIII, §1.2, arXiv v1 p. 86 (ilo14 line 7194).)
+(ilo14, Exposé VIII, Theorem 1.1, arXiv v1 p. 85; proof §§4–5, pp. 116–130 (ilo14 line 3681); ilo14, Exposé X, Theorem 3.1.5(i), arXiv v1 p. 156 (ilo14 line 7194); ilo14, Exposé VIII, §1.2, arXiv v1 p. 86 (ilo14 line 3705).)
 
 For ±1 on (A^2_k, ∅), k algebraically closed of characteristic ≠ 2: the blow-up f : X′ → A^2_k of the origin satisfies all the conclusions, with (X′, Z′) log regular for Z′ the exceptional line and the action very tame. The morphism f is not log smooth (its fibre over the origin is Z′ with the log structure of N sending 1 to 0), although (X′, Z′) is log smooth over k (ILO VIII 1.2(a)).
 
@@ -1048,7 +1064,7 @@ For ±1 on (A^2_k, ∅), k algebraically closed of characteristic ≠ 2: the blo
 
 ### 4.5 Gabber's preparation lemma for equivariant log smooth maps
 
-Let f : X → Y be a G-equivariant log smooth map of fine log schemes, x a geometric point with image y, G the inertia group at x of order invertible on Y, acting trivially on M̄_x and M̄_y, and a : Y → Spec Λ[Q] an equivariant chart at y modelled on χ : G^ab ⊗ Q^gp → μ_N, with Q fine and Λ = Z[1/N, μ_N]. Then, étale-locally at x, a extends to an equivariant chart b : X → Spec Λ[P] with Q^gp → P^gp injective, torsion of the cokernel annihilated by an integer invertible on X, `X → Y ×_{Spec Λ[Q]} Spec Λ[P]` smooth, and after shrinking an equivariant étale map X → `(Y ×_{Λ[Q]} Λ[P])` ×_Λ Spec Sym_Λ(V) for a finitely generated projective Λ[G]-module V. If X, Y and Q are fs with Q sharp, P may be chosen fs with P^× torsion free.
+Let f : X → Y be a G-equivariant log smooth map of fine log schemes, x a geometric point with image y, G the inertia group at x of order invertible on Y, acting trivially on M̄_x and M̄_y. Put N = exponent(G), let μ_N be the group of complex N-th roots of unity, and put Λ = Z[1/N, μ_N]. Let a : Y → Spec Λ[Q] be an equivariant chart at y modelled on χ : G^ab ⊗ Q^gp → μ_N, with Q fine. Then, étale-locally at x, a extends to an equivariant chart b : X → Spec Λ[P] with Q^gp → P^gp injective, torsion of the cokernel annihilated by an integer invertible on X, `X → Y ×_{Spec Λ[Q]} Spec Λ[P]` smooth, and after shrinking an equivariant étale map X → `(Y ×_{Λ[Q]} Λ[P])` ×_Λ Spec Sym_Λ(V) for a finitely generated projective Λ[G]-module V. If X, Y and Q are fs with Q sharp, P may be chosen fs with P^× torsion free.
 
 Work under these precise hypotheses: G finite of order invertible on Y; f equivariant log smooth between fine log schemes; equivariant chart at y.
 
@@ -1060,6 +1076,8 @@ For G = 1, Y = Spec k with trivial log structure and X regular, assume the étal
 
 **Checks.**
 
+- For G = C₃, N = 3 and Λ = Z[1/3,ζ₃]; for G = 1, N = 1 and Λ = Z.
+- For G = C₂ × C₂ the exponent is 2, not its order 4, so Λ = Z[1/2]. No fourth roots of unity are required by the coefficient convention.
 - In A²_C, D : y² = x²(x+1) is an irreducible node. Its divisorial étale fs structure is log smooth, but at (0,0) its local dimension is 1 and tangent dimension 2. It is a relative normal crossings boundary and is not strict normal crossings.
 - The coordinate axes on A²_C have two regular components and intersection codimension 2. Their characteristic monoid at the origin is ℕ², and they satisfy the relative strict version.
 - With empty boundary on A¹_k the characteristic monoid is 0 and the underlying map is smooth of relative dimension 1; no boundary component is created by the chart criterion.
@@ -1119,7 +1137,7 @@ For the sign action on A² with axes boundary, the invariant ring is k[u,v,w]/(u
 
 ### Dependencies
 
-The statements and routes use §PA.0.8; §PA.3.1; TauCetiRoadmap.CrystallineCohomology CR.5:log-algebra.1 (Étale log structures); TauCetiRoadmap.CrystallineCohomology CR.5:log-algebra.4 (Divisorial log structures); TauCetiRoadmap.CrystallineCohomology CR.5:log-algebra.4 (Log regular schemes); TauCetiRoadmap.CrystallineCohomology CR.5:log-algebra.1 (Saturated monoids); TauCetiRoadmap.CrystallineCohomology CR.5:log-algebra.1 (Fine monoids); TauCetiRoadmap.CrystallineCohomology CR.5:log-algebra.4 (gap:closed-subset-log-structure); TauCetiRoadmap.CrystallineCohomology CR.5:log-algebra.1 (Log charts); TauCetiRoadmap.CrystallineCohomology CR.5:log-algebra.2 (Log fiber products); TauCetiRoadmap.SchemeAndStackFoundations §§4.11–4.20; TauCetiRoadmap.CrystallineCohomology CR.5:log-algebra.3 (Log smooth morphisms); TauCetiRoadmap.CrystallineCohomology CR.5:log-algebra.3 (Kato chart criterion); TauCetiRoadmap.CrystallineCohomology CR.5:log-algebra.3 (Kummer étale morphisms); TauCetiRoadmap.CrystallineCohomology CR.5:log-algebra.4 (Log smoothness over log regular schemes); TauCetiRoadmap.StableReduction Layer 4.
+The statements and routes use TauCetiRoadmap.ResolutionOfSingularitiesCharacteristicZero §§7.5–7.6; §PA.0.8; §PA.3.1; TauCetiRoadmap.CrystallineCohomology CR.5:log-algebra.1 (Étale log structures); TauCetiRoadmap.CrystallineCohomology CR.5:log-algebra.4 (Divisorial log structures); TauCetiRoadmap.CrystallineCohomology CR.5:log-algebra.4 (Log regular schemes); TauCetiRoadmap.CrystallineCohomology CR.5:log-algebra.1 (Saturated monoids); TauCetiRoadmap.CrystallineCohomology CR.5:log-algebra.1 (Fine monoids); TauCetiRoadmap.CrystallineCohomology CR.5:log-algebra.4 (gap:closed-subset-log-structure); TauCetiRoadmap.CrystallineCohomology CR.5:log-algebra.1 (Log charts); TauCetiRoadmap.CrystallineCohomology CR.5:log-algebra.2 (Log fiber products); TauCetiRoadmap.SchemeAndStackFoundations §§4.11–4.20; TauCetiRoadmap.CrystallineCohomology CR.5:log-algebra.3 (Log smooth morphisms); TauCetiRoadmap.CrystallineCohomology CR.5:log-algebra.3 (Kato chart criterion); TauCetiRoadmap.CrystallineCohomology CR.5:log-algebra.3 (Kummer étale morphisms); TauCetiRoadmap.CrystallineCohomology CR.5:log-algebra.4 (Log smoothness over log regular schemes); TauCetiRoadmap.StableReduction Layer 4.
 
 ## Layer PA.5: Stable modification and resolution of relative curves
 
@@ -1163,9 +1181,15 @@ For a multipointed S-curve (C, D) with a semistable modification (C′, D′), t
 
 Work under these precise hypotheses: (C, D) a multipointed S-curve; (C′, D′) → (C, D) a semistable modification.
 
-One proof route is as follows. Relative ampleness is checked on fibres C′_x over points x ∈ C closed in their S-fibre (the fibrewise ampleness argument in temkin10, proof of Theorem 1.1); pass to a geometric point and use base change of ω. The reduced fibre Z over x is a proper connected semistable curve; with E the points smooth in Z but singular in C′_s, non-exceptionality of its components is classical stability of (Z, D ⊔ E), so ω restricted to Z, which is `ω_{(Z, D ⊔ E)}`, is ample. If the modification is not stable, ω has degree ≤ 0 on an exceptional component, so it is not C-ample.
+One proof route is as follows. Relative ampleness is checked on fibres C′_x over points x ∈ C closed in their S-fibre (the fibrewise ampleness argument in temkin10, proof of Theorem 1.1); pass to a geometric point and use base change of ω. The reduced geometric fibre Z over x is proper. Treat its connected components separately. Zero-dimensional components impose no positivity condition, since every invertible sheaf on them is ample. A one-dimensional connected component is a proper connected semistable curve; let its induced markings be D_Z and its attaching points, smooth in Z but singular in C′_s, be E. Non-exceptionality gives classical stability of (Z, D_Z ⊔ E), and the restriction of ω is `ω_{(Z, D_Z ⊔ E)}`, hence ample. If the modification is not stable, ω has degree ≤ 0 on an exceptional component, so it is not C-ample.
 
 (temkin10, Theorem 1.1 and proof, arXiv v3 p. 3 (temkin10 line 104).)
+
+**Checks.**
+
+- The identity of A¹_k has fibre Spec k over 0. Its line bundle is ample on that zero-dimensional fibre, without a curve-degree inequality.
+- The normalization of V(xy) has two point fibres over the node. Each component has dimension 0, so both are handled separately and neither is asserted to be a connected curve.
+- A contracted rational component with three induced markings or attaching points has dualizing degree −2+3 = 1; with two it has degree 0 and is not stable. This pins the positive-degree criterion on one-dimensional components.
 
 For a semistable (C, D) the identity is a stable modification, and `ω_{(C,D)/S}` is C-ample relative to the identity.
 
@@ -1271,15 +1295,71 @@ One proof route for the stability assertions uses the tower of degree-p steps in
 
 (i) Let k be an analytic field and L a one-dimensional analytic k-field such that (k, L) satisfies the uniformization hypothesis of §PA.5.2a. Then L has an unramified generator over k; if p > 1 and k is algebraically closed, every special coset of L contains a moderately ramified generator of L; and if L has type 2 or 3, L is stable. (ii) Let k be an algebraically closed analytic field and K an analytic k-field finite over the closure of k(y) for some y ∈ K. Then there is x ∈ K with K finite and unramified over the closure of k(x); there is ε > 0 such that every x′ ∈ K with |x − x′| < ε has the same property; and if K̃ ≠ k̃, every x ∈ K° whose residue is transcendental over k̃ with K̃ separable over k̃(x̃) has the same property. (iii) Let K/k be a finitely generated extension of valued fields of transcendence degree one with k separably closed, and assume that the valuation ring k·K°, the localization of K° at the nonzero elements of k°, is centred on a smooth point of the normal projective k-model of K. Then there is x ∈ K transcendental over k such that K/k(x) is finite and unramified (LocalFieldsRamificationPartII GF.2/unramified-extension).
 
+For (ii), `analytic_uniformization` states existence and perturbation stability; `analytic_uniformization_residue` states the residue-coordinate clause. The algebraically closed analytic constant field is represented as a subfield k of K with the induced norm, so its inclusion is isometric. Both fields are complete with nontrivial ultrametric norms. The finite-over-a-completed-rational-subfield hypothesis includes K = k. In the residue clause transcendence already implies K̃ ≠ k̃.
+
+Define `completedRationalSubfield` of k ⊆ K and x ∈ K as the topological closure in K of the native intermediate field generated by x over k (temkin10 Theorem 2.1.10, temkin10 lines 460–467).
+
+- Its value H(x) is a closed subfield of K containing k and x, with the induced norm and specified inclusion into K.
+- If x ∈ k and k is complete, H(x) = k.
+- Finite dimensionality of K over H(x) is an additional hypothesis, rather than part of this definition.
+
+**Checks.**
+
+- For complete k, H(0) = H(1) = k. Closing an algebraic closure instead would not define the requested rational subfield.
+- In the Gauss completion of k(T), H(T) = K and [K:H(T)] = 1; the uncompleted k(T) is merely dense.
+- In the radius-r field over Q₃ with r outside the divisible hull of |Q₃^×|, H(T²) has value group |Q₃^×|·r^(2ℤ), of index 2 in |K^×| = |Q₃^×|·r^ℤ. Here [K:H(T²)] = 2, so closure does not force equality with K.
+
+Define `analyticIntegerInclusion` for H ⊆ K as the ring map H° → K° sending each element to itself, where K° is the native valuation subring of the norm valuation and H° its inverse image in H (temkin10 Lemma 2.1.6, temkin10 lines 432–436).
+
+- Its domain consists exactly of h ∈ H with |h| ≤ 1, and its codomain is K°.
+- It is injective and preserves 1; its map on fraction fields is the specified inclusion H → K.
+- The algebra used for étaleness is the algebra induced by this ring map.
+
+**Checks.**
+
+- For H = K the integer-ring map is the identity and sends 1 to 1, excluding a zero map.
+- For an unramified quadratic extension of Q₃ it has residue degree 2 and is étale, although the integer rings differ.
+- For H = F₂((t²)) ⊆ F₂((t)) = K it sends t² to t², has value-group index 2 and is not étale; injectivity alone is insufficient.
+
+Define `finiteUnramifiedOverCompleted` of k ⊆ K and x ∈ K as finite dimensionality of K over H(x) together with étaleness of `analyticIntegerInclusion` for H(x). For complete analytic fields this is finite unramifiedness in (ii), by temkin10 Lemma 2.1.6 (temkin10 lines 432–436). It permits x ∈ k when K = k; §PA.5.2a's nonconstant generator terminology applies when K is one-dimensional.
+
+- The finite-degree condition is retained separately from étaleness.
+- The valuation on H(x) is restricted from K, so an unrelated valuation cannot satisfy the predicate.
+- On one-dimensional K this agrees with the unramified-generator condition of §PA.5.2a.
+
+**Checks.**
+
+- For K = k complete and x = 0, the degree is 1 and the integer map is the identity; the predicate holds.
+- For an unramified quadratic k′/k, the Gauss field of k′(T) has degree 2 over H(T), with separable residue degree 2 and e = 1, so the predicate holds.
+- In the radius-r examples over Q₃ and Q₂, x = T² gives (e,f,degree) = (2,1,2), so the predicate fails in both the tame and wild case. At x = 0 the extension K/k is infinite, so it fails for a separate reason.
+
+Define `residueConstants` of k ⊆ K as the subfield of K̃ generated by residues of k ∩ K°. It is the image of k̃ inside K̃ (temkin10 Theorem 2.1.10(iii), temkin10 lines 466–467).
+
+- Reduction is the native quotient K° → K̃, whose kernel on k ∩ K° is k°°.
+- The residue image of k° is already a field, so generating a subfield leaves that image unchanged.
+- Transcendence and separability in the residue-coordinate theorem use this specified constant subfield and its native intermediate field generated by x̃.
+
+**Checks.**
+
+- For K = k this subfield is all of K̃; every residue is algebraic over it, so the coordinate hypothesis fails.
+- For the Gauss field over algebraically closed k it is k̃ ⊊ k̃(T̃). The residue of T is transcendental and K̃/k̃(T̃) has degree 1, hence is separable.
+- For a type-3 radius-r field over algebraically closed k, K̃ = k̃, so the residue-coordinate hypothesis fails. The existence theorem still supplies a generator.
+
 Work under these precise hypotheses: in (i) the uniformization hypothesis; in (ii) k algebraically closed and complete, K finite over the closure of some k(y); in (iii) k separably closed, K/k finitely generated of transcendence degree one, and the centre of k·K° a smooth point of the normal projective model.
 
 One proof route is as follows. (i) Control immediate extensions of degree p by special cosets (§PA.5.2a and temkin10 §6.1), uniformize fields topologically generated by one element, for which a special coset contains an element of k or a topological generator (temkin10 Proposition 6.2.4), and pass to finite extensions of those (temkin10 §6.3). (ii) The first clause is (i) when k is algebraically closed; the second follows because for x′ close to x the closures of k(x) and k(x′) are isometrically isomorphic over k with the same residue field and K has the same degree over both (temkin10 Lemmas 6.3.2 and 6.3.3); in the third K has type 2, the closure of k(x) is stable by (i), so the degree of K over it equals the residue degree and unramifiedness reduces to separability of K̃/k̃(x̃) (proof of temkin10 Theorem 2.1.10). (iii) Reduce to absolutely finitely generated valued fields, which have finite height (LocalFieldsRamificationPartII GF.5/abhyankar-and-rank). If k·K° ≠ K it is the discrete valuation ring of a smooth closed point z, and a uniformizer x at z works by the composition criterion (LocalFieldsRamificationPartII GF.5/unramified-composition). If k·K° = K, then K/k is separable and one inducts on the height of k: the trivially valued case is the existence of a separable transcendence basis; in positive height, a finite separable extension of height-one valued fields is unramified exactly when its completion is (temkin10 Proposition 2.2.1), which reduces the height-one step to (ii), and the composition criterion assembles the height-one step with the residue field, to which the induction hypothesis applies.
 
 (temkin10, Theorem 6.3.1, p. 48 (temkin10 line 2339), under Assumption 6.2.1, p. 42 (temkin10 line 2031); Theorem 2.1.10, p. 10 (temkin10 line 460), proof p. 51 (temkin10 line 2487); Theorem 2.1.8, p. 10 (temkin10 line 445), proof §2.2, pp. 10–13 (temkin10 line 550).)
 
-For k algebraically closed and K the Gauss completion of k(T), x = T satisfies (ii), and so does every x′ ∈ K close enough to T. In (iii) with k trivially valued: if k·K° = K the valuation of K is trivial and the conclusion is the existence of a separable transcendence basis of K/k; if k·K° ≠ K, for instance the t-adic valuation of k(t), the valuation ring is the local ring of a smooth closed point and a uniformizer there, such as x = t, is the required element.
+**Checks.**
 
-*Needs:* §PA.5.2a; TauCetiRoadmap.LocalFieldsRamificationPartII GF.2/unramified-extension; TauCetiRoadmap.LocalFieldsRamificationPartII GF.5/unramified-composition; TauCetiRoadmap.LocalFieldsRamificationPartII GF.5/abhyankar-and-rank.
+- For algebraically closed k and its Gauss field K, H(T) = K has degree 1. Every x′ with |T−x′| < 1 topologically generates K by temkin10 Lemma 6.3.2; the residue of T is transcendental and the residue extension has degree 1.
+- For K = k, every H(x) = k and every integer map is the identity, of degree 1. Choose x = 0 and ε = 1; all x′ in that ball satisfy the conclusion. Part (ii) imposes no nonconstant-coordinate hypothesis.
+- In the Gauss field, replacing T by 0 changes [K:H(T)] = 1 to [K:k] infinite. Its distance from T is 1, outside the strict ball of radius 1. Omitting either finiteness or the small-distance condition admits this wrong coordinate.
+
+In (iii) with k trivially valued: if k·K° = K the valuation of K is trivial and the conclusion is the existence of a separable transcendence basis of K/k; if k·K° ≠ K, for instance the t-adic valuation of k(t), the valuation ring is the local ring of a smooth closed point and a uniformizer there, such as x = t, is the required element.
+
+*Needs:* Mathlib `NormedField.valuation`, `Subfield.topologicalClosure`, `IntermediateField.adjoin`, `Algebra.Etale` and `IsLocalRing.ResidueField` for (ii); §PA.5.2a; TauCetiRoadmap.LocalFieldsRamificationPartII GF.2/unramified-extension; TauCetiRoadmap.LocalFieldsRamificationPartII GF.5/unramified-composition; TauCetiRoadmap.LocalFieldsRamificationPartII GF.5/abhyankar-and-rank.
 
 ### 5.3 Stable modification theorem: existence and uniqueness
 
@@ -1381,7 +1461,7 @@ Blowing up a smooth special-fibre point on A¹_R creates an exceptional P¹ meet
 
 ### Dependencies
 
-The statements and routes use §PA.5.5a; Mathlib `algebraicClosure`; Mathlib Scheme.Hom.normalization and SchemeAndStackFoundations §0.20; §PA.0.3; §PA.0.4; §PA.0.5; §PA.0.6; §PA.0.7; §PA.0.8; §PA.0.9; §PA.1.4; §PA.3.1; §PA.3.6; §PA.3.7; §PA.4.1; §PA.4.3; §PA.4.6; TauCetiRoadmap.StableReduction Layers 2–3; Mathlib `AlgebraicGeometry.Flat`; Mathlib `AlgebraicGeometry.Etale`; TauCetiRoadmap.SchemeAndStackFoundations §§4.11–4.20; TauCetiRoadmap.CrystallineCohomology CR.5:log-algebra.3 (Kato chart criterion); TauCetiRoadmap.CrystallineCohomology CR.5:log-algebra.4 (Log smoothness over log regular schemes); TauCetiRoadmap.CrystallineCohomology CR.5:log-algebra.4 (Logarithmic Abhyankar lemma); TauCetiRoadmap.LocalFieldsRamificationPartII GF.1/normalization-and-prolongations; TauCetiRoadmap.LocalFieldsRamificationPartII GF.2/tame-extension; TauCetiRoadmap.LocalFieldsRamificationPartII GF.2/unramified-extension; TauCetiRoadmap.LocalFieldsRamificationPartII GF.5/abhyankar-and-rank; TauCetiRoadmap.LocalFieldsRamificationPartII GF.5/unramified-composition.
+The statements and routes use Mathlib `NormedField.valuation`, `Subfield.topologicalClosure`, `IntermediateField.adjoin`, `Algebra.Etale` and `IsLocalRing.ResidueField`; §PA.5.5a; Mathlib `algebraicClosure`; Mathlib Scheme.Hom.normalization and SchemeAndStackFoundations §0.20; §PA.0.3; §PA.0.4; §PA.0.5; §PA.0.6; §PA.0.7; §PA.0.8; §PA.0.9; §PA.1.4; §PA.3.1; §PA.3.6; §PA.3.7; §PA.4.1; §PA.4.3; §PA.4.6; TauCetiRoadmap.StableReduction Layers 2–3; Mathlib `AlgebraicGeometry.Flat`; Mathlib `AlgebraicGeometry.Etale`; TauCetiRoadmap.SchemeAndStackFoundations §§4.11–4.20; TauCetiRoadmap.CrystallineCohomology CR.5:log-algebra.3 (Kato chart criterion); TauCetiRoadmap.CrystallineCohomology CR.5:log-algebra.4 (Log smoothness over log regular schemes); TauCetiRoadmap.CrystallineCohomology CR.5:log-algebra.4 (Logarithmic Abhyankar lemma); TauCetiRoadmap.LocalFieldsRamificationPartII GF.1/normalization-and-prolongations; TauCetiRoadmap.LocalFieldsRamificationPartII GF.2/tame-extension; TauCetiRoadmap.LocalFieldsRamificationPartII GF.2/unramified-extension; TauCetiRoadmap.LocalFieldsRamificationPartII GF.5/abhyankar-and-rank; TauCetiRoadmap.LocalFieldsRamificationPartII GF.5/unramified-composition.
 
 ## Layer PA.6: Prime-to-degree desingularization
 
@@ -1457,7 +1537,13 @@ One proof route is as follows. S is universally char(S)-resolvable, in the proje
 
 (temkin17, Theorem 1.2.9, p. 100; §4.3.3, p. 124 (temkin17 line 149).)
 
-For S = Spec k and X a variety, (i) gives a regular X′ with an snc boundary that is log smooth over k, i.e. X′ smooth with relative snc boundary after the local forms of PA.4.
+**Checks.**
+
+- For k = F_p(t) and X = Spec k(t^(1/p)), take k′ = k(t^(1/p)) and X′ = Spec k′. Then X′ → X has degree 1 and X′ is smooth over k′. Over k, base change to an algebraic closure produces a nonzero nilpotent, so smoothness over k fails.
+- For perfect k and X = A¹_k with empty boundary, S′ = Spec k and both alteration maps can be identities of degree 1.
+- For k = Q and X = A²_k with axes boundary, the identity has characteristic chart 0 → ℕ² and a relative snc boundary over the unchanged base.
+
+For S = Spec k and X a variety, (i) gives X′ smooth with relative snc boundary over each field component k′ of S′, by the local forms of PA.4. If k is perfect, (iii) permits S′ = Spec k.
 
 *Needs:* §PA.6.1; §PA.6.2; §PA.6.3; §PA.0.12; §PA.0.5; §PA.6.4.
 
@@ -1586,9 +1672,15 @@ Let K be a global field, R ⊆ K a Dedekind ring with fraction field K and S = S
 
 Work under these precise hypotheses: K a global field; R ⊆ K Dedekind with fraction field K; X ⊆ P^N_S closed, integral, flat and projective over S, of relative dimension d ≥ 1, with geometrically reduced and irreducible generic fibre and sm(X/S) dense in every fibre.
 
-One proof route is as follows. If R = K, sections over finite extensions are closed points of the smooth locus, and the projection exists over a finite extension because the open set of admissible linear subspaces is nonempty. Otherwise R is a localization of the ring of integers of K or of the coordinate ring of a smooth affine curve over a finite field, so R is excellent and satisfies the hypotheses of §PA.6.11a. Over a dense open U ⊆ S the fibres are geometrically irreducible; after a finite extension the geometric components of the finitely many other fibres are defined over their residue fields. For a component C of a fibre X_s, §PA.6.11a applied to sm(X/S) ∖ (X_s ∖ C), which is irreducible with geometrically irreducible generic fibre and surjective over S because sm(X/S) is dense in every fibre, gives a section through C after a finite extension; removing the images of the sections already chosen keeps these properties, since the fibres have positive dimension, so the sections can be taken pairwise disjoint. For (b), let V be the open subscheme of the Grassmannian of linear subspaces of relative dimension N − d − 1 that miss X and the tangent spaces at the σ_i; it is irreducible, its generic fibre is geometrically irreducible, and it surjects onto S, because a general linear subspace of that dimension misses finitely many d-dimensional subsets of a fibre. §PA.6.11a gives a point L of V over a finite extension. Projection from L is finite, since a positive-dimensional fibre would meet L, and étale at each σ_i, since it is unramified there between smooth schemes of the same relative dimension. Its non-étale locus meets each component of each fibre in a proper closed subset, because that component contains some σ_i(s′), so its image is a proper closed subset of each fibre of P^d, and the étale locus surjects onto S′.
+One proof route is as follows. If R = K, sections over finite extensions are closed points of the smooth locus, and the projection exists over a finite extension because the open set of admissible linear subspaces is nonempty. Otherwise R is a localization of the ring of integers of K or of the coordinate ring of a smooth affine curve over a finite field, so R is excellent and satisfies the hypotheses of §PA.6.11a. Over a dense open U ⊆ S the fibres are geometrically irreducible; after a finite extension the geometric components of the finitely many other fibres are defined over their residue fields. For a component C of a fibre X_s, §PA.6.11a applied to sm(X/S) ∖ (X_s ∖ C), which is irreducible with geometrically irreducible generic fibre and surjective over S because sm(X/S) is dense in every fibre, gives a section through C after a finite extension; removing the images of the sections already chosen keeps these properties, since the fibres have positive dimension, so the sections can be taken pairwise disjoint. For (b), use the open subscheme V of full-rank (d+1)×(N+1) matrices whose projective kernels miss X and the projective tangent spaces along the σ_i. Every geometric fibre is a nonempty open subset of affine matrix space, hence geometrically irreducible: a general centre of dimension N−d−1 misses X and the finitely many tangent d-planes. Thus V is integral, its generic fibre is geometrically irreducible and it surjects onto S. §PA.6.11a supplies a matrix over a finite extension. Its specified surjection O^(N+1) → O^(d+1) defines the projection to P^d, with centre L the projectivization of the kernel. This projection is finite, since a positive-dimensional fibre would meet L, and étale at each σ_i, since it is unramified there between smooth schemes of the same relative dimension. Its non-étale locus meets each component of each fibre in a proper closed subset, because that component contains some σ_i(s′), so its image is a proper closed subset of each fibre of P^d, and the étale locus surjects onto S′.
 
 (dejong96, §8.1 and §8.6, pp. 91–92 (dejong96 lines 1545, 1582); moretbailly89, Théorème 1.7 and §1.9, pp. 162–163 (moretbailly89 lines 81, 89).)
+
+**Checks.**
+
+- For R = Z[√−5] and I = (2,1+√−5), the quotient R³ → R⊕I has determinant class [I] ≠ 0 in Cl(R) = C₂. It supplies a projective-bundle target P(R⊕I), with no identification with P¹_R. A framed matrix quotient instead has determinant class 0 and targets P¹_R by its specified basis.
+- For N = d, the identity (d+1)×(d+1) matrix is admissible, its kernel is 0 and its projective centre is empty. The projection has degree 1 and is étale everywhere.
+- On a fibre with two components, sections meeting both force an étale point on each. The non-étale locus has dimension at most d−1 on each, so its finite image cannot fill the target fibre of dimension d.
 
 For X = P^d_S with its standard embedding (N = d), the linear subspace is empty, π is the identity, one section suffices because every fibre is irreducible, and S′ = S.
 
@@ -1618,7 +1710,7 @@ The statements and routes use SchemeAndStackFoundations §§2.4, 2.6, 2.11, §§
 
 ## Downstream consumers
 
-Jannsen’s Hasse-principle argument for higher-dimensional fields consumes the prime-to-ℓ variety alteration of §PA.6.9. LogicAndDefinabilityInNumberTheoryPartII §2.1 consumes the odd-degree regular model of §PA.6.10 for Dittmann–Pop’s Pfister-form argument. EtaleDualityAndPerverseSheavesPartII Layers EQ.0, EQ.2 and EQ.6 consume the alteration geometry with its precise coefficient and boundary hypotheses. These are outgoing interfaces: no theorem from those consumers is a prerequisite of the geometric construction here.
+Jannsen’s Hasse-principle argument for higher-dimensional fields consumes the prime-to-ℓ variety alteration of §PA.6.9. LogicAndDefinabilityInNumberTheoryPartII §2.1 consumes the odd-degree regular model of §PA.6.10 for Dittmann–Pop’s Pfister-form argument. MotivesAndAlgebraicCycles §0.5c, `pAlterationSupport`, uses the perfect-field separable alteration of §PA.6.3 over the perfection of its ground field and descends the resulting data. EtaleDualityAndPerverseSheavesPartII Layers EQ.0, EQ.2 and EQ.6 consume the alteration geometry with its precise coefficient and boundary hypotheses. These are outgoing interfaces: no theorem from those consumers is a prerequisite of the geometric construction here.
 
 ## Worked examples
 
