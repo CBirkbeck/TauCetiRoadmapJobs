@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "rejected",
+    "reviewer": "independent-review-PRREVIEW-PolynomialGaloisGroups~2",
+    "head": "0081eacddfe165f1ff69acb9a56c92971b47ab71",
+    "pr": 763,
+    "folder": "PolynomialGaloisGroups",
+    "date": "2026-10-28",
+    "findings": 11,
+    "blocking": 7,
+    "notes": "Reviewed all four files and all eleven prior findings; seven seeded source targets, 16 readable source texts, 135 adversarial rows, pinned-library and main/open-roadmap ownership checks. Worker gate passes; independent targeted build and direct elaboration pass with only the intended sorry warning. All 30 named declarations/instances checked on scratch copies; one-tactic and native-carrier headline probes completed. Latest dependency check: 162 roadmaps, 1170 edges, 0 problems. Rejected because the package re-plans a completed roadmap; new mathematics belongs in a continuation. Inaccessible source locators are recorded as not verifiable."
+  }
+}

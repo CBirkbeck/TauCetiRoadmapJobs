@@ -138,6 +138,9 @@ per_run = 5
 authors = []
 skip_authors = ["bwangpj"]   # #196 is abandoned (user 2026-10-28): not tracked, not reviewed
 max_folders = 10
+# A changes-needed review of a pool author's pull request is repaired in the same job; the repaired head is re-reviewed by another worker.
+repair_pool = true
+small_change_lines = 150
 
 [agents]
 # Default agent for every lane: "codex" or "claude". Operators override per run with --agent.
