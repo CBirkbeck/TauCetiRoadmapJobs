@@ -274,6 +274,7 @@ Polylogarithms
 CongruenceSpectralGap
 FuchsianOrbifoldsPartII
 AutomorphicSpectralTheoryPartII
+AlgebraicKTheory
 QuantumEnvelopingAlgebras
 TopologicalSheafCohomology
 KloostermanMomentsAndPotentialAutomorphy
