@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-PDE~1",
+    "head": "fd8e87f487e4d618bbb3d2aade79412119eadd0a",
+    "pr": 93,
+    "folder": "PDE",
+    "date": "2026-10-28",
+    "findings": 11,
+    "blocking": 8,
+    "notes": "Full read-only review of README and Suggested. All seven seeded targets examined; exact source verifications and unavailable texts are distinguished in the report. Worker gate passed; independent depcheck: 162 roadmaps, 1176 edges, 0 problems, with a manually witnessed PDE–GMT prose cycle. Suggested.lean and all 32 actual signatures elaborate; a native full Fredholm compatibility headline probe elaborates with sorry only. 140 adversarial rows, pinned-library and main/open ownership audits; no tracked PR changes."
+  }
+}
