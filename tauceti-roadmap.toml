@@ -101,6 +101,9 @@ dropped_names_file = ""
 outside_folder_allow = []
 # Run the dependency check against the merge order as part of the gate.
 require_depcheck = true
+# Files a roadmap folder may hold besides *.lean and nested roadmap folders; anything else fails the push gate.
+# PROGRESS.md and STATUS.md are the generated snapshots most folders on main carry.
+roadmap_files = ["README.md", "Suggested.lean", "metadata.toml", "PROGRESS.md", "STATUS.md"]
 
 [redteam]
 # Rounds of red-teaming on the draft pull request. Each round runs every pass below
@@ -134,7 +137,7 @@ label = "ai-approved"
 per_run = 5
 authors = []
 skip_authors = []
-require_single_folder = true
+max_folders = 10
 
 [agents]
 # Default agent for every lane: "codex" or "claude". Operators override per run with --agent.
