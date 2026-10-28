@@ -1,0 +1,54 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "SymplecticReidemeisterTorsionModSquares"
+
+[[source]]
+id = "AV-v1"
+authors = "Amina Abdurrahman, Akshay Venkatesh"
+title = "Symplectic L-functions and symplectic Reidemeister torsion (mod squares)"
+year = 2023
+arxiv = "2303.13436v1"
+locator_scheme = "section"
+locator = "Sections 1.1, 1.3.3, 2; Appendices A-C, pp. 1-26, 61-90 (arXiv v1)"
+url = "https://arxiv.org/abs/2303.13436v1"
+fetched_from = "https://arxiv.org/pdf/2303.13436v1"
+fetched_at = "2026-10-25T10:29:39Z"
+sha256 = "3e2736beea70ba3467ad30a24b518d82cf589d9ddd4a06f6b0684c7bfd7d6306"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "All locators use the 98-page arXiv v1; the published edition is not used."
+cited_for = ["Layers 0-8"]
+
+[[source]]
+id = "JRV"
+authors = "Florent Jouve, Fernando Rodriguez-Villegas"
+title = "On the bilinear structure associated to Bezoutians"
+year = 2013
+arxiv = "1004.4208v3"
+locator_scheme = "theorem"
+locator = "Theorem 5.1, pp. 16-17; Lemma 6.1, p. 18 (arXiv v3)"
+url = "https://arxiv.org/abs/1004.4208v3"
+fetched_from = "https://arxiv.org/pdf/1004.4208v3"
+fetched_at = "2026-10-25T10:29:56Z"
+sha256 = "974292033622656f55a7aa39bf622cc745d672b5ceb43f99706fa1c2fa3e1011"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "All locators use arXiv v3 dated 12 September 2013; the original submission was 2010."
+cited_for = ["4.1"]
+
+[[source]]
+id = "Thom"
+authors = "René Thom"
+title = "Quelques propriétés globales des variétés différentiables"
+year = 1954
+locator_scheme = "theorem"
+locator = "Chapter IV, Section 8, Theorem IV.13, p. 81"
+url = "https://webhomes.maths.ed.ac.uk/~v1ranick/papers/thomcob.pdf"
+fetched_from = "https://webhomes.maths.ed.ac.uk/~v1ranick/papers/thomcob.pdf"
+fetched_at = "2026-10-25T10:31:22Z"
+sha256 = "3129a3e78fc854b2dd26e1b195335a7d1043e7d911206320c54bbd73b74aaac3"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["3.1"]

@@ -2589,46 +2589,7 @@
       ]
     }
   ],
-  "gaps": [
-    {
-      "title": "Compiled Tau Ceti baseline is not available",
-      "neededBy": [
-        "EllipticLegendreCharacterInterfaces:LG.2/split-cubic-crt",
-        "EllipticLegendreCharacterInterfaces:LG.2/split-squareclass-equivalence",
-        "EllipticLegendreCharacterInterfaces:LG.2/descent-off-roots",
-        "EllipticLegendreCharacterInterfaces:LG.2/descent-at-root",
-        "EllipticLegendreCharacterInterfaces:LG.2/descent-product",
-        "EllipticLegendreCharacterInterfaces:LG.2/halving-square-criterion",
-        "EllipticLegendreCharacterInterfaces:LG.5/twist-euler-factor-specialization",
-        "EllipticLegendreCharacterInterfaces:LG.0/full-two-torsion-normalization"
-      ],
-      "detail": "Native source statements are inspected at f790474, but no compiled Tau Ceti build at that pin is available. The publication includes native signatures and imports, plus a separately elaborated Mathlib-only projection; it does not certify full native elaboration. Do not build libraries or download caches."
-    },
-    {
-      "title": "Generic local reduction/minimalization and conductor comparison requests",
-      "neededBy": [
-        "EllipticLegendreCharacterInterfaces:LG.1/good-prime-units",
-        "EllipticLegendreCharacterInterfaces:LG.1/legendre-good-model",
-        "EllipticLegendreCharacterInterfaces:LG.1/character-conductor-divides"
-      ],
-      "detail": "The local ℚ_p and minimal-equation unit bridge is requested from EllipticCurves Layer 4; the actual conductor support comparison is requested from ArithmeticGaloisRepresentations R01.3, whose stated scope covers it. No unexamined global odd-primitive split-model lemma is used as an assumed input."
-    },
-    {
-      "title": "Generic twist Euler-factor comparison remains a supplier request",
-      "neededBy": [
-        "EllipticLegendreCharacterInterfaces:LG.5/twist-euler-factor-specialization"
-      ],
-      "detail": "BSD.0 plans the comparison but the inspected packets do not contain a finer node for it. This packet supplies only the native equation specialization and retains an explicit request rather than proving a second generic comparison."
-    },
-    {
-      "title": "Native squareclass-character and actual conductor signatures require their owner declarations",
-      "neededBy": [
-        "EllipticLegendreCharacterInterfaces:LG.1/character-odd-support",
-        "EllipticLegendreCharacterInterfaces:LG.1/character-conductor-divides"
-      ],
-      "detail": "The exact mathematical CA.1 primitive squareclass-character node is imported, but it has no native construction declaration at the pin. The actual elliptic-conductor comparison is requested from R01.3. The two character/conductor signatures are explicitly omitted from the suggested file until these objects can be named; no Prop-valued surrogate or local duplicate is introduced."
-    }
-  ],
+  "gaps": [],
   "sourceIssues": [
     {
       "id": "EllipticLegendreCharacterInterfaces/E1",

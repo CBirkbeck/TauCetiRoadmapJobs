@@ -1,0 +1,26 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ReductiveGroupsPartIII"
+
+[[source]]
+id = "Noot09"
+authors = "Rutger Noot"
+title = "Frobenius conjugacy classes and Mumford–Tate groups"
+year = 2009
+doi = "10.1112/jlms/jdn049"
+locator_scheme = "section"
+locator = "§1.5; Theorem 2.4; Lemmas 2.5–2.6; §3 p.68"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/464#issuecomment-6399305038"
+
+[[source]]
+id = "Kottwitz82"
+authors = "Robert E. Kottwitz"
+title = "Rational conjugacy classes in reductive groups"
+year = 1982
+doi = "10.1215/S0012-7094-82-04939-0"
+locator_scheme = "section"
+locator = "Corollary 2.2"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/464#issuecomment-6399305038"
