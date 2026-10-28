@@ -306,6 +306,7 @@ MotivicEtaleKTheory
 EllAdicHomotopyTypesAndWeights
 OrthogonalSpinGroups
 QuantitativeOrbitMethodAndMicrolocalAnalysisOnLieGroups
+BanachSpaceTheory
 CombinatorialHeegaardFloer
 InstantonFloerTheory
 LevelOneAutomorphicFormsForClassicalGroups
