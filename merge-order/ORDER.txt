@@ -216,6 +216,7 @@ TangentialBordism
 FourManifolds
 LocalVariationalFieldTheory
 CalibratedGeometry
+StableReduction
 GeometricTopology
 InverseGaloisAndArithmeticFundamentalGroupsPartII
 SmoothBundlesConnections
