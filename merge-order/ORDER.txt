@@ -306,6 +306,7 @@ Polylogarithms
 CongruenceSpectralGap
 FuchsianOrbifoldsPartII
 AutomorphicSpectralTheoryPartII
+HeegaardFloer
 KloostermanMomentsAndPotentialAutomorphy
 GeometricFreyMazur
 ModularCurvesPartIII
