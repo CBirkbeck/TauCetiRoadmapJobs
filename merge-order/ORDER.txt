@@ -248,6 +248,7 @@ OperatorAlgebraDynamics
 NoncompactQuantumSymmetry
 Subfactors
 MorseTheory
+SymplecticFieldTheory
 GaugeQuiltFieldTheory
 StochasticCalculus
 FukayaTheory
