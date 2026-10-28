@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "rejected",
+    "reviewer": "independent-review-PRREVIEW-EllAdicRealization~1",
+    "head": "4bd72379658126cbe9be935656396f0c9dac4de0",
+    "pr": 196,
+    "folder": "CohomologicalPointCounting/EllAdicRealization",
+    "date": "2026-10-28",
+    "findings": 9,
+    "blocking": 4,
+    "notes": "Reviewed the Summit seeded sample against legally fetched Bhatt–Scholze v2 and Stacks chapters 61 and 64; the README lacks an exact Summit locator. SGA 4½ is uncertified and Milne unavailable. Recorded 103 computed adversarial rows, pinned Mathlib definitions, five resolved sibling contracts, and main-roadmap ownership. Gate FAIL: latex=124, tex=56, metadata=1; build passes. Independent dependency check: 163 roadmaps, 1164 edges, 0 problems. Original Lean and native smallness signature elaborate. Rejected because core scope re-plans EtaleCohomologyFoundations F.4.1–F.4.6."
+  }
+}
