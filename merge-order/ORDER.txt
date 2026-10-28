@@ -253,6 +253,7 @@ OperatorTheory
 SmoothRepresentationsOfLocalGroupsPartII
 ImplicitAtlases
 CalibratedGeometry
+DifferentialGeometry
 CategoricalOperatorAlgebras
 AlgebraicCurves
 AbelianSurfacesModularity
