@@ -126,6 +126,16 @@ ready_after = false
 # The design lane is the only expensive one: at most this many design jobs per operator per day.
 daily_cap = 10
 
+# AI review of every open roadmap pull request (any author): one PRREVIEW job per new head, the
+# `ai-approved` label while the latest review accepts the current head; a human still approves and merges.
+[prreview]
+enabled = true
+label = "ai-approved"
+per_run = 5
+authors = []
+skip_authors = []
+require_single_folder = true
+
 [agents]
 # Default agent for every lane: "codex" or "claude". Operators override per run with --agent.
 default = "codex"
@@ -137,6 +147,10 @@ timeout_minutes = 360
 # Per-lane overrides: `agent` pins the family, `model` its model; `codex_model` and `claude_model` pin
 # the model per family and leave the family to the worker. Reviews run only on the review models.
 [agents.lanes.review]
+codex_model = "gpt-6-astra"
+claude_model = "fable"
+
+[agents.lanes.prreview]
 codex_model = "gpt-6-astra"
 claude_model = "fable"
 
