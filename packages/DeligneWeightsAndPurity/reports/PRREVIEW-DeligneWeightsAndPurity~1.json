@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-DeligneWeightsAndPurity~1",
+    "head": "6c2402d58d5a69022c132fcd7984ac5942818da7",
+    "pr": 929,
+    "folder": "DeligneWeightsAndPurity",
+    "date": "2026-10-28",
+    "findings": 6,
+    "blocking": 3,
+    "notes": "Read-only review; 15 seeded source targets checked; 150 computed adversarial rows covering 136 numbered targets, nine auxiliary constructions and five Lean definitions. Original Lean and nine signature checks passed; four simp padding probes failed to discharge the headlines; native abelian point-count headline probe elaborated. Gate FAIL: residue=248; dependency check reports two UPWARD lines that are false positives for suppliers already on main/completed. Three P2 findings: real-envelope twist phase, duplicate degree Chebotarev, omitted statable abelian point-count headline. Three P3 form findings. All ten referenced texts fetched legally; source errata recorded."
+  }
+}
