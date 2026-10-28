@@ -225,6 +225,7 @@ ConformalMappingPartII
 CategoricalOperatorAlgebras
 TemperleyLiebOperatorAlgebras
 AlgebraicCurves
+CStarClassification
 HilbertModules
 FactorRigidity
 ColemanIntegrationPartII
