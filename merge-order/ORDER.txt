@@ -277,6 +277,7 @@ GlobalGaloisDeformationsPartII
 ProfiniteCohomologyPartII
 EtaleHomotopyTypes
 RandomMatrices
+IntegralLattices
 ComplexKahlerGeometry
 ClassFieldTheory
 TeichmullerGeometry
