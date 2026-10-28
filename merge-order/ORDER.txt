@@ -234,6 +234,7 @@ ProfiniteProPGroups
 ChevalleyGroups
 EtaleHomotopyTypes
 RandomMatrices
+TemperleyLieb
 HomotopySpheres
 IntegralLattices
 MultiquadraticPartII
