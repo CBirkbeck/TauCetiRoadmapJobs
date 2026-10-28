@@ -20,8 +20,8 @@ Changes:
 ## H02 (CBirkbeck) — disputed
 
 The supplier exists and every consumed anchor resolves:
-- **Where it is.** AdicSpacesPartIIPartII is a design-stage board package at merge-order position 11, well above this roadmap (position 245). The brief lists it among this roadmap's permitted suppliers. It is not yet on main or in an open pull request, which is why the open-PR inventory did not show it.
-- **Anchors.** Its `packages/AdicSpacesPartIIPartII/design/README.md` states all 16 consumed targets (RZ.0 local-dimension through RZ.6 subfield-identity-theorem). Their hypotheses match the uses here:
+- **Where it is.** AdicSpacesPartV is a design-stage board package at merge-order position 11, well above this roadmap (position 245). The brief lists it among this roadmap's permitted suppliers. It is not yet on main or in an open pull request, which is why the open-PR inventory did not show it.
+- **Anchors.** Its `packages/AdicSpacesPartV/design/README.md` states all 16 consumed targets (RZ.0 local-dimension through RZ.6 subfield-identity-theorem). Their hypotheses match the uses here:
   - RZ.3 gauss-point-in-closure assumes an infinite residue field, matching the §10.3 Acceptance.
   - RZ.4 weakly-shilov-avoid-nowhere-dense is BhattHansen Corollary 2.10 (BhattHansen line 346).
   - RZ.5 resolution-consequences gives a proper surjective v-cover, with a connected S̃ when S is irreducible.
@@ -65,9 +65,9 @@ Admissibility (slope zero of the modified bundle), pure weight, Bun_G, the Grass
 ## Ownership, citations, sources
 
 - **Ownership.** The repairs add no carrier or construction: they restrict this roadmap's own definitions to the source's. So no ownership search against the open pull requests was needed.
-  - A note for the supplier package, not this roadmap: AdicSpacesPartIIPartII states its own RZ.5/functorial-desingularization-qe, while ResolutionOfSingularitiesCharacteristicZero §§7.5–7.6 (`qeResolution_regularFunctorial`) owns the scheme theorem. This roadmap consumes only RZ.5/resolution-consequences.
+  - A note for the supplier package, not this roadmap: AdicSpacesPartV states its own RZ.5/functorial-desingularization-qe, while ResolutionOfSingularitiesCharacteristicZero §§7.5–7.6 (`qeResolution_regularFunctorial`) owns the scheme theorem. This roadmap consumes only RZ.5/resolution-consequences.
   - Also a supplier-side note: that design says no RigidAnalyticGeometry directory exists, but one is on main at `8a349f3`.
-- **Citations.** `roadmaps resolve` reports no unresolved cross-roadmap citation or Lean name. All 16 AdicSpacesPartIIPartII anchors were checked against the board design README. HKI lines 512, 1673 and 1965, HKII lines 808 and 2378, and BhattHansen line 346 were read at the cited lines.
+- **Citations.** `roadmaps resolve` reports no unresolved cross-roadmap citation or Lean name. All 16 AdicSpacesPartV anchors were checked against the board design README. HKI lines 512, 1673 and 1965, HKII lines 808 and 2378, and BhattHansen line 346 were read at the cited lines.
 - **Sources.** None fetched, and `needs-references.toml` was not written.
 - **Possible source erratum.** HKII Remark 2.3.5 (HKII line 808) asserts the local-system/torsor equivalence without v-local triviality, which fails for Λ=ℚ_p.
 - **Untrusted text.** The review text contained no instructions to act outside the job.
