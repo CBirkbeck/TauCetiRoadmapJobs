@@ -255,6 +255,7 @@ ImplicitAtlases
 CalibratedGeometry
 DifferentialGeometry
 CategoricalOperatorAlgebras
+TemperleyLiebOperatorAlgebras
 AlgebraicCurves
 HilbertModules
 AbelianSurfacesModularity
