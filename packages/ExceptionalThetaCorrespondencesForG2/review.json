@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-REV-PKG-ExceptionalThetaCorrespondencesForG2~3",
+  "date": "2026-10-25",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "comment review on the board pull request by `CBirkbeck` (codex) of 3f76749",
+  "conditional_gaps": [
+   "bg-spin-integral",
+   "isotypic-compact",
+   "isotypic-parabolic",
+   "quasisplit-whittaker",
+   "ramified-spin-factor",
+   "rank-one-plancherel",
+   "regular-real-unitarity",
+   "schematic-centralizers",
+   "schwartz-ext",
+   "steinberg-unipotent",
+   "wavefront-all-residue"
+  ]
+ }
+}

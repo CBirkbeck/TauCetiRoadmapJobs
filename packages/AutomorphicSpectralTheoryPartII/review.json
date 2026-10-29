@@ -1,0 +1,38 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-REV-PKG-AutomorphicSpectralTheoryPartII~4",
+  "date": "2026-10-25",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "comment review on the board pull request by `CBirkbeck` (codex) of 7aaaa21",
+  "conditional_gaps": [
+   "arthur-factorization-comparison",
+   "central-character-affine-lattice",
+   "compact-eisenstein-comparison",
+   "cusp-fiber-bounds",
+   "cuspidal-data-central-comparison",
+   "cuspidal-polynomial-counting",
+   "deep-cusp-uniqueness",
+   "discrete-polynomial-counting",
+   "frechet-bilinear-continuity",
+   "generic-tensor-semisimplicity",
+   "hereditary-intertwining-bounds",
+   "hilbert-schmidt-nuclear-composition",
+   "k-type-growth",
+   "kostant-centralizer",
+   "local-sobolev-evaluation",
+   "minimal-type-detection",
+   "nash-schwartz-analysis",
+   "quotient-height-comparison",
+   "quotient-neighborhood-volumes",
+   "rapid-semisimple-centre",
+   "real-descent-cartan",
+   "real-plancherel-characters",
+   "real-point-root-data",
+   "satake-exponential-family",
+   "slf-isotypic-sums",
+   "tensor-holomorphy"
+  ]
+ }
+}

@@ -1,0 +1,76 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "CstConjectureForDaggerVarieties"
+
+[[source]]
+id = "CN25"
+authors = "Pierre Colmez and Wiesława Nizioł"
+title = "On the cohomology of p-adic analytic spaces, II: The C_st-conjecture"
+year = 2025
+doi = "10.1215/00127094-2024-0074"
+arxiv = "2108.12785v4"
+locator_scheme = "section"
+locator = "Proposition 2.14(iv); Proposition 3.27(i); Definitions 4.1–4.5; Sections 5–9 and Appendix A, author CN5 manuscript, 24 November 2024"
+url = "https://webusers.imj-prg.fr/~wieslawa.niziol/CN5.pdf"
+fetched_from = "https://webusers.imj-prg.fr/~wieslawa.niziol/CN5.pdf"
+fetched_at = "2026-10-25T07:46:29Z"
+sha256 = "bb1628cf1f4321243e6070be2abae99f72a41e237e70a7eb1ec1fc03cc2cd52a"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "All locators use the 61-page CN5 author manuscript of 24 November 2024; journal pagination was not collated."
+cited_for = ["Layers 0–5"]
+
+[[source]]
+id = "GK04"
+authors = "Elmar Grosse-Klönne"
+title = "De Rham cohomology of rigid spaces"
+year = 2004
+venue = "Mathematische Zeitschrift 247 (2004), 223--240"
+arxiv = "1408.3330v1"
+locator_scheme = "theorem"
+locator = "Proposition 3.7 and Corollary 3.8, pp. 14–16, arXiv:1408.3330v1"
+url = "https://arxiv.org/abs/1408.3330v1"
+fetched_from = "https://arxiv.org/pdf/1408.3330v1"
+fetched_at = "2026-10-25T07:46:59Z"
+sha256 = "8adbb83b2cd20e134f5175d810a10d0d82f222da6063edb791b0270a33619dc1"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Public arXiv v1 of 14 August 2014; locators use its 20-page pagination, not the journal pagination."
+cited_for = ["Layer 3, tube complements"]
+
+[[source]]
+id = "BKV22"
+authors = "Federico Binda, Hiroki Kato, Alberto Vezzani"
+title = "On the p-adic weight-monodromy conjecture for complete intersections in toric varieties"
+year = 2022
+arxiv = "2207.00369v2"
+locator_scheme = "section"
+locator = "Section 4, tubular neighbourhoods"
+url = "https://arxiv.org/abs/2207.00369v2"
+fetched_from = "https://arxiv.org/pdf/2207.00369v2"
+fetched_at = "2026-10-25T07:50:08Z"
+sha256 = "150ba49710056b7de62ca91467cd7e4cde2aaba6a053a5f83bd0c35e0addfea9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v2"
+cited_for = ["Layer 3, projective tube complements"]
+
+[[source]]
+id = "CN1"
+authors = "Pierre Colmez, Wiesława Nizioł"
+title = "On the cohomology of p-adic analytic spaces, I: The basic comparison theorem"
+year = 2021
+arxiv = "2104.13448v3"
+locator_scheme = "theorem"
+locator = "Corollary 3.6 and its proof, p. 26 of arXiv v3 (definition of a naive interior)"
+url = "https://arxiv.org/abs/2104.13448v3"
+fetched_from = "https://arxiv.org/pdf/2104.13448v3"
+fetched_at = "2026-10-26T22:46:08Z"
+sha256 = "f4798bc39e556c7f3439c0037783986842ebe03498bf425500c4b9f6ef1ed25d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v3 of 1 November 2023; locators use its 78-page pagination, not a journal pagination."
+cited_for = ["Layer 1, small varieties"]
