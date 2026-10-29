@@ -3605,6 +3605,12 @@
    "needs": "For every quasi-excellent noetherian local ring A, prove that its henselization and strict henselization are quasi-excellent, and that every henselian quasi-excellent local ring is universally catenary, hence excellent, with no reducedness, normality or finiteness assumption on A.",
    "supplier": "SchemeAndStackFoundations",
    "section": "0.21"
+  },
+  {
+   "slug": "elkik-finite-algebra-completion",
+   "needs": "For every noetherian henselian pair (A, I), base change to the I-adic completion Â is an equivalence of categories, on objects and on morphisms, from finite A-algebras étale over Spec A ∖ V(I) to finite Â-algebras étale over Spec Â ∖ V(IÂ).",
+   "supplier": "SchemeAndStackFoundations",
+   "section": "0.14"
   }
  ],
  "sourceIssues": [

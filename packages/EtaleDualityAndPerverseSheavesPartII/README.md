@@ -8,7 +8,7 @@ EtaleCohomologyFoundations §§F.0–F.8 and EtaleDualityAndPerverseSheaves §§
 
 Ownership is by mathematical object:
 
-- SchemeAndStackFoundations §§0.12–0.16, 0.20–0.21, 2.12, 2.15–2.16 and 4.16–4.20 own henselization, Elkik, Popescu, excellence, normalization, Nisnevich covers, ordinary proper descent, alterations, snc divisors and ordinary curve-family alterations. AlgebraicModuliForArithmeticGeometry §§6.0–6.1 own polynomial Artin approximation. Section 0.5 adds the higher-graded comparison of finite-type schemes, with controlled loss of approximation order. ClassicalAdicEtaleCohomology §5.4 owns the marked stable-extension, flattening, marked-section, simultaneous-translate equivariance and nodal-quotient steps of the curve step of `PlurinodalAlteration.exists`; §2.1 states the single-curve theorem with the étale marking divisor, the exceptional base locus, the control of the boundary Z, generically étale alterations and the birational quotient conclusion over arbitrary excellent integral bases.
+- SchemeAndStackFoundations §§0.12–0.16, 0.20–0.21, 2.12, 2.15–2.16 and 4.16–4.20 own henselization, Elkik's smooth lifting, Popescu, excellence, normalization, Nisnevich covers, ordinary proper descent, alterations, snc divisors and ordinary curve-family alterations. AlgebraicModuliForArithmeticGeometry §§6.0–6.1 own polynomial Artin approximation. Section 0.5 adds the higher-graded comparison of finite-type schemes, with controlled loss of approximation order. ClassicalAdicEtaleCohomology §5.4 owns the marked stable-extension, flattening, marked-section, simultaneous-translate equivariance and nodal-quotient steps of the curve step of its plurinodal alteration theorem (DJ97, Corollary 5.10, p. 618); §2.1 states the single-curve theorem with the étale marking divisor, the exceptional base locus, the control of the boundary Z, generically étale alterations and the birational quotient conclusion over arbitrary excellent integral bases.
 
 - AdicCoefficientsAndComparisonsPartII §§PA.0.2–PA.0.8, PA.0.11, PA.1.2–PA.1.4, PA.4.1–PA.4.8 and PA.5.1–PA.5.4 own maximally dominating morphisms, alterations and their degree conditions, flattening, snc supports, excellent-surface resolution, Riemann–Zariski spaces, logarithmic modifications and stable modifications. Here the new objects are the alteration sites and the quasi-excellent uniformization theorems.
 
@@ -63,11 +63,15 @@ The mixed-characteristic signature also uses `Algebra.IsEtaleAt` in `Mathlib.Rin
 
 ### From TauCetiRoadmap.SchemeAndStackFoundations
 
-Sections 0.12–0.14 supply henselian pairs, their henselizations, finite étale invariance and Elkik's algebraization theorem. Section 0.15 supplies Néron–Popescu for regular noetherian ring maps; §§0.16, 0.20–0.21 supply universal catenarity, finite normalization in the Nagata domain and excellent/quasi-excellent permanence under finite type and localization. Section 2.11 supplies the Artin–Schreier sequence used by the characteristic-primary negative control in Layer 4; §§2.12, 2.15–2.16 supply Nisnevich covers, torsion étale continuity, Hochschild–Serre and proper hypercover descent. Sections 4.16–4.20 supply alterations, snc divisors, ordinary nodal families and semistable alterations over traits. No purity theorem is inferred from the word “regular.”
+Sections 0.12–0.14 supply henselian pairs, their henselizations, finite étale invariance and Elkik's lifting of sections of smooth algebras. Elkik's algebraization of finite algebras étale away from the ideal is requested by the second contract below. Section 0.15 supplies Néron–Popescu for regular noetherian ring maps; §§0.16, 0.20–0.21 supply universal catenarity, finite normalization in the Nagata domain and excellent/quasi-excellent permanence under finite type and localization. Section 2.11 supplies the Artin–Schreier sequence used by the characteristic-primary negative control in Layer 4; §§2.12, 2.15–2.16 supply Nisnevich covers, torsion étale continuity, Hochschild–Serre and proper hypercover descent. Sections 4.16–4.20 supply alterations, snc divisors, ordinary nodal families and semistable alterations over traits. No purity theorem is inferred from the word “regular.”
 
 What SchemeAndStackFoundations must provide (gap:henselian-quasi-excellent-catenary): For every quasi-excellent noetherian local ring A, prove that its henselization and strict henselization are quasi-excellent, and that every henselian quasi-excellent local ring is universally catenary, hence excellent, with no reducedness, normality or finiteness assumption on A.
 
 The sources are ILO14, I Théorème 8.1(iii)–(iv) and the paragraph after it, p. 16 (printed), for henselization and strict henselization (ILO14 line 850), and I Corollaire 6.3(ii), p. 14, with XIV Proposition 1.3.2, p. 209, for catenarity (ILO14 lines 768, 9860). Sections 0.6–0.7, 5.1–5.2, 5.4, 5.6 and 6.1 consume it, wherever a quasi-excellent or excellent scheme is replaced by a henselization or strict henselization; Nagata's catenary, not universally catenary local domain shows that quasi-excellence, not catenarity alone, is what the second clause uses.
+
+What SchemeAndStackFoundations must provide (gap:elkik-finite-algebra-completion): For every noetherian henselian pair (A, I), base change to the I-adic completion Â is an equivalence of categories, on objects and on morphisms, from finite A-algebras étale over Spec A ∖ V(I) to finite Â-algebras étale over Spec Â ∖ V(IÂ).
+
+This is Elkik's algebraization theorem as stated in ILO14, V Théorème 1.2.4, p. 64 (printed); ILO14 line 2877. Section 1.6 consumes its essential surjectivity along a Weierstrass polynomial, and §1.7 also its full faithfulness, to descend a finite-group action. The smooth lifting of §0.14 does not give it: for A the henselization of k[t] at t, I = (t) and char k ≠ 2, the finite Â-algebra k⟦t⟧[z]/(z² − t) is étale away from t but not smooth at its closed point; the equivalence descends it to A[z]/(z² − t) and descends the involution z ↦ −z. Without henselianity it fails: for k[t]_(t) with char k ≠ 2, the connected finite étale algebra k[t]_(t)[z]/(z² − 1 − t) completes to k⟦t⟧ × k⟦t⟧, which has four idempotents instead of two.
 
 ### From TauCetiRoadmap.AlgebraicModuliForArithmeticGeometry
 
@@ -119,7 +123,7 @@ Section 3.6 supplies ultraproduct components of products of valuation rings, wit
 
 ### From TauCetiRoadmap.ClassicalAdicEtaleCohomology
 
-Section 5.4 supplies `OrientedEtaleProduct` for scheme maps X → S ← Y, its projections and specialization two-cell, the site including Cartesian refinements of the middle neighborhood, and its universal property. It also supplies the scheme-point and shred descriptions and the coherent qcqs case. §3.1 uses that scheme object and proves agreement with the oriented product for general finite-limit sites; §§3.2–3.6 add the coherent-topos tube theorem and alteration-diagram descent. The same section supplies the curve step of `PlurinodalAlteration.exists`: marked stable extension of a generic pointed curve after alteration, flattening and marked sections, preservation of finite group actions by simultaneous translates, and nodality of quotients of projective nodal curves over normal excellent bases; §2.1 uses it and adds the boundary control, generic étaleness and birational quotient conclusion. No nearby-cycle constructibility theorem from this supplier is used to prove Gabber finiteness.
+Section 5.4 supplies `OrientedEtaleProduct` for scheme maps X → S ← Y, its projections and specialization two-cell, the site including Cartesian refinements of the middle neighborhood, and its universal property. It also supplies the scheme-point and shred descriptions and the coherent qcqs case. §3.1 uses that scheme object and proves agreement with the oriented product for general finite-limit sites; §§3.2–3.6 add the coherent-topos tube theorem and alteration-diagram descent. The same section supplies the curve step of its plurinodal alteration theorem (DJ97, Corollary 5.10, p. 618; DJ97 line 699): marked stable extension of a generic pointed curve after alteration, flattening and marked sections, preservation of finite group actions by simultaneous translates, and nodality of quotients of projective nodal curves over normal excellent bases; §2.1 uses it and adds the boundary control, generic étaleness and birational quotient conclusion. No nearby-cycle constructibility theorem from this supplier is used to prove Gabber finiteness.
 
 ### From TauCetiRoadmap.PerfectoidQuotients
 
@@ -289,7 +293,7 @@ A proof route is as follows. Normalisation is an alt_ℓ′-covering and preserv
 
 - For X = Spec k[x,y]/(xy) and Z its node, the identity family fails because X is not regular at the node. The normalisation, two copies of 𝔸¹_k mapping to the two branches, is finite, surjective and birational on each component, hence alt-covering; each line is regular and connected and the preimage of Z in each is one reduced point, an snc support. The witness has two members.
 
-- For X = Spec(k × k), two points, and Z = ∅, no single connected source can cover both open-and-closed points, while the two inclusions of the points do. The connected-source requirement forces exactly two members here.
+- For X = Spec(k × k), two points, and Z = ∅, no single connected source can cover both open-and-closed points, while the two inclusions of the points do. The connected-source requirement forces at least two members here, and the two inclusions attain that minimum; a family repeating the first inclusion alongside both inclusions has three members and is also covering, since covering families need not be minimal.
 
 ### 0.7 Reduction of uniformization to complete local rings
 
@@ -451,9 +455,9 @@ Let A be a complete noetherian local reduced ring of equal characteristic which 
 
 A reduced, equal characteristic, dim A ≥ 1; finitely many ideals.
 
-A proof route is as follows. Reduce to primary ideals (§1.5, intersection property). Use §1.1 (or §1.2 with G = 1 when A is not equidimensional) to get a finite generically étale X → X_0 = Spec k⟦t_1, …, t_d⟧. Minimal primes are handled by generic étaleness; lower-dimensional supports lie over V(g) for a g ∈ k⟦t⟧ − 0; after a Weierstrass change of coordinates make g a Weierstrass polynomial in t_d and algebraize along k⟦t_1, …, t_(d−1)⟧[t_d] using Elkik's theorem on finite étale algebras over henselian pairs (ILO V 1.1.1, 1.1.3, 1.2.4, 2.2).
+A proof route is as follows. Reduce to primary ideals (§1.5, intersection property). Use §1.1 (or §1.2 with G = 1 when A is not equidimensional) to get a finite generically étale X → X_0 = Spec k⟦t_1, …, t_d⟧. Minimal primes are handled by generic étaleness; lower-dimensional supports lie over V(g) for a g ∈ k⟦t⟧ − 0; choose f ∈ k⟦t⟧ − 0 with the ramification locus of X → X_0 inside V(f) and put h = gf. After a Weierstrass change of coordinates make h a Weierstrass polynomial in t_d and algebraize along k⟦t_1, …, t_(d−1)⟧[t_d] by Elkik's equivalence for finite algebras étale away from V(h), applied to the pair formed by the henselization of k⟦t_1, …, t_(d−1)⟧[t_d] at the origin and the ideal (h), which is henselian and has h-adic completion k⟦t_1, …, t_d⟧ (SchemeAndStackFoundations §0.14, gap:elkik-finite-algebra-completion; ILO V 1.1.1, 1.1.3, 1.2.3–1.2.4, 2.2.3).
 
-*Needs:* §1.5; §1.1; §1.2; SchemeAndStackFoundations §§0.12–0.16, 0.21.
+*Needs:* §1.5; §1.1; §1.2; SchemeAndStackFoundations §§0.12–0.16, 0.21; SchemeAndStackFoundations §0.14, gap:elkik-finite-algebra-completion.
 
 **Checks.**
 
@@ -467,9 +471,9 @@ Let A be a complete noetherian local normal ring of mixed characteristic (0, p) 
 
 Mixed characteristic (0, p), d ≥ 2, ℓ ≠ p; finitely many closed subsets.
 
-A proof route is as follows. Apply §1.4 (2) to get B_0 = V⟦t_1, …, t_(d−1)⟧ → B with an ℓ-group H, and set A′ = B^H (ILO V 3.2.1). The invariant coefficient ring V^H is a complete mixed-characteristic DVR: its valuation has a nonzero discrete value subgroup containing the value of p, and its fixed subring is closed in the complete ring V. After the equivariant Weierstrass change of variables, descend B_0 → B to a finite algebra B̃ over the henselization of V⟦t_1, …, t_(d−2)⟧[t_(d−1)] at the origin of its closed fibre, together with the compatible H-action. Take Ã′ = B̃^H; its completion is A′, since averaging by the unit |H| makes invariants commute with completion. Descend the prescribed ideal family to Ã′ using finiteness for the lower-dimensional supports and symbolic powers for the vertical height-one primary ideals, then descend the algebra and ideals from the henselian polynomial algebra over V^H⟦t_1, …, t_(d−2)⟧ to a finite-type algebra over that complete base (ILO V 3.2.3–3.2.4, pp. 67–68; ILO14 lines 2999–3035). Thus take S = Spec V^H⟦t_1, …, t_(d−2)⟧ in the geometric reformulation; it is regular of dimension 1 + (d − 2) = d − 1. Remark 3.1.4 gives the equal-characteristic case from §1.6.
+A proof route is as follows. Apply §1.4 (2) to get B_0 = V⟦t_1, …, t_(d−1)⟧ → B with an ℓ-group H, and set A′ = B^H (ILO V 3.2.1). The invariant coefficient ring V^H is a complete mixed-characteristic DVR: its valuation has a nonzero discrete value subgroup containing the value of p, and its fixed subring is closed in the complete ring V. After the equivariant Weierstrass change of variables, descend B_0 → B to a finite algebra B̃ over the henselization of V⟦t_1, …, t_(d−2)⟧[t_(d−1)] at the origin of its closed fibre, together with the compatible H-action: essential surjectivity of Elkik's equivalence gives B̃, and its full faithfulness descends each automorphism of B over B_0 and their composition law (SchemeAndStackFoundations §0.14, gap:elkik-finite-algebra-completion; ILO V 1.2.4, 3.2.3). Take Ã′ = B̃^H; its completion is A′, since averaging by the unit |H| makes invariants commute with completion. Descend the prescribed ideal family to Ã′ using finiteness for the lower-dimensional supports and symbolic powers for the vertical height-one primary ideals, then descend the algebra and ideals from the henselian polynomial algebra over V^H⟦t_1, …, t_(d−2)⟧ to a finite-type algebra over that complete base (ILO V 3.2.3–3.2.4, pp. 67–68; ILO14 lines 2999–3035). Thus take S = Spec V^H⟦t_1, …, t_(d−2)⟧ in the geometric reformulation; it is regular of dimension 1 + (d − 2) = d − 1. Remark 3.1.4 gives the equal-characteristic case from §1.6.
 
-*Needs:* §1.5; §1.4; §1.6; SchemeAndStackFoundations §§0.12–0.16, 0.21.
+*Needs:* §1.5; §1.4; §1.6; SchemeAndStackFoundations §§0.12–0.16, 0.21; SchemeAndStackFoundations §0.14, gap:elkik-finite-algebra-completion.
 
 **Checks.**
 
@@ -495,13 +499,15 @@ For a local domain A and a nonnegative integer ℓ, define `PrimeToEllLocalExten
 
 - The map ℤ_p⟦x⟧ → 𝔽_p⟦x⟧ kills p and is not an injective extension of domains; it is rejected even though the residue fields agree.
 
+- The bundle asks normality of B only. For the cusp A = k⟦t²,t³⟧, which is not normal since t = t³/t² is integral over A but not in A, and its normalization B = k⟦t⟧, generated by 1 and t over A, the generic fibre is Frac A ⊗_A B = k((t)) of dimension 1, so the data exist for every ℓ, including ℓ = 0 because gcd(1,0) = 1; a degree-2 extension is rejected at ℓ = 0 since gcd(2,0) = 2. Normality of A and primality of ℓ are hypotheses of the theorem, not of the bundle.
+
 ### Examples
 
 The cusp has a separable power-series parametrization even at p = 2 or 3 by changing the parameter as in §1.1. The node k⟦x,y⟧/(xy) with both branch ideals comes from k[x,y]/(xy) at (x,y). In mixed characteristic ℤ_p⟦x⟧ with (x−p) comes from the affine line over ℤ_p, with generic extension degree 1 (ILO14, IV 2.1.1, V 2.1.2, 3.1.3–3.1.4).
 
 ### Dependencies
 
-SchemeAndStackFoundations §§0.14–0.15; DeformationAndDerivedPatchingAlgebra §1.10 and the coefficient-field contract; Mathlib complete local rings, formal series, finite modules and étale algebras.
+SchemeAndStackFoundations §§0.14–0.15 and the Elkik finite-algebra contract (gap:elkik-finite-algebra-completion); DeformationAndDerivedPatchingAlgebra §1.10 and the coefficient-field contract; Mathlib complete local rings, formal series, finite modules and étale algebras.
 
 ## Layer 2: Gabber's local uniformization
 
@@ -513,9 +519,9 @@ Let f : X → Y be a proper morphism of excellent integral noetherian schemes an
 
 Y excellent integral noetherian; X_η smooth geometrically irreducible of dimension 1; Z_η étale over η. A nodal curve is flat with geometrically connected one-dimensional fibres whose only singularities are ordinary double points.
 
-A proof route is as follows. Apply de Jong's Theorem 2.4 to the triple (f, G = 1, Z): after an alteration of Y with group action and a stable-curve modification, the family becomes a projective semistable curve with disjoint sections through the smooth locus covering Z (DJ97, 2.4 (i)–(vii)(a)); the extra boundary is T′ (Remark 2.5) and the sections form D. The marked stable extension, flattening, marked-section construction, preservation of group actions by simultaneous translates and the nodal quotient are the curve step of `PlurinodalAlteration.exists` in ClassicalAdicEtaleCohomology §5.4, which rests on the same Theorem 2.4 and Remark 2.5; they are used here, not rebuilt, and the stable modification is also available from AdicCoefficientsAndComparisonsPartII §§PA.5.1–PA.5.4. What this section adds is read off from Theorem 2.4 (iv)–(vi) under the stated hypotheses (ILO IX 1.2). Geometric irreducibility of X_η gives condition (2.1.5) and smoothness with Z_η étale gives (2.1.1), so the alteration satisfies (2.2.1) and (2.2.5): the invariant function field of Y′ is purely inseparable over that of Y by (2.2.1) and separable over it by (2.2.5), hence equal to it, and then (2.2.1) makes the invariant function field of X′ equal to that of X. This is the birational quotient conclusion; the supplier's plurinodal corollary records only a purely inseparable invariant extension.
+A proof route is as follows. Apply de Jong's Theorem 2.4 to the triple (f, G = 1, Z): after an alteration of Y with group action and a stable-curve modification, the family becomes a projective semistable curve with disjoint sections through the smooth locus covering Z (DJ97, 2.4 (i)–(vii)(a)); the extra boundary is T′ (Remark 2.5) and the sections form D. The marked stable extension, flattening, marked-section construction, preservation of group actions by simultaneous translates and the nodal quotient are the curve step of the plurinodal alteration theorem of ClassicalAdicEtaleCohomology §5.4 (DJ97, Corollary 5.10, p. 618), which rests on the same Theorem 2.4 and Remark 2.5; they are used here, not rebuilt, and the stable modification is also available from AdicCoefficientsAndComparisonsPartII §§PA.5.1–PA.5.4. What this section adds is read off from Theorem 2.4 (iv)–(vi) under the stated hypotheses (ILO IX 1.2). Geometric irreducibility of X_η gives condition (2.1.5) and smoothness with Z_η étale gives (2.1.1), so the alteration satisfies (2.2.1) and (2.2.5): the invariant function field of Y′ is purely inseparable over that of Y by (2.2.1) and separable over it by (2.2.5), hence equal to it, and then (2.2.1) makes the invariant function field of X′ equal to that of X. This is the birational quotient conclusion; the supplier's plurinodal corollary records only a purely inseparable invariant extension.
 
-*Needs:* ClassicalAdicEtaleCohomology §5.4 for the curve step of `PlurinodalAlteration.exists`; AdicCoefficientsAndComparisonsPartII §§PA.5.1–PA.5.4; AdicCoefficientsAndComparisonsPartII §§PA.0.2–PA.0.8, PA.0.11; SchemeAndStackFoundations §§4.16–4.20; SchemeAndStackFoundations §0.21.
+*Needs:* ClassicalAdicEtaleCohomology §5.4, the curve step of its plurinodal alteration theorem; AdicCoefficientsAndComparisonsPartII §§PA.5.1–PA.5.4; AdicCoefficientsAndComparisonsPartII §§PA.0.2–PA.0.8, PA.0.11; SchemeAndStackFoundations §§4.16–4.20; SchemeAndStackFoundations §0.21.
 
 **Checks.**
 
@@ -903,6 +909,8 @@ Branch comparison. Let g : X′ → X be a morphism of schemes, j : U → X an o
 
 - Branch comparison, positive case: for g given by t ↦ v·u with v a unit, g*t has nonzero image in m/m², and the Kummer class of t pulls back to that of u plus the class of the unit v, which is 0 because a unit of a strictly henselian ring is an ℓ-th power; the map on H¹ is the identity of ℤ/ℓ.
 
+- Branch comparison, two branches exchanged: let k be separably closed with ℓ invertible in k, X = Spec k⟦x,y⟧, X′ = Spec k⟦u,v⟧, Z = V(xy), F the closed point, and g given by x ↦ v, y ↦ u. The images of g*x = v and g*y = u in m/m² are independent, so the hypothesis holds. In the Kummer bases ([x], [y]) of H¹(U, ℤ/ℓ(1)) and ([u], [v]) of H¹(U′, ℤ/ℓ(1)) the comparison map is the transposition matrix, and on H²(−, ℤ/ℓ(2)) = ∧²H¹ it sends [x]∪[y] to [v]∪[u] = −[u]∪[v]: multiplication by −1, which is 1 modulo 2 and 2 modulo 3. The comparison is an isomorphism that need not preserve an ordering of the branches, so a definition matching the i-th branch of Z with the i-th branch of Z′ would reject this g.
+
 ### 5.7 Local form of the affine Lefschetz theorem
 
 Let X be a strictly local quasi-excellent scheme of dimension d, U ⊂ X an affine open and n invertible on X. Then H^q(U, ℤ/n) = 0 for q > d. More generally, for X henselian local quasi-excellent of dimension d with residue field k and ℓ invertible on X, cd_ℓ(U) ≤ d + cd_ℓ(k) for every affine open U; if X is integral with fraction field K, cd_ℓ(K) = d + cd_ℓ(k). (ILO14, Exposé XV, Corollaire 1.2.2 and Corollaire 1.2.4, p. 220 (printed); Exposé 0, Corollaire 8, p. 5; ILO14 line 10350).
@@ -1021,13 +1029,7 @@ Its interface consists of the following facts.
 
 - For an integer k, K(k)[2k] is a potential dualizing complex for δ + k.
 
-- f^*K is potential for the induced δ_Y when f is regular between excellent schemes (ILO XVII 4.1.1).
-
-- f^!K is potential for f^*δ when f is of finite type and compactifiable (ILO XVII 4.1.2).
-
-- Two potential dualizing complexes for the same (X, δ) are isomorphic by a unique isomorphism respecting the pinnings (ILO XVII 5.1.1).
-
-- K lies in the heart of Gabber's perverse t-structure for the perversity −2δ.
+Functoriality under regular pullback and finite-type exceptional pullback is the theorem of §6.7; existence, uniqueness and membership in the perverse heart for −2δ are the theorem of §6.6. Both are proved from this definition, not part of its interface.
 
 A proof route is as follows. Definition (ILO XVII 2.1.2). Étale restriction and quasi-finite exceptional pullback transport putative structures (2.2.1, 2.4.3.1). For f finite surjective, a putative K is potential iff f^!K with its induced pinnings is potential (2.4.3.3). Finite pushforward does not preserve rank-one pinnings: two points over a point would give Λ².
 
@@ -1047,7 +1049,7 @@ A proof route is as follows. Definition (ILO XVII 2.1.2). Étale restriction and
 
 ### 6.4 The constant sheaf on a regular scheme is potentially dualizing
 
-Let X be a regular excellent ℤ[1/n]-scheme with the dimension function δ = −codim. The constant sheaf Λ, with the pinnings RΓ_x(Λ) ≅ Λ(−c)[−2c] (c = codim x) given by absolute cohomological purity and the fundamental classes, is a potential dualizing complex. (ILO14, Exposé XVII, Propositions 2.4.1.1, 2.4.2.1 and 2.4.4.1, pp. 264–267 (printed); ILO14 line 12640).
+Let X be a regular excellent ℤ[1/n]-scheme with the dimension function δ = −codim. The constant sheaf Λ, with the pinnings RΓ_x(Λ) ≅ Λ(−c)[−2c] (c = codim x) given by absolute cohomological purity and the fundamental classes, is a potential dualizing complex. (ILO14, Exposé XVII, Propositions 2.4.1.1, 2.4.2.1 and 2.4.4.1, pp. 265–267 (printed); ILO14 lines 12669, 12682, 12835).
 
 X regular excellent over ℤ[1/n]; δ(x) = −dim O_(X,x).
 
@@ -1211,13 +1213,13 @@ A proof route is as follows. Existence: the potential dualizing complex (§6.6) 
 
 ### 6.11 The normalised dualizing complex of a regular local ring
 
-Let R be a strictly henselian excellent regular local ring of dimension d with closed point x, ℓ a prime invertible in R, Λ = ℤ/ℓ, and δ(t) = dim of the closure of t. Then K = Λ(d)[2d], the d-fold tensor power of μ_ℓ shifted by [2d], is the potential dualizing complex of (Spec R, δ), pinned at x by RΓ_x(K) ≅ Λ through absolute purity; for every open immersion j : U → Spec R, j^!K = K|_U is dualizing on U, and Rj_* ∘ D_U ≅ D_X ∘ j_! on constructible complexes. (CS24, Proof of Lemma 3.2.3, p. 33; CS24 line 1367; ILO14, Exposé XVII, Théorème 0.9 and Proposition 2.4.4.1, pp. 257 and 267 (printed); Exposé XVI, Théorème 3.1.1; ILO14 line 12640).
+Let R be a strictly henselian excellent regular local ring of dimension d with closed point x, ℓ a prime invertible in R, Λ = ℤ/ℓ, and δ(t) = dim of the closure of t. Then K = Λ(d)[2d], the d-fold tensor power of μ_ℓ shifted by [2d], is the potential dualizing complex of (Spec R, δ), pinned at x by RΓ_x(K) ≅ Λ through absolute purity; for every open immersion j : U → Spec R, j^!K = K|_U is dualizing on U, and Rj_* ∘ D_U ≅ D_X ∘ j_! on constructible complexes. (CS24, Proof of Lemma 3.2.3, p. 33; CS24 line 1367; ILO14, Exposé XVII, Théorème 0.9 and Proposition 2.4.4.1, pp. 257 and 267 (printed); Exposé XVI, Théorème 3.1.1; ILO14 lines 12220, 12835).
 
 R strictly henselian, excellent, regular local; ℓ invertible.
 
 A proof route is as follows. δ = d − codim, so the potential dualizing complex for δ is Λ(d)[2d] by §6.4 and the twist-and-shift rule; the pinning at x is H²ᵈ_x(Λ(d)) ≅ Λ by absolute purity (ILO XVI 3.1.1). It is dualizing by §6.9; restriction to an open is j^* = j^! (EtaleCohomologyFoundations §F.5), and Rj_* D_U = D_X j_! is the formal adjunction (CS24, proof of Lemma 3.2.3, CS24 lines 1367–1371; the open-immersion exchange proved in §6.8 from EtaleCohomologyFoundations §0.7 and EnhancedDerivedSheaves §§0.3–0.4).
 
-*Needs:* §6.4; §6.9; §6.3; LefschetzPencilsAndVanishingCycles §0.10; EtaleCohomologyFoundations §F.5; EtaleDualityAndPerverseSheaves §§0.1–0.2; EtaleCohomologyFoundations §0.7 and EnhancedDerivedSheaves §§0.3–0.4 for open-immersion tensor–Hom exchange.
+*Needs:* §6.4; §6.6; §6.9; §6.3; LefschetzPencilsAndVanishingCycles §0.10; EtaleCohomologyFoundations §F.5; EtaleDualityAndPerverseSheaves §§0.1–0.2; EtaleCohomologyFoundations §0.7 and EnhancedDerivedSheaves §§0.3–0.4 for open-immersion tensor–Hom exchange.
 
 **Checks.**
 
@@ -1343,7 +1345,9 @@ A proof route is as follows. The supplier Q5 gives A^♭/(ϖ^♭)^p ≅ Â/ϖ^p.
 
 **Checks.**
 
-- For C an algebraically closed perfectoid field, A = 𝒪_C × 𝒪_C and ϖ = (ϖ₀, ϖ₀) with ϖ₀^p | p, Spec A has two closed points s₁, s₂ and V(ϖ) = {s₁, s₂}, so exactly four opens contain Spec A[1/ϖ], one for each subset of V(ϖ) as complement. The open U = Spec 𝒪_C ⊔ Spec C has complement {s₂} and is matched with Spec 𝒪_(C^♭) ⊔ Spec C^♭. The swapped open Spec C^♭ ⊔ Spec 𝒪_(C^♭) has complement the other closed point and is not the match; a matching that saw only the number of points in the complement, or exchanged the factors, would pair U with it. The two factors are henselian and torsion-free, and A is its own perfectoid ϖ-adic completion.
+- For C an algebraically closed perfectoid field, A = 𝒪_C × 𝒪_C and ϖ = (ϖ₀, ϖ₀) with ϖ₀ a nonzero topologically nilpotent element of 𝒪_C and ϖ₀^p | p, Spec A has two closed points s₁, s₂ and V(ϖ) = {s₁, s₂}, so exactly four opens contain Spec A[1/ϖ], one for each subset of V(ϖ) as complement. The open U = Spec 𝒪_C ⊔ Spec C has complement {s₂} and is matched with Spec 𝒪_(C^♭) ⊔ Spec C^♭. The swapped open Spec C^♭ ⊔ Spec 𝒪_(C^♭) has complement the other closed point and is not the match; a matching that saw only the number of points in the complement, or exchanged the factors, would pair U with it. The two factors are henselian and torsion-free, and A is its own perfectoid ϖ-adic completion.
+
+- In characteristic p the hypotheses also admit ϖ₀ = 0, since 0^p divides p = 0. For C algebraically closed perfectoid of characteristic p, A = 𝒪_C × 𝒪_C and ϖ = 0, the generic open Spec A[1/ϖ] is empty and V(ϖ) is all of Spec A. Each factor Spec 𝒪_C has the three opens ∅, {η}, {η, s}, so 3² = 9 opens contain Spec A[1/ϖ]. Here A is perfect, hence perfectoid (CS24 §2.1.2; CS24 line 404), A is ϖ-henselian with bounded ϖ^∞-torsion for ϖ = 0, A^♭ = A with ϖ^♭ = 0, and the matching is the identity on all nine. A count that assumed ϖ nonzero, giving four, would miss five of them.
 
 - For k = 𝔽̄_p and the p-adically completed ring A = W(k)⟦`x^(1/p^infty)`⟧/(p − x), with ϖ = `x^(1/p)`, A and its tilt are rank-one valuation rings and Spec A/ϖ is a point. Exactly two matched pairs exist, the whole spectra and their generic opens; the tilt is the t-adically completed perfection of k⟦t⟧.
 
@@ -1427,7 +1431,7 @@ A proof route is as follows. Apply §8.5 to the matched pairs (Spec A, Spec A^�
 
 **Checks.**
 
-- For Z = ∅ both sides vanish. For A an algebraically closed characteristic-p field and ϖ = 0, take Z = Spec A; both support complexes are G in degree 0. A perfect field alone does not imply this concentration: H¹(Spec 𝔽_p, ℤ/ℓ) = ℤ/ℓ. For A = 𝒪_C with C algebraically closed perfectoid and Z = V(ϖ), restriction on H⁰ is G → G, the identity, with no higher cohomology on either affine term; both support complexes are zero. A noetherian DVR purity calculation cannot be transferred to this nondiscrete valuation ring.
+- For Z = ∅ both sides vanish. For A an algebraically closed characteristic-p field and ϖ = 0, take Z = Spec A; both support complexes are G in degree 0. A perfect field alone does not imply this concentration: H¹(Spec 𝔽_p, ℤ/ℓ) = ℤ/ℓ. For A = 𝒪_C with C algebraically closed perfectoid, ϖ nonzero and topologically nilpotent, and Z = V(ϖ), restriction on H⁰ is G → G, the identity, with no higher cohomology on either affine term; both support complexes are zero. A noetherian DVR purity calculation cannot be transferred to this nondiscrete valuation ring.
 
 - For A = R̂_∞ as in CS24 3.1.3 and Z the closed point, it identifies H^i_((p, x_1, …, x_d))(R̂_∞, ℤ/ℓ) with local cohomology of the tilt.
 

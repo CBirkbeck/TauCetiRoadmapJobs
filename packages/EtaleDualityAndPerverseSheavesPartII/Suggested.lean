@@ -1,3 +1,5 @@
+module
+
 import Mathlib
 
 /-!
@@ -220,8 +222,9 @@ theorem partialAlgebraization_equalCharacteristic
       IsRegularLocalRing P.B ∧ ringKrullDim P.B + 1 = ringKrullDim A := by
   sorry
 
-/-- A finite injective local extension of complete normal local domains, with generic
-degree prime to a specified prime. The degree is the dimension of its actual generic fibre. -/
+/-- A finite injective local map from a local domain to a complete noetherian normal local
+domain, with generic degree coprime to a specified natural number. The degree is the
+dimension of its actual generic fibre. -/
 structure PrimeToEllLocalExtension
     (A : Type u) [CommRing A] [IsDomain A] [IsLocalRing A] (ℓ : ℕ) where
   B : Type u
