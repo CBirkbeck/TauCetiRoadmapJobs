@@ -1255,15 +1255,34 @@
   ],
   "gaps": [
     {
-      "id": "GAP-CT",
-      "title": "Shared Cassels–Tate modulo-divisible endpoint has no registered node",
-      "detail": "The existing PAPER-SKINNER-20/83–86 source extension and RankOneConverse requests assign the elliptic pairing, divisible kernels, alternation and paired finite odd-primary quotient to SelmerIwasawaCohomology L1–L2. Its accepted packet has no exact node stating that endpoint. Keep the stage requests and the supplied source PS explicit until the shared owner registers it; do not duplicate the construction or assume full Sha finiteness. This affects EC.0/small-selmer-corank, EC.3/mod-p-converse and the analytic twist applications, not the p∞ converse proof.",
+      "slug": "eisenstein-local-dictionary",
+      "supplier": "EllipticCurves",
+      "section": "Layers 2, 4 and 5",
+      "needs": "For a fixed rational cyclic odd-prime isogeny at good reduction, identify its actual kernel and quotient characters, deduce ordinarity and local p-torsion vanishing under the two-character exclusion, and at p=3 prove the good unramified versus bad ramified twist dictionary with its connected/étale kernel alternatives."
+    },
+    {
+      "slug": "complementary-heegner-twists",
+      "supplier": "ArithmeticStatisticsPartVI",
+      "section": "Supporting local-to-global and analytic inputs: Heegner logarithm and low rank",
+      "needs": "For every rational elliptic curve and finite set of rational primes, prove both complementary imaginary-quadratic twist nonvanishing branches with those primes split, infinitely many odd fundamental discriminants below −4, and twist analytic order zero when the original root number is −1 and one when it is +1."
+    },
+    {
+      "slug": "quadratic-analytic-factorization",
+      "supplier": "EllipticCurveModularity",
+      "section": "Layer R29.6: Continuation and the functional equation",
+      "needs": "Identify the continued quadratic base-change L-function with the product of the two actual rational elliptic twist L-functions, including all bad Euler factors, finite central orders and the split-level imaginary-quadratic root sign −1."
+    },
+    {
+      "slug": "cgls-ordinary-control",
       "supplier": "SelmerIwasawaCohomology",
-      "neededBy": [
-        "RankZeroOneBSDPartII:EC.0/small-selmer-corank",
-        "RankZeroOneBSDPartII:EC.3/mod-p-converse",
-        "RankZeroOneBSDPartII:EC.4/relative-proportion-bounds"
-      ]
+      "section": "§§3.9–3.11",
+      "needs": "For the CGLS self-dual ordinary anticyclotomic Selmer groups with both residual local characters nontrivial, prove that compact specialization S[1/p]→H¹_f(K,V_pE) has kernel (γ−1)S[1/p], retaining the local-image, H² and Tor cokernel terms."
+    },
+    {
+      "slug": "rational-three-isogeny-count",
+      "supplier": "ArithmeticStatisticsPartIII",
+      "section": "Windowed cubic counting contract (support-coregular-count)",
+      "needs": "Prove the seven conditions C(ℚ,ι,Σ) for every rational three-isogeny and every nonempty finite-local-squareclass family and ratio stratum, for the isogeny and its dual, with the unweighted signed-squarefree height and the matched local mass normalizations."
     }
   ],
   "sourceIssues": [
