@@ -12,7 +12,7 @@ BordismFormalGroups F1–F3 and F6.1–F6.4 already state formal-group algebra, 
 
 EllipticCohomology E1–E4 and E6 state the generalized elliptic moduli, the height-one and height-two Morava realizations and automorphism actions, the sheaf Otop, tmf/Tmf/TMF, discriminant inversion and level sheaves. Their all-height realization and spectral affineness extensions are exact supplier contracts below. The modular chromatic input comparison and its K-theory applications here use those same spectra. HomotopySpheres §3B owns the James word filtration, connected James equivalence and James–Hopf map; the reduced stable splitting is requested there. EllipticCohomology E5 owns units and coherent Thom orientation data; the relative module-colimit interface is requested there. The characteristic-p Thom theorem and its filtered families here are specializations of that shared construction.
 
-QWittVectors §§1.1–1.6 owns big Witt vectors, including arbitrary truncation sets, their topology and operations; HabiroRings consumes that theory and is not its owner. KTheoryLowDegrees §§1.1–1.3 owns projective K₀, and GeneralAlgebraicKTheory §§13.8a–13.8c owns the ordinary finite-field Brauer–Quillen theorem. KTheoryFiniteLocalFields §§1.1–1.6 supplies its normalized coefficient and completion refinements. SchemeKTheoryOperations Layers 1–5 owns enhanced scheme K-theory, descent geometry and Bass comparisons; its KH and Karoubi–Villamayor extension is requested explicitly. MotivicEtaleKTheory §7.2 concerns a Deligne regulator comparison, not finite-coefficient étale K-descent, so the latter interface is assigned to KTheoryFiniteLocalFields §6.5a.
+QWittVectors §§1.1–1.6 owns big Witt vectors, including arbitrary truncation sets, their topology and operations; HabiroRings consumes that theory and is not its owner. KTheoryLowDegrees §§1.1–1.3 owns projective K₀, and GeneralAlgebraicKTheory §§13.8a–13.8c owns the ordinary finite-field Brauer–Quillen theorem. KTheoryFiniteLocalFields §§1.1–1.6 supplies its normalized coefficient and completion refinements, and its §0.4 owns the odd-primary height-one functor `heightOneFromZeroSpace` on the pointed homotopy category; §4.11 here is the coherent Bousfield–Kuhn functor for every prime and every height n≥1, which agrees with that functor at n=1 and p odd. SchemeKTheoryOperations Layers 1–5 owns enhanced scheme K-theory, descent geometry and Bass comparisons; its KH and Karoubi–Villamayor extension is requested explicitly. MotivicEtaleKTheory §7.2 concerns a Deligne regulator comparison, not finite-coefficient étale K-descent, so the latter interface is assigned to KTheoryFiniteLocalFields §6.5a.
 
 ## Conventions
 
@@ -256,6 +256,8 @@ What KTheoryLowDegrees must provide (gap:nilpotent-kzero): Prove that quotient b
 Consume §§1.1–1.3's projective K₀ and its quotient-induced comparison, extended as specified below. The nilpotent lifting theorem concerns arbitrary two-sided ideals; no commutativity or regularity of the coefficient ring is added. Only its degree-zero part is imported; the Bass induction to negative degrees is a target here.
 
 ### From TauCetiRoadmap.KTheoryFiniteLocalFields
+
+Consume §0.4 (Height-one localization and realization): for p odd, `heightOneLocalize X` is localization at KU∧M(ℤ/p), hence L_(K(1))X, and `heightOneFromZeroSpace` is a functor Φ_p from the pointed homotopy category of spaces to KU/p-local spectra with Φ_p(Ω∞₀X)≃`heightOneLocalize X` natural in spectra X. It is used only for the n=1, p odd comparison of §4.11.
 
 For these spectral étale contracts use D₀=Hℚ and D_n=T(n) for n≥1; this detector leaves the global convention T(0)=S[1/p] intact.
 
@@ -846,7 +848,7 @@ The interface includes:
 
 ### 4.11 Bousfield–Kuhn functor
 
-For each n≥1 construct Φ_n:Spaces_*→Sp_(T(n)) with natural equivalences F(V,Φ_nY)≃Φ_vY for finite type-n V with self-map v, and Φ_nΩ∞X≃L_(T(n))X. The first comparison uses the finite mapping spectrum; the second is natural in every spectrum X. State uniqueness with the finite-source compatibilities, not merely the equality of homotopy groups.
+For each n≥1 construct Φ_n:Spaces_*→Sp_(T(n)) with natural equivalences F(V,Φ_nY)≃Φ_vY for finite type-n V with self-map v, and Φ_nΩ∞X≃L_(T(n))X. The first comparison uses the finite mapping spectrum; the second is natural in every spectrum X. State uniqueness with the finite-source compatibilities, not merely the equality of homotopy groups. For n=1 and p odd, KTheoryFiniteLocalFields §0.4 already supplies the homotopy-category functor `heightOneFromZeroSpace`; what is built here in addition is the prime 2, every height n≥2, the coherent finite-source formula and the uniqueness statement. Prove the comparison: for p odd, Φ₁ induces on pointed homotopy categories a functor naturally equivalent to `heightOneFromZeroSpace`, compatibly with the two equivalences Φ₁Ω∞X≃L_(T(1))X=L_(K(1))X (by §4.20) and Φ_p(Ω∞₀X)≃`heightOneLocalize X`; since Φ₁ inverts maps that are equivalences on connected covers, Ω∞ and Ω∞₀ give the same value.
 
 (kuhn-guide line 113, Theorem 1.1, pp.3–4; Theorem 5.2, Lemmas 5.4–5.5 and Definition 5.6, pp.15–18.)
 
@@ -866,7 +868,7 @@ The interface includes:
 - There is no height-zero functor with this unrestricted comparison on all spectra, since Ω∞ annihilates strictly negative Eilenberg–Mac Lane spectra.
 - X=Hℤ; X=T(n); X=Σ^(−1)Hℚ: ΦₙΩ∞Hℤ=0; ΦₙΩ∞T(n)=L_T(n)T(n)≠0; last Ω∞=*, ruling out height-zero analogue.
 
-*Needs:* §4.10 (Finite telescopic functors); BordismFormalGroups F6.1; §4.3 (Telescope acyclicity criteria); GeneralizedCohomology G2 and G5.1.
+*Needs:* §4.10 (Finite telescopic functors); BordismFormalGroups F6.1; §4.3 (Telescope acyclicity criteria); GeneralizedCohomology G2 and G5.1; for the n=1, p odd comparison only, KTheoryFiniteLocalFields §0.4 (Height-one localization and realization) and §4.20 (Separation above height one).
 
 ### 4.12 Detection by suspension and loops
 
@@ -1116,11 +1118,11 @@ The interface includes:
 
 **Checks.**
 
-- P(1)=1 and P(xy)=P(x)P(y).
+- Two plausible wrong models are unital and multiplicative but fail a stated law. The pulled-back identity x↦c(x), c the map induced by BC_p→point, has basepoint restriction res P(2)=2 rather than 2^p=4 at p=2. The pulled-back power x↦c(x^p) is not additive modulo the transfer ideal: at p=2 additivity would force c(4)≡P(1)+P(1)=2, but c(4)−2=c(2) is nonzero in E⁰(BC₂)/([2](z)/z), a free E₀-module of rank 2^(h+1)−1 having 1 as a basis element.
 - Additivity is required only after quotienting by the transfer, so P(x+y)=P(x)+P(y) is not imposed in the original target.
 - The quotient [p](z)/z^(p^(k+1)) is formed only after reducing by I_(k+1), not as an integral power series in the original ring.
 - For scalar 2 in the Morava E coefficient ring, basepoint restriction of P(2) is 4 at p=2 and 8 at p=3, while restriction of P(1)+P(1) is 2; the discrepancies 2 and 6 are transfer terms and vanish modulo the transfer ideal.
-- p=2,h=2,k=1; P(1); P(xy): [2](z) mod2 starts u₁z²+_F u₂z⁴+_F z⁸; mod(2,u₁), g₂ has constant u₂; P(1)=1, P(xy)=P(x)P(y); res P(2)=4 at p=2 and 8 at p=3, versus res(P(1)+P(1))=2; transfer discrepancies 2 and 6.
+- p=2,h=2,k=1; P(2): [2](z) mod2 starts u₁z²+_F u₂z⁴+_F z⁸; mod(2,u₁), g₂ has constant u₂; res P(2)=4 at p=2 and 8 at p=3, versus res(P(1)+P(1))=2; transfer discrepancies 2 and 6.
 
 *Needs:* StableHomotopyKTheoryPartII PO.4 (Degree-zero power operation; The transfer ideal for a prime power operation); EllipticCohomology E2, with the all-height extension in the supplier contract; §4.22 (Localized norms and Tate spectra); BordismFormalGroups F1–F3; EnhancedDerivedSheaves E0.4, E5:abstract.1–4 and E5:presentability.1–3.
 
@@ -1508,7 +1510,7 @@ At p=2, H𝔽₃ distinguishes global p-inversion from rationalization: the two 
 
 ### Dependencies
 
-AlgebraicTopology Stages 4 and 8; BordismFormalGroups F1–F3; BordismFormalGroups F6.1; BordismFormalGroups F6.2; BordismFormalGroups F6.2–F6.3; BordismFormalGroups F6.4; EllipticCohomology E1–E4 and E6, with the spectral comparisons in the supplier contract; EllipticCohomology E2, with the all-height extension in the supplier contract; EllipticCohomology E5, with the module-colimit extension in the supplier contract; EnhancedDerivedSheaves E0.4, E5:abstract.1–4 and E5:presentability.1–3; GeneralAlgebraicKTheory §§3.12–3.14, 6.9, 6.19, 7.1–7.7, 9.8–9.17, 10.1–10.13 and 11.15–11.16; GeneralizedCohomology G2 and G5.1; HomotopySpheres §3B, with the stable splitting contract; HomotopySpheres §4C; KTheoryFiniteLocalFields §§1.1–1.6 and 6.5a; KTheoryLowDegrees §§1.1–1.3 and 13.1; Layer 0; Layer 1; Layer 2; ModularCurves §7E (p-divisible groups and formal heights); QWittVectors §§1.1–1.6; RefinedTraceMethods §4.10 and GeneralAlgebraicKTheory §§7.1–7.7; RefinedTraceMethods §4.18, Truncating invariants: nil-invariance and excision; RefinedTraceMethods §4.9 and EnhancedDerivedSheaves E5:abstract.2 and E5:presentability.1–2; RefinedTraceMethods §4.9, Connective K-theory of small stable ∞-categories; RefinedTraceMethods §4.9, Nonconnective K-theory by the suspension construction; RefinedTraceMethods §§2.1–2.5; SchemeKTheoryOperations §§1.1–2.7, 3.1–3.5, 4.1–4.3, 4.12 and 5.2–5.9; StableHomotopyKTheory Layers 3–7.
+AlgebraicTopology Stages 4 and 8; BordismFormalGroups F1–F3; BordismFormalGroups F6.1; BordismFormalGroups F6.2; BordismFormalGroups F6.2–F6.3; BordismFormalGroups F6.4; EllipticCohomology E1–E4 and E6, with the spectral comparisons in the supplier contract; EllipticCohomology E2, with the all-height extension in the supplier contract; EllipticCohomology E5, with the module-colimit extension in the supplier contract; EnhancedDerivedSheaves E0.4, E5:abstract.1–4 and E5:presentability.1–3; GeneralAlgebraicKTheory §§3.12–3.14, 6.9, 6.19, 7.1–7.7, 9.8–9.17, 10.1–10.13 and 11.15–11.16; GeneralizedCohomology G2 and G5.1; HomotopySpheres §3B, with the stable splitting contract; HomotopySpheres §4C; KTheoryFiniteLocalFields §0.4 (Height-one localization and realization); KTheoryFiniteLocalFields §§1.1–1.6 and 6.5a; KTheoryLowDegrees §§1.1–1.3 and 13.1; Layer 0; Layer 1; Layer 2; ModularCurves §7E (p-divisible groups and formal heights); QWittVectors §§1.1–1.6; RefinedTraceMethods §4.10 and GeneralAlgebraicKTheory §§7.1–7.7; RefinedTraceMethods §4.18, Truncating invariants: nil-invariance and excision; RefinedTraceMethods §4.9 and EnhancedDerivedSheaves E5:abstract.2 and E5:presentability.1–2; RefinedTraceMethods §4.9, Connective K-theory of small stable ∞-categories; RefinedTraceMethods §4.9, Nonconnective K-theory by the suspension construction; RefinedTraceMethods §§2.1–2.5; SchemeKTheoryOperations §§1.1–2.7, 3.1–3.5, 4.1–4.3, 4.12 and 5.2–5.9; StableHomotopyKTheory Layers 3–7.
 
 ## Layer 5: Trace comparison, CMNN vanishing and purity
 
@@ -1656,7 +1658,7 @@ A proof route is as follows. Use Hahn to propagate T(n)-acyclicity of the commut
 
 Fix n≥1, a perfect field k of characteristic p and a height-n formal group over k, with Morava E-theory E(k) from the all-height realization contract. For every perfect k-algebra A construct the Lubin–Tate ring E(A), an E∞ E(k)-algebra that is complete at the maximal ideal 𝔪=(p,u₁,…,u_(n−1)) of π₀E(k), with π_*E(A)≅W(A)[[u₁,…,u_(n−1)]][u^(±1)], |u|=2, where W(A) is the p-typical Witt ring, naturally in A. Prove that A↦E(A) is fully faithful and left adjoint to the tilt R↦R♭=(π₀R/𝔪)♭ on 𝔪-complete E∞ E(k)-algebras, and that E(A)♭≅A. At height zero put E(A)=HA[u^(±1)], |u|=2, for a reduced commutative ℚ-algebra A.
 
-Then prove the Lubin–Tate cover theorem. Say that a map R→S of E∞ rings in a localized category detects nilpotence when, for every map f out of a compact R-module, S⊗_R f nilpotent implies f nilpotent. For every T(n)-local E∞ ring R there is a perfect algebra A of Krull dimension at most zero over some perfect field of characteristic p and a nilpotence-detecting E∞ map R→E(A). For every rational E∞ ring R there is a reduced ℚ-algebra A of Krull dimension at most zero and a nilpotence-detecting E∞ map R→HA[u^(±1)].
+Then prove the Lubin–Tate cover theorem. Say that a map R→S of E∞ rings in a localized category (T(n)-local spectra, or rational spectra at height zero) detects nilpotence when, for every map f:M→N of compact R-modules in that localized category, f is nilpotent as soon as S⊗_R f is; here a map g is nilpotent when some tensor power g^(⊗k), formed over the base ring in the localized module category, is null. The unit R need not be compact there: in K(1)-local modules over KU_p^∧ the local colimit of multiplication by p on R is zero while the colimit of π₀Map_R(R,R) along it is ℚ_p. For every T(n)-local E∞ ring R there is a perfect algebra A of Krull dimension at most zero over some perfect field of characteristic p and a nilpotence-detecting E∞ map R→E(A). For every rational E∞ ring R there is a reduced ℚ-algebra A of Krull dimension at most zero and a nilpotence-detecting E∞ map R→HA[u^(±1)].
 
 (bsy line 809, Theorem 2.38, p.20; line 2026, Definition 4.29 with Definition 4.11, pp.42 and 46; line 2141, Corollary 4.37, p.49; line 2177, Theorem 4.40, pp.49–50; line 2246, Corollary 4.44, p.51; line 2416, Theorem 5.1, p.55; line 2443, Theorem 5.3, p.55; line 2511, Proposition 5.9, p.57; line 2593, Proposition 5.15, p.59; line 2633, Proposition 5.17, p.60.)
 
@@ -1664,7 +1666,7 @@ A proof route is as follows. Construct E(A) as the E(k)-linear spherical Witt ve
 
 **Checks.**
 
-- If R≠0 and R→E(A) detects nilpotence then A≠0: for A=0 the identity of the compact module R becomes null after base change, so it would be nilpotent and R=0. For R=0 the cover with A=0 is allowed, which is why §6.2 assumes R nonzero.
+- If R≠0 and R→E(A) detects nilpotence then A≠0. For A=0 the identity of every compact localized R-module C becomes null after base change, so it is tensor-nilpotent and some tensor power of C vanishes; C is dualizable, hence a retract of C⊗C⊗C∨, and iterating this gives C=0. Compact generation then forces R=0 (bsy line 2059, Lemma 4.32, gives the equivalent nil-conservativity). The argument does not use compactness of R: for R=KU_p^∧ in K(1)-local modules the unit is not compact, but the compact module R/p is nonzero with nonzero tensor powers, so R→0 is not a cover. For R=0 the cover with A=0 is allowed, which is why §6.2 assumes R nonzero.
 - For R=E(L), L algebraically closed of characteristic p, the identity is a cover with A=L, perfect of Krull dimension zero, and π₀E(L)/𝔪=L recovers L as the tilt. A ring with π₁≠0, such as the free E(k)-algebra on a degree-one class, is not of the form E(A), since π_*E(A) is even.
 - For the discrete rational ring R=Hℚ[x], the single map to Hℚ(x)[u^(±1)] does not detect nilpotence: the identity of the compact module R/x becomes zero after tensoring with ℚ(x) but is not nilpotent. The product of HF[u^(±1)] over the residue fields F of all primes of ℚ[x] does detect nilpotence, and a product of fields is reduced of Krull dimension zero, while ℚ[x] itself has Krull dimension one.
 
@@ -1769,7 +1771,7 @@ A proof route is as follows. Use the commutative-ring initial-interval height th
 - This is a comparison of vanishing, not an equivalence of the two towers or the telescope conjecture.
 - R=Hℚ; n=0 under p-locality; R=E₁,n=1,2: M₀(Hℚ)=Hℚ≠0 and M₁K(Hℚ)≠0; at E₁ nth support is nonzero for n=1 and zero for n=2, shifted K support at 2 and 3 matches.
 
-*Needs:* §6.5 (Redshift at nonnegative height); §4.28 (Chromatic height of a commutative ring); §4.7 (Comparison on p-local spectra); §4.19 (Telescopes on chromatically local spectra).
+*Needs:* §6.5 (Redshift at nonnegative height); §4.28 (Chromatic height of a commutative ring); §4.4 (Ring-spectrum acyclicity comparison); §4.7 (Comparison on p-local spectra); §4.19 (Telescopes on chromatically local spectra).
 
 ### Examples
 
@@ -2090,9 +2092,9 @@ For the integral coefficient spectra, prove the connective fiber sequences Kconn
 
 Throughout this target, ko, KO, tmf and Tmf are the integral spectra. Verify for these coefficients the regularity and coherent-support hypotheses in §3.4; no prime localization is imposed on the displayed fiber sequences.
 
-(lmmt line 987, Remark 4.20, p.1032, secondary citation of Blumberg–Mandell for ko/KO; lmmt line 1045, Remark 4.22, p.1033, secondary citation of Barwick–Lawson for tmf/Tmf; agh line 1541, Example 4.6(4)–(5), p.35.)
+(barwick-lawson line 207, Proposition 3.1 and Corollary 3.2, p.5, for ko and KO; barwick-lawson line 253, Proposition 4.1, p.6, and line 299, Corollary 4.2, p.7, for tmf and Tmf; agh line 1515, Proposition 4.4, p.34, for the nonconnective extension; lmmt line 987, Remark 4.20, p.1032, and lmmt line 1045, Remark 4.22, p.1033, as background.)
 
-A proof route is as follows. Prove the right-regular noetherian and coherent-support hypotheses for the ko Bott localization and tmf→Tmf coefficient localization, as in AGH Example 4.6(4)–(5). Apply the regular spectral localization target and its bounded noetherian-heart comparison. Compare the resulting K(ℤ) fibers with the purity conclusions after telescopic localization. These verifications are coefficient-model targets here and do not apply to arbitrary coefficient algebras.
+A proof route is as follows. Prove the right-regular noetherian and coherent-support hypotheses for the ko Bott localization and tmf→Tmf coefficient localization. For ko, Wood's cofiber sequence Σko→ko→ku (multiplication by η) and the Bott cofiber sequence Σ²ku→ku→Hℤ show that Hℤ is a perfect ko-module; a perfect ko-module is b-nilpotent, b∈π₈ko, exactly when it is truncated. For tmf, show that Hℤ⊗_tmf Hℤ is truncated: away from 6 by the cofiber sequences of c₄ and c₆ on tmf[1/6], and separately after reduction mod 2 and mod 3, where the relative Tor algebras are finite; then identify Tmf with the localization at the multiplicative sets generated by c₄ and by a surviving power of Δ (Δ²⁴ is a permanent class; Δ itself is not), using the cover of the compactified moduli stack by the loci c₄≠0 and Δ≠0. Apply the regular spectral localization target and its bounded noetherian-heart comparison. Compare the resulting K(ℤ) fibers with the purity conclusions after telescopic localization. These verifications are coefficient-model targets here and do not apply to arbitrary coefficient algebras.
 
 **Checks.**
 
@@ -2119,14 +2121,14 @@ Throughout this target, A is K(1)-acyclic E1. Only the comparison with π₀A re
 
 (lmmt line 1056, Corollary 4.23 and proof, p.1033.)
 
-A proof route is as follows. Apply purity to A→A[1/p], since the T(0) comparison is automatic and both T(1) terms vanish. For connective A use Waldhausen’s p-adic truncation on A[1/p]. Compare with the discrete π₀ ring, keeping the connective assumption exactly at the truncation step.
+A proof route is as follows. Since A is a ring, K(1)-acyclicity of A is T(1)-acyclicity (§4.4, or §4.20 directly). Apply purity to A→A[1/p], since the T(0) comparison is automatic and both T(1) terms vanish; the resulting T(1)-equivalence of K-theory spectra is a K(1)-equivalence because T(1) and K(1) have the same Bousfield class (§4.20). §4.19 does not suffice here: K(A) need not be L₁-local, and A=Hℤ at p=2 is K(1)-acyclic with L₁Hℤ=Hℚ≠Hℤ. For connective A use Waldhausen’s p-adic truncation on A[1/p]. Compare with the discrete π₀ ring, keeping the connective assumption exactly at the truncation step.
 
 **Checks.**
 
 - Every discrete ring is K(1)-acyclic, so its K(1)-local K-theory is unchanged by inverting p.
 - A = Hℤ,H𝔽₂ at p=2; A = H𝔽₃ at p=3: π₀ comparisons=id; 𝔽_p[1/p]=0; L_K(1)K(𝔽_p)=0.
 
-*Needs:* §5.5 (The chromatic purity theorem); §2.3 (Rational and p-adic truncation); §4.19 (Telescopes on chromatically local spectra).
+*Needs:* §5.5 (The chromatic purity theorem); §2.3 (Rational and p-adic truncation); §4.4 (Ring-spectrum acyclicity comparison); §4.20 (Separation above height one).
 
 ### 9.2 Nilinvariance, Milnor excision and cdh-descent
 
@@ -2372,6 +2374,8 @@ For cyclic assembly take G=ℤ and R=KU. The object G/G is terminal in the famil
 - **agh**: Benjamin Antieau, David Gepner and Jeremiah Heller, *[K-theoretic obstructions to bounded t-structures](https://arxiv.org/pdf/1610.07207v4)*. Theorem and section numbering of arXiv:1610.07207v4. Locators use this edition; source-line numbers identify its extraction.
 
 - **akq**: Gabriel Angelini-Knoll and J. D. Quigley, *[A homological approach to chromatic complexity of algebraic K-theory](https://arxiv.org/pdf/1908.09164v3)*. Theorem and section numbering of arXiv:1908.09164v3. Locators use this edition; source-line numbers identify its extraction.
+
+- **barwick-lawson**: Clark Barwick and Tyler Lawson, *[Regularity of structured ring spectra and localization in K-theory](https://arxiv.org/abs/1402.6038v2)*. Theorem numbering and manuscript pages of arXiv:1402.6038v2; in the proof of Corollary 4.2 the multiplicative set written as generated by Δ must be read as generated by a power of Δ that survives to π_*tmf. Locators use this edition; source-line numbers identify its extraction.
 
 - **barwick**: Clark Barwick, *[On exact infinity-categories and the theorem of the heart](https://arxiv.org/pdf/1212.5232v4)*. Theorem and section numbering of arXiv:1212.5232v4. Locators use this edition; source-line numbers identify its extraction.
 

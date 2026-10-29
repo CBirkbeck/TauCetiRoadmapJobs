@@ -552,7 +552,6 @@ id = "mil81"
 authors = "Haynes R. Miller"
 title = "On relations between Adams spectral sequences, with an application to the stable homotopy of a Moore space"
 year = 1981
-version_note = "Published version, Journal of Pure and Applied Algebra 20 (1981) 287–312, author-hosted."
 locator_scheme = "theorem"
 locator = "Theorem 4.11 and Corollary 4.12, pp.294–295"
 url = "https://math.mit.edu/~hrm/papers/miller-relations-between-adams-spectral-sequences.pdf"
@@ -562,6 +561,7 @@ sha256 = "2f94bf4110a424f10b44d80b62b78b46b0bf613a456f32037edd6d95fed08a48"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-26"
+version_note = "Published version, Journal of Pure and Applied Algebra 20 (1981) 287–312, author-hosted."
 cited_for = ["4.20 Separation above height one"]
 
 [[source]]
@@ -569,7 +569,6 @@ id = "mah81"
 authors = "Mark Mahowald"
 title = "bo-resolutions"
 year = 1981
-version_note = "Published version, Pacific Journal of Mathematics 92 (1981), publisher open archive."
 locator_scheme = "theorem"
 locator = "Theorem 1.1, pp.365–366; Theorem 6.3, p.382"
 url = "https://msp.org/pjm/1981/92-2/pjm-v92-n2-p11-s.pdf"
@@ -579,4 +578,23 @@ sha256 = "e4be950d3643d3bd0e9ebd3517bcfb26fc0f27df74c5528e630c2e92eafa3bfb"
 licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-10-26"
+version_note = "Published version, Pacific Journal of Mathematics 92 (1981), publisher open archive."
 cited_for = ["4.20 Separation above height one"]
+
+[[source]]
+id = "barwick-lawson"
+authors = "Clark Barwick, Tyler Lawson"
+title = "Regularity of structured ring spectra and localization in K-theory"
+year = 2014
+arxiv = "1402.6038v2"
+locator_scheme = "theorem"
+locator = "Proposition 3.1 and Corollary 3.2, p.5; Proposition 4.1 and Corollary 4.2, pp.6–7"
+url = "https://arxiv.org/abs/1402.6038v2"
+fetched_from = "https://arxiv.org/pdf/1402.6038v2"
+fetched_at = "2026-10-29T00:23:32Z"
+sha256 = "ab76355e6d463a08117fb28447fa31d672c92a8591bc0cb856b8dae26994f504"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-29"
+version_note = "arXiv v2"
+cited_for = ["8.9 Classical regular localization checks"]
