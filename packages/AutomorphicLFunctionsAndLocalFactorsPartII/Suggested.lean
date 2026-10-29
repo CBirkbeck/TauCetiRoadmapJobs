@@ -1,3 +1,5 @@
+module
+
 import Mathlib
 
 /-!
@@ -14,7 +16,7 @@ plain matrix identities and arbitrary complex functions do not replace them.
 * Meromorphic completed unitary standard L-function (README §3.4): lacks the same automorphic carriers and ramified unitary local factors.
 * Holomorphic injection, branching and nonzero highest-line projection (README §§4.3 and 4.5–4.7): lacks Harish–Chandra modules for U(a,b), holomorphic discrete series, compact types and branching maps. The coefficient-field Cauchy decomposition of README §4.4 is expressible on the pinned Weyl modules, but it is a classical input to these branching theorems rather than a headline, and it remains a README target.
 * Critical archimedean doubling nonvanishing and normalized algebraicity (README §§4.8–4.10): lacks those holomorphic representation carriers, the critical induced-fiber comparison and rational projected-kernel integral.
-* (k,c) model existence, uniqueness, support and root elimination (README §§5.1–5.3): lacks smooth/Casselman–Wallach GL representations, generalized Speh representations and generalized Whittaker functionals.
+* (k,c) model existence, uniqueness, support and root elimination (README §§5.1–5.2 and 5.4): lacks smooth/Casselman–Wallach GL representations, generalized Speh representations and generalized Whittaker functionals.
 * Generalized local continuation, multiplicity one and functional equation (README §§6.1–6.6): lacks normalized induction on classical groups, (k,c) models, continuous equivariant Hom spaces and doubling local factors.
 * Highly ramified local stability (README §6.10): lacks those representation carriers and the canonical nongeneric GL pair factors.
 * Auxiliary GL pole domination and doubling pole attainment (README §§7.1–7.6): lacks generalized Speh matrix-coefficient integrals, their meromorphic families and Langlands data.

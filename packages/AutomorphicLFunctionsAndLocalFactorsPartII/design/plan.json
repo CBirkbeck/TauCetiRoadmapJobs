@@ -4987,9 +4987,9 @@
     },
     {
       "slug": "classical-support-quotient",
-      "needs": "For an irreducible classical-group constituent with supercuspidal support, realize it as a quotient of normalized induction for Weyl-conjugate support data with the central twists required by quotient multiplicativity.",
+      "needs": "For a nonarchimedean local field F of characteristic zero, one of the split groups G_c=Sp_c, SO_c or GSpin_c of Layer 0 with c>1, supercuspidal representations σ_i of GL_(β_i)(F) (1≤i≤d, β₁+…+β_d=l, 2l≤c) and a supercuspidal π₀ of G_(c−2l)(F), prove that every irreducible subquotient π of the normalized induction (σ₁×…×σ_d)⋊π₀ is a quotient of (σ′₁×…×σ′_d)⋊π₀ for a datum obtained from (σ_i) by a Weyl-group element, that is, a permutation of the blocks together with the replacement of some σ_i by χ_π⊗σ_i∨, where χ_π is the central character of π restricted along e₀∨ for GSpin_c and is trivial for Sp_c and SO_c (Jacquet-module exactness and the geometric lemma of SR.2.2–SR.2.3, cuspidal support of SR.3.1 and second adjointness of SR.2a.1).",
       "supplier": "SmoothRepresentationsOfLocalGroups",
-      "section": "SR.2, SR.3.3 and SR.5.3"
+      "section": "SR.2, SR.2a, SR.3.1 and SR.3.3"
     },
     {
       "slug": "rectangular-orbit-support",

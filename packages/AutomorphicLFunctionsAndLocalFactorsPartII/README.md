@@ -8,7 +8,7 @@ AutomorphicLFunctionsAndLocalFactors, Layers AL.0–AL.4, is the base roadmap. I
 
 SmoothRepresentationsOfLocalGroups, SR.0–SR.5, owns smooth admissible categories, induction, Jacquet functors, Satake theory, Harish–Chandra support and GL segment/multisegment constructors. AutomorphicFormsOnReductiveGroups §§2.1–2.7, 3.4–3.5, 4.1–4.3, 5.3–5.4 and 6.1–6.2 owns their real, globalized and cohomological counterparts. No classification is rebuilt here. The local generalized Speh comparison of §5.2 identifies canonical quotient data with their (k,c) models over every characteristic-zero local field; it preserves the distinction between a possibly reducible inducing representation and its distinguished irreducible subquotient.
 
-AutomorphicSpectralTheory §§1.1–1.4 and 2.1–2.6 owns general Eisenstein continuation from discrete unitary inducing data, intertwiners and ordered residues; the unitary Siegel Eisenstein family of §1.3 is its specialization to the one-dimensional datum χ∘det, and MetaplecticAutomorphicForms §6.2 already uses that family. AutomorphicSpectralTheory §4.14a owns number-field residual Speh representations and their local quotient realizations, and §5.12 owns the cuspidal-support decomposition of automorphic forms. EndoscopicTransferAndUnitaryTraceComparison §5.1 uses that same residual representation, and §10.29 owns nongeneric GL pair factors. GL2AutomorphicRepresentationsAndTransfer R16.1.8 owns finite-image Hecke characters with prescribed full local components. Those constructions are imported. This roadmap owns their generalized-doubling specializations, the two-term constant-term recursion and its nonessential-self-duality holomorphy theorem.
+AutomorphicSpectralTheory §§1.1–1.4 and 2.1–2.6 owns general Eisenstein continuation from discrete unitary inducing data, intertwiners and ordered residues; the unitary Siegel Eisenstein family of §1.3 is its specialization to the one-dimensional datum χ∘det, and MetaplecticAutomorphicForms §6.2 uses that family for splitting characters χ_V, through its Siegel–Weil sections. AutomorphicSpectralTheory §4.14a owns number-field residual Speh representations and their local quotient realizations, and §5.12 owns the cuspidal-support decomposition of automorphic forms. EndoscopicTransferAndUnitaryTraceComparison §5.1 uses that same residual representation, and §10.29 owns nongeneric GL pair factors. GL2AutomorphicRepresentationsAndTransfer R16.1.8 owns finite-image Hecke characters with prescribed full local components. Those constructions are imported. This roadmap owns their generalized-doubling specializations, the two-term constant-term recursion and its nonessential-self-duality holomorphy theorem.
 
 MetaplecticAutomorphicForms §§6.10a–6.11 owns the general classical standard doubling integral, local factors, spherical denominator, good-section gcd and completed standard function, and its arbitrary-character-unitary-doubling contract extends them to unitary inducing characters without a splitting condition; §3.15 owns the MVW involution over nonarchimedean fields. They are imported. The archimedean contragredient theorem for an involution inverting a fundamental Cartan subgroup is a contract of AutomorphicFormsOnReductiveGroups §§2.4 and 2.7. Sections 2.1–2.4 and 3.2–3.4 below are the EHLS right-action, inverse-character, normalized-pairing and flat/dagger comparisons, with their full ramified and archimedean scope. The holomorphic theta criterion and rational projected-kernel comparison of §§4.8–4.10 are additional targets. They do not assert an explicit general vector-weight gamma-value formula.
 
@@ -64,7 +64,7 @@ Consume Layers 2–3 over ℂ for the complex Schur representations, highest-wei
 
 Consume SR.0 admissible smooth carriers, with SR.0.4 for admissibility and smooth contragredients, hence matrix coefficients; SR.2.1–SR.2.3 for normalized induction, Jacquet functors, the geometric lemma and pairings; SR.3.3 Harish–Chandra tempered support and the conditional Langlands classification; SR.4 Satake theory; SR.5.1 *mirabolic-derivatives*, SR.5.2 *segment-representations* and SR.5.3 *highest-derivative-adapter*, preserving their distinct submodule and quotient conventions. Every use of the classification retains the exact Harish–Chandra input until the supplier's tempered-support target is proved. The local generalized Speh comparison is constructed in §5.2, using these existing constructors.
 
-What SmoothRepresentationsOfLocalGroups must provide (gap:classical-support-quotient): For an irreducible classical-group constituent with supercuspidal support, realize it as a quotient of normalized induction for Weyl-conjugate support data with the central twists required by quotient multiplicativity.
+What SmoothRepresentationsOfLocalGroups must provide (gap:classical-support-quotient): For a nonarchimedean local field F of characteristic zero, one of the split groups G_c=Sp_c, SO_c or GSpin_c of Layer 0 with c>1, supercuspidal representations σ_i of GL_(β_i)(F) (1≤i≤d, β₁+…+β_d=l, 2l≤c) and a supercuspidal π₀ of G_(c−2l)(F), prove that every irreducible subquotient π of the normalized induction (σ₁×…×σ_d)⋊π₀ is a quotient of (σ′₁×…×σ′_d)⋊π₀ for a datum obtained from (σ_i) by a Weyl-group element, that is, a permutation of the blocks together with the replacement of some σ_i by χ_π⊗σ_i∨, where χ_π is the central character of π restricted along e₀∨ for GSpin_c and is trivial for Sp_c and SO_c (Jacquet-module exactness and the geometric lemma of SR.2.2–SR.2.3, cuspidal support of SR.3.1 and second adjointness of SR.2a.1).
 
 What SmoothRepresentationsOfLocalGroups must provide (gap:rectangular-orbit-support): For a nonarchimedean characteristic-zero local field F, k,c≥1 and a nonzero finite-length admissible complex representation ρ of GL_(kc)(F), assume that each of the c successive highest Bernstein–Zelevinsky derivatives has order k; identify Hom_(U_(c^k))(ρ,ψ_(k,c)) with the linear dual of the terminal GL₀ derivative space, with the determinant-normalization conversion between SR.5.1 mirabolic-derivatives and SR.5.3 highest-derivative-adapter made explicit, and prove vanishing of Hom_(V(σ))(ρ,ψ′) for every partition σ greater than or incomparable with (k^c) and every generic ψ′ (MODELS Proposition 2 and proof, pp.3–4, MODELS lines 108–128; GGS17 Theorems E–F, pp.5–6, GGS17 lines 219–238).
 
@@ -132,7 +132,7 @@ Consume §2.9, signed Hermitian spaces over fields, their adjoints and trace-tra
 
 ### From TauCetiRoadmap.MetaplecticAutomorphicForms
 
-Consume §3.2a's split quadratic-étale Hermitian carrier, §3.3's unitary splitting data with the §3.3b oscillator normalizations, §§3.5–3.7's local theta carriers, §3.15's MVW involution over nonarchimedean fields of characteristic different from 2 (assumed: π∘θ≅π∨ for every irreducible smooth π of the unitary groups of its Hermitian datum), §6.2's unitary Siegel Eisenstein family, and §§6.10a–6.11's classical standard doubling integral, factors, good-section gcd with Yamana's comparison of good and holomorphic sections on Re s≥0, archimedean normalized-quotient and nonzero-test assertions, and completed product. The normalization transport in Layers 1–3 must compare its parabolic, character, parameter, measures and vector pairing individually. Section 4.9 constructs the specialized holomorphic theta-image and projected-integral nonvanishing theorem used here from the supplied oscillator/local theta carriers, rather than assuming that every nonzero theta correspondence supplies that particular critical vector.
+Consume §3.2a's split quadratic-étale Hermitian carrier, §3.3's unitary splitting data with the §3.3b oscillator normalizations, §§3.5–3.7's local theta carriers, §3.15's MVW involution over nonarchimedean fields of characteristic different from 2 (assumed: π∘θ≅π∨ for every irreducible smooth π of the unitary groups of its Hermitian datum), §6.2's Siegel–Weil sections in the unitary Siegel family for splitting characters (assumed: they are sections of the §1.3 family at χ=χ_V; for other χ nothing is taken from §6.2), and §§6.10a–6.11's classical standard doubling integral, factors, good-section gcd with Yamana's comparison of good and holomorphic sections on Re s≥0, archimedean normalized-quotient and nonzero-test assertions, and completed product. The normalization transport in Layers 1–3 must compare its parabolic, character, parameter, measures and vector pairing individually. Section 4.9 constructs the specialized holomorphic theta-image and projected-integral nonvanishing theorem used here from the supplied oscillator/local theta carriers, rather than assuming that every nonzero theta correspondence supplies that particular critical vector.
 
 The supplied §6.10a factors are built with the compatible splitting characters, whose restriction to F× is the quadratic character of E/F raised to dim V; norm twists only shift the parameter. The unitary targets of Layers 2–4 use an arbitrary inducing character χ of E×, which is the following extension.
 
@@ -150,7 +150,7 @@ Layer 0 fixes the geometry and standard dual representations. Layers 1–3 const
 
 Let E/F be a quadratic étale algebra in characteristic zero, with involution x↦x̄, and h a nondegenerate hermitian form on the n-dimensional E-space V. Define W=V⊕V with h_W((x,y),(x′,y′))=h(x,x′)−h(y,y′), D={(x,x)} and A={(x,−x)}. Then W=A⊕D, both summands are maximal isotropic, and h_W((x,−x),(y,y))=2h(x,y). The inverse decomposition sends (u,v) to ((u−v)/2,(u+v)/2). The block action gives U(V)×U(−V)→U(W); for similitudes use the equal-multiplier fiber product.
 
-Assume E/F quadratic étale; char(F)=0; h nondegenerate; n≥0, with the zero-dimensional case included. (EHLS, §4.1.1, pp.43–44; EHLS line 1850.)
+Assume E/F quadratic étale; char(F)=0; h nondegenerate; n≥0, with the zero-dimensional case included. (EHLS, §4.1.1, pp.43–44; EHLS line 1862.)
 
 Prove the following basic properties of this construction.
 
@@ -222,7 +222,7 @@ A proof can proceed as follows: Use row-vector right action to identify the uppe
 
 ### 0.3 classical groups and standard transfer degree
 
-For the split characteristic-zero groups G=Sp_c (c even), SO_c, or GSpin_c, with c>1 in the main transfer theorem, fix a pinning and the standard representation r of the complex dual group. For Sp_(2n), SO_(2n), SO_(2n+1), GSpin_(2n), GSpin_(2n+1), the standard degree N is respectively 2n+1,2n,2n,2n,2n. Define χ_π=1 outside GSpin; in GSpin it is the central character restricted along e₀∨:F×→C_G^•. The determinant character of r∘t_π is 1 outside GSpin and χ_π^n for GSpin_(2n) or GSpin_(2n+1). General root data and dual groups are imported from ReductiveGroups and ReductiveGroupsPartII; the general-field SO carrier is imported from OrthogonalSpinGroups. Use the hermitian-unitary-groups and gspin-group-schemes contracts for the U/GU and GSpin groups.
+For the split characteristic-zero groups G=Sp_c (c even), SO_c, or GSpin_c, with c>1 in the main transfer theorem, fix a pinning and the standard representation r of the complex dual group. For Sp_(2n), SO_(2n), SO_(2n+1), GSpin_(2n), GSpin_(2n+1), the standard degree N is respectively 2n+1,2n,2n,2n,2n. Define χ_π=1 outside GSpin; in GSpin it is the central character restricted along e₀∨:F×→C_G^•. The determinant character of r∘t_π is 1 outside GSpin and χ_π^n for GSpin_(2n) or GSpin_(2n+1). For the split tori, identify SO₂ with GL₁ through diag(t,t⁻¹)↦t, its action on the first isotropic basis line, and GSpin₂ with Gₘ×Gₘ through its cocharacters e₁∨ and e₀∨ (CFK §1, p.7; CFK lines 264–267), so that a character π of GSpin₂(F) is π(e₁∨(y)e₀∨(x))=σ(y)χ_π(x) for characters σ,χ_π of F×. The split-torus pair of π is (α,β)=(μ,μ⁻¹) for π=μ on SO₂ and (α,β)=(σ,σ⁻¹χ_π) on GSpin₂; thus αβ=χ_π, and α⊕β is the standard transfer r∘t_π of the parameter of π. The pair is unordered: replacing the identification of SO₂ with GL₁ by its inverse exchanges μ and μ⁻¹. General root data and dual groups are imported from ReductiveGroups and ReductiveGroupsPartII; the general-field SO carrier is imported from OrthogonalSpinGroups. Use the hermitian-unitary-groups and gspin-group-schemes contracts for the U/GU and GSpin groups.
 
 Assume local or global characteristic-zero field; admissible irreducible π locally or cuspidal π globally; fixed pinning. (CFK, §1, pp.6–8; §3.1–3.2, pp.10–12; CFK line 250.)
 
@@ -231,6 +231,8 @@ Prove the following basic properties of this construction.
 - Return the five degrees N and their dual groups.
 
 - Restrict the GSpin central character along e₀∨, with value 1 for the other families.
+
+- For SO₂ and GSpin₂, the split-torus pair (α,β) has product χ_π and sum r∘t_π, independently of the order of the pair.
 
 - The determinant of each standard transfer has the character specified above.
 
@@ -243,6 +245,8 @@ Prove the following basic properties of this construction.
 - SO₃ has N=2, not 3.
 
 - For GSpin_(2n+1), the determinant of the standard similitude representation is χ_π^n; the determinant is trivial when χ_π=1.
+
+- For GSpin₂ with σ=1 and χ_π unramified with χ_π(ϖ)=−1, the pair is (1,χ_π) and det(α⊕β)(ϖ)=−1=χ_π(ϖ), the n=1 case of the determinant rule; the pair (σ,σ⁻¹)=(1,1), which forgets χ_π, has determinant 1 and violates it.
 
 Additional normalization checks:
 
@@ -339,13 +343,13 @@ A proof can proceed as follows: Use the AutomorphicLFunctionsAndLocalFactors AL.
 
 ### 1.3 degenerate Siegel Eisenstein continuation
 
-Over a number field F with quadratic CM extension E, form E(f,s,g)=Σ_(P(F)⧸GU(W)(F)) f(s,γg), or its restriction to U(W). This is the specialization of AutomorphicSpectralTheory §§1.1–1.4, 2.4 and 2.4a to the Siegel parabolic P with the one-dimensional inducing datum χ(det Δ), a unitary character of M_P(𝔸) trivial on M_P(F) and hence a discrete unitary representation of M_P(𝔸)¹, and to the parameter λ_s given by §1.1; on U(W) it is the unitary Siegel family of MetaplecticAutomorphicForms §6.2. For a smooth K-finite section the sum converges absolutely and locally normally for Re(s) sufficiently large, extends meromorphically to C as an automorphic family, is regular on Re(s)=0, and satisfies E(M(w,λ_s)f,wλ_s)=E(f,λ_s) for the long Siegel Weyl element w. What this subsection adds is the translation into the EHLS normalization: on U(W), w sends the inducing character of I_EHLS(χ,s) to that of I_EHLS((χ^c)⁻¹,−s), where χ^c(x)=χ(x̄), and in the standard variable z=s+1/2 this is the reflection z↔1−z; on GU(W) the multiplier part of the transformed character is computed separately and carried along, since agreement on U(W) does not determine it.
+Over a number field F with quadratic CM extension E, form E(f,s,g)=Σ_(P(F)⧸GU(W)(F)) f(s,γg), or its restriction to U(W). This is the specialization of AutomorphicSpectralTheory §§1.1–1.4, 2.4 and 2.4a to the Siegel parabolic P with the one-dimensional inducing datum χ(det Δ), a unitary character of M_P(𝔸) trivial on M_P(F) and hence a discrete unitary representation of M_P(𝔸)¹, and to the parameter λ_s given by §1.1; when χ is a splitting character χ_V, whose restriction to 𝔸_F× is the quadratic character of E/F raised to the power dim V (MetaplecticAutomorphicForms §3.3), its U(W) restriction is the Siegel family in which MetaplecticAutomorphicForms §6.2 places its Siegel–Weil sections, while for general χ the family is the AutomorphicSpectralTheory specialization alone. For a smooth K-finite section the sum converges absolutely and locally normally for Re(s) sufficiently large, extends meromorphically to C as an automorphic family, is regular on Re(s)=0, and satisfies E(M(w,λ_s)f,wλ_s)=E(f,λ_s) for the long Siegel Weyl element w. What this subsection adds is the translation into the EHLS normalization: on U(W), w sends the inducing character of I_EHLS(χ,s) to that of I_EHLS((χ^c)⁻¹,−s), where χ^c(x)=χ(x̄), and in the standard variable z=s+1/2 this is the reflection z↔1−z; on GU(W) the multiplier part of the transformed character is computed separately and carried along, since agreement on U(W) does not determine it.
 
 Assume number field; unitary Hecke character with norm twists absorbed into the parameter; finite K-type section; coherent quotient measures. (EHLS, §4.1.3, p.45; §4.1.4, pp.45–48; EHLS line 1893; HLS, §3.1, internal pp.43–49; HLS line 1704.)
 
 A proof can proceed as follows: Identify K-finite sections of I_EHLS(χ,s) with flat sections of the AutomorphicSpectralTheory §1.1 induced family for the datum χ(det Δ), using the covariance of §1.1. Apply AutomorphicSpectralTheory §2.4 for continuation, unitary-axis regularity and the functional equation, and §2.4a for smooth sections. Compute the action of w on the Siegel Levi, m(B,λ)↦m(λ(B*)⁻¹,λ), to read off the transformed character: on U(W) the determinant factor χ(det B)|det B|_E^(−s) becomes χ(det B*)⁻¹|det B|_E^s=(χ^c)⁻¹(det B)|det B|_E^s, because det B*= overline(det B).
 
-*Needs:* §1.1; AutomorphicSpectralTheory §§1.1–1.4 (Eisenstein convergence and constant terms); AutomorphicSpectralTheory §§2.4 and 2.4a (discrete-data continuation, functional equations and smooth extension); MetaplecticAutomorphicForms §6.2 (unitary Siegel Eisenstein family).
+*Needs:* §1.1; AutomorphicSpectralTheory §§1.1–1.4 (Eisenstein convergence and constant terms); AutomorphicSpectralTheory §§2.4 and 2.4a (discrete-data continuation, functional equations and smooth extension); MetaplecticAutomorphicForms §6.2 (Siegel–Weil sections, for the splitting-character comparison).
 
 ### Examples
 
@@ -353,7 +357,7 @@ For n=1 and p=diag(a,1), the Godement section scales by χ₂(a)|a|^(1/2+s). Tak
 
 ### Dependencies
 
-This layer follows Layer 0. The direct supplier inputs are SmoothRepresentationsOfLocalGroups §§SR.2.1–SR.2.3 (induction, Jacquet functors, geometric lemma and pairings) and §SR.0.4 (admissible duals and matrix coefficients); AutomorphicFormsOnReductiveGroups §§2.1–2.7 (real representations and globalizations); AutomorphicSpectralTheory §§1.1–1.4 (Eisenstein convergence and constant terms); AutomorphicLFunctionsAndLocalFactors Layer AL.0 (vector-space Fourier analysis); AutomorphicLFunctionsAndLocalFactors Layer AL.2 (Godement–Jacquet theory); AutomorphicSpectralTheory §§2.4 and 2.4a (discrete-data continuation, functional equations and smooth extension); MetaplecticAutomorphicForms §6.2 (unitary Siegel Eisenstein family).
+This layer follows Layer 0. The direct supplier inputs are SmoothRepresentationsOfLocalGroups §§SR.2.1–SR.2.3 (induction, Jacquet functors, geometric lemma and pairings) and §SR.0.4 (admissible duals and matrix coefficients); AutomorphicFormsOnReductiveGroups §§2.1–2.7 (real representations and globalizations); AutomorphicSpectralTheory §§1.1–1.4 (Eisenstein convergence and constant terms); AutomorphicLFunctionsAndLocalFactors Layer AL.0 (vector-space Fourier analysis); AutomorphicLFunctionsAndLocalFactors Layer AL.2 (Godement–Jacquet theory); AutomorphicSpectralTheory §§2.4 and 2.4a (discrete-data continuation, functional equations and smooth extension); MetaplecticAutomorphicForms §6.2 (Siegel–Weil sections, for the splitting-character comparison).
 
 ## Layer 2: unitary local normalization comparisons
 
@@ -429,7 +433,7 @@ A proof can proceed as follows: Build the finite product out of Tate factors. Co
 
 ### 2.3 unramified unitary doubling formula
 
-Transport the spherical identity of MetaplecticAutomorphicForms §6.10a through that denominator and inverse-character comparison. For hyperspecial spherical section f° with f°(1)=1 and spherical vectors with ℓ(v)=1, prove d_n(s,χ⁻¹)Z_U(s,f°,v,ℓ)=L_E(s+1/2,BC(π∨)⊗χ⁻¹), equivalently L_E(s+1/2,BC(π)⊗(χ^c)⁻¹), since BC(π∨)≅BC(π)∨≅BC(π)^c and an L-factor over E is unchanged by conjugation. At a split rank-one place write π=β, a character of U(1)={(x,x⁻¹)}, with w-coordinate β₀(x)=β(x,x⁻¹), so that BC(β)(z)=β(z/z̄) is (β₀,β₀⁻¹) on E_w××E_wbar×; write χ=(χ_w,χ_wbar), t=q^(−s−1/2), X=β₀(ϖ)χ_wbar(ϖ)⁻¹t and Y=β₀(ϖ)⁻¹χ_w(ϖ)⁻¹t. With the w-projection of §1.2, the embedded element ι((x,x⁻¹),1) has Iwasawa D-entry a unit and A-entry of absolute value |x| when |x|<1, and D-entry of absolute value |x| when |x|>1 (residue characteristic ≠2), so directly Z_U=1/(1−X)+Y/(1−Y)=(1−XY)/((1−X)(1−Y)). Since d₁(s,χ⁻¹)=(1−XY)⁻¹, the product is ((1−X)(1−Y))⁻¹, the Euler factor of (β₀⁻¹χ_w⁻¹,β₀χ_wbar⁻¹)=BC(β⁻¹)⊗χ⁻¹. This computes the inverse character, the contragredient and the missing cross-factor. The nonsplit general-rank computation must be supplied from the spherical doubling calculation, with its normalization comparison retained in the exact unitary normalization comparison of §§1.3 and 2.4.
+Transport the spherical identity of MetaplecticAutomorphicForms §6.10a through that denominator and inverse-character comparison. Fix a self-dual O_E-lattice L in V, let K_V⊂U(V)(F) be its stabilizer and let K_W⊂U(W)(F) be the stabilizer of L⊕L in the original coordinates W=V⊕(−V); L⊕L is self-dual for h_W, K_W is hyperspecial and ι(K_V×K_V)⊂K_W. Transport K_W to the polarization A⊕D by the inverse decomposition of §0.1, together with ι and the Haar measures. For the K_W-spherical section f° with f°(1)=1 and K_V-spherical vectors with ℓ(v)=1, prove d_n(s,χ⁻¹)Z_U(s,f°,v,ℓ)=L_E(s+1/2,BC(π∨)⊗χ⁻¹), equivalently L_E(s+1/2,BC(π)⊗(χ^c)⁻¹), since BC(π∨)≅BC(π)∨≅BC(π)^c and an L-factor over E is unchanged by conjugation. At a split rank-one place write π=β, a character of U(1)={(x,x⁻¹)}, with w-coordinate β₀(x)=β(x,x⁻¹), so that BC(β)(z)=β(z/z̄) is (β₀,β₀⁻¹) on E_w××E_wbar×; write χ=(χ_w,χ_wbar), t=q^(−s−1/2), X=β₀(ϖ)χ_wbar(ϖ)⁻¹t and Y=β₀(ϖ)⁻¹χ_w(ϖ)⁻¹t. With the w-projection of §1.2, the embedded element ι((x,x⁻¹),1) has Iwasawa D-entry a unit and A-entry of absolute value |x| when |x|<1, and D-entry of absolute value |x| when |x|>1, the Iwasawa entries being measured on the transported lattice L⊕L, so directly Z_U=1/(1−X)+Y/(1−Y)=(1−XY)/((1−X)(1−Y)). Since d₁(s,χ⁻¹)=(1−XY)⁻¹, the product is ((1−X)(1−Y))⁻¹, the Euler factor of (β₀⁻¹χ_w⁻¹,β₀χ_wbar⁻¹)=BC(β⁻¹)⊗χ⁻¹. This computes the inverse character, the contragredient and the missing cross-factor. The identity refers to this compatible lattice datum, at every residue characteristic including 2: it fails for other hyperspecial subgroups of U(W)(F) that contain ι(K_V×K_V), for instance the stabilizer of the product lattice of the A⊕D coordinates at a dyadic place (Layer 2 Examples). The nonsplit general-rank computation must be supplied from the spherical doubling calculation, with its normalization comparison retained in the exact unitary normalization comparison of §§1.3 and 2.4.
 
 Assume unramified π and χ; spherical normalized data; initial convergence domain, then rational continuation. (EHLS, §4.2.1, pp.48–49, with the stated right-action convention; EHLS line 2081.)
 
@@ -453,7 +457,7 @@ Construct the section-transport isomorphism before identifying either functional
 
 For the returning intertwiner take E/F=ℂ/ℝ and χ(z)=z/|z|. Then χʷ=χ, so χʷ(i)=i while χ⁻¹(i)=−i; applying χ↦χʷ twice returns χ. For χ=|·|_E^i at B=2, χʷ(2)=4^(−i), and the second operation returns 4^i.
 
-At split rank one take X=1/2 and Y=1/3 in the convergence domain. The two geometric tails give 2+1/2=5/2, while the standard Euler product is 2·3/2=3 and d₁=1/(1−1/6)=6/5; thus d₁Z=3. The contragredient in the label is detected by β₀(ϖ)=i, χ_w(ϖ)=1, χ_wbar(ϖ)=−1 and t=1/2: then X=Y=−i/2 and d₁Z_U=(1+i/2)⁻²=(3/4+i)⁻¹, the factor of (β₀⁻¹χ_w⁻¹,β₀χ_wbar⁻¹)=(−i,−i)=BC(π∨)⊗χ⁻¹, whereas BC(π)⊗χ⁻¹=(i,i) would give (1−i/2)⁻²=(3/4−i)⁻¹; only χ_w(ϖ)=χ_wbar(ϖ) or β₀(ϖ)²=1 hides the difference. For n=2 at a nonsplit place η(ϖ)=−1, so the denominator contains both 1−a q^(−2s−2) and 1+a q^(−2s−1). Taking q=2, a=1, s=0 gives d₂=8/9; replacing η by 1 gives 8/3.
+At split rank one take X=1/2 and Y=1/3 in the convergence domain. The two geometric tails give 2+1/2=5/2, while the standard Euler product is 2·3/2=3 and d₁=1/(1−1/6)=6/5; thus d₁Z=3. The contragredient in the label is detected by β₀(ϖ)=i, χ_w(ϖ)=1, χ_wbar(ϖ)=−1 and t=1/2: then X=Y=−i/2 and d₁Z_U=(1+i/2)⁻²=(3/4+i)⁻¹, the factor of (β₀⁻¹χ_w⁻¹,β₀χ_wbar⁻¹)=(−i,−i)=BC(π∨)⊗χ⁻¹, whereas BC(π)⊗χ⁻¹=(i,i) would give (1−i/2)⁻²=(3/4−i)⁻¹; only χ_w(ϖ)=χ_wbar(ϖ) or β₀(ϖ)²=1 hides the difference. The lattice datum is detected over ℚ₂ at split rank one with β=χ=1 and s=1/2, so t=1/2 and d₁=4/3: the embedded element of x∈ℚ₂× has A⊕D matrix ((x+1,x−1),(x−1,x+1))/2, and for K_W, the stabilizer of ℤ₂⊕ℤ₂ in the original coordinates, the section at v₂(x)=±m equals t^m, so Z_U=(1+t)/(1−t)=3 and d₁Z_U=4=(1−1/2)⁻². The stabilizer GL₂(ℤ₂) of the product lattice in the A⊕D coordinates is also hyperspecial and contains the embedded ℤ₂×, but its lower-row norm is 2·max(1,|x|) for x a nonunit, so the section is t^(m+2) there, Z_U=1+2t³/(1−t)=3/2 and d₁Z_U=2≠4. For n=2 at a nonsplit place η(ϖ)=−1, so the denominator contains both 1−a q^(−2s−2) and 1+a q^(−2s−1). Taking q=2, a=1, s=0 gives d₂=8/9; replacing η by 1 gives 8/3.
 
 ### Dependencies
 
@@ -873,43 +877,7 @@ A proof can proceed as follows: Apply the supplied GL segment and Langlands-quot
 
 *Needs:* §5.1; EndoscopicTransferAndUnitaryTraceComparison §10.29 (canonical nongeneric GL factors); SmoothRepresentationsOfLocalGroups §§SR.2.1–SR.2.3 (induction, Jacquet functors, geometric lemma and pairings) and §SR.0.4 (admissible duals and matrix coefficients); SmoothRepresentationsOfLocalGroups §SR.5.2 (*segment-representations*) and §SR.5.3 (*highest-derivative-adapter*); AutomorphicFormsOnReductiveGroups §§2.1–2.7 (real representations and globalizations).
 
-### 5.3 root elimination for (k,c) functionals
-
-For τ generic with a unitary unramified twist and 0<l<c, realize ρ_c(τ) inside normalized induction of (ρ_l(τ)⊗ρ_(c−l)(τ))δ_(kl,k(c−l))^(−1/(2k)). Split each c×c unipotent block into l and c−l coordinates, let V consist of the lower-left subblocks, and let κ_(l,c−l) be the permutation grouping all l coordinates before all c−l coordinates. The integral ξ↦∫_V ξ(κv)dv converges, is continuous at infinity, defines a (k,c) functional and is nonzero on every subrepresentation. The pole reduction uses a second, classical-group transform with a smaller rank range. Fix a split classical group G_c of Layer 0, the doubling datum of §5.4, and a standard parabolic R=M_R U_R of G_c with M_R≅GL_l×G_(c−2l), so 1≤l≤⌊c/2⌋ and the tail G_(c−2l) may have rank zero; take τ unitary generic. For W∈W_ψ(ρ_c(τ)) and μ in the Schwartz space S_lin(U_R) of the linear coordinates of U_R, set T(W,μ)=∫_(U_R)W(r_z)μ(z)dz, where r_z∈GL_kc is the Levi element attached to z∈U_R by the coordinates of §5.4 (CFK (3.23), p.21; CFK line 845). Its target is the restriction space R_l(τ) of all functions a↦W_l(diag(a,I_((k−1)l))) on GL_l, with W_l in the twisted model |det|^((kc−kl−c+l)/2)W_ψ(ρ_l(τ)): the integral converges absolutely and W⊗μ↦(a↦T(diag(a,I_(kc−l))·W,μ)) is a surjection onto R_l(τ). Neither injectivity of the restriction W_l↦W_l|GL_l nor an identification of R_l(τ) with the complete (k,l) model is asserted. If the functional is built by splitting k instead, auxiliary ordered complex twists give a convergent Jacquet integral and a nonzero continued functional; its range is the one in MODELS Lemma 7, not an arbitrary subquotient.
-
-Assume, for the c-splitting functional, 0<l<c, the fixed permutation and compatible self-dual measures, and τ generic with a unitary norm twist; for the classical transform, additionally a split classical G_c with standard parabolic of Levi GL_l×G_(c−2l), 1≤l≤⌊c/2⌋, and τ unitary generic. (MODELS, §3.1, Lemma 7, pp.6–7; §3.2, Lemma 9 and proof, pp.7–9; MODELS line 234; CFK, Lemma 3.16, pp.21–24; CFK lines 852–858.)
-
-Prove the following basic properties of this construction.
-
-- The c-split functional is the displayed integral on the specified induced carrier.
-
-- Its restriction to any nonzero subrepresentation is nonzero.
-
-- For a classical parabolic with Levi GL_l×G_(c−2l), the transform W⊗μ↦(a↦T(diag(a,I_(kc−l))·W,μ)) converges absolutely and surjects onto the restriction space R_l(τ).
-
-- The functions in R_l(τ) carry the displayed determinant twist |det|^((kc−kl−c+l)/2), so they are not untwisted restrictions of the original function.
-
-**Checks.**
-
-- For c=2,l=1 the two block sizes are equal, but κ still rearranges the interleaved coordinates when k>1.
-
-- For k=1 the integration group is trivial, and the construction is evaluation.
-
-- For k=2,c=3,l=1 the determinant exponent is (6−2−3+1)/2=1; omitting the modulus gives a different character.
-
-Additional normalization checks:
-
-- For c=2,l=1,k=2 the interleaved order (1,2,3,4) changes to (1,3,2,4), despite equal block sizes.
-- For k=1 the integration group is {1}, so its normalized integral is evaluation, of value 1 on the unit vector.
-- For k=2,c=3,l=1 the determinant exponent is 1; at determinant norm 1/2 the twist is 1/2, not 1.
-- For c=3 and l=2 the c-splitting functional exists, splitting the GL coordinates into sizes 2 and 1, but the classical transform does not: c−2l=−1, so G_3 has no standard Levi GL_2×G_(−1).
-- The restriction map is not injective. Over ℚ₃ with ψ of conductor ℤ₃ and ψ(1/3)=ζ₃, take k=3, l=1, τ an unramified unitary principal series of GL₃ and its spherical Whittaker function W with W(1)=1, and put W′(g)=W(g·u₂₃(1/3))−ζ₃W(g). Since diag(a,1,1) commutes with u₂₃(1/3), W′ vanishes on every diag(a,1,1), whereas at the spherical diagonal diag(1,2,1) the root coordinate becomes 2/3 and W′(diag(1,2,1))=ζ₃²−ζ₃≠0.
-
-A proof can proceed as follows: Define the permutation from the explicit ordering of coordinates. Exchange the paired root subgroups and use Fourier inversion to eliminate each off-diagonal block. Prove convergence and nonvanishing on subrepresentations. For the classical transform, realize ρ_c(τ) inductively for the composition (l,c−2l,l) of c, eliminate the roots of U_R in the lower model, and compute the determinant exponent of the restriction space (CFK Lemma 3.16 and proof, pp.21–24).
-
-*Needs:* §5.2; §5.4 (doubling coordinates r_z, for the classical transform only); AutomorphicLFunctionsAndLocalFactors Layer AL.0 (vector-space Fourier analysis); SmoothRepresentationsOfLocalGroups §§SR.2.1–SR.2.3 (induction, Jacquet functors, geometric lemma and pairings) and §SR.0.4 (admissible duals and matrix coefficients); AutomorphicFormsOnReductiveGroups §§2.1–2.7 (real representations and globalizations).
-
-### 5.4 generalized doubling geometric datum
+### 5.3 generalized doubling geometric datum
 
 For G=G_c and k≥1 set H=G_(2kc), Q with Levi GL_c^(k−1)×G_(2c), and U=Rad_u Q. Choose its character ψ_U for the orbit ((2k−1)^c 1^c) and e:G×G→Stab_(M_Q)(ψ_U), injective for Sp and SO, with kernel the diagonal distinguished central torus for GSpin. For k=1 take U=1. Fix the Siegel P, P′=j^(kc)P (j is trivial outside even orthogonal/spin H), δ=δ₀δ₁ and an involution ι of G with δe(g,ιg)δ⁻¹∈M_P. Set U₀=U∩U_(P′) and U=V⋊U₀; conjugation by δ identifies V with U_(c^k) and transports ψ_U to ψ_(k,c)⁻¹. The datum includes actual matrices/root coordinates and proofs of all these identities. For Sp_(2n), ψ_U is ψ_(k−1,c) on the repeated blocks times ψ(tr u₁₁+tr u₂₂) on the final c rows adjoining the middle 2c block; e repeats g₁ on the outer blocks and embeds g₁ and g₂ in the complementary middle symplectic subspaces. Odd orthogonal and spin lifts require their separate coordinates, not that even symplectic example.
 
@@ -945,6 +913,42 @@ A proof can proceed as follows: Use the existing group/root-data carriers to bui
 
 *Needs:* §0.3; §5.1; ReductiveGroups Layer 7 (parabolics and Levi theory); the gspin-group-schemes contract from ReductiveGroupsPartII.
 
+### 5.4 root elimination for (k,c) functionals
+
+For τ generic with a unitary unramified twist and 0<l<c, realize ρ_c(τ) inside normalized induction of (ρ_l(τ)⊗ρ_(c−l)(τ))δ_(kl,k(c−l))^(−1/(2k)). Split each c×c unipotent block into l and c−l coordinates, let V consist of the lower-left subblocks, and let κ_(l,c−l) be the permutation grouping all l coordinates before all c−l coordinates. The integral ξ↦∫_V ξ(κv)dv converges, is continuous at infinity, defines a (k,c) functional and is nonzero on every subrepresentation. The pole reduction uses a second, classical-group transform with a smaller rank range. Fix a split classical group G_c of Layer 0, the doubling datum of §5.3, and a standard parabolic R=M_R U_R of G_c with M_R≅GL_l×G_(c−2l), so 1≤l≤⌊c/2⌋ and the tail G_(c−2l) may have rank zero; take τ unitary generic. For W∈W_ψ(ρ_c(τ)) and μ in the Schwartz space S_lin(U_R) of the linear coordinates of U_R, set T(W,μ)=∫_(U_R)W(r_z)μ(z)dz, where r_z∈GL_kc is the Levi element attached to z∈U_R by the coordinates of §5.3 (CFK (3.23), p.21; CFK line 845). Its target is the restriction space R_l(τ) of all functions a↦W_l(diag(a,I_((k−1)l))) on GL_l, with W_l in the twisted model |det|^((kc−kl−c+l)/2)W_ψ(ρ_l(τ)): the integral converges absolutely and W⊗μ↦(a↦T(diag(a,I_(kc−l))·W,μ)) is a surjection onto R_l(τ). Neither injectivity of the restriction W_l↦W_l|GL_l nor an identification of R_l(τ) with the complete (k,l) model is asserted. If the functional is built by splitting k instead, auxiliary ordered complex twists give a convergent Jacquet integral and a nonzero continued functional; its range is the one in MODELS Lemma 7, not an arbitrary subquotient.
+
+Assume, for the c-splitting functional, 0<l<c, the fixed permutation and compatible self-dual measures, and τ generic with a unitary norm twist; for the classical transform, additionally a split classical G_c with standard parabolic of Levi GL_l×G_(c−2l), 1≤l≤⌊c/2⌋, and τ unitary generic. (MODELS, §3.1, Lemma 7, pp.6–7; §3.2, Lemma 9 and proof, pp.7–9; MODELS line 234; CFK, Lemma 3.16, pp.21–24; CFK lines 852–858.)
+
+Prove the following basic properties of this construction.
+
+- The c-split functional is the displayed integral on the specified induced carrier.
+
+- Its restriction to any nonzero subrepresentation is nonzero.
+
+- For a classical parabolic with Levi GL_l×G_(c−2l), the transform W⊗μ↦(a↦T(diag(a,I_(kc−l))·W,μ)) converges absolutely and surjects onto the restriction space R_l(τ).
+
+- The functions in R_l(τ) carry the displayed determinant twist |det|^((kc−kl−c+l)/2), so they are not untwisted restrictions of the original function.
+
+**Checks.**
+
+- For c=2,l=1 the two block sizes are equal, but κ still rearranges the interleaved coordinates when k>1.
+
+- For k=1 the integration group is trivial, and the construction is evaluation.
+
+- For k=2,c=3,l=1 the determinant exponent is (6−2−3+1)/2=1; omitting the modulus gives a different character.
+
+Additional normalization checks:
+
+- For c=2,l=1,k=2 the interleaved order (1,2,3,4) changes to (1,3,2,4), despite equal block sizes.
+- For k=1 the integration group is {1}, so its normalized integral is evaluation, of value 1 on the unit vector.
+- For k=2,c=3,l=1 the determinant exponent is 1; at determinant norm 1/2 the twist is 1/2, not 1.
+- For c=3 and l=2 the c-splitting functional exists, splitting the GL coordinates into sizes 2 and 1, but the classical transform does not: c−2l=−1, so G_3 has no standard Levi GL_2×G_(−1).
+- The restriction map is not injective. Over ℚ₃ with ψ of conductor ℤ₃ and ψ(1/3)=ζ₃, take k=3, l=1, τ an unramified unitary principal series of GL₃ and its spherical Whittaker function W with W(1)=1, and put W′(g)=W(g·u₂₃(1/3))−ζ₃W(g). Since diag(a,1,1) commutes with u₂₃(1/3), W′ vanishes on every diag(a,1,1), whereas at the spherical diagonal diag(1,2,1) the root coordinate becomes 2/3 and W′(diag(1,2,1))=ζ₃²−ζ₃≠0.
+
+A proof can proceed as follows: Define the permutation from the explicit ordering of coordinates. Exchange the paired root subgroups and use Fourier inversion to eliminate each off-diagonal block. Prove convergence and nonvanishing on subrepresentations. For the classical transform, realize ρ_c(τ) inductively for the composition (l,c−2l,l) of c, eliminate the roots of U_R in the lower model, and compute the determinant exponent of the restriction space (CFK Lemma 3.16 and proof, pp.21–24).
+
+*Needs:* §5.2; §5.3 (doubling coordinates r_z, for the classical transform only); AutomorphicLFunctionsAndLocalFactors Layer AL.0 (vector-space Fourier analysis); SmoothRepresentationsOfLocalGroups §§SR.2.1–SR.2.3 (induction, Jacquet functors, geometric lemma and pairings) and §SR.0.4 (admissible duals and matrix coefficients); AutomorphicFormsOnReductiveGroups §§2.1–2.7 (real representations and globalizations).
+
 ### 5.5 generalized doubling section family
 
 For τ generic of GL_k and π of G_c, let V(s,τ,c)=i_P^H((|det|^(s−1/2)χ_π W_ψ(ρ_c(τ))⊗χ_π)∘i_(M_P)). Here χ_π on the GL factor means χ_π∘det, with the Levi identification of CFK §1. Entire sections are entire maps to the fixed compact picture, weakly holomorphic and continuous in the Casselman–Wallach topology at infinity. At finite places distinguish arbitrary entire sections from polynomial sections, which are finite Laurent sums in q^(−s). Standard sections are parameter independent in the compact picture. Intertwining operators act on continued sections, not necessarily entire sections at their poles.
@@ -979,7 +983,7 @@ Additional normalization checks:
 
 A proof can proceed as follows: Apply the existing normalized induction functor to the (k,c) model. Identify the fixed compact-picture carrier using Iwasawa decomposition. Define entire, polynomial and standard families and record their evaluation maps.
 
-*Needs:* §5.4; §5.2; SmoothRepresentationsOfLocalGroups §§SR.2.1–SR.2.3 (induction, Jacquet functors, geometric lemma and pairings) and §SR.0.4 (admissible duals and matrix coefficients); AutomorphicFormsOnReductiveGroups §§2.1–2.7 (real representations and globalizations).
+*Needs:* §5.3; §5.2; SmoothRepresentationsOfLocalGroups §§SR.2.1–SR.2.3 (induction, Jacquet functors, geometric lemma and pairings) and §SR.0.4 (admissible duals and matrix coefficients); AutomorphicFormsOnReductiveGroups §§2.1–2.7 (real representations and globalizations).
 
 ### 5.6 Schwartz and seminorm bounds for (k,c) models
 
@@ -1027,13 +1031,13 @@ Prove the following basic properties of this construction.
 
 Additional normalization checks:
 
-- The sign of ψ_U is fixed by descent from U to U₀. For u=vu₀ with v∈V, the section's (k,c)-model covariance gives f(s,δvu₀x)=ψ_(k,c)(δvδ⁻¹)f(s,δu₀x), and §5.4 gives ψ_U(v)=ψ_(k,c)(δvδ⁻¹)⁻¹, so the integrand f(s,δu e₂(ιg))ψ_U(u) is left V-invariant and only U₀ is integrated. Over ℚ₃ with ψ(1/3)=ζ₃, k=c=2 and δvδ⁻¹ with upper-right block diag(1/3,0), the opposite convention ψ_U⁻¹ would multiply the integrand by ψ_(2,2)(δvδ⁻¹)²=ζ₃²≠1, so it would not descend to U₀.
-- For a distinguished-central z, a coefficient multiplier a and section multiplier a⁻¹ have product 1; omitting either factor leaves a.
+- The sign of ψ_U is fixed by descent from U to U₀. For u=vu₀ with v∈V, the section's (k,c)-model covariance gives f(s,δvu₀x)=ψ_(k,c)(δvδ⁻¹)f(s,δu₀x), and §5.3 gives ψ_U(v)=ψ_(k,c)(δvδ⁻¹)⁻¹, so the integrand f(s,δu e₂(ιg))ψ_U(u) is left V-invariant and only U₀ is integrated. Over ℚ₃ with ψ(1/3)=ζ₃, k=c=2 and δvδ⁻¹ with upper-right block diag(1/3,0), the opposite convention ψ_U⁻¹ would multiply the integrand by ψ_(2,2)(δvδ⁻¹)²=ζ₃²≠1, so it would not descend to U₀.
+- For a distinguished-central z, a coefficient multiplier a and section multiplier a⁻¹ have product 1. Omitting the coefficient multiplier leaves a⁻¹ and omitting the section multiplier leaves a; with a=2 these are 1/2 and 2, both different from 1.
 - For GSpin₂, dim(center)=2, dim(C_G^•)=1 and dim(G/C_G^•)=1. Quotienting by the whole connected center would instead give dimension 0 and would change the integral.
 
 A proof can proceed as follows: Prove central descent and diagonal invariance using the geometric datum and the model stabilizer character. Define the integral where the absolute integral is finite. Prove central descent and trilinearity on the absolute-convergence chamber; the continuation is the subsequent theorem of §6.2.
 
-*Needs:* §5.5; §5.4; §5.2; AdelicAlgebraicGroups §§0.1–0.4 and 2.2–2.3 (restricted products and quotient measures).
+*Needs:* §5.5; §5.3; §5.2; AdelicAlgebraicGroups §§0.1–0.4 and 2.2–2.3 (restricted products and quotient measures).
 
 ### 6.2 continuation and nonzero local data
 
@@ -1055,7 +1059,7 @@ A proof can proceed as follows: Translate equivariant functionals into invariant
 
 For the archimedean proof, the equivariant-distribution target uses a real algebraic manifold X, a larger Lie group A containing the acting group C normally, a closed union Z of finitely many locally closed A-orbits and a smooth Fréchet coefficient representation extending to A. For every z∈Z require the stabilizer-character orbit condition and vanishing of the stabilizer-character-isotypic part of (E tensor Sym^ν(conormal_z) tensor δ) dual, where δ is the C-to-stabilizer modular ratio for every integer ν≥0. Prove that the distributions supported on Z vanish and verify these hypotheses for each nonopen doubling stratum (GK Theorem 1.4, pp.10–11; GK line 446). The finite-place argument uses its algebraic orbit/Jacquet counterpart. Conormal degree zero alone does not control derivatives of delta distributions.
 
-*Needs:* §5.4; §5.5; SmoothRepresentationsOfLocalGroups §§SR.2.1–SR.2.3 (induction, Jacquet functors, geometric lemma and pairings) and §SR.0.4 (admissible duals and matrix coefficients); AutomorphicFormsOnReductiveGroups §§2.1–2.7 (real representations and globalizations).
+*Needs:* §5.3; §5.5; SmoothRepresentationsOfLocalGroups §§SR.2.1–SR.2.3 (induction, Jacquet functors, geometric lemma and pairings) and §SR.0.4 (admissible duals and matrix coefficients); AutomorphicFormsOnReductiveGroups §§2.1–2.7 (real representations and globalizations).
 
 ### 6.4 degenerate-Whittaker normalized intertwiner
 
@@ -1139,7 +1143,7 @@ A proof can proceed as follows: Compute the normalized intertwiners in stages an
 
 ### 6.7 L- and epsilon-factors from tempered data
 
-For tempered π and τ at a finite place, regard γ(s,π×τ,ψ) as a rational function of X=q^(−s), take its zero divisor on ℂ×, with multiplicities, and let P∈C[X] with P(0)=1 be the polynomial with exactly that divisor on ℂ×; the order of γ at X=0 is ignored, since powers of X are units in C[X,X⁻¹]. Equivalently P(q^(−s)) and γ(s) have the same zeros in the s-plane. Set L=P(q^(−s))⁻¹ and ε=γL(s)/L(1−s,π∨×τ∨); it is a Laurent unit. Extend to essentially tempered data by norm shifts. For the split tori G=SO₂ and GSpin₂, with the pair (α,β) of characters of §6.11 and no unitarity or sign condition on their exponents, define L(s,π×τ)=L(s,α×τ)L(s,β×τ) and ε(s,π×τ,ψ)=ε(s,α×τ,ψ)ε(s,β×τ,ψ) with the GL₁×GL_k Rankin–Selberg factors; §6.11 proves that their gamma quotient is the γ of §6.5 and that this agrees with the tempered and Langlands-quotient definitions wherever those apply. The chamber condition below concerns the root directions of a proper parabolic; a torus has none, and a common norm shift of τ cannot make both α×τ and β×τ tempered when their exponents differ. For general π the Langlands quotient of (×σ_i)⋊π′ and generic τ=×τ_j with essentially tempered τ_j, set L(π×τ)=L(σ×τ)L(σ∨×χ_πτ)∏_jL(π′×τ_j), with the analogous product for ε. Import the normalized Langlands classification and the nongeneric GL pair factors from SmoothRepresentationsOfLocalGroups §SR.3.3 and EndoscopicTransferAndUnitaryTraceComparison §10.29. Use the positive-exponent chamber a_d>r when |Υ|^(−r)π′ is tempered. At infinity use the standard-transfer GL factors. Allow an empty GL block l=0, with π′ essentially tempered, so generic nonessentially-tempered τ is still covered. The SO₀ and SO₁ tail factors are all 1.
+For tempered π and τ at a finite place, regard γ(s,π×τ,ψ) as a rational function of X=q^(−s), take its zero divisor on ℂ×, with multiplicities, and let P∈C[X] with P(0)=1 be the polynomial with exactly that divisor on ℂ×; the order of γ at X=0 is ignored, since powers of X are units in C[X,X⁻¹]. Equivalently P(q^(−s)) and γ(s) have the same zeros in the s-plane. Set L=P(q^(−s))⁻¹ and ε=γL(s)/L(1−s,π∨×τ∨); it is a Laurent unit. Extend to essentially tempered data by norm shifts. For the split tori G=SO₂ and GSpin₂, with the split-torus pair (α,β) of §0.3 and no unitarity or sign condition on their exponents, define L(s,π×τ)=L(s,α×τ)L(s,β×τ) and ε(s,π×τ,ψ)=ε(s,α×τ,ψ)ε(s,β×τ,ψ) with the GL₁×GL_k Rankin–Selberg factors; §6.11 proves that their gamma quotient is the γ of §6.5 and that this agrees with the tempered and Langlands-quotient definitions wherever those apply. The chamber condition below concerns the root directions of a proper parabolic; a torus has none, and a common norm shift of τ cannot make both α×τ and β×τ tempered when their exponents differ. For general π the Langlands quotient of (×σ_i)⋊π′ and generic τ=×τ_j with essentially tempered τ_j, set L(π×τ)=L(σ×τ)L(σ∨×χ_πτ)∏_jL(π′×τ_j), with the analogous product for ε. Import the normalized Langlands classification and the nongeneric GL pair factors from SmoothRepresentationsOfLocalGroups §SR.3.3 and EndoscopicTransferAndUnitaryTraceComparison §10.29. Use the positive-exponent chamber a_d>r when |Υ|^(−r)π′ is tempered. At infinity use the standard-transfer GL factors. Allow an empty GL block l=0, with π′ essentially tempered, so generic nonessentially-tempered τ is still covered. The SO₀ and SO₁ tail factors are all 1.
 
 Assume actual ordered Langlands data; τ generic; canonical normalization P(0)=1; character conventions of CFK Remark 3.6. (CFK, §3.4, (3.15)–(3.17), Remark 3.6, p.17; CFK line 671.)
 
@@ -1170,17 +1174,17 @@ Additional normalization checks:
 
 A proof can proceed as follows: Separate zeros of the rational gamma numerator in the tempered case and prove independence of ψ. Prove the Laurent-unit epsilon identity. Use uniqueness of Langlands data and multiplicativity to establish independence of presentations and dual compatibility.
 
-*Needs:* §6.6; SmoothRepresentationsOfLocalGroups §SR.3.3 (tempered support and Langlands quotients); EndoscopicTransferAndUnitaryTraceComparison §10.29 (canonical nongeneric GL factors); §5.2 (local generalized Speh comparison); AutomorphicLFunctionsAndLocalFactors Layer AL.3 (Rankin–Selberg factors); AutomorphicFormsOnReductiveGroups §§2.1–2.7 (real representations and globalizations).
+*Needs:* §6.6; §0.3 (split-torus pair); SmoothRepresentationsOfLocalGroups §SR.3.3 (tempered support and Langlands quotients); EndoscopicTransferAndUnitaryTraceComparison §10.29 (canonical nongeneric GL factors); §5.2 (local generalized Speh comparison); AutomorphicLFunctionsAndLocalFactors Layer AL.3 (Rankin–Selberg factors); AutomorphicFormsOnReductiveGroups §§2.1–2.7 (real representations and globalizations).
 
 ### 6.8 spherical integral and doubling denominator
 
-For normalized unramified data, Z=L(s,π×τ)/b(s,c,τ⊗χ_π). If c is even, b=[L(s+c/2,τ), for Sp only]∏_(j=1)^(c/2)L(2s+2j−2,τ,Sym²⊗χ_π)L(2s+2j−1,τ,∧²⊗χ_π). If c is odd, b=∏_(j=1)^⌊c/2⌋L(2s+2j−1,τ,Sym²⊗χ_π)∏_(j=1)^⌈c/2⌉L(2s+2j−2,τ,∧²⊗χ_π). Haar measures give volume 1 to U₀∩K_H and K_G. The local γ,L,ε agree with those of T(π)×τ when π is finite-place unramified, with arbitrary generic τ, and at every archimedean place.
+For normalized unramified data, Z=L(s,π×τ)/b(s,c,τ⊗χ_π). If c is even, b=[L(s+c/2,τ), for Sp only]∏_(j=1)^(c/2)L(2s+2j−2,τ,Sym²⊗χ_π)L(2s+2j−1,τ,∧²⊗χ_π). If c is odd, b=∏_(j=1)^⌊c/2⌋L(2s+2j−1,τ,Sym²⊗χ_π)∏_(j=1)^⌈c/2⌉L(2s+2j−2,τ,∧²⊗χ_π). Here K_G=G(O) and K_H=H(O) are the integral points of the split models in the coordinates of §0.3 and §5.3 (CFK line 568), the spherical vectors and section are fixed by them, and Haar measures give volume 1 to U₀∩K_H and K_G; as in §2.3, the identity refers to this compatible pair and not to an arbitrary hyperspecial subgroup of H containing the image of K_G×K_G. The local γ,L,ε agree with those of T(π)×τ when π is finite-place unramified, with arbitrary generic τ, and at every archimedean place.
 
 Assume Spherical Z formula: π,τ,ψ,sections all unramified. Factor comparison: only π unramified at finite places; τ need not be unramified. (CFK, Equations (3.2)–(3.3), p.14; Theorem 3.7, p.17; CFK line 567.)
 
 A proof can proceed as follows: Use Satake parameters and the spherical vector of the (k,c) model to sum the integral. Identify symmetric/exterior-square Euler polynomials and the extra Sp factor. Apply local multiplicativity and the standard-transfer comparison for the stated range.
 
-*Needs:* §6.1; §6.7; AutomorphicLFunctionsAndLocalFactors Layer AL.4 (Satake Euler factors and convergence); SmoothRepresentationsOfLocalGroups Layer SR.4 (Satake theory); AutomorphicFormsOnReductiveGroups §§2.1–2.7 (real representations and globalizations).
+*Needs:* §6.1; §6.7; §5.3; AutomorphicLFunctionsAndLocalFactors Layer AL.4 (Satake Euler factors and convergence); SmoothRepresentationsOfLocalGroups Layer SR.4 (Satake theory); AutomorphicFormsOnReductiveGroups §§2.1–2.7 (real representations and globalizations).
 
 ### 6.9 tempered holomorphy and Langlands pole comparison
 
@@ -1204,13 +1208,13 @@ A proof can proceed as follows: For generic Π the statement is CFK Theorem 3.10
 
 ### 6.11 split-torus local factors
 
-Let F be a local field of characteristic zero, τ an irreducible generic representation of GL_k(F) with k≥1, and G=SO₂ or GSpin₂. Identify SO₂ with GL₁ through diag(t,t⁻¹)↦t, its action on the first isotropic basis line; an irreducible π is then a character μ of F×, and put (α,β)=(μ,μ⁻¹). Identify GSpin₂ with Gₘ×Gₘ through its cocharacters e₁∨ and e₀∨ (CFK §1, p.7; CFK lines 264–267), so that π(e₁∨(y)e₀∨(x))=σ(y)χ_π(x) for characters σ,χ_π of F×, and put (α,β)=(σ,σ⁻¹χ_π). Thus αβ=χ_π, with χ_π=1 for SO₂, and α⊕β is the standard transfer r∘φ_π of the parameter of π. Prove that at every place, finite or archimedean, ramified or unramified, and for characters α, β of arbitrary exponents, the Layer 6 factors are products of two GL₁×GL_k Rankin–Selberg factors of AutomorphicLFunctionsAndLocalFactors AL.3, which are Tate factors when k=1. For γ this is a theorem about the §6.5 definition; for L and ε, which §6.7 defines on the split tori by these products, it is the statement that the products satisfy the γ-identity of §6.7 and agree with the gamma-zero, essentially tempered and archimedean definitions of §6.7 wherever those apply:
+Let F be a local field of characteristic zero, τ an irreducible generic representation of GL_k(F) with k≥1, and G=SO₂ or GSpin₂. With the identifications of §0.3, an irreducible π is a character of G, and (α,β) is its split-torus pair of §0.3, so αβ=χ_π, with χ_π=1 for SO₂, and α⊕β is the standard transfer of the parameter of π. Prove that at every place, finite or archimedean, ramified or unramified, and for characters α, β of arbitrary exponents, the Layer 6 factors are products of two GL₁×GL_k Rankin–Selberg factors of AutomorphicLFunctionsAndLocalFactors AL.3, which are Tate factors when k=1. For γ this is a theorem about the §6.5 definition; for L and ε, which §6.7 defines on the split tori by these products, it is the statement that the products satisfy the γ-identity of §6.7 and agree with the gamma-zero, essentially tempered and archimedean definitions of §6.7 wherever those apply:
 
     γ(s,π×τ,ψ) = γ(s,α×τ,ψ)·γ(s,β×τ,ψ)
     L(s,π×τ)   = L(s,α×τ)·L(s,β×τ)
     ε(s,π×τ,ψ) = ε(s,α×τ,ψ)·ε(s,β×τ,ψ)
 
-The pair is unordered: replacing the identification of SO₂ with GL₁ by its inverse exchanges μ and μ⁻¹ and leaves each product unchanged.
+Since the pair is unordered (§0.3), each product is unchanged when μ and μ⁻¹ are exchanged.
 
 Assume local characteristic-zero field; π an irreducible representation, hence a character, of the split torus G; τ irreducible generic; fixed ψ and the doubling data of Layer 5. (CFK, §1, pp.6–7, CFK lines 250–267 and 279–282; CFK Theorem 3.5, multiplicativity (3.9) and archimedean property (3.13), p.16, CFK lines 638–645 and 659–660; definitions (3.15)–(3.17), p.17, CFK lines 671–697.)
 
@@ -1292,7 +1296,7 @@ Assume k>1; unitary generic τ for multiplicativity and the pole analysis; π fi
 
 A proof can proceed as follows: Prove the uniqueness bound for (A.2), following the proof that CFK attributes to KAP23 Theorem 25 (cited by its locator), and deduce the functional equation from the membership of Z_GL and Z_GL* in that space. Split the c coordinate and apply the root-elimination transforms to the two integrals. Justify each Fourier exchange with Schwartz convolution and Dixmier–Malliavin, then reduce to GL₁×GL_k RS integrals with compact outer integration.
 
-*Needs:* §7.1; §5.3; AutomorphicLFunctionsAndLocalFactors Layer AL.0 (vector-space Fourier analysis); AutomorphicLFunctionsAndLocalFactors Layer AL.3 (Rankin–Selberg factors); AutomorphicFormsOnReductiveGroups §§2.1–2.7 (real representations and globalizations).
+*Needs:* §7.1; §5.4; AutomorphicLFunctionsAndLocalFactors Layer AL.0 (vector-space Fourier analysis); AutomorphicLFunctionsAndLocalFactors Layer AL.3 (Rankin–Selberg factors); AutomorphicFormsOnReductiveGroups §§2.1–2.7 (real representations and globalizations).
 
 ### 7.3 common pole divisor of the auxiliary integrals
 
@@ -1340,13 +1344,13 @@ A proof can proceed as follows: Use the quotient-to-induced matrix-coefficient r
 
 ### 7.5 open-chart reduction to the auxiliary GL integral
 
-For π finite-place unramified or archimedean with unitary χ_π and a nontrivial positive Langlands block σ of GL_l, the local doubling integrals can be reduced by suitable sections and matrix-coefficient vectors to the auxiliary GL_l×GL_k family for σ∨×χ_πτ. The open-cell coordinate map of CFK (3.41) is a homeomorphism, a diffeomorphism at infinity, onto the relevant open subset of P⧸H. Its Jacobian and model transform produce exactly the local integral shift. The reduction reaches every function of the restriction space of §5.3, that is every restriction a↦W_l(diag(a,I_((k−1)l))) of the twisted lower model, which is all that the auxiliary integral of §7.1 evaluates. Compact support and Fourier convolution justify the integrations at finite places; at infinity one needs the continuous meromorphic Fubini assertion and the opposite-unipotent-estimate contract. The unitary χ_π hypothesis is carried through each reduction.
+For π finite-place unramified or archimedean with unitary χ_π and a nontrivial positive Langlands block σ of GL_l, the local doubling integrals can be reduced by suitable sections and matrix-coefficient vectors to the auxiliary GL_l×GL_k family for σ∨×χ_πτ. The open-cell coordinate map of CFK (3.41) is a homeomorphism, a diffeomorphism at infinity, onto the relevant open subset of P⧸H. Its Jacobian and model transform produce exactly the local integral shift. The reduction reaches every function of the restriction space of §5.4, that is every restriction a↦W_l(diag(a,I_((k−1)l))) of the twisted lower model, which is all that the auxiliary integral of §7.1 evaluates. Compact support and Fourier convolution justify the integrations at finite places; at infinity one needs the continuous meromorphic Fubini assertion and the opposite-unipotent-estimate contract. The unitary χ_π hypothesis is carried through each reduction.
 
 Assume τ unitary generic; k>1; π in the indicated range; unitary χ_π; nonempty GL_l block and fixed open-cell coordinates. (CFK, Propositions 3.17–3.19, Lemma 3.20, Corollary 3.21 and (3.32), (3.35)–(3.41), pp.24–32; CFK line 987.)
 
 A proof can proceed as follows: Insert the induced-model matrix-coefficient formula and isolate the inner Z₁ integral. Use the explicit open chart, sections supported there, and Lemma 3.20 to move the integrations. Apply root elimination to Z₂, including the determinant exponent, to obtain arbitrary auxiliary GL_l data.
 
-*Needs:* §5.3; §6.1; §7.1; §5.6; AutomorphicFormsOnReductiveGroups §§2.1–2.7 (real representations and globalizations); SmoothRepresentationsOfLocalGroups §SR.3.3 (tempered support and Langlands quotients).
+*Needs:* §5.4; §6.1; §7.1; §5.6; AutomorphicFormsOnReductiveGroups §§2.1–2.7 (real representations and globalizations); SmoothRepresentationsOfLocalGroups §SR.3.3 (tempered support and Langlands quotients).
 
 ### 7.6 attainment of the doubling L-factor poles
 
@@ -1489,7 +1493,7 @@ Additional normalization checks:
 
 A proof can proceed as follows: Construct the Fourier coefficient with the displayed character, pull the second cusp vector back by ι, and verify each distinguished-central invariance before integrating. Classify the relevant P(F)⧸H(F) orbits after Fourier expansion; show the nonopen terms vanish using the vanishing of generalized Whittaker models along orbits above (k^c) and cuspidality. Identify the open-orbit stabilizer and matrix coefficient, then factor the absolutely convergent integral using restricted-product measures.
 
-*Needs:* §5.4; §5.2; §6.1; §6.8; §8.1; AdelicAlgebraicGroups §§0.1–0.4 and 2.2–2.3 (restricted products and quotient measures); AutomorphicFormsOnReductiveGroups §§4.1–4.3 (globalization, cuspidality and pairings).
+*Needs:* §5.3; §5.2; §6.1; §6.8; §8.1; AdelicAlgebraicGroups §§0.1–0.4 and 2.2–2.3 (restricted products and quotient measures); AutomorphicFormsOnReductiveGroups §§4.1–4.3 (globalization, cuspidality and pairings).
 
 ### 9.2 completed doubling L-function
 
@@ -1579,7 +1583,7 @@ This layer follows Layer 5, Layer 6, Layer 7, Layer 8. The direct supplier input
 
 For automorphic π of G_c(A_F), a weak transfer is an irreducible automorphic Π of GL_N(A_F) whose Satake conjugacy class equals r_G(t_(π_v)) at almost all unramified finite places and whose infinitesimal character at every archimedean place is the one induced by r_G. This definition does not require equality of the entire archimedean local representations. The constructed transfer in §10.4 will satisfy that stronger archimedean comparison. The global GL isobaric-sum constructor is imported from AutomorphicLFunctionsAndLocalFactors, Representation prerequisites, GLₙ isobaric sums, and nongeneric almost-everywhere support uniqueness from AutomorphicLFunctionsAndLocalFactors AL.3.
 
-Assume number field; the standard degree and central data of Layer 0; automorphic representations with fixed central characters. (CFK, Definition 2.2, p.9; Remark 4.9, p.41; CFK line 345.)
+Assume number field; the standard degree and central data of Layer 0; automorphic representations with fixed central characters. (CFK, Definition 2.2, p.9; Remark 4.9, p.41; CFK line 356.)
 
 Prove the following basic properties of this construction.
 
