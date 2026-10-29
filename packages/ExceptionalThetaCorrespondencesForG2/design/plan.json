@@ -4760,6 +4760,12 @@
     "needs": "For a characteristic-zero nonarchimedean local field F of residue characteristic p, a central division F-algebra D of odd prime degree ℓ≠p, and every irreducible smooth complex representation τ of D× trivial on F× of dimension greater than one, prove that τ has a nonzero vector fixed by K× for some maximal subfield K⊂D, by the admissible-pair parametrization of such τ and the zero-weight dimension formula for unramified and totally ramified K.",
     "supplier": "SmoothRepresentationsOfLocalGroupsPartII",
     "section": "SRU.3, extension of local character theory"
+  },
+  {
+    "slug": "local-division-characters",
+    "needs": "For every central division algebra D of finite dimension over a characteristic-zero nonarchimedean local field F, pullback along the reduced norm Nrd:D×→F× is a bijection from smooth complex characters of F× to smooth complex characters of D×; equivalently Nrd is surjective and its kernel SL₁(D) is the closure of the commutator subgroup of D×.",
+    "supplier": "SmoothRepresentationsOfLocalGroupsPartII",
+    "section": "SRU.3, extension of local character theory"
   }
 ],
   "sourceIssues": [
