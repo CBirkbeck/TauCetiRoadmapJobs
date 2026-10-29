@@ -375,3 +375,23 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-26"
 cited_for = ["Layer 1", "Layer 6"]
+
+[[source]]
+id = "LLHL19"
+authors = "Daniel Le, Bao V. Le Hung, Brandon Levin"
+title = "Weight elimination in Serre-type conjectures"
+year = 2019
+venue = "Duke Math. J. 168, no. 13 (2019), 2433-2506"
+doi = "10.1215/00127094-2019-0015"
+arxiv = "1610.04819v4"
+locator_scheme = "theorem"
+locator = "Theorem 4.3.8"
+url = "https://arxiv.org/abs/1610.04819v4"
+fetched_from = "https://arxiv.org/pdf/1610.04819v4"
+fetched_at = "2026-10-29T06:20:21Z"
+sha256 = "c976fac5c200cb175ca0462f3575d934410b6e07850e729ac97a55a06bf76e10"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-29"
+version_note = "arXiv v4; cited in its numbering"
+cited_for = ["Scope and ownership"]
