@@ -48,7 +48,7 @@ Sections R0.1a–R0.1b supply adic rings of finite ideal type and their noetheri
 
 ### From TauCetiRoadmap.AdicSpacesPartIII
 
-Section F0.1, *completed-localization*, supplies completed principal localisations, their quotient descriptions and flatness. F0.2 supplies Spf with its ring sheaf and *spf-morphism-correspondence*: morphisms from a formal scheme X to Spf A are the ring maps A → Γ(X, 𝒪_X) that are continuous on affine formal opens. F0.3 supplies locally noetherian formal schemes, gluing and the scheme embedding. F0.4 supplies adic, finite-type and proper morphisms, base change and coherent-ideal closed formal subschemes. F0.6, *associated-formal-module*, *affine-coherent-equivalence* and *coherent-as-inverse-system*, supplies association of finite modules, exactness, and tensor and Hom comparisons; the comparison of locally free coherent modules with finite projective modules is §1.3 here. F0.8, *coherent-formal-module-properties*, supplies the coherent abelian category, its closure under images, and coherent pullback *FormalScheme.cohPullback* with its composition law. Inverse images of closed formal subschemes and flat morphisms of formal schemes are defined in §0.6 here. F0.6, *formal-direct-image-comparison*, compares proper algebraic morphisms with their completions; that does not by itself cover arbitrary proper formal morphisms.
+Section F0.1, *completed-localization*, supplies completed principal localisations, their quotient descriptions and flatness. F0.2 supplies Spf with its ring sheaf and *spf-morphism-correspondence*: morphisms from a formal scheme X to Spf A are the ring maps A → Γ(X, 𝒪_X) that are continuous on affine formal opens. F0.3 supplies locally noetherian formal schemes, gluing and the scheme embedding. F0.4 supplies adic, finite-type and proper morphisms, base change and coherent-ideal closed formal subschemes. F0.6, *associated-formal-module*, *affine-coherent-equivalence* and *coherent-as-inverse-system*, supplies association of finite modules, exactness, and tensor and Hom comparisons, the affine pullback formula `FormalScheme.Spf.completedTilde.pullbackIso` and the ideal-image formula `FormalScheme.Spf.completedTilde.ideal_map` (EGA-I (10.10.8)–(10.10.9)); the comparison of locally free coherent modules with finite projective modules is §1.3 here. F0.8, *coherent-formal-module-properties*, supplies the coherent abelian category, its closure under images, and coherent pullback *FormalScheme.cohPullback* with its composition law. Inverse images of closed formal subschemes and flat morphisms of formal schemes are defined in §0.6 here. F0.6, *formal-direct-image-comparison*, compares proper algebraic morphisms with their completions; that does not by itself cover arbitrary proper formal morphisms.
 
 Affine coherent acyclicity is imported from that comparison, not requested. Let B be an adic noetherian ring with ideal of definition J and M a finite B-module. Apply *formal-direct-image-comparison* to the identity of Spec B with closed subscheme V(J): the completion is Spf B, and M~ completes to M^Δ (*associated-formal-module*). It identifies `H^q(Spf B, M^Δ)` with the J-adic completion of `H^q(Spec B, M~)`, which is zero for q > 0 by scheme affine acyclicity (SchemeAndStackFoundations §2.6). Every coherent module on Spf B is some M^Δ (*affine-coherent-equivalence*), so coherent modules on affine noetherian formal schemes have no cohomology in positive degrees. For B = k⟦t⟧ and M = B/(t²), H⁰ is M, of length 2, and H¹ = 0.
 
@@ -198,7 +198,7 @@ The API consists of these facts under the hypotheses above.
 
 Let X be a locally noetherian formal scheme, Y ⊆ X the closed formal subscheme with coherent ideal 𝒥 (AdicSpacesPartIII §F0.4). A coherent 𝒪_X-module F is formally supported on Y if every point of |X| has an open neighbourhood U with 𝒥^n·F|_U = 0 for some n; on noetherian X one n works globally. Coh_Y(X) ⊆ Coh(X) is the full subcategory of such F; it is a Serre subcategory. On X = Spf A with Y = Spf(A/J) and F = M^Δ (M a finite A-module): F is formally supported on Y iff J^nM = 0 for some n iff Supp_A(M) ⊆ V(J) ⊆ Spec A. Formal support depends on 𝒥 only through its radical, and it is not detected by the topological support Supp F ⊆ |X|. (ZHANG21, Appendix B.1, p. 971; ZHANG21 lines 4511–4521; STACKS, algebra, Tag 00L6; STACKS line 6891 (6891–6900)).
 
-For a morphism g : X′ → X of locally noetherian formal schemes define the inverse image `g⁻¹Y := V(g^*𝒥·𝒪_{X′})`, where `g^*𝒥·𝒪_{X′}` is the image of the coherent pullback `g^*𝒥 → g^*𝒪_X = 𝒪_{X′}`; it is a coherent ideal, being the image of a map of coherent modules. Prove that for a continuous A → A′ and the induced Spf A′ → Spf A the inverse image of Spf(A/J) is Spf(A′/JA′) (EGA-I, Ch. I (10.10.9), p. 203; EGA-I lines 8193–8199), that id⁻¹Y = Y and (g∘h)⁻¹Y = h⁻¹(g⁻¹Y), and that `g^*` carries `Coh_Y(X)` into `Coh_{g⁻¹Y}(X′)`. Call g flat when every stalk map `𝒪_{X,g(x′)} → 𝒪_{X′,x′}` is flat, and prove that pullback of coherent modules along a flat g is exact.
+For a morphism g : X′ → X of locally noetherian formal schemes define the inverse image `g⁻¹Y := V(g^*𝒥·𝒪_{X′})`, where `g^*𝒥·𝒪_{X′}` is the image of the coherent pullback `g^*𝒥 → g^*𝒪_X = 𝒪_{X′}`; it is a coherent ideal, being the image of a map of coherent modules. For a continuous A → A′ and the induced Spf A′ → Spf A, the inverse image of Spf(A/J) is Spf(A′/JA′) by the supplied `FormalScheme.Spf.completedTilde.ideal_map` (AdicSpacesPartIII §F0.6, *associated-formal-module*; EGA-I, Ch. I (10.10.9), p. 203; EGA-I lines 8193–8199). Prove that id⁻¹Y = Y and (g∘h)⁻¹Y = h⁻¹(g⁻¹Y), and that `g^*` carries `Coh_Y(X)` into `Coh_{g⁻¹Y}(X′)`. Call g flat when every stalk map `𝒪_{X,g(x′)} → 𝒪_{X′,x′}` is flat, and prove that pullback of coherent modules along a flat g is exact.
 
 X locally noetherian; 𝒥 a coherent ideal. Supports are formal (power of the ideal kills), not topological. The inverse-image ideal is the image of g^*𝒥, not g^*𝒥 itself, and g is arbitrary unless flatness is stated.
 
@@ -214,9 +214,9 @@ The API consists of these facts under the hypotheses above.
 - Ideals with the same radical give the same supported subcategory.
 - For n ≥ 1, closed pushforward from V(𝒥ⁿ) takes coherent modules into Coh_Y(X).
 
-*Proof route.* For an extension killed on its ends by 𝒥ᵃ and 𝒥ᵇ, the middle is killed by 𝒥ᵃ⁺ᵇ. Subobjects and quotients inherit annihilation. On Spf A apply the finite-module support criterion and the exact affine coherent equivalence. Ideals with the same radical contain powers of one another locally. If two factors are killed by Jᵃ and Kᵇ with a,b ≥ 1, their tensor and Tor are killed by (J+K)ᵃ⁺ᵇ⁻¹; the exponent is positive. Coherent pullback is right exact and the category of coherent modules is closed under images, so the inverse-image ideal is coherent; on affine formal spectra the pullback of an associated module is the associated module of the base change, which identifies the image of `(J ⊗_A A′)^Δ` with `(JA′)^Δ`. Since `(𝒥𝒪_{X′})ⁿ = 𝒥ⁿ𝒪_{X′}`, a module killed by 𝒥ⁿ pulls back to one killed by the nth power of the inverse-image ideal. Right exactness of pullback applied to the surjection of `h^*g^*𝒥` onto `h^*(g^*𝒥·𝒪_{X′})` gives the composition law. The stalk of g^*F at x′ is `F_{g(x′)} ⊗ 𝒪_{X′,x′}`, which gives exactness for flat g.
+*Proof route.* For an extension killed on its ends by 𝒥ᵃ and 𝒥ᵇ, the middle is killed by 𝒥ᵃ⁺ᵇ. Subobjects and quotients inherit annihilation. On Spf A apply the finite-module support criterion and the exact affine coherent equivalence. Ideals with the same radical contain powers of one another locally. If two factors are killed by Jᵃ and Kᵇ with a,b ≥ 1, their tensor and Tor are killed by (J+K)ᵃ⁺ᵇ⁻¹; the exponent is positive. Coherent pullback is right exact and the category of coherent modules is closed under images, so the inverse-image ideal is coherent; on affine formal spectra the supplied `FormalScheme.Spf.completedTilde.pullbackIso` and `FormalScheme.Spf.completedTilde.ideal_map` give the affine formula. Since `(𝒥𝒪_{X′})ⁿ = 𝒥ⁿ𝒪_{X′}`, a module killed by 𝒥ⁿ pulls back to one killed by the nth power of the inverse-image ideal. Right exactness of pullback applied to the surjection of `h^*g^*𝒥` onto `h^*(g^*𝒥·𝒪_{X′})` gives the composition law. The stalk of g^*F at x′ is `F_{g(x′)} ⊗ 𝒪_{X′,x′}`, which gives exactness for flat g.
 
-*Needs:* AdicSpacesPartIII §F0.6; AdicSpacesPartIII §F0.8 (coherent-formal-module-properties, including *cohPullback* and closure under images); AdicSpacesPartIII §F0.4; AdicSpacesPartIII §F0.6 (affine-coherent-equivalence); Mathlib `Module.support`; Mathlib `Submodule.annihilator`; Mathlib `Module.Flat`.
+*Needs:* AdicSpacesPartIII §F0.6 (associated-formal-module: `FormalScheme.Spf.completedTilde.pullbackIso`, `FormalScheme.Spf.completedTilde.ideal_map`); AdicSpacesPartIII §F0.8 (coherent-formal-module-properties, including *cohPullback* and closure under images); AdicSpacesPartIII §F0.4; AdicSpacesPartIII §F0.6 (affine-coherent-equivalence); Mathlib `Module.support`; Mathlib `Submodule.annihilator`; Mathlib `Module.Flat`.
 
 **Checks.**
 
@@ -251,7 +251,6 @@ The API consists of these facts under the hypotheses above.
 
 - On Spf ℤ_p⟦t⟧, Tor 1 (O/(t)) (O/(t)) ≅ O/(t).
 - On Spf ℤ_p⟦t⟧, Tor 1 (O/(t)) (O/(t − p)) = 0 and Tor 0 ≅ O/(t, p) ≅ 𝔽_p.
-- Tor j 𝒪_X G = 0 for j ≥ 1 and Tor 0 𝒪_X G ≅ G.
 - On Spf ℤ_p, Tor 1 𝔽_p 𝔽_p ≅ 𝔽_p, whereas Tor over the reduction Spec 𝔽_p vanishes: a definition through the thickenings or the reduction is wrong.
 - For R = k[ε]/(ε²), Torⱼ^R(k,k) ≅ k for every j ≥ 0, from the resolution with every differential multiplication by ε. Thus coherence of every Tor sheaf does not justify an infinite alternating sum in K′₀.
 
@@ -363,7 +362,7 @@ The API consists of these facts under the hypotheses above.
 - For A a noetherian complete local ring, K₀(Spf A) ≃+ ℤ by alternating sum of ranks.
 - On Spf ℤ_p, the class of [O →p O] in `K₀^{V(p)}(Spf ℤ_p)` is nonzero and maps to 1 under the homology class map to K′₀(Spec 𝔽_p) ≃ ℤ.
 - For X = Spf k, the degreewise exact group of bounded strict complexes without the quasi-isomorphism relation records [O →id O] as (1,1) in its two degree coordinates; in K₀(X) its class is 1 − 1 = 0.
-- For X = P¹_k, a separated regular noetherian scheme with the resolution property, K₀(X) is freely generated by [O] and [O(−1)], and the Euler sequence 0 → O(−1) → O² → O(1) → 0 gives [O(1)] = 2[O] − [O(−1)]; with L = [O(−1)] this says L⁻¹ = 2 − L, equivalently (1 − L)² = 0. The parent's strict group (SchemeKTheoryOperations §6.12) carries the same values; a model forgetting quasi-isomorphisms or exact sequences would not satisfy this relation.
+- For X = P¹_k, a separated regular noetherian scheme with the resolution property, K₀(X) is freely generated by [O] and [O(−1)], and the Euler sequence 0 → O(−1) → O² → O(1) → 0 gives [O(1)] = 2[O] − [O(−1)]; with L = [O(−1)] this says L⁻¹ = 2 − L, equivalently (1 − L)² = 0. The parent's strict group (SchemeKTheoryOperations §6.12) carries the same values. This tests the exact-sequence relation; the acyclic complex [O →id O] in the preceding Check separately tests the quasi-isomorphism relation.
 
 ### 1.5 Affine transport: K-groups of Spf A are those of Spec A
 
@@ -404,7 +403,6 @@ The API consists of these facts under the hypotheses above.
 - For A = k[ε]/(ε²) (discrete, so Spf A = Spec A) and Y = X, h_X : K₀(Spf A) ≅ ℤ → K′₀(Spf A) ≅ G₀(A) ≅ ℤ, the target normalised by [k] = 1, sends 1 = [A] to 2, since A has a two-step filtration with quotients k; this is the value of the supplied affine Cartan map, and a rank-based target would give 1.
 - For X = Spf k⟦x, y⟧/(xy) and Y = X, h : ℤ → ℤ² sends r to (r, r) and cannot reach (1, 0): without regularity h is not an isomorphism.
 - For Y = ∅ both sides are 0.
-- The Koszul complex of a regular sequence f_1, …, f_r has class mapping to [O/(f_1, …, f_r)].
 - A one-step shift of a residue-field resolution changes its supported homology class from 1 to −1; the Euler sign is fixed.
 
 ### 1.7 The supported cup product
@@ -455,7 +453,6 @@ The API consists of these facts under the hypotheses above.
 
 - On Spf ℤ_p⟦t⟧, the derived intersection of V(t) and V(t − p) = `[O_{Spec 𝔽_p}] = 1` in K′₀(Spec 𝔽_p) ≃ ℤ.
 - On Spf ℤ_p⟦t⟧, the derived self-intersection of V(t) equals 0 in K′₀(V(t)) ≃ ℤ: the derived self-intersection of a divisor with trivial normal bundle is not its structure sheaf.
-- Pairing [𝒪_X] with [G] gives [G].
 - On X = P²_k, two distinct k-lines L = V(x) and M = V(y) meet in the rational point P = V(x, y): x is a nonzerodivisor on O_M, so Tor₀(O_L, O_M) = O_P and the positive Tor sheaves vanish, and the pairing is [O_P] = 1 in K′₀(P) ≅ ℤ. Under the Cartan equivalence the Koszul class of x pairs with [O_M] in the parent's K × G pairing to the same value.
 - For a free rank-two input and a residue-field class, the pairing is 2[k]; this excludes the zero pairing.
 
@@ -508,7 +505,6 @@ The API consists of these facts under the hypotheses above.
 
 - On Spf ℤ_p⟦t⟧ with Y = V(p, t): F^2 = ⊤ and F^3 = ⊥.
 - On Spf ℤ_p⟦t⟧, `[K(t)] ∈ F^1 K₀^{V(t)}(X)` and its image in Gr^1 is nonzero (it maps to 1 ∈ K′₀(V(t)) ≃ ℤ).
-- F^0 = ⊤; if dim X = d < ∞, then `F^{d+1} = ⊥`; for Y = ∅ all terms are ⊥.
 - With topological codimension of |Z| in |X| (both a point for every nonempty Z ⊆ Spf ℤ_p⟦t⟧) every class would lie in F^0 only, and [K(p, t)] would not lie in F^2; the local-ring codimension puts it in F^2.
 - On X = P²_k with full support and h = 1 − [O(−1)], the class of a line: F¹K₀ = ℤh + ℤh², F²K₀ = ℤh² and F³K₀ = 0, and the class h² of a rational point is nonzero. A curve of degree e contributes 1 − (1 − h)ᵉ = e·h − (e(e−1)/2)·h², inside F¹; a filtration that ignored codimension would not separate F² from F¹.
 - For X = Spec k, F⁰ = ℤ, F¹ = 0, F₀ = ℤ and F₋₁ = 0; for the empty X all groups and all filtration terms are 0.
@@ -757,7 +753,6 @@ X regular, so stalks are regular local domains of finite global dimension. F of 
 **Checks.**
 
 - On Spf ℤ_p⟦t⟧: ⟨V(p, t), V(t)⟩ = 1 · 1 · rk(O/(t)) = 0, and ⟨V(p, t), X⟩ = 1.
-- For F = k(x) and G = 𝒪_X^r, χ = r[k(x) : k].
 - For F = k(x) and G = 𝒪_X^r with r = 0,1,2 and [k(x):k] = 2, the two sides are 0,2,4.
 - On `X = ⊔_{n≥1} Spf ℤ_p⟦t_1, …, t_n⟧`, regular and locally noetherian of infinite dimension, so outside §4.3, let F = 𝔽_p at the closed point of the n = 2 component (stalk dimension 3). For G = 𝒪_X the sum stops at j = 0 and χ = 1 = 1 · 1 · 1; for G = 𝒪_X/(t_1) on that component and 𝒪_X elsewhere, Tor₀ = Tor₁ = 𝔽_p there and χ = 1 − 1 = 0, the generic rank of `ℤ_p⟦t_1, t_2⟧/(t_1)` over `ℤ_p⟦t_1, t_2⟧`.
 
