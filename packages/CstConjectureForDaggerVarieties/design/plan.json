@@ -2748,154 +2748,148 @@
   ],
   "gaps": [
     {
-      "id": "CstConjectureForDaggerVarieties/G-ANALYTIC",
-      "title": "Model-free analytic cohomology package and limit descent",
-      "detail": "Supply the actual complexes, topologies, natural VS lifts, strict α_r:τ≤rRΓ_syn→τ≤rRΓ_proét, HK and B_dR⁺ comparisons, φ-slope bound [0,min(i,dim X)], syntomic fiber and filtered triangle, and functorial partial-proper completion and countable exhaustion descent summarized in Proposition 6.1, pp.39–40 and Remark 8.9, p.53. CN Part I Theorems 4.27,5.8,5.12 and its §7.3 are cited by CN25 but not independently checked here. The extraction’s proposed SyntomicCohomologyAndSteinComparison is not a defined roadmap in this checkout, and the earlier model-based Stein route is narrower. Route a model-free extension through the comparison owners; no existing proper comparison stage is represented as supplying this contract. For Proposition 8.12 specifically, supply the comparison of derived inverse systems of dagger affinoid pieces and their rigid completions after cofinal strict shrinkings. Partial-proper invariance cannot be applied separately to those affinoid pieces.",
-      "neededBy": [
-        "CstConjectureForDaggerVarieties:CS.1/cohomology-notation",
-        "CstConjectureForDaggerVarieties:CS.1/small-variety",
-        "CstConjectureForDaggerVarieties:CS.1/fundamental-square",
-        "CstConjectureForDaggerVarieties:CS.1/twist-and-induction",
-        "CstConjectureForDaggerVarieties:CS.1/proper-comparison-k",
-        "CstConjectureForDaggerVarieties:CS.1/proper-comparison-c",
-        "CstConjectureForDaggerVarieties:CS.1/stein-affinoid-diagram",
-        "CstConjectureForDaggerVarieties:CS.2/failure-kernel-cokernel",
-        "CstConjectureForDaggerVarieties:CS.2/defect-sequence",
-        "CstConjectureForDaggerVarieties:CS.2/local-equivalence",
-        "CstConjectureForDaggerVarieties:CS.2/crystalline-eigenspace-splitting",
-        "CstConjectureForDaggerVarieties:CS.4/exhaustion-data",
-        "CstConjectureForDaggerVarieties:CS.4/limit-obstruction",
-        "CstConjectureForDaggerVarieties:CS.4/derived-limit-criterion",
-        "CstConjectureForDaggerVarieties:CS.4/proper-stein-limit-vanishing",
-        "CstConjectureForDaggerVarieties:CS.4/proper-stein-fundamental-diagram",
-        "CstConjectureForDaggerVarieties:CS.5/differential-period-hom-vanishing",
-        "CstConjectureForDaggerVarieties:CS.5/arithmetic-torsion-hom-vanishing",
-        "CstConjectureForDaggerVarieties:CS.5/recovery-k"
-      ]
+      "slug": "dagger-de-rham-finiteness-over-c",
+      "needs": "Provide finite-dimensional de Rham cohomology over C in every degree for three classes of smooth dagger spaces over C: quasi-compact ones, naive interiors of smooth dagger affinoids (defined in §1.2), and dagger analytifications of smooth finite-type C-schemes.",
+      "supplier": "AdicSpacesPartIV",
+      "section": "F1.11 finiteness"
     },
     {
-      "id": "CstConjectureForDaggerVarieties/G-QBC",
-      "title": "Reasonable period Pairs and qBC extension beyond finite BC",
-      "detail": "Supply CN25 §§2,4: the actual natural Topological Vector Space category of Definition 4.1 (not just ordinary C-point topologies), reasonable B_dR⁺-Pairs, qBC recognition, canonical curvature filtration, signed height additivity, natural TVS realization and compatibility with finite BC. Include the dense finite-torsion presentations, the adjacent syntomic positive piece of Proposition 7.10 and countable BC inverse-limit vanishing of Remark 3.15. VB3’s read packet supplies finite BC only. The proposed VectorBundlesAndIsocrystalsPartII is not yet defined and is requested as an extension rather than an existing prerequisite.",
-      "neededBy": [
-        "CstConjectureForDaggerVarieties:CS.2/failure-kernel-cokernel",
-        "CstConjectureForDaggerVarieties:CS.2/canonical-qbc-filtration",
-        "CstConjectureForDaggerVarieties:CS.2/defect-sequence",
-        "CstConjectureForDaggerVarieties:CS.2/height-defect",
-        "CstConjectureForDaggerVarieties:CS.2/local-equivalence",
-        "CstConjectureForDaggerVarieties:CS.2/syntomic-filtration-splitting",
-        "CstConjectureForDaggerVarieties:CS.4/derived-limit-criterion",
-        "CstConjectureForDaggerVarieties:CS.5/recovery-c"
-      ]
+      "slug": "dagger-strictness-over-c",
+      "needs": "Provide over C the strictness and closed image of every de Rham differential on global sections of a smooth dagger affinoid or smooth dagger Stein space, for its fringe, respectively Fréchet, topology.",
+      "supplier": "AdicSpacesPartIV",
+      "section": "F1.9 differentials and the overconvergent de Rham complex"
     },
     {
-      "id": "CstConjectureForDaggerVarieties/G-PERIOD-HOM",
-      "title": "Qualified period Hom, torsion Ext and bounded filtered interfaces",
-      "detail": "Supply arbitrary VS-to-B_dR bounded-image Hom vanishing and Ext¹,natural vanishing on finite torsion periods (Corollary 3.18, Lemma 3.26); the reviewed VB3 packet itself leaves G-HOM and G-EXT open. Supply the compatibility of VS and natural Topological Vector Space Hom in §9.2, arithmetic Fontaine Hom vanishing, and the smaller weakly admissible filtration with the same bounds (Lemmas 5.3–5.4) needed by bounded arithmetic reconstruction. R06.2 owns the generic arithmetic period functors and reconstruction, not a second definition here. Correct the degree and containment conventions before use. Include Proposition 3.27(i), pp.19–20: for every finite BC W of curvature ≤0, Hom_VS(W,B_dR) is finite free over B_dR of rank ht(W), with the natural evaluation comparison. Euler height by itself supplies no period-Hom rank theorem.",
-      "neededBy": [
-        "CstConjectureForDaggerVarieties:CS.0/eigenspace-period-hom",
-        "CstConjectureForDaggerVarieties:CS.0/filtered-period-hom",
-        "CstConjectureForDaggerVarieties:CS.0/truncated-period-hom",
-        "CstConjectureForDaggerVarieties:CS.5/differential-period-hom-vanishing",
-        "CstConjectureForDaggerVarieties:CS.5/arithmetic-torsion-hom-vanishing",
-        "CstConjectureForDaggerVarieties:CS.5/recovery-k",
-        "CstConjectureForDaggerVarieties:CS.5/recovery-c",
-        "CstConjectureForDaggerVarieties:CS.5/crystalline-positive-hom-bounds"
-      ]
+      "slug": "dagger-kunneth-over-c",
+      "needs": "Provide over C the cup-product Künneth isomorphism `⊕_(p+q=n) H^p_dR(X)⊗_C H^q_dR(Y)≅H^n_dR(X×Y)`, for every n≥0, for smooth dagger spaces X,Y over C whose de Rham cohomology is finite dimensional in every degree.",
+      "supplier": "AdicSpacesPartIV",
+      "section": "F1.11 finiteness (Künneth formula)"
     },
     {
-      "id": "CstConjectureForDaggerVarieties/G-GEOMETRIC",
-      "title": "Analytic finiteness, GAGA, logarithmic pairs and tube invariance",
-      "detail": "Supply finite-free B_dR⁺/HK cohomology and compatible Künneth over C, HK GAGA for finite-type algebraic C-varieties, characteristic-zero resolution of smooth proper rigid pairs with arbitrary closed boundary, the logarithmic comparison sequence, and compatible unfiltered de Rham/HK tube comparisons for Propositions 8.3–8.4. Include naturality of the induced filtration map, full-lattice containment inside the common localized period module, the tube radius definition and the strata/radius checks for union descent. Read F1 nodes have discretely valued finiteness/Künneth hypotheses and affinoid resolution scope, and do not supply these C/global cases. Do not request a filtered-complex quasi-isomorphism: E16 shows that is too strong. Lattice containment with torsion quotient, not equality, is the input needed for the slope application.",
-      "neededBy": [
-        "CstConjectureForDaggerVarieties:CS.1/small-variety",
-        "CstConjectureForDaggerVarieties:CS.3/product-slopes",
-        "CstConjectureForDaggerVarieties:CS.3/algebraic-analytification",
-        "CstConjectureForDaggerVarieties:CS.3/almost-proper-slopes",
-        "CstConjectureForDaggerVarieties:CS.3/etale-proetale-defect",
-        "CstConjectureForDaggerVarieties:CS.3/semistable-tube-complement",
-        "CstConjectureForDaggerVarieties:CS.3/projective-tube-complement"
-      ]
+      "slug": "geometric-finiteness-tubes",
+      "needs": "Provide, for the two tube settings of §§3.6–3.7 (a weak formal model with local étale charts Spf(O_K{T₁,…,T_n}/(T₁⋯T_s−π)), 1≤s≤m≤n, smooth proper generic fibre and boundary the intersection or the union of the loci T_j=0 for s<j≤m; and a smooth scheme-theoretic complete intersection of c hypersurfaces of codimension c in Pⁿ_K with tubes |f_j|≤ε on integral trivializations), that restriction from the complement of the boundary to the complement of its tube is a quasi-isomorphism of unfiltered de Rham complexes over K and after base change to C, in the second setting for every ε∈|K×| below one bound ε₀ that serves every nonempty Čech intersection of the union case.",
+      "supplier": "AdicSpacesPartIV",
+      "section": "F1.11 finiteness (semistable tube invariance) and F1.16 formal tubes"
     },
     {
-      "id": "CstConjectureForDaggerVarieties/G-ETALE",
-      "title": "Proper rigid étale finiteness, base change and product comparison",
-      "detail": "Supply finite/perfect proper Z_p-cohomology and Bhatt–Hansen proper base change in the smooth rigid setting needed for Lemma 8.13, p.54, together with the rational/pro-étale comparison for the completed quasi-compact pieces in Proposition 8.12. The underlying proper factor, not the arbitrary second factor, is the perfect complex used in the projection formula. Existing algebraic period comparison is not a proof of this analytic input.",
-      "neededBy": [
-        "CstConjectureForDaggerVarieties:CS.1/proper-comparison-k",
-        "CstConjectureForDaggerVarieties:CS.1/proper-comparison-c",
-        "CstConjectureForDaggerVarieties:CS.4/proper-factor-kunneth",
-        "CstConjectureForDaggerVarieties:CS.4/proper-stein-limit-vanishing"
-      ]
+      "slug": "proper-pair-resolution-over-c",
+      "needs": "Provide `properRigidLogResolution` over C, the completion of an algebraic closure of any complete discretely valued K of characteristic zero with perfect countable residue field, in particular for a smooth proper rigid X over C and the complement U of a nowhere dense closed analytic subspace Z, giving a proper surjective Y→X from a smooth proper rigid space, isomorphic over U, whose reduced inverse image of Z is a strict normal crossings divisor.",
+      "supplier": "PadicHodgeTheory",
+      "section": "§2.7 Primitive comparison and integral finiteness, analytic log resolution"
     },
     {
-      "id": "CstConjectureForDaggerVarieties/G-FA",
-      "title": "Strong-dual strictness for the syntomic splitting",
-      "detail": "The read L0/compact-type-extension-duality node retains hypotheses H1 (strict strong-dual sequence) and H2 (continuous bidual map). The source uses stereotype duals; neither the required strong-dual strictness nor continuity on the unknown middle term follows from the endpoint identifications alone. Supply H1/H2 for the spaces in Proposition 7.15, pp.49–50, or another valid splitting argument. This is a qualified missing import, not an assertion that the extension theorem is false; G-FA is confined to the splitting branch and is not an input to Theorem 8.1 or recovery.",
-      "neededBy": [
-        "CstConjectureForDaggerVarieties:CS.2/syntomic-filtration-splitting"
-      ]
+      "slug": "acyclic-arithmetic-period-hom",
+      "needs": "Provide, for every acyclic arithmetic filtered (φ,N,G_K)-module (M,Fil) over a complete discretely valued K of characteristic zero with perfect countable residue field and V=V_st(M,Fil), continuous evaluation isomorphisms `Hom^sm_(G_K)`(V,B_st)≅M∨ of (φ,N,G_K)-modules over Fⁿʳ and `Hom_(G_K)`(V,B_dR)≅M_K∨ of filtered K-modules with Filʲ(M_K∨)=(Fil¹⁻ʲM_K)⊥, and, when the φ-slopes lie in [0,r], Fil⁰M_K=M_K and Filʳ⁺¹M_K=0, the same isomorphisms for the bounded kernel V_stʳ=tʳV_st with the twist {r} (CN25 Theorem 5.8 and Corollaries 5.9–5.10, lines 1730–1770).",
+      "supplier": "PadicHodgeTheory",
+      "section": "§§3.4, 3.7 and 5.2"
     },
     {
-      "id": "CstConjectureForDaggerVarieties/G-CRIS",
-      "title": "Positive crystalline equality in the affinoid refinement",
-      "detail": "Remark 9.9(ii), p.58 strengthens Remarks 5.19/5.21 from a bounded sandwich to an exact B_cris⁺ Hom equality and Frobenius recovery after completion of Fⁿʳ. Its last equality uses a criterion involving all positive Frobenius iterates lying in B_dR⁺. The public LaTeX source itself discusses the distinction between B_cris⁺ and B_max⁺ in a commented justification, so a formal proof must identify the exact additional condition on these restricted Hom maps, or pass through a justified B_max⁺ argument; mere localization or the t^{−i} bound is insufficient. This stronger positivity input was not independently established in this pass. Keep the target and this gap; Theorems 9.3 and 9.8 do not depend on it.",
-      "neededBy": [
-        "CstConjectureForDaggerVarieties:CS.5/crystalline-positive-hom-bounds"
-      ]
+      "slug": "bounded-arithmetic-subfiltration",
+      "needs": "Provide, for every acyclic arithmetic filtered (φ,N,G_K)-module over a complete discretely valued K of characteristic zero with perfect countable residue field, with φ-slopes in [0,r], Fil⁰M_K=M_K and Filʳ⁺¹M_K=0, a weakly admissible filtration Fil₁ with Filⁱ₁M_K⊆FilⁱM_K for every i and the same two filtration bounds (CN25 Lemma 5.4, line 1670).",
+      "supplier": "PadicHodgeTheory",
+      "section": "§3.4"
     },
     {
-      "id": "CstConjectureForDaggerVarieties/G-LEAN",
-      "title": "Heavy carriers and geometric comparison types at the pins",
-      "detail": "Neither pinned search nor the read current-library audit supplies genuine dagger analytic cohomology, qBC/Pairs, geometric FF modified bundles and the requisite strict derived completed period interfaces. The suggested file therefore checks only existing categorical and module conventions and the sign test; its examples encode none of the comparison theorems. Replace no carrier by an arbitrary type, opaque placeholder or mathematical assertion parameter. Instantiate mathematical targets only when their owners provide the actual carriers.",
-      "neededBy": [
-        "CstConjectureForDaggerVarieties:CS.0/filtered-module-c",
-        "CstConjectureForDaggerVarieties:CS.0/modified-bundle",
-        "CstConjectureForDaggerVarieties:CS.0/acyclic-module-c",
-        "CstConjectureForDaggerVarieties:CS.0/acyclicity-criteria",
-        "CstConjectureForDaggerVarieties:CS.0/bounded-period-spaces",
-        "CstConjectureForDaggerVarieties:CS.0/eigenspace-generation",
-        "CstConjectureForDaggerVarieties:CS.0/eigenspace-period-hom",
-        "CstConjectureForDaggerVarieties:CS.0/filtered-period-hom",
-        "CstConjectureForDaggerVarieties:CS.0/truncated-period-hom",
-        "CstConjectureForDaggerVarieties:CS.1/cohomology-notation",
-        "CstConjectureForDaggerVarieties:CS.1/small-variety",
-        "CstConjectureForDaggerVarieties:CS.1/fundamental-square",
-        "CstConjectureForDaggerVarieties:CS.1/twist-and-induction",
-        "CstConjectureForDaggerVarieties:CS.1/proper-comparison-k",
-        "CstConjectureForDaggerVarieties:CS.1/proper-comparison-c",
-        "CstConjectureForDaggerVarieties:CS.1/stein-affinoid-diagram",
-        "CstConjectureForDaggerVarieties:CS.1/elementary-bicartesian-cases",
-        "CstConjectureForDaggerVarieties:CS.2/failure-objects",
-        "CstConjectureForDaggerVarieties:CS.2/failure-kernel-cokernel",
-        "CstConjectureForDaggerVarieties:CS.2/canonical-qbc-filtration",
-        "CstConjectureForDaggerVarieties:CS.2/defect-sequence",
-        "CstConjectureForDaggerVarieties:CS.2/height-defect",
-        "CstConjectureForDaggerVarieties:CS.2/local-equivalence",
-        "CstConjectureForDaggerVarieties:CS.2/global-equivalence",
-        "CstConjectureForDaggerVarieties:CS.2/crystalline-eigenspace-splitting",
-        "CstConjectureForDaggerVarieties:CS.2/syntomic-filtration-splitting",
-        "CstConjectureForDaggerVarieties:CS.3/nonnegative-de-rham-slopes",
-        "CstConjectureForDaggerVarieties:CS.3/product-slopes",
-        "CstConjectureForDaggerVarieties:CS.3/algebraic-analytification",
-        "CstConjectureForDaggerVarieties:CS.3/almost-proper-slopes",
-        "CstConjectureForDaggerVarieties:CS.3/etale-proetale-defect",
-        "CstConjectureForDaggerVarieties:CS.3/semistable-tube-complement",
-        "CstConjectureForDaggerVarieties:CS.3/projective-tube-complement",
-        "CstConjectureForDaggerVarieties:CS.4/exhaustion-data",
-        "CstConjectureForDaggerVarieties:CS.4/limit-obstruction",
-        "CstConjectureForDaggerVarieties:CS.4/derived-limit-criterion",
-        "CstConjectureForDaggerVarieties:CS.4/proper-factor-kunneth",
-        "CstConjectureForDaggerVarieties:CS.4/proper-stein-limit-vanishing",
-        "CstConjectureForDaggerVarieties:CS.4/proper-stein-proetale-kunneth",
-        "CstConjectureForDaggerVarieties:CS.4/proper-stein-fundamental-diagram",
-        "CstConjectureForDaggerVarieties:CS.5/differential-period-hom-vanishing",
-        "CstConjectureForDaggerVarieties:CS.5/arithmetic-torsion-hom-vanishing",
-        "CstConjectureForDaggerVarieties:CS.5/recovery-k",
-        "CstConjectureForDaggerVarieties:CS.5/recovery-c",
-        "CstConjectureForDaggerVarieties:CS.5/crystalline-positive-hom-bounds",
-        "CstConjectureForDaggerVarieties:CS.5/limits-of-recovery"
-      ]
+      "slug": "positive-crystalline-hom",
+      "needs": "Provide, for every integer r≥0 and every finite Frobenius module M over Fⁿʳ with slopes in [0,r], with X_crisʳ(M)=`(M⊗B_cris⁺)^(φ=pʳ)`, that every λ∈M∨⊗t⁻ʳB_cris⁺ whose evaluation pairing sends the C-points X_crisʳ(M)(C) into B_cris⁺ lies in M∨⊗B_cris⁺, compatibly with extension of scalars to F̂ⁿʳ and with Frobenius (the final equality of CN25 Remark 9.9(ii), lines 2862–2865).",
+      "supplier": "PadicHodgeTheory",
+      "section": "§§0.4–0.5 and 3.7"
+    },
+    {
+      "slug": "galois-period-hom-vanishing",
+      "needs": "Provide the continuous G_L-equivariant vanishing Hom(C,B_dR)=0 and Hom(tʲB_dR⁺/tᵏB_dR⁺,B_dR)=0 for integers j<k and finite extensions L/K, with compatible topologies, density and Tate twists, as in CN25 Proposition 2.14(iv), for every complete discretely valued K of characteristic zero with perfect countable residue field.",
+      "supplier": "PadicHodgeTheory",
+      "section": "§§0.1–0.3 and 3.7"
+    },
+    {
+      "slug": "period-lattice-gluing",
+      "needs": "Provide effective gluing of a finite projective B_e-module to a full B_dR⁺ lattice over their identified B_dR realization, compatibly with tensor, dual and cohomology, and identify the bounded simultaneous period eigenspace for every finite (φ,N)-module of slopes in [0,r] with the sections of its nonnegative-slope modification.",
+      "supplier": "VectorBundlesAndIsocrystals",
+      "section": "VB1, Bundles, annuli and derived cohomology; Untilts and completed local rings"
+    },
+    {
+      "slug": "qbc-pairs",
+      "needs": "Extend finite BC theory to the natural TVS category on sympathetic algebras, torsion B_dR⁺-Pairs and qBC objects, with signed additive height, dense finite-torsion presentations of every torsion B_dR⁺-Pair (CN25 Theorem 9.8 proof, line 2834), uniqueness of the curvature filtration of a qBC whose middle Pair is reasonable (CN25 Proposition 4.26, line 1432) and compatibility with finite BC.",
+      "supplier": "VectorBundlesAndIsocrystals",
+      "section": "VB3, Sympathetic algebras and the classical category; Curvature, the tilted coherent heart and HN invariants"
+    },
+    {
+      "slug": "bc-countable-inverse-limits",
+      "needs": "Provide, from the Artinian property of BC (VB3, Curvature, the tilted coherent heart and HN invariants), that R¹lim vanishes for every countable inverse system of finite BC objects with BC transition maps, in the natural VS realization and in the left heart, compatibly with the realization functors (CN25 Remark 3.15, line 764).",
+      "supplier": "VectorBundlesAndIsocrystals",
+      "section": "VB3, Curvature, the tilted coherent heart and HN invariants"
+    },
+    {
+      "slug": "natural-period-hom",
+      "needs": "Provide vanishing of natural VS Ext¹ into B_dR from finite BC objects of curvature ≤0, in particular from finite-length B_dR⁺-modules (CN25 Lemma 3.26(i)), the rank-equals-height theorem for natural VS Hom into B_dR from finite BC objects of curvature ≤0 (CN25 Proposition 3.27(i)), and the comparison of VS Hom with TVS Hom on the objects used in geometric recovery.",
+      "supplier": "VectorBundlesAndIsocrystals",
+      "section": "VB3, Period modules and curvature calculus"
+    },
+    {
+      "slug": "strict-countable-derived-limits",
+      "needs": "Provide, for countable towers of complexes with a common lower cohomological bound in the quasi-abelian category of nonarchimedean locally convex Q_p-spaces, the bounded-below strict derived category with its left t-structure, extending the bounded construction of §0.0; exactness of countable products; the Roos derived limit Rlim C_n=Cone(1−shift)[−1] in that category, that is, the homotopy fibre of 1−shift:∏C_n→∏C_n, (a_n)↦(a_n−τ_n(a_(n+1))) for the transition maps τ_n, which for a tower of spaces V_n placed in degree zero is the complex [∏V_n→∏V_n] in degrees 0 and 1; the truncation compatibility τ_≤i Rlim C_n≅τ_≤i Rlim τ_≤i C_n for every integer i; its compatibility with left-heart cohomology; the Milnor short exact sequences 0→R¹lim H̃^(i−1)(C_n)→H̃^i(Rlim C_n)→lim H̃^i(C_n)→0 and the six-term lim/R¹lim sequence of a short exact sequence of towers in the left heart; and vanishing of R^q lim for q≥2; all without Fréchet, Mittag–Leffler or finite-dimensionality hypotheses and objectwise for functors from sympathetic algebras to the left heart.",
+      "supplier": "LocallyAnalyticDistributions",
+      "section": "§0.0 strict derived categories and left hearts; §0.2 strict countable inverse limits"
+    },
+    {
+      "slug": "dagger-analytic-complexes",
+      "needs": "Provide, for a smooth dagger space X over C, the model-free overconvergent Hyodo–Kato, B_dR⁺-de Rham and syntomic complexes with their cup products, as objects of the bounded-below strict derived category; the strict derived completed comparisons RΓ_HK(X)⊗̂C≃RΓ_dR(X) and RΓ_HK(X)⊗̂B_dR⁺≃RΓ_dR(X/B_dR⁺), natural in X and multiplicative; for 0≤i≤r, that multiplication by t, FʳRΓ_dR(X/B_dR⁺)→F^(r+1)RΓ_dR(X/B_dR⁺), induces an isomorphism τ_≤iFʳRΓ_dR(X/B_dR⁺)≃τ_≤iF^(r+1)RΓ_dR(X/B_dR⁺) (CN25 line 2231 prints the truncation on the left side only); the filtered fiber triangle defining syntomic cohomology from the Frobenius eigenspace of Hyodo–Kato cohomology and the de Rham filtration; and, for quasi-compact X, Frobenius slopes of Hⁱ_HK(X) in [0,min(i,dim X)] (CN25 Proposition 6.1, line 1954; Remark 6.23(ii), line 2231; Lemma 7.13 proof, line 2405).",
+      "supplier": "CohomologyComparisons",
+      "section": "§4.9a Analytic Hyodo–Kato realization"
+    },
+    {
+      "slug": "stable-range-period-map",
+      "needs": "Provide, for a smooth dagger space X over C and integers 0≤i≤r, the syntomic-to-pro-étale period map α_r, an isomorphism on cohomology in degrees ≤r, together with the natural VS and TVS realizations on sympathetic algebras of pro-étale cohomology, of the Hyodo–Kato eigenspace and of filtered B_dR⁺-cohomology, and the compatibility of the left-heart comparison sequence with these realizations (CN25 Proposition 6.1, line 1954; Definition 4.1, line 960; footnote 22, line 2647).",
+      "supplier": "CohomologyComparisons",
+      "section": "§4.9a Analytic Hyodo–Kato realization and §§4.10–4.11"
+    },
+    {
+      "slug": "stein-affinoid-syntomic-diagram",
+      "needs": "Provide, for a smooth dagger Stein space or smooth dagger affinoid X over C and r≥0, the degree-r syntomic diagram of CN25 Theorem 6.14: its two strictly exact rows, strict vertical maps with closed image, and the Fréchet, respectively LB, topology on degree-r syntomic cohomology, compatibly with α_r (CN25 Theorem 6.14, line 2098).",
+      "supplier": "CohomologyComparisons",
+      "section": "§4.9a Analytic Hyodo–Kato realization"
+    },
+    {
+      "slug": "analytic-exhaustion-descent",
+      "needs": "Provide, for a smooth dagger space X over C with a countable increasing admissible exhaustion by small quasi-compact open dagger subspaces X_n, the derived-limit descent RΓ(X)≃Rlim_n RΓ(X_n) for the Hyodo–Kato, filtered B_dR⁺-de Rham, syntomic and pro-étale complexes; the vanishing R¹lim_n X_n^(r,i)=0 and R¹lim_n Fbar_n^(r,i)=0; and, for a Stein exhaustion by affinoids, the identification of the derived inverse systems of the dagger pieces with those of their rigid completions after cofinal strict shrinkings (CN25 Remark 8.9(i), line 2601; Proposition 8.12 proof, line 2664).",
+      "supplier": "CohomologyComparisons",
+      "section": "§4.9a Analytic Hyodo–Kato realization and §§4.10–4.11"
+    },
+    {
+      "slug": "de-rham-quotient-splitting",
+      "needs": "Provide, for a smooth quasi-compact dagger space X over C, every finite covering of X by smooth dagger affinoids and every integer q, with RΓ^q the degree-q term of the associated Čech–de Rham complex computing RΓ_dR(X/B_dR⁺) in its natural topology, E_q=RΓ^q/im(d^(q−1)), H_q=ker(d^q)/im(d^(q−1))=H^q_dR(X/B_dR⁺) and Q_q=RΓ^q/ker(d^q) with their quotient and subspace topologies, a continuous B_dR⁺-linear retraction E_q→H_q of the inclusion, for the finite-free topology on H_q, whose kernel maps homeomorphically onto Q_q (CN25 Proposition 7.15 proof, lines 2439–2444).",
+      "supplier": "CohomologyComparisons",
+      "section": "§4.9a Analytic Hyodo–Kato realization"
+    },
+    {
+      "slug": "overconvergent-crystalline-complex",
+      "needs": "Provide, for a smooth quasi-compact dagger space X over C, a functorial overconvergent log-crystalline complex RΓ_cris(X) built from semistable weak formal hypercoverings, with its Frobenius, its completion map to the filtered complex RΓ_dR(X/B_dR⁺), and a Frobenius-compatible strict quasi-isomorphism RΓ_cris(X)≃RΓ_HK(X)⊗̂B_cris⁺, not Galois equivariant, with the Hyodo–Kato complex over the completion of Fⁿʳ and compatible with its Fⁿʳ version, distinct from ordinary completed log-crystalline cohomology of a nonproper model (CN25 §7.3, lines 2394–2402).",
+      "supplier": "CohomologyComparisons",
+      "section": "§4.9a Analytic Hyodo–Kato realization"
+    },
+    {
+      "slug": "algebraic-comparison-over-c",
+      "needs": "Provide, for a smooth finite-type scheme V over C and every i, weak admissibility of the filtered (φ,N)-module (Hⁱ_HK(V),F⁰Hⁱ_dR(V/B_dR)) over C given by the algebraic geometric period comparison (CN25 Theorem 8.1(b) proof, line 2491).",
+      "supplier": "CohomologyComparisons",
+      "section": "§4.8 algebraic comparison"
+    },
+    {
+      "slug": "analytic-hk-gaga",
+      "needs": "Provide, for a smooth finite-type scheme V over C and every i, Hyodo–Kato GAGA: the natural map Hⁱ_HK(V)→Hⁱ_HK(Vᵃⁿ) to the Hyodo–Kato cohomology of the dagger analytification is an isomorphism compatible with φ, N and the de Rham comparisons (CN25 Theorem 8.1(b) proof, line 2493).",
+      "supplier": "CohomologyComparisons",
+      "section": "§4.9a Analytic Hyodo–Kato realization"
+    },
+    {
+      "slug": "proper-log-period-sequence",
+      "needs": "Provide, for a smooth proper rigid space X′ over C with a strict normal crossings divisor D, U=X′∖D and 0≤i≤r, the exact sequence Hⁱ⁻¹_dR(X′,log D/B_dR⁺)→Hⁱ_ét(U,Q_p(r))→`(Hⁱ_HK(U)⊗̂B_st⁺)^(N=0,φ=pʳ)`⊕Hⁱ(FʳRΓ_dR(X′,log D/B_dR⁺))→Hⁱ_dR(X′,log D/B_dR⁺)→0 in LH(C_Q_p), the identification of the Hyodo–Kato and unfiltered B_dR⁺-de Rham cohomology of the log pair with those of U, and the map from the logarithmic filtration to the naive analytic filtration of U compatible with these identifications (CN25 Theorem 8.1(c) proof, lines 2507–2525).",
+      "supplier": "CohomologyComparisons",
+      "section": "§§4.10–4.11"
+    },
+    {
+      "slug": "proper-rigid-integral-etale",
+      "needs": "Provide perfect integral Z_p-cohomology for a smooth proper rigid space over C, proper base change for its projection to any smooth rigid factor and the compatible rational étale/pro-étale realization on the quasi-compact completions used in strict Stein exhaustions.",
+      "supplier": "ClassicalAdicEtaleCohomology",
+      "section": "§§1.3–1.4, 8.4 and 9.7"
     }
   ],
   "requests": [
