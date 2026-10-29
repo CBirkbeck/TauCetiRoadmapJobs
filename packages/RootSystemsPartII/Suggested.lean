@@ -1,6 +1,8 @@
-import Mathlib
-import TauCeti.LinearAlgebra.RootSystem.Chamber
-import TauCeti.LinearAlgebra.RootSystem.DynkinType
+module
+
+public import Mathlib
+public import TauCeti.LinearAlgebra.RootSystem.Chamber
+public import TauCeti.LinearAlgebra.RootSystem.DynkinType
 
 /-!
 # Integral dominance and finite diagram folding: target signatures
@@ -14,6 +16,8 @@ base with their explicit realization equations. No folded pairing is constructed
 as admitted data. Component-cycle transport is a construction adapter, not a
 replacement headline.
 -/
+
+public section
 
 namespace TauCetiRoadmap.RootSystemsPartII
 
@@ -30,10 +34,10 @@ endpoint; integrality of the endpoints is not needed. Extra central directions
 are allowed. Rapoport, Lemma 2.3, (2.10)–(2.13). -/
 theorem stembridge_step (P : RootPairing ι ℝ M N) [Finite ι]
     [P.IsReduced] [P.IsCrystallographic] (b : P.Base) (lam mu : M)
-    (hlam : lam ∈ TauCeti.dominantChamber P b)
-    (hmu : mu ∈ TauCeti.dominantChamber P b)
+    (hlam : lam ∈ RootPairing.dominantChamber P b)
+    (hmu : mu ∈ RootPairing.dominantChamber P b)
     (hne : lam ≠ mu) (hle : mu - lam ∈ TauCeti.posRootCone P b) :
-    ∃ i : ι, b.IsPos i ∧ lam + P.root i ∈ TauCeti.dominantChamber P b ∧
+    ∃ i : ι, b.IsPos i ∧ lam + P.root i ∈ RootPairing.dominantChamber P b ∧
       P.root i ∈ TauCeti.posRootCone P b ∧ lam ≠ lam + P.root i ∧
       mu - (lam + P.root i) ∈ TauCeti.posRootCone P b := by
   sorry
@@ -152,8 +156,8 @@ theorem invariant_weight_transport (P : RootPairing ι ℝ M N) [Finite ι]
     (b : P.Base) (sigma : P.Aut)
     (hbase : ∀ i : ι, i ∈ b.support ↔ sigma.indexEquiv i ∈ b.support)
     (F : OrbitSumRealization P b sigma) (x : LinearMap.fixedSubmodule sigma.weightMap) :
-    ((x : M) ∈ TauCeti.dominantChamber P b ↔
-      x ∈ TauCeti.dominantChamber F.pairing F.base) ∧
+    ((x : M) ∈ RootPairing.dominantChamber P b ↔
+      x ∈ RootPairing.dominantChamber F.pairing F.base) ∧
     ((∀ i ∈ b.support, ∃ z : ℤ, P.coroot' i (x : M) = (z : ℝ)) →
       ∀ j ∈ F.base.support, ∃ z : ℤ, F.pairing.coroot' j x = (z : ℝ)) := by
   sorry
@@ -182,12 +186,12 @@ theorem invariant_step (P : RootPairing ι ℝ M N) [Finite ι]
     (lam mu : M)
     (hfixed_lam : sigma.weightMap lam = lam)
     (hfixed_mu : sigma.weightMap mu = mu)
-    (hlam : lam ∈ TauCeti.dominantChamber P b)
-    (hmu : mu ∈ TauCeti.dominantChamber P b)
+    (hlam : lam ∈ RootPairing.dominantChamber P b)
+    (hmu : mu ∈ RootPairing.dominantChamber P b)
     (hne : lam ≠ mu) (hle : mu - lam ∈ TauCeti.posRootCone P b) :
     ∃ i : ι, b.IsPos i ∧ orbitSum P sigma i ≠ 0 ∧
       sigma.weightMap (lam + orbitSum P sigma i) = lam + orbitSum P sigma i ∧
-      lam + orbitSum P sigma i ∈ TauCeti.dominantChamber P b ∧
+      lam + orbitSum P sigma i ∈ RootPairing.dominantChamber P b ∧
       orbitSum P sigma i ∈ TauCeti.posRootCone P b ∧
       lam ≠ lam + orbitSum P sigma i ∧
       mu - (lam + orbitSum P sigma i) ∈ TauCeti.posRootCone P b := by
@@ -206,14 +210,14 @@ theorem ambient_coroot_step (P : RootPairing ι ℝ M N) [Finite ι]
     (lam mu : L)
     (hfixed_lam : sigma.weightMap (lam : M) = lam)
     (hfixed_mu : sigma.weightMap (mu : M) = mu)
-    (hlam : (lam : M) ∈ TauCeti.dominantChamber P b)
-    (hmu : (mu : M) ∈ TauCeti.dominantChamber P b)
+    (hlam : (lam : M) ∈ RootPairing.dominantChamber P b)
+    (hmu : (mu : M) ∈ RootPairing.dominantChamber P b)
     (hne : lam ≠ mu) (hle : (mu : M) - lam ∈ TauCeti.posRootCone P b) :
     ∃ i : ι, b.IsPos i ∧ orbitSum P sigma i ≠ 0 ∧
       (lam : M) + orbitSum P sigma i ∈ L ∧
       sigma.weightMap ((lam : M) + orbitSum P sigma i) =
         (lam : M) + orbitSum P sigma i ∧
-      (lam : M) + orbitSum P sigma i ∈ TauCeti.dominantChamber P b ∧
+      (lam : M) + orbitSum P sigma i ∈ RootPairing.dominantChamber P b ∧
       orbitSum P sigma i ∈ TauCeti.posRootCone P b ∧
       (lam : M) ≠ (lam : M) + orbitSum P sigma i ∧
       (mu : M) - ((lam : M) + orbitSum P sigma i) ∈
@@ -235,14 +239,14 @@ theorem torsion_lattice_coroot_step
     (hequiv : ∀ x : A, f (tau x) = sigma.weightMap (f x))
     (hroot_equiv : ∀ i : ι, tau (r i) = r (sigma.indexEquiv i))
     (lam mu : A) (hfixed_lam : tau lam = lam) (hfixed_mu : tau mu = mu)
-    (hlam : f lam ∈ TauCeti.dominantChamber P b)
-    (hmu : f mu ∈ TauCeti.dominantChamber P b)
+    (hlam : f lam ∈ RootPairing.dominantChamber P b)
+    (hmu : f mu ∈ RootPairing.dominantChamber P b)
     (hne : lam ≠ mu)
     (hle : mu - lam ∈ AddSubmonoid.closure (r '' (b.support : Set ι))) :
     ∃ i : ι, b.IsPos i ∧
       let beta := ∑ j ∈ orbitIndices P sigma i, r j
       beta ≠ 0 ∧ tau (lam + beta) = lam + beta ∧
-      f (lam + beta) ∈ TauCeti.dominantChamber P b ∧
+      f (lam + beta) ∈ RootPairing.dominantChamber P b ∧
       beta ∈ AddSubmonoid.closure (r '' (b.support : Set ι)) ∧
       mu - (lam + beta) ∈ AddSubmonoid.closure (r '' (b.support : Set ι)) := by
   sorry
