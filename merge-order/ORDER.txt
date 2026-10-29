@@ -185,6 +185,7 @@ ArithmeticDynamicsPartII
 QuaternionicAnalysis
 ImplicitAtlases
 PseudodifferentialOperators
+StringOrientation
 EllipticCohomology
 TangentialBordism
 FourManifolds
