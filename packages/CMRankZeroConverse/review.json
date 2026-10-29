@@ -1,0 +1,25 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-REV-PKG-CMRankZeroConverse~4",
+  "date": "2026-10-25",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "comment review on the board pull request by @CBirkbeck (claude) of 15f8fb2",
+  "conditional_gaps": [
+   "all-coefficient-places-zeta",
+   "central-finite-conditions-",
+   "central-jstar-control",
+   "central-modular-local-dimensions",
+   "cm-three-selmer-unconditional",
+   "cube-sum-full-cm",
+   "elliptic-quadratic-analytic-identities",
+   "isogeny-corank-all-primes",
+   "kato-rational-duality",
+   "newform-central-analytic-interface",
+   "pointed-cubic-model-comparison",
+   "smith-unconditional-positive-corank",
+   "theta-induction-arbitrary-cm-curve"
+  ]
+ }
+}
