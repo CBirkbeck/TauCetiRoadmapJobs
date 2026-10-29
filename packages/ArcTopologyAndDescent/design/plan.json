@@ -5911,14 +5911,31 @@
     }
   ],
   "gaps": [
-    {
-      "title": "Register the algebraic-space Perf-Tannaka supplier",
-      "neededBy": [
-        "ArcTopologyAndDescent:AT.7/perfect-effective-epimorphisms"
-      ],
-      "detail": "BM21 Theorem 5.17 p. 45 uses the reconstruction equivalence Hom(X,Y)≃Fun^⊗_exact(Perf(Y),Perf(X)). Independently verified BH16 Theorem 1.5 p. 2: Y is a qcqs algebraic space and X is any algebraic space, in the coherent symmetric monoidal sense of its conventions pp. 4–5. The proposed SchemeAndStackFoundationsPartIIAlgebraicSpaceTannaka has no registered stage/node in this checkout, and SF.1 does not state this result. Register an owner and the exact verified contract before closing AT.7; no invented supplier id occurs in prerequisites. This affects only the algebraic-space Hom/effective-epimorphism consumer, not formal-target representable descent in AT.12."
-    }
-  ],
+  {
+    "slug": "coherent-topos-pushouts",
+    "needs": "For essentially small finite-limit sites whose covering families have finite covering subfamilies, supply that sheafified representables are coherent (quasi-compact and quasi-separated) objects, so the sheaf topos is algebraic and coherent in the sense of AdicSpacesPartII §R0.19.10.",
+    "supplier": "SchemeAndStackFoundations",
+    "section": "§2.5 (coherent-site extension)"
+  },
+  {
+    "slug": "algebraic-space-perf-tannaka",
+    "needs": "For every qcqs algebraic space Y and every algebraic space X, supply the natural reconstruction equivalence Hom(X,Y)≃Fun^⊗_exact(Perf(Y),Perf(X)) with coherent symmetric monoidal functors and all pullback compatibilities.",
+    "supplier": "SchemeAndStackFoundations",
+    "section": "§1.4 (algebraic-space reconstruction extension)"
+  },
+  {
+    "slug": "constructible-etale-space-descent",
+    "needs": "Over arbitrary qcqs schemes, supply effective descent of qcqs étale algebraic spaces, and of their separated and finite subcategories, along quasi-compact universally subtrusive maps, that is v-covers (RYD10 Theorem 5.17 and Corollary 5.18), and the equivalence of these spaces with constructible finite-set étale sheaves.",
+    "supplier": "SchemeAndStackFoundations",
+    "section": "§§1.2–1.10"
+  },
+  {
+    "slug": "perfectoid-tate-constant-comparison",
+    "needs": "Extend the §2.6 comparison to the image of every p-complete integral perfectoid A in A[1/p] by comparing Spa(A[1/p],A) with Spa(A[1/p],(A[1/p])°), compatibly with open restriction and the étale-site tilting equivalence of PerfectoidSpaces §P3.20.",
+    "supplier": "ClassicalAdicEtaleCohomology",
+    "section": "§2.6 (integral-model and restriction compatibility)"
+  }
+],
   "sourceIssues": [
     {
       "id": "ArcTopologyAndDescent/E1",

@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-LocalFieldsRamification~2",
+    "head": "14889ced739a59a4b1641d630246d8ad1579f562",
+    "pr": 617,
+    "folder": "LocalFieldsRamification",
+    "date": "2026-10-28",
+    "findings": 4,
+    "blocking": 2,
+    "notes": "Full read-only review; previous seven findings rechecked; all eight seeded source targets assessed. Fesenko–Vostokov pp. 91–93 verified; Serre and Neukirch uncertified; original Sen text unavailable. 40 primary adversarial rows and 15 imported-object checks; 130 library names audited at the manifest pins. Supplied gate, targeted build and direct elaboration pass; signature and padding probes completed. Dependency check: 185 roadmaps, 1131 edges, 0 problems. Missing cyclic detection at the actual pin and incomplete lower-break proof route block acceptance; two locator corrections."
+  }
+}
