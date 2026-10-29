@@ -8,7 +8,7 @@ FaltingsFinitenessAndIsogenyTheorems reaches R28.6: qualitative finiteness, numb
 
 AbelianSchemesAndArithmeticModuli A3.9, A4.1, A5.1–A5.4 and A6.1–A6.14 own the dual, Rosati involution and positivity, Tate modules, complex realization, degree, homogeneous degree law, finite free Hom, simple factors and qualitative reducibility. They are stated by that roadmap and consumed here. Section 1.5 keeps the oriented lattice determinant comparison, which differs from A6.6's intrinsic polynomial law. Section 1.2 takes the norm induced by the supplied positive pairing; it does not introduce a second positivity theorem. Section 8.2 adds preservation of the integral geometric endomorphism ring to NeronModelsAndSemistableAbelianVarieties §6.0's full-image specialization.
 
-ArakelovGeometryAndAbelianHeights §§3.4–3.5, 4.4, 5.9, 6.1–6.2, 6.5 own stable height, its identities and inequalities, elliptic j-height comparison, Zarhin's construction and the dimension-dependent lower bound. GeometryOfNumbersAndQuadraticArithmetic §§0.1–0.3, 1.2, 1.5 own general covolumes, Gram determinants, minima, adapted flags and the product bounds for minima. HeightsAndUnits Layer 2, §2.1, owns the integral lattice basis with each vector bounded by its successive minimum, which the flag results of the former roadmap do not bound. IntegralLattices Layers 0–1 own the integral lattice carriers. These generic objects are not constructed again. EllipticCurveModularityPartII §6.0f owns the quadratic elliptic isogeny estimate over every number field, CM and non-CM, with its period graphs and the sharp surface period estimate of Gaudron–Rémond; Layer 6 here consumes it and keeps only the j-height form.
+ArakelovGeometryAndAbelianHeights §§3.4–3.5, 4.4, 5.9, 6.1–6.2, 6.5 own stable height, its identities and inequalities, elliptic j-height comparison, Zarhin's construction and the dimension-dependent lower bound. SuccessiveMinima §§0.1–0.2, 1.5 and 1.11 own Gram–Hadamard bounds, prescribed integral flags and simultaneous attainment of real body minima. GeometryOfNumbersAndQuadraticArithmetic §§0.2–0.3 own adapted integral bases and projection covolumes; §1.3 owns positivity of those minima and the upper half of Minkowski’s second theorem. HeightsAndUnits Layer 2, §2.1, owns the integral lattice basis with each vector bounded by its successive minimum, which prescribed flags alone do not bound. IntegralLattices Layers 0–1 own the integral lattice carriers. These generic objects are not constructed again. EllipticCurveModularityPartII §6.0f owns the quadratic elliptic isogeny estimate over every number field, CM and non-CM, with its period graphs and the sharp surface period estimate of Gaudron–Rémond; Layer 6 here consumes it and keeps only the j-height form.
 
 The matrix trace and determinant, finite-dimensional linear trace, semisimple-algebra structure and group indices are already in the library. The generic Frobenius norm product inequality and Gram/covolume identity are library supplies. Tau Ceti's double-centralizer theorem, profinite-integer ring/product decomposition and finiteness of bounded-index open subgroups are already in the library at the pins. SemisimpleAlgebras Layers 2–3 and 6 own their structural assembly and splitting-field theory; ClassFieldTheory Layer 10 owns the cohomological Brauer sequence; §3.4 consumes only the algebraic cyclic presentation of a division algebra over its number-field center, requested from that layer below, and no cohomological-to-algebraic comparison separately. ArithmeticGaloisRepresentations §§5.8, 6.4a, 7.6 own compact matrix-group analytic structure, finite Frattini detection and algebraic monodromy. NeronModelsAndSemistableAbelianVarieties §6.0 owns Serre independence and the torsion specialization comparisons. AutomorphicBundles B4.2, B4.9 and B5.1a (with B5.13 in genus one) own the cusp-form and analytic/algebraic carriers.
 
@@ -40,7 +40,7 @@ Consume `Matrix.trace` from `Mathlib/LinearAlgebra/Matrix/Trace.lean`, `Matrix.d
 
 Consume `TauCeti.AlgebraicGeometry.AbelianVariety` (`TauCeti/AlgebraicGeometry/AbelianVariety/Basic.lean`, line 95), `TauCeti.AlgebraicGeometry.AbelianVariety.End` (`End/Basic.lean`, line 83) and `TauCeti.AlgebraicGeometry.AbelianVariety.IsIsogeny` (`Isogeny.lean`, line 61). The carrier bundles a proper geometrically integral group scheme over a field; IsIsogeny means finite and surjective, and End is the additive reindexing of native Hom with composition multiplication.
 
-Consume `TauCeti.Isogeny` and `TauCeti.Isogeny.degree` from `TauCeti/AlgebraicGeometry/EllipticCurve/Isogeny/Degree.lean`, line 99, for native affine Weierstrass isogenies and their positive function-field degree, including inseparable degree. The elliptic acceptance statement uses algebraic-closure base change of nonsingular Weierstrass curves.
+Consume `TauCeti.Isogeny` from `TauCeti/AlgebraicGeometry/EllipticCurve/Isogeny/Basic.lean`, line 139, and `TauCeti.Isogeny.degree` from `TauCeti/AlgebraicGeometry/EllipticCurve/Isogeny/Degree.lean`, line 94, for native affine Weierstrass isogenies and their positive function-field degree, including inseparable degree. The elliptic acceptance statement uses algebraic-closure base change of nonsingular Weierstrass curves.
 
 Consume `ZLattice.covolume_sq_eq_det_gram` from `TauCeti/Algebra/Module/ZLattice/Covolume.lean`, line 42, for a full discrete lattice in a finite-dimensional real inner-product space with its canonical Borel volume. Its Gram determinant is 1 on the zero-dimensional lattice.
 
@@ -85,7 +85,17 @@ What ArakelovGeometryAndAbelianHeights must provide (gap:cubist-model-symmetric-
 
 ### From TauCetiRoadmap.GeometryOfNumbersAndQuadraticArithmetic
 
-Sections 0.1–0.3 give the Gram/covolume-square identity, Hadamard, integral adapted bases and basis transport. Section 1.2 gives positive successive minima, an independent family of lattice vectors attaining them and integral bases with prescribed flags; it bounds no individual vector of an integral basis. Section 1.5 gives the upper second-theorem product bound. Finite real dimension, full discreteness and positive interior are used where required. IntegralLattices Layers 0–1 supply the integral-form carrier. In rank zero the empty Gram determinant and product are 1. The norm-body measure in §3.3 uses the ordinary real coordinate normalization, so a complex disk has area π.
+Sections 0.2–0.3 give adapted integral bases and covolumes of projections and primitive intersections. In a finite-dimensional real normed space of dimension d, §1.3 gives positivity and monotonicity of real body minima for a full discrete lattice and a convex body with zero in its interior, and the upper product bound (∏λ_i) μ(K)≤2^d covol(L,μ) for a symmetric convex body and the same additive Haar measure μ on both sides. This uses real body minima, rather than §1.2’s squared integral minima. In rank zero the empty product is 1. IntegralLattices Layers 0–1 supply the integral-form carrier.
+
+### From TauCetiRoadmap.SuccessiveMinima
+
+Section 0.1 gives the real and Hermitian Gram–Hadamard bounds. Section 0.2, especially 0.2.1, gives an integral basis with the flag of a prescribed real basis of lattice vectors. Layer 1, in particular §§1.5 and 1.11, gives simultaneous attainment of the real body minima and integral minimum flags for a full discrete lattice and a convex body with zero in its interior. Symmetry is imposed when using the symmetric-body bounds. These are roadmap supplies; the Gram/covolume-square identity used here is the pinned Tau Ceti declaration above. Individual basis lengths use HeightsAndUnits §2.1.
+
+**Checks.**
+
+- For L=2ℤ×3ℤ and K=[−2,2]×[−1,1], the real minima are 1 and 3, μ(K)=8 and covol(L)=6, so 1·3·8=24=2²·6. In lattice-basis coordinates K becomes [−1,1]×[−1/3,1/3], with volume 4/3, giving 1·3·(4/3)=4. Squaring these minima would give the incorrect product 9.
+- For L=ℤ² and the Euclidean unit disk, both minima are 1, its area is π, and π<4. The basis (e₁,Ne₁+e₂) has the standard flag but second length √(N²+1); at N=2 this is √5 rather than the short-basis bound 1.
+- In dimension zero the empty Gram determinant, empty product and canonical volume of {0} are all 1. In dimension two the non-full subgroup ℤ×{0} has no second independent vector, so positivity and attainment are not asserted for it. The norm-body measure in §3.3 uses ordinary real coordinates: a complex unit disk has area π.
 
 ### From TauCetiRoadmap.HeightsAndUnits
 
@@ -121,11 +131,16 @@ Section 5.8, Compact subgroup charts, gives the closed-subgroup theorem for comp
 
 ### From TauCetiRoadmap.NeronModelsAndSemistableAbelianVarieties
 
-Section 6.0 gives finite-extension Serre independence, with adelic image a product of local groups of connected Zariski closure, and Noot's torsion specialization comparisons over a normal geometrically irreducible model. All finite torsion levels are identified compatibly. A selected auxiliary prime can have full specialized image. InverseGaloisAndArithmeticFundamentalGroups IG.2.4 and IG.2.6 supply the number-field Hilbertianity, its finite-extension permanence and the finite full-group specialization used in that route, including the constant-field part; §6.0 itself extends Hilbertianity to finitely generated characteristic-zero fields by permanence under purely transcendental and finite extensions and a Noether normalization. Section 8.2 adds integral End preservation using §8.1 and the saturation contract.
+Section 6.0 gives finite-extension Serre independence, with adelic image a product of local groups of connected Zariski closure, and Noot's torsion specialization comparisons over a normal geometrically irreducible model. All finite torsion levels are identified compatibly. A selected auxiliary prime can have full specialized image. InverseGaloisAndArithmeticFundamentalGroups IG.2.4 and IG.2.6 supply Hilbertianity of number fields and rational function fields, finite-extension permanence and the finite full-group specialization used in that route, including the constant-field part; §6.0 imports Hilbertianity of finitely generated characteristic-zero fields from IG.2.4 and owns the Noether-normalization bridge to closed points with connected fibre. Section 8.2 adds integral End preservation using §8.1 and the saturation contract.
 
 ### From TauCetiRoadmap.InverseGaloisAndArithmeticFundamentalGroups
 
-IG.2.4 gives Hilbert subsets, Hilbertianity of number fields and finite-extension permanence; NeronModelsAndSemistableAbelianVarieties §6.0 extends Hilbertianity to finitely generated characteristic-zero fields and supplies the full-image closed points, consuming IG.2.4 and IG.2.6. IG.2.6 gives full-group specialization for connected finite covers, retaining their constant-field part. Use closed points of finite degree on the normal geometrically irreducible model; a rational point is not a hypothesis. The finite compact-image detection used in this route is the Frattini contract above.
+IG.2.4 gives Hilbert subsets, Hilbertianity of number fields and of rational function fields over any field, and finite-extension permanence. Along a transcendence basis these give Hilbertianity of every finitely generated characteristic-zero field, which NeronModelsAndSemistableAbelianVarieties §6.0 imports. Section 6.0 owns the Noether-normalization bridge to closed points with connected fibre and the full-image closed points, consuming IG.2.4 and IG.2.6. IG.2.6 gives full-group specialization for connected finite covers, retaining their constant-field part. Use closed points of finite degree on the normal geometrically irreducible model; a rational point is not a hypothesis. The finite compact-image detection used in this route is the Frattini contract above.
+
+**Checks.**
+
+- For ℚ(t), the rational-function theorem gives Hilbertianity with one transcendental generator. For ℚ(t,√(t³+1)), the extension over ℚ(t) has degree 2, so finite-extension permanence applies. For ℚ itself there are zero transcendental generators and the number-field theorem applies.
+- For Y²=T over the nonzero affine line over ℚ, the fibre at T=2 is the field ℚ(√2), of degree 2 and group C₂; at T=1 the algebra ℚ×ℚ has two connected components. Finite degree alone does not ensure full image.
 
 ## How to read the build
 
@@ -208,9 +223,9 @@ The API records the following facts.
 
 For an order O=End_k(A) or End_k̄(A), choose a ℤ-basis e₁,…,e_r of its finite free underlying group and define Dλ(O)=det(Tr_A(e_i e_j†))>0. For rank zero set the empty determinant equal to 1. It is independent of the basis. Under a principal polarization the pairing is integral, hence Dλ(O) is a positive integer. For a nonprincipal λ the same positive rational determinant is allowed; do not assume integral adjoints. For End_k use a k-defined polarization so the rational involution preserves End⁰_k; the geometric order uses a geometric polarization. (mw94-preprint, §1 and §2 Lemma 2.1, internal pp 1–3; mz20, §4 p655, Gram determinant after Lemma 4.1; mw94-preprint line 90).
 
-*Proof route.* Use the imported finite free End lattice. A basis change with determinant±1 preserves the Gram determinant. Positivity and principal integrality follow from A6; the covolume identity is imported from GN.0.
+*Proof route.* Use the imported finite free End lattice. A basis change with determinant±1 preserves the Gram determinant. Positivity and principal integrality follow from A6; the covolume identity is the pinned Tau Ceti Gram/covolume-square theorem.
 
-*Needs:* §1.2; AbelianSchemesAndArithmeticModuli §A6.7; Mathlib `Matrix.det`; GeometryOfNumbersAndQuadraticArithmetic §0.1, 0.3.
+*Needs:* §1.2; AbelianSchemesAndArithmeticModuli §A6.7; Mathlib `Matrix.det`; pinned `ZLattice.covolume_sq_eq_det_gram`; GeometryOfNumbersAndQuadraticArithmetic §0.3.
 
 The API records the following facts.
 
@@ -326,7 +341,7 @@ Fix g≥1 and 0<δ≤1. Suppose τ=x+iy, y₀=diag(y₁,…,y_g), δy₀≤y≤�
 
 ### Dependencies
 
-Native abelian Hom and End; AbelianSchemesAndArithmeticModuli A3.9, A5.1–A5.4, A6.1, A6.6–A6.14; GeometryOfNumbersAndQuadraticArithmetic §§0.1–0.3; native matrix calculus.
+Native abelian Hom and End; AbelianSchemesAndArithmeticModuli A3.9, A5.1–A5.4, A6.1, A6.6–A6.14; SuccessiveMinima §0.1; GeometryOfNumbersAndQuadraticArithmetic §§0.2–0.3; pinned Gram/covolume-square identity; native matrix calculus.
 
 ## Layer 2: Periods and endomorphism estimates
 
@@ -454,7 +469,7 @@ For each g≥1 there are C_g,c_g>0: if A/k is principally polarized of dimension
 
 *Proof route.* Use the restricted-polarization degree/covolume identity. The matrix-height lower bound for a nonzero period and Minkowski’s second theorem bound successive minima; the minima form of the bounded-basis theorem of HeightsAndUnits §2.1 then gives a basis of the whole period lattice whose ith vector (i=0,…,2dim B−1) has length at most max(1,(i+1)/2) times the ith minimum, hence at most max(1,dim B) times it. The matrix-height estimate follows by reducing the period matrix and combining its imaginary-part bound with the fixed modular-origin height comparison.
 
-*Needs:* AbelianSchemesAndArithmeticModuli §A5.1; GeometryOfNumbersAndQuadraticArithmetic §1.5; GeometryOfNumbersAndQuadraticArithmetic §1.2; HeightsAndUnits Layer 2, §2.1; ArakelovGeometryAndAbelianHeights §3.4; §2.6; ArakelovGeometryAndAbelianHeights §§5.7–5.8 (including Masser’s matrix lemma).
+*Needs:* AbelianSchemesAndArithmeticModuli §A5.1; GeometryOfNumbersAndQuadraticArithmetic §1.3; SuccessiveMinima §1.5; HeightsAndUnits Layer 2, §2.1; ArakelovGeometryAndAbelianHeights §3.4; §2.6; ArakelovGeometryAndAbelianHeights §§5.7–5.8 (including Masser’s matrix lemma).
 
 **Checks.**
 
@@ -495,7 +510,7 @@ For each g≥1 there are C_g,κ_g>0 such that a ppav A/k of dimension g satisfie
 
 *Proof route.* Bound the rank by 4g² and extract from the short spanning set of §2.8 a rationally independent family of integral vectors; the general form of HeightsAndUnits §2.1 turns it into a ℤ-basis of the whole order whose lengths are at most max(1,r/2) times the largest selected length, r≤4g² being the rank. Hadamard bounds the Gram determinant; replace fixed-rank factors by dimension constants. To obtain geometric End pass to k(A[3]) with degree bounded by D|GL_(2g)(F₃)|; use base-change invariance of stable height.
 
-*Needs:* §2.8; §1.3; HeightsAndUnits Layer 2, §2.1; GeometryOfNumbersAndQuadraticArithmetic §0.1; AbelianSchemesAndArithmeticModuli §A6.20.
+*Needs:* §2.8; §1.3; HeightsAndUnits Layer 2, §2.1; SuccessiveMinima §0.1; AbelianSchemesAndArithmeticModuli §A6.20.
 
 **Checks.**
 
@@ -509,7 +524,7 @@ For principally polarized isogenous complex A,B of dimension g, there exist isog
 
 *Proof route.* For the principal integral positive trace lattice, nonzero integral vectors have norm≥1, so every successive minimum is at least 1; Minkowski’s second theorem bounds their product by a dimension constant times sqrtD, hence the largest minimum by C_g sqrtD, and the minima form of HeightsAndUnits §2.1 gives an integral basis of maximum norm≤C_g sqrtD. The product of the two block-degree polynomials is a nonzero polynomial of total degree 4g, since an isogeny and its quasi-inverse exist. A grid with coordinates 0,…,4g contains a nonzero evaluation. Its norm is bounded by a dimension constant times sqrtD. Project the selected endomorphism to its off-diagonal part using the two product idempotents; Rosati submultiplicativity bounds its norm by a dimension constant times the original norm.
 
-*Needs:* §1.3; §1.6; GeometryOfNumbersAndQuadraticArithmetic §1.2, 1.5; HeightsAndUnits Layer 2, §2.1; AbelianSchemesAndArithmeticModuli §A6.1, A6.6; AbelianSchemesAndArithmeticModuli §A6.8; §1.4; §1.5.
+*Needs:* §1.3; §1.6; GeometryOfNumbersAndQuadraticArithmetic §1.3; SuccessiveMinima §1.5; HeightsAndUnits Layer 2, §2.1; AbelianSchemesAndArithmeticModuli §A6.1, A6.6; AbelianSchemesAndArithmeticModuli §A6.8; §1.4; §1.5.
 
 **Checks.**
 
@@ -539,7 +554,7 @@ Fix dimension g and map-degreesδ_A,δ_B of k-defined polarizations. There are C
 
 ### Dependencies
 
-Layer 1; ArakelovGeometryAndAbelianHeights §§3.4–3.5, 4.4, 5.8 and the precise slope, metric-rescaling, tangent-metric and cubist-model contracts; AbelianSchemesAndArithmeticModuli A3.3–A3.4, A3.6, A3.11, A4.1, A5.1–A5.4, A6.20; the exact cusp-family and value-height contracts; GeometryOfNumbersAndQuadraticArithmetic §§0.1, 1.2, 1.5; HeightsAndUnits Layer 2, §2.1.
+Layer 1; ArakelovGeometryAndAbelianHeights §§3.4–3.5, 4.4, 5.8 and the precise slope, metric-rescaling, tangent-metric and cubist-model contracts; AbelianSchemesAndArithmeticModuli A3.3–A3.4, A3.6, A3.11, A4.1, A5.1–A5.4, A6.20; the exact cusp-family and value-height contracts; SuccessiveMinima §§0.1, 1.5; GeometryOfNumbersAndQuadraticArithmetic §1.3; HeightsAndUnits Layer 2, §2.1.
 
 ## Layer 3: Order discriminants and class indices
 
@@ -638,8 +653,6 @@ The API records the following facts.
 - For D=ℚ(i), the unit norm body is the Euclidean disk and p(D)=2π.
 
 - For D=ℚ and Λ=2ℤ, sqrt|discΛ|=2 while the coordinate interval has length 1, so p remains 2.
-
-- Using closed norm≤1 bodies through limiting volume gives the same supremum.
 
 - With the rational basis b=2 of ℚ, the coordinate unit is 1/2: N_b(1/2)=1, while N_b(1)=2. Treating the coordinate 1 as the unit would give the wrong normalization.
 
@@ -999,9 +1012,7 @@ For the adelic Galois image U of A over a number field with all geometric endomo
 
 **Checks.**
 
-- For W product, the number of adelic generators is bounded by (2g)² even though there are infinitely many primes.
-
-- For a product W, the rank-one scalar algebras have local index 1 and total index 1. Local indices 2 at ℓ=2 and 3 at ℓ=3, and 1 elsewhere, give global index 6. Infinitely many index-2 factors would give infinite index.
+- In the rank-one ambient algebra Ẑ, the scalar algebra has local and global index 1. For abstract local orders O_ℓ={[[a,b],[ℓc,d]]:a,b,c,d∈ℤ_ℓ}⊂M₂(ℤ_ℓ), the lower-left entry modulo ℓ identifies the additive quotient with 𝔽_ℓ, so the local index is ℓ. Using O₂ and O₃ and full matrix orders elsewhere gives global index 2·3=6. Using O_ℓ at every prime gives additive quotient ∏_ℓ𝔽_ℓ, which is infinite. These orders are a control for the product-index calculation, not a Galois image satisfying the theorem.
 
 ### 7.3 Integral centralizer reduction
 
@@ -1073,7 +1084,7 @@ For A/k over a number field with End_k=End_k̄ and every d≥1 there is M(A,k,d)
 
 - On Ẑ² with scalar End, B({1}) is scalar and has infinite index in M₂(Ẑ). For GL₂, (I+e₁₂)−I=e₁₂ and e₁₂e₂₁=e₁₁ generate matrix units. In rank 1, B({1})=Ẑ.
 
-- For a product W, the rank-one scalar algebras have local index 1 and total index 1. Local indices 2 at ℓ=2 and 3 at ℓ=3, and 1 elsewhere, give global index 6. Infinitely many index-2 factors would give infinite index.
+- In the rank-one ambient algebra Ẑ, the scalar algebra has local and global index 1. For abstract local orders O_ℓ={[[a,b],[ℓc,d]]:a,b,c,d∈ℤ_ℓ}⊂M₂(ℤ_ℓ), the lower-left entry modulo ℓ identifies the additive quotient with 𝔽_ℓ, so the local index is ℓ. Using O₂ and O₃ and full matrix orders elsewhere gives global index 2·3=6. Using O_ℓ at every prime gives additive quotient ∏_ℓ𝔽_ℓ, which is infinite. These orders are a control for the product-index calculation, not a Galois image satisfying the theorem.
 
 - For ψ:ℤ→ℤ, ψ(x)=2x, the kernel is 0 and row saturation index 2. Modulo 2 its kernel has dimension 1, so surjectivity fails; modulo 3 both kernels have dimension 0. For ψ=0, M_A=1 and the centralizer is the whole matrix ring.
 
