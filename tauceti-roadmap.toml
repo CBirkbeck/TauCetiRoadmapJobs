@@ -32,6 +32,8 @@ claims = "TauCetiProject/tauceti-roadmap-claims"
 library = "TauCetiProject/TauCeti"
 
 [board]
+# Hosted board runs queue for hours and get cancelled; the local tick (every 30 min) runs the intake instead.
+dispatch = false
 # Who may file targets: org teams ("team:org/slug") and bare logins. Other target issues are closed by board sync.
 target_filers = ["team:TauCetiProject/humans", "roed-math"]
 # Logins whose open roadmap pull requests count as ours in merge-order chains (the hosted workflow runs as a bot).
