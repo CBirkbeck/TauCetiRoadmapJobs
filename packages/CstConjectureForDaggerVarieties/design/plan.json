@@ -2754,10 +2754,16 @@
       "section": "F1.11 finiteness"
     },
     {
-      "slug": "dagger-strictness-kunneth-over-c",
-      "needs": "Provide over C the strictness and closed image of every de Rham differential on global sections of a smooth dagger affinoid or smooth dagger Stein space, for its fringe, respectively Fréchet, topology, and the cup-product Künneth isomorphism `⊕_(p+q=n) H^p_dR(X)⊗_C H^q_dR(Y)≅H^n_dR(X×Y)` for smooth dagger spaces X,Y over C whose de Rham cohomology is finite dimensional in every degree.",
+      "slug": "dagger-strictness-over-c",
+      "needs": "Provide over C the strictness and closed image of every de Rham differential on global sections of a smooth dagger affinoid or smooth dagger Stein space, for its fringe, respectively Fréchet, topology.",
       "supplier": "AdicSpacesPartIV",
-      "section": "F1.9 differentials and the overconvergent de Rham complex; F1.11 finiteness (Künneth formula)"
+      "section": "F1.9 differentials and the overconvergent de Rham complex"
+    },
+    {
+      "slug": "dagger-kunneth-over-c",
+      "needs": "Provide over C the cup-product Künneth isomorphism `⊕_(p+q=n) H^p_dR(X)⊗_C H^q_dR(Y)≅H^n_dR(X×Y)`, for every n≥0, for smooth dagger spaces X,Y over C whose de Rham cohomology is finite dimensional in every degree.",
+      "supplier": "AdicSpacesPartIV",
+      "section": "F1.11 finiteness (Künneth formula)"
     },
     {
       "slug": "geometric-finiteness-tubes",
@@ -2772,14 +2778,20 @@
       "section": "§2.7 Primitive comparison and integral finiteness, analytic log resolution"
     },
     {
-      "slug": "bounded-arithmetic-filtration",
-      "needs": "Provide continuous smooth-Galois period-Hom reconstruction for every acyclic arithmetic filtered (φ,N,G_K)-module over a complete discretely valued K with perfect countable residue field and, for each such acyclic module with φ-slopes in [0,r], Fil⁰M_K=M_K and Filʳ⁺¹M_K=0, a weakly admissible subfiltration with the same two filtration bounds (CN25 Lemma 5.4, line 1670).",
+      "slug": "acyclic-arithmetic-period-hom",
+      "needs": "Provide, for every acyclic arithmetic filtered (φ,N,G_K)-module (M,Fil) over a complete discretely valued K of characteristic zero with perfect countable residue field and V=V_st(M,Fil), continuous evaluation isomorphisms `Hom^sm_(G_K)`(V,B_st)≅M∨ of (φ,N,G_K)-modules over Fⁿʳ and `Hom_(G_K)`(V,B_dR)≅M_K∨ of filtered K-modules with Filʲ(M_K∨)=(Fil¹⁻ʲM_K)⊥, and, when the φ-slopes lie in [0,r], Fil⁰M_K=M_K and Filʳ⁺¹M_K=0, the same isomorphisms for the bounded kernel V_stʳ=tʳV_st with the twist {r} (CN25 Theorem 5.8 and Corollaries 5.9–5.10, lines 1730–1770).",
       "supplier": "PadicHodgeTheory",
       "section": "§§3.4, 3.7 and 5.2"
     },
     {
+      "slug": "bounded-arithmetic-subfiltration",
+      "needs": "Provide, for every acyclic arithmetic filtered (φ,N,G_K)-module over a complete discretely valued K of characteristic zero with perfect countable residue field, with φ-slopes in [0,r], Fil⁰M_K=M_K and Filʳ⁺¹M_K=0, a weakly admissible filtration Fil₁ with Filⁱ₁M_K⊆FilⁱM_K for every i and the same two filtration bounds (CN25 Lemma 5.4, line 1670).",
+      "supplier": "PadicHodgeTheory",
+      "section": "§3.4"
+    },
+    {
       "slug": "positive-crystalline-hom",
-      "needs": "Provide the additional positivity criterion for the restricted natural period-Hom maps in the affinoid refinement that proves exact B_cris⁺ equality, distinguishing B_cris⁺ from B_max⁺ and retaining Frobenius compatibility after extension to the completed maximal unramified coefficient field.",
+      "needs": "Provide, for every integer r≥0 and every finite Frobenius module M over Fⁿʳ with slopes in [0,r], with X_crisʳ(M)=`(M⊗B_cris⁺)^(φ=pʳ)`, that every λ∈M∨⊗t⁻ʳB_cris⁺ whose evaluation pairing sends the C-points X_crisʳ(M)(C) into B_cris⁺ lies in M∨⊗B_cris⁺, compatibly with extension of scalars to F̂ⁿʳ and with Frobenius (the final equality of CN25 Remark 9.9(ii), lines 2862–2865).",
       "supplier": "PadicHodgeTheory",
       "section": "§§0.4–0.5 and 3.7"
     },
@@ -2797,15 +2809,15 @@
     },
     {
       "slug": "qbc-pairs",
-      "needs": "Extend finite BC theory to the natural TVS category on sympathetic algebras, reasonable torsion B_dR⁺-Pairs and qBC objects, with canonical curvature filtration, signed additive height, dense finite-torsion presentations and compatibility with finite BC.",
+      "needs": "Extend finite BC theory to the natural TVS category on sympathetic algebras, torsion B_dR⁺-Pairs and qBC objects, with signed additive height, dense finite-torsion presentations of every torsion B_dR⁺-Pair (CN25 Theorem 9.8 proof, line 2834), uniqueness of the curvature filtration of a qBC whose middle Pair is reasonable (CN25 Proposition 4.26, line 1432) and compatibility with finite BC.",
       "supplier": "VectorBundlesAndIsocrystals",
       "section": "VB3, Sympathetic algebras and the classical category; Curvature, the tilted coherent heart and HN invariants"
     },
     {
       "slug": "bc-countable-inverse-limits",
-      "needs": "Provide that every decreasing sequence of sub-BC objects of a finite BC object is stationary and, consequently, that R¹lim vanishes for every countable inverse system of finite BC objects with BC transition maps, in the natural VS realization and in the left heart (CN25 Remark 3.15, line 764).",
+      "needs": "Provide, from the Artinian property of BC (VB3, Curvature, the tilted coherent heart and HN invariants), that R¹lim vanishes for every countable inverse system of finite BC objects with BC transition maps, in the natural VS realization and in the left heart, compatibly with the realization functors (CN25 Remark 3.15, line 764).",
       "supplier": "VectorBundlesAndIsocrystals",
-      "section": "VB3, Sympathetic algebras and the classical category; Curvature, the tilted coherent heart and HN invariants"
+      "section": "VB3, Curvature, the tilted coherent heart and HN invariants"
     },
     {
       "slug": "natural-period-hom",
@@ -2821,7 +2833,7 @@
     },
     {
       "slug": "dagger-analytic-complexes",
-      "needs": "Provide, for a smooth dagger space X over C, the model-free overconvergent Hyodo–Kato, B_dR⁺-de Rham and syntomic complexes with their cup products, as objects of the bounded-below strict derived category; the strict derived completed comparisons RΓ_HK(X)⊗̂C≃RΓ_dR(X) and RΓ_HK(X)⊗̂B_dR⁺≃RΓ_dR(X/B_dR⁺), natural in X and multiplicative; the identity τ_≤i F^(r+1)RΓ_dR(X/B_dR⁺)=tFʳRΓ_dR(X/B_dR⁺) for i≤r; the filtered fiber triangle defining syntomic cohomology from the Frobenius eigenspace of Hyodo–Kato cohomology and the de Rham filtration; and, for quasi-compact X, Frobenius slopes of Hⁱ_HK(X) in [0,min(i,dim X)] (CN25 Proposition 6.1, line 1954; Remark 6.23(ii), line 2231; Lemma 7.13 proof, line 2405).",
+      "needs": "Provide, for a smooth dagger space X over C, the model-free overconvergent Hyodo–Kato, B_dR⁺-de Rham and syntomic complexes with their cup products, as objects of the bounded-below strict derived category; the strict derived completed comparisons RΓ_HK(X)⊗̂C≃RΓ_dR(X) and RΓ_HK(X)⊗̂B_dR⁺≃RΓ_dR(X/B_dR⁺), natural in X and multiplicative; for 0≤i≤r, that multiplication by t, FʳRΓ_dR(X/B_dR⁺)→F^(r+1)RΓ_dR(X/B_dR⁺), induces an isomorphism τ_≤iFʳRΓ_dR(X/B_dR⁺)≃τ_≤iF^(r+1)RΓ_dR(X/B_dR⁺) (CN25 line 2231 prints the truncation on the left side only); the filtered fiber triangle defining syntomic cohomology from the Frobenius eigenspace of Hyodo–Kato cohomology and the de Rham filtration; and, for quasi-compact X, Frobenius slopes of Hⁱ_HK(X) in [0,min(i,dim X)] (CN25 Proposition 6.1, line 1954; Remark 6.23(ii), line 2231; Lemma 7.13 proof, line 2405).",
       "supplier": "CohomologyComparisons",
       "section": "§4.9a Analytic Hyodo–Kato realization"
     },

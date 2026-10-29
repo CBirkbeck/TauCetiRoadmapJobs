@@ -1,3 +1,5 @@
+module
+
 import Mathlib
 
 /-!
@@ -18,7 +20,7 @@ Tau Ceti's adic spaces and Frobenius orbit space do not supply these realization
 - The simplified Stein and affinoid diagram (README §1.5): lacks smooth dagger Stein and affinoid spaces with analytic pro-étale, HK and differential-form cohomology.
 - Bicartesian diagrams for proper, Stein and affinoid spaces (README §1.6): lacks the analytic fundamental square on actual proper, dagger Stein and affinoid cohomology.
 - Kernel and cokernel descriptions (README §2.2): lacks modified coherent HK bundles and the analytic left-heart period diagram.
-- The canonical qBC filtration on pro-étale cohomology (README §2.3): lacks natural TVS cohomology, reasonable period Pairs and qBC curvature objects.
+- The canonical qBC filtration on pro-étale cohomology (README §2.3): lacks natural TVS cohomology, torsion period Pairs and qBC curvature objects.
 - The exact sequence with two failure terms (README §2.4): lacks qBC/TVS cohomology and its coherent bundle-cohomology failure objects.
 - The height formula and its sign (README §2.5): lacks analytic qBC cohomology with signed height and modified HK bundles.
 - The degreewise equivalence of comparison criteria (README §2.6): lacks small dagger spaces, qBC curvature and the adjacent syntomic cohomology object.
