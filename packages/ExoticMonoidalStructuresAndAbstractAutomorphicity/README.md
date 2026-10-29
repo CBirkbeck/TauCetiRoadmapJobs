@@ -10,7 +10,7 @@ General smooth representations, their abelian and derived categories, compact in
 
 MetaplecticAutomorphicForms §§0.15–0.18, 1.1–1.4, 2.4b–2.7, 4.1, 4.1a and 4.2–4.4 own the local oscillator representation, generator relations, scalar extension, function-field vector-space Poisson adapter and rational symplectic splitting. This roadmap's §§6.1 and 6.3 own the restricted tensor triality kernel and its rational theta invariance. Fourier analysis and scalar zeta theory belong to AutomorphicLFunctionsAndLocalFactors AL.0–AL.3. Its AL.3, Curve additive analysis, owns the completion-valued adeles, residue characters and Poisson summation; FunctionFieldArithmetic §§0.1–0.3, 2.1–2.3, 4.8–4.10, 5.8 and 6.1–6.4 own arithmetic degrees, divisor lattices, ray classes, degree-sensitive Chebotarev, adelic groups, central-lattice automorphic modules, constant terms and cusp finiteness. Section 6.2 forms compact and unrestricted smooth functions on the quotient of §6.1 using SmoothRepresentationsOfLocalGroups §SR.1.1, then compares the transpose dual. Local classification and generic models belong to GL2AutomorphicRepresentationsAndTransfer §§R16.2.1, R16.2.8 with the separate odd equal-characteristic classification and all-generic Kirillov extensions in Exact supplier contracts; function-field cuspidal factorization belongs to AutomorphicLFunctionsAndLocalFactors, Representation prerequisites, Restricted tensor realizations, and cuspidal multiplicity one to its AL.3 with the extension below.
 
-AlgebraicVectorBundles §§L0B–L0C own line bundles and their tensor products. Completed/RestrictedProducts, Scope and ownership and Layer 1, owns coordinate maps, finite change of reference, reindexing and away-S decomposition of topological restricted products; AutomorphicFormsOnReductiveGroups §3.4, Restricted tensor products and finite corners, owns the algebraic restricted tensor product of complex vector spaces with nonzero reference vectors, its finite-stage maps, functoriality for reference-preserving families and reference rescaling. Neither generic construction is rebuilt; the triality action on the restricted tensor and its coherence maps are constructed in §6.1. EnhancedDerivedSheaves §E5:presentability.2 owns presentable categorical tensors and their universal properties; the ordinary complex-linear extension below supplies the abelian version used in §5.3. Mathlib supplies matrix determinant and trace, algebraic coinvariants, native functors/isomorphisms, symmetric categories, commutative monoid objects and module objects.
+AlgebraicVectorBundles §§L0B–L0C own line bundles and their tensor products. Completed/RestrictedProducts, Scope and ownership and Layers 1–2, owns coordinate maps, finite change of reference, reindexing (Layer 1) and the away-S decomposition (Layer 2) of topological restricted products; AutomorphicFormsOnReductiveGroups §3.4, Restricted tensor products and finite corners, owns the algebraic restricted tensor product of complex vector spaces with nonzero reference vectors, its finite-stage maps, functoriality for reference-preserving families and reference rescaling. Neither generic construction is rebuilt; the triality action on the restricted tensor and its coherence maps are constructed in §6.1. EnhancedDerivedSheaves §E5:presentability.2 owns presentable categorical tensors and their universal properties; the ordinary complex-linear extension below supplies the abelian version used in §5.3. Mathlib supplies matrix determinant and trace, algebraic coinvariants, native functors/isomorphisms, symmetric categories, commutative monoid objects and module objects.
 
 ## Conventions
 
@@ -100,7 +100,7 @@ Consume §3.4, Restricted tensor products and finite corners: for a countable in
 
 ### From Completed/RestrictedProducts
 
-Consume Scope and ownership, Layer 1 and Change of family and double cosets: maps from eventually integral coordinates, finite changes of reference, reindexing and the finite exceptional-set decomposition. Inserting a reference vector at one extra unramified place changes no restricted tensor; changing reference data at infinitely many places is not a finite-change transport. These topological contracts are distinct from the restricted tensor of representation spaces, which is consumed from AutomorphicFormsOnReductiveGroups §3.4, Restricted tensor products and finite corners; its triality specialization is constructed in §6.1.
+Consume Scope and ownership, Layer 1, Layer 2 and Change of family and double cosets: maps from eventually integral coordinates, finite changes of reference and reindexing (Layer 1), and the finite exceptional-set decomposition (Layer 2). Inserting a reference vector at one extra unramified place changes no restricted tensor; changing reference data at infinitely many places is not a finite-change transport. These topological contracts are distinct from the restricted tensor of representation spaces, which is consumed from AutomorphicFormsOnReductiveGroups §3.4, Restricted tensor products and finite corners; its triality specialization is constructed in §6.1.
 
 ### From TauCetiRoadmap.EnhancedDerivedSheaves
 
@@ -280,7 +280,7 @@ A proof route is as follows. Separate the rank-zero and rank-one strata. The zer
 
 For generic irreducible V and β(g)=⟨ṽ,π(g)v⟩, the formula μ(β⊗Ψ)(y)=∫G β(g)Ψ(g,y/det g)d×g descends to an isomorphism Ṽ⊗G Y°⊗G V→S(F×). The Haar measure gives GL₂(O) volume 1.
 
-(Dor23, Equation (2.2), p. 8; Remark 2.21, p. 17 (Dor23 line 768).)
+(Dor23, Equation (2.2), p. 8; Remark 2.21, p. 17 (Dor23 line 854).)
 
 A proof route is as follows. Use the regular bimodule identification for S(G), countable Schur from SmoothRepresentationsOfLocalGroups §SR.3a.1, admissibility-of-irreducibles, for irreducible V (G is countable at infinity), and change of variables to prove balancing. Integrate the compact g-support; establish the inverse using a matrix coefficient pairing normalized to 1.
 
@@ -370,7 +370,7 @@ The required interface has the following properties.
 
 For smooth left modules M,N define M⊛N=(IRL(M)⊗ℂ IRL(N))⊗G×G Y using the first and third kernel actions, retaining the middle action. For morphisms use the descended tensor map. Transpose of m defines a natural involutive symmetry; the product preserves colimits separately and is right exact. The ordinary tensor product of G representations is not used as the output product.
 
-(Dor23, Definition 3.2 and Construction 3.3, pp. 19–20 (Dor23 line 967).)
+(Dor23, Definition 3.2 and Construction 3.3, pp. 19–20 (Dor23 line 976).)
 
 A proof route is as follows. Form smooth balanced coinvariants with commuting residual action; invoke the supplier contract, not just algebraic Rep.coinvariantsTensor. Descend the transpose map and check the symmetry square. Colimit preservation follows from the balanced quotient construction.
 
@@ -881,9 +881,9 @@ The required interface has the following properties.
 
 **Checks.**
 
-- An outer rational translate does not change the class used in m. Reindexing ξ and q gives the same finite sum.
-- Interchanging the two S factors preserves m. The transposed pair of matrix summands has the same value.
-- The codomain here remains S̃; compactness is established only after passing to the ideal I. A compact-output assertion on all S would bypass the determinant-kernel theorem.
+- Realize S⊛S as the coinvariants of YA under the two outer Γ actions and write [Ψ] for the class of Ψ. Rational discreteness gives a compact open product set, equal to M₂(Ov)×Ov× at almost all v, meeting M₂(F)×F× only at (0,1); for its indicator Ψ, m([Ψ])(Γ·1)=Θ(Ψ)=1. The zero map gives 0, and c·m gives c, so the value pins the normalization.
+- Choose disjoint such neighbourhoods meeting the rational pairs only at (E₀₁,1) and (E₁₀,1), and let Ψ be their indicators with coefficients 1 and 2. Then m([Ψ])(Γ·1)=1+2=3, and after transposing the matrix variable (the symmetry of S⊛S) the two contributions are exchanged and the value is still 3. An antisymmetric model Σ(Ψ(ξ,q)−Ψ(ξᵀ,q)) gives −1 before and 1 after the exchange.
+- Over F=𝔽₃(t), take e the residue character of dt with value ζ=exp(2πi/3) on residue 1, and b∈A with component t⁻¹ at t=0 and 0 elsewhere, so e(b)=ζ. For Ψ the indicator of a neighbourhood isolating (I₂,1), m([Ψ])(Γ·1)=1 and m([Ψ])(Γ·u(b))=Θ(u(b)·Ψ)=e(b·1·det I₂)=ζ by the middle unipotent formula of §0.4. A constant output gives 1 at the second point and the inverse character gives ζ². The codomain remains S̃; compact support is only established on the ideal I.
 
 *Needs:* §6.3; §6.2; SmoothRepresentationsOfLocalGroups §§SR.2.1–SR.2.3 and its smooth-balanced-tensor contract in Exact supplier contracts.
 
@@ -959,7 +959,7 @@ A proof route is as follows. Unfold the Poincaré sum and integrate the rational
 
 Let p:S(Γ\G)→S(F×\A×) be the pushforward along determinant, integrating over the SL₂ quotient fibres with the compatible quotient measures. Define I=ker p. Then im(eA)=I, so IunitA↠I→S→S(F×\A×)→0 is exact at S and I is orthogonal under the quotient pairing to determinant characters. I includes noncuspidal functions.
 
-(Dor23, Proposition 4.19, p. 46; Remark 4.20, p. 47; proof p. 48 (Dor23 line 2335).)
+(Dor23, Proposition 4.19, p. 46; Remark 4.20, p. 47; proof p. 48 (Dor23 line 2350; Dor23 line 2411).)
 
 A proof route is as follows. Define the determinant pushforward and prove that it preserves compact quotient support. The Poincaré image has zero determinant pushforward. For the reverse inclusion, dualize: vanishing of all nontrivial unipotent Fourier coefficients forces U(A)-invariance. Together with Γ this forces SL₂(A)-invariance and hence determinant factorization.
 
@@ -982,7 +982,7 @@ The required interface has the following properties.
 
 The theta product restricts to mI:I⊛I→I, with unit the epimorphism IunitA↠I. It is a commutative unital associative algebra in the exotic category. The restricted Petersson pairing obeys B(x,mI(y,z))=B(mI(x,y),z); this invariance does not assert I≅Ĩ.
 
-(Dor23, Corollaries 4.21–4.22 and Remarks 4.23–4.24, p. 47 (Dor23 line 2357).)
+(Dor23, Corollaries 4.21–4.22 and Remarks 4.23–4.24, p. 47 (Dor23 line 2359).)
 
 A proof route is as follows. Use the surjective unit and the Petersson identity to prove the output lies in I⊂S, not merely S̃. Precompose associativity with the epi IunitA⊛I⊛I→I⊛I⊛I, using right exactness. Reduce to unit equations. Use theta symmetry for commutativity and pairing invariance.
 
@@ -1345,9 +1345,13 @@ The required interface has the following properties.
 
 ### 11.2 Automorphic induction adjunction
 
-Globalize Lnorm and î using S(A×A×) where the first A is additive. Invert the local maps ηv by tensor-compatible localization; there is no assumed global η respecting reference vectors. Then î maps Modaut(T) into Modaut(G), and its restriction îaut has left adjoint r̂aut(V)=(r̂V)T(F). The unit-factorization map I→î(IT[ηv⁻¹]) is the constant term. Choosing a trivialization of Lnorm also gives ordinary iaut; the canonical normalization remains îaut.
+Globalize Lnorm and î using S(A×A×) where the first A is additive, with reference vector 1Ov(λ)1Ov×(y) at every place. Invert the local maps ηv by tensor-compatible localization; there is no assumed global η respecting reference vectors. Then î maps Modaut(T) into Modaut(G), and its restriction îaut has left adjoint r̂aut(V)=(r̂V)T(F). The unit-factorization map I→î(IT[ηv⁻¹]) is the constant term. Choosing a trivialization of Lnorm also gives ordinary iaut; the canonical normalization remains îaut.
 
 (Dor21, Theorems C.2.1 and C.2.3, Warnings C.2.2 and C.2.4, pp. 42–43; Theorem C.3.3, Remark C.3.5 and Claim C.3.7, pp. 45–47 (Dor21 line 2035).)
+
+Globalize the trace and the intertwiner of §10.5 as follows. For a smooth T(A)-module A write A[η⁻¹] for the tensor-compatible localization inverting every ηv, and A[η(w)⁻¹] for the one inverting every Weyl-twisted map ηv(w):1T,v(w)→Lnorm,v(w). At each place the local trace Φ⁻v îv(V)≅underlineHomTv(Lnorm,v,V) has a unique completion through ηv(w) to underlineHomTv(Lnorm,v⊗Tv Lnorm,v(w),V[ηv(w)⁻¹]); prove that these completions, unlike the local traces, preserve the reference vectors at almost every place. Construct the resulting natural maps Φ⁻î(A)→underlineHomT(Lnorm⊗T Lnorm(w),A[η(w)⁻¹]) and M_A:î(A)→î(A(w)[η⁻¹]). No restricted tensor of the unlocalized local traces or intertwiners is asserted. Since |a/d| is trivial on T(F), multiplication by it identifies IT(w) with IT. Prove that the image of the unit 1→î(IT[η⁻¹]) is invariant under M:î(IT[η⁻¹])→î(IT[η⁻¹,η(w)⁻¹]).
+
+(Dor21, Remark C.2.5, pp. 43–44; Remark C.3.9, p. 46 (Dor21 line 2066; Dor21 line 2156).)
 
 A proof route is as follows. Verify that the local multiplication respects distinguished vectors. For units invert each ηv; the unlocalized local units do not form a restricted tensor map. Identify the resulting unit map with the constant-term unfolding and factor it through I using the Poincaré sum. Exactness and colimit preservation, with the inclusion IT→IT[ηv⁻¹], extend automorphicity to every torus object. Compose the reflector to rational coinvariants with the normalized Jacquet adjunction to obtain r̂aut⊣îaut.
 
@@ -1357,11 +1361,12 @@ The required interface has the following properties.
 - V↦(r̂V)T(F), with quotient torus action.
 - r̂aut⊣îaut, with the inherited unit and counit.
 - The factorization I→î(IT[ηv⁻¹]) agrees with the usual constant-term map.
-- The constant-term image is invariant under the normalization-aware global intertwiner.
+- Natural maps Φ⁻î(A)→underlineHomT(Lnorm⊗T Lnorm(w),A[η(w)⁻¹]) and M_A:î(A)→î(A(w)[η⁻¹]) for every smooth T(A)-module A, with exactly these localized targets.
+- The constant-term image I→î(IT[η⁻¹]) is invariant under M:î(IT[η⁻¹])→î(IT[η⁻¹,η(w)⁻¹]).
 
 **Checks.**
 
-- A local family ηv that changes the reference vector at infinitely many places is not a global map 1T→Lnorm. The reference comparison fails on infinitely many inserted factors and therefore has no restricted-tensor value.
+- At every place ηv(1Ov×(x)1Ov×(y)) is 1Ov×(λ)1Ov×(y), whose value at (λ,y)=(0,1) is 0, while the Lnorm reference 1Ov(λ)1Ov×(y) has value 1 there. So the family ηv changes the reference vector at every place and is not a global map 1T→Lnorm. The Weyl twist changes only the action, not the underlying linear map, so ηv(w) shows the same values 0 and 1: the raw local traces and intertwiners do not assemble, and reference preservation is checked only after the ηv(w) insertion.
 - On an automorphic torus character, îaut realizes as normalized smooth parabolic induction. Its rational torus action is trivial, and the realization has the specified induction direction.
 - Applying r̂aut to a cuspidal object gives zero; the converse is excluded by the anomalous example below. The Eisenstein quotient in §11.4 supplies a nonzero object with zero restriction.
 
