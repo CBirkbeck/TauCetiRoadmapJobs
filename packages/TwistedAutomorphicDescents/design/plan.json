@@ -3335,7 +3335,7 @@
     },
     {
       "slug": "bessel-restriction-growth",
-      "needs": "Supply absolute convergence and continuity of Bessel periods when the form on the ambient group is cuspidal and the form on the stabilizer has moderate growth, and when the stabilizer form is cuspidal and the stabilizer has trivial F-split centre; for a split SO₂ stabilizer, the finite asymptotic expansions of Bessel coefficients of moderate-growth forms along the split torus and the truncation-regularized period with its exponent corrections, agreeing with the ordinary integral where that converges; and restriction estimates into fixed-central-character or split-center-quotient Hilbert carriers, with all archimedean cases.",
+      "needs": "Supply absolute convergence and continuity of Bessel periods when the form on the ambient group is cuspidal and the form on the stabilizer has moderate growth, and when the stabilizer form is cuspidal and the stabilizer has trivial F-split centre, and restriction estimates into fixed-central-character or split-center-quotient Hilbert carriers, with all archimedean cases.",
       "supplier": "AutomorphicFormsOnReductiveGroups",
       "section": "4.1–4.2, restriction and cuspidal realization"
     },
@@ -3407,7 +3407,7 @@
     },
     {
       "slug": "orthogonal-auxiliary-induction",
-      "needs": "For every finite extension k of Q_p, every nondegenerate quadratic space W over k, every t≥1, every irreducible admissible σ_W of SO(W)(k) and every irreducible supercuspidal τ of GL_t(k), prove that the normalized induction of τ|det|^s⊗σ_W from the maximal parabolic of SO(W⊥H^t) with Levi GL_t×SO(W) is irreducible for s outside a finite subset of C/(2πi/log q)Z, and that for each irreducible π_V of SO(V)(k), V⊂W⊥H^t of codimension one, τ can be chosen so that no Bernstein component of SO(V)(k) containing π_V has τ, up to unramified twist, in its GL_t cuspidal support.",
+      "needs": "For every finite extension k of Q_p, every nondegenerate quadratic space W over k, every t≥1, every irreducible admissible σ_W of SO(W)(k) and every irreducible supercuspidal τ of GL_t(k), prove that the normalized induction of τ|det|^s⊗σ_W from the parabolic of SO(W⊥H^t) stabilizing a chosen t-dimensional totally isotropic subspace of H^t, with Levi GL_t×SO(W) (the whole group when W=0 and t=1, and a non-maximal parabolic when W is a hyperbolic plane) is irreducible for s outside a finite subset of C/(2πi/log q)Z, and that for each irreducible π_V of SO(V)(k), V⊂W⊥H^t of codimension one, τ can be chosen so that no Bernstein component of SO(V)(k) containing π_V has τ, up to unramified twist, in its GL_t cuspidal support.",
       "supplier": "SmoothRepresentationsOfLocalGroups",
       "section": "SR.3.1, generic-irreducibility"
     },
