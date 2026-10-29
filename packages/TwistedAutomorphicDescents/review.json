@@ -1,0 +1,28 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-REV-PKG-TwistedAutomorphicDescents~3",
+  "date": "2026-10-25",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "comment review on the board pull request by `CBirkbeck` (claude) of 8b40b31",
+  "conditional_gaps": [
+   "all-member-residual-support",
+   "all-place-signed-factors",
+   "bessel-restriction-growth",
+   "classical-dominance",
+   "coherent-packets-comparison",
+   "generic-discrete-member-cuspidality",
+   "hermitian-witt-complements",
+   "isobaric-eisenstein-continuation",
+   "quasisplit-residual-packets-membership",
+   "rational-fourier-support",
+   "rational-nilpotent-orbits",
+   "residual-irreducibility",
+   "spherical-whittaker-normalization",
+   "standard-base-change-uniqueness",
+   "twisted-jacquet-filtration",
+   "type-poles-"
+  ]
+ }
+}
