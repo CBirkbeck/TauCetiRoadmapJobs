@@ -194,7 +194,7 @@ sha256 = "a4f8f76df504e48d3657cd182b9c3a146463abb82545b0327beb2c848f7faf50"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-23"
-cited_for = ["DS.7/char-zero-derived-splitting"]
+cited_for = ["DS.7/char-zero-derived-splitting", "7.1"]
 
 [[source]]
 id = "STACKS"
@@ -202,7 +202,7 @@ authors = "The Stacks Project Authors"
 title = "The Stacks Project"
 year = 2026
 locator_scheme = "tag"
-locator = "Definition 10.42.1 (tag 030O); Tags 0A6A, 01XI, 02O5, 02O6, 0815, 081R, 081S, 081T; Sections 30.4, 30.19, 38.30–38.31"
+locator = "Definition 10.42.1 (tag 030O); Tags 0A6A, 01XI, 02O5, 02O6, 0815, 081R, 081S, 081T; Sections 30.4, 30.19, 38.30–38.31; Lemmas 48.15.6, 48.15.7, 48.29.2 (tags 0BR0, 0BRT, 0E9Z); Example 48.7.3 (tag 0B6L)"
 url = "https://stacks.math.columbia.edu/tag/081R"
 fetched_from = "https://stacks.math.columbia.edu/download/flat.pdf#nameddest=081R"
 fetched_at = "2026-10-25T11:39:56Z"
@@ -210,8 +210,8 @@ sha256 = "553b6d1e2eb22bcf1dfbb8167356c184f41b48089f72cf93acf94e0fb143212e"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["DS.7/proper-cohomology-perfect", "7.2", "Conventions; 6.2", "7.4; gap:perfectoid-base-modification-domination"]
-additional_texts = [{ url = "https://stacks.math.columbia.edu/download/algebra.pdf#nameddest=030O", sha256 = "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947", licence_class = "open-repository", line_locator = "030O line 4671" }, { url = "https://stacks.math.columbia.edu/download/more-algebra.pdf#nameddest=0A6A", sha256 = "ab69179738e642603ddbde651f2838e1cb5d8711e8bcd7c447cbf02a8bb6a5d2", licence_class = "open-repository", line_locator = "0A6A line 13484" }, { url = "https://stacks.math.columbia.edu/download/coherent.pdf#nameddest=01XH", sha256 = "b4980a08a8cce98fed6a420364b18c119364a9436577031b28a16863bcbdbfb8", licence_class = "open-repository", line_locator = "01XI line 290; 02O5 line 2350; 02O6 line 2413" }]
+cited_for = ["DS.7/proper-cohomology-perfect", "7.2", "Conventions; 6.2", "7.4; gap:perfectoid-base-modification-domination", "7.7"]
+additional_texts = [{ url = "https://stacks.math.columbia.edu/download/algebra.pdf#nameddest=030O", sha256 = "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947", licence_class = "open-repository", line_locator = "030O line 4671" }, { url = "https://stacks.math.columbia.edu/download/more-algebra.pdf#nameddest=0A6A", sha256 = "ab69179738e642603ddbde651f2838e1cb5d8711e8bcd7c447cbf02a8bb6a5d2", licence_class = "open-repository", line_locator = "0A6A line 13484" }, { url = "https://stacks.math.columbia.edu/download/coherent.pdf#nameddest=01XH", sha256 = "b4980a08a8cce98fed6a420364b18c119364a9436577031b28a16863bcbdbfb8", licence_class = "open-repository", line_locator = "01XI line 290; 02O5 line 2350; 02O6 line 2413" }, { url = "https://stacks.math.columbia.edu/download/duality.pdf#nameddest=0E9Z", sha256 = "ab59074f91c60e44908903b839e709857dda0daf36c030e898b5bf55cdcda304", licence_class = "open-repository", fetched_at = "2026-10-29T01:35:07Z", line_locator = "0B6L line 1039; 0BR0 line 1786; 0BRT line 1797; 0E9Z line 3650" }]
 
 [[source]]
 id = "HOCHSTER73"
@@ -245,3 +245,33 @@ licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-10-23"
 cited_for = ["5.2"]
+
+[[source]]
+id = "BH93"
+authors = "Winfried Bruns, Jürgen Herzog"
+title = "Cohen-Macaulay Rings"
+year = 1993
+venue = "Cambridge Studies in Advanced Mathematics 39"
+doi = "10.1017/CBO9780511608681"
+locator_scheme = "theorem"
+locator = "Exercise 8.1.7; Theorem 8.5.1"
+url = "https://doi.org/10.1017/CBO9780511608681"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled book; the DOI resolves to the publisher page of the revised edition; the locator is the one BMPSTWW line 517 gives for the 1993 edition; cited by its locator without the text"
+cited_for = ["0.5"]
+
+[[source]]
+id = "HH92"
+authors = "Melvin Hochster, Craig Huneke"
+title = "Infinite Integral Extensions and Big Cohen-Macaulay Algebras"
+year = 1992
+venue = "Annals of Mathematics (2) 135"
+doi = "10.2307/2946563"
+locator_scheme = "section"
+locator = "equal-characteristic-zero existence of big Cohen-Macaulay algebras, as attributed by BMPSTWW §2.2, p. 13"
+url = "https://doi.org/10.2307/2946563"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["4.10"]

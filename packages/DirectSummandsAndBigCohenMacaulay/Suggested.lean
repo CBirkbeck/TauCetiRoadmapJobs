@@ -1,5 +1,7 @@
-import Mathlib
-import TauCeti.RingTheory.RegularLocalRing.Basic
+module
+
+public import Mathlib
+public import TauCeti.RingTheory.RegularLocalRing.Basic
 
 /-!
 # Direct summands and big Cohen–Macaulay algebras: target signatures
@@ -31,6 +33,8 @@ R-module statement; the affine comparison belongs to the README's suppliers.
 
 All algebra and module hypotheses below are explicit in declaration signatures.
 -/
+
+public section
 
 namespace TauCetiRoadmap.DirectSummandsAndBigCohenMacaulay
 
@@ -223,3 +227,5 @@ theorem derivedDirectSummand (R : Type u) [CommRing R] [IsRegularRing R] :
   sorry
 
 end TauCetiRoadmap.DirectSummandsAndBigCohenMacaulay
+
+end
