@@ -4310,6 +4310,12 @@
       "supplier": "AnalyticNumberTheoryPartI",
       "section": "§0.32",
       "needs": "There are absolute constants C>0 and L>0 such that every coprime residue class a modulo m≥2 contains a prime q≤C m^L, with constants independent of a and m."
+    },
+    {
+      "slug": "variable-rank-abelian-by-finite",
+      "needs": "Extend §§2.1–2.4 and 3.8–3.9 to a polarised abelian scheme of locally constant relative dimension over a surjective finite étale cover, with its finite locally free H¹ module and the product of Weil-restricted Lagrangian varieties indexed by the constant-rank components.",
+      "supplier": "MordellLawrenceVenkatesh",
+      "section": "§§2.1–2.4, 3.8–3.9"
     }
   ],
   "sourceIssues": [
