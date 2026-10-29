@@ -251,8 +251,6 @@ AbelianSurfacesModularity
 EllipticModularityEffectiveComparisons
 ArithmeticKTheory
 K2SymbolsBrauerPartII
-K3BlochGroups
-SymplecticReidemeisterTorsionModSquares
 TeichmullerGeometry
 PositiveMass
 HodgeClassesForJacquetLanglands
@@ -270,11 +268,13 @@ NoncommutativeIntegration
 ZerosOfLFunctions
 LFunctions
 BorelRegulators
-Polylogarithms
 CongruenceSpectralGap
 FuchsianOrbifoldsPartII
 AutomorphicSpectralTheoryPartII
 AlgebraicKTheory
+K3BlochGroups
+SymplecticReidemeisterTorsionModSquares
+Polylogarithms
 QuantumEnvelopingAlgebras
 TopologicalSheafCohomology
 KloostermanMomentsAndPotentialAutomorphy
