@@ -7,10 +7,11 @@ authors = "David Masser and Gisbert Wüstholz"
 title = "Periods and minimal abelian subvarieties"
 year = 1993
 locator_scheme = "theorem"
-locator = "Main theorem, pp 407–409; equation (7.4), p 436; Lemmas 8.4 and 8.6, pp 439–440; matrix-height input, §9, Lemma 9.6"
+locator = "Main theorem, pp 407–409; Lemma 5.3; equation (7.4), p 436; Lemmas 8.4 and 8.6, pp 439–440; matrix-height input, §9, Lemma 9.6"
 licence_class = "none"
 status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/379#issuecomment-6389935806"
+cited_for = ["Layer 2"]
 
 [[source]]
 id = "mw95-refine"
@@ -22,3 +23,198 @@ locator = "Theorems 1–2 and Corollary 1, pp 211–224"
 licence_class = "none"
 status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/379#issuecomment-6389935806"
+cited_for = ["Layer 7"]
+
+[[source]]
+id = "mw95"
+locator_scheme = "theorem"
+locator = "§2 pp 8–9; §2 p8, definition after (2.1); End of §3 pp13–14, equation (3.11); §2 pp 8–9, norm body definition; §3 pp 10–13; §3, Lemmas3.1–3.3 pp 10–13, especially Lemma 3.3 p13; §2 Class Index Lemma and Lemmas 2.1–2.2 pp8–10; §3 pp13–14, equation (3.11); Lemma 5.2 p18; §4 pp 14–16, definition before Lemma 4.2; Lemma 5.1 pp 17–18; Lemma 4.2 pp 16–17; Lemma 4.1 pp 14–16; Lemma 6.1 pp 18–19; Lemma 6.2 pp 19–20; Lemma 6.3 p20; Lemma 7.1 pp 21–22; Theorem I p5; proof §7 pp 22–23; final p23; Theorem II p6, proof §7 pp 22–23 and final p23; Lemma 7.2 and following proof, p22–23; Theorem II p6; final field-degree argument p23"
+url = "https://www.numdam.org/item/PMIHES_1995__81__5_0.pdf"
+fetched_from = "https://www.numdam.org/item/PMIHES_1995__81__5_0.pdf"
+fetched_at = "2026-10-24T22:14:20Z"
+sha256 = "b572f1a720da973efee23bbec33c45ee6ab03ab1610287d80426e597199734e4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["Layers 3–5"]
+authors = "David Masser and Gisbert Wüstholz"
+title = "Factorization estimates for abelian varieties"
+year = 1995
+
+[[source]]
+id = "mz20"
+locator_scheme = "theorem"
+locator = "§4 p653, equation(21), and Lemma 4.1 block notation; §4 p655, Gram determinant after Lemma 4.1; §4 p656, degree-4g polynomial used in Lemma 4.2; §4 p653 equation(22) and p655 Gram determinant following Lemma 4.1, corrected by realification; Lemma 4.1, pp 653–655; Lemma 4.3 proof pp656–657, citing MW93 periods Lemmas 8.4 p439 and 8.6 p440, equation (7.4) p436; Lemma 4.3 pp 656–657; Igusa Lemma 20 p104 as cited there; Lemma 4.4 p657; Lemma 4.2 pp 655–656; Lemma 2.2, p. 644"
+url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v191-n2-p07-s.pdf"
+fetched_from = "https://annals.math.princeton.edu/wp-content/uploads/annals-v191-n2-p07-s.pdf"
+fetched_at = "2026-10-24T22:14:23Z"
+sha256 = "8b76bfac88374180701992e242d88f5d38fbe0b0cdb39c6c40c3c3fbbb874b60"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["Layers 1–2, §6.1"]
+authors = "David Masser and Umberto Zannier"
+title = "Abelian varieties isogenous to no Jacobian"
+year = 2020
+
+[[source]]
+id = "ts18"
+locator_scheme = "theorem"
+locator = "Theorem 2.3 pp382–383"
+url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v187-n2-p02-p.pdf"
+fetched_from = "https://annals.math.princeton.edu/wp-content/uploads/annals-v187-n2-p02-p.pdf"
+fetched_at = "2026-10-24T22:14:24Z"
+sha256 = "43259ca3cfedfb574bf1fe2f80e1023cb736ea299a76588536fd816340722abc"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["§5.5"]
+authors = "Jacob Tsimerman"
+title = "The André-Oort conjecture for A_g"
+year = 2018
+
+[[source]]
+id = "ry25"
+locator_scheme = "theorem"
+locator = "§4.6 Theorem 4.7 pp 260–262; Proof of Theorem 4.7 p261, product assertion attributed there to reference[11], Theorem 2.7; Proof of Theorem 4.7 pp 262–263; Theorem 4.7 proof, pp 260–262, fixed-prime paragraph; Theorem 4.7 proof pp 261–262, invoking MW95 refinements Theorems1–2 and Corollary 1; Theorem 4.7 proof pp 262–263, finite-field double centralizer and Nakayama step; Theorem 4.7 pp 260–263, number-field part of proof; Proposition 4.8 and proof pp263–265; Proposition 4.8 pp 263–264, definitions preceding its statement; Proposition 4.8 proof pp 264–265; Theorem 4.7 p260 and deduction from Proposition 4.8 pp 263–265"
+url = "https://www.numdam.org/item/10.1007/s10240-025-00154-4.pdf"
+fetched_from = "https://www.numdam.org/item/10.1007/s10240-025-00154-4.pdf"
+fetched_at = "2026-10-24T22:14:25Z"
+sha256 = "3f3af58def7bb398b3d365ecf828a6571a9477fd7f2b7b891706f146fec05b9e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["Layers 7–8"]
+authors = "Rodolphe Richard and Andrei Yafaev"
+title = "Generalised André-Pink-Zannier conjecture for Shimura varieties of abelian type"
+year = 2025
+
+[[source]]
+id = "gr14"
+locator_scheme = "theorem"
+locator = "Introduction, restatement of the Masser–Wüstholz period theorem, p344; Theorem 1.4 p347; §3.2 pp358–359; §6.8 p377"
+url = "https://lmbp.uca.fr/~gaudron/art11.pdf"
+fetched_from = "https://lmbp.uca.fr/~gaudron/art11.pdf"
+fetched_at = "2026-10-24T22:14:28Z"
+sha256 = "d6b02e1adb9c8f2ab5a574bd8f8c301b5dfcfb8e14db3516bd2ae099b216ac54"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["Exact supplier contracts", "Layer 2", "§6.1"]
+authors = "Éric Gaudron and Gaël Rémond"
+title = "Théorème des périodes et degrés minimaux d’isogénies"
+year = 2014
+
+[[source]]
+id = "noot95"
+locator_scheme = "theorem"
+locator = "Corollary 1.5 proof pp 164–165, citing Faltings–Wüstholz Chapter VI §3; §1.2, Proposition 1.3 and Corollary 1.5 pp163–165"
+url = "https://www.numdam.org/item/CM_1995__97_1-2_161_0.pdf"
+fetched_from = "https://www.numdam.org/item/CM_1995__97_1-2_161_0.pdf"
+fetched_at = "2026-10-24T22:14:28Z"
+sha256 = "6cb049905d74734b6dc9cdaf878b3f4054f1861163f1c4dfee2f0490124d08b9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["Layer 8"]
+authors = "Rutger Noot"
+title = "Abelian varieties—Galois representation and properties of ordinary reduction"
+year = 1995
+
+[[source]]
+id = "bost95"
+locator_scheme = "theorem"
+locator = "Theorem 2.2 pp119–120; Theorem 4.1 p128; §4.2 Théorème 4.2 and following remarks pp128–130; §4.3 Propositions 4.3–4.4 pp131–132; §§5.1–5.3 pp132–145, especially Proposition 5.3 pp134–135 and Lemma 5.4 pp136–137; Appendix D pp155–157"
+url = "https://www.numdam.org/item/SB_1994-1995__37__115_0.pdf"
+fetched_from = "https://www.numdam.org/item/SB_1994-1995__37__115_0.pdf"
+fetched_at = "2026-10-24T22:14:29Z"
+sha256 = "13d2911a3b4460552d2ba649609f626a0342beae85966929940ab7df205b0edb"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["Exact supplier contracts", "Layer 2"]
+authors = "Jean-Benoît Bost"
+title = "Périodes et isogénies des variétés abéliennes sur les corps de nombres"
+year = 1996
+
+[[source]]
+id = "igusa"
+authors = "Jun-ichi Igusa"
+title = "Theta Functions"
+year = 1972
+venue = "Grundlehren der mathematischen Wissenschaften"
+doi = "10.1007/978-3-642-65315-5"
+locator_scheme = "theorem"
+locator = "Lemma 20, p 104"
+url = "https://doi.org/10.1007/978-3-642-65315-5"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 2"]
+
+
+[[source]]
+id = "fw84"
+authors = "Gerd Faltings, Gisbert Wüstholz"
+title = "Rational Points"
+year = 1984
+doi = "10.1007/978-3-322-83918-3"
+locator_scheme = "theorem"
+locator = "Chapter VI §3"
+url = "https://doi.org/10.1007/978-3-322-83918-3"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 8"]
+
+
+[[source]]
+id = "deligne84"
+locator_scheme = "theorem"
+locator = "Theorem 2.7, printed p39"
+url = "https://www.numdam.org/item/SB_1983-1984__26__25_0.pdf"
+fetched_from = "https://www.numdam.org/item/SB_1983-1984__26__25_0.pdf"
+fetched_at = "2026-10-24T22:14:33Z"
+sha256 = "b0865c63f3c65e768c388e5d575a1395ab401c0edaf45a49305679fb16c73a77"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["Layer 7"]
+authors = "Pierre Deligne"
+title = "Preuve des conjectures de Tate et de Shafarevitch"
+year = 1985
+
+[[source]]
+id = "mw94-preprint"
+locator_scheme = "theorem"
+locator = "§2, internal pp 2–4, equation(2.1) and Lemmas2.2–2.3; §1 and §2 Lemma 2.1, internal pp 1–3; Lemma 2.2, internal p3; Lemma 2.3 and its proof, internal p4; §6, internal p11, homogeneous degree polynomial; §5, internal p9, principalization and field degree; §4, internal p6, restatement of MW period theorem; §4 internal p6, restatement of the MW93 period theorem; §4 internal p7, application to the basis of periods; §§3–5, Proposition in §4 internal pp 6–9 and §5 pp 9–10; Main Theorem internal p1, Lemma 2.1 pp2–3, Lemma 5.1 p10; §6, internal pp 11–12, equations(6.1)–(6.4)"
+url = "https://archive.mpim-bonn.mpg.de/1350/1/preprint_1991_51.pdf"
+fetched_from = "https://archive.mpim-bonn.mpg.de/id/eprint/1350/1/preprint_1991_51.pdf"
+fetched_at = "2026-10-24T22:15:00Z"
+sha256 = "4d47e3fa958457f92ef13fffe591cf48f9585b94d2ad1fca19e65097ae6433c2"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["Layers 1–2"]
+authors = "David Masser and Gisbert Wüstholz"
+title = "Endomorphism estimates for abelian varieties"
+year = 1994
+version_note = "Locators use the MPI author-preprint internal pagination; published numbering is not substituted."
+
+[[source]]
+id = "mw93-isog-preprint"
+locator_scheme = "theorem"
+locator = "§4 Lemmas 4.1–4.2, internal pp5–6"
+url = "https://archive.mpim-bonn.mpg.de/1497/1/preprint_1991_28.pdf"
+fetched_from = "https://archive.mpim-bonn.mpg.de/id/eprint/1497/1/preprint_1991_28.pdf"
+fetched_at = "2026-10-24T22:15:02Z"
+sha256 = "b7440d681efa31e2fe8247e1b4d700b82e1d779e2853d873fb8c18ab4d9378cf"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["Layers 1–2"]
+authors = "David Masser and Gisbert Wüstholz"
+title = "Isogeny estimates for abelian varieties, and finiteness theorems"
+year = 1993
+version_note = "Locators use the MPI author-preprint internal pagination; published numbering is not substituted."
+
