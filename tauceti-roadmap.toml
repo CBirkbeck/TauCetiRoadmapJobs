@@ -254,3 +254,8 @@ housekeeping_prefixes = ["Red-team repairs at", "Scope change at", "Supplier cha
 [prompts]
 # Optional file (in the packages repository) of project-specific rules appended to every brief.
 extra_rules_file = ""
+
+[worker]
+# Host-wide GitHub content-write cap (the secondary limit is ~80/min): 40/min leaves headroom and keeps the intake under 30 min.
+writes_per_minute = 40
+writes_per_hour = 1200
