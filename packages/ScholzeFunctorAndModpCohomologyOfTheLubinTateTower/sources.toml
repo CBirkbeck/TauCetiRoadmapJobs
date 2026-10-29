@@ -1,0 +1,237 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ScholzeFunctorAndModpCohomologyOfTheLubinTateTower"
+
+[[source]]
+id = "SCH18"
+authors = "Peter Scholze"
+title = "On the p-adic cohomology of the Lubin–Tate tower"
+year = 2018
+doi = "10.24033/asens.2367"
+arxiv = "1506.04022v1"
+locator_scheme = "section"
+locator = "§1, pp. 1–4; §2 (Definitions 2.1, 2.6, Lemmas 2.2–2.13), pp. 5–10; §3 (Proposition 3.1 to Corollary 3.14), pp. 10–18; §4 (Theorem 4.3 to Proposition 4.7), pp. 18–21; §5–§6 statements (Proposition 5.7, Theorem 6.2), pp. 21–27; proof of Proposition 7.7, p. 29"
+url = "https://arxiv.org/abs/1506.04022v1"
+fetched_from = "https://arxiv.org/pdf/1506.04022v1"
+fetched_at = "2026-10-25T12:46:56Z"
+sha256 = "8c1e4aa308d4b6834614ca80ca4d6e791bb3fd99d4a8512b3c8afc84698e9e44"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Preprint locators are arXiv:1506.04022v1 pages; published numbering retained."
+cited_for = ["Layers 0–6"]
+
+[[source]]
+id = "SCH13"
+authors = "Peter Scholze"
+title = "p-adic Hodge theory for rigid-analytic varieties"
+year = 2013
+arxiv = "1205.3463v2"
+locator_scheme = "section"
+locator = "§2, Propositions 2.10–2.11 and Lemmas 2.12–2.13, pp.10–13; §5, Lemma 5.6, p. 31"
+url = "https://arxiv.org/abs/1205.3463v2"
+fetched_from = "https://arxiv.org/pdf/1205.3463v2"
+fetched_at = "2026-10-25T12:47:03Z"
+sha256 = "ed9187b3269adb7e9964369470073ce8760ef56ef0c0b89538c0a1509f811959"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Locators use arXiv:1205.3463v2, pp. 10–13 and 31."
+cited_for = ["Layers 0–6"]
+
+[[source]]
+id = "LUD17"
+authors = "Judith Ludwig"
+title = "A quotient of the Lubin–Tate tower"
+year = 2017
+doi = "10.1017/fms.2017.15"
+arxiv = "1611.03685v2"
+locator_scheme = "section"
+locator = "§1, pp. 1–3; §2.1, pp. 3–5; Theorem 3.11, Corollary 3.13, Theorem 3.14 and Proposition 3.15 with proofs, pp.20–23; Proposition 3.17 with proof, Lemma 3.22 and Proposition 3.23, pp.23–27; §4 (Proposition 4.1 to Remark 4.8), pp. 28–32"
+url = "https://arxiv.org/abs/1611.03685v2"
+fetched_from = "https://arxiv.org/pdf/1611.03685v2"
+fetched_at = "2026-10-25T12:47:08Z"
+sha256 = "38519ca9497922479e1cd428a86a40e06f73afb4bd8e86dd77e2d780fd98db1f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Locators use arXiv:1611.03685v2."
+cited_for = ["Layers 0–6"]
+
+[[source]]
+id = "PAS22"
+authors = "Vytautas Paškūnas"
+title = "On some consequences of a theorem of J. Ludwig"
+year = 2022
+doi = "10.1017/S1474748020000547"
+arxiv = "1804.07567v3"
+locator_scheme = "section"
+locator = "§6 (from (29) to Theorem 6.5), pp. 27–30; §5, Lemmas 5.1–5.3 and Proposition 5.4, pp.17–20; fixed-central-character modules, pp.26 and29–30"
+url = "https://arxiv.org/abs/1804.07567v3"
+fetched_from = "https://arxiv.org/pdf/1804.07567v3"
+fetched_at = "2026-10-25T12:47:14Z"
+sha256 = "963e68f72655c183aeb04869b5cd5df92fd46f0aada580637b2c5f67c6beca34"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Locators use arXiv:1804.07567v3; formula (26) is read with the lattice-dual correction of DPS23 footnote 15."
+cited_for = ["Layers 0–6"]
+
+[[source]]
+id = "DPS23"
+authors = "Gabriel Dospinescu, Vytautas Paškūnas and Benjamin Schraen"
+title = "Gelfand–Kirillov dimension and the p-adic Jacquet–Langlands correspondence"
+year = 2023
+doi = "10.1515/crelle-2023-0033"
+arxiv = "2201.12922v2"
+locator_scheme = "section"
+locator = "§7 (Lemmas 7.1–7.4), pp. 29–31; §8 (Proposition 8.1, Lemma 8.2, Proposition 8.4, Lemma 8.6), pp. 37–40; Lemma 8.6 with proof, pp.40–41; footnote 15, p.40"
+url = "https://arxiv.org/abs/2201.12922v2"
+fetched_from = "https://arxiv.org/pdf/2201.12922v2"
+fetched_at = "2026-10-25T12:47:21Z"
+sha256 = "e468e5fc8c1b999359c25ea1ff7f091a02cb01e51a8930ccb350106a472b6067"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Locators use arXiv:2201.12922v2; the common-central-character convention is retained."
+cited_for = ["Layers 0–6"]
+
+[[source]]
+id = "GK14"
+authors = "Toby Gee and Mark Kisin"
+title = "The Breuil–Mézard conjecture for potentially Barsotti–Tate representations"
+year = 2014
+arxiv = "1208.3179v5"
+locator_scheme = "section"
+locator = "Appendix A (Proposition A.1, Theorem A.2, Corollary A.3), pp. 36–37"
+url = "https://arxiv.org/abs/1208.3179v5"
+fetched_from = "https://arxiv.org/pdf/1208.3179v5"
+fetched_at = "2026-10-25T12:47:26Z"
+sha256 = "65cb5797bbe10e328843b5fdc73f2623c80e19fa89ceb72ce6cd296881eb68f9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Locators use arXiv:1208.3179v5, Appendix A, pp. 36–37."
+cited_for = ["Layers 0–6"]
+
+[[source]]
+id = "STR08"
+authors = "Matthias Strauch"
+title = "Geometrically connected components of Lubin–Tate deformation spaces with level structures"
+year = 2008
+doi = "10.4310/PAMQ.2008.v4.n4.a10"
+arxiv = "math/0611121v1"
+locator_scheme = "section"
+locator = "§4 (Theorems 4.3 and 4.4 with proofs), pp. 11–13"
+url = "https://arxiv.org/abs/math/0611121v1"
+fetched_from = "https://arxiv.org/pdf/math/0611121v1"
+fetched_at = "2026-10-25T12:47:32Z"
+sha256 = "4d9d09cb6db952a07c0f1cdbdfe15cdd9d87a44ed261f402bc5ce2bcd4aa90a3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Locators use arXiv:math/0611121v1, Theorems 4.3–4.4."
+cited_for = ["Layers 0–6"]
+
+[[source]]
+id = "MOO68"
+authors = "Calvin C. Moore"
+title = "Group extensions of p-adic and adelic linear groups"
+year = 1968
+locator_scheme = "section"
+locator = "Chapter I §1 (Theorems 1.1–1.3); Chapter III §10 (Theorems 10.1–10.4); Chapter II Definition 3.1 and Theorem 3.1, printed pp.17–18; Chapter III §§8–9, Theorems 9.1–9.2, printed pp.46–47; Theorems 10.3–10.4, printed pp. 51–53"
+url = "https://www.numdam.org/item/PMIHES_1968__35__5_0/"
+fetched_from = "https://www.numdam.org/item/PMIHES_1968__35__5_0.pdf"
+fetched_at = "2026-10-25T12:47:33Z"
+sha256 = "2acf27c689eaeec6e75232069b33c9a9ac431b9bc7ca3602007b586480c2acd9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Locators use printed pagination of the Numdam publisher scan."
+cited_for = ["Layers 0–6"]
+
+[[source]]
+id = "ECD17"
+authors = "Peter Scholze"
+title = "Etale cohomology of diamonds"
+year = 2017
+arxiv = "1709.07343v4"
+locator_scheme = "section"
+locator = "Proposition 14.9; Lemma 23.6"
+url = "https://arxiv.org/abs/1709.07343v4"
+fetched_from = "https://arxiv.org/pdf/1709.07343v4"
+fetched_at = "2026-10-25T12:47:40Z"
+sha256 = "78ca42bba46f1d43c894b0dbfdfb41105efab4959ba5ba6e32e1e5cf7ef33efc"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Locators use arXiv:1709.07343v4; Proposition 14.9 supplies arbitrary-torsion continuity."
+cited_for = ["Layers 0–6"]
+
+[[source]]
+id = "CDN23"
+authors = "Pierre Colmez, Gabriel Dospinescu and Wiesława Nizioł"
+title = "Factorisation de la cohomologie étale p-adique de la tour de Drinfeld"
+year = 2023
+doi = "10.1017/fmp.2023.15"
+arxiv = "2204.11214v2"
+locator_scheme = "section"
+locator = "§0.1–0.2, pp. 2–6; §1.2.3 and §1.3.2 with Remarque 1.9, pp. 12–14; Lemmes 1.22–1.23 and Théorème 1.24, pp. 17–18; Théorème 2.1 and Corollaire 2.12, pp. 21 and 30; §3 (Théorèmes 3.1–3.2, Lemme 3.10, Corollaires 3.11 and 3.13), pp. 32–37; §4 (Théorème 4.1 to Remarque 4.29), pp. 37–49; Bibliography, pp. 60–62"
+url = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/79733067FC7CB7574B408744E4387F91/S205050862300015Xa.pdf/factorisation-de-la-cohomologie-etale-p-adique-de-la-tour-de-drinfeld.pdf"
+fetched_from = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/79733067FC7CB7574B408744E4387F91/S205050862300015Xa.pdf/factorisation-de-la-cohomologie-etale-p-adique-de-la-tour-de-drinfeld.pdf"
+fetched_at = "2026-10-25T12:49:17Z"
+sha256 = "b007a4e37b824ca5986ac6152ed9fabcf38dde97e16d8f5f7f60756fe77d3418"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Locators use the open published text; PDF and printed page numbers agree; corresponding preprint arXiv:2204.11214v2."
+cited_for = ["Layers 0–6"]
+
+[[source]]
+id = "FUST22"
+authors = "Paulina Fust"
+title = "Continuous group cohomology and Ext-groups"
+year = 2022
+arxiv = "2106.04473v2"
+locator_scheme = "section"
+locator = "§1 (Theorems 1.1–1.4); §2 (Lemmas 2.1–2.7); §4 (Lemma 4.1 to Corollary 4.4); §5 (Proposition 5.1, Corollary 5.2); §6.1–6.4 (Lemmas 6.2–6.6)"
+url = "https://www.uni-muenster.de/FB10/mjm/vol_15/mjm_vol_15_08.pdf"
+fetched_from = "https://www.uni-muenster.de/FB10/mjm/vol_15/mjm_vol_15_08.pdf"
+fetched_at = "2026-10-25T12:49:17Z"
+sha256 = "2a29569064210ed814a545805b0d1258668391289ca337edaab20825a06509ac"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Locators use the open journal text; reductive finiteness is Lemma 6.6, as in arXiv:2106.04473v2, not Lemma 6.3 of arXiv v1."
+cited_for = ["§§0.3, 2.1"]
+
+[[source]]
+id = "BW00"
+authors = "Armand Borel and Nolan Wallach"
+title = "Continuous cohomology, discrete subgroups, and representations of reductive groups"
+year = 2000
+doi = "10.1090/surv/067"
+locator_scheme = "chapter"
+locator = "Chapter IX, Proposition 2.3, pp. 175–176"
+url = "https://doi.org/10.1090/surv/067"
+licence_class = "none"
+status = "uncertified"
+version_note = "Second edition; publisher PDF requires institutional authentication; cited by locator without its text. CDN23 line 1555 independently identifies this Shapiro locator."
+cited_for = ["§2.1"]
+
+[[source]]
+id = "LE19"
+authors = "Daniel Le"
+title = "On some nonadmissible smooth irreducible representations for GL₂"
+year = 2018
+arxiv = "1809.10247v3"
+locator_scheme = "theorem"
+locator = "Theorems 1.1–1.2, pp. 1–2; §2, p. 4; Theorems 3.2–3.4, pp. 5–6"
+url = "https://arxiv.org/abs/1809.10247v3"
+fetched_from = "https://arxiv.org/pdf/1809.10247v3"
+fetched_at = "2026-10-26T23:18:19Z"
+sha256 = "ce5e51358c230bd7c131fc0970db9dbd27eae49ebb9974441a87d0b6276d328e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v3"
+cited_for = ["5.1"]
