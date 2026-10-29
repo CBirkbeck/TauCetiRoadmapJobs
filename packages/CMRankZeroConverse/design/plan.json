@@ -1826,20 +1826,82 @@
   ],
   "gaps": [
     {
-      "id": "GAP-CM",
-      "title": "Register the all-prime CM main-conjecture supplier",
-      "neededBy": [
-        "CMRankZeroConverse:C.3/cm-newform-converse"
-      ],
-      "detail": "The issue assigns BT Theorem 2.6 to CMAllPrimeMainConjectures, but no roadmap definition, stage or reserved node for that owner exists at the checked snapshot. Do not invent a resolvable supplier id. Once registered, replace this gap by its exact equality node, retaining all p, conductor Euler factors, the Kato zeta-element normalization and independent early CM weak Leopoldt. The exceptional K⊂ℚ(μ_{p∞}) cases (ℚ(i),p=2 and ℚ(ζ₃),p=3) belong to that supplier. Kato Proposition 15.17 alone is an inequality and does not discharge the equality."
+      "slug": "all-coefficient-places-zeta",
+      "needs": "for every normalized cuspidal newform of weight k≥2, every prime p and every coefficient place λ|p, export the actual E-linear zeta morphism of Kato Theorem 12.5(1), its relation z(cγ)=−σ₋₁z(γ) and critical interpolation on F-rational vectors, compatibly with rational lattice change, Tate twisting and central specialization, without an admissibility restriction.",
+      "supplier": "KatoEulerSystems",
+      "section": "4.6, 5.1 and 5.3"
     },
     {
-      "id": "GAP-SMITH",
-      "title": "Register the unconditional Smith corank endpoint",
-      "neededBy": [
-        "CMRankZeroConverse:C.5/congruent-even-nonvanishing"
-      ],
-      "detail": "ArithmeticStatisticsPartIISmithMethod is the source route assigned by the extraction but has no registered stage or reserved node in this snapshot. ST.5/even-congruent-twists-have-corank-zero-given-smith-law is expressly conditional on the Smith law. Register and cite the unconditional theorem: for positive squarefree n≡1,2,3 mod 8, the 2∞ Selmer corank-zero subset has relative density one. Its proof must include the parity/subfamily transfer, rather than replacing corank by finite Sel₂ dimension or by Mordell–Weil rank. The statistical proof remains with that owner, not this packet."
+      "slug": "newform-central-analytic-interface",
+      "needs": "for every normalized cuspidal newform of weight k≥2 and every coefficient embedding, export L(f*,h)=conjugate L(f,h) for the coefficient-conjugate cusp form, and L⁽ᵖ⁾(f*,s)=P_p(f*,p⁻ˢ)L(f*,s) on all of ℂ, with the actual bad-prime factor when p divides the level.",
+      "supplier": "ModularForms",
+      "section": "Layer 7"
+    },
+    {
+      "slug": "elliptic-quadratic-analytic-identities",
+      "needs": "for every elliptic A/ℚ and every quadratic field K, export the identity L(A_K,s)=L(A,s)L(Aᶜʰⁱ_K,s) of entire continuations, including the local factors at primes dividing the conductor and at primes ramified in K.",
+      "supplier": "EllipticCurveModularity",
+      "section": "R29.4 and R29.6"
+    },
+    {
+      "slug": "congruent-number-root-numbers",
+      "needs": "for every positive squarefree n, export the sign of the functional equation of y²=x³−n²x, namely +1 for n≡1,2,3 modulo eight and −1 for n≡5,6,7, including the local contributions at two and at the primes dividing n.",
+      "supplier": "EllipticCurveModularity",
+      "section": "R29.6"
+    },
+    {
+      "slug": "pointed-cubic-model-comparison",
+      "needs": "over a characteristic-zero field k, for a smooth integral projective plane cubic C with marked k-point P and an elliptic Weierstrass cubic W with origin O, an invertible projective linear map M sending C onto W and P to O induces a k-isomorphism k(W)→k(C) identifying the degree-one places at O and P, and hence a pointed elliptic-curve isomorphism through Layer 10’s point–place dictionary.",
+      "supplier": "AlgebraicCurves",
+      "section": "Layer 10"
+    },
+    {
+      "slug": "kato-rational-duality",
+      "needs": "in the precise j_* lattice convention export the rational form of Kato (14.9.3) and (14.9.5), rational amplitude at most two and h⁰−h¹+h²=−dim Wᶜ⁼⁻¹, retaining the integral real-place terms and errors killed by two before rationalization.",
+      "supplier": "ArithmeticGaloisDuality",
+      "section": "D7.6–D7.7"
+    },
+    {
+      "slug": "central-jstar-control",
+      "needs": "apply its derived control to the actual Kato j_* complex in every degree used here, with finite generation, rational amplitude at most two, and the degree-one Tor₁(H²,E) and degree-two Tor₁(H³,E) sequences.",
+      "supplier": "SelmerIwasawaCohomology",
+      "section": "3.15–3.16 and 4.26"
+    },
+    {
+      "slug": "finite-condition-shapiro",
+      "needs": "for a finite extension F′/F of number fields and a finite-dimensional continuous p-adic representation V of G_F′, export that the global Shapiro isomorphism H¹(F′,V)≅H¹(F,Ind V) matches the Bloch–Kato finite conditions place by place through the semilocal decomposition, with the unramified condition at places away from p, and therefore restricts to H_f¹(F′,V)≅H_f¹(F,Ind V).",
+      "supplier": "SelmerIwasawaCohomology",
+      "section": "2.7 and 3.6"
+    },
+    {
+      "slug": "central-modular-local-dimensions",
+      "needs": "export Kato Proposition 14.12 for f and f*, every prime p and every 1≤r≤k−1, with local H⁰=H²=0, dim H¹=2 and dim H_f¹=1, including the bad-prime weight-two exception check that κ⁻¹ differs from κ⁻² times a finite character.",
+      "supplier": "KatoEulerSystems",
+      "section": "4.4, 5.1, 5.3 and 7.2"
+    },
+    {
+      "slug": "theta-induction-arbitrary-cm-curve",
+      "needs": "for every elliptic A/K with all CM endomorphisms defined over its imaginary quadratic field and any CM order, realize the automorphic inductions of its two attached Hecke characters as normalized weight-two newforms f_ψ and f_ψ̄ and supply the central Galois comparison M_(f_ψ)(1)⊗L=Ind η̄ with its conjugate, without descent to ℚ.",
+      "supplier": "ComplexMultiplicationAndExplicitReciprocity",
+      "section": "1.2 and 4.2"
+    },
+    {
+      "slug": "cube-sum-full-cm",
+      "needs": "for every elliptic curve of j=0 over an arbitrary characteristic-zero field k containing a primitive cube root ζ, descend the geometric endomorphism-ring identification of §1.1 to End_k(E)≅ℤ[ζ₃], with ζ₃ acting in a short model by (x,y)↦(ζx,y), so that every geometric endomorphism is defined over k.",
+      "supplier": "ComplexMultiplicationAndExplicitReciprocity",
+      "section": "1.1"
+    },
+    {
+      "slug": "smith-unconditional-positive-corank",
+      "needs": "export the unconditional relative-density-one corank-zero theorem for positive squarefree n≡1,2,3 modulo eight for y²=x³−x, including the Smith law and its parity/subfamily transfer, rather than only the deduction given that law.",
+      "supplier": "ArithmeticStatisticsPartVII",
+      "section": "5.9–5.11"
+    },
+    {
+      "slug": "cm-three-selmer-unconditional",
+      "needs": "export its §5.11 CM 3∞-Selmer-corank-zero lower proportion at least one half over every imaginary quadratic K with three split or ramified and every CM order, discharging the windowed cubic counting hypothesis retained in its three-isogeny numerator theorems.",
+      "supplier": "ArithmeticStatisticsPartVII",
+      "section": "5.9–5.11"
     }
   ],
   "sourceIssues": [
