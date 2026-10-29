@@ -184,6 +184,7 @@ PolynomialGaloisGroupsPartII
 ArithmeticDynamicsPartII
 QuaternionicAnalysis
 ImplicitAtlases
+StringOrientation
 EllipticCohomology
 TangentialBordism
 FourManifolds
