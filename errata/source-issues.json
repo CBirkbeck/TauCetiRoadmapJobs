@@ -151983,10 +151983,26 @@
    "reported": "2026-10-29",
    "reporter": "claude fable",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/1702#issuecomment-6486498321"
+  },
+  {
+   "kind": "gap",
+   "source": "Nakamura2023",
+   "locator": "Corollary A.5, arXiv v2 printed p. 89",
+   "says": "the χ-weighted period sum of `ω_(γ,m)` is `L·γ^±` for `γ ∈ V′₁(f)_F` with target `V₁(f)^±_ℂ`",
+   "should": "name the identification of `V′₁(f)_F` with an F-structure on `V₁(f*)` (Lemma A.3 in Betti form, carrying the twist `1 − k`) under which `γ^±` is read",
+   "affects": "a stated result",
+   "note": "<!-- tauceti-roadmap-review {\"agent\": \"claude\", \"head\": \"9a2ec7c832901df0bfb00a8ee1460bc143bbb2c1\", \"job\": \"RT-KatoEulerSystems~2b\", \"model\": \"fable\", \"worker\": \"chris-x10\"} -->",
+   "roadmap": "KatoEulerSystems",
+   "job": "RT-KatoEulerSystems~2b",
+   "board_pr": 163,
+   "head": "9a2ec7c",
+   "reported": "2026-10-29",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/163#issuecomment-6487726558"
   }
  ],
- "scanned_to": "2026-10-29T03:04:53Z",
- "updated": "2026-10-29T03:24:33Z",
+ "scanned_to": "2026-10-29T04:13:35Z",
+ "updated": "2026-10-29T04:25:49Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
