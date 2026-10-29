@@ -1863,7 +1863,7 @@
     },
     {
       "slug": "central-jstar-control",
-      "needs": "apply its derived control to the actual Kato j_* complex in every degree used here, with finite generation, rational amplitude at most two, the degree-one Tor₁(H²,E) and degree-two Tor₁(H³,E) sequences, and continuous evaluation κ⁻ʰ on the full cyclotomic completed algebra giving residue E and a DVR at its selected rational finite-character component.",
+      "needs": "apply its derived control to the actual Kato j_* complex in every degree used here, with finite generation, rational amplitude at most two, and the degree-one Tor₁(H²,E) and degree-two Tor₁(H³,E) sequences.",
       "supplier": "SelmerIwasawaCohomology",
       "section": "3.15–3.16 and 4.26"
     },

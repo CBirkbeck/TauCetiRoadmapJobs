@@ -1,8 +1,10 @@
-import Mathlib
-import TauCeti.AlgebraicGeometry.EllipticCurve.QuadraticTwist.Basic
-import TauCeti.AlgebraicGeometry.EllipticCurve.Isogeny.Hom.Ring
-import TauCeti.AlgebraicGeometry.EllipticCurve.ShortWeierstrass
-import TauCeti.FieldTheory.SquareClassGroup.Basic
+module
+
+public import Mathlib
+public import TauCeti.AlgebraicGeometry.EllipticCurve.QuadraticTwist.Basic
+public import TauCeti.AlgebraicGeometry.EllipticCurve.Isogeny.Hom.Ring
+public import TauCeti.AlgebraicGeometry.EllipticCurve.ShortWeierstrass
+public import TauCeti.FieldTheory.SquareClassGroup.Basic
 
 /-!
 # CM rank-zero converses and twist nonvanishing: target signatures
@@ -27,6 +29,8 @@ are not statable at the pins:
 No abstract scalar functions or freely chosen Selmer predicates replace these
 objects. Elementary sign and discriminant identities remain checks in README.md.
 -/
+
+@[expose] public section
 
 namespace TauCetiRoadmap.CMRankZeroConverse
 
@@ -146,3 +150,5 @@ theorem cmTwists_nondescending_nonvanishing_lowerHalf
   sorry
 
 end TauCetiRoadmap.CMRankZeroConverse
+
+end

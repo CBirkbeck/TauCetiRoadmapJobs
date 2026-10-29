@@ -6,7 +6,7 @@
 
 This roadmap owns the converse deduction, its central specializations, the two rational CM doubling identities, the analytic twist applications, the explicit cube-sum model comparison, and the descent-coset theorem. Its elementary sign and proposition definitions are local conventions, not new realizations or new Selmer theories. The rank-r p-converse proposition has this owner and is consumed by RankZeroOneBSDPartII; RankOneConverse owns its rank-one results.
 
-The general cohomological realization and conjugate-dual dictionary are stated by AutomorphicGaloisRepresentations §§1.5, 4.4–4.8, 6.4 and 7.2. They are consumed here at the centre, rather than constructed again. KatoEulerSystems §§4.4, 4.6, 5.1, 5.3 and 7.2 own the actual zeta morphism, independent Iwasawa module structure, general twist compatibility, interpolation and the cohomological bound, with the full-range zeta contract specified below. ModularIwasawaMainConjectures §§0.6–0.7 own the rational Kato equality as a proposition and its lattice independence. SelmerIwasawaCohomology §§2.10–2.12a, 2.15, 3.0, 3.6, 3.10, 3.13–3.16, 4.9 and 4.26 own coranks, the unramified finite condition away from p, semilocal cohomology, the completed cyclotomic algebra interface, derived control and the finite Kummer comparisons. ArithmeticGaloisDuality §§R02.4.3–R02.4.4 and D7.3–D7.7 own duality and Shapiro. PadicHodgeRegulators §§1.1–1.8 own the Bloch–Kato maps and their general dimension formulas.
+The general cohomological realization and conjugate-dual dictionary are stated by AutomorphicGaloisRepresentations §§1.5, 4.4–4.8, 6.4 and 7.2. They are consumed here at the centre, rather than constructed again. KatoEulerSystems §§4.4, 4.6, 5.1, 5.3 and 7.2 own the actual zeta morphism, independent Iwasawa module structure, general twist compatibility, interpolation and the cohomological bound, with the full-range zeta contract specified below. ModularIwasawaMainConjectures §§0.6–0.7 own the rational Kato equality as a proposition and its lattice independence. SelmerIwasawaCohomology §§2.10–2.12a, 2.15, 3.0, 3.6, 3.10, 3.13–3.16, 4.9 and 4.26 own coranks, the unramified finite condition away from p, semilocal cohomology, the completed cyclotomic algebra interface, derived control and the finite Kummer comparisons. ArithmeticGaloisDuality §§R02.4.3–R02.4.4 and D7.3–D7.7 own duality and Shapiro. PadicHodgeRegulators §§1.1–1.8 own the Bloch–Kato maps and their general dimension formulas. PadicMeasuresIwasawaAlgebras §§4.3 and 4.6 own the regularity, height-one primes and character idempotents of one-variable Iwasawa algebras.
 
 ArithmeticStatisticsPartI §§0.1–0.2, 0.5–0.7 and 0.15 own families, relative density, squareclass height, finite support-ideal fibres, squarefree denominators, the general piecewise height comparison and the positive linear squareclass denominator. In particular its §0.1 already includes the weights 3 and 6 for the congruent-number discriminant comparison. The application here uses that comparison with the analytic nonvanishing subset. ArithmeticStatisticsPartVII §§5.9–5.11 own the statistical corank inputs and the maximal-order CM reduction; their unconditional endpoints required here are specified below. No probability distribution, three-isogeny average or squarefree counting theory is reconstructed here. GL2AutomorphicRepresentationsAndTransfer §R17.4.16 owns quadratic automorphic induction and its full L-function identity. ComplexMultiplicationAndExplicitReciprocity §§1.1–1.2, 4.1–4.2 own the CM self-twist, coefficient components, theta induction and full factors, together with the extensions specified below. ModularIwasawaMainConjecturesPartII §§CZ.4–CZ.6 owns the full rational cyclotomic CM equality and its normalization dictionary; the anticyclotomic theories of NonordinaryCMSpecialValues and InertAnticyclotomicCMMainConjecture supply different main-conjecture statements.
 
@@ -46,7 +46,7 @@ Use `WeierstrassCurve.quadraticTwistOf` in `TauCeti/AlgebraicGeometry/EllipticCu
 
 Use `TauCeti.Isogeny.Hom` in `TauCeti/AlgebraicGeometry/EllipticCurve/Isogeny/Hom/Basic.lean`, line 106, and its ring instance in `TauCeti/AlgebraicGeometry/EllipticCurve/Isogeny/Hom/Ring.lean`, line 174, for actual algebraic endomorphisms. The latter requires ellipticity and takes multiplication to be composition; an arbitrary additive endomorphism of the point group is not substituted.
 
-Use `TauCeti.SquareClassGroup` and `TauCeti.squareClass_toMul_out` in `TauCeti/FieldTheory/SquareClassGroup/Basic.lean`, lines 45 and 66: the carrier is the additive quotient of Kˣ by squares, and the chosen representative has the prescribed class. Use `HeckeRing.GL2.Newform.analyticOrderAt_L_ne_top`, `HeckeRing.GL2.Newform.analyticRank` and `HeckeRing.GL2.Newform.analyticRank_eq_zero_iff` in `TauCeti/NumberTheory/ModularForms/Newforms/AnalyticInvariants.lean`, lines 72, 80 and 107. For positive weight these give finite analytic order and the central nonvanishing equivalence for the native newform. Use `HeckeRing.GL2.Newform.L_eulerProduct` in `TauCeti/NumberTheory/ModularForms/LFunction/EulerProduct.lean`, line 217, including the linear factor at primes dividing the level; `CuspForm.frickeCompletedL_functional_equation` in its `FunctionalEquation.lean`, line 324, with its normalized Fricke partner; and `CuspForm.conj` in `TauCeti/NumberTheory/ModularForms/Conjugate.lean`, line 298, for coefficient conjugation.
+Use `TauCeti.SquareClassGroup` and `TauCeti.squareClass_toMul_out` in `TauCeti/FieldTheory/SquareClassGroup/Basic.lean`, lines 45 and 66: the carrier is the additive quotient of Kˣ by squares, and the chosen representative has the prescribed class. Use `HeckeRing.GL2.Newform.analyticOrderAt_L_ne_top`, `HeckeRing.GL2.Newform.analyticRank` and `HeckeRing.GL2.Newform.analyticRank_eq_zero_iff` in `TauCeti/NumberTheory/ModularForms/Newforms/AnalyticInvariants.lean`, lines 72, 80 and 107. For positive weight these give finite analytic order and the central nonvanishing equivalence for the native newform. Use `HeckeRing.GL2.Newform.L_eulerProduct` in `TauCeti/NumberTheory/ModularForms/LFunction/EulerProduct.lean`, line 217, including the linear factor at primes dividing the level; `CuspForm.frickeCompletedL_functional_equation` in its `FunctionalEquation.lean`, line 324, with its normalized Fricke partner; and `CuspForm.conj` in `TauCeti/NumberTheory/ModularForms/Conjugate.lean`, line 309, for coefficient conjugation.
 
 ### From TauCetiRoadmap.ModularForms
 
@@ -59,6 +59,8 @@ Section R29.6, “Continuation and the functional equation”, supplies the enti
 What EllipticCurveModularity must provide (gap:elliptic-quadratic-analytic-identities): for every elliptic A/ℚ and every quadratic field K, export the identity L(A_K,s)=L(A,s)L(Aᶜʰⁱ_K,s) of entire continuations, including the local factors at primes dividing the conductor and at primes ramified in K.
 
 What EllipticCurveModularity must provide (gap:congruent-number-root-numbers): for every positive squarefree n, export the sign of the functional equation of y²=x³−n²x, namely +1 for n≡1,2,3 modulo eight and −1 for n≡5,6,7, including the local contributions at two and at the primes dividing n.
+
+The sign requested is the sign w_E of R29.6, the eigenvalue of −W_N on the attached newform. SelmerIwasawaCohomology §4.29 proves the local Kummer-image signs σ_φ and the parity of the 2∞-Selmer corank of these curves; it relates them to root numbers only by citation and leaves root numbers of modular forms outside its scope, so it fixes no sign of an analytic functional equation. Its local table is the Selmer-side check of this contract: at n=1, 5 and 6 the products of σ_φ over ∞, 2 and the primes dividing n are +1, −1 and −1.
 
 ### From TauCetiRoadmap.EllipticCurves
 
@@ -84,13 +86,17 @@ What ArithmeticGaloisDuality must provide (gap:kato-rational-duality): in the pr
 
 ### From TauCetiRoadmap.SelmerIwasawaCohomology
 
-Use §§2.10–2.12a for contragredient Pontryagin duals, corank and finite-cotype p∞ Kummer groups; §§2.4, 2.19–2.20 for functoriality and dual finite conditions; §§3.0, 3.7, 3.10, 3.13–3.16 for completed Iwasawa algebras, semilinear twists, derived control, rational amplitude and the j_* comparison; §§4.9, 4.26 for finite conditions and the elliptic rational Kummer comparison, which with §2.11 identifies the classical p∞ Selmer corank over any number field with dim H_f¹ of the rational Tate module; §3.6 for semilocal cohomology. Section 3.15 identifies j_* cohomology in degree one and retains its higher direct-image corrections in degree two: by its etale_jStar_degreeOne, degree-one j_* classes are exactly the classes unramified at every omitted bad prime. Away from p the rational Bloch–Kato condition is the unramified one (§2.15 and §4.9 blochKatoStructure), and rational H¹ at the real place vanishes. Hence every class of H¹_global(W) is finite at every place except p, and H_f¹(ℚ,W) is its subspace of classes finite at p; no further comparison is requested. Section 4.29 supplies dyadic parity for congruent-number twists.
+Use §§2.10–2.12a for contragredient Pontryagin duals, corank and finite-cotype p∞ Kummer groups; §§2.4, 2.19–2.20 for functoriality and dual finite conditions; §§3.0, 3.7, 3.10, 3.13–3.16 for completed Iwasawa algebras, semilinear twists, derived control, rational amplitude and the j_* comparison; §§4.9, 4.26 for finite conditions and the elliptic rational Kummer comparison, which with §2.11 identifies the classical p∞ Selmer corank over any number field with dim H_f¹ of the rational Tate module; §3.6 for semilocal cohomology. Section 3.15 identifies j_* cohomology in degree one and retains its higher direct-image corrections in degree two: by its target “Stalks of j_* and R^q j_*, and the degree-one Leray sequence”, degree-one j_* classes are exactly the classes unramified at every omitted bad prime. Away from p the rational Bloch–Kato condition is the unramified one (§2.15 and §4.9, “The Bloch–Kato local condition on T and W”), and rational H¹ at the real place vanishes. Hence every class of H¹_global(W) is finite at every place except p, and H_f¹(ℚ,W) is its subspace of classes finite at p; no further comparison is requested. Section 4.29 supplies dyadic parity for congruent-number twists.
 
-What SelmerIwasawaCohomology must provide (gap:central-jstar-control): apply its derived control to the actual Kato j_* complex in every degree used here, with finite generation, rational amplitude at most two, the degree-one Tor₁(H²,E) and degree-two Tor₁(H³,E) sequences, and continuous evaluation κ⁻ʰ on the full cyclotomic completed algebra giving residue E and a DVR at its selected rational finite-character component.
+What SelmerIwasawaCohomology must provide (gap:central-jstar-control): apply its derived control to the actual Kato j_* complex in every degree used here, with finite generation, rational amplitude at most two, and the degree-one Tor₁(H²,E) and degree-two Tor₁(H³,E) sequences.
 
 What SelmerIwasawaCohomology must provide (gap:finite-condition-shapiro): for a finite extension F′/F of number fields and a finite-dimensional continuous p-adic representation V of G_F′, export that the global Shapiro isomorphism H¹(F′,V)≅H¹(F,Ind V) matches the Bloch–Kato finite conditions place by place through the semilocal decomposition, with the unramified condition at places away from p, and therefore restricts to H_f¹(F′,V)≅H_f¹(F,Ind V).
 
 At places above p the local input is PadicHodgeRegulators §1.7(d). Coefficient extension needs no export: for a finite extension L/E, V⊗_E L is a direct sum of [L:E] copies of V as an E-representation, and every Bloch–Kato condition commutes with finite direct sums, so H_f¹(F,V⊗_E L) has E-dimension [L:E]·dim_E H_f¹(F,V) and vanishes exactly when H_f¹(F,V) does. For an elliptic A/F and a quadratic extension F′/F with character χ, Ind V_pA≅V_pA⊕(V_pA⊗χ) and V_p(Aᶜʰⁱ)≅V_pA⊗χ, so the Shapiro export and §4.26 give corank Sel_(pInfinity)(A/F′)=corank Sel_(pInfinity)(A/F)+corank Sel_(pInfinity)(Aᶜʰⁱ/F) at every p; the decomposition uses the projectors (1±σ)/2, defined only after inverting two.
+
+### From TauCetiRoadmap.PadicMeasuresIwasawaAlgebras
+
+Section 4.3 supplies that O⟦T⟧ is a regular local ring of dimension two whose height-one primes are (ϖ) and the ideals (F) for F irreducible distinguished, with O⟦T⟧/(F) free of rank deg F; §4.6 supplies the character idempotents e_ω of O[Δ] when #Δ is prime to p, while at p=2 the idempotents (1±σ₋₁)/2 exist only in E[Δ], after inverting two. With the coordinate and twists of SelmerIwasawaCohomology §3.0 these give the central specialization prime of §0.4; no further export is requested.
 
 ### From TauCetiRoadmap.PadicHodgeRegulators
 
@@ -130,7 +136,7 @@ What ComplexMultiplicationAndExplicitReciprocity must provide (gap:cube-sum-full
 
 ### From TauCetiRoadmap.ArithmeticStatisticsPartI
 
-Use §0.1 for arithmetic families, relative density, finite-change, restriction to positive-density subfamilies and piecewise height rescaling; §0.5 for the squareclass family and its finite fibres over squarefree ideals in Cl(K)²; §0.6 for the six equal squarefree residue counts and the half-density parity classes; §0.7 for the both-sign fundamental-discriminant family; §0.15, “Positive squareclass denominator”, for `# {t : H(t)<X} = c_K X + o(X)` with c_K>0. This exact denominator includes the support class restriction and unit/Selmer fibres. Northcott finiteness alone would not suffice.
+Use §0.1 for arithmetic families, relative density, finite-change, restriction to positive-density subfamilies and piecewise height rescaling; §0.5 for the squareclass family and its finite fibres over squarefree ideals in Cl(K)²; §0.6 for the six equal squarefree residue counts and the half-density parity classes; §0.7 for quadratic fields ordered by |Disc|, which are the fundamental discriminants d≠1 through d↦ℚ(√d) with |Disc ℚ(√d)|=|d|, the discriminant d=1 being the single finite exception; §0.15, “Positive squareclass denominator”, for `# {t : H(t)<X} = c_K X + o(X)` with c_K>0. This exact denominator includes the support class restriction and unit/Selmer fibres. Northcott finiteness alone would not suffice.
 
 ### From TauCetiRoadmap.ArithmeticStatisticsPartVII
 
@@ -215,7 +221,7 @@ Apply the supplied dictionary to M_f, W and W′ of the conventions. In particul
 
 ### 0.4 The central specialization prime
 
-For G∞=Gal(ℚ(μ_p∞)/ℚ), κ(σ_c)=c, Λ=O[[G∞]] and A=Λ[1/p], specialize the supplied continuous-character evaluation to `ev_h(sigma_c) = c^(-h)`. Its integral source and target are Λ→O; after inverting p they are A→E. Define the central prime 𝔮 to be its kernel. On the rational component selected by κ⁻ʰ, 𝔮 is height-one maximal, the quotient is E and A_𝔮 is a DVR. For p=2 the finite part Δ={±1} remains present until rationalization. (BT p. 6, BT lines 240–244; Kato §14.13, p. 242.)
+For G∞=Gal(ℚ(μ_p∞)/ℚ), κ(σ_c)=c, Λ=O[[G∞]] and A=Λ[1/p], define ev_h as the augmentation Λ→O composed with the twist Tw of SelmerIwasawaCohomology §3.0 by the continuous character κ⁻ʰ, so that `ev_h(sigma_c) = c^(-h)`. Its integral source and target are Λ→O; after inverting p they are A→E. Define the central prime 𝔮 to be its kernel. On the rational component selected by κ⁻ʰ, 𝔮 is height-one maximal, the quotient is E and A_𝔮 is a DVR. Prove this as follows. Write G∞=Γ₀×Δ with Γ₀ procyclic, topological generator γ and Δ finite of order p−1, or two when p=2; #Δ is invertible in E, so the idempotents of E[Δ] split A into components O⟦T⟧[1/p], T=γ−1, and ev_h kills every component except the one on which Δ acts through κ⁻ʰ. On that component ev_h sends T to a=κ(γ)⁻ʰ−1, which lies in the maximal ideal of O; so T−a is a degree-one distinguished polynomial, (T−a) is a height-one prime of the regular local ring O⟦T⟧ with quotient O (PadicMeasuresIwasawaAlgebras §4.3), its image after inverting p is maximal with residue field E, and the localization of a two-dimensional regular local ring at a height-one prime is a DVR. For p=2 the finite part Δ={±1} remains present until rationalization. (BT p. 6, BT lines 240–244; Kato §14.13, p. 242.)
 
 Its API is:
 
@@ -230,8 +236,9 @@ Its API is:
 - At p=2,k=2, σ₋₁ evaluates to −1, so σ₋₁+1 lies in 𝔮 while σ₋₁−1 evaluates to −2≠0. Erasing Δ would lose this character.
 - At k=4, σ₋₁ evaluates to 1, so σ₋₁−1 lies in 𝔮 and σ₋₁+1 evaluates to 2. This switches the selected component.
 - At p=3,h=1,c=4, the value is 1/4, not 4. Moreover ev_h(p)=p≠0 and p is a unit in A, so p∉𝔮.
+- At p=3,h=1 with κ(γ)=4, T=γ−1 evaluates to 1/4−1=−3/4, so the component kernel is (T+3/4) with residue field ℚ₃; at p=2,h=1 with κ(γ)=5 it is (T+4/5) on the component where σ₋₁ acts by −1, selected by the idempotent (1−σ₋₁)/2, which evaluates to one and exists only after inverting two. Using the untwisted augmentation instead would give (T) and the value at h=0.
 
-*Needs:* statement: SelmerIwasawaCohomology §3.0 and gap:central-jstar-control; §0.3. Route: its §§3.7, 3.10, 3.16 and the rational procyclic coordinate.
+*Needs:* statement: SelmerIwasawaCohomology §3.0, coordinates, augmentation and continuous character twists; §0.3. Route: PadicMeasuresIwasawaAlgebras §4.3, regularity and distinguished height-one primes, and §4.6, character idempotents.
 
 ### Examples
 
@@ -239,7 +246,7 @@ For k=2 the input sign is +1, the evaluation of σ₋₁ is −1, and their prod
 
 ### Dependencies
 
-The statement carriers come from the native curves/newforms, SelmerIwasawaCohomology, ModularForms and EllipticCurveModularity. The realization conventions come from AutomorphicGaloisRepresentations. The zeta sign comes from KatoEulerSystems; no converse theorem supplies any of these inputs.
+The statement carriers come from the native curves/newforms, SelmerIwasawaCohomology, ModularForms and EllipticCurveModularity; the central specialization prime of §0.4 also uses the ring theory of PadicMeasuresIwasawaAlgebras §§4.3 and 4.6. The realization conventions come from AutomorphicGaloisRepresentations. The zeta sign comes from KatoEulerSystems; no converse theorem supplies any of these inputs.
 
 ## Layer 1: Finite-level vanishing and the global line
 
@@ -259,7 +266,7 @@ A proof route uses rational Poitou–Tate twice. First apply it to W′: the Tat
 
 **Checks.** The dual calculation gives h⁰=0,h²=0, hence −h¹=−1 and h¹=1; its kernel has dimension 1−(2−1)=0. If the first quotient had dimension zero, this computation would give kernel dimension one and would not prove dual Selmer vanishing. The rationalization of a real correction ℤ/2 at p=2 is zero, whereas its integral group has two elements.
 
-*Needs:* statement: §0.3, the central local-dimension contract of KatoEulerSystems. Route: §1.1; ArithmeticGaloisDuality D7.6–D7.7 and gap:kato-rational-duality; SelmerIwasawaCohomology §§2.19–2.20, §3.15 etale_jStar_degreeOne, and §§2.15, 4.9 for the finite conditions away from p.
+*Needs:* statement: §0.3, the central local-dimension contract of KatoEulerSystems. Route: §1.1; ArithmeticGaloisDuality D7.6–D7.7 and gap:kato-rational-duality; SelmerIwasawaCohomology §§2.19–2.20, §3.15, “Stalks of j_* and R^q j_*, and the degree-one Leray sequence”, and §§2.15, 4.9 for the finite conditions away from p.
 
 ### 1.3 The global central line
 
@@ -336,7 +343,7 @@ Under exactly the hypotheses of §2.3, prove that localization of the central ze
 
 **Checks.** A nonzero vector spanning E cannot belong to its zero subspace. A zero class is finite at every place and gives no contradiction, explaining the sign hypothesis in §2.3. A class ramified at an omitted bad prime fails the global finite condition even if finite at p; this is why the degree-one j_* identification with unramified classes, supplied by SelmerIwasawaCohomology §3.15, is an input.
 
-*Needs:* statement: §2.3; SelmerIwasawaCohomology §3.15 etale_jStar_degreeOne, §2.15 and §4.9 blochKatoStructure. Route: AutomorphicGaloisRepresentations §§6.4, 7.2 for the bad-prime bounds.
+*Needs:* statement: §2.3; SelmerIwasawaCohomology §3.15, “Stalks of j_* and R^q j_*, and the degree-one Leray sequence”, §2.15 and §4.9, “The Bloch–Kato local condition on T and W”. Route: AutomorphicGaloisRepresentations §§6.4, 7.2 for the bad-prime bounds.
 
 ### Examples
 
@@ -446,7 +453,7 @@ Layer 3 is the modular input. ComplexMultiplicationAndExplicitReciprocity suppli
 
 ### 5.1 The even Goldfeld proposition
 
-For an elliptic A/ℚ define the even Goldfeld proposition to assert that the proportion of fundamental discriminants d, counted with both signs and `0<abs d<=X`, for which L(A⁽ᵈ⁾,1)≠0 tends to 1/2. The family is unweighted and includes the trivial quadratic character up to finite-change conventions. The proposition is an exact limit. (BT §1.0.2 and footnote 1, p. 2; BT lines 47–52, 96.)
+For an elliptic A/ℚ define the even Goldfeld proposition to assert that the proportion of fundamental discriminants d, counted with both signs and `0<abs d<=X`, for which L(A⁽ᵈ⁾,1)≠0 tends to 1/2. The family is unweighted (the quadratic fields of ArithmeticStatisticsPartI §0.7 ordered by |Disc|, plus d=1) and includes the trivial quadratic character up to finite-change conventions. The proposition is an exact limit. (BT §1.0.2 and footnote 1, p. 2; BT lines 47–52, 96.)
 
 Its API is:
 
