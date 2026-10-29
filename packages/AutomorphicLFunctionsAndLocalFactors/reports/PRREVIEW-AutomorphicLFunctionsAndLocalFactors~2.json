@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-AutomorphicLFunctionsAndLocalFactors~2",
+    "head": "e8f16d43651075797797a39afa0fbccc39966cc2",
+    "pr": 924,
+    "folder": "AutomorphicLFunctionsAndLocalFactors",
+    "date": "2026-10-29",
+    "findings": 2,
+    "blocking": 0,
+    "notes": "incremental re-review of 124 changed lines since 322ade4. Accounted for all seven previous findings: R01 cycle, R04 tensor formula, R06 namespaces and R07 Godement-Jacquet locators repaired; R02/R03 resolved by the merge order (LFunctions #23, ZerosOfLFunctions #76, this roadmap #77; depcheck 0 problems); R05 raw anchors not repaired (residue=179, gate FAIL), re-raised as P3. Read every locator the diff adds (Bernstein-Zelevinsky Thm 5.16/Cor 5.17 p.50 and section 7 from the author page; Jacquet section 4.7 pp.30-31; Cogdell Thm 4.1 p.32, Cor 7.1.2 pp.58-59, Lecture 9 section 1 p.70; Godement-Jacquet uncertified, paywalled), the seeded convergence target and four further seeded targets with cached Cogdell locators; opened the Mathlib dominated-derivative lemma and ArithmeticDirichletSeries layers 3 and 8 at the pins; resolved SR.2.3/SR.3/SR.5.1/SR.5.3. Elaborated Suggested.lean (15 sorry warnings only) and a #check probe of all 33 declarations in the roadmap namespace. Adversarial table: 20 new computed rows for the changed statements plus 143 rows carried from the previous report. One new P3: the Landau step in the pole-criterion target assumes nonvanishing of the partial L-function on Re(s)>1. No P1 or P2 finding; acceptance withheld only because the gate fails its residue rule."
+  }
+}
