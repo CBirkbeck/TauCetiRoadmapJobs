@@ -162,7 +162,7 @@ The API gives the following facts.
 - For the structure morphism of a proper k-scheme X, `RelNumericallyTrivial` agrees with `NumericallyTrivial` through the canonical isomorphism of X with its fibre over the point of Spec k.
 - Pic^τ(X/S) is a subgroup of Pic(X): closed under ⊗, inverse, containing O_X.
 - f*N ≡_f 0 for N ∈ Pic(S).
-- L ≡_f 0 iff (L·C) = 0 for all curves C in fibres over closed points of S (§0.5).
+- L ≡_f 0 iff (L·C) = 0 for all curves C in fibres over closed points of S; this characterization is proved in §0.5 from the all-fibres definition and is included here as part of the interface.
 - L ≡_f 0 iff `L_{s̄}` is numerically trivial on `X_{s̄}` for every geometric point s̄ (§0.3).
 - If L ≡_f 0 then L_T `≡_{f_T}` 0 for every morphism T → S of Noetherian schemes.
 - If Z ⊂ X is closed then L ≡_f 0 implies L|_Z `≡_{f|_Z}` 0.
@@ -170,7 +170,7 @@ The API gives the following facts.
 
 One proof route is as follows. Tensor additivity and inverse degree give the subgroup. Establish the independent all-fibres definition before applying the field-extension theorem of §0.3 and the closed-point theorem of §0.5. This order uses neither characterization to define the other.
 
-*Needs:* §0.1, native line bundles and Mathlib `AlgebraicGeometry.Scheme.Hom.fiber` for the definition and subgroup; §0.3 for geometric comparison; §0.5 only for the closed-point characterization.
+*Needs:* §0.1, native line bundles and Mathlib `AlgebraicGeometry.Scheme.Hom.fiber` for the definition and subgroup; §0.3 for geometric comparison.
 
 **Checks.**
 
@@ -186,7 +186,7 @@ Let f : X → S be proper with S Noetherian and L ∈ Pic(X). If (L·D) = 0 for 
 
 One proof route is as follows. Suppose the conclusion fails at some point; by Noetherian induction choose a failing point s whose closure T is minimal. T ≠ {s}, since closed points satisfy the hypothesis. Choose a codimension-one point t′ of T and apply Stacks Lemma 10.119.13 (00PH) to `O_{T,t′}`. This gives a dominating DVR R with fraction field κ(s); its residue field extends κ(t′), and that extension need not be assumed finite. For a curve C ⊂ X_s, base change its closure to Spec R and take the flat closure Z of its generic fibre; Z is proper and flat of relative dimension one over R, and `χ(L^{⊗n})` is constant on its fibres, so the degree of L on C (with generic ground field κ(s)) equals the degree on the special fibre, a one-dimensional proper scheme over κ(R). The special fibre's one-dimensional components lie in `X_{t′}` ⊗ κ(R); L is numerically trivial on `X_{t′}` by minimality of T, hence on `X_{t′}` ⊗ κ(R) (§0.3). The cycle formula gives degree 0, a contradiction.
 
-*Needs:* §0.1; §0.3; SchemeAndStackFoundations §§0.9, 0.11, 0.23; JacobianChallenge Layer C.
+*Needs:* §0.1; §0.3; §0.4 for the all-fibres definition of L ≡_f 0; SchemeAndStackFoundations §§0.9, 0.11, 0.23; JacobianChallenge Layer C.
 
 **Checks.**
 
@@ -963,7 +963,8 @@ One proof route is as follows. The relative and special-fibre numerical groups a
 
 **Checks.**
 
-- When H²(X, O_X) = 0 and R is complete, actual lifts exist (§5.3).
+- When 𝒳 → Spec R is also flat, H²(X, O_X) = 0 and R is complete, every invertible sheaf on X has an actual lift (§5.3).
+- Flatness is necessary even with numerical surjectivity. Over an algebraically closed field k of characteristic 3, let i : D → P³_k be the smooth Fermat quartic and I = i_*O_D. The restricted Euler sequence gives H¹(P³,T_P³ ⊗ I) ≅ H²(D,O_D) = k, since H¹(D,O_D(1)) = H²(D,O_D(1)) = 0. Glue split square-zero extensions by a derivation cocycle mapping to 1; the line-bundle obstruction then satisfies δ(O(n)) = n·1, so the restriction image in Pic(P³) = ℤ is exactly 3ℤ (the square-zero units sequence of KLE05, proof of Proposition 5.19, p. 47; KLE05 lines 2234–2238). The ideal section 1_D defines t, with t² = 0 and tO_𝒳 = I, giving a proper k[[t]]-scheme 𝒳 with special fibre P³. Thus H²(P³,O) = 0 and res on N¹ is surjective, but O(1) does not lift; t² annihilates O_𝒳, so the family is not flat.
 - For the elliptic equation y²+y=x³−x²−10x−20 over 𝔽₇, the affine y-solution counts for x=0,…,6 are (0, 1, 2, 0, 2, 2, 2); they sum to 9 and the point at infinity gives 10. This excludes an incorrect rational-specialization cardinality.
 
 ### 5.3 Line bundles lift over a complete DVR when H²(X, O_X) = 0
@@ -976,7 +977,7 @@ One proof route is as follows. Lift L successively to X_n = 𝒳 ⊗ `R/m^{n+1}`
 
 **Checks.**
 
-- For a lift of a curve (H² = 0 automatically), every line bundle lifts; for a lift of an abelian or K3 surface the hypothesis fails and the Picard rank can drop.
+- For a proper flat family of curves over a complete DVR (H² = 0 automatically), every special-fibre line bundle lifts; for a proper flat lift of an abelian or K3 surface the vanishing hypothesis fails and the Picard rank can drop.
 - For P¹_R the special and total line bundles O(d) restrict with degree d, including d=−1,0,1. This tests existence of actual lifts, rather than only rational numerical classes.
 
 ### 5.4 Numerical surjectivity identifies relative and special-fibre cones
@@ -1087,7 +1088,7 @@ Layers 0–4; AlgebraicModuliForArithmeticGeometry §7.3 infinitesimal lifting a
 
 ## Downstream consumers
 
-EnriquesSurfacesAndIntegralNonexistence asks, under its supplier contract named numerical-contraction-descent, addressed to a SchemeAndStackFoundations Part II, for the arbitrary-field numerical quotient with base change, descent of projective contractions under constant Num, fibre-graph descent, label preservation and the residue-field assertion of SCH23 Theorems 1.3 and 2.1; these are §§0.3, 1.1, 1.3, 3.7 and 4.8–4.10 here, which precede it in the merge order. The family version of that contract (proper flat families with flat Pic^τ and locally constant geometric rank) and its supplier contract named picard-flatness-betti (relative Picard flatness when b₁ = 2(h¹(O) − h²(O)) over a local Noetherian W(k)-algebra) are not targets here. K3SurfacesAndSymplecticBoundedness asks, under its supplier contract named surface-arithmetic-quotient, for the arbitrary-field surface numerical quotient with base-field comparison, which is §§0.3 and 1.1 here. WeilConjectures's numerical Picard local system with its finite rank and positive-multiple base-divisor descent is the finite-field case of §§1.2 and 2.6–2.10, and NeronModelsAndSemistableAbelianVarietiesPartII §2.9's fibre graphs, labels and rational base points of genus-one fibrations over finite fields are the finite-field case of §§4.7–4.10.
+EnriquesSurfacesAndIntegralNonexistence asks, under its supplier contract named numerical-contraction-descent, addressed to a SchemeAndStackFoundations Part II, for the arbitrary-field numerical quotient with base change, descent of projective contractions under constant Num, fibre-graph descent, label preservation and the residue-field assertion of SCH23 Theorems 1.3 and 2.1; these are §§0.3, 1.1, 1.3, 3.7 and 4.8–4.10 here. The family version of that contract (proper flat families with flat Pic^τ and locally constant geometric rank) and its supplier contract named picard-flatness-betti (relative Picard flatness when b₁ = 2(h¹(O) − h²(O)) over a local Noetherian W(k)-algebra) are not targets here. K3SurfacesAndSymplecticBoundedness asks, under its supplier contract named surface-arithmetic-quotient, for the arbitrary-field surface numerical quotient with base-field comparison, which is §§0.3 and 1.1 here. WeilConjectures's numerical Picard local system with its finite rank and positive-multiple base-divisor descent is the finite-field case of §§1.2 and 2.6–2.10, and NeronModelsAndSemistableAbelianVarietiesPartII §2.9's fibre graphs, labels and rational base points of genus-one fibrations over finite fields are the finite-field case of §§4.7–4.10.
 
 ## Worked examples
 
