@@ -4252,7 +4252,7 @@
       "slug": "cuspidal-data-central-comparison",
       "supplier": "AutomorphicSpectralTheory",
       "section": "§§1.6–1.10, 4.1–4.4",
-      "needs": "Compare Weyl-and-twist normalized cuspidal data and pseudo-Eisenstein spans with the full split-central-character convention and intermediate compact smooth quotient data, preserving quotient measures."
+      "needs": "Compare Weyl-and-twist normalized cuspidal data, with twists and inducing parameters in the relative space (a_M^G)*, and pseudo-Eisenstein spans with the full split-central-character convention and intermediate compact smooth quotient data, preserving quotient measures."
     },
     {
       "slug": "cuspidal-polynomial-counting",
@@ -4282,7 +4282,7 @@
       "slug": "central-character-affine-lattice",
       "supplier": "AdelicAlgebraicGroups",
       "section": "§§2.1–2.3, 4.6–4.7",
-      "needs": "Identify the fixed-level norm-one central quotient as a compact abelian Lie quotient and compare its character differentials, the fixed split-central character and normalized unramified twists with a discrete affine lattice in the remaining central parameter space having complex-linearly independent generators and finitely many component characters at each differential."
+      "needs": "Identify the fixed-level norm-one central quotient as a compact abelian Lie quotient and compare its character differentials, the fixed split-central character and normalized unramified twists in i(a_M^G)* (trivial on the split centre Z(𝔸)) with a discrete affine lattice in the remaining central parameter space having complex-linearly independent generators and finitely many component characters at each differential."
     },
     {
       "slug": "satake-exponential-family",
@@ -4299,8 +4299,20 @@
     {
       "slug": "arthur-factorization-comparison",
       "supplier": "AutomorphicSpectralTheory",
-      "section": "§§6.3–6.4",
-      "needs": "Supply fixed-normal-level Arthur factorization for every differentiability order with K-invariant enveloping element and compact factors, and identify compact-test kernel expansion and split-central disintegration with the conventions extended in §§3.8–3.10."
+      "section": "§6.3",
+      "needs": "For each normal compact open K₀⊂K_f and each m≥1, supply Z∈U(g∞), a smooth compactly supported g₁ and a compactly supported g₂ of class C^m, both invariant under K∞-conjugation and bi-K₀-invariant, with f=f*g₁+(f*Z)*g₂ for every bi-K₀-invariant Schwartz function f, the choice depending only on K₀ and m."
+    },
+    {
+      "slug": "compact-kernel-central-comparison",
+      "supplier": "AutomorphicSpectralTheory",
+      "section": "§6.4",
+      "needs": "Identify the compact-test parabolic kernels `K_f,P` and their support components `K_f,P,χ` with the quotient measures and pairing convention of §3.8, and prove `K⁰_f,P,χ(x,y) = ∫ K_f,P,χ(x,ay) δ_P(a)^(−1/2) da`, the integral over `a ∈ A_P∞`, for compactly supported smooth f."
+    },
+    {
+      "slug": "compact-kernel-spectral-comparison",
+      "supplier": "AutomorphicSpectralTheory",
+      "section": "§6.4",
+      "needs": "Supply the compact-test spectral expansion of the support component `K⁰_f,χ` by discrete-inducing Eisenstein series used in §3.10, with its sum over χ, standard P and K-types, coefficient `|𝒫(M_P)|^(−1)`, conjugated second Eisenstein factor and dual Haar measure on the imaginary relative space `i(a_P^G)*`."
     },
     {
       "slug": "local-sobolev-evaluation",

@@ -22,6 +22,8 @@ Let F be a number field and G a connected reductive F-group. For isolation let Z
 
 Fix a minimal parabolic, standard Levi subgroups, an admissible maximal compact and compatible Haar/quotient measures. At every retained unramified finite place vol(K_v)=1. S is finite and contains all ramified group and level places; T⊃S may be infinite, but every Hecke tensor has finite support. At places in S the full supplied local theory is used, with no exclusion of dyadic, triadic or ramified places. Induction is normalized by δ_P¹ᐟ². Infinitesimal characters are Weyl orbits in the complexified abstract Cartan dual. Use the supplied Weyl-and-unramified-twist equivalence of cuspidal data, with the fixed ω comparison below.
 
+For a standard Levi M, a_M=Hom(X*_F(M),ℝ), its dual a_M* and A_M∞ are the absolute spaces of AdelicAlgebraicGroups §§2.1 and 3.1, used unchanged in Layers 2–3. In Layers 4–5, where ω is fixed, unitary twists, complex inducing parameters, central quotients and splittings use the relative space a_M^G, the kernel of the projection a_M→a_G of AdelicAlgebraicGroups §3.1. Through the split-centre splitting a_M=a_G⊕a_M^G its dual (a_M^G)* is the subspace of a_M* vanishing on H_M(Z(𝔸))=a_G; it is the dual of Z(𝔸)M(𝔸)¹∖M(𝔸), which BPLZZ calls a_M (BPLZZ §3.2, p.23; bplzz line 1149). For M=G it is zero. Witness: for G=M=G_m over ℚ with ω=1 and σ=1, the absolute space would admit s=1, moving the infinitesimal character from 0 to 1 and the central character away from ω, whereas the relative space admits only s=0. For the GL₂ upper Borel the relative parameters are (s,−s), which leave the central character unchanged, while (s,s) multiplies it by |z|^(2s).
+
 Write [G]_P=M_P(F)N_P(𝔸)∖G(𝔸), [G]=[G]_G, n_P≥1 for its proper quotient height and σ_P=1+log n_P. Constants in ≪ are positive and independent of the displayed variables; ≍ means two-sided comparison. Right derivatives R(X) come from right translation. Put L(X)f(g)=(d/dt)₀f(exp(−tX)g), so π(L(X)f)=dπ(X)π(f). On the additive line with π_t(x)=exp(itx), both sides equal it times the Fourier integral. Put t_λf(α)=f(α−λ): t₁(z)=z−1, whereas the tensor weight +1 changes a character α to α+1. These witnesses fix the two different signs (BPLZZ §§2.3–2.4, bplzz line 522 and line 744).
 
 Use the linear-first pairing ⟨φ,ψ⟩=∫φ·conj(ψ). Mathlib's inner product is conjugate-first, so exchange its slots. For scalars 1 and i these pairings are −i and i respectively. The adjoint test is f*(g)=conj(f(g⁻¹)) on the unimodular group. On ℝ/ℤ with mass-one Haar measure, right convolution by e₋ₙ, where eₙ(x)=exp(2πinx), projects onto eₙ, and convolution by eₙ projects onto e₋ₙ. Central disintegration uses δ_P⁻¹ᐟ²: for the GL₂ upper Borel and diag(a,1) with |a|=4, δ_P=4, normalized induction contributes 2 and disintegration contributes 1/2 (BPCZ §§2.5.5 and 2.10.1, bpcz line 1252 and line 2420).
@@ -68,7 +70,7 @@ What AutomorphicSpectralTheory must provide (gap:split-centre-fourier-laplace): 
 
 The section contract is §§6.1–6.3.
 
-What AutomorphicSpectralTheory must provide (gap:cuspidal-data-central-comparison): Compare Weyl-and-twist normalized cuspidal data and pseudo-Eisenstein spans with the full split-central-character convention and intermediate compact smooth quotient data, preserving quotient measures.
+What AutomorphicSpectralTheory must provide (gap:cuspidal-data-central-comparison): Compare Weyl-and-twist normalized cuspidal data, with twists and inducing parameters in the relative space (a_M^G)*, and pseudo-Eisenstein spans with the full split-central-character convention and intermediate compact smooth quotient data, preserving quotient measures.
 
 The section contract is §§1.6–1.10, 4.1–4.4.
 
@@ -88,9 +90,17 @@ What AutomorphicSpectralTheory must provide (gap:compact-eisenstein-comparison):
 
 The section contract is §§1.5–1.8, 3.1–3.4.
 
-What AutomorphicSpectralTheory must provide (gap:arthur-factorization-comparison): Supply fixed-normal-level Arthur factorization for every differentiability order with K-invariant enveloping element and compact factors, and identify compact-test kernel expansion and split-central disintegration with the conventions extended in §§3.8–3.10.
+What AutomorphicSpectralTheory must provide (gap:arthur-factorization-comparison): For each normal compact open K₀⊂K_f and each m≥1, supply Z∈U(g∞), a smooth compactly supported g₁ and a compactly supported g₂ of class C^m, both invariant under K∞-conjugation and bi-K₀-invariant, with f=f*g₁+(f*Z)*g₂ for every bi-K₀-invariant Schwartz function f, the choice depending only on K₀ and m.
 
-The section contract is §§6.3–6.4.
+The section contract is §6.3.
+
+What AutomorphicSpectralTheory must provide (gap:compact-kernel-central-comparison): Identify the compact-test parabolic kernels `K_f,P` and their support components `K_f,P,χ` with the quotient measures and pairing convention of §3.8, and prove `K⁰_f,P,χ(x,y) = ∫ K_f,P,χ(x,ay) δ_P(a)^(−1/2) da`, the integral over `a ∈ A_P∞`, for compactly supported smooth f.
+
+The section contract is §6.4.
+
+What AutomorphicSpectralTheory must provide (gap:compact-kernel-spectral-comparison): Supply the compact-test spectral expansion of the support component `K⁰_f,χ` by discrete-inducing Eisenstein series used in §3.10, with its sum over χ, standard P and K-types, coefficient `|𝒫(M_P)|^(−1)`, conjugated second Eisenstein factor and dual Haar measure on the imaginary relative space `i(a_P^G)*`.
+
+The section contract is §6.4.
 
 ### From TauCetiRoadmap.AutomorphicFormsOnReductiveGroups
 
@@ -144,7 +154,7 @@ What AdelicAlgebraicGroups must provide (gap:quotient-neighborhood-volumes): Sup
 
 The section contract is §3.6.
 
-What AdelicAlgebraicGroups must provide (gap:central-character-affine-lattice): Identify the fixed-level norm-one central quotient as a compact abelian Lie quotient and compare its character differentials, the fixed split-central character and normalized unramified twists with a discrete affine lattice in the remaining central parameter space having complex-linearly independent generators and finitely many component characters at each differential.
+What AdelicAlgebraicGroups must provide (gap:central-character-affine-lattice): Identify the fixed-level norm-one central quotient as a compact abelian Lie quotient and compare its character differentials, the fixed split-central character and normalized unramified twists in i(a_M^G)* (trivial on the split centre Z(𝔸)) with a discrete affine lattice in the remaining central parameter space having complex-linearly independent generators and finitely many component characters at each differential.
 
 The section contract is §§2.1–2.3, 4.6–4.7.
 
@@ -594,7 +604,7 @@ The defining construction has the following API.
 
 - Cofinal support/level choices give the same LF comparison.
 
-*Needs:* AutomorphicFormsOnReductiveGroups §§0.1–0.5; §1.1; AutomorphicSpectralTheory §§0.11–0.15; SmoothRepresentationsOfLocalGroups SR.4.1–SR.4.2; satake-exponential-family; NoncommutativeGeometry N1.
+*Needs:* AutomorphicFormsOnReductiveGroups §§0.1–0.5; §1.1; §1.7; AutomorphicSpectralTheory §§0.11–0.15; SmoothRepresentationsOfLocalGroups SR.4.1–SR.4.2; satake-exponential-family; NoncommutativeGeometry N1.
 
 **Checks.**
 
@@ -696,7 +706,7 @@ A proof route is as follows. Compare the finite root minima with the simple-root
 
 - There is no d_P^P from the finite-minimum construction; CT_P^P and the approximation theorem use their identity case.
 
-- For the GL₂ upper Borel B and diag(a,1) with |a|=4, δ_B^G=4 (the Conventions' witness) and δ_B^B=1; reading the depth d_B^G≍|a| in place of the modulus character would give a different weight, and at P=Q no depth exists at all.
+- For the GL₂ upper Borel B and diag(a,1) with |a|=4, δ_B^G=4 (the Conventions' witness) and δ_B^B=1. The depth d_B^G is also comparable with |a| there, so GL₂ alone does not separate depth from modulus. For the upper Borel B⊂GL₃ and diag(t²,t,1) with t≥1 in the positive chamber, the three positive roots take the values t, t and t², so d_B^G≍t is their minimum while δ_B^G=t⁴ is their product; at t=2 these are 2 and 16, and the ratio t³ is unbounded, so reading the depth in place of the modulus character changes the weight class. At P=Q the modulus is 1 and no depth exists at all.
 
 - For `Res_{K/F}GL₂` and diagonal GL₂, the compatible relative-root depth agrees up to constants. At degree 2 and a positive scalar idele of norm 2, the norm character has value 4, while its relative-root coordinate uses exponent 1/2 and has value 2, agreeing with the diagonal root depth; confusing these two characters would give 4 instead of 2.
 
@@ -842,7 +852,7 @@ The defining construction has the following API.
 
 - The test-function algebra acts continuously and preserves S at controlled levels.
 
-- S is dense in every smooth weighted L² space and in C([G]_P).
+- S is dense in every smooth weighted L² space.
 
 A proof route is as follows. Use the quotient Ξ polynomial bound and integrability to compare supremum and all weighted L² derivative seminorms. Use smooth cutoffs and regularization for density; import strict-LF smooth-vector results from AutomorphicSpectralTheory §§0.11–0.15.
 
@@ -1068,7 +1078,7 @@ The defining construction has the following API.
 
 A proof route is as follows. Compare the normalized cuspidal-datum convention to AutomorphicSpectralTheory §1.9 rather than introducing another quotient of pairs. Use the dense pseudo-Eisenstein span to compare A_P-weight projections; define arbitrary-weight support by annihilation. Use CT/EP adjunction and compact A_P cutoffs to prove support compatibility.
 
-*Needs:* AutomorphicSpectralTheory §§1.5–1.10, in particular §1.10 (orthogonal cuspidal-data decomposition); §2.16; §2.14; cuspidal-data-central-comparison.
+*Needs:* AutomorphicSpectralTheory §§1.5–1.10, in particular §1.10 (orthogonal cuspidal-data decomposition); §2.16; §2.14; §2.11; cuspidal-data-central-comparison.
 
 **Checks.**
 
@@ -1160,9 +1170,9 @@ The defining construction has the following API.
 
 - The normalized A_P∞ integral gives K⁰ with factor `δ_P^{−1/2}`.
 
-A proof route is as follows. Use smooth regularization of point distributions, then apply the continuous support projection. Apply the quotient disintegration measure to descend along A_P∞; use the weighted estimates for absolute convergence.
+A proof route is as follows. Use smooth regularization of point distributions, then apply the continuous support projection. Apply the quotient disintegration measure to descend along A_P∞, starting from the compact-test identity requested in compact-kernel-central-comparison; use the weighted estimates for absolute convergence.
 
-*Needs:* §3.4; §2.12; §2.7; AutomorphicSpectralTheory §§6.1–6.4; arthur-factorization-comparison.
+*Needs:* §3.4; §2.12; §2.7; AutomorphicSpectralTheory §§6.1–6.4; compact-kernel-central-comparison.
 
 **Checks.**
 
@@ -1190,9 +1200,9 @@ A proof route is as follows. First bound `R(f):T₀,w→T_{w n^{N′₀}}` unifo
 
 There exist a continuous seminorm p on S(G(𝔸)) and N≥0 such that for every X,Y∈U(g∞), f∈S and x,y∈G(𝔸)¹, the sum over χ and standard P, with coefficient `|𝒫(M_P)|^{−1}`, of `∫_{ia_P^{G,*}}Σ_τ |Σ_{v∈𝔅_{P,χ,τ}} R_x(X)E(x,I_P(λ,f)v,λ) R_y(Y)(overline(E(y,v,λ)))|dλ` is at most p(L(X)R(Y)f)n_G(x)^Nn_G(y)^N. Here 𝒫(M_P) is the finite set of parabolics with Levi M_P and 𝔅 is a K-basis in the discrete inducing space with support χ. The derivative acts on the conjugate Eisenstein function, with Y extended complex-linearly; it is not the conjugate of the Y-derivative. For arbitrary x,y∈G(𝔸), `K⁰_{f,χ}(x,y)` is the sum of the same undifferentiated Eisenstein terms with those coefficients and spectral measures. The absolute value is outside the finite sum within each K-type, before summing types and integrating. (BPCZ §2.10.2, Lemma 2.10.2.1, pp.240–243; bpcz line 2481 and line 2496).
 
-A proof route is as follows. Start with the parent compact-kernel spectral identity, retaining its discrete inducing representation space and parabolic multiplicity factors. Use Arthur factorization at fixed normal finite level, then positivity on the diagonal and Cauchy–Schwarz to bound the grouped K-type terms by the kernel majorant. Use the uniform boundedness principle and density to pass to Schwartz f and commute group derivatives with the uniformly controlled expansion.
+A proof route is as follows. Start with the parent compact-kernel spectral identity requested in compact-kernel-spectral-comparison, retaining its discrete inducing representation space and parabolic multiplicity factors. Use Arthur factorization at fixed normal finite level, then positivity on the diagonal and Cauchy–Schwarz to bound the grouped K-type terms by the kernel majorant. Use the uniform boundedness principle and density to pass to Schwartz f and commute group derivatives with the uniformly controlled expansion.
 
-*Needs:* §3.9; §3.2; AutomorphicSpectralTheory Layer 4; AutomorphicSpectralTheory §§6.1–6.4; arthur-factorization-comparison.
+*Needs:* §3.9; §3.2; AutomorphicSpectralTheory Layer 4; AutomorphicSpectralTheory §§6.1–6.4; arthur-factorization-comparison; compact-kernel-spectral-comparison.
 
 **Checks.**
 
@@ -1216,7 +1226,7 @@ Layer 2; AutomorphicSpectralTheory Layers 1–4 and §§6.3–6.4; AutomorphicFo
 
 ### 4.1 Level and T-characters
 
-Fix a number field F, connected reductive G/F, its maximal F-split central torus Z and unitary automorphic central character ω. Fix a finite set S of finite primes containing all ramified group and level places, `K=K_S×∏_{v∉S}K_v`, and a set T⊃S that may be infinite. H_G^T is the restricted tensor product of the spherical algebras at v∉T, with unit `1_{K_v}` and vol(K_v)=1. A T-character χ is a character of Z(g∞)⊗H_G^T, equivalently an infinitesimal-character W-orbit χ∞ and a family of unramified characters away from T. L²_ω[χ] denotes the closed χ-eigenpart in the fixed-level Hilbert space; its cuspidal subspace is intersected with L²_cusp. The normalizations of Z, A_M∞ and unitary unramified twists are compared with AutomorphicSpectralTheory §1.9–AutomorphicSpectralTheory Layer 4. (BPLZZ §3.1, Definitions 3.1–3.3, pp.21–22; §3.2, pp.23–24; bplzz line 1080).
+Fix a number field F, connected reductive G/F, its maximal F-split central torus Z and unitary automorphic central character ω. Fix a finite set S of finite primes containing all ramified group and level places, `K=K_S×∏_{v∉S}K_v`, and a set T⊃S that may be infinite. H_G^T is the restricted tensor product of the spherical algebras at v∉T, with unit `1_{K_v}` and vol(K_v)=1. A T-character χ is a character of Z(g∞)⊗H_G^T, equivalently an infinitesimal-character W-orbit χ∞ and a family of unramified characters away from T. L²_ω[χ] denotes the closed χ-eigenpart in the fixed-level Hilbert space; its cuspidal subspace is intersected with L²_cusp. Twists and inducing parameters lie in the relative spaces (a_M^G)* of the Conventions. The normalizations of Z, A_M∞ and unitary unramified twists are compared with AutomorphicSpectralTheory §1.9–AutomorphicSpectralTheory Layer 4. (BPLZZ §3.1, Definitions 3.1–3.3, pp.21–22; §3.2, pp.23–24; bplzz line 1080).
 
 The defining construction has the following API.
 
@@ -1322,17 +1332,17 @@ A proof route is as follows. Use the range inclusion in the existing closed cusp
 
 ### 4.5 Typical cuspidal data at an infinitesimal character
 
-For each standard Levi M import the splitting of its Cartan dual into a central quotient c_M*/a_M* and the derived Cartan quotient b_M*. Let γ_M^+,γ_M^− be the corresponding quotient maps, and let λ_M be the derived Casimir polynomial. A normalized cusp representation σ of M is χ∞-typical if γ_M^+(χσ∞) belongs to the finite image γ_M^+(χ∞) and λ_M(γ_M^−(χσ∞)) belongs to the finite set λ_M(γ_M^−(χ∞)). Images of W-orbits are finite sets; choices of representatives do not change membership. Work modulo unitary unramified twists on a_M. Fix a finite set of archimedean K_M-types and a compact open finite level when asserting finiteness. (BPLZZ §3.3, Remark 3.10 and Definition 3.11, p.25; bplzz line 1231).
+For each standard Levi M import the splitting of its Cartan dual into a central quotient c_M*/(a_M^G)* and the derived Cartan quotient b_M*. Let γ_M^+,γ_M^− be the corresponding quotient maps, and let λ_M be the derived Casimir polynomial. A normalized cusp representation σ of M is χ∞-typical if γ_M^+(χσ∞) belongs to the finite image γ_M^+(χ∞) and λ_M(γ_M^−(χσ∞)) belongs to the finite set λ_M(γ_M^−(χ∞)). Images of W-orbits are finite sets; choices of representatives do not change membership. Work modulo unitary unramified twists in i(a_M^G)*, the twists trivial on Z(𝔸). Fix a finite set of archimedean K_M-types and a compact open finite level when asserting finiteness. (BPLZZ §3.3, Remark 3.10 and Definition 3.11, p.25; bplzz line 1231).
 
 The defining construction has the following API.
 
-- Unitary twists in a_M* leave the two projected conditions unchanged.
+- Unitary twists in i(a_M^G)* leave the two projected conditions unchanged.
 
 - The target central and Casimir conditions are finite-set membership conditions on the whole W-orbit.
 
 - If the induced infinitesimal character of σ_s equals χ∞ for some s, then σ is χ∞-typical.
 
-A proof route is as follows. Compare the central cotangent quotient to AA norm-one central ideles and AS normalized twists, retaining the c_M/a_M directions over a general number field. Apply the central and derived polynomials to every representative in the finite W-orbit.
+A proof route is as follows. Compare the central cotangent quotient to AA norm-one central ideles and AS normalized twists, retaining the directions of c_M/a_M^G, including those of a_G that the fixed ω pins over a general number field. Apply the central and derived polynomials to every representative in the finite W-orbit.
 
 *Needs:* §4.1; AutomorphicFormsOnReductiveGroups §§2.1–2.4, 2.7; AutomorphicSpectralTheory §§1.5–1.10; AdelicAlgebraicGroups §§2.1–2.3; central-character-affine-lattice.
 
@@ -1342,13 +1352,15 @@ A proof route is as follows. Compare the central cotangent quotient to AA norm-o
 
 - A datum inducing exactly χ∞ is typical.
 
-- When c_M=a_M, the central quotient is zero and the central condition becomes automatic; the derived condition remains.
+- When c_M=a_M^G, the central quotient is zero and the central condition becomes automatic; the derived condition remains.
 
 - Both conditions are necessary; the derived Casimir alone cannot control a torus.
 
+- For G=M=G_m over ℚ and ω=1, (a_G^G)* is zero while c_G* is one-dimensional, so the central quotient is all of c_G*; the fixed ω pins the differential at 0, and the differential 1 is not typical at χ∞=0. Quotienting by the absolute a_G* instead would make the central quotient zero and accept 1.
+
 ### 4.6 Finite-rank cuspidal Casimir values
 
-At fixed finite level and a finite set of archimedean K_M-types, the set Λ_M of derived Casimir values of cuspidal representations of M modulo a_M twists is countable and has finite rank as a subset of ℂ. More precisely the needed derived semisimple cuspidal counting function, counted with multiplicity below positive elliptic spectral parameter R, is bounded by C(1+R)^d. To pass from M to M_der, one must use a finite union of conjugate finite levels; the original level intersection alone is not sufficient. Normalize the Casimir sign so that its K-type-adjusted elliptic eigenvalue is nonnegative. (BPLZZ §3.3, Lemma 3.12 and proof, p.26; bplzz line 1263).
+At fixed finite level and a finite set of archimedean K_M-types, the set Λ_M of derived Casimir values of cuspidal representations of M modulo i(a_M^G)* twists is countable and has finite rank as a subset of ℂ. More precisely the needed derived semisimple cuspidal counting function, counted with multiplicity below positive elliptic spectral parameter R, is bounded by C(1+R)^d. To pass from M to M_der, one must use a finite union of conjugate finite levels; the original level intersection alone is not sufficient. Normalize the Casimir sign so that its K-type-adjusted elliptic eigenvalue is nonnegative. (BPLZZ §3.3, Lemma 3.12 and proof, p.26; bplzz line 1263).
 
 A proof route is as follows. Use the exact Donnelly polynomial upper bound cuspidal-polynomial-counting from AutomorphicFormsOnReductiveGroups §§4.1–4.2; finite multiplicity alone is not a counting theorem. Choose finite representatives of M(𝔸)/(M(F)Z_M(𝔸)M_der(𝔸)K_MM∞). Translate a nonzero fixed-level cusp vector by a suitable representative before restricting to M_der. Intersect the finitely many conjugate derived levels, apply the counting theorem at that common smaller level, and deduce convergence of a sufficiently high reciprocal power sum.
 
@@ -1360,9 +1372,9 @@ A proof route is as follows. Use the exact Donnelly polynomial upper bound cuspi
 
 ### 4.7 Finiteness of typical cuspidal data
 
-For each Levi M, fixed ω, fixed finite level and finite K_M-type set, only finitely many χ∞-typical cuspidal representations occur modulo the normalized a_M twists. After fixing ω and normalizing the a_M twists, the allowed central differentials lie in a discrete affine lattice coset in the remaining central directions of c_M,ℂ*/a_M,ℂ*, possibly of rank zero; the first typicality condition restricts them to finitely many values; the remaining finite-component central characters are finite at the fixed level. Donnelly’s bound restricts derived parameters, and fixed infinitesimal/central-character admissibility gives the final finite representation set. (BPLZZ §3.3, Lemma 3.13, p.26, with the central-character step in the proof of Lemma 3.14, pp.26–27; bplzz line 1270).
+For each Levi M, fixed ω, fixed finite level and finite K_M-type set, only finitely many χ∞-typical cuspidal representations occur modulo the normalized i(a_M^G)* twists. After fixing ω and normalizing the i(a_M^G)* twists, the allowed central differentials lie in a discrete affine lattice coset in the remaining central directions of c_M,ℂ*/(a_M^G)ℂ*, possibly of rank zero; the first typicality condition restricts them to finitely many values; the remaining finite-component central characters are finite at the fixed level. Donnelly’s bound restricts derived parameters, and fixed infinitesimal/central-character admissibility gives the final finite representation set. (BPLZZ §3.3, Lemma 3.13, p.26, with the central-character step in the proof of Lemma 3.14, pp.26–27; bplzz line 1270).
 
-A proof route is as follows. Use the character lattice of the fixed-level compact norm-one central quotient. Compare extension of the fixed ω and normalization of twists as requested in central-character-affine-lattice: the resulting allowed differentials form an affine coset with complex-linearly independent lattice generators, rather than a full-rank lattice in all of c_M*/a_M*. Apply both typicality conditions, then derived counting at the conjugate levels and Harish-Chandra fixed-character finiteness.
+A proof route is as follows. Use the character lattice of the fixed-level compact norm-one central quotient. Compare extension of the fixed ω and normalization of twists as requested in central-character-affine-lattice: the resulting allowed differentials form an affine coset with complex-linearly independent lattice generators, rather than a full-rank lattice in all of c_M*/(a_M^G)*. Apply both typicality conditions, then derived counting at the conjugate levels and Harish-Chandra fixed-character finiteness.
 
 *Needs:* §4.6; §4.5; AdelicAlgebraicGroups §§2.1–2.3; AutomorphicFormsOnReductiveGroups §§4.1–4.2; central-character-affine-lattice.
 
@@ -1372,7 +1384,7 @@ A proof route is as follows. Use the character lattice of the fixed-level compac
 
 ### 4.8 Archimedean annihilators of unwanted families
 
-For each standard Levi M there is μ∞^M∈(M♯θ)^W with μ∞^M(χ∞)≠0 that vanishes on every induced character `χ^G_{σ_s∞}` for every complex s∈a_M,ℂ* whenever σ has the fixed permitted types and level and is not χ∞-typical. Construct it using finite-rank interpolation in the derived Casimir and interpolation on the allowed affine central lattice coset in c_M,ℂ*/a_M,ℂ*. Multiply by a sharp symbol μ∞⁰ nonzero at every target Weyl translate; the additional moderate factors alone need not be sharp. (BPLZZ §3.3, Lemma 3.14, pp.26–27; bplzz line 1277).
+For each standard Levi M there is μ∞^M∈(M♯θ)^W with μ∞^M(χ∞)≠0 that vanishes on every induced character `χ^G_{σ_s∞}` for every complex s∈(a_M^G)ℂ* whenever σ has the fixed permitted types and level and is not χ∞-typical. Construct it using finite-rank interpolation in the derived Casimir and interpolation on the allowed affine central lattice coset in c_M,ℂ*/(a_M^G)ℂ*. Multiply by a sharp symbol μ∞⁰ nonzero at every target Weyl translate; the additional moderate factors alone need not be sharp. (BPLZZ §3.3, Lemma 3.14, pp.26–27; bplzz line 1277).
 
 The defining construction has the following API.
 
@@ -1382,7 +1394,7 @@ The defining construction has the following API.
 
 - The result lies in the sharp W-invariant algebra, using the M-module law and its sharp seed.
 
-A proof route is as follows. Remove from Λ_M the finite target Casimir set, interpolate a function with exactly those unwanted zeros, and pull back along λ_Mγ_M^−. For the central quotient translate the allowed affine lattice coset to a lattice with complex-linearly independent generators and apply §0.3, killing its points outside the finite target image. Take their product over W and multiply μ∞⁰; the quotient maps kill the full complex a_M inducing direction.
+A proof route is as follows. Remove from Λ_M the finite target Casimir set, interpolate a function with exactly those unwanted zeros, and pull back along λ_Mγ_M^−. For the central quotient translate the allowed affine lattice coset to a lattice with complex-linearly independent generators and apply §0.3, killing its points outside the finite target image. Take their product over W and multiply μ∞⁰; the quotient maps kill the full complex inducing direction (a_M^G)ℂ*.
 
 *Needs:* §4.6; §4.7; §0.3; §0.8; central-character-affine-lattice.
 
@@ -1420,7 +1432,7 @@ Layers 0–3; AdelicAlgebraicGroups §§2.1–2.3, 4.6–4.7; AutomorphicFormsOn
 
 ### 5.1 Occurrence in a cuspidal datum
 
-A T-character χ occurs in a normalized cuspidal datum (M,σ) if there is one complex parameter s∈a_M,ℂ* for which the induced infinitesimal character equals χ∞ and, for every finite v outside T, the spherical constituent of the normalized induction I_P^G(σ_s,v) has character χ_v. The same parameter must work at all these places. This property descends to the AutomorphicSpectralTheory §1.9 Weyl-and-twist equivalence class. Denote the resulting set by D(G,ω)_χ. Occurrence is stronger than the almost-everywhere finite-place condition in CAP. (BPLZZ §3.4, Definition 3.16, p.28; bplzz line 1352).
+A T-character χ occurs in a normalized cuspidal datum (M,σ) if there is one complex parameter s∈(a_M^G)ℂ* for which the induced infinitesimal character equals χ∞ and, for every finite v outside T, the spherical constituent of the normalized induction I_P^G(σ_s,v) has character χ_v. The same parameter must work at all these places. This property descends to the AutomorphicSpectralTheory §1.9 Weyl-and-twist equivalence class. Denote the resulting set by D(G,ω)_χ. Occurrence is stronger than the almost-everywhere finite-place condition in CAP. (BPLZZ §3.4, Definition 3.16, p.28; bplzz line 1352).
 
 The defining construction has the following API.
 
@@ -1444,9 +1456,11 @@ A proof route is as follows. Use normalized induction, its infinitesimal charact
 
 - The infinitesimal and all retained finite-place equations must hold simultaneously.
 
+- For G=M=G_m over ℚ, ω=1, σ=1 and T containing every finite place, the only parameter is s=0 because (a_G^G)*=0, so the character with infinitesimal character 1 does not occur; the absolute space would allow s=1 and make it occur, contradicting the full-group nonoccurrence Check above.
+
 ### 5.2 Mixed archimedean and Hecke annihilators
 
-If χ does not occur in (M,σ), construct a T-multiplier `μ_{M,σ}` nonzero at χ whose operator annihilates the whole AutomorphicSpectralTheory §1.9 cuspidal component L²_(M,σ). Only finitely many places outside T are used, even if T is infinite. For proper M choose representatives α_σ,α_χ and a splitting ℓ:h*→a_M*. For each w∈W the only candidate parameter compatible with α_σ+s=wα_χ is s_w=ℓ(wα_χ)−ℓ(α_σ). Nonoccurrence supplies an invariant archimedean polynomial or a spherical Hecke element at a retained finite place distinguishing the target from that candidate. Its values along the induced family are exponential polynomials in s. A finite linear combination avoiding the finitely many target-zero hyperplanes, followed by a Weyl product, vanishes on the entire family and is nonzero at χ. Multiply by a moderate damping and a sharp seed to obtain an element of (M♯θ)^W⊗H_G^T. (BPLZZ §3.4, Proposition 3.17 and (3.4), pp.28–29; Remark 2.9(3), p.11; bplzz line 1361).
+If χ does not occur in (M,σ), construct a T-multiplier `μ_{M,σ}` nonzero at χ whose operator annihilates the whole AutomorphicSpectralTheory §1.9 cuspidal component L²_(M,σ). Only finitely many places outside T are used, even if T is infinite. For proper M choose representatives α_σ,α_χ and a splitting ℓ:h*→(a_M^G)*. For each w∈W the only candidate parameter compatible with α_σ+s=wα_χ is s_w=ℓ(wα_χ)−ℓ(α_σ). Nonoccurrence supplies an invariant archimedean polynomial or a spherical Hecke element at a retained finite place distinguishing the target from that candidate. Its values along the induced family are exponential polynomials in s. A finite linear combination avoiding the finitely many target-zero hyperplanes, followed by a Weyl product, vanishes on the entire family and is nonzero at χ. Multiply by a moderate damping and a sharp seed to obtain an element of (M♯θ)^W⊗H_G^T. (BPLZZ §3.4, Proposition 3.17 and (3.4), pp.28–29; Remark 2.9(3), p.11; bplzz line 1361).
 
 The defining construction has the following API.
 
