@@ -1,4 +1,6 @@
-import Mathlib
+module
+
+public import Mathlib
 
 /-!
 # Sheaf-theoretic Smith theory: target signatures
@@ -27,6 +29,8 @@ The following headline theorems are not statable at the pins:
 * the integral norm-image comparison lacks the integral Tate Hom, norm and lifting
   functors. Objectwise comparisons do not substitute for these natural statements.
 -/
+
+public section
 
 namespace TauCetiRoadmap.SheafTheoreticSmithTheory
 
