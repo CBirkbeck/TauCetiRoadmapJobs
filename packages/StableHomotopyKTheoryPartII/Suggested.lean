@@ -1,4 +1,6 @@
-import Mathlib
+module
+
+public import Mathlib
 
 /-!
 # Homotopy foundations for algebraic K-theory, part II: target signatures
