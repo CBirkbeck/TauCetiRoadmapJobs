@@ -5925,7 +5925,7 @@
   },
   {
     "slug": "constructible-etale-space-descent",
-    "needs": "Over arbitrary qcqs schemes, supply effective descent of qcqs étale algebraic spaces along universally submersive qcqs maps and the equivalence of these spaces with constructible finite-set étale sheaves, retaining separated schemes as a distinguished subcategory.",
+    "needs": "Over arbitrary qcqs schemes, supply effective descent of qcqs étale algebraic spaces, and of their separated and finite subcategories, along quasi-compact universally subtrusive maps, that is v-covers (RYD10 Theorem 5.17 and Corollary 5.18), and the equivalence of these spaces with constructible finite-set étale sheaves.",
     "supplier": "SchemeAndStackFoundations",
     "section": "§§1.2–1.10"
   },

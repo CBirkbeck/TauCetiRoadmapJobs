@@ -15,11 +15,11 @@ The following objects retain one owner; their mathematical tests also appear amo
 | PrismaticCohomology §2.0 | Scheme v- and arc-cover predicates and their finite-affine site, finite-presentation v-refinement, torsion v/arc descent, finite-coefficient constructible arc-hyperdescent, torsion formal glueing and punctured henselian comparison, the p-adic formal arc-site, its perfectoid basis and structure-sheaf acyclicity. Section 8.6 here enlarges torsion glueing to arbitrary small-limit-valued sheaves; §8.8 enlarges the punctured henselian comparison to finitary rigid arc-sheaves valued in `D(Lambda)^(>=0)`; §§9.1–9.5 treat an arbitrary parameter, including its boundary cases; Layer 11 treats every finite ideal. |
 | DiamondsAndVStacks §§D0.11–D0.12 and D0.22 | Spectral submersions, their cofiltered-limit theorem and the infinite-chain counterexample, and ordinary sheaves on profinite sets. Section 2.7 here identifies the universal scheme property with arc-covering; §3.8 extends the ordinary Boolean-sheaf calculation to the specified infinity-categorical targets and base-changed ring functors. |
 | SchemeAndStackFoundations §§0.9, 0.11–0.14, 0.24–0.25, 1.1–1.10, 2.5, 2.11 and 2.15 | Scheme approximation, absolute integral closures of integral schemes, henselian pairs, perfection, algebraic spaces and effective descent, constant characteristic-primary affine vanishing and filtered coefficient colimits, and Gabber's full affine henselian-pair theorem with its degree-zero lemmas. Section 0.3 here adds bounded aic valuation subrings; no absolute-integral-closure construction is repeated. |
-| EnhancedDerivedSheaves §§E1.6, E2.8 and Layer E5:descent | Perfect-ring Tor vanishing and valuation decomposition in their perfect characteristic-p setting, finite inductive level, the forward abstract-blowup theorem, descendability and enhanced module descent. Section 1.4 here supplies the ordinary-scheme h-descent criterion. |
+| EnhancedDerivedSheaves §§E1.6, E2.8 and Layer E5:descent | Tor vanishing for perfect F_p-algebras, finite inductive level of proper surjections, descendability and enhanced module descent. Section 0.5 here proves valuation prime splitting and §1.4 proves both directions of the ordinary-scheme abstract-blowup criterion. |
 | SchemeKTheoryOperations §4.10 | Perfect-scheme h/v sites and perfect-complex v-hyperdescent with fixed Tor bounds. Section 7.7 here gives the arc upgrade. |
 | EtaleCohomologyFoundations §§0.5–0.7, F.2.1–F.2.6, F.3 and G.1–G.3 | Constructible-complex and Hom continuity, localization, arbitrary-torsion proper base change, field Künneth, algebraic affine vanishing and scheme compactifications. |
 | ClassicalAdicEtaleCohomology §§2.5–2.6; AdicEtaleGeometry §§A1.0.5 and A1.15; AdicSpacesPartII §R0.19.10 | Huber's analytic and normalized perfectoid comparisons, henselian finite étale approximation, Deligne enough points and qcqs objects of a topos, with the extensions specified below. |
-| AdicSpaces Layers 0–1; AdicSpacesPartII §§R0.3, R0.9, R1.3 and R1.9; RigidAnalyticGeometry §§1.1–1.3 | Huber rings and adic spectra, completed tensors, analytification, the affinoid carrier, Noether normalization and dimension. Strict topological finite type is the pinned Tau Ceti predicate listed below. |
+| AdicSpaces Layers 0–1 and §2.1; AdicSpacesPartII §§R0.3, R0.9, R1.3 and R1.9; RigidAnalyticGeometry §§1.1–1.3 | Huber rings and adic spectra, completed tensors, analytification, the affinoid carrier, Noether normalization and dimension. Strict topological finite type is the pinned Tau Ceti predicate listed below. |
 | PerfectoidSpaces §§P1.15, P1.24, P1.27, P2.2 and P3.20; PerfectoidQuotients §§0.4–0.6; PrismaticCohomology perfect-prism contracts | Integral perfectoid algebra, tilting and its valuation and étale comparisons, bounded p-torsion, products and the distinguished regular Fontaine ideal. Layer 12 here owns complete-arc hyperdescent rather than another construction of those carriers. |
 | GeneralAlgebraicKTheory §§8.5–8.6, 10.9 and 10.12; SchemeKTheoryOperations §3.4 | Milnor Mayer–Vietoris through degree 1; relative excision isomorphisms in degrees ≤ 0 and surjectivity in degree 1; supported K-theory under noetherian completion. The elementary Milnor datum used here is defined in Conventions. |
 | Mathlib `IsAlmostIntegral` and `completeIntegralClosure` | Ordinary almost integrality and complete integral closure. Section 9.7 keeps the distinct uniform power-of-t denominator condition inside A[1/t], over arbitrary rings with t a nonzerodivisor; it does not rebuild ordinary complete integral closure. |
@@ -74,7 +74,7 @@ Use its perfect-prism supplier contracts and §§0.79–0.82 for A_inf=W(A♭), 
 
 ### From TauCetiRoadmap.SchemeAndStackFoundations
 
-Sections 0.9, 0.11–0.14 and 0.24–0.25 supply affine-transition limits and approximation, integral closures and henselian pairs, and scheme perfection with its pullback and valuation compatibilities. Sections 1.1–1.10 supply descent and the category of algebraic spaces; §§2.1–2.3, 2.7, 2.11 and 2.14–2.15 supply sheaf functoriality, supports, finite pushforwards, strict henselization tests and torsion continuity. Section 2.11 supplies `artinSchreier_sequence` and `Etale.artinSchreier_vanishing` for constant Z/p on characteristic-p affines; §2.5 supplies filtered coefficient colimits on the qcqs affine étale basis. Short exact sequences of constant groups extend this to Z/p^r and then all constant p-primary torsion. Section 2.15 supplies Gabber's theorem for arbitrary henselian pairs, including nonlocal and nonnoetherian rings and ideals with no finite-generation assumption, together with the degree-zero set-sheaf comparison (STACKS §59.82, Lemmas 59.82.1–59.82.6 and Theorem 59.82.7, tags 09Z8 and 09ZI).
+Sections 0.9, 0.11–0.14 and 0.24–0.25 supply affine-transition limits and approximation, integral closures and henselian pairs, and scheme perfection with its pullback and valuation compatibilities. Sections 1.1–1.10 supply descent and the category of algebraic spaces; §§2.1–2.3, 2.7, 2.11 and 2.14–2.15 supply sheaf functoriality, supports, finite pushforwards, strict henselization tests and torsion continuity. Section 2.11 supplies `artinSchreier_sequence` and `Etale.artinSchreier_vanishing` for constant Z/p on characteristic-p affines; §2.5 supplies filtered coefficient colimits on the qcqs affine étale basis. Short exact sequences of constant groups extend this to Z/p^r and then all constant p-primary torsion. Section 2.15 supplies Gabber's theorem for arbitrary henselian pairs, including nonlocal and nonnoetherian rings and ideals with no finite-generation assumption, together with the degree-zero set-sheaf comparison (STACKS §59.82, Lemmas 59.82.1–59.82.6 and Theorem 59.82.7; section tag 09Z8, Lemma 59.82.6 tag 09ZH, Theorem 59.82.7 tag 09ZI).
 
 Use AdicEtaleGeometry §A1.15 (coherent-topos-enough-points) for Deligne enough points and AdicSpacesPartII §R0.19.10 for qcqs objects and algebraic topoi. The bounded site of §5.1 has finite limits and finite covering subfamilies, so the coherent-site hypothesis applies.
 
@@ -82,13 +82,13 @@ What SchemeAndStackFoundations must provide (gap:coherent-topos-pushouts): For e
 
 What SchemeAndStackFoundations must provide (gap:algebraic-space-perf-tannaka): For every qcqs algebraic space Y and every algebraic space X, supply the natural reconstruction equivalence Hom(X,Y)≃Fun^⊗_exact(Perf(Y),Perf(X)) with coherent symmetric monoidal functors and all pullback compatibilities.
 
-What SchemeAndStackFoundations must provide (gap:constructible-etale-space-descent): Over arbitrary qcqs schemes, supply effective descent of qcqs étale algebraic spaces along universally submersive qcqs maps and the equivalence of these spaces with constructible finite-set étale sheaves, retaining separated schemes as a distinguished subcategory.
+What SchemeAndStackFoundations must provide (gap:constructible-etale-space-descent): Over arbitrary qcqs schemes, supply effective descent of qcqs étale algebraic spaces, and of their separated and finite subcategories, along quasi-compact universally subtrusive maps, that is v-covers (RYD10 Theorem 5.17 and Corollary 5.18), and the equivalence of these spaces with constructible finite-set étale sheaves.
 
 The reconstruction contract is BH16 Theorem 1.5, p. 2, with its conventions on pp. 4–5. It is used only in §7.8; formal-target representable descent in §12.4 uses a different proof. Sections 4.7–4.8 supply adic formal spectra and continuous maps over the bases in their statements; the p-adic formal objects here are the formal-site objects supplied by PrismaticCohomology §2.0. Sections 4.11–4.12 and 4.16 supply modifications, flattening, Zariski main theorem and alterations. The characteristic-zero smooth approximation of valuation algebras is the explicit target §0.7.
 
 ### From TauCetiRoadmap.EnhancedDerivedSheaves
 
-Sections E0.1–E0.8 supply mapping spaces, coherent functors, limits and presentability. Sections 0.1–0.4 and E1.3–E1.6 supply the ringed-site enhancement and tensor–Hom and pullback–pushforward comparisons. Section E1.6's Tor-independence and valuation-decomposition arguments are used only for perfect F_p-algebras. Section E2.8 supplies finite inductive level and the forward abstract-blowup theorem; the converse in §1.4 is ordinary-scheme h-descent. Sections E2.6–E2.7 supply bounded-below hypercover descent and space-valued sheaves. Layer E5:descent supplies descendability and coherent module descent, and §§E4.1–E4.3 supply the derived-completion reflector and its regular-ideal comparisons.
+Sections E0.1–E0.8 supply mapping spaces, coherent functors, limits and presentability. Sections 0.1–0.4 and E1.3–E1.6 supply the ringed-site enhancement and tensor–Hom and pullback–pushforward comparisons. Section E1.6 supplies Tor-independence for perfect F_p-algebras; valuation prime splitting is proved in §0.5 here. Section E2.8 supplies finite inductive level of proper surjections; both directions of the ordinary-scheme abstract-blowup criterion are proved in §1.4 here. Sections E2.6–E2.7 supply bounded-below hypercover descent and space-valued sheaves. Layer E5:descent supplies descendability and coherent module descent, and §§E4.1–E4.3 supply the derived-completion reflector and its regular-ideal comparisons.
 
 The constructible-complex descent imported from PrismaticCohomology §2.0 uses categorical descent rather than a mere equivalence of homotopy categories. In the left-adjointable form of HA Corollary 4.7.5.3, p. 705, the augmentation G is conservative, G-split geometric realizations exist and are preserved, and all d⁰ squares, including the augmentation, are left adjointable. On opposite fixed-amplitude categories this is the right-adjointable form with preserved G-split totalizations (HA line 26863). These hypotheses describe the supplied descent result; this roadmap adds no second Barr–Beck theorem.
 
@@ -98,11 +98,11 @@ Sections F.0.1 and 0.5–0.6 supply constructible sheaves on qcqs schemes with n
 
 ### From TauCetiRoadmap.ClassicalAdicEtaleCohomology
 
-Section 6.1 supplies strict henselianity of valuation domains with algebraically closed fraction field and the valuation-extension equivalences, and §6.3 supplies both total-cohomology invariance and the derived unit F→Rp_*p*F for faithfully flat valuation extensions with separably closed fraction fields, arbitrary scheme X and torsion orders invertible on X. There is no rank, discreteness or uniform-exponent restriction in this sheaf-level assertion (HUB96 Corollary 4.2.7, pp. 244–245).
+Section 6.1 supplies strict henselianity of valuation domains with algebraically closed fraction field and the valuation-extension equivalences, and §6.3 supplies both total-cohomology invariance and the derived unit F→Rp_*p*F for abelian torsion sheaves F, faithfully flat valuation extensions with separably closed fraction fields, arbitrary scheme X and torsion orders invertible on X. Its bounded-below complex form, for qcqs X and coefficients killed by a power of a prime ℓ invertible on the base, is the separately stated separably-closed version in the same section. There is no rank, discreteness or uniform-exponent restriction in this sheaf-level assertion (HUB96 Corollary 4.2.7, pp. 244–245).
 
 Section 2.5 supplies Huber's analytic comparisons: Corollary 3.2.2 is a constant-coefficient affinoid comparison; Theorem 3.2.9 is the pro-special sheaf comparison; Theorem 3.2.10 carries finite-type and properness-at-the-relevant-generic-points hypotheses. Use compatible open restriction and proper base change, without identifying arbitrary scheme and adic étale sites. For a henselian pair (A,(t)) and X proper over A[1/t], the proper GAGA comparison has the noetherian or strongly-noetherian completed Tate hypotheses of BM21 Corollary 6.18, p. 52 (BM21 line 2170).
 
-Section 2.6 supplies the natural cohomology comparison for p-torsion-free integral perfectoid R with R=(R[1/p])° and finite étale commutative p-power-order coefficients, including constant Z/p^n, and its tilt analogue. For general A with nonzero A[1/p], PerfectoidQuotients §0.4 removes p-power torsion without changing A[1/p]; PerfectoidSpaces §§P1.20 and P1.25 give the powerbounded integral model R=(A[1/p])°, with R[1/p]=A[1/p].
+Section 2.6 supplies the natural cohomology comparison for p-torsion-free integral perfectoid R with R=(R[1/p])° and finite étale commutative p-power-order coefficients, including constant Z/p^n, and its tilt analogue. For general A with nonzero A[1/p], PerfectoidQuotients §0.4 removes p-power torsion without changing A[1/p]; PerfectoidSpaces §P1.20 (*perfectoid-tate-ring-from-integral-perfectoid*, applied to the p-torsion-free image) makes A[1/p] a perfectoid Tate ring and §P1.25 makes its powerbounded subring R=(A[1/p])° integral perfectoid, with R[1/p]=A[1/p].
 
 What ClassicalAdicEtaleCohomology must provide (gap:perfectoid-tate-constant-comparison): Extend the §2.6 comparison to the image of every p-complete integral perfectoid A in A[1/p] by comparing Spa(A[1/p],A) with Spa(A[1/p],(A[1/p])°), compatibly with open restriction and the étale-site tilting equivalence of PerfectoidSpaces §P3.20.
 
@@ -132,7 +132,7 @@ PerfectoidSpaces §§P1.15, P1.20, P1.24–P1.25 and P1.27 supply fields, integr
 
 ### From TauCetiRoadmap.AdicSpaces, TauCetiRoadmap.AdicSpacesPartII and TauCetiRoadmap.RigidAnalyticGeometry
 
-AdicSpaces Layers 0–1 supply Huber/Tate rings, completion, continuous valuations and Spa. AdicSpacesPartII §R0.3 supplies completed tensor products and their universal property on the analytic rings in question; R0.9 and R1.9 consume the normalization and dimension statements of RigidAnalyticGeometry §§1.1–1.3. R1.3 supplies analytification, and R0.19.10 supplies qcqs objects and morphisms and algebraic topoi. In §10.7, Noether normalization makes the completed tensor finite over a Tate algebra in 2d variables, giving the needed upper bound 2d; no unsupported dimension equality is assumed.
+AdicSpaces Layers 0–1 supply Huber/Tate rings, completion and continuous valuations, and AdicSpaces §2.1 supplies Huber pairs, Spa and the contravariant map of adic spectra. AdicSpacesPartII §R0.3 supplies completed tensor products and their universal property on the analytic rings in question; R0.9 and R1.9 consume the normalization and dimension statements of RigidAnalyticGeometry §§1.1–1.3. R1.3 supplies analytification, and R0.19.10 supplies qcqs objects and morphisms and algebraic topoi. In §10.7, Noether normalization makes the completed tensor finite over a Tate algebra in 2d variables, giving the needed upper bound 2d; no unsupported dimension equality is assumed.
 
 ### From TauCetiRoadmap.ResolutionOfSingularitiesCharacteristicZero
 
@@ -301,9 +301,9 @@ The identity modification with arbitrary Z is included.
 
 ### 1.4 Abstract blowup criterion for h-descent
 
-A set- or space-valued presheaf on finitely presented S-schemes is an h-sheaf if it is an fppf sheaf and sends abstract blowup squares with affine X to pullbacks. The reverse implication follows by the h-sheaf condition on the blowup cover; on perfect schemes it agrees with EnhancedDerivedSheaves §E2.8. Consequently proper finitely presented surjections are of universal descent and the corresponding square of sheafified representables is a pushout.
+A set- or space-valued presheaf on finitely presented S-schemes is an h-sheaf if it is an fppf sheaf and sends abstract blowup squares with affine X to pullbacks. Conversely every h-sheaf has these two properties. On perfect schemes use the h-topology supplied by EnhancedDerivedSheaves §E2.8. Consequently proper finitely presented surjections are of universal descent and the corresponding square of sheafified representables is a pushout.
 
-Import finite inductive level. For the converse, induct on the level of a proper finitely presented surjection; use fppf descent at level zero and the blowup pullback to pass the induction across its centre. Localize the target on affine opens before applying Rydh refinement. The cited criterion uses the surjective proper case; for a general abstract blowup square apply that case to Y⊔Z→X and cancel the extra Z factor using finite-disjoint-union descent. Apply the statement after every base change; Yoneda turns the sheaf pullbacks into the representable pushout.
+For the h-sheaf-to-excision direction of sets, the blowup map and the further cover by the source and the self-product of the preimage of the centre reduce the equalizer to agreement over that preimage. For space values, prove the pushout of sheafified representables as sheaves of sets; its leg from the preimage of the centre is a monomorphism, so the presheaf pushout is already a homotopy pushout and sheafification preserves it; mapping into F gives excision (BS17 lines 256–262 and 301–314). Import finite inductive level. For the excision-to-h-sheaf direction, induct on the level of a proper finitely presented surjection; use fppf descent at level zero and the blowup pullback to pass the induction across its centre. Localize the target on affine opens before applying Rydh refinement. The cited criterion uses the surjective proper case; for a general abstract blowup square apply that case to Y⊔Z→X and cancel the extra Z factor using finite-disjoint-union descent. Apply the statement after every base change; Yoneda turns the sheaf pullbacks into the representable pushout.
 
 The pushout uses sheafified representables: neither scheme v nor arc is subcanonical.
 
@@ -689,7 +689,7 @@ Aic valuation splitting yields arc-descent and can be tested directly for the co
 
 **Checks.**
 
-- For a rank-two aic V and middle p the test is exactly F(V)=F(V_p)×_(F(κ(p)))F(V/p).
+- For the underlying-set functor F(A)=A and a rank-two aic V with middle prime p, the comparison identifies V with the pairs (a,b) in V_p×V/p having the same image in κ(p). The pair (1,1) is the image of 1, while (1,0) lies in the direct product but not in the pullback, because its two residues 1 and 0 differ in the nonzero field κ(p); a predicate omitting the compatibility over κ(p) fails here.
 - The terminal functor satisfies both predicates.
 - Take a perfect aic rank-two V with middle p. In the v-topos of perfect schemes, the sheaf image H of h_(Spec V_p)⊔h_(Spec V/p)→h_(Spec V) is proper because this split is not a v-cover. Its prime-square sections at the identity of V fail the excision comparison, although H is a v-sheaf.
 
@@ -879,7 +879,7 @@ A rank-n valuation has n+1 points; the fold map V⊔V→V is allowed.
 
 The following Cat₁-valued functors are finitary arc-sheaves: separated qcqs étale X-schemes; finite étale X-schemes; and constructible finite-set étale sheaves on X. The last category is equivalently qcqs étale algebraic spaces over X, without a separatedness assumption.
 
-Import effective étale-object descent for universal submersions, giving v-descent by finite-presentation approximation. Use the finite-chain descriptions and glue functors across the shared prime. Apply the criterion in Cat₁.
+Import effective étale-object descent along v-covers, that is quasi-compact universally subtrusive maps; by finite-presentation approximation one may also reduce to finite-type Z-schemes, where v-covers are the universal submersions. The arc-cover V→V_p×V/p of a rank-two aic V is not a v-cover, so descent along it is not imported: it follows from aic-v-excision through §4.6. Use the finite-chain descriptions and glue functors across the shared prime. Apply the criterion in Cat₁.
 
 Object transitions are injections in the separated case, but maps between objects are unrestricted.
 
@@ -1148,7 +1148,7 @@ Identify generic points with rank-one t-continuous valuation maps on the plus ri
 
 Surjectivity on all higher-rank adic points is a stronger assertion and is not substituted for generic-point surjectivity.
 
-(BM21, Example 6.15, p. 51.) Text locators: BM21 line 2130. *Needs:* §9.1; AdicSpaces Layers 0–1; AdicSpacesPartII §R0.3.
+(BM21, Example 6.15, p. 51.) Text locators: BM21 line 2130. *Needs:* §9.1; AdicSpaces Layers 0–1 and §2.1; AdicSpacesPartII §R0.3.
 
 ### 9.3 Arc_t-equivalences
 
@@ -1269,7 +1269,7 @@ For a complete aic rank-one V with t a pseudouniformizer, E_t(V,Λ)=Λ in degree
 
 ### Dependencies
 
-ClassicalAdicEtaleCohomology §§2.5–2.6 and 6.3, AdicSpacesPartII §§R0.3, R0.9 and R0.19, PrismaticCohomology §2.0, Layer 0, Layer 1, Layer 2, Layer 3, Layer 5, Layer 6, Layer 8, EnhancedDerivedSheaves §§0.1–0.4, E1.3–E1.6, EnhancedDerivedSheaves §§E2.6–E2.8, SchemeAndStackFoundations §§0.9, 0.11–0.14, 0.24 and 4.7–4.8, SchemeAndStackFoundations §§2.1–2.3, 2.7, 2.14–2.15; EtaleCohomologyFoundations §§0.5–0.7, F.2.1–F.2.6 and F.3, §0.5, AdicSpaces Layers 0–1.
+ClassicalAdicEtaleCohomology §§2.5–2.6 and 6.3, AdicSpacesPartII §§R0.3, R0.9 and R0.19, PrismaticCohomology §2.0, Layer 0, Layer 1, Layer 2, Layer 3, Layer 5, Layer 6, Layer 8, EnhancedDerivedSheaves §§0.1–0.4, E1.3–E1.6, EnhancedDerivedSheaves §§E2.6–E2.8, SchemeAndStackFoundations §§0.9, 0.11–0.14, 0.24 and 4.7–4.8, SchemeAndStackFoundations §§2.1–2.3, 2.7, 2.14–2.15; EtaleCohomologyFoundations §§0.5–0.7, F.2.1–F.2.6 and F.3, §0.5, AdicSpaces Layers 0–1 and §2.1.
 
 ## Layer 10: Künneth and affinoid vanishing
 
@@ -1431,7 +1431,7 @@ The finite-ideal topology governs completed and henselian étale hyperdescent an
 
 Rank restriction remains on V throughout; only the initially chosen W may have unrestricted rank before reduction.
 
-(CS24, §2.2.1 pp. 18–19.) Text locators: CS24 line 692. *Needs:* PrismaticCohomology §2.0; §8.4; §0.3; `IsAdicComplete`.
+(CS24, §2.2.1 pp. 18–19.) Text locators: CS24 lines 711 and 723. *Needs:* PrismaticCohomology §2.0; §8.4; §0.3; `IsAdicComplete`.
 
 ### 11.2 Products of complete aic valuation tests
 
@@ -1513,7 +1513,7 @@ AdicSpacesPartII §§R0.3, R0.9 and R0.19, PrismaticCohomology §2.0, Layer 0, L
 
 For every p-complete integral perfectoid A and every n≥1, constant Z/p^n cohomology of Spec A[1/p] agrees with that of Spa(A[1/p],A); under the tilting étale-site equivalence it agrees with the corresponding tilt generic-fibre cohomology. Products of complete aic valuation tests make these cohomologies locally degree zero. The arc_p hyperdescent comparison is the interface used in the BS22 Theorem 9.1 and GR24 Theorem 6.1 proofs.
 
-Use ClassicalAdicEtaleCohomology §2.6 directly for the normalized p-torsion-free powerbounded model R=(A[1/p])° and for its tilt; PerfectoidQuotients §0.4 removes p-power torsion without changing the generic ring, and PerfectoidSpaces §§P1.20 and P1.25 identify R as integral perfectoid. Compare the adic pairs with integral models A and R through the compatibility contract, then apply the étale-site tilting theorem of PerfectoidSpaces §P3.20. For a product valuation basis, spread each finitely presented finite cover of the punctured spectrum to a finitely presented finite cover of the integral product; that cover splits, as in BS22 line 2807. This kills higher cohomology. Apply the already established arc_p-hyperdescent; the prismatic Frobenius-fixed comparison itself stays in its prismatic owner.
+Use ClassicalAdicEtaleCohomology §2.6 directly for the normalized p-torsion-free powerbounded model R=(A[1/p])° and for its tilt; PerfectoidQuotients §0.4 removes p-power torsion without changing the generic ring, and PerfectoidSpaces §P1.20 (*perfectoid-tate-ring-from-integral-perfectoid*) with §P1.25 identify R as integral perfectoid. Compare the adic pairs with integral models A and R through the compatibility contract, then apply the étale-site tilting theorem of PerfectoidSpaces §P3.20. For a product valuation basis, spread each finitely presented finite cover of the punctured spectrum to a finitely presented finite cover of the integral product; that cover splits, as in BS22 line 2807. This kills higher cohomology. Apply the already established arc_p-hyperdescent; the prismatic Frobenius-fixed comparison itself stays in its prismatic owner.
 
 The coefficient is constant Z/p^n here; no blanket equivalence between the scheme and adic étale sites is claimed.
 
@@ -1579,7 +1579,7 @@ The exported interfaces are the general finitary arc/excision criterion, unrestr
 
 ## Worked examples
 
-A rank-two valuation can be made explicit using the composite valuation on k((x))((y)), with v(y)=(1,0), v(x)=(0,1) in lexicographically ordered Z². Its middle prime p consists of elements whose first valuation coordinate is positive. Then x∈m∖p, y∈p, y/xⁿ∈p for every n≥0, and y lies in every xⁿV. The split V→V_p×V/p inverts x on its first branch and kills y on the second. It passes rank-one arc tests, fails the identity rank-two v-test, and x-adic completion kills the nonzero y. These are respectively the witnesses in §§0.5–0.6, 2.3, 4.3 and 8.5 (BM21 Example 1.3, Proposition 2.8 and Example 6.8; BM21 lines 100, 406 and 2052).
+A rank-two valuation can be made explicit using the composite valuation on k((x))((y)), with v(y)=(1,0), v(x)=(0,1) in lexicographically ordered Z². Its middle prime p consists of elements whose first valuation coordinate is positive. Then x∈m∖p, y∈p, y/xⁿ∈p for every n≥0, and y lies in every xⁿV. The split V→V_p×V/p inverts x on its first branch and kills y on the second. It passes rank-one arc tests, fails the identity rank-two v-test, and x-adic completion kills the nonzero y. These are respectively the witnesses in §§0.5–0.6, 2.3, 4.3 and 8.5 (BM21 Example 1.3, Proposition 2.8 and Example 6.8; BM21 lines 105, 406 and 2054).
 
 For the two-generator ideal I=(x,y) of k[x,y], the puncture contains (0,1) and (1,0): it is D(x)∪D(y). The intersection D(x)∩D(y)=D(xy) contains neither point, and choosing D(x) loses (0,1). This finite-ideal witness is used in the formal glueing datum, open/support comparison and the arc_I boundary-cover formula, with every principal open retained (§§8.1, 8.9 and 11.4; MAT22 Definition 5.17 and Remark 5.18, MAT22 line 880).
 
@@ -1597,7 +1597,7 @@ Numbering follows the version explicitly named for each work. Every mathematical
 - **CMM21.** Dustin Clausen, Akhil Mathew and Matthew Morrow, *K-theory and topological cyclic homology of henselian pairs*. arXiv:1803.10897v2; J. Amer. Math. Soc. 34 (2021). [Legal source](https://arxiv.org/abs/1803.10897v2).
 - **MAT22.** Akhil Mathew, *Faithfully flat descent of almost perfect complexes in rigid geometry*. arXiv:1912.10968v3; J. Pure Appl. Algebra 226 (2022), 106938. [Legal source](https://arxiv.org/abs/1912.10968v3).
 - **BC22.** Alexis Bouthier and Kęstutis Česnavičius, *Torsors on loop groups and the Hitchin fibration*. arXiv:1908.07480v4, 1 June 2022. [Legal source](https://arxiv.org/abs/1908.07480v4).
-- **STACKS.** The Stacks Project Authors, *The Stacks Project: affine analogue of proper base change*. Online §59.82; cached chapter version uses Lemma 82.6 and Theorem 82.7; stable tags 09ZH and 09ZI. [Legal source](https://stacks.math.columbia.edu/tag/09Z8).
+- **STACKS.** The Stacks Project Authors, *The Stacks Project: affine analogue of proper base change*. Online §59.82; cached chapter version uses Lemma 82.6 and Theorem 82.7; stable tags 09Z8 (section), 09ZH (Lemma 82.6) and 09ZI (Theorem 82.7). [Legal source](https://stacks.math.columbia.edu/tag/09Z8).
 - **HUB96.** Roland Huber, *Étale Cohomology of Rigid Analytic Varieties and Adic Spaces*. Aspects of Mathematics E30, Vieweg, 1996. [Legal source](https://doi.org/10.1007/978-3-663-09991-8). HUB96 is uncertified and cited by its printed locators only.
 - **BH16.** Bhargav Bhatt, *Algebraization and Tannaka duality*. arXiv:1404.7483v1, 29 April 2014; published Camb. J. Math. 4 (2016). [Legal source](https://arxiv.org/abs/1404.7483v1).
 - **HJ14.** Annette Huber and Clemens Jörder, *Differential forms in the h-topology*. Algebraic Geometry 1 (4) (2014), 449–478; published open-access version. [Legal source](https://algebraicgeometry.nl/2014-4/2014-4-020.pdf).
