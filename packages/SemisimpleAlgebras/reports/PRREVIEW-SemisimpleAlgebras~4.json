@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-SemisimpleAlgebras~4",
+    "head": "f14d5eef9a39be118998d391c51802b3fba616c6",
+    "pr": 989,
+    "folder": "RepresentationTheory/SemisimpleAlgebras",
+    "date": "2026-10-30",
+    "findings": 2,
+    "blocking": 1,
+    "notes": "incremental re-review of 39 changed lines since 07b43bf; accounted for R01–R03; rechecked affected seeded sections 2.1, 2.2, 2.3, 3.1, 6.2 against pins and Stacks; 27 carried adversarial rows and 9 fresh rows; all three signatures, targeted build and direct Lean pass with only sorry warnings; depcheck 0 problems. Worker gate passes; standalone rerun flags only the family-index file explicitly permitted by the brief (documented scope false positive). Block contract partly repaired; family-index wording unrepaired."
+  }
+}
