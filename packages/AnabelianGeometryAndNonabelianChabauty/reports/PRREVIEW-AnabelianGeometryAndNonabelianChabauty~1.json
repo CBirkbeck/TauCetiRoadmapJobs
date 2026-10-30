@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-AnabelianGeometryAndNonabelianChabauty~1",
+    "head": "63d51d5003f14d1e99497d7b8b9189e438b46683",
+    "pr": 1021,
+    "folder": "AnabelianGeometryAndNonabelianChabauty",
+    "date": "2026-10-30",
+    "findings": 8,
+    "blocking": 4,
+    "notes": "Examined all 15 seeded source sections; report contains 105 adversarial-value rows covering the sample, headline families and finding targets. Checked pinned declarations, relevant ownership and supplier contracts. Dependency check: 208 roadmaps, 1496 edges, 0 problems. Lean elaboration and signature checks passed with two sorry warnings; one-tactic probes did not close either theorem. Worker gate failed: residue=647, all other counters zero. Olsson author manuscript verified; Hadian thesis unavailable and published-version/source limitations recorded. No whole-folder mathematical certificate claimed; no pull-request files changed."
+  }
+}
