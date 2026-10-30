@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-CharacterTheory~2",
+    "head": "73c4f437cb49fe8348694fffb331967089c411e9",
+    "pr": 978,
+    "folder": "RepresentationTheory/CharacterTheory",
+    "date": "2026-10-30",
+    "findings": 12,
+    "blocking": 7,
+    "notes": "Full re-review, including all 13 previous findings and 15 seeded source targets. Worker gate passes; targeted build and direct Lean elaboration pass with 15 sorry warnings only. All 24 declaration signatures checked; 15 one-tactic probes unsolved. Dependency check: 209 roadmaps, 1460 edges, 0 problems. 111 adversarial rows record computed values. Three source texts read; inaccessible or uncertified references listed under Not verifiable. Pinned-library and main/open-roadmap ownership audits identify absent cyclotomic-action supply, native duplication and an existing categorical-comparison owner. Worktree unchanged."
+  }
+}
