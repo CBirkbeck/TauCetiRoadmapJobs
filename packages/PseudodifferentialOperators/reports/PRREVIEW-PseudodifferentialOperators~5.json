@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-PseudodifferentialOperators~5",
+    "head": "88ffdf315be12a567ea0e4357ba4b0bd8052804c",
+    "pr": 952,
+    "folder": "PseudodifferentialOperators",
+    "date": "2026-10-30",
+    "findings": 1,
+    "blocking": 1,
+    "notes": "incremental re-review of 126 changed lines since 9cdb62c; all three prior findings repaired; new P2 for unnecessarily excluding p=1 and infinity from real Bessel–Besov interpolation. Rechecked changed seeded targets 4.2 and 5.3, related 5.5 and their dependencies, six legal source texts, supplier citations and ownership. Gate, dependency check (208 roadmaps, 1461 edges, no problems), targeted build, direct Lean elaboration and 22 signature checks passed; eight padding probes did not close. Adversarial table: 31 fresh rows and 122 explicitly carried rows. Unchanged source limits and settled H01 disposition retained."
+  }
+}
