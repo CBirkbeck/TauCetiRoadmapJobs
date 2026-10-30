@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-FourManifolds~2",
+    "head": "c9603efd841ee06a3dd87f0ad529d06a0813ef5c",
+    "pr": 936,
+    "folder": "FourManifolds",
+    "date": "2026-10-30",
+    "findings": 6,
+    "blocking": 4,
+    "notes": "Full review; previous R01-R08 dispositions recorded. Seeded sample F6.0/F6.0a/F6.0b: no exact locators, 0/3 certifiable; legal AMS preview inspected. Worker gate passes. Independent depcheck: 206 roadmaps, 1414 edges, 0 problems. Direct Lean and all 12 signature checks pass; four padding probes do not close. Native exotic-R4 existence signature and standard-atlas negative control elaborate. 150 adversarial instance rows; pinned-library and permitted-edition ownership/supplier audit; no worktree edits."
+  }
+}
