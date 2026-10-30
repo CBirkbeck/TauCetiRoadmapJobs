@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-PseudodifferentialOperators~7",
+    "head": "0f89dc40cf3d68d6080c4c52c7c9f74806ce5d2e",
+    "pr": 952,
+    "folder": "PseudodifferentialOperators",
+    "date": "2026-10-30",
+    "findings": 2,
+    "blocking": 1,
+    "notes": "incremental re-review of 79 changed lines since fff2f1c; both previous findings repaired; checked changed §5.3–5.4 passages, endpoint examples, seeded sample by inherited rows plus fresh affected-source checks, pinned Schur input, supplier order, gate, targeted build, direct elaboration and 22 signatures. New false dyadic reconstruction is P1; pinned-Schur citation is P3. Adversarial table: 19 fresh and 151 inherited rows; Bergh–Löfström proof error recorded."
+  }
+}
