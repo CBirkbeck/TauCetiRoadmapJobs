@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-HeegaardFloer~2",
+    "head": "523d562f6d9d4add72c095441e17374c64e82f6d",
+    "pr": 957,
+    "folder": "HeegaardFloer",
+    "date": "2026-10-30",
+    "findings": 6,
+    "blocking": 3,
+    "notes": "Full-folder re-review; all seven earlier findings reassessed; 15 seeded source targets examined with unreadable texts identified; 161 computed adversarial rows; 28 elaborated signatures; seven Suggested headlines; padding probes; passing supplied gate and independent dependency check, with reciprocal textual supply and stale supplied-head contracts found."
+  }
+}
