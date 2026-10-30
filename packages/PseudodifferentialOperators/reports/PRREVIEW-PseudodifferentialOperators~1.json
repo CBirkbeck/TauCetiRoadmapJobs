@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-PseudodifferentialOperators~1",
+    "head": "48066392139ba8a765ef7898bd4e38ecf36c33e2",
+    "pr": 952,
+    "folder": "PseudodifferentialOperators",
+    "date": "2026-10-30",
+    "findings": 9,
+    "blocking": 5,
+    "notes": "Full folder review; worker gate passes and rerun depcheck reports 202 roadmaps, 1347 edges, 0 problems. Manual main-supplier resolution finds return-edge cycles. Original Lean and all 26 printed signatures elaborate with nine sorry warnings; all nine one-tactic padding attempts fail, supporting-API exact probe and missing Borel signature probe succeed. Supplemental 15-paragraph sample seeded by the head (worker supplied no heading targets), 178 computed adversarial rows. Taylor and BDH read at stated locators; five mathematical works unavailable and Zulip returned only a shell. Pins, main, supplied open heads and board ownership checked. PR files unchanged."
+  }
+}
