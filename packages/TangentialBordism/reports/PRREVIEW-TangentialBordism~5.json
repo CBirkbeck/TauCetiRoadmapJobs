@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "accepted",
+    "reviewer": "independent-review-PRREVIEW-TangentialBordism~5",
+    "head": "bb3149f902cd64c911b7d62c08a57fdd6e60cb7a",
+    "pr": 942,
+    "folder": "TangentialBordism",
+    "date": "2026-10-30",
+    "findings": 0,
+    "blocking": 0,
+    "notes": "incremental re-review of 60 changed lines since 0f021fa. Both previous findings repaired: closed-fibre hypothesis with Führing §3 p.359 / Prop. 3.4 p.362 and the interval-fibre negative control (R01); claim-level locators Miller 12.3–12.4 pp.32–34, Thom IV.10–IV.11 p.77, Borel–Hirzebruch (13) p.519 with q=k+1, u=−c₂, and the explicit graph-embedding umkehr derivation (R02), each reopened in the cached texts. New supplier citations GC G4.3/G5.1–G5.3, AT Stage 6 item 1, CC C1.4 resolved on main 9c6e95d. Seeded targets 6.2 and 9.4 fall in the diff and were rechecked; the other thirteen are untouched. Worker gate passed; gate rerun OK; depcheck 208 roadmaps, 1461 edges, 0 problems. Suggested.lean unchanged: built both TauCeti imports, lake env lean exit 0 with four sorry warnings, #check probe of nine declarations shows every binder present. Adversarial table: 16 new computed rows for the changed statements plus 119 rows carried from r4."
+  }
+}
