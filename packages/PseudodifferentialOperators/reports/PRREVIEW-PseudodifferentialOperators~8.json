@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "accepted",
+    "reviewer": "independent-review-PRREVIEW-PseudodifferentialOperators~8",
+    "head": "636402fca8e69477e502482c928dbb6f15942793",
+    "pr": 952,
+    "folder": "PseudodifferentialOperators",
+    "date": "2026-10-30",
+    "findings": 0,
+    "blocking": 0,
+    "notes": "incremental re-review of 120 changed lines since 0f89dc4; both previous findings repaired; checked the complex derivation headline and supporting definitions, reconstruction and Schur changes, affected seeded targets and supplier citations; carried unchanged sample rows from r7; gate and dependency check pass, targeted build and direct elaboration pass with nine sorry warnings; checked all 27 signatures and nine one-tactic probes; 25 fresh and 159 inherited adversarial rows."
+  }
+}
