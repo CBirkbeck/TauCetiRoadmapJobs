@@ -1,0 +1,89 @@
+# Review of VariationalMethods (pull request #1028 at 7ea28a3)
+
+**Verdict:** accepted
+
+Incremental re-review of the 139 lines changed since 2acede3 (`TauCetiRoadmap/VariationalMethods/README.md`, now 1098 lines, and `TauCetiRoadmap/VariationalMethods/Suggested.lean`, now 288 lines), plus everything that cites or depends on them. The pull request changes nothing outside the folder. The gate at this head passes every check (`build=0`, `imports=0`, `depcheck=0`, `blob=0`, `stray-files=0`, `outside-folder=0`); `lake env lean` on `Suggested.lean` gives 12 `sorry` warnings and nothing else. No P1 or P2 finding remains; the one finding below is P3.
+
+## R01 (P3) — Two UnboundedOperators declaration names cited here do not exist at the supplier's head
+
+Location: `TauCetiRoadmap/VariationalMethods/README.md` line 48 ("the unique self-adjoint partial operator `closedFormOperator` of a closed semibounded form"), line 199, line 841 ("The operator of a compact form pair is UnboundedOperators UO-D06's `closedFormOperator`"), line 862 (*Needs:*), line 1063 ("UO-D06's `closedFormOperator` is the operator", new in this head); lines 51, 205 and 910 (`realSpectralRestriction`); `Suggested.lean` line 19.
+
+Claim: UO-D06 declares `closedFormOperator` and `realSpectralRestriction`.
+
+Witness: in the UnboundedOperators folder at its open head (`TauCetiRoadmap/OperatorTheory/UnboundedOperators`, commit "review repairs (VariationalMethods cycle broken …)"), neither string occurs in `README.md` or `Suggested.lean`. §4.7 writes "the represented closed-form operator" (line 573) and "the real spectral restriction … the restricted projections `P_R`" (line 565) in prose; its only Lean statement of the operator is `existsUnique_selfAdjoint_of_closed_form` (`Suggested.lean` lines 104–118), an `∃!` with no name for the witness. `roadmaps grep closedFormOperator` finds the name only in this folder and in ComplexKahlerGeometry's citation of a superseded UnboundedOperators blob. The objects themselves are owned (UO-D06 states them), so this is a citation defect, not an unowned prerequisite; the Lean here depends on none of the names (every Layer 5 statement takes `A` by its graph).
+
+Repair: cite the objects as UO-D06 now names them: "UO-D06's represented operator (the unique `A` of `existsUnique_selfAdjoint_of_closed_form`)" and "UO-D06's real spectral restriction with its projection family `P_R`", in all nine places; in `Suggested.lean` line 18–19 say the headline "the operator of a compact form pair is UO-D06's represented operator" is unstatable because that operator has no declaration at the pins. Line 1063 is where ComplexKahlerGeometry's repair will be read, so the phantom name would otherwise propagate.
+
+## Previous findings
+
+- R01 — repaired: the UnboundedOperators head cites GeneralizedCohomology G5.5-RealHilbert for the complexification (its lines 68–73, 542, 550–551, 597) and says "VariationalMethods 5.1 consumes them and supplies nothing here" (line 74); no "VariationalMethods V2.3" citation and no `CompactFormPair.operator` remain there; this README's Scope (lines 54–56) records 2.3 as a second proof, not the owner, and 2.3 (lines 500–503, 512–513) reads the same way.
+- R02 — repaired: `zero_mem_weak_closure_embedded_unitSphere` and `CompactFormPair.exists_shifted_solution_maps` are deleted; the module docstring (lines 12–14) says why; 1.3 (line 339) and 2.3 (line 503) keep the statements as targets without backticked names.
+- R03 — partly repaired: Layer 6 and 6.1 now cite Babuška–Osborn §8 (lines 974, 990, 1087–1089), Hunter 4.37 is confined to Layer 4 (lines 692, 1084–1085), and 3.4 (lines 666–672) says the Tau Ceti theorem supplies only the dichotomy and the annihilator criterion is proved here. The path `TauCeti/Topology/Algebra/Module/LinearPMap/Resolvent.lean` (lines 180–181, 1096) is unchanged: it does not exist at this worktree's Tau Ceti pin a91d3aaf (where `TauCeti.LinearPMap.resolventSet` lives in `Analysis/Normed/Operator/Resolvent/Unbounded.lean` lines 104, 168), but it does exist at main's pin 358314d4, where `Unbounded.lean` indeed re-exports it (`public import TauCeti.Topology.Algebra.Module.LinearPMap.Resolvent`, its line 12) exactly as the README says. The sentence is right for the pin the merged roadmap will build against; not re-raised.
+- R04 — repaired: 3.2's Check (lines 624–626) now reads "`eₙ ∈ S_H` (`‖j eₙ‖ = 1`) has `‖eₙ‖_V = n+1`"; the two models are named the "diagonal-map pair" (Layers 1–2) and the "weighted pair" (Layers 3–6), and 3.1 (lines 583–589) states the transport between them. Verified below.
+- R05 — repaired: the ComplexKahlerGeometry bullet (lines 1060–1067) names the current carriers (`operatorDomainV`, `exists_compact_selfAdjoint_shifted_inverse`, 2.3's `S_α`, `F_α`, 2.2's real identification, `mem_operatorDomainV_iff_summable`); 2.2 (lines 470–473) does contain that identification. The sentence also carries the phantom name of R01 above.
+
+## Verified sound
+
+**Scope of this round.** The changed passages: Scope lines 54–56; 1.3 line 339; Layer 1 Examples line 401; 2.3 lines 500–503; Layer 2 Examples lines 549–551; 3.1 Checks lines 583–592; 3.2 Checks lines 621–626; 3.3 Checks lines 642–643; 3.4 lines 659–672 and Check 1 lines 677–679; the renamed Checks of 4.1–4.3, 5.1–5.3 and 6.1–6.2; Layer 6 Sources line 974 and 6.1 lines 988–991; Downstream lines 1060–1067; References lines 1084–1089; `Suggested.lean` docstring lines 12–14 and the two deletions. Sampled targets falling in them: 1.3, 2.3, 3.2, 3.4, 4.1, 4.3, 5.1, 5.2, 6.1; the other seeded targets (1.1, 1.2, 2.1, 2.2, 4.4, 6.2) are untouched by the diff and stand as verified in the previous report.
+
+**Elaboration.** `lake env lean TauCetiRoadmap/VariationalMethods/Suggested.lean`: 12 `sorry` warnings, no other output. A scratch copy with `#check @name` for all 18 declarations elaborated once; every type agrees with the worker's `signatures.md` and with its README statement. The six "dropped binder" leads are the structure and the five `def`s (`CompactFormPair`, `energy`, `unitConstraint`, `rayleighMinMax`, `operatorDomainV`, `differentialOperator`) without `[CompleteSpace E] [CompleteSpace H]`: correct, their types do not need completeness, and all 12 theorems carry both.
+
+**One-tactic probe.** On a scratch copy every `sorry` was replaced by `first | rfl | simp | infer_instance | trivial | (intros; simp_all) | … | aesop`: all 12 theorems fail (errors at the 12 declaration sites, no declaration closes). No padding remains; the two declarations the previous report called non-headlines are gone.
+
+**Dependency check.** `gate --depcheck … --movable`: `depcheck: 204 roadmaps, 1392 edges, 0 problem(s)`, no UPWARD, CYCLE or `moved:` line; VariationalMethods is in the merge order (line 368). UnboundedOperators is still neither on main nor in the order, so the check cannot see that edge; read directly, it now runs one way (UO-D06 → this roadmap, R01 above).
+
+**Adversarial table.** New rows carry computed values; rows marked (r2) are carried forward from the previous report for statements the diff leaves untouched, with their values condensed.
+
+| Statement | Instances tried | Values computed | Result | Change |
+| --- | --- | --- | --- | --- |
+| 3.1 transport, diagonal-map pair ↔ weighted pair (new) | `T u = ((n+1) uₙ)` | `‖u‖_V² = Σ (n+1)²∣uₙ∣² = ‖T u‖²_{ℓ²}`; `j_diag(T u) = ((n+1)uₙ/(n+1)) = u = j_w u`; `a_w(u,v) = Σ (n+1)² ūₙ vₙ = ⟨T u, T v⟩ = a_diag(T u, T v)`; `T eₙ = (n+1) eₙ` | an isometric isomorphism of pairs; `c = 1`, `ω = 0` preserved | none |
+| 3.2 Check 4 (changed) | `eₙ` in the weighted pair | `‖j eₙ‖ = 1`, `‖eₙ‖_V = n+1 → ∞`; `⟨f, eₙ⟩ → 0` for `f ∈ V*` (`f` represented by `((n+1)² gₙ)`, `g ∈ V`) | `eₙ ∈ S_H`, unbounded, `0` in the weak closure | none |
+| 3.2 Check 1–3 (renamed) | `e₀`, `e₁`, `x = (1/(n+1))` | `q(e₀)/‖j e₀‖² = 1`; `q(e₁) = 4`; `Σ (n+1)²/(n+1)² = ∞` so `x ∉ V` | unchanged values | none |
+| 3.4 Check 1 is a pair (changed constants) | `a = Σ n² ūₙ vₙ` on the weighted `V`, `c = 1/2`, `ω = 1` | coordinatewise `(n+1)²/2 ≤ n² + 1 ⇔ (n−1)² ≥ 0`; equality at `n = 1` | correct; `N = span e₀`, `δ = q(e₁)/‖j e₁‖² = 1` | none |
+| 3.4 annihilator criterion, route (changed text) | `V' = {u ∣ j u ⊥ j N}`, `ℓ` with `ℓ∣_N = 0` | `q ≥ δ‖j·‖²` on `V'` and `c‖u‖² ≤ q + ω‖j u‖²` give `q ≥ c δ/(δ+ω) ‖u‖²` on `V'`; Lax–Milgram on `V'`; for `v ∈ V`, `P_{jN}(j v) = j n`, `v − n ∈ V'`, `a(u, n) = 0` (`n` in the form kernel, `q ≥ 0`), `ℓ(n) = 0` ⇒ `a(u, v) = ℓ(v)`; `a(u,·) = 0 ⇒ q(u) = 0 ⇒ u ∈ N` | solvable iff `ℓ` kills `N`, unique mod `N`; the Tau Ceti theorem (`Fredholm.lean` 132–136) is the dichotomy only, as the text now says | none |
+| 2.3 second-proof route (changed text, same mathematics) | `E = q − 2 Re ℓ` on the real restriction | sublevels bounded by `c‖u‖² − 2‖ℓ‖‖u‖ ≤ b`; weakly lsc by 1.2; minimizer solves `Re a(u,v) = Re ℓ(v)`; `v ↦ i v` gives the imaginary part | a proof of UO-D06's statement for coercive forms, not a new owner | none |
+| 2.3 Check 1 (r2) | `V = H = ℂ`, `α = 0` | `S₀ h = h`, `F₀ ℓ = conj(ℓ 1)`, `F₀(iℓ) = −i F₀ ℓ` | correct | none |
+| Downstream carriers (new) | names cited | `operatorDomainV` (Lean 185), `exists_compact_selfAdjoint_shifted_inverse` (206), `mem_operatorDomainV_iff_summable` (219) exist; `IsCoercive.continuousLinearEquivOfBilin` (Mathlib `LaxMilgram.lean` 105), `IsCoercive.formSolutionMap` (Tau Ceti `Variational/Spectrum.lean` 93, in `namespace IsCoercive`) exist at the pin; `closedFormOperator` nowhere | one phantom | R01 |
+| 6.1 `tendsto_rayleighMinMax` (r2) | lower / upper | `rayleighMinMax Vₘ n ≥ λₙ` once `dim Vₘ > n`; nested dense `Vₘ` approximate `u₀..uₙ` with Gram matrix near `I`, sup within `ε` of `λₙ` | true; nesting needed | locator added (uncertified) |
+| 6.1 Checks (r2) | `𝕜²`, `a = diag(1,3)`, `φ₁ = e₀`, `φ₂ = e₀+e₁` | `A = [[1,1],[1,4]]`, `G = [[1,1],[1,2]]`, `det(A − λG) = (1−λ)(3−λ)`; `V₁ = span{e₀+e₁}`: `5/2`, `G = 2` | correct | none |
+| `exists_isMinOn_of_weak_closed` (r2) | `b = E s₀` | sublevel nonempty, bounded, weakly closed ⇒ weakly compact; lsc attains | true | none |
+| `exists_isMinOn_of_bounded_minimizing_sequence` (r2) | subsequence; `hbelow` dropped | `u_{n_k} ⇀ v ∈ S`, `E v ≤ sInf`; without `hbelow`, `E = −Re⟨e₀,·⟩`, `sInf = 0` junk, no minimizer | true; hypothesis necessary | none |
+| `compactMap_continuousOn_weak_bounded` (r2) | `K = closure (J '' B)` | compact `K`; weak and norm topologies agree on it | true | none |
+| `CompactFormPair` wrong models (r2) | `E = 0`, `j = 0` | dense iff `H = 0` | only the zero pair | none |
+| `exists_minimum_on_unitConstraint` (r2) | minimizing `uₙ ∈ S_W` | `c‖uₙ‖² ≤ q(uₙ) + ω` bounded; `j uₙ → j u`, `‖j u‖ = 1`, `j u ∈ W`; `q + ω‖j·‖²` weakly lsc | true | none |
+| `equation_of_constrained_minimum` (r2) | path `(u+tv)/‖j(u+tv)‖`, then `I•v` | `g'(0) = 2 Re(a(u,v) − q(u)⟨ju,jv⟩) = 0`, imaginary part from `I v` | true; closedness of `W` unused | none |
+| 3.3 Check 3 (r2) | `ℂ²`, `a = diag(1,2)`, `u = (1,1)/√2` | `q(u) = 3/2`; `a u e₁ = 2/√2 ≠ 3/(2√2)` | unequal, as stated | none |
+| 4.1 full equation, divergence, lower bound (r2) | `v = uₖ`, bounded subsequence, `‖j uₙ‖ = 1` | `a uₙ uₖ = star(λₖ⟨juₖ,juₙ⟩) = 0`; orthonormal `j u_{nₖ}` cannot be norm-Cauchy (`‖·‖² = 2`); `λₙ > −ω` | true | none |
+| 4.1 Checks (renamed) | `uₙ = eₙ`; `u = e₀ + e₁` | `λₙ = (n+1)²`; `a`-complement `{v₀ + 4v₁ = 0}`, `H`-complement `{v₀ + v₁ = 0}` | unchanged values in the weighted pair | none |
+| `exists_ordered_eigenbasis` ℕ-indexing (r2) | `¬FiniteDimensional 𝕜 H` | `H` separable from compact dense `j`; infinite-dimensional ⇒ `ℕ`-indexed Hilbert basis | statable and true | none |
+| 4.2 completeness and Check 3 (r2) | energy-orthogonal `v ≠ 0`; `diag(1,3)` | `λₙ ≤ q(v)/‖jv‖²` for all `n`, contradiction; `a⁻¹ = diag(1,1/3)` | true | none |
+| 4.3 energy Parseval and converse (r2) | `eₙ = uₙ/√(λₙ+α)` | `q(u) + α‖ju‖² = Σ(λₙ+α)∣⟨juₙ,ju⟩∣²`; Check `5 + 2 = 2 + 5 = 7`; `(1/(n+1)²) ∈ range j`, `(1/(n+1)) ∉` | true | none |
+| `rayleighMinMax` well-defined; `eigenvalue_eq_rayleighMinMax` (r2) | `M` of dim `n+1`; `M = span{u₀..uₙ}` | sup `≤ ‖a‖/m²`, `≥ −ω`; junk `sInf ∅ = 0` for `dim L ≤ n`; `q(Σ cₖuₖ) ≤ λₙ‖ju‖²`; any `M` has `u ⊥ b₀..b_{n−1}` with `q(u) ≥ λₙ‖ju‖²` | true with only `Monotone` | none |
+| 4.4 Checks and PD conversion (r2) | `diag(1,3,5)`, `n = 1`; PD-A51 | planes `↦ 3, 5`; inf `= 3 = λ₁`; `k = 0 ↦ 5 = λ₂ = λ_{d−1−0}` | correct | none |
+| `operatorDomainV` submodule (r2) | `c • u` | `a(cu,v) = c̄⟨f,jv⟩ = ⟨cf,jv⟩` | proof compiles | none |
+| `exists_compact_selfAdjoint_shifted_inverse` (r2) | `S = j ∘ S_α` | `A(Sh) + αSh = h`; `S(Ax + αx) = x`; compact; `⟨k,Sh⟩ = ⟨Sk,h⟩` | true | none |
+| 5.1 sign and Checks (renamed) | `R_A(−α)`, `diag(1,−3)`, `ω = 4` | `R_A(−α) e₀ = e₀/(−α−1) = −S_α e₀`; `S₄ = diag(1/5,1)`; `A + 2 = diag(3,−1)` | correct | none |
+| `mem_operatorDomainV_iff_summable` (r2) | both directions | `⟨bₙ,f⟩ = λₙ⟨bₙ,jw⟩`, Parseval; converse by the polarized shifted expansion | true without `Monotone` | none |
+| 5.2 Checks (renamed) | `x = (1/(n+1)³)`, `(1/(n+1)²)`; `z = 0, 4`; weak equation at `λ = 1` | `Σ(n+1)⁴/(n+1)⁶ < ∞`, `Σ 1 = ∞`; `‖R_A(0)‖ = 1`, `(4−A)e₁ = 0`; `ℓ = ⟨e₀,j·⟩` unsolvable, `⟨e₁,j·⟩ ↦ e₁/3 + t e₀` | correct | none |
+| `mem_resolventSet_iff` (r2) | `z = λₙ`; `z ∉ {λₙ}` | `R(zbₙ − Abₙ) = 0 ≠ bₙ`; `R y = Σ(z−λₙ)⁻¹⟨bₙ,y⟩bₙ`, `‖R‖ ≤ 1/inf∣z−λₙ∣`, `Ry ∈ dom A` | true; matches `IsResolventAt` (Unbounded.lean 104–110 at this pin) | none |
+| `differentialOperator`, `mem_operatorDomainV_iff_mem_adjoint_domain` (r2) | `y = Du`, `x = jv`; `D = 2·id` on `ℂ` | `⟨Du, D₀(jv)⟩ = a u v`; `⟨D₀†(Du), jv⟩ = a u v`; `D₀†(Du) = 4u` | true | none |
+| 5.3 Checks (renamed) | `(Du)ₙ = (n+1)uₙ`; `u = (1/(n+1)²)` | `dom D₀† = {((n+1)yₙ) ∈ ℓ²}`; `Du = (1/(n+1)) ∉ dom D₀†` | correct; `LinearPMap.comp` inapplicable | none |
+| Layer 6 Examples and 6.2 (renamed, r2) | `Vₘ = span{e₀..e_{m−1}}`; `span{e₀ + e₁/m, …}` | Ritz values `1, 4, …, m²`; `(1 + 4/m²)/(1 + 1/m²) → 1` | correct | none |
+| 1.1, 1.2, 2.1, 2.2, 2.4, 3.1 finite sums (r2) | Whitley route; `u_{2n} = eₙ, u_{2n+1} = 2eₙ`; discs at `(∓1,0)`; `I`-test; shifts; `max(0,4)` | as in the previous report (values unchanged) | true | none |
+
+**Library declarations opened at this worktree's pins** (Tau Ceti a91d3aaf, Mathlib 6b7abb3c). Tau Ceti: `Analysis/InnerProductSpace/Variational/Fredholm.lean` 121–126 (`finiteDimensional_ker_one_sub_smul_formPerturbationOperator`) and 132–136 (`fredholmAlternative_formPerturbation`: nonzero homogeneous solution, or `∃!` solution for every `ell : StrongDual ℝ V`, as 3.4 now describes it); `Variational/Spectrum.lean` 82 (`namespace IsCoercive`), 93 (`formSolutionMap`), 104, 110; `Analysis/Normed/Operator/Resolvent/Unbounded.lean` 85–89 (`namespace TauCeti … LinearPMap`), 104 (`IsResolventAt`), 168 (`resolventSet`), 203; no `Topology/Algebra/Module/LinearPMap/` directory at this pin (present at main's pin 358314d4 with `Resolvent.lean` lines 57, 121, re-exported by `Unbounded.lean` line 12 there). Mathlib: `Analysis/InnerProductSpace/LaxMilgram.lean` 46 (`namespace IsCoercive`), 105 (`continuousLinearEquivOfBilin`), 109, 113.
+
+**Cross-roadmap citations resolved this round.** UnboundedOperators at its open head (`TauCetiRoadmap/OperatorTheory/UnboundedOperators`, latest commit "review repairs (VariationalMethods cycle broken, …)"): README lines 68–74 (G5.5-RealHilbert supplier; "VariationalMethods 5.1 consumes them and supplies nothing here"), 536–548 (D06 graph theorem and complexification via G5.5), 563–573 (`P_R`, witness independence, real-shift criterion, in prose), 597 (*Needs:* Mathlib `IsCoercive.continuousLinearEquivOfBilin`, `InnerProductSpace.rclikeToReal`, G5.5-RealHilbert), 871–874 (Downstream: VariationalMethods 5.1); `Suggested.lean` 104–118 (`existsUnique_selfAdjoint_of_closed_form`, hypotheses identical to `CompactFormPair`'s minus compactness). No occurrence of "VariationalMethods V2.3", `CompactFormPair.operator`, `closedFormOperator` or `realSpectralRestriction` there. ComplexKahlerGeometry on main (lines 572, 1049–1066, 1153, 1653–1657) still cites the superseded head 515847c and "UO-D06 `closedFormOperator`": the consumer's drift, which the new Downstream paragraph is written to guide. Ownership: `roadmaps grep closedFormOperator` over main and the 424 open heads finds the name only in this folder and in ComplexKahlerGeometry's citation; the previous report's sweep for Courant–Fischer, Ritz, direct method, `rayleighMinMax`, `CompactFormPair`, Lax–Milgram over `𝕜` and Friedrichs stands (the diff adds no new object).
+
+**Policy.** No process words, pull-request numbers, LaTeX delimiters or machine paths in the changed lines; the module docstring names the supplier by roadmap and section (UnboundedOperators UO-D06), as the rules allow; `theorem` throughout, no `set_option`, single `import Mathlib`.
+
+## Not verifiable
+
+- Babuška–Osborn, "Eigenvalue problems", Handbook of Numerical Analysis II (1991), §8: the DOI 10.1016/S1570-8659(05)80042-0 resolves only to a paywalled publisher page (sources service: `uncertified`); an open table of contents confirming that §8 is the Rayleigh–Ritz section was not found on the web. The citation is settled as uncertified by its locator; 6.1's convergence theorem was checked by computation (table above) and its proof is self-contained in the README, as it says.
+- Ownership against open pull requests was checked through the project's roadmap index (`roadmaps grep` over the 424 open heads) and by reading UnboundedOperators and ComplexKahlerGeometry; the other sibling folders were not read line by line.
+
+## Source issues
+
+- none
+
+(The four items of the previous report, on ivrii-pde-13-1 Corollary 1 and Theorem 4 and on hunter-pde-notes Theorems 4.22 and 4.25, stand; no source text was newly read this round.)
