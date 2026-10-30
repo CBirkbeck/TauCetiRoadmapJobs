@@ -1,0 +1,72 @@
+# Review of AnalyticStableMaps (pull request #987 at 9af338e)
+
+**Verdict:** accepted
+
+Incremental re-review of 69 changed lines since e191666 (41 insertions, 28 deletions, all in `TauCetiRoadmap/AnalyticStableMaps/README.md` and the module docstring of `Suggested.lean`; nothing changed outside the folder, `git diff --stat origin/main...HEAD` outside it is empty). The worker's gate at this head passes every check (`… depcheck=0 metadata=0 stray-files=0 dirty=0 outside-folder=0 source-material=0 build=0 OK`). The dependency check, rerun against the candidate order with `--movable`, reports `depcheck: 208 roadmaps, 1461 edges, 0 problem(s)` (no UPWARD or CYCLE line). `lake env lean` on `Suggested.lean` exits 0 with no output. Every previous finding is repaired (below); the one new finding is a P3 Check and does not block.
+
+## R01 (P3) — The §13.2 Check pairs the unmarked virtual dimensions with the one-marked target
+
+Location: `README.md` line 1067 ("`X = ℂP²`, `n = 1`: … the functional of lines (`v = 4`) pushes forward to a multiple of the fundamental class, and the functional of conics (`v = 10`) pushes forward to 0").
+
+Claim: with one mark, the lines' functional has degree 4 and pushes forward to a multiple of `[ℂP²]`.
+
+Witness: the §0.1 formula `v = 2((m−3)(1−g) + ⟨c₁,β⟩ + n)` gives, for `n = 1`, `v = 2(−1 + 3 + 1) = 6` for lines and `2(−1 + 6 + 1) = 12` for conics; 4 and 10 are the `n = 0` values, whose evaluation target is `X⁰`, a point, not `ℂP²`. Both one-marked classes exceed 4, so both push forward to 0 in `H_*(ℂP²; ℚ)`; geometrically the one-marked lines evaluate onto `ℂP²` with fibre `ℙ¹`, a 6-manifold over a 4-manifold.
+
+Repair, tested on the instance: either keep `n = 1` and state that both functionals (degrees 6 and 12) push forward to 0 because `H_v(ℂP²; ℚ) = 0` for `v > 4`; or take `n = 2`, where the cells of `ℂP² × ℂP²` sit in even dimensions 0 to 8, lines have `v = 2(−1 + 3 + 2) = 8 = dim(ℂP² × ℂP²)` and push forward to the fundamental class because the evaluation of the §2.11 Check is a degree-one map, and conics have `v = 14 > 8` and push forward to 0.
+
+## Previous findings
+
+- R01 — repaired: §2.12 (lines 393–402) now bounds `dim ker dπ` by κ on a compact fixed-`J₀` fibre by upper semicontinuity, takes `q ≥ max(q₀, κ² + 1)`, and applies `exists_mem_nhds_isClosed_isNowhereDense_image_criticalPoints` or `isMeagre_image_criticalPoints_of_isFredholm`; line 66 describes the pin; Checks give `κ = 4 ⇒ q ≥ 17`.
+- R02 — repaired: line 116 uses `(2, 2, 0, −2)` with `v = −2` and states the constant `(0, 2)` class has `v = 2m − 2 ≥ 0`, empty by §1.2; line 680 matches.
+- R03 — repaired: line 362 states kernel 4, cokernel 2 real, index `2 = d_0`, `|C| ≅ ℙ²` of real dimension 4, non-regular integrable instance.
+- R04 — repaired: lines 852 and 860 restate Pardon Lemma B.12.1 with the surjectivity hypothesis and cite `Continuous.homeoOfEquivCompactToT2`; "invariance of domain" occurs 0 times.
+- R05 — repaired: line 57 cites `AlgebraicTopology.singularHomologyFunctor` (absolute, integral) and notes Tau Ceti's relative file; line 58 and §1.2, §5.1 cite `MeasureTheory.addHaar_image_eq_zero_of_det_fderivWithin_eq_zero`.
+- R06 — repaired: the docstring reads "ImplicitAtlases §1.1, which is not in the pinned Tau Ceti".
+- R07 — repaired: §4.2 Check counts per end and per node (line 694); §6.1 neck norm is `|c₁ − c₂| e^(δR) R^(−1)` with both terms computed (line 788); §3.4 cites Lemma 3.7 only, §3.6 cites Lemma 4.1 for the containment (lines 593, 617); §2.4 and §2.18 each have a third Check (lines 302, 472).
+
+## Verified sound
+
+**Gate, build and dependency check.** Worker's gate at 9af338e: every check 0, `OK`. Dependency check rerun: `depcheck: 208 roadmaps, 1461 edges, 0 problem(s)`. `lake env lean` on `Suggested.lean`: exit 0, no output. The file declares nothing (docstring, namespace, one comment), so there is no signature to compare and no padding to probe; the six headline theorems and their missing carriers are named in the docstring, unchanged apart from the R06 sentence. No file changed outside the folder.
+
+**Pinned declarations opened for the changed passages (file and line at the pin).** Tau Ceti: `exists_mem_nhds_isClosed_isNowhereDense_image_criticalPoints` (`TauCeti/Analysis/Fredholm/SardSmale.lean` 246–252: `ContDiffAt ℝ n f a`, Fredholm `fderiv`, `hn : (finrank ker)² + 1 ≤ n`, `U ∈ 𝓝 a`; conclusion a neighbourhood N ⊆ U on which the critical values are closed and nowhere dense; standing `[CompleteSpace E] [CompleteSpace F]` at 160); `isMeagre_image_criticalPoints_of_isFredholm` (468–471) and `dense_compl_image_criticalPoints_of_isFredholm` (493–496), both with `[SecondCountableTopology E]` (455), `IsOpen U`, pointwise `ContDiffAt`, Fredholm derivative and the pointwise threshold `(finrank ker)² + 1 ≤ n`, exactly as line 66 and §2.12 now describe; the normal-form module `TauCeti/Analysis/Fredholm/NormalForm.lean` (`normalFormEquivL` 83, `obstructionSlice` 241); `TauCeti/AlgebraicTopology/Singular/Relative.lean` exists; `ContDiff.addHaar_image_criticalPoints_eq_zero` and `ContDiff.dense_compl_image_criticalPoints` (`TauCeti/Analysis/Calculus/Sard/OutermostStratum.lean` 366, 397). Mathlib: `IsFredholm.eventually_nhds` and `IsFredholm.index_continuousAt` (`Mathlib/Analysis/Normed/Operator/Fredholm/Open.lean` 77, 97); `Continuous.homeoOfEquivCompactToT2` (`Mathlib/Topology/Homeomorph/Lemmas.lean` 474: `[CompactSpace X] [T2Space Y]`, continuous equivalence to a homeomorphism); `AlgebraicTopology.singularHomologyFunctor` (`Mathlib/AlgebraicTopology/SingularHomology/Basic.lean` 52, inside `namespace AlgebraicTopology` at 26); `MeasureTheory.addHaar_image_eq_zero_of_det_fderivWithin_eq_zero` (`Mathlib/MeasureTheory/Function/Jacobian.lean` 645: `HasFDerivWithinAt` on s and `det = 0` on s give `μ (f '' s) = 0`, for a map `E → E` of a finite-dimensional space).
+
+**Supplier sections resolved (on main unless stated).** AlgebraicTopology Stage 6 item 3 (`AlgebraicTopology/README.md` 1180–1514): orientation local systems, compact classes and the fundamental class `[M, ∂M]`, hence `[Σ]` for a closed oriented surface; item 4 (1515) is Poincaré–Lefschetz by cap with that class, so item 3 is the right owner. ComplexKahlerGeometry K5 (`ComplexKahlerGeometry/README.md` 568, "Compact Hermitian elliptic theory and Serre duality"), cited at line 362 for `h¹(K_C) = h⁰(O_C)`. ImplicitAtlases §1.1 "Implicit atlases" at its open pull-request head (README line 284). The unchanged citations were resolved in the previous report and no changed passage alters them.
+
+**Sources read at their locators.** pardon13 lines 4290–4297 (Lemma 9.2.7: `f : N → M`, `n ≤ m`, `df_p` injective; the proof chooses a local projection `π : U → T_pN` and takes `π⁻¹` of a regular value of `π∘f` by Sard), supporting lines 225 and 725 as restated, including the equal-dimension form; lines 7353–7365 (Lemma B.12.1: Hausdorff X, `f : ℝⁿ → X` continuous injective, restriction to any neighbourhood of 0 surjective onto a neighbourhood of `f(0)`; proof via the compact closed ball and Hausdorff image), supporting line 852 word for word in content; 7366–7375 (Theorem B.1.1(i)–(iii) uses nothing else). is99 lines 1233–1242 (Lemma 3.7: energy and diameter of the middle of a long cylinder tend to 0, the two limits share the node value), supporting line 593; lines 1306–1309 (Lemma 4.1: an annulus adjacent to `∂₀Z` of conformal radius R contains `Z(0, a₊(R))`), supporting line 617.
+
+**Adversarial table.** Rows for untouched statements carry forward from the previous report (marked "r2"); rows for changed statements are recomputed here.
+
+| Statement | Instances | Values computed | Result | Change |
+|---|---|---|---|---|
+| `v = 2((m−3)(1−g)+c₁+n)` Checks (§0.1, line 116) | (3,0,0,0); (1,0,3,2); (2,1,0,0); (2,2,0,−2); (m,0,2,0) | 0; 6; 0; 2((−1)(−1) − 2 + 0) = −2; 2((m−3)+2) = 2m−2 ≥ 0 for m ≥ 1 | all five match the Check | none |
+| Equal-dimension Sard in Lemma 9.2.7 (§1.2 line 225, §5.1 line 725) | `π∘f : N → T_pN`, dim N = dim T_pN | `d(π∘f)_p = π∘df_p` an isomorphism, so `π∘f` is a local diffeomorphism near p; critical values of `π∘f` have measure zero by the pinned theorem (map `E → E`) | regular value near `π(f(p))` attained near p | none |
+| Residual isotropy on the fixed sphere (§2.4 line 302) | `z ↦ z²`; degree-one parametrization | Möbius φ with `φ(z)² = z²` gives `φ = ±id`, `Aut = {±1}`; degree one: trivial | matches §1.2 Check `Aut(z²) = {±1}` | none |
+| K3 genus-two instance (§2.9 line 362) | `C² = 2`, `c₁ = 0`, `N_C = K_C` | `h⁰(K_C) = 2`, `h¹(K_C) = h⁰(O_C) = 1`; real kernel 4, cokernel 2, index 2 = `d_0 = (2−3)(−2) + 0`; `h⁰(O(C)) = 2/2 + 2 = 3`, `dim_ℝ |C| = 4` | non-regular integrable instance, index ≠ dimension | none |
+| Two marks on a line (§2.11 line 387) | lines in ℂP², r = 2 | `4 + 2·2 = 8 = dim(ℂP² × ℂP²)`; two distinct points lie on one line, so evaluation is bijective onto the complement of the diagonal; shift 1 per mark gives 6 < 8 | Check holds | none |
+| Kernel of dπ and semicontinuity (§2.12 line 393) | `(u, J₀)`; `T₀` Fredholm, C a closed complement of `ker T₀` | `ker dπ = {(ξ, 0) : D_u ξ = 0}`, dim = `ind + dim coker`; `T₀|_C` bounded below is open, so `ker T ∩ C = 0` and `dim ker T ≤ dim ker T₀` near `T₀` | upper semicontinuity, κ bounded on compact F, holds on an open U ⊇ F | none |
+| Budget Checks (§2.12 lines 397–400) | lines in ℂP², κ = 4; `q = 16`; `ind = −2, coker 2`; `T_t = diag(t, 1)` | `κ² + 1 = 17`; `s ≥ 17 + 1 = 18` from `(s − q)·3 > 2`; `ℓ ≥ 17 + 18 + 1 = 36`; `16 < 17` fails; `dim ker = −2 + 2 = 0`, κ = 0, `q ≥ 1`; `dim ker T_0 = 1 > 0 = dim ker T_t` | all four Checks hold against the pinned `hn` | none |
+| Universal versus fixed-J evaluation (§2.15 line 424) | two marks on a line; exceptional curve, one mark | rank 8 = dim target (from §2.11); `d_0 = 0`, marked dimension 2, rank 2 in dimension 4 | consistent with Wendl Prop. 4.55 (universal submersion) | none |
+| Family of lines over `[0,1]` (§2.16 line 448) | `d_0 = 4`, `dim P = 1` | index 5; regular fibres so vertical determinant = fibre tangent; outgoing-minus-incoming gives + at `t = 1`, − at `t = 0` | matches §8.1's sign row (r2) | none |
+| Lines through two points over `[0,1]` (§2.17 line 460) | `d_2 = 4 + 4 = 8`, `codim Q = 8`, `dim P = 1` | `8 + 1 − 8 = 1`; `(−1)^(1·8) = +1` | consistent with the (1,2) → +1, (1,1) → −1 rule | none |
+| Convergent spheres in `T*S¹ × ℂP¹` (§2.18 line 472) | `a_k → a` | images in `B̄(a,1) × ℂP¹` for large k, compact | comparison applies, limit `{a} × ℂP¹` | none |
+| Piece fibre in `ℝ² × S²` (§2.19 line 484, §2.21 line 508) | split structure, window `K_n`; `P = [0,1]`, `U = X` | `d_0 = (2−3)·2 + 2·2 = 2`, all regular (r2 row: `8 − 6 = 2`), κ = 2, `q ≥ 5`; family index 3, total space `[0,1] × ℝ²` | compact fibre with a bound; noncompact family admitted | none |
+| `v + dim E < 0` Check (§4.1 line 680) | (2,2,0,−2), E = 0 or dim 1; constant (0,2) | `−2`, `−1`; `2m − 2 ≥ 0` | consistent with §0.1 | none |
+| Weighted index per end and node (§4.2 line 694) | one node, m = 1 | eigenvalue 0: `2m = 2` per end, 4 per node, +2 restored, net −2; eigenvalue 1: `e^(it)v`, 2 per end, −4 per node; period 2π would cross 1, 2, … | matches the r2 computation | none |
+| Neck norm (§6.1 line 788) | `c₁` at −R, `c₂` at R, weight `e^(2δ(R−|s|))` | zeroth order `|Δ|²/(4R²) · 2∫₀^R s² e^(2δ(R−s)) ds ≈ |Δ|² e^(2δR)/(8δ³R²)`; derivative `|Δ|²/(4R²) · e^(2δR)/δ ≈ |Δ|² e^(2δR)/(4δR²)` | norm `≈ |Δ| e^(δR)/R`, unbounded | none |
+| Lemma B.12.1 restatement (§7.3 line 852) | pardon13 7353–7365 | hypotheses i (injective), ii (local surjectivity onto a neighbourhood of `f(0)`); proof: compact ball, Hausdorff image, bijection ⇒ homeomorphism | matches `Continuous.homeoOfEquivCompactToT2` plus hypothesis ii | none |
+| `X^n` cells and pushforward (§13.2 line 1067) | `X = ℂP²`, n = 1, lines and conics | cells 0, 2, 4; one-marked `v = 2(−1+3+1) = 6` and `2(−1+6+1) = 12`, both > 4 so both push forward to 0; the Check's 4 and 10 are the `n = 0` values | Check false for n = 1 | R01 |
+| `M̄_(0,5)` and the constant class (§13.3 line 1079, §13.4 line 1091) | (0,5); (0,3), β = 0 | `6g − 6 + 2n = 4`, trivial isotropy; moduli `M̄_(0,5) × X`, `(st, ev) = id × Δ₅`; `v = 2((m−3) + 3) = 2m = dim X`, obstruction `H¹(O_(ℙ¹)) ⊗ TX = 0`, `(st, ev)` the small diagonal `X → pt × X³` | both Checks hold | none |
+| Untouched statements | r2 table rows: Pardon dim identity (§4.1), energy and metric conventions (§0.1), closed index (§0.3), Riemann–Hurwitz and degree identities (§0.5), coincidence lemma (§0.2), stability (§1.2), J-chart (§2.1), node matching (§2.2), `d_r` and anchors (§2.5, §2.7), fixed-j (§2.10), exceptional curve (§2.11), incidence (§2.15), Koszul (§2.17), joint operator (§2.20), escape (§2.22), product class (§2.23), contracted trees (§3.1), flag count (§3.7), conic degeneration (§3.8), nodal index (§4.1), thickening datum (§5.1), weight ratio (§6.3), two-line chart (§7.3), obstruction swap (§8.1), constant class over a point (§9.2), tame non-convexity (§10.1), clutching (§11.2), forget-compatible (§12.2), three-point invariants (§13.4) | as computed in the previous report, which this head leaves unchanged | carried forward | none |
+
+**Duplication and ownership.** The changed passages cite rather than restate: Sard–Smale, the equal-dimension Sard theorem, the Fredholm openness and index continuity, the compact-to-Hausdorff homeomorphism and singular homology are all consumed by pinned name; the fundamental class, Serre duality and the implicit-atlas structure by supplier section. No new object is introduced, so the ownership search of the previous report (StableReduction, HeegaardFloer, DGFloer, ImplicitAtlases, GromovWittenTheory) stands; ownership against open pull requests without files in this brief was not checked.
+
+**Style.** The 41 added lines contain no LaTeX delimiters, no pull-request numbers, no process words (gate `residue=0`, `prnum=0`, `round-labels=0`), and every new citation names a roadmap and section or a pinned declaration.
+
+## Not verifiable
+
+- McDuff–Salamon, *J-holomorphic Curves and Symplectic Topology* (§3.2, cited by locator in the unchanged part of §2.13): the DOI resolves only to the AMS bookstore; cited by locator alone, as the README states.
+- Robbin–Ruan–Salamon, *The moduli space of regular stable maps*, and the Robbin–Salamon corrigendum: paywalled or without a locator, as recorded in the previous report; no changed passage cites them.
+
+## Source issues
+
+- none
