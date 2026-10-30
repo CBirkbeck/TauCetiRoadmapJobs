@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-StochasticCalculus~2",
+    "head": "0326f8016ad8f33741ff8327016bd31945cbd680",
+    "pr": 1030,
+    "folder": "StochasticCalculus",
+    "date": "2026-10-30",
+    "findings": 6,
+    "blocking": 2,
+    "notes": "Full read-only review; nine previous findings rechecked; all 15 seeded source targets traced with access limits recorded; 217 computed adversarial rows; all six Lean files reviewed. Worker gate passing, direct Suggested.lean elaboration and 49-signature probe passing (31 sorry warnings); dependency check 210 roadmaps, 1445 edges, 0 problems. Two missing Brownian headline signature probes elaborated. Findings: missing statable headlines, Moore-Penrose ownership overlap, auxiliary padding/form, local Checks/dependencies, source locators."
+  }
+}
