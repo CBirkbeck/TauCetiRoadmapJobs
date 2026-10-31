@@ -1,0 +1,159 @@
+# Review of PrismaticCohomologyPartII (pull request #1065 at 45495a1)
+
+**Verdict:** needs changes
+
+Scope of this review: `TauCetiRoadmap/PrismaticCohomologyPartII/README.md` (2326 lines, 85 targets in Layers 3–5) and `TauCetiRoadmap/PrismaticCohomologyPartII/Suggested.lean` (39 lines, no declarations). The worker's gate at this head fails on one rule only (`residue=186`); the dependency check and the targeted build pass. The pull request changes nothing outside the roadmap folder (`git diff --stat origin/main...HEAD -- . ':!TauCetiRoadmap/PrismaticCohomologyPartII'` is empty). One finding is blocking (R02, a supplier declaration cited that does not exist at the cited head); the gate failure (R01) blocks acceptance by rule even though its severity is P3.
+
+## R01 (P3) — Gate failure: 186 anchor tags, and the links that depend on them
+
+Location: `README.md` lines 13–14, 126, 146–147, 159–160 and every target heading through line 2325 (two `<a id="…"></a>` lines before each `### k.n`, plus `ref-*` anchors in References).
+
+Claim: the gate's `residue` rule rejects `<a id=` anchor tags; the worker's gate reports `residue=186 … FAIL`, so the folder cannot be accepted at this head.
+
+Witness: `scratch/gate.md` (data): `residue=186`, first hits at README lines 13, 14, 126, 146, 147. Running the gate myself on this head reproduces the count.
+
+Repair: delete every `<a id="…"></a>` line (the targets already carry numbered `### k.n` headings, so no renumbering is needed) and rewrite every fragment link to prose: `[§3.1](#s3-1)` → `§3.1`, `[The q-analogue …](#layer-5-q-divided-power-operation)` → `§5.1`, `[Presentation of WCart …](#layer-4-wcart-quotient-presentation)` → `§4.5`, `[Imported completed base change and totalization](#complete-base-change-totalization)` → the subsection's title in words, and `[AC](#ref-ac)` → `AC`. The 230 links of the form `[PrismaticCohomology §2.15](../PrismaticCohomology/README.md#s2-15)` point at anchors that PrismaticCohomology no longer has (its open head has 0 `<a id=` lines), so write them as `PrismaticCohomology §2.15` too. While there, mend the garbled code spans in the Scope sentence at line 7 ("(Layers 0–`2) →`", "(Layers 3–`5) →`", "(Layers 6–`7) →`").
+
+## R02 (P2) — The q-integer is cited as an AInfCohomology declaration that does not exist
+
+Location: `README.md` line 71 ("AInfCohomology §AI.3.3 supplies `TauCetiRoadmap.AInfCohomology.qInteger q n = ∑ i ∈ Finset.range n, q^i` and its Laurent extension"); line 1621 ("use the supplied polynomial `[p]_q`"); the supplier row "AInfCohomology §§AI.3.2–AI.3.3" at line 64.
+
+Claim: `[n]_q` and `[p]_q`, the carrier of the whole of Layer 5 (q-PD pairs, envelopes, q-crystalline and q-de Rham complexes), are attributed to a named declaration of AInfCohomology §AI.3.3.
+
+Witness: AInfCohomology at its open head (`roadmaps show AInfCohomology`, 4323 lines): §AI.3.3 "The q-de Rham model, descent and Frobenius" (line 2185) names no q-integer; the only occurrence is the phrase "Laurent q-integer" inside the `AOmega.qModel_monomial` bullet (line 2195). Its `Suggested.lean` (142 lines) declares `integers`, `mu`, `xi`, `xiLevel`, `deRhamMap` and six theorems, no `qInteger`. The string `qInteger` occurs nowhere in that roadmap's README or Lean file.
+
+Repair: own the definition here. In §5.1 (or Conventions) define `[n]_q := Σ_{i<n} q^i` for every commutative ring and every natural `n`, state `[n]_q (q − 1) = q^n − 1` from Mathlib `geom_sum_mul` (used in `NumberTheory/JacobiSum/Basic.lean:254` at the pin), `[p]_q = Polynomial.cyclotomic p` evaluated at `q` from `Polynomial.cyclotomic_prime` (`RingTheory/Polynomial/Cyclotomic/Basic.lean:366`) and `[p]_1 = p` from `Polynomial.eval_one_cyclotomic_prime` (`Cyclotomic/Eval.lean:32`); keep the three Checks of "Supplied q-integers" as this target's Checks; delete the sentence attributing a declaration to AInfCohomology and the words "supplied polynomial" at line 1621. If the author wants the name to live in AInfCohomology instead, it must be declared there or stated as a gap `What AInfCohomology must provide (gap:<slug>)` with a matching `plan.json` entry; a bare citation is not a supplier.
+
+## R03 (P3) — About 270 backticked own names with no Lean counterpart; one supplier name invented
+
+Location: `README.md` throughout (`Prismatic.*` 185 distinct names, `QCrys.*` 76, `FormalQCoh.*` 7, `QDeRham.*` 4, `QCohPrestack.*` 3, `FramedAlgebra.*` 2, `QFraming.*` 1); line 51 and 1681–1695 (`Prismatic.completeBaseChange_totalization`, attributed to PrismaticCohomology §1.10).
+
+Claim: a backticked name of this roadmap's own is a claim that `Suggested.lean` declares it; the Lean file declares nothing (correctly, see Verified sound). `Prismatic.completeBaseChange_totalization` is presented as a PrismaticCohomology declaration.
+
+Witness: `grep -c` of own-namespace backticks gives 268 distinct names; `Suggested.lean` has only the namespace lines. PrismaticCohomology at its head states the totalization exchange in prose ("**Completed tensor and totalization.** Construct the exchange…", line 1941) and uses no such identifier.
+
+Repair: either add one Conventions sentence declaring that backticked `Prismatic.*`, `QCrys.*`, `FormalQCoh.*`, `QDeRham.*`, `QCohPrestack.*`, `FramedAlgebra.*` and `QFraming.*` names are intended library interface names and not declarations of `Suggested.lean` (the device the accepted AInfCohomology README uses), or write the API bullets without backticks. Cite PrismaticCohomology §1.10 by its construction ("completed base change along a map of finite complete Tor-amplitude commutes with totalization") rather than by an invented name.
+
+## R04 (P3) — Fifty-three supplier citations resolve only through PrismaticCohomology's import concordance
+
+Location: `*Needs:*` lines citing PrismaticCohomology §0.72 (11 times), §0.75 (2), §0.83 (4), §0.84 (10), §0.86 (9), §1.25 (2), §2.15 (19); e.g. lines 170, 199, 490, 880, 1657.
+
+Claim: these are cited as PrismaticCohomology targets (prisms, perfect prisms and perfectoid rings, prismatic envelopes of regular ideals, the initial prism of a quasiregular semiperfectoid ring).
+
+Witness: PrismaticCohomology at its open head has no headings 0.72, 0.75, 0.83–0.86, 1.25 or 2.15 (its Layer 0 runs 0.71 → 0.73, 0.82 → 0.87–0.92; Layer 2 runs 2.14 → 2.16). The numbers survive only as Scope concordance lines: "**§0.72 prism.** PerfectoidSpaces §P4.15.2" (line 28), "**§2.15 The prism of a quasiregular semiperfectoid ring.** PerfectoidSpaces §P4.15.3" (line 91), "**§0.85** PerfectoidQuotients §0.0" (line 64). PerfectoidSpaces on main does own them (`#### P4.15.2 universal prisms and perfection`, line 11053; `#### P4.15.3 the affine Hodge–Tate input`, line 11090).
+
+Repair: cite the owners directly (PerfectoidSpaces §P4.15.2 for prisms, perfection, perfect prisms and regular prismatic envelopes; §P4.15.3 for the initial QRSP prism and affine Hodge–Tate input; PerfectoidQuotients §0.0 for Tor-independence), keeping PrismaticCohomology citations for the targets it actually states (§§0.55–0.57, 0.61, 0.68–0.71, 0.73–0.82, 1.x, 2.1–2.14, 2.16–2.31 all resolve). This is not an upward edge (both owners are earlier), only an indirection the next reader has to chase.
+
+## R05 (P3) — Shape: definitions without Checks, Checks not bulleted, parts referred to by labels the text does not carry
+
+Location: §3.3 (line 211, defines "good filtration"), §4.17 (line 1209, defines `RΓ_Δ(X/A)` as a limit) — no `**Checks.**`; §§3.0, 3.25, 5.18 (lines 155, 716, 2066) — Checks as one run-on paragraph; 144 references of the form `(1)`, `(2)`, `(a)`, `(b)` on 98 lines, e.g. §4.30 "`(1)` requires `(A, I)` perfect; `(2): R` quasiregular semiperfectoid; `(3): R` an `F_p`-algebra" (line 1478), §5.8 "`(b)` … `(c)` … `(d)` is not printed as a statement" (line 1785), §3.13 "**Proof route.** `(1)`" (line 494), where the statement paragraph does not label its parts.
+
+Claim: every definition has at least three discriminating Checks as one bullet per test; prose refers to parts it has labelled.
+
+Repair: add three Checks to §3.3 (for instance: the filtration `(e^i)` on a perfect prism is good; the `d`-adic filtration `(d^i)` on a non-perfect oriented prism is not good because `φ(d) ∉ d^pΔ` in general; `M^i = Δ_S` for all `i` fails `φM^1 ⊂ dΔ_S` when `Δ_S ≠ dΔ_S`) and to §4.17 (affine `X = Spf R` recovers `Δ_{R/A}`; a two-chart Zariski cover of `P^1` gives the Mayer–Vietoris fibre sequence; the empty formal scheme gives 0); bullet the Checks of §§3.0, 3.25, 5.18; either label the parts in each statement paragraph ("(1) …, (2) …") or replace the labels by the part's content.
+
+## R06 (P3) — Forward references and dead relative links
+
+Location: line 7 (links `../PrismaticCohomologyPartIII/README.md`, `../PrismaticCohomologyPartIV/README.md`), line 613 ("the syntomic complexes of PrismaticCohomologyPartIII Layer 6 need `φ_i` on the completion"), line 725, line 773 ("Export: … the object that PrismaticCohomologyPa…"), line 2174 ("owned by CohomologyComparisons §1.7").
+
+Claim: consumers are named only under Scope and Downstream consumers; a target's text does not justify itself by a later roadmap's needs.
+
+Witness: PrismaticCohomologyPartIII (order 56), PrismaticCohomologyPartIV (118) and CohomologyComparisons (161) are later than this roadmap (55); none is on main, so the relative links are dead on main.
+
+Repair: drop the relative links (name the roadmaps in words); move the consumer sentences of §§3.20, 3.26, 5.24 to Downstream consumers and let the targets stand on their own ("the divided Frobenius extends to the completion" is reason enough).
+
+## R07 (P3) — The characteristic-p Nygaard filtration on `A_crys(S)` has an earlier owner
+
+Location: §4.30, statement part on `F_p`-algebras (line 1476: "For quasiregular semiperfect R, `Fil_N^n A_crys` is generated by `p^a∏γ_(b_i)([x_i])`…"); §3.5 / §3.1 in their characteristic-p instances; supplier table rows for CrystallineCohomology (lines 46, 53, 60).
+
+Claim: the comparison with the de Rham–Witt / `A_crys` Nygaard filtration is "only compared" here; the supplier rows cite CR.DDR.5.20–5.21 and Layer CR.4.
+
+Witness: CrystallineCohomology at its head owns `### CR.DDR.5.18 Quasiregular semiperfect derived Witt control` (line 6911): for quasiregular semiperfect `S`, `N^{≥i} LWΩ_S` is a degree-zero submodule and `φ_i mod p` on `gr^i_N` injects into `dR_{S/F_p}` with image `Fil_i^conj`; its supplier table (line 39) lists "derived Nygaard filtration, QRSP envelopes" under CR.DDR.4.5, 5.18, 5.20–5.22. That is the `(Z_p, (p))` instance of §3.5 and the object §4.30(3) describes.
+
+Repair: add CrystallineCohomology §CR.DDR.5.18 to the supplier table and to the `*Needs:*` lines of §3.5 and §4.30, and say in §3.5 that over `(Z_p, (p))` the filtration and its graded injection are the ones of CR.DDR.5.18 (BL22 Propositions 5.3.6 and 5.3.8 then identify the two descriptions).
+
+## Verified sound
+
+**Gate and dependency check.** `tauceti-roadmap gate --depcheck … --movable` on this head: `depcheck: 205 roadmaps, 1425 edges, 0 problem(s)` (no UPWARD, no CYCLE, no `moved:` line; this roadmap is at order line 55, directly after AInfCohomology 53 and PrismaticCohomology 54). The worker's gate: every counter 0 except `residue=186` (R01). `lake env lean` on `Suggested.lean` elaborates in 2.9 s with no output and exit 0.
+
+**Suggested.lean.** It states nothing and says why. I confirmed at the branch pin (Tau Ceti `a91d3aa`, Mathlib `6b7abb3c`; main pins Tau Ceti `358314d4`) that neither library has a δ-ring, a prism, a Nygaard filtration, a q-PD pair, `AΩ`, or the Cartier–Witt stack (`grep -rl 'DeltaRing\|structure Prism\|Nygaard\|qInteger'` over both `TauCeti/` and `Mathlib/` is empty); what exists is `WittVector` with `frobenius`, `verschiebung`, `teichmuller`, `fontaineTheta` (`RingTheory/Perfectoid/FontaineTheta.lean:165`), `Module.Invertible` (`RingTheory/PicardGroup.lean:77`), `DividedPowers` (`RingTheory/DividedPowers/Basic.lean:77`), `IsAdicComplete`, `DerivedCategory`, `comonadicExtendScalars` (`Algebra/Category/ModuleCat/Descent.lean:59`), `CategoryTheory.Pseudofunctor.IsStack` (`Sites/Descent/IsStack.lean:49`), `DescentData` (`Sites/Descent/DescentData.lean:59`), `Perfection` (`RingTheory/Perfection.lean:39`), `ModuleCat.extendScalars` (`ChangeOfRings.lean:399`), `Ideal.Quotient.factor` (`Ideal/Quotient/Defs.lean:172`), `Ideal.toCotangent` (`Ideal/Cotangent.lean:52`), `WittVector.frobenius_eq_map_frobenius` (`WittVector/Frobenius.lean:270`), `frobenius_verschiebung` and `verschiebung_mul_frobenius` (`WittVector/Identities.lean:44, 20`), `Polynomial.cyclotomic_prime` / `cyclotomic_prime_mul_X_sub_one` (`Cyclotomic/Basic.lean:366, 374`), `eval_one_cyclotomic_prime` (`Cyclotomic/Eval.lean:32`); Tau Ceti has `WittVector.frobenius_teichmuller` and `frobeniusEquiv_symm_teichmuller` (`TauCeti/RingTheory/WittVector/Frobenius.lean:43, 49`) as line 1347 says. Every headline (BS22 Theorems 12.2, 15.2, 15.3, Corollaries 15.4–15.5, 16.14, 16.18, 16.22, 17.2; BL22 Theorems 3.6.7, 5.6.2, Corollary 5.2.14, Propositions 5.7.9, 3.4.11 as a statement about `W^×[F]`) mentions one of the absent carriers, so an empty file is the correct form. No padding, no `set_option`, no sorry'd data; the one-tactic probe has nothing to probe. Docstring form: it should say "target signatures" and that this file is not the roadmap (it says "headline target statements … These are suggested forms"), a wording nit folded into R03.
+
+**Sampled sources (the worker's seeded sample plus every locator a finding touched), read at the cache texts.** BS22 = arXiv 1905.08229v4 text (`1d91a6eb…`), BL22 = arXiv 2201.06120v1 (`0b1beeb2…`), ALB23 = arXiv 1907.10525v4 (`6eb02c16…`), BMS1 (`285f7d20…`), BMS2 arXiv v2 (`b2338ef1…`); page markers equal printed pages in all five.
+
+| Target | Source at locator | Result |
+| --- | --- | --- |
+| 3.1 | BS22 Def 12.1 and the warning after it, p. 86 (line 3275–3279); ALB23 paragraph before Thm 3.4.4, p. 25 (line 1029–1033) | statement, hypotheses, non-separatedness warning all as written |
+| 3.5 | BS22 Thm 12.2 p. 86 (3287), Prop 12.11 p. 92 (3537); §12.5 prints "degrees 0 and −1" (3535) | README's correction to degrees 0, 1 is right (fibre of a surjection of discrete modules); ALB23 Thm 3.4.4 p. 25 (1035) matches |
+| 3.10 | BS22 Prop 12.10 p. 92 (3524); BL22 Rem 2.5.9 p. 29 (1331) | `φ/d^i` and `gr^i ≅ τ^{≤i}Δ̄{i}`, the Frobenius `A{1} → I^{-1}A{1}` as written |
+| 3.13 | BS22 Thm 15.2 (1)–(3) p. 102 (3860–3878), proof via Lemma 7.7 and Prop 7.10 | hypotheses "large quasisyntomic over a bounded prism", the twist `Δ^{(1)} = Δ ⊗̂_{A,φ} A`, base change in A, as written |
+| 3.14 | BL22 Prop 5.1.1 p. 115 (5186), Lemma 5.1.7 p. 116 (5237), Rem 5.1.2–5.1.10 pp. 115–119 | the sifted-colimit and polynomial-graded characterisation as written; the printed target `D̂(Ā)` of 5.1.1(1) confirmed on the rendered page (image of p. 115), README's `D̂(A)` correct |
+| 3.16 | BS22 Thm 15.3 p. 103 (3898–3927); BL22 Cor 5.2.14 p. 123 (5539), Cor 5.2.11 (5523); BMS2 Prop 5.8 p. 32 (1348); BMS1 Lemma 6.10 p. 51 (2453), Prop 6.12 p. 52 (2468) | factorisation `φ_A^*Δ → Lη_IΔ → Δ`, `φ̃` iso, Beilinson connective cover and completeness as written |
+| 3.19 | BL22 Constr 5.2.1, Prop 5.2.2 p. 119 (5379, 5385), Prop 5.2.3 p. 120 (5416), Cor 5.2.8 p. 122 (5490), Cor 5.2.9 (5515), Cor 5.2.15 p. 123 (5546) | the fibre sequence `I⊗Fil^{•−1} → Fil^• → Fil_Hdg`, `γ_0 = id`, `v` iso for `n ≥ d`; the printed `LΩ̂^n[n]` (5513) is the misprint the README names |
+| 4.3 | BL22 Def 3.1.4, Rem 3.1.5 p. 39 (1805–1821); Constr 3.2.1, Rem 3.2.2 p. 40 (1850–1866) | conditions (a), (b), the principal criterion `a_0` nilpotent and `a_1` a unit, `WCart(R) = ∅` otherwise, as written |
+| 4.4 | BL22 Rem 3.1.6–3.1.7 pp. 39–40 (1822–1841) | fpqc descent, `μ` through `[Â¹/G_m]`, never Cartier for `R ≠ 0`; the printed functor direction `WCart(S) → WCart(R)` (1837) is the misprint the README corrects |
+| 4.11 | BL22 Not 3.4.9, Rem 3.4.10 p. 46 (2136–2151); Prop 3.4.7, Cor 3.4.8 p. 46 (2124, 2134); Lemma 3.4.11 p. 47 (2152) | `O(G_m^♯)`, `β`, image on torsion-free rings, `G_m^♯(Z_p) = 1 + pZ_p`, Frobenius faithfully flat, `W^×[F] ≃ G_m^♯` over `Z_(p)` as written |
+| 4.16 | BL22 Prop 3.6.6, Thm 3.6.7 p. 56 (2567, 2595), Rem 3.6.8, Cor 3.6.9, Warning 3.6.11 pp. 56–57 (2604–2633); Prop 3.6.18 p. 59, Lemma 3.6.19 p. 60, Rem 3.6.20 p. 62 | pullback square, the fibre sequence `RΓ(E) → RΓ(F^*E) → ρ_dR^*E[−1]`, full faithfulness without essential surjectivity, as written; Thm 3.6.7 does print "on WCart^HT" for an E that must live on WCart |
+| 4.30 | BL22 Thm 5.6.2 p. 139 (6243), Cor 5.6.3–5.6.4, Rem 5.6.5 p. 139 (6248–6274), Prop 5.6.8 p. 140 (6289), Constr 5.6.1 p. 138, Lemma 5.6.14 p. 142 (6374); Props 5.3.1, 5.3.6, 5.3.8 pp. 124, 126, 128 | perfect-prism hypothesis in (1), the QRSP description with exponent `m − n` in (2), as written |
+| 4.31 | BL22 Constr 5.7.1 p. 144 (6484), Rem 5.7.2–5.7.3 pp. 144–145, Not 5.7.5 p. 145 (6516), Ex 5.7.6–5.7.7 pp. 145–146, Rem 5.7.8, Prop 5.7.9, Rem 5.7.10 p. 146 (6552–6579) | gluing, `φ{n}`, the `W(k)` fibre sequence and the `n > d` isomorphism as written; the printed exponent `•+n` is inconsistent with Cor 5.6.3 (`m − n`), README's `•−n` correct |
+| 5.2 | BS22 Not 16.1 p. 106 (4000), Def 16.2 and the paragraph after it pp. 106–107 (4013–4033), Rem 16.3 (4034), Cor 16.8 p. 109 (4111), Ex 16.9 (4130) | the three conditions, "a property not a structure", the two sufficient conditions, completeness of the ideal, as written |
+| 5.8 | BS22 Lemma 16.10 (3) p. 110 (4163), its proof (4166–4197), Lemma 16.11 p. 111 (4198), Rem 16.16 p. 112 (4262) | base change, reduction to the p-completed PD envelope, the "regular modulo p" hypothesis of 16.11, as written |
+
+Other locators opened while checking: BS22 Def 15.1 p. 102 (3853), Cor 15.4 p. 104 (3929), Cor 15.5 p. 104 (3935), Rem 15.6 p. 105 (3948), Lemma 12.6 p. 88 (3382–3401), Lemma 2.38 p. 23 (931), Thm 13.1 p. 94 (3581), Lemma 13.2 p. 94 (3591), Thm 14.1 p. 97 (3680), §17 and Thm 17.2 p. 117 (4400–4418: C any perfectoid field of characteristic 0 containing `μ_{p^∞}`, matching §5.22's generality); BL22 Rem 5.8.4 p. 147 (6617), Def 5.8.5 p. 148 (6634), Prop 4.4.12 p. 92 (4219), Ex 4.5.6 p. 97 (4411), Prop 3.2.8, Cor 3.2.9, Cor 3.2.10 pp. 42–43 (1940–1975); BMS1 Lemma 6.9 p. 51 (2426); BMS2 Def 5.3, Thm 5.4 pp. 30–31 (1187, 1196), Lemma 4.34 p. 27 (1089, "A perfectoid or A = Z_p", as the supplier row says). The AC reference (§5.10): the GitHub repository exists under Apache-2.0 and `AffineCrystalline/Cohomology/CechDerived.lean` contains `CechNerveData` (line 15, 53) and `noncomputable def rightDerivedLimIsoCech` (line 74) as described.
+
+**Adversarial table (values computed on each side).**
+
+| Statement | Instances | Computed | Result |
+| --- | --- | --- | --- |
+| 3.1 `Fil^i_N = φ^{-1}(J^i)` | `(Z_p,(p))`, φ = id: `Fil^i = p^iZ_p`; perfect `(B,(d))`, `e = φ^{-1}(d)`: `φ(e^i a) = d^iφ(a)` so `Fil^i = (e^i)`; zero prism: `Fil^i = 0 = B` | both sides agree; `Fil^0 = B` in all three | no change |
+| 3.2 key case `φ(b_i) = unit·[p]_q^{⌊i⌋} b_{ip}` | p = 3, i = 2/3: `b_{2/3} = Y^{2/3}`, `φ = Y^2 = [2]_q!·b_2 = (1+q)b_2`; `1+q ≡ 2` mod `(q−1)` is a unit for p = 3; `[k]_q ≡ k` mod `(q−1)` unit for `k < p` | matches the Check and the "unit because ⌊pi⌋ < p" clause | no change |
+| 3.5 derived Nygaard in degrees 0, 1 | fibre of a surjection `M → N` of discrete modules: `H^0 = ker`, `H^1 = coker` | source's "0 and −1" is the homological misprint; README right | no change |
+| 3.9 twist Frobenius | q-de Rham prism: `e = (class of [p^r]_q)_r`, `φ([p^r]_q) = [p^{r+1}]_q/[p]_q`, so `[p]_q φ(e) = e`; crystalline `(A,(p))`, `A ≠ 0`: `φ(ue) = φ(u)e/p ≠ ue` since `φ(u)` is a unit and `pu` is not | Checks 4–5 hold; `A{0} = A`, `(M{m}){n} = M{m+n}` by tensor powers | no change |
+| 3.10 `φ_1` not multiplicative | `x = y = e` on a nonzero perfect prism: `φ_1(e^2) = φ(e^2)/d = d`, `φ_1(e)^2 = 1`; `d = 1` forces `B = 0` by `(p,d)`-completeness; `(Z_p,(p))`: `φ_i(p^i a) = a` | `φ_1(xy) = d·φ_1(x)φ_1(y)` holds; Check consistent with Layer 3 Examples (`φ_1(p^2) = p ≠ 1 = φ_1(p)^2`) | no change |
+| 3.13–3.14 `R = Ā` | `Δ^{(1)} = A`, `φ_rel = id`, `Fil^i = I^i`, `gr^i = I^i/I^{i+1} = Ā{i}`; q-de Rham prism: `Fil^1_N A = φ^{-1}([p]_q) = (q−1) ≠ ([p]_q)` (`φ(f) ∈ [p]_qA ⇔ f(1) = 0`) | BL22 Ex 5.1.4; the two filtrations are distinct as the Check says | no change |
+| 3.15 `gr^1_N ≅ L_{R/A}[−1]` | smooth R: `L_{R/A}` has `H^{-1} = R ⊗ I/I^2 = R{1}`, `H^0 = Ω^1`; `τ^{≤1}Δ̄{1}` has `H^0 = R{1}`, `H^1 = Ω^1` | shift `[−1]` needed; README's correction of Rem 15.6 right | no change |
+| 3.19 `Fil^n = I^{n−d}Fil^d` for `n ≥ d` | `v` iso for `n ≥ d` (Cor 5.2.15) iterated | `Fil^{d+k} ≅ I^k ⊗ Fil^d`; BL22 Rem 5.8.4's `I^{n−d}Fil^{n−d}` is the misprint §3.21 names | no change |
+| 3.21/3.23 non-completeness | `S_0 = F_p[X^{1/p^∞}]/X`: `b_m ∈ Fil^m`, so `Σ_m b_m` converges Nygaard-adically but its coefficients do not tend to 0 p-adically | `exp(Y) ∈ Δ̂ \ Δ`, `∩Fil = 0`, `lim^1 ≠ 0` | no change |
+| 3.25 `δ(Fil^2) ⊄ Fil^1` | `δ(e^2) = 2e^pδ(e) + pδ(e)^2 ≡ pδ(e)^2` mod `e`; `δ(e)` a unit (e distinguished since `φ(e) = d`); `A_inf(O_C)/e = O_C` p-torsion-free | `δ(e^2) ∉ (e)` | no change |
+| 4.3 Witt coordinates | `p ∈ W(R)`: `w_1 = p = p^p + p x_1` gives `x_1 = 1 − p^{p−1}`; `δ(x)_0 = (w_1 − x_0^p)/p = x_1`; `1`: `x_0 = 1` not nilpotent for `R ≠ 0`; `[a]`: `x_1 = 0` not a unit | Checks 1, 3, 4 hold; `V(1) = (0,1,0,…)` | no change |
+| 4.4 functoriality | `W(f): W(R) → W(S)` pulls `Cart(W(R)) → Cart(W(S))` | `WCart(R) → WCart(S)`; BL22 Rem 3.1.7 prints the reverse | no change |
+| 4.11 `G_m^♯` | `Z_p`: `u = 1+pa` gives `v_p((u−1)^n) = n ≥ v_p(n!)`; conversely `n = p` forces `p | u−1`; `F_4`: perfect so `F` bijective on `W(F_4)`, `W^×[F](F_4) = 1` vs `|G_m(F_4)| = 3`; over `Z[1/p]`: `W(R) = R^ℕ`, `F` = shift, kernel `G_m` | Checks hold in both directions; the `Z_(p)` caveat is right | no change |
+| 4.12/4.15 Witt identities | char p: `V(F(1)) = p·1` so `p = V(1)`; `uV(1) = V(F(u))` from `V(xF(y)) = V(x)y`; dual numbers: `F([ε]) = [ε^p] = 0` so `F(1+[ε]) = 1`; `(W(Z/p^2), p·)`: `x_0 = p ≠ 0` | all four Checks hold | no change |
+| 4.14 Sen classification | `Θ = 1/2`, p odd: `Θ^p − Θ = 2^{−p} − 2^{−1} ≡ 0` mod p by Fermat | the non-twist invertible example is valid | no change |
+| 4.16 `E = O` | `RΓ(O) → RΓ(O) → Z_p[−1]`; if `Δ_Z` were `Z_p[0]` the cofibre of any `Z_p → Z_p` is `Z_p/a` or `Z_p ⊕ Z_p[1]`, never `Z_p[−1]` | `Δ_Z` is not concentrated in degree 0, consistent with `gr^m_N Δ_Z = (Z_p/m)[−1]` below | no change |
+| 4.22/4.25/4.29 absolute Hodge–Tate and Nygaard pieces | `Ω^DHod_Z = Z_p`, `Θ = 0`: `RΓ_HT(O{n}) = fib(n: Z_p → Z_p) = (Z_p/n)[−1]` for `n ≠ 0`; `gr^m_N Δ_Z = fib(Θ+m: Fil_m → Fil_{m−1}) = (Z_p/m)[−1]` for `m ≥ 1`, `0` for `m = 1`; `R = Z_p[x]^∧`: `Θ+1` is an iso on `Fil_0 = R`, so `gr^1_N = gr_1^conj = Ω̂^1[−1]`; `Δ_{F_p} = Z_p` with `Fil^m = p^m` | Checks of §4.25 and Examples of §§4.22, 4.29 agree with each other | no change |
+| 4.30/4.31 exponents | QRSP R: `Fil^m_N Δ_R{n} = {x: φ(x) ∈ Δ^{[m−n]}{n}}` (Cor 5.6.3); `gr^m → Δ̄{m}` needs target exponent `m − n` (with `•+n` one gets `Δ̄{m+2n}`); `m = n = 1`: exponent 0; `m = 2, n = 1`: 1 | `•−n` right; BL22 prints `•+n` three times | no change |
+| 4.31 `W(k)` | `Δ_{W(k)} →^φ Δ_{W(k)} → W(k)[−1]`; `φ{n}` iso for `n > 0` (Ex 5.7.7); `Δ_{F_p} = Z_p` with `φ = id` | Checks 1–3 hold | no change |
+| 5.1 `γ` identities | `γ(fx) = φ(f)φ(x)/[p]_q − f^pδ(x) − x^pδ(f) − pδ(f)δ(x)` and `φ(f)γ(x) = φ(f)φ(x)/[p]_q − (f^p + pδ(f))δ(x)` give `γ(fx) = φ(f)γ(x) − x^pδ(f)`; `γ(x+y) − γ(x) − γ(y) = δ(x)+δ(y)−δ(x+y) = ((x+y)^p − x^p − y^p)/p`; `q = 1`, `x = p`: `γ(p) = 1 − δ(p) = p^{p−1}`, `γ(2) = 2`; `δ([p]_q) ≡ [p]_{q^p}/p ≡ p/p = 1` mod `[p]_q` | all bullets and Checks hold | no change |
+| 5.1/5.5 `N(D)` | `A = Z_p[[q−1]]`: `A/[p]_q = Z_p[ζ_p]`, `φ(f) mod [p]_q = f(1)`, so `N(A) = (q−1)`; `p ∉ N(A)` since `p ≠ 0` in `Z_p[ζ_p]`; `Z_p`, `q = 1`: smallest `0`, largest `pZ_p`; `A_inf`: `φ` bijective, `N = (ξ)`, `(q−1) ⊂ (ξ)` | smallest/largest ideals as stated; Check 5 of §5.1 holds | no change |
+| 5.2 q-PD pairs | `(A,(q−1))`: Ex 16.9(1); `(Z_p,(p))`: `v_p(p^n/n!) ≥ 1`; `(Z_p,0)`: `γ(0) = 0`; `φ(q−1) = q^p − 1 = (q−1)[p]_q` | five Checks hold | no change |
+| 5.8 `(d)` prismatic-envelope reading | `E = P{φ(x_i)/[p]_q}^∧` (16.10(1)) equals the envelope of `([p]_q, φ(x_i))` by BS22 Prop 3.13 once `φ(x_i) ≡ x_i^p` is completely regular; at `q = 1`, `P{φ(x_i)/p}^∧` is the p-completed PD envelope (BS22 Cor 2.39) | consistent; the README says (d) is not printed as a statement | no change |
+| 5.22 field hypothesis | BS22 §17 fixes C perfectoid of characteristic 0 with `μ_{p^∞}` (4400); BMS1 assumes C algebraically closed | README's generality equals BS22's; the supplier row says where AInfCohomology's range ends | no change (ownership noted below) |
+| 5.26 Nygaard in q-coordinates | torus, degree n: `ξ^{i−n}M^n`; `i = 1`: `ξA⟨T^{±1}⟩ → A⟨T^{±1}⟩ d_q log T` | graded pieces `Ω^n` for `n ≤ i` as stated | no change |
+| 4.0 descent Checks | `Tor_1^Z(F_p,F_p) = F_p`; `Q ⊗^L_Z F_p = 0`; `H^1(B(Z/2), O) = Hom(Z/2, F_2) = F_2`; `Q` not dualizable in `D(Z)` | all four negative controls are genuine | no change |
+
+**Supplier citations resolved** (every cross-roadmap citation of the README, at main or at the cited open head). On main: DGAInfinity Layer 1 (`### Layer 1` at line 293), DerivedModuleAlgebra §§0.4, 0.17, 0.25, 1.1–1.9 (815, 1268, 1303, 1573–2028), EnhancedDerivedSheaves Layers E2, E3, E5:abstract, E5:animation, §§E0.4, E2.6–E2.7 (2031, 1117, 1436, 1896, 211, 2293, 2375), SchemeAndStackFoundations §§1.1, 1.15, 1.18–1.22 and `lineBundleSectionStack` (2071, 2502, 2745–2989, 2971), PerfectoidSpaces §§P1.16–P1.18, P4.15.2–P4.15.5 (4525–4652, 11053–11173), AlgebraicVectorBundles L0A–L0B (215, 228; the citations tool's "Layers 0" lead is a false positive). At open heads: PrismaticCohomology §§0.55–0.57, 0.61, 0.68–0.71, 0.73–0.82, 1.1–1.27, 2.1–2.14, 2.16–2.31 (see R04 for the eight numbers that are concordance entries); AInfCohomology §AI.0:integral.1 with `AInf.bkTwist` (749, 767), AI.1.1–AI.1.7 (903–1440), AI.2.3 (1755), AI.3.1–AI.3.3 (1899–2185), AI.4.1–AI.4.4 (2263–2481); DerivedDeRhamCohomology PD.1–PD.7, §§1.14–1.19, 1.23, 2.12, 3.4, 4.2, 5.1–5.7, 6.20 and Layers 1–3 (all headings found); CrystallineCohomology CR.DDR.4.1, 4.3–4.4, 5.8–5.10, 5.20–5.21, Layers CR.2, CR.4 (2236–2424, 6933–6975, 1626, 3639); PerfectoidQuotients §0.0 (376). No supplier is later in the merge order; PrismaticCohomologyPartIII/IV, CohomologyComparisons, PadicHodgeTheory and HabiroCohomologyFoundations appear only as consumers (R06 notes the three forward mentions inside targets).
+
+**Ownership against open work.** `roadmaps grep` over the 433 open heads and main: "Cartier–Witt stack" and `QCohPrestack` occur only in this roadmap; "q-crystalline" elsewhere only in later consumers (PrismaticCohomologyPartIV, HabiroCohomologyFoundations, QWittVectors, CohomologyComparisons) and once each in CrystallineCohomology and AInfCohomology as mentions; "Nygaard filtration" in CrystallineCohomology (the de Rham–Witt and `A_crys` cases, R07), AInfCohomology (the `TC^-` filtration, which §3.26 cites rather than restates), and later consumers. The ∞-categorical quasi-coherent theory of prestacks (§4.0) has no owner on main (SchemeAndStackFoundations §1.22 is 1-categorical `QCoh` on stacks; EnhancedDerivedSheaves owns `DQCoh` of schemes only), so this roadmap is its owner and says so. §5.22's extension of the `AΩ` chart computation from AInfCohomology's algebraically closed C to any perfectoid C with `μ_{p^∞}` follows BS22 §17's standing hypothesis and is declared in the supplier table; it is an extension rather than a re-plan. Ownership against open pull requests whose files the brief does not give (none named) was not checked.
+
+**Shape.** 85 targets, each with a locator and a `*Needs:*` line (0 without); each of Layers 3–5 ends with `### Examples` and `### Dependencies`; 42 targets have no Checks, of which all but the two in R05 are theorems or comparisons; the Layer examples I recomputed (Layer 3: `φ_1(p^2) = p`, `I_r = ([p^r]_q)`, `[p^{r+1}]_q ≡ p[p^r]_q` mod `I_r^2`; Layer 4: `WCart(F_p)` points, `Δ̄_Z{n} = (Z_p/n)[−1]`, `p̃` at p = 2, 3; Layer 5: `[n]_ζ` units for `p ∤ n`, `θ̃([x^p]) = θ([x])`) agree with their targets.
+
+## Not verifiable
+
+- AC, Zenodo DOI `10.5281/zenodo.23573534`: the DOI is not in Crossref and the Zenodo landing page is on a host the sources service has in no licence class; the GitHub repository and the cited file were read instead (above), so nothing of §5.10's claim remains unverified except the version number 1.0.0.
+- BL22 Example 5.8.1 and Proposition 5.8.2 (§§3.21, 3.23) were located (page 147) but not read line by line; the statements the README takes from them (Nygaard completeness for `R/pR` regular Noetherian; the divided-power non-example) are the same as Corollaries 5.2.11–5.2.13 and Proposition 5.3.6, which were read.
+- Lurie DAG XIII, SAG and HA are cited by section and page for background in §§4.0 and 5.x; not opened.
+
+## Source issues
+
+- **Misprint** in BS22 at §12.5, printed page 92: the derived Nygaard filtration of a quasiregular semiperfectoid ring is said to sit in cohomological degrees 0 and −1; it should be degrees 0 and 1 (the fibre of a map of discrete modules); affects nothing.
+- **Misprint** in BS22 at proof of Lemma 12.6, printed page 88: the product over i of the q-factorials of ip is written where the product of the q-integers of ip is meant; affects nothing.
+- **Misprint** in BS22 at Corollary 15.4, printed page 104: the right-hand side is written as the de Rham complex of R over A/I for a general smooth formal scheme X; it should be the de Rham complex of X; affects nothing.
+- **Misprint** in BS22 at Corollary 15.5, printed page 104: the induced map on degree-i cohomology is printed from the twisted Frobenius-pullback cohomology to the untwisted one; source and target should be interchanged, as in Theorem 1.8 (6); affects a stated result.
+- **Misprint** in BS22 at Remark 15.6, printed page 105: the cotangent complex is identified with the first Nygaard graded piece without a shift; it should be shifted by −1; affects a stated result.
+- **Misprint** in BL22 at Proposition 5.1.1 (1), printed page 115: the target of the Nygaard-piece functor is written as the complete derived category of the quotient ring; it should be that of the prism ring A; affects nothing.
+- **Misprint** in BL22 at proof of Corollary 5.2.8, printed page 122: the Hodge–Tate comparison is written with the shift +n; it should be −n; affects the proof.
+- **Misprint** in BL22 at Theorem 3.6.7, printed page 56: the complex E is said to live on the Hodge–Tate divisor; it must live on the Cartier–Witt stack, as the diagram and Remark 3.6.8 use; affects a stated result.
+- **Misprint** in BL22 at Remark 3.1.7, printed page 39: the functor induced by a ring map R → S is written from the divisors of S to those of R; pullback along W(f) goes from WCart(R) to WCart(S); affects nothing.
+- **Misprint** in BL22 at proof of Proposition 3.2.8, printed page 42: the fibre product identified with Spf(B) × W^× is written as the self-product of the atlas, and the bijection is with units of the wrong ring (B′ for B″); affects the proof.
+- **Misprint** in BL22 at Remark 5.7.8, Proposition 5.7.9 and Remark 5.7.10, printed page 146: the filtered Frobenius is written with target exponent • + n; Corollary 5.6.3 forces • − n; affects a stated result.
+- **Misprint** in BL22 at Remark 5.8.4, printed page 147: the Nygaard piece in degree n ≥ d is identified with the ideal power times the Nygaard piece of degree n − d; it should be the piece of degree d; affects nothing.
