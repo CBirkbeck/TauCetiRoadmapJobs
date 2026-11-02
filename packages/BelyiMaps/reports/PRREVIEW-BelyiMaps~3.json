@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-BelyiMaps~3",
+    "head": "9bd6e07e4d2041feb8e6e464ac104d592777d68e",
+    "pr": 271,
+    "folder": "BelyiMaps",
+    "date": "2026-11-02",
+    "findings": 35,
+    "blocking": 31,
+    "notes": "Full review; compared all 31 previous findings; checked all 15 seeded source targets, with unavailable editions listed; 165 computed adversarial rows; native/main/supplied-head ownership audit. Worker gate FAIL (options, admitted data, text, outside-folder, build warning); depcheck 204 roadmaps/1498 edges/0 problems, explicit textual cycle separately found. Direct Lean and 155 active #checks pass; 32 admitted theorem padding probes; targeted build repeats non-sorry module warning."
+  }
+}
