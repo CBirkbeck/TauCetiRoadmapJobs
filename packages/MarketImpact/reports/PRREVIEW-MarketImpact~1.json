@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-MarketImpact~1",
+    "head": "ce997159615302562f0f272e1c44a56ca52cd505",
+    "pr": 1655,
+    "folder": "FinancialMathematics/MarketImpact",
+    "date": "2026-11-02",
+    "findings": 10,
+    "blocking": 3,
+    "notes": "Full read-only review: 83 computed adversarial rows; 31 elaborated signatures; five one-simp probes remained unsolved. Actual Lean file passes with five sorry warnings; supplied gate fails blob, tex, residue and import rules. Dependency check: 205 roadmaps, 1501 edges, 0 problems. Worker supplied no sampled target IDs; reproducible 15-of-20 fallback sample used seed 3466162521. Legal April 1997 author preprint inspected; MATH5695 notes and their pagination not verifiable. Main/open-head ownership and pinned library checks completed."
+  }
+}
