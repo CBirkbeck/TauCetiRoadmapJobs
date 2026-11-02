@@ -84,6 +84,7 @@ AnalyticNumberTheory
 AlgebraicModularFormsAndSerreWeights
 GL2AutomorphicRepresentationsAndTransfer
 EllipticLegendreCharacterInterfaces
+HypergeometricMotives
 EllipticCurvesPartII
 EulerSystemsAndKolyvaginSystems
 ShimuraVarieties
