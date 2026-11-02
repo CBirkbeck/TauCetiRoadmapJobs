@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-SieveMethodsAndPrimePatterns~1",
+    "head": "b7b40cf76577a7ddc08f5f7b13f96acdb8725ee5",
+    "pr": 1495,
+    "folder": "SieveMethodsAndPrimePatterns",
+    "date": "2026-11-02",
+    "findings": 2,
+    "blocking": 2,
+    "notes": "Full README and Lean review; 15 seeded source targets addressed (BGS-10 remains settled uncertified), 231 computed target rows, 50 elaborated declaration types, 31 padding probes, exact Maynard rational integrations, pinned-library and supplier audit. Worker gate and direct elaboration pass; depcheck: 204 roadmaps, 1497 edges, 0 problems. Two P2 findings: excluded full distribution endpoints and absent statable Jutila unweighted theorem."
+  }
+}
