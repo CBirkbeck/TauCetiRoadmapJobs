@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-HyperellipticCurves~2",
+    "head": "fb03bd1ee05bc625a53955350f42a02b62911d85",
+    "pr": 1707,
+    "folder": "HyperellipticCurves",
+    "date": "2026-11-02",
+    "findings": 11,
+    "blocking": 8,
+    "notes": "Full review of all 45 milestones and 75 named Lean declarations; all 32 earlier findings revisited. All 15 seeded source targets audited, with unavailable texts explicitly recorded. Passing supplied push gate; independent direct Lean elaboration and 75-signature check pass with only 30 sorry warnings. One-tactic probes run on all 30 admissions. Dependency check: 204 roadmaps, 1545 edges, 0 problems. Computed adversarial tables, seven model discriminants and 68 finite-field point counts recorded. Eight blocking findings remain; PR files unchanged."
+  }
+}
