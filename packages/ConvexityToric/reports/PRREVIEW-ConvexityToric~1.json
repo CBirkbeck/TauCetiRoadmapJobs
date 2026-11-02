@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-ConvexityToric~1",
+    "head": "80fe935cb9eacece16f1b0d9c58829348b84c553",
+    "pr": 1651,
+    "folder": "SymplecticGeometry/ConvexityToric",
+    "date": "2026-11-02",
+    "findings": 12,
+    "blocking": 6,
+    "notes": "Full folder review; seeded projector/forms and fixed-point/exact-image sample checked in published Escobar and Cannas, with Knutson pages not verifiable. 106 computed adversarial rows; all 23 declaration signatures elaborated; all seven theorem padding probes run; full Schur-Horn statability confirmed. Worker gate FAIL: sorry-data=1, imports=1, mathlib-subimports=7, no-import-mathlib=1; build passed. Dependency check: 205 roadmaps, 1501 edges, 0 problems. Six blocking findings; worktree unchanged."
+  }
+}
