@@ -365,3 +365,4 @@ LogicAndDefinabilityInNumberTheoryPartII
 SporadicOrders
 GeometryOfNumbersAndQuadraticArithmeticPartII
 ExponentialSumsAndCircleMethodPartII
+HyperellipticCurves
