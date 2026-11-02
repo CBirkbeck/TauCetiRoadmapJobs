@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-AlgebraicTopology~6",
+    "head": "7a3f77d25d059d36e243c1897794424229ee33f0",
+    "pr": 1652,
+    "folder": "AlgebraicTopology",
+    "date": "2026-11-02",
+    "findings": 7,
+    "blocking": 5,
+    "notes": "Full read-only review; seven prior findings revisited; seeded 15-target source sample with legal-text limitations recorded; 204 computed adversarial rows; pinned-library and main/open-head ownership audits. Worker gate passes; independent depcheck: 205 roadmaps, 1606 edges, 0 problems. Lean elaboration and all 34 signatures checked; 20 theorems resisted rfl/simp/infer_instance probes. No PR changes."
+  }
+}
