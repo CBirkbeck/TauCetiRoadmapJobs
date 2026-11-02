@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-IntegralHeckeAndGaloisDeterminants~4",
+    "head": "b11da0d2bf90f6b83e08118b90fcede7c2681380",
+    "pr": 1689,
+    "folder": "IntegralHeckeAndGaloisDeterminants",
+    "date": "2026-11-02",
+    "findings": 8,
+    "blocking": 4,
+    "notes": "Full review: previous findings reassessed; all 15 seeded sections inspected against legal source text, with Jantzen recorded as not verifiable; 232 computed target rows plus convention checks; 54 elaborated signatures and 21 one-tactic theorem probes; object ownership and supplier audit. Worker gate passes and independent Lean elaboration passes. Mechanical depcheck reports 205 roadmaps, 1506 edges, 0 problems; explicit ReductiveGroups contracts nevertheless form a two-way supply. No PR files changed."
+  }
+}
