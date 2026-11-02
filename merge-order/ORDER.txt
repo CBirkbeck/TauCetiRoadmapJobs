@@ -258,7 +258,6 @@ PotentialAutomorphyInfrastructurePartII
 OrdinaryAutomorphicFormsAndModularityLiftingPartII
 ModularityAndLanglandsExtensionsPartII
 GSp4NonregularModularityLifting
-AbelianSurfacesModularity
 EllipticModularityEffectiveComparisons
 TeichmullerGeometry
 PositiveMass
@@ -366,3 +365,4 @@ SporadicOrders
 GeometryOfNumbersAndQuadraticArithmeticPartII
 ExponentialSumsAndCircleMethodPartII
 HyperellipticCurves
+AbelianSurfacesModularity
