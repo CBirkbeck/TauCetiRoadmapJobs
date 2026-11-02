@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-ConvexityToric~2",
+    "head": "086aecd2ee8c120b306733daac9c410e8382ca14",
+    "pr": 1651,
+    "folder": "SymplecticGeometry/ConvexityToric",
+    "date": "2026-11-02",
+    "findings": 13,
+    "blocking": 7,
+    "notes": "incremental re-review of 0 changed lines since 80fe935; checked all 12 previous findings, changed sibling interfaces and current supplier contracts; carried forward both seeded source targets and 106 adversarial rows with attribution; reran gate, dependency check (0 problems), targeted build and direct elaboration (both fail through removed canonicalForm); companion signature checks pass. One new P1 build finding; PR unchanged."
+  }
+}
