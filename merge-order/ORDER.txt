@@ -134,6 +134,7 @@ OrthogonalTamagawaAndLatticeMass
 MetaplecticAutomorphicForms
 EndoscopicTransferAndUnitaryTraceComparisonPartII
 LieGroupoidsPoisson
+GeometricQuantization
 AbelianSchemesAndArithmeticModuliPartII
 NoncompactQuantumSymmetry
 CongruenceSpectralGap
