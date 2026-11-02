@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-SNumbers~2",
+    "head": "7b6413c5a1f718978c40b04bcf5849f6dc3afa4f",
+    "pr": 1650,
+    "folder": "SNumbers",
+    "date": "2026-11-02",
+    "findings": 7,
+    "blocking": 3,
+    "notes": "Full review: all 12 previous findings, 15 seeded source targets, 86 labelled targets with computed adversarial rows, all 79 elaborated declarations, 56 padding probes, pinned-library and roadmap ownership/supplier audits. Five legal full texts read; remaining source limitations recorded. Dependency check: 205 roadmaps, 1572 edges, 0 problems. Direct Lean elaboration passes; supplied gate fails readme-ids-missing and build warning. Seven findings, including incomplete-scalar lifting counterexample and three omitted statable headlines."
+  }
+}
