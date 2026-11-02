@@ -1,0 +1,13 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-CharacterSumsOverFiniteFields~1",
+  "head": "3008d558456e240d076da696481a75a18af15b7b",
+  "pr": 1712,
+  "folder": "CharacterSumsOverFiniteFields",
+  "date": "2026-11-02",
+  "findings": 11,
+  "blocking": 3,
+  "notes": "Full review. Gate: text scanners all 0, depcheck 0 problems (also on a *Needs:* copy), build fails only on the module-system warning (R02); lake env lean gives 79 sorry warnings and no error. Seeded sample 0.1, 1.1, 1.3, 1.4, 2.1, 4.1, 4.2, 4.4, 4.8, 4.9, 5.1, 5.3, 5.5, 6.1, 6.2 checked against Mathlib/Tau Ceti at the pins, ClassicalArithmeticCompletion 1.19/1.23/1.36/1.46/1.47/1.53/1.55/1.60/4.19/7.12 on main, AST #925 1.16, CSG #1504 4.2a-b, ELCI #1545 5.1, Knightly-Li, BCM, Robert, Bombieri, LMFDB knowls; Schmidt/IK/LN/IR/BEW/Washington/Lang/Weil/Gross-Koblitz not readable legally. Adversarial table: 50 rows with computed values (exact finite-field, ZMod and 7-adic computations); every README number reproduced. Blocking: 6.4-6.5 re-plan DirichletPadicLFunctions 4.1/4.4/4.5 (padicGamma, Gross-Koblitz), gate build=1, four Tau Ceti names cited beyond the pin (galoisOrbit API, sum_range_cexp_two_pi_I_sq_div, conreyCharacter, eq_neg_one_mul_card). P3: house shape, process text and dead links, AST name drift, API-catalogue Suggested.lean with padding, Bombieri locator, two pi's, GoN 4.3 border, docstring narrative."
+ }
+}
