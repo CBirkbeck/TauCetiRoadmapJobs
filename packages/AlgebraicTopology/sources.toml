@@ -1,0 +1,48 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "AlgebraicTopology"
+
+[[source]]
+id = "thom1954"
+authors = "René Thom"
+title = "Quelques propriétés globales des variétés différentiables"
+year = 1954
+venue = "Commentarii Mathematici Helvetici 28"
+doi = "10.1007/BF02566923"
+locator_scheme = "theorem"
+locator = "Chapter II (realisability of mod 2 classes of codimension one and of integral classes of codimension one and two by embedded submanifolds)"
+url = "https://doi.org/10.1007/BF02566923"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["8.13"]
+
+[[source]]
+id = "hatcher"
+authors = "Allen Hatcher"
+title = "Algebraic Topology"
+year = 2002
+locator_scheme = "section"
+locator = "Sections 3.3 and 4.2 and the Appendix (Lemma 3.27, Propositions 3.29, 1B.9, 2.29; Exercises 13, 16, 17, 26, 28, 34 of Section 4.2; Appendix Exercise 1)"
+url = "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf"
+fetched_from = "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf"
+fetched_at = "2026-11-03T17:33:20Z"
+sha256 = "bebb3032bf9021b956da3bd070eb6c67dc662cf849be9cdf6679f677560e5618"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["6.3", "6.5", "8.5", "8.14", "8.15", "8.16"]
+
+[[source]]
+id = "lee"
+authors = "John M. Lee"
+title = "Introduction to Smooth Manifolds"
+year = 2012
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4419-9982-5"
+locator_scheme = "theorem"
+locator = "Theorems 6.26, 6.35 and 6.36"
+url = "https://doi.org/10.1007/978-1-4419-9982-5"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["8.13"]
