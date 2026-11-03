@@ -13,12 +13,6 @@
       "needs": "Supply partial ideal zeta series and the imaginary-quadratic genus-character dictionary and factorization with the normalizations of Gross–Zagier IV, equations (0.3)–(0.4)."
     },
     {
-      "slug": "point-kummer-logarithm",
-      "supplier": "PadicHodgeRegulators",
-      "section": "L0–L1",
-      "needs": "For nonelliptic abelian varieties, supply the point Kummer/exponential/logarithm diagram with explicit de Rham and twist conventions, and in good reduction identify the rational local Kummer image with H¹_f; the elliptic comparison is SelmerIwasawaCohomology §4.26."
-    },
-    {
       "slug": "normalized-e2-family",
       "supplier": "QSeriesPartitionsAndMockModularForms",
       "section": "Layer 8 (real-analytic modular forms)",
