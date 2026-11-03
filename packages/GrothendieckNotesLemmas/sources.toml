@@ -1,0 +1,71 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "GrothendieckNotesLemmas"
+
+[[source]]
+id = "stacks-dualizing"
+locator_scheme = "tag"
+locator = "08XW"
+url = "https://stacks.math.columbia.edu/download/dualizing.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/dualizing.pdf"
+fetched_at = "2026-11-03T18:43:41Z"
+sha256 = "f69eee17ae505f86266a58fc2d317f5f27eab1f426d5943d782a69b59b3674e6"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["2.5"]
+
+[[source]]
+id = "ass1994"
+authors = "J. Avron, R. Seiler, B. Simon"
+title = "The Index of a Pair of Projections"
+year = 1994
+venue = "Journal of Functional Analysis 120"
+doi = "10.1006/jfan.1994.1031"
+locator_scheme = "theorem"
+locator = "Theorem 4.1"
+url = "https://doi.org/10.1006/jfan.1994.1031"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["5.5"]
+
+[[source]]
+id = "polya1915"
+authors = "Georg Pólya"
+title = "Ueber ganzwertige ganze funktionen"
+year = 1915
+venue = "Rendiconti del Circolo Matematico di Palermo 40"
+doi = "10.1007/BF03014836"
+locator_scheme = "page"
+locator = "1-16"
+url = "https://doi.org/10.1007/BF03014836"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["5.4"]
+
+[[source]]
+id = "chase1960"
+locator_scheme = "theorem"
+locator = "Theorem 2.1"
+url = "https://www.ams.org/journals/tran/1960-097-03/S0002-9947-1960-0120260-3/S0002-9947-1960-0120260-3.pdf"
+fetched_from = "https://www.ams.org/journals/tran/1960-097-03/S0002-9947-1960-0120260-3/S0002-9947-1960-0120260-3.pdf"
+fetched_at = "2026-11-03T18:45:58Z"
+sha256 = "1ce8c5132c59a0bbaa54686eae5bb342b1abebe0a1760742d73f72cbedecdb2b"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["2.1"]
+
+[[source]]
+id = "lucas1878"
+locator_scheme = "page"
+locator = "184-240"
+url = "https://www.jstor.org/stable/pdf/2369308.pdf"
+fetched_from = "https://www.jstor.org/stable/pdf/2369308.pdf"
+fetched_at = "2026-11-03T18:45:58Z"
+sha256 = "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["1.1"]
