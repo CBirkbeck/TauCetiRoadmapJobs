@@ -368,3 +368,4 @@ GeometryOfNumbersAndQuadraticArithmeticPartII
 ExponentialSumsAndCircleMethodPartII
 HyperellipticCurves
 AbelianSurfacesModularity
+DeRhamCohomologyAndDuality
