@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-CanonicalModelsAndGonality~1",
+    "head": "9c138c94ab2b747ad3b42fd03bd72b0b4eb65aee",
+    "pr": 1726,
+    "folder": "CanonicalModelsAndGonality",
+    "date": "2026-11-03",
+    "findings": 19,
+    "blocking": 14,
+    "notes": "Read both files; 15 seeded source targets examined with unavailable texts recorded; 115 computed adversarial rows; pinned APIs, supplier ownership and signatures checked. Depcheck: 204 roadmaps, 1617 edges, 0 problems. Direct Lean and targeted build succeed, but worker gate fails on the module-system warning. Scratch module-header and one-tactic probes completed. PR unchanged."
+  }
+}
