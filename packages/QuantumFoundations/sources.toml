@@ -1,0 +1,273 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "QuantumFoundations"
+
+[[source]]
+id = "PULMANNOVA_1978"
+locator_scheme = "theorem"
+locator = "Theorems 1-5"
+url = "https://dml.cz/bitstream/handle/10338.dmlcz/136185/MathSlov_28-1978-3_10.pdf"
+fetched_from = "https://dml.cz/bitstream/handle/10338.dmlcz/136185/MathSlov_28-1978-3_10.pdf"
+fetched_at = "2026-11-03T10:32:07Z"
+sha256 = "79007bd7136177a40ba1d08caa6103581231bcb14ac67fd4ea9f83461bc60fe9"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["1.7"]
+
+[[source]]
+id = "PANKOV"
+locator_scheme = "theorem"
+locator = "Theorem 3.16"
+url = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/562D210944736DD8A32589EAB0C62D9A/9781108790918c3_53-67.pdf/lattices-of-closed-subspaces.pdf"
+fetched_from = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/562D210944736DD8A32589EAB0C62D9A/9781108790918c3_53-67.pdf/lattices-of-closed-subspaces.pdf"
+fetched_at = "2026-11-03T10:32:08Z"
+sha256 = "175769b0b6abb8049a7de4e9828a621ed78649cbbbe37a6900434ce85d05d9f2"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["0.2"]
+
+[[source]]
+id = "IOCHUM_LOUPIAS"
+locator_scheme = "theorem"
+locator = "Propositions I.4-I.5, Theorem V.1, Corollary V.3"
+url = "https://www.numdam.org/item/AIHPA_1985__43_2_211_0.pdf"
+fetched_from = "https://www.numdam.org/item/AIHPA_1985__43_2_211_0.pdf"
+fetched_at = "2026-11-03T10:32:09Z"
+sha256 = "dba8b51327094175428377ffcbc51c31d3b3a05bdcf02379efbf5a993537edb8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["1.6"]
+
+[[source]]
+id = "GEHER"
+authors = "György Pál Gehér"
+title = "Symmetries of projective spaces and spheres"
+year = 2016
+venue = "International Mathematics Research Notices, 2018"
+doi = "10.1093/imrn/rny100"
+arxiv = "1606.03584v1"
+locator_scheme = "theorem"
+locator = "Theorem 3"
+url = "https://arxiv.org/abs/1606.03584v1"
+fetched_from = "https://arxiv.org/pdf/1606.03584v1"
+fetched_at = "2026-11-03T10:32:13Z"
+sha256 = "1388deed93ba891643248c58a605ea1ea0f5b7df28956c7e42dfd31829428412"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+version_note = "arXiv v1"
+cited_for = ["7.1"]
+
+[[source]]
+id = "HAIRER_SPDE"
+authors = "Martin Hairer"
+title = "An Introduction to Stochastic PDEs"
+year = 2009
+arxiv = "0907.4178v2"
+locator_scheme = "theorem"
+locator = "Proposition 4.17"
+url = "https://arxiv.org/abs/0907.4178v2"
+fetched_from = "https://arxiv.org/pdf/0907.4178v2"
+fetched_at = "2026-11-03T10:32:20Z"
+sha256 = "d4309b35a2d725407d3eb63a130ab6c3436967137fbffbbcd8cb5f87f82f8f06"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+version_note = "arXiv v2"
+cited_for = ["6.5"]
+
+[[source]]
+id = "TESCHL_MMQM"
+locator_scheme = "theorem"
+locator = "Theorems 5.1, 5.2, 7.8, 8.1, 8.2, 8.4, 8.5, 10.2, 10.3, 10.7, 10.8, 10.9"
+url = "https://www.mat.univie.ac.at/~gerald/ftp/book-schroe/schroe.pdf"
+fetched_from = "https://www.mat.univie.ac.at/~gerald/ftp/book-schroe/schroe.pdf"
+fetched_at = "2026-11-03T10:33:27Z"
+sha256 = "8dc8de0b58aa0a3fedfe594a345f9b5875322e5526ea581cb640a98d55b82818"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["4.3"]
+
+[[source]]
+id = "ALFSEN_SHULTZ_1978"
+authors = "Erik M. Alfsen, Frederic W. Shultz"
+title = "State spaces of Jordan algebras"
+year = 1978
+venue = "Acta Mathematica 140"
+doi = "10.1007/BF02392307"
+locator_scheme = "page"
+locator = "pp. 158-159"
+url = "https://doi.org/10.1007/BF02392307"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["5.4"]
+
+[[source]]
+id = "IOCHUM_SHULTZ_1983"
+authors = "Bruno Iochum, Frederic W Shultz"
+title = "Normal state spaces of Jordan and von Neumann algebras"
+year = 1983
+venue = "Journal of Functional Analysis 50"
+doi = "10.1016/0022-1236(83)90008-3"
+locator_scheme = "theorem"
+locator = "Theorem 1.5"
+url = "https://doi.org/10.1016/0022-1236(83)90008-3"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["5.4"]
+
+[[source]]
+id = "ALFSEN_SHULTZ_1998_CMP"
+authors = "Erik M. Alfsen, Frederic W. Shultz"
+title = "On Orientation and Dynamics in Operator Algebras.¶Part I"
+year = 1998
+venue = "Communications in Mathematical Physics 194"
+doi = "10.1007/s002200050350"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://doi.org/10.1007/s002200050350"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["5.3"]
+
+[[source]]
+id = "DAVIES_LEWIS_1970"
+authors = "E. B. Davies, J. T. Lewis"
+title = "An operational approach to quantum probability"
+year = 1970
+venue = "Communications in Mathematical Physics 17"
+doi = "10.1007/BF01647093"
+locator_scheme = "section"
+locator = "Section 2"
+url = "https://doi.org/10.1007/BF01647093"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["2.3"]
+
+[[source]]
+id = "LUCZAK_PODSEDKOWSKA_2015"
+authors = "Andrzej Łuczak, Hanna Podsȩdkowska"
+title = "Lüders Instruments, Generalised Lüders Theorem, and Some Aspects of Sufficiency"
+year = 2015
+venue = "International Journal of Theoretical Physics 54"
+doi = "10.1007/s10773-014-2485-y"
+locator_scheme = "theorem"
+locator = "Theorem V.7"
+url = "https://doi.org/10.1007/s10773-014-2485-y"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["2.3"]
+
+[[source]]
+id = "GUDDER_BOYCE_1970"
+authors = "S. Gudder, S. Boyce"
+title = "A comparison of the Mackey and Segal models for quantum mechanics"
+year = 1970
+venue = "International Journal of Theoretical Physics 3"
+doi = "10.1007/BF00674006"
+locator_scheme = "theorem"
+locator = "Theorem 6.1"
+url = "https://doi.org/10.1007/BF00674006"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["1.9"]
+
+[[source]]
+id = "CONNES_1974"
+locator_scheme = "theorem"
+locator = "Theorems 1.3, 5.2, 5.8"
+url = "https://aif.centre-mersenne.org/item/AIF_1974__24_4_121_0.pdf"
+fetched_from = "https://aif.centre-mersenne.org/item/AIF_1974__24_4_121_0.pdf"
+fetched_at = "2026-11-03T10:34:50Z"
+sha256 = "95bd73d267c467eb4b15b789f1fd56501179640a6f169842ff70be5de45c17d8"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["5.5"]
+
+[[source]]
+id = "DLMF_13.2"
+locator_scheme = "equation"
+locator = "13.2.1, 13.2.9-13.2.11, 13.2.34, 13.2.41"
+url = "https://dlmf.nist.gov/13.2"
+fetched_from = "https://dlmf.nist.gov/13.2"
+fetched_at = "2026-11-03T10:34:50Z"
+sha256 = "cd547b71bab7c4ffebc0d1a4a0022a40507c1bc1c088841cd346b6869df6acc9"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["9.4"]
+
+[[source]]
+id = "DLMF_13.3"
+locator_scheme = "equation"
+locator = "13.3.7"
+url = "https://dlmf.nist.gov/13.3"
+fetched_from = "https://dlmf.nist.gov/13.3"
+fetched_at = "2026-11-03T10:34:51Z"
+sha256 = "e2c6072ca1ac81f12eb58544cd2ec64e615385ea5671f9eda780ceb7eb742b3a"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["9.4"]
+
+[[source]]
+id = "DLMF_13.6"
+locator_scheme = "equation"
+locator = "13.6.19"
+url = "https://dlmf.nist.gov/13.6"
+fetched_from = "https://dlmf.nist.gov/13.6"
+fetched_at = "2026-11-03T10:34:52Z"
+sha256 = "310ccd9eeec6b530452a21dbb7ef6343b4a7b25c631532e503b0e60e8f43ddc8"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["9.4"]
+
+[[source]]
+id = "DLMF_33.2"
+locator_scheme = "equation"
+locator = "33.2.8-33.2.12"
+url = "https://dlmf.nist.gov/33.2"
+fetched_from = "https://dlmf.nist.gov/33.2"
+fetched_at = "2026-11-03T10:34:54Z"
+sha256 = "0e38540108f7ffad32737cd8acb79935d75c0eb5ca706146af68c874f3d8a420"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["9.5"]
+
+[[source]]
+id = "DLMF_33.10"
+locator_scheme = "section"
+locator = "33.10"
+url = "https://dlmf.nist.gov/33.10"
+fetched_from = "https://dlmf.nist.gov/33.10"
+fetched_at = "2026-11-03T10:34:55Z"
+sha256 = "c618d76eb923fe8d1c2b1097470343af6b96eab29a2604fe4be37ed6fb69bb4e"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["9.5"]
+
+[[source]]
+id = "DLMF_33.11"
+locator_scheme = "section"
+locator = "33.11"
+url = "https://dlmf.nist.gov/33.11"
+fetched_from = "https://dlmf.nist.gov/33.11"
+fetched_at = "2026-11-03T10:34:55Z"
+sha256 = "43ab8a42bff4808650978bdaed71f7f948bc47152aced73046396e971dc9f5c3"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["9.5"]
