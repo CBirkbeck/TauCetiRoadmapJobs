@@ -1,0 +1,205 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ArithmeticStatisticsPartVIII"
+
+[[source]]
+id = "ref-51"
+authors = "Yuan Liu, Melanie Matchett Wood, David Zureick-Brown"
+title = "A predicted distribution for Galois groups of maximal unramified extensions"
+year = 2019
+arxiv = "1907.05002v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.4"
+url = "https://arxiv.org/abs/1907.05002v2"
+fetched_from = "https://arxiv.org/pdf/1907.05002v2"
+fetched_at = "2026-11-03T08:49:36Z"
+sha256 = "7f1e85da49b23f80fc7abe9a68dbc5384ab216dfa5d55cd5e3223ba3268abed9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+version_note = "arXiv v2"
+cited_for = ["5.22"]
+
+[[source]]
+id = "ref-50"
+authors = "Melanie Matchett Wood, Philip Matchett Wood"
+title = "Nonabelian Cohen-Lenstra Moments"
+year = 2017
+venue = "Duke Math. J. 168, no. 3 (2019), 377-427"
+doi = "10.1215/00127094-2018-0037"
+arxiv = "1702.04644v2"
+locator_scheme = "theorem"
+locator = "Theorem 4.8"
+url = "https://arxiv.org/abs/1702.04644v2"
+fetched_from = "https://arxiv.org/pdf/1702.04644v2"
+fetched_at = "2026-11-03T08:49:41Z"
+sha256 = "2eacf07f9c79a08a65bbfa332b964f0f9bd4ab5abb93e5db8be72e43669be1bd"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+version_note = "arXiv v2"
+cited_for = ["5.20"]
+
+[[source]]
+id = "ref-48"
+locator_scheme = "theorem"
+locator = "Theorem 3.4"
+url = "https://www.math.colostate.edu/~pries/Preprints/00DecPreprints/07finaltrielliptic.pdf"
+fetched_from = "https://www.math.colostate.edu/~pries/Preprints/00DecPreprints/07finaltrielliptic.pdf"
+fetched_at = "2026-11-03T08:49:42Z"
+sha256 = "ef86bd41e5b4d61d199f363985732b4965b59ce8cb180040b86ab99118a6b080"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["5.17"]
+
+[[source]]
+id = "ref-49"
+authors = "Adrian Vasiu"
+title = "Surjectivity Criteria for p-adic Representations, Part I"
+year = 2002
+venue = "Manuscripta Math. 112, no. 3, pp. 325--355 (2003)"
+doi = "10.1007/s00229-003-0402-4"
+arxiv = "math/0209237v2"
+locator_scheme = "theorem"
+locator = "Main Theorem 1.3"
+url = "https://arxiv.org/abs/math/0209237v2"
+fetched_from = "https://arxiv.org/pdf/math/0209237v2"
+fetched_at = "2026-11-03T08:49:47Z"
+sha256 = "b7389a31ceb4593c069bf537635b49f262380d60b764a117e29662daafd252f2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+version_note = "arXiv v2"
+cited_for = ["5.17"]
+
+[[source]]
+id = "ref-46"
+authors = "Tim Browning, Pierre Le Boudec, Will Sawin"
+title = "The Hasse principle for random Fano hypersurfaces"
+year = 2020
+arxiv = "2006.02356v1"
+locator_scheme = "theorem"
+locator = "Lemma 5.4"
+url = "https://arxiv.org/abs/2006.02356v1"
+fetched_from = "https://arxiv.org/pdf/2006.02356v1"
+fetched_at = "2026-11-03T08:49:54Z"
+sha256 = "210c746b6b69d466d19a0a90e8f00ca57bf2d4dfb1818b0a9955fe91ae061efb"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+version_note = "arXiv v1"
+cited_for = ["5.12"]
+
+[[source]]
+id = "ref-45"
+authors = "Michael Lipnowski, Jacob Tsimerman"
+title = "How Large is $A_g(\\mathbb{F}_q)$?"
+year = 2015
+venue = "Duke Math. J. 167, no. 18 (2018), 3403-3453"
+doi = "10.1215/00127094-2018-0029"
+arxiv = "1511.02212v1"
+locator_scheme = "theorem"
+locator = "Proposition 5.10"
+url = "https://arxiv.org/abs/1511.02212v1"
+fetched_from = "https://arxiv.org/pdf/1511.02212v1"
+fetched_at = "2026-11-03T08:49:59Z"
+sha256 = "5ceed8168ce37b75da67699189e7e8730527c31f3339dce979a1a1901243f81a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+version_note = "arXiv v1"
+cited_for = ["5.13"]
+
+[[source]]
+id = "ref-47"
+authors = "Tim Browning, Lilian Matthiesen"
+title = "Norm forms for arbitrary number fields as products of linear polynomials"
+year = 2013
+arxiv = "1307.7641v4"
+locator_scheme = "theorem"
+locator = "Lemma 3.3"
+url = "https://arxiv.org/abs/1307.7641v4"
+fetched_from = "https://arxiv.org/pdf/1307.7641v4"
+fetched_at = "2026-11-03T08:50:06Z"
+sha256 = "a2b03049259bb579d3fa0d4d1ca9d02c8630bbe7bb8764b8a3c95cba60cbd5bd"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+version_note = "arXiv v4"
+cited_for = ["5.12"]
+
+[[source]]
+id = "ref-52"
+locator_scheme = "section"
+locator = "Section 9"
+url = "https://web.math.princeton.edu/~jonhanke/Web-02/Mass-Formula-of-Shimura/shimura-mass.pdf"
+fetched_from = "https://web.math.princeton.edu/~jonhanke/Web-02/Mass-Formula-of-Shimura/shimura-mass.pdf"
+fetched_at = "2026-11-03T08:50:07Z"
+sha256 = "c33ff4ff8d334a6d14b45320e831650ce3e8878e79e57c8a748684be1fe13285"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["GN-d"]
+
+[[source]]
+id = "raynaud-1-motifs"
+locator_scheme = "section"
+locator = "4.6"
+url = "https://www.numdam.org/item/AST_1994__223__295_0/"
+fetched_from = "https://www.numdam.org/item/AST_1994__223__295_0.pdf"
+fetched_at = "2026-11-03T08:50:08Z"
+sha256 = "b0cf9b1a112beb11937a5efb36e40c19a6b819d53fcd28325fb465352d460a45"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["5.17"]
+
+[[source]]
+id = "ref-37"
+locator_scheme = "theorem"
+locator = "Theorem 8.8"
+url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v183-n3-p01-p.pdf"
+fetched_from = "https://annals.math.princeton.edu/wp-content/uploads/annals-v183-n3-p01-p.pdf"
+fetched_at = "2026-11-03T08:50:57Z"
+sha256 = "6c10d770348c625ad9fe80d2c47093cde2a2ba05f39a28d547743f0f4993a7f6"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["5.15"]
+
+[[source]]
+id = "hatcher-wahl-stabilization"
+authors = "Allen Hatcher, Nathalie Wahl"
+title = "Stabilization for mapping class groups of 3-manifolds"
+year = 2007
+venue = "Duke Math. J. 155, no. 2 (2010), 205-269"
+doi = "10.1215/00127094-2010-055"
+arxiv = "0709.2173v4"
+locator_scheme = "theorem"
+locator = "Proposition 7.2"
+url = "https://arxiv.org/abs/0709.2173v4"
+fetched_from = "https://arxiv.org/pdf/0709.2173v4"
+fetched_at = "2026-11-03T09:25:09Z"
+sha256 = "b56bbabf4d4d7f3328e7bac953f0bbe3369897a3b191db619bbc5cd8f55352ff"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+version_note = "arXiv v4"
+cited_for = ["5.16"]
+
+[[source]]
+id = "charney-davis-finite-kpi1"
+authors = "Ruth Charney, Michael W. Davis"
+title = "Finite K(π,1)s for Artin groups"
+year = 1995
+venue = "Prospects in Topology (Princeton, NJ, 1994), Ann. of Math. Stud. 138, Princeton Univ. Press, 1995, 110-124; author manuscript, manuscript pagination"
+locator_scheme = "theorem"
+locator = "Theorem 1.4.1"
+url = "https://people.math.osu.edu/davis.12/finitekpi1.pdf"
+fetched_from = "https://people.math.osu.edu/davis.12/finitekpi1.pdf"
+fetched_at = "2026-11-03T09:26:03Z"
+sha256 = "2d218f5a52c323b7d5ff93326ef9517710d31e1183574f8474ef89760a7cabf2"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["5.16"]
