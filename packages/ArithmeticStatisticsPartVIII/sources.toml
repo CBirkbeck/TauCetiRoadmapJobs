@@ -203,3 +203,19 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-03"
 cited_for = ["5.16"]
+
+[[source]]
+id = "weibel-homological-algebra"
+authors = "Charles A. Weibel"
+title = "An Introduction to Homological Algebra"
+year = 1994
+venue = "Cambridge Studies in Advanced Mathematics 38, Cambridge University Press"
+doi = "10.1017/CBO9781139644136"
+locator_scheme = "theorem"
+locator = "Theorem 5.6.6; Sections 5.6–5.7"
+url = "https://doi.org/10.1017/CBO9781139644136"
+licence_class = "none"
+status = "uncertified"
+accessed = "2026-11-03"
+version_note = "Book behind a paywall; cited by locator only (base change for Tor, the two spectral sequences of a double complex, hyperhomology)."
+cited_for = ["5.16"]
