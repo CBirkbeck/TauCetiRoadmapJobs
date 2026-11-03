@@ -1,0 +1,82 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "RiemannianGeometry"
+
+[[source]]
+id = "lyons-hopf"
+authors = "David W. Lyons"
+title = "An Elementary Introduction to the Hopf Fibration"
+year = 2022
+venue = "Mathematics Magazine, 76(2):87--98, 2003"
+arxiv = "2212.01642v1"
+locator_scheme = "section"
+locator = "section \"Seeing the Hopf fibration\", Investigation (L) and Figure 10 (arXiv v1 pp. 11–14)"
+url = "https://arxiv.org/abs/2212.01642v1"
+fetched_from = "https://arxiv.org/pdf/2212.01642v1"
+fetched_at = "2026-11-03T15:45:14Z"
+sha256 = "a3843b4a04df932b77e298289e88330413dfece27b056ab4ac9d02ad9277f478"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+version_note = "arXiv v1"
+cited_for = ["R3.3c stereographic Hopf circles"]
+
+[[source]]
+id = "andrews-dg-ch16"
+authors = "Ben Andrews"
+title = "Lectures on Differential Geometry, Lecture 16: Curvature"
+year = 2010
+venue = "lecture notes, Australian National University (author page)"
+locator_scheme = "theorem"
+locator = "Proposition 16.2.1, p. 154"
+url = "https://maths-people.anu.edu.au/andrews/DG/DG_chap16.pdf"
+fetched_from = "https://maths-people.anu.edu.au/andrews/DG/DG_chap16.pdf"
+fetched_at = "2026-11-03T15:45:22Z"
+sha256 = "2e72c516957e81a8e4d11ae28599299c42fdf5e0bec99c92f3986f5b1c99e8f2"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["R1.2 curvature reconstruction"]
+
+[[source]]
+id = "oneill-submersion"
+authors = "Barrett O'Neill"
+title = "The fundamental equations of a submersion"
+year = 1966
+venue = "Michigan Mathematical Journal 13 (1966), 459–469"
+doi = "10.1307/mmj/1028999604"
+locator_scheme = "theorem"
+locator = "Theorem 2 and Corollary 1"
+url = "https://doi.org/10.1307/mmj/1028999604"
+licence_class = "none"
+status = "uncertified"
+version_note = "Project Euclid landing page without a PDF link; cited by its locator without the text"
+cited_for = ["R1 projective metric examples (horizontal curvature formula)"]
+
+[[source]]
+id = "milnor-morse-theory"
+authors = "John Milnor"
+title = "Morse Theory"
+year = 1963
+venue = "Annals of Mathematics Studies 51, Princeton University Press"
+locator_scheme = "theorem"
+locator = "§6, Lemma 6.5 and Theorem 6.6; §§13–18"
+url = "https://www.jstor.org/stable/j.ctv3f8rb6"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (JSTOR); cited by its locator without the text"
+cited_for = ["R6 squared-distance Morse functions", "R3.2 finite broken geodesics"]
+
+[[source]]
+id = "fulton-harris"
+authors = "William Fulton, Joe Harris"
+title = "Representation Theory: A First Course"
+year = 1991
+venue = "Graduate Texts in Mathematics 129, Springer"
+doi = "10.1007/978-1-4612-0979-9"
+locator_scheme = "section"
+locator = "Lecture 18, §18.1; Lecture 19"
+url = "https://doi.org/10.1007/978-1-4612-0979-9"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (Springer); cited by its locator without the text"
+cited_for = ["R8.3 convention bridge (isotropic basis, torus, roots, dominant weights of so_N)"]
