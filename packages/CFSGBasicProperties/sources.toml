@@ -1,0 +1,69 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "CFSGBasicProperties"
+
+[[source]]
+id = "hohnseysen"
+authors = "Gerald Höhn, Martin Seysen"
+title = "The Order of the Monster Finite Simple Group"
+year = 2025
+arxiv = "2508.01037v1"
+locator_scheme = "theorem"
+locator = "Theorem 5.1"
+url = "https://arxiv.org/abs/2508.01037v1"
+fetched_from = "https://arxiv.org/pdf/2508.01037v1"
+fetched_at = "2026-11-03T15:16:26Z"
+sha256 = "e15071f7d85c8a87935a636583b90163618253462a08c49dc85bc7f42c34b416"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+version_note = "arXiv v1"
+cited_for = ["P2-M"]
+
+[[source]]
+id = "bmw-monster"
+authors = "Thomas Breuer, Kay Magaard, Robert A. Wilson"
+title = "Verification of the conjugacy classes and ordinary character table of the Monster"
+year = 2024
+arxiv = "2412.12182v1"
+locator_scheme = "section"
+locator = "Section 4.9"
+url = "https://arxiv.org/abs/2412.12182v1"
+fetched_from = "https://arxiv.org/pdf/2412.12182v1"
+fetched_at = "2026-11-03T15:16:31Z"
+sha256 = "a04e16e032990c4572dd809492a67d14ac88f1c3fd502adcb0f642fa867edb91"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+version_note = "arXiv v1"
+cited_for = ["P2M"]
+
+[[source]]
+id = "bmw-baby"
+authors = "Thomas Breuer, Kay Magaard, Robert Wilson"
+title = "Verification of the ordinary character table of the Baby Monster"
+year = 2019
+arxiv = "1902.07758v2"
+locator_scheme = "section"
+locator = "Section 3.1"
+url = "https://arxiv.org/abs/1902.07758v2"
+fetched_from = "https://arxiv.org/pdf/1902.07758v2"
+fetched_at = "2026-11-03T15:16:38Z"
+sha256 = "d28c808c4586ed20df237b86ff0154586c465d3588a1299b83b6a7d595b332f5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+version_note = "arXiv v2"
+cited_for = ["P2-D"]
+
+[[source]]
+id = "conrad-tits"
+locator_scheme = "theorem"
+locator = "Theorem 2.4"
+url = "https://math.stanford.edu/~conrad/249BW16Page/handouts/titssystem.pdf"
+fetched_from = "https://math.stanford.edu/~conrad/249BW16Page/handouts/titssystem.pdf"
+fetched_at = "2026-11-03T15:16:51Z"
+sha256 = "cb5992ee7fd2407d05770a11a97d0042795cc125ba7557e0346534fec63e7cf1"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["T0"]
