@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-GroupActionsOnRiemannSurfaces~2",
+    "head": "6a36121b1eb1c9b1d1cbb11a71c9a537c38e91c2",
+    "pr": 1728,
+    "folder": "GroupActionsOnRiemannSurfaces",
+    "date": "2026-11-03",
+    "findings": 5,
+    "blocking": 2,
+    "notes": "Full review of all 48 targets and 21 Lean declarations; all 22 previous findings revisited. Fifteen seeded source targets checked against accessible legal texts or explicitly marked not verifiable. Computed 48-row adversarial table, 19 extension-row tests and 48144 cyclic cases. Recorded gate passes; independent Lean elaboration has only nine sorry warnings; 21 elaborated signatures preserve binders; nine theorem bodies fail all three padding probes. Dependency check: 204 roadmaps, 1629 edges, 0 problems. Two blockers: false fixed-order Wiman minimization and missing exact-order hypotheses in the converse triple dictionary. Three P3 supplier/source locator findings. Worktree unchanged."
+  }
+}
