@@ -198,3 +198,16 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["§1.3"]
+
+[[source]]
+id = "ILO-final-XIII"
+locator_scheme = "theorem"
+locator = "Théorème 2.2.2 and §2.2.3, p. 263"
+url = "https://www.numdam.org/item/AST_2014__363-364__261_0/"
+fetched_from = "https://www.numdam.org/item/AST_2014__363-364__261_0.pdf"
+fetched_at = "2026-11-03T09:27:56Z"
+sha256 = "3a7df82745a68ae7e3221bb594d6be6f2856c74cd29f61b9bf4705128b031740"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["2.4", "4.1"]
