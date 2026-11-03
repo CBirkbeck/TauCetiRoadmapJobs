@@ -1,0 +1,108 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ModularCharactersAndBlocks"
+
+[[source]]
+id = "martinez"
+locator_scheme = "theorem"
+locator = "Theorems 1.9, 2.11, 3.2, 3.14"
+url = "https://www.uv.es/jomimar8/pdfs/course%20notes.pdf"
+fetched_from = "https://www.uv.es/jomimar8/pdfs/course%20notes.pdf"
+fetched_at = "2026-11-03T08:35:32Z"
+sha256 = "67988b80c2a008a5ada6b23b27d8c0ff419f5f5b31c14e8b39f9181e3dfeb975"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["Layers 2–8"]
+
+[[source]]
+id = "serre"
+authors = "J.-P. Serre"
+title = "Linear Representations of Finite Groups"
+year = 1977
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4684-9458-7"
+locator_scheme = "section"
+locator = "Part III, sections 15–18"
+url = "https://doi.org/10.1007/978-1-4684-9458-7"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layers 1–3"]
+
+[[source]]
+id = "axiom-third"
+locator_scheme = "section"
+locator = "principal-block induction theorem"
+url = "https://raw.githubusercontent.com/AxiomMath/CFSG/69cb972f587a3ecc035e092253167ff2e303c962/CFSG/CharacterTheory/BrauerThirdMainTheorem.lean"
+fetched_from = "https://raw.githubusercontent.com/AxiomMath/CFSG/69cb972f587a3ecc035e092253167ff2e303c962/CFSG/CharacterTheory/BrauerThirdMainTheorem.lean"
+fetched_at = "2026-11-03T08:37:51Z"
+sha256 = "be5fef749778b57b7e223bdbbda77e500997766355620ba5fe4defd2aae8a8de"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["Layer 7"]
+
+[[source]]
+id = "axiom-section"
+locator_scheme = "section"
+locator = "block_section_orthogonality"
+url = "https://raw.githubusercontent.com/AxiomMath/CFSG/69cb972f587a3ecc035e092253167ff2e303c962/CFSG/CharacterTheory/BlockSectionOrthogonality.lean"
+fetched_from = "https://raw.githubusercontent.com/AxiomMath/CFSG/69cb972f587a3ecc035e092253167ff2e303c962/CFSG/CharacterTheory/BlockSectionOrthogonality.lean"
+fetched_at = "2026-11-03T08:38:32Z"
+sha256 = "3cadc408ce297760455841330f84432a981d1a26cd6a86c664e21d798c84fb4a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["Layer 5"]
+
+[[source]]
+id = "sambale"
+locator_scheme = "theorem"
+locator = "Theorems 1.14 and 1.22; Definition 1.19"
+url = "https://benjaminsambale.github.io/pdfs/lnm.pdf"
+fetched_from = "https://benjaminsambale.github.io/pdfs/lnm.pdf"
+fetched_at = "2026-11-03T08:38:37Z"
+sha256 = "30721ff36d910d0e9c7cf55669912978a48dcf6d93d55dd500b8f799560b34f8"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["Layers 5–7"]
+
+[[source]]
+id = "craven"
+locator_scheme = "section"
+locator = "Sections 1–2"
+url = "https://web.mat.bham.ac.uk/D.A.Craven/docs/lectures/fusionsystems.pdf"
+fetched_from = "https://web.mat.bham.ac.uk/D.A.Craven/docs/lectures/fusionsystems.pdf"
+fetched_at = "2026-11-03T08:39:55Z"
+sha256 = "7ab8a881e8bef4b443ad82734cfd300f8926e279b6bac6574e6751ded936f307"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["Layer 6"]
+
+[[source]]
+id = "craven-galgebras"
+locator_scheme = "theorem"
+locator = "Theorem 3.1; Chapter 3"
+url = "https://web.mat.bham.ac.uk/D.A.Craven/docs/theses/2004diss.pdf"
+fetched_from = "https://web.mat.bham.ac.uk/D.A.Craven/docs/theses/2004diss.pdf"
+fetched_at = "2026-11-03T08:40:42Z"
+sha256 = "c8baed359312aced170186fc4d035a947cfb191d195bd6f12b494ba0265687df"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["Layer 6"]
+
+[[source]]
+id = "webb"
+locator_scheme = "chapter"
+locator = "Modular representations and blocks"
+url = "https://www-users.cse.umn.edu/~webb/RepBook/RepBookLatex.pdf"
+fetched_from = "https://www-users.cse.umn.edu/~webb/RepBook/RepBookLatex.pdf"
+fetched_at = "2026-11-03T08:41:06Z"
+sha256 = "3053d04310d379844d0ccac2ae078124492730a116e63343014d276169fb4c24"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["Layers 1–3, 6"]
