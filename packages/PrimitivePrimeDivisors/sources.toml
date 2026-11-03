@@ -1,0 +1,72 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "PrimitivePrimeDivisors"
+
+[[source]]
+id = "ZSIG1892"
+authors = "K. Zsigmondy"
+title = "Zur Theorie der Potenzreste"
+year = 1892
+venue = "Monatshefte für Mathematik und Physik 3"
+doi = "10.1007/bf01692444"
+locator_scheme = "page"
+locator = "p. 283"
+url = "https://doi.org/10.1007/bf01692444"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 2"]
+
+[[source]]
+id = "BV1904"
+authors = "G. D. Birkhoff, H. S. Vandiver"
+title = "On the integral divisors of a^n - b^n"
+year = 1904
+venue = "Annals of Mathematics (2) 5, 173-180"
+doi = "10.2307/2007263"
+locator_scheme = "theorem"
+locator = "Theorem I"
+url = "https://dn710904.ca.archive.org/0/items/jstor-2007263/2007263.pdf"
+fetched_from = "https://dn710904.ca.archive.org/0/items/jstor-2007263/2007263.pdf"
+fetched_at = "2026-11-03T08:17:09Z"
+sha256 = "60a0d98cccc7dc8a60ccaa8eb50324099d85f4d5686b9acfb1e3236ccd46cd51"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["Layer 2"]
+
+[[source]]
+id = "AVCI2020"
+authors = "Ömer Avcı"
+title = "Large Zsigmondy Primes"
+year = 2020
+doi = "10.5281/zenodo.12685673"
+arxiv = "2011.06136v2"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://arxiv.org/abs/2011.06136v2"
+fetched_from = "https://arxiv.org/pdf/2011.06136v2"
+fetched_at = "2026-11-03T08:17:52Z"
+sha256 = "417108ed09b04499869d0e282ec56a7088f0dfa67f673d89bc1b9d8cc46ce237"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+version_note = "arXiv v2"
+cited_for = ["Layer 2"]
+
+[[source]]
+id = "ROITMAN1997"
+authors = "M. Roitman"
+title = "On Zsigmondy primes"
+year = 1997
+venue = "Proceedings of the American Mathematical Society 125, 1913-1919"
+doi = "10.1090/S0002-9939-97-03981-6"
+locator_scheme = "theorem"
+locator = "Theorem 3"
+url = "https://www.ams.org/journals/proc/1997-125-07/S0002-9939-97-03981-6/S0002-9939-97-03981-6.pdf"
+fetched_from = "https://www.ams.org/journals/proc/1997-125-07/S0002-9939-97-03981-6/S0002-9939-97-03981-6.pdf"
+fetched_at = "2026-11-03T08:18:38Z"
+sha256 = "3543e048e634e934bb0388721aa1d32a1edf69d0c6ce3aaed53d392066681b6a"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["Layer 2"]
