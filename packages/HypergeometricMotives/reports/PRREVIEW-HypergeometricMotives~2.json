@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-HypergeometricMotives~2",
+    "head": "08f6be1ac8406ca2078c7d115085f30badea2640",
+    "pr": 1716,
+    "folder": "HypergeometricMotives",
+    "date": "2026-11-03",
+    "findings": 16,
+    "blocking": 14,
+    "notes": "Full review: all 15 seeded source targets, 61 numbered README sections, 138 elaborated declarations and 47 admitted-theorem probes; 876 combinatorial instances, finite-field counts and extension-field Euler-factor checks. Gate passes; fresh Lean elaboration and signature probes pass with only sorry warnings. Dependency check: 204 roadmaps, 1615 edges, 0 problems. Four unavailable texts and source-certification limits recorded; no PR files changed."
+  }
+}
