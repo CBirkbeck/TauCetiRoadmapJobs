@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-QuantumEnvelopingAlgebras~2",
+    "head": "47df47759323796bc5ba9cd3a0de72b07bd03106",
+    "pr": 1125,
+    "folder": "QuantumEnvelopingAlgebras",
+    "date": "2026-11-03",
+    "findings": 7,
+    "blocking": 2,
+    "notes": "Full read-only review of all three files. Seeded Integral specialization at1: rank-one integral and arbitrary-ring examples checked; source/theorem/page unidentified in README. Gate FAIL: blob=1, build=0; dependency check: 204 roadmaps, 1643 edges, 0 problems. Original Suggested elaborates with eight sorry warnings; 36 signatures reproduced exactly. Companion seven admissions tested; none of 15 one-tactic probes closed. Braid and signed-Lucas headline signatures elaborate at pins. 112 adversarial statement rows and 56 declaration rows; 336 exact Laurent identities, roots of orders 3 and 5 and A2 braid/commutator matrices checked. Six supplier groups resolved; legal McGerty v4 and GrosKaneda v2 read, McGerty v1 and Lusztig book unavailable. Seven findings, two P2 blockers; PR files unchanged."
+  }
+}

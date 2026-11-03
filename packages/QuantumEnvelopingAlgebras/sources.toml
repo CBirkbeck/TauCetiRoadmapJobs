@@ -1,0 +1,73 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "QuantumEnvelopingAlgebras"
+
+[[source]]
+id = "McGerty2006"
+authors = "Kevin McGerty"
+title = "Hall algebras and the Quantum Frobenius"
+year = 2006
+venue = "Duke Math. J. 154, no. 1 (2010), 181-206"
+doi = "10.1215/00127094-2010-036"
+arxiv = "math/0601150v4"
+locator_scheme = "section"
+locator = "Section 2; Lemma 2.2; Theorem 2.5 (v4)"
+url = "https://arxiv.org/abs/math/0601150v4"
+fetched_from = "https://arxiv.org/pdf/math/0601150v4"
+fetched_at = "2026-11-03T08:24:29Z"
+sha256 = "1b489a4831ce5035e097662f668e683d0f0c81f0f2e875ba535a4da0b746900b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+version_note = "arXiv v4"
+cited_for = ["QEA5"]
+
+[[source]]
+id = "GrosKaneda2013"
+authors = "Michel Gros, Masaharu Kaneda"
+title = "Un scindage du morphisme de Frobenius quantique"
+year = 2013
+doi = "10.1007/s11512-014-0205-8"
+arxiv = "1302.2437v2"
+locator_scheme = "section"
+locator = "6.7; Lemma 6.8 (v2)"
+url = "https://arxiv.org/abs/1302.2437v2"
+fetched_from = "https://arxiv.org/pdf/1302.2437v2"
+fetched_at = "2026-11-03T08:25:32Z"
+sha256 = "13c63ee4cc1bee4e529fcef82ca58534f168b2ea24f57783bb67e95e80523736"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+version_note = "arXiv v2"
+cited_for = ["QEA7"]
+
+[[source]]
+id = "Lusztig1993"
+authors = "George Lusztig"
+title = "Introduction to Quantum Groups"
+year = 2010
+doi = "10.1007/978-0-8176-4717-9"
+locator_scheme = "section"
+locator = "23.2; 31.1.3; 33.1; 35.1.8"
+url = "https://doi.org/10.1007/978-0-8176-4717-9"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["QEA3", "QEA4", "QEA5"]
+
+[[source]]
+id = "Lentner2014"
+authors = "Simon D. Lentner"
+title = "A Frobenius homomorphism for Lusztig's quantum groups over arbitrary roots of unity"
+year = 2014
+arxiv = "1406.0865v4"
+locator_scheme = "theorem"
+locator = "Theorems 5.4 and 6.1"
+url = "https://arxiv.org/abs/1406.0865v4"
+fetched_from = "https://arxiv.org/pdf/1406.0865v4"
+fetched_at = "2026-11-03T08:25:41Z"
+sha256 = "f0ed9e97415ab4f021e7e75a7fe3bef5484e8e0493f79465daa5a99092246d52"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+version_note = "arXiv v4"
+cited_for = ["QEA5"]
