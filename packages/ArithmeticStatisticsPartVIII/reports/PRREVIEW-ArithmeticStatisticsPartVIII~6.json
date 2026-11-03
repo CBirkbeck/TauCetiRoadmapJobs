@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-ArithmeticStatisticsPartVIII~6",
+    "head": "8a18df34dcc283ee4afbe3b2e0f7ebcbd65abb40",
+    "pr": 1179,
+    "folder": "ArithmeticStatisticsPartVIII",
+    "date": "2026-11-03",
+    "findings": 2,
+    "blocking": 1,
+    "notes": "Full review of the unchanged head. Previous R01 (uniform Betti bound (HS) assumed, not supplied; owner HS.5/uniform-etale-betti of InverseGaloisAndArithmeticFundamentalGroupsPartII at merge-order position 208 versus 130) is not repaired and is carried as R01 (P1); previous R02 (odd target order in 5.22) is repaired. One P3 typo. Gate rerun OK (worker's record adds build=0); depcheck 205 roadmaps, 1658 edges, 0 problems, no UPWARD/CYCLE/moved line; lake env lean on Suggested.lean: five sorry warnings only; #check of all nine declarations compared with the README, no lost binder; one-tactic padding probe (10 tactics x 5 theorems) closes nothing, exact? finds only the theorem itself. Seeded sample 5.12-5.22 read in ten fetched texts (EVW Annals open PDF, LWZB, Wood, Achter-Pries, Vasiu, BLS, LT, BM, GHY, Raynaud) at the cited locators; twelve source issues recorded. Adversarial table of 26 computed rows (exhaustive local-density enumerations for eight parameter sets, 10512 two-point incidence pairs, strata bounds, the SL2(Z/9) index-27 subgroup, point counts, CRT residues). All supplier citations resolved at the open heads (IG #850, Parts I/IV/V/VII, AbelianSchemes, JacobianChallengePartII, Neron, GeometryOfNumbers, EtaleDuality, DeligneWeights, ArithmeticGaloisRepresentations) and on main (JacobianChallenge, GlobalQuadraticForms); pinned Mathlib/Tau Ceti declarations opened. The sources service recorded the ten fetched entries in the board package's sources.toml; nothing in the pull request was changed."
+  }
+}
