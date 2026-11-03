@@ -1,0 +1,37 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "HopfologicalAlgebra"
+
+[[source]]
+id = "chebolu"
+authors = "Sunil K. Chebolu"
+title = "Refining thick subcategory theorems"
+year = 2005
+venue = "Fundamenta Mathematicae 189 (2006) 61-97"
+arxiv = "math/0508101v2"
+locator_scheme = "equation"
+locator = "(3)"
+url = "https://arxiv.org/abs/math/0508101v2"
+fetched_from = "https://arxiv.org/pdf/math/0508101v2"
+fetched_at = "2026-11-03T19:06:26Z"
+sha256 = "6305cb21e9e615203ec8ea31fe276720a5916e91e40d307317f9e5b0f0a1fe35"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+version_note = "arXiv v2"
+cited_for = ["6.1"]
+
+[[source]]
+id = "stacks"
+authors = "The Stacks project authors"
+title = "The Stacks project"
+year = 2026
+locator_scheme = "tag"
+locator = "05RK"
+url = "https://stacks.math.columbia.edu/tag/05RK"
+fetched_from = "https://stacks.math.columbia.edu/download/derived.pdf#nameddest=05RK"
+fetched_at = "2026-11-03T19:11:51Z"
+sha256 = "3d6c5169149c3a8556cab5bbfc5ce27ca34607fb1d5da49456277f4410ddcae3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["6.1"]
