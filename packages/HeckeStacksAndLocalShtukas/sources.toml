@@ -1,0 +1,40 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "HeckeStacksAndLocalShtukas"
+
+[[source]]
+id = "GLX"
+authors = "Ian Gleason, Dong Gyu Lim, Yujie Xu"
+title = "The connected components of affine Deligne--Lusztig varieties"
+year = 2022
+venue = "Inventiones mathematicae (2026)"
+doi = "10.1007/s00222-025-01386-1"
+arxiv = "2208.07195v3"
+locator_scheme = "theorem"
+locator = "Theorem 3.11"
+url = "https://arxiv.org/abs/2208.07195v3"
+fetched_from = "https://arxiv.org/pdf/2208.07195v3"
+fetched_at = "2026-11-03T08:50:16Z"
+sha256 = "d2249ddbe1ae2f4728000d27846d396adffc97b2f8b7b1c82c5d2701153fcb12"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+version_note = "arXiv v3"
+cited_for = ["HS2.16"]
+
+[[source]]
+id = "FS"
+authors = "Laurent Fargues, Peter Scholze"
+title = "Geometrization of the local Langlands correspondence"
+year = 2021
+arxiv = "2102.13459v4"
+version_note = "author-hosted text of arXiv:2102.13459v4, 27 November 2024; printed page equals PDF page through Chapter VII and PDF page minus 23 from Chapter VIII on"
+locator_scheme = "theorem"
+locator = "Theorem IX.7.2"
+url = "https://people.mpim-bonn.mpg.de/scholze/Geometrization.pdf"
+fetched_from = "https://people.mpim-bonn.mpg.de/scholze/Geometrization.pdf"
+fetched_at = "2026-11-03T09:36:06Z"
+sha256 = "9ab9efbd0df251bfa3b610d1d1d88a8dfb1bdf7c397bd04f4c277280d98ae905"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["HS4.2"]
