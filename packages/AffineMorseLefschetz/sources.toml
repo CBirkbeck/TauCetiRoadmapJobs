@@ -1,0 +1,19 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "AffineMorseLefschetz"
+
+[[source]]
+id = "douady"
+authors = "Adrien Douady"
+title = "Arrondissement des arêtes"
+year = 1962
+venue = "Séminaire Henri Cartan 14 (1961/62), exposé 3, 13 November 1961"
+locator_scheme = "section"
+locator = "Exposé 3: Définitions 1–2, p. 2; Théorème 1, p. 3; Proposition 1, p. 5"
+url = "http://www.numdam.org/item/SHC_1961-1962__14__A3_0/"
+fetched_from = "https://www.numdam.org/item/SHC_1961-1962__14__A3_0.pdf"
+fetched_at = "2026-11-03T10:04:46Z"
+sha256 = "1299f66024a9e4eb6e19a5397cca787cd8c452feb93898a70147701f84e88808"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["4.5"]
