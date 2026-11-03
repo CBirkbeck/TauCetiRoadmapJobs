@@ -113,3 +113,125 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-03"
 cited_for = ["Layers 0-5"]
+
+[[source]]
+id = "brocker-tomdieck1985"
+authors = "T. Bröcker, T. tom Dieck"
+title = "Representations of Compact Lie Groups"
+year = 1985
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-3-662-12918-0"
+locator_scheme = "chapter"
+locator = "Ch. IV, §§1–2"
+url = "https://doi.org/10.1007/978-3-662-12918-0"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 6"]
+
+[[source]]
+id = "bump2013"
+authors = "D. Bump"
+title = "Lie Groups"
+year = 2013
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4614-8024-2"
+locator_scheme = "chapter"
+locator = "Parts I–III"
+url = "https://doi.org/10.1007/978-1-4614-8024-2"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layers 6–9"]
+
+[[source]]
+id = "humphreys1975"
+authors = "J. E. Humphreys"
+title = "Linear Algebraic Groups"
+year = 1975
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4684-9443-3"
+locator_scheme = "section"
+locator = "§29.1"
+url = "https://doi.org/10.1007/978-1-4684-9443-3"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 8 Bruhat application"]
+
+[[source]]
+id = "hall2015"
+authors = "B. C. Hall"
+title = "Lie Algebras"
+year = 2015
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-3-319-13467-3_3"
+locator_scheme = "chapter"
+locator = "Chs. 2–5"
+url = "https://doi.org/10.1007/978-3-319-13467-3_3"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layers 0–4 matrix shadows"]
+
+[[source]]
+id = "varadarajan1984"
+authors = "V. S. Varadarajan"
+title = "Lie Groups and Lie Algebras"
+year = 1984
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4612-1126-6_2"
+locator_scheme = "chapter"
+locator = "Chs. 2–3"
+url = "https://doi.org/10.1007/978-1-4612-1126-6_2"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layers 2–4"]
+
+[[source]]
+id = "lee2012"
+authors = "J. M. Lee"
+title = "Introduction to Smooth Manifolds"
+year = 2012
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4419-9982-5"
+locator_scheme = "theorem"
+locator = "Theorem 9.12"
+url = "https://doi.org/10.1007/978-1-4419-9982-5"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 0 flows"]
+
+[[source]]
+id = "knapp2002"
+authors = "A. W. Knapp"
+title = "Lie Groups Beyond an Introduction"
+year = 2002
+venue = "Progress in Mathematics 140, 2nd ed.; digital second edition on the author's page"
+locator_scheme = "chapter"
+locator = "Ch. VI, §2; Ch. VI, §4; Ch. VII, §3"
+url = "https://www.math.stonybrook.edu/~aknapp/download/Beyond2.pdf"
+fetched_from = "https://www.math.stonybrook.edu/~aknapp/download/Beyond2.pdf"
+fetched_at = "2026-11-03T16:47:07Z"
+sha256 = "5ba1b91db9174613716a8421caa8899a169e154312df1df94182d60a7929df70"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["Layers 7 and 9"]
+
+[[source]]
+id = "serre1992"
+authors = "Jean-Pierre Serre"
+title = "Lie Algebras and Lie Groups"
+year = 1992
+venue = "Lecture Notes in Mathematics"
+doi = "10.1007/978-3-540-70634-2"
+locator_scheme = "chapter"
+locator = "Part II"
+url = "https://doi.org/10.1007/978-3-540-70634-2"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 3 BCH"]
