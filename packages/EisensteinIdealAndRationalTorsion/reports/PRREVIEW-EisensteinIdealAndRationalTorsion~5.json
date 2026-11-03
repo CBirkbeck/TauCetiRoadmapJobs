@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "accepted",
+    "reviewer": "independent-review-PRREVIEW-EisensteinIdealAndRationalTorsion~5",
+    "head": "27586f62be3c4a42860c633f3ffb2329ceed9fcb",
+    "pr": 1264,
+    "folder": "EisensteinIdealAndRationalTorsion",
+    "date": "2026-11-03",
+    "findings": 2,
+    "blocking": 0,
+    "notes": "Full review of 56 numbered targets and six native Lean headlines; previous blocking ownership finding repaired at consumer head. Fifteen seeded source targets checked, eight readable references and settled Faltings-Chai limitation disclosed. Exact adversarial values, 15 supplier resolutions, ownership search, passing worker gate and fresh depcheck (205 roadmaps, 1653 edges, zero problems). Original Lean and six signature checks elaborate; 18 padding probes do not close. Two P3 citation/stale-text notes."
+  }
+}
