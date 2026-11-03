@@ -74,3 +74,19 @@ status = "certified"
 accessed = "2026-11-03"
 version_note = "arXiv v1"
 cited_for = ["Layers 0, 1"]
+
+[[source]]
+id = "axiommath_cfsg_example3"
+authors = "AxiomMath CFSG project (Qiuzhen-CFSG third-party module)"
+title = "Lean formalization of Suzuki, Group Theory II, Chapter VI, Section 2.2, Example 3 (Brauer-Suzuki theorem)"
+version_note = "Apache-2.0 Lean source; cited as prior art for the stage structure of 2.5, not as a mathematical source"
+locator_scheme = "section"
+locator = "CFSG/ThirdParty/QiuzhenCFSG/BenderSuzuki/External/Suzuki/VI/section_2_2/example_3.lean at commit 69cb972f"
+url = "https://raw.githubusercontent.com/AxiomMath/CFSG/69cb972f587a3ecc035e092253167ff2e303c962/CFSG/ThirdParty/QiuzhenCFSG/BenderSuzuki/External/Suzuki/VI/section_2_2/example_3.lean"
+fetched_from = "https://raw.githubusercontent.com/AxiomMath/CFSG/69cb972f587a3ecc035e092253167ff2e303c962/CFSG/ThirdParty/QiuzhenCFSG/BenderSuzuki/External/Suzuki/VI/section_2_2/example_3.lean"
+fetched_at = "2026-11-03T16:44:49Z"
+sha256 = "de38367f01476c0851745fc3c7e20e8b091c22a0eb4067878cba41acc5f3fcb1"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["2.5, References"]
