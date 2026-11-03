@@ -1,0 +1,99 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "SpinRepresentations"
+
+[[source]]
+id = "panyushev2001"
+authors = "Dmitri I. Panyushev"
+title = "The exterior algebra and `Spin' of an orthogonal g-module"
+year = 2000
+venue = "Transformation Groups, 6 (2001), 371-396"
+arxiv = "math/0001161v1"
+locator_scheme = "theorem"
+locator = "Prop. 2.4"
+url = "https://arxiv.org/abs/math/0001161v1"
+fetched_from = "https://arxiv.org/pdf/math/0001161v1"
+fetched_at = "2026-11-03T14:24:15Z"
+sha256 = "b7e46719b961f85eaa6dc508599aaaf8cf17e8e6c6c955c1eef1a3f1223c3419"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+version_note = "arXiv v1"
+cited_for = ["Layer 9"]
+
+[[source]]
+id = "kostant1997"
+authors = "Bertram Kostant"
+title = "Clifford Algebra Analogue of the Hopf–Koszul–Samelson Theorem, theρ-DecompositionC(g)=EndVρ⊗C(P), and the g-Module Structure of ∧g"
+year = 1997
+venue = "Advances in Mathematics 125"
+doi = "10.1006/aima.1997.1608"
+locator_scheme = "theorem"
+locator = "Theorem"
+url = "https://doi.org/10.1006/aima.1997.1608"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 9"]
+
+[[source]]
+id = "shlyakhtenko2026"
+authors = "Dimitri Shlyakhtenko"
+title = "Failure of Strong Convergence of Matrices with Fermionic Entries"
+year = 2026
+arxiv = "2606.28648v1"
+locator_scheme = "section"
+locator = "1"
+url = "https://arxiv.org/abs/2606.28648v1"
+fetched_from = "https://arxiv.org/pdf/2606.28648v1"
+fetched_at = "2026-11-03T14:24:24Z"
+sha256 = "f0e8c287741d91123e5b4deb3fc20dc6119bd42c6a1aa1c59572b836ccdcca76"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+version_note = "arXiv v1"
+cited_for = ["Layer 9"]
+
+[[source]]
+id = "fultonharris1991"
+authors = "William Fulton, Joe Harris"
+title = "Representation Theory"
+year = 2004
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4612-0979-9"
+locator_scheme = "section"
+locator = "20.1"
+url = "https://doi.org/10.1007/978-1-4612-0979-9"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 5"]
+
+[[source]]
+id = "goodmanwallach2009"
+authors = "Roe Goodman, Nolan R. Wallach"
+title = "Symmetry, Representations, and Invariants"
+year = 2009
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-0-387-79852-3"
+locator_scheme = "section"
+locator = "6.2"
+url = "https://doi.org/10.1007/978-0-387-79852-3"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 5"]
+
+[[source]]
+id = "meinrenken2013"
+authors = "Eckhard Meinrenken"
+title = "Clifford Algebras and Lie Theory"
+year = 2013
+venue = "Ergebnisse der Mathematik und ihrer Grenzgebiete. 3. Folge / A Series of Modern Surveys in Mathematics"
+doi = "10.1007/978-3-642-36216-3"
+locator_scheme = "chapter"
+locator = "5"
+url = "https://doi.org/10.1007/978-3-642-36216-3"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 9"]
