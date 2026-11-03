@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-ConvexityToric~8",
+    "head": "d9c6241ddf3eee896a30005868f0acdaf7a72244",
+    "pr": 1651,
+    "folder": "SymplecticGeometry/ConvexityToric",
+    "date": "2026-11-03",
+    "findings": 6,
+    "blocking": 1,
+    "notes": "incremental re-review of 10 changed lines since 319049e; all seven previous findings accounted for: R07 repaired, R01–R06 retained. Checked Layer 1 Ad/ad supplier, both SU(2) root signs, legal Conrad source and current direct suppliers; inherited ten-section seeded sample and 154 adversarial rows, added three computed rows. Scope-aware worker gate passes; standalone gate has only four expressly authorized sibling-path false positives; depcheck zero problems; targeted build, direct Lean elaboration and all 17 signature checks pass. One-term padding probe succeeds. No PR files changed."
+  }
+}
