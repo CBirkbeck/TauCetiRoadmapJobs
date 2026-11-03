@@ -62,3 +62,27 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-03"
 cited_for = ["Layer 4"]
+
+[[source]]
+id = "assem-simson-skowronski-v1"
+authors = "Ibrahim Assem, Daniel Simson, Andrzej Skowroński"
+title = "Elements of the Representation Theory of Associative Algebras, Volume 1: Techniques of Representation Theory"
+year = 2006
+doi = "10.1017/cbo9780511614309"
+locator_scheme = "theorem"
+locator = "Chapter III, Proposition 3.13"
+licence_class = "paywalled"
+status = "uncertified"
+cited_for = ["Layer 4", "Layer 5"]
+
+[[source]]
+id = "weibel-homological-algebra"
+authors = "Charles A. Weibel"
+title = "An Introduction to Homological Algebra"
+year = 1994
+doi = "10.1017/cbo9781139644136"
+locator_scheme = "section"
+locator = "Sections 1.3, 1.6, 2.4-2.7, Chapter 4"
+licence_class = "paywalled"
+status = "uncertified"
+cited_for = ["Layer 5"]
