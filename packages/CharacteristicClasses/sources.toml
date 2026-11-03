@@ -1,0 +1,120 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "CharacteristicClasses"
+
+[[source]]
+id = "hatcher-vbkt"
+locator_scheme = "section"
+locator = "1.2"
+url = "https://pi.math.cornell.edu/~hatcher/VBKT/VB.pdf"
+fetched_from = "https://pi.math.cornell.edu/~hatcher/VBKT/VB.pdf"
+fetched_at = "2026-11-03T16:36:02Z"
+sha256 = "04282b30dfa6305183827d399deddd0bd98240c2e6d2d0c416b06e2d4e1fa097"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["C1.1d"]
+
+[[source]]
+id = "zentner-instanton-sheet2"
+locator_scheme = "section"
+locator = "Exercise 2"
+url = "https://www.maths.dur.ac.uk/users/raphael.zentner/exercice_sheet_instantons2.pdf"
+fetched_from = "https://www.maths.dur.ac.uk/users/raphael.zentner/exercice_sheet_instantons2.pdf"
+fetched_at = "2026-11-03T16:36:03Z"
+sha256 = "ecea771047797d2fed66b9175e59d5206fe3961bfb06e37ca69b146d2090c869"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["C7.AdjointHopfObstruction"]
+
+[[source]]
+id = "tomdieck-at"
+locator_scheme = "section"
+locator = "14.4"
+url = "https://webhomes.maths.ed.ac.uk/~v1ranick/papers/diecktop.pdf"
+fetched_from = "https://webhomes.maths.ed.ac.uk/~v1ranick/papers/diecktop.pdf"
+fetched_at = "2026-11-03T16:36:11Z"
+sha256 = "86f937483ca46262eec9537665513eed45553fe9fef2be9ffb63a2067585be79"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["C1.1b"]
+
+[[source]]
+id = "dupont-ccc"
+locator_scheme = "section"
+locator = "8"
+url = "https://webhomes.maths.ed.ac.uk/~v1ranick/papers/dupont2.pdf"
+fetched_from = "https://webhomes.maths.ed.ac.uk/~v1ranick/papers/dupont2.pdf"
+fetched_at = "2026-11-03T16:36:13Z"
+sha256 = "60cee56d60b4afc0f917508023507f05769f4fb933c51188a950ebb6c68e93c2"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["C5.2"]
+
+[[source]]
+id = "dupont-ln"
+locator_scheme = "section"
+locator = "9"
+url = "https://data.math.au.dk/publications/ln/2003/imf-ln-2003-69.pdf"
+fetched_from = "https://data.math.au.dk/publications/ln/2003/imf-ln-2003-69.pdf"
+fetched_at = "2026-11-03T16:36:16Z"
+sha256 = "49a40095701d9cd6ce47d58773a6fb20174f593238a3481c978dc245e0b911e3"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["C4"]
+
+[[source]]
+id = "may-concise"
+locator_scheme = "chapter"
+locator = "16"
+url = "https://www.irif.fr/~mellies/mpri/mpri-ens/biblio/Peter-May-A-Concise-Course-In-Algebraic-Topology.pdf"
+fetched_from = "https://www.irif.fr/~mellies/mpri/mpri-ens/biblio/Peter-May-A-Concise-Course-In-Algebraic-Topology.pdf"
+fetched_at = "2026-11-03T16:36:41Z"
+sha256 = "1686c69552de68b6bf8f7dfe6fdec9730d865ea37349e79966eb7f3f95b46498"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["C1.2b"]
+
+[[source]]
+id = "milnor-universal-ii"
+authors = "John Milnor"
+title = "Construction of Universal Bundles, II"
+year = 1956
+doi = "10.2307/1970012"
+url = "https://doi.org/10.2307/1970012"
+licence_class = "none"
+locator_scheme = "section"
+locator = "2-3"
+status = "uncertified"
+cited_for = ["C1.1b"]
+note = "Annals of Mathematics 63 (1956) 430-436; the JSTOR landing page is paywalled, cited by locator only"
+
+[[source]]
+id = "milnor-stasheff"
+authors = "John Milnor, James D. Stasheff"
+title = "Characteristic Classes"
+year = 1974
+doi = "10.1515/9781400881826"
+url = "https://doi.org/10.1515/9781400881826"
+licence_class = "none"
+locator_scheme = "section"
+locator = "19"
+status = "uncertified"
+cited_for = ["C2.1", "C3.2", "C7.1"]
+note = "Annals of Mathematics Studies 76, Princeton University Press; no legal open copy, cited by locator only (sections 10, 14, 19, Theorem 15.3)"
+
+[[source]]
+id = "milnor-tdv"
+licence_class = "none"
+authors = "John Milnor"
+title = "Topology from the Differentiable Viewpoint"
+year = 1965
+locator_scheme = "section"
+locator = "6"
+status = "uncertified"
+cited_for = ["C2.3"]
+note = "University Press of Virginia 1965, Princeton Landmarks reprint 1997; no DOI located and no legal open copy, cited by locator only"
