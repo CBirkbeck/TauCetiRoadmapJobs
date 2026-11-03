@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-SatoTateGroups~2",
+    "head": "1fa39b00016a36b715c37ba3aa55d7469c395ef7",
+    "pr": 1725,
+    "folder": "SatoTateGroups",
+    "date": "2026-11-03",
+    "findings": 21,
+    "blocking": 19,
+    "notes": "Full read-only re-review; all 14 previous findings revisited; all 15 seeded source targets followed with legal texts or explicit uncertified limitations. Worker gate passes; independent Lean elaboration passes with 39 sorry warnings; 115 actual declaration signatures checked, no lost necessary binder. All admitted declarations received simp/rfl/infer_instance probes; targeted one-simp padding witness confirmed. Computed adversarial tables, main/open/board ownership audit, and supplier resolution recorded. Depcheck: 204 roadmaps, 1629 edges, 0 problems. Counterexamples refute headline Hodge classifications, minimum splitting field, real-to-rational reconstruction, unrestricted Hecke equidistribution and other identities. PR worktree unchanged."
+  }
+}
