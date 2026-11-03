@@ -1,0 +1,115 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "LieGroups"
+
+[[source]]
+id = "knutson-construction11"
+locator_scheme = "page"
+locator = "p. 1"
+url = "https://pi.math.cornell.edu/~allenk/courses/16spring/Construction11.pdf"
+fetched_from = "https://pi.math.cornell.edu/~allenk/courses/16spring/Construction11.pdf"
+fetched_at = "2026-11-03T13:33:21Z"
+sha256 = "48d50fa5efc8c38e43bbc721907d85a446bd149cb173cece5b3716a735dca082"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["Layer 6 space of maximal tori"]
+
+[[source]]
+id = "qiu2024"
+authors = "Jian Qiu"
+title = "Plücker Coordinates and the Rosenfeld Planes"
+year = 2024
+venue = "J.Geom.Phys. 206 (2024) 105331"
+arxiv = "2401.07735v2"
+locator_scheme = "section"
+locator = "§2.2, App. B"
+url = "https://arxiv.org/abs/2401.07735v2"
+fetched_from = "https://arxiv.org/pdf/2401.07735v2"
+fetched_at = "2026-11-03T13:33:26Z"
+sha256 = "4b4b566b6cd01d3427acc75463275687b5b1868519dae3ca779a1c2d2457c74b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+version_note = "arXiv v2"
+cited_for = ["Layer 7E"]
+
+[[source]]
+id = "colarusso-evens"
+authors = "Mark Colarusso, Sam Evens"
+title = "$B_{n-1}$-orbits on the flag variety and the Bruhat graph of the symmetric group"
+year = 2024
+arxiv = "2406.10122v2"
+locator_scheme = "section"
+locator = "§2, Ex. 4.15"
+url = "https://arxiv.org/abs/2406.10122v2"
+fetched_from = "https://arxiv.org/pdf/2406.10122v2"
+fetched_at = "2026-11-03T13:33:31Z"
+sha256 = "1aa3ff959b3ac3e6e66902e0445fd818f5cc132169e627cfce31bef93b4692d3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+version_note = "arXiv v2"
+cited_for = ["Layer 8 block-Borel"]
+
+[[source]]
+id = "heins2025"
+authors = "Michael Heins"
+title = "Entire Functions on Lie Groups"
+year = 2025
+arxiv = "2512.07479v1"
+locator_scheme = "theorem"
+locator = "Proposition 2.1"
+url = "https://arxiv.org/abs/2512.07479v1"
+fetched_from = "https://arxiv.org/pdf/2512.07479v1"
+fetched_at = "2026-11-03T13:34:40Z"
+sha256 = "a1d9aaec8277a6266d3db1214473e74d3ed3b2e4d4d70dbf2ac3b6c6aaa02259"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+version_note = "arXiv v1"
+cited_for = ["Layer 7 universal complexification"]
+
+[[source]]
+id = "neeb2015"
+authors = "Karl-Hermann Neeb"
+title = "Towards a Lie theory for locally convex groups"
+year = 2015
+venue = "Japanese Journal of Math. 1 (2006), 291-468"
+arxiv = "1501.06269v1"
+locator_scheme = "section"
+locator = "VI.1.1–VI.1.16"
+url = "https://arxiv.org/abs/1501.06269v1"
+fetched_from = "https://arxiv.org/pdf/1501.06269v1"
+fetched_at = "2026-11-03T13:34:50Z"
+sha256 = "6abc32cb8d6dae898360b5463d0d4134fba07fa9aeb5f75107232646fe98c43b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+version_note = "arXiv v1"
+cited_for = ["Layer 5N"]
+
+[[source]]
+id = "styrkas2005"
+locator_scheme = "section"
+locator = "§2, Eq. 2.17"
+url = "https://archive.mpim-bonn.mpg.de/id/eprint/1247/2/preprint_2005_2.pdf"
+fetched_from = "https://archive.mpim-bonn.mpg.de/id/eprint/1247/2/preprint_2005_2.pdf"
+fetched_at = "2026-11-03T13:34:52Z"
+sha256 = "6454616a9096ee54ee3fd761b8b50ef2cf741d652c62183444d2c79730a364ab"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["Layer 8 big cell"]
+
+[[source]]
+id = "kirillov2008"
+locator_scheme = "theorem"
+locator = "Theorem 3.29"
+url = "https://www.math.stonybrook.edu/~kirillov/mat552/liegroups.pdf"
+fetched_from = "https://www.math.stonybrook.edu/~kirillov/mat552/liegroups.pdf"
+fetched_at = "2026-11-03T14:01:33Z"
+sha256 = "5003ce413998b5804cf67f3ac71f223a75757da035fc8eb4d05c2c264200de7c"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["Layers 0-5"]
