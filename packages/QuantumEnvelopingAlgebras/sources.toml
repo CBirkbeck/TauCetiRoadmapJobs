@@ -71,3 +71,106 @@ status = "certified"
 accessed = "2026-11-03"
 version_note = "arXiv v4"
 cited_for = ["QEA5"]
+
+[[source]]
+id = "AndersenPoloWen1991"
+authors = "Henning Haahr Andersen, Patrick Polo, Wen Kexin"
+title = "Representations of quantum algebras"
+year = 1991
+venue = "Inventiones mathematicae 104"
+doi = "10.1007/BF01245066"
+locator_scheme = "section"
+locator = "Section 1.20; Proposition 1.22; Proposition 3.3"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0104/LOG_0007.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0104/LOG_0007.pdf"
+fetched_at = "2026-11-03T12:33:21Z"
+sha256 = "f3cac992f91b227cee2e0bffd6ddd037475c09ad9104ee4f29ae2203b8755c2d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["4.1", "4.2", "8.2"]
+
+[[source]]
+id = "Kassel1995"
+authors = "Christian Kassel"
+title = "Quantum Groups"
+year = 1995
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4612-0783-2"
+locator_scheme = "section"
+locator = "Chapter VII, Section 3"
+url = "https://doi.org/10.1007/978-1-4612-0783-2"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["8.1"]
+
+[[source]]
+id = "Lusztig1990"
+authors = "George Lusztig"
+title = "Quantum groups at roots of 1"
+year = 1990
+venue = "Geometriae Dedicata 35"
+doi = "10.1007/BF00147341"
+locator_scheme = "theorem"
+locator = "Theorem 8.10"
+url = "https://doi.org/10.1007/BF00147341"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["5.2", "6.1"]
+
+[[source]]
+id = "LusztigJAMS1990"
+authors = "George Lusztig"
+title = "Finite dimensional Hopf algebras arising from quantized universal enveloping algebras"
+year = 1990
+venue = "J. Amer. Math. Soc. 3 (1990), 257-296"
+doi = "10.2307/1990988"
+locator_scheme = "section"
+locator = "Theorem 4.5; Proposition 4.8; Section 6.7"
+url = "https://www.ams.org/journals/jams/1990-03-01/S0894-0347-1990-1013053-9/S0894-0347-1990-1013053-9.pdf"
+fetched_from = "https://www.ams.org/journals/jams/1990-03-01/S0894-0347-1990-1013053-9/S0894-0347-1990-1013053-9.pdf"
+fetched_at = "2026-11-03T12:29:00Z"
+sha256 = "730eb08b272bb53f71837478b937e82d9df3543d545c531ec5880fd786de5454"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["1.2", "2.1", "2.2", "3.2", "3.3", "4.2"]
+
+[[source]]
+id = "HeckenbergerDoubles2010"
+authors = "I. Heckenberger"
+title = "Lusztig isomorphisms for Drinfel'd doubles of bosonizations of Nichols algebras of diagonal type"
+year = 2010
+venue = "J. Algebra 323 (2010)"
+arxiv = "0710.4521v2"
+locator_scheme = "section"
+locator = "Section 4.1; Proposition 4.3; Remark 4.4; Definition 4.5; Proposition 4.6; Proposition 4.14; Theorem 5.8"
+url = "https://arxiv.org/abs/0710.4521v2"
+fetched_from = "https://arxiv.org/pdf/0710.4521v2"
+fetched_at = "2026-11-03T12:31:51Z"
+sha256 = "a1922a9f62c5b2555ac9cd3a0dfb31e84c986a7e41e3b32f0608453f7c307013"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+version_note = "arXiv v2"
+cited_for = ["1.4", "1.5"]
+
+[[source]]
+id = "AndersenWen1992"
+authors = "Henning Haahr Andersen, Wen Kexin"
+title = "Representations of quantum algebras. The mixed case"
+year = 1992
+venue = "J. reine angew. Math. 427 (1992), 35-50"
+doi = "10.1515/crll.1992.427.35"
+locator_scheme = "theorem"
+locator = "Section 1.2; Section 1.9"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN243919689_0427/LOG_0005.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN243919689_0427/LOG_0005.pdf"
+fetched_at = "2026-11-03T12:32:06Z"
+sha256 = "a6f834c7b043efd8ca9abe26eabfd87c727a01eb6c61b1ad0b46c46f92d56951"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["3.3", "6.2"]
