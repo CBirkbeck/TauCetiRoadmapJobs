@@ -1,0 +1,4 @@
+{"review": {"status": "accepted", "reviewer": "independent-review-PRREVIEW-RootSystems~11",
+            "head": "f33895a5b297f27ff165d0ed2da8c7cea5c3145c", "pr": 1278, "folder": "RepresentationTheory/RootSystems", "date": "2026-11-03",
+            "findings": 3, "blocking": 0,
+            "notes": "full review at the unchanged head; all seven seeded targets read in the Humphreys cache text at their printed pages; 50-row computed adversarial table; 60 pinned declarations opened at the branch pin (TauCeti a91d3aa, Mathlib 6b7abb3c); gate rerun OK, depcheck 0 problems, direct elaboration 9 sorry warnings, signature and one-tactic probes pass; r9 R01 (EnriquesSurfaces duplicate) not re-raised: RootSystems is the stated and earlier owner and the repair is in the other folder; r9 R03 (folder sources.toml) dropped: no roadmap folder on main carries one; three P3 notes (companion file, consumer layer-number dictionary, unused 1 ≤ n)."}}
