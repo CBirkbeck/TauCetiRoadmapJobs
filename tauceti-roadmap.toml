@@ -136,7 +136,7 @@ daily_cap = 10
 [prreview]
 enabled = true
 label = "ai-approved"
-per_run = 5
+per_run = 20   # the fleet repairs ~15 heads an hour; 5 per sync left 17 re-reviews waiting (2026-11-02)
 authors = []
 skip_authors = ["bwangpj"]   # #196 is abandoned (user 2026-10-28): not tracked, not reviewed
 max_folders = 10
