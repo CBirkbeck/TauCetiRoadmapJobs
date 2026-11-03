@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-CoboundaryExpansion~1",
+    "head": "012654423895980ec62d4a8f90fd2ae760efc11b",
+    "pr": 1752,
+    "folder": "CoboundaryExpansion",
+    "date": "2026-11-03",
+    "findings": 13,
+    "blocking": 10,
+    "notes": "Full read-only review: 19 declaration signatures, 8 theorem probes, 19 library inputs, 15 explicit source-check groups replacing an empty seeded target list, and 81 adversarial rows. Supplied gate fails sorry-data (3), target-ids (1), and build (1); all failures reported. Direct Lean elaboration succeeds with sorry warnings only. Dependency check: 205 roadmaps, 1629 edges, 0 problems. Linial–Meshulam is uncertified; one indexed board-package head was unavailable. PR files unchanged."
+  }
+}
