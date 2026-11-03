@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-HeckeStacksAndLocalShtukas~3",
+    "head": "dcd2f5ad3837e47157a319dcb3b22a5277a99c4e",
+    "pr": 1252,
+    "folder": "HeckeStacksAndLocalShtukas",
+    "date": "2026-11-03",
+    "findings": 5,
+    "blocking": 3,
+    "notes": "Full folder review; four seeded targets checked against sources and suppliers; 132 computed adversarial rows. Worker gate passes; direct Lean elaboration passes; no Lean declarations to probe. Depcheck: 205 roadmaps, 1660 edges, 0 problems. Two P1 supplier-drift findings, one P2 duplicate-ownership finding, two P3 form/bibliography findings. GLX printed edition remains declared uncertified; legal preprint checked."
+  }
+}
