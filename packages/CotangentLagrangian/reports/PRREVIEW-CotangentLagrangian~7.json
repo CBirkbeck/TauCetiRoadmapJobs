@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-CotangentLagrangian~7",
+    "head": "319049e28c2d0906358c62f61bd261ec6f91f3d4",
+    "pr": 1651,
+    "folder": "SymplecticGeometry/CotangentLagrangian",
+    "date": "2026-11-03",
+    "findings": 1,
+    "blocking": 1,
+    "notes": "incremental re-review of 78 changed lines since 1e71d0f; previous R01 persists, R02/R03 repaired. Checked moved Witt theorem and its binders, C4 source/dependency chain, consumer failure and tested repair, ownership, 43 carried adversarial rows and 10 fresh rows. Four unchanged seeded source targets carried forward; neighborhood-germ sample reopened. Scope-aware worker gate passes; literal gate has only six explicitly authorized sibling-file false positives. Targeted build, direct elaboration and 14-declaration signature check pass; depcheck: 205 roadmaps, 1618 edges, 0 problems."
+  }
+}
