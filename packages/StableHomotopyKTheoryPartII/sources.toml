@@ -182,3 +182,16 @@ licence_class = "institutional"
 status = "certified"
 accessed = "2026-10-25"
 cited_for = ["PO.1/steenrod-algebra; PO.1/milnor-dual"]
+
+[[source]]
+id = "stacks-algebra"
+locator_scheme = "tag"
+locator = "04GK"
+url = "https://stacks.math.columbia.edu/tag/04GK"
+fetched_from = "https://stacks.math.columbia.edu/download/algebra.pdf#nameddest=04GK"
+fetched_at = "2026-11-03T10:33:12Z"
+sha256 = "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["4.8"]
