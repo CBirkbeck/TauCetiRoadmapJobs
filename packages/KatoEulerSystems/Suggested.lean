@@ -1,7 +1,9 @@
-import Mathlib
-import TauCeti.AlgebraicGeometry.EllipticCurve.Affine.Point.Galois
-import TauCeti.AlgebraicGeometry.EllipticCurve.TateModule.Galois
-import TauCeti.AlgebraicGeometry.EllipticCurve.Isogeny.Hom.Ring
+module
+
+public import Mathlib
+public import TauCeti.AlgebraicGeometry.EllipticCurve.Affine.Point.Galois
+public import TauCeti.AlgebraicGeometry.EllipticCurve.TateModule.Galois
+public import TauCeti.AlgebraicGeometry.EllipticCurve.Isogeny.Hom.Ring
 
 /-!
 # KatoEulerSystems: target signatures

@@ -46,9 +46,10 @@ This roadmap owns:
 - the admissible coefficient places, the nonvanishing of twisted critical values
   used by Kato, the conversion of Kato's Euler-system hypotheses into Rubin's,
   the module structure of lattice Iwasawa cohomology, finite support over the
-  full cyclotomic algebra, the twist–localization square, Serre's open-image
-  theorem for E/ℚ through modularity and its consequences, and the strict `H²` kernel
-  (Layer 4);
+  full cyclotomic algebra, the twist–localization square, the case over ℚ of Serre's
+  open-image theorem, as a corollary of 4.1 and modularity, with its consequences (the
+  theorem over number fields with its Lie-algebra proof is not planned here), and the
+  strict `H²` kernel (Layer 4);
 - Kato's canonical rational zeta morphism, the finite index of the smoothed
   integral span, the critical interpolation of the canonical map, Nakamura's
   twist-one morphism, parabolic full-level Iwasawa cohomology and the parabolic
@@ -380,9 +381,12 @@ growth, reciprocity, scalar projection and Rubin's elliptic Coleman map
 (§§8.8, 8.13–8.16, 8.18, 8.20–8.22); the de Rham regulator of a (φ,Γ)-module on
 its high-conductor domain, allowing `p = 2` (§§9.31–9.34); from §9.35 only the global
 `D_cris`-valued distribution `𝔐_z` for crystalline D and z with
-`(1−φ)z ∈ (ℛ⁺)^(ψ=0) ⊗ D_cris(D)`, and the conductor-stratum identity
-`Λ_(D,z)(θ) = φ^(−n)𝔐_z(θ)` for θ of conductor `p^n`, the de Rham regulator itself not
-extending to all of weight space; and the containment of the split
+`(1−φ)z ∈ (ℛ⁺)^(ψ=0) ⊗ D_cris(D)`, and the chart identity
+`Λ_(D,z)(θ) = φ^(−n)𝔐_z(θ)` on its supplied domain only: θ in the admitted domain `U_D` of
+§9.31 there, of conductor `p^n` with `n > m(Δ)`, inside the charts `B(η^(−1), N(D))` of §9.33
+there. At conductors `p^n` with `n ≤ m(Δ)`, in particular at the trivial character, no chart
+regulator is supplied and only `𝔐_z` is used; the de Rham regulator itself does not
+extend to all of weight space. Also the containment of the split
 multiplicative Coleman image in the augmentation ideal for odd p (§9.36).
 
 ### From ModularSymbolsPadicLFunctions
@@ -409,7 +413,9 @@ the literal dual.
 
 Layer R29.4: for an attached weight-two newform, the equivariant rational Tate-module
 comparison at every prime and the identification of all Euler factors. In the
-cohomological convention here this identifies `V_p(E)` with `V_λ(f)(1)`.
+cohomological convention here this identifies `V_p(E)` with `V_λ(f)(1)`, where `f = f*` has
+rational coefficients (for a newform with non-real coefficients the λ-factor of the Tate
+module is `V_λ(f*)(1)`, 7.9).
 Layer R29.5: the isogeny from the attached modular quotient and the surjection
 `J₀(N_E) → E` giving a modular parametrisation. Layer R29.6: every elliptic curve over ℚ
 has such an attached rational-coefficient newform. For the elliptic statements of 6.6 and
@@ -519,8 +525,10 @@ consequence of the linear formula.
 - For `g = 1` in ℚ the two smoothings are 24 and 48: the integral c-units differ,
   and only the rationalized unit is independent of c.
 - Pulling back along the identity level map fixes every unit, including units
-  other than one, and pullback of an inverse is the inverse of the pullback;
-  a constant-one torsion evaluation fails the first.
+  other than one, and pullback of an inverse is the inverse of the pullback. These two
+  laws test the pullback operation, not the torsion evaluation: a constant-one torsion
+  evaluation satisfies both, and it is the nonzero cusp order of the second Check that
+  rejects it (the constant has order 0, the `c = 5` level-four unit order `−4`).
 
 *Needs:* `PadicFamilies` §4.0.1 (theta unit, its uniqueness, smoothed Siegel
 units); `ModularCurves` §§2A, 5B; `ModularCurvesPartII` §§3.14, 8.1–8.5; Mathlib
@@ -578,7 +586,14 @@ root of unity. For the actual function use the normalized theta expansion
 `q^((c²−1)/12) (−t)^((c−c²)/2) γ(q,t)^(c²) γ(q,t^c)^(−1)`, with `t = q^(a/N) ζ_N^b` and
 `γ(q,t) = ∏_(n≥0)(1 − q^n t) ∏_(n>0)(1 − q^n t^(−1))`, evaluated before the torsion indices are
 reduced (Kato 1.3(3), p. 122; `PadicFamilies` §4.0.1, Tate expansion). The phase
-`(−t)^((c−c²)/2)` changes no cusp order. The unsmoothed expression is not an integral
+`(−t)^((c−c²)/2)` contributes to the cusp order when `a ≠ 0`: t carries `q^(a/N)`, so the phase
+carries `q^(a(c−c²)/(2N))`, and the unreduced factor `γ(q,t^c)` carries the q-powers of its
+finitely many factors `1 − q^(n−ca/N)` with `0 < n < ca/N`. Together with `q^((c²−1)/12)`
+these reproduce the smoothed Bernoulli exponent `c²B₂(a/N)/2 − B₂(⟨ca/N⟩)/2`, with `⟨·⟩`
+the fractional part, which is the exponent of the smoothed product with reduced indices. So
+the full factor is retained before the torsion indices are reduced; after the reduction the
+remaining discrepancy between the c-unit and the Bernoulli-normalized smoothed product is a
+root of unity, of cusp order zero. The unsmoothed expression is not an integral
 global unit without smoothing. The all-zero pair is
 excluded: its `n = 0` factor is zero (Kato 1.3(3), p. 122; 1.9, p. 124).
 
@@ -608,8 +623,15 @@ Boundary orders belong to the compactification (`ModularCurvesPartII` §6.1).
 - At `N = 7`, `(α,β) = (0,1/7)` and `c = 5`, the theta expansion has `t = ζ_7` and phase
   `(−ζ_7)^(−10) = ζ_7^4`, while the q-powers agree: `(c² − 1)/12 = 2` and
   `25·(1/12) − 1/12 = 2`. So the algebraic c-unit is `ζ_7^4` times the smoothed product:
-  the two are equal in `O(Y_ℚ)^× ⊗ ℚ` but not as functions, and dropping the phase is
-  invisible to cusp orders.
+  the two are equal in `O(Y_ℚ)^× ⊗ ℚ` but not as functions, and with `a = 0` the phase is a
+  constant, so dropping it is invisible to cusp orders there.
+- At `N = 4`, `(α,β) = (1/2,0)` and `c = 5`, `t = q^(1/2)` and the phase is
+  `(−q^(1/2))^(−10) = q^(−5)`; `γ(q,t^5)` has the two factors `1 − q^(−3/2)` and `1 − q^(−1/2)`,
+  so `γ(q,t^5)^(−1)` contributes `q^2`, and `q^((c²−1)/12) = q^2`. The exponent is
+  `2 − 5 + 2 = −1`, the smoothed Bernoulli exponent `25·(−1/24) − (−1/24)` of 0.1, of order
+  `−4` in `q^(1/4)`; dropping the phase gives `q^4`, of order 16. At `c = 7` the same count
+  is `4 − 21/2 + 9/2 = −2`. A phase that could be omitted would contradict the first Check
+  of 0.1.
 
 *Needs:* 0.1–0.2; `ModularCurvesPartII` §§3.14, 4.8, 5.8(c), 5.11, 6.1–6.2;
 Mathlib `UpperHalfPlane`; `PadicFamilies` §4.0.1 (Tate expansion of the theta
@@ -829,8 +851,12 @@ as this evaluated polynomial in a variable X standing for `σ_ℓ^(−1)`. The A
   corestriction of `c̃_(p^(n+1))` (of `c̃_(2^(n+2))` for `p = 2`).
 - Norm relation: for m and mℓ in the conductor domain with `ℓ ∉ Σ`, corestriction from
   `ℚ(ζ_(mℓ))` to `ℚ(ζ_m)` sends `c̃_(mℓ)` to katoEulerPolynomial at `X = σ_ℓ^(−1)` applied to
-  `c̃_m` when `ℓ ∤ m`, and to `c̃_m` when `ℓ | m`; this is `modularZeta_norm` and
-  `modularZeta_trace` after projection, and it is the relation of the conductor presentation
+  `c̃_m` when `ℓ ∤ m`, and to `c̃_m` when `ℓ | m`. For `ℓ ∤ m` this is `modularZeta_norm` after
+  projection; for `ℓ | m` it is the identity transfer of k2NormProjection (1.1), for a level
+  raise that keeps the prime set of each index, carried through the moment by
+  `modularZeta_moment` and, for `ℓ = p`, `modularZeta_trace`; both cases are Kato
+  Proposition 8.12, p. 186, with `S′ = S` for a repeated prime, proved through 8.10 and 8.7.
+  It is the relation of the conductor presentation
   of §2.4(a) there, which also holds when `ℚ(ζ_(mℓ)) = ℚ(ζ_m)`. The conversion to the
   supplier's convention `det(1 − N(q)^(−1)Fr_q x | T)` of §2.1 there is by its explicit
   variable transport; equality of dimensions of representations is insufficient.
@@ -854,7 +880,10 @@ as this evaluated polynomial in a variable X standing for `σ_ℓ^(−1)`. The A
 **Checks** (the adapter).
 
 - A repeated conductor prime has identity factor; a rule inserting the quadratic
-  factor at every conductor raise fails already for a repeated p-power.
+  factor at every conductor raise fails already for a repeated p-power. For `m = 45`,
+  `ℓ = 5` and `p = 3`, the raise to `m′ = 225` keeps `prime(m) = {3,5}`, so the factor is the
+  identity, owned by 1.1 (the index raise `5 → 25` keeps its prime set) and not by the
+  p-level trace relation, which concerns `ℓ = p` only.
 - `m = 1` is outside the conductor domain (`prime(1) ∩ Σ = ∅ ≠ {p}`). The class at ℚ is the
   corestriction of `c̃_p` from `ℚ(ζ_p)`, with no Euler factor because `p ∈ Σ`; a rule
   inserting the factor at p would change it.
@@ -873,7 +902,8 @@ as this evaluated polynomial in a variable X standing for `σ_ℓ^(−1)`. The A
   the Mazur–Rubin polynomial `det(1 − Fr_ℓ x | T) = 1 − 2x + 3x²` would make the adapter fail
   the supplier's relation.
 
-*Needs:* `PadicFamilies` §4.0.1; `EulerSystemsAndKolyvaginSystems` §§2.1–2.2,
+*Needs:* 1.1 (identity transfer for level raises keeping the prime sets); `PadicFamilies`
+§4.0.1; `EulerSystemsAndKolyvaginSystems` §§2.1–2.2,
 2.4; `AutomorphicGaloisRepresentations` §§1.5–1.6 (newform quotient,
 lattices); `SelmerIwasawaCohomology` §3.5 (the classes are unramified outside p
 in the limit) and §3.15.
@@ -1246,17 +1276,31 @@ Z_(Σ,n)(s) = ∏_(ℓ ∉ Σ_n) P_ℓ(ℓ^(−s) ⊗ σ_ℓ^(−1))^(−1),   P
 with `T′_ℓ`, `S′_ℓ` the operators of 2.2 (Nakamura, arXiv v2, §3.1.5, pp. 40–41; Kato §4.5,
 p. 144). Prove that it converges absolutely for `Re s > k`, extends meromorphically to ℂ with
 at most a pole at `s = k`, and satisfies `f_* ∘ Z_Σ(s) = Z_(Σ,n)(s) ∘ f_*` for the push-forward
-`f_*` along `Y(N) → Y(M) ⊗ μ_n`, `M ≥ 3` and n dividing N (Nakamura, arXiv v2, (15), p. 41;
+`f_*` along `Y(N) → Y(M) ⊗ μ_n`, for `M ≥ 3` and n both dividing N, with `Z_Σ(s)` acting on
+the source level N and `Z_(Σ,n)(s)` on the target level M (Nakamura, arXiv v2, (15), p. 41;
 the exceptional point printed there as `k = 2` is the pole `s = k`). The meromorphy is proved as
 above, by Hecke eigencomponents. Define pathClassCoefficient N k v, for
 `v ∈ Sym^(k−2)(ℤ²)^*`, as the class `δ_N(k,v) ∈ H¹(Y(N)(ℂ), V^*_(k/ℤ))(1)` obtained from the
 path `y ↦ (iy, 1)`, `0 < y < ∞`, with the stalk basis `(iy, 1)` of `H₁` along it carrying the
-dual basis `e₁, e₂`, as a relative class on `(X(N)(ℂ), cusps)` transported by Poincaré duality;
-its smoothing `c-δ_N(k, e₁^(j−1)e₂^(k−j−1)) = (c² − c^(k−j) diag(c,1)^*)(c² − c^j diag(1,c)^*)
-δ_N(k, e₁^(j−1)e₂^(k−j−1))` for `1 ≤ j ≤ k−1` and c prime to `6Np`; and
-`c-δ_(N,n)(k,v)` as its push-forward to `H¹(Y(M)(ℂ), V^*_(k/ℤ))(1) ⊗ ℤ[Gal(ℚ(ζ_n)/ℚ)]`
-(Nakamura, arXiv v2, §3.1.5, pp. 42–43; Kato §4.7, p. 145). Push-forward satisfies
-`f_* δ_N(k,v) = δ_M(k,v) ⊗ 1` (p. 42 there).
+dual basis `e₁, e₂`, as a relative class on `(X(N)(ℂ), cusps)` transported by Poincaré duality,
+ℤ-linear in v; its smoothing
+`c-δ_N(k, e₁^(j−1)e₂^(k−j−1)) = (c² − c^(k−j) diag(c,1)^*)(c² − c^j diag(1,c)^*)
+δ_N(k, e₁^(j−1)e₂^(k−j−1))` for `1 ≤ j ≤ k−1` and c prime to `6Np`; and, for every `n ≥ 1` and
+`c ≥ 2` prime to `6Nnp`, the conductor-n smoothing at the same level N,
+
+```text
+c-δ_(N,n)(k, e₁^(j−1)e₂^(k−j−1))
+  = (c² − c^(k−j) diag(c,1)^* ⊗ σ_c)(c² − c^j diag(1,c)^* ⊗ σ_c)(δ_N(k, e₁^(j−1)e₂^(k−j−1)) ⊗ 1)
+```
+
+in `H¹(Y(N)(ℂ), V^*_(k/ℤ))(1) ⊗ ℤ[Gal(ℚ(ζ_n)/ℚ)]`, with `σ_c` the class of c in
+`Gal(ℚ(ζ_n)/ℚ) ≅ (ℤ/n)^×`, extended ℤ-linearly in the monomial basis (Nakamura, arXiv v2,
+§3.1.5, pp. 42–43; Kato §4.7, p. 145). The conductor-n class is defined at level N for every
+`n ≥ 1` with c prime to `6Nnp`, whether or not n divides N; at `n = 1` it is `c-δ_N(k,v)`.
+Push-forward is a
+compatibility, not the definition: for `M ≥ 3` and n both dividing N, the push-forward `f_*`
+along `Y(N) → Y(M) ⊗ μ_n` satisfies `f_* δ_N(k,v) = δ_M(k,v) ⊗ 1` and
+`f_*(c-δ_N(k,v)) = c-δ_(M,n)(k,v)` (p. 42 and (16), p. 43 there).
 
 **Checks** (coefficient zeta and path classes).
 
@@ -1271,6 +1315,23 @@ its smoothing `c-δ_N(k, e₁^(j−1)e₂^(k−j−1)) = (c² − c^(k−j) diag
   neither object can be replaced by the constant-coefficient function above; at `k = 2`,
   `n = 1` both have rank one and the path class is the class of the path from the cusp 0 to
   the cusp ∞ used for `δ_(M,N)` below.
+- At `N = 3`, `n = 5`, `c = 11` and `p = 7`, as admitted in 5.6, the class `c-δ_(3,5)(k,v)`
+  lives on `Y(3)`: 11 is prime to `6·3·5·7 = 630` and `σ_11` is the class of 11 in
+  `(ℤ/5)^×`. A definition by push-forward from a level divisible by 5 would have no value
+  here, since `5 ∤ 3`.
+- The two smoothing exponents are `k − j` on the `diag(c,1)^*` factor and j on the
+  `diag(1,c)^*` factor; exchanging them changes nothing only when `j = k/2`. At `k = 4`,
+  `j = 1` the first factor carries `c³` against c after the exchange, so the two orders give
+  different operators, distinguished on any class on which the two diamond pullbacks act
+  differently.
+- On a class pulled back from level one, on which both diamond pullbacks act trivially, the
+  smoothing is multiplication by `(c² − c^(k−j))(c² − c^j)`: at `k = 2`, `j = 1`, `c = 5` this is
+  `20² = 400`, in agreement with the factor `25 − 5 = 20` of 3.3 for the trivial character,
+  whereas the Siegel-unit exponent pattern `c² − 1` of 0.1 would give `24²`; the zero class
+  gives zero.
+- For `N = M` and `n = 1` the push-forward is the identity and `δ_N(k,v) ⊗ 1 = δ_N(k,v)`,
+  with `σ_c = 1` in the trivial group ring, so `c-δ_(N,1) = c-δ_N`; a push-forward that
+  rescaled by the degree would give `|GL₂(ℤ/N)|` times the class at `N = M`.
 
 For a smooth complex curve Y and units f, g on an open U, the real regulator of the symbol
 `{f,g}` is the class of `i·η(f,g)` in `H¹(U(ℂ), ℝ·i)`, where
@@ -1442,9 +1503,12 @@ of conductor supported in S with `L_S(f,χ,k/2) = 0` is finite (Rohrlich,
 
 These give, for every sign and every character component, infinitely many finite-order
 characters χ and a critical `r` with `L_({p})(f*,χ,r) ≠ 0`: for `k ≥ 3` use `r = k−1` with (1),
-and for `k = 2` use (2) at `r = 1`. For `k ≥ 3` and χ ramified at p the value at `r = 1` is then
-nonzero as well, by the functional equation of `ModularForms` Layer 7, which relates `L(f*,χ,1)`
-to `L(f,χ^(−1),k−1)` through nonvanishing gamma factors and root numbers. This is the analytic
+and for `k = 2` use (2) at `r = 1`. For `k ≥ 3`, `p ∤ N` and χ of conductor `p^a`, `a ≥ 1`, the
+twist `f* ⊗ χ` is new at p with `a_p = 0`, so `L_({p})(f*,χ,1) = L(f* ⊗ χ,1)`, which is nonzero
+by the functional equation of `ModularForms` Layer 7, relating it to `L(f ⊗ χ^(−1),k−1)` through
+nonvanishing gamma factors and root numbers, and `k − 1 ≥ (k+1)/2`. When `p | N` the primitive
+associate of `f* ⊗ χ` may carry an Euler factor at p that vanishes at `s = 1`, and no claim is
+made. This is the analytic
 half of Kato's Proposition 13.7; the conclusion that the geometric zeta submodule is non-torsion
 is `PadicFamilies` §4.0.3, and its canonical form is 7.1. The trivial twist at weight two is not
 asserted to be nonzero, and the total `LSeries` outside its half-plane of convergence does not
@@ -1459,6 +1523,12 @@ give these values.
   edge line.
 - Rohrlich's set is finite but can be nonempty; the statement excludes finitely
   many characters, not all characters of small conductor.
+- Let g be the weight-three CM newform of level 7 and nebentypus `χ_(−7)` (CM by `ℚ(√−7)`),
+  with real coefficients, `p = 3` (inert, so `a_3(g) = 0` and `χ_(−7)(3) = −1`), ψ the quadratic
+  character of conductor 3 and `f = g ⊗ ψ`, a newform of level 63 with `f* = f`. Then
+  `L_({3})(f*,ψ,s) = L_({3})(g,s) = L(g,s)·(1 − 3^(2−2s))`, which is 0 at `s = 1` although
+  `L(g,1) ≠ 0`: at `p | N` the value at `r = 1` can vanish. For g itself with `χ = ψ` and
+  `3 ∤ 7` the statement gives `L(g ⊗ ψ,1) ≠ 0`.
 
 *Needs:* `ModularForms` Layers 7 and 9; `AutomorphicGaloisRepresentations` §7.2;
 `AutomorphicLFunctionsAndLocalFactors` Layer AL.3, anchor `rs-boundary-nonvanishing`;
@@ -1750,22 +1820,37 @@ More generally, for every `n ≥ 1` prime to `Σ_f` (the primes of Np), construc
 katoZetaMapConductor n, the E-linear morphism
 
 ```text
-z^Ka_n : V_E(f) → H¹_Iw(ℤ[1/Σ_f n, ζ_n], V_E(f)) = lim_m H¹(ℤ[1/Σ_f n, ζ_(np^m)], V_E(f)),
+z^Ka_n : V_E(f) → H¹_Iw(ℤ[1/Σ_f n, ζ_n], V_E(f)) := H¹_Iw(ℤ[1/Σ_f n, ζ_n], T) ⊗_O E,
+H¹_Iw(ℤ[1/Σ_f n, ζ_n], T) = lim_m H¹(ℤ[1/Σ_f n, ζ_(np^m)], T),
 ```
 
-the limit under corestriction, with `z^Ka_1 = z^Ka`. Its values on the generators are the
+for a stable lattice T, the limit under corestriction, with `z^Ka_1 = z^Ka`. The rational
+module does not depend on T, two stable lattices being commensurable, and it is the rational
+Iwasawa cohomology of `SelmerIwasawaCohomology` §3.1 in its Conventions: integral Iwasawa
+cohomology tensored with E, so with uniformly bounded denominators. It maps to the inverse
+limit of the rational finite-level groups `H¹(ℤ[1/Σ_f n, ζ_(np^m)], V_E(f))`, with a uniform
+denominator bound on its image; no equality with that unrestricted inverse limit is asserted,
+since it admits norm-compatible families with unbounded denominators. Its values on the
+generators are the
 f-projected geometric classes at conductor `np^m` (the `c,d-z` classes of `PadicFamilies`
 §4.0.1 with `(cd, 6np) = 1`, `c ≡ d ≡ 1 mod N`), divided by the smoothing element
 `μ_n = (c² − c^(k+1−j)σ_c)(d² − d^(j+1)σ_d) ∏_(ℓ∈Σ_f∖{p})(1 − a_ℓ ℓ^(−k)σ_ℓ^(−1))` of
 `O[[Gal(ℚ(ζ_(np^∞))/ℚ)]]` in the localized module. Prove independence of c and d, membership
 in `H¹_Iw` itself by the denominator argument of Kato §13.12 at conductor n, the interpolation
-property that for every `m ≥ 0` and `γ ∈ V_F(f)` the dual exponential of the m-th
-specialization lies in `S(f) ⊗ ℚ(ζ_(np^m))` and its χ-weighted period sum is
+property that for every `m ≥ 0` and `γ ∈ V_F(f)` the image `ω_(γ,m)` of `z^Ka_n(γ)` under
+Nakamura's `exp*_(m,1)`, that is, first the twist `φ_1` by the compatible roots with exponent
+1, then specialization at `ℚ(ζ_(np^m))`, localization at p and the dual exponential, landing in
+`F¹D_dR(V(f)) ⊗ ℚ(ζ_(np^m)) = S(f) ⊗ ℚ(ζ_(np^m))` (the case `r = k − 1` of 5.3 at `n = 1`),
+lies in `S(f)_F ⊗ ℚ(ζ_(np^m))` and its χ-weighted period sum is
 `L_({p},n)(f*,χ,k−1) γ^±` with `± = χ(−1)` for every character χ of
-`Gal(ℚ(ζ_(np^m))/ℚ)`, uniqueness through the injectivity of the dual exponential on this
-Iwasawa cohomology (as in 5.5), and the conductor relation in n of 5.4 (Nakamura, arXiv v2,
+`Gal(ℚ(ζ_(np^m))/ℚ)`, uniqueness as an E-linear map with these generator values (the
+generators span `V_F(f)` as above), and the conductor relation in n of 5.4 (Nakamura, arXiv v2,
 Theorem A.1 and its proof, pp. 86–87, and Remark A.6, p. 89; Kato §§13.9–13.12, pp. 229–232).
-The admissibility used for the denominator removal and for uniqueness is that of `(f,λ)`,
+Without the twist by one the dual exponential lands in `F⁰D_dR(V(f)) ⊗ ℚ(ζ_(np^m))`, which
+at `k = 2` is two-dimensional over the coefficient field, not the line `S(f)`. That the map is
+also determined by these interpolation values is a consequence of the injectivity of the
+dual exponential and is stated in 5.5.
+The admissibility used for the denominator removal is that of `(f,λ)`,
 assumed throughout 5.1–5.4. The base changes with n: at `n = 5` the codomain is Iwasawa
 cohomology over `ℚ(ζ_5)`, which no change of coefficients on the conductor-one module gives.
 
@@ -1793,9 +1878,15 @@ compared with `H¹(T)` in 7.2; integral membership is not part of its definition
   place of `d²` the factor at the trivial character becomes `d − d^(j+1)`, which does not cancel
   the smoothing `d² − d^(j+1)` of the geometric classes (3.3).
 - At `k = 2`, `n = 5` and a character χ of `Gal(ℚ(ζ_(5p^m))/ℚ)` with
-  `L_({p},5)(f*,χ,1) ≠ 0`, which 4.2 provides, the χ-sum of the periods of the m-th
-  specialization is `L_({p},5)(f*,χ,1) γ^±`, nonzero when `γ^± ≠ 0`: the zero map fails, and
-  the sign is `χ(−1)`.
+  `L_({p},5)(f*,χ,1) ≠ 0`, which 4.2 provides, the χ-sum of the periods of `exp*_(m,1)` of
+  `z^Ka_5(γ)` is `L_({p},5)(f*,χ,1) γ^±`, nonzero when `γ^± ≠ 0`: the zero map fails, and
+  the sign is `χ(−1)`. The twist by one is what places the value in the line `S(f)`: the
+  untwisted dual exponential at `k = 2` lands in the two-dimensional `F⁰D_dR(V(f))`.
+- In the group-ring model `lim_m ℚ_p[Γ_m]` with `Γ_m = ℤ/p^m`, the elements
+  `e_m = p^(−m) ∑_(g∈Γ_m) [g]` are projection-compatible, since the projection
+  `Γ_(m+1) → Γ_m` has fibres of size p, but their coefficients have valuation `−m`: the family
+  `(e_m)` lies in the unrestricted inverse limit and not in `ℤ_p[[Γ]] ⊗ ℚ_p`. Every integral
+  norm-compatible family, and every family with one fixed denominator, is admitted.
 
 **Checks** (the zeta morphism).
 
@@ -1870,8 +1961,9 @@ the image `ω_(γ,r,n)` lies in `S(f) ⊗ ℚ(ζ_(p^n))` and, for each character
 `φ_(k−r)` with `φ(σx) = κ(σ)^(−(k−r))σφ(x)`; a finite-level root multiplied into a class is
 not a change of twist. The order twist–specialize–localize is justified by 4.6. Apply
 the reciprocity law of `PadicFamilies` §4.0.2 to the smoothed generators, the critical
-values of 3.3, and then the membership and auxiliary cancellation of 5.1–5.2. The map
-is characterized by these specializations through the rank-one structure of 4.4. The
+values of 3.3, and then the membership and auxiliary cancellation of 5.1–5.2. That the map
+is determined by these specializations is stated in 5.5, after the injectivity of the dual
+exponential. The
 rational statement includes `p = 2`.
 
 **Checks.**
@@ -1908,8 +2000,13 @@ The API:
   Remark A.6, p. 89, with the dual Hecke polynomial of §3.1.2).
 
 To apply the dual
-exponential and periods, undo the output twist with `−k`; the corresponding edge
-critical value is `L_({p},n)(f,χ,k−1)` with `(2πi)^(1−k)γ` and sign `χ(−1)`. The
+exponential and periods, undo the output twist with `−k` and then apply `exp*_(m,1)` of 5.1
+for `f*`: the composite twist is by `1 − k`, from `V′(1)` to `V(f*)(1)`, and the resulting
+`ω_(γ,m)` lies in `S(f*) ⊗ ℚ(ζ_(np^m))`. Write γ′ for the image of `γ ∈ V′_F` under the Betti
+form of the isomorphism `V′(1−k) ≃ V(f*)` of 2.2, which relative to the untwisted comparison
+multiplies coordinates by `(2πi)^(1−k)`; Nakamura's `γ^±` in Corollary A.5 is this `γ′^±`.
+The χ-weighted period sum of `ω_(γ,m)` is then the edge critical value
+`L_({p},n)(f,χ,k−1)·γ′^±` with sign `± = χ(−1)`, Theorem A.1 for `f*` applied to γ′. The
 conductor-n smoothing has second scalar `d²`, as at conductor one; the unsquared d in
 the smoothing display in Appendix A, arXiv v2, p. 87 is incompatible with the construction, and the corrected
 operator is used. For the integral lattice statement of Remark A.2 keep p odd and
@@ -1920,10 +2017,11 @@ residual absolute irreducibility.
 - `(1−k) + k = 1` for every integer k: both twists must be present.
 - `(−id) ∘ z ∘ (−id)` evaluated at x is `z(x)`: the two minus signs cancel, which fixes
   the positive conjugation relation.
-- The map is not zero: for `γ ∈ V′` with `γ^± ≠ 0` and a character χ of
+- The map is not zero: for `γ ∈ V′_F` with `γ′^± ≠ 0` and a character χ of
   `Gal(ℚ(ζ_(np^m))/ℚ)` with `χ(−1) = ±1` and `L_({p},n)(f,χ,k−1) ≠ 0` (4.2), the χ-sum of the
-  periods of the m-th specialization after undoing the output twist is
-  `L_({p},n)(f,χ,k−1)·γ^±` (Nakamura, Corollary A.5), a product of nonzero factors; the zero
+  periods of `ω_(γ,m)`, after undoing the output twist with `−k` and applying `exp*_(m,1)`, is
+  `L_({p},n)(f,χ,k−1)·γ′^±` (Nakamura, Corollary A.5), a product of nonzero factors
+  (`2πi ≠ 0`); the zero
   construction gives zero. At `n = 5` these values lie over `ℚ(ζ_(5p^m))`, not over
   `ℚ(ζ_(p^m))`.
 - At `k = 2, ℓ = 3, a_3 = 2, ε(3) = 1` the transfer factor is `1 − 2X + 3X²` at
@@ -1951,11 +2049,20 @@ Lemma 3.4, p. 47, which cites Fukaya–Kato Proposition 3.1.3(1) and Lemma 3.1.4
 vanishing of invariants under `G_(ℚ(ζ_(np^∞)))`. Injectivity: after inverting p, the
 module decomposes into newform constituents, each free of rank equal to the multiplicity of
 its newform by 4.4, and on each the composite with the period map is injective at every
-height-zero prime of `Λ_n` by 5.3 and 4.2, the zeta classes of the different oldform
+height-zero prime of `Λ_n` by the conductor-n interpolation of 5.1 (5.3 at `n = 1`) and 4.2,
+the zeta classes of the different oldform
 embeddings having independent periods; a map from a torsion-free module that is injective at
 every height-zero prime is injective. Both statements fail
 for `Y(N)` in place of `X(N)` (Nakamura, arXiv v2, Remark 3.5, p. 47): the boundary Eisenstein part is
 excluded.
+
+Consequently, for admissible `(f,λ)` and `n ≥ 1` prime to `Σ_f`, the map
+`exp* = (exp*_(m,1))_(m≥1)` of 5.1 on `H¹_Iw(ℤ[1/Σ_f n, ζ_n], V_E(f))`, the f-constituent of
+the above, is injective (Nakamura, arXiv v2, proof of Theorem A.1, p. 86, through Lemma
+3.4(2)), so katoZetaMapConductor n is the unique E-linear map `V_E(f) → H¹_Iw(ℤ[1/Σ_f n, ζ_n],
+V_E(f))` whose values have the interpolation property of 5.1, and katoZetaMap is the unique
+E-linear map with the specializations of 5.3. This uniqueness is stated here and not in 5.1
+or 5.3, since its proof uses the interpolation of 5.1 and the critical values of 5.3.
 
 **Checks.**
 
@@ -1964,8 +2071,8 @@ excluded.
 - Over `Λ = ℤ_p[[T]]` the projection `Λ ⊕ Λ/(T) → Λ` is injective at every height-zero
   prime but kills the torsion summand: injectivity needs the torsion-freeness.
 
-*Needs:* 4.1, 4.4, 4.2, 5.3; `ModularCurvesPartII` §§14.2–14.3, 14.11–14.12;
-`SelmerIwasawaCohomology` §3.1; `PadicHodgeRegulators` §1.11.
+*Needs:* 4.1, 4.4, 4.2, 5.1 (the conductor-n interpolation), 5.3; `ModularCurvesPartII`
+§§14.2–14.3, 14.11–14.12; `SelmerIwasawaCohomology` §3.1; `PadicHodgeRegulators` §1.11.
 
 ### 5.6 Parabolic full-level uniqueness
 
@@ -2067,10 +2174,14 @@ normalization recorded in Colmez's Remark 8(i), with the map Perrin-Riou constru
 (Invent. Math. 115 (1994), 81–149), and for odd p it is the regulator of
 `PadicHodgeRegulators` §§8.8, 8.13–8.14 paired with η. From §9.35 there this roadmap uses only
 the global `D_cris`-valued distribution `𝔐_z`, defined when `(1−φ)z ∈ (ℛ⁺)^(ψ=0) ⊗ D_cris`
-(which contains the range of §8.8), and the conductor-stratum identity
-`Λ_(D,z)(θ) = φ^(−n)𝔐_z(θ)` for θ of conductor `p^n`; the chart-wise de Rham regulator `Λ_(D,z)`
-is not a function on all of weight space, and the Frobenius power `(p^(−r)φ)^(−n)` in (i) is
-the corresponding factor here. No global crystalline regulator beyond `𝔐_z` on its range is
+(which contains the range of §8.8), and the chart identity
+`Λ_(D,z)(θ) = φ^(−n)𝔐_z(θ)` only for θ in the admitted domain `U_D` of §9.31 there, of
+conductor `p^n` with `n > m(Δ)` and inside the charts of §9.33 there; the chart-wise de Rham
+regulator `Λ_(D,z)` is not a function on all of weight space, and on that domain the Frobenius
+power `(p^(−r)φ)^(−n)` in (i) is the corresponding factor. At conductors below the threshold
+`m(Δ)`, at the trivial character and in (ii), the values of `ℒ_η` are those of the
+big-exponential construction above, and no chart map is applied. No global crystalline
+regulator beyond `𝔐_z` on its range is
 imported, and for `p = 2` the map is the big-exponential construction above. Uniqueness: an element of `ℋ_(h,L)` is determined by its values at
 the characters `κ^rχ^(−1)` with `r > h` (`ModularSymbolsPadicLFunctions` §2.5),
 and every element of `ℋ_(∞,L)` lies in some `ℋ_(h,L)`.
@@ -2084,8 +2195,10 @@ and every element of `ℋ_(∞,L)` lies in some `ℋ_(h,L)`.
   `G(χ)^(−1) = −i/√3` while `G(χ) = i√3`; they differ by the factor `−3`.
 - Rank one, `p = 5`, unramified crystalline with `φ(d) = 2d`: §9.35 of `PadicHodgeRegulators`
   gives the global distribution `𝔐_z = δ₁ ⊗ d`, constant d on weight space, and the chart value
-  `2^(−n)d` on the conductor-`5^n` stratum. Identifying the chart regulator with the global
-  function would equate `2^(−n)d` with d; the correct contract keeps the factor `2^(−n)`.
+  `2^(−n)d` on the conductor-`5^n` stratum for `n` above its threshold `m(Δ)`. Identifying the
+  chart regulator with the global function would equate `2^(−n)d` with d; the correct contract
+  keeps the factor `2^(−n)`. At `n = 0`, the trivial character, `𝔐_z(1) = d` is defined while
+  no chart value is supplied, and nothing is asserted of `Λ_(D,z)` there.
 - In (ii) the factor is `(1 − p^(r−1)φ^(−1))`, the inverse of `p^(−r)φ` scaled by `p^(−1)`; on the
   `φ = α` line it gives the factor `1 − p^(r−1)α^(−1)` of 6.4. At `r = 1` it is `1 − φ^(−1)`;
   the factor `1 − p^(−1)φ^(−1)` would need `r = 0` and so never occurs for `r ≥ 1`, and the
@@ -2208,8 +2321,12 @@ pp. 269–270; `ModularSymbolsPadicLFunctions` §2.5): Kato's `L_(p-adic)` lies 
 Theorem 16.2, the regulator does by 6.1 because `v_p(α) < k − 1`, and the two agree at
 `κ^rχ^(−1)` for the `k − 1` integers `1 ≤ r ≤ k−1` and almost all χ. The slope bound is
 essential: the spaces `ℋ_(h,L)` are defined for integers `h ≥ 1` only, and at `v_p(α) = k − 1`
-both sides have growth of order exactly `k − 1`, outside `ℋ_(k−1,L)`, where the distribution of
-6.5 of that order vanishes at all of these points. The class is built from `f*`, so the scalar formula contains
+neither side is placed in `ℋ_(k−1,L)` by the stated results (Theorem 16.2 assumes
+`v_p(α) < k − 1`, and 6.1 gives membership in `ℋ_(h,L)` only for `h > k − 1`), the nonzero pairing
+of 6.2 is not established there (6.5), and even for candidates constructed separately with
+growth at most `k − 1`, agreement at the characters `κ^rχ^(−1)` cannot distinguish a candidate
+from its sum with the nonzero logarithmic product of 6.5, which vanishes at all of these
+points. The class is built from `f*`, so the scalar formula contains
 f. The Gauss sum of a character of exact conductor `p^n` is nonzero, and α and the periods are
 nonzero by hypothesis; exchanging χ with `χ^(−1)`, or G with its inverse, changes the value.
 Singular Euler factors keep their domain even when their value is zero. The equality holds
@@ -2706,11 +2823,19 @@ finite. For every prime p such that each constituent is admissible over K at eve
 p, `Sel_(p^∞)(A/K)^(χ)` is finite; this holds for all but finitely many p, and for every p when
 A is an elliptic curve. If no constituent has complex multiplication, `Sel_(p^∞)(A/K)^(χ)` is
 zero for all but finitely many p. Proof: finiteness of Selmer groups and of Mordell–Weil χ-parts
-is invariant under isogeny; `V_p(A_f)` is the sum over `λ | p` of the `V_λ(f)(1)`
-(`AutomorphicGaloisRepresentations` §6.1, written in Kato's normalization, in which
-`T_pE = T(1)` for a lattice T of `V_λ(f)` when `A_f = E`); abelianBlochKatoComparison
+is invariant under isogeny; `V_p(A_f)` is the sum over `λ | p` of the arithmetic
+representations of f of `AutomorphicGaloisRepresentations` §6.1, a decomposition preserving
+the `K_f`-action. In the cohomological convention of the Conventions, the arithmetic
+representation at λ, whose arithmetic Frobenius polynomial is `X² − a_ℓX + ε(ℓ)ℓ`, is
+`V_λ(f*)(1) ≅ Hom_E(V_λ(f),E)`, by `V(f*) ≅ Hom_E(V(f),E)(1−k)` at `k = 2`; it is `V_λ(f)(1)`
+only when f has real coefficients, as when `A_f = E` is an elliptic curve, where `T_pE = T(1)`
+for a lattice T of `V_λ(f) = V_λ(f*)`. Writing the constituents as `V_λ(f)(1)` would require
+transporting the coefficient action and the place λ through complex conjugation, which is not
+done. Then abelianBlochKatoComparison
 identifies the Selmer groups; part (2) of blochKatoSelmer_finite at `k = 2`, `r = 1` applies
-to each constituent at each place above p; and the χ-part of `A(K) ⊗ ℚ_p/ℤ_p` lies in the χ-part
+to the constituent `f*` at each place λ above p, `(f*,λ)` being admissible over K exactly when
+`(f,λ)` is (the contragredient argument before 6.1), with the central value `L(f*,χ,1)`, one
+of the factors of `L(A,χ,1)` because `f*` is a Galois conjugate of f; and the χ-part of `A(K) ⊗ ℚ_p/ℤ_p` lies in the χ-part
 of the Selmer group, so one admissible p bounds the rank of `A(K)^(χ)` by zero, while `A(K)` is
 finitely generated (`HeightsRationalPointsAndObstructions` §1.7). The χ-part and the χ-quotient
 `M/I_χM` differ by groups killed by a nonzero integer (Kato, p. 236), so either may be used. For
@@ -2754,6 +2879,14 @@ of points give the corresponding χ-part conclusion.
 
 **Checks.**
 
+- Let g be the level-11 newform (`a_2 = −2`) and θ the cubic character of conductor 7 with
+  `θ(2) = ζ_3`, so that `f = g ⊗ θ` has `a_2(f) = −2ζ_3` and `ε_f(2) = θ(2)² = ζ_3²`, and take
+  `p = 5`. The arithmetic factor of `V_5(A_f)` at `ℓ = 2` has polynomial
+  `X² + 2ζ_3X + 2ζ_3²`, trace `−2ζ_3` and determinant `2ζ_3²`. For `V(f*)(1)` the arithmetic
+  Frobenius has `det(1 − Fr_2 t) = 1 − a_2(f)t + ε_f(2)·2t² = 1 + 2ζ_3t + 2ζ_3²t²`: trace `−2ζ_3`,
+  determinant `2ζ_3²`, the arithmetic factor. For `V(f)(1)` it is
+  `1 + 2ζ_3²t + 2ζ_3t²`: trace `−2ζ_3²` and determinant `2ζ_3`, which differ. For rational
+  coefficients `f = f*` and the two agree.
 - For `m = 1`, K is ℚ and `I_1 = 0`, so every rational point belongs to the
   character part. The twisted coefficients equal the elliptic coefficients, including
   the zero constant term; this recovers finiteness of the rational points when the
@@ -2882,6 +3015,8 @@ of 4.3 and 7.2, with the integral hypotheses as stated there: 4.3 needs a free r
 surjectivity. `RankZeroOneBSDPartII` can use the reciprocity and interpolation statements through 5.3 and
 7.1–7.2, the elliptic bounds of 7.4 and 7.8, and the finiteness of `Sel_(p^∞)(E/ℚ)` at every p
 when `L(E,1) ≠ 0` from 7.9. `HeegnerPointEulerSystems` §6.9 uses 6.6, 7.4 and 7.7 for its rank-zero route.
+`AdelicImagesAndModularCurves` Layer 4 plans the open-image theorem over number fields; its case
+`K = ℚ` is 4.7 here.
 
 `PadicFamilies` and `EulerSystemsAndKolyvaginSystems` are suppliers of this roadmap and import
 nothing from it: the Hida-family classes of `PadicFamilies` §4.5 interpolate the geometric
@@ -2898,7 +3033,8 @@ All statements here are paraphrases. Page numbers refer to the stated edition.
   [Numdam](https://www.numdam.org/item/AST_2004__295__117_0.pdf).
   Locators used: 1.3–1.10 (pp. 121–125), 2.1–2.13 (pp. 125–133), 3.1–3.11 (pp. 134–142),
   4.2 (pp. 142–143), 4.5–4.7 (pp. 144–145), 5.2 (pp. 153–154), 6.3–6.6 (pp. 161–163), §7,
-  including 7.7, 7.12 and 7.18–7.20 (pp. 163–179), 8.4 (pp. 182–183), 8.9 (p. 185), 8.12 (p. 186), 9.2–9.4
+  including 7.7, 7.12 and 7.18–7.20 (pp. 163–179), 8.4 (pp. 182–183), 8.7 (pp. 184–185), 8.9–8.10
+  (pp. 185–186), 8.12 (p. 186), 9.2–9.4
   (pp. 186–188), 10.9 (pp. 196–197), 11.3–11.4 (pp. 204–207), 12.4–12.10 (pp. 221–224),
   13.1–13.14 (pp. 224–234), 14.1–14.14 (pp. 234–243), 14.16–14.22 (pp. 244–250),
   15.12–15.17 (pp. 263–265), 15.23 (p. 267), 16.2–16.6 (pp. 269–271), 17.2–17.4
