@@ -372,3 +372,4 @@ HyperellipticCurves
 AbelianSurfacesModularity
 DeRhamCohomologyAndDuality
 PadicExtensionFamilies
+GlaubermanZStar
