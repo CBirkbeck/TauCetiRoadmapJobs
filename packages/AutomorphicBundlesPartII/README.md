@@ -4,11 +4,11 @@
 
 ## Scope and ownership
 
-The roadmap extends the good-prime integral Levi realization of AutomorphicBundles B3.10 to normalized deep-level models and the integral dual-Weyl lattice of LanglandsParameterStacks LP3.0, and owns finite-coefficient coherent homology, group-ring perfect models, higher cohomological Hecke comparisons, integral EO detection of relations, coherent automorphic image comparisons and the localized boundary and cuspidal conclusions. It imports VStackSheavesAndLisseCategories VS2.1’s solidification and VS2.2’s analytic-ring interface and supplies the (A,A)■ solid/discrete scheme interface and Hilbert–Siegel EO geometry used by those constructions. It includes arbitrary complete DVR coefficients where the statement is coefficient algebra, and states every geometric reduction and logarithmic lifting hypothesis separately.
+The roadmap extends the good-prime integral Levi realization of AutomorphicBundles 5.10 to normalized deep-level models and the integral dual-Weyl lattice of ReductiveGroups §10B, and owns finite-coefficient coherent homology, group-ring perfect models, higher cohomological Hecke comparisons, integral EO detection of relations, coherent automorphic image comparisons and the localized boundary and cuspidal conclusions. It imports VStackSheavesAndLisseCategories VS2.1’s solidification and VS2.2’s analytic-ring interface and supplies the (A,A)■ solid/discrete scheme interface and Hilbert–Siegel EO geometry used by those constructions. It includes arbitrary complete DVR coefficients where the statement is coefficient algebra, and states every geometric reduction and logarithmic lifting hypothesis separately.
 
-AutomorphicBundles B0–B5 owns associated bundles, coefficient tensor operations, canonical and subcanonical extensions and section Hecke convolution; its B3.10 owns the good-prime integral Levi torsor, associated locally free coefficients and their formal canonical/subcanonical expansions, and its B3.BGG owns the dual BGG construction. AlgebraicVectorBundles L0A–L0C owns the generic vector-bundle operations. SchemeAndStackFoundations §§2.6–2.8, 2.18–2.21 and 4.8–4.10 owns generic Čech, Cousin, relative duality and formal functions. EnhancedDerivedSheaves E1.9 owns perfectness of proper-support pushforward and its arbitrary base change. DerivedModuleAlgebra §§1.3–1.5, 1.E.0–1.E.1 and 1.M.1–1.M.2 owns object completion, perfectness/retracts, effectivity and Matlis duality, and DeformationAndDerivedPatchingAlgebra §§7.5–7.10 owns nilpotent lifting, dual complexes, strict tower actions, finite derived Hom completion, isolated derived-action blocks and coefficient spectral sequences. Here the perfectness and localization targets identify the actual geometric complexes and operators with those constructions.
+AutomorphicBundles B0–B5 owns associated bundles, coefficient tensor operations, canonical and subcanonical extensions and section Hecke convolution; its 5.10 owns the good-prime integral Levi torsor, associated locally free coefficients and their formal canonical/subcanonical expansions, and its B3.BGG owns the dual BGG construction. AlgebraicVectorBundles L0A–L0C owns the generic vector-bundle operations. SchemeAndStackFoundations §§2.6–2.8, 2.18–2.21 and 4.8–4.10 owns generic Čech, Cousin, relative duality and formal functions. EnhancedDerivedSheaves E1.9 owns perfectness of proper-support pushforward and its arbitrary base change. DerivedModuleAlgebra §§1.3–1.5, 1.E.0–1.E.1 and 1.M.1–1.M.2 owns object completion, perfectness/retracts, effectivity and Matlis duality, and DeformationAndDerivedPatchingAlgebra §§7.5–7.10 owns nilpotent lifting, dual complexes, strict tower actions, finite derived Hom completion, isolated derived-action blocks and coefficient spectral sequences. Here the perfectness and localization targets identify the actual geometric complexes and operators with those constructions.
 
-ShimuraCompactifications C3–C5 owns fans, toroidal/minimal models, refinements, polarized degenerations and normalized deeper-level models, in particular C5.19–C5.21 and C5.31; C4.16 owns the rational compactified Klingen span. Its C5.21 owns the formally canonical definition and its verification on its stated models. Section 5.1 here verifies its additional quotient and p-level applications. Its C5.29 owns the logarithmic canonical-bundle formula; §5.7 applies it to the actual Serre-dual coefficient.
+ShimuraCompactifications Layers 4, 6 and 7 (refinements and Hecke maps; degenerations of polarized abelian schemes; integral PEL compactifications) own fans, toroidal/minimal models, refinements, polarized degenerations and normalized deeper-level models, in particular 7.19–7.21 and 7.31; 6.16 owns the rational compactified Klingen span. Its 7.21 owns the formally canonical definition and its verification on its stated models. Section 5.1 here verifies its additional quotient and p-level applications. Its 7.29 owns the logarithmic canonical-bundle formula; §5.7 applies it to the actual Serre-dual coefficient.
 
 Tau Ceti’s divisor-sheaf Serre duality for a curve over a field is in `TauCeti/AlgebraicGeometry/WeilDivisor/Scheme/SerreDuality.lean`, with `TauCeti.AlgebraicGeometry.SchemeWeilDivisor.cohomologyOneDualEquivCohomologyZero`. Section 1.6 instead treats arbitrary relative dimension over a finite DVR quotient, with its Matlis comparison and equivariance. The generic existence and uniqueness-up-to-homotopy of lifts are already in the library as Mathlib's K-projective theorems. AutomorphicFormsOnReductiveGroups §§6.3–6.7 states the closed chambers, infinitesimal characters, Kostant representatives, component transport and local coherent classifications; these are imported rather than defined again. The geometric tempered-image restriction in Layer 7 applies those results to the images constructed in Layer 6. IntegralHeckeAndGaloisDeterminants §§3a–3b owns spin polynomials and residual predicates; §4.3 identifies the geometric generators, and §5.15 applies the predicates to their coherent action. SmoothRepresentationsOfLocalGroups SR.4 owns normalized Satake. Its local Klingen restriction is an explicit supplier contract below; §8.4 identifies the geometric boundary coefficient.
 
@@ -50,15 +50,15 @@ Use `AlgebraicGeometry.Scheme`, `AlgebraicGeometry.Scheme.Modules`, `SheafOfModu
 
 `TauCeti.AlgebraicGeometry.Scheme.Modules.Cohomology`, `TauCeti.AlgebraicGeometry.Scheme.Modules.cohomologyFunctor`, `TauCeti.AlgebraicGeometry.Scheme.Modules.cohomologyZeroEquiv` and `TauCeti.AlgebraicGeometry.Scheme.Modules.cohomologyZeroEquiv_naturality`, in `TauCeti/AlgebraicGeometry/Cohomology/Basic.lean`, supply underlying additive sheaf cohomology, coefficient functoriality and natural identification of H⁰ with sections. The underlying construction uses abelian sheaves. For a commutative base ring R and X over Spec R, `AlgebraicGeometry.Scheme.Modules.cohomologyBaseModule`, `AlgebraicGeometry.Scheme.Modules.cohomologyMapBaseLinear`, `AlgebraicGeometry.Scheme.Modules.cohomologyZeroBaseLinearEquiv` and `AlgebraicGeometry.Scheme.Modules.cohomologyZeroBaseLinearEquiv_naturality`, in `TauCeti/AlgebraicGeometry/Cohomology/Module/Base.lean` (lines 45, 57, 110, 127), supply the R-module structures, linear coefficient maps and natural linear H⁰/sections identification. For a short exact coefficient sequence, `TauCeti.AlgebraicGeometry.Scheme.Modules.cohomologyδBaseLinear`, in `TauCeti/AlgebraicGeometry/Cohomology/LongExactSequence.lean` (line 242), supplies the R-linear connecting map. These declarations impose no properness or finite-dimensionality; identification with scalar-linear derived global sections and equivariant perfectness are separate inputs.
 
-`SheafOfModules.exteriorPower` in `TauCeti/Algebra/Category/ModuleCat/Sheaf/ExteriorPower.lean` (line 49) sheafifies the sectionwise exterior power and supplies det Ω in arbitrary relative dimension. `AlgebraicGeometry.Scheme.relativeDifferentials` in `TauCeti/AlgebraicGeometry/Modules/Differentials/Basic.lean` (line 85) is the sheaf of relative Kähler differentials. `AlgebraicGeometry.Scheme.Modules.instMonoidalClosed` in `TauCeti/AlgebraicGeometry/Modules/TensorProduct.lean` (line 63) supplies internal Hom. These are carriers for §1.6, not a coherent Serre-duality theorem.
+`SheafOfModules.exteriorPower` in `TauCeti/Algebra/Category/ModuleCat/Sheaf/ExteriorPower/Basic.lean` (line 60) sheafifies the sectionwise exterior power and supplies det Ω in arbitrary relative dimension. `AlgebraicGeometry.Scheme.relativeDifferentials` in `TauCeti/AlgebraicGeometry/Modules/Differentials/Basic.lean` (line 85) is the sheaf of relative Kähler differentials. `AlgebraicGeometry.Scheme.Modules.instMonoidalClosed` in `TauCeti/AlgebraicGeometry/Modules/TensorProduct.lean` (line 66) supplies internal Hom. These are carriers for §1.6, not a coherent Serre-duality theorem.
 
 The field-valued curve sanity check uses `TauCeti.AlgebraicGeometry.SchemeWeilDivisor.cohomologyOneDualEquivCohomologyZero` in `TauCeti/AlgebraicGeometry/WeilDivisor/Scheme/SerreDuality.lean`: an integral separated Noetherian curve over a field, DVR codimension-one stalks, the valuative existence condition, coheight at most one, the function-field and constant-field hypotheses, and a canonical divisor determined by a nonzero Weil differential. It compares the dual of H¹ of a divisor sheaf with H⁰ of the complementary canonical divisor. It is not used to infer relative finite-coefficient duality.
 
 ### From TauCetiRoadmap.AutomorphicBundles
 
-B0–B5, B3.10, B3.BGG: Associated coefficients and frame functors; canonical and boundary-ideal extensions; integral good-prime coefficients; section Hecke operators and convolution; logarithmic Kodaira–Spencer and the dual BGG coefficient convention.
+B0–B5, 5.10 (`integralLeviCoefficient`), B3.BGG (the letter labels are that roadmap's own aliases: B0 = Layer 0, B1 = Layer 1, B2 = Layer 3, B3 = Layer 5, B3.BGG = Layer 9, B4 = Layer 11, B5 = Layer 12; its 12.11 is `ClassicalHecke.operator`): Associated coefficients and frame functors; canonical and boundary-ideal extensions; integral good-prime coefficients; section Hecke operators and convolution; logarithmic Kodaira–Spencer and the dual BGG coefficient convention.
 
-What AutomorphicBundles must provide (gap:integral-small-weight-dual-bgg): Extend the coefficient dual BGG graded comparison to the integral p-small Lan–Suh weights, with the correct Weyl or dual-Weyl lattice, cohomological length shifts and canonical/subcanonical boundary twists, and identify its characteristic-zero specialization. The supplying section is B3.BGG.2–B3.BGG.3.
+What AutomorphicBundles must provide (gap:integral-small-weight-dual-bgg): Extend the coefficient dual BGG graded comparison to the integral p-small Lan–Suh weights, with the correct Weyl or dual-Weyl lattice, cohomological length shifts and canonical/subcanonical boundary twists, and identify its characteristic-zero specialization. The supplying section is 9.2–9.3 (`siegelDualBGGComplex`, `siegelBGGGradedComparison`).
 
 ### From TauCetiRoadmap.AlgebraicVectorBundles
 
@@ -80,13 +80,13 @@ What SchemeAndStackFoundations must provide (gap:coefficient-linear-coherent-com
 
 ### From TauCetiRoadmap.ShimuraCompactifications
 
-C3.3–C3.10, C4.1–C4.11, C4.16–C4.17, C5.3–C5.17, C5.19–C5.31: Toroidal models and polarized degeneration data; common refinements; boundary ideals and fan-independent cohomology; minimal contractions and ample Hodge powers; finite-normalization and normalized-blow-up models with their lattice collections; formally canonical coefficients (C5.21); the rational Klingen span (C4.16). Normalized models carry no automatic smoothness assertion.
+4.3–4.10, 6.1–6.11, 6.16–6.17, 7.3–7.17, 7.19–7.31: Toroidal models and polarized degeneration data; common refinements; boundary ideals and fan-independent cohomology; minimal contractions and ample Hodge powers; finite-normalization and normalized-blow-up models with their lattice collections; formally canonical coefficients (7.21); the rational Klingen span (6.16). Normalized models carry no automatic smoothness assertion.
 
-### From TauCetiRoadmap.LanglandsParameterStacks
+### From TauCetiRoadmap.ReductiveGroups
 
-LP3.0: Highest-weight Weyl and induced dual-Weyl modules over fields, with the selected Borel and highest-weight convention; the integral extension needed here is the contract below.
+§§9A, 10B: the induced module ∇(λ)=Ind_(B⁻)^G k_λ of a split connected reductive group over a field, with f(gb)=λ(b)⁻¹f(g) and left translation a·f(g)=f(a⁻¹g), the Weyl module Δ(λ)=∇(−w₀λ)*, their highest-weight and dominance theory, their arbitrary-field base change, and the integral Weyl lattices with their freeness, action equations and the perfect integral evaluation pairing with the dual (§10B); the finite free admissible ℤ-lattice generated from the highest line by divided powers, for every dominant weight (§9A). The integral induced (dual-Weyl) lattice in its function realization is the contract below.
 
-What LanglandsParameterStacks must provide (gap:integral-dual-weyl-lattices): Construct finite free integral Weyl and dual-Weyl modules for every dominant weight of a split reductive Levi over ℤ, with the fixed right-B function realization, left translation and base-change comparison to the field modules, retaining symmetric versus divided powers in residue characteristic. The supplying section is LP3.0.
+What ReductiveGroups must provide (gap:integral-dual-weyl-lattices): Construct the integral induced (dual-Weyl) lattice ∇(λ)_ℤ as the ℤ-dual of the Weyl lattice Δ(−w₀λ)_ℤ in the right-B function realization f(gb)=λ(b)⁻¹f(g) with left translation, for every dominant weight of the split Siegel Levi GL_g×G_m over ℤ, with the symmetric-power versus divided-power identification in residue characteristic and the base-change comparison to the field modules ∇(λ) and Δ(λ) of §10B. The supplying section is §10B.
 
 ### From TauCetiRoadmap.ComplexComparisonPartII
 
@@ -144,7 +144,7 @@ What HilbertModularVarietiesAndShimuraCurves must provide (gap:nonparallel-hilbe
 
 ### From TauCetiRoadmap.CrystallineCohomology
 
-CR.5.1, CR.5.3–CR.5.4, CR.DDR.6.11–CR.DDR.6.14: Logarithmic structures, Cartier-type differentials and logarithmic crystalline/de Rham comparisons with their lifts and residue conditions. The relative logarithmic vanishing needed for the integral vanishing theorem is specified below.
+CR.5.1–CR.5.4, CR.DDR.6.11–CR.DDR.6.14: Logarithmic structures, Cartier-type differentials, exactification and logarithmic PD envelopes (CR.5.2), and logarithmic crystalline/de Rham comparisons with their lifts and residue conditions. The relative logarithmic vanishing needed for the integral vanishing theorem is specified below.
 
 What CrystallineCohomology must provide (gap:coefficient-logarithmic-splitting): Supply the relative logarithmic vanishing of Lan–Suh Theorem 3.24, pp. 20–21, as verified for PEL pairs in Proposition 7.21, pp. 41–42: a proper log-smooth log-integral morphism of relative dimension n between proper smooth SNC pairs over perfect k, with target dimension e, admits a W(k)-lifting satisfying Assumption 1.4, the coefficient has nilpotent residues and degree m<p−e (or its dual degree 2n−m<p−e with Proposition 1.7), and the line bundle satisfies ampleness condition (3.25). The supplying section is CR.5.4.
 
@@ -170,11 +170,11 @@ Layers 1 and 2 construct integral coefficients, duality and equivariant perfect 
 
 ### 1.1 The integral de Rham Levi torsor
 
-Extend AutomorphicBundles B3.10’s good-prime torsor to the normalized deep-level models of ShimuraCompactifications C5.19–C5.31. On such a supplied toroidal Siegel model over O with finite locally free logarithmic Hodge factors and its polarized degenerating abelian family and logarithmic Hodge sequence, let M_dR be the torsor of triples (ψ₁,ψ₂,c), with ψ₁:O^g≃Lie(A), ψ₂:O^g≃ω_(Aᵗ), c a unit, and ψ₂=c(ψ₁ᵗ)⁻¹ after the polarization identifies the Hodge factors. It is a right torsor under the Siegel Levi M≃GL_g×G_m. The family, its dual and polarization are the extensions supplied by the compactification model; arbitrary semi-abelian schemes are not asserted to admit this datum.
+Extend AutomorphicBundles 5.10’s good-prime torsor to the normalized deep-level models of ShimuraCompactifications 7.19–7.31. On such a supplied toroidal Siegel model over O with finite locally free logarithmic Hodge factors and its polarized degenerating abelian family and logarithmic Hodge sequence, let M_dR be the torsor of triples (ψ₁,ψ₂,c), with ψ₁:O^g≃Lie(A), ψ₂:O^g≃ω_(Aᵗ), c a unit, and ψ₂=c(ψ₁ᵗ)⁻¹ after the polarization identifies the Hodge factors. It is a right torsor under the Siegel Levi M≃GL_g×G_m. The family, its dual and polarization are the extensions supplied by the compactification model; arbitrary semi-abelian schemes are not asserted to admit this datum.
 
 (BP26, §4.3.1, p. 46, BP26 line 2374).
 
-A proof route is to use the extended logarithmic Hodge sequence and polarization from C4–C5 and the deep-level models from C5.19–C5.31. Trivialize Lie(A) locally and construct ψ₂ from ψ₁ and c; verify the Levi change-of-frame law. Identify the generic fibre with the parent principal bundle reduced to its Hodge Levi.
+A proof route is to use the extended logarithmic Hodge sequence and polarization from ShimuraCompactifications Layers 6 and 7 and the deep-level models from 7.19–7.31. Trivialize Lie(A) locally and construct ψ₂ from ψ₁ and c; verify the Levi change-of-frame law. Identify the generic fibre with the parent principal bundle reduced to its Hodge Levi.
 
 Its API is:
 
@@ -184,7 +184,7 @@ Its API is:
 - The frame action preserves ψ₂=c(ψ₁ᵗ)⁻¹ and obeys identity and multiplication laws.
 - Pulling back the model and polarization pulls back this torsor with its action and frame trivializations.
 
-*Needs:* AutomorphicBundles B3.10; AutomorphicBundles B1; ShimuraCompactifications C4.1–C4.11; ShimuraCompactifications C3.3–C3.10 and C5; ShimuraCompactifications C5.19–C5.21, C5.31.
+*Needs:* AutomorphicBundles 5.10; AutomorphicBundles B1; ShimuraCompactifications 6.1–6.11; ShimuraCompactifications 4.3–4.10 and Layer 7; ShimuraCompactifications 7.19–7.21, 7.31.
 
 **Checks.**
 
@@ -195,11 +195,11 @@ Its API is:
 
 ### 1.2 Integral dual-Weyl automorphic coefficients
 
-Extend AutomorphicBundles B3.10’s associated coefficients on those normalized deep-level models, using the integral dual-Weyl lattice extension of LanglandsParameterStacks LP3.0. For a dominant Levi weight κ and an integral dual-Weyl module V_κ imported from LanglandsParameterStacks LP3.0, define ω^κ=M_dR×^M V_κ using AutomorphicBundles B0’s associated-bundle functor. With right B-equivariance f(mb)=(w₀,Mκ)(b⁻¹)f(m), left translation is (m′f)(m)=f(m′⁻¹m). Thus ω^κ is π_*O_(M_dR)[−w₀,Mκ], with this action. Use its canonical and boundary-ideal subcanonical extensions on the supplied integral model; do not replace an integral dual-Weyl module by its characteristic-zero semisimplification.
+Extend AutomorphicBundles 5.10’s associated coefficients on those normalized deep-level models, using the integral dual-Weyl lattice of ReductiveGroups §10B (gap:integral-dual-weyl-lattices). For a dominant Levi weight κ and an integral dual-Weyl module V_κ imported from ReductiveGroups §10B, define ω^κ=M_dR×^M V_κ using AutomorphicBundles B0’s associated-bundle functor. With right B-equivariance f(mb)=(w₀,Mκ)(b⁻¹)f(m), left translation is (m′f)(m)=f(m′⁻¹m). Thus ω^κ is π_*O_(M_dR)[−w₀,Mκ], with this action. Use its canonical and boundary-ideal subcanonical extensions on the supplied integral model; do not replace an integral dual-Weyl module by its characteristic-zero semisimplification.
 
 (BP26, §4.3.1 and Remark 4.3.2, pp. 46–47, BP26 line 2374).
 
-A proof route is to import the integral induced representation and its base-change API from LanglandsParameterStacks LP3.0. Apply AutomorphicBundles B0’s associated-bundle functor to M_dR and compare local equivariant functions. Identify extensions through their toroidal charts and boundary ideal; preserve the left action order.
+A proof route is to import the integral induced representation and its base-change API from ReductiveGroups §10B. Apply AutomorphicBundles B0’s associated-bundle functor to M_dR and compare local equivariant functions. Identify extensions through their toroidal charts and boundary ideal; preserve the left action order.
 
 Its API is:
 
@@ -209,7 +209,7 @@ Its API is:
 - An M-equivariant integral module map induces a bundle map; identities and composites are preserved.
 - Use AutomorphicBundles B0’s tensor/dual comparisons with the integral representation maps and boundary twists; do not identify a dual-Weyl dual with the same weight in positive characteristic.
 
-*Needs:* AutomorphicBundles B3.10; §1.1; AutomorphicBundles B0; AutomorphicBundles B3; LanglandsParameterStacks LP3.0.
+*Needs:* AutomorphicBundles 5.10; §1.1; AutomorphicBundles B0; AutomorphicBundles B3; ReductiveGroups §10B (gap:integral-dual-weyl-lattices).
 
 **Checks.**
 
@@ -341,7 +341,7 @@ For a rank-two Hodge bundle E, the weights (1,0), (1,1), (2,2) give ranks 2,1,1 
 
 ### Dependencies
 
-AlgebraicModuliForArithmeticGeometry §7.5 (the boundary fundamental-class contract); AutomorphicBundles B0; AutomorphicBundles B1; AutomorphicBundles B2; AutomorphicBundles B3; AutomorphicBundles B4; DeformationAndDerivedPatchingAlgebra §§7.1–7.9; EnhancedDerivedSheaves E1.9; LanglandsParameterStacks LP3.0; SchemeAndStackFoundations §§2.6–2.8, 2.18–2.21; ShimuraCompactifications C3.3–C3.10 and C5; ShimuraCompactifications C4.1–C4.11; ShimuraCompactifications C5.19–C5.21, C5.31; Tau Ceti `TauCeti.AlgebraicGeometry.Scheme.Modules.Cohomology`. Earlier in this layer use the individual prerequisites displayed above.
+AlgebraicModuliForArithmeticGeometry §7.5 (the boundary fundamental-class contract); AutomorphicBundles B0; AutomorphicBundles B1; AutomorphicBundles B2; AutomorphicBundles B3; AutomorphicBundles B4; DeformationAndDerivedPatchingAlgebra §§7.1–7.9; EnhancedDerivedSheaves E1.9; ReductiveGroups §10B; SchemeAndStackFoundations §§2.6–2.8, 2.18–2.21; ShimuraCompactifications 4.3–4.10 and Layer 7; ShimuraCompactifications 6.1–6.11; ShimuraCompactifications 7.19–7.21, 7.31; Tau Ceti `TauCeti.AlgebraicGeometry.Scheme.Modules.Cohomology`. Earlier in this layer use the individual prerequisites displayed above.
 
 ## Layer 2: equivariant coherent perfect complexes
 
@@ -475,7 +475,7 @@ The API supplies:
 
 ### 3.0b The additional compactified p-level spans
 
-Construct the characteristic-zero paramodular and Siegel/Klingen/Iwahori p-level coefficient spans needed in §4.2 on the normalized models of ShimuraCompactifications C5.19–C5.31, retaining their lattice collections and polarization multipliers. The rational Klingen span is ShimuraCompactifications C4.16. Extend the generic isogeny to the chosen toroidal charts after a common refinement and give proper first legs and the reduced-boundary fundamental classes required for §3.4; no finite-flatness or smoothness of a normalized bad-level model follows from its generic fibre. The integral divisibility statement remains §4.2. (P20 §4.3, p. 19 and §§14.8–14.9, pp. 101–105; BP26 §4.3.1, pp. 46–47.)
+Construct the characteristic-zero paramodular and Siegel/Klingen/Iwahori p-level coefficient spans needed in §4.2 on the normalized models of ShimuraCompactifications 7.19–7.31, retaining their lattice collections and polarization multipliers. The rational Klingen span is ShimuraCompactifications 6.16. Extend the generic isogeny to the chosen toroidal charts after a common refinement and give proper first legs and the reduced-boundary fundamental classes required for §3.4; no finite-flatness or smoothness of a normalized bad-level model follows from its generic fibre. The integral divisibility statement remains §4.2. (P20 §4.3, p. 19 and §§14.8–14.9, pp. 101–105; BP26 §4.3.1, pp. 46–47.)
 
 Its API is:
 
@@ -485,7 +485,7 @@ Its API is:
 - give the proper trace on the admitted coefficient complex, naturally in its maps;
 - identify the generic coefficient transport with AutomorphicBundles B5’s operator.
 
-*Needs:* ShimuraCompactifications C3.3–C3.10, C4.11, C4.16, C5.19–C5.31; AlgebraicModuliForArithmeticGeometry §7.5; §§3.1–3.8 for the resulting coefficient maps. This geometry is used only after the general correspondence formalism has been constructed.
+*Needs:* ShimuraCompactifications 4.3–4.10, 6.11, 6.16, 7.19–7.31; AlgebraicModuliForArithmeticGeometry §7.5; §§3.1–3.8 for the resulting coefficient maps. This geometry is used only after the general correspondence formalism has been constructed.
 
 **Checks.**
 
@@ -530,7 +530,7 @@ Its API is:
 
 - Extract H^i(T) from the single derived operator.
 - The identity correspondence acts by the identity on RΓ.
-- For the B5 finite-flat correspondence and its trace, H⁰(T) is AutomorphicBundles B5.10 `ClassicalHecke.operator`.
+- For the B5 finite-flat correspondence and its trace, H⁰(T) is AutomorphicBundles 12.11 `ClassicalHecke.operator`.
 - The global-action map for fixed legs preserves zero, addition and O-scaling of coefficient arrows.
 - With the properness and base-change assumptions of §3.3, convolution acts by composition of the two derived global maps.
 
@@ -654,7 +654,7 @@ A polarized quasi-isogeny along a toroidal Siegel correspondence, with its speci
 
 A proof route is to apply the quasi-isogeny to both graded logarithmic Hodge factors and its polarization multiplier. Invert p to obtain the Levi frame torsor isomorphism. Apply the parent associated-coefficient functor and check composition.
 
-*Needs:* §1.1; §3.7; AutomorphicBundles B1; ShimuraCompactifications C5.19–C5.21, C5.31.
+*Needs:* §1.1; §3.7; AutomorphicBundles B1; ShimuraCompactifications 7.19–7.21, 7.31.
 
 **Checks.**
 
@@ -749,7 +749,7 @@ Its API is:
 - Maps of Hecke-linearized coefficients intertwine the individual derived operators and the boundary arrow.
 - The degree-zero comparison does not assert higher integral convolution; use §5.13 for the hyperspecial integral algebra action.
 
-*Needs:* §3.4; §3.8; §3.3; AutomorphicBundles B5; ShimuraCompactifications C3.3–C3.10 and C5.
+*Needs:* §3.4; §3.8; §3.3; AutomorphicBundles B5; ShimuraCompactifications 4.3–4.10 and Layer 7.
 
 **Checks.**
 
@@ -764,7 +764,7 @@ On Spec k[x] with boundary x=0, the completion is k[[x]] in degree zero, whereas
 
 ### Dependencies
 
-AlgebraicModuliForArithmeticGeometry §7.5 (the boundary fundamental-class contract); AutomorphicBundles B1; AutomorphicBundles B2; AutomorphicBundles B5; DerivedModuleAlgebra §§1.3–1.5, 1.E.1; DeformationAndDerivedPatchingAlgebra §§7.1–7.9; SchemeAndStackFoundations §§2.6–2.8, 2.18–2.21; SchemeAndStackFoundations §§4.8–4.10; ShimuraCompactifications C3.3–C3.10 and C5; ShimuraCompactifications C5.19–C5.21, C5.31; Tau Ceti `TauCeti.AlgebraicGeometry.Scheme.Modules.cohomologyFunctor`. Earlier in this layer use the individual prerequisites displayed above.
+AlgebraicModuliForArithmeticGeometry §7.5 (the boundary fundamental-class contract); AutomorphicBundles B1; AutomorphicBundles B2; AutomorphicBundles B5; DerivedModuleAlgebra §§1.3–1.5, 1.E.1; DeformationAndDerivedPatchingAlgebra §§7.1–7.9; SchemeAndStackFoundations §§2.6–2.8, 2.18–2.21; SchemeAndStackFoundations §§4.8–4.10; ShimuraCompactifications 4.3–4.10 and Layer 7; ShimuraCompactifications 7.19–7.21, 7.31; Tau Ceti `TauCeti.AlgebraicGeometry.Scheme.Modules.cohomologyFunctor`. Earlier in this layer use the individual prerequisites displayed above.
 
 ## Layer 4: Hecke lifts, normalization and comparison
 
@@ -797,21 +797,21 @@ Its API is:
 
 ### 4.2 Integral divisibility and rational p-operators
 
-For an integer k≥0, given an integral coefficient correspondence T and a proved factorization T=ϖ^k U into a ϖ-torsion-free target, define the normalized integral correspondence ϖ⁻kT=U; its uniqueness uses torsion-freeness. A rational operator alone supplies no integral division. At Klingen and paramodular level the geometric T_(p,2) and U_(Kli(p),2) are defined with p⁻³ after inverting p, using the p-level spans of §3.0b; no integral p-operator or ordinary projector is asserted here.
+For an integer k≥0, let the correspondence be given at the sheaf level: locally free coefficients F and G on the model, C flat over O, and an actual morphism of sheaves t:p₂*F→p₁*G between the pullbacks, from which the coefficient arrow T:Lp₂*F→p₁!G of §3.1 is obtained by composing with the fundamental-class map p₁*G→p₁!G of AlgebraicModuliForArithmeticGeometry §7.5. Since C is flat over O and G is locally free, p₁*G is ϖ-torsion-free, so multiplication by ϖ^k is injective on the O-module Hom(p₂*F,p₁*G). When t factors through the subsheaf ϖ^k·p₁*G, that is t=ϖ^k·u for a sheaf morphism u:p₂*F→p₁*G, u is unique; define the normalized integral correspondence ϖ⁻kT as the correspondence obtained from u by the same fundamental-class construction, so that T=ϖ^k·ϖ⁻kT. The division is performed on the sheaf morphism before the fundamental-class and derived-global-section constructions are applied. For an arbitrary derived coefficient arrow T:Lp₂*F→p₁!G, a factorization T=ϖ^k·U determines U only when multiplication by ϖ^k is injective on the O-module Hom_D(Lp₂*F,p₁!G); ϖ-torsion-freeness of the cohomology sheaves of the target does not imply this, and no division of a derived arrow is asserted without that injectivity. When p₁!G is itself a ϖ-torsion-free sheaf, as in P20's flat setting, the injectivity holds and the factorization of P20 Remark 4.3.3 on the target p₁!G also divides uniquely. A rational operator alone supplies no integral division. At Klingen and paramodular level the geometric T_(p,2) and U_(Kli(p),2) are defined with p⁻³ after inverting p, using the p-level spans of §3.0b; no integral p-operator or ordinary projector is asserted here.
 
-(P20, Remark 4.3.3, p. 19; §14.9.1–14.9.2, pp. 102–105, P20 line 806).
+(P20, §4.3.1 and Remark 4.3.3, p. 19, P20 lines 829–842; §14.9.1–14.9.2, pp. 102–105, P20 line 806).
 
-A proof route is to state the actual integral divisibility of the coefficient map, rather than divide a cohomology class. Use ϖ-torsion-freeness to make the integral normalization unique. For p-level correspondences invert p first, apply rational isogeny transport and the declared p⁻³ normalization.
+A proof route is to state the actual integral divisibility of the sheaf morphism t, rather than divide a cohomology class or a derived arrow. Use the ϖ-torsion-freeness of p₁*G to make u unique, then apply the fundamental-class and derived-global-section constructions to u. For p-level correspondences invert p first, apply rational isogeny transport and the declared p⁻³ normalization.
 
 Its API is:
 
-- Construct U from divisibility and torsion-freeness.
-- Two normalized maps with the same ϖ^k multiple coincide in a torsion-free target.
-- After inverting ϖ the integral U equals ϖ⁻kT; the p-level operators use only this rational formula.
-- Maps between torsion-free factorizations intertwine their divided maps by uniqueness after multiplication by ϖ^k.
-- A flat coefficient extension preserving the divisibility factorization carries U to the normalized extended map; arbitrary torsion reduction is not a uniqueness argument.
+- Construct u from the sheaf-level divisibility and the ϖ-torsion-freeness of p₁*G, and ϖ⁻kT from u by the fundamental-class construction.
+- Two sheaf morphisms into the ϖ-torsion-free p₁*G with the same ϖ^k multiple coincide. Two derived arrows Lp₂*F→p₁!G with the same ϖ^k multiple coincide when multiplication by ϖ^k is injective on Hom_D(Lp₂*F,p₁!G), and need not coincide otherwise.
+- After inverting ϖ the integral ϖ⁻kT equals ϖ⁻k·T in the rational Hom; the p-level operators use only this rational formula.
+- Maps between sheaf-level factorizations intertwine their divided morphisms, by uniqueness after multiplication by ϖ^k into a ϖ-torsion-free target.
+- A flat coefficient extension preserving the sheaf-level factorization carries u to the normalized extended morphism; arbitrary torsion reduction is not a uniqueness argument.
 
-*Needs:* §3.4; §4.1; ShimuraCompactifications C5.19–C5.21, C5.31; §3.0b.
+*Needs:* §3.1; §3.4; §4.1; AlgebraicModuliForArithmeticGeometry §7.5 (the fundamental-class map); ShimuraCompactifications 7.19–7.21, 7.31; §3.0b.
 
 **Checks.**
 
@@ -819,6 +819,8 @@ Its API is:
 - For k>0, multiplication by ϖ^k on O/ϖ is zero. On 𝔽₃, the maps U=0 and U=id both satisfy 3^kU=0, so division is not unique. For k=0 multiplication by 3⁰ is identity, with kernel zero.
 - When k=0 the construction returns the original correspondence.
 - For multiplication by p on the O-lattice O, the rational inverse sends 1 to 1/p∉O; on E it is an endomorphism. Thus this rational inverse supplies no integral map O→O.
+- With actual sheaves F=G=O on Spec O and identity legs, Hom(O,O)=O and multiplication by ϖ^k is injective on it, so ϖ^k·u=ϖ^k·u′ forces u=u′: the sheaf-level division is unique.
+- Negative control for derived arrows: on Spec O with identity legs, F=(O/ϖ)[−1] and G=O give Hom_D(F,G)=Ext¹_O(O/ϖ,O)≃O/ϖ, on which ϖ acts as zero, although the target O is ϖ-torsion-free. With k=1 and T=0, both U=0 and U=the class of 1 satisfy ϖ·U=T. A rule that divided derived arrows by torsion-freeness of the target alone would produce two different normalizations; here F is not a sheaf, so the sheaf-level normalization does not apply, and the injectivity required of ϖ on Hom_D fails.
 
 ### 4.3 Geometric Hecke generators and the spin polynomial
 
@@ -850,7 +852,7 @@ For proper toroidal complex models, algebraic coherent cohomology agrees with an
 
 A proof route is to apply proper/projective GAGA on the actual compactification and coherent sheaves. Check compatibility of the duality counit as well as pullback and the boundary map. Use finite étale characteristic-zero descent, exact finite-group invariants and the finite-level/tower action.
 
-*Needs:* §3.13; ComplexComparisonPartII C1.9 and C2; ComplexComparisonPartII C3.3; SmoothRepresentationsOfLocalGroups SR.0; ShimuraCompactifications C3.3–C3.10 and C5.
+*Needs:* §3.13; ComplexComparisonPartII C1.9 and C2; ComplexComparisonPartII C3.3; SmoothRepresentationsOfLocalGroups SR.0; ShimuraCompactifications 4.3–4.10 and Layer 7.
 
 **Checks.**
 
@@ -862,13 +864,13 @@ At q=2, (T₀,T₁,T₂)=(1,2,3) in the spherical supplier’s order gives 1−3
 
 ### Dependencies
 
-ComplexComparisonPartII C1.9 and C2; ComplexComparisonPartII C3.3; IntegralHeckeAndGaloisDeterminants §§3a.1–3a.2, 3b.1–3b.2; Mathlib `CochainComplex.IsKProjective.Qh_map_bijective`; Mathlib `CochainComplex.isKProjective_of_projective`; ShimuraCompactifications C3.3–C3.10 and C5; ShimuraCompactifications C5.19–C5.21, C5.31; §3.0b; SmoothRepresentationsOfLocalGroups SR.0; SmoothRepresentationsOfLocalGroups SR.4. Earlier in this layer use the individual prerequisites displayed above.
+AlgebraicModuliForArithmeticGeometry §7.5 (the fundamental-class map for §4.2); ComplexComparisonPartII C1.9 and C2; ComplexComparisonPartII C3.3; IntegralHeckeAndGaloisDeterminants §§3a.1–3a.2, 3b.1–3b.2; Mathlib `CochainComplex.IsKProjective.Qh_map_bijective`; Mathlib `CochainComplex.isKProjective_of_projective`; ShimuraCompactifications 4.3–4.10 and Layer 7; ShimuraCompactifications 7.19–7.21, 7.31; §3.0b; SmoothRepresentationsOfLocalGroups SR.0; SmoothRepresentationsOfLocalGroups SR.4. Earlier in this layer use the individual prerequisites displayed above.
 
 ## Layer 5: integral vanishing, Hecke relations and localization
 
 ### 5.0 Hilbert–Siegel geometry, EO strata and the boundary regularity input
 
-For a totally real field F, the genus-two PEL datum for Res_(F/ℚ)GSp₄, a neat prime-to-p level and the rational polarization data, specialize ShimuraCompactifications C5.3, C5.16 and C5.25–C5.26 to BCGP21’s PEL group G, and construct the G₁ quotient. Identify the open moduli problem, universal polarized degenerating family and the two maps to the supplied PEL compactifications; on normalized p-level models retain the lattice collection and do not assert smoothness. At hyperspecial p-level with p totally split, the integral model is smooth of relative dimension 3[F:ℚ]. Define the finite quotient group Δ(Kᵖ) and prove the compactified direct-factor comparison under p∤#Δ(Kᵖ), including boundary stabilizers; an action free only on the open part is insufficient. The field F=ℚ is its Siegel specialization, not a genus-one Hilbert modular substitute. (BCGP21 §§3.3–3.8, Definition 3.3.3, pp. 204–205, Proposition 3.8.3 and its compactified quotient construction.)
+For a totally real field F, the genus-two PEL datum for Res_(F/ℚ)GSp₄, a neat prime-to-p level and the rational polarization data, specialize ShimuraCompactifications 7.3, 7.16 and 7.25–7.26 to BCGP21’s PEL group G, and construct the G₁ quotient. Identify the open moduli problem, universal polarized degenerating family and the two maps to the supplied PEL compactifications; on normalized p-level models retain the lattice collection and do not assert smoothness. At hyperspecial p-level with p totally split, the integral model is smooth of relative dimension 3[F:ℚ]. Define the finite quotient group Δ(Kᵖ) and prove the compactified direct-factor comparison under p∤#Δ(Kᵖ), including boundary stabilizers; an action free only on the open part is insufficient. The field F=ℚ is its Siegel specialization, not a genus-one Hilbert modular substitute. (BCGP21 §§3.3–3.8, Definition 3.3.3, pp. 204–205, Proposition 3.8.3 and its compactified quotient construction.)
 
 Its API is:
 
@@ -878,7 +880,7 @@ Its API is:
 - compare boundary ideals and the toroidal-to-minimal contractions;
 - split the canonical and subcanonical quotient cohomology as direct factors when p∤#Δ(Kᵖ).
 
-*Needs:* ShimuraCompactifications C1, C3–C5; AutomorphicBundles B0–B4; SchemeAndStackFoundations §§1.1, 2.6, 2.23; no later theorem on EO strata or packets is used.
+*Needs:* ShimuraCompactifications Layer 1 and Layers 4, 6 and 7; AutomorphicBundles B0–B4; SchemeAndStackFoundations §§1.1, 2.6, 2.23; no later theorem on EO strata or packets is used.
 
 **Checks.**
 
@@ -896,7 +898,7 @@ Its API is:
 - compare the cofinal regular thickenings and their transition maps;
 - identify the coefficient and dual-coefficient local Ext systems with their ordinary support objects.
 
-*Needs:* the model above; SchemeAndStackFoundations §§0.18, 2.7–2.8; ShimuraCompactifications C5. The cohomological acyclicity is proved in §5.10 using §5.2.
+*Needs:* the model above; SchemeAndStackFoundations §§0.18, 2.7–2.8; ShimuraCompactifications Layer 7. The cohomological acyclicity is proved in §5.10 using §5.2.
 
 **Checks.**
 
@@ -914,7 +916,7 @@ For every EO component in these charts prove that it meets the interior, and sho
 
 ### 5.1 Formally canonical and subcanonical coefficients
 
-Apply the formally canonical and formally subcanonical conditions of ShimuraCompactifications C5.21 to the coefficients of §1.2 on the additional compactified p-level spans of §3.0b and the G₁ quotient of §5.0. On every boundary chart identify the completed monomial module and exhibit the finite filtration of the boundary-base coefficient by pullbacks of finite base modules. The canonical monoid is σ∨; the subcanonical monoid is the intersection of τ∨_0 over nonzero faces τ of σ, including σ. For the zero cone this is an empty intersection, hence imposes no condition. Verify the reduced boundary-ideal identification on the relevant chart, using refinement pushforward when the model is singular. On a quotient apply the prime-to-p stabilizer direct-factor comparison of §5.0 to the completed coefficient. These are model-specific verifications of the supplied condition.
+Apply the formally canonical and formally subcanonical conditions of ShimuraCompactifications 7.21 to the coefficients of §1.2 on the additional compactified p-level spans of §3.0b and the G₁ quotient of §5.0. On every boundary chart identify the completed monomial module and exhibit the finite filtration of the boundary-base coefficient by pullbacks of finite base modules. The canonical monoid is σ∨; the subcanonical monoid is the intersection of τ∨_0 over nonzero faces τ of σ, including σ. For the zero cone this is an empty intersection, hence imposes no condition. Verify the reduced boundary-ideal identification on the relevant chart, using refinement pushforward when the model is singular. On a quotient apply the prime-to-p stabilizer direct-factor comparison of §5.0 to the completed coefficient. These are model-specific verifications of the supplied condition.
 
 (Lan17, Definition 8.5, p. 34, with Propositions 7.5 and 7.15, pp. 28–32, Lan17 line 1488).
 
@@ -928,7 +930,7 @@ Its API is:
 - Restriction to a boundary chart and an allowed fan refinement preserves the completed expansion and its finite filtration.
 - A coefficient isomorphism carrying the chart filtrations and monomial expansions transports the formally canonical property.
 
-*Needs:* AutomorphicBundles B3.10; §1.2; ShimuraCompactifications C4.1–C4.11; ShimuraCompactifications C5.19–C5.21, C5.31; §3.0b; §5.0 for quotient descent.
+*Needs:* AutomorphicBundles 5.10; §1.2; ShimuraCompactifications 6.1–6.11; ShimuraCompactifications 7.19–7.21, 7.31; §3.0b; §5.0 for quotient descent.
 
 **Checks.**
 
@@ -939,13 +941,13 @@ Its API is:
 
 ### 5.2 Toroidal-to-minimal relative vanishing
 
-For a Lan17 normalized PEL toroidal-to-minimal map π over an allowed O_(F₀,(p))-algebra R, and a quasi-coherent extension E satisfying the formal criterion of ShimuraCompactifications C5.21, R^iπ_*(E(−nD′))=0 for i>0 and n>0 in the formally canonical case, and for i>0 and n≥0 in the formally subcanonical case. Here D′ is the effective Cartier divisor supported on the boundary supplied by Lan17 Corollary 6.7, with O(−D′) relatively ample over the minimal model; D′ itself is not relatively ample. In particular subcanonical automorphic coefficients have no positive higher direct images once the chart criterion is verified; canonical coefficients at n=0 are not included. The same assertion holds over an open U of the minimal model for a coefficient defined on π⁻¹U with the chart criterion there; it also applies over finite coefficient algebras after verifying that criterion under base change. Analytic adic generic-fibre comparisons are imported by the higher-Hida consumer from its adic-space owner, rather than asserted as algebraic base change here.
+For a Lan17 normalized PEL toroidal-to-minimal map π over an allowed O_(F₀,(p))-algebra R, and a quasi-coherent extension E satisfying the formal criterion of ShimuraCompactifications 7.21, R^iπ_*(E(−nD′))=0 for i>0 and n>0 in the formally canonical case, and for i>0 and n≥0 in the formally subcanonical case. Here D′ is the effective Cartier divisor supported on the boundary supplied by Lan17 Corollary 6.7, with O(−D′) relatively ample over the minimal model; D′ itself is not relatively ample. In particular subcanonical automorphic coefficients have no positive higher direct images once the chart criterion is verified; canonical coefficients at n=0 are not included. The same assertion holds over an open U of the minimal model for a coefficient defined on π⁻¹U with the chart criterion there; it also applies over finite coefficient algebras after verifying that criterion under base change. Analytic adic generic-fibre comparisons are imported by the higher-Hida consumer from its adic-space owner, rather than asserted as algebraic base change here.
 
 (Lan17, Theorem 8.6 and Remark 8.9, pp. 34–35; P20 Theorem 6.2.2.1, p. 30; BP26 proof of Proposition 5.6.3, p. 58, Lan17 line 1505).
 
 A proof route is to reduce locally on the minimal compactification to the formal chart calculation of Lan17 §7. Apply the positive-monomial argument and the relatively ample invertible sheaf O(−D′) with the indicated range of n. Use formal functions and refinement descent; verify separately the ramified/quotient model inputs requested below.
 
-*Needs:* §5.1; ShimuraCompactifications C3.3–C3.10 and C5; ShimuraCompactifications C5.19–C5.21, C5.31; §3.0b.
+*Needs:* §5.1; ShimuraCompactifications 4.3–4.10 and Layer 7; ShimuraCompactifications 7.19–7.21, 7.31; §3.0b.
 
 **Checks.**
 
@@ -954,7 +956,7 @@ A proof route is to reduce locally on the minimal compactification to the formal
 
 ### 5.3 Lan–Suh’s general PEL small-weight vanishing
 
-Let X=M^tor_(H,Σ,k₁) be a smooth proper good-prime PEL toroidal model of ShimuraCompactifications C5, with neat prime-to-p level, smooth projective fan and boundary D, over the perfect residue field k₁ of characteristic p. Write d=dim X, G₁ and M₁ for the source’s reductive group and Hodge Levi, and W^(M₁) for its Kostant representatives. For every representation-small dominant weight μ∈X_G₁^(+,<rep), with max(2,r_τ)<p for each self-conjugate embedding τ, every positive parallel ν∈X_M₁^(+,<p), every w∈W^(M₁), and every integer i, prove both vanishings:
+Let X=M^tor_(H,Σ,k₁) be a smooth proper good-prime PEL toroidal model of ShimuraCompactifications Layer 7, with neat prime-to-p level, smooth projective fan and boundary D, over the perfect residue field k₁ of characteristic p. Write d=dim X, G₁ and M₁ for the source’s reductive group and Hodge Levi, and W^(M₁) for its Kostant representatives. For every representation-small dominant weight μ∈X_G₁^(+,<rep), with max(2,r_τ)<p for each self-conjugate embedding τ, every positive parallel ν∈X_M₁^(+,<p), every w∈W^(M₁), and every integer i, prove both vanishings:
 
 - H^(i−ℓ(w))(X,(W^∨_(w·[μ]+ν))_can)=0 for i<d.
 - H^(i−ℓ(w))(X,(W^∨_(w·[μ]−ν))_sub)=0 for i>d.
@@ -966,7 +968,7 @@ Use Lan–Suh’s weight sets and coefficient conventions of §7 (LanSuh line 18
 A proof route is to realize the coefficient as a horizontal summand of the logarithmic cohomology of the lifted PEL family. Apply the relative logarithmic vanishing supplied by CrystallineCohomology and split the associated graded using the integral dual BGG comparison. The length shift gives the two ranges. For the GSp₄ specialization of CG20 Theorem 5.1 take μ=(α,β;c), α≥β≥0, α+β<p−3, and ν=(t,t;0), t>0; the length-one, length-two and length-three subcanonical weights are (β+2+t,−α+t), (α+3+t,1−β+t), (α+3+t,β+3+t). The extra rank condition is 2<p, and the Levi bound a−b+1≤p holds in the stated ranges (CG20 proof of Theorem 5.1, pp. 22–24, CG20 line 946).
 
 
-*Needs:* AutomorphicBundles B3.10 and B3.BGG.2–B3.BGG.3 (gap:integral-small-weight-dual-bgg); CrystallineCohomology CR.5.4 (gap:coefficient-logarithmic-splitting), CR.5.1–CR.5.3; ShimuraCompactifications C5.3–C5.17; LanglandsParameterStacks LP3.0; §1.2.
+*Needs:* AutomorphicBundles 5.10 and 9.2–9.3 (gap:integral-small-weight-dual-bgg); CrystallineCohomology CR.5.4 (gap:coefficient-logarithmic-splitting), CR.5.1–CR.5.3; ShimuraCompactifications 7.3–7.17; ReductiveGroups §10B; §1.2.
 
 **Checks.**
 
@@ -982,7 +984,7 @@ On the smooth hyperspecial integral Siegel threefold with residue field k of cha
 
 A proof route is to use the length-1 Lan–Suh representative and its explicit weight formula. Choose integral α,β,t realizing (a,b) and check dominance, positivity and p-smallness. Translate W into ω and read the cohomological shift i−ℓ(w).
 
-*Needs:* AutomorphicBundles B3.10; §5.3.
+*Needs:* AutomorphicBundles 5.10; §5.3.
 
 **Checks.**
 
@@ -996,7 +998,7 @@ On the smooth hyperspecial integral Siegel threefold with residue field k of cha
 
 A proof route is to use the length-2 Lan–Suh representative and its explicit weight formula. Choose integral α,β,t realizing (a,b) and check dominance, positivity and p-smallness. Translate W into ω and read the cohomological shift i−ℓ(w).
 
-*Needs:* AutomorphicBundles B3.10; §5.3.
+*Needs:* AutomorphicBundles 5.10; §5.3.
 
 **Checks.**
 
@@ -1010,7 +1012,7 @@ On the smooth hyperspecial integral Siegel threefold with residue field k of cha
 
 A proof route is to use the length-3 Lan–Suh representative and its explicit weight formula. Choose integral α,β,t realizing (a,b) and check dominance, positivity and p-smallness. Translate W into ω and read the cohomological shift i−ℓ(w).
 
-*Needs:* AutomorphicBundles B3.10; §5.3.
+*Needs:* AutomorphicBundles 5.10; §5.3.
 
 **Checks.**
 
@@ -1024,7 +1026,7 @@ For a smooth proper toroidal Siegel threefold in characteristic zero, or in char
 
 A proof route is to use the logarithmic Kodaira–Spencer formula ω_X≃det(E)³(−D). Dualize Sym^(a−b) only under the indicated factorial-invertibility bound. Apply coherent Serre duality and transpose the geometric normalized correspondence, retaining its twist.
 
-*Needs:* AutomorphicBundles B3.10; §1.6; §3.9; §4.1; AutomorphicBundles B4.
+*Needs:* AutomorphicBundles 5.10; §1.6; §3.9; §4.1; AutomorphicBundles B4.
 
 **Checks.**
 
@@ -1038,7 +1040,7 @@ On the hyperspecial Siegel threefold over k, H²_sub(ω(a,2))=H³_sub(ω(a,2))=0
 
 A proof route is to substitute the first weight into Theorem 5.1(2) and check its p-small inequalities. Use Serre duality and Theorem 5.1 on the transformed singular weight for the second range. Keep the cohomological degree and boundary twist through each duality.
 
-*Needs:* AutomorphicBundles B3.10; §5.5; §5.7.
+*Needs:* AutomorphicBundles 5.10; §5.5; §5.7.
 
 **Checks.**
 
@@ -1052,7 +1054,7 @@ Fix a dominant weight μ and a finite set of neat toroidal levels among X,X₀(Q
 
 A proof route is to push subcanonical coefficients to the minimal model using relative vanishing. Use Serre vanishing after ample Hodge twisting, and take the maximum bound over the fixed finite set of levels. Use the ϖ-adic and E/O coefficient long exact sequences, proper finite cohomology and Nakayama to get the two surjections.
 
-*Needs:* AutomorphicBundles B3.10; §5.2; SchemeAndStackFoundations §§2.6–2.8, 2.18–2.21; §1.4.
+*Needs:* AutomorphicBundles 5.10; §5.2; SchemeAndStackFoundations §§2.6–2.8, 2.18–2.21; §1.4.
 
 **Checks.**
 
@@ -1066,7 +1068,7 @@ At hyperspecial p-level on the smooth Hilbert–Siegel toroidal model, filter by
 
 A proof route is to use the EO codimension, affine-image and regular-thickening results of §5.0. Apply the general Kempf resolution to the MCM coefficient and identify the support terms by cofinal Koszul thickenings. Use relative vanishing over the affine minimal stratum image to prove the required term acyclicity.
 
-*Needs:* §5.0 for the EO geometry and regular thickenings; AutomorphicBundles B3.10; SchemeAndStackFoundations §§2.6–2.8, 2.18–2.21; §5.2; ShimuraCompactifications C3.3–C3.10 and C5.
+*Needs:* §5.0 for the EO geometry and regular thickenings; AutomorphicBundles 5.10; SchemeAndStackFoundations §§2.6–2.8, 2.18–2.21; §5.2; ShimuraCompactifications 4.3–4.10 and Layer 7.
 
 **Checks.**
 
@@ -1080,7 +1082,7 @@ For the preceding EO filtration, restriction of every Cousin term of a subcanoni
 
 A proof route is to express the Cousin term as the filtered colimit of Ext groups for the regular thickenings. Prove boundary regularity on each quotient from the geometric non-containment and CM hypotheses. Localize at the boundary equation and use the resulting injection in every term.
 
-*Needs:* §5.0 for boundary regularity; AutomorphicBundles B3.10; §5.10; SchemeAndStackFoundations §§2.6–2.8, 2.18–2.21.
+*Needs:* §5.0 for boundary regularity; AutomorphicBundles 5.10; §5.10; SchemeAndStackFoundations §§2.6–2.8, 2.18–2.21.
 
 **Checks.**
 
@@ -1094,7 +1096,7 @@ For a prime-to-p Hecke correspondence preserving each EO stratum, coherent pullb
 
 A proof route is to pull back the EO regular sequences and check the finite-flat or duality hypotheses for both legs. Construct the maps on local Ext/Koszul representatives, with cofinal powers when generators change. Use the natural maps of ordinary local-cohomology support sequences and their Ext/Koszul representatives to prove compatibility with incidence differentials and augmentation; compare on the interior. BP26’s completion/compact-support filtration is a separate construction.
 
-*Needs:* AutomorphicBundles B3.10; §5.10; SchemeAndStackFoundations §§2.6–2.8, 2.18–2.21; AlgebraicModuliForArithmeticGeometry §7.5 (the boundary fundamental-class contract).
+*Needs:* AutomorphicBundles 5.10; §5.10; SchemeAndStackFoundations §§2.6–2.8, 2.18–2.21; AlgebraicModuliForArithmeticGeometry §7.5 (the boundary fundamental-class contract).
 
 **Checks.**
 
@@ -1108,7 +1110,7 @@ For the BCGP21 Hilbert–Siegel models with p split completely in F and K_p=∏_
 
 A proof route is to establish the convolution relations on the open Shimura variety using its finite étale correspondences. Use termwise interior injection to prove those same relations on the integral Cousin complex. Pass from the modulo-pⁿ models through derived formal completion to RΓ. Obtain the canonical-coefficient result by duality using the actual integral dual coefficient (divided powers where required), and descend to G₁ only under the explicit component-group condition.
 
-*Needs:* §5.0 for compactified quotient descent; AutomorphicBundles B3.10; §5.12; §5.11; §3.13; §3.11; SmoothRepresentationsOfLocalGroups SR.1; SchemeAndStackFoundations §§4.8–4.10; DeformationAndDerivedPatchingAlgebra §§7.1–7.9.
+*Needs:* §5.0 for compactified quotient descent; AutomorphicBundles 5.10; §5.12; §5.11; §3.13; §3.11; SmoothRepresentationsOfLocalGroups SR.1; SchemeAndStackFoundations §§4.8–4.10; DeformationAndDerivedPatchingAlgebra §§7.1–7.9.
 
 **Checks.**
 
@@ -1184,7 +1186,7 @@ For p=7 and weight (4,2), the length-one substitution t=2, α=β=0 gives vanishi
 
 ### Dependencies
 
-AlgebraicModuliForArithmeticGeometry §7.5 (the boundary fundamental-class contract); ArithmeticGaloisRepresentations §§1.1–1.2, 1.7–1.11; AutomorphicBundles B4; CrystallineCohomology CR.5.1–CR.5.4; CrystallineCohomology CR.5; AutomorphicBundles B3.BGG (the coefficient splitting contracts); DerivedModuleAlgebra §§1.3–1.5, 1.E.1; DeformationAndDerivedPatchingAlgebra §§7.1–7.9; IntegralHeckeAndGaloisDeterminants §§2.2–2.3; IntegralHeckeAndGaloisDeterminants §§3a.1–3a.2, 3b.1–3b.2; LanglandsParameterStacks LP3.0; SchemeAndStackFoundations §§2.6–2.8, 2.18–2.21; SchemeAndStackFoundations §§4.8–4.10; ShimuraCompactifications C3.3–C3.10 and C5; ShimuraCompactifications C4.1–C4.11; ShimuraCompactifications C5.19–C5.21, C5.31; SchemeAndStackFoundations §§0.18, 1.1, 2.23; §3.0b; SmoothRepresentationsOfLocalGroups SR.1. Earlier in this layer use the individual prerequisites displayed above.
+AlgebraicModuliForArithmeticGeometry §7.5 (the boundary fundamental-class contract); ArithmeticGaloisRepresentations §§1.1–1.2, 1.7–1.11; AutomorphicBundles B4; CrystallineCohomology CR.5.1–CR.5.4; AutomorphicBundles B3.BGG (the coefficient splitting contracts); DerivedModuleAlgebra §§1.3–1.5, 1.E.1; DeformationAndDerivedPatchingAlgebra §§7.1–7.9; IntegralHeckeAndGaloisDeterminants §§2.2–2.3; IntegralHeckeAndGaloisDeterminants §§3a.1–3a.2, 3b.1–3b.2; ReductiveGroups §10B; SchemeAndStackFoundations §§2.6–2.8, 2.18–2.21; SchemeAndStackFoundations §§4.8–4.10; ShimuraCompactifications 4.3–4.10 and Layer 7; ShimuraCompactifications 6.1–6.11; ShimuraCompactifications 7.19–7.21, 7.31; SchemeAndStackFoundations §§0.18, 1.1, 2.23; §3.0b; SmoothRepresentationsOfLocalGroups SR.1. Earlier in this layer use the individual prerequisites displayed above.
 
 ## Layer 6: coherent cohomology and automorphic forms
 
@@ -1370,7 +1372,7 @@ Apply AutomorphicFormsOnReductiveGroups §§6.3–6.7 on the actual coefficient 
 
 For c=3−a−b this is (3/2,3/2−(b−2),3/2−(a−1),3/2−(a+b−3)). Negating all four entries gives the spin-transfer orbit of the balanced π_∞. The two maps have source the indicated representation or its contragredient and target its GL₄ spin infinitesimal-character orbit; this does not claim a new construction of local Langlands. The coefficient has central weight −w and π_∞ has weight w, so their tensor has central weight zero. Keeping CG20’s central sign for π_∞ would instead give −2w. (CG20 Theorem 5.6(1)–(2), p. 29, CG20 line 1182; Remark 5.12, p. 34, CG20 line 1381.)
 
-For the conditional global conclusions fix a residual symplectic degree-four system and excluded places. The geometric exclusion runs in two steps. (a) Let π be any discrete automorphic representation whose coherent cohomology with the given coefficient is nonzero. The coefficient transport above, with AutomorphicFormsOnReductiveGroups §§6.3–6.5, shows that π_∞ has the infinitesimal character shared by the specified holomorphic and generic limits. That is the only hypothesis of BCGP21 Lemma 2.9.1, so a π not of general type lies in one of its alternatives (b)–(f). No temperedness of π_∞ and no membership of π_∞ in the holomorphic or generic limits is assumed at this step. (b) For each of these alternatives the lemma attaches a compatible system of spin Galois representations that is reducible and has the same multiplier and the same normalized Frobenius characteristic polynomials as π. Comparing these polynomials with those of the irreducible residual system rules out every alternative, the character and induced cases as well as the Yoshida and Saito–Kurokawa cases. (BCGP21 Lemma 2.9.1 and proof, pp. 197–198, BCGP21 line 1831.)
+For the conditional global conclusions fix a residual symplectic degree-four system and excluded places. The geometric exclusion runs in two steps. (a) Let π be any discrete automorphic representation whose coherent cohomology with the given coefficient is nonzero. The coefficient transport above, with AutomorphicFormsOnReductiveGroups §§6.3–6.5, shows that π_∞ has the infinitesimal character shared by the specified holomorphic and generic limits. No temperedness of π_∞ and no membership of π_∞ in the holomorphic or generic limits is assumed at this step. (b) A π not of general type lies in one of Arthur's alternatives (b)–(f), and each alternative carries a compatible system of spin Galois representations that is reducible and has the same multiplier and the same normalized Frobenius characteristic polynomials as π; this is established separately in the two weight families. For the totally real weights of §8.8, with k_v≥l_v≥2 and k_v≡l_v modulo 2 at every real place, transport to BCGP21's central normalization and apply BCGP21 Lemma 2.9.1, whose hypotheses are exactly this infinitesimal character and this parity. For the rational family (a,2), for every integer a≥2, the parity hypothesis fails for odd a and the lemma is not invoked; prove the reducible systems in the arithmetic normalization by the case analysis of CG20's proof of Theorem 7.11, with the GL₄ infinitesimal character (3/2,3/2,5/2−a,5/2−a) of the contragredient orbit above: in cases (e) and (f) the transfer is an isobaric sum of four algebraic idèle class characters; in case (d), λ|·|^(1/2)⊞λ|·|^(−1/2)⊞μ, the two character entries differ by 1, which forces a=2 and μ a classical cuspidal eigenform of weight 2; in case (c), μ|·|^(1/2)⊞μ|·|^(−1/2) with μ induced from a quadratic extension of ℚ, the same comparison forces a=2 and μ of infinitesimal character (1,1), a weight-one form up to the twist |·|; in case (b), μ₁⊞μ₂ with equal central characters, both μ_i are classical cuspidal eigenforms of weight a, since the alternative with one of them of infinitesimal character (3/2,3/2) and the other of (5/2−a,5/2−a) has unequal central characters for a≥2. Construct these reducible spin systems from the realization inputs below (WeightsInEtaleCohomology R34.5–R34.6 with ModularCurvesPartII §§14.1–14.4a for weights at least two, the weight-one gap for case (c), class-field characters for the character summands), and transport their normalized Frobenius polynomials and multipliers. In both families, comparing these polynomials with those of the absolutely irreducible residual system rules out every alternative, the character and induced cases as well as the Yoshida and Saito–Kurokawa cases. (BCGP21 Lemma 2.9.1 and proof, pp. 197–198, BCGP21 line 1831, parity hypothesis at line 1833; CG20 proof of Theorem 7.11, pp. 54–55, CG20 lines 2133–2150.)
 
 For the surviving general-type occurrences import EndoscopicTransferAndUnitaryTraceComparison §11.1 under its `GSp4ClassificationInputs`, after transport to its unitary normalization. Its local-parameter comparison and cuspidality conclusion, with AutomorphicFormsOnReductiveGroups §§6.3–6.7’s full-group coherent calculation, identify the relevant archimedean members. Its multiplicity-one theorem supplies the pairing: retaining the same finite part and changing one allowed holomorphic limit to the generic limit gives another automorphic member with the same multiplicity one. Over a totally real field use that supplier on the full global L-packets, not a new component-group formula here. These conditional supplier hypotheses remain on every conclusion that uses the pairing. (BCGP21 Theorem 2.9.3, p. 198, BCGP21 line 1867; P20 Proposition 15.2.4.1, p. 109, P20 line 4986; BCGP21 Corollary 3.10.5, p. 237, BCGP21 line 3302.)
 
@@ -1384,6 +1386,8 @@ For the boundary proof use WeightsInEtaleCohomology R34.5–R34.6 and ModularCur
 - At split weight (3,2;0), the coefficient is (−2,−3;5), the balanced parameter is (2,0;−5), its dual is (0,−2;5), and CG20 gives (2,0;5). Its central coordinate 5 agrees with the dual, whose semisimple coordinates are Weyl-conjugate. The balanced tensor weight is 5−5=0; using CG20’s sign for the same representation gives 5+5=10. The displayed spin orbit is {7/2,7/2,3/2,3/2}, of sum 10, for π_∞^∨; π_∞ has the negated orbit, of sum −10.
 - The supplied closed chambers give memberships {0,1} at (a−1,b−2)=(3,0), {1,2} at (1,−1), and all four at (0,0). The last parameter is compact-singular and cannot define a nondegenerate limit by membership alone.
 - The type-(d) alternative λ|·|^(1/2)⊞λ|·|^(−1/2)⊞μ has spin roots from two characters and one rank-two system, hence a proper invariant line and degrees 1+1+2; it is excluded against an absolutely irreducible residual degree-four system using only its infinitesimal character, before any statement about its archimedean factor being a limit.
+- At (a,b)=(3,2) the parity hypothesis of BCGP21 Lemma 2.9.1 fails, since 3≢2 modulo 2, and a central twist changes only the central coordinate, leaving the semisimple pair (2,0) and the parity unchanged; so the lemma does not apply and the rational case analysis is used. There the character entries 3/2 and 5/2−3=−1/2 differ by 2, not 1, so cases (c) and (d) are empty, and case (b) is a pair of weight-3 classical eigenforms with equal central character, whose spin system is reducible of type 2+2. A route that invoked the lemma for every a≥2 would have no source for odd a.
+- At a=2 the character entries 3/2 and 1/2 differ by 1, so case (d) (type 1+1+2, with μ of weight 2) and case (c) (a dihedral μ of infinitesimal character (1,1), a weight-one form twisted by |·|, type 2+2) both occur and are excluded by their reducible systems; at a=4 the entries 3/2 and −3/2 differ by 3, so both cases are empty and only (b), (e) and (f) remain.
 - A direct sum of two nonzero two-dimensional representations has a proper two-dimensional invariant subspace. Its full degree-four characteristic polynomial cannot be that of an absolutely irreducible residual representation on every Frobenius after semisimplification, including in characteristic two.
 - For two permitted real places with equal multiplicity m and finite invariant dimension d, the holomorphic contribution is md and the two single changes contribute 2md. Under the imported general-type theorem m=1. Over ℚ at weight (4,2), the holomorphic and generic archimedean members each have the same finite-level dimension d, giving h¹=h⁰=d.
 
@@ -1454,7 +1458,7 @@ For the GSp₄/Q toroidal boundary in characteristic zero, specialize the Harris
 
 A proof route is to use the finite closed cover of the boundary by maximal-parabolic strata and its alternating restriction complex. Specialize the HZ induced-term formula, including Δ₀,R and Δ₁,R corrections. Identify the GL₂ and GL₁ factors controlling the unramified Hecke eigensystems; the induced-term comparison is proved on these strata using SmoothRepresentationsOfLocalGroups SR.2 and the lower-rank attachment of §7.0.
 
-*Needs:* §4.4; §7.0; ShimuraCompactifications C3.3–C3.10 and C5; AutomorphicFormsOnReductiveGroups §4.1; SmoothRepresentationsOfLocalGroups SR.2.
+*Needs:* §4.4; §7.0; ShimuraCompactifications 4.3–4.10 and Layer 7; AutomorphicFormsOnReductiveGroups §4.1; SmoothRepresentationsOfLocalGroups SR.2.
 
 **Checks.**
 
@@ -1482,7 +1486,7 @@ For Ω^(k,2) on a characteristic-zero Siegel toroidal compactification, push its
 
 A proof route is to use the boundary Fourier–Jacobi constant term and identify the compactified elliptic coefficient. Distinguish the k=0 constant-term case from k>0. Compute the Hecke pull–trace on the boundary or verify a source with exactly this vector-valued normalization; the source of the numerical assertion is P20 p. 109.
 
-*Needs:* §1.3; §4.1; ShimuraCompactifications C3.3–C3.10 and C5; AutomorphicBundles B5.
+*Needs:* §1.3; §4.1; ShimuraCompactifications 4.3–4.10 and Layer 7; AutomorphicBundles B5.
 
 **Checks.**
 
@@ -1512,7 +1516,7 @@ Let F be totally real, p totally split, K=K^p∏_(v|p)K_v with K^p neat and K_v 
 
 A proof route is to compute the boundary coefficient pushforward by Fourier–Jacobi expansion, using the exact characteristic-zero weight restriction. Handle the scalar parallel case with the projection formula and the boundary ideal exact sequence. Use the boundary Satake reducibility statement to eliminate every residual eigensystem at m.
 
-*Needs:* §5.2; §5.15; §8.4; ShimuraCompactifications C3.3–C3.10 and C5.
+*Needs:* §5.2; §5.15; §8.4; ShimuraCompactifications 4.3–4.10 and Layer 7.
 
 **Checks.**
 
@@ -1538,9 +1542,9 @@ For GSp₄/Q, weight (a,2) with a≥2, neat prime-to-p level and a non-Eisenstei
 
 (CG20, Proof of Theorem 7.11, pp. 54–55, using Theorem 5.2 and Theorem 5.6, CG20 line 2105).
 
-A proof route is to place interior cohomology between the injective cusp image and the L² relative-cohomology source. First apply §7.0(a)–(b) to every L² occurrence with nonzero coherent cohomology at this coefficient, excluding the nongeneral types with the residual Galois witness before any temperedness is known. For a surviving general-type occurrence use the §7.0 spin orbit to verify Clozel algebraicity of its cuspidal GL₄ transfer after the dimension-four shift by 3/2, apply AutomorphicFormsOnReductiveGroups §5.5's cuspidal purity theorem `clozelPurity` to that transfer, and transport essential temperedness back along the supplied local-parameter comparison; Wallach then makes the global representation cuspidal. The same cuspidal sum bounds both sides. Use the full compact-group degree calculation and actual multiplicity spaces to identify degrees zero and one.
+A proof route is to place interior cohomology between the injective cusp image and the L² relative-cohomology source. First apply §7.0(a) and the rational case analysis of §7.0(b), which follows CG20's proof of Theorem 7.11 and not BCGP21 Lemma 2.9.1 (whose parity hypothesis fails for odd a), to every L² occurrence with nonzero coherent cohomology at this coefficient, excluding the nongeneral types with the residual Galois witness before any temperedness is known. For a surviving general-type occurrence use the §7.0 spin orbit to verify Clozel algebraicity of its cuspidal GL₄ transfer after the dimension-four shift by 3/2, apply AutomorphicFormsOnReductiveGroups §5.5's cuspidal purity theorem `clozelPurity` to that transfer, and transport essential temperedness back along the supplied local-parameter comparison; Wallach then makes the global representation cuspidal. The same cuspidal sum bounds both sides. Use the full compact-group degree calculation and actual multiplicity spaces to identify degrees zero and one.
 
-*Needs:* §8.2; §6.4; §7.1; §7.0 (nongeneral-type exclusion); EndoscopicTransferAndUnitaryTraceComparison §11.1 with GSp4ClassificationInputs; AutomorphicFormsOnReductiveGroups §5.5 (`clozelPurity`, for algebraic cuspidal GL₄ representations in its fixed Clozel normalization); AutomorphicFormsOnReductiveGroups §§6.3–6.7; AutomorphicSpectralTheory §4.10.
+*Needs:* §8.2; §6.4; §7.1; §7.0 (nongeneral-type exclusion, rational case analysis); EndoscopicTransferAndUnitaryTraceComparison §11.1 with GSp4ClassificationInputs; AutomorphicFormsOnReductiveGroups §5.5 (`clozelPurity`, for algebraic cuspidal GL₄ representations in its fixed Clozel normalization); AutomorphicFormsOnReductiveGroups §§6.3–6.7; AutomorphicSpectralTheory §4.10.
 
 **Checks.**
 
@@ -1585,7 +1589,7 @@ For a totally real field with two real places, both with l_v=2, a permitted gene
 
 ### Dependencies
 
-ArithmeticGaloisRepresentations §1.8 and Layer 5; AutomorphicBundles B5; AutomorphicFormsOnReductiveGroups §4.1; AutomorphicFormsOnReductiveGroups §5.5; AutomorphicFormsOnReductiveGroups §§6.3–6.7 (with gap:uniform-global-gsp4-separation); AutomorphicSpectralTheory §4.10; ShimuraCompactifications C3.3–C3.10 and C5; SmoothRepresentationsOfLocalGroups SR.2; SmoothRepresentationsOfLocalGroups SR.4; §7.0. Earlier in this layer use the individual prerequisites displayed above.
+ArithmeticGaloisRepresentations §1.8 and Layer 5; AutomorphicBundles B5; AutomorphicFormsOnReductiveGroups §4.1; AutomorphicFormsOnReductiveGroups §5.5; AutomorphicFormsOnReductiveGroups §§6.3–6.7 (with gap:uniform-global-gsp4-separation); AutomorphicSpectralTheory §4.10; ShimuraCompactifications 4.3–4.10 and Layer 7; SmoothRepresentationsOfLocalGroups SR.2; SmoothRepresentationsOfLocalGroups SR.4; §7.0. Earlier in this layer use the individual prerequisites displayed above.
 
 ## Worked examples
 

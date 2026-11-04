@@ -1,8 +1,10 @@
-import Mathlib
-import TauCeti.Algebra.Category.ModuleCat.Sheaf.ExteriorPower
-import TauCeti.AlgebraicGeometry.Modules.Differentials.Basic
-import TauCeti.AlgebraicGeometry.Modules.TensorProduct
-import TauCeti.AlgebraicGeometry.Cohomology.Module.Base
+module
+
+public import Mathlib
+public import TauCeti.Algebra.Category.ModuleCat.Sheaf.ExteriorPower.Basic
+public import TauCeti.AlgebraicGeometry.Modules.Differentials.Basic
+public import TauCeti.AlgebraicGeometry.Modules.TensorProduct
+public import TauCeti.AlgebraicGeometry.Cohomology.Module.Base
 
 /-!
 # Automorphic bundles and classical automorphic forms, Part II: target signatures
@@ -44,6 +46,8 @@ open CategoryTheory AlgebraicGeometry
 
 namespace TauCetiRoadmap.AutomorphicBundlesPartII
 
+@[expose] public section
+
 /-! ## Layer 1: integral coefficients and coherent duality -/
 
 /-- The quotient O/(ϖ^n). The duality theorem below is stated for a DVR O, an
@@ -81,5 +85,6 @@ theorem finiteCoefficientSerreDuality
         integerCoherentCohomology (dvrCoefficientRing O ϖ n) X F ((d : ℤ) - i)) := by
   sorry
 
+end
 
 end TauCetiRoadmap.AutomorphicBundlesPartII

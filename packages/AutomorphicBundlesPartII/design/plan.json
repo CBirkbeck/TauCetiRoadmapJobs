@@ -4244,9 +4244,9 @@
   "gaps": [
     {
       "slug": "integral-dual-weyl-lattices",
-      "needs": "Construct finite free integral Weyl and dual-Weyl modules for every dominant weight of a split reductive Levi over ℤ, with the fixed right-B function realization, left translation and base-change comparison to the field modules, retaining symmetric versus divided powers in residue characteristic.",
-      "supplier": "LanglandsParameterStacks",
-      "section": "LP3.0"
+      "needs": "Construct the integral induced (dual-Weyl) lattice ∇(λ)_ℤ as the ℤ-dual of the Weyl lattice Δ(−w₀λ)_ℤ in the right-B function realization f(gb)=λ(b)⁻¹f(g) with left translation, for every dominant weight of the split Siegel Levi GL_g×G_m over ℤ, with the symmetric-power versus divided-power identification in residue characteristic and the base-change comparison to the field modules ∇(λ) and Δ(λ) of §10B.",
+      "supplier": "ReductiveGroups",
+      "section": "§10B"
     },
     {
       "slug": "coefficient-linear-coherent-comparison",
@@ -4276,7 +4276,7 @@
       "slug": "integral-small-weight-dual-bgg",
       "needs": "Extend the coefficient dual BGG graded comparison to the integral p-small Lan–Suh weights, with the correct Weyl or dual-Weyl lattice, cohomological length shifts and canonical/subcanonical boundary twists, and identify its characteristic-zero specialization.",
       "supplier": "AutomorphicBundles",
-      "section": "B3.BGG.2–B3.BGG.3"
+      "section": "9.2–9.3"
     },
     {
       "slug": "classical-weight-one-realization",
