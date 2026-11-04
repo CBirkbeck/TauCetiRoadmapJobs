@@ -1,0 +1,39 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "QuaternionicModularForms"
+
+[[source]]
+id = "williams"
+authors = "Chris Williams"
+title = "$P$-adic $L$-functions of Bianchi modular forms"
+year = 2014
+venue = "Proc. Lond. Math. Soc. 114 (2017), no. 4, 614-656"
+doi = "10.1112/plms.12020"
+arxiv = "1404.2100v2"
+locator_scheme = "theorem"
+locator = "Definition 1.2"
+url = "https://arxiv.org/abs/1404.2100v2"
+fetched_from = "https://arxiv.org/pdf/1404.2100v2"
+fetched_at = "2026-11-04T13:11:17Z"
+sha256 = "21411af46d6d06a3ca0dba477c3550e85818cdb9f276a1a6fc517373b1f55f77"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v2"
+cited_for = ["2.6"]
+
+[[source]]
+id = "buzzard-eigen"
+authors = "Kevin Buzzard"
+title = "Eigenvarieties"
+year = 2007
+venue = "L-functions and Galois representations, LMS Lecture Note Ser. 320, CUP (2007), 59-120"
+locator_scheme = "section"
+locator = "§8, p. 70"
+url = "https://www.ma.imperial.ac.uk/~buzzard/maths/research/papers/eigenvarieties.pdf"
+fetched_from = "https://www.ma.imperial.ac.uk/~buzzard/maths/research/papers/eigenvarieties.pdf"
+fetched_at = "2026-11-04T13:11:19Z"
+sha256 = "0c54243868e2da8849452c4cc5a3d4e7b118cf17dd04487d4af137ab167ef57d"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["1.3"]
