@@ -1,0 +1,243 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ComplexHessianEquations"
+
+[[source]]
+id = "gpt2023"
+authors = "Bin Guo, Duong H. Phong, Freid Tong"
+title = "On $L^\\infty$ estimates for complex Monge-Ampère equations"
+year = 2021
+arxiv = "2106.02224v1"
+locator_scheme = "theorem"
+locator = "Theorems 1 and 2"
+url = "https://arxiv.org/abs/2106.02224v1"
+fetched_from = "https://arxiv.org/pdf/2106.02224v1"
+fetched_at = "2026-11-04T14:36:54Z"
+sha256 = "2af60e01d8c8f558ee561715fb8433411634aa7bdef322b51e8a266fd392d854"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v1"
+cited_for = ["Final targets (c)"]
+
+[[source]]
+id = "cns1985"
+authors = "L. Caffarelli, L. Nirenberg, J. Spruck"
+title = "The Dirichlet problem for nonlinear second order elliptic equations, III: Functions of the eigenvalues of the Hessian"
+year = 1985
+venue = "Acta Mathematica 155"
+doi = "10.1007/BF02392544"
+locator_scheme = "section"
+locator = "§1"
+url = "https://projecteuclid.org/journals/acta-mathematica/volume-155/issue-none/The-Dirichlet-problem-for-nonlinear-second-order-elliptic-equations-III-Functions/10.1007/BF02392544.pdf"
+licence_class = "open-repository"
+status = "uncertified"
+version_note = "Project Euclid open content; the service received an Incapsula block page instead of the PDF, so the text was not read; cited by its locator"
+cited_for = ["Scope: admissible cones"]
+
+[[source]]
+id = "kolodziej1998"
+authors = "Sławomir Kołodziej"
+title = "The complex Monge-Ampère equation"
+year = 1998
+venue = "Acta Mathematica 180"
+doi = "10.1007/BF02392879"
+locator_scheme = "section"
+locator = "§1"
+url = "https://projecteuclid.org/journals/acta-mathematica/volume-180/issue-1/The-complex-Monge-Amp%C3%A8re-equation/10.1007/BF02392879.pdf"
+licence_class = "open-repository"
+status = "uncertified"
+version_note = "Project Euclid open content; the service received an Incapsula block page instead of the PDF, so the text was not read; cited by its locator"
+cited_for = ["Risks: pluripotential boundary"]
+
+[[source]]
+id = "szekelyhidi2018"
+authors = "Gábor Székelyhidi"
+title = "Fully non-linear elliptic equations on compact Hermitian manifolds"
+year = 2015
+arxiv = "1501.02762v3"
+locator_scheme = "section"
+locator = "§1–2"
+url = "https://arxiv.org/abs/1501.02762v3"
+fetched_from = "https://arxiv.org/pdf/1501.02762v3"
+fetched_at = "2026-11-04T14:37:10Z"
+sha256 = "0b8a8f819c99eda19c8041d3a02d6e2202a5f99a3958d79041cd4758b4d3b3dd"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v3"
+cited_for = ["Scope: the general equation"]
+
+[[source]]
+id = "tosatti-weinkove2010"
+authors = "Valentino Tosatti, Ben Weinkove"
+title = "The complex Monge-Ampère equation on compact Hermitian manifolds"
+year = 2009
+venue = "J. Amer. Math. Soc. 23 (2010), no.4, 1187-1195"
+doi = "10.1090/S0894-0347-2010-00673-X"
+arxiv = "0910.1390v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/0910.1390v2"
+fetched_from = "https://arxiv.org/pdf/0910.1390v2"
+fetched_at = "2026-11-04T14:37:15Z"
+sha256 = "ec91e6da8d65df639ecd8c972a299947001edddfc30a857b927c056f901cdcd5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v2"
+cited_for = ["Final targets (b)"]
+
+[[source]]
+id = "dinew-kolodziej2014"
+authors = "Slawomir Dinew, Slawomir Kolodziej"
+title = "A priori estimates for the complex Hessian equations"
+year = 2011
+venue = "Anal. PDE 7 (2014) 227-244"
+doi = "10.2140/apde.2014.7.227"
+arxiv = "1112.3063v1"
+locator_scheme = "section"
+locator = "§1"
+url = "https://arxiv.org/abs/1112.3063v1"
+fetched_from = "https://arxiv.org/pdf/1112.3063v1"
+fetched_at = "2026-11-04T14:37:21Z"
+sha256 = "f2bce768a9445d4d631cb393d3257bae047d8dc38cefb37d694517eca413cc80"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v1"
+cited_for = ["Scope: k-Hessian"]
+
+[[source]]
+id = "guo-phong2024"
+authors = "Bin Guo, Duong H. Phong"
+title = "On $L^\\infty$ estimates for fully nonlinear partial differential equations"
+year = 2022
+arxiv = "2204.12549v3"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://arxiv.org/abs/2204.12549v3"
+fetched_from = "https://arxiv.org/pdf/2204.12549v3"
+fetched_at = "2026-11-04T14:37:27Z"
+sha256 = "985bdc1a7f39b0229072534afafa697babbf76eed34381745723abf7568dbd6f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v3"
+cited_for = ["Final targets (c)"]
+
+[[source]]
+id = "gilbarg-trudinger2001"
+authors = "David Gilbarg, Neil S. Trudinger"
+title = "Elliptic Partial Differential Equations of Second Order"
+year = 2001
+venue = "Classics in Mathematics"
+doi = "10.1007/978-3-642-61798-0"
+locator_scheme = "theorem"
+locator = "Theorems 6.6, 17.14"
+url = "https://doi.org/10.1007/978-3-642-61798-0"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Suppliers: Schauder, Evans–Krylov"]
+
+[[source]]
+id = "yau1978"
+authors = "Shing-Tung Yau"
+title = "On the Ricci curvature of a compact Kähler manifold and the complex Monge-Ampère equation, I"
+year = 1978
+venue = "Comm. Pure Appl. Math. 31, 339-411"
+doi = "10.1002/cpa.3160310304"
+locator_scheme = "section"
+locator = "§2, Theorem 1 (existence) and the uniqueness statement of §2"
+url = "https://doi.org/10.1002/cpa.3160310304"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (Wiley); cited by its locator without the text, as the target form requests"
+cited_for = ["Final targets (b)"]
+
+[[source]]
+id = "szekelyhidi2014"
+authors = "Gábor Székelyhidi"
+title = "An Introduction to Extremal Kähler Metrics"
+year = 2014
+venue = "Graduate Studies in Mathematics 152, AMS"
+doi = "10.1090/gsm/152"
+locator_scheme = "chapter"
+locator = "Ch. 3 (Theorem 3.1 and §§3.2-3.4)"
+url = "https://doi.org/10.1090/gsm/152"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (AMS); cited by its locator without the text, as the target form requests"
+cited_for = ["Final targets (b)"]
+
+[[source]]
+id = "pss2012"
+authors = "D. H. Phong, Jian Song, J. Sturm"
+title = "Complex Monge Ampere Equations"
+year = 2012
+venue = "Surveys in Differential Geomety, vol. 17, 327-411 (2012)"
+arxiv = "1209.2203v2"
+locator_scheme = "section"
+locator = "§§2–3"
+url = "https://arxiv.org/abs/1209.2203v2"
+fetched_from = "https://arxiv.org/pdf/1209.2203v2"
+fetched_at = "2026-11-04T15:00:30Z"
+sha256 = "bf7761c9baa71b62d125b1f04a0b8130865c3fc55ab861c43a4296b021b8b839"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v2"
+cited_for = ["Final targets (T3)"]
+
+[[source]]
+id = "twwy2015"
+authors = "Valentino Tosatti, Yu Wang, Ben Weinkove, Xiaokui Yang"
+title = "$C^{2,α}$ estimates for nonlinear elliptic equations in complex and almost complex geometry"
+year = 2014
+venue = "Calc. Var. Partial Differential Equations 54 (2015), no.1, 431-453"
+doi = "10.1007/s00526-014-0791-0"
+arxiv = "1402.0554v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/1402.0554v2"
+fetched_from = "https://arxiv.org/pdf/1402.0554v2"
+fetched_at = "2026-11-04T15:00:35Z"
+sha256 = "d0ac1fdca8ec5a682ff46597d4be92f12d619e50aa19ca5d21d9add7e550f669"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v2"
+cited_for = ["Risks: complex Evans–Krylov"]
+
+[[source]]
+id = "ckns1985"
+authors = "L. Caffarelli, J. J. Kohn, L. Nirenberg, J. Spruck"
+title = "The Dirichlet problem for nonlinear second-order elliptic equations II: complex Monge-Ampère, and uniformly elliptic, equations"
+year = 1985
+venue = "Comm. Pure Appl. Math. 38, 209-252"
+doi = "10.1002/cpa.3160380206"
+locator_scheme = "theorem"
+locator = "Theorem 1 (the Dirichlet problem for the complex Monge-Ampère equation on a strictly pseudoconvex domain)"
+url = "https://doi.org/10.1002/cpa.3160380206"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (Wiley); cited by its locator without the text"
+cited_for = ["Final targets (T5)"]
+
+[[source]]
+id = "spruck2005"
+authors = "Joel Spruck"
+title = "Geometric aspects of the theory of fully nonlinear elliptic equations"
+year = 2005
+venue = "Global Theory of Minimal Surfaces, Clay Math. Proc. 2, AMS, 283-309"
+version_note = "read from the Clay Mathematics Institute download of the whole volume (cmip02.pdf); image-only scan recognised by OCR"
+locator_scheme = "section"
+locator = "§2–3"
+url = "https://www.claymath.org/wp-content/uploads/2022/03/cmip02.pdf"
+fetched_from = "https://www.claymath.org/wp-content/uploads/2022/03/cmip02.pdf"
+fetched_at = "2026-11-04T16:00:22Z"
+sha256 = "eed6d6807e4d07a645a0674fb35ff6382b00b4fbc6a6f18bf43a13219a2b765d"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["Scope: cones Γ_k and admissible functions"]
