@@ -1,0 +1,216 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ConstructiveFieldTheoryPhi4"
+
+[[source]]
+id = "aizenman-duminilcopin-2021"
+authors = "Michael Aizenman, Hugo Duminil-Copin"
+title = "Marginal triviality of the scaling limits of critical 4D Ising and $φ_4^4$ models"
+year = 2019
+venue = "Annals of Mathematics, July 2021, Vol. 194, No. 1 (July 2021), pp. 163-23"
+doi = "10.4007/annals.2021.194.1.3"
+arxiv = "1912.07973v4"
+locator_scheme = "theorem"
+locator = "Definition 1.1, Theorem 1.2, Definition 2.1, Proposition 5.2, Theorem 5.6, Theorem 7.1"
+url = "https://arxiv.org/abs/1912.07973v4"
+fetched_from = "https://arxiv.org/pdf/1912.07973v4"
+fetched_at = "2026-11-04T16:37:48Z"
+sha256 = "8e50a8e584fad06ec6ea6b2e7a6fb896833620b8d4f70f9ceae0e3ce4cbc73ee"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v4"
+cited_for = ["final targets", "reachable random fields", "Griffiths-Simon class", "infrared bound"]
+
+[[source]]
+id = "griffiths-simon-1973"
+authors = "Robert B. Griffiths, Barry Simon"
+title = "The (φ⁴)₂ field theory as a classical Ising model"
+year = 1973
+venue = "Communications in Mathematical Physics 33 (1973), 145–164"
+doi = "10.1007/BF01645626"
+locator_scheme = "page"
+locator = "pp. 145–164 (the Ising approximation of the φ⁴ single-site measure)"
+url = "https://doi.org/10.1007/BF01645626"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled at Springer; the open Project Euclid copy (euclid.cmp/1103859251) refuses automated fetching, so cited by its locator without the text"
+cited_for = ["single-site measures"]
+
+[[source]]
+id = "aizenman-1982"
+authors = "Michael Aizenman"
+title = "Geometric analysis of φ⁴ fields and Ising models. Parts I and II"
+year = 1982
+venue = "Communications in Mathematical Physics 86 (1982), 1–48"
+doi = "10.1007/BF01205659"
+locator_scheme = "page"
+locator = "Part I (random current representation, tree diagram bound)"
+url = "https://doi.org/10.1007/BF01205659"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled at Springer; the open Project Euclid copy (euclid.cmp/1103921614) refuses automated fetching, so cited by its locator without the text"
+cited_for = ["infrared bound, correlation inequalities"]
+
+[[source]]
+id = "frohlich-simon-spencer-1976"
+authors = "J. Fröhlich, B. Simon, T. Spencer"
+title = "Infrared bounds, phase transitions and continuous symmetry breaking"
+year = 1976
+venue = "Communications in Mathematical Physics 50 (1976), 79–95"
+doi = "10.1007/BF01608557"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://doi.org/10.1007/BF01608557"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled at Springer; the open Project Euclid copy (euclid.cmp/1103900151) refuses automated fetching, so cited by its locator without the text"
+cited_for = ["infrared bound"]
+
+[[source]]
+id = "frohlich-1982"
+authors = "Jürg Fröhlich"
+title = "On the triviality of λφ⁴_d theories and the approach to the critical point in d ≥ 4 dimensions"
+year = 1982
+venue = "Nuclear Physics B 200 (1982), no. 2, 281–296"
+doi = "10.1016/0550-3213(82)90088-8"
+locator_scheme = "page"
+locator = "p. 281"
+url = "https://repo-archives.ihes.fr/FONDS_IHES/I_Prepublications/FROHLICH/1981-2002/P_81_41/P_81_41.pdf"
+fetched_from = "https://repo-archives.ihes.fr/FONDS_IHES/I_Prepublications/FROHLICH/1981-2002/P_81_41/P_81_41.pdf"
+fetched_at = "2026-11-04T16:40:10Z"
+sha256 = "e5e9258b29bc20c249077911a96d0a67ca24f7ffb4f0f5585a5816f3f6ad6f27"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "text read is the IHES preprint P/81/41 (1981), an OCR scan whose displayed equations are partly missing; equation numbers may differ from the published Nuclear Physics B version"
+cited_for = ["triviality", "Lebowitz inequality", "scaling limits in d > 4"]
+
+[[source]]
+id = "friedli-velenik-2017"
+authors = "Sacha Friedli, Yvan Velenik"
+title = "Statistical Mechanics of Lattice Systems: A Concrete Mathematical Introduction"
+year = 2017
+venue = "Cambridge University Press"
+doi = "10.1017/9781316882603"
+locator_scheme = "chapter"
+locator = "Chapter 3"
+url = "https://doi.org/10.1017/9781316882603"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text. The authors' free preprint page (www.unige.ch/~velenik/smbook/) and the Geneva open archive refuse automated fetching, so no text was read."
+cited_for = ["Ising model, Gibbs states, correlation inequalities"]
+
+[[source]]
+id = "glimm-jaffe-1987"
+authors = "James Glimm, Arthur Jaffe"
+title = "Quantum Physics: A Functional Integral Point of View, 2nd ed."
+year = 1987
+doi = "10.1007/978-1-4612-4728-9"
+locator_scheme = "chapter"
+locator = "Chapters 4, 6 and 8"
+url = "https://doi.org/10.1007/978-1-4612-4728-9"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["lattice approximation, correlation inequalities", "Gaussian measures and random fields", "lattice fields and their limits"]
+
+[[source]]
+id = "fernandez-frohlich-sokal-1992"
+authors = "Roberto Fernández, Jürg Fröhlich, Alan D. Sokal"
+title = "Random Walks, Critical Phenomena, and Triviality in Quantum Field Theory"
+year = 1992
+doi = "10.1007/978-3-662-02866-7"
+locator_scheme = "chapter"
+locator = "Part I"
+url = "https://doi.org/10.1007/978-3-662-02866-7"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["correlation inequalities", "random walk representations"]
+
+[[source]]
+id = "duminilcopin-2017-lectures"
+authors = "Hugo Duminil-Copin"
+title = "Lectures on the Ising and Potts models on the hypercubic lattice"
+year = 2017
+arxiv = "1707.00520v1"
+locator_scheme = "section"
+locator = "Section 1.1, Theorem 1.6, Corollary 1.7, Corollary 1.9, Theorem 1.12"
+url = "https://arxiv.org/abs/1707.00520v1"
+fetched_from = "https://arxiv.org/pdf/1707.00520v1"
+fetched_at = "2026-11-04T16:42:10Z"
+sha256 = "cc442344d0cc21c5d57163719b06dfaf1d243dee8731716bf89d21c593f98a5b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v1"
+cited_for = ["Ising model, correlation inequalities, infinite-volume Gibbs states, infrared bound"]
+
+[[source]]
+id = "peled-spinka-2017"
+authors = "Ron Peled, Yinon Spinka"
+title = "Lectures on the Spin and Loop $O(n)$ Models"
+year = 2017
+arxiv = "1708.00058v3"
+locator_scheme = "section"
+locator = "Theorems 2.1 and 2.3, Section 2.7 (Propositions 2.14–2.16, (46), (50), (52))"
+url = "https://arxiv.org/abs/1708.00058v3"
+fetched_from = "https://arxiv.org/pdf/1708.00058v3"
+fetched_at = "2026-11-04T16:42:30Z"
+sha256 = "e5d575ced8be68c0374ee29c9ff4f8847f9e9ceba517170b87653befef5c7bbe"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v3"
+cited_for = ["reflection positivity and the infrared bound"]
+
+[[source]]
+id = "sokal-1982"
+authors = "Alan D. Sokal"
+title = "An alternate constructive approach to the φ⁴₃ quantum field theory, and a possible destructive approach to φ⁴₄"
+year = 1982
+venue = "Annales de l'I.H.P. Physique théorique 37 (1982), no. 4, 317–398"
+locator_scheme = "section"
+locator = "Section 2.2, (2.20)–(2.32), Proposition 2.1, Section 2.3, Lemma 2.2"
+url = "http://www.numdam.org/item/AIHPA_1982__37_4_317_0/"
+fetched_from = "https://www.numdam.org/item/AIHPA_1982__37_4_317_0.pdf"
+fetched_at = "2026-11-04T16:44:22Z"
+sha256 = "46597fd3bb94fb9809f979ca018df04ff43a304519c27603f60f63ecde54e51a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["lattice phi^4 measures, correlation inequalities, infrared bound"]
+
+[[source]]
+id = "simon-2020-twelve-tales"
+authors = "Barry Simon"
+title = "Twelve Tales in Mathematical Physics: An Expanded Heinemann Prize Lecture"
+year = 2020
+doi = "10.1063/5.0056008"
+arxiv = "2011.12335v2"
+locator_scheme = "section"
+locator = "Section 3 (pp. 24–25), Section 5 (Theorem 5.1, (5.17)–(5.22))"
+url = "https://arxiv.org/abs/2011.12335v2"
+fetched_from = "https://arxiv.org/pdf/2011.12335v2"
+fetched_at = "2026-11-04T16:44:29Z"
+sha256 = "b17c629bbc2e22597519122a32ed2f8e38f9dabc0eedfce601f7604889f10c0a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v2"
+cited_for = ["correlation inequalities, Griffiths-Simon class, infrared bounds"]
+
+[[source]]
+id = "simon-1974"
+authors = "Barry Simon"
+title = "The P(φ)₂ Euclidean (Quantum) Field Theory"
+year = 1974
+venue = "Princeton Series in Physics, Princeton University Press"
+doi = "10.1515/9781400868087"
+locator_scheme = "chapter"
+locator = "Chapters I–IV"
+url = "https://doi.org/10.1515/9781400868087"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Euclidean fields, lattice approximation, correlation inequalities"]
