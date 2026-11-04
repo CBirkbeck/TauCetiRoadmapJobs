@@ -18,7 +18,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
 version_note = "arXiv v2"
-cited_for = ["Summary", "Scope and ownership", "0.1", "0.2", "1.2", "1.6", "1.7", "2.6", "2.7", "3.1", "6.1", "6.2", "6.3", "7.1", "7.5", "8.3", "8.4", "8.5", "8.6", "8.7"]
+cited_for = ["Summary", "Scope and ownership", "0.1", "0.2", "1.2", "1.6", "1.7", "2.6", "2.7", "3.1", "6.1", "6.2", "6.3", "7.1", "7.5", "7.8", "8.3", "8.4", "8.5", "8.6", "8.7"]
 
 [[source]]
 id = "Kato"
@@ -26,9 +26,8 @@ authors = "Kazuya Kato"
 title = "p-adic Hodge theory and values of zeta functions of modular forms"
 year = 2004
 venue = "Asterisque 295 (2004), 117-290"
-version_note = "Printed page = Numdam PDF page + 115."
 locator_scheme = "theorem"
-locator = "3.8; 8.2-8.3; Theorems 12.4-12.5; Remark 12.8; Conjecture 12.10; Lemma 14.15; 15.1-15.17"
+locator = "3.8; 8.2-8.3; Theorems 12.4-12.5; Remark 12.8; Conjecture 12.10; Theorem 13.5; 13.8; Lemma 14.15; 15.1-15.17"
 url = "https://www.numdam.org/item/AST_2004__295__117_0.pdf"
 fetched_from = "https://www.numdam.org/item/AST_2004__295__117_0.pdf"
 fetched_at = "2026-10-26T17:58:16Z"
@@ -36,7 +35,8 @@ sha256 = "3c6e14b11fa60262db8aff782ce3cf4d83e9100c0be83621a7e4ce502cec605d"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
-cited_for = ["Conventions", "0.1", "1.1", "1.2", "1.3", "1.4", "1.6", "1.7", "2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7", "3.1", "3.2", "3.3", "4.4", "6.2", "7.1", "7.2", "7.3", "7.4", "7.5", "7.6", "7.7", "7.8", "8.1", "8.2", "8.3", "8.4", "8.5"]
+version_note = "Printed page = Numdam PDF page + 115."
+cited_for = ["Conventions", "0.1", "1.1", "1.2", "1.3", "1.4", "1.6", "1.7", "2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7", "3.1", "3.2", "3.3", "4.4", "6.2", "7.1", "7.2", "7.3", "7.4", "7.5", "7.6", "7.7", "7.8", "7.9", "8.1", "8.2", "8.3", "8.4", "8.5"]
 
 [[source]]
 id = "JLK"
@@ -59,10 +59,10 @@ cited_for = ["Scope and ownership", "0.1", "0.2", "1.1", "1.2", "1.3", "1.5", "1
 
 [[source]]
 id = "HuberKings"
-venue = "Duke Math. J. 119 (2003)"
 authors = "Annette Huber, Guido Kings"
 title = "Bloch-Kato conjecture and main conjecture of Iwasawa theory for Dirichlet characters"
 year = 2003
+venue = "Duke Math. J. 119 (2003)"
 arxiv = "math/0101071v2"
 locator_scheme = "theorem"
 locator = "Proposition 2.3.1"
@@ -119,7 +119,6 @@ authors = "Karl Rubin"
 title = "The main conjectures of Iwasawa theory for imaginary quadratic fields"
 year = 1991
 venue = "Inventiones Mathematicae 103 (1991), 25-68"
-version_note = "GDZ image scan, text recognised by OCR; journal pagination."
 locator_scheme = "theorem"
 locator = "§1 p.27; §4, Theorem 4.1 and Remarks (1)-(2), pp.36-37"
 url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0103/LOG_0009.pdf"
@@ -129,14 +128,15 @@ sha256 = "96ca08e8ed1a7646d4bf40e2e088e0ea6e068319978ac7e5c5e3d45cc39ee23a"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
+version_note = "GDZ image scan, text recognised by OCR; journal pagination."
 cited_for = ["4.7", "4.8", "5.1", "5.2", "5.3"]
 
 [[source]]
 id = "CGLS"
-venue = "Inventiones Mathematicae 227 (2022), 517-580"
 authors = "Francesc Castella, Giada Grossi, Jaehoon Lee, Christopher Skinner"
 title = "On the anticyclotomic Iwasawa theory of rational elliptic curves at Eisenstein primes"
 year = 2020
+venue = "Inventiones Mathematicae 227 (2022), 517-580"
 arxiv = "2008.02571v2"
 locator_scheme = "theorem"
 locator = "Definition 1.2.1, Theorem 1.2.2, Remark 1.2.3; (2.11), Theorem 2.2.3"
@@ -149,3 +149,22 @@ status = "certified"
 accessed = "2026-10-26"
 version_note = "arXiv v2"
 cited_for = ["5.4", "5.5"]
+
+[[source]]
+id = "Coleman79"
+authors = "Robert F. Coleman"
+title = "Division values in local fields"
+year = 1979
+venue = "Inventiones Mathematicae 53 (1979), 91-116"
+doi = "10.1007/bf01390028"
+locator_scheme = "theorem"
+locator = "Theorem A, p.92; Theorem 11 and Corollary 12 (the norm operator), p.102"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0053/LOG_0011.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0053/LOG_0011.pdf"
+fetched_at = "2026-11-04T12:27:48Z"
+sha256 = "6815542a943a479c5a43800882195997dccfe0cacd122afe27a56a8329eaa97e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "GDZ image scan, text recognised by OCR; journal pagination."
+cited_for = ["5.1"]
