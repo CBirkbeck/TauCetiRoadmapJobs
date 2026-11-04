@@ -17,3 +17,16 @@ licence_class = "answered-by:CBirkbeck"
 status = "certified"
 accessed = "2026-11-04"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/4528#issuecomment-6632668511"
+
+[[source]]
+id = "hatcherVBKT"
+locator_scheme = "theorem"
+locator = "Proposition 3.10"
+url = "https://pi.math.cornell.edu/~hatcher/VBKT/VB.pdf"
+fetched_from = "https://pi.math.cornell.edu/~hatcher/VBKT/VB.pdf"
+fetched_at = "2026-11-04T20:03:25Z"
+sha256 = "04282b30dfa6305183827d399deddd0bd98240c2e6d2d0c416b06e2d4e1fa097"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["H5.TorusLineSections, H5.TorusFiniteRankSections"]
