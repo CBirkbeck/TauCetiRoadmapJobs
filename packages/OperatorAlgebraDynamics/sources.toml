@@ -46,3 +46,78 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["D6"]
+
+[[source]]
+id = "muhly-williams2008"
+authors = "Paul S. Muhly, Dana P. Williams"
+title = "Renault's Equivalence Theorem for Groupoid Crossed Products"
+year = 2007
+venue = "New York Journal of Mathematics Monographs, vol 3, SUNY, Albany NY, 2008"
+arxiv = "0707.3566v2"
+locator_scheme = "theorem"
+locator = "Theorem 5.5"
+url = "https://arxiv.org/abs/0707.3566v2"
+fetched_from = "https://arxiv.org/pdf/0707.3566v2"
+fetched_at = "2026-11-03T21:25:03Z"
+sha256 = "f85ac3434e2f0c0f1a38baeee3669f853da65b0e3b6ca6413191a78e2c4d81ed"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+version_note = "arXiv v2"
+cited_for = ["D5"]
+
+[[source]]
+id = "sims-williams2012"
+authors = "Aidan Sims, Dana P. Williams"
+title = "Renault's Equivalence Theorem for Reduced Groupoid C*-algebras"
+year = 2010
+arxiv = "1002.3093v2"
+locator_scheme = "theorem"
+locator = "Theorem 13"
+url = "https://arxiv.org/abs/1002.3093v2"
+fetched_from = "https://arxiv.org/pdf/1002.3093v2"
+fetched_at = "2026-11-03T21:25:08Z"
+sha256 = "892ebec6e5ce36b87e25c7fc8a97f7dd56f2af902902b6c13f1daab498f11ca5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+version_note = "arXiv v2"
+cited_for = ["D6"]
+
+[[source]]
+id = "takeishi2014"
+authors = "Takuya Takeishi"
+title = "On Nuclearity of $C^*$-algebras of Fell bundles over étale groupoids"
+year = 2013
+arxiv = "1301.6883v1"
+locator_scheme = "theorem"
+locator = "Theorem 5.4"
+url = "https://arxiv.org/abs/1301.6883v1"
+fetched_from = "https://arxiv.org/pdf/1301.6883v1"
+fetched_at = "2026-11-03T21:25:14Z"
+sha256 = "e8588b625696108ee24e568cde02390778927402e86301f7c6adc9c912ff6088"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+version_note = "arXiv v1"
+cited_for = ["D6"]
+
+[[source]]
+id = "delfin-farsi-packer2025"
+authors = "Alonso Delfín, Carla Farsi, Judith Packer"
+title = "Twisted crossed products of Banach algebras"
+year = 2025
+venue = "J. Math. Anal. Appl. 563 (2026) 130798"
+doi = "10.1016/j.jmaa.2026.130798"
+arxiv = "2509.24106v3"
+locator_scheme = "section"
+locator = "Section 2"
+url = "https://arxiv.org/abs/2509.24106v3"
+fetched_from = "https://arxiv.org/pdf/2509.24106v3"
+fetched_at = "2026-11-03T21:25:21Z"
+sha256 = "c713dd2643409f83ca495dcde903737897265ce8f9017e46665cc907871f1e79"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+version_note = "arXiv v3"
+cited_for = ["D1.CentralTwists"]
