@@ -1,0 +1,67 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "RamificationOfCompleteDiscretelyValuedFields"
+
+[[source]]
+id = "serre1961"
+authors = "Jean-Pierre Serre"
+title = "Sur les corps locaux à corps résiduel algébriquement clos"
+year = 1961
+venue = "Bulletin de la Société Mathématique de France 89, 105–154"
+locator_scheme = "section"
+locator = "n° 3.1, 3.4, 3.5"
+url = "http://www.numdam.org/item?id=BSMF_1961__89__105_0"
+fetched_from = "https://www.numdam.org/item/10.24033/bsmf.1562.pdf"
+fetched_at = "2026-11-04T07:06:42Z"
+sha256 = "52152ad27e8b153e02849710fb59992d7bd970f88156d9297529a42f9b0a85b3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["3a.1, 3a.2, 3a.3, 4a.1, 4a.2"]
+
+[[source]]
+id = "ega3"
+authors = "Alexander Grothendieck"
+title = "Éléments de géométrie algébrique : III. Étude cohomologique des faisceaux cohérents, première partie"
+year = 1961
+venue = "Publications mathématiques de l'IHÉS 11, 5–167"
+locator_scheme = "tag"
+locator = "Chapitre 0, (10.3.1), (10.3.1.5), (10.3.2)"
+url = "http://www.numdam.org/item?id=PMIHES_1961__11__5_0"
+fetched_from = "https://www.numdam.org/item/10.1007/BF02684273.pdf"
+fetched_at = "2026-11-04T07:06:50Z"
+sha256 = "3ed59fe81da07f1ab685ddc54a93128a364419d4ddafbc7affcd8abc8b401605"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["3a.3"]
+
+[[source]]
+id = "brinon-conrad"
+authors = "Olivier Brinon and Brian Conrad"
+title = "CMI summer school notes on p-adic Hodge theory"
+year = 2009
+locator_scheme = "page"
+locator = "Exercise 1.4.4, p. 10; Lemma 13.1.6, p. 201"
+url = "https://math.stanford.edu/~conrad/papers/notes.pdf"
+fetched_from = "https://math.stanford.edu/~conrad/papers/notes.pdf"
+fetched_at = "2026-11-04T07:07:06Z"
+sha256 = "f27d508bc64b3c9e2e9de5041429b2cb6a909b2cd72ff8096c20493f27b5a187"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["4a.3"]
+
+[[source]]
+id = "serre-local-fields"
+authors = "Jean-Pierre Serre"
+title = "Local Fields"
+year = 1979
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4757-5673-9"
+locator_scheme = "theorem"
+locator = "II §2 Prop 3; III §6 Prop 12; IV §1 Props 1, 2, 4; IV §3 Prop 14, Ex. 3; V §7 Thm 1"
+url = "https://doi.org/10.1007/978-1-4757-5673-9"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["3a.1, 3a.2, 3a.3, 4a.2"]
