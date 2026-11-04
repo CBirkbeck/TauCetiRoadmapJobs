@@ -12,3 +12,13 @@ locator = "p-adic comparison"
 licence_class = "none"
 status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/192#issuecomment-6334684419"
+
+[[source]]
+id = "Serre1972"
+authors = "Jean-Pierre Serre"
+title = "Propriétés galoisiennes des points d’ordre fini des courbes elliptiques"
+year = 1972
+locator_scheme = "theorem"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/3217#issuecomment-6632669660"
