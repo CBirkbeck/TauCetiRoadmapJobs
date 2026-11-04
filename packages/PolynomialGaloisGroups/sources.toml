@@ -48,3 +48,41 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-03"
 cited_for = ["Conventions", "3.2"]
+
+[[source]]
+id = "sutherland-arith-equiv"
+authors = "Andrew V. Sutherland"
+title = "Stronger arithmetic equivalence"
+year = 2021
+venue = "Discrete Anal. 2021, Paper No. 23, 23 pp"
+doi = "10.19086/da.29452"
+arxiv = "2104.01956v4"
+locator_scheme = "theorem"
+locator = "Theorem 2.10 p. 7; Proposition 2.6 p. 5; Introduction p. 1"
+url = "https://arxiv.org/abs/2104.01956v4"
+fetched_from = "https://arxiv.org/pdf/2104.01956v4"
+fetched_at = "2026-11-04T16:30:09Z"
+sha256 = "54bb3fc5b1dd5f2ace642a64ef0cd2c9675a495d70f89afebb8ad549bbd168dd"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v4"
+cited_for = ["4.1"]
+
+[[source]]
+id = "conway-hulpke-mckay"
+authors = "J. H. Conway, A. Hulpke and J. McKay"
+title = "On transitive permutation groups"
+year = 1998
+venue = "LMS J. Comput. Math. 1 (1998) 1–8"
+doi = "10.1112/S1461157000000115"
+locator_scheme = "page"
+locator = "Table 2, p. 7"
+url = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/DF3D91C6DF89001398A1DC8E5A42E985/S1461157000000115a.pdf/on_transitive_permutation_groups.pdf"
+fetched_from = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/DF3D91C6DF89001398A1DC8E5A42E985/S1461157000000115a.pdf/on_transitive_permutation_groups.pdf"
+fetched_at = "2026-11-04T16:30:27Z"
+sha256 = "3dd481b4bba6899ce20ce0ca67ea43b553168c5107e6cb08424f4ddf772d1de9"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["1.1"]
