@@ -35,3 +35,15 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-03"
 cited_for = ["6.1"]
+
+[[source]]
+id = "LarsonSweedler1969"
+authors = "Richard Gustavus Larson, Moss Eisenberg Sweedler"
+title = "An Associative Orthogonal Bilinear Form for Hopf Algebras"
+year = 1969
+doi = "10.2307/2373270"
+locator_scheme = "theorem"
+locator = "bijectivity of the antipode of a finite-dimensional Hopf algebra (theorem number not yet read)"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/3130#issuecomment-6632679472"
