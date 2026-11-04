@@ -61,3 +61,15 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["Layers 6-13"]
+
+[[source]]
+id = "artin-tate"
+authors = "E. Artin, J. Tate"
+title = "Class Field Theory"
+year = 2009
+doi = "10.1090/chel/366"
+locator_scheme = "section"
+locator = "Chapter XIV, §6"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/5068#issuecomment-6632667758"
