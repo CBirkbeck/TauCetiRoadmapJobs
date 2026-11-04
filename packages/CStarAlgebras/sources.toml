@@ -1,0 +1,326 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "CStarAlgebras"
+
+[[source]]
+id = "blackadar"
+authors = "Bruce Blackadar"
+title = "Operator Algebras: Theory of C*-Algebras and von Neumann Algebras"
+year = 2006
+locator_scheme = "section"
+locator = "II.5.3.2"
+url = "https://bruceblackadar.com/Mathematics/Cycr.pdf"
+fetched_from = "https://bruceblackadar.com/Mathematics/Cycr.pdf"
+fetched_at = "2026-11-04T19:57:49Z"
+sha256 = "8cb61a8348efe6e4b36dbefed4eac2c35498d28c03e160638ad7af952457f88a"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["1.3"]
+
+[[source]]
+id = "arveson1969"
+authors = "William B. Arveson"
+title = "Subalgebras of C*-algebras"
+year = 1969
+venue = "Acta Mathematica 123"
+doi = "10.1007/BF02392388"
+locator_scheme = "theorem"
+locator = "Theorem 1.4.2"
+url = "https://doi.org/10.1007/BF02392388"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["4.2"]
+
+[[source]]
+id = "haagerup1985"
+authors = "Uffe Haagerup"
+title = "The Grothendieck inequality for bilinear forms on C∗-algebras"
+year = 1985
+venue = "Advances in Mathematics 56"
+doi = "10.1016/0001-8708(85)90026-X"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://doi.org/10.1016/0001-8708(85)90026-X"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["6.3"]
+
+[[source]]
+id = "choi1975"
+authors = "Man-Duen Choi"
+title = "Completely positive linear maps on complex matrices"
+year = 1975
+venue = "Linear Algebra and its Applications 10"
+doi = "10.1016/0024-3795(75)90075-0"
+locator_scheme = "theorem"
+locator = "Theorem 2"
+url = "https://doi.org/10.1016/0024-3795(75)90075-0"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["4.3"]
+
+[[source]]
+id = "kirchberg1993"
+authors = "Eberhard Kirchberg"
+title = "On non-semisplit extensions, tensor products and exactness of groupC *-algebras"
+year = 1993
+venue = "Inventiones Mathematicae 112"
+doi = "10.1007/BF01232444"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://doi.org/10.1007/BF01232444"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["7.4"]
+
+[[source]]
+id = "dadarlat1999"
+authors = "H Neidhardt, V.A Zagrebnov"
+title = "Trotter–Kato Product Formula and Symmetrically Normed Ideals"
+year = 1999
+venue = "Journal of Functional Analysis 167"
+doi = "10.1006/jfan.1999.3435"
+locator_scheme = "theorem"
+locator = "Theorem 1.3"
+url = "https://doi.org/10.1006/jfan.1999.3435"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["9.2"]
+
+[[source]]
+id = "wittstock1981"
+authors = "Gerd Wittstock"
+title = "Ein operatorwertiger Hahn-Banach Satz"
+year = 1981
+venue = "Journal of Functional Analysis 40"
+doi = "10.1016/0022-1236(81)90064-1"
+locator_scheme = "theorem"
+locator = "Theorem 4.2"
+url = "https://doi.org/10.1016/0022-1236(81)90064-1"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["4.4"]
+
+[[source]]
+id = "ruan1988"
+authors = "Zhong-jin Ruan"
+title = "Subspaces of C∗-algebras"
+year = 1988
+venue = "Journal of Functional Analysis 76"
+doi = "10.1016/0022-1236(88)90057-2"
+locator_scheme = "theorem"
+locator = "Theorem 3.1"
+url = "https://doi.org/10.1016/0022-1236(88)90057-2"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["3.1"]
+
+[[source]]
+id = "paulsen1984"
+authors = "Vern I. Paulsen"
+title = "Every completely polynomially bounded operator is similar to a contraction"
+year = 1984
+doi = "10.1016/0022-1236(84)90002-7"
+locator_scheme = "theorem"
+locator = "Theorem 2.3"
+url = "https://doi.org/10.1016/0022-1236(84)90002-7"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["4.4"]
+
+[[source]]
+id = "haagerup1983"
+authors = "U. Haagerup"
+title = "All nuclearC *-algebras are amenable"
+year = 1983
+venue = "Inventiones Mathematicae 74"
+doi = "10.1007/BF01394319"
+locator_scheme = "theorem"
+locator = "Theorem 3.1"
+url = "https://doi.org/10.1007/BF01394319"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["6.3"]
+
+[[source]]
+id = "connes1978"
+authors = "A Connes"
+title = "On the cohomology of operator algebras"
+year = 1978
+venue = "Journal of Functional Analysis 28"
+doi = "10.1016/0022-1236(78)90088-5"
+locator_scheme = "theorem"
+locator = "Theorem"
+url = "https://doi.org/10.1016/0022-1236(78)90088-5"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["6.3"]
+
+[[source]]
+id = "ozawa2004"
+authors = "Narutaka Ozawa"
+title = "About the QWEP conjecture"
+year = 2003
+arxiv = "math/0306067v2"
+locator_scheme = "theorem"
+locator = "Theorem 3.4"
+url = "https://arxiv.org/abs/math/0306067v2"
+fetched_from = "https://arxiv.org/pdf/math/0306067v2"
+fetched_at = "2026-11-04T19:50:50Z"
+sha256 = "6dff05b1503962e8248af46ba023816d6c25818079cbb65a90e609ff07cea8f6"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v2"
+cited_for = ["7.3"]
+
+[[source]]
+id = "lance1973"
+authors = "Christopher Lance"
+title = "On nuclear C∗-algebras"
+year = 1973
+venue = "Journal of Functional Analysis 12"
+doi = "10.1016/0022-1236(73)90021-9"
+locator_scheme = "theorem"
+locator = "Theorem 4.1"
+url = "https://doi.org/10.1016/0022-1236(73)90021-9"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["6.2"]
+
+[[source]]
+id = "effros-lance1977"
+authors = "Edward G Effros, E.Christopher Lance"
+title = "Tensor products of operator algebras"
+year = 1977
+venue = "Advances in Mathematics 25"
+doi = "10.1016/0001-8708(77)90085-8"
+locator_scheme = "theorem"
+locator = "Theorem 6.4"
+url = "https://doi.org/10.1016/0001-8708(77)90085-8"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["6.2"]
+
+[[source]]
+id = "pisier-gt"
+authors = "Gilles Pisier"
+title = "Grothendieck's Theorem, past and present"
+year = 2011
+venue = "Bull. Amer. Math. Soc. 49 (2012), 237--323"
+arxiv = "1101.4195v3"
+locator_scheme = "theorem"
+locator = "Theorem"
+url = "https://arxiv.org/abs/1101.4195v3"
+fetched_from = "https://arxiv.org/pdf/1101.4195v3"
+fetched_at = "2026-11-04T19:51:06Z"
+sha256 = "6a4d3c5af4020942be315a207abbb443eec34b2811ea30e071a67541cc73f7bd"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v3"
+cited_for = ["6.3"]
+
+[[source]]
+id = "runde2002"
+authors = "Volker Runde"
+title = "Lectures on Amenability"
+year = 2002
+venue = "Lecture Notes in Mathematics"
+doi = "10.1007/b82937"
+locator_scheme = "theorem"
+locator = "Corollary 6.4.27"
+url = "https://doi.org/10.1007/b82937"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["6.3"]
+
+[[source]]
+id = "takesaki1"
+authors = "Masamichi Takesaki"
+title = "Theory of Operator Algebras II"
+year = 2003
+venue = "Encyclopaedia of Mathematical Sciences"
+doi = "10.1007/978-3-662-10451-4"
+locator_scheme = "theorem"
+locator = "Theorem III.2.4"
+url = "https://doi.org/10.1007/978-3-662-10451-4"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["2.6"]
+
+[[source]]
+id = "stinespring1955"
+authors = "W. Forrest Stinespring"
+title = "Positive functions on C*-algebras"
+year = 1955
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://www.ams.org/journals/proc/1955-006-02/S0002-9939-1955-0069403-4/S0002-9939-1955-0069403-4.pdf"
+fetched_from = "https://www.ams.org/journals/proc/1955-006-02/S0002-9939-1955-0069403-4/S0002-9939-1955-0069403-4.pdf"
+fetched_at = "2026-11-04T19:57:51Z"
+sha256 = "cff456fa4c19c224b27b41117b894a047377123b5d37f4fc8545e2483ea54991"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["4.2"]
+
+[[source]]
+id = "phillips1940"
+authors = "Ralph S. Phillips"
+title = "On linear transformations"
+year = 1940
+locator_scheme = "theorem"
+locator = "Lemma 3.3"
+url = "https://www.ams.org/journals/tran/1940-048-03/S0002-9947-1940-0004094-3/S0002-9947-1940-0004094-3.pdf"
+fetched_from = "https://www.ams.org/journals/tran/1940-048-03/S0002-9947-1940-0004094-3/S0002-9947-1940-0004094-3.pdf"
+fetched_at = "2026-11-04T20:09:51Z"
+sha256 = "7c0f8307f6af0b454762b577e64581ab48e5c2c45d671553e3666f254ca6a524"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["7.2"]
+
+[[source]]
+id = "pisier-lnm"
+authors = "Gilles Pisier"
+title = "Similarity Problems and Completely Bounded Maps"
+year = 2001
+venue = "Lecture Notes in Mathematics"
+doi = "10.1007/b55674"
+locator_scheme = "chapter"
+locator = "5"
+url = "https://doi.org/10.1007/b55674"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["5.3"]
+
+[[source]]
+id = "blecher-paulsen1991"
+authors = "David P Blecher, Vern I Paulsen"
+title = "Tensor products of operator spaces"
+year = 1991
+venue = "Journal of Functional Analysis 99"
+doi = "10.1016/0022-1236(91)90042-4"
+locator_scheme = "theorem"
+locator = "Theorem 5.1"
+url = "https://doi.org/10.1016/0022-1236(91)90042-4"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["5.3"]
