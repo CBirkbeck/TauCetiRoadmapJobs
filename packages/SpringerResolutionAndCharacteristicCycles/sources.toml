@@ -97,3 +97,51 @@ licence_class = "institutional"
 status = "certified"
 accessed = "2026-10-25"
 cited_for = ["9.8"]
+
+[[source]]
+id = "G86"
+authors = "Victor Ginzburg"
+title = "G-modules, Springer's representations and bivariant Chern classes"
+year = 1986
+venue = "Advances in Mathematics 61"
+doi = "10.1016/0001-8708(86)90064-2"
+locator_scheme = "section"
+locator = "§§5–6, Proposition 5.3"
+url = "https://doi.org/10.1016/0001-8708(86)90064-2"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["11.1"]
+
+[[source]]
+id = "KT84"
+authors = "Masaki Kashiwara and Toshiyuki Tanisaki"
+title = "The characteristic cycles of holonomic systems on a flag manifold related to the Weyl group algebra"
+year = 1984
+venue = "Inventiones Mathematicae 77, pp. 185–198"
+doi = "10.1007/BF01389142"
+locator_scheme = "section"
+locator = "§§2 and 5.5, as cited by BR12 lines 1713–1724"
+url = "https://doi.org/10.1007/BF01389142"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["11.1"]
+
+[[source]]
+id = "R08"
+authors = "Simon Riche"
+title = "Geometric braid group action on derived categories of coherent sheaves"
+year = 2008
+venue = "Representation Theory 12, pp. 131–169"
+doi = "10.1090/S1088-4165-08-00325-7"
+locator_scheme = "section"
+locator = "§6.2"
+url = "https://www.ams.org/journals/ert/2008-12-05/S1088-4165-08-00325-7/S1088-4165-08-00325-7.pdf"
+fetched_from = "https://www.ams.org/journals/ert/2008-12-05/S1088-4165-08-00325-7/S1088-4165-08-00325-7.pdf"
+fetched_at = "2026-11-04T21:44:13Z"
+sha256 = "87e81e4e50b20e8dd86f5bfcc791e79ca0c00c99d3f7ff0674ef14682914a08d"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["11.1"]
