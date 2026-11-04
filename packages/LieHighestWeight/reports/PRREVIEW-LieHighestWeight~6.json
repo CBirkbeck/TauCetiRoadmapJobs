@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-LieHighestWeight~6",
+    "head": "b469a66d2d5e477685b59d7b69d4685cd2fb4165",
+    "pr": 1220,
+    "folder": "RepresentationTheory/LieHighestWeight",
+    "date": "2026-11-04",
+    "findings": 9,
+    "blocking": 3,
+    "notes": "Full re-review of an unchanged head; four previous findings audited, all unrepaired. Gate rerun passes (worker's run adds build=0); depcheck 203 roadmaps, 1652 edges, 0 problems. Suggested.lean elaborated with exactly 15 sorry warnings; 20 #check signatures compared with the README; companions elaborate (1/4/28/11 sorry warnings, four on defs); one-tactic probe leaves all 15 headlines; center-transport companion lemma closes with one Mathlib lemma. Eleven seeded targets checked in cached legal texts (Etingof 18.755 and arXiv notes, Woit, Gutt, Garnier, Stacks 02ML, Baez); Dixmier and Humphreys unreadable. Exact adversarial computations: 280 string vectors, 1892 cross-string pairings, affine first-order, score identity, Haar norm, Pieri, Casimir, alcove and centre controls. New blocking witness: gap:compact-frobenius-schur asks for what Tau Ceti proves at the pin (Compact/FrobeniusSchur/Trichotomy.lean, InvariantForm.lean) and CompactGroups states in its Suggested.lean:373; the other three gaps are unregistered and compound (P2, previously P1); admitted companion data (P2). Six P3: companion form, padding, seven backticked names without declarations, stale internal layer references and missing Checks in section 5.2, consumer anchors broken by removed headings, a strict hypothesis where the weak one suffices. No pull-request file was changed."
+  }
+}
