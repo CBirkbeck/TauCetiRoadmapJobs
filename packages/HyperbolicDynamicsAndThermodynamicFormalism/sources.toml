@@ -1,0 +1,163 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "HyperbolicDynamicsAndThermodynamicFormalism"
+
+[[source]]
+id = "BowenRuelle1975"
+authors = "Rufus Bowen, David Ruelle"
+title = "The ergodic theory of AxiomA flows"
+year = 1975
+venue = "Inventiones Mathematicae 29"
+doi = "10.1007/BF01389848"
+locator_scheme = "section"
+locator = "Section 3"
+url = "https://www.ihes.fr/~ruelle/PUBLICATIONS/%5B42%5D.pdf"
+fetched_from = "https://www.ihes.fr/~ruelle/PUBLICATIONS/%5B42%5D.pdf"
+fetched_at = "2026-11-04T22:05:15Z"
+sha256 = "bf2a5f2f655fc52f7b4c3c381b176f520af41c274c6ec53e2afe8da91d52efa9"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["Bowen–Ruelle theorem"]
+
+[[source]]
+id = "BCS2022"
+authors = "Jérôme Buzzi, Sylvain Crovisier, Omri Sarig"
+title = "Measures of maximal entropy for surface diffeomorphisms"
+year = 2018
+arxiv = "1811.02240v2"
+locator_scheme = "theorem"
+locator = "Main Theorem"
+url = "https://arxiv.org/abs/1811.02240v2"
+fetched_from = "https://arxiv.org/pdf/1811.02240v2"
+fetched_at = "2026-11-04T21:59:59Z"
+sha256 = "583947e2363f3b2446f648fb082480aff595af62f46e39f677d20c5186415002"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v2"
+cited_for = ["consumer statements"]
+
+[[source]]
+id = "Walters1982"
+authors = "Peter Walters"
+title = "An Introduction to Ergodic Theory"
+year = 1982
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4612-5775-2"
+locator_scheme = "theorem"
+locator = "Theorem 8.6"
+url = "https://doi.org/10.1007/978-1-4612-5775-2"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["variational principle"]
+
+[[source]]
+id = "Bowen1975"
+authors = "Robert Edward Bowen, Jean-René Chazottes, David Ruelle"
+title = "Equilibrium States and the Ergodic Theory of Anosov Diffeomorphisms"
+year = 2008
+venue = "Lecture Notes in Mathematics"
+doi = "10.1007/978-3-540-77695-6"
+locator_scheme = "chapter"
+locator = "Chapter 4"
+url = "https://doi.org/10.1007/978-3-540-77695-6"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["equilibrium states of Anosov diffeomorphisms"]
+
+[[source]]
+id = "TsujiiZhang2023"
+authors = "Masato Tsujii, Zhiyuan Zhang"
+title = "Smooth mixing Anosov flows in dimension three are exponential mixing"
+year = 2020
+arxiv = "2006.04293v1"
+locator_scheme = "section"
+locator = "Section 1"
+url = "https://arxiv.org/abs/2006.04293v1"
+fetched_from = "https://arxiv.org/pdf/2006.04293v1"
+fetched_at = "2026-11-04T22:01:14Z"
+sha256 = "fc13c5eeaaace294f6f6a05dff5049ac1f0eafeb53ca76d52ee60707d1de8524"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v1"
+cited_for = ["pressure and equilibrium measure of a Hölder potential for Anosov flows"]
+
+[[source]]
+id = "FH2019"
+authors = "Todd Fisher, Boris Hasselblatt"
+title = "Hyperbolic Flows"
+year = 2019
+venue = "EMS Zurich Lectures in Advanced Mathematics"
+doi = "10.4171/200"
+locator_scheme = "chapter"
+locator = "Part II"
+url = "https://doi.org/10.4171/200"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (EMS Press, subscription required on the landing page); cited by its locator without the text"
+cited_for = ["Anosov flows"]
+
+[[source]]
+id = "KatokHasselblatt1995"
+authors = "Anatole Katok, Boris Hasselblatt"
+title = "Introduction to the Modern Theory of Dynamical Systems"
+year = 1995
+venue = "Encyclopedia of Mathematics and its Applications 54, Cambridge University Press"
+doi = "10.1017/CBO9780511809187"
+locator_scheme = "section"
+locator = "Section 17.4"
+url = "https://doi.org/10.1017/CBO9780511809187"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (Cambridge Core); cited by its locator without the text"
+cited_for = ["Anosov flows", "hyperbolic sets", "entropy and pressure"]
+
+[[source]]
+id = "Newhouse1989"
+authors = "Sheldon E. Newhouse"
+title = "Continuity properties of entropy"
+year = 1989
+venue = "Annals of Mathematics 129, 215-235"
+doi = "10.2307/1971492"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://doi.org/10.2307/1971492"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (JSTOR); cited by its locator without the text; no open copy found"
+cited_for = ["upper semicontinuity of entropy for C-infinity maps, stated as an input"]
+
+[[source]]
+id = "BowenWalters1972"
+authors = "Rufus Bowen, Peter Walters"
+title = "Expansive one-parameter flows"
+year = 1972
+venue = "Journal of Differential Equations 12"
+doi = "10.1016/0022-0396(72)90013-7"
+locator_scheme = "theorem"
+locator = "Theorem 3"
+url = "https://doi.org/10.1016/0022-0396(72)90013-7"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["expansive flows"]
+
+[[source]]
+id = "Misiurewicz1976"
+authors = "Michał Misiurewicz"
+title = "A short proof of the variational principle for a Z_+^N action on a compact space"
+year = 1976
+venue = "Astérisque 40 (1976), 147-157"
+locator_scheme = "section"
+locator = "Section 3, the variational principle"
+url = "https://www.numdam.org/item/AST_1976__40__147_0/"
+fetched_from = "https://www.numdam.org/item/AST_1976__40__147_0.pdf"
+fetched_at = "2026-11-04T22:09:31Z"
+sha256 = "f7c63ad7ac979e1003ee058ffdde1cdd7a26744d4e1408dd3e12a9a2e793d78a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["variational principle"]
