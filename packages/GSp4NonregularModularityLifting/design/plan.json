@@ -3744,12 +3744,6 @@
       "section": "G7 and R04.5–R04.6"
     },
     {
-      "slug": "dyadic-ordinary-local-regularity",
-      "needs": "Supply the p-distinguished pure semistable weight-two symplectic ordinary point regularity, dimensions and unique-component/conductor comparisons needed by BCGP25 §7 for every p, including p=2, with the chosen stabilization retained.",
-      "supplier": "LocalGaloisDeformationRings",
-      "section": "§6.29, extending §§6.26–6.27"
-    },
-    {
       "slug": "gsp4-steinberg-u-eigenvalue",
       "needs": "Compute the normalized GSp₄ Steinberg Ux,1 eigenvalue x^((j+k−6)/2) in weight (j,k), including finite unramified unit twists, in the Fourier-lattice normalization of CG20 Theorem 5.9.",
       "supplier": "SmoothRepresentationsOfLocalGroups",

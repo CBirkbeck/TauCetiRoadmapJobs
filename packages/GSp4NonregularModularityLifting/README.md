@@ -75,7 +75,7 @@ Layer AL.4, local correspondence and local factors. Use the Weil–Deligne/Satak
 
 ### From TauCetiRoadmap.ModularityAndLanglandsExtensions
 
-§§3.2, 3.9 and 3.26 supply the classification and interpolation interfaces used below; §3.30, “The symplectic pairing through unitary descent”, supplies for weights (a,b) with a≥b≥2 and a non-Eisenstein maximal ideal of the anemic Hecke image the semisimple residual representation of CG Lemma 6.9 and, when it is absolutely irreducible, its nondegenerate alternating pairing, under its classification, unitary-descent, coefficient and polarization hypotheses; §3.5(vii) supplies the equivalence between existence of generic members in local GSp₄ packets and holomorphy at s=1 of its adjoint L-factor. The pure-monodromy uniqueness comparison is the separate SmoothRepresentationsOfLocalGroups contract.
+§§3.2, 3.9 and 3.26 supply the classification and interpolation interfaces used below; §3.30, “The symplectic pairing through unitary descent”, supplies for weights (a,b) with a≥b≥2 and a non-Eisenstein maximal ideal of the anemic Hecke image the semisimple residual representation of CG Lemma 6.9 and, when it is absolutely irreducible, its nondegenerate alternating pairing, under its classification, unitary-descent, coefficient and polarization hypotheses; §3.5(vii) supplies the equivalence between existence of generic members in local GSp₄ packets and holomorphy at s=1 of its adjoint L-factor. The pure-monodromy uniqueness comparison is the separate SmoothRepresentationsOfLocalGroups contract. With the “GSp4ClassificationInputs” contract, use the classification of GSp₄ packets and multiplicity bookkeeping with its full real-group components, central character and transfer normalization; retain the specified twisted weighted fundamental-lemma/stabilization hypothesis wherever that source route assumes it, since unitary classification alone does not establish the GSp₄ input.
 
 ### From TauCetiRoadmap.DeformationAndDerivedPatchingAlgebra
 
@@ -115,15 +115,9 @@ What IntegralHeckeAndGaloisDeterminants must provide (gap:gsp4-pseudocharacter-r
 
 ### From TauCetiRoadmap.LocalGaloisDeformationRings
 
-Section 2.7 supplies the residual U/P/H types; §2.25 supplies `GSp4.MinimalAt`, including Artinian nilpotent-orbit membership at U primes and reduction-injective P/H inertia. Section 6.14 supplies `GSp4.SiegelOrdinary`, its split unramified Lagrangian plane, zero (1,2),(3,4) entries, uniqueness and tangent space; §6.26 supplies its tangent dimension and finite-flat comparison. Use §2.17 for ordered distinct-root Taylor–Wiles scalar inertia. For the P12 ordered full-flag functor use §6.3 together with gap:p12-flag-orientation. For the BCGP branch use §6.27 only for the odd-p B/P comparison and §6.29 for the all-p ordinary flag-incidence image with its arithmetic point criterion. Preserve the distinction between the split unramified plane, a full flag, the two Borel orderings and their P intersection. Pure conductor constancy is used only on the specified component under gap:dyadic-ordinary-local-regularity.
+Section 2.7 supplies the residual U/P/H types; §2.25 supplies `GSp4.MinimalAt`, including Artinian nilpotent-orbit membership at U primes and reduction-injective P/H inertia. Section 6.14 supplies `GSp4.SiegelOrdinary`, its split unramified Lagrangian plane, zero (1,2),(3,4) entries, uniqueness and tangent space; §6.26 supplies its tangent dimension and finite-flat comparison. Use §2.17 for ordered distinct-root Taylor–Wiles scalar inertia. For the P12 ordered full-flag functor use §6.3 together with gap:p12-flag-orientation. For the BCGP branch use §6.27 only for the odd-p B/P comparison and §6.29 for the all-p ordinary flag-incidence image with its arithmetic point criterion. Preserve the distinction between the split unramified plane, a full flag, the two Borel orderings and their P intersection. For the BCGP local points use §6.31, which rests on §6.29: at a p-distinguished pure ordinary characteristic-zero point of the flag-incidence image, with the chosen stabilization, the image ring is regular on a unique component of relative dimension sixteen, for every p including p=2. Away from p use §1.22 for regularity at pure points and §2.24 for constancy of the full type, hence of the conductor, between pure points on a common component that lie on no other component; apply §2.24 to the underlying rank-four representation, whose forgetful map carries an irreducible symplectic component into one rank-four component, the pure points being regular there by §1.22.
 
 What LocalGaloisDeformationRings must provide (gap:p12-flag-orientation): Compare P12 automorphic and deformation ordinarity on specified ordered flags and Ext conventions, resolving both the opposite ratio directions of Definitions 3.2 and 5.3 and the exponent prescriptions iκ versus −iκ in §3.2 and Definition 5.3, including the parabolic ratio of §7.4, before transporting representability or Hida control.
-
-What LocalGaloisDeformationRings must provide (gap:dyadic-ordinary-local-regularity): Supply the p-distinguished pure semistable weight-two symplectic ordinary point regularity, dimensions and unique-component/conductor comparisons needed by BCGP25 §7 for every p, including p=2, with the chosen stabilization retained.
-
-### From TauCetiRoadmap.ModularityAndLanglandsExtensions
-
-§§3.2, 3.9 and 3.26, with the “GSp4ClassificationInputs” contract. Use the classification of GSp₄ packets and multiplicity bookkeeping with its full real-group components, central character and transfer normalization. Retain the specified twisted weighted fundamental-lemma/stabilization hypothesis wherever that source route assumes it; unitary classification alone does not establish the GSp₄ input.
 
 ### From TauCetiRoadmap.PadicFamiliesPartII
 
@@ -141,7 +135,7 @@ What PadicFamiliesPartII must provide (gap:p12-ordinary-horizontal-control): Sup
 
 ### From TauCetiRoadmap.ShimuraCompactifications
 
-C3, especially C3.9–C3.10; C5, especially C5.12 and C5.13–C5.18. Use the logarithmic Kodaira–Spencer isomorphism Sym²E≅Ω¹(log D) of C5.12 on the neat smooth toroidal model, compatible fans, toroidal level maps, pullback and unnormalized trace, integral genus-two models, the Hodge line and its positivity. Smoothness is used only at the supplied good integral models; higher p-level compactifications carry their own hypotheses. Trace after a selected Klingen projector has the scalar computed in Layer 6, rather than the covering degree.
+Layer 4, especially 4.2–4.3 and 4.9–4.10; Layer 7, especially 7.12 and 7.13–7.18. Use the logarithmic Kodaira–Spencer isomorphism Sym²E≅Ω¹(log D) of 7.12 on the neat smooth toroidal model, compatible fans, toroidal level maps, pullback and unnormalized trace, integral genus-two models, the Hodge line and its positivity. Smoothness is used only at the supplied good integral models; higher p-level compactifications carry their own hypotheses. Trace after a selected Klingen projector has the scalar computed in Layer 6, rather than the covering degree.
 
 ### From TauCetiRoadmap.ShimuraData
 
@@ -161,7 +155,7 @@ What SmoothRepresentationsOfLocalGroups must provide (gap:gsp4-paramodular-newve
 
 - Every paramodular group K(ℓⁿ) contains the scalars zI₄ with z∈ℤ_ℓ^×. At ℓ=7, twist a generic unramified principal series of trivial central character by χ∘ν with χ tame and χ(3)=ζ₃; then 3I₄ acts by χ(9)=ζ₃²≠1, so every paramodular fixed space is zero. The unramified-central-character hypothesis excludes it.
 - The application’s central character |·|² is trivial on ℤ_ℓ^×, so it satisfies the hypothesis.
-- An unramified central character ω has an unramified square root χ over an algebraically closed field; ν takes K(ℓⁿ) into ℤ_ℓ^×, so twisting by χ∘ν preserves every paramodular fixed space and reduces the contract to trivial central character.
+- An unramified central character ω has an unramified square root χ over an algebraically closed field; ν takes K(ℓⁿ) into ℤ_ℓ^×, where χ is trivial, so twisting by χ⁻¹∘ν preserves every paramodular fixed space and gives central character ωχ⁻²=1, since ν(zI₄)=z². At the uniformizer, ω(ℓ)=2 and χ(ℓ)=√2 give 2·(√2)⁻²=1, whereas twisting by χ∘ν would give ω(ℓ)χ(ℓ)²=4, not 1. This reduces the contract to trivial central character.
 
 What SmoothRepresentationsOfLocalGroups must provide (gap:gsp4-ordinary-neat-refinement-lines): Prove one-dimensionality of the selected ordinary p-refinement and neat-prime Iwahori refinement lines under the regularity and distinct-root hypotheses in the proof of BCGP25 Lemma 7.5.8, pp.176–177, especially p.177 (BCGP25 line 8119), invoking BCGP21 Propositions 2.4.24 and 2.4.26, pp.26–27.
 
@@ -289,12 +283,13 @@ The construction has the following interfaces.
 **Checks.**
 
 - For Q=∅ the diamond group is trivial and X₀(Q)=X₁(Q)=X.
-- A U₂ prime uses Klingen, not the U₁ paramodular subgroup.
-- A q with a residual eigenvalue ratio q is rejected even when q≠1 mod p.
+- At p=11, a=4 and q=5, the multiplier at Frob_q is ε̄(Frob_q)^(−3)=(5⁻¹)⁻³=5³≡4. Scalar residual roots (2,2,2,2) have paired products 4 and ratio set {1}, which avoids q=5, so q is accepted; the roots (1,5,3,4) have the same paired products 1·4=5·3≡4 but the ratio 5/1=q, so q is rejected although q≢1 modulo 11.
+- At p=5 and Q={11}, Δ_Q=(ℤ/11)^× has order 10 and its maximal p-power quotient has order 5; X₁(Q)→X₀(Q) has degree 10 and the patching cover X_Δ(Q) for that quotient has degree 5. They are different covers.
+- Full level q=3 excludes −I₄, which reduces to 2I₄≠I₄ modulo 3; full level 2 would not, since −I₄≡I₄ modulo 2. The requirement q≥3 is what makes the moduli problems neat.
 
 State the auxiliary-prime unramifiedness for the lift itself, and identify the trivial Q cover with the base level.
 
-*Needs:* Layer 0 (nonregular lifting data); ShimuraCompactifications C3.9–C3.10; ShimuraCompactifications C5.13–C5.18; AutomorphicBundlesPartII IC.5; AutomorphicBundles B3; AutomorphicBundlesPartII IC.1–IC.3.
+*Needs:* Layer 0 (nonregular lifting data); ShimuraCompactifications 4.9–4.10; ShimuraCompactifications 7.13–7.18; AutomorphicBundlesPartII IC.5; AutomorphicBundles B3; AutomorphicBundlesPartII IC.1–IC.3.
 
 ### 0.5 Klingen Taylor–Wiles refinements
 
@@ -313,8 +308,8 @@ The construction has the following interfaces.
 **Checks.**
 
 - In F₁₃ roots (2,4,11,9) have paired products 5 and four distinct entries, but 2·4=11·9; reject this ordering.
-- The pairing constraints involve αδ and βγ, not αβ and γδ.
-- A prime satisfying only x≡1 mod p fails a requested depth N=2 when x≢1 mod p².
+- Relabelling (2,4,11,9) as (2,11,4,9), exchanging β and γ, keeps the paired products αδ=18≡5 and βγ=44≡5 in 𝔽₁₃ but gives αβ=22≡9 and γδ=36≡10, so the separation holds for this ordering; a model that paired αβ with γδ would reject both orderings.
+- For p=5 and requested depth N=2, x=11 has x−1=10, divisible by 5 but not by 25, and is rejected; x=101 has x−1=100, divisible by 25, and is accepted.
 
 Keep the one-dimensional Klingen diamond factor here distinct from the two-dimensional torus factor in Layer 10.
 
@@ -326,7 +321,7 @@ Take p=11, a=4 and roots α=2, β=3 in 𝔽₁₁. The four-factor product is 7 
 
 ### Dependencies
 
-ArithmeticGaloisRepresentations §§7.3–7.5, 7.9–7.12; AutomorphicBundles B3; AutomorphicBundlesPartII IC.1–IC.3; AutomorphicBundles B4; ShimuraData §§5.9–5.10, 5.18; GlobalGaloisDeformations G7 (gap:gsp4-cg-selmer-presentation); GlobalGaloisDeformations R04.5–R04.6 (gap:gsp4-cg-selmer-presentation); PadicFamiliesPartII E6/four-pieces and F8; IntegralHeckeAndGaloisDeterminants IHG.3a–IHG.3b; LocalGaloisDeformationRings §§2.7, 2.25, 6.14 and §2.17; ShimuraCompactifications C3.9–C3.10; ShimuraCompactifications C5.13–C5.18; AutomorphicBundlesPartII IC.5; Mathlib `ZMod`. The subsection *Needs* lines give the statement and route inputs separately.
+ArithmeticGaloisRepresentations §§7.3–7.5, 7.9–7.12; AutomorphicBundles B3; AutomorphicBundlesPartII IC.1–IC.3; AutomorphicBundles B4; ShimuraData §§5.9–5.10, 5.18; GlobalGaloisDeformations G7 (gap:gsp4-cg-selmer-presentation); GlobalGaloisDeformations R04.5–R04.6 (gap:gsp4-cg-selmer-presentation); PadicFamiliesPartII E6/four-pieces and F8; IntegralHeckeAndGaloisDeterminants IHG.3a–IHG.3b; LocalGaloisDeformationRings §§2.7, 2.25, 6.14 and §2.17; ShimuraCompactifications 4.9–4.10; ShimuraCompactifications 7.13–7.18; AutomorphicBundlesPartII IC.5; Mathlib `ZMod`. The subsection *Needs* lines give the statement and route inputs separately.
 
 ## Layer 1: Selected cuspidal Hecke images
 
@@ -377,7 +372,7 @@ A relation in an abstract double-coset algebra is transported to the actual imag
 
 ### 1.2 Joint ordinary root selectors
 
-On a finite O-Hecke algebra over the finite residue field k, with its adic topology, or compatibly on its finite quotients, use the supplied factorial root selector e(T,c)=1−limn(T−c)^(n!). Define eβ=e(Tp,1,β)e(Qp,2,αβ) in the regular-weight setting used by CG20, and eαβ=e(Tp,1,α+β)e(Qp,2,αβ) in weight (a,2). Over O the selected summand is the simultaneous residual-root factor: on it T−c and Q−d act topologically nilpotently, and on its complement one of them is invertible. Modulo every ϖᵐ its image is the intersection of the two algebraic generalized root submodules, and over the residue field k it is the intersection of Mathlib’s generalized eigenspaces. No identification with exact generalized eigenspaces on a characteristic-zero fiber is asserted. The two complementary limits are multiplied separately; taking one complement of their product selects an incorrect union.
+On a finite O-Hecke algebra over the finite residue field k, with its adic topology, or compatibly on its finite quotients, use the supplied factorial root selector e(T,c)=1−limn(T−c)^(n!). Define eβ=e(Tp,1,β)e(Qp,2,αβ) in the regular-weight setting used by CG20, and eαβ=e(Tp,1,α+β)e(Qp,2,αβ) in weight (a,2). Over O the selected summand is the simultaneous residual-root factor: on it T−c and Q−d both act topologically nilpotently. Its complement is the direct sum of the factor on which T−c is invertible and the factor on which T−c is topologically nilpotent and Q−d is invertible; on every joint local factor outside the selected summand at least one of the two root differences is invertible, and neither T−c nor Q−d need be invertible on the whole complement. Modulo every ϖᵐ its image is the intersection of the two algebraic generalized root submodules, and over the residue field k it is the intersection of Mathlib’s generalized eigenspaces. No identification with exact generalized eigenspaces on a characteristic-zero fiber is asserted. The two complementary limits are multiplied separately; taking one complement of their product selects an incorrect union.
 
 (CG20, §6.3, p.841; §6.4, p.845, with the joint-selector correction; CG20 line 1640.)
 
@@ -391,7 +386,7 @@ The construction has the following interfaces.
 
 **Checks.**
 
-- On k² with T=diag(c,c+1), Q=diag(d+1,d), the joint (c,d) selector is zero, whereas the erroneous union formula is the identity.
+- On k² with T=diag(c,c+1), Q=diag(d+1,d), the joint (c,d) selector is zero and its complement is all of k²: the T-invertible factor is ke₂ and the T-nilpotent, Q-invertible factor is ke₁, on which the respective invertible differences act by 1, while T−c=diag(0,1) and Q−d=diag(1,0) both have determinant 0 on k². The erroneous union formula is the identity, and a model asserting one globally invertible difference on the complement is excluded.
 - For T=diag(c,c+1), Q=diag(d,d), the selector is diag(1,0).
 - A nonzero nilpotent Jordan block for T−c belongs entirely to the generalized c part; a simple eigenspace would lose vectors.
 - Over O=ℤ₁₁ with M=O, α=2, β=3, T=16 and Q=6: T−5=11 and 11^(n!)→0, so e(T,5)=e(Q,6)=1 and the selected image is O, whereas ker(T−5)ⁿ=ker(11ⁿ)=0 for every n≥1. Modulo 11ᵐ, (T−5)ᵐ=0 and the finite-level generalized root submodule is everything; over ℚ₁₁ the exact generalized 5-eigenspace is zero. An algebraic-eigenspace model of the adic selector fails here.
@@ -625,7 +620,7 @@ The construction has the following interfaces.
 
 Track m and the divisibility of s; a lift merely congruent to hʳ modulo ϖ need not have the required equivariance modulo ϖᵐ.
 
-*Needs:* Layer 1 (the three nonregular hecke images); AutomorphicBundles B4; ShimuraData §§5.9–5.10, 5.18; AutomorphicBundles B5; AutomorphicBundlesPartII IC.4; ShimuraCompactifications C5.13–C5.18; AutomorphicBundlesPartII IC.5; HodgeTateAndCanonicalSubgroups §0.14; the Hasse lift/congruence targets of §3.1.
+*Needs:* Layer 1 (the three nonregular hecke images); AutomorphicBundles B4; ShimuraData §§5.9–5.10, 5.18; AutomorphicBundles B5; AutomorphicBundlesPartII IC.4; ShimuraCompactifications 7.13–7.18; AutomorphicBundlesPartII IC.5; HodgeTateAndCanonicalSubgroups §0.14; the Hasse lift/congruence targets of §3.1.
 
 ### 3.1a Secondary Hasse geometry
 
@@ -646,7 +641,7 @@ The secondary section has the following interfaces.
 - On k[ε]/(ε²) the endomorphism multiplication by ε is zero at the unique geometric point and is nonzero as a sheaf map. This base is outside the reduced-base pointwise argument.
 - In k[x,y]/(xy), x is zero on an entire component and kills y; mere reducedness would not prove the asserted nonzerodivisor property.
 
-*Needs:* FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.1–R07.2 for the multiplicative-connected filtration and BT₁ crystal; HodgeTateAndCanonicalSubgroups §§0.14–0.15 for the primary section; AutomorphicBundles B3–B5; ShimuraCompactifications C5 for the actual smooth genus-two and boundary models; §3.1 for primary Hasse normalization. The section and extension theorem, rather than an unrestricted nonreduced BT₁ theory, are the new targets here.
+*Needs:* FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.1–R07.2 for the multiplicative-connected filtration and BT₁ crystal; HodgeTateAndCanonicalSubgroups §§0.14–0.15 for the primary section; AutomorphicBundles B3–B5; ShimuraCompactifications Layer 7 for the actual smooth genus-two and boundary models; §3.1 for primary Hasse normalization. The section and extension theorem, rather than an unrestricted nonreduced BT₁ theory, are the new targets here.
 
 ### 3.2 Selected annihilator quotients
 
@@ -715,7 +710,7 @@ With p=7, m=2, μ=(4,2) and the chosen lift of hʳ, take s=7t₀ for a positive 
 
 ### Dependencies
 
-AutomorphicBundles B4; ShimuraData §§5.9–5.10, 5.18; AutomorphicBundles B5; AutomorphicBundlesPartII IC.4; AutomorphicGaloisRepresentationsPartII AG2.P, AG2.5; AutomorphicGaloisRepresentationsPartII AG2.6; Layer 1; Layer 2; IntegralHeckeAndGaloisDeterminants §§1.1–1.7; IntegralHeckeAndGaloisDeterminants §§2.1–2.3; IntegralHeckeAndGaloisDeterminants IHG.3a–IHG.3b; IntegralHeckeAndGaloisDeterminants IHG.4; LocalGaloisDeformationRings §§2.7, 2.25 and §6.3; ModularityAndLanglandsExtensions §§3.2, 3.9, 3.26; ShimuraCompactifications C5.13–C5.18; AutomorphicBundlesPartII IC.5; ModularityAndLanglandsExtensions §3.30. The subsection *Needs* lines give the statement and route inputs separately.
+AutomorphicBundles B4; ShimuraData §§5.9–5.10, 5.18; AutomorphicBundles B5; AutomorphicBundlesPartII IC.4; AutomorphicGaloisRepresentationsPartII AG2.P, AG2.5; AutomorphicGaloisRepresentationsPartII AG2.6; Layer 1; Layer 2; IntegralHeckeAndGaloisDeterminants §§1.1–1.7; IntegralHeckeAndGaloisDeterminants §§2.1–2.3; IntegralHeckeAndGaloisDeterminants IHG.3a–IHG.3b; IntegralHeckeAndGaloisDeterminants IHG.4; LocalGaloisDeformationRings §§2.7, 2.25 and §6.3; ModularityAndLanglandsExtensions §§3.2, 3.9, 3.26; ShimuraCompactifications 7.13–7.18; AutomorphicBundlesPartII IC.5; ModularityAndLanglandsExtensions §3.30. The subsection *Needs* lines give the statement and route inputs separately.
 
 ## Layer 4: Cuspidal Fourier doubling
 
@@ -758,19 +753,20 @@ The two characteristic-p operators have the following interfaces.
 - Extension of residue fields commutes with both constructions, their Fourier formulas and the stated injectivity comparisons in the same weight ranges.
 
 
-(CG20, Proposition 8.9 and Theorems 8.10–8.11, pp.861–863, with the scalar Hasse exception and vector-formula correction; CG20 line 2402. Construction: Yam14 §3.2 and Propositions 3.10 and 3.13, pp.15–25; Yam14 line 1246 and line 1327. Superspecial restriction: Yam14 Theorem 4.7, p.42; Yam14 line 2205.)
+(CG20, Proposition 8.9 and Theorems 8.10–8.11, pp.861–863, with the scalar Hasse exception and vector-formula correction; CG20 line 2402. Construction: Yam14 §3.3, Propositions 3.5–3.10 and 3.13, pp.17–25, with Proposition 3.8 for the two-derivative scalar operator; Yam14 line 901, line 1164, line 1246 and line 1327. Superspecial restriction: Yam14 Theorem 4.7, p.42; Yam14 line 2205.)
 
 The proof is ordered in three steps, each a target of this subsection.
 
-1. *Ordinary-locus operators.* On the ordinary locus of the smooth genus-two model over k, where the Hasse determinant is a unit, split H¹_dR by its unit-root subspace, the Frobenius-stable complement of the Hodge line bundle. Compose the Gauss–Manin connection with the inverse of the Kodaira–Spencer isomorphism and the unit-root projection, then with the Schur projection onto the target coefficient bundle. Prove the change-of-frame laws, so that the result is a well-defined map of the indicated automorphic bundles.
-2. *Pole cancellation and extension.* Prove that multiplying by the Hasse invariant cancels the poles of the unit-root projection along the nonordinary divisor, and that the product extends holomorphically across the boundary of the toroidal compactification through the logarithmic Kodaira–Spencer isomorphism. Do this by a connection calculation on a smooth formal deformation base before any truncation. The partial derivatives ∂/∂t_ij are not R-valued derivations of R=k[[t₁₁,t₁₂,t₂₂]]/𝔪², since D(t₁₁²)=2t₁₁≠0 there although t₁₁²=0 (Yam14 line 1235); the square-zero shortcut is not used. Then compute the displayed Fourier formulas on the Mumford family, where the Hasse matrix is the identity.
+1. *Ordinary-locus operators.* On the ordinary locus of the smooth genus-two model over k, where the Hasse determinant is a unit, split the rank-four H¹_dR as the rank-two Hodge bundle ℋ plus its unit-root complement, the rank-two Frobenius-stable image. A projected derivative is the Gauss–Manin connection followed by the inverse of the Kodaira–Spencer isomorphism and the projection along the unit-root summand; it carries a section of a bundle built from ℋ into that bundle tensored with Sym²ℋ. The vector operator θ₁ is one projected derivative from Sym^(j−k)ℋ⊗detᵏℋ followed by the contraction Sym^(j−k)ℋ⊗Sym²ℋ→Sym^(j−k−2)ℋ⊗det²ℋ, so its Fourier multiplier is linear in the index. The scalar operator Θ is of second order: the first projected derivative takes detᵏℋ into detᵏℋ⊗Sym²ℋ, the second takes this into detᵏℋ⊗Sym²ℋ⊗Sym²ℋ, and the Schur projection onto the summand detᵏ⁺²ℋ of Sym²ℋ⊗Sym²ℋ, which needs p>3, finishes; normalize so that the Fourier multiplier is det(Q), which is quadratic in the index. Prove the first-order and second-order change-of-frame laws, so that both results are well-defined maps of the indicated automorphic bundles (Yam14 Propositions 3.5, 3.7 and 3.8; Yam14 line 1093, line 1144 and line 1164).
+2. *Pole cancellation and extension.* Prove that multiplying by the Hasse invariant cancels the poles of the unit-root projection along the nonordinary divisor, for the one-derivative vector operator and, through the second-order identities for the derivatives of the Hasse determinant, for the two-derivative scalar operator with the same single Hasse factor, and that the product extends holomorphically across the boundary of the toroidal compactification through the logarithmic Kodaira–Spencer isomorphism. Do this by a connection calculation on a smooth formal deformation base before any truncation. The partial derivatives ∂/∂t_ij are not R-valued derivations of R=k[[t₁₁,t₁₂,t₂₂]]/𝔪², since D(t₁₁²)=2t₁₁≠0 there although t₁₁²=0 (Yam14 line 1235); the square-zero shortcut is not used. Then compute the displayed Fourier formulas on the Mumford family, where the Hasse matrix is the identity.
 3. *Injectivity.* Prove scalar injectivity from the superspecial restriction of a form not divisible by the Hasse invariant, the restriction bounds along the Hasse strata and the Cartier-divisor description of the supersingular locus inside the nonordinary divisor from §3.1a. Prove vector injectivity in the stated range by the same restriction to strata.
 
-Import the Gauss–Manin connection from AbelianSchemesAndArithmeticModuli A4.3 and the logarithmic Kodaira–Spencer isomorphism from ShimuraCompactifications C5.12; the unit-root projection, the theta extension and both injectivity statements are local targets here. Separate the scalar determinant multiplier from the vector contraction; the contraction is a nonzero integral transvectant in the valid coefficient range. Test Θ on the Hasse invariant to exclude the erroneous k=p−1 case; for the scalar-weight argument use precisely k=p+1.
+Import the Gauss–Manin connection from AbelianSchemesAndArithmeticModuli A4.3 and the logarithmic Kodaira–Spencer isomorphism from ShimuraCompactifications 7.12; the unit-root projection, the theta extension and both injectivity statements are local targets here. Separate the scalar determinant multiplier from the vector contraction; the contraction is a nonzero integral transvectant in the valid coefficient range. Test Θ on the Hasse invariant to exclude the erroneous k=p−1 case; for the scalar-weight argument use precisely k=p+1.
 
 **Checks.**
 
 - On scalar Fourier coefficients, determinant 1 carries coefficient 1 to 1, determinant 0 carries it to 0, and the zero coefficient stays 0; these values distinguish scalar theta from the vector contraction.
+- The scalar multiplier is quadratic in the index: at p=7, Q=I gives det(Q)=1 and 2I gives 4, whereas a single projected derivative scales the index linearly and would give 2 at 2I. A one-derivative recipe cannot produce the scalar operator; the vector contraction, whose p=7 model doubles 5 to 3=2·5, is first order.
 - In the p=7 contraction model, scaling the input coefficient by 2 changes contraction 5 to 3=2·5, while the zero input gives 0; field extension preserves these values.
 - At scalar k=p−1, the nonzero Hasse series 1 has theta equal to 0; this excludes an injectivity statement at that weight.
 - At p=7,k=p+1=8, k(2k−1)=120≡1 modulo 7, so the scalar arithmetic exclusion is satisfied.
@@ -781,7 +777,7 @@ Import the Gauss–Manin connection from AbelianSchemesAndArithmeticModuli A4.3 
 
 The vector contraction has no determinant prefactor, and all stated theta identities are in characteristic p.
 
-*Needs:* Layer 4 (formal operators in the doubling argument); AutomorphicBundles B5; AutomorphicBundlesPartII IC.4; AutomorphicBundles B3–B5; AbelianSchemesAndArithmeticModuli A4.3; ShimuraCompactifications C5.12; ShimuraCompactifications C5.13–C5.18; Layer 3 (hasse shifts and the vanishing threshold); Layer 3 (secondary hasse geometry).
+*Needs:* Layer 4 (formal operators in the doubling argument); AutomorphicBundles B5; AutomorphicBundlesPartII IC.4; AutomorphicBundles B3–B5; AbelianSchemesAndArithmeticModuli A4.3; ShimuraCompactifications 7.12; ShimuraCompactifications 7.13–7.18; Layer 3 (hasse shifts and the vanishing threshold); Layer 3 (secondary hasse geometry).
 
 ### 4.3 The source and enlarged q-expansion spaces
 
@@ -871,7 +867,7 @@ Under the root condition and p−1>j≥4, a cuspidal vector satisfying UF=αF an
 
 For j>2 use βθ₁F=θ₁ZF=0 and β≠0, then the vector theta injectivity of §4.2. The all-index contraction obligation must be discharged first.
 
-Before the scalar vanishing argument, prove neighbor reciprocity at the actual tame level. For the double coset Δ=Γ diag(p,1) Γ, define the forward neighbor multiset F_Δ([Q]) of Γ-classes of p-integral binary forms, as in CG20 Definition 8.19 with M ranging over Δ, and the reverse multiset F_Δ∨ for Δ∨={pM⁻¹ : M∈Δ}. Prove [P]∈F_Δ([Q]) exactly when [Q]∈F_Δ∨([P]). At a general neat tame level Δ∨ is not Δ: prove the level, cusp and diamond transport identifying the reverse action with the forward one composed with the action of an element of SL₂(ℤ/N) normalizing Γ, and derive the scalar recurrence for the coefficients of F with that transport and its action on the selected eigenspace. Use the β² exclusion only after proving that the transported recurrence carries that scalar. All neat tame levels are retained (CG20 Definition 8.19 and Lemma 8.20, p.872, whose same-correspondence symmetry holds at full level SL₂(ℤ) only; CG20 line 2773 and line 2793).
+Before the scalar vanishing argument, prove neighbor reciprocity at the actual tame level. For the double coset Δ=Γ diag(p,1) Γ, define the forward neighbor multiset F_Δ([Q]) of Γ-classes of p-integral binary forms, as in CG20 Definition 8.19 with M ranging over Δ, and the reverse multiset F_Δ∨ for Δ∨={pM⁻¹ : M∈Δ}. Prove [P]∈F_Δ([Q]) exactly when [Q]∈F_Δ∨([P]). At a general neat tame level Δ∨=Γ diag(1,p) Γ is a second correspondence: it is neither Δ nor Δ composed with the action of an element of SL₂(ℤ/N) normalizing Γ, and no such identification is assumed. Keep both correspondences. Construct the forward and reverse maps between the Fourier-coefficient spaces of the relevant level and cusp, with their actual tame Hecke and diamond actions, and derive the two-correspondence recurrence for the coefficients of F from the actions of Δ and Δ∨ on the selected eigenspace. Deduce the scalar exclusion that the minimal-discriminant step needs from the stated arithmetic data, the root condition of §0.1 and in particular β²≠1 and (αβ)²≠1, as an explicit premise of the scalar endpoint; the two-correspondence recurrence and this deduction are targets of this subsection. A same-level transport of Δ∨ to Δ by a normalizing element is used only at a level where the double-coset identity Γ diag(1,p) Γ=n Γ diag(p,1) Γ n⁻¹ has been proved, as at principal level, where every element of SL₂(ℤ) normalizes Γ(N) and n=[[0,1],[−1,0]] works. All neat tame levels are retained (CG20 Definition 8.19 and Lemma 8.20, p.872, whose same-correspondence symmetry holds at full level SL₂(ℤ) only; CG20 line 2773 and line 2793).
 
 For the scalar case show coefficients at nonsquare discriminants vanish by the transported neighbor recurrence and β²≠1; handle p-divisible discriminants via a minimal positive discriminant and a p-primitive neighbor argument. Represent the scalar difference F−X₂F in weight (p+1,p+1) by hF−hQ₂F+Q₂(hF), then use the scalar theta injectivity at k=p+1. Do not claim that X₂F is modular of weight (2,2). Conclude F=X₂F; UX₂=0 and the retained scalar kernel relations, together with (αβ)²≠1, force F=0. Neighbor cycles and Lemma 8.24 supply checks on the coefficient recurrence, not a substitute for all-index contraction.
 
@@ -880,7 +876,8 @@ For the scalar case show coefficients at nonsquare discriminants vanish by the t
 - With β=3 in 𝔽₁₁, βθ₁F=0 gives θ₁F=0 because 3·4=1; β=0 would not.
 - The constant series has only discriminant 0 and no positive-definite leading index; cuspidality excludes it from the minimal-positive-discriminant argument.
 - At p=7 the scalar comparison has weight (8,8), rather than (2,2); its Hasse factor has weight (6,6) and expansion 1.
-- At Γ(5) and p=7 take Q=7x²+y² and P=x²+7y²=D⁻¹·Q with D=diag(7,1), both positive definite of discriminant −28. Every M∈Γ(5)DΓ(5) is congruent to diag(2,1) modulo 5, so every forward neighbor of P reduces to 3x²+4y² modulo 5; for M=[[2,5],[35,91]] it is 1208x²−930xy+179y². Γ(5)-equivalence preserves coefficients modulo 5 and Q reduces to 2x²+y², so Q is not a forward neighbor of P. The transport by diag(3,2)≡diag(7⁻¹,7) in SL₂(ℤ/5) carries 3x²+4y² to 27x²+16y²≡2x²+y², recovering Q’s residue class.
+- At Γ(5) and p=7 take Q=7x²+y² and P=x²+7y²=D⁻¹·Q with D=diag(7,1), both positive definite of discriminant −28. Every M∈Γ(5)DΓ(5) is congruent to diag(2,1) modulo 5, so every forward neighbor of P reduces to 3x²+4y² modulo 5; for M=[[2,5],[35,91]] it is 1208x²−930xy+179y². Γ(5)-equivalence preserves coefficients modulo 5 and Q reduces to 2x²+y², so Q is not a forward neighbor of P. The transport by diag(3,2)≡diag(7⁻¹,7) in SL₂(ℤ/5) carries 3x²+4y² to 27x²+16y²≡2x²+y², recovering Q’s residue class; this transport exists because the residual level subgroup of Γ(5) is trivial.
+- Let Γ be the subgroup of SL₂(ℤ) of matrices congruent to I modulo 3 whose reduction modulo 5 lies in the cyclic group H of order six generated by A=[[0,1],[4,1]]; Γ lies in Γ(3), so it is neat, and its tame level divides 15. For p=7 the forward representative reduces to D=diag(2,1) and the reverse one to D∨=diag(1,2) modulo 5. The six matrices n_j=D∨A^(−j)D⁻¹ conjugate A to [[0,4],[1,1]] for j≡0,3, to [[3,2],[4,3]] for j≡1,4 and to [[4,1],[2,2]] for j≡2,5 modulo 6, none of which is A or A⁻¹=[[1,4],[1,0]], so no n_j normalizes H and D∨∉N(H)DH; no candidate D⁻¹A^(−j)D∨ normalizes H, so D∨∉HDN(H) either, and H⊂N(H) makes the inserted double-coset factors irrelevant. Hence at this level Δ∨ is not Δ composed with a normalizing element, and the two-correspondence recurrence is required.
 
 The theta weight is exactly p+1 in the scalar step; an arbitrary large Hasse shift is not interchangeable with it. The scalar p-primitive/minimal-discriminant recurrence is part of this vanishing target and a premise of §4.8.
 
@@ -910,7 +907,7 @@ At p=11 take α=2, β=3 and j=4. The root product is 7 and 4<10, so vector theta
 
 ### Dependencies
 
-AutomorphicBundles B5; AutomorphicBundlesPartII IC.4; Layer 1; Layer 3; Mathlib `Module.End.genEigenspace`; AbelianSchemesAndArithmeticModuli A4.3; ShimuraCompactifications C5.12. The subsection *Needs* lines give the statement and route inputs separately.
+AutomorphicBundles B5; AutomorphicBundlesPartII IC.4; Layer 1; Layer 3; Mathlib `Module.End.genEigenspace`; AbelianSchemesAndArithmeticModuli A4.3; ShimuraCompactifications 7.12. The subsection *Needs* lines give the statement and route inputs separately.
 
 ## Layer 5: Nonregular Hecke-valued minimal deformations
 
@@ -1383,7 +1380,7 @@ The construction has the following interfaces.
 
 The definition is independent of CG20’s small-weight and odd-p conditions.
 
-*Needs:* ArithmeticGaloisRepresentations §§7.3–7.5, 7.9–7.12; ArithmeticGaloisRepresentations §§7.10–7.11 (gap:integral-enormity-and-oddness); LocalGaloisDeformationRings §6.29 (gap:dyadic-ordinary-local-regularity); GlobalGaloisDeformations G7 (gap:gsp4-torus-tw-data); PadicHodgeTheory §§3.2–3.6, 4.4, 5.3–5.4.
+*Needs:* ArithmeticGaloisRepresentations §§7.3–7.5, 7.9–7.12; ArithmeticGaloisRepresentations §§7.10–7.11 (gap:integral-enormity-and-oddness); LocalGaloisDeformationRings §§6.29 and 6.31 (ordinary points) and §§1.22 and 2.24 (pure points away from p); GlobalGaloisDeformations G7 (gap:gsp4-torus-tw-data); PadicHodgeTheory §§3.2–3.6, 4.4, 5.3–5.4.
 
 ### 10.2 Four localized higher-Hida multiplicity modules
 
@@ -1470,7 +1467,7 @@ If the localized module is zero, use the unique algebra map to its zero image. O
 
 Dense field-valued points do not automatically provide an integral GSp₄-valued representation over a nonreduced ring.
 
-*Needs:* Layer 10 (characteristic-zero auxiliary hecke image); IntegralHeckeAndGaloisDeterminants §1.5 (gap:symplectic-descent-every-residue-characteristic); Layer 2 (ordinary weight-two galois representation); GlobalGaloisDeformations G7 (gap:gsp4-torus-tw-data); LocalGaloisDeformationRings §6.29 (gap:dyadic-ordinary-local-regularity); IntegralHeckeAndGaloisDeterminants §§1.1–1.7; IntegralHeckeAndGaloisDeterminants IHG.4.
+*Needs:* Layer 10 (characteristic-zero auxiliary hecke image); IntegralHeckeAndGaloisDeterminants §1.5 (gap:symplectic-descent-every-residue-characteristic); Layer 2 (ordinary weight-two galois representation); GlobalGaloisDeformations G7 (gap:gsp4-torus-tw-data); LocalGaloisDeformationRings §§6.29 and 6.31 (ordinary points) and §§1.22 and 2.24 (pure points away from p); IntegralHeckeAndGaloisDeterminants §§1.1–1.7; IntegralHeckeAndGaloisDeterminants IHG.4.
 
 ### 10.6 Projective Satake comparison and diamond coinvariants
 
@@ -1508,7 +1505,7 @@ In applying §5.8 of DeformationAndDerivedPatchingAlgebra, prove the uniform bou
 
 The patched ring action and lift are supplied by DeformationAndDerivedPatchingAlgebra §5.8; this target retains their hypotheses.
 
-*Needs:* Layer 10 (projective satake comparison and diamond coinvariants); DeformationAndDerivedPatchingAlgebra §§3.1–3.3, 5.8; DeformationAndDerivedPatchingAlgebra §§5.5–5.8; DeformationAndDerivedPatchingAlgebra §§6.1–6.7; LocalGaloisDeformationRings §6.29 (gap:dyadic-ordinary-local-regularity).
+*Needs:* Layer 10 (projective satake comparison and diamond coinvariants); DeformationAndDerivedPatchingAlgebra §§3.1–3.3, 5.8; DeformationAndDerivedPatchingAlgebra §§5.5–5.8; DeformationAndDerivedPatchingAlgebra §§6.1–6.7; LocalGaloisDeformationRings §§6.29 and 6.31 (ordinary points) and §§1.22 and 2.24 (pure points away from p).
 
 ### Examples
 
@@ -1516,7 +1513,7 @@ For p=2, N=1 and a single two-direction auxiliary torus, Δ≅C₂² has order 4
 
 ### Dependencies
 
-ArithmeticGaloisRepresentations §§7.3–7.5, 7.9–7.12; ArithmeticGaloisRepresentations §§7.10–7.11 (gap:integral-enormity-and-oddness); DeformationAndDerivedPatchingAlgebra §§3.1–3.3, 5.8; DeformationAndDerivedPatchingAlgebra §§5.5–5.8; DeformationAndDerivedPatchingAlgebra §§6.1–6.7; Layer 2; GlobalGaloisDeformations G7 (gap:gsp4-torus-tw-data); PadicFamiliesPartII E6, S7 and F8; OverconvergentAutomorphicForms §§8.6–8.7; IntegralHeckeAndGaloisDeterminants §§1.1–1.7; IntegralHeckeAndGaloisDeterminants §§2.1–2.3; IntegralHeckeAndGaloisDeterminants IHG.3a–IHG.3b; IntegralHeckeAndGaloisDeterminants IHG.4; LocalGaloisDeformationRings §6.29 (gap:dyadic-ordinary-local-regularity); PadicHodgeTheory §§3.2–3.6, 4.4, 5.3–5.4; SmoothRepresentationsOfLocalGroups SR.4.1–SR.4.5; SmoothRepresentationsOfLocalGroups SR.4.5 (gap:projective-finite-group-satake). The subsection *Needs* lines give the statement and route inputs separately.
+ArithmeticGaloisRepresentations §§7.3–7.5, 7.9–7.12; ArithmeticGaloisRepresentations §§7.10–7.11 (gap:integral-enormity-and-oddness); DeformationAndDerivedPatchingAlgebra §§3.1–3.3, 5.8; DeformationAndDerivedPatchingAlgebra §§5.5–5.8; DeformationAndDerivedPatchingAlgebra §§6.1–6.7; Layer 2; GlobalGaloisDeformations G7 (gap:gsp4-torus-tw-data); PadicFamiliesPartII E6, S7 and F8; OverconvergentAutomorphicForms §§8.6–8.7; IntegralHeckeAndGaloisDeterminants §§1.1–1.7; IntegralHeckeAndGaloisDeterminants §§2.1–2.3; IntegralHeckeAndGaloisDeterminants IHG.3a–IHG.3b; IntegralHeckeAndGaloisDeterminants IHG.4; LocalGaloisDeformationRings §§6.29 and 6.31 (ordinary points) and §§1.22 and 2.24 (pure points away from p); PadicHodgeTheory §§3.2–3.6, 4.4, 5.3–5.4; SmoothRepresentationsOfLocalGroups SR.4.1–SR.4.5; SmoothRepresentationsOfLocalGroups SR.4.5 (gap:projective-finite-group-satake). The subsection *Needs* lines give the statement and route inputs separately.
 
 ## Layer 11: Rank one and classical weight-two lifting
 
@@ -1569,7 +1566,7 @@ The construction has the following interfaces.
 
 Do not strengthen residual matching to p-adic matching in a way that would assume the conclusion. Near adequacy (A2) is OrdinaryAutomorphicFormsAndModularityLiftingPartII §1.3, strong residual oddness (A4) is PotentialAutomorphyInfrastructurePartII PL.4, GSp₄-reasonableness (B2) is OrdinaryAutomorphicFormsAndModularityLiftingPartII §5.2 and tidiness (B3) is ArithmeticGaloisRepresentations §7.11; each is a separate imported predicate with one supplier.
 
-*Needs:* Layer 10 (characteristic-zero weight-two patching data); ArithmeticGaloisRepresentations §§7.3–7.5, 7.9–7.12; OrdinaryAutomorphicFormsAndModularityLiftingPartII §1.3 (gap:dyadic-ordinary-support); OrdinaryAutomorphicFormsAndModularityLiftingPartII §5.2 (gap:symplectic-ordinary-component-support); PotentialAutomorphyInfrastructurePartII PL.4; LocalGaloisDeformationRings §6.29 (gap:dyadic-ordinary-local-regularity).
+*Needs:* Layer 10 (characteristic-zero weight-two patching data); ArithmeticGaloisRepresentations §§7.3–7.5, 7.9–7.12; OrdinaryAutomorphicFormsAndModularityLiftingPartII §1.3 (gap:dyadic-ordinary-support); OrdinaryAutomorphicFormsAndModularityLiftingPartII §5.2 (gap:symplectic-ordinary-component-support); PotentialAutomorphyInfrastructurePartII PL.4; LocalGaloisDeformationRings §§6.29 and 6.31 (ordinary points) and §§1.22 and 2.24 (pure points away from p).
 
 ### 11.3 Multiplicity one at a nonzero regular point
 
@@ -1588,7 +1585,7 @@ Apply the source after a finite coefficient extension L/E containing E′ and th
 
 A point on another local deformation component is not covered by the conductor/refinement argument.
 
-*Needs:* Layer 11 (r-regular classical weights); Layer 10 (four localized higher-hida multiplicity modules); Layer 2 (pure general-type monodromy upgrade); PadicFamiliesPartII E6, S7 and F8; OverconvergentAutomorphicForms §§8.6–8.7; ModularityAndLanglandsExtensions §§3.2, 3.9, 3.26; LocalGaloisDeformationRings §6.29 (gap:dyadic-ordinary-local-regularity); SmoothRepresentationsOfLocalGroups SR.4.5 (gap:gsp4-paramodular-newvector); SmoothRepresentationsOfLocalGroups SR.4.5 (gap:gsp4-ordinary-neat-refinement-lines).
+*Needs:* Layer 11 (r-regular classical weights); Layer 10 (four localized higher-hida multiplicity modules); Layer 2 (pure general-type monodromy upgrade); PadicFamiliesPartII E6, S7 and F8; OverconvergentAutomorphicForms §§8.6–8.7; ModularityAndLanglandsExtensions §§3.2, 3.9, 3.26; LocalGaloisDeformationRings §§6.29 and 6.31 (ordinary points) and §§1.22 and 2.24 (pure points away from p); SmoothRepresentationsOfLocalGroups SR.4.5 (gap:gsp4-paramodular-newvector); SmoothRepresentationsOfLocalGroups SR.4.5 (gap:gsp4-ordinary-neat-refinement-lines).
 
 ### 11.4 Support through the singular point
 
@@ -1610,7 +1607,7 @@ Use the finiteness of §4.7 and the reduced R=T of §4.8 at p=2, and the reduced
 
 This is the nonvanishing proof; local freeness alone gives no support. The regular ordinary support is OrdinaryAutomorphicFormsAndModularityLiftingPartII §§4.7–4.8 and 6.3–6.4 and the solvable descent is EndoscopicTransferAndUnitaryTraceComparison §13.2.
 
-*Needs:* Layer 11 (the dyadic and odd-prime automorphic seeds); Layer 10 (characteristic-zero local freeness); GlobalGaloisDeformations G7 (gap:gsp4-torus-tw-data); LocalGaloisDeformationRings §6.29 (gap:dyadic-ordinary-local-regularity); PadicFamiliesPartII E6, S7 and F8; OverconvergentAutomorphicForms §§8.6–8.7; EndoscopicTransferAndUnitaryTraceComparison §13.2; OrdinaryAutomorphicFormsAndModularityLiftingPartII §§4.7–4.8 (gap:dyadic-ordinary-support) and §§6.3–6.4 (gap:symplectic-ordinary-component-support).
+*Needs:* Layer 11 (the dyadic and odd-prime automorphic seeds); Layer 10 (characteristic-zero local freeness); GlobalGaloisDeformations G7 (gap:gsp4-torus-tw-data); LocalGaloisDeformationRings §§6.29 and 6.31 (ordinary points) and §§1.22 and 2.24 (pure points away from p); PadicFamiliesPartII E6, S7 and F8; OverconvergentAutomorphicForms §§8.6–8.7; EndoscopicTransferAndUnitaryTraceComparison §13.2; OrdinaryAutomorphicFormsAndModularityLiftingPartII §§4.7–4.8 (gap:dyadic-ordinary-support) and §§6.3–6.4 (gap:symplectic-ordinary-component-support).
 
 ### 11.5 Rank one at the weight-two point
 
@@ -1654,7 +1651,7 @@ Choose a regular supported point with R=3 and (h₁,h₂)=(−4,−1); its two g
 
 ### Dependencies
 
-ArithmeticGaloisRepresentations §§7.3–7.5, 7.9–7.12; EndoscopicTransferAndUnitaryTraceComparison §13.2; Layer 10; Layer 2; GlobalGaloisDeformations G7 (gap:gsp4-torus-tw-data); PadicFamiliesPartII E6/four-pieces and F8; ShimuraData §§5.9–5.10, 5.18; PadicFamiliesPartII E6, S7 and F8; OverconvergentAutomorphicForms §§8.6–8.7; LocalGaloisDeformationRings §6.29 (gap:dyadic-ordinary-local-regularity); ModularityAndLanglandsExtensions §§3.2, 3.9, 3.26; PadicHodgeTheory §§3.2–3.6, 4.4, 5.3–5.4; OrdinaryAutomorphicFormsAndModularityLiftingPartII §§1.3, 4.7–4.8 (gap:dyadic-ordinary-support) and §§5.2, 6.3–6.4 (gap:symplectic-ordinary-component-support); PotentialAutomorphyInfrastructurePartII PL.4. The subsection *Needs* lines give the statement and route inputs separately.
+ArithmeticGaloisRepresentations §§7.3–7.5, 7.9–7.12; EndoscopicTransferAndUnitaryTraceComparison §13.2; Layer 10; Layer 2; GlobalGaloisDeformations G7 (gap:gsp4-torus-tw-data); PadicFamiliesPartII E6/four-pieces and F8; ShimuraData §§5.9–5.10, 5.18; PadicFamiliesPartII E6, S7 and F8; OverconvergentAutomorphicForms §§8.6–8.7; LocalGaloisDeformationRings §§6.29 and 6.31 (ordinary points) and §§1.22 and 2.24 (pure points away from p); ModularityAndLanglandsExtensions §§3.2, 3.9, 3.26; PadicHodgeTheory §§3.2–3.6, 4.4, 5.3–5.4; OrdinaryAutomorphicFormsAndModularityLiftingPartII §§1.3, 4.7–4.8 (gap:dyadic-ordinary-support) and §§5.2, 6.3–6.4 (gap:symplectic-ordinary-component-support); PotentialAutomorphyInfrastructurePartII PL.4. The subsection *Needs* lines give the statement and route inputs separately.
 
 ## Conditional theorem contracts
 
