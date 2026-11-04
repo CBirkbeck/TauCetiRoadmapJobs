@@ -190,3 +190,18 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-04"
 cited_for = ["8.2"]
+
+[[source]]
+id = "lee2013"
+authors = "J. M. Lee"
+title = "Smooth Manifolds"
+year = 2013
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4419-9982-5_1"
+locator_scheme = "theorem"
+locator = "Theorem 9.25"
+url = "https://doi.org/10.1007/978-1-4419-9982-5_1"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["6.4"]
