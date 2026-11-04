@@ -1,0 +1,36 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "AdelicAlgebraicGroups"
+
+[[source]]
+id = "borel-tits"
+authors = "Armand Borel and Jacques Tits"
+title = "Groupes réductifs"
+year = 1965
+locator_scheme = "section"
+locator = "5.3"
+url = "https://www.numdam.org/item/PMIHES_1965__27__55_0.pdf"
+fetched_from = "https://www.numdam.org/item/PMIHES_1965__27__55_0.pdf"
+fetched_at = "2026-11-04T13:51:56Z"
+sha256 = "ec6674ba292deaadd77a449f4bad3750db79c0b87b117a892ef6b09bb16357ad"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["1.5"]
+
+[[source]]
+id = "witte-morris"
+authors = "Dave Witte Morris"
+title = "Introduction to Arithmetic Groups"
+year = 2015
+arxiv = "math/0106063v6"
+locator_scheme = "theorem"
+locator = "Theorem A4.6"
+url = "https://arxiv.org/abs/math/0106063v6"
+fetched_from = "https://arxiv.org/pdf/math/0106063v6"
+fetched_at = "2026-11-04T13:53:58Z"
+sha256 = "4c0936b5321dc09338730b411ef62e6fffc9060d0146f30a24e65a5ada47df77"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v6 (2015), the Deductive Press book edition; printed page numbers"
+cited_for = ["1.2"]
