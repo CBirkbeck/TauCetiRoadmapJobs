@@ -5824,10 +5824,10 @@
  ],
  "gaps": [
   {
-    "slug": "completed-etale-lifts",
+    "slug": "strict-henselization-g-ring",
     "supplier": "SchemeAndStackFoundations",
-    "section": "§0.14 / §0.23a",
-    "needs": "For an integral perfectoid ring R⁺ and pseudouniformizer ϖ, supply effective and unique completed formally étale lifts of quasicompact separated étale reduction data, compatibly with nil-ideal invariance, perfection, localization and gluing."
+    "section": "§0.21",
+    "needs": "For a noetherian local G-ring R, prove that the henselization and the strict henselization of R (ModularCurves 4D) are G-rings (Stacks, Tag 07QR), so that R^sh → (R^sh)^∧ is a regular map and the normality of R^sh passes to its completion."
   },
   {
     "slug": "mixed-characteristic-weak-normality",

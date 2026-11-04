@@ -1,3 +1,5 @@
+module
+
 import Mathlib
 import TauCeti.RingTheory.Huber.Pair
 import TauCeti.AlgebraicGeometry.AdicSpace.Spa.Basic
@@ -52,15 +54,17 @@ open TauCeti
 /-! ## Layer D9: Specializing v-sheaves, prekimberlites and formal neighbourhoods -/
 
 /-- The space of the reduction of a plus ring: the primes of `A⁺` that contain every element of
-`A⁺` which is topologically nilpotent in `A`. This is the closed subset `V(A⁺°°)` of
-`Spec A⁺`, homeomorphic to `Spec(A⁺_red)` with `A⁺_red = (A⁺/A⁺°°)^perf`. -/
+`A⁺` which is topologically nilpotent in `A`. For a Tate Huber pair `(A, A⁺)` the topologically
+nilpotent elements form the ideal `A°°` of `A⁺`, and this set is the closed subset `V(A°°)` of
+`Spec A⁺`, canonically homeomorphic to `Spec(A⁺/A°°)`; when `p ∈ A°°` that quotient is an
+`𝔽_p`-algebra whose perfection `A⁺_red` has the same space. -/
 def reductionSpectrum {A : Type*} [CommRing A] [TopologicalSpace A] (Aplus : Subring A) :
     Set (PrimeSpectrum Aplus) :=
   {𝔭 | ∀ a : Aplus, IsTopologicallyNilpotent (a : A) → a ∈ 𝔭.asIdeal}
 
 /-- **Specialization for Tate Huber pairs** (D9.1). For a Tate ring `A` with a ring of
 integral elements `A⁺`, the specialization map `x ↦ {a ∈ A⁺ : |a(x)| < 1}` from
-`Spa(A, A⁺)` to `Spec(A⁺_red)` is surjective, spectral and closed. The membership clause
+`Spa(A, A⁺)` to `Spec(A⁺/A°°)` is surjective, spectral and closed. The membership clause
 characterizes the map, so this is the statement about the specialization map itself
 (Gleason, Specialization maps for Scholze's category of diamonds, Definition 4.1 and
 Proposition 4.2; Bhatt, Lecture notes for a class on perfectoid spaces, Remark 7.4.12 and
