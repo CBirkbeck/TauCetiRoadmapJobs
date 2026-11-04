@@ -1,0 +1,160 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "HochschildHomologyAndHKR"
+
+[[source]]
+id = "AV20"
+authors = "Benjamin Antieau, Gabriele Vezzosi"
+title = "A remark on the Hochschild-Kostant-Rosenberg theorem in characteristic p"
+year = 2017
+arxiv = "1710.06039v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/1710.06039v1"
+fetched_from = "https://arxiv.org/pdf/1710.06039v1"
+fetched_at = "2026-11-04T21:42:02Z"
+sha256 = "2b429f418d07cf0c293ac54121b28f9c66d3eea44dc540c460611bc672d70f1b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v1"
+cited_for = ["Final targets"]
+
+[[source]]
+id = "Loday98"
+authors = "Jean-Louis Loday"
+title = "Cyclic Homology"
+year = 1998
+venue = "Grundlehren der mathematischen Wissenschaften"
+doi = "10.1007/978-3-662-11389-9"
+locator_scheme = "theorem"
+locator = "Theorem 3.4.4"
+url = "https://doi.org/10.1007/978-3-662-11389-9"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Final targets"]
+
+[[source]]
+id = "Ginz05"
+authors = "Victor Ginzburg"
+title = "Lectures on Noncommutative Geometry"
+year = 2005
+arxiv = "math/0506603v1"
+locator_scheme = "section"
+locator = "§9"
+url = "https://arxiv.org/abs/math/0506603v1"
+fetched_from = "https://arxiv.org/pdf/math/0506603v1"
+fetched_at = "2026-11-04T21:43:49Z"
+sha256 = "d128d33a9cc0376f19a5b78d49989933b5fc3b02b19c87a7873d00aa1fb9d6ac"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v1"
+cited_for = ["Final targets"]
+
+[[source]]
+id = "StacksSmooth"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, Chapter Commutative Algebra, Section Smooth ring maps"
+year = 2026
+locator_scheme = "tag"
+locator = "00T2"
+url = "https://stacks.math.columbia.edu/tag/00T2"
+fetched_from = "https://stacks.math.columbia.edu/download/algebra.pdf#nameddest=00T2"
+fetched_at = "2026-11-04T21:44:02Z"
+sha256 = "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["Scope"]
+
+[[source]]
+id = "HKR62"
+authors = "Gerhard Hochschild, Bertram Kostant, Alex Rosenberg"
+title = "Differential forms on regular affine algebras"
+year = 1962
+venue = "Transactions of the American Mathematical Society 102 (1962), 383–408"
+doi = "10.1090/S0002-9947-1962-0142598-8"
+locator_scheme = "theorem"
+locator = "Theorem 3.1"
+url = "https://www.ams.org/journals/tran/1962-102-03/S0002-9947-1962-0142598-8/S0002-9947-1962-0142598-8.pdf"
+fetched_from = "https://www.ams.org/journals/tran/1962-102-03/S0002-9947-1962-0142598-8/S0002-9947-1962-0142598-8.pdf"
+fetched_at = "2026-11-04T21:46:54Z"
+sha256 = "ff575d981f2d5233b182aaf674f35b41c28eb8e8d8c6bf7da29ad5e8bc4760f0"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["Final targets"]
+
+[[source]]
+id = "Ger63"
+authors = "Murray Gerstenhaber"
+title = "The cohomology structure of an associative ring"
+year = 1963
+venue = "Annals of Mathematics 78 (1963), 267–288"
+doi = "10.2307/1970343"
+locator_scheme = "section"
+locator = "§7"
+url = "https://doi.org/10.2307/1970343"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (JSTOR); cited by its locator without the text"
+cited_for = ["Final targets"]
+
+[[source]]
+id = "Ger64"
+authors = "Murray Gerstenhaber"
+title = "On the deformation of rings and algebras"
+year = 1964
+venue = "Annals of Mathematics 79 (1964), 59–103"
+doi = "10.2307/1970484"
+locator_scheme = "section"
+locator = "§2"
+url = "https://doi.org/10.2307/1970484"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (JSTOR); cited by its locator without the text"
+cited_for = ["Consumers"]
+
+[[source]]
+id = "Weibel94"
+authors = "Charles A. Weibel"
+title = "An Introduction to Homological Algebra"
+year = 1994
+venue = "Cambridge Studies in Advanced Mathematics 38, Cambridge University Press"
+doi = "10.1017/CBO9781139644136"
+locator_scheme = "theorem"
+locator = "Theorem 9.4.7"
+url = "https://doi.org/10.1017/CBO9781139644136"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text (§§9.1, 9.3, 9.4)"
+cited_for = ["Final targets"]
+
+[[source]]
+id = "CE56"
+authors = "Henri Cartan, Samuel Eilenberg"
+title = "Homological Algebra"
+year = 1956
+venue = "Princeton Mathematical Series 19, Princeton University Press"
+locator_scheme = "chapter"
+locator = "Chapter IX"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Scope", "Final targets"]
+
+[[source]]
+id = "Mat86"
+authors = "Hideyuki Matsumura"
+title = "Commutative Ring Theory"
+year = 1986
+venue = "Cambridge Studies in Advanced Mathematics 8, Cambridge University Press"
+doi = "10.1017/CBO9781139171762"
+locator_scheme = "section"
+locator = "§§25–30"
+url = "https://doi.org/10.1017/CBO9781139171762"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Suppliers"]
