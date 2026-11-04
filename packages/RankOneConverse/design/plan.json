@@ -1630,7 +1630,7 @@
       "slug": "squarefree-base-change-signs",
       "supplier": "GL2AutomorphicRepresentationsAndTransfer",
       "section": "R16.3.2",
-      "needs": "For a quadratic étale algebra K_q over ℚ_q, q odd, and μ an unramified character with μ²=1, give the root number ε(1/2, BC_(K_q)(St⊗μ)) as +1 when K_q is split, −1 when K_q is the unramified field, and −μ(q) when K_q is ramified, independently of the additive character, and the archimedean root number −1 of the weight-two discrete series after base change to ℂ."
+      "needs": "For a quadratic étale algebra K_q over ℚ_q, q odd, and μ an unramified character with μ²=1, give the root number ε(1/2, BC_(K_q)(St⊗μ)) as +1 when K_q is split, −1 when K_q is the unramified field, and −μ(q) when K_q is ramified, independently of the additive character."
     },
     {
       "slug": "gl2-rational-kummer",
@@ -1661,6 +1661,12 @@
       "supplier": "SelmerIwasawaCohomology",
       "section": "2.12 and 4.26",
       "needs": "For an elliptic curve with good reduction at p ≥ 5 and E(ℚ)[p] = 0, compare finite Sel_p with Sel_(p∞)[p] and prove that a local mod-p Kummer image outside the image of E(ℚ_p)[p], using E(ℚ_p)[p∞] = E(ℚ_p)[p], detects a nonzero rational localization."
+    },
+    {
+      "slug": "formal-group-p-torsion",
+      "supplier": "EllipticCurves",
+      "section": "Layer 1 and Layer 4",
+      "needs": "For an elliptic curve over ℚ_p with p ≥ 3 and an integral Weierstrass model, prove that the kernel of reduction E₁(ℚ_p) ≅ Ê(pℤ_p) has no nonzero torsion, by the formal-group torsion valuation bound or the formal-logarithm isomorphism Ê(pℤ_p) ≅ pℤ_p, so that reduction is injective on E(ℚ_p)[p^∞]."
     },
     {
       "slug": "unramified-augmentation-divisor",

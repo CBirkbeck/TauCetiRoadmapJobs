@@ -1,4 +1,6 @@
-import Mathlib
+module
+
+public import Mathlib
 import TauCeti.NumberTheory.ModularForms.LFunction.Sign
 import TauCeti.NumberTheory.Multiquadratic.FundamentalDiscriminant.Character
 
@@ -43,8 +45,10 @@ open HeckeRing.GL2 TauCeti.Multiquadratic
 
 /-- `g` is the **primitive quadratic twist** of the newform `f` by the fundamental discriminant
 `D`: the `q`-th Fourier coefficient of `g` is `χ_D(q) a_q(f)` at every prime `q` not dividing
-`N M D`. By strong multiplicity one at most one newform satisfies this, namely the newform
-attached to `f ⊗ χ_D`; when `f` has trivial nebentypus, so does `g`. -/
+`N M D`. At most one newform satisfies this: cross-level strong multiplicity one for newforms
+(ModularForms Layer 5) recovers the level and the nebentypus of `g` from these coefficients, so
+the nebentypus is not assumed in advance. The primitive newform attached to `f ⊗ χ_D` satisfies
+it; when `f` has trivial nebentypus, so does `g`. -/
 def IsPrimitiveQuadraticTwist {N M : ℕ} [NeZero N] [NeZero M] {k : ℤ}
     (f : Newform N k) (g : Newform M k) (D : ℤ) (hD : IsFundamentalDiscriminant D) : Prop :=
   ∀ q : ℕ, q.Prime → ¬ q ∣ N * M * D.natAbs →
