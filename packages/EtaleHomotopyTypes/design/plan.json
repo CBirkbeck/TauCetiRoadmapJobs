@@ -3262,6 +3262,12 @@
       "section": "F.0.1"
     },
     {
+      "slug": "constructible-set-continuity",
+      "needs": "For a quasi-compact quasi-separated scheme, prove that every étale sheaf of sets is a filtered colimit of constructible sheaves of sets and every ind-finite sheaf of groups a filtered colimit of constructible sheaves of groups with finite stalks (Stacks tag 03SA; SGA 4 IX 2.7.2), that constructible sheaves of sets are closed under finite limits and colimits and that constructibility is detected after pullback along a surjective morphism of quasi-compact quasi-separated schemes (Stacks tags 03RZ and 095Q), that every constructible sheaf of sets, and every constructible sheaf of groups with finite stalks, embeds in a finite product of direct images of finite constant sheaves along finite finitely presented morphisms (Stacks tag 09Z7; SGA 4 IX 2.14), that for a coherent morphism the direct image of sheaves of sets and the first direct image of sheaves of groups commute with filtered colimits (SGA 4 VII 3.3), and that constructible sheaves of sets on a cofiltered limit of quasi-compact quasi-separated schemes with affine transition maps, with their morphisms, descend to a finite stage (Stacks tag 09YU).",
+      "supplier": "EtaleCohomologyFoundations",
+      "section": "F.0.1"
+    },
+    {
       "slug": "relative-etale-depth",
       "needs": "For a flat morphism f:X→S of locally noetherian schemes with geometrically reduced fibres and a closed subset Y⊂X whose fibre Y_s is nowhere dense in X_s for every s∈f(Y), prove that restriction of finite étale covers from X to X∖Y is fully faithful when either the closure of f(Y) is nowhere dense in S or every fibre X_s is geometrically unibranch at the points of Y_s (SGA 2 XIV Corollary 1.19, étale depth at least 2 along Y).",
       "supplier": "LocalPurity",

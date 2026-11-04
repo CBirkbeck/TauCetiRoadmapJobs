@@ -1,4 +1,6 @@
-import Mathlib
+module
+
+public import Mathlib
 
 /-!
 # Étale homotopy types: target signatures
@@ -30,8 +32,9 @@ Layer 2:
   categories and materialized path transport.
 
 Layer 3:
-* The profinite-completion universal property for a pro-group lacks the native general pro-group
-  carrier; ordinary group completion and finite-quotient presentations are native.
+* The profinite-completion universal property for a pro-group is an adapter rather than a
+  headline and is not stated; its finite-quotient form is expressible with the native levelwise
+  completion, the native profinite limit cone and limits and colimits of types.
 * Profinite local-coefficient detection, raw K(pi,1) finite-cover effacement and its product
   formula lack the raw etale type and its homotopy pro-groups.
 * Etale local-coefficient comparison, raw/finite fundamental-group comparison, raw profiniteness,
@@ -48,7 +51,12 @@ Layer 3:
   base and of quasi-compact quasi-separated schemes, the relative Abhyankar step, universal
   local 1-asphericity and 0-acyclicity of projections lack relative normal-crossings divisors,
   stacks of etale torsors with their direct images and base change, strict localizations of
-  schemes and the relative purity of finite etale covers.
+  schemes and the relative purity of finite etale covers. Cohomological properness over an
+  arbitrary field of characteristic zero for every etale sheaf of sets and every ind-finite
+  sheaf of groups, with universal local 1-asphericity over such a field, lacks in addition the
+  direct image and base-change exchange of sheaves of sets on the small etale sites of schemes
+  along a morphism, ind-finite sheaves of groups and their torsor stacks, and constructible
+  sheaves of sets with their descent along limits of schemes.
 
 Layer 4:
 * Open arithmetic image lacks the scheme finite-etale fiber-functor fundamental group.

@@ -181,7 +181,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-24"
 version_note = "arXiv v2"
-cited_for = ["Layers 3–4 finite etale products and arithmetic exact sequence", "3.6 unibranch components", "3.9d degree-one input of the elementary-fibration sequence", "3.8a cohomological properness, local asphericity and the homotopy exact sequence"]
+cited_for = ["Layers 3–4 finite etale products and arithmetic exact sequence", "3.6 unibranch components", "3.9d degree-one input of the elementary-fibration sequence", "3.8a cohomological properness, local asphericity and the homotopy exact sequence", "3.8a Corollaries 3.2 and 3.4 over an arbitrary field of characteristic zero, Proposition 1.3.1 and Corollary 1.9"]
 
 [[source]]
 id = "Fr"
@@ -221,12 +221,12 @@ year = 1973
 venue = "Lecture Notes in Mathematics"
 doi = "10.1007/bfb0081551"
 locator_scheme = "theorem"
-locator = "Exposé VIII 9.4; Exposé IX 1.6(ii), 2.9 and 2.11; Exposé XII 5.1; Exposé XV 1.3, 1.11, 1.16, 2.1 and 4.1"
+locator = "Exposé VII 3.3; Exposé VIII 9.4; Exposé IX 1.6(ii), 2.7.2, 2.9, 2.11 and 2.14; Exposé XII 5.1; Exposé XV 1.3, 1.11, 1.16, 2.1 and 4.1"
 url = "https://doi.org/10.1007/bfb0081551"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["3.8a: non-abelian proper base change for ind-finite stacks, proper descent, constructible subsheaves, local constancy from specialization, local 0-acyclicity, local 1-asphericity and the 0-acyclicity criterion for coherent locally 0-acyclic morphisms, requested from EtaleCohomologyFoundations", "3.8a: ind-finiteness of direct images of torsor stacks along coherent morphisms", "3.8a: passage of local 1-asphericity to cofiltered limits"]
+cited_for = ["3.8a: non-abelian proper base change for ind-finite stacks, proper descent, constructible subsheaves, local constancy from specialization, local 0-acyclicity, local 1-asphericity and the 0-acyclicity criterion for coherent locally 0-acyclic morphisms, requested from EtaleCohomologyFoundations", "3.8a: ind-finiteness of direct images of torsor stacks along coherent morphisms", "3.8a: passage of local 1-asphericity to cofiltered limits", "3.8a: filtered-colimit presentation of ind-finite sheaves of groups, embedding of constructible sheaves of groups into direct images of finite constant groups along finite morphisms, and commutation of direct images along coherent morphisms with filtered colimits, for cohomological properness over an arbitrary field of characteristic zero"]
 
 [[source]]
 id = "StacksVarieties"
@@ -277,3 +277,19 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-27"
 cited_for = ["3.8a: approximation of quasi-compact quasi-separated schemes over a field by finite-type schemes"]
+
+[[source]]
+id = "StacksEtale"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, chapter Étale Cohomology"
+year = 2026
+locator_scheme = "tag"
+locator = "03Q4, 03RZ, 03SA, 095Q, 09YU, 09Z7"
+url = "https://stacks.math.columbia.edu/download/etale-cohomology.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/etale-cohomology.pdf"
+fetched_at = "2026-11-04T18:20:22Z"
+sha256 = "71b2eb78422e599bedadb929b22812daac27c0c35510b880acb6c4489a5ea363"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["3.8a: constructible sheaves of sets, their colimit presentations, surjective detection, descent along limits of schemes and embeddings into direct images of finite constant sheaves, for cohomological properness over an arbitrary field of characteristic zero"]
