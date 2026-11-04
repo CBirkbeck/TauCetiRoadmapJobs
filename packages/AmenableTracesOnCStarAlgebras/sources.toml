@@ -1,0 +1,49 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "AmenableTracesOnCStarAlgebras"
+
+[[source]]
+id = "connes1976"
+authors = "A. Connes"
+title = "Classification of Injective Factors Cases II 1 , II ∞ , III λ , λ � 1"
+year = 1976
+doi = "10.2307/1971057"
+locator_scheme = "theorem"
+locator = "Theorem 5.1"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/5997#issuecomment-6632505102"
+
+[[source]]
+id = "brown-ozawa2008"
+authors = "Nathanial Brown, Narutaka Ozawa"
+title = "𝐶*-Algebras and Finite-Dimensional Approximations"
+year = 2008
+doi = "10.1090/gsm/088"
+locator_scheme = "chapter"
+locator = "Ch. 6–7"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/5997#issuecomment-6632505102"
+
+[[source]]
+id = "paulsen2002"
+authors = "Vern Paulsen"
+title = "Completely Bounded Maps and Operator Algebras"
+year = 2003
+doi = "10.1017/CBO9780511546631"
+locator_scheme = "chapter"
+locator = "Ch. 3"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/5997#issuecomment-6632505102"
+
+[[source]]
+id = "pedersen2018"
+authors = "G. K. Pedersen"
+title = "G. K. Pedersen, C*-Algebras and Their Automorphism Groups, 2nd ed., 2018"
+year = 2018
+locator_scheme = "chapter"
+locator = "Ch. 3, 5"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/5997#issuecomment-6632505102"
