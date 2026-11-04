@@ -15,7 +15,8 @@ monic polynomial of positive degree acquires a root with compatible `p`-power ro
 rings (Layers Q7–Q9, after Česnavičius–Scholze §2.3). What does this give for regular local rings?
 Faithfully flat perfectoid covers, by perfecting a prism, and the almost vanishing of `Tor` along
 finite subextensions of the absolute integral closure that Bhatt and Scholze derive from almost
-purity along an arbitrary ideal, recovering Heitmann–Ma (Layer Q10). The end theorems are the
+purity along an arbitrary ideal, which for `F`-finite residue fields is Heitmann–Ma's theorem
+(Layer Q10). The end theorems are the
 ind-syntomic André lemma (Q9.3), semiperfectoid covers of `p`-Zariski rings (Q9.6), fibre products
 of perfectoid rings (Q5.6), tilting of perfectoid valuation rings (Q6.4, Q6.7), torsion-free
 presentations (Q6.8), perfectoid covers of regular local rings (Q10.2) and the almost vanishing of
@@ -80,6 +81,13 @@ Bhatt–Scholze Remark 10.13.
   (`TauCeti.ValuationSpectrum.cont_eq_spvOfIdeal_inter_setOfPred_forall_vlt_one`) and his valuative
   criterion for integrality (`TauCeti.Huber.isIntegral_of_forall_continuous_valuation_le_one`), and
   the affine blowup algebra with its universal property (`Ideal.affineBlowup`).
+
+**Residue fields.** The perfectoid cover inside `(R⁺)^∧` of a complete regular local ring `R` of
+mixed characteristic (Q10.4) is constructed when the residue field is `F`-finite, the hypothesis of
+Heitmann–Ma Theorem 1.3, by finite free stages that are base changes of `R` along powers of a
+Frobenius lift. For a residue field that is not `F`-finite no cover inside `(R⁺)^∧` is constructed
+here or by a supplier: Q10.2 gives a faithfully flat perfectoid cover of `R` with no map to
+`(R⁺)^∧`, and Q10.5 takes a cover together with such a map as hypotheses.
 
 **Not owned here.** Purity for flat cohomology, the pro-fppf site, arc covers and the algebraic
 tilting of étale cohomology (Česnavičius–Scholze §§2.2, 3–6) are consumers of this roadmap and
@@ -261,13 +269,13 @@ Pinned at `a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039`.
   gives a prism `(B, IB)` iff `B` is `I`-torsion-free).
 - §0.83–§0.84: perfection of a prism and perfect prisms versus perfectoid rings, imported there from
   PerfectoidSpaces P4.15.2 and cited here through that owner.
-- §2.30: `Prismatic.Perfection.perfectSite_equiv`; in particular `S_perfd = lim_{S → T} T` over
-  maps to perfectoid rings, giving the universal property of `S → S_perfd` among maps to integral
+- §2.30: the perfect-site description of perfectoidization, `S_perfd = lim_{S → T} T` over maps
+  to perfectoid rings, giving the universal property of `S → S_perfd` among maps to integral
   perfectoid rings.
-- §2.31: `Prismatic.Perfectoidization.integral_discrete` (for `S` the `p`-completion of an integral
-  algebra over a perfectoid ring, `S_perfd` is a discrete perfectoid ring) and
-  `Prismatic.Perfectoidization.almostPurity` (for a finitely presented finite algebra finite étale
-  away from `V(J)`, `R/pⁿ → S_perfd/pⁿ` is almost finite projective for `J_perfd`).
+- §2.31: integral perfectoidization (for `S` the `p`-completion of an integral algebra over a
+  perfectoid ring, `S_perfd` is a discrete perfectoid ring) and almost purity along an arbitrary
+  finitely generated ideal `J` (for a finitely presented finite algebra finite étale away from
+  `V(J)`, `R/pⁿ → S_perfd/pⁿ` is almost finite projective for `J_perfd = ker(R → (R/J)_perfd)`).
 
 ### From TauCetiRoadmap.SchemeAndStackFoundations
 
@@ -319,7 +327,7 @@ presentations (`exists_surjective_of_isSMulRegular`, `exists_surjective_of_isSMu
 nilpotence criterion (`isTopologicallyNilpotent_iff_forall_lt_one`), the ind-syntomic André lemma
 (`exists_indSyntomic_andre`), semiperfectoid covers (`exists_semiperfectoid_cover`), perfectoid
 covers of regular local rings (`exists_faithfullyFlat_isIntegralPerfectoid`) and the almost vanishing
-of `Tor`, given a cover (`tor_map_mul_root_eq_zero_of_cover`) and for perfect residue fields
+of `Tor`, given a cover (`tor_map_mul_root_eq_zero_of_cover`) and for `F`-finite residue fields
 (`tor_map_mul_root_eq_zero`), with the definitions `IsIntegralPerfectoid`, `IsSyntomic`,
 `IsIndSyntomic` and `IsPZariski`. Its module docstring names the relative tilting equivalence (Q6.1)
 as not statable at the pins: the tilt is not a functor there.
@@ -469,8 +477,11 @@ For (2), `[ϖ♭]` acts on `A[p]` through `(ϖ♭)♯` and on `A♭[p♭]` throu
 - For `A = 𝒪_C × 𝔽̄_p` (integral perfectoid by PerfectoidQuotients §0.6) and `ϖ = (p^{1/p}, 0)`:
   `A[ϖ] = 0 × 𝔽̄_p` and `A♭[ϖ♭] = 0 × 𝔽̄_p`, matching (2); for `ϖ = (p^{1/p}, 1)` both sides are 0.
 - The perfectoid hypothesis is needed: for the semiperfect but nonreduced `A = 𝔽_p[t^{1/p^∞}]/(t)`
-  with `ϖ = 0`, `A♭ = lim_F A = 𝔽_p`, so `A♭[0] = 𝔽_p` while `A[0] = A` is infinite-dimensional
-  over `𝔽_p`.
+  with `ϖ = 0`, `A♭ = lim_F A` is the `t`-adic completion of `B = 𝔽_p[t^{1/p^∞}]`: Frobenius of `B`
+  is an automorphism carrying `(t)` to `(t^p)`, and `(x_n)_n ↦ (F^n(x_n))_n` identifies `lim_F B/(t)`
+  with `lim_n B/(t^{pⁿ})`, a domain. So `A♭[0] = A♭` is reduced while `A[0] = A` contains the
+  nonzero nilpotent `t^{1/p}`, and (2) fails. The value `A♭ = 𝔽_p` would be wrong: the sequence
+  `(t^{1/p^{n+1}} mod t)_n` is a nonzero element of `lim_F A`.
 
 ### Q5.5 `A_inf` of a surjection of perfectoid rings
 
@@ -998,15 +1009,25 @@ definition.
 Let `A` carry the `ϖ`-adic topology and let `v` be a valuation on `A` with `v(A) ≤ 1` and value group
 `Γ_v`. Prove that `v` is continuous (Tau Ceti `Valuation.IsContinuous`) iff for every `γ ∈ Γ_v` some
 `v(ϖ)ⁿ < γ`; and, for a Tate ring `R` with pair of definition `(A₀, I)` and `v` with `v(A₀) ≤ 1`,
-that `v` is continuous iff `v(a) < 1` for all `a ∈ I` (Česnavičius–Scholze Lemma 2.3.1, sentence after
-the statement, p. 22; Wedhorn Definition 7.7, p. 58, and Theorem 7.10, p. 59). `v(ϖ) = 0` is allowed,
+that `v` is continuous iff for every `γ ∈ Γ_v` there is `n` with `v(a) < γ` for all `a ∈ Iⁿ`, iff
+`v(ϖ) < 1` and the powers `v(ϖ)ⁿ` are cofinal in `Γ_v` for one, equivalently every, topologically
+nilpotent unit `ϖ` of `R` (Česnavičius–Scholze Lemma 2.3.1, sentence after the statement, p. 22;
+Wedhorn Definition 7.7, p. 58, Lemma 7.4 (iii), p. 57, and Theorem 7.10, p. 59: `Cont(A)` is the
+set of `v ∈ Spv(A, I·A)` with `v(a) < 1` on `I`, and the membership in `Spv(A, I·A)`, cofinality
+of the values on `I`, is part of the criterion). In the element-adic case `v(ϖ) = 0` is allowed,
 and then `v` is continuous.
 
 *Proof route.* If `v(ϖ)ⁿ < γ` then `ϖⁿA ⊆ {v < γ}` since `v(A) ≤ 1`; conversely openness of
 `{v < v(b)}` gives `ϖⁿA ⊆ {v < v(b)}` for some `n`, and a general `γ ∈ Γ_v` is a ratio of attained
 values, each bounded below by an attained value since `v ≤ 1`. The forward implication is Tau Ceti's
-`Valuation.IsContinuous.cofinalValue_of_isTopologicallyNilpotent`; the Tate-ring form is
-`TauCeti.ValuationSpectrum.cont_eq_spvOfIdeal_inter_setOfPred_forall_vlt_one`.
+`Valuation.IsContinuous.cofinalValue_of_isTopologicallyNilpotent`. In the Tate-ring case `{v < γ}`
+is open iff it contains some `Iⁿ`, since the `Iⁿ` are a basis of neighbourhoods of `0`; for a
+topologically nilpotent unit `ϖ` some `ϖ^N` lies in `I` and some `I^m` in the open set `ϖA₀`, so
+cofinality of the `v(ϖ)ⁿ` and of the values on the `Iⁿ` are equivalent, `v(ϖ) ≠ 0` as `ϖ` is a
+unit, and every `γ ∈ Γ_v` is again bounded below by an attained value because `R = A₀[1/ϖ]`. Tau
+Ceti states the Tate-ring form as
+`TauCeti.ValuationSpectrum.cont_eq_spvOfIdeal_inter_setOfPred_forall_vlt_one`, with the
+`Spv(A, I·A)` membership as a separate conjunct.
 
 *Needs:* Tau Ceti `Valuation.IsContinuous`, `Valuation.IsContinuous.cofinalValue_of_isTopologicallyNilpotent`,
 `TauCeti.ValuationSpectrum.cont_eq_spvOfIdeal_inter_setOfPred_forall_vlt_one`; Mathlib `Valuation`, `IsAdic`.
@@ -1016,6 +1037,12 @@ values, each bounded below by an attained value since `v ≤ 1`. The forward imp
 - On `ℤ_p` the `p`-adic valuation is continuous.
 - The trivial valuation on `ℤ_p` (`v(a) = 1` for `a ≠ 0`) is not: `v(p)ⁿ = 1` never falls below `1`.
 - A valuation factoring through `A/ϖ` (`v(ϖ) = 0`) is continuous.
+- The cofinality clause is needed in the Tate-ring form: on `ℚ_p⟨T⟩` with `A₀ = ℤ_p⟨T⟩` and
+  `I = pA₀`, let `v` be the rank-two valuation composed from the `T`-adic valuation and the `p`-adic
+  valuation of the lowest coefficient, `v(f) = (−ord_T f, −v_p(a_{ord_T f})) ∈ ℤ²` ordered
+  lexicographically, `v(0) = 0`. Then `v(A₀) ≤ (0, 0) = 1`, `v(p) = (0, −1) < 1` and `v(pf) < 1` for
+  all `f ∈ A₀`, yet `v(T) = (−1, 0) < (0, −n) = v(p)ⁿ` for every `n`: `{v < v(T)}` contains no
+  `pᵏA₀`, so `v` is not continuous, and the criterion "`v < 1` on `I`" alone would wrongly accept it.
 
 ### Q8.2 The tilt of a continuous valuation
 
@@ -1362,8 +1389,8 @@ SchemeAndStackFoundations §§0.12–0.14.
 For regular local rings the layer refines the residue tower of PerfectoidSpaces P7.16a, constructs
 Bhatt–Scholze's perfectoid faithfully flat cover by perfecting a prism, and derives Bhatt–Scholze's
 almost vanishing of `Tor` along finite subextensions of `R⁺` from almost purity along an arbitrary
-ideal. The derivation needs a perfectoid cover mapping to `(R⁺)^∧`; it is constructed for perfect
-residue fields (Q10.4), and Q10.5 states the theorem for any such cover.
+ideal. The derivation needs a perfectoid cover mapping to `(R⁺)^∧`; it is constructed for
+`F`-finite residue fields (Q10.4), and Q10.5 states the theorem for any such cover.
 
 ### Q10.1 Unramified residue towers
 
@@ -1456,28 +1483,60 @@ closed in `R⁺[1/p]`, `completion_integrally_closed_perfectoid` (PerfectoidQuot
 
 ### Q10.4 A perfectoid cover inside the completed absolute integral closure
 
-Let `(R, 𝔪)` be a complete regular local ring of mixed characteristic `(0, p)` with perfect residue
-field. Prove that the tower `R_n` of PerfectoidSpaces P7.17 embeds `R`-linearly into `R⁺` by choosing
-compatible roots of the `x_i` in `R⁺` (Q10.3); with `R_∞ = colim R_n ⊆ R⁺`, the map `R → R̂_∞` is
-faithfully flat, `R̂_∞` is integral perfectoid, and `R̂_∞ → (R⁺)^∧` is an injective `R`-algebra map
-(Bhatt–Scholze Remark 10.13, p. 84; Česnavičius Lemma 5.2 and proof, p. 12).
+Let `(R, 𝔪)` be a complete regular local ring of mixed characteristic `(0, p)` whose residue field
+`k` is `F`-finite, that is, `k` is a finite module over its subfield `k^p` of `p`-th powers. Write
+`R = A/(f)` with `A = W⟦x_1, …, x_d⟧` and the δ-structure `φ_A` of Q10.2 (`φ_A` extends the
+Frobenius lift `φ_W` of the Cohen ring `W` and sends each `x_i` to `x_i^p`), and let
+`R_n := A/(φ_A^n(f))`, an `R`-algebra through `φ_A^n`. Prove: (1) `W` is a finite free module over
+`φ_W^n(W)` of rank `[k : k^p]^n`, hence `A` is finite free over `φ_A^n(A)` with basis the products
+`w·x^a` of a basis `w` of `W` over `φ_W^n(W)` and the monomials `x^a` with `0 ≤ a_i < pⁿ`, and
+`R_n = R ⊗_{A, φ_A^n} A` is finite free over `R` of rank `[k : k^p]^n pⁿᵈ`; (2) `φ_A^n(f) ∉ 𝔪_A²`, so
+each `R_n` is a complete regular local ring, in particular a normal domain; (3) `R_∞ := colim_n R_n`
+is a domain integral over `R`, so it embeds `R`-linearly into `R⁺` (Q10.3), and
+`R_∞ ∩ pⁿR⁺ = pⁿR_∞` for all `n`; (4) the `p`-adic completion `R̂_∞` is the cover `A_∞/(f)` of
+Q10.2, hence integral perfectoid, `R → R̂_∞` is faithfully flat, and `R̂_∞ → (R⁺)^∧` is an injective
+`R`-algebra map. For perfect `k` and the presentations `f = x_1 − p` (unramified) and `f = p − g`
+with `g ∈ (p, x)²` (ramified), `R_n` is the stage `W(k)[p^{1/pⁿ}]⟦x_2^{1/pⁿ}, …, x_d^{1/pⁿ}⟧`,
+resp. `W(k)⟦x^{1/pⁿ}⟧/(p − g)`, of PerfectoidSpaces P7.17 after identifying `W(k)` with itself
+through the automorphism `φ_W^n` (Bhatt–Scholze Remark 3.11, pp. 32–33, and Remark 10.13, p. 84;
+Česnavičius Lemma 5.2 and proof, p. 12).
 
-*Proof route.* Each `R_n` is a domain finite over `R`, so it embeds in `R⁺` once the roots are
-chosen compatibly. `R → R_n` is finite free, so `R → R_∞` is faithfully flat and `R/p → R̂_∞/p` is;
-`R` and `R̂_∞` are `p`-torsion-free and `p`-complete, so DerivedDeRhamCohomology §1.10 gives faithful
-flatness. `R_∞` is a filtered union of regular, hence normal, domains, so `R_∞ ∩ pⁿR⁺ = pⁿR_∞` for all
-`n` and the completed map is injective.
+*Proof route.* `W` is `p`-adically complete and `p`-torsion-free with `W/p = k` and `φ_W(p) = p`.
+As `k` is finite over `k^p`, the complete form of Nakayama's lemma makes `W` finite over `φ_W(W)`;
+a lift of a `k^p`-basis of `k` generates, and the kernel `K` of the surjection from the free
+module satisfies `K = pK` because `W` is `p`-torsion-free, so `K = 0` by Nakayama. The monomial
+decomposition `W⟦x⟧ = ⊕_a W⟦x^{pⁿ}⟧ x^a` gives (1), and base change of `R = A/(f)` along the finite
+free map `φ_A^n : A → A` is `A/(φ_A^n(f))`. For (2), if `f(0)` has `p`-adic valuation one so does
+`φ_W^n(f(0))`, and if `f = x_1 − p` then `φ_A^n(f) = x_1^{pⁿ} − p`; in both cases the class of
+`φ_A^n(f)` in `𝔪_A/𝔪_A²` is a unit multiple of the class of `p`. For (3), the transition maps
+`R_n → R_{n+1}` are injective (finite free, hence faithfully flat), so `R_∞` is a filtered union of
+normal domains finite over `R`; an element of `R_∞ ∩ pⁿR⁺` is `pⁿ` times an element of `Frac(R_m)`
+integral over `R`, which lies in `R_m`. For (4), `(colim_{φ_A} A)/(f) = colim_n R_n` because the
+ideal generated by `f` in the `n`-th copy of `A` is `(φ_A^n(f))`, and `f` is a nonzerodivisor on
+`colim_{φ_A} A` and on `A_∞`, so `A_∞/(f) = (colim_n R_n)^∧_p`; `R → R_∞` is faithfully flat as a
+filtered colimit of finite free maps, `R/p → R̂_∞/p` is faithfully flat, and `R`, `R̂_∞` are
+`p`-torsion-free and `p`-complete, so DerivedDeRhamCohomology §1.10 gives faithful flatness;
+injectivity of the completed map follows from (3).
 
-*Needs:* Q10.3; PerfectoidSpaces P7.17; DerivedDeRhamCohomology §1.10; Mathlib `Module.FaithfullyFlat`,
-`integralClosure`, `IsIntegrallyClosed`.
+*Needs:* Q10.2, Q10.3; PerfectoidSpaces P4.15.2, P7.16a and P7.17; DerivedDeRhamCohomology §1.10;
+Mathlib `Module.FaithfullyFlat`, `Module.Finite`, `integralClosure`, `IsIntegrallyClosed`,
+`IsRegularLocalRing`, `Subfield`.
 
 **Checks.**
 
-- For `R = ℤ_p`: `R_∞ = ℤ_p[p^{1/p^∞}] ⊆ ℤ̄_p` and `R̂_∞ ⊆ 𝒪_{ℂ_p}`.
+- For `R = ℤ_p` (`k = 𝔽_p`, `f = p − x_1`): `R_n = ℤ_p⟦x_1⟧/(p − x_1^{pⁿ}) = ℤ_p[p^{1/pⁿ}]`, of rank
+  `pⁿ`, `R_∞ = ℤ_p[p^{1/p^∞}] ⊆ ℤ̄_p` and `R̂_∞ ⊆ 𝒪_{ℂ_p}`.
 - The intersection formula: for `R = ℤ_p`, `p^{1/p} ∈ R_∞` is not in `pR⁺` (its valuation is
   `1/p < 1`), and `p^{1+1/p} ∈ pR⁺ ∩ R_∞` equals `p · p^{1/p} ∈ pR_∞`, as normality of `R_∞` predicts.
-- For imperfect residue field the explicit tower is not available; Q10.2 gives a faithfully flat
-  perfectoid cover without a map to `(R⁺)^∧`, and Q10.5 takes such a map as a hypothesis.
+- An `F`-finite imperfect residue field: `k = 𝔽_p(t)`, `W` the `p`-adic completion of `ℤ_p[t]_{(p)}`
+  with `φ_W(t) = t^p`, `R = W⟦x⟧` (`d = 2`, `A = W⟦x_1, x_2⟧`, `f = x_1 − p`). Then `[k : k^p] = p`,
+  `W` is free over `φ_W^n(W)` with basis `1, t, …, t^{pⁿ−1}`, and `R_n = W⟦x_1, x_2⟧/(x_1^{pⁿ} − p)`
+  with `R` acting through `φ_A^n`, finite free over `R` of rank `pⁿ · p^{2n} = p^{3n}`; a count that
+  forgot the factor `[k : k^p]^n` would give `p^{2n}`.
+- The hypothesis is needed for the stages to be finite: for `k = 𝔽_p(t_1, t_2, …)`, `[k : k^p]` is
+  infinite, `W` is not finite over `φ_W(W)`, and `R_1 = A/(φ_A(f))` is not finite over `R`; Q10.2
+  still gives a faithfully flat perfectoid cover of `R`, but no map to `(R⁺)^∧` is constructed, and
+  Q10.5 takes such a map as a hypothesis.
 
 ### Q10.5 Almost vanishing of `Tor` along finite subextensions of `R⁺`
 
@@ -1487,23 +1546,45 @@ characteristic `(0, p)`, `S ⊆ R⁺` a finite `R`-subalgebra, `n > 0`, and `c �
 perfectoid ring and an `R`-algebra map `R_∞ → (R⁺)^∧`. Then for every `i > 0` and every
 `R/pⁿ`-module `N`, the image of
 `Tor_i^{R/pⁿ}(S/pⁿ, N) → Tor_i^{R/pⁿ}(R⁺/pⁿ, N)` is annihilated by every `c_k` in any compatible
-system `(c_k)` of `p`-power roots of `c` in `R⁺` (Bhatt–Scholze Remark 10.13, pp. 83–84, recovering
-Heitmann–Ma Theorem 1.3, p. 2, there stated for `F`-finite residue fields). `c = 0` is allowed (the
-statement is then empty). As in Q10.6, `Suggested.lean` writes `S/pⁿ` and `R⁺/pⁿ` as base changes to
+system `(c_k)` of `p`-power roots of `c` in `R⁺` (Bhatt–Scholze Remark 10.13, pp. 83–84; with the
+cover of Q10.4 this is Q10.6, Heitmann–Ma's theorem). `c = 0` is allowed (the statement is then
+empty). As in Q10.6, `Suggested.lean` writes `S/pⁿ` and `R⁺/pⁿ` as base changes to
 `R/pⁿ` and lets `c_k` act through the first argument of `Tor`.
 
-*Proof route.* `T = S ⊗_R R_∞` is a finitely presented finite `R_∞`-algebra, finite étale after
-inverting `c`. By `Prismatic.Perfectoidization.almostPurity` (PrismaticCohomology §2.31),
-`R_∞/pⁿ → T_perfd/pⁿ` is almost finite projective for `J = (c)`, and `T_perfd` is integral perfectoid
-(`Prismatic.Perfectoidization.integral_discrete`). As `R/pⁿ → R_∞/pⁿ` is flat,
-`Tor_i^{R/pⁿ}(T_perfd/pⁿ, N) = Tor_i^{R_∞/pⁿ}(T_perfd/pⁿ, R_∞ ⊗_R N)`, which is `c`-almost zero for
-`i > 0`, using that `c ∈ pR` and that the `p`-torsion of `T_perfd` is killed by all `p`-power roots of
-a unit multiple of `p` (Q5.4 (2) with PerfectoidQuotients §0.4). The map `S/pⁿ → R⁺/pⁿ` factors as
-`S/pⁿ → T/pⁿ → T_perfd/pⁿ → R⁺/pⁿ`, the last by the universal property of `T → T_perfd`
-(PrismaticCohomology §2.30) applied to `T → (R⁺)^∧`, integral perfectoid by Q10.3.
+*Proof route.* First enlarge the cover so that it contains compatible roots of `c` mapping to the
+given `c_k`. `R_∞` is `p`-torsion-free (flat over the domain `R`), so `ϖ := ((p♭)^{1/p})♯ ∈ R_∞` is
+a nonzerodivisor with `ϖ^p` a unit multiple of `p` and with compatible `p`-power roots. Apply Q9.1
+to `(R_∞, ϖ, {T − c})`: with `A'` the `p`-integral closure of `R_∞[T^{1/p^∞}][(T − c)/ϖ^m : m ≥ 0]`
+in `R_∞[T^{1/p^∞}][1/ϖ]` and `I'` its `ϖ`-divisible ideal, `A'/I'` is faithfully flat over `R_∞`
+(Q9.2 with Q7.4, as in the proof of Q9.3), `R'_∞ := (A'/I')^∧ = Â'` is integral perfectoid
+(`completion_pIntegralClosure_perfectoid`) and `ϖ`-torsion-free, and `R_∞/ϖ → R'_∞/ϖ` is
+faithfully flat; so `R/pⁿ → R'_∞/pⁿ` is flat for every `n`, and `R → R'_∞` is faithfully flat
+(DerivedDeRhamCohomology §1.10). The map `R_∞[T^{1/p^∞}] → (R⁺)^∧` over `R_∞ → (R⁺)^∧` sending
+`T^{1/pᵏ} ↦ c_k` kills `T − c`, so after inverting `ϖ` it carries `R_∞[T^{1/p^∞}][(T − c)/ϖ^m]` into
+`(R⁺)^∧`; since `(R⁺)^∧` is `p`-torsion-free and integral perfectoid (Q10.3), it is `p`-integrally
+closed in `(R⁺)^∧[1/p]` (`perfectoid_p_integral_closedness`), so `A'` maps into `(R⁺)^∧` with `I'`
+mapping to `0`, and completing gives an `R`-algebra map `R'_∞ → (R⁺)^∧` with `T^{1/pᵏ} ↦ c_k`. Thus
+`R'_∞` satisfies the hypotheses on `R_∞`, and it suffices to prove the theorem for `R'_∞`.
 
-*Needs:* Q10.3, Q5.4; PerfectoidQuotients §0.4; PrismaticCohomology §§2.30–2.31; PerfectoidSpaces
-P0.1–P0.2 and P0.11; Mathlib `CategoryTheory.Tor`, `Module.Flat`.
+Now `T = S ⊗_R R'_∞` is a finitely presented finite `R'_∞`-algebra, finite étale after inverting
+`c`. By almost purity along `(c)` (PrismaticCohomology §2.31), `R'_∞/pⁿ → T_perfd/pⁿ` is almost
+finite projective for `J := (cR'_∞)_perfd = ker(R'_∞ → (R'_∞/c)_perfd)`, and `T_perfd` is integral
+perfectoid (integral perfectoidization, PrismaticCohomology §2.31). As `R/pⁿ → R'_∞/pⁿ` is flat,
+`Tor_i^{R/pⁿ}(T_perfd/pⁿ, N) = Tor_i^{R'_∞/pⁿ}(T_perfd/pⁿ, R'_∞ ⊗_R N)`, which is killed by `J` for
+`i > 0`, using that `c ∈ pR` and that the `p`-torsion of `T_perfd` is killed by all `p`-power roots
+of a unit multiple of `p` (Q5.4 (2) with PerfectoidQuotients §0.4). The root `T^{1/pᵏ}` is nilpotent
+in `R'_∞/c`, so it maps to zero in the integral perfectoid, hence reduced, ring `(R'_∞/c)_perfd`
+(Bhatt–Scholze, proof of Theorem 7.4, p. 62) and lies in `J`. The map `S/pⁿ → R⁺/pⁿ` factors as
+`S/pⁿ → T/pⁿ → T_perfd/pⁿ → R⁺/pⁿ`, the last by the universal property of `T → T_perfd`
+(PrismaticCohomology §2.30) applied to `T → (R⁺)^∧`; the image of `Tor_i^{R/pⁿ}(S/pⁿ, N)` in
+`Tor_i^{R/pⁿ}(R⁺/pⁿ, N)` lies in the image of `Tor_i^{R/pⁿ}(T_perfd/pⁿ, N)`, a `T_perfd`-submodule
+killed by `J`, in particular by `T^{1/pᵏ}`, which acts on `R⁺/pⁿ` as `c_k`. Without the enlargement
+the image is only known to be killed by the image of `(cT_perfd)_perfd`, which need not generate an
+ideal of `(R⁺)^∧` containing `c_k`.
+
+*Needs:* Q10.3, Q5.4, Q9.1, Q9.2, Q7.4; PerfectoidQuotients §§0.4–0.5; PrismaticCohomology
+§§2.30–2.31; PerfectoidSpaces P0.1–P0.2 and P0.11; DerivedDeRhamCohomology §1.10; Mathlib
+`CategoryTheory.Tor`, `Module.Flat`.
 
 **Checks.**
 
@@ -1513,16 +1594,29 @@ P0.1–P0.2 and P0.11; Mathlib `CategoryTheory.Tor`, `Module.Flat`.
 - For `c = 0` the roots are all `0` in the domain `R⁺`, and multiplication by `0` kills everything.
 - The roots are taken in `R⁺`, not in `S`: for `S = R[√p]` (`p` odd) and `c = p`, `R[1/p] → S[1/p]` is
   finite étale while `S` does not contain `p^{1/p}`.
+- The enlargement of the cover matters only beyond unit multiples of elements with roots in `R_∞`:
+  for `c = pu` with `u ∈ R^×` (for instance `c = p(1 + x)` in `R = ℤ_p⟦x⟧`), `c_k/p^{1/pᵏ}` is a unit
+  of `R⁺` (its `pᵏ`-th power is `u`), and `p^{1/pᵏ}` already lies in `√(pR_∞) ⊆ (pR_∞)_perfd`; for
+  `c = px` in `R = ℤ_p⟦x⟧` the roots `p^{1/pᵏ}x^{1/pᵏ}` lie in the cover of Q10.4 up to units of
+  `R⁺`; for `c = p(x + p)` the roots of `x + p` are adjoined by no stage of Q10.4, and it is the
+  enlarged `R'_∞` that carries `T^{1/pᵏ} ↦ c_k`.
+- The image is annihilated through `R'_∞ → (R⁺)^∧`: a proof that only showed `J`-almost vanishing
+  of the middle `Tor` would conclude annihilation by the image of `J`, not by `c_k`, unless some
+  element of `J` maps to a unit multiple of `c_k`; the enlargement supplies `T^{1/pᵏ}`.
 
-### Q10.6 Almost vanishing of `Tor` for a perfect residue field
+### Q10.6 Almost vanishing of `Tor` for an `F`-finite residue field
 
 **Theorem** (`tor_map_mul_root_eq_zero`). Let `R` be a complete regular local ring of characteristic
-`0` whose residue field is perfect of characteristic `p`, `S ⊆ R⁺` a finite `R`-subalgebra and
+`0` whose residue field `k` has characteristic `p` and is `F`-finite, a finite module over its
+subfield `k^p` of `p`-th powers (in `Suggested.lean`, `Module.Finite` of `k` over the field range of
+`frobenius k p`), `S ⊆ R⁺` a finite `R`-subalgebra and
 `c ∈ pR` with `R[1/c] → S[1/c]` finite étale. For `n > 0`, `i > 0`, every `R/pⁿ`-module `N` and every
 compatible system `(c_k)` of `p`-power roots of `c` in `R⁺`, the map
 `Tor_i^{R/pⁿ}(S/pⁿ, N) → Tor_i^{R/pⁿ}(R⁺/pⁿ, N)` followed by multiplication by `c_k` is zero. In
 `Suggested.lean`, `S/pⁿ` and `R⁺/pⁿ` are the base changes `R/pⁿ ⊗_R S` and `R/pⁿ ⊗_R R⁺`, and
-multiplication by `c_k` acts through the first argument of `Tor`.
+multiplication by `c_k` acts through the first argument of `Tor`. This is Bhatt–Scholze
+Remark 10.13, pp. 83–84, from which Heitmann–Ma Theorem 1.3, p. 2, follows in its own generality
+of `F`-finite residue fields.
 
 *Proof route.* Q10.5 with the cover of Q10.4.
 
@@ -1538,6 +1632,10 @@ multiplication by `c_k` acts through the first argument of `Tor`.
   non-Cohen–Macaulay `S`, which occur once `dim R ≥ 3`.
 - The cover used is that of Q10.4: for `R = ℤ_p⟦x⟧` it is the `p`-adic completion of
   `colim_m ℤ_p[p^{1/p^m}]⟦x^{1/p^m}⟧`, embedded in `(R⁺)^∧` by compatible roots of `p` and `x`.
+- The hypothesis is Heitmann–Ma's: `[k : k^p] = 1` for perfect `k` and `[k : k^p] = p` for
+  `k = 𝔽_p(t)`, and Q10.4 applies to both; for `k = 𝔽_p(t_1, t_2, …)` it is infinite and Q10.6 does
+  not apply, while Q10.5 applies to any cover mapping to `(R⁺)^∧`. A perfect-residue-field
+  hypothesis would exclude `k = 𝔽_p(t)`, where the theorem holds.
 
 ### Examples
 
@@ -1545,8 +1643,8 @@ multiplication by `c_k` acts through the first argument of `Tor`.
 
 ### Dependencies
 
-*Needs:* Layer Q5; PerfectoidQuotients §§0.4–0.5; PerfectoidSpaces P0.1–P0.2, P0.11, P4.15.2, P7.16a
-and P7.17; PrismaticCohomology §§0.61–0.63, §0.79 and §§2.30–2.31; EnhancedDerivedSheaves §E1.6;
+*Needs:* Layers Q5, Q7 and Q9; PerfectoidQuotients §§0.4–0.5; PerfectoidSpaces P0.1–P0.2, P0.11,
+P4.15.2, P7.16a and P7.17; PrismaticCohomology §§0.61–0.63, §0.79 and §§2.30–2.31; EnhancedDerivedSheaves §E1.6;
 DerivedDeRhamCohomology §1.10.
 
 ## Worked examples
@@ -1562,8 +1660,9 @@ DerivedDeRhamCohomology §1.10.
 - `𝒪_C/(p^{1/p^∞}) = k̄` and products of perfectoid valuation rings show that integral perfectoid
   rings may have `p`-torsion and need not be domains (Q5.4, Q6.4).
 - `W(k)⟦x_1^{1/p^∞}, …, x_d^{1/p^∞}⟧/(p − f)` with `f = x_1` (unramified) or `f ∈ (p, x)²` (ramified)
-  is the tower of PerfectoidSpaces P7.17; its `p`-adic completion is perfectoid, and inside `R⁺` it
-  is the cover of Q10.4.
+  is the tower of PerfectoidSpaces P7.17 for perfect `k`; its `p`-adic completion is perfectoid, and
+  inside `R⁺` it is the cover of Q10.4, whose stages `A/(φ_A^n(f))` are defined for every `F`-finite
+  `k`.
 
 ## Downstream consumers
 
@@ -1583,7 +1682,8 @@ DerivedDeRhamCohomology §1.10.
   §1.4, p. 8; §2.1, pp. 9–18; §2.3, pp. 22–29; Lemma 3.1.1, p. 29.
 - **BS22**: Bhargav Bhatt and Peter Scholze, *Prisms and prismatic cohomology*, Annals of
   Mathematics 196 (2022); read in [arXiv:1905.08229v4](https://arxiv.org/abs/1905.08229v4).
-  Remark 3.11, pp. 32–33; Theorems 10.9 and 10.11 and Remark 10.13, pp. 80–84.
+  Remark 3.11, pp. 32–33; Theorem 7.4 and its proof, pp. 61–62; Theorems 10.9 and 10.11 and
+  Remark 10.13, pp. 80–84.
 - **BMS1**: Bhargav Bhatt, Matthew Morrow and Peter Scholze, *Integral p-adic Hodge theory*,
   Publ. Math. IHÉS 128 (2018); read in [arXiv:1602.03148v3](https://arxiv.org/abs/1602.03148v3).
   Lemma 3.2, p. 19; Lemmas 3.9–3.10, p. 22.
@@ -1591,7 +1691,7 @@ DerivedDeRhamCohomology §1.10.
   Math. 212 (2018); read in [arXiv:1608.08882v2](https://arxiv.org/abs/1608.08882v2). Theorem 1.5,
   p. 2; Propositions 5.1–5.2, p. 8.
 - **Wedhorn**: Torsten Wedhorn, *Adic spaces*, [arXiv:1910.05934v1](https://arxiv.org/abs/1910.05934v1).
-  Definition 7.7, p. 58; Theorem 7.10, p. 59; Proposition 7.18, pp. 60–61.
+  Lemma 7.4, p. 57; Definition 7.7, p. 58; Theorem 7.10, p. 59; Proposition 7.18, pp. 60–61.
 - **Sch12**: Peter Scholze, *Perfectoid spaces*, Publ. Math. IHÉS 116 (2012); read in
   [arXiv:1111.4914v1](https://arxiv.org/abs/1111.4914v1). Theorem 3.7 and Proposition 3.8, p. 17.
 - **Ces19**: Kęstutis Česnavičius, *Purity for the Brauer group*, Duke Math. J. 168 (2019); read in

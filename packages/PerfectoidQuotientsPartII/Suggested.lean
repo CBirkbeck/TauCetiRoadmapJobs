@@ -1,3 +1,5 @@
+module
+
 import Mathlib
 import TauCeti.RingTheory.Huber.Basic
 import TauCeti.RingTheory.Valuation.Continuous.Basic
@@ -25,8 +27,9 @@ topological nilpotence in a Tate ring (Lemma 2.3.2); the ind-syntomic André lem
 semiperfectoid covers of `p`-Zariski rings (Corollary 2.3.7); perfectoid faithfully flat covers of
 regular local rings (Bhatt–Scholze Remark 3.11, in the generality of Bhatt's Proposition 5.2); and
 the almost vanishing of `Tor` along finite subextensions of `R⁺` for a complete regular local ring,
-given a faithfully flat perfectoid cover mapping to the completion of `R⁺`, and unconditionally for a
-perfect residue field (Bhatt–Scholze Remark 10.13, recovering Heitmann–Ma Theorem 1.3).
+given a faithfully flat perfectoid cover mapping to the completion of `R⁺`, and unconditionally for
+an `F`-finite residue field, the generality of Heitmann–Ma Theorem 1.3 (Bhatt–Scholze
+Remark 10.13).
 
 Not statable at the pins:
 
@@ -37,7 +40,7 @@ Not statable at the pins:
 
 namespace TauCetiRoadmap.PerfectoidQuotientsPartII
 
-universe u
+universe u v
 
 /-! ## Standing definitions -/
 
@@ -197,7 +200,7 @@ theorem exists_approximation (A : Type u) [CommRing A] [TopologicalSpace A]
     [IsIntegralPerfectoid p A] [Fact (¬ IsUnit (p : A))] [IsAdicComplete (Ideal.span {(p : A)}) A]
     (ϖ : A) (hϖ : ϖ ^ p ∣ (p : A)) (hadic : IsAdic (Ideal.span {ϖ}))
     (hc : IsAdicComplete (Ideal.span {ϖ}) A) (a : A) (m : ℕ) :
-    ∃ a' : PreTilt A p, ∀ (Γ₀ : Type u) [LinearOrderedCommGroupWithZero Γ₀]
+    ∃ a' : PreTilt A p, ∀ (Γ₀ : Type v) [LinearOrderedCommGroupWithZero Γ₀]
       (v : Valuation A Γ₀), v.IsContinuous → (∀ x, v x ≤ 1) →
       v (a - PreTilt.untilt a') ≤ v p * max (v (PreTilt.untilt a')) (v ϖ ^ (p * m)) :=
   sorry
@@ -210,7 +213,7 @@ theorem isTopologicallyNilpotent_iff_forall_lt_one (R : Type u) [CommRing R] [To
     [IsTopologicalRing R] [TauCeti.Huber.IsTateRing R] (P : TauCeti.Huber.PairOfDefinition R)
     (a : R) :
     IsTopologicallyNilpotent a ↔
-      ∀ (Γ₀ : Type u) [LinearOrderedCommGroupWithZero Γ₀] (v : Valuation R Γ₀),
+      ∀ (Γ₀ : Type v) [LinearOrderedCommGroupWithZero Γ₀] (v : Valuation R Γ₀),
         v.IsContinuous → (∀ x ∈ P.ringOfDefinition, v x ≤ 1) → v a < 1 :=
   sorry
 
@@ -313,16 +316,18 @@ theorem tor_map_mul_root_eq_zero_of_cover (R : Type u) [CommRing R] [IsDomain R]
           (R ⧸ Ideal.span {(p : R) ^ n}))))).app N = 0 :=
   sorry
 
-/-- **Almost vanishing of `Tor` for a perfect residue field** (Bhatt–Scholze Remark 10.13,
-pp. 83–84, recovering Heitmann–Ma Theorem 1.3; README Q10.6). Let `R` be a complete regular local
-ring of characteristic zero whose residue field is perfect of characteristic `p`, `R⁺` its integral
+/-- **Almost vanishing of `Tor` for an `F`-finite residue field** (Bhatt–Scholze Remark 10.13,
+pp. 83–84, in the generality of Heitmann–Ma Theorem 1.3; README Q10.6). Let `R` be a complete
+regular local ring of characteristic zero whose residue field `k` has characteristic `p` and is
+`F`-finite (a finite module over its subfield of `p`-th powers, the field range of `frobenius k p`),
+`R⁺` its integral
 closure in an algebraic closure of its fraction field, `S ⊆ R⁺` a finite `R`-subalgebra and
 `c ∈ pR` with `R[1/c] → S[1/c]` finite étale. For `n > 0`, `i > 0`, every `R/pⁿ`-module `N` and
 every compatible system `(cₖ)` of `p`-power roots of `c` in `R⁺`, the map
 `Tor_i^{R/pⁿ}(S/pⁿ, N) → Tor_i^{R/pⁿ}(R⁺/pⁿ, N)` followed by multiplication by `cₖ` is zero. -/
 theorem tor_map_mul_root_eq_zero (R : Type u) [CommRing R] [IsDomain R] [IsRegularLocalRing R]
     [IsAdicComplete (maximalIdeal R) R] [CharZero R] [CharP (ResidueField R) p]
-    [PerfectRing (ResidueField R) p]
+    [Module.Finite (frobenius (ResidueField R) p).fieldRange (ResidueField R)]
     (S : Subalgebra R (AlgebraicClosure (FractionRing R)))
     (hS : S ≤ integralClosure R (AlgebraicClosure (FractionRing R))) [Module.Finite R S]
     (c : R) (hc : c ∈ Ideal.span {(p : R)})
