@@ -1,0 +1,119 @@
+<!-- from CBirkbeck, https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/1646#issuecomment-6639956109 -->
+Red team round 2 pass b (claude) of d5ac716
+
+Verdict: needs_changes
+
+1. **F01** (P1) FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.6.1a does not exist at the supplier's head
+
+   **Location.** `packages/SmallRamificationAndAbelianVarietyBaseCasesPartII/README.md:9` ("§§R07.3.4–R07.3.17 and R07.6.1a–R07.6.5"), `:63` ("Section R07.6.1a supplies Herbrand theory for complete DVRs with arbitrary perfect residue field"), `:91` ("whose Herbrand theory comes from FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.6.1a"), `:320` (§1.7 *Needs:* "§§R07.6.1a–R07.6.3"), `:346` (Layer 1 Dependencies "R07.6.1a–R07.6.3").
+
+   **Claim.** The supplier has a section R07.6.1a stating Herbrand theory (lower and upper numbering, Herbrand function, quotient compatibility, different formula) over complete DVRs with arbitrary perfect residue field.
+
+   **Witness.** At head #879 the R07.6 sections are R07.6.1 "Torsion of abelian schemes is finite flat, and elliptic curves with good reduction", R07.6.2 "Fontaine's normalisation of the ramification filtration", R07.6.3, R07.6.4, R07.6.5 (headings at its README lines 8300, 8342, 8389, 8423, 8477); `grep R07.6.1a` returns nothing. The citation resolver reports the same (scratch `citations.md`: "FiniteFlatGroupsAndIntegralPadicHodgeTheory has no R07.6.1a (checked #879)"). The supplier's own §R07.6.2 says where that theory now lives: "Serre's lower and upper numbering, Herbrand's functions, compatibility with quotients … and v(𝒟)=Σ i_G(g) are supplied in this generality, in both characteristics, by PadicPeriodRings §0.3". PadicPeriodRings #940 §0.3 "Ramification over complete discretely valued fields with perfect residue field" (its README line 74) states exactly that contract, with the Check `K=Frac W(𝔽_p(s)^perf)`, `L=K(√p)`; PadicPeriodRings is at merge-order position 19, before this roadmap (137).
+
+   **Repair.** Replace every "R07.6.1a" citation: line 9 "R07.6.2–R07.6.5"; line 63 "Herbrand theory for complete DVRs with arbitrary perfect residue field (lower and upper numbering, Herbrand function, quotient compatibility, different formula) is PadicPeriodRings §0.3, which §R07.6.2 of this supplier consumes; §R07.6.2 supplies shifted numbering and the different identity"; line 91 "whose Herbrand theory comes from PadicPeriodRings §0.3"; line 320 "FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.6.2–R07.6.3, PadicPeriodRings §0.3 and gap:pm-remove-inverse-e"; line 346 "R07.6.2–R07.6.3" and add "PadicPeriodRings §0.3". Add a subsection "### From TauCetiRoadmap.PadicPeriodRings" under the supplier contracts with that one sentence. Retest on the instance the route uses: for L=ℚ₃(ζ₃)/ℚ₃, PadicPeriodRings §0.3 gives G₀=G of order 2, G₁=1, ord_L(𝔇)=1; §R07.6.2 then gives u=1, i=1/2 and v₀(𝔇)=u−i=1/2, as line 317 states.
+
+2. **F02** (P1) `Suggested.lean` imports a module that does not exist at the pinned Tau Ceti
+
+   **Location.** `packages/SmallRamificationAndAbelianVarietyBaseCasesPartII/Suggested.lean:2` ("import TauCeti.Algebra.Category.ModuleCat.Sheaf.ExteriorPower"); `README.md:41` ("`SheafOfModules.exteriorPower` in `TauCeti/Algebra/Category/ModuleCat/Sheaf/ExteriorPower.lean`").
+
+   **Claim.** The module exists at the pin and the file elaborates.
+
+   **Witness.** Tau Ceti at the manifest pin `358314d` has no file `TauCeti/Algebra/Category/ModuleCat/Sheaf/ExteriorPower.lean`; its commit `c262bf105` ("feat: exterior powers of finite locally free sheaves") renamed it to `TauCeti/Algebra/Category/ModuleCat/Sheaf/ExteriorPower/Basic.lean` (the directory now holds `Basic.lean`, `Free.lean`, `LocallyFree.lean`). `SheafOfModules.exteriorPower` is at `ExteriorPower/Basic.lean:60` with the same signature the file uses (`(R : Sheaf J CommRingCat) (n : ℕ) : SheafOfModules (ringCatSheaf R) ⥤ SheafOfModules (ringCatSheaf R)`). The worker's elaboration (scratch `signatures.md`) failed for this reason: missing object file for `TauCeti/Algebra/Category/ModuleCat/Sheaf/Exterio…`. A file that does not elaborate is not an acceptance test.
+
+   **Repair.** Line 2 of `Suggested.lean`: `import TauCeti.Algebra.Category.ModuleCat.Sheaf.ExteriorPower.Basic`. README line 41: "`SheafOfModules.exteriorPower` in `TauCeti/Algebra/Category/ModuleCat/Sheaf/ExteriorPower/Basic.lean`". Then re-run the `#check @` test for the four declarations (the other two imports, `TauCeti.AlgebraicGeometry.Modules.Differentials.Basic` and `TauCeti.AlgebraicGeometry.Cohomology.Basic`, exist at the pin, and `Scheme.relativeDifferentials` (`Differentials/Basic.lean:85`, binders `(R) (X) [X.Over (Spec (.of R))]`), `Scheme.Modules.Cohomology` (`Cohomology/Basic.lean:61`, namespace `TauCeti.AlgebraicGeometry.Scheme.Modules`) and `SheafOfModules.unit` (Mathlib `Algebra/Category/ModuleCat/Sheaf.lean:171`) are unchanged).
+
+3. **F03** (P2) The Minkowski unramified-field theorem is cited to base §1.4, which does not state it
+
+   **Location.** `packages/SmallRamificationAndAbelianVarietyBaseCasesPartII/README.md:85` ("Consume §§1.1, 1.4, 1.7 and 1.9: … Minkowski's unramified-field obstruction"), `:411` (§2.3 route: "Use the base roadmap's Minkowski argument that a finite number field unramified at all finite primes is ℚ"), `:421` (§2.3 *Needs:* "SmallRamificationAndAbelianVarietyBaseCases §1.4 for the route"), `:467` and `:477` (§2.6: "the base Minkowski theorem makes the ratio trivial"; *Needs:* "§1.4 for the global unramified ratio"), `:653`.
+
+   **Claim.** SmallRamificationAndAbelianVarietyBaseCases §1.4 supplies: a number field unramified at every finite prime is ℚ.
+
+   **Witness.** At head #970 the base's §1.4 "Minkowski thresholds" (its README line 427) proves only `n ≥ 3 ⇒ rd>2, n ≥ 6 ⇒ rd>3, n ≥ 12 ⇒ rd>4` from `NumberField.abs_discr_ge'`; it says nothing about n=2 and nothing about ramification. The theorem the routes use is pinned Mathlib: `NumberField.finrank_eq_one_of_unramified` (`Mathlib/NumberTheory/NumberField/ExistsRamified.lean:50`, hypothesis `[Algebra.Unramified ℤ 𝒪]`), which the base roadmap itself lists in its Mathlib contract (its line 180) and uses through `NumberField.abs_discr_gt_two` (its lines 1036, 1146). Instance: a quadratic field unramified at all finite primes has rd=1; §1.4's thresholds do not exclude it, `abs_discr_gt_two` does.
+
+   **Repair.** Line 85: delete "Minkowski's unramified-field obstruction" and "1.4" from the consumed list. Add to the Mathlib contract (line 33 paragraph): "Use `NumberField.finrank_eq_one_of_unramified` in `Mathlib/NumberTheory/NumberField/ExistsRamified.lean` (a number field whose integers are unramified over ℤ has degree one) for the kernel fields of §§2.3 and 2.6, together with the kernel-field unramifiedness dictionary of ArithmeticGaloisRepresentations §2.2." Lines 411 and 467: "Minkowski's theorem (Mathlib `NumberField.finrank_eq_one_of_unramified`)". Lines 421 and 477: replace "SmallRamificationAndAbelianVarietyBaseCases §1.4" by "Mathlib `NumberField.finrank_eq_one_of_unramified` and ArithmeticGaloisRepresentations §2.2". Line 653 likewise. Layer 2 Dependencies (line 521): drop "1.4". Retest on the §2.6 instance: the ratio λ of the global character of ℤ/7ⁿ(i) with χ₇ⁱ is unramified at every finite prime, so its kernel field is unramified over ℤ, has degree one, and λ=1.
+
+Pins read for this pass (from `lake-manifest.json` of the content checkout): Mathlib `f6090c7`, Tau Ceti `358314d`. Both pins moved since round 1 (which read Mathlib `6b7abb3` and Tau Ceti `a91d3aa`); S02 is a consequence. Supplier heads read: SmallRamificationAndAbelianVarietyBaseCases #970, PadicHodgeTheory #1062, FiniteFlatGroupsAndIntegralPadicHodgeTheory #879, ArithmeticGaloisRepresentations #856, DeligneWeightsAndPurity #929, CrystallineCohomology #857, PadicPeriodRings #940, K3SurfacesAndSymplecticBoundedness #1375, EnriquesSurfacesAndIntegralNonexistence #1488; SchemeAndStackFoundations, EtaleCohomologyFoundations, EllipticCurves on main `a0ad405`; LocalFieldsRamification in `Completed/`.
+
+## Round-1 findings at this head
+
+| Round-1 id | Status at d5ac716 | Witness (quoted passage, `packages/SmallRamificationAndAbelianVarietyBaseCasesPartII/README.md`) |
+| --- | --- | --- |
+| Pass a F01 (P2), permitted coefficient lifts | repaired | Line 202: "choose λ̂ₛₜ∈O(E) mapping to that element under O(E)→A(E); equivalently v₀(λ̂ₛₜ−[λₛₜ])>r/(p−1) … A lift of λₛₜ through the residue field O(E)→k alone is not a permitted lift when E/K is ramified." Negative Check at line 226 recomputed: v₀(−3+2π)=1/2, not >1/2; (1+π)³=−8, class 1≠1+π. API bullet line 216 scoped to permitted lifts. |
+| Pass a F02 (P1), unramified-lifting supplier domain | repaired, but the repair cites one section that does not exist (S01) | Line 302 *Needs:* "SchemeAndStackFoundations §0.12 (`exists_etale_lift`) and §0.14 (`henselian_pair_permanence`, `henselian_finiteEtale_equivalence`)". All three names exist on main: `TauCetiRoadmap/SchemeAndStackFoundations/README.md:1002`, `:1075`, `:1080`; §0.14 lists completeness ⇒ henselian, integral extensions and radical-equivalent ideals. Route at line 291 goes through L₀ with g monic lift of a separable ḡ; Check at line 300 with k=𝔽₃(t)^perf. Mathlib names at the new pin: `IsAdicComplete.henselianRing` (`Mathlib/RingTheory/Henselian.lean:170`), `Algebra.Etale` (`Etale/Basic.lean:205`), `StandardEtalePresentation` (`Etale/StandardEtale.lean:261`), `Ideal.sum_ramification_inertia_eq_finrank` (`RamificationInertia/Basic.lean:72`). The same lines also keep "FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.6.1a" for Herbrand theory: see S01. |
+| Pass b F01 (P2), `gap:fl-acris-truncation` | repaired | Line 65 and `design/plan.json` `gaps[1].needs` are identical: "supply the killed-p A_cris realization: the explicit divided-power presentation of A_cris/p over O(K̄)/p with its filtration and divided Frobenius maps φᵢ for 0≤i≤r (Fontaine93 §3.1), and its identification with the existing contravariant torsion functor Uₛ on the objects of MFₜₒᵣ[0,r] killed by p." No reference to A(E). Line 255: "Define here the projection A_cris/p→A(K̄) … check that it respects Filⁱ and φᵢ for 0≤i≤r (Fontaine93 lines 304–311)"; Fontaine93 lines 305–308 are that homomorphism. |
+| Pass b F02 (P3), consumer statement | repaired | Line 15: "That roadmap declares the low-degree Hodge obstruction as its own gap fontaine-low-degree-hodge, whose content is the ℤₚ-model form §3.3 and the K3 form §4.2 here." Line 645 likewise. Enriques head #1488 line 100 still declares that gap with supplier PadicHodgeTheory and §3.13 *Needs:* cites the gap (line 1128), as the README now says. |
+| Pass b F03 (P3), degree-ten step | repaired | Line 87: "Section 1.9, row (b) gives [F:ℚ]≤10 for every totally complex F with rd(F)<6.93 … e≤6 when f=1 and e≤143 when f≥2. Hence rd(F)≤7^(142/143)≈6.9054<6.93". Base head #970 row (b) is `rd < 6.93 ⇒ n ≤ 10`. Recomputed: 7^(142/143)=6.9054, 7^(35/36)=6.6318, 7^(193/194)=6.9300>6.93 (line 436 negative Check holds). No "rd<7" remains (grep). |
+| Pass b F04 (P3), `gap:finite-torsion-kernel-dictionary` | repaired | Line 81 and `plan.json` `gaps[6].needs` identical, three determinate facts; "profinite G" replaced by "a field K of characteristic zero", which is the right carrier for a kernel field. |
+| Pass b F05 (P3), abstract locator | repaired | Line 330: "(Fontaine93 lines 23–30, abstract, unnumbered cover page, PDF p. 1; lines 127–139, §1, printed p. 4.)". Extraction: `=== page 4 ===` at line 85 is followed by the printed number "3" at line 86, so printed = PDF − 1; the abstract (lines 20–30) precedes `=== page 2 ===` at line 34, hence the unnumbered PDF p. 1; §1 (line 126) follows `=== page 5 ===` at line 119, printed p. 4. |
+
+No repair introduced a mathematical error. One repair (pass a F02) left a stale citation beside the new ones (S01), and the pin move since round 1 broke the Lean import (S02).
+
+## Verified sound
+
+Counts: 4 Lean declarations read with every binder against the new pins; 24 numbered README targets and all 28 API bullets read; 83 Checks tested by instance (every section has at least three); 31 source locators verified against the three cached extractions (Fontaine93 lines 20–420 read in full, Schroeer23 lines 658–700, LMFDB32a3 lines 158–164, 262–277, 494–517); 70 cross-roadmap section references resolved at the heads named above (all exist with the cited content except the two of S01 and S03; the Enriques consumer's §§3.3–3.11 were not opened individually, only its gap and §3.13); 8 declared gaps compared between README and `plan.json` (identical slugs, suppliers and `needs`).
+
+**Dependency check** (the brief's command, run from the board checkout):
+
+    depcheck: 209 roadmaps, 1814 edges, 0 problem(s)
+
+No UPWARD, CYCLE or `moved:` line. This roadmap is at merge-order position 137; its suppliers are at 2, 18, 19, 21, 45, 47, 52, 91, 133, 136 and LocalFieldsRamification/EllipticCurves on main; the Enriques consumer is at 142.
+
+**Policy.** `git diff --stat origin/main...HEAD` touches 8 files, all under `packages/SmallRamificationAndAbelianVarietyBaseCasesPartII/` (README, Suggested.lean, `design/plan.json` gaps, metadata, sources, three reports). Greps of README and Lean for pull-request numbers, process words, `lemma` as a keyword, `set_option`, `#eval`, `#print`, `#synth`, `True` placeholders and machine paths: none (the only "Lemma" hits are Fontaine's theorem names inside locators). Imports: `import Mathlib` plus three `TauCeti.*` lines, one of which is stale (S02). No sorry'd data; both `def`s have real bodies. Every backticked own name in the README is declared in `Suggested.lean` and conversely.
+
+**Lean declarations at the new pins** (binders and carriers; no section `variable` block exists, so nothing can be lost).
+
+| Declaration (line) | Context | Instances computed | Result |
+| --- | --- | --- | --- |
+| `hasWittGoodReductionAt` (37) | `{X : Scheme.{0}} (f : X ⟶ Spec (.of ℚ)) (p) [Fact p.Prime]`; W=`WittVector p (AlgebraicClosure (ZMod p))`, K=`FractionRing W` (Type 0) | ℙⁿ: Y=ℙⁿ_W, both pullbacks ℙⁿ_K, `e.hom ≫ snd = snd`. ∅: Y=∅. y²=x³−x: v₃(Δ)=0 gives a ℤ₃-model, true at 3; at 2, j=1728 integral, v₂(Δ_min)=6, Kodaira III (LMFDB lines 510–516), inertia on E[3] nontrivial, so a W(𝔽̄₂)-model is impossible: false at 2. | Both pullback projections land in `Spec (.of (FractionRing W))`; the iso is over K. `pullback.snd f g` has explicit arguments at the pin (`HasPullback.lean:116`). No change beyond S02. |
+| `hasEverywhereWittGoodReduction` (50) | ∀ p prime, Fact installed locally | ℙ¹ true at all p; the elliptic example true at 3, false at 2, so false. | Matches Fontaine93 lines 97–103. |
+| `lowDegreeHodgeVanishing` (60) | `[Smooth f] [IsProper f]`, hX, `i j : ℕ`, `i ≠ j`, `i + j ≤ 3`; `letI : X.Over (Spec (.of ℚ)) := ⟨f⟩` (`OverClass.ofHom`, `OverClass.lean:42`) | ℙ²: all eight admissible pairs give 0. ℙ¹: h¹¹=1 at (1,1), excluded by i≠j. ∅ and two points: positive-degree groups 0. (0,0): excluded. | `Subsingleton` on `Cohomology ((exteriorPower X.sheaf i).obj (relativeDifferentials ℚ X)) j`, the sheafified exterior power (`ExteriorPower/Basic.lean:60`), not global sections. |
+| `geometricK3_hasBadWittPrime` (74) | geometric pullback along ℚ→ℚ̄, five conditions, ∃ p prime ¬ local predicate | K3: h²⁰=1 over ℚ̄, over ℚ by flat base change; all Witt models would force 0 at (2,0). ∅ fails `GeometricallyIntegral`. Abelian surface fails `Subsingleton H¹(O)`. ℙ²: Ω²=O(−3) fails the unit iso. | The five conjuncts are literally `IsK3 (AlgebraicClosure ℚ) fbar` of the K3 head (`Suggested.lean:93–98`), expanded. |
+
+**Adversarial pass on README statements** (values on both sides; rows for every target, API bullets grouped).
+
+| Statement | Instances and values | Result |
+| --- | --- | --- |
+| Conventions 21–27 | p=3,r=1: cutoff 1/2; v₀(π)=1/2 survives, v₀=2 dies in a(E)²; π³/(−3)=π, +3 gives −π≠π since v₀(2π)=1/2 is not >1/2. ℚ₃(ζ₃): different 1−1/2. χ₇(F(q))=q⁻¹; ℚ₇(−1): Frobenius q, HT −1. `tate_piece`: piece p nonzero iff p=−m (`Tate/Basic.lean:111`), m=−1 gives index 1. | consistent |
+| §0.1 | as in the Lean table; API 4 (ℤ-model gives all p) and API 5 (∀ ⇒ each p) hold; API 3: transport along [x:y]↦[2x:y] composes projections correctly. | holds |
+| §0.2 | ℙ¹, q=2: H² eigenvalue 2, dual 1/2; (C(i)⊗H²)^G nonzero only for i=1, equal to H¹(Ω¹)=ℚ₇ (Fontaine93 line 190). Spec ℚ: (1,0,…). Two points: H⁰ dim 2. | holds, conditional on gap:witt-proper-smooth-comparison and gap:completed-unramified-inertia |
+| §1.1 | E=ℚ₃: A=𝔽₃, Fil¹=0 (1/3-threshold hits pℤ₃). E=ℚ₃(π): A=𝔽₃[π]/π², Fil¹=𝔽₃π. Well-definedness: changing x by y with v₀(y)>r/(p−1) changes xᵖ/(−p)ⁱ by terms of value >r/(p−1) (k=p term: p·v(y)−i>r/(p−1); 0<k<p: ≥1>r/(p−1)). Values 1/n, n≥3, k-independent classes. | holds; infinite length is real |
+| §1.2 | d=0: 1=1. Unit: x³=x, roots 0,±1. Weight one: x³=−3x, 1 root over ℚ₃, 3 over ℚ₃(π). Rows (1,1),(0,1): φ₀(e₁)=e₁, φ₁(e₂)=e₁+e₂, Σφᵢ(Filⁱ)=M; (1,θ), θ³+3θ+3=0, v₀(θ)=1/3; transpose needs 1=1+θ. 2³=8≠2. Non-generating 𝔽₃ with φ=0: 3 Hom versus 1 root, excluded. Bad lift (1+π)²: v₀(−3+2π)=1/2 not >1/2. | holds |
+| §1.3 | e=2: n>1 so n=2 admitted; roots ±π differ by value 1/2, merged by a weak cutoff. | holds |
+| §1.4 | M=0: 0=0; unit: p=p; weight one at p=3: 3=3 over the splitting field; projection kills γ_{3m}(α), constant term α has v₀=1/3≥1/3 so lands in Fil¹, φ₁ gives α on both sides. | holds, conditional on gap:fl-acris-truncation |
+| §1.5 | d=0: p⁰=1 for all E. Weight one: #J(ℚ₃)=1<3, L⊄ℚ₃; #J(L)=3; #J(E)=3 for every E⊇L. | both directions |
+| §1.6 | c=3/2: m=2 in, 3/2 out. x²+3 mod 9 ∈ {1,3,4,7}, no map O(ℚ₃(π))→ℤ₃/9. k=𝔽₃(t)^perf: X²−t separable, 2α≠0, W(k)[X]/(X²−[t]) standard étale of rank 2; (O(E),pO(E)) henselian by integral permanence from (W(k),p); a(E)^m⊆pO(E) for m≥1 with equal radicals. L=K: identity. | holds; S01 for the Herbrand citation |
+| §1.7–1.8 | p=7,r=3: shifted 3/2, Serre 1/2. ℚ₃(ζ₃): u=1, i=1/2, 𝔇=1/2<3/2. Unramified: 0<3/2. ℤ/9(1): ℚ₃(ζ₉), integer different 9, v₀=3/2=bound, excluded by killed-p. Unrefined (ii) alone: u≤2 only. p=2: no r. | holds; refinement is the declared gap |
+| §2.1 | ℤ/49 trivial: 7·1≠0, admitted. Scalars 3ⁱ mod 7: 1,3,2,6,4; weight 4 excluded (4≢i mod 6 for i≤3). | holds |
+| §2.2 | C₇⋊C₆: diag(6,1)·(I+E₁₂)·diag(6⁻¹,1)=I+6E₁₂=w⁶; χ³(t)=6; order 3,2,1,0 gives (1,1,1,2); order 0,1,2,3 gives (0,0,0,1). ℤ/25, χ=ρ=6 (6⁵≡1): step₃(0)={10u≡0}=5ℤ/25, five elements. S₃ on ℚ³: step₀(0)=ℚ(1,1,1); ℚe₁ not stable. | holds |
+| §2.3 | ℤ/49 trivial: conclusion holds, group does not split. a(g)=(χ⁶−1)/7 additive since (1+7u)(1+7v)≡1+7(u+v); χ(g)=8 mod 49: 8⁶≡43, a=6, order 7, ramified, excluded. | holds; S03 for the Minkowski citation |
+| §2.4 | rd(F)<7^(3/2)=18.520<19.02 ⇒ 6n′≤287; 7∣n′ ⇒ n″≤6; Sylow count ∣n″, ≡1 (7) ⇒ 1; 7²∤42n″ so P is the unique Sylow of Gal(F/ℚ) and contains wild inertia; F′ tame of degree ≤36: 7^(35/36)=6.6318<6.93 ⇒ 6n″≤10 ⇒ n″=1; normal 7-group fixes a nonzero vector (`invariants_ne_bot_of_isPGroup`, `PowerOrder.lean:158`), stable, whole; also trivial on ζ₇: contradicts faithfulness. Tame: e∣7^f−1, ef≤287 ⇒ e≤143, 7^(142/143)=6.9054<6.93 ⇒ degree ≤10 ⇒ 6. Scalars 1,3,2,6 versus 4. | holds |
+| §2.5 | i>j: locally split class, inflation–restriction with 6 prime to 7 ⇒ cyclic degree-7 F/ℚ(ζ₇) unramified everywhere; rd=7^(5/6)=5.0611≤5.72, degree 42>8. i<j, a=j−i: φ(b)=b/6≤a/6 ⇒ b≤a; θ_b(στσ⁻¹)=θ₀(σ)^bθ_b(τ) and c(στσ⁻¹)=χ^a(σ)c(τ) ⇒ b≡a (6) ⇒ b=a; v_F(𝔇)=41+6b; rd=7^(47/42)=8.825, 7^(53/42)=11.653<12 versus degree 42≥36; a=3: 15.387>12. θ₀(t)=3: 3¹=3, 3²=2; inverse 5,4. | holds; exception exactly (0,3) |
+| §2.6 | ℤ/49(1): g₁U=49 elements. 𝔽₇(1)⊕𝔽₇(2): 7·7. g₀U≠0 would be a trivial summand hence a trivial quotient. Rank-one inertia χⁱ mod 7ⁿ with unramified twist λ: kernel field of λ unramified at all finite primes ⇒ degree one ⇒ λ=1 (S03 names the owner). | holds |
+| §2.7 | U=0; ℤ/49(i): Uₖ=U iff k≤i (differences 3ⁱ−3ᵏ are units mod 7 for i≢k mod 6). Nonsplit χ³-by-trivial: (0,1,1,1,2). | holds |
+| §2.8 | V=0. ℚ₇(1)⊕ℚ₇(2): (0,0,1,2,2). Reductions of a single u∈T are compatible; T'ᵢ={x : x mod 7ⁿ ∈ (T/7ⁿ)ᵢ ∀n} satisfies T'₄=0, T'ᵢ⊆stepᵢ(Vᵢ₊₁), T'₀=T, so V₀=V without choosing witnesses; the route's compactness is unneeded but harmless. | holds |
+| §3.1 | q=2: dual grades 1,1/2,1/4,1/8 versus 2^(−1/2)=0.7071, 2^(−3/2)=0.3536; m=2 only i=1, V=V₁, V₂=0: scalar. ((2,1),(0,2)): pure, not scalar, excluded. | holds |
+| §3.2–3.3 | (C(i)⊗ℚ₇(−1))^G=C(i−1)^G≠0 only for i=1; h¹¹=b, h⁰²=h²⁰=0. ℙ¹_ℤ, Spec ℤ, y²=x³−x as in Layer 0. | holds |
+| §4.1–4.3 | Ω²≅O and geometric integrality: H⁰(X_ℚ̄,Ω²)=ℚ̄, dim 1; base change to ℚ: 1. Abelian surface (1,2) versus K3 (1,0). ℙⁿ: h^{ii}=1 for i≤n, else 0; i>n: Ωⁱ=0. CR.3.5 (CrystallineCohomology head lines 3438–3445) states H^q(ℙⁿ_A,Ω^p)=0 unless p=q≤n. | holds |
+
+**Declared gaps.** All eight slugs identical in README and `plan.json`; none has supplier `none`; each `needs` is one determinate sentence with its hypotheses. Minimality rechecked where the supplier moved: `pm-remove-inverse-e` is still not supplied, since §R07.6.4(c) proves the refinement only for its lci-lifting setting, and §R07.6.3(ii) alone gives u≤c+1/e; `fl-acris-truncation` no longer mentions A(E); `completed-unramified-inertia` is not PadicPeriodRings §0.3's finite-level statement.
+
+**Headlines.** Stated: `lowDegreeHodgeVanishing` (§3.2), `geometricK3_hasBadWittPrime` (§4.2). Named as not statable in the module docstring: §§1.7–1.8 (no Fontaine–Laffaille or crystalline carrier in Tau Ceti at `358314d`: grep for `FontaineLaffaille`, `IsCrystalline` empty), §§2.7–2.8, §3.1 (no geometric étale cohomology with Galois action: grep for `EtaleCohomology` empty). §3.3 follows from the stated headline by the §0.1 base-change bullet. No padding: neither theorem closes by one tactic, and the two definitions are the minimum that makes the headlines statable.
+
+**Ownership.** `roadmaps grep` over main and the 449 open heads for the Witt-model predicate, the everywhere-good-reduction Hodge theorem, the four Lean names and Fontaine's seven-adic filtration: only the Enriques gap mentions the endpoint; no `Suggested.lean` elsewhere declares these names. The sibling checkouts the brief lists were searched the same way.
+
+## Not verifiable
+
+- No Lean was run (read-only pass); the `#check @` binder test could not be run anyway until S02 is repaired. Binder review is by reading the pinned declarations.
+- The eight declared supplier contracts are contracts, tested on instances, not proved.
+- PadicPeriodRings §0.3 itself consumes RamificationOfCompleteDiscretelyValuedFields, which is neither on main nor in the merge order; that is PadicPeriodRings' dependency, outside this package.
+- OCR-damaged displays in Fontaine93 (lines 98, 110–118, 225, 232, 250, 390) were read through the surrounding text and the abstract.
+- The K3 sibling's `Suggested.lean` (#1375) carries the same stale import; not in scope here.
+
+## Source issues
+
+- **Misprint** in Fontaine93 at the plan before §1, printed p. 4 (line 125): the source says §3 proves Theorem 1; it should be Theorem 2, as the §3 heading at line 284 shows; affects nothing.
+- **Misprint** in Fontaine93 at §3.6, printed p. 10 (line 361): the source says it resumes the notation of Theorem 1; it should be Theorem 2, which introduces K, r, M, U and L; affects nothing.
+- **Error** in Schroeer23 at Proposition 5.5 proof, printed p. 16 (line 686): the source calls W(𝔽₂^sep) the maximal unramified extension of ℤ₂; it is the completion of that extension; affects nothing.
+
+<!-- tauceti-roadmap-review {"agent": "claude", "head": "d5ac716e621f7b3704b01ac7b939205126aa0e67", "job": "RT-SmallRamificationAndAbelianVarietyBaseCasesPartII~2b", "model": "fable", "worker": "chris-x9"} -->
