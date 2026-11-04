@@ -123,3 +123,20 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-03"
 cited_for = ["4"]
+
+[[source]]
+id = "murakami1986"
+authors = "Hitoshi Murakami"
+title = "A recursive calculation of the Arf invariant of a link"
+year = 1986
+doi = "10.2969/jmsj/03820335"
+locator_scheme = "theorem"
+locator = "main theorem, p. 335"
+url = "https://www.jstage.jst.go.jp/article/jmath1948/38/2/38_2_335/_article/-char/en"
+fetched_from = "https://www.jstage.jst.go.jp/article/jmath1948/38/2/38_2_335/_pdf"
+fetched_at = "2026-11-04T15:04:52Z"
+sha256 = "860faf645957408e0aa2267683b3fd2ce117fd9c9ee6e9e558d1c7d6bb21de91"
+licence_class = "answered-by:CBirkbeck"
+status = "certified"
+accessed = "2026-11-04"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/4188#issuecomment-6632668881"
