@@ -121,3 +121,79 @@ status = "certified"
 accessed = "2026-11-03"
 version_note = "arXiv v3"
 cited_for = ["D1.CentralTwists"]
+
+[[source]]
+id = "attal-fock"
+authors = "Stéphane Attal"
+title = "Fock spaces (Lectures in quantum noise theory, Lecture 8)"
+year = 2015
+version_note = "lecture notes on the author's page, undated in the text; the year is the file's creation date"
+locator_scheme = "theorem"
+locator = "Definition 8.20, Proposition 8.21, (8.18)"
+url = "http://math.univ-lyon1.fr/~attal/Fock_Spaces.pdf"
+fetched_from = "http://math.univ-lyon1.fr/~attal/Fock_Spaces.pdf"
+fetched_at = "2026-11-04T22:54:50Z"
+sha256 = "d11bfdd99732c8f04f5009506ade44daaf3989060f5f91c216809e71434760c5"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["D8"]
+
+[[source]]
+id = "sims-groupoids2017"
+authors = "Aidan Sims"
+title = "Hausdorff étale groupoids and their C*-algebras"
+year = 2017
+locator_scheme = "section"
+locator = "§§4.1–4.3, §5.1"
+url = "https://www.aidansims.com/files/GroupoidsNotes-2017.pdf"
+fetched_from = "https://www.aidansims.com/files/GroupoidsNotes-2017.pdf"
+fetched_at = "2026-11-04T22:54:53Z"
+sha256 = "db6d1e482e4e5d8a7b3da29f69d5dbcb8c52d75336870d28829a2ce3e75b3e2d"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["D6"]
+
+[[source]]
+id = "bratteli-robinson2"
+authors = "Ola Bratteli, Derek W. Robinson"
+title = "Operator Algebras and Quantum Statistical Mechanics 2"
+year = 1997
+doi = "10.1007/978-3-662-03444-6"
+locator_scheme = "section"
+locator = "§§5.2–5.3, Theorems 5.3.10, 5.3.30, 5.4.4, 6.2.4, 6.2.18, 6.2.40, 6.2.42, Proposition 6.2.45"
+url = "https://doi.org/10.1007/978-3-662-03444-6"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["D7", "D8", "D9"]
+
+[[source]]
+id = "bratteli-robinson1"
+authors = "Ola Bratteli, Derek W. Robinson"
+title = "Operator Algebras and Quantum Statistical Mechanics 1"
+year = 1987
+doi = "10.1007/978-3-662-02520-8"
+locator_scheme = "theorem"
+locator = "Lemma 4.1.19, Definition 4.1.20, Proposition 4.1.22, Theorem 4.1.25"
+url = "https://doi.org/10.1007/978-3-662-02520-8"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["D7"]
+
+[[source]]
+id = "renault1980"
+authors = "Jean Renault"
+title = "A Groupoid Approach to C*-Algebras"
+year = 1980
+venue = "Lecture Notes in Mathematics"
+doi = "10.1007/BFb0091072"
+locator_scheme = "chapter"
+locator = "Chapter I §§2–3, Chapter II §§1–2, Chapter III Proposition 2.7"
+url = "https://doi.org/10.1007/BFb0091072"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["D5", "D6"]
