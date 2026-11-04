@@ -1,0 +1,226 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "GaussianIsoperimetryAndClusters"
+
+[[source]]
+id = "MilmanNeeman2022"
+authors = "Emanuel Milman, Joe Neeman"
+title = "The Gaussian Double-Bubble and Multi-Bubble Conjectures"
+year = 2022
+venue = "Annals of Mathematics 195 (2022), no. 1, 89–206"
+doi = "10.4007/annals.2022.195.1.2"
+arxiv = "1805.10961v3"
+locator_scheme = "section"
+locator = "Section 1 (definitions, Theorems 1.1–1.2); Section 2 (Lemma 2.1, Definition 2.2, Lemma 2.3, Proposition 2.4); Section 3.2 (equations (3.3)–(3.6)); Theorem 4.1 (i); Section 11"
+url = "https://arxiv.org/abs/1805.10961v3"
+fetched_from = "https://arxiv.org/pdf/1805.10961v3"
+fetched_at = "2026-11-04T19:37:41Z"
+sha256 = "2bebde484903a994dcc198294e404adb4e6d20ad689cd2ba93671e6cbbae1220"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v3 read; section and theorem numbers quoted from that version, to be checked against the Annals print"
+cited_for = ["Scope", "Final targets"]
+
+[[source]]
+id = "CianchiFuscoMaggiPratelli2011"
+authors = "Andrea Cianchi, Nicola Fusco, Francesco Maggi, Aldo Pratelli"
+title = "On the isoperimetric deficit in Gauss space"
+year = 2011
+venue = "American Journal of Mathematics 133 (2011), no. 1, 131–186"
+doi = "10.1353/ajm.2011.0005"
+locator_scheme = "section"
+locator = "Section 2 (equations (2.1)–(2.5)); Proposition 3.1; Section 4 (Theorems 4.1, 4.2, 4.3)"
+url = "https://cvgmt.sns.it/paper/1587/"
+fetched_from = "https://cvgmt.sns.it/media/doc/paper/1587/gauss_levico8.ps"
+fetched_at = "2026-11-04T19:39:11Z"
+sha256 = "6edaa9765b50fbf6850de50d30c370f203fbcb8c72c273a2551ad59e828cc429"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "cvgmt preprint (2008) read; its numbering may differ from the published version"
+cited_for = ["Final targets"]
+
+[[source]]
+id = "Borell1975"
+authors = "Christer Borell"
+title = "The Brunn-Minkowski inequality in Gauss space"
+year = 1975
+venue = "Inventiones Mathematicae 30 (1975), 207–216"
+doi = "10.1007/BF01425510"
+locator_scheme = "theorem"
+locator = "Theorem 3.1"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0030/LOG_0024.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0030/LOG_0024.pdf"
+fetched_at = "2026-11-04T19:43:13Z"
+sha256 = "1f0de35c3b933ce065a5256bc9e5f2519efad6032024230feb05c24f7847a40d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "GDZ scan recognised by OCR"
+cited_for = ["Final targets"]
+
+[[source]]
+id = "SudakovTsirelson1974"
+authors = "V. N. Sudakov, B. S. Tsirel'son"
+title = "Extremal properties of half-spaces for spherically invariant measures"
+year = 1974
+venue = "Zapiski Nauchnykh Seminarov LOMI 41 (1974), 14–24 (Russian); English translation Journal of Soviet Mathematics 9 (1978), 9–18"
+doi = "10.1007/BF01086099"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://www.mathnet.ru/eng/znsl2693"
+licence_class = "none"
+status = "uncertified"
+version_note = "open Russian copy on Math-Net.Ru; its full-text fetch timed out three times on 2026-11-04 and only the landing page was read; the English translation is paywalled; cited by its locator"
+cited_for = ["Final targets"]
+
+[[source]]
+id = "Bobkov1997"
+authors = "Sergey G. Bobkov"
+title = "An isoperimetric inequality on the discrete cube, and an elementary proof of the isoperimetric inequality in Gauss space"
+year = 1997
+venue = "Annals of Probability 25 (1997), no. 1, 206–214"
+doi = "10.1214/aop/1024404285"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://www-users.cse.umn.edu/~bobko001/papers/1997_AOP.pdf"
+fetched_from = "https://www-users.cse.umn.edu/~bobko001/papers/1997_AOP.pdf"
+fetched_at = "2026-11-04T19:42:47Z"
+sha256 = "b3856d4b3051edaa984977323cb1f60a289c596b6153ec79023bae83be42ad77"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "author-page PDF fetched, but its text layer is glyph names and the OCR output is unusable; the functional inequality is quoted from Ledoux1999, Section 1.2, inequality (1.11), and Bobkov is cited by locator"
+cited_for = ["Final targets"]
+
+[[source]]
+id = "Ehrhard1983"
+authors = "Antoine Ehrhard"
+title = "Symétrisation dans l'espace de Gauss"
+year = 1983
+venue = "Mathematica Scandinavica 53 (1983), 281–301"
+doi = "10.7146/math.scand.a-12035"
+locator_scheme = "theorem"
+locator = "Théorème 2.1, Théorème 2.4, Théorème 3.2"
+url = "https://journals.msp.org/mscand/article/view/1636"
+fetched_from = "https://journals.msp.org/mscand/article/download/1636/1635"
+fetched_at = "2026-11-04T19:47:01Z"
+sha256 = "171e4b3d3b8f3aa84beb4b8dea970809d26b30c1f65bde7bd241efcf3f1a9802"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "Mathematica Scandinavica is a free-access journal; scan recognised by OCR"
+cited_for = ["Final targets"]
+
+[[source]]
+id = "Ledoux1993"
+authors = "Michel Ledoux"
+title = "Inégalités isopérimétriques en analyse et probabilités"
+year = 1993
+venue = "Séminaire Bourbaki 1992/93, exposé 773, Astérisque 216 (1993), 343–375"
+locator_scheme = "section"
+locator = "Section 1 (Théorème 3 and the concentration inequalities that follow it)"
+url = "https://www.numdam.org/item/SB_1992-1993__35__343_0/"
+fetched_from = "https://www.numdam.org/item/SB_1992-1993__35__343_0.pdf"
+fetched_at = "2026-11-04T19:39:43Z"
+sha256 = "9367a596e5bc4e07769a85108932b5d41a4f83211fd8c69f824d641e9ccd1c06"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["Final targets"]
+
+[[source]]
+id = "Ledoux1999"
+authors = "Michel Ledoux"
+title = "Concentration of measure and logarithmic Sobolev inequalities"
+year = 1999
+venue = "Séminaire de Probabilités XXXIII, Lecture Notes in Mathematics 1709 (1999), 120–216"
+doi = "10.1007/BFb0096511"
+locator_scheme = "section"
+locator = "Section 1.2 (inequalities (1.3)–(1.8) and (1.11)–(1.12))"
+url = "https://www.numdam.org/item/SPS_1999__33__120_0/"
+fetched_from = "https://www.numdam.org/item/SPS_1999__33__120_0.pdf"
+fetched_at = "2026-11-04T19:47:03Z"
+sha256 = "4eaad8ae299333bd61f0c44fe59fd8e5aaeab7edf2ec161a07da17ad8fcc681c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["Final targets"]
+
+[[source]]
+id = "Ledoux1996"
+authors = "Michel Ledoux"
+title = "Isoperimetry and Gaussian analysis"
+year = 1996
+venue = "Lectures on Probability Theory and Statistics (Saint-Flour 1994), Lecture Notes in Mathematics 1648 (1996), 165–294"
+doi = "10.1007/BFb0095676"
+locator_scheme = "chapter"
+locator = "Chapter 1"
+url = "https://doi.org/10.1007/BFb0095676"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; the author's page could not be reached on 2026-11-04; cited by its locator without the text"
+cited_for = ["Final targets"]
+
+[[source]]
+id = "CarlenKerce2001"
+authors = "Eric A. Carlen, C. Kerce"
+title = "On the cases of equality in Bobkov's inequality and Gaussian rearrangement"
+year = 2001
+venue = "Calculus of Variations and Partial Differential Equations 13 (2001), 1–18"
+doi = "10.1007/PL00009921"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://doi.org/10.1007/PL00009921"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Final targets"]
+
+[[source]]
+id = "Maggi2012"
+authors = "Francesco Maggi"
+title = "Sets of Finite Perimeter and Geometric Variational Problems: An Introduction to Geometric Measure Theory"
+year = 2012
+venue = "Cambridge Studies in Advanced Mathematics 135, Cambridge University Press"
+doi = "10.1017/CBO9781139108133"
+locator_scheme = "chapter"
+locator = "Part IV synopsis (pp. 391–397, read in the extract); Theorem 15.9, Proposition 12.15, Theorem 12.26, Chapter 29 (Exercise 29.7, equation (29.8)) by locator"
+url = "https://cvgmt.sns.it/paper/1880/"
+fetched_from = "https://cvgmt.sns.it/media/doc/paper/1880/Maggi_extract.pdf"
+fetched_at = "2026-11-04T19:39:09Z"
+sha256 = "97bf03908209b4dd89c58107ba745a67fb66b78bdb8bfaec5d1d5bb22d0dffbe"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "the author's cvgmt extract holds the front matter, the table of contents and the Part IV synopsis only; chapter-level locators are cited from the published book without its text"
+cited_for = ["Scope", "Final targets"]
+
+[[source]]
+id = "AmbrosioFuscoPallara2000"
+authors = "Luigi Ambrosio, Nicola Fusco, Diego Pallara"
+title = "Functions of Bounded Variation and Free Discontinuity Problems"
+year = 2000
+venue = "Oxford Mathematical Monographs, Oxford University Press"
+locator_scheme = "chapter"
+locator = "Chapter 3 (Theorem 3.108 for the slicing theorem)"
+url = "https://global.oup.com/academic/product/functions-of-bounded-variation-and-free-discontinuity-problems-9780198502456"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Scope"]
+
+[[source]]
+id = "Bogachev1998"
+authors = "Vladimir I. Bogachev"
+title = "Gaussian Measures"
+year = 1998
+venue = "Mathematical Surveys and Monographs 62, American Mathematical Society"
+doi = "10.1090/surv/062"
+locator_scheme = "chapter"
+locator = "Chapter 4"
+url = "https://doi.org/10.1090/surv/062"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Final targets"]
