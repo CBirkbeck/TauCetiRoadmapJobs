@@ -1,0 +1,144 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "HardSphereDynamicsAndKineticLimits"
+
+[[source]]
+id = "GST2013"
+authors = "Isabelle Gallagher, Laure Saint-Raymond, Benjamin Texier"
+title = "From Newton to Boltzmann: hard spheres and short-range potentials"
+year = 2012
+arxiv = "1208.5753v2"
+locator_scheme = "chapter"
+locator = "Part II, Ch. 4"
+url = "https://arxiv.org/abs/1208.5753v2"
+fetched_from = "https://arxiv.org/pdf/1208.5753v2"
+fetched_at = "2026-11-04T20:38:16Z"
+sha256 = "c7d228e79c2e13255dbcef7b919eb62eabb56c93a57f24d5c69021a64cf04c0f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v2"
+cited_for = ["Scope"]
+
+[[source]]
+id = "BGSS2023"
+authors = "Thierry Bodineau, Isabelle Gallagher, Laure Saint-Raymond, Sergio Simonella"
+title = "Statistical dynamics of a hard sphere gas: fluctuating Boltzmann equation and large deviations"
+year = 2020
+arxiv = "2008.10403v2"
+locator_scheme = "section"
+locator = "§1.1"
+url = "https://arxiv.org/abs/2008.10403v2"
+fetched_from = "https://arxiv.org/pdf/2008.10403v2"
+fetched_at = "2026-11-04T20:38:23Z"
+sha256 = "18f06eb72c799ba845ccf5f025a0faf20b038a2f3004ec95bc2b15e20dd0a86a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v2"
+cited_for = ["Final targets"]
+
+[[source]]
+id = "Alexander1976"
+authors = "Roger Alexander"
+title = "Time evolution for infinitely many hard spheres"
+year = 1976
+venue = "Communications in Mathematical Physics 49"
+doi = "10.1007/BF01608728"
+locator_scheme = "page"
+locator = "pp. 217-232"
+url = "https://projecteuclid.org/journals/communications-in-mathematical-physics/volume-49/issue-3/Time-evolution-for-infinitely-many-hard-spheres/cmp/1103900016.pdf"
+licence_class = "open-repository"
+status = "uncertified"
+version_note = "open on Project Euclid, but the sources service received only a bot-protection page (Incapsula) from projecteuclid.org; cited by its locator without the text. The finite-N statement is proved in full in GST2013 Proposition 4.1.1."
+cited_for = ["Final targets"]
+
+[[source]]
+id = "DengHaniMa2024"
+authors = "Yu Deng, Zaher Hani, Xiao Ma"
+title = "Long time derivation of the Boltzmann equation from hard sphere dynamics"
+year = 2024
+arxiv = "2408.07818v3"
+locator_scheme = "section"
+locator = "§1"
+url = "https://arxiv.org/abs/2408.07818v3"
+fetched_from = "https://arxiv.org/pdf/2408.07818v3"
+fetched_at = "2026-11-04T20:38:43Z"
+sha256 = "61cc39d44eabf2f119880a9f1bd0cbb9409382ac3f67beff4c952f69290a30ed"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v3"
+cited_for = ["Consumers"]
+
+[[source]]
+id = "Uchiyama1988"
+authors = "Kôhei Uchiyama"
+title = "Derivation of the Boltzmann equation from particle dynamics"
+year = 1988
+venue = "Hiroshima Mathematical Journal 18"
+doi = "10.32917/hmj/1206129724"
+locator_scheme = "page"
+locator = "pp. 245-297"
+url = "https://projecteuclid.org/journals/hiroshima-mathematical-journal/volume-18/issue-2/Derivation-of-the-Boltzmann-equation-from-particle-dynamics/10.32917/hmj/1206129724.pdf"
+licence_class = "open-repository"
+status = "uncertified"
+version_note = "open on Project Euclid, but the sources service received only a bot-protection page (Incapsula) from projecteuclid.org; cited by its locator without the text. Secondary exposition of Lanford1975; not needed by the design."
+cited_for = ["Sources"]
+
+[[source]]
+id = "Lanford1975"
+authors = "Oscar E. Lanford"
+title = "Time evolution of large classical systems"
+year = 1975
+venue = "Lecture Notes in Physics"
+doi = "10.1007/3-540-07171-7_1"
+locator_scheme = "section"
+locator = "Lecture notes, Part I"
+url = "https://doi.org/10.1007/3-540-07171-7_1"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Final targets"]
+
+[[source]]
+id = "CIP1994"
+authors = "Carlo Cercignani, Reinhard Illner, Mario Pulvirenti"
+title = "The Mathematical Theory of Dilute Gases"
+year = 1994
+venue = "Applied Mathematical Sciences"
+doi = "10.1007/978-1-4419-8524-8"
+locator_scheme = "chapter"
+locator = "Ch. 2, Ch. 4"
+url = "https://doi.org/10.1007/978-1-4419-8524-8"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Final targets"]
+
+[[source]]
+id = "Spohn1991"
+authors = "Herbert Spohn"
+title = "Large Scale Dynamics of Interacting Particles"
+year = 1991
+doi = "10.1007/978-3-642-84371-6"
+locator_scheme = "chapter"
+locator = "Part I"
+url = "https://doi.org/10.1007/978-3-642-84371-6"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Sources"]
+
+[[source]]
+id = "AlexanderThesis1975"
+authors = "Roger K. Alexander"
+title = "The infinite hard sphere system"
+year = 1975
+venue = "PhD thesis, University of California, Berkeley; Lawrence Berkeley Laboratory report"
+locator_scheme = "chapter"
+locator = "Ch. 1"
+url = "https://escholarship.org/uc/item/77b0c501"
+licence_class = "none"
+status = "uncertified"
+version_note = "the eScholarship copy answered HTTP 403 to the sources service; cited by its locator without the text. Not needed: Alexander1976 and GST2013 Proposition 4.1.1 carry the theorem."
+cited_for = ["Final targets"]
