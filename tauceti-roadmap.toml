@@ -136,7 +136,7 @@ daily_cap = 10
 [prreview]
 enabled = true
 label = "ai-approved"
-per_run = 20   # the fleet repairs ~15 heads an hour; 5 per sync left 17 re-reviews waiting (2026-11-02)
+per_run = 40   # eight Fable loops now serve reviews; 20 per sync left the newest pull requests unfiled behind the backlog (2026-11-04)
 authors = []
 skip_authors = ["bwangpj"]   # #196 is abandoned (user 2026-10-28): not tracked, not reviewed
 max_folders = 20   # a pull request that repairs the dependency loops of main touches 16 roadmaps and is no chore (2026-11-04)
