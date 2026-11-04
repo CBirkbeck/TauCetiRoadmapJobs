@@ -167,3 +167,19 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text (Theorem 3.20, Proposition 3.64)"
 cited_for = ["2.1", "9.2"]
+
+[[source]]
+id = "rhodes-shemanske"
+authors = ["John A. Rhodes", "Thomas R. Shemanske"]
+title = "Bruhat–Tits buildings and Hecke operators"
+year = 1998
+locator_scheme = "section"
+locator = "§3.1 Proposition 3.2, §3.2 Lemma 3.3"
+url = "https://math.dartmouth.edu/~trs/research-papers/papers/BHO/BHO.pdf"
+fetched_from = "https://math.dartmouth.edu/~trs/research-papers/papers/BHO/BHO.pdf"
+fetched_at = "2026-11-04T13:06:02Z"
+sha256 = "da2a014eb45375758bd53cb84ca95038d4da97310c2c82b766f206cdfc27e5e9"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["2.2"]
