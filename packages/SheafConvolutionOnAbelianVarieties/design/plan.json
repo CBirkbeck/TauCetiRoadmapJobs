@@ -3460,12 +3460,6 @@
       "section": "A2"
     },
     {
-      "slug": "rational-map-extension-to-abelian-varieties",
-      "needs": "For a smooth variety X over a field k and an abelian variety A over k, every rational map from X to A extends uniquely to a morphism X→A.",
-      "supplier": "AbelianSchemesAndArithmeticModuli",
-      "section": "A1.8"
-    },
-    {
       "slug": "translation-stabilizer-family-quotient",
       "needs": "After shrinking a characteristic-zero family of smooth ample divisors, its finite geometric generic translation stabilizer descends and the family is pulled back from a smooth ample divisor family on the quotient abelian variety with trivial generic stabilizer.",
       "supplier": "AbelianSchemesAndArithmeticModuli",
@@ -3485,7 +3479,7 @@
     },
     {
       "slug": "holonomic-riemann-hilbert-index",
-      "needs": "Regular-holonomic de Rham realization identifies regular holonomic D-modules with complex perverse sheaves and transports characteristic cycles compatibly with proper image, external product, isogenies and the index formula, with independence of the integral cycle under coefficient realization.",
+      "needs": "The de Rham functor is an equivalence from the bounded derived category of complexes of D_X-modules with regular holonomic cohomology to the bounded constructible derived category of X^an with complex coefficients, t-exact for the perverse t-structure, identifying regular holonomic modules with complex perverse sheaves, compatible with Verdier duality, with proper direct image and external product, and with twisting by an algebraic line bundle with integrable connection (the de Rham complex of M⊗(L,∇) is that of M tensored over C with the horizontal sections of ∇); and it transports characteristic cycles compatibly with proper image, external product, isogenies and the index formula, with independence of the integral cycle under coefficient realization.",
       "supplier": "ComplexComparisonPartII",
       "section": "C5.6"
     },
@@ -3524,6 +3518,12 @@
       "needs": "For a Stein complex manifold V and a bounded complex K of sheaves of F-vector spaces on V, constructible for a locally finite complex-analytic stratification and in the perverse range pD^(≥0), the compactly supported cohomology H^i_c(V,K) vanishes for i<0.",
       "supplier": "ComplexComparisonPartII",
       "section": "C6.1"
+    },
+    {
+      "slug": "schneider-lang-commutative-groups",
+      "needs": "For a connected commutative algebraic group G over Q̄ and an analytic homomorphism ψ:Cⁿ→G(C) whose differential at the origin is defined over Q̄, if a subgroup Γ⊂Cⁿ contains n elements linearly independent over C and ψ(Γ)⊂G(Q̄), then the Zariski closure of ψ(Cⁿ) is an algebraic subgroup of G of dimension at most n.",
+      "supplier": "DiophantineApproximationAndTranscendence",
+      "section": "3.5"
     },
     {
       "slug": "microdifferential-localization",

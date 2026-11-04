@@ -1,4 +1,6 @@
-import Mathlib
+module
+
+public import Mathlib
 
 /-!
 # Sheaf convolution on abelian varieties: target signatures
@@ -32,6 +34,8 @@ The following headline theorems are not statable at the pins:
   their period maps and the transport Hodge relations of polarized integral
   variations.
 -/
+
+@[expose] public section
 
 namespace TauCetiRoadmap.SheafConvolutionOnAbelianVarieties
 

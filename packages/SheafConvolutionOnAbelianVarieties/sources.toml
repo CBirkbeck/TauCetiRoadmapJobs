@@ -46,7 +46,7 @@ title = "Characteristic cycles and the microlocal geometry of the Gauss map, I"
 year = 2016
 arxiv = "1604.02389v3"
 locator_scheme = "theorem"
-locator = "Theorem 1.5, Corollary 1.6 and Theorem 1.7, pp. 6–10; §1.d, p. 7; Corollary 1.10 and the paragraph and table before it, pp. 11–12; Theorem 5.10, p. 47"
+locator = "Theorem 1.5, Corollary 1.6 and Theorem 1.7, pp. 6–10; §1.d, p. 7; Corollary 1.10 and the paragraph and table before it, pp. 11–12; Proposition 3.1, pp. 22–24; Theorem 3.2, pp. 24–25; Theorem 3.4 and Lemma 3.5 with its proof, pp. 26–27; Lemma 4.2, p. 30; Theorem 5.10, p. 47"
 url = "https://arxiv.org/abs/1604.02389v3"
 fetched_from = "https://arxiv.org/pdf/1604.02389v3"
 fetched_at = "2026-10-25T12:41:43Z"
@@ -55,7 +55,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v3"
-cited_for = ["Layer 4"]
+cited_for = ["Layer 0", "Layer 1", "Layer 4"]
 
 [[source]]
 id = "K2"
@@ -190,7 +190,7 @@ year = 2015
 venue = "Publ. Math. Inst. Hautes Études Sci. 121 (2015), 1–55"
 arxiv = "1307.1937v1"
 locator_scheme = "theorem"
-locator = "Definition 2.3, p. 2; Theorem 7.3, p. 9; Corollary 7.5, p. 10; Theorems 10.5, 15.1, 16.1, Proposition 16.2, pp. 13–25; Definition 17.3, Theorem 17.4, Lemmas 17.5–17.6, Theorem 17.2, pp. 25–27"
+locator = "Definition 2.3, p. 2; Theorem 3.2, p. 4; Theorem 4.1, p. 5; Theorem 7.3, p. 9; Corollary 7.5 and Theorem 7.6, p. 10; §10, pp. 12–14, with Theorems 10.3 and 10.5; Theorems 15.1 and 16.1 and Proposition 16.2, pp. 24–25; Definition 17.3, Theorem 17.4, Lemmas 17.5–17.6, Theorem 17.2, pp. 25–27; Theorem 19.1 and Proposition 19.2, p. 29; Theorem 21.1, Corollary 21.5 and Proposition 22.1, pp. 34–36; Proposition 25.1 and Corollary 25.3, pp. 40–41"
 url = "https://arxiv.org/abs/1307.1937v1"
 fetched_from = "https://arxiv.org/pdf/1307.1937v1"
 fetched_at = "2026-10-27T00:07:01Z"
@@ -198,8 +198,8 @@ sha256 = "62f2655ce4e4b171b20c7ccde9d2ffd25c1f3f57530a63c25ff53b83f859cbee"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-27"
-version_note = "Read arXiv v1 (2013), PDF pagination; published version not collated."
-cited_for = ["Layer 0"]
+version_note = "Read arXiv v1 (2013), PDF pagination, 43 pages with sections 1–26; the published IHÉS version numbers its sections differently (K1 cites its Propositions 21.1 and 24.1, which are Propositions 22.1 and 25.1 here); not collated."
+cited_for = ["Layer 0", "Layer 1", "Layer 4"]
 
 [[source]]
 id = "Sim"
@@ -209,7 +209,7 @@ year = 1993
 venue = "Annales scientifiques de l'École normale supérieure 26 (1993), 361–401"
 doi = "10.24033/asens.1675"
 locator_scheme = "theorem"
-locator = "Theorem 3.1(c) and Corollary 3.2, pp. 366–369; Theorem 3.3, p. 369; Theorem 6.1, p. 376"
+locator = "Theorem 3.1(c) and Corollary 3.2, pp. 366–369; Theorem 3.3 with its proof and Proposition 3.4 with its proof, pp. 369–370; Theorem 6.1, p. 376"
 url = "https://doi.org/10.24033/asens.1675"
 fetched_from = "https://www.numdam.org/item/10.24033/asens.1675.pdf"
 fetched_at = "2026-10-27T00:09:54Z"

@@ -4,11 +4,11 @@
 
 ## Scope and ownership
 
-This roadmap owns generic vanishing on abelian varieties with its Fourier–Mellin proof, Simpson's linearity theorems for rank-one local systems on abelian varieties and the resulting structure of exceptional character loci, character-admissibility, the abelian convolution quotient and its fibre functors, the microlocal fibre functor and its cycle–weight dictionary, the arithmetic–geometric comparison for these categories, the hypersurface-specific microlocal applications, the exterior-weight obstruction, the family monodromy mechanism and its period application. Its finite permutation predicate is solely an acceptance-signature expansion of the Eulerian row; it adds no general Eulerian-number theory.
+This roadmap owns generic vanishing on abelian varieties with its Fourier–Mellin proof, Simpson's linearity theorems for rank-one local systems on abelian varieties, the Fourier–Mukai transform for D-modules on an abelian variety with the Laumon–Rothstein equivalence and Schnell's structure theorems for the transforms of holonomic modules, the resulting structure of exceptional character loci, Euler-one rigidity, character-admissibility, the abelian convolution quotient and its fibre functors, the microlocal fibre functor and its cycle–weight dictionary, the arithmetic–geometric comparison for these categories, the hypersurface-specific microlocal applications, the exterior-weight obstruction, the family monodromy mechanism and its period application. Its finite permutation predicate is solely an acceptance-signature expansion of the Eulerian row; it adds no general Eulerian-number theory.
 
 Mathlib already supplies finite subsets, binomial coefficients, derived categories and additive Serre localization. Tau Ceti supplies the abelian-variety carrier and the known-group finite-comodule Tannaka dictionary. These are inputs, rather than construction targets. EtaleCohomologyFoundations §§F.0–F.6 supplies the constructible categories and six operations; its §F.6, with the étale–Betti comparison of ComplexComparisonPartII §C6.6, supplies the Chern–Gauss–Bonnet comparison; EtaleDualityAndPerverseSheaves §§2.1–2.10, 3.3–3.5 and 5.10 supplies the perverse calculus, coefficient comparison and geometric-origin decomposition. The quotient here specializes their heart and Mathlib's localization to Euler-negligible sheaves.
 
-AbelianSchemesAndArithmeticModuli §§A2–A6 owns abelian schemes, duality, isogenies, degree-one realizations and rigid Hom spaces. SchemeAndStackFoundations Layer 5 owns Chow operations, Chern classes and Riemann–Roch. SpringerResolutionAndCharacteristicCycles §§D and H owns coherent D-modules, their full characteristic cycles and regular holonomicity. The clean quotient and its convolution applications here differ from those full cycles. ComplexComparisonPartII §§C6.1 and C6.6 owns constructible topological coefficients and the étale–Betti comparison, and §§C5.1–C5.6 owns de Rham–Betti comparison, geometric Hodge theory and regular-singular connections. PadicHodgeTheory §§3.3 and 8.1–8.2 owns geometric p-adic comparison and its sign convention.
+AbelianSchemesAndArithmeticModuli §§A1.8 and A2–A6 owns Weil's extension criterion, abelian schemes, duality, isogenies, the universal vector extension (hence the moduli space A♮ of §0.7), degree-one realizations and rigid Hom spaces; AbelianSchemesAndArithmeticModuliPartII §P1.1 owns the Poincaré bundle on A×A♮ with its universal relative connection. SchemeAndStackFoundations Layer 5 owns Chow operations, Chern classes and Riemann–Roch. SpringerResolutionAndCharacteristicCycles §§D and H owns coherent D-modules, their full characteristic cycles and regular holonomicity. The clean quotient and its convolution applications here differ from those full cycles. ComplexComparisonPartII §§C6.1 and C6.6 owns constructible topological coefficients and the étale–Betti comparison, and §§C5.1–C5.6 owns de Rham–Betti comparison, geometric Hodge theory and regular-singular connections. PadicHodgeTheory §§3.3 and 8.1–8.2 owns geometric p-adic comparison and its sign convention.
 
 MotivesAndAlgebraicCycles §§6.1–6.3 and 6.8 owns abstract neutral reconstruction and tensor-isomorphism torsors. ReductiveGroups Layers 6–10, LieHighestWeight Layers 4, 6 and 8, SpinRepresentations Layers 4–5, and LieHighestWeightPartII §N2 own the generic group and highest-weight inputs. MordellLawrenceVenkatesh §§0.22–0.24 owns Lie-Goursat. ClassicalArithmeticCompletion §§2.18, 2.39, 2.56–2.57, 2.71 and 2.77–2.78 owns Eulerian numbers and all general Appendix C inequalities. This roadmap owns the bespoke Appendix B comparisons of §6.2, with their unbounded ranges, and their occupancy consequences: each comparison is calibrated to one occupancy estimate of LS Appendix B and has no use outside the exterior-power argument, and it is derived from the imported general bounds rather than restating them. Jordan's finite-linear-group theorem is an auxiliary general theorem owned here because it supplies the family detection argument.
 
@@ -72,13 +72,13 @@ This is the general criterion of EHS Appendix A, Theorem A.1(iii), pp.20–21, E
 
 ### From TauCetiRoadmap.AbelianSchemesAndArithmeticModuli
 
-Consume §§A2.4 and A3.6 for χ(L), deg φ_L=χ(L)² and the finite translation stabilizer contained in ker φ_L; §§A3.1–A3.5 for multiplication isogenies, their kernel torsors and pairings; §A4.1 for Tate modules; §A5 for polarized degree-one Hodge realization; §A6 for rigidity and relative Hom. Use its proper group carrier throughout.
+Consume §A1.8(1) for Weil's extension criterion; §§A2.4 and A3.6 for χ(L), deg φ_L=χ(L)² and the finite translation stabilizer contained in ker φ_L; §§A3.1–A3.5 for multiplication isogenies, their kernel torsors and pairings; §A4.1 for Tate modules; §A4.2 (`AbelianVectorExtension`) for the universal vector extension and its identification with the moduli of rigidified line bundles with integrable connection, which supplies A♮=E(Â) in §0.7; §A5 for polarized degree-one Hodge realization; §A6 for rigidity and relative Hom. Use its proper group carrier throughout.
+
+For rational maps X⇢A from a smooth variety X over a field k to an abelian variety A over k, consume §A1.8(1): smoothness makes the local rings of X at its codimension-one points discrete valuation rings, properness of A extends the rational map over each of them, Weil's criterion then extends it to all of X, and separatedness of A gives uniqueness. Smoothness of X is needed: the inverse of the normalization of the nodal curve obtained from an elliptic curve E by gluing two distinct points is a rational map to E that is undefined at the node. This is used in §§1.5, 4.6 and 9.4. (K2, proof of Lemma 5.2.2, pp. 25–26, K2 line 1221; JV, proof of Proposition 6.1, p. 19, JV line 947.)
 
 What AbelianSchemesAndArithmeticModuli must provide (gap:ample-divisor-albanese): For a smooth ample divisor H in an abelian variety A over an algebraically closed characteristic-zero field with dim A≥3, the homomorphism Alb(H)→A induced by the inclusion H↪A is an isomorphism.
 
-What AbelianSchemesAndArithmeticModuli must provide (gap:rational-map-extension-to-abelian-varieties): For a smooth variety X over a field k and an abelian variety A over k, every rational map from X to A extends uniquely to a morphism X→A.
-
-The first is used in §4.6 (weak Lefschetz for H of dimension at least two); the second in §4.6, where the rational support maps of §4.4 are extended from the smooth divisor H. The second is the field case of the extension argument of AbelianSchemesAndArithmeticModuli §A1.8, which that section states only over a connected Dedekind base; smoothness of X is needed, since the inverse of the normalization of the nodal curve obtained from an elliptic curve E by gluing two distinct points is a rational map to E that is undefined at the node. (K2, proof of Lemma 5.2.2, pp. 25–26, K2 line 1221; JV, proof of Proposition 6.1, p. 19, JV line 947.)
+This is used in §4.6 (weak Lefschetz for H of dimension at least two).
 
 What AbelianSchemesAndArithmeticModuli must provide (gap:translation-stabilizer-family-quotient): After shrinking a characteristic-zero family of smooth ample divisors, its finite geometric generic translation stabilizer descends and the family is pulled back from a smooth ample divisor family on the quotient abelian variety with trivial generic stabilizer.
 
@@ -86,15 +86,19 @@ What AbelianSchemesAndArithmeticModuli must provide (gap:isogeny-character-trace
 
 These specialize LS Lemmas 3.9 and 3.13 and Proposition 4.11 (LS lines 1025, 1137 and 1698); multiplication covers have no exclusion at the cohomological prime.
 
+### From TauCetiRoadmap.AbelianSchemesAndArithmeticModuliPartII
+
+Consume §P1.1 for the notation A♮=E(Â) with its forgetful map π:A♮→Â, for the pullback P♮=(id_A×π)⁎P of the rigidified Poincaré bundle to A×A♮ with its universal integrable connection ∇♮ relative to A♮, and for the identifications Lie(A♮)≅H¹_dR(A) and of the invariant differentials of A♮ with H¹_dR(A)^∨, with their Hodge sequences. These are the kernel data of the Fourier–Mukai transform of §0.8; no second construction of the universal vector extension or of the Poincaré connection is made here.
+
 ### From TauCetiRoadmap.SchemeAndStackFoundations
 
-Consume §§5.1–5.4 and 5.8 for cycles, proper pushforward, intersection, Chern classes and Riemann–Roch, §5.5 for regular-immersion conormal and normal bundles, and §2.21 for normalized dualizing complexes over Noetherian rings and their localization, which give the local-duality support criterion of §0.4.
+Consume §§5.1–5.4 and 5.8 for cycles, proper pushforward, intersection, Chern classes and Riemann–Roch, §5.5 for regular-immersion conormal and normal bundles, §2.18 (`DQCoh`, `totalDirectImage`, `torIndependent_baseChange`) for derived direct images of quasi-coherent complexes and their base change along Tor-independent squares, used for the fibres of the Fourier–Mukai transform in §0.8, and §2.21 for normalized dualizing complexes over Noetherian rings and their localization, which give the local-duality support criterion of §0.4.
 
 What SchemeAndStackFoundations must provide (gap:conormal-gauss-geometry): Construct conormal cycles of closed subvarieties in T*A=A×H⁰(A,Ω¹_A) with the generic degree of their projection to the cotangent fibre.
 
 ### From TauCetiRoadmap.SpringerResolutionAndCharacteristicCycles
 
-Consume §D/characteristic-cycle for the full characteristic cycle of a coherent D-module, §Y for generic-length cycle multiplicities, and §H/regular-holonomic for regular holonomicity. The map in §4.2 applies that cycle to a regular-holonomic realization and then takes its clean part; it does not construct a second D-module cycle.
+Consume §D for the carrier of coherent, holonomic and regular holonomic D_X-modules with good filtrations, bounded derived categories and the functors f_+, f^+ and D_X of HTT, §D/characteristic-cycle for the full characteristic cycle of a coherent D-module, §Y for generic-length cycle multiplicities, and §H/regular-holonomic for regular holonomicity. The map in §4.2 applies that cycle to a regular-holonomic realization and then takes its clean part; it does not construct a second D-module cycle.
 
 What SpringerResolutionAndCharacteristicCycles must provide (gap:microdifferential-localization): For a smooth complex variety X, the sheaf of microdifferential operators on T*X and the microlocalization of coherent D_X-modules, exact and compatible with proper direct image and external product, whose support is the characteristic variety and whose generic length along each component is the multiplicity of the characteristic cycle.
 
@@ -104,15 +108,19 @@ This is used in §4.3 to construct the microlocal fibre functor (K1, §1.d and T
 
 Consume §C6.1 for constructible topological coefficients and §C6.6 (`adicArtinComparison`) for the integral and rational étale–Betti comparison of cohomology and Euler characteristics; EtaleDualityAndPerverseSheaves §3.5 supplies the constructible and perverse comparison with its stable-lattice essential image. Consume §§C5.1–C5.3 for de Rham–Betti comparison, smooth proper variations and geometric Hodge theory, and §C5.6 for regular-singular connections and the holonomy of rank-one connections.
 
-What ComplexComparisonPartII must provide (gap:holonomic-riemann-hilbert-index): Regular-holonomic de Rham realization identifies regular holonomic D-modules with complex perverse sheaves and transports characteristic cycles compatibly with proper image, external product, isogenies and the index formula, with independence of the integral cycle under coefficient realization.
+What ComplexComparisonPartII must provide (gap:holonomic-riemann-hilbert-index): The de Rham functor is an equivalence from the bounded derived category of complexes of D_X-modules with regular holonomic cohomology to the bounded constructible derived category of X^an with complex coefficients, t-exact for the perverse t-structure, identifying regular holonomic modules with complex perverse sheaves, compatible with Verdier duality, with proper direct image and external product, and with twisting by an algebraic line bundle with integrable connection (the de Rham complex of M⊗(L,∇) is that of M tensored over C with the horizontal sections of ∇); and it transports characteristic cycles compatibly with proper image, external product, isogenies and the index formula, with independence of the integral cycle under coefficient realization.
 
 What ComplexComparisonPartII must provide (gap:stein-perverse-artin-vanishing): For a Stein complex manifold V and a bounded complex K of sheaves of F-vector spaces on V, constructible for a locally finite complex-analytic stratification and in the perverse range pD^(≥0), the compactly supported cohomology H^i_c(V,K) vanishes for i<0.
 
-This is used in §0.4 for the universal cover of an abelian variety (BSS, proof of Proposition 2.7, p. 4, BSS line 188). The cycle is the one supplied by SpringerResolutionAndCharacteristicCycles §D. The abelian clean index formula is used at KW Proposition 10.1, p.22, KW line 805; K2 Definition 2.2.1, p.13, K2 line 628.
+This is used in §0.4 for the universal cover of an abelian variety (BSS, proof of Proposition 2.7, p. 4, BSS line 188). The derived equivalence is used in §0.9, where an arbitrary bounded constructible complex is realized as a complex with regular holonomic cohomology, and in §§1.5 and 4.3; an equivalence of the perverse hearts alone does not realize a complex such as δ₀⊕δ₀[1], whose realization has two nonzero cohomology modules. The cycle is the one supplied by SpringerResolutionAndCharacteristicCycles §D. The abelian clean index formula is used at KW Proposition 10.1, p.22, KW line 805; K2 Definition 2.2.1, p.13, K2 line 628.
 
 ### From TauCetiRoadmap.DiophantineApproximationAndTranscendence
 
-Consume §3.5 for the Schneider–Lang criterion, used in §0.7(b) to show that a translate of a character subtorus whose Betti and de Rham points are defined over Q̄ contains a point of finite order (Sim, Theorem 3.3, p. 369, Sim line 367).
+Consume §3.5 for the Schneider–Lang criterion in its exponential form, for the groups 𝔾_a^r×𝔾_m^s. That form does not cover the group used in §0.7(c), an extension of an abelian variety by 𝔾_m.
+
+What DiophantineApproximationAndTranscendence must provide (gap:schneider-lang-commutative-groups): For a connected commutative algebraic group G over Q̄ and an analytic homomorphism ψ:Cⁿ→G(C) whose differential at the origin is defined over Q̄, if a subgroup Γ⊂Cⁿ contains n elements linearly independent over C and ψ(Γ)⊂G(Q̄), then the Zariski closure of ψ(Cⁿ) is an algebraic subgroup of G of dimension at most n.
+
+This is the criterion quoted in the proof of Sim Proposition 3.4, pp. 369–370, Sim line 379; it is used in §0.7(c) to show that a Q̄-point of A♮ with Q̄-valued holonomy is a torsion point, which is the step of §0.7(b) that makes a translate of a character subtorus with Betti and de Rham points defined over Q̄ contain a point of finite order (Sim, Theorem 3.3, p. 369, Sim line 367).
 
 ### From TauCetiRoadmap.PadicHodgeTheory
 
@@ -160,7 +168,7 @@ The field statement and Torelli are JV Proposition 6.1, pp.19–20, JV line 941,
 
 ## How to read the build
 
-Layer 0 constructs characters and convolution, proves generic vanishing by the Fourier–Mellin transform, proves the negligible quotient laws, and then determines the exceptional character loci through Simpson's theorems (§§0.7–0.8). Layer 1 gives twisted fibres and represented groups; Layer 2 compares arithmetic and geometric groups. Layer 3 computes the hypersurface data. Layer 4 reduces its connected derived image to minuscule possibilities. Layers 5–6 solve the exterior-weight obstruction and identify the classical groups. Layer 7 converts convolution groups into family monodromy; Layer 8 makes the product conclusion uniform along character orbits. Layer 9 constructs the period maps (§9.1), proves fibre finiteness for surfaces by Torelli (§9.2), proves the transport Hodge relation theorem for polarized integral variations (§9.3) and deduces fibre finiteness in every dimension (§9.4). Each target lists the inputs its statement and the indicated proof route use.
+Layer 0 constructs characters and convolution, proves generic vanishing by the Fourier–Mellin transform, proves the negligible quotient laws, proves Simpson's linearity theorems and the Fourier–Mukai theory of D-modules on an abelian variety (§§0.7–0.8), and then determines the exceptional character loci (§0.9). Layer 1 gives twisted fibres and represented groups; Layer 2 compares arithmetic and geometric groups. Layer 3 computes the hypersurface data. Layer 4 reduces its connected derived image to minuscule possibilities. Layers 5–6 solve the exterior-weight obstruction and identify the classical groups. Layer 7 converts convolution groups into family monodromy; Layer 8 makes the product conclusion uniform along character orbits. Layer 9 constructs the period maps (§9.1), proves fibre finiteness for surfaces by Torelli (§9.2), proves the transport Hodge relation theorem for polarized integral variations (§9.3) and deduces fibre finiteness in every dimension (§9.4). Each target lists the inputs its statement and the indicated proof route use.
 
 ## Layer 0: characters, convolution and negligible objects
 
@@ -240,7 +248,7 @@ One proof route is as follows. Obtain associativity, unit and symmetry by proper
 
 ### 0.4 Generic vanishing on abelian varieties
 
-Let A be a complex abelian variety of dimension g, let F be a coefficient field (F=Q̄_ℓ with its discrete topology for the Betti realization), put R=F[π₁(A,0)], a Laurent polynomial ring in 2g variables, and Char_F(A)=Spec R, the split F-torus of characters of π₁(A,0). Let L_R=π_!F for the universal cover π:V→A, the rank-one R-local system of the tautological character, and define the Fourier–Mellin transform FM_A(K)=RΓ(A,K⊗_F L_R) for K in Dᵇ_c(A,F). Then FM_A(K) is a perfect R-complex whose derived fibre at χ is RΓ(A,K⊗Lχ), and its R-dual is FM_A([−1]⁎D_AK). If K is perverse, FM_A(K) and its R-dual lie in D^(≥0)(R). Consequently, for perverse K: each cohomology support locus S^j(K)={χ : H^j(A,K⊗Lχ)≠0} is Zariski closed in Char_F(A) of codimension at least |j|; H^j(A,K⊗Lχ)=0 for every j≠0 and every χ off a proper Zariski-closed subset; χ(A,K)≥0; and χ(A,K)=0 exactly when RΓ(A,K⊗Lχ)=0 for some χ. A finite family of perverse sheaves admits one common good character, which can be taken of finite order, since finite-order characters are Zariski dense in the torus; continuous étale characters are reached through the Artin comparison. The finer description of the exceptional loci by translates of character subtori is §0.8. (BSS, Theorem 1.1, p. 1, BSS line 25; Lemma 2.6, Proposition 2.7 and Corollary 2.10, pp. 4–5, BSS lines 50, 172, 183 and 221; LS, Lemma 2.2(1), p. 15, LS line 672.)
+Let A be a complex abelian variety of dimension g, let F be a coefficient field (F=Q̄_ℓ with its discrete topology for the Betti realization), put R=F[π₁(A,0)], a Laurent polynomial ring in 2g variables, and Char_F(A)=Spec R, the split F-torus of characters of π₁(A,0). Let L_R=π_!F for the universal cover π:V→A, the rank-one R-local system of the tautological character, and define the Fourier–Mellin transform FM_A(K)=RΓ(A,K⊗_F L_R) for K in Dᵇ_c(A,F). Then FM_A(K) is a perfect R-complex whose derived fibre at χ is RΓ(A,K⊗Lχ), and its R-dual is FM_A([−1]⁎D_AK). If K is perverse, FM_A(K) and its R-dual lie in D^(≥0)(R). Consequently, for perverse K: each cohomology support locus S^j(K)={χ : H^j(A,K⊗Lχ)≠0} is Zariski closed in Char_F(A) of codimension at least |j|; H^j(A,K⊗Lχ)=0 for every j≠0 and every χ off a proper Zariski-closed subset; χ(A,K)≥0; and χ(A,K)=0 exactly when RΓ(A,K⊗Lχ)=0 for some χ. A finite family of perverse sheaves admits one common good character, which can be taken of finite order, since finite-order characters are Zariski dense in the torus; continuous étale characters are reached through the Artin comparison. The finer description of the exceptional loci by translates of character subtori is §0.9. (BSS, Theorem 1.1, p. 1, BSS line 25; Lemma 2.6, Proposition 2.7 and Corollary 2.10, pp. 4–5, BSS lines 50, 172, 183 and 221; LS, Lemma 2.2(1), p. 15, LS line 672.)
 
 Throughout this subsection, A is a complex abelian variety; the vanishing assertions are for perverse K, and the codimension bound holds on the algebraic torus Char_F(A), not on the set of continuous étale characters.
 
@@ -305,14 +313,14 @@ One proof route is as follows. Use Mathlib’s Serre-class localization for the 
 
 - For dim A>0, the image of F[n] is zero.
 - The image of δ₀ is a nonzero tensor unit with endomorphism field F.
-- Negligible higher perverse cohomology of K*L disappears, even if the original convolution was not perverse.
-- The quotient Hom simplification is used only after geometric semisimplicity in Layer 2.
+- On an elliptic curve E, Q(δ₀⊕F_E[1])≅Q(δ₀), so its endomorphism algebra in the quotient has dimension one; before localization End(δ₀⊕F_E[1])=F⊕F has dimension two, since Hom(δ₀,F_E[1]) and Hom(F_E[1],δ₀) vanish, and the negligible summand is what the quotient removes.
+- Q(δ₀⊕δ₀) has endomorphism algebra M₂(F), of dimension four; a quotient identifying objects by their support alone would give dimension one.
 
 *Needs:* §0.5; Mathlib `CategoryTheory.ObjectProperty.SerreClassLocalization.abelian`; Mathlib `CategoryTheory.ObjectProperty.SerreClassLocalization.preservesFiniteLimits`; Mathlib `CategoryTheory.ObjectProperty.SerreClassLocalization.preservesFiniteColimits`; EtaleDualityAndPerverseSheaves §§2.1, 2.6–2.10; Serre-heart/Verdier comparison contract.
 
 ### 0.7 Rank-one de Rham moduli and Simpson's linearity theorems
 
-Let A be a complex abelian variety of dimension g. Construct A♮, the moduli space of algebraic line bundles with integrable connection on A; it is a quasi-projective connected commutative algebraic group of dimension 2g, an extension of the dual abelian variety by the vector group H⁰(A,Ω¹_A). Let Char(A)=Hom(π₁(A,0),C^×), a split torus of dimension 2g, and Φ:A♮→Char(A) the holonomy map, a biholomorphic group isomorphism which is not algebraic. For an abelian subvariety B⊂A (B=0 allowed) call ρ·T_B⊂Char(A) a linear subvariety, and an arithmetic one when ρ can be taken of finite order; here T_B is the subgroup of characters trivial on π₁(B,0), as in §0.1. For σ∈Aut(C/Q) let c_σ:A♮→(A^σ)♮ be conjugation of the algebraic data. Prove: (a) if Z⊂A♮ is closed algebraic and Φ(Z) is closed algebraic in Char(A), then Φ(Z) is a finite union of linear subvarieties; (b) if Z⊂A♮ is closed and, for every σ∈Aut(C/Q), Φ(c_σZ) is closed algebraic in Char(A^σ) and defined over Q̄, then Φ(Z) is a finite union of arithmetic linear subvarieties. (Sim, Theorem 3.1(c) and Corollary 3.2, pp. 366–369, Sim lines 243 and 360; Theorem 3.3, p. 369, Sim line 367; Theorem 6.1, p. 376, Sim line 655; Sch, Definition 2.3, p. 2, Sch line 88; Theorem 16.1 and Definition 17.3 with Theorem 17.4, pp. 25–26, Sch lines 1236 and 1291.)
+Let A be a complex abelian variety of dimension g and Â its dual. Let A♮=E(Â) be the universal vector extension of Â (AbelianSchemesAndArithmeticModuli §A4.2, `AbelianVectorExtension` applied to Â), which that section identifies with the moduli space of rigidified algebraic line bundles with integrable connection on A: a quasi-projective connected commutative algebraic group of dimension 2g, an extension of Â by the vector group of H⁰(A,Ω¹_A), with forgetful map π:A♮→Â. Let Char(A)=Hom(π₁(A,0),C^×), a split torus of dimension 2g, and Φ:A♮→Char(A) the holonomy map, a biholomorphic group isomorphism; for g>0 it is not algebraic, and for g=0 it is the identity of a point. For an abelian subvariety B⊂A (B=0 allowed) call ρ·T_B⊂Char(A) a linear subvariety, and an arithmetic one when ρ can be taken of finite order; here T_B is the subgroup of characters trivial on π₁(B,0), as in §0.1. For σ∈Aut(C/Q) let c_σ:A♮→(A^σ)♮ be conjugation of the algebraic data. Prove: (a) if Z⊂A♮ is closed algebraic and Φ(Z) is closed algebraic in Char(A), then Φ(Z) is a finite union of linear subvarieties; (b) if Z⊂A♮ is closed and, for every σ∈Aut(C/Q), Φ(c_σZ) is closed algebraic in Char(A^σ) and defined over Q̄, then Φ(Z) is a finite union of arithmetic linear subvarieties; (c) if A is defined over Q̄ and (L,∇) is a Q̄-point of A♮ whose holonomy character Φ(L,∇):π₁(A,0)→C^× takes values in Q̄^×, then (L,∇) is a torsion point of A♮. (Sim, Theorem 3.1(c) and Corollary 3.2, pp. 366–369, Sim lines 243 and 360; Theorem 3.3 and Proposition 3.4 with its proof, pp. 369–370, Sim lines 367, 376 and 379; Theorem 6.1, p. 376, Sim line 655; Sch, Definition 2.3, p. 2, Sch line 88; Theorem 16.1 and Definition 17.3 with Theorem 17.4, pp. 25–26, Sch lines 1236 and 1291.)
 
 Throughout this subsection, the triple tori of Sim for X=A are exactly the subgroups T_B: a subtorus of Char(A) that is algebraic on both sides is the image of the character group of a quotient abelian variety A→A/B with connected fibres.
 
@@ -323,21 +331,48 @@ Its API includes the following facts.
 - Conjugation c_σ is a group isomorphism carrying the torsion points of A♮ to those of (A^σ)♮.
 - Statements (a) and (b) are stable under finite unions and under translation by finite-order points.
 
-One proof route is as follows. Identify A♮ through the universal vector extension of the dual abelian variety and Φ through monodromy of the connection. For (a), reduce to an irreducible Z and, after translation, to a subgroup statement; compare the real-analytic group structures of A♮ and Char(A) to show that a subset algebraic on both sides is a translate of a subgroup algebraic on both sides, and identify such subgroups with the T_B (Sim §3). For (b), a translate of a triple torus whose Betti and de Rham points are defined over Q̄ contains a finite-order point by the Schneider–Lang criterion (Sim Theorem 3.3); spread out over a finitely generated field and specialize to deduce (b) from (a) (Sim Theorem 6.1, in the form of Sch Theorem 17.4, which drops Simpson's Dolbeault conditions using the strengthening of Theorem 3.1(c)).
+One proof route is as follows. Define Φ through the monodromy of the connection, using the regular-singular Riemann–Hilbert equivalence for rank-one connections on the proper A (ComplexComparisonPartII §C5.6). For (a), reduce to an irreducible Z and, after translation, to a subgroup statement; compare the real-analytic group structures of A♮ and Char(A) to show that a subset algebraic on both sides is a translate of a subgroup algebraic on both sides, and identify such subgroups with the T_B (Sim §3). For (c), form the extension 1→𝔾_m→G→A→1 of commutative algebraic groups over Q̄ whose points are the pairs (x,ι) of a translation t_x of A and an isomorphism ι:t_x⁎L≅L; the connection ∇ provides an analytic homomorphism ψ:T₀A→G(C) lifting the exponential map, whose differential at the origin is defined over Q̄ because (L,∇) is; the period lattice Γ⊂T₀A contains a C-basis, and ψ(Γ) consists of the holonomy values, which lie in G(Q̄) by hypothesis. The Schneider–Lang criterion for commutative algebraic groups (the contract above) gives an algebraic subgroup G′⊂G of dimension g containing ψ(T₀A); G′ maps onto A, so G′∩𝔾_m is finite and the holonomy Γ→G′∩𝔾_m takes values in roots of unity: (L,∇) is torsion (Sim, proof of Proposition 3.4, Sim line 379). For (b), a translate ρ·T_B whose Betti and de Rham points are defined over Q̄ contains a finite-order point: its image in Char(A)/T_B=Char(B), with de Rham side B♮=A♮/(A/B)♮, is a Q̄-point with Q̄-valued holonomy, torsion by (c), and it lifts to a torsion point of the translate (Sim, proof of Theorem 3.3, p. 370, Sim line 399); then spread out over a finitely generated field and specialize to deduce (b) from (a) (Sim Theorem 6.1, in the form of Sch Theorem 17.4, which drops Simpson's Dolbeault conditions using the strengthening of Theorem 3.1(c)).
 
 **Checks.**
 
 - On an elliptic curve E with period lattice spanned by 1 and τ, the connections d+t·dz on the trivial bundle form a closed algebraic line in E♮, but their holonomies (e^(−t),e^(−tτ)) are Zariski dense in Char(E) because τ is not real; the hypothesis that Φ(Z) be algebraic is essential.
-- A single point Z=Φ⁻¹(ρ) is linear (B=A) and is arithmetic exactly when ρ has finite order. For ρ with values 2 and 1 on a basis of π₁(E), Φ(Z) is defined over Q̄ but ρ has infinite order, so by (b) some conjugate Φ(c_σZ) is not defined over Q̄: the condition is needed for every σ, not only σ=1.
+- A single point Z=Φ⁻¹(ρ) is linear (B=A) and is arithmetic exactly when ρ has finite order. For E over Q̄ and ρ with values 2 and 1 on a basis of π₁(E), the holonomy values are algebraic and ρ has infinite order (2^k≠1), so by (c) the point Φ⁻¹(ρ) is not a Q̄-point of E♮ although Φ(Z) is defined over Q̄; and by (b) some conjugate Φ(c_σZ) is not defined over Q̄: the condition in (b) is needed for every σ, not only σ=1. The exponential-form criterion for 𝔾_a^r×𝔾_m^s says nothing about E♮, which is a 𝔾_a-extension of Ê.
 - For B=0, T_B=Char(A) is a linear subvariety; for B=A, T_B={1}. On E×E the antidiagonal B={(a,−a)} gives T_B={χ₁=χ₂}, a linear subvariety not of coordinate form.
+- For g=0, A♮ and Char(A) are single points and Φ is the identity, an algebraic isomorphism; (a), (b) and (c) hold with B=A=0 and the unique point torsion. For an elliptic curve the connection line t↦(e^(−t),e^(−tτ)) of the first Check is not algebraic, so nonalgebraicity of Φ is a statement about g>0 only.
 
-*Needs:* §0.1; AbelianSchemesAndArithmeticModuli §§A3.1–A3.5; ComplexComparisonPartII §C5.6; DiophantineApproximationAndTranscendence §3.5.
+*Needs:* §0.1; AbelianSchemesAndArithmeticModuli §§A3.1–A3.5 and A4.2; ComplexComparisonPartII §C5.6; DiophantineApproximationAndTranscendence §3.5; Schneider–Lang commutative-group contract.
 
-### 0.8 Linear structure of the exceptional loci
+### 0.8 The Fourier–Mukai transform for D-modules on an abelian variety
+
+Let A be a complex abelian variety of dimension g, A♮=E(Â) with π:A♮→Â as in §0.7, and (P♮,∇♮) the pullback of the rigidified Poincaré bundle to A×A♮ with its universal integrable connection relative to A♮ (AbelianSchemesAndArithmeticModuliPartII §P1.1). For a bounded complex M of algebraic (quasi-coherent) D_A-modules let DR(p₁⁎M⊗(P♮,∇♮)) be the de Rham complex of p₁⁎M⊗P♮ relative to A♮ (tensor product over the structure sheaf of A×A♮) for the connection p₁⁎∇_M⊗id+id⊗∇♮, placed in degrees −g,…,0, and define FM_A(M)=Rp₂∗DR(p₁⁎M⊗(P♮,∇♮)) for the projection p₂:A×A♮→A♮; write O♮ for the structure sheaf of A♮. Prove the following. (a) If M has coherent cohomology, FM_A(M) is a bounded complex with coherent cohomology on A♮; for every C-point (L,∇) of A♮ its derived fibre at (L,∇) is RΓ(A,DR_A(M⊗(L,∇)))=RΓ(A,DR_A(M)⊗_C ker∇); hence Supp FM_A(M) is the union over k of the loci S^k₁(A,M)={(L,∇):H^k(A,DR_A(M⊗(L,∇)))≠0}, and for a∈A(C) the transform FM_A(δ_a) is the line bundle π⁎P_a in degree zero, P_a∈Pic⁰(Â) the point corresponding to a. (b) FM_A is an equivalence of triangulated categories D^b_coh(D_A)→D^b_coh(A♮) (Laumon, Rothstein). It converts tensoring with (L,∇) into pullback along the translation of A♮ by (L,∇), satisfies FM_A∘D_A=[−1]⁎RHom(FM_A(−),O♮) for the inversion [−1] of A♮ and the duality functor D_A, satisfies L(f♮)⁎∘FM_A=FM_B∘f_+ and R(f♮)∗∘FM_B=FM_A∘f^+ for a homomorphism f:A→B with induced f♮:B♮→A♮, and sends an induced module D_A⊗E (tensor product over O_A) with E coherent to Lπ⁎RΦ_P(E), RΦ_P the Mukai transform of E to Â. (c) For a bounded complex M with holonomic cohomology, M is a single holonomic module placed in degree zero exactly when codim S^k₁(A,M)≥2|k| for every k; for a holonomic module M both FM_A(M) and RHom(FM_A(M),O♮) lie in D^(≥0)_coh with codim Supp H^i≥2i for every i, and if M is moreover simple with χ(A,DR_A(M))≠0 then codim Supp H^k FM_A(M)≥2k+2 for k>0, H⁰FM_A(M) is a reflexive sheaf, locally free outside a closed subset of codimension at least four, and FM_A(M) is determined up to isomorphism by the restriction of H⁰FM_A(M) to that locally free locus. (d) For a holonomic module M the Chern classes of FM_A(M) vanish in H²ⁱ(A♮,Z)=H²ⁱ(Â,Z), and π⁎:Pic(Â)→Pic(A♮) is an isomorphism. (Sch, §10, pp. 12–14, Sch line 574; Theorem 10.3, Sch line 609; Theorem 10.5, Sch line 616; Theorem 4.1, p. 5, Sch line 192; Theorem 15.1 and its proof, Sch line 1033; Proposition 16.2 and its proof, Sch line 1242; Theorem 19.1 and Proposition 19.2, Sch lines 1433 and 1441; Theorem 21.1, Corollary 21.5 and Proposition 22.1, pp. 34–36, Sch lines 1636, 1751 and 1762; Proposition 25.1 and Corollary 25.3, pp. 40–41, Sch lines 1995 and 2019; K1, Proposition 3.1, pp. 22–24, K1 line 856.)
+
+Throughout this subsection, D_A-modules are algebraic and quasi-coherent over O_A; holonomic complexes have bounded holonomic cohomology; perverse coherent conditions are stated through codimensions of supports of cohomology sheaves, and all codimensions are taken in A♮.
+
+Its API includes the following facts.
+
+- FM_A is exact (triangulated), and FM_A(M⊗(L,∇)) is the pullback of FM_A(M) along translation by (L,∇).
+- The derived fibre of FM_A(M) at (L,∇) is RΓ(A,DR_A(M⊗(L,∇))); for (L,∇) off a proper closed subset and M a single holonomic module this is a vector space in degree zero of dimension χ(A,DR_A(M)).
+- FM_A(δ_a)=π⁎P_a in degree zero, FM_A(δ₀)=O♮, and FM_A(δ_a)⊗FM_A(δ_b)=FM_A(δ_c) for c=a+b.
+- Supp FM_A(M)=A♮ exactly when H⁰FM_A(M)≠0 for a holonomic module M, and then the generic rank of H⁰FM_A(M) is χ(A,DR_A(M)).
+- For a simple holonomic M with χ(A,DR_A(M))≠0, a reflexive H⁰FM_A(M) of generic rank one is a line bundle, since A♮ is smooth.
+
+One proof route is as follows. For (a), the terms of the relative de Rham complex are quasi-coherent and flat over A♮, so Rp₂∗ lands in the quasi-coherent derived category and commutes with base change along the Tor-independent square of a point of A♮ (SchemeAndStackFoundations §2.18, `torIndependent_baseChange`); the fibre is the de Rham complex of M⊗(L,∇), and DR_A(M⊗(L,∇))≅DR_A(M)⊗_C ker∇ because ker∇⊗_C O_A=L (Sch, proof of Theorem 15.1). Coherence is obtained with the equivalence (b): for an induced module D_A⊗E the transform is Lπ⁎RΦ_P(E), coherent because the Mukai transform of a coherent sheaf is coherent; a coherent D_A-module on the projective A has a finite resolution by induced modules D_A⊗E_i with E_i coherent, and dévissage gives coherence of FM_A(M) for every bounded coherent complex. For (b) follow Laumon: the formal properties come from base change and the projection formula for the kernel (P♮,∇♮), and essential surjectivity and full faithfulness from the inverse transform with kernel the dual Poincaré connection and the computation of Rp₁∗(P♮,∇♮) through the structure of D_A as the Fourier dual of O♮ (Sch Theorems 10.3 and 10.5, citing Laumon, Théorème 3.2.1 and Corollaire 3.2.5). For (c), the Rees module of a good filtration gives a C^×-equivariant extension of FM_A(M) to the vector bundle E(A)⊇A♮ whose restriction to the zero fibre is the Mukai transform of the associated graded module, a coherent sheaf whose generic fibrewise support is finite because M is holonomic; semicontinuity gives the codimension bounds (Sch Proposition 19.2 and Theorem 19.1). The perverse coherent t-structure of Kashiwara and Arinkin–Bezrukavnikov with the supporting function 2·codim turns these bounds into the statement that FM_A identifies the standard t-structure on holonomic complexes with the m-perverse one. For a simple M with χ≠0, the least degree with nonzero cohomology is zero and a component of the support of a higher cohomology sheaf of codimension exactly 2k would make M a pullback from a quotient of dimension g−k by a simple module, contradicting χ≠0; this gives codim≥2k+2 (Sch Theorem 21.1 and Corollary 21.5). The reflexivity of H⁰ follows from the codimension bounds for the Ext sheaves of H⁰, which are controlled by those of FM_A(M) and of its dual, through the criterion that a coherent sheaf on a regular scheme with codim Supp Ext^i(−,O)≥i+2 for i≥1 is reflexive; the reconstruction of FM_A(M) from H⁰ restricted to its locally free locus proceeds by truncation and duality (Sch Proposition 22.1). For (d), the C^×-equivariant extension of (c) shows that the Chern character lies in the subring of CH(Â)=CH(A♮) generated by Pic⁰(Â), whose classes vanish in singular cohomology (Sch Proposition 25.1 and Corollary 25.3); A♮ is a Zariski-locally trivial affine bundle over Â, so pullback is an isomorphism on Picard groups. The microlocal realization of §4.3 uses the tensor property FM_A(M₁*M₂)≅FM_A(M₁)⊗^L FM_A(M₂), which follows from the functoriality in (b) for the addition homomorphism (K1 Proposition 3.1).
+
+**Checks.**
+
+- FM_A(δ_a)=π⁎P_a in degree zero; for a≠b the line bundles π⁎P_a and π⁎P_b are not isomorphic, so the transform separates skyscrapers, whereas the Fourier–Mellin transform of §0.4 gives the free module R for every δ_a.
+- For the constant module O_A with DR_A(O_A)=C[g] and g>0, the fibre at (L,∇) vanishes unless ∇ is the trivial connection, where it is H^•(A,C)[g]; so FM_A(O_A) is supported at the origin of A♮, in codimension 2g≥2|k| for its cohomology degrees −g≤k≤g, as (c) requires, its H⁰ is a skyscraper and not reflexive, and its Euler characteristic is 0, so the simple-module part of (c) does not apply.
+- For g=0, A♮ is a point and FM_A is the identity functor on finite-dimensional vector spaces; every assertion is trivial.
+- On an elliptic curve E, M=δ_x⊕δ_y with x≠y has FM_E(M)=π⁎P_x⊕π⁎P_y, locally free of rank two with H⁰ reflexive, but M is not simple: (c) asserts simplicity nowhere, and the Euler characteristic 2 is the rank.
+- Tensoring δ_a by (L,∇) returns δ_a, and the pullback of π⁎P_a along the translation of A♮ by (L,∇) is π⁎(t⁎P_a) for t the translation of Â by π(L,∇), which is π⁎P_a because P_a is translation invariant on Â; the two sides of the twist formula of (b) agree.
+
+*Needs:* §0.7; AbelianSchemesAndArithmeticModuli §§A2.2, A4.2; AbelianSchemesAndArithmeticModuliPartII §P1.1; SchemeAndStackFoundations §§2.18, 5.1–5.4; SpringerResolutionAndCharacteristicCycles §D; holonomic realization contract; ComplexComparisonPartII §C5.6.
+
+### 0.9 Linear structure of the exceptional loci
 
 Let A be a complex abelian variety and K∈Dᵇ_c(A,F). For all integers j and m≥1 the loci S^j_m(K)={χ∈Char(A) : dim H^j(A,K⊗Lχ)≥m} are finite unions of linear subvarieties in the sense of §0.7. If K is a semisimple perverse sheaf of geometric origin, they are finite unions of arithmetic linear subvarieties. Consequently, for perverse K and j≠0, S^j(K) is a finite union of translates ρ·T_B with B≠0 (each such component is proper by the codimension bound of §0.4), and ρ can be taken of finite order when K is semisimple of geometric origin. The same holds for continuous étale characters through the comparison of §0.4, and for a finite family by taking the union. (Sch, Theorem 7.3, p. 9, Sch line 423; Corollary 7.5, p. 10, Sch line 453; KW, Theorem 1.1, p. 2, KW line 41, and Lemma 11.2(b)–(c), pp. 25–26, KW line 922, prove the same statement through convolution quotients; LS, §4, p. 30, paragraph before Lemma 4.4, LS line 1392.)
 
-Throughout this subsection, F is identified with C by a field isomorphism for the Betti statements; geometric origin is in the sense of BBD 6.2.4, and finite order of a character is independent of that identification.
+Throughout this subsection, F-coefficients are extended to C along a fixed field embedding ι:F→C for the Betti and de Rham statements, and the loci over Char_F(A) are recovered as the F-structures of their base changes; geometric origin is in the sense of BBD 6.2.4, and finite order of a character is independent of ι.
 
 Its API includes the following facts.
 
@@ -346,7 +381,7 @@ Its API includes the following facts.
 - For semisimple K of geometric origin and finite-order ψ, K⊗Lψ is again semisimple of geometric origin.
 - For perverse K the exceptional set of §0.4 is the finite union of the S^j(K), j≠0.
 
-One proof route is as follows. Through the regular-holonomic Riemann–Hilbert correspondence write K=DR_A(M) with M regular holonomic. Twisting by a rank-one connection corresponds to twisting by its holonomy, so Φ carries the de Rham loci of M onto S^j_m(K) (Sch Theorem 15.1). The loci are algebraic in Char(A) because FM_A(K) of §0.4 is a perfect R-complex. They are algebraic in A♮ because Laumon's Fourier–Mukai transform of M is a bounded coherent complex on A♮ satisfying base change to points (Sch Theorem 10.5 and Proposition 16.2). Apply §0.7(a). For geometric origin, K is a direct sum of simple constituents of Q-perverse sheaves obtained from constant sheaves by the standard functors; such constituents are complexifications of perverse sheaves with Q̄-coefficients (Sch Lemma 17.6), their loci are defined over Q̄ by the Fourier–Mellin transform over Q̄[π₁] (Sch Lemma 17.5), and applying σ∈Aut(C/Q) to the construction yields an object of the same kind on A^σ whose loci are the conjugates. Apply §0.7(b). Mixed Hodge modules are not needed for this argument.
+One proof route is as follows. Through the bounded derived regular-holonomic Riemann–Hilbert correspondence (holonomic realization contract) write K=DR_A(M) with M a bounded complex of D_A-modules with regular holonomic cohomology; an arbitrary bounded K is not the de Rham complex of a single module. Twisting by a line bundle with integrable connection corresponds to twisting by its holonomy, DR_A(M⊗(L,∇))≅DR_A(M)⊗_C ker∇, so Φ carries the de Rham loci S^j_m(A,M) of M onto S^j_m(K) (Sch Theorem 15.1). The loci are algebraic in Char(A) because FM_A(K) of §0.4 is a perfect R-complex whose derived fibres are the twisted cohomologies, and the locus where the j-th cohomology of the fibre of a bounded complex of free modules has dimension at least m is closed. They are algebraic in A♮ because FM_A(M) of §0.8(a) is a bounded coherent complex on A♮ whose derived fibres are the de Rham cohomologies of the twists (Sch Proposition 16.2). Apply §0.7(a). For geometric origin, K is a direct sum of simple constituents of Q-perverse sheaves obtained from constant sheaves by the standard functors; such constituents are complexifications of perverse sheaves with Q̄-coefficients (Sch Lemma 17.6), their loci are defined over Q̄ by the Fourier–Mellin transform over Q̄[π₁] (Sch Lemma 17.5), and applying σ∈Aut(C/Q) to the construction yields an object of the same kind on A^σ whose loci are the conjugates. Apply §0.7(b). Mixed Hodge modules are not needed for this argument.
 
 **Checks.**
 
@@ -354,15 +389,15 @@ One proof route is as follows. Through the regular-holonomic Riemann–Hilbert c
 - For the antidiagonal curve C={(a,−a)}⊂E×E and K the constant perverse sheaf on C, S^(±1)(K)=T_C={χ₁=χ₂}, of codimension 2; a description by coordinate subtori alone misses it.
 - For a rank-one skyscraper δₓ every S^j with j≠0 is empty, and S^0_1=Char(A) is the linear subvariety with B=0.
 
-*Needs:* §0.4; §0.7; holonomic realization contract; SpringerResolutionAndCharacteristicCycles §D/characteristic-cycle; ComplexComparisonPartII §C6.6; EtaleDualityAndPerverseSheaves §§3.3–3.5, 5.10.
+*Needs:* §0.4; §0.7; §0.8; holonomic realization contract; SpringerResolutionAndCharacteristicCycles §D; ComplexComparisonPartII §C6.6; EtaleDualityAndPerverseSheaves §§3.3–3.5, 5.10.
 
 ### Examples
 
-On an elliptic curve take two points x,y. The convolution δₓ*δᵧ is δₓ₊ᵧ, of Euler characteristic 1, and its dual is δ₋ₓ₋ᵧ. The untwisted constant perverse sheaf has Betti dimensions 1,2,1 in degrees −1,0,1, hence Euler characteristic 0. Its generic nontrivial twist has no cohomology. The complex δ₀⊕δ₀[1] has Euler characteristic 1−1=0 but perverse cohomology δ₀ in two degrees, so it is outside the derived negligible category. For the constant perverse sheaf on the antidiagonal curve of E×E the exceptional loci in degrees ±1 are the subtorus χ₁=χ₂, a linear subvariety of codimension 2 that is not of coordinate form. (LS Lemmas 2.1–2.2, LS lines 650 and 672; Sch Theorem 7.3, Sch line 423.)
+On an elliptic curve take two points x,y. The convolution δₓ*δᵧ is δₓ₊ᵧ, of Euler characteristic 1, and its dual is δ₋ₓ₋ᵧ. The untwisted constant perverse sheaf has Betti dimensions 1,2,1 in degrees −1,0,1, hence Euler characteristic 0. Its generic nontrivial twist has no cohomology. The complex δ₀⊕δ₀[1] has Euler characteristic 1−1=0 but perverse cohomology δ₀ in two degrees, so it is outside the derived negligible category. For the constant perverse sheaf on the antidiagonal curve of E×E the exceptional loci in degrees ±1 are the subtorus χ₁=χ₂, a linear subvariety of codimension 2 that is not of coordinate form. The Fourier–Mukai transform of δₓ on E is the line bundle π⁎P_x on E♮, and that of the constant module O_E is a complex supported at the origin of E♮ with cohomology in degrees −1, 0, 1 of dimensions 1, 2, 1. (LS Lemmas 2.1–2.2, LS lines 650 and 672; Sch Theorem 7.3, Sch line 423; Sch Theorem 10.5, Sch line 616.)
 
 ### Dependencies
 
-Tau Ceti `TauCeti.AlgebraicGeometry.AbelianVariety`; AbelianSchemesAndArithmeticModuli §§A3.1–A3.5; EtaleDualityAndPerverseSheaves §§3.3–3.5; EtaleCohomologyFoundations §§F.0.2, F.4.5; Mathlib `DerivedCategory`; ComplexComparisonPartII §§C5.6, C6.1, C6.6; Stein Artin-vanishing contract; SchemeAndStackFoundations §2.21; DiophantineApproximationAndTranscendence §3.5; holonomic realization contract; SpringerResolutionAndCharacteristicCycles §D/characteristic-cycle; EtaleCohomologyFoundations §§F.5–F.6; EtaleDualityAndPerverseSheaves §0.5; EtaleDualityAndPerverseSheaves §5.10; EtaleDualityAndPerverseSheaves §§2.1, 2.6–2.10; Mathlib `CategoryTheory.ObjectProperty.SerreClassLocalization.abelian`; Mathlib `CategoryTheory.ObjectProperty.SerreClassLocalization.preservesFiniteLimits`; Mathlib `CategoryTheory.ObjectProperty.SerreClassLocalization.preservesFiniteColimits`. The exact supplier contracts above retain their coefficient, dimension and finiteness hypotheses.
+Tau Ceti `TauCeti.AlgebraicGeometry.AbelianVariety`; AbelianSchemesAndArithmeticModuli §§A2.2, A3.1–A3.5, A4.2; AbelianSchemesAndArithmeticModuliPartII §P1.1; EtaleDualityAndPerverseSheaves §§3.3–3.5; EtaleCohomologyFoundations §§F.0.2, F.4.5; Mathlib `DerivedCategory`; ComplexComparisonPartII §§C5.6, C6.1, C6.6; Stein Artin-vanishing contract; SchemeAndStackFoundations §§2.18, 2.21, 5.1–5.4; DiophantineApproximationAndTranscendence §3.5; Schneider–Lang commutative-group contract; holonomic realization contract; SpringerResolutionAndCharacteristicCycles §D; EtaleCohomologyFoundations §§F.5–F.6; EtaleDualityAndPerverseSheaves §0.5; EtaleDualityAndPerverseSheaves §5.10; EtaleDualityAndPerverseSheaves §§2.1, 2.6–2.10; Mathlib `CategoryTheory.ObjectProperty.SerreClassLocalization.abelian`; Mathlib `CategoryTheory.ObjectProperty.SerreClassLocalization.preservesFiniteLimits`; Mathlib `CategoryTheory.ObjectProperty.SerreClassLocalization.preservesFiniteColimits`. The exact supplier contracts above retain their coefficient, dimension and finiteness hypotheses.
 
 ## Layer 1: twisted fibres and convolution groups
 
@@ -386,7 +421,6 @@ One proof route is as follows. Test the vanishing on the finitely many geometric
 - Every skyscraper δₓ is admissible for every character.
 - For dim A>0, F[n] is not admissible for χ=1.
 - For a nontrivial geometric rank-one character on a complex abelian variety, F[n] has zero twisted cohomology and is admissible; it becomes zero in the quotient.
-- The definition excludes cancellation-based vanishing criteria.
 - Duality changes χ to χ⁻¹ before the Verdier dual, and yields the stated closure for the same fibre functor.
 
 *Needs:* §0.6; §0.2; §0.4.
@@ -457,19 +491,20 @@ One proof route is as follows. Identify both generated categories inside the com
 
 ### 1.5 Euler-one perverse sheaves
 
-A simple perverse sheaf K on a complex abelian variety with χ(A,K)=1 is a rank-one skyscraper δₓ. Consequently every one-dimensional simple object of the semisimple convolution quotient has such a representative. Convolution by it translates supports. (KW, Proposition 10.1(b), pp. 21–22; KW line 787; LS, proofs of Lemma 3.11, p. 24, and Lemma 4.1, p. 29; LS line 1085.)
+A simple perverse sheaf K on a complex abelian variety A of any dimension with χ(A,K)=1 is a rank-one skyscraper δₓ. Consequently every one-dimensional simple object of the semisimple convolution quotient has such a representative. Convolution by it translates supports. (K1, Lemma 3.5 and its proof, pp. 26–27, K1 line 1036; KW, Proposition 10.1(b) and its proof, pp. 21–22, KW lines 787 and 795; Sch, Proposition 22.1 and Corollary 25.3, Sch lines 1762 and 2019; LS, proofs of Lemma 3.11, p. 24, and Lemma 4.1, p. 29; LS line 1085.)
 
-Throughout this subsection, Algebraically closed characteristic-zero field via the comparison/base-extension interfaces.
+Throughout this subsection, Algebraically closed characteristic-zero field via the comparison/base-extension interfaces; the proof is over C after extending coefficients along ι:F→C, and the conclusion descends because a skyscraper is detected by its support and rank.
 
-One proof route is as follows. Apply KW Proposition 10.1(b), which identifies a simple perverse object of Euler characteristic one. Use dim ω=Euler characteristic and discard negligible direct summands before choosing the simple representative.
+One proof route is as follows. Realize K as a simple regular holonomic D_A-module M (holonomic realization contract) and let F=FM_A(M) be its transform (§0.8). By generic vanishing (§0.4) and the fibre formula of §0.8(a), the derived fibre of F at a general point of A♮ is a one-dimensional vector space in degree zero, so H⁰F has generic rank χ(A,K)=1 and Supp F=A♮. By §0.8(c), H⁰F is reflexive of rank one, hence a line bundle ℒ on the smooth variety A♮, and every H^kF with k>0 is supported in codimension at least four, so its first Chern class vanishes; hence c₁(ℒ)=c₁(F)=0 in H²(A♮,Z)=H²(Â,Z) by §0.8(d). Since π⁎:Pic(Â)→Pic(A♮) is an isomorphism and the Néron–Severi group of Â injects into H²(Â,Z), ℒ=π⁎P_x for a point x∈A(C), that is ℒ≅H⁰FM_A(δ_x). The transforms F and FM_A(δ_x) are transforms of simple holonomic modules with support A♮ and isomorphic locally free H⁰, so they are isomorphic by the reconstruction statement of §0.8(c), and the equivalence §0.8(b) gives M≅δ_x. Finally dim ω=Euler characteristic identifies the one-dimensional simple objects of the quotient, after discarding negligible summands, with such representatives. The argument of KW Proposition 10.1(b) through the index formula (§4.2) and the conormal lemmas KW 10.3–10.4 covers a simple A of dimension at least two; the Fourier–Mukai route is uniform in A and needs no reduction to simple factors.
 
 **Checks.**
 
 - A rank-r skyscraper has Euler characteristic r; rank one is essential.
 - A positive-dimensional smooth ample support cannot itself be a one-dimensional fibre object.
 - For δₓ⊕δₓ, the Euler characteristic is 2 and the object is not simple; the theorem cannot identify it with a rank-one skyscraper.
+- On an elliptic curve E, an irreducible local system L of rank r≥2 on E∖{0} with local monodromy T at the puncture gives the simple perverse sheaf j_*L[1] with χ=r−dim L^T. For r=2, T is the commutator of the images A,B of the two generators of π₁(E∖{0}), of determinant one, and a fixed vector would make T unipotent with trace 2; but for two elements of SL₂(C) the commutator has trace 2 exactly when they have a common eigenvector, which contradicts irreducibility. So χ=2 and never 1: the theorem has content for g=1, where the conormal argument of KW is not available, and the Fourier–Mukai route covers it.
 
-*Needs:* §1.2; §0.3; EtaleDualityAndPerverseSheaves §§3.3–3.5; EtaleCohomologyFoundations §§F.0.2, F.4.5.
+*Needs:* §1.2; §0.3; §0.4; §0.8; holonomic realization contract; EtaleDualityAndPerverseSheaves §§3.3–3.5; EtaleCohomologyFoundations §§F.0.2, F.4.5.
 
 ### Examples
 
@@ -477,7 +512,7 @@ For δₓ the twisted fibre has dimension 1. If x has order m, its geometric ten
 
 ### Dependencies
 
-§0.6; §0.2; §0.4; MotivesAndAlgebraicCycles §§6.1–6.3, 6.8; EtaleDualityAndPerverseSheaves §§3.3–3.5; EtaleCohomologyFoundations §§F.0.2, F.4.5; Tau Ceti `TauCeti.Tannaka.tensorAutFunctor`; Tau Ceti `TauCeti.Tannaka.fgPointTensorIsoEquiv`; Tau Ceti `TauCeti.FiniteTypeAffineGroupSchemeCat`; Tau Ceti `TauCeti.ReductiveAffineGroupSchemeCat`; ReductiveGroups Layers 3 and 6; §0.3. The exact supplier contracts above retain their coefficient, dimension and finiteness hypotheses.
+§0.6; §0.2; §0.4; §0.8; holonomic realization contract; MotivesAndAlgebraicCycles §§6.1–6.3, 6.8; EtaleDualityAndPerverseSheaves §§3.3–3.5; EtaleCohomologyFoundations §§F.0.2, F.4.5; Tau Ceti `TauCeti.Tannaka.tensorAutFunctor`; Tau Ceti `TauCeti.Tannaka.fgPointTensorIsoEquiv`; Tau Ceti `TauCeti.FiniteTypeAffineGroupSchemeCat`; Tau Ceti `TauCeti.ReductiveAffineGroupSchemeCat`; ReductiveGroups Layers 3 and 6; §0.3. The exact supplier contracts above retain their coefficient, dimension and finiteness hypotheses.
 
 ## Layer 2: arithmetic and geometric Tannaka groups
 
@@ -500,9 +535,8 @@ One proof route is as follows. Split each geometrically semisimple object into i
 
 - A nonsplit extension of trivial Galois representations at the origin is geometrically semisimple, so arithmetic semisimplicity cannot be substituted.
 - The pullback of δ₀⊗V is a direct sum of dim V copies of the tensor unit.
-- No object lacking an arithmetic-pullback summand presentation is admitted merely because it is a geometric perverse sheaf.
 - An arbitrary continuous Galois representation supported at 0 belongs to C_ar, even if the arithmetic representation is not semisimple.
-- All morphisms used to form geometric summands are taken in the quotient with the stated Hom formula.
+- For k with a Galois quotient S₃ and V its irreducible two-dimensional representation, δ₀⊗V has endomorphism algebra F in C_ar (Schur) and M₂(F), of dimension four, in C_geo; a comparison identifying the two Hom spaces would be wrong by a factor of four.
 
 *Needs:* §1.1; §1.2; EtaleDualityAndPerverseSheaves §5.10; MotivesAndAlgebraicCycles §§6.1–6.3, 6.8; semisimple proper-direct-image contract.
 
@@ -532,8 +566,8 @@ One proof route is as follows. The normalized descent defines tensor automorphis
 
 **Checks.**
 
-- Without Galois invariance of χ, this particular action on a single twisted fibre is not defined.
-- Normalization does not assert that the Galois image contains the geometric group.
+- For K=δₓ with x∈A(k) of infinite order and χ of finite order m fixed by Galois, the geometric group is 𝔾_m acting on the one-dimensional fibre ωχ(δₓ)=(Lχ)ₓ, and Galois acts on that fibre through the Kummer character σ↦χ(σ(y)−y) for y with my=x, which is trivial for x=mz with z∈A(k) and nontrivial for a suitable χ of order m when x∉mA(k): the normalized descent makes the arithmetic action a scalar, which normalizes 𝔾_m, whereas the unnormalized descent twisted by a Galois character would act by a different scalar on the same fibre.
+- For K=δ₀⊗V with V a Galois representation, the geometric group is trivial, its normalizer is all of GL(V), and the Galois action on ωχ(K)=V is V itself: normalization constrains nothing here and does not place the Galois image inside the geometric group.
 - The identity Galois action normalizes G but need not contain G=SL₂: the identity subgroup has dimension 0 and SL₂ has dimension 3.
 
 *Needs:* §0.2; §2.2; §1.3; §1.4.
@@ -549,7 +583,7 @@ One proof route is as follows. Use the closed-extension constructible comparison
 **Checks.**
 
 - δₓ with x defined over k remains the same tensor generator after extension.
-- New supports defined only over K are not included in this equivalence.
+- For k=Q̄⊂K=C, A over Q̄ and Q=δ_y with y∈A(Q̄) of infinite order, the category generated by Q_C contains exactly the skyscrapers at the multiples ny, n∈Z, of y, with group 𝔾_m, and a point x∈A(C)∖A(Q̄) gives a skyscraper δₓ on A_C that lies in no such category: the comparison identifies the groups of Q and Q_C without admitting objects defined only over K.
 - A rank-one skyscraper has endomorphism dimension 1 before and after extension; the comparison cannot enlarge it to a free family of supports.
 
 *Needs:* §1.3; §0.6; EtaleDualityAndPerverseSheaves §§3.3–3.5; EtaleCohomologyFoundations §§F.0.2, F.4.5; closed-extension constructible comparison contract.
@@ -617,7 +651,7 @@ One proof route is as follows. Realize the character-isotypic part of the cohomo
 
 - For n=3,d=1 the native weights are 0,−1,−2 with multiplicities 1,4,1.
 - Their total dimension is n!d, as required by the distinguished representation.
-- An arbitrary non-finite-order character is not covered by the finite-cover proof.
+- For n=2 the row has d copies of weight 0 and d copies of weight −1, total 2d=2!d; a convention with native weight +1 for the cyclotomic character and weights +q here would give d copies of +1 instead, which is not the Hodge–Tate decomposition of H¹ of a curve.
 
 *Needs:* §3.1; §0.2; PadicHodgeTheory §§3.3, 8.1–8.2; Hodge–Tate image cocharacter contract; AbelianSchemesAndArithmeticModuli §§A3.1–A3.5; isogeny character/trace contract.
 
@@ -681,28 +715,31 @@ One proof route is as follows. Import the characteristic cycle of a coherent D-m
 
 ### 4.3 Microlocal fibre functor and the cycle–weight dictionary
 
-Let A be a complex abelian variety, V=H⁰(A,Ω¹_A) and η the generic point of V. Through the regular-holonomic realization, let M(A) be the quotient of the perverse category by negligible objects with its convolution product (§0.6). Prove the following. (a) There is an F-linear exact tensor functor μ from M(A) to the tensor category of germs over η of vector bundles on clean conic Lagrangian cycles finite étale over an open subset of V, with direct-image tensor product along addition, such that the support of μ(K) is cc(K) with its multiplicities (§4.2). (b) For K in M(A) and a very general point u∈V (outside countably many proper closed subsets), μ restricted to the tensor category ⟨K⟩ generated by K factors through germs at u; taking the fibre at u gives a fibre functor ω_u on ⟨K⟩ with values in vector spaces graded by the finitely generated subgroup X_u⊂A(C) generated by the points a with (a,u) in the support of CC(K). Put G_u=Aut⊗(ω_u|⟨K⟩) and T_u=Hom(X_u,G_m). Then T_u is a closed subgroup of multiplicative type of G_u, the monodromy group of the Gauss map of the characteristic variety embeds in N_(G_u)(T_u)/Z_(G_u)(T_u) compatibly with its action on X_u, and in ω_u(K) the T_u-character of a point a has multiplicity equal to the multiplicity in CC(K) of the component through (a,u). (c) The map ω_u(N)↦cc(N) is a λ-ring homomorphism from the representation ring R(G_u) to the ring of clean cycles of §4.1, with dim ω_u(N)=deg cc(N)=χ(A,N); on clean cycles the Adams operation Ψ^n is pushforward [n]_*. (d) Let K₀⊂A(C) be the finite group of torsion points a such that δ_a lies in ⟨K⟩. The component group G_u/G_u° is Cartier dual to K₀. For an isogeny f:A→B the Tannaka group of f_*K is the finite-index subgroup of G_u containing G_u° whose component group is dual to K₀/(K₀∩ker f); in particular it is G_u° when K₀⊂ker f. For simple K the representation ω_u(K) restricts irreducibly to G_u° iff K is not isomorphic to its translate by any nonzero point of K₀. (e) If ⟨K⟩ is semisimple and T⊂G_u° is a maximal torus, there is an epimorphism from the character group of T onto the free part of X_u compatible with cc, and each Weyl orbit of characters is the image of a unique effective clean cycle. (f) If p:Ĝ→G_u° is a central isogeny of degree e from a connected reductive group, N∈⟨K⟩ and p⁎ω_u(N)≅S(U₁,…,U_r) for a tensor construction S and representations U_i of Ĝ, then [e]_*cc(N)=S(Λ₁,…,Λ_r) with Λ_i=cc(Ψ^e U_i) effective clean cycles of degree dim U_i. (K1, Theorem 1.5, Corollary 1.6 and Theorem 1.7, pp. 6–10, K1 lines 227, 242 and 360; Theorem 5.10, p. 47, K1 line 1893; K2, Proposition 1.3.3, p. 10, K2 line 452; Theorem 2.1.1, Corollaries 2.1.2 and 2.2.2, pp. 12–14, K2 lines 580, 611 and 637; Theorem 2.2.3 and Corollary 2.2.4, pp. 14–15, K2 lines 677 and 711; Theorem 2.3.1 and Remark 2.3.2, pp. 15–16, K2 lines 728 and 776.)
+Let A be a complex abelian variety, V=H⁰(A,Ω¹_A) and η the generic point of V. Through the regular-holonomic realization, let M(A) be the quotient of the perverse category by negligible objects with its convolution product (§0.6). Prove the following. (a) There is an F-linear exact tensor functor μ from M(A) to the tensor category of germs over η of vector bundles on clean conic Lagrangian cycles finite étale over an open subset of V, with direct-image tensor product along addition, such that the support of μ(K) is cc(K) with its multiplicities (§4.2). (b) For K in M(A) and a very general point u∈V (outside countably many proper closed subsets), μ restricted to the tensor category ⟨K⟩ generated by K factors through germs at u; taking the fibre at u gives a fibre functor ω_u on ⟨K⟩ with values in vector spaces graded by the finitely generated subgroup X_u⊂A(C) generated by the points a with (a,u) in the support of CC(K). Put G_u=Aut⊗(ω_u|⟨K⟩) and T_u=Hom(X_u,G_m). Then T_u is a closed subgroup of multiplicative type of G_u, the monodromy group of the Gauss map of the characteristic variety embeds in N_(G_u)(T_u)/Z_(G_u)(T_u) compatibly with its action on X_u, and in ω_u(K) the T_u-character of a point a has multiplicity equal to the multiplicity in CC(K) of the component through (a,u). (c) The map ω_u(N)↦cc(N) is a λ-ring homomorphism from the representation ring R(G_u) to the ring of clean cycles of §4.1, with dim ω_u(N)=deg cc(N)=χ(A,N); on clean cycles the Adams operation Ψ^n is pushforward [n]_*. (d) Let K₀⊂A(C) be the finite group of torsion points a such that δ_a lies in ⟨K⟩. The component group G_u/G_u° is Cartier dual to K₀. For an isogeny f:A→B the Tannaka group of f_*K is the finite-index subgroup of G_u containing G_u° whose component group is dual to K₀/(K₀∩ker f); in particular it is G_u° when K₀⊂ker f. For simple K the representation ω_u(K) restricts irreducibly to G_u° iff K is not isomorphic to its translate by any nonzero point of K₀. (e) Suppose ⟨K⟩ is semisimple, let T⊂G_u be a maximal torus, and let h:A→A/(X_u)_tors be the quotient isogeny, so that X_u/(X_u)_tors is a subgroup of (A/(X_u)_tors)(C). There is an epimorphism from the character group of T onto X_u/(X_u)_tors such that, for every N in ⟨K⟩, the character of ω_u(N) restricted to T and pushed along this epimorphism is the fibre over u of the clean cycle h_*cc(N) on A/(X_u)_tors; and each Weyl orbit of characters of T is the image of a unique effective clean cycle on A/(X_u)_tors. The comparison takes values in cycles on the quotient A/(X_u)_tors, not on A: restriction to G_u° forgets the torsion part of the grading, and distinct cycles on A with the same image under h give the same character. (f) Suppose G_u is connected, which (d) achieves for f_*K after an isogeny f with K₀⊂ker f, and let p:Ĝ→G_u be a central isogeny of degree e from a connected reductive group. If N∈⟨K⟩ and p⁎ω_u(N)≅S(U₁,…,U_r) for a tensor construction S and representations U_i of Ĝ, then [e]_*cc(N)=S(Λ₁,…,Λ_r) with Λ_i=cc(Ψ^e U_i)∈⟨cc(K)⟩ clean cycles of degree dim U_i. The Λ_i need not be effective on A; they are effective up to isogeny: for g:A→A/(X_u)_tors each g_*Λ_i is effective, so if t is the exponent of (X_u)_tors and q:A/(X_u)_tors→A is the isogeny with q∘g=[t], then [et]_*cc(N)=S(q_*g_*Λ₁,…,q_*g_*Λ_r) with effective clean factors q_*g_*Λ_i=[t]_*Λ_i of degree dim U_i. (K1, Theorem 1.5, Corollary 1.6 and Theorem 1.7, pp. 6–10, K1 lines 227, 242 and 360; Theorem 5.10, p. 47, K1 line 1893; K2, Proposition 1.3.3, p. 10, K2 line 452; Theorem 2.1.1, Corollaries 2.1.2 and 2.2.2, pp. 12–14, K2 lines 580, 611 and 637; Theorem 2.2.3 and Corollary 2.2.4, pp. 14–15, K2 lines 677 and 711; Theorem 2.3.1 and Remark 2.3.2, pp. 15–16, K2 lines 728 and 776.)
 
-Throughout this subsection, very general means outside a countable union of proper Zariski-closed subsets of V; the groups G_u for different u and the groups G(K,χ) of §1.3 are isomorphic up to inner conjugacy, and all statements are transported through that comparison.
+Throughout this subsection, coefficients are extended to C along ι:F→C, so that M(A) and ⟨K⟩ are C-linear and the fibre functors take values in C-vector spaces; very general means outside a countable union of proper Zariski-closed subsets of V; the groups G_u for different u and the base changes to C of the groups G(K,χ) of §1.3 are isomorphic up to inner conjugacy, and all statements are transported through that comparison.
 
 Its API includes the following facts.
 
 - ω_u is exact, faithful and tensor on ⟨K⟩, and the grading by X_u is compatible with convolution through addition in A(C).
 - The T_u-weights of ω_u(K) are the Gauss-fibre points over u, with multiplicities given by CC(K).
 - cc(N₁⊗N₂)=cc(N₁)◦cc(N₂), cc(N^∨)=[−1]_*cc(N) and cc(Ψ^n N)=[n]_*cc(N) on R(G_u).
-- Ψ^e U has character Σ_λ m_λ e^(eλ) with nonnegative coefficients when U has weight multiplicities m_λ, so cc(Ψ^e U) is effective although Ψ^e U is in general only a virtual representation.
+- Ψ^e U has character Σ_λ m_λ e^(eλ) with nonnegative coefficients when U has weight multiplicities m_λ, so the pushforward g_*cc(Ψ^e U) to A/(X_u)_tors is effective although Ψ^e U is in general only a virtual representation; cc(Ψ^e U) itself need not be effective on A.
 
-One proof route is as follows. Microlocalize regular holonomic modules to microdifferential modules on T*A, restrict to the locus where the Gauss map of the characteristic variety is finite étale, and twist by a square root of the relative canonical bundle chosen compatibly with convolution (K1 §§4–5, K2 §2.1); this gives μ and its support property. Countability of isomorphism classes in ⟨K⟩ gives the very general point u. The grading by X_u makes T_u act; Gauss monodromy acts on the grading by tensor automorphisms, giving the Weyl-group embedding (K1 Theorem 4.3). The λ-ring property follows because μ is a tensor functor and support is a λ-ring homomorphism into the group ring of X_u, where Ψ^n is multiplication by n. The component-group description follows from the description of Rep(G/G°) by finite-order characters of π₁ of the dual abelian variety. For (e) use that R(G°) is the Weyl invariants of the character ring (ReductiveGroups Layer 10). For (f) the Adams operation Ψ^e maps R(Ĝ) into R(G_u°) because the character group of p(T̂) has index e; naturality of tensor constructions under the λ-ring homomorphism Ψ^e and (c) give the cycle identity, and effectiveness follows from the displayed character of Ψ^e U and (e).
+One proof route is as follows. Microlocalize regular holonomic modules to microdifferential modules on T*A, restrict to the locus where the Gauss map of the characteristic variety is finite étale, and twist by a square root of the relative canonical bundle chosen compatibly with convolution (K1 §§4–5, K2 §2.1); this gives μ, first with values in germs of local systems on the finite étale Gauss covers and then, by taking holomorphic sections, in germs of vector bundles, with its support property (K1 Theorem 5.10, K2 Theorem 2.1.1). For (b) choose u from the tensor words, not from the objects of ⟨K⟩: let 𝒲 be the countable set of convolution powers of K⊕K^∨; μ(W) is a germ of local systems over an open U_W⊂V, and for each pair W,W′ a basis of the finite-dimensional space Hom(W,W′) is realized by morphisms of local systems over an open U(W,W′); a point u in the intersection of these countably many opens is very general. Every object of ⟨K⟩ is a subquotient W₁/W₂ of some W, and the sub-local systems μ(W₂)⊂μ(W₁)⊂μ(W), given a priori near the generic point, extend uniquely over U_W because the fundamental group of a dense open of the smooth finite étale cover of U_W surjects onto that of the whole cover; morphisms of local systems have locally constant rank, so kernels, images and cokernels are again local systems over U_W and μ is exact there. Taking fibres at u gives ω_u, exact, faithful and tensor; only then are local systems replaced by vector-bundle germs. The isomorphism classes of ⟨K⟩ are not countable in general (fifth Check), so a very general point cannot be chosen object by object. The grading by X_u makes T_u act; Gauss monodromy acts on the grading by tensor automorphisms, giving the Weyl-group embedding (K1 Theorem 4.3). The λ-ring property follows because μ is a tensor functor and support is a λ-ring homomorphism into the group ring of X_u, where Ψ^n is multiplication by n. The component-group description (d) follows from the description of Rep(G_u/G_u°) by finite-order characters of π₁ of the dual abelian variety, obtained from the principal-bundle reduction of the vector bundle H⁰FM_A(M) on the locally free locus of the Fourier–Mukai transform of §0.8 and the reconstruction of FM_A(M) from that vector bundle (K1 Theorems 3.2 and 3.4, K1 lines 946 and 1010). For (e), the identity component of the group of multiplicative type T_u=Hom(X_u,𝔾_m) is the torus Hom(X_u/(X_u)_tors,𝔾_m), which lies in a maximal torus up to conjugacy, giving the epimorphism on character groups; the restriction of the character of ω_u(N) to that subtorus is the X_u/(X_u)_tors-grading of ω_u(N), which is the fibre over u of h_*cc(N) by (b) and the isogeny compatibility of cc (§4.2), and R(G_u°) is the ring of Weyl invariants (ReductiveGroups Layer 10). For (f), the Adams operation Ψ^e maps R(Ĝ) into R(G_u) because the character group of p(T̂) has index e in that of T̂ and Ψ^e=[e]_* on character rings; naturality of tensor constructions under the λ-ring homomorphism Ψ^e and (c) give the cycle identity. The cycles cc(Ψ^eU_i) are differences of effective cycles in general; by (e) their pushforwards to A/(X_u)_tors are the cycles of the nonnegative weight multisets of Ψ^eU_i, hence effective, and pushing further along q and using that [t]_*=Ψ^t is a λ-ring homomorphism of clean cycles gives the displayed identity for [et]_*cc(N) (K2 Theorem 2.3.1 and Remark 2.3.2, K2 lines 728 and 776).
 
 **Checks.**
 
 - For δₓ the grading has the single point x with multiplicity one, matching CC(δₓ)=Λₓ; for δₓ⊕δₓ the multiplicity is two, matching 2Λₓ.
 - For δₓ^(⊕2)*δᵧ^(⊕3)=δ_(x+y)^(⊕6) the single weight x+y has multiplicity six, matching (2Λₓ)◦(3Λᵧ)=6Λ_(x+y); a dimension-only assignment would give the same total 6 but would not determine the grading point.
 - For Λ=Λₓ+Λᵧ with x≠y, the λ-ring formula λ²(Λ)=½(Λ◦Λ−[2]_*Λ)=½(Λ_(2x)+2Λ_(x+y)+Λ_(2y)−Λ_(2x)−Λ_(2y)) equals Λ_(x+y), the exterior square of a two-dimensional representation with weights x and y.
-- For Ĝ=SL₂→PGL₂ (e=2) and the adjoint representation Sym²U of the standard U, Ψ²U=Sym²U−Λ²U is virtual but has character with weights ±2 and coefficients one, so cc(Ψ²U) is an effective cycle of degree 2 and [2]_*cc(N)=Sym²(cc(Ψ²U)) has degree 3=dim Sym²U.
+- For Ĝ=SL₂→PGL₂ (e=2) and the adjoint representation Sym²U of the standard U, Ψ²U=Sym²U−Λ²U is virtual but has character with weights ±2 and coefficients one, so after the pushforward to A/(X_u)_tors the cycle of Ψ²U is effective of degree 2 and the cycle of N=Sym²U has degree 3=dim Sym²U; the degrees 2 and 3 are unchanged by the isogenies [e] and [t].
+- In SO₃ the Klein four-group V₄ of diagonal sign matrices lies in no torus. For Ĝ=SL₂→SO₃ the virtual representation Ψ²U=Sym²U−1 has the nonnegative torus character e²+e⁻², but its restriction to V₄ is ε₁+ε₂+ε₃−1, with a negative coefficient; so a nonnegative character of a maximal torus need not restrict to a nonnegative character of a subgroup of multiplicative type such as T_u, and effectiveness of cc(Ψ^eU) is asserted on A/(X_u)_tors, not on A.
+- For K=δ_a with a of order two, G_u=μ₂ and G_u°=1; δ_a and δ₀ both restrict to the unit representation of G_u°, while cc(δ_a)=Λ_a≠Λ₀=cc(δ₀); the quotient by ⟨a⟩ sends both to Λ₀, so the comparison of (e) is well defined on A/⟨a⟩ and no map from the representation ring of the trivial group to cycles on A recovers both cycles.
+- Embed a genus-two curve C in J(C). Ext¹(C_C,C_C)=H¹(C,C) has dimension four; two independent classes e₁,e₂ give rank-two unipotent local systems E₁,E₂ on C, and K=i_*(E₁⊕E₂)[1] has in ⟨K⟩ the extension of class e₁+λe₂ for every λ∈C, obtained by pulling E₁⊕E₂ back along the diagonal C→C⊕C and pushing out along (1,λ). Nonzero classes give isomorphic rank-two unipotent extensions only when proportional, so these objects are pairwise non-isomorphic and uncountably many, and all their perverse constituents are i_*C_C[1] with Euler characteristic 2, so no negligible subquotient identifies them in the quotient: ⟨K⟩ has uncountably many isomorphism classes, although its tensor words are countable.
 - On an elliptic curve with CC(K)=Λ₀+Λ_p+Λ_(−p)+rΛ_E and G_u≅SL₃, T_u≅G_m has rank one and is not a maximal torus, although the three weights of the standard representation remain distinct; (e) requires a maximal torus and is not this statement.
 
-*Needs:* §4.1; §4.2; §0.6; §1.3; §1.4; holonomic realization contract; SpringerResolutionAndCharacteristicCycles §D/characteristic-cycle; microdifferential localization contract; conormal geometry contract; MotivesAndAlgebraicCycles §§6.1–6.3; ReductiveGroups Layers 3, 6 and 10.
+*Needs:* §4.1; §4.2; §0.6; §0.8; §1.3; §1.4; holonomic realization contract; SpringerResolutionAndCharacteristicCycles §D/characteristic-cycle; microdifferential localization contract; conormal geometry contract; MotivesAndAlgebraicCycles §§6.1–6.3; ReductiveGroups Layers 3, 6 and 10.
 
 ### 4.4 Microlocal tensor factorization
 
@@ -710,12 +747,11 @@ Let K be a simple perverse sheaf on a complex abelian variety, of positive Euler
 
 Throughout this subsection, Use the regular-holonomic realization, where translation stabilizer and the tensor group agree with the perverse realization.
 
-One proof route is as follows. Use irreducibility on the identity component after killing translation stabilizers. Irreducibility on the identity component is §4.3(d), after pushing forward along the isogeny that kills the finite group of torsion supports. Pull back to a central product cover of the connected reductive group and split its irreducible representation into two tensor factors. Apply the isogeny lifting §4.3(f), which produces effective clean cycles of degrees the dimensions of the two factors. The degree bounds reflect the nontrivial semisimple factors. For the support maps, bilinearity gives Λ₁◦Λ₂=Σ a_ib_j Λ_(Z₁,i)◦Λ_(Z₂,j), and each product of two irreducible clean conormals is effective, being the clean part of a cycle pushforward of an effective fibre product. The multiplicity of Λ_Y is therefore a sum of terms a_ib_jc_(ij) with c_(ij)≥0 the multiplicity of Λ_Y in Λ_(Z₁,i)◦Λ_(Z₂,j); a total of one forces a single nonzero term with a_i=b_j=c_(ij)=1. For that pair, a component of Λ_(Z₁,i)×_VΛ_(Z₂,j) maps birationally onto Λ_Y, and its two projections give the dominant rational maps, as in Lemma 5.2.2.
+One proof route is as follows. Let f:A→B=A/K₀ be the quotient by the finite group K₀ of §4.3(d); the group of f_*K is the connected group G_u°, and ω_u(K) restricts irreducibly to it because the translation stabilizer is trivial (§4.3(d)). Pull back to a central product cover Ĝ=G₁×G₂×Z of the connected reductive group and split the irreducible representation into two tensor factors U₁⊠U₂. Apply the isogeny lifting §4.3(f) on B: [e]_*cc(f_*K)=Λ₁′∘Λ₂′ with Λ_i′ of degree dim U_i, and its further isogeny [t] makes the factors effective. With q′:B→A the isogeny satisfying q′∘f=[k] for the exponent k of K₀, push forward along q′, using f_*cc(K)=cc(f_*K) (§4.2) and that pushforward along a homomorphism is a ring homomorphism for ∘: this gives [etk]_*cc(K)=Λ₁∘Λ₂ with Λ_i=q′_*[t]_*Λ_i′ effective clean of degree dim U_i, so m=etk. The degree bounds reflect the nontrivial semisimple factors. For the support maps, bilinearity gives Λ₁◦Λ₂=Σ a_ib_j Λ_(Z₁,i)◦Λ_(Z₂,j), and each product of two irreducible clean conormals is effective, being the clean part of a cycle pushforward of an effective fibre product. The multiplicity of Λ_Y is therefore a sum of terms a_ib_jc_(ij) with c_(ij)≥0 the multiplicity of Λ_Y in Λ_(Z₁,i)◦Λ_(Z₂,j); a total of one forces a single nonzero term with a_i=b_j=c_(ij)=1. For that pair, a component of Λ_(Z₁,i)×_VΛ_(Z₂,j) maps birationally onto Λ_Y, and its two projections give the dominant rational maps, as in Lemma 5.2.2.
 
 **Checks.**
 
 - Both factors must have degree >1; the trivial skyscraper factor is excluded.
-- No inversion symmetry is assumed.
 - If two clean factors each have degree 2, their product has degree 4.
 - A rank-one skyscraper has degree 1 and connected group either trivial or a torus; its zero derived Lie algebra cannot satisfy the two-factor hypothesis.
 - A connected simple derived group has one simple ideal, so the splitting hypothesis is false even when its representation has dimension 6.
@@ -734,8 +770,6 @@ One proof route is as follows. Compute the smooth characteristic cycle with shif
 
 **Checks.**
 
-- Weights occur in one Weyl orbit with multiplicity one.
-- The result does not by itself assert that G_H° has simple derived group.
 - For a smooth hypersurface with n=3,d=1, the reduced conormal has degree 6, giving six weights counted with multiplicity.
 - The standard SL₂ module has weights −1,1 in one Weyl orbit; Sym² has weights −2,0,2 in two orbits and is not minuscule.
 - A conormal with coefficient two has fibre multiplicity two; reducedness is necessary for the one-orbit weight conclusion.
@@ -748,7 +782,7 @@ If n>2 and H is a smooth ample divisor on A with trivial translation stabilizer,
 
 Throughout this subsection, n>2 is needed for the Albanese/Lefschetz step.
 
-One proof route is as follows. Assuming failure of simplicity, §4.4 factors [m]_*Λ_H as Λ₁◦Λ₂ with effective clean cycles of degree >1. Trivial stabilizer makes [m]|H generically injective, hence the left side is the reduced irreducible cycle Λ_([m]H), of degree N. Let Λ_(Z₁) and Λ_(Z₂) be the components of Λ₁ and Λ₂ contributing to it, each of multiplicity one (§4.4). Compose H→[m]H with the dominant rational maps [m]H⇢Z_i, extend the composites to morphisms H→A (rational-map extension contract; H is smooth), and factor them through Alb(H)=A (ample-divisor Albanese contract; weak Lefschetz, dim H≥2). The addition identity becomes an identity of homomorphisms plus translation. Write g₁:A→B₁ for the induced surjective homomorphism, so that Z₁ is a translate of g₁(H). If Z₁ were a translate of B₁ its Gauss degree would be zero, whereas Λ_(Z₁) is clean. Otherwise H is an irreducible component of g₁⁻¹Z₁ by dimension. The connected kernel preserves every such component; a positive-dimensional kernel would preserve the ample divisor, which is impossible. Thus g₁ is an isogeny onto A. Trivial stabilizer makes its restriction H→Z₁ generically one-to-one: outside the intersections with finitely many distinct kernel translates there are no collisions. Isogeny pushforward of conormals therefore gives deg Λ_(Z₁)=N, so deg Λ₁≥deg Λ_(Z₁)=N because Λ₁ is effective; as deg Λ₁·deg Λ₂=deg Λ_([m]H)=N, this forces deg Λ₂≤1, contradicting deg Λ₂>1. Only the isogeny, the generically degree-one restriction and this component bound are required; the factors need not be irreducible.
+One proof route is as follows. Assuming failure of simplicity, §4.4 factors [m]_*Λ_H as Λ₁◦Λ₂ with effective clean cycles of degree >1. Trivial stabilizer makes [m]|H generically injective, hence the left side is the reduced irreducible cycle Λ_([m]H), of degree N. Let Λ_(Z₁) and Λ_(Z₂) be the components of Λ₁ and Λ₂ contributing to it, each of multiplicity one (§4.4). Compose H→[m]H with the dominant rational maps [m]H⇢Z_i, extend the composites to morphisms H→A (Weil extension, AbelianSchemesAndArithmeticModuli §A1.8(1), as in the supplier contract; H is smooth), and factor them through Alb(H)=A (ample-divisor Albanese contract; weak Lefschetz, dim H≥2). The addition identity becomes an identity of homomorphisms plus translation. Write g₁:A→B₁ for the induced surjective homomorphism, so that Z₁ is a translate of g₁(H). If Z₁ were a translate of B₁ its Gauss degree would be zero, whereas Λ_(Z₁) is clean. Otherwise H is an irreducible component of g₁⁻¹Z₁ by dimension. The connected kernel preserves every such component; a positive-dimensional kernel would preserve the ample divisor, which is impossible. Thus g₁ is an isogeny onto A. Trivial stabilizer makes its restriction H→Z₁ generically one-to-one: outside the intersections with finitely many distinct kernel translates there are no collisions. Isogeny pushforward of conormals therefore gives deg Λ_(Z₁)=N, so deg Λ₁≥deg Λ_(Z₁)=N because Λ₁ is effective; as deg Λ₁·deg Λ₂=deg Λ_([m]H)=N, this forces deg Λ₂≤1, contradicting deg Λ₂>1. Only the isogeny, the generically degree-one restriction and this component bound are required; the factors need not be irreducible.
 
 **Checks.**
 
@@ -757,7 +791,7 @@ One proof route is as follows. Assuming failure of simplicity, §4.4 factors [m]
 - On a smooth curve in an abelian surface, dim Alb(H)=g=1+d>2 when d>1; the isomorphism Alb(H)=A cannot be used for n=2.
 - For n=3,d=1 the contradiction is numerical: deg Λ_(Z₁)=6, so an effective Λ₁=Λ_(Z₁)+Λ′ has deg Λ₁=6+deg Λ′≥6, and deg Λ₁·deg Λ₂=6 leaves deg Λ₂=1, below the required degree 2.
 
-*Needs:* §4.4; §4.5; AbelianSchemesAndArithmeticModuli §A2.4; ample-divisor Albanese, rational-map extension and translation-stabilizer quotient contracts.
+*Needs:* §4.4; §4.5; AbelianSchemesAndArithmeticModuli §§A1.8(1) and A2.4; ample-divisor Albanese and translation-stabilizer quotient contracts.
 
 ### 4.7 Minuscule representation alternatives
 
@@ -770,7 +804,6 @@ One proof route is as follows. Use the minuscule table specified by the minuscul
 **Checks.**
 
 - For n=3,N=6 the ∧²SL₄ representation must not be eliminated as a nonclassical exception.
-- No statement for all n=2 follows from this divisibility argument.
 - For n=3, N is divisible by 6; 27 mod 6=3, 56 mod 6=2 and 2^r mod 3 is 1 or 2, excluding all three dimension types.
 - For n=2,d=28, N=56 and the divisibility-by-6 premise fails; no surface exclusion follows.
 - The zero weight is minuscule in every type, E₈ included, and gives a one-dimensional representation; since N=n!d≥6 it cannot be the distinguished representation, so classifying only nonzero minuscule weights loses no case.
@@ -787,9 +820,6 @@ One proof route is as follows. A self-duality of the irreducible derived represe
 
 **Checks.**
 
-- Even ambient dimension gives an alternating form and even N.
-- Odd ambient dimension gives a symmetric form.
-- An unspecified symmetric pairing cannot replace the Koszul calculation.
 - For n=3 the support shift is 2 and its self-exchange sign is +1; the classical image is orthogonal.
 - For n=4 the shift is 3 and its self-exchange sign is −1; the classical image is symplectic.
 - The standard SL₆ module is not self-dual, even up to a character of SL₆; assigning it a nondegenerate invariant bilinear form would fail.
@@ -802,7 +832,7 @@ Point conormals satisfy (2Λₓ)◦(3Λᵧ)=6Λₓ₊ᵧ and degree 6. For a sym
 
 ### Dependencies
 
-AbelianSchemesAndArithmeticModuli §A1.3; SchemeAndStackFoundations §§5.1–5.4, 5.8; conormal geometry contract; §0.3; EtaleDualityAndPerverseSheaves §§3.3–3.5; EtaleCohomologyFoundations §§F.0.2, F.4.5; ComplexComparisonPartII §§C5.6, C6.6; holonomic realization contract; SpringerResolutionAndCharacteristicCycles §D/characteristic-cycle; microdifferential localization contract; §0.6; §1.3; §1.4; MotivesAndAlgebraicCycles §§6.1–6.3; ReductiveGroups Layers 3, 6, 7 and 10; LieHighestWeight Layer 4; §3.2; LieHighestWeightPartII §N2; minuscule-weight-table contract; AbelianSchemesAndArithmeticModuli §A2.4; ample-divisor Albanese, rational-map extension and translation-stabilizer quotient contracts; §3.1; LieHighestWeight Layer 6; LieHighestWeight Layer 8; SpinRepresentations Layer 4; §1.5. The exact supplier contracts above retain their coefficient, dimension and finiteness hypotheses.
+AbelianSchemesAndArithmeticModuli §§A1.3, A1.8(1); SchemeAndStackFoundations §§5.1–5.4, 5.8; conormal geometry contract; §0.3; EtaleDualityAndPerverseSheaves §§3.3–3.5; EtaleCohomologyFoundations §§F.0.2, F.4.5; ComplexComparisonPartII §§C5.6, C6.6; holonomic realization contract; SpringerResolutionAndCharacteristicCycles §D/characteristic-cycle; microdifferential localization contract; §0.6; §0.8; §1.3; §1.4; MotivesAndAlgebraicCycles §§6.1–6.3; ReductiveGroups Layers 3, 6, 7 and 10; LieHighestWeight Layer 4; §3.2; LieHighestWeightPartII §N2; minuscule-weight-table contract; AbelianSchemesAndArithmeticModuli §A2.4; ample-divisor Albanese and translation-stabilizer quotient contracts; §3.1; LieHighestWeight Layer 6; LieHighestWeight Layer 8; SpinRepresentations Layer 4; §1.5. The exact supplier contracts above retain their coefficient, dimension and finiteness hypotheses.
 
 ## Layer 5: exterior-power counts and exceptional degrees
 
@@ -829,7 +859,6 @@ One proof route is as follows. Filter the actual finite set of k-subsets by its 
 - For m=2,k=3 every multiplicity vanishes.
 - For weights −1,0,1 and k=2 the multiplicities at −1,0,1 are all 1.
 - For a constant-zero list of length m, W(w,k,0)=binom(m,k).
-- Both complement and translation formulas must hold exactly, with their shifts.
 
 *Needs:* Mathlib `Finset.powersetCard`; Mathlib `Finset.card_powersetCard`; Mathlib `Nat.choose`.
 
@@ -868,11 +897,10 @@ One proof route is as follows. The real-bodied recursion supplies the pair. Pres
 
 **Checks.**
 
-- P₀=(1,5).
+- The positive ordered pair (1,1) is not a solution: 1−4+1=−2≠2, and it occurs at no index of the sequence.
 - P₁=(5,20), not (5,19); the affine +1 term is necessary.
 - P₂=(20,76); swapping the two prior terms changes the answer.
 - The first permitted geometric threefold pair is P₁, since interior exterior powers require k>1.
-- The defining equation is interpreted in Z to preserve the negative middle term.
 
 *Needs:* Mathlib `Nat.choose`.
 
@@ -912,7 +940,6 @@ One proof route is as follows. Choose a finite-order good character and a finite
 
 - Summing the row gives binom(m,k)=n!d.
 - Discarding the common fractional part without a shift would give an incorrect constraint.
-- No extension-closure assertion for the whole Hodge–Tate category is used.
 - Weights 0,0,1,1 with k=2 give the shifted row 1,4,1; the corresponding native Hodge–Tate weights are 0,−1,−2.
 - Adding 3 to each standard weight adds 6 to each exterior-square weight; changing the central shift by only 3 fails.
 - On ∧²F⁴ the scalar −1 acts as +1, so the kernel includes μ₂; treating the represented image as faithful SL₄ loses this central kernel.
@@ -1010,7 +1037,7 @@ One proof route is as follows. Enumerate modifications increasing the minimum we
 **Checks.**
 
 - For the surface histogram 5[0]+[1], k=3, R_a=0,R_b=1 and both sides of the product bound are zero.
-- The five q=2 terms, including those with zero occupancy count, sum to the full Eulerian coefficient.
+- For the threefold histogram 1[−1]+23[0]+1[1] at k=5, with r=4 and t=19, the five q=2 ratios are 0,0,1,0,0, including the three with invalid occupancy counted as zero, and their sum is 1=A(3,2); omitting the invalid terms or the middle term h(v−1)h(v+1)=1 gives a different total.
 - For the threefold histogram 1[−1]+23[0]+1[1] at k=5, R_a=19/5 and R_b=1/5; their sum is 4 and their product is 19/25<1.
 
 *Needs:* §5.5; Mathlib `Nat.choose`.
@@ -1122,9 +1149,8 @@ One proof route is as follows. Simplicity and minuscule property reduce the repr
 
 **Checks.**
 
-- For n≥4 there is no degree exception.
+- For n=4,d=1, N=24 and the row 1,11,11,1 has no interior exterior-power realization (§5.8), so only the classical alternatives remain and no degree is excepted; at n=3 the same count would be 1,4,1 with the realization 0,0,1,1.
 - At n=3 the theorem excludes d=8855 as a possible nonclassical case, without asserting such a hypersurface exists.
-- Nothing here proves an n=2 theorem.
 - For n=3,d=1 the symmetric classical image is SO₆, and the ∧²SL₄ representation has dimension 6 with kernel μ₂; identifying its image with SL₄ fails.
 
 *Needs:* §4.7; §4.8; §5.4; §6.6.
@@ -1149,8 +1175,8 @@ One proof route is as follows. Compare two independent geometric generic fibres 
 
 **Checks.**
 
-- A family obtained by translating a fixed H must be excluded.
-- The result concerns constant tensor constituents, not all objects of the generated category.
+- For a family Y=H₀+s(x) translating a fixed H₀ by a nonconstant section s:X→A, the geometric generic object is the convolution of the skyscraper at s(η) with a constant K₀: K₀ is a constant simple object of ⟨K⟩⊗ on which G* acts irreducibly and nontrivially, so the conclusion fails and the nontranslation hypothesis is necessary.
+- For a constant family and two independent geometric generic points, pr₁⁎K and pr₂⁎K are isomorphic and the group of their sum is the diagonal copy of G, not G×G; the Goursat alternative lands in the graph case with the identity relation, which is the case the proof must exclude by the nontranslation hypothesis.
 - For a constant family and its distinguished object, the constituent is constant but G* acts irreducibly and nontrivially; this is the negative control for the nontranslation hypothesis.
 
 *Needs:* §2.4; §1.5; §2.1; ReductiveGroups Layer 7; MordellLawrenceVenkatesh §§0.22–0.24.
@@ -1182,10 +1208,10 @@ One proof route is as follows. Spread K to K′ on A×X with K′[dim X] pervers
 **Checks.**
 
 - A nonzero constant constituent violates the hypothesis and can produce invariants.
-- The exceptional translates are torsion because the relevant sheaves have geometric origin.
+- The exceptional translates are torsion because the relevant sheaves have geometric origin (§0.9).
 - For a constant skyscraper δ₀ the degree-zero twisted cohomology is F with invariant dimension 1 for every χ; removing its constant constituent is necessary.
 
-*Needs:* §0.4; §0.8; §2.4; §0.2; EtaleDualityAndPerverseSheaves §§2.1, 2.6–2.10; EtaleDualityAndPerverseSheaves §5.10; semisimple proper-direct-image contract.
+*Needs:* §0.4; §0.9; §2.4; §0.2; EtaleDualityAndPerverseSheaves §§2.1, 2.6–2.10; EtaleDualityAndPerverseSheaves §5.10; semisimple proper-direct-image contract.
 
 ### 7.4 Jordan’s theorem on finite linear groups
 
@@ -1242,7 +1268,6 @@ One proof route is as follows. First remove concentration failures for the c twi
 
 - For c=1 recover one simple normal subgroup.
 - The diagonal character tuple must lie in the exceptional set when c>1 and the same monodromy would otherwise act diagonally.
-- The theorem has no claim for a constant-up-to-translation family.
 - At c=2 a diagonal tuple gives diagonal monodromy on V⊕V, of derived dimension dim G*, whereas the required product has dimension 2dim G*.
 
 *Needs:* §7.2; §7.3; §7.5; §2.3; EtaleDualityAndPerverseSheaves §5.10; semisimple proper-direct-image contract.
@@ -1253,7 +1278,7 @@ For G*=SL₂ and c=2 the product has dimension 6. A diagonal copy has dimension 
 
 ### Dependencies
 
-§2.4; §1.5; §2.1; ReductiveGroups Layer 7; MordellLawrenceVenkatesh §§0.22–0.24; §1.3; §0.3; EtaleDualityAndPerverseSheaves §§3.3–3.5; EtaleCohomologyFoundations §§F.0.2, F.4.5; §0.4; §0.8; §0.2; EtaleDualityAndPerverseSheaves §§2.1, 2.6–2.10; EtaleDualityAndPerverseSheaves §5.10; Mathlib `Matrix.GeneralLinearGroup`; Mathlib `Subgroup.index`; Mathlib `Subgroup.Normal`; LieHighestWeight Layer 4; LieHighestWeight Layer 6; §2.3. The exact supplier contracts above retain their coefficient, dimension and finiteness hypotheses.
+§2.4; §1.5; §2.1; ReductiveGroups Layer 7; MordellLawrenceVenkatesh §§0.22–0.24; §1.3; §0.3; EtaleDualityAndPerverseSheaves §§3.3–3.5; EtaleCohomologyFoundations §§F.0.2, F.4.5; §0.4; §0.9; §0.2; EtaleDualityAndPerverseSheaves §§2.1, 2.6–2.10; EtaleDualityAndPerverseSheaves §5.10; Mathlib `Matrix.GeneralLinearGroup`; Mathlib `Subgroup.index`; Mathlib `Subgroup.Normal`; LieHighestWeight Layer 4; LieHighestWeight Layer 6; §2.3. The exact supplier contracts above retain their coefficient, dimension and finiteness hypotheses.
 
 ## Layer 8: Frobenius and Galois-uniform monodromy
 
@@ -1267,8 +1292,7 @@ One proof route is as follows. Let M be the number of cosets in S. The case M=0 
 
 **Checks.**
 
-- The Frobenius powers e_i may depend on χ and may be negative.
-- Do not apply the proof to arbitrary p-power characters.
+- For a character ψ of exact order p, the cyclotomic transport raises its values to the p-th power and makes them 1, so σψ, and hence every σ^eψ with e≥1, is the trivial character: σ^eψ=σ^fψ for all e,f≥1, and all p²ⁿ−1 characters of exact order p are collisions for the exponent pair (1,2). The finite-collision claim therefore fails for p-power characters, which is why only characters of order prime to p are asserted.
 - For E×E, the embedded curve a↦(2a,3a) has restriction equation χ₁²χ₂³=1; its first-axis inverse image contains all four characters in Π(E)[2], rather than just the trivial character. With two bad cosets and c=2 the box has 3²=9 tuples and at most 2·3=6 bad tuples, leaving at least 3 good ones.
 - On E³ take the embedded curve a↦(2a,3a,5a), with restriction equation χ₁²χ₂³χ₃⁵=1, so that the first-axis inverse image is Π(E)[2] while T_E={1} and E₁=Π(E)[2]. Let σ act by 3 on a cyclic group of characters of order 4, as for a scalar Frobenius of modulus 3 over a residue field with 9 elements, take M=1, the generator χ, and (e₂,e₃)=(1,0). Both e₁=0 and e₁=1 are bad, since 2+9+5=16 and 6+9+5=20 are divisible by 4, although σχ≠χ: in the additive notation χ−σχ has exponent 1−3≡2 modulo 4. It lies in E₁ as the nonzero value η=2, which the collision loci therefore exclude.
 
@@ -1285,7 +1309,7 @@ One proof route is as follows. Take the finite Galois/cyclotomic conjugate closu
 **Checks.**
 
 - For a simple elliptic curve, each proper torsion coset is a point, while the number of ℓ^r characters grows as ℓ^(2r).
-- Choosing a character generic only for one embedding is insufficient.
+- For E over Q, one exceptional point ψ of order 4 in one embedding and its complex conjugate in the other: the Galois and cyclotomic conjugates of ψ are characters of order 4, at most |GL₂(Z/4)|=96 of them, so among the 4^r characters of order dividing 2^r at least 4^r−96>0 avoid all conjugates once r≥4, and every character of exact order 2^r with r≥3 does so, since conjugation preserves the order.
 - On an elliptic curve, characters of order dividing 2³ number 64; three exceptional points cover at most 3 of them, leaving at least 61.
 
 *Needs:* §0.1; AbelianSchemesAndArithmeticModuli §A4.1.
@@ -1351,7 +1375,6 @@ One proof route is as follows. Use adjunction and the Layer 3 Euler calculation 
 
 - For d=1 the curve genus is 2, including the hyperelliptic Torelli case.
 - A positive-dimensional translation orbit cannot lie in this fixed |L|.
-- The Hodge-bundle-only comparison is insufficient; the polarized integral comparison requires the polarized integral H¹ comparison.
 - For a polarization with d=2, deg φ_L=d²=4; a translation class therefore contributes at most four Picard-fixed translates.
 
 *Needs:* §9.1; §3.1; AbelianSchemesAndArithmeticModuli §A2.4; AbelianSchemesAndArithmeticModuli §A5; AbelianSchemesAndArithmeticModuli §A6; StableReductionPartII §MC.4/fine-level-scheme; StableReductionPartII §MC.6/torelli-finite-fibres; polarized integral Jacobian contract; JacobianChallenge Layer F; JacobianChallengePartII §§2.1–2.4; relative pointed Albanese contract.
@@ -1388,12 +1411,11 @@ One proof route is as follows. Put Z_m=R_(V_m)⊂M×M. By §9.3(a) Z_m is closed
 
 **Checks.**
 
-- Quasi-finite is fibre finiteness, not global injectivity or properness.
-- Only Picard-fixed parameter spaces are in scope.
-- The n=2 proof uses Torelli and rigid Hom spaces, with no appeal to the n>2 simplicity lemma.
+- For d=1 the space H⁰(A,L) is one-dimensional, so |L| is a single divisor and M is a point or empty, and every fibre is finite trivially; for d=2, |L| is a line and M is a nonempty open subset of it when a smooth member exists.
+- If the parameter space were the Néron–Severi class of L, all translates H₀+x with x∈A would be parameters with the same polarized variation, and the fibre of the period map through H₀ would contain the n-dimensional translation orbit: the Picard-fixed parameter space is what makes finiteness possible, and translates preserving the Picard class are the finitely many x∈ker φ_L.
 - The descent Z_(m′)⊆Z_m uses transports, which commute with e=u∘t/r; for two identical one-dimensional rational Hodge summands the swap matrix sends the projector diag(1,0) to diag(0,1), so a relation defined by arbitrary Hodge isomorphisms of total cohomology would not descend.
 
-*Needs:* §9.1; §9.2; §9.3; §7.6; §4.6; ShimuraData §§3.1–3.4; AbelianSchemesAndArithmeticModuli §A2.4; ample-divisor Albanese, rational-map extension and translation-stabilizer quotient contracts.
+*Needs:* §9.1; §9.2; §9.3; §7.6; §4.6; ShimuraData §§3.1–3.4; AbelianSchemesAndArithmeticModuli §§A1.8(1) and A2.4; ample-divisor Albanese and translation-stabilizer quotient contracts.
 
 ### Examples
 
@@ -1401,7 +1423,7 @@ For an abelian surface, g(H)=1+d; d=1 gives genus 2 and Torelli applies also to 
 
 ### Dependencies
 
-AbelianSchemesAndArithmeticModuli §A2.4; AbelianSchemesAndArithmeticModuli §§A3.1–A3.5; AlgebraicModuliForArithmeticGeometry §§1.1–1.2, 2.1; ComplexComparisonPartII §§C5.2–C5.3; ShimuraData §§3.1–3.4; HodgeStructures L1, L3; bounded-norm orbit Hodge-locus contract; isogeny character/trace contract; §3.1; AbelianSchemesAndArithmeticModuli §A5; AbelianSchemesAndArithmeticModuli §A6; StableReductionPartII §MC.4/fine-level-scheme; StableReductionPartII §MC.6/torelli-finite-fibres; polarized integral Jacobian contract; JacobianChallenge Layer F; JacobianChallengePartII §§2.1–2.4; relative pointed Albanese contract; §7.6; §4.6; ample-divisor Albanese, rational-map extension and translation-stabilizer quotient contracts. The exact supplier contracts above retain their coefficient, dimension and finiteness hypotheses.
+AbelianSchemesAndArithmeticModuli §A2.4; AbelianSchemesAndArithmeticModuli §§A3.1–A3.5; AlgebraicModuliForArithmeticGeometry §§1.1–1.2, 2.1; ComplexComparisonPartII §§C5.2–C5.3; ShimuraData §§3.1–3.4; HodgeStructures L1, L3; bounded-norm orbit Hodge-locus contract; isogeny character/trace contract; §3.1; AbelianSchemesAndArithmeticModuli §A5; AbelianSchemesAndArithmeticModuli §A6; StableReductionPartII §MC.4/fine-level-scheme; StableReductionPartII §MC.6/torelli-finite-fibres; polarized integral Jacobian contract; JacobianChallenge Layer F; JacobianChallengePartII §§2.1–2.4; relative pointed Albanese contract; §7.6; §4.6; AbelianSchemesAndArithmeticModuli §A1.8(1); ample-divisor Albanese and translation-stabilizer quotient contracts. The exact supplier contracts above retain their coefficient, dimension and finiteness hypotheses.
 
 ## Downstream consumers
 
@@ -1413,10 +1435,13 @@ All locators refer to the versions listed here. Source line references identify 
 
 - LS: Brian Lawrence and Will Sawin, [The Shafarevich conjecture for hypersurfaces in abelian varieties](https://arxiv.org/abs/2004.09046v5), arXiv v5 (2025), §§2–4 and Appendices B–C, PDF pp.14–38 and 93–118. Published in Annals of Mathematics 202 (2025), 857–1000; the locators here use the preprint numbering.
 - KW: Thomas Krämer and Rainer Weissauer, [Vanishing theorems for constructible sheaves on abelian varieties](https://arxiv.org/abs/1111.4947v6), arXiv v6 (2015), Theorem 1.1, Proposition 10.1, Lemma 11.2 and §§12–13.
-- K1: Thomas Krämer, [Characteristic cycles and the microlocal geometry of the Gauss map, I](https://arxiv.org/abs/1604.02389v3), arXiv v3 (2021), Theorem 1.7 and Corollary 1.10, pp.10–12.
-- K2: Thomas Krämer, [Characteristic cycles and the microlocal geometry of the Gauss map, II](https://arxiv.org/abs/1807.01929v2), arXiv v2 (2019), Definitions 1.2.2 and 2.2.1, Theorem 2.3.1, Lemma 5.2.2 and Proposition 6.1.1.
+- K1: Thomas Krämer, [Characteristic cycles and the microlocal geometry of the Gauss map, I](https://arxiv.org/abs/1604.02389v3), arXiv v3 (2021), Theorems 1.5 and 1.7, Corollaries 1.6 and 1.10, pp.6–12, Proposition 3.1, Theorems 3.2 and 3.4 and Lemma 3.5, pp.22–27, Theorem 5.10, p.47.
+- K2: Thomas Krämer, [Characteristic cycles and the microlocal geometry of the Gauss map, II](https://arxiv.org/abs/1807.01929v2), arXiv v2 (2019), Definitions 1.2.2 and 2.2.1, Proposition 1.3.3, Theorems 2.1.1, 2.2.3 and 2.3.1 with Remark 2.3.2, Corollaries 2.1.2, 2.2.2 and 2.2.4, Lemma 5.2.2 and Proposition 6.1.1.
 - EHS: Hélène Esnault, Phùng Hô Hai and Xiaotao Sun, [On Nori’s fundamental group scheme](https://page.mi.fu-berlin.de/esnault/preprints/helene/83nori070514c.pdf), author version (2007), Appendix A, Theorem A.1, pp.20–21.
 - W: Rainer Weissauer, [A remark on rigidity of BN-sheaves](https://arxiv.org/abs/1111.6095v1), arXiv v1 (2011), unnumbered proposition, pp.1–2.
 - CDK: Eduardo Cattani, Pierre Deligne and Aroldo Kaplan, [On the locus of Hodge classes](https://arxiv.org/abs/alg-geom/9402009v1), arXiv v1 (1994), Theorem 1.1 and Corollary 1.3, p.2.
 - JV: J. S. Milne, [Jacobian varieties](https://www.jmilne.org/math/xnotes/JVs.pdf), corrected author notes (2021), Proposition 6.1, pp.19–20, and Theorem 12.1, p.38.
 - BR: Emmanuel Breuillard, [An exposition of Jordan’s original proof of his theorem on finite subgroups of GL_n(C)](https://www.imo.universite-paris-saclay.fr/~emmanuel.breuillard/Jordan.pdf), undated author notes, Theorem 1.1, p.1, and §§2–4, pp.2–8.
+- BSS: Bhargav Bhatt, Christian Schnell and Peter Scholze, [Vanishing theorems for perverse sheaves on abelian varieties, revisited](https://arxiv.org/abs/1702.06395), arXiv v1 (2017), Theorem 1.1, p.1, Lemma 2.6, Proposition 2.7, Lemma 2.8, Remark 2.9 and Corollary 2.10, pp.4–5. Published in Selecta Mathematica 24 (2018), 63–84; not collated.
+- Sch: Christian Schnell, [Holonomic D-modules on abelian varieties](https://arxiv.org/abs/1307.1937v1), arXiv v1 (2013), Definition 2.3, Theorems 3.2 and 4.1, Theorems 7.3 and 7.6 and Corollary 7.5, §10 with Theorems 10.3 and 10.5, Theorems 15.1 and 16.1, Proposition 16.2, Definition 17.3, Theorem 17.4 and Lemmas 17.5–17.6, Theorem 19.1, Proposition 19.2, Theorem 21.1, Corollary 21.5, Proposition 22.1, Proposition 25.1 and Corollary 25.3. Published in Publications mathématiques de l'IHÉS 121 (2015), 1–55, with different section numbering; not collated.
+- Sim: Carlos Simpson, [Subspaces of moduli spaces of rank one local systems](https://doi.org/10.24033/asens.1675), Annales scientifiques de l'École normale supérieure 26 (1993), 361–401, Theorem 3.1(c), Corollary 3.2, Theorem 3.3, Proposition 3.4 and Theorem 6.1; journal pagination.
