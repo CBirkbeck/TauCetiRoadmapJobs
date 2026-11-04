@@ -4890,6 +4890,12 @@
       "supplier": "SchemeAndStackFoundations",
       "section": "0.20",
       "needs": "For an integral scheme X and a finite field extension L/k(X), the native relative normalization Nor_L(X) is normal, and the canonical map Spec L → Nor_L(X) identifies L with its function field compatibly with the specified embedding of k(X)."
+    },
+    {
+      "slug": "kummer-etale-source-descent",
+      "supplier": "CrystallineCohomology",
+      "section": "CR.5:log-algebra.3",
+      "needs": "For morphisms X′ → X → S of fs log schemes with X′ → X surjective and Kummer étale (equivalently surjective, log étale and exact) and X′ → S log smooth, the morphism X → S is log smooth (ilo14, Exposé X, Theorem 1.11, p. 148)."
     }
   ],
   "sourceIssues": [
