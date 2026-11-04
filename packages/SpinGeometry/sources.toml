@@ -43,3 +43,16 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled book; cited by its locator without the text"
 cited_for = ["G4.3, G4.4, G6.2, G6.3"]
+
+[[source]]
+id = "kirby"
+locator_scheme = "page"
+locator = "Chapter IV, pp. 33-34"
+url = "https://math.berkeley.edu/~kirby/papers/Kirby%20-%20The%20topology%20of%204-manifolds%20-%20MR1001966.pdf"
+fetched_from = "https://math.berkeley.edu/~kirby/papers/Kirby%20-%20The%20topology%20of%204-manifolds%20-%20MR1001966.pdf"
+fetched_at = "2026-11-03T20:45:51Z"
+sha256 = "e53253aea53661ad3f0273f8d39a4f8812ae9f5e260c14ed8d849a6d9d7cf1a5"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["G4.4a"]
