@@ -1,5 +1,7 @@
-import Mathlib
-import TauCeti.AlgebraicGeometry.AbelianVariety.Albanese
+module
+
+public import Mathlib
+public import TauCeti.AlgebraicGeometry.AbelianVariety.Albanese
 
 /-!
 # Heights, rational points and obstructions, Part II: target signatures
