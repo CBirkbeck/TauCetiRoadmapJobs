@@ -98,7 +98,7 @@ Consume §IG.5.7's target *Finite-cover criteria for full monodromy image*: a no
 
 ### From TauCetiRoadmap.DeligneWeightsAndPurity
 
-Consume §8.24's `dmStack_etaleCohomology`, `dmStack_etaleCohomology_atlas`, `dmStack_etaleCohomology_refinement`, `dmStack_etaleCohomology_pullback` and `dmStack_etaleCohomology_frobenius` for finite-type DM stacks over finite fields with ℓ≠p. This is the rational constructible coefficient category; finite-rank lattice descent with its monodromy dictionary and the proper/coarse maps used here are §§7.4–7.6, and perverse descent with the proper quasi-finite comparison is §7.7.
+Consume the stack clause of §8.24: for a finite-type Deligne–Mumford stack over a finite field with ℓ≠p, the rational constructible étale coefficient category built by effective étale descent from scheme atlases, with its atlas-descent equivalence, independence of the atlas with composition coherence, pullback and Frobenius functoriality, and finite-dimensionality of proper rational cohomology. This is the rational constructible coefficient category consumed here; finite-rank lattice descent with its monodromy dictionary and the proper/coarse maps used here are §§7.4–7.6, and perverse descent with the proper quasi-finite comparison is §7.7.
 
 ### From TauCetiRoadmap.ProfiniteCohomology and TauCetiRoadmap.RepresentationTheory/SchurWeyl
 
@@ -257,7 +257,7 @@ For A=ℤ/4,n=2,f=2, t⁴=0, retaining the nilpotent coefficient. At k<n the quo
 
 ([TV17](https://arxiv.org/pdf/1410.1164v2) line 707 — §3.1 pp.14–16, character grading before Lemma 3.7 and finite chart of Corollary 3.13, P=N)
 
-*Needs:* Mathlib AdjoinRoot.eval₂_root.
+*Needs:* `AdjoinRoot.eval₂_root`.
 
 ### 1.7 Affine root-chart coaction
 
@@ -295,7 +295,7 @@ The map exists for f=0, nonreduced bases and the zero ring.
 
 ([TV17](https://arxiv.org/pdf/1410.1164v2) line 707 — §3.1 pp.14–16, character grading before Lemma 3.7 and finite chart of Corollary 3.13, P=N)
 
-*Needs:* `AdjoinRoot`; `AdjoinRoot.eval₂_root`; `AdjoinRoot.liftAlgHom`; `AdjoinRoot.algHom_ext`; `MonoidAlgebra.single`; `MonoidAlgebra.single_pow`; `Algebra.TensorProduct.includeRight`; `TauCeti.RootsOfUnityGroup.generator`; `MonoidAlgebra.instHopfAlgebra`; Mathlib AdjoinRoot.eval₂_root; Mathlib MonoidAlgebra.single_pow; `Algebra.TensorProduct.algebraMap_apply'`; `Algebra.TensorProduct.tmul_pow`.
+*Needs:* `AdjoinRoot`; `AdjoinRoot.eval₂_root`; `AdjoinRoot.liftAlgHom`; `AdjoinRoot.algHom_ext`; `MonoidAlgebra.single`; `MonoidAlgebra.single_pow`; `Algebra.TensorProduct.includeRight`; `TauCeti.RootsOfUnityGroup.generator`; `MonoidAlgebra.instHopfAlgebra`; `Algebra.TensorProduct.algebraMap_apply'`; `Algebra.TensorProduct.tmul_pow`.
 
 The headline signature uses `rootChart`, `rootChartCoaction`.
 
@@ -317,9 +317,9 @@ For the section-unit API use the bilinear tensor-section/unit contract Algebraic
 
 **Checks.**
 
-- c_0=id_O.
-- c_1 equals the right-unit isomorphism O⊗O≅O.
-- For a section of O with coefficient z, its square transported by c_2 has coefficient z², including nilpotent z.
+- Over Spec ℤ, the cube 2⊗2⊗2 of the section 2 evaluates under c_3 to 8; negating the cube coordinate would give −8.
+- Over Spec ℤ[ε]/(ε²), the square (1+ε)⊗(1+ε) evaluates under c_2 to 1+2ε, not to 1: a coordinate that first augmented ε to 0 would lose 2ε.
+- Over Spec ℤ/4, the square 2⊗2 of the nonzero section 2 evaluates under c_2 to 0: a coordinate that acted as the identity on coefficients would return 2.
 
 The exponent-one comparison is the right-unit map, not an arbitrarily chosen scalar multiple.
 
@@ -397,7 +397,7 @@ At n=1 the root is v, so the formula retains v⁻¹; the same identity holds in 
 
 ([TV17](https://arxiv.org/pdf/1410.1164v2) line 778 — §3.1 pp.14–16, character grading and Corollary 3.13, P=N; [STACKS-KUMMER](https://stacks.math.columbia.edu/tag/040N) line 1442 — Tag 040N, Lemma 59.28.3, unit-parameter finite-free cover and proof)
 
-*Needs:* Mathlib AdjoinRoot.eval₂_root.
+*Needs:* `AdjoinRoot.eval₂_root`.
 
 ### 1.14 Rowwise root coefficient permutation
 
@@ -525,7 +525,7 @@ A proof route uses the following steps. The framed coefficient equation gives up
 
 ([STACKS-KUMMER](https://stacks.math.columbia.edu/tag/040N) line 1455 — Lemma 59.28.3, proof, monic root algebra; the displayed arrow identity follows by evaluating the quotient lift)
 
-*Needs:* §1.4 (framed root coordinates); `AdjoinRoot.liftAlgHom`; Mathlib AdjoinRoot.eval₂_root.
+*Needs:* §1.4 (framed root coordinates); `AdjoinRoot.liftAlgHom`; `AdjoinRoot.eval₂_root`.
 
 ### 1.21 First projection of the normalization pasting map
 
@@ -785,7 +785,7 @@ A proof route uses the following steps. Use a reducible type alias for algebra h
 
 ([AffineRootPointGroupoid-rtOQ9t](https://stacks.math.columbia.edu/tag/022Y) line 966 — Stacks Section39.10 Definitions39.10.1–2 and Lemma39.10.3, complete displayed text and comments)
 
-*Needs:* Mathlib AdjoinRoot.eval₂_root.
+*Needs:* `AdjoinRoot.eval₂_root`.
 
 ### 1.36 The root-point action groupoid
 
@@ -864,7 +864,7 @@ A proof route uses the following steps. Apply p to the polynomial quotient root 
 
 ([AffineRootPointGroupoid-rtOQ9t](https://stacks.math.columbia.edu/tag/022Y) line 966 — Stacks Section39.10 Definitions39.10.1–2 and Lemma39.10.3, complete displayed text and comments)
 
-*Needs:* §1.35 (algebra-valued finite root points); Mathlib AdjoinRoot.eval₂_root.
+*Needs:* §1.35 (algebra-valued finite root points); `AdjoinRoot.eval₂_root`.
 
 ### 1.40 The constructed point has the specified root
 
@@ -947,7 +947,7 @@ A proof route uses the following steps. Map the object equation, section equatio
 
 ### 1.44 The adjoined normalization unit
 
-For positive n and p=(u,y), use the D=AffineRing(u,n)=B[T]/(T^n-u). Bundle its distinguished root T as a unit, with inverse u inverse times T^(n-1).
+For positive n and p=(u,y), use D=B[T]/(Tⁿ−u). Bundle its distinguished root T as a unit, with inverse u inverse times T^(n-1).
 
 Use arbitrary commutative A and commutative A-algebras B,C in a common universe; arbitrary section f. Algebra change works for every natural n. Normalization, its basis and faithful flatness use NeZero n. Finite presentation works for every natural n. No exponent-invertibility, reducedness, nontriviality, section-regularity, flatness or injectivity assumption on the original algebras or maps. This is the affine normalization of chosen-frame coordinates. Existence of a line-bundle frame and its sheaf comparison, scheme-cover packaging, fppf stackification, effective descent and infinite genuine 2-limits are constructed in the indicated layers.
 
@@ -1089,7 +1089,7 @@ At i=0 the image is 1⊗1; at i=n it is 1⊗f even when n is zero in A.
 
 ([TV17](https://arxiv.org/pdf/1410.1164v2) line 707 — §3.1 pp.14–16, character grading before Lemma 3.7 and finite chart of Corollary 3.13, P=N)
 
-*Needs:* §1.7 (affine root-chart coaction); `MonoidAlgebra.single_pow`; §1.23 (root image of the universal coaction); Mathlib MonoidAlgebra.single_pow; `Algebra.TensorProduct.tmul_pow`.
+*Needs:* §1.7 (affine root-chart coaction); `MonoidAlgebra.single_pow`; §1.23 (root image of the universal coaction); `Algebra.TensorProduct.tmul_pow`.
 
 ### 1.53 Counit law for the root coaction
 
@@ -1201,7 +1201,7 @@ Counts the killed source columns at f=0, independently of characteristic.
 
 ([TV17](https://arxiv.org/pdf/1410.1164v2) line 778 — §3.1 pp.14–16, character grading and Corollary 3.13, P=N)
 
-*Needs:* §1.27 (wrapping columns and lower coordinates); Mathlib Finset.card_product_filter_lt; Nat.choose_two_right; `Fintype.card_congr`.
+*Needs:* §1.27 (wrapping columns and lower coordinates); `Finset.card_product_filter_lt`; `Nat.choose_two_right`; `Fintype.card_congr`.
 
 ### 1.60 The embedded power identification is normalized
 
@@ -1356,7 +1356,7 @@ A proof route uses the following steps. Use unit extensionality and the distingu
 
 ([FramedRoot-codex-rtOQ9t](https://sites.math.washington.edu/~jarod/moduli.pdf) line 7989 — Alper author draft 5 January 2026, Example 4.9.22 and Exercise 4.9.23(c,d), printed pp.159–160; elementary calculation from the displayed quotient relation)
 
-*Needs:* §1.44 (the adjoined normalization unit); Mathlib AdjoinRoot.eval₂_root.
+*Needs:* §1.44 (the adjoined normalization unit); `AdjoinRoot.eval₂_root`.
 
 ### 1.71 Flatness of the normalization scheme map
 
@@ -1524,7 +1524,7 @@ The n=0 section is one under the unit comparison. The comparison retains its dir
 
 ([AGV08](https://arxiv.org/pdf/math/0603151v2) line 2404 — Appendix B.1–B.2, printed pp. 52–54 Root identifications require transporting tensor powers across a test-scheme morphism.)
 
-*Needs:* AlgebraicVectorBundles L0A–L0B; AlgebraicVectorBundles L0A; §1.25 (isomorphism transport of section powers); SchemeAndStackFoundations §3.4; SchemeAndStackFoundations §§3.3–3.7; pullback.
+*Needs:* AlgebraicVectorBundles L0A–L0B; AlgebraicVectorBundles L0A; §1.25 (isomorphism transport of section powers); SchemeAndStackFoundations §3.4; SchemeAndStackFoundations §§3.3–3.7; `TauCeti.AlgebraicGeometry.InvertibleSheaf.pullback`.
 
 ### 1.81 Root objects with chosen line frames
 
@@ -2303,7 +2303,7 @@ The commutative-ring square with vertices B,C,Dp,D(phi p), sides phi and both co
 
 ([STACKS-KUMMER](https://stacks.math.columbia.edu/tag/040N) line 1455 — Lemma 59.28.3, proof, monic root algebra; the displayed arrow identity follows by evaluating the quotient lift; [NormalizationThree-codex-rtOQ9t](https://stacks.math.columbia.edu/tag/01JO) line 1383 — Stacks Section26.17, tag01JO, Lemma26.17.2 and its proof; affine fibre-product construction)
 
-*Needs:* §1.96 (change of algebra preserves the normalization root); §1.97 (change of algebra has the exact coefficient map); Mathlib AdjoinRoot.eval₂_root; `AdjoinRoot.lift`; `AdjoinRoot.lift_of`; `AdjoinRoot.lift_root`; `AdjoinRoot.lift_comp_of`; `AdjoinRoot.ringHom_ext`; `CategoryTheory.Limits.PushoutCocone.IsColimit.mk`; `CategoryTheory.IsPushout.of_isColimit`.
+*Needs:* §1.96 (change of algebra preserves the normalization root); §1.97 (change of algebra has the exact coefficient map); `AdjoinRoot.eval₂_root`; `AdjoinRoot.lift`; `AdjoinRoot.lift_of`; `AdjoinRoot.lift_root`; `AdjoinRoot.lift_comp_of`; `AdjoinRoot.ringHom_ext`; `CategoryTheory.Limits.PushoutCocone.IsColimit.mk`; `CategoryTheory.IsPushout.of_isColimit`.
 
 ### 1.126 The inverse associativity routes agree
 
@@ -2358,7 +2358,7 @@ The n=1 root functor has the identity-pair groupoid behaviour. A four-map chain 
 
 ([AGV08](https://arxiv.org/pdf/math/0603151v2) line 2404 — Appendix B.1–B.2, printed pp. 52–54; [TV17](https://arxiv.org/pdf/1410.1164v2) line 631 — §3, Remark 3.1 and Proposition 3.4, pp. 12–13; Corollary 3.13, p. 16 Proposition 3.4 gives finite root base-change compatibility in the logarithmic setting; it motivates, rather than supplies in Lean, the pair-level comparison here.)
 
-*Needs:* §1.102 (pullback of root objects and arrows); §1.80 (section-compatible pullback of root tensor powers); SchemeAndStackFoundations §3.4; pullback Id; pullback Comp.
+*Needs:* §1.102 (pullback of root objects and arrows); §1.80 (section-compatible pullback of root tensor powers); SchemeAndStackFoundations §3.4; `TauCeti.AlgebraicGeometry.InvertibleSheaf.pullbackId`; `TauCeti.AlgebraicGeometry.InvertibleSheaf.pullbackComp`.
 
 ### 1.129 Equivalence of framed roots and coordinate roots
 
@@ -3884,11 +3884,11 @@ Root pseudofunctor coherence proves identity/composition compatibility. The norm
 
 For a fixed underlying framed root p and a finite chain of arbitrary test-algebra maps B_0→…→B_m, m≥0, use the underlying normalization change maps to compare the normalization of the fully changed p with every parenthesization of the iterated chosen scheme pullback of its original cover. The comparison is the unique isomorphism with the prescribed projections to Spec B_m and the original normalization scheme. It agrees with the direct underlying normalizationBaseChangeIso for the composite chain after each canonical pullback collapse. All forward/inverse projection formulas, naturality for every labelled framed arrow, insertion of identities and composition of chains agree; for n≥1 the normalized-chart triangle agrees as well. The scheme comparison alone allows n=0. This extends the two- and three-step specifications rather than restating them.
 
-No flatness or injectivity is imposed on any B_i→B_(i+1). Use the chosen pullbacks and their associator/pasting isomorphisms; no definitional equality of different chosen limits is asserted. For n=0 no fppf-cover or chart-normalization claim is made. Scheme-level arrow naturality uses Layer 1’s normalization-change-arrow, valid for every natural exponent. Its bundled normalization-base-change-natural-iso is used only for n≥1.
+No flatness or injectivity is imposed on any B_i→B_(i+1). Use the chosen pullbacks and their associator/pasting isomorphisms; no definitional equality of different chosen limits is asserted. For n=0 no fppf-cover or chart-normalization claim is made. Scheme-level arrow naturality uses §1.20 (normalization on framed arrows), valid for every natural exponent. The bundled natural isomorphism of §1.209 (the natural base-change isomorphism of normalization functors) is used only for n≥1.
 
 A proof route uses the following steps. Compose the underlying normalization-change algebra maps. Identity and composition are specified there, so coefficients and the adjoined root identify the direct composite map.
 Inductively paste the Cartesian coefficient squares and use the pullback universal property to form the comparison to each chosen bracketing.
-Every comparison has the same two composite projections. Repeated pullback.hom_ext proves equality of comparison morphisms, inverses and all rebracketing diagrams. For every n, Layer 1’s normalization-change-arrow proves the arrow square before taking Spec: coefficients follow the test-algebra map and the target adjoined root maps to the source adjoined root times the inverse unit label. Applying Spec and comparing both pullback projections proves arrow naturality. For n≥1 this agrees with Layer 1’s bundled natural isomorphism.
+Every comparison has the same two composite projections. Repeated pullback.hom_ext proves equality of comparison morphisms, inverses and all rebracketing diagrams. For every n, §1.20 (normalization on framed arrows) proves the arrow square before taking Spec: coefficients follow the test-algebra map and the target adjoined root maps to the source adjoined root times the inverse unit label. Applying Spec and comparing both pullback projections proves arrow naturality. For n≥1 this agrees with Layer 1’s bundled natural isomorphism.
 For n≥1 the underlying chart triangle and the same projection characterization carry the normalized chart map through the finite composite. The proof never cancels the root section.
 
 m=0 gives the identity comparison, after the empty-chain convention. m=2 and m=3 reproduce the underlying comparisons on both projections and both inverse projections. For a chain ℤ/4→ℤ/2→ℤ/2→ℤ/2→ℤ/2 all formulas hold although nilpotent sections and the −1 stabilizer collapse at its first map. The n=0 algebra comparison remains valid without being a cover. At n=0 over ℚ, with u=f=2, the normalization algebra is ℚ[T]/(1−2)=0. Its empty spectrum still satisfies the base-change comparison, but cannot cover Spec ℚ.
@@ -4212,7 +4212,7 @@ Zariski covers are fppf and the fppf precoverage is closed under composition and
 
 ([AGV08](https://arxiv.org/pdf/math/0603151v2) line 2404 — Appendix B.1–B.2, printed pp. 52–54; [STACKS-KUMMER](https://stacks.math.columbia.edu/tag/040N) line 1442 — Lemma 59.28.3, Tag 040N, complete proof; online, no fixed pagination For positive n the unit-root algebra is finite free of rank n and gives a faithfully flat finitely presented cover. Applying that cover after line trivialization is our pair-level deduction.)
 
-*Needs:* of Is Invertible; §1.102 (pullback of root objects and arrows); §1.129 (equivalence of framed roots and coordinate roots); §1.231 (the affine chart as root data); §1.219 (coordinates commute with arbitrary test-algebra change); §1.94 (the singleton fppf normalization cover); §1.135 (an isomorphism to the normalized chart); zariski Precoverage le fppf Precoverage; affine Cover.
+*Needs:* `TauCeti.SheafOfModules.LocalTrivializations.ofIsInvertible`; §1.102 (pullback of root objects and arrows); §1.129 (equivalence of framed roots and coordinate roots); §1.231 (the affine chart as root data); §1.219 (coordinates commute with arbitrary test-algebra change); §1.94 (the singleton fppf normalization cover); §1.135 (an isomorphism to the normalized chart); `AlgebraicGeometry.Scheme.zariskiPrecoverage_le_fppfPrecoverage`; `AlgebraicGeometry.Scheme.affineCover`.
 
 ### 1.242 Unit-parameter algebra inverse
 
@@ -4262,7 +4262,7 @@ Includes i=0, i≥n and n=1; it does not choose representatives or divide by n.
 
 ([TV17](https://arxiv.org/pdf/1410.1164v2) line 778 — §3.1 pp.14–16, character grading and Corollary 3.13, P=N; [STACKS-KUMMER](https://stacks.math.columbia.edu/tag/040N) line 1442 — Tag 040N, Lemma 59.28.3, unit-parameter finite-free cover and proof)
 
-*Needs:* §1.232 (unit-chart inverse character); §1.233 (unit-chart inverse right factor); Mathlib MonoidAlgebra.single_pow; `Algebra.TensorProduct.tmul_pow`; `Algebra.TensorProduct.tmul_mul_tmul`.
+*Needs:* §1.232 (unit-chart inverse character); §1.233 (unit-chart inverse right factor); `MonoidAlgebra.single_pow`; `Algebra.TensorProduct.tmul_pow`; `Algebra.TensorProduct.tmul_mul_tmul`.
 
 ### 1.245 The inverse three-step comparison equals the direct inverse
 
@@ -4397,7 +4397,7 @@ Every descent object is recovered with its section and power identification. D_U
 
 (STACKS-AFFINE-DESCENT line 807, Proposition 35.5.2, tag 023T, and line 1011, Lemma 35.7.6, tag 05B2; tag pages, no fixed pagination; Effective descent includes noninvertible module morphisms; finite locally free rank is fpqc local. Restricting these statements and the tensor comparison yields this root-specific equivalence.)
 
-*Needs:* §2.1 (root stacks of line bundles and sections); §1.128 (coherent root pullback on the scheme site); SchemeAndStackFoundations §§1.18–1.23; SchemeAndStackFoundations §1.1; SchemeAndStackFoundations §3.4; `AlgebraicGeometry.Scheme.fpqcTopology`; pullback; `AlgebraicGeometry.Scheme.fppfTopology`.
+*Needs:* §2.1 (root stacks of line bundles and sections); §1.128 (coherent root pullback on the scheme site); SchemeAndStackFoundations §§1.18–1.23; SchemeAndStackFoundations §1.1; SchemeAndStackFoundations §3.4; `AlgebraicGeometry.Scheme.fpqcTopology`; `TauCeti.AlgebraicGeometry.InvertibleSheaf.pullback`; `AlgebraicGeometry.Scheme.fppfTopology`.
 
 ### 2.6 Coefficient equivalence with the affine invariant algebra
 
@@ -4441,7 +4441,7 @@ The universal property gives the equivalence and invertible modifications; it al
 
 The ℤ/4,f=3,n=2 root is a global object of the associated stack even though Q(B) is empty. The zero-section automorphism sheaf is μ_n and persists after stackification. Nonzero nilpotent root sections are not replaced by zero-section data. The wild characteristic p dual-number unit 1+ε survives as an arrow when ε^2=0 and n=p.
 
-([AGV08](https://arxiv.org/pdf/math/0603151v2) line 2404 — Appendix B.1–B.2, printed pp. 52–54; [STACKIFICATION](https://stacks.math.columbia.edu/tag/02ZO) line 825 — Lemmas 8.9.1–8.9.3, §8.9 Tag 02ZO and Lemma 8.9.1 Tag 02ZP; online, no fixed pagination Stackification retains sheafified Hom sets and adds locally represented objects; its universal property gives the comparison.)
+([AGV08](https://arxiv.org/pdf/math/0603151v2) line 2404 — Appendix B.1–B.2, printed pp. 52–54; [STACKIFICATION](https://stacks.math.columbia.edu/tag/02ZO) line 825 — Lemmas 8.9.1–8.9.3, §8.8 Tag 02ZO and Lemma 8.9.1 Tag 02ZP; online, no fixed pagination Stackification retains sheafified Hom sets and adds locally represented objects; its universal property gives the comparison.)
 
 *Needs:* SchemeAndStackFoundations §1.1; §1.128 (coherent root pullback on the scheme site); §1.231 (the affine chart as root data); §1.241 (every root has local normalized affine coordinates); §1.219 (coordinates commute with arbitrary test-algebra change); §2.4 (fpqc descent of finite root data); SchemeAndStackFoundations §§1.18–1.23; `AlgebraicGeometry.Scheme.fppfTopology`.
 
@@ -4458,7 +4458,7 @@ On triple overlaps compose the identity root arrows; full faithfulness recovers 
 
 Over ℚ,n=2,b=−1 the normalized raw chart equations f=1 and f′=−1 have different ℚ-points but their associated stacks describe the same pair through the two target frames. At z=0 two roots R_1,R_2 induce different μ_n modification labels although both section maps give 0. A four-open refinement gives the same descended comparison after the specified modifications.
 
-([AGV08](https://arxiv.org/pdf/math/0603151v2) line 2404 — Appendix B.1–B.2, printed pp. 52–54 B.1–B.2 express the root moduli problem independently of trivializations. [STACKIFICATION](https://stacks.math.columbia.edu/tag/02ZO) line 825 — Lemmas 8.9.1–8.9.3, §8.9 Tag 02ZO and Lemma 8.9.1 Tag 02ZP; online, no fixed pagination)
+([AGV08](https://arxiv.org/pdf/math/0603151v2) line 2404 — Appendix B.1–B.2, printed pp. 52–54 B.1–B.2 express the root moduli problem independently of trivializations. [STACKIFICATION](https://stacks.math.columbia.edu/tag/02ZO) line 825 — Lemmas 8.9.1–8.9.3, §8.8 Tag 02ZO and Lemma 8.9.1 Tag 02ZP; online, no fixed pagination)
 
 *Needs:* §1.150 (coordinates under changes of source and target frames); §2.7 (affine action charts stackify to root objects); §1.241 (every root has local normalized affine coordinates); §1.135 (an isomorphism to the normalized chart); SchemeAndStackFoundations §§1.18–1.23.
 
@@ -4492,7 +4492,7 @@ Underlying coherent lift maps satisfy triangle/pentagon, hence so do their root 
 
 The site being compared must be named, not silently enlarged. Unit labels, including stabilizers, are transported bijectively on each matched test object. On a matched test scheme the inverse must recover any enlarged invertible root line up to isomorphism, not only lines presented as lifts; this is the essential-surjectivity requirement of gap:invertible-sheaf-universe-lifts, over the matched site of gap:coherent-site-universe-lifts.
 
-([AGV08](https://arxiv.org/pdf/math/0603151v2) line 2404 — Appendix B.1–B.2, printed pp. 52–54; [STACKIFICATION](https://stacks.math.columbia.edu/tag/02ZO) line 825 — Lemmas 8.9.1–8.9.3, §8.9 Tag 02ZO and Lemma 8.9.1 Tag 02ZP; online, no fixed pagination)
+([AGV08](https://arxiv.org/pdf/math/0603151v2) line 2404 — Appendix B.1–B.2, printed pp. 52–54; [STACKIFICATION](https://stacks.math.columbia.edu/tag/02ZO) line 825 — Lemmas 8.9.1–8.9.3, §8.8 Tag 02ZO and Lemma 8.9.1 Tag 02ZP; online, no fixed pagination)
 
 *Needs:* gap:coherent-site-universe-lifts; gap:invertible-sheaf-universe-lifts; §1.128 (coherent root pullback on the scheme site); §1.129 (equivalence of framed roots and coordinate roots); §1.219 (coordinates commute with arbitrary test-algebra change); §2.7 (affine action charts stackify to root objects); SchemeAndStackFoundations §0.9; SchemeAndStackFoundations §§1.18–1.23.
 
@@ -4559,7 +4559,7 @@ At a wild branch point over 𝔽_p the stack is algebraic with finite nonreduced
 
 ([AGV08](https://arxiv.org/pdf/math/0603151v2) line 2431 — Appendix B.2, pp.53–54)
 
-*Needs:* §2.1 (the supplier rootStack over algebraic stacks); §2.11 (coherent arbitrary base change of the comparison); SchemeAndStackFoundations §1.21 (the affine root quotient); §2.13 (a smooth presentation valid for wild roots); SchemeAndStackFoundations §§1.18–1.23; free adjoin Root; finite adjoin Root; `AdjoinRoot.powerBasis'`.
+*Needs:* §2.1 (the supplier rootStack over algebraic stacks); §2.11 (coherent arbitrary base change of the comparison); SchemeAndStackFoundations §1.21 (the affine root quotient); §2.13 (a smooth presentation valid for wild roots); SchemeAndStackFoundations §§1.18–1.23; `Polynomial.Monic.free_adjoinRoot`; `Polynomial.Monic.finite_adjoinRoot`; `AdjoinRoot.powerBasis'`.
 
 ### 2.16 The relative coarse space of roots
 
@@ -4574,7 +4574,7 @@ For a stack base, apply the scheme statement to each T→X and use the compariso
 
 For X=Spec 𝔽_p and s=0,n=p, the full nonreduced fibre still has coarse space Spec 𝔽_p. For X=BG_m and s=1 the projection is the identity of BG_m; the assertion is relative and does not manufacture an absolute algebraic-space coarse target. For A=ℤ/4,n=2,f=0 and base change A→𝔽₂, the invariant algebra remains the new coefficient ring; there is no averaging by 1/2.
 
-([AOV08](https://www.numdam.org/item/10.5802/aif.2378.pdf) line 906 — Proposition 2.7, p.1067; Theorem 3.2, p.1077; Corollaries 3.3–3.4 and proof, pp.1078–1079 Diagonalizable groups are linearly reductive even in wild characteristic. For tame stacks coarse spaces commute with arbitrary base change. [AGV08](https://arxiv.org/pdf/math/0603151v2) line 2431 — Appendix B.2, pp.53–54)
+([AOV08](https://www.numdam.org/item/10.5802/aif.2378.pdf) line 454 — Proposition 2.7 and its proof, p.1067; line 910 — Theorem 3.2, p.1077; line 924 — Corollary 3.3 and its proof, pp.1078–1079 Diagonalizable groups are linearly reductive even in wild characteristic. For tame stacks coarse spaces commute with arbitrary base change. [AGV08](https://arxiv.org/pdf/math/0603151v2) line 2431 — Appendix B.2, pp.53–54)
 
 *Needs:* §2.14 (algebraicity and finite relative diagonal); SchemeAndStackFoundations §1.21 (the affine root quotient); §2.11 (coherent arbitrary base change of the comparison); §2.6 (coefficient equivalence with the affine invariant algebra); SchemeAndStackFoundations §§1.18–1.23.
 
@@ -4593,7 +4593,7 @@ For X=𝔸¹_𝔽_p,D=(x),n=p, the smooth atlas is Spec 𝔽_p[z,q,q^−1] and i
 
 ([AGV08](https://arxiv.org/pdf/math/0603151v2) line 2431 — Appendix B.2, pp.53–54, G_m-presentation Supplies the smooth frame atlas. STACKS-FLAT-COLIMIT line 11925, Lemmas 10.106.3–10.106.4 (00NQ/00NR), and line 21359, Lemma 10.163.10 (07NF); STACKS-STACK-REGULARITY line 625, Lemma 100.7.1, line 651, Definition 100.7.2, and line 664, Remark 100.7.3(8) Quotients by a regular parameter stay regular, smooth algebras over regular bases are regular, and regularity of algebraic stacks is a smooth-local property.)
 
-*Needs:* §2.13 (a smooth presentation valid for wild roots); §2.14 (algebraicity and finite relative diagonal); SchemeAndStackFoundations §§1.18–1.23; SchemeAndStackFoundations §4.13; Is Regular Ring; Is Regular Local Ring; Away.
+*Needs:* §2.13 (a smooth presentation valid for wild roots); §2.14 (algebraicity and finite relative diagonal); SchemeAndStackFoundations §§1.18–1.23; SchemeAndStackFoundations §4.13; `IsRegularRing`; `IsRegularLocalRing`; `Localization.Away`.
 
 ### 2.18 The exact Deligne–Mumford locus
 
@@ -4648,7 +4648,7 @@ No reducedness, Noetherian or invertibility-of-the-exponent hypothesis is introd
 
 ([TV17](https://arxiv.org/pdf/1410.1164v2) line 668 — §3.1 pp.14–16, P=N specialization)
 
-*Needs:* `AdjoinRoot`; `AdjoinRoot.liftAlgHom`; `AdjoinRoot.eval₂_root`; `AdjoinRoot.algHom_ext`; Mathlib AdjoinRoot.eval₂_root.
+*Needs:* `AdjoinRoot`; `AdjoinRoot.liftAlgHom`; `AdjoinRoot.eval₂_root`; `AdjoinRoot.algHom_ext`.
 
 ### 3.2 A degree bound for roots of two
 
@@ -4693,7 +4693,7 @@ This is an map of the quotient algebras for arbitrary A, rather than a map betwe
 
 ([TV17](https://arxiv.org/pdf/1410.1164v2) line 668 — §3.1 pp.14–16, P=N specialization)
 
-*Needs:* Mathlib AdjoinRoot.eval₂_root; `AdjoinRoot`; `AdjoinRoot.liftAlgHom`; `IsScalarTower.algebraMap_apply`.
+*Needs:* `AdjoinRoot.eval₂_root`; `AdjoinRoot`; `AdjoinRoot.liftAlgHom`; `IsScalarTower.algebraMap_apply`.
 
 ### 3.4 Affine transitions at fixed divisibility indices
 
@@ -4724,7 +4724,7 @@ Use AdjoinRoot and algebra-category carriers; the maps preserve nilpotents and a
 
 ([TV17](https://arxiv.org/pdf/1410.1164v2) line 650 — Proposition 3.2 and divisibility maps, printed p.13; Proposition 3.5 and Remark 3.6, p.14; rank-one affine chart specialization)
 
-*Needs:* Mathlib AdjoinRoot.eval₂_root; `AdjoinRoot.liftAlgHom`.
+*Needs:* `AdjoinRoot.eval₂_root`; `AdjoinRoot.liftAlgHom`.
 
 ### 3.5 Positive divisibility root indices
 
@@ -4787,7 +4787,7 @@ Define the subgroup S(A) of families σ:N→Aˣ such that σ_i^(d_i)=1 and σ_j^
 
 Define χ_n:Multiplicative(ZMod n)→*B_n by χ_n([k])=t_n^val(k), where B_n=A[T]/(T^n−1).
 
-A is an arbitrary commutative ring in one fixed universe; n is a positive natural number. If N occurs it is positive and n divides N. No nontriviality, reducedness, field, Noetherian, characteristic or invertibility-of-n hypothesis is imposed. B_n is the AffineRing (1:A) n = AdjoinRoot(X^n−C1); t_n is its root. The target is the MuHopf A n = MonoidAlgebra A (Multiplicative (ZMod n)); e_[k]=single(ofAdd k) 1. This is the unity-parameter coordinate algebra of μ_n, not the arbitrary-f chart algebra. The finite comparison supplies one input to identifying the factorial unity-root Hopf algebra with A[ℚ/ℤ]. That infinite Hopf identification, rational-circle maps, arbitrary-universe adapters, affine Spec limits, coherent frame torsors and fpqc quotient comparison are constructed in the indicated layers.
+A is an arbitrary commutative ring in one fixed universe; n is a positive natural number. If N occurs it is positive and n divides N. No nontriviality, reducedness, field, Noetherian, characteristic or invertibility-of-n hypothesis is imposed. B_n is A[T]/(Tⁿ−1)=AdjoinRoot(Xⁿ−C 1); t_n is its root. The target is A[ℤ/n]=MonoidAlgebra A (Multiplicative (ZMod n)); e_[k]=single(ofAdd k) 1. This is the unity-parameter coordinate algebra of μ_n, not the arbitrary-f chart algebra. The finite comparison supplies one input to identifying the factorial unity-root Hopf algebra with A[ℚ/ℤ]. That infinite Hopf identification, rational-circle maps, arbitrary-universe adapters, affine Spec limits, coherent frame torsors and fpqc quotient comparison are constructed in the indicated layers.
 
 The construction has the following API.
 
@@ -4813,7 +4813,7 @@ Define χ_n:Multiplicative(ZMod n)→*B_n by χ_n([k])=t_n^val(k), where B_n=A[T
 
 Construct F_n:B_n→ₐ[A]A[ℤ/n] sending t_n to e_[1].
 
-A is an arbitrary commutative ring in one fixed universe; n is a positive natural number. If N occurs it is positive and n divides N. No nontriviality, reducedness, field, Noetherian, characteristic or invertibility-of-n hypothesis is imposed. B_n is the AffineRing (1:A) n = AdjoinRoot(X^n−C1); t_n is its root. The target is the MuHopf A n = MonoidAlgebra A (Multiplicative (ZMod n)); e_[k]=single(ofAdd k) 1. This is the unity-parameter coordinate algebra of μ_n, not the arbitrary-f chart algebra. The finite comparison supplies one input to identifying the factorial unity-root Hopf algebra with A[ℚ/ℤ]. That infinite Hopf identification, rational-circle maps, arbitrary-universe adapters, affine Spec limits, coherent frame torsors and fpqc quotient comparison are constructed in the indicated layers.
+A is an arbitrary commutative ring in one fixed universe; n is a positive natural number. If N occurs it is positive and n divides N. No nontriviality, reducedness, field, Noetherian, characteristic or invertibility-of-n hypothesis is imposed. B_n is A[T]/(Tⁿ−1)=AdjoinRoot(Xⁿ−C 1); t_n is its root. The target is A[ℤ/n]=MonoidAlgebra A (Multiplicative (ZMod n)); e_[k]=single(ofAdd k) 1. This is the unity-parameter coordinate algebra of μ_n, not the arbitrary-f chart algebra. The finite comparison supplies one input to identifying the factorial unity-root Hopf algebra with A[ℚ/ℤ]. That infinite Hopf identification, rational-circle maps, arbitrary-universe adapters, affine Spec limits, coherent frame torsors and fpqc quotient comparison are constructed in the indicated layers.
 
 The construction has the following API.
 
@@ -4833,13 +4833,13 @@ Construct F_n:B_n→ₐ[A]A[ℤ/n] sending t_n to e_[1].
 
 ([TV17](https://arxiv.org/abs/1410.1164v2) line 668, §3.1, pp.14–16; elementary calculation from the displayed quotient relation)
 
-*Needs:* Mathlib MonoidAlgebra.single_pow; `AdjoinRoot.liftAlgHom`.
+*Needs:* `MonoidAlgebra.single_pow`; `AdjoinRoot.liftAlgHom`.
 
 ### 3.9 Normalized finite root character in ℚ/ℤ
 
 For n>0 define the additive homomorphism c_n:ℤ/n→ℚ/ℤ by c_n([k])=[k/n] for every integer k. This is the unique lift of the integer map k↦[k/n].
 
-A is any commutative ring in a fixed universe. Every finite exponent is positive; divisibility maps require n divides N. No nontriviality, reducedness, flatness, field or invertibility hypothesis is imposed. The character group is the AddCircle of period 1 over the rationals, namely ℚ/ℤ; its group algebra means the MonoidAlgebra A (Multiplicative (AddCircle (1:ℚ))). The unity-root algebra U_A is the factorial affine colimit of §3.58(1).
+A is any commutative ring in a fixed universe. Every finite exponent is positive; divisibility maps require n divides N. No nontriviality, reducedness, flatness, field or invertibility hypothesis is imposed. The character group is the AddCircle of period 1 over the rationals, namely ℚ/ℤ; its group algebra means the MonoidAlgebra A (Multiplicative (AddCircle (1:ℚ))). The unity-root algebra U_A is the factorial affine colimit of §3.58 at f=1.
 
 The construction has the following API.
 
@@ -4946,7 +4946,7 @@ Roots of 2: for G_n = μ_n over Spec ℚ and P_n = Spec ℚ[z_n]/(z_n^n − 2) w
 
 ([TV17](https://arxiv.org/pdf/1410.1164v2) line 733 — Remark 3.9, p.15 For a projective system of affine group schemes of finite type with limit G, the remark sketches that a G-torsor is the projective limit of its pushforwards to the finite stages; this is direction (g). Stacks-finite-root-projections-codex-7e92bd line 51, Lemma 32.2.2 (tag 01YX); The Stacks Project, Lemmas 10.39.20 (tag 090N), 35.37.1 (tag 0245), 35.23.13, 35.23.17 and 35.23.25 (tags 02KY, 02L2, 02LA))
 
-*Needs:* SchemeAndStackFoundations §0.9; SchemeAndStackFoundations §§1.18–1.23; SchemeAndStackFoundations §§1.15–1.16 and 2.3; `AlgebraicGeometry.Scheme.fpqcTopology`; Faithfully Flat; flat and surjective iff faithfully Flat of is Affine.
+*Needs:* SchemeAndStackFoundations §0.9; SchemeAndStackFoundations §§1.18–1.23; SchemeAndStackFoundations §§1.15–1.16 and 2.3; `AlgebraicGeometry.Scheme.fpqcTopology`; `Module.FaithfullyFlat`; `AlgebraicGeometry.Flat.flat_and_surjective_iff_faithfullyFlat_of_isAffine`.
 
 The limit and descent route uses [STACKS-FLAT-COLIMIT](https://stacks.math.columbia.edu/tag/090N) line 4437, Lemma 10.39.20; [STACKS-AFFINE-DESCENT](https://stacks.math.columbia.edu/tag/0245) line 4181, Lemma 35.37.1; and [STACKS-DESCENT-PROPERTIES](https://stacks.math.columbia.edu/tag/02KY) line 2626, Lemmas 35.23.13, 35.23.17 and 35.23.25.
 
@@ -4984,7 +4984,7 @@ RootKummer.transition is defined as the map of quotient groups induced by the id
 
 ([B24](https://link.springer.com/content/pdf/10.1007/s00222-023-01220-6.pdf) — Section 3, p.135, displayed inverse-limit Kummer identification; [AGV08](https://arxiv.org/pdf/math/0603151v2) line 2404 — Appendix B.1, p.52, flat Kummer sequence Positive-degree finite Kummer uses flat cohomology rather than invertibility of the exponent.)
 
-*Needs:* `powMonoidHom`; `QuotientGroup.mk'`; map; SchemeAndStackFoundations §§2.10–2.11; eq one iff.
+*Needs:* `powMonoidHom`; `QuotientGroup.mk'`; `QuotientGroup.map`; SchemeAndStackFoundations §§2.10–2.11; `QuotientGroup.eq_one_iff`.
 
 ### 3.14 Infinite root stacks
 
@@ -5000,7 +5000,7 @@ The construction has the following API.
 
 A proof route uses the following steps. Use the already planned compatible-family carrier, retaining objects, arrows and unit/composition equations.
 Every finite root is an fpqc stack by §2.4 (fpqc descent of finite root data). Apply the imported AlgebraicModuliForArithmeticGeometry §4.4 (limitStackDescent) theorem to those components and their finite transitions.
-For a single effective Cartier divisor, TV17 Proposition3.5 identifies the compatible system with its logarithmic infinite root. The local quotient comparison is its separate infinite-affine-quotient leaf.
+For a single effective Cartier divisor, TV17 Proposition3.5 identifies the compatible system with its logarithmic infinite root. The local quotient comparison is a separate target of this layer, §3.377 (the infinite affine fpqc root quotient).
 
 **Checks.**
 
@@ -5156,7 +5156,7 @@ Construct the group homomorphism S(φ):S(A)→*S(B) by σ_i↦Units.map(φ)(σ_i
 
 For every k≥0, χ_n([k])=t_n^k.
 
-A is an arbitrary commutative ring in one fixed universe; n is a positive natural number. If N occurs it is positive and n divides N. No nontriviality, reducedness, field, Noetherian, characteristic or invertibility-of-n hypothesis is imposed. B_n is the AffineRing (1:A) n = AdjoinRoot(X^n−C1); t_n is its root. The target is the MuHopf A n = MonoidAlgebra A (Multiplicative (ZMod n)); e_[k]=single(ofAdd k) 1. This is the unity-parameter coordinate algebra of μ_n, not the arbitrary-f chart algebra. The finite comparison supplies one input to identifying the factorial unity-root Hopf algebra with A[ℚ/ℤ]. That infinite Hopf identification, rational-circle maps, arbitrary-universe adapters, affine Spec limits, coherent frame torsors and fpqc quotient comparison are constructed in the indicated layers.
+A is an arbitrary commutative ring in one fixed universe; n is a positive natural number. If N occurs it is positive and n divides N. No nontriviality, reducedness, field, Noetherian, characteristic or invertibility-of-n hypothesis is imposed. B_n is A[T]/(Tⁿ−1)=AdjoinRoot(Xⁿ−C 1); t_n is its root. The target is A[ℤ/n]=MonoidAlgebra A (Multiplicative (ZMod n)); e_[k]=single(ofAdd k) 1. This is the unity-parameter coordinate algebra of μ_n, not the arbitrary-f chart algebra. The finite comparison supplies one input to identifying the factorial unity-root Hopf algebra with A[ℚ/ℤ]. That infinite Hopf identification, rational-circle maps, arbitrary-universe adapters, affine Spec limits, coherent frame torsors and fpqc quotient comparison are constructed in the indicated layers.
 
 A proof route uses the following steps. Replace val([k]) by k mod n and apply the root-power reduction with coefficient one.
 
@@ -5170,7 +5170,7 @@ For every k≥0, χ_n([k])=t_n^k.
 
 F_n(t_n)=e_[1].
 
-A is an arbitrary commutative ring in one fixed universe; n is a positive natural number. If N occurs it is positive and n divides N. No nontriviality, reducedness, field, Noetherian, characteristic or invertibility-of-n hypothesis is imposed. B_n is the AffineRing (1:A) n = AdjoinRoot(X^n−C1); t_n is its root. The target is the MuHopf A n = MonoidAlgebra A (Multiplicative (ZMod n)); e_[k]=single(ofAdd k) 1. This is the unity-parameter coordinate algebra of μ_n, not the arbitrary-f chart algebra. The finite comparison supplies one input to identifying the factorial unity-root Hopf algebra with A[ℚ/ℤ]. That infinite Hopf identification, rational-circle maps, arbitrary-universe adapters, affine Spec limits, coherent frame torsors and fpqc quotient comparison are constructed in the indicated layers.
+A is an arbitrary commutative ring in one fixed universe; n is a positive natural number. If N occurs it is positive and n divides N. No nontriviality, reducedness, field, Noetherian, characteristic or invertibility-of-n hypothesis is imposed. B_n is A[T]/(Tⁿ−1)=AdjoinRoot(Xⁿ−C 1); t_n is its root. The target is A[ℤ/n]=MonoidAlgebra A (Multiplicative (ZMod n)); e_[k]=single(ofAdd k) 1. This is the unity-parameter coordinate algebra of μ_n, not the arbitrary-f chart algebra. The finite comparison supplies one input to identifying the factorial unity-root Hopf algebra with A[ℚ/ℤ]. That infinite Hopf identification, rational-circle maps, arbitrary-universe adapters, affine Spec limits, coherent frame torsors and fpqc quotient comparison are constructed in the indicated layers.
 
 A proof route uses the following steps. Evaluate the quotient lift at its root.
 
@@ -5184,7 +5184,7 @@ F_n(t_n)=e_[1].
 
 Construct G_n:A[ℤ/n]→ₐ[A]B_n as the MonoidAlgebra.lift of χ_n.
 
-A is an arbitrary commutative ring in one fixed universe; n is a positive natural number. If N occurs it is positive and n divides N. No nontriviality, reducedness, field, Noetherian, characteristic or invertibility-of-n hypothesis is imposed. B_n is the AffineRing (1:A) n = AdjoinRoot(X^n−C1); t_n is its root. The target is the MuHopf A n = MonoidAlgebra A (Multiplicative (ZMod n)); e_[k]=single(ofAdd k) 1. This is the unity-parameter coordinate algebra of μ_n, not the arbitrary-f chart algebra. The finite comparison supplies one input to identifying the factorial unity-root Hopf algebra with A[ℚ/ℤ]. That infinite Hopf identification, rational-circle maps, arbitrary-universe adapters, affine Spec limits, coherent frame torsors and fpqc quotient comparison are constructed in the indicated layers.
+A is an arbitrary commutative ring in one fixed universe; n is a positive natural number. If N occurs it is positive and n divides N. No nontriviality, reducedness, field, Noetherian, characteristic or invertibility-of-n hypothesis is imposed. B_n is A[T]/(Tⁿ−1)=AdjoinRoot(Xⁿ−C 1); t_n is its root. The target is A[ℤ/n]=MonoidAlgebra A (Multiplicative (ZMod n)); e_[k]=single(ofAdd k) 1. This is the unity-parameter coordinate algebra of μ_n, not the arbitrary-f chart algebra. The finite comparison supplies one input to identifying the factorial unity-root Hopf algebra with A[ℚ/ℤ]. That infinite Hopf identification, rational-circle maps, arbitrary-universe adapters, affine Spec limits, coherent frame torsors and fpqc quotient comparison are constructed in the indicated layers.
 
 The construction has the following API.
 
@@ -5210,7 +5210,7 @@ Construct G_n:A[ℤ/n]→ₐ[A]B_n as the MonoidAlgebra.lift of χ_n.
 
 For k∈Z, c_n([k])=[k/n], including negative k.
 
-A is any commutative ring in a fixed universe. Every finite exponent is positive; divisibility maps require n divides N. No nontriviality, reducedness, flatness, field or invertibility hypothesis is imposed. The character group is the AddCircle of period 1 over the rationals, namely ℚ/ℤ; its group algebra means the MonoidAlgebra A (Multiplicative (AddCircle (1:ℚ))). The unity-root algebra U_A is the factorial affine colimit of §3.58(1).
+A is any commutative ring in a fixed universe. Every finite exponent is positive; divisibility maps require n divides N. No nontriviality, reducedness, flatness, field or invertibility hypothesis is imposed. The character group is the AddCircle of period 1 over the rationals, namely ℚ/ℤ; its group algebra means the MonoidAlgebra A (Multiplicative (AddCircle (1:ℚ))). The unity-root algebra U_A is the factorial affine colimit of §3.58 at f=1.
 
 A proof route uses the following steps. Apply the integer-lift computation. Negative representatives are integers before reduction; do not replace them by unreduced natural values.
 
@@ -5224,7 +5224,7 @@ For k∈Z, c_n([k])=[k/n], including negative k.
 
 Define j_n:A[ℤ/n]→A[ℚ/ℤ] as the mapDomainAlgHom induced by the multiplicative form of c_n.
 
-A is any commutative ring in a fixed universe. Every finite exponent is positive; divisibility maps require n divides N. No nontriviality, reducedness, flatness, field or invertibility hypothesis is imposed. The character group is the AddCircle of period 1 over the rationals, namely ℚ/ℤ; its group algebra means the MonoidAlgebra A (Multiplicative (AddCircle (1:ℚ))). The unity-root algebra U_A is the factorial affine colimit of §3.58(1).
+A is any commutative ring in a fixed universe. Every finite exponent is positive; divisibility maps require n divides N. No nontriviality, reducedness, flatness, field or invertibility hypothesis is imposed. The character group is the AddCircle of period 1 over the rationals, namely ℚ/ℤ; its group algebra means the MonoidAlgebra A (Multiplicative (AddCircle (1:ℚ))). The unity-root algebra U_A is the factorial affine colimit of §3.58 at f=1.
 
 The construction has the following API.
 
@@ -5327,7 +5327,7 @@ Compatibility is for all coefficients b, not only t_n or field-valued points.
 
 ([TV17](https://arxiv.org/pdf/1410.1164v2) line 668 — §3.1 pp.14–16, P=N specialization)
 
-*Needs:* §3.3 (reverse map from the larger root chart); §3.17 (root value of the reverse quotient map); §3.15 (root of the finite chart transition); Mathlib AdjoinRoot.eval₂_root; `AdjoinRoot.algHom_ext`; `AdjoinRoot.ofAlgHom`.
+*Needs:* §3.3 (reverse map from the larger root chart); §3.17 (root value of the reverse quotient map); §3.15 (root of the finite chart transition); `AdjoinRoot.eval₂_root`; `AdjoinRoot.algHom_ext`; `AdjoinRoot.ofAlgHom`.
 
 ### 3.33 Identity of a divisibility transition
 
@@ -5419,7 +5419,7 @@ S(ψ∘φ)=S(ψ)∘S(φ) as group homomorphisms.
 
 For k:ZMod n and a∈A, G_n(a e_[k])=a·t_n^val(k).
 
-A is an arbitrary commutative ring in one fixed universe; n is a positive natural number. If N occurs it is positive and n divides N. No nontriviality, reducedness, field, Noetherian, characteristic or invertibility-of-n hypothesis is imposed. B_n is the AffineRing (1:A) n = AdjoinRoot(X^n−C1); t_n is its root. The target is the MuHopf A n = MonoidAlgebra A (Multiplicative (ZMod n)); e_[k]=single(ofAdd k) 1. This is the unity-parameter coordinate algebra of μ_n, not the arbitrary-f chart algebra. The finite comparison supplies one input to identifying the factorial unity-root Hopf algebra with A[ℚ/ℤ]. That infinite Hopf identification, rational-circle maps, arbitrary-universe adapters, affine Spec limits, coherent frame torsors and fpqc quotient comparison are constructed in the indicated layers.
+A is an arbitrary commutative ring in one fixed universe; n is a positive natural number. If N occurs it is positive and n divides N. No nontriviality, reducedness, field, Noetherian, characteristic or invertibility-of-n hypothesis is imposed. B_n is A[T]/(Tⁿ−1)=AdjoinRoot(Xⁿ−C 1); t_n is its root. The target is A[ℤ/n]=MonoidAlgebra A (Multiplicative (ZMod n)); e_[k]=single(ofAdd k) 1. This is the unity-parameter coordinate algebra of μ_n, not the arbitrary-f chart algebra. The finite comparison supplies one input to identifying the factorial unity-root Hopf algebra with A[ℚ/ℤ]. That infinite Hopf identification, rational-circle maps, arbitrary-universe adapters, affine Spec limits, coherent frame torsors and fpqc quotient comparison are constructed in the indicated layers.
 
 A proof route uses the following steps. Evaluate the lift on a single basis vector.
 
@@ -5433,7 +5433,7 @@ For k:ZMod n and a∈A, G_n(a e_[k])=a·t_n^val(k).
 
 G_n∘F_n=id_B_n as A-algebra homomorphisms.
 
-A is an arbitrary commutative ring in one fixed universe; n is a positive natural number. If N occurs it is positive and n divides N. No nontriviality, reducedness, field, Noetherian, characteristic or invertibility-of-n hypothesis is imposed. B_n is the AffineRing (1:A) n = AdjoinRoot(X^n−C1); t_n is its root. The target is the MuHopf A n = MonoidAlgebra A (Multiplicative (ZMod n)); e_[k]=single(ofAdd k) 1. This is the unity-parameter coordinate algebra of μ_n, not the arbitrary-f chart algebra. The finite comparison supplies one input to identifying the factorial unity-root Hopf algebra with A[ℚ/ℤ]. That infinite Hopf identification, rational-circle maps, arbitrary-universe adapters, affine Spec limits, coherent frame torsors and fpqc quotient comparison are constructed in the indicated layers.
+A is an arbitrary commutative ring in one fixed universe; n is a positive natural number. If N occurs it is positive and n divides N. No nontriviality, reducedness, field, Noetherian, characteristic or invertibility-of-n hypothesis is imposed. B_n is A[T]/(Tⁿ−1)=AdjoinRoot(Xⁿ−C 1); t_n is its root. The target is A[ℤ/n]=MonoidAlgebra A (Multiplicative (ZMod n)); e_[k]=single(ofAdd k) 1. This is the unity-parameter coordinate algebra of μ_n, not the arbitrary-f chart algebra. The finite comparison supplies one input to identifying the factorial unity-root Hopf algebra with A[ℚ/ℤ]. That infinite Hopf identification, rational-circle maps, arbitrary-universe adapters, affine Spec limits, coherent frame torsors and fpqc quotient comparison are constructed in the indicated layers.
 
 A proof route uses the following steps. AdjoinRoot extensionality reduces to t_n. The character formula at k=1 gives t_n, including n=1 where the displayed representative is zero.
 
@@ -5447,7 +5447,7 @@ G_n∘F_n=id_B_n as A-algebra homomorphisms.
 
 For every u∈ℚ/ℤ there are n>0 and k∈ℤ/n with c_n(k)=u.
 
-A is any commutative ring in a fixed universe. Every finite exponent is positive; divisibility maps require n divides N. No nontriviality, reducedness, flatness, field or invertibility hypothesis is imposed. The character group is the AddCircle of period 1 over the rationals, namely ℚ/ℤ; its group algebra means the MonoidAlgebra A (Multiplicative (AddCircle (1:ℚ))). The unity-root algebra U_A is the factorial affine colimit of §3.58(1).
+A is any commutative ring in a fixed universe. Every finite exponent is positive; divisibility maps require n divides N. No nontriviality, reducedness, flatness, field or invertibility hypothesis is imposed. The character group is the AddCircle of period 1 over the rationals, namely ℚ/ℤ; its group algebra means the MonoidAlgebra A (Multiplicative (AddCircle (1:ℚ))). The unity-root algebra U_A is the factorial affine colimit of §3.58 at f=1.
 
 A proof route uses the following steps. Import Tau Ceti rational torsion exhaustion to choose n. Import its normalized torsion generator lemma to write u as an integer multiple of [1/n]. The integer-lift formula supplies k. No new generic finite-subgroup or torsion theorem is planned.
  The Tau Ceti torsion exhaustion/generator route remains available; no new generic torsion theorem is claimed.
@@ -5462,7 +5462,7 @@ For every u∈ℚ/ℤ there are n>0 and k∈ℤ/n with c_n(k)=u.
 
 For a∈A,k∈ℤ/n, j_n(a e_k)=a e_(c_n(k)).
 
-A is any commutative ring in a fixed universe. Every finite exponent is positive; divisibility maps require n divides N. No nontriviality, reducedness, flatness, field or invertibility hypothesis is imposed. The character group is the AddCircle of period 1 over the rationals, namely ℚ/ℤ; its group algebra means the MonoidAlgebra A (Multiplicative (AddCircle (1:ℚ))). The unity-root algebra U_A is the factorial affine colimit of §3.58(1).
+A is any commutative ring in a fixed universe. Every finite exponent is positive; divisibility maps require n divides N. No nontriviality, reducedness, flatness, field or invertibility hypothesis is imposed. The character group is the AddCircle of period 1 over the rationals, namely ℚ/ℤ; its group algebra means the MonoidAlgebra A (Multiplicative (AddCircle (1:ℚ))). The unity-root algebra U_A is the factorial affine colimit of §3.58 at f=1.
 
 A proof route uses the following steps. Use the domain-map single formula. Coefficients are unchanged.
 
@@ -5819,7 +5819,7 @@ Use the quotient rings and directed colimits; keep every finite root and coeffic
 
 F_n∘G_n=id_A[ℤ/n] as A-algebra homomorphisms.
 
-A is an arbitrary commutative ring in one fixed universe; n is a positive natural number. If N occurs it is positive and n divides N. No nontriviality, reducedness, field, Noetherian, characteristic or invertibility-of-n hypothesis is imposed. B_n is the AffineRing (1:A) n = AdjoinRoot(X^n−C1); t_n is its root. The target is the MuHopf A n = MonoidAlgebra A (Multiplicative (ZMod n)); e_[k]=single(ofAdd k) 1. This is the unity-parameter coordinate algebra of μ_n, not the arbitrary-f chart algebra. The finite comparison supplies one input to identifying the factorial unity-root Hopf algebra with A[ℚ/ℤ]. That infinite Hopf identification, rational-circle maps, arbitrary-universe adapters, affine Spec limits, coherent frame torsors and fpqc quotient comparison are constructed in the indicated layers.
+A is an arbitrary commutative ring in one fixed universe; n is a positive natural number. If N occurs it is positive and n divides N. No nontriviality, reducedness, field, Noetherian, characteristic or invertibility-of-n hypothesis is imposed. B_n is A[T]/(Tⁿ−1)=AdjoinRoot(Xⁿ−C 1); t_n is its root. The target is A[ℤ/n]=MonoidAlgebra A (Multiplicative (ZMod n)); e_[k]=single(ofAdd k) 1. This is the unity-parameter coordinate algebra of μ_n, not the arbitrary-f chart algebra. The finite comparison supplies one input to identifying the factorial unity-root Hopf algebra with A[ℚ/ℤ]. That infinite Hopf identification, rational-circle maps, arbitrary-universe adapters, affine Spec limits, coherent frame torsors and fpqc quotient comparison are constructed in the indicated layers.
 
 A proof route uses the following steps. Use group-algebra extensionality. On e_[k], the composite gives e_[val(k)]=e_[k]; coefficient maps agree because both maps are A-algebra homomorphisms.
 
@@ -5827,13 +5827,13 @@ F_n∘G_n=id_A[ℤ/n] as A-algebra homomorphisms.
 
 ([TV17](https://arxiv.org/abs/1410.1164v2) line 668, §3.1, pp.14–16; elementary calculation from the displayed quotient relation)
 
-*Needs:* §3.39 (cyclic basis evaluation in the root chart); §3.25 (polynomial-to-cyclic root evaluation); Mathlib MonoidAlgebra.single_pow; `ZMod.natCast_zmod_val`; `MonoidAlgebra.algHom_ext`.
+*Needs:* §3.39 (cyclic basis evaluation in the root chart); §3.25 (polynomial-to-cyclic root evaluation); `MonoidAlgebra.single_pow`; `ZMod.natCast_zmod_val`; `MonoidAlgebra.algHom_ext`.
 
 ### 3.61 Finite root character orientation
 
 The chosen character sends [1] to [1/n].
 
-A is any commutative ring in a fixed universe. Every finite exponent is positive; divisibility maps require n divides N. No nontriviality, reducedness, flatness, field or invertibility hypothesis is imposed. The character group is the AddCircle of period 1 over the rationals, namely ℚ/ℤ; its group algebra means the MonoidAlgebra A (Multiplicative (AddCircle (1:ℚ))). The unity-root algebra U_A is the factorial affine colimit of §3.58(1).
+A is any commutative ring in a fixed universe. Every finite exponent is positive; divisibility maps require n divides N. No nontriviality, reducedness, flatness, field or invertibility hypothesis is imposed. The character group is the AddCircle of period 1 over the rationals, namely ℚ/ℤ; its group algebra means the MonoidAlgebra A (Multiplicative (AddCircle (1:ℚ))). The unity-root algebra U_A is the factorial affine colimit of §3.58 at f=1.
 
 A proof route uses the following steps. Specialize the integer representative to one.
 The proof specializes the natural-character formula at 1.
@@ -6159,7 +6159,7 @@ Use the quotient rings and directed colimits; keep every finite root and coeffic
 
 The specified mutually inverse maps give E_n:B_n≃ₐ[A]A[ℤ/n]. It works for arbitrary commutative A and every n>0; it does not split the group algebra into a product or discard nilpotents.
 
-A is an arbitrary commutative ring in one fixed universe; n is a positive natural number. If N occurs it is positive and n divides N. No nontriviality, reducedness, field, Noetherian, characteristic or invertibility-of-n hypothesis is imposed. B_n is the AffineRing (1:A) n = AdjoinRoot(X^n−C1); t_n is its root. The target is the MuHopf A n = MonoidAlgebra A (Multiplicative (ZMod n)); e_[k]=single(ofAdd k) 1. This is the unity-parameter coordinate algebra of μ_n, not the arbitrary-f chart algebra. The finite comparison supplies one input to identifying the factorial unity-root Hopf algebra with A[ℚ/ℤ]. That infinite Hopf identification, rational-circle maps, arbitrary-universe adapters, affine Spec limits, coherent frame torsors and fpqc quotient comparison are constructed in the indicated layers.
+A is an arbitrary commutative ring in one fixed universe; n is a positive natural number. If N occurs it is positive and n divides N. No nontriviality, reducedness, field, Noetherian, characteristic or invertibility-of-n hypothesis is imposed. B_n is A[T]/(Tⁿ−1)=AdjoinRoot(Xⁿ−C 1); t_n is its root. The target is A[ℤ/n]=MonoidAlgebra A (Multiplicative (ZMod n)); e_[k]=single(ofAdd k) 1. This is the unity-parameter coordinate algebra of μ_n, not the arbitrary-f chart algebra. The finite comparison supplies one input to identifying the factorial unity-root Hopf algebra with A[ℚ/ℤ]. That infinite Hopf identification, rational-circle maps, arbitrary-universe adapters, affine Spec limits, coherent frame torsors and fpqc quotient comparison are constructed in the indicated layers.
 
 The construction has the following API.
 
@@ -6188,7 +6188,7 @@ The specified mutually inverse maps give E_n:B_n≃ₐ[A]A[ℤ/n]. It works for 
 
 The homomorphism c_n is injective for every n>0.
 
-A is any commutative ring in a fixed universe. Every finite exponent is positive; divisibility maps require n divides N. No nontriviality, reducedness, flatness, field or invertibility hypothesis is imposed. The character group is the AddCircle of period 1 over the rationals, namely ℚ/ℤ; its group algebra means the MonoidAlgebra A (Multiplicative (AddCircle (1:ℚ))). The unity-root algebra U_A is the factorial affine colimit of §3.58(1).
+A is any commutative ring in a fixed universe. Every finite exponent is positive; divisibility maps require n divides N. No nontriviality, reducedness, flatness, field or invertibility hypothesis is imposed. The character group is the AddCircle of period 1 over the rationals, namely ℚ/ℤ; its group algebra means the MonoidAlgebra A (Multiplicative (AddCircle (1:ℚ))). The unity-root algebra U_A is the factorial affine colimit of §3.58 at f=1.
 
 A proof route uses the following steps. The kernel consists of k with k/n integral, exactly the integers divisible by n. Use ZMod.lift_injective and the integer divisibility criterion. This proof concerns the character group and has no coefficient-ring assumption.
 An alternative proof route is as follows: both val(k)/n representatives lie in [0,1); injectivity of the quotient on that interval gives equality of rational quotients, then of natural representatives, then of the original residue classes. This directly reuses the interval theorem; it does not require a coefficient-ring assumption.
@@ -6203,7 +6203,7 @@ The homomorphism c_n is injective for every n>0.
 
 If n divides N, then c_N([(N/n) val(k)])=c_n(k) for k∈ℤ/n. Thus c_N([N/n])=[1/n].
 
-A is any commutative ring in a fixed universe. Every finite exponent is positive; divisibility maps require n divides N. No nontriviality, reducedness, flatness, field or invertibility hypothesis is imposed. The character group is the AddCircle of period 1 over the rationals, namely ℚ/ℤ; its group algebra means the MonoidAlgebra A (Multiplicative (AddCircle (1:ℚ))). The unity-root algebra U_A is the factorial affine colimit of §3.58(1).
+A is any commutative ring in a fixed universe. Every finite exponent is positive; divisibility maps require n divides N. No nontriviality, reducedness, flatness, field or invertibility hypothesis is imposed. The character group is the AddCircle of period 1 over the rationals, namely ℚ/ℤ; its group algebra means the MonoidAlgebra A (Multiplicative (AddCircle (1:ℚ))). The unity-root algebra U_A is the factorial affine colimit of §3.58 at f=1.
 
 A proof route uses the following steps. Choose the natural representative val(k). The rational identity ((N/n)val(k))/N=val(k)/n uses n>0,N>0 and exact divisibility. Integer-lift computations give equality in ℚ/ℤ. This is the scaled transition, not the map [k]↦[k].
 Use the two explicit representative formulas. Exact natural division casts to rational division; nonzero n and N allow cancellation of ((N/n) val(k))/N to val(k)/n. This proves the scaled divisibility formula over the quotient.
@@ -6319,7 +6319,7 @@ Over ℝ the trivial tower has two automorphisms at degree 2, yet its compatible
 
 ([B24](https://link.springer.com/content/pdf/10.1007/s00222-023-01220-6.pdf) — Section 3, p.135, inverse-limit Kummer formula Injectivity of the class formula is expanded into this finite-isomorphism-set argument; it is an coordinate deduction)
 
-*Needs:* §3.72 (infinite kummer torsors and finite towers); `nonempty_sections_of_finite_cofiltered_system`; `rootsOfUnity`; card roots Of Unity.
+*Needs:* §3.72 (infinite kummer torsors and finite towers); `nonempty_sections_of_finite_cofiltered_system`; `rootsOfUnity`; `card_rootsOfUnity`.
 
 ### 3.92 Faithful flatness of root chart transitions
 
@@ -6380,7 +6380,7 @@ Use the AdjoinRoot algebras, their coefficient actions and Mathlib DirectLimit. 
 
 ([TV17](https://arxiv.org/pdf/1410.1164v2) line 738 — Section 3.1, printed pp.14–16: local models, Definition 3.8, Proposition 3.10 and Corollary 3.13; the logarithmic point on p.17)
 
-*Needs:* §3.79 (finite root charts inside the colimit); Mathlib AdjoinRoot.eval₂_root.
+*Needs:* §3.79 (finite root charts inside the colimit); `AdjoinRoot.eval₂_root`.
 
 ### 3.97 Root values determine colimit homomorphisms
 
@@ -6465,13 +6465,13 @@ Use the quotient rings and directed colimits; keep every finite root and coeffic
 
 ([TV17](https://arxiv.org/pdf/1410.1164v2) line 650 — Proposition 3.5, Remark 3.6 and Section 3.1, printed pp.13–16; rank-one local models)
 
-*Needs:* §3.80 (finite charts in the divisibility colimit); Mathlib AdjoinRoot.eval₂_root.
+*Needs:* §3.80 (finite charts in the divisibility colimit); `AdjoinRoot.eval₂_root`.
 
 ### 3.102 Finite cyclic equivalence on the root
 
 E_n(t_n)=e_[1].
 
-A is an arbitrary commutative ring in one fixed universe; n is a positive natural number. If N occurs it is positive and n divides N. No nontriviality, reducedness, field, Noetherian, characteristic or invertibility-of-n hypothesis is imposed. B_n is the AffineRing (1:A) n = AdjoinRoot(X^n−C1); t_n is its root. The target is the MuHopf A n = MonoidAlgebra A (Multiplicative (ZMod n)); e_[k]=single(ofAdd k) 1. This is the unity-parameter coordinate algebra of μ_n, not the arbitrary-f chart algebra. The finite comparison supplies one input to identifying the factorial unity-root Hopf algebra with A[ℚ/ℤ]. That infinite Hopf identification, rational-circle maps, arbitrary-universe adapters, affine Spec limits, coherent frame torsors and fpqc quotient comparison are constructed in the indicated layers.
+A is an arbitrary commutative ring in one fixed universe; n is a positive natural number. If N occurs it is positive and n divides N. No nontriviality, reducedness, field, Noetherian, characteristic or invertibility-of-n hypothesis is imposed. B_n is A[T]/(Tⁿ−1)=AdjoinRoot(Xⁿ−C 1); t_n is its root. The target is A[ℤ/n]=MonoidAlgebra A (Multiplicative (ZMod n)); e_[k]=single(ofAdd k) 1. This is the unity-parameter coordinate algebra of μ_n, not the arbitrary-f chart algebra. The finite comparison supplies one input to identifying the factorial unity-root Hopf algebra with A[ℚ/ℤ]. That infinite Hopf identification, rational-circle maps, arbitrary-universe adapters, affine Spec limits, coherent frame torsors and fpqc quotient comparison are constructed in the indicated layers.
 
 A proof route uses the following steps. The bundled equivalence has forward map F_n.
 
@@ -6485,7 +6485,7 @@ E_n(t_n)=e_[1].
 
 E_n⁻¹(a e_[k])=a·t_n^val(k).
 
-A is an arbitrary commutative ring in one fixed universe; n is a positive natural number. If N occurs it is positive and n divides N. No nontriviality, reducedness, field, Noetherian, characteristic or invertibility-of-n hypothesis is imposed. B_n is the AffineRing (1:A) n = AdjoinRoot(X^n−C1); t_n is its root. The target is the MuHopf A n = MonoidAlgebra A (Multiplicative (ZMod n)); e_[k]=single(ofAdd k) 1. This is the unity-parameter coordinate algebra of μ_n, not the arbitrary-f chart algebra. The finite comparison supplies one input to identifying the factorial unity-root Hopf algebra with A[ℚ/ℤ]. That infinite Hopf identification, rational-circle maps, arbitrary-universe adapters, affine Spec limits, coherent frame torsors and fpqc quotient comparison are constructed in the indicated layers.
+A is an arbitrary commutative ring in one fixed universe; n is a positive natural number. If N occurs it is positive and n divides N. No nontriviality, reducedness, field, Noetherian, characteristic or invertibility-of-n hypothesis is imposed. B_n is A[T]/(Tⁿ−1)=AdjoinRoot(Xⁿ−C 1); t_n is its root. The target is A[ℤ/n]=MonoidAlgebra A (Multiplicative (ZMod n)); e_[k]=single(ofAdd k) 1. This is the unity-parameter coordinate algebra of μ_n, not the arbitrary-f chart algebra. The finite comparison supplies one input to identifying the factorial unity-root Hopf algebra with A[ℚ/ℤ]. That infinite Hopf identification, rational-circle maps, arbitrary-universe adapters, affine Spec limits, coherent frame torsors and fpqc quotient comparison are constructed in the indicated layers.
 
 A proof route uses the following steps. The bundled equivalence has inverse map G_n.
 
@@ -6499,7 +6499,7 @@ E_n⁻¹(a e_[k])=a·t_n^val(k).
 
 j_n is injective over every commutative ring, including the zero ring.
 
-A is any commutative ring in a fixed universe. Every finite exponent is positive; divisibility maps require n divides N. No nontriviality, reducedness, flatness, field or invertibility hypothesis is imposed. The character group is the AddCircle of period 1 over the rationals, namely ℚ/ℤ; its group algebra means the MonoidAlgebra A (Multiplicative (AddCircle (1:ℚ))). The unity-root algebra U_A is the factorial affine colimit of §3.58(1).
+A is any commutative ring in a fixed universe. Every finite exponent is positive; divisibility maps require n divides N. No nontriviality, reducedness, flatness, field or invertibility hypothesis is imposed. The character group is the AddCircle of period 1 over the rationals, namely ℚ/ℤ; its group algebra means the MonoidAlgebra A (Multiplicative (AddCircle (1:ℚ))). The unity-root algebra U_A is the factorial affine colimit of §3.58 at f=1.
 
 A proof route uses the following steps. Apply the domain-map injectivity theorem to c_n. Its coefficient-level proof has no nontriviality hypothesis.
 
@@ -6513,7 +6513,7 @@ j_n is injective over every commutative ring, including the zero ring.
 
 For n dividing N and a∈A, j_N(a e_([(N/n)val(k)]))=j_n(a e_k).
 
-A is any commutative ring in a fixed universe. Every finite exponent is positive; divisibility maps require n divides N. No nontriviality, reducedness, flatness, field or invertibility hypothesis is imposed. The character group is the AddCircle of period 1 over the rationals, namely ℚ/ℤ; its group algebra means the MonoidAlgebra A (Multiplicative (AddCircle (1:ℚ))). The unity-root algebra U_A is the factorial affine colimit of §3.58(1).
+A is any commutative ring in a fixed universe. Every finite exponent is positive; divisibility maps require n divides N. No nontriviality, reducedness, flatness, field or invertibility hypothesis is imposed. The character group is the AddCircle of period 1 over the rationals, namely ℚ/ℤ; its group algebra means the MonoidAlgebra A (Multiplicative (AddCircle (1:ℚ))). The unity-root algebra U_A is the factorial affine colimit of §3.58 at f=1.
 
 A proof route uses the following steps. Rewrite the two images on singles and apply character divisibility. This is precisely the finite root-transition formula.
 
@@ -6527,7 +6527,7 @@ For n dividing N and a∈A, j_N(a e_([(N/n)val(k)]))=j_n(a e_k).
 
 Define F_n:E_n(1)→A[ℚ/ℤ] as j_n composed with the equivalence E_n(1)≃A[ℤ/n].
 
-A is any commutative ring in a fixed universe. Every finite exponent is positive; divisibility maps require n divides N. No nontriviality, reducedness, flatness, field or invertibility hypothesis is imposed. The character group is the AddCircle of period 1 over the rationals, namely ℚ/ℤ; its group algebra means the MonoidAlgebra A (Multiplicative (AddCircle (1:ℚ))). The unity-root algebra U_A is the factorial affine colimit of §3.58(1).
+A is any commutative ring in a fixed universe. Every finite exponent is positive; divisibility maps require n divides N. No nontriviality, reducedness, flatness, field or invertibility hypothesis is imposed. The character group is the AddCircle of period 1 over the rationals, namely ℚ/ℤ; its group algebra means the MonoidAlgebra A (Multiplicative (AddCircle (1:ℚ))). The unity-root algebra U_A is the factorial affine colimit of §3.58 at f=1.
 
 The construction has the following API.
 
@@ -6909,7 +6909,7 @@ If g,h:C_A(f)→+*B have the same coefficient homomorphism φ:A→+*B and agree 
 
 (id⊗E_n)∘ρ_1,n=Δ∘E_n, where ρ_1,n is the root coaction and Δ is the group-algebra comultiplication.
 
-A is an arbitrary commutative ring in one fixed universe; n is a positive natural number. If N occurs it is positive and n divides N. No nontriviality, reducedness, field, Noetherian, characteristic or invertibility-of-n hypothesis is imposed. B_n is the AffineRing (1:A) n = AdjoinRoot(X^n−C1); t_n is its root. The target is the MuHopf A n = MonoidAlgebra A (Multiplicative (ZMod n)); e_[k]=single(ofAdd k) 1. This is the unity-parameter coordinate algebra of μ_n, not the arbitrary-f chart algebra. The finite comparison supplies one input to identifying the factorial unity-root Hopf algebra with A[ℚ/ℤ]. That infinite Hopf identification, rational-circle maps, arbitrary-universe adapters, affine Spec limits, coherent frame torsors and fpqc quotient comparison are constructed in the indicated layers.
+A is an arbitrary commutative ring in one fixed universe; n is a positive natural number. If N occurs it is positive and n divides N. No nontriviality, reducedness, field, Noetherian, characteristic or invertibility-of-n hypothesis is imposed. B_n is A[T]/(Tⁿ−1)=AdjoinRoot(Xⁿ−C 1); t_n is its root. The target is A[ℤ/n]=MonoidAlgebra A (Multiplicative (ZMod n)); e_[k]=single(ofAdd k) 1. This is the unity-parameter coordinate algebra of μ_n, not the arbitrary-f chart algebra. The finite comparison supplies one input to identifying the factorial unity-root Hopf algebra with A[ℚ/ℤ]. That infinite Hopf identification, rational-circle maps, arbitrary-universe adapters, affine Spec limits, coherent frame torsors and fpqc quotient comparison are constructed in the indicated layers.
 
 A proof route uses the following steps. On t_n both sides are e_[1]⊗e_[1]. Apply quotient-root extensionality. This compares algebra maps, not a newly assumed Hopf compatibility field.
 
@@ -6923,7 +6923,7 @@ A proof route uses the following steps. On t_n both sides are e_[1]⊗e_[1]. App
 
 For positive n|N, E_N∘d_n,N∘E_n⁻¹ sends a e_[k] to a e_[(N/n)val(k)] in A[ℤ/N]. The direction is the character-group inclusion ℤ/n→ℤ/N, dual to μ_N→μ_n.
 
-A is an arbitrary commutative ring in one fixed universe; n is a positive natural number. If N occurs it is positive and n divides N. No nontriviality, reducedness, field, Noetherian, characteristic or invertibility-of-n hypothesis is imposed. B_n is the AffineRing (1:A) n = AdjoinRoot(X^n−C1); t_n is its root. The target is the MuHopf A n = MonoidAlgebra A (Multiplicative (ZMod n)); e_[k]=single(ofAdd k) 1. This is the unity-parameter coordinate algebra of μ_n, not the arbitrary-f chart algebra. The finite comparison supplies one input to identifying the factorial unity-root Hopf algebra with A[ℚ/ℤ]. That infinite Hopf identification, rational-circle maps, arbitrary-universe adapters, affine Spec limits, coherent frame torsors and fpqc quotient comparison are constructed in the indicated layers.
+A is an arbitrary commutative ring in one fixed universe; n is a positive natural number. If N occurs it is positive and n divides N. No nontriviality, reducedness, field, Noetherian, characteristic or invertibility-of-n hypothesis is imposed. B_n is A[T]/(Tⁿ−1)=AdjoinRoot(Xⁿ−C 1); t_n is its root. The target is A[ℤ/n]=MonoidAlgebra A (Multiplicative (ZMod n)); e_[k]=single(ofAdd k) 1. This is the unity-parameter coordinate algebra of μ_n, not the arbitrary-f chart algebra. The finite comparison supplies one input to identifying the factorial unity-root Hopf algebra with A[ℚ/ℤ]. That infinite Hopf identification, rational-circle maps, arbitrary-universe adapters, affine Spec limits, coherent frame torsors and fpqc quotient comparison are constructed in the indicated layers.
 
 A proof route uses the following steps. Apply the inverse single formula, the transition t_n↦t_N^(N/n), multiplicativity and the character-power formula. The displayed coefficient is preserved; no field or separability argument is used.
 
@@ -6931,13 +6931,13 @@ For positive n|N, E_N∘d_n,N∘E_n⁻¹ sends a e_[k] to a e_[(N/n)val(k)] in A
 
 ([TV17](https://arxiv.org/abs/1410.1164v2) line 668, §3.1, pp.14–16; elementary calculation from the displayed quotient relation)
 
-*Needs:* §3.102 (finite cyclic equivalence on the root); §3.103 (finite cyclic equivalence on inverse basis coordinates); §3.18 (root image of a divisibility transition); Mathlib MonoidAlgebra.single_pow.
+*Needs:* §3.102 (finite cyclic equivalence on the root); §3.103 (finite cyclic equivalence on inverse basis coordinates); §3.18 (root image of a divisibility transition); `MonoidAlgebra.single_pow`.
 
 ### 3.128 Finite cyclic coordinates identify the counit
 
 ε∘E_n is the AdjoinRoot algebra lift evaluating t_n at 1.
 
-A is an arbitrary commutative ring in one fixed universe; n is a positive natural number. If N occurs it is positive and n divides N. No nontriviality, reducedness, field, Noetherian, characteristic or invertibility-of-n hypothesis is imposed. B_n is the AffineRing (1:A) n = AdjoinRoot(X^n−C1); t_n is its root. The target is the MuHopf A n = MonoidAlgebra A (Multiplicative (ZMod n)); e_[k]=single(ofAdd k) 1. This is the unity-parameter coordinate algebra of μ_n, not the arbitrary-f chart algebra. The finite comparison supplies one input to identifying the factorial unity-root Hopf algebra with A[ℚ/ℤ]. That infinite Hopf identification, rational-circle maps, arbitrary-universe adapters, affine Spec limits, coherent frame torsors and fpqc quotient comparison are constructed in the indicated layers.
+A is an arbitrary commutative ring in one fixed universe; n is a positive natural number. If N occurs it is positive and n divides N. No nontriviality, reducedness, field, Noetherian, characteristic or invertibility-of-n hypothesis is imposed. B_n is A[T]/(Tⁿ−1)=AdjoinRoot(Xⁿ−C 1); t_n is its root. The target is A[ℤ/n]=MonoidAlgebra A (Multiplicative (ZMod n)); e_[k]=single(ofAdd k) 1. This is the unity-parameter coordinate algebra of μ_n, not the arbitrary-f chart algebra. The finite comparison supplies one input to identifying the factorial unity-root Hopf algebra with A[ℚ/ℤ]. That infinite Hopf identification, rational-circle maps, arbitrary-universe adapters, affine Spec limits, coherent frame torsors and fpqc quotient comparison are constructed in the indicated layers.
 
 A proof route uses the following steps. The two algebra maps agree at t_n, where the group-like generator has counit one; use quotient extensionality.
 
@@ -6951,7 +6951,7 @@ A proof route uses the following steps. The two algebra maps agree at t_n, where
 
 S(E_n(t_n))=E_n(t_n^(n−1)), using the group-algebra antipode. This includes n=1.
 
-A is an arbitrary commutative ring in one fixed universe; n is a positive natural number. If N occurs it is positive and n divides N. No nontriviality, reducedness, field, Noetherian, characteristic or invertibility-of-n hypothesis is imposed. B_n is the AffineRing (1:A) n = AdjoinRoot(X^n−C1); t_n is its root. The target is the MuHopf A n = MonoidAlgebra A (Multiplicative (ZMod n)); e_[k]=single(ofAdd k) 1. This is the unity-parameter coordinate algebra of μ_n, not the arbitrary-f chart algebra. The finite comparison supplies one input to identifying the factorial unity-root Hopf algebra with A[ℚ/ℤ]. That infinite Hopf identification, rational-circle maps, arbitrary-universe adapters, affine Spec limits, coherent frame torsors and fpqc quotient comparison are constructed in the indicated layers.
+A is an arbitrary commutative ring in one fixed universe; n is a positive natural number. If N occurs it is positive and n divides N. No nontriviality, reducedness, field, Noetherian, characteristic or invertibility-of-n hypothesis is imposed. B_n is A[T]/(Tⁿ−1)=AdjoinRoot(Xⁿ−C 1); t_n is its root. The target is A[ℤ/n]=MonoidAlgebra A (Multiplicative (ZMod n)); e_[k]=single(ofAdd k) 1. This is the unity-parameter coordinate algebra of μ_n, not the arbitrary-f chart algebra. The finite comparison supplies one input to identifying the factorial unity-root Hopf algebra with A[ℚ/ℤ]. That infinite Hopf identification, rational-circle maps, arbitrary-universe adapters, affine Spec limits, coherent frame torsors and fpqc quotient comparison are constructed in the indicated layers.
 
 A proof route uses the following steps. The antipode sends e_[1] to e_[−1]. Since n>0, [(n−1)]=−[1] in ℤ/n, and the root-power formula identifies the right side.
 
@@ -6959,13 +6959,13 @@ S(E_n(t_n))=E_n(t_n^(n−1)), using the group-algebra antipode. This includes n=
 
 ([TV17](https://arxiv.org/abs/1410.1164v2) line 668, §3.1, pp.14–16; elementary calculation from the displayed quotient relation)
 
-*Needs:* §3.102 (finite cyclic equivalence on the root); Mathlib MonoidAlgebra.single_pow; `MonoidAlgebra.antipode_single`.
+*Needs:* §3.102 (finite cyclic equivalence on the root); `MonoidAlgebra.single_pow`; `MonoidAlgebra.antipode_single`.
 
 ### 3.130 Finite unity root maps to the normalized rational character
 
 F_n(t_n)=e_[1/n].
 
-A is any commutative ring in a fixed universe. Every finite exponent is positive; divisibility maps require n divides N. No nontriviality, reducedness, flatness, field or invertibility hypothesis is imposed. The character group is the AddCircle of period 1 over the rationals, namely ℚ/ℤ; its group algebra means the MonoidAlgebra A (Multiplicative (AddCircle (1:ℚ))). The unity-root algebra U_A is the factorial affine colimit of §3.58(1).
+A is any commutative ring in a fixed universe. Every finite exponent is positive; divisibility maps require n divides N. No nontriviality, reducedness, flatness, field or invertibility hypothesis is imposed. The character group is the AddCircle of period 1 over the rationals, namely ℚ/ℤ; its group algebra means the MonoidAlgebra A (Multiplicative (AddCircle (1:ℚ))). The unity-root algebra U_A is the factorial affine colimit of §3.58 at f=1.
 
 A proof route uses the following steps. Use the root formula, then the group-algebra single formula and character orientation.
 
@@ -6979,7 +6979,7 @@ F_n(t_n)=e_[1/n].
 
 F_n is injective for every n>0 and every A.
 
-A is any commutative ring in a fixed universe. Every finite exponent is positive; divisibility maps require n divides N. No nontriviality, reducedness, flatness, field or invertibility hypothesis is imposed. The character group is the AddCircle of period 1 over the rationals, namely ℚ/ℤ; its group algebra means the MonoidAlgebra A (Multiplicative (AddCircle (1:ℚ))). The unity-root algebra U_A is the factorial affine colimit of §3.58(1).
+A is any commutative ring in a fixed universe. Every finite exponent is positive; divisibility maps require n divides N. No nontriviality, reducedness, flatness, field or invertibility hypothesis is imposed. The character group is the AddCircle of period 1 over the rationals, namely ℚ/ℤ; its group algebra means the MonoidAlgebra A (Multiplicative (AddCircle (1:ℚ))). The unity-root algebra U_A is the factorial affine colimit of §3.58 at f=1.
 
 A proof route uses the following steps. Compose finite character-map injectivity with the algebra equivalence. No argument by geometric field points is used.
 
@@ -7397,7 +7397,7 @@ For every commutative A-algebra B in the fixed universe and σ∈S(B), construct
 
 For n dividing N, F_N composed with the affineDivisibility(1,n,N) equals F_n as A-algebra homomorphisms.
 
-A is any commutative ring in a fixed universe. Every finite exponent is positive; divisibility maps require n divides N. No nontriviality, reducedness, flatness, field or invertibility hypothesis is imposed. The character group is the AddCircle of period 1 over the rationals, namely ℚ/ℤ; its group algebra means the MonoidAlgebra A (Multiplicative (AddCircle (1:ℚ))). The unity-root algebra U_A is the factorial affine colimit of §3.58(1).
+A is any commutative ring in a fixed universe. Every finite exponent is positive; divisibility maps require n divides N. No nontriviality, reducedness, flatness, field or invertibility hypothesis is imposed. The character group is the AddCircle of period 1 over the rationals, namely ℚ/ℤ; its group algebra means the MonoidAlgebra A (Multiplicative (AddCircle (1:ℚ))). The unity-root algebra U_A is the factorial affine colimit of §3.58 at f=1.
 
 A proof route uses the following steps. Transport to finite group-algebra coordinates. The divisibility theorem sends e_k to e_([(N/n)val(k)]); apply the character-transition lemma on each basis element and linearity. Both inverse laws belong to the finite equivalence.
 
@@ -7411,7 +7411,7 @@ For n dividing N, F_N composed with the affineDivisibility(1,n,N) equals F_n as 
 
 For d_i=(i+1)!, the basis element e_[1/d_i] in A[ℚ/ℤ] has d_i-th power 1.
 
-A is any commutative ring in a fixed universe. Every finite exponent is positive; divisibility maps require n divides N. No nontriviality, reducedness, flatness, field or invertibility hypothesis is imposed. The character group is the AddCircle of period 1 over the rationals, namely ℚ/ℤ; its group algebra means the MonoidAlgebra A (Multiplicative (AddCircle (1:ℚ))). The unity-root algebra U_A is the factorial affine colimit of §3.58(1).
+A is any commutative ring in a fixed universe. Every finite exponent is positive; divisibility maps require n divides N. No nontriviality, reducedness, flatness, field or invertibility hypothesis is imposed. The character group is the AddCircle of period 1 over the rationals, namely ℚ/ℤ; its group algebra means the MonoidAlgebra A (Multiplicative (AddCircle (1:ℚ))). The unity-root algebra U_A is the factorial affine colimit of §3.58 at f=1.
 
 A proof route uses the following steps. Map the finite unity-root relation through F_(d_i). Equivalently use d_i[1/d_i]=[1]=0 and basis multiplication.
 
@@ -7419,7 +7419,7 @@ For d_i=(i+1)!, the basis element e_[1/d_i] in A[ℚ/ℤ] has d_i-th power 1.
 
 ([TV17](https://arxiv.org/abs/1410.1164v2) line 668, §3.1, pp.14–16; elementary calculation from the displayed quotient relation)
 
-*Needs:* §3.130 (finite unity root maps to the normalized rational character); Mathlib AdjoinRoot.eval₂_root.
+*Needs:* §3.130 (finite unity root maps to the normalized rational character); `AdjoinRoot.eval₂_root`.
 
 ### 3.153 Universal root-algebra cocone
 
@@ -7481,7 +7481,7 @@ L_n(b)=β(b) for every b∈B and every positive n, where b is included through t
 
 A,B,C are arbitrary commutative rings in a common arbitrary universe; f∈A and φ:A→B is a unital ring map. No flatness, nontriviality, reducedness, Noetherianity, unit-section or invertibility-of-exponent assumption is made. D_A(f) is the direct limit of AdjoinRoot algebras A[t_n]/(t_n^n−f) indexed by all positive exponents under divisibility. κ_n denotes its finite inclusion; F_φ is the coefficient map. Tensor statements use the A-algebra structure on B and φ=algebraMap A B. The finite/universal lift constructions assume ring maps α:D_A(f)→C and β:B→C satisfying α(algebraMap A D_A(f) a)=β(φ(a)) for all a. Scheme pullback statements apply to arbitrary test schemes in this universe. Higher-universe transport, coherent root-object groupoids and fpqc stack descent are distinct targets.
 
-A proof route uses the following steps. Identify the AdjoinRoot algebra map with its coefficient ring map and apply the lift-on-coefficients law.
+A proof route uses the following steps. Identify the AdjoinRoot algebra map with its coefficient ring map and apply `AdjoinRoot.lift_of`.
 
 
 ([NormalizationThree-codex-rtOQ9t](https://stacks.math.columbia.edu/tag/01JO) line 1410 — Stacks Project §26.17, Lemma 26.17.2 (tag 01JQ), printed p.31, affine fibre products and the tensor-product universal property; elementary calculation from the displayed quotient relation; [TV17](https://arxiv.org/pdf/1410.1164v2) line 668 — §3.1 printed p.14 inverse-limit description; Proposition3.10 pp.15–16 delimits the separate quotient-stack use. Uses the all-positive-index affine chart.)
@@ -7781,9 +7781,9 @@ A proof route uses the following steps. Invert the universal coherent scalar fam
 
 **Checks.**
 
-- For every A, the antipode image of the degree-two unity root multiplied by that root is 1.
-- For every element of H_A, applying the antipode twice returns that element.
-- Over ℤ/1Z the antipode sends0 to0.
+- Over ℤ, S(h_2)=h_2⁵, which differs from h_2 because h_2 has order d_2=6 and 1,h_2,…,h_2⁵ are a basis of the degree-six stage ℤ[T]/(T⁶−1), which injects into H_ℤ (§3.166); the identity endomorphism, which also satisfies S(h_1)h_1=1, S∘S=id and S(0)=0, fails this test.
+- Over 𝔽₂, S(h_2)=h_2⁵ still differs from h_2 by the same basis, although −1=1.
+- Over ℤ, S(3+2h_2)=3+2h_2⁵: the constant coefficient stays 3 and the nonconstant term survives, whereas the augmentation-then-inclusion model would return 5.
 
 Construct S_A:H_A→H_A as an A-algebra map sending h_i to the underlying ring value of the inverse of the i-th universal coherent unit.
 
@@ -7851,40 +7851,39 @@ For any coefficient homomorphism φ:A→B, construct the ring homomorphism U_φ:
 
 ### 3.180 The represented action on root-chart points
 
-For arbitrary f∈A, g∈WithConv(AlgHom_A(H_A,B)) and x∈AlgHom_A(C_A(f),B), define α_f(g,x)=lift(g.ofConv,x)∘ρ_f using the tensor-algebra lift. This is an A-algebra homomorphism C_A(f)→B.
+For arbitrary f∈A, an A-algebra homomorphism g:H_A→B and x∈AlgHom_A(C_A(f),B), define α_f(g,x)=lift(g,x)∘ρ_f using the tensor-algebra lift. This is an A-algebra homomorphism C_A(f)→B. Only the coaction ρ_f and the tensor lift enter: no bialgebra, counit or convolution structure on H_A is used in this definition, and the unit and composition laws of the action are separate targets stated once that structure is installed.
 
-A,B,C are arbitrary commutative rings in one fixed universe, with specified A-algebra structures on B and C; f∈A is arbitrary and k:B→C is an arbitrary A-algebra homomorphism where used. Zero rings, wild characteristic, nonreduced fibres and nonunit f are included. No field, domain, reducedness, finite-type, invertible-order, flatness or nontriviality hypothesis is imposed. C_A(f) is the factorial affine root colimit, with d_i = (i+1)! and roots u_i satisfying u_i^((i+1)!) = f, where f denotes its image under the coefficient map A→C_A(f). H_A=C_A(1) has roots h_i, coaction ρ_f, counit ε, antipode S, coherent families and evaluation E_s. Install only the bialgebra of §3.227 A locally; use the imported convolution monoid. This is an action on affine-chart algebra-valued points, not a new generic comodule action. The Tau Ceti comodule pointsRepresentation acts on scalar-extended modules, a distinct carrier. The A[ℚ/ℤ] coordinate comparison, arbitrary-universe adapters, Spec transport, coherent root-object groupoids, fpqc frame torsors and quotient-stack equivalence are distinct targets. Fixed zero-root points explicitly preclude a freeness claim.
+A,B,C are arbitrary commutative rings in one fixed universe, with specified A-algebra structures on B and C; f∈A is arbitrary and k:B→C is an arbitrary A-algebra homomorphism where used. Zero rings, wild characteristic, nonreduced fibres and nonunit f are included. No field, domain, reducedness, finite-type, invertible-order, flatness or nontriviality hypothesis is imposed. C_A(f) is the factorial affine root colimit, with d_i = (i+1)! and roots u_i satisfying u_i^((i+1)!) = f, where f denotes its image under the coefficient map A→C_A(f). H_A=C_A(1) has roots h_i, coaction ρ_f, counit ε, antipode S, coherent families and evaluation E_s. No bialgebra or convolution structure on H_A is used here; algebra points g:H_A→B are ordinary A-algebra homomorphisms. This is an action on affine-chart algebra-valued points, not a new generic comodule action. The Tau Ceti comodule pointsRepresentation acts on scalar-extended modules, a distinct carrier. The A[ℚ/ℤ] coordinate comparison, arbitrary-universe adapters, Spec transport, coherent root-object groupoids, fpqc frame torsors and quotient-stack equivalence are distinct targets. Fixed zero-root points explicitly preclude a freeness claim.
 
 The construction has the following API.
 
-- For every index i, α_f(g,x)(u_i)=g.ofConv(h_i)·x(u_i).
-- For every chart point x, α_f(1,x)=x; the convolution identity is the counit point, not the identity endomorphism of H_A.
-- For every g,h and chart point x, α_f(g*h,x)=α_f(g,α_f(h,x)).
-- For every A-algebra homomorphism k:B→C, k∘α_f(g,x)=α_f(toConv(k∘g.ofConv),k∘x).
-- For every coherent A-unit family s and chart point x, α_f(toConv(ι_B∘E_s),x)=x∘factorialScale(f,s), where E_s is the evaluation map H_A→A.
-- Taking B=H_A⊗_A C_A(f), g=toConv(includeLeft) and x=includeRight gives α_f(g,x)=ρ_f as algebra homomorphisms; all roots and nilpotents are retained.
+- For every index i, α_f(g,x)(u_i)=g(h_i)·x(u_i).
+- For every chart point x, the counit point fixes x: α_f(ι_B∘ε_A,x)=x, since ε_A(h_i)=1 for every i. The identity endomorphism of H_A is not a B-valued point and is not an input of α_f.
+- For every A-algebra homomorphism k:B→C, k∘α_f(g,x)=α_f(k∘g,k∘x).
+- For every coherent A-unit family s and chart point x, α_f(ι_B∘E_s,x)=x∘factorialScale(f,s), where E_s is the evaluation map H_A→A.
+- Taking B=H_A⊗_A C_A(f), g=includeLeft and x=includeRight gives α_f(g,x)=ρ_f as algebra homomorphisms; all roots and nilpotents are retained.
 
-A proof route uses the following steps. Compose the coaction ρ_f with the imported tensor lift of g.ofConv and x. Their images commute because B is commutative; no new generic tensor construction is planned.
+A proof route uses the following steps. Compose the coaction ρ_f with the imported tensor lift of g and x. Their images commute because B is commutative; no new generic tensor construction is planned.
 
 **Checks.**
 
 - At A=B=ZMod4 and f=0, the order-two root evaluates under the action as the product of the unity-root point value and the chart-point value; here the values are ±1 and 0 or 2, and (−1)·2=2, so this instance does not separate the action from the trivial one.
 - At A=ℤ, B=ℂ, f=1, the coherent family g(h_i)=exp(2πi/d_i) acting on the all-one chart point gives −1 at u_1 and (1+√3i)/2 at u_2, whereas the trivial action α′(g,x)=x gives 1 at both.
-- For every f and every B-valued chart point, the convolution identity acts as the identity.
+- For every f and every B-valued chart point x, the counit point ι_B∘ε_A acts as the identity, because ε_A(h_i)=1 for every i; a wrong model of the counit point sending h_1 to −1 would send x(u_1) to −x(u_1), which for f=1 and the all-one chart point over ℤ is −1≠1.
 - The tensor-inclusion universal points recover the whole coaction.
-- In characteristic two with f=0, any chart point evaluating every root to zero is fixed by every convolution point; this action alone is not a freeness certificate.
+- In characteristic two with f=0, any chart point evaluating every root to zero is fixed by every algebra point g:H_A→B; this action alone is not a freeness certificate.
 
-For arbitrary f∈A, g∈WithConv(AlgHom_A(H_A,B)) and x∈AlgHom_A(C_A(f),B), define α_f(g,x)=lift(g.ofConv,x)∘ρ_f using the tensor-algebra lift. This is an A-algebra homomorphism C_A(f)→B.
+For arbitrary f∈A, an A-algebra homomorphism g:H_A→B and x∈AlgHom_A(C_A(f),B), define α_f(g,x)=lift(g,x)∘ρ_f using the tensor-algebra lift. This is an A-algebra homomorphism C_A(f)→B. Only the coaction ρ_f and the tensor lift enter: no bialgebra, counit or convolution structure on H_A is used in this definition, and the unit and composition laws of the action are separate targets stated once that structure is installed.
 
 ([TV17](https://arxiv.org/abs/1410.1164v2) line 668, §3.1, pp.14–16; elementary calculation from the displayed quotient relation)
 
-*Needs:* §3.148 (universal coaction on the factorial chart); `Algebra.TensorProduct.lift`.
+*Needs:* §3.148 (universal coaction on the factorial chart); §3.174 (counit on every factorial root); §3.97 (root values determine colimit homomorphisms); `Algebra.TensorProduct.lift`.
 
 ### 3.181 Factorial rational character roots form a coherent family
 
 If i≤j, then e_[1/d_j] raised to d_j/d_i equals e_[1/d_i].
 
-A is any commutative ring in a fixed universe. Every finite exponent is positive; divisibility maps require n divides N. No nontriviality, reducedness, flatness, field or invertibility hypothesis is imposed. The character group is the AddCircle of period 1 over the rationals, namely ℚ/ℤ; its group algebra means the MonoidAlgebra A (Multiplicative (AddCircle (1:ℚ))). The unity-root algebra U_A is the factorial affine colimit of §3.58(1).
+A is any commutative ring in a fixed universe. Every finite exponent is positive; divisibility maps require n divides N. No nontriviality, reducedness, flatness, field or invertibility hypothesis is imposed. The character group is the AddCircle of period 1 over the rationals, namely ℚ/ℤ; its group algebra means the MonoidAlgebra A (Multiplicative (AddCircle (1:ℚ))). The unity-root algebra U_A is the factorial affine colimit of §3.58 at f=1.
 
 A proof route uses the following steps. Evaluate the finite root-transition square on t_(d_i), using exact factorial divisibility and the root transition.
 
@@ -8298,13 +8297,13 @@ For every a∈A, U_φ(ι_A(a))=ι_B(φ(a)), with the coefficient inclusions.
 
 ### 3.209 The action on each finite root
 
-For every index i, α_f(g,x)(u_i)=g.ofConv(h_i)·x(u_i).
+For every index i, α_f(g,x)(u_i)=g(h_i)·x(u_i).
 
-A,B,C are arbitrary commutative rings in one fixed universe, with specified A-algebra structures on B and C; f∈A is arbitrary and k:B→C is an arbitrary A-algebra homomorphism where used. Zero rings, wild characteristic, nonreduced fibres and nonunit f are included. No field, domain, reducedness, finite-type, invertible-order, flatness or nontriviality hypothesis is imposed. C_A(f) is the factorial affine root colimit, with d_i = (i+1)! and roots u_i satisfying u_i^((i+1)!) = f, where f denotes its image under the coefficient map A→C_A(f). H_A=C_A(1) has roots h_i, coaction ρ_f, counit ε, antipode S, coherent families and evaluation E_s. Install only the bialgebra of §3.227 A locally; use the imported convolution monoid. This is an action on affine-chart algebra-valued points, not a new generic comodule action. The Tau Ceti comodule pointsRepresentation acts on scalar-extended modules, a distinct carrier. The A[ℚ/ℤ] coordinate comparison, arbitrary-universe adapters, Spec transport, coherent root-object groupoids, fpqc frame torsors and quotient-stack equivalence are distinct targets. Fixed zero-root points explicitly preclude a freeness claim.
+A,B,C are arbitrary commutative rings in one fixed universe, with specified A-algebra structures on B and C; f∈A is arbitrary and k:B→C is an arbitrary A-algebra homomorphism where used. Zero rings, wild characteristic, nonreduced fibres and nonunit f are included. No field, domain, reducedness, finite-type, invertible-order, flatness or nontriviality hypothesis is imposed. C_A(f) is the factorial affine root colimit, with d_i = (i+1)! and roots u_i satisfying u_i^((i+1)!) = f, where f denotes its image under the coefficient map A→C_A(f). H_A=C_A(1) has roots h_i, coaction ρ_f, counit ε, antipode S, coherent families and evaluation E_s. No bialgebra or convolution structure on H_A is used here; algebra points g:H_A→B are ordinary A-algebra homomorphisms. This is an action on affine-chart algebra-valued points, not a new generic comodule action. The Tau Ceti comodule pointsRepresentation acts on scalar-extended modules, a distinct carrier. The A[ℚ/ℤ] coordinate comparison, arbitrary-universe adapters, Spec transport, coherent root-object groupoids, fpqc frame torsors and quotient-stack equivalence are distinct targets. Fixed zero-root points explicitly preclude a freeness claim.
 
 A proof route uses the following steps. Apply the coaction root formula and the imported pure-tensor evaluation formula.
 
-For every index i, α_f(g,x)(u_i)=g.ofConv(h_i)·x(u_i).
+For every index i, α_f(g,x)(u_i)=g(h_i)·x(u_i).
 
 ([TV17](https://arxiv.org/abs/1410.1164v2) line 668, §3.1, pp.14–16; elementary calculation from the displayed quotient relation)
 
@@ -8314,7 +8313,7 @@ For every index i, α_f(g,x)(u_i)=g.ofConv(h_i)·x(u_i).
 
 For every a∈A, α_f(g,x)(ι_C(a))=ι_B(a).
 
-A,B,C are arbitrary commutative rings in one fixed universe, with specified A-algebra structures on B and C; f∈A is arbitrary and k:B→C is an arbitrary A-algebra homomorphism where used. Zero rings, wild characteristic, nonreduced fibres and nonunit f are included. No field, domain, reducedness, finite-type, invertible-order, flatness or nontriviality hypothesis is imposed. C_A(f) is the factorial affine root colimit, with d_i = (i+1)! and roots u_i satisfying u_i^((i+1)!) = f, where f denotes its image under the coefficient map A→C_A(f). H_A=C_A(1) has roots h_i, coaction ρ_f, counit ε, antipode S, coherent families and evaluation E_s. Install only the bialgebra of §3.227 A locally; use the imported convolution monoid. This is an action on affine-chart algebra-valued points, not a new generic comodule action. The Tau Ceti comodule pointsRepresentation acts on scalar-extended modules, a distinct carrier. The A[ℚ/ℤ] coordinate comparison, arbitrary-universe adapters, Spec transport, coherent root-object groupoids, fpqc frame torsors and quotient-stack equivalence are distinct targets. Fixed zero-root points explicitly preclude a freeness claim.
+A,B,C are arbitrary commutative rings in one fixed universe, with specified A-algebra structures on B and C; f∈A is arbitrary and k:B→C is an arbitrary A-algebra homomorphism where used. Zero rings, wild characteristic, nonreduced fibres and nonunit f are included. No field, domain, reducedness, finite-type, invertible-order, flatness or nontriviality hypothesis is imposed. C_A(f) is the factorial affine root colimit, with d_i = (i+1)! and roots u_i satisfying u_i^((i+1)!) = f, where f denotes its image under the coefficient map A→C_A(f). H_A=C_A(1) has roots h_i, coaction ρ_f, counit ε, antipode S, coherent families and evaluation E_s. No bialgebra or convolution structure on H_A is used here; algebra points g:H_A→B are ordinary A-algebra homomorphisms. This is an action on affine-chart algebra-valued points, not a new generic comodule action. The Tau Ceti comodule pointsRepresentation acts on scalar-extended modules, a distinct carrier. The A[ℚ/ℤ] coordinate comparison, arbitrary-universe adapters, Spec transport, coherent root-object groupoids, fpqc frame torsors and quotient-stack equivalence are distinct targets. Fixed zero-root points explicitly preclude a freeness claim.
 
 A proof route uses the following steps. Use the coefficient-preservation field of the composite A-algebra homomorphism.
 
@@ -8328,7 +8327,7 @@ For every a∈A, α_f(g,x)(ι_C(a))=ι_B(a).
 
 Define F:U_A→A[ℚ/ℤ] by the factorialAffineRootLift with roots e_[1/d_i], using the preceding power and transition lemmas.
 
-A is any commutative ring in a fixed universe. Every finite exponent is positive; divisibility maps require n divides N. No nontriviality, reducedness, flatness, field or invertibility hypothesis is imposed. The character group is the AddCircle of period 1 over the rationals, namely ℚ/ℤ; its group algebra means the MonoidAlgebra A (Multiplicative (AddCircle (1:ℚ))). The unity-root algebra U_A is the factorial affine colimit of §3.58(1).
+A is any commutative ring in a fixed universe. Every finite exponent is positive; divisibility maps require n divides N. No nontriviality, reducedness, flatness, field or invertibility hypothesis is imposed. The character group is the AddCircle of period 1 over the rationals, namely ℚ/ℤ; its group algebra means the MonoidAlgebra A (Multiplicative (AddCircle (1:ℚ))). The unity-root algebra U_A is the factorial affine colimit of §3.58 at f=1.
 
 The construction has the following API.
 
@@ -8765,13 +8764,13 @@ For every algebra point p:H_A→B, P_B(p∘S_A)=P_B(p)⁻¹ as an equality in th
 
 ### 3.234 Naturality in the test algebra
 
-For every A-algebra homomorphism k:B→C, k∘α_f(g,x)=α_f(toConv(k∘g.ofConv),k∘x).
+For every A-algebra homomorphism k:B→C, k∘α_f(g,x)=α_f(k∘g,k∘x).
 
-A,B,C are arbitrary commutative rings in one fixed universe, with specified A-algebra structures on B and C; f∈A is arbitrary and k:B→C is an arbitrary A-algebra homomorphism where used. Zero rings, wild characteristic, nonreduced fibres and nonunit f are included. No field, domain, reducedness, finite-type, invertible-order, flatness or nontriviality hypothesis is imposed. C_A(f) is the factorial affine root colimit, with d_i = (i+1)! and roots u_i satisfying u_i^((i+1)!) = f, where f denotes its image under the coefficient map A→C_A(f). H_A=C_A(1) has roots h_i, coaction ρ_f, counit ε, antipode S, coherent families and evaluation E_s. Install only the bialgebra of §3.227 A locally; use the imported convolution monoid. This is an action on affine-chart algebra-valued points, not a new generic comodule action. The Tau Ceti comodule pointsRepresentation acts on scalar-extended modules, a distinct carrier. The A[ℚ/ℤ] coordinate comparison, arbitrary-universe adapters, Spec transport, coherent root-object groupoids, fpqc frame torsors and quotient-stack equivalence are distinct targets. Fixed zero-root points explicitly preclude a freeness claim.
+A,B,C are arbitrary commutative rings in one fixed universe, with specified A-algebra structures on B and C; f∈A is arbitrary and k:B→C is an arbitrary A-algebra homomorphism where used. Zero rings, wild characteristic, nonreduced fibres and nonunit f are included. No field, domain, reducedness, finite-type, invertible-order, flatness or nontriviality hypothesis is imposed. C_A(f) is the factorial affine root colimit, with d_i = (i+1)! and roots u_i satisfying u_i^((i+1)!) = f, where f denotes its image under the coefficient map A→C_A(f). H_A=C_A(1) has roots h_i, coaction ρ_f, counit ε, antipode S, coherent families and evaluation E_s. Install only the bialgebra of §3.227 locally; convolution points are elements of the imported convolution monoid WithConv(AlgHom_A(H_A,B)), and α_f is applied to their underlying algebra homomorphisms (g.ofConv). This is an action on affine-chart algebra-valued points, not a new generic comodule action. The Tau Ceti comodule pointsRepresentation acts on scalar-extended modules, a distinct carrier. The A[ℚ/ℤ] coordinate comparison, arbitrary-universe adapters, Spec transport, coherent root-object groupoids, fpqc frame torsors and quotient-stack equivalence are distinct targets. Fixed zero-root points explicitly preclude a freeness claim.
 
 A proof route uses the following steps. Apply root extensionality. The two root values agree because k preserves products.
 
-For every A-algebra homomorphism k:B→C, k∘α_f(g,x)=α_f(toConv(k∘g.ofConv),k∘x).
+For every A-algebra homomorphism k:B→C, k∘α_f(g,x)=α_f(k∘g,k∘x).
 
 ([TV17](https://arxiv.org/abs/1410.1164v2) line 668, §3.1, pp.14–16; elementary calculation from the displayed quotient relation)
 
@@ -8779,13 +8778,13 @@ For every A-algebra homomorphism k:B→C, k∘α_f(g,x)=α_f(toConv(k∘g.ofConv
 
 ### 3.235 Recovery of the coefficient-valued scaling
 
-For every coherent A-unit family s and chart point x, α_f(toConv(ι_B∘E_s),x)=x∘factorialScale(f,s), where E_s is the evaluation map H_A→A.
+For every coherent A-unit family s and chart point x, α_f(ι_B∘E_s,x)=x∘factorialScale(f,s), where E_s is the evaluation map H_A→A.
 
-A,B,C are arbitrary commutative rings in one fixed universe, with specified A-algebra structures on B and C; f∈A is arbitrary and k:B→C is an arbitrary A-algebra homomorphism where used. Zero rings, wild characteristic, nonreduced fibres and nonunit f are included. No field, domain, reducedness, finite-type, invertible-order, flatness or nontriviality hypothesis is imposed. C_A(f) is the factorial affine root colimit, with d_i = (i+1)! and roots u_i satisfying u_i^((i+1)!) = f, where f denotes its image under the coefficient map A→C_A(f). H_A=C_A(1) has roots h_i, coaction ρ_f, counit ε, antipode S, coherent families and evaluation E_s. Install only the bialgebra of §3.227 A locally; use the imported convolution monoid. This is an action on affine-chart algebra-valued points, not a new generic comodule action. The Tau Ceti comodule pointsRepresentation acts on scalar-extended modules, a distinct carrier. The A[ℚ/ℤ] coordinate comparison, arbitrary-universe adapters, Spec transport, coherent root-object groupoids, fpqc frame torsors and quotient-stack equivalence are distinct targets. Fixed zero-root points explicitly preclude a freeness claim.
+A,B,C are arbitrary commutative rings in one fixed universe, with specified A-algebra structures on B and C; f∈A is arbitrary and k:B→C is an arbitrary A-algebra homomorphism where used. Zero rings, wild characteristic, nonreduced fibres and nonunit f are included. No field, domain, reducedness, finite-type, invertible-order, flatness or nontriviality hypothesis is imposed. C_A(f) is the factorial affine root colimit, with d_i = (i+1)! and roots u_i satisfying u_i^((i+1)!) = f, where f denotes its image under the coefficient map A→C_A(f). H_A=C_A(1) has roots h_i, coaction ρ_f, counit ε, antipode S, coherent families and evaluation E_s. Install only the bialgebra of §3.227 locally; convolution points are elements of the imported convolution monoid WithConv(AlgHom_A(H_A,B)), and α_f is applied to their underlying algebra homomorphisms (g.ofConv). This is an action on affine-chart algebra-valued points, not a new generic comodule action. The Tau Ceti comodule pointsRepresentation acts on scalar-extended modules, a distinct carrier. The A[ℚ/ℤ] coordinate comparison, arbitrary-universe adapters, Spec transport, coherent root-object groupoids, fpqc frame torsors and quotient-stack equivalence are distinct targets. Fixed zero-root points explicitly preclude a freeness claim.
 
 A proof route uses the following steps. Compare all root values. Evaluation gives s_i, while the scaling sends u_i to ι_C(s_i)u_i; x preserves coefficients and products.
 
-For every coherent A-unit family s and chart point x, α_f(toConv(ι_B∘E_s),x)=x∘factorialScale(f,s), where E_s is the evaluation map H_A→A.
+For every coherent A-unit family s and chart point x, α_f(ι_B∘E_s,x)=x∘factorialScale(f,s), where E_s is the evaluation map H_A→A.
 
 ([TV17](https://arxiv.org/abs/1410.1164v2) line 668, §3.1, pp.14–16; elementary calculation from the displayed quotient relation)
 
@@ -8793,13 +8792,13 @@ For every coherent A-unit family s and chart point x, α_f(toConv(ι_B∘E_s),x)
 
 ### 3.236 Universal recovery of the coaction
 
-Taking B=H_A⊗_A C_A(f), g=toConv(includeLeft) and x=includeRight gives α_f(g,x)=ρ_f as algebra homomorphisms; all roots and nilpotents are retained.
+Taking B=H_A⊗_A C_A(f), g=includeLeft and x=includeRight gives α_f(g,x)=ρ_f as algebra homomorphisms; all roots and nilpotents are retained.
 
-A,B,C are arbitrary commutative rings in one fixed universe, with specified A-algebra structures on B and C; f∈A is arbitrary and k:B→C is an arbitrary A-algebra homomorphism where used. Zero rings, wild characteristic, nonreduced fibres and nonunit f are included. No field, domain, reducedness, finite-type, invertible-order, flatness or nontriviality hypothesis is imposed. C_A(f) is the factorial affine root colimit, with d_i = (i+1)! and roots u_i satisfying u_i^((i+1)!) = f, where f denotes its image under the coefficient map A→C_A(f). H_A=C_A(1) has roots h_i, coaction ρ_f, counit ε, antipode S, coherent families and evaluation E_s. Install only the bialgebra of §3.227 A locally; use the imported convolution monoid. This is an action on affine-chart algebra-valued points, not a new generic comodule action. The Tau Ceti comodule pointsRepresentation acts on scalar-extended modules, a distinct carrier. The A[ℚ/ℤ] coordinate comparison, arbitrary-universe adapters, Spec transport, coherent root-object groupoids, fpqc frame torsors and quotient-stack equivalence are distinct targets. Fixed zero-root points explicitly preclude a freeness claim.
+A,B,C are arbitrary commutative rings in one fixed universe, with specified A-algebra structures on B and C; f∈A is arbitrary and k:B→C is an arbitrary A-algebra homomorphism where used. Zero rings, wild characteristic, nonreduced fibres and nonunit f are included. No field, domain, reducedness, finite-type, invertible-order, flatness or nontriviality hypothesis is imposed. C_A(f) is the factorial affine root colimit, with d_i = (i+1)! and roots u_i satisfying u_i^((i+1)!) = f, where f denotes its image under the coefficient map A→C_A(f). H_A=C_A(1) has roots h_i, coaction ρ_f, counit ε, antipode S, coherent families and evaluation E_s. Install only the bialgebra of §3.227 locally; convolution points are elements of the imported convolution monoid WithConv(AlgHom_A(H_A,B)), and α_f is applied to their underlying algebra homomorphisms (g.ofConv). This is an action on affine-chart algebra-valued points, not a new generic comodule action. The Tau Ceti comodule pointsRepresentation acts on scalar-extended modules, a distinct carrier. The A[ℚ/ℤ] coordinate comparison, arbitrary-universe adapters, Spec transport, coherent root-object groupoids, fpqc frame torsors and quotient-stack equivalence are distinct targets. Fixed zero-root points explicitly preclude a freeness claim.
 
 A proof route uses the following steps. Compare each root using the left/right tensor inclusions: (h_i⊗1)(1⊗u_i)=h_i⊗u_i. This recovers the whole coaction, not merely geometric-point values.
 
-Taking B=H_A⊗_A C_A(f), g=toConv(includeLeft) and x=includeRight gives α_f(g,x)=ρ_f as algebra homomorphisms; all roots and nilpotents are retained.
+Taking B=H_A⊗_A C_A(f), g=includeLeft and x=includeRight gives α_f(g,x)=ρ_f as algebra homomorphisms; all roots and nilpotents are retained.
 
 ([TV17](https://arxiv.org/abs/1410.1164v2) line 668, §3.1, pp.14–16; elementary calculation from the displayed quotient relation)
 
@@ -8807,13 +8806,13 @@ Taking B=H_A⊗_A C_A(f), g=toConv(includeLeft) and x=includeRight gives α_f(g,
 
 ### 3.237 Zero-root points are fixed
 
-If x(u_i)=0 for every i, then α_f(g,x)=x for every convolution point g. Hence no freeness or torsor claim follows from the existence of this action.
+If x(u_i)=0 for every i, then α_f(g,x)=x for every algebra point g:H_A→B. Hence no freeness or torsor claim follows from the existence of this action.
 
-A,B,C are arbitrary commutative rings in one fixed universe, with specified A-algebra structures on B and C; f∈A is arbitrary and k:B→C is an arbitrary A-algebra homomorphism where used. Zero rings, wild characteristic, nonreduced fibres and nonunit f are included. No field, domain, reducedness, finite-type, invertible-order, flatness or nontriviality hypothesis is imposed. C_A(f) is the factorial affine root colimit, with d_i = (i+1)! and roots u_i satisfying u_i^((i+1)!) = f, where f denotes its image under the coefficient map A→C_A(f). H_A=C_A(1) has roots h_i, coaction ρ_f, counit ε, antipode S, coherent families and evaluation E_s. Install only the bialgebra of §3.227 A locally; use the imported convolution monoid. This is an action on affine-chart algebra-valued points, not a new generic comodule action. The Tau Ceti comodule pointsRepresentation acts on scalar-extended modules, a distinct carrier. The A[ℚ/ℤ] coordinate comparison, arbitrary-universe adapters, Spec transport, coherent root-object groupoids, fpqc frame torsors and quotient-stack equivalence are distinct targets. Fixed zero-root points explicitly preclude a freeness claim.
+A,B,C are arbitrary commutative rings in one fixed universe, with specified A-algebra structures on B and C; f∈A is arbitrary and k:B→C is an arbitrary A-algebra homomorphism where used. Zero rings, wild characteristic, nonreduced fibres and nonunit f are included. No field, domain, reducedness, finite-type, invertible-order, flatness or nontriviality hypothesis is imposed. C_A(f) is the factorial affine root colimit, with d_i = (i+1)! and roots u_i satisfying u_i^((i+1)!) = f, where f denotes its image under the coefficient map A→C_A(f). H_A=C_A(1) has roots h_i, coaction ρ_f, counit ε, antipode S, coherent families and evaluation E_s. Install only the bialgebra of §3.227 locally; convolution points are elements of the imported convolution monoid WithConv(AlgHom_A(H_A,B)), and α_f is applied to their underlying algebra homomorphisms (g.ofConv). This is an action on affine-chart algebra-valued points, not a new generic comodule action. The Tau Ceti comodule pointsRepresentation acts on scalar-extended modules, a distinct carrier. The A[ℚ/ℤ] coordinate comparison, arbitrary-universe adapters, Spec transport, coherent root-object groupoids, fpqc frame torsors and quotient-stack equivalence are distinct targets. Fixed zero-root points explicitly preclude a freeness claim.
 
 A proof route uses the following steps. Every acted root evaluates to g(h_i)·0=0. Root extensionality identifies the algebra maps.
 
-If x(u_i)=0 for every i, then α_f(g,x)=x for every convolution point g. Hence no freeness or torsor claim follows from the existence of this action.
+If x(u_i)=0 for every i, then α_f(g,x)=x for every algebra point g:H_A→B. Hence no freeness or torsor claim follows from the existence of this action.
 
 ([TV17](https://arxiv.org/abs/1410.1164v2) line 668, §3.1, pp.14–16; elementary calculation from the displayed quotient relation)
 
@@ -8823,7 +8822,7 @@ If x(u_i)=0 for every i, then α_f(g,x)=x for every convolution point g. Hence n
 
 F(u_i)=e_[1/d_i], where u_i is the root included at factorial level i.
 
-A is any commutative ring in a fixed universe. Every finite exponent is positive; divisibility maps require n divides N. No nontriviality, reducedness, flatness, field or invertibility hypothesis is imposed. The character group is the AddCircle of period 1 over the rationals, namely ℚ/ℤ; its group algebra means the MonoidAlgebra A (Multiplicative (AddCircle (1:ℚ))). The unity-root algebra U_A is the factorial affine colimit of §3.58(1).
+A is any commutative ring in a fixed universe. Every finite exponent is positive; divisibility maps require n divides N. No nontriviality, reducedness, flatness, field or invertibility hypothesis is imposed. The character group is the AddCircle of period 1 over the rationals, namely ℚ/ℤ; its group algebra means the MonoidAlgebra A (Multiplicative (AddCircle (1:ℚ))). The unity-root algebra U_A is the factorial affine colimit of §3.58 at f=1.
 
 A proof route uses the following steps. Apply the lift-root computation.
 
@@ -9224,7 +9223,7 @@ For any positive n, any i with n dividing d_i, and x∈B_n, the equivalence send
 
 A is any commutative ring, f∈A, and B_n is the AdjoinRoot algebra A[T]/(T^n−f). Root exponents are positive. No nontriviality, reducedness, Noetherian, unit-parameter or invertible-exponent hypothesis is imposed.
 
-A proof route uses the following steps. Evaluate α on κ_n(x), then use the independent-factorial-multiple law.
+A proof route uses the following steps. Evaluate α on κ_n(x), then use §3.143 (independence of the factorial multiple).
 
 Use the quotient rings and directed colimits; keep every finite root and coefficient map visible. This algebra comparison leaves coherent root arrows, grading, Spec limits and fpqc torsor/quotient comparisons as separate obligations.
 
@@ -9380,7 +9379,7 @@ For every s∈S_B and A-algebra map k:B→C, k∘E_B(s)=E_C(S(k)(s)) as A-algebr
 
 For a positive divisibility index n and x∈E_n(1), F(ι_n(x))=F_n(x), where ι_n is the factorialAffineExtension.
 
-A is any commutative ring in a fixed universe. Every finite exponent is positive; divisibility maps require n divides N. No nontriviality, reducedness, flatness, field or invertibility hypothesis is imposed. The character group is the AddCircle of period 1 over the rationals, namely ℚ/ℤ; its group algebra means the MonoidAlgebra A (Multiplicative (AddCircle (1:ℚ))). The unity-root algebra U_A is the factorial affine colimit of §3.58(1).
+A is any commutative ring in a fixed universe. Every finite exponent is positive; divisibility maps require n divides N. No nontriviality, reducedness, flatness, field or invertibility hypothesis is imposed. The character group is the AddCircle of period 1 over the rationals, namely ℚ/ℤ; its group algebra means the MonoidAlgebra A (Multiplicative (AddCircle (1:ℚ))). The unity-root algebra U_A is the factorial affine colimit of §3.58 at f=1.
 
 A proof route uses the following steps. First compare the two A-algebra maps at a factorial level by root extensionality. Extend an arbitrary positive n to its specified factorial multiple and apply the finite transition square. The at-level independence removes the choice of multiple.
 Apply §3.262’s factorial-level comparison to the chosen positive-index extension and use the finite divisibility square and §3.143’s independence of the factorial multiple.
@@ -9577,37 +9576,37 @@ The point equivalence P_B sends the underlying algebra map of the convolution id
 
 ### 3.287 The convolution identity acts identically
 
-For every chart point x, α_f(1,x)=x; the convolution identity is the counit point, not the identity endomorphism of H_A.
+For every chart point x and the identity 1 of the convolution monoid WithConv(AlgHom_A(H_A,B)), α_f(1.ofConv,x)=x; the convolution identity is the counit point ι_B∘ε_A, not the identity endomorphism of H_A.
 
-A,B,C are arbitrary commutative rings in one fixed universe, with specified A-algebra structures on B and C; f∈A is arbitrary and k:B→C is an arbitrary A-algebra homomorphism where used. Zero rings, wild characteristic, nonreduced fibres and nonunit f are included. No field, domain, reducedness, finite-type, invertible-order, flatness or nontriviality hypothesis is imposed. C_A(f) is the factorial affine root colimit, with d_i = (i+1)! and roots u_i satisfying u_i^((i+1)!) = f, where f denotes its image under the coefficient map A→C_A(f). H_A=C_A(1) has roots h_i, coaction ρ_f, counit ε, antipode S, coherent families and evaluation E_s. Install only the bialgebra of §3.227 A locally; use the imported convolution monoid. This is an action on affine-chart algebra-valued points, not a new generic comodule action. The Tau Ceti comodule pointsRepresentation acts on scalar-extended modules, a distinct carrier. The A[ℚ/ℤ] coordinate comparison, arbitrary-universe adapters, Spec transport, coherent root-object groupoids, fpqc frame torsors and quotient-stack equivalence are distinct targets. Fixed zero-root points explicitly preclude a freeness claim.
+A,B,C are arbitrary commutative rings in one fixed universe, with specified A-algebra structures on B and C; f∈A is arbitrary and k:B→C is an arbitrary A-algebra homomorphism where used. Zero rings, wild characteristic, nonreduced fibres and nonunit f are included. No field, domain, reducedness, finite-type, invertible-order, flatness or nontriviality hypothesis is imposed. C_A(f) is the factorial affine root colimit, with d_i = (i+1)! and roots u_i satisfying u_i^((i+1)!) = f, where f denotes its image under the coefficient map A→C_A(f). H_A=C_A(1) has roots h_i, coaction ρ_f, counit ε, antipode S, coherent families and evaluation E_s. Install only the bialgebra of §3.227 locally; convolution points are elements of the imported convolution monoid WithConv(AlgHom_A(H_A,B)), and α_f is applied to their underlying algebra homomorphisms (g.ofConv). This is an action on affine-chart algebra-valued points, not a new generic comodule action. The Tau Ceti comodule pointsRepresentation acts on scalar-extended modules, a distinct carrier. The A[ℚ/ℤ] coordinate comparison, arbitrary-universe adapters, Spec transport, coherent root-object groupoids, fpqc frame torsors and quotient-stack equivalence are distinct targets. Fixed zero-root points explicitly preclude a freeness claim.
 
 A proof route uses the following steps. Compare the maps on all u_i. The convolution identity evaluates each h_i to1, so multiplication leaves x(u_i) fixed.
 
-For every chart point x, α_f(1,x)=x; the convolution identity is the counit point, not the identity endomorphism of H_A.
+For every chart point x and the identity 1 of the convolution monoid WithConv(AlgHom_A(H_A,B)), α_f(1.ofConv,x)=x; the convolution identity is the counit point ι_B∘ε_A, not the identity endomorphism of H_A.
 
 ([TV17](https://arxiv.org/abs/1410.1164v2) line 668, §3.1, pp.14–16; elementary calculation from the displayed quotient relation)
 
-*Needs:* §3.209 (the action on each finite root); §3.274 (convolution identity on roots); §3.97 (root values determine colimit homomorphisms).
+*Needs:* §3.227 (bialgebra on the factorial unity-root algebra); §3.209 (the action on each finite root); §3.274 (convolution identity on roots); §3.97 (root values determine colimit homomorphisms).
 
 ### 3.288 Convolution composition of actions
 
-For every g,h and chart point x, α_f(g*h,x)=α_f(g,α_f(h,x)).
+For every g,h∈WithConv(AlgHom_A(H_A,B)) and chart point x, α_f((g*h).ofConv,x)=α_f(g.ofConv,α_f(h.ofConv,x)).
 
-A,B,C are arbitrary commutative rings in one fixed universe, with specified A-algebra structures on B and C; f∈A is arbitrary and k:B→C is an arbitrary A-algebra homomorphism where used. Zero rings, wild characteristic, nonreduced fibres and nonunit f are included. No field, domain, reducedness, finite-type, invertible-order, flatness or nontriviality hypothesis is imposed. C_A(f) is the factorial affine root colimit, with d_i = (i+1)! and roots u_i satisfying u_i^((i+1)!) = f, where f denotes its image under the coefficient map A→C_A(f). H_A=C_A(1) has roots h_i, coaction ρ_f, counit ε, antipode S, coherent families and evaluation E_s. Install only the bialgebra of §3.227 A locally; use the imported convolution monoid. This is an action on affine-chart algebra-valued points, not a new generic comodule action. The Tau Ceti comodule pointsRepresentation acts on scalar-extended modules, a distinct carrier. The A[ℚ/ℤ] coordinate comparison, arbitrary-universe adapters, Spec transport, coherent root-object groupoids, fpqc frame torsors and quotient-stack equivalence are distinct targets. Fixed zero-root points explicitly preclude a freeness claim.
+A,B,C are arbitrary commutative rings in one fixed universe, with specified A-algebra structures on B and C; f∈A is arbitrary and k:B→C is an arbitrary A-algebra homomorphism where used. Zero rings, wild characteristic, nonreduced fibres and nonunit f are included. No field, domain, reducedness, finite-type, invertible-order, flatness or nontriviality hypothesis is imposed. C_A(f) is the factorial affine root colimit, with d_i = (i+1)! and roots u_i satisfying u_i^((i+1)!) = f, where f denotes its image under the coefficient map A→C_A(f). H_A=C_A(1) has roots h_i, coaction ρ_f, counit ε, antipode S, coherent families and evaluation E_s. Install only the bialgebra of §3.227 locally; convolution points are elements of the imported convolution monoid WithConv(AlgHom_A(H_A,B)), and α_f is applied to their underlying algebra homomorphisms (g.ofConv). This is an action on affine-chart algebra-valued points, not a new generic comodule action. The Tau Ceti comodule pointsRepresentation acts on scalar-extended modules, a distinct carrier. The A[ℚ/ℤ] coordinate comparison, arbitrary-universe adapters, Spec transport, coherent root-object groupoids, fpqc frame torsors and quotient-stack equivalence are distinct targets. Fixed zero-root points explicitly preclude a freeness claim.
 
 A proof route uses the following steps. Compare all distinguished roots by colimit extensionality. Convolution evaluates h_i to g(h_i)h(h_i); associativity in B gives the equality.
 
-For every g,h and chart point x, α_f(g*h,x)=α_f(g,α_f(h,x)).
+For every g,h∈WithConv(AlgHom_A(H_A,B)) and chart point x, α_f((g*h).ofConv,x)=α_f(g.ofConv,α_f(h.ofConv,x)).
 
 ([TV17](https://arxiv.org/abs/1410.1164v2) line 668, §3.1, pp.14–16; elementary calculation from the displayed quotient relation)
 
-*Needs:* §3.209 (the action on each finite root); §3.273 (convolution on each factorial root); §3.97 (root values determine colimit homomorphisms).
+*Needs:* §3.227 (bialgebra on the factorial unity-root algebra); §3.209 (the action on each finite root); §3.273 (convolution on each factorial root); §3.97 (root values determine colimit homomorphisms).
 
 ### 3.289 Infinite unity-root character map is injective
 
 F:U_A→A[ℚ/ℤ] is injective for arbitrary A.
 
-A is any commutative ring in a fixed universe. Every finite exponent is positive; divisibility maps require n divides N. No nontriviality, reducedness, flatness, field or invertibility hypothesis is imposed. The character group is the AddCircle of period 1 over the rationals, namely ℚ/ℤ; its group algebra means the MonoidAlgebra A (Multiplicative (AddCircle (1:ℚ))). The unity-root algebra U_A is the factorial affine colimit of §3.58(1).
+A is any commutative ring in a fixed universe. Every finite exponent is positive; divisibility maps require n divides N. No nontriviality, reducedness, flatness, field or invertibility hypothesis is imposed. The character group is the AddCircle of period 1 over the rationals, namely ℚ/ℤ; its group algebra means the MonoidAlgebra A (Multiplicative (AddCircle (1:ℚ))). The unity-root algebra U_A is the factorial affine colimit of §3.58 at f=1.
 
 A proof route uses the following steps. For F(x)=F(y), represent x−y at one factorial level using the exists-level result. Its finite image is zero by the leg theorem. Finite injectivity makes the representative zero, hence x−y=0. This avoids an unproved common-stage assertion for two representatives.
 A proof route uses the factorial-level comparison directly on a representative of x−y, then finite-root-map injectivity. No simultaneous representative choice is required.
@@ -9622,7 +9621,7 @@ F:U_A→A[ℚ/ℤ] is injective for arbitrary A.
 
 F:U_A→A[ℚ/ℤ] is surjective for arbitrary A.
 
-A is any commutative ring in a fixed universe. Every finite exponent is positive; divisibility maps require n divides N. No nontriviality, reducedness, flatness, field or invertibility hypothesis is imposed. The character group is the AddCircle of period 1 over the rationals, namely ℚ/ℤ; its group algebra means the MonoidAlgebra A (Multiplicative (AddCircle (1:ℚ))). The unity-root algebra U_A is the factorial affine colimit of §3.58(1).
+A is any commutative ring in a fixed universe. Every finite exponent is positive; divisibility maps require n divides N. No nontriviality, reducedness, flatness, field or invertibility hypothesis is imposed. The character group is the AddCircle of period 1 over the rationals, namely ℚ/ℤ; its group algebra means the MonoidAlgebra A (Multiplicative (AddCircle (1:ℚ))). The unity-root algebra U_A is the factorial affine colimit of §3.58 at f=1.
 
 A proof route uses the following steps. For a basis element a e_u, choose n,k with c_n(k)=u using imported torsion exhaustion through the normalized character adapter. Pull a e_k back through the finite cyclic equivalence and include that chart by ι_n. The leg and single formulas give the desired preimage. group-algebra linear induction extends this to zero and sums; each summand may use its own finite level. No infinite support or geometric-point assertion occurs.
 A proof route uses finite-support single-add induction. Each label is represented by the explicit rational character; include the inverse finite cyclic basis element and add it to the inductive preimage. Linear induction gives an equivalent proof route.
@@ -9839,13 +9838,13 @@ Construct the multiplicative equivalence Q_B:WithConv(AlgHom_A(H_A,B))≃*S_B us
 
 The operation α_f equips AlgHom_A(C_A(f),B) with a MulAction of the imported convolution monoid WithConv(AlgHom_A(H_A,B)); this is installed locally using the factorial bialgebra.
 
-A,B,C are arbitrary commutative rings in one fixed universe, with specified A-algebra structures on B and C; f∈A is arbitrary and k:B→C is an arbitrary A-algebra homomorphism where used. Zero rings, wild characteristic, nonreduced fibres and nonunit f are included. No field, domain, reducedness, finite-type, invertible-order, flatness or nontriviality hypothesis is imposed. C_A(f) is the factorial affine root colimit, with d_i = (i+1)! and roots u_i satisfying u_i^((i+1)!) = f, where f denotes its image under the coefficient map A→C_A(f). H_A=C_A(1) has roots h_i, coaction ρ_f, counit ε, antipode S, coherent families and evaluation E_s. Install only the bialgebra of §3.227 A locally; use the imported convolution monoid. This is an action on affine-chart algebra-valued points, not a new generic comodule action. The Tau Ceti comodule pointsRepresentation acts on scalar-extended modules, a distinct carrier. The A[ℚ/ℤ] coordinate comparison, arbitrary-universe adapters, Spec transport, coherent root-object groupoids, fpqc frame torsors and quotient-stack equivalence are distinct targets. Fixed zero-root points explicitly preclude a freeness claim.
+A,B,C are arbitrary commutative rings in one fixed universe, with specified A-algebra structures on B and C; f∈A is arbitrary and k:B→C is an arbitrary A-algebra homomorphism where used. Zero rings, wild characteristic, nonreduced fibres and nonunit f are included. No field, domain, reducedness, finite-type, invertible-order, flatness or nontriviality hypothesis is imposed. C_A(f) is the factorial affine root colimit, with d_i = (i+1)! and roots u_i satisfying u_i^((i+1)!) = f, where f denotes its image under the coefficient map A→C_A(f). H_A=C_A(1) has roots h_i, coaction ρ_f, counit ε, antipode S, coherent families and evaluation E_s. Install only the bialgebra of §3.227 locally; convolution points are elements of the imported convolution monoid WithConv(AlgHom_A(H_A,B)), and α_f is applied to their underlying algebra homomorphisms (g.ofConv). This is an action on affine-chart algebra-valued points, not a new generic comodule action. The Tau Ceti comodule pointsRepresentation acts on scalar-extended modules, a distinct carrier. The A[ℚ/ℤ] coordinate comparison, arbitrary-universe adapters, Spec transport, coherent root-object groupoids, fpqc frame torsors and quotient-stack equivalence are distinct targets. Fixed zero-root points explicitly preclude a freeness claim.
 
 The construction has the following API.
 
-- After locally installing factorialPointMulAction f, g•x=α_f(g,x).
-- For every chart point x, α_f(1,x)=x; the convolution identity is the counit point, not the identity endomorphism of H_A.
-- For every g,h and chart point x, α_f(g*h,x)=α_f(g,α_f(h,x)).
+- After locally installing factorialPointMulAction f, g•x=α_f(g.ofConv,x) for every convolution point g.
+- For every chart point x and the identity 1 of the convolution monoid WithConv(AlgHom_A(H_A,B)), α_f(1.ofConv,x)=x; the convolution identity is the counit point ι_B∘ε_A, not the identity endomorphism of H_A.
+- For every g,h∈WithConv(AlgHom_A(H_A,B)) and chart point x, α_f((g*h).ofConv,x)=α_f(g.ofConv,α_f(h.ofConv,x)).
 
 A proof route uses the following steps. Fill the action fields with α_f, its identity law and its product law. Do not construct a replacement generic monoid or group.
 
@@ -9860,13 +9859,13 @@ The operation α_f equips AlgHom_A(C_A(f),B) with a MulAction of the imported co
 
 ([TV17](https://arxiv.org/abs/1410.1164v2) line 668, §3.1, pp.14–16; elementary calculation from the displayed quotient relation)
 
-*Needs:* §3.180 (the represented action on root-chart points); §3.287 (the convolution identity acts identically); §3.288 (convolution composition of actions); `MulAction`.
+*Needs:* §3.227 (bialgebra on the factorial unity-root algebra); §3.180 (the represented action on root-chart points); §3.287 (the convolution identity acts identically); §3.288 (convolution composition of actions); `MulAction`.
 
 ### 3.303 Infinite unity-root coordinates
 
 Define the A-algebra equivalence E:U_A≃A[ℚ/ℤ] by promoting F with its injectivity and surjectivity proofs. Its forward function is F.
 
-A is any commutative ring in a fixed universe. Every finite exponent is positive; divisibility maps require n divides N. No nontriviality, reducedness, flatness, field or invertibility hypothesis is imposed. The character group is the AddCircle of period 1 over the rationals, namely ℚ/ℤ; its group algebra means the MonoidAlgebra A (Multiplicative (AddCircle (1:ℚ))). The unity-root algebra U_A is the factorial affine colimit of §3.58(1).
+A is any commutative ring in a fixed universe. Every finite exponent is positive; divisibility maps require n divides N. No nontriviality, reducedness, flatness, field or invertibility hypothesis is imposed. The character group is the AddCircle of period 1 over the rationals, namely ℚ/ℤ; its group algebra means the MonoidAlgebra A (Multiplicative (AddCircle (1:ℚ))). The unity-root algebra U_A is the factorial affine colimit of §3.58 at f=1.
 
 The construction has the following API.
 
@@ -10098,13 +10097,13 @@ For every p,q∈WithConv(AlgHom_A(H_A,B)), p*q=q*p. This follows from the point 
 
 ### 3.319 Identification of scalar action
 
-After locally installing factorialPointMulAction f, g•x=α_f(g,x).
+After locally installing factorialPointMulAction f, g•x=α_f(g.ofConv,x) for every convolution point g.
 
-A,B,C are arbitrary commutative rings in one fixed universe, with specified A-algebra structures on B and C; f∈A is arbitrary and k:B→C is an arbitrary A-algebra homomorphism where used. Zero rings, wild characteristic, nonreduced fibres and nonunit f are included. No field, domain, reducedness, finite-type, invertible-order, flatness or nontriviality hypothesis is imposed. C_A(f) is the factorial affine root colimit, with d_i = (i+1)! and roots u_i satisfying u_i^((i+1)!) = f, where f denotes its image under the coefficient map A→C_A(f). H_A=C_A(1) has roots h_i, coaction ρ_f, counit ε, antipode S, coherent families and evaluation E_s. Install only the bialgebra of §3.227 A locally; use the imported convolution monoid. This is an action on affine-chart algebra-valued points, not a new generic comodule action. The Tau Ceti comodule pointsRepresentation acts on scalar-extended modules, a distinct carrier. The A[ℚ/ℤ] coordinate comparison, arbitrary-universe adapters, Spec transport, coherent root-object groupoids, fpqc frame torsors and quotient-stack equivalence are distinct targets. Fixed zero-root points explicitly preclude a freeness claim.
+A,B,C are arbitrary commutative rings in one fixed universe, with specified A-algebra structures on B and C; f∈A is arbitrary and k:B→C is an arbitrary A-algebra homomorphism where used. Zero rings, wild characteristic, nonreduced fibres and nonunit f are included. No field, domain, reducedness, finite-type, invertible-order, flatness or nontriviality hypothesis is imposed. C_A(f) is the factorial affine root colimit, with d_i = (i+1)! and roots u_i satisfying u_i^((i+1)!) = f, where f denotes its image under the coefficient map A→C_A(f). H_A=C_A(1) has roots h_i, coaction ρ_f, counit ε, antipode S, coherent families and evaluation E_s. Install only the bialgebra of §3.227 locally; convolution points are elements of the imported convolution monoid WithConv(AlgHom_A(H_A,B)), and α_f is applied to their underlying algebra homomorphisms (g.ofConv). This is an action on affine-chart algebra-valued points, not a new generic comodule action. The Tau Ceti comodule pointsRepresentation acts on scalar-extended modules, a distinct carrier. The A[ℚ/ℤ] coordinate comparison, arbitrary-universe adapters, Spec transport, coherent root-object groupoids, fpqc frame torsors and quotient-stack equivalence are distinct targets. Fixed zero-root points explicitly preclude a freeness claim.
 
 A proof route uses the following steps. Unfold only the root-specific instance field; the equality is definitional.
 
-After locally installing factorialPointMulAction f, g•x=α_f(g,x).
+After locally installing factorialPointMulAction f, g•x=α_f(g.ofConv,x) for every convolution point g.
 
 ([TV17](https://arxiv.org/abs/1410.1164v2) line 668, §3.1, pp.14–16; elementary calculation from the displayed quotient relation)
 
@@ -10112,13 +10111,13 @@ After locally installing factorialPointMulAction f, g•x=α_f(g,x).
 
 ### 3.320 Antipode cancellation on the left
 
-For every algebra map g:H_A→B and chart point x, α_f(toConv(g∘S),α_f(toConv(g),x))=x.
+For every algebra map g:H_A→B and chart point x, α_f(g∘S,α_f(g,x))=x.
 
-A,B,C are arbitrary commutative rings in one fixed universe, with specified A-algebra structures on B and C; f∈A is arbitrary and k:B→C is an arbitrary A-algebra homomorphism where used. Zero rings, wild characteristic, nonreduced fibres and nonunit f are included. No field, domain, reducedness, finite-type, invertible-order, flatness or nontriviality hypothesis is imposed. C_A(f) is the factorial affine root colimit, with d_i = (i+1)! and roots u_i satisfying u_i^((i+1)!) = f, where f denotes its image under the coefficient map A→C_A(f). H_A=C_A(1) has roots h_i, coaction ρ_f, counit ε, antipode S, coherent families and evaluation E_s. Install only the bialgebra of §3.227 A locally; use the imported convolution monoid. This is an action on affine-chart algebra-valued points, not a new generic comodule action. The Tau Ceti comodule pointsRepresentation acts on scalar-extended modules, a distinct carrier. The A[ℚ/ℤ] coordinate comparison, arbitrary-universe adapters, Spec transport, coherent root-object groupoids, fpqc frame torsors and quotient-stack equivalence are distinct targets. Fixed zero-root points explicitly preclude a freeness claim.
+A,B,C are arbitrary commutative rings in one fixed universe, with specified A-algebra structures on B and C; f∈A is arbitrary and k:B→C is an arbitrary A-algebra homomorphism where used. Zero rings, wild characteristic, nonreduced fibres and nonunit f are included. No field, domain, reducedness, finite-type, invertible-order, flatness or nontriviality hypothesis is imposed. C_A(f) is the factorial affine root colimit, with d_i = (i+1)! and roots u_i satisfying u_i^((i+1)!) = f, where f denotes its image under the coefficient map A→C_A(f). H_A=C_A(1) has roots h_i, coaction ρ_f, counit ε, antipode S, coherent families and evaluation E_s. Install only the bialgebra of §3.227 locally; convolution points are elements of the imported convolution monoid WithConv(AlgHom_A(H_A,B)), and α_f is applied to their underlying algebra homomorphisms (g.ofConv). This is an action on affine-chart algebra-valued points, not a new generic comodule action. The Tau Ceti comodule pointsRepresentation acts on scalar-extended modules, a distinct carrier. The A[ℚ/ℤ] coordinate comparison, arbitrary-universe adapters, Spec transport, coherent root-object groupoids, fpqc frame torsors and quotient-stack equivalence are distinct targets. Fixed zero-root points explicitly preclude a freeness claim.
 
 A proof route uses the following steps. Use the product action law backwards, the left convolution inverse equation, then the identity action law.
 
-For every algebra map g:H_A→B and chart point x, α_f(toConv(g∘S),α_f(toConv(g),x))=x.
+For every algebra map g:H_A→B and chart point x, α_f(g∘S,α_f(g,x))=x.
 
 ([TV17](https://arxiv.org/abs/1410.1164v2) line 668, §3.1, pp.14–16; elementary calculation from the displayed quotient relation)
 
@@ -10126,13 +10125,13 @@ For every algebra map g:H_A→B and chart point x, α_f(toConv(g∘S),α_f(toCon
 
 ### 3.321 Antipode cancellation on the right
 
-For every algebra map g:H_A→B and chart point x, α_f(toConv(g),α_f(toConv(g∘S),x))=x.
+For every algebra map g:H_A→B and chart point x, α_f(g,α_f(g∘S,x))=x.
 
-A,B,C are arbitrary commutative rings in one fixed universe, with specified A-algebra structures on B and C; f∈A is arbitrary and k:B→C is an arbitrary A-algebra homomorphism where used. Zero rings, wild characteristic, nonreduced fibres and nonunit f are included. No field, domain, reducedness, finite-type, invertible-order, flatness or nontriviality hypothesis is imposed. C_A(f) is the factorial affine root colimit, with d_i = (i+1)! and roots u_i satisfying u_i^((i+1)!) = f, where f denotes its image under the coefficient map A→C_A(f). H_A=C_A(1) has roots h_i, coaction ρ_f, counit ε, antipode S, coherent families and evaluation E_s. Install only the bialgebra of §3.227 A locally; use the imported convolution monoid. This is an action on affine-chart algebra-valued points, not a new generic comodule action. The Tau Ceti comodule pointsRepresentation acts on scalar-extended modules, a distinct carrier. The A[ℚ/ℤ] coordinate comparison, arbitrary-universe adapters, Spec transport, coherent root-object groupoids, fpqc frame torsors and quotient-stack equivalence are distinct targets. Fixed zero-root points explicitly preclude a freeness claim.
+A,B,C are arbitrary commutative rings in one fixed universe, with specified A-algebra structures on B and C; f∈A is arbitrary and k:B→C is an arbitrary A-algebra homomorphism where used. Zero rings, wild characteristic, nonreduced fibres and nonunit f are included. No field, domain, reducedness, finite-type, invertible-order, flatness or nontriviality hypothesis is imposed. C_A(f) is the factorial affine root colimit, with d_i = (i+1)! and roots u_i satisfying u_i^((i+1)!) = f, where f denotes its image under the coefficient map A→C_A(f). H_A=C_A(1) has roots h_i, coaction ρ_f, counit ε, antipode S, coherent families and evaluation E_s. Install only the bialgebra of §3.227 locally; convolution points are elements of the imported convolution monoid WithConv(AlgHom_A(H_A,B)), and α_f is applied to their underlying algebra homomorphisms (g.ofConv). This is an action on affine-chart algebra-valued points, not a new generic comodule action. The Tau Ceti comodule pointsRepresentation acts on scalar-extended modules, a distinct carrier. The A[ℚ/ℤ] coordinate comparison, arbitrary-universe adapters, Spec transport, coherent root-object groupoids, fpqc frame torsors and quotient-stack equivalence are distinct targets. Fixed zero-root points explicitly preclude a freeness claim.
 
 A proof route uses the following steps. Use the product action law backwards, the right convolution inverse equation, then the identity action law.
 
-For every algebra map g:H_A→B and chart point x, α_f(toConv(g),α_f(toConv(g∘S),x))=x.
+For every algebra map g:H_A→B and chart point x, α_f(g,α_f(g∘S,x))=x.
 
 ([TV17](https://arxiv.org/abs/1410.1164v2) line 668, §3.1, pp.14–16; elementary calculation from the displayed quotient relation)
 
@@ -10142,7 +10141,7 @@ For every algebra map g:H_A→B and chart point x, α_f(toConv(g),α_f(toConv(g�
 
 E(u_i)=e_[1/d_i].
 
-A is any commutative ring in a fixed universe. Every finite exponent is positive; divisibility maps require n divides N. No nontriviality, reducedness, flatness, field or invertibility hypothesis is imposed. The character group is the AddCircle of period 1 over the rationals, namely ℚ/ℤ; its group algebra means the MonoidAlgebra A (Multiplicative (AddCircle (1:ℚ))). The unity-root algebra U_A is the factorial affine colimit of §3.58(1).
+A is any commutative ring in a fixed universe. Every finite exponent is positive; divisibility maps require n divides N. No nontriviality, reducedness, flatness, field or invertibility hypothesis is imposed. The character group is the AddCircle of period 1 over the rationals, namely ℚ/ℤ; its group algebra means the MonoidAlgebra A (Multiplicative (AddCircle (1:ℚ))). The unity-root algebra U_A is the factorial affine colimit of §3.58 at f=1.
 
 A proof route uses the following steps. The equivalence has forward function F. Apply its root formula.
 
@@ -10156,7 +10155,7 @@ E(u_i)=e_[1/d_i].
 
 For q∈Q and a∈A, E⁻¹(a e_[q]) is ι_(den(q)) applied to the inverse finite cyclic image of a e_[num(q) mod den(q)]. This includes negative q and q=0.
 
-A is any commutative ring in a fixed universe. Every finite exponent is positive; divisibility maps require n divides N. No nontriviality, reducedness, flatness, field or invertibility hypothesis is imposed. The character group is the AddCircle of period 1 over the rationals, namely ℚ/ℤ; its group algebra means the MonoidAlgebra A (Multiplicative (AddCircle (1:ℚ))). The unity-root algebra U_A is the factorial affine colimit of §3.58(1).
+A is any commutative ring in a fixed universe. Every finite exponent is positive; divisibility maps require n divides N. No nontriviality, reducedness, flatness, field or invertibility hypothesis is imposed. The character group is the AddCircle of period 1 over the rationals, namely ℚ/ℤ; its group algebra means the MonoidAlgebra A (Multiplicative (AddCircle (1:ℚ))). The unity-root algebra U_A is the factorial affine colimit of §3.58 at f=1.
 
 A proof route uses the following steps. Map the displayed preimage forward. The finite leg and single formulas yield [num(q)/den(q)]=[q]. Use the equivalence inverse law to identify the preimage. Different rational representatives of the same circle class give the same inverse because their forward images coincide and F is injective.
 Apply the algebra equivalence forward to both preimages. Use the leg, inverse finite cyclic map, single and integer-character formulas and num_div_den; injectivity identifies the inverse.
@@ -10349,7 +10348,7 @@ For every positive n, F_φ∘κ_A,n = κ_B,n∘η_φ,n as ring homomorphisms fro
 
 For x∈U_A, (E⊗E)(Δ_U(x))=Δ_(A[ℚ/ℤ])(E(x)), using the chosen factorial coaction at parameter 1 and the group-algebra comultiplication.
 
-A is any commutative ring in a fixed universe. Every finite exponent is positive; divisibility maps require n divides N. No nontriviality, reducedness, flatness, field or invertibility hypothesis is imposed. The character group is the AddCircle of period 1 over the rationals, namely ℚ/ℤ; its group algebra means the MonoidAlgebra A (Multiplicative (AddCircle (1:ℚ))). The unity-root algebra U_A is the factorial affine colimit of §3.58(1).
+A is any commutative ring in a fixed universe. Every finite exponent is positive; divisibility maps require n divides N. No nontriviality, reducedness, flatness, field or invertibility hypothesis is imposed. The character group is the AddCircle of period 1 over the rationals, namely ℚ/ℤ; its group algebra means the MonoidAlgebra A (Multiplicative (AddCircle (1:ℚ))). The unity-root algebra U_A is the factorial affine colimit of §3.58 at f=1.
 
 A proof route uses the following steps. View both sides as A-algebra homomorphisms into the tensor product. On u_i the coaction is u_i⊗u_i; the mapped tensor is e_[1/d_i]⊗e_[1/d_i], precisely comultiplication of that basis element. Apply the root-extensionality theorem. This is a coordinate Hopf comparison, not an affine scheme-limit theorem.
 
@@ -10363,7 +10362,7 @@ For x∈U_A, (E⊗E)(Δ_U(x))=Δ_(A[ℚ/ℤ])(E(x)), using the chosen factorial 
 
 For x∈U_A, ε_(A[ℚ/ℤ])(E(x))=ε_U(x), with the factorialCounit and the group-algebra counit.
 
-A is any commutative ring in a fixed universe. Every finite exponent is positive; divisibility maps require n divides N. No nontriviality, reducedness, flatness, field or invertibility hypothesis is imposed. The character group is the AddCircle of period 1 over the rationals, namely ℚ/ℤ; its group algebra means the MonoidAlgebra A (Multiplicative (AddCircle (1:ℚ))). The unity-root algebra U_A is the factorial affine colimit of §3.58(1).
+A is any commutative ring in a fixed universe. Every finite exponent is positive; divisibility maps require n divides N. No nontriviality, reducedness, flatness, field or invertibility hypothesis is imposed. The character group is the AddCircle of period 1 over the rationals, namely ℚ/ℤ; its group algebra means the MonoidAlgebra A (Multiplicative (AddCircle (1:ℚ))). The unity-root algebra U_A is the factorial affine colimit of §3.58 at f=1.
 
 A proof route uses the following steps. Both A-algebra homomorphisms send every included root to 1. Apply root extensionality. On a general single a e_u the counit is a; no coefficient augmentation is guessed.
 
@@ -10377,7 +10376,7 @@ For x∈U_A, ε_(A[ℚ/ℤ])(E(x))=ε_U(x), with the factorialCounit and the gro
 
 For x∈U_A, S_(A[ℚ/ℤ])(E(x))=E(S_U(x)), with factorialAntipode and group-algebra antipode e_u↦e_(−u).
 
-A is any commutative ring in a fixed universe. Every finite exponent is positive; divisibility maps require n divides N. No nontriviality, reducedness, flatness, field or invertibility hypothesis is imposed. The character group is the AddCircle of period 1 over the rationals, namely ℚ/ℤ; its group algebra means the MonoidAlgebra A (Multiplicative (AddCircle (1:ℚ))). The unity-root algebra U_A is the factorial affine colimit of §3.58(1).
+A is any commutative ring in a fixed universe. Every finite exponent is positive; divisibility maps require n divides N. No nontriviality, reducedness, flatness, field or invertibility hypothesis is imposed. The character group is the AddCircle of period 1 over the rationals, namely ℚ/ℤ; its group algebra means the MonoidAlgebra A (Multiplicative (AddCircle (1:ℚ))). The unity-root algebra U_A is the factorial affine colimit of §3.58 at f=1.
 
 A proof route uses the following steps. The root inverse formula identifies S_U(u_i) with the inverse of the universal factorial unit. An algebra equivalence preserves inverses of these units, and the antipode sends e_[1/d_i] to e_[−1/d_i]. Package the antipode on a commutative group algebra as the algebra hom induced by group inversion using the mapDomainAlgHom, then use root extensionality. single induction identifies that map with the linear antipode.
 Use the already-antipodeAlgHom for this commutative Hopf algebra, avoiding a new generic inversion map. Root extensionality reduces to included universal units. Their images are units, so cancel the common character basis element from the two inverse equations. The single-antipode formula identifies the negative character.
@@ -10392,7 +10391,7 @@ For x∈U_A, S_(A[ℚ/ℤ])(E(x))=E(S_U(x)), with factorialAntipode and group-al
 
 For any ring hom φ:A→B, coefficient mapping A[ℚ/ℤ]→B[ℚ/ℤ] after E_A equals E_B after the φ-semilinear factorialUnitCoefficientMap(φ). Flatness and injectivity of φ are unnecessary.
 
-A is any commutative ring in a fixed universe. Every finite exponent is positive; divisibility maps require n divides N. No nontriviality, reducedness, flatness, field or invertibility hypothesis is imposed. The character group is the AddCircle of period 1 over the rationals, namely ℚ/ℤ; its group algebra means the MonoidAlgebra A (Multiplicative (AddCircle (1:ℚ))). The unity-root algebra U_A is the factorial affine colimit of §3.58(1).
+A is any commutative ring in a fixed universe. Every finite exponent is positive; divisibility maps require n divides N. No nontriviality, reducedness, flatness, field or invertibility hypothesis is imposed. The character group is the AddCircle of period 1 over the rationals, namely ℚ/ℤ; its group algebra means the MonoidAlgebra A (Multiplicative (AddCircle (1:ℚ))). The unity-root algebra U_A is the factorial affine colimit of §3.58 at f=1.
 
 A proof route uses the following steps. Regard the target as an A-algebra via φ; the two ring maps become A-algebra maps with equal constant images. On every factorial root both give e_[1/d_i] with coefficient φ(1)=1. Apply root extensionality with this restriction of scalars; this is a fixed-universe coefficient square, not a general universe/base-change equivalence. Use the unity-specific factorialUnitCoefficientMap, whose codomain is U_B without an implicit identification of φ(1) with 1; its root and constant APIs and the ring-homomorphism extensionality lemma supply the type-correct square.
 
@@ -11118,7 +11117,7 @@ For every positive n, the inverse base-change isomorphism followed by the B-root
 
 A,B,C are arbitrary commutative rings in the chosen common universe, φ and ψ are unital ring maps, and f∈A is arbitrary. positive-divisibility index category of §3.5 contains every positive exponent with divisibility transitions. No field, nontriviality, reducedness, unit section, regularity, flatness, injectivity or exponent-invertibility condition is imposed. Use the finite AdjoinRoot algebras, divisibility colimit, ring/Spec diagrams and scheme pullback. Higher-universe adapters and root-object groupoid/stack/fpqc descent are targets of §§2.9 and 3.392.
 
-A proof route uses the following steps. Replace the finite projection composite by the coefficient morphism composite; reassociate and apply the inverse-second-projection identity.
+A proof route uses the following steps. Replace the finite projection composite by the coefficient morphism composite; reassociate and apply §3.375 (inverse comparison and the original chart projection).
 
 For every positive n, the inverse base-change isomorphism followed by the B-root projection and its coefficient Spec map equals the pullback second projection followed by the A-root projection. Do not replace an affine chart by the root stack, forget nonreduced root fibers, restrict the positive-divisibility system to factorial indices without its comparison, or infer fpqc quotient/descent from affine diagram naturality.
 
@@ -11145,7 +11144,8 @@ Check equivariance at every finite projection with the LEFT coframe scaling conv
 
 **Checks.**
 
-- For every zero section, all evaluated z_n are zero; the coframe torsor still retains its G-action.
+- For the zero-section root system (every t_n=0), every evaluated z_n is zero; the coframe torsor still retains its G-action.
+- For the tautological coherent system over T=Spec C_A(0), where t_n=z_n and f=0, the target section is zero but the evaluated coordinate z_2 is the element z_2 of C_A(0), nonzero for A nonzero, with z_2²=0 (§3.144): a zero target section does not force zero root coordinates, and a definition that evaluated only on geometric points would return 0 here.
 - At degree 3 a coframe scaled by ζ evaluates to ζx, rather than ζ^−1x.
 - At degrees 2 and 6, x_2=x_6^3 and x_6^6=f, including for nilpotent f.
 
@@ -11475,7 +11475,7 @@ Retain the full fibre, its zero-section gerbe and the chosen neutralization as t
 
 ([B24](https://link.springer.com/content/pdf/10.1007/s00222-023-01220-6.pdf) — Section 3, p.135, paragraph on the reduced closed fibre; [AGV08](https://arxiv.org/pdf/math/0603151v2) line 2431 — Appendix B.2, p.53, zero-fibre comparison)
 
-*Needs:* AlgebraicModuliForArithmeticGeometry §§4.3–4.4 and 4.23; §3.398 (intrinsic dvr roots and uniformizer comparison); §3.392 (the genuine infinite affine quotient equivalence); SchemeAndStackFoundations §1.21; §3.144 (finite roots survive the divisibility colimit); SchemeAndStackFoundations §§1.18–1.23; root; `AdjoinRoot.eval₂_root`; mk ne zero of nat Degree lt.
+*Needs:* AlgebraicModuliForArithmeticGeometry §§4.3–4.4 and 4.23; §3.398 (intrinsic dvr roots and uniformizer comparison); §3.392 (the genuine infinite affine quotient equivalence); SchemeAndStackFoundations §1.21; §3.144 (finite roots survive the divisibility colimit); SchemeAndStackFoundations §§1.18–1.23; `AdjoinRoot.root`; `AdjoinRoot.eval₂_root`; `AdjoinRoot.mk_ne_zero_of_natDegree_lt`.
 
 ### 3.404 Invariant equivalence forward map
 
@@ -11729,7 +11729,7 @@ A proof route uses the following steps. Lift each invariant element using its un
 
 ### 3.421 The infinite DVR zero-section gerbe
 
-For a DVR with residue field k, the zero-section gerbe of §3.403 in the closed fibre of the infinite root stack is the two-limit of the root gerbes of the normal line N, banded by G_k=lim_n μ_n, the fpqc inverse-limit group scheme over k (in characteristic p its band contains the infinitesimal μ_(p^r) for every r). It is the quotient of the explicitly reduced affine chart C_k(0)_red=k of §3.403, and it is noncanonically equivalent to B_kG_k: a chosen frame of N gives a compatible neutralization. The neutralization is not part of the canonical root stack.
+For a DVR with residue field k, the zero-section gerbe of §3.403 in the closed fibre of the infinite root stack is the two-limit of the root gerbes of the normal line N, banded by G_k=lim_n μ_n, the fpqc inverse-limit group scheme over k, the diagonalizable group D(ℚ/ℤ)=Spec k[ℚ/ℤ] with character group ℚ/ℤ. In characteristic p each projection G_k→μ_(p^r) is a faithfully flat quotient map corresponding to the inclusion of characters ℤ/p^r⊂ℚ/ℤ; these projections are not subgroup inclusions, and Hom(μ_(p^r),G_k)=0 because a homomorphism of character groups ℚ/ℤ→ℤ/p^r is zero, ℚ/ℤ being divisible. G_k is nonetheless nonreduced in characteristic p: in k[ℚ/ℤ] the element e_[1/p]−1 is nonzero and (e_[1/p]−1)^p=e_[1]−1=0. It is the quotient of the explicitly reduced affine chart C_k(0)_red=k of §3.403, and it is noncanonically equivalent to B_kG_k: a chosen frame of N gives a compatible neutralization. The neutralization is not part of the canonical root stack.
 
 Finite roots are defined fppf and satisfy the stronger fpqc descent theorem. Infinite systems and infinite torsors use fpqc descent.
 
@@ -11742,7 +11742,7 @@ The full fibre retains nilpotent finite charts; only the zero-section gerbe is i
 **Checks.**
 
 - In C_k(0)=colim k[z_n]/(z_n^n), z_n^r≠0 for r<n, whereas the reduced chart is k; the full fibre, the zero-section gerbe and its neutralization are three distinct objects.
-- In characteristic p the band G_k has the nonreduced subgroup μ_p, whose k̄-points are trivial; replacing G_k by the étale group of its k̄-points, the prime-to-p part of Ẑ(1), loses these infinitesimal automorphisms.
+- In characteristic p, every homomorphism μ_p→G_k is trivial: composed with the projection to μ_n it factors through μ_(np)→μ_n, and on characters the compatible map ℤ/n→ℤ/p is multiplication by p composed with a map, hence zero; so μ_p is a quotient of G_k, not a subgroup. In characteristic 2 the coordinate algebra k[ℚ/ℤ] has (e_[1/2]−1)²=e_[1]−1=0 with e_[1/2]−1≠0 by the group-algebra basis, so G_k is nonreduced, and the projection G_k→μ_2 remains faithfully flat. Replacing G_k by the étale group of its k̄-points, the prime-to-p part of Ẑ(1), loses this nonreduced structure; a wrong model with a subgroup μ_p would give a nonzero map μ_p→G_k.
 - In characteristic zero, G_k(k̄)=Ẑ(1) and replacing the frame λ by vλ, v∈k×, multiplies the Kummer coordinate of §3.422 by the class [v].
 
 ([B24](https://link.springer.com/content/pdf/10.1007/s00222-023-01220-6.pdf) — p. 135–136 reduced fibre H_c and its band)
@@ -11884,7 +11884,7 @@ The forgetful functor has the full ordinary Picard fibre as its codomain. The gr
 
 ([YZ19](https://math.mit.edu/~zyun/GZW_ramified_published.pdf) line 6918 — Definition A.1, printed p. 514; A.1.1, p. 515; [StacksPic](https://stacks.math.columbia.edu/tag/0372) line 753 — Section 95.16, Lemma 95.16.1, tag 0372; online edition, no fixed page Effective descent of line bundles and their isomorphisms supplies the ordinary Picard stack; it is imported and applied to both factors.)
 
-*Needs:* §4.1 (the graded root picard stack); SchemeAndStackFoundations §3.4; SchemeAndStackFoundations §§1.18–1.23; `TauCeti.AlgebraicGeometry.InvertibleSheaf`; `TauCeti.AlgebraicGeometry.InvertibleSheaf.tensorProduct`; `TauCeti.AlgebraicGeometry.InvertibleSheaf.tensorProductCongrLeft`; `TauCeti.AlgebraicGeometry.InvertibleSheaf.tensorProductCongrRight`; pullback; pullback Id; pullback Comp; `CategoryTheory.Core`.
+*Needs:* §4.1 (the graded root picard stack); SchemeAndStackFoundations §3.4; SchemeAndStackFoundations §§1.18–1.23; `TauCeti.AlgebraicGeometry.InvertibleSheaf`; `TauCeti.AlgebraicGeometry.InvertibleSheaf.tensorProduct`; `TauCeti.AlgebraicGeometry.InvertibleSheaf.tensorProductCongrLeft`; `TauCeti.AlgebraicGeometry.InvertibleSheaf.tensorProductCongrRight`; `TauCeti.AlgebraicGeometry.InvertibleSheaf.pullback`; `TauCeti.AlgebraicGeometry.InvertibleSheaf.pullbackId`; `TauCeti.AlgebraicGeometry.InvertibleSheaf.pullbackComp`; `CategoryTheory.Core`.
 
 ### 4.5 Coherent tensor product and dual of root data
 
@@ -12399,7 +12399,7 @@ This map is defined even when f or g is zero or nilpotent. For two ordered facto
 
 ([YZ19](https://math.mit.edu/~zyun/GZW_ramified_published.pdf) line 7142 — A.1.4, formula (A.2), p. 517. Root addition tensors the two root lines and multiplies their sections; the local algebra and sign formulas are its coordinate expression.)
 
-*Needs:* §5.5 (addition of root divisors); §5.10 (relative evaluation and its chosen two-pullback equivalence); SchemeAndStackFoundations §1.21; AlgebraicVectorBundles L0A; SchemeAndStackFoundations §§1.18–1.23; `rootsOfUnity`; `restrictRootsOfUnity`; equiv Sym add.
+*Needs:* §5.5 (addition of root divisors); §5.10 (relative evaluation and its chosen two-pullback equivalence); SchemeAndStackFoundations §1.21; AlgebraicVectorBundles L0A; SchemeAndStackFoundations §§1.18–1.23; `rootsOfUnity`; `restrictRootsOfUnity`.
 
 ### 5.16 Smooth quotient charts for root symmetric powers
 
@@ -12533,7 +12533,7 @@ For d=0 both source and target inertia are trivial, and for d=1 each inertia map
 
 ([YZ19](https://math.mit.edu/~zyun/GZW_ramified_published.pdf) line 7410 — A.1.4, (A.3), p. 517; proof of Lemma A.7, pp. 519–520.)
 
-*Needs:* §5.8 (the ordered root-divisor morphism); §5.15 (the equivariant coordinate map for root addition); §5.21 (full branch fibres and their inertia); `rootsOfUnity`; `restrictRootsOfUnity`; eval Monoid Hom; finset Prod apply; map prod; `TauCeti.RootsOfUnityGroup.schemePointsMulEquiv`; scheme Points Mul Equiv map Value; SchemeAndStackFoundations §§1.18–1.23.
+*Needs:* §5.8 (the ordered root-divisor morphism); §5.15 (the equivariant coordinate map for root addition); §5.21 (full branch fibres and their inertia); `rootsOfUnity`; `restrictRootsOfUnity`; `Pi.evalMonoidHom`; `Finset.prod_apply`; `map_prod`; `TauCeti.RootsOfUnityGroup.schemePointsMulEquiv`; `TauCeti.RootsOfUnityGroup.schemePointsMulEquiv_mapValue`; SchemeAndStackFoundations §§1.18–1.23.
 
 ### 5.23 Geometric two-fibres of ordered divisors
 
@@ -12623,7 +12623,7 @@ The forgetful functor remembers the entire root-line triple and forgets exactly 
 
 ([YZ19](https://math.mit.edu/~zyun/GZW_ramified_published.pdf) line 7248 — Lemma A.5 proof, p. 518; §6.2.3, p. 498)
 
-*Needs:* §4.1 (the graded root picard stack); SchemeAndStackFoundations §3.4; `TauCeti.AlgebraicGeometry.InvertibleSheaf`; SchemeAndStackFoundations §§3.3–3.7; SchemeAndStackFoundations §3.3; AlgebraicCurves; Layer 12.
+*Needs:* §4.1 (the graded root picard stack); SchemeAndStackFoundations §3.4; `TauCeti.AlgebraicGeometry.InvertibleSheaf`; SchemeAndStackFoundations §§3.3–3.7; SchemeAndStackFoundations §3.3; AlgebraicCurves Layer 12.
 
 ### 6.3 The adelic root Picard groupoid
 
@@ -12655,7 +12655,7 @@ For a branch point in odd characteristic, the coordinate (1,−1) is a nonidenti
 
 ([YZ19](https://math.mit.edu/~zyun/GZW_ramified_published.pdf) line 7248 — A.1.6, pp. 517–518; Lemma A.5 proof, p. 518)
 
-*Needs:* §6.1 (modified local units at ramified places); FunctionFieldArithmetic §§2–4; `MonoidHom.eqLocus`; surjective unit Group To Residue Field Units.
+*Needs:* §6.1 (modified local units at ramified places); FunctionFieldArithmetic §§2–4; `MonoidHom.eqLocus`; `ValuationSubring.surjective_unitGroupToResidueFieldUnits`.
 
 ### 6.5 The fully framed root Picard groupoid
 
@@ -12689,7 +12689,7 @@ All its automorphism groups are trivial, including the root-line automorphisms, 
 
 ([YZ19](https://math.mit.edu/~zyun/GZW_ramified_published.pdf) line 7248 — Lemma A.5, complete proof and frame diagram, p. 518)
 
-*Needs:* §6.2 (root lines with a generic trivialization); FunctionFieldArithmetic §§2–4; AlgebraicCurves; Layer 12; surjective unit Group To Residue Field Units.
+*Needs:* §6.2 (root lines with a generic trivialization); FunctionFieldArithmetic §§2–4; AlgebraicCurves Layer 12; `ValuationSubring.surjective_unitGroupToResidueFieldUnits`.
 
 ### 6.6 The signed root-divisor groupoid
 
@@ -12739,7 +12739,7 @@ The coefficient π_x maps to O_X(−x), and π_x^(-1) maps to O_X(x). The constr
 
 ([YZ19](https://math.mit.edu/~zyun/GZW_ramified_published.pdf) line 7248 — Lemma A.5 proof, p. 518; §6.2.3, p. 498 Lemma A.5 uses the fully framed idele comparison.)
 
-*Needs:* gap:completed-lattice-root-dictionary; §6.5 (the fully framed root picard groupoid); FunctionFieldArithmetic §§2–4; SchemeAndStackFoundations §§3.3–3.7; AlgebraicCurves; Layer 12.
+*Needs:* gap:completed-lattice-root-dictionary; §6.5 (the fully framed root picard groupoid); FunctionFieldArithmetic §§2–4; SchemeAndStackFoundations §§3.3–3.7; AlgebraicCurves Layer 12.
 
 ### 6.8 The signed right quotient represents generically framed root lines
 
@@ -12760,7 +12760,7 @@ Forgetting the remaining generic frame is the double-quotient inclusion h↦(1,h
 
 ([YZ19](https://math.mit.edu/~zyun/GZW_ramified_published.pdf) line 7248 — §6.2.3, p. 498; Lemma A.5, p. 518)
 
-*Needs:* §6.6 (the signed root-divisor groupoid); §6.3 (the adelic root picard groupoid); §6.2 (root lines with a generic trivialization); §6.7 (idele gluing with the sign fixed by local lattices); Action Category.
+*Needs:* §6.6 (the signed root-divisor groupoid); §6.3 (the adelic root picard groupoid); §6.2 (root lines with a generic trivialization); §6.7 (idele gluing with the sign fixed by local lattices); `CategoryTheory.ActionCategory`.
 
 ### 6.9 Signed divisor fibres with their square classes and stabilizers
 
@@ -12777,7 +12777,7 @@ For R=∅ every divisor fibre is contractible, yielding the ordinary discrete si
 
 ([YZ19](https://math.mit.edu/~zyun/GZW_ramified_published.pdf) line 7248 — A.1.6 and Lemma A.5, pp. 517–518; §6.2.3, p. 498)
 
-*Needs:* §6.6 (the signed root-divisor groupoid); §6.4 (the modified-unit kernel and residue-square quotient); FunctionFieldArithmetic §§2–4; stabilizer Iso End; unit is Square iff.
+*Needs:* §6.6 (the signed root-divisor groupoid); §6.4 (the modified-unit kernel and residue-square quotient); FunctionFieldArithmetic §§2–4; `CategoryTheory.ActionCategory.stabilizerIsoEnd`; `FiniteField.unit_isSquare_iff`.
 
 ### 6.10 Full morphism descent for the Picard double quotient
 
@@ -12795,7 +12795,7 @@ For R=∅ every Picard automorphism is a scalar in k×, so the result cannot be 
 
 ([YZ19](https://math.mit.edu/~zyun/GZW_ramified_published.pdf) line 7248 — Lemma A.5, (A.4) and proof, p. 518; §6.2.3, p. 498 A.5 identifies the full double quotient with the root Picard groupoid.)
 
-*Needs:* §6.3 (the adelic root picard groupoid); §6.8 (the signed right quotient represents generically framed root lines); §6.7 (idele gluing with the sign fixed by local lattices); stabilizer Iso End; SchemeAndStackFoundations §3.4.
+*Needs:* §6.3 (the adelic root picard groupoid); §6.8 (the signed right quotient represents generically framed root lines); §6.7 (idele gluing with the sign fixed by local lattices); `CategoryTheory.ActionCategory.stabilizerIsoEnd`; SchemeAndStackFoundations §3.4.
 
 ### 6.11 The stabilizer extension in the double quotient
 
@@ -12812,7 +12812,7 @@ For X=P¹/F₅ and R={0}, v↦(v^(-2),v) identifies A_R with F₅×≅C₄. The 
 
 ([YZ19](https://math.mit.edu/~zyun/GZW_ramified_published.pdf) line 7248 — Lemma A.5, p. 518; Definition A.1 and A.1.1, pp. 514–515)
 
-*Needs:* §6.10 (full morphism descent for the picard double quotient); §6.4 (the modified-unit kernel and residue-square quotient); SchemeAndStackFoundations §3.7; unit is Square iff.
+*Needs:* §6.10 (full morphism descent for the picard double quotient); §6.4 (the modified-unit kernel and residue-square quotient); SchemeAndStackFoundations §3.7; `FiniteField.unit_isSquare_iff`.
 
 ### 6.12 The valuation divisor and Picard degree have opposite signs
 
@@ -12829,7 +12829,7 @@ The sign test uses x of any residue degree, not just a rational point. Positive 
 
 ([YZ19](https://math.mit.edu/~zyun/GZW_ramified_published.pdf) line 7248 — §6.2.3, p. 498, O_X(−E); Lemma A.5 statement and proof, p. 518; Definition A.1, p. 514)
 
-*Needs:* §6.7 (idele gluing with the sign fixed by local lattices); §6.10 (full morphism descent for the picard double quotient); §4.1 (the graded root picard stack); FunctionFieldArithmetic §§2–4; SchemeAndStackFoundations §3.3; degree; degree principal.
+*Needs:* §6.7 (idele gluing with the sign fixed by local lattices); §6.10 (full morphism descent for the picard double quotient); §4.1 (the graded root picard stack); FunctionFieldArithmetic §§2–4; SchemeAndStackFoundations §3.3; `TauCeti.Divisor.degree`; `TauCeti.Divisor.degree_principal`.
 
 ### Examples
 
@@ -12876,7 +12876,7 @@ For d=2 and V=K the transposition acts on K⊗K≅K by −1, while P_σ alone ac
 
 ([YZ19](https://math.mit.edu/~zyun/GZW_ramified_published.pdf) line 7368 — Proof of Lemma A.6, p. 519 States that the symmetric group acts on the graded tensor power of the cohomology of the root curve by permuting factors with the Koszul sign convention; this target fixes that action on the degree-one part.)
 
-*Needs:* `PiTensorProduct.reindexRepresentation`; `PiTensorProduct.commute_reindexRepresentation_map`; reindex; `PiTensorProduct.map_reindex`; Tensor Power; sign.
+*Needs:* `PiTensorProduct.reindexRepresentation`; `PiTensorProduct.commute_reindexRepresentation_map`; `PiTensorProduct.reindex`; `PiTensorProduct.map_reindex`; `TensorPower`; `Equiv.Perm.sign`.
 
 ### 7.2 Rational averaging: invariants are exact and commute with linear functors
 
@@ -12892,7 +12892,7 @@ G=S_2 swapping the coordinates of K² with 2 invertible: the invariants are the 
 
 ([ETINGOF](https://arxiv.org/pdf/0901.0827v5) line 1493 — Proof of Theorem 3.8, p. 37 (arXiv v5) In the complex-representation setting, the proof identifies the group average as the projector onto invariants. [AV99](https://arxiv.org/pdf/math/9908167v2) line 213 — Proof of Lemma 2.3.3, p. 5 For a finite group of order prime to the residue characteristics the averaging operator is a projector exhibiting the invariants as a direct summand, which gives base change of invariants. [STACKS-KAROUBIAN](https://stacks.math.columbia.edu/tag/09SF) line 259 — Section 12.4 (tag 09SF), Lemma 12.4.2 (tag 09SH), printed pp.6–7, Karoubian categories Gives the splitting characterization for idempotents. Preservation of a chosen splitting by a functor, and hence the K-linear averaging consequence here, follows by applying the functor to the splitting identities. [YZ19](https://math.mit.edu/~zyun/GZW_ramified_published.pdf) line 7368 — §A.2.1 and proof of Lemma A.6, p. 519 Takes S_d-invariants of a pushforward and identifies the cohomology of the invariant part with the invariants of the cohomology.)
 
-*Needs:* average; average Map; is Proj average Map; invariants; range norm eq invariants; Is Idempotent Complete; is Idempotent Complete iff idempotents have kernels.
+*Needs:* `GroupAlgebra.average`; `Representation.averageMap`; `Representation.isProj_averageMap`; `Representation.invariants`; `Representation.range_norm_eq_invariants`; `CategoryTheory.IsIdempotentComplete`; `CategoryTheory.Idempotents.isIdempotentComplete_iff_idempotents_have_kernels`.
 
 ### 7.3 Rational acyclicity of finite groups
 
@@ -12936,7 +12936,7 @@ A proof route transports the finite-level scheme dictionary between finite local
 
 (NOOHI line 288, §4, pp.8–9; scheme finite-cover descent from EtaleCohomologyFoundations §F.0.2, transported along the supplied atlas equivalence.)
 
-*Needs:* DeligneWeightsAndPurity §8.24 (`dmStack_etaleCohomology` and its atlas, refinement, pullback and Frobenius comparisons); SchemeAndStackFoundations §§1.18–1.21; EtaleCohomologyFoundations §§F.0.2 and F.4.1–F.4.6.
+*Needs:* DeligneWeightsAndPurity §8.24 (stack clause: the rational constructible coefficient category of a finite-type DM stack over a finite field with its atlas descent, atlas refinement, pullback and Frobenius comparisons); SchemeAndStackFoundations §§1.18–1.21; EtaleCohomologyFoundations §§F.0.2 and F.4.1–F.4.6.
 
 ### 7.5 Proper base change for the maps used in descent
 
@@ -13009,7 +13009,7 @@ R=∅: 𝒳=X and the statement is the ordinary dictionary between local systems
 
 ([YZ19](https://math.mit.edu/~zyun/GZW_ramified_published.pdf) line 7320 — §A.2, first paragraph, p. 519 States without proof that a rank-one local system on the root curve is the same datum as a rank-one local system on X−R with monodromy of order at most two at the points of R. [STACKS](https://stacks.math.columbia.edu/tag/0BSE) line 3249 — Lemma 58.31.5 (tag 0EYG), Lemma 58.31.2 (tag 0H2W), Example 58.31.4 (tag 0EYF) Abhyankar's lemma for a regular divisor, and the extension of finite étale covers that are unramified in codimension one over a regular scheme. [NOOHI](https://arxiv.org/pdf/math/0201021) line 288 — §4, pp. 8–10; line 700 — Theorem 7.11, p. 17)
 
-*Needs:* EtaleCohomologyFoundations §§F.0.2; F.0.A1–F.0.A2 and F.3a; SchemeAndStackFoundations §§1.18–1.23; SchemeAndStackFoundations §1.21; §2.17 (regularity) and §2.18 (the exact DM locus); InverseGaloisAndArithmeticFundamentalGroups §IG.5.7 (normal-DM dense-open criterion); §7.4 (finite-rank lisse monodromy dictionary).
+*Needs:* EtaleCohomologyFoundations §§F.0.2, F.0.A1–F.0.A2 and F.3a; SchemeAndStackFoundations §§1.18–1.23; SchemeAndStackFoundations §1.21; §2.17 (regularity) and §2.18 (the exact DM locus); InverseGaloisAndArithmeticFundamentalGroups §IG.5.7 (normal-DM dense-open criterion); §7.4 (finite-rank lisse monodromy dictionary).
 
 ### 7.9 Rank-one local systems on the root curve
 
@@ -13025,7 +13025,7 @@ The quadratic cover supplies a special input, not the general definition.
 
 ([YZ19](https://math.mit.edu/~zyun/GZW_ramified_published.pdf) line 7320 — A.2 first paragraph, p. 519; the tame order-two inertia condition.)
 
-*Needs:* §5.6 (smoothness of root symmetric powers); SchemeAndStackFoundations §1.21; EtaleCohomologyFoundations §§F.0.2; F.0.A1–F.0.A2 and F.3a; §7.8 (local systems on the root curve and inertia of order two).
+*Needs:* §5.6 (smoothness of root symmetric powers); SchemeAndStackFoundations §1.21; EtaleCohomologyFoundations §§F.0.2, F.0.A1–F.0.A2 and F.3a; §7.8 (local systems on the root curve and inertia of order two).
 
 ### 7.10 Antisymmetrization takes values in the Koszul invariants
 
@@ -13095,7 +13095,7 @@ For f:L→L′, descend f^(⊠d) on the distinct-point locus and extend the map 
 
 ([YZ19](https://math.mit.edu/~zyun/GZW_ramified_published.pdf) line 7450 — §A.2.1 and proof of Lemma A.8, (A.5)–(A.6), pp. 519–520 Defines L_d by symmetric pushforward and proves multiplicativity by identifying its monodromy on the multiplicity-free locus with the character (A.6); here that monodromy is taken as the definition and extended. [STACKS](https://stacks.math.columbia.edu/tag/0BSE) line 3249 — Lemma 58.31.2 (tag 0H2W) and Lemma 58.21.4 (tag 0BMB) Finite étale covers unramified in codimension one extend over a regular scheme; purity of the branch locus.)
 
-*Needs:* §7.8 (local systems on the root curve and inertia of order two); EtaleCohomologyFoundations §§F.0.2; F.0.A1–F.0.A2 and F.3a; §5.6 (smoothness of root symmetric powers); §5.7 (coarse symmetric-power space); §5.1 (hat and effective root symmetric powers); InverseGaloisAndArithmeticFundamentalGroups §IG.5.7 (normal-DM dense-open criterion); §7.4 (finite-rank lisse monodromy dictionary).
+*Needs:* §7.8 (local systems on the root curve and inertia of order two); EtaleCohomologyFoundations §§F.0.2, F.0.A1–F.0.A2 and F.3a; §5.6 (smoothness of root symmetric powers); §5.7 (coarse symmetric-power space); §5.1 (hat and effective root symmetric powers); InverseGaloisAndArithmeticFundamentalGroups §IG.5.7 (normal-DM dense-open criterion); §7.4 (finite-rank lisse monodromy dictionary).
 
 ### 7.12 Symmetric tensor local systems
 
@@ -13125,7 +13125,7 @@ L_0=ℚ̄_ℓ and L_1=L; the shift does not belong in the degree-zero local-syst
 
 ([YZ19](https://math.mit.edu/~zyun/GZW_ramified_published.pdf) line 7340 — A.2.1, p.519.)
 
-*Needs:* §7.9 (rank-one local systems on the root curve); §5.8 (the ordered root-divisor morphism); §5.12 (properness and tame finite relative fibres).
+*Needs:* §7.9 (rank-one local systems on the root curve); §5.8 (the ordered root-divisor morphism); §5.12 (properness and tame finite relative fibres); §7.5 (proper base change for the maps used in descent).
 
 ### 7.13 Koszul-signed invariants are the exterior power
 
@@ -13157,7 +13157,7 @@ A=μ₂, χ the sign, m=2: (−1,−1)∈N_2 and χ(−1)χ(−1)=1. If the two 
 
 ([YZ19](https://math.mit.edu/~zyun/GZW_ramified_published.pdf) line 7410 — Proof of Lemma A.7, pp. 519–520 At dx the ordered map restricts, on reduced residual gerbes, to [pt/μ₂]^d→[pt/μ₂] through multiplication; the restriction of L is the trivial or sign character, the kernel acts trivially on its d-th tensor power, so the stalk is one-dimensional.)
 
-*Needs:* map prod; §7.3 (rational acyclicity of finite groups).
+*Needs:* `map_prod`; §7.3 (rational acyclicity of finite groups).
 
 ### 7.15 The coarse symmetric-power sheaf
 
@@ -13195,7 +13195,7 @@ For the subsheaf assertion, use local finite quadratic root charts f:Y→X: the 
 
 ([YZ19](https://math.mit.edu/~zyun/GZW_ramified_published.pdf) line 7015 — §A.1.3 and §A.2.1, pp. 515–519 X_d is the coarse space of X_d^√R and L_d is formed by taking S_d-invariants of a symmetric pushforward; this target is the same construction on the coarse space. [AV99](https://arxiv.org/pdf/math/9908167v2) line 189 — Lemma 2.2.3, p. 4 Étale-locally on its coarse space a separated Deligne–Mumford stack is a quotient of a scheme by a finite group.)
 
-*Needs:* §7.8 (local systems on the root curve and inertia of order two); §7.2 (rational averaging: invariants are exact and commute with linear functors); §7.11 (symmetric local systems by descent and lisse extension); EtaleCohomologyFoundations §§F.0.2; F.0.A1–F.0.A2 and F.3a; SchemeAndStackFoundations §§2.10–2.11.
+*Needs:* §7.8 (local systems on the root curve and inertia of order two); §7.2 (rational averaging: invariants are exact and commute with linear functors); §7.11 (symmetric local systems by descent and lisse extension); EtaleCohomologyFoundations §§F.0.2, F.0.A1–F.0.A2 and F.3a; SchemeAndStackFoundations §§2.10–2.11.
 
 ### 7.16 Collision kernels act trivially on the tensor line
 
@@ -13275,7 +13275,7 @@ d=1: p_1 is the identity and both sides are L. Over U_d° both sides are L_d°, 
 
 ([YZ19](https://math.mit.edu/~zyun/GZW_ramified_published.pdf) line 7410 — §A.2.1 and proof of Lemma A.7, pp. 519–520 Defines L_d as the S_d-invariants of the pushforward along p_d and computes its stalk at dx from [pt/μ₂]^d→[pt/μ₂].)
 
-*Needs:* §7.11 (symmetric local systems by descent and lisse extension); §7.14 (the tensor character factors through multiplication); §7.3 (rational acyclicity of finite groups); EtaleCohomologyFoundations §§F.0.2; F.0.A1–F.0.A2 and F.3a; §5.8 (the ordered root-divisor morphism); §5.12 (properness and tame finite relative fibres); §7.12 (symmetric tensor local systems); SchemeAndStackFoundations §1.21; InverseGaloisAndArithmeticFundamentalGroups §IG.5.7 (normal-DM dense-open criterion); §7.4 (finite-rank lisse monodromy dictionary).
+*Needs:* §7.11 (symmetric local systems by descent and lisse extension); §7.14 (the tensor character factors through multiplication); §7.3 (rational acyclicity of finite groups); EtaleCohomologyFoundations §§F.0.2, F.0.A1–F.0.A2 and F.3a; §5.8 (the ordered root-divisor morphism); §5.12 (properness and tame finite relative fibres); §7.12 (symmetric tensor local systems); SchemeAndStackFoundations §1.21; InverseGaloisAndArithmeticFundamentalGroups §IG.5.7 (normal-DM dense-open criterion); §7.4 (finite-rank lisse monodromy dictionary).
 
 ### 7.21 The symmetric complex is a shifted middle extension
 
@@ -13310,7 +13310,7 @@ The constant sheaf is excluded: on P¹ it has H⁰ and H² nonzero. A geometrica
 
 ([YZ19](https://math.mit.edu/~zyun/GZW_ramified_published.pdf) line 7368 — Proof of Lemma A.6, p. 519 Uses that the cohomology of a geometrically nontrivial L on the root curve over k̄ is concentrated in degree one.)
 
-*Needs:* EtaleCohomologyFoundations §§F.0.2; F.0.A1–F.0.A2 and F.3a; EtaleCohomologyFoundations §§0.11 and F.5–F.6; §7.8 (local systems on the root curve and inertia of order two); §7.18 (rational coarse comparison for symmetric local systems); SchemeAndStackFoundations §§2.10–2.11.
+*Needs:* EtaleCohomologyFoundations §§F.0.2, F.0.A1–F.0.A2 and F.3a; EtaleCohomologyFoundations §§0.11 and F.5–F.6; §7.8 (local systems on the root curve and inertia of order two); §7.18 (rational coarse comparison for symmetric local systems); SchemeAndStackFoundations §§2.10–2.11.
 
 ### 7.23 Lisse rank-one descent across collisions
 
@@ -13379,7 +13379,7 @@ The extension includes repeated branch divisors.
 
 ([YZ19](https://math.mit.edu/~zyun/GZW_ramified_published.pdf) line 7450 — Lemma A.8 p. 520)
 
-*Needs:* §7.17 (multiplicativity on the distinct-point open); §7.23 (lisse rank-one descent across collisions); §5.6 (smoothness of root symmetric powers); EtaleCohomologyFoundations §§F.0.2; F.0.A1–F.0.A2 and F.3a; InverseGaloisAndArithmeticFundamentalGroups §IG.5.7 (normal-DM dense-open criterion); §7.4 (finite-rank lisse monodromy dictionary).
+*Needs:* §7.17 (multiplicativity on the distinct-point open); §7.23 (lisse rank-one descent across collisions); §5.6 (smoothness of root symmetric powers); EtaleCohomologyFoundations §§F.0.2, F.0.A1–F.0.A2 and F.3a; InverseGaloisAndArithmeticFundamentalGroups §IG.5.7 (normal-DM dense-open criterion); §7.4 (finite-rank lisse monodromy dictionary).
 
 ### 7.27 Exterior-power cohomology
 
@@ -13439,7 +13439,7 @@ Layer 5 ordered root divisors; Layer 2 regularity and DM locus; DeligneWeightsAn
 
 ### The scheme projective-space input
 
-Prove that for every algebraically closed field K and every r≥0, every connected finite étale cover of ℙ^r_K has degree one. For r=0 the only connected finite étale K-algebra is K; for r=1 Riemann–Hurwitz gives 2g(Y)−2=−2m, so g(Y)=1−m≥0 forces m=1. For r≥2 apply gap:normal-proper-hyperplane-covers to a hyperplane ℙ^(r−1)⊂ℙ^r. Every connected finite étale cover stays connected on that hyperplane, where induction forces degree one. This supplies the scheme input to the weighted quotient argument in §§8.8 and 8.10. (SGA1 line 8606, Exposé XI, Proposition 1.1, printed p.285, recomposed p.219; SGA1 line 8303, Exposé X, Lemme 2.10, printed p.274, recomposed p.210; SGA1 line 8308, Corollaire 2.11.)
+Prove that for every algebraically closed field K and every r≥0, every connected finite étale cover of ℙ^r_K has degree one. For r=0 the only connected finite étale K-algebra is K; for r=1 Riemann–Hurwitz gives 2g(Y)−2=−2m, so g(Y)=1−m≥0 forces m=1. For r≥2 apply gap:normal-proper-hyperplane-covers to a hyperplane ℙ^(r−1)⊂ℙ^r. Every connected finite étale cover stays connected on that hyperplane, where induction forces degree one. This supplies the scheme input to the weighted quotient argument in §§8.7 and 8.9. (SGA1 line 8606, Exposé XI, Proposition 1.1, printed p.285, recomposed p.219; SGA1 line 8303, Exposé X, Lemme 2.10, printed p.274, recomposed p.210; SGA1 line 8308, Corollaire 2.11.)
 
 **Checks.**
 
@@ -13465,22 +13465,7 @@ The bound counts deg R, including residue-field degrees.
 
 *Needs:* §4.1 (the graded root picard stack); SchemeAndStackFoundations §§3.3–3.7.
 
-### 8.2 High-degree descent with empty ramification
-
-When R=∅ and d≥max(2g−1,1), the symmetric local system descends along the ordinary Abel–Jacobi map to the degree-d Picard stack. The ordinary scalar action has weight one; the projective fibre quotient is P^(d−g).
-
-Throughout this subsection, k is finite of characteristic p≠2; X/k is smooth, projective and geometrically connected; R⊂X is a reduced finite divisor, possibly empty; ρ=deg R, and g is the curve genus. Coefficients are ℚ̄_ℓ with ℓ≠p; geometric Frobenius is used.
-
-A proof route uses the following steps. Use the ordinary coherent Riemann–Roch/base-change fibre description.
-The weight-one scalar quotient is projective space and has trivial geometric fundamental group.
-Descend along the smooth surjective Abel–Jacobi map, whose geometric fibres P^(d−g) are connected and simply connected (the scheme projective-space input of this layer): pullback of rank-one lisse sheaves is then fully faithful by the finite-cover dictionary of EtaleCohomologyFoundations §F.0.2, and the local descent lines glue by smooth descent of lisse sheaves.
-
-
-([YZ19](https://math.mit.edu/~zyun/GZW_ramified_published.pdf) line 7507 — Lemma A.9 p. 520, opening unramified case; proof p. 521)
-
-*Needs:* §7.11 (symmetric local systems by descent and lisse extension); §7.26 (multiplicativity on every effective degree); SchemeAndStackFoundations §§3.3–3.7; EtaleCohomologyFoundations §§F.0.2; F.0.A1–F.0.A2 and F.3a; the scheme projective-space target in Layer 8.
-
-### 8.3 Split quadratic section coordinates
+### 8.2 Split quadratic section coordinates
 
 For a commutative ring A and index types I,J, quadraticSection sends (u,α) in A^I x A^J to (u,(α_j^2)_j). In a split family chart I indexes the evaluation kernel and J the root coordinates. This is the section coordinate in E only: the full fibre-product chart sends (u,α) to ((u,α^2),α), retaining α. This polynomial function is neither asserted linear nor invertible.
 
@@ -13511,9 +13496,9 @@ At I=J=Fin 1 over ℤ, (2,3) maps to (2,9). Over 𝔽₃[ε]/(ε^2), (0,ε) is n
 
 ([YZ19](https://math.mit.edu/~zyun/GZW_ramified_published.pdf) line 7507 — Lemma A.9, proof, p. 521)
 
-*Needs:* mul pow; map pow; sq eq zero iff; `DualNumber`; eps pow two.
+*Needs:* `mul_pow`; `map_pow`; `sq_eq_zero_iff`; `DualNumber`; `DualNumber.eps_pow_two`.
 
-### 8.4 The Abel–Jacobi affine fibre chart
+### 8.3 The Abel–Jacobi affine fibre chart
 
 At a fixed geometric root-Picard object (L,K_R,ι), the two-fibre of AJ_d is M=H⁰(X,L) minus {0}×_(H⁰(R,L|_R))H⁰(R,K_R), with the second map α↦ι(α²). For ρ>0 and the degree bound, a splitting of evaluation identifies M≃A^n minus {0}, n=d−g+1. Scaling K_R by λ and L by λ² gives weights two on n−ρ coordinates and one on ρ coordinates.
 
@@ -13529,7 +13514,7 @@ M itself is not asserted simply connected in positive characteristic.
 
 *Needs:* §8.1 (high-degree section evaluation is surjective); §5.9 (root abel–jacobi maps).
 
-### 8.5 The family Abel–Jacobi fibre chart
+### 8.4 The family Abel–Jacobi fibre chart
 
 For a root Picard object b=(L,K_R,ι) on X_T, with T locally Noetherian over k, put E=pi_*L, U=pi_*L(-R), G=pi_R*(L|R), H=pi_R*K_R, and q:H→G induced by α→ι(α^2). The imported high-degree vanishing yields a universally base-change-compatible exact sequence 0→U→E→G→0 of locally free sheaves of ranks a,n,ρ, and H has rank ρ. Define C_hat_b=V(E) x_(V(G)) V(H), with V(F) parametrizing sections of F, and C_b as the inverse image of V(E) minus its zero section. Then C_b is the two-pullback T x_(P_d) S_d. Etale locally on T, split R_T, choose frames and an evaluation splitting σ; the isomorphism (u,α)→(u+σ(q(α)),α) identifies C_hat_b with A_T^n and C_b with A_T^n minus the zero section as open schemes. These presentations and their effective opens commute with every base change T_prime→T, without a flatness or reducedness assumption on T_prime.
 
@@ -13564,9 +13549,9 @@ For g=1,ρ=1,d=2, the ranks are (a,n,ρ)=(1,2,1), and the split equation is s=(u
 
 ([YZ19](https://math.mit.edu/~zyun/GZW_ramified_published.pdf) line 7507 — Definition A.2, p. 515; §A.1.5, p. 517; Lemma A.9, pp. 520–521 Defines effectiveness by geometric fibres and the two Abel–Jacobi maps, then describes a geometric fibre by the square-evaluation equation. [StacksVanishing](https://stacks.math.columbia.edu/tag/0E3A) line 2454 — Lemma 53.22.1, tag 0E3A, Algebraic Curves §53.22 (online numbering) Nonvanishing of H1(L(-R)) forces d≤2g-2+ρ, giving the strict high-degree vanishing used by the imported coherent supplier. [StacksBaseChange](https://stacks.math.columbia.edu/tag/07VJ) line 2815 — Lemma 30.22.1 and Remark 30.22.2, tag 07VJ, Cohomology of Schemes §30.22 (online numbering) A proper scheme with coherent base-flat coefficients has a perfect cohomology complex compatible with arbitrary ring maps. With fibrewise higher-cohomology vanishing it yields the locally free degree-zero pushforward used here.)
 
-*Needs:* §8.3 (split quadratic section coordinates); §8.1 (high-degree section evaluation is surjective); §5.9 (root abel–jacobi maps); §5.1 (hat and effective root symmetric powers); SchemeAndStackFoundations §§1.18–1.23; SchemeAndStackFoundations §3.3; SchemeAndStackFoundations §3.7; `TauCeti.AlgebraicGeometry.InvertibleSheaf`; sections surjective.
+*Needs:* §8.2 (split quadratic section coordinates); §8.1 (high-degree section evaluation is surjective); §5.9 (root abel–jacobi maps); §5.1 (hat and effective root symmetric powers); SchemeAndStackFoundations §§1.18–1.23; SchemeAndStackFoundations §3.3; SchemeAndStackFoundations §3.7; `TauCeti.AlgebraicGeometry.InvertibleSheaf`.
 
-### 8.6 A projective cover of the weighted quotient
+### 8.5 A projective cover of the weighted quotient
 
 For n≥ρ+1 and ρ≥1, set a=n−ρ. The coordinate map [x₁,…,x_a,y₁,…,y_ρ]↦[x₁²,…,x_a²,y₁,…,y_ρ] defines a finite cover P^(n−1)→[A^n minus {0}/G_m], with weights (2^a,1^ρ). Its generic Galois group is μ₂^a.
 
@@ -13580,9 +13565,9 @@ The positive weight-one block is essential; the all-weight-two quotient has resi
 
 ([YZ19](https://math.mit.edu/~zyun/GZW_ramified_published.pdf) line 7507 — Proof of Lemma A.9 p. 521)
 
-*Needs:* §8.4 (the abel–jacobi affine fibre chart); SchemeAndStackFoundations §§1.18–1.23; SchemeAndStackFoundations §§3.3–3.7.
+*Needs:* §8.3 (the abel–jacobi affine fibre chart); SchemeAndStackFoundations §§1.18–1.23; SchemeAndStackFoundations §§3.3–3.7.
 
-### 8.7 Nontrivial intermediate weighted covers ramify
+### 8.6 Nontrivial intermediate weighted covers ramify
 
 A proper subgroup Γ⊊μ₂^a gives an intermediate cover of the weighted quotient that is ramified along at least one coordinate divisor x_i=0 in a chart where a weight-one coordinate y_ρ is nonzero. Hence such an intermediate cover cannot be finite étale.
 
@@ -13596,9 +13581,9 @@ The nonempty subset I and the weight-one affine chart are both required.
 
 ([YZ19](https://math.mit.edu/~zyun/GZW_ramified_published.pdf) line 7507 — Proof of Lemma A.9 p. 521)
 
-*Needs:* §8.6 (a projective cover of the weighted quotient).
+*Needs:* §8.5 (a projective cover of the weighted quotient).
 
-### 8.8 Simple connectivity of the weighted quotient
+### 8.7 Simple connectivity of the weighted quotient
 
 After base change to an algebraically closed field K of characteristic not two, the weighted quotient [A_K^n minus {0}/G_m,K] with weights (2^(n−ρ),1^ρ), ρ≥1 and n≥ρ+1, has no nontrivial connected finite étale cover. Thus every rank-one lisse ℚ̄_ℓ-local system on the original quotient is geometrically constant.
 
@@ -13612,9 +13597,9 @@ At ρ=0 the proof does not apply; the ordinary Abel–Jacobi argument uses ordin
 
 ([YZ19](https://math.mit.edu/~zyun/GZW_ramified_published.pdf) line 7507 — Claim in proof of Lemma A.9 p. 521)
 
-*Needs:* §8.6 (a projective cover of the weighted quotient); §8.7 (nontrivial intermediate weighted covers ramify); EtaleCohomologyFoundations §§F.0.2; F.0.A1–F.0.A2 and F.3a; the scheme projective-space target in Layer 8; SchemeAndStackFoundations §§3.3–3.7.
+*Needs:* §8.5 (a projective cover of the weighted quotient); §8.6 (nontrivial intermediate weighted covers ramify); EtaleCohomologyFoundations §§F.0.2, F.0.A1–F.0.A2 and F.3a; the scheme projective-space target in Layer 8; SchemeAndStackFoundations §§3.3–3.7.
 
-### 8.9 Triviality of the symmetric sheaf along Abel–Jacobi fibres
+### 8.8 Triviality of the symmetric sheaf along Abel–Jacobi fibres
 
 Under the high-degree bound and ρ>0, L_d restricts to a constant sheaf on each geometric two-fibre M of AJ_d.
 
@@ -13628,9 +13613,9 @@ This does not invoke false simple connectivity of punctured affine space.
 
 ([YZ19](https://math.mit.edu/~zyun/GZW_ramified_published.pdf) line 7507 — Proof of Lemma A.9 p. 521)
 
-*Needs:* §8.4 (the abel–jacobi affine fibre chart); §8.8 (simple connectivity of the weighted quotient); §7.11 (symmetric local systems by descent and lisse extension).
+*Needs:* §8.3 (the abel–jacobi affine fibre chart); §8.7 (simple connectivity of the weighted quotient); §7.11 (symmetric local systems by descent and lisse extension).
 
-### 8.10 The proper scalar quotient of a family chart
+### 8.9 The proper scalar quotient of a family chart
 
 For b and C_b as above, define Q_b=[C_b/G_m,T]. If ρ>0 the scalar c acts by (s,α)→(c^2 s,c α); its automorphism of b is (c^2 id_L,c id_K_R). If ρ=0 use the ordinary scalar c id_L and weight one on s. The map C_b→S_d is 2-equivariant for this scalar action and the trivial action on S_d, hence induces h_b:Q_b→S_d. The projection q_b:Q_b→T is proper smooth surjective with geometrically connected, geometrically simply connected tame DM fibres of dimension n-1. For ρ>0 it is étale locally W(2^a,1^ρ); for ρ=0 it is the ordinary projective bundle parametrizing lines in E. All data are functorial in b and commute with base change. Although f h_b and b q_b agree after pullback to C_b, they are generally not 2-isomorphic on Q_b: the scalar descent twists the Picard object. No factorization over P_d is claimed.
 
@@ -13647,10 +13632,10 @@ The construction has the following API.
 - The intrinsic quotient and h_b commute with base change and isomorphisms of b, with identity and composition coherence.
 
 A proof route uses the following steps. The scalar automorphisms of b identify each scaled section object with its original image in S_d. Their multiplication law supplies the coherent 2-equivariance needed to descend the map through the quotient; the action is intrinsic before choosing a splitting.
-Use SchemeAndStackFoundations §1.21 (quotient stacks) and quotient-stack-algebraic for the quotient and its G_m torsor. By the family presentation, the local weights are (2^a,1^ρ) for ρ>0. For ρ=0 the ordinary action yields P(E) and does not insert an artificial μ₂ stabilizer.
+Use SchemeAndStackFoundations §1.21 (quotient stacks) and SchemeAndStackFoundations §1.20 (the quotient stack of a smooth groupoid is algebraic) for the quotient and its G_m torsor. By the family presentation, the local weights are (2^a,1^ρ) for ρ>0. For ρ=0 the ordinary action yields P(E) and does not insert an artificial μ₂ stabilizer.
 On a split nonempty-R chart the square-coordinate map from ordinary punctured A^n to weighted punctured A^n is equivariant. Before quotients it is finite free of rank 2^a, with basis the squarefree monomials in the a source kernel coordinates. Equivariance for the SAME G_m makes the descended P_T^(n-1)→Q_b representable finite locally free of that rank. It is a branched map, not a torsor under its generic sign group.
 This finite faithfully flat cover by projective space proves properness: its relation is finite over projective space, hence proper over T and over the separated product; descend the proper diagonal and universal closedness. Smoothness follows from the punctured affine smooth atlas. Stabilizers are trivial when a root coordinate is nonzero and μ₂ on the remaining locus, so the stack is DM and tame in odd characteristic. These properties descend along the étale chart cover.
-Use §§8.6–8.8 (the projective cover of the weighted quotient, ramification of intermediate covers and simple connectivity), with projective-space simple connectivity supplied by this layer’s scheme projective-space target. A connected representable finite étale cover of a geometric Q_b pulls back trivially to projective space. A component gives an intermediate generic sign extension. Any proper subgroup admits a nonempty quadratic monomial character, ramified on a weight-one chart, a contradiction. Normality then identifies the degree-one cover with Q_b. For ρ=0 use projective-space simple connectivity directly.
+Use §§8.5–8.7 (the projective cover of the weighted quotient, ramification of intermediate covers and simple connectivity), with projective-space simple connectivity supplied by this layer’s scheme projective-space target. A connected representable finite étale cover of a geometric Q_b pulls back trivially to projective space. A component gives an intermediate generic sign extension. Any proper subgroup admits a nonempty quadratic monomial character, ramified on a weight-one chart, a contradiction. Normality then identifies the degree-one cover with Q_b. For ρ=0 use projective-space simple connectivity directly.
 Under a quotient torsor the descended line bundle L is twisted by the square of its scalar line and K_R by that scalar line (by its inverse with the opposite torsor convention). This explains why the quotient square over P_d cannot be used as a Cartesian square. Only C_b=T x_(P_d) S_d has that property.
 
 **Checks.**
@@ -13665,9 +13650,9 @@ For (a,ρ)=(1,1), the fibre is W(2,1), with a degree-two projective cover; on y�
 
 ([YZ19](https://math.mit.edu/~zyun/GZW_ramified_published.pdf) line 7507 — Lemma A.9, proof and simple-connectivity claim, p. 521; [SGA1](https://arxiv.org/pdf/math/0206203v2) — Exposé XI, Proposition 1.1, printed p.285 (recomposed p.219), SGA1 line 8606).
 
-*Needs:* §8.5 (the family abel–jacobi fibre chart); §8.6 (a projective cover of the weighted quotient); §8.7 (nontrivial intermediate weighted covers ramify); §8.8 (simple connectivity of the weighted quotient); SchemeAndStackFoundations §§1.18–1.23; EtaleCohomologyFoundations §§F.0.2; F.0.A1–F.0.A2 and F.3a; the scheme projective-space target in Layer 8.
+*Needs:* §8.4 (the family abel–jacobi fibre chart); §8.5 (a projective cover of the weighted quotient); §8.6 (nontrivial intermediate weighted covers ramify); §8.7 (simple connectivity of the weighted quotient); SchemeAndStackFoundations §§1.18–1.23; EtaleCohomologyFoundations §§F.0.2, F.0.A1–F.0.A2 and F.3a; the scheme projective-space target in Layer 8.
 
-### 8.11 The canonical local descent line
+### 8.10 The canonical local descent line
 
 Let F be a rank-one lisse sheaf on S_d. For every b:T→P_d as in the family construction, set F_Q=h_b^*F on Q_b and M_b=(q_b)_*F_Q at finite coefficient level. Proper degree-zero base change and the geometric simple connectivity of Q_b give a canonical evaluation isomorphism e_b:q_b^*M_b→F_Q. M_b is lisse of rank one, and its pullback to the C_b is canonically F|C_b. Define the adic and ℚ̄_ℓ version by compatible local coefficient lattices and reduction, invert ℓ, and extend coefficients; it is independent of these presentations. Base change, isomorphisms of b, and morphisms of F give coherent comparison maps for M_b, including composition and identity laws.
 
@@ -13701,16 +13686,16 @@ A geometrically constant arithmetic line with geometric Frobenius eigenvalue zet
 
 ([ACV01](https://arxiv.org/pdf/math/0106211v1) line 1594 — Appendix A, Proposition A.0.7, and line 1615 — Theorem A.0.8, preprint pp. 34–35 Theorem A.0.8 gives proper base change for torsion sheaves on a tame DM stack over a scheme. Only degree zero is used. [YZ19](https://math.mit.edu/~zyun/GZW_ramified_published.pdf) line 7507 — Lemma A.9, p. 521)
 
-*Needs:* §8.10 (the proper scalar quotient of a family chart); §7.11 (symmetric local systems by descent and lisse extension); EtaleCohomologyFoundations §§F.0.2; F.0.A1–F.0.A2 and F.3a; the scheme projective-space target in Layer 8.
+*Needs:* §8.9 (the proper scalar quotient of a family chart); §7.11 (symmetric local systems by descent and lisse extension); EtaleCohomologyFoundations §§F.0.2, F.0.A1–F.0.A2 and F.3a; the scheme projective-space target in Layer 8.
 
-### 8.12 Effective high-degree Abel–Jacobi descent
+### 8.11 Effective high-degree Abel–Jacobi descent
 
 At d≥ρ+max(2g-1,1), inverse image along f=AJ_d:S_d→P_d is fully faithful on rank-one lisse ℚ̄_ℓ sheaves and every rank-one lisse sheaf F on S_d is in its essential image. In particular there is a rank-one L_d^Pic with a comparison θ:f^*L_d^Pic isomorphic to the unshifted symmetric rank-one L_d from Layer 7. Given two pairs (M,θ),(M_prime,θ_prime) for the same F, there is exactly one isomorphism M→M_prime whose pullback intertwines the two comparisons. This uniqueness is for the normalized pair, not for the underlying sheaf with its scalar automorphisms. Descent, comparisons, tensor operations and any supplied geometric-Frobenius structure are compatible with base change over k. The empty-R branch uses ordinary projective quotients.
 
 k is a finite field of characteristic p different from 2; X/k is a smooth projective geometrically connected curve of genus g. R is a reduced finite effective divisor, including the empty divisor; ρ=deg(R) is its length over k, not its number of closed points. d is an integer with d≥ρ+max(2g-1,1); n=d-g+1 and a=n-ρ, so a≥1. P_d denotes the degree-d root Picard stack of Layer 4, S_d the effective root section stack of Layer 5, and f=AJ_d:S_d→P_d forgets both sections. Coefficients are finite rank-one O_E/ϖ^m local systems, then lisse ℚ̄_ℓ sheaves via the local adic formalism, with ℓ different from p.
 
-A proof route uses the following steps. For each smooth locally finite type scheme atlas T→P_d, construct M_b and its comparison using §8.11 (the canonical local descent line). This uses a proper DM map Q_b→T, not properness or a homotopy exact sequence for the nonproper AJ_d.
-By §8.5 (the family Abel–Jacobi fibre chart), the f_b:C_b→T is smooth surjective with geometrically connected fibres. Pulling back any connected finite étale cover of connected T leaves a connected space: the projection to that cover is an open surjection with connected geometric fibres. The finite-cover/fibre-functor comparison therefore gives a surjection on pi1, so f_b^* is fully faithful on finite locally constant sheaves. The local adic formalism gives the same full faithfulness for rank-one lisse sheaves.
+A proof route uses the following steps. For each smooth locally finite type scheme atlas T→P_d, construct M_b and its comparison using §8.10 (the canonical local descent line). This uses a proper DM map Q_b→T, not properness or a homotopy exact sequence for the nonproper AJ_d.
+By §8.4 (the family Abel–Jacobi fibre chart), the f_b:C_b→T is smooth surjective with geometrically connected fibres. Pulling back any connected finite étale cover of connected T leaves a connected space: the projection to that cover is an open surjection with connected geometric fibres. The finite-cover/fibre-functor comparison therefore gives a surjection on pi1, so f_b^* is fully faithful on finite locally constant sheaves. The local adic formalism gives the same full faithfulness for rank-one lisse sheaves.
 The double and triple overlaps of the scheme atlas over the Artin stack P_d may be algebraic spaces. Choose étale scheme covers of these overlaps and apply the preceding scheme-chart full-faithfulness argument after each refinement. On the double overlap the two M_b pull back to the same F on its Abel–Jacobi fibre product, so this supplies the unique overlap isomorphism compatible with those comparisons. Uniqueness makes these isomorphisms descend from the refinements. On the triple overlap the cocycle holds because its pullback holds. Effective smooth descent for lisse sheaves glues M and θ on P_d; no scheme fundamental-group statement is applied directly to an algebraic stack or algebraic space.
 Check arbitrary morphisms on the atlas and its overlaps by the same full faithfulness; this proves full faithfulness globally and normalized uniqueness. Applied to the specific symmetric L_d, this is the descent used by §8.13; the argument does not assume §8.13.
 Apply the comparisons to tensor products, units and any Frobenius pullback; uniqueness makes their coherence diagrams descend. Carry out the same argument using P(E) when R is empty.
@@ -13719,7 +13704,23 @@ For g=1,R empty,d=1 the local quotient is P^0, while the fibre is G_m; the theor
 
 ([YZ19](https://math.mit.edu/~zyun/GZW_ramified_published.pdf) line 7410 — Lemma A.7, pp. 519–520; Lemma A.9, pp. 520–521 A.7 supplies the unshifted rank-one symmetric local system and A.9 gives its high-degree Picard descent. [ACV01](https://arxiv.org/pdf/math/0106211v1) line 1615 — Appendix A, Theorem A.0.8, preprint pp. 34–35 Degree-zero proper base change is the extra generic input making the quotient construction an effective descent proof. [StacksLisse](https://stacks.math.columbia.edu/tag/0DV4) line 4675 — Lemma 59.65.1 and Remark 59.65.3, tag 0DV4, Etale Cohomology §59.65 (online numbering) For connected schemes finite locally constant coefficient sheaves are representations of the étale fundamental group, compatibly with inverse image.)
 
-*Needs:* §8.5 (the family abel–jacobi fibre chart); §8.11 (the canonical local descent line); §4.1 (the graded root picard stack); §5.9 (root abel–jacobi maps); §7.11 (symmetric local systems by descent and lisse extension); EtaleCohomologyFoundations §§F.0.2; F.0.A1–F.0.A2 and F.3a; the scheme projective-space target in Layer 8.
+*Needs:* §8.4 (the family abel–jacobi fibre chart); §8.10 (the canonical local descent line); §4.1 (the graded root picard stack); §5.9 (root abel–jacobi maps); §7.11 (symmetric local systems by descent and lisse extension); EtaleCohomologyFoundations §§F.0.2, F.0.A1–F.0.A2 and F.3a; the scheme projective-space target in Layer 8.
+
+### 8.12 High-degree descent with empty ramification
+
+When R=∅ and d≥max(2g−1,1), the symmetric local system descends along the ordinary Abel–Jacobi map to the degree-d Picard stack. The ordinary scalar action has weight one; the projective fibre quotient is P^(d−g).
+
+Throughout this subsection, k is finite of characteristic p≠2; X/k is smooth, projective and geometrically connected; R⊂X is a reduced finite divisor, possibly empty; ρ=deg R, and g is the curve genus. Coefficients are ℚ̄_ℓ with ℓ≠p; geometric Frobenius is used.
+
+A proof route uses the following steps. Apply §8.11 (effective high-degree Abel–Jacobi descent) with R empty to the symmetric local system L_d of §7.11.
+For a chart point b:T→P_d, the fixed-object two-fibre of the Abel–Jacobi map is V(π_*L) minus its zero section (§8.4 with R empty), a smooth surjective map to T with geometrically connected fibres A^n minus the origin, n=d−g+1; this fibre is not simply connected in characteristic p and enters only through full faithfulness of pullback along a smooth surjection with geometrically connected fibres.
+§§8.9–8.10 use its ordinary weight-one scalar quotient P(π_*L), whose geometric fibres are P^(d−g), connected and simply connected by the scheme projective-space input of this layer, to construct the canonical local descent line; §8.11 glues these lines with their normalized comparisons along a smooth scheme atlas of the Picard stack.
+
+For g=d=1 the fixed-object fibre over a chart point is G_m, whereas its scalar quotient is P⁰; only the quotient enters the simple-connectivity step, and neither properness nor simple connectivity of the Abel–Jacobi map to the stack is used.
+
+([YZ19](https://math.mit.edu/~zyun/GZW_ramified_published.pdf) line 7507 — Lemma A.9 p. 520, opening unramified case; proof p. 521)
+
+*Needs:* §8.11 (effective high-degree abel–jacobi descent); §8.4 (the family abel–jacobi fibre chart); §8.9 (the proper scalar quotient of a family chart); §8.10 (the canonical local descent line); §7.11 (symmetric local systems by descent and lisse extension); §7.26 (multiplicativity on every effective degree); SchemeAndStackFoundations §§3.3–3.7; EtaleCohomologyFoundations §§F.0.2, F.0.A1–F.0.A2 and F.3a; the scheme projective-space target in Layer 8.
 
 ### 8.13 High-degree root Abel–Jacobi descent
 
@@ -13727,15 +13728,15 @@ For d≥ρ+max(2g−1,1), L_d descends to a rank-one local system L_d^Pic on Pic
 
 Throughout this subsection, k is finite of characteristic p≠2; X/k is smooth, projective and geometrically connected; R⊂X is a reduced finite divisor, possibly empty; ρ=deg R, and g is the curve genus. Coefficients are ℚ̄_ℓ with ℓ≠p; geometric Frobenius is used.
 
-A proof route uses the following steps. Apply the family chart of §8.5 (the family Abel–Jacobi fibre chart) and the proper scalar quotient of §8.10, with the ordinary weight-one projective quotient when R is empty.
-§8.11 (the canonical local descent line) supplies a lisse line by degree-zero proper base change and smooth-local lissity. §8.12 (effective high-degree abel–jacobi descent) glues these normalized lines: refine algebraic-space overlaps by étale scheme charts, use full faithfulness there, and descend the unique comparisons and their cocycle.
+A proof route uses the following steps. Apply the family chart of §8.4 (the family Abel–Jacobi fibre chart) and the proper scalar quotient of §8.9, with the ordinary weight-one projective quotient when R is empty.
+§8.10 (the canonical local descent line) supplies a lisse line by degree-zero proper base change and smooth-local lissity. §8.11 (effective high-degree abel–jacobi descent) glues these normalized lines: refine algebraic-space overlaps by étale scheme charts, use full faithfulness there, and descend the unique comparisons and their cocycle.
 No general effective descent theorem for a nonproper map is inferred from connected fibres. The stack-lisse and proper-base-change adapter is constructed in Layer 7’s coefficient interfaces.
 
 Retain the threshold including ρ and the max with one.
 
 ([YZ19](https://math.mit.edu/~zyun/GZW_ramified_published.pdf) line 7507 — Lemma A.9 pp. 520–521)
 
-*Needs:* §8.1 (high-degree section evaluation is surjective); §8.9 (triviality of the symmetric sheaf along abel–jacobi fibres); §8.2 (high-degree descent with empty ramification); §5.9 (root abel–jacobi maps); §8.12 (effective high-degree abel–jacobi descent).
+*Needs:* §8.1 (high-degree section evaluation is surjective); §8.8 (triviality of the symmetric sheaf along abel–jacobi fibres); §8.12 (high-degree descent with empty ramification); §5.9 (root abel–jacobi maps); §8.11 (effective high-degree abel–jacobi descent).
 
 ### Examples
 
@@ -13885,7 +13886,7 @@ Equality of and geometric choice conditions must preserve residue degrees, effec
 
 ([YZ19](https://math.mit.edu/~zyun/GZW_ramified_published.pdf) line 7644 — Appendix A.2.2, pp. 521–522; Lemma A.10, p. 522)
 
-*Needs:* Divisor; degree; degree add; degree nonneg; degree zero; degree of Point; exists le degree add nsmul of Point; of Point; §9.1 (effective auxiliary divisors away from r); SchemeAndStackFoundations §§3.3–3.7.
+*Needs:* `TauCeti.Divisor`; `TauCeti.Divisor.degree`; `TauCeti.Divisor.degree_add`; `TauCeti.Divisor.degree_nonneg`; `TauCeti.Divisor.degree_zero`; `TauCeti.Divisor.degree_ofPoint`; `TauCeti.Divisor.exists_le_degree_add_nsmul_ofPoint`; `TauCeti.AlgebraicGeometry.WeilDivisor.ofPoint`; §9.1 (effective auxiliary divisors away from r); SchemeAndStackFoundations §§3.3–3.7.
 
 ### 9.7 Signed divisor tensor line
 
@@ -14099,7 +14100,7 @@ For d=-1 and D=-[x] at an away degree-two point, the map is t_-x^*P_-3 isomorphi
 For d,e≥0 let hatX_d be the whole root-section space of §5.1, hatAJ_d its forgetful map and hatL_d=hatAJ_d^*P_d on all of hatX_d. Pulling multiplication of §9.11, μ_(d,e) through the square hatAJ_(d+e) composed with hatadd_(d,e)=mult composed with (hatAJ_d times hatAJ_e) gives a canonical isomorphism hatadd_(d,e)^*hatL_(d+e) isomorphic to hatL_d external-tensor hatL_e. The isomorphisms obey associativity, symmetry and the unit diagrams for the effective empty-section object. On the effective opens they are the underlying symmetric multiplication α_(d,e). At every geometric pair of objects, including either or both global sections equal to zero, this remains an isomorphism of rank-one stalks. No extension by zero from the effective open is used.
 
 
-A proof route uses the following steps. Use the Layer 5 root-addition and root-abel-jacobi square on the entire section spaces, including zero sections.
+A proof route uses the following steps. Use the compatibility of root addition (§5.5) with the root Abel–Jacobi maps (§5.9) on the entire section spaces, including zero sections.
 Apply inverse image to underlying §9.8 and the inverse-image/external-tensor comparison of the lisse category.
 Pull underlying associativity and symmetry-unit through the triple and swapped squares. On effective opens, full faithfulness of the high-degree comparison and the §9.10’s effective pullback identify this map with α; arbitrary effective degrees follow by the common-normalization cocycle.
 For geometric zero-section points the underlying Picard object remains defined; pullback of its rank-one line has rank one. This is the whole-space object used in the published consumer, not a new compact-support construction.
@@ -14208,7 +14209,7 @@ Two distinct places can be assigned different nonzero residues. No prescribed re
 
 ([YZ19](https://math.mit.edu/~zyun/GZW_ramified_published.pdf) line 7248 — Lemma A.5 and (A.4), p. 518)
 
-*Needs:* exists forall residue eq; exists forall ord sub eq.
+*Needs:* `TauCeti.Place.exists_forall_residue_eq`; `TauCeti.Place.exists_forall_ord_sub_eq`.
 
 ### 10.5 Cyclic tensor trace in rank one
 
@@ -14224,7 +14225,7 @@ For d=1 the operator is a times identity and trace=a. For d=2 and a=-1 the trace
 
 ([YZ19](https://math.mit.edu/~zyun/GZW_ramified_published.pdf) line 7880 — A.3.4, pp. 525–526,(A.12))
 
-*Needs:* map; reindex; trace; fin Rotate.
+*Needs:* `PiTensorProduct.map`; `PiTensorProduct.reindex`; `LinearMap.trace`; `finRotate`.
 
 ### 10.6 The norm restricts to a square at ramification
 
@@ -14273,7 +14274,7 @@ For R empty recover the ordinary Picard groupoid, with its scalar automorphisms.
 
 ([YZ19](https://math.mit.edu/~zyun/GZW_ramified_published.pdf) line 7758 — A.3.1, p. 524; Definition A.1, p. 514; [STACKS-TORSORS](https://stacks.math.columbia.edu/tag/03AG) line 149 — Definition 21.4.1, tag 03AG Tag 03AG supplies torsor local triviality. Gluing of torsors on the small étale site is SchemeAndStackFoundations §§1.15 and 2.3, with the §1.18 stack contract descending the sheaf, action and local torsor condition. [MILNE-LEC](https://www.jmilne.org/math/CourseNotes/LEC.pdf) line 3104 — Theorem 11.4, pp. 78–79 Rank-one locally free modules and G_m torsors agree; the finite-cover frame argument supplies the direct-image version. [STACKS-NORMS](https://stacks.math.columbia.edu/tag/0BCX) line 1513 — Lemma 31.18.1, tag 0BUT Line bundles over a finite inverse image trivialize over inverse images of base Zariski neighbourhoods; this proves local nonemptiness of the B-frame torsor without a limit argument.)
 
-*Needs:* §10.1 (the root multiplicative sheaf); §4.1 (the graded root picard stack); SchemeAndStackFoundations §3.4; SchemeAndStackFoundations §3.7; SchemeAndStackFoundations §§1.18–1.23; additive Units Functor; additive Units Functor obj obj; §10.3 (root-unit coordinates); SchemeAndStackFoundations §1.1; SchemeAndStackFoundations §§3.3–3.7.
+*Needs:* §10.1 (the root multiplicative sheaf); §4.1 (the graded root picard stack); SchemeAndStackFoundations §3.4; SchemeAndStackFoundations §3.7; SchemeAndStackFoundations §§1.18–1.23; `CategoryTheory.Sheaf.additiveUnitsFunctor`; `CategoryTheory.Sheaf.additiveUnitsFunctor_obj_obj`; §10.3 (root-unit coordinates); SchemeAndStackFoundations §1.1; SchemeAndStackFoundations §§3.3–3.7.
 
 ### 10.9 Ramified determinant and residue square
 
@@ -14361,7 +14362,7 @@ Let H be the image of O_sqrtR^units to the ordinary idele group I_F, and Q=I_F/(
 k is a finite field of characteristic p different from 2; X/k is a smooth projective geometrically connected curve; R is a reduced finite divisor, possibly empty, and U=X minus R. F=k(X). Use the underlying adelic-root-groupoid equivalence with its inverse-uniformizer convention, and the FunctionFieldArithmetic §2.1’s ideles. All homomorphisms in the determination statement are homomorphisms on Q; no density or continuity argument substitutes for surjectivity.
 
 A proof route uses the following steps. Use the root-unit coordinate equation res(u)=v squared to compute the image and its kernel. Squares in every finite residue field are tested componentwise.
-Use the imported adelic root groupoid to identify isomorphism classes with Q. Apply root-framed-support-moving to a representative root Picard object to get a signed divisor in U.
+Use the imported adelic root groupoid to identify isomorphism classes with Q. Apply §10.10 (moving a root-framed line away from the branch) to a representative root Picard object to get a signed divisor in U.
 The associated class is the product of the inverse-uniformizer classes to their signed multiplicities. Evaluate both characters on this finite product. There is no passage to a profinite completion.
 
 Using the full ordinary unit subgroup at R discards the square-residue distinction and changes Q. For R empty recover the ordinary idele/Picard-class determination. A negative multiplicity gives the inverse character value. All closed points, rather than only k-rational points, are required.
@@ -14465,13 +14466,13 @@ Throughout this subsection, k is finite of characteristic p≠2; X/k is smooth, 
 
 A proof route uses the following steps. Use strong approximation with prescribed residue-square root frames at the finite set R to move a root-Picard object away from R.
 Represent the resulting line bundle by a signed divisor on U through the divisor/idele dictionary.
-Express that divisor as a difference of effective divisors; the canonical root data determine the normalized character values. This exact approximation statement is request FunctionFieldArithmetic §2.1 (adelic approximation).
+Express that divisor as a difference of effective divisors; the canonical root data determine the normalized character values. The approximation input is §10.4 (nonzero residue interpolation), which prescribes nonzero residues at the finitely many branch places to arbitrary finite precision using the pinned weak approximation theorem; strong approximation is AlgebraicCurves Layer 5.
 
 The finite residual root data cannot be discarded when moving support.
 
 ([YZ19](https://math.mit.edu/~zyun/GZW_ramified_published.pdf) line 7896 — Proposition A.12 p. 525, character determination used in proof)
 
-*Needs:* §6.3 (the adelic root picard groupoid); FunctionFieldArithmetic §§2–4; §10.13 (characters determined away from the branch).
+*Needs:* §6.3 (the adelic root picard groupoid); §10.4 (nonzero residue interpolation); FunctionFieldArithmetic §§2–4; AlgebraicCurves Layer 5; §10.13 (characters determined away from the branch).
 
 ### 10.19 Local Hilbert 90 with root normalization
 
@@ -14556,12 +14557,12 @@ A nontrivial line bundle can become trivial under an étale pullback; group inje
 
 ### 10.24 The quadratic trace character on the root quotient
 
-Let P be any rank-one character sheaf on the root Picard stack with its coherent unit and all-integer-degree multiplication, and suppose its closed-point eigenvalues α_x agree with chi(inverse_uniformizer_x) for a homomorphism chi:Q to ℚ̄_ℓ^units. Then its Frobenius trace character equals chi on every k-object. For the quadratic local system of the given double cover, quadratic-local-values and reciprocity-root-unit-triviality supply this condition with chi=eta, proving the quadratic trace target of §10.20. The argument makes no use of the ambiguous Picard-stack exactness display.
+Let P be any rank-one character sheaf on the root Picard stack with its coherent unit and all-integer-degree multiplication, and suppose its closed-point eigenvalues α_x agree with chi(inverse_uniformizer_x) for a homomorphism chi:Q to ℚ̄_ℓ^units. Then its Frobenius trace character equals chi on every k-object. For the quadratic local system of the given double cover, §10.22 (split and inert Frobenius signs) and §10.14 (quadratic reciprocity factors through the root quotient) supply this condition with chi=eta, proving the quadratic trace target of §10.20. The argument makes no use of the ambiguous Picard-stack exactness display.
 
-k is a finite field of characteristic p different from 2; X/k is a smooth projective geometrically connected curve; R is a reduced finite divisor, possibly empty, and U=X minus R. ℓ is a prime different from p; coefficients are ℚ̄_ℓ, including ℓ=2. L is a rank-one lisse sheaf on the square-root curve with its k-descent, not assumed to have globally quadratic monodromy. P=L^Pic is the underlying all-integer-degree character sheaf with its unit and coherent multiplication. Every Frobenius is geometric. P is the all-degree extension of L used in signed-divisor-trace; chi is defined on the quotient Q. The quadratic specialization uses the cover hypotheses of quadratic-local-values.
+k is a finite field of characteristic p different from 2; X/k is a smooth projective geometrically connected curve; R is a reduced finite divisor, possibly empty, and U=X minus R. ℓ is a prime different from p; coefficients are ℚ̄_ℓ, including ℓ=2. L is a rank-one lisse sheaf on the square-root curve with its k-descent, not assumed to have globally quadratic monodromy. P=L^Pic is the underlying all-integer-degree character sheaf with its unit and coherent multiplication. Every Frobenius is geometric. P is the all-degree extension of L used in §10.11 (Frobenius trace on every signed divisor); chi is defined on the quotient Q. The quadratic specialization uses the cover hypotheses of §10.22 (split and inert Frobenius signs).
 
 A proof route uses the following steps. The coherent multiplication and unit make Frobenius trace a homomorphism on isomorphism classes Q, as in the imported trace-character target.
-For O(D)^natural use the signed-divisor trace formula and the assumed values of chi to get the same finite signed product. Every object has such a presentation by root-framed-support-moving.
+For O(D)^natural use the signed-divisor trace formula and the assumed values of chi to get the same finite signed product. Every object has such a presentation by §10.10 (moving a root-framed line away from the branch).
 Equivalently apply §10.13 to the two homomorphisms. Insert the quadratic local eigenvalues and finite reciprocity character for the stated specialization.
 
 The unit trace is 1, excluding a free constant Frobenius twist. All integer degree components are tested by signed presentations, without a chosen rational point. The proof uses neither descent of every invariant line nor vanishing of H2(A). A general nonquadratic chi distinguishes inverse uniformizers from uniformizers; the quadratic sign alone would not.
@@ -14646,7 +14647,7 @@ The maps are homomorphisms with zero, addition and inverse laws. Restriction/bas
 
 ([MILNE-LEC](https://www.jmilne.org/math/CourseNotes/LEC.pdf) line 2602 — §9 property (c), p. 64; line 2631 — Remark 9.3, p. 65; line 2682 — Example 9.5, p. 66; line 3058 — Proposition 11.1, p. 77; [STACKS-TORSORS](https://stacks.math.columbia.edu/tag/03AG) line 149 — Lemma 21.4.3, tag 03AG; Lemma 21.11.1, tag 0CJZ)
 
-*Needs:* §10.26 (the two torsor fibre sequences); H; map; SchemeAndStackFoundations §§2.10–2.11; covariant Sequence; covariant Sequence exact; `CategoryTheory.Abelian.Ext.covariant_sequence_exact₃`.
+*Needs:* §10.26 (the two torsor fibre sequences); SchemeAndStackFoundations §§2.10–2.11; `CategoryTheory.Abelian.Ext.covariantSequence`; `CategoryTheory.Abelian.Ext.covariantSequence_exact`; `CategoryTheory.Abelian.Ext.covariant_sequence_exact₃`.
 
 ### 10.28 Norm lifts and their secondary obstruction
 
@@ -14656,7 +14657,7 @@ k is a finite field of characteristic p different from 2; X/k is a smooth projec
 
 A proof route uses the following steps. The first lift criterion is exactness at H1(C). Tensoring a lift by a K-torsor with its canonical quotient trivialization gives the action; taking the quotient of two lifts gives its inverse.
 For a fixed tau, lift P_tau through q by the second long exact sequence. Identify the resulting norm-trivialized line with the canonical d(M) using the nullhomotopy comparison.
-Fix the convention that changing tau by c means tau_new=c inverse times tau. The inverse-image-of-unit definition gives [P_tau_new]=[P_tau]+δ_N^0(c). Thus the displayed quotient class is independent of the choice.
+Fix the convention that changing tau by c means tau_new=c inverse times tau. The definition of the degree-zero connecting map δ_N^0 in §10.27 (connecting maps for the two norm sequences) gives [P_tau_new]=[P_tau]+δ_N^0(c). Thus the displayed quotient class is independent of the choice.
 If its representative is in the boundary image, alter tau by the opposite c, then lift P_tau through q. Conversely an isomorphism L isomorphic to d(M) transports tau_M to a trivialization with zero representative. This proves the underlying-class criterion.
 
 H2(A) is not declared zero; no Brauer vanishing over X_T is assumed. A merely trivial norm class does not supply a canonical tau. The fixed-trivialization and underlying-class criteria use different obstruction groups. For Q=1 with its unit B-lift the lift groupoid is Tors(K), including H0(K) automorphisms.
@@ -14718,7 +14719,7 @@ Root-stack specialization and section-conjecture applications consume the infini
 
 For A=ℤ/4, n=2, a zero root section with power-identification coefficient 3 exists on the trivial line. The units 1 and 3 both have square 1, so neither normalizes that identification over A. Adjoining z with z²=3 gives the finite free fppf normalization cover. This distinguishes a stack quotient from an orbit set of A-valued chart points. A chart is a μ₂-torsor over the root stack; the chart's map to Spec A need not be a torsor when the section vanishes. (AGV08 line 2431, Appendix B.2, pp.53–54; FramedRoot-codex-rtOQ9t line 7989, Example 4.9.22.)
 
-On X=𝔸¹_𝔽ₚ with divisor x=0 and exponent p, the smooth frame atlas has equation zᵖ=qx with q invertible. Eliminating x yields 𝔽ₚ[z,q,q⁻¹], a regular smooth atlas; the finite μ_p chart itself is not the smooth atlas. The stack is regular and tame, while its branch inertia is non-étale. For s=2 on Spec ℤ at exponent 3, every branch point lies in V(2), where 3 is invertible, so the stack is DM even though 3 is not globally invertible. On a stack base B𝔾_m with s=1, the relative root is the base itself and still has its base automorphisms. (AOV08 line 906, Definition 3.1 and Theorem 3.2; AGV08 line 2431, Appendix B.2.)
+On X=𝔸¹_𝔽ₚ with divisor x=0 and exponent p, the smooth frame atlas has equation zᵖ=qx with q invertible. Eliminating x yields 𝔽ₚ[z,q,q⁻¹], a regular smooth atlas; the finite μ_p chart itself is not the smooth atlas. The stack is regular and tame, while its branch inertia is non-étale. For s=2 on Spec ℤ at exponent 3, every branch point lies in V(2), where 3 is invertible, so the stack is DM even though 3 is not globally invertible. On a stack base B𝔾_m with s=1, the relative root is the base itself and still has its base automorphisms. (AOV08 line 906, Definition 3.1, and line 910, Theorem 3.2; AGV08 line 2431, Appendix B.2.)
 
 For factorial restriction, a root of order 6! = 720 induces a root of order 5 by the 144-th tensor power, since 5·144 = 720. Passing through order 5! = 120 gives exponent 6 followed by 24, whose product is again 144. The tensor-power comparison supplies the arrow between these section-bearing roots. Over a field k, on the zero-section chart, z_nʳ≠0 whenever 0≤r<n. Every element of the root-coordinate ideal is nilpotent because it comes from one finite stage, but the ideal has no uniform nilpotence exponent: for any r choose n>r. (TV17 line 650, Proposition 3.5 and Remark 3.6; line 702, §3.1.)
 
