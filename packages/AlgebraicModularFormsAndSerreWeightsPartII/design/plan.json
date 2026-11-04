@@ -3866,7 +3866,7 @@
     "slug": "siegel-parahoric-models",
     "needs": "Provide the Klingen and paramodular genus-two toroidal models of Pilloni Theorem 6.1.5.1 (normal, flat and lci over ℤ_p, with the maps from Klingen level to spherical and paramodular level), the universal isogeny chain G→G′→G of degrees p³ and p over the Klingen model, the integral compactified correspondence C_(p,2) of Pilloni §14.9.2 over the spherical model, with source fan equal to the fan of the trace projection p₁ so that p₁ is finite over the rank-at-least-one locus and p₂ is proper, and the refinement and boundary-ideal comparisons for these models.",
     "supplier": "ShimuraCompactifications",
-    "section": "C5"
+    "section": "Layer 7"
   },
   {
     "slug": "siegel-rank-one-deformations",
@@ -3882,7 +3882,7 @@
   },
   {
     "slug": "siegel-logarithmic-de-rham",
-    "needs": "Provide the genus-two semiabelian logarithmic de Rham connection and polarized pairing, ordinary unit-root splitting and first-order superspecial Hasse–Witt matrix, compatible with the logarithmic Kodaira–Spencer isomorphism of ShimuraCompactifications C5.12.",
+    "needs": "Provide the genus-two semiabelian logarithmic de Rham connection and polarized pairing, ordinary unit-root splitting and first-order superspecial Hasse–Witt matrix, compatible with the logarithmic Kodaira–Spencer isomorphism of ShimuraCompactifications 7.12.",
     "supplier": "AbelianSchemesAndArithmeticModuli",
     "section": "A4.3"
   },

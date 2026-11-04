@@ -1,6 +1,6 @@
 # Roadmap: algebraic modular forms and Serre weights, Part II — Siegel forms modulo prime powers
 
-**Summary.** This continuation develops integral genus-two Siegel forms with arbitrary module coefficients, including finite torsion and K/O, from the modular-curve theory of AlgebraicModularFormsAndSerreWeights R15.1–R15.6. It builds the primary and secondary rank geometry, all-component Fourier coordinates, integral coefficient and geometric Hecke actions, characteristic-p theta operators with low-weight injectivity, and the comparison with full-frame ordinary p-adic functions. Its end theorems retain ramified coefficient rings, boundary terms, central transports and tame-level orientation. README.md is the roadmap; Suggested.lean states the headline results expressible on the pinned native carriers: the arbitrary-level determinant-p coset degree and small symmetric-power irreducibility.
+**Summary.** This continuation develops integral genus-two Siegel forms with arbitrary module coefficients, including finite torsion and K/O, from the modular-curve theory of AlgebraicModularFormsAndSerreWeights R15.1–R15.6. It builds the primary and secondary rank geometry, all-component Fourier coordinates, integral coefficient and geometric Hecke actions, characteristic-p theta operators with low-weight injectivity, and the comparison with full-frame ordinary p-adic functions. Its end theorems retain ramified coefficient rings, boundary terms, central transports and tame-level orientation. README.md is the roadmap; Suggested.lean states the headline result expressible on the pinned native carriers: the arbitrary-level determinant-p coset degree.
 
 ## Scope and ownership
 
@@ -8,9 +8,9 @@ The base roadmap AlgebraicModularFormsAndSerreWeights R15.1–R15.6 supplies the
 
 Generic tensor, symmetric-power, determinant and dual bundle constructions are stated by AlgebraicVectorBundles §§L0A–L0C and AutomorphicBundles B2–B3. Canonical and subcanonical extensions and their generic vector expansion principle are stated by AutomorphicBundles §§B3.2–B3.4, B5.14–B5.15; §§1.1–1.4 below specialize them to binary Fourier indices and all geometric components. The generic componentwise coefficient-recognition proof is imported. The double-coset Hecke ring, its finite left-coset decompositions, the degree map and the elementary-divisor parametrization are stated by ModularForms Layer 2; §5.2 owns the binary-index integrality comparison at arbitrary tame level: the literal rational double coset has a tame multiplicity, whereas the local unramified p-correspondence has p+1 branches with transported tame markings. The general adelic correspondence and degree belong to AdelicAlgebraicGroups §4.5; this roadmap specializes them at the genus-two cusp. Binary quadratic forms with their discriminant and SL₂-action are Tau Ceti's; §1.2 adds the determinant-normalized GL₂(ℚ) action used for Fourier indices. The projective-zero theorem is stated by ClassicalArithmeticCompletion §1.17; §6.2 applies it to labeled neighbor occurrences.
 
-The primary semiabelian Hasse section and its ordinary and minimal-model comparisons are stated by HodgeTateAndCanonicalSubgroups §§0.12–0.16. General BT₁ filtration, Hasse–Witt complexes and Fargues determinant duality are stated by FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.2.2, R07.2.21–R07.2.23. Layers 2–3 own the genus-two reducedness, secondary invariant, rank-one flags and its global extension and root. The split subgroup recipes use these imported carriers; they introduce no second BT₁ or primary-Hasse theory. The general finite-field Lang theorem belongs to ReductiveGroupsPartII §RG2.3.7; §8.4 uses its SL₂ specialization for normalized frames.
+The primary semiabelian Hasse section and its ordinary and minimal-model comparisons are stated by HodgeTateAndCanonicalSubgroups §§0.12–0.16. General BT₁ filtration, Hasse–Witt complexes and Fargues determinant duality are stated by FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.2.2, R07.2.21–R07.2.23. Layers 2–3 own the genus-two reducedness, secondary invariant, rank-one flags and its global extension and root. The split subgroup recipes use these imported carriers; they introduce no second BT₁ or primary-Hasse theory. The general finite-field Lang theorem belongs to ReductiveGroupsPartII §RG2.3.7; §8.4 uses its SL₂ specialization for normalized frames. Absolute irreducibility of the small symmetric powers Sym^d(F̄_p²) of SL₂(F_p), 0≤d≤p−1, is stated by ArithmeticGaloisRepresentations §7.8, and the invariance of absolute irreducibility under extension of the coefficient field by ArithmeticGaloisRepresentations §1.7; §8.3 imports both and owns only their application to the normalized superspecial frames of §8.4.
 
-Spherical integral toroidal and minimal models belong to ShimuraCompactifications §§C5.3 and C5.16; the Klingen and paramodular models, their universal isogeny chain and the integral compactified correspondence are requested from that roadmap by the extension recorded below. General coherent duality, Hartogs, ample vanishing and formal functions belong to SchemeAndStackFoundations §§0.6, 2.6, 2.7, 2.19–2.20 and 4.9. Krull intersection is already in the library as Mathlib `Ideal.iInf_pow_smul_eq_bot_of_isLocalRing`. Layer 7 owns the genus-two integral factorizations and corrected Q₂ correspondence, which differ from the generic rational Hecke action of AutomorphicBundles §§B5.10–B5.11.
+Spherical integral toroidal and minimal models belong to ShimuraCompactifications §§7.3 and 7.16; the Klingen and paramodular models, their universal isogeny chain and the integral compactified correspondence are requested from that roadmap by the extension recorded below. General coherent duality, Hartogs, ample vanishing and formal functions belong to SchemeAndStackFoundations §§0.6, 2.6, 2.7, 2.19–2.20 and 4.9. Krull intersection is already in the library as Mathlib `Ideal.iInf_pow_smul_eq_bot_of_isLocalRing`. Layer 7 owns the genus-two integral factorizations and corrected Q₂ correspondence, which differ from the generic rational Hecke action of AutomorphicBundles §§B5.10–B5.11.
 
 The ordinary Igusa tower belongs to HodgeTateAndCanonicalSubgroups §§5.1–5.2, which treat Hilbert modular varieties with torsor group (𝒪_F/p^m)^×; its genus-two full-frame extension is requested from that roadmap below. Layer 9 owns its function weight spaces, saturated expansions and marked Klingen coefficient comparison. Analytic coefficient sheaves, overconvergent Hecke actions and their analytic comparisons belong to OverconvergentAutomorphicForms Layers 5–6; the integral ordinary interface here is the algebraic comparison target for those constructions.
 
@@ -18,7 +18,7 @@ The ordinary Igusa tower belongs to HodgeTateAndCanonicalSubgroups §§5.1–5.2
 
 Fix a prime p, neat tame level Kᵖ and a complete DVR O finite over ℤ_p, uniformizer ϖ, fraction field K and residue field k₀. Unless specified otherwise, X is a spherical genus-two smooth toroidal compactification over O with projective smooth fan, D its relative Cartier boundary, G the universal semiabelian family, E=e*Ω¹_G/X and λ=det E. All connected components are retained. At Klingen or paramodular level use the specified flat normal lci models and their own universal family. All assertions carry their displayed prime hypotheses: integral constructions treat p=2,3 whenever their formulas are defined; discriminant and theta statements state their odd-prime bounds explicitly.
 
-For integers j≥k let d=j−k and ω(j,k)=SymᵈE⊗λᵏ=Ω(d,k). Tensor coefficients into the sheaf before taking H⁰. Negative determinant weights use dual line powers, whereas the symmetric degree is always nonnegative. A common tame cyclotomic faithfully flat extension splits the chosen cusp on each geometric component. Scalar changes of field or level retain the induced coefficient, determinant and cusp transports. The elementary acceptance signature uses a coefficient field in Type, as required by the pinned Tau Ceti symmetric-power representation API; geometric sheaves live in a fixed universe containing their bases and the countable level towers.
+For integers j≥k let d=j−k and ω(j,k)=SymᵈE⊗λᵏ=Ω(d,k). Tensor coefficients into the sheaf before taking H⁰. Negative determinant weights use dual line powers, whereas the symmetric degree is always nonnegative. A common tame cyclotomic faithfully flat extension splits the chosen cusp on each geometric component. Scalar changes of field or level retain the induced coefficient, determinant and cusp transports. Geometric sheaves live in a fixed universe containing their bases and the countable level towers.
 
 Write S=V(h), the closed nonordinary divisor, Z_red for the reduced rank-zero curve, and SS for the finite superspecial set in the interior. The rank-one open is S minus Z_red. The secondary zero scheme is V_S(h′), with h′ of weight p²−1. It has the same support as Z_red but generically twice its multiplicity at odd p. Denote by b₀ the spherical root of §3.7, a section of λ^((p²−1)/2) on S at the fixed level, determined by the polarization of the universal family. The coefficient operator Z₂ is unrelated to this zero-scheme notation.
 
@@ -34,7 +34,7 @@ For the ordinary tower, the right frame change ψ↦ψg induces the left action 
 
 Use `Matrix.det` and `Matrix.det_mul` in Mathlib/LinearAlgebra/Matrix/Determinant/Basic.lean, lines 63 and 141, over commutative rings and finite square matrices; the half-integral binary matrix interpretation additionally requires 2 invertible. Use `legendreSym` in Mathlib/NumberTheory/LegendreSymbol/Basic.lean, line 109, with its prime parameter, integer argument and values 0,±1. For p-integral rational discriminants use their residue, independent of a prime-to-p denominator presentation.
 
-Use `Matrix.SpecialLinearGroup.map` in Mathlib/LinearAlgebra/Matrix/SpecialLinearGroup.lean, line 225, for entrywise reduction of special linear matrices along a ring map, and `Representation.IsIrreducible` in Mathlib/RepresentationTheory/Irreducible.lean, line 29. The latter means a nontrivial representation with no proper nonzero invariant subspace. Use `ZMod.castHom` in Mathlib/Data/ZMod/Basic.lean, line 331, with its divisibility and characteristic hypotheses.
+Use `Matrix.SpecialLinearGroup.map` in Mathlib/LinearAlgebra/Matrix/SpecialLinearGroup.lean, line 225, for entrywise reduction of special linear matrices along a ring map; §5.2 applies it to reduction of SL₂(ℤ) modulo N, and §8.3 describes the standard representation of SL₂(𝔽_p) through it.
 
 For the degree identity of §5.2 use `CongruenceSubgroup.Gamma` in Mathlib/NumberTheory/ModularForms/CongruenceSubgroups.lean, line 41, the kernel of reduction of SL₂(ℤ) modulo N; `Matrix.SpecialLinearGroup.toGL` and `Matrix.SpecialLinearGroup.mapGL` in Mathlib/LinearAlgebra/Matrix/GeneralLinearGroup/Defs.lean, lines 273 and 317, the inclusion of SL_n(R) in GL_n(R) and its composite with the entrywise algebra map; `ZMod.unitOfCoprime` in Mathlib/Data/ZMod/Basic.lean, line 794, the unit of ℤ/N given by an integer prime to N; the conjugation action of ConjAct on subgroups, through `Subgroup.pointwiseMulAction` in Mathlib/Algebra/Group/Subgroup/Pointwise.lean, line 425, so that g acts by K↦gKg⁻¹; and `Subgroup.relIndex` in Mathlib/GroupTheory/Index.lean, line 62, where relIndex A B is the index of A∩B in B, with junk value 0 at infinite index.
 
@@ -42,9 +42,9 @@ For a finite module over a Noetherian local ring and a proper ideal, use `Ideal.
 
 ### From Tau Ceti
 
-Use `Representation.symmetricPower` in TauCeti/RepresentationTheory/SymmetricPower.lean, line 47, for the diagonal induced action on the native symmetric tensor power over a commutative semiring and a monoid. Use `Module.Basis.symmetricPower` in TauCeti/LinearAlgebra/SymmetricPower/Basis.lean, line 167, for the rank-two monomial description indexed by multisets. The native symmetric power is a quotient of the tensor power, not an unverified polynomial lattice; polynomial notation below is its basis description.
+Use `Representation.symmetricPower` in TauCeti/RepresentationTheory/SymmetricPower.lean, line 47, for the diagonal induced action on the native symmetric tensor power over a commutative semiring and a monoid. Use `Module.Basis.symmetricPower` in TauCeti/LinearAlgebra/SymmetricPower/Basis.lean, line 162, for the rank-two monomial description indexed by multisets. The native symmetric power is a quotient of the tensor power, not an unverified polynomial lattice; polynomial notation below is its basis description.
 
-Use `TauCeti.stdSLRep` in TauCeti/RepresentationTheory/ClassicalGroups/Restriction.lean, line 44, the standard representation of SL_n(k) over a commutative ring k, acting on column vectors by matrix multiplication; §8.3 composes it with the entrywise reduction SL₂(𝔽_p)→SL₂(k).
+Use `TauCeti.stdSLRep` in TauCeti/RepresentationTheory/ClassicalGroups/Restriction.lean, line 44, the standard representation of SL_n(k) over a commutative ring k, acting on column vectors by matrix multiplication; §8.3 describes the standard representation of SL₂(𝔽_p) on k² as its composite with the entrywise reduction SL₂(𝔽_p)→SL₂(k), as a convention only.
 
 Use `TauCeti.BinaryQuadraticForm` in TauCeti/NumberTheory/BinaryQuadraticForm/Basic.lean, line 94, the form ax²+bxy+cy² recorded by its coefficients over a ring, with `TauCeti.BinaryQuadraticForm.discrim` (line 146), the discriminant b²−4ac over a commutative ring, the left SL₂-action γ•f=f∘γ⁻¹ (line 194) and `TauCeti.BinaryQuadraticForm.discrim_smul` (line 203), invariance of the discriminant under that action. The determinant-normalized GL₂(ℚ) action of §1.2 is this roadmap's own: it admits rational matrices of any nonzero determinant, divides by the determinant, and acts through the transpose, so that on SL₂(ℤ) it is M·Q=(Mᵗ)⁻¹•Q.
 
@@ -52,7 +52,7 @@ Use `HeckeRing.GL2.degree_diagCoset_prime_pow` in TauCeti/NumberTheory/HeckeRing
 
 Use `TauCeti.diagGL` in TauCeti/LinearAlgebra/Matrix/GeneralLinearGroup/Diagonal/Basic.lean, line 100, the diagonal invertible matrix with prescribed unit entries over a semiring; §5.2 applies it to diag(p,1) over ℚ and over ℤ/N with p prime to N.
 
-The Tau Ceti modules imported by Suggested.lean are TauCeti.RepresentationTheory.SymmetricPower, TauCeti.RepresentationTheory.ClassicalGroups.Restriction and TauCeti.LinearAlgebra.Matrix.GeneralLinearGroup.Diagonal.Basic.
+The Tau Ceti module imported by Suggested.lean is TauCeti.LinearAlgebra.Matrix.GeneralLinearGroup.Diagonal.Basic.
 
 ### From TauCetiRoadmap.AlgebraicModularFormsAndSerreWeights
 
@@ -84,7 +84,7 @@ Layer 2 supplies the double-coset Hecke ring with its finite left-coset decompos
 
 ### From TauCetiRoadmap.ShimuraCompactifications
 
-§§C3.8–C3.9 supply boundary-ideal pushforward and coherent-cohomology comparison under same-level refinements of the spherical models, with arbitrary coefficient modules. §§C5.3–C5.4, C5.10 and C5.12 supply spherical integral toroidal models, formal cusp charts, fibrewise component detection and logarithmic Kodaira–Spencer. §C5.16 supplies the spherical integral minimal model π:X→X* with O_X*=π_*O_X; C5.17 supplies ample Hodge powers on it; C5.23 supplies Siegel Koecher with arbitrary coefficients. The Hodge line is not assumed ample on the toroidal model. These spherical inputs carry no parahoric hypothesis.
+§§4.9–4.10 supply boundary-ideal pushforward and coherent-cohomology comparison under same-level refinements of the spherical models, with arbitrary coefficient modules. §§7.3–7.4, 7.10 and 7.12 supply spherical integral toroidal models, formal cusp charts, fibrewise component detection and logarithmic Kodaira–Spencer. §7.16 supplies the spherical integral minimal model π:X→X* with O_X*=π_*O_X; 7.17 supplies ample Hodge powers on it; 7.23 supplies Siegel Koecher with arbitrary coefficients. The Hodge line is not assumed ample on the toroidal model. These spherical inputs carry no parahoric hypothesis.
 
 What ShimuraCompactifications must provide (gap:siegel-parahoric-models): Provide the Klingen and paramodular genus-two toroidal models of Pilloni Theorem 6.1.5.1 (normal, flat and lci over ℤ_p, with the maps from Klingen level to spherical and paramodular level), the universal isogeny chain G→G′→G of degrees p³ and p over the Klingen model, the integral compactified correspondence C_(p,2) of Pilloni §14.9.2 over the spherical model, with source fan equal to the fan of the trace projection p₁ so that p₁ is finite over the rank-at-least-one locus and p₂ is proper, and the refinement and boundary-ideal comparisons for these models.
 
@@ -98,7 +98,7 @@ What AbelianSchemesAndArithmeticModuli must provide (gap:siegel-rank-one-deforma
 
 What AbelianSchemesAndArithmeticModuli must provide (gap:siegel-isogeny-trace-ideals): Provide the integral trace ideals for the ordinary genus-two Lagrangian and degree-p³/degree-p isogeny charts, including the trace divisibilities 1,p,p³ and p²,p with their semiabelian boundary compatibility.
 
-What AbelianSchemesAndArithmeticModuli must provide (gap:siegel-logarithmic-de-rham): Provide the genus-two semiabelian logarithmic de Rham connection and polarized pairing, ordinary unit-root splitting and first-order superspecial Hasse–Witt matrix, compatible with the logarithmic Kodaira–Spencer isomorphism of ShimuraCompactifications C5.12.
+What AbelianSchemesAndArithmeticModuli must provide (gap:siegel-logarithmic-de-rham): Provide the genus-two semiabelian logarithmic de Rham connection and polarized pairing, ordinary unit-root splitting and first-order superspecial Hasse–Witt matrix, compatible with the logarithmic Kodaira–Spencer isomorphism of ShimuraCompactifications 7.12.
 
 ### From TauCetiRoadmap.HodgeTateAndCanonicalSubgroups
 
@@ -119,6 +119,10 @@ What SchemeAndStackFoundations must provide (gap:reduced-section-propagation): P
 ### From TauCetiRoadmap.ReductiveGroupsPartII
 
 §RG2.3.7 supplies the ordinary Frobenius Lang theorem `Lang.lang_surjective`: for a smooth geometrically connected finite-type group H over 𝔽_q, the map g↦g⁻¹F(g) is surjective on H(𝔽̄_q). Use it in §8.4 for SL₂ over 𝔽_p, which is smooth, geometrically connected and of finite type; only the ordinary finite-type theorem is needed.
+
+### From TauCetiRoadmap.ArithmeticGaloisRepresentations
+
+§7.8 (irreducibility and one-dimensional constituents) supplies the absolute irreducibility of Sym^a(F̄_p²) under SL₂(F), for a finite field F of characteristic p and 0≤a≤p−1, with a=p excluded. §1.7 supplies absolute irreducibility in Burnside's form, its equivalence with irreducibility after extension to an algebraic closure, its invariance under every extension of the coefficient field, and that an absolutely irreducible representation is irreducible. §8.3 uses them with F=F_p and an arbitrary field k of characteristic p, in particular the algebraically closed residue fields of §8.4; no further structure of these representations is assumed.
 
 ## How to read the build
 
@@ -151,7 +155,7 @@ The API records the following facts.
 
 No flatness hypothesis on M is inserted into the definition. Cusp sections use I_D, including after a refinement where the pullback of the boundary ideal need not be an equality.
 
-*Needs:* AutomorphicBundles §§B2.1, B3.2–B3.4, B3.10, B5.14–B5.15; ShimuraCompactifications §§C5.3, C5.16, C5.23; ShimuraCompactifications §§C3.8–C3.9; Tau Ceti `Representation.symmetricPower`; Tau Ceti `Module.Basis.symmetricPower`.
+*Needs:* AutomorphicBundles §§B2.1, B3.2–B3.4, B3.10, B5.14–B5.15; ShimuraCompactifications §§7.3, 7.16, 7.23; ShimuraCompactifications §§4.9–4.10; Tau Ceti `Representation.symmetricPower`; Tau Ceti `Module.Basis.symmetricPower`.
 
 ### 1.2 Fourier indices and change of variables
 
@@ -207,7 +211,7 @@ The API records the following facts.
 
 The target is O-linear for M=K/O; it is not asserted to be a coefficient ring. Disconnected levels have a family of expansions.
 
-*Needs:* §1.1; §1.2; Tau Ceti `Representation.symmetricPower`; ShimuraCompactifications §§C3.8–C3.9; AutomorphicBundles §§B3.2–B3.4, B5.14–B5.15.
+*Needs:* §1.1; §1.2; Tau Ceti `Representation.symmetricPower`; ShimuraCompactifications §§4.9–4.10; AutomorphicBundles §§B3.2–B3.4, B5.14–B5.15.
 
 ### 1.4 Integral q-expansion principle
 
@@ -225,7 +229,7 @@ A proof route is as follows. Specialize AutomorphicBundles §§B5.14–B5.15 to 
 
 One-cusp injectivity is asserted only after selecting one cusp on every component. At each finite coefficient level, a zero expansion forces a zero section.
 
-*Needs:* §1.3; ShimuraCompactifications §C5.23; AutomorphicBundles §§B5.10–B5.11, B5.19; AutomorphicBundles §§B3.2–B3.4, B5.14–B5.15.
+*Needs:* §1.3; ShimuraCompactifications §7.23; AutomorphicBundles §§B5.10–B5.11, B5.19; AutomorphicBundles §§B3.2–B3.4, B5.14–B5.15.
 
 ### Examples
 
@@ -233,7 +237,7 @@ At weight (k,k), d=0 and the coefficient is scalar; at (k+1,k), d=1 and it has r
 
 ### Dependencies
 
-AutomorphicBundles §§B2.1, B3.2–B3.4, B3.10, B5.10–B5.11, B5.14–B5.15, B5.19; ShimuraCompactifications §§C5.3, C5.16, C5.23; ShimuraCompactifications §§C3.8–C3.9; Tau Ceti `Representation.symmetricPower`; Tau Ceti `Module.Basis.symmetricPower`; Tau Ceti `TauCeti.BinaryQuadraticForm`; Tau Ceti `TauCeti.BinaryQuadraticForm.discrim_smul`; Mathlib `Matrix.det`; Mathlib `Matrix.det_mul`.
+AutomorphicBundles §§B2.1, B3.2–B3.4, B3.10, B5.10–B5.11, B5.14–B5.15, B5.19; ShimuraCompactifications §§7.3, 7.16, 7.23; ShimuraCompactifications §§4.9–4.10; Tau Ceti `Representation.symmetricPower`; Tau Ceti `Module.Basis.symmetricPower`; Tau Ceti `TauCeti.BinaryQuadraticForm`; Tau Ceti `TauCeti.BinaryQuadraticForm.discrim_smul`; Mathlib `Matrix.det`; Mathlib `Matrix.det_mul`.
 
 ## Layer 2: Rank strata and the primary Hasse invariant
 
@@ -262,7 +266,7 @@ The API records the following facts.
 
 S is not called the rank-one open stratum. Z₂ and Z_red are separate names.
 
-*Needs:* §1.1; HodgeTateAndCanonicalSubgroups §0.14; HodgeTateAndCanonicalSubgroups §0.15; ShimuraCompactifications §C5 (gap:siegel-parahoric-models); FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.2.
+*Needs:* §1.1; HodgeTateAndCanonicalSubgroups §0.14; HodgeTateAndCanonicalSubgroups §0.15; ShimuraCompactifications Layer 7 (gap:siegel-parahoric-models); FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.2.
 
 ### 2.2 Dimensions and supersingular geometry
 
@@ -270,7 +274,7 @@ At both spherical and paramodular level, the rank-r stratum is dense in its rank
 
 Geometric component statements are over an algebraic closure with neat prime-to-p level. At tame nonprincipal polarization, use a prime-to-p isogeny to the principally polarized model and finite étale descent.
 
-A proof route is as follows. Use polarized genus-two deformation/Dieudonné charts to compute rank strata and identify the rank-zero Newton stratum. A boundary torus contributes multiplicative rank, excluding rank zero from D. For the P¹ components use the supersingular isogeny family and its Hodge filtration, as invoked explicitly in CG20 Theorems 8.10–8.11; count its F_(p²)-points. The charts are the moduli charts themselves: at an interior point the completed local ring of X₁ or X_par,1 is the polarized deformation ring of the p-divisible group, by the Serre–Tate and Grothendieck–Messing equivalences of AbelianSchemesAndArithmeticModuli §§A4.7 and A4.9, and at a boundary point it is the degeneration chart of ShimuraCompactifications §C5.4, whose multiplicative rank is the torus rank plus the p-rank of the abelian part.
+A proof route is as follows. Use polarized genus-two deformation/Dieudonné charts to compute rank strata and identify the rank-zero Newton stratum. A boundary torus contributes multiplicative rank, excluding rank zero from D. For the P¹ components use the supersingular isogeny family and its Hodge filtration, as invoked explicitly in CG20 Theorems 8.10–8.11; count its F_(p²)-points. The charts are the moduli charts themselves: at an interior point the completed local ring of X₁ or X_par,1 is the polarized deformation ring of the p-divisible group, by the Serre–Tate and Grothendieck–Messing equivalences of AbelianSchemesAndArithmeticModuli §§A4.7 and A4.9, and at a boundary point it is the degeneration chart of ShimuraCompactifications §7.4, whose multiplicative rank is the torus rank plus the p-rank of the abelian part.
 
 **Checks.**
 
@@ -280,7 +284,7 @@ A proof route is as follows. Use polarized genus-two deformation/Dieudonné char
 
 Codimension of rank zero in every X_n is two. The largest degree in ω(a,b)|_C is pa−b when a≥b.
 
-*Needs:* §2.1; ShimuraCompactifications §C5.4; ShimuraCompactifications §C5 (gap:siegel-parahoric-models); FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.2; AbelianSchemesAndArithmeticModuli §§A4.3, A4.7, A4.9 (gap:siegel-rank-one-deformations).
+*Needs:* §2.1; ShimuraCompactifications §7.4; ShimuraCompactifications Layer 7 (gap:siegel-parahoric-models); FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.2; AbelianSchemesAndArithmeticModuli §§A4.3, A4.7, A4.9 (gap:siegel-rank-one-deformations).
 
 ### 2.3 Simple Hasse zeros at rank one
 
@@ -298,7 +302,7 @@ A proof route is as follows. Check ⟨Fe₂,Fe₃⟩=pσ⟨e₂,e₃⟩; this fi
 
 At odd p, the unsigned source basis would give ⟨Fe₂,Fe₃⟩=−p and fails the pairing identity. The Hasse tangent term is a nonzero linear form at every rank-one point.
 
-*Needs:* §2.2; AbelianSchemesAndArithmeticModuli §§A4.3, A4.7, A4.9 (gap:siegel-rank-one-deformations); ShimuraCompactifications §C5 (gap:siegel-parahoric-models); HodgeTateAndCanonicalSubgroups §0.14.
+*Needs:* §2.2; AbelianSchemesAndArithmeticModuli §§A4.3, A4.7, A4.9 (gap:siegel-rank-one-deformations); ShimuraCompactifications Layer 7 (gap:siegel-parahoric-models); HodgeTateAndCanonicalSubgroups §0.14.
 
 ### 2.4 Hasse expansion and multiplication
 
@@ -322,7 +326,7 @@ For p=3, the ordinary, rank-one and rank-zero dimensions are 3,2,1. A supersingu
 
 ### Dependencies
 
-Layer 1; HodgeTateAndCanonicalSubgroups §0.14; HodgeTateAndCanonicalSubgroups §0.15; ShimuraCompactifications §C5.4; ShimuraCompactifications §C5 (gap:siegel-parahoric-models); FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.2; AbelianSchemesAndArithmeticModuli §§A4.3, A4.7, A4.9 (gap:siegel-rank-one-deformations).
+Layer 1; HodgeTateAndCanonicalSubgroups §0.14; HodgeTateAndCanonicalSubgroups §0.15; ShimuraCompactifications §7.4; ShimuraCompactifications Layer 7 (gap:siegel-parahoric-models); FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.2; AbelianSchemesAndArithmeticModuli §§A4.3, A4.7, A4.9 (gap:siegel-rank-one-deformations).
 
 ## Layer 3: The secondary Hasse invariant
 
@@ -359,19 +363,20 @@ For every prime p, including p=2, and the height-four input above, LF^(p+1):(det
 
 The determinant LF map, its value LF(Ha(G))=Ha(G^D) and its functoriality are imported from FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.21. The quasi-polarization compatibility of §R07.2.23 is stated there only for p>2; the identity needed here is proved at every prime for the polarization of the Siegel family, as follows.
 
-A proof route is as follows. On a reduced base equality of sections is detected at geometric points. Over an algebraically closed field of characteristic p the input is μ_p⊕I_(1,1)⊕ℤ/p, where I_(1,1) is the p-torsion of a supersingular elliptic curve; it is the p-torsion of E₁×E₂ with E₁ ordinary and E₂ supersingular, and the product principal polarization gives λ:G≅G^D. On the special fiber of the spherical Siegel model, smooth and hence reduced, the composite of λ* and LF on (det ω_(G^D))^(p−1), for the universal principal polarization, is multiplication by a unit u. On the ordinary locus Ha(G^D) generates its line, λ*Ha(G^D)=Ha(G) by functoriality and LF(Ha(G))=Ha(G^D), so u=1 there; the ordinary locus is dense by §2.2, hence u=1 everywhere, at every prime. Specialize at the point classifying E₁×E₂ with a tame level structure, using functoriality of LF under base change and isomorphisms, then take the (p+1)-st power and use λ*h′(G^D)=h′(G). At odd p the compatibility of FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.23 gives the same identity. Unique extension preserves the equality.
+A proof route is as follows. On a reduced base equality of sections is detected at geometric points. Over an algebraically closed field of characteristic p the input is μ_p⊕I_(1,1)⊕ℤ/p, where I_(1,1) is the p-torsion of a supersingular elliptic curve; it is the p-torsion of E₁×E₂ with E₁ ordinary and E₂ supersingular, and the product principal polarization gives λ:G≅G^D. On the abelian interior of the special fiber of the spherical Siegel model, the open moduli space, which is smooth and hence reduced, the composite of λ* and LF on (det ω_(G^D))^(p−1), for the universal principal polarization of the abelian family, is multiplication by a unit u. At the toroidal boundary G is only semiabelian, G[p] is not a level-one Barsotti–Tate group, and neither G^D nor LF is defined, so nothing is asserted there. On the interior ordinary locus Ha(G^D) generates its line, λ*Ha(G^D)=Ha(G) by functoriality and LF(Ha(G))=Ha(G^D), so u=1 there; the ordinary locus is dense in the interior by §2.2, hence u=1 on the whole interior, at every prime. Specialize at the point classifying E₁×E₂ with a tame level structure, using functoriality of LF under base change and isomorphisms, then take the (p+1)-st power and use λ*h′(G^D)=h′(G). At odd p the compatibility of FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.23 gives the same identity. Unique extension preserves the equality.
 
 **Checks.**
 
 - On μ_p⊕I_(1,1)⊕ℤ/p, duality exchanges the outside summands; both normalized secondary values are 1.
 - Applying duality twice gives the original determinant line and value 1; a map ending in the G rather than Gᴰ line would be ill-typed after the first application.
 - A height-three connected boundary group has dual dimension 1 and is excluded from this height-four self-duality assertion.
-- At p=2 the group μ₂⊕I_(1,1)⊕ℤ/2 is (E₁×E₂)[2] and the product polarization satisfies λ^D=−λ=λ. The imported quasi-polarization theorem does not cover p=2, but on the Siegel ordinary locus LF(λ*Ha(G^D))=LF(Ha(G))=Ha(G^D) with Ha(G^D) a generator, so the unit composite is 1 there, and the ordinary locus has dimension 3 while its complement has dimension 2 (§2.2), so u=1 on the whole special fiber.
-- Density is used on a reduced base only: over k[ε]/(ε²) the unit 1+ε agrees with 1 at the unique point but is not 1, which is why the identity is proved on the smooth special fiber and then specialized.
+- At p=2 the group μ₂⊕I_(1,1)⊕ℤ/2 is (E₁×E₂)[2] and the product polarization satisfies λ^D=−λ=λ. The imported quasi-polarization theorem does not cover p=2, but on the Siegel ordinary locus LF(λ*Ha(G^D))=LF(Ha(G))=Ha(G^D) with Ha(G^D) a generator, so the unit composite is 1 there, and the ordinary locus has dimension 3 while its complement in the interior has dimension 2 (§2.2), so u=1 on the whole abelian interior.
+- Density is used on a reduced base only: over k[ε]/(ε²) the unit 1+ε agrees with 1 at the unique point but is not 1, which is why the identity is proved on the smooth abelian interior of the special fiber and then specialized.
+- At a torus-rank-one boundary point of the toroidal compactification the semiabelian fiber has no Cartier dual Barsotti–Tate group and no map LF, so a unit defined on the whole compactified special fiber would have no referent there; the specialization point E₁×E₂ is interior, so the boundary is never used.
 
 The comparison is not an identification of ω_G and ω_G^D without their determinant powers.
 
-*Needs:* §3.1; §2.2; ShimuraCompactifications §C5.3; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.21; FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.2.22–R07.2.23.
+*Needs:* §3.1; §2.2; ShimuraCompactifications §7.3; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.21; FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.2.22–R07.2.23.
 
 ### 3.3 Canonical subgroup in the Frobenius kernel
 
@@ -422,7 +427,7 @@ The extension theorem remains valid when the two rank-drop loci differ. A pointw
 
 Off SS, the spherical nonordinary surface is smooth, and the canonical flag H⊂G[F] of §3.3 identifies it étale-locally with the union of the two rank-one strata of the moduli of abelian surfaces with Iwahori level at p and prime-to-p polarization; at paramodular level the chain G′→G→(G′)ᵗ built from the degree-p subgroups of the polarization kernels gives the corresponding identification of S_par∖SS. In the Iwahori local-model ring R=F_p[x,y,a,b,c]/(xy,ax+by+abc), the spherical chart is R/(a,y,x+bc)≅F_p[b,c]. For the paramodular surface off SS, the two branches are obtained from R/(x,y+ac)≅F_p[a,b,c] by a=0 and b=0. Their reduced union is Spec F_p[a,b,c]/(ab), with rank-one open D(a)∪D(b). The two branches meet along a=b=0. The initial quotient R/(x,y+ac) alone is the ambient three-space, not the nonordinary surface. (P20, Proof of Lemma 6.4.2, pp. 36–37; P20 line 1588).
 
-The spherical model is ShimuraCompactifications §C5.3 and the paramodular model is that of gap:siegel-parahoric-models. The étale-local identification is part of this theorem; it may require extending the residue field, and the quotient-ring identities alone do not give it.
+The spherical model is ShimuraCompactifications §7.3 and the paramodular model is that of gap:siegel-parahoric-models. The étale-local identification is part of this theorem; it may require extending the residue field, and the quotient-ring identities alone do not give it.
 
 A proof route is as follows. Construct the flag from the canonical rank-p subgroups H and L and the degree-p factors of the paramodular polarization, giving morphisms to the genus-two Iwahori-level moduli of polarized chains of isogenies. That moduli space and the identification of its local model with R, which P20 takes from the literature (P20 line 1616–1623), are established here in the genus-two case by Grothendieck–Messing deformation of the chain. Show that the flag morphisms are étale onto the rank-one strata by comparing tangent spaces, check the equations for the two closures in the Iwahori chart (P20 line 1640–1649), and compute the paramodular union using the intersection (a)∩(b)=(ab).
 
@@ -434,7 +439,7 @@ A proof route is as follows. Construct the flag from the canonical rank-p subgro
 
 The paramodular union has dimension two and two branches. The spherical quotient is a smooth affine plane.
 
-*Needs:* §3.3; §2.3; ShimuraCompactifications §C5.3; ShimuraCompactifications §C5 (gap:siegel-parahoric-models); AbelianSchemesAndArithmeticModuli §A4.7.
+*Needs:* §3.3; §2.3; ShimuraCompactifications §7.3; ShimuraCompactifications Layer 7 (gap:siegel-parahoric-models); AbelianSchemesAndArithmeticModuli §A4.7.
 
 ### 3.6 Secondary Hasse on both nonordinary divisors
 
@@ -480,7 +485,7 @@ A proof route is as follows. On the rank-one open apply P20 Lemma 6.3.1.1 to G^o
 
 A local square of a divisor does not by itself prove a global section has a square root; here the root comes from the polarization. The multiplicity-two scheme is retained for the higher-Hida interface.
 
-*Needs:* §3.1; §3.4; §3.5; §3.6; §2.2; FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.2.21–R07.2.23; ShimuraCompactifications §C5.4.
+*Needs:* §3.1; §3.4; §3.5; §3.6; §2.2; FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.2.21–R07.2.23; ShimuraCompactifications §7.4.
 
 ### 3.8 Normalized pullback of Hasse sections
 
@@ -515,7 +520,7 @@ In k[a,b,c]/(ab), branch sections a² and b² glue to a²+b², vanishing on thei
 
 ### Dependencies
 
-Layer 2; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.2; FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.2.22–R07.2.23; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.21; ShimuraCompactifications §§C5.3–C5.4; ShimuraCompactifications §C5 (gap:siegel-parahoric-models); AbelianSchemesAndArithmeticModuli §A4.7; SchemeAndStackFoundations §0.6; HodgeTateAndCanonicalSubgroups §0.12.
+Layer 2; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.2; FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.2.22–R07.2.23; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.21; ShimuraCompactifications §§7.3–7.4; ShimuraCompactifications Layer 7 (gap:siegel-parahoric-models); AbelianSchemesAndArithmeticModuli §A4.7; SchemeAndStackFoundations §0.6; HodgeTateAndCanonicalSubgroups §0.12.
 
 ## Layer 4: Hasse lifts and torsion weight shifts
 
@@ -544,7 +549,7 @@ The API records the following facts.
 
 Ampleness is used on the minimal model, not asserted on the toroidal one.
 
-*Needs:* §2.4; HodgeTateAndCanonicalSubgroups §0.16; ShimuraCompactifications §§C5.16–C5.17; SchemeAndStackFoundations §2.6.
+*Needs:* §2.4; HodgeTateAndCanonicalSubgroups §0.16; ShimuraCompactifications §§7.16–7.17; SchemeAndStackFoundations §2.6.
 
 ### 4.2 Canonical powers modulo pⁿ
 
@@ -611,7 +616,7 @@ The API records the following facts.
 
 D(s₂) may contain ordinary points; only its restriction to S* is prescribed. A section defined only on S* is not treated as a section of the whole formal model before the lifting step.
 
-*Needs:* §3.6; HodgeTateAndCanonicalSubgroups §0.16; ShimuraCompactifications §§C5.16–C5.17; SchemeAndStackFoundations §2.6; Stacks Project Tag 0CNF (commutative algebra).
+*Needs:* §3.6; HodgeTateAndCanonicalSubgroups §0.16; ShimuraCompactifications §§7.16–7.17; SchemeAndStackFoundations §2.6; Stacks Project Tag 0CNF (commutative algebra).
 
 ### Examples
 
@@ -619,7 +624,7 @@ For p=3,m=2,r=1,s=3, multiplication raises both weights by 6. The two local lift
 
 ### Dependencies
 
-Layers 2–3; HodgeTateAndCanonicalSubgroups §0.16; ShimuraCompactifications §§C5.16–C5.17; SchemeAndStackFoundations §2.6; HodgeTateAndCanonicalSubgroups §0.14; Stacks Project Tag 0CNF.
+Layers 2–3; HodgeTateAndCanonicalSubgroups §0.16; ShimuraCompactifications §§7.16–7.17; SchemeAndStackFoundations §2.6; HodgeTateAndCanonicalSubgroups §0.14; Stacks Project Tag 0CNF.
 
 ## Layer 5: Formal coefficient operators and Q₂
 
@@ -895,7 +900,7 @@ Layers 1 and 5; ClassicalArithmeticCompletion §1.17; Mathlib `legendreSym`.
 
 ### 7.1 Finiteness of the spherical correspondence
 
-Take the imported compactified C_(p,2) isogeny correspondence (Pilloni indexing; CG20 β₁) with the fan of its source chosen equal to the fan Σ of the trace projection, Σ″=Σ as in P20 §14.9.2, and restrict it to the formal locus X^(≥1). The trace projection p₁ is proper and quasi-finite, hence finite, and is generically étale over X^(≥1). The other projection p₂ is proper, and no finiteness of it is asserted: pullback along p₂ needs only a morphism. A further toroidal refinement is compared through coherent pushforward and the boundary-ideal comparison of ShimuraCompactifications §§C3.8–C3.9, not by asserting that a refined projection stays finite. In the interior they classify isotropic Lagrangian rank-p² kernels. At a geometric ordinary or rank-one point, only finitely many such subgroups occur; positive-dimensional families of α_p-subgroups arise only on the excluded rank-zero locus. At the boundary use the imported degeneration chart. This is a restriction of the existing correspondence, not a new Hilbert-scheme construction. (CG20, Proof of Lemma 8.8, internal p. 60 (860); CG20 line 2364; P20, Spherical part of §14.9.2, p. 104; P20 line 4738–4752).
+Take the imported compactified C_(p,2) isogeny correspondence (Pilloni indexing; CG20 β₁) with the fan of its source chosen equal to the fan Σ of the trace projection, Σ″=Σ as in P20 §14.9.2, and restrict it to the formal locus X^(≥1). The trace projection p₁ is proper and quasi-finite, hence finite, and is generically étale over X^(≥1). The other projection p₂ is proper, and no finiteness of it is asserted: pullback along p₂ needs only a morphism. A further toroidal refinement is compared through coherent pushforward and the boundary-ideal comparison of ShimuraCompactifications §§4.9–4.10, not by asserting that a refined projection stays finite. In the interior they classify isotropic Lagrangian rank-p² kernels. At a geometric ordinary or rank-one point, only finitely many such subgroups occur; positive-dimensional families of α_p-subgroups arise only on the excluded rank-zero locus. At the boundary use the imported degeneration chart. This is a restriction of the existing correspondence, not a new Hilbert-scheme construction. (CG20, Proof of Lemma 8.8, internal p. 60 (860); CG20 line 2364; P20, Spherical part of §14.9.2, p. 104; P20 line 4738–4752).
 
 The rank loci are defined by the underlying special fiber; finiteness is over the inherited nilpotent thickening/formal open. The finite-fiber statement requires the full genus-two BT₁ classification, including nonordinary rank one, and the toroidal chart comparison.
 
@@ -910,7 +915,7 @@ A proof route is as follows. Classify the possible isotropic kernels at rank two
 
 The complete proper correspondence is not asserted to be finite over rank zero.
 
-*Needs:* ShimuraCompactifications §C5 (gap:siegel-parahoric-models); ShimuraCompactifications §§C3.8–C3.9; §2.2; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.2; FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.2.22–R07.2.23.
+*Needs:* ShimuraCompactifications Layer 7 (gap:siegel-parahoric-models); ShimuraCompactifications §§4.9–4.10; §2.2; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.2; FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.2.22–R07.2.23.
 
 ### 7.2 Ordinary trace divisibility
 
@@ -928,7 +933,7 @@ A proof route is as follows. On a multiplicative kernel the differential on E is
 
 At r=1 the mixed product gives only p², so the same divisibility theorem is not asserted. The three kernel types remain separately tested.
 
-*Needs:* §7.1; §3.8; AutomorphicBundles §§B2.1, B3.2–B3.4, B3.10; ShimuraCompactifications §C5 (gap:siegel-parahoric-models); AbelianSchemesAndArithmeticModuli §§A4.10–A4.11 (gap:siegel-isogeny-trace-ideals).
+*Needs:* §7.1; §3.8; AutomorphicBundles §§B2.1, B3.2–B3.4, B3.10; ShimuraCompactifications Layer 7 (gap:siegel-parahoric-models); AbelianSchemesAndArithmeticModuli §§A4.10–A4.11 (gap:siegel-isogeny-trace-ideals).
 
 ### 7.3 Integral normalized minuscule operator
 
@@ -943,7 +948,7 @@ The API records the following facts.
 - p³T=T′ on the integral torsion-free target, uniquely.
 - The integral correspondence reduces compatibly modulo ϖ^m and extends scalars to K.
 - Canonical and subcanonical coefficient maps preserve their specified boundary ideals.
-- A common toroidal refinement intertwines the correspondence through coherent pushforward and the boundary-ideal comparison of §§C3.8–C3.9, so the induced cohomology map is fan-independent; finiteness is used only for p₁ with Σ″=Σ.
+- A common toroidal refinement intertwines the correspondence through coherent pushforward and the boundary-ideal comparison of ShimuraCompactifications §§4.9–4.10, so the induced cohomology map is fan-independent; finiteness is used only for p₁ with Σ″=Σ.
 - After p is inverted, the operator is CG20 T, which is Pilloni T_(p,2).
 
 **Checks.**
@@ -955,7 +960,7 @@ The API records the following facts.
 
 The formula at weight (d+r,r) agrees with U+p^(r−2)Z+p^(d+2r−3)V, where Z uses the local p-correspondence with identity tame component and the transported cusp markings of §5.2. No analogous RΓ construction is claimed for the nonminuscule β₂ generator.
 
-*Needs:* §7.2; §7.1; ShimuraCompactifications §C5 (gap:siegel-parahoric-models); ShimuraCompactifications §§C3.8–C3.9.
+*Needs:* §7.2; §7.1; ShimuraCompactifications Layer 7 (gap:siegel-parahoric-models); ShimuraCompactifications §§4.9–4.10.
 
 ### 7.4 Hartogs across supersingular curves
 
@@ -979,7 +984,7 @@ The codimension-two locus is the complement of rank at least one. The formal n=�
 
 Write d=j−k≥0 and r=k≥2. On the imported spherical, Klingen and paramodular lci models, form the degree-p³ and degree-p isogeny correspondences. Their differential maps tensored with fundamental classes have integral factorizations by p^(r+2) and p respectively. Normalize these integral maps before passing to coefficients, then compose to obtain C_r on integral coherent cohomology. Rationally, in the CG20 normalization, C_r=p^(3−r)(T₂+(1+p+p²+p³)S). In the trivial central sector Q₂=C_r−(1+p²)p^(j−2)·1. This difference is integral for every j≥k≥2, and its finite-coefficient and K/O actions are obtained from the integral derived correspondence, without lifting torsion sections. Here C_r is Pilloni’s operator T in §7; it is distinct from CG20 T and from either source’s individual numbered generators. (P20, §4.1–4.3, pp. 16–19; §7 and Lemmas 7.1.1–7.1.2, pp. 37–40; P20 line 673).
 
-The models, maps, normality and lci hypotheses are imported from ShimuraCompactifications §C5 with gap:siegel-parahoric-models; the fundamental class and trace require gap:lci-fundamental-class. The central scalar formula is restricted as in Layer 5. At general central character, keep the corresponding central transport and prove the same cancellation before reducing.
+The models, maps, normality and lci hypotheses are imported from ShimuraCompactifications Layer 7 with gap:siegel-parahoric-models; the fundamental class and trace require gap:lci-fundamental-class. The central scalar formula is restricted as in Layer 5. At general central character, keep the corresponding central transport and prove the same cancellation before reducing.
 
 A proof route is as follows. Apply coherent duality to the two projections of the Klingen-to-paramodular diagram, obtaining maps into their relative dualizing lines. At the ordinary generic points the first map has differential/trace orders (r,2) or (d+2r,0); d+r≥2 gives order at least r+2. For the second map the orders are (0,1) or (r,0), giving order at least one. Extend both factorizations by normality from the smooth ordinary generic points, using local freeness of the dualizing line and the boundary fundamental-class comparison. The composite double coset has one noncentral component β₂, and the central component has multiplicity 1+p+p²+p³, the number of Klingen lines. With the total normalization p^(−r−3), this gives the stated rational C_r. Subtract (1+p²)p^(j−2), since p^(3−r)S=p^(j−3), to obtain exactly the Layer 5 cancelled Q₂ formula. Reduce the integral derived maps only after their construction.
 
@@ -1000,7 +1005,7 @@ The API records the following facts.
 
 The difference C_r−Q₂ is (1+p²)p^(j−2), including a unit term when j=2. Integral derived coefficient reduction constructs an action on every torsion section, even a section obstructed from lifting to O.
 
-*Needs:* ShimuraCompactifications §C5 (gap:siegel-parahoric-models); AutomorphicBundles §§B2.1, B3.2–B3.4, B3.10; ShimuraCompactifications §§C3.8–C3.9; SchemeAndStackFoundations §§2.19–2.20 (gap:lci-fundamental-class), §4.9 (gap:open-formal-milnor); §5.6; §5.7; AbelianSchemesAndArithmeticModuli §§A4.10–A4.11 (gap:siegel-isogeny-trace-ideals).
+*Needs:* ShimuraCompactifications Layer 7 (gap:siegel-parahoric-models); AutomorphicBundles §§B2.1, B3.2–B3.4, B3.10; ShimuraCompactifications §§4.9–4.10; SchemeAndStackFoundations §§2.19–2.20 (gap:lci-fundamental-class), §4.9 (gap:open-formal-milnor); §5.6; §5.7; AbelianSchemesAndArithmeticModuli §§A4.10–A4.11 (gap:siegel-isogeny-trace-ideals).
 
 ### 7.6 Integral T and Q₂ on global forms
 
@@ -1054,7 +1059,7 @@ At d=0,r=2 the minuscule raw p-orders are 4,3,3; dividing by p³ is integral in 
 
 ### Dependencies
 
-Layers 1–3 and 5; ShimuraCompactifications §C5 (gap:siegel-parahoric-models); FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.2; FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.2.22–R07.2.23; AutomorphicBundles §§B2.1, B3.2–B3.4, B3.10, B5.10–B5.11, B5.19; AbelianSchemesAndArithmeticModuli §§A4.10–A4.11 (gap:siegel-isogeny-trace-ideals); ShimuraCompactifications §§C3.8–C3.9; SchemeAndStackFoundations §§0.6, 2.5, 2.7; SchemeAndStackFoundations §§2.19–2.20 (gap:lci-fundamental-class); SchemeAndStackFoundations §4.9 (gap:open-formal-milnor).
+Layers 1–3 and 5; ShimuraCompactifications Layer 7 (gap:siegel-parahoric-models); FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.2; FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.2.22–R07.2.23; AutomorphicBundles §§B2.1, B3.2–B3.4, B3.10, B5.10–B5.11, B5.19; AbelianSchemesAndArithmeticModuli §§A4.10–A4.11 (gap:siegel-isogeny-trace-ideals); ShimuraCompactifications §§4.9–4.10; SchemeAndStackFoundations §§0.6, 2.5, 2.7; SchemeAndStackFoundations §§2.19–2.20 (gap:lci-fundamental-class); SchemeAndStackFoundations §4.9 (gap:open-formal-milnor).
 
 ## Layer 8: Theta operators and low-weight injectivity
 
@@ -1084,7 +1089,7 @@ The API records the following facts.
 
 The map is nonzero on some tensors with a rank-one quadratic factor.
 
-*Needs:* Tau Ceti `Representation.symmetricPower`; Tau Ceti `Module.Basis.symmetricPower`; §5.1; ShimuraCompactifications §C5.12.
+*Needs:* Tau Ceti `Representation.symmetricPower`; Tau Ceti `Module.Basis.symmetricPower`; §5.1; ShimuraCompactifications §7.12.
 
 ### 8.2 Scalar and vector theta operators
 
@@ -1112,41 +1117,35 @@ The API records the following facts.
 
 Θ(h)=0 follows from the constant expansion of h. The vector target symmetric degree is d−2, agreeing with con_d.
 
-*Needs:* §8.1; §2.4; §1.4; ShimuraCompactifications §C5.23; AbelianSchemesAndArithmeticModuli §A4.3 (gap:siegel-logarithmic-de-rham); ShimuraCompactifications §C5.12.
+*Needs:* §8.1; §2.4; §1.4; ShimuraCompactifications §7.23; AbelianSchemesAndArithmeticModuli §A4.3 (gap:siegel-logarithmic-de-rham); ShimuraCompactifications §7.12.
 
 ### 8.3 Small symmetric powers of SL₂(F_p)
 
-For 0≤d≤p−1 and a field k in Type of characteristic p, the natural representation Sym^d(k²) of SL₂(F_p) is irreducible. Consequently, if Γ⊂GL₂(k) is conjugate in GL₂(k) to the image of SL₂(F_p), then for every nonzero P∈Sym^d(k²) and every nonzero linear form ℓ on Sym^d(k²) some γ∈Γ has ℓ(γ·P)≠0, because the span of the orbit of P is a nonzero Γ-invariant subspace. §8.4 applies this to the special unitary group of frame changes preserving Koblitz's dual-basis normalization, which is such a conjugate when k is algebraically closed. For SL₂(F_p) itself and d<p+1 the coefficient of x^d can also be reached directly, since every nonzero binary form of degree d has a nonzero value at a primitive vector of F_p². The frame changes are in a geometric fiber and are not a global action on the modular-form space. The pinned acceptance theorem is `smallSymmetricPower_irreducible`, on the standard coefficient-field representation `standardSL2`; its field and characteristic hypotheses occur in both declaration signatures. (CG20, proof of Theorem 8.11, internal p. 62 (862); CG20 line 2458–2460; Y16, Theorem 4.9 and proof, p. 39; Y16 line 2112).
+Import from ArithmeticGaloisRepresentations §7.8 the absolute irreducibility of Sym^d(F̄_p²) under SL₂(F_p) for 0≤d≤p−1, and from ArithmeticGaloisRepresentations §1.7 the invariance of absolute irreducibility under every extension of the coefficient field. Hence for every field k of characteristic p the natural representation Sym^d(k²) of SL₂(F_p) is irreducible: it is the scalar extension of the F_p-form Sym^d(F_p²), whose extension to F̄_p is irreducible, so the F_p-form is absolutely irreducible and each of its scalar extensions is irreducible. This roadmap owns only the following application. If Γ⊂GL₂(k) is conjugate in GL₂(k) to the image of SL₂(F_p), then for every nonzero P∈Sym^d(k²) and every nonzero linear form ℓ on Sym^d(k²) some γ∈Γ has ℓ(γ·P)≠0, because the span of the orbit of P is a nonzero Γ-invariant subspace, hence all of Sym^d(k²), on which ℓ is not identically zero. §8.4 applies this to the special unitary group of frame changes preserving Koblitz's dual-basis normalization, which is such a conjugate when k is algebraically closed. For SL₂(F_p) itself and d<p+1 the coefficient of x^d can also be reached directly, since every nonzero binary form of degree d has a nonzero value at a primitive vector of F_p². The frame changes are in a geometric fiber and are not a global action on the modular-form space. (CG20, proof of Theorem 8.11, internal p. 62 (862); CG20 line 2458–2460; Y16, Theorem 4.9 and proof, p. 39; Y16 line 2112).
 
 p is prime; only d≤p−2 is needed for the vector-theta frame step.
 
-For a prime p and a field k of characteristic p, define the standard representation `standardSL2` as Tau Ceti's standard representation `TauCeti.stdSLRep` of SL₂(k) composed with the entrywise reduction SL₂(𝔽_p)→SL₂(k) along the canonical map 𝔽_p→k; a matrix acts on column vectors in k² by multiplication. It preserves identity and matrix multiplication and is compatible with extensions of coefficient fields.
-
-The API for the standard representation records these facts.
-
-- The identity element acts as the identity linear map on k².
-- The action of a product g₁g₂ is the composite action, with g₂ acting first.
-- Extending the coefficient field intertwines the action through entrywise extension of the same finite-field matrices.
-- The image of SL₂(𝔽_p) is the group of matrices of determinant one with entries in the prime field of k.
+The standard representation of SL₂(F_p) on k², for a prime p and a field k of characteristic p, is Tau Ceti's standard representation `TauCeti.stdSLRep` of SL₂(k) on column vectors, composed with the entrywise reduction SL₂(F_p)→SL₂(k) along the canonical map F_p→k through Mathlib `Matrix.SpecialLinearGroup.map`; a matrix acts on column vectors by multiplication, the identity acts as the identity, a product g₁g₂ acts as the composite with g₂ acting first, extending the coefficient field intertwines the action through entrywise extension of the same finite-field matrices, and the image of SL₂(F_p) is the group of determinant-one matrices with entries in the prime field of k. Sym^d(k²) carries the induced action on the native symmetric power, with the monomial basis x^(d−i)y^i, 0≤i≤d, for the basis x=e₁, y=e₂ of k². These are conventions fixing the object imported above; the acceptance file states no declaration for them.
 
 **Checks.**
 
 - For p=3 and basis vectors x=e₁, y=e₂, the upper unipotent [[1,1],[0,1]] fixes x and sends y to x+y; under the transposed (row) action it would instead send x to x+y and fix y.
 - For p=3 the lower unipotent [[1,0],[1,1]] sends x to x+y and fixes y, and the product of the upper and the lower unipotent, [[2,1],[1,1]], sends x to 2x+y and y to x+y; acting by the lower unipotent first and then the upper one gives the same values, consistent with g₂ acting first.
-- The prime hypothesis is part of the definition: p=0 with k=ℚ would replace 𝔽_p by ZMod 0=ℤ, and the matrices [[1,n],[0,1]] would give infinitely many distinct operators, so the acting group would not be the finite group SL₂(𝔽_p).
+- The acting group is the finite group SL₂(F_p) for a prime p: with p=0 and k=ℚ the entrywise map from ZMod 0=ℤ would send the matrices [[1,n],[0,1]] to infinitely many distinct operators, and no finite group would act.
 - For p=2 and k=𝔽₄ the image of the representation is SL₂(𝔽₂), of order 6, inside SL₂(𝔽₄), of order 60; a model in which all of SL₂(k) acts would have a different image. The element [[1,1],[0,1]] acts unipotently with the single eigenline k·x, not as the identity.
 
-A proof route is as follows. The upper and lower unipotent subgroup operators are polynomials in t∈F_p of degree at most d<p. Interpolation isolates their divided-power coefficients. On a nonzero invariant subspace, an appropriate highest nonzero coefficient and the raising operator produce x^d; lowering operators then produce every monomial, since binomial(d,i) is nonzero modulo p for d<p. For the direct coefficient assertion restrict P to P¹(F_p): a nonzero degree-d binary form has at most d distinct projective zeros, fewer than p+1. Complete a vector where P is nonzero to an SL₂(F_p) matrix.
+A proof route for the application is as follows. The orbit of a nonzero P spans a nonzero subspace stable under Γ, which is the whole of Sym^d(k²) by the imported irreducibility transported along the conjugation; a linear form vanishing on every orbit vector vanishes on this span. For the direct coefficient assertion restrict P to P¹(F_p): a nonzero degree-d binary form has at most d distinct projective zeros, fewer than the p+1 points of P¹(F_p). Complete a vector where P is nonzero to a matrix of SL₂(F_p) whose inverse sends e₁ to it; the transported form then has nonzero x^d coefficient.
 
 **Checks.**
 
-- At d=0 the representation is the nonzero one-dimensional trivial representation, with invariant subspaces 0 and k. At p=2,d=1 the two unipotents send basis vectors to x+y and exchange the one-dimensional candidates.
-- At p=3,d=2 the binomial coefficients 1,2,1 are all nonzero; upper and lower unipotent coefficients reach all three monomials. At d=3 the span of x³,y³ is a proper two-dimensional invariant subspace of the four-dimensional cubic space.
-- The degree-p+1 form x^p y−xy^p is nonzero but takes value 0 on every vector in 𝔽_p²; it is excluded from the small-degree value-detection assertion.
+- At d=0 the representation is the nonzero one-dimensional trivial representation; the orbit of a nonzero P is {P}, its span is the line, and every nonzero ℓ has ℓ(P)≠0.
+- At p=2,d=1 the two unipotents send the basis vectors to x+y and exchange the one-dimensional candidates, so no line is invariant, as the imported irreducibility requires.
+- At p=3,d=2 the binomial coefficients 1,2,1 are all nonzero and the orbit of x² contains (x+y)²=x²+2xy+y² and y², so the orbit span is three-dimensional. At d=3=p the orbit of x³ under SL₂(𝔽₃) consists of the cubes (ax+cy)³=a³x³+c³y³, so the linear form taking the x²y coefficient vanishes on the whole orbit: the application fails at d=p, which is why the imported range d≤p−1 is sharp and is not exceeded.
+- The degree-p+1 form x^p y−xy^p is nonzero but takes value 0 on every vector in 𝔽_p²; it is excluded from the small-degree value-detection assertion, which uses d<p+1.
 
-The interpolation uses degrees <p, including d=p−1. For d=p+1, x^p y−xy^p vanishes on all F_p-vectors, so the frame assertion would fail.
+The imported irreducibility covers d≤p−1, including d=p−1; for d=p+1, x^p y−xy^p vanishes on all F_p-vectors, so the frame assertion would fail.
 
-*Needs:* Tau Ceti `Representation.symmetricPower`; Tau Ceti `Module.Basis.symmetricPower`; Tau Ceti `TauCeti.stdSLRep`; Mathlib `Matrix.SpecialLinearGroup.map`; Mathlib `ZMod.castHom`; Mathlib `Representation.IsIrreducible`.
+*Needs:* ArithmeticGaloisRepresentations §7.8; ArithmeticGaloisRepresentations §1.7; Tau Ceti `Representation.symmetricPower`; Tau Ceti `Module.Basis.symmetricPower`; Tau Ceti `TauCeti.stdSLRep`; Mathlib `Matrix.SpecialLinearGroup.map`.
 
 ### 8.4 Theta nonvanishing at superspecial points
 
@@ -1171,7 +1170,7 @@ A proof route is as follows. Use the generic first-order superspecial deformatio
 
 Every admitted weight uses the same local frame change to F₀≠0. The irreducibility check is in the stated small-degree characteristic-p range.
 
-*Needs:* §8.2; §8.3; ReductiveGroupsPartII §RG2.3.7; Tau Ceti `Representation.symmetricPower`; AbelianSchemesAndArithmeticModuli §§A4.3, A4.7 (gap:siegel-logarithmic-de-rham); ShimuraCompactifications §C5.12.
+*Needs:* §8.2; §8.3; ReductiveGroupsPartII §RG2.3.7; Tau Ceti `Representation.symmetricPower`; AbelianSchemesAndArithmeticModuli §§A4.3, A4.7 (gap:siegel-logarithmic-de-rham); ShimuraCompactifications §7.12.
 
 ### 8.5 Negative-weight section vanishing
 
@@ -1189,7 +1188,7 @@ A proof route is as follows. Compute the split Hodge-bundle degrees on every sup
 
 A negative second weight alone is not used as a vanishing criterion. After either division step the strict inequality remains strict.
 
-*Needs:* §2.2; §3.7; §2.3; Mathlib `Ideal.iInf_pow_smul_eq_bot_of_isLocalRing`; SchemeAndStackFoundations §0.6 (gap:reduced-section-propagation); ShimuraCompactifications §C5.12.
+*Needs:* §2.2; §3.7; §2.3; Mathlib `Ideal.iInf_pow_smul_eq_bot_of_isLocalRing`; SchemeAndStackFoundations §0.6 (gap:reduced-section-propagation); ShimuraCompactifications §7.12.
 
 ### 8.6 Scalar theta injectivity in low weight
 
@@ -1207,7 +1206,7 @@ A proof route is as follows. If ΘF=0, superspecial nonvanishing gives F|_SS=0. 
 
 At p=5, k=4 is excluded despite 5∤4·7. The k=p+1 step reduces to weight two instead of discarding the residual Hasse factor.
 
-*Needs:* §8.2; §8.4; §8.5; §3.7; §2.2; ShimuraCompactifications §C5.12.
+*Needs:* §8.2; §8.4; §8.5; §3.7; §2.2; ShimuraCompactifications §7.12.
 
 ### 8.7 Vector theta injectivity in weight (j,2)
 
@@ -1225,7 +1224,7 @@ A proof route is as follows. If θ₁F=0, use the superspecial nonvanishing theo
 
 At j=6 the range j<p−1 forces p≥11, and the superspecial step is the same as for every other j. No Lan–Suh vanishing or Serre-dual weight computation is needed after the explicit negative-weight argument.
 
-*Needs:* §8.2; §8.4; §8.5; §2.2; §3.7; §8.3; ShimuraCompactifications §C5.12.
+*Needs:* §8.2; §8.4; §8.5; §2.2; §3.7; §8.3; ShimuraCompactifications §7.12.
 
 ### Examples
 
@@ -1233,7 +1232,7 @@ At p=7,d=2, con₂(y²⊗x²)=1/3=5 while det(x²)=0. At p=5 the Hasse weight is
 
 ### Dependencies
 
-Layers 1–3 and 5; Tau Ceti `Representation.symmetricPower`; Tau Ceti `Module.Basis.symmetricPower`; Tau Ceti `TauCeti.stdSLRep`; Mathlib `Matrix.SpecialLinearGroup.map`; Mathlib `ZMod.castHom`; Mathlib `Representation.IsIrreducible`; ReductiveGroupsPartII §RG2.3.7; ShimuraCompactifications §§C5.12, C5.23; AbelianSchemesAndArithmeticModuli §§A4.3, A4.7 (gap:siegel-logarithmic-de-rham); Mathlib `Ideal.iInf_pow_smul_eq_bot_of_isLocalRing`; SchemeAndStackFoundations §0.6 (gap:reduced-section-propagation).
+Layers 1–3 and 5; Tau Ceti `Representation.symmetricPower`; Tau Ceti `Module.Basis.symmetricPower`; Tau Ceti `TauCeti.stdSLRep`; Mathlib `Matrix.SpecialLinearGroup.map`; ArithmeticGaloisRepresentations §§1.7, 7.8; ReductiveGroupsPartII §RG2.3.7; ShimuraCompactifications §§7.12, 7.23; AbelianSchemesAndArithmeticModuli §§A4.3, A4.7 (gap:siegel-logarithmic-de-rham); Mathlib `Ideal.iInf_pow_smul_eq_bot_of_isLocalRing`; SchemeAndStackFoundations §0.6 (gap:reduced-section-propagation).
 
 ## Layer 9: Ordinary p-adic forms and coefficient comparison
 
@@ -1343,7 +1342,7 @@ The API records the following facts.
 - At the level-35 subgroup of §5.2 and p=3, the marked normalized constant trace is still 3, the local spherical Z₂ constant is 4, and the literal UZ_Δ constant is 20. Their residues are 0,1,2; neither forgetting Klingen marking nor forgetting tame branches is an operator identity.
 - For κ:ℤ₃ˣ→Oˣ, κ(1)=1 is defined while κ(3) has no domain value. The transported-frame definition supplies the continuous-weight action without such a value.
 
-*Needs:* §9.1; §9.2; §9.3; §5.2; §7.5; §3.8; ShimuraCompactifications §C5 (gap:siegel-parahoric-models); AbelianSchemesAndArithmeticModuli §§A4.10–A4.11 (gap:siegel-isogeny-trace-ideals); SchemeAndStackFoundations §§2.19–2.20 (gap:lci-fundamental-class); HodgeTateAndCanonicalSubgroups §§5.1–5.2 (gap:siegel-igusa-full-frames).
+*Needs:* §9.1; §9.2; §9.3; §5.2; §7.5; §3.8; ShimuraCompactifications Layer 7 (gap:siegel-parahoric-models); AbelianSchemesAndArithmeticModuli §§A4.10–A4.11 (gap:siegel-isogeny-trace-ideals); SchemeAndStackFoundations §§2.19–2.20 (gap:lci-fundamental-class); HodgeTateAndCanonicalSubgroups §§5.1–5.2 (gap:siegel-igusa-full-frames).
 
 ### Examples
 
@@ -1351,7 +1350,7 @@ At p=3,n=1, GL₂(𝔽₃) has 48 elements; its diagonal subgroup has 4. The wei
 
 ### Dependencies
 
-Layers 1, 3, 5 and 7; ShimuraCompactifications §C5 (gap:siegel-parahoric-models); AbelianSchemesAndArithmeticModuli §§A4.10–A4.11 (gap:siegel-isogeny-trace-ideals); SchemeAndStackFoundations §§2.19–2.20 (gap:lci-fundamental-class); HodgeTateAndCanonicalSubgroups §§5.1–5.2 (gap:siegel-igusa-full-frames); HodgeTateAndCanonicalSubgroups §0.14.
+Layers 1, 3, 5 and 7; ShimuraCompactifications Layer 7 (gap:siegel-parahoric-models); AbelianSchemesAndArithmeticModuli §§A4.10–A4.11 (gap:siegel-isogeny-trace-ideals); SchemeAndStackFoundations §§2.19–2.20 (gap:lci-fundamental-class); HodgeTateAndCanonicalSubgroups §§5.1–5.2 (gap:siegel-igusa-full-frames); HodgeTateAndCanonicalSubgroups §0.14.
 
 ## Downstream consumers
 

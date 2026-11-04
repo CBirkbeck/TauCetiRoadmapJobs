@@ -1,7 +1,7 @@
-import Mathlib
-import TauCeti.RepresentationTheory.SymmetricPower
-import TauCeti.RepresentationTheory.ClassicalGroups.Restriction
-import TauCeti.LinearAlgebra.Matrix.GeneralLinearGroup.Diagonal.Basic
+module
+
+public import Mathlib
+public import TauCeti.LinearAlgebra.Matrix.GeneralLinearGroup.Diagonal.Basic
 
 /-!
 # Algebraic modular forms and Serre weights, Part II: target signatures
@@ -9,14 +9,12 @@ import TauCeti.LinearAlgebra.Matrix.GeneralLinearGroup.Diagonal.Basic
 The roadmap is README.md; this file is not the roadmap. It states the roadmap's
 headline theorems against the pinned Mathlib and Tau Ceti APIs.
 
-Two headlines are statable on native carriers. The arbitrary-level degree of the
+One headline is statable on native carriers. The arbitrary-level degree of the
 literal determinant-p double coset, the tame intersection index times p+1, is
 stated with the pinned subgroup index, conjugation action, special linear
 reduction maps and diagonal general linear elements. The small symmetric-power
-irreducibility theorem is statable on the native symmetric power; the matrix
-representation below is the only definition it needs. Its coefficient field is in
-`Type`, matching the pinned symmetric-power representation API, and need not be
-algebraically closed.
+irreducibility used by Layer 8 is a supplier's theorem (ArithmeticGaloisRepresentations
+§7.8) and is imported, not restated here.
 
 The following headline theorems are not statable at the pins:
 
@@ -79,24 +77,6 @@ theorem relIndex_conj_diag_eq_tameIndex_mul (N p : ℕ) (hp : p.Prime) (hpN : p.
               SpecialLinearGroup.toGL).relIndex
           ((Γ.map (SpecialLinearGroup.map (Int.castRingHom (ZMod N)))).map
             SpecialLinearGroup.toGL) := by
-  sorry
-
-/-! ## Layer 8: Theta operators and low-weight injectivity -/
-
-/-- The standard two-dimensional representation of the finite special linear group
-`SL₂(𝔽_p)`, for a prime `p`, over a field `k` of characteristic `p`: Tau Ceti's standard
-representation of `SL₂(k)` on column vectors, composed with the entrywise reduction
-`SL₂(𝔽_p) → SL₂(k)`. -/
-def standardSL2 (p : ℕ) [Fact p.Prime] (k : Type) [Field k] [CharP k p] :
-    Representation k (Matrix.SpecialLinearGroup (Fin 2) (ZMod p)) (Fin 2 → k) :=
-  (TauCeti.stdSLRep k 2).comp (Matrix.SpecialLinearGroup.map (ZMod.castHom (dvd_refl p) k))
-
-/-- For a prime `p`, every field `k` of characteristic `p` and `0 ≤ d ≤ p − 1`, the `d`-th
-symmetric power of the standard representation of `SL₂(𝔽_p)` on `k²` is irreducible over `k`;
-since `k` is arbitrary, taking `k` algebraically closed gives absolute irreducibility. -/
-theorem smallSymmetricPower_irreducible (p : ℕ) [Fact p.Prime]
-    (k : Type) [Field k] [CharP k p] (d : ℕ) (hd : d ≤ p - 1) :
-    Representation.IsIrreducible ((standardSL2 p k).symmetricPower d) := by
   sorry
 
 end TauCetiRoadmap.AlgebraicModularFormsAndSerreWeightsPartII
