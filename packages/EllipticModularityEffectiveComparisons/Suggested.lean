@@ -1,11 +1,13 @@
-import Mathlib
-import TauCeti.NumberTheory.ModularForms.Newforms.Basic
-import TauCeti.NumberTheory.ModularForms.Newforms.Newform
-import TauCeti.NumberTheory.ModularForms.DiamondOperators
-import TauCeti.AlgebraicGeometry.EllipticCurve.Affine.Point.Galois
-import TauCeti.AlgebraicGeometry.EllipticCurve.Isogeny.Kernel
-import TauCeti.AlgebraicGeometry.EllipticCurve.Isogeny.BaseChange.Basic
-import TauCeti.AlgebraicGeometry.EllipticCurve.Isogeny.Hom.Add
+module
+
+public import Mathlib
+public import TauCeti.NumberTheory.ModularForms.Newforms.Basic
+public import TauCeti.NumberTheory.ModularForms.Newforms.Newform
+public import TauCeti.NumberTheory.ModularForms.DiamondOperators
+public import TauCeti.AlgebraicGeometry.EllipticCurve.Affine.Point.Galois
+public import TauCeti.AlgebraicGeometry.EllipticCurve.Isogeny.Kernel
+public import TauCeti.AlgebraicGeometry.EllipticCurve.Isogeny.BaseChange.Basic
+public import TauCeti.AlgebraicGeometry.EllipticCurve.Isogeny.Hom.Add
 
 /-!
 # Elliptic modularity and effective residual comparisons: target signatures
@@ -24,9 +26,8 @@ realization theorems are not statable at the pins: the arithmetic elliptic
 conductor, full residual Artin conductor and Serre weight interfaces are missing.
 The split-Cartan rational-point theorem lacks its modular curve and cusp/CM
 loci; the elliptic image exclusion is stated separately on native torsion.
-The geometric cuspidal-divisor torsion theorem and the four exceptional-prime
-rational-point exhaustions likewise lack the congruence modular curves, geometric
-cusp divisors and their Picard Jacobians at the pins.
+The four exceptional-prime rational-point exhaustions likewise lack the
+congruence modular curves and their Picard Jacobians at the pins.
 The mixed winding quotient, its nonvanishing and cusp formal immersion
 lack mixed modular Jacobians, integral Hecke quotients and their integral models.
 The general quantitative elliptic-isogeny bound lacks the stable Faltings-height

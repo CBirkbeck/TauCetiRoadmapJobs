@@ -279,22 +279,6 @@ version_note = "Locators use arXiv 0807.4954v5 (3 March 2009), Appendix Theorem 
 cited_for = ["§5.3b"]
 
 [[source]]
-id = "elkik-1990"
-locator_scheme = "theorem"
-authors = "Renée Elkik"
-title = "Le théorème de Manin–Drinfeld"
-year = 1990
-locator = "Opening theorem, p.59; §I, pp.60–62; §§II–III, pp.62–66"
-url = "https://www.numdam.org/item/AST_1990__183__59_0.pdf"
-fetched_from = "https://www.numdam.org/item/AST_1990__183__59_0.pdf"
-fetched_at = "2026-10-25T14:31:51Z"
-sha256 = "7618e61b8ec287b9fcce61fb4ac7d89ea98d58ca9274fa899ed52cda670b19b5"
-licence_class = "open-repository"
-status = "certified"
-accessed = "2026-10-25"
-cited_for = ["§5.10a geometric cuspidal-divisor torsion"]
-
-[[source]]
 id = "mazur-1977"
 locator_scheme = "section"
 authors = "Barry Mazur"
