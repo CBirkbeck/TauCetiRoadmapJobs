@@ -1,4 +1,6 @@
-import Mathlib
+module
+
+public import Mathlib
 
 /-!
 # Automorphy lifting beyond the Taylor–Wiles method: target signatures
