@@ -1,0 +1,18 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "BanachSpaceTheory"
+
+[[source]]
+id = "ball97"
+authors = "K. Ball"
+title = "An Elementary Introduction to Modern Convex Geometry (Flavors of Geometry, MSRI Publications 31)"
+year = "1997"
+locator_scheme = "theorem"
+locator = "Lecture 3, Theorem 3.1"
+url = "https://library.slmath.org/books/Book31/files/ball.pdf"
+fetched_from = "https://library.slmath.org/books/Book31/files/ball.pdf"
+fetched_at = "2026-11-04T21:06:45Z"
+sha256 = "e39f47bcf28af0cb730e3deab8f42ee688922049cc0b0ce1c55fe3665456a101"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["B7: John's ellipsoid theorem and the contact-point decomposition"]
