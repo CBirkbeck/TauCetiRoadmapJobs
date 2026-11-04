@@ -74,7 +74,7 @@ pr_label = "roadmap-worker"
 # The pool: operators who act for one another on managed roadmap pull requests (the label above and the
 # body marker). A pull request whose author is in the pool gets gate rounds any pool member may take; a
 # pool member's reply counts as the author's; the repair is pushed onto the pull request's own branch.
-pool = ["CBirkbeck", "kim-em", "roed-math"]
+pool = ["CBirkbeck", "kim-em", "roed-math", "WilliamCoram"]
 # Open the final pull request as a draft (today's rule). A human marks it ready, unless
 # redteam.ready_after says otherwise.
 open_as_draft = true
