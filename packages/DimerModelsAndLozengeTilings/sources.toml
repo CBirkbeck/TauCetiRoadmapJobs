@@ -1,0 +1,179 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "DimerModelsAndLozengeTilings"
+
+[[source]]
+id = "aggarwal2023"
+authors = "Amol Aggarwal"
+title = "Universality for Lozenge Tiling Local Statistics"
+year = 2019
+arxiv = "1907.09991v4"
+locator_scheme = "section"
+locator = "Section 1, equation (1.2), Definition 1.1"
+url = "https://arxiv.org/abs/1907.09991v4"
+fetched_from = "https://arxiv.org/pdf/1907.09991v4"
+fetched_at = "2026-11-04T18:37:21Z"
+sha256 = "701b31a093c5b14027f117061b49f083f28d172da3b9aba3ac0ab7f708b0abd9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v4"
+cited_for = ["conventions for lozenge tilings, the slope, ergodic Gibbs measures and the incomplete beta kernel; universality statement"]
+
+[[source]]
+id = "sheffield2005"
+authors = "Scott Sheffield"
+title = "Random Surfaces"
+year = 2003
+venue = "Asterisque 2005, No. 304"
+arxiv = "math/0304049v3"
+locator_scheme = "chapter"
+locator = "Chapter 9"
+url = "https://arxiv.org/abs/math/0304049v3"
+fetched_from = "https://arxiv.org/pdf/math/0304049v3"
+fetched_at = "2026-11-04T18:37:29Z"
+sha256 = "a0f554cc91d6ef15e0961ecc752ddb3ed7757e08919a70f4edb8afd3a6b6352d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v3"
+cited_for = ["uniqueness of translation-invariant ergodic Gibbs measures of given slope"]
+
+[[source]]
+id = "kos2006"
+authors = "Richard Kenyon, Andrei Okounkov, Scott Sheffield"
+title = "Dimers and Amoebae"
+year = 2003
+arxiv = "math-ph/0311005v1"
+locator_scheme = "section"
+locator = "Section 2"
+url = "https://arxiv.org/abs/math-ph/0311005v1"
+fetched_from = "https://arxiv.org/pdf/math-ph/0311005v1"
+fetched_at = "2026-11-04T18:37:34Z"
+sha256 = "4bf75498c1244f44eaf8dddaf361bbaddb8b44dafb50c41fca427734b61c5f1e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v1"
+cited_for = ["ergodic Gibbs measures, slopes, torus limits, surface tension"]
+
+[[source]]
+id = "kenyon2009"
+authors = "Richard Kenyon"
+title = "Lectures on Dimers"
+year = 2009
+arxiv = "0910.3129v1"
+locator_scheme = "section"
+locator = "Sections 1-3 and the section on ergodic Gibbs measures"
+url = "https://arxiv.org/abs/0910.3129v1"
+fetched_from = "https://arxiv.org/pdf/0910.3129v1"
+fetched_at = "2026-11-04T18:37:40Z"
+sha256 = "59958a8a363b2c061f8235080989f9ce278291ee9ead39faac8eba23708e11a4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v1"
+cited_for = ["dimers, height functions, Kasteleyn matrices, local statistics"]
+
+[[source]]
+id = "okounkov-reshetikhin2003"
+authors = "Andrei Okounkov, Nikolai Reshetikhin"
+title = "Correlation function of Schur process with application to local geometry of a random 3-dimensional Young diagram"
+year = 2001
+arxiv = "math/0107056v3"
+locator_scheme = "section"
+locator = "incomplete beta kernel"
+url = "https://arxiv.org/abs/math/0107056v3"
+fetched_from = "https://arxiv.org/pdf/math/0107056v3"
+fetched_at = "2026-11-04T18:37:44Z"
+sha256 = "83bd21a169bc03393390b95428324eec8a9511cefa1df7968bd48c4fa5bde4f1"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v3"
+cited_for = ["the incomplete beta kernel of the Schur process"]
+
+[[source]]
+id = "cohn-kenyon-propp2001"
+authors = "Henry Cohn, Richard Kenyon, James Propp"
+title = "A variational principle for domino tilings"
+year = 2000
+venue = "Journal of the AMS 14 (2001), 297-346"
+doi = "10.1090/S0894-0347-00-00355-6"
+arxiv = "math/0008220v3"
+locator_scheme = "section"
+locator = "Sections 1-2"
+url = "https://arxiv.org/abs/math/0008220v3"
+fetched_from = "https://arxiv.org/pdf/math/0008220v3"
+fetched_at = "2026-11-04T18:37:51Z"
+sha256 = "be2e7c17c1d9762bd454847658db9efcfe27724272debc1d8fe6a8d9483bb48f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v3"
+cited_for = ["height functions, variational principle for tilings, entropy"]
+
+[[source]]
+id = "kenyon1997"
+authors = "Richard Kenyon"
+title = "Local statistics of lattice dimers"
+year = 1997
+venue = "Annales de l'Institut Henri Poincare, Probabilites et Statistiques 33 (1997), no. 5, 591-618"
+locator_scheme = "page"
+locator = "pp. 591-618"
+url = "http://www.numdam.org/item/AIHPB_1997__33_5_591_0.pdf"
+fetched_from = "https://www.numdam.org/item/AIHPB_1997__33_5_591_0.pdf"
+fetched_at = "2026-11-04T18:37:52Z"
+sha256 = "1a91b9b05622559ac45f534ba1249040ea857a5b7ff1eb50cebfc9bdc170e420"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["local statistics of lattice dimers; Kasteleyn inverse and local statistics"]
+
+[[source]]
+id = "gorin2021"
+authors = "Vadim Gorin"
+title = "Lectures on Random Lozenge Tilings"
+year = 2021
+venue = "Cambridge Studies in Advanced Mathematics 193, Cambridge University Press (2021)"
+version_note = "pre-publication version posted by the author; lecture and theorem numbering as in the printed edition, page numbers differ"
+locator_scheme = "chapter"
+locator = "Lectures 1-2 and the lectures on ergodic translation-invariant Gibbs measures"
+url = "https://www.stat.berkeley.edu/~vadicgor/Random_tilings.pdf"
+fetched_from = "https://www.stat.berkeley.edu/~vadicgor/Random_tilings.pdf"
+fetched_at = "2026-11-04T18:38:02Z"
+sha256 = "03583d9a62340174fe2ff8840a20ed27a80d83e47e98c3a61a840ffefbcd123e"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["tilings, height functions, ergodic translation-invariant Gibbs measures"]
+
+[[source]]
+id = "thurston1990"
+authors = "William P. Thurston"
+title = "Conway's tiling groups"
+year = 1990
+venue = "American Mathematical Monthly 97 (1990), no. 8, 757-773"
+doi = "10.2307/2324578"
+url = "https://www.jstor.org/stable/2324578"
+locator_scheme = "page"
+locator = "pp. 757-773"
+licence_class = "none"
+status = "uncertified"
+accessed = "2026-11-04"
+cited_for = ["original source of the height-function criterion for tileability of simply connected regions; the statement and proof used are gorin2021 Theorem 1.4"]
+note = "JSTOR and Taylor & Francis only (HTTP 403 at the DOI landing page); cited by locator alone, no text read"
+
+[[source]]
+id = "georgii2011"
+authors = "Hans-Otto Georgii"
+title = "Gibbs Measures and Phase Transitions"
+year = 2011
+venue = "de Gruyter Studies in Mathematics 9, 2nd edition (2011)"
+doi = "10.1515/9783110250329"
+locator_scheme = "theorem"
+locator = "Theorems 7.7, 14.5, 14.15 and 14.17"
+licence_class = "none"
+status = "uncertified"
+accessed = "2026-11-04"
+cited_for = ["extremal Gibbs measures and tail triviality; ergodic translation-invariant measures as extreme points; ergodic Gibbs measures as extreme points of the translation-invariant Gibbs measures; ergodic decomposition"]
+note = "de Gruyter only; cited by locator alone, no text read; the statements used are restated in open text in sheffield2005 Lemmas 3.2.1-3.2.5"
