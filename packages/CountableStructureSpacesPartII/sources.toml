@@ -1,0 +1,165 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "CountableStructureSpacesPartII"
+
+[[source]]
+id = "paolini-shelah-tfab"
+authors = "Gianluca Paolini, Saharon Shelah"
+title = "Torsion-Free Abelian Groups are Borel Complete"
+year = 2021
+venue = "Ann. of Math. (2) 199 (2024), no. 3, 1177-1224"
+doi = "10.4007/annals.2024.199.3.4"
+arxiv = "2102.12371v6"
+locator_scheme = "theorem"
+locator = "Definition 1.2, Definition 1.4, Remark 1.5, Definition 1.6, Fact 1.7, Convention 1.9, Main Theorem (pp. 2-4)"
+url = "https://arxiv.org/abs/2102.12371v6"
+fetched_from = "https://arxiv.org/pdf/2102.12371v6"
+fetched_at = "2026-11-04T16:58:42Z"
+sha256 = "8810b392032ca4be61b687d1818654880221bef9f04c94b1615a20fc539b154a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v6; numbering of the introduction (Definitions 1.2-1.6, Main Theorem, Theorem 1.10) read from the arXiv text, to be checked against the Annals version"
+cited_for = ["Borel reducibility of equivalence relations and of sets, Borel completeness, extension to classes K via K_omega", "torsion-free abelian groups are Borel complete by a continuous reduction from graphs", "Friedman-Stanley summary: graphs, linear orders, trees Borel complete; torsion abelian groups complete analytic but not Borel complete"]
+
+[[source]]
+id = "becker-kechris-bams"
+authors = "Howard Becker, Alexander S. Kechris"
+title = "Borel actions of Polish groups"
+year = 1993
+venue = "Bull. Amer. Math. Soc. (N.S.) 28 (1993) 334-341"
+arxiv = "math/9304208v1"
+locator_scheme = "theorem"
+locator = "§2 (Borel embeddings of Borel G-spaces, Theorem 2.1, Corollary 2.2, Corollary 2.3), pp. 3-4"
+url = "https://arxiv.org/abs/math/9304208v1"
+fetched_from = "https://arxiv.org/pdf/math/9304208v1"
+fetched_at = "2026-11-04T16:58:51Z"
+sha256 = "b43b2af1939b6f9a937ffcaea30a0471d4d7d272fe5086e7d755f8b55f39e4a7"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v1; research announcement with proof sketches only, the full proofs are in becker-kechris-1996"
+cited_for = ["every Borel S_inf-space Borel-embeds equivariantly into the logic action on the structure space of the language with one n-ary relation symbol for each n (universal S_inf-space)"]
+
+[[source]]
+id = "camerlo-gao-boolean"
+authors = "Riccardo Camerlo, Su Gao"
+title = "The completeness of the isomorphism relation for countable Boolean algebras"
+year = 2001
+venue = "Trans. Amer. Math. Soc. 353 (2001), no. 2, 491-518"
+doi = "10.1090/S0002-9947-00-02659-3"
+locator_scheme = "theorem"
+locator = "§1 (Borel reducibility, Mod(L), Borel completeness, pp. 492-493), Theorem 1 (p. 505, atomic Boolean algebras), Theorem (p. 514, all countable Boolean algebras)"
+url = "https://www.ams.org/journals/tran/2001-353-02/S0002-9947-00-02659-3/S0002-9947-00-02659-3.pdf"
+fetched_from = "https://www.ams.org/journals/tran/2001-353-02/S0002-9947-00-02659-3/S0002-9947-00-02659-3.pdf"
+fetched_at = "2026-11-04T16:59:20Z"
+sha256 = "e8adc79124698710951b1d5c17903846e61dab1c727d6ff369402d645f608b57"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "AMS open archive (Transactions back issues); the extracted text has run-together words on some lines"
+cited_for = ["Borel completeness of countable Boolean algebras, with the reduction from countable graphs", "the standard definitions of Borel reducibility between invariant Borel classes and of Borel completeness, and the equivalence with S_inf-completeness"]
+
+[[source]]
+id = "kechris-cdst"
+authors = "Alexander S. Kechris"
+title = "Classical Descriptive Set Theory"
+year = 1995
+venue = "Graduate Texts in Mathematics 156, Springer"
+doi = "10.1007/978-1-4612-4190-4"
+locator_scheme = "section"
+locator = "§9.B (S_inf as a Polish group), §16.C (spaces of structures, the logic action), §26.C and §27 (complete analytic sets; isomorphism of countable structures), §27.D"
+url = "https://doi.org/10.1007/978-1-4612-4190-4"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["complete analytic sets and the isomorphism relation on Mod_L(omega) as a complete analytic set"]
+
+[[source]]
+id = "friedman-stanley-1989"
+authors = "Harvey Friedman, Lee Stanley"
+title = "A Borel reducibility theory for classes of countable structures"
+year = 1989
+venue = "J. Symbolic Logic 54 (1989), no. 3, 894-914"
+doi = "10.2307/2274750"
+locator_scheme = "theorem"
+locator = "§1 (Borel reducibility of invariant Borel classes), Theorem 1 (countable graphs are Borel complete), §2 (trees and linear orders), §3 (fields), §4 (torsion abelian groups: complete analytic isomorphism, not Borel complete)"
+url = "https://doi.org/10.2307/2274750"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (Cambridge); the Project Euclid landing page refused the request; cited by its locator without the text. Section and theorem numbers are from memory and must be checked by anyone with legal access"
+cited_for = ["Friedman-Stanley theorem: countable graphs, trees and linear orders are Borel complete", "countable fields are Borel complete", "torsion abelian groups: complete analytic but not Borel complete (the Friedman-Stanley obstruction)"]
+
+[[source]]
+id = "gao-idst"
+authors = "Su Gao"
+title = "Invariant Descriptive Set Theory"
+year = 2009
+venue = "Pure and Applied Mathematics 293, CRC Press"
+doi = "10.1201/9781584887942"
+locator_scheme = "chapter"
+locator = "Chapter 3 (§3.6 the logic action and Mod_L), Chapter 5 (§5.1 Borel reducibility, §5.2 the preorder), Chapter 13 (§13.1 Borel completeness, §13.2 Friedman-Stanley, graphs, linear orders, trees)"
+url = "https://doi.org/10.1201/9781584887942"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text; section numbers to be checked by anyone with legal access"
+cited_for = ["Borel reducibility preorder and its elementary properties", "Borel completeness and its equivalent characterisations", "Friedman-Stanley theorem"]
+
+[[source]]
+id = "becker-kechris-1996"
+authors = "Howard Becker, Alexander S. Kechris"
+title = "The Descriptive Set Theory of Polish Group Actions"
+year = 1996
+venue = "London Mathematical Society Lecture Note Series 232, Cambridge University Press"
+doi = "10.1017/CBO9780511735264"
+locator_scheme = "chapter"
+locator = "Chapter 2 (§2.5 the logic action and Mod_L, §2.6-§2.7 universal Borel S_inf-spaces and universal G-spaces), Chapter 3 (§3.4 Borel reducibility of orbit equivalence relations)"
+url = "https://doi.org/10.1017/CBO9780511735264"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text; the announcement becker-kechris-bams is the open statement of the same results"
+cited_for = ["full proof that every Borel S_inf-space Borel-embeds equivariantly into some Mod_L(omega)"]
+
+[[source]]
+id = "hjorth-2000"
+authors = "Greg Hjorth"
+title = "Classification and Orbit Equivalence Relations"
+year = 2000
+venue = "Mathematical Surveys and Monographs 75, American Mathematical Society"
+doi = "10.1090/surv/075"
+locator_scheme = "chapter"
+locator = "Chapter 1 (Borel reducibility, classification by countable structures)"
+url = "https://doi.org/10.1090/surv/075"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["background on orbit equivalence relations and classification by countable structures"]
+
+[[source]]
+id = "hjorth-kechris-1996"
+authors = "Greg Hjorth, Alexander S. Kechris"
+title = "Borel equivalence relations and classifications of countable models"
+year = 1996
+venue = "Ann. Pure Appl. Logic 82 (1996), no. 3, 221-272"
+doi = "10.1016/S0168-0072(96)00006-1"
+locator_scheme = "section"
+locator = "§1 (Borel reducibility), §4-§5 (Ulm-type classifications and the Friedman-Stanley obstruction)"
+url = "https://doi.org/10.1016/S0168-0072(96)00006-1"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["complete analytic isomorphism relations that are not Borel complete; Ulm-type classifications"]
+
+[[source]]
+id = "mekler-1981"
+authors = "Alan H. Mekler"
+title = "Stability of nilpotent groups of class 2 and prime exponent"
+year = 1981
+venue = "J. Symbolic Logic 46 (1981), no. 4, 781-788"
+doi = "10.2307/2273227"
+locator_scheme = "section"
+locator = "§2 (the interpretation of a graph in a class-2 nilpotent group of exponent p and its recovery)"
+url = "https://doi.org/10.2307/2273227"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text; the section locator is from memory and must be checked by anyone with legal access"
+cited_for = ["countable groups are Borel complete (the Mekler coding of graphs into groups)"]
