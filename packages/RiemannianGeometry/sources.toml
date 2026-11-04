@@ -80,3 +80,55 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled (Springer); cited by its locator without the text"
 cited_for = ["R8.3 convention bridge (isotropic basis, torus, roots, dominant weights of so_N)"]
+
+[[source]]
+id = "brewin-rnc"
+authors = "Leo Brewin"
+title = "Riemann Normal Coordinate expansions using Cadabra"
+year = 2009
+venue = "Class.Quant.Grav.26:175017,2009"
+doi = "10.1088/0264-9381/26/17/175017"
+arxiv = "0903.2087v3"
+locator_scheme = "equation"
+locator = "metric expansion in Riemann normal coordinates"
+url = "https://arxiv.org/abs/0903.2087v3"
+fetched_from = "https://arxiv.org/pdf/0903.2087v3"
+fetched_at = "2026-11-04T02:04:37Z"
+sha256 = "0080477c8d0a1d56d6987a926ea577f717e808a92b69a9b59cac778e3c2ab32e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v3"
+cited_for = ["R1.4"]
+
+[[source]]
+id = "nicolaescu-lectures"
+authors = "Liviu I. Nicolaescu"
+title = "Lectures on the Geometry of Manifolds"
+year = 2020
+venue = "author's electronic edition (University of Notre Dame author page)"
+locator_scheme = "theorem"
+locator = "Definition 4.1.23, Proposition 4.1.25, Theorem 5.2.26, Theorem 6.2.6"
+url = "https://academicweb.nd.edu/~lnicolae/Lectures.pdf"
+fetched_from = "https://academicweb.nd.edu/~lnicolae/Lectures.pdf"
+fetched_at = "2026-11-04T02:06:59Z"
+sha256 = "d9ab8c5da0d39a5554a4c1ad13f61172a4d42214acd4efe80611bcfccd97093d"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["R1.4 normal coordinates; R4.4 Cartan–Hadamard; R4.5 Myers; R4.6 injectivity radius"]
+
+[[source]]
+id = "lee-irm"
+authors = "John M. Lee"
+title = "Introduction to Riemannian Manifolds"
+year = 2018
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-3-319-91755-9"
+locator_scheme = "chapter"
+locator = "Chapter 10, cut points"
+url = "https://doi.org/10.1007/978-3-319-91755-9"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["R4.6 cut locus"]
