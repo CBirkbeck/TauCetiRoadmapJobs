@@ -1,0 +1,56 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "RootSystems"
+
+[[source]]
+id = "milne17"
+locator_scheme = "theorem"
+locator = "C.22"
+url = "https://www.jmilne.org/math/Books/iAG2017.pdf"
+fetched_from = "https://www.jmilne.org/math/Books/iAG2017.pdf"
+fetched_at = "2026-11-03T19:25:23Z"
+sha256 = "503f1a7d511632af05541c52fb2bf6fc36f5a75b0323f2f9110f03dcce11fd67"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["1.1"]
+
+[[source]]
+id = "sga3iii"
+locator_scheme = "theorem"
+locator = "Prop. 6.7.2"
+url = "https://webusers.imj-prg.fr/~patrick.polo/SGA3/Exp21-13oct24.pdf"
+fetched_from = "https://webusers.imj-prg.fr/~patrick.polo/SGA3/Exp21-13oct24.pdf"
+fetched_at = "2026-11-03T19:25:25Z"
+sha256 = "1fb0720ffd496e6076dbec3702cbd3cba828c2baae0340a840855df86a496284"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["2.1"]
+
+[[source]]
+id = "bourbaki46"
+authors = "N. Bourbaki"
+title = "Lie Groups and Lie Algebras"
+year = 2002
+doi = "10.1007/978-3-540-89394-3"
+locator_scheme = "section"
+locator = "Chapter VI §1, no. 6"
+url = "https://doi.org/10.1007/978-3-540-89394-3"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["1.2"]
+
+[[source]]
+id = "bjornerbrenti05"
+title = "Combinatorics of Coxeter Groups"
+year = 2005
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/3-540-27596-7"
+locator_scheme = "theorem"
+locator = "Theorem 3.3.1"
+url = "https://doi.org/10.1007/3-540-27596-7"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["1.2"]
