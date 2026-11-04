@@ -1,4 +1,6 @@
-import Mathlib
+module
+
+public import Mathlib
 
 /-!
 # The trianguline variety and its local model: target signatures
@@ -28,9 +30,10 @@ following headlines is statable on those APIs with only simple definitions:
   trianguline variety, its completed local ring and the incidence local model.
 * Local normality, Cohen–Macaulayness and character flatness (Layers 7–8): missing
   that variety and its analytic character projections.
-* Crystalline accumulation and the crystalline companion criterion (Layer 8):
-  missing crystalline representations, refined deformation spaces and companion
-  parameter points of the trianguline variety.
+* Crystalline accumulation and the crystabelline companion criterion (Layer 8):
+  missing crystabelline representations with their Weil–Deligne refinements,
+  refined deformation spaces of fixed weight and abelian inertial type, their
+  period-frame torsors and companion parameter points of the trianguline variety.
 * Weight-fibre KL identity and full-character crystalline multiplicity formula
   (Layer 9): missing those analytic fibres, completed Steinberg cycle transfer
   and locally analytic principal-series constituents.
