@@ -1,0 +1,19 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "NoncommutativeIntegration"
+
+[[source]]
+id = "Fan1951"
+authors = "Ky Fan"
+title = "Maximum Properties and Inequalities for the Eigenvalues of Completely Continuous Operators"
+year = 1951
+doi = "10.1073/pnas.37.11.760"
+locator_scheme = "page"
+locator = "pp. 760-766"
+url = "https://pmc.ncbi.nlm.nih.gov/articles/PMC1063464/"
+fetched_from = "https://pmc.ncbi.nlm.nih.gov/articles/PMC1063464/"
+fetched_at = "2026-11-04T15:05:33Z"
+sha256 = "9eb3e8299f31a00ab29e84f44b1fe89f2821e46b2d5f8065f995361b8c40007e"
+licence_class = "answered-by:CBirkbeck"
+status = "certified"
+accessed = "2026-11-04"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/2698#issuecomment-6632678832"
