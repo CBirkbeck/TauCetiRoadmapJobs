@@ -1277,12 +1277,6 @@
       "supplier": "SelmerIwasawaCohomology",
       "section": "§§3.9–3.11",
       "needs": "For the CGLS self-dual ordinary anticyclotomic Selmer groups with both residual local characters nontrivial, prove that compact specialization S[1/p]→H¹_f(K,V_pE) has kernel (γ−1)S[1/p], retaining the local-image, H² and Tor cokernel terms."
-    },
-    {
-      "slug": "rational-three-isogeny-count",
-      "supplier": "ArithmeticStatisticsPartIII",
-      "section": "Windowed cubic counting contract (support-coregular-count)",
-      "needs": "Prove the seven conditions C(ℚ,ι,Σ) for every rational three-isogeny and every nonempty finite-local-squareclass family and ratio stratum, for the isogeny and its dual, with the unweighted signed-squarefree height and the matched local mass normalizations."
     }
   ],
   "sourceIssues": [
