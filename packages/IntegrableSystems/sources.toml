@@ -180,3 +180,18 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
 cited_for = ["I5.1"]
+
+[[source]]
+id = "duistermaat1980"
+authors = "J. J. Duistermaat"
+title = "On global action-angle coordinates"
+year = 1980
+venue = "Communications on Pure and Applied Mathematics 33"
+doi = "10.1002/cpa.3160330602"
+locator_scheme = "page"
+locator = "687–706"
+url = "https://doi.org/10.1002/cpa.3160330602"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["I2"]
