@@ -1,0 +1,37 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ClassicalGroups"
+
+[[source]]
+id = "molev2002"
+authors = "A. I. Molev"
+title = "Gelfand-Tsetlin bases for classical Lie algebras"
+year = 2002
+venue = "in \"Handbook of Algebra\", Vol. 4, (M. Hazewinkel, Ed.), Elsevier, 2006, pp. 109-170"
+arxiv = "math/0211289v2"
+locator_scheme = "theorem"
+locator = "Theorems 2.1, 2.3, 2.7, 3.5, 4.1–4.4"
+url = "https://arxiv.org/abs/math/0211289v2"
+fetched_from = "https://arxiv.org/pdf/math/0211289v2"
+fetched_at = "2026-11-03T19:56:50Z"
+sha256 = "0bc32869eef4d31c4700ed80b0feda574a737dee014ca5b59b68080c041391b8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+version_note = "arXiv v2"
+cited_for = ["6.1", "6.4", "6.7", "Layer 6B"]
+
+[[source]]
+id = "milne2022"
+authors = "J. S. Milne"
+title = "Algebraic Groups: The Theory of Group Schemes of Finite Type over a Field (2022 edition)"
+year = 2022
+locator_scheme = "theorem"
+locator = "Proposition 10.31, Theorem 12.12, Theorem 22.42"
+url = "https://www.jmilne.org/math/Books/iAG2022.pdf"
+fetched_from = "https://www.jmilne.org/math/Books/iAG2022.pdf"
+fetched_at = "2026-11-03T19:57:41Z"
+sha256 = "f2ddd8fa4d263085f173934664b246007a2c0bd539739b7c82de39bfb5d21f40"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["0.2", "0.4", "3.1", "3A.2"]
