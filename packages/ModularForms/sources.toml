@@ -1,0 +1,169 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ModularForms"
+
+[[source]]
+id = "deligne-serre"
+authors = "Pierre Deligne, Jean-Pierre Serre"
+title = "Formes modulaires de poids $1$"
+year = 1974
+venue = "Annales scientifiques de l'École normale supérieure 7"
+doi = "10.24033/asens.1277"
+locator_scheme = "section"
+locator = "2.1-2.8"
+url = "https://doi.org/10.24033/asens.1277"
+fetched_from = "https://www.numdam.org/item/10.24033/asens.1277.pdf"
+fetched_at = "2026-11-04T02:49:05Z"
+sha256 = "65b390f6d33e827e30c6c66bbc15421eca51db3180bdf5996dcee19047be97fc"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["8.0"]
+
+[[source]]
+id = "milne-mf"
+locator_scheme = "section"
+locator = "Chapter 5"
+url = "https://www.jmilne.org/math/CourseNotes/MF.pdf"
+fetched_from = "https://www.jmilne.org/math/CourseNotes/MF.pdf"
+fetched_at = "2026-11-04T02:49:08Z"
+sha256 = "977f06a4e838c43c77a7c9398c090789e60d67f64e013e1dcd9bcce0e0c27b8d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["10D"]
+
+[[source]]
+id = "miyake1989"
+authors = "Toshitsune Miyake"
+title = "Modular Forms"
+year = 1989
+venue = "Springer Monographs in Mathematics"
+doi = "10.1007/3-540-29593-3"
+locator_scheme = "theorem"
+locator = "Lemma 4.3.10"
+url = "https://doi.org/10.1007/3-540-29593-3"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["9.2"]
+
+[[source]]
+id = "forster1981"
+authors = "Otto Forster"
+title = "Lectures on Riemann Surfaces"
+year = 1981
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4612-5961-9"
+locator_scheme = "section"
+locator = "8"
+url = "https://doi.org/10.1007/978-1-4612-5961-9"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["10D"]
+
+[[source]]
+id = "diamond-shurman"
+title = "A First Course in Modular Forms"
+year = 2005
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-0-387-27226-9"
+locator_scheme = "theorem"
+locator = "Theorem 1.5.1"
+url = "https://doi.org/10.1007/978-0-387-27226-9"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["10D"]
+
+[[source]]
+id = "silverman-atec"
+authors = "Joseph H. Silverman"
+title = "Advanced Topics in the Arithmetic of Elliptic Curves"
+year = 1994
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4612-0851-8"
+locator_scheme = "theorem"
+locator = "Theorem V.1.1"
+url = "https://doi.org/10.1007/978-1-4612-0851-8"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["10D"]
+
+[[source]]
+id = "atkin-li"
+authors = "A. O. L. Atkin, Wein-Ch'ing Winnie Li"
+title = "Twists of newforms and pseudo-eigenvalues ofW-operators"
+year = 1978
+venue = "Inventiones mathematicae 48"
+doi = "10.1007/BF01390245"
+locator_scheme = "theorem"
+locator = "Theorem 3.1"
+url = "https://doi.org/10.1007/BF01390245"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["9.2"]
+
+[[source]]
+id = "popa-zagier"
+authors = "Alexandru A. Popa, Don Zagier"
+title = "A simple proof of the Eichler-Selberg trace formula"
+year = 2017
+doi = "10.1515/crelle-2018-0035"
+arxiv = "1711.00327v2"
+locator_scheme = "equation"
+locator = "(4)"
+url = "https://arxiv.org/abs/1711.00327v2"
+fetched_from = "https://arxiv.org/pdf/1711.00327v2"
+fetched_at = "2026-11-04T02:53:52Z"
+sha256 = "56905e983186337c8f21383509149f3f8195effb76c517a3ba17ff8e24a11d58"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v2"
+cited_for = ["11.1"]
+
+[[source]]
+id = "stein"
+locator_scheme = "theorem"
+locator = "Theorem 5.8"
+url = "https://wstein.org/books/modform/stein-modform.pdf"
+fetched_from = "https://wstein.org/books/modform/stein-modform.pdf"
+fetched_at = "2026-11-04T02:53:57Z"
+sha256 = "b50e81d48d2fb794948414fee625d1d3ca19c191a87430ca38c8713c8f466b75"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["0.1"]
+
+[[source]]
+id = "sturm"
+authors = "Jacob Sturm"
+title = "On the congruence of modular forms"
+year = 1987
+venue = "Lecture Notes in Mathematics"
+doi = "10.1007/BFb0072985"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://doi.org/10.1007/BFb0072985"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["9.3"]
+
+[[source]]
+id = "shimura1971"
+authors = "Goro Shimura"
+title = "Introduction to the Arithmetic Theory of Automorphic Functions"
+year = 1971
+venue = "Publications of the Mathematical Society of Japan 11, Princeton University Press"
+doi = "10.1515/9781400883943"
+locator_scheme = "theorem"
+locator = "Proposition 3.64"
+url = "https://doi.org/10.1515/9781400883943"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text (Theorem 3.20, Proposition 3.64)"
+cited_for = ["2.1", "9.2"]
