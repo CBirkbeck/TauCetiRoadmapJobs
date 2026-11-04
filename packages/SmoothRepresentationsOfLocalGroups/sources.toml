@@ -1,0 +1,43 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "SmoothRepresentationsOfLocalGroups"
+
+[[source]]
+id = "del73"
+locator_scheme = "section"
+locator = "8.4.1"
+url = "https://publications.ias.edu/sites/default/files/Number20.pdf"
+fetched_from = "https://publications.ias.edu/sites/default/files/Number20.pdf"
+fetched_at = "2026-11-04T14:44:19Z"
+sha256 = "b03f483c4eeca79b75e34b88f41406fe4c9e16ba621480ce859697c93e8d5844"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["wd-algebraic-composition"]
+
+[[source]]
+id = "ber87"
+authors = "J. Bernstein"
+title = "Second adjointness for representations of reductive p-adic groups"
+year = "1987"
+locator_scheme = "section"
+locator = "1.1"
+url = "https://www.math.tau.ac.il/~bernstei/Unpublished_texts/unpublished_texts/Bernstein87-second-adj-from-chicago.pdf"
+fetched_from = "https://www.math.tau.ac.il/~bernstei/Unpublished_texts/unpublished_texts/Bernstein87-second-adj-from-chicago.pdf"
+fetched_at = "2026-11-04T14:56:00Z"
+sha256 = "03ce91362900d4832bfeac2ee2448f6c0e193b5deebd301f35c25c5f2542f863"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["smooth-rep-abelian"]
+
+[[source]]
+id = "tat79"
+authors = "J. Tate"
+title = "Number theoretic background"
+year = "1979"
+doi = "10.1090/pspum/033.2/546607"
+locator_scheme = "section"
+locator = "4.1"
+licence_class = "none"
+status = "uncertified"
+cited_for = ["wd-algebraic-composition"]
