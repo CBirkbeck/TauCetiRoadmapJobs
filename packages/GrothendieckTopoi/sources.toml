@@ -1,0 +1,41 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "GrothendieckTopoi"
+
+[[source]]
+id = "isbell1972"
+locator_scheme = "page"
+locator = "pp. 5-32"
+url = "https://journals.msp.org/mscand/article/download/2235/2234"
+fetched_from = "https://journals.msp.org/mscand/article/download/2235/2234"
+fetched_at = "2026-11-04T00:36:19Z"
+sha256 = "778ee2adb6c45390ee9aafabf16bb399165dc0c2cc5c1e5b685120299bbd1b57"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["Layer 8"]
+
+[[source]]
+id = "isbell1981"
+locator_scheme = "theorem"
+locator = "Theorem 4"
+url = "https://www.ams.org/journals/proc/1981-081-01/S0002-9939-1981-0589150-5/S0002-9939-1981-0589150-5.pdf"
+fetched_from = "https://www.ams.org/journals/proc/1981-081-01/S0002-9939-1981-0589150-5/S0002-9939-1981-0589150-5.pdf"
+fetched_at = "2026-11-04T00:32:52Z"
+sha256 = "79571155311daa5d0f03503873f7688d8bb9afd27f32c65eb5b8522f5c868902"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["Layer 8"]
+
+[[source]]
+id = "hofmann-lawson1978"
+locator_scheme = "section"
+locator = "§1"
+url = "https://www.ams.org/journals/tran/1978-246-00/S0002-9947-1978-0515540-7/S0002-9947-1978-0515540-7.pdf"
+fetched_from = "https://www.ams.org/journals/tran/1978-246-00/S0002-9947-1978-0515540-7/S0002-9947-1978-0515540-7.pdf"
+fetched_at = "2026-11-04T00:32:54Z"
+sha256 = "8d7b44eb595f70d4d10fc4ef09f9c0c7a2842befd052d1c6caf09064f8795c34"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["Layer 8"]
