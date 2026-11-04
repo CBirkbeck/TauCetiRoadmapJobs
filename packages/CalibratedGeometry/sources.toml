@@ -12,3 +12,16 @@ locator = "Chapter II, §10"
 licence_class = "none"
 status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/3177#issuecomment-6632670329"
+
+[[source]]
+id = "McLean1998"
+authors = "Robert C. McLean"
+title = "Deformations of calibrated submanifolds"
+year = 1998
+doi = "10.4310/CAG.1998.v6.n4.a4"
+locator_scheme = "theorem"
+locator = "Corollary 3.9"
+licence_class = "operator-local"
+status = "local"
+local_name = "mclean-1998-deformations-of-calibrated-submanifolds.pdf"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/3177#issuecomment-6636512957"
