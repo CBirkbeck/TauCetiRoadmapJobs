@@ -6814,6 +6814,18 @@
     "needs": "Provide fine smooth-curve level moduli and stable compactifications with boundary thickness, the Hodge determinant and integral and semi-canonical Noether isomorphisms, and maximal-variation Hodge positivity with descent through finite covers, including arbitrary constant fields and finite inseparable covers.",
     "supplier": "StableReductionPartII",
     "section": "MC.4–MC.6"
+  },
+  {
+    "slug": "bertini-normal-sections",
+    "needs": "For a geometrically normal and geometrically irreducible projective variety X of dimension at least two over an infinite field F and a very ample line bundle L on X, a dense open subset of the complete linear system of L, defined over F, consists of members whose zero locus is geometrically normal, in every characteristic (Seidenberg's hyperplane-section theorem).",
+    "supplier": "SchemeAndStackFoundations",
+    "section": "4.13"
+  },
+  {
+    "slug": "cube-for-products",
+    "needs": "The theorem of the cube for complete varieties: for complete geometrically irreducible varieties U, V, W over a field k with rational points u₀, v₀, w₀, an invertible sheaf on U × V × W whose restrictions to {u₀} × V × W, U × {v₀} × W and U × V × {w₀} are trivial is trivial; Layer E states the case of the triple product of an abelian variety, which is a special case.",
+    "supplier": "JacobianChallenge",
+    "section": "Layer E"
   }
 ],
  "sourceIssues": [
