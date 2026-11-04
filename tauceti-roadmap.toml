@@ -142,6 +142,10 @@ skip_authors = ["bwangpj"]   # #196 is abandoned (user 2026-10-28): not tracked,
 max_folders = 10
 # A changes-needed review of a pool author's pull request is repaired in the same job; the repaired head is re-reviewed by another worker.
 repair_pool = true
+# Small repairs (the P3 findings of an accepting review) pushed onto an accepted head keep `ai-approved` and get no
+# re-review when a reply records `tauceti-roadmap-carried {from, head}` and the folders changed by at most
+# small_change_lines lines (owner decision 2026-11-04).
+carry_accept = true
 small_change_lines = 150
 
 [agents]
