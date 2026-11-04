@@ -1,0 +1,63 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "HomotopyTheoryOfCategories"
+
+[[source]]
+id = "groth2013"
+authors = "Moritz Groth"
+title = "Derivators, pointed derivators, and stable derivators"
+year = 2011
+venue = "Algebr. Geom. Topol. 13 (2013) 313-374"
+doi = "10.2140/agt.2013.13.313"
+arxiv = "1112.3840v2"
+locator_scheme = "theorem"
+locator = "Definition 1.10"
+url = "https://arxiv.org/abs/1112.3840v2"
+fetched_from = "https://arxiv.org/pdf/1112.3840v2"
+fetched_at = "2026-11-04T12:14:20Z"
+sha256 = "f38b404a3dc27f185c1963173d36a49b5cbd4bfb9744fa41b68e301718edd291"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v2"
+cited_for = ["10.2"]
+
+[[source]]
+id = "bhk1983"
+doi = "10.1016/0022-4049(83)90049-5"
+locator_scheme = "theorem"
+locator = "Theorem 2.2"
+url = "https://doi.org/10.1016/0022-4049(83)90049-5"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["1.4, 1.5"]
+
+[[source]]
+id = "brownspencer1976"
+authors = "R. Brown, C. B. Spencer"
+title = "G-groupoids, crossed modules and the fundamental groupoid of a topological group"
+year = 1976
+venue = "Indagationes Mathematicae (Proceedings) 79"
+doi = "10.1016/1385-7258(76)90068-8"
+locator_scheme = "section"
+locator = "Theorem 1"
+url = "https://doi.org/10.1016/1385-7258(76)90068-8"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["12.3, 12.7"]
+
+[[source]]
+id = "joyalstreet1993"
+authors = "A. Joyal, R. Street"
+title = "Braided Tensor Categories"
+year = 1993
+venue = "Advances in Mathematics 102"
+doi = "10.1006/aima.1993.1055"
+locator_scheme = "section"
+locator = "§3"
+url = "https://doi.org/10.1006/aima.1993.1055"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["12.5"]
