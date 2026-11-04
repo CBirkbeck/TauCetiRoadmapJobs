@@ -4,13 +4,13 @@
 
 ## Scope and ownership
 
-This continuation starts with coefficient rings, annuli, marked untilts, completed local rings and the graded Proj construction. VectorBundlesAndIsocrystals VB−1 owns those relative carriers, VB1–VB2 owns the geometric curve, its PID complements, Picard group, bundle classification and Harder–Narasimhan theory, and VB3 owns the degree-one untilt sheaf sequence. Section 6.10 extends that sequence to strict Banach sequences with repeated finite jets and several orbit-separated points. RelativeFarguesFontaine develops integral chart refinements and modifications; its foundational direction stops before the absolute function theory developed here. This roadmap owns the arbitrary-perfect-field calculations and comparisons, rather than a second curve construction.
+This continuation starts with coefficient rings, annuli, marked untilts, completed local rings and the graded Proj construction. VectorBundlesAndIsocrystals Layer 0 owns those relative carriers, its Layers 2–4 own the geometric curve, its PID complements, Picard group, bundle classification and Harder–Narasimhan theory, and its Layer 5 owns the degree-one untilt sheaf sequence. Section 6.10 extends that sequence to strict Banach sequences with repeated finite jets and several orbit-separated points. RelativeFarguesFontaine develops integral chart refinements and modifications; its foundational direction stops before the absolute function theory developed here. This roadmap owns the arbitrary-perfect-field calculations and comparisons, rather than a second curve construction.
 
 Mathlib already provides the p-typical tilt, Fontaine map and algebraic de Rham completions, the Bézout-domain vocabulary, Banach open mapping and controlled nonlinear right inverses. Tau Ceti already provides finite Weil divisors, their weighted degree, the affine finite-projective/sheaf equivalence and the p-typical topological Frobenius quotient with wandering windows. These constructions are excluded from our targets. The retained divisor object differs by locally finite support on noncompact annuli; the reconstruction target differs by its schematic-chart and norm comparison.
 
 PadicDifferentialEquationsAndRigidCohomology §RD.0.54 states the general-local-field bounded period ring, multiplicative raw Gauss norms, Frobenius, henselian overconvergent field, Robba germ, equal-characteristic annulus and finite coefficient change. Those constructions and assertions are excluded here; §§0.2, 0.10, 1.4 and 1.10 refine finite coefficient bounds, normalized endpoint comparisons, finite-extension degrees and two-variable symmetry. Its §§RD.0.18–RD.0.23 own ordinary Laurent-analytic divisors and closed ideals over complete coefficient fields. Our mixed-characteristic Witt annuli are different objects; equal-characteristic comparisons identify the specializations with that theory. AdicSpaces §§6.1–6.4 owns the p-typical adic annuli and quotient; AlgebraicVectorBundles owns generic affine bundle comparison; AdicSpacesPartIII §R3.2 owns Tate-ring gluing; SchemeAndStackFoundations §0.3 owns Proj, base change and positive Veronese invariance; OptimalTransport Layer 5 owns the general closed convex and conjugate theory. No second version of these generic theories is a target.
 
-VectorBundlesAndIsocrystals VB−1 owns the ramified Witt functor on arbitrary O_E-algebras; the finite truncations W_OE,n, the coefficient diagonal, the Q-twisted Witt comparison and the Q-Teichmüller lift [a]_Q built on it belong to §0.1, and the weak Lubin–Tate Teichmüller lift [x]_LT to §2.10, so that the coefficient layer of RelativeFarguesFontaine, later in the build, consumes them rather than constructing them again; Q-compatible inverse limits to §2.1; the general Fréchet–Stein interface to §8.4; and the analytic-field differential criterion to §11.2 here. Their specializations supply integral period geometry, distribution algebras and Berkovich arithmetic. Generic Lubin–Tate theory belongs to LubinTateFormalModulesAndQuasiCanonicalLifts LT.0–LT.2; its all-local-field contract is explicit below. The positive-degree-two Banach–Colmez obstruction belongs to VectorBundlesAndIsocrystals VB3, and is consumed as a model constraint in §11.6.
+VectorBundlesAndIsocrystals Layer 0 owns the ramified Witt functor on arbitrary O_E-algebras; the finite truncations W_OE,n, the coefficient diagonal, the Q-twisted Witt comparison and the Q-Teichmüller lift [a]_Q built on it belong to §0.1, and the weak Lubin–Tate Teichmüller lift [x]_LT to §2.10, so that the coefficient layer of RelativeFarguesFontaine, later in the build, consumes them rather than constructing them again; Q-compatible inverse limits to §2.1; the general Fréchet–Stein interface to §8.4; and the analytic-field differential criterion to §11.2 here. Their specializations supply integral period geometry, distribution algebras and Berkovich arithmetic. Generic Lubin–Tate theory belongs to LubinTateFormalModulesAndQuasiCanonicalLifts LT.0–LT.2; its all-local-field contract is explicit below. The p-typical Witt covectors belong to FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.28a; §1.12 extends them to every coefficient field and owns the bivectors, their growth condition and their summation into B⁺. The positive-degree-two Banach–Colmez obstruction belongs to VectorBundlesAndIsocrystals Layer 5, and is consumed as a model constraint in §11.6.
 
 NewtonPolygons §§0.1–0.6 supplies the common discrete convex envelope, supporting-value and slope-presentation geometry. Section 0.4 adds the real decreasing envelope of ramified Witt coefficients with right horizontal rays and its negative-geometric-slope convention; §0.5 proves the period-ring product comparison.
 
@@ -52,9 +52,9 @@ For E=ℚ_p use `TauCeti.FarguesFontaine.spaY` in `TauCeti/AlgebraicGeometry/Adi
 
 ### From TauCetiRoadmap.VectorBundlesAndIsocrystals
 
-VB−1, Ramified coefficient rings and coefficient changes, supplies W_OE(A) for every O_E-algebra A, with ghost polynomials, universal integral operations defined without ghost injectivity, functoriality, reduction and Frobenius–Verschiebung relations; on perfect inputs it supplies the strict lift, one-sided expansion, Frobenius and finite coefficient comparison. Relative annuli and their section rings supplies the rings, restriction maps and ramified norms on general perfectoid bases. Marked untilt Cartier divisors and Cartier descent supplies the ramified theta and primitive degree-one dictionary, regular inclusions and closed multiplication; Completed local period rings supplies finite thickenings and geometric complete DVRs. Rank-one Frobenius twists and Homogeneous section ring and partial schematic charts supplies P, twists, homogeneous localization and X. At an absolute field identify the sections of O(d) with P_d, with the usual eigenvalue sign. Radius dictionary: VB−1's Gauss norm sup_n|π|^n|x_n|^(ρ_VB) at ρ_VB=1/r is the normalized norm n_ρ at our raw radius ρ=q^(−r); on x=[a]π^n with v_F(a)=v both equal q^(−(n+v/r)). VB−1's Frobenius on points is precomposition with φ, sending ρ_VB to qρ_VB (raw radius ρ to ρ^(1/q)); it is the inverse of the ideal action (a)↦(φ(a)) of the Conventions, which sends π−[a] with v_F(a)=r to π−[a^q] of valuation radius qr. On functions both use the same Witt Frobenius.
+Layer 0, Ramified coefficient rings and coefficient changes, supplies W_OE(A) for every O_E-algebra A, with ghost polynomials, universal integral operations defined without ghost injectivity, functoriality, reduction and Frobenius–Verschiebung relations; on perfect inputs it supplies the strict lift, one-sided expansion, Frobenius and finite coefficient comparison. Relative annuli and their section rings supplies the rings, restriction maps and ramified norms on general perfectoid bases. Marked untilt Cartier divisors and Cartier descent supplies the ramified theta and primitive degree-one dictionary, regular inclusions and closed multiplication; Completed local period rings supplies finite thickenings and geometric complete DVRs. Rank-one Frobenius twists and Homogeneous section ring and partial schematic charts supplies P, twists, homogeneous localization and X. At an absolute field identify the sections of O(d) with P_d, with the usual eigenvalue sign. Radius dictionary: Layer 0's Gauss norm sup_n|π|^n|x_n|^(ρ_VB) at ρ_VB=1/r is the normalized norm n_ρ at our raw radius ρ=q^(−r); on x=[a]π^n with v_F(a)=v both equal q^(−(n+v/r)). Layer 0's Frobenius on points is precomposition with φ, sending ρ_VB to qρ_VB (raw radius ρ to ρ^(1/q)); it is the inverse of the ideal action (a)↦(φ(a)) of the Conventions, which sends π−[a] with v_F(a)=r to π−[a^q] of valuation radius qr. On functions both use the same Witt Frobenius.
 
-VB1, Annular Frobenius descent for bundles and Slope-sensitive cohomology of standard bundles, supplies geometric annular descent and positive-twist cohomology. Classical points and annular Dedekind rings and Regular noetherian geometric curve and PID complements supplies the geometric PID charts; VB2 Classification supplies the geometric bundle classification used for a Frobenius line, and VB2 Norm topology on twisted Frobenius invariants supplies the Banach topology of each fixed twisted Frobenius-invariant space with its independence of sufficiently small radii, a separate assertion for each twist. VB3 Lubin–Tate universal cover supplies the period/logarithm comparison; The fundamental untilt sequence and degree-one divisors supplies its degree-one sheaf sequence over an E_∞-untilt. In the geometric specialization apply sections and the supplied twist cohomology before the finite-jet refinement. Consume these at their stated coefficient and base hypotheses.
+Layer 2, Annular Frobenius descent for bundles and Slope-sensitive cohomology of standard bundles, supplies geometric annular descent and positive-twist cohomology. Classical points and annular Dedekind rings and Regular noetherian geometric curve and PID complements supplies the geometric PID charts; Layer 4, Classification and Hom/Ext calculations, supplies the geometric bundle classification used for a Frobenius line, and Layer 3, Norm topology on twisted Frobenius invariants, supplies the Banach topology of each fixed twisted Frobenius-invariant space with its independence of sufficiently small radii, a separate assertion for each twist. Layer 5, Lubin–Tate universal cover and sections of O(1), supplies the period/logarithm comparison; The fundamental untilt sequence and degree-one divisors supplies its degree-one sheaf sequence over an E_∞-untilt. In the geometric specialization apply sections and the supplied twist cohomology before the finite-jet refinement. Consume these at their stated coefficient and base hypotheses.
 
 What VectorBundlesAndIsocrystals must provide (gap:positive-degree-two-obstruction): Prove the explicit obstruction to representing the degree-two Banach–Colmez diamond B^(φ=p²) for F=ℂ_p^♭ by an analytic or perfectoid space, separately from the sufficient positive-slope representability criterion.
 
@@ -63,6 +63,10 @@ What VectorBundlesAndIsocrystals must provide (gap:positive-degree-two-obstructi
 P1.19–P1.22 supplies marked untilts and primitive ideals; P3.7 supplies algebraic closedness under tilting and P3.11–P3.12 supplies almost purity and finite étale tilting. Quantitative cochain bounds are a separate contract; §§4.1, 4.2, 7.2 and 9.3 turn those field estimates into the Witt, jet and annular statements. Finite group descent itself is AdicEtaleGeometry §A4.2a, with the Galois tensor isomorphism and faithful flatness. Infinite-tower full faithfulness is not used as an effectivity theorem.
 
 What PerfectoidSpaces must provide (gap:perfectoid-quantitative-cochains): Provide norm-controlled continuous additive and principal-unit cochain corrections for complete perfect characteristic-p fields and every marked perfectoid untilt, including finite-dimensional semilinear residue modules, with compatible bounds under finite extension and inverse limits.
+
+### From TauCetiRoadmap.FiniteFlatGroupsAndIntegralPadicHodgeTheory
+
+Section R07.2.28a supplies the p-typical Witt covectors CW over a perfect 𝔽_p-algebra base, for every algebra over that base, with the nilpotent-tail condition, stabilized addition, Frobenius, Verschiebung, finite-length Witt inclusions, nilpotent-tail subfunctors and base change; with the base 𝔽_p this covers every 𝔽_p-algebra. It asserts no ramified or equal-characteristic coefficient version, no inverse-Verschiebung limit and no summation into a period ring; those are §1.12.
 
 ### From TauCetiRoadmap.CrystallineCohomology
 
@@ -94,7 +98,7 @@ Section 0.0 supplies nonarchimedean locally convex spaces, separated completion,
 
 ### From TauCetiRoadmap.PadicDifferentialEquationsAndRigidCohomology
 
-Use §RD.0.54 for the dense bounded period ring, multiplicative raw norms, Frobenius, E†, ℛ, equal-characteristic Laurent comparison and finite coefficient change, including the chosen residue factor. Use §§RD.0.18–RD.0.23 for ordinary Laurent preparation, divisors, interpolation and closed ideals in the equal-characteristic comparison; its discrete-Cohen-coefficient analytic Bézout theorem is not an arbitrary-perfect-field Witt theorem.
+Use §RD.0.54 for the dense bounded period ring, multiplicative raw norms, Frobenius, E†, ℛ, equal-characteristic Laurent comparison and finite coefficient change, including the chosen residue factor. Use §§RD.0.18–RD.0.23 for ordinary Laurent preparation, divisors, interpolation and closed ideals in the equal-characteristic comparison; its discrete-Cohen-coefficient analytic Bézout theorem is not an arbitrary-perfect-field Witt theorem. Use §RD.0.51(b) for the fixed field of the completed algebraic closure of a complete characteristic-p field, namely the completed perfection of that field, and §RD.0.52 for the mixed-characteristic ramified Witt-coefficient fixed field; §4.1 specializes them to the perfect complete F and derives the integral and equal-characteristic Witt forms by coefficient uniqueness.
 
 ### From TauCetiRoadmap.AdicSpaces and TauCetiRoadmap.AdicSpacesPartIII
 
@@ -116,7 +120,7 @@ Compare the absolute specialization of the supplied annuli, then develop finite 
 
 For S=Spa(F,O_F), compare the supplied relative annular ring with the separated completion of Bᵇ for the raw Gauss family, after the radius conversion. Preserve E-algebra operations, restrictions, Frobenius and every interior norm. At E=ℚ_p identify it with AdicSpaces §6.3. For ρ=q^(−r), r>0, use n_ρ(f)=|f|_ρ^(1/r) for normed E-space arguments; n_ρ(π)=q⁻¹. Use n₀=|·|₀ at zero and the maximum of normalized endpoint norms on compact intervals avoiding 1. Intervals containing 1 carry discrete scalar topology on E. The comparison is independent of the chosen ϖ.
 
-For the arbitrary-coefficient support, consume the ramified Witt functor W_OE(A) of VectorBundlesAndIsocrystals VB−1 on every O_E-algebra A in mixed characteristic, with its ghost polynomials, universal integral operations, functoriality, reduction and Frobenius–Verschiebung relations. Its operations do not use ghost injectivity, so they apply to O_E/π² and to every algebra with π-torsion. Two additions are made here. The finite truncations W_OE,n(A), the quotients by the image of the n-fold Verschiebung, commute with coefficient maps. Construct the natural coefficient diagonal Δ:W_OE(A)→W_OE(W_OE(A)) whose ghost coordinates are the Frobenius iterates (F^n x)_(n≥0), and prove F∘Δ=W_OE(F)∘Δ=Δ∘F and Δ([a])=[[a]]. These identities are checked on π-torsion-free universal inputs, where the ghost map is injective, and pass to arbitrary A by specialization. (FF17, §1.2.1, p. 53, for the functor; Lemma 1.2.3 and the diagonal stated after it, p. 55; FF17 line 2276.)
+For the arbitrary-coefficient support, consume the ramified Witt functor W_OE(A) of VectorBundlesAndIsocrystals Layer 0 on every O_E-algebra A in mixed characteristic, with its ghost polynomials, universal integral operations, functoriality, reduction and Frobenius–Verschiebung relations. Its operations do not use ghost injectivity, so they apply to O_E/π² and to every algebra with π-torsion. Two additions are made here. The finite truncations W_OE,n(A), the quotients by the image of the n-fold Verschiebung, commute with coefficient maps. Construct the natural coefficient diagonal Δ:W_OE(A)→W_OE(W_OE(A)) whose ghost coordinates are the Frobenius iterates (F^n x)_(n≥0), and prove F∘Δ=W_OE(F)∘Δ=Δ∘F and Δ([a])=[[a]]. These identities are checked on π-torsion-free universal inputs, where the ghost map is injective, and pass to arbitrary A by specialization. (FF17, §1.2.1, p. 53, for the functor; Lemma 1.2.3 and the diagonal stated after it, p. 55; FF17 line 2276.)
 
 **API.**
 
@@ -131,7 +135,7 @@ For the arbitrary-coefficient support, consume the ramified Witt functor W_OE(A)
 - The first two ghost coordinates of Δ(π) are π and F(π)=π. The plausible wrong diagonal x↦[x] has second ghost coordinate π^q≠π, so it fails the defining ghost condition.
 - For equal characteristic the perfect coefficient model is O_F[[π]], whose constant coefficient is recovered by reduction modulo π.
 
-Construct the Q-twisted Witt comparison for Q(0)=0 and Q≡X^q modulo π, and the transported lift [a]_Q with ghosts Q_n(a). For perfect residue input it is the limit of Q-iterates of lifts of inverse q-power roots. In mixed characteristic derive its polynomial identities on the VB−1 functor by specialization from π-torsion-free universal algebras; in equal characteristic compare the perfect power-series model directly. In general [ab]_Q need not equal [a]_Q[b]_Q. (FF17, Proposition 1.2.7 and Example 1.2.8, pp. 57–58; FF17 line 2338.)
+Construct the Q-twisted Witt comparison for Q(0)=0 and Q≡X^q modulo π, and the transported lift [a]_Q with ghosts Q_n(a). For perfect residue input it is the limit of Q-iterates of lifts of inverse q-power roots. In mixed characteristic derive its polynomial identities on the supplied ramified Witt functor by specialization from π-torsion-free universal algebras; in equal characteristic compare the perfect power-series model directly. In general [ab]_Q need not equal [a]_Q[b]_Q. (FF17, Proposition 1.2.7 and Example 1.2.8, pp. 57–58; FF17 line 2338.)
 
 **API.**
 
@@ -154,7 +158,7 @@ One proof route uses the following steps. Compare the common dense ramified loca
 - The dense-ring comparison identifies topological rings and all restriction maps, including the exceptional endpoint-1 scalar topology.
 - Take q=2 and r=2. The raw norm of π is 1/4, whereas n_ρ(π)=(1/4)^(1/2)=1/2; at radius 1 it is 1. Omitting the exponent gives the wrong scalar norm.
 
-*Needs:* TauCetiRoadmap.VectorBundlesAndIsocrystals VB−1, Ramified coefficient rings and coefficient changes; TauCetiRoadmap.VectorBundlesAndIsocrystals VB−1, Relative annuli and their section rings; TauCetiRoadmap.AdicSpaces §§6.1–6.4; TauCetiRoadmap.PadicDifferentialEquationsAndRigidCohomology §RD.0.54.
+*Needs:* TauCetiRoadmap.VectorBundlesAndIsocrystals Layer 0, Ramified coefficient rings and coefficient changes; TauCetiRoadmap.VectorBundlesAndIsocrystals Layer 0, Relative annuli and their section rings; TauCetiRoadmap.AdicSpaces §§6.1–6.4; TauCetiRoadmap.PadicDifferentialEquationsAndRigidCohomology §RD.0.54.
 
 ### 0.2 Ramified Gauss norm calculus
 
@@ -170,7 +174,7 @@ One proof route uses the following steps. Use homogeneity and integrality of ram
 - For x=[a]π², y=[b]π³, |a|=1/2 and |b|=1/4, the product has first index 5 and norm ρ⁵/8. At k=1, N₁(πx)=N₀(x)=0. Index multiplication would give 6.
 - For q=2, v_F(a)=3, x=[a]π² and r=2, v_r(φx)=10=2v₁(x). On π alone both sides equal r, because Frobenius fixes π.
 
-*Needs:* §0.1; TauCetiRoadmap.VectorBundlesAndIsocrystals VB−1, Relative annuli and their section rings.
+*Needs:* §0.1; TauCetiRoadmap.VectorBundlesAndIsocrystals Layer 0, Relative annuli and their section rings.
 
 ### 0.3 Radial limits and coefficient topology
 
@@ -319,7 +323,7 @@ One proof route uses the following steps. Use the supplied coefficient tensor co
 - The unramified case has no spurious tensor by the whole E′ over E; the ramified case changes radii by the e-th root.
 - For e=2,f=1,q=2 and π=u(π′)², the right zero-endpoint norm of π is 1/4, the square of the left value 1/2. Interior radii change by a square root.
 
-*Needs:* §0.1; §0.2; TauCetiRoadmap.VectorBundlesAndIsocrystals VB−1, Ramified coefficient rings and coefficient changes.
+*Needs:* §0.1; §0.2; TauCetiRoadmap.VectorBundlesAndIsocrystals Layer 0, Ramified coefficient rings and coefficient changes.
 
 ### Examples
 
@@ -327,7 +331,7 @@ For slopes 2 and 5, v₁=2, v₃=5, v₆=7; the derivative drops by 1 at each of
 
 ### Dependencies
 
-Suppliers: TauCetiRoadmap.AdicSpaces, TauCetiRoadmap.LocallyAnalyticDistributions, TauCetiRoadmap.OptimalTransport, TauCetiRoadmap.VectorBundlesAndIsocrystals. The subsection Needs lines give the exact sections and hypotheses.
+Suppliers: TauCetiRoadmap.AdicSpaces, TauCetiRoadmap.LocallyAnalyticDistributions, TauCetiRoadmap.NewtonPolygons, TauCetiRoadmap.OptimalTransport, TauCetiRoadmap.PadicDifferentialEquationsAndRigidCohomology, TauCetiRoadmap.VectorBundlesAndIsocrystals. The subsection Needs lines give the exact sections and hypotheses.
 
 ## Layer 1: Boundary and positive functions
 
@@ -533,9 +537,9 @@ One proof route uses the following steps. Use the Hahn support condition to lift
 
 ### 1.12 Ramified Witt covectors and bivectors
 
-For a discrete 𝔽_q-algebra R, define the unipotent covectors CWu(R)=colim_V W_OE,n(R); full covectors allow a negative tail generating a nilpotent ideal. Put BW(R)=lim_V CW(R), and BW(O_F)=lim_(0≠a ideal O_F) BW(O_F/a). It is an O_E-module whose elements have unique formal coefficients Σ_(n in Z)[a_n]π^n with a_n in O_F and liminf_(n→-∞) q^n v_F(a_n)>0. Summation embeds this module in B⁺. Addition is the limit of the ramified Witt addition polynomials with the required q-power twists.
+For E=ℚ_p the full Witt covectors CW(R) of an 𝔽_p-algebra R, with their finite-length Witt inclusions, stabilized addition, Frobenius, Verschiebung and base change, are imported from FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.28a, with its perfect base taken to be 𝔽_p; the unipotent covectors CWu(R)=colim_V W_n(R) are its finite-support subfunctor. For a discrete 𝔽_q-algebra R and every coefficient field E, define CWu(R)=colim_V W_OE,n(R) along the ramified Verschiebung, and the full covectors CW(R) as the sequences indexed by i≤0 whose negative tail generates a nilpotent ideal, with the stabilized ramified Witt addition; at E=ℚ_p identify these with the imported functors, compatibly with F, V, the finite-length inclusions and base change. Put BW(R)=lim_V CW(R), and BW(O_F)=lim_(0≠a ideal O_F) BW(O_F/a). It is an O_E-module whose elements have unique formal coefficients Σ_(n in Z)[a_n]π^n with a_n in O_F and liminf_(n→-∞) q^n v_F(a_n)>0. Summation embeds this module in B⁺. Addition is the limit of the ramified Witt addition polynomials with the required q-power twists.
 
-One proof route uses the following steps. Construct CW and BW as limits of the imported truncated ramified Witt functor, using Verschiebung transition maps. Translate eventual nilpotence modulo every nonzero ideal into exponential growth of negative-tail valuations. The stronger growth makes the Witt carry limits converge and yields an injective summation map; this does not extend to every two-sided convergent Teichmüller series.
+One proof route uses the following steps. Construct CW for a general coefficient field from the finite truncations of §0.1 by the stabilized-addition argument of the imported p-typical construction, and BW as the limit along Verschiebung; the identification at E=ℚ_p is coefficientwise. Translate eventual nilpotence modulo every nonzero ideal into exponential growth of negative-tail valuations. The stronger growth makes the Witt carry limits converge and yields an injective summation map; this does not extend to every two-sided convergent Teichmüller series.
 
 (FF17, §1.10.2, Definition 1.10.11 and the coefficient/addition formulas, pp. 92–93; FF17 line 3850.)
 
@@ -549,12 +553,13 @@ One proof route uses the following steps. Construct CW and BW as limits of the i
 **Checks.**
 
 - A finite Teichmüller Laurent sum with coefficients in O_F lies in BW and sums to the same element of B⁺.
+- At E=ℚ_p and R=𝔽_p the identification matches CW(𝔽_p)=colim(ℤ/p^n, V=p) with the imported ℚ_p/ℤ_p, V acting as p on both. For R=𝔽_p[ε]/ε², the constant tail x_i=ε for every i≤0 is a full covector, its tail ideal (ε) squaring to zero, but not a unipotent one; a model taking CW=CWu would lose it.
 - Coefficients with v_F(a_n)=q^(-2n) for n<0 meet the growth condition.
 - Coefficients with v_F(a_n)=n^2 for n<0 converge for every linear Gauss weight but fail the bivector condition.
 - The negative-tail growth condition is stronger than convergence for each linear Gauss weight.
 - For negative index n=−m, take v_F(a_(−m))=q^(2m). Then q^(−m)v_F=q^m→∞. With v_F=m² all interior terms converge but q^(−m)m²→0, so the bivector condition fails.
 
-*Needs:* §1.6; TauCetiRoadmap.VectorBundlesAndIsocrystals VB−1, Ramified coefficient rings and coefficient changes.
+*Needs:* §1.6; §0.1; TauCetiRoadmap.VectorBundlesAndIsocrystals Layer 0, Ramified coefficient rings and coefficient changes; TauCetiRoadmap.FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.28a, Witt covectors and their Dieudonné operators.
 
 ### 1.13 Radius-dependent crystalline period rings
 
@@ -586,7 +591,7 @@ One proof route uses the following steps. Import the generic PD envelope and its
 
 For E=ℚ_p, B_(ρ^p)⁺ is contained in B_cris,ρ⁺, which is contained in B_ρ⁺. Consequently B⁺=intersection_(n≥0) φ^n(B_cris,ρ⁺). For a finite-dimensional isocrystal D over W(k)[1/p], k a perfect subfield of O_F (so the induced valuation on k is trivial), and a nonzero t in B_cris,ρ⁺ with φ(t)=pt, the φ-fixed vectors in D tensor B⁺[1/t] and D tensor B_cris,ρ⁺[1/t] coincide.
 
-One proof route uses the following steps. Compare divided-power factorial denominators with the p-adic unit-ball presentation of each positive-radius ring. Iterate Frobenius and use the characterization of its maximal bijective subring. Use the finite-dimensional Frobenius matrix on D to move a fixed vector through all iterated radii after multiplying by one common power of t. For the arbitrary perfect subfield k, use the WittVector.Isocrystal structure on the fraction field of W(k), with a separate finite-dimensionality hypothesis. Its usual W(k)[1/p] comparison follows from the Witt DVR structure. VB0 fixes the different coefficient field breve E and cannot supply this arbitrary-k carrier.
+One proof route uses the following steps. Compare divided-power factorial denominators with the p-adic unit-ball presentation of each positive-radius ring. Iterate Frobenius and use the characterization of its maximal bijective subring. Use the finite-dimensional Frobenius matrix on D to move a fixed vector through all iterated radii after multiplying by one common power of t. For the arbitrary perfect subfield k, use the WittVector.Isocrystal structure on the fraction field of W(k), with a separate finite-dimensionality hypothesis. Its usual W(k)[1/p] comparison follows from the Witt DVR structure. VectorBundlesAndIsocrystals Layer 1, Coefficient category and rational blocks, fixes the different coefficient field breve E and cannot supply this arbitrary-k carrier.
 
 (FF17, Proposition 1.10.12 and Corollary 1.10.13, p. 94; FF17 line 3941.)
 
@@ -628,7 +633,7 @@ At q=2,r=2, the ordinary radius is 2^(−1/2). The norm of X raised to power 2 i
 
 ### Dependencies
 
-Earlier layers: 0. Suppliers: TauCetiRoadmap.CrystallineCohomology, TauCetiRoadmap.DerivedDeRhamCohomology, TauCetiRoadmap.PadicDifferentialEquationsAndRigidCohomology, TauCetiRoadmap.PadicHodgeTheory, TauCetiRoadmap.VectorBundlesAndIsocrystals. The subsection Needs lines give the exact sections and hypotheses.
+Earlier layers: 0. Suppliers: TauCetiRoadmap.CrystallineCohomology, TauCetiRoadmap.DerivedDeRhamCohomology, TauCetiRoadmap.FiniteFlatGroupsAndIntegralPadicHodgeTheory, TauCetiRoadmap.PadicDifferentialEquationsAndRigidCohomology, TauCetiRoadmap.PadicHodgeTheory, TauCetiRoadmap.VectorBundlesAndIsocrystals. The subsection Needs lines give the exact sections and hypotheses.
 
 ## Layer 2: Primitive equations and marked untilts
 
@@ -657,7 +662,7 @@ One proof route uses the following steps. Lift a compatible residue sequence by 
 - The Q-compatible sequence set is given its ring structure through reduction, rather than coordinatewise addition.
 - At p=2 in O_(ℂ₂), the compatible multiplicative roots of unity sequence (1,−1,i,…) has coordinatewise sum with itself beginning (2,−2,…), which fails the squaring compatibility. Addition must be transported from the residue limit.
 
-*Needs:* TauCetiRoadmap.VectorBundlesAndIsocrystals VB−1, Ramified coefficient rings and coefficient changes; §0.1, Q-twisted Witt comparison; the π-adic completeness and separatedness of R; the native p-typical inverse-limit and Witt interfaces for comparison.
+*Needs:* TauCetiRoadmap.VectorBundlesAndIsocrystals Layer 0, Ramified coefficient rings and coefficient changes; §0.1, Q-twisted Witt comparison; the π-adic completeness and separatedness of R; the native p-typical inverse-limit and Witt interfaces for comparison.
 
 ### 2.2 Reduction invariance of the Q-limit
 
@@ -697,7 +702,7 @@ One proof route uses the following steps. Define compatible finite θ_n using tw
 - The general ramified map restricts to the supplied p-typical construction and has the stated surjectivity hypothesis.
 - For monomial Q and a Teichmüller representative [x], θ([x])=x^♯. On 1 it is 1, on 0 it is 0. Without surjective residue Frobenius the digit-lifting surjectivity argument has no residue preimage.
 
-*Needs:* TauCetiRoadmap.VectorBundlesAndIsocrystals VB−1, Ramified coefficient rings and coefficient changes; §0.1, Q-twisted Witt comparison; §2.2; `WittVector.fontaineTheta`; `WittVector.fontaineTheta_teichmuller`; `surjective_fontaineTheta`.
+*Needs:* TauCetiRoadmap.VectorBundlesAndIsocrystals Layer 0, Ramified coefficient rings and coefficient changes; §0.1, Q-twisted Witt comparison; §2.2; `WittVector.fontaineTheta`; `WittVector.fontaineTheta_teichmuller`; `surjective_fontaineTheta`.
 
 ### 2.4 Principal kernel criterion for theta
 
@@ -712,7 +717,7 @@ One proof route uses the following steps. Reduce modulo π to divide an arbitrar
 - The kernel generator is conditional on torsion-freeness and the π-times-unit hypothesis; the special [ϖ]_Q-π formula requires compatible roots.
 - For a compatible root sequence of π, θ([ϖ]_Q−π)=π−π=0. A sequence whose zeroth coordinate is not π does not give this kernel equation; π-torsion invalidates cancellation in the inductive proof.
 
-*Needs:* §2.3; TauCetiRoadmap.VectorBundlesAndIsocrystals VB−1, Ramified coefficient rings and coefficient changes; TauCetiRoadmap.VectorBundlesAndIsocrystals VB−1, Marked untilt Cartier divisors and Cartier descent.
+*Needs:* §2.3; TauCetiRoadmap.VectorBundlesAndIsocrystals Layer 0, Ramified coefficient rings and coefficient changes; TauCetiRoadmap.VectorBundlesAndIsocrystals Layer 0, Marked untilt Cartier divisors and Cartier descent.
 
 ### 2.5 Primitive equations of arbitrary degree
 
@@ -737,7 +742,7 @@ One proof route uses the following steps. Use the reduction to the residue-field
 - Primitivity includes a nonzero constant coefficient; π itself is not primitive.
 - For a=π−[a₀] with 0<|a₀|<1 the primitive degree is 1; its square has degree 2. The element π has zero constant coefficient and fails primitivity; 1 has degree 0.
 
-*Needs:* §0.4; TauCetiRoadmap.VectorBundlesAndIsocrystals VB−1, Marked untilt Cartier divisors and Cartier descent.
+*Needs:* §0.4; TauCetiRoadmap.VectorBundlesAndIsocrystals Layer 0, Marked untilt Cartier divisors and Cartier descent.
 
 ### 2.6 Weierstrass division at a degree-one untilt
 
@@ -860,6 +865,7 @@ One proof route uses the following steps. Identify ε as a generator of the Lubi
 
 - The projectivization uses E×, the point parametrization O_E×, and Frobenius rescales the residue valuation.
 - Multiplication of ε by an O_E-unit preserves its primitive point. Multiplication by π changes the point to its Frobenius translate; v_y(π)=2 becomes 2q, not 2. Projectivization uses E×, not O_E× alone.
+- For ε₂=π·ε₁=ε₁^q, every a·ε₂ with a in O_E× has v_F(a·ε₂)=q·v_F(ε₁)>v_F(ε₁), so the proximity sup_a v_F(ε₁−a·ε₂) equals v_F(ε₁) and is finite, although y_(ε₂)=φ(y_(ε₁)); the O_E×-quotient separates a point from its Frobenius translate, as the E×-quotient would not.
 
 *Needs:* §2.10; §2.9; TauCetiRoadmap.LubinTateFormalModulesAndQuasiCanonicalLifts §LT.2, Tate module; TauCetiRoadmap.LubinTateFormalModulesAndQuasiCanonicalLifts §LT.1, Lubin–Tate formal module.
 
@@ -902,7 +908,7 @@ In equal characteristic y_a=(π−a), y_b=(π−b) give δ=v_F(a−b) and d=|a�
 
 ### Dependencies
 
-Earlier layers: 0, 1. Suppliers: TauCetiRoadmap.LubinTateFormalModulesAndQuasiCanonicalLifts, TauCetiRoadmap.PerfectoidSpaces, TauCetiRoadmap.VectorBundlesAndIsocrystals. The subsection Needs lines give the exact sections and hypotheses.
+Earlier layers: 0. Suppliers: TauCetiRoadmap.LubinTateFormalModulesAndQuasiCanonicalLifts, TauCetiRoadmap.PerfectoidSpaces, TauCetiRoadmap.VectorBundlesAndIsocrystals. The subsection Needs lines give the exact sections and hypotheses.
 
 ## Layer 3: Geometric zeros and divisors
 
@@ -918,7 +924,7 @@ One proof route uses the following steps. Let λ be the least positive source sl
 
 **Checks.**
 
-- The argument controls both increasing evaluation precision and a uniform radius bound before taking a limit.
+- Over algebraically closed F, (π−[a])² has two degree-one factors counted with multiplicity; a model counting distinct zeros would return one factor.
 - A degree-two primitive product (π−[a])(π−[b]) factors into exactly two degree-one equations. The empty degree-zero product is a unit and has no primitive point factors.
 
 *Needs:* §2.6; §2.9; §0.5.
@@ -933,10 +939,10 @@ One proof route uses the following steps. Bound every Teichmüller summand by it
 
 **Checks.**
 
-- The kernel assertion requires the closed-image estimate, not only continuity of evaluation.
+- For f=1, θ_y(1)=1 and the Gauss bound reads 1≤1; 1 is not in the kernel m_y B_I, so a model with kernel all of B_I, such as the zero map, is excluded.
 - At y_a=(π−a), evaluation of π−a is 0 and its Gauss norm at |a| is |a|. If v_F(a)=2 and f=π+[b] with v_F(b)=3, evaluation has valuation 2=min(2,3).
 
-*Needs:* §3.1; TauCetiRoadmap.VectorBundlesAndIsocrystals VB−1, Marked untilt Cartier divisors and Cartier descent.
+*Needs:* §3.1; TauCetiRoadmap.VectorBundlesAndIsocrystals Layer 0, Marked untilt Cartier divisors and Cartier descent.
 
 ### 3.3 A zero at every Newton slope
 
@@ -948,7 +954,7 @@ One proof route uses the following steps. For f in A truncate its Teichmüller e
 
 **Checks.**
 
-- The source slope is λ=-log_q||y||, with multiplicity the local vanishing order, not the radius ||y|| itself.
+- If |a|=q⁻², the source slope of π−[a] is 2 and its zero is the point y with v_y(π)=2, of radius ||y||=q⁻²; a model placing the zero at radius 2, or reading the slope as q⁻², is excluded.
 - For (π−[a])² the source slope v_F(a) occurs with multiplicity 2. Removing one primitive factor leaves multiplicity 1, and removing two leaves a unit.
 
 *Needs:* §3.2; §3.1; §0.8.
@@ -963,14 +969,14 @@ One proof route uses the following steps. Use the supplied affinoid PID result o
 
 **Checks.**
 
-- The arbitrary compact-interval refinement includes irrational singleton fields and the extra π′ in the integral boundary-zero ring.
+- For F=ℂ_p^♭, whose value group is p^ℚ, and I={p^(−√2)}, no classical point has radius p^(−√2): B_I is a field whose only maximal ideal is (0), not a classical point, whereas a model asserting a point at every radius returns one.
 - At I={0} every nonzero π^n is invertible in the field. In the integral boundary ring, π has order 1 and generates the additional maximal ideal; it is not an interior classical point.
 
-*Needs:* §3.3; §1.3; TauCetiRoadmap.VectorBundlesAndIsocrystals VB1, Classical points and annular Dedekind rings.
+*Needs:* §3.3; §1.3; TauCetiRoadmap.VectorBundlesAndIsocrystals Layer 2, Classical points and annular Dedekind rings.
 
 ### 3.5 Weierstrass products near radius zero
 
-For a finite or countable family 0≠z_i in m_F, tending to zero if infinite, define W=∏_i(1-[z_i]/π), with empty product 1. The product converges in B⁺, uniformly for every compact positive-radius interval. For a nonzero f in B_I whose radii approach 0, list all zeros below a fixed ρ₀ with multiplicity and choose their linear generators π-[z_i]. Then f=Wg with g in B_(I union {0}) and no zeros below ρ₀. If f in B_(0,1], then g in Bᵇ; if f in B⁺, then g in A[1/π].
+For a finite or countable family 0≠z_i in m_F, tending to zero if infinite, define W=∏_i(1-[z_i]/π), with empty product 1. The product converges in B⁺, uniformly for every compact positive-radius interval; this convergence assertion holds for every standing F. The decomposition assumes F algebraically closed: for I⊆(0,1] whose radii approach 0, a nonzero f in B_I and ρ₀ in I, every zero of f of radius at most ρ₀ is a degree-one point by §3.1, so list these zeros with multiplicity and choose their linear generators π-[z_i]. Then f=Wg with g in B_(I union {0}) and no zeros of radius at most ρ₀. If f in B_(0,1], then g in Bᵇ; if f in B⁺, then g in A[1/π]. Over a general perfect F the near-zero product with an exact prescribed divisor is §4.9, built from normalized factors of arbitrary primitive degree.
 
 One proof route uses the following steps. On a compact J, the norm of [z_i]/π tends uniformly to zero, so the nonarchimedean product converges. Divide successively by the selected linear factors; the Newton norm formula bounds the quotient norms. Show the quotient differences tend to zero on every compact J. The zero-free near-0 remainder extends by the boundary theorem.
 
@@ -988,6 +994,7 @@ One proof route uses the following steps. On a compact J, the norm of [z_i]/π t
 - The empty product is 1 with zero divisor.
 - A single factor gives 1-[z]/π and the empty family gives 1. An infinite family with |z_i↦0 gives the same exact-divisor construction on every compact positive-radius interval.
 - Repeating a fixed nonzero z infinitely often does not meet the convergence hypothesis.
+- Over F the completed perfection of 𝔽₃((t)) with v_F(t)=1 and E=𝔽₃((π)), f=π²−t is primitive of degree 2 with the single slope 1/2, but no z in F has v_F(z)=1/2, since the value group of F is ℤ[1/3]; f has no linear factor π−[z], and its zero of radius 3^(−1/2) is a degree-two point. The general-field factor of §4.9 is (π²−t)/π²=1−[t]/π², which over the completed algebraic closure splits as (1−[√t]/π)(1+[√t]/π) with the same weighted divisor; the linear decomposition needs algebraic closedness.
 - The construction produces the exact near-zero divisor, and the zero-free remainder, rather than the original function, extends to radius 0.
 - The empty product is 1 and has divisor 0. A one-factor product 1−[z]/π has one zero at radius |z|; if |z_i↦0 then for fixed ρ>0 the error norms |z_i|/ρ→0.
 
@@ -1017,7 +1024,7 @@ One proof route uses the following steps. Use imported completed-local DVRs to d
 - Local finiteness permits infinitely many points escaping to a missing boundary, while the finite-support specialization is the supplied finite Weil-divisor carrier.
 - A point divisor with local order 2 has coefficient 2; two distinct point divisors add coefficientwise. A sequence of radii q^(−n) is locally finite in (0,1) but has infinite total support.
 
-*Needs:* §3.2; §3.3; TauCetiRoadmap.VectorBundlesAndIsocrystals VB−1, Completed local period rings; `TauCeti.AlgebraicGeometry.WeilDivisor`; `TauCeti.AlgebraicGeometry.WeilDivisor.weightedDegree`.
+*Needs:* §3.2; §3.3; TauCetiRoadmap.VectorBundlesAndIsocrystals Layer 0, Completed local period rings; `TauCeti.AlgebraicGeometry.WeilDivisor`; `TauCeti.AlgebraicGeometry.WeilDivisor.weightedDegree`.
 
 ### 3.7 Divisibility detected by zeros
 
@@ -1048,9 +1055,9 @@ Use quantitative perfect-field descent to recover weighted primitive points and 
 
 ### 4.1 Almost traces and completed fixed fields
 
-Let C=completion of an algebraic closure of the perfect rank-one field F and G_F=Gal(Fbar/F). For finite L/F, m_F is contained in Tr_(L/F)(O_L). Continuous cohomology satisfies m_F H^1(G_F,O_C)=0, H^1(G_F,m_C)=0 and H^1(G_F,1+m_C)=0. Moreover C^(G_F)=F and W_OE(O_C)^(G_F)=A_F.
+Let C=completion of an algebraic closure of the perfect rank-one field F and G_F=Gal(Fbar/F). For finite L/F, m_F is contained in Tr_(L/F)(O_L). Continuous cohomology satisfies m_F H^1(G_F,O_C)=0, H^1(G_F,m_C)=0 and H^1(G_F,1+m_C)=0. Moreover C^(G_F)=F, imported from PadicDifferentialEquationsAndRigidCohomology §RD.0.51(b), which identifies the invariants of a completed algebraic closure of a complete characteristic-p field κ with the completed perfection of κ; for the standing perfect complete F that is F itself. Uniqueness of the one-sided Teichmüller expansion, with G_F fixing π, then gives W_OE(O_C)^(G_F)=A_F for every coefficient field E; for mixed-characteristic E the ramified Witt-coefficient fixed-field statement is §RD.0.52, and the integral and equal-characteristic forms are its coefficientwise consequence stated here.
 
-One proof route uses the following steps. A nonzero trace exists by separability. Taking inverse q-power roots gives trace values whose valuations tend to 0, hence absolute values tend to 1; these generate an ideal containing m_F. Use approximate finite-level averaging with these traces to correct continuous additive and multiplicative cocycles by successively smaller errors. For m_C choose the correction bounds summably inside its open unit ball. The same approximation estimates give the Ax fixed-field assertion; apply uniqueness of Witt coefficients to obtain A-invariants. The completed fixed-field estimate uses the quantitative PerfectoidSpaces contract.
+One proof route uses the following steps. A nonzero trace exists by separability. Taking inverse q-power roots gives trace values whose valuations tend to 0, hence absolute values tend to 1; these generate an ideal containing m_F. Use approximate finite-level averaging with these traces to correct continuous additive and multiplicative cocycles by successively smaller errors. For m_C choose the correction bounds summably inside its open unit ball. The fixed-field assertion is imported; apply uniqueness of Witt coefficients to obtain the A-invariants. The quantitative PerfectoidSpaces contract is used for the continuous cohomology assertions, not to reprove the fixed-field theorem.
 
 (FF17, Chapter 3 introduction, p. 133; Lemma 3.1.1 and Corollary 3.1.2, p. 134; FF17 line 5440.)
 
@@ -1058,8 +1065,9 @@ One proof route uses the following steps. A nonzero trace exists by separability
 
 - The trace absolute values tend to 1, and all cohomology is continuous for the valued topologies.
 - For L=F the trace is the identity. In a separable degree-p extension in characteristic p, Tr(1)=p=0, although the trace map is nonzero; averaging by 1/[L:F] is invalid.
+- For F the completed perfection of 𝔽_p((t)), the completed perfection of F is F, so the imported statement gives C^(G_F)=F. For the imperfect field 𝔽_p((t)), excluded by the Conventions, the invariants are its completed perfection and contain t^(1/p); a model asserting C^(G_κ)=κ for every complete κ fails there.
 
-*Needs:* TauCetiRoadmap.PerfectoidSpaces §§P3.11–P3.12; TauCetiRoadmap.PerfectoidSpaces Layer P3.
+*Needs:* TauCetiRoadmap.PerfectoidSpaces §§P3.11–P3.12; TauCetiRoadmap.PerfectoidSpaces Layer P3; TauCetiRoadmap.PadicDifferentialEquationsAndRigidCohomology §RD.0.51, Fixed fields of completed algebraic closures in characteristic p.
 
 ### 4.2 Vanishing for ramified Witt principal units
 
@@ -1119,8 +1127,9 @@ One proof route uses the following steps. Use the orbit factorization to identif
 
 - The marking is continuous. A degree-one equation has the special form [c]-π only if the untilt contains a compatible π-root system.
 - A degree-two point has [K_y^♭:F]=2 and two geometric conjugates. A_F→O_(K_y) is not surjective in that case; degree one gives surjectivity.
+- Composing the marking ι with the Frobenius of F leaves the field K_y unchanged and replaces the degree-one point (π−[c]) by (π−[c^(1/q)]), the translate φ⁻¹(y) in the ideal action of the Conventions, with v_(φ⁻¹y)(π)=v_F(c)/q; points classify marked pairs, so a model classifying fields alone would identify y with its translates.
 
-*Needs:* §4.4; §4.1; §2.3; TauCetiRoadmap.VectorBundlesAndIsocrystals VB−1, Marked untilt Cartier divisors and Cartier descent; TauCetiRoadmap.PerfectoidSpaces §§P3.11–P3.12.
+*Needs:* §4.4; §4.1; §2.3; TauCetiRoadmap.VectorBundlesAndIsocrystals Layer 0, Marked untilt Cartier divisors and Cartier descent; TauCetiRoadmap.PerfectoidSpaces §§P3.11–P3.12.
 
 ### 4.6 Radius and degree of a general primitive point
 
@@ -1161,7 +1170,7 @@ One proof route uses the following steps. A zero at a slope exists over C; the f
 - A degree-three point with local order 2 contributes 3·2=6 to the Newton jump and splits into three geometric points, each of local order 2.
 - For y of degree 2 and n=2, B_(F,J)/(a_y²) has length 2 with the chain 0⊂(a_y)/(a_y²)⊂B_(F,J)/(a_y²), each step a one-dimensional K_y-space; it is not K_y×K_y. A model taking the completion of B_(F,J) at y to be a product of the two geometric completions would get two maximal ideals here.
 
-*Needs:* §4.6; §4.5; §4.4; §3.6; §3.3; §3.2; TauCetiRoadmap.VectorBundlesAndIsocrystals VB−1, Completed local period rings, at geometric points.
+*Needs:* §4.6; §4.5; §4.4; §3.6; §3.3; §3.2; TauCetiRoadmap.VectorBundlesAndIsocrystals Layer 0, Completed local period rings, at geometric points.
 
 ### 4.8 Degree-independent normalized primitive generators
 
@@ -1209,7 +1218,7 @@ A degree-three point with local order 2 contributes 3·2=6 to the Newton jump an
 
 ### Dependencies
 
-Earlier layers: 0, 1, 2, 3. Suppliers: TauCetiRoadmap.PerfectoidSpaces, TauCetiRoadmap.VectorBundlesAndIsocrystals. The subsection Needs lines give the exact sections and hypotheses.
+Earlier layers: 0, 2, 3. Suppliers: TauCetiRoadmap.PadicDifferentialEquationsAndRigidCohomology, TauCetiRoadmap.PerfectoidSpaces, TauCetiRoadmap.VectorBundlesAndIsocrystals. The subsection Needs lines give the exact sections and hypotheses.
 
 ## Layer 5: Closed ideals and meromorphic functions
 
@@ -1283,7 +1292,7 @@ If I ⊆ (0,1) has a missing boundary and a sequence of distinct classical point
 
 Use I=(0,ρ], 0<ρ<1, and points with radii tending to 0 for the explicit construction. No assertion is made that every interval automatically has such a sequence over every F.
 
-One proof route uses the following steps. The general-field Weierstrass majorant gives a nonzero f with infinitely many escaping zeros. Its full divisor is locally finite. On each J_n form the finite product a_n of primitive generators with exactly the orders of f there; the divisor criterion shows g_n=f/a_n belongs to B_I. For nested J_n, a_n divides a_(n+1), so (g_n) is contained in (g_(n+1)). Every g_n has at least one remaining escaping zero, hence is not a unit; the union is proper. For a fixed J_m, a sufficiently late g_n has no zero there and is a unit in B_(J_m). Since B_I is dense in B_(J_m), (g_n) has dense image in B_(J_m). An exhaustion tests every finite family of seminorms, proving density in B_I. A maximal ideal containing this proper dense ideal cannot be closed. In the near-zero case exact tail products give a direct example.
+One proof route uses the following steps. The general-field Weierstrass majorant gives a nonzero f with infinitely many escaping zeros. Its full divisor is locally finite. On each J_n form the finite product a_n of primitive generators with exactly the orders of f there; the divisor criterion shows g_n=f/a_n belongs to B_I. For nested J_n, a_n divides a_(n+1), so (g_n) is contained in (g_(n+1)). Every g_n has at least one remaining escaping zero, hence is not a unit; the union is proper. For a fixed J_m, a sufficiently late g_n has no zero there and is a unit in B_(J_m). Since B_I is dense in B_(J_m), (g_n) has dense image in B_(J_m). An exhaustion tests every finite family of seminorms, proving density in B_I. A maximal ideal containing this proper dense ideal cannot be closed. In the near-zero case the exact tail products of §4.9 give a direct example.
 
 (FF17, Compare Theorem 3.5.7, p. 147, and the distinction between closed ideals and ideals in §3.5.2, p. 146; construction from these results; FF17 line 5936.)
 
@@ -1292,7 +1301,7 @@ One proof route uses the following steps. The general-field Weierstrass majorant
 - The compact deletion removes every zero of the chosen majorant, including extra zeros; a fixed compact restriction of a late generator is a unit. The ideal is therefore dense and proper without assuming an outer-boundary product is exact.
 - After deleting all zeros of f in J_n, g_n has order 0 at every point of J_n and still has order ≥1 at an escaping zero. Thus g_n is a compact unit but not a global unit.
 
-*Needs:* §5.3; §3.5; §4.9; §5.2; §0.6.
+*Needs:* §5.3; §4.9; §5.2; §0.6.
 
 ### 5.6 Meromorphic functions on the period domain
 
@@ -1357,7 +1366,7 @@ The minimum of local orders 2 and 3 is 2, giving the generator a_y². For a zero
 
 ### Dependencies
 
-Earlier layers: 3, 4. Suppliers: TauCetiRoadmap.PadicDifferentialEquationsAndRigidCohomology. The subsection Needs lines give the exact sections and hypotheses.
+Earlier layers: 0, 1, 3, 4. Suppliers: TauCetiRoadmap.PadicDifferentialEquationsAndRigidCohomology. The subsection Needs lines give the exact sections and hypotheses.
 
 ## Layer 6: Frobenius eigenvectors and orbit products
 
@@ -1365,7 +1374,7 @@ Refine eigenspace topology and construct full orbit products and their finite-je
 
 ### 6.1 Banach topology of Frobenius eigenspaces
 
-Refine the supplied equality B^(φ^h=π^d)=(B⁺)^(φ^h=π^d), for d≥0,h≥1 and the required residue constants, by its Banach E_h-topology. That topology and its independence of sufficiently small annular radii are imported from VectorBundlesAndIsocrystals VB2, Norm topology on twisted Frobenius invariants, for the finite projective Robba Frobenius module of the standard slope-d/h bundle. Prove here that for any 0<ρ<1 the compact fundamental interval [ρ,ρ^(1/q^h)] gives an equivalent norm. For d>0 the boundary quotient induces an algebraic E_h-linear isomorphism onto barB^(φ^h=π^d), whose inverse sends a lift x to lim_k π^(−kd)φ^(kh)(x). Transport the Banach topology through this isomorphism. The inherited boundary-valuation topology is discrete on the positive eigenspace and cannot replace it. Degree zero gives E_h and negative degrees give zero.
+Refine the supplied equality B^(φ^h=π^d)=(B⁺)^(φ^h=π^d), for d≥0,h≥1 and the required residue constants, by its Banach E_h-topology. That topology and its independence of sufficiently small annular radii are imported from VectorBundlesAndIsocrystals Layer 3, Norm topology on twisted Frobenius invariants, for the finite projective Robba Frobenius module of the standard slope-d/h bundle. Prove here that for any 0<ρ<1 the compact fundamental interval [ρ,ρ^(1/q^h)] gives an equivalent norm. For d>0 the boundary quotient induces an algebraic E_h-linear isomorphism onto barB^(φ^h=π^d), whose inverse sends a lift x to lim_k π^(−kd)φ^(kh)(x). Transport the Banach topology through this isomorphism. The inherited boundary-valuation topology is discrete on the positive eigenspace and cannot replace it. Degree zero gives E_h and negative degrees give zero.
 
 For the E_h-scalar description assume F contains F_(q^h); otherwise use the corresponding unramified constant subfield actually present in F.
 
@@ -1378,7 +1387,7 @@ One proof route uses the following steps. Use the imported eigenvector compariso
 - The quotient-limit formula is for d>0. The norm is on the stated eigenspace with its usual local-field scalars, not the endpoint-1 ring topology.
 - For q=2, h=1,d=1 a nonzero quotient eigenvector has boundary value v₀=0; its inherited norm is 1. For d=0 the fixed space is E; for d=−1 it is 0.
 
-*Needs:* §1.15; TauCetiRoadmap.VectorBundlesAndIsocrystals VB−1, Rank-one Frobenius twists and Homogeneous section ring; TauCetiRoadmap.VectorBundlesAndIsocrystals VB1, Slope-sensitive cohomology of standard bundles; TauCetiRoadmap.VectorBundlesAndIsocrystals VB2, Norm topology on twisted Frobenius invariants.
+*Needs:* §1.15; TauCetiRoadmap.VectorBundlesAndIsocrystals Layer 0, Rank-one Frobenius twists and Homogeneous section ring; TauCetiRoadmap.VectorBundlesAndIsocrystals Layer 2, Slope-sensitive cohomology of standard bundles; TauCetiRoadmap.VectorBundlesAndIsocrystals Layer 3, Norm topology on twisted Frobenius invariants.
 
 ### 6.2 Coefficient and uniformizer transport of eigenvectors
 
@@ -1426,7 +1435,7 @@ One proof route uses the following steps. Frobenius acts freely on positive radi
 
 For b in M_d={b in A ∖ π A:b modulo W(m_F) equals π^d}, d≥0, define Pi_plus(b)=∏_(n≥0) φ^n(b)/π^d. The product converges in B⁺, satisfies φ(Pi_plus(b))=π^d Pi_plus(b)/b, and has divisor Σ_(n≥0) φ^n(div b), with the Frobenius ideal action specified in Conventions. It is multiplicative in b. M_0 is the group of b congruent to 1 modulo W(m_F), and M_d/M_0 identifies with primitive degree-d ideals.
 
-One proof route uses the following steps. On any compact radial interval the factors approach 1 exponentially in q^n by the positive coefficient bound. Use complete nonarchimedean product convergence and shift the index to obtain the eigen-ratio identity. Extract local orders after restricting to a compact annulus, where only finitely many factors have zeros. Compare normalizing two primitive generators by a unit.
+One proof route uses the following steps. On a compact radial interval J⊆(0,1) the normalized factors φ^n(b)/π^d tend to 1 uniformly: b/π^d−1 is the sum of the Teichmüller terms [b_m]π^(m−d) with m≠d, all b_m in m_F, and of [b_d]−1 in W(m_F); for a prescribed error, first choose a cutoff M so that the terms with m>M lie below it on J for every n, then raise the finitely many remaining coefficients to high q-powers. No uniform rate exponential in q^n is asserted, since the coefficient valuations need not be bounded below. Use complete nonarchimedean product convergence and shift the index to obtain the eigen-ratio identity. Extract local orders after restricting to a compact annulus, where only finitely many factors have zeros. Compare normalizing two primitive generators by a unit.
 
 (FF17, §6.2.3, pp. 247–248; Definition 6.2.11, p. 250; FF17 line 10013.)
 
@@ -1443,6 +1452,7 @@ One proof route uses the following steps. On any compact radial interval the fac
 - b=π^d for d>0 is not in M_d, because it lies in π A; it cannot serve as a primitive point.
 - Shifting finite products leaves exactly the b/π^d denominator, determining the sign in the Frobenius ratio.
 - The normalized factors b/π^d, not the unnormalized iterates, converge to 1.
+- In equal characteristic with q=2, v_F(t)=1 and b=1+Σ_(i≥1)[t^(2^(−i))]π^i in M₀, the raw valuation at ρ=1/2 is v₁(φ^k(b)−1)=min_(i≥1)(2^(k−i)+i)=k+1 for k≥1. The factors tend to 1, so the product converges, but v₁(φ^k(b)−1)/2^k→0; a route asserting an error exponentially small in q^k is refuted.
 - For b=π−[a], the first two normalized factors are (1−[a]/π)(1−[a^q]/π); shifting deletes the first factor and multiplies the quotient by π/b. For b=1 the product is 1.
 
 *Needs:* §1.6; §4.8.
@@ -1459,6 +1469,7 @@ One proof route uses the following steps. For general b in Bᵇ with v_π(b)=0, 
 
 - The fixed-field uniqueness argument takes place in W_OE(F)[1/π], not in Frac(B), whose Frobenius invariants are the nonconstant function field.
 - For b=1, the solution space is E and its normalized generator is 1. The unnormalized product of backward factors 1 does not select a distinguished scalar; the solution is an E-line.
+- For b=π−[a] with v_F(a)=1 and q=2, the divisor of Pi_minus(b) consists of the points π−[a^(2^n)] for n<0, of radii 2^(−1/2), 2^(−1/4), …, accumulating only toward 1 and none of radius at most 1/2; the normalized solution lies in A∖πA. A model whose zeros were the forward translates n≥0, of radii 1/2, 1/4, 1/16, …, accumulating at 0, could not lie in Bᵇ, whose elements have only finitely many zeros of radius at most ρ for each ρ<1.
 
 *Needs:* §1.1; §3.3; §6.4.
 
@@ -1474,6 +1485,7 @@ One proof route uses the following steps. Multiply the two functional equations 
 
 - The construction is only canonical as an E×-class, which is precisely the quotient used in the homogeneous monoid.
 - The recurrences multiply to φ(Π₊Π₋)=π^dΠ₊Π₋. For d=1 the positive and negative orbit half-tails combine to coefficient 1 at every integer translate.
+- For b in M₀, Pi(b) lies in P₀=E and is a nonzero scalar, so for u in M₀ the classes of Pi(ub) and Pi(b) agree modulo E×. For d=1, q=2 and ||y||=1/2, the divisor of Pi(b) has one point at each radius 2^(−2^n), n in ℤ, and its weighted degree on the fundamental annulus (1/4,1/2] is 1; Pi_plus(b) alone has the same degree there but no zero of radius above 1/2.
 
 *Needs:* §6.4; §6.5; §6.3.
 
@@ -1490,7 +1502,7 @@ One proof route uses the following steps. Use a primitive factor at a zero and t
 - The free object is a commutative monoid, not a group, and the theorem is restricted to homogeneous elements.
 - A degree-two homogeneous element has two degree-one factors, with multiplicities (2) or (1,1). The degree-zero class is the empty product; no factorization assertion about an inhomogeneous sum follows.
 
-*Needs:* §6.6; TauCetiRoadmap.VectorBundlesAndIsocrystals VB−1, Rank-one Frobenius twists and Homogeneous section ring.
+*Needs:* §6.6; TauCetiRoadmap.VectorBundlesAndIsocrystals Layer 0, Rank-one Frobenius twists and Homogeneous section ring.
 
 ### 6.8 Divisors of homogeneous eigenvectors
 
@@ -1534,7 +1546,7 @@ One proof route uses the following steps. Read the kernel using the orbit-diviso
 - The orbit separation hypothesis is checked before evaluation; repeated points mean higher de Rham jets, not multiple independent copies of the residue field.
 - For d=0 the quotient by the empty product ideal is 0 and the sequence is 0→E→E→0. For a point repeated twice the target is B_dR⁺/(ξ²), of length 2, rather than K_y×K_y.
 
-*Needs:* §6.8; §6.9; TauCetiRoadmap.VectorBundlesAndIsocrystals VB3, Lubin–Tate universal cover and The fundamental untilt sequence and degree-one divisors; TauCetiRoadmap.VectorBundlesAndIsocrystals VB1, Slope-sensitive cohomology of standard bundles; TauCetiRoadmap.VectorBundlesAndIsocrystals VB−1, Completed local period rings.
+*Needs:* §6.8; §6.9; TauCetiRoadmap.VectorBundlesAndIsocrystals Layer 5, Lubin–Tate universal cover and sections of O(1) and The fundamental untilt sequence and degree-one divisors; TauCetiRoadmap.VectorBundlesAndIsocrystals Layer 2, Slope-sensitive cohomology of standard bundles; TauCetiRoadmap.VectorBundlesAndIsocrystals Layer 0, Completed local period rings.
 
 ### 6.11 Graded fibres and backward-orbit interpolation
 
@@ -1559,7 +1571,7 @@ For one point, div(Π₋) has translates n<0 and div(φΠ₋) has n≤0. For nei
 
 ### Dependencies
 
-Earlier layers: 0, 1, 3, 4, 5. Suppliers: TauCetiRoadmap.LubinTateFormalModulesAndQuasiCanonicalLifts, TauCetiRoadmap.VectorBundlesAndIsocrystals. The subsection Needs lines give the exact sections and hypotheses.
+Earlier layers: 0, 1, 2, 3, 4, 5. Suppliers: TauCetiRoadmap.LubinTateFormalModulesAndQuasiCanonicalLifts, TauCetiRoadmap.VectorBundlesAndIsocrystals. The subsection Needs lines give the exact sections and hypotheses.
 
 ## Layer 7: Dedekind charts and the weighted schematic curve
 
@@ -1578,7 +1590,7 @@ One proof route uses the following steps. Use the supplied chart identification 
 - Be means invariant functions after inverting t; it is not Frac(B)^(φ=1). A nonnegative additive pole degree that vanishes exactly on units supplies the additional hypothesis for the minimum-degree principality argument.
 - For a,b of pole orders 2 and 3, ν(ab)=5; a nonzero constant has ν=0. The weak remainder bound ν(r)≤3 permits equality 3, so it cannot establish strict Euclidean descent.
 
-*Needs:* §6.7; §6.10; TauCetiRoadmap.VectorBundlesAndIsocrystals VB1, Regular noetherian geometric curve and PID complements; TauCetiRoadmap.VectorBundlesAndIsocrystals VB1, Classical points and annular Dedekind rings; `IsBezout`; `IsBezout.TFAE`.
+*Needs:* §6.7; §6.10; TauCetiRoadmap.VectorBundlesAndIsocrystals Layer 2, Regular noetherian geometric curve and PID complements; TauCetiRoadmap.VectorBundlesAndIsocrystals Layer 2, Classical points and annular Dedekind rings; `IsBezout`; `IsBezout.TFAE`.
 
 ### 7.2 Continuous descent of de Rham jets
 
@@ -1594,7 +1606,7 @@ One proof route uses the following steps. For n=1 use the marked-untilt field co
 
 - For jet order 0 the module is 0. For B_dR⁺/(ξ²), the ξ-adic filtration has two residue-field graded pieces; descending only the first loses length 1.
 
-*Needs:* §4.4; TauCetiRoadmap.VectorBundlesAndIsocrystals VB−1, Completed local period rings; TauCetiRoadmap.PerfectoidSpaces Layer P3.
+*Needs:* §4.4; TauCetiRoadmap.VectorBundlesAndIsocrystals Layer 0, Completed local period rings; TauCetiRoadmap.PerfectoidSpaces Layer P3.
 
 ### 7.3 Galois cohomology of positive eigenvectors
 
@@ -1656,7 +1668,7 @@ One proof route uses the following steps. Choose two degree-one sections with di
 - Generation means a sum of products. The equal-characteristic proof retains a separable quadratic extension.
 - The degree-zero symmetric power is E and maps identically to P₀. In characteristic 2, X²+πX+π has derivative π≠0 and is Eisenstein, whereas X²−π has derivative 0.
 
-*Needs:* §7.3; §6.2; TauCetiRoadmap.VectorBundlesAndIsocrystals VB1, Slope-sensitive cohomology of standard bundles.
+*Needs:* §7.3; §6.2; TauCetiRoadmap.VectorBundlesAndIsocrystals Layer 2, Slope-sensitive cohomology of standard bundles.
 
 ### 7.7 The schematic curve over general F
 
@@ -1671,7 +1683,7 @@ One proof route uses the following steps. Degree-one generation covers Proj by t
 - The conclusion is a regular noetherian curve, with a specified weighted degree convention, rather than a finite-type E-curve.
 - For a quotient s/t of degree-one sections the weighted degrees of zeros and poles are 1 and 1, giving 1−1=0. A nonzero constant has every order 0 and total degree 0.
 
-*Needs:* §7.4; §7.6; §6.8; TauCetiRoadmap.VectorBundlesAndIsocrystals VB−1, Rank-one Frobenius twists and Homogeneous section ring.
+*Needs:* §7.4; §7.6; §6.8; TauCetiRoadmap.VectorBundlesAndIsocrystals Layer 0, Rank-one Frobenius twists and Homogeneous section ring.
 
 ### Examples
 
@@ -1679,7 +1691,7 @@ The degree-zero symmetric power is E and maps identically to P₀. In characteri
 
 ### Dependencies
 
-Earlier layers: 4, 5, 6. Suppliers: TauCetiRoadmap.PerfectoidSpaces, TauCetiRoadmap.VectorBundlesAndIsocrystals. The subsection Needs lines give the exact sections and hypotheses.
+Earlier layers: 2, 4, 5, 6. Suppliers: TauCetiRoadmap.PerfectoidSpaces, TauCetiRoadmap.VectorBundlesAndIsocrystals. The subsection Needs lines give the exact sections and hypotheses.
 
 ## Layer 8: Interval sheaves, coherent systems and gluing
 
@@ -1825,7 +1837,7 @@ One proof route uses the following steps. Use the imported coadmissible equivale
 - The bound is on fibre dimension, not torsion length. A cyclic jet B_dR,y⁺/(xi_y^n) has fibre dimension one for every n.
 - A cyclic jet O_y/(ξ^n) has fibre dimension 1 for every n≥1, while its length is n. Jets of lengths 1,2,3,… at escaping points pass the fibre bound; multiplicities O_y/(ξ)^(⊕n) do not.
 
-*Needs:* §8.6; §8.4; TauCetiRoadmap.VectorBundlesAndIsocrystals VB−1, Completed local period rings.
+*Needs:* §8.6; §8.4; TauCetiRoadmap.VectorBundlesAndIsocrystals Layer 0, Completed local period rings.
 
 ### 8.8 Matrix factorization with a surjective tangent map
 
@@ -1879,7 +1891,7 @@ For Z=diag(T,T⁻¹), conjugation sends the lower-left matrix unit E₂₁ to T�
 
 ### Dependencies
 
-Earlier layers: 0, 1, 4, 5. Suppliers: TauCetiRoadmap.AdicSpacesPartIII, TauCetiRoadmap.VectorBundlesAndIsocrystals. The subsection Needs lines give the exact sections and hypotheses.
+Earlier layers: 0, 1, 5. Suppliers: TauCetiRoadmap.AdicSpacesPartIII, TauCetiRoadmap.LocallyAnalyticDistributions, TauCetiRoadmap.VectorBundlesAndIsocrystals. The subsection Needs lines give the exact sections and hypotheses.
 
 ## Layer 9: Finite extensions and continuous descent
 
@@ -1898,7 +1910,7 @@ One proof route uses the following steps. Choose an integral primitive element a
 - The coefficient sum in the printed proof must use B_(F,I), not only its unit ball. The strict exclusion of radius 1 is needed by the contraction.
 - For L=F the rank is 1 and trace is identity. For a degree-p separable extension in characteristic p, Tr(1)=0, but the trace ideal still contains the almost ideal. At radius 0 the Witt-field extension is unramified.
 
-*Needs:* §4.1; §0.1; §5.1; TauCetiRoadmap.VectorBundlesAndIsocrystals VB−1, Relative annuli and their section rings.
+*Needs:* §4.1; §0.1; §5.1; TauCetiRoadmap.VectorBundlesAndIsocrystals Layer 0, Relative annuli and their section rings.
 
 ### 9.2 Completed algebraic-closure invariants on compact annuli
 
@@ -1971,7 +1983,7 @@ For |F×|=q^ℚ and J={q^(−√2)}, there is no nonempty subinterval of J with 
 
 ### Dependencies
 
-Earlier layers: 4, 8. Suppliers: TauCetiRoadmap.AdicEtaleGeometry, TauCetiRoadmap.PerfectoidSpaces, TauCetiRoadmap.VectorBundlesAndIsocrystals. The subsection Needs lines give the exact sections and hypotheses.
+Earlier layers: 0, 1, 4, 5, 8. Suppliers: TauCetiRoadmap.AdicEtaleGeometry, TauCetiRoadmap.PerfectoidSpaces, TauCetiRoadmap.VectorBundlesAndIsocrystals. The subsection Needs lines give the exact sections and hypotheses.
 
 ## Layer 10: Curve functoriality, positive lines and reconstruction
 
@@ -2049,7 +2061,7 @@ One proof route uses the following steps. Use finite étale affine transition mo
 
 ### 10.5 Finite-projective Frobenius modules on B
 
-Specialize the supplied finite-projective semilinear-module pattern of VB1 to the supplied ring B, not to its Robba germ. Objects are finite projective B-modules M with a semilinear Phi whose linearization φ^*M → M is an isomorphism. Morphisms commute with Phi; tensor products and internal Homs carry the induced Frobenius, and H^0(M)=ker(Phi-1). By Layer 8 this is also the category of interval bundles on (0,1) with invertible Frobenius descent datum. No equivalence with Frobenius modules over the Robba germ is asserted here.
+Specialize the supplied finite-projective semilinear-module pattern of VectorBundlesAndIsocrystals Layer 2, Finite projective Frobenius modules and integral models, to the supplied ring B, not to its Robba germ. Objects are finite projective B-modules M with a semilinear Phi whose linearization φ^*M → M is an isomorphism. Morphisms commute with Phi; tensor products and internal Homs carry the induced Frobenius, and H^0(M)=ker(Phi-1). By Layer 8 this is also the category of interval bundles on (0,1) with invertible Frobenius descent datum. No equivalence with Frobenius modules over the Robba germ is asserted here.
 
 One proof route uses the following steps. Use finite-projective modules over the supplied B; require invertibility of linearized Frobenius in the data. Use the global-section equivalence for (0,1), and its compatibility with pullback by the radius Frobenius, to compare B-modules with interval bundles carrying Frobenius datum. Transport tensor, dual and Hom operations through this comparison; verify H^0 is the fixed-vector E-space.
 
@@ -2058,7 +2070,7 @@ One proof route uses the following steps. Use finite-projective modules over the
 **API.**
 
 - The structure supplies an isomorphism φ^*M≅M.
-- The B-ring specialization agrees with invertible-Frobenius interval bundles through Layer 8; the VB1 linearization convention is unchanged.
+- The B-ring specialization agrees with invertible-Frobenius interval bundles through Layer 8; the supplied linearization convention is unchanged.
 - Finite projectivity and invertible Frobenius give tensor products and duals.
 - H^0 is the equalizer of Phi and the identity as an E-vector space.
 
@@ -2070,7 +2082,7 @@ One proof route uses the following steps. Use finite-projective modules over the
 - A semilinear endomorphism alone would include zero Frobenius and fail to define a rigid tensor category.
 - On the rank-one module, Φ(e)=π⁻¹e has invertible linearization; Φ(e)=0 does not. On the zero module the unique endomorphism is invertible as a map 0→0.
 
-*Needs:* §8.6; TauCetiRoadmap.VectorBundlesAndIsocrystals VB1, Finite projective Frobenius modules and integral models.
+*Needs:* §8.6; TauCetiRoadmap.VectorBundlesAndIsocrystals Layer 2, Finite projective Frobenius modules and integral models.
 
 ### 10.6 Degree and characters of Frobenius lines
 
@@ -2084,8 +2096,9 @@ One proof route uses the following steps. Use the imported annular Frobenius-des
 
 - The inverse character construction depends on Layer 10 effectivity, not just full faithfulness of a completed-cover functor.
 - For Φ(e)=π⁻¹e, deg=−v_π(π⁻¹)=1; for the dual the degree is −1 and their tensor degree is 0. Only the degree-zero geometric line has a one-dimensional fixed E-space.
+- For c in F×, the line with Φ(e)=[c]⁻¹e has degree −v_π([c]⁻¹)=0; over C its fixed line is E·[w]e with w^(q−1)=c, and its character is σ↦σ(w)/w, valued in μ_(q−1)=𝔽_q×⊂E× and trivial exactly when c is a (q−1)-st power in F. For q=2 every such class is trivial, as 𝔽₂×=1; for q=3, F the completed perfection of 𝔽₃((t)) and c=t, w²=t has no solution in F since 1/2 is not in ℤ[1/3], so the class has order 2. A model reading the class off c alone, without the (q−1)-st power quotient, would separate c=t from c=t·s² for s in F×.
 
-*Needs:* §10.5; §6.5; §9.4; TauCetiRoadmap.VectorBundlesAndIsocrystals VB1, Annular Frobenius descent for bundles; TauCetiRoadmap.VectorBundlesAndIsocrystals VB2, Classification; §1.3.
+*Needs:* §10.5; §6.5; §9.4; TauCetiRoadmap.VectorBundlesAndIsocrystals Layer 2, Annular Frobenius descent for bundles; TauCetiRoadmap.VectorBundlesAndIsocrystals Layer 4, Classification and Hom/Ext calculations; §1.3.
 
 ### 10.7 Every positive Frobenius line presents the same curve
 
@@ -2125,7 +2138,7 @@ For Φ(e)=λ⁻¹e, fixed vectors fe satisfy φ(f)=λf and deg=v_π(λ)>0. In th
 
 ### Dependencies
 
-Earlier layers: 0, 4, 5, 6, 7, 8, 9. Suppliers: TauCetiRoadmap.AdicSpaces, TauCetiRoadmap.SchemeAndStackFoundations, TauCetiRoadmap.VectorBundlesAndIsocrystals. The subsection Needs lines give the exact sections and hypotheses.
+Earlier layers: 0, 1, 2, 4, 5, 6, 7, 8, 9. Suppliers: TauCetiRoadmap.AdicSpaces, TauCetiRoadmap.SchemeAndStackFoundations, TauCetiRoadmap.VectorBundlesAndIsocrystals. The subsection Needs lines give the exact sections and hypotheses.
 
 ## Layer 11: Arithmetic examples and maximal completeness
 
@@ -2189,7 +2202,7 @@ One proof route uses the following steps. Apply the strict-endomorphism construc
 - The condition 0<v(p) is needed: without it K=ℂ_p^♭ itself, of characteristic p with v(p)=v(0)=0<1, has tilt ℂ_p^♭ and is not isomorphic to ℂ_p, so the statement would hold trivially.
 - The closure of the algebraic closure of ℚ_p is all of ℂ_p. In the strict untilt extension it is the proper embedded copy of ℂ_p. This distinguishes topological fields, without comparing their abstract algebraically closed field types.
 
-*Needs:* §11.2; TauCetiRoadmap.VectorBundlesAndIsocrystals VB−1, Marked untilt Cartier divisors and Cartier descent; TauCetiRoadmap.PerfectoidSpaces §P3.7; §7.7.
+*Needs:* §11.2; TauCetiRoadmap.VectorBundlesAndIsocrystals Layer 0, Marked untilt Cartier divisors and Cartier descent; TauCetiRoadmap.PerfectoidSpaces §P3.7; §7.7.
 
 ### 11.4 Closed prime ideals of the integral period ring
 
@@ -2227,7 +2240,7 @@ One proof route uses the following steps. Use the equivariant Lubin–Tate param
 
 ### 11.6 Higher eigenvectors and the boundary of representability
 
-For E=ℚ_p the eigensheaf B^(φ=p^2) must not be modeled by an asserted unique two-sided Teichmüller parametrization in two F-coordinates. Its Banach–Colmez diamond description is imported from VB3, while the stronger assertion that it is not represented by an analytic/perfectoid space needs a separate obstruction. The sufficient representability range 0<λ≤1 does not by itself prove failure at λ=2.
+For E=ℚ_p the eigensheaf B^(φ=p^2) must not be modeled by an asserted unique two-sided Teichmüller parametrization in two F-coordinates. Its Banach–Colmez diamond description is imported from VectorBundlesAndIsocrystals Layer 5, Banach–Colmez section and hypercohomology sheaves, while the stronger assertion that it is not represented by an analytic/perfectoid space needs a separate obstruction. The sufficient representability range 0<λ≤1 does not by itself prove failure at λ=2.
 
 One proof route uses the following steps. Compare the imported Banach–Colmez construction and the degree-two fundamental exact sequence. Separate the unique boundary-zero Witt expansion from the much larger completed period ring, and compare the stricter growth defining bivectors. Record the missing degree-two nonrepresentability proof as the degree-two obstruction contract rather than deriving a converse from a one-sided sufficient criterion.
 
@@ -2237,7 +2250,7 @@ One proof route uses the following steps. Compare the imported Banach–Colmez c
 
 - For a single point repeated twice the fundamental sequence has a length-two jet quotient and a one-dimensional kernel. The sufficient slope condition λ≤1 evaluates false at 2; its failure supplies no proof of nonrepresentability.
 
-*Needs:* §1.12; §6.10; TauCetiRoadmap.VectorBundlesAndIsocrystals VB3, Banach–Colmez section and hypercohomology sheaves (banach-colmez-space-definition); gap:positive-degree-two-obstruction.
+*Needs:* §1.12; §6.10; TauCetiRoadmap.VectorBundlesAndIsocrystals Layer 5, Banach–Colmez section and hypercohomology sheaves; gap:positive-degree-two-obstruction.
 
 ### Examples
 
@@ -2245,7 +2258,7 @@ Choose β_j∈ℤ[1/p] decreasing convexly to √2. A hypothetical generator for
 
 ### Dependencies
 
-Earlier layers: 1, 2, 6, 7, 10. Suppliers: TauCetiRoadmap.LocallyAnalyticDistributions, TauCetiRoadmap.PerfectoidSpaces, TauCetiRoadmap.VectorBundlesAndIsocrystals. The subsection Needs lines give the exact sections and hypotheses.
+Earlier layers: 1, 2, 3, 6, 7. Suppliers: TauCetiRoadmap.LocallyAnalyticDistributions, TauCetiRoadmap.PerfectoidSpaces, TauCetiRoadmap.VectorBundlesAndIsocrystals. The subsection Needs lines give the exact sections and hypotheses.
 
 ## Downstream consumers
 

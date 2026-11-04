@@ -1,4 +1,6 @@
-import Mathlib
+module
+
+public import Mathlib
 
 /-!
 # Relative Fargues–Fontaine function theory, part II: target signatures
@@ -31,6 +33,8 @@ The following headline theorems are not statable at the pins:
 The p-typical algebraic Fontaine and de Rham APIs do not supply these general
 ramified annular carriers. No arbitrary-ring stand-ins are used for them.
 -/
+
+public section
 
 namespace TauCetiRoadmap.RelativeFarguesFontainePartII
 
