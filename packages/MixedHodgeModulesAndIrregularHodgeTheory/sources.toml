@@ -1,0 +1,77 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "MixedHodgeModulesAndIrregularHodgeTheory"
+
+[[source]]
+id = "Sai88"
+authors = "Morihiko Saito"
+title = "Modules de Hodge polarisables"
+year = 1988
+locator_scheme = "theorem"
+locator = "Definition 5.1.6, Definition 5.2.10, Theorem 5.3.1, Proposition 3.4.12"
+url = "https://ems.press/journals/prims/articles/3445"
+fetched_from = "https://ems.press/content/serial-article-files/42460"
+fetched_at = "2026-11-04T16:24:16Z"
+sha256 = "df2653bc41c4564f7c6766ddf95405455b46bfeddd5b0c6e3d30884f244d7847"
+licence_class = "answered-by:CBirkbeck"
+status = "certified"
+accessed = "2026-11-04"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/494#issuecomment-6632676619"
+
+[[source]]
+id = "Sai90"
+authors = "Morihiko Saito"
+title = "Mixed Hodge modules"
+year = 1990
+locator_scheme = "section"
+locator = "§§2.17, 4.1-4.5; Proposition 0.3"
+url = "https://ems.press/journals/prims/articles/3552"
+fetched_from = "https://ems.press/content/serial-article-files/42511"
+fetched_at = "2026-11-04T16:24:20Z"
+sha256 = "dbad6d4c4e04bbb4faf201d75f1261cdcab14e452406a480d49a299bf612c06e"
+licence_class = "answered-by:CBirkbeck"
+status = "certified"
+accessed = "2026-11-04"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/494#issuecomment-6632676619"
+
+[[source]]
+id = "Kash86"
+authors = "Masaki Kashiwara"
+title = "A study of variation of mixed Hodge structure"
+year = 1986
+locator_scheme = "section"
+locator = "§1"
+url = "https://ems.press/journals/prims/articles/3317"
+fetched_from = "https://ems.press/content/serial-article-files/42350"
+fetched_at = "2026-11-04T16:24:21Z"
+sha256 = "9fe21a1c253a89f59519755810d65e85d29f15c15f297963eea91694f1cd9d7a"
+licence_class = "answered-by:CBirkbeck"
+status = "certified"
+accessed = "2026-11-04"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/494#issuecomment-6632676619"
+
+[[source]]
+id = "Zucker"
+authors = "Steven Zucker"
+title = "Hodge theory with degenerating coefficients: L2 cohomology in the Poincaré metric"
+year = 1979
+locator_scheme = "theorem"
+locator = "Theorem 4.8, Theorem 7.12, Corollary 7.13, Proposition 8.2"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/494#issuecomment-6632676619"
+
+[[source]]
+id = "AS"
+authors = "Alan Adolphson, Steven Sperber"
+title = "On twisted de Rham cohomology"
+year = 1997
+locator_scheme = "theorem"
+locator = "Theorem 1.4 and (4.3)"
+url = "https://www.cambridge.org/core/journals/nagoya-mathematical-journal/article/on-twisted-de-rham-cohomology/E4AFE6D6DCAE8FFF5EF549D83E3361D5"
+fetched_from = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/E4AFE6D6DCAE8FFF5EF549D83E3361D5/S0027763000006218a.pdf/div-class-title-on-twisted-de-rham-cohomology-div.pdf"
+fetched_at = "2026-11-04T16:24:22Z"
+sha256 = "49deb4265a0bc4d72816d149eabe9d380de837d3055e70c6c475190398ef0d74"
+licence_class = "answered-by:CBirkbeck"
+status = "certified"
+accessed = "2026-11-04"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/494#issuecomment-6632676619"
