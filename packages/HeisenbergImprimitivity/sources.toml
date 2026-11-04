@@ -1,0 +1,50 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "HeisenbergImprimitivity"
+
+[[source]]
+id = "rieffel88"
+locator_scheme = "theorem"
+locator = "Theorem 2.15"
+url = "https://math.berkeley.edu/~rieffel/papers/projective88.pdf"
+fetched_from = "https://math.berkeley.edu/~rieffel/papers/projective88.pdf"
+fetched_at = "2026-11-04T21:12:59Z"
+sha256 = "84a6cbb1380f2654297c17c11fbd34e5d38cfb1c46b05f80f0ceef4a53ff881b"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["4.2", "2.3", "5.2"]
+
+[[source]]
+id = "austad-enstad20"
+authors = "Are Austad, Ulrik Enstad"
+title = "Heisenberg modules as function spaces"
+year = 2019
+venue = "J Fourier Anal Appl 26, 24 (2020)"
+doi = "10.1007/s00041-020-09729-7"
+arxiv = "1904.10826v2"
+locator_scheme = "theorem"
+locator = "Proposition 3.5"
+url = "https://arxiv.org/abs/1904.10826v2"
+fetched_from = "https://arxiv.org/pdf/1904.10826v2"
+fetched_at = "2026-11-04T21:13:03Z"
+sha256 = "bff498e6a13b2e844162de4abcc4fb4114b931893452cdbfd3680ae7538f1a89"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v2"
+cited_for = ["4.1", "5.2"]
+
+[[source]]
+id = "hewitt-ross79"
+authors = "Edwin Hewitt, Kenneth A. Ross"
+title = "Abstract Harmonic Analysis"
+year = 1979
+venue = "Grundlehren der mathematischen Wissenschaften"
+doi = "10.1007/978-1-4419-8638-2"
+locator_scheme = "theorem"
+locator = "Theorem 24.10"
+url = "https://doi.org/10.1007/978-1-4419-8638-2"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["1.2"]
