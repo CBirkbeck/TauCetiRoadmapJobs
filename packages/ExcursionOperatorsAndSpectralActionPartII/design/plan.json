@@ -2084,7 +2084,7 @@
     "slug": "all-weight-shriek-trace",
     "supplier": "HeckeStacksAndLocalShtukas",
     "section": "Trace continuation of §§HS3.8 and HS3.10",
-    "needs": "For dominant μ and basic b∈B(G,μ), prove the elliptic character formula of HKW22 Theorem 6.5.2 for i₁* T_(V_μ dual) i_b! and i_b* T_(V_μ) i₁!, with the sign of (3.3.3), transported from HKW's star extension by smooth duality and inversion (HKW22 line 3018 and line 3190)."
+    "needs": "For dominant μ and basic b∈B(G,μ), prove the elliptic character formula of HKW22 Theorem 6.5.2 for i₁* T_(V_μ dual) i_b! and i_b* T_(V_μ) i₁! in Hansen's labels, that is for the supplier's i₁* T^AG_(V_μ) i_b! and i_b* T^AG_(V_μ dual) i₁!, with the sign of (3.3.3), transported from HKW's star extension by smooth duality and inversion (HKW22 line 3018 and line 3190)."
   },
   {
     "slug": "elliptic-torus-representatives",
@@ -2120,13 +2120,13 @@
     "slug": "kazhdan-cuspidal-decomposition",
     "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
     "section": "§2.16",
-    "needs": "For every connected reductive G/E, identify the common kernels of irreducible characters, tempered characters, regular orbital integrals and conjugation commutators, and split I(G) as cuspidal classes plus the annihilator of D_ell(G) (H26, §2.1, pp. 4–5; H26 line 181 and line 240)."
+    "needs": "For every connected reductive G/E, identify the common kernels of irreducible characters, tempered characters, regular orbital integrals and conjugation commutators, split I(G) as cuspidal classes plus the annihilator of D_ell(G), and prove that a class f∈I(G) is cuspidal, every proper-Levi normalized constant term f_M being zero, if and only if its orbital integrals vanish at every non-elliptic regular semisimple element (H26, §2.1, pp. 4–5; H26 line 181, line 209 and line 240)."
   },
   {
     "slug": "arthur-stable-decompositions",
     "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
     "section": "§2.16",
-    "needs": "For every connected reductive G/E, supply the dual Arthur decompositions (1)–(3), the proper-induction kernel of elliptic restriction, its injectivity on D_ell(G), and central invariance of the ordinary cuspidal, noncuspidal and elliptic summands (H26, Lemma 2.1, pp. 5–6; H26 line 209, line 223 and line 244)."
+    "needs": "For every connected reductive G/E, supply the dual Arthur decompositions (1)–(3), the proper-induction kernel of elliptic restriction on all of D(G) with complex coefficients (HKW22, Theorem C.1.1, p. 75, states it for rational combinations in the Grothendieck group of complex or ℚ̄_ℓ-representations; HKW22 line 3635), its injectivity on D_ell(G), and central invariance of the ordinary cuspidal, noncuspidal and elliptic summands (H26, Lemma 2.1, pp. 5–6; H26 line 209, line 223 and line 244)."
   },
   {
     "slug": "unstable-tempered-separation",
@@ -2162,7 +2162,7 @@
     "slug": "general-parabolic-excursion-comparison",
     "supplier": "HeckeStacksAndLocalShtukas",
     "section": "§HS4.6, general parabolic excursion comparison",
-    "needs": "For every connected reductive G/E, not necessarily quasi-split, E-rational parabolic P=MU, ℓ-power-torsion ℤ_ℓ[√q]-algebra Λ and smooth Λ-representation σ of M(E), prove that each HS4.2 excursion operator of G acts on the unnormalized induction Ind_P^G σ as the excursion operator of M pulled back along φ↦(w↦(2ρ_Ĝ−2ρ_M̂)(√q)^|w| φ(w)), |geometric Frobenius|=1, extending the quasi-split single-stratum theorem of §HS4.6 by a z-embedding into a group with connected centre and a quasi-split basic inner form (FS24, §IX.7.1, proof of Theorem IX.7.2 and Corollary IX.7.3, pp. 334–338; FS24 line 12973, line 12996 and line 13097)."
+    "needs": "For every connected reductive G/E, not necessarily quasi-split, E-rational parabolic P=MU, ℓ-power-torsion ℤ_ℓ[√q]-algebra Λ and smooth Λ-representation σ of M(E), prove that each normalized excursion operator of G, the HS4.2 composite on the θ-pulled-back Hecke family (AutomorphicGaloisRepresentationsPartII AG2.6's excursionOperator; Hansen's labels), acts on the unnormalized induction Ind_P^G σ as the corresponding excursion operator of M pulled back along φ↦(w↦(2ρ_Ĝ−2ρ_M̂)(√q)^|w| φ(w)), |geometric Frobenius|=1, extending the quasi-split single-stratum theorem of §HS4.6 by a z-embedding into a group with connected centre and a quasi-split basic inner form (FS24, §IX.7.1, proof of Theorem IX.7.2 and Corollary IX.7.3, pp. 334–338; FS24 line 12973, line 12996 and line 13097)."
   }
 ],
   "restructure": [

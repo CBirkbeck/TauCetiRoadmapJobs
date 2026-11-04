@@ -1,7 +1,9 @@
-import Mathlib
-import TauCeti.Algebra.Lie.HighestWeight.Basic
-import TauCeti.Algebra.Lie.Weights.FormalCharacter
-import TauCeti.LinearAlgebra.RootSystem.Weyl.Vector
+module
+
+public import Mathlib
+public import TauCeti.Algebra.Lie.HighestWeight.Basic
+public import TauCeti.Algebra.Lie.Weights.FormalCharacter
+public import TauCeti.LinearAlgebra.RootSystem.Weyl.Vector
 
 /-!
 # Excursion operators and the spectral action, part II: target signatures
@@ -28,6 +30,8 @@ exist, but they do not provide the character, spectral or stable-conjugacy
 carriers in these statements. Those constructions are substantial library work,
 so no substitute statement on arbitrary linear data is asserted here.
 -/
+
+public section
 
 namespace TauCetiRoadmap.ExcursionOperatorsAndSpectralActionPartII
 
