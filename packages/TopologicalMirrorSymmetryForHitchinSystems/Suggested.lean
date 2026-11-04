@@ -1,3 +1,5 @@
+module
+
 import Mathlib
 
 /-!
@@ -36,6 +38,7 @@ The following headline theorems are not statable at the pins:
 * Duality of the gerbe splitting torsors: lacks powered Hausel–Thaddeus gerbes, spectral Prym torsors and their relative principal splitting carriers.
 * Local Brauer splitting of the powered gerbes: lacks powered Hausel–Thaddeus gerbes, spectral Prym torsors and their relative principal splitting carriers.
 * The SLn/PGLn dual pair: lacks powered Hausel–Thaddeus gerbes, spectral Prym torsors and their relative principal splitting carriers.
+* Genus-one canonical gerbe sectors (README §4.8): lacks the stable fixed-determinant Higgs moduli point, the descended Hausel–Thaddeus gerbe on BΓ with its commutator pairing, and the sector transgression and stringy invariants.
 * SLn/PGLn topological mirror symmetry: lacks stable SL/PGL Higgs moduli, geometric Hodge cohomology and gerbe-twisted stringy invariants.
 * Canonical-twist Hodge numbers: lacks stable SL/PGL Higgs moduli, geometric Hodge cohomology and gerbe-twisted stringy invariants.
 * The justified fibrewise virtual comparison: lacks Hitchin-fibre and inertia-fibre étale cohomology as continuous Galois complexes, with gerbe coefficients and age twists.

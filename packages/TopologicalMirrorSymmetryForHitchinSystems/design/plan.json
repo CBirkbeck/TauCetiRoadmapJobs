@@ -3760,9 +3760,9 @@
   "gaps": [
     {
       "slug": "geometric-compact-mhs",
-      "needs": "Provide functorial compact-support geometric mixed Hodge structures for separated complex varieties and finite-monodromy local systems, strict localization and Künneth, finite-group projectors, SNC descent and comparison with the abstract mixed-Hodge carrier.",
-      "supplier": "HodgeStructures",
-      "section": "Core definitions; Layers L2–L3"
+      "needs": "Extend the compact-support Hodge realization of P/pair-cohomology from smooth quasi-projective varieties to separated finite-type complex varieties, by local embeddings into smooth varieties or by descent along closed/open stratifications into smooth quasi-projective pieces, with functoriality for proper maps and open immersions, SNC blow-up comparison, coefficient extension to the character field, finite-group character projectors and finite-monodromy coefficient adapters, all compatible with its rational mixed-Hodge carrier on the pinned mixed Hodge structures.",
+      "supplier": "MixedHodgeModulesAndIrregularHodgeTheory",
+      "section": "H.0/mixed-hodge-module; H.1/operations; P/pair-cohomology; P/pair-kunneth-duality"
     },
     {
       "slug": "unitary-splitting-families",
@@ -3778,9 +3778,9 @@
     },
     {
       "slug": "equivariant-grothendieck",
-      "needs": "Provide the good-finite-group equivariant scissor ring and characteristic-zero equivariant Bittner presentation from equivariant compactification and weak factorization, distinguishing its further representation quotient and additive character realizations.",
-      "supplier": "LogicAndDefinabilityInNumberTheory",
-      "section": "Layer 3 (motivic functions, integration and transfer)"
+      "needs": "Extend the scissor ring K₀Var k of §4.20 to the ring K₀^G(Var_k) of varieties with a good action of a finite group G (every orbit in an affine open), over any field k and, for a finite list of varieties spread out from ℂ, over a subring R⊂ℂ of finite type over ℤ; give the closed/open relations, the product, the class ℒ=[𝔸¹ with trivial action] and the universal property for additive multiplicative equivariant invariants; for k of characteristic zero prove the equivariant Bittner presentation by smooth projective G-varieties with the blow-up relation, from equivariant SNC compactification and equivariant weak factorization; keep this ring distinct from its quotient by the representation ideal and from the additive character realizations.",
+      "supplier": "MotivesAndAlgebraicCycles",
+      "section": "4.20"
     },
     {
       "slug": "fractional-equivariant-hodge-tate",
