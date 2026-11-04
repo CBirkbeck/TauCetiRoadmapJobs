@@ -190,3 +190,58 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-04"
 cited_for = ["9.8"]
+
+[[source]]
+id = "tsushima1983"
+authors = "Ryuji Tsushima"
+title = "An explicit dimension formula for the spaces of generalized automorphic forms with respect to Sp(2, Z)"
+year = 1983
+venue = "Proceedings of the Japan Academy, Series A 59, 139–142"
+doi = "10.3792/pjaa.59.139"
+locator_scheme = "theorem"
+locator = "Theorem 4"
+url = "https://sites.math.unt.edu/~schmidt/dimension_formulas/papers/1983_explicit_dimension_formula.pdf"
+fetched_from = "https://sites.math.unt.edu/~schmidt/dimension_formulas/papers/1983_explicit_dimension_formula.pdf"
+fetched_at = "2026-11-04T14:00:19Z"
+sha256 = "a52925f9a33576605642c2d457d284fe776ae9b1ec92f1e0640623099cb30f4e"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["6.4"]
+
+[[source]]
+id = "ibukiyama1985"
+authors = "Tomoyoshi Ibukiyama"
+title = "On relations of dimensions of automorphic forms of Sp(2, R) and its compact twist Sp(2) (I)"
+year = 1985
+venue = "Advanced Studies in Pure Mathematics 7, 7–29"
+doi = "10.2969/aspm/00710007"
+locator_scheme = "theorem"
+locator = "Theorem 4"
+url = "https://math.ou.edu/~rschmidt/dimension_formulas/papers/1985_on_relations_of_dimensions.pdf"
+fetched_from = "https://math.ou.edu/~rschmidt/dimension_formulas/papers/1985_on_relations_of_dimensions.pdf"
+fetched_at = "2026-11-04T14:00:52Z"
+sha256 = "78e76fc57efa7934c82c05d649369ce38a0166f2c794fff23c7d37f94357b0bb"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["10.1"]
+
+[[source]]
+id = "taibi2017"
+authors = "Olivier Taïbi"
+title = "Dimensions of spaces of level one automorphic forms for split classical groups using the trace formula"
+year = 2014
+arxiv = "1406.4247v1"
+locator_scheme = "section"
+locator = "§1, p. 7"
+url = "https://arxiv.org/abs/1406.4247v1"
+fetched_from = "https://arxiv.org/pdf/1406.4247v1"
+fetched_at = "2026-11-04T14:00:58Z"
+sha256 = "ee10fae68b370dc1d845ba28a87050d2f6a75cde22a0f05edcf357c287c7c546"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+venue = "Annales scientifiques de l'École normale supérieure 50 (2017), 269–344"
+version_note = "arXiv v1; the published version (2017) is cited through the arXiv text read"
+cited_for = ["6.4"]
