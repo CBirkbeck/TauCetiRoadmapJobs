@@ -1,0 +1,182 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "IntegrableSystems"
+
+[[source]]
+id = "cds"
+locator_scheme = "theorem"
+locator = "Theorem 18.12"
+url = "https://people.math.ethz.ch/~acannas/Papers/lsg.pdf"
+fetched_from = "https://people.math.ethz.ch/~acannas/Papers/lsg.pdf"
+fetched_at = "2026-11-04T03:00:21Z"
+sha256 = "0b1c3a1f303b2fac4388d3b66019b42fc34196570225776c2448f797439e458b"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["I2"]
+
+[[source]]
+id = "egms"
+authors = "K. Efstathiou, A. Giacobbe, P. Mardešić, D. Sugny"
+title = "Rotation Forms and Local Hamiltonian Monodromy"
+year = 2016
+venue = "J. Math. Phys., 58(2), 022902 (2017)"
+doi = "10.1063/1.4975215"
+arxiv = "1608.01579v2"
+locator_scheme = "section"
+locator = "II.A–II.C, III.B"
+url = "https://arxiv.org/abs/1608.01579v2"
+fetched_from = "https://arxiv.org/pdf/1608.01579v2"
+fetched_at = "2026-11-04T03:00:25Z"
+sha256 = "9cd01ba0d91826883580deadea69e09f7f850dd00b4eb3bd092dc39e76386197"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v2"
+cited_for = ["I4"]
+
+[[source]]
+id = "conley-zehnder"
+authors = "C. C. Conley, E. Zehnder"
+title = "The Birkhoff-Lewis fixed point theorem and a conjecture of V.I. Arnold"
+year = 1983
+venue = "Inventiones Mathematicae 73"
+doi = "10.1007/BF01393824"
+locator_scheme = "page"
+locator = "33–49"
+url = "https://doi.org/10.1007/BF01393824"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["I5.4"]
+
+[[source]]
+id = "lee-ism"
+authors = "J. M. Lee"
+title = "Smooth Manifolds"
+year = 2013
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4419-9982-5_1"
+locator_scheme = "theorem"
+locator = "Corollary 5.14"
+url = "https://doi.org/10.1007/978-1-4419-9982-5_1"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["I1"]
+
+[[source]]
+id = "arnold-mmcm"
+authors = "V. I. Arnold"
+title = "Mathematical Methods of Classical Mechanics"
+year = 1989
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4757-2063-1"
+locator_scheme = "chapter"
+locator = "Chapters 2, 10"
+url = "https://doi.org/10.1007/978-1-4757-2063-1"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["I4"]
+
+[[source]]
+id = "lecalvez-wang"
+locator_scheme = "section"
+locator = "§1"
+url = "https://www.ams.org/journals/proc/2010-138-02/S0002-9939-09-10105-3/S0002-9939-09-10105-3.pdf"
+fetched_from = "https://www.ams.org/journals/proc/2010-138-02/S0002-9939-09-10105-3/S0002-9939-09-10105-3.pdf"
+fetched_at = "2026-11-04T03:07:10Z"
+sha256 = "2c5f5717631162e8cb0943f733ffcef4cb80f5a50427f85521e73d1cda23814b"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["I5"]
+
+[[source]]
+id = "smale1959"
+locator_scheme = "theorem"
+locator = "Theorem B"
+url = "https://www.ams.org/journals/proc/1959-010-04/S0002-9939-1959-0112149-8/S0002-9939-1959-0112149-8.pdf"
+fetched_from = "https://www.ams.org/journals/proc/1959-010-04/S0002-9939-1959-0112149-8/S0002-9939-1959-0112149-8.pdf"
+fetched_at = "2026-11-04T03:07:11Z"
+sha256 = "f2c495988ae1355fbe01a0878228008ad861bfccb17d6cc9c85d219156622c64"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["I5.1"]
+
+[[source]]
+id = "epstein1966"
+authors = "D. B. A. Epstein"
+title = "Curves on 2-manifolds and isotopies"
+year = 1966
+venue = "Acta Mathematica 115"
+doi = "10.1007/BF02392203"
+locator_scheme = "theorem"
+locator = "Theorem 6.4"
+url = "https://doi.org/10.1007/BF02392203"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["I5.1"]
+
+[[source]]
+id = "spanier"
+authors = "Edwin H. Spanier"
+title = "Algebraic Topology"
+year = 1981
+doi = "10.1007/978-1-4684-9322-1"
+locator_scheme = "section"
+locator = "Ch. 6, §§6.6–6.9"
+url = "https://doi.org/10.1007/978-1-4684-9322-1"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["I5.4"]
+
+[[source]]
+id = "hofer-zehnder"
+authors = "Helmut Hofer, Eduard Zehnder"
+title = "Symplectic Invariants and Hamiltonian Dynamics"
+year = 2011
+doi = "10.1007/978-3-0348-0104-1"
+locator_scheme = "chapter"
+locator = "Ch. 6"
+url = "https://doi.org/10.1007/978-3-0348-0104-1"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["I5.4"]
+
+[[source]]
+id = "marsden-ratiu"
+authors = "Jerrold E. Marsden, Tudor S. Ratiu"
+title = "Introduction to Mechanics and Symmetry"
+year = 1999
+venue = "Texts in Applied Mathematics"
+doi = "10.1007/978-0-387-21792-5"
+locator_scheme = "chapter"
+locator = "Chapters 7, 11"
+url = "https://doi.org/10.1007/978-0-387-21792-5"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["I3"]
+
+[[source]]
+id = "gramain1973"
+authors = "A. Gramain"
+title = "Le type d'homotopie du groupe des difféomorphismes d'une surface compacte"
+year = 1973
+venue = "Annales scientifiques de l'École normale supérieure 6"
+doi = "10.24033/asens.1242"
+locator_scheme = "theorem"
+locator = "Théorème 1"
+url = "https://doi.org/10.24033/asens.1242"
+fetched_from = "https://www.numdam.org/item/10.24033/asens.1242.pdf"
+fetched_at = "2026-11-04T03:12:54Z"
+sha256 = "3fcb83ebfde8e3c47188192a75871282f26acf9948e7078bea04fec4a35e2cfb"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["I5.1"]
