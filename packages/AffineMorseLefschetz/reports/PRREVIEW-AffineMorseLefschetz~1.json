@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-AffineMorseLefschetz~1",
+    "head": "0561aefd082bfd2246d0793ee6af8f959764144a",
+    "pr": 1764,
+    "folder": "AffineMorseLefschetz",
+    "date": "2026-11-03",
+    "findings": 8,
+    "blocking": 4,
+    "notes": "Full-folder review; 106 adversarial rows, 12 elaborated signatures, four admitted-theorem padding probes, 17 pinned declaration/carrier checks, nine supplier roadmaps. Seeded A4.0/A4.1 sample examined: Hatcher cap sign and compact triad read; BCR uncertified/paywalled; Hain and Mark texts unresolved. Milnor 7.1–7.4 read. Gate fails on 11 pinned links and import rules; targeted build reproduces five non-sorry warnings. Direct elaboration and corrected-header scratch elaboration pass. Dependency check: 205 roadmaps, 1649 edges, 0 problems; manual audit finds reciprocal RealAnalyticGeometry supply and missing GeometricTopology contracts. Native A2 CW headline signature elaborates. PR worktree unchanged."
+  }
+}

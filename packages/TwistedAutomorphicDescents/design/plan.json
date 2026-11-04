@@ -3310,121 +3310,112 @@
   ],
   "gaps": [
     {
-      "title": "G1: Unitary pairing and normalizer dictionary",
-      "detail": "Prove a commuting comparison between the bilinear zeta integral, Hermitian branching period, inverse additive character, contragredients, actual unipotent-radical L-factor and residue output. Rendered (4.47), p.780, has L(s+1/2,τ×conj π); rendered (5.13), p.787, instead has τ×π. With ℒ defined by (4.47), the full self-pair choice is τ=BC(π); for the (5.13) candidate it is τ=BC(π)∨. Do not identify these for nonselfdual unitary parameters. Equations (5.6) and Theorem 5.3 already put a conjugate in the second Hermitian argument, so absence of all conjugation is not the defect. Audit also §5.5 p.791, where the induction from conjugate σ and the central cross factor must be transported explicitly. Test a nonquadratic U₁ character: Q(χ,χ) can be nonzero while P(χ,χ)=0. At split U₃ compute the two cross weights χ₁μ⁻¹ and μχ₂. A replacement of one bar does not close this chain; unitary reciprocity and recovery remain conditional.",
-      "neededBy": [
-        "TwistedAutomorphicDescents:TAD.4/normalized-holomorphy",
-        "TwistedAutomorphicDescents:TAD.3/spherical-calculation",
-        "TwistedAutomorphicDescents:TAD.3/standard-ratio",
-        "TwistedAutomorphicDescents:TAD.4/pairing-dictionary",
-        "TwistedAutomorphicDescents:TAD.4/pole-order",
-        "TwistedAutomorphicDescents:TAD.4/reciprocity",
-        "TwistedAutomorphicDescents:TAD.4/period-central-value",
-        "TwistedAutomorphicDescents:TAD.5/critical-structure",
-        "TwistedAutomorphicDescents:TAD.6/central-value-period",
-        "TwistedAutomorphicDescents:TAD.7/recovery"
-      ],
-      "owner": "This roadmap, proof and source comparison"
+      "slug": "hermitian-witt-complements",
+      "needs": "Supply Witt decomposition, extension and cancellation for nondegenerate finite-dimensional Hermitian spaces over every characteristic-zero field with quadratic étale coefficients, with prescribed complement isometries, arbitrary-form unitary groups and scalar-extension compatibility.",
+      "supplier": "ReductiveGroupsPartII",
+      "section": "RG2.4"
     },
     {
-      "title": "G2: Inner-form tower cuspidality proof",
-      "detail": "Read or reconstruct the precise tower identity cited to GRS Theorem 7.3: expand each proper constant term, identify larger-index Fourier coefficients and remaining ambient constant terms, and prove all vanish. The cited book is not cleared and has not been read. Provide the inner-form/unitary coordinate and smoothness extensions, including index zero and anisotropic smaller groups.",
-      "neededBy": [
-        "TwistedAutomorphicDescents:TAD.1/first-cuspidal",
-        "TwistedAutomorphicDescents:TAD.5/critical-cuspidality"
-      ],
-      "owner": "This roadmap, proof and source comparison"
+      "slug": "rational-nilpotent-orbits",
+      "needs": "Extend the geometric orbit carrier to rational classical nilpotent orbits and localization, distinguishing geometric, Galois-stable and rational conjugacy and retaining the two very-even SO labels.",
+      "supplier": "LieHighestWeightPartII",
+      "section": "N0, nilpotent-orbit"
     },
     {
-      "title": "G3: Full relative Bruhat and open-cell comparison",
-      "detail": "Complete the adapted-basis double-coset proof, residual rational orbit indexing, every type-D Weyl exception, root-character cancellations, and the exact inner stabilizer/normalizer map in both a>ell and a≤ell cases. Source §4.7 says the omitted details have the same form; the present plan does not regard that as a supplied uniform proof.",
-      "neededBy": [
-        "TwistedAutomorphicDescents:TAD.2/relative-bruhat",
-        "TwistedAutomorphicDescents:TAD.2/open-cell",
-        "TwistedAutomorphicDescents:TAD.2/inner-datum"
-      ],
-      "owner": "This roadmap, proof and source comparison"
+      "slug": "classical-dominance",
+      "needs": "Supply dominance and special-expansion comparisons for the regular and subregular partitions in the ranks of Section 7.4, without inferring rational or automorphic nonvanishing from geometric admissibility.",
+      "supplier": "LieHighestWeightPartII",
+      "section": "N2, classical-partitions"
     },
     {
-      "title": "G4: Unpublished local continuation and spherical calculation",
-      "detail": "JZ2020 assigns unrestricted local continuation and the full unramified formula to Jiang–Soudry–Zhang [43], listed as in preparation in its published bibliography. The later public Zhang2022 note, Theorem 1.1 PDF pp.2–3 and §§3–5 pp.4–7, supplies a comparison strategy via descent integrals and Whittaker–Shintani functions; Proposition 2.1 p.4 states nonarchimedean analytic properties. It still defers notation and calculations and does not supply all-place continuation or resolve G1. Supply the actual cell-integral estimates and all-place continuation of J_s and Z_v, then the spherical calculation for split and inert unitary and nonsplit orthogonal cases with every normalization. No complete replacement proof was established in this review.",
-      "neededBy": [
-        "TwistedAutomorphicDescents:TAD.2/whittaker-transform",
-        "TwistedAutomorphicDescents:TAD.3/local-integral",
-        "TwistedAutomorphicDescents:TAD.3/spherical-calculation",
-        "TwistedAutomorphicDescents:TAD.3/euler-product"
-      ],
-      "owner": "This roadmap, proof and source comparison"
+      "slug": "rational-fourier-support",
+      "needs": "Supply generalized rational-nilpotent Fourier maps, root exchange, support and maximal-support carriers on actual automorphic realizations, with continuous constant-term comparisons and the topology for a verified cuspidal Hilbert closure.",
+      "supplier": "AutomorphicFormsOnReductiveGroups",
+      "section": "4.1–4.2, rational Fourier continuation"
     },
     {
-      "title": "G5: Appendix-A coordinate and archimedean verification",
-      "detail": "Recompute the multiplication used in (A.12)–(A.14) with typed rectangular blocks and the cross term arising from YY′E₂; justify its elimination on the chosen slice. Prove the compact-open/smooth open-cell section construction retains the prescribed nonzero pairing and is regular at each chosen s₀. Supply the continuity and Dixmier–Malliavin argument over R,C and a separate split-GL calculation. The source nonvanishing theorem is the target, not an axiom.",
-      "neededBy": [
-        "TwistedAutomorphicDescents:TAD.3/local-nonvanishing",
-        "TwistedAutomorphicDescents:TAD.4/normalized-holomorphy"
-      ],
-      "owner": "This roadmap, proof and source comparison"
+      "slug": "bessel-restriction-growth",
+      "needs": "Supply absolute convergence and continuity of Bessel periods when the form on the ambient group is cuspidal and the form on the stabilizer has moderate growth, and when the stabilizer form is cuspidal and the stabilizer has trivial F-split centre, and restriction estimates into fixed-central-character or split-center-quotient Hilbert carriers, with all archimedean cases.",
+      "supplier": "AutomorphicFormsOnReductiveGroups",
+      "section": "4.1–4.2, restriction and cuspidal realization"
     },
     {
-      "title": "G6: Acyclic all-place normalized-intertwiner import",
-      "detail": "AS.2/jiang-zhang-holomorphy already owns Theorem 5.1/Appendix B and must supply holomorphic nonzero normalized operators on Re(s)≥1/2 for the exact local components, including archimedean, unitary and inner-form cases. Audit its generic-normalized-intertwiner reduction: the cited split nonarchimedean generic theorem does not by itself cover them, and a product of nonzero operators need not be nonzero. Separate classification and analytic exports to avoid the potential AS.2→ML.4→AS.6→AS.2 cycle. No duplicate TAD proof node is introduced.",
-      "neededBy": [
-        "TwistedAutomorphicDescents:TAD.4/pole-order",
-        "TwistedAutomorphicDescents:TAD.4/leading-residue"
-      ],
-      "owner": "AutomorphicSpectralTheory with ModularityAndLanglandsExtensions"
+      "slug": "twisted-jacquet-filtration",
+      "needs": "Compare the geometric lemma and induction in stages with character-twisted Jacquet quotients for determinant-one orthogonal and split or nonsplit unitary groups over every finite extension of Q_p.",
+      "supplier": "SmoothRepresentationsOfLocalGroups",
+      "section": "SR.2.2, geometric-lemma"
     },
     {
-      "title": "G7: Nongeneric residual packet and all-member support",
-      "detail": "Read and decompose the Mœglin residue/support statements cited in Proposition 6.1 and Proposition 6.3, with their exact quasi-split/inner-form hypotheses, and obtain the needed nongeneric classification. The proof for the particular minimal-support residue does not prove cuspidality for every residual packet member. The original statements have not been read; generic classification imports are insufficient. Keep the all-member assertion conditional until supports for every member are established.",
-      "neededBy": [
-        "TwistedAutomorphicDescents:TAD.5/residue-packet",
-        "TwistedAutomorphicDescents:TAD.5/critical-cuspidality",
-        "TwistedAutomorphicDescents:TAD.5/critical-structure"
-      ],
-      "owner": "ModularityAndLanglandsExtensions for classification; this roadmap for application"
+      "slug": "spherical-whittaker-normalization",
+      "needs": "Supply hyperspecial Satake, spherical Whittaker and Cartan-volume formulas with normalized induction and specified Haar measures for every residue characteristic, including split unitary GL groups and unramified nonsplit forms.",
+      "supplier": "SmoothRepresentationsOfLocalGroups",
+      "section": "SR.4.1–SR.4.4"
     },
     {
-      "title": "G8: Complete critical Jacquet calculations",
-      "detail": "Reconstruct GRS Theorems 5.1,5.4,5.6 at one good place for higher vanishing and at all good places for the critical parameter. Include determinant-one branches and split as well as inert unitary cases, correct the orthogonal index and retain the last unitary character. Inert places alone cannot identify the almost-everywhere GL(A_E) transfer. The uncleared GRS book has not been read; the present source proof is not a complete replacement.",
-      "neededBy": [
-        "TwistedAutomorphicDescents:TAD.5/higher-vanishing",
-        "TwistedAutomorphicDescents:TAD.5/critical-satake",
-        "TwistedAutomorphicDescents:TAD.5/critical-structure"
-      ],
-      "owner": "This roadmap, proof and source comparison"
+      "slug": "all-place-signed-factors",
+      "needs": "Supply all-place tensor and signed Asai factors, tempered positive-half-plane regularity and standard-module multiplicativity with archimedean Gamma shifts and the actual unipotent-radical L-representation for the induction used here.",
+      "supplier": "AutomorphicLFunctionsAndLocalFactors",
+      "section": "AL.4, local-parameter-comparison"
     },
     {
-      "title": "G9: Original Fourier-support and regular-descent witnesses",
-      "detail": "Obtain a permitted original proof of the GRS m=0 support witness and the Jiang–Liu–Xu–Zhang anisotropic SO₂ witness cited in Proposition 6.9, and compare actual orbits, characters, residual sections and ambient forms. The originals are not claimed as read. For even unitary regular recovery retain a genuine U₁ inducing character and ambient dimension 2N+1; the source empty-datum shorthand does not apply. ML.5 records known transfers and is not a proof of the concrete module construction.",
-      "neededBy": [
-        "TwistedAutomorphicDescents:TAD.6/support-special-cases",
-        "TwistedAutomorphicDescents:TAD.6/orthogonal-rank-one",
-        "TwistedAutomorphicDescents:TAD.7/regular-case"
-      ],
-      "owner": "This roadmap, proof and source comparison"
+      "slug": "type-poles-and-cross-factor",
+      "needs": "Supply the conjugate-self-dual signed-Asai type-pole dichotomy and the completed signed-factor identity comparing the actual unipotent-radical normalizer with the bilinear dictionary of Section 4.1.",
+      "supplier": "AutomorphicLFunctionsAndLocalFactors",
+      "section": "AL.3–AL.4, poles and factor operations"
     },
     {
-      "title": "G10: Subregular orbit raising and unitary collapse",
-      "detail": "Read and decompose Jiang–Liu–Savin Theorem 11.2 in its actual scope, prove that the needed SO₃ stabilizer is split in the even orthogonal case, and supply the independent unitary collapse/generic U₂ argument in the odd unitary case. The partition [2n,1] is not the Bessel partition [2n−1,1,1]. Establish the dominance argument reducing maximal subregular support to a singleton with valid rank and very-even labels.",
-      "neededBy": [
-        "TwistedAutomorphicDescents:TAD.7/subregular-summand",
-        "TwistedAutomorphicDescents:TAD.7/subregular-recovery"
-      ],
-      "owner": "This roadmap, proof and source comparison"
+      "slug": "isobaric-eisenstein-continuation",
+      "needs": "Extend Eisenstein continuation and constant-term formulas to the moderate-growth noncuspidal smaller datum sigma permitted by Section 2.1, with holomorphic smooth sections and specified central character.",
+      "supplier": "AutomorphicSpectralTheory",
+      "section": "2.4, 2.4a and 2.14"
     },
     {
-      "title": "G11: Central character and discrete Fourier image",
-      "detail": "The exact AF.3/cuspidal-spectrum-discrete export uses a split-center quotient A_H or a fixed unitary central character. Show that the particular Bessel image belongs to that carrier before taking its discrete Hilbert decomposition. A split SO₂ stabilizer has a noncompact norm direction; vanishing proper constant terms is vacuous for a torus and does not itself make the restriction central-finite or a discrete sum. Either prove the required central-equivariance/finiteness for the image or formulate the exact spectral projection/integral and prove that the needed constituent and recovery arguments survive. Anisotropic SO₂ and finite/anisotropic-center groups avoid this specific split-center obstruction, but their restriction L² estimates are still imported. Do not quotient a non-equivariant function by A_H.",
-      "neededBy": [
-        "TwistedAutomorphicDescents:TAD.1/bessel-module",
-        "TwistedAutomorphicDescents:TAD.1/first-cuspidal",
-        "TwistedAutomorphicDescents:TAD.1/multiplicity-free",
-        "TwistedAutomorphicDescents:TAD.1/generic-summand",
-        "TwistedAutomorphicDescents:TAD.5/critical-structure",
-        "TwistedAutomorphicDescents:TAD.5/twisted-descent"
-      ],
-      "owner": "This roadmap for the image comparison; AutomorphicFormsOnReductiveGroups for the Hilbert carrier"
+      "slug": "quasisplit-residual-packets-membership",
+      "needs": "For quasi-split special orthogonal and unitary groups, identify the Arthur packets of the discrete constituents with the prescribed residual Langlands-quotient data for the parameter formed from the distinct two-dimensional SL2 blocks and the smaller generic parameter.",
+      "supplier": "ModularityAndLanglandsExtensions",
+      "section": "3.8, 3.12, 3.15–3.17"
+    },
+    {
+      "slug": "residual-irreducibility",
+      "needs": "Prove irreducibility of the residual representation for distinct required-type blocks and a cuspidal generic-parameter smaller datum, within the applicable classification scope and, on non-quasi-split forms, under the inner-form classification hypothesis of Section 5.2.",
+      "supplier": "ModularityAndLanglandsExtensions",
+      "section": "3.8, 3.12, 3.15–3.18, 3.23–3.25"
+    },
+    {
+      "slug": "all-member-residual-support",
+      "needs": "Classify the cuspidal supports of every discrete member of the residual Arthur packets formed from distinct two-dimensional SL2 blocks and the smaller generic parameter, retaining the Levi, inducing blocks and exponents, within the classification scope of Section 5.2.",
+      "supplier": "ModularityAndLanglandsExtensions",
+      "section": "3.8, 3.12, 3.15–3.18, 3.23–3.25"
+    },
+    {
+      "slug": "coherent-packets-comparison",
+      "needs": "Compare the coherent generic global packets on the shared carriers with the quasi-split classification and, under the inner-form classification hypothesis of Section 5.2, with the specified rational inner forms, preserving relevance, duals and even-orthogonal outer labels.",
+      "supplier": "ModularityAndLanglandsExtensions",
+      "section": "3.8, 3.12, 3.15–3.18, 3.23"
+    },
+    {
+      "slug": "generic-discrete-member-cuspidality",
+      "needs": "Prove that discrete automorphic members of relevant generic global Arthur packets are cuspidal within the quasi-split classification scope and, under the inner-form classification hypothesis of Section 5.2, on the specified rational inner forms.",
+      "supplier": "ModularityAndLanglandsExtensions",
+      "section": "3.8, 3.12, 3.16–3.18, 3.23"
+    },
+    {
+      "slug": "standard-base-change-uniqueness",
+      "needs": "Identify the standard isobaric base change of each generic-parameter discrete automorphic member, with uniqueness of the GL isobaric target from its almost-everywhere standard Satake parameters, retaining even-orthogonal outer labels on the source and the classification scope of Section 5.2.",
+      "supplier": "ModularityAndLanglandsExtensions",
+      "section": "3.8, 3.12, 3.15–3.18, 3.23"
+    },
+    {
+      "slug": "orthogonal-auxiliary-induction",
+      "needs": "For every finite extension k of Q_p, every nondegenerate quadratic space W over k, every t≥1, every irreducible admissible σ_W of SO(W)(k) and every irreducible supercuspidal τ of GL_t(k), prove that the normalized induction of τ|det|^s⊗σ_W from the parabolic of SO(W⊥H^t) stabilizing a chosen t-dimensional totally isotropic subspace of H^t, with Levi GL_t×SO(W) (the whole group when W=0 and t=1, and a non-maximal parabolic when W is a hyperbolic plane) is irreducible for s outside a finite subset of C/(2πi/log q)Z, and that for each irreducible π_V of SO(V)(k), V⊂W⊥H^t of codimension one, τ can be chosen so that no Bernstein component of SO(V)(k) containing π_V has τ, up to unramified twist, in its GL_t cuspidal support.",
+      "supplier": "SmoothRepresentationsOfLocalGroups",
+      "section": "SR.3.1, generic-irreducibility"
+    },
+    {
+      "slug": "oriented-even-orthogonal-packets",
+      "needs": "For special orthogonal groups of even-dimensional quadratic spaces, within the classification scope of Section 5.2, refine the outer-orbit packets to oriented local packets of SO-conjugacy classes of parameters, with every member of the oriented local fibre of an outer-stable parameter isomorphic to its outer conjugate, and prove that every discrete automorphic member with a given outer orbit of generic global parameters lies in the restricted tensor product of the localized oriented packets of one of its at most two coherent global orientations, which the rational outer action exchanges.",
+      "supplier": "ModularityAndLanglandsExtensions",
+      "section": "3.13, 3.15 and 3.17"
     }
   ],
   "sourceIssues": [

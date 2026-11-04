@@ -2090,7 +2090,32 @@
       "detail": "Every target-level definition and key theorem has a node and explicit inputs. Independent review corrected the cusp cutoff and supplier ownership; stages remain planned and implementation is not claimed."
     }
   ],
-  "gaps": [],
+  "gaps": [
+    {
+      "slug": "primitive-minus-cycle-invariant",
+      "needs": "§4.17a must prove that every narrow class has a primitive reduced minus period and that two narrow classes are equal exactly when their primitive reduced minus periods are cyclic rotations of each other.",
+      "supplier": "AutomorphicSpectralTheory",
+      "section": "4.17a"
+    },
+    {
+      "slug": "primitive-pell-word",
+      "needs": "§4.17a must prove that for a primitive reduced minus period of A with reduced root w, the word ∏ₖT^nₖS is the primitive hyperbolic automorph fixing w and wσ, with attracting fixed point w, corresponding to multiplication by the least unit ε_D>1 of norm +1.",
+      "supplier": "AutomorphicSpectralTheory",
+      "section": "4.17a"
+    },
+    {
+      "slug": "narrow-dictionary-compatibility",
+      "needs": "§4.17a must identify its narrow class group Cl⁺(K) and its form and ideal labels with the native `NumberField.NarrowClassGroup` through the IntegralLattices B2–B3 oriented dictionary specialized by GlobalNumberFields Layer 11, including the √D sign correction for a negative leading coefficient.",
+      "supplier": "AutomorphicSpectralTheory",
+      "section": "4.17a"
+    },
+    {
+      "slug": "oriented-quadratic-cycle-reversal",
+      "needs": "§4.17a must identify the full primitive parametrized modular cycle C_(JA⁻¹) with C_A traversed in the opposite orientation.",
+      "supplier": "AutomorphicSpectralTheory",
+      "section": "4.17a"
+    }
+  ],
   "requests": [
     {
       "supplier": "tauceti:TauCetiRoadmap/FuchsianOrbifolds#layer-0-the-effective-projective-möbius-action",

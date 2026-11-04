@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-PeriodsAndSpecialValues~2",
+    "head": "58a34e8553ec71438b8edeb983a3871567274658",
+    "pr": 1496,
+    "folder": "PeriodsAndSpecialValues",
+    "date": "2026-11-03",
+    "findings": 3,
+    "blocking": 2,
+    "notes": "Full README and Lean review; both seeded targets verified against Park, SH and SG; 105 computed adversarial rows across 81 subsections and all 38 Lean declarations; passing worker gate and direct Lean elaboration with 13 sorry warnings; all signature and padding probes completed; dependency check: 204 roadmaps, 1629 edges, 0 problems. Findings: relative K-theory supplier drift, redundant declared K3/lattice gaps, two absent source-register entries. BG remains uncertified and Tate-legal waived."
+  }
+}

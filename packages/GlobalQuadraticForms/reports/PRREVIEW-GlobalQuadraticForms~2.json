@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-GlobalQuadraticForms~2",
+    "head": "1bc4ccc4a056d34d48a4b02fddd33110d5a475c7",
+    "pr": 1200,
+    "folder": "GlobalQuadraticForms",
+    "date": "2026-11-02",
+    "findings": 9,
+    "blocking": 5,
+    "notes": "Full-folder review: 107 computed adversarial rows; all 13 elaborated signatures inspected; 12 one-tactic padding probes; original Lean elaboration passed with sorry warnings only. Dependency check: 204 roadmaps, 1496 edges, 0 problems. Recorded push gate failed build on 12 module-system warnings. Seeded sample: localized product formula, archimedean symbol, sign prescription, binary, ternary, quaternary mathematically tested; O’Meara source text unavailable, so source locators remain unverified. All six cited works attempted through sources service and recorded as missing. Main/open-roadmap and pinned-library ownership audited; no PR files changed."
+  }
+}

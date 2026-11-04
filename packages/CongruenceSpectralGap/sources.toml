@@ -1,0 +1,101 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "CongruenceSpectralGap"
+
+[[source]]
+id = "gj78"
+authors = "Stephen Gelbart and Hervé Jacquet"
+title = "A relation between automorphic representations of GL(2) and GL(3)"
+year = 1978
+locator_scheme = "theorem"
+locator = "Definition 3.1.3, Proposition 3.2, section 3.7, Theorem 9.3, Remark 9.9, pp. 485–491, 531–541"
+url = "https://www.numdam.org/article/ASENS_1978_4_11_4_471_0.pdf"
+fetched_from = "https://www.numdam.org/article/ASENS_1978_4_11_4_471_0.pdf"
+fetched_at = "2026-10-23T17:11:25Z"
+sha256 = "319347503f91fe22bec22ce7519b9ebaf09921ec4de8756c51d155864b4fc16a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-23"
+cited_for = ["Layer 1 adjoint supplier contract"]
+
+[[source]]
+id = "teschl"
+authors = "Gerald Teschl"
+title = "Mathematical Methods in Quantum Mechanics"
+year = 2009
+locator_scheme = "theorem"
+locator = "Theorems 2.12–2.13, Theorem 4.10, sections 2.3 and 4.3, printed pp. 70–72 and 118–119"
+url = "https://www.mat.univie.ac.at/~gerald/ftp/book-schroe/schroe.pdf"
+fetched_from = "https://www.mat.univie.ac.at/~gerald/ftp/book-schroe/schroe.pdf"
+fetched_at = "2026-10-23T17:12:33Z"
+sha256 = "8dc8de0b58aa0a3fedfe594a345f9b5875322e5526ea581cb640a98d55b82818"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-23"
+version_note = "Author-hosted 12 February 2009 edition, GSM 99; theorem and printed-page numbering of the fetched text."
+cited_for = ["Layer 0 and Layer 5 operator and form Rayleigh comparisons"]
+
+[[source]]
+id = "lrs95"
+authors = "W. Luo, Z. Rudnick, P. Sarnak"
+title = "On Selberg's eigenvalue conjecture"
+year = 1995
+venue = "Geometric and Functional Analysis 5"
+doi = "10.1007/BF01895672"
+locator_scheme = "theorem"
+locator = "Theorems 1.1–1.2, Lemma 2.1, Lemmas 3.1–3.2, Proposition 3.1, pp. 387–399"
+url = "https://doi.org/10.1007/BF01895672"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layers 0–5"]
+
+[[source]]
+id = "katz-gkm"
+authors = "Nicholas M. Katz"
+title = "Gauss Sums, Kloosterman Sums, and Monodromy Groups"
+year = 1988
+locator_scheme = "theorem"
+locator = "Sections 2.0 and 2.3.1, section 4.0, Theorem 4.1.1, section 4.3, Theorem 5.1(1)–(8), Proposition 5.2.1 and its proof (including Lemma 5.2.1.1 and Proposition 5.2.1.3), section 5.2.4, pp. 26, 32, 47–49, 59–76"
+url = "https://web.math.princeton.edu/~nmk/Katz-GKM.pdf"
+fetched_from = "https://web.math.princeton.edu/~nmk/Katz-GKM.pdf"
+fetched_at = "2026-10-23T17:24:57Z"
+sha256 = "8711424f8edb14f38c0e61606ef49d6efc67d5a93ac9f5bd9fa3e13b7c7d9ffe"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-23"
+cited_for = ["Layer 4 curve conductor inputs, convolution, general hyper-Kloosterman sum and bound"]
+
+[[source]]
+id = "bms02"
+authors = "Maxim Braverman, Ognjen Milatovic, Mikhail Shubin"
+title = "Essential self-adjointness of Schroedinger type operators on manifolds"
+year = 2002
+doi = "10.1070/RM2002v057n04ABEH000532"
+arxiv = "math/0201231v3"
+locator_scheme = "theorem"
+locator = "Section 2.1, Assumption B and Corollary 2.10, printed pp. 4–7 of arXiv v3"
+url = "https://arxiv.org/abs/math/0201231v3"
+fetched_from = "https://arxiv.org/pdf/math/0201231v3"
+fetched_at = "2026-10-25T01:14:45Z"
+sha256 = "28e5ce3be552637742704c510d363f837f977b4f3ff09c13ec8d60950e9a06cd"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v3 (29 July 2002); section and corollary numbering of the arXiv text, which is the version read; published in Russian Mathematical Surveys 57:4 (2002)."
+cited_for = ["0.2", "5.3"]
+
+[[source]]
+id = "laumon-swan"
+authors = "Gérard Laumon"
+title = "Semi-continuité du conducteur de Swan (d’après P. Deligne)"
+year = 1981
+locator_scheme = "theorem"
+locator = "Theorem 2.1.1, Corollary 2.1.2 and Remark 2.1.3, pp. 185–187"
+url = "https://www.numdam.org/item/AST_1981__82-83__173_0/"
+fetched_from = "https://www.numdam.org/item/AST_1981__82-83__173_0.pdf"
+fetched_at = "2026-10-25T03:48:28Z"
+sha256 = "fe8746258ffe496e49536a635e11a7f698063a7e7854301f114fcc9148c1bf60"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["4.2b Swan-constancy criterion"]

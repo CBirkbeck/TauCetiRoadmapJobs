@@ -78,13 +78,13 @@ The following exact nodes supply planned mathematics, rather than baseline imple
 - `HeckeStacksAndLocalShtukas:HS2`: `HeckeStacksAndLocalShtukas:HS2/nonemptiness-and-period-connectedness`, `HeckeStacksAndLocalShtukas:HS2/classical-period-points`.
 - `DiamondSixOperations:S3`: `DiamondSixOperations:S3/verdier-duality-lower-shriek`.
 - `DiamondSixOperations:S4`: `DiamondSixOperations:S4/cohomologically-smooth`, `DiamondSixOperations:S4/smooth-twisted-pullback`.
-- `AdicSpacesPartIIPartII:RZ.0`: `AdicSpacesPartIIPartII:RZ.0/proper-image-zariski-closed`, `AdicSpacesPartIIPartII:RZ.0/local-dimension`.
-- `AdicSpacesPartIIPartII:RZ.1`: `AdicSpacesPartIIPartII:RZ.1/irreducibility-criterion`, `AdicSpacesPartIIPartII:RZ.1/full-dimensional-closed-subset`.
-- `AdicSpacesPartIIPartII:RZ.2`: `AdicSpacesPartIIPartII:RZ.2/singular-stratification`, `AdicSpacesPartIIPartII:RZ.2/rank-loci`.
-- `AdicSpacesPartIIPartII:RZ.3`: `AdicSpacesPartIIPartII:RZ.3/rigid-analytic-point`, `AdicSpacesPartIIPartII:RZ.3/classical-points-rigid-analytic-points`, `AdicSpacesPartIIPartII:RZ.3/gauss-point-in-closure`.
-- `AdicSpacesPartIIPartII:RZ.4`: `AdicSpacesPartIIPartII:RZ.4/weakly-shilov-point`, `AdicSpacesPartIIPartII:RZ.4/weakly-shilov-avoid-nowhere-dense`.
-- `AdicSpacesPartIIPartII:RZ.5`: `AdicSpacesPartIIPartII:RZ.5/resolution-consequences`.
-- `AdicSpacesPartIIPartII:RZ.6`: `AdicSpacesPartIIPartII:RZ.6/manifold-of-classical-points`, `AdicSpacesPartIIPartII:RZ.6/constant-rank-theorem`, `AdicSpacesPartIIPartII:RZ.6/smooth-morphism-submersion`, `AdicSpacesPartIIPartII:RZ.6/subfield-identity-theorem`.
+- `AdicSpacesPartV:RZ.0`: `AdicSpacesPartV:RZ.0/proper-image-zariski-closed`, `AdicSpacesPartV:RZ.0/local-dimension`.
+- `AdicSpacesPartV:RZ.1`: `AdicSpacesPartV:RZ.1/irreducibility-criterion`, `AdicSpacesPartV:RZ.1/full-dimensional-closed-subset`.
+- `AdicSpacesPartV:RZ.2`: `AdicSpacesPartV:RZ.2/singular-stratification`, `AdicSpacesPartV:RZ.2/rank-loci`.
+- `AdicSpacesPartV:RZ.3`: `AdicSpacesPartV:RZ.3/rigid-analytic-point`, `AdicSpacesPartV:RZ.3/classical-points-rigid-analytic-points`, `AdicSpacesPartV:RZ.3/gauss-point-in-closure`.
+- `AdicSpacesPartV:RZ.4`: `AdicSpacesPartV:RZ.4/weakly-shilov-point`, `AdicSpacesPartV:RZ.4/weakly-shilov-avoid-nowhere-dense`.
+- `AdicSpacesPartV:RZ.5`: `AdicSpacesPartV:RZ.5/resolution-consequences`.
+- `AdicSpacesPartV:RZ.6`: `AdicSpacesPartV:RZ.6/manifold-of-classical-points`, `AdicSpacesPartV:RZ.6/constant-rank-theorem`, `AdicSpacesPartV:RZ.6/smooth-morphism-submersion`, `AdicSpacesPartV:RZ.6/subfield-identity-theorem`.
 - `ReductiveGroupsPartII:RG2.0`: `ReductiveGroupsPartII:RG2.0/scheme-point-topology`, `ReductiveGroupsPartII:RG2.0/points-topological-group`, `ReductiveGroupsPartII:RG2.0/congruence-neighbourhood-basis`, `ReductiveGroupsPartII:RG2.0/smooth-morphism-open-map`.
 - `ReductiveGroupsPartII:RG2.1`: `ReductiveGroupsPartII:RG2.1/steinberg-quasi-split`.
 - `EndoscopicTransferAndUnitaryTraceComparison:ET.6a`: `EndoscopicTransferAndUnitaryTraceComparison:ET.6a/el-duality`, `EndoscopicTransferAndUnitaryTraceComparison:ET.6a/period-morphisms`.
@@ -713,7 +713,7 @@ The consuming constructions use this interface as follows. AP5 rigid_cells: Make
 
 **Acceptance.** Do not identify every geometric point with a rigid analytic point.
 
-*Needs:* `DiamondsAndVStacks:D4/small-v-sheaves-and-small-v-stacks`; `DiamondsAndVStacks:D4/spaces-and-surjectivity-for-small-v-stacks`; `DiamondsAndVStacks:D6/gluing-and-the-diamond-functor`; `DiamondsAndVStacks:D6/etale-site-comparison`; `DiamondsAndVStacks:D6/seminormal-rigid-full-faithfulness`; `AdicSpacesPartIIPartII:RZ.3/rigid-analytic-point`; `AdicSpacesPartIIPartII:RZ.3/classical-points-rigid-analytic-points`; `AdicSpacesPartIIPartII:RZ.3/gauss-point-in-closure`; `DiamondsAndVStacks:D5/locally-closed-generalizing-subdiamond`.
+*Needs:* `DiamondsAndVStacks:D4/small-v-sheaves-and-small-v-stacks`; `DiamondsAndVStacks:D4/spaces-and-surjectivity-for-small-v-stacks`; `DiamondsAndVStacks:D6/gluing-and-the-diamond-functor`; `DiamondsAndVStacks:D6/etale-site-comparison`; `DiamondsAndVStacks:D6/seminormal-rigid-full-faithfulness`; `AdicSpacesPartV:RZ.3/rigid-analytic-point`; `AdicSpacesPartV:RZ.3/classical-points-rigid-analytic-points`; `AdicSpacesPartV:RZ.3/gauss-point-in-closure`; `DiamondsAndVStacks:D5/locally-closed-generalizing-subdiamond`.
 
 ### 4.2 Coefficient and group local systems
 
@@ -848,9 +848,9 @@ For a flat line with its filtration concentrated in degree a, the canonical seco
 - `DiamondsAndVStacks:D6/gluing-and-the-diamond-functor`.
 - `DiamondsAndVStacks:D6/etale-site-comparison`.
 - `DiamondsAndVStacks:D6/seminormal-rigid-full-faithfulness`.
-- `AdicSpacesPartIIPartII:RZ.3/rigid-analytic-point`.
-- `AdicSpacesPartIIPartII:RZ.3/classical-points-rigid-analytic-points`.
-- `AdicSpacesPartIIPartII:RZ.3/gauss-point-in-closure`.
+- `AdicSpacesPartV:RZ.3/rigid-analytic-point`.
+- `AdicSpacesPartV:RZ.3/classical-points-rigid-analytic-points`.
+- `AdicSpacesPartV:RZ.3/gauss-point-in-closure`.
 - `DiamondsAndVStacks:D5/locally-closed-generalizing-subdiamond`.
 - `DiamondsAndVStacks:D1/universally-open-std-cover`.
 - `DiamondsAndVStacks:D2/small-pro-etale-site-and-v-site`.
@@ -949,7 +949,7 @@ At a classical point use the infinite cyclotomic Galois action to recover a cano
 
 **Acceptance.** This replaces each invalid use of the smooth theorem on a singular base.
 
-*Needs:* AP5 `grass_geometry` (Grassmannian geometry and Schubert loci); AP4 `flat_essential_image` (Smooth rigid lattice–filtration comparison); AP0 `lattice_recovery` (Recovery from a filtration); `DiamondsAndVStacks:D6/gluing-and-the-diamond-functor`; `DiamondsAndVStacks:D6/etale-site-comparison`; `DiamondsAndVStacks:D6/seminormal-rigid-full-faithfulness`; `AdicSpacesPartIIPartII:RZ.5/resolution-consequences`.
+*Needs:* AP5 `grass_geometry` (Grassmannian geometry and Schubert loci); AP4 `flat_essential_image` (Smooth rigid lattice–filtration comparison); AP0 `lattice_recovery` (Recovery from a filtration); `DiamondsAndVStacks:D6/gluing-and-the-diamond-functor`; `DiamondsAndVStacks:D6/etale-site-comparison`; `DiamondsAndVStacks:D6/seminormal-rigid-full-faithfulness`; `AdicSpacesPartV:RZ.5/resolution-consequences`.
 
 ### 5.6 Adjoint-weight BB criterion
 
@@ -980,7 +980,7 @@ On a reductive GL_2 cell of type (1,0), adjoint weights are −1,0,1 and BB iden
 - `DiamondsAndVStacks:D6/seminormal-rigid-full-faithfulness`.
 - `tauceti:TauCetiRoadmap/ReductiveGroups#layer-3-subgroups-quotients-components`.
 - AP0.
-- `AdicSpacesPartIIPartII:RZ.5/resolution-consequences`.
+- `AdicSpacesPartV:RZ.5/resolution-consequences`.
 - `tauceti:TauCetiRoadmap/ReductiveGroups#layer-2-lie-algebra-and-the-adjoint-representation`.
 
 
@@ -1066,7 +1066,7 @@ Descend the Q_p-local system to the étale site and resolve the seminormal rigid
 
 **Acceptance.** Do not apply Liu–Zhu’s finite-Q_p-field rigidity theorem directly over an arbitrary strict field or singular S. The arbitrary-field full-rank criterion is an explicit open input. A fixed-type Grassmannian theorem cannot establish its own type hypothesis.
 
-*Needs:* AP6 `family_groups` (G-families and canonical reduction); AP5 `rigid_cells` (Rigid sources and Griffiths transversality); AP4 `relative_good` (Relative goodness and trace exactness); `AdicSpacesPartIIPartII:RZ.5/resolution-consequences`; `DiamondsAndVStacks:D6/gluing-and-the-diamond-functor`; `DiamondsAndVStacks:D6/etale-site-comparison`; `DiamondsAndVStacks:D6/seminormal-rigid-full-faithfulness`; `PadicHodgeTheory:P8:local-rational`; `PadicHodgeTheory:P8:local-rational/plan/pushforward-of-structural-de-rham-sheaf`; `PadicHodgeTheory:P8/diamond-period-local-system-equivalence`.
+*Needs:* AP6 `family_groups` (G-families and canonical reduction); AP5 `rigid_cells` (Rigid sources and Griffiths transversality); AP4 `relative_good` (Relative goodness and trace exactness); `AdicSpacesPartV:RZ.5/resolution-consequences`; `DiamondsAndVStacks:D6/gluing-and-the-diamond-functor`; `DiamondsAndVStacks:D6/etale-site-comparison`; `DiamondsAndVStacks:D6/seminormal-rigid-full-faithfulness`; `PadicHodgeTheory:P8:local-rational`; `PadicHodgeTheory:P8:local-rational/plan/pushforward-of-structural-de-rham-sheaf`; `PadicHodgeTheory:P8/diamond-period-local-system-equivalence`.
 
 ### 6.5 b-rigidified admissible loci
 
@@ -1149,7 +1149,7 @@ On a disconnected base the defining W of a neutral pair remains one globally fix
 - `MotivesAndAlgebraicCycles:MC.6/tannaka-connectedness-recognition`.
 - AP1.
 - AP5.
-- `AdicSpacesPartIIPartII:RZ.5/resolution-consequences`.
+- `AdicSpacesPartV:RZ.5/resolution-consequences`.
 - `DiamondsAndVStacks:D6/gluing-and-the-diamond-functor`.
 - `DiamondsAndVStacks:D6/etale-site-comparison`.
 - `DiamondsAndVStacks:D6/seminormal-rigid-full-faithfulness`.
@@ -1704,7 +1704,7 @@ Each proper Hodge locus is analytic and nowhere dense, hence avoids weakly Shilo
 
 **Acceptance.** Only infinite residue is used by the Gauss-point step; L⊇Q_p-breve supplies it.
 
-*Needs:* AP10 `exceptional_countable` (Countable closedness of the exceptional locus); AP6 `family_type` (Good type over rigid bases); `AdicSpacesPartIIPartII:RZ.1/irreducibility-criterion`; `AdicSpacesPartIIPartII:RZ.1/full-dimensional-closed-subset`; `AdicSpacesPartIIPartII:RZ.3/rigid-analytic-point`; `AdicSpacesPartIIPartII:RZ.3/classical-points-rigid-analytic-points`; `AdicSpacesPartIIPartII:RZ.3/gauss-point-in-closure`; `AdicSpacesPartIIPartII:RZ.4/weakly-shilov-point`; `AdicSpacesPartIIPartII:RZ.4/weakly-shilov-avoid-nowhere-dense`; `AdicSpacesPartIIPartII:RZ.5/resolution-consequences`; `mathlib:dense_iInter_of_isOpen`; `mathlib:nonempty_interior_of_iUnion_of_closed`.
+*Needs:* AP10 `exceptional_countable` (Countable closedness of the exceptional locus); AP6 `family_type` (Good type over rigid bases); `AdicSpacesPartV:RZ.1/irreducibility-criterion`; `AdicSpacesPartV:RZ.1/full-dimensional-closed-subset`; `AdicSpacesPartV:RZ.3/rigid-analytic-point`; `AdicSpacesPartV:RZ.3/classical-points-rigid-analytic-points`; `AdicSpacesPartV:RZ.3/gauss-point-in-closure`; `AdicSpacesPartV:RZ.4/weakly-shilov-point`; `AdicSpacesPartV:RZ.4/weakly-shilov-avoid-nowhere-dense`; `AdicSpacesPartV:RZ.5/resolution-consequences`; `mathlib:dense_iInter_of_isOpen`; `mathlib:nonempty_interior_of_iUnion_of_closed`.
 
 ### Examples
 
@@ -1722,14 +1722,14 @@ The Baire argument uses countably many closed incidence images; the individual l
 - `ReductiveGroupsPartII:RG2.0/points-topological-group`.
 - `ReductiveGroupsPartII:RG2.0/congruence-neighbourhood-basis`.
 - `ReductiveGroupsPartII:RG2.0/smooth-morphism-open-map`.
-- `AdicSpacesPartIIPartII:RZ.1/irreducibility-criterion`.
-- `AdicSpacesPartIIPartII:RZ.1/full-dimensional-closed-subset`.
-- `AdicSpacesPartIIPartII:RZ.3/rigid-analytic-point`.
-- `AdicSpacesPartIIPartII:RZ.3/classical-points-rigid-analytic-points`.
-- `AdicSpacesPartIIPartII:RZ.3/gauss-point-in-closure`.
-- `AdicSpacesPartIIPartII:RZ.4/weakly-shilov-point`.
-- `AdicSpacesPartIIPartII:RZ.4/weakly-shilov-avoid-nowhere-dense`.
-- `AdicSpacesPartIIPartII:RZ.5/resolution-consequences`.
+- `AdicSpacesPartV:RZ.1/irreducibility-criterion`.
+- `AdicSpacesPartV:RZ.1/full-dimensional-closed-subset`.
+- `AdicSpacesPartV:RZ.3/rigid-analytic-point`.
+- `AdicSpacesPartV:RZ.3/classical-points-rigid-analytic-points`.
+- `AdicSpacesPartV:RZ.3/gauss-point-in-closure`.
+- `AdicSpacesPartV:RZ.4/weakly-shilov-point`.
+- `AdicSpacesPartV:RZ.4/weakly-shilov-avoid-nowhere-dense`.
+- `AdicSpacesPartV:RZ.5/resolution-consequences`.
 - `mathlib:dense_iInter_of_isOpen`.
 - `mathlib:nonempty_interior_of_iUnion_of_closed`.
 
@@ -1799,7 +1799,7 @@ Pass to the strict completed maximal unramified extension of the residue field o
 
 **Acceptance.** This proves submersion at the translated lift in the selected smooth stratum; it does not claim smoothness at every original point.
 
-*Needs:* AP10 `generic_density` (Dense Hodge-generic classical points); AP3 `open_galois_image` (Open Galois image); AP6 `family_groups` (G-families and canonical reduction); AP11 `component_closure` (Connected-component formula for closure); AP5 `rigid_cells` (Rigid sources and Griffiths transversality); AP5 `bb_bound` (Adjoint-weight BB criterion); `AdicSpacesPartIIPartII:RZ.0/proper-image-zariski-closed`; `AdicSpacesPartIIPartII:RZ.0/local-dimension`; `AdicSpacesPartIIPartII:RZ.2/singular-stratification`; `AdicSpacesPartIIPartII:RZ.2/rank-loci`; `AdicSpacesPartIIPartII:RZ.6/manifold-of-classical-points`; `AdicSpacesPartIIPartII:RZ.6/constant-rank-theorem`; `AdicSpacesPartIIPartII:RZ.6/smooth-morphism-submersion`; `AdicSpacesPartIIPartII:RZ.6/subfield-identity-theorem`; `tauceti:TauCetiRoadmap/ReductiveGroups#layer-2-lie-algebra-and-the-adjoint-representation`; `AdicSpacesPartIIPartII:RZ.1/irreducibility-criterion`; `AdicSpacesPartIIPartII:RZ.1/full-dimensional-closed-subset`.
+*Needs:* AP10 `generic_density` (Dense Hodge-generic classical points); AP3 `open_galois_image` (Open Galois image); AP6 `family_groups` (G-families and canonical reduction); AP11 `component_closure` (Connected-component formula for closure); AP5 `rigid_cells` (Rigid sources and Griffiths transversality); AP5 `bb_bound` (Adjoint-weight BB criterion); `AdicSpacesPartV:RZ.0/proper-image-zariski-closed`; `AdicSpacesPartV:RZ.0/local-dimension`; `AdicSpacesPartV:RZ.2/singular-stratification`; `AdicSpacesPartV:RZ.2/rank-loci`; `AdicSpacesPartV:RZ.6/manifold-of-classical-points`; `AdicSpacesPartV:RZ.6/constant-rank-theorem`; `AdicSpacesPartV:RZ.6/smooth-morphism-submersion`; `AdicSpacesPartV:RZ.6/subfield-identity-theorem`; `tauceti:TauCetiRoadmap/ReductiveGroups#layer-2-lie-algebra-and-the-adjoint-representation`; `AdicSpacesPartV:RZ.1/irreducibility-criterion`; `AdicSpacesPartV:RZ.1/full-dimensional-closed-subset`.
 
 ### 11.5 Bi-analytic Ax–Lindemann theorem
 
@@ -1835,7 +1835,7 @@ Obtain the group and type by canonical reduction and the rigid-base theorem. Cho
 
 **Acceptance.** This proof shares the orbit argument, not the basicness-dependent infinite-level duality.
 
-*Needs:* AP6 `family_groups` (G-families and canonical reduction); AP6 `family_type` (Good type over rigid bases); AP10 `generic_density` (Dense Hodge-generic classical points); AP3 `open_galois_image` (Open Galois image); AP5 `rigid_cells` (Rigid sources and Griffiths transversality); `AdicSpacesPartIIPartII:RZ.2/singular-stratification`; `AdicSpacesPartIIPartII:RZ.2/rank-loci`; `AdicSpacesPartIIPartII:RZ.6/manifold-of-classical-points`; `AdicSpacesPartIIPartII:RZ.6/constant-rank-theorem`; `AdicSpacesPartIIPartII:RZ.6/smooth-morphism-submersion`; `AdicSpacesPartIIPartII:RZ.6/subfield-identity-theorem`.
+*Needs:* AP6 `family_groups` (G-families and canonical reduction); AP6 `family_type` (Good type over rigid bases); AP10 `generic_density` (Dense Hodge-generic classical points); AP3 `open_galois_image` (Open Galois image); AP5 `rigid_cells` (Rigid sources and Griffiths transversality); `AdicSpacesPartV:RZ.2/singular-stratification`; `AdicSpacesPartV:RZ.2/rank-loci`; `AdicSpacesPartV:RZ.6/manifold-of-classical-points`; `AdicSpacesPartV:RZ.6/constant-rank-theorem`; `AdicSpacesPartV:RZ.6/smooth-morphism-submersion`; `AdicSpacesPartV:RZ.6/subfield-identity-theorem`.
 
 ### 11.8 Nonbasic Serre–Tate boundary
 
@@ -1871,17 +1871,17 @@ The nonbasic ordinary Serre–Tate family has Hodge–Tate period image a point.
 - AP10.
 - AP3.
 - AP5.
-- `AdicSpacesPartIIPartII:RZ.0/proper-image-zariski-closed`.
-- `AdicSpacesPartIIPartII:RZ.0/local-dimension`.
-- `AdicSpacesPartIIPartII:RZ.2/singular-stratification`.
-- `AdicSpacesPartIIPartII:RZ.2/rank-loci`.
-- `AdicSpacesPartIIPartII:RZ.6/manifold-of-classical-points`.
-- `AdicSpacesPartIIPartII:RZ.6/constant-rank-theorem`.
-- `AdicSpacesPartIIPartII:RZ.6/smooth-morphism-submersion`.
-- `AdicSpacesPartIIPartII:RZ.6/subfield-identity-theorem`.
+- `AdicSpacesPartV:RZ.0/proper-image-zariski-closed`.
+- `AdicSpacesPartV:RZ.0/local-dimension`.
+- `AdicSpacesPartV:RZ.2/singular-stratification`.
+- `AdicSpacesPartV:RZ.2/rank-loci`.
+- `AdicSpacesPartV:RZ.6/manifold-of-classical-points`.
+- `AdicSpacesPartV:RZ.6/constant-rank-theorem`.
+- `AdicSpacesPartV:RZ.6/smooth-morphism-submersion`.
+- `AdicSpacesPartV:RZ.6/subfield-identity-theorem`.
 - `tauceti:TauCetiRoadmap/ReductiveGroups#layer-2-lie-algebra-and-the-adjoint-representation`.
-- `AdicSpacesPartIIPartII:RZ.1/irreducibility-criterion`.
-- `AdicSpacesPartIIPartII:RZ.1/full-dimensional-closed-subset`.
+- `AdicSpacesPartV:RZ.1/irreducibility-criterion`.
+- `AdicSpacesPartV:RZ.1/full-dimensional-closed-subset`.
 
 
 ## Layer AP12: Variations and Shimura applications

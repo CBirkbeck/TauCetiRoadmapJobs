@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-ComplexComparison~1",
+    "head": "4bd72379658126cbe9be935656396f0c9dac4de0",
+    "pr": 196,
+    "folder": "CohomologicalPointCounting/ComplexComparison",
+    "date": "2026-10-28",
+    "findings": 12,
+    "blocking": 5,
+    "notes": "Seeded Summit checked in SGA 4 XVI 4.1 and XVII 5.3.3-5.3.5, with Milne 21.1/21.2 and SGA 1 XII 5.1; 134 computed adversarial rows; 11 native Mathlib declarations opened at the pin; main/supplied-head ownership and sibling contracts audited. Dependency check: 163 roadmaps, 1163 edges, 0 problems. Target elaboration passed with zero diagnostics; zero declarations to probe. Worker gate fails latex=101, tex=45, prnum=1, metadata=1, each reported. No Tau Ceti pin is present. Unprovided open-head ownership and unavailable texts are explicitly limited. No PR file changed."
+  }
+}

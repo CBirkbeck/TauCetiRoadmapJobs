@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-FaltingsFinitenessAndIsogenyTheorems~1",
+    "head": "d303ef854fb63a7ed86e0129db5fc32ee56eaf29",
+    "pr": 1004,
+    "folder": "FaltingsFinitenessAndIsogenyTheorems",
+    "date": "2026-10-30",
+    "findings": 9,
+    "blocking": 5,
+    "notes": "Full README and Lean review; all four seeded source targets checked against Yu/Milne and named supplier text; 130 computed adversarial rows; 12 printed signatures; nine padding probes; targeted build and direct elaboration pass with sorry warnings only. Gate fails residue=6; dependency check: 209 roadmaps, 1477 edges, 0 problems. No PR files changed. Unavailable source texts and OCR limitations recorded."
+  }
+}

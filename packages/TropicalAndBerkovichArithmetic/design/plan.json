@@ -1,0 +1,52 @@
+{
+  "gaps": [
+    {
+      "slug": "general-field-toric-schemes",
+      "needs": "For every field K and rational fan, supply toric schemes glued from Spec K[σ∨∩M], the dense torus, face/orbit charts, toric morphisms, equivariant products and the closed-graph domination of toric embeddings needed in §§4.1–4.4 and §§5.2–5.6.",
+      "supplier": "AnalyticToricGeometry",
+      "section": "Layer 0"
+    },
+    {
+      "slug": "rank-one-model-specialization",
+      "needs": "For proper flat admissible normal models over any complete nontrivially valued rank-one valuation ring, supply specialization of generic intersection degree to component-weighted residue-field intersections, retaining tensor denominators, residue degrees and nonreduced multiplicities, for §6.2.",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "§§5.2–5.3"
+    },
+    {
+      "slug": "rank-one-model-projection",
+      "needs": "For those rank-one models, supply vertical Cartier intersection and projection under proper admissible modifications, compatibility with isometric scalar extension and common refinements, for §§6.2, 6.7 and 6.8.",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "§§5.3 and 5.9"
+    },
+    {
+      "slug": "absolute-valued-field-amalgamation",
+      "needs": "For isometric embeddings of complete real absolute-valued fields F into K and L, supply a common complete absolute-valued field with isometric embeddings of K and L agreeing on F, including trivial and archimedean valuations, for §§0.16 and 0.18; valuation equivalence alone is insufficient.",
+      "supplier": "AdicSpacesPartIII",
+      "section": "§R3.9"
+    },
+    {
+      "slug": "trivial-base-completed-tensor-injectivity",
+      "needs": "Extend the supplied nonarchimedean completed-tensor injectivity and faithful scalar-extension interfaces to trivially valued complete base fields, including injectivity B⊗_K L→B⊗̂_K L for Banach K-spaces and faithful extension of finite affinoid modules, for §§0.18–0.20.",
+      "supplier": "AdicSpacesPartII",
+      "section": "§R0.18"
+    },
+    {
+      "slug": "rank-one-raynaud-uniformization",
+      "needs": "For an abelian variety with split semistable reduction over any complete nontrivially valued rank-one field, supply the analytic Raynaud cross 0→M′→Eᵃⁿ→Aᵃⁿ→0 and 0→T→E→B→0 with B of good reduction and compatibility with isometric base extension and descent, for §7.5.",
+      "supplier": "NeronModelsAndSemistableAbelianVarieties",
+      "section": "§§3.13–3.14"
+    },
+    {
+      "slug": "rank-one-raynaud-valuation",
+      "needs": "For that Raynaud cross, supply trop:Eᵃⁿ→N_ℝ, its good-reduction kernel on valued points, its full period lattice trop(M′), and scalar-extension/descent compatibility, for §§7.5 and 7.8.",
+      "supplier": "NeronModelsAndSemistableAbelianVarieties",
+      "section": "§3.14"
+    },
+    {
+      "slug": "rank-one-raynaud-polarization",
+      "needs": "For that cross with principal polarization, supply the multiplicative period/monodromy pairing, its valuation pairing and scalar-extension descent over arbitrary complete rank-one bases, for comparison with the skeleton length pairing in §7.5.",
+      "supplier": "NeronModelsAndSemistableAbelianVarieties",
+      "section": "§§4.3–4.4"
+    }
+  ]
+}

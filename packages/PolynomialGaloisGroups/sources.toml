@@ -1,0 +1,50 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "PolynomialGaloisGroups"
+
+[[source]]
+id = "chapman-quintics"
+authors = "R. Chapman"
+title = "Note on Solving Solvable Quintics by D. Dummit"
+year = 1992
+locator_scheme = "page"
+locator = "the whole one-page note"
+url = "https://site.uvm.edu/ddummit/files/2021/04/Solving_Solvable_Quintics_note_by_Robin_Chapman.pdf"
+fetched_from = "https://site.uvm.edu/ddummit/files/2021/04/Solving_Solvable_Quintics_note_by_Robin_Chapman.pdf"
+fetched_at = "2026-11-03T18:53:16Z"
+sha256 = "dfc93585ab710ff460d375111a0f88e23dbef998c9ababd761e7873bbcd66893"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["3.1"]
+
+[[source]]
+id = "milne-fields"
+authors = "J. S. Milne"
+title = "Fields and Galois Theory (version 5.10)"
+year = 2022
+locator_scheme = "theorem"
+locator = "Proposition 4.16 p. 52; Proposition 5.27 p. 74; Lemma 5.33 p. 76; Theorem 5.34 p. 77"
+url = "https://www.jmilne.org/math/CourseNotes/FT.pdf"
+fetched_from = "https://www.jmilne.org/math/CourseNotes/FT.pdf"
+fetched_at = "2026-11-03T18:53:13Z"
+sha256 = "5c43ea0bf4ec190b819727fe720414a80e09f9e762533d08bad5b8a0b6de7273"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["1.1", "2.1", "2.2", "2.3"]
+
+[[source]]
+id = "dummit-quintics"
+authors = "D. S. Dummit"
+title = "Solving solvable quintics"
+year = 1991
+locator_scheme = "theorem"
+locator = "Theorem 1 p. 389; §2 p. 388; formula (2) p. 389; characteristic remark p. 387"
+url = "https://site.uvm.edu/ddummit/files/2021/04/Solving_Solvable_Quintics__Math_Comp_57_no195_1991__pp_387_401.pdf"
+fetched_from = "https://site.uvm.edu/ddummit/files/2021/04/Solving_Solvable_Quintics__Math_Comp_57_no195_1991__pp_387_401.pdf"
+fetched_at = "2026-11-03T18:53:15Z"
+sha256 = "d8bbbe334671365e31c8716e90e651158f474dac3f443bad2039d6659dc9f440"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["Conventions", "3.2"]

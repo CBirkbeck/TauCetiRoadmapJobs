@@ -1,0 +1,777 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "AnabelianGeometryAndNonabelianChabauty"
+
+[[source]]
+id = "m99"
+authors = "Shinichi Mochizuki"
+title = "The Local Pro-p Anabelian Geometry of Curves"
+year = 1999
+locator_scheme = "theorem"
+locator = "Lemmas 15.6–15.7"
+url = "https://www.kurims.kyoto-u.ac.jp/~motizuki/The%20Local%20Pro-p%20Anabelian%20Geometry%20of%20Curves.pdf"
+fetched_from = "https://www.kurims.kyoto-u.ac.jp/~motizuki/The%20Local%20Pro-p%20Anabelian%20Geometry%20of%20Curves.pdf"
+fetched_at = "2026-11-03T11:18:46Z"
+sha256 = "6e7ffd16f4c074068cc616a051bfcfba04a4dc412b1ee7465c732d0383b8a2cc"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["3.5"]
+
+[[source]]
+id = "m96"
+authors = "Shinichi Mochizuki"
+title = "The Profinite Grothendieck Conjecture for Closed Hyperbolic Curves over Number Fields"
+year = 1996
+locator_scheme = "section"
+locator = "§§1–2, printed pp. 576–582"
+url = "https://www.ms.u-tokyo.ac.jp/journal/pdf/jms030305.pdf"
+fetched_from = "https://www.ms.u-tokyo.ac.jp/journal/pdf/jms030305.pdf"
+fetched_at = "2026-11-03T11:23:25Z"
+sha256 = "90f4e3b19a7797b34ee7e87c25dfeacaa4ae11beef21d60bb30346776c76b950"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["1.12", "3.1", "3.11"]
+
+[[source]]
+id = "m96c"
+authors = "Shinichi Mochizuki"
+title = "Comments on The Profinite Grothendieck Conjecture for Closed Hyperbolic Curves over Number Fields"
+year = 2012
+locator_scheme = "theorem"
+locator = "Correction (1"
+url = "https://www.kurims.kyoto-u.ac.jp/~motizuki/The%20Profinite%20Grothendieck%20Conjecture%20for%20Closed%20Hyperbolic%20Curves%20over%20Number%20Fields%20%28comments%29.pdf"
+fetched_from = "https://www.kurims.kyoto-u.ac.jp/~motizuki/The%20Profinite%20Grothendieck%20Conjecture%20for%20Closed%20Hyperbolic%20Curves%20over%20Number%20Fields%20%28comments%29.pdf"
+fetched_at = "2026-11-03T11:23:27Z"
+sha256 = "b6e66e8230bab4737b2a936a6b6cbd3234233eb48ae766b8158175390f976456"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["3.4"]
+
+[[source]]
+id = "mathlibnativetwistedquotients-6b7abb3"
+authors = "Mathlib contributors"
+title = "Coset actions and quotient topological groups"
+year = 2026
+locator_scheme = "page"
+locator = "GroupTheory/GroupAction/Quotient.lean: QuotientAction, quotient and smul_mk, repository pin 6b7abb3"
+url = "https://raw.githubusercontent.com/leanprover-community/mathlib4/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/GroupTheory/GroupAction/Quotient.lean"
+fetched_from = "https://raw.githubusercontent.com/leanprover-community/mathlib4/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/GroupTheory/GroupAction/Quotient.lean"
+fetched_at = "2026-11-03T11:23:28Z"
+sha256 = "d9ccc52305199eb9a2e329b4bef97fd42fe38d8400f62bfafe4a51b6a970906b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["0.13"]
+
+[[source]]
+id = "t97"
+authors = "Akio Tamagawa"
+title = "The Grothendieck conjecture for affine curves"
+year = 1997
+locator_scheme = "theorem"
+locator = "Proposition 2.8, Lemma 2.9 and Corollary 2.10, pp. 151–155"
+url = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/1992BA14A2D63FA076DB39A34EC45E83/S0010437X97000614a.pdf/grothendieck_conjecture_for_affine_curves.pdf"
+fetched_from = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/1992BA14A2D63FA076DB39A34EC45E83/S0010437X97000614a.pdf/grothendieck_conjecture_for_affine_curves.pdf"
+fetched_at = "2026-11-03T11:23:29Z"
+sha256 = "af7e7aef3ecf0c9747f30fa7126116af923d0644a9a512c584aa69c8bb16e508"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["3.10", "3.11", "3.3"]
+
+[[source]]
+id = "achinger-all-primes-2017"
+doi = "10.1007/s00222-017-0733-5"
+version_note = "arXiv 1701.03197v2 is the text read; the README locators use the version of record (Inventiones 210, 2017), whose numbering was not compared."
+authors = "Piotr Achinger"
+title = "Wild ramification and $$K(\\pi , 1)$$ K ( π , 1 ) spaces"
+year = 2017
+venue = "Inventiones mathematicae 210"
+arxiv = "1701.03197v2"
+locator_scheme = "theorem"
+locator = "§4, Definition 4.1 (version-of-record HTML"
+url = "https://arxiv.org/abs/1701.03197v2"
+fetched_from = "https://arxiv.org/pdf/1701.03197v2"
+fetched_at = "2026-11-03T11:23:34Z"
+sha256 = "b7b5f61e4d511ee61e253d16544021d2bf3cac84ad304326d1c98a4e8d023858"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["1.3", "1.4", "1.8"]
+
+[[source]]
+id = "achinger-effacement-2014-v1"
+authors = "Piotr Achinger"
+title = "$K(π, 1)$-neighborhoods and comparison theorems"
+year = 2014
+venue = "Compositio Mathematica 151 (2015) 1945-1964"
+doi = "10.1112/S0010437X15007319"
+arxiv = "1407.0337v1"
+locator_scheme = "section"
+locator = "§1.3, p. 2"
+url = "https://arxiv.org/abs/1407.0337v1"
+fetched_from = "https://arxiv.org/pdf/1407.0337v1"
+fetched_at = "2026-11-03T11:23:40Z"
+sha256 = "7c26b2ca8df1b73bd6acd89872955cd6a1137de0933a948914f8cc5689d86791"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+version_note = "arXiv v1"
+cited_for = ["1.3", "1.4", "1.9"]
+
+[[source]]
+id = "bd1"
+authors = "Jennifer S. Balakrishnan, Netan Dogra"
+title = "Quadratic Chabauty and rational points I: p-adic heights"
+year = 2016
+venue = "Duke Math. J. 167, no. 11 (2018), 1981-2038"
+doi = "10.1215/00127094-2018-0013"
+arxiv = "1601.00388v2"
+locator_scheme = "theorem"
+locator = "§4.1, Definitions 4.1, 4.2 and 4.4 and Remark 4.3, p. 13"
+url = "https://arxiv.org/abs/1601.00388v2"
+fetched_from = "https://arxiv.org/pdf/1601.00388v2"
+fetched_at = "2026-11-03T11:23:46Z"
+sha256 = "1b8006eed69c262ab051e398e614478da38d46be73f8ed91a892834d2b38ae25"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+version_note = "arXiv v2"
+cited_for = ["6.1", "6.2", "6.3"]
+
+[[source]]
+id = "soule"
+authors = "Christophe Soulé"
+title = "Éléments cyclotomiques en K-théorie"
+year = 1987
+locator_scheme = "section"
+locator = "§6.1, pp. 246–247, including the distinction between surjectivity of both maps and the fin"
+url = "https://numdam.org/item/AST_1987__147-148__225_0.pdf"
+fetched_from = "https://numdam.org/item/AST_1987__147-148__225_0.pdf"
+fetched_at = "2026-11-03T11:23:47Z"
+sha256 = "714881bf6d8d10db209d9a3f03835fb048e4fc85ae103942daaefc3924efb0b7"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["7.0"]
+
+[[source]]
+id = "bianchi"
+authors = "Francesca Bianchi"
+title = "Quadratic Chabauty for (bi)elliptic curves and Kim's conjecture"
+year = 2019
+venue = "Alg. Number Th. 14 (2020) 2369-2416"
+doi = "10.2140/ant.2020.14.2369"
+arxiv = "1904.04622v2"
+locator_scheme = "section"
+locator = "§2.1.1, pp. 7–9"
+url = "https://arxiv.org/abs/1904.04622v2"
+fetched_from = "https://arxiv.org/pdf/1904.04622v2"
+fetched_at = "2026-11-03T11:23:52Z"
+sha256 = "9c487860f3b25c09f9b13e68827222797b7a43002d14b64bdcf763a9407e0ed6"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+version_note = "arXiv v2"
+cited_for = ["5.12", "7.4"]
+
+[[source]]
+id = "krzb"
+authors = "Eric Katz, Joseph Rabinoff, David Zureick-Brown"
+title = "Uniform bounds for the number of rational points on curves of small Mordell--Weil rank"
+year = 2015
+venue = "Duke Math. J. 165, no. 16 (2016), 3189â3240"
+doi = "10.1215/00127094-3673558"
+arxiv = "1504.00694v2"
+locator_scheme = "theorem"
+locator = "§3.3, Definition 3.8, pp. 18–19, and proof of Proposition 3.16, p. 22"
+url = "https://arxiv.org/abs/1504.00694v2"
+fetched_from = "https://arxiv.org/pdf/1504.00694v2"
+fetched_at = "2026-11-03T11:23:58Z"
+sha256 = "1169d989364d0f240c33c03a81137db72932e15143169c02a3938e85064a4428"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+version_note = "arXiv v2"
+cited_for = ["5.8"]
+
+[[source]]
+id = "bdckw-2018v4"
+authors = "Jennifer Balakrishnan, Ishai Dan-Cohen, Minhyong Kim, Stefan Wewers"
+title = "A non-abelian conjecture of Tate-Shafarevich type for hyperbolic curves"
+year = 2012
+arxiv = "1209.0640v4"
+locator_scheme = "section"
+locator = "§2.1, p. 8"
+url = "https://arxiv.org/abs/1209.0640v4"
+fetched_from = "https://arxiv.org/pdf/1209.0640v4"
+fetched_at = "2026-11-03T11:24:04Z"
+sha256 = "1cc3059dea942d17edad028fdde8f6d0ec410bdab14ad19565237115b0855c52"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+version_note = "arXiv v4"
+cited_for = ["2.12", "4.9", "5.12"]
+
+[[source]]
+id = "bdii"
+authors = "Jennifer S. Balakrishnan and Netan Dogra"
+title = "Quadratic Chabauty and rational points II: Generalised height functions on Selmer varieties"
+year = 2021
+locator_scheme = "theorem"
+locator = "Lemma 6.7, §6.5.1, p. 33 of the author manuscript"
+url = "https://kclpure.kcl.ac.uk/ws/portalfiles/portal/149873897/QC2.pdf"
+fetched_from = "https://kclpure.kcl.ac.uk/ws/portalfiles/portal/149873897/QC2.pdf"
+fetched_at = "2026-11-03T11:24:05Z"
+sha256 = "42208acc10fc5eaa54c55fe20305c8f687a9f6888b80776ef52bf58ad268cbe6"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["2.4", "2.7", "6.1"]
+
+[[source]]
+id = "bdmtv"
+authors = "Jennifer S. Balakrishnan, Netan Dogra, J. Steffen Muller, Jan Tuitman and Jan Vonk"
+title = "Explicit Chabauty–Kim for the split Cartan modular curve of level 13"
+year = 2019
+locator_scheme = "theorem"
+locator = "Appendix A.1, Definition A.1 and the paragraph before Definition A.2, pp. 934–935"
+url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v189-n3-p06-s.pdf"
+fetched_from = "https://annals.math.princeton.edu/wp-content/uploads/annals-v189-n3-p06-s.pdf"
+fetched_at = "2026-11-03T11:24:08Z"
+sha256 = "e1aa5f9662b4875404e25e45dd808e2b73223d562191018242ef357a13dff1f8"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["2.10", "2.2", "2.3"]
+
+[[source]]
+id = "bdmtv23"
+authors = "Jennifer S. Balakrishnan, Netan Dogra, Jan Steffen Müller, Jan Tuitman, Jan Vonk"
+title = "Quadratic Chabauty for modular curves: Algorithms and examples"
+year = 2021
+arxiv = "2101.01862v4"
+locator_scheme = "section"
+locator = "§3.5.2, Remark 3.17, p. 16"
+url = "https://arxiv.org/abs/2101.01862v4"
+fetched_from = "https://arxiv.org/pdf/2101.01862v4"
+fetched_at = "2026-11-03T11:24:12Z"
+sha256 = "738f0ec0cd588e20a569bc029fe2bb9611abc5d16fee7d36f9e966357c25f61d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+version_note = "arXiv v4"
+cited_for = ["6.2"]
+
+[[source]]
+id = "besser"
+authors = "Amnon Besser"
+title = "Coleman integration using the Tannakian formalism"
+year = 2000
+arxiv = "math/0011269v1"
+locator_scheme = "theorem"
+locator = "§2, Proposition 2.13 and §3, PDF pp. 7–9"
+url = "https://arxiv.org/abs/math/0011269v1"
+fetched_from = "https://arxiv.org/pdf/math/0011269v1"
+fetched_at = "2026-11-03T11:24:17Z"
+sha256 = "35d1b109d891dea711d2b557c1e81f826d6da73498ee82c7732185283702e2b7"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+version_note = "arXiv v1"
+cited_for = ["2.1", "2.2", "2.3"]
+
+[[source]]
+id = "besser-heights2002"
+authors = "Amnon Besser"
+title = "The p-adic height pairings of Coleman-Gross and of Nekovar"
+year = 2002
+arxiv = "math/0209006v1"
+locator_scheme = "theorem"
+locator = "§4, diagram (4.4"
+url = "https://arxiv.org/abs/math/0209006v1"
+fetched_from = "https://arxiv.org/pdf/math/0209006v1"
+fetched_at = "2026-11-03T11:24:23Z"
+sha256 = "5cc3e76a7e8f17e84d7f64b5d4349541c45eb0575a371ed2c38e208cf413bb72"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+version_note = "arXiv v1"
+cited_for = ["6.1"]
+
+[[source]]
+id = "cls"
+authors = "Bruno Chiarellotto and Bernard Le Stum"
+title = "F-isocristaux unipotents"
+year = 1999
+locator_scheme = "theorem"
+locator = "Propositions 2.3.2 and 2.3.5, pp. 93–95"
+url = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/7CD9502BBD4CC7DA8B364C29B371E0EF/S0010437X99000159a.pdf/div-class-title-f-isocristaux-unipotents-div.pdf"
+fetched_from = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/7CD9502BBD4CC7DA8B364C29B371E0EF/S0010437X99000159a.pdf/div-class-title-f-isocristaux-unipotents-div.pdf"
+fetched_at = "2026-11-03T11:24:26Z"
+sha256 = "1cb6fa0524a54af2522d3db947e65ba5e94725b7f41347196dc0155a9e2f0ccb"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["2.2", "2.5"]
+
+[[source]]
+id = "deligne-milne"
+authors = "Pierre Deligne and James S. Milne"
+title = "Tannakian Categories"
+year = 2022
+locator_scheme = "theorem"
+locator = "§2, Theorem 2.11 and its proof, note pp. 21–25"
+url = "https://www.jmilne.org/math/xnotes/tc2022.pdf"
+fetched_from = "https://www.jmilne.org/math/xnotes/tc2022.pdf"
+fetched_at = "2026-11-03T11:24:29Z"
+sha256 = "a7ff08ac1404cee28675b45446c0c778b0bc32fb34d351087db0d0825f2c0c0e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["2.1"]
+
+[[source]]
+id = "farb-kisin-wolfson-2024-v2"
+authors = "Benson Farb, Mark Kisin, Jesse Wolfson"
+title = "Essential dimension via prismatic cohomology"
+year = 2021
+arxiv = "2110.05534v2"
+locator_scheme = "section"
+locator = "§2.3.1, p. 16"
+url = "https://arxiv.org/abs/2110.05534v2"
+fetched_from = "https://arxiv.org/pdf/2110.05534v2"
+fetched_at = "2026-11-03T11:24:33Z"
+sha256 = "f281f903f7a1836ef0eb7abe718c78e72f481d059cecb91dd237e6ecfe83b26b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+version_note = "arXiv v2"
+cited_for = ["1.3"]
+
+[[source]]
+id = "hadian"
+authors = "Majid Hadian"
+title = "Motivic Fundamental Groups and Integral Points"
+year = 2010
+locator_scheme = "theorem"
+locator = "Thesis §2.2, Proposition 2.2.3 and proof, p. 29"
+url = "https://d-nb.info/1007452307/34"
+fetched_from = "https://d-nb.info/1007452307/34"
+fetched_at = "2026-11-03T11:24:35Z"
+sha256 = "8c929b3fcf134e0588c009a2f8985ccda06b271eae9998b4298c12d2ad548bce"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["2.4"]
+
+[[source]]
+id = "kim2005"
+authors = "Minhyong Kim"
+title = "The motivic fundamental group of the projective line minus three points and the theorem of Siegel"
+year = 2004
+arxiv = "math/0409456v1"
+locator_scheme = "section"
+locator = "§1, p. 6"
+url = "https://arxiv.org/abs/math/0409456v1"
+fetched_from = "https://arxiv.org/pdf/math/0409456v1"
+fetched_at = "2026-11-03T11:24:39Z"
+sha256 = "00efa6e96091d564f7afa2ad9fb917a34cc0a55b7e258164383519b4e93ba941"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+version_note = "arXiv v1"
+cited_for = ["0.1", "0.10", "0.11"]
+
+[[source]]
+id = "kim2008"
+authors = "Minhyong Kim"
+title = "Fundamental groups and Diophantine geometry"
+year = 2010
+locator_scheme = "page"
+locator = "Published article, pp. 637–642 (PDF pp. 5–10"
+url = "https://d-nb.info/1372511016/34"
+fetched_from = "https://d-nb.info/1372511016/34"
+fetched_at = "2026-11-03T11:24:40Z"
+sha256 = "2a3cb8cf170ddeb841a750bcfdff4478a5696e8bb5a3872bc340947af7497e53"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["1.1"]
+
+[[source]]
+id = "kim2009"
+authors = "Minhyong Kim"
+title = "The unipotent Albanese map and Selmer varieties for curves"
+year = 2009
+locator_scheme = "page"
+locator = "Introduction, pp. 94–95"
+url = "https://content.ems.press/assets/public/full-texts/serials/prims/45/1/2127/online/10.2977-prims-1234361156.pdf"
+fetched_from = "https://content.ems.press/assets/public/full-texts/serials/prims/45/1/2127/online/10.2977-prims-1234361156.pdf"
+fetched_at = "2026-11-03T11:24:41Z"
+sha256 = "b06562bc28c5648152b54d5539af8b8a4cf902192eeb37f36b0db5dfc45a4566"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["0.1", "0.14", "0.22"]
+
+[[source]]
+id = "kt"
+authors = "Minhyong Kim and Akio Tamagawa"
+title = "The l-component of the unipotent Albanese map"
+year = 2008
+locator_scheme = "theorem"
+locator = "Theorem 0.1 and its proof, author pp. 1–5"
+url = "https://ora.ox.ac.uk/objects/uuid:debfa65b-85aa-4877-96f7-40dc0f29c272/files/mb07826c07e1bc11e2aa481362bb229ae"
+fetched_from = "https://ora.ox.ac.uk/objects/uuid:debfa65b-85aa-4877-96f7-40dc0f29c272/files/mb07826c07e1bc11e2aa481362bb229ae"
+fetched_at = "2026-11-03T11:24:42Z"
+sha256 = "fb2365247c678e992ef313b373d625373f62d78ba1ae5fc3b0d0d7c6b662a1a9"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["2.13", "5.12", "6.6"]
+
+[[source]]
+id = "labute1967"
+authors = "John P. Labute"
+title = "Algèbres de Lie et pro-p-groupes définis par une seule relation"
+year = 1967
+locator_scheme = "page"
+locator = "Théorème 2 and its specialization, printed pp. 142–144"
+url = "https://gdz.sub.uni-goettingen.de/id/PPN356556735_0004"
+fetched_from = "https://gdz.sub.uni-goettingen.de/id/PPN356556735_0004"
+fetched_at = "2026-11-03T11:24:42Z"
+sha256 = "377872e65f37c9faaa444b699fd1f63b364a4388505ee12c4ef6a1ad8ba954be"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["7.3", "7.4"]
+
+[[source]]
+id = "olsson"
+authors = "Martin C. Olsson"
+title = "Towards non-abelian p-adic Hodge theory"
+year = 2008
+locator_scheme = "section"
+locator = "§1.1, pp. 1–2"
+url = "https://drive.google.com/file/d/1oKDHVwLEl1xvwZ23l49R6qJrXjjCVNSg/view"
+fetched_from = "https://drive.google.com/file/d/1oKDHVwLEl1xvwZ23l49R6qJrXjjCVNSg/view"
+fetched_at = "2026-11-03T11:24:42Z"
+sha256 = "f5596efd6f7f0c494abe159acf9dfff22cfcc2a927072c6ccd85c073b973d7c3"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["2.12", "2.6", "2.7"]
+
+[[source]]
+id = "poonen-rational-points"
+authors = "Bjorn Poonen"
+title = "Rational points on varieties"
+year = 2017
+locator_scheme = "section"
+locator = "§1.3.5, Definition 1.3.14 and Proposition 1.3.15, pp. 11–12, for Galois-cohomology notatio"
+url = "https://math.mit.edu/~poonen/papers/Qpoints.pdf"
+fetched_from = "https://math.mit.edu/~poonen/papers/Qpoints.pdf"
+fetched_at = "2026-11-03T11:24:47Z"
+sha256 = "42e92ce4599420f6b72139e78cb9f5230e4bf81258c202e7cee4716887353579"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["0.1", "0.33", "0.8"]
+
+[[source]]
+id = "schmidt-curve-1996"
+authors = "Alexander Schmidt"
+title = "Extensions with restricted ramification and duality for arithmetic schemes"
+year = 1996
+locator_scheme = "theorem"
+locator = "Proposition 15, proof, printed pp. 243–244"
+url = "https://www.numdam.org/article/CM_1996__100_2_233_0.pdf"
+fetched_from = "https://www.numdam.org/article/CM_1996__100_2_233_0.pdf"
+fetched_at = "2026-11-03T11:24:48Z"
+sha256 = "dc0350a302b5bc02de91a368790d40be1292dbcdcad108d21c08426affae1791"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["1.11", "1.9"]
+
+[[source]]
+id = "schmidt-stix-2016"
+authors = "Alexander Schmidt and Jakob Stix"
+title = "Anabelian geometry with étale homotopy types"
+year = 2016
+locator_scheme = "section"
+locator = "§2.3, pp. 826–827"
+url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v184-n3-p05-p.pdf"
+fetched_from = "https://annals.math.princeton.edu/wp-content/uploads/annals-v184-n3-p05-p.pdf"
+fetched_at = "2026-11-03T11:24:50Z"
+sha256 = "6e9083efdb484e6f3dae456bcb55fa8369e2ab35a727da36809f8611eef70759"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["1.10", "1.11", "1.12"]
+
+[[source]]
+id = "serre-generalized-jacobians"
+authors = "Jean-Pierre Serre"
+title = "Generalized Jacobians"
+year = 1988
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4612-1035-1_5"
+locator_scheme = "section"
+locator = "Chapter V §1, no. 6, pp. 81–82"
+url = "https://doi.org/10.1007/978-1-4612-1035-1_5"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["1.7", "2.0"]
+
+[[source]]
+id = "stacks"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project"
+year = 2026
+locator_scheme = "theorem"
+locator = "Theorem 58.6.2 (0BND"
+url = "https://stacks.math.columbia.edu/download/book.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/book.pdf"
+fetched_at = "2026-11-03T11:27:25Z"
+sha256 = "5b3a46c20a9cd3c42e7f6746a30b655367dd544aa0ac837626c01e0f44deb409"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["1.1", "1.11", "1.3"]
+
+[[source]]
+id = "stix-2008v1"
+authors = "Jakob Stix"
+title = "On cuspidal sections of algebraic fundamental groups"
+year = 2008
+arxiv = "0809.0017v1"
+locator_scheme = "section"
+locator = "§1.1, p. 1"
+url = "https://arxiv.org/abs/0809.0017v1"
+fetched_from = "https://arxiv.org/pdf/0809.0017v1"
+fetched_at = "2026-11-03T11:27:29Z"
+sha256 = "b456de5edf8dcbd52b5e414d24a87ff942908aac6f06fe2b7f175b32695d21bb"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+version_note = "arXiv v1"
+cited_for = ["7.1"]
+
+[[source]]
+id = "grothendieck-faltings-1983"
+authors = "Alexander Grothendieck"
+title = "Letter to G. Faltings, 27 June 1983 (Geometric Galois Actions 1, LMS Lecture Note Series 242, pp. 49–58; English translation pp. 285–293)"
+year = 1997
+locator_scheme = "page"
+locator = "letter to Faltings, formulation (7"
+url = "https://webusers.imj-prg.fr/~leila.schneps/grothendieckcircle/Letters/GtoF"
+fetched_from = "https://webusers.imj-prg.fr/~leila.schneps/grothendieckcircle/Letters/GtoF"
+fetched_at = "2026-11-03T11:27:30Z"
+sha256 = "9e8ab583689c3d33b99bb4da956b664e605ea94fe2e242758c20f5fb3bad53d5"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["7.1"]
+
+[[source]]
+id = "stix-2013"
+authors = "Jakob Stix"
+title = "Rational Points and Arithmetic of Fundamental Groups"
+year = 2013
+venue = "Lecture Notes in Mathematics"
+doi = "10.1007/978-3-642-30674-7"
+locator_scheme = "page"
+locator = "Introduction, Conjecture 2, p. xiv, and Remark 3, p. xv"
+url = "https://doi.org/10.1007/978-3-642-30674-7"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["7.1"]
+
+[[source]]
+id = "stix-cuspidal-2012"
+authors = "Jakob Stix"
+title = "On cuspidal sections of algebraic fundamental groups"
+year = 2012
+locator_scheme = "theorem"
+locator = "§1.2, Definition 1 and the affine-conjecture discussion, and §4.1, Theorem 17, Remark 18(3"
+url = "https://www.math.uni-frankfurt.de/~stix/research/preprints/STIXcuspsec20120802homepage.pdf"
+fetched_from = "https://www.math.uni-frankfurt.de/~stix/research/preprints/STIXcuspsec20120802homepage.pdf"
+fetched_at = "2026-11-03T11:27:33Z"
+sha256 = "5bd02d94605289e8a2f74d408f5155c66d24bb4b3331a42d154e217ea998173d"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["7.1"]
+
+[[source]]
+id = "stix-brauer-manin-2011"
+authors = "Jakob Stix"
+title = "The Brauer-Manin obstruction for sections of the fundamental group"
+year = 2009
+arxiv = "0910.5009v1"
+locator_scheme = "theorem"
+locator = "§5.1 and Theorem 27"
+url = "https://arxiv.org/abs/0910.5009v1"
+fetched_from = "https://arxiv.org/pdf/0910.5009v1"
+fetched_at = "2026-11-03T11:29:10Z"
+sha256 = "fcaa9e7b2da37901c61d176578b41def18ba87a46b40fb5f1b2598eb82ec6e4c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+version_note = "arXiv v1"
+cited_for = ["7.1"]
+
+[[source]]
+id = "sga1"
+authors = "Alexander Grothendieck, Michele Raynaud"
+title = "Revêtements étales et groupe fondamental (SGA 1)"
+year = 2002
+arxiv = "math/0206203v2"
+locator_scheme = "theorem"
+locator = "Exposé XIII, Proposition 4.6, p. 310"
+url = "https://arxiv.org/abs/math/0206203v2"
+fetched_from = "https://arxiv.org/pdf/math/0206203v2"
+fetched_at = "2026-11-03T11:29:20Z"
+sha256 = "8e64218d356456c534eebf996940f0f957e43b54f1a080241debe12cbaf60d3c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+version_note = "arXiv v2"
+cited_for = ["1.9"]
+
+[[source]]
+id = "faltings1988"
+authors = "Gerd Faltings"
+title = "p-adic Hodge theory"
+year = 1988
+locator_scheme = "theorem"
+locator = "§I, Theorem 4.4, pp. 270–271"
+url = "https://www.ams.org/journals/jams/1988-01-01/S0894-0347-1988-0924705-1/S0894-0347-1988-0924705-1.pdf"
+fetched_from = "https://www.ams.org/journals/jams/1988-01-01/S0894-0347-1988-0924705-1/S0894-0347-1988-0924705-1.pdf"
+fetched_at = "2026-11-03T11:29:25Z"
+sha256 = "4169b467cf410ee64e4753dd03a44cc5b86a819a49497b9984cc4a2f2997bd10"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["3.7"]
+
+[[source]]
+id = "milne-iag"
+authors = "J. S. Milne"
+title = "Algebraic Groups: The theory of group schemes of finite type over a field"
+year = 2015
+locator_scheme = "page"
+locator = "3.28, p. 61"
+url = "https://www.jmilne.org/math/CourseNotes/iAG200.pdf"
+fetched_from = "https://www.jmilne.org/math/CourseNotes/iAG200.pdf"
+fetched_at = "2026-11-03T11:29:35Z"
+sha256 = "385dd0d5a65db056b5b1e5b15ec799245991b934ed308035dbe95375de8a0069"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["Layer 2: Unipotent fundamental groups"]
+
+[[source]]
+id = "milne-av"
+authors = "J. S. Milne"
+title = "Abelian Varieties"
+year = 2008
+locator_scheme = "section"
+locator = "§8, the Poincaré sheaf, p. 37"
+url = "https://www.jmilne.org/math/CourseNotes/AV.pdf"
+fetched_from = "https://www.jmilne.org/math/CourseNotes/AV.pdf"
+fetched_at = "2026-11-03T11:29:39Z"
+sha256 = "f5ca4e63e5092a4b102daad1470e4cbed5fe8f82115e3a28c8881e3f67f6aaef"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["6.2"]
+
+[[source]]
+id = "berger2002"
+authors = "Laurent Berger"
+title = "Bloch and Kato's exponential map: three explicit formulas"
+year = 2002
+venue = "Documenta Mathematica 2003, Kazuya Kato's fiftieth birthday. Extra Vol., 99--129."
+arxiv = "math/0209283v1"
+locator_scheme = "theorem"
+locator = "Proposition II.5 and the remark identifying  as the kernel of the dual exponential m"
+url = "https://arxiv.org/abs/math/0209283v1"
+fetched_from = "https://arxiv.org/pdf/math/0209283v1"
+fetched_at = "2026-11-03T11:29:43Z"
+sha256 = "dd28ce858be51f2ef16939a9acd5b43d1c2a346461d6b8537a9fd8797f6cbc9b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+version_note = "arXiv v1"
+cited_for = ["4.6"]
+
+[[source]]
+id = "brinon-conrad"
+authors = "Olivier Brinon and Brian Conrad"
+title = "CMI summer school notes on p-adic Hodge theory, 2009 preliminary version; printed pagination"
+year = 2009
+locator_scheme = "section"
+locator = "§§5.1–5.2"
+url = "https://math.stanford.edu/~conrad/papers/notes.pdf"
+fetched_from = "https://math.stanford.edu/~conrad/papers/notes.pdf"
+fetched_at = "2026-11-03T11:29:52Z"
+sha256 = "f27d508bc64b3c9e2e9de5041429b2cb6a909b2cd72ff8096c20493f27b5a187"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["2.0"]
+
+[[source]]
+id = "yamashita-open"
+authors = "Go Yamashita"
+title = "p-adic étale cohomology and crystalline cohomology for open varieties, March 2003, §§1–2"
+year = 2003
+locator_scheme = "theorem"
+locator = "*p-adic étale cohomology and crystalline cohomology for open varieties*, Theorems 1.1–1.4"
+url = "https://www.kurims.kyoto-u.ac.jp/~gokun/DOCUMENTS/kyoto.pdf"
+fetched_from = "https://www.kurims.kyoto-u.ac.jp/~gokun/DOCUMENTS/kyoto.pdf"
+fetched_at = "2026-11-03T11:29:56Z"
+sha256 = "a08ea9f9b7a4ef96afd03b3985a6c7528a84adb4df0086fbe3ae24a1f648391a"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["2.0"]
+
+[[source]]
+id = "ciperiani-stix-2015"
+authors = "Mirela Ciperiani and Jakob Stix"
+title = "Galois sections for abelian varieties over number fields"
+year = 2015
+locator_scheme = "theorem"
+locator = "Theorem 1, p. 48"
+url = "https://jtnb.centre-mersenne.org/item/10.5802/jtnb.892.pdf"
+fetched_from = "https://jtnb.centre-mersenne.org/item/10.5802/jtnb.892.pdf"
+fetched_at = "2026-11-03T11:30:16Z"
+sha256 = "f48388ad6b90ef68f7c46635356057f9923fe12e7255d287ce10b2f72e3a8bf5"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["7.1"]
+
+[[source]]
+id = "chen2024"
+authors = "William Y. Chen"
+title = "Nonabelian level structures, Nielsen equivalence, and Markoff triples"
+year = 2024
+locator_scheme = "theorem"
+locator = "§4.2, the functor R_x and Definitions 4.2.1–4.2.2, pp. 363–364, Proposition 4.2.3"
+url = "https://static1.squarespace.com/static/60d92f4398f4bb6a7b5a99c6/t/65dcfcb3b69a510efa7037dd/1708981427968/Chen+-+Nonabelian+level+structures%2C+Nielsen+equivalence%2C+and+Markoff+triples.pdf"
+fetched_from = "https://static1.squarespace.com/static/60d92f4398f4bb6a7b5a99c6/t/65dcfcb3b69a510efa7037dd/1708981427968/Chen+-+Nonabelian+level+structures%2C+Nielsen+equivalence%2C+and+Markoff+triples.pdf"
+fetched_at = "2026-11-03T11:30:30Z"
+sha256 = "9386db34c31671966440f18bccfefe11bd806aa221010e0e3336fecf8ff920ac"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["1.1", "1.2"]

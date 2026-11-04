@@ -321,3 +321,22 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-22"
 cited_for = ["8.16 Optimal and distinguished lattice comparison"]
+
+[[source]]
+id = "matar-nekovar"
+authors = "Ahmed Matar, Jan Nekovar"
+title = "Kolyvagin's result on the vanishing of $\\sha(E/K)[p^\\infty]$ and its consequences for anticyclotomic Iwasawa theory"
+year = 2018
+venue = "version 1 was published in Journal de Theorie des Nombres de Bordeaux 31 (2019), no. 2, 455-501"
+arxiv = "1808.09544v2"
+locator_scheme = "theorem"
+locator = "§§0.4–0.5, p.1; Propositions 6.4–6.5 and conditions C1–C6, pp.30–31"
+url = "https://arxiv.org/abs/1808.09544v2"
+fetched_from = "https://arxiv.org/pdf/1808.09544v2"
+fetched_at = "2026-11-03T20:31:02Z"
+sha256 = "ef5596c617700a814444535276e975da01f099e3f6ba5669dc3e4d791cc44c96"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+version_note = "arXiv v2"
+cited_for = ["5.7 Heegner class detection by auxiliary primes", "6.2 Opposite Selmer eigenspace vanishing", "6.3 Same Selmer eigenspace generation", "6.4 Gross’s clean mod-p descent"]

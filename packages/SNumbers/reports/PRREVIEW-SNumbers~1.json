@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-SNumbers~1",
+    "head": "ac8033593e5fc26d6c60bb9b2f63637745529227",
+    "pr": 1650,
+    "folder": "SNumbers",
+    "date": "2026-11-02",
+    "findings": 12,
+    "blocking": 6,
+    "notes": "Full 87-target adversarial table and 15 seeded source targets reviewed; five legal full texts read, unread sources recorded. All 72 signatures checked; direct Lean elaboration passes with 50 sorry warnings. Fifty one-tactic probes identify two supplier wrappers; missing-headline signatures elaborate. Supplied gate fails imports=1 and tex=2; every failure reported. Dependency check: 205 roadmaps, 1498 edges, 0 problems. Ownership checked at pins, main, available open heads and board packages. Worktree unchanged."
+  }
+}

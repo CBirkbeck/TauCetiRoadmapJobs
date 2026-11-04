@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "rejected",
+    "reviewer": "independent-review-PRREVIEW-ConstructibleEtale~1",
+    "head": "4bd72379658126cbe9be935656396f0c9dac4de0",
+    "pr": 196,
+    "folder": "CohomologicalPointCounting/ConstructibleEtale",
+    "date": "2026-10-28",
+    "findings": 10,
+    "blocking": 4,
+    "notes": "Seeded Summit sample checked against readable Stacks, SGA 1 and SGA 4½ component results; no exact Summit locator. SGA 4 scan unreadable and Milne II/V unavailable. Existing ownership on main verified. 122 computed adversarial rows; derived internal-Hom counterexample. Pinned Mathlib audit and native Galois headline probe; direct Lean elaboration passed. Worker gate FAIL: latex=114, tex=31, metadata=1; targeted build passed. Dependency check: 163 roadmaps, 1163 edges, 0 problems. Outside-folder diff empty; no PR files changed."
+  }
+}

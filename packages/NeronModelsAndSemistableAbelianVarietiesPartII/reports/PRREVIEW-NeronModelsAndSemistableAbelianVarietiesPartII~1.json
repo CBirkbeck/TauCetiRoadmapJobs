@@ -1,0 +1,12 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-NeronModelsAndSemistableAbelianVarietiesPartII~1",
+    "head": "e97468835ad3f7abc170db9a72432db6f3957863",
+    "pr": 870,
+    "date": "2026-10-28",
+    "findings": 7,
+    "blocking": 5,
+    "notes": "Worker gate passes all checks; independent dependency check reports 156 roadmaps, 1074 edges, zero problems. Direct Lean elaboration passes with five sorry warnings. All six signatures checked and all five one-tactic probes run. Fifteen seeded source locators inspected, distinguishing derived refinements and source defects. Computed table covers 155 numbered targets; all 32 binary tuples and fourteen displayed surface discriminants/resolved counts checked. Seven findings: one internal cycle, four P2 specification/ownership/hypothesis defects, two P3 notes. Source access and completeness limits recorded."
+  }
+}

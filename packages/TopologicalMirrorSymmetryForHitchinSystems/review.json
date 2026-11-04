@@ -1,0 +1,25 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-REV-PKG-TopologicalMirrorSymmetryForHitchinSystems~3",
+  "date": "2026-10-25",
+  "findings": 4,
+  "blocking": 0,
+  "notes": "comment review on the board pull request by `CBirkbeck` (claude) of 0a0dea3",
+  "conditional_gaps": [
+   "equal-characteristic-abelian-duality",
+   "equivariant-grothendieck",
+   "fractional-equivariant-hodge-tate",
+   "generic-orbifold-transgression",
+   "geometric-compact-mhs",
+   "higgs-sector-purity",
+   "relative-gerbe-splitting-representability",
+   "relative-higgs-git-properness",
+   "relative-hitchin-picard",
+   "relative-picard-norm-duality",
+   "smooth-stack-hartogs",
+   "tame-stack-trace",
+   "unitary-splitting-families"
+  ]
+ }
+}

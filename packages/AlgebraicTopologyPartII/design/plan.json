@@ -4015,130 +4015,88 @@
   ],
   "gaps": [
     {
-      "id": "AlgebraicTopologyPartII:G1",
-      "title": "Milnor thimbles and controlled noncompact fibre proof",
-      "detail": "Broughton Theorem 1.2 (p.219) and §4 proof (pp.228–232) were independently read, including the controlled gradient and Morse attachment reduction. The primary reductions for local Milnor fibres/numbers, conic neighbourhoods, local Morse perturbation and noncompact cell attachment are still needed at the smooth/CW interface. The target is not discharged by homology alone.",
-      "neededBy": [
-        "AlgebraicTopologyPartII:AT2.4/tame-bouquet"
-      ]
+      "slug": "finite-group-borel-approximation",
+      "needs": "In §7.6b, expose the finite Borel approximation used for equivariant purity: for G=C₂ acting on a locally complete finite-atlas semialgebraic V over a real closed field and antipodally on S^s with s≥1, an invariant closed semialgebraic Z and an equivariant abelian sheaf F, descend pr_V*F to F_s on V_s=(V×S^s)/G and prove H_G,Z^i(V,F)≅H^i_(Z_s)(V_s,F_s) for i<s, where Z_s=(Z×S^s)/G, compatibly with the equatorial inclusions as s increases.",
+      "supplier": "MotivesAndAlgebraicCycles",
+      "section": "7.6b"
     },
     {
-      "id": "AlgebraicTopologyPartII:G2",
-      "title": "Loop spectral sequences and Hilton comparison",
-      "detail": "Hilton’s basic-product equivalence and the loop-space Serre spectral sequence are not in the pinned library or upstream AlgebraicTopology contract. Read the remaining Hilton proof leaves and Serre Chapter IV construction; implement or supply them in this Part II before claiming the rational-sphere/wedge chain closed. Existing homotopy shifts do not supply these theorems.",
-      "neededBy": [
-        "AlgebraicTopologyPartII:AT2.4/hilton-wedge",
-        "AlgebraicTopologyPartII:AT2.4/rational-spheres"
-      ]
+      "slug": "finite-group-ext-stalk",
+      "needs": "For a finite group Γ acting trivially on a ringed space X, in the category of equivariant abelian sheaves identify each stalk of internal Ext^q from the constant equivariant ℤ with H^q(Γ,F_x), naturally in restriction, using the bar resolution with finite rank in each degree (periodic for C₂).",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "2.23"
     },
     {
-      "id": "AlgebraicTopologyPartII:G3",
-      "title": "Rational minimal models",
-      "detail": "Sullivan §11 explains the loop model, but its nilpotent finite-type model existence and the dual-homotopy theorem from earlier sections need a full proof plan. This target owns that missing rational-homotopy direction; no other roadmap’s unknown carrier is assumed.",
-      "neededBy": [
-        "AlgebraicTopologyPartII:AT2.4/rational-loop-model"
-      ]
+      "slug": "real-closed-semialgebraic-geometry",
+      "needs": "Extend A4.1’s finite compatible semialgebraic triangulation and dimension comparison to every real closed field, with compatibility for finite marked families and real closed extensions; noncompact locally closed sets are unions of open simplices in finite models.",
+      "supplier": "AffineMorseLefschetz",
+      "section": "A4.1"
     },
     {
-      "id": "AlgebraicTopologyPartII:G4",
-      "title": "Semialgebraic site and field comparison proof",
-      "detail": "The current RealAlgebraicGeometry roadmap has semialgebraic geometry and real-number CAD topology; it does not supply the arbitrary-real-closed finite-cover site, non-quasiprojective locus gluing, support cohomological dimension, or full comparison used here. R5 requests the geometry extension; cite Delfs/Edmundo–Prelli only after those precise proof inputs are read.",
-      "neededBy": [
-        "AlgebraicTopologyPartII:AT2.6/semialgebraic-loci",
-        "AlgebraicTopologyPartII:AT2.6/free-descent",
-        "AlgebraicTopologyPartII:AT2.6/real-singular-comparison"
-      ]
+      "slug": "configuration-cover-comparison",
+      "needs": "Expose §§3.5–3.8 and §6.5 on the ordered-root S_m torsor and its rational representation local systems, with finite-cover descent, geometric Frobenius, scalar extension, compact supports and Poincaré duality compatible in one comparison diagram.",
+      "supplier": "EtaleDualityAndPerverseSheaves",
+      "section": "3.5–3.8 and 6.5"
     },
     {
-      "id": "AlgebraicTopologyPartII:G5",
-      "title": "Semialgebraic exceptional-operation foundations",
-      "detail": "Edmundo–Prelli v3 Theorems 4.1,4.7–4.9 are read. Their f-soft acyclicity, small-sum preservation, finite cohomological dimension and representability proof prerequisites are not yet decomposed to the SF.2 carrier. R7 requests them once at the existing generic owner; this roadmap owns the semialgebraic specialization and orientation comparison.",
-      "neededBy": [
-        "AlgebraicTopologyPartII:AT2.8/exceptional-image",
-        "AlgebraicTopologyPartII:AT2.8/orientation-duality",
-        "AlgebraicTopologyPartII:AT2.8/finite-borel"
-      ]
+      "slug": "configuration-carrier-generality",
+      "needs": "Extend §IG.5.1 ordered/unordered configuration carriers and their embedding functoriality to every topological space, reserving Hausdorffness for the covering theorem, and represent formal monic degree-m polynomials by coefficient tuples over every ring, including the zero ring, with the S_m action exposed as the left action (σ·x)(i)=x(σ⁻¹i).",
+      "supplier": "InverseGaloisAndArithmeticFundamentalGroups",
+      "section": "IG.5.1"
     },
     {
-      "id": "AlgebraicTopologyPartII:G6",
-      "title": "Topological affine cohomological dimension",
-      "detail": "BW Lemma 1.16 uses affine vanishing via étale inputs. Importing SF.6 here would reverse the declared topology→SF.6 direction. Supply an arbitrary-real-closed semialgebraic affine-complex CW/cohomological-dimension theorem and its comparison proof in the topology/LD direction, or split this late application into the downstream comparison roadmap. No such theorem has been established at the pins.",
-      "neededBy": [
-        "AlgebraicTopologyPartII:AT2.11/affine-restriction"
-      ]
+      "slug": "semialgebraic-free-quotient-geometry",
+      "needs": "In §7.6a, construct the locally complete finite-atlas semialgebraic quotient V/G for a finite free semialgebraic action on a separated locally complete finite-atlas semialgebraic V over any real closed field, with its finite covering projection, invariant-open restrictions and real-closed-extension compatibility.",
+      "supplier": "MotivesAndAlgebraicCycles",
+      "section": "7.6a"
     },
     {
-      "id": "AlgebraicTopologyPartII:G7",
-      "title": "Relative affine bound at the first degree",
-      "detail": "BW Remark 1.17(ii) cites Scheiderer Corollary 18.11. The primary proof and exact filtered-colimit hypotheses have not been read. High-degree restriction alone does not prove relative vanishing at i=d+1. Retain this target as open and verify the cited theorem before closing it.",
-      "neededBy": [
-        "AlgebraicTopologyPartII:AT2.11/affine-relative-torsion"
-      ]
+      "slug": "semialgebraic-equivariant-sites",
+      "needs": "In §7.6a, expose extension by zero on invariant semialgebraic opens, the free-quotient comparison H_G(V,F)≅H(V/G,F_desc) for finite free actions and descended coefficients, and the regular induced-coefficient comparison H_G(V,F⊗ℤ[G])≅H(V,F), with their restriction and support maps.",
+      "supplier": "MotivesAndAlgebraicCycles",
+      "section": "7.6a"
     },
     {
-      "id": "AlgebraicTopologyPartII:G8",
-      "title": "Steenrod and Wu construction over real closed fields",
-      "detail": "BW Proposition 1.22 is read, but the semialgebraic cochain operations, Thom identity and arbitrary-real-closed extension cited to Epstein/Raynaud need primary proofs and a common supported-operation API. Ordinary real-manifold operations alone do not prove the stated general-field interface.",
-      "neededBy": [
-        "AlgebraicTopologyPartII:AT2.12/semialgebraic-steenrod",
-        "AlgebraicTopologyPartII:AT2.12/wu-pushforward"
-      ]
+      "slug": "semialgebraic-support-dimension",
+      "needs": "In §7.6a, for a locally complete finite-atlas semialgebraic space V of dimension d over a real closed field, a closed semialgebraic Z and an abelian sheaf F, prove H_Z^i(V,F)=0 for i>d, naturally under real closed extension and the ordinary supported comparison over ℝ.",
+      "supplier": "MotivesAndAlgebraicCycles",
+      "section": "7.6a"
     },
     {
-      "id": "AlgebraicTopologyPartII:G9",
-      "title": "Topological tangent characteristic-class API",
-      "detail": "The current DifferentialGeometry orientation cover and AlgebraicVectorBundles roadmap were checked; neither supplies the topological mod-two Stiefel–Whitney theory needed here. Supply the Thom-square definition, Whitney formula, w₁ orientation criterion and w₂ Euler evaluation, with comparisons to the existing tangent/orientation objects.",
-      "neededBy": [
-        "AlgebraicTopologyPartII:AT2.12/gamma-stiefel-whitney"
-      ]
+      "slug": "semialgebraic-fixed-point-trace",
+      "needs": "In §7.6b, for a semialgebraically complete finitely triangulated space V over any real closed field and a continuous semialgebraic self-map h without fixed points, prove that the alternating rational cohomology trace is zero, compatibly with real closed extension and ordinary singular comparison over ℝ (BRUMFIEL, pp.163–169, uncertified locator).",
+      "supplier": "MotivesAndAlgebraicCycles",
+      "section": "7.6b"
     },
     {
-      "id": "AlgebraicTopologyPartII:G10",
-      "title": "Picard-to-ordinary-cohomology specialization",
-      "detail": "The paper’s Pic(X_C)[2]=0 ⇒ odd finite ordinary penultimate cohomology uses algebraic/étale comparisons. The topological near-top theorem is stated with that ordinary hypothesis. SF.6 must supply the Picard adapter downstream of this prefix, and MC.2 must use the resulting specialization, rather than making this node depend back on SF.6.",
-      "neededBy": [
-        "AlgebraicTopologyPartII:AT2.13/near-top-omega"
-      ]
+      "slug": "semialgebraic-duality-coefficients",
+      "needs": "Expose §7.6b on locally complete finite-atlas semialgebraic homology manifolds with arbitrary commutative noetherian coefficient rings, the bounded locally constant orientation formula, definably proper supports and trace adjunction, and two-sided perfect duality for finite-stalk local systems.",
+      "supplier": "MotivesAndAlgebraicCycles",
+      "section": "7.6b"
     },
     {
-      "id": "AlgebraicTopologyPartII:G11",
-      "title": "Ordinary quartic Betti numbers and fixed-point formula",
-      "detail": "The rank deduction in BW Lemma 5.9 uses ordinary b₃=60 and even-degree generator actions, from Dimca Example 5.24, together with the semialgebraic Lefschetz fixed-point theorem. Neither proof is read here. The explicit conditional calculation is planned, while obtaining those ordinary inputs remains open; the result is rank, not integral torsion-freeness.",
-      "neededBy": [
-        "AlgebraicTopologyPartII:AT2.13/quartic-rank"
-      ]
+      "slug": "supported-steenrod-comparison",
+      "needs": "Expose §7.6b Steenrod squares on ordinary, relative, equivariant and supported semialgebraic cohomology with instability, Adem relations, Sq¹ as reduced integral Bockstein, finite Borel and real-closed-extension compatibility, and the Thom identity.",
+      "supplier": "MotivesAndAlgebraicCycles",
+      "section": "7.6b"
     },
     {
-      "id": "AlgebraicTopologyPartII:G12",
-      "title": "Ordinary Ehresmann ownership and proof",
-      "detail": "The accepted Landesman–Litt route promises ordinary/smooth-pair Ehresmann to MappingClassGroupsAndCanonicalRepresentations, whose atlas stage does not yet exist. Do not invent its ID or replan its ordinary theorem. Resolve that owner and the horizontal-flow input before the equivariant adapter is closed. Current DifferentialGeometry Layer 3 already reuses native finite-dimensional maximal flows; do not replan them under GT.1. The remaining debt is ordinary Ehresmann ownership, invariant metric/base-linearization and the proper horizontal-lift argument.",
-      "neededBy": [
-        "AlgebraicTopologyPartII:AT2.16/equivariant-ehresmann"
-      ]
+      "slug": "rational-commutative-hspace-hopf",
+      "needs": "Extend §3.37 for connected homotopy-associative, homotopy-commutative H-spaces of CW type with finite-type rational homology: rational Hurewicz extends to the Hopf algebra isomorphism from the free graded-commutative algebra on positive rational homotopy to rational homology, whose degreewise dual identifies cohomology with the free graded-commutative algebra on dual rational homotopy.",
+      "supplier": "StableHomotopyKTheory",
+      "section": "3.37"
     },
     {
-      "id": "AlgebraicTopologyPartII:G13",
-      "title": "Invariant controlled data and divisor-pair application",
-      "detail": "Mather Proposition 11.1 is read; existence of invariant compatible control data and the controlled-flow lemmas remain to verify. If the stratified-pair route is used for Benoist Proposition 6.6, verify its hypotheses for the actual family and normalize the integral lift on the relevant open cover. Alternatively justify directly that the ambient cohomological transport commutes with the required restriction and reduction maps. The source does not establish that a divisor-preserving trivialization is necessary; the rejected E11 allegation is not used as evidence of an error.",
-      "neededBy": [
-        "AlgebraicTopologyPartII:AT2.16/stratified-pair-transport"
-      ]
+      "slug": "semialgebraic-ext-stalk",
+      "needs": "In §7.6a, extend the finite-group internal Ext-stalk comparison of SchemeAndStackFoundations §2.23 to the finite-cover semialgebraic site with trivial action on the base, for stalk functors at points of its topos, using the degreewise finite-rank bar resolution, compatibly with restriction and with the ordinary comparison over ℝ.",
+      "supplier": "MotivesAndAlgebraicCycles",
+      "section": "7.6a"
     },
     {
-      "id": "AlgebraicTopologyPartII:G14",
-      "title": "Common-lift cochain chase and sign",
-      "detail": "Benoist (4.3)–(4.5) is read. The node spells out δ and ζ as the two lifts of the common ordinary class γ, and records all coefficient groups and the indeterminacy image. Jannsen’s lemma p.268 has not been obtained; verify the cochain chase, its plus sign, and the sufficiency of these common-lift hypotheses in the injective-complex model before closing the target. No generic comparison lemma has been proved here.",
-      "neededBy": [
-        "AlgebraicTopologyPartII:AT2.16/double-cover-diagram"
-      ]
-    },
-    {
-      "id": "AlgebraicTopologyPartII:G15",
-      "title": "Relative surface-curve perturbation",
-      "detail": "The cited Benoist applications use smooth representatives transverse to algebraic curves with finite singular sets. Finite triangulation and local smoothing give embedded mod-two representatives, but the finite-family relative perturbation argument is not an export of GT.1. Supply it from smooth approximation and parametric transversality, retaining the native manifold carriers; DifferentialGeometry Layer 10 states equidimensional Sard, which alone is not a parametric transversality theorem; preserve disjointness and avoid the finite forbidden set. No such theorem is claimed implemented.",
-      "neededBy": [
-        "AlgebraicTopologyPartII:AT2.12/surface-loop-representatives"
-      ]
+      "slug": "steenrod-conjugated-real-pushforward",
+      "needs": "In §7.6b, for a proper map f:Y→X of smooth irreducible R-varieties over any real closed R and every integer degree n, with m=n+2(dim X−dim Y), prove that restriction of complex equivariant mod-two Gysin to total fixed-locus coordinates equals Sq∘f_(R,*)∘Sq⁻¹ from coordinates 0≤p≤n to 0≤p≤m, compatibly with real closed extension (BW Proposition 1.22, BW lines 1130–1148).",
+      "supplier": "MotivesAndAlgebraicCycles",
+      "section": "7.6b"
     }
   ],
   "sourceIssues": [

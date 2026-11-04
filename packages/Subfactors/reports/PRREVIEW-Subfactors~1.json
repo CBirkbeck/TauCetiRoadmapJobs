@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-Subfactors~1",
+    "head": "6e296911db08ed59f91131963073c0b8da5b5fbd",
+    "pr": 874,
+    "folder": "Subfactors",
+    "date": "2026-10-28",
+    "findings": 9,
+    "blocking": 4,
+    "notes": "Supplied gate passes; direct Lean elaboration passes with four sorry warnings. Dependency checker reports 157 roadmaps, 1084 edges, zero problems; manual supplier resolution finds a cycle and an upward edge. All 22 declarations signature-checked; all four admissions probed, two close with simp. Report contains 159 adversarial rows and pinned-library/ownership audits. Worker sample identifiers were absent: disclosed reproducible replacement sample of 15 from 40 locators, with 11 textual verifications, one partial diagram check and three unavailable/uncertified targets. All 16 cited works requested legally; source-access and diagram limits recorded. Nine findings, four blocking; worktree unchanged."
+  }
+}

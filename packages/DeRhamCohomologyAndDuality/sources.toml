@@ -1,0 +1,32 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "DeRhamCohomologyAndDuality"
+
+[[source]]
+id = "lee"
+authors = "John M. Lee"
+title = "Introduction to Smooth Manifolds"
+year = 2012
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4419-9982-5"
+locator_scheme = "theorem"
+locator = "Theorems 9.24-9.26"
+url = "https://doi.org/10.1007/978-1-4419-9982-5"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["2.2"]
+
+[[source]]
+id = "bott-tu"
+authors = "Raoul Bott, Loring W. Tu"
+title = "Differential Forms in Algebraic Topology"
+year = 1982
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4757-3951-0"
+locator_scheme = "section"
+locator = "Ch. I, §6"
+url = "https://doi.org/10.1007/978-1-4757-3951-0"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["3.1"]

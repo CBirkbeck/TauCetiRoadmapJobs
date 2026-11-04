@@ -1,0 +1,87 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "AlgebraicTopology"
+
+[[source]]
+id = "thom1954"
+authors = "René Thom"
+title = "Quelques propriétés globales des variétés différentiables"
+year = 1954
+venue = "Commentarii Mathematici Helvetici 28"
+doi = "10.1007/BF02566923"
+locator_scheme = "theorem"
+locator = "Chapter II (realisability of mod 2 classes of codimension one and of integral classes of codimension one and two by embedded submanifolds)"
+url = "https://doi.org/10.1007/BF02566923"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["8.13"]
+
+[[source]]
+id = "hatcher"
+authors = "Allen Hatcher"
+title = "Algebraic Topology"
+year = 2002
+locator_scheme = "section"
+locator = "Sections 3.3 and 4.2 and the Appendix (Lemma 3.27, Propositions 3.29, 1B.9, 2.29; Exercises 13, 16, 17, 26, 28, 34 of Section 4.2; Appendix Exercise 1)"
+url = "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf"
+fetched_from = "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf"
+fetched_at = "2026-11-03T17:33:20Z"
+sha256 = "bebb3032bf9021b956da3bd070eb6c67dc662cf849be9cdf6679f677560e5618"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["6.3", "6.5", "8.5", "8.14", "8.15", "8.16"]
+
+[[source]]
+id = "lee"
+authors = "John M. Lee"
+title = "Introduction to Smooth Manifolds"
+year = 2012
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4419-9982-5"
+locator_scheme = "theorem"
+locator = "Theorems 6.26, 6.35 and 6.36"
+url = "https://doi.org/10.1007/978-1-4419-9982-5"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["8.13"]
+
+[[source]]
+id = "brown"
+locator_scheme = "section"
+locator = "Section 7.4 (gluing theorem for homotopy equivalences)"
+url = "https://groupoids.org.uk/pdffiles/topgrpds-e.pdf"
+fetched_from = "https://groupoids.org.uk/pdffiles/topgrpds-e.pdf"
+fetched_at = "2026-11-03T23:25:32Z"
+sha256 = "0f97eca82641521ff558dee3bcff10eb76c9dd48389b6f24695aa229d791c799"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["4.5"]
+
+[[source]]
+id = "milnor1959"
+locator_scheme = "theorem"
+locator = "Theorems 3 and 4"
+url = "https://webhomes.maths.ed.ac.uk/~v1ranick/papers/milnorcw.pdf"
+fetched_from = "https://webhomes.maths.ed.ac.uk/~v1ranick/papers/milnorcw.pdf"
+fetched_at = "2026-11-03T23:26:12Z"
+sha256 = "8fce3a88dfe5d1dcafa9e6f33ceb1b6fa36468270733e33487e3fd8bd1ae671b"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["8.11a"]
+
+[[source]]
+id = "vogt1972"
+locator_scheme = "page"
+locator = "pp. 627-629 (a homotopy equivalence admits an inverse homotopy satisfying one triangle identity)"
+url = "https://www.ams.org/journals/proc/1972-032-02/S0002-9939-1972-0293632-8/S0002-9939-1972-0293632-8.pdf"
+fetched_from = "https://www.ams.org/journals/proc/1972-032-02/S0002-9939-1972-0293632-8/S0002-9939-1972-0293632-8.pdf"
+fetched_at = "2026-11-03T23:41:53Z"
+sha256 = "a25681cea47308e7559538fcab25ebda7b5026e26e001fca61b0eda4a7833773"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["4.5"]

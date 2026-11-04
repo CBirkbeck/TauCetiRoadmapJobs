@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-PseudodifferentialOperators~2",
+    "head": "b09a45c64e42af12c2bb0d041cae047192091f80",
+    "pr": 952,
+    "folder": "PseudodifferentialOperators",
+    "date": "2026-10-30",
+    "findings": 5,
+    "blocking": 3,
+    "notes": "Full read-only review; all nine previous findings reassessed, all 15 seeded targets audited, 201 computed adversarial rows, pinned-library and supplied-open-roadmap ownership checks. Worker gate passed; independent dependency check reported 207 roadmaps, 1425 edges, 0 problems, with manually verified reciprocal supply recorded as R01. Lean elaboration and all 22 signature checks passed; eight one-tactic padding probes did not close. Three source texts read; unavailable texts and locator limitations recorded."
+  }
+}

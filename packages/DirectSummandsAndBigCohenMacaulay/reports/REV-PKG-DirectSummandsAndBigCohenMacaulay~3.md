@@ -1,0 +1,194 @@
+<!-- from CBirkbeck, https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/1452#issuecomment-6401038659 -->
+Review (claude) of dfaea30
+
+Verdict: accepted
+Conditional on the announced gaps: `ramified-multielement-kummer`, `common-cohen-extension`, `parameter-systems`, `perfectoid-base-modification-domination`, `grauert-riemenschneider`
+
+1. **F01** (P3) Two line locators point a few lines before the cited passage
+
+   **Location:** `packages/DirectSummandsAndBigCohenMacaulay/README.md:301`: "HEITMANNMA18, §1.2, discussion after Theorem 1.6, p. 4; HEITMANNMA18 line 123"; and `README.md:368`, `:527`, `:546`: "ANDRE18B, §3.1, p. 83; ANDRE18B line 586".
+
+   **Claim:** The line locators point at the cited passages.
+
+   **Witness:** HEITMANNMA18 line 123 opens the statement of Theorem 1.6 on p. 3 (page 4 starts at line 133); the completion discussion cited is HEITMANNMA18 lines 139–146. ANDRE18B line 586 is the last line of §2 (the remark on ramified bases); §3.1 begins at ANDRE18B line 589 and the discriminant g is chosen at line 593, p. 83.
+
+   **Exact repair:** In §0.5 replace "HEITMANNMA18 line 123" by "HEITMANNMA18 line 144" (keep "p. 4"). In §§0.8, 2.2 and 2.3 replace "ANDRE18B line 586" by "ANDRE18B line 589" (keep "p. 83"). Retested: line 144 is the sentence invoking completion to balance B′ and C′; line 589 begins "3.1. Soit B une extension finie de A". The theorem numbers and pages are already correct; `sources.toml` needs no change.
+
+One non-blocking finding. The acceptance is conditional on the five declared supplier gaps listed under "Declared gaps" below.
+
+## Previous findings: repair verification
+
+| Round-2 finding | Status | Repaired passage and independent check |
+| --- | --- | --- |
+| F01 (P2) blow-up Check needs d ≥ 1 | Repaired | `README.md:1400–1401`: "blow-up of a regular local ring A₀ of dimension d ≥ 1 … f₀ is proper and surjective, RΓ(X₀, O) = A₀"; new negative control for d = 0: "Rees algebra is k in degree zero … Proj is empty and RΓ(∅, O) = 0". Recomputed: d = 0 gives Rees = k ⊕ 0 ⊕ ⋯, Proj = ∅, RΓ = 0 ≠ k, no left inverse; d = 1, m = (x) with x a nonzerodivisor, blow-up is the identity; d = 2, E = ℙ¹, Iⁿ/Iⁿ⁺¹ = O(n), H¹(ℙ¹, O(n)) = 0 for n ≥ 0, so RΓ = A₀. The headline `derivedDirectSummand` keeps surjectivity. |
+| F02 (P3) page locators | Repaired | KOVACS00 GR vanishing now "p.189; line 89" (page 3 of the text starts at line 85 = printed 189; vanishing at lines 89–91). BHATT12 Example 1.1 "pp. 2–3; line 91" (lines 91–104, page break at 95), Example 1.2 "p. 3; line 105", Example 1.3 "p. 3; line 114" (p. 4 starts at line 146). ANDRE18B §4.7 now "line 184, p. 75" (page 5 of the text starts at 182 = printed 75). Manifest locators for BHATT12 and KOVACS00 updated with keys and provenance unchanged. |
+| F03 (P3) duplicated Checks | Repaired | §0.1 keeps one node bullet (`README.md:183`) with the computation x = (x + y)(1, 0), x ∉ (x + y)R; purity-equivalence Check gone (law kept at `:171`). §3.5 g = 1 bullets merged (`:663`). Pattern applied in §§0.2, 0.3, 0.4, 0.7, 4.2, 6.2, 7.1; counted Checks per definition: §0.1 8, §0.2 6, §0.3 9, §0.4 5, §0.7 4, §4.2 8, §6.2 6, §7.1 9, every definition keeps at least three. |
+| F04 (P3) headline count | Repaired | `README.md:1235`: "the two derived-splitting headline signatures, `splinter_iff_derivedSplinter_charP` and `derivedDirectSummand`"; Suggested.lean declares exactly these two (lines 213, 221). |
+
+The four round-1 findings marked "not actionable in this package" (retirement of the design records G1–G4 in `design/plan.json`) stay settled: the mathematics they named is owned in §§0.5, 4.3, 4.10 and 7.7, each with hypotheses and a route, and the package job may only add to the plan's gaps list. Intake should retire those four records; they are not re-raised.
+
+## Adversarial mathematics pass
+
+Values computed by me on this round. Rows cover the fifteen sampled targets, the ten headline theorems, the nine Lean definitions, every passage the last repair touched, and the places where I probed the mathematics beyond the earlier rounds.
+
+| Statement | Instances tried | Values computed on each side | Result | Change |
+| --- | --- | --- | --- | --- |
+| `SplitAlgebra` (§0.1) | ℤ ⊆ ℤ[i]; ℝ ⊆ ℂ; ℤ ⊆ ℚ; K → 0; R = 0 | coefficient of 1: ρ(1) = 1; Re(i²) = −1 ≠ Re(i)² = 0; Hom_ℤ(ℚ, ℤ) = 0; zero target forces ρ(1) = 0 ≠ 1; over R = 0 the only algebra with injective unit is 0 and 0 = 1 | Linear, non-multiplicative retraction is the right object; zero ring harmless | None |
+| `Splinter` (§0.2) and Bhatt's scheme form | k[ε]/ε²; node K[x,y]/(xy); cusp K[t²,t³]; R = 0; reducedness forced by the scheme form | dual numbers: self-injective but ε ≠ 0, ε² = 0, fails `IsReduced`; node: x = (x+y)(1,0) in S, x ∉ (x+y)R (constant coefficients would be 1 and 0); cusp: quotient K·t torsion of generic rank 0; R = 0 satisfies all three clauses. For Noetherian A with nilradical N ≠ 0, a module splitting of A → A/N makes N a free summand generated by a nilpotent nonzerodivisor, impossible; so Bhatt's Definition 0.1 forces reducedness and the two predicates agree | Definition matches BMPSTWW 2.12 and BHATT12 0.1 on Noetherian rings | None |
+| `ParameterSystem` | k (empty list); k⟦X⟧ with [X²], [1]; k⟦X,Y⟧ with [X,X], [X] | [] : length 0 = dim, radical ⊥ = 0 = m; [X²]: length 1, radical (X) = m; [1]: radical R ≠ m; [X,X]: length 2, radical (X) ≠ (X,Y); [X]: length 1 ≠ 2. Membership clause is implied by the radical clause (I ⊆ rad I = m) | Three independent clauses; the redundant clause is harmless | None |
+| §0.3 big CM laws | d = 0; M = 0; ℚ over ℤ_(p); M/x₁M law; monomial law t = 1, 2 | d = 0: condition is M ≠ mM; M = 0: every scalar injective but 0 = m·0 excluded; ℚ: p injective but ℚ = pℚ; dim R/x₁R = d−1 and radical of (x₂..x_d) is m/x₁; t = 1: 1·M ⊄ (x)M since M ≠ (x)M | Laws hold | None |
+| `BalancedBigCM` (§0.4) | k; R/(X) over k⟦X⟧; M = 0; finite A → B of same dimension | over a field every nonzero module qualifies; X·1 = 0 with 1 ≠ 0; m·0 = 0 = ⊤ fails first clause; m_A C ⊆ m_B C ≠ C and sop of A is sop of B | Body excludes zero and torsion modules | None |
+| §0.5 completion balances | R = k[X]_(X), M = R; M = 0; M̂/mM̂ ≠ 0 | M̂ = k⟦X⟧, ker X = 0, k⟦X⟧/X = k; zero completion has zero quotient; M̂ → M/mM surjective so M̂/mM̂ ≠ 0 when M ≠ mM; weakly regular sop gives Hⁱ(x^t; M) = 0 for i < d and H^i_m = colim | Owned theorem is the BMPSTWW line 516 assertion | None |
+| §0.6 balanced over regular ⇒ faithfully flat | DVR A: C = A, C = Frac A; Tor induction | Frac A: ϖ bijective, C/ϖC = 0, flat not faithfully flat; A/P ↪ N = A/(x₁..x_h) with h = ht P (grade P = ht P in a CM ring, P ∈ Ass N), Tor_j(N, C) = H_j(x; C) = 0 for j > 0, descending induction from i > dim A | Route sound; indices h and i independent as stated | None |
+| §0.7 obstruction | id; 0 → ℤ →² ℤ → ℤ/2 → 0; ℤ ⊆ ℤ[i] | cone 0, α = 0; class 1 ∈ Ext¹(ℤ/2, ℤ) = ℤ/2; B/A = ℤ·i free so Ext¹ = 0 | Direction Q → A[1], cohomological indexing consistent in Layers 0, 3, 7 | None |
+| §0.8 reductions | S = A × A/I; completion before domain quotient | projecting to A keeps injectivity (kernel 0), to A/I loses it (kernel I); B = B₀ ⊗ A has a prime over 0 by lying over for the integral injective A → B; g avoids minimal primes of pA, which have height one and contain p, so g ≠ 0 mod p | Matches BHATT18 lines 481–483 and 564–565 | None |
+| §0.9 trace splitting | ℤ ⊆ ℤ[(1+√5)/2]; K ⊆ K(√a); a = 1 | d = 2, ½Tr((1+√5)/2) = ½ ∉ ℤ while the coefficient of 1 splits; Tr(1, √a) = (2, 0), divided (1, 0); K(√1) = K has degree 1, Tr(1) = 1 | Invertibility of d is the hypothesis used; ℚ ⊆ R, not "characteristic 0" | None |
+| §0.10 dimension ≤ 2 | DVR; k ⊆ k[ε]/ε²; 1 ∉ m S** | torsion-free finite over a DVR is free; basis 1, ε gives ρ(a + bε) = a; S** free hence faithfully flat hence pure, so A/m → S**/mS** injective | Holds without reducedness of S | None |
+| §1.1 endomorphism criterion | 𝔽₂⟦X⟧, σ(X) = X², r = 0; σ = id | σʲ(m)R = (X^{2ʲ}), intersection 0, rank 2 over σ(R); identity gives intersection (X) ⊄ (0) | Hypotheses "r = 0 or r regular" and ∩σʲ(m)R ⊆ rR are the ones the proof uses (ANDRE18B lines 912–921, with the division step repaired) | None |
+| §1.2 complete pure ⇒ split | field; ℤ → ℚ tested on ℤ/2; Datta–Murayama DVR V | K → L splits on a basis; (ℤ/2) ⊗ ℚ = 0 so not pure; Hom_V(V^{1/p}, V) = 0 though V ⊆ V^{1/p} faithfully flat (DATTAMURAYAMA line 1319, Henselian excellent regular) | Completeness essential and present (`IsAdicComplete` in `absoluteIntegralClosure_split`) | None |
+| §1.3 characteristic p | 𝔽₂⟦X⟧ ⊆ 𝔽₂⟦X^{1/2}⟧; p = 3 | basis 1, X^{1/2}: projection 1 ↦ 1; basis 1, X^{1/3}, X^{2/3} | Special case of `directSummand` | None |
+| §2.1 modulo powers | A = ℤ, I = ℤ, S = ℤ/2; Hom(ℤ/2, ℤ/2ⁿ) | all quotients zero yet Hom(ℤ/2, ℤ) = 0: Jacobson condition needed; Hom(ℤ/2, ℤ/2ⁿ) = ℤ/2 with zero transition maps: pro-isomorphism ≠ levelwise isomorphism | Hypotheses necessary | None |
+| §2.2 splitting mod pᵐ | A = ℤ₂, g = 1, m = 1, 2 | pg = 2 is 0 mod 2 and 2 ≠ 0 mod 4; Krull detection at m = 2, then reduce to m = 1 | m ≥ 2 then m = 1 as stated | None |
+| §2.3 André unramified | n = 0, k = 𝔽₂, 𝔽₃ | A = W(k) a DVR, finite extensions free, coefficient of 1 splits | Includes n = 0 and p = 2, 3 | None |
+| §3.1 Cohen presentations | ℤ₂⟦T,V⟧/(TV − 2); constant-term adjustment f₀ = p² + X² | 2 = TV ∈ m²: ramified branch; u = 1 − c/p = 1 − p, u⁻¹(p − f₀) = p − X²/(1−p) with zero constant term; if p ∣ f then f/p ∈ (p, X) so p − f = p·unit and A₀ has characteristic p, contradiction | Branch (2) correct; p ∤ f justified | None |
+| §3.2–3.3 perfectoid cover | A₀ = ℤ₂, A = O_K; d ≥ 1 non-Noetherian | v(2^{1/2ⁿ}) = 2^{−n} → 0, root ideal not finitely generated; A/2A ≠ 0 and 2^{1/2} has valuation ½ < 1 so its residue is nonzero | Almost faithful flatness statements have the right ideal p^{1/p^∞}A | None |
+| §3.4 detection after base change | A₀ = ℤ₂, g = 1, m = 2, 3; α₀ = 0 | p²g = 4 is 0 in ℤ/4 and 4 ≠ 0 in ℤ/8, so m ≥ 3 is where BHATT18 line 576–577 needs it; Ann(0) = whole ring, contrapositive use | Statement matches BHATT18 lines 573–583 including the lost power of p | None |
+| §3.5 annular almost splitting | g = 1; 𝔽₄ = 𝔽₂[ω] | U = pⁿ gives integral model A∞ for every n, constant tower, identity comparison; Tr(1) = 0, Tr(ω) = ω + ω² = 1, z ↦ Tr(ωz) sends 1 ↦ 1 | Faithful almost finite étale covers split without dividing by the degree | None |
+| §3.6 limit argument | constant tower V; Q₀ = 0 | lim V = V, lim¹ V = 0; both Hom groups 0 | No uniform-over-all-complexes claim; finite amplitude used | None |
+| §3.7 Bhatt mixed | ℤ₃⟦x⟧ ⊆ A₀[y]/(y² − x − 3); p = 2 | discriminant 4(x + p), g = x + p nonzero mod p; basis 1, y splits directly | Endpoint of `directSummand` | None |
+| `AlmostCMFor` (§4.1) | O_K over ℤ₂ with π = 2; D = B = 𝔽_p⟦X,Y⟧/(XY,Y²), π = 1; D = 0; dim 0 | J = m_D ⊄ 2D; (0 :_D X) = (Y) not killed by J = D; D = 0 has every root in m·0 = 0; empty colon condition | Both clauses needed | None |
+| §4.2 pointed partial modification | R = k⟦x⟧, T = R[t]/(xt), k = 0, u₁ = t; R = T = k⟦x,y⟧ with relation y·0 = x·0, N = 1; M = 0 | partial quotient T/Rt keeps t² ≠ 0, full quotient T/Tt = R kills t and t²; T′ = R ⊕ (R/(x))X with evaluation X ↦ 0 retracting; zero module: e = 0 ∈ m·0, every sequence bad | Distinguishes scalar-polynomial quotient from algebra quotient; vacuity excluded | None |
+| §4.3 finite-witness comparison (owned) | one full step T₁ = T[X]/(F) with 1 = Σ m_i g_i + hF, h = Σ_a t_a X^a; the Check T = R[t]/(xt) | pointed steps: first the relation (u; u_j) with variables X and degree bound N ≥ deg; then for each a the relation x_{k+1}(X^a t_a u) = Σ x_j (X^a t_a u_j), which holds in the current module, with new variables Y^{(a)} and bound 1; then X^a t_a F = F′_a + Σ_j x_j (e Y^{(a)}_j − t_a X^a X_j) with F′_a killed and the rest in m·M, so 1 ∈ m·M_final; for T = R[t]/(xt) this is the second step with relation x·t² = 0 | One-step comparison holds by this construction; the owned target is credible and precisely stated | None |
+| §4.4 key lemma | N = 1, D = 2; N = 0, D = 1; α(e) ≠ 1 | exponents ND + D + N = 5 and 1; worst monomial c^{−1}(c^{−2})² = c^{−5}; with α(e₁) = 0, α(e₂) = 1 the evaluated relation is x ≠ 0, with α(e₁) = 1 it is 0 | Normalisation α(e) = 1 pinned (HOCHSTER02 lines 271–283) | None |
+| §4.5 almost CM ⇒ balanced existence | ℤ₂, D = O_K, π = 2, h = 1 | badness would need 2^{1/2} ∈ 2D, valuation ½ ≥ 1 false | No algebra factorization through D asserted | None |
+| §4.6 criteria | A = ℤ₂, x₁ = 4, π = 2 | (π) ∩ A = 2A ⊄ 4A; m_A B is m_B-primary gives the A/B equivalence | Cases (a), (b) sufficient, equivalence unconditional | None |
+| §4.7 reductions | B = ℤ₂⟦X,Y⟧/(2X,2Y), parameters (2 + X, Y) | B/(2+X, Y) = ℤ₂/4; images (X, Y) on the dimension-2 component, (2, 0) on ℤ₂ of dimension 1, wrong length; B reduced (minimal primes (2), (X,Y) intersect in (2X, 2Y)) but 2·X = 0 | Only equal-dimensional quotients transport parameter systems; p-torsion-freeness is a hypothesis in (3), not a consequence of reducedness | None (source gap recorded below) |
+| §4.8 mixed existence | same B; ℤ₂⟦X,Y⟧/(2X) | every maximal-dimensional domain quotient of B has characteristic 2; the second ring has the dimension-two quotient ℤ₂⟦Y⟧; finite over A = W(k)⟦T₂..T_d⟧ since B/(p, x₂..x_d) has finite length; kernel P prime with dim A/P = d forces P = 0 | Route complete including the characteristic-p branch | None |
+| `absoluteIntegralClosure_charP` (§4.9) | R = 𝔽₂, A = R, n = 0; regular 𝔽_p⟦x,y⟧ | empty list, R⁺ = 𝔽̄₂, mR⁺ = 0, R⁺ ≠ 0; `HasInjectiveDimensionLE (ModuleCat.of A A) 0` says A is self-injective; regular case consistent with §0.6 | Hypotheses are HUNEKELYUBEZNIK Theorem 2.1 and Corollary 2.3 (lines 75–82, 227–253): Noetherian local domain, char p, surjective image of a Gorenstein local ring; `CharP R p` on a domain means it contains 𝔽_p | None |
+| §4.10 equal characteristic 0 | ℚ[ε]/ε² → ℚ; ℤ[1/6][X] along X = 0 | dim 0, m·ℚ = 0; fibre at p > 3 is 𝔽_p[X]_(X) with parameter X, fibres at 2, 3 empty | Existence not injective; specialization chooses a maximal ideal of the coefficient base | None |
+| `exists_balanced` (§4.11) | 𝔽₂[ε]/ε² → 𝔽₂; regular R; carrier universe | m·𝔽₂ = 0, empty list; R itself; colimit of finite modification sequences has cardinality ≤ max(|R|, ℵ₀) and its completion is a quotient of a set of sequences ℕ → C, so a carrier in `Type u` exists | No characteristic or domain restriction | None |
+| `directSummand` (§5.1) | R = 0; 𝔽₂[a,b,c]/(a³+b³+c³) → same cubic in x,y,z by squaring | S = 0 and 1 = 0; cubic: x³+y³+z³ smooth (partials x², y², z² in characteristic 2), normal with isolated singularity; c² ≠ 0 in 𝔽₂[c]/c³ while z⁴ = z(x³+y³) ∈ (x², y²): contraction fails for a normal non-regular ring | Regularity cannot be weakened to normality | None |
+| §5.2 arbitrary flat products | empty family; ℤ^I; R = k ⊕ V, V² = 0, V infinite-dimensional | empty product 0, flat, m·0 = 0 = ⊤; multiplication by n ≠ 0 injective on ℤ^I; (x₁, x₂, …) ∈ ker(x₀) but every element of VM has coordinates in a finite-dimensional subspace of V, so ker(x₀) ≠ Ann(x₀)M and M is not flat | Coherence used exactly once; differs from Tau Ceti `Module.Flat.pi` which has `[Finite ι]` (`TauCeti/RingTheory/Flat/Pi.lean:62`) | None |
+| `finiteCover_flatDomination` (§5.3) | k; ℤ₂, S = R × R/2; R = 0 | residue field of S; project to R, T = R, the other factor has 2T = 0; R = S = T = 0 and the zero ring is faithfully flat over itself (no maximal ideal) | Components not dominating R̂_m are discarded, as the README says against ANDRE18B lines 747–753 | None |
+| `absoluteIntegralClosure_split` (§5.4) | field K; complete DVR; Datta–Murayama V | K⁺ = K̄, basis containing 1; finite domain subalgebras free; V is Henselian excellent regular and not split (DATTAMURAYAMA line 1319), so completeness is essential and is in the signature | None | None |
+| `monomial_noncontainment` (§5.5) | k⟦X,Y⟧, m = 1, n = 2; m = 2, n = 2 excluded; m = 0; d = 0 | XY ∉ (X², Y²), (XY)² ∈ (X², Y²); 1 ∉ (Xⁿ, Yⁿ) for n ≥ 1; empty list: 1 ∉ ⊥ in a nontrivial ring, `IsLocalRing` extends `Nontrivial` | Strict m < n correct in all dimensions; the iff needs d ≥ 1 only in the README prose | None |
+| §6.1 purity and completion | k[X]_(X) → k[X,Y]_(X,Y); faithfully flat local map | evaluation Y = 0 extends to k⟦X,Y⟧ → k⟦X⟧ fixing X-powers; faithfully flat ⇒ pure ⇒ pure after completion | Proof tests finite B̂-modules, repairing ANDRE18B A.2.2 | None |
+| `SeparableResidueMap` | 𝔽₂ → 𝔽₄; 𝔽₂ → 𝔽₂(t); 𝔽₂(t) → 𝔽₂(t^{1/2}); identity | degree 2 separable; transcendence degree 1 with separating basis t; inseparable of degree 2 fails; identity degree 1. Body installs `(ResidueField.map (algebraMap B B')).toAlgebra` (`Mathlib/RingTheory/LocalRing/ResidueField/Basic.lean:95`), so an unrelated algebra structure is not admitted | `Algebra.IsTranscendentalSeparable` (`Mathlib/FieldTheory/TranscendentalSeparable.lean:72`) covers transcendental extensions as the README requires | None |
+| `weakFunctoriality_regularTarget` (§6.2) | identity on ℤ₂⟦T,V⟧/(TV − 2); residue 𝔽₂ → 𝔽₂(t) | V = U − T turns T² − TU + p into p − TV, target regular of dimension 2 with 2 ∈ m²; identity square C = C′ = B′, γ(b) = b both ways; completion of ℤ₂[t]_(2) is a complete DVR with residue 𝔽₂(t) | Mixed characteristic as `CharZero` plus residue characteristic p; B′ may be ramified | None |
+| §6.3 CM descent | B = B′ = k⟦X,Y⟧, C = C′ = B | (0 : X) = 0, ((X) : Y) = (X); faithful flatness gives (x)C′ ∩ B′ = (x)B′, purity gives (x)B′ ∩ B = (x)B | Each colon descends through two layers as stated | None |
+| `pureSubring_cohenMacaulay` (§6.4) | C₂ on ℤ₃⟦X⟧ by X ↦ −X; trivial group; S₃ on ℤ₅⟦X₁,X₂,X₃⟧; residue char 2 with |G| = 2 | Reynolds a + bX ↦ a, fixes 1; identity; (X₁+X₂+X₃)/3 with 6 a unit, invariants ℤ₅⟦e₁,e₂,e₃⟧; ½ unavailable | Purity implies injectivity, so "extension" needs no separate hypothesis; conclusion `IsRegular B xs` for every parameter system is Cohen–Macaulayness | None |
+| `structureComplex`, `derivedUnit` | Spec 𝔽₂; ∅; Spec k[ε]/ε²; identity; Spec(A × A) → Spec A; Spec ℤ/2 → Spec ℤ | terms (0, 𝔽₂, 0) in degrees (−1, 0, 1); zero sheaf; ε ≠ 0 survives (not the reduction); identity unit; a ↦ (a, a) retracted by first projection; 2 ↦ 0 has no left inverse | Real bodies on native carriers; the unit is determined by the scheme map | None |
+| `DerivedSplinter` (§7.1) and the affine comparison | field; elliptic cone ℂ[x,y,z]/(x³+y³+z³); R = 0; retraction in D⁺(Mod O_Y) versus D(A) | K → H⁰(X, O) splits; blow-up of the vertex has H¹(E, O_E) = k ≠ 0 so the resolution unit does not split (Kovács); Spec 0 = ∅ and the zero category makes every unit an isomorphism, consistent with `Splinter 0`; RΓ(Y, −) carries a sheaf retraction to a module retraction, and ~ carries a module retraction back since (RΓ(X,O_X))~ → Rf_*O_X is a quasi-isomorphism for affine Y and quasi-compact separated X | Definition equals Bhatt 2012 Definition 0.2 for affine Noetherian S | None |
+| §7.2 perfectness | elliptic E/k; 𝔸¹ | H⁰ = H¹ = k, Hⁱ = 0 for i ≥ 2; H⁰(𝔸¹, O) = k[T] infinite-dimensional, non-proper excluded; Čech bound Hⁱ = 0 for i ≥ t (STACKS coherent line 290, tag 01XI) | None | None |
+| §7.3 derived reductions | Spec(A × A) → Spec A; X₀ = Spec B₀ | closure of one generic point is Spec A with composite unit the identity; finite case is §0.8 | Direction of the multisection argument preserved | None |
+| §7.4 almost splitting of proper covers | Y = Spec B finite; Y = Spec(A/p) | finite case is §3.5; generic fibre of Spec(A/p) empty, p injective on A and zero on Y, no root of p kills the obstruction | Surjectivity of f[1/p] added against BHATT18 Proposition 6.2 (line 616) | None |
+| §7.5 killing cohomology | E elliptic in characteristic 2, 3; identity | [p]* acts by p = 0 on H¹(E, O_E); identity acts by 1 | Theorem is BHATT12 Theorem 0.4 (line 42) | None |
+| `splinter_iff_derivedSplinter_charP` (§7.6) | 𝔽₂⟦X,Y⟧; node; CharP on the zero ring | both predicates hold for the regular ring; node fails contraction so both fail; `CharP 0 p` is false for prime p, so no vacuity issue arises | Lift RΓ(X) → H⁰(Y) preserves the unit by Hom(A, RΓ(Y)) = H⁰(Y, O_Y) | None |
+| §7.7 characteristic zero derived | elliptic E/ℂ; identity; finite separable L/k of degree e; ℚ[T] → ℚ | Q = k[−1], Hom(Q, k[1]) = Ext²(k, k) = 0 so ℂ → RΓ(E) splits though H¹ ≠ 0; identity Q = 0; Tr(1) = e, e⁻¹Tr retracts; ℚ ⊗^L_{ℚ[T]} ℚ has Tor₁ = ℚ, so the non-flat Popescu stages are handled by the owned limit assertion, not by a classical base change | KOVACS00 Theorems 1–2 (lines 11–15, 50–53) keep their rationality and projectivity hypotheses; GR vanishing is a declared gap | None |
+| `derivedDirectSummand` (§7.8) and blow-up Checks | blow-ups at m in dimensions 0, 1, 2 | as in the F01 row; d = 0 is excluded by the surjectivity hypothesis of `DerivedSplinter` | Headline consistent with both Checks | None |
+
+Context check: every `theorem` carries its Noetherian, local, domain, completeness, finite-module, local-hom, residue-characteristic and separability binders in its own signature (the `#check` list below); no `variable` block exists, so nothing can be dropped.
+
+## Seeded source verification
+
+All fifteen sampled targets were read at their locators in the cached legal texts; the pagination used is the published André (text page k = printed page 70 + k), the specified arXiv versions, and Hochster's author preprint. Only HH95 is uncertified (settled; not requested).
+
+| Target | Passage read | Result |
+| --- | --- | --- |
+| 0.2 Splinters | BMPSTWW line 672 (Definition 2.12, p. 15): Noetherian reduced, finite extensions split; BHATT12 lines 20–21 (Definition 0.1, p. 1), 91–104 (Example 1.1, pp. 2–3); ANDRE18B line 27 (Conjecture 0.1.1, p. 71) | Statement and convention supported; reducedness forced in Bhatt's form (row above) |
+| 0.5 Completion balances | ANDRE18B line 659 (§4.1, p. 85): pass from (1) to (2) by m_B-adic completion; BMPSTWW lines 516–518 (p. 12): (a) and M ≠ mM give (c) for M̂; HEITMANNMA18 lines 137–146 (p. 4) | Supported; line locator off (R01) |
+| 0.8 Reductions | BHATT18 lines 481–483 (proof of Proposition 5.2, p. 8), 564–565 (Theorem 5.4 proof, p. 10); ANDRE18B lines 589–593 (§3.1, p. 83) | Supported; line locator off (R01) |
+| 0.9 Trace | ANDRE18B lines 54–56 (§0.2, p. 72): divided trace when the degree is invertible, R ⊇ ℚ; BHATT12 lines 100–104 ((1/d)Tr, integrality) | Supported |
+| 1.1 Endomorphism criterion | ANDRE18B lines 898–921 (Proposition A.3.1 and (c) ⇒ (b), pp. 90–91); HOCHSTER73 lines 235–240 (Theorem 2, p. 31), 251–258 (characteristic-p proof, p. 32) | Supported; the README adds "r = 0 or r regular", which the division step needs |
+| 3.4 Detection | BHATT18 lines 573–583 (Theorem 5.4 proof, p. 10): m ≥ 3, p²g ∉ Ann^{pᵏ}, lose one power of p; lines 604–614 (Theorem 6.1, p. 11); lines 202–203 (Theorem 2.3, p. 4) | Supported, including the complex (not module) form which the README proves for its perfect Q₀ |
+| 3.5 Annuli | BHATT18 lines 584–587: g ∣ pⁿ, finite étale after inverting p, almost finite étale domination, almost split | Supported |
+| 4.1 Almost CM | ANDRE18B lines 643–653 (Définition 4.1.1(3), p. 84), footnote 6 at 655–656 (π = ϖg not valuative) | Supported |
+| 4.9 R⁺ in characteristic p | HUNEKELYUBEZNIK lines 75–82 (Theorem 2.1, p. 2), 227–253 (Corollary 2.3, pp. 5–6); BMPSTWW lines 561–569 (Theorem 2.5, p. 13, excellent domains) | Supported with the Gorenstein-image hypothesis used in Lean |
+| 4.12 Weak functoriality from almost squares | ANDRE18B lines 769–778 (Proposition 4.4.1, p. 87): δ(π^{1/pᵐ}) divides π′^{1/pᵐ}; HEITMANNMA18 lines 123–136 (Theorem 1.6, pp. 3–4) | Supported; the source's "(B, x′)" slip for D′ already recorded |
+| 5.3 Flat domination | ANDRE18B lines 189–192 (Théorème 0.7.2, p. 75), 747–753 (§4.3, p. 87) | Supported; the README's restriction to dominating components is a correct refinement |
+| 6.2 Regular target | ANDRE18B lines 779–821 (§4.4 problems (1)–(3) and conclusion, pp. 87–88), 564 (Remarque 2.6.1(1), p. 82) | Supported: β injective, k → k′ separable, B′ regular |
+| 7.1 Derived splinters | BHATT12 lines 30–32 (Definition 0.2), 38 (Theorem 0.3), p. 1; BHATT18 lines 27–28 (Theorem 1.2, p. 1) | Supported |
+| 7.2 Perfectness | BHATT18 lines 604–614 (implicit), 137–142 (§1.2, p. 3); STACKS coherent line 290 (01XI), 2350 (02O5) | Supported |
+| 7.7 Characteristic zero derived | KOVACS00 lines 11–15 (Theorem 1, p. 187), 50–53 (Theorem 2, p. 188), 89–91 (GR vanishing, p. 189); BHATT12 lines 105–107 (Example 1.2, p. 3); BHATT18 lines 29–30 | Supported; the README does not promote Kovács' hypotheses |
+
+Also re-read for the repaired locators and headline docstrings: ANDRE18B lines 70, 81, 179, 184, 618, 630, 741, 818, 822, 868, 873, 890, 912, 928; BHATT18 lines 17, 32, 451–467, 469, 547–561, 616–632; BHATT12 lines 42, 114–145; HOCHSTER02 lines 172–184, 225–255, 258–283; HOCHSTERLC lines 623–625; DATTAMURAYAMA lines 1315–1320; CHASE60 lines 139–144; STACKS flattening lines 4296–4305 (081T, quasi-compact quasi-separated S, proper φ, no finite presentation).
+
+## Ownership, suppliers and dependency direction
+
+Object searches with the roadmap service over main and the 366 indexed open heads for "splinter", "big Cohen", "BigCM", "DerivedSplinter", "ParameterSystem", "PureAlgebra", "SplitAlgebra" and "direct summand": no other roadmap defines or states splinters, big or balanced big Cohen–Macaulay modules, the direct summand theorem, derived splinters, parameter-list predicates or tensor purity of algebras. The hits for "direct summand" are the module-theoretic phrase in unrelated roadmaps, and the one `splitAlgebra` hit is a quaternion-algebra object in EndoscopicTransferAndUnitaryTraceComparison. The board index of twenty packages was read; none competes. Pinned libraries: no splinter, big Cohen–Macaulay, system-of-parameters or universally-injective-algebra declaration in Mathlib or Tau Ceti at the pins; `Ideal.Pure` (`Mathlib/RingTheory/Ideal/Pure.lean:39`) and `RingHom.IsPurelyInseparable` are different notions.
+
+Supplier citations resolved this round (main checkout for the first five; open heads via the roadmap service for the next five; the board design for PerfectoidSpacesPartII):
+
+| Supplier | Resolved |
+| --- | --- |
+| SchemeAndStackFoundations (main) | §§0.9 (:848), 0.11 (:938, absolute integral closure), 0.15 (:1090), 0.17 (:1138), 2.6 (:3437), 2.7 (:3482), 2.18 (:3959), 2.19 (:4094), 2.21 (:4390), 4.12 (:5613, Noetherian flattening and Chow), 4.13 (:5643) |
+| EnhancedDerivedSheaves (main) | E1.4 (:580), E1.6 (:689; Kunz at :706), E1.8 (:840; `liftingObstruction_map` at :878 with the injectivity caveat at :884) |
+| DerivedModuleAlgebra (main) | 0.K.1 (:516), 1.T.1 (:1403), 1.1.1 (:1666), 1.E.0 (:2049), 1.M.2 (:2290) |
+| PerfectoidSpaces (main) | P0.1 (:879), P0.2 root setup (:965), P0.6/P0.9 left adjoints (:1262, :1562), P0.12 duals and traces (:1832), P0.29 (:3419), P1.1 (:3583), P1.24 (:5049), P1.25 (:5101), P2.7 (:6635), P2.8 (:6793), P3.11–P3.13 (:8649, :8688, :8746) |
+| StableReduction (main) | Layer 2 (:354), coherent pushforward and Rⁱf_* under proper morphisms over locally Noetherian bases (:359–364) |
+| PerfectoidQuotients (head #1042) | §§0.7 (:1000), 1.3 (:1100), 1.4 (:1179, almost faithful flatness modulo t) |
+| DerivedDeRhamCohomology (head #868) | §1.10 (:520): Noetherian A, π-torsion-free classically complete rings |
+| DeformationAndDerivedPatchingAlgebra (head #1034) | §§1.9 (:228), 1.10 (:242), 1.13 (:300), 1.14 (:320), 1.15 (:340), 3.1 (:527), 3.2 (:562), 3.4 (:616), 3.7 (:665), 3.9 (:703), 4.1 (:888), 7.3 (:1383) |
+| DeformationAndDerivedPatchingAlgebraPartII (head #872) | K0.1 (:311), K0.3 (:487) |
+| ResolutionOfSingularitiesCharacteristicZero (head #1199) | §5.5 (:719), isomorphism over the regular locus; no Grauert–Riemenschneider statement |
+| PerfectoidSpacesPartII (board design) | RA.0 (:62) with the almost-pro-zero, derived-limit and linear-functor targets; RA.1 (:275) with the annular tower and the three Riemann extension forms; RA.3 (:911) with André's perfectoid Riemann extension; RA.5 (:1608) with pure and almost pure maps, Krull detection, normalized Kummer tower, André's flatness theorem, Kummer purity, flat integral model and ramified almost flatness modulo pᵐ |
+
+All suppliers are earlier in the merge order (this roadmap is at line 73; PerfectoidSpacesPartII at 72) or on main. The citation resolver's single lead, PerfectoidSpacesPartII §RA.5, resolves to the board design above. Ownership against open pull requests whose files the brief did not give was not checked beyond the roadmap service's index.
+
+Dependency check, exact output:
+
+```text
+depcheck: 56 roadmaps, 640 edges, 0 problem(s)
+```
+
+No UPWARD, CYCLE or moved line.
+
+## Declared gaps
+
+All five named gaps carry the same slug in `design/plan.json` and in the README's supplier subsections; each was tested for minimality against its supplier as it stands now.
+
+| Slug | Supplier section as it stands | Minimal and precise |
+| --- | --- | --- |
+| ramified-multielement-kummer | RA.5 "Ramified almost flatness and purity modulo pᵐ" is stated for A = W(k)⟦T₁..T_n⟧ and one discriminant g | Yes: ramified complete regular base and finitely many discriminants are not there |
+| common-cohen-extension | DDP §1.10 records one residue-extension datum per ring | Yes: the compatible common extension for a square is not there |
+| parameter-systems | DDPII K0.3 supplies secant lists, dimension formula, permutations and powers | Yes: the three transports (completion, equal-dimensional prime quotient, finite injective local map) are not there |
+| perfectoid-base-modification-domination | SF §4.12 states domination for Noetherian integral bases | Yes: the quasi-compact quasi-separated form of tag 081T is not there |
+| grauert-riemenschneider | RoS §5.5 gives the resolution only | Yes: no vanishing statement in that roadmap |
+
+Acceptance is conditional on these five.
+
+## Pinned library and acceptance-file audit
+
+Pins from `lake-manifest.json`: Mathlib `6b7abb3c7686292736be2955bd3eb9ebf63b456a`, Tau Ceti `a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039`, as the README states. Declarations opened at the pins: `IsRegularLocalRing` (`Mathlib/RingTheory/RegularLocalRing/Defs.lean:51`, extends `IsLocalRing` and `IsNoetherianRing`), `IsRegularRing` (:92, extends `IsNoetherianRing`), `IsLocalRing` (`Mathlib/RingTheory/LocalRing/Defs.lean:30`, extends `Nontrivial`), `RingTheory.Sequence.IsRegular` (`Mathlib/RingTheory/Regular/RegularSequence.lean:146`, adds `top_ne_smul`), `HasInjectiveDimensionLE` (`Mathlib/CategoryTheory/Abelian/Injective/Dimension.lean:52`), `Algebra.IsTranscendentalSeparable` (`Mathlib/FieldTheory/TranscendentalSeparable.lean:72`) and `Algebra.IsSeparablyGenerated` (:35), `ResidueField.map` (`Mathlib/RingTheory/LocalRing/ResidueField/Basic.lean:95`), `Module.FaithfullyFlat` (`Mathlib/RingTheory/Flat/FaithfullyFlat/Basic.lean:63`), `IsAdicComplete` (`Mathlib/RingTheory/AdicCompletion/Basic.lean:56`), `rightDerivedFunctorPlus` and `rightDerivedFunctorPlusUnit` (`Mathlib/Algebra/Homology/DerivedCategory/RightDerivedFunctorPlus.lean:46`, :95), `Scheme.Modules.pushforward` (`Mathlib/AlgebraicGeometry/Modules/Sheaf.lean:165`), `SheafOfModules.unitToPushforwardObjUnit` (`Mathlib/Algebra/Category/ModuleCat/Sheaf/PullbackFree.lean:59`), `TauCeti.IsRegularLocalRing.isDomain` (`TauCeti/RingTheory/RegularLocalRing/Basic.lean:26`, :82–93), `Module.Flat.pi` and `FaithfullyFlat.pi_of_exists_submodule_ne_top` (`TauCeti/RingTheory/Flat/Pi.lean:62`, :75, both `[Finite ι]`), `Scheme.Modules.Cohomology` (`TauCeti/AlgebraicGeometry/Cohomology/Basic.lean:61`, abelian-group valued).
+
+Elaboration: `lake env lean` on the package's Suggested.lean from the content checkout: exit 0, ten warnings, all "declaration uses `sorry`" (lines 84, 95, 104, 111, 120, 127, 145, 162, 213, 221), no errors. The single Tau Ceti import `TauCeti.RingTheory.RegularLocalRing.Basic` had its object file; nothing was built.
+
+Signatures: a scratch copy with `#check @name` for all nineteen declarations elaborated (exit 0). Each elaborated type was compared with its README statement and with the worker's signature list: identical, no lost binder, no change needed. The README's generality equals the Lean's in every headline row above.
+
+Headlines: the README marks `SplitAlgebra`, `Splinter`, `BalancedBigCM`, `absoluteIntegralClosure_charP`, `exists_balanced`, `directSummand`, `finiteCover_flatDomination`, `absoluteIntegralClosure_split`, `monomial_noncontainment`, `weakFunctoriality_regularTarget`, `pureSubring_cohenMacaulay`, `DerivedSplinter`, `splinter_iff_derivedSplinter_charP`, `derivedDirectSummand` as headline signatures; all are declared. The headlines the docstring names as not statable (perfectoid covers and almost faithful flatness, §§3.2–3.3; the modification criterion, §4.3; finite covers killing relative coherent cohomology, §7.5) each lack a carrier at the pins (integral perfectoid algebras and almost modules; degree-bounded pointed modifications; the canonical finite-cover comparison of derived pushforwards). The nine definitions are each used by a stated headline.
+
+Padding probe: a scratch copy with each `sorry` replaced by `first | rfl | (simp; done) | infer_instance | trivial | decide | exact (by assumption)`: ten errors, zero surviving admissions, so no theorem closes in one tactic. A second scratch copy with `exact?` in place of each `sorry`: ten "could not close the goal" errors, so no headline is a single library lemma. No declaration restates a definition, mirrors a Check or computes a value.
+
+Form: one module docstring, single `import Mathlib` plus one existing `TauCeti.*` module, `namespace TauCetiRoadmap.DirectSummandsAndBigCohenMacaulay`, layer comments in README order, docstring on every declaration, `theorem` only, no `set_option`, no `lemma`, no `#eval`/`#print`/`#synth`, no sorry'd data, no `True` placeholder. Every backticked name of the roadmap's own in the README is declared; the other backticked names are Mathlib declarations listed in the contracts.
+
+## Verified sound
+
+- The four round-2 findings are repaired, with the repaired passages quoted and recomputed above; the repaired patterns (unqualified blow-up dimension, page slips, duplicated Checks, stale counts) were searched for in the rest of the README and not found again.
+- All 52 numbered targets, their API lists, Checks, routes and `*Needs:*` lines were read; the table records computed values for the fifteen sampled targets, the ten headline theorems, the nine Lean definitions and the repaired passages, plus the one-step finite-witness construction supporting the owned target of §4.3.
+- Fifteen sampled targets verified at their locators (table above); every theorem number and page checked agrees, with two line numbers a few lines early (R01).
+- Eleven supplier roadmaps resolved against main, the open heads or the board design; five gaps precise, minimal and declared in both places; dependency check 0 problems.
+- README shape: Summary, Scope and ownership, Conventions, Exact supplier contracts, How to read the build, eight layers each ending with Examples and Dependencies, Downstream consumers, Worked examples, References. No LaTeX delimiters, no process words, no pull-request numbers, no machine paths. Every definition has at least three discriminating Checks (counts above).
+- `metadata.toml` sets `topic = "math.AC"`; `sources.toml` parses, keeps one key per work, and records the published/preprint numbering notes.
+- No route-specific shortcut (small primes, ramified bases, nonreduced bases for existence, arbitrary modules, transcendental residue extensions all retained), no replanned roadmap, no computational algorithm, no copied passage.
+
+## Not verifiable
+
+- HH95 §§1.2(d) and 2.3 (ANDRE18B's references for faithful flatness and Cohen–Macaulay descent): paywalled, settled as uncertified; cited by locator only. The two uses (§§0.6, 6.3) were checked mathematically in the table instead.
+- Bruns–Herzog Exercise 8.1.7 and Theorem 8.5.1, cited by BMPSTWW line 517 for the completion statement of §0.5: not in the cache and not requested; the package owns the proof as a target.
+- Ownership against open pull requests whose files the brief did not give: not checked beyond the roadmap service's grep over the indexed heads.
+
+## Source issues
+
+- **Gap** in ANDRE18B at §4.2, Preuve du théorème 0.7.1, printed p. 86: the source says completing and quotienting by the nilradical reduces to a complete reduced ring without p-torsion; it should pass to a minimal prime of maximal dimension, whose quotient is p-torsion-free or of characteristic p (the reduced ring ℤ₂⟦X,Y⟧/(2X,2Y) has 2-torsion); affects the proof.
+
+<!-- tauceti-roadmap-review {"agent": "claude", "head": "dfaea305fad51b64e4a696996afe6af418efe620", "job": "REV-PKG-DirectSummandsAndBigCohenMacaulay~3", "model": "fable", "worker": "chris-i"} -->

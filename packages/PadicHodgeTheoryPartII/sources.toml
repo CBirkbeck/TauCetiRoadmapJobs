@@ -1,0 +1,89 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "PadicHodgeTheoryPartII"
+
+[[source]]
+id = "GLX26"
+authors = "Ian Gleason, Dong Gyu Lim, Yujie Xu"
+title = "The connected components of affine Deligne–Lusztig varieties"
+year = 2022
+venue = "Inventiones mathematicae (2026)"
+doi = "10.1007/s00222-025-01386-1"
+arxiv = "2208.07195v3"
+locator_scheme = "theorem"
+locator = "Definitions 2.1, 2.3, 5.1, 5.3, 5.5; Propositions 5.4, 5.6, 5.7, 5.9, 5.11, 6.6, 6.7; Theorems 5.2, 5.8, 6.1; Lemmas 5.10, 6.12 (arXiv v3 numbering and pages)"
+url = "https://arxiv.org/abs/2208.07195v3"
+fetched_from = "https://arxiv.org/pdf/2208.07195v3"
+fetched_at = "2026-10-25T20:27:05Z"
+sha256 = "d2249ddbe1ae2f4728000d27846d396adffc97b2f8b7b1c82c5d2701153fcb12"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v3 (November 2025); all locators use v3 numbering and pages; the published version is cited by DOI only"
+cited_for = ["Conventions", "0.1", "0.2", "0.3", "0.4", "0.6", "0.7", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "2.2", "2.3", "2.4", "3.1", "3.2", "3.4", "3.5", "4.1", "4.2", "gap:quasisplit-highest-weights"]
+
+[[source]]
+id = "Chen14"
+authors = "Miaofen Chen"
+title = "Composantes connexes géométriques de la tour des espaces de modules de groupes p-divisibles"
+year = 2014
+venue = "Annales scientifiques de l'École normale supérieure (4) 47 (2014), 723–764"
+locator_scheme = "theorem"
+locator = "§3.1, pp. 737–740; Propositions 3.2.1, 3.2.3, 3.3.3, 3.3.4, 3.3.6; Lemmes 3.3.2, 3.3.5, 4.2.2; Théorème 5.0.6 (journal pages)"
+url = "https://smf.emath.fr/system/files/2017-08/ens_ann-sc_47_723-764.pdf"
+fetched_from = "https://smf.emath.fr/system/files/2017-08/ens_ann-sc_47_723-764.pdf"
+fetched_at = "2026-10-25T20:27:35Z"
+sha256 = "7f0a33b3659ba049aadfeb571e150ae80a95a53e9cd3731cfbc7242600619698"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["0.4", "0.5", "0.6", "0.7", "1.1", "2.1", "2.2", "2.3", "gap:serre-sen-openness"]
+
+[[source]]
+id = "Stacks"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project"
+year = 2026
+locator_scheme = "tag"
+locator = "01UA (Lemma 29.26.10), 02GL (Lemma 29.37.7), 03WT (Lemma 29.37.13), 054L (Lemma 29.37.21)"
+url = "https://stacks.math.columbia.edu/tag/054L"
+fetched_from = "https://stacks.math.columbia.edu/download/morphisms.pdf#nameddest=054L"
+fetched_at = "2026-10-25T20:27:45Z"
+sha256 = "0bebe1d93baa7e4e99cb4f36fe50c7bcb6094772b8a2f760885a492892eca75f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["3.1", "From Mathlib"]
+
+[[source]]
+id = "Serre79"
+authors = "Jean-Pierre Serre"
+title = "Groupes algébriques associés aux modules de Hodge–Tate"
+year = 1979
+venue = "Astérisque 65 (1979), 155–188"
+locator_scheme = "theorem"
+locator = "§1.3, Théorème 1 and 1′, pp. 157–158"
+url = "https://www.numdam.org/item/AST_1979__65__155_0/"
+fetched_from = "https://www.numdam.org/item/AST_1979__65__155_0.pdf"
+fetched_at = "2026-10-25T21:06:22Z"
+sha256 = "51ee4c28314e68d4456900cba2f463f9d7c2404a6d7b2595d16ff9738626401b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["gap:serre-sen-openness", "3.3"]
+
+[[source]]
+id = "MilneiAG"
+authors = "J. S. Milne"
+title = "Algebraic Groups: the theory of group schemes of finite type over a field"
+year = 2015
+venue = "version 2.00, author page"
+locator_scheme = "theorem"
+locator = "§8e, Proposition 8.20 and Corollary 8.21, p. 131"
+url = "https://www.jmilne.org/math/CourseNotes/iAG200.pdf"
+fetched_from = "https://www.jmilne.org/math/CourseNotes/iAG200.pdf"
+fetched_at = "2026-10-25T21:06:45Z"
+sha256 = "385dd0d5a65db056b5b1e5b15ec799245991b934ed308035dbe95375de8a0069"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["3.4"]

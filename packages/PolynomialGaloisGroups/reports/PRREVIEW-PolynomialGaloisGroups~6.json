@@ -1,0 +1,4 @@
+{"review": {"status": "needs_changes", "reviewer": "independent-review-PRREVIEW-PolynomialGaloisGroups~6",
+            "head": "0cf00067e55817608cd634b0ebd253431e4ae058", "pr": 763, "folder": "PolynomialGaloisGroups", "date": "2026-10-29",
+            "findings": 2, "blocking": 2,
+            "notes": "incremental re-review of 6 changed lines since bcea93e: the diff is a pure rewrap of the Finite Group Invariants consumer sentence (README 691-694), identical modulo whitespace; gate rerun passed every scanner, depcheck 200 roadmaps 1308 edges 0 problems, targeted build 9010 jobs with six sorry warnings only, lake env lean and #check probe exit 0; consumer passages reread at the open head of FiniteGroupInvariants; seeded sample carried from the previous reports; R01 (folder still carries the completed base's name, STATUS.md and PROGRESS.md) and R02 (Compatibility.lean and PrescribedGenerators.lean unchanged) remain unrepaired and blocking."}}

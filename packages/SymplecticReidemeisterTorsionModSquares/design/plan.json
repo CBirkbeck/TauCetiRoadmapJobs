@@ -3963,11 +3963,88 @@
   ],
   "gaps": [
     {
-      "title": "Arithmetic-scheme Chebotarev supplier",
-      "detail": "AV §2.8 and §2.14 invoke Serre, Lectures on N_X(p), §9, Theorems 9.1 and 9.11, and Pink Appendix B. The cited book is not cleared in the supplied library and was not read. The current AnalyticNumberTheory:AN.4 is the analytic Hecke/Dedekind/Artin interface, not the finite-type scheme theorem; no exact existing producer node was found. Supply the quadratic-cover Frobenius detection and quantitative characteristic-zero lower bound stated in RT.5/quadratic-cover-detection through an AnalyticNumberTheory Part II, with primary accessible proof and the correct counting normalization. This remains an explicit leaf, not an asserted library result.",
-      "neededBy": [
-        "SymplecticReidemeisterTorsionModSquares:RT.5/quadratic-cover-detection"
-      ]
+      "slug": "smooth-cell-comparison",
+      "supplier": "GeometricTopology",
+      "section": "Layer 11; smoothing-and-triangulation comparison",
+      "needs": "Provide finite smooth-compatible triangulations, boundary dual cells, common subdivisions and simple comparison maps in every finite dimension, preserving transported local-coefficient cellular volumes."
+    },
+    {
+      "slug": "marked-surface-twists",
+      "supplier": "GeometricTopology",
+      "section": "Layer 3",
+      "needs": "Provide, for marked closed smooth oriented surfaces, compatibility between orientation-preserving Dehn twists and their induced automorphisms of marked fundamental-group presentations, including basepoint-path conjugation and preservation of the oriented relator up to conjugacy with exponent +1."
+    },
+    {
+      "slug": "poincare-boundary-cone",
+      "supplier": "AlgebraicTopology",
+      "section": "Stage 6.4",
+      "needs": "Provide a chain-homotopy-compatible identification of the cone of the relative self-duality adjoint with boundary cochains, carrying its signed pairing to outward-first Poincaré duality for finite projective self-dual local systems with two invertible."
+    },
+    {
+      "slug": "normal-torsor-gluing",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "Sections 2.9 and 2.11",
+      "needs": "Provide generic-fibre full faithfulness for finite étale covers of an arbitrary normal integral affine scheme, including injectivity on μ₂-torsor classes and extension of generic isomorphisms between covers already defined on the base."
+    },
+    {
+      "slug": "unstable-sl2-chern-lift",
+      "supplier": "K3BlochGroups",
+      "section": "Sections 2.4 and 4.20",
+      "needs": "Provide the natural surjection from integral H₃ of SL₂ of every infinite field onto indecomposable K3, compatible with stabilization and the number-field stable Hurewicz equivalence."
+    },
+    {
+      "slug": "dyadic-number-field-chern-rank",
+      "supplier": "K3BlochGroups",
+      "section": "Sections 2.5 and 6.7",
+      "needs": "Provide for every number field F the standard-representation degree-three Chern surjection from indecomposable K3(F) onto H¹(F,ℤ₂(2))/2, whose F₂-dimension is at least r₂(F), including the real-place corrections."
+    },
+    {
+      "slug": "dyadic-number-field-chern-reduction",
+      "supplier": "K3BlochGroups",
+      "section": "Section 6.7",
+      "needs": "For every number field F, provide the injective coefficient reduction H¹(F,ℤ₂(2))/2→H¹(F,μ₂), compatible with the degree-three second Chern map and its real-place normalization."
+    },
+    {
+      "slug": "witt-sylow-lift",
+      "supplier": "KTheoryFiniteLocalFields",
+      "section": "Section 1.9",
+      "needs": "Provide compatible lifts of every finite-field symplectic Sylow 2-subgroup representation through truncated Witt rings to the full Witt ring in odd residue characteristic, using smooth congruence kernels and averaging."
+    },
+    {
+      "slug": "real-chern-bockstein",
+      "supplier": "KTheoryFiniteLocalFields",
+      "section": "Section 1.8",
+      "needs": "Provide the real c₂₂ and c₃₁ components of the universal standard-representation étale c₂ for discrete Sp₂ᵣ(ℝ), r≥1, with c₂₂ equal to the discrete pullback of the real metaplectic double-cover class."
+    },
+    {
+      "slug": "real-chern-bockstein-compatibility",
+      "supplier": "KTheoryFiniteLocalFields",
+      "section": "Section 1.8",
+      "needs": "For discrete G=Sp₂ᵣ(ℝ), r≥1, prove β_et(c₃₁(z))=c₂₂(β_G z) for every z∈H₃(G;𝔽₂), where β_G:H₃(G;𝔽₂)→H₂(G;𝔽₂) is the homological coefficient Bockstein and β_et:H¹_et(ℝ,𝔽₂)→H²_et(ℝ,𝔽₂) is the étale coefficient Bockstein."
+    },
+    {
+      "slug": "symplectic-universal-cover-kernel",
+      "supplier": "RepresentationTheory/LieGroups",
+      "section": "Layer 5",
+      "needs": "Identify the fundamental group of positive-rank real symplectic groups with ℤ and the quotient of their universal covering group by 2ℤ with the metaplectic double cover, preserving its central generator modulo two."
+    },
+    {
+      "slug": "arithmetic-scheme-frobenius-detection",
+      "supplier": "Chebotarev",
+      "section": "Layer 13, arithmetic-scheme extension",
+      "needs": "For every normal integral affine finite-type ℤ[1/2]-scheme, detect finite étale quadratic quotients and independent pairs of μ₂-classes by Frobenius at closed points, in every characteristic."
+    },
+    {
+      "slug": "arithmetic-scheme-nonsplit-weight",
+      "supplier": "Chebotarev",
+      "section": "Layer 13, arithmetic-scheme extension",
+      "needs": "For every connected nontrivial double cover of a normal integral affine finite-type ℤ[1/2]-scheme of characteristic zero and Krull dimension d, provide c>0 and Q₀≥1 such that the logarithmically weighted nonsplit closed-point count of order at most Q is at least cQ^d for every Q≥Q₀."
+    },
+    {
+      "slug": "arithmetic-scheme-residue-order-count",
+      "supplier": "Chebotarev",
+      "section": "Layer 13, arithmetic-scheme extension",
+      "needs": "For every normal integral affine finite-type ℤ[1/2]-scheme of characteristic zero and Krull dimension d, provide one constant C with at most Cq^(d-1) closed points of residue field order q for every prime power q."
     }
   ],
   "sourceIssues": [

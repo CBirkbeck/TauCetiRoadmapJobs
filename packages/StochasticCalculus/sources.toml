@@ -1,0 +1,12 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "StochasticCalculus"
+
+[[source]]
+id = "MATH5695"
+authors = "unknown (course notes labelled MATH5695)"
+title = "Outline notes on Stochastic Differential Equations"
+locator_scheme = "page"
+locator = "pp. 1, 17, 98, 100-102, 111-112, 117-123, 130, 148, 173, 178, 184-185, 218, 235, 247"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/3944#issuecomment-6632669233"

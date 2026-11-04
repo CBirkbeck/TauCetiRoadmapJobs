@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-HyperellipticCurves~1",
+    "head": "deedd7d39709419a971eef554c825eb2f9d6a3a7",
+    "pr": 1707,
+    "folder": "HyperellipticCurves",
+    "date": "2026-11-02",
+    "findings": 32,
+    "blocking": 29,
+    "notes": "Full folder reviewed: 45 milestones, all 15 seeded source targets, 74 elaborated signatures, 29 admitted theorem probes; computed adversarial tables, seven discriminants and 60 finite-field counts; pins/main/open-head/board ownership audit. Dependency check: 204 roadmaps, 1501 edges, 0 problems. Supplied gate fails build warning; targeted build succeeds with non-sorry module-system warning. Direct Lean/signature/counterexample/local-global-signature/module-header scratch checks completed. Inaccessible or unverified sources recorded separately. No worktree edits."
+  }
+}

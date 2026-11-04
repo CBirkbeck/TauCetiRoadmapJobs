@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-LocalFiniteGroupTheory~1",
+    "head": "0c409c92b3d62cae104bcbdd64c9bb4ee41daf53",
+    "pr": 1634,
+    "folder": "LocalFiniteGroupTheory",
+    "date": "2026-11-02",
+    "findings": 10,
+    "blocking": 3,
+    "notes": "Full read-only review. Worker heading sample had no targets; independently sampled 15 of 27 theorem names using the full head hash, mathematically tested all 15, matched ZJ to the read primary paper, and recorded the other 14 as source-uncertified. Report contains 118 adversarial rows covering 48 Lean declarations and prose assertions. Original elaboration passes with 27 sorry warnings; all 48 signatures checked; 27 one-tactic probes yielded no solved theorem; four missing headline signatures and import/rank repair copies elaborate. Supplied gate FAIL: imports, mathlib-subimports, no-import-mathlib, readme-ids-missing; all failures accounted for. Dependency check: 205 roadmaps, 1498 edges, 0 problems. Ownership audited against main, board packages and supplied open work; FiniteGroupInvariants overlaps. Three blocking issues: general p-stability, missing headline signatures, ownership. Legal source access limitations documented. Worktree unchanged."
+  }
+}

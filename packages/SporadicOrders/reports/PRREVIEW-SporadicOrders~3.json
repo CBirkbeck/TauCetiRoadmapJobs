@@ -1,0 +1,4 @@
+{"review": {"status": "needs_changes", "reviewer": "independent-review-PRREVIEW-SporadicOrders~3",
+            "head": "dee3069fa2c699bc9735eb71e81f40d8bb727cb1", "pr": 599, "folder": "SporadicOrders", "date": "2026-10-28",
+            "findings": 1, "blocking": 1,
+            "notes": "incremental re-review of 143 changed lines since 824bdaa. Checked: the three previous findings (R02, R03 repaired; R01 not repaired: homEquiv, Relator.eval, lift_toFreeGroup, commInvInv, eval_commInvInv absent at Tau Ceti pin a780c7ad, present only on upstream main); the new 0.3 target and its six Checks and the rewritten 0.2 recomputed by brute force; CertifiedPermutationComputation §2.2 and CFSGBasicProperties P0 citations resolved; gate all-pass; depcheck 0 problems; Suggested.lean byte-identical, elaborated with exactly 20 sorry warnings; Seress §4.1 paywalled, not verifiable."}}

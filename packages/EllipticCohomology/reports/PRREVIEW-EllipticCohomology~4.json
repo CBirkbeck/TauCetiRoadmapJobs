@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-EllipticCohomology~4",
+    "head": "ad9b70ffe21c16cea201918387a5f5e5096eded1",
+    "pr": 945,
+    "folder": "EllipticCohomology",
+    "date": "2026-10-30",
+    "findings": 3,
+    "blocking": 3,
+    "notes": "Full review; previous findings checked individually. E4.U seeded sample verified against CDvN v2; 148 computed adversarial rows. Supplied gate passes including targeted build; rerun dependency check: 208 roadmaps, 1456 edges, 0 problems. Direct Lean elaboration and six signatures pass; both padding probes leave goals open. Native Tau Ceti replacement elaborates. Three blocking findings: h2g order, duplicate universal curve/specialization, duplicate p-adic measures/moments. Twelve source works fetched; five source errata recorded; verification limits itemized."
+  }
+}

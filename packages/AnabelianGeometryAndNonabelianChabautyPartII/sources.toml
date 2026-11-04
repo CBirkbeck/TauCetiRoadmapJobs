@@ -1,0 +1,60 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "AnabelianGeometryAndNonabelianChabautyPartII"
+
+[[source]]
+id = "betts-stix-2022"
+authors = "L. Alexander Betts, Jakob Stix"
+title = "Galois sections and $p$-adic period mappings"
+year = 2022
+venue = "Annals of Mathematics 201 (2025), no. 1, 79-166"
+doi = "10.4007/annals.2025.201.1.2"
+arxiv = "2204.13674v1"
+locator_scheme = "theorem"
+locator = "Definition 1.1 and Theorem A (p. 1); Theorem B (p. 2); Definition 2.17 and Remark 2.18 (p. 13); Definition 6.2 and Theorem 6.5 (pp. 43-44); Theorem 7.1 (p. 54)"
+url = "https://arxiv.org/abs/2204.13674v1"
+fetched_from = "https://arxiv.org/pdf/2204.13674v1"
+fetched_at = "2026-10-25T21:45:30Z"
+sha256 = "7d4b7d49c09b979ce4485251ea6f77527fcdb7c516ed7296d20c42e947ef0c18"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v1 read; all locators use its numbering and pagination. The published Annals version (DOI above) was not compared."
+cited_for = ["Final targets", "Scope"]
+
+[[source]]
+id = "harari-stix-2010"
+authors = "David Harari, Jakob Stix"
+title = "Descent obstruction and fundamental exact sequence"
+year = 2010
+venue = "The Arithmetic of Fundamental Groups (PIA 2010), Contributions in Mathematical and Computational Sciences 2, Springer, 2012, 147-166"
+arxiv = "1005.1302v2"
+locator_scheme = "theorem"
+locator = "Theorem 2.1 (p. 11)"
+url = "https://arxiv.org/abs/1005.1302v2"
+fetched_from = "https://arxiv.org/pdf/1005.1302v2"
+fetched_at = "2026-10-25T21:46:01Z"
+sha256 = "0279e8dd434ce0d31cc01df8824d0c5c001d681348ef402485f679d8ac220f68"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v2 read; Betts-Stix cite the published version as Theorem 11, whose numbering was not compared with arXiv Theorem 2.1."
+cited_for = ["Final targets"]
+
+[[source]]
+id = "stoll-2007"
+authors = "Michael Stoll"
+title = "Finite descent obstructions and rational points on curves"
+year = 2006
+venue = "Algebra & Number Theory 1, 349-391 (2007)"
+arxiv = "math/0606465v3"
+locator_scheme = "section"
+locator = "§2 (p. 4); Definition 5.4 (p. 16); Conjecture 9.1 (p. 38)"
+url = "https://arxiv.org/abs/math/0606465v3"
+fetched_from = "https://arxiv.org/pdf/math/0606465v3"
+fetched_at = "2026-10-25T21:46:07Z"
+sha256 = "83b873544f2bf0166973d67e8b5f94a5420a9482d5256a94e22f0d878a3b14fe"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v3 read; locators use its pagination (printed page equals PDF page). The published version was not compared."
+cited_for = ["Final targets"]

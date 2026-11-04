@@ -1,0 +1,4 @@
+{"review": {"status": "needs_changes", "reviewer": "independent-review-PRREVIEW-SmoothBundlesConnections~4",
+            "head": "c610088d08cee6e05bb8e7a9fa344876272e610b", "pr": 887, "folder": "SmoothBundlesConnections", "date": "2026-10-30",
+            "findings": 3, "blocking": 2,
+            "notes": "incremental re-review of 110 changed lines since fb494e6: R03 (gauge sign), R04 (free proper quotient headline) and most of R06 (locators, refinement sign) repaired and verified against Freed (1.18)-(1.19), Stacks 09UY, KMS 9.11/10.18/11.1/11.2, Donaldson 2.2, Meinrenken 1.21; the ComplexKahlerGeometry K5a and DGFloer 1.1 supply cycles (R01, R02) and the auxiliary TransportDerivativeTargets.lean (R05) are unchanged and re-raised; gate OK, depcheck 0 problems, lake env lean six sorry warnings only, one-tactic probe on the new headline fails as expected"}}

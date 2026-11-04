@@ -1,0 +1,69 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "SatoTateGroups"
+
+[[source]]
+id = "silverberg92"
+authors = "A. Silverberg"
+title = "Fields of definition for homomorphisms of abelian varieties"
+year = 1992
+venue = "Journal of Pure and Applied Algebra 77"
+doi = "10.1016/0022-4049(92)90141-2"
+locator_scheme = "section"
+locator = "x"
+url = "https://doi.org/10.1016/0022-4049(92)90141-2"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["review"]
+
+[[source]]
+id = "gl2type"
+locator_scheme = "section"
+locator = "x"
+url = "https://www.lmfdb.org/knowledge/show/g2c.gl2type"
+fetched_from = "https://www.lmfdb.org/knowledge/show/g2c.gl2type"
+fetched_at = "2026-11-03T07:49:37Z"
+sha256 = "24e44ef08a1655553fb8df93217ca4f2005fde738120bb296e686a8f7f9a696f"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["review"]
+
+[[source]]
+id = "stzero"
+locator_scheme = "section"
+locator = "x"
+url = "https://www.lmfdb.org/knowledge/show/st_group.trace_zero_density"
+fetched_from = "https://www.lmfdb.org/knowledge/show/st_group.trace_zero_density"
+fetched_at = "2026-11-03T07:49:37Z"
+sha256 = "76ca8fbd0b70b33f40a3639e7d7266e7d520ec09e9b30e24fa8d4442bca6ce48"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["review"]
+
+[[source]]
+id = "cmfst"
+locator_scheme = "section"
+locator = "x"
+url = "https://www.lmfdb.org/knowledge/show/cmf.sato_tate"
+fetched_from = "https://www.lmfdb.org/knowledge/show/cmf.sato_tate"
+fetched_at = "2026-11-03T07:49:38Z"
+sha256 = "b2fe1943373655af7e7c4abad80952257fc157c317ddbe8846b9a25e8eae6e76"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["review"]
+
+[[source]]
+id = "lmfdb-st-main"
+locator_scheme = "section"
+locator = "x"
+url = "https://raw.githubusercontent.com/LMFDB/lmfdb/main/lmfdb/sato_tate_groups/main.py"
+fetched_from = "https://raw.githubusercontent.com/LMFDB/lmfdb/main/lmfdb/sato_tate_groups/main.py"
+fetched_at = "2026-11-03T08:08:40Z"
+sha256 = "bc0c0a101118585c46402252077a6babdc68775f6b9701ef5d17cc128d374878"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["5.5"]

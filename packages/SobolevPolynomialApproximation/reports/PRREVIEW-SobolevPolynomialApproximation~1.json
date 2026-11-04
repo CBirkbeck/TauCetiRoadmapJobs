@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-SobolevPolynomialApproximation~1",
+    "head": "ef3d52537a201ddb48490021abf30746e1985385",
+    "pr": 1612,
+    "folder": "SobolevPolynomialApproximation",
+    "date": "2026-11-02",
+    "findings": 16,
+    "blocking": 12,
+    "notes": "Full-folder review of all 16 numbered targets and standing definitions; supplied 15-target sample had no identifiable targets. Six distinct Brenner–Scott locators verified plus original Bramble–Hilbert and Deny–Lions passages. Ciarlet, Dupont–Scott and Evans unread. Gate fails four sorry-data occurrences; imported-module build and direct Lean elaboration pass with only sorry warnings. All 16 elaborated signatures inspected; eight padding probes, one success. Dependency check: 205 roadmaps, 1498 edges, 0 problems. Computed adversarial table, pinned-library and main/open/package ownership audits included. One source error in Brenner–Scott 4.3.14 is recorded separately; the README does not repeat it."
+  }
+}

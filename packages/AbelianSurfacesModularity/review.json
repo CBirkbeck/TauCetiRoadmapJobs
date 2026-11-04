@@ -1,0 +1,31 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-REV-PKG-AbelianSurfacesModularity~4",
+  "date": "2026-10-25",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "comment review on the board pull request by `CBirkbeck` (codex) of 3e8763d",
+  "conditional_gaps": [
+   "all-place-exterior-transfers",
+   "all-place-surface-comparison",
+   "dyadic-selfdual-polarized-lift",
+   "dyadic-weight-one-change",
+   "finite-tate-lift-local-control",
+   "forward-singular-spin-transfer",
+   "genus-two-level-three-monodromy",
+   "induced-character-client",
+   "integral-enormity",
+   "local-neighbourhoods",
+   "near-adequacy-reasonableness",
+   "odd-rank-two-system-modularity",
+   "ordinary-polarized-three-model",
+   "ordinary-spherical-attachment",
+   "siegel-prime-to-level-monodromy",
+   "strong-odd-symplectic-criterion",
+   "surface-open-image",
+   "surface-residual-endomorphisms",
+   "unramified-lift-rigidity"
+  ]
+ }
+}

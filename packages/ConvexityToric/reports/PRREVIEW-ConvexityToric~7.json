@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-ConvexityToric~7",
+    "head": "319049e28c2d0906358c62f61bd261ec6f91f3d4",
+    "pr": 1651,
+    "folder": "SymplecticGeometry/ConvexityToric",
+    "date": "2026-11-03",
+    "findings": 7,
+    "blocking": 1,
+    "notes": "incremental re-review of 0 changed lines since 1e71d0f; all seven prior findings verified unchanged, including the compact rank-one ownership conflict. Ten seeded source targets and 151 adversarial rows carried forward with citations; three sibling-delta rows added. Scope-aware worker gate passes; standalone gate has only four expressly authorized sibling false positives. Fresh dependency check: 205 roadmaps, 1627 edges, zero problems. Targeted build, direct elaboration, 17-declaration signature probe and stability-padding probe pass."
+  }
+}

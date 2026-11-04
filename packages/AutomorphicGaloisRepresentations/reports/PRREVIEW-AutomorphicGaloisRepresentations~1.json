@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-AutomorphicGaloisRepresentations~1",
+    "head": "81e9d0f8aca15f3ed498b19db6ff544216f857ed",
+    "pr": 1007,
+    "folder": "AutomorphicGaloisRepresentations",
+    "date": "2026-10-30",
+    "findings": 4,
+    "blocking": 3,
+    "notes": "Full folder reviewed; all 15 seeded targets compared with available legal source text, with inaccessible texts and author-version pagination recorded under Not verifiable. Computed adversarial table covers all 81 numbered targets and Lean definitions/conventions. Worker gate passes; independent depcheck: 208 roadmaps, 1486 edges, 0 problems. Required imports built individually; Suggested.lean and both elaborated declaration signatures pass with only the expected sorry warning; one-tactic padding probe fails. Findings: missing local-condition application hypotheses, duplicate Wach and residual-attachment ownership, and fictional README API/Check names. Worktree unchanged."
+  }
+}

@@ -1947,7 +1947,14 @@
       ]
     }
   ],
-  "gaps": [],
+  "gaps": [
+    {
+      "slug": "isolated-affine-bezout",
+      "needs": "For r,d≥1 over an algebraically closed field, the isolated geometric points of the common zero locus of r affine polynomials in r variables of total degree at most d have sum of local intersection multiplicities at most d^r, even when positive-dimensional components also occur, and a point with invertible square Jacobian has multiplicity one.",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "5.12"
+    }
+  ],
   "restructure": [],
   "upstreamNotes": [
     {

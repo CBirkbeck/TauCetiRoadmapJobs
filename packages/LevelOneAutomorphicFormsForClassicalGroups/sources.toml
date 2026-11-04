@@ -1,0 +1,18 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "LevelOneAutomorphicFormsForClassicalGroups"
+
+[[source]]
+id = "BoechererNote"
+authors = "Gaëtan Chenevier, Olivier Taïbi"
+title = "Verification of Böcherer's criterion for the weight 13 forms (companion note to Discrete series multiplicities for classical groups over Z and level 1 algebraic cusp forms)"
+year = 2019
+locator_scheme = "page"
+locator = "p. 1 (criterion and normalizations); pp. 2-3 (five products and their orders)"
+url = "https://otaibi.perso.math.cnrs.fr/levelone/verif_bocherer.pdf"
+fetched_from = "https://otaibi.perso.math.cnrs.fr/levelone/verif_bocherer.pdf"
+fetched_at = "2026-11-04T16:24:05Z"
+sha256 = "40f4ae15a4130408aed1776b57d02ea44e8a5b505b88a2b6051e6584f431701f"
+licence_class = "answered-by:CBirkbeck"
+status = "certified"
+accessed = "2026-11-04"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/505#issuecomment-6632676908"

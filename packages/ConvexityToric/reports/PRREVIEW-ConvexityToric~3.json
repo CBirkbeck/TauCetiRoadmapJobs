@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-ConvexityToric~3",
+    "head": "24f7c9f2768c70cb7cf7e2549dcba855c42a7083",
+    "pr": 1651,
+    "folder": "SymplecticGeometry/ConvexityToric",
+    "date": "2026-11-02",
+    "findings": 13,
+    "blocking": 7,
+    "notes": "incremental re-review of 0 changed lines since 086aecd; verified all 13 previous findings (none repaired), sibling dependency changes, current supplier contracts and pinned declarations; carried forward both unchanged seeded source samples and 106 adversarial rows; added seven dependency computation rows. Gate fails sorry-data/import rules and targeted build; direct elaboration fails. Dependency check: 205 roadmaps, 1547 edges, 0 problems. Ten companion signatures print; padding and default-option probes pass. No PR files changed."
+  }
+}

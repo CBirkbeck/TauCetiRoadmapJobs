@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "rejected",
+    "reviewer": "independent-review-PRREVIEW-SchemeAndStackFoundations~2",
+    "head": "18d324658443b691dc52d7dd23a3282494c84e59",
+    "pr": 1656,
+    "folder": "SchemeAndStackFoundations",
+    "date": "2026-11-02",
+    "findings": 16,
+    "blocking": 7,
+    "notes": "Full-folder review with previous findings reconciled (previous report identifies a different PR/head); fifteen seeded source targets checked with stated access/locator limitations; 163 computed adversarial rows; pinned ownership and supplier inspection; depcheck reports 204 roadmaps, 1501 edges, 0 problems but manual JacobianChallenge cycle persists. Supplied gate FAIL: tex=65, prnum=1, sorry-data=25, sorry-examples=101, imports=1, readme-ids-missing=15. Direct Lean elaboration and 235 declaration signatures pass; 106 theorem probes identify five rfl padding results. Scope extension requires a successor roadmap. No PR files changed."
+  }
+}

@@ -1,0 +1,37 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "K3Surfaces"
+
+[[source]]
+id = "liedtke-surfaces"
+authors = "Christian Liedtke"
+title = "Algebraic Surfaces in Positive Characteristic"
+year = 2009
+venue = "Birational geometry, rational curves, and arithmetic, 229-292, Springer (2013)"
+arxiv = "0912.4291v4"
+locator_scheme = "theorem"
+locator = "Theorem 4.4, p.21; Theorem 4.2, p.20; Theorem 4.6, p.21; Theorem 6.1, p.25"
+url = "https://arxiv.org/abs/0912.4291v4"
+fetched_from = "https://arxiv.org/pdf/0912.4291v4"
+fetched_at = "2026-11-03T22:22:40Z"
+sha256 = "17309a48dad424540f3f25e1e0cb35e898c3e7f79d7f5bb8aab20ec32f6c1776"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+version_note = "arXiv v4"
+cited_for = ["0.2"]
+
+[[source]]
+id = "huybrechts-k3"
+authors = "Daniel Huybrechts"
+title = "Lectures on K3 surfaces (author-hosted prepublication draft)"
+year = 2016
+locator_scheme = "page"
+locator = "Proposition 9.4.6, pp.180-181; Proposition 17.2.7, pp.367-368"
+url = "https://www.math.uni-bonn.de/people/huybrech/K3Global.pdf"
+fetched_from = "https://www.math.uni-bonn.de/people/huybrech/K3Global.pdf"
+fetched_at = "2026-11-03T22:24:11Z"
+sha256 = "59da72d5807fd05d08ce28ceaf30a030cfc7e52b92e27778d824ac86cb1dd287"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["0.2"]

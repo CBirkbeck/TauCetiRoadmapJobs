@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-SurfaceTopology~2",
+    "head": "9bd6e07e4d2041feb8e6e464ac104d592777d68e",
+    "pr": 271,
+    "folder": "SurfaceTopology",
+    "date": "2026-11-02",
+    "findings": 12,
+    "blocking": 6,
+    "notes": "Full review of both files; all 14 previous findings reassessed; repeated seeded headings inspected; 14 sources attempted, 3 readable and 11 uncertified/unavailable; 206 computed adversarial rows and enumeration of 570 maps; pinned declarations and supplier ownership checked; depcheck: 205 roadmaps, 1506 edges, 0 problems; direct Lean and 35-signature probe pass; targeted build exits 0 but emits gate-rejected module warning. Supplied gate fails on sorry-data, eight missing README ids, stray-files, outside-folder, build. One-library-lemma padding and Fary-headline probes elaborated. Worktree unchanged."
+  }
+}

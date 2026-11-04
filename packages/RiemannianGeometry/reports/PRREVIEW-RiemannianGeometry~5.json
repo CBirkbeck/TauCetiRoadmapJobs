@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-RiemannianGeometry~5",
+    "head": "50200098ad5bf057f4ac8ba8bf47104509da4d58",
+    "pr": 1683,
+    "folder": "RiemannianGeometry",
+    "date": "2026-11-02",
+    "findings": 6,
+    "blocking": 3,
+    "notes": "Full review; previous R01–R09 rechecked. Worker gate passes; independent dependency check: 204 roadmaps, 1560 edges, 0 problems. Direct Suggested elaboration passes with 13 sorry warnings. All 23 actual declarations signature-checked; 16 theorem padding probes. 179 computed adversarial rows. Seeded source sample checked: Milnor Jacobi locators verified; Lee/O’Neill/normal-jet locators remain uncertified or absent. All 18 references attempted, 11 legal texts readable, 7 unavailable. Two ownership conflicts and missing statable Fischer headline require changes."
+  }
+}

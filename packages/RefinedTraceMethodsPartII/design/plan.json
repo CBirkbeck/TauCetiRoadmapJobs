@@ -1,0 +1,2130 @@
+{
+ "roadmap": "RefinedTraceMethodsPartII",
+ "title": "Refined trace methods, Part II: K-theory of curve singularities, truncated polynomials and finite chain rings",
+ "parent": "RefinedTraceMethods",
+ "summary": "Nikolaus-Scholze calculus of pointed-monoid algebras and circle cells over perfectoid coefficients, birelative K and TC of normalization squares, and the resulting K-theory of the coordinate axes (Hesselholt, Speirs), planar cusps (Hesselholt-Nikolaus), truncated polynomials over perfectoid rings (Riggenbach) and finite chain rings O_K/varpi^n (Antieau-Krause-Nikolaus), with prismatic and syntomic cohomology relative to delta-rings and of filtered rings.",
+ "baseline": {
+  "mathlib": "6b7abb3c7686292736be2955bd3eb9ebf63b456a",
+  "tauceti": "a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039"
+ },
+ "layers": [
+  {
+   "key": "1",
+   "title": "Indexing arithmetic and Witt bookkeeping",
+   "targets": [
+    {
+     "id": "1.1",
+     "kind": "definition",
+     "name": "cuspCount / cuspTruncationSet",
+     "statement": "For positive a,b and m>=0, l(a,b,m) is the number of pairs (i,j) of positive integers with ai+bj=m; S(a,b,r)={m>=1 : l(a,b,m)<=r}. For coprime a,b>=2: l(a,b,m+ab)=l(a,b,m)+1; S(a,b,r) is divisor-closed; #S(a,b,r)=(a+1)(b+1)/2-1+rab, #S/a=(r+1)b, #S/b=(r+1)a, #S/ab=r+1; the coprime part T(a,b,r)={m in S : a does not divide m, b does not divide m} is a truncation set with #T=(2r+1)(a-1)(b-1)/2 (Sylvester); conductor (a-1)(b-1).",
+     "hypotheses": [
+      "a,b positive (counting, divisor closure)",
+      "a,b>=2 coprime (cardinalities, Sylvester, conductor)",
+      "r>=0"
+     ],
+     "locator": {
+      "source": "hesselholt-cusp-polytopes",
+      "where": "Lemma 1.4, Remark 1.5, Corollaries 1.6-1.7, lines 329-408; hn-cusp lines 20-37"
+     },
+     "prerequisites": [
+      "mathlib:Finset.card",
+      "mathlib:Nat.Coprime",
+      "roadmap:QWittVectors §1.1"
+     ],
+     "api": [
+      {
+       "name": "cuspCount_add_mul",
+       "role": "periodicity",
+       "statement": "l(a,b,m+ab)=l(a,b,m)+1 for coprime a,b>=2"
+      },
+      {
+       "name": "cuspCount_dvd_le",
+       "role": "monotonicity",
+       "statement": "s | m implies l(a,b,s)<=l(a,b,m)"
+      },
+      {
+       "name": "cuspTruncationSet_isTruncationSet",
+       "role": "structure",
+       "statement": "S(a,b,r) is closed under positive divisors"
+      },
+      {
+       "name": "card_cuspTruncationSet",
+       "role": "cardinality",
+       "statement": "#S(a,b,r)=(a+1)(b+1)/2-1+rab"
+      },
+      {
+       "name": "card_coprimePart",
+       "role": "Sylvester",
+       "statement": "#T(a,b,r)=(2r+1)(a-1)(b-1)/2"
+      }
+     ],
+     "tests": [
+      {
+       "name": "S_2_3_0",
+       "kind": "computation",
+       "statement": "S(2,3,0)={1,2,3,4,6}, #=5, T={1}"
+      },
+      {
+       "name": "S_2_3_1",
+       "kind": "computation",
+       "statement": "S(2,3,1)={1..10,12}, #=11, T={1,5,7}"
+      },
+      {
+       "name": "S_2_5_0",
+       "kind": "computation",
+       "statement": "S(2,5,0)={1,2,3,4,5,6,8,10}, T={1,3}"
+      },
+      {
+       "name": "strict_inequality_nonexample",
+       "kind": "non-example",
+       "statement": "defining S by l<r makes S(2,3,0) empty and breaks Sylvester at r=0"
+      }
+     ]
+    },
+    {
+     "id": "1.2",
+     "kind": "theorem",
+     "name": "restriction to the coprime part",
+     "statement": "For a truncation set S, positive n_1..n_k and T={m in S : n_i does not divide m for all i}, T is a truncation set and for every commutative ring R the restriction W_S(R)->W_T(R) is surjective with kernel sum_i V_{n_i}W_{S/n_i}(R). In particular W_S(k)/(V_aW_{S/a}+V_bW_{S/b}) = W_{T(a,b,r)}(k) and W_{re}(R)/V_eW_r(R) = W_{T_{r,e}}(R), T_{r,e}={m<=re : e does not divide m}.",
+     "hypotheses": [
+      "S truncation set",
+      "R commutative ring",
+      "n_i positive"
+     ],
+     "locator": {
+      "source": "hesselholt-cusp-polytopes",
+      "where": "Corollary 1.7 and proof, lines 395-408"
+     },
+     "prerequisites": [
+      "roadmap:QWittVectors §1.3",
+      "roadmap:QWittVectors §1.4"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "F2_12",
+       "kind": "computation",
+       "statement": "S={1,2}, n=2, R=F_2: Z/4 modulo {0,2} is Z/2 = W_{1}(F_2)"
+      },
+      {
+       "name": "n_equals_one",
+       "kind": "degenerate",
+       "statement": "n=1: T empty, both sides zero"
+      },
+      {
+       "name": "keep_index_nonexample",
+       "kind": "non-example",
+       "statement": "S={1,2,3,4}, n=2: keeping 2 in T gives length 3 instead of #T=2"
+      }
+     ]
+    },
+    {
+     "id": "1.3",
+     "kind": "definition",
+     "name": "p-typical index functions",
+     "statement": "s_S(d)=#{j>=0 : dp^j in S} for d in S prime to p; s(m,d) unique s>=1 with p^{s-1}d<=m<p^s d; cusp s(a,b,r,p,m') and h(a,b,r,p,m') of hn-cusp with p not dividing b. Sum_d s_S(d)=#S for finite S, and h(a,b,r,p,m')=s_{T(a,b,r)}(m').",
+     "hypotheses": [
+      "p prime",
+      "S truncation set",
+      "p does not divide b for h"
+     ],
+     "locator": {
+      "source": "hn-cusp",
+      "where": "lines 43-57; hesselholt-axes line 41"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "mathlib:Nat.Prime",
+      "mathlib:Nat.Coprime"
+     ],
+     "api": [
+      {
+       "name": "sum_ptypicalIndex",
+       "role": "count",
+       "statement": "sum over d in S prime to p of s_S(d) equals #S"
+      },
+      {
+       "name": "cuspIndex_eq",
+       "role": "identification",
+       "statement": "h(a,b,r,p,m')=s_{T(a,b,r)}(m')"
+      }
+     ],
+     "tests": [
+      {
+       "name": "cusp_2_3_0_p2",
+       "kind": "computation",
+       "statement": "h(2,3,0,2,1)=1, other h zero; total 1"
+      },
+      {
+       "name": "cusp_2_3_0_p5",
+       "kind": "computation",
+       "statement": "h(2,3,0,5,1)=1, total 1"
+      },
+      {
+       "name": "index_convention_nonexample",
+       "kind": "non-example",
+       "statement": "for S={1..4}, p=2, s_S(1)=3; the convention p^s d<=m would give 2 and total 3 != 4"
+      }
+     ]
+    },
+    {
+     "id": "1.4",
+     "kind": "definition",
+     "name": "cyclic-word counts and axes indices",
+     "statement": "cyc_d(s)= number of cyclic words of length and period s in d letters with no cyclic repetition; A_d(m)=(d-1)^m+(-1)^m(d-1)=sum_{s|m} s cyc_d(s); cyc_d(s)=(1/s)sum_{j|s}mu(s/j)A_d(j); c_{d-1}(m)=sum_{s|m, s=m mod 2} cyc_d(s); t_ev, t_od as in speirs-axes.",
+     "hypotheses": [
+      "d>=1 (counts), d>=2 (c_{d-1})",
+      "p prime, r>=0, m'>=1 for t_ev,t_od"
+     ],
+     "locator": {
+      "source": "speirs-axes",
+      "where": "Definition 8, line 357; Lemma 33, line 1250; lines 1264-1305; line 23"
+     },
+     "prerequisites": [
+      "mathlib:ArithmeticFunction.moebius",
+      "mathlib:ArithmeticFunction.moebius_mul_coe_zeta",
+      "mathlib:Nat.divisors"
+     ],
+     "api": [
+      {
+       "name": "wordCount_formula",
+       "role": "closed form",
+       "statement": "A_d(m)=(d-1)^m+(-1)^m(d-1)"
+      },
+      {
+       "name": "cyc_moebius",
+       "role": "inversion",
+       "statement": "cyc_d(s)=(1/s)sum mu(s/j)A_d(j)"
+      },
+      {
+       "name": "cyc_two",
+       "role": "value",
+       "statement": "cyc_d(2)=d(d-1)/2, cyc_d(1)=0"
+      }
+     ],
+     "tests": [
+      {
+       "name": "d3_values",
+       "kind": "computation",
+       "statement": "cyc_3(2..6)=3,2,3,6,9"
+      },
+      {
+       "name": "d2_values",
+       "kind": "degenerate",
+       "statement": "cyc_2(s)=0 unless s=2; c_1(m)=1 iff m even"
+      },
+      {
+       "name": "t_od_t_ev_differ",
+       "kind": "non-example",
+       "statement": "(p,r,m')=(2,1,3): t_od=1, t_ev=0"
+      }
+     ]
+    },
+    {
+     "id": "1.5",
+     "kind": "definition",
+     "name": "finite-chain-ring exponents",
+     "statement": "j=ceil(n/e), [j]_p=(p^j-1)/(p-1), B(p,e,n)=(p/(p-1))(p[j]_p - p^j(j-n/e)), eps(i,j')=1 iff floor(j'/n)<ceil(j'/n)<=i. Sum_{j'=1}^{in-1} eps(i,j') = i(n-1); B<=p^2(p^j-1)/(p-1)^2; for n<=e, B=p^2 n/((p-1)e).",
+     "hypotheses": [
+      "p prime, e,n>=1, i>=1"
+     ],
+     "locator": {
+      "source": "akn24",
+      "where": "Theorem 5.2, line 2074; lines 437-452; Remark 5.4, line 2078"
+     },
+     "prerequisites": [
+      "mathlib:Nat.ceil",
+      "mathlib:Rat"
+     ],
+     "api": [
+      {
+       "name": "eps_count",
+       "role": "count",
+       "statement": "sum of eps(i,j') over 1<=j'<=in-1 is i(n-1)"
+      }
+     ],
+     "tests": [
+      {
+       "name": "Z4",
+       "kind": "computation",
+       "statement": "p=2,e=1,n=2: j=2, B=12"
+      },
+      {
+       "name": "F2z3",
+       "kind": "computation",
+       "statement": "e=3,n=3,p=2: B=4; tends to 0 as e grows"
+      },
+      {
+       "name": "n_one",
+       "kind": "degenerate",
+       "statement": "n=1: eps count 0 = i*0"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "2",
+   "title": "Pointed-monoid algebras and their cyclic bar constructions",
+   "targets": [
+    {
+     "id": "2.1",
+     "kind": "definition",
+     "name": "pointedMonoidAlgebra",
+     "statement": "For a commutative ring k and a monoid with zero Pi, k(Pi)=MonoidAlgebra k Pi modulo the ideal generated by the basis element of 0. Nonzero elements form a basis; k-algebra maps k(Pi)->B are maps of monoids with zero Pi->(B,*); functorial; k(Pi) tensor k(Pi')=k(Pi smash Pi'); k(M_+)=MonoidAlgebra k M; MonoidAlgebra k Pi = k x k(Pi).",
+     "hypotheses": [
+      "k commutative ring",
+      "Pi a MonoidWithZero"
+     ],
+     "locator": {
+      "source": "speirs-axes",
+      "where": "line 286; hn-cusp line 105"
+     },
+     "prerequisites": [
+      "mathlib:MonoidAlgebra",
+      "mathlib:MonoidWithZero",
+      "mathlib:Ideal.Quotient.mk"
+     ],
+     "api": [
+      {
+       "name": "basis",
+       "role": "structure",
+       "statement": "images of nonzero elements form a k-basis"
+      },
+      {
+       "name": "lift",
+       "role": "universal property",
+       "statement": "algebra maps correspond to zero-preserving monoid maps"
+      },
+      {
+       "name": "smash_tensor",
+       "role": "monoidal",
+       "statement": "k(Pi) tensor_k k(Pi') = k(Pi smash Pi')"
+      },
+      {
+       "name": "unpointed",
+       "role": "compatibility",
+       "statement": "k(M_+) = MonoidAlgebra k M"
+      }
+     ],
+     "tests": [
+      {
+       "name": "truncated",
+       "kind": "computation",
+       "statement": "k(Pi_e)=k[x]/x^e of rank e; unquotiented algebra has rank e+1"
+      },
+      {
+       "name": "axes",
+       "kind": "compatibility",
+       "statement": "k(Pi_2)=TauCeti.NodeAlgebra k 0"
+      },
+      {
+       "name": "trivial",
+       "kind": "degenerate",
+       "statement": "k({0,1})=k, while unquotiented MonoidAlgebra k {0,1} = k x k has rank 2"
+      },
+      {
+       "name": "cusp",
+       "kind": "computation",
+       "statement": "k(<t^a,t^b>_+)=k[x,y]/(y^a-x^b)"
+      }
+     ]
+    },
+    {
+     "id": "2.2",
+     "kind": "construction",
+     "name": "reduced cyclic bar construction and unstable Frobenius",
+     "statement": "Pointed cyclic set B^cy(Pi)[n]=Pi^{smash(n+1)}, realization a pointed T-space; psi_p: B^cy(Pi)->B^cy(Pi)^{C_p} a T=T/C_p-equivariant homeomorphism onto genuine fixed points; weight decompositions B^cy(Pi)=wedge_m B^cy(Pi;m) with psi_p: weight m -> weight pm.",
+     "hypotheses": [
+      "Pi a monoid with zero",
+      "p prime"
+     ],
+     "locator": {
+      "source": "speirs-axes",
+      "where": "§3.1, lines 206-255; line 331"
+     },
+     "prerequisites": [
+      "roadmap:RefinedTraceMethods §2.5",
+      "roadmap:RefinedTraceMethods §2.10",
+      "roadmap:KTheoryFiniteLocalFields §4.0"
+     ],
+     "api": [
+      {
+       "name": "smash",
+       "role": "monoidal",
+       "statement": "B^cy(Pi smash Pi') = B^cy(Pi) smash B^cy(Pi')"
+      },
+      {
+       "name": "weights",
+       "role": "decomposition",
+       "statement": "multiplicative weights split B^cy and psi_p multiplies weight by p"
+      },
+      {
+       "name": "borel",
+       "role": "compatibility",
+       "statement": "composite to homotopy fixed points agrees with RefinedTraceMethods §2.10 for Pi=M_+"
+      }
+     ],
+     "tests": [
+      {
+       "name": "trivial",
+       "kind": "degenerate",
+       "statement": "B^cy({0,1})=S^0"
+      },
+      {
+       "name": "free_weight",
+       "kind": "computation",
+       "statement": "Pi_1 weight m piece is (T/C_m)_+"
+      },
+      {
+       "name": "truncated_e2",
+       "kind": "computation",
+       "statement": "Pi_2 weight 2 piece is cofibre of (T/C_1)_+ -> (T/C_2)_+, not a point"
+      }
+     ]
+    },
+    {
+     "id": "2.3",
+     "kind": "theorem",
+     "name": "cyclotomic splitting of pointed-monoid algebras",
+     "statement": "For every E_1-ring k and monoid with zero Pi, THH(k tensor Sigma^infty Pi) = THH(k) tensor Sigma^infty B^cy(Pi) as cyclotomic spectra, with Frobenius phi_p tensor Sigma^infty psi_p followed by the lax Tate structure map; natural, weight compatible.",
+     "hypotheses": [
+      "k E_1-ring",
+      "Pi monoid with zero"
+     ],
+     "locator": {
+      "source": "hn-cusp",
+      "where": "line 105; speirs-axes Lemma 4, line 272; speirs-trunc lines 319-346"
+     },
+     "prerequisites": [
+      "roadmap:RefinedTraceMethods §2.6",
+      "roadmap:RefinedTraceMethods §2.8",
+      "roadmap:RefinedTraceMethods §2.10",
+      "target:2.2",
+      "roadmap:AInfCohomology §AI.7.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "trivial_monoid",
+       "kind": "degenerate",
+       "statement": "Pi={0,1}: identity"
+      },
+      {
+       "name": "weight_one",
+       "kind": "computation",
+       "statement": "k=F_p, Pi_2 weight 1: dimension one in each degree n>=0"
+      },
+      {
+       "name": "frobenius_weight",
+       "kind": "non-example",
+       "statement": "Frobenius maps weight 1 to weight p, not to weight 1"
+      }
+     ]
+    },
+    {
+     "id": "2.4",
+     "kind": "theorem",
+     "name": "linear and rational splittings",
+     "statement": "HH(k(Pi)/k) = k tensor Sigma^infty B^cy(Pi) and HH(k(Pi)/Z)=HH(k/Z) tensor Sigma^infty B^cy(Pi) as T-equivariant objects; over Q, HC(k(Pi)/Q)=(HH(k/Q) tensor B^cy(Pi))_{hT}.",
+     "hypotheses": [
+      "k commutative ring",
+      "Pi monoid with zero"
+     ],
+     "locator": {
+      "source": "speirs-axes",
+      "where": "Lemma 29, line 1128"
+     },
+     "prerequisites": [
+      "roadmap:RefinedTraceMethods §1.4",
+      "roadmap:RefinedTraceMethods §2.6",
+      "roadmap:KTheoryFiniteLocalFields §4.0",
+      "target:2.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "Q_t",
+       "kind": "computation",
+       "statement": "Pi=<t>_+ over Q, weight m>=1: homology Q in degrees 0,1, Connes operator m surjective; weight-m HC is Q t^m in degree 0 and zero in degrees >=1 (HC_0=HH_0 never vanishes)"
+      },
+      {
+       "name": "F2_torsion",
+       "kind": "computation",
+       "statement": "words with s odd, i even: F_2 in degrees m-1,m over F_2, zero over Q"
+      },
+      {
+       "name": "unpointed",
+       "kind": "compatibility",
+       "statement": "Pi=M_+ gives Kunneth HH(k[M]/k)=k tensor B^cyM_+"
+      }
+     ]
+    },
+    {
+     "id": "2.5",
+     "kind": "theorem",
+     "name": "cell types of coordinate-axes cyclic bar constructions",
+     "statement": "B^cy(Pi_d)=wedge over cyclic words B(omega); birelative THH(A_d,B_d,I_d)=sum over words of period>=2 of THH(k) tensor B(omega); B(omega) contractible if omega has period s>=2 and a cyclic repetition; period-1 words x_j^m have B=(T/C_m)_+ (not contractible, cells of k[x_j], omitted from the birelative sum); for s>=2 without repetition, length m, i=m/s: s even: Sigma B = S^{lambda_{m/2}} smash (T/C_i)_+; s,i odd: B=S^{lambda_{(m-1)/2}} smash (T/C_i)_+; s odd, i even: B=S^{lambda_{(m-2)/2}} smash RP^2(i); homology and Connes operator as in Proposition 12; psi_p: B(omega)->B(omega^{*p})^{C_p} homeomorphism.",
+     "hypotheses": [
+      "d>=2",
+      "k any ring for the birelative splitting",
+      "s>=2 for contractibility and cell types (speirs-axes Lemma 9)"
+     ],
+     "locator": {
+      "source": "speirs-axes",
+      "where": "Lemmas 6, 9, 11 and Proposition 12, lines 334-464"
+     },
+     "prerequisites": [
+      "target:2.2",
+      "target:2.3",
+      "roadmap:RefinedTraceMethods §2.13",
+      "target:1.4"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "d2",
+       "kind": "compatibility",
+       "statement": "d=2 recovers hesselholt-axes Proposition 1.2"
+      },
+      {
+       "name": "xyz",
+       "kind": "computation",
+       "statement": "omega=x1x2x3: B=S^{lambda_1} smash T_+, homology in degrees 2,3"
+      },
+      {
+       "name": "repetition",
+       "kind": "non-example",
+       "statement": "x1x1x2 (period 3, repetition) contractible, contributes nothing; x1x1 (period 1) has B=(T/C_2)_+, H~_0=H~_1=Z, not contractible, excluded from the birelative sum as a cell of k[x1]"
+      }
+     ]
+    },
+    {
+     "id": "2.6",
+     "kind": "theorem",
+     "name": "cell types for truncated polynomials and cusps",
+     "statement": "Import the cofibre sequences S^{lambda_d} smash (T/C_{s/e})_+ -> S^{lambda_d} smash (T/C_s)_+ -> B^cy(Pi_e;s), d=floor((s-1)/e). For the cusp, B_m=T_+ smash_{C_m} X(a,b,m) is a finite T-CW complex compatible with fixed points; Z tensor B_m is the total cofibre of the square of Z tensor (T/C_{m/c})_+[2l(a,b,m)], c in {ab,a,b,1}; connectivity of B_m tends to infinity; for p|m the cofibre of B_{m/p}->(B_m)^{C_p}->B_m is a finite colimit of free C_p-cells.",
+     "hypotheses": [
+      "a,b>=2 coprime",
+      "m>=1",
+      "e>=1"
+     ],
+     "locator": {
+      "source": "hn-cusp",
+      "where": "Theorem 1, line 131; lines 156, 165; hesselholt-cusp-polytopes Proposition 3.1, line 792; riggenbach-trunc Theorem 5.1, line 846"
+     },
+     "prerequisites": [
+      "roadmap:KTheoryFiniteLocalFields §5.16",
+      "target:2.2",
+      "target:2.4",
+      "roadmap:RefinedTraceMethods §1.2",
+      "roadmap:RefinedTraceMethods §1.3",
+      "target:1.1",
+      "target:2.3"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "m1",
+       "kind": "computation",
+       "statement": "(2,3), m=1: Z tensor T_+, homology Z in degrees 0,1"
+      },
+      {
+       "name": "m6",
+       "kind": "computation",
+       "statement": "(2,3), m=6: total cofibre contractible"
+      },
+      {
+       "name": "e1",
+       "kind": "degenerate",
+       "statement": "e=1: every positive weight vanishes"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "3",
+   "title": "Circle-cell Tate calculus over perfectoid coefficients",
+   "targets": [
+    {
+     "id": "3.1",
+     "kind": "theorem",
+     "name": "Tate constructions of finite C_p-complexes",
+     "statement": "For every spectrum T with C_p-action and finite pointed C_p-CW complex Z, T^{tC_p} tensor Sigma^infty Z^{C_p} -> (T tensor Sigma^infty Z)^{tC_p} is an equivalence; for T bounded below, the lax map T^{tC_p} tensor (Sigma^infty Z)^{tC_p} -> (T tensor Sigma^infty Z)^{tC_p} is an equivalence after p-completion of the source, not before.",
+     "hypotheses": [
+      "Z finite pointed C_p-CW complex",
+      "T bounded below for the second statement"
+     ],
+     "locator": {
+      "source": "hn-cusp",
+      "where": "Lemma 2, line 162; speirs-trunc Lemma 8, line 347; speirs-axes Lemma 15, line 506 (read p-adically)"
+     },
+     "prerequisites": [
+      "roadmap:RefinedTraceMethods §2.3",
+      "roadmap:BordismFormalGroups §F6.5"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "free_cell",
+       "kind": "degenerate",
+       "statement": "Z=C_p+: both sides zero"
+      },
+      {
+       "name": "point",
+       "kind": "computation",
+       "statement": "Z=S^0: identity of T^{tC_p}"
+      },
+      {
+       "name": "sphere_nonexample",
+       "kind": "non-example",
+       "statement": "T=S, Z=S^0: source has pi_0 = Z_p tensor Z_p, target Z_p"
+      }
+     ]
+    },
+    {
+     "id": "3.2",
+     "kind": "theorem",
+     "name": "circle-orbit identity",
+     "statement": "(X tensor (T/C_m)_+)^{hT} = Sigma X^{hC_m}, same for tT/tC_m, and (X tensor (T/C_m)_+)_{hT}=X_{hC_m}, compatible with transfers and can.",
+     "hypotheses": [
+      "X in Sp^{BT}",
+      "m>=1"
+     ],
+     "locator": {
+      "source": "hn-cusp",
+      "where": "Proposition 3, line 179 (circle case)"
+     },
+     "prerequisites": [
+      "roadmap:RefinedTraceMethods §2.1",
+      "roadmap:RefinedTraceMethods §2.4",
+      "roadmap:AInfCohomology §AI.7.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "m1",
+       "kind": "degenerate",
+       "statement": "(HZ tensor T_+)^{hT}=Sigma HZ, Tate side 0"
+      },
+      {
+       "name": "mp",
+       "kind": "computation",
+       "statement": "(HZ tensor (T/C_p)_+)^{tT} has Z/p in odd degrees"
+      },
+      {
+       "name": "no_shift",
+       "kind": "non-example",
+       "statement": "unshifted formula contradicts free action at m=1"
+      }
+     ]
+    },
+    {
+     "id": "3.3",
+     "kind": "theorem",
+     "name": "suspension invariance for even E-infinity rings",
+     "statement": "For an E_infty-ring E with odd homotopy zero and a T-equivariant E-module X, X tensor S^V = Sigma^{dim V} X Borel-equivalently for every complex T-representation V; applies to THH(R;Z_p) for perfectoid R and to THH(k) for F_p-algebras k (via HZ).",
+     "hypotheses": [
+      "E even E_infty-ring",
+      "X in Fun(BT,Mod_E)"
+     ],
+     "locator": {
+      "source": "riggenbach-double",
+      "where": "Proposition 4.2 and Corollary 4.4, lines 296-347"
+     },
+     "prerequisites": [
+      "roadmap:RefinedTraceMethods §2.1",
+      "roadmap:AInfCohomology §AI.7.2",
+      "roadmap:EnhancedDerivedSheaves E5",
+      "roadmap:KTheoryFiniteLocalFields §5.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "HZ",
+       "kind": "computation",
+       "statement": "BhAut(HZ)=B{+-1}, maps from BT null"
+      },
+      {
+       "name": "sphere_nonexample",
+       "kind": "non-example",
+       "statement": "S tensor S^{C(1)} has homotopy orbits Sigma^infty CP^infty (Thom), not Sigma^2 Sigma^infty_+ CP^infty"
+      },
+      {
+       "name": "HZ_fixed",
+       "kind": "computation",
+       "statement": "(HZ tensor S^{C(1)})^{hT} has pi_{2-2j}=Z"
+      }
+     ]
+    },
+    {
+     "id": "3.4",
+     "kind": "theorem",
+     "name": "perfectoid coefficient tower",
+     "statement": "For perfectoid R with ker theta=(d): pi_* THH(R;Z_p)^{hC_{p^n}} = A_inf[u,v]/(uv-d, d~_n v); pi_* THH(R;Z_p)^{tC_{p^n}} = A_inf[v^{+-1}]/(d~_n), A_inf/d~_n = W_n(R); transfers are V (multiplication by r d~_n/d~_{n-1}): V:W_{n-1}->W_n on Tate in all even degrees and on hC in negative even degrees, V:W_n->W_{n+1} on hC in even degrees >=0 (pi_0 hC_{p^n} = A_inf/(d d~_n) = W_{n+1}); phi^{hC_{p^n}} iso in degrees >=0, can iso in degrees <0; prime-to-p parts of C_m irrelevant p-adically.",
+     "hypotheses": [
+      "R perfectoid",
+      "n>=0 (n>=1 for Tate)"
+     ],
+     "locator": {
+      "source": "riggenbach-double",
+      "where": "Corollary 5.8, Proposition 5.7, Lemma 5.13, lines 507-674; riggenbach-trunc Lemma 4.1, line 575; hn-cusp lines 294-311"
+     },
+     "prerequisites": [
+      "roadmap:AInfCohomology AI.0",
+      "roadmap:AInfCohomology §AI.7.2",
+      "roadmap:RefinedTraceMethods §2.3",
+      "roadmap:RefinedTraceMethods §2.9",
+      "roadmap:QWittVectors §1.5",
+      "roadmap:KTheoryFiniteLocalFields §5.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "Fp_n1",
+       "kind": "computation",
+       "statement": "pi_0 THH(F_p)^{tC_p}=F_p, pi_{-2} of hC_p is Z/p"
+      },
+      {
+       "name": "Fp_n2",
+       "kind": "computation",
+       "statement": "pi_0 THH(F_p)^{tC_{p^2}}=Z/p^2=W_2, pi_0 THH(F_p)^{hC_{p^2}}=Z/p^3=W_3; transfer from n=1 is multiplication by p, V:W_1->W_2 on Tate and V:W_2->W_3 on hC"
+      },
+      {
+       "name": "n0",
+       "kind": "degenerate",
+       "statement": "n=0 gives Bokstedt periodicity R[u]"
+      }
+     ]
+    },
+    {
+     "id": "3.5",
+     "kind": "theorem",
+     "name": "staircase lemma",
+     "statement": "Given A_v (v>=0), B_v (v>=1), phi_v:A_v->B_{v+1}, c_v:A_v->B_v, and s>=0 with phi_v iso for v<s and c_v iso for v>=max(s,1), the map (phi_{v-1}x_{v-1}-c_v x_v)_v from prod A_v to prod B_v is surjective with kernel A_{s-1} (s>=1) or A_0 (s=0).",
+     "hypotheses": [
+      "abelian groups",
+      "isomorphism hypotheses as stated"
+     ],
+     "locator": {
+      "source": "hn-cusp",
+      "where": "lines 330-349; speirs-axes lines 1025-1046; riggenbach-trunc lines 1266-1272"
+     },
+     "prerequisites": [
+      "mathlib:AddCommGroup",
+      "mathlib:Pi.addCommGroup",
+      "roadmap:RefinedTraceMethods §2.9"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "s0",
+       "kind": "degenerate",
+       "statement": "s=0 with A_0=0: bijective"
+      },
+      {
+       "name": "s2",
+       "kind": "computation",
+       "statement": "HN case s=2: kernel W_2(k)"
+      },
+      {
+       "name": "zero_maps",
+       "kind": "non-example",
+       "statement": "all maps zero: kernel infinite product"
+      }
+     ]
+    },
+    {
+     "id": "3.6",
+     "kind": "theorem",
+     "name": "homotopy of circle cells",
+     "statement": "pi_j((THH(R;Z_p) tensor S^lambda smash (T/C_m)_+)^{hT}) = pi_{j-2d-1}(THH(R;Z_p)^{hC_{p^n}}) for m=p^n m', same for Tate; for a finite pointed T-CW complex B of dimension N with B=B'^{C_p}, the restricted Frobenius THH(R;Z_p) tensor B -> (THH(R;Z_p) tensor B')^{tC_p} and its homotopy T-fixed points are isomorphisms on pi_j for j>=N.",
+     "hypotheses": [
+      "R perfectoid",
+      "lambda complex T-representation of dimension d"
+     ],
+     "locator": {
+      "source": "speirs-axes",
+      "where": "Corollary 17, line 603; speirs-trunc Corollary 9, line 377"
+     },
+     "prerequisites": [
+      "target:3.1",
+      "target:3.2",
+      "target:3.3",
+      "target:3.4",
+      "target:2.3"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "m1",
+       "kind": "computation",
+       "statement": "F_p, lambda=0, m=1: F_p in odd degrees >=1"
+      },
+      {
+       "name": "shift",
+       "kind": "computation",
+       "statement": "lambda=C(1), m=p: shift by 3"
+      },
+      {
+       "name": "low_degree",
+       "kind": "non-example",
+       "statement": "B=S^{lambda_1} smash T_+: not iso on pi_1"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "4",
+   "title": "Normalization squares and birelative theory",
+   "targets": [
+    {
+     "id": "4.1",
+     "kind": "definition",
+     "name": "birelative K-theory and TC",
+     "statement": "For a Milnor square (f:A->B, I mapped isomorphically onto an ideal of B), K(A,B,I), TC(A,B,I), THH(A,B,I), HC(A_Q,B_Q,I_Q) are total fibres; fibre sequence K(A,B,I)->K(A,I)->K(B,I); trace K(A,B,I)->TC(A,B,I).",
+     "hypotheses": [
+      "Milnor square of rings",
+      "IK for K"
+     ],
+     "locator": {
+      "source": "hesselholt-axes",
+      "where": "line 47; speirs-axes line 123"
+     },
+     "prerequisites": [
+      "roadmap:RefinedTraceMethods §4.12",
+      "roadmap:GeneralAlgebraicKTheory §8.1"
+     ],
+     "api": [
+      {
+       "name": "fib_seq",
+       "role": "exactness",
+       "statement": "K(A,B,I)->K(A,I)->K(B,I) fibre sequence"
+      },
+      {
+       "name": "trace",
+       "role": "map",
+       "statement": "birelative trace natural in Milnor squares"
+      }
+     ],
+     "tests": [
+      {
+       "name": "identity",
+       "kind": "degenerate",
+       "statement": "B=A: all terms zero"
+      },
+      {
+       "name": "product",
+       "kind": "degenerate",
+       "statement": "product square: zero"
+      },
+      {
+       "name": "axes_K2",
+       "kind": "computation",
+       "statement": "axes over a field: birelative K_2=k"
+      }
+     ]
+    },
+    {
+     "id": "4.2",
+     "kind": "theorem",
+     "name": "birelative trace theorem and nil-invariance",
+     "statement": "For every Milnor square K(A,B,I)->TC(A,B,I) is an equivalence, and K(A,B,I) tensor Q = Sigma HC(A_Q,B_Q,I_Q); K^inv is nil-invariant: A->A' inducing A/J=A'/J' with J,J' nilpotent gives K^inv(A)=K^inv(A').",
+     "hypotheses": [
+      "Milnor square",
+      "J,J' nilpotent"
+     ],
+     "locator": {
+      "source": "hn-cusp",
+      "where": "line 97; hesselholt-cusp-polytopes Theorem 4.1, line 839"
+     },
+     "prerequisites": [
+      "roadmap:RefinedTraceMethods §4.12",
+      "roadmap:RefinedTraceMethods §4.17",
+      "roadmap:RefinedTraceMethods §4.18",
+      "target:4.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "axes_TC2",
+       "kind": "computation",
+       "statement": "F_p axes: TC_2 birelative F_p from lowest summand"
+      },
+      {
+       "name": "rational_axes",
+       "kind": "computation",
+       "statement": "K_2 tensor Q = HC_1 = k for axes"
+      },
+      {
+       "name": "non_milnor",
+       "kind": "non-example",
+       "statement": "A=Z, B=Z/p, f the reduction, I=pZ: f(I)=0, so not a Milnor square; birelative term is K(Z,pZ), not TC(Z,pZ)"
+      }
+     ]
+    },
+    {
+     "id": "4.3",
+     "kind": "theorem",
+     "name": "normalization squares of axes and cusps",
+     "statement": "For every ring k: A_d->B_d over k->k^d with I_d is a Milnor square; for coprime a,b>=2, k[t^a,t^b] subset k[t] with conductor t^{(a-1)(b-1)}k[t] is a Milnor square and K^inv(A)=K^inv(B).",
+     "hypotheses": [
+      "k any ring",
+      "a,b>=2 coprime"
+     ],
+     "locator": {
+      "source": "hn-cusp",
+      "where": "line 89; hesselholt-cusp-polytopes Remark 1.5 and Theorem 4.1, lines 373, 839; speirs-axes line 110"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:4.1",
+      "target:4.2",
+      "mathlib:Polynomial",
+      "mathlib:Ideal"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "conductor_23",
+       "kind": "computation",
+       "statement": "conductor t^2 k[t] for (2,3)"
+      },
+      {
+       "name": "axes_Z",
+       "kind": "computation",
+       "statement": "Z[x,y]/(xy) -> Z[x] x Z[y] cartesian"
+      },
+      {
+       "name": "quotients",
+       "kind": "non-example",
+       "statement": "A/c=k, B/c=k[t]/t^2 not isomorphic; nil-invariance needed"
+      }
+     ]
+    },
+    {
+     "id": "4.4",
+     "kind": "theorem",
+     "name": "relative versus birelative K-theory",
+     "statement": "If NK_n(k)=0 for all n then K(A_d,I_d)=K(A_d,B_d,I_d) and K(A,(x,y))=fib(IK(A)->IK(k[t])) for the cusp; holds for regular noetherian k and ind-smooth Q-algebras; for perfect F_p-algebras via gap.",
+     "hypotheses": [
+      "NK_*(k)=0"
+     ],
+     "locator": {
+      "source": "speirs-axes",
+      "where": "line 128; hesselholt-axes line 55; hn-cusp line 101; amm-perfectoid Proposition 5.1, line 558"
+     },
+     "prerequisites": [
+      "target:4.1",
+      "roadmap:SchemeKTheoryOperations §5.2",
+      "roadmap:GeneralAlgebraicKTheory §10.5",
+      "roadmap:GeneralAlgebraicKTheory §10.13",
+      "gap:perfect-homotopy-invariance"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "dual_numbers",
+       "kind": "non-example",
+       "statement": "k=F_p[e]/e^2: NK_1 nonzero"
+      },
+      {
+       "name": "perfect_field",
+       "kind": "degenerate",
+       "statement": "perfect field regular: no gap"
+      },
+      {
+       "name": "K0_axes",
+       "kind": "computation",
+       "statement": "K_0(A_d,I_d)=0 for a field via Milnor Mayer-Vietoris"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "5",
+   "title": "Coordinate axes",
+   "targets": [
+    {
+     "id": "5.1",
+     "kind": "theorem",
+     "name": "birelative TC of the axes in the plane",
+     "statement": "For every F_p-algebra k: TC_q(A,B,I;p) = prod_{d in J_p} lim_R TR^r_{q-lambda_{p^{r-1}d}}(k;p); with Z/p^v coefficients for every ring k; R is an isomorphism for q<2p^{r-1}d.",
+     "hypotheses": [
+      "k F_p-algebra (Z/p^v version: any ring)"
+     ],
+     "locator": {
+      "source": "hesselholt-axes",
+      "where": "Theorem B, line 70; Proposition 1.2, line 131; Lemma 2.3, line 82"
+     },
+     "prerequisites": [
+      "target:2.3",
+      "target:2.5",
+      "target:4.1",
+      "roadmap:RefinedTraceMethods §2.13",
+      "roadmap:RefinedTraceMethods §2.16",
+      "roadmap:KTheoryFiniteLocalFields §4.0",
+      "roadmap:KTheoryFiniteLocalFields §4.4"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "low",
+       "kind": "degenerate",
+       "statement": "q<=1: zero"
+      },
+      {
+       "name": "q2",
+       "kind": "computation",
+       "statement": "q=2: k"
+      },
+      {
+       "name": "lambda0",
+       "kind": "non-example",
+       "statement": "lambda=0 gives nonzero degree 0"
+      }
+     ]
+    },
+    {
+     "id": "5.2",
+     "kind": "theorem",
+     "name": "K-theory of the axes in the plane (Hesselholt)",
+     "statement": "For regular noetherian F_p-algebras k: K_q(k[x,y]/(xy),(x,y)) = sum_{m>=1} sum_{d in J_p, d<=m} W_{s(m,d)} Omega^{q-2m}_k.",
+     "hypotheses": [
+      "k regular noetherian F_p-algebra",
+      "q integer"
+     ],
+     "locator": {
+      "source": "hesselholt-axes",
+      "where": "Theorem A, line 21; line 36"
+     },
+     "prerequisites": [
+      "target:1.3",
+      "target:4.2",
+      "target:4.4",
+      "target:5.1",
+      "roadmap:KTheoryFiniteLocalFields §5.17",
+      "roadmap:CrystallineCohomology CR.4",
+      "roadmap:SchemeKTheoryOperations §5.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "K1",
+       "kind": "degenerate",
+       "statement": "K_1=0"
+      },
+      {
+       "name": "K2_K3",
+       "kind": "computation",
+       "statement": "K_2=k, K_3=Omega^1"
+      },
+      {
+       "name": "K4_F2",
+       "kind": "computation",
+       "statement": "k=F_2: K_4=Z/4, not F_2^2"
+      },
+      {
+       "name": "exponent",
+       "kind": "computation",
+       "statement": "K_4 over F_2 has exponent 4"
+      }
+     ]
+    },
+    {
+     "id": "5.3",
+     "kind": "theorem",
+     "name": "axes in affine d-space in positive characteristic (Speirs)",
+     "statement": "For perfect fields k of characteristic p and d>=2: p odd: Speirs' Theorem 1; p=2 even degrees as printed; p=2 odd: K_{2r+1}(A_d,I_d)=prod_{m' odd, m'<=2r+1} prod_{s'|m'} k^{cyc_d(s')}; same for birelative TC.",
+     "hypotheses": [
+      "k perfect field, char p",
+      "d>=2",
+      "r>=0"
+     ],
+     "locator": {
+      "source": "speirs-axes",
+      "where": "Theorems 1-2, lines 27, 153; Propositions 26, 28, lines 857, 976; §5.1, lines 1072-1117"
+     },
+     "prerequisites": [
+      "target:1.4",
+      "target:2.5",
+      "target:3.1",
+      "target:3.4",
+      "target:3.5",
+      "target:3.6",
+      "target:4.2",
+      "target:4.4",
+      "roadmap:KTheoryFiniteLocalFields §5.1",
+      "target:3.2",
+      "target:3.3"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "d2",
+       "kind": "compatibility",
+       "statement": "d=2 collapses to target 5.2 over perfect fields"
+      },
+      {
+       "name": "q3_d3",
+       "kind": "computation",
+       "statement": "K_3=k^2 for p=2,3,5"
+      },
+      {
+       "name": "q5_d3",
+       "kind": "computation",
+       "statement": "K_5=k^8 for p=2,3; printed p=2 index gives infinite product"
+      },
+      {
+       "name": "K1_vanish",
+       "kind": "non-example",
+       "statement": "printed p=2 index gives K_1 nonzero for d=3, contradicting Milnor"
+      }
+     ]
+    },
+    {
+     "id": "5.4",
+     "kind": "theorem",
+     "name": "axes in affine d-space in characteristic zero",
+     "statement": "For commutative Q-algebras k: HC_q((A_d,I_d)/Q) formula of Theorem 30; for ind-smooth Q-algebras: K_q(A_d,I_d) = sum_{j=0}^{q-2} (Omega^j_{k/Q})^{c_{d-1}(q-j)}.",
+     "hypotheses": [
+      "k Q-algebra (HC); ind-smooth (K)",
+      "d>=2"
+     ],
+     "locator": {
+      "source": "speirs-axes",
+      "where": "Theorems 30-31, lines 1163, 1228"
+     },
+     "prerequisites": [
+      "target:1.4",
+      "target:2.4",
+      "target:2.5",
+      "target:4.2",
+      "target:4.4",
+      "roadmap:RefinedTraceMethods §1.4",
+      "roadmap:RefinedTraceMethods §1.9",
+      "roadmap:RefinedTraceMethods §4.18",
+      "roadmap:RefinedTraceMethods §4.17"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "d2",
+       "kind": "compatibility",
+       "statement": "d=2 gives sum Omega^{q-2m}"
+      },
+      {
+       "name": "q2",
+       "kind": "computation",
+       "statement": "K_2=k^{d(d-1)/2}"
+      },
+      {
+       "name": "Qt",
+       "kind": "computation",
+       "statement": "k=Q(t), q=3, d=2: Omega^1 nonzero"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "6",
+   "title": "Planar cuspidal curves",
+   "targets": [
+    {
+     "id": "6.1",
+     "kind": "theorem",
+     "name": "TC of the cusp relative to its normalization",
+     "statement": "For perfect F_p-algebras k: fib(TC(A)->TC(B)) has pi_{2r} = prod_{m' in J_p} W_{h(a,b,r,p,m')}(k) and no other homotopy.",
+     "hypotheses": [
+      "k perfect F_p-algebra",
+      "a,b>=2 coprime, labelled with p not dividing b"
+     ],
+     "locator": {
+      "source": "hn-cusp",
+      "where": "§2, lines 216-393"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:1.3",
+      "target:2.6",
+      "target:3.1",
+      "target:3.2",
+      "target:3.3",
+      "target:3.4",
+      "target:3.5",
+      "target:3.6",
+      "target:4.3",
+      "roadmap:KTheoryFiniteLocalFields §5.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "r0",
+       "kind": "computation",
+       "statement": "(2,3,0), p=2: pi_0=k"
+      },
+      {
+       "name": "r1_F5",
+       "kind": "computation",
+       "statement": "(2,3,1), F_5: Z/25+F_5; F_3: F_3^3"
+      },
+      {
+       "name": "odd",
+       "kind": "non-example",
+       "statement": "odd homotopy vanishes"
+      }
+     ]
+    },
+    {
+     "id": "6.2",
+     "kind": "theorem",
+     "name": "K-theory of planar cuspidal curves (Hesselholt-Nikolaus)",
+     "statement": "For perfect F_p-algebras k and coprime a,b>=2: K_{2r}(k[x,y]/(y^a-x^b),(x,y)) = W_S(k)/(V_aW_{S/a}(k)+V_bW_{S/b}(k)) = W_{T(a,b,r)}(k), S=S(a,b,r), other relative K-groups zero.",
+     "hypotheses": [
+      "k perfect F_p-algebra",
+      "a,b>=2 coprime",
+      "r>=0"
+     ],
+     "locator": {
+      "source": "hn-cusp",
+      "where": "Theorem A, line 27"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "target:1.3",
+      "target:4.3",
+      "target:4.4",
+      "target:6.1",
+      "roadmap:SchemeKTheoryOperations §5.2",
+      "gap:perfect-homotopy-invariance",
+      "gap:bigwitt-ptypical-decomposition"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "delta",
+       "kind": "computation",
+       "statement": "r=0 length (a-1)(b-1)/2; (2,3): K_0=k"
+      },
+      {
+       "name": "sylvester",
+       "kind": "computation",
+       "statement": "(2,5), r=0, F_3: Z/9 not F_3^2"
+      },
+      {
+       "name": "negative",
+       "kind": "degenerate",
+       "statement": "K_{-1}=0 for perfect fields"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "7",
+   "title": "Truncated polynomial algebras over perfectoid rings",
+   "targets": [
+    {
+     "id": "7.1",
+     "kind": "theorem",
+     "name": "TC^- and TP of truncated polynomial algebras",
+     "statement": "For perfectoid R, e>=1: TC^-(R[x]/x^e,(x);Z_p) = prod_{n>=1, e not dividing n} Sigma^{2floor((n-1)/e)+1} THH(R;Z_p)^{hC_{p^{v_p(n)}}} x prod_{k>=1} Sigma^{2(k-1)+1} cofib(V_{e,k}); same for TP; Frobenius maps weight n to pn.",
+     "hypotheses": [
+      "R perfectoid",
+      "e>=1"
+     ],
+     "locator": {
+      "source": "riggenbach-trunc",
+      "where": "Lemma 5.2, line 889"
+     },
+     "prerequisites": [
+      "target:2.3",
+      "target:2.6",
+      "target:3.2",
+      "target:3.3",
+      "target:3.4",
+      "roadmap:KTheoryFiniteLocalFields §5.16"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "e1",
+       "kind": "degenerate",
+       "statement": "e=1: zero"
+      },
+      {
+       "name": "Fp_e2",
+       "kind": "computation",
+       "statement": "R=F_p, e=2, n=1: pi_1=F_p"
+      },
+      {
+       "name": "cofibre",
+       "kind": "computation",
+       "statement": "e=p, k=1, F_p: cofibre pi_0 = Z/p"
+      }
+     ]
+    },
+    {
+     "id": "7.2",
+     "kind": "theorem",
+     "name": "p-adic K-theory of truncated polynomial algebras over perfectoid rings (Riggenbach)",
+     "statement": "For perfectoid R, e>=1, r>=1: K_{2r-1}(R[x]/x^e,(x);Z_p) = W_{re}(R)/V_eW_r(R) and even groups vanish; for perfect F_p-algebras k and i>=1 the reduced syntomic complex of k[x]/x^e is (W_{ei}(k)/V_eW_i(k))[-1].",
+     "hypotheses": [
+      "R perfectoid",
+      "e>=1, r>=1"
+     ],
+     "locator": {
+      "source": "riggenbach-trunc",
+      "where": "Theorem 1.1 and Corollary 6.5, lines 67, 1279; sulyma-slopes Theorem 1.1, line 43"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "target:1.3",
+      "target:3.4",
+      "target:3.5",
+      "target:7.1",
+      "roadmap:RefinedTraceMethods §4.17",
+      "roadmap:PrismaticCohomologyPartII §3.19",
+      "roadmap:PrismaticCohomologyPartII §3.24",
+      "roadmap:PrismaticCohomologyPartII §4.23",
+      "roadmap:PrismaticCohomologyPartIII §7.0",
+      "roadmap:CrystallineCohomology CR.2",
+      "gap:bigwitt-ptypical-decomposition"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "e1",
+       "kind": "degenerate",
+       "statement": "e=1: zero"
+      },
+      {
+       "name": "perfect_field",
+       "kind": "compatibility",
+       "statement": "perfect fields: KTheoryFiniteLocalFields §5.17 via §5.16a; F_2,e=2,r=1: Z/2; F_3,e=2,r=2: Z/9"
+      },
+      {
+       "name": "OC",
+       "kind": "computation",
+       "statement": "R=O_C, e=2, r=1: O_C"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "8",
+   "title": "Prismatic and syntomic cohomology relative to delta-rings and of filtered rings",
+   "targets": [
+    {
+     "id": "8.1",
+     "kind": "definition",
+     "name": "delta-pairs",
+     "statement": "A delta-pair is a delta-ring A with a ring map A->R; bounded, finitely presented free, relatively quasisyntomic and relatively qrsp variants as in akn-delta.",
+     "hypotheses": [
+      "A delta-ring",
+      "R commutative A-algebra"
+     ],
+     "locator": {
+      "source": "akn-delta",
+      "where": "line 121; Definitions 9.1-9.2, lines 1838-1850; Proposition 9.14, line 1974"
+     },
+     "prerequisites": [
+      "roadmap:PrismaticCohomology §0.55",
+      "roadmap:PrismaticCohomology §0.56",
+      "roadmap:PrismaticCohomology §0.73",
+      "roadmap:PrismaticCohomology §0.76",
+      "roadmap:DerivedDeRhamCohomology Layer 5",
+      "roadmap:PrismaticCohomology §0.74"
+     ],
+     "api": [
+      {
+       "name": "category",
+       "role": "structure",
+       "statement": "Pairs_delta with base change and products"
+      },
+      {
+       "name": "basis",
+       "role": "descent",
+       "statement": "relatively qrsp pairs form a basis of relatively quasisyntomic pairs"
+      },
+      {
+       "name": "amitsur",
+       "role": "example",
+       "statement": "p-complete Amitsur complex of W(k)->W(k)<z0>, each term completed along the augmentation z_i->0, with delta(z_i)=0, is a cosimplicial delta-ring W(k)[[z0]] -> W(k)[[z0,z1]] -> ... mapping to O_K/varpi^n"
+      }
+     ],
+     "tests": [
+      {
+       "name": "BK",
+       "kind": "computation",
+       "statement": "(W(k)[[z]],O_K) bounded relatively quasisyntomic"
+      },
+      {
+       "name": "Fp",
+       "kind": "non-example",
+       "statement": "F_p admits no delta-structure: delta(0)=1"
+      },
+      {
+       "name": "Qp",
+       "kind": "non-example",
+       "statement": "(Z_p,Q_p) not relatively quasisyntomic"
+      }
+     ]
+    },
+    {
+     "id": "8.2",
+     "kind": "definition",
+     "name": "prismatic packages and syntomic complexes",
+     "statement": "C_A of quadruples (H,N,c,phi) with H, N p-complete and complete filtered graded E_infty-A-algebras (N constant in nonpositive filtration degrees), c: H -> sc_p(N) a phi_A-semilinear map of (N,>=)xZ-filtered graded modules, sc_p(N) the Day convolution of N^{>=p*} with the p-adic filtration p^*Z (mod p it maps to N^{>=p*}/p), phi: N -> sh(H); Z_p(i)(H,N,c,phi)=fib(can-c phi: N^{>=i}{i}->N^{>=0}{i}); colimits; for i>=0 and (p-1)j>pi, the mod-p map c phi: N^{>=j}{i}/p -> H^{>=j-i}{i}/p -> N^{>=p(j-i)}{i}/p -> N^{>=j-i}{i}/p (defined only mod p) makes can-c phi an automorphism of N^{>=j}{i}/p followed by can into N^{>=j-i}{i}/p (Lemma 8.5), hence F_p(i)=fib(can-c phi: (N^{>=i}/N^{>=j}){i}/p -> (N^{>=0}/N^{>=j}){i}/p) (Proposition 8.6 with the strict bound replacing the printed (p-1)j>=i); on G_A (same quadruples, H, N modules) Z_p(i), F_p(i) preserve all limits and colimits (Corollary 8.7); on C_A (E_infty-algebras in G_A) they preserve limits and sifted colimits (computed underlying, lurie-ha Corollaries 3.2.2.5, 3.2.3.2), not all colimits (the initial unit package has Z_p(0)=Z_p+Z_p[-1]).",
+     "hypotheses": [
+      "A bounded delta-ring",
+      "i integer"
+     ],
+     "locator": {
+      "source": "akn-delta",
+      "where": "Definition 1.1, line 89; Construction 7.3, line 1557; lines 1689-1699; Definitions 8.1, 8.4; Proposition 8.3; Lemma 8.5; Proposition 8.6; Corollary 8.7, lines 1701-1791; Remark 8.2(ii), line 1723"
+     },
+     "prerequisites": [
+      "roadmap:EnhancedDerivedSheaves E5",
+      "roadmap:PrismaticCohomologyPartII §3.9",
+      "roadmap:PrismaticCohomologyPartII §3.10",
+      "roadmap:PrismaticCohomologyPartII §3.20"
+     ],
+     "api": [
+      {
+       "name": "colimits",
+       "role": "structure",
+       "statement": "C_A has colimits preserved by graded pieces"
+      },
+      {
+       "name": "finite_stage",
+       "role": "computation",
+       "statement": "finite-stage formula"
+      },
+      {
+       "name": "exactness",
+       "role": "continuity",
+       "statement": "syntomic functors preserve limits and colimits on G_A, limits and sifted colimits on C_A"
+      }
+     ],
+     "tests": [
+      {
+       "name": "Zp0",
+       "kind": "computation",
+       "statement": "Z_p(0)(Z_p)=Z_p+Z_p[-1]"
+      },
+      {
+       "name": "F2_weight1",
+       "kind": "non-example",
+       "statement": "absolute F_2, i=1: Z_2(1)=0; j=3: can N^{>=3}/2->N^{>=2}/2 is 0 and the sc_p-induced c phi factors through can N^{>=4}/2->N^{>=2}/2 = 0, formula gives 0; the naive reduction 8b->4b of the integral divided Frobenius is nonzero, so the factorization needs the filtered c; j=1 (allowed by printed bound) gives F_2+F_2[-1]"
+      },
+      {
+       "name": "BK_p2_i1",
+       "kind": "computation",
+       "statement": "(Z_2[[z]],Z_2), E=z-2, i=1 mod 2: truth H0=k, H1=k^2; formula with j=3 gives (k,k^2); j=2 gives (0,k); target quotient by N^{>=j-i} with j=3 gives (k,k)"
+      },
+      {
+       "name": "zero",
+       "kind": "degenerate",
+       "statement": "zero object of G_A gives zero (empty colimit); unit package of C_{Z_p} is initial with Z_p(0)=Z_p+Z_p[-1] != 0, so not all colimits of C_A are preserved"
+      }
+     ]
+    },
+    {
+     "id": "8.3",
+     "kind": "construction",
+     "name": "prismatic cohomology relative to a delta-ring",
+     "statement": "Functorial Delta_{R/A} in C_A for bounded delta-pairs via prismatic crystals on WCart, with c the filtered semilinear map Delta^{[*]}_{R/A}{*} -> sc_p(N^{>=*} hat-Delta^(1)_{R/A}{*}) of akn-delta Lemma 7.5, with properties (1)-(8) of akn-delta Theorem 1.2, uniqueness by (4), (6) and agreement with Bhatt-Scholze on relatively qrsp pairs with a chosen prism (or by (4), (5) and that agreement), delta-conjugate filtration on Hodge-Tate cohomology with gr_u = L Omega^u tensor fib(i-u)[-u], site-theoretic comparison for Tor-amplitude [0,1].",
+     "hypotheses": [
+      "(A,R) bounded delta-pair"
+     ],
+     "locator": {
+      "source": "akn-delta",
+      "where": "Theorem 1.2, line 126; Lemma 7.5, line 1579; Proposition 1.6, line 200; Theorem 1.7, line 211; Proposition 9.15, line 2010"
+     },
+     "prerequisites": [
+      "target:8.1",
+      "target:8.2",
+      "roadmap:PrismaticCohomology §1.4",
+      "roadmap:PrismaticCohomology §2.13",
+      "roadmap:PrismaticCohomologyPartII §4.10",
+      "roadmap:PrismaticCohomologyPartII §4.17",
+      "roadmap:PrismaticCohomologyPartII §4.18",
+      "roadmap:PrismaticCohomologyPartII §4.22",
+      "roadmap:PrismaticCohomologyPartII §4.29",
+      "roadmap:PrismaticCohomologyPartII §4.31",
+      "roadmap:DerivedDeRhamCohomology Layer 5",
+      "roadmap:PrismaticCohomology §1.2",
+      "roadmap:PrismaticCohomology §1.3",
+      "roadmap:PrismaticCohomology §2.1",
+      "roadmap:PrismaticCohomology §2.2",
+      "roadmap:PrismaticCohomology §2.3",
+      "roadmap:PrismaticCohomology §2.4",
+      "roadmap:PrismaticCohomology §2.5",
+      "roadmap:PrismaticCohomology §2.6",
+      "roadmap:PrismaticCohomology §2.7",
+      "roadmap:PrismaticCohomology §2.8",
+      "roadmap:PrismaticCohomology §2.9",
+      "roadmap:PrismaticCohomology §2.10",
+      "roadmap:PrismaticCohomology §2.12",
+      "roadmap:PrismaticCohomologyPartII §4.4",
+      "roadmap:PrismaticCohomologyPartII §4.5",
+      "roadmap:PrismaticCohomologyPartII §4.6",
+      "roadmap:PrismaticCohomologyPartII §4.7",
+      "roadmap:PrismaticCohomologyPartII §4.8",
+      "roadmap:PrismaticCohomologyPartII §4.9",
+      "roadmap:PrismaticCohomologyPartII §4.19",
+      "roadmap:PrismaticCohomologyPartII §4.25"
+     ],
+     "api": [
+      {
+       "name": "prism_comparison",
+       "role": "compatibility",
+       "statement": "agrees with Bhatt-Scholze for prisms"
+      },
+      {
+       "name": "absolute_comparison",
+       "role": "compatibility",
+       "statement": "agrees with absolute prismatic cohomology for Z_p, W(k)"
+      },
+      {
+       "name": "base_change",
+       "role": "functoriality",
+       "statement": "Hodge-Tate completed base change"
+      },
+      {
+       "name": "relatively_perfect",
+       "role": "invariance",
+       "statement": "invariant under relatively perfect maps"
+      }
+     ],
+     "tests": [
+      {
+       "name": "Zp_HT",
+       "kind": "computation",
+       "statement": "A=R=Z_p: gr_0 = Z_p+Z_p[-1]"
+      },
+      {
+       "name": "BK",
+       "kind": "computation",
+       "statement": "Delta_{O_K/W(k)[[z]]}=W(k)[[z]]"
+      },
+      {
+       "name": "Wq",
+       "kind": "compatibility",
+       "statement": "Delta_{R/Z_p}=Delta_{R/W(F_q)}"
+      }
+     ]
+    },
+    {
+     "id": "8.4",
+     "kind": "theorem",
+     "name": "relative syntomic complexes",
+     "statement": "Z_p(i)(R/A)=fib(can-c phi); descent along universal descent R->S; left Kan extended from fp free pairs; vanish for i<0; agree with absolute syntomic complexes for A=Z_p.",
+     "hypotheses": [
+      "(A,R) bounded delta-pair",
+      "i integer"
+     ],
+     "locator": {
+      "source": "akn-delta",
+      "where": "Definition 7.8, Corollary 7.10, Corollaries 8.9-8.10, Remark 7.9, lines 1599-1830"
+     },
+     "prerequisites": [
+      "target:8.2",
+      "target:8.3",
+      "roadmap:PrismaticCohomologyPartIII §6.8",
+      "roadmap:PrismaticCohomologyPartIII §6.9",
+      "roadmap:PrismaticCohomologyPartIII §6.31"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "weight1",
+       "kind": "computation",
+       "statement": "Z_p(1)(Z/4) has H^1=Z/2"
+      },
+      {
+       "name": "negative",
+       "kind": "degenerate",
+       "statement": "i=-1 vanishes"
+      },
+      {
+       "name": "oriented_BK",
+       "kind": "computation",
+       "statement": "Z_p(p-1)(O_K/A^0) is fib of f d^{p-1} -> f d^{p-1}-phi(f)"
+      }
+     ]
+    },
+    {
+     "id": "8.5",
+     "kind": "construction",
+     "name": "filtered prismatic cohomology",
+     "statement": "Filtered delta-rings (delta(F^m) in F^{pm}), filtered prisms (prism structure (A,I) on F^0A with each gr^i A (I tensor gr^0 A)-torsion free and complete; equivalently strict flat filtration on A/I), filtered delta-pairs; filtered prismatic package and filtered syntomic complexes; gr and F^0 base change (Prop 10.46, Cor 10.47); filtered Hodge-Tate comparison; filtered prismatic envelopes are discrete filtered prisms.",
+     "hypotheses": [
+      "strict filtrations",
+      "relatively quasisyntomic for comparisons"
+     ],
+     "locator": {
+      "source": "akn-delta",
+      "where": "Definitions 10.2-10.10, 10.29; Propositions 10.31, 10.37, 10.43, 10.46; Corollaries 10.34, 10.47; Construction 10.44, lines 2105-2591"
+     },
+     "prerequisites": [
+      "target:8.1",
+      "target:8.2",
+      "target:8.3",
+      "target:8.4",
+      "roadmap:PrismaticCohomology §0.93",
+      "roadmap:PrismaticCohomology §2.13",
+      "roadmap:EnhancedDerivedSheaves E5"
+     ],
+     "api": [
+      {
+       "name": "gr_comparison",
+       "role": "degeneration",
+       "statement": "gr Z_p(i)(F R/F A)=gr Z_p(i)(gr R/gr A)"
+      },
+      {
+       "name": "F0",
+       "role": "compatibility",
+       "statement": "F^0 Z_p(i)=Z_p(i)(F^0R/F^0A)"
+      },
+      {
+       "name": "envelopes",
+       "role": "computation",
+       "statement": "filtered envelopes discrete"
+      }
+     ],
+     "tests": [
+      {
+       "name": "trivial",
+       "kind": "degenerate",
+       "statement": "trivial filtration: concentrated in weight 0"
+      },
+      {
+       "name": "zadic",
+       "kind": "computation",
+       "statement": "z-adic W(k)[[z]], k[[z]]: graded pair (W(k)[z],k[z])"
+      },
+      {
+       "name": "BK_filtered_prism",
+       "kind": "computation",
+       "statement": "z-adic W(k)[[z]], I=(E): gr^u=W(k), I tensor gr^0=(p), p-torsion free and complete, so a filtered prism; trivial filtration reduces to the prism axioms"
+      },
+      {
+       "name": "delta_condition",
+       "kind": "non-example",
+       "statement": "delta(z)=1 not allowed for z of weight 1"
+      }
+     ]
+    },
+    {
+     "id": "8.6",
+     "kind": "theorem",
+     "name": "crystalline degeneration and completeness",
+     "statement": "Filtered quasisyntomic rings with equivalent associated graded have equivalent gr_F Delta and gr_F Z_p(i); completeness of the F-adic filtration on Z_p(i) for complete filtered quotients of finitely generated filtered polynomial rings by filtered regular sequences; comparison of Nygaard and F completions.",
+     "hypotheses": [
+      "filtered quasisyntomic",
+      "complete filtered regular quotients"
+     ],
+     "locator": {
+      "source": "akn24",
+      "where": "Proposition 2.6, line 325; Proposition 2.11, Lemma 2.12, lines 357-387; Theorem 2.20, line 457"
+     },
+     "prerequisites": [
+      "target:8.2",
+      "target:8.5",
+      "roadmap:PrismaticCohomologyPartII §4.22",
+      "roadmap:PrismaticCohomologyPartII §4.29",
+      "roadmap:DerivedDeRhamCohomology Layer 2",
+      "target:8.3",
+      "target:8.4"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "Z4_vs_F2",
+       "kind": "computation",
+       "statement": "Z/4 and F_2[z]/z^2 share gr but K_3 differ: Z/8 vs F_2^2"
+      },
+      {
+       "name": "incomplete",
+       "kind": "non-example",
+       "statement": "Z_p<z> z-adic separated not complete: filtration on Z_p(1) not complete; H1 is p-completed Z_p<z>^x (contains 1+pz, not 1+z) versus 1+zZ_p[[z]] for Z_p[[z]]"
+      },
+      {
+       "name": "chain_ring",
+       "kind": "compatibility",
+       "statement": "O_K/varpi^n is a complete filtered regular quotient"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "9",
+   "title": "K-theory of finite chain rings",
+   "targets": [
+    {
+     "id": "9.1",
+     "kind": "theorem",
+     "name": "reduction to syntomic cohomology",
+     "statement": "K(R;Z[1/p]) = K(F_q;Z[1/p]); K_r(R;Z_p)=TC_r(R) for r>=0; gr^i TC(R;Z_p)=Z_p(i)(R)[2i].",
+     "hypotheses": [
+      "R=O_K/varpi^n finite chain ring"
+     ],
+     "locator": {
+      "source": "akn24",
+      "where": "Corollaries 2.3, 2.5, lines 279, 295"
+     },
+     "prerequisites": [
+      "roadmap:RefinedTraceMethods §4.17",
+      "roadmap:KTheoryFiniteLocalFields §1.1",
+      "roadmap:KTheoryFiniteLocalFields §2.1",
+      "roadmap:KTheoryFiniteLocalFields §5.1",
+      "roadmap:PrismaticCohomologyPartIII §7.0",
+      "roadmap:KTheoryFiniteLocalFields §1.2",
+      "roadmap:KTheoryFiniteLocalFields §1.3",
+      "roadmap:KTheoryFiniteLocalFields §1.4",
+      "roadmap:KTheoryFiniteLocalFields §1.5",
+      "roadmap:KTheoryFiniteLocalFields §1.6"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "n1",
+       "kind": "degenerate",
+       "statement": "n=1: Quillen"
+      },
+      {
+       "name": "K1_Z4",
+       "kind": "computation",
+       "statement": "K_1(Z/4)=Z/2"
+      },
+      {
+       "name": "degree_minus1",
+       "kind": "non-example",
+       "statement": "TC_{-1}(F_q)=Z_p while K_{-1}=0"
+      }
+     ]
+    },
+    {
+     "id": "9.2",
+     "kind": "theorem",
+     "name": "bounded syntomic cohomology of finite chain rings",
+     "statement": "gr_F pieces of Delta and Nygaard for F_q[z]/z^n via PD de Rham model; gr^j_F Z_p(i)(R) in degrees [1,2], zero for j=0 and j>=in; completeness; Z_p(i)(R)=F^{[1,in-1]}; K_{2i-1}(R;Z_p)=H^1, K_{2i-2}(R;Z_p)=H^2 (i>=2); K_r(R) finite for r>=1.",
+     "hypotheses": [
+      "R finite chain ring",
+      "i>=1"
+     ],
+     "locator": {
+      "source": "akn24",
+      "where": "Lemmas 2.8-2.9, Corollaries 2.13-2.16, lines 344-411; line 437"
+     },
+     "prerequisites": [
+      "target:1.5",
+      "target:7.2",
+      "target:8.6",
+      "target:9.1",
+      "roadmap:PrismaticCohomologyPartII §3.19",
+      "roadmap:PrismaticCohomologyPartII §3.24",
+      "roadmap:PrismaticCohomologyPartII §4.23",
+      "roadmap:CrystallineCohomology CR.2",
+      "roadmap:PrismaticCohomologyPartIII §7.0"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "n1",
+       "kind": "degenerate",
+       "statement": "n=1, i=1: empty window"
+      },
+      {
+       "name": "Z4_i1",
+       "kind": "computation",
+       "statement": "H^1=Z/2, H^2=0"
+      },
+      {
+       "name": "table",
+       "kind": "compatibility",
+       "statement": "K_3(Z/8), K_5(Z/8) prime-to-2 parts as Quillen"
+      }
+     ]
+    },
+    {
+     "id": "9.3",
+     "kind": "theorem",
+     "name": "Angeltveit's quotient",
+     "statement": "|H^1(Z_p(i)(R))|/|H^2(Z_p(i)(R))| = q^{i(n-1)} for i>=1; hence |K_{2i-1}(R;Z_p)|/|K_{2i-2}(R;Z_p)| = q^{i(n-1)} for i>=2.",
+     "hypotheses": [
+      "R finite chain ring",
+      "i>=1"
+     ],
+     "locator": {
+      "source": "akn24",
+      "where": "Proposition 2.18, line 419; Proposition 1.5, line 162"
+     },
+     "prerequisites": [
+      "target:1.5",
+      "target:8.6",
+      "target:9.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "Z4",
+       "kind": "computation",
+       "statement": "8/2=4"
+      },
+      {
+       "name": "Z8",
+       "kind": "computation",
+       "statement": "32/2=16, 128/2=64"
+      },
+      {
+       "name": "F2z3",
+       "kind": "computation",
+       "statement": "64/1=64; q^{in} would give 2^9"
+      }
+     ]
+    },
+    {
+     "id": "9.4",
+     "kind": "theorem",
+     "name": "relative-to-absolute descent and the finite free model",
+     "statement": "Descent along the filtered Amitsur complex; discreteness and explicit W(k)-bases of filtered envelopes; Breuil-Kisin orientations; Z_p(i)(R) is the total fibre of the descent square / connection square; quasi-isomorphic to Z_p^{f(in-1)} -> Z_p^{2f(in-1)} -> Z_p^{f(in-1)} with injective first map.",
+     "hypotheses": [
+      "R finite chain ring",
+      "i>=1"
+     ],
+     "locator": {
+      "source": "akn24",
+      "where": "Theorem 2.22, Propositions 2.23-2.24, Theorem 2.27, Lemma 3.6, Propositions 3.30-3.34, Lemmas 4.6-4.15, Proposition 4.24, Lemma 4.43, Corollary 4.44, Theorem 1.1"
+     },
+     "prerequisites": [
+      "target:8.1",
+      "target:8.3",
+      "target:8.4",
+      "target:8.5",
+      "target:8.6",
+      "target:9.2",
+      "roadmap:PrismaticCohomology §0.93",
+      "roadmap:PrismaticCohomology §2.13",
+      "roadmap:PrismaticCohomologyPartII §3.6",
+      "roadmap:PrismaticCohomologyPartII §3.9",
+      "target:8.2",
+      "roadmap:PrismaticCohomology §0.73",
+      "roadmap:PrismaticCohomology §0.74",
+      "roadmap:PrismaticCohomology §0.76"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "n1",
+       "kind": "degenerate",
+       "statement": "n=1, i=1: zero model"
+      },
+      {
+       "name": "Z4",
+       "kind": "computation",
+       "statement": "Z_2 -> Z_2^2 -> Z_2 with total cohomology order 2"
+      },
+      {
+       "name": "exponents",
+       "kind": "non-example",
+       "statement": "allowing a^2 as basis element double counts at p=2"
+      }
+     ]
+    },
+    {
+     "id": "9.5",
+     "kind": "theorem",
+     "name": "even vanishing theorem",
+     "statement": "If i>=2 and i-1>=B(p,e,n), then K_{2i-2}(R)=0 integrally and |K_{2i-1}(R)|=(q^i-1)q^{i(n-1)}.",
+     "hypotheses": [
+      "R finite chain ring",
+      "i>=2",
+      "i-1>=B(p,e,n)"
+     ],
+     "locator": {
+      "source": "akn24",
+      "where": "Theorem 5.2, Corollary 5.6, Theorem 1.4, lines 2074, 2091, 156; Lemmas 5.7-5.16"
+     },
+     "prerequisites": [
+      "target:1.5",
+      "target:9.1",
+      "target:9.3",
+      "target:9.4",
+      "roadmap:KTheoryFiniteLocalFields §1.1",
+      "roadmap:KTheoryFiniteLocalFields §1.2",
+      "roadmap:KTheoryFiniteLocalFields §1.3",
+      "roadmap:KTheoryFiniteLocalFields §1.4",
+      "roadmap:KTheoryFiniteLocalFields §1.5",
+      "roadmap:KTheoryFiniteLocalFields §1.6"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "char_p",
+       "kind": "compatibility",
+       "statement": "n<=e gives Hesselholt-Madsen even vanishing for all i>=2"
+      },
+      {
+       "name": "Z4",
+       "kind": "computation",
+       "statement": "B=12; table K_2=Z/2 only even group; |K_5|=56"
+      },
+      {
+       "name": "weak_bound",
+       "kind": "non-example",
+       "statement": "weaker Remark 5.4 bound never covers i=2"
+      }
+     ]
+    },
+    {
+     "id": "9.6",
+     "kind": "theorem",
+     "name": "nilpotence of v1",
+     "statement": "v1 in H^0(F_p(p-1)(Z_p)) acts on sum_i F_p(i)(R) with nilpotence degree at most [j]_p, equality if e | n; for Z/p^n exactly [n]_p.",
+     "hypotheses": [
+      "R finite chain ring"
+     ],
+     "locator": {
+      "source": "akn24",
+      "where": "Theorem 6.3, Proposition 6.2, Theorem 1.8, lines 2321-2331, 197"
+     },
+     "prerequisites": [
+      "target:8.4",
+      "target:9.4",
+      "target:9.5",
+      "roadmap:PrismaticCohomologyPartIII §7.0"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "n1",
+       "kind": "degenerate",
+       "statement": "n=1: degree 1"
+      },
+      {
+       "name": "Z4",
+       "kind": "computation",
+       "statement": "[2]_2=3"
+      },
+      {
+       "name": "e_not_dividing",
+       "kind": "non-example",
+       "statement": "e=2,n=3: only the inequality"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "suppliers": [
+  {
+   "roadmap": "RefinedTraceMethods",
+   "sections": [
+    "§1.2",
+    "§1.3",
+    "§1.4",
+    "§1.9",
+    "§2.1",
+    "§2.3",
+    "§2.4",
+    "§2.5",
+    "§2.6",
+    "§2.8",
+    "§2.9",
+    "§2.10",
+    "§2.13",
+    "§2.16",
+    "§4.12",
+    "§4.17",
+    "§4.18"
+   ],
+   "what": "THH, TC and the Nikolaus-Scholze formula, parametrized Tate constructions, spherical monoid rings, representation-graded TR, relative K and K^inv, DGM, Goodwillie, truncating excision"
+  },
+  {
+   "roadmap": "KTheoryFiniteLocalFields",
+   "sections": [
+    "§1.1",
+    "§1.2",
+    "§1.3",
+    "§1.4",
+    "§1.5",
+    "§1.6",
+    "§2.1",
+    "§4.0",
+    "§4.4",
+    "§5.1",
+    "§5.16",
+    "§5.16a",
+    "§5.17"
+   ],
+   "what": "K of finite fields, Gabber rigidity, genuine cyclotomic foundations, TC of perfect fields, classical pointed-monoid THH and B^cy(Pi_e) cells, big Witt comparison, lambda-graded TR and truncated-polynomial K over perfect fields"
+  },
+  {
+   "roadmap": "QWittVectors",
+   "sections": [
+    "§1.1",
+    "§1.2",
+    "§1.3",
+    "§1.4",
+    "§1.4a",
+    "§1.5"
+   ],
+   "what": "truncation sets, big Witt rings, F, V, Teichmuller, power-series and p-typical comparisons"
+  },
+  {
+   "roadmap": "CrystallineCohomology",
+   "sections": [
+    "CR.2",
+    "CR.4"
+   ],
+   "what": "PD de Rham computations and p-typical de Rham-Witt complexes"
+  },
+  {
+   "roadmap": "GeneralAlgebraicKTheory",
+   "sections": [
+    "§8.1",
+    "§10.5",
+    "§10.13"
+   ],
+   "what": "relative K, Fundamental Theorem, negative K of regular rings"
+  },
+  {
+   "roadmap": "SchemeKTheoryOperations",
+   "sections": [
+    "§5.2"
+   ],
+   "what": "NK vanishes for regular noetherian rings"
+  },
+  {
+   "roadmap": "AInfCohomology",
+   "sections": [
+    "AI.0",
+    "§AI.7.2"
+   ],
+   "what": "perfectoid rings, A_inf, Bokstedt periodicity and perfectoid trace coefficients"
+  },
+  {
+   "roadmap": "PrismaticCohomology",
+   "sections": [
+    "§0.55",
+    "§0.56",
+    "§0.73",
+    "§0.74",
+    "§0.76",
+    "§0.93",
+    "§1.2",
+    "§1.3",
+    "§1.4",
+    "§2.1",
+    "§2.13"
+   ],
+   "what": "delta-rings, prisms, prismatic envelopes, relative and derived prismatic cohomology"
+  },
+  {
+   "roadmap": "PrismaticCohomologyPartII",
+   "sections": [
+    "§3.6",
+    "§3.9",
+    "§3.10",
+    "§3.19",
+    "§3.20",
+    "§3.24",
+    "§4.4",
+    "§4.5",
+    "§4.6",
+    "§4.7",
+    "§4.8",
+    "§4.9",
+    "§4.10",
+    "§4.17",
+    "§4.18",
+    "§4.19",
+    "§4.22",
+    "§4.23",
+    "§4.25",
+    "§4.29",
+    "§4.31"
+   ],
+   "what": "Nygaard filtration, Breuil-Kisin twists, WCart and crystals, absolute prismatic and Hodge-Tate cohomology, crystalline comparison"
+  },
+  {
+   "roadmap": "PrismaticCohomologyPartIII",
+   "sections": [
+    "§6.8",
+    "§6.9",
+    "§6.28",
+    "§6.31",
+    "§7.0"
+   ],
+   "what": "syntomic complexes and the motivic filtration on TC"
+  },
+  {
+   "roadmap": "DerivedDeRhamCohomology",
+   "sections": [
+    "Layer 2",
+    "Layer 5"
+   ],
+   "what": "derived de Rham, cotangent complexes, quasisyntomic sites"
+  },
+  {
+   "roadmap": "BordismFormalGroups",
+   "sections": [
+    "§F6.5"
+   ],
+   "what": "finite-group Borel Tate constructions (through RefinedTraceMethods)"
+  },
+  {
+   "roadmap": "StableHomotopyKTheory",
+   "sections": [
+    "§7.9",
+    "§7.10",
+    "§7.14",
+    "§7.18"
+   ],
+   "what": "towers, Milnor sequences, p-completion"
+  },
+  {
+   "roadmap": "EnhancedDerivedSheaves",
+   "sections": [
+    "E5"
+   ],
+   "what": "stable and presentable infinity-categories, filtered objects, modules"
+  }
+ ],
+ "consumers": [],
+ "gaps": [
+  {
+   "slug": "bigwitt-ptypical-decomposition",
+   "title": "p-typical decomposition of big Witt vectors over Z_(p)-algebras",
+   "neededBy": [
+    "6.2",
+    "7.2"
+   ],
+   "detail": "For a prime p, a Z_(p)-algebra R and a truncation set S, the natural ring isomorphism W_S(R) = prod_{d in S prime to p} W_{s_S(d)}(R), compatible with restriction, V_n, F_n.",
+   "needs": "QWittVectors states big Witt rings and the comparison with p-typical Witt vectors on p-power truncation sets but not the product decomposition over Z_(p)-algebras.",
+   "supplier": "QWittVectors",
+   "section": "§1.5"
+  },
+  {
+   "slug": "perfect-homotopy-invariance",
+   "title": "Homotopy invariance of K-theory of perfect F_p-algebras",
+   "neededBy": [
+    "4.4",
+    "6.2"
+   ],
+   "detail": "For every perfect F_p-algebra A, IK(A)->IK(A[T]) is an equivalence (amm-perfectoid Proposition 5.1, through cdh descent for perfect schemes).",
+   "needs": "No roadmap states that NK vanishes for perfect F_p-algebras that are not regular noetherian.",
+   "supplier": "SchemeKTheoryOperations",
+   "section": "§5.2"
+  }
+ ]
+}

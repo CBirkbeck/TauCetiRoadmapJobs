@@ -1,0 +1,132 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "PositiveScalarCurvature"
+
+[[source]]
+id = "gl80"
+locator_scheme = "theorem"
+locator = "Theorems A–C, pp. 423–424; proof of Theorem B, pp. 431–432"
+url = "https://www.ihes.fr/~gromov/wp-content/uploads/2018/08/827.pdf"
+fetched_from = "https://www.ihes.fr/~gromov/wp-content/uploads/2018/08/827.pdf"
+fetched_at = "2026-11-03T08:28:55Z"
+sha256 = "4a4dc75afe0a7743c668653349f32f3d526b953c2d8054e14392b3220ebda69b"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["3–5"]
+
+[[source]]
+id = "cs13"
+authors = "Diarmuid Crowley, Thomas Schick"
+title = "The Gromoll filtration, KO-characteristic classes and metrics of positive scalar curvature"
+year = 2012
+venue = "Geom. Topol. 17 (2013) 1773-1789"
+doi = "10.2140/gt.2013.17.1773"
+arxiv = "1204.6474v4"
+locator_scheme = "theorem"
+locator = "arXiv v4, section 2.3, Lemmas 2.12 and 2.14"
+url = "https://arxiv.org/abs/1204.6474v4"
+fetched_from = "https://arxiv.org/pdf/1204.6474v4"
+fetched_at = "2026-11-03T08:28:58Z"
+sha256 = "1fa66d23c782b84c2058098c7eb3acd3645e5cbcb13a78f0447639164987203f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+version_note = "arXiv v4"
+cited_for = ["6"]
+
+[[source]]
+id = "stolz22"
+authors = "Stephan Stolz"
+title = "Positive scalar curvature -- constructions and obstructions"
+year = 2022
+arxiv = "2202.05904v1"
+locator_scheme = "theorem"
+locator = "Theorems 1.4–1.6; sections 2–3"
+url = "https://arxiv.org/abs/2202.05904v1"
+fetched_from = "https://arxiv.org/pdf/2202.05904v1"
+fetched_at = "2026-11-03T08:29:05Z"
+sha256 = "523a4e52245c277bf019528b6dd0c23c7caa716834bf3aff89014111d1e5ffc2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+version_note = "arXiv v1"
+cited_for = ["1–6"]
+
+[[source]]
+id = "adams"
+locator_scheme = "theorem"
+locator = "Theorems 5.3(v), 7.2, 11.1, 12.13; Lemma 12.5"
+url = "https://www.sas.rochester.edu/mth/sites/doug-ravenel/otherpapers/Adams-JX4.pdf"
+fetched_from = "https://www.sas.rochester.edu/mth/sites/doug-ravenel/otherpapers/Adams-JX4.pdf"
+fetched_at = "2026-11-03T08:29:10Z"
+sha256 = "a54d081e14b56cd89f050ac061ef6850c44ba9afc8e9431c9e666b00d1f9f1f4"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["6"]
+
+[[source]]
+id = "hitchin"
+locator_scheme = "theorem"
+locator = "sections 4.1–4.2, pp. 37–44"
+url = "https://users.math.msu.edu/users/parker/GT/Harmonic%20Spinors.pdf"
+fetched_from = "https://users.math.msu.edu/users/parker/GT/Harmonic%20Spinors.pdf"
+fetched_at = "2026-11-03T08:29:13Z"
+sha256 = "5dd6d10a89a81c419208f75c86224bfe71fef2d704a51f6b0fcd3e8fe7dea761"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["5–6"]
+
+[[source]]
+id = "kmnst"
+locator_scheme = "theorem"
+locator = "Proposition 4.4, p. 117"
+url = "https://www.math.okayama-u.ac.jp/mjou/mjou43/_Kachi.pdf"
+fetched_from = "https://www.math.okayama-u.ac.jp/mjou/mjou43/_Kachi.pdf"
+fetched_at = "2026-11-03T08:29:16Z"
+sha256 = "9e37fd152ca6bae1ce53ba9f9349af0f3225410975e51b3d2b7ab1770b6deb4a"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["6"]
+
+[[source]]
+id = "milnor"
+locator_scheme = "theorem"
+locator = "Theorems 5.4, 6.6, 7.6, 7.8 and 8.1"
+url = "https://www.math.auckland.ac.nz/~hekmati/Books/Milnor2.pdf"
+fetched_from = "https://www.math.auckland.ac.nz/~hekmati/Books/Milnor2.pdf"
+fetched_at = "2026-11-03T08:31:47Z"
+sha256 = "ad179436219871b2cfa8d6026525346ef6c60680e8e761a1b30a730ebd710291"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["4"]
+
+[[source]]
+id = "hamilton"
+locator_scheme = "section"
+locator = "Part I, Example 1.1.5, p. 68"
+url = "https://www.ams.org/journals/bull/1982-07-01/S0273-0979-1982-15004-2/S0273-0979-1982-15004-2.pdf"
+fetched_from = "https://www.ams.org/journals/bull/1982-07-01/S0273-0979-1982-15004-2/S0273-0979-1982-15004-2.pdf"
+fetched_at = "2026-11-03T08:36:13Z"
+sha256 = "afb99af4375243a4be943c4bb77a9d0956bc99bd735b33d1d530e94fa8918dc9"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["1.1"]
+
+[[source]]
+id = "kobayashi"
+authors = "Shoshichi Kobayashi"
+title = "Transformation Groups in Differential Geometry"
+year = 1972
+doi = "10.1007/978-3-642-61981-6"
+locator_scheme = "section"
+locator = "Chapter II section 1"
+url = "https://doi.org/10.1007/978-3-642-61981-6"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["2.1"]

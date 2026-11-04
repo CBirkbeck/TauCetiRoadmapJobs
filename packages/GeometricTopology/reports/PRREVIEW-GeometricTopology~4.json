@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "rejected",
+    "reviewer": "independent-review-PRREVIEW-GeometricTopology~4",
+    "head": "8f2bcb3fb73fa109681b9d4c7838971cf140b6ac",
+    "pr": 903,
+    "folder": "GeometricTopology",
+    "date": "2026-10-30",
+    "findings": 25,
+    "blocking": 22,
+    "notes": "Full read-only review; 13 previous findings reassessed; 15 seeded targets audited with readable-source and uncertified distinctions; 88 main adversarial rows plus 16 companion controls. Worker gate passes; targeted build and direct elaboration pass; 14 headline and 262 companion signatures printed. Dependency check: 208 roadmaps, 1452 edges, 0 problems. Rejected for extension/re-planning of an existing statement roadmap; independent mathematical and supplier findings also block acceptance. Source inventory: 85 works; unresolved sources recorded."
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-GeometricTopology~11",
+    "head": "2559c13dd722c28b400f8127eba30e4edfbfa309",
+    "pr": 1517,
+    "folder": "GeometricTopology",
+    "date": "2026-11-02",
+    "findings": 25,
+    "blocking": 21,
+    "notes": "Full review of both nominated files; previous report concerns a different PR/head and was reconciled finding by finding. All repeated seeded blocks inspected; 92 computed adversarial rows, 25 pinned API sites, nine signature checks and three headline probes. Direct Lean elaboration passes. Worker gate fails residue=1 and stray-files=1; dependency command reports 204 roadmaps, 1495 edges, 0 problems, but prose CHF cycle verified. Legal source attempts and unavailable locators recorded; no PR files changed."
+  }
+}

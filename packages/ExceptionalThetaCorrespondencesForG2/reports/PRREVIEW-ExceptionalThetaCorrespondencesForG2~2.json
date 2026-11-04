@@ -1,0 +1,4 @@
+{"review": {"status": "accepted", "reviewer": "independent-review-PRREVIEW-ExceptionalThetaCorrespondencesForG2~2",
+            "head": "ce943aeba3eca0aa0041ff0b23504dd0d01ecf06", "pr": 1736, "folder": "ExceptionalThetaCorrespondencesForG2", "date": "2026-11-03",
+            "findings": 2, "blocking": 0,
+            "notes": "incremental re-review of 30 changed lines since 036e66f: both r1 findings repaired (LanglandsParameterStacks §§0.4, 0.5, 1.13, 1.15 resolved at its open head; Aut(H₃(B)) with split specialization and SL₁(B)³/μ₂ stabilizer verified by computation and against GS lines 542–581); two P3 notes (a GS locator that does not contain the isometry construction; a residual 'dimension 15 is PGSp₆' sentence in the Layer 2 Examples). Gate rerun OK, depcheck 0 problems, lake env lean exit 0 with no output. Seeded sample of 15 targets opened at their locators (GS, HKT, GrS, LL, Pra); adversarial table with 4 new computed rows and 94 rows carried from r1."}}

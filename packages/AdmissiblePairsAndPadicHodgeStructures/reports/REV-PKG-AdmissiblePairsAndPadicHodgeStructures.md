@@ -88,7 +88,7 @@ The roadmap is listed in `merge-order/ORDER.txt` at line 245, right after HeckeS
   - DiamondsAndVStacks D1–D6: 11;
   - GeometricSatakeAndFusion GS0: 5;
   - ReductiveGroupsPartII RG2.0–RG2.1: 5;
-  - AdicSpacesPartIIPartII RZ.0–RZ.6: 16, in its board design README (merge order line 10).
+  - AdicSpacesPartV RZ.0–RZ.6: 16, in its board design README (merge order line 10).
 - **Sections opened, at the heads of their open pull requests:**
   - RelativeFarguesFontaine §§4.10–4.12, 6.6–6.9, 7.2, 7.4, 7.6. §7.6(b) gives v-descent of B⁺ bundles and of B-isomorphisms, not of B_D-modules, so gap:localized-period-module-descent is genuine.
   - MotivesAndAlgebraicCycles §§6.1–6.3, 6.8;
