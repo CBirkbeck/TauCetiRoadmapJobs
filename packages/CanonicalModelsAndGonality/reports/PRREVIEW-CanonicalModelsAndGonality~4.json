@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "accepted",
+    "reviewer": "independent-review-PRREVIEW-CanonicalModelsAndGonality~4",
+    "head": "e7bed94dff7bbcc720962650cb3567c1b8f1b77f",
+    "pr": 1726,
+    "folder": "CanonicalModelsAndGonality",
+    "date": "2026-11-03",
+    "findings": 1,
+    "blocking": 0,
+    "notes": "incremental re-review of 56 changed lines since 51f3f4d. Previous R01 (graded-Hilbert supplier), R02 (base-point-free hypothesis in the closed-immersion criterion) and R03 (genus-two padding theorem) all repaired; GroebnerGeometry G4, SchemeAndStackFoundations §§2.6/3.3 resolved on main; Fulton Exercise 8.33(b)-(c) verified at printed p.110 in the cached 2008 text; new K+P and D=0 Checks computed; 9.1 iff tested on five instances. Worker gate passes; independent depcheck 204 roadmaps, 1646 edges, 0 problems; lake env lean exit 0 with 49 sorry-only warnings, 66 declarations. One P3: G4's large-degree section comparison is stated for S/I only, wording precision. Hartshorne locators remain uncertified (paywalled)."
+  }
+}

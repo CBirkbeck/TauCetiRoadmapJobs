@@ -1,0 +1,142 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "GeometricTopology"
+
+[[source]]
+id = "li2013"
+authors = "Tao Li"
+title = "Rank and genus of 3-manifolds"
+year = 2011
+arxiv = "1106.6302v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/1106.6302v2"
+fetched_from = "https://arxiv.org/pdf/1106.6302v2"
+fetched_at = "2026-11-03T20:42:28Z"
+sha256 = "90768f44faff332233d4922ac104869bee4a376be63845962fb7944e03e9956e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+version_note = "arXiv v2"
+cited_for = ["9"]
+
+[[source]]
+id = "livingston2005"
+authors = "Charles Livingston"
+title = "A survey of classical knot concordance"
+year = 2003
+arxiv = "math/0307077v4"
+locator_scheme = "theorem"
+locator = "Section 3.1"
+url = "https://arxiv.org/abs/math/0307077v4"
+fetched_from = "https://arxiv.org/pdf/math/0307077v4"
+fetched_at = "2026-11-03T20:42:33Z"
+sha256 = "e7d9e5ebf8984ef159b1b3ac09445301a5bb696ca4bb75c8a5ee53c6f2d3bd5d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+version_note = "arXiv v4"
+cited_for = ["6"]
+
+[[source]]
+id = "gmm2009"
+authors = "David Gabai, Robert Meyerhoff, Peter Milley"
+title = "Mom technology and hyperbolic 3-manifolds"
+year = 2009
+arxiv = "0910.5043v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/0910.5043v1"
+fetched_from = "https://arxiv.org/pdf/0910.5043v1"
+fetched_at = "2026-11-03T20:42:39Z"
+sha256 = "c6dc414e6cb777a4470c28efd4409e45ba1d399a6f7bf25bb0141a42547c4388"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+version_note = "arXiv v1"
+cited_for = ["7"]
+
+[[source]]
+id = "agol2013"
+authors = "Ian Agol, Daniel Groves, Jason Manning"
+title = "The virtual Haken conjecture"
+year = 2012
+arxiv = "1204.2810v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/1204.2810v1"
+fetched_from = "https://arxiv.org/pdf/1204.2810v1"
+fetched_at = "2026-11-03T20:42:46Z"
+sha256 = "ea8c7f392bed7e80a23968b09df7a3414bf0ce7d046ce479373a0d134910bc00"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+version_note = "arXiv v1"
+cited_for = ["7"]
+
+[[source]]
+id = "km2004"
+authors = "P B Kronheimer, T S Mrowka"
+title = "Witten's conjecture and Property P"
+year = 2003
+venue = "Geom. Topol. 8 (2004) 295-310"
+doi = "10.2140/gt.2004.8.295"
+arxiv = "math/0311489v5"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/math/0311489v5"
+fetched_from = "https://arxiv.org/pdf/math/0311489v5"
+fetched_at = "2026-11-03T20:42:50Z"
+sha256 = "b0376a6661b3f936020be6fef7a29ea68e33ce0e2fd532f0ba7fda8025a40fa7"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+version_note = "arXiv v5"
+cited_for = ["5"]
+
+[[source]]
+id = "scharlemann2002"
+authors = "Martin Scharlemann"
+title = "Heegaard splittings of compact 3-manifolds"
+year = 2000
+arxiv = "math/0007144v1"
+locator_scheme = "theorem"
+locator = "Section 2"
+url = "https://arxiv.org/abs/math/0007144v1"
+fetched_from = "https://arxiv.org/pdf/math/0007144v1"
+fetched_at = "2026-11-03T20:42:57Z"
+sha256 = "a5efa71aed6a61b93c968a9745c2871e63fb964d6505c14b8eb4349b006e4a46"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+version_note = "arXiv v1"
+cited_for = ["9"]
+
+[[source]]
+id = "kirby1997"
+locator_scheme = "section"
+locator = "Problem 1.41"
+url = "https://math.berkeley.edu/~kirby/problems.ps.gz"
+fetched_from = "https://math.berkeley.edu/~kirby/problems.ps.gz"
+fetched_at = "2026-11-03T20:42:58Z"
+sha256 = "c95e08efe610374388e653b1d62ff7a885344f73a34d655651f3e12ed2b27095"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["4"]
+
+[[source]]
+id = "murakami1986"
+authors = "Hitoshi Murakami"
+title = "A recursive calculation of the Arf invariant of a link"
+year = 1986
+doi = "10.2969/jmsj/03820335"
+locator_scheme = "theorem"
+locator = "main theorem, p. 335"
+url = "https://www.jstage.jst.go.jp/article/jmath1948/38/2/38_2_335/_article/-char/en"
+fetched_from = "https://www.jstage.jst.go.jp/article/jmath1948/38/2/38_2_335/_pdf"
+fetched_at = "2026-11-04T15:04:52Z"
+sha256 = "860faf645957408e0aa2267683b3fd2ce117fd9c9ee6e9e558d1c7d6bb21de91"
+licence_class = "answered-by:CBirkbeck"
+status = "certified"
+accessed = "2026-11-04"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/4188#issuecomment-6632668881"

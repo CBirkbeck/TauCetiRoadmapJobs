@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-PeriodsAndSpecialValues~3",
+    "head": "147f30dff50f0da8a312ef2b16509642a449e937",
+    "pr": 1496,
+    "folder": "PeriodsAndSpecialValues",
+    "date": "2026-11-03",
+    "findings": 3,
+    "blocking": 1,
+    "notes": "incremental re-review of 26 changed lines since 58a34e8 (README only: relative K-theory supplier contracts repointed to AlgebraicKTheory sections 2.2, 3.2-3.3 and GeneralAlgebraicKTheory sections 4.16-4.17, 6.19, 12.11). Previous R01 repaired and verified against AlgebraicKTheory #1142 (README lines 298/355/372), GeneralAlgebraicKTheory #1212 (900/916/1409/2860) and NoncommutativeAndEquivariantIwasawa #1307 section 2.7 (1183); new PS.5.1 Check recomputed on Z->Q (v2 of boundary of 2, 1, 6, 1/2 = 1, 0, (1,1), -1) and K0(Z,R) = R_{>0}. Previous R02 (plan.json still declares five gaps the README no longer states; two ask IntegralLattices 5G/5H/6A on main and K3Surfaces K2 at #1285 for theorems already owned) not repaired, re-raised as R01 (P2, board-side repair). Previous R03 (KZ and Scholl unregistered in sources.toml) not repaired, carried as R03 (P3). New R02 (P3): gilletWaldhausen_general names no declaration of GeneralAlgebraicKTheory. Gate: all checks pass; depcheck rerun 204 roadmaps, 1641 edges, 0 problems; lake env lean exits 0 with 13 sorry warnings only; Suggested.lean unchanged since r2. Seeded sample (PS.8.17 fixed-fibre map, residue coordinates) untouched by the diff; anchors re-opened (Park lines 1173/1233, SH 271, SG 1082)."
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-UnboundedOperators~1",
+    "head": "6ce07cd5eb89cfb1f8e0e231813c5fd586dd7039",
+    "pr": 1027,
+    "folder": "OperatorTheory/UnboundedOperators",
+    "date": "2026-10-30",
+    "findings": 9,
+    "blocking": 4,
+    "notes": "Read all three owner files and family index; 180 computed adversarial rows cover the 15 seeded targets, target families and all 27 explicit Lean declarations. Read 23 pinned-library evidence rows and resolved 11 analytic supplier comparisons. Worker gate fails on admitted data, imports, frozen links, HTML residue and layer shape. Independent depcheck: 208 roadmaps, 1467 edges, 0 problems. Original Suggested elaboration passes with 11 sorry warnings after the required dependency build. Signature and padding probes completed; native Nelson headline probe elaborates. Grundling packet and Nelson original unavailable; source limitations recorded. Jones 2015 and Eckhardt et al. v3 verified at cited text lines; Weidmann uncertified. Worktree unchanged."
+  }
+}

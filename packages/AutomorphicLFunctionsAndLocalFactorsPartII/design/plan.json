@@ -4972,6 +4972,138 @@
         "AutomorphicLFunctionsAndLocalFactorsPartII:D.5/generalized-datum"
       ],
       "detail": "ClassicalGroups Layer 0 concerns complex standard representations and does not supply arbitrary quadratic-étale hermitian isometry/similitude groups. Current OrthogonalSpinGroups supplies general-field SO and Spin comparisons; ReductiveGroupsPartII constructs topology and dual groups from a supplied reductive group. Before D.0 is implemented, obtain an owner-supplied hermitian carrier with U(h) and GU(h), multiplier, equal-multiplier fiber product, block isometry embedding, field/étale-split base change and reductivity; also supply GSpin as the even Clifford similitude group with its central F×, Clifford-action map and root-datum comparison. Request the missing concrete models in the ReductiveGroups direction, consuming the existing OrthogonalSpinGroups maps and Mathlib symplectic carrier. They are not replanned here or falsely attributed to complex ClassicalGroups."
+    },
+    {
+      "slug": "hermitian-unitary-groups",
+      "needs": "For a nondegenerate Hermitian form on a finite projective constant-rank module over a characteristic-zero quadratic étale algebra E/F, provide the unitary group U and the multiplier-recording similitude group GU as reductive F-group schemes compatible with base change, together with the block embedding U(V)×U(−V)→U(V⊕(−V)) and its equal-multiplier fibre-product analogue for GU.",
+      "supplier": "ReductiveGroupsPartII",
+      "section": "RG2.0, RG2.4 and RG2.5"
+    },
+    {
+      "slug": "gspin-group-schemes",
+      "needs": "For a nondegenerate split quadratic space of dimension c≥2 over a characteristic-zero field F, provide GSpin_c as a connected reductive F-group scheme whose F-points are the even elements of Mathlib's `lipschitzGroup`, with its distinguished central cocharacter e₀∨:Gₘ→GSpin_c, the morphism to SO_c whose F-points are the OrthogonalSpinGroups Layer 1 vector action, and a pinned root datum.",
+      "supplier": "ReductiveGroupsPartII",
+      "section": "RG2.0, RG2.4 and RG2.5"
+    },
+    {
+      "slug": "classical-support-quotient",
+      "needs": "For a nonarchimedean local field F of characteristic zero, one of the split groups G_c=Sp_c, SO_c or GSpin_c of Layer 0 with c>1, supercuspidal representations σ_i of GL_(β_i)(F) (1≤i≤d, β₁+…+β_d=l, 2l≤c) and a supercuspidal π₀ of G_(c−2l)(F), prove that every irreducible subquotient π of the normalized induction (σ₁×…×σ_d)⋊π₀ is a quotient of (σ′₁×…×σ′_d)⋊π₀ for a datum obtained from (σ_i) by a Weyl-group element, that is, a permutation of the blocks together with the replacement of some σ_i by χ_π⊗σ_i∨, where χ_π is the central character of π restricted along e₀∨ for GSpin_c and is trivial for Sp_c and SO_c (Jacquet-module exactness and the geometric lemma of SR.2.2–SR.2.3, cuspidal support of SR.3.1 and second adjointness of SR.2a.1).",
+      "supplier": "SmoothRepresentationsOfLocalGroups",
+      "section": "SR.2, SR.2a, SR.3.1 and SR.3.3"
+    },
+    {
+      "slug": "rectangular-orbit-support",
+      "needs": "For a nonarchimedean characteristic-zero local field F, k,c≥1 and a nonzero finite-length admissible complex representation ρ of GL_(kc)(F), assume that each of the c successive highest Bernstein–Zelevinsky derivatives has order k; identify Hom_(U_(c^k))(ρ,ψ_(k,c)) with the linear dual of the terminal GL₀ derivative space, with the determinant-normalization conversion between SR.5.1 mirabolic-derivatives and SR.5.3 highest-derivative-adapter made explicit, and prove vanishing of Hom_(V(σ))(ρ,ψ′) for every partition σ greater than or incomparable with (k^c) and every generic ψ′ (MODELS Proposition 2 and proof, pp.3–4, MODELS lines 108–128; GGS17 Theorems E–F, pp.5–6, GGS17 lines 219–238).",
+      "supplier": "SmoothRepresentationsOfLocalGroups",
+      "section": "SR.2, SR.3.3, SR.5.1 and SR.5.3"
+    },
+    {
+      "slug": "standard-archimedean-transfer",
+      "needs": "For the five split classical families, provide the real/complex standard transfer to GL of their local Langlands parameters with determinant and infinitesimal-character compatibility and the chosen smooth globalizations.",
+      "supplier": "AutomorphicFormsOnReductiveGroups",
+      "section": "2.5–2.7 and 4.2"
+    },
+    {
+      "slug": "opposite-unipotent-estimate",
+      "needs": "For a real or complex reductive group G, a standard parabolic R=M_R U_R with opposite unipotent radical U_R⁻, an irreducible tempered representation σ of M_R with an invariant inner product on its smooth space V_σ, and ν∈𝔞_R,ℂ* with Re ν in the open positive chamber, prove that ∫_(U_R⁻)|⟨φ(u),w⟩_σ|du is finite for every φ in the smooth normalized induction from σ⊗exp⟨ν,H_R(·)⟩ and every w∈V_σ, and that (φ,w)↦∫_(U_R⁻)⟨φ(u),w⟩_σ du is continuous (CFK Lemma 3.22, pp.32–33; CFK line 1455).",
+      "supplier": "AutomorphicFormsOnReductiveGroups",
+      "section": "2.3–2.4 and 2.7"
+    },
+    {
+      "slug": "real-chevalley-contragredient",
+      "needs": "For the real points G of a connected reductive ℝ-group and an involution C of G that acts by inversion on some fundamental Cartan subgroup, prove that π∘C≅π∨ for every irreducible Harish-Chandra module π, hence for its Casselman–Wallach globalization (ADAMS14, Theorem 1.2 and Corollary 1.4, p.2; ADAMS14 line 46).",
+      "supplier": "AutomorphicFormsOnReductiveGroups",
+      "section": "2.4 and 2.7"
+    },
+    {
+      "slug": "prescribed-classical-supercuspidal-globalization",
+      "needs": "For a nonarchimedean characteristic-zero local field f and an irreducible supercuspidal σ of a split classical group G in §10.6, fix a positive norm character ζ making σᵘ=σ⊗ζ unitary, choose a number field M and finite v₀ with M_v₀≃f and a unitary automorphic character Ω of Z_G(M)\\Z_G(𝔸_M) restricting to ω_(σᵘ) at v₀, and provide a unitary cuspidal πᵘ of G(𝔸_M) with πᵘ_v₀≃σᵘ and ω_(πᵘ)=Ω, together with the global norm character extending ζ so that twisting back globalizes σ (CFK Corollary 4.11 and proof, p.42; CFK lines 1818–1823).",
+      "supplier": "AutomorphicFormsOnReductiveGroups",
+      "section": "2.5–2.7 and 4.2"
+    },
+    {
+      "slug": "controlled-gl-test-globalization",
+      "needs": "For a number field M, a finite place v₀, a finite set T of other finite places, l≥1 and a unitary supercuspidal σ of GL_l(M_v₀), choose a unitary Hecke character Ω with Ω_v₀=ω_σ and Ω_v unramified for v∈T, and provide a unitary cuspidal Σ of GL_l(𝔸_M) with Σ_v₀≃σ, ω_Σ=Ω and Σ_v unramified for every v∈T; additional finite ramification is permitted only outside T∪{v₀}, where both fixed comparison representations π and Π of §10.5 are required to be unramified, with T containing all their other bad places (CFK proof of Theorem 4.10, p.41; CFK lines 1804–1814).",
+      "supplier": "AutomorphicFormsOnReductiveGroups",
+      "section": "2.5–2.7 and 4.2"
+    },
+    {
+      "slug": "archimedean-wavefront-whittaker",
+      "needs": "For a Casselman–Wallach representation ϑ of GL_l(F), F=ℝ or ℂ, and a nilpotent orbit O with a generic character of its unipotent subgroup, prove that the generalized Whittaker model of ϑ along O is nonzero when O is maximal in the wave-front set of ϑ and vanishes when O is greater than or incomparable with every orbit of that wave-front set (MODELS, proof of Theorem 4, p.5; MODELS lines 194–203).",
+      "supplier": "AutomorphicFormsOnReductiveGroups",
+      "section": "2.1–2.7"
+    },
+    {
+      "slug": "archimedean-induced-wavefront",
+      "needs": "For Casselman–Wallach representations ϑ_i of the blocks of a standard Levi of GL_l(F), F archimedean, prove that the maximal orbits of the wave-front set of the normalized induction ×_iϑ_i are the orbits induced from the maximal orbits of the ϑ_i, with associated cycles additive over the constituents of a reducible induced representation (MODELS lines 196–200).",
+      "supplier": "AutomorphicFormsOnReductiveGroups",
+      "section": "2.1–2.7"
+    },
+    {
+      "slug": "archimedean-derivative-models",
+      "needs": "For a Casselman–Wallach representation ϑ of GL_(kc)(F), F archimedean, whose highest (pre-)derivative is its k-th one and stays so through c successive steps, prove that Hom_(U_(c^k))(ϑ,ψ_(k,c)) is isomorphic to the dual of the vector space reached after these c derivatives and that the generalized Whittaker models along orbits greater than or incomparable with (k^c) vanish (MODELS, Proposition 2 and proof, pp.3–4; MODELS lines 108–128).",
+      "supplier": "AutomorphicFormsOnReductiveGroups",
+      "section": "2.1–2.7"
+    },
+    {
+      "slug": "archimedean-degenerate-derivative",
+      "needs": "For quasi-characters χ_1,…,χ_k of F× with F archimedean, prove that the highest (pre-)derivative of the normalized induction ×_(i=1)^k χ_i∘det_(GL_c) from the block parabolic with k blocks of size c is its k-th derivative, equal to ×_(i=1)^k χ_i∘det_(GL_(c−1)) in the derivative normalization of MODELS §1 (MODELS lines 119–125).",
+      "supplier": "AutomorphicFormsOnReductiveGroups",
+      "section": "2.1–2.7"
+    },
+    {
+      "slug": "archimedean-whittaker-exactness",
+      "needs": "For F=ℝ or ℂ, k,c≥1 and O=(k^c), let M≤O be the finite-length Casselman–Wallach representations of GL_(kc)(F) whose wave-front set is contained in the closure of O, and M<O its Serre subcategory with no O in that set; prove that the continuous generalized-Whittaker functional functor descends to an exact contravariant functor on M≤O/M<O, so 0→A→B→C→0 in M≤O gives 0→W_O(C)→W_O(B)→W_O(A)→0, using W_O(ρ)=Hom_cont,U_(c^k)(ρ,ψ_(k,c)), choosing the neutral Schwartz model induced from ψ_(k,c)⁻¹ to match the continuous-dual convention, and W_O(ρ)≃(E_k^cρ)* (GGS17 Corollary G and proof, pp.6,27–28, GGS17 lines 241–252 and 1310–1326; MODELS lines 219–222).",
+      "supplier": "AutomorphicFormsOnReductiveGroups",
+      "section": "2.1–2.7"
+    },
+    {
+      "slug": "eisenstein-pole-cuspidal-detection",
+      "needs": "For an Eisenstein family of §2.4 induced from discrete unitary data whose cuspidal support is carried by a single standard Levi M₀ up to association, prove that every pole of the family, with its order, is a pole of the same order of its constant term along the standard parabolic with Levi M₀ (CFK proof of Theorem 4.1, p.36; CFK lines 1600–1603).",
+      "supplier": "AutomorphicSpectralTheory",
+      "section": "2.4–2.6 and Layer 4"
+    },
+    {
+      "slug": "speh-cusp-normalized-intertwiner",
+      "needs": "For a characteristic-zero local field, a unitary generic τ of GL_k, a unitary character θ and c′≥1, prove that the standard intertwiner M₂(s) from |det|^(s−1/2)ρ_(c′)(τ)×|det|^(−s−c′/2)θτ∨ to the induced representation in the opposite order, multiplied by L(2s+c′,τ×θ⁻¹τ)/L(2s,τ×θ⁻¹τ), is holomorphic for Re(s)>(1−c′)/4, extending the §2.3a normalized GL estimates to a Speh inducing block (CFK Lemma 4.3 and proof, pp.35–36; CFK lines 1576–1583).",
+      "supplier": "AutomorphicSpectralTheory",
+      "section": "2.3a and 2.5"
+    },
+    {
+      "slug": "twisted-square-normalizers",
+      "needs": "For a number field M, unitary cuspidal τ of GL_k(𝔸_M), unitary Hecke character χ and finite S containing infinity and all ramification, assume |det|^(it)(τ⊗(χ∘det))≇τ∨ for every real t; prove that both partial factors L^S(u,τ,Sym²⊗χ) and L^S(u,τ,∧²⊗χ) are holomorphic on Re(u)≥0, with ∧² of GL₁ interpreted as the zero representation and its L-factor as 1 (CFK proof of Theorem 4.8, p.40; CFK lines 1725–1729).",
+      "supplier": "AutomorphicSpectralTheory",
+      "section": "2.1–2.6 and Layer 4"
+    },
+    {
+      "slug": "hermitian-residual-support",
+      "needs": "For a nonzero square-integrable automorphic form whose cuspidal support lies in the Weyl orbit of a cuspidal datum (M,σ,λ), prove that this orbit also contains the Hermitian dual datum (M, conjugate contragredient of σ, −λ̄) (CFK proof of Theorem 4.1, p.37; CFK lines 1632–1638).",
+      "supplier": "AutomorphicSpectralTheory",
+      "section": "Layer 4"
+    },
+    {
+      "slug": "automorphic-constituent-support",
+      "needs": "From the §5.12 cuspidal-support decomposition, prove that every irreducible automorphic representation of a split connected reductive group over a number field is an irreducible subquotient of a normalized induction I_P(σ,λ) from a cuspidal representation σ of a standard Levi, with Re λ in the closed positive chamber (CFK Introduction, p.2; CFK lines 63–66).",
+      "supplier": "AutomorphicSpectralTheory",
+      "section": "5.12"
+    },
+    {
+      "slug": "gamma-supercuspidal-support",
+      "needs": "For irreducible Π,Π′ of GL_N(F), F nonarchimedean of characteristic zero and N≥2, with the canonical pair factors of §10.29, prove that γ(s,Π×ρ,ψ)=γ(s,Π′×ρ,ψ) for every supercuspidal ρ of GL_r(F), 1≤r≤N−1, implies that Π and Π′ have the same supercuspidal support (HEN02 Proposition 1.9, p.592, and its proof in §§5.2–5.3; HEN02 line 216).",
+      "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
+      "section": "10.29"
+    },
+    {
+      "slug": "nongeneric-pair-epsilon-character-change",
+      "needs": "For irreducible Π of GL_N(F), F nonarchimedean of characteristic zero, generic τ of GL_k(F), b∈F× and ψ_b(x)=ψ(bx), prove that the canonical pair ε-factors of §10.29 satisfy ε(s,Π×τ,ψ_b)=ω_Π(b)^k ω_τ(b)^N |b|^(Nk(s−1/2)) ε(s,Π×τ,ψ), where ω denotes central characters (CPS94 Lemma 2.1 and proof, pp.161–163, for induced representations of Whittaker type; CPS94 line 249).",
+      "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
+      "section": "10.29"
+    },
+    {
+      "slug": "arbitrary-character-unitary-doubling",
+      "needs": "For a characteristic-zero local field F, a quadratic étale algebra E/F, a nondegenerate Hermitian space V of positive rank and an irreducible admissible π of U(V), smooth at finite places and Casselman–Wallach at infinity, construct the §6.10a doubling integrals, their continuation, normalized functional equation, standard local factors, good-section gcd and unramified denominator for the Siegel induction from χ∘det twisted by |det|_E^s, for every continuous quasi-character χ of E× with no condition on its restriction to F×, and for cuspidal π over a number field and every Hecke character χ of 𝔸_E×/E× the completed standard function with its meromorphic continuation and functional equation, in the supplier's own parabolic convention.",
+      "supplier": "MetaplecticAutomorphicForms",
+      "section": "6.10a and 6.11"
     }
   ],
   "sourceIssues": [

@@ -46,14 +46,12 @@
  ],
  "gaps": [
   {
-   "id": "SchemeKTheoryOperationsPartII/G1",
-   "title": "General proper formal coherent higher direct images",
-   "detail": "For an adic proper finite-type morphism p : X′ → X of locally noetherian formal schemes and coherent F, every R^q p_* F is coherent, the system of higher direct images on reductions is Mittag–Leffler, and R^q p_*F ≅ lim_n R^q(p_n)_*(F_n) (EGA III₁ (3.4.2)–(3.4.3), pp. 119–120). Include H^q(Spf B,M^Δ)=0 for q>0 and finite B-modules M (the affine case), so finite affine Čech covers of separated noetherian formal schemes give a uniform finite cohomological bound. Owned upstream by AdicSpacesPartIII F0, PR #813; no existing atlas node supplies this general statement. No unsupported relative fibre-dimension bound is requested.",
-   "neededBy": [
-    "SchemeKTheoryOperationsPartII:FK.4/proper-pushforward-projection"
-   ]
+    "slug": "proper-formal-coherent-direct-images",
+    "needs": "For an adic proper finite-type morphism p of locally noetherian formal schemes, a target ideal of definition I and coherent F, provide coherent Rᵠp_*F with its canonical inverse-limit comparison for the reductions F/(I𝒪_{X′})ⁿ⁺¹F and the Mittag–Leffler assertion on every noetherian target open.",
+    "supplier": "AdicSpacesPartIII",
+    "section": "F0.6 (general proper formal coherent direct images)"
   }
- ],
+],
  "sourceIssues": [
   {
    "id": "SchemeKTheoryOperationsPartII/E1",

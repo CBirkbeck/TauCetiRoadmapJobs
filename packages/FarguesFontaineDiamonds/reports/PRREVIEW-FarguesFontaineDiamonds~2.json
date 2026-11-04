@@ -1,0 +1,4 @@
+{"review": {"status": "needs_changes", "reviewer": "independent-review-PRREVIEW-FarguesFontaineDiamonds~2",
+            "head": "d18392db352fd9622223f123df639c63cf557318", "pr": 964, "folder": "FarguesFontaineDiamonds", "date": "2026-10-29",
+            "findings": 3, "blocking": 1,
+            "notes": "Full re-review of the repaired head. Previous R01 (three DiamondEtaleCohomology names etTensor, push_globalSections, push_limits absent at #922) not repaired: P1. Previous R05 (no sources.toml) not repaired: P3. R02-R04, R06, R07 repaired. Gate OK; depcheck 201 roadmaps, 1311 edges, 0 problems; Suggested.lean elaborates with no declarations; 37 cited library names #check at the pins. All ten API blocks checked against FS, SW, ECD, KL at their locators; 47 adversarial rows with computed values; every supplier citation resolved on main or at the open head."}}

@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-SmoothRepresentationsOfLocalGroups~3",
+    "head": "097023f2f2619463c45278502659080307011353",
+    "pr": 1688,
+    "folder": "SmoothRepresentationsOfLocalGroups",
+    "date": "2026-11-02",
+    "findings": 7,
+    "blocking": 4,
+    "notes": "Reviewed all 173 named targets and 24 named Lean declarations plus the point-topology instance; compared all nine previous findings. Recorded computed adversarial rows for all targets. Read all 15 seeded source targets (LTXZZ in arXiv v3; published pages unverified); attempted all 40 works, 36 readable, three paywalled and Mac unavailable. Gate FAIL: tex=5, residue=8, build=1 (non-sorry module-system warning); targeted build succeeds with that warning, direct Lean elaboration succeeds with 11 sorry warnings. Dependency check: 205 roadmaps, 1504 edges, 0 problems. PR files unchanged."
+  }
+}

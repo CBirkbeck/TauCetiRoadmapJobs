@@ -1,0 +1,20 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "HilbertModularForms"
+
+[[source]]
+id = "dasgupta-kakde"
+authors = "Samit Dasgupta, Mahesh Kakde"
+title = "On Constant Terms of Eisenstein Series"
+year = 2020
+arxiv = "2010.00650v1"
+locator_scheme = "theorem"
+locator = "Theorem 4.5"
+url = "https://arxiv.org/abs/2010.00650v1"
+fetched_from = "https://arxiv.org/pdf/2010.00650v1"
+fetched_at = "2026-11-03T08:52:02Z"
+sha256 = "eb0bfdab63f56d653f302209fc92f2d81cc0894430ef88a7bbf2a2f830783d1d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+version_note = "arXiv v1"
+cited_for = ["4.2"]

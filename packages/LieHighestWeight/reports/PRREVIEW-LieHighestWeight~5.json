@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-LieHighestWeight~5",
+    "head": "b469a66d2d5e477685b59d7b69d4685cd2fb4165",
+    "pr": 1220,
+    "folder": "RepresentationTheory/LieHighestWeight",
+    "date": "2026-11-02",
+    "findings": 4,
+    "blocking": 2,
+    "notes": "Full review; seven previous findings audited; eleven seeded targets checked against accessible legal sources, unavailable locators listed. Passing worker gate; independent targeted build and direct Lean elaboration; 121 elaborated signatures; 55 admitted-theorem padding probes; 160 computed adversarial rows. Dependency check: 204 roadmaps, 1592 edges, 0 problems. Remaining blockers: four unregistered supplier gaps and admitted tensor data."
+  }
+}

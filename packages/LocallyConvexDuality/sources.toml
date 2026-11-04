@@ -1,0 +1,94 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "LocallyConvexDuality"
+
+[[source]]
+id = "bourbaki1950"
+locator_scheme = "page"
+locator = "p. 6"
+url = "https://aif.centre-mersenne.org/item/10.5802/aif.16.pdf"
+fetched_from = "https://aif.centre-mersenne.org/item/10.5802/aif.16.pdf"
+fetched_at = "2026-11-04T01:12:51Z"
+sha256 = "2c0248d634b4bf02df16c4c1ff9753f0e8a825ad7bb32f9ce4a373e27195c06f"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["0.1"]
+
+[[source]]
+id = "ds1949"
+locator_scheme = "page"
+locator = "p. 64"
+url = "https://aif.centre-mersenne.org/item/10.5802/aif.8.pdf"
+fetched_from = "https://aif.centre-mersenne.org/item/10.5802/aif.8.pdf"
+fetched_at = "2026-11-04T01:12:52Z"
+sha256 = "cdb25a0f8b9ef484ee39785ac60554268054e422aaf7bef65ad8337ab2c9bd5d"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["2.1"]
+
+[[source]]
+id = "grothendieck1952"
+locator_scheme = "theorem"
+locator = "Théorème 1"
+url = "https://aif.centre-mersenne.org/item/10.5802/aif.46.pdf"
+fetched_from = "https://aif.centre-mersenne.org/item/10.5802/aif.46.pdf"
+fetched_at = "2026-11-04T01:12:54Z"
+sha256 = "c468fd353a5c72b3b693cf82a26bbe6c868811b2bd16820eb15d0a2ebfa0d078"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["5.2"]
+
+[[source]]
+id = "pietsch1972"
+authors = "Albrecht Pietsch"
+title = "Nuclear Locally Convex Spaces"
+year = 1972
+doi = "10.1007/978-3-642-87665-3"
+locator_scheme = "chapter"
+locator = "Chapter 5"
+url = "https://doi.org/10.1007/978-3-642-87665-3"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["5.4"]
+
+[[source]]
+id = "mackey1946"
+locator_scheme = "theorem"
+locator = "Theorem 10"
+url = "https://www.ams.org/journals/tran/1946-060-00/S0002-9947-1946-0020214-4/S0002-9947-1946-0020214-4.pdf"
+fetched_from = "https://www.ams.org/journals/tran/1946-060-00/S0002-9947-1946-0020214-4/S0002-9947-1946-0020214-4.pdf"
+fetched_at = "2026-11-04T01:14:06Z"
+sha256 = "ca31a5e038baeb43714bcda3ac53e4df63c3629b43410bb450ad4a3d40c79268"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["1.2"]
+
+[[source]]
+id = "grothendieck1954"
+locator_scheme = "section"
+locator = "Part I"
+url = "https://www.mathnet.ru/eng/mat54"
+fetched_from = "https://www.mathnet.ru/php/archive.phtml?wshow=paper&jrnid=mat&paperid=54&option_lang=eng"
+fetched_at = "2026-11-04T01:23:46Z"
+sha256 = "e8e75d9ef66c29c27534923c12721e04b02f54507f4c0bac360b0e91e7f30ad8"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["4.1"]
+
+[[source]]
+id = "dierolf-roelcke1981"
+locator_scheme = "theorem"
+locator = "Proposition 3.8"
+url = "https://eudml.org/doc/41814"
+fetched_from = "https://eudml.org/doc/41814"
+fetched_at = "2026-11-04T01:24:27Z"
+sha256 = "4c1a02eac6aee13e2ca33f13f4dd46ae8602a08b120d5cb1446ff477e13a185c"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["5.4"]

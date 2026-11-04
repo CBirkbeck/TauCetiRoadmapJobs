@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-AbelianVarietiesOverFiniteFields~1",
+    "head": "da7f7cdae6216d4372b641d176f0bfa9182f5696",
+    "pr": 1720,
+    "folder": "AbelianVarietiesOverFiniteFields",
+    "date": "2026-11-02",
+    "findings": 25,
+    "blocking": 21,
+    "notes": "Full-folder read-only review; all 15 seeded source targets inspected with legal-source limitations recorded. Worker gate fails build=1 (module-system warning), all other counters zero. Direct Lean elaboration and all 59 real declaration signature checks pass with sorry warnings; 21 one-tactic probes and a successful exact base-change probe recorded. Native Waterhouse headline elaborated. Mechanical dependency check: 204 roadmaps, 1561 edges, 0 problems; manual open-head audit found a two-folder supply cycle. Computed adversarial tables include all 59 declarations, all sampled targets and headline controls, plus 24 abelian and 24 virtual-curve counts. No PR files changed; source exceptions and errata recorded."
+  }
+}

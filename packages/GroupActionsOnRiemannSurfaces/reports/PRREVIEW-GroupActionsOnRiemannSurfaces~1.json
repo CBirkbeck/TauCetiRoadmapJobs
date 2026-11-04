@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-GroupActionsOnRiemannSurfaces~1",
+    "head": "91eac5a80b03ba7d725b1b9075c40add5ccd5af0",
+    "pr": 1728,
+    "folder": "GroupActionsOnRiemannSurfaces",
+    "date": "2026-11-03",
+    "findings": 22,
+    "blocking": 19,
+    "notes": "Full review: 48 numbered targets, 49 elaborated signatures, all 15 seeded source targets, all 17 reference resources attempted, 19 Singerman arithmetic rows, independent finite-group counts, ownership and supplier audit. Worker gate fails build module warning; direct original and module-header scratch elaborations succeed with 18 sorry warnings. Depcheck: 204 roadmaps, 1617 edges, 0 problems. Mathematical counterexamples and unavailable sources are documented; PR files unchanged."
+  }
+}

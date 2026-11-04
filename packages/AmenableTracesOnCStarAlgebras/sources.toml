@@ -1,0 +1,120 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "AmenableTracesOnCStarAlgebras"
+
+[[source]]
+id = "connes1976"
+authors = "A. Connes"
+title = "Classification of Injective Factors Cases II 1 , II ∞ , III λ , λ � 1"
+year = 1976
+doi = "10.2307/1971057"
+locator_scheme = "theorem"
+locator = "Theorem 5.1"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/5997#issuecomment-6632505102"
+
+[[source]]
+id = "brown-ozawa2008"
+authors = "Nathanial Brown, Narutaka Ozawa"
+title = "𝐶*-Algebras and Finite-Dimensional Approximations"
+year = 2008
+doi = "10.1090/gsm/088"
+locator_scheme = "chapter"
+locator = "Ch. 6–7"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/5997#issuecomment-6632505102"
+
+[[source]]
+id = "paulsen2002"
+authors = "Vern Paulsen"
+title = "Completely Bounded Maps and Operator Algebras"
+year = 2003
+doi = "10.1017/CBO9780511546631"
+locator_scheme = "chapter"
+locator = "Ch. 3"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/5997#issuecomment-6632505102"
+
+[[source]]
+id = "pedersen2018"
+authors = "G. K. Pedersen"
+title = "G. K. Pedersen, C*-Algebras and Their Automorphism Groups, 2nd ed., 2018"
+year = 2018
+locator_scheme = "chapter"
+locator = "Ch. 3, 5"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/5997#issuecomment-6632505102"
+
+[[source]]
+id = "brown2006"
+authors = "Nathanial P. Brown"
+title = "Invariant means and finite representation theory of C*-algebras"
+year = 2003
+arxiv = "math/0304009v2"
+locator_scheme = "theorem"
+locator = "Theorem 3.1.6"
+url = "https://arxiv.org/abs/math/0304009v2"
+fetched_from = "https://arxiv.org/pdf/math/0304009v2"
+fetched_at = "2026-11-04T14:15:12Z"
+sha256 = "deeb9514ecd39b8877aadc0b3784d0a6ec2a7740aa812449eeec512fc0321098"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v2"
+cited_for = ["amenable traces"]
+
+[[source]]
+id = "schafhauser2020"
+authors = "Christopher Schafhauser"
+title = "Subalgebras of simple AF-algebras"
+year = 2018
+arxiv = "1807.07381v2"
+locator_scheme = "theorem"
+locator = "Theorem A"
+url = "https://arxiv.org/abs/1807.07381v2"
+fetched_from = "https://arxiv.org/pdf/1807.07381v2"
+fetched_at = "2026-11-04T14:15:17Z"
+sha256 = "45d774061580bfa6b6c9521da9c42dd8fba85fa12013f7aabc6f0da168d91cf2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v2"
+cited_for = ["AF embedding"]
+
+[[source]]
+id = "tikuisis-white-winter2017"
+authors = "Aaron Tikuisis, Stuart White, Wilhelm Winter"
+title = "Quasidiagonality of nuclear C*-algebras"
+year = 2015
+venue = "Ann. of Math. (2), 185:229-284, 2017"
+doi = "10.4007/annals.2017.185.1.4"
+arxiv = "1509.08318v2"
+locator_scheme = "section"
+locator = "§1"
+url = "https://arxiv.org/abs/1509.08318v2"
+fetched_from = "https://arxiv.org/pdf/1509.08318v2"
+fetched_at = "2026-11-04T14:15:23Z"
+sha256 = "e4dc7284b4938c26fc3769bcfa2fdc1006313c2a58f226c78c49f81ff52c2d79"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v2"
+cited_for = ["quasidiagonal traces"]
+
+[[source]]
+id = "kirchberg1993"
+authors = "Eberhard Kirchberg"
+title = "On non-semisplit extensions, tensor products and exactness of groupC *-algebras"
+year = 1993
+venue = "Inventiones Mathematicae 112"
+doi = "10.1007/BF01232444"
+locator_scheme = "section"
+locator = "§3"
+url = "https://doi.org/10.1007/BF01232444"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["amenable traces on exact algebras"]

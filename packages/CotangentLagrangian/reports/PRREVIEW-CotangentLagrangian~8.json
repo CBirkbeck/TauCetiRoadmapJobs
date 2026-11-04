@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-CotangentLagrangian~8",
+    "head": "d9c6241ddf3eee896a30005868f0acdaf7a72244",
+    "pr": 1651,
+    "folder": "SymplecticGeometry/CotangentLagrangian",
+    "date": "2026-11-03",
+    "findings": 1,
+    "blocking": 1,
+    "notes": "incremental re-review of 0 changed lines since 319049e; the only change in the pull request is ConvexityToric/README.md (LieGroups Layer 1 supplier line and an SU(2) bracket Check, verified, not consumed here). Previous R01 persists: HamiltonianReduction/Suggested.lean:76 on main still applies the deleted canonicalForm (as-is probe exit 1 at 76:39; restated sigma/hsigma/hchart header exit 0). Checked: worker gate OK; literal gate all content counters 0 with six authorized sibling-file outside-folder lines; depcheck 205 roadmaps, 1618 edges, 0 problems; lake env lean exit 0 with eight sorry warnings; 14-declaration #check identical to the previous round; one-tactic padding probe closes nothing; five seeded Cannas da Silva locators reopened at cache lines 1300, 1320/1355, 1361, 1420, 1845/1875/2107; 53 adversarial rows carried with values plus 2 fresh rows."
+  }
+}

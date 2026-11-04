@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-SemisimpleAlgebras~6",
+    "head": "0fbb5b6d16f3db45a5feba2a008e91bec05f2a69",
+    "pr": 989,
+    "folder": "RepresentationTheory/SemisimpleAlgebras",
+    "date": "2026-10-30",
+    "findings": 1,
+    "blocking": 1,
+    "notes": "incremental re-review of 0 changed lines since 08635df; the only change deletes the family-index Lean file, which repairs the previous P3. Standalone gate text scanners and depcheck pass (204 roadmaps, 1392 edges, 0 problems). The targeted build fails as the worker's did: 26 errors in TauCetiRoadmap/QuadraticFormInvariants/Suggested.lean, which on main consumes this module's IsSplittingField and Brauer-group CommGroup instance; this head dropped both (P1 R01). Repair tested in scratch: import TauCeti.Algebra.BrauerGroup.Group and TauCeti.Algebra.CentralSimple.Splitting and export TauCeti.Algebra (IsSplittingField) in the namespace gives 0 errors on the consumer. Stacks tags of the fifteen sampled sections spot-checked at the cache; 41 adversarial rows carried, 3 fresh."
+  }
+}

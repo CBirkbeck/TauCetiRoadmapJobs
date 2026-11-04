@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "accepted",
+    "reviewer": "independent-review-PRREVIEW-GroupActionsOnRiemannSurfaces~3",
+    "head": "bb14724abc38b8d5e1530ee6566207aa54cdc777",
+    "pr": 1728,
+    "folder": "GroupActionsOnRiemannSurfaces",
+    "date": "2026-11-03",
+    "findings": 0,
+    "blocking": 0,
+    "notes": "Incremental re-review of 129 changed lines since 6a36121. All five previous findings (R01 Wiman route, R02 triangle converse, R03 IG names, R04 locators, R05 BelyiMaps ownership) verified repaired with no new problem. Repaired Wiman route proved by hand and enumerated: 54,684 Harvey-admissible hyperbolic cyclic cases (n<=36, h<=3, r<=8), 0 violations of mu >= 1/2 - 3/n, equality exactly at (2,n/2,n) with n = 4g+2, sole r=4 exception (0;2,2,3,3) at n=6; Harvey predicate matched brute force on n<=12 with 0 mismatches. Changed locators checked in cached Breuer excerpt, Bujalance-Cirre-Conder (printed = file page + 1536), Lange-Recillas v2 and Swinarski v1; the six sampled targets the diff touches (0.7, 1.2, 3.3, 4.2, 5.3, 7.1) verified. Supplier citations resolved: IG.3.2/IG.5.2 headings at the open head, MLV 8.11, ModularForms 10B and FuchsianOrbifolds Layer 5 item 2 on main, pinned ofMDifferentiable and orderTriple. Recorded gate passes; independent elaboration exits 0 with nine sorry warnings; Lean byte-identical to r2 head; depcheck 204 roadmaps, 1641 edges, 0 problems; diff outside the folder empty. Worktree unchanged."
+  }
+}

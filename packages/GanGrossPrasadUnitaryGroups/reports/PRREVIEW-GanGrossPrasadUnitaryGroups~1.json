@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-GanGrossPrasadUnitaryGroups~1",
+    "head": "f802dd1111a4f8e8033985e68da803af9493840f",
+    "pr": 1404,
+    "folder": "GanGrossPrasadUnitaryGroups",
+    "date": "2026-10-30",
+    "findings": 5,
+    "blocking": 1,
+    "notes": "Gate: worker's gate passes (build=0); scanners rerun OK; depcheck 204 roadmaps, 1392 edges, 0 problems; lake env lean of Suggested.lean at the pins exits 0 (file declares nothing; docstring's not-statable claims checked against Mathlib 6b7abb3c and Tau Ceti a91d3aaf). Sample: 15 seeded targets (2.1, 2.7, 3.1, 3.7, 3.8, 3.9, 3.10, 5.1a, 5.2, 5.4, 5.5, 6.1, 6.2, 7.1, 7.4) verified at their cited lines in ggp, xue-real, harris, bpcz, bp-refined, bp-arch, zhang-period, bernstein-zelevinsky, bplzz, plus bp-unitary-tempered, agrs, sun-zhu, jsz-bessel, bp-plancherel, ag-descent, bp-fundamental for the adversarial pass; bpc-bessel and kmsw fetched legally and verified (missing from the manifest: R05). 23 pinned declarations opened; all supplier sections resolved at main/open heads. Blocking: R01 (P2) ExtendedUnitaryPacket and UnitaryClassificationInputs cited as EndoscopicTransferAndUnitaryTraceComparison declarations that do not exist. P3: plan.json gap suppliers differ from README for four slugs; AutomorphicLFunctions targets cited by nonexistent anchors; RG2.4 label; manifest keys. Adversarial table: 52 rows with computed values, no false statement found."
+  }
+}

@@ -1,0 +1,92 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "GlaubermanZStar"
+
+[[source]]
+id = "glauberman1966"
+authors = "George Glauberman"
+title = "Central elements in core-free groups"
+year = 1966
+venue = "Journal of Algebra 4"
+doi = "10.1016/0021-8693(66)90030-5"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://doi.org/10.1016/0021-8693(66)90030-5"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Z0, Z5"]
+
+[[source]]
+id = "brauer_suzuki1959"
+locator_scheme = "page"
+locator = "1757"
+url = "https://pmc.ncbi.nlm.nih.gov/articles/instance/222795/pdf/pnas00199-0111.pdf"
+fetched_from = "https://pmc.ncbi.nlm.nih.gov/articles/instance/222795/pdf/pnas00199-0111.pdf"
+fetched_at = "2026-11-03T13:30:31Z"
+sha256 = "016497422b9b10e35d5d03828713a9daf08a37073af6bfe119bdc7b3e81e1e31"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["Z2"]
+
+[[source]]
+id = "suzuki1986"
+authors = "Michio Suzuki"
+title = "Group Theory II"
+year = 1986
+venue = "Grundlehren der mathematischen Wissenschaften"
+doi = "10.1007/978-3-642-86885-6"
+locator_scheme = "section"
+locator = "Chapter VI, §2.2, Example 3"
+url = "https://doi.org/10.1007/978-3-642-86885-6"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 2"]
+
+[[source]]
+id = "waldecker2013"
+locator_scheme = "theorem"
+locator = "Lemma 3.1"
+url = "https://www2.mathematik.uni-halle.de/waldecker/Waldecker-Isolated-Involutions.pdf"
+fetched_from = "https://www2.mathematik.uni-halle.de/waldecker/Waldecker-Isolated-Involutions.pdf"
+fetched_at = "2026-11-03T13:59:35Z"
+sha256 = "acbd9ab7e90d4587aef02846bd6826bb418e3a33e3c80a6f2aff786928841e87"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["Layers 0, 1, 5"]
+
+[[source]]
+id = "guralnick_tongviet_tracey2024"
+authors = "Robert M. Guralnick, Hung P. Tong-Viet, Gareth Tracey"
+title = "Weakly subnormal subgroups and variations of the Baer-Suzuki theorem"
+year = 2024
+arxiv = "2402.00804v1"
+locator_scheme = "theorem"
+locator = "Theorem 5.1"
+url = "https://arxiv.org/abs/2402.00804v1"
+fetched_from = "https://arxiv.org/pdf/2402.00804v1"
+fetched_at = "2026-11-03T13:59:39Z"
+sha256 = "2b22b7de0469d840a29734e7d82704a85132896be6ddeeeeba538e17c269d5bd"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+version_note = "arXiv v1"
+cited_for = ["Layers 0, 1"]
+
+[[source]]
+id = "axiommath_cfsg_example3"
+authors = "AxiomMath CFSG project (Qiuzhen-CFSG third-party module)"
+title = "Lean formalization of Suzuki, Group Theory II, Chapter VI, Section 2.2, Example 3 (Brauer-Suzuki theorem)"
+version_note = "Apache-2.0 Lean source; cited as prior art for the stage structure of 2.5, not as a mathematical source"
+locator_scheme = "section"
+locator = "CFSG/ThirdParty/QiuzhenCFSG/BenderSuzuki/External/Suzuki/VI/section_2_2/example_3.lean at commit 69cb972f"
+url = "https://raw.githubusercontent.com/AxiomMath/CFSG/69cb972f587a3ecc035e092253167ff2e303c962/CFSG/ThirdParty/QiuzhenCFSG/BenderSuzuki/External/Suzuki/VI/section_2_2/example_3.lean"
+fetched_from = "https://raw.githubusercontent.com/AxiomMath/CFSG/69cb972f587a3ecc035e092253167ff2e303c962/CFSG/ThirdParty/QiuzhenCFSG/BenderSuzuki/External/Suzuki/VI/section_2_2/example_3.lean"
+fetched_at = "2026-11-03T16:44:49Z"
+sha256 = "de38367f01476c0851745fc3c7e20e8b091c22a0eb4067878cba41acc5f3fcb1"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["2.5, References"]

@@ -1,0 +1,54 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ComplexKahlerGeometry"
+
+[[source]]
+id = "ballmann-kahler"
+locator_scheme = "theorem"
+locator = "Theorem 4.17"
+url = "https://people.maths.ox.ac.uk/joyce/Nairobi2019/BallmannKahlerManifolds.pdf"
+fetched_from = "https://people.maths.ox.ac.uk/joyce/Nairobi2019/BallmannKahlerManifolds.pdf"
+fetched_at = "2026-11-03T14:31:06Z"
+sha256 = "e5f480631a0646f6161dfd0428f100b75edd84403ecccf238fe8259ba67d2b30"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["K6.0"]
+
+[[source]]
+id = "berwick-evans-tripathy"
+locator_scheme = "section"
+locator = "Remark 2.1"
+url = "https://par.nsf.gov/servlets/purl/10339859"
+fetched_from = "https://par.nsf.gov/servlets/purl/10339859"
+fetched_at = "2026-11-03T14:31:42Z"
+sha256 = "e2f4c8035a3fc2d77e0ccc76c44a835a30cff3e567dca88a5ad8d909e928b19b"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["K7.FlatDegreeZero"]
+
+[[source]]
+id = "knutson-borel-weil"
+locator_scheme = "page"
+locator = "p. 1"
+url = "https://pi.math.cornell.edu/~allenk/courses/16spring/BorelWeil.pdf"
+fetched_from = "https://pi.math.cornell.edu/~allenk/courses/16spring/BorelWeil.pdf"
+fetched_at = "2026-11-03T14:50:38Z"
+sha256 = "403e63595bb824bc5638f7738739a9524798847cc0d8ce723c96c7ca9223ef42"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["K7.2.TautologicalIncidence"]
+
+[[source]]
+id = "lojasiewicz-triangulation"
+locator_scheme = "theorem"
+locator = "§3, Theorem 2, p. 464"
+url = "http://www.numdam.org/item/ASNSP_1964_3_18_4_449_0/"
+fetched_from = "https://www.numdam.org/item/ASNSP_1964_3_18_4_449_0.pdf"
+fetched_at = "2026-11-03T14:50:41Z"
+sha256 = "5efc756a499a43f542f782a0fa565d30e9adf083786f8e778a8133bd55a8f203"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-03"
+cited_for = ["K6.1"]

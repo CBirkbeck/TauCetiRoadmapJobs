@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-GlobalShtukasAndFunctionFieldLanglands~4",
+    "head": "c0563df9ed77a4932f6d8636a4f2424d7d2a7e75",
+    "pr": 1490,
+    "folder": "GlobalShtukasAndFunctionFieldLanglands",
+    "date": "2026-11-03",
+    "findings": 2,
+    "blocking": 1,
+    "notes": "incremental re-review of 42 changed lines since 6efb589; checked all four previous findings, changed supplier citations, Satake\u2013Picard definitions and Eisenstein consumers; reopened seeded \u00a71.1 and carried unchanged sampled/headline computations from review 3; 21 fresh and 101 carried adversarial rows; gate, dependency check, targeted build and direct Lean elaboration passed. Redundant package gaps remain; Sp, Harder and YZ-I remain absent from sources.toml."
+  }
+}

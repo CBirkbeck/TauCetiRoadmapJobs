@@ -1,0 +1,20 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ReductiveGroups"
+
+[[source]]
+id = "mcninch"
+authors = "George J. McNinch"
+title = "Levi decompositions of a linear algebraic group"
+year = 2010
+arxiv = "1007.2777v1"
+locator_scheme = "section"
+locator = "§§4.3–4.5"
+url = "https://arxiv.org/abs/1007.2777v1"
+fetched_from = "https://arxiv.org/pdf/1007.2777v1"
+fetched_at = "2026-11-04T05:51:56Z"
+sha256 = "b22e993252f0a2aa9ed6cddac2ea405959391b57926fdac4bb4e7bea78451d3f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v1"
+cited_for = ["6A"]

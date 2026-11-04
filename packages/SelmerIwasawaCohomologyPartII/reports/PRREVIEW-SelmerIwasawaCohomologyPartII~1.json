@@ -1,0 +1,13 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SelmerIwasawaCohomologyPartII~1",
+  "head": "8b21886b6724e24a546150b0bbab392a2260a7b4",
+  "pr": 1403,
+  "folder": "SelmerIwasawaCohomologyPartII",
+  "date": "2026-10-30",
+  "findings": 5,
+  "blocking": 1,
+  "notes": "Full review. Seeded sample of 15 targets (1.5, 2.1, 2.4, 2.5, 2.6, 3.5, 4.4, 4.5, 5.3, 5.5, 6.3, 7.2, 7.4, 8.2, 8.5) verified at the cited lines of ltxzz, ltxzz-published, ltxzz-deformation, liu-tian and the two Stacks chapters; adversarial table of 48 rows with computed values; 35 pinned Mathlib/Tau Ceti declarations opened at the pins; every cross-roadmap citation resolved at the supplier heads (24 suppliers); 21 declared gaps match plan.json slug for slug and none asks for what a supplier already provides; depcheck 0 problems, roadmap at merge-order line 359 after all suppliers; ownership checked by object across all 423 open pull requests and main. Gate: the worker's run at this head has every text scanner 0 and build=4 FAIL; my rerun without the build is OK, my rerun with --build is build=33 FAIL, every error a missing pinned Mathlib object file in the shared Lake packages directory, which concurrent jobs flipped to another Mathlib revision during the build; lake env lean of Suggested.lean fails the same way. One P1 finding (R01): no acceptance while the gate's build fails at this head; the file declares nothing and needs no change for it. Four P3 notes: four SelmerIwasawaCohomology declaration names and three EndoscopicTransfer names (S_pf, not S_FL) that do not exist at the supplier heads although the cited sections do; gap rigid-r-equals-t declared on a supplier whose scope disclaims R=T; Layer 1 numbering starts at 1.5. Four source issues recorded (ltxzz Lemma 5.11.3 trivial-bundle error, Notation 5.11.1 misprint, Lemma 2.3.5 coefficient-twist gap, Lemma 2.6.4 lifting gap). Once the build passes at this head the verdict is acceptance conditional on the 21 declared gaps."
+ }
+}

@@ -24,3 +24,18 @@ locator = "Corollary 2.2"
 licence_class = "none"
 status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/464#issuecomment-6399305038"
+
+[[source]]
+id = "Kottwitz90"
+authors = "Robert E. Kottwitz"
+title = "Shimura varieties and λ-adic representations"
+year = 1990
+locator_scheme = "page"
+url = "https://www.jmilne.org/math/Books/AA1988a.pdf"
+fetched_from = "https://www.jmilne.org/math/Books/AA1988a.pdf"
+fetched_at = "2026-11-04T16:23:27Z"
+sha256 = "ed6ec30fc1f53f7c8ac4276ef449e1cad3ab42457bf5b7ee90a33413345ff96c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/2542#issuecomment-6632677872"

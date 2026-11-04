@@ -1,0 +1,304 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "SiegelModularForms"
+
+[[source]]
+id = "mizumoto1991"
+authors = "Kari Astala, Michel Zinsmeister"
+title = "Teichm�ller spaces and BMOA"
+year = 1991
+venue = "Mathematische Annalen 289"
+doi = "10.1007/BF01446592"
+locator_scheme = "theorem"
+locator = "Theorem"
+url = "https://doi.org/10.1007/BF01446592"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["8.3"]
+
+[[source]]
+id = "weissauer2009"
+authors = "Rainer Weissauer"
+title = "Endoscopy for GSp(4) and the Cohomology of Siegel Modular Threefolds"
+year = 2009
+venue = "Lecture Notes in Mathematics"
+doi = "10.1007/978-3-540-89306-6"
+locator_scheme = "chapter"
+locator = "Theorem I"
+url = "https://doi.org/10.1007/978-3-540-89306-6"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["8.2"]
+
+[[source]]
+id = "vdg"
+authors = "Gerard van der Geer"
+title = "Siegel Modular Forms"
+year = 2006
+arxiv = "math/0605346v2"
+locator_scheme = "section"
+locator = "§20"
+url = "https://arxiv.org/abs/math/0605346v2"
+fetched_from = "https://arxiv.org/pdf/math/0605346v2"
+fetched_at = "2026-11-04T07:02:33Z"
+sha256 = "d6047e0055bcfc3c0717563ceb5f39c1ac815e0a3511b1b24eec8b916a3636e8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v2"
+cited_for = ["8.3"]
+
+[[source]]
+id = "arakawa1983"
+authors = "Andrew Bremner, Patrick Morton"
+title = "A new characterization of the integer 5906"
+year = 1983
+venue = "Manuscripta Mathematica 44"
+doi = "10.1007/BF01166081"
+locator_scheme = "theorem"
+locator = "Theorem p. 157"
+url = "https://doi.org/10.1007/BF01166081"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["8.3"]
+
+[[source]]
+id = "cvdgg2015"
+authors = "Fabien Cléry, Gerard van der Geer, Samuel Grushevsky"
+title = "Siegel modular forms of genus 2 and level 2"
+year = 2013
+arxiv = "1306.6018v2"
+locator_scheme = "theorem"
+locator = "Theorem 12.1"
+url = "https://arxiv.org/abs/1306.6018v2"
+fetched_from = "https://arxiv.org/pdf/1306.6018v2"
+fetched_at = "2026-11-04T07:02:50Z"
+sha256 = "76a9949edf7a2449a42714dde97b59920a14f837160daf09a82506f5154778e5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v2"
+cited_for = ["6.5"]
+
+[[source]]
+id = "hayashi2013"
+authors = "Shuichi Hayashida"
+title = "On the spinor L-function of Miyawaki-Ikeda lifts"
+year = 2013
+doi = "10.1142/S1793042113500930"
+arxiv = "1305.1076v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/1305.1076v1"
+fetched_from = "https://arxiv.org/pdf/1305.1076v1"
+fetched_at = "2026-11-04T07:02:55Z"
+sha256 = "dc9d6f29276b1ac24d66d65ddd69723721e3ec4488cb3557a4b562130e108d9e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v1"
+cited_for = ["9.8"]
+
+[[source]]
+id = "gelbartjacquet1978"
+locator_scheme = "theorem"
+locator = "Theorem 9.3"
+url = "http://www.numdam.org/item/ASENS_1978_4_11_4_471_0/"
+fetched_from = "https://www.numdam.org/item/ASENS_1978_4_11_4_471_0.pdf"
+fetched_at = "2026-11-04T07:02:56Z"
+sha256 = "319347503f91fe22bec22ce7519b9ebaf09921ec4de8756c51d155864b4fc16a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["8.3"]
+
+[[source]]
+id = "pooryuen2015"
+authors = "Cris Poor, David S. Yuen"
+title = "Paramodular Cusp Forms"
+year = 2009
+arxiv = "0912.0049v1"
+locator_scheme = "theorem"
+locator = "Theorem 3.1"
+url = "https://arxiv.org/abs/0912.0049v1"
+fetched_from = "https://arxiv.org/pdf/0912.0049v1"
+fetched_at = "2026-11-04T07:03:02Z"
+sha256 = "ab4e6b27b019786bab300cb0dd0690c95dca3609f74e0bbaa4f1deb055a98a5b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v1"
+cited_for = ["10.1"]
+
+[[source]]
+id = "satoh1986"
+authors = "Robert E. Gompf"
+title = "An exotic orientable 4-manifold"
+year = 1986
+venue = "Mathematische Annalen 274"
+doi = "10.1007/BF01457068"
+locator_scheme = "theorem"
+locator = "Theorem 2.2"
+url = "https://doi.org/10.1007/BF01457068"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["6.4"]
+
+[[source]]
+id = "bfvdg2008"
+authors = "Jonas Bergström, Carel Faber, Gerard van der Geer"
+title = "Siegel modular forms of genus 2 and level 2: cohomological computations and conjectures"
+year = 2008
+arxiv = "0803.0917v2"
+locator_scheme = "theorem"
+locator = "Conjectures 6.2, 7.1, 7.4, 7.6"
+url = "https://arxiv.org/abs/0803.0917v2"
+fetched_from = "https://arxiv.org/pdf/0803.0917v2"
+fetched_at = "2026-11-04T07:03:13Z"
+sha256 = "f6294c69e2cafe16b4b0dc1ba1692a46813ba6e467e546aa548442d1a4f2a19e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v2"
+cited_for = ["6.5"]
+
+[[source]]
+id = "ez1983"
+locator_scheme = "theorem"
+locator = "Theorem 2.1, Theorem 6.2"
+url = "https://archive.mpim-bonn.mpg.de/id/eprint/1437/1/preprint_1983_8.pdf"
+fetched_from = "https://archive.mpim-bonn.mpg.de/id/eprint/1437/1/preprint_1983_8.pdf"
+fetched_at = "2026-11-04T07:09:06Z"
+sha256 = "1c2c17510cdb6e24ea709cd8cd74d2f2dff18d4a0306ba8f8f2ef5fa897d5272"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["4.2"]
+
+[[source]]
+id = "ikeda2006"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://www.math.kyoto-u.ac.jp/~ikeda/miyawaki.pdf"
+fetched_from = "https://www.math.kyoto-u.ac.jp/~ikeda/miyawaki.pdf"
+fetched_at = "2026-11-04T07:11:51Z"
+sha256 = "542c0608c71a98d8bd001c136608e74d5d0193184c6f4072dd6e7c69f8e10514"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["9.8"]
+
+[[source]]
+id = "tsushima1983"
+authors = "Ryuji Tsushima"
+title = "An explicit dimension formula for the spaces of generalized automorphic forms with respect to Sp(2, Z)"
+year = 1983
+venue = "Proceedings of the Japan Academy, Series A 59, 139–142"
+doi = "10.3792/pjaa.59.139"
+locator_scheme = "theorem"
+locator = "Theorem 4"
+url = "https://projecteuclid.org/journals/proceedings-of-the-japan-academy-series-a-mathematical-sciences/volume-59/issue-4/An-explicit-dimension-formula-for-the-spaces-of-generalized-automorphic/10.3792/pjaa.59.139.full"
+fetched_from = "https://projecteuclid.org/journals/proceedings-of-the-japan-academy-series-a-mathematical-sciences/volume-59/issue-4/An-explicit-dimension-formula-for-the-spaces-of-generalized-automorphic/10.3792/pjaa.59.139.full"
+fetched_at = "2026-11-04T15:03:52Z"
+sha256 = "63d8d673571e4e71b5d245d5573a6fa56894d2c67dfedba87ceb165be66eb7f8"
+licence_class = "answered-by:CBirkbeck"
+status = "certified"
+accessed = "2026-11-04"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/5469#issuecomment-6632666998"
+cited_for = ["6.4"]
+
+[[source]]
+id = "ibukiyama1985"
+authors = "Tomoyoshi Ibukiyama"
+title = "On relations of dimensions of automorphic forms of Sp(2, R) and its compact twist Sp(2) (I)"
+year = 1985
+venue = "Advanced Studies in Pure Mathematics 7, 7–29"
+doi = "10.2969/aspm/00710007"
+locator_scheme = "theorem"
+locator = "Theorem 4"
+url = "https://projecteuclid.org/ebooks/advanced-studies-in-pure-mathematics/Automorphic-Forms-and-Number-Theory/chapter/On-Relations-of-Dimensions-of-Automorphic-Forms-of-Sp2R-and/10.2969/aspm/00710007.pdf"
+fetched_from = "https://projecteuclid.org/ebooks/advanced-studies-in-pure-mathematics/Automorphic-Forms-and-Number-Theory/chapter/On-Relations-of-Dimensions-of-Automorphic-Forms-of-Sp2R-and/10.2969/aspm/00710007.pdf"
+fetched_at = "2026-11-04T15:03:52Z"
+sha256 = "11153effab3e90ed191e18f3da0d3922fcb551a1b6288f4d6caaf213b01b1dc7"
+licence_class = "answered-by:CBirkbeck"
+status = "certified"
+accessed = "2026-11-04"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/5469#issuecomment-6632666998"
+cited_for = ["10.1"]
+
+[[source]]
+id = "taibi2017"
+authors = "Olivier Taïbi"
+title = "Dimensions of spaces of level one automorphic forms for split classical groups using the trace formula"
+year = 2014
+venue = "Annales scientifiques de l'École normale supérieure 50 (2017), 269–344"
+arxiv = "1406.4247v1"
+locator_scheme = "section"
+locator = "§1, p. 7"
+url = "https://arxiv.org/abs/1406.4247v1"
+fetched_from = "https://arxiv.org/pdf/1406.4247v1"
+fetched_at = "2026-11-04T14:00:58Z"
+sha256 = "ee10fae68b370dc1d845ba28a87050d2f6a75cde22a0f05edcf357c287c7c546"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v1; the published version (2017) is cited through the arXiv text read"
+cited_for = ["6.4"]
+
+[[source]]
+id = "hayashidaibukiyama2005"
+authors = "Hayashida"
+title = "Siegel modular forms of half integral weight and a lifting conjecture"
+year = 2005
+doi = "10.1215/kjm/1250281971"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://projecteuclid.org/journals/kyoto-journal-of-mathematics/volume-45/issue-3/Siegel-modular-forms-of-half-integral-weight-and-a-lifting/10.1215/kjm/1250281971.full"
+fetched_from = "https://projecteuclid.org/journals/kyoto-journal-of-mathematics/volume-45/issue-3/Siegel-modular-forms-of-half-integral-weight-and-a-lifting/10.1215/kjm/1250281971.full"
+fetched_at = "2026-11-04T15:03:52Z"
+sha256 = "9a53b8e09d81d35aa98db742849564784bd6ca27472eb50a69f7ea85de1b3705"
+licence_class = "answered-by:CBirkbeck"
+status = "certified"
+accessed = "2026-11-04"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/5469#issuecomment-6632666998"
+
+[[source]]
+id = "tsuyumine1986"
+authors = "Shigeaki Tsuyumine"
+title = "On Siegel modular forms of degree three"
+year = 1986
+locator_scheme = "theorem"
+locator = "the structure theorem and its Hilbert series"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/5469#issuecomment-6632666998"
+
+[[source]]
+id = "pooryuen2007"
+authors = "Cris Poor, David S. Yuen"
+title = "Computations of spaces of Siegel modular cusp forms"
+year = 2007
+locator_scheme = "theorem"
+locator = "the theorem on dim S_k(Gamma_4) for k <= 16"
+url = "https://www.jstage.jst.go.jp/article/jmath/59/1/59_1_185/_article/-char/en"
+fetched_from = "https://www.jstage.jst.go.jp/article/jmath/59/1/59_1_185/_pdf"
+fetched_at = "2026-11-04T15:03:59Z"
+sha256 = "9317b5089d71afa5ee4ddbb7f0cb66f10fb2e900ae09a6cab9c26707bb0b0890"
+licence_class = "answered-by:CBirkbeck"
+status = "certified"
+accessed = "2026-11-04"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/5469#issuecomment-6632666998"
+
+[[source]]
+id = "klingen1990"
+authors = "Helmut Klingen"
+title = "Introductory Lectures on Siegel Modular Forms"
+year = 1990
+locator_scheme = "page"
+locator = "the chapter on Fourier coefficients"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/5469#issuecomment-6632666998"

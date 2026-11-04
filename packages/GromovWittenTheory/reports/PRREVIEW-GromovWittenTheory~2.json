@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-GromovWittenTheory~2",
+    "head": "c0b92eadb16d388276efcdb5b76d5b1633c75b62",
+    "pr": 990,
+    "folder": "GromovWittenTheory",
+    "date": "2026-10-30",
+    "findings": 12,
+    "blocking": 9,
+    "notes": "Full review; previous R01–R09 reassessed; all 15 seeded source targets checked against available locators and suppliers, with missing locators identified. Both cited arXiv versions legally fetched. 57 computed adversarial rows. Pinned libraries and main/open supplier ownership audited. Worker gate passes; direct Lean elaboration exit 0; zero declarations means signature/padding probes have zero subjects. Independent depcheck: 208 roadmaps, 1458 edges, 0 problems. No PR files changed."
+  }
+}

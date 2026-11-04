@@ -1,0 +1,14 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "CalibratedGeometry"
+
+[[source]]
+id = "Munkres1966EDT"
+authors = "James R. Munkres"
+title = "Elementary Differential Topology. (AM-54)"
+year = 1963
+doi = "10.1515/9781400882656"
+locator_scheme = "section"
+locator = "Chapter II, §10"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/3177#issuecomment-6632670329"

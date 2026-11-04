@@ -43,12 +43,6 @@
       "needs": "Provide an earlier elliptic-unit/Katz main-conjecture and μ input for the imaginary-quadratic finite-order character components used by CGS Theorem C under φ|G_p≠1,ω, including local and integral lattice corrections, independently of the Heegner anticyclotomic equality; the cyclotomic-unit theorem over ℚ alone is insufficient."
     },
     {
-      "slug": "jsw-propagated-specialization",
-      "supplier": "SelmerIwasawaCohomology",
-      "section": "§§3.3, 3.9–3.10 Descent and control; local and derived specialization",
-      "needs": "For the strict-at-v unrestricted-at-v̄ condition and sufficiently near-one crystalline α in BCGS Theorem 1.2.7, supply the exact JSW specialization formula with finite propagated Sha, the squared local cokernel, all K-primes over N and H⁰ torsion factors, separately from perfect specialization of the all-p ordinary complex."
-    },
-    {
       "slug": "elliptic-adelic-open-image",
       "supplier": "ArithmeticGaloisRepresentations",
       "section": "§6.4 Coefficients and images",

@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-NoncommutativeAndEquivariantIwasawa~4",
+    "head": "625faa1ec23b59062c73855380703fd68ad8f9e0",
+    "pr": 1307,
+    "folder": "NoncommutativeAndEquivariantIwasawa",
+    "date": "2026-11-03",
+    "findings": 1,
+    "blocking": 1,
+    "notes": "Full re-review; previous three findings checked; 15 seeded targets compared to legal source texts with stated uncertified limitations; 171 computed adversarial rows; 13 signatures checked; seven theorem padding probes; worker gate passes; independent depcheck 205 roadmaps, 1641 edges, 0 problems; Lean elaborates with seven sorry warnings. One P2: total-evenness missing from Artin interpolation domain."
+  }
+}

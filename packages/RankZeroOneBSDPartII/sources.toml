@@ -1,0 +1,55 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "RankZeroOneBSDPartII"
+
+[[source]]
+id = "CGLS"
+doi = "10.1007/s00222-021-01072-y"
+arxiv = "2008.02571"
+version_note = "Locators use the published 64-page author PDF, not preprint pagination."
+authors = "Francesc Castella, Giada Grossi, Jaehoon Lee and Christopher Skinner"
+title = "On the anticyclotomic Iwasawa theory of rational elliptic curves at Eisenstein primes"
+year = 2022
+locator_scheme = "theorem"
+locator = "Theorem 5.2.1, Corollaries 5.2.2–5.2.3, Remark 5.2.4; Corollary 3.4.2; Remark 4.1.3; Corollary 4.2.3"
+url = "https://web.math.ucsb.edu/~castella/Eisenstein-print.pdf"
+fetched_from = "https://web.math.ucsb.edu/~castella/Eisenstein-print.pdf"
+fetched_at = "2026-10-25T14:03:26Z"
+sha256 = "d1c1afe0e91cd43851918d6999481bbfa7a34ec8473a3817468f769a13783f38"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["Layers 0–5"]
+
+[[source]]
+id = "BKLOS"
+version_note = "All locators use the 25-page author version, not journal pagination; §2 uses absolute ratio exponent and §9.1 uses signed exponent."
+authors = "Manjul Bhargava, Zev Klagsbrun, Robert J. Lemke Oliver and Ari Shnidman"
+title = "Three-isogeny Selmer groups and ranks of abelian varieties in quadratic twist families over a number field"
+year = 2019
+locator_scheme = "theorem"
+locator = "Theorems 2.5–2.6; §9.2; Propositions 10.1, 10.7; Theorem 10.5; §11"
+url = "https://lemkeoliver.github.io/papers/19-3IsogenySelmer.pdf"
+fetched_from = "https://lemkeoliver.github.io/papers/19-3IsogenySelmer.pdf"
+fetched_at = "2026-10-25T14:03:56Z"
+sha256 = "af4e5ab9b250700c95c09946509e88b8a3f4a4f7efedf6ddc882a5f742478880"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["Layer 4; Layer 5 squarefree density"]
+
+[[source]]
+id = "PS"
+version_note = "Locators use the 32-page corrected author version, not journal pagination; elliptic alternation uses Theorem 5 and Corollaries 6–7."
+authors = "Bjorn Poonen and Michael Stoll"
+title = "The Cassels–Tate pairing on polarized abelian varieties"
+year = 1999
+locator_scheme = "theorem"
+locator = "§1 p.2; §2 pp.3–4; §5 Theorem 5 p.10; §6 Corollaries 6–7 p.11, Theorem 8 and Corollary 9 pp.11–12 (corrected author version)"
+url = "https://math.mit.edu/~poonen/papers/sha.pdf"
+fetched_from = "https://math.mit.edu/~poonen/papers/sha.pdf"
+fetched_at = "2026-10-25T14:04:35Z"
+sha256 = "3b9a619423358bc877fd2123b73a759157a728ec11e0f7b0aa48bd0333d7149a"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["Layer 0 finite-primary comparison; supplier contract"]

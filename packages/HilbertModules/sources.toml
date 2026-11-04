@@ -1,0 +1,19 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "HilbertModules"
+
+[[source]]
+id = "rieffel88"
+authors = "Marc A. Rieffel"
+title = "Projective Modules over Higher-Dimensional Non-Commutative Tori"
+year = 1988
+doi = "10.4153/CJM-1988-012-9"
+locator_scheme = "theorem"
+locator = "Theorem 2.15"
+url = "https://math.berkeley.edu/~rieffel/papers/projective88.pdf"
+fetched_from = "https://math.berkeley.edu/~rieffel/papers/projective88.pdf"
+fetched_at = "2026-11-04T15:04:41Z"
+sha256 = "84a6cbb1380f2654297c17c11fbd34e5d38cfb1c46b05f80f0ceef4a53ff881b"
+licence_class = "answered-by:CBirkbeck"
+status = "certified"
+accessed = "2026-11-04"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/4528#issuecomment-6632668511"

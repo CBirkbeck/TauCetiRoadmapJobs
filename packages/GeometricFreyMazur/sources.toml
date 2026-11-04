@@ -1,0 +1,17 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "GeometricFreyMazur"
+
+[[source]]
+id = "BTE"
+authors = "Benjamin Bakker and Jacob Tsimerman"
+title = "Erratum to p-torsion monodromy representations of elliptic curves over geometric function fields"
+year = "undated"
+locator_scheme = "theorem"
+url = "https://benjamin-bakker.github.io/P.torsion.erratum.pdf"
+fetched_from = "https://benjamin-bakker.github.io/P.torsion.erratum.pdf"
+fetched_at = "2026-11-04T16:23:59Z"
+sha256 = "db8effa1d3ef6a96c843e8ffad085a0ad03cd86a486f5e6cc3956bd14352acc1"
+licence_class = "answered-by:CBirkbeck"
+status = "certified"
+accessed = "2026-11-04"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/2257#issuecomment-6632677255"

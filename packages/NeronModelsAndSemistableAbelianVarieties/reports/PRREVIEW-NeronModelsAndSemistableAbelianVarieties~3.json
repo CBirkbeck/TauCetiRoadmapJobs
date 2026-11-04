@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-NeronModelsAndSemistableAbelianVarieties~3",
+    "head": "753e52a0bf64e28f9d2063241b8d8c6e64e9ede5",
+    "pr": 852,
+    "folder": "NeronModelsAndSemistableAbelianVarieties",
+    "date": "2026-10-28",
+    "findings": 9,
+    "blocking": 5,
+    "notes": "Full-folder review; all 15 seeded source targets audited with unread texts distinguished; 123 computed adversarial rows; three native headlines elaborate and retain binders; padding probes failed; GoodIsogeny native probe succeeds; ownership/main/open supplier audit. Worker gate FAIL solely depcheck=5; rerun records five false positives against main or pinned suppliers. No PR edits."
+  }
+}

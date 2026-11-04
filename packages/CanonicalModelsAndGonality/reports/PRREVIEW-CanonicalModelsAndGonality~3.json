@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-CanonicalModelsAndGonality~3",
+    "head": "51f3f4d86f2f08268c866b2f07518d2b899457d5",
+    "pr": 1726,
+    "folder": "CanonicalModelsAndGonality",
+    "date": "2026-11-03",
+    "findings": 3,
+    "blocking": 2,
+    "notes": "Full review of 61 numbered sections and 67 elaborated declarations; previous R01–R05 repaired. All 15 seeded targets inspected, with readable sources checked and unavailable locators recorded. 124 adversarial rows with computed values. Worker gate passed; independent dependency check: 204 roadmaps, 1641 edges, 0 problems. Original Lean elaboration passed with 50 sorry-only warnings; one-tactic scratch probes closed none. Findings: wrong graded-Hilbert supplier (P1), missing base-point-free hypothesis (P2), genus-two boundary padding (P3)."
+  }
+}

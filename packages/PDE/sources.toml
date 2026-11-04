@@ -1,0 +1,11 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "PDE"
+
+[[source]]
+id = "keel-tao"
+title = "arXiv:math/9709262"
+locator_scheme = "theorem"
+locator = "Theorem 1.2"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/3180#issuecomment-6632670027"

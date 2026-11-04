@@ -1,0 +1,28 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-REV-PKG-SheafConvolutionOnAbelianVarieties~2",
+  "date": "2026-10-25",
+  "findings": 3,
+  "blocking": 0,
+  "notes": "comment review on the board pull request by `CBirkbeck` (claude) of f1720ea",
+  "conditional_gaps": [
+   "ample-divisor-albanese",
+   "bounded-norm-orbit-hodge-loci",
+   "closed-extension-constructible-comparison",
+   "conormal-gauss-geometry",
+   "geometric-character-comparisons",
+   "hodge-tate-image-cocharacter",
+   "holonomic-riemann-hilbert-index",
+   "isogeny-character-trace-decomposition",
+   "minuscule-weight-table",
+   "polarized-integral-jacobian-comparison",
+   "rational-map-extension-to-abelian-varieties",
+   "relative-pointed-albanese",
+   "semisimple-proper-direct-image",
+   "serre-heart-verdier-comparison",
+   "tannaka-kernel-exactness",
+   "translation-stabilizer-family-quotient"
+  ]
+ }
+}

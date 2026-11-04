@@ -1,0 +1,13 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ShimuraData~2",
+  "head": "15b9daf69357bba9f554cccd8924f923fef9c5b3",
+  "pr": 1038,
+  "folder": "ShimuraData",
+  "date": "2026-10-31",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "Full re-review of the repaired head. Previous findings R01-R05 all repaired (anchors removed, CCPII names, Pilloni base, BP/Harris locators, Benoist/consumer). Worker gate at 15b9daf: every check 0, OK; lake env lean on Suggested.lean: sorry the only warning; depcheck 205 roadmaps, 1403 edges, 0 problems, no UPWARD/CYCLE; outside-folder diff empty. Seeded sample (0.1, 3.3, 3.4, 3.10, 4.3, 5.1, 5.3, 5.5, 5.8, 5.9, 5.10, 5.16, 5.19, 5.20, 5.21) verified at the locators in milne-svi, milne-svh, bkt-tame, bp-higherhida, bcgp-abelian, cg-siegel; R03/R04 locators verified in pilloni-gsp4, bp-highercoleman, harris-aa1988; spot checks in conrad-reductive, brion-lakshmibai, hansen-johansson, masser-zannier, lovering-integral, deligne-corvallis and milne-shih (OCR). Every cross-roadmap citation resolved at main or the open head (#933, #966, #1037, #871, #792, #848, #849; RG2/RG/StableReduction/ComplexManifolds/ComplexKahlerGeometry/LieGroups on main; HodgeStructures, LocalFieldsRamification completed). Library declarations opened at the pins (Mathlib 6b7abb3c, Tau Ceti a91d3aaf). #check of kostantInvolution matches the README; one-tactic probes (simp_all, simp+omega, aesop) fail, so it is not padding; headlines unstatable at the pins are named in the docstring. Adversarial table with computed values recorded. Jantzen paywalled: not verifiable, cited by locator."
+ }
+}

@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-StochasticCalculus~1",
+    "head": "b93ec29dc6f3ed7a563c37e896b05264e965fbc0",
+    "pr": 1030,
+    "folder": "StochasticCalculus",
+    "date": "2026-10-30",
+    "findings": 9,
+    "blocking": 4,
+    "notes": "Read README and all six Lean files; five seeded targets tested mathematically, MATH5695 source text unavailable. 267 adversarial rows; 83 expanded main-file signatures; direct Suggested elaboration passes with 23 sorry warnings. Gate fails only stray-files. Dependency check: 207 roadmaps, 1463 edges, 0 problems. Main/pinned/open-work ownership audited; source-access limits and five missing references recorded."
+  }
+}

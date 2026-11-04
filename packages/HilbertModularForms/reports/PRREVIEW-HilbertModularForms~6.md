@@ -1,0 +1,86 @@
+# Review of HilbertModularForms (pull request #1724 at 73285f0)
+
+**Verdict:** accepted
+
+Incremental re-review of the 141 lines changed since 5f43770 (README only; `Suggested.lean` is byte-identical to the head the previous review read). The two blocking findings of the previous report are repaired, the new §4.2 adapter is correct as stated and its locators resolve, and the gate passes. One P3 note on a locator.
+
+## R01 (P3) — Name the primary source of the continuation that §4.2 cites through Dasgupta–Kakde
+
+**Location:** `TauCetiRoadmap/HilbertModularForms/README.md:1180`–1182: "the latter writes Hecke's trick as congruence-restricted lattice sums at an arbitrary cusp and continues them before specializing s=0"; the Shimura 1978 reference entry at line 2667 cites §2 and §4 only.
+
+**Claim:** Dasgupta–Kakde's proof of Theorem 4.5 states the analytic continuation of the lattice sums and takes the constant-term formula from another text: its reference [10], which is Shimura, *The special values of the zeta functions associated with Hilbert modular forms* (Duke 1978), Proposition 3.4 and equation (3.7). Dasgupta–Kakde is therefore a secondary source for the two facts the sentence attributes to it (the continuation and the constant term at s=0); it is the primary source only for the cusp-indexed shape of the sums (39) and the constant-term isomorphism (28).
+
+**Witness:** dasgupta-kakde line 721 ("Recall the definition … given in [10, Prop. 3.4]"), lines 759–760 (continuation asserted without proof), line 798 ("By [10, equation (3.7)] the constant term … at s = 0"), line 1280 (entry [10]).
+
+**Exact repair:** In §4.2, after the Dasgupta–Kakde locator, add "the continuation of these sums and their constant terms are Shimura 1978, §3, Proposition 3.4 and equation (3.7)", and extend the Shimura 1978 reference entry from "§2 … §4" to include §3 with those two locators. The text is paywalled, so the citation is by locator alone (uncertified). Nothing else in §4.2 changes: the roadmap's own continuation route goes through AutomorphicSpectralTheory and does not depend on reading Shimura's proof. Tested on the sentence that triggered it: with the added clause, every fact it asserts names the text that proves it.
+
+## Previous findings
+
+- R01 — repaired: README:1922–1924 now reads "ε(f) = i^{Σ_w k_w} ∏_{𝔭 ∣ 𝔫} ε_{𝔭^{v_𝔭(𝔫)}}(f)"; the conventions row (line 255) and the `AL_eigenvalues` row (line 2359) carry the same prime-power range; the ℚ(√13) witness is a Check (lines 1933–1938) and the level-one empty product is stated.
+- R02 — repaired: README:1289–1292 now reads "Its cardinality is zero when [𝔟] ≠ [𝔪𝔠]. Under [𝔟] = [𝔪𝔠], its cardinality is Σ_{𝔞∣𝔪} N𝔞 …", the representatives are constructed "Under the same class equality", and the ℚ(√6) witness is a Check (lines 1315–1318).
+- R03 — not repaired in the folder, and not re-raised: no roadmap folder on main carries a `sources.toml` (0 of 124 under `TauCetiRoadmap/`), and the manifest the review tooling reads is the board package's `packages/HilbertModularForms/sources.toml`, which now records `dasgupta-kakde` (the sources service wrote that entry when this review fetched the text). A manifest inside the pull-request folder is not what the project's tooling or its merged roadmaps use.
+- R04 — repaired: README:1143–1225 now defines Φ(κ,κ′;s) through the translation-torus mean with its normalization, states the scattering adapter (finite factor × L^S(1+2s,χ)/L^S(2+2s,χ) × n real-place integrals), gives the real integral in closed form, derives the O(sⁿ⁻¹) bound, and cites Dasgupta–Kakde §4 with page and equation numbers that resolve (R01 above refines one attribution).
+
+## Verified sound
+
+**Scope.** The diff (changes.md: 116 insertions, 25 deletions, README only, nothing outside the folder; `git diff --stat origin/main...HEAD` outside the roadmap folder is empty) touches: the AutomorphicSpectralTheory bullets in "Consumed, not redefined" and "Exact supplier contracts"; the root-number row of the conventions table; §4.2 and the Layer 4 dependencies; §5.1's cardinality sentences and Checks; §8.2's formula and Checks; the `AL_eigenvalues` row; the Dasgupta–Kakde reference entry. Each of these was read in context together with what it cites (§§1.4, 2.1, 4.1, 5.6, 7.7, 8.1 and the conventions table) and what cites it (§4.3, §8.3, §11.1, the worked examples at lines 2506 and 2544).
+
+**Gate, dependency direction, elaboration.** The worker's gate at this head passes every check (gate.md: build=0, depcheck=0, outside-folder=0, stray-files=0). Running the prescribed dependency check myself:
+
+```text
+depcheck: 204 roadmaps, 1646 edges, 0 problem(s)
+```
+
+No UPWARD or CYCLE line (HilbertModularForms is line 166 of the merge order; AutomorphicSpectralTheory is line 79, LFunctions line 23). `lake env lean` on `Suggested.lean` from the worktree root: exit 0, exactly 11 "declaration uses 'sorry'" warnings, nothing else. A scratch copy of `Suggested.lean` with `#check @name` appended for all 49 declarations elaborated with 0 errors; the printed types of the eleven sorried headlines agree with the README statements (degree hypothesis `1 < Module.finrank ℚ F` explicit on `exists_norm_coeff_le`, `finiteDimensional_cuspForms`, `finiteDimensional_modularForms`, `modularForms_eq_bot_of_top_neg`; the cusp L-series bound keeps `k.top/2 + 1 < s.re` on the general space). Since the Lean file is unchanged since 5f43770, the previous report's binder-loss audit of the 24 leads, its one-tactic probes (none of the 11 targets closes under `simp`, `rfl`, `infer_instance`) and its headline-coverage list (11 statable headlines present; the non-statable ones named in the module docstring) stand unchanged; nothing in the diff adds or removes a Lean name (the README still backticks exactly the declared names; gate `readme-ids-missing=0`).
+
+**Supplier citations resolved at their current heads.**
+
+| Citation in the diff | Where resolved | What it says, and the boundary |
+| --- | --- | --- |
+| AutomorphicSpectralTheory §1.5 | ast-readme (open head of #925, read with `roadmaps show`), line 969 "### 1.5 Finite Weyl constant-term formula" | Cuspidal constant term of E_P as a Weyl-set sum with intertwiners; for the GL₂ Borel the Levi is a torus, so the inducing datum is cuspidal and the formula is f + M(w,λ)f. |
+| AutomorphicSpectralTheory §1.15a | line 1199 "### 1.15a Fredholm continuation of Eisenstein series" | Meromorphic continuation for fixed finite level and K_∞-finite inducing forms, with E_Q(M f, wλ) = E_P(f, λ) as meromorphic identities; "The GL₂ Borel family is a specialization." |
+| AutomorphicSpectralTheory §1.15b | line 1224 "### 1.15b Rank-one scattering coefficient" | M(s)f_s = c_χ^S(s) ⊗_{v∈S} J_v(s)f_v ⊗ spherical, c_χ^S(s) = L^S(s,χ)/L^S(s+1,χ), χ = χ₁χ₂⁻¹, raw local operators retained at S, self-dual trace-character measures, convergence of local integrals in Re s>0. With the roadmap's t = 1+2s this is L^S(1+2s,χ)/L^S(2+2s,χ), as the contract states. |
+| LFunctions Layers 3 and 5 | `TauCetiRoadmap/LFunctions/README.md:730` (Layer 3, Dedekind zeta) and `:929` (Layer 5, finite-order Hecke L-functions); line 1021: entirety for a nontrivial primitive character, the two-pole statement for the trivial one | Supplies exactly "the numerator has at most a simple pole, only for the trivial character" and the nonvanishing of the denominator's Euler product at Re > 1. |
+| Tau Ceti `exists_differentiableOn_eq_dedekindZeta_sub` | `TauCeti/NumberTheory/NumberField/DedekindZeta.lean:158` at the pin (opened in the previous review; file unchanged) | Holomorphic G on Re(s) > 1 − 1/n with G = ζ_F − ρ/(s−1); substituting 1+2s isolates ρ/(2s). |
+| ModularForms Layer 7, §§5.6 and 7.7 of this roadmap | README:1419, 1802 | §5.6 defines W_𝔮 for every exact divisor 𝔮; §7.7 defines ε_𝔮 for every exact divisor with ε_{𝔮𝔮′} = ε_𝔮ε_𝔮′. §8.2's product now restricts to 𝔮 = 𝔭^{v_𝔭(𝔫)}, which is the index set on which the product of local signs equals the Fricke sign. |
+
+**Seeded sample where it falls in the changed passages.** Of the fifteen seeded targets, §4.2 is changed and §7.7 is cited by the changed §8.2; the other thirteen are untouched and keep the previous report's verification. Texts read, all from legal copies in the sources cache:
+
+| Target | Text and locator inspected | Conclusion |
+| --- | --- | --- |
+| 4.2, Dasgupta–Kakde arXiv:2010.00650v1 | dasgupta-kakde lines 582–625 (page 15): §4 opens there; (27) M_k(n) = E_k(n) ⊕ S_k(n) at line 612; (28) con_{k,E}: E_k(n) ≅ C_k at lines 615–617, stated for k ≥ 2 excluding F = ℚ, k = 2. Lines 707–794 (pages 18–19): Theorem 4.5 at line 708; (34)–(36) lines 729–748, the Hecke-trick definition with Re(2s+k) > 2; (37)–(39) lines 768–782, the cusp representative and the congruence-restricted sums at an arbitrary cusp A. Lines 794–848 (page 20): constant term at s = 0. | The page and equation numbers are as the README gives them. The text does write Hecke's trick as congruence-restricted lattice sums at an arbitrary cusp (39) and asserts continuation before specializing (lines 759–760). The continuation and constant-term formula are cited there from Shimura 1978 (R01). Weight k = 2 over F ≠ ℚ is inside the theorem's hypotheses (k > 1, χ₂ primitive); the roadmap's adapter projects the character sections to Γ₀ invariants, which is its own target. |
+| 4.2, Bruinier | bruinier lines 751–755 (Remark 1.35, printed p. 18): weight-2 Eisenstein series by the Hecke trick are holomorphic; §1 of that text is the real-quadratic full-level setting (lines 85–89). | The README's description "only the real-quadratic, full-level prototype" is accurate. |
+| 8.2, Freitas–Le Hung–Siksek | flhs line 87 (Theorem 1, printed p. 2): every elliptic curve over a real quadratic field is modular. | Supports the modularity premise of the ℚ(√13) Check; the curve's local data were computed independently (table below). |
+| 7.7 (unchanged, cited by 8.2) | README:1802–1830 | ε_𝔮 is defined for every exact divisor with |λ_𝔮| = 1 and the multiplicativity ε_{𝔮𝔮′} = ε_𝔮ε_𝔮′; §8.2's restriction to full prime powers is consistent with it and with the conventions row at line 249. |
+
+**Ownership.** `roadmaps grep -i "hecke's trick"` over the 439 open pull requests and main finds the construction only in this roadmap (#1724 lines 78, 1143, 1184; #1487 mentions the phrase in a reference title). AutomorphicSpectralTheory (#925) owns the general Eisenstein continuation and scattering coefficient and HilbertModularForms owns the cusp-indexed, weight-two, holomorphic-limit specialization: the two ownership statements in the diff (line 97–100 and lines 327–334) match the supplier's text. The previous report's ownership searches for the other objects stand; nothing in the diff adds a new carrier.
+
+**Adversarial pass.** New rows carry computed values; untouched statements keep the previous report's rows (72 statement rows and 11 headline rows at 5f43770), which are cited rather than repeated.
+
+| Statement | Instances tried | Values computed on each side; result | Change |
+| --- | --- | --- | --- |
+| 4.2 real-place integral I(s) = −√π Γ(s+1/2)/((s+1)Γ(s)) | Numerical Simpson integral of (x+i)^(-2)|x+i|^(-2s) over ℝ (via x = tan θ) at s = 1, 0.3, 0.05; closed form by the substitution x = tan θ, the Wallis-type integral ∫cos^ν θ cos 2θ dθ and the duplication formula | s = 1: numeric −0.785398, formula −0.785398 = −π/4. s = 0.3: −0.530605 vs −0.530605. s = 0.05: −0.140119 vs −0.140118. I(s)/s at s = 0.05 is −2.80 and tends to −π = −3.14 (Γ(s)⁻¹ ~ s). Symbolically the integral equals −∫cos 2θ cos^{2s}θ dθ, which the Beta/duplication evaluation turns into the stated quotient. | None. |
+| 4.2 constant term δ Y^s + Φ Y^(−1−s) | F = ℚ, SL₂(ℤ): c ≥ 1, d mod c coprime; unfold the x-integral | ∫(cz+d)^(-2)|cz+d|^(-2s)dx = c^(−2−2s) y^(−1−2s) I(s); times y^s gives y^(−1−s). Σ_c φ(c)c^(−2−2s) = ζ(1+2s)/ζ(2+2s). Exponent −1−s on both sides. In degree n the c-term is |N c|^(−2−2s) N(y)^(−1−2s) I(s)ⁿ, a function of N(y) only, and N(u/v) = 1 for the diagonal units of Γ_∞. | None. |
+| 4.2 Check: F = ℚ limit | Φ(s) = I(s)ζ(1+2s)/ζ(2+2s) at s = 10⁻², 10⁻³, 10⁻⁴ (ζ by Borwein's alternating series, ζ(2) check 1.644934) | −0.954052, −0.954842, −0.954921 → −3/π = −0.954930. Constant term 1 − 3/(πy) agrees with E₂*. | None. |
+| 4.2 Check: degree-two leading coefficient | I(s)²·ρ/(2s) with ρ = 1 at s = 10⁻³ | (I(s)²/(2s))/s = 4.911 against π²/2 = 4.935 (difference O(s)); the term is O(s) and tends to 0. | None. |
+| 4.2 order of vanishing by character | n real places; χ trivial versus nontrivial finite order; n = 1 and n = 2 | Trivial χ: I(s)ⁿ · ρ/(2s) · (holomorphic, nonzero denominator) = O(sⁿ⁻¹): n = 1 gives the nonzero constant −3/π, n = 2 gives O(s) → 0. Nontrivial χ: L^S(1+2s,χ) holomorphic at 0 (LFunctions Layer 5), so O(sⁿ) → 0 already for n = 1. Hence "every Φ is O(sⁿ⁻¹)" and the n ≥ 2 restriction is exactly what the trivial-character term needs. | None. |
+| 4.2 parity of the real places | Weight-2 K-type in Ind(χ₁,χ₂) at a real place requires χ₁χ₂(−1) = 1, i.e. (χ₁)_w = (χ₂)_w ∈ {1, sgn} | The ratio χ = χ₁χ₂⁻¹ is trivial at every real place, so each real-place integral is I(s) itself (no sgn-twisted variant appears); consistent with Dasgupta–Kakde's sign condition "χ₁χ₂ has sign (k,…,k)" at line 585–586. | None. |
+| 4.2 scattering matrix shape (Check) | Two inequivalent cusps, n ≥ 2, s = 0 and s ≠ 0 | At s = 0 all Φ vanish, matrix ((1,0),(0,1)). At s ≠ 0 the off-diagonal Φ(κ,κ′;s) is the cross matrix entry of the raw intertwiner between two K₀(𝔫)-fixed vectors, generically nonzero; a scalar replacement would force it to be 0. | None. |
+| 4.2 supplier parameter t = 1+2s | AST §1.15a Check: classical parameter z ↔ induction difference s_AST = 2z−1; the weight-2 Hecke-trick series has Im(γz)^{s+1} as its height, i.e. z = s+1 | s_AST = 2(s+1)−1 = 1+2s = t. The spherical ratio L^S(t,χ)/L^S(t+1,χ) = L^S(1+2s,χ)/L^S(2+2s,χ) matches the README on both the contract (line 331) and §4.2 (line 1167). | None. |
+| 5.1 cardinality under the class condition | F = ℚ(√6), 𝔫 = 𝔪 = 𝔠 = 𝒪_F, 𝔟 = (√6); equal components with 𝔪 = 1; compatible components at a good and a bad norm-4 prime | x² − 6y² ≡ −1 (mod 3) has no solution (checked over all 9 residue pairs), so N(u) = +1 for every unit and (√6) is principal but not narrowly principal: [𝔟] ≠ [𝔪𝔠]. det α generates 𝔟⁻¹, norm −1/6 < 0, not totally positive: Δ = ∅, count 0 = 0. Equal components, 𝔪 = 1: 1 = 1. Norm-4 prime: 1 + 4 = 5 good, 4 bad. The representative construction now assumes the narrowly principal ideal 𝔭𝔠𝔟⁻¹, so its totally positive generator exists. | None. |
+| 8.2 root-number product | Curve y² + xy + y = x³ + x² − 10x − 10 over ℚ(√13); level one | b₂ = 5, b₄ = −19, b₆ = −39, b₈ = −139, c₄ = 481, Δ = 50625 = 3⁴·5⁴ (recomputed). Projective points by direct enumeration: 5 over 𝔽₃ (so a₃ = −1, nonsplit), 5 over 𝔽₅ (a₅ = +1, split). 13 is a square mod 3 and not mod 5, so 3 splits and 5 is inert; residue fields 𝔽₃, 𝔽₃, 𝔽₂₅ give a_𝔭 = −1, −1, +1 and ε_𝔭 = −a_𝔭 = +1, +1, −1 by the §7.7 formula c(𝔭,f) = −ε_𝔭(f). Product −1; (−1)²·(−1) = −1. Product over all 8 exact divisors: each prime sign appears 4 times, +1. Level one: empty product, (−1)² = 1. Over ℚ the same formula with n = 1 gives −(+1)(−1) = +1 for 15a1, as its functional equation requires. | None. |
+| Conventions row and `AL_eigenvalues` row | Same curve; a level with one prime power | Both rows now index by prime ideals 𝔭 ∣ 𝔫 with the sign ε_{𝔭^{v_𝔭(𝔫)}}; for 𝔫 = (5w−2) over ℚ(√5) the single sign ε_(5w−2) is recovered, matching the worked example at line 2506. | None. |
+| 8.2 classical specialization | F = ℚ, k = 2: Λ(f,s) = i^k η Λ(f,2−s) with f∣W_N = ηf and W_N = ∏ W_{p^r} | i² η = −∏η_{p^r} = (−1)¹∏ε_{p^r}: the README's (−1)ⁿ∏ with n = 1. | None. |
+| All other statements of §§0–11 and the worked examples | Untouched by the diff | Rows of the previous report at 5f43770 (72 statement rows, 11 headline rows), unchanged. | None. |
+
+**Library declarations.** No new library name enters the diff; `Complex.Gamma`, `dedekindZeta`, `NumberField.dedekindZeta_residue`, `NumberField.dedekindZeta_residue_pos` and `TauCeti.exists_differentiableOn_eq_dedekindZeta_sub` were opened at the pins by the previous review (`TauCeti/NumberTheory/NumberField/DedekindZeta.lean:158`), and the pins (`lake-manifest.json`) are unchanged.
+
+## Not verifiable
+
+- Shimura 1978, §3, Proposition 3.4 and equation (3.7): the text Dasgupta–Kakde cites for the continuation of the Hecke-trick sums and their constant terms is behind the Duke/Project Euclid paywall (the previous review's attempt reached only the landing page). The continuation itself is not needed from that text, since §4.2 derives it from AutomorphicSpectralTheory §1.15a; R01 asks only that the attribution be made explicit.
+- The previous report's list (Freitag, Miyake, Doi–Naganuma, van der Geer, Garrett, Diamond–Shurman, Atkin–Li, Shimura 1971, Iwaniec–Kowalski, four LMFDB knowls behind an access check) is unchanged by this diff and stands.
+- The LMFDB labels in the Checks (2.2.5.1-31.1-a, 2.2.24.1-1.1-a, 2.2.29.1-1.1-a) were not re-audited against the live database; the new ℚ(√13) Check deliberately avoids a label and was recomputed from the curve.
+
+## Source issues
+
+- none
