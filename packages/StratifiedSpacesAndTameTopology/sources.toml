@@ -1,0 +1,192 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "StratifiedSpacesAndTameTopology"
+
+[[source]]
+id = "joyce2012"
+authors = "Dominic Joyce"
+title = "On manifolds with corners"
+year = 2009
+arxiv = "0910.3518v2"
+locator_scheme = "section"
+locator = "Remark 2.11"
+url = "https://arxiv.org/abs/0910.3518v2"
+fetched_from = "https://arxiv.org/pdf/0910.3518v2"
+fetched_at = "2026-11-04T00:21:31Z"
+sha256 = "01e83f730cb34993baa566d5dfa4d4543d769845007ee4ec8bfc7503f93f7f3f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v2"
+cited_for = ["6.2"]
+
+[[source]]
+id = "treumann2009"
+authors = "David Treumann"
+title = "Exit paths and constructible stacks"
+year = 2007
+doi = "10.1112/S0010437X09004229"
+arxiv = "0708.0659v1"
+locator_scheme = "theorem"
+locator = "Example 1.4"
+url = "https://arxiv.org/abs/0708.0659v1"
+fetched_from = "https://arxiv.org/pdf/0708.0659v1"
+fetched_at = "2026-11-04T00:21:37Z"
+sha256 = "1fb6a610e4d2e4d04071cbf4a4fada9a88edf4e9cc2dbb9aaba3b7c68e6a95eb"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v1"
+cited_for = ["3.4"]
+
+[[source]]
+id = "aft2017"
+authors = "David Ayala, John Francis, Hiro Lee Tanaka"
+title = "Local structures on stratified spaces"
+year = 2014
+venue = "Adv. Math. 307, 903-1028 (2017)"
+arxiv = "1409.0501v6"
+locator_scheme = "theorem"
+locator = "Theorem 7.3.8"
+url = "https://arxiv.org/abs/1409.0501v6"
+fetched_from = "https://arxiv.org/pdf/1409.0501v6"
+fetched_at = "2026-11-04T00:21:44Z"
+sha256 = "22df6194b3618dd4fa544c23897cc0f5adcec4293ddf5d01e47c99a65516bdf8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v6"
+cited_for = ["7.4"]
+
+[[source]]
+id = "nocera-volpe2023"
+authors = "Guglielmo Nocera, Marco Volpe"
+title = "Whitney stratifications are conically smooth"
+year = 2021
+venue = "Sel. Math. New Ser. 29, 68 (2023)"
+doi = "10.1007/s00029-023-00877-4"
+arxiv = "2105.09243v7"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/2105.09243v7"
+fetched_from = "https://arxiv.org/pdf/2105.09243v7"
+fetched_at = "2026-11-04T00:21:49Z"
+sha256 = "cb6ffcade6bce67014d7ff131fc3b40baaa8449c97a70d6e2846bc306da0001e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v7"
+cited_for = ["5.5"]
+
+[[source]]
+id = "woolf2009"
+authors = "Jonathan Woolf"
+title = "The fundamental category of a stratified space"
+year = 2008
+venue = "Journal of Homotopy and Related Structures, Vol. 4(2009), No. 1, pp. 359-387"
+arxiv = "0811.2580v3"
+locator_scheme = "section"
+locator = "Section 1"
+url = "https://arxiv.org/abs/0811.2580v3"
+fetched_from = "https://arxiv.org/pdf/0811.2580v3"
+fetched_at = "2026-11-04T00:21:55Z"
+sha256 = "24f6781a9265489abcfec3d56874b43814b0d117d419813fc2510e7fbfa230e4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v3"
+cited_for = ["3.2"]
+
+[[source]]
+id = "almp2012"
+authors = "Pierre Albin, Eric Leichtnam, Rafe Mazzeo, Paolo Piazza"
+title = "The signature package on Witt spaces, I. Index classes"
+year = 2009
+arxiv = "0906.1568v2"
+locator_scheme = "section"
+locator = "Section 2"
+url = "https://arxiv.org/abs/0906.1568v2"
+fetched_from = "https://arxiv.org/pdf/0906.1568v2"
+fetched_at = "2026-11-04T00:22:02Z"
+sha256 = "4cd43432621353b64ac5b7e09625d1e310c58b6b91d740cbf9c2e8a02eadab67"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v2"
+cited_for = ["7.3"]
+
+[[source]]
+id = "lurie-ha"
+locator_scheme = "section"
+locator = "Definition A.5.3"
+url = "https://www.math.ias.edu/~lurie/papers/HA.pdf"
+fetched_from = "https://www.math.ias.edu/~lurie/papers/HA.pdf"
+fetched_at = "2026-11-04T00:22:21Z"
+sha256 = "112b145a95a62daefb8275851cac9ab6430004cfc8f751a33a8d981fd7ad68c3"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["2.1"]
+
+[[source]]
+id = "bcr1998"
+authors = "Jacek Bochnak, Michel Coste, Marie-Françoise Roy"
+title = "Real Algebraic Geometry"
+year = 1998
+doi = "10.1007/978-3-662-03718-8"
+locator_scheme = "theorem"
+locator = "Theorem 9.7.11"
+url = "https://doi.org/10.1007/978-3-662-03718-8"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["8.3"]
+
+[[source]]
+id = "verona1984"
+doi = "10.1007/BFb0101307"
+locator_scheme = "chapter"
+locator = "Chapter 1"
+url = "https://doi.org/10.1007/BFb0101307"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["7.4"]
+
+[[source]]
+id = "mather2012"
+locator_scheme = "section"
+locator = "Section 7"
+url = "https://www.ams.org/journals/bull/2012-49-04/S0273-0979-2012-01383-6/S0273-0979-2012-01383-6.pdf"
+fetched_from = "https://www.ams.org/journals/bull/2012-49-04/S0273-0979-2012-01383-6/S0273-0979-2012-01383-6.pdf"
+fetched_at = "2026-11-04T00:25:48Z"
+sha256 = "3822b77968e8c6401038933628465b6798a8a434bea458e1780165e695d8e431"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["5.1"]
+
+[[source]]
+id = "thom1969"
+locator_scheme = "section"
+locator = "Section 1"
+url = "https://www.ams.org/journals/bull/1969-75-02/S0002-9904-1969-12138-5/S0002-9904-1969-12138-5.pdf"
+fetched_from = "https://www.ams.org/journals/bull/1969-75-02/S0002-9904-1969-12138-5/S0002-9904-1969-12138-5.pdf"
+fetched_at = "2026-11-04T00:28:11Z"
+sha256 = "65ec6a4945fa29e07e56f005ff7e0b8c87374cc9ff16e5c1b109fa7b95ba28ed"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["5.1"]
+
+[[source]]
+id = "vdd-miller1996"
+locator_scheme = "section"
+locator = "Section 4"
+url = "https://people.math.osu.edu/miller.1987/newg.pdf"
+fetched_from = "https://people.math.osu.edu/miller.1987/newg.pdf"
+fetched_at = "2026-11-04T00:28:36Z"
+sha256 = "6914f87bf21cde56c7aa6546577a571d7c1b6879dba13d5b72b63e88b58c601c"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["8.2"]
