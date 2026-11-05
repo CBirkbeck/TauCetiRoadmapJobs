@@ -1,0 +1,267 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ModularCharactersAndBlocksPartII"
+
+# Open texts, read through the sources service.
+
+[[source]]
+id = "glauberman"
+authors = "G. Glauberman"
+title = "Correspondences of characters for relatively prime operator groups"
+year = 1968
+venue = "Canad. J. Math. 20 (1968), 1465–1488"
+doi = "10.4153/CJM-1968-148-x"
+locator_scheme = "theorem"
+locator = "Theorem 2 (canonical extension); Theorem 3 (cyclic case); Theorem 4 and Corollaries 7–9 (solvable case); Theorem 5 (equivariance, constituent, degree bound)"
+url = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/5766071B70A89446C7D02B69C20CCC03/S0008414X0005286Xa.pdf/correspondences-of-characters-for-relatively-prime-operator-groups.pdf"
+fetched_from = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/5766071B70A89446C7D02B69C20CCC03/S0008414X0005286Xa.pdf/correspondences-of-characters-for-relatively-prime-operator-groups.pdf"
+fetched_at = "2026-11-05T02:46:11Z"
+sha256 = "98c9ca043628fa78609b60497974fdcac6deb891f1bd1e0f2d10a4518dfc6c0d"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "Canadian Journal of Mathematics archive on Cambridge Core, served without login"
+cited_for = ["Glauberman correspondence: canonical extension, cyclic, p-group and solvable cases"]
+
+[[source]]
+id = "hartley-turull"
+authors = "B. Hartley, A. Turull"
+title = "On characters of coprime operator groups and the Glauberman character correspondence"
+year = 1994
+venue = "J. reine angew. Math. 451 (1994), 175–219"
+doi = "10.1515/crll.1994.451.175"
+locator_scheme = "theorem"
+locator = "Theorem A; Definition 3.1; Proposition 3.2"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN243919689_0451/LOG_0013.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN243919689_0451/LOG_0013.pdf"
+fetched_at = "2026-11-05T02:48:59Z"
+sha256 = "648ae2ef59e44bcc6747f19858b55a816e44542e9c5c94e930af9f4565eb9d68"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "GDZ scan (EuDML record 153629), image-only; the cached text is OCR, numbering checked for the cited items"
+cited_for = ["Glauberman degree-divisibility (conditional form); canonical extension; sign function of the cyclic case"]
+
+[[source]]
+id = "geck"
+authors = "M. Geck"
+title = "Green functions and Glauberman degree-divisibility"
+year = 2020
+venue = "Ann. of Math. (2) 192 (2020), no. 1, 229–249"
+doi = "10.4007/annals.2020.192.1.4"
+arxiv = "1904.04586v1"
+locator_scheme = "section"
+locator = "Section 1 (statement of Glauberman degree-divisibility)"
+url = "https://arxiv.org/abs/1904.04586v1"
+fetched_from = "https://arxiv.org/pdf/1904.04586v1"
+fetched_at = "2026-11-05T02:43:03Z"
+sha256 = "3d657cfd1b1e5ea4345a738d2c7618388064aeec5ad6c407ba649bde47b63670"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v1; the published version is the Annals article of the same title"
+cited_for = ["Glauberman degree-divisibility, cited theorem"]
+
+[[source]]
+id = "kessar-malle"
+authors = "R. Kessar, G. Malle"
+title = "Quasi-isolated blocks and Brauer's height zero conjecture"
+year = 2013
+venue = "Ann. of Math. (2) 178 (2013), 321–384"
+arxiv = "1112.2642v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/1112.2642v2"
+fetched_from = "https://arxiv.org/pdf/1112.2642v2"
+fetched_at = "2026-11-05T02:43:17Z"
+sha256 = "157461eb4f08e995fe034493b17cf145338fb31c52333cc03930d901feb4df0e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v2"
+cited_for = ["height zero conjecture: abelian defect group implies all heights zero, cited theorem"]
+
+[[source]]
+id = "mnst"
+authors = "G. Malle, G. Navarro, A. A. Schaeffer Fry, P. H. Tiep"
+title = "Brauer's height zero conjecture"
+year = 2024
+venue = "Ann. of Math. (2) 200 (2024), no. 2, article 4"
+doi = "10.4007/annals.2024.200.2.4"
+arxiv = "2209.04736v2"
+locator_scheme = "theorem"
+locator = "Theorem A"
+url = "https://arxiv.org/abs/2209.04736v2"
+fetched_from = "https://arxiv.org/pdf/2209.04736v2"
+fetched_at = "2026-11-05T02:43:22Z"
+sha256 = "0735dba641a2ba3d911c075b2ac9cea6e044b1dd735aefee93cc9b5aa5e5a0f8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v2"
+cited_for = ["height zero conjecture, odd p: all heights zero implies abelian defect group, cited theorem"]
+
+[[source]]
+id = "ruhstorfer"
+authors = "L. Ruhstorfer"
+title = "The Alperin–McKay and Brauer's height zero conjecture for the prime 2"
+year = 2025
+venue = "Ann. of Math. (2) 201 (2025), no. 2, 379–457"
+doi = "10.4007/annals.2025.201.2.2"
+arxiv = "2204.06373v1"
+locator_scheme = "theorem"
+locator = "Theorem A; Corollary B"
+url = "https://arxiv.org/abs/2204.06373v1"
+fetched_from = "https://arxiv.org/pdf/2204.06373v1"
+fetched_at = "2026-11-05T02:43:11Z"
+sha256 = "7671f4b36fe0b1908ec620ae1ff5f3006573b7142a0e7db1112e3fe45d70246a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v1, titled 'The Alperin–McKay conjecture for the prime 2'; the Annals version adds the height zero conjecture to the title"
+cited_for = ["Alperin–McKay and height zero conjectures at p = 2, cited theorems"]
+
+[[source]]
+id = "reynolds"
+authors = "W. F. Reynolds"
+title = "Blocks and normal subgroups of finite groups"
+year = 1963
+venue = "Nagoya Math. J. 22 (1963), 15–32"
+doi = "10.1017/S0027763000011004"
+locator_scheme = "theorem"
+locator = "Theorems 8 and 9; definition of height on p. 16"
+url = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/6A237E1857DE9EA8AA916597260D4433/S0027763000011004a.pdf/blocks-and-normal-subgroups-of-finite-groups.pdf"
+fetched_from = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/6A237E1857DE9EA8AA916597260D4433/S0027763000011004a.pdf/blocks-and-normal-subgroups-of-finite-groups.pdf"
+fetched_at = "2026-11-05T02:46:12Z"
+sha256 = "0655dc1444eb628794afe22e94cf70caa6e1799b3933d6e121b012caebc2ba16"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "Nagoya Mathematical Journal archive on Cambridge Core, served without login"
+cited_for = ["height zero conjecture for blocks with normal defect group"]
+
+[[source]]
+id = "martinez"
+authors = "J. M. Martínez"
+title = "Modular representation theory of finite groups (course notes, Firenze 2024)"
+year = 2024
+locator_scheme = "theorem"
+locator = "Section 3.2 (heights); Theorem 3.4; Proposition 5.6; Lecture 7 (Fong–Reynolds and heights); Theorem 8.11 and Corollary 8.12; Conjecture 9.7 and Theorem 9.8"
+url = "https://www.uv.es/jomimar8/pdfs/course%20notes.pdf"
+fetched_from = "https://www.uv.es/jomimar8/pdfs/course%20notes.pdf"
+fetched_at = "2026-11-05T02:45:22Z"
+sha256 = "67988b80c2a008a5ada6b23b27d8c0ff419f5f5b31c14e8b39f9181e3dfeb975"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "the same text the base roadmap ModularCharactersAndBlocks cites under this key"
+cited_for = ["Brauer's theorem on heights", "heights and height zero characters", "Reynolds' theorem"]
+
+[[source]]
+id = "sambale"
+authors = "B. Sambale"
+title = "Blocks of Finite Groups and Their Invariants"
+year = 2014
+venue = "Lecture Notes in Mathematics 2127, Springer"
+locator_scheme = "chapter"
+locator = "Chapter 1"
+url = "https://benjaminsambale.github.io/pdfs/lnm.pdf"
+fetched_from = "https://benjaminsambale.github.io/pdfs/lnm.pdf"
+fetched_at = "2026-11-05T02:45:27Z"
+sha256 = "30721ff36d910d0e9c7cf55669912978a48dcf6d93d55dd500b8f799560b34f8"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "the same text the base roadmap ModularCharactersAndBlocks cites under this key"
+cited_for = ["block-theory conventions shared with the base roadmap"]
+
+[[source]]
+id = "spath-vallejo"
+authors = "B. Späth, C. Vallejo Rodríguez"
+title = "Brauer characters and coprime action"
+year = 2016
+venue = "J. Algebra 457 (2016), 276–311"
+locator_scheme = "section"
+locator = "Section 1 (statement of the Glauberman–Isaacs correspondence and its compatibility with normal subgroups of the acting group)"
+url = "https://www.uv.es/cavaro3/download/SVCoprime.pdf"
+fetched_from = "https://www.uv.es/cavaro3/download/SVCoprime.pdf"
+fetched_at = "2026-11-05T02:44:28Z"
+sha256 = "b3aa1a312666bb6eb45e64b51716ef09616c4e3022f93acc1aa0519123e889f1"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["statement of the Glauberman–Isaacs correspondence and the compatibility law"]
+
+# Paywalled works, cited by locator without the text.
+
+[[source]]
+id = "isaacs"
+authors = "I. M. Isaacs"
+title = "Character Theory of Finite Groups"
+year = 1976
+venue = "Academic Press 1976; AMS Chelsea reprint 2006"
+locator_scheme = "chapter"
+locator = "Chapter 6 (Clifford theory, Gallagher's theorem), Chapter 8 (extension theorems), Chapter 13 (the Glauberman correspondence)"
+url = "https://bookstore.ams.org/chel-359"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Glauberman correspondence, textbook treatment", "canonical extension"]
+
+[[source]]
+id = "isaacs-1973"
+authors = "I. M. Isaacs"
+title = "Characters of solvable and symplectic groups"
+year = 1973
+venue = "Amer. J. Math. 95 (1973), 594–635"
+doi = "10.2307/2373731"
+locator_scheme = "section"
+locator = "the odd-order correspondence"
+url = "https://doi.org/10.2307/2373731"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (JSTOR); cited by its locator without the text; the odd-order correspondence is out of scope and only named"
+cited_for = ["the Isaacs correspondence for groups of odd order, named only"]
+
+[[source]]
+id = "navarro-1998"
+authors = "G. Navarro"
+title = "Characters and Blocks of Finite Groups"
+year = 1998
+venue = "LMS Lecture Note Series 250, Cambridge University Press"
+doi = "10.1017/CBO9780511526015"
+locator_scheme = "chapter"
+locator = "Chapter 3 (blocks and the theorem on heights), Chapter 4 (defect groups, the first main theorem)"
+url = "https://doi.org/10.1017/CBO9780511526015"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Brauer's theorem on heights", "defect groups and the Brauer correspondent"]
+
+[[source]]
+id = "navarro-2018"
+authors = "G. Navarro"
+title = "Character Theory and the McKay Conjecture"
+year = 2018
+venue = "Cambridge Studies in Advanced Mathematics 175, Cambridge University Press"
+doi = "10.1017/9781108552790"
+locator_scheme = "chapter"
+locator = "Chapter 2 (actions on characters, the Glauberman correspondence and its uniqueness)"
+url = "https://doi.org/10.1017/9781108552790"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["uniqueness of the family of Glauberman bijections"]
+
+[[source]]
+id = "feit"
+authors = "W. Feit"
+title = "The Representation Theory of Finite Groups"
+year = 1982
+venue = "North-Holland Mathematical Library 25, North-Holland"
+locator_scheme = "chapter"
+locator = "Chapter IV (blocks, defect groups and heights)"
+url = "https://www.sciencedirect.com/bookseries/north-holland-mathematical-library/vol/25"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["blocks, defect groups and heights, alternative textbook locator"]
