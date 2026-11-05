@@ -58,14 +58,16 @@ It leaves to other roadmaps, by section:
   operator `T` on `I(σ_r)`, `End_G(I(σ_r)) ≅ k[T]` and freeness: §2.7; the failures for `F ≠ ℚ_p`
   (non-finite-presentation of supersingulars): §2.9; blocks, the Gabriel decomposition and
   projective envelopes: §§5.1, 5.3; the finite-residue fundamental characters and the
-  coefficient-linear Pontryagin duality `DualitySupport.torsionDual`: §0.3; Schikhof duality and
-  admissible Banach representations: §0.1;
-- Serre weights of `GL₂(F)` for every local field, `I(σ) = c-Ind_{KZ}^G σ`, its Hecke algebra
-  `k̄[T]` and freeness: FiniteFlatGroupsAndIntegralPadicHodgeTheory R07.5.15;
+  coefficient-linear torsion dual `Hom_𝒪(M, L/𝒪)` of a discrete torsion module: §0.3; Schikhof
+  duality and admissible Banach representations: §0.1;
+- Serre weights of `GL₂(F)` for every local field including `F = ℚ_p`, `I(σ) = c-Ind_{KZ}^G σ`,
+  its Hecke algebra `k̄[T]` and freeness (`SerreWeight`, `compactInduction`, `heckeOperatorT`,
+  `endEquivPolynomial`, `compactInduction_free`): FiniteFlatGroupsAndIntegralPadicHodgeTheory
+  R07.5.15;
 - ordinary parts as `N(𝒪)`-invariants with the transfer Hecke action of the positive torus,
-  followed by localisation, and their derived functors: PotentialAutomorphyInfrastructure §3.7
-  (`LocalOrdinaryParts`); §2.1 here keeps Emerton's right adjoint on admissible representations
-  of `GL₂(F)`, built on the same Hecke action;
+  followed by localisation: PotentialAutomorphyInfrastructure §3.7 (`LocalOrdinaryParts`); their
+  derived version on the derived smooth category: §3.12; §2.1 here keeps Emerton's right adjoint
+  on admissible representations of `GL₂(F)`, built on the same Hecke action;
 - noetherianity of completed group algebras of compact `p`-adic analytic groups, their freeness
   over open subgroups, the filtered-to-graded transfer of noetherianity and Auslander regularity,
   `p`-valuations, saturation and ordered bases, the weighted graded algebra of a `p`-valued group,
@@ -76,17 +78,21 @@ It leaves to other roadmaps, by section:
 - the growth `dim_k V^{U_r} ≍ [U:U_r]^{δ/d}` of invariants along the power filtration of a uniform
   group: CompletedCohomologyPartII §5.8; the admissible Banach lattice presentation:
   CompletedCohomologyPartII F.1;
-- regular-sequence ideals, complete intersections and Cohen–Macaulay quotients:
-  DeformationAndDerivedPatchingAlgebra §3.4;
+- regular-sequence ideals and complete intersections: DeformationAndDerivedPatchingAlgebra §3.4;
+  depth and Cohen–Macaulay rings, with the regular-sequence criterion:
+  SchemeAndStackFoundations §0.17;
 - the absolute local Artin map and its geometric normalisation `geometricArtinMap`:
   ClassFieldTheory Layer 7;
 - finite-dimensional algebras, injective envelopes, socles, radicals and Krull–Schmidt:
   RepresentationTheory/QuiverRepresentations Layer 3 (on main);
 - completed group algebras and their compact-module actions: Tau Ceti
   (`TauCeti.completedGroupAlgebra`, `TauCeti/Topology/Algebra/Group/Profinite/CompletedGroupAlgebra/Basic.lean`
-  and `.../Module.lean`); projective covers over finite-dimensional algebras: Tau Ceti
-  (`TauCeti.exists_isProjectiveCover_of_finiteDimensional`,
-  `TauCeti/Algebra/Module/ProjectiveCover/Existence.lean`).
+  and `.../Module.lean`); projective covers over a ring finite over an Artinian ring, in
+  particular over a finite-dimensional algebra over a field: Tau Ceti
+  (`TauCeti.exists_isProjectiveCover_of_finite`,
+  `TauCeti/Algebra/Module/ProjectiveCover/Existence.lean`); acyclicity of coinduced discrete
+  modules in positive degrees: Tau Ceti (`TauCeti.ContCohomology.coindAcyclic`,
+  `TauCeti/RepresentationTheory/Homological/ContCohomology/Coinduced/Acyclic.lean`).
 
 No `p`-adic or mod `p` local Langlands correspondence for `GL₂(F)`, `F ≠ ℚ_p`, is asserted, and no
 lower bound or equality for Gelfand–Kirillov dimension is part of this roadmap: the local theorem
@@ -171,10 +177,18 @@ of Layer 7 is an upper bound under explicit multiplicity hypotheses.
   (`TauCeti/Topology/Algebra/Group/Profinite/CompletedGroupAlgebra/Basic.lean`, `.../Module.lean`).
   Assumed: the inverse-limit description over open normal subgroups and the unique extension of a
   smooth action to the completed algebra.
-- `TauCeti.exists_isProjectiveCover_of_finiteDimensional`
-  (`TauCeti/Algebra/Module/ProjectiveCover/Existence.lean`): projective covers over a
-  finite-dimensional algebra over a field, used for `P_σ = Proj_{GL₂(k_F)} σ`. It gives no
-  integral lift and no cover in a pseudocompact category; those are §5.4 and §4.6 here.
+- `TauCeti.exists_isProjectiveCover_of_finite`
+  (`TauCeti/Algebra/Module/ProjectiveCover/Existence.lean`): for an Artinian ring `K` and a ring
+  `A` that is a finite `K`-module with `K` acting through `A` (`IsScalarTower K A A`), every
+  `A`-module has a projective cover, with no finiteness asked of the module; applied with `K = k`
+  a field and `A = k[GL₂(k_F)]`, a finite-dimensional algebra, it gives `P_σ = Proj_{GL₂(k_F)} σ`.
+  It gives no integral lift and no cover in a pseudocompact category; those are §5.4 and §4.6
+  here.
+- `TauCeti.ContCohomology.coindAcyclic`
+  (`TauCeti/RepresentationTheory/Homological/ContCohomology/Coinduced/Acyclic.lean`): for a
+  compact topological group `U` and a discrete module `A`, the continuous cohomology
+  `H^n(U, Coind_1^U A)` vanishes for `n > 0`; used in §2.2 with `U = N₀`, where `Coind_1^{N₀} A`
+  is the module `C^∞(N₀, A)` of locally constant functions with `N₀` acting by translation.
 
 ### From TauCetiRoadmap.SmoothRepresentationsOfLocalGroups
 
@@ -193,15 +207,16 @@ of Layer 7 is an upper bound under explicit multiplicity hypotheses.
 ### From TauCetiRoadmap.PadicLocalLanglandsForGL2Qp
 
 - §0.1: Schikhof duality and admissible unitary Banach representations; used in §2.6 here.
-- §0.3: `DualitySupport.torsionDual` with exactness, biduality and contragredient action; the
-  finite-residue fundamental characters of every level with Frobenius powers and norm
-  compatibility; used in §§0.1, 1.6, 3.4 and 4.1 here.
+- §0.3: the coefficient-linear torsion dual `Hom_𝒪(M, L/𝒪)` of a discrete torsion `𝒪`-module,
+  with exactness, biduality and contragredient action; the finite-residue fundamental characters
+  of every level with Frobenius powers and norm compatibility; used in §§0.1, 1.6, 3.4 and 4.1
+  here.
 - §§2.1–2.3: the `GL₂(ℚ_p)` torsion categories with central character, local finiteness, the dual
   category `C_{G,ζ}(𝒪)` and its projective envelopes.
-- §2.7: `SerreWeight`, `compactInduction`, `heckeOperatorT`, `endEquivPolynomial`,
-  `compactInduction_free` for `F = ℚ_p`; the classification of absolutely irreducible smooth
-  representations of `GL₂(ℚ_p)` with central character; their admissibility and finite
-  presentation; Galois descent of irreducibles.
+- §2.7: the classification of absolutely irreducible smooth representations of `GL₂(ℚ_p)` with
+  central character as the `Π(r, λ, χ)`; their admissibility and finite presentation; Galois
+  descent of irreducibles. The Serre weights, the compact induction and the Hecke operator it
+  uses are the declarations of FiniteFlatGroupsAndIntegralPadicHodgeTheory R07.5.15 below.
 - §2.9: supersingular representations of `GL₂(F)`, `F ≠ ℚ_p`, are not finitely presented.
 - §5.1: blocks with fixed central character and finite block support of finite-length objects
   (used by §1.4); §5.3: projective envelopes.
@@ -213,9 +228,11 @@ of Layer 7 is an upper bound under explicit multiplicity hypotheses.
 ### From TauCetiRoadmap.FiniteFlatGroupsAndIntegralPadicHodgeTheory
 
 - R07.5.15: Serre weights `σ` of `GL₂(F)` as irreducible smooth `k̄[KZ]`-modules with central
-  character, `I(σ) = c-Ind_{KZ}^G σ`, `End_G(I(σ)) ≅ k̄[T]` with `T` supported on
-  `KZ diag(1,ϖ)^{±1} KZ`, freeness of `I(σ)` over `k̄[T]`, and the Barthel–Livné classification of
-  the quotients `I(σ)/(T − λ)`, `λ ≠ 0`.
+  character (`SerreWeight`), `I(σ) = c-Ind_{KZ}^G σ` (`compactInduction`), the Hecke operator
+  `T` supported on `KZ diag(1,ϖ)^{±1} KZ` (`heckeOperatorT`), `End_G(I(σ)) ≅ k̄[T]`
+  (`endEquivPolynomial`), freeness of `I(σ)` over `k̄[T]` (`compactInduction_free`), for every
+  `F` including `F = ℚ_p`, and the Barthel–Livné classification of the quotients `I(σ)/(T − λ)`,
+  `λ ≠ 0`.
 - What FiniteFlatGroupsAndIntegralPadicHodgeTheory must provide (gap:barthel-livne-finite-codimension):
   for a Serre weight `σ` of `GL₂(F)` and a nonzero `G`-subrepresentation `π′ ⊆ I(σ)`, the
   `I₁`-invariants `(π′)^{I₁}` have finite codimension in `I(σ)^{I₁}` (Barthel–Livné, Proposition
@@ -224,15 +241,18 @@ of Layer 7 is an upper bound under explicit multiplicity hypotheses.
 ### From TauCetiRoadmap.PotentialAutomorphyInfrastructure
 
 - §3.7 `LocalOrdinaryParts`: `N(𝒪)`-invariants with the transfer Hecke action
-  `t·v = Σ_{n ∈ N(𝒪)/tN(𝒪)t⁻¹} n t v` of the positive torus monoid, its localisation, functoriality
-  and derived version. Used for `GL₂` at a single place, with `N₀ = N(𝒪_F)` and `T⁺` the monoid
+  `t·v = Σ_{n ∈ N(𝒪)/tN(𝒪)t⁻¹} n t v` of the positive torus monoid, its localisation and
+  functoriality. Used for `GL₂` at a single place, with `N₀ = N(𝒪_F)` and `T⁺` the monoid
   contracting `N₀`.
+- §3.12 (derived ordinary comparison): the derived functor `RΓ(N(𝒪), −)` on the bounded-below
+  derived smooth category with its Hecke action, followed by the localisation; used for the
+  cohomological ordinary parts `H^•Ord_B` of §2.2.
 
 ### From TauCetiRoadmap.NoncommutativeAndEquivariantIwasawa
 
 - §F.1: left and right noetherianity of `𝒪[[U]]` and `k[[U]]` for compact `p`-adic analytic `U`;
-  the canonical topology on finite modules; `iwasawaGrade`, the coefficient shift, the finite-index
-  grade comparison, and canonical dimension `gldim(R) − j_R(M)` with value `−∞` on the zero module.
+  the canonical topology on finite modules; `iwasawaGrade`, the coefficient shift and the
+  finite-index grade comparison (restriction along an open inclusion preserves grade).
 - §0.3: completed group algebras are free of finite rank over the completed algebra of an open
   subgroup, on both sides.
 - §0.5: complete filtrations with noetherian graded ring lift noetherianity, domain, global
@@ -240,7 +260,9 @@ of Layer 7 is an upper bound under explicit multiplicity hypotheses.
 - §§0.7–0.8: `p`-valuations, finite rank, saturation and ordered bases; the weighted graded algebra
   `gr_ω 𝒪[[G]] ≅ gr 𝒪 ⊗_{𝔽_p[P]} U(gr G)` for a finite-rank `p`-valued `G` with ordered basis.
 - §§0.10–0.11: Auslander regularity and global dimension `d` of `k[[G]]` for compact analytic `G`
-  of dimension `d` without `p`-torsion.
+  of dimension `d` without `p`-torsion, and (§0.11) the canonical dimension `gldim(R) − j_R(M)` of
+  a nonzero finite module, with value `−∞` on the zero module, independent of the open uniform
+  subgroup.
 - §0.13: `H*(U, 𝔽_p) ≅ ∧* H¹(U, 𝔽_p)` for uniform `U`, with `dim H¹ = d`.
 
 ### From TauCetiRoadmap.CompletedCohomologyPartII
@@ -254,8 +276,14 @@ of Layer 7 is an upper bound under explicit multiplicity hypotheses.
 
 ### From TauCetiRoadmap.DeformationAndDerivedPatchingAlgebra
 
-- §3.4: regular-sequence ideals, complete intersections, and the fact that complete intersections
-  are Cohen–Macaulay; used for the crossing algebra of §4.5.
+- §3.4: regular-sequence ideals and complete intersections; used for the crossing algebra of
+  §4.5.
+
+### From TauCetiRoadmap.SchemeAndStackFoundations
+
+- §0.17: depth, Cohen–Macaulay modules and rings over Noetherian rings, Cohen–Macaulayness of
+  polynomial rings, and the criterion that a module is Cohen–Macaulay when its quotient by a
+  regular sequence is; used for the crossing algebra of §4.5.
 
 ### From TauCetiRoadmap.ClassFieldTheory
 
@@ -440,10 +468,11 @@ finite index in `G′`, the finite-index calculus gives the headline statement.
 
 Prove `isFinitelyPresented_ker`: for `F/ℚ_p` finite with uniformiser `ϖ` and `L/ℚ_p` finite with
 the same residue characteristic, the kernel of an intertwining map between finitely presented
-`𝒪_L`-representations of `G′ = GL₂(F)/ϖ^ℤ` is finitely presented (SHOTTON20, Theorem 5.1 and
-Corollary 5.2; CDN23, Proposition 1.3 and Remarque 1.4). The conclusion is coherence, not
-noetherianity: `𝒪⟨G′⟩` is not noetherian. *Needs:* §§0.2–0.4; NoncommutativeAndEquivariantIwasawa
-§F.1 (noetherianity of `𝒪[[U]]`) and §0.3 (freeness over open subgroups); the amalgam
+`𝒪_L`-representations of `G′ = GL₂(F)/ϖ^ℤ` is finitely presented (SHOTTON20, Theorem 4.5,
+Corollary 5.2 and Lemma 2.8; CDN23, Proposition 1.3 and Remarque 1.4(ii)). The conclusion is
+coherence, not noetherianity: `𝒪⟨G′⟩` is not noetherian. *Needs:* §§0.2–0.4;
+NoncommutativeAndEquivariantIwasawa §F.1 (noetherianity of `𝒪[[U]]`) and §0.3 (freeness over
+open subgroups); the amalgam
 decomposition from Serre's *Arbres, amalgames, SL₂*, Chapter II, cited by SHOTTON20, §5.
 
 **Checks.**
@@ -496,21 +525,32 @@ Let `F/ℚ_p` be finite and `W` a finite-dimensional smooth `k[KZ]`-module with 
 a `G`-equivariant surjection `q : c-Ind_{KZ}^G W → V` put `P⁺ = {(a b; 0 1) : a ∈ 𝒪_F ∖ {0}, b ∈ 𝒪_F}`,
 `w = (0 1; ϖ 0)`, let `I⁺(W)` be the span of the standard functions `[g, v]` with `g ∈ P⁺`,
 `v ∈ W`, and `I⁻(W) = w I⁺(W)`. Define `Δ(W,V) = q(I⁺(W)) ∩ q(I⁻(W)) ⊆ V` (HU12, §3.1.1, p. 17;
-§3.3, p. 30). Prove that `c-Ind_{KZ}^G W = I⁺(W) ⊕ I⁻(W)` as `IZ`-modules, that `Δ(W,V)` is stable
-under `IZ` and `w`, and that it is nonzero when `V ≠ 0` (VIGNERAS11, §5, Propositions 9–10).
-*Needs:* SmoothRepresentationsOfLocalGroups *compact-induction*; §0.3.
+§3.3, p. 30). Prove that `c-Ind_{KZ}^G W = I⁺(W) ⊕ I⁻(W)` as `IZ`-modules and that `Δ(W,V)` is
+stable under `IZ` and `w` (HU12, §3.1.1; VIGNERAS11, §5, Lemme 11 and Proposition 9). Prove that
+for `σ` a Serre weight, an absolutely irreducible `W`
+(FiniteFlatGroupsAndIntegralPadicHodgeTheory R07.5.15), and `V` a nonzero admissible quotient of
+`c-Ind_{KZ}^G σ`, `Δ(σ,V)` contains `V^{I₁}`, hence is nonzero, `I₁` being pro-`p` (HU12,
+Corollaire 3.9, p. 19). Admissibility cannot be dropped: Vignéras's Propositions 9 and 10 assert
+the containment and the nonvanishing for every generating `KZ`-submodule of a smooth torsion `V`,
+and the compact induction itself, with `Δ = 0`, refutes both; only the admissible form is used
+here. *Needs:* SmoothRepresentationsOfLocalGroups *compact-induction*;
+FiniteFlatGroupsAndIntegralPadicHodgeTheory R07.5.15; §§0.1, 0.3.
 
 API:
 
 - `v ∈ Δ(W,V)` exactly when `v` has a preimage under `q` supported in `P⁺KZ` and one supported in
   `wP⁺KZ`.
-- `Δ(W,V)` contains `V^{I₁}` when `W` generates `V` (VIGNERAS11, §5, Proposition 9).
+- For `σ` a Serre weight and `V` a nonzero admissible quotient of `c-Ind_{KZ}^G σ`, `Δ(σ,V)`
+  contains `V^{I₁}` (HU12, Corollaire 3.9, p. 19).
 - A `G`-map `V → V′` compatible with the presentations restricts to `Δ(W,V) → Δ(W,V′)`, compatibly
   with identities and composition.
 
 **Checks.**
 
-- For `q` the identity of `c-Ind_{KZ}^G W`, `Δ = 0` by the two-cell decomposition.
+- For `q` the identity of `c-Ind_{KZ}^G W`, `Δ = 0` by the two-cell decomposition, while
+  `V^{I₁} ⊇ {[1, v] : v ∈ W^{I₁}} ≠ 0`, the pro-`p` group `I₁` having nonzero invariants on
+  `W ≠ 0`; so the containment `V^{I₁} ⊆ Δ` and the nonvanishing of `Δ` both fail without
+  admissibility, and `c-Ind_{KZ}^G W` is indeed not admissible (§0.1).
 - For `W = k` trivial and `q` the augmentation onto the trivial line, both cell images are `k`, so
   `Δ = k`.
 - The functor is not right exact: the augmentation above has `Δ(source) = 0` and
@@ -519,7 +559,8 @@ API:
 ### Examples
 
 - For `H = SL₂(ℚ_p)` and `σ = Sym^r k²`, `c-Ind_K^H σ` is finitely presented and the kernel of any
-  endomorphism of it is finitely presented (§0.5).
+  endomorphism of it is finitely presented (§0.5; this is the case of SHOTTON20, Theorem 5.1,
+  stated for `SL₂` of a division algebra).
 - For `G′ = GL₂(ℚ_p)/p^ℤ` and `σ` trivial, the augmentation `c-Ind_{KZ}^G k → k` has kernel the
   representation generated by `[1,1] − [α,1]`; it is finitely presented by §0.5, and the obstruction
   space of the augmentation is `k` (§0.8).
@@ -528,7 +569,8 @@ API:
 
 Mathlib representations, induction and finite length; Tau Ceti completed group algebras;
 SmoothRepresentationsOfLocalGroups SR.0.1–SR.0.4 and SR.2.1; NoncommutativeAndEquivariantIwasawa
-§§0.3 and F.1; PadicLocalLanglandsForGL2Qp §§2.3 and 2.9 for Checks.
+§§0.3 and F.1; FiniteFlatGroupsAndIntegralPadicHodgeTheory R07.5.15 (Serre weights, §0.8);
+PadicLocalLanglandsForGL2Qp §§2.3 and 2.9 for Checks.
 
 ## Layer 1: Finite-length criteria over ℚ_p
 
@@ -722,24 +764,61 @@ API:
 Assume `F ≠ ℚ_p`. Prove: for admissible `U`, `Ord_B(Ind_{B̄}^G U) ≅ U` and
 `R¹Ord_B(Ind_{B̄}^G U) = 0`; for a smooth character `χ`, `Ord_B(St ⊗ χ∘det) ≅ χ ⊗ χ` and
 `R¹Ord_B(St ⊗ χ∘det) = 0`; and `Ord_B(χ∘det) = R¹Ord_B(χ∘det) = 0` (CDN23, Proposition 1.30,
-pp. 20–21). Here `R¹Ord_B` is the derived functor on locally admissible representations. Route:
-Hauseux proves that the cohomological `H¹Ord_B(Ind_{B̄}^G U)` vanishes when `F ≠ ℚ_p` (HAUSEUX,
-Corollaire 4.2.4(ii)); prove the natural injection `R¹Ord_B → H¹Ord_B` on locally admissible
-representations, built from the δ-functor of continuous `N₀`-cohomology followed by the
-localisation of PotentialAutomorphyInfrastructure §3.7 (EMERTON2, Remark 3.7.3); the Steinberg and
-character statements follow from the sequence `0 → χ∘det → Ind_{B̄}^G(χ⊗χ) → St⊗χ∘det → 0` and
-Emerton's computation (EMERTON2, Theorem 4.2.12, cited in CDN23, Proposition 1.30(b)). *Needs:*
-§2.1; PotentialAutomorphyInfrastructure §3.7 (derived version); SmoothRepresentationsOfLocalGroups
-SR.0d.1.
+pp. 20–21). Here `R¹Ord_B` is the derived functor on locally admissible representations, and
+`H^iOrd_B(V)` is the localisation `Hom_{𝒪[T⁺]}(𝒪[T], H^i(N₀, V))_{T-fin}` of the continuous
+cohomology of `N₀`, on which `t ∈ T⁺` acts by conjugation followed by corestriction (EMERTON2,
+Definition 3.3.1, p. 10, and the description after Proposition 3.5.6, p. 22). Prove the natural
+injection `R¹Ord_B → H¹Ord_B` on locally admissible representations, the universal δ-functor
+mapping to the δ-functor `H^•Ord_B` (EMERTON2, Remark 3.7.3, p. 23). Prove the two inputs that
+the Steinberg and character statements need, for every `F`:
+
+- for a smooth torsion representation `U` of `T`, `H^i(N₀, Ind_{B̄}^G U) ≅ H^i(N₀, U^w)` for every
+  `i ≥ 1`, compatibly with the Hecke actions, `U^w` being `U` with `T` acting through
+  conjugation by `w` and `N₀` trivially; and for a smooth character `χ`,
+  `H^i(N₀, St ⊗ χ∘det) = 0` for every `i ≥ 1`. Route: the two `B`-orbits on `B̄\G = ℙ¹(F)`, the
+  open cell `B̄N` and the fixed point `∞ = B̄w`, give the `B`-equivariant sequence
+  `0 → C_c^∞(F) ⊗ U → Ind_{B̄}^G U → U^w → 0`, the quotient being evaluation at `∞`
+  (SmoothRepresentationsOfLocalGroups *smooth-induction*, and *mackey-filtration* with `Q = B`,
+  `Ind_{B̄}^G` being `c-Ind_{B̄}^G` as `B̄\G` is compact);
+  restricted to `N₀` the left term is `⊕_{F/𝒪_F} C^∞(N₀, U)`, a direct sum of coinduced modules
+  `Coind_1^{N₀} U`, acyclic in positive degrees (Tau Ceti `TauCeti.ContCohomology.coindAcyclic`),
+  and continuous cohomology of the profinite `N₀` commutes with direct sums; so evaluation at `∞`
+  is an isomorphism on `H^i` for `i ≥ 1`. The constant functions `χ∘det → Ind_{B̄}^G(χ⊗χ)` compose
+  with evaluation at `∞` to an isomorphism `χ∘det ≅ (χ⊗χ)^w` of `N₀`-trivial modules, so they too
+  induce isomorphisms on `H^i` for `i ≥ 1`, and the long exact sequence of
+  `0 → χ∘det → Ind_{B̄}^G(χ⊗χ) → St ⊗ χ∘det → 0` forces `H^i(N₀, St ⊗ χ∘det) = 0` for `i ≥ 1`;
+- for the character `χ∘det` and `t ∈ T⁺` with `tN₀t⁻¹` of index `q` in `N₀`, the Hecke operator
+  on `H¹(N₀, χ∘det) = Hom_{cont}(𝒪_F, χ∘det)` is `χ(det t)` times precomposition with
+  multiplication by `q/ϖ = ϖ^{ef−1}·u`, `u ∈ 𝒪_F^×`, because the transfer `N₀ → tN₀t⁻¹` of the
+  abelian group `N₀ ≅ 𝒪_F` is multiplication by the index `q` and conjugation by `t` rescales by
+  `ϖ`; this operator is nilpotent exactly when `ef ≥ 2`, that is `F ≠ ℚ_p`, since
+  `Hom_{cont}(𝒪_F, χ∘det)` factors through `𝒪_F/p^m` for some `m`; hence `H¹Ord_B(χ∘det) = 0` for
+  `F ≠ ℚ_p`.
+
+With these: `R¹Ord_B(Ind_{B̄}^G U) ↪ H¹Ord_B(Ind_{B̄}^G U) = 0` (HAUSEUX, Corollaire 4.2.4(ii)),
+`R¹Ord_B(χ∘det) ↪ H¹Ord_B(χ∘det) = 0`, `R¹Ord_B(St ⊗ χ∘det) ↪ H¹Ord_B(St ⊗ χ∘det) = 0`,
+`Ord_B(χ∘det) = 0` by the §2.1 Check, and `Ord_B` applied to the Steinberg sequence gives
+`Ord_B(St ⊗ χ∘det) ≅ Ord_B(Ind_{B̄}^G(χ⊗χ)) ≅ χ ⊗ χ`. CDN23 justifies its Steinberg clause by
+EMERTON2, Theorem 4.2.12, a statement about `GL₂(ℚ_p)` only; the route above replaces it.
+*Needs:* §2.1; PotentialAutomorphyInfrastructure §§3.7 and 3.12; SmoothRepresentationsOfLocalGroups
+SR.0d.1, *smooth-induction*, *mackey-filtration*; Tau Ceti `TauCeti.ContCohomology.coindAcyclic`.
 
 **Checks.**
 
 - The hypothesis `F ≠ ℚ_p` is needed: for `F = ℚ_p`, `H¹Ord_B(Ind_{B̄}^G U) ≅ ⊕_α U^α ⊗ (ω⁻¹∘α)` is
   nonzero (HAUSEUX, Corollaire 4.2.4(i)).
+- The Hecke operator on `H¹(N₀, k) = Hom(𝒪_F/p, k)`, of dimension `ef`: for `F = ℚ_p` and
+  `t = diag(p, 1)` it is precomposition with multiplication by `q/ϖ = 1`, invertible, and
+  `H¹Ord_B(1) ≅ H¹(N₀, k)` is one-dimensional, as EMERTON2, Theorem 4.2.12(3), states; for
+  `F = ℚ_{p²}` it is precomposition with multiplication by `ϖ` on `𝒪_F/ϖ`, which is zero, so
+  `H¹Ord_B(1) = 0`; for `F` ramified quadratic it is precomposition with multiplication by `ϖ` on
+  `𝒪_F/ϖ²`, nonzero of square zero, so again `H¹Ord_B(1) = 0`.
 - The three statements are consistent with left exactness: applying `Ord_B` to
-  `0 → χ∘det → Ind_{B̄}^G(χ⊗χ) → St⊗χ∘det → 0` gives `0 → 0 → χ⊗χ → Ord_B(St⊗χ∘det) → R¹Ord_B(χ∘det) = 0`.
-- Over `ℚ_p`, `R¹Ord_B(1) ≠ 0` (EMERTON2, Theorem 4.2.12), so the same sequence no longer
-  determines `Ord_B(St)`; the vanishing of `R¹Ord_B` on characters is what fails.
+  `0 → χ∘det → Ind_{B̄}^G(χ⊗χ) → St⊗χ∘det → 0` gives
+  `0 → 0 → χ⊗χ → Ord_B(St⊗χ∘det) → R¹Ord_B(χ∘det) = 0`.
+- Over `ℚ_p`, `H¹Ord_B(1) ≠ 0` (EMERTON2, Theorem 4.2.12(3)), so the vanishing of `H¹Ord_B` on
+  characters, which drives the computation, is exactly what fails; the `N₀`-cohomology of
+  `St ⊗ χ∘det` vanishes in positive degrees for every `F`, `ℚ_p` included.
 
 ### 2.3 Finite obstruction and admissible length
 
@@ -752,9 +831,10 @@ irreducible `KZ`-weight and `V` a nonzero admissible proper quotient of `c-Ind_{
 Lemme 4.5, pp. 33–36; Proposition 3.30 and Corollaire 3.31, pp. 30–31; VIGNERAS11, §5,
 Proposition 8 for torsion coefficients). In the proof of HU12 Proposition 4.4 the first displayed
 intersection is between the positive and the negative cell, as in the next display and in
-Lemme 4.5. Route for the last clause: an irreducible subrepresentation has nonzero obstruction
-(§0.8), which injects, while the quotient obstruction is a quotient, so `dim Δ` drops strictly;
-admissibility passes to quotients (§0.1). *Needs:* §§0.1, 0.4, 0.6, 0.8.
+Lemme 4.5. Route for the last clause: an irreducible subrepresentation of `V` is admissible and so
+has nonzero obstruction (§0.8, the admissible form), which injects (HU12, Proposition 3.30(i)),
+while the quotient obstruction is a quotient, so `dim Δ` drops strictly; admissibility passes to
+subobjects and quotients (§0.1). *Needs:* §§0.1, 0.4, 0.6, 0.8.
 
 **Checks.**
 
@@ -844,9 +924,10 @@ SmoothRepresentationsOfLocalGroups *smooth-induction*.
 
 ### Dependencies
 
-Layer 0; PotentialAutomorphyInfrastructure §3.7; SmoothRepresentationsOfLocalGroups SR.0d.1 and
-SR.2.1; PadicLocalLanglandsForGL2Qp §§0.1, 2.7, 2.9; FiniteFlatGroupsAndIntegralPadicHodgeTheory
-R07.5.15; CompletedCohomologyPartII F.1.
+Layer 0; PotentialAutomorphyInfrastructure §§3.7 and 3.12; SmoothRepresentationsOfLocalGroups
+SR.0d.1 and SR.2.1; Tau Ceti `TauCeti.ContCohomology.coindAcyclic`; PadicLocalLanglandsForGL2Qp
+§§0.1, 2.7, 2.9; FiniteFlatGroupsAndIntegralPadicHodgeTheory R07.5.15; CompletedCohomologyPartII
+F.1.
 
 ## Layer 3: Tame weights and extension coordinates
 
@@ -1008,9 +1089,10 @@ has a square root in `1 + p𝒪_F`, so `I₁ = Z₁ × P`), `A = k[[P]]` and `�
 For a `p`-adic Lie group `G` and an admissible smooth `k[G]`-module `V ≠ 0`, choose a compact open
 subgroup `U` without `p`-torsion; its Pontryagin dual `V^∨` is a finitely generated
 `k[[U]]`-module (§0.1), and define `dim_G V = δ_{k[[U]]}(V^∨) = dim U − j_{k[[U]]}(V^∨)` with the
-grade and canonical dimension of NoncommutativeAndEquivariantIwasawa §F.1; put `dim_G 0 = −∞`
-(BHHMS23, §5.1, pp. 46–47, equation (36)). Prove that `dim_G V` does not depend on `U`, by the
-finite-index grade comparison of NoncommutativeAndEquivariantIwasawa §F.1. For `U` uniform,
+grade of NoncommutativeAndEquivariantIwasawa §F.1 and the canonical dimension of its §0.11, whose
+convention `δ(0) = −∞` gives `dim_G 0 = −∞` (BHHMS23, §5.1, pp. 46–47, equation (36)). Prove
+that `dim_G V` does not depend on `U`, by the finite-index grade comparison of
+NoncommutativeAndEquivariantIwasawa §F.1. For `U` uniform,
 `dim_G V` is the exponent of growth of `dim_k V^{U^{p^r}}` against `[U : U^{p^r}]^{1/dim U}`, by
 CompletedCohomologyPartII §5.8. *Needs:* NoncommutativeAndEquivariantIwasawa §§F.1, 0.10–0.11;
 CompletedCohomologyPartII §5.8; PadicLocalLanglandsForGL2Qp §0.3 (Pontryagin duality); §0.1.
@@ -1111,7 +1193,9 @@ the two-sided ideal `𝔍_P` of `gr_𝔪 A` generated by the `h_i` and the `e_i 
 `C_J(k)`, `H`-equivariantly, all generators of `𝔍_P` having degree two and trivial `H`-weight
 (BHHMS23, Theorem 5.3.4(ii), p. 54). *Needs:* Mathlib `MvPolynomial`, `Ideal.span`,
 `Ideal.Quotient.mk`, `ringKrullDim`, `MvPolynomial.ringKrullDim_of_isNoetherianRing_of_finite`,
-`RingTheory.Sequence.IsRegular`; DeformationAndDerivedPatchingAlgebra §3.4; §4.4.
+`RingTheory.Sequence.IsRegular`; DeformationAndDerivedPatchingAlgebra §3.4 (complete
+intersections); SchemeAndStackFoundations §0.17 (Cohen–Macaulay rings and the regular-sequence
+criterion); §4.4.
 
 API:
 
@@ -1119,7 +1203,8 @@ API:
 - `gr_𝔪 A / 𝔍_P ≅ C_J(k)` compatibly with the `H`-actions (`e_i ↦ X_i`, `f_i ↦ Y_i`).
 - `ringKrullDim C_J(k) = |J|`: the sequence `(X_iY_i)_i` is regular in the polynomial ring of
   dimension `2|J|`, and the minimal primes are the `|J|`-variable coordinate ideals
-  `(Z_i : i ∈ J)` with `Z_i ∈ {X_i, Y_i}`.
+  `(Z_i : i ∈ J)` with `Z_i ∈ {X_i, Y_i}`; `C_J(k)` is Cohen–Macaulay as the quotient of the
+  Cohen–Macaulay polynomial ring by this regular sequence (SchemeAndStackFoundations §0.17).
 
 **Checks.**
 
@@ -1182,13 +1267,13 @@ everything; then §4.2 and §4.5 give the bound. *Needs:* §§4.2, 4.5, 4.6.
 
 Layer 0 (§0.1); NoncommutativeAndEquivariantIwasawa §§0.5, 0.7, 0.8, 0.10–0.11, F.1;
 CompletedCohomologyPartII §5.8; SmoothRepresentationsOfLocalGroups SR.0d.1; Tau Ceti completed
-group algebras; DeformationAndDerivedPatchingAlgebra §3.4; Mathlib commutative algebra; Layer 3
-(§3.1).
+group algebras; DeformationAndDerivedPatchingAlgebra §3.4; SchemeAndStackFoundations §0.17;
+Mathlib commutative algebra; Layer 3 (§3.1).
 
 ## Layer 5: Finite and first-order extension modules
 
 `p > 3`, `F` unramified of degree `f`, `Γ = GL₂(k_F)`, `P_σ = Proj_Γ σ` (Tau Ceti
-`TauCeti.exists_isProjectiveCover_of_finiteDimensional`) and `Inj_Γ σ` its injective envelope.
+`TauCeti.exists_isProjectiveCover_of_finite`) and `Inj_Γ σ` its injective envelope.
 
 ### 5.1 Iwahori character extensions and truncation embeddings
 
@@ -1243,7 +1328,7 @@ submodule `I(F(λ), σ_a)` of `Inj_Γ F(λ)` with cosocle `σ_a` in which `F(λ)
 multiplicity-free with constituents `σ_b`, `b_i ∈ {0, a_i}`, and length `2^{#{i : a_i ≠ 0}}`
 (BHHMS23, Lemma 6.2.1, pp. 58–59; BP12, Corollary 3.12, p. 26). *Needs:* §§3.3, 5.2;
 RepresentationTheory/QuiverRepresentations Layer 3; Tau Ceti
-`TauCeti.exists_isProjectiveCover_of_finiteDimensional`.
+`TauCeti.exists_isProjectiveCover_of_finite`.
 
 API:
 
@@ -1300,7 +1385,7 @@ pp. 22–23). LMS22 Proposition 3.3(2) as printed identifies every translated su
 projective cover; the corrected statement uses the translated module `R_{μ+ν}`, which is the
 projective cover when the shifted weight is not a character, and the 3-deep hypothesis excludes
 characters. *Needs:* §§3.1, 5.3, 5.4; Tau Ceti
-`TauCeti.exists_isProjectiveCover_of_finiteDimensional`.
+`TauCeti.exists_isProjectiveCover_of_finite`.
 
 **Checks.**
 
@@ -1724,7 +1809,7 @@ decompositions `R_{2,i}/p ≅ P_σ ⊕ P_{F(λ−α_i)} ⊕ P_{F(λ+α_i)}` of �
 `(1 ⊕ sl₂(F)) ⊗_{ℚ_p} P̃_σ[1/p]`, and that the partial fibre products `L_j`, imposing the condition only
 for `i ≤ j` (with `L_{−1} = R₁`), satisfy `L_{f−1} = R` (BHHMS23, §7.3, equations (56)–(57),
 pp. 81–83; introduction, equation (7), p. 8). *Needs:* §§5.4, 5.5, 8.2, 8.3; Tau Ceti
-`TauCeti.exists_isProjectiveCover_of_finiteDimensional`.
+`TauCeti.exists_isProjectiveCover_of_finite`.
 
 API:
 

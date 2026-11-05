@@ -58,7 +58,7 @@ authors = "Matthew Emerton"
 title = "Ordinary parts of admissible representations of p-adic reductive groups II. Derived functors"
 year = 2010
 locator_scheme = "theorem"
-locator = "Remark 3.7.3; Theorem 4.2.12"
+locator = "Definition 3.3.1; Proposition 3.5.6; Remark 3.7.3; Theorem 4.2.12"
 url = "https://www.math.uchicago.edu/~emerton/pdffiles/ord-two.pdf"
 fetched_from = "https://www.math.uchicago.edu/~emerton/pdffiles/ord-two.pdf"
 fetched_at = "2026-10-26T18:58:27Z"
@@ -66,6 +66,7 @@ sha256 = "3ecb1ba39a611ad931caf29d2f5215ca7d72d3ffdf9f58a04ec4f27faa67c00a"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-26"
+version_note = "author copy; §4 and Theorem 4.2.12 are stated for GL₂(ℚ_p) only, and are cited for the ℚ_p Checks of §2.2; the general-F route of §2.2 uses Definition 3.3.1 and Remark 3.7.3"
 cited_for = ["Layer 2"]
 
 [[source]]
@@ -110,7 +111,7 @@ title = "Diagrammes canoniques et representations modulo $p$ de $\\GL_2(F)$"
 year = 2009
 arxiv = "0904.3991v3"
 locator_scheme = "theorem"
-locator = "§3.1.1; Theorem 4.3; Proposition 4.4; Lemma 4.5; Corollary 3.31"
+locator = "§3.1.1; Corollary 3.9; Proposition 3.30; Corollary 3.31; Theorem 4.3; Proposition 4.4; Lemma 4.5"
 url = "https://arxiv.org/abs/0904.3991v3"
 fetched_from = "https://arxiv.org/pdf/0904.3991v3"
 fetched_at = "2026-10-26T18:59:40Z"
@@ -185,6 +186,7 @@ sha256 = "b007a4e37b824ca5986ac6152ed9fabcf38dde97e16d8f5f7f60756fe77d3418"
 licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-10-26"
+version_note = "published text; Proposition 1.30(b) is justified by EMERTON2 Theorem 4.2.12, a GL₂(ℚ_p) statement, and §2.2 supplies a route for every F"
 cited_for = ["Layers 0-2"]
 
 [[source]]
@@ -248,7 +250,7 @@ title = "De GL(2,F) a Gal_{Q_p}"
 year = 2009
 arxiv = "0909.4003v1"
 locator_scheme = "theorem"
-locator = "§5, Propositions 7-11 and Théorème 7 (arXiv numbering)"
+locator = "§5, Lemme 11, Propositions 7-11 and Théorème 7 (arXiv numbering)"
 url = "https://arxiv.org/abs/0909.4003v1"
 fetched_from = "https://arxiv.org/pdf/0909.4003v1"
 fetched_at = "2026-10-26T19:04:09Z"
@@ -256,7 +258,7 @@ sha256 = "e5bc8b1cf74e063d42c7dc8c33cd5e26c1247c68bf69f56a3d36b8d6f829927b"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
-version_note = "arXiv:0909.4003v1 (De GL(2,F) à Gal_Qp); published as Le foncteur de Colmez pour GL(2,F), ALM 19 (2011), whose numbering (Propositions 5.5-5.8) differs; locators use the arXiv numbering"
+version_note = "arXiv:0909.4003v1 (De GL(2,F) à Gal_Qp); published as Le foncteur de Colmez pour GL(2,F), ALM 19 (2011), whose numbering (Propositions 5.5-5.8) differs; locators use the arXiv numbering. Propositions 9-10 assert, for every generating KZ-submodule V₀ of a smooth torsion V, that Δ_V(V₀) contains V₀^{I₁} and is nonzero; the compact induction V = c-Ind_{KZ}^G V₀, with Δ = 0, refutes both, so they are cited only for the IZ- and ω-stability, the admissible forms being HU12 Corollaire 3.9"
 cited_for = ["Layer 2"]
 
 [[source]]
