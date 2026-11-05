@@ -2330,23 +2330,30 @@
  ],
  "gaps": [
   {
-   "title": "Huber 1998 and Lütkebohmert 1993 not read in the original",
-   "neededBy": [
-    "DeligneWeightsAndPurityPartII:WM.3/oc-quasi-constructibility",
-    "DeligneWeightsAndPurityPartII:WM.3/lutkebohmert-riemann-existence",
-    "DeligneWeightsAndPurityPartII:WM.3/huber-neighbourhood-theorem"
-   ],
-   "detail": "R. Huber, A finiteness result for direct image sheaves on the étale site of rigid analytic varieties, J. Algebraic Geom. 7 (1998), 359–403 (Theorems 2.1 and 3.6), and W. Lütkebohmert, Riemann's existence problem for a p-adic field, Invent. Math. 111 (1993), 309–330 (Theorem 2.2), are not freely available to the worker. The three nodes state these results in the form in which K. Ito, arXiv:2008.07794v1 (Theorem 1.1, Theorem 4.5 and the proof sketch in §1.2), recalls and uses them, and the proof outline of the neighbourhood theorem follows Ito's sketch. Before formalisation the statements, in particular the definition of oc-quasi-constructible sheaves (Huber 1998, Definition 1.4) and any hypotheses of Theorem 3.6(a) beyond those Ito records, must be checked against the originals."
+    "slug": "huber-compact-support-nearby-cycles",
+    "needs": "For a strictly henselian microbial valuation ring R with separable closure, a separated finite-type f : X → Spec R and a torsion étale sheaf F on X, the stalk of R^n d(f)_! F^a at the closed geometric point of Spa(L,R) is Galois-equivariantly isomorphic to H^n_c of the geometric special fibre with coefficients in the sliced nearby cycles of F, compatibly with specialization maps.",
+    "supplier": "ClassicalAdicEtaleCohomology",
+    "section": "4.5, 5.2, 8.3–8.4"
   },
   {
-   "title": "Derived inputs in the neighbourhood-theorem proof route",
-   "neededBy": [
-    "DeligneWeightsAndPurityPartII:WM.3/oc-quasi-constructibility",
-    "DeligneWeightsAndPurityPartII:WM.3/huber-neighbourhood-theorem"
-   ],
-   "detail": "To implement the route recalled in Ito §1.2 (pp. 2–3), establish: (1) the blow-up descent and finite-cover gluing comparison for tubes and the closed pseudo-adic subspace; (2) bounded cohomological amplitude of Rf^{rig}_* ℤ/n on a sufficiently small disc, giving a common radius and Kummer trivialisation for all nonzero direct images; (3) stabilisation of disc cohomology for these Kummer-trivialised sheaves with their extension across the origin, including the covers not supplied by the prime-to-p tame-cover input in ClassicalAdicEtaleCohomology H4; (4) the étale-topos limit and coefficient descent needed to identify the shrinking-tube limit with cohomology of the closed pseudo-adic subspace. The end theorem is verified in Ito Theorem 4.5(2), p. 21. These proof inputs are not claimed established by ordinary proper base change, nonproper fibre cohomology, or equality of underlying point sets."
+    "slug": "analytic-comparison-automorphisms",
+    "needs": "For a proper variety defined over a complete field K, the algebraic–adic cohomology comparison over its completed algebraic closure C commutes with every continuous K-automorphism of C, with cup products and coefficient reductions.",
+    "supplier": "ClassicalAdicEtaleCohomology",
+    "section": "8.2, 11.1"
+  },
+  {
+    "slug": "adapted-plurinodal-alteration",
+    "needs": "For a proper surjective morphism of Noetherian excellent integral schemes with irreducible geometric generic fibre and a dense open of the source, integral alterations of source and base and a factorization of the altered map into nodal curves adapted to dense opens at every stage (smooth over the lower open, with an étale marked boundary in the smooth locus), whose top open lies in the inverse image of the given open (de Jong, Theorem 5.9; ITO20 Theorem 3.3).",
+    "supplier": "ClassicalAdicEtaleCohomology",
+    "section": "5.4"
+  },
+  {
+    "slug": "huber-smooth-relative-duality",
+    "needs": "For a smooth separated quasi-compact morphism g of pure relative dimension N from a finite-type analytic adic space to an annulus over an algebraically closed complete rank-one field, and its base change over the pseudo-adic subspace D(b) ∩ B(a,b), with n invertible and every R^i g_! Z/n locally constant constructible, the trace gives R^j g_*(Z/n(N)) ≅ Hom(R^(2N−j) g_! Z/n, Z/n) for every j (Huber, Corollary 7.5.5).",
+    "supplier": "ClassicalAdicEtaleCohomology",
+    "section": "9.6–9.7"
   }
- ],
+],
  "restructure": [
   {
    "action": "rescope",

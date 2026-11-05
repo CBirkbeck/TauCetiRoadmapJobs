@@ -1,0 +1,20 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "CircleMethodThreePrimes"
+
+[[source]]
+id = "helfgott2015"
+authors = "Harald Andres Helfgott"
+title = "The ternary Goldbach problem"
+year = 2015
+arxiv = "1501.05438v2"
+locator_scheme = "section"
+locator = "Section 1"
+url = "https://arxiv.org/abs/1501.05438v2"
+fetched_from = "https://arxiv.org/pdf/1501.05438v2"
+fetched_at = "2026-11-05T05:53:50Z"
+sha256 = "fde3e2679311336346053e980a766e5ffd8a811d79fbc822dd8431170b58c30e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v2"
+cited_for = ["4.8"]

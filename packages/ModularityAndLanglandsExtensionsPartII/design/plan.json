@@ -207,7 +207,7 @@
       ],
       "proofSteps": [
         "β^{−1}(𝒳) is a Zariski closed analytic subspace of 𝒴 (pullback of a closed immersion).",
-        "Let 𝒞 be an irreducible component through y and 𝒞̃ → 𝒞 its normalization, which is connected (irreducible components are images of connected components of the normalization, AdicSpacesPartIIPartII RZ.1).",
+        "Let 𝒞 be an irreducible component through y and 𝒞̃ → 𝒞 its normalization, which is connected (irreducible components are images of connected components of the normalization, AdicSpacesPartV RZ.1).",
         "The preimage of β^{−1}(𝒳) ∩ 𝒞 in 𝒞̃ is Zariski closed and contains a non-empty admissible open (the preimage of the affinoid neighbourhood meets 𝒞̃ in a set of full dimension at a point over y); by the irreducibility criterion of RZ.1 a proper Zariski closed subset of an irreducible space is nowhere dense, so it is all of 𝒞̃.",
         "Conrad's Theorem 3.4.2 on irreducible components under base change of the ground field gives the second sentence; it is used to pass between components over E, over finite extensions and over ℂ_p in SP.1 and SP.2."
       ],
@@ -216,9 +216,9 @@
         "Take 𝒢 = 𝒴 = two closed discs meeting at one point (the union of the axes in the bidisc) and 𝒳 one axis: the hypothesis holds at a point of that axis away from the crossing, and only that component is forced into 𝒳."
       ],
       "prerequisites": [
-        "AdicSpacesPartIIPartII:RZ.1/irreducible-components",
-        "AdicSpacesPartIIPartII:RZ.1/irreducibility-criterion",
-        "AdicSpacesPartIIPartII:RZ.1/rigid-normalization",
+        "AdicSpacesPartV:RZ.1/irreducible-components",
+        "AdicSpacesPartV:RZ.1/irreducibility-criterion",
+        "AdicSpacesPartV:RZ.1/rigid-normalization",
         "AdicSpacesPartII:R1/rigid-identity-principle"
       ],
       "sources": [
@@ -5632,7 +5632,7 @@
       "stageId": "ModularityAndLanglandsExtensionsPartII:SP.0",
       "status": "planned",
       "remaining": [
-        "Lemma-level decomposition of Conrad's base change of irreducible components (Conrad 1999, Theorem 3.4.2) inside AdicSpacesPartIIPartII RZ.1."
+        "Lemma-level decomposition of Conrad's base change of irreducible components (Conrad 1999, Theorem 3.4.2) inside AdicSpacesPartV RZ.1."
       ]
     },
     {

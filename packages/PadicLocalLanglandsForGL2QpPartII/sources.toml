@@ -1,0 +1,96 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "PadicLocalLanglandsForGL2QpPartII"
+
+[[source]]
+id = "DLB17"
+authors = "Gabriel Dospinescu, Arthur-César Le Bras"
+title = "Revêtements du demi-plan de Drinfeld et correspondance de Langlands p-adique"
+year = 2017
+venue = "Annals of Mathematics 186 (2017), 321–411"
+arxiv = "1509.00606v2"
+locator_scheme = "theorem"
+locator = "Théorèmes 1.2, 1.4"
+url = "https://arxiv.org/abs/1509.00606v2"
+fetched_from = "https://arxiv.org/pdf/1509.00606v2"
+fetched_at = "2026-10-25T20:19:36Z"
+sha256 = "bdf8f14fb4bfb4fe43980fdbff088b33469a16a9c0260616a0630de48de8cd68"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v2; theorem numbering agrees with the published version; locators are theorem numbers and lines of the arXiv v2 text"
+cited_for = ["0.1", "0.4", "1.1", "1.2", "1.3", "1.5", "1.6", "1.7", "2.1", "2.2", "2.3", "3.1", "3.2", "3.3", "4.1", "4.9", "7.1", "7.2", "7.3", "7.4", "7.5", "7.6", "7.7", "Exact supplier contracts", "Source corrections"]
+
+[[source]]
+id = "CDN20"
+authors = "Pierre Colmez, Gabriel Dospinescu, Wiesława Nizioł"
+title = "Cohomologie p-adique de la tour de Drinfeld : le cas de la dimension 1"
+year = 2020
+venue = "Journal of the American Mathematical Society 33 (2020), 311–362"
+locator_scheme = "theorem"
+locator = "Théorème 2.15"
+url = "https://webusers.imj-prg.fr/~wieslawa.niziol/GPW5.pdf"
+fetched_from = "https://webusers.imj-prg.fr/~wieslawa.niziol/GPW5.pdf"
+fetched_at = "2026-10-25T20:11:00Z"
+sha256 = "2cdb1de25b5201ed46f8af6c06c19b72fdc5cbe1dd2037b4e1d24dee30155776"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "authors' copy (GPW5.pdf); locators are theorem numbers and lines of this copy"
+cited_for = ["0.3", "0.4", "3.3", "4.1", "4.2", "4.3", "4.4", "4.5", "4.6", "4.7", "4.9", "4.10", "4.11", "4.14", "Source corrections"]
+
+[[source]]
+id = "CDN23"
+authors = "Pierre Colmez, Gabriel Dospinescu, Wiesława Nizioł"
+title = "Factorisation de la cohomologie étale p-adique de la tour de Drinfeld"
+year = 2023
+venue = "Forum of Mathematics, Pi 11 (2023), e16"
+doi = "10.1017/fmp.2023.15"
+locator_scheme = "theorem"
+locator = "Théorème 5.15"
+url = "https://hal.science/hal-04289191v1"
+fetched_from = "https://hal.science/hal-04289191/document"
+fetched_at = "2026-10-25T20:11:02Z"
+sha256 = "61fd37290dbf32208294754740d1ab0d2db2c4afba955210a3fb0ae8acbfa2d5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "HAL copy hal-04289191; theorem numbering agrees with the published version; page numbers differ and are not cited"
+cited_for = ["0.1", "0.2", "0.4", "3.3", "4.1", "4.2", "4.8", "4.9", "4.10", "4.12", "4.13", "4.14", "5.1", "5.2", "5.3", "5.4", "5.5", "5.6", "6.1", "6.2", "6.3", "6.4", "6.5", "6.6", "Source corrections"]
+
+[[source]]
+id = "COLMEZ19POIDS"
+authors = "Pierre Colmez"
+title = "Correspondance de Langlands locale p-adique et changement de poids"
+year = 2019
+venue = "Journal of the European Mathematical Society 21 (2019)"
+doi = "10.4171/jems/851"
+locator_scheme = "theorem"
+locator = "Théorème 0.3(ii); Remarque 0.2(ii); Théorèmes 0.6 and 0.8; Conjecture 0.10 and Remarque 0.11"
+url = "https://webusers.imj-prg.fr/~pierre.colmez/poids.pdf"
+fetched_from = "https://webusers.imj-prg.fr/~pierre.colmez/poids.pdf"
+fetched_at = "2026-10-25T20:20:24Z"
+sha256 = "4884f1fa14b5a580b7ccc5ea08ead4cbbd9e770992a36f6faf8af93e1d4f9ebc"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "author's copy; locators are theorem numbers and lines of this copy"
+cited_for = ["2.3", "2.4", "7.1", "7.2", "Source corrections"]
+
+[[source]]
+id = "TEI90"
+authors = "Jeremy Teitelbaum"
+title = "Geometry of an étale covering of the p-adic upper half plane"
+year = 1990
+venue = "Annales de l'Institut Fourier 40 (1990), no. 1, 69–78"
+doi = "10.5802/aif.1203"
+version_note = "Numdam copy of the published article; locators are theorem numbers and lines of this copy"
+locator_scheme = "theorem"
+locator = "Theorem 5; Corollary 6; Theorem 8"
+url = "https://www.numdam.org/item/10.5802/aif.1203.pdf"
+fetched_from = "https://www.numdam.org/item/10.5802/aif.1203.pdf"
+fetched_at = "2026-10-25T22:58:30Z"
+sha256 = "5eb098c0b1f4ea47bb19ceb98074452a59162accfd68e228a8273bf8dd5fa729"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["7.3", "Scope and ownership"]

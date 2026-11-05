@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-LieHighestWeight~4",
+    "head": "605ae69683a7601214f8ab21a2d8c2b2f31e03b6",
+    "pr": 1220,
+    "folder": "RepresentationTheory/LieHighestWeight",
+    "date": "2026-11-02",
+    "findings": 7,
+    "blocking": 3,
+    "notes": "Full review and seven-finding repair audit; all ten seeded targets examined, legal source limitations recorded. Worker gate passes; targeted build and direct Suggested elaboration pass with sorry warnings only. Depcheck: 204 roadmaps, 1561 edges, zero problems. Checked 121 signatures and one-tactic probes; 151 computed adversarial rows, including 441 tensor vectors and 5642 cross-string pairings. Remaining blockers: four unregistered supplier contracts, admitted tensor data, and uncited reconstruction of finite-orbit separation owned by ReflectionInvariantTheory."
+  }
+}

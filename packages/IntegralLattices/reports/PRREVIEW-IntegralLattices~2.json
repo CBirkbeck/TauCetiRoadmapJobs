@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "rejected",
+    "reviewer": "independent-review-PRREVIEW-IntegralLattices~2",
+    "head": "cdfcd0f8c9dde1fed71f539bc8ec8582df741207",
+    "pr": 1239,
+    "folder": "IntegralLattices",
+    "date": "2026-11-02",
+    "findings": 11,
+    "blocking": 6,
+    "notes": "Full read-only review of README and both Lean files; 15 seeded source targets addressed, all 20 works attempted (9 full texts, 1 partial, 2 uncertified, 8 unavailable); 150 computed adversarial rows; pinned-library, main, package and supplied-open-head ownership audits. Original Suggested elaborates but worker gate fails on module-system warning; all other gate counters zero. Dependency checker: 204 roadmaps, 1497 edges, 0 problems; manual OTM supply cycle found. Rechecked 39 Suggested and 19 Archimedean declaration signatures, no lost binder; one-tactic probes and native rank-eight headline probe. Rejected for replanning completed foundation/rank24 ownership, with six P1/P2 findings. PR unchanged."
+  }
+}

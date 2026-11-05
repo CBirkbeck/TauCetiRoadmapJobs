@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-REV-PKG-ExcursionOperatorsAndSpectralActionPartII~4",
+  "date": "2026-10-25",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "comment review on the board pull request by `CBirkbeck` (claude) of 913f271",
+  "conditional_gaps": [
+   "all-weight-shriek-trace",
+   "arthur-stable-decompositions",
+   "basic-invariant-comparison",
+   "basic-levi-lift",
+   "bernstein-distribution-realization",
+   "bounded-elliptic-orbital-integrals",
+   "elliptic-torus-representatives",
+   "kazhdan-cuspidal-decomposition",
+   "normalized-bernstein-levi",
+   "stable-inner-character-transfer",
+   "stable-orbital-inversion-duality",
+   "stable-tempered-projection",
+   "unstable-tempered-separation",
+   "weight-fibre-classes"
+  ]
+ }
+}

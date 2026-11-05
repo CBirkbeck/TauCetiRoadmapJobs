@@ -1082,7 +1082,7 @@ For every nice admissible formal O_C-model of pure dimension d, the Faltings pai
 
 Construct the model-independent global almost trace, prove derived and degreewise almost duality, and detect finite F_p isomorphisms after almost scalar extension. Normalize the analytic top trace and deduce Galois-equivariant mod-p Poincaré duality, including finite local systems. Prove proper p-adic perfectness and pass to constant Z/pⁿ, Z_p and Q_p coefficients with the derived shift −2d and possible integral torsion.
 
-**Layer inputs:** `AInfCohomology:AI.1`, `AdicSpacesPartII:R2`, `AdicSpacesPartIIPartII:RZ.5`, `ArithmeticGaloisDuality:D7`, `ClassicalAdicEtaleCohomology:H0`, `ClassicalAdicEtaleCohomology:H3`, `ClassicalAdicEtaleCohomologyPartII:PD.0`, `ClassicalAdicEtaleCohomologyPartII:PD.2`, `ClassicalAdicEtaleCohomologyPartII:PD.4`, `PadicHodgeTheory:P8`.
+**Layer inputs:** `AInfCohomology:AI.1`, `AdicSpacesPartII:R2`, `AdicSpacesPartV:RZ.5`, `ArithmeticGaloisDuality:D7`, `ClassicalAdicEtaleCohomology:H0`, `ClassicalAdicEtaleCohomology:H3`, `ClassicalAdicEtaleCohomologyPartII:PD.0`, `ClassicalAdicEtaleCohomologyPartII:PD.2`, `ClassicalAdicEtaleCohomologyPartII:PD.4`, `PadicHodgeTheory:P8`.
 
 ### Global almost trace
 
@@ -1207,7 +1207,7 @@ For a proper rigid C-space of pure dimension d, not necessarily smooth, RΓ_ét(
 
 **Acceptance.** A complex of projectives of amplitude [0,2d] can have torsion cohomology; the assertion does not give degreewise integral perfect pairings.
 
-**Direct prerequisites:** `ClassicalAdicEtaleCohomology:H3/proper-torsion-cohomological-amplitude`, `ClassicalAdicEtaleCohomology:H3/proper-projection-formula-all-torsion`, `ClassicalAdicEtaleCohomologyPartII:PD.0/nearby-cycle-complexes`, `PadicHodgeTheory:P8`, `ArithmeticGaloisDuality:D7`, `AInfCohomology:AI.1`, `AdicSpacesPartIIPartII:RZ.5/rigid-resolution`.
+**Direct prerequisites:** `ClassicalAdicEtaleCohomology:H3/proper-torsion-cohomological-amplitude`, `ClassicalAdicEtaleCohomology:H3/proper-projection-formula-all-torsion`, `ClassicalAdicEtaleCohomologyPartII:PD.0/nearby-cycle-complexes`, `PadicHodgeTheory:P8`, `ArithmeticGaloisDuality:D7`, `AInfCohomology:AI.1`, `AdicSpacesPartV:RZ.5/rigid-resolution`.
 
 **Source:** Z Lemma 5.5.1, p. 81; PS Theorem 3.17 and proof, pp. 19–20.
 
@@ -1489,7 +1489,7 @@ For f as above and a finite free lisse Z_p-sheaf T, each Rⁱf_ét,*(T/pⁿ) is 
 
 Define the locally bounded Zariski-constructible derived category, distinct from Huber constructibility. Prove affinoid constructible algebraization, étale locality and finite-cover generation. Combine proper resolution descent, generic smoothness and relative finiteness to prove proper constructible pushforward. Prove invariance under arbitrary algebraically closed field extension, then all-torsion proper base change. Apply it to Heuer’s constant cohomology sheaf on smooth rigid bases over algebraically closed K.
 
-**Layer inputs:** `AInfCohomology:AI.1`, `AdicCoefficientsAndComparisons:L2`, `AdicSpacesPartII:R3`, `AdicSpacesPartIIPartII:RZ.0`, `AdicSpacesPartIIPartII:RZ.1`, `AdicSpacesPartIIPartII:RZ.2`, `AdicSpacesPartIIPartII:RZ.5`, `ClassicalAdicEtaleCohomology:H0`, `ClassicalAdicEtaleCohomology:H3`, `ClassicalAdicEtaleCohomology:H5`, `ClassicalAdicEtaleCohomologyPartII:PD.0`, `ClassicalAdicEtaleCohomologyPartII:PD.5`, `ClassicalAdicEtaleCohomologyPartII:PD.6`, `EnhancedDerivedSheaves:E1`, `EnhancedDerivedSheaves:E2`, `PadicHodgeTheory:P8`, `PerfectoidSpaces:P3`.
+**Layer inputs:** `AInfCohomology:AI.1`, `AdicCoefficientsAndComparisons:L2`, `AdicSpacesPartII:R3`, `AdicSpacesPartV:RZ.0`, `AdicSpacesPartV:RZ.1`, `AdicSpacesPartV:RZ.2`, `AdicSpacesPartV:RZ.5`, `ClassicalAdicEtaleCohomology:H0`, `ClassicalAdicEtaleCohomology:H3`, `ClassicalAdicEtaleCohomology:H5`, `ClassicalAdicEtaleCohomologyPartII:PD.0`, `ClassicalAdicEtaleCohomologyPartII:PD.5`, `ClassicalAdicEtaleCohomologyPartII:PD.6`, `EnhancedDerivedSheaves:E1`, `EnhancedDerivedSheaves:E2`, `PadicHodgeTheory:P8`, `PerfectoidSpaces:P3`.
 
 ### Zariski-constructible torsion complexes
 
@@ -1519,7 +1519,7 @@ For a rigid K-space in characteristic zero and Λ=Z/n, n>0, an étale Λ-sheaf i
 
 **Acceptance.** Global boundedness cannot be imposed on every non-quasi-compact proper-map problem.
 
-**Direct prerequisites:** `ClassicalAdicEtaleCohomology:H0/classical-constructible-sheaves`, `AdicSpacesPartIIPartII:RZ.0`, `EnhancedDerivedSheaves:E1`.
+**Direct prerequisites:** `ClassicalAdicEtaleCohomology:H0/classical-constructible-sheaves`, `AdicSpacesPartV:RZ.0`, `EnhancedDerivedSheaves:E1`.
 
 **Source:** BH Definition 3.1 and Warning 3.2, pp. 14–15.
 
@@ -1537,7 +1537,7 @@ Let K have characteristic zero, A be a K-affinoid algebra, S_alg=Spec A and S=Sp
 
 **Acceptance.** For Z=Spec A the equivalence identifies scheme constructibility with rigid Zariski-constructibility. It does not identify it with Huber constructibility.
 
-**Direct prerequisites:** `ClassicalAdicEtaleCohomologyPartII:PD.7/zariski-constructible-complex`, `ClassicalAdicEtaleCohomology:H5`, `AdicSpacesPartII:R3`, `AdicSpacesPartIIPartII:RZ.1`, `AdicCoefficientsAndComparisons:L2`.
+**Direct prerequisites:** `ClassicalAdicEtaleCohomologyPartII:PD.7/zariski-constructible-complex`, `ClassicalAdicEtaleCohomology:H5`, `AdicSpacesPartII:R3`, `AdicSpacesPartV:RZ.1`, `AdicCoefficientsAndComparisons:L2`.
 
 **Source:** BH Proposition 3.7 and proof, pp. 15–16.
 
@@ -1555,7 +1555,7 @@ Zariski-constructibility of finite torsion étale sheaves in characteristic-zero
 
 **Acceptance.** Use the affinoid comparison owned by this Part II; its nonproper comparison and branched-cover input remain G4.
 
-**Direct prerequisites:** `ClassicalAdicEtaleCohomologyPartII:PD.7/affinoid-constructible-algebraization`, `ClassicalAdicEtaleCohomologyPartII:PD.7/zariski-constructible-complex`, `AdicSpacesPartIIPartII:RZ.1`, `AdicSpacesPartII:R3`, `mathlib:Representation.invariants`, `mathlib:IsPGroup.exists_fixed_point_of_prime_dvd_card_of_fixed_point`.
+**Direct prerequisites:** `ClassicalAdicEtaleCohomologyPartII:PD.7/affinoid-constructible-algebraization`, `ClassicalAdicEtaleCohomologyPartII:PD.7/zariski-constructible-complex`, `AdicSpacesPartV:RZ.1`, `AdicSpacesPartII:R3`, `mathlib:Representation.invariants`, `mathlib:IsPGroup.exists_fixed_point_of_prime_dvd_card_of_fixed_point`.
 
 **Source:** BH Theorem 3.5, Proposition 3.6, Proposition 3.7 and proof of Theorem 3.5, pp. 15–17.
 
@@ -1574,7 +1574,7 @@ For any proper morphism f:X→Y of rigid spaces over a characteristic-zero compl
 
 **Acceptance.** Over a non-qc target, neither global fibre dimension bounds nor one global cohomological interval are assumed.
 
-**Direct prerequisites:** `ClassicalAdicEtaleCohomologyPartII:PD.7/constructible-locality-and-generators`, `ClassicalAdicEtaleCohomologyPartII:PD.6/relative-mod-p-finiteness`, `AdicSpacesPartIIPartII:RZ.5/rigid-resolution`, `ClassicalAdicEtaleCohomology:H3/proper-torsion-cohomological-amplitude`, `ClassicalAdicEtaleCohomology:H3/weak-geometric-support-base-change`, `EnhancedDerivedSheaves:E2`, `AdicSpacesPartIIPartII:RZ.2`, `ClassicalAdicEtaleCohomology:H3`.
+**Direct prerequisites:** `ClassicalAdicEtaleCohomologyPartII:PD.7/constructible-locality-and-generators`, `ClassicalAdicEtaleCohomologyPartII:PD.6/relative-mod-p-finiteness`, `AdicSpacesPartV:RZ.5/rigid-resolution`, `ClassicalAdicEtaleCohomology:H3/proper-torsion-cohomological-amplitude`, `ClassicalAdicEtaleCohomology:H3/weak-geometric-support-base-change`, `EnhancedDerivedSheaves:E2`, `AdicSpacesPartV:RZ.2`, `ClassicalAdicEtaleCohomology:H3`.
 
 **Source:** BH Theorem 3.10 and proof, pp. 17–18.
 
@@ -1682,19 +1682,19 @@ Coherent sheaf descent, relative rigid GAGA and Kiehl proper mapping with suppor
 
 Used by: `generic-fibre-almost-complexes`, `hartogs-gluing`, `generic-hodge-tate-trace-comparison`, `constructible-locality-and-generators`, `affinoid-constructible-algebraization`.
 
-### `AdicSpacesPartIIPartII:RZ.0`
+### `AdicSpacesPartV:RZ.0`
 
 Rigid Zariski closed and locally closed analytic subspaces, coherent ideal descent, irreducible components and noetherian dimension induction on affinoids.
 
 Used by: `zariski-constructible-complex`.
 
-### `AdicSpacesPartIIPartII:RZ.1`
+### `AdicSpacesPartV:RZ.1`
 
 Finite normalization, its compatibility with étale/rational restriction, and finite branched cover geometry on normal rigid spaces. Extending every finite étale cover across a dense open is the additional G4 contract, not an automatic normalization property.
 
 Used by: `constructible-locality-and-generators`, `affinoid-constructible-algebraization`.
 
-### `AdicSpacesPartIIPartII:RZ.2`
+### `AdicSpacesPartV:RZ.2`
 
 G5 (geometric part): proper generic smoothness BH Theorem 2.29, with smooth source and reduced target, including weakly Shilov generic flatness BH 2.21 and smooth fibres BH 2.25. The existing singular/smooth-locus node does not establish a dense Zariski open of the target.
 

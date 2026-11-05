@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "rejected",
+    "reviewer": "independent-review-PRREVIEW-DeRhamCohomologyAndDuality~1",
+    "head": "101fd8ffb6fd27d40f98db3dc50af786397badc6",
+    "pr": 1768,
+    "folder": "DeRhamCohomologyAndDuality",
+    "date": "2026-11-03",
+    "findings": 9,
+    "blocking": 7,
+    "notes": "Full folder review: 27 target blocks, 18 independently checked elaborated signatures, 12 unsuccessful single-simp padding probes, 96 computed adversarial rows. Worker supplied no enumerated 15-target sample; supplemental full-head-seeded sample of 15 and all explicit locators audited. Azagra v5 readable; Lee, Bott–Tu, Hirsch and Federer uncertified/paywalled. Supplied gate fails build warning; targeted build reproduces module warning; direct Lean succeeds with 12 sorry warnings. Dependency check: 204 roadmaps, 1641 edges, 0 problems. Rejected for re-planning DifferentialGeometry on main and duplicating HeegaardFloer sharp Sard; worktree unchanged. Three linked provenance pages also fetched through the sources service and inspected."
+  }
+}

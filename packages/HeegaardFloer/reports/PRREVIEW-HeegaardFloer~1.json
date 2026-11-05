@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-HeegaardFloer~1",
+    "head": "e70343946ae25ee621c26c90ec58c7a79d21de35",
+    "pr": 957,
+    "folder": "HeegaardFloer",
+    "date": "2026-10-30",
+    "findings": 7,
+    "blocking": 4,
+    "notes": "Full seven-file review; 15 seeded source targets checked against accessible legal texts, with unreadable texts and source issues recorded. Worker gate passed; direct Suggested elaboration passed with five sorry warnings. All 34 declaration signatures checked; eight admitted theorem probes; two single-simp padding witnesses and an elaborating nonsqueezing signature. 121 computed adversarial rows; 20 pinned declaration/object checks and 22 ownership/contract checks. Mechanical depcheck: 203 roadmaps, 1360 edges, 0 problems. Manual audit found reciprocal supplier edges, a sharp-Sard contract missing on main, duplicated section topology, and a missing statable headline. No PR files changed."
+  }
+}

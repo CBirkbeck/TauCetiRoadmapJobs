@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-PolynomialGaloisGroups~11",
+    "head": "97a1de8c9a31b464327d35b2db3cc242f17e566f",
+    "pr": 763,
+    "folder": "PolynomialGaloisGroups",
+    "date": "2026-10-30",
+    "findings": 3,
+    "blocking": 1,
+    "notes": "Full re-review after 324 deleted lines (Compatibility.lean, PrescribedGenerators.lean, STATUS.md, PROGRESS.md removed): previous R02 repaired, previous R01 (folder named after the completed base) carried as the only blocking finding. Gate rerun OK; targeted build succeeded with six sorry warnings (the worker's build=1 is the Lake module-system warning on the mandated import Mathlib line); depcheck 204 roadmaps, 1392 edges, 0 problems. All library citations re-resolved at the new pins (Mathlib f6090c70, Tau Ceti 358314d4); seven #check signatures match the README; one-tactic probe fails on all six theorems. Seeded sample 1.1-1.3, 2.1, 3.1-3.3, 4.1-4.3 verified against CHM Table 2, TransGrp 165fc21 (degree 6/7/11 rows recomputed by closure), Milne 5.34, Dummit pp. 388-389, Chapman, Sutherland 2.6/2.10; 55 adversarial rows with values. P3s: consumer paragraph overstates FiniteGroupInvariants 7.4 (double planning there); separation theorem and 4.2 statable but absent."
+  }
+}

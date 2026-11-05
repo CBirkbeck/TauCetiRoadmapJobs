@@ -1,0 +1,449 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "PurityOfBranchLocus"
+
+[[source]]
+id = "stacks-0BMB"
+locator_scheme = "tag"
+locator = "0BMB"
+url = "https://stacks.math.columbia.edu/tag/0BMB"
+fetched_from = "https://stacks.math.columbia.edu/download/pione.pdf#nameddest=0BMB"
+fetched_at = "2026-11-05T13:57:00Z"
+sha256 = "387b3fcf66962a7f4ec81060a1bbb02505659a0973f0dff5c1cb7aa1dd7ee1a3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["review"]
+
+[[source]]
+id = "stacks-02G4"
+locator_scheme = "tag"
+locator = "02G4"
+url = "https://stacks.math.columbia.edu/tag/02G4"
+fetched_from = "https://stacks.math.columbia.edu/download/morphisms.pdf#nameddest=02G4"
+fetched_at = "2026-11-05T13:57:05Z"
+sha256 = "0bebe1d93baa7e4e99cb4f36fe50c7bcb6094772b8a2f760885a492892eca75f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["review"]
+
+[[source]]
+id = "stacks-02GI"
+locator_scheme = "tag"
+locator = "02GI"
+url = "https://stacks.math.columbia.edu/tag/02GI"
+fetched_from = "https://stacks.math.columbia.edu/download/morphisms.pdf#nameddest=02GI"
+fetched_at = "2026-11-05T13:57:09Z"
+sha256 = "0bebe1d93baa7e4e99cb4f36fe50c7bcb6094772b8a2f760885a492892eca75f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["review"]
+
+[[source]]
+id = "stacks-02GU"
+locator_scheme = "tag"
+locator = "02GU"
+url = "https://stacks.math.columbia.edu/tag/02GU"
+fetched_from = "https://stacks.math.columbia.edu/download/morphisms.pdf#nameddest=02GU"
+fetched_at = "2026-11-05T13:57:16Z"
+sha256 = "0bebe1d93baa7e4e99cb4f36fe50c7bcb6094772b8a2f760885a492892eca75f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["review"]
+
+[[source]]
+id = "stacks-02G3"
+locator_scheme = "tag"
+locator = "02G3"
+url = "https://stacks.math.columbia.edu/tag/02G3"
+fetched_from = "https://stacks.math.columbia.edu/download/morphisms.pdf#nameddest=02G3"
+fetched_at = "2026-11-05T13:57:22Z"
+sha256 = "0bebe1d93baa7e4e99cb4f36fe50c7bcb6094772b8a2f760885a492892eca75f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["review"]
+
+[[source]]
+id = "stacks-025P"
+locator_scheme = "tag"
+locator = "025P"
+url = "https://stacks.math.columbia.edu/tag/025P"
+fetched_from = "https://stacks.math.columbia.edu/download/etale.pdf#nameddest=025P"
+fetched_at = "2026-11-05T13:57:24Z"
+sha256 = "cfe0581a0bfe38522726f6a233ab4cd30d5f283bef86c4f136fc2ee34c8ecc99"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["review"]
+
+[[source]]
+id = "stacks-039S"
+locator_scheme = "tag"
+locator = "039S"
+url = "https://stacks.math.columbia.edu/tag/039S"
+fetched_from = "https://stacks.math.columbia.edu/download/etale.pdf#nameddest=039S"
+fetched_at = "2026-11-05T13:57:26Z"
+sha256 = "cfe0581a0bfe38522726f6a233ab4cd30d5f283bef86c4f136fc2ee34c8ecc99"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["review"]
+
+[[source]]
+id = "stacks-025N"
+locator_scheme = "tag"
+locator = "025N"
+url = "https://stacks.math.columbia.edu/tag/025N"
+fetched_from = "https://stacks.math.columbia.edu/download/etale.pdf#nameddest=025N"
+fetched_at = "2026-11-05T13:57:28Z"
+sha256 = "cfe0581a0bfe38522726f6a233ab4cd30d5f283bef86c4f136fc2ee34c8ecc99"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["review"]
+
+[[source]]
+id = "stacks-0258"
+locator_scheme = "tag"
+locator = "0258"
+url = "https://stacks.math.columbia.edu/tag/0258"
+fetched_from = "https://stacks.math.columbia.edu/download/etale.pdf#nameddest=0258"
+fetched_at = "2026-11-05T13:57:30Z"
+sha256 = "cfe0581a0bfe38522726f6a233ab4cd30d5f283bef86c4f136fc2ee34c8ecc99"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["review"]
+
+[[source]]
+id = "stacks-02LK"
+locator_scheme = "tag"
+locator = "02LK"
+url = "https://stacks.math.columbia.edu/tag/02LK"
+fetched_from = "https://stacks.math.columbia.edu/download/more-morphisms.pdf#nameddest=02LK"
+fetched_at = "2026-11-05T13:57:36Z"
+sha256 = "59df05f5d52f453b17677398c72a51fe156367f460f6dcfdf764d9631b7c787c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["review"]
+
+[[source]]
+id = "stacks-036W"
+locator_scheme = "tag"
+locator = "036W"
+url = "https://stacks.math.columbia.edu/tag/036W"
+fetched_from = "https://stacks.math.columbia.edu/download/descent.pdf#nameddest=036W"
+fetched_at = "2026-11-05T13:57:40Z"
+sha256 = "28e718bac216bb7c4584e9edb1d25d6420ee19a6cd536742c58599242ff8cad4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["review"]
+
+[[source]]
+id = "stacks-01TD"
+locator_scheme = "tag"
+locator = "01TD"
+url = "https://stacks.math.columbia.edu/tag/01TD"
+fetched_from = "https://stacks.math.columbia.edu/download/morphisms.pdf#nameddest=01TD"
+fetched_at = "2026-11-05T13:57:44Z"
+sha256 = "0bebe1d93baa7e4e99cb4f36fe50c7bcb6094772b8a2f760885a492892eca75f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["review"]
+
+[[source]]
+id = "stacks-0AFS"
+locator_scheme = "tag"
+locator = "0AFS"
+url = "https://stacks.math.columbia.edu/tag/0AFS"
+fetched_from = "https://stacks.math.columbia.edu/download/algebra.pdf#nameddest=0AFS"
+fetched_at = "2026-11-05T13:57:55Z"
+sha256 = "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["review"]
+
+[[source]]
+id = "stacks-00OC"
+locator_scheme = "tag"
+locator = "00OC"
+url = "https://stacks.math.columbia.edu/tag/00OC"
+fetched_from = "https://stacks.math.columbia.edu/download/algebra.pdf#nameddest=00OC"
+fetched_at = "2026-11-05T13:58:07Z"
+sha256 = "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["review"]
+
+[[source]]
+id = "stacks-0567"
+locator_scheme = "tag"
+locator = "0567"
+url = "https://stacks.math.columbia.edu/tag/0567"
+fetched_from = "https://stacks.math.columbia.edu/download/algebra.pdf#nameddest=0567"
+fetched_at = "2026-11-05T13:58:18Z"
+sha256 = "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["review"]
+
+[[source]]
+id = "stacks-00NQ"
+locator_scheme = "tag"
+locator = "00NQ"
+url = "https://stacks.math.columbia.edu/tag/00NQ"
+fetched_from = "https://stacks.math.columbia.edu/download/algebra.pdf#nameddest=00NQ"
+fetched_at = "2026-11-05T13:58:30Z"
+sha256 = "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["review"]
+
+[[source]]
+id = "stacks-00NM"
+locator_scheme = "tag"
+locator = "00NM"
+url = "https://stacks.math.columbia.edu/tag/00NM"
+fetched_from = "https://stacks.math.columbia.edu/download/algebra.pdf#nameddest=00NM"
+fetched_at = "2026-11-05T13:58:41Z"
+sha256 = "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["review"]
+
+[[source]]
+id = "stacks-02JU"
+locator_scheme = "tag"
+locator = "02JU"
+url = "https://stacks.math.columbia.edu/tag/02JU"
+fetched_from = "https://stacks.math.columbia.edu/download/morphisms.pdf#nameddest=02JU"
+fetched_at = "2026-11-05T13:58:46Z"
+sha256 = "0bebe1d93baa7e4e99cb4f36fe50c7bcb6094772b8a2f760885a492892eca75f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["review"]
+
+[[source]]
+id = "stacks-00Q9"
+locator_scheme = "tag"
+locator = "00Q9"
+url = "https://stacks.math.columbia.edu/tag/00Q9"
+fetched_from = "https://stacks.math.columbia.edu/download/algebra.pdf#nameddest=00Q9"
+fetched_at = "2026-11-05T13:58:59Z"
+sha256 = "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["review"]
+
+[[source]]
+id = "stacks-00H8"
+locator_scheme = "tag"
+locator = "00H8"
+url = "https://stacks.math.columbia.edu/tag/00H8"
+fetched_from = "https://stacks.math.columbia.edu/download/algebra.pdf#nameddest=00H8"
+fetched_at = "2026-11-05T13:59:11Z"
+sha256 = "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["review"]
+
+[[source]]
+id = "stacks-00ON"
+locator_scheme = "tag"
+locator = "00ON"
+url = "https://stacks.math.columbia.edu/tag/00ON"
+fetched_from = "https://stacks.math.columbia.edu/download/algebra.pdf#nameddest=00ON"
+fetched_at = "2026-11-05T13:59:25Z"
+sha256 = "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["review"]
+
+[[source]]
+id = "stacks-0BJH"
+locator_scheme = "tag"
+locator = "0BJH"
+url = "https://stacks.math.columbia.edu/tag/0BJH"
+fetched_from = "https://stacks.math.columbia.edu/download/pione.pdf#nameddest=0BJH"
+fetched_at = "2026-11-05T13:59:28Z"
+sha256 = "387b3fcf66962a7f4ec81060a1bbb02505659a0973f0dff5c1cb7aa1dd7ee1a3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["review"]
+
+[[source]]
+id = "stacks-0BJF"
+locator_scheme = "tag"
+locator = "0BJF"
+url = "https://stacks.math.columbia.edu/tag/0BJF"
+fetched_from = "https://stacks.math.columbia.edu/download/discriminant.pdf#nameddest=0BJF"
+fetched_at = "2026-11-05T13:59:30Z"
+sha256 = "ba5acda6a44144a8ff51c3c3c83cfe20427f0ac20dcb07be904a523c47fa4713"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["review"]
+
+[[source]]
+id = "stacks-0EA4"
+locator_scheme = "tag"
+locator = "0EA4"
+url = "https://stacks.math.columbia.edu/tag/0EA4"
+fetched_from = "https://stacks.math.columbia.edu/download/pione.pdf#nameddest=0EA4"
+fetched_at = "2026-11-05T13:59:33Z"
+sha256 = "387b3fcf66962a7f4ec81060a1bbb02505659a0973f0dff5c1cb7aa1dd7ee1a3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["review"]
+
+[[source]]
+id = "stacks-0ECD"
+locator_scheme = "tag"
+locator = "0ECD"
+url = "https://stacks.math.columbia.edu/tag/0ECD"
+fetched_from = "https://stacks.math.columbia.edu/download/pione.pdf#nameddest=0ECD"
+fetched_at = "2026-11-05T13:59:37Z"
+sha256 = "387b3fcf66962a7f4ec81060a1bbb02505659a0973f0dff5c1cb7aa1dd7ee1a3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["review"]
+
+[[source]]
+id = "stacks-01WM"
+locator_scheme = "tag"
+locator = "01WM"
+url = "https://stacks.math.columbia.edu/tag/01WM"
+fetched_from = "https://stacks.math.columbia.edu/download/morphisms.pdf#nameddest=01WM"
+fetched_at = "2026-11-05T13:59:42Z"
+sha256 = "0bebe1d93baa7e4e99cb4f36fe50c7bcb6094772b8a2f760885a492892eca75f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["review"]
+
+[[source]]
+id = "stacks-02VN"
+locator_scheme = "tag"
+locator = "02VN"
+url = "https://stacks.math.columbia.edu/tag/02VN"
+fetched_from = "https://stacks.math.columbia.edu/download/descent.pdf#nameddest=02VN"
+fetched_at = "2026-11-05T13:59:45Z"
+sha256 = "28e718bac216bb7c4584e9edb1d25d6420ee19a6cd536742c58599242ff8cad4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["review"]
+
+[[source]]
+id = "stacks-00UJ"
+locator_scheme = "tag"
+locator = "00UJ"
+url = "https://stacks.math.columbia.edu/tag/00UJ"
+fetched_from = "https://stacks.math.columbia.edu/download/algebra.pdf#nameddest=00UJ"
+fetched_at = "2026-11-05T13:59:57Z"
+sha256 = "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["review"]
+
+[[source]]
+id = "stacks-0BMA"
+locator_scheme = "tag"
+locator = "0BMA"
+url = "https://stacks.math.columbia.edu/tag/0BMA"
+fetched_from = "https://stacks.math.columbia.edu/download/pione.pdf#nameddest=0BMA"
+fetched_at = "2026-11-05T14:00:00Z"
+sha256 = "387b3fcf66962a7f4ec81060a1bbb02505659a0973f0dff5c1cb7aa1dd7ee1a3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["review"]
+
+[[source]]
+id = "stacks-00PL"
+locator_scheme = "tag"
+locator = "00PL"
+url = "https://stacks.math.columbia.edu/tag/00PL"
+fetched_from = "https://stacks.math.columbia.edu/download/algebra.pdf#nameddest=00PL"
+fetched_at = "2026-11-05T14:00:13Z"
+sha256 = "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["review"]
+
+[[source]]
+id = "sga1"
+authors = "Alexander Grothendieck, Michele Raynaud"
+title = "Revêtements étales et groupe fondamental (SGA 1)"
+year = 2002
+arxiv = "math/0206203v2"
+locator_scheme = "theorem"
+locator = "X 3.1"
+url = "https://arxiv.org/abs/math/0206203v2"
+fetched_from = "https://arxiv.org/pdf/math/0206203v2"
+fetched_at = "2026-11-05T14:01:08Z"
+sha256 = "8e64218d356456c534eebf996940f0f957e43b54f1a080241debe12cbaf60d3c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v2"
+cited_for = ["2.3"]
+
+[[source]]
+id = "stacks-02GF"
+locator_scheme = "tag"
+locator = "02GF"
+url = "https://stacks.math.columbia.edu/tag/02GF"
+fetched_from = "https://stacks.math.columbia.edu/download/morphisms.pdf#nameddest=02GF"
+fetched_at = "2026-11-05T14:10:14Z"
+sha256 = "0bebe1d93baa7e4e99cb4f36fe50c7bcb6094772b8a2f760885a492892eca75f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["0.1"]
+
+[[source]]
+id = "stacks-00NP"
+locator_scheme = "tag"
+locator = "00NP"
+url = "https://stacks.math.columbia.edu/tag/00NP"
+fetched_from = "https://stacks.math.columbia.edu/download/algebra.pdf#nameddest=00NP"
+fetched_at = "2026-11-05T14:10:26Z"
+sha256 = "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["scope"]
+
+[[source]]
+id = "stacks-00OF"
+locator_scheme = "tag"
+locator = "00OF"
+url = "https://stacks.math.columbia.edu/tag/00OF"
+fetched_from = "https://stacks.math.columbia.edu/download/algebra.pdf#nameddest=00OF"
+fetched_at = "2026-11-05T19:21:03Z"
+sha256 = "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["0.2"]

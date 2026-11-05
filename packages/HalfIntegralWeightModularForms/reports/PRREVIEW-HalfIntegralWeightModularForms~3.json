@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-HalfIntegralWeightModularForms~3",
+    "head": "2cfe32c2fd1967d1e14bd3ebbb9bb1cba75e2126",
+    "pr": 1721,
+    "folder": "HalfIntegralWeightModularForms",
+    "date": "2026-11-03",
+    "findings": 4,
+    "blocking": 1,
+    "notes": "incremental re-review of 127 changed lines since 3d0ebaf; checked all four previous findings, changed sample locators in Niwa, Cipra, Ligozat, Kohnen–Zagier, Eichler–Zagier and Skoruppa–Zagier, new lift and symbol formulas, 27 fresh adversarial rows and 52 carried rows, supplier contracts and ownership, all 42 elaborated signatures and 17 padding probes. Candidate-order gate including targeted build passes; dependency check: 204 roadmaps, 1615 edges, 0 problems. Character-general Shimura headline remains statable but omitted."
+  }
+}

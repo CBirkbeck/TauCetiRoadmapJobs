@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-WeightsInEtaleCohomology~1",
+    "head": "84a13f10a304f3c6bc81bbb70bd8c88b4bca2215",
+    "pr": 1001,
+    "folder": "WeightsInEtaleCohomology",
+    "date": "2026-10-30",
+    "findings": 4,
+    "blocking": 2,
+    "notes": "Full folder reviewed; 76 computed adversarial rows. Worker provided no sampled target identifiers, so a documented head-seeded replacement sample of 15 was checked against accessible legal sources. Mokrane and Gillet–Messing remain not verifiable. Gate fails only target-ids=1; targeted build and direct Lean elaboration pass with the expected sorry warning. Both elaborated signatures checked; one theorem simplification probe does not close; namespace repair elaborates. Dependency check: 209 roadmaps, 1472 edges, 0 problems. Findings: three nonexistent crystalline declaration contracts (P1), duplicated general semistable comparison (P2), target-heading gate failure and wrong roadmap namespace (P3). No worktree changes."
+  }
+}

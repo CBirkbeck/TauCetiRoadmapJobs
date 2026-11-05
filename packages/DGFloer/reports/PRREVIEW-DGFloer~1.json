@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-DGFloer~1",
+    "head": "ec50951465223093b8e5892615f1885d3591c5b8",
+    "pr": 963,
+    "folder": "DGFloer",
+    "date": "2026-10-28",
+    "findings": 17,
+    "blocking": 12,
+    "notes": "Read both roadmap files and repository guidance; checked 15 reproducibly seeded supplementary source targets (worker supplied no target IDs), 129 adversarial rows, 17 pinned declaration checks, 11 supplier groups, and object ownership. Dependency check: 164 roadmaps, 1165 edges, 0 problems. Gate FAIL: prnum, sorry-data, imports, mathlib-subimports, no-import-mathlib, target-ids; all covered in findings. Original Lean elaboration passed after building two imports; 20 signatures inspected, eight simp probes, Hurewicz statability probe passed. Unread sources and version correspondence recorded. No PR files changed."
+  }
+}

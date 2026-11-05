@@ -1,0 +1,19 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "AutomorphicFormsOnReductiveGroups"
+
+[[source]]
+id = "borel-tits"
+authors = "A. Borel, J. Tits"
+title = "Groupes réductifs"
+year = 1965
+venue = "Publications Mathématiques de l'IHÉS 27, pp. 55–150"
+locator_scheme = "section"
+locator = "§14.7, pp.147–148; Theorem 4.15; Corollaries 5.9, 5.19; Proposition 9.3"
+url = "https://www.numdam.org/item/PMIHES_1965__27__55_0/"
+fetched_from = "https://www.numdam.org/item/PMIHES_1965__27__55_0.pdf"
+fetched_at = "2026-11-04T14:53:12Z"
+sha256 = "ec6674ba292deaadd77a449f4bad3750db79c0b87b117a892ef6b09bb16357ad"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["2.3a"]

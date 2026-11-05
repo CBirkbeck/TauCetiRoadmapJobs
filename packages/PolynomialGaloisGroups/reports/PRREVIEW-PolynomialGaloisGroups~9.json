@@ -1,0 +1,4 @@
+{"review": {"status": "needs_changes", "reviewer": "independent-review-PRREVIEW-PolynomialGaloisGroups~9",
+            "head": "a0996408cd2a32df4b7d9c5dd2d5076498982b9c", "pr": 986, "folder": "PolynomialGaloisGroups", "date": "2026-10-30",
+            "findings": 2, "blocking": 1,
+            "notes": "incremental re-review of 51 changed lines since 93a4832: all four previous findings accounted for (R02 and R04 repaired, R03 partly, R01 not); the two new Lean theorems elaborate with the README's hypotheses (7 #check signatures), 6 one-tactic probes closed nothing; seeded sample re-opened at Milne Thm 5.34 p. 77, Prop 4.16 p. 52, Dummit Thm 1 p. 389, Chapman lines 16-30; 13 new adversarial rows plus 37 carried; depcheck 208 roadmaps, 1457 edges, 0 problems; worker gate OK; nothing changed outside the folder. Blocking: the continuation still occupies the completed base's folder and namespace."}}

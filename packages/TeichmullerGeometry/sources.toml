@@ -1,0 +1,14 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "TeichmullerGeometry"
+
+[[source]]
+id = "Kerckhoff1983"
+authors = "Steven P. Kerckhoff"
+title = "The Nielsen Realization Problem"
+year = 1983
+doi = "10.2307/2007076"
+locator_scheme = "section"
+locator = "§§I–IV, Appendix"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/2819#issuecomment-6632679124"

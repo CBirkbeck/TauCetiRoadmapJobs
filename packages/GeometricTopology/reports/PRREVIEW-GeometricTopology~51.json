@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-GeometricTopology~51",
+    "head": "9bd6e07e4d2041feb8e6e464ac104d592777d68e",
+    "pr": 271,
+    "folder": "GeometricTopology",
+    "date": "2026-11-02",
+    "findings": 27,
+    "blocking": 21,
+    "notes": "incremental re-review of 118 changed lines since 238d5da; all 25 previous findings remain, added realization/CW assertions and HopfRinow link checked, 90 adversarial rows carried and 19 computed rows added; seeded sample checked within delta; sources/pins/suppliers resolved; gate fails residue, stray-files, outside-folder and module-warning build rule; direct elaboration passes, targeted build warns, native Smale probe passes with sorry only; dependency check reports 0 problems but semantic cycle remains."
+  }
+}

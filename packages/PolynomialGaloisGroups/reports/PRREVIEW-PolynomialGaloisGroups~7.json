@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "rejected",
+    "reviewer": "independent-review-PRREVIEW-PolynomialGaloisGroups~7",
+    "head": "82f088f12c893bd33f5b4f671b2602a22f23d210",
+    "pr": 986,
+    "folder": "PolynomialGaloisGroups",
+    "date": "2026-10-30",
+    "findings": 11,
+    "blocking": 7,
+    "notes": "Fresh full review; supplied previous report concerned a different PR/head and was checked finding by finding. Reproducible replacement sample of 15 targets; all uninspected references attempted legally. Worker gate OK; fresh targeted build and direct elaboration passed with only three sorry warnings; 13 elaborated signatures, nine tactic probes, 118 computed adversarial rows. Dependency check: 208 roadmaps, 1451 edges, 0 problems. Rejected for replanning completed base; 7 P1/P2 findings and 4 P3 findings. Unavailable source text recorded in report."
+  }
+}

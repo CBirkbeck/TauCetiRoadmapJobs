@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-AutomorphicLFunctionsAndLocalFactors~1",
+    "head": "322ade402ac06e4901eb18be0ade3ff64ecefcbc",
+    "pr": 924,
+    "folder": "AutomorphicLFunctionsAndLocalFactors",
+    "date": "2026-10-28",
+    "findings": 7,
+    "blocking": 4,
+    "notes": "Reviewed the 15 seeded source targets, 152 calculated adversarial rows, supplier ownership/order, pinned library declarations, all 33 elaborated signatures and 15 one-tactic probes. Direct Lean elaboration passed with only sorry warnings. Recorded gate FAIL: residue=176, depcheck=4, build=0; AlgebraicCurves and ClassFieldTheory order diagnostics adjudicated as main-branch exceptions. Primary-source and unreadable-source limitations are recorded in the Markdown report."
+  }
+}

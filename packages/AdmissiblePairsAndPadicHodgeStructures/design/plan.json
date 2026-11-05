@@ -1635,9 +1635,9 @@
         "DiamondsAndVStacks:D6/gluing-and-the-diamond-functor",
         "DiamondsAndVStacks:D6/etale-site-comparison",
         "DiamondsAndVStacks:D6/seminormal-rigid-full-faithfulness",
-        "AdicSpacesPartIIPartII:RZ.3/rigid-analytic-point",
-        "AdicSpacesPartIIPartII:RZ.3/classical-points-rigid-analytic-points",
-        "AdicSpacesPartIIPartII:RZ.3/gauss-point-in-closure",
+        "AdicSpacesPartV:RZ.3/rigid-analytic-point",
+        "AdicSpacesPartV:RZ.3/classical-points-rigid-analytic-points",
+        "AdicSpacesPartV:RZ.3/gauss-point-in-closure",
         "DiamondsAndVStacks:D5/locally-closed-generalizing-subdiamond"
       ],
       "sources": [
@@ -2371,7 +2371,7 @@
         "DiamondsAndVStacks:D6/gluing-and-the-diamond-functor",
         "DiamondsAndVStacks:D6/etale-site-comparison",
         "DiamondsAndVStacks:D6/seminormal-rigid-full-faithfulness",
-        "AdicSpacesPartIIPartII:RZ.5/resolution-consequences"
+        "AdicSpacesPartV:RZ.5/resolution-consequences"
       ],
       "sources": [
         {
@@ -2689,7 +2689,7 @@
         "AdmissiblePairsAndPadicHodgeStructures:family_groups",
         "AdmissiblePairsAndPadicHodgeStructures:rigid_cells",
         "AdmissiblePairsAndPadicHodgeStructures:relative_good",
-        "AdicSpacesPartIIPartII:RZ.5/resolution-consequences",
+        "AdicSpacesPartV:RZ.5/resolution-consequences",
         "DiamondsAndVStacks:D6/gluing-and-the-diamond-functor",
         "DiamondsAndVStacks:D6/etale-site-comparison",
         "DiamondsAndVStacks:D6/seminormal-rigid-full-faithfulness",
@@ -4425,14 +4425,14 @@
       "prerequisites": [
         "AdmissiblePairsAndPadicHodgeStructures:exceptional_countable",
         "AdmissiblePairsAndPadicHodgeStructures:family_type",
-        "AdicSpacesPartIIPartII:RZ.1/irreducibility-criterion",
-        "AdicSpacesPartIIPartII:RZ.1/full-dimensional-closed-subset",
-        "AdicSpacesPartIIPartII:RZ.3/rigid-analytic-point",
-        "AdicSpacesPartIIPartII:RZ.3/classical-points-rigid-analytic-points",
-        "AdicSpacesPartIIPartII:RZ.3/gauss-point-in-closure",
-        "AdicSpacesPartIIPartII:RZ.4/weakly-shilov-point",
-        "AdicSpacesPartIIPartII:RZ.4/weakly-shilov-avoid-nowhere-dense",
-        "AdicSpacesPartIIPartII:RZ.5/resolution-consequences",
+        "AdicSpacesPartV:RZ.1/irreducibility-criterion",
+        "AdicSpacesPartV:RZ.1/full-dimensional-closed-subset",
+        "AdicSpacesPartV:RZ.3/rigid-analytic-point",
+        "AdicSpacesPartV:RZ.3/classical-points-rigid-analytic-points",
+        "AdicSpacesPartV:RZ.3/gauss-point-in-closure",
+        "AdicSpacesPartV:RZ.4/weakly-shilov-point",
+        "AdicSpacesPartV:RZ.4/weakly-shilov-avoid-nowhere-dense",
+        "AdicSpacesPartV:RZ.5/resolution-consequences",
         "mathlib:dense_iInter_of_isOpen",
         "mathlib:nonempty_interior_of_iUnion_of_closed"
       ],
@@ -4655,17 +4655,17 @@
         "AdmissiblePairsAndPadicHodgeStructures:component_closure",
         "AdmissiblePairsAndPadicHodgeStructures:rigid_cells",
         "AdmissiblePairsAndPadicHodgeStructures:bb_bound",
-        "AdicSpacesPartIIPartII:RZ.0/proper-image-zariski-closed",
-        "AdicSpacesPartIIPartII:RZ.0/local-dimension",
-        "AdicSpacesPartIIPartII:RZ.2/singular-stratification",
-        "AdicSpacesPartIIPartII:RZ.2/rank-loci",
-        "AdicSpacesPartIIPartII:RZ.6/manifold-of-classical-points",
-        "AdicSpacesPartIIPartII:RZ.6/constant-rank-theorem",
-        "AdicSpacesPartIIPartII:RZ.6/smooth-morphism-submersion",
-        "AdicSpacesPartIIPartII:RZ.6/subfield-identity-theorem",
+        "AdicSpacesPartV:RZ.0/proper-image-zariski-closed",
+        "AdicSpacesPartV:RZ.0/local-dimension",
+        "AdicSpacesPartV:RZ.2/singular-stratification",
+        "AdicSpacesPartV:RZ.2/rank-loci",
+        "AdicSpacesPartV:RZ.6/manifold-of-classical-points",
+        "AdicSpacesPartV:RZ.6/constant-rank-theorem",
+        "AdicSpacesPartV:RZ.6/smooth-morphism-submersion",
+        "AdicSpacesPartV:RZ.6/subfield-identity-theorem",
         "tauceti:TauCetiRoadmap/ReductiveGroups#layer-2-lie-algebra-and-the-adjoint-representation",
-        "AdicSpacesPartIIPartII:RZ.1/irreducibility-criterion",
-        "AdicSpacesPartIIPartII:RZ.1/full-dimensional-closed-subset"
+        "AdicSpacesPartV:RZ.1/irreducibility-criterion",
+        "AdicSpacesPartV:RZ.1/full-dimensional-closed-subset"
       ],
       "sources": [
         {
@@ -4798,12 +4798,12 @@
         "AdmissiblePairsAndPadicHodgeStructures:generic_density",
         "AdmissiblePairsAndPadicHodgeStructures:open_galois_image",
         "AdmissiblePairsAndPadicHodgeStructures:rigid_cells",
-        "AdicSpacesPartIIPartII:RZ.2/singular-stratification",
-        "AdicSpacesPartIIPartII:RZ.2/rank-loci",
-        "AdicSpacesPartIIPartII:RZ.6/manifold-of-classical-points",
-        "AdicSpacesPartIIPartII:RZ.6/constant-rank-theorem",
-        "AdicSpacesPartIIPartII:RZ.6/smooth-morphism-submersion",
-        "AdicSpacesPartIIPartII:RZ.6/subfield-identity-theorem"
+        "AdicSpacesPartV:RZ.2/singular-stratification",
+        "AdicSpacesPartV:RZ.2/rank-loci",
+        "AdicSpacesPartV:RZ.6/manifold-of-classical-points",
+        "AdicSpacesPartV:RZ.6/constant-rank-theorem",
+        "AdicSpacesPartV:RZ.6/smooth-morphism-submersion",
+        "AdicSpacesPartV:RZ.6/subfield-identity-theorem"
       ],
       "sources": [
         {
@@ -6828,7 +6828,7 @@
     {
       "item": "PAPER-HOWE-KLEVDAL-26/028",
       "disposition": "import",
-      "supplier": "AdicSpacesPartIIPartII:RZ.3",
+      "supplier": "AdicSpacesPartV:RZ.3",
       "reason": "Use the existing declaration or named supplier contract; this roadmap owns no duplicate target."
     },
     {
@@ -6841,7 +6841,7 @@
     {
       "item": "PAPER-HOWE-KLEVDAL-26/030",
       "disposition": "import",
-      "supplier": "AdicSpacesPartIIPartII:RZ.0",
+      "supplier": "AdicSpacesPartV:RZ.0",
       "reason": "Use the existing declaration or named supplier contract; this roadmap owns no duplicate target."
     },
     {
@@ -7834,37 +7834,37 @@
     {
       "item": "PAPER-HOWE-KLEVDAL-26/174",
       "disposition": "import",
-      "supplier": "AdicSpacesPartIIPartII:RZ.5",
+      "supplier": "AdicSpacesPartV:RZ.5",
       "reason": "Use the existing declaration or named supplier contract; this roadmap owns no duplicate target."
     },
     {
       "item": "PAPER-HOWE-KLEVDAL-26/175",
       "disposition": "import",
-      "supplier": "AdicSpacesPartIIPartII:RZ.1",
+      "supplier": "AdicSpacesPartV:RZ.1",
       "reason": "Use the existing declaration or named supplier contract; this roadmap owns no duplicate target."
     },
     {
       "item": "PAPER-HOWE-KLEVDAL-26/176",
       "disposition": "import",
-      "supplier": "AdicSpacesPartIIPartII:RZ.4",
+      "supplier": "AdicSpacesPartV:RZ.4",
       "reason": "Use the existing declaration or named supplier contract; this roadmap owns no duplicate target."
     },
     {
       "item": "PAPER-HOWE-KLEVDAL-26/177",
       "disposition": "import",
-      "supplier": "AdicSpacesPartIIPartII:RZ.2",
+      "supplier": "AdicSpacesPartV:RZ.2",
       "reason": "Use the existing declaration or named supplier contract; this roadmap owns no duplicate target."
     },
     {
       "item": "PAPER-HOWE-KLEVDAL-26/178",
       "disposition": "import",
-      "supplier": "AdicSpacesPartIIPartII:RZ.6",
+      "supplier": "AdicSpacesPartV:RZ.6",
       "reason": "Use the existing declaration or named supplier contract; this roadmap owns no duplicate target."
     },
     {
       "item": "PAPER-HOWE-KLEVDAL-26/179",
       "disposition": "import",
-      "supplier": "AdicSpacesPartIIPartII:RZ.3",
+      "supplier": "AdicSpacesPartV:RZ.3",
       "reason": "Use the existing declaration or named supplier contract; this roadmap owns no duplicate target."
     },
     {
@@ -8128,60 +8128,60 @@
       "checked": "Statements read in the current supplier packet; imported as planned mathematics, not baseline implementation."
     },
     {
-      "supplierStage": "AdicSpacesPartIIPartII:RZ.0",
+      "supplierStage": "AdicSpacesPartV:RZ.0",
       "nodes": [
-        "AdicSpacesPartIIPartII:RZ.0/proper-image-zariski-closed",
-        "AdicSpacesPartIIPartII:RZ.0/local-dimension"
+        "AdicSpacesPartV:RZ.0/proper-image-zariski-closed",
+        "AdicSpacesPartV:RZ.0/local-dimension"
       ],
       "checked": "Statements read in the current supplier packet; imported as planned mathematics, not baseline implementation."
     },
     {
-      "supplierStage": "AdicSpacesPartIIPartII:RZ.1",
+      "supplierStage": "AdicSpacesPartV:RZ.1",
       "nodes": [
-        "AdicSpacesPartIIPartII:RZ.1/irreducibility-criterion",
-        "AdicSpacesPartIIPartII:RZ.1/full-dimensional-closed-subset"
+        "AdicSpacesPartV:RZ.1/irreducibility-criterion",
+        "AdicSpacesPartV:RZ.1/full-dimensional-closed-subset"
       ],
       "checked": "Statements read in the current supplier packet; imported as planned mathematics, not baseline implementation."
     },
     {
-      "supplierStage": "AdicSpacesPartIIPartII:RZ.2",
+      "supplierStage": "AdicSpacesPartV:RZ.2",
       "nodes": [
-        "AdicSpacesPartIIPartII:RZ.2/singular-stratification",
-        "AdicSpacesPartIIPartII:RZ.2/rank-loci"
+        "AdicSpacesPartV:RZ.2/singular-stratification",
+        "AdicSpacesPartV:RZ.2/rank-loci"
       ],
       "checked": "Statements read in the current supplier packet; imported as planned mathematics, not baseline implementation."
     },
     {
-      "supplierStage": "AdicSpacesPartIIPartII:RZ.3",
+      "supplierStage": "AdicSpacesPartV:RZ.3",
       "nodes": [
-        "AdicSpacesPartIIPartII:RZ.3/rigid-analytic-point",
-        "AdicSpacesPartIIPartII:RZ.3/classical-points-rigid-analytic-points",
-        "AdicSpacesPartIIPartII:RZ.3/gauss-point-in-closure"
+        "AdicSpacesPartV:RZ.3/rigid-analytic-point",
+        "AdicSpacesPartV:RZ.3/classical-points-rigid-analytic-points",
+        "AdicSpacesPartV:RZ.3/gauss-point-in-closure"
       ],
       "checked": "Statements read in the current supplier packet; imported as planned mathematics, not baseline implementation."
     },
     {
-      "supplierStage": "AdicSpacesPartIIPartII:RZ.4",
+      "supplierStage": "AdicSpacesPartV:RZ.4",
       "nodes": [
-        "AdicSpacesPartIIPartII:RZ.4/weakly-shilov-point",
-        "AdicSpacesPartIIPartII:RZ.4/weakly-shilov-avoid-nowhere-dense"
+        "AdicSpacesPartV:RZ.4/weakly-shilov-point",
+        "AdicSpacesPartV:RZ.4/weakly-shilov-avoid-nowhere-dense"
       ],
       "checked": "Statements read in the current supplier packet; imported as planned mathematics, not baseline implementation."
     },
     {
-      "supplierStage": "AdicSpacesPartIIPartII:RZ.5",
+      "supplierStage": "AdicSpacesPartV:RZ.5",
       "nodes": [
-        "AdicSpacesPartIIPartII:RZ.5/resolution-consequences"
+        "AdicSpacesPartV:RZ.5/resolution-consequences"
       ],
       "checked": "Statements read in the current supplier packet; imported as planned mathematics, not baseline implementation."
     },
     {
-      "supplierStage": "AdicSpacesPartIIPartII:RZ.6",
+      "supplierStage": "AdicSpacesPartV:RZ.6",
       "nodes": [
-        "AdicSpacesPartIIPartII:RZ.6/manifold-of-classical-points",
-        "AdicSpacesPartIIPartII:RZ.6/constant-rank-theorem",
-        "AdicSpacesPartIIPartII:RZ.6/smooth-morphism-submersion",
-        "AdicSpacesPartIIPartII:RZ.6/subfield-identity-theorem"
+        "AdicSpacesPartV:RZ.6/manifold-of-classical-points",
+        "AdicSpacesPartV:RZ.6/constant-rank-theorem",
+        "AdicSpacesPartV:RZ.6/smooth-morphism-submersion",
+        "AdicSpacesPartV:RZ.6/subfield-identity-theorem"
       ],
       "checked": "Statements read in the current supplier packet; imported as planned mathematics, not baseline implementation."
     },

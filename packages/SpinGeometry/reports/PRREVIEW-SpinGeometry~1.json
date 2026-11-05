@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-SpinGeometry~1",
+    "head": "edf4eadb901541445f5b907c44ba82ca1f6d0288",
+    "pr": 1674,
+    "folder": "SpinGeometry",
+    "date": "2026-11-02",
+    "findings": 11,
+    "blocking": 4,
+    "notes": "Full-folder review; 96 computed adversarial rows; all 20 elaborated declaration signatures inspected; six admitted theorems probed and two native headline signatures tested. Worker sample identifiers were unavailable: a reproducible supplemental 15-target sample was checked, with source-access limits recorded. Supplied gate fails six rule categories; original Lean elaborates with only sorry warnings after the permitted targeted dependency build. Mechanical depcheck reports 205 roadmaps, 1514 edges, 0 problems; explicit reciprocal main-roadmap citations are documented. Pinned-library, main/open-roadmap and package ownership checks completed. No PR file changed."
+  }
+}

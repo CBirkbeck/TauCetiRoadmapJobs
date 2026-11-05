@@ -1,0 +1,70 @@
+# Repair report: AdicCoefficientsAndComparisonsPartII, red-team round 2
+
+Files edited: packages/AdicCoefficientsAndComparisonsPartII/README.md, packages/AdicCoefficientsAndComparisonsPartII/sources.toml (one additional Stacks chapter fetch recorded under the existing `stacks` key), packages/AdicCoefficientsAndComparisonsPartII/design/plan.json (one new top-level `gaps` entry). `Suggested.lean` and `metadata.toml` are unchanged. Every finding was verified against the cited source lines and the supplier roadmaps as they stand now; all seven are right and all were applied.
+
+## RT-AdicCoefficientsAndComparisonsPartII~2a/F01 (P2) — applied
+
+PA.4.3: "For quasi-excellent noetherian X the underlying morphism X′ → X is a projective modification" → the modification clause now requires a log regular fs source; for a monoidally torsion-free fine log scheme that is not log regular only the saturated monoidal tower and its functoriality are asserted. Added the A₁ log point over Q as a negative-control Check (tower = exceptional P¹_Q → Spec Q, free stalks ℕ², ℕ, not a modification). Evidence: ilo14 lines 4849–4856 (Theorem 3.3.15, monoidal tower for monoidally torsion-free fine log schemes) versus lines 4904–4908 and 4960–4971 (§3.4 assumes log regular fs throughout; Theorem 3.4.9 is the scheme-level desingularization). The API bullets, PA.4.2, the Layer 4 Examples and PA.6.1–6.2 already restrict the geometric conclusion to log regular sources; no other occurrence needed repair.
+
+## RT-AdicCoefficientsAndComparisonsPartII~2a/F02 (P2) — applied
+
+SchemeAndStackFoundations §2.20 on main (README lines 4275–4331) owns `RelativeDualizingComplex.exists`, `.unique`, `.baseChange` for every flat locally finitely presented morphism, including non-quasi-compact and non-quasi-separated sources, and `relativeDualizingModule_invertible_iff` over noetherian bases. Repaired: Scope bullets and the StableReduction contract no longer claim a local complete-intersection extension here; a new §2.20 paragraph in the SchemeAndStackFoundations contract; PA.5.1's route now takes §2.20's pair (K, ξ), proves the nodal identification (K concentrated in degree −1, H⁻¹(K) invertible with the complete-intersection description, by noetherian approximation on affine opens and `.baseChange`, glued by `.unique`), compares with StableReduction Layer 2 on proper curves and sets ω_{(C,D)/S} = ω_{C/S}(D); new API bullet, new Check (node: generator du/u = −dv/v with residues (1, −1); Kähler differentials have two-dimensional fibre at the node); PA.5.1 and PA.5.2 Needs and the Layer 5 Dependencies cite §2.20 and §0.9.
+
+## RT-AdicCoefficientsAndComparisonsPartII~2a/F03, RT-AdicCoefficientsAndComparisonsPartII~2b/F02 (P3) — applied
+
+PA.4.1: "`LogCrystalline.IsLogRegular.trivial_iff`" → "the trivial-log-structure clause of its API". CrystallineCohomology at its open head (the copy the roadmap service shows for #857) states the specialization under "Log regular schemes" (its line 8093) in prose; neither its README nor its Suggested.lean contains the identifier, and the service grep finds it nowhere. The two findings name the same defect and are settled by this one edit.
+
+## RT-AdicCoefficientsAndComparisonsPartII~2a/F04 (P1) — applied
+
+Verified: CrystallineCohomology CR.5:log-algebra.3 (head lines 7961–8056) supplies lifting, the chart criterion, Kummer étale morphisms and base change, no descent along a cover of the source; LefschetzPencilsAndVanishingCycles §0.10 (head lines 700–900) states the separated quotient conclusion, not the descent theorem; ilo14 line 6778 is Theorem 1.11 (surjective, log étale and exact g, fg log smooth ⇒ f log smooth; line 6780 identifies the hypothesis with a Kummer étale cover). Added `gap:kummer-etale-source-descent` (supplier CrystallineCohomology, section CR.5:log-algebra.3) to the README's CrystallineCohomology contract with three Checks (prime-to-p root cover, identity, empty source over the cusp) and to plan.json's `gaps`; PA.4.6's route now names the surjective Kummer étale quotient map and the gap; PA.4.6 Needs and the Layer 4 Dependencies cite it. No other section descends log smoothness along a source cover.
+
+## RT-AdicCoefficientsAndComparisonsPartII~2a/F05 (P1) — applied
+
+Verified: moretbailly89 line 321 ("conséquence du théorème 2.8"), Lemma 3.3 at lines 322–334 (multiples of Weil divisors on the normal surface become Cartier by local Picard torsion), Steps II and IV at lines 406 and 420 use it; line 116–118 names resolution of singularities as the alternative; §3.5 (line 345) defines the intersection pairing on the normal surface. PA.6.11a's route now: compactify to a normal projective flat X̄, apply §PA.0.11 (identity alteration, Z = ∅) to obtain a regular integral projective model X̃ → X̄, note X̃_K ≅ X̄_K (proper birational onto a normal curve) so the generic fibre stays geometrically irreducible, replace X by π⁻¹(X), and run Steps I–VI on the regular model with SchemeAndStackFoundations §5.9's relative intersection pairing, connected fibres (Stein factorization through a purely inseparable extension) and Zariski's lemma for negative definiteness on the vertical boundary. The reviewer's text presupposes "regular implies locally factorial", which no allowed supplier states (not at the pinned Mathlib, where `IsRegularLocalRing` has only Defs and Polynomial; not in SchemeAndStackFoundations §§3.4, 4.13), so the README states and proves the needed two-dimensional case as a lemma inside PA.6.11a: depth p = 2 by `depth_shortExact` (§0.17) and freeness by PurityOfBranchLocus §0.3's `IsRegularLocalRing.free_of_isCohenMacaulay` (both on main), then §3.4's `classGroup_picard_locallyFactorial`; locator stacks More on Algebra Lemma 15.123.2 (0AG0), line 17399 of the newly fetched chapter extraction, for the general theorem. Four Checks for the lemma (A₁ cone and its blow-up chart; uv = π matrix [[−1,1],[1,−1]]; two-point matrix [[−2,2],[2,−2]]; DVR). Added a PurityOfBranchLocus contract subsection and scope bullet, §5.9 and `depth_shortExact` to the SchemeAndStackFoundations contract, §PA.0.11, §5.9, PurityOfBranchLocus §0.3 and StableReduction Layer 4 to PA.6.11a's Needs and the Layer 6 Dependencies.
+
+## RT-AdicCoefficientsAndComparisonsPartII~2b/F01 (P3) — applied
+
+Contract line and PA.4.3 route: "`qeResolution` and `qeResolution_regularFunctorial`" → "strong non-embedded resolution (§7.5) and functoriality for all regular morphisms (§7.6)", keeping the section numbers. ResolutionOfSingularitiesCharacteristicZero at its open head (service copy for #1199) has §7.5 at line 1099 and §7.6 at line 1115 as prose targets; its Suggested.lean declares only `formalDivision`, `localQuotientHilbertSamuel`, `hsLexStabilization` and `exists_resolution`; the service grep finds the two names only in consumer roadmaps.
+
+## Checks run
+
+- Elaboration, from the content checkout: `lake env lean` on packages/AdicCoefficientsAndComparisonsPartII/Suggested.lean exits 0 with exactly the two expected `declaration uses sorry` warnings (lines 127 and 137). No Tau Ceti module is imported, so no module build was needed.
+- Binder check: a scratch copy of Suggested.lean with `#check @name` for all six declarations was elaborated; every elaborated type is identical to the one in the worker's signatures file, and each matches its PA.5.2b README statement (the two theorems carry `NontriviallyNormedField`, `IsUltrametricDist`, `CompleteSpace K`, `IsAlgClosed k`, `CompleteSpace k`, the nontriviality witness and the finiteness hypothesis explicitly). Nothing changed, since no finding touched the Lean file.
+- Dependency check (`gate --depcheck … --movable`), exact output:
+
+```text
+depcheck: 204 roadmaps, 1748 edges, 0 problem(s)
+```
+
+  No UPWARD, CYCLE or moved line. The one new edge is to PurityOfBranchLocus, which is on main.
+- Citation resolver: one lead, LogicAndDefinabilityInNumberTheoryPartII §2.1 at the Downstream consumers paragraph, an outgoing consumer that is a board package; no Lean name of this roadmap or of a supplier is found nowhere any more (the two drifted names of F03/2b-F02 and 2b/F01 are gone).
+- Gate failures listed in the brief: none.
+
+## Adversarial pass on the new and changed statements
+
+| Statement | Instances tried | Values computed | Result | Change |
+|---|---|---|---|---|
+| PA.4.3 modification clause | log regular A₁ cone over Q; A₁ log point over Q; regular snc pair; strict torus open | cone: tower = vertex blow-up, projective, generic degree 1; log point: dimension equation 0 ≠ 0 + 2, tower = P¹_Q → Spec Q, stalks ℕ² at 2 points and ℕ elsewhere, length 1, not birational; snc: identity, degree 1; torus: pulled-back ideal unit, step deleted | log point refutes the old clause and satisfies the new one | hypothesis "log regular fs source" added; Check added |
+| gap:kummer-etale-source-descent | n-th root cover of the log line, n invertible; n = 1; empty source over the cusp; p-th root in characteristic p | cokernel ℤ/n invertible, descended line log smooth; identity returns hypothesis; empty source vacuously log smooth but cusp not smooth; p-root is Kummer, not log étale, hypothesis fails | surjectivity and Kummer étaleness both necessary | gap declared with these three Checks |
+| PA.4.6 quotient statement | sign action on (A², V(xy)) over Spec k, char k ≠ 2; G = 1 | quotient (uw = v², V(v)) is the toric pair of chart P, log smooth over k, cover Kummer étale of group ℤ/2; G = 1: quotient map identity | descent conclusion agrees with the direct toric computation | route names the gap |
+| PA.5.1 ω_{C/S} | node Spec k[u,v]/(uv); A¹_k; P¹_k; uv = π over a DVR | H⁻¹ free of rank 1 generated by du/u = −dv/v, residues (1, −1); Ω¹ fibre at node 2-dimensional; A¹: ω = O·du; P¹: ω = O(−2), degree −2 as in StableReduction Layer 2; uv = π: restriction to the special fibre is the nodal ω by base change | identification discriminates ω from Kähler differentials | route rewritten on §2.20's carrier; Check added |
+| Weil–Cartier lemma (dim ≤ 2) | k[[x, y]], p = (x); A₁ cone, D = V(u, v); blow-up chart k[w, y]; DVR; k[[x, y, z]], p = (x) | A/p = k[[y]] depth 1, depth p = min(2, 1 + 1) = 2, free, principal; cone: Cl = ℤ/2, 2D = div(u), D not Cartier at the vertex, strict transform V(y) principal; DVR: maximal ideal = (t); dimension 3: A/p = k[[y, z]] has depth 2 only because this p is principal, the route cannot assume it, so the lemma stays at dim ≤ 2 | route complete exactly in dimension ≤ 2 | lemma stated with dimension hypothesis; four Checks |
+| Intersection matrices | uv = π; two components meeting twice | [[−1, 1], [1, −1]]: V(u)·V(v) = 1, V(u)·div(π) = 0; [[−2, 2], [2, −2]]; kernels spanned by the fibre; restrictions (−1), (−2) | negative definite on a proper subset of components | two Checks |
+| Regular model step of PA.6.11a | X̄ already regular; X̄ with a cone singularity in a closed fibre; X = Spec Z[1/2] (non-surjective) | regular: π = id, degree 1; cone: X̃_K ≅ X̄_K since the generic fibre is a regular curve, π⁻¹(X) dense and surjective onto B; non-surjective X: excluded by hypothesis before the step | hypotheses of Théorème 1.7 preserved on π⁻¹(X) ⊆ X̃ | route rewritten |
+| Connected fibres of X̄ → B | P¹_R; X̄_K geometrically irreducible with H⁰ = L | f_*O = R; L ⊗_K K̄ is a local Artinian ring, so L/K purely inseparable, Spec of its integral closure a universal homeomorphism onto B | Stein factorization gives connected fibres | sentence added |
+| PurityOfBranchLocus contract example | k[[x, y]], p = (x); k[[t]], maximal ideal | depth 1 quotient, depth 2 ideal, free; depth 1 ideal, free on t | matches `free_of_isCohenMacaulay` hypotheses | contract subsection added |
+
+## Sources
+
+Fetched through the sources service: the Stacks More on Algebra chapter, for Lemma 15.123.2 (0AG0) at line 17399 of its extraction. The service overwrote the primary metadata of the `stacks` entry with this chapter; I restored the Fields primary record (its URL, hash and fetch time) and recorded the new chapter under `additional_fetched_from` and `additional_sha256`, extending the locator, `cited_for` and `version_note`, so the key keeps one entry with every chapter hash. No `needs-references.toml` was created: every cited text was readable.
+
+## Ownership against open work
+
+Searched by object (relative dualizing complexes, descent of log smoothness along Kummer étale covers, factoriality of regular local rings, surface intersection pairings) on main, in the board packages and at the open heads the service indexes, and in the sibling checkouts the brief lists. Relative dualizing complexes: SchemeAndStackFoundations §2.20 (cited). Intersection pairing on regular surfaces: SchemeAndStackFoundations §5.9 and StableReduction Layer 4 (cited). Freeness of maximal Cohen–Macaulay modules over regular local rings: PurityOfBranchLocus §0.3 on main (cited). Regular local rings being factorial in general: ArakelovGeometryAndAbelianHeights (an open pull request not in this roadmap's allowed supplier list) uses the statement on regular arithmetic surfaces without owning it, so the two-dimensional case is proved here from supplied inputs rather than cited. Descent of log smoothness: no roadmap states it; it is declared as the gap above rather than planned here, because CrystallineCohomology CR.5:log-algebra.3 owns the log smooth and Kummer étale predicates. Open pull requests the brief names without files were not searched beyond the service index.
+
+## For the maintainer
+
+- New supplier gap `kummer-etale-source-descent` for CrystallineCohomology CR.5:log-algebra.3 (plan.json `gaps` and README contract agree; seven gaps in total now).
+- New supplier edge: PurityOfBranchLocus §0.3 (on main, earlier in the order; the depcheck shows no move).
+- No name of this roadmap cited by other roadmaps changed; `Suggested.lean` is unchanged.
+- The review 2b "Not verifiable" note about the `module` header line of `Suggested.lean` is not a finding; the file elaborates under `lake env lean` with that header, and nothing in this round touched it.

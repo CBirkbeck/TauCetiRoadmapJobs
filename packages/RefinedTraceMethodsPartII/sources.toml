@@ -1,0 +1,291 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "RefinedTraceMethodsPartII"
+
+[[source]]
+id = "akn24"
+authors = "Benjamin Antieau, Achim Krause, Thomas Nikolaus"
+title = "On the $K$-theory of $\\mathbf{Z}/p^n$"
+year = 2024
+arxiv = "2405.04329v1"
+locator_scheme = "theorem"
+locator = "Theorems 1.1, 1.4, 1.8, 2.22, 2.27, 5.2, 5.12, 6.3; Propositions 1.5, 2.6, 2.11, 2.18, 2.23, 2.24, 3.30, 3.33, 3.34, 4.24, 6.2; Lemmas 2.8, 2.9, 2.12, 3.6, 4.6-4.15, 4.43, 5.7-5.16; Corollaries 2.3, 2.5, 2.13, 2.14, 2.16, 3.31, 4.44, 5.5, 5.6; Theorem 2.20; Remark 5.4; Example 1.7"
+url = "https://arxiv.org/abs/2405.04329v1"
+fetched_from = "https://arxiv.org/pdf/2405.04329v1"
+fetched_at = "2026-10-26T00:40:00Z"
+sha256 = "d11976af9086d6be7015035e996467812d764b24e5586f7dc4cdec68a054fe70"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v1"
+cited_for = ["9.1", "9.2", "9.3", "9.4", "9.5", "9.6", "8.6", "1.5"]
+
+[[source]]
+id = "akn-delta"
+authors = "Benjamin Antieau, Achim Krause, Thomas Nikolaus"
+title = "Prismatic cohomology relative to $δ$-rings"
+year = 2023
+arxiv = "2310.12770v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.2; Proposition 1.6 (= 3.9); Theorem 1.7; Construction 7.3; Lemma 7.5; Definitions 1.1, 7.8, 8.1, 8.4, 9.1, 9.2, 10.2-10.10, 10.29; Lemma 8.5; Propositions 8.3, 8.6, 9.14, 9.15, 10.31, 10.37, 10.43, 10.46; Corollaries 1.3 (= 7.10), 1.4 (= 8.9), 8.7, 8.10, 10.34, 10.47; Construction 10.44"
+url = "https://arxiv.org/abs/2310.12770v2"
+fetched_from = "https://arxiv.org/pdf/2310.12770v2"
+fetched_at = "2026-10-26T00:40:07Z"
+sha256 = "6af664ff89d86cb58fdb608de98e9f8f1bb9bcd5522c0fd8c9c87e5d163320dc"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2 (7 May 2026); locators here use v2 numbering. akn24 cites the v1 numbering (its references to Thm. 1.1, Cor. 1.2, Cor. 10.32 and Prop. 10.41 of this paper); the v2 main theorem is Theorem 1.2, so every v1 locator taken from akn24 must be re-checked against v2."
+cited_for = ["8.1", "8.2", "8.3", "8.4", "8.5"]
+
+[[source]]
+id = "hesselholt-axes"
+authors = "Lars Hesselholt"
+title = "On the K-theory of the coordinate axes in the plane"
+year = 2005
+venue = "Nagoya Math. J. 185 (2007), 93-109"
+doi = "10.1017/S0027763000025757"
+arxiv = "math/0508251v2"
+locator_scheme = "theorem"
+locator = "Theorem A; Theorem B; Proposition 1.2; Lemma 2.3"
+url = "https://arxiv.org/abs/math/0508251v2"
+fetched_from = "https://arxiv.org/pdf/math/0508251v2"
+fetched_at = "2026-10-26T00:40:26Z"
+sha256 = "e225c4b586df9ffc46d1a53014137b00f51227aa7eb0d1e183ddf0600fa88dde"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2"
+cited_for = ["4.1", "4.4", "5.1", "5.2"]
+
+[[source]]
+id = "speirs-axes"
+authors = "Martin Speirs"
+title = "On the K-theory of coordinate axes in affine space"
+year = 2019
+venue = "Algebr. Geom. Topol. 21 (2021) 137-171"
+doi = "10.2140/agt.2021.21.137"
+arxiv = "1901.08550v2"
+locator_scheme = "theorem"
+locator = "Theorems 1, 2, 30, 31; Lemmas 4, 6, 9, 10, 11, 15, 21, 29, 33; Propositions 12, 16, 26, 28; Corollary 17; Definition 8"
+url = "https://arxiv.org/abs/1901.08550v2"
+fetched_from = "https://arxiv.org/pdf/1901.08550v2"
+fetched_at = "2026-10-26T00:40:32Z"
+sha256 = "d28307fd438b0f16d3717477125a2fd08f99ffaacfbc2ac55bc111db397dbab1"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2"
+cited_for = ["1.4", "2.1", "2.2", "2.3", "2.4", "2.5", "3.1", "3.5", "3.6", "4.3", "4.4", "5.3", "5.4"]
+
+[[source]]
+id = "speirs-trunc"
+authors = "Martin Speirs"
+title = "On the K-theory of truncated polynomial algebras, revisited"
+year = 2019
+arxiv = "1901.10602v3"
+locator_scheme = "theorem"
+locator = "Lemmas 7, 8; Corollary 9"
+url = "https://arxiv.org/abs/1901.10602v3"
+fetched_from = "https://arxiv.org/pdf/1901.10602v3"
+fetched_at = "2026-10-26T00:40:38Z"
+sha256 = "7b004245b98279cad8b89345977e8f195eb36901bb1b28fbf8eb56e95fec4384"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v3"
+cited_for = ["2.3", "3.1", "3.6"]
+
+[[source]]
+id = "hn-cusp"
+authors = "Lars Hesselholt, Thomas Nikolaus"
+title = "Algebraic $K$-theory of planar cuspidal curves"
+year = 2019
+arxiv = "1903.08295v2"
+locator_scheme = "theorem"
+locator = "Theorem A; Theorem 1; Lemma 2; Proposition 3; Section 2"
+url = "https://arxiv.org/abs/1903.08295v2"
+fetched_from = "https://arxiv.org/pdf/1903.08295v2"
+fetched_at = "2026-10-26T00:40:44Z"
+sha256 = "b409fdaf6abdb11ca41abf46c64ca58fa5695f7c0aae8fb59a8297f3deb47ac7"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2"
+cited_for = ["1.1", "1.3", "2.1", "2.3", "2.6", "3.1", "3.2", "3.3", "3.4", "3.5", "4.2", "4.3", "4.4", "6.1", "6.2"]
+
+[[source]]
+id = "riggenbach-trunc"
+authors = "Noah Riggenbach"
+title = "$K$-Theory of Truncated Polynomials"
+year = 2022
+arxiv = "2211.11110v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.1; Theorem 5.1; Lemma 4.1; Lemma 5.2; Corollary 6.5"
+url = "https://arxiv.org/abs/2211.11110v2"
+fetched_from = "https://arxiv.org/pdf/2211.11110v2"
+fetched_at = "2026-10-26T00:40:51Z"
+sha256 = "71745810426d897a02f87ffc9cb1c2c1bec3db9e13bd6f86519ca722efb5381f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2"
+cited_for = ["2.6", "3.4", "3.5", "7.1", "7.2"]
+
+[[source]]
+id = "sulyma-slopes"
+authors = "Yuri J. F. Sulyma"
+title = "Floor, ceiling, slopes, and $K$-theory"
+year = 2021
+venue = "Ann. K-Th. 8 (2023) 331-354"
+doi = "10.2140/akt.2023.8.331"
+arxiv = "2110.04978v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.1; Corollary 1.2; Remark 1.3; Sections 2.1 and 3"
+url = "https://arxiv.org/abs/2110.04978v2"
+fetched_from = "https://arxiv.org/pdf/2110.04978v2"
+fetched_at = "2026-10-26T00:40:56Z"
+sha256 = "d3b639701a27ea5b5e6ac6f098e58c2e4e9fbef6e72597283076232b28d3100b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2"
+cited_for = ["7.2", "9.2"]
+
+[[source]]
+id = "hesselholt-cusp-polytopes"
+authors = "Lars Hesselholt"
+title = "On the K-theory of planar cuspical curves and a new family of polytopes"
+year = 2013
+venue = "Algebraic Topology: Applications and New Directions (Stanford, CA, July 23-27, 2012), pp. 145-182, Contemp. Math. 620, Amer. Math. Soc., Providence, RI, 2014"
+doi = "10.1090/conm/620"
+arxiv = "1303.6060v2"
+locator_scheme = "section"
+locator = "Lemma 1.4; Remark 1.5; Corollaries 1.6, 1.7; Proposition 3.1; Theorem 4.1"
+url = "https://arxiv.org/abs/1303.6060v2"
+fetched_from = "https://arxiv.org/pdf/1303.6060v2"
+fetched_at = "2026-10-26T00:41:03Z"
+sha256 = "28190bd45c1b3a602ea292780e285b6b21780f8203a74b26676ed50e7c1c02c1"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2"
+cited_for = ["1.1", "1.2", "2.6", "4.2", "4.3"]
+
+[[source]]
+id = "bouis-motivic"
+authors = "Tess Bouis"
+title = "On the motivic cohomology of some singular rings"
+year = 2026
+arxiv = "2608.05220v1"
+locator_scheme = "section"
+locator = "Sections 2-3"
+url = "https://arxiv.org/abs/2608.05220v1"
+fetched_from = "https://arxiv.org/pdf/2608.05220v1"
+fetched_at = "2026-10-26T00:41:08Z"
+sha256 = "5320fa5760bf2d028efc5f44d919200ee5a23834de11af38646d0c095845aa5d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v1"
+cited_for = ["Downstream consumers"]
+
+[[source]]
+id = "larsen-mixed"
+authors = "Michael Larsen"
+title = "Filtrations, mixed complexes, and cyclic homology in mixed characteristic"
+year = 1995
+venue = "K-Theory 9"
+doi = "10.1007/bf00961458"
+locator_scheme = "section"
+locator = "cusp mixed complex"
+url = "https://doi.org/10.1007/bf00961458"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["2.6"]
+
+[[source]]
+id = "bach-hypersurfaces"
+authors = "Jorge Alberto Guccione, Juan Jose Guccione, Maria Julia Redondo, Orlando Eugenio Villamayor"
+title = "Hochschild and cyclic homology of hypersurfaces"
+year = 1992
+venue = "Advances in Mathematics 95"
+doi = "10.1016/0001-8708(92)90043-K"
+locator_scheme = "section"
+locator = "mixed complex of k[x,y]/(y^a - x^b)"
+url = "https://doi.org/10.1016/0001-8708(92)90043-K"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["2.6"]
+
+[[source]]
+id = "riggenbach-cusp"
+authors = "Noah Riggenbach"
+title = "$K$-Theory of Cuspidal Curves Over a Perfectoid Base And Formal Analogues"
+year = 2022
+arxiv = "2203.17136v1"
+locator_scheme = "section"
+locator = "Section 2 (reduction to TC; homotopy invariance hypothesis), Theorem 1.1"
+url = "https://arxiv.org/abs/2203.17136"
+fetched_from = "https://arxiv.org/pdf/2203.17136"
+fetched_at = "2026-10-26T03:28:46Z"
+sha256 = "8db510fd3dcffd8d66220f7581684a704d7c9a68832429a2b7fd4e145094c29d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v1 (31 Mar 2022)"
+cited_for = ["4.4", "6.2"]
+
+[[source]]
+id = "amm-perfectoid"
+authors = "Benjamin Antieau, Akhil Mathew, Matthew Morrow"
+title = "The $K$-theory of perfectoid rings"
+year = 2022
+arxiv = "2203.06472v1"
+locator_scheme = "theorem"
+locator = "Proposition 5.1; Theorem 1.5"
+url = "https://arxiv.org/abs/2203.06472"
+fetched_from = "https://arxiv.org/pdf/2203.06472"
+fetched_at = "2026-10-26T03:29:38Z"
+sha256 = "db5af4ea66f05b85be25ecc557637cd8635c4862762aebf5e62109e813691d2e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v1 (12 Mar 2022)"
+cited_for = ["4.4", "gap:perfect-homotopy-invariance"]
+
+[[source]]
+id = "riggenbach-double"
+authors = "Noah Riggenbach"
+title = "On The Algebraic $K$-Theory of Double Points"
+year = 2020
+arxiv = "2007.01227v2"
+locator_scheme = "theorem"
+locator = "Proposition 4.2; Lemma 4.3; Corollary 4.4; Proposition 5.7; Corollary 5.8; Lemma 5.13"
+url = "https://arxiv.org/abs/2007.01227v2"
+fetched_from = "https://arxiv.org/pdf/2007.01227v2"
+fetched_at = "2026-10-26T03:46:18Z"
+sha256 = "3d1d1541f657164398c4f2e6e8a8fe631fd2d55499ac09c2797acfd38abf0e8c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2"
+cited_for = ["3.3", "3.4"]
+
+[[source]]
+id = "lurie-ha"
+authors = "Jacob Lurie"
+title = "Higher Algebra"
+year = 2017
+locator_scheme = "theorem"
+locator = "Corollary 3.2.2.5; Corollary 3.2.3.2 (from Proposition 3.2.3.1)"
+url = "https://www.math.ias.edu/~lurie/papers/HA.pdf"
+fetched_from = "https://www.math.ias.edu/~lurie/papers/HA.pdf"
+fetched_at = "2026-10-26T06:49:11Z"
+sha256 = "112b145a95a62daefb8275851cac9ab6430004cfc8f751a33a8d981fd7ad68c3"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["8.2"]
+version_note = "Author-page version of September 18, 2017."

@@ -1,0 +1,28 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "FiniteSamplingDiscrepancy"
+
+[[source]]
+id = "lpw"
+locator_scheme = "theorem"
+locator = "Proposition 4.2"
+url = "https://pages.uoregon.edu/dlevin/MARKOV/markovmixing.pdf"
+fetched_from = "https://pages.uoregon.edu/dlevin/MARKOV/markovmixing.pdf"
+fetched_at = "2026-11-05T02:47:47Z"
+sha256 = "9ef39f9467d9647ff3f5e8747b9ce24b7a90d13be2f8156fbd827b95b661a772"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["0.4"]
+
+[[source]]
+id = "df1980"
+locator_scheme = "theorem"
+locator = "Theorem 13"
+url = "https://projecteuclid.org/journalArticle/Download?urlId=10.1214%2Faop%2F1176994663"
+fetched_from = "https://projecteuclid.org/journalArticle/Download?urlId=10.1214%2Faop%2F1176994663"
+fetched_at = "2026-11-05T13:08:31Z"
+sha256 = "ecc77ca2467a98e8f1a775a4e918561d68d6c69053b6cd0641c32b89bbd297ad"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["1.3"]

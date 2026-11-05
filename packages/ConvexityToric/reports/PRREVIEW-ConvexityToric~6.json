@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-ConvexityToric~6",
+    "head": "1e71d0f28260af1b5df00af06f5088646c44e063",
+    "pr": 1651,
+    "folder": "SymplecticGeometry/ConvexityToric",
+    "date": "2026-11-02",
+    "findings": 7,
+    "blocking": 1,
+    "notes": "incremental re-review of 124 changed lines since c7860ab; verified all seven previous findings, changed seeded passages 1.1/1.2/2.1 and inherited remaining sample evidence; found rank-one construction duplication with GeometricQuantization 3.1a and checked return dependencies; scope-aware worker gate passes, standalone gate has only five explicitly authorized sibling false positives; fresh depcheck has 0 problems, targeted build and direct elaboration pass, all 17 signatures checked, padding probe succeeds; 151 computed adversarial rows; no PR files edited."
+  }
+}

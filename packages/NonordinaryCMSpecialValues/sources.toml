@@ -1,0 +1,26 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "NonordinaryCMSpecialValues"
+
+[[source]]
+id = "BKO21"
+authors = "Ashay A. Burungale; Shinichi Kobayashi; Kazuto Ota"
+title = "Rubin's conjecture on local units in the anticyclotomic tower at inert primes"
+year = 2021
+locator_scheme = "equation"
+locator = "§2.0.1 p.946; §2.0.3 pp.948-949; §3.0.2 pp.951-953, (3.3)-(3.9); Proposition 3.3, Theorem 3.4; §6 p.964"
+licence_class = "operator-local"
+status = "local"
+local_name = "burungale-kobayashi-ota-2021-rubins-conjecture-local-units.pdf"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/484#issuecomment-6636560442"
+
+[[source]]
+id = "ROHRLICH-NOTES"
+authors = "David E. Rohrlich"
+title = "Root numbers"
+year = 2011
+locator_scheme = "theorem"
+locator = "Proposition 1.5, p.14; Lecture 2 §§5.1-5.2, (2.39)-(2.49), pp.34-36"
+licence_class = "operator-local"
+status = "local"
+local_name = "rohrlich-2011-root-numbers-pcmi.pdf"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/484#issuecomment-6636560442"

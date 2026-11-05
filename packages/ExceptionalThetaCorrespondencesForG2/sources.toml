@@ -11,6 +11,7 @@ locator = "§§3–5"
 licence_class = "none"
 status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/390#issuecomment-6391012621"
+cited_for = ["2.4"]
 
 [[source]]
 id = "HPS"
@@ -23,3 +24,255 @@ locator = "infinitesimal-character correspondence, pp. 447–471"
 licence_class = "none"
 status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/390#issuecomment-6391012621"
+cited_for = ["10.7"]
+
+[[source]]
+id = "GS"
+authors = "Wee Teck Gan; Gordan Savin"
+title = "Howe duality and dichotomy for exceptional theta correspondences"
+year = 2021
+arxiv = "2102.00372v1"
+locator_scheme = "section"
+locator = "§§1–15, pp. 1–55; references p. 56; all local target statements and their proofs"
+url = "https://arxiv.org/abs/2102.00372v1"
+fetched_from = "https://arxiv.org/pdf/2102.00372v1"
+fetched_at = "2026-10-25T00:05:21Z"
+sha256 = "8b3b6702909a6a936e5984f46a3c2fbfe629b63db4ba0ae9bd4356286508c6e5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "All locators use arXiv:2102.00372v1, 56 pages; the published version has different pagination."
+cited_for = ["octonion-group", "null-subspaces", "parabolics", "cubic-characters", "quadratic-stabilizers", "dual-embeddings", "complex-parameters", "component-groups", "pgsp-geometry", "pgsp-root-coordinates", "g2-p-supercuspidal", "g2-p-steinberg", "g2-p-characters", "g2-q-supercuspidal", "g2-q-segments", "g2-borel", "g2-nontempered-normal-forms", "depth-zero-unipotent", "partial-g2-packets", "cubic-finiteness", "pgsp-p2-p13", "pgsp-p3", "pgsp-p1", "jordan-freudenthal", "exceptional-group-pairs", "triality-see-saw", "minimal-models", "exceptional-theta-modules", "e6-outer-extension", "ambient-parabolics", "orbit-kernels", "e6-jacquet-finiteness", "e7-g2-p-jacquet", "e7-g2-q-jacquet", "e7-h-p3-jacquet", "e7-h-p1-jacquet", "e7-h-p2-jacquet", "nontempered-forward", "nontempered-reverse", "tempered-compatibility", "spin8-degenerate-series", "spin8-constituents", "division-ext-vanishing", "triality-mackey", "triality-restriction-hom", "cubic-minimal-coefficients", "cubic-period-chain", "nongeneric-tempered-uniqueness", "weak-existence", "division-correspondence", "division-nonvanishing", "pgl3-clifford-labels", "e6-coefficient-models", "pgl3-minus-supercuspidal", "pgl3-explicit-lifts", "pgl3-howe-duality", "orthogonal-restriction-comparison", "a5-sp6-restriction", "e7-noncuspidal-finiteness", "nongeneric-full-finiteness", "theta-dichotomy", "fourier-jacobi-period", "shalika-period", "root-exchange", "fourier-jacobi-uniqueness", "minimal-whittaker-fibers", "minimal-shalika-fiber", "generic-period-chain", "generic-tempered-uniqueness", "e7-tempered-howe", "nontempered-explicit-lifts", "three-howe-theorems", "e6-e7-siegel-table", "remaining-nonsupercuspidal-table", "rho-supercuspidal-family", "rho-sk-comparison", "remaining-supercuspidal-lifts", "discrete-series-trichotomy"]
+
+[[source]]
+id = "HKT"
+authors = "Gordan Savin (appendix to Michael Harris; Chandrashekhar Khare; Jack Thorne)"
+title = "A local Langlands parameterization for generic supercuspidal representations of p-adic G₂: Appendix A"
+year = 2019
+arxiv = "1909.05933v3"
+locator_scheme = "section"
+locator = "Appendix A.1–A.10, pp. 22–30"
+url = "https://arxiv.org/abs/1909.05933v3"
+fetched_from = "https://arxiv.org/pdf/1909.05933v3"
+fetched_at = "2026-10-25T00:05:27Z"
+sha256 = "07b08d6673e3011222c1994034ee34806bf581cc2a63c889277b1dc1a65695a3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v3"
+cited_for = ["null-subspaces", "minimal-whittaker-fibers", "global-exceptional-pair", "global-exceptional-theta-kernel", "global-generic-lift"]
+
+[[source]]
+id = "SW"
+authors = "Gordan Savin; Martin Weissman"
+title = "Dichotomy for generic supercuspidal representations of G₂"
+year = 2009
+doi = "10.1112/S0010437X10005178"
+arxiv = "0908.3340v2"
+locator_scheme = "section"
+locator = "Introduction pp. 1–3; §3 (the dichotomy map) pp. 16–27; Proposition 4.6 p. 37; Theorem 5.3 pp. 37–38; §5.1 Lemma 5.4 p. 38, Lemma 5.5 and Theorem 5.6 pp. 39–43; §§5.2–5.3 Propositions 5.7–5.9 and Theorem 5.10 pp. 43–47"
+url = "https://arxiv.org/abs/0908.3340v2"
+fetched_from = "https://arxiv.org/pdf/0908.3340v2"
+fetched_at = "2026-10-25T00:05:40Z"
+sha256 = "142564ec5842860f4c638ec9ae7ebaaa802dc8a81910dd1d52cb261c14aced1b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v2"
+cited_for = ["generic-supercuspidal-precursor", "spin-pole-criterion", "ramified-spin-factor", "bg-spin-integral"]
+
+[[source]]
+id = "MS"
+authors = "Kay Magaard; Gordan Savin"
+title = "Exceptional Θ-correspondences I"
+year = 1995
+arxiv = "math/9505209v1"
+locator_scheme = "section"
+locator = "Theorem 1.1 pp. 3–4; §4 Theorem 4.3 p. 10; §5 Theorem 5.3 pp. 14–15"
+url = "https://arxiv.org/abs/math/9505209v1"
+fetched_from = "https://arxiv.org/pdf/math/9505209v1"
+fetched_at = "2026-10-25T00:05:48Z"
+sha256 = "8c1017b36e7571d4bd3a633734c9971f87b55eb744b7609f8f83d9881c06dd33"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v1"
+cited_for = ["minimal-models"]
+
+[[source]]
+id = "GG"
+locator_scheme = "section"
+locator = "§6 Propositions 6.5, 6.8, 6.11 pp. 22–23; §8 Propositions 8.1, 8.3, 8.4 pp. 27–28; §9 Theorem 9.1 and its proof, including §9.5, pp. 33–37; Lemma 9.4 pp. 34–36"
+url = "https://math.bgu.ac.il/~ngur/Publications/sl2g2.pdf"
+fetched_from = "https://math.bgu.ac.il/~ngur/Publications/sl2g2.pdf"
+fetched_at = "2026-10-25T00:05:51Z"
+sha256 = "03fc2d55c66195a409a841440c904483f635c8074ac18fdc929dbf2591f39619"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["mixed-mp2-g2-module", "rho-supercuspidal-family"]
+authors = "Wee Teck Gan; Nadya Gurevich"
+title = "Non-tempered A-packets of G₂: liftings from SL₂"
+year = 2006
+version_note = "Author preprint, 81 PDF pages; its pagination is used throughout."
+
+[[source]]
+id = "Pra"
+locator_scheme = "section"
+locator = "§1 pp. 167–169; §3 Theorem 3 and proof pp. 173–174"
+url = "https://www.math.iitb.ac.in/~dprasad/1077293429.pdf"
+fetched_from = "https://www.math.iitb.ac.in/~dprasad/1077293429.pdf"
+fetched_at = "2026-10-25T00:05:52Z"
+sha256 = "bf541c4b2eeb455d267c81fe8f4b820f6e7824ef173f22c3236f3c2610f1edcb"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["pgl3-minus-supercuspidal"]
+authors = "Dipendra Prasad"
+title = "On the decomposition of a representation of GL(3) restricted to GL(2) over a p-adic field"
+year = 1993
+
+[[source]]
+id = "LL"
+locator_scheme = "theorem"
+locator = "§§1–2 pp. 1–8; §3.5, pp. 14–15; §§5–6 pp. 20–22; §8.4 p. 25; §10 pp. 27–30"
+url = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/2479D805B0F248C91A33671F3A03752E/S2050508623000276a.pdf/the-local-langlands-conjecture-for-dollarg2dollar.pdf"
+fetched_from = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/2479D805B0F248C91A33671F3A03752E/S2050508623000276a.pdf/the-local-langlands-conjecture-for-dollarg2dollar.pdf"
+fetched_at = "2026-10-25T00:06:12Z"
+sha256 = "6fc3979d78510fb094e50de9bdd162dfaad43f51fe9b6b8a82ab3d84e0c93389"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["complex-parameters", "component-groups", "opposite-division-compatibility", "three-howe-theorems", "discrete-series-trichotomy", "depth-zero-spherical-example", "quaternion-pointwise-stabilizer", "siegel-quaternion-coefficients", "tempered-relative-quotient", "supercuspidal-relative-submodule", "steinberg-relative-square-integrability", "compact-real-relative-model", "global-exceptional-pair", "global-minimal-residue", "global-period-nonvanishing", "global-cuspidality-criteria", "global-generic-lift", "real-infinitesimal-character-matching"]
+authors = "Wee Teck Gan; Gordan Savin"
+title = "The local Langlands conjecture for G₂"
+year = 2023
+
+[[source]]
+id = "GrS"
+locator_scheme = "theorem"
+locator = "Chapter 5, introduction (0.1)–(0.2), pp. 193–194; §3, Lemma 3.4, pp. 197–198; §4, Proposition 4.5, p. 200, and Corollary 4.9, pp. 203–204; Chapter 6, §2, Lemma 2.9, p. 213"
+url = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/E242459F743917A019C0726055551FF5/S0010437X98000645a.pdf/div-class-title-motives-with-galois-group-of-type-g-2-an-exceptional-theta-correspondence-div.pdf"
+fetched_from = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/E242459F743917A019C0726055551FF5/S0010437X98000645a.pdf/div-class-title-motives-with-galois-group-of-type-g-2-an-exceptional-theta-correspondence-div.pdf"
+fetched_at = "2026-10-25T00:06:14Z"
+sha256 = "2b23947ca82319f80d94098f1510c3d884e9a5dae4462408584612c9cd8931b3"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["cubic-minimal-coefficients", "siegel-quaternion-coefficients", "tempered-relative-quotient", "global-exceptional-theta-kernel", "global-period-nonvanishing", "global-cuspidality-criteria"]
+authors = "Benedict Gross; Gordan Savin"
+title = "Motives with Galois group of type G₂: an exceptional theta correspondence"
+year = 1998
+
+[[source]]
+id = "HS"
+locator_scheme = "theorem"
+locator = "§§1–2 pp. 183–186; §4.1 (Lemma 4.1, Corollary 4.2, Proposition 4.3) pp. 189–191; §4.2, the remark after Corollary 4.6, p. 192; Proposition 6.3 and proof p. 197; §6.2 Theorem 6.4 and proof pp. 198–200"
+url = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/AE032F11A3717F7175A486BBE537549F/S0008414X18000615a.pdf/eisenstein_series_arising_from_jordan_algebras.pdf"
+fetched_from = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/AE032F11A3717F7175A486BBE537549F/S0008414X18000615a.pdf/eisenstein_series_arising_from_jordan_algebras.pdf"
+fetched_at = "2026-10-25T00:06:16Z"
+sha256 = "dff45355ce0fdaad7562ab6fb854bd8f36cb41cbe348f144368732de90ffe46d"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["global-minimal-residue"]
+authors = "Marcela Hanzer; Gordan Savin"
+title = "Eisenstein series arising from Jordan algebras"
+year = 2020
+version_note = "Published version, pp. 183–201; text extraction has damaged mathematical font encoding."
+
+[[source]]
+id = "Sav"
+locator_scheme = "theorem"
+locator = "§3 (Theorem 3.4), pp. 396–397; §5 (Proposition 5.1, Corollary 5.2, Proposition 5.4, Examples 5.5 and the remark after them), pp. 398–399; §6, pp. 399–400"
+url = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/CE9F949BF8D96C551E8C40D7EA71DC42/S0008439500010699a.pdf/a-class-of-supercuspidal-representations-of-g2k.pdf"
+fetched_from = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/CE9F949BF8D96C551E8C40D7EA71DC42/S0008439500010699a.pdf/a-class-of-supercuspidal-representations-of-g2k.pdf"
+fetched_at = "2026-10-25T00:06:17Z"
+sha256 = "1a8aa3b7a1598d93b98b78fa2e8b36ef9ac74742c488a9b946138dca37a8329a"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["minimal-models", "division-ext-vanishing", "division-correspondence", "division-nonvanishing", "cubic-minimal-coefficients", "exceptional-group-pairs"]
+authors = "Gordan Savin"
+title = "A class of supercuspidal representations of G₂(k)"
+year = 1999
+
+[[source]]
+id = "GS04"
+locator_scheme = "theorem"
+locator = "§§1–11 pp. 793–806; §12 p. 807 (depth-zero example has p≥5)"
+url = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/2CE451D8C1AC7635396F547CB323BE65/S0010437X03000678a.pdf/endoscopic_lifts_from_pgl3_to_g2.pdf"
+fetched_from = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/2CE451D8C1AC7635396F547CB323BE65/S0010437X03000678a.pdf/endoscopic_lifts_from_pgl3_to_g2.pdf"
+fetched_at = "2026-10-25T00:06:18Z"
+sha256 = "34fd299d743b285a0ca1130613450e02fc934db1eb1dd0ca93a96c4e9df89a4c"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["minimal-models", "e6-jacquet-finiteness", "pgl3-clifford-labels", "pgl3-explicit-lifts", "depth-zero-spherical-example"]
+authors = "Wee Teck Gan; Gordan Savin"
+title = "Endoscopic lifts from PGL₃ to G₂"
+year = 2004
+
+[[source]]
+id = "Li"
+locator_scheme = "theorem"
+locator = "Theorems 3.1 and 4.8, pp. 35, 44–45"
+url = "https://www.numdam.org/item/CM_1989__71_1_29_0.pdf"
+fetched_from = "https://www.numdam.org/item/CM_1989__71_1_29_0.pdf"
+fetched_at = "2026-10-25T00:06:18Z"
+sha256 = "f94b543e7ab25f67565a62a0c60b86b26d535f5506d681178c6e532d003e5463"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["tempered-relative-quotient"]
+authors = "Jian-Shu Li"
+title = "On the classification of irreducible low rank unitary representations of classical groups"
+year = 1989
+
+[[source]]
+id = "G99"
+locator_scheme = "theorem"
+locator = "Theorem 11.3, pp. 341–342"
+url = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/8C86551FF9BCB2E896A01E580562098D/S0010437X99000597a.pdf/div-class-title-exceptional-howe-correspondences-over-finite-fields-div.pdf"
+fetched_from = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/8C86551FF9BCB2E896A01E580562098D/S0010437X99000597a.pdf/div-class-title-exceptional-howe-correspondences-over-finite-fields-div.pdf"
+fetched_at = "2026-10-25T00:06:19Z"
+sha256 = "e4dc799ec79a6ee199b1f395097b8fc62fbd22bffd0b1b3580b3fe9e8ef8f4e9"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["depth-zero-spherical-example"]
+authors = "Wee Teck Gan"
+title = "Exceptional Howe correspondences over finite fields"
+year = 1999
+
+[[source]]
+id = "LT"
+locator_scheme = "theorem"
+locator = "Theorem 1.4.2, printed pp. 6–7; §2, printed p. 9"
+url = "https://dspace.uohyd.ac.in/server/api/core/bitstreams/ca56e356-136d-4dae-b8c3-a98d2519bf63/content"
+fetched_from = "https://dspace.uohyd.ac.in/server/api/core/bitstreams/ca56e356-136d-4dae-b8c3-a98d2519bf63/content"
+fetched_at = "2026-10-25T00:06:36Z"
+sha256 = "6728bd95e2917f3d00585777c2a1ac7756c19c46d8b93748ebd25c468d39eef0"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["division-nonvanishing", "supplier contract local-division-characters", "exceptional-group-pairs"]
+authors = "Sampath Lonka"
+title = "Zero weight space for tori inside a division algebra"
+year = 2018
+version_note = "University of Hyderabad thesis; Theorem 1.4.2 states the joint result with Rajat Tandon. Thesis numbering is used, rather than the journal article numbering."
+
+[[source]]
+id = "Var"
+authors = "Sandeep Varma"
+title = "On a result of Moeglin and Waldspurger in residual characteristic 2"
+year = 2014
+venue = "Mathematische Zeitschrift 277"
+doi = "10.1007/s00209-014-1292-8"
+locator_scheme = "theorem"
+locator = "main theorem, pp. 1027–1048 (cited in the proof of GS Lemma 3.4)"
+url = "https://doi.org/10.1007/s00209-014-1292-8"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["supplier contract wavefront-all-residue", "1.10"]

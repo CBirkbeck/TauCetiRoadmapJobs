@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-REV-PKG-GlobalShtukasAndFunctionFieldLanglandsPartII~4",
+  "date": "2026-10-25",
+  "findings": 4,
+  "blocking": 0,
+  "notes": "comment review on the board pull request by `CBirkbeck` (claude) of 6c3c8b8",
+  "conditional_gaps": [
+   "discrete-series-number-field-model",
+   "elliptic-pseudo-coefficients",
+   "exceptional-named-orbit-profiles",
+   "formal-to-differential-maximal-slope",
+   "function-field-globalization",
+   "parameter-square-root-transport",
+   "pure-isocrystal-geometric-semisimplicity",
+   "reductive-central-reduction",
+   "rigid-middle-extension-specialization",
+   "satake-constant-realization",
+   "spherical-adjoint-transfer",
+   "stack-integer-weights"
+  ]
+ }
+}

@@ -3583,30 +3583,34 @@
  ],
  "gaps": [
   {
-   "id": "EtaleDualityAndPerverseSheavesPartII/gap/ILLUSIE-2003",
-   "title": "Proof of Gabber's affine Lefschetz theorem over a trait not read",
-   "neededBy": [
-    "EtaleDualityAndPerverseSheavesPartII:EQ.5/gabber-trait-affine-lefschetz"
-   ],
-   "detail": "The statement is planned from ILO XV Remarque 1.1.3 and §3.3.2, which cite Illusie, Perversité et variation, Manuscripta Math. 112 (2003), 271–295, Théorème 2.4, for Gabber's 1994 proof. No free copy was found (author page and web search on 2026-10-19). The proof sketch records the expected route (de Jong semistable alteration over the trait, absolute purity, descent); a follow-up must read Illusie 2003 §2 and confirm the prerequisites, in particular whether proper cohomological descent along semistable alterations (SchemeAndStackFoundations §2.16) and LefschetzPencilsAndVanishingCycles nearby-cycle inputs are all that is used."
+   "slug": "ILLUSIE-2003",
+   "needs": "For a trait S with δ_S(η) = 1 and δ_S(s) = 0, a finite-type S-scheme X, an affine finite-type f : Y → X, n invertible on S and a constructible ℤ/n-sheaf F on Y, prove δ_X(R^q f_*F) ≤ f^*δ_X(F) − q for every q, with δ_X induced from δ_S, independently of quasi-excellent affine Lefschetz.",
+   "supplier": "LefschetzPencilsAndVanishingCycles",
+   "section": "6.2"
   },
   {
-   "id": "EtaleDualityAndPerverseSheavesPartII/gap/EPP-1973",
-   "title": "Epp's theorem: proof source not read",
-   "neededBy": [
-    "EtaleDualityAndPerverseSheavesPartII:EQ.1/epp-theorem"
-   ],
-   "detail": "Epp, Eliminating wild ramification, Invent. Math. 19 (1973), 235–249, Theorem 1.9 (freely available from GDZ) was not read in this pass; the statement is taken from ILO IV 3.1.2. A follow-up reads Epp's §§1–2 and records its proof route and the generalisation to non-complete T (ILO IV Remarque 3.1.3). Kuhlmann’s correction (arXiv:1003.5687v1, pp. 1–3) was independently read: the equal-characteristic Artin–Schreier reduction must recombine terms and iterate when leading exponents coincide and cancel. The follow-up must audit the original proof with that correction, not use Epp’s original p-cyclic argument unchanged."
+   "slug": "equicharacteristic-cohen-coefficients",
+   "needs": "For every complete noetherian equicharacteristic local ring and every chosen lift of a p-basis of its residue field in positive characteristic, provide the compatible coefficient-field section and Cohen power-series presentation, without perfection or finiteness assumptions on that residue field.",
+   "supplier": "DeformationAndDerivedPatchingAlgebra",
+   "section": "1.10"
   },
   {
-   "id": "EtaleDualityAndPerverseSheavesPartII/gap/NONABELIAN-ORIENTED-LIMIT",
-   "title": "Passage to limits for ind-finite stacks in oriented descent",
-   "neededBy": [
-    "EtaleDualityAndPerverseSheavesPartII:EQ.3/oriented-proper-acyclicity",
-    "EtaleDualityAndPerverseSheavesPartII:EQ.3/oriented-cohomological-descent",
-    "EtaleDualityAndPerverseSheavesPartII:EQ.3/alteration-hypercover-base-change"
-   ],
-   "detail": "ILO arXiv v1 XII §1.3.4 and §2.3.8 (pp. 190, 194), referring to XI §2.8, flag an unpublished justification for the limit calculation of fibres for ind-finite stacks. The published XII-A §1.4, p. 241, retains this qualification. Supply a precise limit theorem with the required hypotheses, or leave the non-abelian companions outside the accepted abelian statements. No abelian or Česnavičius–Scholze consumer here uses this input."
+   "slug": "generic-constructibility-noetherian",
+   "needs": "For a finite-type morphism of finite-type schemes over a noetherian base S and a constructible ℤ/n-sheaf with n invertible on S, provide a dense open V of S over which all higher direct images are constructible, eventually zero and compatible with every base change to V, without a properness assumption.",
+   "supplier": "EtaleCohomologyFoundations",
+   "section": "F.3"
+  },
+  {
+   "slug": "henselian-quasi-excellent-catenary",
+   "needs": "For every quasi-excellent noetherian local ring A, prove that its henselization and strict henselization are quasi-excellent, and that every henselian quasi-excellent local ring is universally catenary, hence excellent, with no reducedness, normality or finiteness assumption on A.",
+   "supplier": "SchemeAndStackFoundations",
+   "section": "0.21"
+  },
+  {
+   "slug": "elkik-finite-algebra-completion",
+   "needs": "For every noetherian henselian pair (A, I), base change to the I-adic completion Â is an equivalence of categories, on objects and on morphisms, from finite A-algebras étale over Spec A ∖ V(I) to finite Â-algebras étale over Spec Â ∖ V(IÂ).",
+   "supplier": "SchemeAndStackFoundations",
+   "section": "0.14"
   }
  ],
  "sourceIssues": [

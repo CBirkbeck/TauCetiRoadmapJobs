@@ -1,0 +1,182 @@
+{
+ "gaps": [
+  {
+   "slug": "divisorial-char-ideal",
+   "title": "Divisorial characteristic ideals over noetherian normal domains",
+   "neededBy": [
+    "0.1",
+    "0.2",
+    "0.3",
+    "0.7",
+    "1.10",
+    "5.7",
+    "5.8",
+    "5.9",
+    "5.10",
+    "5.11",
+    "7.8",
+    "7.10"
+   ],
+   "needs": "for a finitely generated torsion module M over a noetherian integrally closed domain A, the divisorial ideal Ch_A(M) = ⋂_𝔭 𝔭^(length_(A_𝔭) M_𝔭) (𝔭 of height one, symbolic powers) attached to `charDivisor`, equal to A exactly when M is pseudo-null, equal to `charIdeal` when A is factorial, multiplicative in short exact sequences up to divisorial hull, with Ch_A(M) ⊆ fA for f ≠ 0 if and only if ord_𝔭(f) ≤ length_(A_𝔭) M_𝔭 at every height-one 𝔭, and, for a finite extension O→O′ of p-adic rings of integers and A = O⟦T_1,…,T_r⟧, the base change Ch_(A⊗O′)(M⊗O′) = Ch_A(M)·(A⊗O′) whose contraction to A is Ch_A(M).",
+   "supplier": "PadicMeasuresIwasawaAlgebras",
+   "section": "§4.6 Characteristic ideals"
+  },
+  {
+   "slug": "unitary-ordinary-igusa",
+   "title": "Ordinary Igusa towers and p-adic forms on GU(2,2) and GU(3,1)",
+   "neededBy": [
+    "1.1",
+    "1.2",
+    "2.1",
+    "2.2",
+    "2.6",
+    "2.9",
+    "5.4",
+    "5.6"
+   ],
+   "needs": "for an odd prime p, the unitary similitude groups GU(2,2) and GU(3,1) over an imaginary quadratic field split at p, and GU(2,2) over a CM quadratic M/F with every p-place split, with neat prime-to-p level, the ordinary Igusa tower of connected p-divisible-group trivializations as a pro-étale torsor under its integral Levi automorphism group (for SU's GU(2,2) tower H(ℤ_p) = GL₂(ℤ_p) × GL₂(ℤ_p), with finite-level group H(ℤ/pˢ)), functions with the specified boundary ideals followed by invariants under the chosen Borel's unipotent subgroup, the residual diagonal torus action defining weights, q- and Fourier–Jacobi expansions and their injectivity, prime-to-p Hecke and U_p actions, Siegel boundary maps and sufficiently regular classical comparison (SU §§5.4.9, 6.1.4–6.2; CLW §§2–4; Wan-2015 §§3–5).",
+   "supplier": "IgusaVarietiesAndTorsionConcentration",
+   "section": "Layers 1–2"
+  },
+  {
+   "slug": "unitary-galois-imaginary-quadratic",
+   "title": "Galois representations of GU(2,2) and U(3,1) over an imaginary quadratic field",
+   "neededBy": [
+    "1.8",
+    "2.6"
+   ],
+   "needs": "for an imaginary quadratic field K and a cohomological cuspidal representation π of GU(2,2) or U(3,1) over K of sufficiently regular weight, a four-dimensional polarized Galois representation of G_K unramified outside the ramification of π and p, whose Frobenius characteristic polynomials at the unramified places are the Hecke polynomials of π, crystalline at the places above p when π_p is unramified, and, when π is ordinary (respectively semi-ordinary) at p, with the corresponding filtration at the places above p (SU Theorem 7.1.1; CLW proof of Theorem 8.2.1).",
+   "supplier": "AutomorphicGaloisRepresentationsPartII",
+   "section": "Layer AG2.2"
+  },
+  {
+   "slug": "anticyclotomic-rankin-selberg",
+   "title": "Anticyclotomic Rankin–Selberg p-adic L-functions, their μ-invariants and mod-p nonvanishing",
+   "neededBy": [
+    "1.5",
+    "1.7",
+    "2.3",
+    "2.4",
+    "2.8",
+    "2.12",
+    "2.13",
+    "2.22",
+    "5.3",
+    "6.5"
+   ],
+   "needs": "for a cuspidal representation π of GL₂ over a totally real field F (F = ℚ included) of parallel or general weight, a CM quadratic extension K/F in which every place above an odd prime p splits, and a Hecke character λ of K of the infinity type making the central value critical, Hsieh's anticyclotomic p-adic L-function with its interpolation formula under the local root-number hypothesis at the primes dividing the nonsplit level and squarefree nonsplit level (Hsieh2014 Theorem A, pp. 711–712; in weight two over ℚ it is the function of GrossZagierAndArithmeticHeights §9.15), the vanishing of its μ-invariant when moreover p is unramified in F, the residual representation is absolutely irreducible on G_K and p ∤ ∏ #λ(O_(K_v)^×) over the nonsplit places of the conductor of λ (Hsieh2014 Theorem B, p. 713), the nonvanishing modulo p of the twisted central values for almost all anticyclotomic characters of ℓ-power conductor (Hsieh2014 Theorem C, p. 713; Hung2017 for the toric periods of parallel-weight Hilbert newforms used by Wan-2015 Theorem 86), and Vatsal's formula for the μ-invariant of the weight-two anticyclotomic theta element attached to a definite quaternion algebra (Vatsal2003 Theorem 1.1), each with the imprimitive Euler factors at nonsplit primes retained.",
+   "supplier": "PadicFamilies",
+   "section": "Layer 4, p-adic L-functions in families (after §4.7)"
+  },
+  {
+   "slug": "hilbert-hida-odd-degree",
+   "title": "Nearly ordinary Hilbert Hida theory in odd degree",
+   "neededBy": [
+    "5.1",
+    "5.4",
+    "5.11"
+   ],
+   "needs": "the statements of §§5.6–5.9 (freeness, finiteness, control and density of weight-two points for nearly ordinary Hilbert forms) for a totally real field F of odd degree, through definite or indefinite quaternion algebras and the Shimura-curve Ihara input, with the same coefficient rings and normalizations (Fujiwara §§6–11; Wan-2015 Theorem 8).",
+   "supplier": "PadicFamilies",
+   "section": "§§5.6–5.9"
+  },
+  {
+   "slug": "msd-neron-periods",
+   "title": "Néron-period normalization of the Mazur–Swinnerton-Dyer function",
+   "neededBy": [
+    "7.4"
+   ],
+   "needs": "for an elliptic curve E/ℚ with good ordinary reduction at an odd prime p and its quadratic twists, the Mazur–Swinnerton-Dyer p-adic L-function normalized by the Néron period of a minimal model and the unit root, and its comparison with the saturated-lattice normalization of §2.5 through the modular parametrization, the Manin constant and the modular degree (CGS23 Definition 1.2.2 and Remark 1.2.3).",
+   "supplier": "ModularSymbolsPadicLFunctions",
+   "section": "§§1.1 and 2.5"
+  },
+  {
+   "slug": "rubin-imaginary-quadratic",
+   "title": "Rubin's main conjecture for imaginary quadratic fields",
+   "neededBy": [
+    "0.9",
+    "6.5"
+   ],
+   "needs": "for an imaginary quadratic field K in which an odd prime p splits and a finite-order character of prime-to-p conductor, Rubin's two-variable and anticyclotomic main conjecture identifying the characteristic ideal of the Iwasawa module of the corresponding branch with Katz's p-adic L-function up to a unit of the unramified coefficient extension, in the normalization of gap:katz-cm-padic-l (as used in HT94 p. 91 and CGS23 Lemma 1.4.4 and Proposition 1.4.5).",
+   "supplier": "EulerSystemsCyclotomicMainConjecture",
+   "section": "Layer 3, imaginary-quadratic analogue"
+  },
+  {
+   "slug": "fujiwara-minimal",
+   "title": "Fujiwara's minimal totally real R = T with freeness and Gorenstein duality",
+   "neededBy": [
+    "5.1",
+    "5.3",
+    "5.8",
+    "5.13"
+   ],
+   "needs": "for a totally real field F, an odd prime p unramified in F and a nearly ordinary weight-two residual representation ρ̄ of G_F, absolutely irreducible on G_(F(ζ_p)) and outside Fujiwara's p = 5 exception, with a minimal deformation type satisfying Fujiwara's Definition 6.11 and Hypothesis 6.7, the identification of the minimal deformation ring with the localized Hecke algebra as a complete intersection, the freeness of the quaternionic and Hilbert Hecke modules over it, the finite flat Hida lift and the Gorenstein duality (Fujiwara Theorems 11.1–11.2 and Corollary 11.5), together with the ordinary modularity-lifting alternative used for condition (10) of Wan-2015 §9.2.1.",
+   "supplier": "OrdinaryAutomorphicFormsAndModularityLifting",
+   "section": "Layer 5 (conditional lifting and arithmetic inputs), with §3.39"
+  },
+  {
+   "slug": "minimal-lift-base-change",
+   "title": "Minimal modular lifts and their real quadratic base change",
+   "neededBy": [
+    "5.1",
+    "5.13"
+   ],
+   "needs": "for an absolutely irreducible residual elliptic representation ρ̄ of G_ℚ and a real quadratic field F satisfying the field conditions of §5.13, a minimal modular lift of ρ̄ whose restriction to G_F is minimal in the sense of all six clauses of Fujiwara's Definition 6.11, with the determinant and Teichmüller types fixed and the local types preserved under the restriction of §4.1 (Wan-2015 proof of Theorem 103).",
+   "supplier": "GlobalGaloisDeformations",
+   "section": "§4.1 and Layer R04.6"
+  },
+  {
+   "slug": "paskunas-p3-freeness",
+   "title": "Paškūnas's freeness criterion at p = 3",
+   "neededBy": [
+    "3.1",
+    "3.5",
+    "3.7",
+    "3.8"
+   ],
+   "needs": "the application of §5.11 at p = 3 with End(ρ̄) = 𝔽 and ρ̄ not a twist of (ε ∗; 0 1): reducedness and the freeness of the patched module M(Θ) over the potentially semistable deformation ring of fixed type at its generic points, as used in Nakamura Theorem 4.7 (Paskunas2016 Proposition 2.33, generalizing the p ≥ 5 result of §6.1).",
+   "supplier": "PadicLocalLanglandsForGL2Qp",
+   "section": "§5.11"
+  },
+  {
+   "slug": "gl2-essential-vectors",
+   "title": "Unconditional GL₂ co-Whittaker families and essential vectors",
+   "neededBy": [
+    "3.5"
+   ],
+   "needs": "for GL₂ over a finite extension of ℚ_ℓ, ℓ ≠ p, and a reduced complete noetherian local p-torsion-free W(𝔽)-algebra, unconditional co-Whittaker families with prescribed generic local Langlands fibres for the principal-series, special and supercuspidal types, and, at the common conductor exponent m of a family with unchanged monodromy filtration, freeness of rank one of its K₁(ϖ^m)-invariants with base change along every specialization (FW Propositions 6.7–6.9).",
+   "supplier": "SmoothRepresentationsOfLocalGroups",
+   "section": "§SR.5.2"
+  },
+  {
+   "slug": "fw-zeta-local-descent",
+   "supplier": "CompletedCohomologyAndLocalGlobalCompatibility",
+   "section": "§4.7 Dual local–global compatibility for completed homology",
+   "needs": "for p ≥ 3 and an odd globally absolutely irreducible modular residual ρ̄ satisfying FW Assumptions 2.1 and 3.5, including split distinct-character and irreducible but not absolutely irreducible local ρ̄_p, a coefficient-compatible descent from the Hecke/Galois-equivariant completed Borel–Moore homology zeta map constructed in §3.6 below to maps (ρ^m_Σ)^* → H¹_Iw(ℤ[1/Σn, ζ_n], (ρ^m_Σ)^*(1)) over the promodular Hecke algebra, with τ-equivariance, Euler-system relations, change-of-Σ factors and the classical comparison z_(Σ,1)(f) = ∏_(ℓ∈Σ∖{p}) P_(f,ℓ)(σ_ℓ⁻¹) z(f), agreeing with the envelope/Whittaker construction when End(ρ̄_p) = 𝔽, and hence inducing the FW map T_Σ(−1)^+ → H¹(ℤ[1/Σ], T_Σ) (FW Theorem 3.6; NAK §§3–4); the descent and comparison are required without inferring scalar endomorphisms from FW Assumption 2.1."
+  },
+  {
+   "slug": "hilbert-cm-unit-congruence",
+   "supplier": "PadicFamilies",
+   "section": "Layer 4, p-adic L-functions in families; §§5.6–5.9 for the Hilbert CM family",
+   "needs": "for a totally real F of degree greater than one, a CM quadratic M/F with CM type Φ satisfying Wan's hypothesis Δ+ ((Δ) of Wan-2015 §1.1, p. 1: M is not contained in the narrow Hilbert class field of F, equivalently M/F is ramified at some finite place, so the relative discriminant D_(M/F) is not the unit ideal, and every prime of F ramified over ℚ splits in M), and p > 3 unramified in F and split at every p-place of M/F, the auxiliary-character construction in Wan-2015 Proposition 96, pp. 79–80: after enlarging the tame bad set S and coefficient integers, a character θ with infinity type ∏_(v∈Φ) z_v⁻¹, θ|_(𝔸_F^×) = |·|_F χ_(M/F), norm of conductor (M_θ²) with M_θ prime to p and divisible by the relative discriminant, tame level and places of S away from p, at some finite place v dividing D_(M/F), which exists by Δ+, the restriction of the anticyclotomic part to local units has order divisible by the residue cardinality q_v, Ω_∞^(−2Φ)L(1,θ) a p-adic unit, and θ_(v,2)(p)−1 a unit at every v|p, whose anticyclotomic torsion part has prime-to-p order, is nontrivial at each chosen p-place and remains nontrivial on G_(M(√p*)); its ordinary CM theta family has parallel weight two, level M_θ² times the discriminant ideal, trivial central character, residual irreducibility and ordinary distinctness, a Gorenstein localized Hecke algebra and congruence generator η dividing its Petersson norm normalized by Ω_∞^(2Φ), with the integral period comparison in the proof of Wan-2015 Proposition 96, p. 80, retaining the local factors; auxiliary twists use Hsieh2012 Theorem A with its sign +1 and local μ = 0 hypotheses, and the nonsquarefree conductor extension invoked in Wan's proof, not an imaginary-quadratic-only nonvanishing theorem."
+  },
+  {
+   "slug": "kato-neron-saturated-comparison",
+   "supplier": "KatoEulerSystems",
+   "section": "§§6.6 and 7.4",
+   "needs": "for E/ℚ with good ordinary reduction at p > 3, E[p] irreducible and a free rank-one quotient T_p(E)/(σ−1)T_p(E) for σ ∈ G_(ℚ(μ_(p^∞))), an integral comparison from the full-level Kato zeta morphism to the saturated Néron-normalized ordinary Selmer determinant: construct the integral good-pair zeta morphism on saturated Tate, Betti and de Rham coefficient lattices and the ordinary local regulator, compare the determinant cones for the primes q|N, q ≠ p, with the primitive classical Selmer local conditions, and show that the regulator comparison carries the primitive good-pair zeta image to the primitive MSD function with the minimal Néron periods up to a ℤ_p[[Γ_ℚ]]-unit, compatibly with quadratic twists unramified at p; saturation concerns the coefficient lattices and must retain the arithmetic index of the zeta image, and the comparison must account for r_E and every imprimitive Euler factor in §§6.6 and 7.4 by the integral lattice and local cones, rather than divide the unsaturated class by a nonunit or assume the final characteristic-ideal divisibility (BCS Theorem 1.1.2(b) and (5.4), pp. 2, 12; Kato2004 §§12.5, 17.4–17.5)."
+  },
+  {
+   "slug": "cm-congruence-katz-integral",
+   "supplier": "PadicFamilies",
+   "section": "§§1.7–1.10, congruence modules and congruence ideals of a branch of a Hida family",
+   "needs": "for an imaginary quadratic field K, a prime p ≥ 3 split in K and a Hecke character ξ as in CLW §5.2 with ξ_p ≢ ξ_p̄ modulo the maximal ideal, the integral comparison of the congruence ideal of the CM branch with the anticyclotomic Katz function: the congruence ideal H(g) (§1.10, for the branch of the ordinary CM Hida family g through σ_ξ) divides h_K·L^Katz_ξ in O^ur[[Γ_K^−]], with h_K·L^Katz_ξ in the normalization in which CLW's L^Hida is the product, interpolating up to a unit the self-Petersson products of the specializations of g divided by the CM period (HT93 Theorem 7.1 and (8.8b); Hid91 Lemma 5.3(vi)), in every case outside the hypotheses of Hid06's main theorem (pp. 466–467) and of HT94 Theorem 0.3, p. 92, with nothing inverted: in particular p = 3 with 3 dividing φ(𝔫)·∏_(𝔩|c″)(1+N𝔩), any p dividing φ(𝔫)·∏_(𝔩|c″)(1+N𝔩) with a conductor prime nonsplit in K, and the trivial-zero case χ(D) ⊂ μ_(p^∞) of HT94 Theorem 0.3(ii), at every tame conductor 𝔫 and auxiliary conductor c = c′c″ of HT94 Theorem 0.3 (CLW proof of Theorem 8.2.1(2), p. 81, which cites HT93, HT94 and Hid06 for this comparison). It is the congruence-to-Katz divisibility for the CM family alone, retaining h_K and the local factors of (8.8b); it is neither CLW's main-conjecture divisibility nor the integrality of L^Hida."
+  },
+  {
+   "slug": "bianchi-p-irregular-l-functions",
+   "supplier": "PadicFamilies",
+   "section": "Layer 4, p-adic L-functions in families (after §4.9)",
+   "needs": "for a p-irregular cuspidal newform f (repeated root α of its Hecke polynomial at p) of weight k+2 ≥ 2 and tame level M prime to p, its unique p-stabilization and an imaginary quadratic field K in which p splits, the Gorenstein property of the Coleman–Mazur eigencurve at the p-stabilization and of the Bianchi eigencurve at its base change, the families of overconvergent modular-symbol eigenclasses over a sufficiently small neighbourhood V, the two-variable signed p-adic L-functions over V and the three-variable Bianchi p-adic L-function of the base change over V, each specializing at classical points to the single-form functions up to nonzero p-adic periods depending only on the point, with their interpolation formulas, and the cyclotomic Artin factorization of the restricted Bianchi function at the p-stabilization into the p-adic L-functions of f and of f ⊗ χ_K (BW Theorems A–C, §§1.1–1.2, pp. 2–4); the distinct-root constructions of §4.9 do not apply at α = β."
+  }
+ ]
+}

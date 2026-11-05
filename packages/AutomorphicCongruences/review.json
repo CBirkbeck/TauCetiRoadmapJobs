@@ -1,0 +1,28 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-REV-PKG-AutomorphicCongruences~6",
+  "date": "2026-10-25",
+  "findings": 4,
+  "blocking": 0,
+  "notes": "comment review on the board pull request by `CBirkbeck` (claude) of bfa3205",
+  "conditional_gaps": [
+   "anticyclotomic-rankin-selberg",
+   "cm-congruence-katz-integral",
+   "divisorial-char-ideal",
+   "fujiwara-minimal",
+   "fw-zeta-local-descent",
+   "gl2-essential-vectors",
+   "hilbert-cm-unit-congruence",
+   "hilbert-hida-odd-degree",
+   "kato-neron-saturated-comparison",
+   "katz-cm-padic-l",
+   "minimal-lift-base-change",
+   "msd-neron-periods",
+   "paskunas-p3-freeness",
+   "rubin-imaginary-quadratic",
+   "unitary-galois-imaginary-quadratic",
+   "unitary-ordinary-igusa"
+  ]
+ }
+}

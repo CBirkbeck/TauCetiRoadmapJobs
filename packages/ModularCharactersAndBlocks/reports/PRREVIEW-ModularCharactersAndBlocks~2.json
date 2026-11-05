@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-ModularCharactersAndBlocks~2",
+    "head": "4b23da3e20ae2d849ec6477eb8ec32c117f176ed",
+    "pr": 1775,
+    "folder": "RepresentationTheory/ModularCharactersAndBlocks",
+    "date": "2026-11-03",
+    "findings": 11,
+    "blocking": 7,
+    "notes": "Full read-only folder review; 94 computed adversarial rows; 15 reviewer-seeded claim groups (worker supplied no heading targets); all six cited works requested, three accessible; unavailable and narrower-source coverage recorded. Gate FAIL: imports=1, mathlib-subimports=5, no-import-mathlib=1, build=5 warning diagnostics. Dependency check: 205 roadmaps, 1645 edges, 0 problems. Original direct Lean elaboration and sequential scratch probes passed; all four signatures compared, no dropped binder, no padding established. Pinned duplication and supplier audits found existing p-parts/adic lifting and nonexistent native scalar-extension name. PR unchanged."
+  }
+}

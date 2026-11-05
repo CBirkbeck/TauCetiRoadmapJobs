@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-PseudodifferentialOperators~6",
+    "head": "fff2f1c7b9c0d85edceb7ef2891348e7128cd587",
+    "pr": 952,
+    "folder": "PseudodifferentialOperators",
+    "date": "2026-10-30",
+    "findings": 2,
+    "blocking": 1,
+    "notes": "incremental re-review of 48 changed lines since 88ffdf3; the previous P2 (endpoint real interpolation range) is repaired; new P2: bundle Besov spaces are extended to p=1 and p=infinity without any target or source supplying the coordinate-transition bounds at those endpoints (the stated route covers 1<p<infinity and the (infinity,infinity) Zygmund case only); P3 page locator for Bergh-Lofstrom Theorem 5.6.1. Checked the changed section 5.3 passage, its Checks, API bullets and Needs line against Bergh-Lofstrom Lemma 6.2.1, Definition 6.2.2, Theorems 6.2.3-6.2.5, 6.4.3, 6.4.5 and 5.6.1 (author-page copy), PDE Lane B.9 on main and Mathlib's BesselPotentialSpace at the pin; recomputed the new p=1 and p=infinity Checks numerically. Gate rerun passes; dependency check 208 roadmaps, 1461 edges, 0 problems; direct elaboration exits 0 with exactly eight sorry warnings; Suggested.lean unchanged. Adversarial table: 13 fresh rows, 141 rows carried from the previous report."
+  }
+}

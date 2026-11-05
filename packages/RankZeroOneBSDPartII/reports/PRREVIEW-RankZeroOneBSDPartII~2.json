@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-RankZeroOneBSDPartII~2",
+    "head": "c42ad8a6d65ad5ce5a648dd61830ac694924d506",
+    "pr": 1732,
+    "folder": "RankZeroOneBSDPartII",
+    "date": "2026-11-03",
+    "findings": 1,
+    "blocking": 1,
+    "notes": "incremental re-review of 121 changed lines since 1e5cb6c; verified all five previous findings, all changed locators including the 15 seeded source targets in cached CGLS/BKLOS/PS, changed supplier contracts, ownership, pinned twist/minimal-model APIs and the new local computations. Gate passed; targeted build and direct Lean elaboration passed; depcheck: 204 roadmaps, 1631 edges, 0 problems. Outside-folder diff empty. R02–R05 repaired. R01 partly repaired: README now cites Part III correctly, but design/plan.json still declares the redundant rational-three-isogeny-count gap. Adversarial table carries prior unchanged rows with citations and adds computed tests for changed statements. Four other named supplier gaps remain explicit obligations."
+  }
+}

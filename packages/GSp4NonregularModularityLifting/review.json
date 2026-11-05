@@ -1,0 +1,32 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-REV-PKG-GSp4NonregularModularityLifting~5",
+  "date": "2026-10-26",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "comment review on the board pull request by `CBirkbeck` (claude) of d923256",
+  "conditional_gaps": [
+   "dyadic-ordinary-local-regularity",
+   "dyadic-ordinary-support",
+   "gsp4-cg-selmer-presentation",
+   "gsp4-klingen-level-comparison",
+   "gsp4-ordinary-neat-refinement-lines",
+   "gsp4-paramodular-newvector",
+   "gsp4-pseudocharacter-reconstruction",
+   "gsp4-pure-monodromy-uniqueness",
+   "gsp4-steinberg-u-eigenvalue",
+   "gsp4-torus-tw-data",
+   "integral-enormity-",
+   "normalized-integral-siegel-p-actions",
+   "p12-flag-orientation",
+   "p12-ordinary-horizontal-control",
+   "p12-variable-weight-patching-data",
+   "projective-finite-group-satake",
+   "selected-coherent-rank-inequality",
+   "symplectic-descent-every-residue-characteristic",
+   "symplectic-ordinary-component-support",
+   "weil-restriction-big-image"
+  ]
+ }
+}

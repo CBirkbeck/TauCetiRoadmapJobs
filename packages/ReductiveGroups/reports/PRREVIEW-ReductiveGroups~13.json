@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-ReductiveGroups~13",
+    "head": "e8612506bcfaf8f006d80a2e6889cf590408b24d",
+    "pr": 1676,
+    "folder": "ReductiveGroups",
+    "date": "2026-11-02",
+    "findings": 13,
+    "blocking": 11,
+    "notes": "Full review of README and nine Lean files; prior nine findings assessed; Lang and fixed-coset samples checked in Milne and Dudas\u2013Michel; gate passing; targeted build and direct elaboration pass with only sorry; 15 elaborated signatures, eight tactic probes, statable plane-braid probe; dependency output: 204 roadmaps, 1559 edges, 0 problems; 148 computed adversarial rows. Companion violations, internal layer cycle, mathematical errors and duplicate ownership remain. Unavailable legal source texts listed in Not verifiable."
+  }
+}

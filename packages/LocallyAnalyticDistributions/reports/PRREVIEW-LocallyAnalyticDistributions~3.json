@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-LocallyAnalyticDistributions~3",
+    "head": "0441e08faed5d60f832c5ffc78ef04cd2b92c968",
+    "pr": 854,
+    "folder": "LocallyAnalyticDistributions",
+    "date": "2026-10-28",
+    "findings": 3,
+    "blocking": 1,
+    "notes": "Full folder review; all 15 seeded source targets checked with legal source extractions; 328 adversarial rows cover 309 target blocks, conventions and four Lean definitions. Gate FAIL solely tex=1 at README:1449; 27 other checks zero. Independent depcheck: 163 roadmaps, 1184 edges, 0 problems. Original Lean and all nine signatures elaborate; five one-tactic padding probes do not close. Open-disc ownership overlap with RestrictedPowerSeries is P2. BGR uncertified and Ingleton original unread; Schneider verifies Hahn-Banach. PR worktree unchanged."
+  }
+}

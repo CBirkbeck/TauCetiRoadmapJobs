@@ -1,0 +1,103 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "Varifolds"
+
+[[source]]
+id = "Federer1969"
+authors = "Herbert Federer"
+title = "Geometric Measure Theory"
+year = 1996
+venue = "Classics in Mathematics"
+doi = "10.1007/978-3-642-62010-2"
+locator_scheme = "section"
+locator = "3.2, 4.1"
+url = "https://doi.org/10.1007/978-3-642-62010-2"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Scope", "Final targets"]
+
+[[source]]
+id = "Simon2023"
+authors = "Leon Simon"
+title = "Stable minimal hypersurfaces in $\\mathbb{R}^{N+1+\\ell}$ with singular set an arbitrary closed $K$ in $\\{0\\}\\times\\mathbb{R}^{\\ell}$"
+year = 2021
+arxiv = "2101.06401v2"
+doi = "10.4007/annals.2023.197.3.4"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/2101.06401v2"
+fetched_from = "https://arxiv.org/pdf/2101.06401v2"
+fetched_at = "2026-11-05T06:09:15Z"
+sha256 = "37ce5abf6802d314505981e97d3afd2a7abb56e4675ee4175263422dd3582f20"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v2 read; published as Ann. of Math. (2) 197 (2023), no. 3, 1205-1234 (paywalled). Theorem 1.1 and Theorem 3.7 are cited at their arXiv v2 numbering."
+cited_for = ["Consumers", "Final targets"]
+
+[[source]]
+id = "EdelenSpolaor2023"
+authors = "Nick Edelen, Luca Spolaor"
+title = "Regularity of minimal surfaces near quadratic cones"
+year = 2019
+arxiv = "1910.00441v1"
+doi = "10.4007/annals.2023.198.3.2"
+locator_scheme = "theorem"
+locator = "Theorem 1.4"
+url = "https://arxiv.org/abs/1910.00441v1"
+fetched_from = "https://arxiv.org/pdf/1910.00441v1"
+fetched_at = "2026-11-05T06:09:21Z"
+sha256 = "a377a963b773ac1bc4fe13fc3164096e23f67fe466e019bd020a021ba6640425"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v1 read; published as Ann. of Math. (2) 198 (2023), no. 3 (second article of the issue, paywalled). Definition 1.1.1 and Theorem 1.4 are cited at their arXiv v1 numbering."
+cited_for = ["Consumers", "Final targets"]
+
+[[source]]
+id = "Simon1983"
+authors = "Leon Simon"
+title = "Lectures on Geometric Measure Theory"
+year = 1983
+venue = "Proceedings of the Centre for Mathematical Analysis, Australian National University, vol. 3"
+locator_scheme = "chapter"
+locator = "Chapters 3, 4 and 8"
+version_note = "ANU 1983 edition hosted by the ANU Mathematical Sciences Institute (open access, also on Project Euclid); all section numbers (11.x, 15.x-17.x, 19.x, 38.x-42.x) follow this edition. Simon's 2014 Stanford revision renumbers the chapters and is not the version cited."
+url = "https://maths.anu.edu.au/files/CMAProcVol3-Complete_1.pdf"
+fetched_from = "https://maths.anu.edu.au/files/CMAProcVol3-Complete_1.pdf"
+fetched_at = "2026-11-05T06:11:28Z"
+sha256 = "833fc8e3f19dd65d835f12ff0e2fa788d2861e6f205ab2020386225fb07907ae"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["Scope", "Final targets"]
+
+[[source]]
+id = "Allard1972"
+authors = "William K. Allard"
+title = "On the First Variation of a Varifold"
+year = 1972
+venue = "Annals of Mathematics (2) 95, 417-491"
+doi = "10.2307/1970868"
+locator_scheme = "section"
+locator = "Sections 3 (varifolds), 4 (first variation), 5 (monotonicity and rectifiability), 6 (compactness)"
+url = "https://doi.org/10.2307/1970868"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (JSTOR); cited by its locator without the text"
+cited_for = ["Final targets"]
+
+[[source]]
+id = "Maggi2012"
+authors = "Francesco Maggi"
+title = "Sets of Finite Perimeter and Geometric Variational Problems"
+year = 2012
+venue = "Cambridge Studies in Advanced Mathematics 135"
+doi = "10.1017/CBO9781139108133"
+locator_scheme = "chapter"
+locator = "Part II (rectifiable sets, area formula)"
+url = "https://doi.org/10.1017/CBO9781139108133"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (Cambridge University Press); the author's cvgmt page offers only a synopsis extract; cited by its locator without the text"
+cited_for = ["Scope"]

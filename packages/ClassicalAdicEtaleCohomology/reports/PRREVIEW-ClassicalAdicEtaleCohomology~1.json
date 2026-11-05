@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-ClassicalAdicEtaleCohomology~1",
+    "head": "dfcb6b786ee07948465289e599be4c575cbd6bad",
+    "pr": 875,
+    "folder": "ClassicalAdicEtaleCohomology",
+    "date": "2026-10-28",
+    "findings": 4,
+    "blocking": 3,
+    "notes": "Reviewed all 15 seeded sections (1.1, 1.2, 2.6, 3.2, 3.4, 4.1, 4.3, 6.2, 6.4, 7.2, 8.1, 8.2, 8.4, 10.4, 11.3), headline scope, pinned carriers, supplier ownership and 230 explicit mathematical probes. Gate fails with two UPWARD diagnostics and one CYCLE; report distinguishes the consumer-only Tropical citation and eligible AlgebraicCurves-on-main citation from actual mathematical supply. Direct Lean elaboration and four signature checks pass with only sorry warnings; simp/rfl/infer_instance probes close none of the three existing headlines. Native finite-condition transfer signature elaborates. Source limitations and seven source issues recorded. Worktree unchanged."
+  }
+}

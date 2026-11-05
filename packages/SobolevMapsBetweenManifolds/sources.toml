@@ -1,0 +1,129 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "SobolevMapsBetweenManifolds"
+
+[[source]]
+id = "HeikkilaPankka2025"
+authors = "Susanna Heikkilä, Pekka Pankka"
+title = "De Rham algebras of closed quasiregularly elliptic manifolds are Euclidean"
+year = 2023
+arxiv = "2302.11440v2"
+locator_scheme = "section"
+locator = "Appendix B"
+url = "https://arxiv.org/abs/2302.11440v2"
+fetched_from = "https://arxiv.org/pdf/2302.11440v2"
+fetched_at = "2026-11-05T05:53:59Z"
+sha256 = "aafa0637b9df9842c381c68f7a89df85db20920cfefcd6f9d72295a682c877ae"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v2"
+cited_for = ["Sobolev maps into manifolds via an embedding; quasiregular maps as W^{1,n}_loc maps with Jacobian measure"]
+
+[[source]]
+id = "Bethuel1991"
+authors = "Fabrice Bethuel"
+title = "The approximation problem for Sobolev maps between two manifolds"
+year = 1991
+venue = "Acta Mathematica 167"
+doi = "10.1007/BF02392449"
+locator_scheme = "section"
+locator = "Introduction"
+url = "https://projecteuclid.org/journals/acta-mathematica/volume-167/issue-none/The-approximation-problem-for-Sobolev-maps-between-two-manifolds/10.1007/BF02392449.full"
+licence_class = "open-repository"
+status = "uncertified"
+version_note = "Open content on Project Euclid (Acta Mathematica archive); the sources service received only a bot-protection page, so no text is cached; cited by its locator"
+cited_for = ["Definition of W^{1,p}(M,N) through an isometric embedding; density questions as context"]
+
+[[source]]
+id = "Ziemer1989"
+authors = "William P. Ziemer"
+title = "Weakly Differentiable Functions"
+year = 1989
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4612-1015-3"
+locator_scheme = "theorem"
+locator = "Theorem 2.1.11"
+url = "https://doi.org/10.1007/978-1-4612-1015-3"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Chain rule and change of variables for Sobolev functions on Euclidean domains"]
+
+[[source]]
+id = "Mazya2011"
+authors = "Vladimir Maz'ya"
+title = "Sobolev Spaces"
+year = 2011
+venue = "Grundlehren der mathematischen Wissenschaften"
+doi = "10.1007/978-3-642-15564-2"
+locator_scheme = "section"
+locator = "Section 1.1"
+url = "https://doi.org/10.1007/978-3-642-15564-2"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Basic properties of Sobolev spaces, locality, change of variables"]
+
+[[source]]
+id = "Rickman1993"
+authors = "Seppo Rickman"
+title = "Quasiregular Mappings"
+year = 1993
+doi = "10.1007/978-3-642-78201-5"
+locator_scheme = "section"
+locator = "Chapter I, Section 1"
+url = "https://doi.org/10.1007/978-3-642-78201-5"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["ACL maps, Sobolev classes W^{1,n}_loc, the Jacobian and Hadamard's inequality"]
+
+[[source]]
+id = "Hajlasz2009"
+authors = "Piotr Hajłasz"
+title = "Sobolev mappings between manifolds and metric spaces"
+year = 2009
+venue = "Sobolev Spaces in Mathematics I, International Mathematical Series 8, Springer, pp. 185-222"
+locator_scheme = "section"
+locator = "Section 2"
+url = "https://sites.pitt.edu/~hajlasz/OriginalPublications/Sobolev%20mappings%20between%20metric%20spaces3.pdf"
+fetched_from = "https://sites.pitt.edu/~hajlasz/OriginalPublications/Sobolev%20mappings%20between%20metric%20spaces3.pdf"
+fetched_at = "2026-11-05T05:55:31Z"
+sha256 = "431192170fd8dafa744bbbd89e59c1aff9d85dbb08c0b5dc050a01b188747850"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["Definition of W^{1,p}(M,N) via an embedding; Euclidean Sobolev mappings into manifolds"]
+
+[[source]]
+id = "Lee2012"
+authors = "John M. Lee"
+title = "Introduction to Smooth Manifolds"
+year = 2012
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4419-9982-5"
+locator_scheme = "chapter"
+locator = "Ch. 6 (sets of measure zero in manifolds); Ch. 15 (orientations); Ch. 16 (integration, Riemannian volume form)"
+url = "https://doi.org/10.1007/978-1-4419-9982-5"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Chartwise null sets on manifolds; orientations and the Riemannian volume form in positively oriented charts"]
+
+[[source]]
+id = "MartioRickmanVaisala1969"
+authors = "Olli Martio, Seppo Rickman, Jussi Väisälä"
+title = "Definitions for quasiregular mappings"
+year = 1969
+venue = "Annales Academiae Scientiarum Fennicae, Series A I, 448"
+doi = "10.5186/aasfm.1969.448"
+locator_scheme = "section"
+locator = "§2 (Definitions 2.16 and 2.20)"
+url = "https://afm.journal.fi/article/download/134124/82706"
+fetched_from = "https://afm.journal.fi/article/download/134124/82706"
+fetched_at = "2026-11-05T05:58:03Z"
+sha256 = "e9d55447ac88457141ef813653a8051b37a0221b75fac3c89534ab5e98edf97d"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["Euclidean ACL^n and W^{1,n}_loc maps, the Jacobian, compatibility of the manifold definitions with the Euclidean case"]

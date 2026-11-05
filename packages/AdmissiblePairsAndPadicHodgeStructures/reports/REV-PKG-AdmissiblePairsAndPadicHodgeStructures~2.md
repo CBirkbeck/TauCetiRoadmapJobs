@@ -74,13 +74,13 @@ The command, with repository-relative paths: `gate --depcheck packages/Admissibl
 depcheck: 48 roadmaps, 553 edges, 0 problem(s)
 ```
 
-It printed no UPWARD, CYCLE or `moved:` line. The roadmap is at line 245 of the merge order, and every named supplier comes earlier: AdicSpacesPartIIPartII 10, PerfectoidSpaces 13, DiamondsAndVStacks 16, ReductiveGroupsPartII 25, AInfCohomology 66, MotivesAndAlgebraicCycles 86, DiamondSixOperations 94, PadicHodgeTheory 141, VectorBundlesAndIsocrystals 144, RelativeFarguesFontaine 148, GeometricSatakeAndFusion 151, EndoscopicTransferAndUnitaryTraceComparison 166, HilbertModularVarietiesAndShimuraCurves 177, PerfectoidShimuraVarieties 235, IgusaVarietiesAndTorsionConcentration 239, BunGAndNewtonStrata 241, HeckeStacksAndLocalShtukas 244. ReductiveGroups, AdicSpaces, AlgebraicVectorBundles and PerfectoidSpaces are on main. No roadmap on main or in an open pull request cites this roadmap, so there is no reverse edge.
+It printed no UPWARD, CYCLE or `moved:` line. The roadmap is at line 245 of the merge order, and every named supplier comes earlier: AdicSpacesPartV 10, PerfectoidSpaces 13, DiamondsAndVStacks 16, ReductiveGroupsPartII 25, AInfCohomology 66, MotivesAndAlgebraicCycles 86, DiamondSixOperations 94, PadicHodgeTheory 141, VectorBundlesAndIsocrystals 144, RelativeFarguesFontaine 148, GeometricSatakeAndFusion 151, EndoscopicTransferAndUnitaryTraceComparison 166, HilbertModularVarietiesAndShimuraCurves 177, PerfectoidShimuraVarieties 235, IgusaVarietiesAndTorsionConcentration 239, BunGAndNewtonStrata 241, HeckeStacksAndLocalShtukas 244. ReductiveGroups, AdicSpaces, AlgebraicVectorBundles and PerfectoidSpaces are on main. No roadmap on main or in an open pull request cites this roadmap, so there is no reverse edge.
 
 ### Cross-roadmap citations resolved
 
 - `roadmaps resolve` on the current README, against main b41e47b and 352 open heads: no citation or Lean name found nowhere.
 - DiamondsAndVStacks D5.10 (*profinite-products-of-locally-spatial-diamonds*), read at the head of its pull request (7c7453f): for profinite P in the chart universe, the product is locally spatial, its underlying space is the product P × |S|, and the projection is qc, separated and universally closed. Contract line 112 restates this correctly.
-- AdicSpacesPartIIPartII: all 16 RZ anchors are present in `packages/AdicSpacesPartIIPartII/design/README.md`.
+- AdicSpacesPartV: all 16 RZ anchors are present in `packages/AdicSpacesPartV/design/README.md`.
 - BunGAndNewtonStrata: all 10 anchors are present. VectorBundlesAndIsocrystals: all 9. ReductiveGroupsPartII: all 5.
 - GeometricSatakeAndFusion: the `grassmannian`, `schubert-bounds-and-properness`, `open-cell-stabilizer-and-smoothness`, `truncated-positive-loops` and `truncation-of-the-loop-action` anchors exist as ids.
 - Gap target sections exist at their heads: MotivesAndAlgebraicCycles §§6.1–6.3, 6.8; PadicHodgeTheory §§5.5, 7.1, 7.4; AInfCohomology §§AI.2.2–AI.2.3; PerfectoidShimuraVarieties §§2.2, 3.1, 3.5; IgusaVarietiesAndTorsionConcentration Layer IG.1; RelativeFarguesFontaine §§4.10–4.12, 6.6–6.9, 7.6. The heading of §7.6 has a stray backtick.

@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-CalibratedGeometry~1",
+    "head": "0f3a0d5c5073b968c8aff559564e81422e90eab5",
+    "pr": 946,
+    "folder": "CalibratedGeometry",
+    "date": "2026-10-28",
+    "findings": 7,
+    "blocking": 5,
+    "notes": "Worker gate passed; independent depcheck: 163 roadmaps, 1163 edges, 0 problems. Original Lean elaboration passed with six sorry warnings; all 11 signatures checked, no dropped binders; 18 one-tactic padding attempts failed to close the six targets. All four cited works fetched legally. Worker sample names absent, so documented a reproducible 15-paragraph sample seeded by the head. Report contains 140 computed adversarial rows, 18 pinned declaration groups and 14 supplier resolutions. Native exterior-power probe states omitted all-degree Wirtinger inequality and equality case. No PR files changed."
+  }
+}

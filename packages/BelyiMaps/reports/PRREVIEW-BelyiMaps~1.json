@@ -1,0 +1,12 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-BelyiMaps~1",
+    "head": "03a6a883ee5ddcdff2f8c1c7331bcd6c71c58672",
+    "pr": 767,
+    "date": "2026-10-28",
+    "findings": 10,
+    "blocking": 6,
+    "notes": "Gate at this head FAILS (set_option x2, tex x1, residue x6, readme-ids-missing x1; NOT IN ORDER is the board's). lake env lean: exit 0, 3 sorry warnings only. Depcheck: no UPWARD/CYCLE line. Seeded sample: Character theory, Universal covers, Conformal mapping, product relation, absolute Galois group/cyclotomic character, local model, branch-point action, conjugation action resolved at the pins/on main and computed; Fields of moduli/definition checked against Kock (1.4)-(1.6), (2.2); Corollary 2.70, Lemma 4.50, orientation statement, ramificationIndex not verifiable (Girondo-Gonzalez-Diez, Szamuely, Forster paywalled); AlgebraicBelyiPair and the 9.1C full-faithfulness cut resolve AlgebraicCurves Layers 0/1/6 but not the Layers 8/12 cut (P1). Sources read: Kock arXiv math/0108222, Musty-Schiavone-Sijsling-Voight arXiv 1805.07751, Stix arXiv 0809.0017, Hatcher, LMFDB record 3T2-3_2.1_2.1-a. Adversarial table: 32 rows with computed values, no false statement found. 138 TauCeti.* and 126 other library names checked at the pins: 7 missing (R05, R07, R10). P1: PolynomialGaloisGroups Layers 1C/1D and AlgebraicCurves Layers 8/12 cut exist only at revision PRs 763/882, undeclared gaps. P2: Layers 8-14 planned but disowned to nonexistent successors; Layer 7 headline statable and absent; mutual citation with PeripheralActions. P3: gate rules, padding catalogue in Suggested.lean, PR numbers/provenance ledger/dead links/no sources.toml, locator drift."
+  }
+}

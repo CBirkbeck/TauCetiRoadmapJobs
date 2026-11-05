@@ -109,7 +109,7 @@ Every named supplier contract and section was compared with its actual main or e
 | HeckeStacksAndLocalShtukas | HS2.12, HS2.15: reductive arbitrary-type existence, classical points and connectedness; integral Kottwitz equality is retained. |
 | AInfCohomology | AI.2.2–AI.2.3: valid BKF operations, crystalline-rigidified variant and finite-free classification; the rational rigidified modification equivalence is an explicit extension obligation. |
 | PadicHodgeTheory | §§5.5, 7.1, 7.4, 2.2–2.3: perfect-residue functors, associated lattices, uniqueness and coefficient-site comparisons; neither strict-field openness nor the arbitrary-field full-rank criterion is inferred from these. |
-| AdicSpacesPartIIPartII | RZ.0–RZ.6 named targets in `packages/AdicSpacesPartIIPartII/design/README.md`: exact dimension, rank, classical/Shilov, resolution and manifold hypotheses. This earlier accepted design is absent from the roadmap-show catalogue; its supplied package, not a guessed later source, was read. |
+| AdicSpacesPartV | RZ.0–RZ.6 named targets in `packages/AdicSpacesPartV/design/README.md`: exact dimension, rank, classical/Shilov, resolution and manifold hypotheses. This earlier accepted design is absent from the roadmap-show catalogue; its supplied package, not a guessed later source, was read. |
 | PerfectoidSpaces | P4.15.6, P6.11: surjective universal perfectoid quotient, integral plus ring and transitive strong closedness. |
 | GeometricSatakeAndFusion | GS0 loop geometry and Schubert smoothness/action targets: reductive Grassmannian, bounds and truncated smooth loops. Non-reductive extensions remain here. |
 | DiamondSixOperations | S2.4, S3.2, S4.2–S4.3: shriek base change/projection, duality and smooth twists, retaining separatedness/compactifiability/local target dimension and ℓ≠p. |
@@ -128,7 +128,7 @@ The current roadmap therefore owns goodness, neutral period-latticed categories 
 
 RelativeFarguesFontaine; HodgeTateAndCanonicalSubgroups; AlgebraicModularFormsAndSerreWeights; PadicPeriodRings; VStackSheavesAndLisseCategories; BunGAndNewtonStrata; VectorBundlesAndIsocrystals; ReductiveGroupsPartII; MotivesAndAlgebraicCycles; DiamondsAndVStacks; HeckeStacksAndLocalShtukas; AInfCohomology; PadicHodgeTheory; GeometricSatakeAndFusion; DiamondSixOperations; EndoscopicTransferAndUnitaryTraceComparison; IgusaVarietiesAndTorsionConcentration; PerfectoidShimuraVarieties; HilbertModularVarietiesAndShimuraCurves.
 
-AdicSpacesPartIIPartII is an earlier accepted design/package supplier in the given order, not an indexed open roadmap. The five other supplier roadmaps are on main. No supplier was moved from later in the merge order.
+AdicSpacesPartV is an earlier accepted design/package supplier in the given order, not an indexed open roadmap. The five other supplier roadmaps are on main. No supplier was moved from later in the merge order.
 
 ## Sources and limits
 

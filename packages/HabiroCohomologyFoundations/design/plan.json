@@ -37,12 +37,6 @@
       "needs": "For every pushout C⊔_A B in Cat∞ with A→B fully faithful, prove C→C⊔_A B fully faithful, with the mapping-space comparison natural in the pushout diagram; generic existence of coherent pushouts or stable pushouts does not supply this theorem."
     },
     {
-      "slug": "cyclotomic-contract",
-      "supplier": "HabiroCyclotomicCompletions",
-      "section": "Part II: cyclotomic completion topology, using §4.1 (shared QWittVectors gap)",
-      "needs": "Using the distinct-order integral cyclotomic ideal classification already targeted in §4.1, supply only the induced common-completion identifications and prime-to-p product splitting required in §0.2."
-    },
-    {
       "slug": "oplax-dual-fibration",
       "supplier": "EnhancedDerivedSheaves",
       "section": "Part II: dual fibrations and oplax monoidal functors, extending E5:abstract.1–E5:abstract.3",

@@ -4732,29 +4732,7 @@
    ]
   }
  ],
- "gaps": [
-  {
-   "title": "Degree monotonicity of power sums for general q (Thakur–Sheats)",
-   "neededBy": [
-    "DrinfeldModulesAndTModulesPartII:MZ.0/mzv-nonvanishing"
-   ],
-   "detail": "For every prime power q, k ≥ 1 and d ≥ 0: S_d(k) ≠ 0 and deg_θ S_{d+1}(k) < deg_θ S_d(k). Thakur 2009 proves it for q prime from his degree recursion and refers, for general q, to the minimal-decomposition formula and Sheats’s degree inequality (Sheats, J. Number Theory 71 (1998)). No roadmap plans this degree theory. It is used only for the nonvanishing of MZVs with entries > q; the end theorems use CMPL values and Thakur’s range, where nonvanishing is elementary (MZ.0/cmpl-nonvanishing, MZ.0/carlitz-identity)."
-  },
-  {
-   "title": "Proof of the Anderson–Thakur interpolation formula",
-   "neededBy": [
-    "DrinfeldModulesAndTModulesPartII:MZ.3/anderson-thakur-interpolation"
-   ],
-   "detail": "The statement (H_sΩ^s)^{(d)}(θ) = Γ_s S_d(s)/π̃^s is taken from Chang 2014 Theorem 5.5.1 and Ngo Dac §4.2; its proof (Anderson–Thakur, Ann. of Math. 132 (1990), (3.7.3)–(3.7.4), and IMRN 2009, 2.4.1) was not reread in the design or this review; no assertion about present public availability is made. A follow-up should obtain the proof and plan its steps (the generating series of power sums in terms of the Carlitz exponential and the polynomials γ_j). The CMPL route to the end theorems (Chang–Chen–Mishiba, Im–Kim–Le–Ngo Dac–Pham) does not use it; Ngo Dac’s direct route (Theorems B, 6.2, D) and the MZ property of general MZVs do."
-  },
-  {
-   "title": "v-adic multiple zeta values and the Chang–Mishiba homomorphism",
-   "neededBy": [
-    "DrinfeldModulesAndTModulesPartII:MZ.5/v-adic-bound"
-   ],
-   "detail": "For a finite place v of K, Chang–Mishiba (Invent. Math. 223 (2021), Theorem 1.2.2) define v-adic MZVs ζ_A(s)_v and a K-algebra homomorphism from the K-span Z of ∞-adic MZVs to the span of v-adic MZVs, ζ_A(s) ↦ ζ_A(s)_v, whose kernel contains ζ_A(q − 1) (Goss: ζ_A(q − 1)_v = 0). No roadmap of the atlas plans v-adic MZVs or this homomorphism; a Part II on v-adic special values would own it."
-  }
- ],
+ "gaps": [],
  "sourceIssues": [
   {
    "id": "DrinfeldModulesAndTModulesPartII/E1",

@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-EllipticCurveModularity~1",
+    "head": "ed342f3b2c172b818cf135a5b9d176fb1dc66b8e",
+    "pr": 1018,
+    "folder": "EllipticCurveModularity",
+    "date": "2026-10-30",
+    "findings": 9,
+    "blocking": 4,
+    "notes": "Full-folder review; eight seeded draws (R29.1 repeated), thirteen readable source works and two uncertified books; 89 adversarial rows; pinned-library and main/open-roadmap ownership audits. All eighteen signatures inspected; original Lean elaboration passed with ten sorry warnings; ten padding probes did not close. Gate fails residue=3 and layer-ids=6; dependency check: 208 roadmaps, 1475 edges, 0 problems. Findings include two stale supplier contracts, omitted statable 15-isogeny classification, overlapping summability ownership and five form/locator issues."
+  }
+}

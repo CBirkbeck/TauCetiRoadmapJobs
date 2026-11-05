@@ -32,6 +32,8 @@ claims = "TauCetiProject/tauceti-roadmap-claims"
 library = "TauCetiProject/TauCeti"
 
 [board]
+# Hosted board runs queue for hours and get cancelled; the local tick (every 30 min) runs the intake instead.
+dispatch = false
 # Who may file targets: org teams ("team:org/slug") and bare logins. Other target issues are closed by board sync.
 target_filers = ["team:TauCetiProject/humans", "roed-math"]
 # Logins whose open roadmap pull requests count as ours in merge-order chains (the hosted workflow runs as a bot).
@@ -69,6 +71,10 @@ merge_order_file = "merge-order/ORDER.txt"
 # Label the port lane puts on every pull request it opens; the merge-order chain and the red-team
 # lanes find their pull requests by it.
 pr_label = "roadmap-worker"
+# The pool: operators who act for one another on managed roadmap pull requests (the label above and the
+# body marker). A pull request whose author is in the pool gets gate rounds any pool member may take; a
+# pool member's reply counts as the author's; the repair is pushed onto the pull request's own branch.
+pool = ["CBirkbeck", "kim-em", "roed-math", "WilliamCoram"]
 # Open the final pull request as a draft (today's rule). A human marks it ready, unless
 # redteam.ready_after says otherwise.
 open_as_draft = true
@@ -97,6 +103,9 @@ dropped_names_file = ""
 outside_folder_allow = []
 # Run the dependency check against the merge order as part of the gate.
 require_depcheck = true
+# Files a roadmap folder may hold besides *.lean and nested roadmap folders; anything else fails the push gate.
+# PROGRESS.md and STATUS.md are the generated snapshots most folders on main carry.
+roadmap_files = ["README.md", "Suggested.lean", "metadata.toml", "PROGRESS.md", "STATUS.md"]
 
 [redteam]
 # Rounds of red-teaming on the draft pull request. Each round runs every pass below
@@ -122,6 +131,27 @@ ready_after = false
 # The design lane is the only expensive one: at most this many design jobs per operator per day.
 daily_cap = 10
 
+# AI review of every open roadmap pull request (any author): one PRREVIEW job per new head, the
+# `ai-approved` label while the latest review accepts the current head; a human still approves and merges.
+[prreview]
+enabled = true
+label = "ai-approved"
+per_run = 40   # eight Fable loops now serve reviews; 20 per sync left the newest pull requests unfiled behind the backlog (2026-11-04)
+authors = []
+skip_authors = ["bwangpj"]   # #196 is abandoned (user 2026-10-28): not tracked, not reviewed
+max_folders = 20   # a pull request that repairs the dependency loops of main touches 16 roadmaps and is no chore (2026-11-04)
+# A changes-needed review of a pool author's pull request is repaired in the same job; the repaired head is re-reviewed by another worker.
+repair_pool = true
+# Small repairs (the P3 findings of an accepting review) pushed onto an accepted head keep `ai-approved` and get no
+# re-review when a reply records `tauceti-roadmap-carried {from, head}` and the folders changed by at most
+# small_change_lines lines (owner decision 2026-11-04).
+carry_accept = true
+# A chore (a `chore:` title, or more than max_folders roadmap folders: a pin bump) gets no folder review; it carries
+# `ai-approved` while a pool member's comment records an accepting chore review of its current head
+# (`tauceti-roadmap-chore-review {head, status}`), the AI review of the whole change (owner request 2026-11-05).
+chore_review = true
+small_change_lines = 150
+
 [agents]
 # Default agent for every lane: "codex" or "claude". Operators override per run with --agent.
 default = "codex"
@@ -133,6 +163,10 @@ timeout_minutes = 360
 # Per-lane overrides: `agent` pins the family, `model` its model; `codex_model` and `claude_model` pin
 # the model per family and leave the family to the worker. Reviews run only on the review models.
 [agents.lanes.review]
+codex_model = "gpt-6-astra"
+claude_model = "fable"
+
+[agents.lanes.prreview]
 codex_model = "gpt-6-astra"
 claude_model = "fable"
 
@@ -228,3 +262,8 @@ housekeeping_prefixes = ["Red-team repairs at", "Scope change at", "Supplier cha
 [prompts]
 # Optional file (in the packages repository) of project-specific rules appended to every brief.
 extra_rules_file = ""
+
+[worker]
+# Host-wide GitHub content-write cap (the secondary limit is ~80/min): 40/min leaves headroom and keeps the intake under 30 min.
+writes_per_minute = 40
+writes_per_hour = 1200

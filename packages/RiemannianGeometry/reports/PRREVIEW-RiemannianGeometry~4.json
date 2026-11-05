@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-RiemannianGeometry~4",
+    "head": "7b2d389c52331d18fe32adccbe7ddfc158988b45",
+    "pr": 1683,
+    "folder": "RiemannianGeometry",
+    "date": "2026-11-02",
+    "findings": 9,
+    "blocking": 6,
+    "notes": "Full review of all three files and all 13 prior findings. Passing worker gate; direct Suggested elaboration, signatures, 12 one-tactic probes and dependency check (204 roadmaps, 1546 edges, 0 problems). 125 computed adversarial rows. Projective sample formulas checked; ONeill theorem/page/source hypotheses remain uncertified after legal access attempts. Supplier mismatches, a reversed layer dependency, duplicated targets, absent statable headlines and coordinate substitutes require changes."
+  }
+}

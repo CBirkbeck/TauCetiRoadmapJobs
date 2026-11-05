@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-SemisimpleAlgebras~1",
+    "head": "6045796c796f8b79be6c14050819b341a4b3cdb2",
+    "pr": 989,
+    "folder": "RepresentationTheory/SemisimpleAlgebras",
+    "date": "2026-10-30",
+    "findings": 11,
+    "blocking": 6,
+    "notes": "Full-folder review; Skolem-Noether sample verified in Gille-Szamuely Theorem 2.7.2 p. 40 (automorphisms) and Stacks tags 074Q/074T (general forms). Worker gate FAIL: sorry-data=2, residue=1; all other counters zero. Independent dependency check: 209 roadmaps, 1457 edges, 0 problems; internal layer cycle identified. Original Lean and 23 signature checks elaborate; 19 of 22 admissions close in one step at the pins. 55-row adversarial table; native, main, open-head and package ownership audit. Unreadable references recorded; no PR files modified."
+  }
+}

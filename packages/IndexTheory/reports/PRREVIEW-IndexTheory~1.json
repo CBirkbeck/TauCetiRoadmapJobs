@@ -1,0 +1,13 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-IndexTheory~1",
+  "head": "819f43fde0a03dc6067a8810378af75e22f93334",
+  "pr": 1077,
+  "folder": "IndexTheory",
+  "date": "2026-10-31",
+  "findings": 7,
+  "blocking": 1,
+  "notes": "Gate FAIL at this head (imports/mathlib-subimports/no-import-mathlib, blob=17, depcheck NOT IN ORDER; build=0). Probe elaboration of Suggested.lean plus 22 #check lines: only the two sorry warnings. 31 cross-roadmap citations resolved at main/open heads; one drift (GT Layer 1 surface classification/CW model, R01, P2). 32 library declarations opened at Mathlib 6b7abb3c / Tau Ceti a91d3aa. Sampled 15 targets against Atiyah-Singer I (cached OCR), Atiyah 1968 Bott periodicity, Atiyah-Bott II Thm 4.12 (fetched from Ranicki archive): all agree. Adversarial table of 36 rows, no refutation. Course notes of Thomas Mark not locatable: needs-references.toml. Ownership against open PRs checked by roadmaps grep; no competing owner of the index theorems; overlaps with ToeplitzOperators/CC C2.3/OKT K4 noted (P3)."
+ }
+}

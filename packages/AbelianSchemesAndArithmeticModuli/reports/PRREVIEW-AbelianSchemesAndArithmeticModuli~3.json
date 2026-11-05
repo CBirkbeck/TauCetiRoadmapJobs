@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-AbelianSchemesAndArithmeticModuli~3",
+    "head": "9b54c40c30d10ce03d41f273ecfa4c713e1a9b47",
+    "pr": 849,
+    "folder": "AbelianSchemesAndArithmeticModuli",
+    "date": "2026-10-28",
+    "findings": 7,
+    "blocking": 2,
+    "notes": "Read both files and prior findings; examined all 13 seeded targets and legal source locators, with BLR/BBM/Messing/Faltings-Chai uncertified and Chai-Conrad-Oort unavailable. Recorded 124 adversarial calculation rows, pinned-library and main/open supplier checks. Targeted build and direct Lean elaboration pass with 19 sorry warnings; all 27 signatures inspected; 19 one-tactic probes fail. The additional internal-square-root signature elaborates. Worker gate fails only dependency check; independent run reproduces two apparent false-positive upward edges to existing main roadmaps. No PR files changed."
+  }
+}

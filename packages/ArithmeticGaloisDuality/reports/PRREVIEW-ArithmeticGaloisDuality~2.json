@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-ArithmeticGaloisDuality~2",
+    "head": "0f301e0374cf063f74029def7b622fc35bc16e85",
+    "pr": 858,
+    "folder": "ArithmeticGaloisDuality",
+    "date": "2026-10-28",
+    "findings": 5,
+    "blocking": 3,
+    "notes": "Read full roadmap and prior findings; 15-target seeded source sample with explicit availability limitations; 141 computed adversarial rows; 11 theorem probes and 16 named signatures plus two instances; targeted build/direct elaboration pass; worker gate fails four dependency diagnostics, checked against main owners."
+  }
+}

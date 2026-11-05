@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-PseudodifferentialOperators~4",
+    "head": "9cdb62c2ba17918b15dbb44031d7eb8b15ebdf91",
+    "pr": 952,
+    "folder": "PseudodifferentialOperators",
+    "date": "2026-10-30",
+    "findings": 3,
+    "blocking": 1,
+    "notes": "Full review; all four previous findings dispositioned. All 15 seeded targets examined; 10 readable works and 8 source-access limitations recorded. 134 computed adversarial rows; 18 pinned-library and 13 cross-roadmap citation groups. Worker gate passes, direct Lean elaboration passes with 8 sorry warnings, all 22 explicit signatures checked, all 8 one-tactic probes fail. Dependency check reports 208 roadmaps, 1458 edges, 0 problems; prior reciprocal supplier issue remains recorded under its settled edit-boundary disposition. New blocking finding: Besov smooth density at q=infinity; two P3 locator findings. No PR files changed."
+  }
+}

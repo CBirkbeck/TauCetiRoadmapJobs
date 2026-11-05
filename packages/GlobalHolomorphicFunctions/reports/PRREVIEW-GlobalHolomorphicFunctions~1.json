@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-GlobalHolomorphicFunctions~1",
+    "head": "bcaf6131a2b9317c8530ab319ceff931e7abd81c",
+    "pr": 992,
+    "folder": "GlobalHolomorphicFunctions",
+    "date": "2026-10-30",
+    "findings": 7,
+    "blocking": 3,
+    "notes": "Full read-only review; gate passes and outside-folder diff empty. Dependency check: 208 roadmaps, 1452 edges, 0 problems. Suggested and companion elaborated; 73 declaration signatures checked, 46 admissions probed for padding; 196 computed adversarial rows. GH5 coordinate sample recomputed, but no source locator supplied; Conway uncertified/paywalled and Ahlfors legal text unavailable. Blocking: DG main coefficient contract absent, ownership conflicts, statable full factorization, Cousin I and completeness headlines absent."
+  }
+}

@@ -1,0 +1,329 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "FiniteGroupInvariants"
+
+[[source]]
+id = "lemmermeyer"
+authors = "F. Lemmermeyer"
+title = "Kuroda's class number formula"
+year = 1994
+venue = "Acta Arith. 66, No. 3, 245-260 (1994)"
+doi = "10.4064/aa-66-3-245-260"
+arxiv = "2607.27034v1"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://arxiv.org/abs/2607.27034v1"
+fetched_from = "https://arxiv.org/pdf/2607.27034v1"
+fetched_at = "2026-11-04T15:04:10Z"
+sha256 = "2e97452e39f116d1ec6365fa5c8dac761910664fde78aac8788546698ba9ca8c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v1"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/5179#issuecomment-6632667435"
+
+[[source]]
+id = "collins"
+authors = "M. J. Collins"
+title = "On Jordan's theorem for complex linear groups"
+year = 2007
+doi = "10.1515/jgt.2007.032"
+locator_scheme = "theorem"
+locator = "Theorem"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/5179#issuecomment-6632667435"
+
+[[source]]
+id = "fks"
+authors = "B. Fein, W. M. Kantor, M. Schacher"
+title = "Relative Brauer groups II"
+year = 1981
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://gdz.sub.uni-goettingen.de/id/PPN243919689_0328"
+fetched_from = "https://gdz.sub.uni-goettingen.de/id/PPN243919689_0328"
+fetched_at = "2026-11-04T15:04:12Z"
+sha256 = "9c35f713342b7e9dbd3ce9f84adf9240ee88206db1cbc43d36a77218d8a96525"
+licence_class = "answered-by:CBirkbeck"
+status = "certified"
+accessed = "2026-11-04"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/5179#issuecomment-6632667435"
+
+[[source]]
+id = "robinson"
+authors = "D. J. S. Robinson"
+title = "A Course in the Theory of Groups"
+year = 1996
+locator_scheme = "theorem"
+locator = "3.3.15"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/5179#issuecomment-6632667435"
+
+[[source]]
+id = "aschbacher"
+authors = "M. Aschbacher"
+title = "Finite Group Theory"
+year = 2000
+locator_scheme = "equation"
+locator = "(31.13)"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/5179#issuecomment-6632667435"
+
+[[source]]
+id = "curtis-reiner-1962"
+authors = "C. W. Curtis, I. Reiner"
+title = "Representation Theory of Finite Groups and Associative Algebras"
+year = 1962
+locator_scheme = "section"
+locator = "36"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/5179#issuecomment-6632667435"
+
+[[source]]
+id = "reiner-maximal-orders"
+authors = "I. Reiner"
+title = "Maximal Orders"
+year = 1975
+locator_scheme = "section"
+locator = "26"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/5179#issuecomment-6632667435"
+
+[[source]]
+id = "karpilovsky"
+authors = "G. Karpilovsky"
+title = "The Schur Multiplier"
+year = 1987
+locator_scheme = "chapter"
+locator = "2"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/5179#issuecomment-6632667435"
+
+[[source]]
+id = "bbnwz"
+authors = "H. Brown, R. Bülow, J. Neubüser, H. Wondratschek, H. Zassenhaus"
+title = "Crystallographic Groups of Four-Dimensional Space"
+year = 1978
+locator_scheme = "page"
+locator = "class counts"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/5179#issuecomment-6632667435"
+
+[[source]]
+id = "gaschutz"
+authors = "W. Gaschütz"
+title = "Endliche Gruppen mit treuen absolut-irreduziblen Darstellungen"
+year = 1954
+locator_scheme = "theorem"
+locator = "main theorem"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/5179#issuecomment-6632667435"
+
+[[source]]
+id = "huppert-1954"
+authors = "B. Huppert"
+title = "Normalteiler und maximale Untergruppen endlicher Gruppen"
+year = 1954
+locator_scheme = "theorem"
+locator = "Huppert's criterion"
+url = "https://gdz.sub.uni-goettingen.de/id/PPN266833020_0060"
+fetched_from = "https://gdz.sub.uni-goettingen.de/id/PPN266833020_0060"
+fetched_at = "2026-11-04T15:04:13Z"
+sha256 = "87ef4c481a517d1d639527673666e519e43de0b6f3bd94ec1823e516b4cd1107"
+licence_class = "answered-by:CBirkbeck"
+status = "certified"
+accessed = "2026-11-04"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/5179#issuecomment-6632667435"
+
+[[source]]
+id = "kubota"
+authors = "T. Kubota"
+title = "Über den bizyklischen biquadratischen Zahlkörper"
+year = 1956
+locator_scheme = "section"
+locator = "unit types"
+url = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/4CAA5129A3870020A792C01F19A16F9F/S0027763000000088a.pdf/uber-den-bizyklischen-biquadratischen-zahlkorper.pdf"
+fetched_from = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/4CAA5129A3870020A792C01F19A16F9F/S0027763000000088a.pdf/uber-den-bizyklischen-biquadratischen-zahlkorper.pdf"
+fetched_at = "2026-11-04T15:04:14Z"
+sha256 = "8dd2594001f197a22a3dfd9b7fbe1fbdb5fa1ca7a6fa85baf60485e9cd88f0f6"
+licence_class = "answered-by:CBirkbeck"
+status = "certified"
+accessed = "2026-11-04"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/5179#issuecomment-6632667435"
+
+[[source]]
+id = "johnson-1971"
+authors = "D. L. Johnson"
+title = "Minimal permutation representations of finite groups"
+year = 1971
+locator_scheme = "theorem"
+locator = "main theorem"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/5179#issuecomment-6632667435"
+
+[[source]]
+id = "hall-1936"
+authors = "P. Hall"
+title = "The Eulerian functions of a group"
+year = 1936
+locator_scheme = "equation"
+locator = "Eulerian formula"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/5179#issuecomment-6632667435"
+
+[[source]]
+id = "hall-1940"
+authors = "P. Hall"
+title = "The classification of prime-power groups"
+year = 1940
+locator_scheme = "section"
+locator = "isoclinism and stem groups"
+url = "https://gdz.sub.uni-goettingen.de/id/PPN243919689_0182"
+fetched_from = "https://gdz.sub.uni-goettingen.de/id/PPN243919689_0182"
+fetched_at = "2026-11-04T15:04:15Z"
+sha256 = "0f65cfa77276413f1b7d365c13ff11c39cffc55274273f9bcfcafa7b58a5f94c"
+licence_class = "answered-by:CBirkbeck"
+status = "certified"
+accessed = "2026-11-04"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/5179#issuecomment-6632667435"
+
+[[source]]
+id = "desmit-perlis"
+authors = "B. de Smit, R. Perlis"
+title = "Zeta functions do not determine class numbers"
+year = 1994
+venue = "Bull. Amer. Math. Soc. (N.S.) 31 (1994) 213-215"
+arxiv = "math/9410216v1"
+locator_scheme = "theorem"
+locator = "example"
+url = "https://arxiv.org/abs/math/9410216v1"
+fetched_from = "https://arxiv.org/pdf/math/9410216v1"
+fetched_at = "2026-11-04T15:04:18Z"
+sha256 = "39bc47914f17804785d8898c1558666aafaa6f1340e9922cab88e816a2f97fc9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v1"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/5179#issuecomment-6632667435"
+
+[[source]]
+id = "serre-bounds"
+authors = "Jean-Pierre Serre"
+title = "Bounds for the orders of the finite subgroups of G(k)"
+year = 2010
+arxiv = "1011.0346v1"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://arxiv.org/abs/1011.0346v1"
+fetched_from = "https://arxiv.org/pdf/1011.0346v1"
+fetched_at = "2026-11-05T12:34:34Z"
+sha256 = "6bf84449e4fb495a1e1f7ebd6042e44483aca6ae02a8c742b2fba05c460573cb"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v1"
+cited_for = ["10.2"]
+
+[[source]]
+id = "guralnick-1982"
+authors = "Robert M. Guralnick"
+title = "Commutators and commutator subgroups"
+year = 1982
+venue = "Advances in Mathematics 45"
+doi = "10.1016/S0001-8708(82)80008-X"
+locator_scheme = "theorem"
+locator = "order 96"
+url = "https://doi.org/10.1016/S0001-8708(82)80008-X"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["4.1"]
+
+[[source]]
+id = "perlis-1977"
+authors = "Robert Perlis"
+title = "On the equation ζk(s) = ζk′(s)"
+year = 1977
+venue = "Journal of Number Theory 9"
+doi = "10.1016/0022-314X(77)90070-1"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://doi.org/10.1016/0022-314X(77)90070-1"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["7.4", "7.5"]
+
+[[source]]
+id = "reiner-1957"
+authors = "Irving Reiner"
+title = "Integral representations of cyclic groups of prime order"
+year = 1957
+venue = "Proceedings of the American Mathematical Society 8 (1957), 142-146"
+doi = "10.1090/S0002-9939-1957-0083493-6"
+locator_scheme = "page"
+locator = "145"
+url = "https://www.ams.org/journals/proc/1957-008-01/S0002-9939-1957-0083493-6/S0002-9939-1957-0083493-6.pdf"
+fetched_from = "https://www.ams.org/journals/proc/1957-008-01/S0002-9939-1957-0083493-6/S0002-9939-1957-0083493-6.pdf"
+fetched_at = "2026-11-05T12:34:39Z"
+sha256 = "71da052b9bcfe1da3a7521893c64b6c9df2396d809a33c261ee80327a11804f7"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["9.2"]
+
+[[source]]
+id = "huppert-eg1"
+authors = "Bertram Huppert"
+title = "Endliche Gruppen I"
+year = 1967
+venue = "Grundlehren der mathematischen Wissenschaften"
+doi = "10.1007/978-3-642-64981-3"
+locator_scheme = "theorem"
+locator = "VI.9.5"
+url = "https://doi.org/10.1007/978-3-642-64981-3"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["1.1", "1.6"]
+
+[[source]]
+id = "sutherland-18785"
+authors = "Andrew V. Sutherland"
+title = "18.785 Number Theory I, Lecture 24: the Herbrand unit theorem and the Herbrand quotient of the unit group"
+year = 2021
+venue = "MIT course notes"
+locator_scheme = "theorem"
+locator = "Theorem 24.6"
+url = "https://math.mit.edu/classes/18.785/2021fa/LectureNotes24.pdf"
+fetched_from = "https://math.mit.edu/classes/18.785/2021fa/LectureNotes24.pdf"
+fetched_at = "2026-11-05T12:34:42Z"
+sha256 = "0f7fc7d3382375d34b52c3689fe97066184b10b181da87724bbb67945642de8d"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["9.3"]
+
+[[source]]
+id = "isaacs"
+authors = "I. M. Isaacs"
+title = "Character Theory of Finite Groups"
+year = 1976
+venue = "Academic Press 1976; AMS Chelsea reprint 2006"
+doi = "10.1090/chel/359"
+locator_scheme = "theorem"
+locator = "Theorems 5.12, 6.22, 6.23, 6.32; Corollaries 5.13, 10.2; p. 171"
+url = "https://doi.org/10.1090/chel/359"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["6.2", "6.4", "6.7"]

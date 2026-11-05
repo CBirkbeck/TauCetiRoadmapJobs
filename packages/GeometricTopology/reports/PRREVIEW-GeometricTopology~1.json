@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-GeometricTopology~1",
+    "head": "238d5dac9206bdb37cd0fb9cacbd964fee55b2df",
+    "pr": 271,
+    "folder": "GeometricTopology",
+    "date": "2026-10-28",
+    "findings": 25,
+    "blocking": 20,
+    "notes": "Whole-folder read-only review; 15 repeated sample labels expanded across all matching blocks; 90 adversarial calculation rows; 21 source entries personally inspected; 24 pinned object groups and nine roadmap relationships resolved. Gate FAIL: residue=1 and stray-files=1; supplied targeted build passed. Direct Lean elaboration passed; zero submitted declarations. Native Smale headline probe elaborated. Depcheck: 162 roadmaps, 1161 edges, 0 problem(s); manual supplier cycle found. Missing/unreadable sources and uncertified locators recorded separately."
+  }
+}

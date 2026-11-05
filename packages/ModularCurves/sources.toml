@@ -1,0 +1,17 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ModularCurves"
+
+[[source]]
+id = "AEC"
+authors = "Joseph H. Silverman"
+title = "The Arithmetic of Elliptic Curves"
+year = 2009
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-0-387-09494-6"
+locator_scheme = "theorem"
+locator = "Prop. III.1.7; Thm V.4.1; App. A, Prop. A.1.1"
+url = "https://doi.org/10.1007/978-0-387-09494-6"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["7E PD-6"]

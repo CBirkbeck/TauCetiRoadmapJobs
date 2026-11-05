@@ -1,0 +1,116 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "HeegaardFloer"
+
+[[source]]
+id = "os-triangles"
+authors = "Peter S Ozsvath, Zoltan Szabo"
+title = "Holomorphic triangles and invariants for smooth four-manifolds"
+year = 2001
+arxiv = "math/0110169v2"
+locator_scheme = "theorem"
+locator = "Theorem 7.1"
+url = "https://arxiv.org/abs/math/0110169v2"
+fetched_from = "https://arxiv.org/pdf/math/0110169v2"
+fetched_at = "2026-11-04T08:37:21Z"
+sha256 = "c8bef1923cc5913da6fbda2dbc9cd310e6d4a464b8aa7a82c2f18db034b59f08"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v2"
+cited_for = ["6.9"]
+
+[[source]]
+id = "os-absolutely-graded"
+authors = "Peter S Ozsvath, Zoltan Szabo"
+title = "Absolutely Graded Floer homologies and intersection forms for four-manifolds with boundary"
+year = 2001
+arxiv = "math/0110170v2"
+locator_scheme = "theorem"
+locator = "Definition 4.1"
+url = "https://arxiv.org/abs/math/0110170v2"
+fetched_from = "https://arxiv.org/pdf/math/0110170v2"
+fetched_at = "2026-11-04T08:37:26Z"
+sha256 = "cb2158bddaae7274dec14e4ac87a34d901b1ca051a4d8effd82dfcc52d9c4593"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v2"
+cited_for = ["6.9"]
+
+[[source]]
+id = "os-disks-invariants"
+authors = "Peter Ozsvath, Zoltan Szabo"
+title = "Holomorphic disks and topological invariants for closed three-manifolds"
+year = 2001
+arxiv = "math/0101206v4"
+locator_scheme = "theorem"
+locator = "Theorem 3.15"
+url = "https://arxiv.org/abs/math/0101206v4"
+fetched_from = "https://arxiv.org/pdf/math/0101206v4"
+fetched_at = "2026-11-04T08:37:33Z"
+sha256 = "035bccf5e01a74403ef0a149fe42f32655773913d0b758e6fe6ddb883263656c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v4"
+cited_for = ["6.9"]
+
+[[source]]
+id = "perutz2008"
+authors = "Timothy Perutz"
+title = "Hamiltonian handleslides for Heegaard Floer homology"
+year = 2008
+arxiv = "0801.0564v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.2"
+url = "https://arxiv.org/abs/0801.0564v2"
+fetched_from = "https://arxiv.org/pdf/0801.0564v2"
+fetched_at = "2026-11-04T08:37:38Z"
+sha256 = "afc8261b359b17417fe9729e5294d16e31b071e30310d02ca6d4b10dba34a662"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v2"
+cited_for = ["6.5"]
+
+[[source]]
+id = "witten1982"
+authors = "Edward Witten"
+title = "Supersymmetry and Morse theory"
+year = 1982
+venue = "Journal of Differential Geometry 17 (1982), 661–692"
+doi = "10.4310/jdg/1214437492"
+locator_scheme = "section"
+locator = "§2"
+url = "https://doi.org/10.4310/jdg/1214437492"
+licence_class = "none"
+status = "uncertified"
+cited_for = ["1.10"]
+
+[[source]]
+id = "helffer-sjostrand1985"
+authors = "Bernard Helffer, Johannes Sjöstrand"
+title = "Puits multiples en mécanique semi-classique IV: étude du complexe de Witten"
+year = 1985
+venue = "Communications in Partial Differential Equations 10 (1985), 245–340"
+doi = "10.1080/03605308508820379"
+locator_scheme = "page"
+locator = "245–340 (the Witten-complex comparison)"
+url = "https://doi.org/10.1080/03605308508820379"
+licence_class = "none"
+status = "uncertified"
+cited_for = ["1.10"]
+
+[[source]]
+id = "fhs1995"
+authors = "Andreas Floer, Helmut Hofer, Dietmar Salamon"
+title = "Transversality in elliptic Morse theory for the symplectic action"
+year = 1995
+venue = "Duke Mathematical Journal 80 (1995), 251–292"
+doi = "10.1215/S0012-7094-95-08010-7"
+locator_scheme = "section"
+locator = "§5"
+url = "https://doi.org/10.1215/S0012-7094-95-08010-7"
+licence_class = "none"
+status = "uncertified"
+cited_for = ["4.4"]

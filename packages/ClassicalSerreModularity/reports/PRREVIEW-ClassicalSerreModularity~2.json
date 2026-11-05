@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-ClassicalSerreModularity~2",
+    "head": "1d195673c8c900972bb39ec4f7e7e29dafb0bcbb",
+    "pr": 1020,
+    "folder": "ClassicalSerreModularity",
+    "date": "2026-10-30",
+    "findings": 8,
+    "blocking": 5,
+    "notes": "Full re-review; all five previous findings reassessed; all 15 seeded targets investigated (Ki and Kh97 not source-certified; Ki2 remains uncertified). Supplied gate passes, independent depcheck 208 roadmaps/1481 edges/0 problems; unchanged Lean elaborates with five sorry warnings, all 20 signatures checked, five padding probes fail. 132 adversarial rows; 2422 finite auxiliary-prime and 99976 interval instances computed; pinned APIs and 21 supplier roadmaps inspected. Eight findings, five blocking; corrects the previous review’s SW01 page-offset error."
+  }
+}

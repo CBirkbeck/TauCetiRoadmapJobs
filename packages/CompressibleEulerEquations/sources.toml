@@ -1,0 +1,295 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "CompressibleEulerEquations"
+
+[[source]]
+id = "Christodoulou2007"
+authors = "Demetrios Christodoulou"
+title = "The Formation of Shocks in 3-Dimensional Fluids"
+year = 2007
+doi = "10.4171/031"
+locator_scheme = "chapter"
+locator = "Ch. 1–2"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6000#issuecomment-6645264885"
+
+[[source]]
+id = "HawkingEllis1973"
+authors = "S. W. Hawking, G. F. R. Ellis"
+title = "The Large Scale Structure of Space-Time"
+year = 1973
+doi = "10.1017/CBO9780511524646"
+locator_scheme = "section"
+locator = "§6.5"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6000#issuecomment-6645264885"
+
+[[source]]
+id = "Friedrichs1954"
+authors = "K. O. Friedrichs"
+title = "Symmetric hyperbolic linear differential equations"
+year = 1954
+doi = "10.1002/cpa.3160070206"
+locator_scheme = "page"
+locator = "pp. 345–392"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6000#issuecomment-6645264885"
+
+[[source]]
+id = "ONeill1983"
+authors = "B. O'Neill"
+title = "Semi-Riemannian Geometry with Applications to Relativity"
+year = 1983
+locator_scheme = "chapter"
+locator = "Ch. 14"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6000#issuecomment-6645264885"
+
+[[source]]
+id = "ChristodoulouMiao2014"
+authors = "Demetrios Christodoulou, Shuang Miao"
+title = "Compressible Flow and Euler's Equations"
+year = 2014
+arxiv = "1212.2867v2"
+locator_scheme = "section"
+locator = "§1.1, §1.3, §2.1.2"
+url = "https://arxiv.org/abs/1212.2867v2"
+fetched_from = "https://arxiv.org/pdf/1212.2867v2"
+fetched_at = "2026-11-05T01:47:28Z"
+sha256 = "9a8b419ac9f4542b6941f3131f858d8536bbfa5a1fd9f7620622a04ab548e831"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v2 read; locators (sections, equation numbers, page numbers) are to the arXiv version; published as Surveys of Modern Mathematics 9, International Press 2014"
+cited_for = ["Final targets 4, 6, 8"]
+
+[[source]]
+id = "Christodoulou2019"
+authors = "Demetrios Christodoulou"
+title = "The Shock Development Problem"
+year = 2019
+arxiv = "1705.00828v1"
+locator_scheme = "section"
+locator = "Prologue; §1.1, §1.3, §1.5"
+url = "https://arxiv.org/abs/1705.00828v1"
+fetched_from = "https://arxiv.org/pdf/1705.00828v1"
+fetched_at = "2026-11-05T01:47:46Z"
+sha256 = "5118e5892056b11c2e80c5ab3e144dece424e130ef7ec862d35b0482b4f2cd68"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v1 read; locators (Prologue pages, section numbers) are to the arXiv version; published as EMS Monographs in Mathematics, EMS 2019"
+cited_for = ["Final targets 4, 6, 8"]
+
+[[source]]
+id = "Speck2016"
+authors = "Jared Speck"
+title = "Shock Formation in Small-Data Solutions to $3D$ Quasilinear Wave Equations"
+year = 2016
+arxiv = "1407.6320v1"
+locator_scheme = "section"
+locator = "§1.11"
+url = "https://arxiv.org/abs/1407.6320v1"
+fetched_from = "https://arxiv.org/pdf/1407.6320v1"
+fetched_at = "2026-11-05T01:47:58Z"
+sha256 = "211443703fa72e7c70c23073aa28e3c59883832c33b052874e260897ede145ff"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v1 read; locators are to the arXiv version; published as Mathematical Surveys and Monographs 214, AMS 2016"
+cited_for = ["Consumers"]
+
+[[source]]
+id = "LukSpeck2018"
+authors = "Jonathan Luk, Jared Speck"
+title = "Shock formation in solutions to the $2D$ compressible Euler equations in the presence of non-zero vorticity"
+year = 2018
+arxiv = "1610.00737v1"
+locator_scheme = "section"
+locator = "§1.1, §3.3, §3.5"
+url = "https://arxiv.org/abs/1610.00737v1"
+fetched_from = "https://arxiv.org/pdf/1610.00737v1"
+fetched_at = "2026-11-05T01:48:05Z"
+sha256 = "4e0b855c166509f2ed0821f17b3bf426c0e302fa8fc1c927d7ae2fca6c944c10"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v1 read; locators (section and equation numbers) are to the arXiv version; published in Invent. Math. 214 (2018), 1–169"
+cited_for = ["Final targets 4, 8"]
+
+[[source]]
+id = "AbbresciaSpeck2022"
+authors = "Leo Abbrescia, Jared Speck"
+title = "The emergence of the singular boundary from the crease in $3D$ compressible Euler flow"
+year = 2022
+arxiv = "2207.07107v1"
+locator_scheme = "section"
+locator = "§1.2"
+url = "https://arxiv.org/abs/2207.07107v1"
+fetched_from = "https://arxiv.org/pdf/2207.07107v1"
+fetched_at = "2026-11-05T01:48:16Z"
+sha256 = "c5c7244454500b0800a9b5bca9286cd531b63d9468dcd67205db599cc2b6759c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v1"
+cited_for = ["Final targets 2, 7"]
+
+[[source]]
+id = "LuoYu2023a"
+authors = "Tian-Wen Luo, Pin Yu"
+title = "On the stability of multi-dimensional rarefaction waves I: the energy estimates"
+year = 2025
+arxiv = "2302.09714v2"
+locator_scheme = "section"
+locator = "§1, §1.4"
+url = "https://arxiv.org/abs/2302.09714v2"
+fetched_from = "https://arxiv.org/pdf/2302.09714v2"
+fetched_at = "2026-11-05T01:52:50Z"
+sha256 = "78ce7a2d283e922d47e1826882407b530f2986ce0843da306bcd016f508a6e78"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v2 read (OCR text); locators are to the arXiv version; published in Ann. of Math. 202 (2025), no. 2, 631–752"
+cited_for = ["Final targets 4, 8"]
+
+[[source]]
+id = "LuoYu2023b"
+authors = "Tian-Wen Luo, Pin Yu"
+title = "On the stability of multi-dimensional rarefaction waves II: existence of solutions and applications to Riemann problem"
+year = 2025
+arxiv = "2305.06308v2"
+locator_scheme = "theorem"
+locator = "§1.4.2; Theorem 3; Definition 2.13"
+url = "https://arxiv.org/abs/2305.06308v2"
+fetched_from = "https://arxiv.org/pdf/2305.06308v2"
+fetched_at = "2026-11-05T01:56:45Z"
+sha256 = "88f86581a42c829b9359d400dc37e649ab998d82e5b16d449bb4d7816ecee5e8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v2 read (OCR text); locators are to the arXiv version; published in Ann. of Math. 202 (2025), no. 2, 753–855"
+cited_for = ["Final targets 6, 7, 8"]
+
+[[source]]
+id = "BarGinouxPfaffle2007"
+authors = "Christian Baer, Nicolas Ginoux, Frank Pfaeffle"
+title = "Wave Equations on Lorentzian Manifolds and Quantization"
+year = 2007
+venue = "ESI Lectures in Mathematics and Physics, European Mathematical Society Publishing House, ISBN 978-3-03719-037-1, March 2007, Softcover"
+arxiv = "0806.1036v1"
+locator_scheme = "theorem"
+locator = "Definition 1.3.5; Theorems 3.2.11–3.2.12"
+url = "https://arxiv.org/abs/0806.1036v1"
+fetched_from = "https://arxiv.org/pdf/0806.1036v1"
+fetched_at = "2026-11-05T01:56:51Z"
+sha256 = "9f478e6fc4c68bf02d547fd2b967d3542d144ba3fab2e2ac8497b70e3243e2fb"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v1 read; locators are to the arXiv version; published as ESI Lectures in Mathematics and Physics, EMS 2007"
+cited_for = ["Final targets 3, 5"]
+
+[[source]]
+id = "Chrusciel2011"
+authors = "Piotr T. Chruściel"
+title = "Elements of causality theory"
+year = 2011
+arxiv = "1110.6706v1"
+locator_scheme = "section"
+locator = "§2.3, §2.5, §2.9, §2.10"
+url = "https://arxiv.org/abs/1110.6706v1"
+fetched_from = "https://arxiv.org/pdf/1110.6706v1"
+fetched_at = "2026-11-05T01:56:56Z"
+sha256 = "e967a1682716085e4e737e15f5af7c5107eecef5fc111c9f842ad7465c8133e4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v1"
+cited_for = ["Final targets 4, 5"]
+
+[[source]]
+id = "MinguzziCone2019"
+authors = "E. Minguzzi"
+title = "Causality theory for closed cone structures with applications"
+year = 2019
+venue = "Rev. Math. Phys. 31 (2019) 1930001"
+doi = "10.1142/S0129055X19300012"
+arxiv = "1709.06494v4"
+locator_scheme = "theorem"
+locator = "Definition 2.17; Theorem 2.32"
+url = "https://arxiv.org/abs/1709.06494v4"
+fetched_from = "https://arxiv.org/pdf/1709.06494v4"
+fetched_at = "2026-11-05T01:57:03Z"
+sha256 = "8946ccd9eae40ffa85b78e7ee31f2ac4718f0197616c078daa56c79b526dcfe1"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v4 read; locators are to the arXiv version; published in Rev. Math. Phys. 31 (2019), 1930001"
+cited_for = ["Final targets 4, 5, 8"]
+
+[[source]]
+id = "Minguzzi2019"
+authors = "E. Minguzzi"
+title = "Lorentzian causality theory"
+year = 2019
+venue = "Living Rev. Relativ. 22 (2019), art. 3"
+doi = "10.1007/s41114-019-0019-x"
+locator_scheme = "section"
+locator = "§2.2 (Lipschitz causal curves); Definition 3.1 and Remark 3.2 (domains of dependence)"
+url = "https://inspirehep.net/files/7a575d682fd15aaad8463a778fac1609"
+fetched_from = "https://inspirehep.net/files/7a575d682fd15aaad8463a778fac1609"
+fetched_at = "2026-11-05T01:57:08Z"
+sha256 = "0fe164b293c9697d6f1dd24ae329d7e7087b5655b910b53ab3425eb96ee9588d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["Final targets 4, 5"]
+
+[[source]]
+id = "Kato1975"
+authors = "Tosio Kato"
+title = "The Cauchy problem for quasi-linear symmetric hyperbolic systems"
+year = 1975
+venue = "Archive for Rational Mechanics and Analysis 58"
+doi = "10.1007/BF00280740"
+locator_scheme = "theorem"
+locator = "Theorem I"
+url = "https://doi.org/10.1007/BF00280740"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Final targets 1, 2, 7"]
+
+[[source]]
+id = "Majda1984"
+authors = "A. Majda"
+title = "Compressible Fluid Flow and Systems of Conservation Laws in Several Space Variables"
+year = 1984
+venue = "Applied Mathematical Sciences"
+doi = "10.1007/978-1-4612-1116-7"
+locator_scheme = "chapter"
+locator = "Ch. 2 (§2.1–2.3, Theorem 2.1)"
+url = "https://doi.org/10.1007/978-1-4612-1116-7"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Final targets 1, 2, 3, 7"]
+
+[[source]]
+id = "Dafermos2016"
+authors = "Constantine M. Dafermos"
+title = "Hyperbolic Conservation Laws in Continuum Physics"
+year = 2016
+venue = "Grundlehren der mathematischen Wissenschaften"
+doi = "10.1007/978-3-662-49451-6"
+locator_scheme = "chapter"
+locator = "Ch. V (§5.1, Theorem 5.1.1)"
+url = "https://doi.org/10.1007/978-3-662-49451-6"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Final targets 1, 2"]

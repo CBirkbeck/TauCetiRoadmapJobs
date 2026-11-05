@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-CrystallineCohomology~2",
+    "head": "a4d676d5e692e7e2a2ce1b05b2ef8edcb973ca45",
+    "pr": 857,
+    "folder": "CrystallineCohomology",
+    "date": "2026-10-28",
+    "findings": 7,
+    "blocking": 1,
+    "notes": "Previous six findings rechecked; 15 seeded targets reviewed (12 supported by readable texts, three Kato-primary locators uncertified); 256 target-level computed rows plus convention/signature witnesses. Fresh Lean elaboration and three signature checks pass; both one-tactic probes fail. Fresh depcheck: 163 roadmaps, 1189 edges, 0 problems. Worker gate fails tex=6; all other counters zero. R01 requires n>=1 in finite-Witt evaluation. Source and portability limitations recorded; PR files unchanged."
+  }
+}

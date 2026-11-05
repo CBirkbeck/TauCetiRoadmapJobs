@@ -1,0 +1,18 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "AdicSpacesPartV"
+
+[[source]]
+id = "BARTENWERFER76"
+title = "Der erste Riemannsche Hebbarkeitssatz im nichtarchimedischen Fall."
+year = 1976
+doi = "10.1515/crll.1976.286-287.144"
+locator_scheme = "section"
+locator = "§3"
+url = "https://gdz.sub.uni-goettingen.de/id/PPN243919689_0286_0287"
+fetched_from = "https://gdz.sub.uni-goettingen.de/id/PPN243919689_0286_0287"
+fetched_at = "2026-11-04T16:23:33Z"
+sha256 = "0d7e400d2423ebe29e9b5539f783066eaa66830cd67565ab17bfee0c4f5f25ff"
+licence_class = "answered-by:CBirkbeck"
+status = "certified"
+accessed = "2026-11-04"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/2404#issuecomment-6632677564"

@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-BelyiMaps~2",
+    "head": "238d5dac9206bdb37cd0fb9cacbd964fee55b2df",
+    "pr": 271,
+    "folder": "BelyiMaps",
+    "date": "2026-10-28",
+    "findings": 31,
+    "blocking": 28,
+    "notes": "Whole-folder read-only review; ten previous findings compared; all 15 seeded targets addressed; 199 adversarial rows; six readable source texts and access limitations recorded; pinned-library and supplier ownership checked. Gate FAIL (11 admitted data declarations, 2 options, text failures); targeted build and independent elaboration pass with sorry warnings. 141 active signatures checked; 33 theorem probes. Dependency check reports NOT IN ORDER only, not treated as a finding; textual PeripheralActions cycle identified. PR worktree unchanged."
+  }
+}

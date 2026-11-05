@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-BorelEquivalenceRelations~1",
+    "head": "6c542e985ca22d16721ff91bc8e539c7ddf31fed",
+    "pr": 1616,
+    "folder": "BorelEquivalenceRelations",
+    "date": "2026-11-02",
+    "findings": 8,
+    "blocking": 2,
+    "notes": "Full-folder review: all 15 seeded source targets; 80 elaborated declarations and 49 additional adversarial rows; pinned-library and main/open-roadmap ownership audits; dependency check 205 roadmaps, 1498 edges, 0 problems. Original Lean elaborates with 61 sorry warnings; four exact padding probes and general Alexandrov signature elaborate. Worker gate FAIL: set_option=1, residue=2, readme-ids-missing=1; all failures reported. Sources unavailable or uncertified are listed in Not verifiable. No PR files changed."
+  }
+}

@@ -2926,7 +2926,7 @@
         "PadicHodgeTheory:P8",
         "ArithmeticGaloisDuality:D7",
         "AInfCohomology:AI.1",
-        "AdicSpacesPartIIPartII:RZ.5/rigid-resolution"
+        "AdicSpacesPartV:RZ.5/rigid-resolution"
       ],
       "library": {
         "module": "TauCeti/AlgebraicGeometry/Adic/Duality/PD5",
@@ -3581,7 +3581,7 @@
       ],
       "prerequisites": [
         "ClassicalAdicEtaleCohomology:H0/classical-constructible-sheaves",
-        "AdicSpacesPartIIPartII:RZ.0",
+        "AdicSpacesPartV:RZ.0",
         "EnhancedDerivedSheaves:E1"
       ],
       "library": {
@@ -3667,7 +3667,7 @@
       "prerequisites": [
         "ClassicalAdicEtaleCohomologyPartII:PD.7/affinoid-constructible-algebraization",
         "ClassicalAdicEtaleCohomologyPartII:PD.7/zariski-constructible-complex",
-        "AdicSpacesPartIIPartII:RZ.1",
+        "AdicSpacesPartV:RZ.1",
         "AdicSpacesPartII:R3",
         "mathlib:Representation.invariants",
         "mathlib:IsPGroup.exists_fixed_point_of_prime_dvd_card_of_fixed_point"
@@ -3709,11 +3709,11 @@
       "prerequisites": [
         "ClassicalAdicEtaleCohomologyPartII:PD.7/constructible-locality-and-generators",
         "ClassicalAdicEtaleCohomologyPartII:PD.6/relative-mod-p-finiteness",
-        "AdicSpacesPartIIPartII:RZ.5/rigid-resolution",
+        "AdicSpacesPartV:RZ.5/rigid-resolution",
         "ClassicalAdicEtaleCohomology:H3/proper-torsion-cohomological-amplitude",
         "ClassicalAdicEtaleCohomology:H3/weak-geometric-support-base-change",
         "EnhancedDerivedSheaves:E2",
-        "AdicSpacesPartIIPartII:RZ.2",
+        "AdicSpacesPartV:RZ.2",
         "ClassicalAdicEtaleCohomology:H3"
       ],
       "library": {
@@ -3880,7 +3880,7 @@
         "ClassicalAdicEtaleCohomologyPartII:PD.7/zariski-constructible-complex",
         "ClassicalAdicEtaleCohomology:H5",
         "AdicSpacesPartII:R3",
-        "AdicSpacesPartIIPartII:RZ.1",
+        "AdicSpacesPartV:RZ.1",
         "AdicCoefficientsAndComparisons:L2"
       ],
       "library": {
@@ -3970,14 +3970,14 @@
       ]
     },
     {
-      "supplier": "AdicSpacesPartIIPartII:RZ.0",
+      "supplier": "AdicSpacesPartV:RZ.0",
       "need": "Rigid Zariski closed and locally closed analytic subspaces, coherent ideal descent, irreducible components and noetherian dimension induction on affinoids.",
       "neededBy": [
         "ClassicalAdicEtaleCohomologyPartII:PD.7/zariski-constructible-complex"
       ]
     },
     {
-      "supplier": "AdicSpacesPartIIPartII:RZ.1",
+      "supplier": "AdicSpacesPartV:RZ.1",
       "need": "Finite normalization, its compatibility with étale/rational restriction, and finite branched cover geometry on normal rigid spaces. Extending every finite étale cover across a dense open is the additional G4 contract, not an automatic normalization property.",
       "neededBy": [
         "ClassicalAdicEtaleCohomologyPartII:PD.7/constructible-locality-and-generators",
@@ -3985,7 +3985,7 @@
       ]
     },
     {
-      "supplier": "AdicSpacesPartIIPartII:RZ.2",
+      "supplier": "AdicSpacesPartV:RZ.2",
       "need": "G5 (geometric part): proper generic smoothness BH Theorem 2.29, with smooth source and reduced target, including weakly Shilov generic flatness BH 2.21 and smooth fibres BH 2.25. The existing singular/smooth-locus node does not establish a dense Zariski open of the target.",
       "neededBy": [
         "ClassicalAdicEtaleCohomologyPartII:PD.7/proper-constructible-pushforward"
@@ -4301,9 +4301,9 @@
         "Supplier contract: AdicSpacesPartII:R1",
         "Supplier contract: AdicSpacesPartII:R2",
         "Supplier contract: AdicSpacesPartII:R3",
-        "Supplier contract: AdicSpacesPartIIPartII:RZ.0",
-        "Supplier contract: AdicSpacesPartIIPartII:RZ.1",
-        "Supplier contract: AdicSpacesPartIIPartII:RZ.2",
+        "Supplier contract: AdicSpacesPartV:RZ.0",
+        "Supplier contract: AdicSpacesPartV:RZ.1",
+        "Supplier contract: AdicSpacesPartV:RZ.2",
         "Supplier contract: ArithmeticGaloisDuality:D7",
         "Supplier contract: ClassicalAdicEtaleCohomology:H0",
         "Supplier contract: ClassicalAdicEtaleCohomology:H3",
@@ -4355,13 +4355,13 @@
     {
       "slug": "finite-branched-covers",
       "needs": "For a normal characteristic-zero rigid space and a nowhere dense Zariski closed subset, restriction identifies finite normal branched covers étale off that subset with finite étale covers of its complement, naturally under restriction.",
-      "supplier": "AdicSpacesPartIIPartII",
+      "supplier": "AdicSpacesPartV",
       "section": "RZ.1"
     },
     {
       "slug": "proper-generic-smoothness",
       "needs": "For each proper map f:X→Y of rigid spaces over a characteristic-zero complete nonarchimedean field, with X smooth and Y reduced, the maximal open S_f⊂Y over which f is smooth is dense and Zariski open, using weakly Shilov generic flatness and smooth-fibre criteria.",
-      "supplier": "AdicSpacesPartIIPartII",
+      "supplier": "AdicSpacesPartV",
       "section": "RZ.2 and RZ.4"
     },
     {
@@ -5739,7 +5739,7 @@
       "action": "rescope",
       "roadmaps": [
         "AdicSpacesPartII",
-        "AdicSpacesPartIIPartII"
+        "AdicSpacesPartV"
       ],
       "detail": "Propose the next available Adic Spaces continuation for valuation-base reduced models, relative Reduced Fibre, refined Elkik algebraization, finite formal quotients and altered local uniformization, plus proper generic smoothness. Existing AdicSpacesPartIII/IV names are in use upstream, so do not allocate an id here. G2 and the geometric part of G5 are proposed additions, not claims about current R2/RZ.2.",
       "proposal": "Adic Spaces, next Part: valuation models and altered local uniformization. Targets: The complete model/quotient zigzag of U Theorem 1.4; Reduced power-bounded base change used by SW 10.5.9; BH 2.21, 2.25 and 2.29 generic smoothness inputs. Boundary: Propose the next available Adic Spaces continuation for valuation-base reduced models, relative Reduced Fibre, refined Elkik algebraization, finite formal quotients and altered local uniformization, plus proper generic smoothness. Existing AdicSpacesPartIII/IV names are in use upstream, so do not allocate an id here. G2 and the geometric part of G5 are proposed additions, not claims about current R2/RZ.2."
