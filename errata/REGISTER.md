@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-9650 mistakes recorded on the board: 5674 misprints, 2516 errors, 1076 gaps, 384 unparsed bullets.
+9654 mistakes recorded on the board: 5676 misprints, 2517 errors, 1077 gaps, 384 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -4001,6 +4001,11 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Cho–Yamauchi, v2
 
 - **Error** at §3.1, p. 12: the source says a point over an arbitrary base algebra is primitive as soon as one maximal minor is a unit; it should be that the maximal minors generate the unit ideal, i.e. a split injection, since one unit minor suffices only over local rings; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## CianchiFuscoMaggiPratelli2011
+
+- **Misprint** at Lemma 4.4, equation (4.8), printed page 12: the source says the section weights `e^{−y²/2}` of `H⁰_γ` make the right side `√(2π)` times the derivative of `v_E = γ_1(E_z)` (a tilted half-plane gives `√(2π) b φ(a + bz)` against `v_E′ = b φ(a + bz)`); it should be carry `(2π)^{−1/2}`, or `v_E` should be weighted by `e^{−y²/2} dy`; affects the proof; (the same convention must be read through (4.6), (4.10) and (4.14)). <!-- tauceti-roadmap-review {"agent": "claude", "head": "9be68dd34fa60e3f38584a9e68e40301612408be", "job": "REV-DESIGN-GaussianIsoperimetryAndClusters", "model": "fable", "worker": "chris-x19"} -->. Found by GaussianIsoperimetryAndClusters (#6596 at 9be68dd, 2026-11-05, claude fable).
+- **Misprint** at equation (2.5), printed page 5: the source says the supremum formula integrates `div φ − x·φ` against the probability measure `γ_n`, which is `(2π)^{−1/2}` times the perimeter `H^{n−1}_γ(∂^M E)` of (2.4); it should be carry the factor `√(2π)`; affects nothing; (only lower semicontinuity is drawn from it). Found by GaussianIsoperimetryAndClusters (#6596 at 9be68dd, 2026-11-05, claude fable).
 
 ## CiF4
 
@@ -9087,6 +9092,11 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at §2, preprint p. 5 (Milley2009 line 202): the source says the 1,278 candidate fillings have one-cusped parent manifolds; it should be two-cusped parents, producing one-cusped fillings, as the construction on page 4 specifies; affects nothing. Found by KleinianGroups (ERRATA-KleinianGroups at 18e52e8, 2026-10-24, codex gpt-6-astra).
 - **Error** at §3, preprint p. 8 (Milley2009 line 371): the source says every Lobachevsky-function value equals a value at an argument in [0,π/2]; it should be a representative in [−π/2,π/2], or a signed value on [0,π/2]; L(−π/6)<0 whereas L is nonnegative on [0,π/2]; affects the proof. Found by KleinianGroups (ERRATA-KleinianGroups at 18e52e8, 2026-10-24, codex gpt-6-astra).
 - **Misprint** at §4, preprint p. 9 (Milley2009 line 426): the source says elliptic elements are characterized by real lift traces in the closed interval [−2,2]; it should be the open interval (−2,2); a nonidentity unipotent matrix has trace 2 and is parabolic; affects nothing. Found by KleinianGroups (ERRATA-KleinianGroups at 18e52e8, 2026-10-24, codex gpt-6-astra).
+
+## MilmanNeeman2022
+
+- **Gap** at Lemma 2.1, printed page 11 (arXiv v3): the source says the injectivity step asserts that for `y ≠ x` some open cell `x + Ω^m_i` contains `y`, which fails when `y − x` has a tied maximal coordinate; it should be take `i` with `(y − x)_i` maximal, for which `y + Ω^m_i ⊊ x + Ω^m_i` still holds; affects the proof. Found by GaussianIsoperimetryAndClusters (#6596 at 9be68dd, 2026-11-05, claude fable).
+- **Error** at equation (3.6), printed page 18: the source says claims `∂*Ω_i` equals the union of the interfaces `Σ_ij` as sets, via equality of supports; it should be assert equality of closures (a cluster of half-annuli gives a point of `∂*Ω_1` on no interface); affects nothing; (used only up to null sets). Found by GaussianIsoperimetryAndClusters (#6596 at 9be68dd, 2026-11-05, claude fable).
 
 ## milne
 
