@@ -165,7 +165,7 @@ authors = "Charles W. Curtis, Nagayoshi Iwahori and Robert Kilmoyer"
 title = "Hecke algebras and characters of parabolic type of finite groups with (B,N)-pairs"
 year = 1971
 locator_scheme = "section"
-locator = "Lemma 4.3 and Theorem 4.4, example (b), PDF p. 15; extracted line 502"
+locator = "Lemma 4.3 and Theorem 4.4, printed p. 94, PDF p. 15; Example 4.6(b), printed p. 95, PDF p. 16; extracted lines 502, 514 and 534–556"
 url = "https://www.numdam.org/item/PMIHES_1971__40__81_0.pdf"
 fetched_from = "https://www.numdam.org/item/PMIHES_1971__40__81_0.pdf"
 fetched_at = "2026-10-25T11:48:28Z"
@@ -468,3 +468,54 @@ locator = "main theorem"
 licence_class = "none"
 status = "waived"
 cited_for = ["2.6"]
+
+[[source]]
+id = "CS18"
+authors = "Kei Yuen Chan, Gordan Savin"
+title = "Iwahori component of the Gelfand–Graev representation"
+year = 2018
+venue = "Mathematische Zeitschrift 288"
+doi = "10.1007/s00209-017-1882-3"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://doi.org/10.1007/s00209-017-1882-3"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["5.28"]
+
+[[source]]
+id = "MP21"
+authors = "Manish Mishra, Basudev Pattanayak"
+title = "Principal series component of Gelfand-Graev representation"
+year = 2021
+arxiv = "2010.13341v3"
+locator_scheme = "theorem"
+locator = "Theorem 3 with χ = 1, printed p. 6, and its depth-zero proof §6.2, printed p. 7; extracted lines 229 and 280"
+url = "https://arxiv.org/abs/2010.13341v3"
+fetched_from = "https://arxiv.org/pdf/2010.13341v3"
+fetched_at = "2026-11-05T02:54:16Z"
+sha256 = "c506ebd046835e48d0f230a15937e6473b190f550235046984cb946d15895e37"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v3"
+cited_for = ["5.28"]
+
+[[source]]
+id = "Luo26"
+authors = "Yi Luo"
+title = "Iwahori component of the Gelfand--Graev representation for reductive groups"
+year = 2026
+arxiv = "2607.17163v2"
+locator_scheme = "theorem"
+locator = "Theorem (Corollary 5.1) and Corollary 5.2, printed pp. 1–2; extracted lines 32 and 77"
+url = "https://arxiv.org/abs/2607.17163v2"
+fetched_from = "https://arxiv.org/pdf/2607.17163v2"
+fetched_at = "2026-11-05T02:55:40Z"
+sha256 = "9d49dd9dee72475dadd1de3ffb92256a97292307f2f61c5d556ea75148299775"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v2"
+cited_for = ["5.28"]

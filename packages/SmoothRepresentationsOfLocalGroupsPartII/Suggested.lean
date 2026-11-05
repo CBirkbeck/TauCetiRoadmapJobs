@@ -1,6 +1,8 @@
-import Mathlib
-import TauCeti.Analysis.PositiveDefinite.Kernel.Kolmogorov
-import TauCeti.RepresentationTheory.Continuous.Unitary.Basic
+module
+
+public import Mathlib
+public import TauCeti.Analysis.PositiveDefinite.Kernel.Kolmogorov
+public import TauCeti.RepresentationTheory.Continuous.Unitary.Basic
 
 /-!
 # Smooth representations of local groups, Part II: target signatures
@@ -27,6 +29,8 @@ central-point unitarity, complementary-series reduction and the extraneous-point
 enhanced Springer parameters and the spherical/graded-Hecke dictionary. The E8 extra-region
 exclusion belongs to that dictionary; a theorem about four unrelated scalars would not state it.
 -/
+
+@[expose] public section
 
 namespace TauCetiRoadmap.SmoothRepresentationsOfLocalGroupsPartII
 
@@ -75,7 +79,7 @@ theorem exists_gnsRep {G : Type u} [Group G] [TopologicalSpace G]
     [IsTopologicalGroup G] (φ : G → ℂ) (hcont : Continuous φ)
     (hφ : IsPositiveType φ) :
     ∃ π : ContRepresentation ℂ G (Matrix.PosSemidef.KolmogorovSpace hφ),
-      TauCeti.ContRepresentation.IsUnitary π ∧ IsStronglyContinuous π ∧
+      ContRepresentation.IsUnitary π ∧ IsStronglyContinuous π ∧
       ∀ g a : G, π g (Matrix.PosSemidef.kolmogorovFeature hφ a) =
         Matrix.PosSemidef.kolmogorovFeature hφ (g * a) := by
   sorry
@@ -87,7 +91,7 @@ theorem mem_extremePoints_positiveTypeOne_iff {G : Type u} [Group G]
     [TopologicalSpace G] [IsTopologicalGroup G] (φ : G → ℂ)
     (hcont : Continuous φ) (hφ : IsPositiveType φ) (hnorm : φ 1 = 1)
     (π : ContRepresentation ℂ G (Matrix.PosSemidef.KolmogorovSpace hφ))
-    (hunitary : TauCeti.ContRepresentation.IsUnitary π)
+    (hunitary : ContRepresentation.IsUnitary π)
     (hstrong : IsStronglyContinuous π)
     (htranslation : ∀ g a : G, π g (Matrix.PosSemidef.kolmogorovFeature hφ a) =
       Matrix.PosSemidef.kolmogorovFeature hφ (g * a)) :
@@ -165,7 +169,7 @@ theorem exists_coeff_approx_of_weaklyContainedIn
     {H : Type v} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
     {H' : Type w} [NormedAddCommGroup H'] [InnerProductSpace ℂ H'] [CompleteSpace H']
     (σ : ContRepresentation ℂ G H) (π : ContRepresentation ℂ G H')
-    (hσu : TauCeti.ContRepresentation.IsUnitary σ) (hπu : TauCeti.ContRepresentation.IsUnitary π)
+    (hσu : ContRepresentation.IsUnitary σ) (hπu : ContRepresentation.IsUnitary π)
     (hσc : IsStronglyContinuous σ) (hπc : IsStronglyContinuous π)
     (hirr : IsTopologicallyIrreducible σ) (hweak : WeaklyContainedIn σ π)
     (v : H) (hv : ‖v‖ = 1) (Q : Set G) (hQ : IsCompact Q) (ε : ℝ) (hε : 0 < ε) :
@@ -182,8 +186,8 @@ theorem exists_coeff_approx_of_weaklyContainedInFamily
     {ι : Type w'} {H' : ι → Type w} [∀ i, NormedAddCommGroup (H' i)]
     [∀ i, InnerProductSpace ℂ (H' i)] [∀ i, CompleteSpace (H' i)]
     (σ : ContRepresentation ℂ G H) (π : ∀ i, ContRepresentation ℂ G (H' i))
-    (hσu : TauCeti.ContRepresentation.IsUnitary σ)
-    (hπu : ∀ i, TauCeti.ContRepresentation.IsUnitary (π i))
+    (hσu : ContRepresentation.IsUnitary σ)
+    (hπu : ∀ i, ContRepresentation.IsUnitary (π i))
     (hσc : IsStronglyContinuous σ) (hπc : ∀ i, IsStronglyContinuous (π i))
     (hirr : IsTopologicallyIrreducible σ) (hweak : WeaklyContainedInFamily σ π)
     (v : H) (hv : ‖v‖ = 1) (Q : Set G) (hQ : IsCompact Q) (ε : ℝ) (hε : 0 < ε) :
