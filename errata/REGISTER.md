@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-9633 mistakes recorded on the board: 5669 misprints, 2511 errors, 1070 gaps, 383 unparsed bullets.
+9644 mistakes recorded on the board: 5673 misprints, 2513 errors, 1074 gaps, 384 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -391,6 +391,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Unparsed** (PadicFamiliesPartII, #2279 at a93b409, 2026-11-05): Error** in BPS at Lemma 4.4.3, HAL printed page 24: the proof calls the product of the quotient coordinates from the k-tuple space to the k-fold product of the Shimura variety finite étale; for k above one source and target have different dimensions, and only the single coordinate maps are finite étale; affects the proof.
 - **Unparsed** (PadicFamiliesPartII, #2279 at a93b409, 2026-11-05): Gap** in BCGP21 at Proposition 4.6.19, proof, printed pages 113–114: the displayed short exact sequence of quotients by sums of powers of partial Hasse invariants is not exact when two or more places are involved (lengths n² against (n−1)²+1); the dévissage must run one exponent at a time; affects the proof.
 - **Unparsed** (PadicFamiliesPartII, #2279 at a93b409, 2026-11-05): Gap** in BCGP21 at Theorem 6.6.4, proof, printed page 167: the two dimension defects are compared for the full overconvergent cohomology while Proposition 6.6.1 bounds the restriction from the multiplicative-locus complex; the argument closes with the defects of that restriction map; affects the proof.
+- **Unparsed** (BallQuotientsAndComplexHyperbolicLattices, #6540 at 541ded3, 2026-11-05): Misprint** in MilneSVI at Remark 3.13, line 1727 and line 1734 (printed p. 39): two consecutive items are both labelled (c); the second should be (d); affects nothing. <!-- tauceti-roadmap-review {"agent": "claude", "head": "541ded3b6d5fa678869c2ba0cf583aa9690bff56", "job": "REV-DESIGN-BallQuotientsAndComplexHyperbolicLattices", "model": "fable", "worker": "chris-x9"} -->
 
 ## A
 
@@ -2737,6 +2738,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at Lemma 3.3 and following discussion, p. 168 (Browder line 440; Browder line 468): the source says δ maps the sphere into the unsuspended Thom space; it should be amended to use ΣᵏT(ξ), matching the displayed induced cohomology map and the construction; affects a stated result. Found by HomotopySpheres (ERRATA-HomotopySpheres at fb7c47e, 2026-10-23, codex gpt-6-astra).
 - **Error** at Lemma 3.3 proof, p. 168 (Browder line 458): the source says any two maps inducing a top mod-2 cohomology isomorphism differ by a map through the bottom sphere; it should be amended to allow an odd multiple rδ before adding i*ζ; δ′=3δ already contradicts the printed integral-degree assertion; affects the proof. Found by HomotopySpheres (ERRATA-HomotopySpheres at fb7c47e, 2026-10-23, codex gpt-6-astra).
 - **Misprint** at Theorem 3.2 proof, p. 167 (Browder line 429): the source says the composite of the k-fold suspended collapse and projection has codomain Sᵠ; it should be amended to give the composite codomain Sᵠ⁺ᵏ; affects the proof. Found by HomotopySpheres (ERRATA-HomotopySpheres at fb7c47e, 2026-10-23, codex gpt-6-astra).
+
+## brown2006
+
+- **Misprint** at Proposition 3.5.3, proof (arXiv v2 line 1285, printed page 29): the source says the projections `P_i` in the bicommutant `π_γ(A)''`; it should be the commutant `π_γ(A)'`, as Lemma 3.5.2 supplies them (and as the compression argument needs); affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "3e331041a4f8316e913ca0a55b01dc3dfdef3b5d", "job": "REV-DESIGN-AmenableTracesOnCStarAlgebras", "model": "fable", "worker": "chris-x18"} -->. Found by AmenableTracesOnCStarAlgebras (#6537 at 3e33104, 2026-11-05, claude fable).
 
 ## Bruinier–Funke, On two geometric theta lifts, arXiv math/0212286v4
 
@@ -6067,6 +6072,13 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at §2, p. 4 (GORSP line 115): the source says Λ_i* equals πΛ_(2r−1) for every indicated i; it should be πΛ_(2r−i); affects a stated result. Found by GeometricSatakeAndFusionPartII (#1177 at 60448fc, 2026-10-27, codex gpt-6-astra).
 
+## gpt2023
+
+- **Gap** at Theorem 1, line 84–89 (p. 3): the source says `F` is a real function and `φ ∈ C²`; its proof at line 443 assumes `F` smooth; it should be the smoothness assumed or add the approximation argument; affects a stated result. Found by ComplexHessianEquations (#6536 at ab4bd34, 2026-11-05, claude fable).
+- **Misprint** at Theorem 5, line 948–952 (p. 20): the source says the constant depends only on `n, k, q, ω_X, χ, ‖e^{nF_t}‖_{L^q}` and `c_t^n/V_t`; it should be also list the structural constant `γ`, through which Theorem 2 enters; affects a stated result; <!-- tauceti-roadmap-review {"agent": "claude", "head": "ab4bd342e7249697e7a7b3ae02d48a650f423698", "job": "REV-DESIGN-ComplexHessianEquations", "model": "fable", "worker": "chris-x17"} -->. Found by ComplexHessianEquations (#6536 at ab4bd34, 2026-11-05, claude fable).
+- **Gap** at the proof of Lemma 1, line 217–218 (arXiv v1, p. 6): the source says the auxiliary equation (2.3) has a unique smooth solution by Yau's theorem although its right-hand side `τ_k(−φ_t − s)·e^{nF_t}` is only as regular as the `C²` solution `φ_t`; it should be approximate the right-hand side by smooth positive functions and pass to the limit, or cite an existence theorem for `C^{2}` data; affects the proof. Found by ComplexHessianEquations (#6536 at ab4bd34, 2026-11-05, claude fable).
+- **Gap** at the proof of Theorem 2, line 407 (p. 9): the source says the sublevel function `s ↦ (c_t^n/V_t)∫_{{φ_t ≤ −s}} e^{nF_t}` is clearly continuous; it is only left-continuous when a level set of `φ_t` has positive measure, and Lemma 2 needs right-continuity; it should be use the strict sublevel sets, on which `A_s` and the Hölder step are unchanged; affects the proof. Found by ComplexHessianEquations (#6536 at ab4bd34, 2026-11-05, claude fable).
+
 ## Graham–Lehrer-survey
 
 - **Error** at Theorem 3.11(i), equation (3.12), printed p.11 (Graham–Lehrer-survey line 478): the source says every cell-module endomorphism space has dimension one; it should be restrict to nonzero-head labels or handle the exceptions separately: at q=z=i, End(W₀,ᵢ(2)) contains the identity and independent rotation; affects a stated result. Found by TemperleyLiebOperatorAlgebras (ERRATA-TemperleyLiebOperatorAlgebras at cb75c58, 2026-10-24, codex gpt-6-astra).
@@ -9190,6 +9202,13 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at §3.2 before (3.4), printed p.7, MODELS line 314: the source says the lower-left block has kl rows and k(c−l) columns; it should be k(c−l) rows and kl columns; affects nothing. Found by AutomorphicLFunctionsAndLocalFactorsPartII (#1023 at 40f55c8, 2026-10-27, codex gpt-6-astra).
 - **Misprint** at §3.2, before (3.4), printed p.7, MODELS line 314: the source says the lower-left block has kl rows and k(c−l) columns; it should be k(c−l) rows and kl columns; affects nothing. Found by AutomorphicLFunctionsAndLocalFactorsPartII (#1023 at 389ebdc, 2026-10-26, codex gpt-6-astra).
 
+## Mok2012
+
+- **Gap** at Theorem 1, line 476 to line 478 (printed p. 11): the source says the source assumes only that Γ is a torsion-free lattice; the construction uses Γ_b = Γ ∩ W_b (line 374), which needs the cusp stabilisers unipotent, and torsion-free alone does not give that (a screw-parabolic m·T_t with m of finite order has infinite order); it should be assume unipotent cusp stabilisers, attained after passing to a subgroup of finite index, as BaldiUllmo2023 line 523 to line 524 does; affects a stated result; (the hypotheses of Theorem 1). Found by BallQuotientsAndComplexHyperbolicLattices (#6540 at 541ded3, 2026-11-05, claude fable).
+- **Misprint** at line 604 (printed p. 14): the source says E = K_{X^M} ⊗ [D]^{−1}; it should be K_{X^M} ⊗ [D], as in the Main Theorem (line 550) and as the simple poles of ν along D (line 606) require; affects nothing. Found by BallQuotientsAndComplexHyperbolicLattices (#6540 at 541ded3, 2026-11-05, claude fable).
+- **Misprint** at §1.1 equation (1), line 144 (printed p. 4): the source says the dot product a′·z′ is written as the bilinear sum of products; it should be the sum with the first factor conjugated, as the preservation of Im zₙ − ‖z′‖² and the commutator formula (12) at line 450 require; affects nothing. Found by BallQuotientsAndComplexHyperbolicLattices (#6540 at 541ded3, 2026-11-05, claude fable).
+- **Error** at §1.3 structure (II), line 373 to line 377, and equation (6), line 175 (printed pp. 5 and 9): the source says every element of Γ_b over a′ ∈ Λ_b has vertical component a multiple of τ, and the multiplier (6) carries no constant factor; it should be a coset t_{a′} + τℤ with a unitary factor e^{2πi t_{a′}/τ} in (6) (the derivation at line 404 to line 438 proves only that the image of Γ_b in ℂ^{n−1} is a lattice; for the lattice generated by n_{(λ,0)} and n_{(iλ,0)} the element over (1+i)λ has vertical component −2λ² with τ = 4λ²); affects a stated result; ((II) and (6)); the Main Theorem is unaffected because the factor is unitary. Found by BallQuotientsAndComplexHyperbolicLattices (#6540 at 541ded3, 2026-11-05, claude fable).
+
 ## Montgomery1987
 
 - **Misprint** at §10.2, p. 259 (Montgomery1987 line 772): the source says Algorithm MCF is in Subsection 3.2; it should be Subsection 3.3, p. 248; affects nothing. Found by ECM (ERRATA-ECM at 6c5fb15, 2026-10-24, codex gpt-6-astra).
@@ -11272,6 +11291,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at Lemma 1.5 proof, printed p. 5 (Spencer line 175): the source says the ith closing-site label being at least i characterizes the standard-tableau condition; it should be require at least 2i; otherwise closing sites {2,3} pass the printed test but give a nonstandard two-row tableau; affects the proof. Found by TemperleyLieb (ERRATA-TemperleyLieb at f3fd371, 2026-10-23, codex gpt-6-astra).
 - **Misprint** at equation (1.3), printed p. 5 (Spencer line 182): the source says module duals consist of TLₙ-linear maps M→R; it should be use Hom_R(M,R), with the displayed action twisted by ι; module-linear maps generally form a smaller space and do not define this duality; affects a stated result. Found by TemperleyLieb (ERRATA-TemperleyLieb at f3fd371, 2026-10-23, codex gpt-6-astra).
 - **Misprint** at equation (2.5), printed p. 6 (Spencer line 236): the source says the δ-parameter for the second quantum integer is [ℓ+2]−[ℓ]; it should be use [ℓ+1]−[ℓ−1]=q^ℓ+q^−ℓ; with m=2, ℓ=1 the printed identity incorrectly equates δ and δ²−2; affects a stated result. Found by TemperleyLieb (ERRATA-TemperleyLieb at f3fd371, 2026-10-23, codex gpt-6-astra).
+
+## spruck2005
+
+- **Error** at Proposition 2.7, printed page 290: the source says the Newton inequality `H_{r−1}H_{r+1} ≤ H_r²` on all of `ℝⁿ` is an equality only when all components are equal; it should be restrict the equality clause to `λ ∈ Γ_n` (positive entries), since `λ = (1,0,0)` gives `H_1H_3 = 0 = H_2²` with unequal entries; affects a stated result. Found by ComplexHessianEquations (#6536 at ab4bd34, 2026-11-05, claude fable).
 
 ## SS
 
