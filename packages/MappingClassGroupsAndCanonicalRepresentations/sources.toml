@@ -304,14 +304,14 @@ cited_for = ["5.4"]
 
 [[source]]
 id = "Mor93"
-authors = "D. R. Heath-Brown"
-title = "The size of Selmer groups for the congruent number problem"
+authors = "Shigeyuki Morita"
+title = "The extension of Johnson's homomorphism from the Torelli group to the mapping class group"
 year = 1993
-venue = "Inventiones Mathematicae 111"
-doi = "10.1007/BF01231285"
+venue = "Inventiones Mathematicae 111, 197–224"
+doi = "10.1007/BF01231286"
 locator_scheme = "theorem"
 locator = "the nonzero class in H1(Mod_g, (wedge^3 H)/H), as cited in LL24 Example 10.1.6(1)"
-url = "https://doi.org/10.1007/BF01231285"
+url = "https://doi.org/10.1007/BF01231286"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"

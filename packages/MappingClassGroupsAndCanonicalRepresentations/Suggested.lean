@@ -6,7 +6,8 @@ import Mathlib
 The roadmap is `README.md`; this file is not the roadmap. It states the roadmap's headline
 theorems against the pinned Mathlib, each with `sorry`, together with the few simple definitions
 they need: the standard presentation of the fundamental group of a genus-`g` surface with `n`
-punctures (`surfaceGroup`), its peripheral loops, the algebraic pure mapping class group
+punctures (`surfaceGroup`, the presented surface group of FreeGroupsAndLimitGroups §6.1 in the
+commutator convention `x y x⁻¹ y⁻¹`), its peripheral loops, the algebraic pure mapping class group
 (`pureMappingClassAut`, the automorphisms sending each peripheral loop to a conjugate of itself),
 finiteness of an orbit of conjugacy classes (`HasFiniteConjugacyOrbitUnder`), and, for the
 Putman–Wieland theorem, the stabiliser of a finite quotient and the cohomology of the compactified
@@ -60,7 +61,9 @@ def surfaceRelator (g n : ℕ) : FreeGroup (Fin g ⊕ Fin g ⊕ Fin n) :=
 
 /-- The fundamental group of an oriented genus-`g` surface with `n` punctures, in its standard
 presentation `⟨a₁, b₁, …, a_g, b_g, c₁, …, c_n | ∏ᵢ [aᵢ, bᵢ] ∏ⱼ cⱼ⟩` (Hatcher, §1.2, p. 51;
-Landesman–Litt 2022, proof of Lemma 7.5.1). For `n ≥ 1` it is free of rank `2g + n − 1`. -/
+Landesman–Litt 2022, proof of Lemma 7.5.1). For `n ≥ 1` it is free of rank `2g + n − 1`. It is the
+presented surface group of FreeGroupsAndLimitGroups §6.1, whose commutator is `x⁻¹ y⁻¹ x y`,
+transported along the inversion of the handle generators `aᵢ ↦ aᵢ⁻¹`, `bᵢ ↦ bᵢ⁻¹`. -/
 def surfaceGroup (g n : ℕ) : Type :=
   PresentedGroup ({surfaceRelator g n} : Set (FreeGroup (Fin g ⊕ Fin g ⊕ Fin n)))
 
