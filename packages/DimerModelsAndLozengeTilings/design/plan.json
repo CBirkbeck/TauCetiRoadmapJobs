@@ -255,19 +255,51 @@
     },
     {
      "id": "1.6",
-     "kind": "example",
+     "kind": "definition",
      "name": "rowTiling",
-     "statement": "Frozen tilings M₁, M₂, M₃ (all edges of one direction) and row tilings M_ε={((x,y),1):ε_x=1}∪{((x,y),3):ε_x=0} for ε∈{0,1}^ℤ, which have no type-2 lozenge.",
+     "statement": "Row tilings M_ε={((x,y),1):ε_x=1}∪{((x,y),3):ε_x=0} for ε∈{0,1}^ℤ (column x filled with type-1 lozenges when ε_x=1, with unit squares when ε_x=0), with the shift (σε)_x=ε_{x−1}; the frozen tilings M₁, M₂, M₃ are M_1, the all-direction-2 tiling and M_0.",
      "hypotheses": [],
      "locator": {
       "source": "kenyon2009",
-      "where": "Exercise 13, line 891"
+      "where": "Exercise 13, line 891; gorin2021 lines 4638–4642"
      },
      "prerequisites": [
       "target:1.4"
      ],
-     "api": [],
-     "tests": []
+     "api": [
+      {
+       "name": "rowTiling_isPlaneTiling",
+       "role": "well-definedness",
+       "statement": "M_ε is a plane tiling: W(x,y) contains ((x,y),1) or ((x,y),3) and B(x,y) contains ((x,y+1),1) or ((x,y),3) according as ε_x=1 or 0, and no other edge."
+      },
+      {
+       "name": "rowTiling_noType2_injective",
+       "role": "structure",
+       "statement": "M_ε has no direction-2 edge, hence no type-2 lozenge; ε↦M_ε is injective with ε_x=[((x,0),1)∈M_ε] and continuous for the product topologies."
+      },
+      {
+       "name": "rowTiling_translate",
+       "role": "equivariance",
+       "statement": "τ_{e₂}M_ε=M_ε and τ_{e₁}M_ε=M_{σε}; the constant sequences give M₁ and M₃."
+      }
+     ],
+     "tests": [
+      {
+       "name": "constant_sequences",
+       "kind": "degenerate",
+       "statement": "ε≡1 gives M₁ and ε≡0 gives M₃; no ε gives M₂, whose edges have direction 2."
+      },
+      {
+       "name": "half_line",
+       "kind": "computation",
+       "statement": "ε=1_{[0,∞)}: W(−1,0) contains ((−1,0),3), W(0,0) contains ((0,0),1); τ_{e₁}M_ε=M_{1_{[1,∞)}}≠M_ε while τ_{e₂} fixes M_ε."
+      },
+      {
+       "name": "column_indexing_fails",
+       "kind": "non-example",
+       "statement": "Reading ε along a column, {((x,y),1):ε_y=1}∪{((x,y),3):ε_y=0}, is not a tiling for ε=1_{{0}}: B(x,0) gets neither ((x,1),1) (ε_1=0) nor ((x,0),3) (ε_0=1)."
+      }
+     ]
     }
    ]
   },
@@ -523,10 +555,10 @@
      "id": "2.7",
      "kind": "theorem",
      "name": "boundaryHeight_eq",
-     "statement": "A finite simply connected region has connected boundary graph; if the boundary graph of R is connected, any two tilings of R have equal boundary heights after normalisation at a common boundary vertex.",
+     "statement": "A finite simply connected region has connected boundary graph; if the boundary graph of R is connected and M, M' are tilings of R whose height cochains are exact on R (every tiling when R is simply connected, by 2.6), their height functions agree on ∂R after normalisation at a common boundary vertex, so the boundary height h_R depends only on R.",
      "hypotheses": [
       "R finite and IsSimplyConnectedRegion R (first part)",
-      "boundary graph connected (second part)"
+      "boundary graph connected and the two tilings have exact height cochains on R, e.g. R simply connected (second part)"
      ],
      "locator": {
       "source": "aggarwal2023",
@@ -553,6 +585,11 @@
        "name": "pinch",
        "kind": "degenerate",
        "statement": "W(0) and B(1,1) at a vertex: connected boundary, no boundary height, untileable."
+      },
+      {
+       "name": "pinched_ring",
+       "kind": "non-example",
+       "statement": "R_ring minus W(−e₃), B(−e₃): connected boundary graph (inner triangle joined to the outer boundary at 0 by ((−1,0),1)), unique tiling T∖{((−1,−1),3)} whose cochain sums to −1 round W(0): no height function, so exactness cannot be dropped."
       }
      ]
     },
@@ -857,7 +894,9 @@
       "where": "Section 3.2, lines 1341–1344"
      },
      "prerequisites": [
-      "mathlib:MeasurableSpace.pi"
+      "mathlib:MeasurableSpace.pi",
+      "tauceti:TauCeti.Probability.tailProcess",
+      "tauceti:TauCeti.Probability.tailProcess_eq_iInf_tailFamily"
      ],
      "api": [
       {
@@ -871,16 +910,16 @@
        "statement": "Cylinder events form a ring of sets generating the product σ-algebra."
       },
       {
-       "name": "tail_eq_limsup",
+       "name": "tail_eq_tailProcess",
        "role": "compatibility",
-       "statement": "𝓣 is the limsup along the cofinite filter of the coordinate σ-algebras."
+       "statement": "For I infinite (forced by properness unless I=∅) and any enumeration e:ℕ≃I, 𝓣 = TauCeti.Probability.tailProcess (fun k ω => ω (e k)), by tailProcess_eq_iInf_tailFamily and cofinality of the sets e([0,n)) among finite Λ; this is the limsup-atTop form Mathlib's measure_zero_or_one_of_measurableSet_limsup_atTop consumes, independent of e."
       }
      ],
      "tests": [
       {
        "name": "infinitely_many_ones",
        "kind": "computation",
-       "statement": "On {0,1}^ℤ the event 'infinitely many ones' is tail; 'ω(0)=1' is not."
+       "statement": "On {0,1}^ℤ the event 'infinitely many ones' lies in 𝓣 and in tailProcess along any enumeration of ℤ; 'ω(0)=1' lies in neither."
       },
       {
        "name": "finite_index",
@@ -946,7 +985,7 @@
       "target:4.1",
       "target:4.2",
       "mathlib:MeasureTheory.Measure.infinitePi",
-      "mathlib:ProbabilityTheory.measure_zero_or_one_of_measurableSet_limsup",
+      "mathlib:ProbabilityTheory.measure_zero_or_one_of_measurableSet_limsup_atTop",
       "mathlib:ErgodicSMul"
      ],
      "api": [],
@@ -1398,6 +1437,7 @@
       "where": "Theorem 9.5.1, lines 6195–6198"
      },
      "prerequisites": [
+      "target:1.6",
       "target:2.5",
       "target:4.3",
       "target:5.3",
@@ -1437,7 +1477,23 @@
       "target:6.1"
      ],
      "api": [],
-     "tests": []
+     "tests": [
+      {
+       "name": "nu3_in_fibre",
+       "kind": "computation",
+       "statement": "ν₃∈𝒢_inv (5.4) with slope (1/3,1/3); the invariant event M=M₁ has measure 1/3."
+      },
+      {
+       "name": "corner_fibre_point",
+       "kind": "degenerate",
+       "statement": "At a corner the fibre is a point (6.2), hence a face: the phenomenon is specific to non-corner slopes."
+      },
+      {
+       "name": "alternating_row_average",
+       "kind": "computation",
+       "statement": "On t=0, the average of the point masses at M_ε and M_{σε} for the alternating ε is invariant, Gibbs by 6.3(c), of slope (1/2,0) and ergodic by 6.3(e)."
+      }
+     ]
     }
    ]
   },
@@ -2045,7 +2101,7 @@
      "id": "9.7",
      "kind": "theorem",
      "name": "incompleteBetaProcess_exists_unique",
-     "statement": "For ξ∈ℍ with slope (s,t) and w=(sin πs, sin πt, sin π(1−s−t)): det[w₁G_w(v_i−v_j−e₂)]=det[K_ξ(v_i;v_j)]; μ_ξ=μ^w satisfies μ_ξ{v₁,…,v_m∈X(M)}=det[K_ξ(v_i;v_j)]; it is the unique such measure; it is an ergodic translation-invariant Gibbs measure of slope (s,t); along a row its type-1 correlations are det[sin(πs(x_i−x_j))/(π(x_i−x_j))]; a.s. every row has infinitely many type-1 lozenges, and M is a measurable function of X(M) on tilings where no two consecutive rows lack type-1 lozenges.",
+     "statement": "For ξ∈ℍ with slope (s,t) and w=(sin πs, sin πt, sin π(1−s−t)): entrywise w₁G_w(v_i−v_j−e₂)=(−1)^{(x_i−x_j)+(y_i−y_j)}|ξ|^{x_j−x_i}|1−ξ|^{y_i−y_j}K_ξ(v_j;v_i) with |ξ|=w₂/w₃, |1−ξ|=w₁/w₃, i.e. the matrices are conjugate by the diagonal of κ(x,y)=(−1)^{x+y}|ξ|^{−x}|1−ξ|^{y} up to transposition, so det[w₁G_w(v_i−v_j−e₂)]=det[K_ξ(v_i;v_j)]; μ_ξ=μ^w satisfies μ_ξ{v₁,…,v_m∈X(M)}=det[K_ξ(v_i;v_j)]; it is the unique such measure; it is an ergodic translation-invariant Gibbs measure of slope (s,t); along a row its type-1 correlations are det[sin(πs(x_i−x_j))/(π(x_i−x_j))]; a.s. every row has infinitely many type-1 lozenges, and M is a measurable function of X(M) on tilings where no two consecutive rows lack type-1 lozenges.",
      "hypotheses": [
       "ξ in the upper half-plane",
       "v_i pairwise distinct"
@@ -2065,7 +2121,12 @@
       {
        "name": "uniform_pair",
        "kind": "computation",
-       "statement": "ξ=e^{πi/3}: s²−K_ξ(v₁;v₂)K_ξ(v₂;v₁)=2/9−√3/(6π), equal to 9.3; gauge κ(x,y)=(−1)^{x+y}."
+       "statement": "ξ=e^{πi/3}: s²−K_ξ(v₁;v₂)K_ξ(v₂;v₁)=2/9−√3/(6π), equal to 9.3; |ξ|=|1−ξ|=1 there alone, and the factor reduces to κ(x,y)=(−1)^{x+y}."
+      },
+      {
+       "name": "general_slope_factors",
+       "kind": "computation",
+       "statement": "Slope (0.3,0.45): |ξ|≈1.3968, |1−ξ|≈1.1441; w₁G_w(0,−2)/K_ξ((0,1);(0,0))≈−0.8740=−1/|1−ξ|, w₁G_w(−2,−1)/K_ξ((2,0);(0,0))≈1.9511=|ξ|², w₁G_w(−1,−2)/K_ξ((1,1);(0,0))≈1.2209=|ξ|/|1−ξ|; vertical-pair determinants both ≈0.0751, triple (0,0),(1,2),(−1,1) both ≈0.0342."
       },
       {
        "name": "sine_pair",
@@ -2187,7 +2248,23 @@
       "target:10.2"
      ],
      "api": [],
-     "tests": []
+     "tests": [
+      {
+       "name": "abc_hexagon_simply_connected",
+       "kind": "compatibility",
+       "statement": "Aggarwal's A×B×C hexagon is a finite region whose union of faces is a convex hexagon, simply connected by 2.4."
+      },
+      {
+       "name": "abc_hexagon_boundary",
+       "kind": "computation",
+       "statement": "Its boundary graph is a single closed curve, so its boundary height is determined (2.7)."
+      },
+      {
+       "name": "unit_hexagon_case",
+       "kind": "degenerate",
+       "statement": "A=B=C=1 is the unit hexagon R₆ with two tilings."
+      }
+     ]
     }
    ]
   }
