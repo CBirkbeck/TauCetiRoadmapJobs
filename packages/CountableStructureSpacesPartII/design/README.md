@@ -62,10 +62,17 @@ It leaves to named roadmaps, and does not restate:
 
 Universal Borel G-spaces for Polish groups other than S∞, Polish group actions in general,
 countable Borel equivalence relations, hyperfiniteness and the Glimm–Effros dichotomy are not
-part of this roadmap. The Borel completeness of specific algebraic classes (Boolean algebras,
-groups, fields, torsion-free abelian groups), the complete analyticity of Borel complete
-isomorphism relations and the torsion abelian group case of the obstruction are described in the
-closing section as motivation for a future roadmap; nothing below depends on them.
+part of this roadmap. The Borel completeness of specific algebraic classes (Boolean algebras:
+camerlo-gao-boolean Theorem 1, line 405, and the theorem at line 555, through separable Boolean
+spaces and Stone duality; groups: the class-2 nilpotent groups of exponent `p` of mekler-1981 §2;
+fields of a fixed characteristic: friedman-stanley-1989 §3; torsion-free abelian groups:
+paolini-shelah-tfab Main Theorem, lines 169–171), the complete analyticity of Borel complete
+isomorphism relations (paolini-shelah-tfab Fact 1.7, lines 103–106; the classical routes go
+through reduced and divisible abelian `p`-groups or through the Harrison ordering,
+montalban-cst2 Lemma XI.2, lines 8946–8980) and the torsion abelian group case of the obstruction
+(friedman-stanley-1989 §4; hjorth-kechris-1996 §4–§5; it needs Ulm's theorem) belong to a
+roadmap on the Borel completeness of algebraic classes, which consumes `BorelComplete`, Layer 1.3,
+Layer 5 and Layer 6.4; nothing below depends on them.
 
 ## Conventions
 
@@ -136,7 +143,7 @@ Read at the pinned commit.
 - `padicValNat`, `Rat.den`, Mathlib's lexicographic `LinearOrder (List α)`, `List.IsPrefix`,
   `Descriptive.tree` (`Mathlib/SetTheory/Descriptive/Tree.lean`), `Nat.pair`, `Nat.unpair`,
   `Nat.right_le_pair`, `Nat.unpair_right_le`, `Encodable.ofCountable`, `Ordinal.type`,
-  `Ordinal.toType`, `Ordinal.omega0`, `Ordinal.omega`.
+  `Ordinal.ToType`, `Ordinal.omega0`, `Ordinal.omega`.
 
 Mathlib has no Borel reducibility, no topology on `Equiv.Perm ℕ` and no space of structures.
 
@@ -329,7 +336,8 @@ CountableStructureSpaces Layers 0, 1, 4.1 and 6.2 (Checks only); BorelEquivalenc
 For any language and a bijection `e : α ≃ β`, define the relabelling map from
 `StructureSpaceOn L α` to `StructureSpaceOn L β`, sending `c` to the code whose value at
 `⟨R, w⟩` is `c ⟨R, e.symm ∘ w⟩`. This continues the base's transport `encodeVia` from structures
-to codes. API:
+to codes (own construction; the relabelling form of the logic action is becker-kechris-bams
+lines 159–164). API:
 
 - It is a homeomorphism and a measurable equivalence, with inverse the relabelling along
   `e.symm`; relabelling along `e.trans e'` is the composite, and along `Equiv.refl` is the
@@ -410,8 +418,11 @@ value at a graph symbol `G_f` and a tuple `w : Fin (n+1) → ℕ` is whether `F 
 - The functional coding space is Polish, the action is continuous, and its orbits are the
   isomorphism classes of the decoded structures.
 - The graph-code map is continuous, injective and equivariant; its range is the set of codes in
-  which every graph relation is the graph of a total function, a Gδ set that is not closed; the
-  map is a homeomorphism onto its range (the value `F ⟨f, v⟩` is locally constant on the range).
+  which every graph relation is the graph of a total function, a Gδ set (totality of each graph
+  relation is a countable intersection of open conditions, functionality a closed one), which is
+  not closed when `L` has at least one function symbol and is the whole coding space when `L` is
+  relational; the map is a homeomorphism onto its range (the value `F ⟨f, v⟩` is locally constant
+  on the range).
   On its range it agrees with InfinitaryModelExistence's reconstruction: decoding the inverse
   image gives `reconstructStructure` of the graph structure.
 - Two points of the functional space decode to isomorphic structures exactly when their graph
@@ -441,7 +452,8 @@ value at a graph symbol `G_f` and a tuple `w : Fin (n+1) → ℕ` is whether `F 
   codes with the value at `0` equal to `n` converge, as `n → ∞`, to a code with no value at `0`,
   so the range is not closed.
 - For relational `L` the function table is the empty map, and the graph-code map is the base's
-  coding composed with the relabelling of symbols `R ↦ base R`, an equivalence of languages.
+  coding composed with the relabelling of symbols `R ↦ base R`, an equivalence of languages; its
+  range is the whole coding space, which is closed.
 - The models of Mathlib's `Theory.simpleGraph` in the functional space of `Language.graph` are
   exactly `graphClass`; the models of Mathlib's `Theory.fieldOfChar 2` form an invariant Borel
   class containing a code of the countable field `𝔽₂(t)` and no code of `ℚ`.
@@ -498,7 +510,10 @@ montalban-cst1 Theorem VI.27, lines 4572–4659, which uses different gadgets):
 
 For a triangle-free simple graph `H` on a set `V` with a colouring `κ : V → ℕ`, the tagged graph
 has vertex set `V ⊕ Σ x : V, Fin (κ x + 3)`, the edges of `H`, a clique on the `κ x + 3` tag
-vertices of each `x`, and one edge from `x` to its tag vertex `0`. Prove: a vertex of the tagged
+vertices of each `x`, and one edge from `x` to its tag vertex `0`. Prove (own construction;
+gadgets attached to vertices to distinguish the coded vertices, kept apart from the coded
+relation by the lengths of the cycles they create: montalban-cst1 Theorem VI.27,
+lines 4623–4654): a vertex of the tagged
 graph lies in a triangle exactly when it is a tag vertex; the edges between non-tag vertices are
 those of `H`; and for a non-tag vertex `x`, `κ x + 2` is the number of triangle vertices adjacent
 to its unique triangle-vertex neighbour. Hence for triangle-free coloured graphs, the tagged
@@ -636,10 +651,12 @@ increasing order; relabel along a fixed bijection of `List ℚ × ℕ` with ℕ.
 `StructureSpace Language.graph` to `StructureSpace Language.order` (each comparison depends on
 two colours, each a function of finitely many coordinates of `c`), lands in `linearOrderClass`,
 and for `c, d ∈ graphClass` the images are isomorphic exactly when `c` and `d` are. Proof: the
-finite condensation classes of the image (maximal sets any two of whose points bound a finite
-interval) are exactly the final finite parts of the blocks, of size `χ_c(x) + 2`, because the
-order of `List ℚ` is dense and each block begins with a copy of ω; an order isomorphism preserves
-finite intervals, so it induces a colour-preserving order automorphism of `List ℚ`, and 3.2
+condensation classes of the image (maximal sets any two of whose points bound a finite interval)
+are the `ω`-parts of the blocks, which are infinite, and the final finite parts of the blocks, of
+size `χ_c(x) + 2`, because the order of `List ℚ` is dense and each block begins with a copy of ω;
+so the condensation classes that are finite are exactly the final finite parts of the blocks. An
+order isomorphism preserves finite intervals, so it maps finite classes to finite classes of the
+same size, in order, and induces a colour-preserving order automorphism of `List ℚ`, and 3.2
 applies. Conversely a colour-preserving automorphism from 3.2 extends block by block. Hence
 `borelComplete_linearOrderClass : BorelComplete linearOrderClass` (friedman-stanley-1989 §2;
 montalban-cst1 Lemma VI.18, lines 4246–4288, where each labelled point is replaced by a finite
@@ -703,8 +720,9 @@ graphs with exactly one marked vertex is invariant Borel and Borel complete, by 
 reduction from `treeClass` sending an order to its cover graph with the least element marked
 (being a cover is a closed condition on codes, so the map is Borel and not continuous; the order is
 recovered as the relation of lying on the path from the marked vertex, so isomorphism is
-reflected) (friedman-stanley-1989 §2; rooted trees as partial orders: camerlo-gao-boolean
-lines 257–263).
+reflected) (friedman-stanley-1989 §2; the binary case, rooted binary trees as partial orders and
+as subtrees of `2^{<ℕ}`: camerlo-gao-boolean lines 257–263 and 276–281; `treeClass` and the
+finitely or infinitely branching trees of `Descriptive.tree ℕ` are the roadmap's own reading).
 *Needs:* 3.4, Layer 0.1; Mathlib `Descriptive.tree`.
 
 **Checks.**
@@ -749,9 +767,12 @@ standard Borel space (base `polishSpace_perm`). A Borel S∞-space is a type `X`
 
 - `ℕ` with `Equiv.Perm.applyMulAction` is a Borel S∞-space with a single orbit.
 - A standard Borel space with the trivial action is one, and its orbit relation is equality.
-- For a language with uncountably many unary symbols the coding space has cardinality greater
-  than the continuum (base Layer 0), so it is not standard Borel and its logic action is not a
-  Borel S∞-space.
+- For a language with uncountably many unary symbols the coding space is a product of
+  uncountably many copies of `Bool` with the product σ-algebra `MeasurableSpace.pi` (base
+  Layer 0); every set measurable for a product σ-algebra depends on countably many coordinates,
+  so no singleton is measurable, whereas a standard Borel space has measurable singletons; so the
+  space is not standard Borel and its logic action is not a Borel S∞-space. Cardinality alone
+  does not decide this: `2 ^ ℵ₁ = 2 ^ ℵ₀` is consistent with ZFC.
 
 ### 4.2 The universal embedding
 
@@ -834,6 +855,11 @@ function symbols. *Needs:* Layers 0.1, 1.2, 1.3, 2.3, 4.1, 4.2.
 - In (5), the logic action on `StructureSpace L'` recovers (3), and the trivial action on Cantor
   space shows that (5) contains the reducibility of equality on Cantor space.
 
+### Examples
+
+`graphClass`, for which all five characterisations hold; the empty class and the class of codes
+of one unary predicate, for which all five fail.
+
 ### Dependencies
 
 Layers 0–4.
@@ -902,9 +928,13 @@ and infinite, transported by `encodeVia`) are not isomorphic, yet `BFEquiv (1 + 
   makes isomorphism on `K` Borel.
 - `classIso K` is Borel reducible to no equivalence relation with Borel graph on a measurable
   space, since Borelness pulls back along reductions; in particular not to `eZero`.
-- The set of non-isomorphic pairs in `K × K` is not analytic (Suslin,
-  `MeasureTheory.AnalyticSet.measurableSet_of_compl`, with the base's
-  `analyticSet_orbitRel_graph`).
+- The set `{p ∈ K ×ˢ K | ¬ p.1 ≅ p.2}` of non-isomorphic pairs is not an analytic subset of
+  `StructureSpace L × StructureSpace L`: otherwise its complement, the union of the analytic set
+  `iso ∩ (K ×ˢ K)` (base `analyticSet_orbitRel_graph`, with `K ×ˢ K` Borel) and the Borel set
+  `(K ×ˢ K)ᶜ`, would be analytic too, so both would be Borel (Suslin,
+  `MeasureTheory.AnalyticSet.measurableSet_of_compl`), and the preimage of the isomorphic pairs
+  under the measurable inclusion `K × K → StructureSpace L × StructureSpace L` would be measurable
+  for the product of the subtype σ-algebras, against the theorem.
 
 *Needs:* 6.1, Layer 3.3, Layer 0.1; CountableStructureSpaces Layer 0 (`encodeVia`), Layer 1
 (`analyticSet_orbitRel_graph`), Layer 4 (`exists_uniform_bfSeparation`, `scottHeight`,
@@ -996,30 +1026,14 @@ BorelEquivalenceRelations §5.1–§5.4.
 
 ## Downstream consumers
 
-- A roadmap on the Borel completeness of algebraic classes (see the closing section) consumes
-  `BorelComplete`, the functional coding space of Layer 1.3, the characterisations of Layer 5 and
-  the obstruction lemma of Layer 6.4.
+- A roadmap on the Borel completeness of algebraic classes consumes `BorelComplete`, the
+  functional coding space of Layer 1.3, the characterisations of Layer 5 and the obstruction lemma
+  of Layer 6.4.
 - Any roadmap that needs a benchmark for the classification problem of a class of countable
   structures consumes `borelComplete_graphClass`, `borelComplete_linearOrderClass`,
   `borelComplete_treeClass` and Layer 6.
 - A roadmap on universal G-spaces for closed subgroups of S∞ consumes the universal embedding of
   Layer 4.2.
-
-## Motivation for a future roadmap: Borel completeness of algebraic classes
-
-The following theorems use the machinery above but need algebraic theories outside this roadmap:
-countable Boolean algebras are Borel complete (camerlo-gao-boolean Theorem 1, line 405, and the
-theorem at line 555, through separable Boolean spaces built from graphs and Stone duality);
-countable groups are Borel complete (through the class-2 nilpotent groups of exponent `p` of
-mekler-1981 §2); countable fields of a fixed characteristic are Borel complete
-(friedman-stanley-1989 §3); countable torsion-free abelian groups are Borel complete
-(paolini-shelah-tfab Main Theorem, lines 169–171, by a continuous reduction from graphs); the
-isomorphism relation of a Borel complete class is complete analytic, and countable torsion abelian
-groups have complete analytic isomorphism relation without being Borel complete
-(paolini-shelah-tfab Fact 1.7, lines 103–106; friedman-stanley-1989 §4; hjorth-kechris-1996
-§4–§5). The classical routes to complete analyticity go through reduced and divisible abelian
-`p`-groups or through the Harrison ordering of effective descriptive set theory (montalban-cst2
-Lemma XI.2, lines 8946–8980), and the obstruction for torsion groups needs Ulm's theorem.
 
 ## References
 

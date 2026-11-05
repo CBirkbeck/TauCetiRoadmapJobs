@@ -19,7 +19,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
 version_note = "arXiv v6; numbering of the introduction (Definitions 1.2-1.6, Main Theorem, Theorem 1.10) read from the arXiv text, to be checked against the Annals version"
-cited_for = ["0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "1.2", "1.4", "1.6", "2.4", "3.5", "3.8", "5.3", "6.3", "future-roadmap motivation: torsion-free abelian groups"]
+cited_for = ["0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "1.2", "1.4", "1.6", "2.4", "3.5", "3.8", "5.3", "6.3", "Scope and ownership: torsion-free abelian groups"]
 
 [[source]]
 id = "becker-kechris-bams"
@@ -57,7 +57,7 @@ licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-11-04"
 version_note = "AMS open archive (Transactions back issues); the extracted text has run-together words on some lines"
-cited_for = ["0.1", "1.2", "1.3", "1.5", "1.7", "2.5", "3.8", "3.9", "3.12", "3.13", "5.1", "5.2", "5.4", "6.5", "6.6", "future-roadmap motivation: Boolean algebras"]
+cited_for = ["0.1", "1.2", "1.3", "1.5", "1.7", "2.5", "3.8", "3.9", "3.12", "3.13", "5.1", "5.2", "5.4", "6.5", "6.6", "6.7", "Scope and ownership: Boolean algebras"]
 
 [[source]]
 id = "kechris-cdst"
@@ -87,7 +87,7 @@ url = "https://doi.org/10.2307/2274750"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled (Cambridge); the Project Euclid landing page refused the request; cited by its locator without the text. Section and theorem numbers are from memory and must be checked by anyone with legal access"
-cited_for = ["2.2", "2.5", "3.7", "3.11", "3.13", "6.8", "future-roadmap motivation: fields, torsion abelian groups"]
+cited_for = ["2.2", "2.5", "3.7", "3.11", "3.13", "6.8", "Scope and ownership: fields, torsion abelian groups"]
 
 [[source]]
 id = "gao-idst"
@@ -147,7 +147,7 @@ url = "https://doi.org/10.1016/S0168-0072(96)00006-1"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["6.8", "future-roadmap motivation: torsion abelian groups"]
+cited_for = ["6.8", "Scope and ownership: torsion abelian groups"]
 
 [[source]]
 id = "mekler-1981"
@@ -162,7 +162,7 @@ url = "https://doi.org/10.2307/2273227"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text; the section locator is from memory and must be checked by anyone with legal access"
-cited_for = ["future-roadmap motivation: groups"]
+cited_for = ["Scope and ownership: groups"]
 
 [[source]]
 id = "montalban-cst2"
@@ -179,7 +179,7 @@ sha256 = "a1c43f5cc6526ac023e06d1865e6921d3cb698b2a741f3448bc47fe2e82d9ae4"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-05"
-cited_for = ["6.1", "6.2", "6.4", "6.7", "6.9", "future-roadmap motivation: complete analyticity"]
+cited_for = ["6.1", "6.2", "6.4", "6.9", "Scope and ownership: complete analyticity"]
 
 [[source]]
 id = "montalban-cst1"

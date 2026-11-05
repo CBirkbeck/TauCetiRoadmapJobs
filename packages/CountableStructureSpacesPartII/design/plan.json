@@ -428,7 +428,7 @@
      "id": "1.5",
      "kind": "theorem",
      "name": "graphCodeFun_homeomorph",
-     "statement": "The graph-code map from the functional coding space to StructureSpace (graphLanguage L), sending a point to the code of graphExpansion of its decoded structure, is continuous, injective and equivariant; its range is the Gδ, non-closed set of codes whose graph relations are graphs of total functions; it is a homeomorphism onto its range, agreeing there with reconstructStructure; and two points decode to isomorphic structures iff their graph codes are isomorphic.",
+     "statement": "The graph-code map from the functional coding space to StructureSpace (graphLanguage L), sending a point to the code of graphExpansion of its decoded structure, is continuous, injective and equivariant; its range is the Gδ set of codes whose graph relations are graphs of total functions, which is not closed when L has at least one function symbol and is the whole coding space when L is relational; it is a homeomorphism onto its range, agreeing there with reconstructStructure; and two points decode to isomorphic structures iff their graph codes are isomorphic.",
      "hypotheses": [
       "L with countably many function and relation symbols"
      ],
@@ -456,7 +456,7 @@
       {
        "name": "relational_case",
        "kind": "compatibility",
-       "statement": "For relational L the map is the base coding composed with the symbol relabelling R ↦ base R."
+       "statement": "For relational L the map is the base coding composed with the symbol relabelling R ↦ base R, and its range is the whole coding space, which is closed."
       }
      ]
     },
@@ -1046,7 +1046,7 @@
      "hypotheses": [],
      "locator": {
       "source": "camerlo-gao-boolean",
-      "where": "lines 257–263 (rooted trees as partial orders)"
+      "where": "lines 257–263 (rooted binary trees as partial orders, the binary case; the definition of treeClass is the roadmap's own)"
      },
      "prerequisites": [
       "mathlib:FirstOrder.Language.order",
@@ -1165,7 +1165,7 @@
      "hypotheses": [],
      "locator": {
       "source": "camerlo-gao-boolean",
-      "where": "lines 276–281 (rooted trees identified with subtrees of a tree of finite sequences)"
+      "where": "lines 276–281 (rooted binary trees identified with subtrees of 2^{<ℕ}, the binary case)"
      },
      "prerequisites": [
       "target:3.9",
@@ -1268,7 +1268,7 @@
       {
        "name": "uncountable_language",
        "kind": "non-example",
-       "statement": "For uncountably many unary symbols the coding space has cardinality above the continuum, so it is not standard Borel."
+       "statement": "For uncountably many unary symbols the coding space carries the product σ-algebra of uncountably many copies of Bool, in which no singleton is measurable (a measurable set depends on countably many coordinates), while a standard Borel space has measurable singletons; so it is not standard Borel. Cardinality does not decide this, since 2^ℵ₁ = 2^ℵ₀ is consistent with ZFC."
       }
      ]
     },
@@ -1672,7 +1672,7 @@
      "id": "6.4",
      "kind": "theorem",
      "name": "exists_lt_scottHeight_of_borelComplete",
-     "statement": "If K is invariant Borel and BorelComplete K, then for every β < ω₁ some c ∈ K has scottHeight of its decoded structure greater than β; classIso K is Borel reducible to no setoid with Borel graph (in particular not to eZero); the non-isomorphic pairs of K × K form a non-analytic set.",
+     "statement": "If K is invariant Borel and BorelComplete K, then for every β < ω₁ some c ∈ K has scottHeight of its decoded structure greater than β; classIso K is Borel reducible to no setoid with Borel graph (in particular not to eZero); the set {p ∈ K ×ˢ K | ¬ p.1 ≅ p.2} of non-isomorphic pairs is not an analytic subset of StructureSpace L × StructureSpace L.",
      "hypotheses": [
       "L is a relational first-order language ([L.IsRelational]) with countably many relation symbols ([Countable (Σ l, L.Relations l)])",
       "K invariant Borel"
@@ -1770,8 +1770,8 @@
       "L is a relational first-order language ([L.IsRelational]) with countably many relation symbols ([Countable (Σ l, L.Relations l)])"
      ],
      "locator": {
-      "source": "montalban-cst2",
-      "where": "lines 9046–9054 (classes on top have unbounded Scott rank)"
+      "source": "camerlo-gao-boolean",
+      "where": "lines 94–100 (E₀ below a Borel complete relation); BorelEquivalenceRelations §5.4 not_isSmooth_of_borelReducible_eZero"
      },
      "prerequisites": [
       "target:6.6",
@@ -1921,11 +1921,11 @@
  ],
  "consumers": [
   {
-   "roadmap": "a future roadmap on Borel completeness of algebraic classes (Boolean algebras, groups, fields, torsion-free abelian groups, torsion abelian groups)",
+   "roadmap": "a roadmap on the Borel completeness of algebraic classes (Boolean algebras, groups, fields, torsion-free abelian groups, torsion abelian groups)",
    "what": "BorelComplete, the functional coding space, the characterisations and the obstruction lemma"
   },
   {
-   "roadmap": "a future roadmap on universal G-spaces for closed subgroups of S∞",
+   "roadmap": "a roadmap on universal G-spaces for closed subgroups of S∞",
    "what": "the universal embedding of Layer 4"
   }
  ],
