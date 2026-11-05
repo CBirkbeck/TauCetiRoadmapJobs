@@ -1,0 +1,71 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "FieldOfNorms"
+
+[[source]]
+id = "w2004"
+locator_scheme = "theorem"
+locator = "Theorem 2"
+url = "https://www.numdam.org/item/JTNB_2004__16_2_429_0.pdf"
+fetched_from = "https://www.numdam.org/item/JTNB_2004__16_2_429_0.pdf"
+fetched_at = "2026-11-05T22:26:10Z"
+sha256 = "90013ec14c3dfb7dd7270bd79e69b43e42aa59bde44a454c872df5dcf2e662b8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["4.2"]
+
+[[source]]
+id = "abrashkin2010"
+locator_scheme = "theorem"
+locator = "Section 7"
+url = "https://www.numdam.org/item/JTNB_2010__22_1_1_0.pdf"
+fetched_from = "https://www.numdam.org/item/JTNB_2010__22_1_1_0.pdf"
+fetched_at = "2026-11-05T22:26:11Z"
+sha256 = "e45b5a3e151f93cf95f559acbb6e78f2e46314b3f49efada18d3bbe3bd0ae526"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["4.3"]
+
+[[source]]
+id = "keating2009"
+locator_scheme = "theorem"
+locator = "Section 3"
+url = "https://www.numdam.org/item/JTNB_2009__21_3_665_0.pdf"
+fetched_from = "https://www.numdam.org/item/JTNB_2009__21_3_665_0.pdf"
+fetched_at = "2026-11-05T22:26:12Z"
+sha256 = "e95d8e7fe38e6de6c23f86993a3ec335d231cd6e6d230e1019229daf84a7de8e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["4.2"]
+
+[[source]]
+id = "tate1967"
+authors = "J. T. Tate"
+title = "p-Divisible Groups"
+year = 1967
+venue = "Proceedings of a Conference on Local Fields"
+doi = "10.1007/978-3-642-87942-5_12"
+locator_scheme = "theorem"
+locator = "Theorem 2"
+url = "https://doi.org/10.1007/978-3-642-87942-5_12"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["4.0"]
+
+[[source]]
+id = "sen1972"
+authors = "H. L. Montgomery, R. C. Vaughan"
+title = "Exponential sums with multiplicative coefficients"
+year = 1977
+venue = "Inventiones Mathematicae 43"
+doi = "10.1007/BF01390204"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://doi.org/10.1007/BF01390204"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Scope"]
