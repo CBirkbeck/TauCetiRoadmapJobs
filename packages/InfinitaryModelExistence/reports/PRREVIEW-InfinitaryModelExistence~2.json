@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-InfinitaryModelExistence~2",
+    "head": "bf6203ddd9c8da400100e779e063f455affed01d",
+    "pr": 1615,
+    "folder": "InfinitaryModelExistence",
+    "date": "2026-11-05",
+    "findings": 10,
+    "blocking": 1,
+    "notes": "incremental re-review of 109 changed lines since f696fb3: the new first-order omitting types theorem (IsolatesFO, OmitsFOType, exists_countable_model_omitting_fo) elaborated, #check'd, probed with one tactic (not closable) and checked on 8 computed instances; the Marker 2013 notes citations (Theorem 4.27 p. 51, Corollary 4.28 p. 52, condition (*) p. 52, Exercise 4.11 for the first-order corollary) verified in the cached author's copy, two page spans off (new R03); PCMem/pcSeparation docstring claims checked against Exercise 3.5, Lemma 4.24, Corollary 4.25, Theorem 4.26 of the notes; ownership of first-order omitting types searched over main and 448 open heads (consumers only); pins Tau Ceti 358314d and Mathlib f6090c7 opened for IsSatisfiable, ModelsBoundedFormula, exs, ModelType, no omitting-types declaration; depcheck 233 roadmaps, 2133 edges, 0 problems; direct elaboration exit 0 with 35 sorry warnings; PR diff against main confined to the folder. Gate FAIL: set_option=1 tex=1 residue=2 imports=1 readme-ids-missing=15 build=2 (module-system advisories). Previous findings: R02 repaired, R05 and R06 partly, the other six not repaired and re-raised (R01 blocking, inherited from main's copy of the folder); one new P3 for the unnamed IsolatesFO."
+  }
+}
