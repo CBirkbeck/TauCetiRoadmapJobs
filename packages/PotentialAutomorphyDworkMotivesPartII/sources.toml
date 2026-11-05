@@ -275,11 +275,11 @@ year = 1990
 venue = "Annals of Mathematics Studies 124, Princeton University Press"
 doi = "10.1515/9781400882434"
 locator_scheme = "theorem"
-locator = "Chapter 8, Theorems 8.4.2 and 8.12.2"
+locator = "Chapter 8, Theorem 8.4.11 and Theorem 8.12.2(1a)"
 url = "https://doi.org/10.1515/9781400882434"
 licence_class = "none"
 status = "uncertified"
-version_note = "paywalled book; cited by its locator, with the statements as applied in BCGNT25 Theorem 4.2.1 and BLGHT11 Lemma 4.3"
+version_note = "paywalled book; cited by its locator, with the statements as applied in BCGNT25 Theorem 4.2.1 (Theorem 8.12.2(1a), the determinant) and BLGHT11 Lemma 4.3 (Theorem 8.4.11, local monodromy); the theorem numbers are those the citing papers give"
 cited_for = ["Layer 3"]
 
 [[source]]
