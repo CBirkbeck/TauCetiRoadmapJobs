@@ -1,0 +1,15 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ShimuraVarieties"
+
+[[source]]
+id = "deligne82"
+locator_scheme = "theorem"
+locator = "Proposition 3.4"
+url = "https://www.jmilne.org/math/Documents/Deligne82.pdf"
+fetched_from = "https://www.jmilne.org/math/Documents/Deligne82.pdf"
+fetched_at = "2026-11-05T01:10:34Z"
+sha256 = "827e3571c8049fc5d3aed8dfad912fee39a2f5dbf7341726c38235f035d32139"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["7.0i.1"]
