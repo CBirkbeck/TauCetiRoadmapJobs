@@ -2336,7 +2336,7 @@
     },
     {
       "slug": "split-gln-harish-chandra",
-      "needs": "The Harish-Chandra isomorphism Z(U(gl_{n,Σ_K}))≅U(t_{Σ_K})^{S_n^{Σ_K}} (dot action) for the split reductive ∏_σ gl_n over a finite, not algebraically closed, extension E/ℚ_p, normalised so that weight μ corresponds to the infinitesimal character of L(μ−θ), with the centre acting on Verma modules and on each L(μ) by its infinitesimal character.",
+      "needs": "The Harish-Chandra isomorphism Z(U(gl_{n,Σ_K}))≅U(t_{Σ_K})^{S_n^{Σ_K}} for the split reductive ∏_σ gl_n over a finite, not algebraically closed, extension E/ℚ_p, with S_n^{Σ_K} acting by the ordinary permutation action (the dot action transported along μ↦μ−θ: ρ−θ=((n−1)/2)(1,…,1) is central, so the dot-invariants in μ−θ are the ordinary invariants in μ), normalised so that weight μ corresponds to the infinitesimal character of L(μ−θ), with the centre acting on Verma modules and on each L(μ) by its infinitesimal character.",
       "supplier": "LieHighestWeight",
       "section": "Layer 9: reductive Lie algebras and gl_n"
     }

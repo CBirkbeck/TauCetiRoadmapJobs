@@ -165,9 +165,15 @@ Killing-semisimple algebra.
 What LieHighestWeight must provide (gap:split-gln-harish-chandra): the Harish-Chandra isomorphism
 `Z(U(gl_{n,Σ_K})) ≅ U(t_{Σ_K})^{W_{n,K}}` for the split reductive Lie algebra
 `gl_{n,Σ_K}` = `∏_{σ∈Σ_K}` gl_n over a finite (not algebraically closed) extension E of ℚ_p, with
-`W_{n,K}` = `S_n^{Σ_K}` acting by the dot action, normalised so that a weight μ corresponds to the
-infinitesimal character `ξ_{μ−θ}` of L(μ − θ), together with the fact that the centre acts on every
-Verma module, and on every finite-dimensional irreducible L(μ), by its infinitesimal character.
+`W_{n,K}` = `S_n^{Σ_K}` acting by the ordinary permutation action on `t_{Σ_K}`, normalised so that a
+weight μ corresponds to the infinitesimal character `ξ_{μ−θ}` of L(μ − θ) (the highest-weight module
+for the upper-triangular Borel), together with the fact that the centre acts on every Verma module,
+and on every finite-dimensional irreducible L(μ), by its infinitesimal character. The ordinary action
+is the dot action w·ν = w(ν + ρ) − ρ transported along μ ↦ μ − θ: `ξ_{μ−θ}` is evaluation at μ − θ + ρ
+under the ρ-shifted isomorphism, and since ρ − θ = ((n−1)/2)(1,…,1) at each σ is fixed by every
+permutation, `ξ_{μ−θ}` = `ξ_{μ′−θ}` exactly when μ′ ∈ `S_n^{Σ_K}`μ; the dot-invariants in the variable
+μ − θ are the ordinary invariants in μ, and the invariant ring is the symmetric polynomials in each
+σ-block, as in §2.6.
 
 ### From TauCetiRoadmap.LocallyAnalyticRepresentationsOfLocalGroups
 
@@ -224,18 +230,20 @@ These sections assume n ≥ 2; the rank-one case they reduce to is §10.1.
 
 ### From TauCetiRoadmap.PhiGammaModulesAndIwasawaCohomology
 
-§1.0 (`fieldEtaleRealization`, the equivalence between E-representations of G_K and étale Robba
-modules), §1.2 (`RelativePhiGammaModule`, its finite-local-algebra specialisation
-`CoefficientRobbaModule` and `CoefficientRobbaModule.etaleEquivalence`), §§3.4a and 3.6 (Herr
-cohomology and its Galois comparison, exported as `HerrCohomology`), §7.1 (`characterModule`, the
-rank-one modules `R_{K,E}(δ)`, with ε = `N_{K/ℚ_p}|N_{K/ℚ_p}|` the Tate character), §7.3 (weights of
-characters over Artinian coefficients, locally algebraic characters), §7.4
-(`characterModule_deRham_iff_locallyAlgebraic`), §7.5 (triangulations).
+§1.0 (the étale realisation of E-representations of G_K as étale Robba modules, with coefficient
+algebras), §1.2 (relative (φ,Γ_K)-modules over a finite local E-algebra A, the coefficient Robba
+modules and their étale equivalence), §§3.4a and 3.6 (the Herr complex and its comparison with
+Galois cohomology), §7.1 (the rank-one modules `R_{K,E}(δ)`, written `R_{E,K}(δ)` there, with
+ε = `N_{K/ℚ_p}|N_{K/ℚ_p}|` the Tate character), §7.3 (weights of characters over Artinian
+coefficients, locally algebraic characters), §7.4 (a rank-one module `R_{K,E}(δ)` is de Rham exactly
+when δ is locally algebraic), §7.5 (triangulations).
 
 ### From TauCetiRoadmap.PadicHodgeTheory
 
-§4.5 (`BPair` over a finite coefficient field, its exact tensor equivalence with Robba modules, the
-labelled positive de Rham lattices `WdRPlus`), §5.2 (`bergerModification`).
+§4.5 (the Galois B-pair of a Robba module over a finite coefficient field, imported there from
+PhiGammaModulesAndIwasawaCohomology §1.6 with its exact tensor equivalence with Robba modules, and
+its labelled positive de Rham lattices), §5.2 (Berger's modification of a filtered module with finite
+descent).
 
 What PadicHodgeTheory must provide (gap:embedding-selective-modification): for a de Rham
 (φ,Γ)-module D over `R_{K,E}` with labelled Hodge–Tate weights h and an embedding σ ∈ Σ_K, the module
@@ -652,8 +660,8 @@ Define the weight-sum tuple |λ| ∈ `ℤ^{Σ_K}` by |λ|_σ = Σ_i `λ_{i,σ}` 
 of A (the factor |·|_K^N is the central character of η) and that det D ≅ `R_{K,E}(χ_D ε^{−N})`, the
 exponent of `χ_Dε^{−N}` at σ being |λ|_σ − N = Σ_i `h_{i,σ}` (DING25 §2.1, p. 9; §3.1.2, p. 34; the
 paragraph before Proposition 3.26, p. 51, where the exponent is printed as a single sum over i and
-σ, see Source corrections). *Needs:* PhiGammaModulesAndIwasawaCohomology §7.1 (`characterModule`,
-the Tate character ε); TriangulineVarietyAndItsLocalModel §9.1 (the triangulation of D with graded parameters `φ_{w^{−1}(i)}z^{h_i}`);
+σ, see Source corrections). *Needs:* PhiGammaModulesAndIwasawaCohomology §7.1 (the rank-one modules
+`R_{K,E}(δ)` and the Tate character ε); TriangulineVarietyAndItsLocalModel §9.1 (the triangulation of D with graded parameters `φ_{w^{−1}(i)}z^{h_i}`);
 LR.7 (pi-alg).
 
 - χ_D is a product of an algebraic, an unramified and a smooth factor, with each embedding indexed
@@ -708,7 +716,13 @@ Layers 3, 7, 9 and the split gl_n Harish-Chandra contract above; LR.5 (orlik-str
   d_inf = 0. The scalar action on π_min(D) is a property of 𝒦_D, not of every extension of A by V.
 - The normalisation h ↔ ξ_λ (λ = h − θ) differs from the ρ-shifted standard Harish-Chandra map by the
   central shift (n−1)/2·(1,…,1) at each σ; using the unshifted map would send h to the wrong
-  character.
+  character. For n = 2, K = ℚ_p, θ = (0, −1), ρ = (1/2, −1/2) and h = (3, 1), λ = (3, 2) and
+  λ + ρ = (7/2, 3/2): the symmetric functions take the values e_1 = 4, e_2 = 3 at h and e_1 = 5,
+  e_2 = 21/4 at λ + ρ, the two evaluations related by the translation by 1/2 in each coordinate; the
+  invariants are the ordinary permutation invariants in h (the dot action in λ transported by the
+  central vector ρ − θ), and a supplier building the dot-invariants in the variable h would identify
+  h = (3, 1) with s·h = s(h + ρ) − ρ = (0, 4) instead of with s(h) = (1, 3); the weight (0, 4) has
+  λ + ρ = (1/2, 9/2) and e_2 = 9/4 ≠ 21/4, so its infinitesimal character is a different one.
 
 ### Examples
 
@@ -1003,9 +1017,10 @@ I_w   = Ker(A_D ↠ A_D,w).
 ```
 
 Prove that A_D and `A_{D,w}` are local Artinian E-algebras with square-zero maximal ideal, residue
-field E and tangent spaces Q and Q_w; that A_D ≅ `TrivSqZeroExt E (Module.Dual E Q)`; that A_D is a
-subalgebra of R_D/𝔪² and not in general a quotient of it; and that A_D → ∏_w `A_{D,w}` is injective,
-equivalently ⋂_w I_w = 0, dually to the surjection ⊕_w Q_w ↠ Q of TriangulineVarietyAndItsLocalModel §12.8 (DING25 §3.2.2, the
+field E and tangent spaces Q and Q_w; that A_D ≅ `TrivSqZeroExt E (Module.Dual E Q)`; that the
+natural map A_D → R_D/𝔪², the first projection of the fibre product, is injective, dual to the
+surjection Ext¹(D,D) ↠ Q, and is not surjective when Ext¹_0(D,D) ≠ 0 (n = 3, d_K = 1: dimensions 10
+and 11); and that A_D → ∏_w `A_{D,w}` is injective, equivalently ⋂_w I_w = 0, dually to the surjection ⊕_w Q_w ↠ Q of TriangulineVarietyAndItsLocalModel §12.8 (DING25 §3.2.2, the
 deformation rings, (3.55) and the paragraph defining A_0, A_D, `A_{D,w}`, I_w, pp. 56–57). *Needs:*
 LocalGaloisDeformationRings §§0.4, 1.23; SmoothRepresentationsOfLocalGroups §SR.3.2 and the contract
 above; TriangulineVarietyAndItsLocalModel §§10.3–10.4, 12.8; LR.7 (self-extensions); Mathlib `TrivSqZeroExt`, `Module.Dual`,
