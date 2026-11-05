@@ -69,3 +69,21 @@ status = "certified"
 accessed = "2026-10-26"
 version_note = "arXiv v4"
 cited_for = ["10.2", "10.4", "10.5", "Corrections to the source"]
+
+[[source]]
+id = "Vakil"
+authors = "Ravi Vakil"
+title = "The Rising Sea: Foundations of Algebraic Geometry"
+year = 2024
+venue = "draft of 21 February 2024 (author's page); Princeton University Press, 2025"
+locator_scheme = "section"
+locator = "§20.2: Exercise/Definition 20.2.A (pp. 580-581), bilinear intersection form (20.2.4.1) (p. 581), Exercise 20.2.B(a) (pp. 581-582) (draft of 21 February 2024 pagination)"
+url = "https://math.stanford.edu/~vakil/216blog/FOAGfeb2124public.pdf"
+fetched_from = "https://math.stanford.edu/~vakil/216blog/FOAGfeb2124public.pdf"
+fetched_at = "2026-11-05T17:22:25Z"
+sha256 = "70931c374712551d4bfd178d8f1bdcbdfc535d461cfdab54fff5bae8c718037c"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "draft of 21 February 2024; the published book may be numbered differently"
+cited_for = ["9.5"]
