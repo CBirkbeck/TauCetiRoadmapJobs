@@ -203,7 +203,8 @@ It leaves to other roadmaps, by section:
   trace, not Mathlib's.
 - Categories and homological algebra: `CategoryTheory.Functor.Linear`, `DerivedCategory`,
   `CategoryTheory.Limits.limit`.
-- Perfection and fields: `Perfection`, `ModP`, `NormedField.valuation`, `smoothingSeminorm`,
+- Perfection and fields: `Perfection` (the inverse limit along Frobenius), `PerfectClosure` (the
+  direct limit along Frobenius), `ModP`, `NormedField.valuation`, `smoothingSeminorm`,
   `IsSMulRegular`, `IsIdempotentElem`.
 - Spectral universal injectivity `AlgebraicGeometry.UniversallyInjective`, named only to distinguish it
   from the module purity of §5.1.
@@ -218,10 +219,15 @@ It leaves to other roadmaps, by section:
   first five; the power-bounded subring is the `A°` of every statement.
 - Rational localisation: `TauCeti.ValuationSpectrum.rationalSubset`,
   `TauCeti.Huber.PairOfDefinition.completionLocObj` (the completed localisation `A⟨T/s⟩` of one
-  presentation), `TauCeti.Huber.PairOfDefinition.completedPlusSubring` (its plus ring) and
-  `TauCeti.Huber.PairOfDefinition.pairHomOfRationalSubsetSubset` (the comparison morphism of an
-  inclusion of rational subsets). These objects are presentationwise: there is no functor on the
-  rational subsets and no limit over them, which is why Layer 1's tower is a README target.
+  presentation), `TauCeti.Huber.PairOfDefinition.completedPlusSubring` (its plus ring,
+  `RingTheory/Huber/LocalizationTopology/Plus.lean`), `TauCeti.Huber.PairOfDefinition.toCompletionLoc`
+  (the structure map `A → A⟨T/s⟩`), `TauCeti.Huber.HasDenominatorPower` (the standing hypothesis
+  of the construction, `RingTheory/Huber/LocalizationTopology/Basic.lean`) and
+  `TauCeti.ValuationSpectrum.pairHomOfRationalSubsetSubset` (the comparison morphism of an
+  inclusion of rational subsets, `AlgebraicGeometry/AdicSpace/Spa/Localization/PlusComparison.lean`).
+  These objects are presentationwise: there is no functor on the rational subsets and no limit over
+  them, which is why Layer 1's tower is a README target; the two clauses of §1.2 use one
+  restriction map at a time and `Suggested.lean` states them on these carriers.
 
 ### From TauCetiRoadmap.PerfectoidSpaces
 
@@ -356,9 +362,12 @@ Its API consists of the following facts.
 - A tower whose terms are almost zero (killed by `m_t`) is almost-pro-zero, with `n′ = n`.
 - Subtowers and quotient towers of an almost-pro-zero tower are almost-pro-zero; in a short exact
   sequence of towers `0 → M′ → M → M″ → 0` with `M′`, `M″` almost-pro-zero, `M` is almost-pro-zero:
-  choose transitions into `M″_n` killed by `t^{1/p^{k+1}}` and then into `M′` killed by
-  `t^{1/p^{k+1}}`; the composite into `M_n` is killed by `t^{2/p^{k+1}}`, which divides `t^{1/p^k}`
-  because `p ≥ 2`.
+  choose `n′ ≥ n` with `t^{1/p^{k+1}}` killing the image of `M′_{n′} → M′_n`, then `n″ ≥ n′` with
+  `t^{1/p^{k+1}}` killing the image of `M″_{n″} → M″_{n′}`; for `x ∈ M_{n″}` the element
+  `t^{1/p^{k+1}}ρ_{n″,n′}(x)` has zero image in `M″_{n′}`, so lies in `M′_{n′}`, and its image in
+  `M_n` is killed by `t^{1/p^{k+1}}`, so `t^{2/p^{k+1}}` kills `ρ_{n″,n}(x)`; and `t^{2/p^{k+1}}`
+  divides `t^{1/p^k}` because `p ≥ 2`. The order matters: choosing the index for `M″` first
+  produces an element of `M′_n` that need not come from a higher level of `M′`.
 - The property is invariant under cofinal monotone reindexing of the tower.
 - Almost-pro-isomorphisms of module towers are closed under composition and satisfy two-out-of-three;
   so do almost-pro-isomorphisms of towers in `D^b(A)`, through the long exact cohomology sequences of
@@ -533,7 +542,9 @@ maps `f_n : A → A⟨tⁿ/g⟩` they form a tower under `A`. The intended signa
 `ℕ≥1ᵒᵖ` to `K°`-algebras under `A`, built from PerfectoidSpaces P2.3–P2.4's perfectoid rational
 localisation on Tau Ceti's rational localisation (`TauCeti.Huber.PairOfDefinition.completedPlusSubring`
 for the presentation `({tⁿ, g}, g)`, with the comparison morphisms
-`TauCeti.Huber.PairOfDefinition.pairHomOfRationalSubsetSubset` as transitions). In `A⟨tⁿ/g⟩` the
+`TauCeti.ValuationSpectrum.pairHomOfRationalSubsetSubset` as transitions; each term, the structure
+map `f_n` and each single restriction map are already statable on these carriers, and §1.2 is
+stated so in `Suggested.lean`; the functor and the limit over `n` are this layer's). In `A⟨tⁿ/g⟩` the
 functions `u_n^{1/p^k} := (tⁿ/g)^{1/p^k}` are bounded, `g^{1/p^k}u_n^{1/p^k} = t^{n/p^k}`, and `g`
 divides `tⁿ`. For every `m ≥ 0` the map
 `A[u_n^{1/p^∞}]/(tᵐ, (u_ng)^{1/p^k} − t^{n/p^k} for all k) → A⟨tⁿ/g⟩/tᵐ` is an almost isomorphism
@@ -550,7 +561,8 @@ isomorphism, and reduction modulo `tᵐ` gives the presentation. Restriction fro
 
 *Needs:* PerfectoidSpaces P0.2, P1.25, P2.3, P2.4; Tau Ceti
 `TauCeti.Huber.PairOfDefinition.completedPlusSubring`,
-`TauCeti.Huber.PairOfDefinition.pairHomOfRationalSubsetSubset`.
+`TauCeti.Huber.PairOfDefinition.toCompletionLoc`,
+`TauCeti.ValuationSpectrum.pairHomOfRationalSubsetSubset`.
 
 Its API consists of the following facts.
 
@@ -591,6 +603,25 @@ Theorem 4.2 and proof, pp. 6–7; Theorem 1.6, p. 2):
 
 The almost regularity of `g` modulo `tᵐ` is used only for (1); §1.4 removes it for (3). The
 constant `pᵏm` depends on `k` and `m` only.
+
+`Suggested.lean` states (1) as `bhatt_riemann_extension_ker_almostZero` and (2) as
+`bhatt_quantitative_riemann_extension`, on the presentationwise carriers of §1.1: `R = A[1/t]` is a
+perfectoid Tate ring (`IsPerfectoidTateRing p R`) which is a topological algebra over a field `K`
+satisfying the perfectoid-field criterion of PerfectoidSpaces P1.11, `t` is given by its compatible
+`p`-power roots in `K` with `0 < ‖t‖ < 1`, `A = R°` is Tau Ceti's `powerBoundedSubring R` (Bhatt's
+integral perfectoid `K°`-algebras are exactly the rings `R°`, since they satisfy `A = A_*`; Bhatt,
+§1.4, p. 3), `g` is given by its roots in `R°`, `A⟨tⁿ/g⟩` is `completedPlusSubring` of the
+presentation `({tⁿ, g}, g)` with localisation `R[1/g]`, `f_n` is `toCompletionLoc`, and the
+restriction from `n + c` to `n` is `pairHomOfRationalSubsetSubset` of the inclusion
+`X⟨tⁿ/g⟩ ⊆ X⟨t^{n+c}/g⟩`. The pair of definition of `R`, the containment of its ideal of
+definition in `R°`, the denominator condition `HasDenominatorPower` of each presentation and the
+inclusions of the annuli are hypotheses of the statements; each holds for every pair of definition
+(the ideal of definition is topologically nilpotent, `tⁿ` is a unit, `|t| ≤ 1` on `Spa(R, R°)`), so
+they weaken nothing. Almost zero is written out: (1) says that `f_n(a) ∈ tᵐA⟨tⁿ/g⟩` for `a ∈ A`
+forces `t^{1/p^l}a ∈ tᵐA` for every `l`, under the hypothesis that `ga ∈ tᵐA` forces the same; (2)
+says that for every `x ∈ A⟨t^{n+c}/g⟩` with `c = pᵏm` and every `l`, `g^{1/p^k}t^{1/p^l}ρ_{n+c,n}(x)`
+lies in `f_n(A) + tᵐA⟨tⁿ/g⟩`. Neither statement uses the normalisation `|t| = |p|`. (3) is a
+statement about the towers and is not stated.
 
 *Proof sketch.* Replace `A⟨tⁿ/g⟩/tᵐ` by its almost presentation `M_n` (§1.1). Kernels: every
 `g^{1/p^k}` is an almost nonzerodivisor on `A/tᵐ`, and comparing coefficients of the monomials `u_n^e`
@@ -696,7 +727,7 @@ appears; the almost isomorphism passes to the limit (PerfectoidSpaces P0.27).
 
 Layer 0; PerfectoidSpaces P0.2, P0.27, P1.25, P1.30, P2.3, P2.4; DerivedModuleAlgebra §§0.K.1, 0.2;
 Tau Ceti `TauCeti.Huber.PairOfDefinition.completedPlusSubring`,
-`TauCeti.Huber.PairOfDefinition.pairHomOfRationalSubsetSubset`.
+`TauCeti.ValuationSpectrum.pairHomOfRationalSubsetSubset`.
 
 ## Layer 2: Uniform Banach algebras: closures, localisations, uniform limits and colimits
 
@@ -1053,8 +1084,10 @@ Its API consists of the following facts.
   restrict functions to smaller discs and the universal cocone to `K` is evaluation at `T = 0`.
 - For the same system the algebraic colimit is the ring of overconvergent germs at `0`, which is not
   `K`: the separated completion for the spectral seminorm cannot be omitted.
-- If `char K = p`, `ucolim K^{1/p^i}` is the completed perfection of `K`, agreeing with Mathlib's
-  `Perfection`-based perfection followed by completion.
+- If `char K = p`, `ucolim K^{1/p^i}` is the completion of the perfect closure of `K` (André A,
+  Exemple 2.9.3(1), p. 33), agreeing with the completion of Mathlib's `PerfectClosure K p`, the
+  direct limit along Frobenius. Mathlib's `Perfection K p` is the inverse limit along Frobenius,
+  which for `K = 𝔽_p(T)` is `⋂_n K^{p^n} = 𝔽_p`, not the perfect closure `𝔽_p(T^{1/p^∞})`.
 - Every uniform Banach `K`-algebra is a filtered uniform colimit of reduced affinoid algebras with
   bijective algebraic colimit map (André A, Exemple 2.9.3(3), p. 33).
 
@@ -1234,8 +1267,12 @@ extremal quotients of perfectoid algebras are perfectoid. `g♭` is the inverse 
 - For `A = K`, `K⟨T^{1/p^∞}⟩` is perfectoid with tilt `K♭⟨T^{1/p^∞}⟩`.
 - For `A = Â_∞0` and `g` as in Layer 5, `A⟨g^{1/p^∞}⟩ = Â_∞∞` is perfectoid (§5.6).
 - For `A = K` and `g = 1` in characteristic `0`, `K⟨1^{1/p^∞}⟩` is the completed colimit of the
-  `K[S]/(S^{p^i} − 1)`, a perfectoid algebra with many idempotents (one for each compatible system of
-  roots of unity); the universal property does not choose the root `1`.
+  `K[S]/(S^{p^i} − 1)`, a perfectoid algebra with many idempotents (at level `i`, one for each subset
+  of the irreducible factors of `S^{p^i} − 1` over `K`, so `2^{i+1}` for `K = ℚ_p`; in the completed
+  colimit, one for each clopen subset of the profinite set of Galois orbits of compatible systems
+  of `p`-power roots of unity, since two idempotents at distance `< 1` in a uniform Banach algebra
+  coincide and every idempotent of the completed colimit comes from a finite level); the
+  universal property does not choose the root `1`.
 
 ### 3.3 almost perfectoid `K⟨T^{1/p^∞}⟩`-algebras
 

@@ -1,7 +1,11 @@
-import Mathlib
-import TauCeti.RingTheory.Huber.Basic
-import TauCeti.RingTheory.Huber.Bounded
-import TauCeti.RingTheory.Huber.PowerBounded
+module
+
+public import Mathlib
+public import TauCeti.RingTheory.Huber.Basic
+public import TauCeti.RingTheory.Huber.Bounded
+public import TauCeti.RingTheory.Huber.PowerBounded
+public import TauCeti.RingTheory.Huber.LocalizationTopology.Plus
+public import TauCeti.AlgebraicGeometry.AdicSpace.Spa.Localization.PlusComparison
 
 /-!
 # Perfectoid rings and spaces, Part II: target signatures
@@ -12,6 +16,14 @@ together with the few definitions their statements need.
 
 Stated here:
 
+* Bhatt's quantitative Riemann extension theorem, both clauses (README §1.2; Bhatt, *On the
+  direct summand conjecture and its derived variant*, Theorem 4.2): the kernel clause
+  `bhatt_riemann_extension_ker_almostZero` and the cokernel clause with the constant `c = pᵏm`,
+  `bhatt_quantitative_riemann_extension`. They are stated on Tau Ceti's presentationwise rational
+  localisation: `A⟨tⁿ/g⟩` is `TauCeti.Huber.PairOfDefinition.completedPlusSubring` of the
+  presentation `({tⁿ, g}, g)`, the structure map is `toCompletionLoc`, and the restriction from
+  `n + c` to `n` is `TauCeti.ValuationSpectrum.pairHomOfRationalSubsetSubset` of the inclusion of
+  rational subsets; each clause uses one restriction map at a time.
 * André's perfectoid Riemann extension theorem, in its complete-integral-closure form
   (README §3.6; André, *Le lemme d'Abhyankar perfectoïde*, Théorème 4.2.2 and Lemme 4.2.3):
   `riemann_extension_completeIntegralClosure`.
@@ -23,13 +35,13 @@ Stated here:
 
 Headline theorems of the README that are not statable at the pins, and what each lacks:
 
-* Bhatt's quantitative Riemann extension theorem, its derived form, its form without regularity
-  and its limit form (README §1.2–§1.5). They are statements about the tower of rings
-  `A⟨tⁿ/g⟩ = O⁺(X⟨tⁿ/g⟩)` with its restriction maps. Tau Ceti builds each `O⁺` of a rational
-  subset only presentationwise (`TauCeti.Huber.PairOfDefinition.completedPlusSubring`), on a
+* The almost-pro-isomorphism clause of Bhatt's theorem, its derived form, its form without
+  regularity and its limit form (README §1.2(3), §1.3–§1.5). They are statements about the tower
+  of rings `A⟨tⁿ/g⟩ = O⁺(X⟨tⁿ/g⟩)` as a pro-object, about derived tensor products over its terms,
+  and about its limit. Tau Ceti builds each `O⁺` of a rational subset only presentationwise, on a
   completion whose type depends on the presentation, with comparison morphisms between pairs of
-  presentations but no functor on the rational subsets and no limit over them; the tower, its
-  transition maps and its limit are missing.
+  presentations but no functor on the rational subsets and no limit over them; the tower as a
+  single object and its limit are missing.
 * The first clause of André's Riemann extension theorem, `lim_j A{ϖʲ/g}° = g^{-1/p^∞}A°`, and the
   nested-systems theorem (README §3.6, §3.11): the uniform Banach localisations `A{λ/g}` with
   their transition maps, uniform limits, and the 2-limit category of perfectoid algebras on the
@@ -48,13 +60,13 @@ Headline theorems of the README that are not statable at the pins, and what each
 
 noncomputable section
 
+@[expose] public section
+
 namespace TauCetiRoadmap.PerfectoidSpacesPartII
 
 open TensorProduct
 
 universe u
-
-/-! ## Layer 3: the perfectoid Riemann extension theorem -/
 
 section Perfectoid
 
@@ -65,7 +77,7 @@ variable (p : ℕ) [Fact p.Prime]
 /-- A complete Hausdorff Tate ring `R` is a *perfectoid Tate ring* if `R°` is bounded and some
 pseudouniformizer `ϖ ∈ R°` has `ϖ ^ p ∣ p` in `R°` with Frobenius `R°/ϖ → R°/ϖ ^ p` bijective,
 written elementwise. This is the predicate of PerfectoidSpaces P1.1, restated with the same fields so
-that the headline below can be stated. -/
+that the headlines of Layers 1 and 3 below can be stated. -/
 class IsPerfectoidTateRing (R : Type*) [CommRing R] [UniformSpace R] [IsUniformAddGroup R]
     [IsTopologicalRing R] [IsTateRing R] [CompleteSpace R] [T2Space R] : Prop where
   /-- `R` is uniform: the power-bounded subring `R°` is bounded. -/
@@ -75,6 +87,129 @@ class IsPerfectoidTateRing (R : Type*) [CommRing R] [UniformSpace R] [IsUniformA
     ϖ ^ p ∣ (p : powerBoundedSubring R) ∧
     (∀ x : powerBoundedSubring R, ∃ y, ϖ ^ p ∣ x - y ^ p) ∧
     ∀ y : powerBoundedSubring R, ϖ ^ p ∣ y ^ p → ϖ ∣ y
+
+/-! ## Layer 1: the quantitative Riemann extension theorem -/
+
+open TauCeti.ValuationSpectrum TauCeti.Huber.PairOfDefinition in
+open Classical in
+/-- **Bhatt's quantitative Riemann extension theorem, kernel clause** (Bhatt, *On the direct
+summand conjecture and its derived variant*, Theorem 4.2(1), p. 6).
+
+Let `K` be a perfectoid field (given by the criterion: its norms accumulate at `1`, `‖p‖ < 1` and
+Frobenius is surjective on `K°/p`), `t ∈ K` a pseudouniformizer given by a compatible system of
+`p`-power roots `t l` (`0 < ‖t 0‖ < 1`, `t (l + 1) ^ p = t l`), `R` a perfectoid Tate ring which is
+a topological `K`-algebra, `A = R°`, and `g ∈ R°` an element given by a compatible system of
+`p`-power roots `g k` in `R°`. For `m ≥ 0`, `A⟨tⁿ/g⟩ = O⁺(X⟨tⁿ/g⟩)` is the completed plus ring
+`completedPlusSubring` of the presentation `({tⁿ, g}, g)` of the rational subset `{|tⁿ| ≤ |g|}` of
+`X = Spa(R, R°)`, with structure map `f_n = toCompletionLoc`. The pair of definition `P`, the
+containment of its ideal of definition in `R°` and the denominator condition of each presentation
+are hypotheses that every pair of definition satisfies. Assume that `g` is an almost nonzerodivisor
+modulo `tᵐ`: if `g a ∈ tᵐ R°` then `t^{1/p^l} a ∈ tᵐ R°` for every `l`. Then the kernel of
+`A/tᵐ → A⟨tⁿ/g⟩/tᵐ` is almost zero for `t^{1/p^∞}`: if `f_n(a) ∈ tᵐ A⟨tⁿ/g⟩` then
+`t^{1/p^l} a ∈ tᵐ R°` for every `l`. -/
+theorem bhatt_riemann_extension_ker_almostZero
+    (K : Type u) [NontriviallyNormedField K] [IsUltrametricDist K] [CompleteSpace K]
+    (hK : ∀ ε : ℝ, 1 < ε → ∃ x : K, 1 < ‖x‖ ∧ ‖x‖ < ε) (hKp : ‖(p : K)‖ < 1)
+    (hKF : Function.Surjective
+      (fun x : ModP (NormedField.valuation (K := K)).integer p ↦ x ^ p))
+    (R : Type u) [CommRing R] [UniformSpace R] [IsUniformAddGroup R] [IsTopologicalRing R]
+    [IsTateRing R] [CompleteSpace R] [T2Space R] [IsPerfectoidTateRing p R]
+    [Algebra K R] (hKR : Continuous (algebraMap K R))
+    (t : ℕ → K) (ht0 : 0 < ‖t 0‖) (ht1 : ‖t 0‖ < 1) (htr : ∀ l, t (l + 1) ^ p = t l)
+    (g : ℕ → R) (hgA : ∀ k, g k ∈ powerBoundedSubring R) (hgr : ∀ k, g (k + 1) ^ p = g k)
+    (P : PairOfDefinition R)
+    (hIplus : ∀ j : P.ringOfDefinition, j ∈ P.idealOfDefinition → (j : R) ∈ powerBoundedSubring R)
+    (hden : ∀ n : ℕ, HasDenominatorPower P {algebraMap K R (t 0) ^ n, g 0} (g 0)
+      (Localization.Away (g 0)))
+    (m : ℕ)
+    (hgreg : ∀ a ∈ powerBoundedSubring R,
+      (∃ b ∈ powerBoundedSubring R, g 0 * a = algebraMap K R (t 0) ^ m * b) →
+      ∀ l : ℕ, ∃ b ∈ powerBoundedSubring R,
+        algebraMap K R (t l) * a = algebraMap K R (t 0) ^ m * b)
+    (n : ℕ) (a : R) (ha : a ∈ powerBoundedSubring R) :
+    letI := locUniformSpace P {algebraMap K R (t 0) ^ n, g 0} (g 0)
+      (Localization.Away (g 0)) (hden n)
+    letI := isUniformAddGroup_locUniformSpace P {algebraMap K R (t 0) ^ n, g 0} (g 0)
+      (Localization.Away (g 0)) (hden n)
+    letI := isTopologicalRing_locUniformSpace P {algebraMap K R (t 0) ^ n, g 0} (g 0)
+      (Localization.Away (g 0)) (hden n)
+    (∃ y ∈ completedPlusSubring P (powerBoundedSubring R) {algebraMap K R (t 0) ^ n, g 0} (g 0)
+        (Localization.Away (g 0)) (hden n),
+      toCompletionLoc P {algebraMap K R (t 0) ^ n, g 0} (g 0) (Localization.Away (g 0)) (hden n)
+          a =
+        toCompletionLoc P {algebraMap K R (t 0) ^ n, g 0} (g 0) (Localization.Away (g 0)) (hden n)
+          (algebraMap K R (t 0) ^ m) * y) →
+    ∀ l : ℕ, ∃ b ∈ powerBoundedSubring R,
+      algebraMap K R (t l) * a = algebraMap K R (t 0) ^ m * b :=
+  sorry
+
+open TauCeti.ValuationSpectrum TauCeti.Huber.PairOfDefinition in
+open Classical in
+/-- **Bhatt's quantitative Riemann extension theorem, cokernel clause** (Bhatt, *On the direct
+summand conjecture and its derived variant*, Theorem 4.2(2) with its proof, pp. 6–7).
+
+In the setting of `bhatt_riemann_extension_ker_almostZero` (without the regularity hypothesis on
+`g`), the restriction `ρ_{n+c,n} : A⟨t^{n+c}/g⟩ → A⟨tⁿ/g⟩` is `pairHomOfRationalSubsetSubset` of
+the inclusion `X⟨tⁿ/g⟩ ⊆ X⟨t^{n+c}/g⟩` of rational subsets, a hypothesis that holds because
+`|t| ≤ 1` on `Spa(R, R°)`. For every `m` and `k`, with `c = pᵏm`, the image of the `c`-fold
+transition `coker f_{n+c} → coker f_n` is almost killed by `g^{1/p^k}`: for every
+`x ∈ A⟨t^{n+c}/g⟩` and every `l`, `g^{1/p^k} t^{1/p^l} ρ_{n+c,n}(x)` is the image of an element of
+`R°` plus `tᵐ` times an element of `A⟨tⁿ/g⟩`. -/
+theorem bhatt_quantitative_riemann_extension
+    (K : Type u) [NontriviallyNormedField K] [IsUltrametricDist K] [CompleteSpace K]
+    (hK : ∀ ε : ℝ, 1 < ε → ∃ x : K, 1 < ‖x‖ ∧ ‖x‖ < ε) (hKp : ‖(p : K)‖ < 1)
+    (hKF : Function.Surjective
+      (fun x : ModP (NormedField.valuation (K := K)).integer p ↦ x ^ p))
+    (R : Type u) [CommRing R] [UniformSpace R] [IsUniformAddGroup R] [IsTopologicalRing R]
+    [IsTateRing R] [CompleteSpace R] [T2Space R] [IsPerfectoidTateRing p R]
+    [Algebra K R] (hKR : Continuous (algebraMap K R))
+    (t : ℕ → K) (ht0 : 0 < ‖t 0‖) (ht1 : ‖t 0‖ < 1) (htr : ∀ l, t (l + 1) ^ p = t l)
+    (g : ℕ → R) (hgA : ∀ k, g k ∈ powerBoundedSubring R) (hgr : ∀ k, g (k + 1) ^ p = g k)
+    (P : PairOfDefinition R)
+    (hIplus : ∀ j : P.ringOfDefinition, j ∈ P.idealOfDefinition → (j : R) ∈ powerBoundedSubring R)
+    (hden : ∀ n : ℕ, HasDenominatorPower P {algebraMap K R (t 0) ^ n, g 0} (g 0)
+      (Localization.Away (g 0)))
+    (hsub : ∀ n c : ℕ,
+      rationalSubset (powerBoundedSubring R) {algebraMap K R (t 0) ^ n, g 0} (g 0) ⊆
+        rationalSubset (powerBoundedSubring R) {algebraMap K R (t 0) ^ (n + c), g 0} (g 0))
+    (m k n : ℕ) :
+    letI := locUniformSpace P {algebraMap K R (t 0) ^ (n + p ^ k * m), g 0} (g 0)
+      (Localization.Away (g 0)) (hden (n + p ^ k * m))
+    letI := isUniformAddGroup_locUniformSpace P {algebraMap K R (t 0) ^ (n + p ^ k * m), g 0} (g 0)
+      (Localization.Away (g 0)) (hden (n + p ^ k * m))
+    letI := isTopologicalRing_locUniformSpace P {algebraMap K R (t 0) ^ (n + p ^ k * m), g 0} (g 0)
+      (Localization.Away (g 0)) (hden (n + p ^ k * m))
+    letI := isHuberRing_completion_locTopology P {algebraMap K R (t 0) ^ (n + p ^ k * m), g 0}
+      (g 0) (Localization.Away (g 0)) (hden (n + p ^ k * m))
+    letI := locUniformSpace P {algebraMap K R (t 0) ^ n, g 0} (g 0)
+      (Localization.Away (g 0)) (hden n)
+    letI := isUniformAddGroup_locUniformSpace P {algebraMap K R (t 0) ^ n, g 0} (g 0)
+      (Localization.Away (g 0)) (hden n)
+    letI := isTopologicalRing_locUniformSpace P {algebraMap K R (t 0) ^ n, g 0} (g 0)
+      (Localization.Away (g 0)) (hden n)
+    letI := isHuberRing_completion_locTopology P {algebraMap K R (t 0) ^ n, g 0} (g 0)
+      (Localization.Away (g 0)) (hden n)
+    ∀ x ∈ completedPlusSubring P (powerBoundedSubring R)
+        {algebraMap K R (t 0) ^ (n + p ^ k * m), g 0} (g 0) (Localization.Away (g 0))
+        (hden (n + p ^ k * m)),
+    ∀ l : ℕ, ∃ a ∈ powerBoundedSubring R,
+    ∃ y ∈ completedPlusSubring P (powerBoundedSubring R) {algebraMap K R (t 0) ^ n, g 0} (g 0)
+        (Localization.Away (g 0)) (hden n),
+      toCompletionLoc P {algebraMap K R (t 0) ^ n, g 0} (g 0) (Localization.Away (g 0)) (hden n)
+          (g k * algebraMap K R (t l)) *
+        (pairHomOfRationalSubsetSubset P (powerBoundedSubring R) hIplus
+            (fun _ h ↦ mem_powerBoundedSubring.mp h)
+            {algebraMap K R (t 0) ^ (n + p ^ k * m), g 0} (g 0) (Localization.Away (g 0))
+            (hden (n + p ^ k * m))
+            {algebraMap K R (t 0) ^ n, g 0} (g 0) (Localization.Away (g 0)) (hden n)
+            (hsub n (p ^ k * m))).toRingHom x =
+      toCompletionLoc P {algebraMap K R (t 0) ^ n, g 0} (g 0) (Localization.Away (g 0)) (hden n)
+          a +
+        toCompletionLoc P {algebraMap K R (t 0) ^ n, g 0} (g 0) (Localization.Away (g 0))
+          (hden n) (algebraMap K R (t 0) ^ m) * y :=
+  sorry
+
+/-! ## Layer 3: the perfectoid Riemann extension theorem -/
 
 /-- **André's perfectoid Riemann extension theorem**, complete-integral-closure form (André,
 *Le lemme d'Abhyankar perfectoïde*, Théorème 4.2.2 and Lemme 4.2.3, pp. 55–56).

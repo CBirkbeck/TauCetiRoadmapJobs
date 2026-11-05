@@ -17,7 +17,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
 version_note = "arXiv v2, read; theorem numbers agree with Invent. Math. 212 (2018), 297–317; page numbers are the preprint's."
-cited_for = ["RA.0", "RA.1", "RA.5.7", "RA.5.8", "Corrections to the sources"]
+cited_for = ["0", "1", "5.7", "5.8", "Corrections to the sources", "Suggested.lean"]
 
 [[source]]
 id = "ANDRE18A"
@@ -36,7 +36,7 @@ sha256 = "087521436778eed56e5bac98f6f2b441bc2898eef35ebba9da1c1575bf00f96a"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
-cited_for = ["RA.1.1", "RA.2", "RA.3", "RA.4", "RA.5.4", "RA.5.6", "RA.5.12", "Corrections to the sources"]
+cited_for = ["1.1", "2", "3", "4", "5.4", "5.6", "5.12", "Corrections to the sources", "Suggested.lean"]
 
 [[source]]
 id = "ANDRE18B"
@@ -55,7 +55,7 @@ sha256 = "34da107d0b96149d9a6779ec1694a0cbb096136d021114b59427024ef3d47053"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
-cited_for = ["RA.2.1", "RA.2.5", "RA.5", "Corrections to the sources"]
+cited_for = ["2.1", "2.5", "5", "Corrections to the sources", "Suggested.lean"]
 
 [[source]]
 id = "GR03"
@@ -73,7 +73,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
 version_note = "arXiv v3"
-cited_for = ["RA.3.9", "RA.4.4", "RA.5.2", "RA.5.11", "Suggested.lean"]
+cited_for = ["3.9", "4.4", "5.2", "5.11", "Suggested.lean"]
 
 [[source]]
 id = "SCHOLZE12"
@@ -91,4 +91,4 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
 version_note = "arXiv v1; Lemma 6.4 and Corollary 6.7 carry the same numbers in Publ. Math. IHÉS 116 (2012), 245–313."
-cited_for = ["RA.1.1"]
+cited_for = ["1.1"]
