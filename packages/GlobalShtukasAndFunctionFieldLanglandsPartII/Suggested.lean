@@ -1,4 +1,6 @@
-import Mathlib
+module
+
+public import Mathlib
 
 /-!
 # Global shtukas and function-field Langlands, Part II: target signatures
@@ -47,6 +49,8 @@ The following headlines are not statable at the pins:
 Global Arthur homomorphisms, their Satake matching and the full Arthur decomposition
 are conjectural interfaces of the README, not theorem assertions in this file.
 -/
+
+@[expose] public section
 
 namespace TauCetiRoadmap.GlobalShtukasAndFunctionFieldLanglandsPartII
 

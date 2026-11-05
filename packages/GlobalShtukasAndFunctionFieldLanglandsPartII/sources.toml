@@ -291,3 +291,145 @@ status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v2"
 cited_for = ["4.0"]
+
+[[source]]
+id = "tadic-gl"
+authors = "Marko Tadić"
+title = "Classification of unitary representations in irreducible representations of general linear group (non-Archimedean case)"
+year = 1986
+venue = "Annales scientifiques de l'École normale supérieure 19"
+doi = "10.24033/asens.1510"
+locator_scheme = "theorem"
+locator = "Theorem D, pp. 338–339"
+url = "https://doi.org/10.24033/asens.1510"
+fetched_from = "https://www.numdam.org/item/10.24033/asens.1510.pdf"
+fetched_at = "2026-11-05T05:05:25Z"
+sha256 = "15ab6a6dbb045332ce5bd15e9531635d2e9fe28a015b52b128917f7fdad3c40a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["5.1"]
+
+[[source]]
+id = "barbasch-spherical"
+authors = "Dan Barbasch"
+title = "The unitary spherical spectrum for split classical groups"
+year = 2010
+venue = "Journal of the Institute of Mathematics of Jussieu 9 (2010), 265–356"
+doi = "10.1017/S1474748009000218"
+arxiv = "math/0609828"
+locator_scheme = "theorem"
+locator = "arXiv v5: §3.1, Theorem 3.1 (the complementary series attached to each nilpotent orbit for split Sp(2n) and SO(m), p-adic case), p. 20; §7.2, Theorem 7.2 (necessary conditions for unitarity), p. 54"
+url = "https://arxiv.org/abs/math/0609828"
+fetched_from = "https://arxiv.org/pdf/math/0609828"
+fetched_at = "2026-11-05T05:06:31Z"
+sha256 = "dee91d2b4c270ea10cee520da836c5a24744284ea2460d16383640c813f91366"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v5 (2009) numbering; the published Journal of the Institute of Mathematics of Jussieu version is cited by its DOI"
+cited_for = ["5.1"]
+
+[[source]]
+id = "ciubotaru-F4"
+authors = "Dan Ciubotaru"
+title = "The unitary I-spherical dual for split p-adic groups of type F4"
+year = 2005
+venue = "Representation Theory 9 (2005), 94–137"
+doi = "10.1090/S1088-4165-05-00206-2"
+locator_scheme = "theorem"
+locator = "Theorem 3.5 (spherical unitary parameters of the graded Hecke algebra of type F4), p. 105"
+url = "https://www.ams.org/journals/ert/2005-009-04/S1088-4165-05-00206-2/S1088-4165-05-00206-2.pdf"
+fetched_from = "https://www.ams.org/journals/ert/2005-009-04/S1088-4165-05-00206-2/S1088-4165-05-00206-2.pdf"
+fetched_at = "2026-11-05T05:06:37Z"
+sha256 = "d27a762127b4afdf206cdf3559b7c37f8f6d1160bc9b08f3db27a17989107990"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["5.1"]
+
+[[source]]
+id = "ciubotaru-E6"
+authors = "Dan Ciubotaru"
+title = "Unitary I-spherical representations for split p-adic E6"
+year = 2006
+venue = "Representation Theory 10 (2006), 435–480"
+doi = "10.1090/S1088-4165-06-00301-3"
+locator_scheme = "theorem"
+locator = "Introduction, Theorems (1), (1′) and (2) (the spherical unitary dual of split E6), pp. 437–438"
+url = "https://www.ams.org/journals/ert/2006-10-17/S1088-4165-06-00301-3/S1088-4165-06-00301-3.pdf"
+fetched_from = "https://www.ams.org/journals/ert/2006-10-17/S1088-4165-06-00301-3/S1088-4165-06-00301-3.pdf"
+fetched_at = "2026-11-05T05:07:22Z"
+sha256 = "9f1bf118e6b30fb882588af643f430376768eafb79ea457e5c92d20c0b024146"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["5.1"]
+
+[[source]]
+id = "aubert-duality"
+authors = "Anne-Marie Aubert"
+title = "Dualité dans le groupe de Grothendieck de la catégorie des représentations lisses de longueur finie d’un groupe réductif p-adique"
+year = 1995
+venue = "Transactions of the American Mathematical Society 347 (1995), no. 6, 2179–2189; erratum ibid. 348 (1996), 4687–4690"
+doi = "10.1090/S0002-9947-1995-1285969-0"
+locator_scheme = "theorem"
+locator = "Théorème 1.7 (compatibility with induction and Jacquet functors, involutivity, cuspidal sign (−1)^{|S|}), p. 2181; Corollaire 3.9 (irreducibility of the dual and preservation of the cuspidal support), p. 2189"
+url = "https://www.ams.org/journals/tran/1995-347-06/S0002-9947-1995-1285969-0/S0002-9947-1995-1285969-0.pdf"
+fetched_from = "https://www.ams.org/journals/tran/1995-347-06/S0002-9947-1995-1285969-0/S0002-9947-1995-1285969-0.pdf"
+fetched_at = "2026-11-05T05:11:19Z"
+sha256 = "57af9c46769f6edd8e142ddaf465e89acfa2f2147db222d26879a28a06df9693"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["8.0"]
+
+[[source]]
+id = "barbasch-moy-unitarity"
+authors = "Dan Barbasch, Allen Moy"
+title = "A unitarity criterion for p-adic groups"
+year = 1989
+venue = "Inventiones Mathematicae 98 (1989), no. 1, 19–37"
+doi = "10.1007/BF01388842"
+locator_scheme = "page"
+locator = "the unitarity criterion reducing Iwahori-spherical unitarity to the Iwahori–Hecke algebra module with its star structure, Introduction and §§1–3, pp. 19–37"
+url = "https://doi.org/10.1007/BF01388842"
+licence_class = "none"
+status = "uncertified"
+accessed = "2026-11-05"
+note = "Published behind a paywall; cited by locator alone. The Göttingen digitisation of Inventiones (GDZ) exposes only the volume landing page, not the article text."
+cited_for = ["5.1"]
+
+[[source]]
+id = "barbasch-moy-whittaker"
+authors = "Dan Barbasch, Allen Moy"
+title = "Whittaker models with an Iwahori fixed vector"
+year = 1994
+venue = "Contemporary Mathematics 177 (American Mathematical Society, 1994), 101–105"
+locator_scheme = "page"
+locator = "the whole note: the Iwahori-spherical Langlands quotient admits a Whittaker model exactly when the unramified principal series is irreducible, pp. 101–105"
+url = "https://pubs.ams.org/ebooks/conm/177"
+licence_class = "none"
+status = "uncertified"
+accessed = "2026-11-05"
+note = "Contemporary Mathematics volume behind a paywall; cited by locator alone."
+cited_for = ["5.1"]
+
+[[source]]
+id = "barbasch-ciubotaru-E"
+authors = "Dan Barbasch, Dan Ciubotaru"
+title = "Whittaker unitary dual of affine graded Hecke algebras of type E"
+year = 2009
+venue = "Compositio Mathematica 145 (2009), no. 6, 1563–1616"
+arxiv = "0708.4036v2"
+locator_scheme = "section"
+locator = "arXiv v2: §§3.1–3.2 (spherical principal series and the 0-complementary series), pp. 16–17; §5.1, main theorem (the complementary series attached to a nilpotent orbit of type E equals the 0-complementary series of the centralizer Hecke algebra, with the listed exceptions), p. 26"
+url = "https://arxiv.org/abs/0708.4036v2"
+fetched_from = "https://arxiv.org/pdf/0708.4036v2"
+fetched_at = "2026-11-05T07:20:42Z"
+sha256 = "db79227f4a3ac16839780585fa6959458c94a097f42926c445a223d5331dbfd4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v2 (2008) numbering; the published Compositio Mathematica version is cited by its DOI"
+cited_for = ["5.1"]

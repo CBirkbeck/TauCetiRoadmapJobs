@@ -3570,7 +3570,7 @@
     "slug": "spherical-isogeny-transfer",
     "supplier": "SmoothRepresentationsOfLocalGroups",
     "section": "§SR.4.2",
-    "needs": "Transport of spherical unitarity and genericity under central isogenies using the actual finite-index image on rational points and lifted Satake classes."
+    "needs": "Transport of spherical unitarity and genericity across central isogenies of unramified connected reductive groups over every local function field, with compatible hyperspecial and Whittaker data and lifted Satake classes, using the actual image of the rational points and its cokernel; no finite-index or openness assumption is imposed on an inseparable isogeny, whose cokernel can be infinite."
   },
   {
     "slug": "tempered-spherical-generic",
