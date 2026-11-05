@@ -1,7 +1,9 @@
-import Mathlib
-import TauCeti.LinearAlgebra.Matrix.GeneralLinearGroup.UpperUnitriangular.Nilpotent
-import TauCeti.LinearAlgebra.Matrix.GeneralLinearGroup.UpperTriangular.Basic
-import TauCeti.FieldTheory.Galois.AbsoluteGaloisGroup.Basic
+module
+
+public import Mathlib
+public import TauCeti.LinearAlgebra.Matrix.GeneralLinearGroup.UpperUnitriangular.Nilpotent
+public import TauCeti.LinearAlgebra.Matrix.GeneralLinearGroup.UpperTriangular.Basic
+public import TauCeti.FieldTheory.Galois.AbsoluteGaloisGroup.Basic
 
 /-!
 # Continuous cohomology of profinite groups, Part II: target signatures
@@ -48,6 +50,8 @@ Continuity of a homomorphism into a finite (or discrete) group is written as ope
 kernel, as in Tau Ceti's `TauCeti.FiniteEmbeddingProblem`. The absolute Galois group is Tau Ceti's
 `TauCeti.AbsoluteGaloisGroup K = Gal(Kˢ/K)` with its Krull topology.
 -/
+
+@[expose] public section
 
 namespace TauCetiRoadmap.ProfiniteCohomologyPartII
 
@@ -225,9 +229,11 @@ theorem localMasseyVanishing (K : Type) [Field K] (hK : IsLocalField K) (p : ℕ
 /-! ## Layer 10: rank-one twisted local lifting -/
 
 /-- The **corner subgroup** `Z(W)` of the upper triangular group `Tₙ₊₁(R)`: the normal closure of
-the matrices that differ from the identity only at the corner `(0, n)`. For `n ≥ 1` these matrices
-already form a normal subgroup, isomorphic to `(R, +)`, central in `Uₙ₊₁(R)` but not in
-`Tₙ₊₁(R)`; for `n = 0` the subgroup is trivial (Harpaz–Wittenberg, §7, p. 26). -/
+the invertible upper triangular matrices that differ from the identity only at entries strictly
+above the diagonal in position `(0, n)`. For `n ≥ 1` these matrices already form a normal
+subgroup, isomorphic to `(R, +)`, central in `Uₙ₊₁(R)` but not in `Tₙ₊₁(R)`; for `n = 0` the
+entry `(0, 0)` is diagonal and excluded, so the generating set is `{1}` and the subgroup is trivial
+(Harpaz–Wittenberg, §7, p. 26). -/
 def triangularCorner (R : Type*) [CommRing R] (n : ℕ) :
     Subgroup (upperTriangularGroup (Fin (n + 1)) R) :=
   Subgroup.normalClosure

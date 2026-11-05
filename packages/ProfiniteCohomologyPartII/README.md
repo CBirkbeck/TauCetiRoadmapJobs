@@ -63,7 +63,8 @@ It leaves to named owners, and imports:
   explicit low-degree model.
 - ArithmeticGaloisDuality §R02.1.4: the pointwise Hom, the splitting torsor of an additively split
   sequence and the connecting map as cup product with its class; §R02.3.0d: the Tate–Shafarevich
-  kernels `Ш^i(K, A)`; §R02.4.5a: the perfect pairing `Ш²(K, A) × Ш¹(K, A^D) → ℚ/ℤ`; §R02.4.5b:
+  kernels `Ш^i(K, A)`; §R02.4.5a: the perfect pairing `Ш²(K, A) × Ш¹(K, A^D) → ℚ/ℤ`, natural in
+  `A` by §R02.4.3; §R02.4.5b:
   the Grunwald–Wang alternative, `Ш¹(ℚ, μ₈) = 0` and `Ш²(ℚ, ℤ/8) = 0`.
 - K2SymbolsBrauer §6.14: unique factorization of `Uₘ(A)` into elementary matrices in lexicographic
   order, for a commutative ring `A` and `m ≥ 3`. Layer 1 keeps the factorization in increasing
@@ -266,7 +267,9 @@ duality theorems; groups whose Bogomolov multiplier is taken live in `Type`, as 
 - §R02.3.0d, *Finite Galois localization and Sha kernels*: `Ш^i(K, A)` for a number field `K` and a
   finite module `A`, the Cartier dual `A^D`, and naturality in `A`.
 - §R02.4.5a, *Finite-coefficient Poitou–Tate input*, statement (3): the perfect pairing
-  `Ш²(K, A) × Ш¹(K, A^D) → ℚ/ℤ`, natural in `A`.
+  `Ш²(K, A) × Ш¹(K, A^D) → ℚ/ℤ`. It is the pairing of §R02.4.3, *Poitou–Tate duality*, part (a),
+  with the set of places taken to be all places of `K`, and that part states its naturality in the
+  module: for a map `f : A → B` of finite modules, `⟨f_* a, b⟩ = ⟨a, f^D_* b⟩`.
 - §R02.4.5b, *Grunwald–Wang and its exceptional class*: `Ш¹(K, μ_m)` is zero or of order two for
   every number field `K`, and `Ш¹(ℚ, μ₈) = 0`, `Ш²(ℚ, ℤ/8) = 0`.
 
@@ -284,10 +287,10 @@ duality theorems; groups whose Bogomolov multiplier is taken live in `Type`, as 
 
 ### From TauCetiRoadmap.K2SymbolsBrauer
 
-- §6.14: for a commutative ring `A` and `m ≥ 3`, every element of `Uₘ(A)` is uniquely a product of
-  elementary matrices in lexicographic order of the positions (through
-  `Steinberg.toElementary_upperUnipotent`). Layer 1 uses the same elimination for the increasing
-  distance order.
+- §6.14, *The upper unipotent subgroup `T_n(A)` maps isomorphically onto `U_n(A)`*: for a commutative
+  ring `A` and `m ≥ 3`, every element of `Uₘ(A)` is uniquely a product of elementary matrices in
+  lexicographic order of the positions, with uniquely determined parameters. Layer 1 uses the same
+  elimination for the increasing distance order.
 
 ## How to read the build
 
@@ -697,6 +700,9 @@ API:
 - For `n = 2`, `U¹` is the corner and `B = 𝔽_p`, spanned by `e₀₂`.
 - For `n = 3`, `U³ = 1`, `B = U¹` has basis `e₀₂, e₀₃, e₁₃` and dimension three.
 - Every `e_ij(t)` with `j − i ≥ 4` maps to zero in `B`.
+- Over `𝔽₃` with `n = 4`, `e₀₂(1)e₂₄(1) = 1 + E₀₂ + E₂₄ + E₀₄` has corner entry `1`, while
+  `e₂₄(1)e₀₂(1) = 1 + E₀₂ + E₂₄` has corner entry `0`; both have image `e₀₂ + e₂₄` in `B`, the
+  corner being of distance `4`. The raw entries of a representative are not an invariant of `B`.
 - Two representatives of the same class of `A` induce the same linear map of `B`.
 
 ### 2.2 The action formula
@@ -1104,6 +1110,15 @@ API:
   `H^ab = B` but is not the image of any `σ`-fixed conjugacy class.
 - The target `H¹(ℤ, μ_d)` carries the trivial action; keeping the cyclotomic action on `μ_d` would
   change the invariant condition and the value.
+- For `H = C₃ = ⟨h⟩`, `G = C₃ = ⟨σ⟩` acting trivially and `χ = 1`, `D = Hom(C₃, μ₃)` has trivial
+  action, cocycles are homomorphisms `G → D`, and the cocycle with `b(σ)(h) = ζ₃` evaluates to `ζ₃`
+  on `[h]`, to `ζ₃²` on `[h²]` and to `1` on `[1]`; every class is allowed.
+- For `H = C₃ = ⟨h⟩` and `G = C₃ × C₂`, the first factor acting trivially and the second by
+  inversion, with `χ` the sign character of the second factor, the twist cancels the inversion on
+  `D = Hom(C₃, μ₃)`, which has trivial action. For `σ = (s, τ)` with `τ` the inversion,
+  `σ[h] = [h⁻¹] = [h^{χ(σ)}]`, so `[h]` is allowed; the cocycle `b` with `b(s) = φ`, `φ(h) = ζ₃`, and
+  `b(τ) = 0` evaluates to `φ(h) = ζ₃`. With the sign action kept on the target `μ₃`, equivariance of
+  evaluation at `h̄` would require `ζ₃ = ζ₃⁻¹`, which fails.
 - The zero class evaluates to `1` on every allowed class.
 
 ### 5.3 Pointwise scalar maps
@@ -1247,7 +1262,8 @@ trivial cocycles and four coboundaries. (HW, Example 6.3, p. 24.)
 - Exhaustive computation: `s` and `t` are commuting involutions of `B`; `8` cyclically trivial
   cocycles, `4` coboundaries; for `B_bdry`, `4` and `4`.
 - Identifying `B^∨` with `B` without the inverse transpose gives a different module; the computation
-  uses the contragredient action.
+  uses the contragredient action. Since `s` and `t` are involutions, their inverse transposes are
+  their transposes, so this example does not separate those two formulas either.
 - Restricting to either cyclic factor kills the class, as the definition requires.
 
 ### 6.3 A five-dimensional obstruction module
@@ -1275,9 +1291,11 @@ API:
 - The kernel of the action is `⟨t², r⟩`, of order four: `s^i t^j` acts as `1 + iN_s + jN_t`, which
   is the identity only for `i, j` even. In particular `t²` acts trivially although it is a
   nontrivial element of `Q`.
-- On the dual, `(s − 1)d* = b*` and `(t − 1)e* = b*`, and `(s·d*)(s·b) = d*(b) = 0` whereas
-  `d*(s·b) = 1`: the contragredient action is not the transpose of the primal one read on the
-  same basis.
+- On the dual, `(s − 1)d* = b*` and `(t − 1)e* = b*`: `s` fixes `d` but moves `d*`, so the dual
+  action is not the primal action read on the dual basis. The pairing is equivariant,
+  `(s·d*)(s·b) = d*(b) = 0` whereas `d*(s·b) = 1`. Every element of `Q` acts on `V` by an
+  involution (`s^i t^j` acts as `1 + iN_s + jN_t`, whose square is `1`), so here the inverse
+  transpose equals the transpose: this example does not separate the two formulas.
 - There is a cocycle `γ : Q → V` with `γ(s) = a`, `γ(t) = b + c`, `γ(r) = 0`, the relations holding
   because `(1 + s)a = 0`, `(1 + t + t² + t³)(b + c) = 0` and `N_s(b + c) = N_t(a) = d`; its value
   `γ(t²) = (1 + t)(b + c) = d + e` is nonzero although `t²` acts trivially, so a cocycle on `Q` is
@@ -1371,8 +1389,15 @@ API:
 - For `Γ = ∏_ℕ ℤ/2`, `A = 𝔽₂` and `C = ⊕_ℕ 𝔽₂` with trivial action, and `B = A ⊕ C` with
   `g·(a, c) = (a + Σ gᵢcᵢ, c)`, the splitting cocycle `g ↦ (c ↦ Σ gᵢcᵢ)` is not continuous into the
   discrete `Hom(C, A)`: its zero fibre is `{0}`, which is not open (ArithmeticGaloisDuality
-  §R02.1.4, Check `torsor_discrete_fails`). With trivial action on `B` as well the cocycle is zero;
-  the middle action is what matters. The finite quotient here avoids this.
+  §R02.1.4, the third Check of *The splitting torsor*). With trivial action on `B` as well the
+  cocycle is zero; the middle action is what matters. The finite quotient here avoids this.
+- A nonsplit instance of the sequence itself: `p = 2`, `n = 3`, `r = s = 1`, `Γ = ℤ/2` generated by
+  `σ`, and `α̃(σ) = e₀₁(1)` modulo `Z`. Conjugation by `e₀₁(1)` fixes `e₀₂` and `e₀₃` and sends
+  `e₁₃(t)` to `e₁₃(t)e₀₃(t)`, so for the section `(x, y) ↦ e₀₂(x)e₁₃(y)` of `P_(1,1) → P_(1,1)/Z`
+  the cocycle is `γ(σ)(x, y) = y`, a nonzero homomorphism `Γ → Hom(P_(1,1)/Z, Z) = 𝔽₂²` (both
+  actions are trivial), hence `[γ] ≠ 0`; indeed the `σ`-fixed elements of `P_(1,1)` are those with
+  `(1, 3)`-entry zero, whose image in `P_(1,1)/Z` is the line `{(x, 0)}`, so no equivariant section
+  exists. For `α̃ = 1` the same section is equivariant and `γ = 0`.
 
 ### 7.3 The connecting map as a cup product
 
@@ -1432,7 +1457,14 @@ itself. (HW, proof of Proposition 5.3, pp. 19–20.)
 
 - If `[γ] = 0` the functional is zero and the argument does not apply; the split case is 7.7.
 - The constructed lift agrees with `α` in `U/P_(r,s)` and in general not with `α̃` in `U/Z`.
-- The sign: with `δc = +o(α̃)` the product `ĉα̂` has obstruction `2o(α̃)`, which is nonzero for odd `p`.
+- The sign: with `δc = +o(α̃)` the product `ĉα̂` has obstruction `2o(α̃)`, which is nonzero when
+  `o(α̃) ≠ 0` and `p` is odd; with `o(α̃) = 0` both signs give `0`.
+- Nonsplitting of the boundary sequence does not force `o(α̃) ≠ 0`: for `K = ℚ₇`, `p = 3`, `n = 3`,
+  `r = s = 1` and `α̃ = e₀₁(χ)` modulo `Z` with `χ : Γ_K → 𝔽₃` the nonzero unramified character,
+  `e₀₁(χ)` itself is a continuous lift to `U`, so `o(α̃) = 0`; but conjugation by `e₀₁(χ(g))` sends
+  `e₁₃(t)` to `e₁₃(t)e₀₃(χ(g)t)` and fixes `e₀₂`, so the splitting cocycle of 7.2 is
+  `γ(g)(x, y) = χ(g)y`, a nonzero homomorphism `Γ_K → Hom(P_(1,1)/Z, Z)` (both actions trivial), and
+  `[γ] ≠ 0`.
 
 ### 7.6 Boundary retractions
 
@@ -1458,6 +1490,9 @@ API:
 - Changing `u` only at indices `> r`, or `v` only at indices `< n − s`, leaves `ρ` unchanged.
 - The corner contributes once, `ρ(e₀ₙ(t)) = t`; treating the row and column as an external direct sum
   would count it twice.
+- Over `𝔽₃` with `n = 3`, `r = s = 1`, the normalized pair `u = (1, 2, 0, 0)`, `v = (0, 0, 1, 1)` and
+  `Q = 1 + E₀₂ + E₁₃ ∈ P_(1,1)`: `ρ_(u,v)(Q) = u₀v₂ + u₁v₃ = 1 + 2 = 0`, whereas omitting the row
+  term gives `2` and omitting the column term gives `1`.
 - An arbitrary retraction is obtained by prescribing its values on the `r + s` noncorner coordinates.
 
 ### 7.7 Retraction stabilizers split
@@ -1666,6 +1701,10 @@ API:
 - For all `N_i = 𝔽_p` with chosen bases, `U¹(W)` consists of the unitriangular matrices with zero
   adjacent entries.
 - A zero summand `N_i` contributes no block coordinates and a trivial automorphism group.
+- For four summands `N_i = 𝔽₂` with chosen bases, `T(W) = U₄(𝔽₂)` (every `Aut(N_i)` is trivial) has
+  order `64`, `U¹(W)` is generated by `e₀₂, e₁₃, e₀₃` and has order `8`, and `T(W)/U¹(W)` has
+  order `8`; the commutator `[e₀₁(1), e₁₂(1)] = e₀₂(1)` is nontrivial in `T(W)` and trivial in
+  `T(W)/U¹(W)`, which is abelian.
 - For `R = ℤ/4`, `N₀ = ℤ/2` and `N₁ = ℤ/4`, the block `Hom_R(N₁, N₀) ≅ ℤ/2` is not `R`; no block may be
   silently identified with `R`.
 
@@ -1696,8 +1735,9 @@ API:
 
 ### 9.4 The twisted corner extension
 
-Prove that `Z(W) = Hom_R(Nₙ, N₀) = M₀ₙ`, embedded as the corner transvections, is abelian, normal in
-`T(W)` and central in `U(W)` but in general not central in `T(W)`, with `T(W)`-action `f ↦ d₀ f dₙ⁻¹`.
+Prove that for `n ≥ 1`, `Z(W) = Hom_R(Nₙ, N₀) = M₀ₙ`, embedded as the corner transvections, is
+abelian, normal in `T(W)` and central in `U(W)` but in general not central in `T(W)`, with
+`T(W)`-action `f ↦ d₀ f dₙ⁻¹`; for `n = 0` there is no corner transvection and `Z(W)` is trivial.
 Define the extension `1 → Z(W) → T(W) → T(W)/Z(W) → 1` and its class
 `u ∈ H²(T(W)/Z(W), Z(W))` for the induced action; pulled back along any lift of the twisted adjacent
 character, the coefficient action is the given action on `M₀ₙ`. For one-dimensional `𝔽_p`-modules the
@@ -1817,10 +1857,12 @@ and over `ℝ` the extension `K′` is `ℝ` or `ℂ`. (HW, proof of Theorem 7.4
 ### 10.2 The corner of the upper triangular group
 
 Define `triangularCorner R n`, the corner subgroup `Z(W)` of `Tₙ₊₁(R)` in matrix form: the normal
-closure of the matrices that agree with the identity except at `(0, n)`. Prove that for `n ≥ 1` these
-matrices already form a normal subgroup isomorphic to `(R, +)`, central in `Uₙ₊₁(R)` and not in
-`Tₙ₊₁(R)` in general, and that for `n = 0` the subgroup is trivial; `triangularCorner.normal` records
-normality, which makes `Tₙ₊₁(R)/Z(W)` a group.
+closure of the invertible upper triangular matrices that differ from the identity only at entries
+strictly above the diagonal in position `(0, n)`. Prove that for `n ≥ 1` these matrices already
+form a normal subgroup isomorphic to `(R, +)`, central in `Uₙ₊₁(R)` and not in `Tₙ₊₁(R)` in general,
+and that for `n = 0`, where `(0, 0)` is a diagonal entry and so excluded, the generating set is `{1}`
+and the subgroup is trivial; `triangularCorner.normal` records normality, which makes
+`Tₙ₊₁(R)/Z(W)` a group.
 *Needs:* 9.4; Mathlib `Subgroup.normalClosure`; Tau Ceti `TauCeti.upperTriangularGroup`.
 
 API:
@@ -1832,10 +1874,14 @@ API:
 
 **Checks.**
 
-- For `n = 0` the subgroup is trivial, since no entry lies strictly above the diagonal.
+- For `n = 0` the subgroup is trivial, since no entry lies strictly above the diagonal: over `𝔽₃`
+  the generating set is `{1}` and the normal closure has order `1`, whereas the matrices that
+  differ from the identity only at `(0, 0)` would be all of `𝔽₃ˣ`, of order `2`.
 - Over `𝔽₃`, conjugation by `diag(−1, 1, 1)` sends `1 + E₀₂` to `1 − E₀₂`: the corner is not central
   in `T₃(𝔽₃)`.
-- It is contained in every `P_(r,s)` of 7.1, as `IsTwoBoundary n r s` allows the corner.
+- It is contained in every `P_(r,s)` of 7.1, as `IsTwoBoundary n r s` allows the corner, and is
+  smaller: over `𝔽₂` with `n = 3`, `e₀₂(1)` lies in `P_(1,1)` but not in the corner, `e₀₃(1)` lies
+  in both, the corner has order `2` and `P_(1,1)` order `8`.
 
 ### 10.3 Rank-one twisted refined lifting
 
@@ -1998,11 +2044,13 @@ Lemma 7.7, pp. 29–30.)
 ### 11.7 A nonzero kernel in `Ш²`
 
 Prove that `Ш²(ℚ, D₈) → Ш²(ℚ, P₈)` is not injective: by the perfect pairings
-`Ш²(ℚ, M) × Ш¹(ℚ, M^D) → ℚ/ℤ`, natural in `M` (ArithmeticGaloisDuality §R02.4.5a), it is dual to the
-non-surjective map of 11.6. Choose `0 ≠ η ∈ Ш²(ℚ, D₈)` with zero image in `Ш²(ℚ, P₈)`, hence in
-`H²(ℚ, P₈)`. This needs arithmetic duality, not only character duality of finite groups. (HW,
-Lemma 7.7, p. 29.)
-*Needs:* 11.6; ArithmeticGaloisDuality §§R02.3.0d and R02.4.5a.
+`Ш²(ℚ, M) × Ш¹(ℚ, M^D) → ℚ/ℤ` (ArithmeticGaloisDuality §R02.4.5a, statement (3)), which are natural
+in `M`, `⟨f_* a, b⟩ = ⟨a, f^D_* b⟩` for `f : M → N` (ArithmeticGaloisDuality §R02.4.3, *Poitou–Tate
+duality*, part (a)), the map `f_*` induced by `f : D₈ → P₈` is dual to `f^D_*`, the non-surjective
+map `Ш¹(ℚ, P₈^D) → Ш¹(ℚ, D₈^D)` of 11.6. Choose `0 ≠ η ∈ Ш²(ℚ, D₈)` with zero image in `Ш²(ℚ, P₈)`,
+hence in `H²(ℚ, P₈)`. This needs arithmetic duality, not only character duality of finite groups.
+(HW, Lemma 7.7, p. 29.)
+*Needs:* 11.6; ArithmeticGaloisDuality §§R02.3.0d, R02.4.3 and R02.4.5a.
 
 **Checks.**
 
@@ -2076,7 +2124,7 @@ global lift excluded by 11.9. (HW, Theorem 7.5, p. 28, proof p. 31.)
 
 ### Dependencies
 
-Layers 0–1; ArithmeticGaloisDuality §§R02.3.0d, R02.4.5a and R02.4.5b;
+Layers 0–1; ArithmeticGaloisDuality §§R02.3.0d, R02.4.3, R02.4.5a and R02.4.5b;
 InverseGaloisAndArithmeticFundamentalGroups §§IG.4.1 and IG.4.2; ProfiniteCohomology Layers 2, 5
 and 9.
 
