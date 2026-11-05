@@ -88,8 +88,9 @@ It leaves to named owners, and imports:
   the classical Witt group of quadratic forms) and §7.9 (over a field of characteristic two this is
   the Witt group `W^q(F)` of nonsingular quadratic forms): Layer 0 takes `I_q(F)` to be this group in
   characteristic two and adds the module structure and the filtration. The comparison of `Wq(R)`
-  and `Ws(R)` over commutative and Dedekind rings belongs to
-  `GeometryOfNumbersAndQuadraticArithmeticPartII` §DA.0;
+  and `Ws(R)` over commutative and Dedekind rings, through the full polar form, belongs to
+  `GeometryOfNumbersAndQuadraticArithmeticPartII` §0.1 (Integral Witt comparison); it does not enter
+  the diagonal comparison of 0.5;
 - `K2SymbolsBrauer` §§5.4–5.8 (Milnor K-theory of a field and its functoriality), §5.12 (Milnor
   K-theory of finite fields), Layer 9 (residues) and Layer 10 (the Bass–Tate sequence, Milnor norms
   and, §10.32, Milnor K-theory of number fields in degrees at least three);
@@ -221,8 +222,10 @@ with the same scope. All Witt-ring declarations assume `Invertible (2 : K)`.
 - `Witt/BaseChange.lean`: `TauCeti.WittRing.baseChange` (the ring map `W(K) → W(L)` of a field extension)
   and `TauCeti.WittRing.baseChange_mem_fundamentalIdeal_pow` (it maps `I(K)ⁿ` into `I(L)ⁿ`).
 - `Witt/Round.lean`, `Witt/Pfister/Hyperbolic.lean`, `Witt/Pfister/BaseChange.lean`:
-  `TauCeti.oneFoldPfister_smul_equivalent_of_mem_unitValueSet`,
-  `TauCeti.twoFoldPfister_smul_equivalent_of_mem_unitValueSet`, `TauCeti.pfisterFormClass_two_tfae`,
+  `TauCeti.oneFoldPfister_smul_equivalent_iff` and `TauCeti.twoFoldPfister_smul_equivalent_iff`
+  (over any commutative ring `R`, a unit `c` is a similarity factor of the diagonal form `⟨1, −a⟩`,
+  respectively `⟨1, −a, −b, ab⟩`, exactly when it lies in `QuadraticMap.unitValueSet` of that form;
+  roundness is the implication from membership to similarity), `TauCeti.pfisterFormClass_two_tfae`,
   `TauCeti.pfisterClass_two_eq_zero_iff`, `TauCeti.WittRing.baseChange_pfisterClass`.
 - `Witt/Decomposition.lean`, `Witt/Cancellation.lean`, `Witt/Extension.lean`: the anisotropic part,
   `TauCeti.equivalent_of_equivalent_prod` and `QuadraticMap.IsometryEquiv.exists_extension`, all with
@@ -319,9 +322,12 @@ group.
 nonsingular forms on finitely generated projective modules by the strictly metabolic ones (a direct
 summand `L` with `q|_L = 0` and `0 → L → P → DL → 0` exact); §4.5 (iii), for the quadratic Poincaré
 structure this is the classical Witt group of quadratic forms; §7.9 (c), over a field `F` of
-characteristic two it is the Witt group `W^q(F)` of nonsingular quadratic forms. Assumed: over a field
-the strictly metabolic quadratic forms are the hyperbolic ones, so that `W^q(F)` is the Grothendieck
-group of nonsingular quadratic forms modulo the hyperbolic plane; no product structure.
+characteristic two it is the Witt group `W^q(F)` of nonsingular quadratic forms; §3.5, a strictly
+metabolic `1`-quadratic form on a finitely generated projective module with strict Lagrangian `L` is
+the hyperbolic form on `L`, in particular every strictly metabolic quadratic form over a field is
+hyperbolic. Assumed: nothing beyond these; 0.5 identifies the hyperbolic form on `L` with a sum of
+coordinate hyperbolic planes and, with cancellation, the monoid quotient with the Grothendieck group
+of nonsingular quadratic forms modulo the hyperbolic plane; no product structure is supplied.
 
 ### From TauCetiRoadmap.GeometryOfNumbersAndQuadraticArithmetic
 
@@ -570,8 +576,12 @@ plane (EKM, §8, after Lemma 8.16, p. 51). It is not constructed here: in charac
 nonsingular form is even-dimensional and every strictly metabolic quadratic form is hyperbolic, so
 `I_q(F)` is the Witt group `W^q(F)` of `HermitianKTheoryOfPoincareCategories` §§3.4, 4.5 and 7.9;
 with `2` invertible it is Tau Ceti's `TauCeti.fundamentalIdeal`, the even-dimensional part of
-`W^q(F) = W(F)`. Prove that strictly metabolic nonsingular quadratic forms over a field are
-hyperbolic, by 0.3 applied to a Lagrangian. For a symmetric bilinear form `β` on `W`
+`W^q(F) = W(F)`. Import the identification of strictly metabolic quadratic forms with hyperbolic
+forms from `HermitianKTheoryOfPoincareCategories` §3.5 (a strictly metabolic `1`-quadratic form on a
+finitely generated projective module with strict Lagrangian `L` is the hyperbolic form on `L`),
+specialized to finite-dimensional vector spaces, and identify its hyperbolic object on `L` with the
+orthogonal sum of `dim L` coordinate hyperbolic planes of 0.1; with cancellation (0.3) the monoid
+quotient of §3.4 is then the Grothendieck group modulo `ℍ`. For a symmetric bilinear form `β` on `W`
 and a quadratic form `q` on `V`, define `β ⊗ q` on `W ⊗ V` by `(β ⊗ q)(w ⊗ v) = β(w, w) q(v)` with
 polar form `β ⊗ b_q`; in coordinates it is the quadratic polynomial whose diagonal coefficients are
 `β(wᵢ, wᵢ) q(vⱼ)` and whose mixed coefficients are fixed by the polar form. Prove that `β ⊗ q` is
@@ -582,8 +592,9 @@ dimension (EKM, Remark 8.17, p. 51); and that a field extension induces a restri
 `I_q(F) → I_q(L)`, injective for purely transcendental `L` (Remark 8.18, p. 51). With `2` invertible,
 `q ↦ q` (bilinear forms identified with quadratic forms by `β ↦ (v ↦ β(v, v))`) identifies `I_q(F)`
 with Tau Ceti's `TauCeti.fundamentalIdeal`, the module action becoming multiplication.
-*Needs:* 0.1–0.4; `HermitianKTheoryOfPoincareCategories` §§3.4, 4.5 and 7.9 (the carrier `W^q(F)`);
-Tau Ceti `TauCeti.wittClass`, `TauCeti.fundamentalIdeal` (comparison only).
+*Needs:* 0.1–0.4; `HermitianKTheoryOfPoincareCategories` §§3.4, 4.5 and 7.9 (the carrier `W^q(F)`)
+and §3.5 (strictly metabolic forms are hyperbolic); Tau Ceti `TauCeti.wittClass`,
+`TauCeti.fundamentalIdeal` (comparison only).
 
 API:
 
@@ -642,9 +653,9 @@ and outside `I_q`. In characteristic three, `[1, 1] ≅ ⟨1, 1 − 1/4⟩ = ⟨
 
 Mathlib quadratic maps, polar forms, `QuadraticForm.dualProd` and bilinear forms;
 `GeometryOfNumbersAndQuadraticArithmetic` §6.4 for the additive bilinear Witt group;
-`HermitianKTheoryOfPoincareCategories` §§3.4, 4.5 and 7.9 for the quadratic Witt group; Tau Ceti's Witt
-ring, fundamental ideal and Witt theorems (parent Layers 1 and 4) for the comparisons with `2`
-invertible.
+`HermitianKTheoryOfPoincareCategories` §§3.4, 4.5 and 7.9 for the quadratic Witt group and §3.5 for
+strictly metabolic forms being hyperbolic; Tau Ceti's Witt ring, fundamental ideal and Witt theorems
+(parent Layers 1 and 4) for the comparisons with `2` invertible.
 
 ## Layer 1: quadratic Pfister forms in every characteristic
 
@@ -720,10 +731,13 @@ State `quadraticPfister_smul_equivalent_of_represents`: for every `m`, `a : Fin 
 `c ∈ Fˣ` represented by `quadraticPfister a a₀`, the form `c · quadraticPfister a a₀` is isometric to
 `quadraticPfister a a₀`, in every characteristic and without a nonsingularity hypothesis (EKM,
 Corollary 9.9, p. 54). Conversely every similarity factor is represented, because the form
-represents `1`. The proof applies 1.3 `m` times to 1.2. With `2` invertible and `m ≤ 1` this is
-Tau Ceti's `TauCeti.oneFoldPfister_smul_equivalent_of_mem_unitValueSet` and
-`TauCeti.twoFoldPfister_smul_equivalent_of_mem_unitValueSet`. *Needs:* 1.1–1.3; Tau Ceti
-`QuadraticMap.Represents`.
+represents `1`. The proof applies 1.3 `m` times to 1.2. With `2` invertible and `m ≤ 1`, completing
+the square identifies `quadraticPfister a a₀` with the diagonal form `⟨1, −(1 − 4a₀)⟩`, respectively
+`⟨1, −a₁, −(1 − 4a₀), a₁(1 − 4a₀)⟩`, and the statement is the implication from membership in the unit
+value set to similarity in Tau Ceti's `TauCeti.oneFoldPfister_smul_equivalent_iff` and
+`TauCeti.twoFoldPfister_smul_equivalent_iff`, which are stated as equivalences over every
+commutative ring; only the comparison with the diagonal presentation uses the invertibility of `2`.
+*Needs:* 1.1–1.3; Tau Ceti `QuadraticMap.Represents`, `QuadraticMap.unitValueSet`.
 
 ### 1.5 Isotropy, hyperbolicity and the Witt class
 
@@ -801,7 +815,7 @@ denominator. For the constrained form, `b_q(s, r)` is divisible by `f` and of sm
 zero, so the reflection fixes `s`. For isotropic `q`, first pass to the quotient by the quadratic
 radical (the vectors of value zero in the polar kernel, EKM, Lemma 7.12), which has the same values
 over `F(t)` and over `F[t]`; if the quotient is anisotropic, the denominator descent above applies to
-it, and otherwise it splits off a hyperbolic plane (EKM, Lemma 7.13) with hyperbolic pair `e, e′`,
+it, and otherwise it splits off a hyperbolic plane (EKM, Proposition 7.13, p. 42) with hyperbolic pair `e, e′`,
 and `h` is the value of `h e + e′`. *Needs:* 0.2, 0.3, 2.1; Mathlib `Polynomial`, `RatFunc`.
 
 **Checks.**
@@ -997,11 +1011,19 @@ API:
 
 ### 2.10 The subform theorem
 
-Prove: let `q` be a nonzero anisotropic quadratic form and `ψ` an irreducible anisotropic quadratic form
-such that `q_{F(ψ)}` is hyperbolic; then for every `a ∈ D(q)` and `b ∈ D(ψ)`, `a b ψ` is isometric to a
-subform of `q`, and `dim ψ ≤ dim q` (EKM, Proposition 22.4 and Theorem 22.5, p. 94). Hyperbolicity
-forces `q` nondegenerate of even dimension; 2.8 makes `b ψ(T)` a similarity factor of `q_{F(T)}`, so
-`a b ψ(T) ∈ D(q_{F(T)})`, and 2.3 gives the subform. *Needs:* 2.3, 2.8, 2.9, 1.4.
+State `isRepresentedBy_smul_of_forall_equivalent_dualProd`: let `q` be an anisotropic quadratic form
+on `Fⁿ` and `ψ` an anisotropic quadratic form on `Fᵐ` whose coordinate polynomial `ψ(T) ∈ F[T₁, …, Tₘ]`
+is irreducible, such that `q_{F(ψ)}` is hyperbolic; then for every nonzero `a ∈ D(q)` and `b ∈ D(ψ)`,
+`a b ψ` is isometric to a subform of `q`, and `dim ψ ≤ dim q` (EKM, Proposition 22.4 and Theorem 22.5,
+p. 94). Hyperbolicity over `F(ψ)` is stated through every field `L` receiving `F[T]` with kernel
+exactly `(ψ(T))`: every such `L` contains the fraction field of `F[T]/(ψ(T))`, which is purely
+transcendental of degree one over `F(ψ)` (2.9), so hyperbolicity over `F(ψ)` ascends to every `L`,
+and conversely hyperbolicity over that fraction field descends to `F(ψ)` because the anisotropic
+part of the nonsingular form `q_{F(ψ)}` (0.3) stays anisotropic over `F(ψ)(x)` (2.1). The source's
+nonzero `q` is forced by `a ≠ 0`. Hyperbolicity forces `q` nondegenerate of even dimension; 2.8 makes
+`b ψ(T)` a similarity factor of `q_{F(T)}`, so `a b ψ(T) ∈ D(q_{F(T)})`, and 2.3 gives the subform.
+*Needs:* 0.3, 2.1, 2.3, 2.8, 2.9, 1.4; Mathlib `Irreducible`, `MvPolynomial.X`, `RingHom.ker`,
+`Ideal.span`; Tau Ceti `QuadraticMap.IsRepresentedBy`, `QuadraticMap.Represents`.
 
 **Checks.**
 
@@ -1011,6 +1033,11 @@ forces `q` nondegenerate of even dimension; 2.8 makes `b ψ(T)` a similarity fac
   of dimension two.
 - The bound can be strict: `q = ⟨⟨t, s⟩⟩_b ⊗ [1, 1]` over `𝔽₂(s, t)` is hyperbolic over `F([1, 1])` and
   has dimension eight while `dim ψ = 2`.
+- Irreducibility of the coordinate polynomial excludes small `ψ`: the line `⟨c⟩` has `ψ(T) = c T₁²`,
+  a product of two linear forms, and the zero-dimensional form has `ψ(T) = 0`; neither is
+  irreducible, so no field `L` with kernel `(ψ(T))` is asked for. The zero form `q` on `F⁰` is
+  hyperbolic over every field with `k = 0`, but represents no nonzero `a`, so the conclusion is
+  never asserted for it.
 
 ### 2.11 The Arason–Pfister Hauptsatz
 
@@ -1657,26 +1684,43 @@ the Nullstellensatz, `Algebra.trdeg`, `algebraicClosure`; `LocalFieldsRamificati
 
 ### 6.1 Coefficient fields
 
-Prove: if `O` is a henselian valuation ring of `K` with residue characteristic zero, there is a subfield
-`E ⊆ O` mapping isomorphically onto `κ`; every such `E` is relatively algebraically closed in `K` and
-contains the constant field `k`; and for units `ε₁, …, ε_m` and `a₀ ∈ O` with `1 − 4a₀ ∈ Oˣ` there are
-`η₁, …, η_m ∈ Eˣ` and `b₀ ∈ E` lifting the residues with `quadraticPfister ε a₀ ≅ quadraticPfister η b₀`
-over `K` (Dittmann–Pop, Proposition 3.2(3), Case 2, p. 7). Lift a transcendence basis of `κ` over `ℚ`;
-the induced rational function field reduces injectively, and Hensel's lemma extends the section over
-the separable algebraic residue extension (or a maximal partial section does). An element of `K`
-algebraic over `E` has value zero and a residual root in `κ`, and simple-root uniqueness puts it in `E`.
-Each `εᵢ/ηᵢ` reduces to `1` and is a square by Hensel's lemma for `X² − εᵢ/ηᵢ`, whose derivative `2` is a
-unit, so `⟨⟨ε⟩⟩_b ≅ ⟨⟨η⟩⟩_b`. For the terminal block, completing the square gives
-`[1, a₀] ≅ ⟨1, −(1 − 4a₀)⟩` and `[1, b₀] ≅ ⟨1, −(1 − 4b₀)⟩`; the ratio `(1 − 4a₀)/(1 − 4b₀)` is a principal
-unit, hence a square, so rescaling the second coordinate gives `[1, a₀] ≅ [1, b₀]`; tensor with the
-outer isometry. *Needs:* 4.1, 5.7, 0.2, 1.1; Mathlib `HenselianLocalRing`,
-`Algebra.trdeg`.
+State `exists_residueSection_of_charZero`: if `O` is a henselian valuation ring of `K` of arbitrary
+rank with residue characteristic zero, the residue map `O → κ` has a ring-homomorphic section
+`σ : κ → O`; its image `E = σ(κ)` is a subfield of `O` mapping isomorphically onto `κ`, a coefficient
+field. Prove that every such `E` is relatively algebraically closed in `K` and contains the constant
+field `k`. State `quadraticPfister_equivalent_residueSection`: for a henselian `O` of arbitrary rank,
+any section `σ` of the residue map (whose existence forces `char K = char κ`), units `ε₁, …, ε_m` and
+`a₀ ∈ O` with `1 − 4a₀ ∈ Oˣ`, the form `quadraticPfister ε a₀` is isometric over `K` to
+`quadraticPfister η b₀` with `ηᵢ = σ(ε̄ᵢ) ∈ Eˣ` and `b₀ = σ(ā₀) ∈ E` (Dittmann–Pop, Proposition
+3.2(3), Case 2, p. 7, in residue characteristic zero). For the section, lift a transcendence basis of
+`κ` over `ℚ`; the rational function field it generates consists of units and reduces injectively,
+and Hensel's lemma extends a maximal partial section over the separable algebraic residue extension:
+a residue class outside the image has an irreducible separable minimal polynomial over the image,
+whose monic lift has a simple residual root and hence a root in `O`. Every nonzero `x ∈ K`
+algebraic over `E` has value `1`: `x` and `x⁻¹` are integral over `E ⊆ O`, and `O` is integrally
+closed in `K`, so both lie in `O`. Its minimal polynomial over `E` reduces to an irreducible
+polynomial over `Ē = κ` having the root `x̄`, hence has degree one, so `x ∈ E`; the zero element lies
+in `E` already. For the transport when `2 ≠ 0` in `κ`: each `εᵢ/ηᵢ` reduces to `1` and is a square
+by Hensel's lemma for `X² − εᵢ/ηᵢ`, whose derivative at the residual root `1` is `2 ≠ 0` in `κ`, so
+`⟨⟨ε⟩⟩_b ≅ ⟨⟨η⟩⟩_b`; for the terminal block, `2` is a unit of `O` and completing the square gives
+`[1, a₀] ≅ ⟨1, −(1 − 4a₀)⟩` and `[1, b₀] ≅ ⟨1, −(1 − 4b₀)⟩`; the ratio `(1 − 4a₀)/(1 − 4b₀)` is a
+principal unit, hence a square, so rescaling the second coordinate gives `[1, a₀] ≅ [1, b₀]`; tensor
+with the outer isometry. In characteristic two (`1 − 4a₀ = 1`): `a₀ − b₀` lies in the maximal ideal,
+so Hensel's lemma for `X² + X − (a₀ − b₀)`, whose derivative at the residual root `0` is `1`, gives
+`a₀ − b₀ ∈ ℘(O)` and `[1, a₀] ≅ [1, b₀]` by `x ↦ x + z y`; and for a principal unit `u` and a unit
+Pfister form `ρ` with slots in `O`, the form `⟨⟨u⟩⟩_b ⊗ ρ = ρ ⊥ uρ` is hyperbolic by the
+principal-unit criterion (4.2) and 1.5, while `ρ ⊥ ρ = ⟨1, 1⟩_b ⊗ ρ` is hyperbolic as `⟨1, 1⟩_b` is
+metabolic, so `[uρ] = [ρ]` in `I_q(K)` and `uρ ≅ ρ` by 0.5; induct on the slots with `εᵢ = ηᵢ uᵢ`.
+*Needs:* 4.1, 4.2, 5.7, 0.2, 0.5, 1.1, 1.5; Mathlib `HenselianLocalRing`, `IsLocalRing.ResidueField`,
+`IsLocalRing.residue`, `Algebra.trdeg`.
 
 API:
 
-- existence of a coefficient field `E ⊆ O` with `E ≅ κ` under reduction;
-- relative algebraic closedness of `E` in `K`, and `k ⊆ E`;
-- unit Pfister forms over `K` are isometric to forms with slots in `E`.
+- existence of a coefficient field: a section `σ : κ → O` of the residue map, with image `E ≅ κ`,
+  when the residue characteristic is zero;
+- relative algebraic closedness of every coefficient field `E` in `K`, and `k ⊆ E`;
+- unit Pfister forms over `K` are isometric to the forms with slots and terminal coefficient
+  transported along any section `σ` of the residue map, in every characteristic.
 
 **Checks.**
 
@@ -1687,6 +1731,23 @@ API:
   such as `2 + t` is not a square, but `(2 + t)/2` is.
 - The terminal block moves too: for `m = 0` over `ℚ((t))`, `a₀ = t` lifts to `b₀ = 0`, there are no
   outer slots, and `[1, t] ≅ [1, 0]` holds because `1 − 4t` is a square in `ℚ((t))`.
+- The unit hypothesis on `1 − 4a₀` is needed for the transport: over `ℚ((t))` with `a₀ = (1 − t)/4`,
+  `1 − 4a₀ = t` is a nonunit, `[1, a₀] ≅ ⟨1, −t⟩` is nonsingular, while `b₀ = σ(1/4) = 1/4` gives the
+  singular `[1, 1/4] = (x + y/2)²`; the two are not isometric.
+- Elements algebraic over the coefficient field are units, in the multiplicative convention: for
+  `E = ℚ` in `ℚ((t))`, `2` is algebraic over `E` and `v(2) = 1`, whereas `v(0) = 0`; `t` has `v(t) < 1`
+  and is transcendental over `ℚ`.
+- The transport holds for any section in every characteristic, not only in characteristic zero: in
+  `𝔽₃((t))` with `σ` the constant inclusion, `ε = 1 + t` lifts to `η = 1` and `1 + t` is a square (its
+  binomial series has denominators that are powers of `2`). In `𝔽₂((t))` the squares are the series
+  in `t²`, so `1 + t` is not a square and `⟨1, 1 + t⟩_b` is not isometric to `⟨1, 1⟩_b`; nevertheless
+  `⟨⟨1 + t⟩⟩_b ⊗ [1, 1] = [1, 1] ⊥ (1 + t)[1, 1]` is hyperbolic, since `1 + t` is a norm from `𝔽₄((t))`
+  (even valuation), as is `⟨⟨1⟩⟩_b ⊗ [1, 1]`, and the two are isometric. For the terminal block,
+  `[1, t] ≅ [1, 0]` over `𝔽₂((t))` because `z = t + t² + t⁴ + t⁸ + ⋯` satisfies `z² + z = t`.
+- The section hypothesis is needed: in `ℚ(s)((t))` the ring map `σ′ : ℚ(s) → O` with `σ′(s) = 2s` is
+  not a section, and for `m = 0`, `a₀ = s` it would compare `[1, s] ≅ ⟨1, −(1 − 4s)⟩` with
+  `[1, 2s] ≅ ⟨1, −(1 − 8s)⟩`, which are not isometric since `(1 − 4s)/(1 − 8s)` is not a square in
+  `ℚ(s)`, hence not in `ℚ(s)((t))`.
 - Coefficient fields are not canonical: in `ℚ(s)((t))` both `ℚ(s)` and `ℚ(s + t)` map isomorphically onto
   the residue field `ℚ(s)`.
 
@@ -1936,7 +1997,7 @@ in every henselization; the trivial valuation lies outside, and so does every `p
   Quadratic Forms*, AMS Colloquium Publications 56 (2008), [author copy](https://www.math.ucla.edu/~merkurev/Book/Kniga-final/Kniga.pdf);
   printed page numbers. §§1–2 (bilinear Witt ring, Lemma 2.1, Proposition 2.4, Corollary 2.5, pp. 19–20),
   §4 (Theorem 4.8, p. 23; (4.11) and Proposition 4.13, p. 25; Theorem 4.22, p. 27), §5 ((5.1), p. 28;
-  Lemma 5.2 and Proposition 5.3, p. 29; Fact 5.15, p. 31), §7 (Notation 7.3, Examples 7.5–7.6, Lemmas 7.12, 7.13 and 7.15,
+  Lemma 5.2 and Proposition 5.3, p. 29; Fact 5.15, p. 31), §7 (Notation 7.3, Examples 7.5–7.6, Lemmas 7.12 and 7.15, Proposition 7.13,
   Proposition 7.19, Example 7.23, Propositions 7.29 and 7.31, pp. 40–46), §8 (Theorems 8.3–8.5, (8.7),
   Lemma 8.16, Remarks 8.17–8.18, pp. 47–51), §9 (Examples 9.3–9.4, (9.5), Proposition 9.8, Corollaries 9.9–9.10,
   Lemma 9.11, pp. 52–54), §16 (Proposition 16.1, Fact 16.2, pp. 67–68), §17 (Theorem 17.3, Corollary 17.7,

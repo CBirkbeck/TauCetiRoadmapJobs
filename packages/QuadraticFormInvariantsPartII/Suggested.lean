@@ -1,8 +1,10 @@
-import Mathlib
-import TauCeti.LinearAlgebra.QuadraticForm.Witt.Pfister.Basic
-import TauCeti.LinearAlgebra.QuadraticForm.Representation
-import TauCeti.FieldTheory.GaloisCohomology.MuTwo.Basic
-import TauCeti.RepresentationTheory.Homological.ContCohomology.Cup.TrivialF2.Basic
+module
+
+public import Mathlib
+public import TauCeti.LinearAlgebra.QuadraticForm.Witt.Pfister.Basic
+public import TauCeti.LinearAlgebra.QuadraticForm.Representation
+public import TauCeti.FieldTheory.GaloisCohomology.MuTwo.Basic
+public import TauCeti.RepresentationTheory.Homological.ContCohomology.Cup.TrivialF2.Basic
 
 /-!
 # Quadratic forms and cohomological invariants, Part II: target signatures
@@ -18,15 +20,17 @@ Stated here:
 * roundness of quadratic Pfister forms, and the equivalence of isotropy with hyperbolicity, in every
   characteristic (Layer 1);
 * the Cassels–Pfister theorem, the representation theorem, Springer's odd-degree theorem, the
-  similarity norm principle and the quadratic similarity theorem in every characteristic, and the
-  Arason–Pfister Hauptsatz when `2` is invertible (Layer 2);
+  similarity norm principle, the quadratic similarity theorem and the subform theorem in every
+  characteristic, and the Arason–Pfister Hauptsatz when `2` is invertible (Layer 2);
 * the Milnor conjecture for the Witt ring in cohomological form, `Iⁿ/Iⁿ⁺¹ ≅ Hⁿ(G_K, 𝔽₂)` with
   Pfister classes going to cup products of Kummer classes, and the invariant-zero criterion for
   Pfister forms, when `2` is invertible (Layer 3);
 * Dittmann–Pop's principal-unit criterion and independent-value criterion over a henselian valued
   field, the latter containing unit reduction as its case without values (Layer 4);
 * the Lang–Nagata theorem for systems of forms and the Tsen–Lang theorem (Layer 5);
-* Dittmann–Pop's dimension theorem for unit Pfister forms (Layer 6).
+* the existence of coefficient fields in henselian valued fields of residue characteristic zero,
+  the transport of unit Pfister forms along any coefficient-field section, and Dittmann–Pop's
+  dimension theorem for unit Pfister forms (Layer 6).
 
 Headline theorems of the roadmap that are not statable at the pins, with what each lacks:
 
@@ -39,12 +43,13 @@ Headline theorems of the roadmap that are not statable at the pins, with what ea
 * the Milnor conjecture for the Witt ring in Milnor's original form `Kₙᴹ(F)/2 ≅ Iⁿ/Iⁿ⁺¹`: Milnor
   K-theory of a field is not at the pins (its composite with the norm-residue isomorphism is the
   cohomological statement below);
-* the subform theorem: there is no function field of a projective quadric;
 * Jannsen's Hasse principle `H^{d+2}(F, ℤ/2) ↪ ⊕_v H^{d+2}(F_v, ℤ/2)`: there are no composita of a
   function field with the completions of its global constant field and no restriction maps to them;
 * patch openness of the henselian embedding and isotropy loci (Dittmann–Pop, Lemma 3.9): there is
   no henselization of a valued field.
 -/
+
+@[expose] public section
 
 namespace TauCetiRoadmap.QuadraticFormInvariantsPartII
 
@@ -161,6 +166,28 @@ theorem quadraticSimilarity_tfae {K : Type u} [Field K] {k n : ℕ}
           [IsScalarTower K (MvPolynomial (Fin n) K) L],
           RingHom.ker (algebraMap (MvPolynomial (Fin n) K) L) = Ideal.span {p} →
           (extendScalars Q L).Equivalent (QuadraticForm.dualProd L (Fin k → L))].TFAE := by
+  sorry
+
+/-- **The subform theorem** (EKM, Theorem 22.5, p. 94), in every characteristic. Let `q` be an
+anisotropic quadratic form and `ψ` an anisotropic quadratic form whose coordinate polynomial
+`ψ(T) ∈ K[T₁, …, Tₘ]` is irreducible, so that the projective quadric `ψ = 0` is integral with
+function field `K(ψ)`. Suppose `q` is hyperbolic over `K(ψ)`; this is phrased through every field
+`L` receiving `K[T]` with kernel exactly `(ψ(T))`: each such `L` contains the fraction field of
+`K[T]/(ψ(T))`, which is purely transcendental of degree one over `K(ψ)` (EKM, §22, p. 94), and
+hyperbolicity ascends to `L` and descends along the purely transcendental extension. Then for
+every nonzero value `a` of `q` and `b` of `ψ`, the form `a b ψ` is isometric to a subform of `q`;
+in particular `m ≤ n`. The nonzero form `q` of the source is forced by `a ≠ 0`. -/
+theorem isRepresentedBy_smul_of_forall_equivalent_dualProd {K : Type u} [Field K] {m n : ℕ}
+    (q : QuadraticForm K (Fin n → K)) (hq : q.Anisotropic)
+    (ψ : QuadraticForm K (Fin m → K)) (hψ : ψ.Anisotropic)
+    (hirr : Irreducible (extendScalars ψ (MvPolynomial (Fin m) K) MvPolynomial.X))
+    (hhyp : ∀ (L : Type u) [Field L] [Algebra K L] [Algebra (MvPolynomial (Fin m) K) L]
+      [IsScalarTower K (MvPolynomial (Fin m) K) L],
+      RingHom.ker (algebraMap (MvPolynomial (Fin m) K) L) =
+        Ideal.span {extendScalars ψ (MvPolynomial (Fin m) K) MvPolynomial.X} →
+      ∃ k : ℕ, (extendScalars q L).Equivalent (QuadraticForm.dualProd L (Fin k → L)))
+    (a b : K) (ha : a ≠ 0) (hqa : q.Represents a) (hb : b ≠ 0) (hψb : ψ.Represents b) :
+    ((a * b) • ψ).IsRepresentedBy q := by
   sorry
 
 /-- **The Arason–Pfister Hauptsatz** (EKM, Theorem 23.7(1), p. 100) for a field in which `2` is
@@ -284,6 +311,43 @@ def constantField (F : Type u) [Field F] : Subfield F :=
   (algebraicClosure (⊥ : Subfield F) F).toSubfield
 
 /-! ## Layer 6: coefficient fields, real places and the dimension theorem -/
+
+/-- **Coefficient fields exist in residue characteristic zero** (Dittmann–Pop, Proposition 3.2(3),
+Case 2, p. 7): a henselian valuation ring `O` of arbitrary rank whose residue field `κ` has
+characteristic zero admits a ring homomorphism `σ : κ → O` that is a section of the residue map; its
+image is a subfield of `O` mapping isomorphically onto `κ`. Lift a transcendence basis of `κ` over
+`ℚ`, on which the valuation is trivial, then extend over the separable algebraic residue extension
+by Hensel's lemma applied to lifted minimal polynomials and Zorn's lemma. Residue characteristic
+`p > 0` is excluded: `ℤ_p` contains no subfield. -/
+theorem exists_residueSection_of_charZero {K : Type u} [Field K] (O : ValuationSubring K)
+    [HenselianLocalRing O] [CharZero (IsLocalRing.ResidueField O)] :
+    ∃ σ : IsLocalRing.ResidueField O →+* O,
+      (IsLocalRing.residue O).comp σ = RingHom.id (IsLocalRing.ResidueField O) := by
+  sorry
+
+/-- **Unit Pfister forms descend to a coefficient field** (Dittmann–Pop, Proposition 3.2(3),
+Case 2, p. 7, in residue characteristic zero). Let `O` be a henselian valuation ring of arbitrary
+rank and `σ : κ → O` any section of the residue map; its existence forces `K` and `κ` to have the
+same characteristic. For units `ε₁, …, εₘ` of `O` and `a₀ ∈ O` with `1 − 4a₀` a unit, the unit
+Pfister form `⟨⟨ε⟩⟩_b ⊗ [1, a₀]` is isometric over `K` to the form with slots `ηᵢ = σ(ε̄ᵢ)` and
+terminal coefficient `b₀ = σ(ā₀)`, all in the image of `σ`. When `2 ≠ 0` in `κ`, each `εᵢ/ηᵢ` is a
+principal unit, hence a square by Hensel's lemma for `X² − εᵢ/ηᵢ`, and `[1, a₀] ≅ ⟨1, −(1 − 4a₀)⟩`;
+the ratio `(1 − 4a₀)/(1 − 4b₀)` is a principal unit, so the terminal blocks agree. In
+characteristic two, `a₀ − b₀` lies in `℘(O)` by Hensel's lemma for `X² + X − (a₀ − b₀)`, and
+`uρ ≅ ρ` for a principal unit `u` and a unit Pfister form `ρ`, because `⟨⟨u⟩⟩_b ⊗ ρ` is hyperbolic
+by the principal-unit criterion. The unit hypothesis on `1 − 4a₀` is needed: over `ℚ((t))` with
+`a₀ = (1 − t)/4`, the form `[1, a₀] ≅ ⟨1, −t⟩` is nonsingular while `[1, σ(ā₀)] = [1, 1/4]` is
+singular. -/
+theorem quadraticPfister_equivalent_residueSection {K : Type u} [Field K]
+    (O : ValuationSubring K) [HenselianLocalRing O]
+    (σ : IsLocalRing.ResidueField O →+* O)
+    (hσ : (IsLocalRing.residue O).comp σ = RingHom.id (IsLocalRing.ResidueField O))
+    {m : ℕ} (ε : Fin m → Oˣ) (a₀ : O) (ha₀ : IsUnit (1 - 4 * a₀)) :
+    (quadraticPfister (fun i => Units.map O.subtype.toMonoidHom (ε i)) (a₀ : K)).Equivalent
+      (quadraticPfister
+        (fun i => Units.map (O.subtype.comp (σ.comp (IsLocalRing.residue O))).toMonoidHom (ε i))
+        ((σ (IsLocalRing.residue O a₀) : O) : K)) := by
+  sorry
 
 /-- **Dittmann–Pop's dimension theorem for unit Pfister forms** (Proposition 3.2(3), pp. 6–8). Let
 `K` have Kronecker dimension `r` and a nontrivial henselian valuation ring `O`, with no
