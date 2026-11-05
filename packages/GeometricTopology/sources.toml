@@ -244,3 +244,17 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-05"
 cited_for = ["8"]
+
+[[source]]
+id = "rourke-sanderson1972"
+authors = "C. P. Rourke, B. J. Sanderson"
+title = "Introduction to Piecewise-Linear Topology"
+year = 1972
+doi = "10.1007/978-3-642-81735-9"
+locator_scheme = "chapter"
+locator = "Chapter 7"
+url = "https://doi.org/10.1007/978-3-642-81735-9"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["2.2"]
