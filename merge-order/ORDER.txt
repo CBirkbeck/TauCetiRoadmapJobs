@@ -85,6 +85,7 @@ AnalyticNumberTheoryPartII
 AnalyticNumberTheory
 AlgebraicModularFormsAndSerreWeights
 GL2AutomorphicRepresentationsAndTransfer
+ModularCharactersAndBlocks
 EllipticLegendreCharacterInterfaces
 HypergeometricMotives
 EllipticCurvesPartII
