@@ -1,0 +1,172 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "StackPointsAndResidualGerbes"
+
+[[source]]
+id = "stacks-04XE"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, Properties of Algebraic Stacks"
+year = 2026
+locator_scheme = "tag"
+locator = "Tag 04XE"
+url = "https://stacks.math.columbia.edu/tag/04XE"
+fetched_from = "https://stacks.math.columbia.edu/download/stacks-properties.pdf#nameddest=04XE"
+fetched_at = "2026-11-05T05:38:50Z"
+sha256 = "0bed3a87534ac17a31cd9bd897c57d81910ac28be21df5a0d80465b6766da57a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["points of algebraic stacks"]
+
+[[source]]
+id = "stacks-06ML"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, Properties of Algebraic Stacks"
+year = 2026
+locator_scheme = "tag"
+locator = "Tag 06ML"
+url = "https://stacks.math.columbia.edu/tag/06ML"
+fetched_from = "https://stacks.math.columbia.edu/download/stacks-properties.pdf#nameddest=06ML"
+fetched_at = "2026-11-05T05:38:53Z"
+sha256 = "0bed3a87534ac17a31cd9bd897c57d81910ac28be21df5a0d80465b6766da57a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["residual gerbes"]
+
+[[source]]
+id = "stacks-06QB"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, Morphisms of Algebraic Stacks"
+year = 2026
+locator_scheme = "tag"
+locator = "Tag 06QB"
+url = "https://stacks.math.columbia.edu/tag/06QB"
+fetched_from = "https://stacks.math.columbia.edu/download/stacks-morphisms.pdf#nameddest=06QB"
+fetched_at = "2026-11-05T05:38:57Z"
+sha256 = "ba3fb2d5c613e4fee0fdc5ee640581d9bf3bf9241760f9f502efab7dca3a8865"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["gerbes as morphisms of algebraic stacks"]
+
+[[source]]
+id = "stacks-06RD"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, Morphisms of Algebraic Stacks"
+year = 2026
+locator_scheme = "tag"
+locator = "Tag 06RD"
+url = "https://stacks.math.columbia.edu/tag/06RD"
+fetched_from = "https://stacks.math.columbia.edu/download/stacks-morphisms.pdf#nameddest=06RD"
+fetched_at = "2026-11-05T05:39:01Z"
+sha256 = "ba3fb2d5c613e4fee0fdc5ee640581d9bf3bf9241760f9f502efab7dca3a8865"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["existence of residual gerbes"]
+
+[[source]]
+id = "ahr2020"
+authors = "Jarod Alper, Jack Hall, David Rydh"
+title = "A Luna étale slice theorem for algebraic stacks"
+year = 2015
+venue = "Ann. of Math. 191(3) (2020), 675-738"
+doi = "10.4007/annals.2020.191.3.1"
+arxiv = "1504.06467v3"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/1504.06467v3"
+fetched_from = "https://arxiv.org/pdf/1504.06467v3"
+fetched_at = "2026-11-05T05:39:06Z"
+sha256 = "d85abef9c8519ecc2185a28bd9a8c5590061da90ea1406bc6c259bc3e8ac6400"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v3"
+cited_for = ["Luna etale slice theorem; normal space at a closed point"]
+
+[[source]]
+id = "rydh2015"
+authors = "David Rydh"
+title = "Noetherian approximation of algebraic spaces and stacks"
+year = 2009
+venue = "J. Algebra 422 (2015), 105-147"
+doi = "10.1016/j.jalgebra.2014.09.012"
+arxiv = "0904.0227v4"
+locator_scheme = "theorem"
+locator = "Theorem B"
+url = "https://arxiv.org/abs/0904.0227v4"
+fetched_from = "https://arxiv.org/pdf/0904.0227v4"
+fetched_at = "2026-11-05T05:39:11Z"
+sha256 = "6f78233beec951c4d2c8b7ca03823a1bbe182b93eff4691c3775cd10b999675e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v4"
+cited_for = ["Noetherian approximation of stacks only; the residual-gerbe appendix the target attributes to this paper is Appendix B of rydh2011"]
+
+[[source]]
+id = "alper-moduli"
+authors = "Jarod Alper"
+title = "Stacks and Moduli (lecture notes)"
+year = 2026
+version_note = "draft dated 2026-01-05 on the author page, CC BY-NC-ND 4.0; section and proposition numbers are those of this draft"
+locator_scheme = "section"
+locator = "Section 4.5.3"
+url = "https://sites.math.washington.edu/~jarod/moduli.pdf"
+fetched_from = "https://sites.math.washington.edu/~jarod/moduli.pdf"
+fetched_at = "2026-11-05T05:39:35Z"
+sha256 = "f07437af689e9ae4ccd355183f357d234474606a4e0d6511ff2d4ac0a4f14d6d"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["finite type points, tangent spaces and residual gerbes (Sections 4.5.2, 4.5.3 and 7.4.5)"]
+
+[[source]]
+id = "lmb2000"
+authors = "Gérard Laumon, Laurent Moret-Bailly"
+title = "Champs algébriques"
+year = 2000
+doi = "10.1007/978-3-540-24899-6"
+locator_scheme = "chapter"
+locator = "Chapter 11"
+url = "https://doi.org/10.1007/978-3-540-24899-6"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["gerbes residuelles"]
+
+[[source]]
+id = "rydh2011"
+authors = "David Rydh"
+title = "Étale dévissage, descent and pushouts of stacks"
+year = 2010
+venue = "J. Algebra 331(1), 2011, p. 194-223"
+doi = "10.1016/j.jalgebra.2011.01.006"
+arxiv = "1005.2171v2"
+locator_scheme = "section"
+locator = "Appendix B"
+url = "https://arxiv.org/abs/1005.2171v2"
+fetched_from = "https://arxiv.org/pdf/1005.2171v2"
+fetched_at = "2026-11-05T05:41:55Z"
+sha256 = "b50abcc4fedc61b32db4dfde0efaddad1a27ab0c0f53873a84edea00e1536ca7"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v2"
+cited_for = ["residual gerbes: comparison with Laumon-Moret-Bailly, non-neutral case"]
+
+[[source]]
+id = "olsson2016"
+authors = "Martin Olsson"
+title = "Algebraic Spaces and Stacks"
+year = 2016
+venue = "AMS Colloquium Publications 62"
+doi = "10.1090/coll/062"
+locator_scheme = "chapter"
+locator = "Chapter 11"
+url = "https://doi.org/10.1090/coll/062"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (AMS); cited by its locator without the text"
+cited_for = ["points, residual gerbes, local structure: background only, every statement is sourced from the Stacks Project"]
