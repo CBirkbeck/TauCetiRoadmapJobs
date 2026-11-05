@@ -1,7 +1,9 @@
-import Mathlib
-import TauCeti.Algebra.GroupAction.Trivial
-import TauCeti.GroupTheory.GroupExtension.Of.FactorSet
-import TauCeti.LinearAlgebra.BilinearForm.Isometry
+module
+
+public import Mathlib
+public import TauCeti.Algebra.GroupAction.Trivial
+public import TauCeti.GroupTheory.GroupExtension.Of.FactorSet
+public import TauCeti.LinearAlgebra.BilinearForm.Isometry
 
 /-!
 # Metaplectic automorphic forms, Part II (finite Weil–Heisenberg representations): target signatures
@@ -19,7 +21,7 @@ Stated here:
   commutator pairing is nondegenerate (existence, `dim² = [J : H]`, character, uniqueness).
 * Layer 2: existence and uniqueness of the normalized finite Weil representation in the
   Schrödinger model of a full polarization `X × X*`, characterized by Egorov covariance and the
-  parity-determinant identity `det ω(g) = (det ω(g)|S⁺)²`; this includes `Sp₂(𝔽₃)`.
+  parity-determinant identity `det W(g) = (det W(g)|S⁺)²`; this includes `Sp₂(𝔽₃)`.
 * Layer 3: the isotropic-invariants theorem for fully ramified characters: the `U`-invariants of
   the unique representation form an irreducible representation of the orthogonal `Q` of
   dimension `√[Q : HU]`.
@@ -29,7 +31,7 @@ Stated here:
 Not statable at the pins:
 
 * Layer 3, the corrected Gérardin induction formula
-  `ω_V|_{P ⋉ H(V)} ≅ Ind_{P ⋉ H(I^⊥)}^{P ⋉ H(V)} ((χ ∘ det_I) ⊗ Ω_{I^⊥/I})`: it needs the
+  `Ω_{ψ,V}|_{P ⋉ H(V)} ≅ Ind_{P ⋉ H(I^⊥)}^{P ⋉ H(V)} ((χ ∘ det_I) ⊗ Ω_{ψ,I^⊥/I})`: it needs the
   normalized Weil–Heisenberg representation as a constructed object (the roadmap's Layer 2
   construction), the quotient symplectic space `I^⊥/I` with its induced form and Heisenberg
   group, and induction from the semidirect product `P ⋉ H(I^⊥)`; none of these is a carrier at
@@ -38,6 +40,8 @@ Not statable at the pins:
   needs the same constructed Weil–Heisenberg representation and the Heisenberg map
   `∏ H(Vᵢ) → H(⊕ Vᵢ)`, which is not a carrier at the pins.
 -/
+
+@[expose] public section
 
 namespace TauCetiRoadmap.MetaplecticAutomorphicFormsPartII
 
