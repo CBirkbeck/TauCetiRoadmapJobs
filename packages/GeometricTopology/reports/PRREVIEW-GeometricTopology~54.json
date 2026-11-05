@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-GeometricTopology~54",
+    "head": "6cec06f0ec62e1df413da5ad1306e5e205b9013e",
+    "pr": 1797,
+    "folder": "GeometricTopology",
+    "date": "2026-11-05",
+    "findings": 12,
+    "blocking": 5,
+    "notes": "Full review of the house-shape rewrite. Gate OK at this head (build=0, residue=0, stray-files=0); depcheck 235 roadmaps, 0 problems, no UPWARD/CYCLE; previous r53 findings R01-R25 checked one by one (23 repaired, R04/R13/R25 partly). Suggested.lean: 12 headlines elaborated from a scratch copy, one-tactic probes all fail (no padding), #check types match the README; 412 backticked identifiers grepped at both pins, all resolve. Seeded sample of 15 targets checked against cached texts (hatcher-at, hatcher-3m, watanabe2018, gmm2009, km2004, kirby1997, agol2013, li2013, manolescu2016, yazdi2016, livingston2005, scharlemann2002, piccirillo2020) and the pin; textbooks uncertified. 32-row adversarial table. Blocking: inverted orientation Check (1.4), codimension-one PL local flatness overclaim (2.2), Reidemeister iff false for labelled links (4.3), lens space defined again beside TauCeti.LensSpace (5.3 vs 8.1), Kirby-Siebenmann class unowned (12.3). P3: neat Check contradicts definition, framing sign, Hatcher Cor 3.45 locator, MorseTheory/GeneralizedCohomology consumer claims, no Needs lines, undefined delta, Diff+ needs connected M."
+  }
+}
