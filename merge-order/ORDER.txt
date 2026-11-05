@@ -85,7 +85,6 @@ AnalyticNumberTheoryPartII
 AnalyticNumberTheory
 AlgebraicModularFormsAndSerreWeights
 GL2AutomorphicRepresentationsAndTransfer
-ModularCharactersAndBlocks
 EllipticLegendreCharacterInterfaces
 HypergeometricMotives
 EllipticCurvesPartII
@@ -101,7 +100,6 @@ ArithmeticStatisticsPartII
 ArithmeticStatisticsPartIII
 ArithmeticStatisticsPartIV
 ArithmeticStatisticsPartV
-FiniteGroupInvariants
 PELModuli
 ShimuraData
 FarguesFontaineDiamonds
@@ -305,7 +303,6 @@ LogicAndDefinabilityInNumberTheory
 EnriquesSurfacesAndIntegralNonexistence
 SmallRamificationAndAbelianVarietyBaseCasesPartII
 PadicHodgeRegulators
-NonordinaryCMSpecialValues
 HabiroNumberFields
 HabiroRings
 RefinedTraceMethods
@@ -324,6 +321,7 @@ ArakelovGeometryAndAbelianHeightsPartII
 HeightsRationalPointsAndObstructionsPartII
 MotivicStructuresInModuliOfCurves
 LubinTateFormalModulesAndQuasiCanonicalLifts
+NonordinaryCMSpecialValues
 RelativeFarguesFontainePartII
 AnticyclotomicLocalUnits
 InertAnticyclotomicCMMainConjecture
@@ -374,4 +372,4 @@ HyperellipticCurves
 AbelianSurfacesModularity
 DeRhamCohomologyAndDuality
 PadicExtensionFamilies
-GlaubermanZStar
+OddOrderTheorem
