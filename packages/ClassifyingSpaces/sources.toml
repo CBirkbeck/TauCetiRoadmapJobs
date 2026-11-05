@@ -46,3 +46,48 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["Stage 3 item 13", "Stage 4 item 16"]
+
+[[source]]
+id = "schwamberger-vogt-2009"
+authors = "Eugenia Schwamberger, Rainer M. Vogt"
+title = "Dold spaces in homotopy theory"
+year = 2009
+venue = "Algebraic & Geometric Topology 9, 1585–1622"
+doi = "10.2140/agt.2009.9.1585"
+locator_scheme = "section"
+locator = "Section 2"
+url = "https://doi.org/10.2140/agt.2009.9.1585"
+licence_class = "none"
+status = "uncertified"
+version_note = "publisher page only (msp.org); the Project Euclid landing page answered with a bot-block page, not the text; cited by its locator without the text"
+cited_for = ["Stage 3 item 12"]
+
+[[source]]
+id = "milnor-1956"
+authors = "John Milnor"
+title = "Construction of universal bundles, II"
+year = 1956
+venue = "Annals of Mathematics 63, 430–436"
+doi = "10.2307/1970012"
+locator_scheme = "section"
+locator = "Section 3"
+url = "https://doi.org/10.2307/1970012"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (JSTOR); cited by its locator without the text"
+cited_for = ["Stage 1 item 1"]
+
+[[source]]
+id = "tomdieck-1987"
+authors = "Tammo tom Dieck"
+title = "Transformation Groups"
+year = 1987
+venue = "de Gruyter Studies in Mathematics 8"
+doi = "10.1515/9783110858372"
+locator_scheme = "section"
+locator = "Section II.1"
+url = "https://doi.org/10.1515/9783110858372"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (de Gruyter); cited by its locator without the text"
+cited_for = ["Stage 3 item 13"]
