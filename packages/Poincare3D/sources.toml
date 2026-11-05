@@ -1,0 +1,30 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "Poincare3D"
+
+[[source]]
+id = "hildebrandt69"
+authors = "S. Hildebrandt"
+title = "Boundary behavior of minimal surfaces"
+year = 1969
+venue = "Archive for Rational Mechanics and Analysis 35"
+doi = "10.1007/bf00248494"
+locator_scheme = "page"
+locator = "pp. 47-82"
+url = "https://doi.org/10.1007/bf00248494"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["9.3"]
+
+[[source]]
+id = "hatcherAT"
+locator_scheme = "section"
+locator = "4.2"
+url = "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf"
+fetched_from = "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf"
+fetched_at = "2026-11-05T03:56:56Z"
+sha256 = "bebb3032bf9021b956da3bd070eb6c67dc662cf849be9cdf6679f677560e5618"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["1.1"]
