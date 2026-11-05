@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "accepted",
+    "reviewer": "independent-review-PRREVIEW-AlgebraicTopology~18",
+    "head": "08deda521451c8f1dbfd242e891bd34958593f99",
+    "pr": 1663,
+    "folder": "AlgebraicTopology",
+    "date": "2026-11-05",
+    "findings": 0,
+    "blocking": 0,
+    "notes": "incremental re-review of 17 changed lines since 548b721 (README only; Suggested.lean byte-identical). R01 repaired: both 8.13 passages now say TangentialBordism B1.6 states the corner-source extension by the same route and consumes nothing here, matching TangentialBordism README lines 225-284 and 138 at its open head. R02 repaired: Milnor 1959 cited as Theorem 3 (both assertions) at README 2215 and 2769, matching milnor1959 lines 209-212; no 'Theorem 4' remains. No file changed outside the folder. Worker's gate at 08deda5 passed every check; depcheck 224 roadmaps, 2101 edges, 0 problems; lake env lean exit 0 with exactly 22 sorry warnings and 9 #check outputs; one-tactic probe on a scratch copy closes none of the 22. Adversarial table carried forward from the previous report with two new rows for the changed passages."
+  }
+}
