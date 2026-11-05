@@ -1,0 +1,40 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-REV-PKG-GlobalGaloisDeformationsPartII~4",
+  "date": "2026-10-25",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "comment review on the board pull request by `CBirkbeck` (claude) of a63f550",
+  "conditional_gaps": [
+   "all-place-symplectic-monodromy",
+   "bounded-power-levi-centralizer",
+   "character-twisted-adjoint-h1",
+   "finite-image-semisimplification",
+   "finite-image-semisimplification-scalar-extension",
+   "fixed-quotient-global-obstructions",
+   "function-field-langlands-lattice-witness",
+   "function-field-selmer-numerics",
+   "gl2-local-determinant-normalization",
+   "large-prime-unipotent-exponential",
+   "larsen-pink-normal-series",
+   "lazard-lattice-comparison",
+   "nilpotent-lie-centralizers",
+   "ordinary-residual-potential-automorphy",
+   "parabolic-adjoint-filtration",
+   "polarized-tangent-convention",
+   "prescribed-root-regular-toral-element",
+   "root-cocycle-lattices",
+   "semisimple-group-centralizers",
+   "semisimple-lie-centralizers",
+   "semisimple-lie-cohomology-vanishing",
+   "small-dimensional-adjoint-semisimplicity",
+   "small-dimensional-extension-splitting",
+   "smooth-local-approximation",
+   "torus-centralizers-are-levi",
+   "unconditional-pan-fontaine-mazur",
+   "uniform-finite-field-root-position",
+   "unipotent-adjoint-expansion"
+  ]
+ }
+}
