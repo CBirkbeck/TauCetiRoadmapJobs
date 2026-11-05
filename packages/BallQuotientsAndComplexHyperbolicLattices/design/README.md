@@ -17,7 +17,7 @@ It leaves to named roadmaps:
 - **Complex and Kähler differential geometry.** Complex structures and type calculus (ComplexKahlerGeometry K1–K2), analytic germs, analytic subsets, irreducible components, Riemann and Hartogs extension on manifolds (K3), Hermitian holomorphic bundles, canonical bundles and Chern connections (K4), Kähler metrics and the curvature lower bound on (n,k)-forms (K6.0); free holomorphic quotients, open gluing and holomorphic line bundles (ComplexManifolds Milestones 4–7).
 - **Riemannian geometry.** Levi-Civita connections, geodesics, exponential maps and Hopf–Rinow (HopfRinow, consumed through RiemannianGeometry), the quotient Riemannian manifold of a free properly discontinuous isometric action, local isometries determined by a one-jet (RiemannianGeometry R4.7), and the second fundamental form of an isometric immersion (RiemannianGeometry R5a). The disc Schwarz–Pick lemma is Completed/ConformalMapping Layer 2.
 - **Algebraic geometry.** Strict-SNC compactifications of smooth quasi-projective varieties (AlgebraicModuliForArithmeticGeometry §9.5, through ResolutionOfSingularitiesCharacteristicZero §6.2), normalization (AlgebraicModuliForArithmeticGeometry §5.4 and Mathlib's relative normalization), finite quotients of projective schemes (SchemeAndStackFoundations §1.17).
-- **Not in scope, and the consumers' work.** Real totally geodesic submanifolds, the construction of the non-arithmetic lattices of Mostow and Deligne–Mostow (they enter only as Checks), the Hodge-theoretic realisation of S_Γ in a period domain, the finiteness of maximal totally geodesic subvarieties and the Ax–Schanuel theorem themselves (BaldiUllmo2023 line 59 and line 91), superrigidity and Margulis's arithmeticity and commensurability criteria. ArithmeticLocallySymmetricSpaces §ALS.0.5 states properness for G(F_∞) of a reductive group over a number field; a non-arithmetic lattice in PU(1,n) is not of that form, so the proper action of §5.2 is proved here from Mathlib.
+- **Not in scope, and the consumers' work.** Real totally geodesic submanifolds, the construction of the non-arithmetic lattices of Mostow and Deligne–Mostow (they enter only as Checks), the Hodge-theoretic realisation of S_Γ in a period domain, the finiteness of maximal totally geodesic subvarieties and the Ax–Schanuel theorem themselves (BaldiUllmo2023 line 59 and line 91), superrigidity and Margulis's arithmeticity and commensurability criteria. ArithmeticLocallySymmetricSpaces §ALS.0.5 states properness of the action of G(F_∞)/A_∞ on the symmetric space of a reductive group over a number field, for every subgroup with discrete image, arithmetic or not; transporting it to B would need the identification of B with that symmetric space for a ℚ-form of PU(1,n), which costs more than the direct argument, so §5.2 proves the proper action directly from compactness of K and §1.4.
 
 ## Conventions
 
@@ -50,7 +50,7 @@ The baseline is mathlib commit f6090c7095e1e56b3464c1daba5f24631f1290d2.
 - `Complex.UnitDisc` (Mathlib/Analysis/Complex/UnitDisc/Basic.lean:30) and `Complex.dist_le_div_mul_dist_of_mapsTo_ball` (Mathlib/Analysis/Complex/Schwarz.lean:189), the Schwarz lemma for a holomorphic map between discs; it is one-variable.
 - `ProperlyDiscontinuousSMul` (Mathlib/Topology/Algebra/ConstMulAction.lean:532), `Subgroup.properlyDiscontinuousSMul_iff` (Mathlib/Topology/Algebra/Group/DiscontinuousSubgroup.lean:24), `Subgroup.properlyDiscontinuousSMul_of_tendsto_cofinite` (Mathlib/Topology/Algebra/Group/Subgroup.lean:155) and `properlyDiscontinuousSMul_iff_properSMul` (Mathlib/Topology/Algebra/ProperAction/CompactlyGenerated.lean:95). Proper discontinuity in Mathlib is the finiteness of {γ : γK ∩ L ≠ ∅} for compact K, L; it implies neither freeness nor finite stabilisers in a non-Hausdorff space, and §5.2 proves both for G-actions.
 - `MeasureTheory.IsFundamentalDomain` (Mathlib/MeasureTheory/Group/FundamentalDomain.lean:69), `MeasureTheory.covolume` (same file, line 679), `MeasureTheory.IsFundamentalDomain.covolume_eq_volume` (line 695), and `MeasureTheory.Measure.isMulLeftInvariant_eq_smul_of_innerRegular` (Mathlib/MeasureTheory/Measure/Haar/Unique.lean:889), uniqueness of a left-invariant inner-regular measure up to a scalar on a locally compact group.
-- `Subgroup.Commensurable` (Mathlib/GroupTheory/Commensurable.lean:58), `Subgroup.commensurator` (line 141), `Group.ResiduallyFinite` (Mathlib/GroupTheory/ResiduallyFinite.lean:34), `MulAction.orbitRel.Quotient` and `MulAction.stabilizer`.
+- `Subgroup.Commensurable` (Mathlib/GroupTheory/Commensurable.lean:58), `Subgroup.commensurator` (line 141), `MulAction.orbitRel.Quotient` and `MulAction.stabilizer`.
 - `AlgebraicGeometry.Scheme.Hom.normalization` (Mathlib/AlgebraicGeometry/Normalization.lean:122), the relative normalization of a qcqs morphism with its integral structure map; the normalization of a reduced variety Z is that of the morphism from the disjoint union of the spectra of its function fields.
 
 ### From Tau Ceti
@@ -61,6 +61,7 @@ The baseline is Tau Ceti commit 358314d4ab97483df4fc4cb8adcc02e74a8d9f5a.
 - `TauCeti.completeSpace_ofRiemannianMetric_of_isPretransitive_isom` (TauCeti/Geometry/Manifold/Riemannian/Homogeneous.lean:79): a Riemannian manifold whose isometry group acts transitively has complete Riemannian distance. It is applied to (𝔹ⁿ, ω) after §1.4 and §2.2; it says nothing about curvature.
 - `DifferentiableOn.analyticOnNhd_of_finiteDimensional` (TauCeti/Analysis/Complex/CauchyIntegralPolydisc.lean:275): a complex-differentiable function on an open subset of a finite-dimensional complex space is analytic, with the polydisc Cauchy integral in the same file; these give the power-series expansions and Cauchy estimates of §2.1.
 - `TauCeti.isLocalDiffeomorph_quotientMk` (TauCeti/Geometry/Manifold/Instances/Quotient.lean:216), local diffeomorphy of the quotient map of a free properly discontinuous action, through ComplexManifolds Milestone 4.
+- `MeasureTheory.Measure.exists_isFundamentalDomain_of_properlyDiscontinuousSMul` (TauCeti/MeasureTheory/Group/ProperlyDiscontinuous.lean:100) and `TauCeti.freeLocus` (TauCeti/Topology/Algebra/GroupAction/FreeLocus.lean:36): a countable group acting properly discontinuously on a second-countable locally compact Hausdorff space has a measurable fundamental domain, with pairwise disjoint translates, for every measure under which the complement of the free locus is null. It is applied in §5.3 to a discrete Γ (countable, G being second countable) acting on B, with the measure vol_ω, under which the non-free locus of §5.2 is null.
 - `TauCeti.HeisenbergGroup` (TauCeti/GroupTheory/SpecificGroups/Heisenberg.lean:55), the three-dimensional Heisenberg group over a ring; for n = 2 the group N of the Conventions is isomorphic to its real points (§1.5), which fixes the comparison but does not replace N for n ≥ 3.
 - The Fuchsian library `TauCeti/Analysis/Complex/Fuchsian/` (proper action, coarse quotient, cusps, compactification) and the disc Schwarz–Pick library `TauCeti/Analysis/Complex/Conformal/SchwarzPick/`, as the implementations of FuchsianOrbifolds and Completed/ConformalMapping consumed below.
 
@@ -90,7 +91,7 @@ Layer 9: a lattice in a unimodular second-countable locally compact group is a d
 
 ### From TauCetiRoadmap.ComplexComparisonPartII
 
-§C−1.1 (`ComplexAnalyticSpace`, open gluing and closed subspaces; `complexSchemeAnalytification`, its universal property, the classical topology on X(ℂ), finite and proper morphisms going to finite and proper analytic maps); §C−1.2 (`completedAnalyticStalkComparison`); §C0.6 (`analyticSetGeometry`: irreducible components, regular locus, finite analytic normalization); §C1.4 (`weightedDolbeaultEstimate` on complete Kähler manifolds with smooth weights, with the canonical twist identifying E-valued (0,k)-forms with E ⊗ K⁻¹-valued (n,k)-forms); §C1.6 (Montel's theorem for holomorphic sections and finite-dimensionality of sections on compact spaces); §C1.9 (`projectiveComplexGaga`); §C4.1 (`remmertProperImage`, `remmertSteinExtension`); §C4.2 (`projectiveChowNonreduced`); §C4.4 (`properSourceMorphismAlgebraicity`, `algebraicGraphRegular`).
+§C−1.1 (`ComplexAnalyticSpace`, open gluing and closed subspaces; `complexSchemeAnalytification`, its universal property, the classical topology on X(ℂ), finite and proper morphisms going to finite and proper analytic maps; the smooth-chart comparison, by which a smooth variety has a complex manifold as analytification, used in §§10.3–10.4); §C−1.2 (`completedAnalyticStalkComparison`); §C0.6 (`analyticSetGeometry`: irreducible components, regular locus, finite analytic normalization); §C1.4 (`weightedDolbeaultEstimate` on complete Kähler manifolds with smooth weights, with the canonical twist identifying E-valued (0,k)-forms with E ⊗ K⁻¹-valued (n,k)-forms); §C1.6 (Montel's theorem for holomorphic sections and finite-dimensionality of sections on compact spaces); §C1.9 (`projectiveComplexGaga`); §C4.1 (`remmertProperImage`, `remmertSteinExtension`); §C4.2 (`projectiveChowNonreduced`); §C4.4 (`properSourceMorphismAlgebraicity`, `algebraicGraphRegular`).
 
 ### From TauCetiRoadmap.ShimuraVarieties
 
@@ -110,13 +111,13 @@ AlgebraicModuliForArithmeticGeometry §9.5 (`sncCompactification_open`, `sncComp
 
 ### What ComplexComparisonPartII must provide
 
-What ComplexComparisonPartII must provide (gap:normality-analytification): for a variety X over ℂ, X is normal if and only if X^an is normal, X is smooth if and only if X^an is a complex manifold, and the analytification of the normalization of X is the analytic normalization of X^an, compatibly with the structure maps. Supplier section: §C−1.2, after `completedAnalyticStalkComparison`, using §C0.6's analytic normalization. (MilneSVI line 1682 to line 1684 states the nonsingular case for projective varieties; the general input is that a local ring of finite type over ℂ, its analytic local ring and their common completion are simultaneously normal and simultaneously regular.)
+What ComplexComparisonPartII must provide (gap:normality-analytification): for a variety X over ℂ, X is normal if and only if X^an is normal, X is smooth if X^an is a complex manifold, and the analytification of the normalization of X is the analytic normalization of X^an, compatibly with the structure maps. Supplier section: §C−1.2, after `completedAnalyticStalkComparison`, using §C0.6's analytic normalization; the three statements are one theorem about the completed local rings. The converse direction, that a smooth X has a complex manifold X^an, is §C−1.1's smooth-chart comparison and is not part of the gap. (MilneSVI line 1682 to line 1684 states the nonsingular case for projective varieties; the general input is that a local ring of finite type over ℂ, its analytic local ring and their common completion are simultaneously normal and simultaneously regular.)
 
 **Checks.**
 
 - For the cusp y² = x³ the algebraic and analytic normalizations are both t ↦ (t², t³); the comparison is the identity on t.
 - The node xy = 0 is not normal in either category; its normalization is two lines, analytically and algebraically.
-- 𝔸¹ is smooth and its analytification is ℂ; the dual-number point is not reduced, and the statement is restricted to varieties.
+- (𝔸¹)^an = ℂ is a complex manifold and 𝔸¹ is smooth, as the direction from X^an to X requires; the dual-number point is not reduced, and the statement is restricted to varieties.
 
 What ComplexComparisonPartII must provide (gap:normal-riemann-extension): on a normal complex analytic space Y, a continuous function on an open subset U that is holomorphic outside a nowhere-dense analytic subset of U is holomorphic on U; consequently a continuous map between normal complex analytic spaces that is holomorphic outside a nowhere-dense analytic subset is holomorphic. Supplier section: §C0.6, with the stalk description of the analytic normalization. (ComplexKahlerGeometry K3 proves the manifold case and explicitly excludes singular ambient spaces.)
 
@@ -396,7 +397,7 @@ The ε_n-thin part of a lattice quotient consists of horoball neighbourhoods of 
 
 ### Dependencies
 
-Layers 1–2; Mathlib's Brouwer theorem and matrix norms; Raghunathan1972 is cited for the Zassenhaus and Auslander theorems, whose proofs are carried out here.
+Layers 1–2; Mathlib matrix norms; Raghunathan1972 is cited for the Zassenhaus and Auslander theorems, whose proofs are carried out here.
 
 ## Layer 5: Lattices in PU(1,n)
 
@@ -426,7 +427,7 @@ Prove that G acts properly on B — for compact A, A′ ⊂ B the set {g : gA �
 
 ### 5.3 Covolume and the volume of the quotient
 
-Prove that the Haar measure of G can be normalised so that μ_G(p⁻¹(A)) = vol_ω(A) for every Borel A ⊂ B, p: G → B the orbit map; that for a discrete Γ and a measurable fundamental domain F ⊂ B for Γ, p⁻¹(F) is a fundamental domain for Γ acting on G and covol(Γ) = vol_ω(F); hence Γ is a lattice if and only if Γ\B has finite ω-volume, and Γ is cocompact if and only if Γ\B is compact (WitteMorris2015 line 1899 to line 1921, Proposition 4.1.11; BaldiUllmo2023 line 338 to line 339). The measure A ↦ μ_G(p⁻¹(A)) is G-invariant on B; lifting both it and vol_ω to left-invariant measures on G and applying uniqueness of Haar measure identifies them. *Needs:* §§2.2, 5.1–5.2; Mathlib `MeasureTheory.Measure.isMulLeftInvariant_eq_smul_of_innerRegular`, `MeasureTheory.IsFundamentalDomain.covolume_eq_volume`; Tau Ceti `TauCeti.riemannianVolume` (TauCeti/Geometry/Manifold/Riemannian/VolumeDensity/Volume.lean:76) for the volume of ω.
+Prove that the Haar measure of G can be normalised so that μ_G(p⁻¹(A)) = vol_ω(A) for every Borel A ⊂ B, p: G → B the orbit map; that a discrete Γ, which is countable because G is second countable, has a measurable fundamental domain F ⊂ B with pairwise disjoint translates (Tau Ceti `MeasureTheory.Measure.exists_isFundamentalDomain_of_properlyDiscontinuousSMul`, applied to the properly discontinuous action of §5.2 and to vol_ω, under which the non-free locus, a locally finite union of proper sub-balls, is null); and that for every measurable fundamental domain F ⊂ B for Γ, p⁻¹(F) is a fundamental domain for Γ acting on G and covol(Γ) = vol_ω(F); hence Γ is a lattice if and only if Γ\B has finite ω-volume, and Γ is cocompact if and only if Γ\B is compact (WitteMorris2015 line 1899 to line 1921, Proposition 4.1.11; BaldiUllmo2023 line 338 to line 339). The measure A ↦ μ_G(p⁻¹(A)) is G-invariant on B; lifting both it and vol_ω to left-invariant measures on G and applying uniqueness of Haar measure identifies them. *Needs:* §§2.2, 5.1–5.2; Mathlib `MeasureTheory.Measure.isMulLeftInvariant_eq_smul_of_innerRegular`, `MeasureTheory.IsFundamentalDomain.covolume_eq_volume`; Tau Ceti `MeasureTheory.Measure.exists_isFundamentalDomain_of_properlyDiscontinuousSMul` and `TauCeti.freeLocus` (existence of F); Tau Ceti `TauCeti.riemannianVolume` (TauCeti/Geometry/Manifold/Riemannian/VolumeDensity/Volume.lean:76) for the volume of ω.
 
 **Checks.**
 
@@ -466,7 +467,7 @@ Prove that every lattice in G is finitely generated, and indeed finitely present
 
 ### 6.3 Selberg's lemma in eigenvalue form
 
-Prove that for a field F of characteristic 0, N ≥ 1 and a finitely generated subgroup Λ ⊂ GL_N(F), there is a normal subgroup Λ′ ⊂ Λ of finite index such that no eigenvalue, in an algebraic closure, of any element of Λ′ is a nontrivial root of unity; in particular Λ′ is torsion-free (WitteMorris2015 Theorem 4.8.2, line 2910, Theorem 4.8.4, line 2972, and Remark 4.8.5(3), line 3008; Alperin1987 pp. 269–273, uncertified). The entries of the generators and their inverses lie in a finitely generated subring R ⊂ F; R is a Jacobson ring with finite residue fields at maximal ideals; the kernel of reduction modulo a suitable ideal of finite index has the required property, by the characteristic-polynomial argument of WitteMorris2015 line 2974 to line 2988, and it is normal as a kernel. *Needs:* Mathlib `IsJacobsonRing`, `isJacobsonRing_of_finiteType`, `finite_of_finite_type_of_isJacobsonRing` (Mathlib/RingTheory/Jacobson/Ring.lean:60, :666, :676).
+Prove that for a field F of characteristic 0, N ≥ 1 and a finitely generated subgroup Λ ⊂ GL_N(F), there is a normal subgroup Λ′ ⊂ Λ of finite index such that no eigenvalue, in an algebraic closure, of any element of Λ′ is a nontrivial root of unity; in particular Λ′ is torsion-free (WitteMorris2015 Theorem 4.8.4, line 2972, whose proof, line 2974 to line 2988, treats SL(ℓ,ℤ) only; Theorem 4.8.2, line 2910, and Remark 4.8.5(3), line 3008, for the torsion-free form over any field of characteristic 0; Borel1969 §17, Corollary 17.7, uncertified, cited at WitteMorris2015 line 3445 as the source of the eigenvalue form for finitely generated linear groups; Alperin1987 pp. 269–273, uncertified). The statement in this generality, with the normality of Λ′, is this roadmap's, by the following route. The entries of the generators and their inverses lie in a finitely generated subring R ⊂ F; R is a Jacobson ring with finite residue fields at maximal ideals; the kernel of reduction modulo a suitable ideal of finite index has the required property, by the characteristic-polynomial argument of WitteMorris2015 line 2974 to line 2988, and it is normal as a kernel. *Needs:* Mathlib `IsJacobsonRing`, `isJacobsonRing_of_finiteType`, `finite_of_finite_type_of_isJacobsonRing` (Mathlib/RingTheory/Jacobson/Ring.lean:60, :666, :676).
 
 **Checks.**
 
@@ -490,7 +491,7 @@ For PSL(2,ℤ) Layer 6 recovers the cusp at ∞, the two generators, and the nea
 
 ### Dependencies
 
-Layers 4–5; WitteMorris2015 Propositions 4.7.4 and 4.7.7 are cited for the topological finite-generation argument and Theorem 4.8.4 for the eigenvalue argument, both carried out here; Mathlib Jacobson rings.
+Layers 4–5; WitteMorris2015 Propositions 4.7.4 and 4.7.7 are cited for the topological finite-generation argument and Theorem 4.8.4, proved there for SL(ℓ,ℤ), for the eigenvalue argument, both carried out here in general; Mathlib Jacobson rings.
 
 ## Layer 7: The analytic quotient
 
@@ -551,7 +552,7 @@ Throughout Layer 8, Γ is a neat lattice, X = X_Γ, b₁, …, b_m are represent
 
 ### 8.1 Cusp charts and the line bundle model
 
-Construct Ψ_b(u,v) = (u, e^{2πiv/τ}), which identifies 𝔖/⟨T_τ⟩ with G_b = {(u,q) : 0 < |q|², |q|² < e^{−4π|u|²/τ}}; the closure Ĝ_b obtained by adding the zero section q = 0; the action of Γ_b/⟨T_τ⟩ ≅ Λ_b on ℂ^{n−1} × ℂ by (u,q) ↦ (u + a, χ(a) e^{−(4π/τ)⟨a,u⟩ − (2π/τ)|a|²} q), where n_{(a,t_a)} ∈ Γ_b and χ(a) = e^{2πit_a/τ} is a unitary character twist; the line bundle L_b = (ℂ^{n−1} × ℂ)/Λ_b over the complex torus T_b = ℂ^{n−1}/Λ_b with the Hermitian metric μ(u,q) = e^{(4π/τ)|u|²}|q|²; and Ω_b(N) = Ĝ_b(N)/Λ_b = {μ < e^{−4πN/τ}} (Mok2012 line 152 to line 239 and equations (5)–(6), line 170 to line 175; BaldiUllmo2023 line 559 to line 571). Prove that the multipliers form a holomorphic factor of automorphy, that μ is invariant and has curvature −(4π/τ)i∂∂̄|u|², negative definite, so that L_b is a negative line bundle; and that for N large, Ω_b(N) ∖ T_b ≅ H(N)/Γ_b embeds openly in X, with disjoint images for distinct cusp classes. *Needs:* §§1.5, 6.1, 6.4; ComplexManifolds Milestone 7 (line bundles from factors of automorphy); ComplexKahlerGeometry K4 (Chern curvature).
+Construct Ψ_b(u,v) = (u, e^{2πiv/τ}), which identifies 𝔖/⟨T_τ⟩ with G_b = {(u,q) : 0 < |q|², |q|² < e^{−4π|u|²/τ}}; the closure Ĝ_b obtained by adding the zero section q = 0; the action of Γ_b/⟨T_τ⟩ ≅ Λ_b on ℂ^{n−1} × ℂ by (u,q) ↦ (u + a, χ(a) e^{−(4π/τ)⟨a,u⟩ − (2π/τ)|a|²} q), where n_{(a,t_a)} ∈ Γ_b and χ(a) = e^{2πit_a/τ}, well defined because t_a is determined modulo τ, is a unitary semi-character of Λ_b: |χ(a)| = 1 and χ(a + a′) = χ(a)χ(a′)e^{−4πi Im⟨a,a′⟩/τ}, the last factor being ±1 because the commutator of n_{(a,t_a)} and n_{(a′,t_{a′})} is T_{−4 Im⟨a,a′⟩} ∈ Γ ∩ Z(N) = ⟨T_τ⟩ (§6.4), so that χ is a character exactly when [Γ_b, Γ_b] ⊆ ⟨T_{2τ}⟩ (Mok2012 equations (5)–(6), line 173 to line 175, write the vertical component as kτ and omit the factor χ(a), which the fourth Check below shows can be −1); the line bundle L_b = (ℂ^{n−1} × ℂ)/Λ_b over the complex torus T_b = ℂ^{n−1}/Λ_b with the Hermitian metric μ(u,q) = e^{(4π/τ)|u|²}|q|²; and Ω_b(N) = Ĝ_b(N)/Λ_b = {μ < e^{−4πN/τ}} (Mok2012 line 152 to line 239 and equations (5)–(6), line 170 to line 175; BaldiUllmo2023 line 559 to line 571). Prove that the multipliers e_a(u) = χ(a)e^{−(4π/τ)⟨a,u⟩ − (2π/τ)|a|²} form a holomorphic factor of automorphy, e_{a+a′}(u) = e_a(u + a′)e_{a′}(u), the sign χ(a + a′)/(χ(a)χ(a′)) being cancelled by e^{(4π/τ)i Im⟨a,a′⟩}, so that the formula is the action of Λ_b ≅ Γ_b/⟨T_τ⟩ descended from the action of Γ_b on 𝔖 through Ψ_b; that μ is invariant and has curvature −(4π/τ)i∂∂̄|u|², negative definite, so that L_b is a negative line bundle; and that for N large, Ω_b(N) ∖ T_b ≅ H(N)/Γ_b embeds openly in X, with disjoint images for distinct cusp classes. *Needs:* §§1.5, 6.1, 6.4; ComplexManifolds Milestone 7 (line bundles from factors of automorphy); ComplexKahlerGeometry K4 (Chern curvature).
 
 - For n = 1, T_b is a point, L_b = ℂ, Ω_b(N) is a disc and q is FuchsianOrbifolds Layer 3's cusp coordinate of width τ.
 - The construction is independent of g_b and of the representative b up to the evident isomorphisms.
@@ -560,7 +561,8 @@ Construct Ψ_b(u,v) = (u, e^{2πiv/τ}), which identifies 𝔖/⟨T_τ⟩ with G
 
 - Invariance of μ: e^{(4π/τ)|u + a|²} · e^{−(8π/τ)Re⟨a,u⟩ − (4π/τ)|a|²} = e^{(4π/τ)|u|²}, and |χ(a)| = 1.
 - The multiplier involves ⟨a,u⟩ = Σ conj(aⱼ)uⱼ, holomorphic in u; the convention ⟨u,a⟩ would give a non-holomorphic multiplier.
-- For the image of Γ(3) at ∞ (n = 1), τ = 3 and q = e^{2πiv/3}; the character χ is trivial because Λ_b = 0.
+- For the image of Γ(3) at ∞ (n = 1), τ = 3 and q = e^{2πiv/3}; the semi-character χ is trivial because Λ_b = 0.
+- For n = 2 and Γ_b = ⟨n_{(λ,0)}, n_{(iλ,0)}⟩ with λ > 0 (the group of the first Check of §4.5, rescaled): Γ_b ∩ Z(N) = ⟨T_{4λ²}⟩, generated by the commutator, so τ = 4λ² and Λ_b = ℤ[i]λ; the element over (1 + i)λ is n_{(λ,0)}·n_{(iλ,0)} = n_{((1+i)λ, −2λ²)}, so χ(λ) = χ(iλ) = 1 while χ((1 + i)λ) = e^{−πi} = −1, and χ is not a character. A definition of L_b that assumed χ multiplicative would glue with the wrong sign over (1 + i)λ; the factor-of-automorphy identity holds because e^{(4π/τ)i Im⟨λ,iλ⟩} = e^{πi} = −1 cancels it.
 
 ### 8.2 The toroidal compactification
 
@@ -620,7 +622,7 @@ Prove that for every finite set P ⊂ X there is ℓ₀ such that for every ℓ 
 
 **Checks.**
 
-- n = 1, Γ cocompact of genus g ≥ 2: every section of K^ℓ is L², deg K^ℓ = ℓ(2g − 2) ≥ 2g + 1 for ℓ ≥ 2, and K^ℓ separates points and tangents, consistent with the conclusion.
+- n = 1, Γ cocompact of genus g ≥ 2: every section of K^ℓ is L², deg K^ℓ = ℓ(2g − 2) ≥ 2g + 1 for ℓ ≥ 3 (6g − 6 ≥ 2g + 1 for g ≥ 2), and also for ℓ = 2 when g ≥ 3, so K^ℓ separates points and tangents, consistent with the conclusion; for g = 2 and ℓ = 2, deg K² = 4 < 5 and the bicanonical map factors through the hyperelliptic involution, so ℓ₀ depends on Γ, as the theorem allows.
 - In real dimension 2n, ∫_{|z|<1} |z|^{−2n} dV diverges (dr/r), which forces u(x) = 0; the weight (n − 1/2) log|z|² is integrable and forces nothing.
 - With ω replaced by an incomplete metric on a ball, ComplexComparisonPartII §C1.4 does not apply: completeness of ω_Γ is used.
 
@@ -779,12 +781,12 @@ Prove that every arithmetic Γ ⊂ G is a lattice, cocompact if and only if 𝐆
 
 ### 11.3 The Shimura datum of an arithmetic lattice
 
-Construct, for an arithmetic Γ with ℚ-simple 𝐆, the adjoint group 𝐆^ad with 𝐆^ad(ℝ) = G × C (C compact, through p), the homomorphism h₀: S → 𝐆^ad_ℝ, h₀(z) = ([diag(z̄, z, …, z)], 1), and X = the 𝐆^ad(ℝ)-conjugacy class of h₀. Prove that (𝐆^ad, X) is a pure Shimura datum in the sense of ShimuraVarieties §P.1; that X is connected and the orbit map identifies it with B biholomorphically for the complex structure of ShimuraVarieties §P.2; and that for every compact open K_f ⊂ 𝐆^ad(𝔸_f) the connected components of the analytic Shimura variety of level K_f are quotients Γ_a^eff\B with Γ_a^eff arithmetic and commensurable with Γ, neat when K_f is neat (MilneSVI line 1686 to line 1689; BaldiUllmo2023 Remark 3.1.11, line 450 to line 454, and §3.2, line 486 to line 506). *Needs:* §§1.4, 11.1; ShimuraVarieties §§P.1, P.2, 0.4, 1.2; AdelicAlgebraicGroups §3.4 (`Reduction.levelArithmetic`).
+Construct, for an arithmetic Γ with ℚ-simple 𝐆, the adjoint group 𝐆^ad with 𝐆^ad(ℝ) = G × C (C compact, through p), the homomorphism h₀: S → 𝐆^ad_ℝ, h₀(z) = ([diag(1, z/z̄, …, z/z̄)], 1), where diag(1, z/z̄, …, z/z̄) ∈ U(1,n) (z ↦ z/z̄ is the algebraic homomorphism S → U(1)) and its class in PGL_{n+1}(ℂ) is that of diag(z̄, z, …, z), a matrix that lies in U(1,n) only for |z| = 1; and X = the 𝐆^ad(ℝ)-conjugacy class of h₀. Prove that (𝐆^ad, X) is a pure Shimura datum in the sense of ShimuraVarieties §P.1; that X is connected and the orbit map identifies it with B biholomorphically for the complex structure of ShimuraVarieties §P.2; and that for every compact open K_f ⊂ 𝐆^ad(𝔸_f) the connected components of the analytic Shimura variety of level K_f are quotients Γ_a^eff\B with Γ_a^eff arithmetic and commensurable with Γ, neat when K_f is neat (MilneSVI line 1686 to line 1689; BaldiUllmo2023 Remark 3.1.11, line 450 to line 454, and §3.2, line 486 to line 506). *Needs:* §§1.4, 11.1; ShimuraVarieties §§P.1, P.2, 0.4, 1.2; AdelicAlgebraicGroups §3.4 (`Reduction.levelArithmetic`).
 
 **Checks.**
 
-- h₀(i) = [diag(−i, i, …, i)] = [diag(1, −1, …, −1)] acts on B by w ↦ −w, the geodesic symmetry at 0, whose conjugation is a Cartan involution (axiom SV2).
-- Ad(h₀(z)) acts on the holomorphic tangent space at 0 by z/z̄, type (−1,1) (axiom SV1); the conjugate choice [diag(z, z̄, …, z̄)] acts by z̄/z and gives the opposite complex structure.
+- h₀(i) = [diag(1, i/(−i), …, i/(−i))] = [diag(1, −1, …, −1)] acts on B by w ↦ −w, the geodesic symmetry at 0, whose conjugation is a Cartan involution (axiom SV2).
+- Ad(h₀(z)) acts on the holomorphic tangent space at 0 by z/z̄, type (−1,1) (axiom SV1); the conjugate choice [diag(1, z̄/z, …, z̄/z)] acts by z̄/z and gives the opposite complex structure.
 - For the Picard modular group, (𝐆^ad, X) is the adjoint datum of PELModuli §M5.5's unitary datum of signature (1,n) over K.
 
 ### 11.4 Comparison with the Baily–Borel compactification
@@ -813,7 +815,7 @@ The Picard modular groups PU(1,n; 𝒪_K) are the basic non-cocompact arithmetic
 
 ### Dependencies
 
-Layers 1, 5, 9 and 10; AdelicAlgebraicGroups §3.4; VonNeumannAlgebras Layer 9; ShimuraVarieties §§P.1, P.2, 0.4, 1.2, 2.7, 2.8, 3.3, 3.5; PELModuli §M5.5; ShimuraData §3.8.
+Layers 1, 5, 9 and 10; AdelicAlgebraicGroups §3.4; VonNeumannAlgebras Layer 9; ShimuraVarieties §§P.1, P.2, 0.4, 1.2, 2.7, 3.3, 3.5; PELModuli §M5.5; ShimuraData §3.8.
 
 ## Layer 12: Totally geodesic subvarieties and the Ax–Schanuel setting
 
@@ -895,4 +897,5 @@ Layers 3, 5, 6, 8, 9, 10 and 11; ComplexKahlerGeometry K3; ComplexComparisonPart
 - **Cartan1957**: H. Cartan, *Quotient d'un espace analytique par un groupe d'automorphismes* (1957), pp. 90–102 (uncertified).
 - **Goldman1999**: W. M. Goldman, *Complex Hyperbolic Geometry*, Oxford (1999), Ch. 3 (uncertified).
 - **Raghunathan1972**: M. S. Raghunathan, *Discrete Subgroups of Lie Groups*, Springer (1972), Ch. VIII and Ch. XIII (uncertified).
+- **Borel1969**: A. Borel, *Introduction aux groupes arithmétiques*, Hermann, Paris (1969); §17, Corollary 17.7 (uncertified).
 - **Alperin1987**: R. C. Alperin, *An elementary account of Selberg's lemma*, Enseign. Math. 33 (1987), pp. 269–273 (uncertified).

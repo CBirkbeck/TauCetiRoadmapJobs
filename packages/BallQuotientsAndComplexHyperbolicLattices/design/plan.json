@@ -1011,7 +1011,7 @@
           "id": "5.3",
           "kind": "theorem",
           "name": "BallQuotient.isLattice_iff_finiteVolume",
-          "statement": "With Haar normalised by μ_G(p⁻¹A) = vol_ω(A), covol(Γ) = vol_ω(F) for a fundamental domain F ⊂ B; Γ is a lattice iff vol_ω(Γ\\B) < ∞; cocompact iff Γ\\B compact.",
+          "statement": "With Haar normalised by μ_G(p⁻¹A) = vol_ω(A): a discrete Γ (countable, G being second countable) has a measurable fundamental domain F ⊂ B with pairwise disjoint translates (Tau Ceti exists_isFundamentalDomain_of_properlyDiscontinuousSMul, applied to the action of §5.2 and vol_ω, under which the non-free locus is null), and for every such F, covol(Γ) = vol_ω(F); Γ is a lattice iff vol_ω(Γ\\B) < ∞; cocompact iff Γ\\B compact.",
           "hypotheses": [
             "Γ discrete"
           ],
@@ -1025,6 +1025,8 @@
             "target:5.2",
             "mathlib:MeasureTheory.Measure.isMulLeftInvariant_eq_smul_of_innerRegular",
             "mathlib:MeasureTheory.IsFundamentalDomain.covolume_eq_volume",
+            "tauceti:MeasureTheory.Measure.exists_isFundamentalDomain_of_properlyDiscontinuousSMul",
+            "tauceti:TauCeti.freeLocus",
             "tauceti:TauCeti.riemannianVolume"
           ],
           "api": [],
@@ -1140,7 +1142,7 @@
           ],
           "locator": {
             "source": "WitteMorris2015",
-            "where": "Theorem 4.8.2 line 2910; Theorem 4.8.4 line 2972; Remark 4.8.5(3) line 3008; Alperin1987 pp. 269–273"
+            "where": "Theorem 4.8.4 line 2972 (proved there for SL(ℓ,ℤ), line 2974 to line 2988); Theorem 4.8.2 line 2910 and Remark 4.8.5(3) line 3008 (torsion-free form over any field of characteristic 0); Borel1969 §17, Corollary 17.7 (uncertified, cited at WitteMorris2015 line 3445 for the eigenvalue form of finitely generated linear groups); Alperin1987 pp. 269–273; the general statement with normal Λ′ is this roadmap's, by the Jacobson-ring route"
           },
           "prerequisites": [
             "mathlib:IsJacobsonRing",
@@ -1406,7 +1408,7 @@
           "id": "8.1",
           "kind": "construction",
           "name": "BallQuotient.cuspChart",
-          "statement": "For neat Γ and a cusp b (conjugated to ∞): Ψ_b(u,v) = (u, e^{2πiv/τ}), Ĝ_b, the action of Λ_b by (u,q) ↦ (u+a, χ(a)e^{−(4π/τ)⟨a,u⟩−(2π/τ)|a|²}q) with |χ(a)| = 1, the line bundle L_b over T_b = ℂ^{n−1}/Λ_b with metric μ = e^{(4π/τ)|u|²}|q|² of negative curvature, Ω_b(N) = {μ < e^{−4πN/τ}}; for N large Ω_b(N) ∖ T_b ≅ H(N)/Γ_b embeds openly in X_Γ with disjoint images.",
+          "statement": "For neat Γ and a cusp b (conjugated to ∞): Ψ_b(u,v) = (u, e^{2πiv/τ}), Ĝ_b, the action of Λ_b ≅ Γ_b/⟨T_τ⟩ by (u,q) ↦ (u+a, χ(a)e^{−(4π/τ)⟨a,u⟩−(2π/τ)|a|²}q), where χ(a) = e^{2πit_a/τ} for n_{(a,t_a)} ∈ Γ_b is a unitary semi-character (|χ(a)| = 1, χ(a+a′) = χ(a)χ(a′)e^{−4πi Im⟨a,a′⟩/τ} with the last factor ±1 since 4 Im⟨a,a′⟩ ∈ τℤ; a character exactly when [Γ_b,Γ_b] ⊆ ⟨T_{2τ}⟩), the line bundle L_b over T_b = ℂ^{n−1}/Λ_b with metric μ = e^{(4π/τ)|u|²}|q|² of negative curvature, Ω_b(N) = {μ < e^{−4πN/τ}}; for N large Ω_b(N) ∖ T_b ≅ H(N)/Γ_b embeds openly in X_Γ with disjoint images.",
           "hypotheses": [
             "Γ neat lattice",
             "N large"
@@ -1426,7 +1428,7 @@
             {
               "name": "automorphy_factor",
               "role": "structure",
-              "statement": "The multipliers form a holomorphic factor of automorphy (with unitary twist χ)."
+              "statement": "The multipliers e_a(u) = χ(a)e^{−(4π/τ)⟨a,u⟩−(2π/τ)|a|²} form a holomorphic factor of automorphy, e_{a+a′}(u) = e_a(u+a′)e_{a′}(u), the sign of the semi-character being cancelled by e^{(4π/τ)i Im⟨a,a′⟩}; it is the action of Γ_b descended through Ψ_b."
             },
             {
               "name": "metric_invariant",
@@ -1458,7 +1460,12 @@
             {
               "name": "gamma3_width",
               "kind": "computation",
-              "statement": "Γ(3) at ∞: τ = 3, q = e^{2πiv/3}, χ trivial."
+              "statement": "Γ(3) at ∞: τ = 3, q = e^{2πiv/3}, the semi-character χ trivial since Λ_b = 0."
+            },
+            {
+              "name": "semi_character_sign",
+              "kind": "non-example",
+              "statement": "n = 2, Γ_b = ⟨n_{(λ,0)}, n_{(iλ,0)}⟩, λ > 0: Γ_b ∩ Z(N) = ⟨T_{4λ²}⟩, τ = 4λ², Λ_b = ℤ[i]λ; the element over (1+i)λ is n_{((1+i)λ, −2λ²)}, so χ(λ) = χ(iλ) = 1 and χ((1+i)λ) = −1: χ is not a character; a definition assuming it multiplicative glues with the wrong sign over (1+i)λ, while the cocycle identity holds since e^{(4π/τ)i Im⟨λ,iλ⟩} = −1."
             }
           ]
         },
@@ -1657,7 +1664,7 @@
             {
               "name": "genus_g",
               "kind": "compatibility",
-              "statement": "n = 1 cocompact genus g ≥ 2: deg K^ℓ ≥ 2g+1 for ℓ ≥ 2."
+              "statement": "n = 1 cocompact genus g ≥ 2: deg K^ℓ = ℓ(2g−2) ≥ 2g+1 for ℓ ≥ 3, and for ℓ = 2 when g ≥ 3; for g = 2, ℓ = 2, deg K² = 4 < 5 and the bicanonical map factors through the hyperelliptic involution: ℓ₀ depends on Γ."
             },
             {
               "name": "nonintegrable",
@@ -2226,7 +2233,7 @@
           "id": "11.3",
           "kind": "construction",
           "name": "BallQuotient.shimuraDatum",
-          "statement": "For arithmetic Γ with ℚ-simple 𝐆: 𝐆^ad(ℝ) = G × C, h₀(z) = ([diag(z̄,z,…,z)], 1), X the conjugacy class of h₀; (𝐆^ad, X) is a pure Shimura datum (ShimuraVarieties §P.1), X ≅ B biholomorphically (ShimuraVarieties §P.2), and components at every level K_f are Γ_a^eff\\B with Γ_a^eff commensurable with Γ, neat for neat K_f.",
+          "statement": "For arithmetic Γ with ℚ-simple 𝐆: 𝐆^ad(ℝ) = G × C, h₀(z) = ([diag(1,z/z̄,…,z/z̄)], 1) with diag(1,z/z̄,…,z/z̄) ∈ U(1,n) (the class of diag(z̄,z,…,z) in PGL_{n+1}(ℂ), a matrix in U(1,n) only for |z| = 1), X the conjugacy class of h₀; (𝐆^ad, X) is a pure Shimura datum (ShimuraVarieties §P.1), X ≅ B biholomorphically (ShimuraVarieties §P.2), and components at every level K_f are Γ_a^eff\\B with Γ_a^eff commensurable with Γ, neat for neat K_f.",
           "hypotheses": [
             "Γ arithmetic",
             "𝐆 ℚ-simple"
@@ -2265,12 +2272,12 @@
             {
               "name": "cartan_involution",
               "kind": "computation",
-              "statement": "h₀(i) = [diag(1,−1,…,−1)] acts by w ↦ −w."
+              "statement": "h₀(i) = [diag(1,i/(−i),…)] = [diag(1,−1,…,−1)] acts by w ↦ −w."
             },
             {
               "name": "sign_pinned",
               "kind": "non-example",
-              "statement": "[diag(z,z̄,…,z̄)] acts by z̄/z and gives the opposite complex structure."
+              "statement": "[diag(1,z̄/z,…,z̄/z)] acts by z̄/z and gives the opposite complex structure."
             },
             {
               "name": "picard_pel",
@@ -2609,7 +2616,7 @@
         "§C4.2",
         "§C4.4"
       ],
-      "what": "Complex analytic spaces, analytification, completed stalks, analytic set geometry and normalization, weighted L² estimate, Montel and finiteness, GAGA, Remmert, Chow, algebraicity of maps out of proper schemes."
+      "what": "Complex analytic spaces, analytification with its smooth-chart comparison (a smooth variety has a complex manifold as analytification), completed stalks, analytic set geometry and normalization, weighted L² estimate, Montel and finiteness, GAGA, Remmert, Chow, algebraicity of maps out of proper schemes."
     },
     {
       "roadmap": "ShimuraVarieties",
@@ -2690,8 +2697,8 @@
         "9.5",
         "10.4"
       ],
-      "detail": "For a variety X over ℂ: X normal iff X^an normal, X smooth iff X^an a complex manifold, and the analytification of the normalization is the analytic normalization, compatibly with structure maps.",
-      "needs": "A comparison of normality, smoothness and normalization between a variety over ℂ and its analytification.",
+      "detail": "For a variety X over ℂ: X normal iff X^an normal, X smooth if X^an is a complex manifold, and the analytification of the normalization is the analytic normalization, compatibly with structure maps; the converse smooth direction (X smooth ⇒ X^an a manifold) is §C−1.1's smooth-chart comparison, not part of the gap.",
+      "needs": "For a variety X over ℂ, normality of X and of X^an are equivalent, a complex-manifold X^an forces X smooth, and the analytification of the normalization of X is the analytic normalization of X^an, compatibly with the structure maps.",
       "supplier": "ComplexComparisonPartII",
       "section": "§C−1.2 (after completedAnalyticStalkComparison, using §C0.6)"
     },

@@ -5,7 +5,7 @@ roadmap = "BallQuotientsAndComplexHyperbolicLattices"
 id = "BaldiUllmo2023"
 authors = "Gregorio Baldi, Emmanuel Ullmo"
 title = "Special subvarieties of non-arithmetic ball quotients and Hodge Theory"
-year = 2020
+year = 2023
 arxiv = "2005.03524v4"
 locator_scheme = "theorem"
 locator = "Theorems 1.2.1, 1.2.2, 1.3.2; Definitions 3.1.3-3.1.14; Theorem 3.1.12; §§3.2-3.4 (Definition 3.3.4, Theorem 3.3.5, Theorem 3.4.3, Corollary 3.4.6); Corollary 5.5.2"
@@ -16,7 +16,7 @@ sha256 = "f98c3143a77ed8ddc074b8045defc72c201c0892c10c00b4d33fe5c7f45fdfaf"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
-version_note = "arXiv v4"
+version_note = "arXiv v4 (22 September 2023), the text read and the numbering cited; its Appendix A is an erratum on the published version, whose year the key records; the first arXiv version is of 2020."
 cited_for = ["1.1", "1.2", "1.3", "1.5", "2.2", "3.1", "3.3", "4.2", "4.4", "5.1", "5.3", "6.1", "6.4", "7.1", "8.1", "8.2", "8.3", "8.5", "9.5", "10.4", "10.5", "10.6", "11.1", "11.2", "11.3", "11.4", "11.5", "12.1", "12.2", "12.3", "12.4", "Downstream consumers"]
 
 [[source]]
@@ -24,7 +24,7 @@ id = "Deng2020"
 authors = "Ya Deng"
 title = "Big Picard theorems and algebraic hyperbolicity for varieties admitting a variation of Hodge structures"
 year = 2020
-venue = "Ãpijournal de GÃ©omÃ©trie AlgÃ©brique, Volume 7 (April 24, 2023) epiga:8393"
+venue = "Épijournal de Géométrie Algébrique, Volume 7 (2023), epiga:8393"
 doi = "10.46298/epiga.2023.volume7.8393"
 arxiv = "2001.04426v5"
 locator_scheme = "theorem"
@@ -36,7 +36,7 @@ sha256 = "585514f346e0a150d07ca8b97fb83a2e7a759a8910061382341cdf1d6d75f2f9"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
-version_note = "arXiv v5"
+version_note = "arXiv v5 (20 April 2023), the final version of the Épijournal article, the text read and the numbering cited; the first arXiv version is of 2020, the year the key records."
 cited_for = ["10.1", "10.3", "Downstream consumers"]
 
 [[source]]
@@ -143,6 +143,19 @@ version_note = "Read in the HKU IMR preprint IMR2009-4 from the author's page; t
 cited_for = ["1.3", "1.5", "1.6", "2.2", "2.3", "4.1", "4.2", "4.3", "4.4", "4.5", "6.1", "7.2", "7.4", "8.1", "8.2", "8.3", "8.4", "8.5", "9.1", "9.2", "9.3", "9.4", "9.5", "11.4", "Downstream consumers"]
 
 [[source]]
+id = "Borel1969"
+authors = "Armand Borel"
+title = "Introduction aux groupes arithmétiques"
+year = 1969
+venue = "Publications de l'Institut de Mathématique de l'Université de Strasbourg XV, Actualités Scientifiques et Industrielles 1341, Hermann, Paris"
+locator_scheme = "section"
+locator = "§17, Corollary 17.7 (p. 119): finitely generated linear groups in characteristic 0 have finite-index subgroups whose elements have no nontrivial root of unity among their eigenvalues"
+licence_class = "none"
+status = "uncertified"
+version_note = "Printed book, not available in an open repository; cited by its locator without the text, as WitteMorris2015 line 3445 cites it for the eigenvalue form of Theorem 4.8.4 (Remark 4.8.5(2,3)); the text was not requested."
+cited_for = ["6.3"]
+
+[[source]]
 id = "Alperin1987"
 authors = "Roger C. Alperin"
 title = "An elementary account of Selberg's lemma"
@@ -162,7 +175,7 @@ cited_for = ["6.3"]
 id = "WitteMorris2015"
 authors = "Dave Witte Morris"
 title = "Introduction to Arithmetic Groups"
-year = 2001
+year = 2015
 arxiv = "math/0106063v6"
 locator_scheme = "section"
 locator = "Definitions 4.1.9, 4.1.16; Proposition 4.1.11; Propositions 4.7.4, 4.7.7; Corollary 4.7.5; Theorem 4.7.10; Remark 4.7.11; Theorems 4.8.2, 4.8.4; Remark 4.8.5; Definition 5.1.19"
@@ -173,7 +186,7 @@ sha256 = "4c0936b5321dc09338730b411ef62e6fffc9060d0146f30a24e65a5ada47df77"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
-version_note = "arXiv v6"
+version_note = "arXiv v6 (7 May 2015, Arxiv Version 1.0 of April 2015 of the book published by Deductive Press, 2015), the text read and the numbering cited; the first arXiv version is of 2001."
 cited_for = ["Conventions", "1.2", "5.1", "5.2", "5.3", "6.2", "6.3", "6.4", "11.1", "11.2"]
 
 [[source]]
