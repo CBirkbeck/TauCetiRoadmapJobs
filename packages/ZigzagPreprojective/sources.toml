@@ -1,0 +1,98 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ZigzagPreprojective"
+
+[[source]]
+id = "grant"
+authors = "Joseph Grant"
+title = "The Nakayama automorphism of a self-injective preprojective algebra"
+year = 2019
+doi = "10.1112/blms.12313"
+arxiv = "1906.11817v2"
+locator_scheme = "theorem"
+locator = "Theorem 3.1"
+url = "https://arxiv.org/abs/1906.11817v2"
+fetched_from = "https://arxiv.org/pdf/1906.11817v2"
+fetched_at = "2026-11-05T19:40:50Z"
+sha256 = "03e3434c83f7c576374d2fb24b76366330546b242703f29840c404c7753e0b8f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v2"
+cited_for = ["4.2"]
+
+[[source]]
+id = "mazorchuk"
+authors = "Volodymyr Mazorchuk"
+title = "Lectures on algebraic categorification"
+year = 2010
+arxiv = "1011.0144v3"
+locator_scheme = "theorem"
+locator = "Corollary 10.12"
+url = "https://arxiv.org/abs/1011.0144v3"
+fetched_from = "https://arxiv.org/pdf/1011.0144v3"
+fetched_at = "2026-11-05T19:40:58Z"
+sha256 = "07061085f8a27127b13d6354d6e8e9e9a04bee76207eada9f935ab50198b8599"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v3"
+cited_for = ["5.2"]
+
+[[source]]
+id = "crawleyboevey"
+locator_scheme = "section"
+locator = "§1"
+url = "https://www.mathunion.org/fileadmin/ICM/Proceedings/ICM2006.2/ICM2006.2.ocr.pdf"
+fetched_from = "https://www.mathunion.org/fileadmin/ICM/Proceedings/ICM2006.2/ICM2006.2.ocr.pdf"
+fetched_at = "2026-11-05T19:41:53Z"
+sha256 = "71516114cdbdcecf13dba26f4743d13e418ba7e308bacfd7d33b530f97dfe621"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["4.1"]
+
+[[source]]
+id = "bbk"
+authors = "Sheila Brenner, Michael C. R. Butler, Alastair D. King"
+title = "Periodic Algebras which are Almost Koszul"
+year = 2002
+venue = "Algebras and Representation Theory 5"
+doi = "10.1023/A:1020146502185"
+locator_scheme = "theorem"
+locator = "Theorem 4.8"
+url = "https://doi.org/10.1023/A:1020146502185"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["4.2"]
+
+[[source]]
+id = "cb99"
+authors = "William Crawley-Boevey"
+title = "Preprojective algebras, differential operators and a Conze embedding for deformations of Kleinian singularities"
+year = 1999
+venue = "Commentarii Mathematici Helvetici 74"
+doi = "10.1007/s000140050105"
+locator_scheme = "theorem"
+locator = "Theorem 3.1"
+url = "https://www.math.uni-bielefeld.de/~wcrawley/preproj2.pdf"
+fetched_from = "https://www.math.uni-bielefeld.de/~wcrawley/preproj2.pdf"
+fetched_at = "2026-11-05T20:04:15Z"
+sha256 = "4c470b35a1c5c6326fde1e580ce6347a5b145982ccb84a832df4339de8bf2ddd"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["4.2"]
+
+[[source]]
+id = "ringel98"
+locator_scheme = "section"
+locator = "Section 1"
+url = "https://www.math.uni-bielefeld.de/sfb343/preprints/pr97046.ps.gz"
+fetched_from = "https://www.math.uni-bielefeld.de/sfb343/preprints/pr97046.ps.gz"
+fetched_at = "2026-11-05T20:05:58Z"
+sha256 = "b0367ee94cd5501a988d1e00ffc4a1aea507a74bdf18e660fb42494cc3872db4"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["4.2"]
