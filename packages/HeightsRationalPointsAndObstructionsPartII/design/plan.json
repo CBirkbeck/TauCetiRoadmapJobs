@@ -6319,12 +6319,6 @@
       "supplier": "TropicalAndBerkovichArithmetic",
       "section": "§§6.2–6.4, 7.0",
       "needs": "At every geometric divisorial place v of K=k(B), with k algebraically closed and B normal projective of positive dimension, for X⊆A as in gap:abelian-canonical-measure and a generic net of algebraic points of X whose canonical heights tend to zero, prove that the normalized Galois-orbit measures converge weakly to μ_X on A_v^an, and that α_*μ_Z=μ_Y for a generically finite surjective α:Z→Y between such subvarieties carrying a small generic net and its image (yamaki-strict-support lines 1327–1338, proof of Theorem 6.2, p. 31)."
-    },
-    {
-      "slug": "moriwaki-silverman-tate-nef",
-      "needs": "Extend §6.4(1) from big to arbitrary Moriwaki polarizations: for k₀ finitely generated over ℚ with a polarization B whose H̄ᵢ are nef but not necessarily big, an abelian scheme 𝒜 → S over a smooth irreducible quasi-projective k₀-curve with smooth projective compactification S̄, a symmetric relatively ample L with the projective embedding of §6.4(1), and an ample bundle on S̄ defining h^B_S̄, prove that there is C > 0 with |ĥ^B_(𝒜_π(P))(P) − h^B(P)| ≤ C·max{1, h^B_S̄(π(P))} for every P ∈ 𝒜(k̄₀), keeping the big hypothesis on the specialization limit §6.4(2) (gh-2019 line 2596 and line 2609, §A.2 and proof of Theorem A.3, p. 56).",
-      "supplier": "ArakelovGeometryAndAbelianHeightsPartII",
-      "section": "§6.4"
     }
   ],
   "sourceIssues": [
