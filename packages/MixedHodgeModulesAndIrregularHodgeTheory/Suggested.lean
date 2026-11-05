@@ -13,9 +13,10 @@ and Tau Ceti, the headline theorems of the roadmap that are statable at the pins
   variables whose Newton polytope `Δ(φ) = conv({0} ∪ supp φ)` is full dimensional and which is
   nondegenerate on every nonempty face of `Δ(φ)` not containing the origin, the twisted de Rham
   complex of the torus with differential `d + dφ ∧` is exact outside degree `n`, and its
-  degree-`n` cohomology has dimension `n! · vol(Δ(φ))` (Adolphson–Sperber 1997, Theorem 1.4 and
-  Theorem 4.1; Yu, Theorem 4.1). The algebraic de Rham complex of the torus is written in the
-  basis `dlog x_J`, where it is the Koszul complex of the commuting operators
+  degree-`n` cohomology has dimension `n! · vol(Δ(φ))` (Adolphson–Sperber 1997, Theorem 4.13 and
+  Theorem 5.1 with `r = 0` and `a = 0`; Theorem 4.1 is the cone-algebra form; Yu, Theorem 4.1).
+  The algebraic de Rham complex of the torus is written in the basis `dlog x_J`, where it is the
+  Koszul complex of the commuting operators
   `x_i ∂_i + x_i ∂_i φ` on the Laurent polynomial ring.
 
 ## Headline theorems not statable at the pins
@@ -135,8 +136,9 @@ def IsNewtonNondegenerate {n : ℕ} (φ : LaurentRing n) : Prop :=
     ¬ ∃ z : Fin n → ℂ, (∀ i, z i ≠ 0) ∧ ∀ j, faceEulerEval φ σ j z = 0
 
 /-- **Concentration and volume of twisted de Rham cohomology on a torus** (Adolphson–Sperber,
-*On twisted de Rham cohomology*, Theorem 1.4 and Theorem 4.1; Yu, *Irregular Hodge filtration on
-twisted de Rham cohomology*, Theorem 4.1). Let `φ` be a Laurent polynomial in `n` variables whose
+*On twisted de Rham cohomology*, Theorem 4.13 and Theorem 5.1 with `r = 0` and `a = 0`, Theorem 4.1
+being the cone-algebra form; Yu, *Irregular Hodge filtration on twisted de Rham cohomology*,
+Theorem 4.1). Let `φ` be a Laurent polynomial in `n` variables whose
 Newton polytope `Δ(φ)` is full dimensional and which is Newton nondegenerate. Then the twisted de
 Rham complex `(Ω^•(T), d + dφ ∧)` of the torus `T = (G_m)^n` is exact outside degree `n`, and
 `H^n_dR(T, E^φ)` is finite dimensional of dimension `n! · vol(Δ(φ))`, the volume being Lebesgue

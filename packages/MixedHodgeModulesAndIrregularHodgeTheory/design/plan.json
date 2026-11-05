@@ -4288,6 +4288,12 @@
       "needs": "For a smooth complete toric variety X_Σ and a nef torus-invariant ℚ-divisor D, the vanishing H^i(X_Σ, O(⌊D⌋)) = 0 for every i > 0.",
       "supplier": "AnalyticToricGeometryPartII",
       "section": "§0.3"
+    },
+    {
+      "slug": "blowup-exceptional-divisor",
+      "needs": "For the blow-up π : X̃ → X of a smooth variety over a field along a smooth closed subvariety Z of pure codimension c ≥ 2, with ideal I and normal bundle N_{Z/X} = (I/I²)^∨, the smoothness of X̃, the identification of the exceptional divisor E = π⁻¹(Z) with the projective bundle P(N_{Z/X}) = Proj(Sym(I/I²)) over Z, and O_X̃(−E)|_E = O_E(1), so that the normal line of E in X̃ is O_E(−1).",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "§5.5"
     }
   ],
   "restructure": [
