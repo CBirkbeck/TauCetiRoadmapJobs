@@ -188,8 +188,10 @@ At Mathlib `f6090c7095e1e56b3464c1daba5f24631f1290d2`:
 ### From Tau Ceti
 
 No Tau Ceti module is consumed (Tau Ceti `358314d4ab97483df4fc4cb8adcc02e74a8d9f5a`): its
-C*-algebra folder holds character-space measures and unitary characters only, and its matrix
-folder works over `ℝ`.
+C*-algebra folder holds character-space measures and unitary characters only; in its matrix
+folder the Frobenius inner product is over `ℝ` and the Hermitian-spectrum and
+positive-semidefinite files are over `RCLike` fields, and none of them supplies the normalized
+trace or the 2-norm on `CStarMatrix`.
 
 ### From TauCetiRoadmap.CStarAlgebras
 
@@ -198,10 +200,11 @@ folder works over `ℝ`.
   extension `A** → π(A)''` of a nondegenerate representation `π`, whose kernel is a central
   summand `(1 − z_π)A**`.
 - C4.1: identity, composition and restriction of completely positive maps; `‖φ‖ = ‖φ(1)‖` for
-  unital domains; the Kadison–Schwarz inequality `φ(a)*φ(a) ≤ φ(a*a)` for u.c.p. maps (`schwarz`)
-  and its c.p.c. form; the multiplicative domain (`multiplicativeDomain_iff`) and bimodularity of
-  a u.c.p. map over a C*-subalgebra on which it is a star homomorphism; the unital extension
-  `a + λ ↦ φ(a) + λ1` of a c.p.c. map to the unitization.
+  unital domains; the Kadison–Schwarz inequality `φ(a)*φ(a) ≤ φ(a*a)` for u.c.p. maps (`schwarz`);
+  the multiplicative domain (`multiplicativeDomain_iff`) and bimodularity of a u.c.p. map over a
+  C*-subalgebra on which it is a star homomorphism; the unital extension `a + λ ↦ φ(a) + λ1` of a
+  c.p.c. map to the unitization, which is u.c.p. (the c.p.c. form of Kadison–Schwarz used in §2.2
+  is derived from these two in §2.1).
 - C4.2: Stinespring's dilation `φ = V*π(·)V` with `‖V‖² = ‖φ‖`, including nonunital domains
   (`stinespring` for unital domains), and Arveson's Radon–Nikodym theorem (`cp_radonNikodym`),
   whose `H = ℂ` case is the GNS Radon–Nikodym theorem for positive functionals.
@@ -224,6 +227,8 @@ folder works over `ℝ`.
   AF algebras and its permanence under C*-subalgebras.
 - C8.4 and C9.1: the Toeplitz extension, and the quasidiagonality of cones over separable
   algebras, used in Checks.
+- C9.7: the positive unital extension operator `C(K) → C(X)` for a closed subset `K` of a
+  compact metrizable `X` (its Check on `C(X)`), used only in a Check of §6.4.
 
 ### From TauCetiRoadmap.VonNeumannAlgebras
 
@@ -350,7 +355,8 @@ For `τ ∈ T(A)` define the trace kernel `N_τ = {a ∈ A : τ(a*a) = 0}`. Prov
 two-sided ideal: it is a closed left ideal by the Cauchy–Schwarz inequality, and a right ideal
 because, for `a ∈ N_τ` and `b ∈ A`, traciality used twice gives
 `τ((ab)*(ab)) = τ(abb*a*) ≤ ‖b‖²τ(aa*) = ‖b‖²τ(a*a) = 0`. Prove `N_τ = ker π_τ` for the GNS representation, since
-`‖π_τ(a)ĉ‖² = τ(c*a*ac) ≤ ‖c‖²τ(a*a)` and, for the converse, `ĉ` runs over an approximate unit.
+`‖π_τ(a)ĉ‖² = τ(c*a*ac) = τ(acc*a*) ≤ ‖c‖²τ(aa*) = ‖c‖²τ(a*a)`, by traciality twice as above,
+and, for the converse, `ĉ` runs over an approximate unit.
 Call `τ` faithful when `N_τ = 0`. The image `π_τ(A)` is a C*-algebra isomorphic to `A/N_τ`, and
 `τ̇(π_τ(a)) = τ(a)` is a well-defined faithful tracial state on it (brown2006, Proposition 3.5.8,
 line 1338, for the notation `τ̇`). On a simple C*-algebra every tracial state is faithful, since
@@ -615,6 +621,9 @@ API:
 - The 2-norm and the norm unitalization estimates.
 - Unital extension to the unitization: `a + λ1 ↦ φ(a) + λ1` is u.c.p. on `Ã` (CStarAlgebras C4.1)
   and agrees with `φ` on `A`.
+- The c.p.c. Kadison–Schwarz inequality `φ(a)*φ(a) ≤ φ(a*a)` for a c.p.c. map `φ : A → M_k` and
+  `a ∈ A`: apply `schwarz` (CStarAlgebras C4.1) to the u.c.p. extension `φ̃` on `Ã` and restrict
+  to `A`, where `φ̃ = φ`.
 
 **Checks.**
 
@@ -626,12 +635,17 @@ API:
   `M_1`; the 2-norm construction would keep `k = 2` with `h = diag(1, 1/10)`.
 - The block sum `φ₁ ⊕ φ₂` with `tr_{k₁+k₂}` weights the two traces by `k_j/(k₁ + k₂)`, not
   equally: for `k₁ = 1`, `k₂ = 3` the weights are `1/4` and `3/4`.
+- c.p.c. Kadison–Schwarz for `φ = (1/2)·id : M_2 → M_2`: `φ̃(a + λ1) = a/2 + λ1` is u.c.p. on
+  `M̃_2`, and `φ(a)*φ(a) = a*a/4 ≤ a*a/2 = φ(a*a)`; the contraction hypothesis is needed: for
+  the completely positive, non-contractive `2·id`, `φ(a)*φ(a) = 4a*a` exceeds `φ(a*a) = 2a*a` at
+  `a = 1`.
 
 ### 2.2 Multiplicativity defects and asymptotic multiplicative domains
 
 For a c.p.c. map `φ : A → M_k` define the 2-norm defect `d₂(φ, a) = tr_k(φ(a*a) − φ(a)*φ(a))` and
 the norm defect `d_∞(φ, a) = ‖φ(a*a) − φ(a)*φ(a)‖`; both are nonnegative by the c.p.c.
-Kadison–Schwarz inequality (CStarAlgebras C4.1; paulsen2002, Ch. 3, as background). Prove, from a
+Kadison–Schwarz inequality of §2.1 (`schwarz` of CStarAlgebras C4.1 applied to the u.c.p.
+extension of `φ` to `Ã`; paulsen2002, Ch. 3, as background). Prove, from a
 Stinespring dilation
 `φ = V*π(·)V` with `‖V‖ ≤ 1` (CStarAlgebras C4.2) and the operator
 `T(a) = (1 − VV*)^{1/2}π(a)V`, for which `d₂(φ, a) = ‖T(a)‖₂²` and `d_∞(φ, a) = ‖T(a)‖²`:
@@ -649,7 +663,8 @@ For a net `(φ_i)` of c.p.c. maps `A → M_{k_i}` define the asymptotic 2-norm m
 Hence asymptotic multiplicativity of `(φ_i)` on all pairs of `A` follows from asymptotic
 multiplicativity on the pairs `(s, s*)` and `(s*, s)` for `s` in a set `S` with `S ∪ S*` generating
 `A` as a C*-algebra, for instance a spanning set of unitaries (brown2006, proof of Theorem 3.1.6,
-lines 841–850). *Needs:* §1.5, §2.1; CStarAlgebras C4.1 (Kadison–Schwarz), C4.2 (Stinespring,
+lines 841–850). *Needs:* §1.5, §2.1 (c.p.c. Kadison–Schwarz); CStarAlgebras C4.1 (`schwarz`,
+unital extension), C4.2 (Stinespring,
 including nonunital domains through the unital extension of §2.1).
 
 API:
@@ -1240,10 +1255,11 @@ uniform amenability; for nonunital `A`, `Ã` is nuclear (CStarAlgebras C6.5) and
 
 ### 5.4 Exact C*-algebras
 
-Prove (brown2006, Corollary 4.3.6, line 1925, in general without separability; kirchberg1993, §3,
-uncertified, as the origin): if `A` is exact (CStarAlgebras C7.1) and `τ ∈ T(A)`, then the
-following are equivalent: `τ ∈ AT(A)`; `τ ∈ UAT(A)`; `π_τ : A → M_τ` is nuclear (CStarAlgebras C6.1,
-point-norm factorizations through matrix algebras); `M_τ` is injective; and, for separable `A`,
+Prove (brown2006, Corollary 4.3.6, line 1925, stated there for separable unital `A`; the route
+below needs no separability; kirchberg1993, §3, uncertified, as the origin): if `A` is exact
+(CStarAlgebras C7.1) and `τ ∈ T(A)`, then the following are equivalent: `τ ∈ AT(A)`;
+`τ ∈ UAT(A)`; `π_τ : A → M_τ` is nuclear (CStarAlgebras C6.1, point-norm factorizations through
+matrix algebras); `M_τ` is injective; and, for separable `A`,
 `M_τ` is hyperfinite. Route: for unital `A` and a faithful representation `A ⊆ B(H)`, the inclusion
 is a nuclear map (CStarAlgebras C7.1), and (f) of §4.4 gives `Φ : B(H) → M_τ` with
 `π_τ = Φ|_A`, so `π_τ` is nuclear; nuclear maps are weakly nuclear, so §5.1 gives injectivity and
