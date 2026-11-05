@@ -1,4 +1,6 @@
-import Mathlib
+module
+
+public import Mathlib
 
 /-!
 # Geometric Satake and fusion, part II: target signatures
@@ -46,6 +48,8 @@ None of the following geometric headlines is statable at these pins:
   for arbitrary bounds it uses the v-sheaf and its intersection complex.
 
 -/
+
+@[expose] public section
 
 namespace TauCetiRoadmap.GeometricSatakeAndFusionPartII
 

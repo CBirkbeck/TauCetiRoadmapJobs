@@ -4020,19 +4020,19 @@
     "slug": "minuscule-dominance-tests",
     "needs": "Give dominance detection in the integral coroot coset by the type-dependent minuscule weight sets of §4.4, on the simply connected cover.",
     "supplier": "RootSystemsPartII",
-    "section": "Independent continuation briefs, Minuscule weights and modular representation bounds, MB.1"
+    "section": "Downstream consumers; minuscule-bounds continuation of §1.1 integral root dominance (not contained in §§4.3–4.4)"
   },
   {
     "slug": "minuscule-root-coefficients",
     "needs": "Give the minuscule root-string coefficient computation identifying the FM root bound j_α with k_α in §4.7 at the stated characteristics.",
     "supplier": "RootSystemsPartII",
-    "section": "Independent continuation briefs, Minuscule weights and modular representation bounds, MB.2–MB.3"
+    "section": "Downstream consumers; minuscule-bounds continuation of §1.1 integral root dominance (not contained in §§4.3–4.4)"
   },
   {
     "slug": "minuscule-cartan-coefficients",
     "needs": "Give the minuscule Cartan detecting-weight calculation of §4.9, retaining the Dᴴ endpoint and p≠2 hypotheses.",
     "supplier": "RootSystemsPartII",
-    "section": "Independent continuation briefs, Minuscule weights and modular representation bounds, MB.2"
+    "section": "Downstream consumers; minuscule-bounds continuation of §1.1 integral root dominance (not contained in §§4.3–4.4)"
   },
   {
     "slug": "algebraic-loop-representability",
@@ -4086,7 +4086,7 @@
     "slug": "central-nearby-cycles-algebraicity",
     "needs": "Give algebraicity and bounded constructibility of local-model central nearby cycles over F_ℓ for every ℓ≠p before local-model tube connectedness.",
     "supplier": "GeometricSatakeAndFusion",
-    "section": "GS0, Bounded admissible affine flag loci; GS2 early central prefix"
+    "section": "GS4, Integral local models and admissible special fibres; GS2 early central prefix"
   },
   {
     "slug": "central-nearby-cycles-perversity",
