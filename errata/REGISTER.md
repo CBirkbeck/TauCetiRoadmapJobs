@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-9619 mistakes recorded on the board: 5661 misprints, 2510 errors, 1070 gaps, 378 unparsed bullets.
+9627 mistakes recorded on the board: 5666 misprints, 2511 errors, 1070 gaps, 380 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -386,6 +386,8 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Unparsed** (PadicHodgeParametersInLocallyAnalyticRepresentations, #2246 at b8451af, 2026-11-05): Misprint** in DING25 at the proof of Theorem 3.34, first paragraph, printed page 56: the source says the "only if" follows from Corollary 3.32(1) and "if" is proved by induction; the labels are interchanged; affects nothing.
 - **Unparsed** (PadicHodgeParametersInLocallyAnalyticRepresentations, #2246 at b8451af, 2026-11-05): Misprint** in DING25 at (3.12), (3.15) and (3.33), printed pages 38–39 and 46: the source says the labels I range over subsets of {1,…,n−1}; they should range over all nonempty proper subsets of {1,…,n}, as the dimension n + (2^n − 1)d_K requires; affects nothing.
 - **Unparsed** (PadicHodgeParametersInLocallyAnalyticRepresentations, #2246 at b8451af, 2026-11-05): Misprint** in DING25 at the paragraph after (3.30), printed page 43: the source says the two endpoint inductions are from P_1^- and P_2^- with twists ε on the GL_{n−1} block and ε^{n−1} on the GL_1 block; they should be from P_{n−1}^- and P_1^- with the twists 1 ⊠ ε^{n−1} and 1 ⊠ (ε∘det) fixed by ε^{−1}∘θ^P (at n = 2 the printed algebraic part is z^{(h_1+1,h_2)} against z^λ = z^{(h_1,h_2+1)}); affects nothing.
+- **Unparsed** (PadicDifferentialEquationsAndRigidCohomologyPartII, #2264 at 19f0318, 2026-11-05): Gap** in DAD at proof of Proposition 4.2.12, printed page 17: a positive lower bound for the norms of `f_n` outside `pQ_{W,n}` is derived from compactness; it fails for `A_1 ⊂ W⟨u⟩` (`ū_1^j` has norm `p^{−j}` outside `pA_1`) and `A_n` is not compact; affects the proof.
+- **Unparsed** (PadicDifferentialEquationsAndRigidCohomologyPartII, #2264 at 19f0318, 2026-11-05): Misprint** in OHK at Proposition 5.9, printed page 26: boundedness is written `M^0 = M`; with Ohkubo's Definitions 5.3 and 5.5 (`M/M^0` the bounded quotient) it should be `M^0 = 0`; affects nothing. <!-- tauceti-roadmap-review {"agent": "claude", "head": "19f03182a1f149059add774b8736fb627051f9a4", "job": "REV-PKG-PadicDifferentialEquationsAndRigidCohomologyPartII", "model": "fable", "worker": "chris-x19"} -->
 
 ## A
 
@@ -12167,6 +12169,15 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at §3.1, first paragraph, printed p. 1444 (Trudgian line 240): the source says the enclosed selected zeros total 2n−1−⌊NE/π⌋; it should be 2n−2−⌊NE/π⌋, as Lemma 2 and the next display specify; affects the proof. Found by ZerosOfLFunctions (ERRATA-ZerosOfLFunctions at cce2e04, 2026-10-23, codex gpt-6-astra).
 - **Error** at §4, display immediately before (4.6), printed p. 1445 (Trudgian line 322): the source says |f(s)| ≤ |L(s+iT,χ)|ᴺ on the Jensen arc (χ₋₄, N=T=1, η=.25, r=1.6, φ=4.6 instead gives .9664>.8101); it should be |f(s)| ≤ (|L(s+iT,χ)|ᴺ + |L(s−iT,χ̄)|ᴺ)/2, bounding both summands; affects the proof. Found by ZerosOfLFunctions (ERRATA-ZerosOfLFunctions at cce2e04, 2026-10-23, codex gpt-6-astra).
 - **Misprint** at §4, the two case thresholds surrounding (4.1), printed p. 1445 (Trudgian line 294): the source says the argument change is compared with 3+⌊NE/π⌋; it should be compared with π(3+⌊NE/π⌋), as required by Lemma 2; affects the proof. Found by ZerosOfLFunctions (ERRATA-ZerosOfLFunctions at cce2e04, 2026-10-23, codex gpt-6-astra).
+
+## TSU
+
+- **Error** at Lemma 3.31 and its proof, printed page 19: the source says the objects are placed on the wrong curves and the proof of (1) ends by deriving its own hypothesis while (2) invokes (1); it should be place `f_*M†` on `C`, `f^*N†` on `C′`, and prove (1) by base change of the generic fields; affects the proof. Found by PadicDifferentialEquationsAndRigidCohomologyPartII (#2264 at 19f0318, 2026-11-05, claude fable).
+- **Misprint** at Proposition 3.24, printed page 18: the source says a rank is equated with a vector space; it should be the dimension of that space; affects nothing. Found by PadicDifferentialEquationsAndRigidCohomologyPartII (#2264 at 19f0318, 2026-11-05, claude fable).
+- **Misprint** at Theorem 3.12, printed page 15: the source says the bounded quotient is said to be nonzero for every solvable module; it should be assume `M ≠ 0`; affects a stated result. Found by PadicDifferentialEquationsAndRigidCohomologyPartII (#2264 at 19f0318, 2026-11-05, claude fable).
+- **Misprint** at Theorem 3.19, printed page 16: the source says the decreasing-slope condition and the bounded-quotient sum are written for the nested terms `P_i`; it should be the grades `P_i/P_{i−1}` (for `L_1 ⊕ L_0` both nested terms have maximal slope 1); affects a stated result. Found by PadicDifferentialEquationsAndRigidCohomologyPartII (#2264 at 19f0318, 2026-11-05, claude fable).
+- **Misprint** at proof of Corollary 6.8, printed page 29: the source says the isomorphism is given target the restriction of `N†`; it should be the restriction of `M†`; affects nothing. Found by PadicDifferentialEquationsAndRigidCohomologyPartII (#2264 at 19f0318, 2026-11-05, claude fable).
+- **Misprint** at proof of Proposition 7.15(2), printed page 35: the source says the lift is given target `π^*M†` and composed with `π^*((g′)⁻¹)`; it should be an endomorphism of `π^*N†` composed with `π^*g′`; affects the proof. Found by PadicDifferentialEquationsAndRigidCohomologyPartII (#2264 at 19f0318, 2026-11-05, claude fable).
 
 ## van Hoften, arXiv:2010.10496
 
