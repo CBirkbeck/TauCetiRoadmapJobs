@@ -1,0 +1,1062 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ExplicitZetaBounds"
+
+[[source]]
+id = "backlund1918"
+authors = "R. J. Backlund"
+title = "Über die Nullstellen der Riemannschen Zetafunktion"
+year = 1916
+venue = "Acta Mathematica 41"
+doi = "10.1007/BF02422950"
+locator_scheme = "equation"
+locator = "(53)-(54), (56), (76)"
+url = "https://projecteuclid.org/journals/acta-mathematica/volume-41/issue-none/ber-die-Nullstellen-der-Riemannschen-Zetafunktion/10.1007/BF02422950.pdf"
+licence_class = "open-repository"
+status = "uncertified"
+cited_for = ["Layer 1", "Layer 2"]
+version_note = "open copy exists (Project Euclid or EuDML/GDZ); the sources service fetched only the landing page, cite by locator until the PDF is read"
+
+[[source]]
+id = "batir2008"
+authors = "N. Batir"
+title = "Inequalities for the gamma function"
+year = 2008
+locator_scheme = "theorem"
+locator = "Theorems 1.1 and 1.5"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (Springer); the DOI guessed by the worker was not found by Crossref and is omitted; Arch. Math. 91 (2008), 554-563, cited by its locator"
+cited_for = ["Layer 0"]
+
+[[source]]
+id = "mortici2011ramanujan"
+authors = "Cristinel Mortici"
+title = "Ramanujan’s estimate for the gamma function via monotonicity arguments"
+year = 2011
+venue = "The Ramanujan Journal 25"
+doi = "10.1007/s11139-010-9265-y"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://doi.org/10.1007/s11139-010-9265-y"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 0"]
+
+[[source]]
+id = "chen2016"
+authors = "Chao-Ping Chen"
+title = "A more accurate approximation for the gamma function"
+year = 2016
+venue = "Journal of Number Theory 164"
+doi = "10.1016/j.jnt.2015.11.007"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://doi.org/10.1016/j.jnt.2015.11.007"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 0"]
+
+[[source]]
+id = "diamondstraub2016"
+authors = "Harold G. Diamond, Armin Straub"
+title = "Bounds for the logarithm of the Euler gamma function and its derivatives"
+year = 2016
+venue = "Journal of Mathematical Analysis and Applications 433"
+doi = "10.1016/j.jmaa.2015.08.034"
+arxiv = "1508.03267v1"
+locator_scheme = "theorem"
+locator = "Theorem 3.1 (digamma comparison); Theorem 1.2 (log Gamma)"
+url = "https://arxiv.org/abs/1508.03267v1"
+fetched_from = "https://arxiv.org/pdf/1508.03267v1"
+fetched_at = "2026-11-05T20:59:23Z"
+sha256 = "2662faeeed107f122a71ba38e5500802caeda0b598b54d3c4db3fe93f817042a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v1"
+cited_for = ["Layer 0"]
+
+[[source]]
+id = "rademacher1959"
+authors = "Hans Rademacher"
+title = "On the Phragm�n-Lindel�f theorem and some applications"
+year = 1959
+venue = "Mathematische Zeitschrift 72"
+doi = "10.1007/BF01162949"
+locator_scheme = "theorem"
+locator = "Theorems 3 and 4"
+url = "https://eudml.org/doc/183607"
+licence_class = "open-repository"
+status = "uncertified"
+cited_for = ["Layer 1"]
+version_note = "open copy exists (Project Euclid or EuDML/GDZ); the sources service fetched only the landing page, cite by locator until the PDF is read"
+
+[[source]]
+id = "trudgian2014argument"
+authors = "T. S. Trudgian"
+title = "An improved upper bound for the argument of the Riemann zeta-function on the critical line II"
+year = 2012
+venue = "2014, J. Number Theory, vol. 134, pp. 280-292"
+doi = "10.1016/j.jnt.2013.07.017"
+arxiv = "1208.5846v2"
+locator_scheme = "theorem"
+locator = "Corollary 1; Section 5"
+url = "https://arxiv.org/abs/1208.5846v2"
+fetched_from = "https://arxiv.org/pdf/1208.5846v2"
+fetched_at = "2026-11-05T21:34:13Z"
+sha256 = "274b3a0a14d79400f23505ede664a2f77b0a6ad7278245d25ec6e06169e2a303"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v2 prints 0.111 log T + 0.275 log log T + 2.450; the published J. Number Theory version prints 0.112, 0.278, 2.510 + 1/(5T); cite the published numbers"
+cited_for = ["Layer 1", "Layer 2"]
+
+[[source]]
+id = "hiary2016zeta"
+authors = "Ghaith A. Hiary"
+title = "An explicit van der Corput estimate for $ζ(1/2+it)$"
+year = 2015
+venue = "Indagationes Mathematicae 27"
+doi = "10.1016/j.indag.2015.10.011"
+arxiv = "1507.01261v4"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/1507.01261v4"
+fetched_from = "https://arxiv.org/pdf/1507.01261v4"
+fetched_at = "2026-11-05T21:33:25Z"
+sha256 = "9a1c88ff34de375a4f634319b44502a25cf4b58509ef5e665c6ae017e4c22740"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v4"
+cited_for = ["Layer 1"]
+
+[[source]]
+id = "patel2022"
+authors = "Dhir Patel"
+title = "An Explicit Upper Bound for $|ζ(1+it)|$"
+year = 2020
+venue = "Indagationes Mathematicae 33"
+doi = "10.1016/j.indag.2022.04.007"
+arxiv = "2009.00769v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/2009.00769v1"
+fetched_from = "https://arxiv.org/pdf/2009.00769v1"
+fetched_at = "2026-11-05T21:33:50Z"
+sha256 = "6ce77f4a2eaf87ad4642054758b3f2580dee381dff715ab30e1eaf7b8a58bef8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v1"
+cited_for = ["Layer 1"]
+
+[[source]]
+id = "kadiri2013density"
+authors = "H. Kadiri"
+title = "A zero density result for the Riemann zeta function"
+year = 2013
+venue = "Acta Arithmetica 160"
+locator_scheme = "theorem"
+locator = "Theorem 1.1 (zero density at sigma = 17/20); Theorem 1.2; Theorem 1.4"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (IMPAN); the DOI the worker guessed belongs to another paper of the same volume and is omitted; Acta Arith. 160 (2013), no. 2, 185-200, cited by its locator"
+cited_for = ["Layer 1", "Layer 3"]
+
+[[source]]
+id = "ramare2016density"
+authors = "O. Ramaré"
+title = "An explicit density estimate for Dirichlet L-series"
+year = 2015
+venue = "Mathematics of Computation 85"
+doi = "10.1090/mcom/2991"
+locator_scheme = "theorem"
+locator = "Lemma 5.1; Lemma 6.2; Corollaries 6.3 and 6.4; Theorem 1.1"
+url = "https://www.ams.org/journals/mcom/2016-85-297/S0025-5718-2015-02991-3/"
+licence_class = "none"
+status = "uncertified"
+version_note = "Math. Comp. 85 (2016), no. 297, 325-356; the AMS back volume is free at www.ams.org/journals/mcom/2016-85-297 but the service reported network trouble; the DOI the worker first guessed belonged to another paper"
+cited_for = ["Layer 1", "Layer 3", "Layer 7"]
+
+[[source]]
+id = "hasanalizadeshenwong2022"
+authors = "E. Hasanalizade, Q. Shen, P.-J. Wong"
+title = "Counting zeros of the Riemann zeta function"
+year = 2022
+venue = "Journal of Number Theory 235"
+doi = "10.1016/j.jnt.2021.06.032"
+arxiv = "2107.06506v1"
+locator_scheme = "theorem"
+locator = "Corollaries 1.2 and 1.4"
+url = "https://arxiv.org/abs/2107.06506v1"
+fetched_from = "https://arxiv.org/pdf/2107.06506v1"
+fetched_at = "2026-11-05T21:31:23Z"
+sha256 = "3fc4c89f49249924e61cb0d289d81559faed53fcbb838628ea32dc7ec6f89fbf"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v1"
+cited_for = ["Layer 2"]
+
+[[source]]
+id = "bmor2021"
+authors = "M. A. Bennett, G. Martin, K. O'Bryant, A. Rechnitzer"
+title = "Counting zeros of Dirichlet L-functions"
+year = 2021
+venue = "Mathematics of Computation 90"
+doi = "10.1090/mcom/3599"
+arxiv = "2005.02989v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/2005.02989v1"
+fetched_from = "https://arxiv.org/pdf/2005.02989v1"
+fetched_at = "2026-11-05T21:31:29Z"
+sha256 = "bc7d063bcde319274f878acb05816c3ddeddce8820ae614485e9ff9ecd64ab43"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v1"
+cited_for = ["Layer 2"]
+
+[[source]]
+id = "ramare2007eigen"
+authors = "Olivier Ramaré"
+title = "Eigenvalues in the large sieve inequality"
+year = 2007
+venue = "Functiones et Approximatio Commentarii Mathematici 37"
+doi = "10.7169/facm/1229619662"
+locator_scheme = "theorem"
+locator = "Theorem 7.1"
+url = "https://hal.science/hal-02572681v1"
+fetched_from = "https://hal.science/hal-02572681/document"
+fetched_at = "2026-11-05T21:10:01Z"
+sha256 = "4ca647770e7ac5a028fcff3a1b54e3a826c616ea5e2b21b6369a1f7cb94a813a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["Layer 3"]
+
+[[source]]
+id = "gallagher1970"
+authors = "P. X. Gallagher"
+title = "A large sieve density estimate near σ = 1"
+year = 1970
+venue = "Inventiones Mathematicae 11"
+doi = "10.1007/bf01403187"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://eudml.org/doc/142061"
+licence_class = "open-repository"
+status = "uncertified"
+cited_for = ["Layer 3"]
+version_note = "open copy exists (Project Euclid or EuDML/GDZ); the sources service fetched only the landing page, cite by locator until the PDF is read"
+
+[[source]]
+id = "plattsaadeddin2013"
+authors = "David J. Platt, Sumaia Saad Eddin"
+title = "Explicit upper bounds for |L(1, χ)| when χ(3)=0"
+year = 2013
+venue = "Colloquium Mathematicum 133"
+doi = "10.4064/cm133-1-2"
+arxiv = "1306.4780v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/1306.4780v1"
+fetched_from = "https://arxiv.org/pdf/1306.4780v1"
+fetched_at = "2026-11-05T21:13:32Z"
+sha256 = "c562cc2649fa1f60136ea2de0d9d19be71185bc3146bcea27bbee093a119ac44"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v1"
+cited_for = ["Layer 5"]
+
+[[source]]
+id = "johnstonramaretrudgian2023"
+authors = "D. R. Johnston, O. Ramaré, T. Trudgian"
+title = "An explicit upper bound for L(1,χ) when χ is quadratic"
+year = 2023
+venue = "Research in Number Theory 9"
+doi = "10.1007/s40993-023-00476-4"
+locator_scheme = "theorem"
+locator = "Theorems 1 and 2"
+url = "https://hal.science/hal-04238675v1"
+fetched_from = "https://hal.science/hal-04238675/document"
+fetched_at = "2026-11-05T21:31:32Z"
+sha256 = "d68d0036dfc7c945c3a54dea8928d393556092bd01e88a5ed3807c7b4a595c81"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["Layer 5"]
+
+[[source]]
+id = "mossinghoffstarichkovatrudgian2022"
+authors = "M. J. Mossinghoff, V. V. Starichkova, T. S. Trudgian"
+title = "Explicit lower bounds on |L(1,χ)|"
+year = 2022
+venue = "Journal of Number Theory 240"
+doi = "10.1016/j.jnt.2021.12.013"
+arxiv = "2107.09230v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/2107.09230v1"
+fetched_from = "https://arxiv.org/pdf/2107.09230v1"
+fetched_at = "2026-11-05T21:31:38Z"
+sha256 = "63053af5fe7321f1e6d30f628c27df771f9668cce6f913c405bc344adc46d8db"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v1"
+cited_for = ["Layer 5"]
+
+[[source]]
+id = "mossinghofftrudgian2015"
+authors = "M. J. Mossinghoff, T. S. Trudgian"
+title = "Nonnegative trigonometric polynomials and a zero-free region for the Riemann zeta-function"
+year = 2015
+venue = "Journal of Number Theory 157"
+doi = "10.1016/j.jnt.2015.05.010"
+arxiv = "1410.3926v1"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://arxiv.org/abs/1410.3926v1"
+fetched_from = "https://arxiv.org/pdf/1410.3926v1"
+fetched_at = "2026-11-05T21:31:50Z"
+sha256 = "fe6dfe7641890783d791842b6e464afaa3862e25acf19434812b59a433dd86a1"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v1"
+cited_for = ["Layer 6"]
+
+[[source]]
+id = "mty2024"
+authors = "M. J. Mossinghoff, T. S. Trudgian, A. Yang"
+title = "Explicit zero-free regions for the Riemann zeta-function"
+year = 2024
+venue = "Research in Number Theory 10"
+doi = "10.1007/s40993-023-00498-y"
+arxiv = "2212.06867v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.3 (R0 = 5.558691); Theorem 1.1 (Vinogradov-Korobov region)"
+url = "https://arxiv.org/abs/2212.06867v1"
+fetched_from = "https://arxiv.org/pdf/2212.06867v1"
+fetched_at = "2026-11-05T21:31:56Z"
+sha256 = "127c32eb86d0aea264cc5b1ba96cc83243ef6b763451591e1560edaca1767300"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v1"
+cited_for = ["Layer 6"]
+
+[[source]]
+id = "bellotti2024"
+authors = "C. Bellotti"
+title = "Explicit bounds for the Riemann zeta function and a new zero-free region"
+year = 2024
+venue = "Journal of Mathematical Analysis and Applications 536"
+doi = "10.1016/j.jmaa.2024.128249"
+arxiv = "2306.10680v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.1 (zeta bound); Theorem 1.2 (zero-free region)"
+url = "https://arxiv.org/abs/2306.10680v1"
+fetched_from = "https://arxiv.org/pdf/2306.10680v1"
+fetched_at = "2026-11-05T21:32:03Z"
+sha256 = "e0703be3cb5e05577102e8db48d552346447ae749251992cfd371038cb352b4c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v1"
+cited_for = ["Layer 6"]
+
+[[source]]
+id = "ralaivaosaonarazakarinoro2026"
+authors = "D. Ralaivaosaona, F.B. Razakarinoro"
+title = "An explicit bound for Siegel zeros and the torsion of elliptic curves with complex multiplication"
+year = 2026
+venue = "Journal of Number Theory 281"
+doi = "10.1016/j.jnt.2025.10.014"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://doi.org/10.1016/j.jnt.2025.10.014"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 6"]
+
+[[source]]
+id = "kadiring2012"
+authors = "Habiba Kadiri, Nathan Ng"
+title = "Explicit zero density theorems for Dedekind zeta functions"
+year = 2012
+venue = "Journal of Number Theory 132"
+doi = "10.1016/j.jnt.2011.09.002"
+arxiv = "1201.3932v1"
+locator_scheme = "theorem"
+locator = "Theorem 1 (explicit N_K(T)); context only, Dedekind case belongs to ExplicitNumberFields"
+url = "https://arxiv.org/abs/1201.3932v1"
+fetched_from = "https://arxiv.org/pdf/1201.3932v1"
+fetched_at = "2026-11-05T21:20:15Z"
+sha256 = "f9d1833f33c0c9fd8085f7ad297721fc17da5164fbcedecb605d5e9d825512f7"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v1"
+cited_for = ["Layer 7"]
+
+[[source]]
+id = "kadirilumleyng2018"
+authors = "Habiba Kadiri, Allysa Lumley, Nathan Ng"
+title = "Explicit zero density for the Riemann zeta function"
+year = 2021
+venue = "J. Math. Anal. Appl. 465 (2018), no. 1, 22-46"
+doi = "10.1016/j.jmaa.2018.04.071"
+arxiv = "2101.12263v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.1 and its corollary at sigma = 9/10"
+url = "https://arxiv.org/abs/2101.12263v1"
+fetched_from = "https://arxiv.org/pdf/2101.12263v1"
+fetched_at = "2026-11-05T21:34:29Z"
+sha256 = "fb11226af17a06d9246120d827abe98bec817ecec23554573d6b84110b4c3303"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv:2101.12263 posted after the 2018 publication; numbering checked against the preprint"
+cited_for = ["Layer 7"]
+
+[[source]]
+id = "platt2016grh"
+authors = "David Platt"
+title = "Numerical computations concerning the GRH"
+year = 2016
+venue = "Mathematics of Computation 85"
+doi = "10.1090/mcom/3077"
+arxiv = "1305.3087v1"
+locator_scheme = "theorem"
+locator = "Theorem 7.1"
+url = "https://arxiv.org/abs/1305.3087v1"
+fetched_from = "https://arxiv.org/pdf/1305.3087v1"
+fetched_at = "2026-11-05T21:20:54Z"
+sha256 = "8fd109aa21345bc3feac4fde2faa7dfb51b4ef1fc9a430f643323612a39ef417"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v1"
+cited_for = ["Layer 8"]
+
+[[source]]
+id = "alzer1997"
+authors = "H. Alzer"
+title = "On some inequalities for the gamma and psi functions"
+year = 1997
+locator_scheme = "theorem"
+locator = "Theorems 8 and 9"
+url = "https://www.ams.org/journals/mcom/1997-66-217/S0025-5718-97-00807-7/S0025-5718-97-00807-7.pdf"
+fetched_from = "https://www.ams.org/journals/mcom/1997-66-217/S0025-5718-97-00807-7/S0025-5718-97-00807-7.pdf"
+fetched_at = "2026-11-05T21:21:20Z"
+sha256 = "3ee7ef2663008a43c1ffa199d460900c62cd9a09ad44b6f1bed4fed4dd599804"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["Layer 0"]
+
+[[source]]
+id = "chenggraham2004"
+authors = "Y. Cheng, S. W. Graham"
+title = "Explicit estimates for the Riemann zeta function"
+year = 2004
+locator_scheme = "theorem"
+locator = "Corollary to Theorem 3"
+url = "https://projecteuclid.org/journals/rocky-mountain-journal-of-mathematics/volume-34/issue-4/Explicit-Estimates-for-the-Riemann-Zeta-Function/10.1216/rmjm/1181069799.full"
+licence_class = "open-repository"
+status = "uncertified"
+cited_for = ["Layer 1"]
+version_note = "open copy exists (Project Euclid or EuDML/GDZ); the sources service fetched only the landing page, cite by locator until the PDF is read"
+
+[[source]]
+id = "kadiri2002thesis"
+authors = "H. Kadiri"
+title = "Une région explicite sans zéros pour les fonctions L de Dirichlet"
+year = 2002
+locator_scheme = "chapter"
+locator = "Chapitre 3, equation (111) (R1 = 6.4355)"
+url = "https://theses.hal.science/tel-00002695"
+fetched_from = "https://theses.hal.science/tel-00002695/document"
+fetched_at = "2026-11-05T21:30:48Z"
+sha256 = "6d3576bff1ac2d2ee0d59ec4ee2437e5cca5917031f51de7ddcea54e1377e8d9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["Layer 6"]
+
+[[source]]
+id = "kadiri2018"
+authors = "Habiba Kadiri"
+title = "An explicit zero-free region for the Dirichlet L-functions"
+year = 2005
+venue = "Mathematika 64 (2018), no. 2, 445--474"
+arxiv = "math/0510570v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.1 (R = 5.60 for 3 <= q <= 400000)"
+url = "https://arxiv.org/abs/math/0510570v2"
+fetched_from = "https://arxiv.org/pdf/math/0510570v2"
+fetched_at = "2026-11-05T21:32:22Z"
+sha256 = "774e5aa5e5ad96ce263df8ae7b02258cf9bb7ea2e8d6d0300b83b53bde7d8166"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv math/0510570v2 is the Mathematika 2018 text (bounded conductor only); the R1 = 6.4355 one-exception region is in v1 and in the 2002 thesis"
+cited_for = ["Layer 6"]
+
+[[source]]
+id = "logan1988"
+authors = "B. F. Logan"
+title = "An interference problem for exponentials"
+year = 1988
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://projecteuclid.org/journals/michigan-mathematical-journal/volume-35/issue-3/An-interference-problem-for-exponentials/10.1307/mmj/1029003818.full"
+licence_class = "open-repository"
+status = "uncertified"
+cited_for = ["Layer 3"]
+version_note = "open copy exists (Project Euclid or EuDML/GDZ); the sources service fetched only the landing page, cite by locator until the PDF is read"
+
+[[source]]
+id = "hiary2016hybrid"
+authors = "Ghaith A. Hiary"
+title = "An explicit hybrid estimate for $L(1/2+it,χ)$"
+year = 2015
+arxiv = "1510.00950v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.2; Corollary 1.1"
+url = "https://arxiv.org/abs/1510.00950v2"
+fetched_from = "https://arxiv.org/pdf/1510.00950v2"
+fetched_at = "2026-11-05T21:33:32Z"
+sha256 = "ffe1f73247015f91e80885765c691afe2014d82880eaeabe47cad654d799d603"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v2"
+cited_for = ["Layer 1"]
+
+[[source]]
+id = "thornerzaman2024"
+authors = "Jesse Thorner, Asif Zaman"
+title = "An explicit version of Bombieri's log-free density estimate and Sárközy's theorem for shifted primes"
+year = 2022
+venue = "Forum Math. 36 (2024), no. 4, 1059-1080"
+doi = "10.1515/forum-2023-0091"
+arxiv = "2208.11123v4"
+locator_scheme = "theorem"
+locator = "Proposition 2.10"
+url = "https://arxiv.org/abs/2208.11123v4"
+fetched_from = "https://arxiv.org/pdf/2208.11123v4"
+fetched_at = "2026-11-05T21:33:38Z"
+sha256 = "64c02753b55698f64625d3c84721303fa61fea7120bca993ffcd907456a104c6"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v4"
+cited_for = ["Layer 1"]
+
+[[source]]
+id = "ford2002vinogradov"
+authors = "Kevin Ford"
+title = "Vinogradov's integral and bounds for the Riemann zeta function"
+year = 2019
+venue = "Proc. London Math. Soc. 85 (2002), 565-633"
+arxiv = "1910.08209v1"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://arxiv.org/abs/1910.08209v1"
+fetched_from = "https://arxiv.org/pdf/1910.08209v1"
+fetched_at = "2026-11-05T21:33:56Z"
+sha256 = "40e20525a73e2c8ffa88aec01a952891743ff4f8424aa4483871745fadee18b5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v1"
+cited_for = ["Layer 1"]
+
+[[source]]
+id = "ford2002zerofree"
+authors = "Kevin Ford"
+title = "Zero-free regions for the Riemann zeta function"
+year = 2019
+venue = "In the book Number Theory for the Millenium (Urbana, IL, 2000) (M. A. Bennett, B. C. Berndt, N. Boston, H. G. Diamond, A. J. Hildebrand and W. Phillip, eds), vol. II (2002), 25-56"
+arxiv = "1910.08205v5"
+locator_scheme = "theorem"
+locator = "Theorems 1 and 3"
+url = "https://arxiv.org/abs/1910.08205v5"
+fetched_from = "https://arxiv.org/pdf/1910.08205v5"
+fetched_at = "2026-11-05T21:34:04Z"
+sha256 = "df92c2e7fd3aa54634258c4e803c63c4eaea210c5b3faab1abcb7128700194f4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv:1910.08205v5 is a revised version of the 2002 Millennial Conference paper; constants differ from the printed A = 58"
+cited_for = ["Layer 6"]
+
+[[source]]
+id = "khale2024"
+authors = "Tanmay Khale"
+title = "An explicit Vinogradov-Korobov zero-free region for Dirichlet L-functions"
+year = 2022
+arxiv = "2210.06457v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/2210.06457v1"
+fetched_from = "https://arxiv.org/pdf/2210.06457v1"
+fetched_at = "2026-11-05T21:34:22Z"
+sha256 = "e232e295f93e4b3be4e33d4a0043145645832316fd765fde89eadfc7b735c136"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v1"
+cited_for = ["Layer 6"]
+
+[[source]]
+id = "platttrudgian2021"
+authors = "Dave Platt, Tim Trudgian"
+title = "The Riemann hypothesis is true up to $3\\cdot 10^{12}$"
+year = 2020
+doi = "10.1112/blms.12460"
+arxiv = "2004.09765v1"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://arxiv.org/abs/2004.09765v1"
+fetched_from = "https://arxiv.org/pdf/2004.09765v1"
+fetched_at = "2026-11-05T21:34:34Z"
+sha256 = "3362f66af9fa9373977eee70e2282ec33989d5d8b97e0852df9e32cc25b52885"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v1"
+cited_for = ["Layer 8"]
+
+[[source]]
+id = "platt2017zeros"
+authors = "D. J. Platt"
+title = "Isolating some non-trivial zeros of zeta"
+year = 2017
+locator_scheme = "theorem"
+locator = "Section 1 (main theorem, height 30 610 046 000)"
+url = "https://research-information.bris.ac.uk/ws/portalfiles/portal/78836669/platt_zeta_submitted.pdf"
+fetched_from = "https://research-information.bris.ac.uk/ws/portalfiles/portal/78836669/platt_zeta_submitted.pdf"
+fetched_at = "2026-11-05T21:34:36Z"
+sha256 = "f30d8243b55faef909ddb64b15653905724f5d2a333c24aff68ad0183139a9db"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["Layer 8"]
+version_note = "author accepted manuscript in the Bristol repository; numbering may differ from the printed version"
+
+[[source]]
+id = "trudgian2014zeta1"
+authors = "Timothy Trudgian"
+title = "A new upper bound for $|ζ(1+ it)|$"
+year = 2012
+venue = "Bull. Aust. Math. Soc. 89 (2014) 259-264"
+doi = "10.1017/S0004972713000415"
+arxiv = "1210.6743v1"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://arxiv.org/abs/1210.6743v1"
+fetched_from = "https://arxiv.org/pdf/1210.6743v1"
+fetched_at = "2026-11-05T21:34:40Z"
+sha256 = "b929cf3b42a7d20838fe5435271608580ae792cc7315bda1475d3e62a4454370"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v1"
+cited_for = ["Layer 1"]
+
+[[source]]
+id = "saadeddin2016"
+authors = "Sumaia Saad Eddin"
+title = "Explicit upper bound for $\\left|L(1, χ)\\right|$ when $χ(2)=1$ and $χ$ is even"
+year = 2015
+doi = "10.1142/S1793042116501372"
+arxiv = "1503.08365v1"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://arxiv.org/abs/1503.08365v1"
+fetched_from = "https://arxiv.org/pdf/1503.08365v1"
+fetched_at = "2026-11-05T21:34:46Z"
+sha256 = "a480f5f4ef2a926854ca87e532d09d3ec210f287be07d8f5384ff169cbc20925"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v1"
+cited_for = ["Layer 5"]
+
+[[source]]
+id = "kadiri2005"
+authors = "Habiba Kadiri"
+title = "Une region explicite sans zero pour la fonction Zeta de Riemann"
+year = 2004
+venue = "Acta Arith. 117.4 (2005), 303--339"
+doi = "10.4064/aa117-4-1"
+arxiv = "math/0401238v1"
+locator_scheme = "theorem"
+locator = "Théorème 1.1"
+url = "https://arxiv.org/abs/math/0401238v1"
+fetched_from = "https://arxiv.org/pdf/math/0401238v1"
+fetched_at = "2026-11-05T21:36:26Z"
+sha256 = "131603d16feee8edc597ff9b7194b8b93ff48335c68295e984a72c94e1c661d2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv preprint math/0401238 prints R0 = 5.70176; the published Acta Arith. version is cited by later papers with R0 = 5.69693; the filed statement says 5.70175"
+cited_for = ["Layer 6"]
+
+[[source]]
+id = "mortici2011psi"
+authors = "C. Mortici"
+title = "On a sum of the psi function with a logarithm"
+year = 2011
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://dergipark.org.tr/en/download/article-file/86485"
+fetched_from = "https://dergipark.org.tr/en/download/article-file/86485"
+fetched_at = "2026-11-05T21:36:31Z"
+sha256 = "c9e7dfc231392a8ec90297bb55f583816ab1785f6a74c08a1a12bf7671501a26"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["Layer 0"]
+
+[[source]]
+id = "jangkwon2014"
+authors = "W.-J. Jang, S.-H. Kwon"
+title = "A note on Kadiri's explicit zero free region for Riemann zeta function"
+year = 2014
+locator_scheme = "theorem"
+locator = "the main theorem of Section 1 (R0 = 5.68371)"
+url = "https://koreascience.kr/article/JAKO201432252667231.pdf"
+fetched_from = "https://koreascience.kr/article/JAKO201432252667231.pdf"
+fetched_at = "2026-11-05T21:36:34Z"
+sha256 = "cea20d7ffa636aadf0601702bba8c743086773f94f688740e7a547cdb1c05f2c"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["Layer 6"]
+
+[[source]]
+id = "gordon1994"
+authors = "L. Gordon"
+title = "A stochastic approach to the gamma function"
+year = 1994
+venue = "American Mathematical Monthly 101"
+doi = "10.2307/2975134"
+url = "https://doi.org/10.2307/2975134"
+locator_scheme = "page"
+locator = "p. 862"
+licence_class = "none"
+status = "uncertified"
+version_note = "no legal open copy read by the worker; cited by its locator"
+cited_for = ["Layer 0"]
+
+[[source]]
+id = "lehman1970"
+authors = "R. S. Lehman"
+title = "On the distribution of zeros of the Riemann zeta-function"
+year = 1970
+venue = "Proceedings of the London Mathematical Society (3) 20"
+doi = "10.1112/plms/s3-20.2.303"
+url = "https://doi.org/10.1112/plms/s3-20.2.303"
+locator_scheme = "theorem"
+locator = "Lemma 2"
+licence_class = "none"
+status = "uncertified"
+version_note = "no legal open copy read by the worker; cited by its locator"
+cited_for = ["Layer 1"]
+
+[[source]]
+id = "rosser1941"
+authors = "J. B. Rosser"
+title = "Explicit bounds for some functions of prime numbers"
+year = 1941
+venue = "American Journal of Mathematics 63"
+doi = "10.2307/2371291"
+url = "https://doi.org/10.2307/2371291"
+locator_scheme = "theorem"
+locator = "Theorem 19"
+licence_class = "none"
+status = "uncertified"
+version_note = "no legal open copy read by the worker; cited by its locator"
+cited_for = ["Layer 2"]
+
+[[source]]
+id = "montgomeryvaughan1973"
+authors = "H. L. Montgomery, R. C. Vaughan"
+title = "The large sieve"
+year = 1973
+venue = "Mathematika 20"
+doi = "10.1112/S0025579300004708"
+url = "https://doi.org/10.1112/S0025579300004708"
+locator_scheme = "theorem"
+locator = "Theorems 1 and 2"
+licence_class = "none"
+status = "uncertified"
+version_note = "no legal open copy read by the worker; cited by its locator"
+cited_for = ["Layer 4"]
+
+[[source]]
+id = "montgomeryvaughan1974"
+authors = "H. L. Montgomery, R. C. Vaughan"
+title = "Hilbert's inequality"
+year = 1974
+venue = "Journal of the London Mathematical Society (2) 8"
+doi = "10.1112/jlms/s2-8.1.73"
+url = "https://doi.org/10.1112/jlms/s2-8.1.73"
+locator_scheme = "theorem"
+locator = "Theorem 1; Corollary 3"
+licence_class = "none"
+status = "uncertified"
+version_note = "no legal open copy read by the worker; cited by its locator"
+cited_for = ["Layer 3", "Layer 4"]
+
+[[source]]
+id = "elliott1987"
+authors = "P. D. T. A. Elliott"
+title = "Additive arithmetic functions on arithmetic progressions"
+year = 1987
+venue = "Proceedings of the London Mathematical Society (3) 54"
+doi = "10.1112/plms/s3-54.1.15"
+url = "https://doi.org/10.1112/plms/s3-54.1.15"
+locator_scheme = "theorem"
+locator = "Lemma 1"
+licence_class = "none"
+status = "uncertified"
+version_note = "no legal open copy read by the worker; cited by its locator"
+cited_for = ["Layer 4"]
+
+[[source]]
+id = "bastienrogalski2002"
+authors = "G. Bastien, M. Rogalski"
+title = "Convexité, complète monotonie et inégalités sur les fonctions zêta et gamma, sur les fonctions des opérateurs de Baskakov et sur des fonctions arithmétiques"
+year = 2002
+venue = "Canadian Journal of Mathematics 54"
+doi = "10.4153/CJM-2002-034-7"
+url = "https://doi.org/10.4153/CJM-2002-034-7"
+locator_scheme = "theorem"
+locator = "Théorème 6"
+licence_class = "none"
+status = "uncertified"
+version_note = "no legal open copy read by the worker; cited by its locator"
+cited_for = ["Layer 1"]
+
+[[source]]
+id = "ramare2001"
+authors = "O. Ramaré"
+title = "Approximate formulae for L(1,χ)"
+year = 2001
+venue = "Acta Arithmetica 100"
+doi = "10.4064/aa100-3-2"
+url = "https://doi.org/10.4064/aa100-3-2"
+locator_scheme = "theorem"
+locator = "Corollary 1"
+licence_class = "none"
+status = "uncertified"
+version_note = "no legal open copy read by the worker; cited by its locator"
+cited_for = ["Layer 5"]
+
+[[source]]
+id = "preissmann1984"
+authors = "E. Preissmann"
+title = "Sur une inégalité de Montgomery et Vaughan"
+year = 1984
+venue = "L'Enseignement Mathématique (2) 30, 95-113"
+locator_scheme = "theorem"
+locator = "Théorème 1"
+licence_class = "none"
+status = "uncertified"
+version_note = "no legal open copy read by the worker; cited by its locator"
+cited_for = ["Layer 4"]
+
+[[source]]
+id = "louboutin2015"
+authors = "S. R. Louboutin"
+title = "An explicit lower bound on moduli of Dirichlet L-functions at s = 1"
+year = 2015
+venue = "Journal of the Ramanujan Mathematical Society 30, 101-113"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+licence_class = "none"
+status = "uncertified"
+version_note = "no legal open copy read by the worker; cited by its locator"
+cited_for = ["Layer 5"]
+
+[[source]]
+id = "montgomery1994ten"
+authors = "H. L. Montgomery"
+title = "Ten lectures on the interface between analytic number theory and harmonic analysis"
+year = 1994
+venue = "CBMS Regional Conference Series in Mathematics 84, AMS"
+locator_scheme = "chapter"
+locator = "Chapter 7, Theorem 3"
+licence_class = "none"
+status = "uncertified"
+version_note = "no legal open copy read by the worker; cited by its locator"
+cited_for = ["Layer 3"]
+
+[[source]]
+id = "andrewsberndt2013"
+authors = "G. E. Andrews, B. C. Berndt"
+title = "Ramanujan's Lost Notebook, Part IV"
+year = 2013
+venue = "Springer"
+doi = "10.1007/978-1-4614-4081-9"
+url = "https://doi.org/10.1007/978-1-4614-4081-9"
+locator_scheme = "page"
+locator = "p. 118"
+licence_class = "none"
+status = "uncertified"
+version_note = "no legal open copy read by the worker; cited by its locator"
+cited_for = ["Layer 0"]
+
+[[source]]
+id = "ramare2022excursions"
+authors = "O. Ramaré"
+title = "Excursions in Multiplicative Number Theory"
+year = 2022
+venue = "Birkhäuser Advanced Texts, Birkhäuser/Springer, Cham"
+doi = "10.1007/978-3-030-73169-4"
+url = "https://doi.org/10.1007/978-3-030-73169-4"
+locator_scheme = "section"
+locator = "Chapter 20, Section 20.2"
+licence_class = "none"
+status = "uncertified"
+version_note = "no legal open copy read by the worker; cited by its locator"
+cited_for = ["Layer 0"]
+
+[[source]]
+id = "platt2011thesis"
+authors = "D. J. Platt"
+title = "Computing degree 1 L-functions rigorously"
+year = 2011
+venue = "PhD thesis, University of Bristol"
+locator_scheme = "chapter"
+locator = "the chapter verifying RH to height 10^9"
+licence_class = "none"
+status = "uncertified"
+version_note = "no legal open copy read by the worker; cited by its locator"
+cited_for = ["Layer 8"]
+
+[[source]]
+id = "helfgott2017mo"
+authors = "H. A. Helfgott"
+title = "L² bounds for tails of ζ(s) on a vertical line (MathOverflow answer 285338 to question 285197)"
+year = 2017
+venue = "MathOverflow, CC BY-SA"
+locator_scheme = "tag"
+locator = "the answer, equations for c_{1,σ}, c♭_{1,σ}, c♭_{2,σ}, c_{3,σ}, κ_{σ,T}"
+licence_class = "none"
+status = "uncertified"
+version_note = "no legal open copy read by the worker; cited by its locator"
+cited_for = ["Layer 3"]
+
+[[source]]
+id = "dlmf"
+authors = "NIST"
+title = "Digital Library of Mathematical Functions"
+year = 2024
+venue = "https://dlmf.nist.gov"
+locator_scheme = "equation"
+locator = "5.11.1, 5.11.3, 5.11.10, 5.11.11"
+licence_class = "none"
+status = "uncertified"
+version_note = "no legal open copy read by the worker; cited by its locator"
+cited_for = ["Layer 0"]
+
+[[source]]
+id = "delange1987"
+authors = "H. Delange"
+title = "Une remarque sur la dérivée logarithmique de la fonction zêta de Riemann"
+year = 1987
+venue = "Colloquium Mathematicum 53"
+doi = "10.4064/cm-53-2-333-335"
+url = "https://doi.org/10.4064/cm-53-2-333-335"
+locator_scheme = "theorem"
+locator = "Théorème"
+licence_class = "none"
+status = "uncertified"
+version_note = "no legal open copy read by the worker; cited by its locator"
+cited_for = ["Layer 1"]
+
+[[source]]
+id = "lehman1966"
+authors = "R. S. Lehman"
+title = "On the difference π(x) − li(x)"
+year = 1966
+venue = "Acta Arithmetica 11"
+doi = "10.4064/aa-11-4-397-410"
+url = "https://doi.org/10.4064/aa-11-4-397-410"
+locator_scheme = "theorem"
+locator = "Lemma 1"
+licence_class = "none"
+status = "uncertified"
+version_note = "no legal open copy read by the worker; cited by its locator"
+cited_for = ["Layer 2"]
+
+[[source]]
+id = "vandeluneterielewinter1986"
+authors = "J. van de Lune, H. J. J. te Riele, D. T. Winter"
+title = "On the zeros of the Riemann zeta-function in the critical strip. IV"
+year = 1986
+venue = "Mathematics of Computation 46"
+doi = "10.1090/S0025-5718-1986-0829637-3"
+url = "https://doi.org/10.1090/S0025-5718-1986-0829637-3"
+locator_scheme = "section"
+locator = "Section 1"
+licence_class = "none"
+status = "uncertified"
+version_note = "no legal open copy read by the worker; cited by its locator"
+cited_for = ["Layer 8"]
+
+[[source]]
+id = "rumely1993"
+authors = "R. Rumely"
+title = "Numerical computations concerning the ERH"
+year = 1993
+venue = "Mathematics of Computation 61"
+doi = "10.1090/S0025-5718-1993-1195435-0"
+url = "https://doi.org/10.1090/S0025-5718-1993-1195435-0"
+locator_scheme = "theorem"
+locator = "Theorem 1 and the table of moduli"
+licence_class = "none"
+status = "uncertified"
+version_note = "no legal open copy read by the worker; cited by its locator"
+cited_for = ["Layer 8"]
+
+[[source]]
+id = "allasia2002"
+authors = "G. Allasia, C. Giordano, J. Pečarić"
+title = "Inequalities for the gamma function relating to asymptotic expansions"
+year = 2002
+venue = "Mathematical Inequalities & Applications 5"
+doi = "10.7153/mia-05-54"
+url = "https://doi.org/10.7153/mia-05-54"
+locator_scheme = "theorem"
+locator = "Theorem 2"
+licence_class = "none"
+status = "uncertified"
+version_note = "no legal open copy read by the worker; cited by its locator"
+cited_for = ["Layer 0"]
+
+[[source]]
+id = "ramare2016perron"
+authors = "O. Ramaré"
+title = "Modified truncated Perron formulae"
+year = 2016
+venue = "Annales mathématiques Blaise Pascal 23, no. 1, 109-128 (Centre Mersenne, open access)"
+locator_scheme = "theorem"
+locator = "Theorem 1.1 and the modified formulae of Section 2"
+licence_class = "none"
+status = "uncertified"
+version_note = "open access at Centre Mersenne; the service found no copy, cited by its locator"
+cited_for = ["Layer 3"]
