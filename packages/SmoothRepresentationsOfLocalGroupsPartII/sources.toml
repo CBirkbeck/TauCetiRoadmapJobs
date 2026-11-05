@@ -519,3 +519,18 @@ status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v2"
 cited_for = ["5.28"]
+
+[[source]]
+id = "Rodier73"
+authors = "François Rodier"
+title = "Whittaker models for admissible representations of reductive p-adic split groups"
+year = 1973
+venue = "Harmonic analysis on homogeneous spaces (Williamstown 1972), Proceedings of Symposia in Pure Mathematics 26, American Mathematical Society (1973), 425–430"
+doi = "10.1090/pspum/026/0354942"
+locator_scheme = "page"
+locator = "pp. 425–430, heredity of Whittaker models under parabolic induction and uniqueness of the generic constituent"
+url = "https://doi.org/10.1090/pspum/026/0354942"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (the sources service found no legal copy; the publisher's chapter page is on a host in no licence class); cited by its locator without the text"
+cited_for = ["3.7", "5.5"]
