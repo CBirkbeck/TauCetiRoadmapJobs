@@ -12,3 +12,18 @@ locator = "(1)"
 licence_class = "none"
 status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/5044#issuecomment-6632668140"
+
+[[source]]
+id = "kawauchi-kojima1980"
+authors = "Akio Kawauchi, Sadayoshi Kojima"
+title = "Algebraic classification of linking pairings on 3-manifolds"
+year = 1980
+venue = "Mathematische Annalen 253"
+doi = "10.1007/bf01457818"
+locator_scheme = "page"
+locator = "pp. 29-42"
+url = "https://doi.org/10.1007/bf01457818"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["1G"]
