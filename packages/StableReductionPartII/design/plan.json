@@ -32535,7 +32535,7 @@
     "slug": "minimal-siegel-all-characteristics",
     "needs": "Provide the principal Siegel minimal compactification over ℤ[1/N,ζ_N] in every residue characteristic not dividing N, with ample rational Hodge line and extension and Hodge pullback for arbitrary stable curve families.",
     "supplier": "ShimuraCompactifications",
-    "section": "§§C4.1–C4.10, C5.16–C5.17"
+    "section": "§§6.1–6.7, 7.16–7.17"
   },
   {
     "slug": "proper-flat-picard-quotient",

@@ -1,6 +1,6 @@
 # Roadmap: stable reduction of curves, Part II
 
-**Summary.** StableReduction ends with curve families, stabilization and stable reduction over traits. This continuation develops the explicit geometry of their moduli: tricanonical frames, the pointed-node dual ideal, expansion and contraction, decorated boundary normalization, integral Hodge and Noether comparisons, stable compactifications, Torelli and degree-Picard parameters. It uses the stable-stack and projective-level theorems of SchemeAndStackFoundations §4.15. Its end results identify the unrestricted universal curve with the added-marking moduli problem, give the integral Noether line isomorphism, extend families after finite base change, prove Hodge positivity under maximal variation, and distinguish relative Picard classes from their actual lifts. [Suggested.lean](Suggested.lean) states the local headline theorems on native polynomial quotients; the geometric targets are specified here.
+**Summary.** StableReduction ends with curve families, stabilization and stable reduction over traits. This continuation develops the explicit geometry of their moduli: tricanonical frames, the pointed-node dual ideal, expansion and contraction, decorated boundary normalization, integral Hodge and Noether comparisons, stable compactifications, Torelli and degree-Picard parameters. It uses the stable-stack and projective-level theorems of SchemeAndStackFoundations §4.15. Its end results prove, coherently over all schemes, the identification of the unrestricted universal curve with the added-marking moduli problem that SchemeAndStackFoundations §4.15 states, give the integral Noether line isomorphism, extend families after finite base change, prove Hodge positivity under maximal variation, and distinguish relative Picard classes from their actual lifts. [Suggested.lean](Suggested.lean) states the local headline theorems on native polynomial quotients; the geometric targets are specified here.
 
 ## Scope and ownership
 
@@ -9,13 +9,13 @@ The owned constructions are the explicit tricanonical comparison, the coefficien
 The following objects are in the library or stated by the named roadmap and are consumed rather than declared again:
 
 - StableReduction Layers 1–3 supply nodes, normalization and dual graphs, coherent curve duality, log stability, smooth-section pushouts and the single-mark contraction; Layers 8–9 supply stable reduction and unique extension over traits. Its stable-map objects and map-aware stabilization remain there.
-- SchemeAndStackFoundations §4.15 supplies the stable pointed stack, its finite unramified Isom, proper smooth Deligne–Mumford structure, smoothing coordinates, normal-crossings boundary, universal forgetting, normalized level covers, pluricanonical nefness, determinant-quotient ampleness and projective level covers. Its §§1.18–1.23 supply stacks, coarse spaces and their universal properties. In §4.15, `stableCurveDirectImage_nef` includes the curve-test criterion, quotients, extensions, symmetric powers and finite pullback/descent; `determinantQuotient_ample` includes the Grassmannian positivity argument. These generic constructions remain with that owner. The explicit framed charts and decorated-node comparisons here refine those statements; they do not add a second terminal stable-stack theorem.
+- SchemeAndStackFoundations §4.15 supplies the stable pointed stack, its finite unramified Isom, proper smooth Deligne–Mumford structure, smoothing coordinates, normal-crossings boundary, universal forgetting with its stated identification of `M̄_{g,n+1}` as the universal curve (`Mbar.forget`), normalized level covers, pluricanonical nefness, determinant-quotient ampleness and projective level covers. Its §§1.18–1.23 supply stacks, coarse spaces and their universal properties. In §4.15, `stableCurveDirectImage_nef` includes the curve-test criterion, quotients, extensions, symmetric powers and finite pullback/descent; `determinantQuotient_ample` includes the Grassmannian positivity argument. These generic constructions remain with that owner. The explicit framed charts and decorated-node comparisons here refine those statements; they do not add a second terminal stable-stack theorem. Layer 2 §2.248 supplies the proof route of the universal-curve identification and its coherent inverse over arbitrary schemes; it does not plan that identification a second time.
 - AlgebraicVectorBundles L0A–L0C supplies sheaf tensor, dual, finite local freeness, symmetric/exterior powers and ordinary determinants with pullback. PadicMeasuresIwasawaAlgebras §5.1 supplies the ring-level parity-graded determinant; the integer-grade refinement and geometric descent are the distinct contracts below. JacobianChallengePartII §1.3a supplies determinant of cohomology for its smooth Noetherian curve families. Their arbitrary-base nodal and stack descent extensions are supplier contracts below.
 - JacobianChallenge Layers A–F and JacobianChallengePartII §§0.1–0.4, 1.1–1.4, 4.4 and 6.1–6.3 supply degree-Picard components, relative Jacobians, principal polarization, the Picard obstruction and stable Hodge comparisons. The applications here classify the universal curve family and its lifts. They do not reconstruct the relative Jacobian.
 - AbelianSchemesAndArithmeticModuliPartII §B4.1 owns the characteristic-zero fine symplectic curve-level scheme M_g[ℓ] over ℚ(ζ_ℓ), its universal curve, finite étale level changes and quasi-finite Torelli map. The targets here extend these over Z[1/N,ζ_N], including every residue characteristic prime to N, and identify their restriction to ℚ(ζ_N) with that construction.
 - SchemeAndStackFoundations §4.15 `level_structure_cover_ample` owns the uniform tricanonical equations on the integral normalized level cover and its single ample determinant line; the coarse projectivity here transports that line.
 - K3SurfacesAndSymplecticBoundedness §6.0b owns the genus-one canonical formula and Hodge-line degree used by the weighted positivity argument.
-- NeronModelsAndSemistableAbelianVarieties §§4.1 and 4.13 supplies normalization sequences and the semi-abelian Picard identity component of an integral Noetherian stable family. PELModuli §§M5.1–M5.3 and M6.9–M6.10 supplies ppav level moduli and Hodge lines. ShimuraCompactifications Layers C4–C5 supplies its integral minimal compactification interfaces in their stated base range.
+- NeronModelsAndSemistableAbelianVarieties §§4.1 and 4.13 supplies normalization sequences and the semi-abelian Picard identity component of an integral Noetherian stable family. PELModuli §§M5.1–M5.3 and M6.9–M6.10 supplies ppav level moduli and Hodge lines. ShimuraCompactifications Layers 6–7 supplies its integral minimal compactification interfaces in their stated base range.
 - ModularCurvesPartII §§2.1–2.3 and 2.11 supplies the generalized elliptic groupoids and polygon-count stacks; polygon count one gives the integral proper smooth Deligne–Mumford stack with constant C₂ cusp inertia. The construction here compares this groupoid with stable one-pointed genus-one curves. ModularCurves §§1C–1D, 2D, 4A–4B and 9E supplies the elliptic groupoid, Weierstrass changes, group-law uniqueness and coarse j-line. AlgebraicCurves Layers 0–12 retains the function-field, divisor and Riemann–Roch dictionaries.
 - StablePeriodicCurved Layer 2 and Tau Ceti's total-acyclicity module supply finite-projective complete resolutions and Gorenstein-projective modules. The relative flat-cycle and coefficient-universal conditions here are stronger comparisons on these objects.
 - Mathlib supplies polynomial quotients, tensor products, duals, categorical Ext, completion and limits. In `Mathlib/LinearAlgebra/TensorProduct/Pi.lean`, `TensorProduct.piScalarRight`, `TensorProduct.piScalarRightHom_tmul` and `TensorProduct.piScalarRight_symm_single` supply finite coordinates. In `Mathlib/RingTheory/AdicCompletion/Basic.lean`, `AdicCompletion.transitionMap_comp_eval_apply` supplies completion compatibility; the targets here compare these maps with the specific coefficient and quotient diagrams. Tau Ceti supplies the split smoothing algebra, its Jacobian singular subscheme, curve-family predicate and absolute line-bundle class group. The pointed quadratic section model differs by retaining the arbitrary section, nonsplit quadratic form and dual-ideal data.
@@ -189,7 +189,7 @@ What AlgebraicModuliForArithmeticGeometry must provide (gap:proper-flat-picard-q
 
 ### From TauCetiRoadmap.JacobianChallengePartII
 
-Use §§0.1–0.4 for degree components, relative Picard representability and degree torsors on Noetherian smooth curve families; §§1.1–1.4 for the relative Jacobian, base change, curve determinant and canonical principal polarization; §4.4 for actual-to-relative Picard obstruction; §§6.1–6.3 for stable Picard Lie/cohomology and Hodge comparison over integral Noetherian bases. Layer 7 is a consumer of curve level and is not an input here.
+Use §§0.1–0.4 for degree components, relative Picard representability and degree torsors on Noetherian smooth curve families; §§1.1–1.4 for the relative Jacobian, base change, curve determinant and canonical principal polarization; §4.4 for actual-to-relative Picard obstruction; §§6.1–6.3 for stable Picard Lie/cohomology and Hodge comparison over integral Noetherian bases. §7.1 supplies the levelled polarized Jacobian (J(C/M),λ_C,α) of a smooth projective curve family with full symplectic level ℓ≥3 over a Noetherian ℤ[1/ℓ,ζ_ℓ]-scheme, with its pairing condition and base-change comparison; it is stated for any such family and is consumed by the Torelli constructions of Layer 6.
 
 What JacobianChallengePartII must provide (gap:strong-torelli-faithfulness): Provide strong Torelli and faithfulness of curve automorphisms on the principally polarized Jacobian in every characteristic, with the two signs and the hyperelliptic distinction retained. (§1.4.)
 
@@ -239,9 +239,9 @@ What AbelianSchemesAndArithmeticModuli must provide (gap:polarized-atlas-descent
 
 ### From TauCetiRoadmap.ShimuraCompactifications
 
-§§C4.1–C4.10 and C5.13–C5.18 supplies semi-abelian degeneration, Hodge semiampleness, minimal contraction and ample Hodge line in its stated integral PEL range. The requested principal Siegel extension is stated explicitly below.
+§§6.1–6.7 and 6.10 supply semi-abelian schemes, polarized degeneration data, Mumford's construction, the degeneration equivalence, the universal degeneration on a cusp chart and boundary level structures; §§7.13–7.17 supply Hodge semiampleness, finite generation of the Hodge section algebra, the integral minimal compactification with its contraction from the toroidal model and its ample Hodge line, all in its stated integral PEL range (good primes, level prime to them); §2.8 is the characteristic-zero map to the minimal compactification. The requested principal Siegel extension is stated explicitly below.
 
-What ShimuraCompactifications must provide (gap:minimal-siegel-all-characteristics): Provide the principal Siegel minimal compactification over ℤ[1/N,ζ_N] in every residue characteristic not dividing N, with ample rational Hodge line and extension and Hodge pullback for arbitrary stable curve families. (§§C4.1–C4.10, C5.16–C5.17.)
+What ShimuraCompactifications must provide (gap:minimal-siegel-all-characteristics): Provide the principal Siegel minimal compactification over ℤ[1/N,ζ_N] in every residue characteristic not dividing N, with ample rational Hodge line and extension and Hodge pullback for arbitrary stable curve families. (§§6.1–6.7, 7.16–7.17.)
 
 ### From TauCetiRoadmap.ComplexComparisonPartII
 
@@ -382,7 +382,7 @@ For a finite separable splitting cover of a genus-zero three-pointed form, desce
 
 ### 0.6 The universal curve represents an unrestricted additional section
 
-Realize the universal curve by the pseudofunctor `Z̄_{g,n}` whose S-objects are stable pointed families (C/S,σ_i) together with any section Δ:S→C, and whose arrows are marking-preserving isomorphisms carrying Δ to Δ. Forgetting Δ defines π:Z̄→M̄. The extra-section pseudofunctor is an fppf stack by effective family descent and descent of section morphisms. For a family x over S, there is a pseudonatural equivalence `h_S×_{M̄}Z̄≃h_C` over h_S: an object over u:T→S includes a specified isomorphism of its underlying family with u^*x, and that isomorphism carries its extra section to a unique map T→C over S. Thus π is represented by schemes, and its base change along x is exactly f:C→S. It is representable, proper, flat, finitely presented and nodal of pure relative dimension one, with geometrically connected genus-g fibres. Its relative smooth locus is identified under every such base change with that of f; a geometric point is smooth for π exactly when it is smooth in the corresponding geometric curve. The n marking maps M̄→Z̄ send Δ to σ_i. Their images are disjoint and in the relative smooth locus. Δ is otherwise unrestricted and can coincide with a mark or pass through a node; it is not a new stable disjoint marking. No equivalence with `M̄_{g,n+1}` is assumed; that equivalence is proved in Layer 2, §2.256.
+Realize the universal curve by the pseudofunctor `Z̄_{g,n}` whose S-objects are stable pointed families (C/S,σ_i) together with any section Δ:S→C, and whose arrows are marking-preserving isomorphisms carrying Δ to Δ. Forgetting Δ defines π:Z̄→M̄. The extra-section pseudofunctor is an fppf stack by effective family descent and descent of section morphisms. For a family x over S, there is a pseudonatural equivalence `h_S×_{M̄}Z̄≃h_C` over h_S: an object over u:T→S includes a specified isomorphism of its underlying family with u^*x, and that isomorphism carries its extra section to a unique map T→C over S. Thus π is represented by schemes, and its base change along x is exactly f:C→S. It is representable, proper, flat, finitely presented and nodal of pure relative dimension one, with geometrically connected genus-g fibres. Its relative smooth locus is identified under every such base change with that of f; a geometric point is smooth for π exactly when it is smooth in the corresponding geometric curve. The n marking maps M̄→Z̄ send Δ to σ_i. Their images are disjoint and in the relative smooth locus. Δ is otherwise unrestricted and can coincide with a mark or pass through a node; it is not a new stable disjoint marking. The identification of `M̄_{g,n+1}` with this universal curve is the statement of SchemeAndStackFoundations §4.15 `Mbar.forget`; §2.248 supplies its proof route and the coherent inverse over arbitrary schemes, and nothing in this target assumes it.
 
 Here g,n satisfy the stable range and x is an actual object of [geometric realization of the pointed moduli pseudofunctor](#04-geometric-realization-of-the-pointed-moduli-pseudofunctor). The two-fibre product includes an isomorphism to the fixed pulled-back family. The representability statement is about the projection, not algebraicity of M̄.
 
@@ -395,7 +395,7 @@ The construction has the following API.
 - Sections of C_T→T are naturally equivalent to over-S maps T→C, via the native slice pullback.
 - The two-fibre product `h_S×_{M̄}Z̄` is represented by C over S, naturally in the classified family.
 - The i-th marking morphism is obtained by choosing Δ=σ_i, for each i in the fixed ordered index set. Composing it with the projection is canonically identified with the identity of the moduli pseudofunctor.
-- Under fiberEquivalence, the i-th marking pulls back to the original σ_i, with the slice-section identification.
+- Under the representing equivalence of this target, the i-th marking pulls back to the original σ_i, with the slice-section identification.
 - Every scheme base change of the projection is the classified proper flat finitely presented nodal curve. Its geometric fibres are connected of genus g, and its pointwise relative smooth locus is that of the classified curve.
 - The representing equivalence commutes with arbitrary change of base and with family isomorphisms, coherently.
 - Restriction over the smooth-family subfunctor is the whole smooth family; over the stable base the relative smooth locus alone omits nodes.
@@ -692,7 +692,7 @@ One proof uses the following inputs and comparisons. Import the versal deformati
 
 For genus two the miniversal curve deformation has 3 variables; the P⁴ Hilbert atlas has 3+24=27 relative variables. The Hilbert atlas is smooth of positive relative dimension over the moduli stack; it is not declared étale. The construction remains valid at a stable curve whose automorphism group has order divisible by the residue characteristic.
 
-([dm](#references), Deformation argument, pp. 78–83; Theorem 1.6 and Corollary 1.7, p. 83. Supplies the smooth deformation picture, embedding directions and local node equations.; [mc1-def](#references), Lemmas 93.16.3–93.16.4 (0DZP, 0DZQ), pp. 28–29. The smooth global-to-local map, local-to-completed comparisons and lci unobstructedness justify using the continuous completed-node hull; these are not the gluing statement of Lemma 93.16.2.; [mc0-stacks-moduli](#references), §109.15, Lemma 109.15.1, pp. 15–16; Lemmas 109.22.6 and 109.22.8, pp. 26–27. Explains the Cohen-coefficient lifting argument for smoothness over Z and density of smooth curves.)
+([dm](#references), Deformation argument, pp. 78–83; Theorem 1.6 and Corollary 1.7, p. 83. Supplies the smooth deformation picture, embedding directions and local node equations.; [mc1-def](#references), Lemmas 93.16.3–93.16.4 (0DZP, 0DZQ), pp. 28–29. The smooth global-to-local map, local-to-completed comparisons and lci unobstructedness justify using the continuous completed-node hull; these are not the gluing statement of Lemma 93.16.2.; [mc0-stacks-moduli](#references), §109.15, Lemma 109.15.1, pp. 15–16; Lemmas 109.22.6 and 109.22.8, pp. 26–27. Explains the Cohen-coefficient lifting argument for smoothness over Z and density of smooth curves.; [mc1-stackdim](#references), Definition 107.5.7 (0DRL) and Lemma 107.5.10 (0DRP), pp. 11–13 (mc1-stackdim lines 508–536). The relative dimension of the smooth Hilbert atlas at a point adds to the dimension of the stack: 27=3+24 at genus two.)
 
 *Needs:* gap:coefficient-completion-smoothness, SchemeAndStackFoundations §4.6, SchemeAndStackFoundations §4.4, SchemeAndStackFoundations §4.10, SchemeAndStackFoundations §4.1, AlgebraicModuliForArithmeticGeometry §§8.1–8.3, [the normalization sequence and the deformation dimension](#112-the-normalization-sequence-and-the-deformation-dimension), [projective frames and the base-line twist](#16-projective-frames-and-the-base-line-twist).
 
@@ -748,7 +748,7 @@ One proof uses the following inputs and comparisons. Smoothness of PGL_r makes i
 
 Density in the target U×U alone does not supply the hypothesis. A test pair with nodal generic fibre is covered by descent of universal properness, not by a false smooth-generic reduction on that pair. After the unramified criterion, proper plus locally quasi-finite gives finite by the existing native Mathlib declaration.
 
-([dm](#references), Theorem 1.11, pp. 84–85; Theorem 4.19, p. 103; §5, proof of Theorem 5.2, pp. 104–105. Uses smooth generic curves to prove universal separatedness; the source-density quantifiers are made explicit.; [stacks-noetherian-valuative-KKjBS6](#references), Lemmas 32.15.2–32.15.3 (0207, 0208), pp. 39–42. Proves that actual generic points of irreducible components of the source suffice for the DVR criterion.)
+([dm](#references), Theorem 1.11, pp. 84–85; Theorem 4.19, p. 103; §5, proof of Theorem 5.2, pp. 104–105. Uses smooth generic curves to prove universal separatedness; the source-density quantifiers are made explicit.; [stacks-noetherian-valuative-KKjBS6](#references), Lemmas 32.15.2–32.15.3 (0207, 0208), pp. 39–42. Proves that actual generic points of irreducible components of the source suffice for the DVR criterion.; [mc1-stackval](#references), Lemma 106.11.3 (0CQM), pp. 28–29 (mc1-stackval lines 1400–1412). The stack form of the same criterion, with a dense-image test morphism into a separated finite-type source, is the form consumed by the properness proof of SchemeAndStackFoundations §4.15.)
 
 *Needs:* gap:source-dense-valuative, SchemeAndStackFoundations §§0.3, 0.8–0.9, 0.11, 0.17–0.21, StableReduction Layer 8, SchemeAndStackFoundations §1.20, [the universal isom scheme as an action groupoid](#110-the-universal-isom-scheme-as-an-action-groupoid), [completed framed hilbert charts](#113-completed-framed-hilbert-charts), [a single graph polynomial for stable-curve isomorphisms](#19-a-single-graph-polynomial-for-stable-curve-isomorphisms).
 
@@ -1041,7 +1041,7 @@ Set q=X²+γXY+δY², F=q(X,Y)−q(s,t), R=A[Y][X]/(F), u=[X], v=[Y], ι:A→R, 
 
 Here A is any commutative ring, including the zero ring; γ,δ,s,t∈A. No noetherianity, regularity of A or unit discriminant is assumed for this polynomial-model statement.
 
-One proof uses the following inputs and comparisons. Use the built AdjoinRoot.induction_on to represent r by a bivariate polynomial P. The built lift_mk and eval₂_evalRingHom identify section evaluation with (P.eval(C s)).eval t. The built Polynomial.mem_span_C_X_sub_C_X_sub_C_iff_eval_eval_eq_zero puts every vanishing representative in span{C(Y−t),X−C(s)}. This proves the two-variable division statement; do not plan a private generic remainder lemma. Map that ideal through the actual AdjoinRoot.mk using Ideal.mem_map_of_mem and Ideal.map_span. Its two generator images are v−ιt and u−ιs, so the image lies in J. Conversely both generators evaluate to zero. Ideal.span_le puts J in the actual evaluation kernel. AdjoinRoot.lift_of and evaluation on constants give ev∘ι=id_A. The A-linear splitting is made explicit by the coefficient-linear splitting of section evaluation (§2.68). This proof does not use a normal-form basis, noetherianity, a unit discriminant or flatness of a coefficient map.
+One proof uses the following inputs and comparisons. Use the built AdjoinRoot.induction_on to represent r by a bivariate polynomial P. The built lift_mk and eval₂_evalRingHom identify section evaluation with (P.eval(C s)).eval t. The built Polynomial.mem_span_C_X_sub_C_X_sub_C_iff_eval_eval_eq_zero puts every vanishing representative in span{C(Y−t),X−C(s)}. This proves the two-variable division statement; do not plan a private generic remainder lemma. Map that ideal through the actual AdjoinRoot.mk using Ideal.mem_map_of_mem and Ideal.map_span. Its two generator images are v−ιt and u−ιs, so the image lies in J. Conversely both generators evaluate to zero. Ideal.span_le puts J in the actual evaluation kernel. AdjoinRoot.lift_of and evaluation on constants give ev∘ι=id_A. The A-linear splitting is made explicit by the coefficient-linear splitting of section evaluation (§2.61). This proof does not use a normal-form basis, noetherianity, a unit discriminant or flatness of a coefficient map.
 
 The splitting is A-linear; the section map ι is not R-linear for the evaluation action on A.
 
@@ -1069,9 +1069,9 @@ The construction has the following API.
 
 **Checks.**
 
-- The identity coefficient map induces the identity on R.
-- φ(ι0)=0 for every coefficient map.
-- φ(c)=c′ and φ(d)=d′ with all four parameters mapped.
+- For ℤ→𝔽₂ with γ=1 and δ=s=t=0, so that R=ℤ[u,v]/(u²+uv) and R′=𝔽₂[u′,v′]/(u′²+u′v′), φ(2v)=2v′=0 although 2v≠0 in R: φ is not injective, and no injectivity is asserted.
+- For ℤ→ℤ/4 with s=3 and γ=δ=t=0, F=X²−9 maps to X²−1 over ℤ/4, so φ(u)²=φ(9)=1 in R′, and φ(c)=φ(u−3)=u′−3=u′+1=c′. Since −u′ is also a root of X²−1, the ring map sending u to −u′ and v to v′ is a second ℤ/4-algebra map R→R′; it sends c to −u′−3=−c′−2≠c′, so the construction is the map of adjoined roots, not an arbitrary root-preserving map.
+- For ℤ→ℤ/4→𝔽₂ with zero parameters, 3u+2v maps to 3u′+2v′ and then to u″, which is the direct image of 3u+2v under ℤ→𝔽₂; exchanging the coordinates would give v″.
 
 ([knudsen2012](#references), §3, printed pp.11–12: monic division, κ/λ comparisons and proof of Proposition3.1.)
 
@@ -1185,9 +1185,7 @@ Use the actual polynomial quotient and the stated ordered matrices; an arbitrary
 
 The construction has the following API.
 
-- The underlying element is cz₀−dz₁.
-- The map to the actual ideal is surjective.
-- Its kernel equals im Ψ.
+- The underlying element is cz₀−dz₁; surjectivity and the kernel are the separate targets below.
 
 **Checks.**
 
@@ -1267,13 +1265,13 @@ Use the actual node ring, section ideal, R-linear dual and ordered native matrix
 
 The construction has the following API.
 
-- P(z₀,z₁)=(−z₁,z₀).
-- P⁻¹(z₀,z₁)=(z₁,−z₀).
-- P(p(z))=−z.
+- p(z₀,z₁)=(−z₁,z₀).
+- p⁻¹(z₀,z₁)=(z₁,−z₀).
+- p(p(z))=−z.
 
 **Checks.**
 
-- P(1,0)=(0,1).
+- For A=ℤ and γ=δ=s=t=0, p(u,v)=(−v,u) and p⁻¹(−v,u)=(u,v); applying p twice gives (−u,−v)≠(u,v), so p is not its own inverse, and the candidate inverse (z₀,z₁)↦(−z₁,z₀) fails.
 - For A=Z/4, γ=s=1 and δ=t=0, p(p(z))=−z on the actual node coordinates.
 - For A=Z/1 and zero parameters, the constructed rotation inverse fixes p(z).
 
@@ -1356,21 +1354,7 @@ The construction has the following API.
 
 *Needs:* [monicity of the defining polynomial](#217-monicity-of-the-defining-polynomial), [degree of the node polynomial](#219-degree-of-the-node-polynomial), `AdjoinRoot.powerBasis'`, `Module.Basis.reindex`, `Module.Basis.equivFun`, `LinearEquiv.finTwoArrow`, `LinearEquiv.ofSubsingleton`, `Module.subsingleton`.
 
-### 2.31 Evaluation of the ordered ideal presentation
-
-For every commutative ring A and γ,δ,s,t∈A, let F=X²+C(γY)X+C(δY²−q(s,t)), q(x,y)=x²+γxy+δy², R=AdjoinRoot(F), ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), and E:R≃A[Y]×A[Y] the ordered polynomial coordinates. Put Φ=((a,b),(−c,d)) and Ψ=((d,−b),(c,a)). The canonical ε∈D is characterized by dε(j)=bj. The ordered maps are P_J(z)=cz₀−dz₁ and P_D(z)=z₀·incl−z₁·ε. The underlying ring element of P_J(z) equals cz₀−dz₁.
-
-Here A may be the zero ring or have nilpotents. No noetherianity, domain or unit-discriminant assumption is made for this polynomial algebra statement.
-
-One proof uses the following inputs and comparisons. Read the defining underlying element; this is the interface used by the kernel and quotient comparisons.
-
-Use the actual polynomial quotient and the stated ordered matrices; an arbitrary receiving ring with specialized coordinates does not satisfy this contract. Preserve the sign of the second cokernel generator. No conclusion about completion, Hom/Ext exchange or moduli geometry follows.
-
-([knudsen2012](#references), §3 Key Example, printed pp.11–12, matrix and κ/λ comparisons and Proposition3.1 proof.)
-
-*Needs:* [the ordered surjection to the section ideal](#221-the-ordered-surjection-to-the-section-ideal).
-
-### 2.32 Ideal Hom coordinates with coefficients
+### 2.31 Ideal Hom coordinates with coefficients
 
 For any commutative ring A and γ,δ,s,t∈A, let q(X,Y)=X²+γXY+δY², R=A[Y][X]/(q(X,Y)−q(s,t)), ι:A→R the actual coefficient algebra map, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), incl:J→R and ε∈D with dε(j)=bj. Put Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε and p(z)=(-z₁,z₀). For any A-module M, set N_M=R⊗_A M with the inherited left R-action, and U_M(f)=f⊗_A id_M on the actual native tensors. Use the already-built finite-product tensor and finite-free Hom coordinates E_M:R²⊗_A M≃ₗ[A]Hom_R(R²,N_M), E_M(z⊗m)(w)=(w₀z₀+w₁z₁)⊗m. Construct the A-linear map C_J,M:Hom_R(J,N_M)→R²⊗_A M as C_J,M(h)=E_M⁻¹(h∘P_J). In ordinary pair coordinates this uses (h(c),−h(d)).
 
@@ -1388,15 +1372,15 @@ The construction has the following API.
 
 **Checks.**
 
-- The ideal-Hom coordinate map C_J sends zero to the zero tensor in R²⊗_A M.
-- Under the native finite-free coordinate equivalence E_M, C_J(h) evaluated at the second standard basis vector equals −h(d), not h(d).
-- Equality of the actual ideal-Hom coordinates implies equality of the R-linear maps, for every coefficient module M.
+- For A=ℤ, γ=δ=s=t=0 and M=A, so that R=ℤ[u,v]/(u²), J=(u,v), ε(u)=0 and ε(v)=u: C_J(ε)=(ε(u),−ε(v))=(0,−u) and C_J(incl)=(u,−v); the unsigned convention (h(c),h(d)) would give (0,u) and (u,v).
+- In the same fixture with z=(1,0): U(P_D)z=incl, C_J(θ_D(incl))=(u,−v), while Ψ(1,0)=(v,u), p(v,u)=(−u,v) and −p(Ψ(1,0))=(u,−v); both sides of the composite law agree, and dropping the minus sign fails.
+- For M=ℤ/4 and h the reduction of incl, C_J,M(h)=(u,−v)⊗1=(u,3v)⊗1≠(u,v)⊗1 in R²⊗_ℤℤ/4, so the sign of the second coordinate is visible on a nonflat coefficient module.
 
 (Deduction using `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104; `LinearMap.comp_apply` in `Mathlib/Algebra/Module/LinearMap/Defs.lean`, line 495. The construction-specific inputs are [the ordered surjection to the section ideal](#221-the-ordered-surjection-to-the-section-ideal).)
 
 *Needs:* [the ordered surjection to the section ideal](#221-the-ordered-surjection-to-the-section-ideal), `LinearMap.lcomp`, `TensorProduct.piLeft`, `LinearEquiv.piRing`.
 
-### 2.33 Coefficient powers enter the nodal ideal powers
+### 2.32 Coefficient powers enter the nodal ideal powers
 
 Under coefficient convention C3. For every n≥0, pⁿ⊆ι⁻¹(mⁿ).
 
@@ -1410,7 +1394,7 @@ Use the inherited polynomial nodal chart, native ideal quotients and actual Adic
 
 *Needs:* `Ideal.map_le_iff_le_comap`, `Ideal.map_pow`.
 
-### 2.34 Regularity of the second section coordinate
+### 2.33 Regularity of the second section coordinate
 
 Set q=X²+γXY+δY², F=q(X,Y)−q(s,t), R=A[Y][X]/(F), u=[X], v=[Y], ι:A→R, c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδ·v+ιδ·ιt+ιγ·u, J=(c,d), D=Hom_R(J,R). Multiplication by d=v−ιt on R is injective.
 
@@ -1424,13 +1408,13 @@ A can have zero divisors; d is not chosen to be invertible.
 
 *Needs:* [freeness over the polynomial coefficient ring](#228-freeness-over-the-polynomial-coefficient-ring), `Module.Basis.isTorsionFree`, `Polynomial.Monic.isRegular`, `Polynomial.monic_X_sub_C`, `IsRegular.isSMulRegular`.
 
-### 2.35 Canonical retraction onto the section ideal
+### 2.34 Canonical retraction onto the section ideal
 
-For the actual polynomial quotient R and J=(u−ιs,v−ιt)=ker(ev), construct the canonical A-linear map p:R→J, p(r)=r−ι(ev(r)). Its composite with J→R fixes J and kills the coefficient image. This is the explicit first coordinate of the coefficient-linear splitting of section evaluation (§2.68); it is not generally R-linear.
+For the actual polynomial quotient R and J=(u−ιs,v−ιt)=ker(ev), construct the canonical A-linear map p:R→J, p(r)=r−ι(ev(r)). Its composite with J→R fixes J and kills the coefficient image. This is the explicit first coordinate of the coefficient-linear splitting of section evaluation (§2.61); it is not generally R-linear.
 
 Here A is any commutative ring, including the zero ring; γ,δ,s,t∈A. No noetherianity, regularity of A or unit discriminant is assumed for this polynomial-model statement.
 
-One proof uses the following inputs and comparisons. Evaluation of r−ιev(r) is zero, so the existing kernel equivalence places it in the actual ideal J. Verify addition by ring normalization and A-linearity by [coefficient linearity of section evaluation](#227-coefficient-linearity-of-section-evaluation) and the native coefficient action. For j∈J, ev(j)=0 makes p(j)=j. For a∈A, ev(ι(a))=a makes p(ι(a))=0. Use these two identities in both inverse laws of the splitting of §2.68 and as the actual coefficient-flatness retraction.
+One proof uses the following inputs and comparisons. Evaluation of r−ιev(r) is zero, so the existing kernel equivalence places it in the actual ideal J. Verify addition by ring normalization and A-linearity by [coefficient linearity of section evaluation](#227-coefficient-linearity-of-section-evaluation) and the native coefficient action. For j∈J, ev(j)=0 makes p(j)=j. For a∈A, ev(ι(a))=a makes p(ι(a))=0. Use these two identities in both inverse laws of the splitting of §2.61 and as the actual coefficient-flatness retraction.
 
 Use the existing polynomial quotient, coefficient algebra and actual ideal carrier; no new scalar action, chosen basis or unit discriminant.
 
@@ -1458,21 +1442,7 @@ The construction has the following API.
 
 *Needs:* [kernel of section evaluation](#213-kernel-of-section-evaluation), [coefficient linearity of section evaluation](#227-coefficient-linearity-of-section-evaluation), [native coefficient action on the pointed node](#216-native-coefficient-action-on-the-pointed-node).
 
-### 2.36 Coordinate reconstruction map
-
-In the inherited native node ring R=AdjoinRoot(F), F=X²+C(γY)X+C(δY²−q(s,t)), let u be its root and of:A[Y]→R its native coefficient map. For all p,q₁∈A[Y], E⁻¹(p,q₁)=of(p)+u·of(q₁).
-
-Here A is any commutative ring, including the zero ring; γ,δ,s,t∈A. No noetherianity, regularity of A or unit discriminant is assumed for this polynomial-model statement.
-
-One proof uses the following inputs and comparisons. In the nontrivial branch, use the native power-basis vector formula and the finite coordinate sum; its ordered vectors are one and u. In the zero-ring branch both sides are equal by subsingleton elimination.
-
-Use the existing untruncated polynomial quotient, native coefficient algebra and actual coordinate ideal. Include zero and nonreduced coefficient rings.
-
-([knudsen2012](#references), §3 Key Example, monic polynomial division preceding Proposition 3.1.)
-
-*Needs:* [ordered polynomial coordinates](#230-ordered-polynomial-coordinates).
-
-### 2.37 The ordered basis one and root
+### 2.35 The ordered basis one and root
 
 In the inherited native node ring R=AdjoinRoot(F), F=X²+C(γY)X+C(δY²−q(s,t)), let u be its root and of:A[Y]→R its native coefficient map. Construct a native A[Y]-basis B indexed by Fin 2 with B(0)=1 and B(1)=u, including subsingleton A.
 
@@ -1498,7 +1468,7 @@ The construction has the following API.
 
 *Needs:* [ordered polynomial coordinates](#230-ordered-polynomial-coordinates), `Module.Basis.ofEquivFun`, `LinearEquiv.finTwoArrow`.
 
-### 2.38 Surjectivity of the ordered ideal presentation
+### 2.36 Surjectivity of the ordered ideal presentation
 
 For every commutative ring A and γ,δ,s,t∈A, let F=X²+C(γY)X+C(δY²−q(s,t)), q(x,y)=x²+γxy+δy², R=AdjoinRoot(F), ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), and E:R≃A[Y]×A[Y] the ordered polynomial coordinates. Put Φ=((a,b),(−c,d)) and Ψ=((d,−b),(c,a)). The canonical ε∈D is characterized by dε(j)=bj. The ordered maps are P_J(z)=cz₀−dz₁ and P_D(z)=z₀·incl−z₁·ε. P_J is surjective.
 
@@ -1510,9 +1480,9 @@ Use the actual polynomial quotient and the stated ordered matrices; an arbitrary
 
 ([knudsen2012](#references), §3 Key Example, printed pp.11–12, matrix and κ/λ comparisons and Proposition3.1 proof.)
 
-*Needs:* [the ordered surjection to the section ideal](#221-the-ordered-surjection-to-the-section-ideal), [evaluation of the ordered ideal presentation](#231-evaluation-of-the-ordered-ideal-presentation), `Ideal.mem_span_pair`.
+*Needs:* [the ordered surjection to the section ideal](#221-the-ordered-surjection-to-the-section-ideal), `Ideal.mem_span_pair`.
 
-### 2.39 Rotation intertwines Φ transpose
+### 2.37 Rotation intertwines Φ transpose
 
 For any commutative ring A and γ,δ,s,t∈A, put q(x,y)=x²+γxy+δy², R=A[Y][X]/(q(X,Y)−q(s,t)), ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), P_J(z)=cz₀−dz₁, P_D(z)=z₀·incl−z₁·ε, where dε(j)=bj. Restrict these maps to A. For every A-module M write T_M(f)=id_M⊗_A f, on the actual native tensor products. Φᵀ∘p=p∘Ψ.
 
@@ -1526,7 +1496,7 @@ Use the actual node ring, section ideal, R-linear dual and ordered native matrix
 
 *Needs:* [the symplectic rotation of section coordinates](#226-the-symplectic-rotation-of-section-coordinates), [the transposed left matrix acting on a column](#224-the-transposed-left-matrix-acting-on-a-column), [the right node matrix acting on a column](#222-the-right-node-matrix-acting-on-a-column).
 
-### 2.40 Rotation intertwines Ψ transpose
+### 2.38 Rotation intertwines Ψ transpose
 
 For any commutative ring A and γ,δ,s,t∈A, put q(x,y)=x²+γxy+δy², R=A[Y][X]/(q(X,Y)−q(s,t)), ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), P_J(z)=cz₀−dz₁, P_D(z)=z₀·incl−z₁·ε, where dε(j)=bj. Restrict these maps to A. For every A-module M write T_M(f)=id_M⊗_A f, on the actual native tensor products. Ψᵀ∘p=p∘Φ.
 
@@ -1540,7 +1510,7 @@ Use the actual node ring, section ideal, R-linear dual and ordered native matrix
 
 *Needs:* [the symplectic rotation of section coordinates](#226-the-symplectic-rotation-of-section-coordinates), [the transposed right matrix acting on a column](#225-the-transposed-right-matrix-acting-on-a-column), [the left node matrix acting on a column](#223-the-left-node-matrix-acting-on-a-column).
 
-### 2.41 Finite-level nodal coefficient map
+### 2.39 Finite-level nodal coefficient map
 
 Under coefficient convention C3. Construct λ_n:A/pⁿ→R/mⁿ as the actual quotient map induced by ι.
 
@@ -1558,15 +1528,15 @@ The construction has the following API.
 
 **Checks.**
 
-- Under coefficient convention C3. The n=0 map has the representative law in the zero quotient A/p⁰.
-- Under coefficient convention C3. The first quotient carries an original coefficient a to ι(a).
-- Under coefficient convention C3. At n=3 the map preserves the product of two arbitrary quotient elements.
+- In the fixture A=ℤ, γ=δ=s=t=0, p=(2) and m=2R, so that R=ℤ[u,v]/(u²) and R/mⁿ=(ℤ/2ⁿ)[u,v]/(u²): λ₃([5])=[5] and λ₁([5])=[1]; the transition from level 3 to level 1 sends [5] to [1] on both sides of the compatibility square.
+- In the same fixture λ₃([3])λ₃([3])=[9]=[1]=λ₃([1]) in (ℤ/8)[u,v]/(u²), and λ₂([2])=[2]≠0 although 2 is a zero divisor of ℤ/4.
+- With p=(2) and m=(u,v) the containment p⊆ι⁻¹(m) fails, since 2∉(u,v): the would-be λ₁:ℤ/2→R/(u,v)=ℤ does not exist, because 2 maps to 2≠0. The hypothesis h is not decorative.
 
 ([knudsen2](#references), Appendix Definition1 and Theorem2(1), printed191–193; Proposition6, printed194–195 (physical31–35).)
 
-*Needs:* [coefficient powers enter the nodal ideal powers](#233-coefficient-powers-enter-the-nodal-ideal-powers), `Ideal.quotientMap`.
+*Needs:* [coefficient powers enter the nodal ideal powers](#232-coefficient-powers-enter-the-nodal-ideal-powers), `Ideal.quotientMap`.
 
-### 2.42 Denominator-free dual generator
+### 2.40 Denominator-free dual generator
 
 Set q=X²+γXY+δY², F=q(X,Y)−q(s,t), R=A[Y][X]/(F), u=[X], v=[Y], ι:A→R, c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδ·v+ιδ·ιt+ιγ·u, J=(c,d), D=Hom_R(J,R). There is a unique ε∈D with d ε(j)=b j for every j∈J. Its generator values are ε(c)=−a and ε(d)=b.
 
@@ -1581,7 +1551,6 @@ The construction has the following API.
 - Exactly one actual R-linear map satisfies d ε(j)=b j.
 - ε(c)=−a and ε(d)=b.
 - Two R-linear maps with the denominator-free characterization are equal.
-- For the named canonical the dual generator ε, d ε(j)=bj for every actual ideal element j.
 
 **Checks.**
 
@@ -1593,9 +1562,9 @@ The construction has the following API.
 
 ([knudsen2012](#references), §3, printed pp.11–12: monic division, κ/λ comparisons and proof of Proposition3.1.)
 
-*Needs:* [regularity of the second section coordinate](#234-regularity-of-the-second-section-coordinate), [divisibility on the actual section ideal](#229-divisibility-on-the-actual-section-ideal).
+*Needs:* [regularity of the second section coordinate](#233-regularity-of-the-second-section-coordinate), [divisibility on the actual section ideal](#229-divisibility-on-the-actual-section-ideal).
 
-### 2.43 Underlying element of the section projection
+### 2.41 Underlying element of the section projection
 
 For every r∈R, the underlying ring element of the native ideal projection p(r) is r−ιev(r).
 
@@ -1607,23 +1576,9 @@ Use the existing polynomial quotient, coefficient algebra and actual ideal carri
 
 ([knudsen2012](#references), §3 Key Example and Proposition3.1, printed pp.11–12; Corollary3.2.)
 
-*Needs:* [canonical retraction onto the section ideal](#235-canonical-retraction-onto-the-section-ideal).
+*Needs:* [canonical retraction onto the section ideal](#234-canonical-retraction-onto-the-section-ideal).
 
-### 2.44 Reconstruction from ordered coordinates
-
-In the inherited native node ring R=AdjoinRoot(F), F=X²+C(γY)X+C(δY²−q(s,t)), let u be its root and of:A[Y]→R its native coefficient map. For every r, of(E(r)₀)+u·of(E(r)₁)=r.
-
-Here A is any commutative ring, including the zero ring; γ,δ,s,t∈A. No noetherianity, regularity of A or unit discriminant is assumed for this polynomial-model statement.
-
-One proof uses the following inputs and comparisons. Use the explicit inverse formula and the left inverse identity of E.
-
-Use the existing untruncated polynomial quotient, native coefficient algebra and actual coordinate ideal. Include zero and nonreduced coefficient rings.
-
-([knudsen2012](#references), §3 Key Example, monic polynomial division preceding Proposition 3.1.)
-
-*Needs:* [coordinate reconstruction map](#236-coordinate-reconstruction-map).
-
-### 2.45 Untruncated node monomial basis
+### 2.42 Untruncated node monomial basis
 
 In the inherited native node ring R=AdjoinRoot(F), F=X²+C(γY)X+C(δY²−q(s,t)), let u be its root and of:A[Y]→R its native coefficient map. Construct a native A-basis indexed by N×Fin 2; its vector at (n,i) is vⁿuⁱ, with no bound on n. The A-action is the inherited polynomial/AdjoinRoot scalar tower.
 
@@ -1647,9 +1602,9 @@ The construction has the following API.
 
 ([knudsen2012](#references), §3 Key Example, monic polynomial division preceding Proposition 3.1.)
 
-*Needs:* [the ordered basis one and root](#237-the-ordered-basis-one-and-root), `Polynomial.basisMonomials`, `Module.Basis.smulTower`, `Module.Basis.smulTower_repr`.
+*Needs:* [the ordered basis one and root](#235-the-ordered-basis-one-and-root), `Polynomial.basisMonomials`, `Module.Basis.smulTower`, `Module.Basis.smulTower_repr`.
 
-### 2.46 Multiplication into the actual section dual
+### 2.43 Multiplication into the actual section dual
 
 For any commutative A and γ,δ,s,t∈A, retain the actual R=AdjoinRoot(F), F=X²+C(γY)X+C(δY²−q(s,t)), u=[X], v=[Y], ι:A→R, c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, J=(c,d), D=Hom_R(J,R), and the ordered native equivalence E:R≃A[Y]×A[Y]. Construct m:R→D, m(r)(j)=rj, as an R-linear map. It is injective and uses the existing ideal inclusion.
 
@@ -1673,37 +1628,9 @@ The construction has the following API.
 
 ([knudsen2012](#references), arXiv:1106.1588v2 §3 Key Example and complete proofs of Proposition 3.1 and Corollary 3.2.)
 
-*Needs:* [polynomial ring of a pointed section](#28-polynomial-ring-of-a-pointed-section), [regularity of the second section coordinate](#234-regularity-of-the-second-section-coordinate).
+*Needs:* [polynomial ring of a pointed section](#28-polynomial-ring-of-a-pointed-section), [regularity of the second section coordinate](#233-regularity-of-the-second-section-coordinate).
 
-### 2.47 Coordinates of a coefficient polynomial
-
-For every commutative ring A and γ,δ,s,t∈A, let F=X²+C(γY)X+C(δY²−q(s,t)), q(x,y)=x²+γxy+δy², R=AdjoinRoot(F), ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), and E:R≃A[Y]×A[Y] the ordered polynomial coordinates. Put Φ=((a,b),(−c,d)) and Ψ=((d,−b),(c,a)). The canonical ε∈D is characterized by dε(j)=bj. The ordered maps are P_J(z)=cz₀−dz₁ and P_D(z)=z₀·incl−z₁·ε. For p∈A[Y], E(of(p))=(p,0). The map of:A[Y]→R is the native AdjoinRoot coefficient homomorphism.
-
-Here A may be the zero ring or have nilpotents. No noetherianity, domain or unit-discriminant assumption is made for this polynomial algebra statement.
-
-One proof uses the following inputs and comparisons. Apply the injective inverse coordinate equivalence. Its formula on (p,0) is of(p), so the ordered coordinates follow.
-
-Use the actual polynomial quotient and the stated ordered matrices; an arbitrary receiving ring with specialized coordinates does not satisfy this contract. Preserve the sign of the second cokernel generator. No conclusion about completion, Hom/Ext exchange or moduli geometry follows.
-
-([knudsen2012](#references), §3 Key Example, printed pp.11–12, matrix and κ/λ comparisons and Proposition3.1 proof.)
-
-*Needs:* [ordered polynomial coordinates](#230-ordered-polynomial-coordinates), [coordinate reconstruction map](#236-coordinate-reconstruction-map).
-
-### 2.48 Coordinates of the polynomial root
-
-For every commutative ring A and γ,δ,s,t∈A, let F=X²+C(γY)X+C(δY²−q(s,t)), q(x,y)=x²+γxy+δy², R=AdjoinRoot(F), ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), and E:R≃A[Y]×A[Y] the ordered polynomial coordinates. Put Φ=((a,b),(−c,d)) and Ψ=((d,−b),(c,a)). The canonical ε∈D is characterized by dε(j)=bj. The ordered maps are P_J(z)=cz₀−dz₁ and P_D(z)=z₀·incl−z₁·ε. E(u)=(0,1).
-
-Here A may be the zero ring or have nilpotents. No noetherianity, domain or unit-discriminant assumption is made for this polynomial algebra statement.
-
-One proof uses the following inputs and comparisons. The inverse coordinate formula on (0,1) is u; injectivity of the inverse gives the stated coordinates.
-
-Use the actual polynomial quotient and the stated ordered matrices; an arbitrary receiving ring with specialized coordinates does not satisfy this contract. Preserve the sign of the second cokernel generator. No conclusion about completion, Hom/Ext exchange or moduli geometry follows.
-
-([knudsen2012](#references), §3 Key Example, printed pp.11–12, matrix and κ/λ comparisons and Proposition3.1 proof.)
-
-*Needs:* [ordered polynomial coordinates](#230-ordered-polynomial-coordinates), [coordinate reconstruction map](#236-coordinate-reconstruction-map).
-
-### 2.49 Tensor rotation intertwines Φ transpose
+### 2.44 Tensor rotation intertwines Φ transpose
 
 For any commutative ring A and γ,δ,s,t∈A, put q(x,y)=x²+γxy+δy², R=A[Y][X]/(q(X,Y)−q(s,t)), ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), P_J(z)=cz₀−dz₁, P_D(z)=z₀·incl−z₁·ε, where dε(j)=bj. Restrict these maps to A. For every A-module M write T_M(f)=id_M⊗_A f, on the actual native tensor products. T_M(Φᵀ)∘T_M(p)=T_M(p)∘T_M(Ψ), where p:R²→R², p(z)=(−z₁,z₀), is the rotation and T_M(p)=id_M⊗_A p.
 
@@ -1715,9 +1642,9 @@ Use the actual node ring, section ideal, R-linear dual and ordered native matrix
 
 ([knudsen2012](#references), §3 Key Example, printed pp.11–12: pψ=φᵀp, pφ=ψᵀp and Proposition3.1.)
 
-*Needs:* [rotation intertwines φ transpose](#239-rotation-intertwines-φ-transpose), `LinearEquiv.restrictScalars`, `LinearEquiv.lTensor`, `LinearEquiv.coe_lTensor`, `LinearMap.lTensor_comp`.
+*Needs:* [rotation intertwines φ transpose](#237-rotation-intertwines-φ-transpose), `LinearEquiv.restrictScalars`, `LinearEquiv.lTensor`, `LinearEquiv.coe_lTensor`, `LinearMap.lTensor_comp`.
 
-### 2.50 Tensor rotation intertwines Ψ transpose
+### 2.45 Tensor rotation intertwines Ψ transpose
 
 For any commutative ring A and γ,δ,s,t∈A, put q(x,y)=x²+γxy+δy², R=A[Y][X]/(q(X,Y)−q(s,t)), ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), P_J(z)=cz₀−dz₁, P_D(z)=z₀·incl−z₁·ε, where dε(j)=bj. Restrict these maps to A. For every A-module M write T_M(f)=id_M⊗_A f, on the actual native tensor products. T_M(Ψᵀ)∘T_M(p)=T_M(p)∘T_M(Φ), where p:R²→R², p(z)=(−z₁,z₀), is the rotation and T_M(p)=id_M⊗_A p.
 
@@ -1729,9 +1656,9 @@ Use the actual node ring, section ideal, R-linear dual and ordered native matrix
 
 ([knudsen2012](#references), §3 Key Example, printed pp.11–12: pψ=φᵀp, pφ=ψᵀp and Proposition3.1.)
 
-*Needs:* [rotation intertwines ψ transpose](#240-rotation-intertwines-ψ-transpose), `LinearEquiv.restrictScalars`, `LinearEquiv.lTensor`, `LinearEquiv.coe_lTensor`, `LinearMap.lTensor_comp`.
+*Needs:* [rotation intertwines ψ transpose](#238-rotation-intertwines-ψ-transpose), `LinearEquiv.restrictScalars`, `LinearEquiv.lTensor`, `LinearEquiv.coe_lTensor`, `LinearMap.lTensor_comp`.
 
-### 2.51 Right-tensor rotation of the first transpose
+### 2.46 Right-tensor rotation of the first transpose
 
 For any commutative ring A and γ,δ,s,t∈A, let q(X,Y)=X²+γXY+δY², R=A[Y][X]/(q(X,Y)−q(s,t)), ι:A→R the actual coefficient algebra map, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), incl:J→R and ε∈D with dε(j)=bj. Put Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε and p(z)=(-z₁,z₀). For any A-module M, set N_M=R⊗_A M with the inherited left R-action, and U_M(f)=f⊗_A id_M on the actual native tensors. Use the already-built finite-product tensor and finite-free Hom coordinates E_M:R²⊗_A M≃ₗ[A]Hom_R(R²,N_M), E_M(z⊗m)(w)=(w₀z₀+w₁z₁)⊗m. U_M(Φᵀ)∘U_M(p)=U_M(p)∘U_M(Ψ), using the native tensor of the coefficient-restricted rotation equivalence.
 
@@ -1741,11 +1668,11 @@ One proof uses the following inputs and comparisons. Apply the native right-tens
 
 The statement uses the actual section ideal and actual R-linear dual in the untruncated polynomial ring. Keep this algebra calculation separate from higher Ext, relative stable-reflexivity, completed-local and family/sheaf descent.
 
-(Deduction using `Matrix.mulVecLin_apply` in `Mathlib/LinearAlgebra/Matrix/ToLin.lean`, line 291, and `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [rotation intertwines φ transpose](#239-rotation-intertwines-φ-transpose).)
+(Deduction using `Matrix.mulVecLin_apply` in `Mathlib/LinearAlgebra/Matrix/ToLin.lean`, line 291, and `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [rotation intertwines φ transpose](#237-rotation-intertwines-φ-transpose).)
 
-*Needs:* [rotation intertwines φ transpose](#239-rotation-intertwines-φ-transpose), `LinearMap.rTensor_comp`, `LinearEquiv.coe_rTensor`.
+*Needs:* [rotation intertwines φ transpose](#237-rotation-intertwines-φ-transpose), `LinearMap.rTensor_comp`, `LinearEquiv.coe_rTensor`.
 
-### 2.52 Right-tensor rotation of the second transpose
+### 2.47 Right-tensor rotation of the second transpose
 
 For any commutative ring A and γ,δ,s,t∈A, let q(X,Y)=X²+γXY+δY², R=A[Y][X]/(q(X,Y)−q(s,t)), ι:A→R the actual coefficient algebra map, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), incl:J→R and ε∈D with dε(j)=bj. Put Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε and p(z)=(-z₁,z₀). For any A-module M, set N_M=R⊗_A M with the inherited left R-action, and U_M(f)=f⊗_A id_M on the actual native tensors. Use the already-built finite-product tensor and finite-free Hom coordinates E_M:R²⊗_A M≃ₗ[A]Hom_R(R²,N_M), E_M(z⊗m)(w)=(w₀z₀+w₁z₁)⊗m. U_M(Ψᵀ)∘U_M(p)=U_M(p)∘U_M(Φ).
 
@@ -1755,11 +1682,11 @@ One proof uses the following inputs and comparisons. Apply the native right tens
 
 The statement uses the actual section ideal and actual R-linear dual in the untruncated polynomial ring. Keep this algebra calculation separate from higher Ext, relative stable-reflexivity, completed-local and family/sheaf descent.
 
-(Deduction using `Matrix.mulVecLin_apply` in `Mathlib/LinearAlgebra/Matrix/ToLin.lean`, line 291, and `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [rotation intertwines ψ transpose](#240-rotation-intertwines-ψ-transpose).)
+(Deduction using `Matrix.mulVecLin_apply` in `Mathlib/LinearAlgebra/Matrix/ToLin.lean`, line 291, and `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [rotation intertwines ψ transpose](#238-rotation-intertwines-ψ-transpose).)
 
-*Needs:* [rotation intertwines ψ transpose](#240-rotation-intertwines-ψ-transpose), `LinearMap.rTensor_comp`, `LinearEquiv.coe_rTensor`.
+*Needs:* [rotation intertwines ψ transpose](#238-rotation-intertwines-ψ-transpose), `LinearMap.rTensor_comp`, `LinearEquiv.coe_rTensor`.
 
-### 2.53 Compatible completed coefficient family
+### 2.48 Compatible completed coefficient family
 
 Under coefficient convention C3. Construct f_n:Â→R/mⁿ as λ_n∘π_A,n.
 
@@ -1783,9 +1710,9 @@ The construction has the following API.
 
 ([knudsen2](#references), Appendix Definition1 and Theorem2(1), printed191–193; Proposition6, printed194–195 (physical31–35).)
 
-*Needs:* [finite-level nodal coefficient map](#241-finite-level-nodal-coefficient-map), `AdicCompletion.evalₐ`.
+*Needs:* [finite-level nodal coefficient map](#239-finite-level-nodal-coefficient-map), `AdicCompletion.evalₐ`.
 
-### 2.54 Finite nodal coefficient algebra
+### 2.49 Finite nodal coefficient algebra
 
 Under coefficient convention C4. Equip Qₙ with the Bₙ-algebra induced by the previously constructed λₙ.
 
@@ -1811,9 +1738,9 @@ The construction has the following API.
 
 ([knudsen2](#references), Appendix, Definition 1 and Theorem 2, printed pp. 191–193, set up the completed coefficient rings and modules used here; the statement itself is a consequence of the definitions and of the cited targets.)
 
-*Needs:* [finite-level nodal coefficient map](#241-finite-level-nodal-coefficient-map).
+*Needs:* [finite-level nodal coefficient map](#239-finite-level-nodal-coefficient-map).
 
-### 2.55 Projection fixes the section ideal
+### 2.50 Projection fixes the section ideal
 
 For every j∈J, p(j)=j using the actual native ideal inclusion J→R.
 
@@ -1825,9 +1752,9 @@ Use the existing polynomial quotient, coefficient algebra and actual ideal carri
 
 ([knudsen2012](#references), §3 Key Example and Proposition3.1, printed pp.11–12; Corollary3.2.)
 
-*Needs:* [canonical retraction onto the section ideal](#235-canonical-retraction-onto-the-section-ideal), [underlying element of the section projection](#243-underlying-element-of-the-section-projection), [kernel of section evaluation](#213-kernel-of-section-evaluation).
+*Needs:* [canonical retraction onto the section ideal](#234-canonical-retraction-onto-the-section-ideal), [underlying element of the section projection](#241-underlying-element-of-the-section-projection), [kernel of section evaluation](#213-kernel-of-section-evaluation).
 
-### 2.56 Projection kills the coefficient section
+### 2.51 Projection kills the coefficient section
 
 For every a∈A, p(ι(a))=0 as an element of the actual section ideal J.
 
@@ -1839,9 +1766,9 @@ Use the existing polynomial quotient, coefficient algebra and actual ideal carri
 
 ([knudsen2012](#references), §3 Key Example and Proposition3.1, printed pp.11–12; Corollary3.2.)
 
-*Needs:* [canonical retraction onto the section ideal](#235-canonical-retraction-onto-the-section-ideal), [underlying element of the section projection](#243-underlying-element-of-the-section-projection), [kernel of section evaluation](#213-kernel-of-section-evaluation).
+*Needs:* [canonical retraction onto the section ideal](#234-canonical-retraction-onto-the-section-ideal), [underlying element of the section projection](#241-underlying-element-of-the-section-projection), [kernel of section evaluation](#213-kernel-of-section-evaluation).
 
-### 2.57 The canonical dual-generator identity
+### 2.52 The canonical dual-generator identity
 
 For every j∈J, d ε(j)=bj for the named canonical R-linear the dual generator ε.
 
@@ -1853,23 +1780,9 @@ Use the existing untruncated polynomial quotient, native coefficient algebra and
 
 ([knudsen2012](#references), §3 Key Example, full Proposition3.1 and Corollary3.2 proofs, printed pp.11–12.)
 
-*Needs:* [denominator-free dual generator](#242-denominator-free-dual-generator), [divisibility on the actual section ideal](#229-divisibility-on-the-actual-section-ideal).
+*Needs:* [denominator-free dual generator](#240-denominator-free-dual-generator), [divisibility on the actual section ideal](#229-divisibility-on-the-actual-section-ideal).
 
-### 2.58 Values of the dual generator
-
-For every R-linear ε:J→R satisfying dε(j)=bj, ε(c)=−a and ε(d)=b, using actual proved membership of both generators.
-
-Here A is any commutative ring, including the zero ring; γ,δ,s,t∈A. No noetherianity, regularity of A or unit discriminant is assumed for this polynomial-model statement.
-
-One proof uses the following inputs and comparisons. Substitute c and d into the characterization. Use cb+da=0 for c and commutativity for d; cancel regular d.
-
-Use the existing untruncated polynomial quotient, native coefficient algebra and actual coordinate ideal. Include zero and nonreduced coefficient rings.
-
-([knudsen2012](#references), §3 Key Example, full Proposition3.1 and Corollary3.2 proofs, printed pp.11–12.)
-
-*Needs:* [denominator-free dual generator](#242-denominator-free-dual-generator), [regularity of the second section coordinate](#234-regularity-of-the-second-section-coordinate), [the section-coordinate relation](#218-the-section-coordinate-relation).
-
-### 2.59 Unique ordered coefficient pair
+### 2.53 Unique ordered coefficient pair
 
 In the inherited native node ring R=AdjoinRoot(F), F=X²+C(γY)X+C(δY²−q(s,t)), let u be its root and of:A[Y]→R its native coefficient map. For every r there exists a unique ordered pair (p,q₁) with of(p)+u·of(q₁)=r.
 
@@ -1881,9 +1794,9 @@ Use the existing untruncated polynomial quotient, native coefficient algebra and
 
 ([knudsen2012](#references), §3 Key Example, monic polynomial division preceding Proposition 3.1.)
 
-*Needs:* [reconstruction from ordered coordinates](#244-reconstruction-from-ordered-coordinates), [coordinate reconstruction map](#236-coordinate-reconstruction-map).
+*Needs:* [ordered polynomial coordinates](#230-ordered-polynomial-coordinates).
 
-### 2.60 Values of the node monomial basis
+### 2.54 Values of the node monomial basis
 
 In the inherited native node ring R=AdjoinRoot(F), F=X²+C(γY)X+C(δY²−q(s,t)), let u be its root and of:A[Y]→R its native coefficient map. For every n∈N and i∈Fin 2 the A-basis vector at (n,i) equals vⁿuⁱ.
 
@@ -1895,23 +1808,9 @@ Use the existing untruncated polynomial quotient, native coefficient algebra and
 
 ([knudsen2012](#references), §3 Key Example, monic polynomial division preceding Proposition 3.1.)
 
-*Needs:* [untruncated node monomial basis](#245-untruncated-node-monomial-basis), [the ordered basis one and root](#237-the-ordered-basis-one-and-root), `Module.Basis.smulTower_apply`, `Polynomial.coe_basisMonomials`.
+*Needs:* [untruncated node monomial basis](#242-untruncated-node-monomial-basis), [the ordered basis one and root](#235-the-ordered-basis-one-and-root), `Module.Basis.smulTower_apply`, `Polynomial.coe_basisMonomials`.
 
-### 2.61 Coordinates of the dual numerator
-
-For any commutative A and γ,δ,s,t∈A, retain the actual R=AdjoinRoot(F), F=X²+C(γY)X+C(δY²−q(s,t)), u=[X], v=[Y], ι:A→R, c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, J=(c,d), D=Hom_R(J,R), and the ordered native equivalence E:R≃A[Y]×A[Y]. E(b)=(C(s+γt),1).
-
-Here A is any commutative ring, including the zero ring; γ,δ,s,t∈A. No noetherianity, regularity of A or unit discriminant is assumed for this polynomial-model statement.
-
-One proof uses the following inputs and comparisons. Write b=u+of(C(s+γt)); use the ordered root and coefficient values of E.
-
-Keep the native quotient and ideal, ordered polynomial coordinates and the zero/nonreduced base cases; do not assume a dual normal form.
-
-([knudsen2012](#references), arXiv:1106.1588v2 §3 Key Example and complete proofs of Proposition 3.1 and Corollary 3.2.)
-
-*Needs:* [ordered polynomial coordinates](#230-ordered-polynomial-coordinates), [polynomial ring of a pointed section](#28-polynomial-ring-of-a-pointed-section), [coordinates of a coefficient polynomial](#247-coordinates-of-a-coefficient-polynomial), [coordinates of the polynomial root](#248-coordinates-of-the-polynomial-root).
-
-### 2.62 Coordinates of the first section generator
+### 2.55 Coordinates of the first section generator
 
 For every commutative ring A and γ,δ,s,t∈A, let F=X²+C(γY)X+C(δY²−q(s,t)), q(x,y)=x²+γxy+δy², R=AdjoinRoot(F), ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), and E:R≃A[Y]×A[Y] the ordered polynomial coordinates. Put Φ=((a,b),(−c,d)) and Ψ=((d,−b),(c,a)). The canonical ε∈D is characterized by dε(j)=bj. The ordered maps are P_J(z)=cz₀−dz₁ and P_D(z)=z₀·incl−z₁·ε. E(c)=(−C(s),1).
 
@@ -1923,9 +1822,9 @@ Use the actual polynomial quotient and the stated ordered matrices; an arbitrary
 
 ([knudsen2012](#references), §3 Key Example, printed pp.11–12, matrix and κ/λ comparisons and Proposition3.1 proof.)
 
-*Needs:* [ordered polynomial coordinates](#230-ordered-polynomial-coordinates), [coordinates of a coefficient polynomial](#247-coordinates-of-a-coefficient-polynomial), [coordinates of the polynomial root](#248-coordinates-of-the-polynomial-root).
+*Needs:* [ordered polynomial coordinates](#230-ordered-polynomial-coordinates).
 
-### 2.63 The ordered surjection to the section dual
+### 2.56 The ordered surjection to the section dual
 
 For every commutative ring A and γ,δ,s,t∈A, let F=X²+C(γY)X+C(δY²−q(s,t)), q(x,y)=x²+γxy+δy², R=AdjoinRoot(F), ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), and E:R≃A[Y]×A[Y] the ordered polynomial coordinates. Put Φ=((a,b),(−c,d)) and Ψ=((d,−b),(c,a)). The canonical ε∈D is characterized by dε(j)=bj. The ordered maps are P_J(z)=cz₀−dz₁ and P_D(z)=z₀·incl−z₁·ε. For the characterized ε∈D with dε(j)=bj, construct the R-linear map P_D:R²→D sending z to z₀·incl−z₁·ε.
 
@@ -1938,8 +1837,6 @@ Use the actual polynomial quotient and the stated ordered matrices; an arbitrary
 The construction has the following API.
 
 - Evaluation on j is z₀j−z₁ε(j).
-- The map to the actual R-linear dual is surjective.
-- Its kernel equals im Φ.
 
 **Checks.**
 
@@ -1949,9 +1846,9 @@ The construction has the following API.
 
 ([knudsen2012](#references), §3 Key Example, printed pp.11–12, matrix and κ/λ comparisons and Proposition3.1 proof.)
 
-*Needs:* [multiplication into the actual section dual](#246-multiplication-into-the-actual-section-dual), [denominator-free dual generator](#242-denominator-free-dual-generator).
+*Needs:* [multiplication into the actual section dual](#243-multiplication-into-the-actual-section-dual), [denominator-free dual generator](#240-denominator-free-dual-generator).
 
-### 2.64 The actual dual coefficient-Hom map
+### 2.57 The actual dual coefficient-Hom map
 
 For any commutative ring A and γ,δ,s,t∈A, let q(X,Y)=X²+γXY+δY², R=A[Y][X]/(q(X,Y)−q(s,t)), ι:A→R the actual coefficient algebra map, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), incl:J→R and ε∈D with dε(j)=bj. Put Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε and p(z)=(-z₁,z₀). For any A-module M, set N_M=R⊗_A M with the inherited left R-action, and U_M(f)=f⊗_A id_M on the actual native tensors. Use the already-built finite-product tensor and finite-free Hom coordinates E_M:R²⊗_A M≃ₗ[A]Hom_R(R²,N_M), E_M(z⊗m)(w)=(w₀z₀+w₁z₁)⊗m. Construct the R-linear map θ_D,M:D⊗_A M→Hom_R(J,N_M), characterized on pure tensors by θ_D,M(h⊗m)(j)=h(j)⊗m.
 
@@ -1969,15 +1866,15 @@ The construction has the following API.
 
 **Checks.**
 
-- The actual canonical map θ_D,M sends the zero tensor to the zero R-linear homomorphism.
-- For every j∈J and m∈M, θ_D,M(incl⊗m)(j)=j⊗m in the actual R⊗_A M.
-- For every m∈M, θ_D,M(−ε⊗m)(c)=a⊗m; the ordered negative second generator is not silently replaced by ε.
+- For A=ℤ, γ=δ=s=t=0 and M=ℤ/2, so that R⊗_ℤℤ/2=𝔽₂[u,v]/(u²): θ_D,M(ε⊗1)(v)=ε(v)⊗1=u⊗1≠0 and θ_D,M(ε⊗1)(u)=0, while θ_D,M(incl⊗1)(u)=u⊗1.
+- For M=ℤ/4, θ_D,M(−ε⊗1)(v)=−u⊗1=3u⊗1≠u⊗1 in (ℤ/4)[u,v]/(u²): the ordered negative second generator is visible on a nonflat coefficient module.
+- For M=ℤ/2, θ_D,M(m(u)⊗1) and θ_D,M(vε⊗1) both send v to uv⊗1 and u to 0, as m(u)=vε requires; a comparison that evaluated h only at u would not distinguish m(u) from the zero map, since m(u)(u)=u²=0.
 
-(Deduction using `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [multiplication into the actual section dual](#246-multiplication-into-the-actual-section-dual), [native coefficient action on the pointed node](#216-native-coefficient-action-on-the-pointed-node).)
+(Deduction using `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [multiplication into the actual section dual](#243-multiplication-into-the-actual-section-dual), [native coefficient action on the pointed node](#216-native-coefficient-action-on-the-pointed-node).)
 
-*Needs:* [multiplication into the actual section dual](#246-multiplication-into-the-actual-section-dual), [native coefficient action on the pointed node](#216-native-coefficient-action-on-the-pointed-node), `TensorProduct.AlgebraTensorModule.lift`.
+*Needs:* [multiplication into the actual section dual](#243-multiplication-into-the-actual-section-dual), [native coefficient action on the pointed node](#216-native-coefficient-action-on-the-pointed-node), `TensorProduct.AlgebraTensorModule.lift`.
 
-### 2.65 The coefficient-valued bidual evaluation map
+### 2.58 The coefficient-valued bidual evaluation map
 
 For any commutative ring A and γ,δ,s,t∈A, let q(X,Y)=X²+γXY+δY², R=A[Y][X]/(q(X,Y)−q(s,t)), ι:A→R the actual coefficient algebra map, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), incl:J→R and ε∈D with dε(j)=bj. Put Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε and p(z)=(-z₁,z₀). For any A-module M, set N_M=R⊗_A M with the inherited left R-action, and U_M(f)=f⊗_A id_M on the actual native tensors. Use the already-built finite-product tensor and finite-free Hom coordinates E_M:R²⊗_A M≃ₗ[A]Hom_R(R²,N_M), E_M(z⊗m)(w)=(w₀z₀+w₁z₁)⊗m. Construct the R-linear map θ_J,M:J⊗_A M→Hom_R(D,N_M), θ_J,M(j⊗m)(h)=h(j)⊗m.
 
@@ -1995,19 +1892,19 @@ The construction has the following API.
 
 **Checks.**
 
-- The actual canonical evaluation map θ_J,M sends the zero tensor to zero.
-- For every j∈J and m∈M, θ_J,M(j⊗m)(incl)=j⊗m.
-- For every m∈M, θ_J,M(−d⊗m)(ε)=−b⊗m in R⊗_A M.
+- For A=ℤ, γ=δ=s=t=0 and M=ℤ/2: θ_J,M(v⊗1)(ε)=ε(v)⊗1=u⊗1≠0 and θ_J,M(u⊗1)(ε)=0, while θ_J,M(u⊗1)(incl)=u⊗1; evaluation distinguishes the two dual generators.
+- For M=ℤ/4, θ_J,M(−d⊗1)(ε)=−b⊗1=−u⊗1=3u⊗1≠u⊗1 in (ℤ/4)[u,v]/(u²).
+- For M=ℤ/2, θ_J,M(v⊗1)(m(u))=uv⊗1=θ_J,M(v⊗1)(vε), consistent with m(u)=vε.
 
-(Deduction using `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [multiplication into the actual section dual](#246-multiplication-into-the-actual-section-dual), [native coefficient action on the pointed node](#216-native-coefficient-action-on-the-pointed-node).)
+(Deduction using `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [multiplication into the actual section dual](#243-multiplication-into-the-actual-section-dual), [native coefficient action on the pointed node](#216-native-coefficient-action-on-the-pointed-node).)
 
-*Needs:* [multiplication into the actual section dual](#246-multiplication-into-the-actual-section-dual), [native coefficient action on the pointed node](#216-native-coefficient-action-on-the-pointed-node), `TensorProduct.AlgebraTensorModule.lift`, `Module.Dual.eval`.
+*Needs:* [multiplication into the actual section dual](#243-multiplication-into-the-actual-section-dual), [native coefficient action on the pointed node](#216-native-coefficient-action-on-the-pointed-node), `TensorProduct.AlgebraTensorModule.lift`, `Module.Dual.eval`.
 
-### 2.66 The finite quotient retains its native original-coefficient action
+### 2.59 The finite quotient retains its native original-coefficient action
 
 For b∈A and q∈R/mⁿ, the inherited scalar b·q equals the level-n completed coefficient map([b]) times q in the native quotient ring.
 
-Here A is any commutative ring; R is the existing polynomial nodal chart Ring A γ δ s t, with the actual coefficient homomorphism. Ideals p⊆A and m⊆R satisfy p⊆coefficient map⁻¹(m). The finite coefficient and chart actions are the the residue algebra structure Â→Bₙ, the finite chart algebra structure Bₙ→Qₙ and their composed native scalar actions. This scalar comparison holds without finite generation of p and without any coefficient module.
+Here A is any commutative ring; R=A[Y][X]/(q(X,Y)−q(s,t)) is the polynomial nodal chart with its coefficient homomorphism ι, and q(X,Y)=X²+γXY+δY². Ideals p⊆A and m⊆R satisfy p⊆coefficient map⁻¹(m). The finite coefficient and chart actions are the residue algebra structure Â→Bₙ, the finite chart algebra structure Bₙ→Qₙ and their composed native scalar actions. This scalar comparison holds without finite generation of p and without any coefficient module.
 
 One proof uses the following inputs and comparisons. Choose an actual original chart representative r of q using native quotient surjectivity. The inherited quotient A-action sends b·[r] to [b·r]. In R, [native coefficient action on the pointed node](#216-native-coefficient-action-on-the-pointed-node) identifies b·r with coefficient map(b)r. The finite coefficient map sends [b] to [coefficient map(b)]; the native quotient ring hom preserves products. This proves the equation without assuming that two independently inferred scalar structures are definitionally equal.
 
@@ -2015,15 +1912,15 @@ The theorem compares the inherited scalar action with the displayed coefficient 
 
 ([knudsen2](#references), Appendix, Propositions 6–7, printed pp. 194–195, use these finite transitions in the completed-local comparison; the statement itself is a consequence of the cited targets and of `AdicCompletion.transitionMap_comp_eval_apply`.)
 
-*Needs:* [native coefficient action on the pointed node](#216-native-coefficient-action-on-the-pointed-node), [finite-level nodal coefficient map](#241-finite-level-nodal-coefficient-map), `Ideal.Quotient.mk_surjective`, `Algebra.smul_def`.
+*Needs:* [native coefficient action on the pointed node](#216-native-coefficient-action-on-the-pointed-node), [finite-level nodal coefficient map](#239-finite-level-nodal-coefficient-map), `Ideal.Quotient.mk_surjective`, `Algebra.smul_def`.
 
-### 2.67 Monic normal form in the section ring
+### 2.60 Monic normal form in the section ring
 
 Set q=X²+γXY+δY², F=q(X,Y)−q(s,t), R=A[Y][X]/(F), u=[X], v=[Y], ι:A→R, c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδ·v+ιδ·ιt+ιγ·u, J=(c,d), D=Hom_R(J,R). For every r∈R there is a unique pair (p,q₁)∈A[Y]² with r=p(v)+u q₁(v). Thus R is free over A[Y] with basis (1,u), and free over A by the monomials vⁿ,u vⁿ.
 
 Here A is any commutative ring, including the zero ring; γ,δ,s,t∈A. No noetherianity, regularity of A or unit discriminant is assumed for this polynomial-model statement.
 
-One proof uses the following inputs and comparisons. Apply the native unique ordered coordinate pair theorem, with the equality reversed to the existing the normal form signature. The specified two-term and monomial bases supply both freeness instances through the pinned basis-to-free constructor. No relation truncating powers of v is added.
+One proof uses the following inputs and comparisons. Apply the native unique ordered coordinate pair theorem, with the equality reversed to the displayed normal form r=p(v)+u q₁(v). The specified two-term and monomial bases supply both freeness instances through the pinned basis-to-free constructor. No relation truncating powers of v is added.
 
 No relation truncating powers of v is introduced.
 
@@ -2039,15 +1936,15 @@ The construction has the following API.
 - Over 𝔽₂ with γ=1 and δ=s=t=0, u² reduces to uv, with coordinates (0,v); the minus sign equals plus in characteristic two.
 - Over the zero coefficient ring every pair and every quotient element is zero. Monicity remains true, while natural degree is 0 rather than 2.
 
-*Needs:* [unique ordered coefficient pair](#259-unique-ordered-coefficient-pair), [values of the node monomial basis](#260-values-of-the-node-monomial-basis), `Module.Free.of_basis`.
+*Needs:* [unique ordered coefficient pair](#253-unique-ordered-coefficient-pair), [values of the node monomial basis](#254-values-of-the-node-monomial-basis), `Module.Free.of_basis`.
 
-### 2.68 Coefficient-linear splitting of section evaluation
+### 2.61 Coefficient-linear splitting of section evaluation
 
 For the actual polynomial node ring R and J=ker(ev), construct the canonical A-linear equivalence e:R≃J×A, e(r)=(r−ι(ev(r)),ev(r)); its inverse sends (j,a) to j+ι(a). This makes 0→J→R→A→0 split over A, including the zero base ring, and fixes the maps rather than only an abstract isomorphism class.
 
 Here A is any commutative ring, including the zero ring; γ,δ,s,t∈A. No noetherianity, regularity of A or unit discriminant is assumed for this polynomial-model statement.
 
-One proof uses the following inputs and comparisons. Use the existing inherited A-module structures on R, J and A; [native coefficient action on the pointed node](#216-native-coefficient-action-on-the-pointed-node) identifies the actual coefficient inclusion with the native algebra map. Define e(r)=(p(r),ev(r)), with p the retraction of [canonical retraction onto the section ideal](#235-canonical-retraction-onto-the-section-ideal), and inverse (j,a)↦j+ι(a). The forward/inverse identities follow from p(j)=j, p(ι(a))=0 and ev(j)=0. The other composition is the additive identity r−ιev(r)+ιev(r)=r. Use p’s LinearMap laws and [coefficient linearity of section evaluation](#227-coefficient-linearity-of-section-evaluation) for addition and scalar multiplication. This directly instantiates the canonical formulas without choosing a complementary submodule. The inherited zero-base, nonreduced and non-R-linear tests all check against these actual bodies. No chosen basis or inverse discriminant is used.
+One proof uses the following inputs and comparisons. Use the existing inherited A-module structures on R, J and A; [native coefficient action on the pointed node](#216-native-coefficient-action-on-the-pointed-node) identifies the actual coefficient inclusion with the native algebra map. Define e(r)=(p(r),ev(r)), with p the retraction of [canonical retraction onto the section ideal](#234-canonical-retraction-onto-the-section-ideal), and inverse (j,a)↦j+ι(a). The forward/inverse identities follow from p(j)=j, p(ι(a))=0 and ev(j)=0. The other composition is the additive identity r−ιev(r)+ιev(r)=r. Use p’s LinearMap laws and [coefficient linearity of section evaluation](#227-coefficient-linearity-of-section-evaluation) for addition and scalar multiplication. This directly instantiates the canonical formulas without choosing a complementary submodule. The inherited zero-base, nonreduced and non-R-linear tests all check against these actual bodies. No chosen basis or inverse discriminant is used.
 
 The equivalence is over A, with the actual ideal carrier J and actual evaluation map; never strengthen it to an R-linear splitting. No finite A-rank or R-flatness of J is implied.
 
@@ -2066,23 +1963,9 @@ The construction has the following API.
 
 ([knudsen2012](#references), §3, printed pp.11–12: monic division, κ/λ comparisons and proof of Proposition3.1.)
 
-*Needs:* [canonical retraction onto the section ideal](#235-canonical-retraction-onto-the-section-ideal), [coefficient linearity of section evaluation](#227-coefficient-linearity-of-section-evaluation), [kernel of section evaluation](#213-kernel-of-section-evaluation), [underlying element of the section projection](#243-underlying-element-of-the-section-projection), [projection fixes the section ideal](#255-projection-fixes-the-section-ideal), [projection kills the coefficient section](#256-projection-kills-the-coefficient-section).
+*Needs:* [canonical retraction onto the section ideal](#234-canonical-retraction-onto-the-section-ideal), [coefficient linearity of section evaluation](#227-coefficient-linearity-of-section-evaluation), [kernel of section evaluation](#213-kernel-of-section-evaluation), [underlying element of the section projection](#241-underlying-element-of-the-section-projection), [projection fixes the section ideal](#250-projection-fixes-the-section-ideal), [projection kills the coefficient section](#251-projection-kills-the-coefficient-section).
 
-### 2.69 Second coefficient of first-coordinate multiplication
-
-For any commutative A and γ,δ,s,t∈A, retain the actual R=AdjoinRoot(F), F=X²+C(γY)X+C(δY²−q(s,t)), u=[X], v=[Y], ι:A→R, c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, J=(c,d), D=Hom_R(J,R), and the ordered native equivalence E:R≃A[Y]×A[Y]. E(cr)₁=E(r)₀−(s+γY)E(r)₁.
-
-Here A is any commutative ring, including the zero ring; γ,δ,s,t∈A. No noetherianity, regularity of A or unit discriminant is assumed for this polynomial-model statement.
-
-One proof uses the following inputs and comparisons. Expand (u−ιs)r and subtract the coefficient-multiplication formula from the root formula.
-
-Keep the native quotient and ideal, ordered polynomial coordinates and the zero/nonreduced base cases; do not assume a dual normal form.
-
-([knudsen2012](#references), arXiv:1106.1588v2 §3 Key Example and complete proofs of Proposition 3.1 and Corollary 3.2.)
-
-*Needs:* [ordered polynomial coordinates](#230-ordered-polynomial-coordinates).
-
-### 2.70 Uniqueness from the second ideal generator
+### 2.62 Uniqueness from the second ideal generator
 
 For any commutative A and γ,δ,s,t∈A, retain the actual R=AdjoinRoot(F), F=X²+C(γY)X+C(δY²−q(s,t)), u=[X], v=[Y], ι:A→R, c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, J=(c,d), D=Hom_R(J,R), and the ordered native equivalence E:R≃A[Y]×A[Y]. If dr+ιαb=dr′+ια′b for pairs in R×A, then (r,α)=(r′,α′).
 
@@ -2094,9 +1977,9 @@ Keep the native quotient and ideal, ordered polynomial coordinates and the zero/
 
 ([knudsen2012](#references), arXiv:1106.1588v2 §3 Key Example and complete proofs of Proposition 3.1 and Corollary 3.2.)
 
-*Needs:* [ordered polynomial coordinates](#230-ordered-polynomial-coordinates), [coordinates of the dual numerator](#261-coordinates-of-the-dual-numerator), [regularity of the second section coordinate](#234-regularity-of-the-second-section-coordinate).
+*Needs:* [ordered polynomial coordinates](#230-ordered-polynomial-coordinates), [regularity of the second section coordinate](#233-regularity-of-the-second-section-coordinate).
 
-### 2.71 Multiplication by the dual numerator in coordinates
+### 2.63 Multiplication by the dual numerator in coordinates
 
 For every commutative ring A and γ,δ,s,t∈A, let F=X²+C(γY)X+C(δY²−q(s,t)), q(x,y)=x²+γxy+δy², R=AdjoinRoot(F), ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), and E:R≃A[Y]×A[Y] the ordered polynomial coordinates. Put Φ=((a,b),(−c,d)) and Ψ=((d,−b),(c,a)). The canonical ε∈D is characterized by dε(j)=bj. The ordered maps are P_J(z)=cz₀−dz₁ and P_D(z)=z₀·incl−z₁·ε. For r∈R, E(br)₁=E(r)₀+(C(s+γt)−Cγ·Y)E(r)₁.
 
@@ -2110,7 +1993,7 @@ Use the actual polynomial quotient and the stated ordered matrices; an arbitrary
 
 *Needs:* [ordered polynomial coordinates](#230-ordered-polynomial-coordinates).
 
-### 2.72 Evaluation of the ordered dual presentation
+### 2.64 Evaluation of the ordered dual presentation
 
 For every commutative ring A and γ,δ,s,t∈A, let F=X²+C(γY)X+C(δY²−q(s,t)), q(x,y)=x²+γxy+δy², R=AdjoinRoot(F), ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), and E:R≃A[Y]×A[Y] the ordered polynomial coordinates. Put Φ=((a,b),(−c,d)) and Ψ=((d,−b),(c,a)). The canonical ε∈D is characterized by dε(j)=bj. The ordered maps are P_J(z)=cz₀−dz₁ and P_D(z)=z₀·incl−z₁·ε. For z∈R² and j∈J, P_D(z)(j)=z₀j−z₁ε(j).
 
@@ -2122,9 +2005,9 @@ Use the actual polynomial quotient and the stated ordered matrices; an arbitrary
 
 ([knudsen2012](#references), §3 Key Example, printed pp.11–12, matrix and κ/λ comparisons and Proposition3.1 proof.)
 
-*Needs:* [the ordered surjection to the section dual](#263-the-ordered-surjection-to-the-section-dual).
+*Needs:* [the ordered surjection to the section dual](#256-the-ordered-surjection-to-the-section-dual).
 
-### 2.73 The dual generator module relation
+### 2.65 The dual generator module relation
 
 For every commutative ring A and γ,δ,s,t∈A, put q(X,Y)=X²+γXY+δY², R=A[Y][X]/(q(X,Y)−q(s,t)), ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), incl:J→R, and ε∈D with dε(j)=bj. Write η=Module.Dual.eval R J. d·ε=b·incl in D.
 
@@ -2136,9 +2019,9 @@ Use the actual ideal subtype and native Module.Dual, Module.Dual.eval and Module
 
 ([knudsen2012](#references), §3 Key Example, multiplication description of J∨ and Proposition 3.1; compare Corollary 3.2 and §4.)
 
-*Needs:* [the canonical dual-generator identity](#257-the-canonical-dual-generator-identity), [multiplication into the actual section dual](#246-multiplication-into-the-actual-section-dual).
+*Needs:* [the canonical dual-generator identity](#252-the-canonical-dual-generator-identity), [multiplication into the actual section dual](#243-multiplication-into-the-actual-section-dual).
 
-### 2.74 The signed section-ideal generators
+### 2.66 The signed section-ideal generators
 
 For any commutative ring A and γ,δ,s,t∈A, let q(X,Y)=X²+γXY+δY², R=A[Y][X]/(q(X,Y)−q(s,t)), ι:A→R the actual coefficient algebra map, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), incl:J→R and ε∈D with dε(j)=bj. Put Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε and p(z)=(-z₁,z₀). For any A-module M, set N_M=R⊗_A M with the inherited left R-action, and U_M(f)=f⊗_A id_M on the actual native tensors. Use the already-built finite-product tensor and finite-free Hom coordinates E_M:R²⊗_A M≃ₗ[A]Hom_R(R²,N_M), E_M(z⊗m)(w)=(w₀z₀+w₁z₁)⊗m. P_J(z)=z₀·c−z₁·d as an equality in the actual ideal subtype J, not only after inclusion into R.
 
@@ -2148,11 +2031,11 @@ One proof uses the following inputs and comparisons. Use the actual P_J formula,
 
 The statement uses the actual section ideal and actual R-linear dual in the untruncated polynomial ring. Keep this algebra calculation separate from higher Ext, relative stable-reflexivity, completed-local and family/sheaf descent.
 
-(Deduction using `Matrix.mulVecLin_apply` in `Mathlib/LinearAlgebra/Matrix/ToLin.lean`, line 291, and `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [evaluation of the ordered ideal presentation](#231-evaluation-of-the-ordered-ideal-presentation), [values of the dual generator](#258-values-of-the-dual-generator).)
+(Deduction using `Matrix.mulVecLin_apply` in `Mathlib/LinearAlgebra/Matrix/ToLin.lean`, line 291, and `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [the ordered surjection to the section ideal](#221-the-ordered-surjection-to-the-section-ideal), [denominator-free dual generator](#240-denominator-free-dual-generator).)
 
-*Needs:* [evaluation of the ordered ideal presentation](#231-evaluation-of-the-ordered-ideal-presentation), [values of the dual generator](#258-values-of-the-dual-generator).
+*Needs:* [the ordered surjection to the section ideal](#221-the-ordered-surjection-to-the-section-ideal), [denominator-free dual generator](#240-denominator-free-dual-generator).
 
-### 2.75 Dual Hom coordinates with coefficients
+### 2.67 Dual Hom coordinates with coefficients
 
 For any commutative ring A and γ,δ,s,t∈A, let q(X,Y)=X²+γXY+δY², R=A[Y][X]/(q(X,Y)−q(s,t)), ι:A→R the actual coefficient algebra map, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), incl:J→R and ε∈D with dε(j)=bj. Put Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε and p(z)=(-z₁,z₀). For any A-module M, set N_M=R⊗_A M with the inherited left R-action, and U_M(f)=f⊗_A id_M on the actual native tensors. Use the already-built finite-product tensor and finite-free Hom coordinates E_M:R²⊗_A M≃ₗ[A]Hom_R(R²,N_M), E_M(z⊗m)(w)=(w₀z₀+w₁z₁)⊗m. Construct the A-linear map C_D,M:Hom_R(D,N_M)→R²⊗_A M by C_D,M(h)=E_M⁻¹(h∘P_D). Its pair coordinates are (h(incl),−h(ε)).
 
@@ -2174,11 +2057,11 @@ The construction has the following API.
 - Under E_M, C_D(h) at the second standard basis vector equals −h(ε), not h(ε).
 - Equality of C_D coordinates implies equality of homomorphisms from the actual R-dual D, since incl and ε generate D.
 
-(Deduction using `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104; `LinearMap.comp_apply` in `Mathlib/Algebra/Module/LinearMap/Defs.lean`, line 495. The construction-specific inputs are [the ordered surjection to the section dual](#263-the-ordered-surjection-to-the-section-dual).)
+(Deduction using `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104; `LinearMap.comp_apply` in `Mathlib/Algebra/Module/LinearMap/Defs.lean`, line 495. The construction-specific inputs are [the ordered surjection to the section dual](#256-the-ordered-surjection-to-the-section-dual).)
 
-*Needs:* [the ordered surjection to the section dual](#263-the-ordered-surjection-to-the-section-dual), `LinearMap.lcomp`, `TensorProduct.piLeft`, `LinearEquiv.piRing`.
+*Needs:* [the ordered surjection to the section dual](#256-the-ordered-surjection-to-the-section-dual), `LinearMap.lcomp`, `TensorProduct.piLeft`, `LinearEquiv.piRing`.
 
-### 2.76 Completed nodal coefficient homomorphism
+### 2.68 Completed nodal coefficient homomorphism
 
 Under coefficient convention C3. Construct ĩ:Â→R̂ as the native completion lift of the compatible f_n.
 
@@ -2196,40 +2079,40 @@ The construction has the following API.
 
 **Checks.**
 
-- Under coefficient convention C3. The completed coefficient map has the prescribed n=2 finite projection for every completed element.
-- Under coefficient convention C3. Any ring homomorphism with all prescribed finite projections equals ĩ.
-- Under coefficient convention C3. For A=ℤ/4, (γ,δ,s,t)=(0,0,1,0) and p=m=0, the completed coefficient square holds for every a∈A; no reducedness or discriminant unit is required.
+- In the fixture A=ℤ, γ=δ=s=t=0, p=(2) and m=2R, so that Â=ℤ₂: π_R,3(ĩ(1/3))=λ₃([3])=[3] in (ℤ/8)[u,v]/(u²) and π_R,4(ĩ(1/3))=[11] in (ℤ/16)[u,v]/(u²), since 3·3≡1 modulo 8 and 3·11≡1 modulo 16; the two levels differ, so ĩ(1/3)≠e_R(3).
+- In the same fixture ĩ(e_A(−1))=e_R(−1), whose level-2 projection is [3].
+- A ring homomorphism f:ℤ₂→R̂ with f(1/3)=e_R(3) satisfies the projection law at level 3 but not at level 4, where [3]≠[11]; so f≠ĩ, which is the only ring homomorphism with every prescribed finite projection.
 
 ([knudsen2](#references), Appendix Definition1 and Theorem2(1), printed191–193; Proposition6, printed194–195 (physical31–35).)
 
-*Needs:* [compatible completed coefficient family](#253-compatible-completed-coefficient-family), `AdicCompletion.liftRingHom`.
+*Needs:* [compatible completed coefficient family](#248-compatible-completed-coefficient-family), `AdicCompletion.liftRingHom`.
 
-### 2.77 Finite quotient transition over completed coefficients
+### 2.69 Finite quotient transition over completed coefficients
 
 For i≤j, equip the actual native quotient transition R/mʲ→R/mⁱ with its Â-algebra-hom structure, using the finite completed-coefficient actions.
 
-Here A is any commutative ring; R is the existing polynomial nodal chart Ring A γ δ s t, with the actual coefficient homomorphism. Ideals p⊆A and m⊆R satisfy p⊆coefficient map⁻¹(m). The finite coefficient and chart actions are the the residue algebra structure Â→Bₙ, the finite chart algebra structure Bₙ→Qₙ and their composed native scalar actions. For the four tensor-naturality lemmas, p is finitely generated and N,N′ are arbitrary Â=AdicCompletion p A modules, with specified A-actions satisfying the native scalar-tower equations. The transition algebra homomorphism and its four structural laws do not require p finitely generated. No noetherianity or locality of A or R, finite generation or flatness of N, global tensor/limit interchange, or injectivity of the whole completed-ring tensor comparison is assumed.
+Here A is any commutative ring; R=A[Y][X]/(q(X,Y)−q(s,t)) is the polynomial nodal chart with its coefficient homomorphism ι, and q(X,Y)=X²+γXY+δY². Ideals p⊆A and m⊆R satisfy p⊆coefficient map⁻¹(m). The finite coefficient and chart actions are the residue algebra structure Â→Bₙ, the finite chart algebra structure Bₙ→Qₙ and their composed native scalar actions. For the four tensor-naturality lemmas, p is finitely generated and N,N′ are arbitrary Â=AdicCompletion p A modules, with specified A-actions satisfying the native scalar-tower equations. The transition algebra homomorphism and its four structural laws do not require p finitely generated. No noetherianity or locality of A or R, finite generation or flatness of N, global tensor/limit interchange, or injectivity of the whole completed-ring tensor comparison is assumed.
 
 One proof uses the following inputs and comparisons. Retain the native Ideal.Quotient.factorPow ring map; only its completed-coefficient compatibility needs a separate comparison. The equation factorPow∘the completed coefficient family at level j=the completed coefficient family at level i is exactly the algebra-map square. Evaluate it at an arbitrary a∈Â, without assuming that a comes from A. Package that square in the native AlgHom structure. Finite generation of p is unnecessary for this transition.
 
 The construction has the following API.
 
-- The ring homomorphism underlying the finite quotient transition is exactly Ideal.Quotient.factorPow m hij.
+- The ring homomorphism underlying the finite quotient transition is the native quotient transition `Ideal.Quotient.factorPow` for mʲ⊆mⁱ.
 - The completed-coefficient transition from level n to itself is the identity Â-algebra homomorphism.
 - For i≤j≤k, the level-k-to-j transition followed by the level-j-to-i transition equals the direct level-k-to-i transition as Â-algebra homomorphisms.
 - For every a∈Â and q∈R/mʲ, the finite transition sends a·q to a times the image of q, with the specified completed-coefficient actions.
 
 **Checks.**
 
-- For an actual r∈R and i≤j, the transition takes the class of r modulo mʲ to the class of the same r modulo mⁱ.
-- Every level-j element maps to zero at level zero, where R/m⁰ is the zero ring.
-- An arbitrary completed coefficient a∈Â commutes with the actual transition; a is not required to be the image of an original coefficient.
+- In the fixture A=ℤ, γ=δ=s=t=0, p=(2) and m=2R, the level-3-to-2 transition sends [1+2v+4v²] to [1+2v] and [3+6v+4v²] to [3+2v] in (ℤ/4)[u,v]/(u²).
+- With the completed coefficient 1/3∈ℤ₂, (1/3)·[1+2v+4v²]=[3+6v+4v²] at level 3 transitions to [3+2v], which is (1/3)·[1+2v] at level 2, since 1/3≡3 modulo 4; the Â-linearity is checked on a coefficient that is not in A.
+- The level-2-to-0 transition is the zero map to the zero ring R/m⁰ and sends [1+2v] to 0, while the level-2-to-2 transition is the identity and fixes [1+2v].
 
 ([knudsen2](#references), Appendix, Propositions 6–7, printed pp. 194–195, use these finite transitions in the completed-local comparison; the statement itself is a consequence of the cited targets and of `AdicCompletion.transitionMap_comp_eval_apply`.)
 
-*Needs:* [compatible completed coefficient family](#253-compatible-completed-coefficient-family), [finite nodal coefficient algebra](#254-finite-nodal-coefficient-algebra), `AlgHom`, `Ideal.Quotient.factorPow`.
+*Needs:* [compatible completed coefficient family](#248-compatible-completed-coefficient-family), [finite nodal coefficient algebra](#249-finite-nodal-coefficient-algebra), `AlgHom`, `Ideal.Quotient.factorPow`.
 
-### 2.78 Coefficient base change of the node ring
+### 2.70 Coefficient base change of the node ring
 
 Set q=X²+γXY+δY², F=q(X,Y)−q(s,t), R=A[Y][X]/(F), u=[X], v=[Y], ι:A→R, c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδ·v+ιδ·ιt+ιγ·u, J=(c,d), D=Hom_R(J,R). For any f:A→A′, let R′ be the same construction over A′ with the mapped parameters f(γ),f(δ),f(s),f(t), ι′:A′→R′ its coefficient map and φ:R→R′ the coefficient map of [coefficient map of pointed node rings](#214-coefficient-map-of-pointed-node-rings). The canonical A′-linear map A′⊗_A R→R′, a′⊗r↦ι′a′ φ(r), is an equivalence and respects the algebra multiplication.
 
@@ -2237,13 +2120,13 @@ Here A is any commutative ring, including the zero ring; γ,δ,s,t∈A. No noeth
 
 One proof uses the following inputs and comparisons. Extend the monomial basis vⁿ,u vⁿ through tensoring. The same monic normal form over A′ identifies the image basis with that of R′. Multiplication compatibility follows on pure tensors.
 
-The algebra equivalence of §2.88 has the same underlying linear map.
+The algebra equivalence of §2.80 has the same underlying linear map.
 
 ([knudsen2012](#references), §3, printed pp.11–12: monic division, κ/λ comparisons and proof of Proposition3.1.)
 
-*Needs:* [coefficient map of pointed node rings](#214-coefficient-map-of-pointed-node-rings), [monic normal form in the section ring](#267-monic-normal-form-in-the-section-ring), `TensorProduct.lift`.
+*Needs:* [coefficient map of pointed node rings](#214-coefficient-map-of-pointed-node-rings), [monic normal form in the section ring](#260-monic-normal-form-in-the-section-ring), `TensorProduct.lift`.
 
-### 2.79 Naturality of section evaluation
+### 2.71 Naturality of section evaluation
 
 Under coefficient convention C9. ev′(φ(r))=f(ev(r)) for every r∈R.
 
@@ -2255,9 +2138,9 @@ The equation holds also when f kills a nonzero coefficient; it is not cancellati
 
 ([knudsen2012](#references), §3, printed pp.11–12, monic division and the dual residue calculation preceding Proposition3.1.)
 
-*Needs:* [coefficient map of pointed node rings](#214-coefficient-map-of-pointed-node-rings), [monic normal form in the section ring](#267-monic-normal-form-in-the-section-ring), `AdjoinRoot.ringHom_ext`.
+*Needs:* [coefficient map of pointed node rings](#214-coefficient-map-of-pointed-node-rings), [monic normal form in the section ring](#260-monic-normal-form-in-the-section-ring), `AdjoinRoot.ringHom_ext`.
 
-### 2.80 Section evaluation of a dual value
+### 2.72 Section evaluation of a dual value
 
 For any commutative A and γ,δ,s,t∈A, retain the actual R=AdjoinRoot(F), F=X²+C(γY)X+C(δY²−q(s,t)), u=[X], v=[Y], ι:A→R, c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, J=(c,d), D=Hom_R(J,R), and the ordered native equivalence E:R≃A[Y]×A[Y]. For every h∈D and j_d=⟨d⟩∈J, evaluating at Y=t gives E(h(j_d))₀(t)=(s+γt)E(h(j_d))₁(t).
 
@@ -2269,9 +2152,9 @@ Keep the native quotient and ideal, ordered polynomial coordinates and the zero/
 
 ([knudsen2012](#references), arXiv:1106.1588v2 §3 Key Example and complete proofs of Proposition 3.1 and Corollary 3.2.)
 
-*Needs:* [commutation of ideal values in the dual](#220-commutation-of-ideal-values-in-the-dual), [second coefficient of first-coordinate multiplication](#269-second-coefficient-of-first-coordinate-multiplication), [ordered polynomial coordinates](#230-ordered-polynomial-coordinates), [denominator-free dual generator](#242-denominator-free-dual-generator).
+*Needs:* [commutation of ideal values in the dual](#220-commutation-of-ideal-values-in-the-dual), [ordered polynomial coordinates](#230-ordered-polynomial-coordinates), [denominator-free dual generator](#240-denominator-free-dual-generator).
 
-### 2.81 Relations between the section ideal generators
+### 2.73 Relations between the section ideal generators
 
 For every commutative ring A and γ,δ,s,t∈A, let F=X²+C(γY)X+C(δY²−q(s,t)), q(x,y)=x²+γxy+δy², R=AdjoinRoot(F), ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), and E:R≃A[Y]×A[Y] the ordered polynomial coordinates. Put Φ=((a,b),(−c,d)) and Ψ=((d,−b),(c,a)). The canonical ε∈D is characterized by dε(j)=bj. The ordered maps are P_J(z)=cz₀−dz₁ and P_D(z)=z₀·incl−z₁·ε. If cx=dy for x,y∈R, there are r∈R and α∈A with x=dr+ιαb and y=cr−ιαa.
 
@@ -2283,9 +2166,9 @@ Use the actual polynomial quotient and the stated ordered matrices; an arbitrary
 
 ([knudsen2012](#references), §3 Key Example, printed pp.11–12, matrix and κ/λ comparisons and Proposition3.1 proof.)
 
-*Needs:* [second coefficient of first-coordinate multiplication](#269-second-coefficient-of-first-coordinate-multiplication), [ordered polynomial coordinates](#230-ordered-polynomial-coordinates), [coordinate reconstruction map](#236-coordinate-reconstruction-map), [coordinates of the dual numerator](#261-coordinates-of-the-dual-numerator), [regularity of the second section coordinate](#234-regularity-of-the-second-section-coordinate), [the section-coordinate relation](#218-the-section-coordinate-relation), `Polynomial.X_sub_C_dvd_sub_C_eval`.
+*Needs:* [ordered polynomial coordinates](#230-ordered-polynomial-coordinates), [regularity of the second section coordinate](#233-regularity-of-the-second-section-coordinate), [the section-coordinate relation](#218-the-section-coordinate-relation), `Polynomial.X_sub_C_dvd_sub_C_eval`.
 
-### 2.82 Relations in the section dual presentation
+### 2.74 Relations in the section dual presentation
 
 For every commutative ring A and γ,δ,s,t∈A, let F=X²+C(γY)X+C(δY²−q(s,t)), q(x,y)=x²+γxy+δy², R=AdjoinRoot(F), ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), and E:R≃A[Y]×A[Y] the ordered polynomial coordinates. Put Φ=((a,b),(−c,d)) and Ψ=((d,−b),(c,a)). The canonical ε∈D is characterized by dε(j)=bj. The ordered maps are P_J(z)=cz₀−dz₁ and P_D(z)=z₀·incl−z₁·ε. If dx=by for x,y∈R, there are r∈R and α∈A with x=br−ιαa and y=dr+ιαc.
 
@@ -2297,9 +2180,9 @@ Use the actual polynomial quotient and the stated ordered matrices; an arbitrary
 
 ([knudsen2012](#references), §3 Key Example, printed pp.11–12, matrix and κ/λ comparisons and Proposition3.1 proof.)
 
-*Needs:* [multiplication by the dual numerator in coordinates](#271-multiplication-by-the-dual-numerator-in-coordinates), [ordered polynomial coordinates](#230-ordered-polynomial-coordinates), [coordinates of the first section generator](#262-coordinates-of-the-first-section-generator), [coordinate reconstruction map](#236-coordinate-reconstruction-map), [regularity of the second section coordinate](#234-regularity-of-the-second-section-coordinate), [the section-coordinate relation](#218-the-section-coordinate-relation), `Polynomial.X_sub_C_dvd_sub_C_eval`.
+*Needs:* [multiplication by the dual numerator in coordinates](#263-multiplication-by-the-dual-numerator-in-coordinates), [ordered polynomial coordinates](#230-ordered-polynomial-coordinates), [coordinates of the first section generator](#255-coordinates-of-the-first-section-generator), [regularity of the second section coordinate](#233-regularity-of-the-second-section-coordinate), [the section-coordinate relation](#218-the-section-coordinate-relation), `Polynomial.X_sub_C_dvd_sub_C_eval`.
 
-### 2.83 The scalar equation for vanishing in the dual
+### 2.75 The scalar equation for vanishing in the dual
 
 For every commutative ring A and γ,δ,s,t∈A, let F=X²+C(γY)X+C(δY²−q(s,t)), q(x,y)=x²+γxy+δy², R=AdjoinRoot(F), ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), and E:R≃A[Y]×A[Y] the ordered polynomial coordinates. Put Φ=((a,b),(−c,d)) and Ψ=((d,−b),(c,a)). The canonical ε∈D is characterized by dε(j)=bj. The ordered maps are P_J(z)=cz₀−dz₁ and P_D(z)=z₀·incl−z₁·ε. P_D(z)=0 if and only if dz₀=bz₁.
 
@@ -2311,9 +2194,9 @@ Use the actual polynomial quotient and the stated ordered matrices; an arbitrary
 
 ([knudsen2012](#references), §3 Key Example, printed pp.11–12, matrix and κ/λ comparisons and Proposition3.1 proof.)
 
-*Needs:* [evaluation of the ordered dual presentation](#272-evaluation-of-the-ordered-dual-presentation), [values of the dual generator](#258-values-of-the-dual-generator), [the canonical dual-generator identity](#257-the-canonical-dual-generator-identity), [regularity of the second section coordinate](#234-regularity-of-the-second-section-coordinate).
+*Needs:* [evaluation of the ordered dual presentation](#264-evaluation-of-the-ordered-dual-presentation), [denominator-free dual generator](#240-denominator-free-dual-generator), [the canonical dual-generator identity](#252-the-canonical-dual-generator-identity), [regularity of the second section coordinate](#233-regularity-of-the-second-section-coordinate).
 
-### 2.84 The bidual generator relation
+### 2.76 The bidual generator relation
 
 For every commutative ring A and γ,δ,s,t∈A, put q(X,Y)=X²+γXY+δY², R=A[Y][X]/(q(X,Y)−q(s,t)), ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), incl:J→R, and ε∈D with dε(j)=bj. Write η=Module.Dual.eval R J. Every F∈Hom_R(D,R) satisfies dF(ε)=bF(incl).
 
@@ -2325,9 +2208,9 @@ Use the actual ideal subtype and native Module.Dual, Module.Dual.eval and Module
 
 ([knudsen2012](#references), §3 Key Example, multiplication description of J∨ and Proposition 3.1; compare Corollary 3.2 and §4.)
 
-*Needs:* [the dual generator module relation](#273-the-dual-generator-module-relation).
+*Needs:* [the dual generator module relation](#265-the-dual-generator-module-relation).
 
-### 2.85 The actual completed coefficient algebra
+### 2.77 The actual completed coefficient algebra
 
 Under coefficient convention C3. Equip R̂ with the Â-algebra induced by ĩ. Keep the inherited A-algebra coming from R.
 
@@ -2351,9 +2234,9 @@ The construction has the following API.
 
 ([knudsen2](#references), Appendix Definition1 and Theorem2(1), printed191–193; Proposition6, printed194–195 (physical31–35).)
 
-*Needs:* [completed nodal coefficient homomorphism](#276-completed-nodal-coefficient-homomorphism).
+*Needs:* [completed nodal coefficient homomorphism](#268-completed-nodal-coefficient-homomorphism).
 
-### 2.86 Completion kernel vanishes in the finite tensor
+### 2.78 Completion kernel vanishes in the finite tensor
 
 Under coefficient convention C4. For arbitrary Â-module N equip N with its restricted A-action; require the actual scalar tower A→Â→N. Neither flatness nor finite generation of N is assumed, and its action need not factor through Bₙ. For c∈pⁿ·Â, q∈Qₙ and z∈N, q⊗_A(cz)=0.
 
@@ -2365,23 +2248,23 @@ Use the actual native polynomial chart, ideal quotients, adic completion, tensor
 
 ([knudsen2](#references), Appendix, Definition 1 and Theorem 2, printed pp. 191–193, set up the completed coefficient rings and modules used here; the statement itself is a consequence of the definitions and of the cited targets.)
 
-*Needs:* [finite nodal coefficient algebra](#254-finite-nodal-coefficient-algebra), `Submodule.smul_induction_on`.
+*Needs:* [finite nodal coefficient algebra](#249-finite-nodal-coefficient-algebra), `Submodule.smul_induction_on`.
 
-### 2.87 Coefficient flatness of the section ideal
+### 2.79 Coefficient flatness of the section ideal
 
 Set q=X²+γXY+δY², F=q(X,Y)−q(s,t), R=A[Y][X]/(F), u=[X], v=[Y], ι:A→R, c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδ·v+ιδ·ιt+ιγ·u, J=(c,d), D=Hom_R(J,R). J is flat as an A-module.
 
 Here A is any commutative ring, including the zero ring; γ,δ,s,t∈A. No noetherianity, regularity of A or unit discriminant is assumed for this polynomial-model statement.
 
-One proof uses the following inputs and comparisons. R is A-free by the existing monomial normal form. The native the ideal projection p is the A-linear retraction R→J and fixes each actual ideal element; it is exactly the first coordinate of [coefficient-linear splitting of section evaluation](#268-coefficient-linear-splitting-of-section-evaluation). Apply the cited retract-of-flat theorem. No R-flatness or relative stable reflexivity is asserted. An alternative proof uses [canonical retraction onto the section ideal](#235-canonical-retraction-onto-the-section-ideal) and the existing projective/free-flat instance. 
+One proof uses the following inputs and comparisons. R is A-free by the existing monomial normal form. The ideal projection p is the A-linear retraction R→J and fixes each actual ideal element; it is exactly the first coordinate of [coefficient-linear splitting of section evaluation](#261-coefficient-linear-splitting-of-section-evaluation). Apply the cited retract-of-flat theorem. No R-flatness or relative stable reflexivity is asserted. An alternative proof uses [canonical retraction onto the section ideal](#234-canonical-retraction-onto-the-section-ideal) and the existing projective/free-flat instance. 
 
 No claim that J is R-flat, projective over R or invertible at the node.
 
 ([knudsen2012](#references), §3, printed pp.11–12: monic division, κ/λ comparisons and proof of Proposition3.1.)
 
-*Needs:* [monic normal form in the section ring](#267-monic-normal-form-in-the-section-ring), `Module.Flat.of_retract`, `Module.Flat.of_free`, [coefficient-linear splitting of section evaluation](#268-coefficient-linear-splitting-of-section-evaluation), [canonical retraction onto the section ideal](#235-canonical-retraction-onto-the-section-ideal), [projection fixes the section ideal](#255-projection-fixes-the-section-ideal), `Module.Flat.of_projective`.
+*Needs:* [monic normal form in the section ring](#260-monic-normal-form-in-the-section-ring), `Module.Flat.of_retract`, `Module.Flat.of_free`, [coefficient-linear splitting of section evaluation](#261-coefficient-linear-splitting-of-section-evaluation), [canonical retraction onto the section ideal](#234-canonical-retraction-onto-the-section-ideal), [projection fixes the section ideal](#250-projection-fixes-the-section-ideal), `Module.Flat.of_projective`.
 
-### 2.88 Algebraic tensor comparison for a pointed node
+### 2.80 Algebraic tensor comparison for a pointed node
 
 Under coefficient convention C9. Construct the unique A′-algebra equivalence E_R:A′⊗_A R≃R′ with E_R(a′⊗r)=ι′a′·φ(r). The tensor algebra multiplication is (a′⊗r)(b′⊗z)=a′b′⊗rz.
 
@@ -2401,15 +2284,15 @@ The construction has the following API.
 
 **Checks.**
 
-- For f=id_A, E_R(a⊗r)=ιa·r.
-- E_R(xy)=E_R(x)E_R(y) for every two tensor-algebra elements x,y.
-- For the zero coefficient ring A, A⊗_A R has one element.
+- For ℤ→ℤ/4 with s=3 and γ=δ=t=0: E_R(1⊗c)=u′+1, E_R(3⊗u)=3u′, and E_R((1⊗u)(1⊗u))=E_R(1⊗9)=1=u′²=E_R(1⊗u)² in R′=(ℤ/4)[v′][u′]/(u′²−1); multiplicativity is a computed identity, not a definition.
+- For ℤ→𝔽₂ with γ=1 and δ=s=t=0, 1⊗2v=2⊗v=0 in 𝔽₂⊗_ℤR and E_R(1⊗2v)=2v′=0: the vanishing is in the tensor product, so E_R loses no injectivity.
+- For ℤ→ℤ/4→𝔽₂ with zero parameters, `E_{R,g}(1⊗E_{R,f}(1⊗(3u+2v)))=E_{R,g}(1⊗(3u′+2v′))=u″=E_{R,g∘f}(1⊗(3u+2v))`.
 
 ([knudsen2012](#references), §3, printed pp.11–12, monic division and the dual residue calculation preceding Proposition3.1.)
 
-*Needs:* [coefficient base change of the node ring](#278-coefficient-base-change-of-the-node-ring), [coefficient map of pointed node rings](#214-coefficient-map-of-pointed-node-rings), `AlgHom.liftEquiv`.
+*Needs:* [coefficient base change of the node ring](#270-coefficient-base-change-of-the-node-ring), [coefficient map of pointed node rings](#214-coefficient-map-of-pointed-node-rings), `AlgHom.liftEquiv`.
 
-### 2.89 Semilinear coefficient map on the section ideal
+### 2.81 Semilinear coefficient map on the section ideal
 
 Retain R=AdjoinRoot(X²+C(γY)X+C(δY²−q(s,t))), ι:A→R, u=[X], v=[Y], c=u−ιs,d=v−ιt,b=u+ιs+ιγ·ιt, J=(c,d)=ker(ev), and the existing canonical projection p(r)=r−ιev(r) and dual generator ε:J→R with dε(j)=bj. Let R′,J′,p′,ε′ denote the same native objects with mapped coefficients, and φ:R→R′ the existing coefficient map induced by AdjoinRoot.map. Construct the actual φ-semilinear restriction ψ:J→J′, whose underlying ring value is ψ(j)=φ(j). It sends the two ordered ideal generators to their corresponding primed generators, satisfies ψ(rj)=φ(r)ψ(j), and obeys identity and composition on actual ideal elements. This restriction is not asserted injective or an equivalence; the tensor equivalence is a separate existing obligation.
 
@@ -2437,9 +2320,9 @@ The construction has the following API.
 
 ([knudsen2012](#references), Introduction, base-change requirement; §3 Key Example through Proposition3.1 and Corollary3.2 proof, especially regularity of v−t and the generator formulas.)
 
-*Needs:* [coefficient map of pointed node rings](#214-coefficient-map-of-pointed-node-rings), [naturality of section evaluation](#279-naturality-of-section-evaluation), [kernel of section evaluation](#213-kernel-of-section-evaluation), `LinearMap.map_smulₛₗ`.
+*Needs:* [coefficient map of pointed node rings](#214-coefficient-map-of-pointed-node-rings), [naturality of section evaluation](#271-naturality-of-section-evaluation), [kernel of section evaluation](#213-kernel-of-section-evaluation), `LinearMap.map_smulₛₗ`.
 
-### 2.90 Polynomial decomposition of the second dual value
+### 2.82 Polynomial decomposition of the second dual value
 
 For any commutative A and γ,δ,s,t∈A, retain the actual R=AdjoinRoot(F), F=X²+C(γY)X+C(δY²−q(s,t)), u=[X], v=[Y], ι:A→R, c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, J=(c,d), D=Hom_R(J,R), and the ordered native equivalence E:R≃A[Y]×A[Y]. For every h∈D there exists (r,α)∈R×A such that h(⟨d⟩)=dr+ιαb.
 
@@ -2451,9 +2334,9 @@ Keep the native quotient and ideal, ordered polynomial coordinates and the zero/
 
 ([knudsen2012](#references), arXiv:1106.1588v2 §3 Key Example and complete proofs of Proposition 3.1 and Corollary 3.2.)
 
-*Needs:* [section evaluation of a dual value](#280-section-evaluation-of-a-dual-value), [ordered polynomial coordinates](#230-ordered-polynomial-coordinates), [coordinate reconstruction map](#236-coordinate-reconstruction-map), [coordinates of the dual numerator](#261-coordinates-of-the-dual-numerator), `Polynomial.X_sub_C_dvd_sub_C_eval`.
+*Needs:* [section evaluation of a dual value](#272-section-evaluation-of-a-dual-value), [ordered polynomial coordinates](#230-ordered-polynomial-coordinates), `Polynomial.X_sub_C_dvd_sub_C_eval`.
 
-### 2.91 The relations of the section ideal surjection
+### 2.83 The relations of the section ideal surjection
 
 For every commutative ring A and γ,δ,s,t∈A, let F=X²+C(γY)X+C(δY²−q(s,t)), q(x,y)=x²+γxy+δy², R=AdjoinRoot(F), ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), and E:R≃A[Y]×A[Y] the ordered polynomial coordinates. Put Φ=((a,b),(−c,d)) and Ψ=((d,−b),(c,a)). The canonical ε∈D is characterized by dε(j)=bj. The ordered maps are P_J(z)=cz₀−dz₁ and P_D(z)=z₀·incl−z₁·ε. ker P_J=im Ψ.
 
@@ -2465,9 +2348,9 @@ Use the actual polynomial quotient and the stated ordered matrices; an arbitrary
 
 ([knudsen2012](#references), §3 Key Example, printed pp.11–12, matrix and κ/λ comparisons and Proposition3.1 proof.)
 
-*Needs:* [evaluation of the ordered ideal presentation](#231-evaluation-of-the-ordered-ideal-presentation), [relations between the section ideal generators](#281-relations-between-the-section-ideal-generators), [the right node matrix acting on a column](#222-the-right-node-matrix-acting-on-a-column), [the section-coordinate relation](#218-the-section-coordinate-relation).
+*Needs:* [the ordered surjection to the section ideal](#221-the-ordered-surjection-to-the-section-ideal), [relations between the section ideal generators](#273-relations-between-the-section-ideal-generators), [the right node matrix acting on a column](#222-the-right-node-matrix-acting-on-a-column), [the section-coordinate relation](#218-the-section-coordinate-relation).
 
-### 2.92 The relations of the section dual surjection
+### 2.84 The relations of the section dual surjection
 
 For every commutative ring A and γ,δ,s,t∈A, let F=X²+C(γY)X+C(δY²−q(s,t)), q(x,y)=x²+γxy+δy², R=AdjoinRoot(F), ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), and E:R≃A[Y]×A[Y] the ordered polynomial coordinates. Put Φ=((a,b),(−c,d)) and Ψ=((d,−b),(c,a)). The canonical ε∈D is characterized by dε(j)=bj. The ordered maps are P_J(z)=cz₀−dz₁ and P_D(z)=z₀·incl−z₁·ε. ker P_D=im Φ.
 
@@ -2479,9 +2362,9 @@ Use the actual polynomial quotient and the stated ordered matrices; an arbitrary
 
 ([knudsen2012](#references), §3 Key Example, printed pp.11–12, matrix and κ/λ comparisons and Proposition3.1 proof.)
 
-*Needs:* [the scalar equation for vanishing in the dual](#283-the-scalar-equation-for-vanishing-in-the-dual), [relations in the section dual presentation](#282-relations-in-the-section-dual-presentation), [the left node matrix acting on a column](#223-the-left-node-matrix-acting-on-a-column), [the section-coordinate relation](#218-the-section-coordinate-relation).
+*Needs:* [the scalar equation for vanishing in the dual](#275-the-scalar-equation-for-vanishing-in-the-dual), [relations in the section dual presentation](#274-relations-in-the-section-dual-presentation), [the left node matrix acting on a column](#223-the-left-node-matrix-acting-on-a-column), [the section-coordinate relation](#218-the-section-coordinate-relation).
 
-### 2.93 Exactness at the transposed left matrix
+### 2.85 Exactness at the transposed left matrix
 
 For every commutative ring A and γ,δ,s,t∈A, let F=X²+C(γY)X+C(δY²−q(s,t)), q(x,y)=x²+γxy+δy², R=AdjoinRoot(F), ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), and E:R≃A[Y]×A[Y] the ordered polynomial coordinates. Put Φ=((a,b),(−c,d)) and Ψ=((d,−b),(c,a)). The canonical ε∈D is characterized by dε(j)=bj. The ordered maps are P_J(z)=cz₀−dz₁ and P_D(z)=z₀·incl−z₁·ε. ker Φᵀ=im Ψᵀ.
 
@@ -2493,9 +2376,9 @@ Use the actual polynomial quotient and the stated ordered matrices; an arbitrary
 
 ([knudsen2012](#references), §3 Key Example, printed pp.11–12, matrix and κ/λ comparisons and Proposition3.1 proof.)
 
-*Needs:* [the transposed left matrix acting on a column](#224-the-transposed-left-matrix-acting-on-a-column), [the transposed right matrix acting on a column](#225-the-transposed-right-matrix-acting-on-a-column), [relations in the section dual presentation](#282-relations-in-the-section-dual-presentation), [the section-coordinate relation](#218-the-section-coordinate-relation).
+*Needs:* [the transposed left matrix acting on a column](#224-the-transposed-left-matrix-acting-on-a-column), [the transposed right matrix acting on a column](#225-the-transposed-right-matrix-acting-on-a-column), [relations in the section dual presentation](#274-relations-in-the-section-dual-presentation), [the section-coordinate relation](#218-the-section-coordinate-relation).
 
-### 2.94 Exactness at the transposed right matrix
+### 2.86 Exactness at the transposed right matrix
 
 For every commutative ring A and γ,δ,s,t∈A, let F=X²+C(γY)X+C(δY²−q(s,t)), q(x,y)=x²+γxy+δy², R=AdjoinRoot(F), ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), and E:R≃A[Y]×A[Y] the ordered polynomial coordinates. Put Φ=((a,b),(−c,d)) and Ψ=((d,−b),(c,a)). The canonical ε∈D is characterized by dε(j)=bj. The ordered maps are P_J(z)=cz₀−dz₁ and P_D(z)=z₀·incl−z₁·ε. ker Ψᵀ=im Φᵀ.
 
@@ -2507,9 +2390,9 @@ Use the actual polynomial quotient and the stated ordered matrices; an arbitrary
 
 ([knudsen2012](#references), §3 Key Example, printed pp.11–12, matrix and κ/λ comparisons and Proposition3.1 proof.)
 
-*Needs:* [the transposed left matrix acting on a column](#224-the-transposed-left-matrix-acting-on-a-column), [the transposed right matrix acting on a column](#225-the-transposed-right-matrix-acting-on-a-column), [relations between the section ideal generators](#281-relations-between-the-section-ideal-generators), [the section-coordinate relation](#218-the-section-coordinate-relation).
+*Needs:* [the transposed left matrix acting on a column](#224-the-transposed-left-matrix-acting-on-a-column), [the transposed right matrix acting on a column](#225-the-transposed-right-matrix-acting-on-a-column), [relations between the section ideal generators](#273-relations-between-the-section-ideal-generators), [the section-coordinate relation](#218-the-section-coordinate-relation).
 
-### 2.95 Bidual values belong to the section ideal
+### 2.87 Bidual values belong to the section ideal
 
 For every commutative ring A and γ,δ,s,t∈A, put q(X,Y)=X²+γXY+δY², R=A[Y][X]/(q(X,Y)−q(s,t)), ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), incl:J→R, and ε∈D with dε(j)=bj. Write η=Module.Dual.eval R J. For every F∈Hom_R(D,R), F(incl)∈J.
 
@@ -2521,23 +2404,23 @@ Use the actual ideal subtype and native Module.Dual, Module.Dual.eval and Module
 
 ([knudsen2012](#references), §3 Key Example, multiplication description of J∨ and Proposition 3.1; compare Corollary 3.2 and §4.)
 
-*Needs:* [the bidual generator relation](#284-the-bidual-generator-relation), [relations in the section dual presentation](#282-relations-in-the-section-dual-presentation), `Ideal.mem_span_pair`.
+*Needs:* [the bidual generator relation](#276-the-bidual-generator-relation), [relations in the section dual presentation](#274-relations-in-the-section-dual-presentation), `Ideal.mem_span_pair`.
 
-### 2.96 Completed scalars balance at finite level
+### 2.88 Completed scalars balance at finite level
 
 Under coefficient convention C4. For arbitrary Â-module N equip N with its restricted A-action; require the actual scalar tower A→Â→N. Neither flatness nor finite generation of N is assumed, and its action need not factor through Bₙ. Assume p is finitely generated. For a∈Â, q∈Qₙ and z∈N, (aq)⊗_A z=q⊗_A(az).
 
 The displayed finite-generation hypothesis is used only where stated. All actions are the specified actual restrictions. No flatness of N, no noetherianity or localness, and no discriminant hypothesis is introduced. The completed-base module N is arbitrary.
 
-One proof uses the following inputs and comparisons. Choose b∈A lifting evalₙ(a). The difference a−e_A(b) belongs to pⁿ·Â. Its action contributes zero to the A-tensor by the preceding lemma, and zero to Qₙ by the chosen finite action. Reduce to the ordinary A-balancing relation. Use [the finite quotient retains its native original-coefficient action](#266-the-finite-quotient-retains-its-native-original-coefficient-action) to compare the inherited original-coefficient action with the displayed finite coefficient homomorphism.
+One proof uses the following inputs and comparisons. Choose b∈A lifting evalₙ(a). The difference a−e_A(b) belongs to pⁿ·Â. Its action contributes zero to the A-tensor by the preceding lemma, and zero to Qₙ by the chosen finite action. Reduce to the ordinary A-balancing relation. Use [the finite quotient retains its native original-coefficient action](#259-the-finite-quotient-retains-its-native-original-coefficient-action) to compare the inherited original-coefficient action with the displayed finite coefficient homomorphism.
 
 Use the actual native polynomial chart, ideal quotients, adic completion, tensor product and linear-map spaces. No comparison conclusion is an input hypothesis. A finite quotient equivalence does not identify the whole completed tensor products and does not close Proposition6, Proposition7, stable-reflexivity, pointed hull or moduli geometry.
 
 ([knudsen2](#references), Appendix, Definition 1 and Theorem 2, printed pp. 191–193, set up the completed coefficient rings and modules used here; the statement itself is a consequence of the definitions and of the cited targets.)
 
-*Needs:* [completed coefficients on the finite base](#25-completed-coefficients-on-the-finite-base), [completion kernel vanishes in the finite tensor](#286-completion-kernel-vanishes-in-the-finite-tensor), [finite nodal coefficient algebra](#254-finite-nodal-coefficient-algebra), `Ideal.Quotient.mk_surjective`, `AdicCompletion.evalₐ_of`, `AdicCompletion.algebraMap_apply`, [the finite quotient retains its native original-coefficient action](#266-the-finite-quotient-retains-its-native-original-coefficient-action).
+*Needs:* [completed coefficients on the finite base](#25-completed-coefficients-on-the-finite-base), [completion kernel vanishes in the finite tensor](#278-completion-kernel-vanishes-in-the-finite-tensor), [finite nodal coefficient algebra](#249-finite-nodal-coefficient-algebra), `Ideal.Quotient.mk_surjective`, `AdicCompletion.evalₐ_of`, `AdicCompletion.algebraMap_apply`, [the finite quotient retains its native original-coefficient action](#259-the-finite-quotient-retains-its-native-original-coefficient-action).
 
-### 2.97 Cokernel presentation of the section ideal
+### 2.89 Cokernel presentation of the section ideal
 
 Set q=X²+γXY+δY², F=q(X,Y)−q(s,t), R=A[Y][X]/(F), u=[X], v=[Y], ι:A→R, c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδ·v+ιδ·ιt+ιγ·u, J=(c,d), D=Hom_R(J,R). For Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), construct eJ:coker Ψ≃ₗ[R]J with eJ([z₀,z₁])=c z₀−d z₁.
 
@@ -2557,15 +2440,14 @@ The construction has the following API.
 
 - [1,0] maps to c.
 - [0,1] maps to −d, retaining the sign outside characteristic two.
-- The zero vector maps to the zero ideal element.
 - Over Z/4 with γ=δ=t=0 and s=1, the actually constructed ideal cokernel equivalence sends the two basis classes to u−1 and −v.
 - The actual ideal cokernel comparison exists over the zero coefficient ring Z/1.
 
 ([knudsen2012](#references), §3, printed pp.11–12: monic division, κ/λ comparisons and proof of Proposition3.1.)
 
-*Needs:* [the ordered surjection to the section ideal](#221-the-ordered-surjection-to-the-section-ideal), [surjectivity of the ordered ideal presentation](#238-surjectivity-of-the-ordered-ideal-presentation), [the relations of the section ideal surjection](#291-the-relations-of-the-section-ideal-surjection), `Submodule.quotEquivOfEq`, `Submodule.quotEquivOfEq_mk`, `LinearMap.quotKerEquivOfSurjective`, `LinearMap.quotKerEquivOfSurjective_apply_mk`, [evaluation of the ordered ideal presentation](#231-evaluation-of-the-ordered-ideal-presentation).
+*Needs:* [the ordered surjection to the section ideal](#221-the-ordered-surjection-to-the-section-ideal), [surjectivity of the ordered ideal presentation](#236-surjectivity-of-the-ordered-ideal-presentation), [the relations of the section ideal surjection](#283-the-relations-of-the-section-ideal-surjection), `Submodule.quotEquivOfEq`, `Submodule.quotEquivOfEq_mk`, `LinearMap.quotKerEquivOfSurjective`, `LinearMap.quotKerEquivOfSurjective_apply_mk`.
 
-### 2.98 Coefficient base change of the section ideal
+### 2.90 Coefficient base change of the section ideal
 
 Set q=X²+γXY+δY², F=q(X,Y)−q(s,t), R=A[Y][X]/(F), u=[X], v=[Y], ι:A→R, c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδ·v+ιδ·ιt+ιγ·u, J=(c,d), D=Hom_R(J,R). For any f:A→A′, the canonical map A′⊗_A J→J′, a′⊗j↦ι′a′ φ(j), is an A′-linear equivalence onto J′=(c′,d′).
 
@@ -2577,9 +2459,9 @@ No flatness of f is used; the source sequence is split.
 
 ([knudsen2012](#references), §3, printed pp.11–12: monic division, κ/λ comparisons and proof of Proposition3.1.)
 
-*Needs:* [coefficient base change of the node ring](#278-coefficient-base-change-of-the-node-ring), [kernel of section evaluation](#213-kernel-of-section-evaluation), [coefficient flatness of the section ideal](#287-coefficient-flatness-of-the-section-ideal), `TensorProduct.lift`.
+*Needs:* [coefficient base change of the node ring](#270-coefficient-base-change-of-the-node-ring), [kernel of section evaluation](#213-kernel-of-section-evaluation), [coefficient flatness of the section ideal](#279-coefficient-flatness-of-the-section-ideal), `TensorProduct.lift`.
 
-### 2.99 Coefficient naturality of the ideal projection
+### 2.91 Coefficient naturality of the ideal projection
 
 Retain R=AdjoinRoot(X²+C(γY)X+C(δY²−q(s,t))), ι:A→R, u=[X], v=[Y], c=u−ιs,d=v−ιt,b=u+ιs+ιγ·ιt, J=(c,d)=ker(ev), and the existing canonical projection p(r)=r−ιev(r) and dual generator ε:J→R with dε(j)=bj. Let R′,J′,p′,ε′ denote the same native objects with mapped coefficients, and φ:R→R′ the existing coefficient map induced by AdjoinRoot.map. For every r∈R, ψ(p(r))=p′(φ(r)) as actual elements of J′.
 
@@ -2591,9 +2473,9 @@ Equality is in the native target ideal, not merely in an unspecified ambient car
 
 ([knudsen2012](#references), Introduction, base-change requirement; §3 Key Example through Proposition3.1 and Corollary3.2 proof, especially regularity of v−t and the generator formulas.)
 
-*Needs:* [semilinear coefficient map on the section ideal](#289-semilinear-coefficient-map-on-the-section-ideal), [canonical retraction onto the section ideal](#235-canonical-retraction-onto-the-section-ideal), [underlying element of the section projection](#243-underlying-element-of-the-section-projection), [naturality of section evaluation](#279-naturality-of-section-evaluation).
+*Needs:* [semilinear coefficient map on the section ideal](#281-semilinear-coefficient-map-on-the-section-ideal), [canonical retraction onto the section ideal](#234-canonical-retraction-onto-the-section-ideal), [underlying element of the section projection](#241-underlying-element-of-the-section-projection), [naturality of section evaluation](#271-naturality-of-section-evaluation).
 
-### 2.100 Coefficient naturality of the canonical dual generator
+### 2.92 Coefficient naturality of the canonical dual generator
 
 Retain R=AdjoinRoot(X²+C(γY)X+C(δY²−q(s,t))), ι:A→R, u=[X], v=[Y], c=u−ιs,d=v−ιt,b=u+ιs+ιγ·ιt, J=(c,d)=ker(ev), and the existing canonical projection p(r)=r−ιev(r) and dual generator ε:J→R with dε(j)=bj. Let R′,J′,p′,ε′ denote the same native objects with mapped coefficients, and φ:R→R′ the existing coefficient map induced by AdjoinRoot.map. For every actual j∈J, φ(ε(j))=ε′(ψ(j)). This is pointwise naturality of the existing canonical generators, not an isomorphism between the entire dual modules.
 
@@ -2605,9 +2487,9 @@ Only native target-coordinate regularity is used; injectivity of f or φ is not 
 
 ([knudsen2012](#references), Introduction, base-change requirement; §3 Key Example through Proposition3.1 and Corollary3.2 proof, especially regularity of v−t and the generator formulas.)
 
-*Needs:* [semilinear coefficient map on the section ideal](#289-semilinear-coefficient-map-on-the-section-ideal), [denominator-free dual generator](#242-denominator-free-dual-generator), [the canonical dual-generator identity](#257-the-canonical-dual-generator-identity), [regularity of the second section coordinate](#234-regularity-of-the-second-section-coordinate), [coefficient map of pointed node rings](#214-coefficient-map-of-pointed-node-rings).
+*Needs:* [semilinear coefficient map on the section ideal](#281-semilinear-coefficient-map-on-the-section-ideal), [denominator-free dual generator](#240-denominator-free-dual-generator), [the canonical dual-generator identity](#252-the-canonical-dual-generator-identity), [regularity of the second section coordinate](#233-regularity-of-the-second-section-coordinate), [coefficient map of pointed node rings](#214-coefficient-map-of-pointed-node-rings).
 
-### 2.101 Existence of section-dual normal coordinates
+### 2.93 Existence of section-dual normal coordinates
 
 For any commutative A and γ,δ,s,t∈A, retain the actual R=AdjoinRoot(F), F=X²+C(γY)X+C(δY²−q(s,t)), u=[X], v=[Y], ι:A→R, c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, J=(c,d), D=Hom_R(J,R), and the ordered native equivalence E:R≃A[Y]×A[Y]. Given ε∈D with dε(j)=bj, every h∈D admits (r,α)∈R×A with h(j)=rj+ιαε(j) for all j∈J.
 
@@ -2619,9 +2501,9 @@ Keep the native quotient and ideal, ordered polynomial coordinates and the zero/
 
 ([knudsen2012](#references), arXiv:1106.1588v2 §3 Key Example and complete proofs of Proposition 3.1 and Corollary 3.2.)
 
-*Needs:* [polynomial decomposition of the second dual value](#290-polynomial-decomposition-of-the-second-dual-value), [commutation of ideal values in the dual](#220-commutation-of-ideal-values-in-the-dual), [regularity of the second section coordinate](#234-regularity-of-the-second-section-coordinate), [denominator-free dual generator](#242-denominator-free-dual-generator).
+*Needs:* [polynomial decomposition of the second dual value](#282-polynomial-decomposition-of-the-second-dual-value), [commutation of ideal values in the dual](#220-commutation-of-ideal-values-in-the-dual), [regularity of the second section coordinate](#233-regularity-of-the-second-section-coordinate), [denominator-free dual generator](#240-denominator-free-dual-generator).
 
-### 2.102 Exactness at the left node matrix
+### 2.94 Exactness at the left node matrix
 
 For every commutative ring A and γ,δ,s,t∈A, let F=X²+C(γY)X+C(δY²−q(s,t)), q(x,y)=x²+γxy+δy², R=AdjoinRoot(F), ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), and E:R≃A[Y]×A[Y] the ordered polynomial coordinates. Put Φ=((a,b),(−c,d)) and Ψ=((d,−b),(c,a)). The canonical ε∈D is characterized by dε(j)=bj. The ordered maps are P_J(z)=cz₀−dz₁ and P_D(z)=z₀·incl−z₁·ε. ker Φ=im Ψ.
 
@@ -2633,9 +2515,9 @@ Use the actual polynomial quotient and the stated ordered matrices; an arbitrary
 
 ([knudsen2012](#references), §3 Key Example, printed pp.11–12, matrix and κ/λ comparisons and Proposition3.1 proof.)
 
-*Needs:* [the relations of the section ideal surjection](#291-the-relations-of-the-section-ideal-surjection), [evaluation of the ordered ideal presentation](#231-evaluation-of-the-ordered-ideal-presentation), [the left node matrix acting on a column](#223-the-left-node-matrix-acting-on-a-column), [the right node matrix acting on a column](#222-the-right-node-matrix-acting-on-a-column), [the section-coordinate relation](#218-the-section-coordinate-relation).
+*Needs:* [the relations of the section ideal surjection](#283-the-relations-of-the-section-ideal-surjection), [the ordered surjection to the section ideal](#221-the-ordered-surjection-to-the-section-ideal), [the left node matrix acting on a column](#223-the-left-node-matrix-acting-on-a-column), [the right node matrix acting on a column](#222-the-right-node-matrix-acting-on-a-column), [the section-coordinate relation](#218-the-section-coordinate-relation).
 
-### 2.103 Exactness at the right node matrix
+### 2.95 Exactness at the right node matrix
 
 For every commutative ring A and γ,δ,s,t∈A, let F=X²+C(γY)X+C(δY²−q(s,t)), q(x,y)=x²+γxy+δy², R=AdjoinRoot(F), ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), and E:R≃A[Y]×A[Y] the ordered polynomial coordinates. Put Φ=((a,b),(−c,d)) and Ψ=((d,−b),(c,a)). The canonical ε∈D is characterized by dε(j)=bj. The ordered maps are P_J(z)=cz₀−dz₁ and P_D(z)=z₀·incl−z₁·ε. ker Ψ=im Φ.
 
@@ -2647,9 +2529,9 @@ Use the actual polynomial quotient and the stated ordered matrices; an arbitrary
 
 ([knudsen2012](#references), §3 Key Example, printed pp.11–12, matrix and κ/λ comparisons and Proposition3.1 proof.)
 
-*Needs:* [the relations of the section dual surjection](#292-the-relations-of-the-section-dual-surjection), [the scalar equation for vanishing in the dual](#283-the-scalar-equation-for-vanishing-in-the-dual), [the left node matrix acting on a column](#223-the-left-node-matrix-acting-on-a-column), [the right node matrix acting on a column](#222-the-right-node-matrix-acting-on-a-column), [the section-coordinate relation](#218-the-section-coordinate-relation).
+*Needs:* [the relations of the section dual surjection](#284-the-relations-of-the-section-dual-surjection), [the scalar equation for vanishing in the dual](#275-the-scalar-equation-for-vanishing-in-the-dual), [the left node matrix acting on a column](#223-the-left-node-matrix-acting-on-a-column), [the right node matrix acting on a column](#222-the-right-node-matrix-acting-on-a-column), [the section-coordinate relation](#218-the-section-coordinate-relation).
 
-### 2.104 Tensor inclusion of the right matrix image
+### 2.96 Tensor inclusion of the right matrix image
 
 For any commutative ring A and γ,δ,s,t∈A, put q(x,y)=x²+γxy+δy², R=A[Y][X]/(q(X,Y)−q(s,t)), ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), P_J(z)=cz₀−dz₁, P_D(z)=z₀·incl−z₁·ε, where dε(j)=bj. Restrict these maps to A. For every A-module M write T_M(f)=id_M⊗_A f, on the actual native tensor products. T_M(im(Ψ)↪R²) is injective; M need not be flat.
 
@@ -2661,9 +2543,9 @@ Use the actual node ring, section ideal, R-linear dual and ordered native matrix
 
 ([knudsen2012](#references), §3 Key Example, printed pp.11–12: pψ=φᵀp, pφ=ψᵀp and Proposition3.1.)
 
-*Needs:* [coefficient flatness of the section ideal](#287-coefficient-flatness-of-the-section-ideal), [surjectivity of the ordered ideal presentation](#238-surjectivity-of-the-ordered-ideal-presentation), [the relations of the section ideal surjection](#291-the-relations-of-the-section-ideal-surjection), `LinearMap.lTensor_injective_of_exact_of_flat`.
+*Needs:* [coefficient flatness of the section ideal](#279-coefficient-flatness-of-the-section-ideal), [surjectivity of the ordered ideal presentation](#236-surjectivity-of-the-ordered-ideal-presentation), [the relations of the section ideal surjection](#283-the-relations-of-the-section-ideal-surjection), `LinearMap.lTensor_injective_of_exact_of_flat`.
 
-### 2.105 Tensor exactness of the ideal presentation
+### 2.97 Tensor exactness of the ideal presentation
 
 For any commutative ring A and γ,δ,s,t∈A, put q(x,y)=x²+γxy+δy², R=A[Y][X]/(q(X,Y)−q(s,t)), ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), P_J(z)=cz₀−dz₁, P_D(z)=z₀·incl−z₁·ε, where dε(j)=bj. Restrict these maps to A. For every A-module M write T_M(f)=id_M⊗_A f, on the actual native tensor products. ker T_M(P_J)=im T_M(Ψ).
 
@@ -2675,9 +2557,9 @@ Use the actual node ring, section ideal, R-linear dual and ordered native matrix
 
 ([knudsen2012](#references), §3 Key Example, printed pp.11–12: pψ=φᵀp, pφ=ψᵀp and Proposition3.1.)
 
-*Needs:* [the relations of the section ideal surjection](#291-the-relations-of-the-section-ideal-surjection), [surjectivity of the ordered ideal presentation](#238-surjectivity-of-the-ordered-ideal-presentation), `LinearMap.exact_iff`, `lTensor_exact`.
+*Needs:* [the relations of the section ideal surjection](#283-the-relations-of-the-section-ideal-surjection), [surjectivity of the ordered ideal presentation](#236-surjectivity-of-the-ordered-ideal-presentation), `LinearMap.exact_iff`, `lTensor_exact`.
 
-### 2.106 The tensorized ideal cokernel
+### 2.98 The tensorized ideal cokernel
 
 For any commutative ring A and γ,δ,s,t∈A, put q(x,y)=x²+γxy+δy², R=A[Y][X]/(q(X,Y)−q(s,t)), ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), P_J(z)=cz₀−dz₁, P_D(z)=z₀·incl−z₁·ε, where dε(j)=bj. Restrict these maps to A. For every A-module M write T_M(f)=id_M⊗_A f, on the actual native tensor products. Construct the A-linear equivalence E_J^M:coker T_M(Ψ)≃M⊗_A J characterized by E_J^M([z])=T_M(P_J)(z).
 
@@ -2702,9 +2584,9 @@ The construction has the following API.
 
 ([knudsen2012](#references), §3 Key Example, printed pp.11–12: pψ=φᵀp, pφ=ψᵀp and Proposition3.1.)
 
-*Needs:* [the relations of the section ideal surjection](#291-the-relations-of-the-section-ideal-surjection), [surjectivity of the ordered ideal presentation](#238-surjectivity-of-the-ordered-ideal-presentation), `LinearMap.exact_iff`, `lTensor.equiv`.
+*Needs:* [the relations of the section ideal surjection](#283-the-relations-of-the-section-ideal-surjection), [surjectivity of the ordered ideal presentation](#236-surjectivity-of-the-ordered-ideal-presentation), `LinearMap.exact_iff`, `lTensor.equiv`.
 
-### 2.107 Inverse of section bidual evaluation
+### 2.99 Inverse of section bidual evaluation
 
 For every commutative ring A and γ,δ,s,t∈A, put q(X,Y)=X²+γXY+δY², R=A[Y][X]/(q(X,Y)−q(s,t)), ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), incl:J→R, and ε∈D with dε(j)=bj. Write η=Module.Dual.eval R J. Construct the R-linear map ψ:Hom_R(D,R)→J with underlying value ψ(F)=F(incl).
 
@@ -2728,9 +2610,9 @@ The construction has the following API.
 
 ([knudsen2012](#references), §3, pp. 11–13, separating the polynomial multiplication argument on pp. 11–12 (knudsen2012 lines 484–508) from the completed Corollary 3.2 on pp. 12–13 (knudsen2012 lines 509–524). This inverse is a deduction from the preceding bidual-membership target and canonical evaluation, not an additional assertion of completion flatness.)
 
-*Needs:* [bidual values belong to the section ideal](#295-bidual-values-belong-to-the-section-ideal).
+*Needs:* [bidual values belong to the section ideal](#287-bidual-values-belong-to-the-section-ideal).
 
-### 2.108 Degree-zero cycles factor through the section ideal
+### 2.100 Degree-zero cycles factor through the section ideal
 
 For any commutative ring A and γ,δ,s,t∈A, use the actual polynomial ring R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), its coefficient map ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt and a=ιδ·v+ιδ·ιt+ιγ·u. Set J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), and the signed presentations P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε. For any A-module M put N=R⊗_A M with its native left R-action and H=Hom_R(R²,N). Write L_W(h)=h∘W for native R-linear precomposition and E:R²⊗_A M≃Hom_R(R²,N) for the previously specified finite-free tensor coordinates. Precomposition by the actual P_J: R²→J followed by d(false,0) is an exact pair. Thus the zero-degree cycles are exactly f∘P_J for R-linear f:J→N; precomposition is injective because P_J is surjective.
 
@@ -2740,11 +2622,11 @@ One proof uses the following inputs and comparisons. Reuse the existing exact pr
 
 Use actual R-linear Hom maps, the signed P_J/P_D presentations and native ModuleCat homology. Do not infer Ext vanishing, relative stable reflexivity, completed-local comparisons or family/sheaf descent from this cochain result alone.
 
-([knudsen2012](#references), §3 Key Example, the exact matrix-factorization sequences preceding and in Proposition3.1; §4 identifies completion/descent as separate inputs.; Deduction using `Matrix.mulVecLin_apply` in `Mathlib/LinearAlgebra/Matrix/ToLin.lean`, line 291, and `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [the polynomial section Hom differential](#29-the-polynomial-section-hom-differential), [the relations of the section ideal surjection](#291-the-relations-of-the-section-ideal-surjection), [surjectivity of the ordered ideal presentation](#238-surjectivity-of-the-ordered-ideal-presentation).)
+([knudsen2012](#references), §3 Key Example, the exact matrix-factorization sequences preceding and in Proposition3.1; §4 identifies completion/descent as separate inputs.; Deduction using `Matrix.mulVecLin_apply` in `Mathlib/LinearAlgebra/Matrix/ToLin.lean`, line 291, and `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [the polynomial section Hom differential](#29-the-polynomial-section-hom-differential), [the relations of the section ideal surjection](#283-the-relations-of-the-section-ideal-surjection), [surjectivity of the ordered ideal presentation](#236-surjectivity-of-the-ordered-ideal-presentation).)
 
-*Needs:* [the polynomial section Hom differential](#29-the-polynomial-section-hom-differential), [the relations of the section ideal surjection](#291-the-relations-of-the-section-ideal-surjection), [surjectivity of the ordered ideal presentation](#238-surjectivity-of-the-ordered-ideal-presentation), `LinearMap.exact_lcomp_of_exact_of_surjective`, `LinearMap.exact_iff`, `LinearMap.lcomp_injective_of_surjective`.
+*Needs:* [the polynomial section Hom differential](#29-the-polynomial-section-hom-differential), [the relations of the section ideal surjection](#283-the-relations-of-the-section-ideal-surjection), [surjectivity of the ordered ideal presentation](#236-surjectivity-of-the-ordered-ideal-presentation), `LinearMap.exact_lcomp_of_exact_of_surjective`, `LinearMap.exact_iff`, `LinearMap.lcomp_injective_of_surjective`.
 
-### 2.109 Compatible completed scalars at finite level
+### 2.101 Compatible completed scalars at finite level
 
 Under coefficient convention C4. For arbitrary Â-module N equip N with its restricted A-action; require the actual scalar tower A→Â→N. Neither flatness nor finite generation of N is assumed, and its action need not factor through Bₙ. Assume p is finitely generated. The actual actions satisfy native CompatibleSMul(A,Â,Qₙ,N).
 
@@ -2756,9 +2638,9 @@ Use the actual native polynomial chart, ideal quotients, adic completion, tensor
 
 ([knudsen2](#references), Appendix, Definition 1 and Theorem 2, printed pp. 191–193, set up the completed coefficient rings and modules used here; the statement itself is a consequence of the definitions and of the cited targets.)
 
-*Needs:* [completed scalars balance at finite level](#296-completed-scalars-balance-at-finite-level).
+*Needs:* [completed scalars balance at finite level](#288-completed-scalars-balance-at-finite-level).
 
-### 2.110 Finite tensor diagram over the original base
+### 2.102 Finite tensor diagram over the original base
 
 Under coefficient convention C6. Construct the actual functor Fᴬ_N:ℕᵒᵖ→ModuleCat(A), with object Qₙ⊗_A N at n and map τᵢⱼ⊗id_N from level j to i for i≤j. Here τᵢⱼ is the inherited actual quotient transition. Finite generation of p is unnecessary.
 
@@ -2781,11 +2663,11 @@ The construction has the following API.
 - In the same fixture with N=ℚ₂ every object Qₙ⊗_ℤℚ₂ is 0, since 2ⁿ kills Qₙ and is a unit in ℚ₂. A diagram with object Qₙ alone is nonzero there.
 - At level zero Q₀=R/R=0, so every transition from level j to level zero on the actual tensor module is zero.
 
-(Deduction using `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [finite quotient transition over completed coefficients](#277-finite-quotient-transition-over-completed-coefficients), [finite nodal coefficient algebra](#254-finite-nodal-coefficient-algebra), [the finite quotient retains its native original-coefficient action](#266-the-finite-quotient-retains-its-native-original-coefficient-action).; [knudsen2](#references), Appendix Proposition6, printed194–195 (physical34–35).)
+(Deduction using `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [finite quotient transition over completed coefficients](#269-finite-quotient-transition-over-completed-coefficients), [finite nodal coefficient algebra](#249-finite-nodal-coefficient-algebra), [the finite quotient retains its native original-coefficient action](#259-the-finite-quotient-retains-its-native-original-coefficient-action).; [knudsen2](#references), Appendix Proposition6, printed194–195 (physical34–35).)
 
-*Needs:* [finite quotient transition over completed coefficients](#277-finite-quotient-transition-over-completed-coefficients), [finite nodal coefficient algebra](#254-finite-nodal-coefficient-algebra), [the finite quotient retains its native original-coefficient action](#266-the-finite-quotient-retains-its-native-original-coefficient-action), `CategoryTheory.Functor`, `CategoryTheory.leOfHom`, `ModuleCat.of`, `ModuleCat.ofHom`, `ModuleCat.hom_injective`, `TensorProduct.induction_on`, `DFunLike.ext`, `Ideal.Quotient.mk_surjective`.
+*Needs:* [finite quotient transition over completed coefficients](#269-finite-quotient-transition-over-completed-coefficients), [finite nodal coefficient algebra](#249-finite-nodal-coefficient-algebra), [the finite quotient retains its native original-coefficient action](#259-the-finite-quotient-retains-its-native-original-coefficient-action), `CategoryTheory.Functor`, `CategoryTheory.leOfHom`, `ModuleCat.of`, `ModuleCat.ofHom`, `ModuleCat.hom_injective`, `TensorProduct.induction_on`, `DFunLike.ext`, `Ideal.Quotient.mk_surjective`.
 
-### 2.111 Finite tensor diagram over the completed base
+### 2.103 Finite tensor diagram over the completed base
 
 Under coefficient convention C6. Construct the actual functor FÂ_N:ℕᵒᵖ→ModuleCat(A), with object Qₙ⊗_Â N at n, restricted to A through native ModuleCat.restrictScalars along A→Â, and map τᵢⱼ⊗id_N over Â, restricted to A, from level j to i. Finite generation of p is unnecessary.
 
@@ -2808,11 +2690,11 @@ The construction has the following API.
 - In the same fixture with N=ℚ₂ every object `Qₙ⊗_{ℤ₂}ℚ₂` is 0, as over the original base.
 - At level zero Q₀=R/R=0, so every transition from level j to level zero on the actual tensor module is zero.
 
-(Deduction using `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [finite quotient transition over completed coefficients](#277-finite-quotient-transition-over-completed-coefficients), [finite nodal coefficient algebra](#254-finite-nodal-coefficient-algebra).; [knudsen2](#references), Appendix Proposition6, printed194–195 (physical34–35).)
+(Deduction using `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [finite quotient transition over completed coefficients](#269-finite-quotient-transition-over-completed-coefficients), [finite nodal coefficient algebra](#249-finite-nodal-coefficient-algebra).; [knudsen2](#references), Appendix Proposition6, printed194–195 (physical34–35).)
 
-*Needs:* [finite quotient transition over completed coefficients](#277-finite-quotient-transition-over-completed-coefficients), [finite nodal coefficient algebra](#254-finite-nodal-coefficient-algebra), `CategoryTheory.Functor`, `CategoryTheory.leOfHom`, `ModuleCat.of`, `ModuleCat.ofHom`, `ModuleCat.hom_injective`, `TensorProduct.induction_on`, `DFunLike.ext`, `Ideal.Quotient.mk_surjective`, `ModuleCat.restrictScalars`.
+*Needs:* [finite quotient transition over completed coefficients](#269-finite-quotient-transition-over-completed-coefficients), [finite nodal coefficient algebra](#249-finite-nodal-coefficient-algebra), `CategoryTheory.Functor`, `CategoryTheory.leOfHom`, `ModuleCat.of`, `ModuleCat.ofHom`, `ModuleCat.hom_injective`, `TensorProduct.induction_on`, `DFunLike.ext`, `Ideal.Quotient.mk_surjective`, `ModuleCat.restrictScalars`.
 
-### 2.112 Native completed-coefficient tensor diagram
+### 2.104 Native completed-coefficient tensor diagram
 
 Under coefficient convention C7. Construct G:ℕᵒᵖ→ModuleCat(Â), with object Qₙ⊗_Â N and transition τᵢⱼ⊗id_N for i≤j. This is the native Â-linear diagram before scalar restriction.
 
@@ -2834,11 +2716,11 @@ The construction has the following API.
 - Acting by 1/3 before or after the transition gives (3+6v+4v², 1+2v+4v²) at level 3, using (1/3)²≡1 modulo 8; exchanging the coordinates or using the coefficient 1 in place of 1/3 gives a different pair.
 - Every transition to level zero is the zero map, since Q₀=R/R=0; this includes the identity at level zero.
 
-(Deduction using `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [finite quotient transition over completed coefficients](#277-finite-quotient-transition-over-completed-coefficients), [finite nodal coefficient algebra](#254-finite-nodal-coefficient-algebra).; [knudsen2](#references), Appendix Proposition6, printed194–195 (physical34–35).)
+(Deduction using `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [finite quotient transition over completed coefficients](#269-finite-quotient-transition-over-completed-coefficients), [finite nodal coefficient algebra](#249-finite-nodal-coefficient-algebra).; [knudsen2](#references), Appendix Proposition6, printed194–195 (physical34–35).)
 
-*Needs:* [finite quotient transition over completed coefficients](#277-finite-quotient-transition-over-completed-coefficients), [finite nodal coefficient algebra](#254-finite-nodal-coefficient-algebra), `CategoryTheory.Functor`, `ModuleCat.of`, `ModuleCat.ofHom`, `CategoryTheory.leOfHom`, `TensorProduct.induction_on`, `Ideal.Quotient.mk_surjective`, `ModuleCat.hom_injective`, `DFunLike.ext`.
+*Needs:* [finite quotient transition over completed coefficients](#269-finite-quotient-transition-over-completed-coefficients), [finite nodal coefficient algebra](#249-finite-nodal-coefficient-algebra), `CategoryTheory.Functor`, `ModuleCat.of`, `ModuleCat.ofHom`, `CategoryTheory.leOfHom`, `TensorProduct.induction_on`, `Ideal.Quotient.mk_surjective`, `ModuleCat.hom_injective`, `DFunLike.ext`.
 
-### 2.113 Exactness of the node-section complex
+### 2.105 Exactness of the node-section complex
 
 Set q=X²+γXY+δY², F=q(X,Y)−q(s,t), R=A[Y][X]/(F), u=[X], v=[Y], ι:A→R, c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδ·v+ιδ·ιt+ιγ·u, J=(c,d), D=Hom_R(J,R). In this actual quotient the alternating Φ,Ψ complex and its transpose are exact: ker Φ=im Ψ, ker Ψ=im Φ, ker Φᵀ=im Ψᵀ and ker Ψᵀ=im Φᵀ. Cokernel identifications are the two separate construction nodes.
 
@@ -2857,9 +2739,9 @@ The conclusion does not hold for arbitrary specialized coordinate values in anot
 
 ([knudsen2012](#references), Proposition3.1 and proof,pp.11–12.)
 
-*Needs:* [exactness at the left node matrix](#2102-exactness-at-the-left-node-matrix), [exactness at the right node matrix](#2103-exactness-at-the-right-node-matrix), [exactness at the transposed left matrix](#293-exactness-at-the-transposed-left-matrix), [exactness at the transposed right matrix](#294-exactness-at-the-transposed-right-matrix).
+*Needs:* [exactness at the left node matrix](#294-exactness-at-the-left-node-matrix), [exactness at the right node matrix](#295-exactness-at-the-right-node-matrix), [exactness at the transposed left matrix](#285-exactness-at-the-transposed-left-matrix), [exactness at the transposed right matrix](#286-exactness-at-the-transposed-right-matrix).
 
-### 2.114 Normal form in the actual section dual
+### 2.106 Normal form in the actual section dual
 
 Set q=X²+γXY+δY², F=q(X,Y)−q(s,t), R=A[Y][X]/(F), u=[X], v=[Y], ι:A→R, c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδ·v+ιδ·ιt+ιγ·u, J=(c,d), D=Hom_R(J,R). With the characterized ε, every h∈D has a unique expression h=r·incl+ια·ε with (r,α)∈R×A.
 
@@ -2871,9 +2753,9 @@ The second coordinate lies in A, not a second independent copy of R.
 
 ([knudsen2012](#references), §3, printed pp.11–12: monic division, κ/λ comparisons and proof of Proposition3.1.)
 
-*Needs:* [existence of section-dual normal coordinates](#2101-existence-of-section-dual-normal-coordinates), [uniqueness from the second ideal generator](#270-uniqueness-from-the-second-ideal-generator), [denominator-free dual generator](#242-denominator-free-dual-generator), [regularity of the second section coordinate](#234-regularity-of-the-second-section-coordinate).
+*Needs:* [existence of section-dual normal coordinates](#293-existence-of-section-dual-normal-coordinates), [uniqueness from the second ideal generator](#262-uniqueness-from-the-second-ideal-generator), [denominator-free dual generator](#240-denominator-free-dual-generator), [regularity of the second section coordinate](#233-regularity-of-the-second-section-coordinate).
 
-### 2.115 Scalar correction in dual coordinates
+### 2.107 Scalar correction in dual coordinates
 
 Set q=X²+γXY+δY², F=q(X,Y)−q(s,t), R=A[Y][X]/(F), u=[X], v=[Y], ι:A→R, c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδ·v+ιδ·ιt+ιγ·u, J=(c,d), D=Hom_R(J,R). There is a unique A-linear K:R→R satisfying d K(r)=b(r−ι(ev r)). It obeys K(rz)=rK(z)+ι(ev z)K(r), K(c)=−a, K(d)=b and K(ια)=0.
 
@@ -2905,9 +2787,9 @@ The construction has the following API.
 
 ([knudsen2012](#references), §3, printed pp.11–12: monic division, κ/λ comparisons and proof of Proposition3.1.)
 
-*Needs:* [canonical retraction onto the section ideal](#235-canonical-retraction-onto-the-section-ideal), [denominator-free dual generator](#242-denominator-free-dual-generator), [the canonical dual-generator identity](#257-the-canonical-dual-generator-identity), [values of the dual generator](#258-values-of-the-dual-generator), [regularity of the second section coordinate](#234-regularity-of-the-second-section-coordinate), `LinearMap.restrictScalars`, [coefficient naturality of the ideal projection](#299-coefficient-naturality-of-the-ideal-projection), [coefficient naturality of the canonical dual generator](#2100-coefficient-naturality-of-the-canonical-dual-generator).
+*Needs:* [canonical retraction onto the section ideal](#234-canonical-retraction-onto-the-section-ideal), [denominator-free dual generator](#240-denominator-free-dual-generator), [the canonical dual-generator identity](#252-the-canonical-dual-generator-identity), [regularity of the second section coordinate](#233-regularity-of-the-second-section-coordinate), `LinearMap.restrictScalars`, [coefficient naturality of the ideal projection](#291-coefficient-naturality-of-the-ideal-projection), [coefficient naturality of the canonical dual generator](#292-coefficient-naturality-of-the-canonical-dual-generator).
 
-### 2.116 Finite presentation of the polynomial section ideal
+### 2.108 Finite presentation of the polynomial section ideal
 
 A is any commutative ring; γ,δ,s,t∈A. R=A[Y][X]/(X²+γYX+δY²−q(s,t)), c=u−s,d=v−t, J=(c,d), D=Hom_R(J,R), m:R→D, m(r)(j)=rj, Q=D/im(m). J is finitely presented as an R-module, even if A is nonnoetherian.
 
@@ -2919,9 +2801,9 @@ Finite generation of an ideal alone would not imply finite presentation over an 
 
 ([knudsen2012](#references), §3, Proposition 3.1, pp. 11–12, for the presentation of J as the cokernel of Ψ; finite presentation then follows from `Module.finitePresentation_of_surjective`.)
 
-*Needs:* [cokernel presentation of the section ideal](#297-cokernel-presentation-of-the-section-ideal), `Module.finitePresentation_of_surjective`, `Submodule.fg_range`.
+*Needs:* [cokernel presentation of the section ideal](#289-cokernel-presentation-of-the-section-ideal), `Module.finitePresentation_of_surjective`, `Submodule.fg_range`.
 
-### 2.117 Generators of the ideal cokernel
+### 2.109 Generators of the ideal cokernel
 
 For every commutative ring A and γ,δ,s,t∈A, let F=X²+C(γY)X+C(δY²−q(s,t)), q(x,y)=x²+γxy+δy², R=AdjoinRoot(F), ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), and E:R≃A[Y]×A[Y] the ordered polynomial coordinates. Put Φ=((a,b),(−c,d)) and Ψ=((d,−b),(c,a)). The canonical ε∈D is characterized by dε(j)=bj. The ordered maps are P_J(z)=cz₀−dz₁ and P_D(z)=z₀·incl−z₁·ε. For any e_J with the prescribed quotient formula, e_J([1,0])=c and e_J([0,1])=−d.
 
@@ -2933,9 +2815,9 @@ Use the actual polynomial quotient and the stated ordered matrices; an arbitrary
 
 ([knudsen2012](#references), §3 Key Example, printed pp.11–12, matrix and κ/λ comparisons and Proposition3.1 proof.)
 
-*Needs:* [cokernel presentation of the section ideal](#297-cokernel-presentation-of-the-section-ideal).
+*Needs:* [cokernel presentation of the section ideal](#289-cokernel-presentation-of-the-section-ideal).
 
-### 2.118 Uniqueness of the ideal cokernel comparison
+### 2.110 Uniqueness of the ideal cokernel comparison
 
 For every commutative ring A and γ,δ,s,t∈A, let F=X²+C(γY)X+C(δY²−q(s,t)), q(x,y)=x²+γxy+δy², R=AdjoinRoot(F), ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), and E:R≃A[Y]×A[Y] the ordered polynomial coordinates. Put Φ=((a,b),(−c,d)) and Ψ=((d,−b),(c,a)). The canonical ε∈D is characterized by dε(j)=bj. The ordered maps are P_J(z)=cz₀−dz₁ and P_D(z)=z₀·incl−z₁·ε. Any two R-linear cokernel equivalences with underlying formula [z]↦cz₀−dz₁ agree.
 
@@ -2947,9 +2829,9 @@ Use the actual polynomial quotient and the stated ordered matrices; an arbitrary
 
 ([knudsen2012](#references), §3 Key Example, printed pp.11–12, matrix and κ/λ comparisons and Proposition3.1 proof.)
 
-*Needs:* [cokernel presentation of the section ideal](#297-cokernel-presentation-of-the-section-ideal), `Submodule.Quotient.induction_on`.
+*Needs:* [cokernel presentation of the section ideal](#289-cokernel-presentation-of-the-section-ideal), `Submodule.Quotient.induction_on`.
 
-### 2.119 Coefficient universal exactness at Ψ
+### 2.111 Coefficient universal exactness at Ψ
 
 For any commutative ring A and γ,δ,s,t∈A, put q(x,y)=x²+γxy+δy², R=A[Y][X]/(q(X,Y)−q(s,t)), ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), P_J(z)=cz₀−dz₁, P_D(z)=z₀·incl−z₁·ε, where dε(j)=bj. Restrict these maps to A. For every A-module M write T_M(f)=id_M⊗_A f, on the actual native tensor products. ker T_M(Ψ)=im T_M(Φ).
 
@@ -2966,9 +2848,9 @@ Use the actual node ring, section ideal, R-linear dual and ordered native matrix
 
 ([knudsen2012](#references), §3 Key Example, printed pp.11–12: pψ=φᵀp, pφ=ψᵀp and Proposition3.1.)
 
-*Needs:* [exactness at the right node matrix](#2103-exactness-at-the-right-node-matrix), [tensor inclusion of the right matrix image](#2104-tensor-inclusion-of-the-right-matrix-image), `lTensor_exact`, `LinearMap.rangeRestrict`, `LinearMap.ker_rangeRestrict`, `LinearMap.surjective_rangeRestrict`, `LinearMap.subtype_comp_rangeRestrict`, `LinearMap.lTensor_comp`, `Function.Injective.comp_exact_iff_exact`.
+*Needs:* [exactness at the right node matrix](#295-exactness-at-the-right-node-matrix), [tensor inclusion of the right matrix image](#296-tensor-inclusion-of-the-right-matrix-image), `lTensor_exact`, `LinearMap.rangeRestrict`, `LinearMap.ker_rangeRestrict`, `LinearMap.surjective_rangeRestrict`, `LinearMap.subtype_comp_rangeRestrict`, `LinearMap.lTensor_comp`, `Function.Injective.comp_exact_iff_exact`.
 
-### 2.120 The polynomial section chain differential
+### 2.112 The polynomial section chain differential
 
 For any commutative ring A and γ,δ,s,t∈A, use the actual polynomial ring R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), its coefficient map ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt and a=ιδ·v+ιδ·ιt+ιγ·u. Set J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), and the signed presentations P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε.  Put F=R² with its native R-module structure. For e∈{false,true} write B(e,n)=Φ if (n mod 2=0) has the same truth value as e=true, and Ψ otherwise. C(e) has F in every degree n≥0, differential `C(e)_{n+1}→C(e)_n` given by B(e,n), and zero off that shape. Define B(e,n) as the actual R-linear matrix map F→F; false starts with Ψ and true with Φ.
 
@@ -2990,11 +2872,11 @@ The construction has the following API.
 - For γ=δ=s=t=0 over every A, B(true,0)(1,0) has second coordinate −u.
 - For γ=δ=s=t=0 over A=ℤ, Ψ(1,0)=(v,u) and Φ(v,u)=(u²,0)=(0,0) in R; over ℤ[u,v], before the quotient, the same composite is (u²,0)≠0, so B(e,n)∘B(e,n+1)=0 uses the defining relation.
 
-([knudsen2012](#references), arXiv:1106.1588v2 §3 Key Example, Proposition3.1 and Corollary3.2; §4 separates completed-local descent.; Deduction using `Matrix.mulVecLin_apply` in `Mathlib/LinearAlgebra/Matrix/ToLin.lean`, line 291. The construction-specific inputs are [exactness at the left node matrix](#2102-exactness-at-the-left-node-matrix), [exactness at the right node matrix](#2103-exactness-at-the-right-node-matrix).)
+([knudsen2012](#references), arXiv:1106.1588v2 §3 Key Example, Proposition3.1 and Corollary3.2; §4 separates completed-local descent.; Deduction using `Matrix.mulVecLin_apply` in `Mathlib/LinearAlgebra/Matrix/ToLin.lean`, line 291. The construction-specific inputs are [exactness at the left node matrix](#294-exactness-at-the-left-node-matrix), [exactness at the right node matrix](#295-exactness-at-the-right-node-matrix).)
 
-*Needs:* [exactness at the left node matrix](#2102-exactness-at-the-left-node-matrix), [exactness at the right node matrix](#2103-exactness-at-the-right-node-matrix).
+*Needs:* [exactness at the left node matrix](#294-exactness-at-the-left-node-matrix), [exactness at the right node matrix](#295-exactness-at-the-right-node-matrix).
 
-### 2.121 Finite two-base tensor equivalence
+### 2.113 Finite two-base tensor equivalence
 
 Under coefficient convention C4. For arbitrary Â-module N equip N with its restricted A-action; require the actual scalar tower A→Â→N. Neither flatness nor finite generation of N is assumed, and its action need not factor through Bₙ. Assume p is finitely generated. Construct the actual Qₙ-linear equivalence Eₙ,N:Qₙ⊗_A N≃Qₙ⊗_Â N.
 
@@ -3026,9 +2908,9 @@ The construction has the following API.
 
 ([knudsen2](#references), Appendix, Definition 1 and Theorem 2, printed pp. 191–193, set up the completed coefficient rings and modules used here; the statement itself is a consequence of the definitions and of the cited targets.)
 
-*Needs:* [compatible completed scalars at finite level](#2109-compatible-completed-scalars-at-finite-level), [finite nodal coefficient algebra](#254-finite-nodal-coefficient-algebra), `TensorProduct.CompatibleSMul`, `TensorProduct.equivOfCompatibleSMul`.
+*Needs:* [compatible completed scalars at finite level](#2101-compatible-completed-scalars-at-finite-level), [finite nodal coefficient algebra](#249-finite-nodal-coefficient-algebra), `TensorProduct.CompatibleSMul`, `TensorProduct.equivOfCompatibleSMul`.
 
-### 2.122 Restriction of the native completed diagram
+### 2.114 Restriction of the native completed diagram
 
 Under coefficient convention C7. Construct the natural isomorphism ρ from the A-linear completed-tensor diagram F̂ to G followed by native restriction of scalars along A→Â. Both components are the identity on actual tensors; morphisms are the same restricted Â-linear quotient transitions.
 
@@ -3050,11 +2932,11 @@ The construction has the following API.
 - The inverse component is the identity on each actual quotient tensor.
 - Every actual quotient transition agrees after native restriction of scalars.
 
-(The construction-specific inputs are [native completed-coefficient tensor diagram](#2112-native-completed-coefficient-tensor-diagram), [finite tensor diagram over the completed base](#2111-finite-tensor-diagram-over-the-completed-base).; [knudsen2](#references), Appendix Proposition6, printed194–195 (physical34–35).)
+(The construction-specific inputs are [native completed-coefficient tensor diagram](#2104-native-completed-coefficient-tensor-diagram), [finite tensor diagram over the completed base](#2103-finite-tensor-diagram-over-the-completed-base).; [knudsen2](#references), Appendix Proposition6, printed194–195 (physical34–35).)
 
-*Needs:* [native completed-coefficient tensor diagram](#2112-native-completed-coefficient-tensor-diagram), [finite tensor diagram over the completed base](#2111-finite-tensor-diagram-over-the-completed-base), `CategoryTheory.NatIso.ofComponents`, `ModuleCat.restrictScalars`.
+*Needs:* [native completed-coefficient tensor diagram](#2104-native-completed-coefficient-tensor-diagram), [finite tensor diagram over the completed base](#2103-finite-tensor-diagram-over-the-completed-base), `CategoryTheory.NatIso.ofComponents`, `ModuleCat.restrictScalars`.
 
-### 2.123 Completed-chart coefficient-linear evaluation
+### 2.115 Completed-chart coefficient-linear evaluation
 
 Under coefficient convention C5. Construct eₙ:R̂→ₐ[Â]Qₙ whose underlying ring map is the native completion evaluation at n.
 
@@ -3074,11 +2956,11 @@ The construction has the following API.
 - In the same fixture e₃((1/3)σ)=3(1+2v+4v²)=3+6v+4v² in Q₃, and reducing to level 2 gives 3+2v. The value 3 for e₂(1/3) already follows from additivity and e₂(1)=1, since 3 is invertible modulo 4; it is a value check, not a separation of the two scalar structures.
 - At n=0 the target Q₀ is the zero ring and e₀ is zero; at n=1, e₁(σ)=1 in Q₁=𝔽₂[u,v]/(u²).
 
-(Deduction using `AdicCompletion.transitionMap_comp_eval_apply` in `Mathlib/RingTheory/AdicCompletion/Basic.lean`, line 414. The construction-specific inputs are [the actual completed coefficient algebra](#285-the-actual-completed-coefficient-algebra), [completed nodal coefficient homomorphism](#276-completed-nodal-coefficient-homomorphism), [finite quotient transition over completed coefficients](#277-finite-quotient-transition-over-completed-coefficients), [native completed-coefficient tensor diagram](#2112-native-completed-coefficient-tensor-diagram).; [knudsen2](#references), Appendix Proposition 6, pp. 194–195, for the surrounding two-base completion problem; the displayed native diagram calculation is the deduction specified here.)
+(Deduction using `AdicCompletion.transitionMap_comp_eval_apply` in `Mathlib/RingTheory/AdicCompletion/Basic.lean`, line 414. The construction-specific inputs are [the actual completed coefficient algebra](#277-the-actual-completed-coefficient-algebra), [completed nodal coefficient homomorphism](#268-completed-nodal-coefficient-homomorphism), [finite quotient transition over completed coefficients](#269-finite-quotient-transition-over-completed-coefficients), [native completed-coefficient tensor diagram](#2104-native-completed-coefficient-tensor-diagram).; [knudsen2](#references), Appendix Proposition 6, pp. 194–195, for the surrounding two-base completion problem; the displayed native diagram calculation is the deduction specified here.)
 
-*Needs:* [the actual completed coefficient algebra](#285-the-actual-completed-coefficient-algebra), [completed nodal coefficient homomorphism](#276-completed-nodal-coefficient-homomorphism), [finite quotient transition over completed coefficients](#277-finite-quotient-transition-over-completed-coefficients), [native completed-coefficient tensor diagram](#2112-native-completed-coefficient-tensor-diagram), `AdicCompletion`, `AdicCompletion.evalₐ`, `TensorProduct`.
+*Needs:* [the actual completed coefficient algebra](#277-the-actual-completed-coefficient-algebra), [completed nodal coefficient homomorphism](#268-completed-nodal-coefficient-homomorphism), [finite quotient transition over completed coefficients](#269-finite-quotient-transition-over-completed-coefficients), [native completed-coefficient tensor diagram](#2104-native-completed-coefficient-tensor-diagram), `AdicCompletion`, `AdicCompletion.evalₐ`, `TensorProduct`.
 
-### 2.124 Assembly of completed-chart quotient families
+### 2.116 Assembly of completed-chart quotient families
 
 Under coefficient convention C5. For every family fₙ∈Qₙ satisfying τᵢⱼ(fⱼ)=fᵢ for i≤j, construct u∈R̂ from this actual family, without choosing representatives as mathematical data.
 
@@ -3098,11 +2980,11 @@ The construction has the following API.
 - A family with f₁=1 and f₂=0 is not compatible, since τ₁₂(0)=0≠1; it is not an input of the assembly.
 - The constant family fₙ=u assembles to the image of u∈R, and the identically zero family to 0.
 
-(The construction-specific inputs are [the actual completed coefficient algebra](#285-the-actual-completed-coefficient-algebra), [finite quotient transition over completed coefficients](#277-finite-quotient-transition-over-completed-coefficients), [native completed-coefficient tensor diagram](#2112-native-completed-coefficient-tensor-diagram).; [knudsen2](#references), Appendix Proposition 6, pp. 194–195, for the surrounding two-base completion problem; the displayed native diagram calculation is the deduction specified here.)
+(The construction-specific inputs are [the actual completed coefficient algebra](#277-the-actual-completed-coefficient-algebra), [finite quotient transition over completed coefficients](#269-finite-quotient-transition-over-completed-coefficients), [native completed-coefficient tensor diagram](#2104-native-completed-coefficient-tensor-diagram).; [knudsen2](#references), Appendix Proposition 6, pp. 194–195, for the surrounding two-base completion problem; the displayed native diagram calculation is the deduction specified here.)
 
-*Needs:* [the actual completed coefficient algebra](#285-the-actual-completed-coefficient-algebra), [finite quotient transition over completed coefficients](#277-finite-quotient-transition-over-completed-coefficients), [native completed-coefficient tensor diagram](#2112-native-completed-coefficient-tensor-diagram), `AdicCompletion`, `AdicCompletion.evalₐ`, `Ideal.Quotient.factor`, `Ideal.Quotient.factorPow`, `Ideal.Quotient.mk_surjective`, `TensorProduct`.
+*Needs:* [the actual completed coefficient algebra](#277-the-actual-completed-coefficient-algebra), [finite quotient transition over completed coefficients](#269-finite-quotient-transition-over-completed-coefficients), [native completed-coefficient tensor diagram](#2104-native-completed-coefficient-tensor-diagram), `AdicCompletion`, `AdicCompletion.evalₐ`, `Ideal.Quotient.factor`, `Ideal.Quotient.factorPow`, `Ideal.Quotient.mk_surjective`, `TensorProduct`.
 
-### 2.125 Finite-free quotient tensor coordinates
+### 2.117 Finite-free quotient tensor coordinates
 
 Under coefficient convention C5, put cₙ equal to the imported finite-coordinate equivalence `TensorProduct.piScalarRight` for Qₙ and Fin(r). Prove only its compatibility with this roadmap's Â-linear quotient-transition diagram: for i≤j, x∈G(j) and k∈Fin(r), cᵢ(G(j→i)x)(k)=τᵢⱼ(cⱼ(x)(k)). This specializes the native equivalence to the actual quotient Â-actions; it does not construct another coordinate equivalence or its inverse.
 
@@ -3116,9 +2998,9 @@ The proof evaluates on q⊗z, using `TensorProduct.map_tmul` and `TensorProduct.
 
 (Deduction from `TensorProduct.piScalarRightHom_tmul`, `TensorProduct.piScalarRight_symm_single` in `Mathlib/LinearAlgebra/TensorProduct/Pi.lean`, lines 139, 175, and `TensorProduct.map_tmul` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, line 59, with the quotient transitions of the cited earlier targets.)
 
-*Needs:* [the actual completed coefficient algebra](#285-the-actual-completed-coefficient-algebra), [finite quotient transition over completed coefficients](#277-finite-quotient-transition-over-completed-coefficients), [native completed-coefficient tensor diagram](#2112-native-completed-coefficient-tensor-diagram), `AdicCompletion`, `AdicCompletion.evalₐ`, `TensorProduct.piScalarRight`.
+*Needs:* [the actual completed coefficient algebra](#277-the-actual-completed-coefficient-algebra), [finite quotient transition over completed coefficients](#269-finite-quotient-transition-over-completed-coefficients), [native completed-coefficient tensor diagram](#2104-native-completed-coefficient-tensor-diagram), `AdicCompletion`, `AdicCompletion.evalₐ`, `TensorProduct.piScalarRight`.
 
-### 2.126 Embedding a nodal cone into finite coordinates
+### 2.118 Embedding a nodal cone into finite coordinates
 
 Under coefficient convention C1. For any Â-linear i:N→F and cone c over G_N, construct a cone over G_F with point c.pt and component (id_Qₙ⊗i)∘cₙ. The construction does not require a splitting.
 
@@ -3138,11 +3020,11 @@ The construction has the following API.
 - Under coefficient convention C1. For every Â-linear i:N→F, cone c and j≤k, the embedded cone k-component followed by G_F(k→j) equals its j-component.
 - Under coefficient convention C1. For the zero embedding map i:N→F, every embedded cone component is zero on every x∈c.pt. This does not assert that zero is a splitting.
 
-(Deduction using `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [native completed-coefficient tensor diagram](#2112-native-completed-coefficient-tensor-diagram).; [knudsen2](#references), Appendix Proposition 6, pp. 194–195, for the surrounding two-base completion problem; the displayed native diagram calculation is the deduction specified here.)
+(Deduction using `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [native completed-coefficient tensor diagram](#2104-native-completed-coefficient-tensor-diagram).; [knudsen2](#references), Appendix Proposition 6, pp. 194–195, for the surrounding two-base completion problem; the displayed native diagram calculation is the deduction specified here.)
 
-*Needs:* [native completed-coefficient tensor diagram](#2112-native-completed-coefficient-tensor-diagram), `TensorProduct`, `LinearMap.lTensor`.
+*Needs:* [native completed-coefficient tensor diagram](#2104-native-completed-coefficient-tensor-diagram), `TensorProduct`, `LinearMap.lTensor`.
 
-### 2.127 Compatible quotient Hom families
+### 2.119 Compatible quotient Hom families
 
 Under coefficient convention C2. Construct H_L as the native Â-submodule of ∏ₙ Hom_R(L,Qₙ⊗_Â N) consisting of families h with τᵢⱼ(hⱼ(x))=hᵢ(x) for every i≤j and x∈L. This carrier exists for every N.
 
@@ -3162,11 +3044,11 @@ The construction has the following API.
 - In the same setting, let h₁ be multiplication by 0 modulo 2 and h₂ multiplication by 1 modulo 4. Transition gives 1 modulo 2 rather than 0, so no member of H_L can have these two components.
 - The compatible multiplication families 5 and 1 agree at levels one and two, with values 1 modulo 2 and 1 modulo 4 at 1. At level three their values are 5 and 1 modulo 8. They are distinct in H_L; truncation to the first two levels cannot detect equality.
 
-(Deduction using `ModuleCat.sectionsSubmodule` in `Mathlib/Algebra/Category/ModuleCat/Limits.lean`, line 45. The construction-specific inputs are [native completed-coefficient tensor diagram](#2112-native-completed-coefficient-tensor-diagram).)
+(Deduction using `ModuleCat.sectionsSubmodule` in `Mathlib/Algebra/Category/ModuleCat/Limits.lean`, line 45. The construction-specific inputs are [native completed-coefficient tensor diagram](#2104-native-completed-coefficient-tensor-diagram).)
 
-*Needs:* [native completed-coefficient tensor diagram](#2112-native-completed-coefficient-tensor-diagram), `TensorProduct`.
+*Needs:* [native completed-coefficient tensor diagram](#2104-native-completed-coefficient-tensor-diagram), `TensorProduct`.
 
-### 2.128 Coefficient-linear normal coordinates of the dual
+### 2.120 Coefficient-linear normal coordinates of the dual
 
 Set q=X²+γXY+δY², F=q(X,Y)−q(s,t), R=A[Y][X]/(F), u=[X], v=[Y], ι:A→R, c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδ·v+ιδ·ιt+ιγ·u, J=(c,d), D=Hom_R(J,R). Construct the A-linear equivalence D≃ₗ[A]R×A whose inverse sends (r,α) to j↦rj+ια ε(j).
 
@@ -3185,8 +3067,6 @@ The construction has the following API.
 
 **Checks.**
 
-- The coordinates of inclusion are (1,0).
-- The coordinates of ε are (0,1).
 - Applying the equivalence after its inverse fixes every pair (r,α).
 - An actually constructed normal equivalence sends the actual map m(1) to (1,0).
 - Over Z/4Z with γ=δ=s=t=0, an actually constructed normal equivalence sends the canonical native ε to (0,1).
@@ -3196,9 +3076,9 @@ The construction has the following API.
 
 ([knudsen2012](#references), §3, printed pp.11–12: monic division, κ/λ comparisons and proof of Proposition3.1.)
 
-*Needs:* [normal form in the actual section dual](#2114-normal-form-in-the-actual-section-dual), [multiplication into the actual section dual](#246-multiplication-into-the-actual-section-dual), `LinearMap.map_smul_of_tower`, `LinearEquiv.ofBijective`.
+*Needs:* [normal form in the actual section dual](#2106-normal-form-in-the-actual-section-dual), [multiplication into the actual section dual](#243-multiplication-into-the-actual-section-dual), `LinearMap.map_smul_of_tower`, `LinearEquiv.ofBijective`.
 
-### 2.129 Dual of the extended section ideal
+### 2.121 Dual of the extended section ideal
 
 A is any commutative ring; γ,δ,s,t∈A. R=A[Y][X]/(X²+γYX+δY²−q(s,t)), c=u−s,d=v−t, J=(c,d), D=Hom_R(J,R), m:R→D, m(r)(j)=rj, Q=D/im(m). B is a commutative R-algebra flat as an R-module; J_B=J·B is the actual mapped ideal, D_B=Hom_B(J_B,B), m_B(b)(j)=bj and Q_B=D_B/im(m_B). Construct E_D:B⊗_R D≃_B D_B, canonically characterized by E_D(b⊗h)(E_J(b′⊗j))=bb′φ(h(j)). Also expose the actual B-linear multiplication map m_B:B→D_B.
 
@@ -3224,9 +3104,9 @@ The construction has the following API.
 
 ([stacks-hom-flat](#references), Stacks tag087R, Lemma15.67.4(1), together with the proof at087Q; [knudsen2](#references), Appendix Definition1, Theorem2, Propositions4–7, printed191–195 (PDF31–35).)
 
-*Needs:* [finite presentation of the polynomial section ideal](#2116-finite-presentation-of-the-polynomial-section-ideal), [section ideal under flat ambient extension](#215-section-ideal-under-flat-ambient-extension), `Module.FinitePresentation.isBaseChange_map`, `IsBaseChange.equiv`, `IsBaseChange.equiv_tmul`, `LinearMap.baseChangeHom`, `TensorProduct.AlgebraTensorModule.rid`.
+*Needs:* [finite presentation of the polynomial section ideal](#2108-finite-presentation-of-the-polynomial-section-ideal), [section ideal under flat ambient extension](#215-section-ideal-under-flat-ambient-extension), `Module.FinitePresentation.isBaseChange_map`, `IsBaseChange.equiv`, `IsBaseChange.equiv_tmul`, `LinearMap.baseChangeHom`, `TensorProduct.AlgebraTensorModule.rid`.
 
-### 2.130 The canonical correction identity
+### 2.122 The canonical correction identity
 
 For every r∈R, d K(r)=b(r−ι(ev(r))) for K=ε∘p.
 
@@ -3238,9 +3118,9 @@ Use the existing untruncated polynomial quotient, native coefficient algebra and
 
 ([knudsen2012](#references), §3, Proposition 3.1 multiplication identities, p. 12 (knudsen2012 lines 484–508). The displayed correction is a deduction using p(r)=r−ι(ev(r)); the completed Corollary 3.2 and its proof occupy pp. 12–13 (knudsen2012 lines 509–524).)
 
-*Needs:* [scalar correction in dual coordinates](#2115-scalar-correction-in-dual-coordinates), [the canonical dual-generator identity](#257-the-canonical-dual-generator-identity), [underlying element of the section projection](#243-underlying-element-of-the-section-projection).
+*Needs:* [scalar correction in dual coordinates](#2107-scalar-correction-in-dual-coordinates), [the canonical dual-generator identity](#252-the-canonical-dual-generator-identity), [underlying element of the section projection](#241-underlying-element-of-the-section-projection).
 
-### 2.131 Surjectivity of the ordered dual presentation
+### 2.123 Surjectivity of the ordered dual presentation
 
 For every commutative ring A and γ,δ,s,t∈A, let F=X²+C(γY)X+C(δY²−q(s,t)), q(x,y)=x²+γxy+δy², R=AdjoinRoot(F), ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), and E:R≃A[Y]×A[Y] the ordered polynomial coordinates. Put Φ=((a,b),(−c,d)) and Ψ=((d,−b),(c,a)). The canonical ε∈D is characterized by dε(j)=bj. The ordered maps are P_J(z)=cz₀−dz₁ and P_D(z)=z₀·incl−z₁·ε. P_D is surjective.
 
@@ -3252,9 +3132,9 @@ Use the actual polynomial quotient and the stated ordered matrices; an arbitrary
 
 ([knudsen2012](#references), §3 Key Example, printed pp.11–12, matrix and κ/λ comparisons and Proposition3.1 proof.)
 
-*Needs:* [evaluation of the ordered dual presentation](#272-evaluation-of-the-ordered-dual-presentation), [normal form in the actual section dual](#2114-normal-form-in-the-actual-section-dual), [the canonical dual-generator identity](#257-the-canonical-dual-generator-identity).
+*Needs:* [evaluation of the ordered dual presentation](#264-evaluation-of-the-ordered-dual-presentation), [normal form in the actual section dual](#2106-normal-form-in-the-actual-section-dual), [the canonical dual-generator identity](#252-the-canonical-dual-generator-identity).
 
-### 2.132 Coefficient universal exactness at Φᵀ
+### 2.124 Coefficient universal exactness at Φᵀ
 
 For any commutative ring A and γ,δ,s,t∈A, put q(x,y)=x²+γxy+δy², R=A[Y][X]/(q(X,Y)−q(s,t)), ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), P_J(z)=cz₀−dz₁, P_D(z)=z₀·incl−z₁·ε, where dε(j)=bj. Restrict these maps to A. For every A-module M write T_M(f)=id_M⊗_A f, on the actual native tensor products. ker T_M(Φᵀ)=im T_M(Ψᵀ).
 
@@ -3270,9 +3150,9 @@ Use the actual node ring, section ideal, R-linear dual and ordered native matrix
 
 ([knudsen2012](#references), §3 Key Example, printed pp.11–12: pψ=φᵀp, pφ=ψᵀp and Proposition3.1.)
 
-*Needs:* [tensor rotation intertwines φ transpose](#249-tensor-rotation-intertwines-φ-transpose), [tensor rotation intertwines ψ transpose](#250-tensor-rotation-intertwines-ψ-transpose), [coefficient universal exactness at ψ](#2119-coefficient-universal-exactness-at-ψ), `Function.Exact.of_ladder_linearEquiv_of_exact`.
+*Needs:* [tensor rotation intertwines φ transpose](#244-tensor-rotation-intertwines-φ-transpose), [tensor rotation intertwines ψ transpose](#245-tensor-rotation-intertwines-ψ-transpose), [coefficient universal exactness at ψ](#2111-coefficient-universal-exactness-at-ψ), `Function.Exact.of_ladder_linearEquiv_of_exact`.
 
-### 2.133 Exactness of consecutive section chain maps
+### 2.125 Exactness of consecutive section chain maps
 
 For any commutative ring A and γ,δ,s,t∈A, use the actual polynomial ring R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), its coefficient map ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt and a=ιδ·v+ιδ·ιt+ιγ·u. Set J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), and the signed presentations P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε.  Put F=R² with its native R-module structure. For e∈{false,true} write B(e,n)=Φ if (n mod 2=0) has the same truth value as e=true, and Ψ otherwise. C(e) has F in every degree n≥0, differential `C(e)_{n+1}→C(e)_n` given by B(e,n), and zero off that shape. For every e and n≥0, B(e,n+1) followed by B(e,n) is exact.
 
@@ -3282,11 +3162,11 @@ One proof uses the following inputs and comparisons. Separate the two parity val
 
 Use the actual signed P_J/P_D maps and native ModuleCat complex, projectivity and QuasiIso. Do not infer native Ext, relative stable reflexivity, two-base completion, hull identification or family/sheaf descent from the resolutions or differential comparison alone.
 
-([knudsen2012](#references), arXiv:1106.1588v2 §3 Key Example, Proposition3.1 and Corollary3.2; §4 separates completed-local descent.; Deduction using `Matrix.mulVecLin_apply` in `Mathlib/LinearAlgebra/Matrix/ToLin.lean`, line 291. The construction-specific inputs are [the polynomial section chain differential](#2120-the-polynomial-section-chain-differential), [exactness at the left node matrix](#2102-exactness-at-the-left-node-matrix), [exactness at the right node matrix](#2103-exactness-at-the-right-node-matrix).)
+([knudsen2012](#references), arXiv:1106.1588v2 §3 Key Example, Proposition3.1 and Corollary3.2; §4 separates completed-local descent.; Deduction using `Matrix.mulVecLin_apply` in `Mathlib/LinearAlgebra/Matrix/ToLin.lean`, line 291. The construction-specific inputs are [the polynomial section chain differential](#2112-the-polynomial-section-chain-differential), [exactness at the left node matrix](#294-exactness-at-the-left-node-matrix), [exactness at the right node matrix](#295-exactness-at-the-right-node-matrix).)
 
-*Needs:* [the polynomial section chain differential](#2120-the-polynomial-section-chain-differential), [exactness at the left node matrix](#2102-exactness-at-the-left-node-matrix), [exactness at the right node matrix](#2103-exactness-at-the-right-node-matrix).
+*Needs:* [the polynomial section chain differential](#2112-the-polynomial-section-chain-differential), [exactness at the left node matrix](#294-exactness-at-the-left-node-matrix), [exactness at the right node matrix](#295-exactness-at-the-right-node-matrix).
 
-### 2.134 The section-ideal augmentation kills the first chain map
+### 2.126 The section-ideal augmentation kills the first chain map
 
 For any commutative ring A and γ,δ,s,t∈A, use the actual polynomial ring R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), its coefficient map ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt and a=ιδ·v+ιδ·ιt+ιγ·u. Set J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), and the signed presentations P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε.  Put F=R² with its native R-module structure. For e∈{false,true} write B(e,n)=Φ if (n mod 2=0) has the same truth value as e=true, and Ψ otherwise. C(e) has F in every degree n≥0, differential `C(e)_{n+1}→C(e)_n` given by B(e,n), and zero off that shape. P_J∘B(false,0)=P_J∘Ψ=0.
 
@@ -3296,11 +3176,11 @@ One proof uses the following inputs and comparisons. The actual signed presentat
 
 Use the actual signed P_J/P_D maps and native ModuleCat complex, projectivity and QuasiIso. Do not infer native Ext, relative stable reflexivity, two-base completion, hull identification or family/sheaf descent from the resolutions or differential comparison alone.
 
-([knudsen2012](#references), arXiv:1106.1588v2 §3 Key Example, Proposition3.1 and Corollary3.2; §4 separates completed-local descent.; Deduction using `Matrix.mulVecLin_apply` in `Mathlib/LinearAlgebra/Matrix/ToLin.lean`, line 291. The construction-specific inputs are [the polynomial section chain differential](#2120-the-polynomial-section-chain-differential), [the relations of the section ideal surjection](#291-the-relations-of-the-section-ideal-surjection).)
+([knudsen2012](#references), arXiv:1106.1588v2 §3 Key Example, Proposition3.1 and Corollary3.2; §4 separates completed-local descent.; Deduction using `Matrix.mulVecLin_apply` in `Mathlib/LinearAlgebra/Matrix/ToLin.lean`, line 291. The construction-specific inputs are [the polynomial section chain differential](#2112-the-polynomial-section-chain-differential), [the relations of the section ideal surjection](#283-the-relations-of-the-section-ideal-surjection).)
 
-*Needs:* [the polynomial section chain differential](#2120-the-polynomial-section-chain-differential), [the relations of the section ideal surjection](#291-the-relations-of-the-section-ideal-surjection), `Function.Exact.linearMap_comp_eq_zero`.
+*Needs:* [the polynomial section chain differential](#2112-the-polynomial-section-chain-differential), [the relations of the section ideal surjection](#283-the-relations-of-the-section-ideal-surjection), `Function.Exact.linearMap_comp_eq_zero`.
 
-### 2.135 The dual augmentation kills the first chain map
+### 2.127 The dual augmentation kills the first chain map
 
 For any commutative ring A and γ,δ,s,t∈A, use the actual polynomial ring R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), its coefficient map ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt and a=ιδ·v+ιδ·ιt+ιγ·u. Set J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), and the signed presentations P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε.  Put F=R² with its native R-module structure. For e∈{false,true} write B(e,n)=Φ if (n mod 2=0) has the same truth value as e=true, and Ψ otherwise. C(e) has F in every degree n≥0, differential `C(e)_{n+1}→C(e)_n` given by B(e,n), and zero off that shape. P_D∘B(true,0)=P_D∘Φ=0.
 
@@ -3310,11 +3190,11 @@ One proof uses the following inputs and comparisons. The actual signed dual pres
 
 Use the actual signed P_J/P_D maps and native ModuleCat complex, projectivity and QuasiIso. Do not infer native Ext, relative stable reflexivity, two-base completion, hull identification or family/sheaf descent from the resolutions or differential comparison alone.
 
-([knudsen2012](#references), arXiv:1106.1588v2 §3 Key Example, Proposition3.1 and Corollary3.2; §4 separates completed-local descent.; Deduction using `LinearMap.comp_apply` in `Mathlib/Algebra/Module/LinearMap/Defs.lean`, line 495. The construction-specific inputs are [the polynomial section chain differential](#2120-the-polynomial-section-chain-differential), [the relations of the section dual surjection](#292-the-relations-of-the-section-dual-surjection).)
+([knudsen2012](#references), arXiv:1106.1588v2 §3 Key Example, Proposition3.1 and Corollary3.2; §4 separates completed-local descent.; Deduction using `LinearMap.comp_apply` in `Mathlib/Algebra/Module/LinearMap/Defs.lean`, line 495. The construction-specific inputs are [the polynomial section chain differential](#2112-the-polynomial-section-chain-differential), [the relations of the section dual surjection](#284-the-relations-of-the-section-dual-surjection).)
 
-*Needs:* [the polynomial section chain differential](#2120-the-polynomial-section-chain-differential), [the relations of the section dual surjection](#292-the-relations-of-the-section-dual-surjection), `Function.Exact.linearMap_comp_eq_zero`.
+*Needs:* [the polynomial section chain differential](#2112-the-polynomial-section-chain-differential), [the relations of the section dual surjection](#284-the-relations-of-the-section-dual-surjection), `Function.Exact.linearMap_comp_eq_zero`.
 
-### 2.136 Two-base tensor quotient for the nodal chart
+### 2.128 Two-base tensor quotient for the nodal chart
 
 Under coefficient convention C3. For every Â-module N with the compatible restricted A-action, construct the R̂-linear map c_N:R̂⊗_A N→R̂⊗_Â N induced by r⊗n↦r⊗n.
 
@@ -3339,9 +3219,9 @@ The construction has the following API.
 
 ([knudsen2](#references), Appendix Definition1 and Theorem2(1), printed191–193; Proposition6, printed194–195 (physical31–35).)
 
-*Needs:* [the actual completed coefficient algebra](#285-the-actual-completed-coefficient-algebra), `TensorProduct.mapOfCompatibleSMul`.
+*Needs:* [the actual completed coefficient algebra](#277-the-actual-completed-coefficient-algebra), `TensorProduct.mapOfCompatibleSMul`.
 
-### 2.137 Finite two-base Hom target equivalence
+### 2.129 Finite two-base Hom target equivalence
 
 Under coefficient convention C4. For arbitrary Â-module N equip N with its restricted A-action; require the actual scalar tower A→Â→N. Neither flatness nor finite generation of N is assumed, and its action need not factor through Bₙ. Assume p is finitely generated. For arbitrary Qₙ-module L construct the actual Qₙ-linear equivalence Hₙ,N,L:Hom_Qₙ(L,Qₙ⊗_A N)≃Hom_Qₙ(L,Qₙ⊗_Â N) by postcomposition with Eₙ,N.
 
@@ -3365,9 +3245,9 @@ The construction has the following API.
 
 ([knudsen2](#references), Appendix, Definition 1 and Theorem 2, printed pp. 191–193, set up the completed coefficient rings and modules used here; the statement itself is a consequence of the definitions and of the cited targets.)
 
-*Needs:* [finite two-base tensor equivalence](#2121-finite-two-base-tensor-equivalence), `LinearEquiv.congrRight`.
+*Needs:* [finite two-base tensor equivalence](#2113-finite-two-base-tensor-equivalence), `LinearEquiv.congrRight`.
 
-### 2.138 Ordinary completed tensor projection
+### 2.130 Ordinary completed tensor projection
 
 Under coefficient convention C5. Construct ρₙ:R̂⊗_Â N→ₗ[Â]G(n) as eₙ⊗id_N.
 
@@ -3387,11 +3267,11 @@ The construction has the following API.
 - In the same fixture ρ₃(σ⊗(1/3))=(3+6v+4v²)⊗1, using Â-balancing of the tensor over Â.
 - The level-zero projection is the zero map, since Q₀=0.
 
-(Deduction using `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [completed-chart coefficient-linear evaluation](#2123-completed-chart-coefficient-linear-evaluation), [the actual completed coefficient algebra](#285-the-actual-completed-coefficient-algebra), [finite quotient transition over completed coefficients](#277-finite-quotient-transition-over-completed-coefficients), [native completed-coefficient tensor diagram](#2112-native-completed-coefficient-tensor-diagram).; [knudsen2](#references), Appendix Proposition 6, pp. 194–195, for the surrounding two-base completion problem; the displayed native diagram calculation is the deduction specified here.)
+(Deduction using `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [completed-chart coefficient-linear evaluation](#2115-completed-chart-coefficient-linear-evaluation), [the actual completed coefficient algebra](#277-the-actual-completed-coefficient-algebra), [finite quotient transition over completed coefficients](#269-finite-quotient-transition-over-completed-coefficients), [native completed-coefficient tensor diagram](#2104-native-completed-coefficient-tensor-diagram).; [knudsen2](#references), Appendix Proposition 6, pp. 194–195, for the surrounding two-base completion problem; the displayed native diagram calculation is the deduction specified here.)
 
-*Needs:* [completed-chart coefficient-linear evaluation](#2123-completed-chart-coefficient-linear-evaluation), [the actual completed coefficient algebra](#285-the-actual-completed-coefficient-algebra), [finite quotient transition over completed coefficients](#277-finite-quotient-transition-over-completed-coefficients), [native completed-coefficient tensor diagram](#2112-native-completed-coefficient-tensor-diagram), `AdicCompletion`, `AdicCompletion.evalₐ`, `TensorProduct`.
+*Needs:* [completed-chart coefficient-linear evaluation](#2115-completed-chart-coefficient-linear-evaluation), [the actual completed coefficient algebra](#277-the-actual-completed-coefficient-algebra), [finite quotient transition over completed coefficients](#269-finite-quotient-transition-over-completed-coefficients), [native completed-coefficient tensor diagram](#2104-native-completed-coefficient-tensor-diagram), `AdicCompletion`, `AdicCompletion.evalₐ`, `TensorProduct`.
 
-### 2.139 Ordinary completed tensor projections
+### 2.131 Ordinary completed tensor projections
 
 Under coefficient convention C1. Construct P_N,n=eₙ⊗id_N:R̂⊗_Â N→ₗ[Â]Qₙ⊗_Â N using the actual completed-chart evaluation.
 
@@ -3411,11 +3291,11 @@ The construction has the following API.
 - In the same fixture with N=ℚ₂ every target `Qₙ⊗_{ℤ₂}ℚ₂` is 0, so every projection is zero although 1⊗1≠0 in `R̂⊗_{ℤ₂}ℚ₂=R̂[1/2]`. Joint injectivity of the projections needs the finiteness hypotheses of the limit statements.
 - For f the multiplication by 2 on N=ℤ₂, both composites send σ⊗1 to 2+4v≡2 in Q₂.
 
-(Deduction using `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [completed-chart coefficient-linear evaluation](#2123-completed-chart-coefficient-linear-evaluation), [native completed-coefficient tensor diagram](#2112-native-completed-coefficient-tensor-diagram).; [knudsen2](#references), Appendix Proposition 6, pp. 194–195, for the surrounding two-base completion problem; the displayed native diagram calculation is the deduction specified here.)
+(Deduction using `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [completed-chart coefficient-linear evaluation](#2115-completed-chart-coefficient-linear-evaluation), [native completed-coefficient tensor diagram](#2104-native-completed-coefficient-tensor-diagram).; [knudsen2](#references), Appendix Proposition 6, pp. 194–195, for the surrounding two-base completion problem; the displayed native diagram calculation is the deduction specified here.)
 
-*Needs:* [completed-chart coefficient-linear evaluation](#2123-completed-chart-coefficient-linear-evaluation), [native completed-coefficient tensor diagram](#2112-native-completed-coefficient-tensor-diagram), `TensorProduct`.
+*Needs:* [completed-chart coefficient-linear evaluation](#2115-completed-chart-coefficient-linear-evaluation), [native completed-coefficient tensor diagram](#2104-native-completed-coefficient-tensor-diagram), `TensorProduct`.
 
-### 2.140 Cokernel presentation of the section dual
+### 2.132 Cokernel presentation of the section dual
 
 Set q=X²+γXY+δY², F=q(X,Y)−q(s,t), R=A[Y][X]/(F), u=[X], v=[Y], ι:A→R, c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδ·v+ιδ·ιt+ιγ·u, J=(c,d), D=Hom_R(J,R). Construct eD:coker Φ≃ₗ[R]D with d eD([z₀,z₁])(j)=(d z₀−b z₁)j; equivalently [z]↦z₀ incl−z₁ ε.
 
@@ -3435,15 +3315,14 @@ The construction has the following API.
 
 - [1,0] evaluates on d to d.
 - [0,1] evaluates on d to −b.
-- The zero class evaluates to zero on every j.
 - Over Z/3 with γ=1 and δ=s=t=0, the actually constructed dual cokernel equivalence sends its second basis class to −ε.
 - The actual dual cokernel equivalence exists over Z/2 with γ=1 and δ=s=t=0.
 
 ([knudsen2012](#references), §3, printed pp.11–12: monic division, κ/λ comparisons and proof of Proposition3.1.)
 
-*Needs:* [the ordered surjection to the section dual](#263-the-ordered-surjection-to-the-section-dual), [surjectivity of the ordered dual presentation](#2131-surjectivity-of-the-ordered-dual-presentation), [the relations of the section dual surjection](#292-the-relations-of-the-section-dual-surjection), `Submodule.quotEquivOfEq`, `Submodule.quotEquivOfEq_mk`, `LinearMap.quotKerEquivOfSurjective`, `LinearMap.quotKerEquivOfSurjective_apply_mk`, [evaluation of the ordered dual presentation](#272-evaluation-of-the-ordered-dual-presentation), [the canonical dual-generator identity](#257-the-canonical-dual-generator-identity).
+*Needs:* [the ordered surjection to the section dual](#256-the-ordered-surjection-to-the-section-dual), [surjectivity of the ordered dual presentation](#2123-surjectivity-of-the-ordered-dual-presentation), [the relations of the section dual surjection](#284-the-relations-of-the-section-dual-surjection), `Submodule.quotEquivOfEq`, `Submodule.quotEquivOfEq_mk`, `LinearMap.quotKerEquivOfSurjective`, `LinearMap.quotKerEquivOfSurjective_apply_mk`, [evaluation of the ordered dual presentation](#264-evaluation-of-the-ordered-dual-presentation), [the canonical dual-generator identity](#252-the-canonical-dual-generator-identity).
 
-### 2.141 Natural coefficient base change of the section dual
+### 2.133 Natural coefficient base change of the section dual
 
 Set q=X²+γXY+δY², F=q(X,Y)−q(s,t), R=A[Y][X]/(F), u=[X], v=[Y], ι:A→R, c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδ·v+ιδ·ιt+ιγ·u, J=(c,d), D=Hom_R(J,R). For every f:A→A′, the natural comparison A′⊗_A D≃ₗ[A′]D′ satisfies e(a′⊗h)(φ(j))=ι′a′φ(h(j)). It sends ε to ε′ and multiplication maps to multiplication maps; residue and K commute with coefficient mapping.
 
@@ -3455,9 +3334,9 @@ The native canonical dual comparison, tensor action, R′-linearity, identity/co
 
 ([knudsen2012](#references), §3, printed pp.11–12: monic division, κ/λ comparisons and proof of Proposition3.1.)
 
-*Needs:* [coefficient base change of the section ideal](#298-coefficient-base-change-of-the-section-ideal), [coefficient-linear normal coordinates of the dual](#2128-coefficient-linear-normal-coordinates-of-the-dual), [scalar correction in dual coordinates](#2115-scalar-correction-in-dual-coordinates), [regularity of the second section coordinate](#234-regularity-of-the-second-section-coordinate), `TensorProduct.lift`.
+*Needs:* [coefficient base change of the section ideal](#290-coefficient-base-change-of-the-section-ideal), [coefficient-linear normal coordinates of the dual](#2120-coefficient-linear-normal-coordinates-of-the-dual), [scalar correction in dual coordinates](#2107-scalar-correction-in-dual-coordinates), [regularity of the second section coordinate](#233-regularity-of-the-second-section-coordinate), `TensorProduct.lift`.
 
-### 2.142 Coefficient naturality of dual scalar correction
+### 2.134 Coefficient naturality of dual scalar correction
 
 Under coefficient convention C9. If K:R→R and K′:R′→R′ are the coefficient-linear corrections dK(r)=b(r−ιev(r)) and d′K′(r′)=b′(r′−ι′ev′(r′)), then φ(K(r))=K′(φ(r)) for every r.
 
@@ -3469,9 +3348,9 @@ Taking r=d gives φ(b)=b′; taking r=c gives φ(−a)=−a′.
 
 ([knudsen2012](#references), §3, printed pp.11–12, monic division and the dual residue calculation preceding Proposition3.1.)
 
-*Needs:* [scalar correction in dual coordinates](#2115-scalar-correction-in-dual-coordinates), [regularity of the second section coordinate](#234-regularity-of-the-second-section-coordinate), [coefficient map of pointed node rings](#214-coefficient-map-of-pointed-node-rings), [naturality of section evaluation](#279-naturality-of-section-evaluation), [the canonical correction identity](#2130-the-canonical-correction-identity).
+*Needs:* [scalar correction in dual coordinates](#2107-scalar-correction-in-dual-coordinates), [regularity of the second section coordinate](#233-regularity-of-the-second-section-coordinate), [coefficient map of pointed node rings](#214-coefficient-map-of-pointed-node-rings), [naturality of section evaluation](#271-naturality-of-section-evaluation), [the canonical correction identity](#2122-the-canonical-correction-identity).
 
-### 2.143 Completion of the polynomial section dual
+### 2.135 Completion of the polynomial section dual
 
 A is any commutative ring; γ,δ,s,t∈A. R=A[Y][X]/(X²+γYX+δY²−q(s,t)), c=u−s,d=v−t, J=(c,d), D=Hom_R(J,R), m:R→D, m(r)(j)=rj, Q=D/im(m). R is noetherian, I is any ideal of R, C=AdicCompletion I R. Completion of an R-module uses I, not an ideal of the coefficient ring A. Construct Ê_D:AdicCompletion I D≃_C Hom_C(J·C,C), characterized by Ê_D(b·of(h))=E_D(b⊗h).
 
@@ -3490,14 +3369,14 @@ The construction has the following API.
 **Checks.**
 
 - Ê_D(of(m(r)))=m_C(φ(r)), retaining the multiplication map.
-- Ê_D(0)=0.
+- With I=(2,u,v) in the fixture A=ℤ, γ=δ=s=t=0, so that C=ℤ₂[[u,v]]/(u²): Ê_D(of(ε))(E_J(1⊗v))=φ(ε(v))=u and Ê_D(of(ε))(E_J(1⊗u))=0, whereas Ê_D(of(m(u)))=m_C(u) sends E_J(1⊗v) to uv≠u; the completed equivalence distinguishes ε from every multiplication map.
 - Ê_D(of(h))(E_J(1⊗j))=φ(h(j)).
 
 ([stacks-completion](#references), Stacks §10.97, Lemmas10.97.1(3),10.97.2(1),10.97.3; [stacks-hom-flat](#references), Stacks tag087R, Lemma15.67.4(1), together with the proof at087Q; [knudsen2](#references), Appendix Definition1, Theorem2, Propositions4–7, printed191–195 (PDF31–35).)
 
-*Needs:* [dual of the extended section ideal](#2129-dual-of-the-extended-section-ideal), `AdicCompletion.flat_of_isNoetherian`, `AdicCompletion.ofTensorProductEquivOfFiniteNoetherian`, `AdicCompletion.ofTensorProductEquivOfFiniteNoetherian_apply`, `isNoetherian_linearMap`, `Module.Finite.of_injective`.
+*Needs:* [dual of the extended section ideal](#2121-dual-of-the-extended-section-ideal), `AdicCompletion.flat_of_isNoetherian`, `AdicCompletion.ofTensorProductEquivOfFiniteNoetherian`, `AdicCompletion.ofTensorProductEquivOfFiniteNoetherian_apply`, `isNoetherian_linearMap`, `Module.Finite.of_injective`.
 
-### 2.144 The twisted correction product
+### 2.136 The twisted correction product
 
 For all r,z∈R, K(rz)=rK(z)+ι(ev(z))K(r).
 
@@ -3509,9 +3388,9 @@ Use the existing untruncated polynomial quotient, native coefficient algebra and
 
 ([knudsen2012](#references), §3 Key Example, full Proposition3.1 and Corollary3.2 proofs, printed pp.11–12.)
 
-*Needs:* [the canonical correction identity](#2130-the-canonical-correction-identity), [regularity of the second section coordinate](#234-regularity-of-the-second-section-coordinate).
+*Needs:* [the canonical correction identity](#2122-the-canonical-correction-identity), [regularity of the second section coordinate](#233-regularity-of-the-second-section-coordinate).
 
-### 2.145 Correction of the ring action on the dual generator
+### 2.137 Correction of the ring action on the dual generator
 
 For any commutative A and γ,δ,s,t∈A, retain the actual R=AdjoinRoot(F), F=X²+C(γY)X+C(δY²−q(s,t)), u=[X], v=[Y], ι:A→R, c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, J=(c,d), D=Hom_R(J,R), and the ordered native equivalence E:R≃A[Y]×A[Y]. If dε(j)=bj and dK(z)=b(z−ιev(z)), then (z−ιev(z))ε(j)=K(z)j.
 
@@ -3523,9 +3402,9 @@ Keep the native quotient and ideal, ordered polynomial coordinates and the zero/
 
 ([knudsen2012](#references), arXiv:1106.1588v2 §3 Key Example and complete proofs of Proposition 3.1 and Corollary 3.2.)
 
-*Needs:* [denominator-free dual generator](#242-denominator-free-dual-generator), [the canonical correction identity](#2130-the-canonical-correction-identity), [regularity of the second section coordinate](#234-regularity-of-the-second-section-coordinate).
+*Needs:* [denominator-free dual generator](#240-denominator-free-dual-generator), [the canonical correction identity](#2122-the-canonical-correction-identity), [regularity of the second section coordinate](#233-regularity-of-the-second-section-coordinate).
 
-### 2.146 Tensor exactness of the dual presentation
+### 2.138 Tensor exactness of the dual presentation
 
 For any commutative ring A and γ,δ,s,t∈A, put q(x,y)=x²+γxy+δy², R=A[Y][X]/(q(X,Y)−q(s,t)), ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), P_J(z)=cz₀−dz₁, P_D(z)=z₀·incl−z₁·ε, where dε(j)=bj. Restrict these maps to A. For every A-module M write T_M(f)=id_M⊗_A f, on the actual native tensor products. ker T_M(P_D)=im T_M(Φ).
 
@@ -3537,9 +3416,9 @@ Use the actual node ring, section ideal, R-linear dual and ordered native matrix
 
 ([knudsen2012](#references), §3 Key Example, printed pp.11–12: pψ=φᵀp, pφ=ψᵀp and Proposition3.1.)
 
-*Needs:* [the relations of the section dual surjection](#292-the-relations-of-the-section-dual-surjection), [surjectivity of the ordered dual presentation](#2131-surjectivity-of-the-ordered-dual-presentation), `LinearMap.exact_iff`, `lTensor_exact`.
+*Needs:* [the relations of the section dual surjection](#284-the-relations-of-the-section-dual-surjection), [surjectivity of the ordered dual presentation](#2123-surjectivity-of-the-ordered-dual-presentation), `LinearMap.exact_iff`, `lTensor_exact`.
 
-### 2.147 The tensorized dual cokernel
+### 2.139 The tensorized dual cokernel
 
 For any commutative ring A and γ,δ,s,t∈A, put q(x,y)=x²+γxy+δy², R=A[Y][X]/(q(X,Y)−q(s,t)), ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), P_J(z)=cz₀−dz₁, P_D(z)=z₀·incl−z₁·ε, where dε(j)=bj. Restrict these maps to A. For every A-module M write T_M(f)=id_M⊗_A f, on the actual native tensor products. Construct the A-linear equivalence E_D^M:coker T_M(Φ)≃M⊗_A D characterized by E_D^M([z])=T_M(P_D)(z).
 
@@ -3564,9 +3443,9 @@ The construction has the following API.
 
 ([knudsen2012](#references), §3 Key Example, printed pp.11–12: pψ=φᵀp, pφ=ψᵀp and Proposition3.1.)
 
-*Needs:* [the relations of the section dual surjection](#292-the-relations-of-the-section-dual-surjection), [surjectivity of the ordered dual presentation](#2131-surjectivity-of-the-ordered-dual-presentation), `LinearMap.exact_iff`, `lTensor.equiv`.
+*Needs:* [the relations of the section dual surjection](#284-the-relations-of-the-section-dual-surjection), [surjectivity of the ordered dual presentation](#2123-surjectivity-of-the-ordered-dual-presentation), `LinearMap.exact_iff`, `lTensor.equiv`.
 
-### 2.148 Exactness of right then left Hom precomposition
+### 2.140 Exactness of right then left Hom precomposition
 
 For any commutative ring A and γ,δ,s,t∈A, use the actual polynomial ring R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), its coefficient map ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt and a=ιδ·v+ιδ·ιt+ιγ·u. Set J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), and the signed presentations P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε. For any A-module M put N=R⊗_A M with its native left R-action and H=Hom_R(R²,N). Write L_W(h)=h∘W for native R-linear precomposition and E:R²⊗_A M≃Hom_R(R²,N) for the previously specified finite-free tensor coordinates. The native R-linear maps L_Ψ then L_Φ form an exact pair for every coefficient module M.
 
@@ -3576,11 +3455,11 @@ One proof uses the following inputs and comparisons. Reuse coefficient-universal
 
 Use actual R-linear Hom maps, the signed P_J/P_D presentations and native ModuleCat homology. Do not infer Ext vanishing, relative stable reflexivity, completed-local comparisons or family/sheaf descent from this cochain result alone.
 
-([knudsen2012](#references), §3 Key Example, the exact matrix-factorization sequences preceding and in Proposition3.1; §4 identifies completion/descent as separate inputs.; Deduction using `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104; `LinearMap.comp_apply` in `Mathlib/Algebra/Module/LinearMap/Defs.lean`, line 495. The construction-specific inputs are [coefficient hom and matrix transpose](#23-coefficient-hom-and-matrix-transpose), [coefficient universal exactness at φᵀ](#2132-coefficient-universal-exactness-at-φᵀ).)
+([knudsen2012](#references), §3 Key Example, the exact matrix-factorization sequences preceding and in Proposition3.1; §4 identifies completion/descent as separate inputs.; Deduction using `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104; `LinearMap.comp_apply` in `Mathlib/Algebra/Module/LinearMap/Defs.lean`, line 495. The construction-specific inputs are [coefficient hom and matrix transpose](#23-coefficient-hom-and-matrix-transpose), [coefficient universal exactness at φᵀ](#2124-coefficient-universal-exactness-at-φᵀ).)
 
-*Needs:* [coefficient hom and matrix transpose](#23-coefficient-hom-and-matrix-transpose), [coefficient universal exactness at φᵀ](#2132-coefficient-universal-exactness-at-φᵀ), `LinearMap.rTensor_exact_iff_lTensor_exact`, `Function.Exact.of_ladder_linearEquiv_of_exact`, `LinearMap.restrictScalars`.
+*Needs:* [coefficient hom and matrix transpose](#23-coefficient-hom-and-matrix-transpose), [coefficient universal exactness at φᵀ](#2124-coefficient-universal-exactness-at-φᵀ), `LinearMap.rTensor_exact_iff_lTensor_exact`, `Function.Exact.of_ladder_linearEquiv_of_exact`, `LinearMap.restrictScalars`.
 
-### 2.149 Degree-zero cycles factor through the section dual
+### 2.141 Degree-zero cycles factor through the section dual
 
 For any commutative ring A and γ,δ,s,t∈A, use the actual polynomial ring R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), its coefficient map ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt and a=ιδ·v+ιδ·ιt+ιγ·u. Set J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), and the signed presentations P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε. For any A-module M put N=R⊗_A M with its native left R-action and H=Hom_R(R²,N). Write L_W(h)=h∘W for native R-linear precomposition and E:R²⊗_A M≃Hom_R(R²,N) for the previously specified finite-free tensor coordinates. Precomposition by the actual P_D: R²→D followed by d(true,0) is an exact pair. Thus the zero-degree cycles are exactly f∘P_D for R-linear f:D→N; precomposition is injective because P_D is surjective.
 
@@ -3590,11 +3469,11 @@ One proof uses the following inputs and comparisons. Reuse the existing exact pr
 
 Use actual R-linear Hom maps, the signed P_J/P_D presentations and native ModuleCat homology. Do not infer Ext vanishing, relative stable reflexivity, completed-local comparisons or family/sheaf descent from this cochain result alone.
 
-([knudsen2012](#references), §3 Key Example, the exact matrix-factorization sequences preceding and in Proposition3.1; §4 identifies completion/descent as separate inputs.; Deduction using `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104; `LinearMap.comp_apply` in `Mathlib/Algebra/Module/LinearMap/Defs.lean`, line 495. The construction-specific inputs are [the polynomial section Hom differential](#29-the-polynomial-section-hom-differential), [the relations of the section dual surjection](#292-the-relations-of-the-section-dual-surjection), [surjectivity of the ordered dual presentation](#2131-surjectivity-of-the-ordered-dual-presentation).)
+([knudsen2012](#references), §3 Key Example, the exact matrix-factorization sequences preceding and in Proposition3.1; §4 identifies completion/descent as separate inputs.; Deduction using `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104; `LinearMap.comp_apply` in `Mathlib/Algebra/Module/LinearMap/Defs.lean`, line 495. The construction-specific inputs are [the polynomial section Hom differential](#29-the-polynomial-section-hom-differential), [the relations of the section dual surjection](#284-the-relations-of-the-section-dual-surjection), [surjectivity of the ordered dual presentation](#2123-surjectivity-of-the-ordered-dual-presentation).)
 
-*Needs:* [the polynomial section Hom differential](#29-the-polynomial-section-hom-differential), [the relations of the section dual surjection](#292-the-relations-of-the-section-dual-surjection), [surjectivity of the ordered dual presentation](#2131-surjectivity-of-the-ordered-dual-presentation), `LinearMap.exact_lcomp_of_exact_of_surjective`, `LinearMap.exact_iff`, `LinearMap.lcomp_injective_of_surjective`.
+*Needs:* [the polynomial section Hom differential](#29-the-polynomial-section-hom-differential), [the relations of the section dual surjection](#284-the-relations-of-the-section-dual-surjection), [surjectivity of the ordered dual presentation](#2123-surjectivity-of-the-ordered-dual-presentation), `LinearMap.exact_lcomp_of_exact_of_surjective`, `LinearMap.exact_iff`, `LinearMap.lcomp_injective_of_surjective`.
 
-### 2.150 The section chain differential squares to zero
+### 2.142 The section chain differential squares to zero
 
 For any commutative ring A and γ,δ,s,t∈A, use the actual polynomial ring R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), its coefficient map ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt and a=ιδ·v+ιδ·ιt+ιγ·u. Set J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), and the signed presentations P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε.  Put F=R² with its native R-module structure. For e∈{false,true} write B(e,n)=Φ if (n mod 2=0) has the same truth value as e=true, and Ψ otherwise. C(e) has F in every degree n≥0, differential `C(e)_{n+1}→C(e)_n` given by B(e,n), and zero off that shape. For every e and n≥0, B(e,n)∘B(e,n+1)=0 as R-linear maps.
 
@@ -3604,11 +3483,40 @@ One proof uses the following inputs and comparisons. Apply the native zero-compo
 
 Use the actual signed P_J/P_D maps and native ModuleCat complex, projectivity and QuasiIso. Do not infer native Ext, relative stable reflexivity, two-base completion, hull identification or family/sheaf descent from the resolutions or differential comparison alone.
 
-([knudsen2012](#references), arXiv:1106.1588v2 §3 Key Example, Proposition3.1 and Corollary3.2; §4 separates completed-local descent.; Deduction using `Matrix.mulVecLin_apply` in `Mathlib/LinearAlgebra/Matrix/ToLin.lean`, line 291. The construction-specific inputs are [exactness of consecutive section chain maps](#2133-exactness-of-consecutive-section-chain-maps).)
+([knudsen2012](#references), arXiv:1106.1588v2 §3 Key Example, Proposition3.1 and Corollary3.2; §4 separates completed-local descent.; Deduction using `Matrix.mulVecLin_apply` in `Mathlib/LinearAlgebra/Matrix/ToLin.lean`, line 291. The construction-specific inputs are [exactness of consecutive section chain maps](#2125-exactness-of-consecutive-section-chain-maps).)
 
-*Needs:* [exactness of consecutive section chain maps](#2133-exactness-of-consecutive-section-chain-maps), `Function.Exact.linearMap_comp_eq_zero`.
+*Needs:* [exactness of consecutive section chain maps](#2125-exactness-of-consecutive-section-chain-maps), `Function.Exact.linearMap_comp_eq_zero`.
 
-### 2.151 The native augmentation to the actual section ideal
+### 2.143 The native polynomial section chain complex
+
+For any commutative ring A and γ,δ,s,t∈A, use the actual polynomial ring R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), its coefficient map ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt and a=ιδ·v+ιδ·ιt+ιγ·u. Set J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), and the signed presentations P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε.  Put F=R² with its native R-module structure. For e∈{false,true} write B(e,n)=Φ if (n mod 2=0) has the same truth value as e=true, and Ψ otherwise. C(e) has F in every degree n≥0, differential `C(e)_{n+1}→C(e)_n` given by B(e,n), and zero off that shape. Construct C(e) as a native ℕ-indexed ChainComplex of ModuleCat R with its actual successor maps.
+
+Here A is any commutative ring; no noetherianity, nontriviality or unit-discriminant assumption is required for this actual polynomial calculation. Coefficients M, when present, are any A-module, without M-flatness.
+
+One proof uses the following inputs and comparisons. Bundle F and each actual B(e,n); prove the square-zero equation.
+
+Use the actual signed P_J/P_D maps and native ModuleCat complex, projectivity and QuasiIso. Do not infer native Ext, relative stable reflexivity, two-base completion, hull identification or family/sheaf descent from the resolutions or differential comparison alone.
+
+The construction has the following API.
+
+- For every e,n, C(e).X n is the native object ModuleCat.of R F.
+- For every e,n, C(e).d(n+1,n)=ModuleCat.ofHom(B(e,n)).
+- C(e).d(i,j)=0 whenever j+1≠i; there is no upward differential or negative degree.
+- Every C(e).X n is a projective object of ModuleCat R.
+- For every e,n, the native module underlying C(e).X n has both Module.Free R and Module.Finite R instances; it is the actual F=Fin 2→R.
+- For every A-module M, every phase e and n≥0, native R-linear precomposition by the underlying C(e).d(n+1,n) equals exactly the section Hom differential d(e,n) of §2.9 on Hom_R(F,R⊗_A M). This fixes the actual coefficient cochain differential; it does not construct a categorical Hom-complex isomorphism or a native Ext comparison.
+
+**Checks.**
+
+- For A=Z/4 and γ=δ=t=0,s=1, C(false) is ExactAt 2.
+- For A=ℤ, γ=δ=s=t=0 and M=ℤ, precomposition by C(false).d(1,0)=Ψ sends the coordinate functional h=(1,0)∈Hom_R(R²,R) to h∘Ψ=(d,−b)=(v,−u), the first row of Ψ, as d(false,0) of §2.9 prescribes; precomposition by Φ instead gives (a,b)=(0,u).
+- C(e).X 0=R² is free of rank two over R, whereas J and D are not R-free: the chain terms are the presentations, not the augmentation targets.
+
+([knudsen2012](#references), arXiv:1106.1588v2 §3 Key Example, Proposition3.1 and Corollary3.2; §4 separates completed-local descent.; Deduction using `Matrix.mulVecLin_apply` in `Mathlib/LinearAlgebra/Matrix/ToLin.lean`, line 291. The construction-specific inputs are [the section chain differential squares to zero](#2142-the-section-chain-differential-squares-to-zero).)
+
+*Needs:* [the section chain differential squares to zero](#2142-the-section-chain-differential-squares-to-zero), `ChainComplex.of`, `ModuleCat.of`, `ModuleCat.ofHom`.
+
+### 2.144 The native augmentation to the actual section ideal
 
 For any commutative ring A and γ,δ,s,t∈A, use the actual polynomial ring R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), its coefficient map ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt and a=ιδ·v+ιδ·ιt+ιγ·u. Set J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), and the signed presentations P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε.  Put F=R² with its native R-module structure. For e∈{false,true} write B(e,n)=Φ if (n mod 2=0) has the same truth value as e=true, and Ψ otherwise. C(e) has F in every degree n≥0, differential `C(e)_{n+1}→C(e)_n` given by B(e,n), and zero off that shape. Construct π_J:C(false)→single₀(J) as the native chain map whose degree-zero component is P_J.
 
@@ -3620,7 +3528,6 @@ Use the actual signed P_J/P_D maps and native ModuleCat complex, projectivity an
 
 The construction has the following API.
 
-- P_J∘B(false,0)=P_J∘Ψ=0.
 - π_J.f 0=ModuleCat.ofHom(P_J), including the prescribed negative second generator.
 
 **Checks.**
@@ -3629,11 +3536,11 @@ The construction has the following API.
 - π_J.f 0 sends (0,1) to −d=−(v−ιt), retaining the signed presentation.
 - Every positive component π_J.f(n+1) is the zero morphism.
 
-([knudsen2012](#references), arXiv:1106.1588v2 §3 Key Example, Proposition3.1 and Corollary3.2; §4 separates completed-local descent.; Deduction using `Matrix.mulVecLin_apply` in `Mathlib/LinearAlgebra/Matrix/ToLin.lean`, line 291. The construction-specific inputs are [the section-ideal augmentation kills the first chain map](#2134-the-section-ideal-augmentation-kills-the-first-chain-map).)
+([knudsen2012](#references), arXiv:1106.1588v2 §3 Key Example, Proposition3.1 and Corollary3.2; §4 separates completed-local descent.; Deduction using `Matrix.mulVecLin_apply` in `Mathlib/LinearAlgebra/Matrix/ToLin.lean`, line 291. The construction-specific inputs are [the native polynomial section chain complex](#2143-the-native-polynomial-section-chain-complex), [the section-ideal augmentation kills the first chain map](#2126-the-section-ideal-augmentation-kills-the-first-chain-map).)
 
-*Needs:* [the section-ideal augmentation kills the first chain map](#2134-the-section-ideal-augmentation-kills-the-first-chain-map), `ChainComplex.toSingle₀Equiv`.
+*Needs:* [the native polynomial section chain complex](#2143-the-native-polynomial-section-chain-complex), [the section-ideal augmentation kills the first chain map](#2126-the-section-ideal-augmentation-kills-the-first-chain-map), `ChainComplex.toSingle₀Equiv`.
 
-### 2.152 The native augmentation to the actual dual
+### 2.145 The native augmentation to the actual dual
 
 For any commutative ring A and γ,δ,s,t∈A, use the actual polynomial ring R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), its coefficient map ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt and a=ιδ·v+ιδ·ιt+ιγ·u. Set J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), and the signed presentations P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε.  Put F=R² with its native R-module structure. For e∈{false,true} write B(e,n)=Φ if (n mod 2=0) has the same truth value as e=true, and Ψ otherwise. C(e) has F in every degree n≥0, differential `C(e)_{n+1}→C(e)_n` given by B(e,n), and zero off that shape. Construct π_D:C(true)→single₀(D) as the native chain map whose degree-zero component is P_D.
 
@@ -3645,7 +3552,6 @@ Use the actual signed P_J/P_D maps and native ModuleCat complex, projectivity an
 
 The construction has the following API.
 
-- P_D∘B(true,0)=P_D∘Φ=0.
 - π_D.f 0=ModuleCat.ofHom(P_D), including the prescribed negative ε generator.
 
 **Checks.**
@@ -3654,11 +3560,11 @@ The construction has the following API.
 - π_D.f 0 sends (0,1) to −ε, evaluated on each actual j∈J.
 - Every positive component π_D.f(n+1) is the zero morphism.
 
-([knudsen2012](#references), arXiv:1106.1588v2 §3 Key Example, Proposition3.1 and Corollary3.2; §4 separates completed-local descent.; The construction-specific inputs are [the dual augmentation kills the first chain map](#2135-the-dual-augmentation-kills-the-first-chain-map).)
+([knudsen2012](#references), arXiv:1106.1588v2 §3 Key Example, Proposition3.1 and Corollary3.2; §4 separates completed-local descent.; The construction-specific inputs are [the native polynomial section chain complex](#2143-the-native-polynomial-section-chain-complex), [the dual augmentation kills the first chain map](#2127-the-dual-augmentation-kills-the-first-chain-map).)
 
-*Needs:* [the dual augmentation kills the first chain map](#2135-the-dual-augmentation-kills-the-first-chain-map), `ChainComplex.toSingle₀Equiv`.
+*Needs:* [the native polynomial section chain complex](#2143-the-native-polynomial-section-chain-complex), [the dual augmentation kills the first chain map](#2127-the-dual-augmentation-kills-the-first-chain-map), `ChainComplex.toSingle₀Equiv`.
 
-### 2.153 Ordinary completed tensor cone
+### 2.146 Ordinary completed tensor cone
 
 Under coefficient convention C5. Construct an actual Cone(G) with point ModuleCat(Â,R̂⊗_Â N) and projections ρₙ.
 
@@ -3678,11 +3584,11 @@ The construction has the following API.
 - The level-zero projection is the zero map onto Q₀⊗_Â N=0.
 - Every actual cone projection is Â-linear, including completed coefficients such as 1/3 that are not elements of A: the projection of σ⊗(1/3) at level 3 is (3+6v+4v²)⊗1.
 
-(Deduction using `CategoryTheory.Limits.IsLimit.hom_ext` and `CategoryTheory.Limits.IsLimit.lift_self` in `Mathlib/CategoryTheory/Limits/IsLimit.lean`, lines 232 and 95; tensor components use `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [completed-chart coefficient-linear evaluation](#2123-completed-chart-coefficient-linear-evaluation), [the actual completed coefficient algebra](#285-the-actual-completed-coefficient-algebra), [finite quotient transition over completed coefficients](#277-finite-quotient-transition-over-completed-coefficients), [native completed-coefficient tensor diagram](#2112-native-completed-coefficient-tensor-diagram), [ordinary completed tensor projection](#2138-ordinary-completed-tensor-projection).; [knudsen2](#references), Appendix Proposition 6, pp. 194–195, for the surrounding two-base completion problem; the displayed native diagram calculation is the deduction specified here.)
+(Deduction using `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [completed-chart coefficient-linear evaluation](#2115-completed-chart-coefficient-linear-evaluation), [the actual completed coefficient algebra](#277-the-actual-completed-coefficient-algebra), [finite quotient transition over completed coefficients](#269-finite-quotient-transition-over-completed-coefficients), [native completed-coefficient tensor diagram](#2104-native-completed-coefficient-tensor-diagram), [ordinary completed tensor projection](#2130-ordinary-completed-tensor-projection).; [knudsen2](#references), Appendix Proposition 6, pp. 194–195, for the surrounding two-base completion problem; the displayed native diagram calculation is the deduction specified here.)
 
-*Needs:* [completed-chart coefficient-linear evaluation](#2123-completed-chart-coefficient-linear-evaluation), [the actual completed coefficient algebra](#285-the-actual-completed-coefficient-algebra), [finite quotient transition over completed coefficients](#277-finite-quotient-transition-over-completed-coefficients), [native completed-coefficient tensor diagram](#2112-native-completed-coefficient-tensor-diagram), [ordinary completed tensor projection](#2138-ordinary-completed-tensor-projection), `AdicCompletion`, `AdicCompletion.evalₐ`, `DFunLike.ext`, `ModuleCat.hom_injective`, `ModuleCat.of`, `ModuleCat.ofHom`, `TensorProduct.induction_on`.
+*Needs:* [completed-chart coefficient-linear evaluation](#2115-completed-chart-coefficient-linear-evaluation), [the actual completed coefficient algebra](#277-the-actual-completed-coefficient-algebra), [finite quotient transition over completed coefficients](#269-finite-quotient-transition-over-completed-coefficients), [native completed-coefficient tensor diagram](#2104-native-completed-coefficient-tensor-diagram), [ordinary completed tensor projection](#2130-ordinary-completed-tensor-projection), `AdicCompletion`, `AdicCompletion.evalₐ`, `DFunLike.ext`, `ModuleCat.hom_injective`, `ModuleCat.of`, `ModuleCat.ofHom`, `TensorProduct.induction_on`.
 
-### 2.154 Completed coordinate of a cone lift
+### 2.147 Completed coordinate of a cone lift
 
 Under coefficient convention C5. For any actual cone C over G, x∈C.pt and k∈Fin(r), assemble the quotient family n↦cₙ(C.πₙ(x))(k) into an element of R̂.
 
@@ -3702,11 +3608,11 @@ The construction has the following API.
 - For x=u⊗(0,1) the first coordinate lifts to 0 and the second to u. A lift that ignored the index k would give equal coordinates.
 - For the cone with point ℤ₂ and legs `a↦a(1+2v+⋯+2^{n−1}v^{n−1})⊗(1,0)`, the first coordinate of 1 lifts to σ and the second to 0.
 
-(Deduction using `TensorProduct.piScalarRightHom_tmul` in `Mathlib/LinearAlgebra/TensorProduct/Pi.lean`, line 139. The construction-specific inputs are [assembly of completed-chart quotient families](#2124-assembly-of-completed-chart-quotient-families), [the actual completed coefficient algebra](#285-the-actual-completed-coefficient-algebra), [finite-free quotient tensor coordinates](#2125-finite-free-quotient-tensor-coordinates), [finite quotient transition over completed coefficients](#277-finite-quotient-transition-over-completed-coefficients), [native completed-coefficient tensor diagram](#2112-native-completed-coefficient-tensor-diagram).; [knudsen2](#references), Appendix Proposition 6, pp. 194–195, for the surrounding two-base completion problem; the displayed native diagram calculation is the deduction specified here.)
+(Deduction using `TensorProduct.piScalarRightHom_tmul` in `Mathlib/LinearAlgebra/TensorProduct/Pi.lean`, line 139. The construction-specific inputs are [assembly of completed-chart quotient families](#2116-assembly-of-completed-chart-quotient-families), [the actual completed coefficient algebra](#277-the-actual-completed-coefficient-algebra), [finite-free quotient tensor coordinates](#2117-finite-free-quotient-tensor-coordinates), [finite quotient transition over completed coefficients](#269-finite-quotient-transition-over-completed-coefficients), [native completed-coefficient tensor diagram](#2104-native-completed-coefficient-tensor-diagram).; [knudsen2](#references), Appendix Proposition 6, pp. 194–195, for the surrounding two-base completion problem; the displayed native diagram calculation is the deduction specified here.)
 
-*Needs:* [assembly of completed-chart quotient families](#2124-assembly-of-completed-chart-quotient-families), [the actual completed coefficient algebra](#285-the-actual-completed-coefficient-algebra), [finite-free quotient tensor coordinates](#2125-finite-free-quotient-tensor-coordinates), [finite quotient transition over completed coefficients](#277-finite-quotient-transition-over-completed-coefficients), [native completed-coefficient tensor diagram](#2112-native-completed-coefficient-tensor-diagram), `AdicCompletion`, `AdicCompletion.evalₐ`, `TensorProduct`.
+*Needs:* [assembly of completed-chart quotient families](#2116-assembly-of-completed-chart-quotient-families), [the actual completed coefficient algebra](#277-the-actual-completed-coefficient-algebra), [finite-free quotient tensor coordinates](#2117-finite-free-quotient-tensor-coordinates), [finite quotient transition over completed coefficients](#269-finite-quotient-transition-over-completed-coefficients), [native completed-coefficient tensor diagram](#2104-native-completed-coefficient-tensor-diagram), `AdicCompletion`, `AdicCompletion.evalₐ`, `TensorProduct`.
 
-### 2.155 Ordinary completed tensor cone
+### 2.148 Ordinary completed tensor cone
 
 Under coefficient convention C1. Construct a native Cone G_N with point ModuleCat.of Â (R̂⊗_Â N) and components P_N,n.
 
@@ -3726,11 +3632,11 @@ The construction has the following API.
 - Under coefficient convention C1. For j≤k, the ordinary cone k-component followed by the actual transition G_N(k→j) equals its j-component.
 - Under coefficient convention C1. For every n, b∈Â and x∈R̂⊗_Â N, the ordinary cone n-component sends b·x to b times its value at x.
 
-(Deduction using `CategoryTheory.Limits.IsLimit.hom_ext` and `CategoryTheory.Limits.IsLimit.lift_self` in `Mathlib/CategoryTheory/Limits/IsLimit.lean`, lines 232 and 95; tensor components use `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [ordinary completed tensor projections](#2139-ordinary-completed-tensor-projections), [completed-chart coefficient-linear evaluation](#2123-completed-chart-coefficient-linear-evaluation).; [knudsen2](#references), Appendix Proposition 6, pp. 194–195, for the surrounding two-base completion problem; the displayed native diagram calculation is the deduction specified here.)
+(Deduction using `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [ordinary completed tensor projections](#2131-ordinary-completed-tensor-projections), [completed-chart coefficient-linear evaluation](#2115-completed-chart-coefficient-linear-evaluation).; [knudsen2](#references), Appendix Proposition 6, pp. 194–195, for the surrounding two-base completion problem; the displayed native diagram calculation is the deduction specified here.)
 
-*Needs:* [ordinary completed tensor projections](#2139-ordinary-completed-tensor-projections), [completed-chart coefficient-linear evaluation](#2123-completed-chart-coefficient-linear-evaluation), `TensorProduct`.
+*Needs:* [ordinary completed tensor projections](#2131-ordinary-completed-tensor-projections), [completed-chart coefficient-linear evaluation](#2115-completed-chart-coefficient-linear-evaluation), `TensorProduct`.
 
-### 2.156 Original-ring scalar in tensor evaluations
+### 2.149 Original-ring scalar in tensor evaluations
 
 Under coefficient convention C2. For r∈R and x∈T, Pₙ(r·x)=r·Pₙ(x), using the actual R-actions.
 
@@ -3738,11 +3644,11 @@ Native A,N,L,K have a common universe with compatible A/Â-actions on N. Here N 
 
 One proof uses the following inputs and comparisons. Use tensor induction and R-linearity of the native algebra evaluation evalₙ:R̂→Qₙ.
 
-(The construction-specific inputs are [ordinary completed tensor projections](#2139-ordinary-completed-tensor-projections), [completed-chart coefficient-linear evaluation](#2123-completed-chart-coefficient-linear-evaluation).)
+(The construction-specific inputs are [ordinary completed tensor projections](#2131-ordinary-completed-tensor-projections), [completed-chart coefficient-linear evaluation](#2115-completed-chart-coefficient-linear-evaluation).)
 
-*Needs:* [ordinary completed tensor projections](#2139-ordinary-completed-tensor-projections), [completed-chart coefficient-linear evaluation](#2123-completed-chart-coefficient-linear-evaluation), `AdicCompletion.evalₐ`, `TensorProduct.leftModule`.
+*Needs:* [ordinary completed tensor projections](#2131-ordinary-completed-tensor-projections), [completed-chart coefficient-linear evaluation](#2115-completed-chart-coefficient-linear-evaluation), `AdicCompletion.evalₐ`, `TensorProduct.leftModule`.
 
-### 2.157 Node-ring action on the dual coordinates
+### 2.150 Node-ring action on the dual coordinates
 
 Set q=X²+γXY+δY², F=q(X,Y)−q(s,t), R=A[Y][X]/(F), u=[X], v=[Y], ι:A→R, c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδ·v+ιδ·ιt+ιγ·u, J=(c,d), D=Hom_R(J,R). For normal coordinates (r,α) of h and the unique scalar correction K:R→R with dK(r)=b(r−ι(ev r)), the coordinates of z·h are (zr+ια K(z), (ev z)α).
 
@@ -3754,9 +3660,9 @@ The correction term rules out a componentwise R action.
 
 ([knudsen2012](#references), §3, printed pp.11–12: monic division, κ/λ comparisons and proof of Proposition3.1.)
 
-*Needs:* [coefficient-linear normal coordinates of the dual](#2128-coefficient-linear-normal-coordinates-of-the-dual), [correction of the ring action on the dual generator](#2145-correction-of-the-ring-action-on-the-dual-generator).
+*Needs:* [coefficient-linear normal coordinates of the dual](#2120-coefficient-linear-normal-coordinates-of-the-dual), [correction of the ring action on the dual generator](#2137-correction-of-the-ring-action-on-the-dual-generator).
 
-### 2.158 Canonical tensor comparison for the section dual
+### 2.151 Canonical tensor comparison for the section dual
 
 Under coefficient convention C9. Construct the canonical A′-linear equivalence E_D:A′⊗_A D≃D′ characterized by E_D(a′⊗h)(φ(j))=ι′a′φ(h(j)). It is identity-compatible and composition-compatible under the canonical heterobasic base-change cancellation a″⊗(a′⊗h)↦a″g(a′)⊗h: for g:A′→A″, `E_{D,g}(a″⊗E_{D,f}(a′⊗h))=E_{D,gf}(a″g(a′)⊗h)`.
 
@@ -3781,9 +3687,9 @@ The construction has the following API.
 
 ([knudsen2012](#references), §3, printed pp.11–12, monic division and the dual residue calculation preceding Proposition3.1.)
 
-*Needs:* [natural coefficient base change of the section dual](#2141-natural-coefficient-base-change-of-the-section-dual), [coefficient map of pointed node rings](#214-coefficient-map-of-pointed-node-rings), [coefficient base change of the section ideal](#298-coefficient-base-change-of-the-section-ideal), [regularity of the second section coordinate](#234-regularity-of-the-second-section-coordinate), `TensorProduct.AlgebraTensorModule.cancelBaseChange`.
+*Needs:* [natural coefficient base change of the section dual](#2133-natural-coefficient-base-change-of-the-section-dual), [coefficient map of pointed node rings](#214-coefficient-map-of-pointed-node-rings), [coefficient base change of the section ideal](#290-coefficient-base-change-of-the-section-ideal), [regularity of the second section coordinate](#233-regularity-of-the-second-section-coordinate), `TensorProduct.AlgebraTensorModule.cancelBaseChange`.
 
-### 2.159 Generators of the dual cokernel
+### 2.152 Generators of the dual cokernel
 
 For every commutative ring A and γ,δ,s,t∈A, let F=X²+C(γY)X+C(δY²−q(s,t)), q(x,y)=x²+γxy+δy², R=AdjoinRoot(F), ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), and E:R≃A[Y]×A[Y] the ordered polynomial coordinates. Put Φ=((a,b),(−c,d)) and Ψ=((d,−b),(c,a)). The canonical ε∈D is characterized by dε(j)=bj. The ordered maps are P_J(z)=cz₀−dz₁ and P_D(z)=z₀·incl−z₁·ε. For any characterized ε and any e_D with d e_D([z])(j)=(dz₀−bz₁)j, the first basis class is inclusion and the second is −ε.
 
@@ -3795,9 +3701,9 @@ Use the actual polynomial quotient and the stated ordered matrices; an arbitrary
 
 ([knudsen2012](#references), §3 Key Example, printed pp.11–12, matrix and κ/λ comparisons and Proposition3.1 proof.)
 
-*Needs:* [cokernel presentation of the section dual](#2140-cokernel-presentation-of-the-section-dual), [regularity of the second section coordinate](#234-regularity-of-the-second-section-coordinate), [denominator-free dual generator](#242-denominator-free-dual-generator).
+*Needs:* [cokernel presentation of the section dual](#2132-cokernel-presentation-of-the-section-dual), [regularity of the second section coordinate](#233-regularity-of-the-second-section-coordinate), [denominator-free dual generator](#240-denominator-free-dual-generator).
 
-### 2.160 Uniqueness of the dual cokernel comparison
+### 2.153 Uniqueness of the dual cokernel comparison
 
 For every commutative ring A and γ,δ,s,t∈A, let F=X²+C(γY)X+C(δY²−q(s,t)), q(x,y)=x²+γxy+δy², R=AdjoinRoot(F), ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), and E:R≃A[Y]×A[Y] the ordered polynomial coordinates. Put Φ=((a,b),(−c,d)) and Ψ=((d,−b),(c,a)). The canonical ε∈D is characterized by dε(j)=bj. The ordered maps are P_J(z)=cz₀−dz₁ and P_D(z)=z₀·incl−z₁·ε. Any two R-linear cokernel equivalences satisfying the prescribed denominator-free evaluation formula agree.
 
@@ -3809,9 +3715,9 @@ Use the actual polynomial quotient and the stated ordered matrices; an arbitrary
 
 ([knudsen2012](#references), §3 Key Example, printed pp.11–12, matrix and κ/λ comparisons and Proposition3.1 proof.)
 
-*Needs:* [cokernel presentation of the section dual](#2140-cokernel-presentation-of-the-section-dual), [regularity of the second section coordinate](#234-regularity-of-the-second-section-coordinate), `Submodule.Quotient.induction_on`.
+*Needs:* [cokernel presentation of the section dual](#2132-cokernel-presentation-of-the-section-dual), [regularity of the second section coordinate](#233-regularity-of-the-second-section-coordinate), `Submodule.Quotient.induction_on`.
 
-### 2.161 Ordinary reflexivity of the section ideal
+### 2.154 Ordinary reflexivity of the section ideal
 
 For every commutative ring A and γ,δ,s,t∈A, put q(X,Y)=X²+γXY+δY², R=A[Y][X]/(q(X,Y)−q(s,t)), ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), incl:J→R, and ε∈D with dε(j)=bj. Write η=Module.Dual.eval R J. The actual ideal J satisfies Module.IsReflexive R J, with its native bidual evaluation map.
 
@@ -3831,9 +3737,9 @@ Use the actual ideal subtype and native Module.Dual, Module.Dual.eval and Module
 
 ([knudsen2012](#references), §3 Key Example, multiplication description of J∨ and Proposition 3.1; compare Corollary 3.2 and §4.)
 
-*Needs:* [inverse of section bidual evaluation](#2107-inverse-of-section-bidual-evaluation), `Module.IsReflexive`, `Module.instIsReflexiveDual`.
+*Needs:* [inverse of section bidual evaluation](#299-inverse-of-section-bidual-evaluation), `Module.IsReflexive`, `Module.instIsReflexiveDual`.
 
-### 2.162 Injectivity of the dual coefficient-Hom map
+### 2.155 Injectivity of the dual coefficient-Hom map
 
 For any commutative ring A and γ,δ,s,t∈A, let q(X,Y)=X²+γXY+δY², R=A[Y][X]/(q(X,Y)−q(s,t)), ι:A→R the actual coefficient algebra map, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), incl:J→R and ε∈D with dε(j)=bj. Put Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε and p(z)=(-z₁,z₀). For any A-module M, set N_M=R⊗_A M with the inherited left R-action, and U_M(f)=f⊗_A id_M on the actual native tensors. Use the already-built finite-product tensor and finite-free Hom coordinates E_M:R²⊗_A M≃ₗ[A]Hom_R(R²,N_M), E_M(z⊗m)(w)=(w₀z₀+w₁z₁)⊗m. The actual R-linear map θ_D,M is injective for every coefficient module M.
 
@@ -3847,11 +3753,11 @@ The statement uses the actual section ideal and actual R-linear dual in the untr
 
 - Both comparisons apply over the nonreduced coefficient ring Z/4; for the dual take M=Z/4 and all parameters zero.
 
-(Deduction using `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [ideal Hom coordinates with coefficients](#232-ideal-hom-coordinates-with-coefficients), [surjectivity of the ordered dual presentation](#2131-surjectivity-of-the-ordered-dual-presentation), [coefficient universal exactness at ψ](#2119-coefficient-universal-exactness-at-ψ), [tensor exactness of the dual presentation](#2146-tensor-exactness-of-the-dual-presentation), [the symplectic rotation of section coordinates](#226-the-symplectic-rotation-of-section-coordinates).)
+(Deduction using `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [ideal Hom coordinates with coefficients](#231-ideal-hom-coordinates-with-coefficients), [surjectivity of the ordered dual presentation](#2123-surjectivity-of-the-ordered-dual-presentation), [coefficient universal exactness at ψ](#2111-coefficient-universal-exactness-at-ψ), [tensor exactness of the dual presentation](#2138-tensor-exactness-of-the-dual-presentation), [the symplectic rotation of section coordinates](#226-the-symplectic-rotation-of-section-coordinates).)
 
-*Needs:* [ideal Hom coordinates with coefficients](#232-ideal-hom-coordinates-with-coefficients), [surjectivity of the ordered dual presentation](#2131-surjectivity-of-the-ordered-dual-presentation), [coefficient universal exactness at ψ](#2119-coefficient-universal-exactness-at-ψ), [tensor exactness of the dual presentation](#2146-tensor-exactness-of-the-dual-presentation), `LinearMap.rTensor_surjective`, `LinearMap.rTensor_exact_iff_lTensor_exact`, [the symplectic rotation of section coordinates](#226-the-symplectic-rotation-of-section-coordinates), `LinearEquiv.rTensor`.
+*Needs:* [ideal Hom coordinates with coefficients](#231-ideal-hom-coordinates-with-coefficients), [surjectivity of the ordered dual presentation](#2123-surjectivity-of-the-ordered-dual-presentation), [coefficient universal exactness at ψ](#2111-coefficient-universal-exactness-at-ψ), [tensor exactness of the dual presentation](#2138-tensor-exactness-of-the-dual-presentation), `LinearMap.rTensor_surjective`, `LinearMap.rTensor_exact_iff_lTensor_exact`, [the symplectic rotation of section coordinates](#226-the-symplectic-rotation-of-section-coordinates), `LinearEquiv.rTensor`.
 
-### 2.163 Surjectivity of coefficient-valued bidual evaluation
+### 2.156 Surjectivity of coefficient-valued bidual evaluation
 
 For any commutative ring A and γ,δ,s,t∈A, let q(X,Y)=X²+γXY+δY², R=A[Y][X]/(q(X,Y)−q(s,t)), ι:A→R the actual coefficient algebra map, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), incl:J→R and ε∈D with dε(j)=bj. Put Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε and p(z)=(-z₁,z₀). For any A-module M, set N_M=R⊗_A M with the inherited left R-action, and U_M(f)=f⊗_A id_M on the actual native tensors. Use the already-built finite-product tensor and finite-free Hom coordinates E_M:R²⊗_A M≃ₗ[A]Hom_R(R²,N_M), E_M(z⊗m)(w)=(w₀z₀+w₁z₁)⊗m. θ_J,M is surjective for every A-module M.
 
@@ -3861,40 +3767,11 @@ One proof uses the following inputs and comparisons. Coordinates y=C_D,M(h) lie 
 
 The statement uses the actual section ideal and actual R-linear dual in the untruncated polynomial ring. Keep this algebra calculation separate from higher Ext, relative stable-reflexivity, completed-local and family/sheaf descent.
 
-(Deduction using `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [dual Hom coordinates with coefficients](#275-dual-hom-coordinates-with-coefficients), [right-tensor rotation of the second transpose](#252-right-tensor-rotation-of-the-second-transpose), [coefficient universal exactness at φᵀ](#2132-coefficient-universal-exactness-at-φᵀ).)
+(Deduction using `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [dual Hom coordinates with coefficients](#267-dual-hom-coordinates-with-coefficients), [right-tensor rotation of the second transpose](#247-right-tensor-rotation-of-the-second-transpose), [coefficient universal exactness at φᵀ](#2124-coefficient-universal-exactness-at-φᵀ).)
 
-*Needs:* [dual Hom coordinates with coefficients](#275-dual-hom-coordinates-with-coefficients), [right-tensor rotation of the second transpose](#252-right-tensor-rotation-of-the-second-transpose), [coefficient universal exactness at φᵀ](#2132-coefficient-universal-exactness-at-φᵀ), `LinearMap.rTensor_exact_iff_lTensor_exact`.
+*Needs:* [dual Hom coordinates with coefficients](#267-dual-hom-coordinates-with-coefficients), [right-tensor rotation of the second transpose](#247-right-tensor-rotation-of-the-second-transpose), [coefficient universal exactness at φᵀ](#2124-coefficient-universal-exactness-at-φᵀ), `LinearMap.rTensor_exact_iff_lTensor_exact`.
 
-### 2.164 The native polynomial section chain complex
-
-For any commutative ring A and γ,δ,s,t∈A, use the actual polynomial ring R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), its coefficient map ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt and a=ιδ·v+ιδ·ιt+ιγ·u. Set J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), and the signed presentations P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε.  Put F=R² with its native R-module structure. For e∈{false,true} write B(e,n)=Φ if (n mod 2=0) has the same truth value as e=true, and Ψ otherwise. C(e) has F in every degree n≥0, differential `C(e)_{n+1}→C(e)_n` given by B(e,n), and zero off that shape. Construct C(e) as a native ℕ-indexed ChainComplex of ModuleCat R with its actual successor maps.
-
-Here A is any commutative ring; no noetherianity, nontriviality or unit-discriminant assumption is required for this actual polynomial calculation. Coefficients M, when present, are any A-module, without M-flatness.
-
-One proof uses the following inputs and comparisons. Bundle F and each actual B(e,n); prove the square-zero equation.
-
-Use the actual signed P_J/P_D maps and native ModuleCat complex, projectivity and QuasiIso. Do not infer native Ext, relative stable reflexivity, two-base completion, hull identification or family/sheaf descent from the resolutions or differential comparison alone.
-
-The construction has the following API.
-
-- For every e,n, C(e).X n is the native object ModuleCat.of R F.
-- For every e,n, C(e).d(n+1,n)=ModuleCat.ofHom(B(e,n)).
-- C(e).d(i,j)=0 whenever j+1≠i; there is no upward differential or negative degree.
-- Every C(e).X n is a projective object of ModuleCat R.
-- For every e,n, the native module underlying C(e).X n has both Module.Free R and Module.Finite R instances; it is the actual F=Fin 2→R.
-- For every A-module M, every phase e and n≥0, native R-linear precomposition by the underlying C(e).d(n+1,n) equals exactly the existing the section Hom differential d(e,n)(A,γ,δ,s,t,M,e,n) on Hom_R(F,R⊗_A M). This fixes the actual coefficient cochain differential; it does not construct a categorical Hom-complex isomorphism or a native Ext comparison.
-
-**Checks.**
-
-- For A=Z/4 and γ=δ=t=0,s=1, C(false) is ExactAt 2.
-- Every chain term is simultaneously a native projective ModuleCat object and a finite R-module.
-- For every A-module M, native Hom precomposition by C(e).d(n+1,n) is the specified the section Hom differential d(e,n).
-
-([knudsen2012](#references), arXiv:1106.1588v2 §3 Key Example, Proposition3.1 and Corollary3.2; §4 separates completed-local descent.; Deduction using `Matrix.mulVecLin_apply` in `Mathlib/LinearAlgebra/Matrix/ToLin.lean`, line 291. The construction-specific inputs are [the section chain differential squares to zero](#2150-the-section-chain-differential-squares-to-zero).)
-
-*Needs:* [the section chain differential squares to zero](#2150-the-section-chain-differential-squares-to-zero), `ChainComplex.of`, `ModuleCat.of`, `ModuleCat.ofHom`.
-
-### 2.165 Natural two-base finite tensor comparison
+### 2.157 Natural two-base finite tensor comparison
 
 Under coefficient convention C6. Assume p finitely generated. Construct the actual native natural isomorphism E_N:Fᴬ_N≅FÂ_N with component at n the inherited Qₙ-linear finite tensor equivalence Eₙ,N as an A-linear isomorphism to the actual native restricted object. Verify A-linearity of both maps through the scalar tower; do not assume the two tensor actions are definitionally identical. Prove naturality for every inequality i≤j, including its inverse.
 
@@ -3919,11 +3796,11 @@ The construction has the following API.
 - In the same fixture with N=ℚ₂ both diagrams are zero at every level, so every component is the zero isomorphism.
 - Starting at level 3 with (u+7)⊗_ℤ1, the transition to level 2 followed by E₂, and E₃ followed by the transition, both give u+3 in Q₂.
 
-(The construction-specific inputs are [finite tensor diagram over the original base](#2110-finite-tensor-diagram-over-the-original-base), [finite tensor diagram over the completed base](#2111-finite-tensor-diagram-over-the-completed-base), [finite two-base tensor equivalence](#2121-finite-two-base-tensor-equivalence), [finite nodal coefficient algebra](#254-finite-nodal-coefficient-algebra).; [knudsen2](#references), Appendix Proposition6, printed194–195 (physical34–35).)
+(The construction-specific inputs are [finite tensor diagram over the original base](#2102-finite-tensor-diagram-over-the-original-base), [finite tensor diagram over the completed base](#2103-finite-tensor-diagram-over-the-completed-base), [finite two-base tensor equivalence](#2113-finite-two-base-tensor-equivalence), [finite nodal coefficient algebra](#249-finite-nodal-coefficient-algebra).; [knudsen2](#references), Appendix Proposition6, printed194–195 (physical34–35).)
 
-*Needs:* [finite tensor diagram over the original base](#2110-finite-tensor-diagram-over-the-original-base), [finite tensor diagram over the completed base](#2111-finite-tensor-diagram-over-the-completed-base), [finite two-base tensor equivalence](#2121-finite-two-base-tensor-equivalence), [finite nodal coefficient algebra](#254-finite-nodal-coefficient-algebra), `CategoryTheory.NatIso.ofComponents`, `ModuleCat.restrictScalars`, `ModuleCat.hom_injective`, `TensorProduct.induction_on`, `DFunLike.ext`, `TensorProduct.smul_tmul'`, `IsScalarTower.algebraMap_smul`.
+*Needs:* [finite tensor diagram over the original base](#2102-finite-tensor-diagram-over-the-original-base), [finite tensor diagram over the completed base](#2103-finite-tensor-diagram-over-the-completed-base), [finite two-base tensor equivalence](#2113-finite-two-base-tensor-equivalence), [finite nodal coefficient algebra](#249-finite-nodal-coefficient-algebra), `CategoryTheory.NatIso.ofComponents`, `ModuleCat.restrictScalars`, `ModuleCat.hom_injective`, `TensorProduct.induction_on`, `DFunLike.ext`, `TensorProduct.smul_tmul'`, `IsScalarTower.algebraMap_smul`.
 
-### 2.166 Ring-linear finite tensor projection
+### 2.158 Ring-linear finite tensor projection
 
 Under coefficient convention C2. Package Pₙ as an actual R-linear map T→Qₙ⊗_Â N, before imposing finiteness on N.
 
@@ -3943,11 +3820,11 @@ The construction has the following API.
 - Under coefficient convention C2. At every n it respects the original R-action on the actual tensor carriers.
 - Under coefficient convention C2. At every n it also respects the distinct completed Â-action.
 
-(Deduction using `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [ordinary completed tensor projections](#2139-ordinary-completed-tensor-projections), [original-ring scalar in tensor evaluations](#2156-original-ring-scalar-in-tensor-evaluations).)
+(Deduction using `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [ordinary completed tensor projections](#2131-ordinary-completed-tensor-projections), [original-ring scalar in tensor evaluations](#2149-original-ring-scalar-in-tensor-evaluations).)
 
-*Needs:* [ordinary completed tensor projections](#2139-ordinary-completed-tensor-projections), [original-ring scalar in tensor evaluations](#2156-original-ring-scalar-in-tensor-evaluations), `TensorProduct`.
+*Needs:* [ordinary completed tensor projections](#2131-ordinary-completed-tensor-projections), [original-ring scalar in tensor evaluations](#2149-original-ring-scalar-in-tensor-evaluations), `TensorProduct`.
 
-### 2.167 Residue of the section dual
+### 2.159 Residue of the section dual
 
 Set q=X²+γXY+δY², F=q(X,Y)−q(s,t), R=A[Y][X]/(F), u=[X], v=[Y], ι:A→R, c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδ·v+ιδ·ιt+ιγ·u, J=(c,d), D=Hom_R(J,R). Construct the A-linear residue ρ:D→A as the second normal coordinate. It is surjective, ρ(ε)=1, and ker ρ is exactly the image of injective multiplication R→D. Furthermore ρ(zh)=ev(z)ρ(h). Hence D/R≅A with the section action.
 
@@ -3967,17 +3844,15 @@ The construction has the following API.
 
 **Checks.**
 
-- ρ(ε)=1.
-- ρ(incl)=0.
 - For nonzero A a right inverse σ of ρ cannot satisfy σ(ev(r)z)=r·σ(z) for all r,z.
 - An actually constructed surjective A-linear residue sends the canonical native dual generator to 1, including the zero base.
 - An actually constructed surjective A-linear residue kills m(r) for every r∈R.
 
 ([knudsen2012](#references), §3, printed pp.11–12: monic division, κ/λ comparisons and proof of Proposition3.1.)
 
-*Needs:* [coefficient-linear normal coordinates of the dual](#2128-coefficient-linear-normal-coordinates-of-the-dual), [node-ring action on the dual coordinates](#2157-node-ring-action-on-the-dual-coordinates), [the canonical correction identity](#2130-the-canonical-correction-identity), [multiplication into the actual section dual](#246-multiplication-into-the-actual-section-dual), [regularity of the second section coordinate](#234-regularity-of-the-second-section-coordinate), [kernel of section evaluation](#213-kernel-of-section-evaluation), `LinearMap.snd`.
+*Needs:* [coefficient-linear normal coordinates of the dual](#2120-coefficient-linear-normal-coordinates-of-the-dual), [node-ring action on the dual coordinates](#2150-node-ring-action-on-the-dual-coordinates), [the canonical correction identity](#2122-the-canonical-correction-identity), [multiplication into the actual section dual](#243-multiplication-into-the-actual-section-dual), [regularity of the second section coordinate](#233-regularity-of-the-second-section-coordinate), [kernel of section evaluation](#213-kernel-of-section-evaluation), `LinearMap.snd`.
 
-### 2.168 Tensor-ring action on the section dual
+### 2.160 Tensor-ring action on the section dual
 
 Under coefficient convention C9. Equip A′⊗_A D with the canonical module structure over the actual tensor algebra T=A′⊗_A R, uniquely characterized by (a′⊗r)·(b′⊗h)=a′b′⊗(r·h). This specializes the existing module/tensor universal properties, and introduces no new abstract theory of tensor representations.
 
@@ -4001,9 +3876,9 @@ The construction has the following API.
 
 ([knudsen2012](#references), §3, printed pp.11–12, monic division and the dual residue calculation preceding Proposition3.1.)
 
-*Needs:* [node-ring action on the dual coordinates](#2157-node-ring-action-on-the-dual-coordinates), [algebraic tensor comparison for a pointed node](#288-algebraic-tensor-comparison-for-a-pointed-node), `TensorProduct.lift`, [the twisted correction product](#2144-the-twisted-correction-product).
+*Needs:* [node-ring action on the dual coordinates](#2150-node-ring-action-on-the-dual-coordinates), [algebraic tensor comparison for a pointed node](#280-algebraic-tensor-comparison-for-a-pointed-node), `TensorProduct.lift`, [the twisted correction product](#2136-the-twisted-correction-product).
 
-### 2.169 Tensor inclusion of the left matrix image
+### 2.161 Tensor inclusion of the left matrix image
 
 For any commutative ring A and γ,δ,s,t∈A, put q(x,y)=x²+γxy+δy², R=A[Y][X]/(q(X,Y)−q(s,t)), ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), P_J(z)=cz₀−dz₁, P_D(z)=z₀·incl−z₁·ε, where dε(j)=bj. Restrict these maps to A. For every A-module M write T_M(f)=id_M⊗_A f, on the actual native tensor products. T_M(im(Φ)↪R²) is injective; M need not be flat.
 
@@ -4015,9 +3890,9 @@ Use the actual node ring, section ideal, R-linear dual and ordered native matrix
 
 ([knudsen2012](#references), §3 Key Example, printed pp.11–12: pψ=φᵀp, pφ=ψᵀp and Proposition3.1.)
 
-*Needs:* [coefficient-linear normal coordinates of the dual](#2128-coefficient-linear-normal-coordinates-of-the-dual), [surjectivity of the ordered dual presentation](#2131-surjectivity-of-the-ordered-dual-presentation), [the relations of the section dual surjection](#292-the-relations-of-the-section-dual-surjection), `LinearMap.lTensor_injective_of_exact_of_flat`.
+*Needs:* [coefficient-linear normal coordinates of the dual](#2120-coefficient-linear-normal-coordinates-of-the-dual), [surjectivity of the ordered dual presentation](#2123-surjectivity-of-the-ordered-dual-presentation), [the relations of the section dual surjection](#284-the-relations-of-the-section-dual-surjection), `LinearMap.lTensor_injective_of_exact_of_flat`.
 
-### 2.170 Canonical section bidual equivalence
+### 2.162 Canonical section bidual equivalence
 
 For every commutative ring A and γ,δ,s,t∈A, put q(X,Y)=X²+γXY+δY², R=A[Y][X]/(q(X,Y)−q(s,t)), ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), incl:J→R, and ε∈D with dε(j)=bj. Write η=Module.Dual.eval R J. Construct E:J≃ₗ[R]Hom_R(D,R) as native Module.evalEquiv R J using the proved ordinary reflexivity.
 
@@ -4042,9 +3917,9 @@ The construction has the following API.
 
 ([knudsen2012](#references), §3 Key Example, multiplication description of J∨ and Proposition 3.1; compare Corollary 3.2 and §4.)
 
-*Needs:* [ordinary reflexivity of the section ideal](#2161-ordinary-reflexivity-of-the-section-ideal), `Module.evalEquiv`, [values of the dual generator](#258-values-of-the-dual-generator).
+*Needs:* [ordinary reflexivity of the section ideal](#2154-ordinary-reflexivity-of-the-section-ideal), `Module.evalEquiv`, [denominator-free dual generator](#240-denominator-free-dual-generator).
 
-### 2.171 Two-base inverse-limit tensor comparison
+### 2.163 Two-base inverse-limit tensor comparison
 
 Under coefficient convention C6. Assume p finitely generated. Construct the actual native A-linear isomorphism Λ_N:lim Fᴬ_N≅lim FÂ_N from the natural isomorphism E_N. Its projections are Eₙ,N on the finite components, its inverse has components Eₙ,N⁻¹, and it carries every compatible cone to the transported cone. This identifies two limits of tensor products; no equality with an ordinary tensor product of a completed ring is asserted.
 
@@ -4069,11 +3944,11 @@ The construction has the following API.
 - With N=0 both limits are 0; with N=ℚ₂ both limits are 0 although N is not.
 - A family with level-1 component 1⊗1 and level-2 component 0 is not compatible, since the transition from level 2 to level 1 sends 0 to 0≠1⊗1; it lies in neither limit.
 
-(Deduction using `CategoryTheory.Limits.IsLimit.hom_ext` and `CategoryTheory.Limits.IsLimit.lift_self` in `Mathlib/CategoryTheory/Limits/IsLimit.lean`, lines 232 and 95. The construction-specific inputs are [natural two-base finite tensor comparison](#2165-natural-two-base-finite-tensor-comparison).; [knudsen2](#references), Appendix Proposition6, printed194–195 (physical34–35).)
+(Deduction using `CategoryTheory.Limits.IsLimit.hom_ext` and `CategoryTheory.Limits.IsLimit.lift_self` in `Mathlib/CategoryTheory/Limits/IsLimit.lean`, lines 232 and 95. The construction-specific inputs are [natural two-base finite tensor comparison](#2157-natural-two-base-finite-tensor-comparison).; [knudsen2](#references), Appendix Proposition6, printed194–195 (physical34–35).)
 
-*Needs:* [natural two-base finite tensor comparison](#2165-natural-two-base-finite-tensor-comparison), `ModuleCat.hasLimits`, `CategoryTheory.Limits.HasLimit.isoOfNatIso`.
+*Needs:* [natural two-base finite tensor comparison](#2157-natural-two-base-finite-tensor-comparison), `ModuleCat.hasLimits`, `CategoryTheory.Limits.HasLimit.isoOfNatIso`.
 
-### 2.172 Finite-free ordinary tensor cone lift
+### 2.164 Finite-free ordinary tensor cone lift
 
 Under coefficient convention C5. For every Cone C over G, construct an actual Â-linear lift C.pt→R̂⊗_Â N by assembling all r coordinates and applying ĉ⁻¹.
 
@@ -4093,11 +3968,11 @@ The construction has the following API.
 - The cone with all legs zero lifts to the zero map, even on a nonzero cone point; the cone with legs a↦a·uv⊗1 at every level lifts to a↦a·uv⊗1.
 - In the first cone, the lift of 1/3 is (1/3)σ⊗1, whose level-2 image is 3+2v.
 
-(Deduction using `TensorProduct.piScalarRight` and `TensorProduct.piScalarRight_symm_single` in `Mathlib/LinearAlgebra/TensorProduct/Pi.lean`, lines 163 and 175; tensor components use `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [completed-chart coefficient-linear evaluation](#2123-completed-chart-coefficient-linear-evaluation), [the actual completed coefficient algebra](#285-the-actual-completed-coefficient-algebra), [completed coordinate of a cone lift](#2154-completed-coordinate-of-a-cone-lift), [finite quotient transition over completed coefficients](#277-finite-quotient-transition-over-completed-coefficients), [native completed-coefficient tensor diagram](#2112-native-completed-coefficient-tensor-diagram).; [knudsen2](#references), Appendix Proposition 6, pp. 194–195, for the surrounding two-base completion problem; the displayed native diagram calculation is the deduction specified here.)
+(Deduction using `TensorProduct.piScalarRight` and `TensorProduct.piScalarRight_symm_single` in `Mathlib/LinearAlgebra/TensorProduct/Pi.lean`, lines 163 and 175; tensor components use `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [completed-chart coefficient-linear evaluation](#2115-completed-chart-coefficient-linear-evaluation), [the actual completed coefficient algebra](#277-the-actual-completed-coefficient-algebra), [completed coordinate of a cone lift](#2147-completed-coordinate-of-a-cone-lift), [finite quotient transition over completed coefficients](#269-finite-quotient-transition-over-completed-coefficients), [native completed-coefficient tensor diagram](#2104-native-completed-coefficient-tensor-diagram).; [knudsen2](#references), Appendix Proposition 6, pp. 194–195, for the surrounding two-base completion problem; the displayed native diagram calculation is the deduction specified here.)
 
-*Needs:* [completed-chart coefficient-linear evaluation](#2123-completed-chart-coefficient-linear-evaluation), [the actual completed coefficient algebra](#285-the-actual-completed-coefficient-algebra), [completed coordinate of a cone lift](#2154-completed-coordinate-of-a-cone-lift), [finite quotient transition over completed coefficients](#277-finite-quotient-transition-over-completed-coefficients), [native completed-coefficient tensor diagram](#2112-native-completed-coefficient-tensor-diagram), `AdicCompletion`, `AdicCompletion.evalₐ`, `AdicCompletion.ext_evalₐ`, `RingHom`, `TensorProduct.piScalarRight`.
+*Needs:* [completed-chart coefficient-linear evaluation](#2115-completed-chart-coefficient-linear-evaluation), [the actual completed coefficient algebra](#277-the-actual-completed-coefficient-algebra), [completed coordinate of a cone lift](#2147-completed-coordinate-of-a-cone-lift), [finite quotient transition over completed coefficients](#269-finite-quotient-transition-over-completed-coefficients), [native completed-coefficient tensor diagram](#2104-native-completed-coefficient-tensor-diagram), `AdicCompletion`, `AdicCompletion.evalₐ`, `AdicCompletion.ext_evalₐ`, `RingHom`, `TensorProduct.piScalarRight`.
 
-### 2.173 Separation by finite tensor projections
+### 2.165 Separation by finite tensor projections
 
 Under coefficient convention C1. If r∘i=id_N and P_N,n(x)=P_N,n(y) for every n, then x=y in R̂⊗_Â N.
 
@@ -4105,11 +3980,11 @@ A and N lie in one common universe and carry explicit compatible A/Â-actions. N
 
 One proof uses the following inputs and comparisons. Embed x,y by id_R̂⊗i, use the finite-free projection extensionality, and retract by id_R̂⊗r. No flatness of R̂ or N is assumed.
 
-(Deduction using `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [ordinary completed tensor projections](#2139-ordinary-completed-tensor-projections), [ordinary completed tensor projection](#2138-ordinary-completed-tensor-projection).; [knudsen2](#references), Appendix Proposition 6, pp. 194–195, for the surrounding two-base completion problem; the displayed native diagram calculation is the deduction specified here.)
+(Deduction using `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [ordinary completed tensor projections](#2131-ordinary-completed-tensor-projections), [ordinary completed tensor projection](#2130-ordinary-completed-tensor-projection).; [knudsen2](#references), Appendix Proposition 6, pp. 194–195, for the surrounding two-base completion problem; the displayed native diagram calculation is the deduction specified here.)
 
-*Needs:* [ordinary completed tensor projections](#2139-ordinary-completed-tensor-projections), [ordinary completed tensor projection](#2138-ordinary-completed-tensor-projection), `TensorProduct`, `LinearMap.lTensor_comp_apply`, `LinearMap.lTensor_id_apply`.
+*Needs:* [ordinary completed tensor projections](#2131-ordinary-completed-tensor-projections), [ordinary completed tensor projection](#2130-ordinary-completed-tensor-projection), `TensorProduct`, `LinearMap.lTensor_comp_apply`, `LinearMap.lTensor_id_apply`.
 
-### 2.174 Projection of actual relative Hom maps
+### 2.166 Projection of actual relative Hom maps
 
 Under coefficient convention C2. Construct C_L:Hom_R(L,T)→ₗ[Â]H_L by (C_L(f))ₙ=Pₙ∘f; finiteness of N is unnecessary for this map.
 
@@ -4125,15 +4000,15 @@ The construction has the following API.
 
 **Checks.**
 
-- Under coefficient convention C2. At every n and x, projection of f is the actual tensor evaluation Pₙ(f(x)).
-- Under coefficient convention C2. The zero R-linear map projects to the zero compatible family.
-- Under coefficient convention C2. Multiplying the R-linear Hom map by a∈Â multiplies the whole projected family by a.
+- In the fixture A=ℤ, γ=δ=s=t=0, p=(2), m=2R and N=ℤ₂, with L=J and f=m(u):J→T, j↦uj⊗1: `(C_J(f))₂(v)=P₂(uv⊗1)=[uv]⊗1` in `Q₂⊗_{ℤ₂}ℤ₂` and `(C_J(f))₁(u)=P₁(u²⊗1)=0`.
+- For a=1/3∈Â, (C_J((1/3)·f))₂(v)=(1/3)·([uv]⊗1)=[3uv]⊗1, since 1/3≡3 modulo 4, while (C_J(f))₂(v)=[uv]⊗1; the Â-action on the projected family is not through 1.
+- The maps m(u) and m(v) have projected families that differ already at level 1: `(C_J(m(v)))₁(u)=[uv]⊗1≠0` in `𝔽₂[u,v]/(u²)⊗_{ℤ₂}ℤ₂` while `(C_J(m(u)))₁(u)=0`.
 
-(Deduction using `LinearMap.comp_apply` in `Mathlib/Algebra/Module/LinearMap/Defs.lean`, line 495. The construction-specific inputs are [compatible quotient hom families](#2127-compatible-quotient-hom-families), [ring-linear finite tensor projection](#2166-ring-linear-finite-tensor-projection), [ordinary completed tensor cone](#2155-ordinary-completed-tensor-cone).)
+(Deduction using `LinearMap.comp_apply` in `Mathlib/Algebra/Module/LinearMap/Defs.lean`, line 495. The construction-specific inputs are [compatible quotient hom families](#2119-compatible-quotient-hom-families), [ring-linear finite tensor projection](#2158-ring-linear-finite-tensor-projection), [ordinary completed tensor cone](#2148-ordinary-completed-tensor-cone).)
 
-*Needs:* [compatible quotient hom families](#2127-compatible-quotient-hom-families), [ring-linear finite tensor projection](#2166-ring-linear-finite-tensor-projection), [ordinary completed tensor cone](#2155-ordinary-completed-tensor-cone), `TensorProduct`.
+*Needs:* [compatible quotient hom families](#2119-compatible-quotient-hom-families), [ring-linear finite tensor projection](#2158-ring-linear-finite-tensor-projection), [ordinary completed tensor cone](#2148-ordinary-completed-tensor-cone), `TensorProduct`.
 
-### 2.175 Ring-linear tensor comparison for the section dual
+### 2.167 Ring-linear tensor comparison for the section dual
 
 Under coefficient convention C9. Transport the preceding T-module structure along E_R⁻¹:R′→T. Then E_D is an R′-linear equivalence for this action and the usual action on `Hom_{R′}(J′,R′)`. In particular E_D(a′⊗(r·h))=φ(r)·E_D(a′⊗h).
 
@@ -4145,9 +4020,9 @@ The R′ action is transported from the specified tensor-ring action, not define
 
 ([knudsen2012](#references), §3, printed pp.11–12, monic division and the dual residue calculation preceding Proposition3.1.)
 
-*Needs:* [algebraic tensor comparison for a pointed node](#288-algebraic-tensor-comparison-for-a-pointed-node), [canonical tensor comparison for the section dual](#2158-canonical-tensor-comparison-for-the-section-dual), [tensor-ring action on the section dual](#2168-tensor-ring-action-on-the-section-dual), [coefficient naturality of dual scalar correction](#2142-coefficient-naturality-of-dual-scalar-correction), `Module.compHom`.
+*Needs:* [algebraic tensor comparison for a pointed node](#280-algebraic-tensor-comparison-for-a-pointed-node), [canonical tensor comparison for the section dual](#2151-canonical-tensor-comparison-for-the-section-dual), [tensor-ring action on the section dual](#2160-tensor-ring-action-on-the-section-dual), [coefficient naturality of dual scalar correction](#2134-coefficient-naturality-of-dual-scalar-correction), `Module.compHom`.
 
-### 2.176 Residue equivalence for the actual dual quotient
+### 2.168 Residue equivalence for the actual dual quotient
 
 Under coefficient convention C9. Form Q=D/im(m), using the image of the actual injective R-linear multiplication map m:R→D. Construct the canonical A-linear equivalence E_Q:Q≃A induced by ρ, normalized by E_Q([ε])=1. The inherited R action satisfies E_Q(r·z)=ev(r)E_Q(z).
 
@@ -4171,9 +4046,9 @@ The construction has the following API.
 
 ([knudsen2012](#references), §3, printed pp.11–12, monic division and the dual residue calculation preceding Proposition3.1.)
 
-*Needs:* [residue of the section dual](#2167-residue-of-the-section-dual), [coefficient-linear normal coordinates of the dual](#2128-coefficient-linear-normal-coordinates-of-the-dual), [regularity of the second section coordinate](#234-regularity-of-the-second-section-coordinate), `Submodule.liftQ`.
+*Needs:* [residue of the section dual](#2159-residue-of-the-section-dual), [coefficient-linear normal coordinates of the dual](#2120-coefficient-linear-normal-coordinates-of-the-dual), [regularity of the second section coordinate](#233-regularity-of-the-second-section-coordinate), `Submodule.liftQ`.
 
-### 2.177 Multiplication maps under ambient transport
+### 2.169 Multiplication maps under ambient transport
 
 A is any commutative ring; γ,δ,s,t∈A. R=A[Y][X]/(X²+γYX+δY²−q(s,t)), c=u−s,d=v−t, J=(c,d), D=Hom_R(J,R), m:R→D, m(r)(j)=rj, Q=D/im(m). B is a commutative R-algebra flat as an R-module; J_B=J·B is the actual mapped ideal, D_B=Hom_B(J_B,B), m_B(b)(j)=bj and Q_B=D_B/im(m_B). E_D(b⊗m(r))=m_B(bφ(r)). Consequently E_D carries the image of B⊗m onto im(m_B).
 
@@ -4185,9 +4060,9 @@ The quotient comparison uses this range equality; an abstract isomorphism D_B≃
 
 ([stacks-hom-flat](#references), Stacks tag087R, Lemma15.67.4(1), together with the proof at087Q; [knudsen2](#references), Appendix Definition1, Theorem2, Propositions4–7, printed191–195 (PDF31–35).)
 
-*Needs:* [dual of the extended section ideal](#2129-dual-of-the-extended-section-ideal), [residue of the section dual](#2167-residue-of-the-section-dual).
+*Needs:* [dual of the extended section ideal](#2121-dual-of-the-extended-section-ideal), [residue of the section dual](#2159-residue-of-the-section-dual).
 
-### 2.178 Coefficient universal exactness at Φ
+### 2.170 Coefficient universal exactness at Φ
 
 For any commutative ring A and γ,δ,s,t∈A, put q(x,y)=x²+γxy+δy², R=A[Y][X]/(q(X,Y)−q(s,t)), ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), P_J(z)=cz₀−dz₁, P_D(z)=z₀·incl−z₁·ε, where dε(j)=bj. Restrict these maps to A. For every A-module M write T_M(f)=id_M⊗_A f, on the actual native tensor products. ker T_M(Φ)=im T_M(Ψ).
 
@@ -4206,9 +4081,9 @@ Use the actual node ring, section ideal, R-linear dual and ordered native matrix
 
 ([knudsen2012](#references), §3 Key Example, printed pp.11–12: pψ=φᵀp, pφ=ψᵀp and Proposition3.1.)
 
-*Needs:* [exactness at the left node matrix](#2102-exactness-at-the-left-node-matrix), [tensor inclusion of the left matrix image](#2169-tensor-inclusion-of-the-left-matrix-image), `lTensor_exact`, `LinearMap.rangeRestrict`, `LinearMap.ker_rangeRestrict`, `LinearMap.surjective_rangeRestrict`, `LinearMap.subtype_comp_rangeRestrict`, `LinearMap.lTensor_comp`, `Function.Injective.comp_exact_iff_exact`.
+*Needs:* [exactness at the left node matrix](#294-exactness-at-the-left-node-matrix), [tensor inclusion of the left matrix image](#2161-tensor-inclusion-of-the-left-matrix-image), `lTensor_exact`, `LinearMap.rangeRestrict`, `LinearMap.ker_rangeRestrict`, `LinearMap.surjective_rangeRestrict`, `LinearMap.subtype_comp_rangeRestrict`, `LinearMap.lTensor_comp`, `Function.Injective.comp_exact_iff_exact`.
 
-### 2.179 Positive-degree exactness of the section chain
+### 2.171 Positive-degree exactness of the section chain
 
 For any commutative ring A and γ,δ,s,t∈A, use the actual polynomial ring R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), its coefficient map ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt and a=ιδ·v+ιδ·ιt+ιγ·u. Set J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), and the signed presentations P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε.  Put F=R² with its native R-module structure. For e∈{false,true} write B(e,n)=Φ if (n mod 2=0) has the same truth value as e=true, and Ψ otherwise. C(e) has F in every degree n≥0, differential `C(e)_{n+1}→C(e)_n` given by B(e,n), and zero off that shape. C(e) is natively ExactAt(n+1) for every e and n≥0.
 
@@ -4218,11 +4093,11 @@ One proof uses the following inputs and comparisons. Identify the actual associa
 
 Use the actual signed P_J/P_D maps and native ModuleCat complex, projectivity and QuasiIso. Do not infer native Ext, relative stable reflexivity, two-base completion, hull identification or family/sheaf descent from the resolutions or differential comparison alone.
 
-([knudsen2012](#references), arXiv:1106.1588v2 §3 Key Example, Proposition3.1 and Corollary3.2; §4 separates completed-local descent.; Deduction using `Matrix.mulVecLin_apply` in `Mathlib/LinearAlgebra/Matrix/ToLin.lean`, line 291. The construction-specific inputs are [the native polynomial section chain complex](#2164-the-native-polynomial-section-chain-complex), [exactness of consecutive section chain maps](#2133-exactness-of-consecutive-section-chain-maps).)
+([knudsen2012](#references), arXiv:1106.1588v2 §3 Key Example, Proposition3.1 and Corollary3.2; §4 separates completed-local descent.; Deduction using `Matrix.mulVecLin_apply` in `Mathlib/LinearAlgebra/Matrix/ToLin.lean`, line 291. The construction-specific inputs are [the native polynomial section chain complex](#2143-the-native-polynomial-section-chain-complex), [exactness of consecutive section chain maps](#2125-exactness-of-consecutive-section-chain-maps).)
 
-*Needs:* [the native polynomial section chain complex](#2164-the-native-polynomial-section-chain-complex), [exactness of consecutive section chain maps](#2133-exactness-of-consecutive-section-chain-maps), `HomologicalComplex.exactAt_iff'`, `CategoryTheory.ShortComplex.moduleCat_exact_iff`.
+*Needs:* [the native polynomial section chain complex](#2143-the-native-polynomial-section-chain-complex), [exactness of consecutive section chain maps](#2125-exactness-of-consecutive-section-chain-maps), `HomologicalComplex.exactAt_iff'`, `CategoryTheory.ShortComplex.moduleCat_exact_iff`.
 
-### 2.180 Two-base finite-tensor limit with completed target
+### 2.172 Two-base finite-tensor limit with completed target
 
 Under coefficient convention C7. Assume p is finitely generated. Construct the A-linear isomorphism E:lim Fᴬ≅Res_A^Â(lim G), composing the finite-tensor limit isomorphism, the limit of ρ and the inverse native restriction-of-scalars limit comparison. Its target is the restriction of the actual Â-module limit.
 
@@ -4244,11 +4119,11 @@ The construction has the following API.
 - Every inverse finite-level projection is the prescribed inverse comparison.
 - The composite E⁻¹ followed by E is the identity of Res_A^Â(lim G).
 
-(Deduction using `CategoryTheory.Limits.IsLimit.hom_ext` and `CategoryTheory.Limits.IsLimit.lift_self` in `Mathlib/CategoryTheory/Limits/IsLimit.lean`, lines 232 and 95. The construction-specific inputs are [restriction of the native completed diagram](#2122-restriction-of-the-native-completed-diagram), [native completed-coefficient tensor diagram](#2112-native-completed-coefficient-tensor-diagram), [two-base inverse-limit tensor comparison](#2171-two-base-inverse-limit-tensor-comparison).; [knudsen2](#references), Appendix Proposition6, printed194–195 (physical34–35).)
+(Deduction using `CategoryTheory.Limits.IsLimit.hom_ext` and `CategoryTheory.Limits.IsLimit.lift_self` in `Mathlib/CategoryTheory/Limits/IsLimit.lean`, lines 232 and 95. The construction-specific inputs are [restriction of the native completed diagram](#2114-restriction-of-the-native-completed-diagram), [native completed-coefficient tensor diagram](#2104-native-completed-coefficient-tensor-diagram), [two-base inverse-limit tensor comparison](#2163-two-base-inverse-limit-tensor-comparison).; [knudsen2](#references), Appendix Proposition6, printed194–195 (physical34–35).)
 
-*Needs:* [restriction of the native completed diagram](#2122-restriction-of-the-native-completed-diagram), [native completed-coefficient tensor diagram](#2112-native-completed-coefficient-tensor-diagram), [two-base inverse-limit tensor comparison](#2171-two-base-inverse-limit-tensor-comparison), `CategoryTheory.Limits.HasLimit.isoOfNatIso`, `ModuleCat.preservesLimit_restrictScalars`, `CategoryTheory.preservesLimitIso`.
+*Needs:* [restriction of the native completed diagram](#2114-restriction-of-the-native-completed-diagram), [native completed-coefficient tensor diagram](#2104-native-completed-coefficient-tensor-diagram), [two-base inverse-limit tensor comparison](#2163-two-base-inverse-limit-tensor-comparison), `CategoryTheory.Limits.HasLimit.isoOfNatIso`, `ModuleCat.preservesLimit_restrictScalars`, `CategoryTheory.preservesLimitIso`.
 
-### 2.181 Retracting the finite-coordinate lift
+### 2.173 Retracting the finite-coordinate lift
 
 Under coefficient convention C1. For any i:N→F and r:F→N, define L_i,r(c)=(id_R̂⊗r)∘L_F(c embedded by i):c.pt→ₗ[Â]R̂⊗_Â N. The formula exists before assuming r∘i=id.
 
@@ -4268,11 +4143,11 @@ The construction has the following API.
 - In the same fixture with i=0 and r=0, r∘i=0≠id and the lift is zero, so its level-3 projection is 0≠(1+2v+4v²)⊗1: the factorisation needs the retraction hypothesis.
 - The rank-one splitting i=r=id and the rank-two splitting above give the same lift σ⊗1, as independence of the chosen finite free retract requires.
 
-(Deduction using `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [embedding a nodal cone into finite coordinates](#2126-embedding-a-nodal-cone-into-finite-coordinates), [finite-free ordinary tensor cone lift](#2172-finite-free-ordinary-tensor-cone-lift).; [knudsen2](#references), Appendix Proposition 6, pp. 194–195, for the surrounding two-base completion problem; the displayed native diagram calculation is the deduction specified here.)
+(Deduction using `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [embedding a nodal cone into finite coordinates](#2118-embedding-a-nodal-cone-into-finite-coordinates), [finite-free ordinary tensor cone lift](#2164-finite-free-ordinary-tensor-cone-lift).; [knudsen2](#references), Appendix Proposition 6, pp. 194–195, for the surrounding two-base completion problem; the displayed native diagram calculation is the deduction specified here.)
 
-*Needs:* [embedding a nodal cone into finite coordinates](#2126-embedding-a-nodal-cone-into-finite-coordinates), [finite-free ordinary tensor cone lift](#2172-finite-free-ordinary-tensor-cone-lift), `TensorProduct`, `LinearMap.lTensor`.
+*Needs:* [embedding a nodal cone into finite coordinates](#2118-embedding-a-nodal-cone-into-finite-coordinates), [finite-free ordinary tensor cone lift](#2164-finite-free-ordinary-tensor-cone-lift), `TensorProduct`, `LinearMap.lTensor`.
 
-### 2.182 Finite projections separate completed tensors
+### 2.174 Finite projections separate completed tensors
 
 Under coefficient convention C2. For finite projective N, if Pₙ(x)=Pₙ(y) for all n then x=y in T.
 
@@ -4280,11 +4155,11 @@ Native A,N,L,K have a common universe with compatible A/Â-actions on N. Here N 
 
 One proof uses the following inputs and comparisons. Use the pinned finite-projective splitting and retract projection separation. No basis of N is chosen as a hypothesis.
 
-(The construction-specific inputs are [separation by finite tensor projections](#2173-separation-by-finite-tensor-projections).)
+(The construction-specific inputs are [separation by finite tensor projections](#2165-separation-by-finite-tensor-projections).)
 
-*Needs:* [separation by finite tensor projections](#2173-separation-by-finite-tensor-projections), `TensorProduct`, `Module.Finite.exists_comp_eq_id_of_projective`.
+*Needs:* [separation by finite tensor projections](#2165-separation-by-finite-tensor-projections), `TensorProduct`, `Module.Finite.exists_comp_eq_id_of_projective`.
 
-### 2.183 Coefficient base change of the actual dual quotient
+### 2.175 Coefficient base change of the actual dual quotient
 
 Under coefficient convention C9. Construct the canonical A′-linear equivalence `E_{Q,f}:A′⊗_A` Q≃Q′ satisfying `E_{Q,f}(a′⊗[h])=[E_D(a′⊗h)]` and `E_Q′(E_{Q,f}(a′⊗z))=a′f(E_Q(z))`. This is the base change of D/im(m), not an identification of chosen unrelated copies of A.
 
@@ -4311,9 +4186,9 @@ The construction has the following API.
 
 ([knudsen2012](#references), §3, printed pp.11–12, monic division and the dual residue calculation preceding Proposition3.1.)
 
-*Needs:* [residue equivalence for the actual dual quotient](#2176-residue-equivalence-for-the-actual-dual-quotient), [canonical tensor comparison for the section dual](#2158-canonical-tensor-comparison-for-the-section-dual), [algebraic tensor comparison for a pointed node](#288-algebraic-tensor-comparison-for-a-pointed-node), [ring-linear tensor comparison for the section dual](#2175-ring-linear-tensor-comparison-for-the-section-dual), `TensorProduct.AlgebraTensorModule.rid`, `Submodule.liftQ`.
+*Needs:* [residue equivalence for the actual dual quotient](#2168-residue-equivalence-for-the-actual-dual-quotient), [canonical tensor comparison for the section dual](#2151-canonical-tensor-comparison-for-the-section-dual), [algebraic tensor comparison for a pointed node](#280-algebraic-tensor-comparison-for-a-pointed-node), [ring-linear tensor comparison for the section dual](#2167-ring-linear-tensor-comparison-for-the-section-dual), `TensorProduct.AlgebraTensorModule.rid`, `Submodule.liftQ`.
 
-### 2.184 Residue quotient under ambient extension
+### 2.176 Residue quotient under ambient extension
 
 A is any commutative ring; γ,δ,s,t∈A. R=A[Y][X]/(X²+γYX+δY²−q(s,t)), c=u−s,d=v−t, J=(c,d), D=Hom_R(J,R), m:R→D, m(r)(j)=rj, Q=D/im(m). B is a commutative R-algebra flat as an R-module; J_B=J·B is the actual mapped ideal, D_B=Hom_B(J_B,B), m_B(b)(j)=bj and Q_B=D_B/im(m_B). Construct E_Q:B⊗_R Q≃_B Q_B with E_Q(b⊗[h])=[E_D(b⊗h)].
 
@@ -4337,9 +4212,9 @@ The construction has the following API.
 
 ([stacks-hom-flat](#references), Stacks tag087R, Lemma15.67.4(1), together with the proof at087Q; [knudsen2](#references), Appendix Definition1, Theorem2, Propositions4–7, printed191–195 (PDF31–35).)
 
-*Needs:* [multiplication maps under ambient transport](#2177-multiplication-maps-under-ambient-transport), `TensorProduct.AlgebraTensorModule.tensorQuotientEquiv`, `TensorProduct.AlgebraTensorModule.tensorQuotientEquiv_apply_tmul`.
+*Needs:* [multiplication maps under ambient transport](#2169-multiplication-maps-under-ambient-transport), `TensorProduct.AlgebraTensorModule.tensorQuotientEquiv`, `TensorProduct.AlgebraTensorModule.tensorQuotientEquiv_apply_tmul`.
 
-### 2.185 Coefficient universal exactness at Ψᵀ
+### 2.177 Coefficient universal exactness at Ψᵀ
 
 For any commutative ring A and γ,δ,s,t∈A, put q(x,y)=x²+γxy+δy², R=A[Y][X]/(q(X,Y)−q(s,t)), ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), P_J(z)=cz₀−dz₁, P_D(z)=z₀·incl−z₁·ε, where dε(j)=bj. Restrict these maps to A. For every A-module M write T_M(f)=id_M⊗_A f, on the actual native tensor products. ker T_M(Ψᵀ)=im T_M(Φᵀ).
 
@@ -4355,9 +4230,9 @@ Use the actual node ring, section ideal, R-linear dual and ordered native matrix
 
 ([knudsen2012](#references), §3 Key Example, printed pp.11–12: pψ=φᵀp, pφ=ψᵀp and Proposition3.1.)
 
-*Needs:* [tensor rotation intertwines φ transpose](#249-tensor-rotation-intertwines-φ-transpose), [tensor rotation intertwines ψ transpose](#250-tensor-rotation-intertwines-ψ-transpose), [coefficient universal exactness at φ](#2178-coefficient-universal-exactness-at-φ), `Function.Exact.of_ladder_linearEquiv_of_exact`.
+*Needs:* [tensor rotation intertwines φ transpose](#244-tensor-rotation-intertwines-φ-transpose), [tensor rotation intertwines ψ transpose](#245-tensor-rotation-intertwines-ψ-transpose), [coefficient universal exactness at φ](#2170-coefficient-universal-exactness-at-φ), `Function.Exact.of_ladder_linearEquiv_of_exact`.
 
-### 2.186 Injectivity of coefficient-valued bidual evaluation
+### 2.178 Injectivity of coefficient-valued bidual evaluation
 
 For any commutative ring A and γ,δ,s,t∈A, let q(X,Y)=X²+γXY+δY², R=A[Y][X]/(q(X,Y)−q(s,t)), ι:A→R the actual coefficient algebra map, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), incl:J→R and ε∈D with dε(j)=bj. Put Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε and p(z)=(-z₁,z₀). For any A-module M, set N_M=R⊗_A M with the inherited left R-action, and U_M(f)=f⊗_A id_M on the actual native tensors. Use the already-built finite-product tensor and finite-free Hom coordinates E_M:R²⊗_A M≃ₗ[A]Hom_R(R²,N_M), E_M(z⊗m)(w)=(w₀z₀+w₁z₁)⊗m. θ_J,M is injective for every A-module M.
 
@@ -4371,11 +4246,11 @@ The statement uses the actual section ideal and actual R-linear dual in the untr
 
 - The ideal tensor–Hom comparison also holds over the zero coefficient ring Z/1 with its actual native carriers.
 
-(Deduction using `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [dual Hom coordinates with coefficients](#275-dual-hom-coordinates-with-coefficients), [surjectivity of the ordered ideal presentation](#238-surjectivity-of-the-ordered-ideal-presentation), [coefficient universal exactness at φ](#2178-coefficient-universal-exactness-at-φ), [tensor exactness of the ideal presentation](#2105-tensor-exactness-of-the-ideal-presentation), [the symplectic rotation of section coordinates](#226-the-symplectic-rotation-of-section-coordinates).)
+(Deduction using `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [dual Hom coordinates with coefficients](#267-dual-hom-coordinates-with-coefficients), [surjectivity of the ordered ideal presentation](#236-surjectivity-of-the-ordered-ideal-presentation), [coefficient universal exactness at φ](#2170-coefficient-universal-exactness-at-φ), [tensor exactness of the ideal presentation](#297-tensor-exactness-of-the-ideal-presentation), [the symplectic rotation of section coordinates](#226-the-symplectic-rotation-of-section-coordinates).)
 
-*Needs:* [dual Hom coordinates with coefficients](#275-dual-hom-coordinates-with-coefficients), [surjectivity of the ordered ideal presentation](#238-surjectivity-of-the-ordered-ideal-presentation), [coefficient universal exactness at φ](#2178-coefficient-universal-exactness-at-φ), [tensor exactness of the ideal presentation](#2105-tensor-exactness-of-the-ideal-presentation), `LinearMap.rTensor_surjective`, `LinearMap.rTensor_exact_iff_lTensor_exact`, [the symplectic rotation of section coordinates](#226-the-symplectic-rotation-of-section-coordinates), `LinearEquiv.rTensor`.
+*Needs:* [dual Hom coordinates with coefficients](#267-dual-hom-coordinates-with-coefficients), [surjectivity of the ordered ideal presentation](#236-surjectivity-of-the-ordered-ideal-presentation), [coefficient universal exactness at φ](#2170-coefficient-universal-exactness-at-φ), [tensor exactness of the ideal presentation](#297-tensor-exactness-of-the-ideal-presentation), `LinearMap.rTensor_surjective`, `LinearMap.rTensor_exact_iff_lTensor_exact`, [the symplectic rotation of section coordinates](#226-the-symplectic-rotation-of-section-coordinates), `LinearEquiv.rTensor`.
 
-### 2.187 The section-ideal augmentation is a native quasi-isomorphism
+### 2.179 The section-ideal augmentation is a native quasi-isomorphism
 
 For any commutative ring A and γ,δ,s,t∈A, use the actual polynomial ring R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), its coefficient map ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt and a=ιδ·v+ιδ·ιt+ιγ·u. Set J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), and the signed presentations P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε.  Put F=R² with its native R-module structure. For e∈{false,true} write B(e,n)=Φ if (n mod 2=0) has the same truth value as e=true, and Ψ otherwise. C(e) has F in every degree n≥0, differential `C(e)_{n+1}→C(e)_n` given by B(e,n), and zero off that shape. π_J is a QuasiIso: its map on native homology is an isomorphism in every degree.
 
@@ -4385,11 +4260,11 @@ One proof uses the following inputs and comparisons. In degree zero use the actu
 
 Use the actual signed P_J/P_D maps and native ModuleCat complex, projectivity and QuasiIso. Do not infer native Ext, relative stable reflexivity, two-base completion, hull identification or family/sheaf descent from the resolutions or differential comparison alone.
 
-([knudsen2012](#references), arXiv:1106.1588v2 §3 Key Example, Proposition3.1 and Corollary3.2; §4 separates completed-local descent.; Deduction using `Matrix.mulVecLin_apply` in `Mathlib/LinearAlgebra/Matrix/ToLin.lean`, line 291. The construction-specific inputs are [the native augmentation to the actual section ideal](#2151-the-native-augmentation-to-the-actual-section-ideal), [positive-degree exactness of the section chain](#2179-positive-degree-exactness-of-the-section-chain), [the relations of the section ideal surjection](#291-the-relations-of-the-section-ideal-surjection), [surjectivity of the ordered ideal presentation](#238-surjectivity-of-the-ordered-ideal-presentation).)
+([knudsen2012](#references), arXiv:1106.1588v2 §3 Key Example, Proposition3.1 and Corollary3.2; §4 separates completed-local descent.; Deduction using `Matrix.mulVecLin_apply` in `Mathlib/LinearAlgebra/Matrix/ToLin.lean`, line 291. The construction-specific inputs are [the native augmentation to the actual section ideal](#2144-the-native-augmentation-to-the-actual-section-ideal), [positive-degree exactness of the section chain](#2171-positive-degree-exactness-of-the-section-chain), [the relations of the section ideal surjection](#283-the-relations-of-the-section-ideal-surjection), [surjectivity of the ordered ideal presentation](#236-surjectivity-of-the-ordered-ideal-presentation).)
 
-*Needs:* [the native augmentation to the actual section ideal](#2151-the-native-augmentation-to-the-actual-section-ideal), [positive-degree exactness of the section chain](#2179-positive-degree-exactness-of-the-section-chain), [the relations of the section ideal surjection](#291-the-relations-of-the-section-ideal-surjection), [surjectivity of the ordered ideal presentation](#238-surjectivity-of-the-ordered-ideal-presentation), `ChainComplex.quasiIsoAt₀_iff`, `CategoryTheory.ShortComplex.quasiIso_iff_of_zeros'`, `CategoryTheory.ShortComplex.exact_and_epi_g_iff_of_iso`, `CategoryTheory.ShortComplex.isoMk`, `ModuleCat.epi_iff_surjective`, `quasiIsoAt_iff_exactAt'`, `ChainComplex.exactAt_succ_single_obj`.
+*Needs:* [the native augmentation to the actual section ideal](#2144-the-native-augmentation-to-the-actual-section-ideal), [positive-degree exactness of the section chain](#2171-positive-degree-exactness-of-the-section-chain), [the relations of the section ideal surjection](#283-the-relations-of-the-section-ideal-surjection), [surjectivity of the ordered ideal presentation](#236-surjectivity-of-the-ordered-ideal-presentation), `ChainComplex.quasiIsoAt₀_iff`, `CategoryTheory.ShortComplex.quasiIso_iff_of_zeros'`, `CategoryTheory.ShortComplex.exact_and_epi_g_iff_of_iso`, `CategoryTheory.ShortComplex.isoMk`, `ModuleCat.epi_iff_surjective`, `quasiIsoAt_iff_exactAt'`, `ChainComplex.exactAt_succ_single_obj`.
 
-### 2.188 The dual augmentation is a native quasi-isomorphism
+### 2.180 The dual augmentation is a native quasi-isomorphism
 
 For any commutative ring A and γ,δ,s,t∈A, use the actual polynomial ring R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), its coefficient map ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt and a=ιδ·v+ιδ·ιt+ιγ·u. Set J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), and the signed presentations P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε.  Put F=R² with its native R-module structure. For e∈{false,true} write B(e,n)=Φ if (n mod 2=0) has the same truth value as e=true, and Ψ otherwise. C(e) has F in every degree n≥0, differential `C(e)_{n+1}→C(e)_n` given by B(e,n), and zero off that shape. π_D is a QuasiIso: its map on native homology is an isomorphism in every degree.
 
@@ -4399,11 +4274,11 @@ One proof uses the following inputs and comparisons. In degree zero use the actu
 
 Use the actual signed P_J/P_D maps and native ModuleCat complex, projectivity and QuasiIso. Do not infer native Ext, relative stable reflexivity, two-base completion, hull identification or family/sheaf descent from the resolutions or differential comparison alone.
 
-([knudsen2012](#references), arXiv:1106.1588v2 §3 Key Example, Proposition3.1 and Corollary3.2; §4 separates completed-local descent.; The construction-specific inputs are [the native augmentation to the actual dual](#2152-the-native-augmentation-to-the-actual-dual), [positive-degree exactness of the section chain](#2179-positive-degree-exactness-of-the-section-chain), [the relations of the section dual surjection](#292-the-relations-of-the-section-dual-surjection), [surjectivity of the ordered dual presentation](#2131-surjectivity-of-the-ordered-dual-presentation).)
+([knudsen2012](#references), arXiv:1106.1588v2 §3 Key Example, Proposition3.1 and Corollary3.2; §4 separates completed-local descent.; The construction-specific inputs are [the native augmentation to the actual dual](#2145-the-native-augmentation-to-the-actual-dual), [positive-degree exactness of the section chain](#2171-positive-degree-exactness-of-the-section-chain), [the relations of the section dual surjection](#284-the-relations-of-the-section-dual-surjection), [surjectivity of the ordered dual presentation](#2123-surjectivity-of-the-ordered-dual-presentation).)
 
-*Needs:* [the native augmentation to the actual dual](#2152-the-native-augmentation-to-the-actual-dual), [positive-degree exactness of the section chain](#2179-positive-degree-exactness-of-the-section-chain), [the relations of the section dual surjection](#292-the-relations-of-the-section-dual-surjection), [surjectivity of the ordered dual presentation](#2131-surjectivity-of-the-ordered-dual-presentation), `ChainComplex.quasiIsoAt₀_iff`, `CategoryTheory.ShortComplex.quasiIso_iff_of_zeros'`, `CategoryTheory.ShortComplex.exact_and_epi_g_iff_of_iso`, `CategoryTheory.ShortComplex.isoMk`, `ModuleCat.epi_iff_surjective`, `quasiIsoAt_iff_exactAt'`, `ChainComplex.exactAt_succ_single_obj`.
+*Needs:* [the native augmentation to the actual dual](#2145-the-native-augmentation-to-the-actual-dual), [positive-degree exactness of the section chain](#2171-positive-degree-exactness-of-the-section-chain), [the relations of the section dual surjection](#284-the-relations-of-the-section-dual-surjection), [surjectivity of the ordered dual presentation](#2123-surjectivity-of-the-ordered-dual-presentation), `ChainComplex.quasiIsoAt₀_iff`, `CategoryTheory.ShortComplex.quasiIso_iff_of_zeros'`, `CategoryTheory.ShortComplex.exact_and_epi_g_iff_of_iso`, `CategoryTheory.ShortComplex.isoMk`, `ModuleCat.epi_iff_surjective`, `quasiIsoAt_iff_exactAt'`, `ChainComplex.exactAt_succ_single_obj`.
 
-### 2.189 Completed coefficient action on the original tensor limit
+### 2.181 Completed coefficient action on the original tensor limit
 
 Under coefficient convention C7. Assume p is finitely generated. Equip the underlying abelian group L of lim Fᴬ with the Â-module structure transported along the actual additive equivalence underlying E to the native Â-module lim G. Explicitly b⋆x=E⁻¹(b·E(x)); preserve the existing A-module structure on L.
 
@@ -4425,11 +4300,11 @@ The construction has the following API.
 - For a∈A, b∈Â and x∈L, (a·b)⋆x=a·(b⋆x) with the original coefficient action.
 - The image of every original coefficient acts by the unchanged A-action.
 
-(The construction-specific inputs are [two-base finite-tensor limit with completed target](#2180-two-base-finite-tensor-limit-with-completed-target).; [knudsen2](#references), Appendix Proposition6, printed194–195 (physical34–35).)
+(The construction-specific inputs are [two-base finite-tensor limit with completed target](#2172-two-base-finite-tensor-limit-with-completed-target).; [knudsen2](#references), Appendix Proposition6, printed194–195 (physical34–35).)
 
-*Needs:* [two-base finite-tensor limit with completed target](#2180-two-base-finite-tensor-limit-with-completed-target), `CategoryTheory.Iso.toLinearEquiv`, `AddEquiv.module`.
+*Needs:* [two-base finite-tensor limit with completed target](#2172-two-base-finite-tensor-limit-with-completed-target), `CategoryTheory.Iso.toLinearEquiv`, `AddEquiv.module`.
 
-### 2.190 Finite-free completed tensor universal property
+### 2.182 Finite-free completed tensor universal property
 
 Under coefficient convention C5. Supply native IsLimit for the actual ordinary completed tensor cone: every Cone C has a unique Â-linear map C.pt→R̂⊗_Â N factoring all projections.
 
@@ -4449,11 +4324,11 @@ The construction has the following API.
 - Any actual cone-point morphism factoring all levels equals the specified IsLimit lift.
 - With r=0 every cone point maps to the zero module and the lift is zero.
 
-(Deduction using `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [the actual completed coefficient algebra](#285-the-actual-completed-coefficient-algebra), [finite-free ordinary tensor cone lift](#2172-finite-free-ordinary-tensor-cone-lift), [finite quotient transition over completed coefficients](#277-finite-quotient-transition-over-completed-coefficients), [native completed-coefficient tensor diagram](#2112-native-completed-coefficient-tensor-diagram), [ordinary completed tensor cone](#2153-ordinary-completed-tensor-cone), [ordinary completed tensor projection](#2138-ordinary-completed-tensor-projection).; [knudsen2](#references), Appendix Proposition 6, pp. 194–195, for the surrounding two-base completion problem; the displayed native diagram calculation is the deduction specified here.)
+(Deduction using `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [the actual completed coefficient algebra](#277-the-actual-completed-coefficient-algebra), [finite-free ordinary tensor cone lift](#2164-finite-free-ordinary-tensor-cone-lift), [finite quotient transition over completed coefficients](#269-finite-quotient-transition-over-completed-coefficients), [native completed-coefficient tensor diagram](#2104-native-completed-coefficient-tensor-diagram), [ordinary completed tensor cone](#2146-ordinary-completed-tensor-cone), [ordinary completed tensor projection](#2130-ordinary-completed-tensor-projection).; [knudsen2](#references), Appendix Proposition 6, pp. 194–195, for the surrounding two-base completion problem; the displayed native diagram calculation is the deduction specified here.)
 
-*Needs:* [the actual completed coefficient algebra](#285-the-actual-completed-coefficient-algebra), [finite-free ordinary tensor cone lift](#2172-finite-free-ordinary-tensor-cone-lift), [finite quotient transition over completed coefficients](#277-finite-quotient-transition-over-completed-coefficients), [native completed-coefficient tensor diagram](#2112-native-completed-coefficient-tensor-diagram), [ordinary completed tensor cone](#2153-ordinary-completed-tensor-cone), [ordinary completed tensor projection](#2138-ordinary-completed-tensor-projection), `AdicCompletion`, `AdicCompletion.evalₐ`, `CategoryTheory.Limits.IsLimit`, `DFunLike.ext`, `ModuleCat.hom_injective`, `ModuleCat.ofHom`, `TensorProduct`.
+*Needs:* [the actual completed coefficient algebra](#277-the-actual-completed-coefficient-algebra), [finite-free ordinary tensor cone lift](#2164-finite-free-ordinary-tensor-cone-lift), [finite quotient transition over completed coefficients](#269-finite-quotient-transition-over-completed-coefficients), [native completed-coefficient tensor diagram](#2104-native-completed-coefficient-tensor-diagram), [ordinary completed tensor cone](#2146-ordinary-completed-tensor-cone), [ordinary completed tensor projection](#2130-ordinary-completed-tensor-projection), `AdicCompletion`, `AdicCompletion.evalₐ`, `CategoryTheory.Limits.IsLimit`, `DFunLike.ext`, `ModuleCat.hom_injective`, `ModuleCat.ofHom`, `TensorProduct`.
 
-### 2.191 Completion of the actual residue quotient
+### 2.183 Completion of the actual residue quotient
 
 A is any commutative ring; γ,δ,s,t∈A. R=A[Y][X]/(X²+γYX+δY²−q(s,t)), c=u−s,d=v−t, J=(c,d), D=Hom_R(J,R), m:R→D, m(r)(j)=rj, Q=D/im(m). R is noetherian, I is any ideal of R, C=AdicCompletion I R. Completion of an R-module uses I, not an ideal of the coefficient ring A. Construct Ê_Q:AdicCompletion I Q≃_C Q_C, characterized by Ê_Q(b·of([h]))=[E_D(b⊗h)].
 
@@ -4477,9 +4352,9 @@ The construction has the following API.
 
 ([stacks-completion](#references), Stacks §10.97, Lemmas10.97.1(3),10.97.2(1),10.97.3; [stacks-hom-flat](#references), Stacks tag087R, Lemma15.67.4(1), together with the proof at087Q; [knudsen2](#references), Appendix Definition1, Theorem2, Propositions4–7, printed191–195 (PDF31–35).)
 
-*Needs:* [completion of the polynomial section dual](#2143-completion-of-the-polynomial-section-dual), [residue quotient under ambient extension](#2184-residue-quotient-under-ambient-extension), `AdicCompletion.ofTensorProductEquivOfFiniteNoetherian`, `AdicCompletion.ofTensorProductEquivOfFiniteNoetherian_apply`.
+*Needs:* [completion of the polynomial section dual](#2135-completion-of-the-polynomial-section-dual), [residue quotient under ambient extension](#2176-residue-quotient-under-ambient-extension), `AdicCompletion.ofTensorProductEquivOfFiniteNoetherian`, `AdicCompletion.ofTensorProductEquivOfFiniteNoetherian_apply`.
 
-### 2.192 Faithful detection for the residue quotient
+### 2.184 Faithful detection for the residue quotient
 
 A is any commutative ring; γ,δ,s,t∈A. R=A[Y][X]/(X²+γYX+δY²−q(s,t)), c=u−s,d=v−t, J=(c,d), D=Hom_R(J,R), m:R→D, m(r)(j)=rj, Q=D/im(m). If B is a faithfully flat R-algebra and f:Q→_R Q, then 1_B⊗f is bijective if and only if f is bijective.
 
@@ -4491,9 +4366,9 @@ Identity maps provide the basic case. Nonfaithful flat extension does not reflec
 
 ([stacks-completion](#references), Stacks §10.39 Definition10.39.1 and Lemma10.39.14, statements and proof; [stacks-completion](#references), Stacks §10.97, Lemmas10.97.1(3),10.97.2(1),10.97.3; [knudsen2](#references), Appendix Definition1, Theorem2, Propositions4–7, printed191–195 (PDF31–35).)
 
-*Needs:* [residue quotient under ambient extension](#2184-residue-quotient-under-ambient-extension), `Module.FaithfullyFlat.lTensor_bijective_iff_bijective`.
+*Needs:* [residue quotient under ambient extension](#2176-residue-quotient-under-ambient-extension), `Module.FaithfullyFlat.lTensor_bijective_iff_bijective`.
 
-### 2.193 Surjectivity of the dual coefficient-Hom map
+### 2.185 Surjectivity of the dual coefficient-Hom map
 
 For any commutative ring A and γ,δ,s,t∈A, let q(X,Y)=X²+γXY+δY², R=A[Y][X]/(q(X,Y)−q(s,t)), ι:A→R the actual coefficient algebra map, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), incl:J→R and ε∈D with dε(j)=bj. Put Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε and p(z)=(-z₁,z₀). For any A-module M, set N_M=R⊗_A M with the inherited left R-action, and U_M(f)=f⊗_A id_M on the actual native tensors. Use the already-built finite-product tensor and finite-free Hom coordinates E_M:R²⊗_A M≃ₗ[A]Hom_R(R²,N_M), E_M(z⊗m)(w)=(w₀z₀+w₁z₁)⊗m. The actual R-linear map θ_D,M is surjective for every coefficient module M.
 
@@ -4503,11 +4378,11 @@ One proof uses the following inputs and comparisons. For h:J→N_M, its coordina
 
 The statement uses the actual section ideal and actual R-linear dual in the untruncated polynomial ring. Keep this algebra calculation separate from higher Ext, relative stable-reflexivity, completed-local and family/sheaf descent.
 
-(Deduction using `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [ideal Hom coordinates with coefficients](#232-ideal-hom-coordinates-with-coefficients), [right-tensor rotation of the first transpose](#251-right-tensor-rotation-of-the-first-transpose), [coefficient universal exactness at ψᵀ](#2185-coefficient-universal-exactness-at-ψᵀ).)
+(Deduction using `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [ideal Hom coordinates with coefficients](#231-ideal-hom-coordinates-with-coefficients), [right-tensor rotation of the first transpose](#246-right-tensor-rotation-of-the-first-transpose), [coefficient universal exactness at ψᵀ](#2177-coefficient-universal-exactness-at-ψᵀ).)
 
-*Needs:* [ideal Hom coordinates with coefficients](#232-ideal-hom-coordinates-with-coefficients), [right-tensor rotation of the first transpose](#251-right-tensor-rotation-of-the-first-transpose), [coefficient universal exactness at ψᵀ](#2185-coefficient-universal-exactness-at-ψᵀ), `LinearMap.rTensor_exact_iff_lTensor_exact`.
+*Needs:* [ideal Hom coordinates with coefficients](#231-ideal-hom-coordinates-with-coefficients), [right-tensor rotation of the first transpose](#246-right-tensor-rotation-of-the-first-transpose), [coefficient universal exactness at ψᵀ](#2177-coefficient-universal-exactness-at-ψᵀ), `LinearMap.rTensor_exact_iff_lTensor_exact`.
 
-### 2.194 Coefficient-valued bidual equivalence
+### 2.186 Coefficient-valued bidual equivalence
 
 For any commutative ring A and γ,δ,s,t∈A, let q(X,Y)=X²+γXY+δY², R=A[Y][X]/(q(X,Y)−q(s,t)), ι:A→R the actual coefficient algebra map, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), incl:J→R and ε∈D with dε(j)=bj. Put Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε and p(z)=(-z₁,z₀). For any A-module M, set N_M=R⊗_A M with the inherited left R-action, and U_M(f)=f⊗_A id_M on the actual native tensors. Use the already-built finite-product tensor and finite-free Hom coordinates E_M:R²⊗_A M≃ₗ[A]Hom_R(R²,N_M), E_M(z⊗m)(w)=(w₀z₀+w₁z₁)⊗m. Construct the R-linear equivalence Θ_J,M:J⊗_A M≃Hom_R(D,N_M) with forward map θ_J,M, for every A-module M.
 
@@ -4531,9 +4406,9 @@ The construction has the following API.
 
 ([knudsen2012](#references), arXiv:1106.1588v2 §3, Proposition 3.1, printed p.12; motivating noetherian/unit-discriminant example, with arbitrary-module exchange deduced here.)
 
-*Needs:* [the coefficient-valued bidual evaluation map](#265-the-coefficient-valued-bidual-evaluation-map), [injectivity of coefficient-valued bidual evaluation](#2186-injectivity-of-coefficient-valued-bidual-evaluation), [surjectivity of coefficient-valued bidual evaluation](#2163-surjectivity-of-coefficient-valued-bidual-evaluation), `LinearEquiv.ofBijective`.
+*Needs:* [the coefficient-valued bidual evaluation map](#258-the-coefficient-valued-bidual-evaluation-map), [injectivity of coefficient-valued bidual evaluation](#2178-injectivity-of-coefficient-valued-bidual-evaluation), [surjectivity of coefficient-valued bidual evaluation](#2156-surjectivity-of-coefficient-valued-bidual-evaluation), `LinearEquiv.ofBijective`.
 
-### 2.195 Exactness of left then right Hom precomposition
+### 2.187 Exactness of left then right Hom precomposition
 
 For any commutative ring A and γ,δ,s,t∈A, use the actual polynomial ring R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), its coefficient map ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt and a=ιδ·v+ιδ·ιt+ιγ·u. Set J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), and the signed presentations P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε. For any A-module M put N=R⊗_A M with its native left R-action and H=Hom_R(R²,N). Write L_W(h)=h∘W for native R-linear precomposition and E:R²⊗_A M≃Hom_R(R²,N) for the previously specified finite-free tensor coordinates. The native R-linear maps L_Φ then L_Ψ form an exact pair for every coefficient module M.
 
@@ -4543,11 +4418,11 @@ One proof uses the following inputs and comparisons. Reuse coefficient-universal
 
 Use actual R-linear Hom maps, the signed P_J/P_D presentations and native ModuleCat homology. Do not infer Ext vanishing, relative stable reflexivity, completed-local comparisons or family/sheaf descent from this cochain result alone.
 
-([knudsen2012](#references), §3 Key Example, the exact matrix-factorization sequences preceding and in Proposition3.1; §4 identifies completion/descent as separate inputs.; Deduction using `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104; `LinearMap.comp_apply` in `Mathlib/Algebra/Module/LinearMap/Defs.lean`, line 495. The construction-specific inputs are [coefficient hom and matrix transpose](#23-coefficient-hom-and-matrix-transpose), [coefficient universal exactness at ψᵀ](#2185-coefficient-universal-exactness-at-ψᵀ).)
+([knudsen2012](#references), §3 Key Example, the exact matrix-factorization sequences preceding and in Proposition3.1; §4 identifies completion/descent as separate inputs.; Deduction using `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104; `LinearMap.comp_apply` in `Mathlib/Algebra/Module/LinearMap/Defs.lean`, line 495. The construction-specific inputs are [coefficient hom and matrix transpose](#23-coefficient-hom-and-matrix-transpose), [coefficient universal exactness at ψᵀ](#2177-coefficient-universal-exactness-at-ψᵀ).)
 
-*Needs:* [coefficient hom and matrix transpose](#23-coefficient-hom-and-matrix-transpose), [coefficient universal exactness at ψᵀ](#2185-coefficient-universal-exactness-at-ψᵀ), `LinearMap.rTensor_exact_iff_lTensor_exact`, `Function.Exact.of_ladder_linearEquiv_of_exact`, `LinearMap.restrictScalars`.
+*Needs:* [coefficient hom and matrix transpose](#23-coefficient-hom-and-matrix-transpose), [coefficient universal exactness at ψᵀ](#2177-coefficient-universal-exactness-at-ψᵀ), `LinearMap.rTensor_exact_iff_lTensor_exact`, `Function.Exact.of_ladder_linearEquiv_of_exact`, `LinearMap.restrictScalars`.
 
-### 2.196 The actual section-ideal projective resolution
+### 2.188 The actual section-ideal projective resolution
 
 For any commutative ring A and γ,δ,s,t∈A, use the actual polynomial ring R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), its coefficient map ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt and a=ιδ·v+ιδ·ιt+ιγ·u. Set J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), and the signed presentations P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε.  Put F=R² with its native R-module structure. For e∈{false,true} write B(e,n)=Φ if (n mod 2=0) has the same truth value as e=true, and Ψ otherwise. C(e) has F in every degree n≥0, differential `C(e)_{n+1}→C(e)_n` given by B(e,n), and zero off that shape. Bundle C(false), its degreewise projectivity and π_J into the native ProjectiveResolution of J. This is the actual signed two-periodic resolution, not an arbitrarily chosen generic resolution.
 
@@ -4559,8 +4434,8 @@ Use the actual signed P_J/P_D maps and native ModuleCat complex, projectivity an
 
 The construction has the following API.
 
-- The native the underlying complex of the two-periodic resolution of J is exactly C(false).
-- The native the augmentation of the two-periodic resolution of J is exactly π_J.
+- The underlying complex of the two-periodic resolution of J is exactly C(false).
+- Its augmentation is exactly π_J.
 
 **Checks.**
 
@@ -4568,11 +4443,11 @@ The construction has the following API.
 - Its next native differential d(2,1) is exactly Φ.
 - Over the zero ring Z/1 with all parameters zero, the actual ideal-resolution augmentation is a native QuasiIso.
 
-([knudsen2012](#references), arXiv:1106.1588v2 §3 Key Example, Proposition3.1 and Corollary3.2; §4 separates completed-local descent.; Deduction using `Matrix.mulVecLin_apply` in `Mathlib/LinearAlgebra/Matrix/ToLin.lean`, line 291. The construction-specific inputs are [the native polynomial section chain complex](#2164-the-native-polynomial-section-chain-complex), [the section-ideal augmentation is a native quasi-isomorphism](#2187-the-section-ideal-augmentation-is-a-native-quasi-isomorphism).)
+([knudsen2012](#references), arXiv:1106.1588v2 §3 Key Example, Proposition3.1 and Corollary3.2; §4 separates completed-local descent.; Deduction using `Matrix.mulVecLin_apply` in `Mathlib/LinearAlgebra/Matrix/ToLin.lean`, line 291. The construction-specific inputs are [the native polynomial section chain complex](#2143-the-native-polynomial-section-chain-complex), [the section-ideal augmentation is a native quasi-isomorphism](#2179-the-section-ideal-augmentation-is-a-native-quasi-isomorphism).)
 
-*Needs:* [the native polynomial section chain complex](#2164-the-native-polynomial-section-chain-complex), [the section-ideal augmentation is a native quasi-isomorphism](#2187-the-section-ideal-augmentation-is-a-native-quasi-isomorphism), `CategoryTheory.ProjectiveResolution`.
+*Needs:* [the native polynomial section chain complex](#2143-the-native-polynomial-section-chain-complex), [the section-ideal augmentation is a native quasi-isomorphism](#2179-the-section-ideal-augmentation-is-a-native-quasi-isomorphism), `CategoryTheory.ProjectiveResolution`.
 
-### 2.197 The actual dual projective resolution
+### 2.189 The actual dual projective resolution
 
 For any commutative ring A and γ,δ,s,t∈A, use the actual polynomial ring R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), its coefficient map ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt and a=ιδ·v+ιδ·ιt+ιγ·u. Set J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), and the signed presentations P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε.  Put F=R² with its native R-module structure. For e∈{false,true} write B(e,n)=Φ if (n mod 2=0) has the same truth value as e=true, and Ψ otherwise. C(e) has F in every degree n≥0, differential `C(e)_{n+1}→C(e)_n` given by B(e,n), and zero off that shape. Bundle C(true), its degreewise projectivity and π_D into the native ProjectiveResolution of D. This is the actual signed two-periodic resolution, not an arbitrarily chosen generic resolution.
 
@@ -4584,8 +4459,8 @@ Use the actual signed P_J/P_D maps and native ModuleCat complex, projectivity an
 
 The construction has the following API.
 
-- The native the underlying complex of the two-periodic resolution of D is exactly C(true).
-- The native the augmentation of the two-periodic resolution of D is exactly π_D.
+- The underlying complex of the two-periodic resolution of D is exactly C(true).
+- Its augmentation is exactly π_D.
 
 **Checks.**
 
@@ -4593,11 +4468,11 @@ The construction has the following API.
 - Its next native differential d(2,1) is exactly Ψ.
 - Over Z/4 with γ=δ=t=0,s=1, the actual dual-resolution augmentation is a native QuasiIso.
 
-([knudsen2012](#references), arXiv:1106.1588v2 §3 Key Example, Proposition3.1 and Corollary3.2; §4 separates completed-local descent.; The construction-specific inputs are [the native polynomial section chain complex](#2164-the-native-polynomial-section-chain-complex), [the dual augmentation is a native quasi-isomorphism](#2188-the-dual-augmentation-is-a-native-quasi-isomorphism).)
+([knudsen2012](#references), arXiv:1106.1588v2 §3 Key Example, Proposition3.1 and Corollary3.2; §4 separates completed-local descent.; The construction-specific inputs are [the native polynomial section chain complex](#2143-the-native-polynomial-section-chain-complex), [the dual augmentation is a native quasi-isomorphism](#2180-the-dual-augmentation-is-a-native-quasi-isomorphism).)
 
-*Needs:* [the native polynomial section chain complex](#2164-the-native-polynomial-section-chain-complex), [the dual augmentation is a native quasi-isomorphism](#2188-the-dual-augmentation-is-a-native-quasi-isomorphism), `CategoryTheory.ProjectiveResolution`.
+*Needs:* [the native polynomial section chain complex](#2143-the-native-polynomial-section-chain-complex), [the dual augmentation is a native quasi-isomorphism](#2180-the-dual-augmentation-is-a-native-quasi-isomorphism), `CategoryTheory.ProjectiveResolution`.
 
-### 2.198 Completed-linear equivalence of finite tensor limits
+### 2.190 Completed-linear equivalence of finite tensor limits
 
 Under coefficient convention C7. Assume p is finitely generated. With precisely the transported Â-action on L, construct Ê:L≃ₗ[Â]lim G from the same underlying additive equivalence as E. Its maps are the actual maps E and E⁻¹; no additional scalar action is selected.
 
@@ -4619,11 +4494,11 @@ The construction has the following API.
 - Ê(Ê⁻¹(y))=y for every y∈lim G.
 - Every completed finite-level projection commutes with every b∈Â after the original-limit action is transported.
 
-(The construction-specific inputs are [completed coefficient action on the original tensor limit](#2189-completed-coefficient-action-on-the-original-tensor-limit), [two-base finite-tensor limit with completed target](#2180-two-base-finite-tensor-limit-with-completed-target).; [knudsen2](#references), Appendix Proposition6, printed194–195 (physical34–35).)
+(The construction-specific inputs are [completed coefficient action on the original tensor limit](#2181-completed-coefficient-action-on-the-original-tensor-limit), [two-base finite-tensor limit with completed target](#2172-two-base-finite-tensor-limit-with-completed-target).; [knudsen2](#references), Appendix Proposition6, printed194–195 (physical34–35).)
 
-*Needs:* [completed coefficient action on the original tensor limit](#2189-completed-coefficient-action-on-the-original-tensor-limit), [two-base finite-tensor limit with completed target](#2180-two-base-finite-tensor-limit-with-completed-target), `CategoryTheory.Iso.toLinearEquiv`, `AddEquiv.linearEquiv`.
+*Needs:* [completed coefficient action on the original tensor limit](#2181-completed-coefficient-action-on-the-original-tensor-limit), [two-base finite-tensor limit with completed target](#2172-two-base-finite-tensor-limit-with-completed-target), `CategoryTheory.Iso.toLinearEquiv`, `AddEquiv.linearEquiv`.
 
-### 2.199 Ordinary tensor and native limit isomorphism
+### 2.191 Ordinary tensor and native limit isomorphism
 
 Under coefficient convention C5. Construct an actual ModuleCat(Â) isomorphism R̂⊗_Â N≅lim G from the two native limiting cones.
 
@@ -4643,11 +4518,11 @@ The construction has the following API.
 - The inverse sends the constant family (u⊗1, u⊗1, …) to u⊗1; the family with level-1 term 1 and level-2 term 0 is not an element of lim G.
 - With r=0 both sides are 0.
 
-(Deduction using `CategoryTheory.Limits.IsLimit.hom_ext` and `CategoryTheory.Limits.IsLimit.lift_self` in `Mathlib/CategoryTheory/Limits/IsLimit.lean`, lines 232 and 95; tensor components use `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [the actual completed coefficient algebra](#285-the-actual-completed-coefficient-algebra), [finite quotient transition over completed coefficients](#277-finite-quotient-transition-over-completed-coefficients), [native completed-coefficient tensor diagram](#2112-native-completed-coefficient-tensor-diagram), [finite-free completed tensor universal property](#2190-finite-free-completed-tensor-universal-property).; [knudsen2](#references), Appendix Proposition 6, pp. 194–195, for the surrounding two-base completion problem; the displayed native diagram calculation is the deduction specified here.)
+(Deduction using `CategoryTheory.Limits.IsLimit.hom_ext` and `CategoryTheory.Limits.IsLimit.lift_self` in `Mathlib/CategoryTheory/Limits/IsLimit.lean`, lines 232 and 95; tensor components use `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [the actual completed coefficient algebra](#277-the-actual-completed-coefficient-algebra), [finite quotient transition over completed coefficients](#269-finite-quotient-transition-over-completed-coefficients), [native completed-coefficient tensor diagram](#2104-native-completed-coefficient-tensor-diagram), [finite-free completed tensor universal property](#2182-finite-free-completed-tensor-universal-property).; [knudsen2](#references), Appendix Proposition 6, pp. 194–195, for the surrounding two-base completion problem; the displayed native diagram calculation is the deduction specified here.)
 
-*Needs:* [the actual completed coefficient algebra](#285-the-actual-completed-coefficient-algebra), [finite quotient transition over completed coefficients](#277-finite-quotient-transition-over-completed-coefficients), [native completed-coefficient tensor diagram](#2112-native-completed-coefficient-tensor-diagram), [finite-free completed tensor universal property](#2190-finite-free-completed-tensor-universal-property), `AdicCompletion`, `AdicCompletion.evalₐ`, `CategoryTheory.Limits.IsLimit.conePointUniqueUpToIso`, `CategoryTheory.Limits.limit.isLimit`, `ModuleCat.of`, `TensorProduct`.
+*Needs:* [the actual completed coefficient algebra](#277-the-actual-completed-coefficient-algebra), [finite quotient transition over completed coefficients](#269-finite-quotient-transition-over-completed-coefficients), [native completed-coefficient tensor diagram](#2104-native-completed-coefficient-tensor-diagram), [finite-free completed tensor universal property](#2182-finite-free-completed-tensor-universal-property), `AdicCompletion`, `AdicCompletion.evalₐ`, `CategoryTheory.Limits.IsLimit.conePointUniqueUpToIso`, `CategoryTheory.Limits.limit.isLimit`, `ModuleCat.of`, `TensorProduct`.
 
-### 2.200 Native limit for a finite-free retract
+### 2.192 Native limit for a finite-free retract
 
 Under coefficient convention C1. If r∘i=id_N, the ordinary completed tensor cone is a native IsLimit with lift L_i,r.
 
@@ -4667,11 +4542,11 @@ The construction has the following API.
 - For N=ℚ₂, which is not a retract of a finite free ℤ₂-module, every Qₙ⊗ℚ₂ is zero, since 2ⁿ kills Qₙ and is invertible on ℚ₂; the cone has limit 0 while R̂⊗_Â ℚ₂=R̂[1/2]≠0, so the retract hypothesis cannot be dropped.
 - For N=0 the tensor product and every Qₙ⊗N are zero, and the lift is the zero map.
 
-(Deduction using `CategoryTheory.Limits.IsLimit.hom_ext` and `CategoryTheory.Limits.IsLimit.lift_self` in `Mathlib/CategoryTheory/Limits/IsLimit.lean`, lines 232 and 95. The construction-specific inputs are [retracting the finite-coordinate lift](#2181-retracting-the-finite-coordinate-lift), [separation by finite tensor projections](#2173-separation-by-finite-tensor-projections).; [knudsen2](#references), Appendix Proposition 6, pp. 194–195, for the surrounding two-base completion problem; the displayed native diagram calculation is the deduction specified here.)
+(Deduction using `CategoryTheory.Limits.IsLimit.hom_ext` and `CategoryTheory.Limits.IsLimit.lift_self` in `Mathlib/CategoryTheory/Limits/IsLimit.lean`, lines 232 and 95. The construction-specific inputs are [retracting the finite-coordinate lift](#2173-retracting-the-finite-coordinate-lift), [separation by finite tensor projections](#2165-separation-by-finite-tensor-projections).; [knudsen2](#references), Appendix Proposition 6, pp. 194–195, for the surrounding two-base completion problem; the displayed native diagram calculation is the deduction specified here.)
 
-*Needs:* [retracting the finite-coordinate lift](#2181-retracting-the-finite-coordinate-lift), [separation by finite tensor projections](#2173-separation-by-finite-tensor-projections), `TensorProduct`.
+*Needs:* [retracting the finite-coordinate lift](#2173-retracting-the-finite-coordinate-lift), [separation by finite tensor projections](#2165-separation-by-finite-tensor-projections), `TensorProduct`.
 
-### 2.201 Coefficient tensor–Hom equivalence for the dual
+### 2.193 Coefficient tensor–Hom equivalence for the dual
 
 For any commutative ring A and γ,δ,s,t∈A, let q(X,Y)=X²+γXY+δY², R=A[Y][X]/(q(X,Y)−q(s,t)), ι:A→R the actual coefficient algebra map, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδv+ιδ·ιt+ιγu, J=(c,d), D=Hom_R(J,R), incl:J→R and ε∈D with dε(j)=bj. Put Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε and p(z)=(-z₁,z₀). For any A-module M, set N_M=R⊗_A M with the inherited left R-action, and U_M(f)=f⊗_A id_M on the actual native tensors. Use the already-built finite-product tensor and finite-free Hom coordinates E_M:R²⊗_A M≃ₗ[A]Hom_R(R²,N_M), E_M(z⊗m)(w)=(w₀z₀+w₁z₁)⊗m. Construct the R-linear equivalence Θ_D,M:D⊗_A M≃Hom_R(J,N_M) whose forward map is θ_D,M. It holds for every M, including nonflat torsion modules.
 
@@ -4695,9 +4570,9 @@ The construction has the following API.
 
 ([knudsen2012](#references), arXiv:1106.1588v2 §3, Proposition 3.1, printed p.12; motivating noetherian/unit-discriminant example, with arbitrary-module exchange deduced here.)
 
-*Needs:* [the actual dual coefficient-hom map](#264-the-actual-dual-coefficient-hom-map), [injectivity of the dual coefficient-hom map](#2162-injectivity-of-the-dual-coefficient-hom-map), [surjectivity of the dual coefficient-hom map](#2193-surjectivity-of-the-dual-coefficient-hom-map), `LinearEquiv.ofBijective`.
+*Needs:* [the actual dual coefficient-hom map](#257-the-actual-dual-coefficient-hom-map), [injectivity of the dual coefficient-hom map](#2155-injectivity-of-the-dual-coefficient-hom-map), [surjectivity of the dual coefficient-hom map](#2185-surjectivity-of-the-dual-coefficient-hom-map), `LinearEquiv.ofBijective`.
 
-### 2.202 Every adjacent section Hom pair is exact
+### 2.194 Every adjacent section Hom pair is exact
 
 For any commutative ring A and γ,δ,s,t∈A, use the actual polynomial ring R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), its coefficient map ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt and a=ιδ·v+ιδ·ιt+ιγ·u. Set J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), and the signed presentations P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε. For any A-module M put N=R⊗_A M with its native left R-action and H=Hom_R(R²,N). Write L_W(h)=h∘W for native R-linear precomposition and E:R²⊗_A M≃Hom_R(R²,N) for the previously specified finite-free tensor coordinates. For either phase e and every n≥0, d(e,n) then d(e,n+1) form an exact pair.
 
@@ -4707,11 +4582,11 @@ One proof uses the following inputs and comparisons. Split the two phases and th
 
 Use actual R-linear Hom maps, the signed P_J/P_D presentations and native ModuleCat homology. Do not infer Ext vanishing, relative stable reflexivity, completed-local comparisons or family/sheaf descent from this cochain result alone.
 
-([knudsen2012](#references), §3 Key Example, the exact matrix-factorization sequences preceding and in Proposition3.1; §4 identifies completion/descent as separate inputs.; Deduction using `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104; `LinearMap.comp_apply` in `Mathlib/Algebra/Module/LinearMap/Defs.lean`, line 495. The construction-specific inputs are [the polynomial section hom differential](#29-the-polynomial-section-hom-differential), [exactness of left then right hom precomposition](#2195-exactness-of-left-then-right-hom-precomposition), [exactness of right then left hom precomposition](#2148-exactness-of-right-then-left-hom-precomposition).)
+([knudsen2012](#references), §3 Key Example, the exact matrix-factorization sequences preceding and in Proposition3.1; §4 identifies completion/descent as separate inputs.; Deduction using `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104; `LinearMap.comp_apply` in `Mathlib/Algebra/Module/LinearMap/Defs.lean`, line 495. The construction-specific inputs are [the polynomial section hom differential](#29-the-polynomial-section-hom-differential), [exactness of left then right hom precomposition](#2187-exactness-of-left-then-right-hom-precomposition), [exactness of right then left hom precomposition](#2140-exactness-of-right-then-left-hom-precomposition).)
 
-*Needs:* [the polynomial section hom differential](#29-the-polynomial-section-hom-differential), [exactness of left then right hom precomposition](#2195-exactness-of-left-then-right-hom-precomposition), [exactness of right then left hom precomposition](#2148-exactness-of-right-then-left-hom-precomposition).
+*Needs:* [the polynomial section hom differential](#29-the-polynomial-section-hom-differential), [exactness of left then right hom precomposition](#2187-exactness-of-left-then-right-hom-precomposition), [exactness of right then left hom precomposition](#2140-exactness-of-right-then-left-hom-precomposition).
 
-### 2.203 The bundled section-ideal resolution is augmented by a quasi-isomorphism
+### 2.195 The bundled section-ideal resolution is augmented by a quasi-isomorphism
 
 For any commutative ring A and γ,δ,s,t∈A, use the actual polynomial ring R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), its coefficient map ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt and a=ιδ·v+ιδ·ιt+ιγ·u. Set J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), and the signed presentations P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε.  Put F=R² with its native R-module structure. For e∈{false,true} write B(e,n)=Φ if (n mod 2=0) has the same truth value as e=true, and Ψ otherwise. C(e) has F in every degree n≥0, differential `C(e)_{n+1}→C(e)_n` given by B(e,n), and zero off that shape. The actual bundled the augmentation of the two-periodic resolution of J is a native QuasiIso in every degree.
 
@@ -4721,11 +4596,11 @@ One proof uses the following inputs and comparisons. Use the native certified qu
 
 Use the actual signed P_J/P_D maps and native ModuleCat complex, projectivity and QuasiIso. Do not infer native Ext, relative stable reflexivity, two-base completion, hull identification or family/sheaf descent from the resolutions or differential comparison alone.
 
-([knudsen2012](#references), arXiv:1106.1588v2 §3 Key Example, Proposition3.1 and Corollary3.2; §4 separates completed-local descent.; Deduction using `Matrix.mulVecLin_apply` in `Mathlib/LinearAlgebra/Matrix/ToLin.lean`, line 291. The construction-specific inputs are [the actual section-ideal projective resolution](#2196-the-actual-section-ideal-projective-resolution).)
+([knudsen2012](#references), arXiv:1106.1588v2 §3 Key Example, Proposition3.1 and Corollary3.2; §4 separates completed-local descent.; Deduction using `Matrix.mulVecLin_apply` in `Mathlib/LinearAlgebra/Matrix/ToLin.lean`, line 291. The construction-specific inputs are [the actual section-ideal projective resolution](#2188-the-actual-section-ideal-projective-resolution).)
 
-*Needs:* [the actual section-ideal projective resolution](#2196-the-actual-section-ideal-projective-resolution).
+*Needs:* [the actual section-ideal projective resolution](#2188-the-actual-section-ideal-projective-resolution).
 
-### 2.204 The bundled dual resolution is augmented by a quasi-isomorphism
+### 2.196 The bundled dual resolution is augmented by a quasi-isomorphism
 
 For any commutative ring A and γ,δ,s,t∈A, use the actual polynomial ring R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), its coefficient map ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt and a=ιδ·v+ιδ·ιt+ιγ·u. Set J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), and the signed presentations P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε.  Put F=R² with its native R-module structure. For e∈{false,true} write B(e,n)=Φ if (n mod 2=0) has the same truth value as e=true, and Ψ otherwise. C(e) has F in every degree n≥0, differential `C(e)_{n+1}→C(e)_n` given by B(e,n), and zero off that shape. The actual bundled the augmentation of the two-periodic resolution of D is a native QuasiIso in every degree.
 
@@ -4735,11 +4610,11 @@ One proof uses the following inputs and comparisons. Use the native certified qu
 
 Use the actual signed P_J/P_D maps and native ModuleCat complex, projectivity and QuasiIso. Do not infer native Ext, relative stable reflexivity, two-base completion, hull identification or family/sheaf descent from the resolutions or differential comparison alone.
 
-([knudsen2012](#references), arXiv:1106.1588v2 §3 Key Example, Proposition3.1 and Corollary3.2; §4 separates completed-local descent.; The construction-specific inputs are [the actual dual projective resolution](#2197-the-actual-dual-projective-resolution).)
+([knudsen2012](#references), arXiv:1106.1588v2 §3 Key Example, Proposition3.1 and Corollary3.2; §4 separates completed-local descent.; The construction-specific inputs are [the actual dual projective resolution](#2189-the-actual-dual-projective-resolution).)
 
-*Needs:* [the actual dual projective resolution](#2197-the-actual-dual-projective-resolution).
+*Needs:* [the actual dual projective resolution](#2189-the-actual-dual-projective-resolution).
 
-### 2.205 Canonical coefficient exchange for the section dual
+### 2.197 Canonical coefficient exchange for the section dual
 
 Under coefficient convention C8. The canonical exchange Φ_D,M:D∨⊗_A M≃ₗ[R]Hom_R(D,N_M) is an equivalence with Φ_D,M(F⊗m)(h)=F(h)⊗m. Construct it as (η⁻¹⊗id_M) followed by the existing Θ_J,M.
 
@@ -4764,9 +4639,9 @@ The construction has the following API.
 
 ([knudsen2](#references), Appendix Definition1 and Theorem2(1), printed191–193; Proposition6 printed194–195; [ile](#references), arXiv1110.3909v3 §3 Definition3.1 and Remark3.6, PDF6–8.)
 
-*Needs:* [canonical section bidual equivalence](#2170-canonical-section-bidual-equivalence), [coefficient-valued bidual equivalence](#2194-coefficient-valued-bidual-equivalence), `TensorProduct.AlgebraTensorModule.congr`.
+*Needs:* [canonical section bidual equivalence](#2162-canonical-section-bidual-equivalence), [coefficient-valued bidual equivalence](#2186-coefficient-valued-bidual-equivalence), `TensorProduct.AlgebraTensorModule.congr`.
 
-### 2.206 Ordinary tensor and native limit linear equivalence
+### 2.198 Ordinary tensor and native limit linear equivalence
 
 Under coefficient convention C5. Construct E:R̂⊗_Â N≃ₗ[Â]lim G from the actual module-category isomorphism.
 
@@ -4790,11 +4665,11 @@ The construction has the following API.
 - For rank zero, inverse after forward sends every tensor to zero, agreeing with the unique empty-coordinate tensor.
 - For rank one and its basis vector 1, the sole coordinate of each projected E(u⊗1) is exactly evalₙ(u).
 
-(Deduction using `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [the actual completed coefficient algebra](#285-the-actual-completed-coefficient-algebra), [finite quotient transition over completed coefficients](#277-finite-quotient-transition-over-completed-coefficients), [native completed-coefficient tensor diagram](#2112-native-completed-coefficient-tensor-diagram), [ordinary tensor and native limit isomorphism](#2199-ordinary-tensor-and-native-limit-isomorphism).; [knudsen2](#references), Appendix Proposition 6, pp. 194–195, for the surrounding two-base completion problem; the displayed native diagram calculation is the deduction specified here.)
+(Deduction using `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [the actual completed coefficient algebra](#277-the-actual-completed-coefficient-algebra), [finite quotient transition over completed coefficients](#269-finite-quotient-transition-over-completed-coefficients), [native completed-coefficient tensor diagram](#2104-native-completed-coefficient-tensor-diagram), [ordinary tensor and native limit isomorphism](#2191-ordinary-tensor-and-native-limit-isomorphism).; [knudsen2](#references), Appendix Proposition 6, pp. 194–195, for the surrounding two-base completion problem; the displayed native diagram calculation is the deduction specified here.)
 
-*Needs:* [the actual completed coefficient algebra](#285-the-actual-completed-coefficient-algebra), [finite quotient transition over completed coefficients](#277-finite-quotient-transition-over-completed-coefficients), [native completed-coefficient tensor diagram](#2112-native-completed-coefficient-tensor-diagram), [ordinary tensor and native limit isomorphism](#2199-ordinary-tensor-and-native-limit-isomorphism), `AdicCompletion`, `AdicCompletion.evalₐ`, `CategoryTheory.Iso.toLinearEquiv`, `TensorProduct`.
+*Needs:* [the actual completed coefficient algebra](#277-the-actual-completed-coefficient-algebra), [finite quotient transition over completed coefficients](#269-finite-quotient-transition-over-completed-coefficients), [native completed-coefficient tensor diagram](#2104-native-completed-coefficient-tensor-diagram), [ordinary tensor and native limit isomorphism](#2191-ordinary-tensor-and-native-limit-isomorphism), `AdicCompletion`, `AdicCompletion.evalₐ`, `CategoryTheory.Iso.toLinearEquiv`, `TensorProduct`.
 
-### 2.207 Native limit for finite projective coefficients
+### 2.199 Native limit for finite projective coefficients
 
 Under coefficient convention C1. For every finite projective Â-module N, the ordinary completed tensor cone is a native IsLimit, without choosing a basis of N or assuming N free.
 
@@ -4814,11 +4689,11 @@ The construction has the following API.
 - Under coefficient convention C1. For finite projective N, an Â-linear map f:c.pt→R̂⊗_Â N whose every finite projection equals cₙ is the native projective limit lift of c.
 - Under coefficient convention C1. For finite projective N, lifting the ordinary completed tensor cone into itself with the native projective limit gives its identity morphism.
 
-(Deduction using `CategoryTheory.Limits.IsLimit.hom_ext` and `CategoryTheory.Limits.IsLimit.lift_self` in `Mathlib/CategoryTheory/Limits/IsLimit.lean`, lines 232 and 95. The construction-specific inputs are [native limit for a finite-free retract](#2200-native-limit-for-a-finite-free-retract).; [knudsen2](#references), Appendix Proposition 6, pp. 194–195, for the surrounding two-base completion problem; the displayed native diagram calculation is the deduction specified here.)
+(Deduction using `CategoryTheory.Limits.IsLimit.hom_ext` and `CategoryTheory.Limits.IsLimit.lift_self` in `Mathlib/CategoryTheory/Limits/IsLimit.lean`, lines 232 and 95. The construction-specific inputs are [native limit for a finite-free retract](#2192-native-limit-for-a-finite-free-retract).; [knudsen2](#references), Appendix Proposition 6, pp. 194–195, for the surrounding two-base completion problem; the displayed native diagram calculation is the deduction specified here.)
 
-*Needs:* [native limit for a finite-free retract](#2200-native-limit-for-a-finite-free-retract), `TensorProduct`, `Module.Finite.exists_comp_eq_id_of_projective`.
+*Needs:* [native limit for a finite-free retract](#2192-native-limit-for-a-finite-free-retract), `TensorProduct`, `Module.Finite.exists_comp_eq_id_of_projective`.
 
-### 2.208 The section Hom differential squares to zero
+### 2.200 The section Hom differential squares to zero
 
 For any commutative ring A and γ,δ,s,t∈A, use the actual polynomial ring R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), its coefficient map ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt and a=ιδ·v+ιδ·ιt+ιγ·u. Set J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), and the signed presentations P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε. For any A-module M put N=R⊗_A M with its native left R-action and H=Hom_R(R²,N). Write L_W(h)=h∘W for native R-linear precomposition and E:R²⊗_A M≃Hom_R(R²,N) for the previously specified finite-free tensor coordinates. For either phase e and every n≥0, d(e,n+1)∘d(e,n)=0 as an actual R-linear map H→H.
 
@@ -4828,11 +4703,11 @@ One proof uses the following inputs and comparisons. Use the actual native preco
 
 Use actual R-linear Hom maps, the signed P_J/P_D presentations and native ModuleCat homology. Do not infer Ext vanishing, relative stable reflexivity, completed-local comparisons or family/sheaf descent from this cochain result alone.
 
-([knudsen2012](#references), §3 Key Example, the exact matrix-factorization sequences preceding and in Proposition3.1; §4 identifies completion/descent as separate inputs.; Deduction using `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104; `LinearMap.comp_apply` in `Mathlib/Algebra/Module/LinearMap/Defs.lean`, line 495. The construction-specific inputs are [every adjacent section hom pair is exact](#2202-every-adjacent-section-hom-pair-is-exact).)
+([knudsen2012](#references), §3 Key Example, the exact matrix-factorization sequences preceding and in Proposition3.1; §4 identifies completion/descent as separate inputs.; Deduction using `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104; `LinearMap.comp_apply` in `Mathlib/Algebra/Module/LinearMap/Defs.lean`, line 495. The construction-specific inputs are [every adjacent section hom pair is exact](#2194-every-adjacent-section-hom-pair-is-exact).)
 
-*Needs:* [every adjacent section hom pair is exact](#2202-every-adjacent-section-hom-pair-is-exact), `Function.Exact.linearMap_comp_eq_zero`.
+*Needs:* [every adjacent section hom pair is exact](#2194-every-adjacent-section-hom-pair-is-exact), `Function.Exact.linearMap_comp_eq_zero`.
 
-### 2.209 Positive exactness of actual categorical Hom precomposition
+### 2.201 Positive exactness of actual categorical Hom precomposition
 
 For every commutative ring A and γ,δ,s,t∈A, use the actual R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), u=[X], v=[Y], coefficient map ι, J=(u−ιs,v−ιt), D=Hom_R(J,R) and N=R⊗_A M for an arbitrary A-module M. Write c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδ·v+ιδ·ιt+ιγ·u; Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)). The actual finite-free resolutions C(false), C(true) have R² in every degree and differential B(e,n)=Φ if (n mod2=0)⇔e=true, otherwise Ψ, with signed augmentations P_J(z)=cz₀−dz₁ and P_D(z)=z₀incl−z₁ε. H(e,M) denotes the inherited actual R-linear Hom cochain with differential h↦h∘B(e,n). For e=false and e=true and every n≥0, the actual maps Hom_R(C(e)_n,N)→Hom_R(C(e)_(n+1),N)→Hom_R(C(e)_(n+2),N), by precomposition with the resolution differentials, are Function.Exact. A cocycle is the precomposition of an actual predecessor morphism; no coefficient flatness is assumed.
 
@@ -4842,11 +4717,11 @@ One proof uses the following inputs and comparisons. Evaluate the stated actual 
 
 The two native Mathlib Ext definitions are distinguished, with both positive vanishing statements proved separately. Degree zero is included in the isomorphisms, not asserted to vanish. Signed ideal/dual phases and actual R-actions are retained.
 
-([knudsen2012](#references), arXiv:1106.1588v2 §3 Key Example, Proposition3.1 and Corollary3.2; §4 separates completed-local descent.; Deduction using `ModuleCat.homLinearEquiv` in `Mathlib/Algebra/Category/ModuleCat/Basic.lean`, line 407. The construction-specific inputs are [every adjacent section hom pair is exact](#2202-every-adjacent-section-hom-pair-is-exact), [the native polynomial section chain complex](#2164-the-native-polynomial-section-chain-complex).)
+([knudsen2012](#references), arXiv:1106.1588v2 §3 Key Example, Proposition3.1 and Corollary3.2; §4 separates completed-local descent.; Deduction using `ModuleCat.homLinearEquiv` in `Mathlib/Algebra/Category/ModuleCat/Basic.lean`, line 407. The construction-specific inputs are [every adjacent section hom pair is exact](#2194-every-adjacent-section-hom-pair-is-exact), [the native polynomial section chain complex](#2143-the-native-polynomial-section-chain-complex).)
 
-*Needs:* [every adjacent section hom pair is exact](#2202-every-adjacent-section-hom-pair-is-exact), [the native polynomial section chain complex](#2164-the-native-polynomial-section-chain-complex), `HomologicalComplex.d_comp_d`.
+*Needs:* [every adjacent section hom pair is exact](#2194-every-adjacent-section-hom-pair-is-exact), [the native polynomial section chain complex](#2143-the-native-polynomial-section-chain-complex), `HomologicalComplex.d_comp_d`.
 
-### 2.210 Evaluation factorization of the second exchange map
+### 2.202 Evaluation factorization of the second exchange map
 
 Under coefficient convention C8. For every x∈J⊗_A M, Φ_D,M((η⊗id_M)x)=Θ_J,M(x) in Hom_R(D,N_M). This identifies Knudsen’s ψ, and Ile’s σ_J⊗id followed by exchange, with the previously constructed evaluation comparison.
 
@@ -4862,9 +4737,9 @@ Use the actual ideal subtype, native R-duals and R-module tensor action. No priv
 
 ([knudsen2](#references), Appendix Definition1 and Theorem2(1), printed191–193; Proposition6 printed194–195; [ile](#references), arXiv1110.3909v3 §3 Definition3.1 and Remark3.6, PDF6–8.)
 
-*Needs:* [canonical coefficient exchange for the section dual](#2205-canonical-coefficient-exchange-for-the-section-dual), [coefficient-valued bidual equivalence](#2194-coefficient-valued-bidual-equivalence), [canonical section bidual equivalence](#2170-canonical-section-bidual-equivalence), `TensorProduct.AlgebraTensorModule.rTensor`.
+*Needs:* [canonical coefficient exchange for the section dual](#2197-canonical-coefficient-exchange-for-the-section-dual), [coefficient-valued bidual equivalence](#2186-coefficient-valued-bidual-equivalence), [canonical section bidual equivalence](#2162-canonical-section-bidual-equivalence), `TensorProduct.AlgebraTensorModule.rTensor`.
 
-### 2.211 Original tensor limit to ordinary completed tensor
+### 2.203 Original tensor limit to ordinary completed tensor
 
 Under coefficient convention C5. Assume additionally p.FG. For the actual original-base diagram Fᴬ:n↦Qₙ⊗_A N, with the transported Â-action on Lᴬ=lim Fᴬ, construct Lᴬ≃ₗ[Â]R̂⊗_Â N as E⁻¹ composed with the inherited completed-linear limit comparison.
 
@@ -4884,11 +4759,11 @@ The construction has the following API.
 - The constant family 1⊗_ℤ(1/3) goes to ĩ(1/3)⊗1, whose level-2 projection is 3; on the original base the scalar 1/3 is visible only through 1⊗_ℤ(1/3)=3⊗_ℤ1 at level 2.
 - With r=0 both sides are 0.
 
-(Deduction using `CategoryTheory.Limits.IsLimit.hom_ext` and `CategoryTheory.Limits.IsLimit.lift_self` in `Mathlib/CategoryTheory/Limits/IsLimit.lean`, lines 232 and 95; tensor components use `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [completed-linear equivalence of finite tensor limits](#2198-completed-linear-equivalence-of-finite-tensor-limits), [the actual completed coefficient algebra](#285-the-actual-completed-coefficient-algebra), [finite tensor diagram over the original base](#2110-finite-tensor-diagram-over-the-original-base), [finite quotient transition over completed coefficients](#277-finite-quotient-transition-over-completed-coefficients), [native completed-coefficient tensor diagram](#2112-native-completed-coefficient-tensor-diagram), [ordinary tensor and native limit linear equivalence](#2206-ordinary-tensor-and-native-limit-linear-equivalence), [completed coefficient action on the original tensor limit](#2189-completed-coefficient-action-on-the-original-tensor-limit).; [knudsen2](#references), Appendix Proposition 6, pp. 194–195, for the surrounding two-base completion problem; the displayed native diagram calculation is the deduction specified here.)
+(Deduction using `CategoryTheory.Limits.IsLimit.hom_ext` and `CategoryTheory.Limits.IsLimit.lift_self` in `Mathlib/CategoryTheory/Limits/IsLimit.lean`, lines 232 and 95; tensor components use `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [completed-linear equivalence of finite tensor limits](#2190-completed-linear-equivalence-of-finite-tensor-limits), [the actual completed coefficient algebra](#277-the-actual-completed-coefficient-algebra), [finite tensor diagram over the original base](#2102-finite-tensor-diagram-over-the-original-base), [finite quotient transition over completed coefficients](#269-finite-quotient-transition-over-completed-coefficients), [native completed-coefficient tensor diagram](#2104-native-completed-coefficient-tensor-diagram), [ordinary tensor and native limit linear equivalence](#2198-ordinary-tensor-and-native-limit-linear-equivalence), [completed coefficient action on the original tensor limit](#2181-completed-coefficient-action-on-the-original-tensor-limit).; [knudsen2](#references), Appendix Proposition 6, pp. 194–195, for the surrounding two-base completion problem; the displayed native diagram calculation is the deduction specified here.)
 
-*Needs:* [completed-linear equivalence of finite tensor limits](#2198-completed-linear-equivalence-of-finite-tensor-limits), [the actual completed coefficient algebra](#285-the-actual-completed-coefficient-algebra), [finite tensor diagram over the original base](#2110-finite-tensor-diagram-over-the-original-base), [finite quotient transition over completed coefficients](#277-finite-quotient-transition-over-completed-coefficients), [native completed-coefficient tensor diagram](#2112-native-completed-coefficient-tensor-diagram), [ordinary tensor and native limit linear equivalence](#2206-ordinary-tensor-and-native-limit-linear-equivalence), [completed coefficient action on the original tensor limit](#2189-completed-coefficient-action-on-the-original-tensor-limit), `AdicCompletion`, `AdicCompletion.evalₐ`, `TensorProduct`.
+*Needs:* [completed-linear equivalence of finite tensor limits](#2190-completed-linear-equivalence-of-finite-tensor-limits), [the actual completed coefficient algebra](#277-the-actual-completed-coefficient-algebra), [finite tensor diagram over the original base](#2102-finite-tensor-diagram-over-the-original-base), [finite quotient transition over completed coefficients](#269-finite-quotient-transition-over-completed-coefficients), [native completed-coefficient tensor diagram](#2104-native-completed-coefficient-tensor-diagram), [ordinary tensor and native limit linear equivalence](#2198-ordinary-tensor-and-native-limit-linear-equivalence), [completed coefficient action on the original tensor limit](#2181-completed-coefficient-action-on-the-original-tensor-limit), `AdicCompletion`, `AdicCompletion.evalₐ`, `TensorProduct`.
 
-### 2.212 Ordinary tensor and projective tensor limit
+### 2.204 Ordinary tensor and projective tensor limit
 
 Under coefficient convention C1. For finite projective N construct the native Â-linear equivalence R̂⊗_Â N≃ₗ[Â]lim G_N.
 
@@ -4912,11 +4787,11 @@ The construction has the following API.
 - Under coefficient convention C1. For N=Fin(0)→Â and every x∈R̂⊗_Â N, E_N⁻¹(E_N(x))=0; the completed tensor is the zero module.
 - Under coefficient convention C1. For N=Fin(1)→Â and every x∈R̂⊗_Â N, E_N(x) equals the finite-free completion equivalence applied to x.
 
-(Deduction using `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [native limit for finite projective coefficients](#2207-native-limit-for-finite-projective-coefficients).; [knudsen2](#references), Appendix Proposition 6, pp. 194–195, for the surrounding two-base completion problem; the displayed native diagram calculation is the deduction specified here.)
+(Deduction using `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [native limit for finite projective coefficients](#2199-native-limit-for-finite-projective-coefficients).; [knudsen2](#references), Appendix Proposition 6, pp. 194–195, for the surrounding two-base completion problem; the displayed native diagram calculation is the deduction specified here.)
 
-*Needs:* [native limit for finite projective coefficients](#2207-native-limit-for-finite-projective-coefficients), `TensorProduct`.
+*Needs:* [native limit for finite projective coefficients](#2199-native-limit-for-finite-projective-coefficients), `TensorProduct`.
 
-### 2.213 Assembly of native compatible tensor sections
+### 2.205 Assembly of native compatible tensor sections
 
 Under coefficient convention C2. For finite projective N, construct the Â-linear map B from the existing ModuleCat sections submodule of G_N to T.
 
@@ -4934,13 +4809,13 @@ The construction has the following API.
 
 - Under coefficient convention C2. Every compatible tensor section is recovered at each n by the finite projection of its assembled tensor.
 - Under coefficient convention C2. A tensor with all the prescribed finite values is the assembled tensor.
-- Under coefficient convention C2. The zero compatible tensor section assembles to zero.
+- In the fixture A=ℤ, γ=δ=s=t=0, p=(2), m=2R and N=ℤ₂: the compatible section n↦[1+2v+⋯+2^(n−1)v^(n−1)]⊗1 assembles to σ⊗1 with σ=Σ2^k v^k, which is not in the image of R⊗_ℤℤ₂; the section n↦[1/3 modulo 2ⁿ]⊗1, with values [1],[3],[3],[11] at levels 1–4, assembles to (1/3)·(1⊗1), and an assembly sending it to 3·(1⊗1) fails at level 4.
 
-(The construction-specific inputs are [native limit for finite projective coefficients](#2207-native-limit-for-finite-projective-coefficients).)
+(The construction-specific inputs are [native limit for finite projective coefficients](#2199-native-limit-for-finite-projective-coefficients).)
 
-*Needs:* [native limit for finite projective coefficients](#2207-native-limit-for-finite-projective-coefficients), `TensorProduct`, `ModuleCat.sectionsSubmodule`.
+*Needs:* [native limit for finite projective coefficients](#2199-native-limit-for-finite-projective-coefficients), `TensorProduct`, `ModuleCat.sectionsSubmodule`.
 
-### 2.214 The native polynomial section Hom cochain complex
+### 2.206 The native polynomial section Hom cochain complex
 
 For any commutative ring A and γ,δ,s,t∈A, use the actual polynomial ring R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), its coefficient map ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt and a=ιδ·v+ιδ·ιt+ιγ·u. Set J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), and the signed presentations P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε. For any A-module M put N=R⊗_A M with its native left R-action and H=Hom_R(R²,N). Write L_W(h)=h∘W for native R-linear precomposition and E:R²⊗_A M≃Hom_R(R²,N) for the previously specified finite-free tensor coordinates. Construct C_e as a native nonnegative cochain complex in ModuleCat R, with object H in each degree and successive differential d(e,n). Use the existing CochainComplex.of constructor and the actual square-zero proof.
 
@@ -4955,8 +4830,6 @@ The construction has the following API.
 - For either phase e and every n≥0, C_e.X(n)=ModuleCat.of R H, with the actual native R-module structure on the Hom space.
 - For either phase e and every n≥0, the native morphism C_e.d(n,n+1) is ModuleCat.ofHom(d(e,n)). The morphism comparison is stated with the source and target object identifications: compare the differential maps after transporting along those identifications.
 - For either phase e and i,j≥0 with i+1≠j, C_e.d(i,j)=0.
-- Precomposition by the actual P_J: R²→J followed by d(false,0) is an exact pair. Thus the zero-degree cycles are exactly f∘P_J for R-linear f:J→N; precomposition is injective because P_J is surjective.
-- Precomposition by the actual P_D: R²→D followed by d(true,0) is an exact pair. Thus the zero-degree cycles are exactly f∘P_D for R-linear f:D→N; precomposition is injective because P_D is surjective.
 
 **Checks.**
 
@@ -4964,14 +4837,12 @@ The construction has the following API.
 - For A=ℤ/4, γ=δ=0,s=1,t=0 and M=ℤ/4, the dual-phase native cohomology object in degree two is zero; neither reducedness nor a unit discriminant is required by this algebra calculation.
 - For A=M=ℤ/1 and all parameters zero, the ideal-phase native cohomology object in degree one is zero.
 - For every n, the ideal-phase successor differential is the actual ModuleCat morphism of d(false,n), not a chosen zero differential.
-- An element h∈H is killed by d(false,0) exactly when h=f∘P_J for an actual R-linear map f:J→N.
-- An element h∈H is killed by d(true,0) exactly when h=f∘P_D for an actual R-linear map f:D→N.
 
-([knudsen2012](#references), §3 Key Example, the exact matrix-factorization sequences preceding and in Proposition3.1; §4 identifies completion/descent as separate inputs.; Deduction using `ModuleCat.homLinearEquiv` in `Mathlib/Algebra/Category/ModuleCat/Basic.lean`, line 407, and `CochainComplex.of` in `Mathlib/Algebra/Homology/HomologicalComplex.lean`, line 890. The construction-specific inputs are [the polynomial section hom differential](#29-the-polynomial-section-hom-differential), [the section hom differential squares to zero](#2208-the-section-hom-differential-squares-to-zero).)
+([knudsen2012](#references), §3 Key Example, the exact matrix-factorization sequences preceding and in Proposition3.1; §4 identifies completion/descent as separate inputs.; Deduction using `ModuleCat.homLinearEquiv` in `Mathlib/Algebra/Category/ModuleCat/Basic.lean`, line 407, and `CochainComplex.of` in `Mathlib/Algebra/Homology/HomologicalComplex.lean`, line 890. The construction-specific inputs are [the polynomial section hom differential](#29-the-polynomial-section-hom-differential), [the section hom differential squares to zero](#2200-the-section-hom-differential-squares-to-zero).)
 
-*Needs:* [the polynomial section hom differential](#29-the-polynomial-section-hom-differential), [the section hom differential squares to zero](#2208-the-section-hom-differential-squares-to-zero), `CochainComplex.of`, `ModuleCat.of`, `ModuleCat.ofHom`, `ModuleCat.hom_ext`.
+*Needs:* [the polynomial section hom differential](#29-the-polynomial-section-hom-differential), [the section hom differential squares to zero](#2200-the-section-hom-differential-squares-to-zero), `CochainComplex.of`, `ModuleCat.of`, `ModuleCat.ofHom`, `ModuleCat.hom_ext`.
 
-### 2.215 Positive native localization Ext vanishing for the section ideal
+### 2.207 Positive native localization Ext vanishing for the section ideal
 
 For every commutative ring A and γ,δ,s,t∈A, use the actual R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), u=[X], v=[Y], coefficient map ι, J=(u−ιs,v−ιt), D=Hom_R(J,R) and N=R⊗_A M for an arbitrary A-module M. Write c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδ·v+ιδ·ιt+ιγ·u; Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)). The actual finite-free resolutions C(false), C(true) have R² in every degree and differential B(e,n)=Φ if (n mod2=0)⇔e=true, otherwise Ψ, with signed augmentations P_J(z)=cz₀−dz₁ and P_D(z)=z₀incl−z₁ε. H(e,M) denotes the inherited actual R-linear Hom cochain with differential h↦h∘B(e,n). For every n≥0, every class α in the localization-defined Ext group `CategoryTheory.Abelian.Ext` of J and R⊗_A M in degree n+1 is zero. This is proved for that Ext directly, without identifying it with the derived-functor Ext.
 
@@ -4986,11 +4857,11 @@ The two native Mathlib Ext definitions are distinguished, with both positive van
 - For A=Z, γ=1,δ=0,s=1,t=0 and M=Z/2, every element of native localization Abelian.Ext^4(J,R⊗M) is zero.
 - For A=Z/1 and M=A, every native localization Abelian.Ext^1(J,R⊗M) class is zero.
 
-([knudsen2012](#references), arXiv:1106.1588v2 §3 Key Example, Proposition3.1 and Corollary3.2; §4 separates completed-local descent.; Deduction using `CategoryTheory.ProjectiveResolution.extMk_surjective` and `CategoryTheory.ProjectiveResolution.extMk_eq_zero_iff` in `Mathlib/CategoryTheory/Abelian/Projective/Ext.lean`, lines 211 and 196. The construction-specific inputs are [the actual section-ideal projective resolution](#2196-the-actual-section-ideal-projective-resolution), [positive exactness of actual categorical hom precomposition](#2209-positive-exactness-of-actual-categorical-hom-precomposition).)
+([knudsen2012](#references), arXiv:1106.1588v2 §3 Key Example, Proposition3.1 and Corollary3.2; §4 separates completed-local descent.; Deduction using `CategoryTheory.ProjectiveResolution.extMk_surjective` and `CategoryTheory.ProjectiveResolution.extMk_eq_zero_iff` in `Mathlib/CategoryTheory/Abelian/Projective/Ext.lean`, lines 211 and 196. The construction-specific inputs are [the actual section-ideal projective resolution](#2188-the-actual-section-ideal-projective-resolution), [positive exactness of actual categorical hom precomposition](#2201-positive-exactness-of-actual-categorical-hom-precomposition).)
 
-*Needs:* [the actual section-ideal projective resolution](#2196-the-actual-section-ideal-projective-resolution), [positive exactness of actual categorical hom precomposition](#2209-positive-exactness-of-actual-categorical-hom-precomposition), `CategoryTheory.Abelian.Ext`, `CategoryTheory.ProjectiveResolution.extMk_surjective`, `CategoryTheory.ProjectiveResolution.extMk_eq_zero_iff`, `CategoryTheory.hasExt_of_enoughProjectives`.
+*Needs:* [the actual section-ideal projective resolution](#2188-the-actual-section-ideal-projective-resolution), [positive exactness of actual categorical hom precomposition](#2201-positive-exactness-of-actual-categorical-hom-precomposition), `CategoryTheory.Abelian.Ext`, `CategoryTheory.ProjectiveResolution.extMk_surjective`, `CategoryTheory.ProjectiveResolution.extMk_eq_zero_iff`, `CategoryTheory.hasExt_of_enoughProjectives`.
 
-### 2.216 Positive native localization Ext vanishing for the section dual
+### 2.208 Positive native localization Ext vanishing for the section dual
 
 For every commutative ring A and γ,δ,s,t∈A, use the actual R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), u=[X], v=[Y], coefficient map ι, J=(u−ιs,v−ιt), D=Hom_R(J,R) and N=R⊗_A M for an arbitrary A-module M. Write c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδ·v+ιδ·ιt+ιγ·u; Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)). The actual finite-free resolutions C(false), C(true) have R² in every degree and differential B(e,n)=Φ if (n mod2=0)⇔e=true, otherwise Ψ, with signed augmentations P_J(z)=cz₀−dz₁ and P_D(z)=z₀incl−z₁ε. H(e,M) denotes the inherited actual R-linear Hom cochain with differential h↦h∘B(e,n). For every n≥0, every class α in the localization-defined Ext group `CategoryTheory.Abelian.Ext` of D and R⊗_A M in degree n+1 is zero. No coefficient flatness of D and no identification with the derived-functor Ext is assumed.
 
@@ -5004,17 +4875,17 @@ The two native Mathlib Ext definitions are distinguished, with both positive van
 
 - For A=Z/4, γ=δ=t=0,s=1 and M=A, every native localization Abelian.Ext^2(D,R⊗M) class is zero.
 
-([knudsen2012](#references), arXiv:1106.1588v2 §3 Key Example, Proposition3.1 and Corollary3.2; §4 separates completed-local descent.; Deduction using `CategoryTheory.ProjectiveResolution.extMk_surjective` and `CategoryTheory.ProjectiveResolution.extMk_eq_zero_iff` in `Mathlib/CategoryTheory/Abelian/Projective/Ext.lean`, lines 211 and 196. The construction-specific inputs are [the actual dual projective resolution](#2197-the-actual-dual-projective-resolution), [positive exactness of actual categorical hom precomposition](#2209-positive-exactness-of-actual-categorical-hom-precomposition).)
+([knudsen2012](#references), arXiv:1106.1588v2 §3 Key Example, Proposition3.1 and Corollary3.2; §4 separates completed-local descent.; Deduction using `CategoryTheory.ProjectiveResolution.extMk_surjective` and `CategoryTheory.ProjectiveResolution.extMk_eq_zero_iff` in `Mathlib/CategoryTheory/Abelian/Projective/Ext.lean`, lines 211 and 196. The construction-specific inputs are [the actual dual projective resolution](#2189-the-actual-dual-projective-resolution), [positive exactness of actual categorical hom precomposition](#2201-positive-exactness-of-actual-categorical-hom-precomposition).)
 
-*Needs:* [the actual dual projective resolution](#2197-the-actual-dual-projective-resolution), [positive exactness of actual categorical hom precomposition](#2209-positive-exactness-of-actual-categorical-hom-precomposition), `CategoryTheory.Abelian.Ext`, `CategoryTheory.ProjectiveResolution.extMk_surjective`, `CategoryTheory.ProjectiveResolution.extMk_eq_zero_iff`, `CategoryTheory.hasExt_of_enoughProjectives`.
+*Needs:* [the actual dual projective resolution](#2189-the-actual-dual-projective-resolution), [positive exactness of actual categorical hom precomposition](#2201-positive-exactness-of-actual-categorical-hom-precomposition), `CategoryTheory.Abelian.Ext`, `CategoryTheory.ProjectiveResolution.extMk_surjective`, `CategoryTheory.ProjectiveResolution.extMk_eq_zero_iff`, `CategoryTheory.hasExt_of_enoughProjectives`.
 
-### 2.217 Original-base limit and ordinary projective tensor
+### 2.209 Original-base limit and ordinary projective tensor
 
 Under coefficient convention C1. If p is finitely generated and N is finite projective over Â, the actual original A-linear finite-tensor limit, endowed with the transported Â-action, is Â-linearly equivalent to R̂⊗_Â N.
 
 A and N lie in one common universe and carry explicit compatible A/Â-actions. No noetherian, locality or discriminant hypothesis; N is projective over Â, hence flat, by the retraction or finite-projectivity hypothesis. N is finite and projective over Â; a basis or freeness is not assumed. p is finitely generated; the original limit uses exactly the transported Â-action.
 
-One proof uses the following inputs and comparisons. Compose [completed-linear equivalence of finite tensor limits](#2198-completed-linear-equivalence-of-finite-tensor-limits) with E_N⁻¹. Keep the ordinary R̂⊗_A N quotient comparison distinct.
+One proof uses the following inputs and comparisons. Compose [completed-linear equivalence of finite tensor limits](#2190-completed-linear-equivalence-of-finite-tensor-limits) with E_N⁻¹. Keep the ordinary R̂⊗_A N quotient comparison distinct.
 
 The construction has the following API.
 
@@ -5028,11 +4899,11 @@ The construction has the following API.
 - Under coefficient convention C1. For p finitely generated and finite projective N, the inverse original-base comparison followed by that comparison fixes every x∈R̂⊗_Â N.
 - Under coefficient convention C1. For p finitely generated, finite projective N, every x in the original A-limit and every n, P_N,n of its ordinary-tensor image equals πₙ of its completed-linear limit image.
 
-(Deduction using `CategoryTheory.Limits.IsLimit.hom_ext` and `CategoryTheory.Limits.IsLimit.lift_self` in `Mathlib/CategoryTheory/Limits/IsLimit.lean`, lines 232 and 95; tensor components use `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [ordinary tensor and projective tensor limit](#2212-ordinary-tensor-and-projective-tensor-limit), [completed-linear equivalence of finite tensor limits](#2198-completed-linear-equivalence-of-finite-tensor-limits).; [knudsen2](#references), Appendix Proposition 6, pp. 194–195, for the surrounding two-base completion problem; the displayed native diagram calculation is the deduction specified here.)
+(Deduction using `CategoryTheory.Limits.IsLimit.hom_ext` and `CategoryTheory.Limits.IsLimit.lift_self` in `Mathlib/CategoryTheory/Limits/IsLimit.lean`, lines 232 and 95; tensor components use `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [ordinary tensor and projective tensor limit](#2204-ordinary-tensor-and-projective-tensor-limit), [completed-linear equivalence of finite tensor limits](#2190-completed-linear-equivalence-of-finite-tensor-limits).; [knudsen2](#references), Appendix Proposition 6, pp. 194–195, for the surrounding two-base completion problem; the displayed native diagram calculation is the deduction specified here.)
 
-*Needs:* [ordinary tensor and projective tensor limit](#2212-ordinary-tensor-and-projective-tensor-limit), [completed-linear equivalence of finite tensor limits](#2198-completed-linear-equivalence-of-finite-tensor-limits), `TensorProduct`.
+*Needs:* [ordinary tensor and projective tensor limit](#2204-ordinary-tensor-and-projective-tensor-limit), [completed-linear equivalence of finite tensor limits](#2190-completed-linear-equivalence-of-finite-tensor-limits), `TensorProduct`.
 
-### 2.218 The native successor differential
+### 2.210 The native successor differential
 
 For any commutative ring A and γ,δ,s,t∈A, use the actual polynomial ring R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), its coefficient map ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt and a=ιδ·v+ιδ·ιt+ιγ·u. Set J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), and the signed presentations P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε. For any A-module M put N=R⊗_A M with its native left R-action and H=Hom_R(R²,N). Write L_W(h)=h∘W for native R-linear precomposition and E:R²⊗_A M≃Hom_R(R²,N) for the previously specified finite-free tensor coordinates. For either phase e and every n≥0, the native morphism C_e.d(n,n+1) is ModuleCat.ofHom(d(e,n)). The comparison uses the specified native Hom object identifications.
 
@@ -5042,11 +4913,11 @@ One proof uses the following inputs and comparisons. Use the actual native preco
 
 Use actual R-linear Hom maps, the signed P_J/P_D presentations and native ModuleCat homology. Do not infer Ext vanishing, relative stable reflexivity, completed-local comparisons or family/sheaf descent from this cochain result alone.
 
-([knudsen2012](#references), §3 Key Example, the exact matrix-factorization sequences preceding and in Proposition3.1; §4 identifies completion/descent as separate inputs.; Deduction using `Matrix.mulVecLin_apply` in `Mathlib/LinearAlgebra/Matrix/ToLin.lean`, line 291, and `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [the native polynomial section hom cochain complex](#2214-the-native-polynomial-section-hom-cochain-complex).)
+([knudsen2012](#references), §3 Key Example, the exact matrix-factorization sequences preceding and in Proposition3.1; §4 identifies completion/descent as separate inputs.; Deduction using `Matrix.mulVecLin_apply` in `Mathlib/LinearAlgebra/Matrix/ToLin.lean`, line 291, and `TensorProduct.map_tmul` and `TensorProduct.map_comp` in `Mathlib/LinearAlgebra/TensorProduct/Map.lean`, lines 59 and 104. The construction-specific inputs are [the native polynomial section hom cochain complex](#2206-the-native-polynomial-section-hom-cochain-complex).)
 
-*Needs:* [the native polynomial section hom cochain complex](#2214-the-native-polynomial-section-hom-cochain-complex), `CochainComplex.of_d`.
+*Needs:* [the native polynomial section hom cochain complex](#2206-the-native-polynomial-section-hom-cochain-complex), `CochainComplex.of_d`.
 
-### 2.219 Positive categorical Ext of the section ideal into its ring
+### 2.211 Positive categorical Ext of the section ideal into its ring
 
 Under coefficient convention C8. For every n≥0 and α∈CategoryTheory.Abelian.Ext (ModuleCat.of R J) (ModuleCat.of R R) (n+1), α=0.
 
@@ -5062,9 +4933,9 @@ Use the actual ideal subtype, native R-duals and R-module tensor action. No priv
 
 ([knudsen2](#references), Appendix Definition1 and Theorem2(1), printed191–193; Proposition6 printed194–195; [ile](#references), arXiv1110.3909v3 §3 Definition3.1 and Remark3.6, PDF6–8.)
 
-*Needs:* [positive native localization ext vanishing for the section ideal](#2215-positive-native-localization-ext-vanishing-for-the-section-ideal), `TensorProduct.AlgebraTensorModule.rid`, `LinearEquiv.toModuleIso`, `CategoryTheory.Functor.mapIso`, `CategoryTheory.Abelian.extFunctorObj`.
+*Needs:* [positive native localization ext vanishing for the section ideal](#2207-positive-native-localization-ext-vanishing-for-the-section-ideal), `TensorProduct.AlgebraTensorModule.rid`, `LinearEquiv.toModuleIso`, `CategoryTheory.Functor.mapIso`, `CategoryTheory.Abelian.extFunctorObj`.
 
-### 2.220 Positive categorical Ext of the section dual into its ring
+### 2.212 Positive categorical Ext of the section dual into its ring
 
 Under coefficient convention C8. For every n≥0 and α∈CategoryTheory.Abelian.Ext (ModuleCat.of R D) (ModuleCat.of R R) (n+1), α=0.
 
@@ -5080,9 +4951,9 @@ Use the actual ideal subtype, native R-duals and R-module tensor action. No priv
 
 ([knudsen2](#references), Appendix Definition1 and Theorem2(1), printed191–193; Proposition6 printed194–195; [ile](#references), arXiv1110.3909v3 §3 Definition3.1 and Remark3.6, PDF6–8.)
 
-*Needs:* [positive native localization ext vanishing for the section dual](#2216-positive-native-localization-ext-vanishing-for-the-section-dual), `TensorProduct.AlgebraTensorModule.rid`, `LinearEquiv.toModuleIso`, `CategoryTheory.Functor.mapIso`, `CategoryTheory.Abelian.extFunctorObj`.
+*Needs:* [positive native localization ext vanishing for the section dual](#2208-positive-native-localization-ext-vanishing-for-the-section-dual), `TensorProduct.AlgebraTensorModule.rid`, `LinearEquiv.toModuleIso`, `CategoryTheory.Functor.mapIso`, `CategoryTheory.Abelian.extFunctorObj`.
 
-### 2.221 Ring-linear assembly of compatible Hom families
+### 2.213 Ring-linear assembly of compatible Hom families
 
 Under coefficient convention C2. For finite projective N construct A_L:H_L→ₗ[Â]Hom_R(L,T), with A_L(h)(x)=B((hₙ(x))ₙ).
 
@@ -5103,11 +4974,11 @@ The construction has the following API.
 - Under coefficient convention C2. For D=Hom_R(J,R), projecting the assembly of every compatible family D→Qₙ⊗_Â N recovers that family.
 - Under coefficient convention C2. For every R-linear b:K→L and families k,h satisfying kₙ(x)=hₙ(b(x)), assembly commutes with precomposition by b.
 
-(The construction-specific inputs are [compatible quotient hom families](#2127-compatible-quotient-hom-families), [assembly of native compatible tensor sections](#2213-assembly-of-native-compatible-tensor-sections), [finite projections separate completed tensors](#2182-finite-projections-separate-completed-tensors), [original-ring scalar in tensor evaluations](#2156-original-ring-scalar-in-tensor-evaluations).)
+(The construction-specific inputs are [compatible quotient hom families](#2119-compatible-quotient-hom-families), [assembly of native compatible tensor sections](#2205-assembly-of-native-compatible-tensor-sections), [finite projections separate completed tensors](#2174-finite-projections-separate-completed-tensors), [original-ring scalar in tensor evaluations](#2149-original-ring-scalar-in-tensor-evaluations).)
 
-*Needs:* [compatible quotient hom families](#2127-compatible-quotient-hom-families), [assembly of native compatible tensor sections](#2213-assembly-of-native-compatible-tensor-sections), [finite projections separate completed tensors](#2182-finite-projections-separate-completed-tensors), [original-ring scalar in tensor evaluations](#2156-original-ring-scalar-in-tensor-evaluations), `TensorProduct`.
+*Needs:* [compatible quotient hom families](#2119-compatible-quotient-hom-families), [assembly of native compatible tensor sections](#2205-assembly-of-native-compatible-tensor-sections), [finite projections separate completed tensors](#2174-finite-projections-separate-completed-tensors), [original-ring scalar in tensor evaluations](#2149-original-ring-scalar-in-tensor-evaluations), `TensorProduct`.
 
-### 2.222 Positive-degree exactness of the native Hom complex
+### 2.214 Positive-degree exactness of the native Hom complex
 
 For any commutative ring A and γ,δ,s,t∈A, use the actual polynomial ring R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), its coefficient map ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt and a=ιδ·v+ιδ·ιt+ιγ·u. Set J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), and the signed presentations P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε. For any A-module M put N=R⊗_A M with its native left R-action and H=Hom_R(R²,N). Write L_W(h)=h∘W for native R-linear precomposition and E:R²⊗_A M≃Hom_R(R²,N) for the previously specified finite-free tensor coordinates. For either phase e and every n≥0, the native C_e satisfies HomologicalComplex.ExactAt at n+1. This is categorical exactness of its actual R-module short complex.
 
@@ -5117,11 +4988,11 @@ One proof uses the following inputs and comparisons. Use the native successor di
 
 Use actual R-linear Hom maps, the signed P_J/P_D presentations and native ModuleCat homology. Do not infer Ext vanishing, relative stable reflexivity, completed-local comparisons or family/sheaf descent from this cochain result alone.
 
-([knudsen2012](#references), §3 Key Example, the exact matrix-factorization sequences preceding and in Proposition3.1; §4 identifies completion/descent as separate inputs.; Deduction using `HomologicalComplex.ExactAt.isZero_homology` in `Mathlib/Algebra/Homology/ShortComplex/HomologicalComplex.lean`, line 696, and `ModuleCat.homLinearEquiv` in `Mathlib/Algebra/Category/ModuleCat/Basic.lean`, line 407, and `HomologicalComplex.Hom.isoOfComponents` in `Mathlib/Algebra/Homology/HomologicalComplex.lean`, line 498. The construction-specific inputs are [the native polynomial section hom cochain complex](#2214-the-native-polynomial-section-hom-cochain-complex), [the native successor differential](#2218-the-native-successor-differential), [every adjacent section hom pair is exact](#2202-every-adjacent-section-hom-pair-is-exact).)
+([knudsen2012](#references), §3 Key Example, the exact matrix-factorization sequences preceding and in Proposition3.1; §4 identifies completion/descent as separate inputs.; Deduction using `HomologicalComplex.ExactAt.isZero_homology` in `Mathlib/Algebra/Homology/ShortComplex/HomologicalComplex.lean`, line 696, and `ModuleCat.homLinearEquiv` in `Mathlib/Algebra/Category/ModuleCat/Basic.lean`, line 407. The construction-specific inputs are [the native polynomial section hom cochain complex](#2206-the-native-polynomial-section-hom-cochain-complex), [the native successor differential](#2210-the-native-successor-differential), [every adjacent section hom pair is exact](#2194-every-adjacent-section-hom-pair-is-exact).)
 
-*Needs:* [the native polynomial section hom cochain complex](#2214-the-native-polynomial-section-hom-cochain-complex), [the native successor differential](#2218-the-native-successor-differential), [every adjacent section hom pair is exact](#2202-every-adjacent-section-hom-pair-is-exact), `HomologicalComplex.ExactAt`, `HomologicalComplex.exactAt_iff'`, `CategoryTheory.ShortComplex.moduleCat_exact_iff`.
+*Needs:* [the native polynomial section hom cochain complex](#2206-the-native-polynomial-section-hom-cochain-complex), [the native successor differential](#2210-the-native-successor-differential), [every adjacent section hom pair is exact](#2194-every-adjacent-section-hom-pair-is-exact), `HomologicalComplex.ExactAt`, `HomologicalComplex.exactAt_iff'`, `CategoryTheory.ShortComplex.moduleCat_exact_iff`.
 
-### 2.223 Categorical Hom cochains of the section resolutions
+### 2.215 Categorical Hom cochains of the section resolutions
 
 For every commutative ring A and γ,δ,s,t∈A, use the actual R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), u=[X], v=[Y], coefficient map ι, J=(u−ιs,v−ιt), D=Hom_R(J,R) and N=R⊗_A M for an arbitrary A-module M. Write c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδ·v+ιδ·ιt+ιγ·u; Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)). The actual finite-free resolutions C(false), C(true) have R² in every degree and differential B(e,n)=Φ if (n mod2=0)⇔e=true, otherwise Ψ, with signed augmentations P_J(z)=cz₀−dz₁ and P_D(z)=z₀incl−z₁ε. H(e,M) denotes the inherited actual R-linear Hom cochain with differential h↦h∘B(e,n). Construct the actual native ModuleCat R isomorphism C(e).linearYonedaObj R (R⊗_A M) ≅ H(e,M). In every degree it sends a categorical morphism h:F→R⊗_A M to its underlying R-linear map h.hom; its inverse is ModuleCat.ofHom. The differential squares commute with precomposition by B(e,n), including degree zero.
 
@@ -5142,11 +5013,11 @@ The construction has the following API.
 - The inverse followed by the forward comparison has the identity component in every degree of the actual Hom cochain.
 - Every A-linear coefficient map gives the stated Hom-comparison naturality square in every degree.
 
-([knudsen2012](#references), arXiv:1106.1588v2 §3 Key Example, Proposition3.1 and Corollary3.2; §4 separates completed-local descent.; Deduction using `ModuleCat.homLinearEquiv` in `Mathlib/Algebra/Category/ModuleCat/Basic.lean`, line 407, and `HomologicalComplex.Hom.isoOfComponents` in `Mathlib/Algebra/Homology/HomologicalComplex.lean`, line 498. The construction-specific inputs are [the native polynomial section chain complex](#2164-the-native-polynomial-section-chain-complex), [the native polynomial section hom cochain complex](#2214-the-native-polynomial-section-hom-cochain-complex), [the native successor differential](#2218-the-native-successor-differential).)
+([knudsen2012](#references), arXiv:1106.1588v2 §3 Key Example, Proposition3.1 and Corollary3.2; §4 separates completed-local descent.; Deduction using `ModuleCat.homLinearEquiv` in `Mathlib/Algebra/Category/ModuleCat/Basic.lean`, line 407, and `HomologicalComplex.Hom.isoOfComponents` in `Mathlib/Algebra/Homology/HomologicalComplex.lean`, line 498. The construction-specific inputs are [the native polynomial section chain complex](#2143-the-native-polynomial-section-chain-complex), [the native polynomial section hom cochain complex](#2206-the-native-polynomial-section-hom-cochain-complex), [the native successor differential](#2210-the-native-successor-differential).)
 
-*Needs:* [the native polynomial section chain complex](#2164-the-native-polynomial-section-chain-complex), [the native polynomial section hom cochain complex](#2214-the-native-polynomial-section-hom-cochain-complex), [the native successor differential](#2218-the-native-successor-differential), `ChainComplex.linearYonedaObj`, `HomologicalComplex.Hom.isoOfComponents`, `ModuleCat.homLinearEquiv`, `LinearEquiv.toModuleIso`.
+*Needs:* [the native polynomial section chain complex](#2143-the-native-polynomial-section-chain-complex), [the native polynomial section hom cochain complex](#2206-the-native-polynomial-section-hom-cochain-complex), [the native successor differential](#2210-the-native-successor-differential), `ChainComplex.linearYonedaObj`, `HomologicalComplex.Hom.isoOfComponents`, `ModuleCat.homLinearEquiv`, `LinearEquiv.toModuleIso`.
 
-### 2.224 Vanishing positive cohomology of the native Hom complex
+### 2.216 Vanishing positive cohomology of the native Hom complex
 
 For any commutative ring A and γ,δ,s,t∈A, use the actual polynomial ring R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), its coefficient map ι:A→R, u=[X], v=[Y], c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt and a=ιδ·v+ιδ·ιt+ιγ·u. Set J=(c,d), D=Hom_R(J,R), Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)), and the signed presentations P_J(z)=cz₀−dz₁, P_D(z)=z₀incl−z₁ε. For any A-module M put N=R⊗_A M with its native left R-action and H=Hom_R(R²,N). Write L_W(h)=h∘W for native R-linear precomposition and E:R²⊗_A M≃Hom_R(R²,N) for the previously specified finite-free tensor coordinates. For either phase e and every n≥0, the native homology object C_e.homology(n+1) is a zero object in ModuleCat R. No assertion of higher Ext is made until these complexes are identified with native Hom applied to the augmented projective resolutions.
 
@@ -5156,13 +5027,13 @@ One proof uses the following inputs and comparisons. Apply native ExactAt.isZero
 
 Use actual R-linear Hom maps, the signed P_J/P_D presentations and native ModuleCat homology. Do not infer Ext vanishing, relative stable reflexivity, completed-local comparisons or family/sheaf descent from this cochain result alone.
 
-([knudsen2012](#references), §3 Key Example, the exact matrix-factorization sequences preceding and in Proposition3.1; §4 identifies completion/descent as separate inputs.; Deduction using `HomologicalComplex.ExactAt.isZero_homology` in `Mathlib/Algebra/Homology/ShortComplex/HomologicalComplex.lean`, line 696, and `ModuleCat.homLinearEquiv` in `Mathlib/Algebra/Category/ModuleCat/Basic.lean`, line 407, and `HomologicalComplex.Hom.isoOfComponents` in `Mathlib/Algebra/Homology/HomologicalComplex.lean`, line 498. The construction-specific inputs are [positive-degree exactness of the native hom complex](#2222-positive-degree-exactness-of-the-native-hom-complex).)
+([knudsen2012](#references), §3 Key Example, the exact matrix-factorization sequences preceding and in Proposition3.1; §4 identifies completion/descent as separate inputs.; Deduction using `HomologicalComplex.ExactAt.isZero_homology` in `Mathlib/Algebra/Homology/ShortComplex/HomologicalComplex.lean`, line 696, and `ModuleCat.homLinearEquiv` in `Mathlib/Algebra/Category/ModuleCat/Basic.lean`, line 407. The construction-specific inputs are [positive-degree exactness of the native hom complex](#2214-positive-degree-exactness-of-the-native-hom-complex).)
 
-*Needs:* [positive-degree exactness of the native hom complex](#2222-positive-degree-exactness-of-the-native-hom-complex), `HomologicalComplex.ExactAt.isZero_homology`.
+*Needs:* [positive-degree exactness of the native hom complex](#2214-positive-degree-exactness-of-the-native-hom-complex), `HomologicalComplex.ExactAt.isZero_homology`.
 
-### 2.225 Derived-functor Ext of the actual section ideal
+### 2.217 Derived-functor Ext of the actual section ideal
 
-For every commutative ring A and γ,δ,s,t∈A, use the actual R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), u=[X], v=[Y], coefficient map ι, J=(u−ιs,v−ιt), D=Hom_R(J,R) and N=R⊗_A M for an arbitrary A-module M. Write c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδ·v+ιδ·ιt+ιγ·u; Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)). The actual finite-free resolutions C(false), C(true) have R² in every degree and differential B(e,n)=Φ if (n mod2=0)⇔e=true, otherwise Ψ, with signed augmentations P_J(z)=cz₀−dz₁ and P_D(z)=z₀incl−z₁ε. H(e,M) denotes the inherited actual R-linear Hom cochain with differential h↦h∘B(e,n). For every n≥0 construct a native R-module isomorphism ((_root_.Ext R (ModuleCat R) n).obj (op J)).obj N ≅ H(false,M).homology n, by the native the Ext comparison of the two-periodic resolution of J followed by homology of the categorical Hom-cochain comparison. Here _root_.Ext is Mathlib's left-derived linear Yoneda bifunctor, not a new carrier or the localization-defined Abelian.Ext.
+For every commutative ring A and γ,δ,s,t∈A, use the actual R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), u=[X], v=[Y], coefficient map ι, J=(u−ιs,v−ιt), D=Hom_R(J,R) and N=R⊗_A M for an arbitrary A-module M. Write c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδ·v+ιδ·ιt+ιγ·u; Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)). The actual finite-free resolutions C(false), C(true) have R² in every degree and differential B(e,n)=Φ if (n mod2=0)⇔e=true, otherwise Ψ, with signed augmentations P_J(z)=cz₀−dz₁ and P_D(z)=z₀incl−z₁ε. H(e,M) denotes the inherited actual R-linear Hom cochain with differential h↦h∘B(e,n). For every n≥0 construct a native R-module isomorphism between the derived-functor Ext module Ext^n_R(J,N), Mathlib's root-namespace bifunctor `Ext` evaluated contravariantly at J and covariantly at N, and H(false,M).homology n, by the Ext comparison of the two-periodic resolution of J followed by homology of the categorical Hom-cochain comparison. This `Ext` is the left-derived linear Yoneda bifunctor, not a new carrier and not the localization-defined `CategoryTheory.Abelian.Ext`.
 
 Here A is any commutative ring and M any A-module. No noetherianity, coefficient flatness, nontriviality or unit-discriminant hypothesis is imposed on this polynomial calculation. Native ModuleCat objects are in a common universe. Relative stable reflexivity, two-base completion, pointed hulls and scheme/sheaf descent are separate geometric obligations.
 
@@ -5181,13 +5052,13 @@ The construction has the following API.
 - For A=Z, γ=1,δ=0,s=1,t=0 and the non-flat coefficient module M=Z/2, the actual derived-functor Ext^3(J,R⊗_Z M) module is zero.
 - For the zero coefficient ring A=Z/1 and M=A, the actual ideal derived-functor Ext^1 module is zero; no Nontrivial hypothesis is introduced.
 
-([knudsen2012](#references), arXiv:1106.1588v2 §3 Key Example, Proposition3.1 and Corollary3.2; §4 separates completed-local descent.; Deduction using `CategoryTheory.ProjectiveResolution.isoExt` in `Mathlib/CategoryTheory/Abelian/Ext.lean`, line 68, and `ModuleCat.homLinearEquiv` in `Mathlib/Algebra/Category/ModuleCat/Basic.lean`, line 407, and `HomologicalComplex.Hom.isoOfComponents` in `Mathlib/Algebra/Homology/HomologicalComplex.lean`, line 498. The construction-specific inputs are [the actual section-ideal projective resolution](#2196-the-actual-section-ideal-projective-resolution), [categorical hom cochains of the section resolutions](#2223-categorical-hom-cochains-of-the-section-resolutions).)
+([knudsen2012](#references), arXiv:1106.1588v2 §3 Key Example, Proposition3.1 and Corollary3.2; §4 separates completed-local descent.; Deduction using `CategoryTheory.ProjectiveResolution.isoExt` in `Mathlib/CategoryTheory/Abelian/Ext.lean`, line 68, and `ModuleCat.homLinearEquiv` in `Mathlib/Algebra/Category/ModuleCat/Basic.lean`, line 407, and `HomologicalComplex.Hom.isoOfComponents` in `Mathlib/Algebra/Homology/HomologicalComplex.lean`, line 498. The construction-specific inputs are [the actual section-ideal projective resolution](#2188-the-actual-section-ideal-projective-resolution), [categorical hom cochains of the section resolutions](#2215-categorical-hom-cochains-of-the-section-resolutions).)
 
-*Needs:* [the actual section-ideal projective resolution](#2196-the-actual-section-ideal-projective-resolution), [categorical hom cochains of the section resolutions](#2223-categorical-hom-cochains-of-the-section-resolutions), `CategoryTheory.ProjectiveResolution.isoExt`, `HomologicalComplex.homologyFunctor`, `Ext`.
+*Needs:* [the actual section-ideal projective resolution](#2188-the-actual-section-ideal-projective-resolution), [categorical hom cochains of the section resolutions](#2215-categorical-hom-cochains-of-the-section-resolutions), `CategoryTheory.ProjectiveResolution.isoExt`, `HomologicalComplex.homologyFunctor`, `Ext`.
 
-### 2.226 Derived-functor Ext of the actual section dual
+### 2.218 Derived-functor Ext of the actual section dual
 
-For every commutative ring A and γ,δ,s,t∈A, use the actual R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), u=[X], v=[Y], coefficient map ι, J=(u−ιs,v−ιt), D=Hom_R(J,R) and N=R⊗_A M for an arbitrary A-module M. Write c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδ·v+ιδ·ιt+ιγ·u; Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)). The actual finite-free resolutions C(false), C(true) have R² in every degree and differential B(e,n)=Φ if (n mod2=0)⇔e=true, otherwise Ψ, with signed augmentations P_J(z)=cz₀−dz₁ and P_D(z)=z₀incl−z₁ε. H(e,M) denotes the inherited actual R-linear Hom cochain with differential h↦h∘B(e,n). For every n≥0 construct a native R-module isomorphism ((_root_.Ext R (ModuleCat R) n).obj (op D)).obj N ≅ H(true,M).homology n, by the native the Ext comparison of the two-periodic resolution of D followed by homology of the categorical Hom-cochain comparison. Its alternating phase is the actual dual resolution, not the ideal phase.
+For every commutative ring A and γ,δ,s,t∈A, use the actual R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), u=[X], v=[Y], coefficient map ι, J=(u−ιs,v−ιt), D=Hom_R(J,R) and N=R⊗_A M for an arbitrary A-module M. Write c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδ·v+ιδ·ιt+ιγ·u; Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)). The actual finite-free resolutions C(false), C(true) have R² in every degree and differential B(e,n)=Φ if (n mod2=0)⇔e=true, otherwise Ψ, with signed augmentations P_J(z)=cz₀−dz₁ and P_D(z)=z₀incl−z₁ε. H(e,M) denotes the inherited actual R-linear Hom cochain with differential h↦h∘B(e,n). For every n≥0 construct a native R-module isomorphism between the derived-functor Ext module Ext^n_R(D,N), Mathlib's root-namespace bifunctor `Ext` evaluated contravariantly at D and covariantly at N, and H(true,M).homology n, by the Ext comparison of the two-periodic resolution of D followed by homology of the categorical Hom-cochain comparison. Its alternating phase is the actual dual resolution, not the ideal phase.
 
 Here A is any commutative ring and M any A-module. No noetherianity, coefficient flatness, nontriviality or unit-discriminant hypothesis is imposed on this polynomial calculation. Native ModuleCat objects are in a common universe. Relative stable reflexivity, two-base completion, pointed hulls and scheme/sheaf descent are separate geometric obligations.
 
@@ -5206,11 +5077,11 @@ The construction has the following API.
 - For the nonreduced base A=Z/4, γ=δ=t=0,s=1 and M=A, the actual dual derived-functor Ext^2 module is zero.
 - For A=Z, γ=1,δ=0,s=1,t=0 and M=Z/2 without flatness, the actual dual derived-functor Ext^1 module is zero.
 
-([knudsen2012](#references), arXiv:1106.1588v2 §3 Key Example, Proposition3.1 and Corollary3.2; §4 separates completed-local descent.; Deduction using `CategoryTheory.ProjectiveResolution.isoExt` in `Mathlib/CategoryTheory/Abelian/Ext.lean`, line 68, and `ModuleCat.homLinearEquiv` in `Mathlib/Algebra/Category/ModuleCat/Basic.lean`, line 407, and `HomologicalComplex.Hom.isoOfComponents` in `Mathlib/Algebra/Homology/HomologicalComplex.lean`, line 498. The construction-specific inputs are [the actual dual projective resolution](#2197-the-actual-dual-projective-resolution), [categorical hom cochains of the section resolutions](#2223-categorical-hom-cochains-of-the-section-resolutions).)
+([knudsen2012](#references), arXiv:1106.1588v2 §3 Key Example, Proposition3.1 and Corollary3.2; §4 separates completed-local descent.; Deduction using `CategoryTheory.ProjectiveResolution.isoExt` in `Mathlib/CategoryTheory/Abelian/Ext.lean`, line 68, and `ModuleCat.homLinearEquiv` in `Mathlib/Algebra/Category/ModuleCat/Basic.lean`, line 407, and `HomologicalComplex.Hom.isoOfComponents` in `Mathlib/Algebra/Homology/HomologicalComplex.lean`, line 498. The construction-specific inputs are [the actual dual projective resolution](#2189-the-actual-dual-projective-resolution), [categorical hom cochains of the section resolutions](#2215-categorical-hom-cochains-of-the-section-resolutions).)
 
-*Needs:* [the actual dual projective resolution](#2197-the-actual-dual-projective-resolution), [categorical hom cochains of the section resolutions](#2223-categorical-hom-cochains-of-the-section-resolutions), `CategoryTheory.ProjectiveResolution.isoExt`, `HomologicalComplex.homologyFunctor`, `Ext`.
+*Needs:* [the actual dual projective resolution](#2189-the-actual-dual-projective-resolution), [categorical hom cochains of the section resolutions](#2215-categorical-hom-cochains-of-the-section-resolutions), `CategoryTheory.ProjectiveResolution.isoExt`, `HomologicalComplex.homologyFunctor`, `Ext`.
 
-### 2.227 Coefficient naturality of the categorical Hom comparison
+### 2.219 Coefficient naturality of the categorical Hom comparison
 
 For every commutative ring A and γ,δ,s,t∈A, use the actual R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), u=[X], v=[Y], coefficient map ι, J=(u−ιs,v−ιt), D=Hom_R(J,R) and N=R⊗_A M for an arbitrary A-module M. Write c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδ·v+ιδ·ιt+ιγ·u; Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)). The actual finite-free resolutions C(false), C(true) have R² in every degree and differential B(e,n)=Φ if (n mod2=0)⇔e=true, otherwise Ψ, with signed augmentations P_J(z)=cz₀−dz₁ and P_D(z)=z₀incl−z₁ε. H(e,M) denotes the inherited actual R-linear Hom cochain with differential h↦h∘B(e,n). For every A-linear coefficient map f:M→M′, every e,n and actual categorical h:C(e)_n→R⊗_A M, the forward Hom-comparison component applied to h followed by id_R⊗f is exactly the underlying map (id_R⊗f)∘h.hom. These are all degreewise naturality squares of the actual Hom-complex comparison. No naturality assertion for an unconstructed geometric or completed-family Ext comparison is inferred.
 
@@ -5220,27 +5091,13 @@ One proof uses the following inputs and comparisons. Evaluate the stated actual 
 
 The two native Mathlib Ext definitions are distinguished, with both positive vanishing statements proved separately. Degree zero is included in the isomorphisms, not asserted to vanish. Signed ideal/dual phases and actual R-actions are retained.
 
-([knudsen2012](#references), arXiv:1106.1588v2 §3 Key Example, Proposition3.1 and Corollary3.2; §4 separates completed-local descent.; Deduction using `ModuleCat.homLinearEquiv` in `Mathlib/Algebra/Category/ModuleCat/Basic.lean`, line 407, and `HomologicalComplex.Hom.isoOfComponents` in `Mathlib/Algebra/Homology/HomologicalComplex.lean`, line 498. The construction-specific inputs are [categorical hom cochains of the section resolutions](#2223-categorical-hom-cochains-of-the-section-resolutions).)
+([knudsen2012](#references), arXiv:1106.1588v2 §3 Key Example, Proposition3.1 and Corollary3.2; §4 separates completed-local descent.; Deduction using `ModuleCat.homLinearEquiv` in `Mathlib/Algebra/Category/ModuleCat/Basic.lean`, line 407, and `HomologicalComplex.Hom.isoOfComponents` in `Mathlib/Algebra/Homology/HomologicalComplex.lean`, line 498. The construction-specific inputs are [categorical hom cochains of the section resolutions](#2215-categorical-hom-cochains-of-the-section-resolutions).)
 
-*Needs:* [categorical hom cochains of the section resolutions](#2223-categorical-hom-cochains-of-the-section-resolutions), `TensorProduct.AlgebraTensorModule.map`.
+*Needs:* [categorical hom cochains of the section resolutions](#2215-categorical-hom-cochains-of-the-section-resolutions), `TensorProduct.AlgebraTensorModule.map`.
 
-### 2.228 Positive derived-functor Ext vanishing for the section ideal
+### 2.220 Positive derived-functor Ext vanishing for the section ideal
 
-For every commutative ring A and γ,δ,s,t∈A, use the actual R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), u=[X], v=[Y], coefficient map ι, J=(u−ιs,v−ιt), D=Hom_R(J,R) and N=R⊗_A M for an arbitrary A-module M. Write c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδ·v+ιδ·ιt+ιγ·u; Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)). The actual finite-free resolutions C(false), C(true) have R² in every degree and differential B(e,n)=Φ if (n mod2=0)⇔e=true, otherwise Ψ, with signed augmentations P_J(z)=cz₀−dz₁ and P_D(z)=z₀incl−z₁ε. H(e,M) denotes the inherited actual R-linear Hom cochain with differential h↦h∘B(e,n). For every n≥0 the actual R-module ((_root_.Ext R (ModuleCat R) (n+1)).obj (op J)).obj (R⊗_A M) is native Limits.IsZero. Transport the zero positive cohomology through the actual section-ideal Ext isomorphism.
-
-Here A is any commutative ring and M any A-module. No noetherianity, coefficient flatness, nontriviality or unit-discriminant hypothesis is imposed on this polynomial calculation. Native ModuleCat objects are in a common universe. Relative stable reflexivity, two-base completion, pointed hulls and scheme/sheaf descent are separate geometric obligations.
-
-One proof uses the following inputs and comparisons. Evaluate the stated actual native comparison or transport through its named native isomorphism; use only the listed earlier facts and routine categorical/linear-map laws.
-
-The two native Mathlib Ext definitions are distinguished, with both positive vanishing statements proved separately. Degree zero is included in the isomorphisms, not asserted to vanish. Signed ideal/dual phases and actual R-actions are retained.
-
-([knudsen2012](#references), arXiv:1106.1588v2 §3 Key Example, Proposition3.1 and Corollary3.2; §4 separates completed-local descent.; Deduction using `CategoryTheory.ProjectiveResolution.isoExt` in `Mathlib/CategoryTheory/Abelian/Ext.lean`, line 68, and `ModuleCat.homLinearEquiv` in `Mathlib/Algebra/Category/ModuleCat/Basic.lean`, line 407, and `HomologicalComplex.Hom.isoOfComponents` in `Mathlib/Algebra/Homology/HomologicalComplex.lean`, line 498. The construction-specific inputs are [derived-functor ext of the actual section ideal](#2225-derived-functor-ext-of-the-actual-section-ideal), [vanishing positive cohomology of the native hom complex](#2224-vanishing-positive-cohomology-of-the-native-hom-complex).)
-
-*Needs:* [derived-functor ext of the actual section ideal](#2225-derived-functor-ext-of-the-actual-section-ideal), [vanishing positive cohomology of the native hom complex](#2224-vanishing-positive-cohomology-of-the-native-hom-complex), `CategoryTheory.Limits.IsZero.of_iso`.
-
-### 2.229 Positive derived-functor Ext vanishing for the section dual
-
-For every commutative ring A and γ,δ,s,t∈A, use the actual R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), u=[X], v=[Y], coefficient map ι, J=(u−ιs,v−ιt), D=Hom_R(J,R) and N=R⊗_A M for an arbitrary A-module M. Write c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδ·v+ιδ·ιt+ιγ·u; Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)). The actual finite-free resolutions C(false), C(true) have R² in every degree and differential B(e,n)=Φ if (n mod2=0)⇔e=true, otherwise Ψ, with signed augmentations P_J(z)=cz₀−dz₁ and P_D(z)=z₀incl−z₁ε. H(e,M) denotes the inherited actual R-linear Hom cochain with differential h↦h∘B(e,n). For every n≥0 the actual R-module ((_root_.Ext R (ModuleCat R) (n+1)).obj (op D)).obj (R⊗_A M) is native Limits.IsZero. Use the dual resolution and the corresponding actual Hom phase.
+For every commutative ring A and γ,δ,s,t∈A, use the actual R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), u=[X], v=[Y], coefficient map ι, J=(u−ιs,v−ιt), D=Hom_R(J,R) and N=R⊗_A M for an arbitrary A-module M. Write c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδ·v+ιδ·ιt+ιγ·u; Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)). The actual finite-free resolutions C(false), C(true) have R² in every degree and differential B(e,n)=Φ if (n mod2=0)⇔e=true, otherwise Ψ, with signed augmentations P_J(z)=cz₀−dz₁ and P_D(z)=z₀incl−z₁ε. H(e,M) denotes the inherited actual R-linear Hom cochain with differential h↦h∘B(e,n). For every n≥0 the derived-functor Ext module Ext^(n+1)_R(J,R⊗_A M), Mathlib's root-namespace `Ext` as opposed to `CategoryTheory.Abelian.Ext`, is a zero object. Transport the zero positive cohomology through the actual section-ideal Ext isomorphism.
 
 Here A is any commutative ring and M any A-module. No noetherianity, coefficient flatness, nontriviality or unit-discriminant hypothesis is imposed on this polynomial calculation. Native ModuleCat objects are in a common universe. Relative stable reflexivity, two-base completion, pointed hulls and scheme/sheaf descent are separate geometric obligations.
 
@@ -5248,11 +5105,25 @@ One proof uses the following inputs and comparisons. Evaluate the stated actual 
 
 The two native Mathlib Ext definitions are distinguished, with both positive vanishing statements proved separately. Degree zero is included in the isomorphisms, not asserted to vanish. Signed ideal/dual phases and actual R-actions are retained.
 
-([knudsen2012](#references), arXiv:1106.1588v2 §3 Key Example, Proposition3.1 and Corollary3.2; §4 separates completed-local descent.; Deduction using `CategoryTheory.ProjectiveResolution.isoExt` in `Mathlib/CategoryTheory/Abelian/Ext.lean`, line 68, and `ModuleCat.homLinearEquiv` in `Mathlib/Algebra/Category/ModuleCat/Basic.lean`, line 407, and `HomologicalComplex.Hom.isoOfComponents` in `Mathlib/Algebra/Homology/HomologicalComplex.lean`, line 498. The construction-specific inputs are [derived-functor ext of the actual section dual](#2226-derived-functor-ext-of-the-actual-section-dual), [vanishing positive cohomology of the native hom complex](#2224-vanishing-positive-cohomology-of-the-native-hom-complex).)
+([knudsen2012](#references), arXiv:1106.1588v2 §3 Key Example, Proposition3.1 and Corollary3.2; §4 separates completed-local descent.; Deduction using `CategoryTheory.ProjectiveResolution.isoExt` in `Mathlib/CategoryTheory/Abelian/Ext.lean`, line 68, and `ModuleCat.homLinearEquiv` in `Mathlib/Algebra/Category/ModuleCat/Basic.lean`, line 407, and `HomologicalComplex.Hom.isoOfComponents` in `Mathlib/Algebra/Homology/HomologicalComplex.lean`, line 498. The construction-specific inputs are [derived-functor ext of the actual section ideal](#2217-derived-functor-ext-of-the-actual-section-ideal), [vanishing positive cohomology of the native hom complex](#2216-vanishing-positive-cohomology-of-the-native-hom-complex).)
 
-*Needs:* [derived-functor ext of the actual section dual](#2226-derived-functor-ext-of-the-actual-section-dual), [vanishing positive cohomology of the native hom complex](#2224-vanishing-positive-cohomology-of-the-native-hom-complex), `CategoryTheory.Limits.IsZero.of_iso`.
+*Needs:* [derived-functor ext of the actual section ideal](#2217-derived-functor-ext-of-the-actual-section-ideal), [vanishing positive cohomology of the native hom complex](#2216-vanishing-positive-cohomology-of-the-native-hom-complex), `CategoryTheory.Limits.IsZero.of_iso`.
 
-### 2.230 Actual relative Hom and compatible quotient Homs
+### 2.221 Positive derived-functor Ext vanishing for the section dual
+
+For every commutative ring A and γ,δ,s,t∈A, use the actual R=A[Y][X]/(X²+γXY+δY²−(s²+γst+δt²)), u=[X], v=[Y], coefficient map ι, J=(u−ιs,v−ιt), D=Hom_R(J,R) and N=R⊗_A M for an arbitrary A-module M. Write c=u−ιs, d=v−ιt, b=u+ιs+ιγ·ιt, a=ιδ·v+ιδ·ιt+ιγ·u; Φ=((a,b),(−c,d)), Ψ=((d,−b),(c,a)). The actual finite-free resolutions C(false), C(true) have R² in every degree and differential B(e,n)=Φ if (n mod2=0)⇔e=true, otherwise Ψ, with signed augmentations P_J(z)=cz₀−dz₁ and P_D(z)=z₀incl−z₁ε. H(e,M) denotes the inherited actual R-linear Hom cochain with differential h↦h∘B(e,n). For every n≥0 the derived-functor Ext module Ext^(n+1)_R(D,R⊗_A M), Mathlib's root-namespace `Ext` as opposed to `CategoryTheory.Abelian.Ext`, is a zero object. Use the dual resolution and the corresponding actual Hom phase.
+
+Here A is any commutative ring and M any A-module. No noetherianity, coefficient flatness, nontriviality or unit-discriminant hypothesis is imposed on this polynomial calculation. Native ModuleCat objects are in a common universe. Relative stable reflexivity, two-base completion, pointed hulls and scheme/sheaf descent are separate geometric obligations.
+
+One proof uses the following inputs and comparisons. Evaluate the stated actual native comparison or transport through its named native isomorphism; use only the listed earlier facts and routine categorical/linear-map laws.
+
+The two native Mathlib Ext definitions are distinguished, with both positive vanishing statements proved separately. Degree zero is included in the isomorphisms, not asserted to vanish. Signed ideal/dual phases and actual R-actions are retained.
+
+([knudsen2012](#references), arXiv:1106.1588v2 §3 Key Example, Proposition3.1 and Corollary3.2; §4 separates completed-local descent.; Deduction using `CategoryTheory.ProjectiveResolution.isoExt` in `Mathlib/CategoryTheory/Abelian/Ext.lean`, line 68, and `ModuleCat.homLinearEquiv` in `Mathlib/Algebra/Category/ModuleCat/Basic.lean`, line 407, and `HomologicalComplex.Hom.isoOfComponents` in `Mathlib/Algebra/Homology/HomologicalComplex.lean`, line 498. The construction-specific inputs are [derived-functor ext of the actual section dual](#2218-derived-functor-ext-of-the-actual-section-dual), [vanishing positive cohomology of the native hom complex](#2216-vanishing-positive-cohomology-of-the-native-hom-complex).)
+
+*Needs:* [derived-functor ext of the actual section dual](#2218-derived-functor-ext-of-the-actual-section-dual), [vanishing positive cohomology of the native hom complex](#2216-vanishing-positive-cohomology-of-the-native-hom-complex), `CategoryTheory.Limits.IsZero.of_iso`.
+
+### 2.222 Actual relative Hom and compatible quotient Homs
 
 Under coefficient convention C2. Construct E_L:Hom_R(L,T)≃ₗ[Â]H_L with forward map C_L and inverse A_L, for finite projective N.
 
@@ -5274,13 +5145,13 @@ The construction has the following API.
 - Under coefficient convention C2. For every R-linear f:L→T, forward followed by inverse equivalence recovers f.
 - Under coefficient convention C2. For every h∈H_L, inverse followed by forward equivalence recovers h.
 
-(The construction-specific inputs are [ring-linear assembly of compatible Hom families](#2221-ring-linear-assembly-of-compatible-hom-families).)
+(The construction-specific inputs are [ring-linear assembly of compatible Hom families](#2213-ring-linear-assembly-of-compatible-hom-families).)
 
-*Needs:* [ring-linear assembly of compatible Hom families](#2221-ring-linear-assembly-of-compatible-hom-families), `TensorProduct`, `LinearEquiv.ofLinearMap`.
+*Needs:* [ring-linear assembly of compatible Hom families](#2213-ring-linear-assembly-of-compatible-hom-families), `TensorProduct`, `LinearEquiv.ofLinearMap`.
 
-### 2.231 Positive derived Ext of the section ideal into its ring
+### 2.223 Positive derived Ext of the section ideal into its ring
 
-Under coefficient convention C8. For every n≥0, native _root_.Ext R (ModuleCat R) (n+1), evaluated contravariantly at J and covariantly at R, is a zero R-module object.
+Under coefficient convention C8. For every n≥0, the derived-functor Ext module Ext^(n+1)_R(J,R), Mathlib's root-namespace `Ext` as opposed to `CategoryTheory.Abelian.Ext`, is a zero R-module object.
 
 No noetherianity, reducedness, nonzero coefficient ring or unit discriminant is assumed. Ext vanishing is only in positive degrees.
 
@@ -5294,11 +5165,11 @@ Use the actual ideal subtype, native R-duals and R-module tensor action. No priv
 
 ([knudsen2](#references), Appendix Definition1 and Theorem2(1), printed191–193; Proposition6 printed194–195; [ile](#references), arXiv1110.3909v3 §3 Definition3.1 and Remark3.6, PDF6–8.)
 
-*Needs:* [positive derived-functor ext vanishing for the section ideal](#2228-positive-derived-functor-ext-vanishing-for-the-section-ideal), `TensorProduct.AlgebraTensorModule.rid`, `LinearEquiv.toModuleIso`, `CategoryTheory.Functor.mapIso`, `CategoryTheory.Limits.IsZero.of_iso`.
+*Needs:* [positive derived-functor ext vanishing for the section ideal](#2220-positive-derived-functor-ext-vanishing-for-the-section-ideal), `TensorProduct.AlgebraTensorModule.rid`, `LinearEquiv.toModuleIso`, `CategoryTheory.Functor.mapIso`, `CategoryTheory.Limits.IsZero.of_iso`.
 
-### 2.232 Positive derived Ext of the section dual into its ring
+### 2.224 Positive derived Ext of the section dual into its ring
 
-Under coefficient convention C8. For every n≥0, native _root_.Ext R (ModuleCat R) (n+1), evaluated contravariantly at D and covariantly at R, is a zero R-module object.
+Under coefficient convention C8. For every n≥0, the derived-functor Ext module Ext^(n+1)_R(D,R), Mathlib's root-namespace `Ext` as opposed to `CategoryTheory.Abelian.Ext`, is a zero R-module object.
 
 No noetherianity, reducedness, nonzero coefficient ring or unit discriminant is assumed. Ext vanishing is only in positive degrees.
 
@@ -5312,9 +5183,9 @@ Use the actual ideal subtype, native R-duals and R-module tensor action. No priv
 
 ([knudsen2](#references), Appendix Definition1 and Theorem2(1), printed191–193; Proposition6 printed194–195; [ile](#references), arXiv1110.3909v3 §3 Definition3.1 and Remark3.6, PDF6–8.)
 
-*Needs:* [positive derived-functor ext vanishing for the section dual](#2229-positive-derived-functor-ext-vanishing-for-the-section-dual), `TensorProduct.AlgebraTensorModule.rid`, `LinearEquiv.toModuleIso`, `CategoryTheory.Functor.mapIso`, `CategoryTheory.Limits.IsZero.of_iso`.
+*Needs:* [positive derived-functor ext vanishing for the section dual](#2221-positive-derived-functor-ext-vanishing-for-the-section-dual), `TensorProduct.AlgebraTensorModule.rid`, `LinearEquiv.toModuleIso`, `CategoryTheory.Functor.mapIso`, `CategoryTheory.Limits.IsZero.of_iso`.
 
-### 2.233 Stably reflexive module
+### 2.225 Stably reflexive module
 
 For a commutative ring R and an R-module M, stable reflexivity means that the native evaluation M→M** is bijective and Ext_R^i(M,R)=Ext_R^i(M*,R)=0 for every i>0, where M*=Hom_R(M,R). The predicate itself imposes no finiteness; it is `IsStablyReflexive`, with Ext the native `Ext R (ModuleCat R)` in positive degrees. The finite Noetherian theory below adds those hypotheses explicitly. On finite modules over a Noetherian R this agrees with the existing finitely generated Gorenstein-projective predicate; no second complete-resolution or Gorenstein-projective object is defined here.
 
@@ -5345,7 +5216,7 @@ The construction has the following API.
 
 *Needs:* `Module.IsReflexive`, `Ext`, StablePeriodicCurved Layer 2.
 
-### 2.234 Relative stable reflexivity
+### 2.226 Relative stable reflexivity
 
 For a flat commutative ring map A→R and an R-module M, relative stable reflexivity means: M is flat over A and for each s in the image of MaxSpec R→Spec A, M_s=M⊗_A κ(s) is absolutely stably reflexive over R_s=R⊗_A κ(s). The image consists of contractions of maximal ideals of R, not necessarily maximal ideals of A. The predicate imposes no hidden finiteness. It is `IsRelativelyStablyReflexive`, where the fibre M⊗_A κ(s) is written as the base change of M to R⊗_A κ(s).
 
@@ -5374,9 +5245,9 @@ The construction has the following API.
 
 ([ile](#references), Definition 3.4, §3, p. 6. Specifies flatness and the fibres over the image of maximal chart ideals.; [knudsen2](#references), Appendix, Definition 1 and Theorem 2, pp. 191–194. Supplies the equivalent universal-coefficient formulation in the finite Noetherian setting.)
 
-*Needs:* `Module.Flat`, [stably reflexive module](#2233-stably-reflexive-module).
+*Needs:* `Module.Flat`, [stably reflexive module](#2225-stably-reflexive-module).
 
-### 2.235 Universally acyclic complete hull
+### 2.227 Universally acyclic complete hull
 
 For Noetherian A,R, a flat map A→R, and finite relatively stably reflexive M, choose the existing StablePeriodicCurved Layer 2 finite-projective complete complex E with augmentation M≃coker(d_E^(-1)) and the additional coefficient-universality property below. Put (E∨)^i=Hom_R(E^(1−i),R) and d_(E∨)^i=(d_E^(−i))*; there is no alternating sign in this shifted-dual convention. Both E⊗_A N and E∨⊗_A N are exact for every A-module N. Every cycle of E and E∨ is finite over R and flat over A. This is an existence theorem with comparison maps, not a preferred resolution functor. Its underlying complex is the imported totally acyclic complex. Because M=coker d^(−1)≃Z¹(E), E shifted by one has the supplier cycle convention M≃Z⁰(E[1]); the shifted dual here is an explicit reindexing of its ordinary dual.
 
@@ -5398,17 +5269,18 @@ The construction has the following API.
 
 **Checks.**
 
-- For finite projective M, the two-term identity complex E^0=M→E^1=M, zero elsewhere, is an exact self-dual hull with coker d^(−1)=M.
+- For finite projective M, the two-term identity complex E^0=M→E^1=M, zero elsewhere, is an exact hull with coker d^(−1)=M. Its shifted dual is the identity complex on M* in degrees 0 and 1; an isomorphism M≅M* is not asserted.
 - For this two-term hull the shifted dual again occupies degrees 0 and 1; an unshifted dual instead occupies degrees −1 and 0 and fails the pinned convention.
+- Over R=ℤ[ω] with ω²−ω+6=0 and the invertible ideal I=(2,ω), the identity disk on I is a hull of I whose shifted dual is the identity disk on I*≅I⁻¹. Since I·(2,1−ω)=(2) while I²≠(2) (modulo 2, ω²=ω≠0, and ω²∈I²), the class of I has order three and I≄I⁻¹: the two disks are homotopy equivalent complexes of projectives but not termwise isomorphic, so termwise self-duality is not part of the hull property.
 - A projective resolution of Z/2Z over Z placed in degrees ≤0 is not a complete hull: it has nonzero degree-zero homology, and its dual detects Ext^1_Z(Z/2Z,Z).
 - Tensor the parent nodal alternating hull over a polynomial coefficient A with N=A/(a), for a nonzero nonunit coefficient a; both complexes remain exact even though N need not be A-flat.
 - Over a field, add an identity disk on an infinite-dimensional vector space in degrees 3 and 4 to the finite two-term hull of k. The degree-zero cokernel stays k and both complexes stay acyclic, but the result is rejected because those two terms are not finite projective.
 
 ([ile](#references), Definition 4.1, Proposition 4.3 and Remark 4.4, §4, pp. 9–10. Splicing the module and dual resolutions gives a complete hull; its tensor and shifted-dual tensor complexes are exact.; [knudsen2](#references), Appendix, Theorem 2(2), pp. 192–194, knudsen2 line 977. Uses a doubly infinite finite locally free complex and its dual with universal coefficient acyclicity.)
 
-*Needs:* `CategoryTheory.ProjectiveResolution.isoExt`, DeformationAndDerivedPatchingAlgebra §3.3, StablePeriodicCurved Layer 2, [relative stable reflexivity](#2234-relative-stable-reflexivity).
+*Needs:* `CategoryTheory.ProjectiveResolution.isoExt`, DeformationAndDerivedPatchingAlgebra §3.3, StablePeriodicCurved Layer 2, [relative stable reflexivity](#2226-relative-stable-reflexivity).
 
-### 2.236 Universal coefficient criterion
+### 2.228 Universal coefficient criterion
 
 For Noetherian A,R, A→R flat, and M finite over R, relative stable reflexivity is equivalent to the following for every A-module N: α_N:M*⊗_A N→Hom_R(M,R⊗_A N), f⊗n↦(m↦f(m)⊗n), and β_N:M⊗_A N→Hom_R(M*,R⊗_A N), m⊗n↦(f↦f(m)⊗n), are isomorphisms, and Ext_R^i(M,R⊗_A N)=Ext_R^i(M*,R⊗_A N)=0 for every i>0. It is also equivalent to existence of a universally acyclic complete hull. In particular M and M* are A-flat and M→M** is canonical evaluation. The Hom-exchange and Ext conditions for every A-module N form `HasUniversalCoefficients`, and the first equivalence is `relativelyStablyReflexive_iff_universalCoefficients` (Ile, Definition 3.4, Proposition 3.5 and Remark 3.6, ile lines 286–365). For the pointed section ideal, `pointedSection_universalCoefficients` states these conditions over every commutative A, with no Noetherian hypothesis; they are the two coefficient tensor–Hom equivalences and the two positive Ext vanishings for J and D proved above.
 
@@ -5420,9 +5292,9 @@ One proof uses the following inputs and comparisons. For the fibre definition, u
 
 ([ile](#references), Proposition 3.5, Remark 3.6, pp. 6–8; Proposition 4.3 and Remark 4.4, pp. 9–10. Proves the fibre, universal Hom/Ext and complete-hull characterizations with the Noetherian/coherent hypotheses.; [knudsen2](#references), Appendix, Theorem 2, pp. 192–194, knudsen2 line 977. Three equivalent relative stable-reflexivity criteria.)
 
-*Needs:* DeformationAndDerivedPatchingAlgebra §3.3, [relative stable reflexivity](#2234-relative-stable-reflexivity), [universally acyclic complete hull](#2235-universally-acyclic-complete-hull).
+*Needs:* DeformationAndDerivedPatchingAlgebra §3.3, [relative stable reflexivity](#2226-relative-stable-reflexivity), [universally acyclic complete hull](#2227-universally-acyclic-complete-hull).
 
-### 2.237 Faithfully flat reflection of stable reflexivity
+### 2.229 Faithfully flat reflection of stable reflexivity
 
 Let A,R,T be Noetherian, R flat over A, T flat over R, and M finite over R. Relative stable reflexivity of M over A implies relative stable reflexivity of T⊗_R M over A. If R→T is faithfully flat the converse holds. Absolute stable reflexivity has the same preservation/reflection statement for Noetherian R,T and finite M. Canonical duals and all coefficient Hom/Ext comparison maps are obtained by tensoring finite free resolutions, not by assuming Hom commutes with an inverse limit.
 
@@ -5434,9 +5306,9 @@ A flat map alone gives no reflection; include R→0 as a failure test. The all-N
 
 ([knudsen2](#references), Appendix, Proposition 5 and Proposition 6, pp. 194–195. Localizes the relative condition and compares it with completion.; [ile](#references), Remark 3.6, pp. 7–8, and Proposition 4.3, pp. 9–10. Universal-coefficient and complete-resolution criteria yield the displayed ambient flat change and reflection.; [stacks-completion](#references), Algebra Lemma 10.97.3, tag 00MC. Provides the faithful flatness needed when the ambient extension is maximal-ideal completion.)
 
-*Needs:* `CategoryTheory.ProjectiveResolution.isoExt`, DeformationAndDerivedPatchingAlgebra §3.3, [universal coefficient criterion](#2236-universal-coefficient-criterion).
+*Needs:* `CategoryTheory.ProjectiveResolution.isoExt`, DeformationAndDerivedPatchingAlgebra §3.3, [universal coefficient criterion](#2228-universal-coefficient-criterion).
 
-### 2.238 Knudsen completion theorem
+### 2.230 Knudsen completion theorem
 
 Let (A,p)→(R,m) be a flat local homomorphism of Noetherian local rings and M a finite R-module. Write Â=lim A/p^n, R̂=lim R/m^n and M̂=R̂⊗_R M, with the continuous local map Â→R̂. Then R̂ is flat over Â, and the following are equivalent: M is relatively stably reflexive over A; M̂ is relatively stably reflexive over A; M̂ is relatively stably reflexive over Â. These statements use all A-modules and all Â-modules in their respective universal criteria. In each case M̂*=R̂⊗_R M* canonically.
 
@@ -5444,13 +5316,19 @@ Here A→R flat and local; A,R Noetherian local; M finite over R; both completio
 
 One proof uses the following inputs and comparisons. Faithfully flat R→R̂ gives equivalence of the first two conditions and identifies the completed dual by finite-presentation flat Hom base change. Flat A→Â has the same residue field k. For any Â-module B, a free A-resolution of k tensored with Â gives Tor_1^Â(k,B)≃Tor_1^A(k,B). Apply the local Tor criterion to the finite R̂-module B=R̂; its A-flatness proves Â-flatness of R̂. For the second condition take an A-universally acyclic finite projective R̂-hull. Its cycles and shifted-dual cycles are finite R̂-modules and A-flat. Apply the same Tor comparison and local Tor criterion to each cycle, proving Â-flatness. Their short exact cycle sequences stay exact after tensor with every Â-module, so the hull is Â-universal. In the reverse direction a hull universal over Â has Â-flat cycles; restricting along the flat A→Â makes its cycles A-flat, hence makes both complexes universal over A. This supplies the needed completion input by a public local-flatness proof. It does not infer any ordinary tensor/limit interchange for arbitrary completed coefficients.
 
-The map Â→R̂ must be the continuous extension of A→R. Check the cycle argument for every integer degree and the shifted dual. No finite-projectivity assumption on completed coefficient modules is allowed.
+The map Â→R̂ must be the continuous extension of A→R; an Â-algebra structure on R̂ that restricts to A→R and is local is that extension, since a local homomorphism between Noetherian local rings is adic-continuous, the image of A is dense in Â, and R̂ is separated. Here M̂ is the m-adic completion of M, which for finite M over Noetherian R is R̂⊗_R M by the finite Noetherian completion equivalence. The flatness of R̂ over Â and the three-way equivalence are `relativelyStablyReflexive_iff_completion`, stated on the native maximal-ideal completions with the Â-algebra structure on R̂ and the Â-module structure on M̂ taken as data pinned by those scalar-tower and locality laws. Check the cycle argument for every integer degree and the shifted dual. No finite-projectivity assumption on completed coefficient modules is allowed.
+
+**Checks.**
+
+- For A=R=ℤ_(2) and M=R: Â=R̂=ℤ₂ and M̂=ℤ₂; R̂ is flat over Â, and all three relative conditions hold, each with value true.
+- For A=R=ℤ_(2) and M=R/(2): M̂=ℤ₂/(2)=𝔽₂ is flat neither over ℤ_(2) nor over ℤ₂, so all three conditions are false together; a version of the theorem that only transferred the condition from M to M̂ without the converse would not be refuted here, so the next instance tests the Â-side.
+- For A=ℤ_(2), R=ℤ_(2)[x]_(2,x) and M=R/(x)≅ℤ_(2): M is A-flat, but its fibre over 𝔽₂ is the residue field 𝔽₂ of the discrete valuation ring 𝔽₂[x]_(x), whose Ext¹ into that ring is 𝔽₂≠0; so M is not relatively stably reflexive. Its completion M̂=ℤ₂ over R̂=ℤ₂[[x]] has fibre 𝔽₂ over 𝔽₂[[x]] with the same nonzero Ext¹, so both completed conditions are false as well. Flatness of M over A does not suffice, on either side of the completion. For A=R=k a field with M=kʳ, the completions are k and the three conditions coincide with finite-dimensionality.
 
 ([knudsen2](#references), Appendix, Proposition 6, pp. 194–195. States the three-way equivalence with both coefficient and chart completion; cites Bourbaki rather than supplying this argument.; [ile](#references), Proposition 4.3 and Remark 4.4, pp. 9–10. Supplies the universally acyclic hull and its flat cycle characterization used here.; [stacks-completion](#references), Algebra Lemma 10.99.7, tag 00MK. The local Tor test applies to a finite module over the Noetherian local target; it applies to every completed chart cycle.)
 
-*Needs:* SchemeAndStackFoundations §§0.3, 0.8–0.9, 0.11, 0.17–0.21, `AdicCompletion.ofTensorProductEquivOfFiniteNoetherian`, `AdicCompletion.residueField_map_bijective`, DeformationAndDerivedPatchingAlgebra §3.3, [faithfully flat reflection of stable reflexivity](#2237-faithfully-flat-reflection-of-stable-reflexivity), [universally acyclic complete hull](#2235-universally-acyclic-complete-hull), [universal coefficient criterion](#2236-universal-coefficient-criterion).
+*Needs:* SchemeAndStackFoundations §§0.3, 0.8–0.9, 0.11, 0.17–0.21, `AdicCompletion.ofTensorProductEquivOfFiniteNoetherian`, `AdicCompletion.residueField_map_bijective`, DeformationAndDerivedPatchingAlgebra §3.3, [faithfully flat reflection of stable reflexivity](#2229-faithfully-flat-reflection-of-stable-reflexivity), [universally acyclic complete hull](#2227-universally-acyclic-complete-hull), [universal coefficient criterion](#2228-universal-coefficient-criterion).
 
-### 2.239 Relative reflexivity of the polynomial section ideal
+### 2.231 Relative reflexivity of the polynomial section ideal
 
 For the parent monic polynomial nodal model R=A[X,Y]/(q(X,Y)−q(s,t)), J=(x−s,y−t), with A Noetherian, the actual ideal J and its actual dual D are relatively stably reflexive over A. The two canonical coefficient Hom maps are exactly the parent maps, and their native positive Ext groups vanish against R⊗_A N for every A-module N. Flat local chart extensions and both local completions have the corresponding relative conclusions. The parent polynomial identities over arbitrary A, including the zero ring, retain their original non-Noetherian scope.
 
@@ -5462,9 +5340,9 @@ The ideal and dual are the native submodule and Hom module, not modules defined 
 
 ([knudsen2012](#references), Proposition 3.1 and Corollary 3.2, §3, pp. 11–13. Computes the actual section ideal and dual and then passes to complete local rings.; [ile](#references), Remark 3.6, pp. 7–8. Matches the parent canonical Hom/Ext calculations with relative stable reflexivity.)
 
-*Needs:* [universal coefficient criterion](#2236-universal-coefficient-criterion), [faithfully flat reflection of stable reflexivity](#2237-faithfully-flat-reflection-of-stable-reflexivity), [knudsen completion theorem](#2238-knudsen-completion-theorem), [coefficient flatness of the section ideal](#287-coefficient-flatness-of-the-section-ideal), [coefficient-linear normal coordinates of the dual](#2128-coefficient-linear-normal-coordinates-of-the-dual), [coefficient tensor–hom equivalence for the dual](#2201-coefficient-tensorhom-equivalence-for-the-dual), [coefficient-valued bidual equivalence](#2194-coefficient-valued-bidual-equivalence), [positive derived-functor ext vanishing for the section ideal](#2228-positive-derived-functor-ext-vanishing-for-the-section-ideal), [positive derived-functor ext vanishing for the section dual](#2229-positive-derived-functor-ext-vanishing-for-the-section-dual).
+*Needs:* [universal coefficient criterion](#2228-universal-coefficient-criterion), [faithfully flat reflection of stable reflexivity](#2229-faithfully-flat-reflection-of-stable-reflexivity), [knudsen completion theorem](#2230-knudsen-completion-theorem), [coefficient flatness of the section ideal](#279-coefficient-flatness-of-the-section-ideal), [coefficient-linear normal coordinates of the dual](#2120-coefficient-linear-normal-coordinates-of-the-dual), [coefficient tensor–hom equivalence for the dual](#2193-coefficient-tensorhom-equivalence-for-the-dual), [coefficient-valued bidual equivalence](#2186-coefficient-valued-bidual-equivalence), [positive derived-functor ext vanishing for the section ideal](#2220-positive-derived-functor-ext-vanishing-for-the-section-ideal), [positive derived-functor ext vanishing for the section dual](#2221-positive-derived-functor-ext-vanishing-for-the-section-dual).
 
-### 2.240 Base change for relative stable reflexivity
+### 2.232 Base change for relative stable reflexivity
 
 Under the finite Noetherian hypotheses of the universal coefficient criterion, let A→A′ be any ring map, R′=R⊗_A A′ and M′=M⊗_A A′. Then M′ and (M′)* are flat over A′, M′ is relatively and absolutely stably reflexive over R′, and M*⊗_A A′≃Hom_(R′)(M′,R′). Both canonical Hom exchange maps and both positive Ext vanishings hold for every A′-module N′. No Noetherianity or coherence is required of A′ or R′.
 
@@ -5476,9 +5354,9 @@ Include nonflat A′ and nonflat N′. The dual map sends f⊗a′ to m⊗b′�
 
 ([ile](#references), Proposition 3.5(i)–(iii), pp. 6–7; Proposition 4.3(ii)(b), pp. 9–10. Allows arbitrary coefficient-ring and coefficient-module changes from the Noetherian source.; [knudsen2](#references), Appendix, Proposition 4, p. 194. Relative stable reflexivity is preserved by coefficient base change, including its canonical dual comparison.)
 
-*Needs:* [universal coefficient criterion](#2236-universal-coefficient-criterion), [universally acyclic complete hull](#2235-universally-acyclic-complete-hull).
+*Needs:* [universal coefficient criterion](#2228-universal-coefficient-criterion), [universally acyclic complete hull](#2227-universally-acyclic-complete-hull).
 
-### 2.241 Section ideal of a local Gorenstein family
+### 2.233 Section ideal of a local Gorenstein family
 
 Let (A,p)→(R,m) be a flat local map of Noetherian local rings with a retraction R→A whose composite is the identity, and suppose R/pR is a one-dimensional Gorenstein local ring. For J=ker(R→A), J is relatively stably reflexive over A. Multiplication embeds R in J*=Hom_R(J,R), and J*/R is free of rank one over A, supported on the section. Its generator is a choice, not a canonical trivialization. Duals and this exact quotient commute with arbitrary coefficient base change. In particular this applies at every smooth or nodal point of a section of a Noetherian nodal family.
 
@@ -5490,9 +5368,9 @@ Do not claim the family pairing image J·J*=J. In R=A[x,y]/(xy−bc), Δ(x)=b, �
 
 ([ile](#references), Theorem 6.1(i)–(iv), §6, pp. 18–19; Remark 6.4 and Example 6.5, pp. 20–21. Proves the local Gorenstein section-ideal theorem and corrects the pairing statement over moving families.; [knudsen2012](#references), Main Lemma, p. 3, and §4, p. 13. States the three actual section-ideal properties used by stabilization.)
 
-*Needs:* StableReduction Layer 1, StableReduction Layer 2, DeformationAndDerivedPatchingAlgebra §3.3, [universal coefficient criterion](#2236-universal-coefficient-criterion), [base change for relative stable reflexivity](#2240-base-change-for-relative-stable-reflexivity).
+*Needs:* StableReduction Layer 1, StableReduction Layer 2, DeformationAndDerivedPatchingAlgebra §3.3, [universal coefficient criterion](#2228-universal-coefficient-criterion), [base change for relative stable reflexivity](#2232-base-change-for-relative-stable-reflexivity).
 
-### 2.242 Completed-ring Hom and Ext
+### 2.234 Completed-ring Hom and Ext
 
 For a flat map of commutative rings R→T, any R-module L, and any T-module V, restriction along L→T⊗_R L gives canonical Hom_T(T⊗_R L,V)≃Hom_R(L,V), f↦(l↦f(1⊗l)). The derived comparison gives Ext_T^i(T⊗_R L,V)≃Ext_R^i(L,V) for all i≥0, because a projective R-resolution remains a projective T-resolution. Apply this to T=R̂ and L=J or J*. For the parent finite-projective completed coefficients, composing with its compatible-quotient Hom comparison identifies actual completed-ring Hom with those families. This comparison makes no claim that arbitrary Ext commutes with inverse limits.
 
@@ -5504,9 +5382,9 @@ The source module is T⊗_R L, not L endowed with an invented completed action. 
 
 ([ile](#references), Example 2.6 and Corollary 2.7, §2, pp. 4–5; Remark 3.6, pp. 7–8. Uses projective resolutions to compare fibre/change-of-rings Ext; the displayed flat adjunction is the degreewise specialization.; [knudsen2](#references), Appendix, Theorem 2 and Proposition 6, pp. 192–195. The completed criterion concerns actual duals and Ext over the completed chart ring.)
 
-*Needs:* `CategoryTheory.ProjectiveResolution.isoExt`, DeformationAndDerivedPatchingAlgebra §3.3, [faithfully flat reflection of stable reflexivity](#2237-faithfully-flat-reflection-of-stable-reflexivity), [actual relative hom and compatible quotient homs](#2230-actual-relative-hom-and-compatible-quotient-homs).
+*Needs:* `CategoryTheory.ProjectiveResolution.isoExt`, DeformationAndDerivedPatchingAlgebra §3.3, [faithfully flat reflection of stable reflexivity](#2229-faithfully-flat-reflection-of-stable-reflexivity), [actual relative hom and compatible quotient homs](#2222-actual-relative-hom-and-compatible-quotient-homs).
 
-### 2.243 Arbitrary completed-coefficient exchange
+### 2.235 Arbitrary completed-coefficient exchange
 
 In the two-base completion theorem, suppose M is relatively stably reflexive over A and put D̂=Hom_(R̂)(M̂,R̂)=R̂⊗_R M*. For every Â-module N, with V=R̂⊗_Â N, the actual R̂-linear maps D̂⊗_Â N→Hom_(R̂)(M̂,V) and M̂⊗_Â N→Hom_(R̂)(D̂,V) are the evaluation isomorphisms, and Ext_(R̂)^i(M̂,V)=Ext_(R̂)^i(D̂,V)=0 for all i>0. All maps are natural in N and in compatible local changes, and compose with completed-ring adjunction to actual Hom_R/Ext_R comparisons.
 
@@ -5518,9 +5396,9 @@ Take N=Â/J for arbitrary ideals J, including nonflat coefficients. No term R̂�
 
 ([knudsen2](#references), Appendix, Theorem 2(1), pp. 192–194, and Proposition 6, pp. 194–195. The universal coefficient formulation after both completions supplies these precise actual-ring conclusions.; [ile](#references), Proposition 3.5(iii) and Remark 3.6, pp. 7–8. Identifies the two canonical exchanges and the positive Ext vanishings.)
 
-*Needs:* [knudsen completion theorem](#2238-knudsen-completion-theorem), [universal coefficient criterion](#2236-universal-coefficient-criterion), [completed-ring hom and ext](#2242-completed-ring-hom-and-ext).
+*Needs:* [knudsen completion theorem](#2230-knudsen-completion-theorem), [universal coefficient criterion](#2228-universal-coefficient-criterion), [completed-ring hom and ext](#2234-completed-ring-hom-and-ext).
 
-### 2.244 Pointed hull and completed family chart
+### 2.236 Pointed hull and completed family chart
 
 Let C→Spec A be a flat finitely presented nodal curve over a Noetherian local ring, with section Δ through a node of its closed fibre, and x=Δ(p). After the coefficient and formal coordinate choices of the parent pointed-node hull, the completed local pointed algebra is a continuous pullback of R_pd over A_pd: R̂_x≃Â[[u,v]]/(q̃(u,v)−q̃(s,t)), Δ(u)=s, Δ(v)=t. This is the (p,u,v)-adic completion of the parent polynomial model over Â. The isomorphism sends the actual section ideal to (u−s,v−t), and its actual dual and residue quotient to the completed parent ones. Its maps, rather than its coordinate choices, are the data retained in a comparison. At a smooth point the corresponding chart is Â[[z]], Δ(z)=a. No fine representability or canonical hull ring for a stack is asserted.
 
@@ -5538,9 +5416,9 @@ The family base need not map flatly to or from the hull base. The section point 
 
 ([knudsen2012](#references), Proposition 2.1, §2, pp. 5–10; Corollary 3.2, pp. 12–13. Supplies the pointed hull with the two section coordinates, and its completed ideal calculation.; [ile](#references), §7, pp. 24–26, application of the pointed local calculation to stabilization. Uses formal local comparisons to transfer the polynomial construction to the family.)
 
-*Needs:* AlgebraicModuliForArithmeticGeometry §§8.1–8.3, StableReduction Layer 1, [normal form of a pointed nodal deformation](#210-normal-form-of-a-pointed-nodal-deformation), [knudsen completion theorem](#2238-knudsen-completion-theorem), [arbitrary completed-coefficient exchange](#2243-arbitrary-completed-coefficient-exchange), [completion of the polynomial section dual](#2143-completion-of-the-polynomial-section-dual), [completion of the actual residue quotient](#2191-completion-of-the-actual-residue-quotient).
+*Needs:* AlgebraicModuliForArithmeticGeometry §§8.1–8.3, StableReduction Layer 1, [normal form of a pointed nodal deformation](#210-normal-form-of-a-pointed-nodal-deformation), [knudsen completion theorem](#2230-knudsen-completion-theorem), [arbitrary completed-coefficient exchange](#2235-arbitrary-completed-coefficient-exchange), [completion of the polynomial section dual](#2135-completion-of-the-polynomial-section-dual), [completion of the actual residue quotient](#2183-completion-of-the-actual-residue-quotient).
 
-### 2.245 Global section dual and residue line
+### 2.237 Global section dual and residue line
 
 For a nodal family C/S over a locally Noetherian scheme, an arbitrary section Δ with ideal sheaf J has a quasi-coherent dual J∨=Hom_O_C(J,O_C) and an exact sequence 0→O_C→J∨→Δ_*L_Δ→0, with L_Δ invertible on S. These are the actual sheaf dual and quotient, and their formation commutes canonically with every base change S′→S, including non-Noetherian S′. The canonical Hom comparisons agree on chart overlaps, satisfy identity and composition laws, and coincide with the parent polynomial generators wherever those coordinates are chosen.
 
@@ -5552,9 +5430,9 @@ A residue generator changes by a unit on overlaps and must descend as a line. Ar
 
 ([knudsen2](#references), Lemma 2.2, pp. 175–176; Definition 2.3, p. 176. Uses the section dual, its residue line and their base-change compatibility.; [knudsen2012](#references), Main Lemma, p. 3, and §4, p. 13. Supplies the sheaf form of the ideal, dual and residue assertions.; [ile](#references), §7, pp. 24–26. Globalizes the local section-ideal theorem for stabilization.)
 
-*Needs:* SchemeAndStackFoundations §0.9, StableReduction Layer 2, [section ideal of a local gorenstein family](#2241-section-ideal-of-a-local-gorenstein-family), [pointed hull and completed family chart](#2244-pointed-hull-and-completed-family-chart), [base change for relative stable reflexivity](#2240-base-change-for-relative-stable-reflexivity), [log dualizing sheaves over arbitrary bases](#03-log-dualizing-sheaves-over-arbitrary-bases).
+*Needs:* SchemeAndStackFoundations §0.9, StableReduction Layer 2, [section ideal of a local gorenstein family](#2233-section-ideal-of-a-local-gorenstein-family), [pointed hull and completed family chart](#2236-pointed-hull-and-completed-family-chart), [base change for relative stable reflexivity](#2232-base-change-for-relative-stable-reflexivity), [log dualizing sheaves over arbitrary bases](#03-log-dualizing-sheaves-over-arbitrary-bases).
 
-### 2.246 Dual ideal of an arbitrary nodal section
+### 2.238 Dual ideal of an arbitrary nodal section
 
 For a nodal family C/S over a locally noetherian base and an arbitrary section Δ with ideal J, J is stably reflexive, formation of J∨ and J∨/O_C commutes with arbitrary base change, and Δ*(J∨/O_C) is an invertible sheaf. In the local quadratic model J∨ is generated by1 and ε=(x+s+γt)/(y−t) in the total quotient ring, and J∨/R≅A via the class of ε.
 
@@ -5566,11 +5444,11 @@ Do not strengthen this to J·J∨=J throughout a smoothing family: that equality
 
 ([knudsen2012](#references), Proposition3.1,Corollary3.2 and §4,pp.12–13; [knudsen2](#references), Appendix Definition1, Theorem2, Propositions4–7, printed191–195 (PDF31–35).)
 
-*Needs:* [normal form of a pointed nodal deformation](#210-normal-form-of-a-pointed-nodal-deformation), [exactness of the node-section complex](#2113-exactness-of-the-node-section-complex), SchemeAndStackFoundations §§1.18–1.23, [residue of the section dual](#2167-residue-of-the-section-dual), [natural coefficient base change of the section dual](#2141-natural-coefficient-base-change-of-the-section-dual), [coefficient flatness of the section ideal](#287-coefficient-flatness-of-the-section-ideal), [coefficient-linear normal coordinates of the dual](#2128-coefficient-linear-normal-coordinates-of-the-dual), [ring-linear tensor comparison for the section dual](#2175-ring-linear-tensor-comparison-for-the-section-dual), [coefficient base change of the actual dual quotient](#2183-coefficient-base-change-of-the-actual-dual-quotient), StableReduction Layer 1, [finite presentation of the polynomial section ideal](#2116-finite-presentation-of-the-polynomial-section-ideal), [dual of the extended section ideal](#2129-dual-of-the-extended-section-ideal), [residue quotient under ambient extension](#2184-residue-quotient-under-ambient-extension), [completion of the polynomial section dual](#2143-completion-of-the-polynomial-section-dual), [completion of the actual residue quotient](#2191-completion-of-the-actual-residue-quotient), [faithful detection for the residue quotient](#2192-faithful-detection-for-the-residue-quotient), [coefficient universal exactness at φ](#2178-coefficient-universal-exactness-at-φ), [coefficient universal exactness at ψ](#2119-coefficient-universal-exactness-at-ψ), [coefficient universal exactness at φᵀ](#2132-coefficient-universal-exactness-at-φᵀ), [coefficient universal exactness at ψᵀ](#2185-coefficient-universal-exactness-at-ψᵀ), [the tensorized ideal cokernel](#2106-the-tensorized-ideal-cokernel), [the tensorized dual cokernel](#2147-the-tensorized-dual-cokernel), [ordinary reflexivity of the section ideal](#2161-ordinary-reflexivity-of-the-section-ideal), [canonical section bidual equivalence](#2170-canonical-section-bidual-equivalence), [coefficient tensor–hom equivalence for the dual](#2201-coefficient-tensorhom-equivalence-for-the-dual), [coefficient-valued bidual equivalence](#2194-coefficient-valued-bidual-equivalence), [the actual dual coefficient-Hom map](#264-the-actual-dual-coefficient-hom-map), [the coefficient-valued bidual evaluation map](#265-the-coefficient-valued-bidual-evaluation-map), [vanishing positive cohomology of the native hom complex](#2224-vanishing-positive-cohomology-of-the-native-hom-complex), [degree-zero cycles factor through the section ideal](#2108-degree-zero-cycles-factor-through-the-section-ideal), [degree-zero cycles factor through the section dual](#2149-degree-zero-cycles-factor-through-the-section-dual), [the actual section-ideal projective resolution](#2196-the-actual-section-ideal-projective-resolution), [the actual dual projective resolution](#2197-the-actual-dual-projective-resolution), [the native polynomial section chain complex](#2164-the-native-polynomial-section-chain-complex), [positive native localization ext vanishing for the section ideal](#2215-positive-native-localization-ext-vanishing-for-the-section-ideal), [positive native localization ext vanishing for the section dual](#2216-positive-native-localization-ext-vanishing-for-the-section-dual), [coefficient naturality of the categorical hom comparison](#2227-coefficient-naturality-of-the-categorical-hom-comparison), [canonical coefficient exchange for the section dual](#2205-canonical-coefficient-exchange-for-the-section-dual), [evaluation factorization of the second exchange map](#2210-evaluation-factorization-of-the-second-exchange-map), [positive derived ext of the section ideal into its ring](#2231-positive-derived-ext-of-the-section-ideal-into-its-ring), [positive derived ext of the section dual into its ring](#2232-positive-derived-ext-of-the-section-dual-into-its-ring), [positive categorical ext of the section ideal into its ring](#2219-positive-categorical-ext-of-the-section-ideal-into-its-ring), [positive categorical ext of the section dual into its ring](#2220-positive-categorical-ext-of-the-section-dual-into-its-ring), [completed nodal coefficient homomorphism](#276-completed-nodal-coefficient-homomorphism), [the actual completed coefficient algebra](#285-the-actual-completed-coefficient-algebra), [two-base tensor quotient for the nodal chart](#2136-two-base-tensor-quotient-for-the-nodal-chart), [finite two-base tensor equivalence](#2121-finite-two-base-tensor-equivalence), [finite two-base Hom target equivalence](#2137-finite-two-base-hom-target-equivalence), [ring-linear finite tensor projection](#2166-ring-linear-finite-tensor-projection), [actual relative hom and compatible quotient homs](#2230-actual-relative-hom-and-compatible-quotient-homs), [ring-linear assembly of compatible Hom families](#2221-ring-linear-assembly-of-compatible-hom-families), [relative reflexivity of the polynomial section ideal](#2239-relative-reflexivity-of-the-polynomial-section-ideal), [section ideal of a local gorenstein family](#2241-section-ideal-of-a-local-gorenstein-family), [global section dual and residue line](#2245-global-section-dual-and-residue-line).
+*Needs:* [normal form of a pointed nodal deformation](#210-normal-form-of-a-pointed-nodal-deformation), [exactness of the node-section complex](#2105-exactness-of-the-node-section-complex), SchemeAndStackFoundations §§1.18–1.23, [residue of the section dual](#2159-residue-of-the-section-dual), [natural coefficient base change of the section dual](#2133-natural-coefficient-base-change-of-the-section-dual), [coefficient flatness of the section ideal](#279-coefficient-flatness-of-the-section-ideal), [coefficient-linear normal coordinates of the dual](#2120-coefficient-linear-normal-coordinates-of-the-dual), [ring-linear tensor comparison for the section dual](#2167-ring-linear-tensor-comparison-for-the-section-dual), [coefficient base change of the actual dual quotient](#2175-coefficient-base-change-of-the-actual-dual-quotient), StableReduction Layer 1, [finite presentation of the polynomial section ideal](#2108-finite-presentation-of-the-polynomial-section-ideal), [dual of the extended section ideal](#2121-dual-of-the-extended-section-ideal), [residue quotient under ambient extension](#2176-residue-quotient-under-ambient-extension), [completion of the polynomial section dual](#2135-completion-of-the-polynomial-section-dual), [completion of the actual residue quotient](#2183-completion-of-the-actual-residue-quotient), [faithful detection for the residue quotient](#2184-faithful-detection-for-the-residue-quotient), [coefficient universal exactness at φ](#2170-coefficient-universal-exactness-at-φ), [coefficient universal exactness at ψ](#2111-coefficient-universal-exactness-at-ψ), [coefficient universal exactness at φᵀ](#2124-coefficient-universal-exactness-at-φᵀ), [coefficient universal exactness at ψᵀ](#2177-coefficient-universal-exactness-at-ψᵀ), [the tensorized ideal cokernel](#298-the-tensorized-ideal-cokernel), [the tensorized dual cokernel](#2139-the-tensorized-dual-cokernel), [ordinary reflexivity of the section ideal](#2154-ordinary-reflexivity-of-the-section-ideal), [canonical section bidual equivalence](#2162-canonical-section-bidual-equivalence), [coefficient tensor–hom equivalence for the dual](#2193-coefficient-tensorhom-equivalence-for-the-dual), [coefficient-valued bidual equivalence](#2186-coefficient-valued-bidual-equivalence), [the actual dual coefficient-Hom map](#257-the-actual-dual-coefficient-hom-map), [the coefficient-valued bidual evaluation map](#258-the-coefficient-valued-bidual-evaluation-map), [vanishing positive cohomology of the native hom complex](#2216-vanishing-positive-cohomology-of-the-native-hom-complex), [degree-zero cycles factor through the section ideal](#2100-degree-zero-cycles-factor-through-the-section-ideal), [degree-zero cycles factor through the section dual](#2141-degree-zero-cycles-factor-through-the-section-dual), [the actual section-ideal projective resolution](#2188-the-actual-section-ideal-projective-resolution), [the actual dual projective resolution](#2189-the-actual-dual-projective-resolution), [the native polynomial section chain complex](#2143-the-native-polynomial-section-chain-complex), [positive native localization ext vanishing for the section ideal](#2207-positive-native-localization-ext-vanishing-for-the-section-ideal), [positive native localization ext vanishing for the section dual](#2208-positive-native-localization-ext-vanishing-for-the-section-dual), [coefficient naturality of the categorical hom comparison](#2219-coefficient-naturality-of-the-categorical-hom-comparison), [canonical coefficient exchange for the section dual](#2197-canonical-coefficient-exchange-for-the-section-dual), [evaluation factorization of the second exchange map](#2202-evaluation-factorization-of-the-second-exchange-map), [positive derived ext of the section ideal into its ring](#2223-positive-derived-ext-of-the-section-ideal-into-its-ring), [positive derived ext of the section dual into its ring](#2224-positive-derived-ext-of-the-section-dual-into-its-ring), [positive categorical ext of the section ideal into its ring](#2211-positive-categorical-ext-of-the-section-ideal-into-its-ring), [positive categorical ext of the section dual into its ring](#2212-positive-categorical-ext-of-the-section-dual-into-its-ring), [completed nodal coefficient homomorphism](#268-completed-nodal-coefficient-homomorphism), [the actual completed coefficient algebra](#277-the-actual-completed-coefficient-algebra), [two-base tensor quotient for the nodal chart](#2128-two-base-tensor-quotient-for-the-nodal-chart), [finite two-base tensor equivalence](#2113-finite-two-base-tensor-equivalence), [finite two-base Hom target equivalence](#2129-finite-two-base-hom-target-equivalence), [ring-linear finite tensor projection](#2158-ring-linear-finite-tensor-projection), [actual relative hom and compatible quotient homs](#2222-actual-relative-hom-and-compatible-quotient-homs), [ring-linear assembly of compatible Hom families](#2213-ring-linear-assembly-of-compatible-hom-families), [relative reflexivity of the polynomial section ideal](#2231-relative-reflexivity-of-the-polynomial-section-ideal), [section ideal of a local gorenstein family](#2233-section-ideal-of-a-local-gorenstein-family), [global section dual and residue line](#2237-global-section-dual-and-residue-line).
 
-### 2.247 Expansion at an arbitrary extra section
+### 2.239 Expansion at an arbitrary extra section
 
-Given such C/S with old markings sᵢ and arbitrary extra section Δ, put D=Σsᵢ and J=I_Δ. Let p:J∨⊕O_C(D)→K be the cokernel of the diagonal map h↦(h,h), and put C^s=Proj_C Sym K. Set L_s=K/p(J∨) and L_Δ=K/p(O_C(D)). The canonical invertible quotients sᵢ*K→sᵢ*L_s and Δ*K→Δ*L_Δ give the ordered lifted markings. On the stated locally Noetherian bases the construction commutes canonically with base change and with pointed isomorphisms; the arbitrary-base extension is §2.254. On geometric fibres it is an isomorphism at a disjoint smooth new point, inserts a rational tail at a collision, and inserts a rational bridge at a node.
+Given such C/S with old markings sᵢ and arbitrary extra section Δ, put D=Σsᵢ and J=I_Δ. Let p:J∨⊕O_C(D)→K be the cokernel of the diagonal map h↦(h,h), and put C^s=Proj_C Sym K. Set L_s=K/p(J∨) and L_Δ=K/p(O_C(D)). The canonical invertible quotients sᵢ*K→sᵢ*L_s and Δ*K→Δ*L_Δ give the ordered lifted markings. On the stated locally Noetherian bases the construction commutes canonically with base change and with pointed isomorphisms; the arbitrary-base extension is §2.246. On geometric fibres it is an isomorphism at a disjoint smooth new point, inserts a rational tail at a collision, and inserts a rational bridge at a node.
 
 Here g,n are nonnegative integers with 2g−2+n>0; C/S is a stable ordered n-pointed family and Δ:S→C is any section. The dual-ideal theorem is verified over locally Noetherian bases. The extension of this construction to arbitrary schemes uses the separately recorded approximation/descent input.
 
@@ -5595,9 +5473,9 @@ The construction has the following API.
 
 ([knudsen2](#references), Definition 2.3 and Theorem 2.4, printed pp.176–177 (PDF16–17); [knudsen2012](#references), Introduction equation (1) and quotient sheaves, PDF pp.2–3; Theorems 5.1–5.2, pp.13–16.)
 
-*Needs:* SchemeAndStackFoundations §4.15, [dual ideal of an arbitrary nodal section](#2246-dual-ideal-of-an-arbitrary-nodal-section), AlgebraicModuliForArithmeticGeometry §§1.1–1.7, StableReduction Layer 2, SchemeAndStackFoundations §§0.3, 0.8–0.9, 0.11, 0.17–0.21.
+*Needs:* SchemeAndStackFoundations §4.15, [dual ideal of an arbitrary nodal section](#2238-dual-ideal-of-an-arbitrary-nodal-section), AlgebraicModuliForArithmeticGeometry §§1.1–1.7, StableReduction Layer 2, SchemeAndStackFoundations §§0.3, 0.8–0.9, 0.11, 0.17–0.21.
 
-### 2.248 Collision chart of pointed expansion
+### 2.240 Collision chart of pointed expansion
 
 In an étale smooth coordinate neighborhood with old marking z=0 and extra section z=a over a commutative ring A, the parent diagonal-cokernel expansion has the actual presentation Proj_(A[z]) A[z][U,V]/((z−a)U+zV), with U,V in degree one. Its U-chart is z(1+v)=a, v=V/U, and its V-chart is z(u+1)=au, u=U/V. The new marking is v=0,z=a, the old one is u=0,z=0. Over a=0 the exceptional P¹ has new mark v=0, old mark v=∞, and attaching point v=−1. The coordinates are local choices; the scheme is the parent intrinsic Proj construction.
 
@@ -5625,9 +5503,9 @@ The construction has the following API.
 
 ([knudsen2](#references), Definition 2.3 and Theorem 2.4, pp. 176–177, smooth/collision case. The diagonal-cokernel Proj inserts a three-special-point rational tail at an old-mark collision.; [knudsen2012](#references), Theorem 5.1 and opening of its proof, pp. 13–14. States stable pointed expansion but leaves the smooth and collision calculations to the reader and refers to the original proof. The displayed signed chart is derived here from the diagonal cokernel in Knudsen II Definition 2.3 and Theorem 2.4, pp. 176–177.)
 
-*Needs:* SchemeAndStackFoundations §0.3, AlgebraicModuliForArithmeticGeometry §§1.1–1.7, [expansion at an arbitrary extra section](#2247-expansion-at-an-arbitrary-extra-section), [global section dual and residue line](#2245-global-section-dual-and-residue-line).
+*Needs:* SchemeAndStackFoundations §0.3, AlgebraicModuliForArithmeticGeometry §§1.1–1.7, [expansion at an arbitrary extra section](#2239-expansion-at-an-arbitrary-extra-section), [global section dual and residue line](#2237-global-section-dual-and-residue-line).
 
-### 2.249 Flatness at an old-mark collision
+### 2.241 Flatness at an old-mark collision
 
 The collision Proj is flat and finitely presented over every coefficient ring A. Its geometric fibres are nodal, its two lifted markings are smooth and disjoint, and the collision fibre has the same arithmetic genus as the original curve. For a=0 the inserted rational tail has exactly the old mark, the new mark and its attachment as special points.
 
@@ -5639,9 +5517,9 @@ The affine cover is displayed and is valid over nonreduced A. The new marking is
 
 ([knudsen2](#references), Theorem 2.4, pp. 176–177. Collision stabilization inserts a rational tail and gives a stable flat family.; [knudsen2012](#references), Theorem 5.1 and opening of its proof, pp. 13–14. Asserts the stable-family result and omits the smooth-point calculation. The explicit coefficient-free affine cover and normal-form flatness proof are deductions here from the preceding collision presentation, rather than calculations printed in this theorem.)
 
-*Needs:* StableReduction Layer 1, StableReduction Layer 3, [collision chart of pointed expansion](#2248-collision-chart-of-pointed-expansion).
+*Needs:* StableReduction Layer 1, StableReduction Layer 3, [collision chart of pointed expansion](#2240-collision-chart-of-pointed-expansion).
 
-### 2.250 Flatness transfer from the pointed formal chart
+### 2.242 Flatness transfer from the pointed formal chart
 
 For the Noetherian pointed nodal family, C^s=Proj_C Sym K is flat over the coefficient base near the preimage of a nodal section point. The completed family comparison identifies its formal affine charts with completed base changes of the parent polynomial expansion charts. This is a statement about actual local rings of the intrinsic Proj. It uses neither algebraization of an arbitrary formal scheme nor excellence of the coefficient ring.
 
@@ -5653,9 +5531,9 @@ Distinguish completion after coefficient base change from a bare tensor product 
 
 ([knudsen2012](#references), Theorem 5.1, especially the flatness argument, pp. 14–16. Transfers the explicit nodal affine-chart calculation through the completed pointed local model.; [ile](#references), §7, pp. 24–26. Discusses the formal local reduction of stabilization to these charts.; [stacks-completion](#references), Algebra Lemma 10.97.3, tag 00MC. Faithfully flat local completion reflects module flatness.)
 
-*Needs:* SchemeAndStackFoundations §§0.3, 0.8–0.9, 0.11, 0.17–0.21, SchemeAndStackFoundations §4.8, DeformationAndDerivedPatchingAlgebra §3.3, [pointed hull and completed family chart](#2244-pointed-hull-and-completed-family-chart), [global section dual and residue line](#2245-global-section-dual-and-residue-line), [knudsen completion theorem](#2238-knudsen-completion-theorem), [the ordered surjection to the section dual](#263-the-ordered-surjection-to-the-section-dual).
+*Needs:* SchemeAndStackFoundations §§0.3, 0.8–0.9, 0.11, 0.17–0.21, SchemeAndStackFoundations §4.8, DeformationAndDerivedPatchingAlgebra §3.3, [pointed hull and completed family chart](#2236-pointed-hull-and-completed-family-chart), [global section dual and residue line](#2237-global-section-dual-and-residue-line), [knudsen completion theorem](#2230-knudsen-completion-theorem), [the ordered surjection to the section dual](#256-the-ordered-surjection-to-the-section-dual).
 
-### 2.251 Flatness of the expanded family
+### 2.243 Flatness of the expanded family
 
 Over a locally Noetherian S the expanded C^s/S is flat and finitely presented. In the polynomial nodal model q(u,v)=q(s,t), its Proj charts are R₀=A[v,y]/(v(y²−γy+δ)+s(2y−γ)+t(−y²+2γy−γ²+δ)) and R₁=A[u,x]/(u(δx²−γx+1)+s(δx²−1)+tδ(γx²−2x)). R₀ has free A-basis the monomials vⁱyʲ excluding i≥1,j≥2. With h=δx²−γx+1, Spec R₀ and Spec R₁[h⁻¹] cover; R₁[h⁻¹]≅A[x,h⁻¹]. Transferring this calculation to C^s uses the actual formal completion and faithful flatness comparison. The arbitrary-base extension is §§2.253–2.254.
 
@@ -5673,13 +5551,13 @@ A fibrewise description alone does not prove flatness over a nonreduced base.
 
 ([knudsen2012](#references), Theorem 5.1 proof, equations (4)–(5) and formal comparison, PDF pp.14–16; [knudsen2](#references), Theorem 2.4 Case II, printed p.177 (PDF17).)
 
-*Needs:* gap:formal-proj-completed-cokernel, [expansion at an arbitrary extra section](#2247-expansion-at-an-arbitrary-extra-section), [normal form of a pointed nodal deformation](#210-normal-form-of-a-pointed-nodal-deformation), AlgebraicModuliForArithmeticGeometry §§1.1–1.7, SchemeAndStackFoundations §§0.3, 0.8–0.9, 0.11, 0.17–0.21, [dual ideal of an arbitrary nodal section](#2246-dual-ideal-of-an-arbitrary-nodal-section), [the ordered surjection to the section dual](#263-the-ordered-surjection-to-the-section-dual), AlgebraicModuliForArithmeticGeometry §§8.1–8.3, StableReduction Layer 2, [flatness transfer from the pointed formal chart](#2250-flatness-transfer-from-the-pointed-formal-chart), [flatness at an old-mark collision](#2249-flatness-at-an-old-mark-collision).
+*Needs:* gap:formal-proj-completed-cokernel, [expansion at an arbitrary extra section](#2239-expansion-at-an-arbitrary-extra-section), [normal form of a pointed nodal deformation](#210-normal-form-of-a-pointed-nodal-deformation), AlgebraicModuliForArithmeticGeometry §§1.1–1.7, SchemeAndStackFoundations §§0.3, 0.8–0.9, 0.11, 0.17–0.21, [dual ideal of an arbitrary nodal section](#2238-dual-ideal-of-an-arbitrary-nodal-section), [the ordered surjection to the section dual](#256-the-ordered-surjection-to-the-section-dual), AlgebraicModuliForArithmeticGeometry §§8.1–8.3, StableReduction Layer 2, [flatness transfer from the pointed formal chart](#2242-flatness-transfer-from-the-pointed-formal-chart), [flatness at an old-mark collision](#2241-flatness-at-an-old-mark-collision).
 
-### 2.252 Stability of the expanded family
+### 2.244 Stability of the expanded family
 
 C^s with its n+1 lifted sections is a stable pointed family of the same arithmetic genus g. Its new marking is in the relative smooth locus and is disjoint from every retained mark; in the node case the inserted P¹ has three distinct special flags.
 
-Use the stable pair and pointed family of expansion, with the base and formal comparison hypotheses of [flatness of the expanded family](#2251-flatness-of-the-expanded-family).
+Use the stable pair and pointed family of expansion, with the base and formal comparison hypotheses of [flatness of the expanded family](#2243-flatness-of-the-expanded-family).
 
 One proof uses the following inputs and comparisons. Identify geometric fibres by the Proj charts, including nodal and collision cases. Compute the genus using the parent normalization/dual-graph formula. Check log-canonical degrees on every component using the parent pointed-stability criterion.
 
@@ -5687,9 +5565,9 @@ At a node neither attaching point is the new marking.
 
 ([knudsen2012](#references), Theorem 5.1, PDF pp.13–16, especially the geometric-fibre and smooth-marking calculations on pp.15–16; [knudsen2](#references), Theorem 2.4 Case II and Figure 3, printed p.177 (PDF17).)
 
-*Needs:* [flatness of the expanded family](#2251-flatness-of-the-expanded-family), [expansion at an arbitrary extra section](#2247-expansion-at-an-arbitrary-extra-section), StableReduction Layer 3, StableReduction Layer 1.
+*Needs:* [flatness of the expanded family](#2243-flatness-of-the-expanded-family), [expansion at an arbitrary extra section](#2239-expansion-at-an-arbitrary-extra-section), StableReduction Layer 3, StableReduction Layer 1.
 
-### 2.253 Approximation of pointed nodal families
+### 2.245 Approximation of pointed nodal families
 
 For every scheme S, a stable pointed family C/S and one arbitrary additional section admit, locally on affine S, a model over a finite-type Z-algebra A₀ with a stable pointed nodal family, its ordered markings and additional section. Any finite collection of family isomorphisms and their equations descends after enlargement of A₀. The actual section ideal, its dual, residue line, diagonal cokernel, symmetric algebra and Proj are canonically the pullbacks of the corresponding Noetherian-model objects. Two models give the same comparisons after a common enlargement. No global qcqs hypothesis is imposed on S.
 
@@ -5701,9 +5579,9 @@ A finite-presentation module can have a dual that fails arbitrary base change in
 
 ([knudsen2](#references), §2, pp. 171–179, especially the base-change claims in Definition 2.3 and Corollary 2.6. The geometric constructions are natural over family bases; this theorem supplies their explicit approximation extension.; [ile](#references), Proposition 3.5, pp. 6–7, and §7, pp. 24–26. Arbitrary coefficient change of the section dual is the local algebra input; the approximation part is a deduction using the cited foundational suppliers.)
 
-*Needs:* SchemeAndStackFoundations §0.9, StableReduction Layer 2, StableReduction Layer 3, [global section dual and residue line](#2245-global-section-dual-and-residue-line), [finite-stage models of pointed curve diagrams](#01-finite-stage-models-of-pointed-curve-diagrams).
+*Needs:* SchemeAndStackFoundations §0.9, StableReduction Layer 2, StableReduction Layer 3, [global section dual and residue line](#2237-global-section-dual-and-residue-line), [finite-stage models of pointed curve diagrams](#01-finite-stage-models-of-pointed-curve-diagrams).
 
-### 2.254 Expansion over arbitrary schemes
+### 2.246 Expansion over arbitrary schemes
 
 The existing intrinsic diagonal-cokernel construction defines stable (g,n+1)-pointed expansion over every scheme S for each stable pair (g,n), including old-mark collisions and nodal sections. The result is proper, flat and finitely presented over S, of the same genus, with disjoint smooth lifted markings and positive log-dual degree on every geometric component. Its canonical base-change and pointed-isomorphism comparisons satisfy the identity and composition cocycles. The new section is not required to be smooth or disjoint before expansion.
 
@@ -5715,9 +5593,9 @@ Include all three fibre types in a single construction. Retain automorphisms of 
 
 ([knudsen2](#references), Definition 2.3 and Theorem 2.4, pp. 176–177. Defines expansion and identifies its stable pointed fibres.; [knudsen2012](#references), Theorems 5.1 and 5.2, pp. 13–16. Verifies flatness and the functorial stable-family construction.)
 
-*Needs:* SchemeAndStackFoundations §0.3, StableReduction Layer 1, StableReduction Layer 2, StableReduction Layer 3, [approximation of pointed nodal families](#2253-approximation-of-pointed-nodal-families), [flatness at an old-mark collision](#2249-flatness-at-an-old-mark-collision), [flatness transfer from the pointed formal chart](#2250-flatness-transfer-from-the-pointed-formal-chart), [expansion at an arbitrary extra section](#2247-expansion-at-an-arbitrary-extra-section).
+*Needs:* SchemeAndStackFoundations §0.3, StableReduction Layer 1, StableReduction Layer 2, StableReduction Layer 3, [approximation of pointed nodal families](#2245-approximation-of-pointed-nodal-families), [flatness at an old-mark collision](#2241-flatness-at-an-old-mark-collision), [flatness transfer from the pointed formal chart](#2242-flatness-transfer-from-the-pointed-formal-chart), [expansion at an arbitrary extra section](#2239-expansion-at-an-arbitrary-extra-section).
 
-### 2.255 Recovery of a contracted pointed family
+### 2.247 Recovery of a contracted pointed family
 
 Let Y/S be stable (g,n+1)-pointed, and let q:Y→C be the parent contraction after omitting its last marking, with 2g−2+n>0. Let Δ be the image of the omitted mark. There is a unique pointed isomorphism Y≃C^s over C compatible with q, the lifted old markings and the last marking. It is natural in family isomorphisms and every base change. The only contracted component is the rational three-flag tail or bridge rendered unstable by removal of that one marking; no stable component is contracted.
 
@@ -5729,11 +5607,11 @@ Verify the sheaf comparison and the induced evaluation quotient, not only a bije
 
 ([knudsen2](#references), Lemma 2.5 and Corollary 2.6, pp. 178–179. Constructs the unique map from a contraction back to the intrinsic expansion and proves the inverse comparisons.; [knudsen2012](#references), Theorem 5.2, p. 16. States functoriality of stabilization. The inverse comparison comes from Knudsen II Lemma 2.5 and Corollary 2.6, not from this later theorem alone.)
 
-*Needs:* StableReduction Layer 3, StableReduction Layer 9, StableReduction Layer 2, AlgebraicModuliForArithmeticGeometry §§1.1–1.7, [expansion over arbitrary schemes](#2254-expansion-over-arbitrary-schemes), SchemeAndStackFoundations §4.15.
+*Needs:* StableReduction Layer 3, StableReduction Layer 9, StableReduction Layer 2, AlgebraicModuliForArithmeticGeometry §§1.1–1.7, [expansion over arbitrary schemes](#2246-expansion-over-arbitrary-schemes), SchemeAndStackFoundations §4.15.
 
-### 2.256 Coherent universal-curve equivalence
+### 2.248 Coherent universal-curve equivalence
 
-The imported morphisms s:Z̄_(g,n)→M̄_(g,n+1) and c:M̄_(g,n+1)→Z̄_(g,n) form an equivalence of groupoid-valued pseudofunctors over M̄_(g,n) on all schemes. The natural isomorphisms cs≅id and sc≅id are the pointed recovery maps; they commute with pullback, satisfy both triangle identities, and respect reindexing of retained markings. For a family C/S classified by S→M̄_(g,n), the two-fibre product S×_(M̄_(g,n)) M̄_(g,n+1) is canonically the actual curve C. The structural projection is proper flat nodal, and the n old marking loci are actual sections of this universal curve.
+This proves the identification asserted by SchemeAndStackFoundations §4.15 `Mbar.forget` (Knudsen II, Corollary 2.6): the imported morphisms s:Z̄_(g,n)→M̄_(g,n+1) and c:M̄_(g,n+1)→Z̄_(g,n) form an equivalence of groupoid-valued pseudofunctors over M̄_(g,n) on all schemes. The natural isomorphisms cs≅id and sc≅id are the pointed recovery maps; they commute with pullback, satisfy both triangle identities, and respect reindexing of retained markings. For a family C/S classified by S→M̄_(g,n), the two-fibre product S×_(M̄_(g,n)) M̄_(g,n+1) is canonically the actual curve C. The structural projection is proper flat nodal, and the n old marking loci are actual sections of this universal curve.
 
 Here g,n≥0, 2g−2+n>0; imported curve-moduli groupoids and their coherent pullback.
 
@@ -5743,9 +5621,9 @@ Automorphism groups are preserved; do not pass to isomorphism classes. At a fibr
 
 ([knudsen2](#references), Corollary 2.6, p. 179. Identifies the two operations as inverse and hence identifies the universal stable curve with the next pointed moduli stack.; [knudsen2012](#references), Theorem 5.2, p. 16. Supplies the functorial stabilization operation. Its coherent inverse is justified here by the original recovery lemma and Corollary 2.6 together with uniqueness, rather than attributed to this theorem.)
 
-*Needs:* [recovery of a contracted pointed family](#2255-recovery-of-a-contracted-pointed-family), [expansion over arbitrary schemes](#2254-expansion-over-arbitrary-schemes), SchemeAndStackFoundations §4.15.
+*Needs:* [recovery of a contracted pointed family](#2247-recovery-of-a-contracted-pointed-family), [expansion over arbitrary schemes](#2246-expansion-over-arbitrary-schemes), SchemeAndStackFoundations §4.15.
 
-### 2.257 The cross-ratio compactification
+### 2.249 The cross-ratio compactification
 
 M₀,₄≅P¹_Z minus {0,1,∞} and M̄₀,₄≅P¹_Z. The three boundary points are precisely the three unordered2+2 partitions of the four ordered markings.
 
@@ -5757,9 +5635,9 @@ The compactification adds three points, each with a stable rational tail.
 
 ([knudsen2](#references), Corollary 2.6 and Theorem 2.7 proof, printed p.179 (PDF19), universal-curve induction over M̄₀,₃.)
 
-*Needs:* [the three-pointed rational moduli scheme](#22-the-three-pointed-rational-moduli-scheme), [coherent universal-curve equivalence](#2256-coherent-universal-curve-equivalence), SchemeAndStackFoundations §§0.3, 0.8–0.9, 0.11, 0.17–0.21, StableReduction Layer 3.
+*Needs:* [the three-pointed rational moduli scheme](#22-the-three-pointed-rational-moduli-scheme), [coherent universal-curve equivalence](#2248-coherent-universal-curve-equivalence), SchemeAndStackFoundations §§0.3, 0.8–0.9, 0.11, 0.17–0.21, StableReduction Layer 3.
 
-### 2.258 Stable genus-one curves and one-gons
+### 2.250 Stable genus-one curves and one-gons
 
 For every scheme S, forgetting the generalized elliptic action gives an equivalence from the imported one-gon generalized elliptic groupoid E₁(S) to the groupoid of stable one-pointed genus-one curves over S. The inverse uses the unique group law on the relative smooth locus with the mark as identity, and its unique extension action on the cubic. It commutes with arbitrary pullback. Consequently M̄₁,₁ is proper smooth Deligne–Mumford over Z of relative dimension one; its reduced boundary is the smooth Cartier stack B(C₂). This proof is independent of the triangle embedding.
 
@@ -5777,9 +5655,9 @@ Exclude polygons with more than one component: unmarked components have log degr
 
 ([knudsen2](#references), Theorem 2.7 and its genus-one argument, p. 179. Requires the genus-one pointed base; the displayed independent route uses the existing one-gon supplier instead of deriving it from a triangle.; ModularCurvesPartII §§2.1–2.3 and 2.11, polygon-count-one specialization. The integral stack and its cusp inertia are imported; the pointed cubic comparison uses ModularCurves §§1C–1D and 4A–4B.)
 
-*Needs:* ModularCurvesPartII §§2.1–2.3 and 2.11, ModularCurves §§1C–1D and 4A–4B, StableReduction Layer 1, StableReduction Layer 2, SchemeAndStackFoundations §4.15, [approximation of pointed nodal families](#2253-approximation-of-pointed-nodal-families).
+*Needs:* ModularCurvesPartII §§2.1–2.3 and 2.11, ModularCurves §§1C–1D and 4A–4B, StableReduction Layer 1, StableReduction Layer 2, SchemeAndStackFoundations §4.15, [approximation of pointed nodal families](#2245-approximation-of-pointed-nodal-families).
 
-### 2.259 Recovery of the labelled rational triangle
+### 2.251 Recovery of the labelled rational triangle
 
 Let E/Z be the fixed three-pointed rational triangle of the parent target, and let ι attach its mark P₁ to a stable one-pointed genus-one family F, retaining P₂,P₃. For every scheme S, each isomorphism of the resulting ordered two-pointed genus-two families lifts uniquely to an isomorphism of the original F families and the identity on E_S. Recovery and its comparisons commute with arbitrary base change, including nilpotent thickenings. Hence ι is a representable monomorphism. Using the independent genus-one properness theorem and separatedness of M̄₂,₂, it is a proper monomorphism and therefore a closed immersion.
 
@@ -5791,9 +5669,9 @@ Include F nodal: its self-node is not among the four nodes cut out. Include nonr
 
 ([knudsen2](#references), Theorem 2.7 and Figure 4, p. 179; Theorem 3.4, pp. 181–183. Uses the rigid triangle for the genus-one base and gives the smooth-section pushout used for family recovery.; [knudsen2](#references), Theorem 3.7, pp. 187–190, with the corrected nodal-section pairing scope. Provides the labelled rational-component recovery pattern. The present persistent-node argument does not use its erroneous unrestricted pairing equality.; [mc0-stacks-curves](#references), Algebraic Curves Lemma 53.20.1, tag 0C59 (mc0-stacks-curves lines 2165–2174). Nodality makes the Fitting singular scheme unramified over the base; properness then makes this closed singular scheme finite.; [mc2-stacks-unramified-diagonal](#references), Morphisms Lemma 29.36.13, tag 02GE. The open diagonal detects equality of singular sections from their agreement at every geometric point, including over nonreduced bases.)
 
-*Needs:* StableReduction Layer 3, StableReduction Layer 1, SchemeAndStackFoundations §§1.18–1.23, [stable genus-one curves and one-gons](#2258-stable-genus-one-curves-and-one-gons), [coherent universal-curve equivalence](#2256-coherent-universal-curve-equivalence), [approximation of pointed nodal families](#2253-approximation-of-pointed-nodal-families), SchemeAndStackFoundations §4.15, [the three-pointed rational moduli scheme](#22-the-three-pointed-rational-moduli-scheme).
+*Needs:* StableReduction Layer 3, StableReduction Layer 1, SchemeAndStackFoundations §§1.18–1.23, [stable genus-one curves and one-gons](#2250-stable-genus-one-curves-and-one-gons), [coherent universal-curve equivalence](#2248-coherent-universal-curve-equivalence), [approximation of pointed nodal families](#2245-approximation-of-pointed-nodal-families), SchemeAndStackFoundations §4.15, [the three-pointed rational moduli scheme](#22-the-three-pointed-rational-moduli-scheme).
 
-### 2.260 Universal-curve induction
+### 2.252 Universal-curve induction
 
 Suppose for a stable pair (g,n) the imported M̄_(g,n) is smooth proper DM over Z, of relative dimension d=3g−3+n, and its nodal deformations have independent smoothing coordinates with reduced normal-crossings boundary. Then M̄_(g,n+1) has the same properties with dimension d+1. Over a point at an old node, the universal curve replaces its base coordinate t₁ by xy=t₁, so x and y are the two smoothing coordinates of the expanded bridge. Over an old-mark collision its new tail has smoothing coordinate a transverse to the old boundary. This is an induction theorem, not an assertion that the universal projection is smooth.
 
@@ -5805,9 +5683,9 @@ Dimension increases by one, including g=0 and g=1. The nodal universal projectio
 
 ([knudsen2](#references), Theorem 2.7, p. 179. Uses universal-curve induction for the full pointed stable range and its boundary.; [knudsen2012](#references), Proposition 2.1 and Theorem 5.1, pp. 5–10 and 13–16. Supplies the local pointed node and bridge calculations needed to track smoothing coordinates.)
 
-*Needs:* SchemeAndStackFoundations §§1.18–1.23, [coherent universal-curve equivalence](#2256-coherent-universal-curve-equivalence), [flatness at an old-mark collision](#2249-flatness-at-an-old-mark-collision), [collision chart of pointed expansion](#2248-collision-chart-of-pointed-expansion), [flatness transfer from the pointed formal chart](#2250-flatness-transfer-from-the-pointed-formal-chart), SchemeAndStackFoundations §4.15.
+*Needs:* SchemeAndStackFoundations §§1.18–1.23, [coherent universal-curve equivalence](#2248-coherent-universal-curve-equivalence), [flatness at an old-mark collision](#2241-flatness-at-an-old-mark-collision), [collision chart of pointed expansion](#2240-collision-chart-of-pointed-expansion), [flatness transfer from the pointed formal chart](#2242-flatness-transfer-from-the-pointed-formal-chart), SchemeAndStackFoundations §4.15.
 
-### 2.261 Four fixed triangle smoothing parameters
+### 2.253 Four fixed triangle smoothing parameters
 
 At a geometric point in the labelled triangle immersion, choose the independent ambient M̄₂,₂ node-smoothing coordinates. Its formal image is defined by the vanishing of the four coordinates for the three internal triangle nodes and the attachment. The remaining parameter is free. If F is nodal, it is precisely its fifth ambient node-smoothing parameter and cuts out the boundary of M̄₁,₁; if F is smooth it is the one-dimensional smooth deformation coordinate. After the formal-to-étale comparison of [completed framed hilbert charts](#113-completed-framed-hilbert-charts) these equations describe the image étale locally. There is no assertion that the fifth parameter vanishes on the whole image.
 
@@ -5819,15 +5697,15 @@ The ambient relative dimension is five and the source relative dimension is one.
 
 ([knudsen2](#references), Theorem 2.7, Figure 4 and final local argument, p. 179. The fixed triangle and its attachment give the rigid genus-one locus; the four/five-node count is the explicit graph calculation.)
 
-*Needs:* [recovery of the labelled rational triangle](#2259-recovery-of-the-labelled-rational-triangle), [stable genus-one curves and one-gons](#2258-stable-genus-one-curves-and-one-gons), SchemeAndStackFoundations §4.15, [universal-curve induction](#2260-universal-curve-induction).
+*Needs:* [recovery of the labelled rational triangle](#2251-recovery-of-the-labelled-rational-triangle), [stable genus-one curves and one-gons](#2250-stable-genus-one-curves-and-one-gons), SchemeAndStackFoundations §4.15, [universal-curve induction](#2252-universal-curve-induction).
 
-### 2.262 The rigid triangle locus
+### 2.254 The rigid triangle locus
 
 Let E/Z be the ordered three-pointed genus-one curve of Knudsen II Figure 4: three rational components arranged in a cycle, with one smooth marking P₁,P₂,P₃ on each component. Glue P₁ to the marking of a stable one-pointed genus-one family F/S and retain P₂,P₃ as ordered markings. The resulting genus-two two-pointed family defines a closed immersion M̄₁,₁→M̄₂,₂ with uniquely recoverable labelled rational triangle. Étale locally its image is cut out by four distinguished node-smoothing parameters: the three internal triangle nodes and the attachment node. If F is nodal there is a fifth boundary parameter; that parameter is not set to zero on the image.
 
 Here F/S is a stable ordered one-pointed genus-one family; E is the fixed split labelled triangle pulled back from Z. The assertion about intersections is étale local with the four chosen branches distinguished; it is not an intersection of four globally embedded boundary components.
 
-One proof uses the following inputs and comparisons. Use the parent external clutching pushout to attach F to E at its first marking; the triangle has Betti number one, so the glued genus is two. Each rational triangle component has exactly three special flags. Recover the component containing P₂, the component containing P₃, and the unmarked connecting triangle component with its attachment flag. Prove this recovery on families and pointed isomorphisms, including when F is irreducible nodal; triviality of the automorphism group of the ordered triangle is only one part of this family comparison. Use the higher-genus pointed deformation charts: dim M̄₂,₂=5, and impose the three internal smoothing parameters and the attachment smoothing parameter. Four independent equations leave relative dimension one. At a nodal F the remaining fifth parameter cuts out its boundary. The family recovery and closed-image argument are [recovery of the labelled rational triangle](#2259-recovery-of-the-labelled-rational-triangle), not an inference from fibrewise rigidity.
+One proof uses the following inputs and comparisons. Use the parent external clutching pushout to attach F to E at its first marking; the triangle has Betti number one, so the glued genus is two. Each rational triangle component has exactly three special flags. Recover the component containing P₂, the component containing P₃, and the unmarked connecting triangle component with its attachment flag. Prove this recovery on families and pointed isomorphisms, including when F is irreducible nodal; triviality of the automorphism group of the ordered triangle is only one part of this family comparison. Use the higher-genus pointed deformation charts: dim M̄₂,₂=5, and impose the three internal smoothing parameters and the attachment smoothing parameter. Four independent equations leave relative dimension one. At a nodal F the remaining fifth parameter cuts out its boundary. The family recovery and closed-image argument are [recovery of the labelled rational triangle](#2251-recovery-of-the-labelled-rational-triangle), not an inference from fibrewise rigidity.
 
 For smooth F there are four nodes, four irreducible components, vertex genera summing to one and graph Betti number one; the genus is two. For irreducible nodal F there are five nodes, four rational normalization components and graph Betti number two; the genus is still two. Three equations in the five-dimensional ambient stack would give relative dimension two and cannot describe M̄₁,₁.
 
@@ -5839,9 +5717,9 @@ For smooth F there are four nodes, four irreducible components, vertex genera su
 
 ([knudsen2](#references), Theorem 2.7 proof and Figure 4, printed p.179 (PDF19).)
 
-*Needs:* SchemeAndStackFoundations §4.15, [coherent universal-curve equivalence](#2256-coherent-universal-curve-equivalence), AlgebraicModuliForArithmeticGeometry §§7.3, 8.1–8.3, StableReduction Layer 1, StableReduction Layer 3, [recovery of the labelled rational triangle](#2259-recovery-of-the-labelled-rational-triangle), [four fixed triangle smoothing parameters](#2261-four-fixed-triangle-smoothing-parameters).
+*Needs:* SchemeAndStackFoundations §4.15, [coherent universal-curve equivalence](#2248-coherent-universal-curve-equivalence), AlgebraicModuliForArithmeticGeometry §§7.3, 8.1–8.3, StableReduction Layer 1, StableReduction Layer 3, [recovery of the labelled rational triangle](#2251-recovery-of-the-labelled-rational-triangle), [four fixed triangle smoothing parameters](#2253-four-fixed-triangle-smoothing-parameters).
 
-### 2.263 The one-pointed genus-one base stack
+### 2.255 The one-pointed genus-one base stack
 
 M̄₁,₁ is a proper smooth Deligne–Mumford stack over Z of relative dimension one with relative normal-crossings boundary. Its rigid triangle-clutching realization in M̄₂,₂ is étale locally the intersection of four distinguished boundary branches. At a nodal one-pointed genus-one curve, the fifth ambient node-smoothing branch restricts to the boundary of M̄₁,₁.
 
@@ -5853,9 +5731,9 @@ The smooth elliptic locus has one remaining deformation parameter after imposing
 
 ([knudsen2](#references), Theorem 2.7 proof, printed p.179 (PDF19).)
 
-*Needs:* [the rigid triangle locus](#2262-the-rigid-triangle-locus), SchemeAndStackFoundations §4.15, AlgebraicModuliForArithmeticGeometry §§7.3, 8.1–8.3, [stable genus-one curves and one-gons](#2258-stable-genus-one-curves-and-one-gons), [four fixed triangle smoothing parameters](#2261-four-fixed-triangle-smoothing-parameters).
+*Needs:* [the rigid triangle locus](#2254-the-rigid-triangle-locus), SchemeAndStackFoundations §4.15, AlgebraicModuliForArithmeticGeometry §§7.3, 8.1–8.3, [stable genus-one curves and one-gons](#2250-stable-genus-one-curves-and-one-gons), [four fixed triangle smoothing parameters](#2253-four-fixed-triangle-smoothing-parameters).
 
-### 2.264 Infinitesimal stable-reflexivity criterion
+### 2.256 Infinitesimal stable-reflexivity criterion
 
 For a flat local map of Noetherian local rings (A,p)→(R,m), finite R-module M and ideal I⊆p, M is relatively stably reflexive over A if and only if M/I^nM is relatively stably reflexive over A/I^n for every n≥1, with chart ring R/I^nR. This is the local scope of Appendix Proposition 7. A global assertion needs the corresponding Jacobson condition on IR, not just I⊆Jac(A).
 
@@ -5867,9 +5745,9 @@ Include I=0 and I=p. Prevent the false nonlocal extension: A=k[t]_(t), R=k(t)[x]
 
 ([knudsen2](#references), Appendix, Proposition 7, p. 195, in the local setup following Proposition 6. States the infinitesimal criterion as an exercise.; [stacks-completion](#references), Algebra Lemma 10.99.11, tag 0523. Flatness of every infinitesimal quotient detects flatness at target primes above the ideal; local targets satisfy the required support condition.)
 
-*Needs:* DeformationAndDerivedPatchingAlgebra §3.3, [base change for relative stable reflexivity](#2240-base-change-for-relative-stable-reflexivity), [relative stable reflexivity](#2234-relative-stable-reflexivity).
+*Needs:* DeformationAndDerivedPatchingAlgebra §3.3, [base change for relative stable reflexivity](#2232-base-change-for-relative-stable-reflexivity), [relative stable reflexivity](#2226-relative-stable-reflexivity).
 
-### 2.265 Boundary under forgetting a mark
+### 2.257 Boundary under forgetting a mark
 
 Under the universal-curve equivalence, the reduced boundary divisors satisfy B_(g,n+1)=π*B_(g,n)+Σ_(i=1)^n s_i(M̄_(g,n)) as relative effective Cartier divisors on the universal curve. The first term records old nodal fibres; the extra n section divisors record new old-mark collision tails. At a universal point on the j-th old node, t_j=xy and a local boundary equation becomes xy∏_(k≠j)t_k; at an old marking a local equation is a∏_k t_k. These are normal crossings étale locally, without asserting globally simple normal crossings.
 
@@ -5881,7 +5759,7 @@ For (g,n)=(0,3), the old boundary is empty but the new boundary has three compon
 
 ([knudsen2](#references), Theorem 2.7, p. 179, boundary induction. Describes the next boundary as old-boundary inverse image together with the canonical section loci.)
 
-*Needs:* StableReduction Layer 2, [universal-curve induction](#2260-universal-curve-induction), [collision chart of pointed expansion](#2248-collision-chart-of-pointed-expansion), [coherent universal-curve equivalence](#2256-coherent-universal-curve-equivalence).
+*Needs:* StableReduction Layer 2, [universal-curve induction](#2252-universal-curve-induction), [collision chart of pointed expansion](#2240-collision-chart-of-pointed-expansion), [coherent universal-curve equivalence](#2248-coherent-universal-curve-equivalence).
 
 ### Two coefficient rings and a noninjective balancing quotient
 
@@ -6075,13 +5953,13 @@ Let `U→M̄_{g,n}` be a sufficiently small étale scheme chart at a geometric s
 
 Here U is an étale chart of the moduli stack itself over Z, not an arbitrary family base. The pointed DM, universal-curve and normal-crossing results are imported from SchemeAndStackFoundations §4.15 and Layer 2; the underlying unpointed versal parameters are those of [completed framed hilbert charts](#113-completed-framed-hilbert-charts). Parameters are local near a fixed finite set of nodes, after shrinking. Arbitrary-base pullback uses [finite-diagram approximation](#01-finite-stage-models-of-pointed-curve-diagrams), gap:relative-node-branch-data and gap:integral-node-incidence; the smoothing-line calculation is proved in this layer.
 
-One proof uses the following inputs and comparisons. Start with the versal node coordinates of [completed framed hilbert charts](#113-completed-framed-hilbert-charts) for g≥2. Extend to pointed types using the universal-curve equivalence of [coherent universal-curve equivalence](#2256-coherent-universal-curve-equivalence): adding a point at an old node replaces t by uv in the total base, while at a smooth point it adds a smooth coordinate; the new expanded curve has the corresponding two node parameters. Start separately at (0,3) and (1,1), as in the imported pointed DM proof. This is the chart form of that existing theorem, not a new moduli representability argument. Use the parent arbitrary-base nodal normal form and the Jacobian calculation of incidence near each node. Finite unramified incidence can be étale locally separated into the chosen node branches, and after shrinking no additional singular points occur. Thus the jth branch is precisely V(tⱼ), with its scheme structure. Since U is smooth over Z and the tⱼ are independent relative parameters, each V(tⱼ) is smooth over Z, hence regular and normal, and tⱼ is a nonzerodivisor. The unramified morphism has the displayed rank-one conormal. On a common chart refinement the chosen node determines the same local closed immersion; compare its ideal quotients and descend.
+One proof uses the following inputs and comparisons. Start with the versal node coordinates of [completed framed hilbert charts](#113-completed-framed-hilbert-charts) for g≥2. Extend to pointed types using the universal-curve equivalence of [coherent universal-curve equivalence](#2248-coherent-universal-curve-equivalence): adding a point at an old node replaces t by uv in the total base, while at a smooth point it adds a smooth coordinate; the new expanded curve has the corresponding two node parameters. Start separately at (0,3) and (1,1), as in the imported pointed DM proof. This is the chart form of that existing theorem, not a new moduli representability argument. Use the parent arbitrary-base nodal normal form and the Jacobian calculation of incidence near each node. Finite unramified incidence can be étale locally separated into the chosen node branches, and after shrinking no additional singular points occur. Thus the jth branch is precisely V(tⱼ), with its scheme structure. Since U is smooth over Z and the tⱼ are independent relative parameters, each V(tⱼ) is smooth over Z, hence regular and normal, and tⱼ is a nonzerodivisor. The unramified morphism has the displayed rank-one conormal. On a common chart refinement the chosen node determines the same local closed immersion; compare its ideal quotients and descend.
 
 For r=0 the incidence is empty and the boundary equation is the unit empty product. At r=2 the total boundary is V(t₁t₂), while its two node branches are V(t₁) and V(t₂). Over S mapping into tⱼ=0, pull back the conormal line from V(tⱼ); do not replace it by the ideal quotient of the zero ideal on S.
 
 ([mc0-stacks-curves](#references), Lemma53.21.1, §53.21, tag0CBY (unpaginated HTML). An arbitrary-base nodal family is étale locally the pullback of xy=t. Its Jacobian calculation gives the scheme structure on node choices, not just its geometric points.; [mc1-etale](#references), Lemma41.21.6, §41.21, tag0CBR (unpaginated HTML). The normalization of a normal-crossings divisor is étale locally the disjoint union of its regular branches, with the conormal of each selected branch of rank one.; [knudsen2](#references), Definition3.8 and Corollary3.9(a), §3, printed p.190 (PDF30). The two clutching maps are finite unramified; the proof passes through the relative singular scheme. Part(b) is corrected by the recorded counterexample.)
 
-*Needs:* gap:integral-node-incidence, gap:relative-node-branch-data, StableReduction Layer 1, SchemeAndStackFoundations §1.22, `Ideal.Cotangent`, [the stack of persistent nodes](#34-the-stack-of-persistent-nodes), SchemeAndStackFoundations §4.15, [coherent universal-curve equivalence](#2256-coherent-universal-curve-equivalence).
+*Needs:* gap:integral-node-incidence, gap:relative-node-branch-data, StableReduction Layer 1, SchemeAndStackFoundations §1.22, `Ideal.Cotangent`, [the stack of persistent nodes](#34-the-stack-of-persistent-nodes), SchemeAndStackFoundations §4.15, [coherent universal-curve equivalence](#2248-coherent-universal-curve-equivalence).
 
 ### 3.9 Chosen nodes and stack normalization
 
@@ -6123,7 +6001,7 @@ In genus zero the degree difference produces deg Lᵢ=1 on M̄₀,₄.
 
 ([knudsen3](#references), Theorem 4.1(c), printed p.202 (PDF3); proof’s transverse-section exact sequence, p.203 (PDF4).)
 
-*Needs:* [cotangent lines at the markings](#33-cotangent-lines-at-the-markings), SchemeAndStackFoundations §4.15, [stable one-edge boundary types](#35-stable-one-edge-boundary-types), StableReduction Layer 2, [coherent universal-curve equivalence](#2256-coherent-universal-curve-equivalence).
+*Needs:* [cotangent lines at the markings](#33-cotangent-lines-at-the-markings), SchemeAndStackFoundations §4.15, [stable one-edge boundary types](#35-stable-one-edge-boundary-types), StableReduction Layer 2, [coherent universal-curve equivalence](#2248-coherent-universal-curve-equivalence).
 
 ### 3.12 The integral smoothing conormal
 
@@ -6887,9 +6765,9 @@ Over the fixed pairing base and for g≥2, form τ:M_g[N]→A_g[N] by the relati
 
 Here g≥2 and N≥3; work over B=Spec Z[1/N,ζ_N] in the fixed symplectic component, with the same pairing convention in M_g[N] and A_g[N]. The fine curve scheme is Noetherian, and its universal curve is smooth projective geometrically connected of genus g; hence the JacobianChallengePartII §§1.1–1.4 suppliers apply without choosing a section of the curve.
 
-One proof uses the following inputs and comparisons. Apply the exact JacobianChallengePartII §§1.1–1.4 imports to the universal curve over the Noetherian fine scheme. All satisfy g>0, smoothness, projectivity and geometric connectedness. Arbitrary test-scheme pullbacks are supplied by their base-change comparisons. Equip this relative Jacobian with the given torsion frame and apply the M5/M6 fine ppav universal property over the identical cyclotomic base. The classifying map and its universal-family identification give the Cartesian square.
+One proof uses the following inputs and comparisons. Apply the exact JacobianChallengePartII §§1.1–1.4 imports to the universal curve over the Noetherian fine scheme. All satisfy g>0, smoothness, projectivity and geometric connectedness. Arbitrary test-scheme pullbacks are supplied by their base-change comparisons. The levelled polarized Jacobian (J(C/M),λ_C,α) with its base-change comparison is JacobianChallengePartII §7.1; apply the M5/M6 fine ppav universal property to it over the identical cyclotomic base. The classifying map and its universal-family identification give the Cartesian square.
 
-The curve-to-Jacobian construction is not AbelianSchemes duality. The Hodge comparison along this morphism is §6.7; no generic Picard Lie or curve duality theorem is reconstructed here. Do not import JC7/universal-level-jacobian: that application itself depends on this roadmap’s full-level and fine-level nodes.
+The curve-to-Jacobian construction is not AbelianSchemes duality. The Hodge comparison along this morphism is §6.7; no generic Picard Lie or curve duality theorem is reconstructed here.
 
 The construction has the following API.
 
@@ -6906,7 +6784,7 @@ The construction has the following API.
 
 ([dgh](#references), §6.1,pp.23–24.)
 
-*Needs:* [the fine smooth full-level curve scheme](#48-the-fine-smooth-full-level-curve-scheme), [full symplectic level on smooth curves](#42-full-symplectic-level-on-smooth-curves), PELModuli §§M5.1–M5.3, PELModuli §§M6.9–M6.10, JacobianChallengePartII §§1.1–1.4.
+*Needs:* [the fine smooth full-level curve scheme](#48-the-fine-smooth-full-level-curve-scheme), [full symplectic level on smooth curves](#42-full-symplectic-level-on-smooth-curves), PELModuli §§M5.1–M5.3, PELModuli §§M6.9–M6.10, JacobianChallengePartII §§1.1–1.4, JacobianChallengePartII §7.1.
 
 ### 6.4 The compactified Torelli and Hodge comparison
 
@@ -6918,7 +6796,7 @@ The entire semiabelian Jacobian is not an abelian scheme at a non-compact-type n
 
 ([knudsen3](#references), §6, printed pp.210–211 (PDF pp.11–12), characteristic-zero Satake map and properties (1)–(2) on p.211; [yuan-author-http](#references), §3.4, printed/PDF p.56, compactified Torelli/Hodge paragraph.)
 
-*Needs:* gap:stable-picard-arbitrary-base, [coarse spaces of pointed curve stacks](#41-coarse-spaces-of-pointed-curve-stacks), AlgebraicVectorBundles L0C and the Hodge descent comparison in Layer 5, AlgebraicModuliForArithmeticGeometry §§5.1–5.4, ShimuraCompactifications §§C4.1–C4.10, ShimuraCompactifications §§C5.13–C5.18, NeronModelsAndSemistableAbelianVarieties §4.13, NeronModelsAndSemistableAbelianVarieties §4.1, JacobianChallengePartII §§6.1–6.3.
+*Needs:* gap:stable-picard-arbitrary-base, [coarse spaces of pointed curve stacks](#41-coarse-spaces-of-pointed-curve-stacks), AlgebraicVectorBundles L0C and the Hodge descent comparison in Layer 5, AlgebraicModuliForArithmeticGeometry §§5.1–5.4, ShimuraCompactifications §§6.1–6.7, ShimuraCompactifications §6.10, ShimuraCompactifications §§7.13–7.17, NeronModelsAndSemistableAbelianVarieties §4.13, NeronModelsAndSemistableAbelianVarieties §4.1, JacobianChallengePartII §§6.1–6.3.
 
 ### 6.5 Graph-closure compactification after a finite cover
 
@@ -7028,7 +6906,7 @@ Fix g≥2, N≥3 and B_N=Spec Z[1/N,ζ_N] with the chosen primitive root specify
 
 Both source and target use the same fixed cyclotomic pairing component. N is invertible on B_N. The fine Siegel target can first be used as an algebraic space: its good-base scheme realization is a PEL M6/C5 import, not a prerequisite for the classifying map.
 
-One proof uses the following inputs and comparisons. Import the family Picard construction and its base change. Use the canonical polarization descended from local theta data; there is no global Abel–Jacobi base point. Transfer the curve level to its Jacobian torsion with the agreed Weil pairing. Apply fine ppav representability to the object (J,λ,α). The universal property supplies the Cartesian family comparison and its identity/composition coherence, rather than just agreement on geometric points.
+One proof uses the following inputs and comparisons. Import the family Picard construction and its base change. Use the canonical polarization descended from local theta data; there is no global Abel–Jacobi base point. The levelled polarized Jacobian (J,λ,α) with its base-change comparison is JacobianChallengePartII §7.1, whose pairing condition is the agreed Weil pairing. Apply fine ppav representability to the object (J,λ,α). The universal property supplies the Cartesian family comparison and its identity/composition coherence, rather than just agreement on geometric points.
 
 Over ℚ(ζ_N), τ_N restricts to the quasi-finite Torelli map of AbelianSchemesAndArithmeticModuliPartII §B4.1 under the identification of [the fine smooth full-level curve scheme](#48-the-fine-smooth-full-level-curve-scheme), since both classify the same polarized Jacobian with level. A genus≥2 family without a section still has τ_N and the Cartesian Jacobian comparison. A map from Spec k[ε]/(ε²) is tested by pullback of the same relative Picard object, not just a pointwise Jacobian assignment. Changing ζ_N changes the paired base/component; a map between mismatched pairing components is rejected.
 
@@ -7048,7 +6926,7 @@ The construction has the following API.
 
 ([dgh](#references), §6.1, pp.23–25, diagram(6.1). The smooth fine-level Jacobian and its Cartesian universal family over a characteristic-zero component. The integral construction here is supplied by JacobianChallengePartII §§1.1–1.4 and PELModuli, not inferred from this complex-geometric passage.; [blr-relative-picard-LwkQQl](#references), §8.4, Theorem1(a), pp.231–232; §9.4, Theorem1 and Proposition4, pp.259–261. The Lie–R¹O comparison, semiabelian Picard identity of a semistable curve and canonical Jacobian polarization; the stable-curve total space need not be regular.)
 
-*Needs:* AbelianSchemesAndArithmeticModuliPartII §B4.1, JacobianChallengePartII §§1.1–1.4, PELModuli §§M5.1–M5.3, PELModuli §§M6.9–M6.10, [the smooth full-level torelli morphism](#63-the-smooth-full-level-torelli-morphism), [the fine smooth full-level curve scheme](#48-the-fine-smooth-full-level-curve-scheme), [full symplectic level on smooth curves](#42-full-symplectic-level-on-smooth-curves).
+*Needs:* AbelianSchemesAndArithmeticModuliPartII §B4.1, JacobianChallengePartII §§1.1–1.4, PELModuli §§M5.1–M5.3, PELModuli §§M6.9–M6.10, [the smooth full-level torelli morphism](#63-the-smooth-full-level-torelli-morphism), [the fine smooth full-level curve scheme](#48-the-fine-smooth-full-level-curve-scheme), [full symplectic level on smooth curves](#42-full-symplectic-level-on-smooth-curves), JacobianChallengePartII §7.1.
 
 ### 6.13 Canonical Hodge comparison on the fine moduli scheme
 
@@ -7104,7 +6982,7 @@ An irreducible stable genus2 curve with one node and elliptic normalization maps
 
 ([blr-relative-picard-LwkQQl](#references), §8.4, Theorem1(a), pp.231–232; §9.4, Theorem1 and Proposition4, pp.259–261. The Lie–R¹O comparison, semiabelian Picard identity of a semistable curve and canonical Jacobian polarization; the stable-curve total space need not be regular.; [mc6-fc1990](#references), IV Proposition5.1, Remark5.3, Theorem5.7, pp.113–117; V Theorem2.3, pp.150–151. Toroidal extension has a cone condition; minimal compactification exists over Z and records the abelian part. A normal-base extension/Hodge comparison independent of a chosen cone is a requested C5 interface, not a direct quotation of these theorems.)
 
-*Needs:* NeronModelsAndSemistableAbelianVarieties §4.1, NeronModelsAndSemistableAbelianVarieties §4.13, JacobianChallengePartII §§1.1–1.4, ShimuraCompactifications §§C4.1–C4.10, ShimuraCompactifications §§C5.13–C5.18, [stable picard and hodge comparison along a moduli atlas](#615-stable-picard-and-hodge-comparison-along-a-moduli-atlas).
+*Needs:* NeronModelsAndSemistableAbelianVarieties §4.1, NeronModelsAndSemistableAbelianVarieties §4.13, JacobianChallengePartII §§1.1–1.4, ShimuraCompactifications §§6.1–6.7, ShimuraCompactifications §6.10, ShimuraCompactifications §§7.13–7.17, [stable picard and hodge comparison along a moduli atlas](#615-stable-picard-and-hodge-comparison-along-a-moduli-atlas).
 
 ### 6.17 Compactified Torelli in every characteristic
 
@@ -7133,7 +7011,7 @@ The construction has the following API.
 
 ([mc6-fc1990](#references), IV Proposition5.1, Remark5.3, Theorem5.7, pp.113–117; V Theorem2.3, pp.150–151. Toroidal extension has a cone condition; minimal compactification exists over Z and records the abelian part. A normal-base extension/Hodge comparison independent of a chosen cone is a requested C5 interface, not a direct quotation of these theorems.; [knudsen3](#references), §6, printed pp.210–211 (PDF11–12). Characteristic-zero map from a finite stable-family cover to the Satake compactification and identification of a positive Hodge power. It alone does not prove the all-characteristic target.; [yuan-author-http](#references), §3.4, p.56, proof of Hodge nefness and bigness. Uses compactified Torelli, Hodge pullback and generic finiteness. The smooth Torelli step is read as quasi-finiteness, not proper finiteness.)
 
-*Needs:* gap:minimal-siegel-all-characteristics, SchemeAndStackFoundations §1.23, ShimuraCompactifications §§C5.13–C5.18, [the compactified torelli and hodge comparison](#64-the-compactified-torelli-and-hodge-comparison), [full-level torelli by the relative jacobian](#612-full-level-torelli-by-the-relative-jacobian), [stable picard and hodge comparison along a moduli atlas](#615-stable-picard-and-hodge-comparison-along-a-moduli-atlas), [the abelian part of a stable jacobian](#616-the-abelian-part-of-a-stable-jacobian), SchemeAndStackFoundations §4.15, [coarse spaces of pointed curve stacks](#41-coarse-spaces-of-pointed-curve-stacks).
+*Needs:* gap:minimal-siegel-all-characteristics, SchemeAndStackFoundations §1.23, ShimuraCompactifications §§7.13–7.17, [the compactified torelli and hodge comparison](#64-the-compactified-torelli-and-hodge-comparison), [full-level torelli by the relative jacobian](#612-full-level-torelli-by-the-relative-jacobian), [stable picard and hodge comparison along a moduli atlas](#615-stable-picard-and-hodge-comparison-along-a-moduli-atlas), [the abelian part of a stable jacobian](#616-the-abelian-part-of-a-stable-jacobian), SchemeAndStackFoundations §4.15, [coarse spaces of pointed curve stacks](#41-coarse-spaces-of-pointed-curve-stacks).
 
 ### 6.18 Stable Hodge as a minimal Hodge pullback
 
@@ -7147,7 +7025,7 @@ At an irreducible nodal genus2 curve the rank2 semiabelian determinant is used a
 
 ([mc6-fc1990](#references), IV Proposition5.1, Remark5.3, Theorem5.7, pp.113–117; V Theorem2.3, pp.150–151. Toroidal extension has a cone condition; minimal compactification exists over Z and records the abelian part. A normal-base extension/Hodge comparison independent of a chosen cone is a requested C5 interface, not a direct quotation of these theorems.; [knudsen3](#references), §6, printed pp.210–211 (PDF11–12). Characteristic-zero map from a finite stable-family cover to the Satake compactification and identification of a positive Hodge power. It alone does not prove the all-characteristic target.; [yuan-author-http](#references), §3.4, p.56, proof of Hodge nefness and bigness. Uses compactified Torelli, Hodge pullback and generic finiteness. The smooth Torelli step is read as quasi-finiteness, not proper finiteness.)
 
-*Needs:* gap:minimal-siegel-all-characteristics, ShimuraCompactifications §§C5.13–C5.18, JacobianChallengePartII §§6.1–6.3, [compactified torelli in every characteristic](#617-compactified-torelli-in-every-characteristic), [stable picard and hodge comparison along a moduli atlas](#615-stable-picard-and-hodge-comparison-along-a-moduli-atlas), AlgebraicVectorBundles L0C and the Hodge descent comparison in Layer 5.
+*Needs:* gap:minimal-siegel-all-characteristics, ShimuraCompactifications §§7.13–7.17, JacobianChallengePartII §§6.1–6.3, [compactified torelli in every characteristic](#617-compactified-torelli-in-every-characteristic), [stable picard and hodge comparison along a moduli atlas](#615-stable-picard-and-hodge-comparison-along-a-moduli-atlas), AlgebraicVectorBundles L0C and the Hodge descent comparison in Layer 5.
 
 ### 6.19 Generic finiteness of the extended Torelli classifying map
 
@@ -7211,7 +7089,7 @@ The constant family C₀×𝔸¹ must compactify a one-dimensional base even tho
 
 ### Dependencies
 
-Layers 4–5; JacobianChallengePartII §§1.1–1.4 and 6.1–6.3; NeronModelsAndSemistableAbelianVarieties §§4.1 and 4.13; PELModuli §§M5.1–M5.3, M6.9–M6.10; ShimuraCompactifications §§C4.1–C4.10 and C5.16–C5.17. The all-characteristic principal Siegel supplier contract is needed for compactified Torelli and its positivity application.
+Layers 4–5; JacobianChallengePartII §§1.1–1.4 and 6.1–6.3; NeronModelsAndSemistableAbelianVarieties §§4.1 and 4.13; PELModuli §§M5.1–M5.3, M6.9–M6.10; ShimuraCompactifications §§6.1–6.7, 6.10 and 7.13–7.17. The all-characteristic principal Siegel supplier contract is needed for compactified Torelli and its positivity application.
 
 ## Layer 7: level Picard parameters and consumer interfaces
 
@@ -7257,7 +7135,7 @@ One proof uses the following inputs and comparisons. Apply the imported universa
 
 Specialize to T with nilpotents and to a non-Noetherian affine scheme without adding reducedness or local-Noetherianity. For a geometrically disconnected proper family the conclusion can fail: two copies of T give O_T×O_T; connectedness is essential.
 
-([mc0-stacks-perfect](#references), Lemma36.32.6 (0E0L); Lemma36.32.5 (0E62); Lemma33.9.3(7) (0BUG). The all-base-change unit isomorphism follows from proper flat finite presentation and geometrically reduced connected fibres.; the roadmap ownership contracts in Scope and ownership, StableReduction Layer3, prestable-family convention. The existing owner includes universal global functions; this node verifies its use for the level family.)
+([mc0-stacks-perfect](#references), Lemma36.32.6 (0E0L); Lemma36.32.5 (0E62); [stacks-varieties](#references), Lemma33.9.3(7) (0BUG), stacks-varieties line 903. The all-base-change unit isomorphism follows from proper flat finite presentation and geometrically reduced connected fibres.; the roadmap ownership contracts in Scope and ownership, StableReduction Layer3, prestable-family convention. The existing owner includes universal global functions; this node verifies its use for the level family.)
 
 *Needs:* StableReduction Layer 3, [the fine smooth full-level curve scheme](#48-the-fine-smooth-full-level-curve-scheme), [genus and cohomology over arbitrary bases](#02-genus-and-cohomology-over-arbitrary-bases).
 
@@ -7445,7 +7323,7 @@ Over k of characteristic2 or3 use the coefficient-ring9E theorem, not commutatio
 
 ([chen-moduli-consumer-LwkQQl](#references), Introduction pp.2–3, notation M(1). The consumer distinguishes the elliptic moduli stack from its coarse scheme.; the roadmap ownership contracts in Scope and ownership, ModularCurves README1C,1D,2D,4A,4B,9D,9E; Suggested.lean coarseJLine_int and coarseJLine. The elliptic-family category and coarse j-line have owners; only their comparison with the parent stack is added.)
 
-*Needs:* AlgebraicModuliForArithmeticGeometry §§5.1–5.4, SchemeAndStackFoundations §1.23, ModularCurves §§1C–1D, 2D, 4A–4C, 9D–9E, SchemeAndStackFoundations §4.15, [the one-pointed genus-one base stack](#2263-the-one-pointed-genus-one-base-stack), [coarse spaces of pointed curve stacks](#41-coarse-spaces-of-pointed-curve-stacks).
+*Needs:* AlgebraicModuliForArithmeticGeometry §§5.1–5.4, SchemeAndStackFoundations §1.23, ModularCurves §§1C–1D, 2D, 4A–4C, 9D–9E, SchemeAndStackFoundations §4.15, [the one-pointed genus-one base stack](#2255-the-one-pointed-genus-one-base-stack), [coarse spaces of pointed curve stacks](#41-coarse-spaces-of-pointed-curve-stacks).
 
 ### 7.13 Fine-level and Picard export for DGH
 
@@ -7593,8 +7471,9 @@ The constant family C₀×𝔸¹ must compactify a one-dimensional base even tho
 
 - **mc4-chen-zhang**: Yifei Chen, Lei Zhang, [The subadditivity of the Kodaira Dimension for Fibrations of Relative Dimension One in Positive Characteristics](https://arxiv.org/abs/1305.6024v1), 2013. arXiv:1305.6024v1; theorem numbering follows this version.
 
-- **mc4-stacks**: The Stacks Project Authors, [The Stacks Project: Cohomology of Schemes](https://stacks.math.columbia.edu/download/coherent.pdf), 2026.
 - **stacks-moduli-stacks**: The Stacks Project Authors, [The Stacks Project: Moduli Stacks](https://stacks.math.columbia.edu/download/moduli.pdf), 2026.
+
+- **stacks-varieties**: The Stacks Project Authors, [The Stacks Project: Varieties](https://stacks.math.columbia.edu/download/varieties.pdf), 2026.
 - **stacks-spaces-cohomology**: The Stacks Project Authors, [The Stacks Project: Cohomology of Algebraic Spaces](https://stacks.math.columbia.edu/download/spaces-cohomology.pdf), 2026.
 
 - **mc5-deligne1987**: Pierre Deligne, [Le déterminant de la cohomologie](https://publications.ias.edu/sites/default/files/Number58.pdf), 1987.

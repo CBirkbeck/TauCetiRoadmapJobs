@@ -597,22 +597,6 @@ version_note = "Locators refer to the fetched arXiv version 1305.6024v1; no iden
 cited_for = ["Layers 0–7"]
 
 [[source]]
-id = "mc4-stacks"
-authors = "The Stacks Project Authors"
-title = "The Stacks Project: Cohomology of Schemes"
-year = 2026
-locator_scheme = "section"
-locator = "Tags 02O1 (Lemma 30.16.2), 0D2M (Lemma 30.21.3), 0D2N (Lemma 30.21.4), statements and proofs."
-url = "https://stacks.math.columbia.edu/download/coherent.pdf"
-fetched_from = "https://stacks.math.columbia.edu/download/coherent.pdf"
-fetched_at = "2026-10-25T10:53:34Z"
-sha256 = "b4980a08a8cce98fed6a420364b18c119364a9436577031b28a16863bcbdbfb8"
-licence_class = "open-repository"
-status = "certified"
-accessed = "2026-10-25"
-cited_for = ["Layers 0–7"]
-
-[[source]]
 id = "mc5-deligne1987"
 authors = "Pierre Deligne"
 title = "Le déterminant de la cohomologie"
@@ -849,6 +833,9 @@ cited_for = ["Layers 0–7"]
 
 [[source]]
 id = "stacks-moduli-stacks"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project: Moduli Stacks"
+year = 2026
 locator_scheme = "tag"
 locator = "Moduli Stacks, Lemma 9.1 (tag 0DME), statement and proof."
 url = "https://stacks.math.columbia.edu/download/moduli.pdf"
@@ -859,12 +846,12 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 cited_for = ["7.4", "7.5", "7.7"]
-authors = "The Stacks Project Authors"
-title = "The Stacks Project: Moduli Stacks"
-year = 2026
 
 [[source]]
 id = "stacks-spaces-cohomology"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project: Cohomology of Algebraic Spaces"
+year = 2026
 locator_scheme = "tag"
 locator = "Cohomology of Algebraic Spaces, Lemma 21.2 (tag 0GFB), statement and proof."
 url = "https://stacks.math.columbia.edu/download/spaces-cohomology.pdf"
@@ -875,6 +862,19 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 cited_for = ["4.16"]
+
+[[source]]
+id = "stacks-varieties"
 authors = "The Stacks Project Authors"
-title = "The Stacks Project: Cohomology of Algebraic Spaces"
+title = "The Stacks Project: Varieties"
 year = 2026
+locator_scheme = "tag"
+locator = "0BUG"
+url = "https://stacks.math.columbia.edu/download/varieties.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/varieties.pdf"
+fetched_at = "2026-11-05T04:05:05Z"
+sha256 = "ed339c312c86721e3f830876da14cabe89a96e83e454a78b7cd355555f4bca45"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["7.2"]

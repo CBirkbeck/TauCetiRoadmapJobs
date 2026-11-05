@@ -1,4 +1,6 @@
-import Mathlib
+module
+
+public import Mathlib
 
 /-!
 # Stable reduction, Part II: target signatures
@@ -8,9 +10,9 @@ headline theorems against the pinned APIs.
 
 Not statable at the pins:
 * The formally versal pointed-node hull lacks nodal deformation groupoids and formal hulls.
-* The coherent-sheaf globalization of relative stable reflexivity on nodal families and
-  its completed-local transfer lack coherent sheaf Ext on schemes and the geometric
-  completion comparison interfaces; the module-level criterion is stated below.
+* The coherent-sheaf globalization of relative stable reflexivity on nodal families
+  lacks coherent sheaf Ext on schemes; the module-level criterion and the two-base
+  completion theorem are stated below.
 * Expansion–contraction and the universal-curve equivalence lack pointed stable
   families, their moduli stacks, and relative Proj of the expansion sheaf.
 * Decorated boundary normalization and smoothing conormal descent lack clutching,
@@ -29,6 +31,8 @@ Not statable at the pins:
 The polynomial results are independent local headline theorems, not substitutes
 for any of these geometric theorems.
 -/
+
+@[expose] public section
 
 namespace TauCetiRoadmap.StableReductionPartII
 
@@ -155,6 +159,45 @@ theorem relativelyStablyReflexive_iff_universalCoefficients
     (M : Type u) [AddCommGroup M] [Module R M] [Module A M] [IsScalarTower A R M]
     [Module.Finite R M] :
     IsRelativelyStablyReflexive A R M ↔ HasUniversalCoefficients A R M := by
+  sorry
+
+/-- Knudsen's completion theorem (Knudsen II, Appendix, Proposition 6; Ile, Proposition 4.3
+and Remark 4.4): for a flat local homomorphism `A → R` of Noetherian local rings and a finite
+`R`-module `M`, with `Â`, `R̂` the maximal-ideal completions and `M̂` the completion of `M`, the
+ring `R̂` is flat over `Â`, and `M` is relatively stably reflexive over `A` exactly when `M̂` is
+relatively stably reflexive over `A`, exactly when `M̂` is relatively stably reflexive over `Â`.
+The `Â`-algebra structure on `R̂` is a datum pinned by two laws: it restricts to `A → R` and
+is local; this forces it to be the continuous extension of `A → R`. The `Â`-module structure
+on `M̂` is pinned by the scalar tower through `R̂`. -/
+theorem relativelyStablyReflexive_iff_completion
+    (A R : Type u) [CommRing A] [CommRing R] [IsNoetherianRing A] [IsNoetherianRing R]
+    [IsLocalRing A] [IsLocalRing R] [Algebra A R] [Module.Flat A R]
+    [IsLocalHom (algebraMap A R)]
+    (M : Type u) [AddCommGroup M] [Module R M] [Module A M] [IsScalarTower A R M]
+    [Module.Finite R M]
+    [Algebra (AdicCompletion (IsLocalRing.maximalIdeal A) A)
+      (AdicCompletion (IsLocalRing.maximalIdeal R) R)]
+    [IsScalarTower A (AdicCompletion (IsLocalRing.maximalIdeal A) A)
+      (AdicCompletion (IsLocalRing.maximalIdeal R) R)]
+    [IsLocalHom (algebraMap (AdicCompletion (IsLocalRing.maximalIdeal A) A)
+      (AdicCompletion (IsLocalRing.maximalIdeal R) R))]
+    [IsScalarTower A (AdicCompletion (IsLocalRing.maximalIdeal R) R)
+      (AdicCompletion (IsLocalRing.maximalIdeal R) M)]
+    [Module (AdicCompletion (IsLocalRing.maximalIdeal A) A)
+      (AdicCompletion (IsLocalRing.maximalIdeal R) M)]
+    [IsScalarTower (AdicCompletion (IsLocalRing.maximalIdeal A) A)
+      (AdicCompletion (IsLocalRing.maximalIdeal R) R)
+      (AdicCompletion (IsLocalRing.maximalIdeal R) M)] :
+    Module.Flat (AdicCompletion (IsLocalRing.maximalIdeal A) A)
+        (AdicCompletion (IsLocalRing.maximalIdeal R) R) ∧
+      (IsRelativelyStablyReflexive A R M ↔
+        IsRelativelyStablyReflexive A (AdicCompletion (IsLocalRing.maximalIdeal R) R)
+          (AdicCompletion (IsLocalRing.maximalIdeal R) M)) ∧
+      (IsRelativelyStablyReflexive A (AdicCompletion (IsLocalRing.maximalIdeal R) R)
+          (AdicCompletion (IsLocalRing.maximalIdeal R) M) ↔
+        IsRelativelyStablyReflexive (AdicCompletion (IsLocalRing.maximalIdeal A) A)
+          (AdicCompletion (IsLocalRing.maximalIdeal R) R)
+          (AdicCompletion (IsLocalRing.maximalIdeal R) M)) := by
   sorry
 
 end
