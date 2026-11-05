@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-9654 mistakes recorded on the board: 5676 misprints, 2517 errors, 1077 gaps, 384 unparsed bullets.
+9657 mistakes recorded on the board: 5679 misprints, 2517 errors, 1077 gaps, 384 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -4395,6 +4395,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at the proof of Proposition 3.3.10, printed p. 84 (DAG13 line 3748): the source says the source calls K(ℤ,1), K(ℤₚ,1) and K(ℤₚ/ℤ,1) simply connected; it should be call them connected, retaining the trivial action in this abelian extension; affects nothing. Found by EtaleHomotopyTypes (#1304 at f0dd15c, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at the proof of Proposition 3.3.10, printed p. 84 (DAG13 line 3748): the source says the source calls its three degree-one Eilenberg–MacLane spaces simply connected; it should be call them connected, with trivial action for this abelian extension; affects nothing; <!-- tauceti-roadmap-review {"agent": "codex", "head": "6b61554024aaa094ee3775ff2cdef4fb2564580b", "job": "REV-PKG-EtaleHomotopyTypes~3", "model": "gpt-6-astra", "worker": "chris-20"} -->. Found by EtaleHomotopyTypes (#1304 at 6b61554, 2026-10-25, codex gpt-6-astra).
 
+## dang2020
+
+- **Misprint** at Theorem 3.4.4, proof, printed page 18: the source says the final display has the constant `(n − i + 1)^i`; it should be `(r − i + 1)^i` as in the statement and the telescoped factors; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "91f762e9ccdda2b72452b63de80c6da80ddea5b1", "job": "REV-DESIGN-DynamicalDegreesOfRationalMaps", "model": "fable", "worker": "chris-x10"} -->. Found by DynamicalDegreesOfRationalMaps (#6585 at 91f762e, 2026-11-05, claude fable).
+
 ## darmon-merel
 
 - **Misprint** at Lemma8.2 proof, author-version p.23, lines753–755: the source says dt/t is a basis of the ordinary cotangent at t=0; it should be dt, with the modular differential's width factor retained; affects the proof. Found by EllipticModularityEffectiveComparisons (#1361 at f72311b, 2026-10-27, codex gpt-6-astra).
@@ -4601,6 +4605,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at the proof of Lemma 2.11, printed page 16: the source says the last graded parameter carries z^{h_1}; it should be carry z^{h_n}; affects nothing. Found by PadicHodgeParametersInLocallyAnalyticRepresentations (#2246 at b8451af, 2026-11-05, claude fable).
 - **Gap** at the proof of Proposition 3.26, printed page 51: the source says the tangent map of the Harish-Chandra inclusion at h is bijective because the invariants form a polynomial algebra; it should be use that h is regular (nonvanishing Vandermonde), since the differential of the quotient map is singular at non-regular points; affects the proof. Found by PadicHodgeParametersInLocallyAnalyticRepresentations (#2246 at b8451af, 2026-11-05, claude fable).
 - **Misprint** at the proof of Theorem 3.34 after (3.54), printed page 56: the source says after replacing D_σ by D′_σ one obtains the relation attached to D_σ again; it should be the relation attached to D′_σ; affects nothing. Found by PadicHodgeParametersInLocallyAnalyticRepresentations (#2246 at b8451af, 2026-11-05, claude fable).
+
+## dinhsibony2005
+
+- **Misprint** at Corollaire 7, proof, printed page 7: the source says `[δ_l(f^n)]^{1/n}` converges to `inf_{n≥1} [δ_l(f^n)]^{1/n}`; it should be the infimum of `[c_X δ_l(f^n)]^{1/n}`, the sequence to which Fekete's lemma applies; affects nothing. Found by DynamicalDegreesOfRationalMaps (#6585 at 91f762e, 2026-11-05, claude fable).
 
 ## DiPernaLions1989
 
@@ -11217,6 +11225,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Silliman, Group Ring Valued Hilbert Modular Forms
 
 - **Misprint** at Theorem 8.10 (level-one Hasse lift): the source says suitable lifts exist for all sufficiently large weights; it should be require weights that are multiples of (p−1)p^{N₀}, N₀ depending on the precision, as Dasgupta–Kakde Theorem 8.8 states (p=5, precision 2, weight ≡4 mod 20 is excluded); affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## silverman2014
+
+- **Misprint** at Example 6, printed page 9: the source says the iterates of `(x, y, z) ↦ (y, z, x + yz)` have degree `F_n`; it should be `F_{n+2}` (the map has degree `2 = F_3`, its square degree `3`, its cube degree `5`); affects nothing. Found by DynamicalDegreesOfRationalMaps (#6585 at 91f762e, 2026-11-05, claude fable).
 
 ## skinner-2020
 
