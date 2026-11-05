@@ -6,7 +6,6 @@ id = "ravenel-green"
 authors = "Douglas C. Ravenel"
 title = "Complex Cobordism and Stable Homotopy Groups of Spheres"
 year = 2026
-version_note = "digital third edition dated 2026-07-31; theorem numbers are those of this version"
 locator_scheme = "theorem"
 locator = "Theorem 3.1.1"
 url = "https://www.sas.rochester.edu/mth/sites/doug-ravenel/mybooks/ravenel3rd.pdf"
@@ -16,6 +15,7 @@ sha256 = "17202b523fcef38e7039b145005a7a14bab4c78a57fc5ca7614a2680344370a0"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-05"
+version_note = "digital third edition dated 2026-07-31; theorem numbers are those of this version"
 cited_for = ["F2", "F4"]
 
 [[source]]
@@ -23,7 +23,6 @@ id = "miller-cobordism"
 authors = "Haynes Miller"
 title = "Notes on Cobordism"
 year = 2001
-version_note = "lecture notes dated 2001-12-05"
 locator_scheme = "theorem"
 locator = "Theorem 12.4"
 url = "https://math.mit.edu/~hrm/papers/cobordism.pdf"
@@ -33,6 +32,7 @@ sha256 = "c70bf1f21e1d36388f7b6690ec724edf7b486378e70cb408b2b8744a5589da9a"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-05"
+version_note = "lecture notes dated 2001-12-05"
 cited_for = ["F2"]
 
 [[source]]
@@ -98,3 +98,51 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled (JSTOR); cited by its locator without the text"
 cited_for = ["F6.2"]
+
+[[source]]
+id = "guillou-weibel"
+authors = "Bertrand Guillou, Charles Weibel"
+title = "Unstable operations in étale and motivic cohomology"
+year = 2013
+arxiv = "1301.0872v1"
+locator_scheme = "theorem"
+locator = "Theorem 6.2"
+url = "https://arxiv.org/abs/1301.0872v1"
+fetched_from = "https://arxiv.org/pdf/1301.0872v1"
+fetched_at = "2026-11-05T12:15:33Z"
+sha256 = "b27fcec7789d67d27b12433bf26a75343c54f09295fd3ee5c120c80a1ecbb04e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v1"
+cited_for = ["F2"]
+
+[[source]]
+id = "thom-1954"
+authors = "René Thom"
+title = "Quelques propriétés globales des variétés différentiables"
+year = 1954
+venue = "Commentarii Mathematici Helvetici 28"
+doi = "10.1007/bf02566923"
+locator_scheme = "chapter"
+locator = "Chapitre IV"
+url = "https://doi.org/10.1007/bf02566923"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["F2"]
+
+[[source]]
+id = "bousfield-1979"
+authors = "A.K. Bousfield"
+title = "The localization of spectra with respect to homology"
+year = 1979
+venue = "Topology 18"
+doi = "10.1016/0040-9383(79)90018-1"
+locator_scheme = "theorem"
+locator = "Theorem 6.6"
+url = "https://doi.org/10.1016/0040-9383(79)90018-1"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["F2"]
