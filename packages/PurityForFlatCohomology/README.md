@@ -178,7 +178,7 @@ section named instead of planning it.
 
 ### From Mathlib
 
-Pinned at `6b7abb3c7686292736be2955bd3eb9ebf63b456a`; each declaration was read at the pin.
+Pinned at `f6090c7095e1e56b3464c1daba5f24631f1290d2`; each declaration was read at the pin.
 
 - `AlgebraicGeometry.Scheme`, `AlgebraicGeometry.Scheme.Opens` with its open immersion `ι`, `Spec`:
   the carriers of every scheme here.
@@ -199,8 +199,9 @@ Pinned at `6b7abb3c7686292736be2955bd3eb9ebf63b456a`; each declaration was read 
   with `spanFinrank 𝔪 = ringKrullDim`; `ringKrullDim`; `Submodule.spanFinrank` (zero for
   infinitely generated submodules, used only on ideals of Noetherian rings);
   `IsLocalRing.closedPoint`, `IsLocalRing.maximalIdeal`, `Ring.jacobson`, `PrimeSpectrum.zeroLocus`.
-- `RingTheory.Sequence.IsWeaklyRegular`, `RingTheory.Sequence.IsRegular`, `Ideal.ofList`
-  (`Mathlib/RingTheory/Regular/RegularSequence.lean`).
+- `RingTheory.Sequence.IsWeaklyRegular`, `Ideal.ofList` (`Mathlib/RingTheory/Regular/RegularSequence.lean`):
+  the weakly regular sequences of Convention 1; the stronger `RingTheory.Sequence.IsRegular`, which
+  also asks the final quotient to be nonzero, is used nowhere here.
 - `AdicCompletion` with its commutative ring structure (`Mathlib/RingTheory/AdicCompletion/Algebra.lean`):
   classical completion, not derived completion.
 - `MorphismProperty.Over`, `MorphismProperty.Over.pullback`, `AlgebraicGeometry.IsFinite`,
@@ -215,7 +216,7 @@ Pinned at `6b7abb3c7686292736be2955bd3eb9ebf63b456a`; each declaration was read 
 
 ### From Tau Ceti
 
-Pinned at `a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039`.
+Pinned at `358314d4ab97483df4fc4cb8adcc02e74a8d9f5a`.
 
 - `TauCeti.AlgebraicGeometry.LineBundleClass` (`TauCeti/AlgebraicGeometry/LineBundle/Class.lean`):
   isomorphism classes of invertible sheaves on a scheme with its `CommGroup` structure; `Pic(U_R)`.
@@ -349,9 +350,9 @@ proofs of Theorems 3.1.3 and 6.2.7).
 
 ### From TauCetiRoadmap.PrismaticCohomology
 
-§2.0: `Arc.Cover`, `Arc.Site`, `ArcPCover`, `ArcP.Site`, `FormalArc.Site`,
-`FormalArc.PerfectoidBasis`, `FormalArc.coverByValuations` (covers by products of `p`-complete
-rank-one valuation rings with algebraically closed fraction fields); arc descent for torsion étale
+§2.0: the arc, `arc_p` and formal arc sites; the perfectoid basis of the formal arc site; covers by
+that basis and by products of `p`-complete rank-one valuation rings with algebraically closed fraction
+fields ([CS24] Lemma 2.2.3, p. 19); arc descent for torsion étale
 cohomology; the henselian comparison of torsion étale cohomology of `Spec A ∖ V(I)` and
 `Spec Â ∖ V(IÂ)`; the `arc_p` sheaf property of `R ↦ RΓ_ét(Spec R̂_p[1/p], F)`; and acyclicity of
 `𝒪` on the perfectoid formal basis, `RΓ_arc(Spf S, 𝒪) ≅ S` ([BS22] Proposition 8.10).
@@ -430,7 +431,9 @@ API (each a target):
   bijective (SchemeAndStackFoundations §0.6, `coherent_hartogs`).
 
 **Checks.**
-- For a field `K`, `puncturedSpectrum K` is empty; its dimension is `0`.
+- For a field `K`, `puncturedSpectrum K` is empty, so its Krull dimension is `⊥` (the dimension of the
+  empty poset, Mathlib `Order.krullDim_eq_bot`), while `ringKrullDim K = 0`: the two dimensions differ,
+  and the dimension-zero characterisation above is about `ringKrullDim K`, not about the empty carrier.
 - For a discrete valuation ring `R` with uniformizer `π` and fraction field `K`,
   `puncturedSpectrum R ≅ Spec K` and `Γ(puncturedSpectrum R, 𝒪) = R[1/π] ≠ R`: the depth-two
   hypothesis of Hartogs cannot be dropped. For `ℤ_p` this is `ℚ_p`, for `k⟦t⟧` it is `k((t))`.
@@ -463,10 +466,9 @@ API (each a target):
 - For closed `Z′ ⊂ Z ⊂ X`, the triple sequence
   `H^i_{Z′}(X, F) → H^i_Z(X, F) → H^i_{Z∖Z′}(X ∖ Z′, F) → H^{i+1}_{Z′}(X, F)`.
 - The local-to-global spectral sequence `E_2^{ij} = H^i_ét(X, ℋ^j_Z(−, F)) ⇒ H^{i+j}_Z(X, F)`
-  ([CS24] Lemma 7.1.1; [BC22] Lemma 2.3.2). When `U → X` is quasi-compact and `F` is a finitely
-  presented commutative group scheme or `𝒢^a` with `𝒢` quasi-coherent, the stalk of `ℋ^j_Z(−, F)` at a
-  geometric point `x̄` is `H^j_{Z_x̄}(Spec 𝒪^{sh}_{X,x̄}, F)` with `Z_x̄ = Z ×_X Spec 𝒪^{sh}_{X,x̄}`
-  ([C19] proof of Theorem 6.1, p. 13), by §0.3.
+  ([CS24] Lemma 7.1.1; [BC22] Lemma 2.3.2). The identification of the stalks of `ℋ^j_Z(−, F)` with
+  supported cohomology of strict henselizations is the stalk formula of §0.3, which is proved after
+  continuity and is not an input of this section.
 - Mayer–Vietoris for `X = V_1 ∪ V_2` open: the exact sequence
   `… → H^i(V_1 ∪ V_2, F) → H^i(V_1, F) ⊕ H^i(V_2, F) → H^i(V_1 ∩ V_2, F) → H^{i+1}(V_1 ∪ V_2, F) → …`
   (Mathlib's sheaf-cohomology Mayer–Vietoris sequence specialised to two opens).
@@ -499,16 +501,32 @@ complement, `Z_λ = Z_0 ×_{X_0} X_λ` and `Z = Z_0 ×_{X_0} X`,
 finitely presented schemes over `X_0`, whose cohomology agrees with that of the big fppf site for
 finitely presented `G`, followed by the five lemma for supports. The fixed support and the quasi-compact complement are hypotheses.
 This is the limit formalism for flat cohomology invoked in [CS24] proofs of Corollary 5.6.9, p. 76,
-and Theorem 7.1.2, p. 87.
-*Needs:* SchemeAndStackFoundations §0.9 (limits of schemes), §2.15 (`etale_cohomology_limits`); §0.2.
+and Theorem 7.1.2, p. 87. The order of proof is: the absolute statement first; then the supported
+statement, from the absolute one and the support triangle of §0.2 by the five lemma.
+
+Then prove the **stalk formula**: for a scheme `X`, a closed `Z ⊂ X` whose open complement `U → X` is
+quasi-compact, and `F` a finitely presented commutative group scheme over `X` or `𝒢^a` with `𝒢`
+quasi-coherent, the stalk of the étale sheaf `ℋ^j_Z(−, F)` of §0.2 at a geometric point `x̄` of `X` is
+`H^j_{Z_x̄}(Spec 𝒪^{sh}_{X,x̄}, F)` with `Z_x̄ = Z ×_X Spec 𝒪^{sh}_{X,x̄}` ([C19] proof of Theorem 6.1,
+p. 13). Route: `Spec 𝒪^{sh}_{X,x̄}` is the cofiltered limit of the affine étale neighbourhoods
+`X′ → X` of `x̄`, with affine transition maps; the stalk is the colimit of `H^j_{Z ×_X X′}(X′, F)` over
+these neighbourhoods, and the supported continuity statement identifies that colimit with
+`H^j_{Z_x̄}(Spec 𝒪^{sh}_{X,x̄}, F)`.
+*Needs:* SchemeAndStackFoundations §0.9 (limits of schemes), §2.15 (`etale_cohomology_limits`); §0.2
+(the support triangle and the sheaf `ℋ^j_Z(−, F)`).
 
 **Checks.**
 - For `X_λ = Spec k′` over finite separable `k′/k` with limit `Spec k^s` and `G = μ_n`, `n` invertible:
   `H^1(k^s, μ_n) = 0` is the colimit of the groups `k′^×/k′^{×n}`.
-- The strict henselization `Spec 𝒪^{sh}_{X,x̄}` as a limit of affine étale neighbourhoods gives the
-  stalk formula of §0.2; without quasi-compactness of `X ∖ Z → X` the preimages of `X ∖ Z` need not
-  form a limit of quasi-compact schemes and only the colimit statement over neighbourhoods remains.
+- Without quasi-compactness of `X ∖ Z → X` the preimages of `X ∖ Z` in the étale neighbourhoods need
+  not form a limit of quasi-compact schemes, and only the colimit statement over neighbourhoods
+  remains; the stalk formula therefore carries the quasi-compactness hypothesis.
 - For `Z_0 = X_0` the supported statement is the absolute one; for `Z_0 = ∅` both sides vanish.
+- The stalk formula with `X = Z = Spec k` for a field `k`, `F = μ_n` with `n` invertible in `k` and the
+  geometric point over `k^s`: the stalk of `ℋ^1_X(−, μ_n)` is `H^1(k^s, μ_n) = 0`, the colimit of the
+  Kummer groups `k′^×/k′^{×n}` over finite separable `k′/k`, whereas the value `H^1(k, μ_n) = k^×/k^{×n}`
+  at `X` itself is nonzero for `k = ℚ`, `n = 2`; a "stalk" taken at `𝒪_{X,x}` instead of `𝒪^{sh}_{X,x̄}`
+  would return the nonzero group.
 
 ### 0.4 Regular sequences force vanishing of cohomology with supports
 
@@ -841,6 +859,12 @@ EtaleCohomologyFoundations §F.0.2; Mathlib `MorphismProperty.Over.pullback`,
   subscheme every finite étale scheme pulls back to the empty one, so the functor is essentially
   surjective but not faithful as soon as `X` has a nonempty finite étale scheme with two distinct
   endomorphisms (for instance `X ⊔ X`).
+- For `f : Spec ℂ → Spec ℝ`, `finiteEtalePullback f` sends the connected degree-two cover
+  `Spec ℂ → Spec ℝ` to `Spec ℂ ⊔ Spec ℂ`, since `ℂ ⊗_ℝ ℂ ≅ ℂ × ℂ`: the rank `2` is preserved,
+  connectedness is not, and the functor is not full, because there is no map `Spec ℝ → Spec ℂ` over
+  `Spec ℝ` (no `ℝ`-algebra map `ℂ → ℝ`) while after pullback there are two maps
+  `Spec ℂ → Spec ℂ ⊔ Spec ℂ` over `Spec ℂ`. So pullback along a faithfully flat map need not be an
+  equivalence, and the hypotheses of (a) and (b) are about the punctured spectrum, not about flatness.
 
 ### Examples
 
@@ -933,7 +957,7 @@ API (each a target):
   factorization criterion (Stacks 07C3, for the class of flat finitely presented algebras): a finitely
   presented `B → A″` gives `A′ ⊗_A B → S → A″` with `S` flat and finitely presented over `A′`; descend
   `S` and its flatness to a flat finitely presented algebra over some flat finitely presented
-  `A`-algebra `A′_i` in a presentation of `A′`, as in [CS24] §2.3.3, footnote 13 (CS24 line 997),
+  `A`-algebra `A′_i` in a presentation of `A′`, as in [CS24] §2.3.3, footnote 13, p. 24,
   and factor `B` through it. The faithfully flat case, ind-fppf maps, is PerfectoidQuotientsPartII
   §§Q7.1, Q7.3; faithful flatness is not needed for the pro-ppf statement.
 - Fppf and Zariski covers are pro-fppf covers; a pro-fppf cover is an fpqc cover.
@@ -1179,7 +1203,7 @@ Route: reduce to smooth `G` by the Bégueri resolution (§3.2); for `0 < e_k ≤
 `A/(g_1, f_2, …, f_m)`, so the discrete deformation sequence of §3.1 has kernel a finite projective
 module, whose cohomology with supports vanishes below `d` by §0.4; iterate through the powers of
 `g_1` and induct on `m`.
-*Needs:* §§0.2, 0.4, 3.1, 3.2; Mathlib `RingTheory.Sequence.IsRegular`.
+*Needs:* §§0.2, 0.4, 3.1, 3.2; Mathlib `RingTheory.Sequence.IsWeaklyRegular` (Convention 1).
 
 **Checks.**
 - For `m = 0` (`B = B′`) the statement is the identity.
@@ -1310,7 +1334,7 @@ limit gives hyperdescent of `A′ ↦ A_inf(A′)`. Base change `𝕄(G_{A′}) 
 resolution of `𝕄(G)` by finite projective `A_inf(A)`-modules, which stays exact because `𝕄(G)` is
 `p`-power torsion and `A_inf(A′)` is `p`-torsion free, give the first functor; the support triangle of
 §5.1 the second; fibres of `V − 1` commute with limits.
-*Needs:* §5.1; PrismaticCohomology §2.0 (`FormalArc.PerfectoidBasis`, acyclicity of `𝒪`);
+*Needs:* §5.1; PrismaticCohomology §2.0 (the perfectoid basis of the formal arc site, acyclicity of `𝒪`);
 PrismaticCohomologyPartII gap:prismatic-dieudonne-perfectoid; PerfectoidSpaces §P4.15.2.
 
 **Checks.**
@@ -1438,7 +1462,8 @@ perfectoid `A`-algebras ([CS24] Theorem 6.1.1 and (6.1.1.1), p. 82; announced as
 assume `A` a `ℤ_p`-algebra and `Z` cut out by finitely many elements; for `A = ∏ A_i` as in §5.7, `Z` is
 cut out by one `a | p`, both sides are concentrated in degree `0` by §5.7 and §5.1, and the unique square
 of §5.7 identifies them; in general both sides satisfy hyperdescent (§§5.3, 5.8) and such products form
-a basis of the `p`-complete arc topology (PrismaticCohomology §2.0, `FormalArc.coverByValuations`).
+a basis of the `p`-complete arc topology (PrismaticCohomology §2.0, covers by products of valuation rings;
+[CS24] Lemma 2.2.3, p. 19).
 *Needs:* §§5.1, 5.3, 5.7, 5.8; PrismaticCohomology §2.0; PerfectoidQuotients §0.6.
 
 **Checks.**
@@ -1843,7 +1868,7 @@ a line bundle on `U_{R_𝔪}`, compatibly with tensor products, which gives an i
 - The quadric surface `xw − yz = 0` is `ℙ¹ × ℙ¹` with `Pic(X)/ℤ[𝒪(1)] ≅ ℤ`, torsion free but nonzero: the
   torsion restriction cannot be dropped in dimension `2`.
 - A smooth plane cubic over an algebraically closed field has infinite `(Pic(X)/ℤ[𝒪(1)])_tors` (its
-  prime-to-characteristic torsion points; [CS24] p. 89 uses an elliptic curve): dimension `≥ 2` is
+  prime-to-characteristic torsion points; [CS24] Remark 7.2.4, p. 90, uses an elliptic curve): dimension `≥ 2` is
   needed. Smoothness matters for this Check: for the cuspidal cubic `y²z = x³` over `ℂ`,
   `Pic^0(X) ≅ (ℂ, +)` is torsion free and, as `deg 𝒪(1) = 3`, the torsion subgroup is `ℤ/3`.
 
@@ -1869,7 +1894,9 @@ injection in degree two.
 ### 7.11 The Brauer comparison of Gabber and de Jong
 
 Prove: for a scheme `X` with an ample invertible sheaf (EGA II 4.5.3, so `X` is quasi-compact and
-separated), in particular for every quasi-affine `X` such as `Spec R` and `puncturedSpectrum R`, the map
+separated), in particular for every quasi-compact open subscheme of an affine scheme (Mathlib's
+`IsQuasiAffine` includes `CompactSpace`): `Spec R` for every ring `R`, and `puncturedSpectrum R` whenever
+it is quasi-compact, for instance for `R` Noetherian (§0.1), the map
 `SchemeBrauerGroup.toCohomologicalBrauer : Br(X) → H²(X, 𝔾_m)_tors` of SchemeAndStackFoundations §2.22 is
 an isomorphism ([dJ02], Theorem 1.1, after Gabber; [CS24] proof of Theorem 7.2.5, p. 90). Route: de Jong's
 twisted sheaves: a torsion class `α` is represented by a `𝔾_m`-gerbe, and an ample line bundle produces a
@@ -1881,6 +1908,12 @@ locally free `α`-twisted sheaf of positive rank, whose endomorphism algebra is 
 - For `X = Spec K` a field it is the classical identification of `Br(K)` with `H²(K, 𝔾_m)`.
 - For `X = Spec R` affine the ample bundle is `𝒪`, recovering Gabber's affine theorem; for
   `X = puncturedSpectrum k⟦x, y, z⟧` (quasi-affine, not affine) the theorem still applies.
+- Quasi-compactness of the open is a hypothesis, not a consequence of §0.1: for
+  `R = k[x_1, x_2, …]_{(x_1, x_2, …)}` (every finite subset of variables, localised at the maximal ideal
+  they generate), `puncturedSpectrum R = ⋃_i D(x_i)` has no finite subcover, since the prime
+  `(x_1, …, x_n)R` lies in `D(x_{n+1})` but in none of `D(x_1), …, D(x_n)`; so `puncturedSpectrum R` is
+  not quasi-affine in Mathlib's sense and the theorem makes no assertion about it. For `R = k⟦x, y⟧`,
+  `puncturedSpectrum R = D(x) ∪ D(y)` is quasi-compact and the theorem applies.
 - The comparison is only for torsion classes: on the punctured spectrum of the four-dimensional Segre
   cone of §7.14, `H²(U_R, 𝔾_m)` has nontorsion classes that are not Azumaya.
 
@@ -2418,12 +2451,12 @@ them, instead of planning them (see Scope and ownership).
 The following concern the arXiv versions read ([CS24] arXiv:1912.10932v3, [C19] arXiv:1711.06456v4) and
 the 2005 edition of [SGA2].
 
-- [CS24] Theorem 7.1.2, p. 87 (text line 3630): the regular clause "regular of dimension `≥ d − 1`" admits
+- [CS24] Theorem 7.1.2, p. 87: the regular clause "regular of dimension `≥ d − 1`" admits
   fields when `d = 1`, and then the conclusion fails (`X = Spec k ⊔ Spec k`, `Z` one point); the proof uses
   Theorem 6.2.7, which excludes fields. §7.1 requires dimension `≥ max(d − 1, 1)`.
-- [CS24] proof of Theorem 3.3.1(b), p. 35 (line 1453): "`vdim(R_d) ≥ 3`" means `vdim(R) ≥ 3`.
-- [CS24] proof of Theorem 6.2.7, p. 85 (line 3578): "`f ∈ (p, x_1, …, x_n)²`" means `(p, x_1, …, x_d)²`.
-- [CS24] proofs of Theorems 7.2.1 (p. 89, line 3726) and 7.2.5 (p. 90, line 3774): "`n ≥ 0`" means `n ≥ 1`.
+- [CS24] proof of Theorem 3.3.1(b), p. 35: "`vdim(R_d) ≥ 3`" means `vdim(R) ≥ 3`.
+- [CS24] proof of Theorem 6.2.7, p. 85: "`f ∈ (p, x_1, …, x_n)²`" means `(p, x_1, …, x_d)²`.
+- [CS24] proofs of Theorems 7.2.1 (p. 89) and 7.2.5 (p. 90): "`n ≥ 0`" means `n ≥ 1`.
 - [CS24] Lemma 4.1.12, p. 40: the hypothesis `n < dim R` is not used in the proof, and the proof of
   Theorem 6.2.7 applies the lemma with `n = dim R`; §4.3 states it for every integer `n`.
 - [C19] Proposition 2.2, p. 4: for noncommutative `G` the argument shows triviality only of the fibre of

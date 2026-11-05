@@ -1,6 +1,8 @@
-import Mathlib
-import TauCeti.AlgebraicGeometry.LineBundle.Class
-import TauCeti.RingTheory.RegularLocalRing.Basic
+module
+
+public import Mathlib
+public import TauCeti.AlgebraicGeometry.LineBundle.Class
+public import TauCeti.RingTheory.RegularLocalRing.Basic
 
 /-!
 # Purity for flat cohomology and the conjectures of Gabber: target signatures
@@ -60,6 +62,8 @@ The following headline theorems are not statable at the pinned libraries.
 -/
 
 universe u v
+
+@[expose] public section
 
 namespace TauCetiRoadmap.PurityForFlatCohomology
 
