@@ -1,0 +1,100 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "BordismFormalGroups"
+
+[[source]]
+id = "ravenel-green"
+authors = "Douglas C. Ravenel"
+title = "Complex Cobordism and Stable Homotopy Groups of Spheres"
+year = 2026
+version_note = "digital third edition dated 2026-07-31; theorem numbers are those of this version"
+locator_scheme = "theorem"
+locator = "Theorem 3.1.1"
+url = "https://www.sas.rochester.edu/mth/sites/doug-ravenel/mybooks/ravenel3rd.pdf"
+fetched_from = "https://www.sas.rochester.edu/mth/sites/doug-ravenel/mybooks/ravenel3rd.pdf"
+fetched_at = "2026-11-05T01:10:51Z"
+sha256 = "17202b523fcef38e7039b145005a7a14bab4c78a57fc5ca7614a2680344370a0"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["F2", "F4"]
+
+[[source]]
+id = "miller-cobordism"
+authors = "Haynes Miller"
+title = "Notes on Cobordism"
+year = 2001
+version_note = "lecture notes dated 2001-12-05"
+locator_scheme = "theorem"
+locator = "Theorem 12.4"
+url = "https://math.mit.edu/~hrm/papers/cobordism.pdf"
+fetched_from = "https://math.mit.edu/~hrm/papers/cobordism.pdf"
+fetched_at = "2026-11-05T01:11:04Z"
+sha256 = "c70bf1f21e1d36388f7b6690ec724edf7b486378e70cb408b2b8744a5589da9a"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["F2"]
+
+[[source]]
+id = "hatcher-at"
+authors = "Allen Hatcher"
+title = "Algebraic Topology"
+year = 2002
+locator_scheme = "theorem"
+locator = "Theorem 4J.1"
+url = "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf"
+fetched_from = "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf"
+fetched_at = "2026-11-05T01:11:34Z"
+sha256 = "bebb3032bf9021b956da3bd070eb6c67dc662cf849be9cdf6679f677560e5618"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["F4", "F6.2"]
+
+[[source]]
+id = "quillen-elementary"
+authors = "Daniel Quillen"
+title = "Elementary proofs of some results of cobordism theory using Steenrod operations"
+year = 1971
+venue = "Advances in Mathematics 7"
+doi = "10.1016/0001-8708(71)90041-7"
+locator_scheme = "section"
+locator = "Introduction"
+url = "https://doi.org/10.1016/0001-8708(71)90041-7"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["F2"]
+
+[[source]]
+id = "quillen-fgl-bulletin"
+authors = "Daniel Quillen"
+title = "On the formal group laws of unoriented and complex cobordism theory"
+year = 1969
+venue = "Bulletin of the American Mathematical Society 75"
+doi = "10.1090/S0002-9904-1969-12401-8"
+locator_scheme = "theorem"
+locator = "Theorem 3"
+url = "https://www.ams.org/journals/bull/1969-75-06/S0002-9904-1969-12401-8/S0002-9904-1969-12401-8.pdf"
+fetched_from = "https://www.ams.org/journals/bull/1969-75-06/S0002-9904-1969-12401-8/S0002-9904-1969-12401-8.pdf"
+fetched_at = "2026-11-05T01:18:46Z"
+sha256 = "9e5c1ead222cab64d72e6481164641888765d2bccf27a5a59a45940c1d7e217c"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["F2"]
+
+[[source]]
+id = "dhs-nilpotence-i"
+authors = "Ethan S. Devinatz, Michael J. Hopkins, Jeffrey H. Smith"
+title = "Nilpotence and stable homotopy theory I"
+year = 1988
+venue = "Annals of Mathematics 128"
+doi = "10.2307/1971440"
+locator_scheme = "section"
+locator = "Sections 1-3"
+url = "https://doi.org/10.2307/1971440"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (JSTOR); cited by its locator without the text"
+cited_for = ["F6.2"]
