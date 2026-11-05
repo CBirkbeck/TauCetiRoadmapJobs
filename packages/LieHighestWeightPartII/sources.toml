@@ -48,7 +48,24 @@ url = "https://www.math.utah.edu/~ptrapa/sommers-preliminary-notes.pdf"
 fetched_from = "https://www.math.utah.edu/~ptrapa/sommers-preliminary-notes.pdf"
 fetched_at = "2026-10-26T21:13:54Z"
 sha256 = "4efd401e9f7ed75cd1ec83d6a7f51e5be744ed15c08e72a8651462649fa54dc8"
-licence_class = "author-page"
+licence_class = "institutional"
 status = "certified"
 accessed = "2026-10-26"
 cited_for = ["0.3", "3.1"]
+
+[[source]]
+id = "KIR"
+authors = "Alexander Kirillov, Jr."
+title = "Introduction to Lie Groups and Lie Algebras"
+year = 2008
+locator_scheme = "section"
+locator = "Theorem 6.33, p.75; Appendix C, §§C.1–C.4, pp.124–129"
+url = "https://www.math.stonybrook.edu/~kirillov/mat552/liegroups.pdf"
+fetched_from = "https://www.math.stonybrook.edu/~kirillov/mat552/liegroups.pdf"
+fetched_at = "2026-11-05T08:11:27Z"
+sha256 = "5003ce413998b5804cf67f3ac71f223a75757da035fc8eb4d05c2c264200de7c"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "lecture-notes draft on the author's page; the published book (Cambridge University Press, 2008) was not collated"
+cited_for = ["2.0"]

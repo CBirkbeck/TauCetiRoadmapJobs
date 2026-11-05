@@ -1,32 +1,41 @@
-import Mathlib
-import TauCeti.Algebra.Lie.InnerAutomorphism
+module
+
+public import Mathlib
+public import TauCeti.Algebra.Lie.InnerAutomorphism
+public import TauCeti.RepresentationTheory.Spin.Polarization.TypeD.Representation
+public import TauCeti.Algebra.AlgebraicGroup.Representation.PointsAction
+public import TauCeti.Algebra.AlgebraicGroup.Representation.SemisimplePoint
+public import TauCeti.Algebra.AlgebraicGroup.Semisimple.Basic
 
 /-!
 # Highest weight theory, Part II: target signatures
 
 The roadmap is `README.md`; this file is not the roadmap. It states the roadmap's headline
-theorems against the pinned Mathlib and Tau Ceti, each with `sorry`, together with the three
-simple definitions they need: zero-inclusive `sl₂`-triples, the group `Int(L)` of inner
-automorphisms (the group of LieHighestWeight Layer 7, restated here on linear automorphisms so
-that the statements elaborate), and the increasing weight filtration of a triple on a module.
+theorems against the pinned Mathlib and Tau Ceti, each with `sorry`, together with the simple
+definitions they need: zero-inclusive `sl₂`-triples, the group `Int(L)` of inner automorphisms
+(the group of LieHighestWeight Layer 7, restated here on linear automorphisms so that the
+statements elaborate), the increasing weight filtration of a triple on a module, and, for
+Layer 5, the weight pattern of an endomorphism, `q`-geometric points and positive real parts of
+points of a complex affine algebraic group, taken as a finite-type commutative Hopf `ℂ`-algebra.
 
 Throughout, `K` is an algebraically closed field of characteristic zero and conjugacy of triples
-means conjugacy under `Int(L)`.
+means conjugacy under `Int(L)`. The type-`D` recognition theorem is stated on Mathlib's split
+carrier `LieAlgebra.Orthogonal.typeD`, on which Tau Ceti's half-spin module `S⁺` lives.
 
 Headline theorems that are not statable at the pins:
 
-* **Recognition of the positive real part** (Ciubotaru–Harris, Proposition 10.2; README Layer 5):
-  equal geometric weight patterns of two semisimple elements of a connected complex semisimple
-  group force their positive real parts to be conjugate. The pins have no connected semisimple
-  algebraic group together with its category of finite-dimensional algebraic representations and
-  the character lattice of a maximal torus, which the statement quantifies over.
-* **Half-spin separation of very even orbits** (Ciubotaru–Harris, Lemma 10.9; README Layer 2), and
-  with it the finite test family of README Layer 4 (standard modules, one half-spin module per
-  factor of type `D`, adjoint modules of exceptional factors): the pins have half-spin Lie modules
-  only on Tau Ceti's Clifford-polarisation carrier, with no Lie algebra isomorphism to Mathlib's
-  `LieAlgebra.Orthogonal.so`, and no decomposition of a semisimple Lie algebra into its simple
-  ideals with their types.
+* **The finite test family of README Layer 4** (standard modules of the classical factors, one
+  half-spin module per factor of type `D`, adjoint modules of the exceptional factors): the pins
+  have no decomposition of a semisimple Lie algebra into its simple ideals together with their
+  types, over which that statement quantifies. The recognition theorem over all finite-dimensional
+  modules is stated.
+
+The highest-weight half-integrality test (Ciubotaru–Harris, Lemma 6.30; README §5.2) is a short
+coset argument on top of LieHighestWeight Layer 3 and is kept in the README as a target rather
+than stated here.
 -/
+
+@[expose] public section
 
 universe u v
 
@@ -119,7 +128,8 @@ zero-inclusive triples whose weight filtrations on the standard module have the 
 are conjugate under `Int(so(n, K))`, provided the neutral element `h` has a nonzero kernel on
 `Kⁿ`. That proviso says that the Jordan type of `e` has a part of odd size, i.e. is not very even;
 it holds whenever `n` is odd. For very even Jordan types the conclusion fails, and README Layer 2
-separates the two classes by a half-spin module (Ciubotaru–Harris, Lemma 10.9). -/
+separates the two classes by a half-spin module: see
+`exists_innerAut_of_finrank_weightFiltration_typeD` (Ciubotaru–Harris, Lemma 10.9). -/
 theorem exists_innerAut_of_finrank_weightFiltration_so
     {K : Type*} [Field K] [IsAlgClosed K] [CharZero K]
     {n : Type*} [Fintype n] [DecidableEq n]
@@ -131,6 +141,38 @@ theorem exists_innerAut_of_finrank_weightFiltration_so
     ∃ φ ∈ innerAutGroup K (LieAlgebra.Orthogonal.so n K),
       φ h = h' ∧ φ e = e' ∧ φ f = f' := sorry
 
+/-- **Type `D`: the standard module and one half-spin module recognise triples.** On Mathlib's
+split even orthogonal algebra `typeD ι K` (isomorphic to `so(2r, K)`, `r = |ι|`, README §2.0),
+let `P` be a polarisation of a quadratic space with no remainder line and `b` a basis of its
+isotropic summand `W` indexed by `ι`, so that the even half-spin module `S⁺ = ⋀^even W`
+(`TauCeti.spinPlus Q P`, of dimension `2^(r−1)` for `r ≥ 1`) is a `typeD ι K`-module through
+`TauCeti.SpinPolarizationData.typeDSpinPlusLieRep`, `2` being invertible in `K`. Two
+zero-inclusive triples whose weight filtrations on the standard module `K^(ι ⊕ ι)` and on `S⁺`
+both have the same dimensions in every degree are conjugate under `Int(typeD ι K)`, with no
+restriction on the Jordan type: away from very even partitions the standard module decides, and
+for very even partitions `S⁺` separates the two classes (README §§2.3–2.4; Ciubotaru–Harris,
+Lemma 10.9). -/
+theorem exists_innerAut_of_finrank_weightFiltration_typeD
+    {K : Type*} [Field K] [IsAlgClosed K] [CharZero K]
+    {V : Type*} [AddCommGroup V] [Module K V] {Q : QuadraticForm K V}
+    (P : TauCeti.SpinPolarizationData Q) {ι : Type*} [Fintype ι] [DecidableEq ι]
+    (b : Module.Basis ι K P.W) (hline : P.line = ⊥)
+    {h e f h' e' f' : LieAlgebra.Orthogonal.typeD ι K}
+    (t : IsSl2TripleOrZero h e f) (t' : IsSl2TripleOrZero h' e' f')
+    (hdim : ∀ i : ℤ, finrank K (weightFiltration K h (ι ⊕ ι → K) i) =
+      finrank K (weightFiltration K h' (ι ⊕ ι → K) i))
+    (hspin :
+      letI : Invertible (2 : K) := invertibleOfNonzero two_ne_zero
+      letI : LieRing (Module.End K (TauCeti.spinPlus Q P)) := LieRing.ofAssociativeRing
+      letI : LieRingModule (LieAlgebra.Orthogonal.typeD ι K) (TauCeti.spinPlus Q P) :=
+        LieRingModule.compLieHom _ (P.typeDSpinPlusLieRep b hline)
+      letI : LieModule K (LieAlgebra.Orthogonal.typeD ι K) (TauCeti.spinPlus Q P) :=
+        LieModule.compLieHom _ (P.typeDSpinPlusLieRep b hline)
+      ∀ i : ℤ, finrank K (weightFiltration K h (TauCeti.spinPlus Q P) i) =
+        finrank K (weightFiltration K h' (TauCeti.spinPlus Q P) i)) :
+    ∃ φ ∈ innerAutGroup K (LieAlgebra.Orthogonal.typeD ι K),
+      φ h = h' ∧ φ e = e' ∧ φ f = f' := sorry
+
 /-! ## Layer 3: exceptional types -/
 
 /-- **The adjoint module recognises triples in exceptional types.** If `L` is isomorphic to the
@@ -138,8 +180,8 @@ split Lie algebra of type `G₂`, `F₄`, `E₆`, `E₇` or `E₈`, two zero-inc
 filtrations on the adjoint module `L` have the same dimensions are conjugate under `Int(L)`. The
 types `E₆` and `E₇` are included and are proved in their own root systems (README Layer 3;
 Ciubotaru–Harris, Lemma 10.9 and Tables 2–4). The finite-dimensionality and Killing hypotheses
-hold for these algebras; they are carried so that the statement does not depend on Serre's
-presentation theorem. -/
+hold for these algebras by LieHighestWeight Layer 8, on which the proof depends; they are carried
+explicitly and are harmless. -/
 theorem exists_innerAut_of_finrank_weightFiltration_adjoint_exceptional
     {K L : Type*} [Field K] [IsAlgClosed K] [CharZero K] [LieRing L] [LieAlgebra K L]
     [FiniteDimensional K L] [LieAlgebra.IsKilling K L]
@@ -169,5 +211,55 @@ theorem exists_innerAut_iff_finrank_weightFiltration
       ∀ (M : Type (max u v)) [AddCommGroup M] [Module K M] [LieRingModule L M]
         [LieModule K L M] [FiniteDimensional K M] (i : ℤ),
         finrank K (weightFiltration K h M i) = finrank K (weightFiltration K h' M i) := sorry
+
+/-! ## Layer 5: weight patterns and positive real parts -/
+
+/-- The weight pattern of a complex endomorphism `A` at `i ∈ ℤ`, for a fixed real `q`: the
+dimension of the sum of the eigenspaces of `A` at the eigenvalues of absolute value `q^(i/2)`.
+For a semisimple `A` whose eigenvalues all have absolute value in `q^(ℤ/2)` this is the sum of
+the multiplicities of the eigenvalues of absolute value `q^(i/2)` (Ciubotaru–Harris, §10.1;
+README §5.3). -/
+noncomputable def weightPattern (q : ℝ) {V : Type*} [AddCommGroup V] [Module ℂ V]
+    (A : Module.End ℂ V) (i : ℤ) : ℕ :=
+  finrank ℂ (⨆ (μ : ℂ) (_ : ‖μ‖ = Real.sqrt q ^ i), A.eigenspace μ : Submodule ℂ V)
+
+/-- A `q`-geometric point of a complex affine algebraic group, given as a finite-type
+commutative Hopf `ℂ`-algebra `H` with its convolution group of `ℂ`-points: on every
+finite-dimensional `H`-comodule every eigenvalue of the action of `s` has absolute value
+`q^(i/2)` for some integer `i` (the complex form of Ciubotaru–Harris, Definition 2.5;
+README Conventions and §5.3). -/
+def IsGeometricPoint (q : ℝ) {H : TauCeti.FiniteTypeCommHopfAlgCat.{0, 0} ℂ}
+    (s : WithConv (H →ₐ[ℂ] ℂ)) : Prop :=
+  ∀ (M : TauCeti.FGComoduleCat.{0, 0, 0} ℂ H) (μ : ℂ),
+    (TauCeti.Comodule.basePointsRepresentation (H := H) M s).HasEigenvalue μ →
+      ∃ i : ℤ, ‖μ‖ = Real.sqrt q ^ i
+
+/-- `r` is a positive real part of the point `s`: on every finite-dimensional `H`-comodule, `r`
+acts on the `μ`-eigenspace of `s` by the scalar `|μ|`. For a semisimple `s` this is satisfied by
+the positive real part `r(s)` of Ciubotaru–Harris, §10.1, and determines `r` (README §5.4). -/
+def IsPositiveRealPart {H : TauCeti.FiniteTypeCommHopfAlgCat.{0, 0} ℂ}
+    (s r : WithConv (H →ₐ[ℂ] ℂ)) : Prop :=
+  ∀ (M : TauCeti.FGComoduleCat.{0, 0, 0} ℂ H) (μ : ℂ) (v : M),
+    v ∈ (TauCeti.Comodule.basePointsRepresentation (H := H) M s).eigenspace μ →
+      TauCeti.Comodule.basePointsRepresentation (H := H) M r v = ((‖μ‖ : ℝ) : ℂ) • v
+
+/-- **Recognition of the positive real part.** Let `H` be the coordinate algebra of a connected
+complex semisimple group (`TauCeti.semisimpleCommHopfAlgProperty`), `q > 1`, and `s, s'`
+semisimple `q`-geometric points with equal weight patterns on every finite-dimensional
+`H`-comodule in every degree. Then positive real parts `r` of `s` and `r'` of `s'` are conjugate
+by a point of `H` (Ciubotaru–Harris, Proposition 10.2; README §5.5). Existence of a positive real
+part of a semisimple point is README §5.4. -/
+theorem exists_conj_positiveRealPart_of_weightPattern_eq
+    {q : ℝ} (hq : 1 < q) {H : TauCeti.FiniteTypeCommHopfAlgCat.{0, 0} ℂ}
+    (hH : TauCeti.semisimpleCommHopfAlgProperty ℂ H)
+    {s s' r r' : WithConv (H →ₐ[ℂ] ℂ)}
+    (hs : TauCeti.HopfAlgebra.IsSemisimplePoint s)
+    (hs' : TauCeti.HopfAlgebra.IsSemisimplePoint s')
+    (hgs : IsGeometricPoint q s) (hgs' : IsGeometricPoint q s')
+    (hpat : ∀ (M : TauCeti.FGComoduleCat.{0, 0, 0} ℂ H) (i : ℤ),
+      weightPattern q (TauCeti.Comodule.basePointsRepresentation (H := H) M s) i =
+        weightPattern q (TauCeti.Comodule.basePointsRepresentation (H := H) M s') i)
+    (hr : IsPositiveRealPart s r) (hr' : IsPositiveRealPart s' r') :
+    ∃ g : WithConv (H →ₐ[ℂ] ℂ), g * r * g⁻¹ = r' := sorry
 
 end TauCetiRoadmap.LieHighestWeightPartII
