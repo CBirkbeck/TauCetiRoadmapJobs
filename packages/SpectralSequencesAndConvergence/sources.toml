@@ -1,0 +1,131 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "SpectralSequencesAndConvergence"
+
+[[source]]
+id = "stacks-012K"
+authors = ["The Stacks Project Authors"]
+title = "The Stacks Project, chapter Homological Algebra"
+year = 2026
+locator_scheme = "tag"
+locator = "012K"
+url = "https://stacks.math.columbia.edu/tag/012K"
+fetched_from = "https://stacks.math.columbia.edu/download/homology.pdf#nameddest=012K"
+fetched_at = "2026-11-05T04:40:26Z"
+sha256 = "f3d73df1c27a6d88f9e4dd0f01697b3dd8553b88e3ea078539a9b512dc4d9576"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["filtered complex"]
+
+[[source]]
+id = "browning-sawin2020"
+authors = ["T. Browning", "W. Sawin"]
+title = "A geometric version of the circle method"
+year = 2020
+doi = "10.4007/annals.2020.191.3.4"
+arxiv = "1711.10451"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/1711.10451"
+fetched_from = "https://arxiv.org/pdf/1711.10451"
+fetched_at = "2026-11-05T04:41:03Z"
+sha256 = "4518f88842e2bc19d2b2e0634f1df54c96d36164331e88fc30ef892f3c879072"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v3 read; journal version Ann. of Math. 191 (2020), no. 3, 893-948, DOI inferred from the issue's reference [2020, 191(3), no. 4]; check numbering against the journal"
+cited_for = ["convergence in a range of degrees"]
+
+[[source]]
+id = "helle-rognes2024"
+authors = ["G. O. Helle", "J. Rognes"]
+title = "Boardman's whole-plane obstruction group for Cartan-Eilenberg systems"
+year = 2024
+locator_scheme = "section"
+locator = "§1"
+url = "https://www.mn.uio.no/math/personer/vit/rognes/papers/ce.pdf"
+fetched_from = "https://www.mn.uio.no/math/personer/vit/rognes/papers/ce.pdf"
+fetched_at = "2026-11-05T04:47:33Z"
+sha256 = "b57ad81f08733c2bf4e259fe3190cbc58521a79a097221646ea716439977f09f"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["Cartan–Eilenberg systems and the whole-plane obstruction"]
+
+[[source]]
+id = "eilenberg-moore1962"
+authors = ["S. Eilenberg", "J. C. Moore"]
+title = "Limits and spectral sequences"
+year = 1962
+doi = "10.1016/0040-9383(62)90093-9"
+locator_scheme = "section"
+locator = "§7"
+url = "https://www.sciencedirect.com/science/article/pii/0040938362900939"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["limits and convergence"]
+
+[[source]]
+id = "weibel1994"
+authors = ["C. A. Weibel"]
+title = "An Introduction to Homological Algebra"
+year = 1994
+doi = "10.1017/CBO9781139644136"
+locator_scheme = "section"
+locator = "§5.2, §5.4, §5.5, §5.9"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["terminology, bounded and convergent spectral sequences", "spectral sequence of a filtered complex", "classical and complete convergence theorems", "exact couples"]
+
+[[source]]
+id = "boardman1999"
+authors = ["J. M. Boardman"]
+title = "Conditionally convergent spectral sequences"
+year = 1999
+doi = "10.1090/conm/239/03597"
+locator_scheme = "theorem"
+locator = "Definition 5.10, Theorems 7.1, 8.2, 8.10, 8.13"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (Contemp. Math. 239, 49-84); cited by its locator without the text; theorem numbers taken from citations in helle-rognes2024 and StableHomotopyKTheory"
+cited_for = ["conditional convergence"]
+
+[[source]]
+id = "mccleary2001"
+authors = ["J. McCleary"]
+title = "A User's Guide to Spectral Sequences, 2nd ed."
+year = 2001
+doi = "10.1017/CBO9780511626289"
+locator_scheme = "chapter"
+locator = "Ch. 2, Ch. 3"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["convergence", "filtered complexes and exact couples"]
+
+[[source]]
+id = "massey1952"
+authors = ["W. S. Massey"]
+title = "Exact couples in algebraic topology (parts I and II)"
+year = 1952
+doi = "10.2307/1969805"
+locator_scheme = "page"
+locator = "pp. 363-396"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["exact couples"]
+
+[[source]]
+id = "cartan-eilenberg1956"
+authors = ["H. Cartan", "S. Eilenberg"]
+title = "Homological Algebra"
+year = 1956
+locator_scheme = "chapter"
+locator = "Ch. XV"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["spectral sequences"]
