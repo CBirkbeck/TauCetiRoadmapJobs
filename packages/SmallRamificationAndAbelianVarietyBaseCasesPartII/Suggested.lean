@@ -1,7 +1,9 @@
-import Mathlib
-import TauCeti.Algebra.Category.ModuleCat.Sheaf.ExteriorPower
-import TauCeti.AlgebraicGeometry.Modules.Differentials.Basic
-import TauCeti.AlgebraicGeometry.Cohomology.Basic
+module
+
+public import Mathlib
+public import TauCeti.Algebra.Category.ModuleCat.Sheaf.ExteriorPower.Basic
+public import TauCeti.AlgebraicGeometry.Modules.Differentials.Basic
+public import TauCeti.AlgebraicGeometry.Cohomology.Basic
 
 /-!
 # Small ramification and low-degree Hodge vanishing, Part II: target signatures
@@ -23,6 +25,8 @@ The following headline theorems are not statable at the pins:
 * Layer 3: the vanishing of odd low étale cohomology and the full scalar Tate
   action in degree two lack geometric rational étale cohomology with Galois action.
 -/
+
+@[expose] public section
 
 namespace TauCetiRoadmap.SmallRamificationAndAbelianVarietyBaseCasesPartII
 
