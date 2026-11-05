@@ -1,4 +1,6 @@
-import Mathlib
+module
+
+public import Mathlib
 
 /-!
 # Finite flat groups and integral p-adic Hodge theory, Part II: target signatures
@@ -54,6 +56,8 @@ mathematical carrier, rather than a few simple definitions on existing carriers:
 Mathlib's Witt-vector isocrystal class supplies a rational Frobenius module over a perfect field.
 It supplies neither the integral display carrier nor any of these tensor deformation problems.
 -/
+
+@[expose] public section
 
 namespace TauCetiRoadmap.FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII
 

@@ -112,7 +112,7 @@ cited_for = ["README, Layer 6 central ordinary Breuil–Kisin lift and specified
 [[source]]
 id = "Wintenberger97"
 locator_scheme = "section"
-locator = "§4.1.2, p.1320; Corollary4.4.2 and remarks, pp.1327–1329; §4.5, pp.1329–1333, particularly Proposition4.5.3 and following unnumbered corollary"
+locator = "§0, p.1293; §4.1.2, p.1320; Corollary4.4.2 and remarks, pp.1327–1329; §4.5, pp.1329–1333, particularly Proposition4.5.3 and following unnumbered corollary"
 url = "https://aif.centre-mersenne.org/item/10.5802/aif.1600.pdf"
 fetched_from = "https://aif.centre-mersenne.org/item/10.5802/aif.1600.pdf"
 fetched_at = "2026-10-24T20:23:23Z"
@@ -180,7 +180,7 @@ version_note = "Forum of Mathematics, Pi12 (2024), e20, published67-page PDF"
 [[source]]
 id = "Lau14"
 locator_scheme = "section"
-locator = "Lemma2.4, p.2216; Theorem5.3 and Corollaries5.5–5.6, pp.2243–2244"
+locator = "Abstract, p.2201; Lemma2.4, p.2216; Theorem5.3 and Corollaries5.5–5.6, pp.2243–2244"
 url = "https://msp.org/ant/2014/8-9/ant-v8-n9-p04-p.pdf"
 fetched_from = "https://msp.org/ant/2014/8-9/ant-v8-n9-p04-p.pdf"
 fetched_at = "2026-10-24T20:23:52Z"

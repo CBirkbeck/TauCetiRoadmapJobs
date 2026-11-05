@@ -5380,6 +5380,12 @@
       "needs": "For a complete mixed-characteristic DVR O_K with perfect residue field and an abelian scheme A/O_K, prove that the rational étale and de Rham realizations of an absolute Hodge tensor of A_K agree under the crystalline–de Rham comparison for H¹(A_K), with mixed tensors, duals and Tate twists; neither the existence of an integral moduli model nor integral tensor extension is an input to this rational comparison.",
       "supplier": "ShimuraVarieties",
       "section": "7.0i"
+    },
+    {
+      "slug": "perfect-residue-period-torsor-comparison",
+      "needs": "For a perfect field k of characteristic p, K finite totally ramified over K₀=W(k)[1/p], a connected reductive group G over ℚ_p and b∈G(K₀), two admissible G-valued filtrations on the tensor G-isocrystal of b over K whose cocharacters are conjugate over K̄ have tensor-isomorphic underlying ℚ_p-valued fibre functors on Rep_ℚp(G); this is the period-torsor comparison of §5.5 beyond K/ℚ̆_p finite, whose source (Wintenberger97, §0, p.1293, and Proposition 4.5.3 with its corollary, pp.1331–1332) is stated for an arbitrary algebraically closed residue field.",
+      "supplier": "PadicHodgeTheory",
+      "section": "5.5"
     }
   ],
   "sourceIssues": [
