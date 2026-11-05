@@ -5736,21 +5736,21 @@
   "gaps": [
     {
       "slug": "geometric-weak-primitive-auxiliary-finiteness",
-      "needs": "the finiteness theorem \"Finiteness with an unobstructed auxiliary place\" of PL.7 in the geometric weak-primitive setting of Newton–Thorne 2026 Proposition 3.9 (nt26 pp. 20–21), applied twice (with and then without an auxiliary Steinberg place), including the comparison of the non-scalar unobstructed auxiliary local ring with the Hecke algebra at auxiliary level.",
+      "needs": "the finiteness theorem \"Finiteness with an unobstructed auxiliary place\" of §8.20 (Layer 8), which there keeps the strong-primitivity hypotheses of §8.7, in the geometric weak-primitive setting of Newton–Thorne 2026 Proposition 3.9 (nt26 pp. 20–21), applied twice (with and then without an auxiliary Steinberg place), including the comparison of the non-scalar unobstructed auxiliary local ring with the Hecke algebra at auxiliary level.",
       "supplier": "PotentialAutomorphyInfrastructurePartII",
-      "section": "PL.7"
+      "section": "§8.20 (Layer 8)"
     },
     {
       "slug": "dyadic-definite-unitary-forms",
-      "needs": "the PL.2 constructions for `l = 2` used by Newton–Thorne II §2 and Newton–Thorne 2026 §4 at `p = 2`: algebraic modular forms on the definite unitary group, exactness and group-ring freeness at sufficiently small level, Taylor–Wiles level structures, and the Hecke-valued determinant of the localized Hecke algebra (the `𝒢_n`-valued lift is not needed), together with the potential diagonalizability of two-dimensional potentially Barsotti–Tate representations for `l = 2` in PL.1.",
+      "needs": "the Layer 3 constructions for `l = 2` used by Newton–Thorne II §2 and Newton–Thorne 2026 §4 at `p = 2`: algebraic modular forms on the definite unitary group, exactness and group-ring freeness at sufficiently small level, Taylor–Wiles level structures, and the Hecke-valued determinant of the localized Hecke algebra (the `𝒢_n`-valued lift is not needed), together with the potential diagonalizability of two-dimensional potentially Barsotti–Tate representations for `l = 2` in Layer 1 (§1.6).",
       "supplier": "PotentialAutomorphyInfrastructurePartII",
-      "section": "PL.2"
+      "section": "Layer 3"
     },
     {
       "slug": "components-under-field-extension",
-      "needs": "in RZ.1, the behaviour of irreducible components of a quasi-separated rigid space over a complete field `E` under extension of the ground field to a finite extension and to `ℂ_p`: every component over `ℂ_p` lies in the base change of a component over `E`, and if there are finitely many components then after a finite extension `E′/E` all components are geometrically irreducible (Conrad, con99 Theorem 3.4.2, internal pp. 26–27).",
+      "needs": "in Layer 1, the behaviour of irreducible components of a quasi-separated rigid space over a complete field `E` under extension of the ground field to a finite extension and to `ℂ_p`: every component over `ℂ_p` lies in the base change of a component over `E`, and if there are finitely many components then after a finite extension `E′/E` all components are geometrically irreducible (Conrad, con99 Theorem 3.4.2, internal pp. 26–27).",
       "supplier": "AdicSpacesPartIIPartII",
-      "section": "RZ.1"
+      "section": "Layer 1"
     },
     {
       "slug": "tensor-taylor-wiles-primes",
@@ -5766,7 +5766,7 @@
     },
     {
       "slug": "artinian-crystalline-quotients",
-      "needs": "in Layer R07.4, the generic-fibre comparison of Berthelot–Breen–Messing (bbm82 Théorème 3.1.1) in the form used by Newton–Thorne II Lemma 2.2 and Newton–Thorne 2026 Lemma 4.2: every finite flat Artinian rank-two point of Hodge type `{0,1}` is a quotient of a Galois-stable lattice in a crystalline representation with Hodge–Tate weights in `{0,1}`, functorially in the coefficient quotient and compatibly with tensor products and symmetric powers with fixed lattices.",
+      "needs": "in Layer R07.4, Raynaud's embedding theorem (bbm82 Théorème 3.1.1; §R07.1.40: a finite flat group scheme over the ring of integers embeds in an abelian scheme) applied as in Newton–Thorne II Lemma 2.2 (nt21b p. 7) and Newton–Thorne 2026 Lemma 4.2: every finite flat Artinian rank-two point of Hodge type `{0,1}` is a quotient of a Galois-stable lattice in a crystalline representation with Hodge–Tate weights in `{0,1}`, functorially in the coefficient quotient and compatibly with tensor products and symmetric powers with fixed lattices.",
       "supplier": "FiniteFlatGroupsAndIntegralPadicHodgeTheory",
       "section": "Layer R07.4"
     },

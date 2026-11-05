@@ -1,5 +1,7 @@
-import Mathlib
-import TauCeti.NumberTheory.ModularForms.Newforms.Satake
+module
+
+public import Mathlib
+public import TauCeti.NumberTheory.ModularForms.Newforms.Satake
 
 /-!
 # Modularity and Langlands extensions, part II: target signatures
@@ -35,11 +37,16 @@ of unitary groups, and Galois deformation and pseudodeformation rings. Hence:
   Galois representations of automorphic representations, deformation rings and patching.
 * `SP_n` over totally real fields (§13.10) lacks Hilbert modular forms and automorphic
   representations of `GL_n` over totally real fields.
-* Symmetric power functoriality for every non-CM newform (§14.3) lacks the local Langlands
-  correspondence at the ramified primes, which is needed even to write the Euler factors of
-  `L(s, Sym^n f)` there; the Satake parameters of Tau Ceti at a prime dividing the level do not
-  determine them.
+* Symmetric power functoriality for every non-CM newform (§14.3) lacks a CM predicate on
+  newforms: Tau Ceti has no notion of a newform with complex multiplication, and "non-CM" is the
+  hypothesis of the theorem. With such a predicate, its consequence visible at the pins would be
+  statable from `satakeParameters` alone: for a non-CM newform of weight `k ≥ 2` and level `N`,
+  the Euler product of `L(s, Sym^n f)` over the primes not dividing `N` converges for
+  `Re s > n(k − 1)/2 + 1` and extends to an entire function (the omitted factors at `p | N` are
+  inverse polynomials in `p^{−s}`, so they do not affect entireness).
 -/
+
+@[expose] public section
 
 namespace TauCetiRoadmap.ModularityAndLanglandsExtensionsPartII
 
