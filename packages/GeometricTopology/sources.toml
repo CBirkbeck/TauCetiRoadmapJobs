@@ -140,3 +140,107 @@ licence_class = "answered-by:CBirkbeck"
 status = "certified"
 accessed = "2026-11-04"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/4188#issuecomment-6632668881"
+
+[[source]]
+id = "yazdi2016"
+authors = "Mehdi Yazdi"
+title = "On Thurston's Euler class one conjecture"
+year = 2016
+arxiv = "1603.03822v4"
+locator_scheme = "theorem"
+locator = "Main Theorem"
+url = "https://arxiv.org/abs/1603.03822v4"
+fetched_from = "https://arxiv.org/pdf/1603.03822v4"
+fetched_at = "2026-11-05T17:34:22Z"
+sha256 = "8e338304826ee33d983c7a90c6a559ce51daf313df83c648e37985cb36dc7dbc"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v4"
+cited_for = ["10"]
+
+[[source]]
+id = "piccirillo2020"
+authors = "Lisa Piccirillo"
+title = "The Conway knot is not slice"
+year = 2018
+arxiv = "1808.02923v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.5"
+url = "https://arxiv.org/abs/1808.02923v1"
+fetched_from = "https://arxiv.org/pdf/1808.02923v1"
+fetched_at = "2026-11-05T17:34:29Z"
+sha256 = "233da6e9f24b062cc2cf8819e1f8130a047e59e2700d7042302a71ef94b4e61a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v1"
+cited_for = ["6"]
+
+[[source]]
+id = "manolescu2016"
+authors = "Ciprian Manolescu"
+title = "Lectures on the triangulation conjecture"
+year = 2016
+arxiv = "1607.08163v3"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/1607.08163v3"
+fetched_from = "https://arxiv.org/pdf/1607.08163v3"
+fetched_at = "2026-11-05T17:34:34Z"
+sha256 = "d17456dfa60e26892c8beffc664660257217043c8a5ee328ace24ba282d7a4e8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v3"
+cited_for = ["11"]
+
+[[source]]
+id = "watanabe2018"
+authors = "Tadayuki Watanabe"
+title = "Some exotic nontrivial elements of the rational homotopy groups of $\\mathrm{Diff}(S^4)$"
+year = 2018
+arxiv = "1812.02448v3"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/1812.02448v3"
+fetched_from = "https://arxiv.org/pdf/1812.02448v3"
+fetched_at = "2026-11-05T17:34:42Z"
+sha256 = "07d3cd2f7b261c5363c479b17f3c3daa022158969c7325549270716e0f2dcf53"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v3"
+cited_for = ["3"]
+
+[[source]]
+id = "hatcher-at"
+authors = "Allen Hatcher"
+title = "Algebraic Topology"
+year = 2002
+locator_scheme = "section"
+locator = "Proposition A.1"
+url = "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf"
+fetched_from = "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf"
+fetched_at = "2026-11-05T17:35:07Z"
+sha256 = "bebb3032bf9021b956da3bd070eb6c67dc662cf849be9cdf6679f677560e5618"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["11"]
+
+[[source]]
+id = "hatcher-3m"
+authors = "Allen Hatcher"
+title = "Notes on Basic 3-Manifold Topology"
+year = 2007
+locator_scheme = "section"
+locator = "Section 1.2"
+url = "https://pi.math.cornell.edu/~hatcher/3M/3M.pdf"
+fetched_from = "https://pi.math.cornell.edu/~hatcher/3M/3M.pdf"
+fetched_at = "2026-11-05T17:35:09Z"
+sha256 = "f3781c43b4ed981f98fab36761d5eefe92bb53cc1a7100a0146954f9af5a029b"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["8"]
