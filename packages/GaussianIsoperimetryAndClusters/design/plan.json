@@ -84,7 +84,7 @@
      "hypotheses": [],
      "locator": {
       "source": "CianchiFuscoMaggiPratelli2011",
-      "where": "Lemma 3.4, line 295–305 (their normalization); Ledoux1999 inequality (1.6), line 225–226"
+      "where": "Lemma 3.4, inequality (3.2), line 295–299 (their normalization, for the first bound); Ledoux1999 inequality (1.6), line 225–226 (the tail bound e^{−r²/2} without the factor ½; the ½ form is proved here)"
      },
      "prerequisites": [
       "target:1.1"
@@ -479,7 +479,7 @@
       {
        "name": "Cluster.merge",
        "role": "construction",
-       "statement": "Merging Ω_i and Ω_j gives a (q−1)-cluster whose total perimeter drops by A_ij."
+       "statement": "For q ≥ 3, merging Ω_i and Ω_j gives a (q−1)-cluster whose total perimeter drops by A_ij."
       },
       {
        "name": "Cluster.perimeter_two",
@@ -629,9 +629,9 @@
        "statement": "I_μ^(1)(1,0) = 0 attained by (E,∅)."
       },
       {
-       "name": "slab_failure",
+       "name": "halfplane_failure",
        "kind": "non-example",
-       "statement": "For ρ(x,y) = c(1+y²)exp(−x²(1+y²)⁴) the only half-plane {x<t} of measure 1/2 has infinite perimeter; balls give finiteness."
+       "statement": "For ρ(x,y) = c(1+y²)exp(−x²(1+y²)⁴) the only half-plane {x<t} of measure 1/2 has infinite perimeter; balls and the symmetric slab {|x|<a} of measure 1/2 give finiteness."
       },
       {
        "name": "gaussian_half",
@@ -1319,7 +1319,7 @@
       {
        "name": "disc",
        "kind": "computation",
-       "statement": "Disc in ℝ²: P_γ(S_e(U)) = 0.516961 ∈ [0.384633, 0.606531]."
+       "statement": "Disc in ℝ²: P_γ(S_e(U)) = 0.517483 ∈ [0.384633, 0.606531]."
       },
       {
        "name": "reflected_halfplane",
@@ -1601,7 +1601,7 @@
       {
        "name": "square",
        "kind": "computation",
-       "statement": "f = min(x²,1): γ(A_f) = 0.516059, weighted frontier length 0.647454."
+       "statement": "f = min(x²,1): γ(A_f) = 0.516059, weighted frontier length 0.647406."
       }
      ]
     },
@@ -1637,7 +1637,7 @@
       {
        "name": "strict",
        "kind": "computation",
-       "statement": "f = min(x²,1): 0.398619 < 0.647454."
+       "statement": "f = min(x²,1): 0.398619 < 0.647406."
       },
       {
        "name": "drop_profile_term",
@@ -1650,14 +1650,14 @@
      "id": "8.4",
      "kind": "theorem",
      "name": "gaussian_concentration_median",
-     "statement": "For L > 0, L-Lipschitz f and m with γ({f ≤ m}) ≥ 1/2: γ({f > m + Lr}) ≤ 1 − Φ(r) ≤ ½e^{−r²/2} for r ≥ 0; with also γ({f ≥ m}) ≥ 1/2, γ({|f − m| > Lr}) ≤ 2(1 − Φ(r)).",
+     "statement": "For L ≥ 0, L-Lipschitz f and m with γ({f ≤ m}) ≥ 1/2: γ({f > m + Lr}) ≤ 1 − Φ(r) ≤ ½e^{−r²/2} for r ≥ 0; with also γ({f ≥ m}) ≥ 1/2, γ({|f − m| > Lr}) ≤ 2(1 − Φ(r)).",
      "hypotheses": [
-      "L > 0",
+      "L ≥ 0",
       "r ≥ 0"
      ],
      "locator": {
       "source": "Ledoux1993",
-      "where": "inequality (10), line 257–262; Ledoux1999 (1.6), line 225–226"
+      "where": "inequality (10), line 257–262; Ledoux1999 (1.6), line 225–226 (bound 1 − Φ(r) and tail e^{−r²/2}; the factor ½ is target 1.2)"
      },
      "prerequisites": [
       "target:1.2",
@@ -1679,6 +1679,11 @@
        "name": "mean_vs_median",
        "kind": "non-example",
        "statement": "|x_1| has median 0.674490 and mean 0.797885."
+      },
+      {
+       "name": "lipschitz_zero",
+       "kind": "degenerate",
+       "statement": "L = 0: f ≡ c, γ({f ≤ m}) ≥ 1/2 forces c ≤ m, {f > m} = ∅; the case 8.5 uses when S = 0."
       }
      ]
     },

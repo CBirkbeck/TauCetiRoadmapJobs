@@ -39,8 +39,6 @@ For `q ≥ 1`, `Δ^{(q−1)} = {v ∈ ℝ^q : v_i ≥ 0, Σ v_i = 1}` is the pro
 
 ### From Mathlib
 
-The baseline is Mathlib commit `f6090c7095e1e56b3464c1daba5f24631f1290d2`.
-
 - `ProbabilityTheory.stdGaussian` (Mathlib/Probability/Distributions/Gaussian/Multivariate.lean:65) is defined on every finite-dimensional real inner product space as the image of the product of standard normal laws under an orthonormal basis; it is a probability measure (instance at line 71). `ProbabilityTheory.stdGaussian_map` (line 126) gives its invariance under every linear isometry equivalence `E ≃ₗᵢ[ℝ] F`, and `ProbabilityTheory.stdGaussian_eq_map_pi_orthonormalBasis` (line 144) its description in any orthonormal basis. Nothing about densities, perimeters or products of subspaces is included.
 - `ProbabilityTheory.multivariateGaussian` (same file, line 166) is the image of `stdGaussian (EuclideanSpace ℝ ι)` under `x ↦ m + toEuclideanCLM (CFC.sqrt S) x` for every square matrix `S`; for `S` not positive semidefinite `CFC.sqrt S = 0` and the law is the Dirac mass at `m`. Layer 8 uses exactly this definition.
 - `ProbabilityTheory.gaussianPDFReal` (Mathlib/Probability/Distributions/Gaussian/Real.lean:47), `ProbabilityTheory.gaussianReal` (line 220), `ProbabilityTheory.gaussianReal_map_neg` (line 358) and `ProbabilityTheory.cdf` (Mathlib/Probability/CDF.lean:56) give `φ`, the standard normal law, its symmetry and `Φ`.
@@ -54,7 +52,7 @@ The baseline is Mathlib commit `f6090c7095e1e56b3464c1daba5f24631f1290d2`.
 
 ### From Tau Ceti
 
-The baseline is Tau Ceti commit `358314d4ab97483df4fc4cb8adcc02e74a8d9f5a`. It contains no weighted or Euclidean perimeter, no BV theory and no Gaussian isoperimetric statement.
+Tau Ceti at the pin contains no weighted or Euclidean perimeter, no BV theory and no Gaussian isoperimetric statement.
 
 - `TauCeti.Probability.stdGaussian_eq_withDensity` (TauCeti/Probability/Distributions/Gaussian/Density.lean:158): on `EuclideanSpace ℝ ι`, the standard Gaussian is `volume` with density `(2π)^{−card ι/2} exp(−‖x‖²/2)`. Layer 1 transports it to `E`.
 - `TauCeti.Probability.cdf_gaussianReal_zero_one` (TauCeti/Probability/Distributions/Gaussian/Cdf.lean:122): `Φ(x) = (1 + erf(x/√2))/2`; with `TauCeti.Real.strictMono_erf` and `TauCeti.Real.continuous_erf` (TauCeti/Analysis/SpecialFunctions/Erf.lean:132 and :105) this makes `Φ` a continuous strictly increasing bijection of `ℝ` onto `(0, 1)`.
@@ -103,7 +101,7 @@ A route: `Φ` is a continuous strictly increasing bijection of `ℝ` onto `(0, 1
 
 ### 1.2 Gaussian tails
 
-Prove that `1 − Φ(r) < φ(r)/r` for every `r > 0` and `1 − Φ(r) ≤ ½ e^{−r²/2}` for every `r ≥ 0`, with equality in the second only at `r = 0` (CianchiFuscoMaggiPratelli2011 Lemma 3.4, line 295–305, in their normalization; Ledoux1999 inequality (1.6), line 225–226). A route: the first follows from `∫_r^∞ φ < ∫_r^∞ (t/r) φ(t) dt = φ(r)/r`; for the second, `r ↦ e^{r²/2}(1 − Φ(r))` has derivative `e^{r²/2}(r(1 − Φ(r)) − φ(r)) < 0` by the first and value `1/2` at `0`. *Needs:* §1.1.
+Prove that `1 − Φ(r) < φ(r)/r` for every `r > 0` (CianchiFuscoMaggiPratelli2011 Lemma 3.4, inequality (3.2), line 295–299, in their normalization) and `1 − Φ(r) ≤ ½ e^{−r²/2}` for every `r ≥ 0`, with equality in the second only at `r = 0`; the second sharpens by the factor `½` the tail bound `1 − Φ(r) ≤ e^{−r²/2}` of Ledoux1999 inequality (1.6), line 225–226, and is proved here. A route: the first follows from `∫_r^∞ φ < ∫_r^∞ (t/r) φ(t) dt = φ(r)/r`; for the second, `r ↦ e^{r²/2}(1 − Φ(r))` has derivative `e^{r²/2}(r(1 − Φ(r)) − φ(r)) < 0` by the first and value `1/2` at `0`. *Needs:* §1.1.
 
 **Checks.**
 
@@ -228,7 +226,7 @@ For `q ≥ 2`, a `q`-cluster for `μ` is a `q`-tuple `Ω = (Ω_1, …, Ω_q)` of
 
 - Equivalent clusters have the same total perimeter, the same measure vector and the same interfaces (§3.2).
 - Permuting the cells of a cluster gives a cluster with the same total perimeter and permuted measure vector.
-- Replacing two cells `Ω_i, Ω_j` by `Ω_i ∪ Ω_j` gives a `(q − 1)`-cluster whose total perimeter is at most that of `Ω` (by §3.2 it drops by `A_ij`).
+- For `q ≥ 3`, replacing two cells `Ω_i, Ω_j` by `Ω_i ∪ Ω_j` gives a `(q − 1)`-cluster whose total perimeter is at most that of `Ω` (by §3.2 it drops by `A_ij`).
 - For `q = 2`, `P_μ(Ω) = P_μ(Ω_1) = P_μ(Ω_2)` (MilmanNeeman2022 line 68–70), by complement invariance and null invariance.
 - A linear isometry of `E` carries `γ`-clusters to `γ`-clusters with the same total perimeter (§2.7).
 
@@ -273,7 +271,7 @@ For `μ(E) = 1`, `q ≥ 2` and `v ∈ Δ^{(q−1)}`, define the isoperimetric pr
 **Checks.**
 
 - At the vertex `(1, 0)`, the cluster `(E, ∅)` shows `I_μ^{(1)}(1, 0) = 0`.
-- For the smooth positive probability density `ρ(x, y) = c (1 + y²) exp(−x²(1 + y²)⁴)` on `ℝ²`, with `c` normalizing, the line `{x = 0}` has infinite weighted length, so the only half-plane `{x < t}` of measure `1/2` has infinite perimeter; balls give a finite-perimeter set of measure `1/2`. Slabs alone would not prove finiteness of the profile.
+- For the smooth positive probability density `ρ(x, y) = c (1 + y²) exp(−x²(1 + y²)⁴)` on `ℝ²`, with `c` normalizing, the line `{x = 0}` has infinite weighted length, so the only half-plane `{x < t}` of measure `1/2` has infinite perimeter; balls give a finite-perimeter set of measure `1/2`, and so does the symmetric slab `{|x| < a}` of measure `1/2`, since `a > 0` and a line `{x = t}` with `t ≠ 0` has finite weighted length. Half-planes `{x < t}` alone would not prove finiteness of the profile.
 - For `γ` and `q = 2`, Layer 7 gives `I^{(1)}(1/2, 1/2) = 0.398942`; the ball of measure `0.393469` in `ℝ²` gives the upper bound `I^{(1)}(0.393469, 0.606531) ≤ 0.606531`, consistent with the value `0.384633`.
 
 ### 3.5 Existence of minimizing clusters
@@ -492,12 +490,12 @@ Prove that for `n ≥ 2`, a unit vector `e`, `U` with `P_γ(U) < ∞` and every 
 
 **Checks.**
 
-- `U = ball(0, 1) ⊂ ℝ²`, `e = e_2`: `P_γ(S_e(U)) = ∫_{−1}^{1} √(I(v_U)² + v_U′²) φ(z) dz = 0.516961`, between `I(0.393469) = 0.384633` and `P_γ(U) = 0.606531`.
+- `U = ball(0, 1) ⊂ ℝ²`, `e = e_2`: `P_γ(S_e(U)) = ∫_{−1}^{1} √(I(v_U)² + v_U′²) φ(z) dz = 0.517483`, between `I(0.393469) = 0.384633` and `P_γ(U) = 0.606531`.
 - A half-plane `{⟨x, ν⟩ < s}` with `⟨ν, e⟩ < 0` has upper half-line sections; its symmetral is the reflected half-plane `{⟨x, ν − 2⟨ν, e⟩e⟩ < s}`, of the same perimeter `φ(s)`.
 
 ### Examples
 
-For the unit disc in `ℝ²`, symmetrisation along `e_2` keeps the measure `0.393469` and lowers the Gaussian perimeter from `0.606531` to `0.516961`.
+For the unit disc in `ℝ²`, symmetrisation along `e_2` keeps the measure `0.393469` and lowers the Gaussian perimeter from `0.606531` to `0.517483`.
 
 ### Dependencies
 
@@ -584,18 +582,19 @@ For a continuous `f : E → [0, 1]`, define its subgraph set `A_f = {(x, y) : Φ
 **Checks.**
 
 - `f(x) = Φ(x)` on `ℝ`: `∫ f dγ = 1/2`, `I(1/2) = 0.398942`, and `∫ √2 φ(x)² dx = 0.398942`; for `Φ(2x)` the right side is again `0.398942`: `A_f` is a half-plane in both cases.
-- `f(x) = min(x², 1)` on `ℝ`: `∫ f dγ = 0.516059`, `I(0.516059) = 0.398619`, and the right side is `0.647454`.
+- `f(x) = min(x², 1)` on `ℝ`: `∫ f dγ = 0.516059`, `I(0.516059) = 0.398619`, and the right side is `0.647406`.
 - For constant `c` both sides equal `I(c)`; omitting `I(f)²` under the root makes the right side `0` and the inequality false.
 
 ### 8.4 Concentration of Lipschitz functions
 
-Prove that for `L > 0`, an `L`-Lipschitz `f : E → ℝ` and a real `m` with `γ({f ≤ m}) ≥ 1/2`, `γ({f > m + Lr}) ≤ 1 − Φ(r) ≤ ½ e^{−r²/2}` for every `r ≥ 0`; if moreover `γ({f ≥ m}) ≥ 1/2`, then `γ({|f − m| > Lr}) ≤ 2(1 − Φ(r))` (Ledoux1993 inequality (10), line 257–262; Ledoux1999 inequality (1.6), line 225–226). A route: `{f ≤ m}` is closed and nonempty, its closed `r`-thickening lies in `{f ≤ m + Lr}` because nearest points exist in `E`, and §8.1 with `a = 0` and §1.2 conclude. *Needs:* §1.2, §8.1.
+Prove that for `L ≥ 0`, an `L`-Lipschitz `f : E → ℝ` and a real `m` with `γ({f ≤ m}) ≥ 1/2`, `γ({f > m + Lr}) ≤ 1 − Φ(r) ≤ ½ e^{−r²/2}` for every `r ≥ 0`; if moreover `γ({f ≥ m}) ≥ 1/2`, then `γ({|f − m| > Lr}) ≤ 2(1 − Φ(r))` (Ledoux1993 inequality (10), line 257–262; Ledoux1999 inequality (1.6), line 225–226, which states the bound `1 − Φ(r)` and the tail `e^{−r²/2}` without the factor `½`, supplied by §1.2). A route: `{f ≤ m}` is closed and nonempty, its closed `r`-thickening lies in `{f ≤ m + Lr}` because nearest points exist in `E`, and §8.1 with `a = 0` and §1.2 conclude. *Needs:* §1.2, §8.1.
 
 **Checks.**
 
 - `f(x) = x_1`, `m = 0`, `L = 1`: `γ({f > r}) = 1 − Φ(r)`, an equality; at `r = 2`, `0.022750 ≤ 0.067668`.
 - For `f` constant `m` and `r = 0` the non-strict set `{f ≥ m}` has measure `1 > 1/2 = 1 − Φ(0)`; the strict inequality in `{f > m + Lr}` is needed at `r = 0`.
 - `f(x) = |x_1|` has median `Φ⁻¹(3/4) = 0.674490` and mean `0.797885`; the theorem concerns the median, RandomMatrices 2.2's Herbst bound the mean.
+- `L = 0`: `f` is a constant `c`, `γ({f ≤ m}) ≥ 1/2` forces `c ≤ m`, so `{f > m}` is empty and the first bound holds; with also `γ({f ≥ m}) ≥ 1/2`, `c = m` and `{|f − m| > 0}` is empty. §8.5 with `S = 0` uses exactly this case; a version requiring `L > 0` would not cover it.
 
 ### 8.5 Maxima of Gaussian vectors
 
