@@ -84,7 +84,9 @@ character data, cyclotomic and anticyclotomic directions, fixed fields and gener
   here; Layer 2 compares the Lubin–Tate character with the existing map.
 - Finite extensions of local fields, the unit filtration `TauCeti.unitFiltration`, Teichmüller
   lifts and the logarithm isomorphism `U(K,i) ≃ 𝓂[K]^i` for `(p−1)i > e`: LocalFieldsRamification
-  Layers 0–1 and Tau Ceti.
+  Layers 0–1 and Tau Ceti. The maximal unramified extension `K^ur` and arithmetic Frobenius:
+  LocalFieldsRamification Layer 2. Its completion `K̂^ur`, with `G_(K̂^ur) ≅ I_K`:
+  RamificationOfCompleteDiscretelyValuedFields §4a.3.
 
 ## Conventions
 
@@ -242,7 +244,18 @@ Layer 0: finite extensions of local fields with their integers, residue fields, 
 normalized valuations, and finite Galois fixed fields. Layer 1: the unit filtration, the
 Teichmüller section, the structure of `Kˣ` and of `O_K^×`, and the logarithm isomorphism
 `U(K,i) ≃ (𝔪_K^i, +)` with inverse `exp` when `(p − 1)i > e`. Layer 2: unramified extensions,
-arithmetic Frobenius and the completed maximal unramified extension.
+the algebraic maximal unramified extension `K^ur` inside a fixed algebraic closure, and arithmetic
+Frobenius. The completion of `K^ur` is not built there.
+
+### From TauCetiRoadmap.RamificationOfCompleteDiscretelyValuedFields
+
+§4a.3 supplies the completion `K̂^ur` of the maximal unramified extension `K^ur` of `K`: a field
+complete for a discrete valuation with `e(K̂^ur/K) = 1` and residue field an algebraic closure of
+`k_K`, the equivalence between finite separable extensions of `K^ur` and of `K̂^ur`, and the
+identification `G_(K̂^ur) ≅ I_K` of its absolute Galois group with the inertia group of `K`. These
+are assumed with the hypotheses stated there. Sections 2.5–2.6 use `K̂^ur` as the base over which
+Lubin–Tate modules of different uniformizers become isomorphic, and §6.6 uses `F̂^ur` for Gross's
+formulation of the field of moduli.
 
 ## How to read the build
 
@@ -540,8 +553,15 @@ API:
 - For `f = (1 + X)^p − 1` over `ℤ_p`, `F_f = X + Y + XY` is the multiplicative group.
 - For `f = πX + X^q`, `[π]_f = πX + X^q`, not the scalar multiplication series `πX`.
 - For `O = W(𝔽_(p²))` and `π = −p`, the module has `O`-height one and `ℤ_p`-height two.
-- The additive law `X + Y` over `O` admits no Lubin–Tate endomorphism: every endomorphism of the
-  additive law over a ring of characteristic zero is linear, so its reduction cannot be `X^q`.
+- Over a discrete valuation ring `O` of characteristic zero the additive law `X + Y` admits no
+  Lubin–Tate endomorphism: an endomorphism `φ` of the additive law satisfies
+  `φ(X + Y) = φ(X) + φ(Y)`, which over a ring without additive torsion forces `φ` to be linear, so
+  its reduction cannot be `X^q`.
+- In equal characteristic the additive law is itself Lubin–Tate: over `O = 𝔽_q[[t]]` with `π = t`,
+  `f = tX + X^q` is a Lubin–Tate series (constant term `0`, linear coefficient `t`, reduction
+  `X^q`), and `f(X + Y) = f(X) + f(Y)` because `(X + Y)^q = X^q + Y^q` in characteristic `p`; so
+  `F_f = X + Y` by uniqueness, with `[a]_f = aX` for `a ∈ 𝔽_q` and `[t]_f = f`. A wrong Check that
+  forbids this for every `O` contradicts §1.3.
 
 *Needs:* §§1.1–1.2; §0.1.
 
@@ -707,9 +727,9 @@ the existing reciprocity map and constructs no second one. A proof route: `π` i
 `K(t_m)` by the Eisenstein calculation of §2.3; the norm subgroups of Tau Ceti
 (`TauCeti.ClassFieldTheory.exists_artinMap_mem_iff`) and the degree `(q − 1)q^(m−1)` identify the
 norm group with `π^ℤ U(K,m)`; Lubin–Tate's uniformizer-comparison argument (LT65, Lemma 2) over the
-completed maximal unramified extension, together with the unramified normalization of `Art_K`,
-gives the inverse unit; continuity and density of `Kˣ` pass to the limit. The argument uses §1.2
-directly and does not use §2.6.
+completed maximal unramified extension `K̂^ur` (RamificationOfCompleteDiscretelyValuedFields
+§4a.3), together with the unramified normalization of `Art_K`, gives the inverse unit; continuity
+and density of `Kˣ` pass to the limit. The argument uses §1.2 directly and does not use §2.6.
 
 **Checks.**
 
@@ -725,14 +745,17 @@ directly and does not use §2.6.
 
 *Needs:* §§2.3, 2.4, 1.2; Tau Ceti `TauCeti.ClassFieldTheory.artinMap`,
 `TauCeti.ClassFieldTheory.artinMap_restrict`, `TauCeti.ClassFieldTheory.exists_artinMap_mem_iff`,
-`TauCeti.unitFiltration`; ClassFieldTheory Layers 6–8; LocalFieldsRamification Layers 1–2.
+`TauCeti.unitFiltration`; ClassFieldTheory Layers 6–8; LocalFieldsRamification Layers 1–2;
+RamificationOfCompleteDiscretelyValuedFields §4a.3.
 
 ### 2.6 Change of uniformizer
 
 Let `π′ = uπ` with `u ∈ O_K^×`. Prove that Lubin–Tate modules for `π` and `π′` become isomorphic
-over the completion of the maximal unramified extension of `K`, by an isomorphism `θ` with
-`θ^(Frob) = θ ∘ [u]` (Frobenius acting on coefficients), and that `χ_(π′) = χ_π · η_u`, where `η_u`
-is the unramified character sending arithmetic Frobenius to `u`. The isomorphism need not descend
+over the completion `K̂^ur` of the maximal unramified extension of `K`
+(RamificationOfCompleteDiscretelyValuedFields §4a.3), by an isomorphism `θ` defined over the
+integers of `K̂^ur` with `θ^(Frob) = θ ∘ [u]` (Frobenius acting on coefficients), and that
+`χ_(π′) = χ_π · η_u`, where `η_u` is the unramified character sending arithmetic Frobenius to
+`u`. The isomorphism need not descend
 to `O_K`, and the two towers are different fields (LT65, §2, Lemma 2, Theorem 3 and its corollary,
 pp.385–387). A proof route: solve the Frobenius-semilinear coefficient equations of Lemma 2; then
 `χ_π(Art(u)) = u⁻¹`, `χ_π(Art(π)) = 1`, and `χ_(π′)(Art(π′)) = 1` determine the twist on inertia
@@ -746,7 +769,8 @@ and on a Frobenius lift.
 - On units `v`, both `χ_π(Art(v))` and `χ_(π′)(Art(v))` equal `v⁻¹`, so `η_u` is trivial on
   inertia; twisting by `η_u⁻¹` instead would give `χ_(π′)(Art(π′)) = u⁻²`.
 
-*Needs:* §§1.4, 2.5; LocalFieldsRamification Layers 0 and 2.
+*Needs:* §§1.4, 2.5; LocalFieldsRamification Layers 0 and 2;
+RamificationOfCompleteDiscretelyValuedFields §4a.3.
 
 ### Examples
 
@@ -757,8 +781,8 @@ For `K = W(𝔽_(p²))[1/p]` and `π = −p`, the first division field has degre
 ### Dependencies
 
 Layers 0–1; Tau Ceti's local Artin map and unit filtration; ClassFieldTheory Layers 6–8;
-LocalFieldsRamification Layers 0–2; FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.1.8,
-R07.1.12–R07.1.13; ModularCurves §0B.
+LocalFieldsRamification Layers 0–2; RamificationOfCompleteDiscretelyValuedFields §4a.3;
+FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.1.8, R07.1.12–R07.1.13; ModularCurves §0B.
 
 ## Layer 3: Marked deformations at finite height
 
@@ -978,10 +1002,11 @@ scalar Frobenius is a Lubin–Tate module. These results hold for every prime `p
 
 ### 4.1 Honda type operators
 
-Let `O` be a complete discrete valuation ring of characteristic zero with fraction field `K` and
-uniformizer `π`, let `q` be a power of `p`, and let `σ` be an endomorphism of `K` preserving `O` and
-inducing the `q`-power map on the residue field (Honda's condition (F); `q` need not be the residue
-cardinality). In the skew power-series ring `O_σ[[T]]` with `Ta = σ(a)T`, call
+Let `O` be a discrete valuation ring of characteristic zero, complete or not, with fraction field
+`K`, uniformizer `π` and residue characteristic `p`, let `q` be a power of `p`, and let `σ` be an
+endomorphism of `K` preserving `O` and inducing the `q`-power map on the residue field (Honda's
+condition (F); `q` need not be the residue cardinality, and completeness is not assumed: H70, §2,
+p.220). In the skew power-series ring `O_σ[[T]]` with `Ta = σ(a)T`, call
 `u = π + Σ_(i≥1) c_i T^i` special. For `ℓ ∈ X·K[[X]]` put
 `(u ⋆ ℓ)(X) = π ℓ(X) + Σ_(i≥1) c_i ℓ^(σ^i)(X^(q^i))`, where `ℓ^(σ^i)` applies `σ^i` to the coefficients;
 `ℓ` is of type `u` when `u ⋆ ℓ ∈ π O[[X]]` (H70, §2, condition (F), special elements and type,
@@ -1015,11 +1040,14 @@ Under (F), prove: a normalized logarithm `ℓ` of special type `u` defines an in
 formal group law `ℓ⁻¹(ℓ(X) + ℓ(Y))`; two normalized logarithms of the same type have integral strict
 comparison `ℓ₂⁻¹ ∘ ℓ₁`; for source type `u`, target type `v` and `C ∈ O`, the series
 `ℓ_v⁻¹(C·ℓ_u)` is integral exactly when `vC = tu` for some `t ∈ O_σ[[T]]`. For `O` the integers of an
-unramified extension of `ℚ_p`, `π = p`, `q = p` and `σ` the Frobenius lift (condition (F1)), prove
-the converse: every formal group law over `O` has a type, and one of height `h` has a type
-`p + Σ_(ν=1)^h b_ν T^ν` with `b_h` a unit (H70, Lemmas 2.3–2.4 and Theorems 2–3, pp.222–225;
-Proposition 3.3, Theorem 4 and Proposition 3.5, pp.226–230). The converse is not used over ramified
-coefficient rings (§7.5 shows why).
+unramified extension of `ℚ_p`, finite or infinite, `π = p`, `q = p` and `σ` the Frobenius lift
+(condition (F1)), prove the converse: every formal group law over `O` has a type, and strict
+isomorphism classes correspond to left-associate classes of special elements. When `O` is moreover
+complete, prove that a law of height `h` has a type `p + Σ_(ν=1)^h b_ν T^ν` with `b_h` a unit and
+`b_1, …, b_(h−1) ∈ pO`, and that two such normal forms give strictly isomorphic laws only when
+they coincide (H70, Lemmas 2.3–2.4 and Theorems 2–3, pp.222–225, and Proposition 3.3 and Theorem 4,
+pp.226–228, none of which assumes completeness; Lemma 3.4 and Proposition 3.5, pp.228–230, which
+do). The converse is not used over ramified coefficient rings (§7.5 shows why).
 
 **Checks.**
 
@@ -1029,6 +1057,9 @@ coefficient rings (§7.5 shows why).
   `ℓ⁻¹(ℓ(X) + ℓ(Y))` has nonintegral coefficient `−2/p` of `XY`: a logarithm alone does not give
   integrality.
 - With `u = v` and `C = 1` the criterion holds with `t = 1`, giving the identity comparison.
+- Over the integers of `ℚ_p^ur`, which are not complete, the multiplicative group still has type
+  `p − T` and every law has a type; the normal form `p + Σ b_ν T^ν` is asserted only over the
+  complete ring `W(𝔽̄_p)`, where its construction is a `p`-adic limit.
 
 *Needs:* §4.1; BordismFormalGroups §F1 (homomorphisms, strict isomorphisms).
 
@@ -1049,16 +1080,20 @@ not reduce to the identity, so it is not a marked isomorphism.
 
 BKO21, Lemma 5.1(ii), p.956, pairs `a_(p²) = 2sp` with type `p + sT²` and parameter `−sp`; the
 correct pairing is type `p − sT²` and parameter `sp`, since the parameter of a Lubin–Tate module
-reduces to the `q`-power Frobenius. The case `a_p = 0` used in BKO21's local construction is
-`s = −1`, type `p + T²` and parameter `−p`, on which the two readings agree.
+reduces to the `q`-power Frobenius. The two readings differ for both signs. BKO21's local
+construction (§5.0.1, p.955) takes `a_p = 0`, so `a_(p²) = a_p² − 2p = −2p` and `s = −1`, and uses
+the Lubin–Tate module of parameter `−p`: that is the correct pair, type `p + T²` and parameter
+`−p`, as in H68, Corollary 4, p.212, whereas the printed lemma would give parameter `p` there.
 
 **Checks.**
 
 - For `s = −1` the type is `p + T²` and the parameter is `−p`; `ℓ_(−1) = Σ (−p)^(−j) X^(p^(2j))`
   satisfies `(p + T²) ⋆ ℓ_(−1) = pX` (§4.1).
 - For `s = 1`, `ℓ₁ = Σ p^(−j) X^(p^(2j))` satisfies `p·ℓ₁ − ℓ₁(X^(p²)) = pX`, type `p − T²`.
-- The sign is detected by `[sp]`: `−pX + X^(p²)` is a Lubin–Tate series for `−p` but not for `p`
-  (§1.1), so the printed pairing "type `p + T²` with parameter `p`" fails for `s = 1`.
+- The sign is detected by `[sp]`: for `s = 1` (`a_(p²) = 2p`) the `p²`-Frobenius of the reduction
+  is `[p]`, so `[p]_G` reduces to `X^(p²)` and `pX + X^(p²)` is a Lubin–Tate series for `p` and not
+  for `−p` (its linear coefficient is `p`, §1.1); the printed pair for `s = 1`, type `p + T²` with
+  parameter `−p`, therefore fails, and the logarithm is `ℓ₁` of type `p − T²`.
 
 *Needs:* §§4.2, 1.3, 0.1; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.1.1 (`frobeniusHom`)
 and §R07.2.8 (`dieudonneEquivalenceFinite`) for the Dieudonné reading of scalar Frobenius.
@@ -1386,16 +1421,21 @@ valuation and compute in an integral basis.
 
 ### 6.6 The field of moduli of a marked quasi-canonical lift
 
-Let `k_F` be finite and `B = O_(F^ur)`, and fix a universal deformation of the special fibre over
-`B[[t₁,…,t_(n−1)]]`, `n = [F:F₀]` (§3.6). For a quasi-canonical lift `H_L` let `m_L` be its marked
-modulus. Prove that the smallest field containing `F` over which this marked deformation is defined
-is `M_L = F(m_L)`, the class field of `π_F^ℤ O_L^× ⊂ F^×` under the arithmetic Artin map; the
-statement does not depend on the universal coordinate. After completion of the maximal unramified
-extension it gives Gross's formulation. It does not assert minimality among fields not containing
+Let `k_F` be finite and `B = O_(F^ur)`, and fix, for each Frobenius twist `H̄^(q₀^N)` of the
+special fibre `H̄` of the canonical lift, a universal deformation of `H̄^(q₀^N)` over
+`B[[t₁,…,t_(n−1)]]`, `n = [F:F₀]` (§3.6; each twist is again a formal `O₀`-module over `k_F` of
+height `n`). For a quasi-canonical lift `H_L` let `m_L` be its marked modulus in the deformation
+space of the twist to which `H_L` is marked, the twist component of §6.2 (for `L ⊃ T` with
+`[L:T] = q₀^N` this is `H̄^(q₀^N)`); a lattice in the same `π_F^ℤ`-class and twist component gives
+the same modulus. Prove that the smallest field containing `F` over which this marked deformation
+is defined is `M_L = F(m_L)`, the class field of `π_F^ℤ O_L^× ⊂ F^×` under the arithmetic Artin
+map; the statement does not depend on the universal coordinates. After base change to the
+completion `F̂^ur` of the maximal unramified extension (RamificationOfCompleteDiscretelyValuedFields
+§4a.3) it gives Gross's formulation. It does not assert minimality among fields not containing
 `F` (Y95, §4, Theorem 1 and proof, p.297; G86, §5, Proposition 5.3, pp.325–326). A proof route: a lift
-of `Art_F(a)` sends `m_L` to `m_(a⁻¹L)` (§5.4), which equals `m_L` exactly when `a ∈ π_F^ℤ O_L^×` by
-§6.3; ClassFieldTheory Layer 8 identifies the field, and representability descends the marked
-module.
+of `Art_F(a)` sends `m_L` to `m_(a⁻¹L)` (§5.4), a point of the same twist component, which equals
+`m_L` exactly when `a ∈ π_F^ℤ O_L^×` by §6.3; ClassFieldTheory Layer 8 identifies the field, and
+representability descends the marked module.
 
 **Checks.**
 
@@ -1406,7 +1446,8 @@ module.
   `a ∈ O_F^×/O_s^×`, are pairwise distinct; a field of definition of an unmarked model need not
   contain `M_s`.
 
-*Needs:* §§6.3, 5.4, 2.5, 3.6; ClassFieldTheory Layer 8.
+*Needs:* §§6.3, 6.2, 5.4, 2.5, 3.6; ClassFieldTheory Layer 8;
+RamificationOfCompleteDiscretelyValuedFields §4a.3.
 
 ### Examples
 
@@ -1415,7 +1456,8 @@ transitively by `Gal(M_1/F)`; for ramified `F/F₀` there are `q₀`.
 
 ### Dependencies
 
-§§1.3, 2.2, 2.5, 3.4, 3.6, 5.2–5.4; ClassFieldTheory Layer 8; LocalFieldsRamification Layer 0.
+§§1.3, 2.2, 2.5, 3.4, 3.6, 5.2–5.4; ClassFieldTheory Layer 8; LocalFieldsRamification Layer 0;
+RamificationOfCompleteDiscretelyValuedFields §4a.3.
 
 ## Layer 7: Quadratic degrees, the primed tower and boundary tests
 
@@ -1447,10 +1489,12 @@ and divide by `(q₀ − 1)q₀^(s−1)`.
 
 ### 7.2 The quasi-canonical modulus is a uniformizer
 
-In the quadratic case let `B = O_(F^ur)` and fix a universal height-two deformation over `B[[t]]`
-(§3.6). Prove that for every quasi-canonical lift of level `s ≥ 1` its marked modulus `t_s` is a
-uniformizer of `M_s`: with `v_F(π_F) = 1`, `v_F(t_s) = 1/[M_s : F]`, that is,
-`1/(q₀^(s−1)(q₀ + 1))` when unramified and `1/q₀^s` when ramified (G86, Proposition 5.3(3) and its
+In the quadratic case let `B = O_(F^ur)` and fix, for each Frobenius twist of the special fibre, a
+universal height-two deformation over `B[[t]]` (§3.6). Prove that for every quasi-canonical lift
+`H_(L_s)` of level `s ≥ 1` its marked modulus `t_s`, taken in the deformation space of the twist to
+which `H_(L_s)` is marked (§6.6), is a uniformizer of `M_s`: with `v_F(π_F) = 1`,
+`v_F(t_s) = 1/[M_s : F]`, that is, `1/(q₀^(s−1)(q₀ + 1))` when unramified and `1/q₀^s` when
+ramified (G86, Proposition 5.3(3) and its
 proof, pp.325–326; Y95, Theorem 2′ and its `n = 2` case, pp.301–302, with proof in §§9–10,
 pp.305–309). A proof route: factor the level-`s` quotient into `s` quotients of degree `q₀` and follow
 the Newton polygons of the `ϖ₀`-series through them; a change of universal coordinate has unit
@@ -1543,7 +1587,7 @@ the neighbouring quotient isogenies. Prove that at level `s ≥ 1` one neighbour
 to `Φ^×`-homothety and `p` have level `s + 1`; that at level zero all `p + 1` have level one; that the
 stabilizer of the level-`s` class acts transitively on the `p` outward neighbours; and that
 `O^×/ℤ_p^×(1 + pO)`, of order `p + 1`, acts simply transitively on the neighbours of the canonical
-lattice (BKO21, §§5.0.1–5.0.2, pp.957–959; G86, §5, p.325). The Hecke and local-point recurrences
+lattice (BKO21, §§5.0.1–5.0.2, pp.955–959; G86, §5, p.325). The Hecke and local-point recurrences
 built from these isogenies belong to the downstream roadmap AnticyclotomicLocalUnits.
 
 **Checks.**
