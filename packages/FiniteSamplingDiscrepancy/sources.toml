@@ -1,0 +1,15 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "FiniteSamplingDiscrepancy"
+
+[[source]]
+id = "lpw"
+locator_scheme = "theorem"
+locator = "Proposition 4.2"
+url = "https://pages.uoregon.edu/dlevin/MARKOV/markovmixing.pdf"
+fetched_from = "https://pages.uoregon.edu/dlevin/MARKOV/markovmixing.pdf"
+fetched_at = "2026-11-05T02:47:47Z"
+sha256 = "9ef39f9467d9647ff3f5e8747b9ce24b7a90d13be2f8156fbd827b95b661a772"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["0.4"]
