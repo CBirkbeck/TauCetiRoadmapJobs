@@ -17,7 +17,7 @@ few lines. The headline theorems and what each lacks:
   maximal-slope quotients.
 * Its minimal-slope form (README MS.4.8) lacks the same carriers and the minimal-slope
   subobject.
-* The minimal slope property on curves (README MS.5.10; D'Addezio, Theorem 4.2.13) lacks, in
+* The minimal slope property on curves (README MS.5.7; D'Addezio, Theorem 4.2.13) lacks, in
   addition, dagger-extendable convergent `F^n`-isocrystals and their dagger hulls.
 * The curve PBQ filtration and the curve rank theorem (README MS.2.5, MS.4.2; Tsuzuki,
   Theorem 3.27 and Proposition 6.1) lack the completed generic field of a curve, its
@@ -29,7 +29,7 @@ few lines. The headline theorems and what each lacks:
 * The finite-field theorems (README MS.6.13, MS.6.14; Tsuzuki, Theorem 7.20) lack overconvergent
   `Q̄_p`-F-isocrystals on smooth varieties over finite fields, their Frobenius fibres and
   `ι`-weights, and Lefschetz curves.
-* The docile Lefschetz theorem (README MS.5.11; D'Addezio, Theorem 4.4.2) lacks docile
+* The docile Lefschetz theorem (README MS.5.8; D'Addezio, Theorem 4.4.2) lacks docile
   overconvergent isocrystals on the complement of a normal crossings divisor.
 -/
 
