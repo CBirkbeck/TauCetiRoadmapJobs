@@ -434,3 +434,16 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 cited_for = ["scope"]
+
+[[source]]
+id = "stacks-00OF"
+locator_scheme = "tag"
+locator = "00OF"
+url = "https://stacks.math.columbia.edu/tag/00OF"
+fetched_from = "https://stacks.math.columbia.edu/download/algebra.pdf#nameddest=00OF"
+fetched_at = "2026-11-05T19:21:03Z"
+sha256 = "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["0.2"]
