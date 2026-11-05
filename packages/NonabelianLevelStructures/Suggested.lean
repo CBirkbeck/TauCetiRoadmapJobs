@@ -48,6 +48,8 @@ open scoped commutatorElement
 
 namespace TauCetiRoadmap.NonabelianLevelStructures
 
+universe u
+
 /-! ## Layer 3: the combinatorial congruence -/
 
 /-- The positive Nielsen transvection `(u, v) ↦ (u, u v)`: precomposition of the surjection
@@ -115,9 +117,9 @@ theorem combinatorial_congruence {G : Type*} [Group G] [Fintype G] (u v : G)
 `r = v_ℓ(|[u, v]|)`. If `|G| ≤ ℓ^{3(r+1)}`, that is `ℓ^{r+1} ≥ |G|^{1/3}`, then `ℓ^{⌈r/2⌉}` divides
 the cardinality of the `Out⁺(F₂)`-orbit of the class of `(u, v)` in `Epi^ext(F₂, G)/⟨γ₋ᵢ⟩`
 (Chen, Corollary 4.12.5(b), p. 391). -/
-theorem simple_group_congruence {G : Type} [Group G] [Fintype G] [IsSimpleGroup G]
+theorem simple_group_congruence {G : Type u} [Group G] [Fintype G] [IsSimpleGroup G]
     (hnonab : ∃ a b : G, a * b ≠ b * a)
-    (hPSL : ∀ (K : Type) [Field K] [Finite K],
+    (hPSL : ∀ (K : Type u) [Field K] [Finite K],
       IsEmpty (G ≃* Matrix.ProjectiveSpecialLinearGroup (Fin 2) K))
     (ℓ : ℕ) (hℓ : ℓ.Prime) (u v : G) (hgen : Subgroup.closure ({u, v} : Set G) = ⊤)
     (hlarge : Nat.card G ≤ (ℓ ^ ((orderOf ⁅u, v⁆).factorization ℓ + 1)) ^ 3) :

@@ -12,9 +12,9 @@ It leaves the following to named roadmaps.
 - InverseGaloisAndArithmeticFundamentalGroups §IG.5.4 owns balanced admissible G-covers of marked curves, the proper admissible-cover stack and the equivalence with stable marked G-curves, whose marking over a ramified label is the reduced ramification divisor; §IG.3.2 owns exterior epimorphisms and the action of Out(F_r) on them; §IG.3.1 owns Riemann existence for punctured curves; §§IG.1.2–IG.1.4 own tame tangential fibres, invariance under algebraically closed base extension in characteristic zero and the moduli outer action.
 - AnabelianGeometryAndNonabelianChabauty §§1.1–1.2 own tangential fibre functors on P¹ ∖ {0, 1, ∞}, local inertia orbits on branches, good paths and the existence of symmetric good paths.
 - StableReduction owns nodes, normalization and dual graphs with loops (Layer 1), the relative dualizing sheaf of nodal curves (Layer 2), and prestable and stable pointed curves with external and self-clutching (Layer 3).
-- SchemeAndStackFoundations owns Deligne–Mumford stacks (§1.19), quotient stacks (§1.21), coarse moduli spaces (§1.23), Riemann–Hurwitz for curves (§3.2), versal deformation of a node (§4.6) and the stack of stable pointed curves (§4.15). AlgebraicModuliForArithmeticGeometry §5.1 owns rigidification along inertia subgroups and its vertical-kernel representability criterion, and §§8.2–8.3 framed deformations and completed atlas presentations. ModularCurvesPartII owns full level structures and the Deligne–Rapoport level stacks (§§3.1, 3.12) and the compactified coarse j-line (§3.11).
+- SchemeAndStackFoundations owns Deligne–Mumford stacks (§1.19), quotient stacks (§1.21), coarse moduli spaces (§1.23), Riemann–Hurwitz for curves (§3.2), versal deformation of a node (§4.6) and the stack of stable pointed curves (§4.15). AlgebraicModuliForArithmeticGeometry §5.1 owns rigidification along inertia subgroups and its vertical-kernel representability criterion, and §8.3 the comparison of framed deformations with completed local rings and atlas presentations. ModularCurvesPartII owns full level structures and the Deligne–Rapoport level stacks (§§3.1, 3.12) and the compactified coarse j-line (§3.11).
 - ArithmeticGaloisRepresentations owns absolute irreducibility in Burnside's form (§1.7), normal subgroups and automorphisms of PSL₂ and PGL₂ (§4.3) and Dickson's classification (§4.4). ClassicalArithmeticCompletion owns the Markoff level surfaces V_k and the trace-coordinate surface X (§4.58), the Markoff–Hurwitz moves with permutations and even sign changes (§4.57) and the finite-field point count (§4.76). Tau Ceti owns the Fricke identity `Matrix.SpecialLinearGroup.trace_commutatorElement_fin_two`.
-- MappingClassGroupsAndCanonicalRepresentations owns the analytic orbifold fundamental group of the moduli stack of pointed curves (C.0/moduli-monodromy). HeightsRationalPointsAndObstructions §4.6 owns Faltings's finiteness theorem. BelyiMaps Layer 10 owns Belyi's theorem. CFSGStatement owns the statement of the classification of finite simple groups.
+- MappingClassGroupsAndCanonicalRepresentations owns the analytic orbifold fundamental group of the moduli stack of pointed curves (C.0/moduli-monodromy). HeightsRationalPointsAndObstructions §4.6 owns Faltings's finiteness theorem. BelyiMaps Layer 10 §10.4 owns Belyi's theorem (that roadmap assigns the layer to a successor roadmap). Tau Ceti owns the statement of the classification of finite simple groups, `TauCeti.ClassificationStatement`.
 
 The stack Hodge degree deg λ = 1/24 and the conormal power isomorphism along a ramified section enter only the proof of Chen's Theorem 3.5.1, which ArithmeticDynamicsPartII §6.0 states; they belong to that proof and are not separate targets here.
 
@@ -22,7 +22,7 @@ The stack Hodge degree deg λ = 1/24 and the conormal power isomorphism along a 
 
 G is a finite group. Bases lie over ℤ[1/|G|]; every characteristic-zero or algebraically closed hypothesis is stated in the target that uses it. Right G-actions are used on covers and left fundamental-group actions on fibres. The commutator is [x, y] = x y x⁻¹ y⁻¹, Mathlib's `commutatorElement`. For an element c, |c| is its order (Mathlib `orderOf`); a conjugacy class is named as such. Valuations v_ℓ are taken of positive integers only (Mathlib `Nat.factorization`).
 
-F₂ is free on a, b, identified with the fundamental group of a once-punctured complex torus by a positively oriented basis; with these conventions the positive peripheral loop is [b, a]. A surjection φ : F₂ → G is recorded by its generating pair (φ(a), φ(b)); Epi^ext(F₂, G) is the set of surjections modulo simultaneous conjugation in G (InverseGaloisAndArithmeticFundamentalGroups §IG.3.2). Aut(F₂) acts by precomposition, which is a right action; its polynomial realization in trace coordinates is therefore an anti-homomorphism. Out(F₂) ≅ GL₂(ℤ) through abelianization, and Out⁺(F₂) is the preimage of SL₂(ℤ). The central element γ₋ᵢ : (a, b) ↦ (a⁻¹, b⁻¹) maps to −I. The positive transvections (a, b) ↦ (a, a b) and (a, b) ↦ (b a, b) have abelianization matrices `[[1, 1], [0, 1]]` and `[[1, 0], [1, 1]]` (columns are the images of a and b); they generate SL₂(ℤ).
+F₂ is free on a, b, identified with the fundamental group of a once-punctured complex torus by a positively oriented basis; with these conventions the positive peripheral loop is [b, a]. A surjection φ : F₂ → G is recorded by its generating pair (φ(a), φ(b)); Epi^ext(F₂, G) is the set of surjections modulo simultaneous conjugation in G (InverseGaloisAndArithmeticFundamentalGroups §IG.3.2). Aut(F₂) acts by precomposition, which is a right action; its polynomial realization in trace coordinates is therefore an anti-homomorphism. InverseGaloisAndArithmeticFundamentalGroups §IG.3.2 writes the same action as the left action e ↦ e ∘ α⁻¹; the orbits, and hence every statement here, agree. Out(F₂) ≅ GL₂(ℤ) through abelianization, and Out⁺(F₂) is the preimage of SL₂(ℤ). The central element γ₋ᵢ : (a, b) ↦ (a⁻¹, b⁻¹) maps to −I. The positive transvections (a, b) ↦ (a, a b) and (a, b) ↦ (b a, b) have abelianization matrices `[[1, 1], [0, 1]]` and `[[1, 0], [1, 1]]` (columns are the images of a and b); they generate SL₂(ℤ).
 
 Adm(G) is the stack of elliptic admissible G-covers before rigidification, Adm⁰(G) its smooth-target locus, M(G) the smooth level stack and M̄(G) its center-rigidified compactification (ArithmeticDynamicsPartII §6.0). A subscript X denotes a connected component; X^coarse its coarse curve. Every j-degree is the generic degree of a map of coarse curves. Admissible covers are finite and balanced at nodes; flatness at a ramified node is not required: the index-two chart has generic rank two and special fibre of length three.
 
@@ -45,7 +45,7 @@ Convention witnesses.
 
 ### From Tau Ceti
 
-`Matrix.SpecialLinearGroup.trace_commutatorElement_fin_two` (`TauCeti/LinearAlgebra/Matrix/Trace/FinTwo.lean`) is the Fricke identity tr[A, B] = x² + y² + z² − x y z − 2 for A, B ∈ SL₂(R) over every commutative ring, with (x, y, z) = (tr A, tr B, tr AB). `TauCeti.PermutationTriple` (`TauCeti/Combinatorics/PermutationTriple/Basic.lean`) is a triple of permutations of `Fin n` with σ∞ σ₁ σ₀ = 1; `TauCeti.PermutationTriple.eulerChar` and `TauCeti.PermutationTriple.genus` (`TauCeti/Combinatorics/PermutationTriple/EulerCharacteristic.lean`) are the sum of the cycle counts minus n and the truncated combinatorial genus, and `TauCeti.PermutationTriple.IsConnected.two_sub_two_mul_genus` gives 2 − 2g = χ for a connected triple; the genus has geometric meaning only for connected triples.
+`Matrix.SpecialLinearGroup.trace_commutatorElement_fin_two` (`TauCeti/LinearAlgebra/Matrix/Trace/FinTwo.lean`) is the Fricke identity tr[A, B] = x² + y² + z² − x y z − 2 for A, B ∈ SL₂(R) over every commutative ring, with (x, y, z) = (tr A, tr B, tr AB). `TauCeti.PermutationTriple` (`TauCeti/Combinatorics/PermutationTriple/Basic.lean`) is a triple of permutations of `Fin n` with σ∞ σ₁ σ₀ = 1; `TauCeti.PermutationTriple.eulerChar` and `TauCeti.PermutationTriple.genus` (`TauCeti/Combinatorics/PermutationTriple/EulerCharacteristic.lean`) are the sum of the cycle counts minus n and the truncated combinatorial genus, and `TauCeti.PermutationTriple.IsConnected.two_sub_two_mul_genus` gives 2 − 2g = χ for a connected triple; the genus has geometric meaning only for connected triples. `TauCeti.ClassificationStatement` (`TauCeti/GroupTheory/SpecificGroups/CFSG/Classification.lean`) is the proposition that every finite simple group is isomorphic to a group on the classification list, `TauCeti.CFSGIndex.Group`; it is a `Prop`-valued definition, not a theorem, and `TauCeti.classificationStatement_of_zero` transports it from universe zero to every universe. §4.2 uses its truth to pass from the listed groups to every finite simple group.
 
 ### From TauCetiRoadmap.ArithmeticDynamicsPartII
 
@@ -55,7 +55,7 @@ What ArithmeticDynamicsPartII must provide (gap:markoff-alternating-three-mod-fo
 
 ### From TauCetiRoadmap.InverseGaloisAndArithmeticFundamentalGroups
 
-§IG.5.4, "Admissible G-covers of marked curves" and "Admissible stacks and stable marked G-curves": balanced admissible G-covers over ℤ[1/|G|], their base change, the connected and smooth loci, inverse node characters, the proper Deligne–Mumford admissible stack for 2g − 2 + n > 0, the equivalence with stable marked G-curves marking the reduced ramification divisor over a ramified label and the whole étale fibre over an unramified one, and the vertical automorphism group Z(G) of a connected smooth cover. §IG.3.2, "Exterior epimorphisms and T-systems": `ExteriorEpi`, the action of Out(F_r) after the inner quotient, and generating tuples as surjections. §IG.3.1, "Riemann existence for punctured curves", with ramification indices read from cycle lengths. §IG.1.2, "Tame tangential fibres at a boundary point", with the cyclic inertia and its peripheral character convention. §IG.1.3, "Invariance under algebraically closed base extension in characteristic zero". §IG.1.4, "Exactness in families and the moduli outer action", including the generic stabilizer ±1 of 𝓜(1,1).
+§IG.5.4, "Admissible G-covers of marked curves" and "Admissible stacks and stable marked G-curves": balanced admissible G-covers over ℤ[1/|G|], their base change, the connected and smooth loci, inverse node characters, the proper Deligne–Mumford admissible stack for 2g − 2 + n > 0, the equivalence with stable marked G-curves marking the reduced ramification divisor over a ramified label and the whole étale fibre over an unramified one, and the vertical automorphism group Z(G) of a connected smooth cover. §IG.3.2, "Exterior epimorphisms and T-systems": exterior epimorphisms as the classes of surjections F_r → G modulo inner automorphisms of G, the action of Out(F_r) after the inner quotient, and generating tuples as surjections. §IG.3.1, "Riemann existence for punctured curves", with ramification indices read from cycle lengths. §IG.1.2, "Tame tangential fibres at a boundary point", with the cyclic inertia and its peripheral character convention. §IG.1.3, "Invariance under algebraically closed base extension in characteristic zero". §IG.1.4, "Exactness in families and the moduli outer action", including the generic stabilizer ±1 of 𝓜(1,1).
 
 What InverseGaloisAndArithmeticFundamentalGroups must provide (gap:gaschutz-generating-pairs): for every surjection f : G₁ → G₂ of finite groups with G₁ generated by two elements, every generating pair of G₂ lifts along f to a generating pair of G₁, so that postcomposition with f maps Epi^ext(F₂, G₁) onto Epi^ext(F₂, G₂) compatibly with the Out(F₂)-actions.
 
@@ -75,7 +75,7 @@ What SchemeAndStackFoundations must provide (gap:equivariant-node-smoothing): fo
 
 ### From TauCetiRoadmap.AlgebraicModuliForArithmeticGeometry
 
-§5.1, "Inertia subgroups and rigidification": `ArithmeticModuli.Rigidification.stack` for a flat finitely presented subgroup of inertia, and `ArithmeticModuli.Rigidification.vertical_kernel`: when the vertical inertia kernel of X → Y is such a subgroup, the rigidification factors X → Y through a representable morphism. §8.2: the smoothing family x y = t of the node. §8.3, "Exact completion and tangent interfaces": `schemeFramedCompletionEquiv` and `completedAtlasPresentation_equivalence`.
+§5.1, "Inertia subgroups and rigidification": `ArithmeticModuli.Rigidification.stack` for a flat finitely presented subgroup of inertia, and `ArithmeticModuli.Rigidification.vertical_kernel`: when the vertical inertia kernel of X → Y is such a subgroup, the rigidification factors X → Y through a representable morphism. §8.3, "Exact completion and tangent interfaces": `schemeFramedCompletionEquiv` and `completedAtlasPresentation_equivalence`.
 
 What AlgebraicModuliForArithmeticGeometry must provide (gap:geometric-point-completion): at a geometric point of a locally Noetherian Deligne–Mumford stack whose residue field is algebraically closed but not finite over the residue field of a Cohen ring Λ, the universal framed deformation ring over Λ is identified with the completed strictly henselian local ring, retaining the point identification and the residual automorphism group.
 
@@ -89,7 +89,7 @@ What AlgebraicModuliForArithmeticGeometry must provide (gap:geometric-point-comp
 
 ### From TauCetiRoadmap.LanglandsParameterStacks
 
-LP2e.1 coarse parameter quotients `Spec A^Ĥ` and LP2c.7 the generation of invariant functions on tuples by trace functions over fields.
+§2.1, "Coarse parameter quotients": the coarse quotient `Spec A^Ĥ` by the coaction equalizer and the unique factorization of invariant morphisms through it. §3.8, "Trace and excursion character comparison": the generation of invariant functions on tuples by trace functions over an algebraically closed field of characteristic zero.
 
 What LanglandsParameterStacks must provide (gap:integral-rank-two-invariants): for every commutative ring R, the invariants of the GL₂-scheme coaction on the coordinate ring of pairs of 2 × 2 matrices are generated by traces of words and determinants, their formation commutes with arbitrary base change R → S, and restriction to pairs in SL₂ × SL₂ is surjective on invariants.
 
@@ -107,15 +107,11 @@ What MappingClassGroupsAndCanonicalRepresentations must provide (gap:asada-cofin
 
 ### From TauCetiRoadmap.HeightsRationalPointsAndObstructions
 
-§4.6, "Mordell over number fields": `Curve.finite_rationalPoints`, finiteness of the rational points of a smooth projective geometrically connected curve of genus at least two over a number field.
+§4.6, "Mordell over number fields": `mordell_finite`, finiteness of the rational points of a smooth projective geometrically connected curve of genus at least two over a number field.
 
 ### From TauCetiRoadmap.BelyiMaps
 
-Layer 10, §10.4: a curve over ℚ̄ admits a Belyi map.
-
-### From TauCetiRoadmap.CFSGStatement
-
-A0: `ClassificationStatement`, every finite simple group is isomorphic to a group on the list.
+Layer 10, §10.4: a curve over ℚ̄ admits a Belyi map. BelyiMaps assigns that layer to a successor roadmap; the statement is consumed as BelyiMaps states it.
 
 ### From TauCetiRoadmap.CFSGBasicProperties
 
@@ -200,7 +196,7 @@ One proof route: use equivariant nodal deformation theory with the framed compar
 - A smooth cover has r = 1; boundary étaleness is not inferred from the generic point.
 - For G = C₂ × C₂ × C₂, which is not generated by two elements, Epi(F₂, G) is empty and so is Adm(G).
 
-*Needs:* gap:equivariant-node-smoothing (SchemeAndStackFoundations §4.6); gap:geometric-point-completion (AlgebraicModuliForArithmeticGeometry §8.3); AlgebraicModuliForArithmeticGeometry §8.2; InverseGaloisAndArithmeticFundamentalGroups §IG.5.4; ArithmeticDynamicsPartII §6.0.
+*Needs:* gap:equivariant-node-smoothing (SchemeAndStackFoundations §4.6); gap:geometric-point-completion (AlgebraicModuliForArithmeticGeometry §8.3); InverseGaloisAndArithmeticFundamentalGroups §IG.5.4; ArithmeticDynamicsPartII §6.0.
 
 ### 0.5 Functoriality under quotients of G
 
@@ -264,7 +260,7 @@ For G = C₂ the level stack is the Γ₁(2)-curve: one component of coarse degr
 
 ### Dependencies
 
-InverseGaloisAndArithmeticFundamentalGroups §§IG.1.2, IG.1.3, IG.1.4, IG.3.1, IG.3.2, IG.5.4 and gap:gaschutz-generating-pairs; ArithmeticDynamicsPartII §6.0; AnabelianGeometryAndNonabelianChabauty §1.1; StableReduction Layer 2; SchemeAndStackFoundations §§1.19, 1.21, 1.23 and gap:equivariant-node-smoothing; AlgebraicModuliForArithmeticGeometry §§5.1, 8.2 and gap:geometric-point-completion; ModularCurvesPartII §3.1; MappingClassGroupsAndCanonicalRepresentations C.0/moduli-monodromy, gap:punctured-torus-nielsen and gap:asada-cofinality; BelyiMaps Layer 10; Tau Ceti `TauCeti.CoveringSpace.monodromyFunctor`.
+InverseGaloisAndArithmeticFundamentalGroups §§IG.1.2, IG.1.3, IG.1.4, IG.3.1, IG.3.2, IG.5.4 and gap:gaschutz-generating-pairs; ArithmeticDynamicsPartII §6.0; AnabelianGeometryAndNonabelianChabauty §1.1; StableReduction Layer 2; SchemeAndStackFoundations §§1.19, 1.21, 1.23 and gap:equivariant-node-smoothing; AlgebraicModuliForArithmeticGeometry §§5.1, 8.3 and gap:geometric-point-completion; ModularCurvesPartII §3.1; MappingClassGroupsAndCanonicalRepresentations C.0/moduli-monodromy, gap:punctured-torus-nielsen and gap:asada-cofinality; BelyiMaps Layer 10; Tau Ceti `TauCeti.CoveringSpace.monodromyFunctor`.
 
 ## Layer 1: cusps and their finite data
 
@@ -530,7 +526,7 @@ A surjection φ : F₂ → G is recorded by its generating pair (φ(a), φ(b)). 
 The defining API is:
 
 - For a generating pair (u, v), the orbit space of `exteriorInversionGroup` on generating pairs is Epi^ext(F₂, G)/⟨γ₋ᵢ⟩, and `coarseNielsenOrbit` is the Out⁺(F₂)-orbit of the class of (u, v) in it: Aut⁺(F₂) is generated by the two transvections and the inner automorphisms, the inner automorphism by a word w acts on pairs by conjugation by φ(w), and γ₋ᵢ is central in Out⁺(F₂).
-- Precomposition is a right action, so the map from automorphisms to permutations of pairs is an anti-homomorphism; the image of the subgroup generated by the transvections is the subgroup generated by their images, so orbits are unaffected.
+- Precomposition is a right action, so the map from automorphisms to permutations of pairs is an anti-homomorphism; the image of the subgroup generated by the transvections is the subgroup generated by their images, so orbits are unaffected, and they coincide with the orbits of the left action e ↦ e ∘ α⁻¹ of InverseGaloisAndArithmeticFundamentalGroups §IG.3.2.
 - `nielsenRight` and `nielsenLeft` preserve generating pairs and conjugate the commutator, [u, u v] = u [u, v] u⁻¹ and [v u, v] = v [u, v] v⁻¹, so the commutator class is constant on `positiveNielsenGroup`-orbits; γ₋ᵢ preserves it as well, since (u v)[u⁻¹, v⁻¹](u v)⁻¹ = [u, v].
 - The cardinality of `coarseNielsenOrbit` is the coarse degree over the j-line of the corresponding component of M̄(G) (ArithmeticDynamicsPartII §6.0 and §0.3).
 
@@ -560,7 +556,8 @@ The defining API is:
 - For G = 1 and c = 1, both invariants equal 1.
 - For D₁₀ and c a nontrivial rotation, m′_c = 5 and d′_c = 1.
 - For a class c that is not the commutator class of any generating pair the family is empty and m′_c = 1; this asserts nothing about a nonempty stratum.
-- For SL₂(𝔽₅) and c noncentral of trace −2: m′_c = 2 (A = Z(G) = {±1}, which lies in ⟨[u⁻¹, h⁻¹]⟩) and d′_c = 10/10 = 1; the least common multiple of image orders 2 and 4 would be 4, not their product 8.
+- For SL₂(𝔽₅) and c noncentral of trace −2: m′_c = 2 (A = Z(G) = {±1}, which lies in ⟨[u⁻¹, h⁻¹]⟩) and d′_c = 10/10 = 1; every pair in the family contributes the group {±1}.
+- For the dihedral group of order 16 with rotation ρ of order 8, reflection σ and c = ρ² of order 4: the pair (ρ, σ) has A = ⟨ρ⟩ and A ∩ ⟨[ρ⁻¹, σ]⟩ = ⟨ρ²⟩ of order 4, while the pair (σ, σρ) has A = {1, ρ⁴} and A ∩ ⟨[σ, ρ⁻¹σ]⟩ = {1, ρ⁴} of order 2; so m′_c = 4, the least common multiple of the element orders 1, 2, 4, not the product 8 of the two group orders and not the order 2 at a single pair; d′_c = |⟨ρ⟩|/4 = 2.
 - For A₄ with c of order 2: m′_c = 2 and d′_c = 4/2 = 2.
 
 *Needs:* §2.1; §2.3; §0.1; Mathlib `Subgroup.centralizer`, `Subgroup.zpowers`, `Finset.lcm`, `orderOf`, `IsConj`.
@@ -618,7 +615,7 @@ One proof route. By Vdovin's theorem every abelian subgroup B of G has |B| < |G|
 - For G = A₅ ≅ PSL₂(𝔽₄) ≅ PSL₂(𝔽₅) the theorem does not apply, and A₅ has an abelian subgroup of order 5 ≥ 60^(1/3) ≈ 3.9; the exclusion of PSL₂ is necessary for Vdovin's bound.
 - For G = A₆ ≅ PSL₂(𝔽₉) the theorem does not apply.
 
-*Needs:* §4.1; §3.3; gap:vdovin-abelian-subgroups (CFSGBasicProperties); CFSGStatement A0 (`ClassificationStatement`, to transfer Vdovin's bound from the listed groups to every finite simple group); Mathlib `IsSimpleGroup`, `Matrix.ProjectiveSpecialLinearGroup`, `Nat.factorization`.
+*Needs:* §4.1; §3.3; gap:vdovin-abelian-subgroups (CFSGBasicProperties); Tau Ceti `TauCeti.ClassificationStatement` (to transfer Vdovin's bound from the listed groups to every finite simple group); Mathlib `IsSimpleGroup`, `Matrix.ProjectiveSpecialLinearGroup`, `Nat.factorization`.
 
 ### Examples
 
@@ -626,7 +623,7 @@ For G = PSU₃(4), of order 62400, and the four rationally conjugate classes c o
 
 ### Dependencies
 
-§§2.2, 3.2, 3.3; gap:vdovin-abelian-subgroups; CFSGStatement A0; Mathlib `IsSimpleGroup`, `Matrix.ProjectiveSpecialLinearGroup`, `Nat.factorization`.
+§§2.2, 3.2, 3.3; gap:vdovin-abelian-subgroups; Tau Ceti `TauCeti.ClassificationStatement`; Mathlib `IsSimpleGroup`, `Matrix.ProjectiveSpecialLinearGroup`, `Nat.factorization`.
 
 ## Layer 5: rank-two trace coordinates
 
@@ -651,11 +648,11 @@ The defining API is:
 
 One proof route: obtain generation of the invariants of pairs of 2 × 2 matrices by traces of words and determinants over every ring, with base change and surjective restriction to SL₂ × SL₂; reduce words in two determinant-one matrices to the three traces by Cayley–Hamilton; prove algebraic independence on a universal three-parameter family.
 
-*Needs:* gap:integral-rank-two-invariants (LanglandsParameterStacks); LanglandsParameterStacks LP2e.1 (coarse quotients); Tau Ceti `Matrix.SpecialLinearGroup.trace_commutatorElement_fin_two`; Mathlib `Matrix.SpecialLinearGroup`, `Matrix.trace`.
+*Needs:* gap:integral-rank-two-invariants (LanglandsParameterStacks); LanglandsParameterStacks §2.1 (coarse quotients); Tau Ceti `Matrix.SpecialLinearGroup.trace_commutatorElement_fin_two`; Mathlib `Matrix.SpecialLinearGroup`, `Matrix.trace`.
 
 ### 5.2 Outer automorphisms in trace coordinates
 
-Over every commutative ring R, right precomposition by Aut(F₂) induces an anti-homomorphism from Aut(F₂) to the group of polynomial automorphisms of 𝔸³_R, which factors through Out(F₂)/⟨−I⟩ ≅ PGL₂(ℤ). The Nielsen generators r : (a, b) ↦ (a⁻¹, b), s : (a, b) ↦ (b, a) and t : (a, b) ↦ (a⁻¹, a b) act by (x, y, z) ↦ (x, y, x y − z), (y, x, z) and (x, z, y), and the central element γ₋ᵢ acts trivially. The image is the group generated by the Vieta move and the coordinate permutations, which over a finite field restricts on the punctured Markoff surface to the group Γ of ArithmeticDynamicsPartII §0.1; no faithfulness is asserted. The group of ClassicalArithmeticCompletion §4.57 also contains the even sign changes and is strictly larger. ArithmeticDynamicsPartII §6.1 states the finite-field orientation index; this section states the polynomial action over every ring. (Chen, Proposition 5.2.5, pp. 396–397; Chen's statement that the action is a homomorphism is corrected to an anti-homomorphism.)
+Over every commutative ring R, right precomposition by Aut(F₂) induces an anti-homomorphism from Aut(F₂) to the group of polynomial automorphisms of 𝔸³_R, which factors through Out(F₂)/⟨−I⟩ ≅ PGL₂(ℤ). The Nielsen generators r : (a, b) ↦ (a⁻¹, b), s : (a, b) ↦ (b, a) and t : (a, b) ↦ (a⁻¹, a b) act by (x, y, z) ↦ (x, y, x y − z), (y, x, z) and (x, z, y), and the central element γ₋ᵢ acts trivially. The image is the group generated by the Vieta move and the coordinate permutations, which over a finite field restricts on the punctured Markoff surface to the group Γ of ArithmeticDynamicsPartII §0.1; no faithfulness is asserted. The group of ClassicalArithmeticCompletion §4.57 also contains the even sign changes and is strictly larger. ArithmeticDynamicsPartII §6.1 states the finite-field orientation index; this section states the polynomial action over every ring. (Chen, Proposition 5.2.5, pp. 396–397; Chen displays the map with an injective arrow, but it is not injective, since γ₋ᵢ and every inner automorphism act trivially on triples.)
 
 One proof route: compute the three trace transformations from tr(AB) + tr(AB⁻¹) = tr A · tr B; check the composition order of the right action explicitly; inner automorphisms act by simultaneous conjugation and fix the coordinates, and γ₋ᵢ fixes them because tr(A⁻¹B⁻¹) = tr(BA) = tr(AB).
 
@@ -765,7 +762,7 @@ Over 𝔽₂, 𝔽₃, 𝔽₅, 𝔽₇ the trace map on SL₂(𝔽_q)² attains
 
 ### Dependencies
 
-Tau Ceti `Matrix.SpecialLinearGroup.trace_commutatorElement_fin_two`; gap:integral-rank-two-invariants; LanglandsParameterStacks LP2e.1; gap:punctured-torus-nielsen; ClassicalArithmeticCompletion §4.57; ArithmeticGaloisRepresentations §§1.7, 4.3, 4.4; ArithmeticDynamicsPartII §§0.1, 6.0, 6.1; §0.2; Mathlib `Matrix.SpecialLinearGroup`, `Matrix.trace`, `Matrix.GeneralLinearGroup`, `Algebra.adjoin`, `Subgroup.centralizer`, `FreeGroup`.
+Tau Ceti `Matrix.SpecialLinearGroup.trace_commutatorElement_fin_two`; gap:integral-rank-two-invariants; LanglandsParameterStacks §2.1; gap:punctured-torus-nielsen; ClassicalArithmeticCompletion §4.57; ArithmeticGaloisRepresentations §§1.7, 4.3, 4.4; ArithmeticDynamicsPartII §§0.1, 6.0, 6.1; §0.2; Mathlib `Matrix.SpecialLinearGroup`, `Matrix.trace`, `Matrix.GeneralLinearGroup`, `Algebra.adjoin`, `Subgroup.centralizer`, `FreeGroup`.
 
 ## Layer 6: SL₂ level structures
 
@@ -773,7 +770,7 @@ Throughout, q = p^f is a prime power and t ∈ 𝔽_q; X_t(q) is the level t + 2
 
 ### 6.1 The epimorphic trace −2 locus over a prime field
 
-Let X_t°(q) be the set of triples of pairs generating SL₂(𝔽_q) with commutator trace t. For q ≥ 3 and t ≠ 2, X_t°(q) ⊆ X_t*(q); for q = 2 the non-dihedral locus is empty (SL₂(𝔽₂) ≅ S₃ is dihedral) while X_1°(2) is not. Both loci are empty at t = 2. For an odd prime p and t = −2 both loci equal the punctured Markoff surface X*(𝔽_p), and the trace map is a bijection Epi(F₂, SL₂(𝔽_p))_(−2)/GL₂(𝔽_p) → X*(𝔽_p). This equality is not extended to proper prime powers. (Chen, Definitions 5.2.14–5.2.15 and Propositions 5.2.16–5.2.17, pp. 401–402; (1.2), p. 307.) In the proof of Chen's Proposition 5.2.16(d) the trace is t ≠ 2 (not t ≠ ±2), and the dihedral case with one rotation and one reflection is added: the reflection and the product are involutions, so two traces vanish.
+Let X_t°(q) be the set of triples of pairs generating SL₂(𝔽_q) with commutator trace t. For q ≥ 3 and t ≠ 2, X_t°(q) ⊆ X_t*(q); for q = 2 the non-dihedral locus is empty (SL₂(𝔽₂) ≅ S₃ is dihedral) while X_1°(2) is not. Both loci are empty at t = 2. For an odd prime p and t = −2 both loci equal the punctured Markoff surface X*(𝔽_p), and the trace map is a bijection Epi(F₂, SL₂(𝔽_p))_(−2)/GL₂(𝔽_p) → X*(𝔽_p). This equality is not extended to proper prime powers. (Chen, Definitions 5.2.14–5.2.15 and Propositions 5.2.16–5.2.17, pp. 401–402; (1.2), p. 307.) In the proof of Chen's Proposition 5.2.16(d) absolute irreducibility is equivalent to commutator trace different from 2, not equal to 2, and the dihedral case with one rotation and one reflection is added: the reflection and the product are involutions, so two traces vanish.
 
 One proof route: a nonzero point of the Markoff surface has at least two nonzero coordinates (if y = z = 0 then x² = 0); a noncentral element of trace −2 has order 2p, so the projective image contains an element of order p; by Dickson's classification over the prime field the image is then PSL₂(𝔽_p), the exceptional A₄, S₄, A₅ arising only for p ∈ {3, 5}, where X*(𝔽₃) is empty and A₅ is PSL₂(𝔽₅); the image contains the center (ArithmeticDynamicsPartII §6.0), so the pair generates SL₂(𝔽_p).
 
@@ -927,7 +924,7 @@ One proof route: extend K finitely so that each relevant component is defined an
 - For p = 5, 7 the genus is 0 and for p = 11 it is 1, so no finiteness follows from this argument.
 - A K-point of the coarse curve records only j: for j ≠ 0, 1728 an elliptic curve E over K and its quadratic twists by the classes of K^×/K^(×2) have the same j and are pairwise non-isomorphic over K, so the conclusion concerns j-invariants.
 
-*Needs:* §7.3; HeightsRationalPointsAndObstructions §4.6 (`Curve.finite_rationalPoints`); §7.1.
+*Needs:* §7.3; HeightsRationalPointsAndObstructions §4.6 (`mordell_finite`); §7.1.
 
 ### 7.5 The projective absolute-level quotient
 
