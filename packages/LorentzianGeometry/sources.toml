@@ -1,0 +1,290 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "LorentzianGeometry"
+
+[[source]]
+id = "minguzzi2019"
+authors = "E. Minguzzi"
+title = "Lorentzian causality theory"
+year = 2019
+venue = "Living Rev. Relativ. 22 (2019), art. 3"
+doi = "10.1007/s41114-019-0019-x"
+locator_scheme = "section"
+locator = "§1–2"
+url = "https://inspirehep.net/files/7a575d682fd15aaad8463a778fac1609"
+fetched_from = "https://inspirehep.net/files/7a575d682fd15aaad8463a778fac1609"
+fetched_at = "2026-11-04T22:51:55Z"
+sha256 = "0fe164b293c9697d6f1dd24ae329d7e7087b5655b910b53ab3425eb96ee9588d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "open-access Living Reviews article (DOI 10.1007/s41114-019-0019-x); the publisher's full text is read from its INSPIRE mirror; not on arXiv; the metadata of an earlier wrong fetch of arXiv:1709.06494 under this key were corrected by hand"
+cited_for = ["Lorentzian manifolds of low regularity, time orientation, causal character of hypersurfaces"]
+
+[[source]]
+id = "chrusciel2011"
+authors = "Piotr T. Chruściel"
+title = "Elements of causality theory"
+year = 2011
+arxiv = "1110.6706v1"
+locator_scheme = "section"
+locator = "§1–2"
+url = "https://arxiv.org/abs/1110.6706v1"
+fetched_from = "https://arxiv.org/pdf/1110.6706v1"
+fetched_at = "2026-11-04T22:46:48Z"
+sha256 = "e967a1682716085e4e737e15f5af7c5107eecef5fc111c9f842ad7465c8133e4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v1"
+cited_for = ["Lorentzian manifolds, time orientation"]
+
+[[source]]
+id = "chruscielgrant2012"
+authors = "Piotr T. Chruściel, James D. E. Grant"
+title = "On Lorentzian causality with continuous metrics"
+year = 2011
+doi = "10.1088/0264-9381/29/14/145001"
+arxiv = "1111.0400v3"
+locator_scheme = "section"
+locator = "§1–2"
+url = "https://arxiv.org/abs/1111.0400v3"
+fetched_from = "https://arxiv.org/pdf/1111.0400v3"
+fetched_at = "2026-11-04T22:40:44Z"
+sha256 = "5b8cc624c32580b4a382461830dc4506d3d3bceab94a35d352849ca1313a998c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v3"
+cited_for = ["continuous metrics, causal curves"]
+
+[[source]]
+id = "sbierski2018"
+authors = "Jan Sbierski"
+title = "The $C^0$-inextendibility of the Schwarzschild spacetime and the spacelike diameter in Lorentzian Geometry"
+year = 2015
+arxiv = "1507.00601v2"
+locator_scheme = "section"
+locator = "§1–2"
+url = "https://arxiv.org/abs/1507.00601v2"
+fetched_from = "https://arxiv.org/pdf/1507.00601v2"
+fetched_at = "2026-11-04T22:40:49Z"
+sha256 = "de279481e95ff374178d4658d6889e60e794c1d7e283b8602060605c1ba3846c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v2"
+cited_for = ["C^0-extensions and inextendibility"]
+
+[[source]]
+id = "dafermosluk2017"
+authors = "Mihalis Dafermos, Jonathan Luk"
+title = "The interior of dynamical vacuum black holes I: The $C^0$-stability of the Kerr Cauchy horizon"
+year = 2017
+venue = "Ann. of Math. (2) 202(2): 309-630 (September 2025)"
+doi = "10.4007/annals.2025.202.2.1"
+arxiv = "1710.01722v1"
+locator_scheme = "section"
+locator = "§1"
+url = "https://arxiv.org/abs/1710.01722v1"
+fetched_from = "https://arxiv.org/pdf/1710.01722v1"
+fetched_at = "2026-11-04T22:41:00Z"
+sha256 = "e3d35d61cee99bc0dcd6f0574ccce09497be89f163feb5a0584791da15591eef"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v1"
+cited_for = ["continuous extensions across Cauchy horizons"]
+
+[[source]]
+id = "luoyu2023"
+authors = "Tian-Wen Luo, Pin Yu"
+title = "On the stability of multi-dimensional rarefaction waves I: the energy estimates"
+year = 2023
+arxiv = "2302.09714v2"
+locator_scheme = "section"
+locator = "§1"
+url = "https://arxiv.org/abs/2302.09714v2"
+fetched_from = "https://arxiv.org/pdf/2302.09714v2"
+fetched_at = "2026-11-04T22:46:15Z"
+sha256 = "78ce7a2d283e922d47e1826882407b530f2986ce0843da306bcd016f508a6e78"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v2"
+cited_for = ["acoustical metric, characteristic rarefaction fronts, optical functions"]
+
+[[source]]
+id = "galloway2004"
+authors = "G. J. Galloway"
+title = "Null geometry and the Einstein equations"
+year = 2004
+venue = "in: The Einstein Equations and the Large Scale Behavior of Gravitational Fields (Cargèse 2002), Birkhäuser, 379–400"
+locator_scheme = "section"
+locator = "null hypersurfaces"
+url = "https://www.math.miami.edu/~galloway/papers/cargproc.pdf"
+fetched_from = "https://www.math.miami.edu/~galloway/papers/cargproc.pdf"
+fetched_at = "2026-11-04T22:46:56Z"
+sha256 = "5eb42954f984072a1bb884ce1f6a271b29122dd071d2709029fedc5c1c4965db"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["null hypersurfaces, null generators"]
+
+[[source]]
+id = "luoyu2023b"
+authors = "Tian-Wen Luo, Pin Yu"
+title = "On the stability of multi-dimensional rarefaction waves II: existence of solutions and applications to Riemann problem"
+year = 2023
+arxiv = "2305.06308v2"
+locator_scheme = "section"
+locator = "§1"
+url = "https://arxiv.org/abs/2305.06308v2"
+fetched_from = "https://arxiv.org/pdf/2305.06308v2"
+fetched_at = "2026-11-04T22:51:17Z"
+sha256 = "88f86581a42c829b9359d400dc37e649ab998d82e5b16d449bb4d7816ecee5e8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v2"
+cited_for = ["characteristic rarefaction fronts"]
+
+[[source]]
+id = "rodnianskishlapentokhrothman2023"
+authors = "Igor Rodnianski, Yakov Shlapentokh-Rothman"
+title = "Naked Singularities for the Einstein Vacuum Equations: The Exterior Solution"
+year = 2019
+arxiv = "1912.08478v2"
+locator_scheme = "section"
+locator = "§1"
+url = "https://arxiv.org/abs/1912.08478v2"
+fetched_from = "https://arxiv.org/pdf/1912.08478v2"
+fetched_at = "2026-11-04T22:51:24Z"
+sha256 = "56f9dc771582bdc6790d1aee8aac7072a3a61d758d9b92cb8477ba3a67e2697a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v2"
+cited_for = ["double null spacetimes with boundary (motivation)"]
+
+[[source]]
+id = "an2025"
+authors = "Xinliang An"
+title = "Naked Singularity Censoring with Anisotropic Apparent Horizon"
+year = 2024
+venue = "Ann. of Math, 201(3), (2025), 775-908"
+arxiv = "2401.02003v1"
+locator_scheme = "section"
+locator = "§1"
+url = "https://arxiv.org/abs/2401.02003v1"
+fetched_from = "https://arxiv.org/pdf/2401.02003v1"
+fetched_at = "2026-11-04T22:51:31Z"
+sha256 = "3f27eb5f566f804046c997e903bfe6d7bca61ab8a50716e87bf805032f8e8286"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v1"
+cited_for = ["double null spacetimes with boundary (motivation)"]
+
+[[source]]
+id = "minguzzi2019cone"
+authors = "E. Minguzzi"
+title = "Causality theory for closed cone structures with applications"
+year = 2017
+venue = "Rev. Math. Phys. 31 (2019) 1930001"
+doi = "10.1142/S0129055X19300012"
+arxiv = "1709.06494v4"
+locator_scheme = "section"
+locator = "§1"
+url = "https://arxiv.org/abs/1709.06494v4"
+fetched_from = "https://arxiv.org/pdf/1709.06494v4"
+fetched_at = "2026-11-04T22:52:00Z"
+sha256 = "8946ccd9eae40ffa85b78e7ee31f2ac4718f0197616c078daa56c79b526dcfe1"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v4"
+cited_for = ["C^{1,1} geodesics, time orientation"]
+
+[[source]]
+id = "kupeli1987"
+authors = "D. N. Kupeli"
+title = "On null submanifolds in spacetimes"
+year = 1987
+venue = "Geometriae Dedicata 23"
+doi = "10.1007/bf00147389"
+locator_scheme = "page"
+locator = "33–51"
+url = "https://doi.org/10.1007/bf00147389"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["null hypersurfaces"]
+
+[[source]]
+id = "oneill1983"
+authors = "B. O'Neill"
+title = "Semi-Riemannian Geometry with Applications to Relativity"
+year = 1983
+venue = "Pure and Applied Mathematics 103, Academic Press"
+locator_scheme = "chapter"
+locator = "Ch. 2, 3, 5, 14"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled book; cited by its locator without the text, as the issue form directs; the sources service found no legal copy (recorded by hand)"
+cited_for = ["scalar products, index, Levi-Civita connection, timecones, time orientation, causality"]
+
+[[source]]
+id = "beemehrlicheasley1996"
+authors = "J. K. Beem, P. E. Ehrlich, K. L. Easley"
+title = "Global Lorentzian Geometry"
+year = 1996
+venue = "2nd ed., Pure and Applied Mathematics 202, Marcel Dekker"
+locator_scheme = "chapter"
+locator = "Ch. 2–3"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled book; cited by its locator without the text, as the issue form directs; the sources service found no legal copy (recorded by hand)"
+cited_for = ["Lorentzian manifolds, time orientation, causality"]
+
+[[source]]
+id = "hawkingellis1973"
+authors = "S. W. Hawking, G. F. R. Ellis"
+title = "The Large Scale Structure of Space-Time"
+year = 1973
+venue = "Cambridge Monographs on Mathematical Physics, Cambridge University Press"
+doi = "10.1017/CBO9780511524646"
+url = "https://doi.org/10.1017/CBO9780511524646"
+locator_scheme = "section"
+locator = "§2.6, §6.1, Ch. 6"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled book; cited by its locator without the text, as the issue form directs; the sources service found no legal copy (recorded by hand)"
+cited_for = ["Lorentz metrics, time orientation, causal structure"]
+
+[[source]]
+id = "wald1984"
+authors = "R. M. Wald"
+title = "General Relativity"
+year = 1984
+venue = "University of Chicago Press"
+locator_scheme = "chapter"
+locator = "Ch. 8"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled book; cited by its locator without the text, as the issue form directs; the sources service found no legal copy (recorded by hand)"
+cited_for = ["causal structure"]
+
+[[source]]
+id = "christodoulou2007"
+authors = "D. Christodoulou"
+title = "The Formation of Shocks in 3-Dimensional Fluids"
+year = 2007
+venue = "EMS Monographs in Mathematics, European Mathematical Society"
+doi = "10.4171/031"
+url = "https://doi.org/10.4171/031"
+locator_scheme = "chapter"
+locator = "Ch. 1–2"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled book; cited by its locator without the text, as the issue form directs; the sources service found no legal copy (recorded by hand)"
+cited_for = ["acoustical metric, optical functions, characteristic hypersurfaces"]
