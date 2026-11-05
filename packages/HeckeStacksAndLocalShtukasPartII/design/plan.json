@@ -3660,37 +3660,37 @@
       "slug": "demazure-product",
       "needs": "For an affine Coxeter system (W_a,S_aff) with length-zero automorphisms Ω and based σ preserving S_aff, the associative Bruhat-monotone product on W̃⋊〈σ〉 defined by the greatest product of Bruhat-lower factors, with unit and ℓ(u*v)=ℓu+ℓ(u⁻¹(u*v)).",
       "supplier": "RootSystemsPartII",
-      "section": "RS2.1 (required affine-combinatorics extension)"
+      "section": "§1.1 (required affine-combinatorics extension)"
     },
     {
       "slug": "twisted-redmin",
       "needs": "For an extended affine Weyl group and σ permuting the affine simple reflections, every element reaches a minimum of its σ-conjugacy class by length-nonincreasing simple σ-conjugations, and any two minima in that class are connected by strong σ-conjugacy (hn14, Theorem 2.9 and Corollary 2.10, PDF pp. 10–11; he14, Theorem 2.1, p. 374).",
       "supplier": "RootSystemsPartII",
-      "section": "RS2.1 (required affine-combinatorics extension)"
+      "section": "§1.1 (required affine-combinatorics extension)"
     },
     {
       "slug": "straight-finite-parabolic",
       "needs": "For every such σ-class, reduction reaches a minimal ux with J⊂S_aff, W_J finite, u∈W_J, x σ-straight, x minimal on both sides modulo W_J and W_(σJ), and xσ(J)x⁻¹=J, preserving the class’s Newton and Kottwitz invariants (he14, Theorem 2.3, p. 376; hn14, Proposition 2.7, PDF p. 10).",
       "supplier": "RootSystemsPartII",
-      "section": "RS2.1 (required affine-combinatorics extension)"
+      "section": "§1.1 (required affine-combinatorics extension)"
     },
     {
       "slug": "finite-coxeter-basic-class",
       "needs": "For a semisimple extended affine root datum whose irreducible components are permuted transitively by the based σ (the datum of an F-simple adjoint quasi-split group), τ∈Ω, a σ-Coxeter element w∈W₀ and μ∈P∨ with κ(t^μ)=κ(τ), reduction of t^μw reaches a minimal cτ with J a maximal proper Ad(τ)σ-stable affine-simple subset, W_J finite and c∈W_J an Ad(τ)σ-twisted Coxeter element, where (J,c) may depend on (μ,w); this includes the reduction from a transitive σ-orbit of d irreducible components to one component with σ^d (he14, Proposition 11.7, pp. 400–401, stated for simple G).",
       "supplier": "RootSystemsPartII",
-      "section": "RS2.1 (required affine-combinatorics extension)"
+      "section": "§1.1 (required affine-combinatorics extension)"
     },
     {
       "slug": "parabolic-root-length",
       "needs": "For a reduced crystallographic RootPairing P with finite root index type over a characteristic-zero integral domain and a chosen base, on its pinned RootPairing.weylGroup with ℓ the inversion count viewed in ℤ, if wα is negative for every positive α with y⁻¹α negative, then ℓ(wy)=ℓw−ℓy (gh10, Lemma 2.6.1, PDF p. 10).",
       "supplier": "RootSystemsPartII",
-      "section": "RS2.1 (required root-sign length comparison)"
+      "section": "§1.1 (required root-sign length comparison)"
     },
     {
       "slug": "dominant-subtraction",
       "needs": "For dominant λ,μ in the full coweight lattice P∨, the least dominant ν with ν+μ≥_ℤλ, denoted λ−_domμ, agreeing with λ−μ when that is dominant, satisfying iterated subtraction, and bounded above by dom(λ−uμ′) for u∈W₀ and dominant μ≥_ℤμ′, with the image of the original lattice Y tracked separately (he21, Proposition 5.1 and Corollaries 5.3–5.4, pp. 8–9).",
       "supplier": "RootSystemsPartII",
-      "section": "RS2.1 (required dominant-subtraction extension)"
+      "section": "§1.1 (required dominant-subtraction extension)"
     },
     {
       "slug": "superbasic-classification",
@@ -3702,19 +3702,19 @@
       "slug": "newton-poset-length",
       "needs": "For [b]≤[b′] in one integral κ-fibre of B(G), every maximal chain between them has length (〈2ρ,ν_b′−ν_b〉+def(b)−def(b′))/2 (mv20, proof of Theorem 3.16, arXiv v3, PDF p. 9).",
       "supplier": "BunGAndNewtonStrata",
-      "section": "§1.21 (required Newton chain-length extension)"
+      "section": "§1.8 (required Newton chain-length extension)"
     },
     {
       "slug": "newton-cell-strong-purity",
       "needs": "For quasi-split G over 𝔽_q((t)), the Newton stratification on Noetherian bounded Iwahori-cell models and their completions has topological strong purity: for each [c], each maximal [c′]<[c] in its κ-fibre, and each irreducible component Z of the ≤[c] locus, Z∩(≤[c′]) is empty or pure of codimension at most one in Z (mv20, proof of Theorem 3.16, arXiv v3, PDF p. 9; ham17, Definition 2.1(3), arXiv v3, PDF p. 4, for this notion).",
       "supplier": "BunGAndNewtonStrata",
-      "section": "§1.21 (required equal-characteristic cell purity)"
+      "section": "§1.8 (required equal-characteristic cell purity)"
     },
     {
       "slug": "newton-cell-greatest",
       "needs": "For quasi-split G over 𝔽_q((t)) and an Iwahori double coset IẇI, the locally closed admissible Newton stratification on bounded cell models and their completions, compatible with congruence truncation, whose dense open stratum has a greatest B(G)-class that remains greatest on the Bruhat closure ⋃_(v≤w)IṽI (mv20, Definition 3.1 and §3.1, Definitions 3.3 and 3.7, Corollary 3.6, arXiv v3, PDF pp. 5–7; he21, proof of Theorem 4.2, p. 7; vie14, Proposition 5.5 and Corollary 5.6, pp. 1026–1028, for the reductive O_F-model case).",
       "supplier": "BunGAndNewtonStrata",
-      "section": "§1.21 (required equal-characteristic cell-closure comparison)"
+      "section": "§1.8 (required equal-characteristic cell-closure comparison)"
     },
     {
       "slug": "levi-intersection-dimension",

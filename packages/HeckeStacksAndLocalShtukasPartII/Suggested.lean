@@ -1,4 +1,6 @@
-import Mathlib
+module
+
+public import Mathlib
 
 /-!
 # Hecke stacks and local shtukas, Part II: target signatures
@@ -53,6 +55,8 @@ identity is substituted for a headline theorem.
 -/
 
 namespace TauCetiRoadmap.HeckeStacksAndLocalShtukasPartII
+
+@[expose] public section
 
 /-! ## Layer 2: superbasic lattice charts -/
 
@@ -133,5 +137,7 @@ theorem exists_isCyclic_chartIndices_eq (hm : 0 < m) (hh : 0 < h) (hmh : Nat.Cop
   sorry
 
 end ExtendedSemiModule
+
+end
 
 end TauCetiRoadmap.HeckeStacksAndLocalShtukasPartII

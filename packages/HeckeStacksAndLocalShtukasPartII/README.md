@@ -19,8 +19,8 @@ The following objects have other owners, and are not additional constructions he
 
 - Mathlib supplies subgroup double cosets, nonnormal left-coset quotients and finite sets; Tau Ceti supplies subgroup-factor invariance and the Coxeter parabolic factorization identified below.
 - ReductiveGroupsPartII RG2.1, RG2.3 and RG2.4 supplies apartments, root groups, connected parahorics, Lang theory, Iwahori–Weyl groups, normal forms, lengths, Bruhat order and integral Kottwitz homomorphisms. The finite factor η and geometric cordiality are defined and proved in §§0.2 and 4.7 here, using that normal form and length formula.
-- RootSystems Layers 3, 4 and 6 owns generic Coxeter, chamber and integral root-data theory. RootSystemsPartII RS2.1 owns integral dominance on the retained lattice. The affine combinatorics and dominant-subtraction extensions requested below are supplier gaps, rather than assertions of RS2.1. This roadmap owns the shrunken-chamber condition (§0.3), its ADLV factorization (§5.2) and the 2ρ∨ Newton range (§8.4).
-- BunGAndNewtonStrata §§0.5–0.6 and 1.7–1.45 owns B(G), σ-centralizers, split-rank defect, integral κ, Newton invariants and their order, Levi comparison, straight classes, Galois averages, ordered norms and central lifts. The generic norm and centralizer comparison are used only to construct the geometric isomorphism in §3.6. Superbasic classification and the three Newton-poset/cell inputs below remain supplier gaps in that direction. The comparison of Newton-cell and ADLV dimensions belongs to §4.3 here.
+- RootSystems Layers 3, 4 and 6 owns generic Coxeter, chamber and integral root-data theory. RootSystemsPartII §1.1 owns integral root dominance on the retained lattice. The affine combinatorics and dominant-subtraction extensions requested below are supplier gaps, rather than assertions of §1.1. This roadmap owns the shrunken-chamber condition (§0.3), its ADLV factorization (§5.2) and the 2ρ∨ Newton range (§8.4).
+- VStackSheavesAndLisseCategories §VS4.0, Newton geometry, owns the partial order on B(G) by equal integral Kottwitz invariant and Newton dominance. BunGAndNewtonStrata §§0.6, 0.8 and 1.7–1.45 owns the Kottwitz set B(G), families of G-isocrystals, σ-centralizers, split-rank defect, integral κ, Newton invariants, Levi comparison, straight classes, Galois averages, ordered norms and central lifts. The generic norm and centralizer comparison are used only to construct the geometric isomorphism in §3.6. Superbasic classification and the three Newton-poset/cell inputs below remain supplier gaps in that direction. The comparison of Newton-cell and ADLV dimensions belongs to §4.3 here.
 - GeometricSatakeAndFusion GS0, “Witt bounds, determinant lines and projective models”, owns flag and Grassmannian carriers, flag incidence and its two fibre bounds; GS1 owns semi-infinite geometry; GS2, rational-special-fibre-convolution, owns spherical geometric semismallness. The variants here are their bσ-graph pullbacks and top-stratum attainment, with explicit bounded-model compatibility.
 - SchemeAndStackFoundations §§0.7, 0.9, 0.23–0.26 and Layer 1 owns general dimension, limits, perfection and descent. TraceFormula Layer 11 owns the finite-type Grothendieck–Lefschetz theorem in the CohomologicalPointCounting family. Its application to the perfect models in §3.1 is part of the local Lang comparison, not a second generic trace theorem.
 - SmoothRepresentationsOfLocalGroups SR.1.5 owns the affine-Hecke algebra direction; its twisted cocenter extension is requested as gap:twisted-affine-cocenter. The geometric dimension-equals-degree comparison belongs to §1.3 here.
@@ -29,8 +29,10 @@ The comparisons of κ-labelled components of the ambient flag varieties and Gras
 P-alcove image comparisons of §7.5, are dimension and nonemptiness inputs owned here. The scope excludes the
 classification of connected and irreducible components of these loci, rational strata and centralizer actions
 on component sets, parahoric and very-special component reductions, Hodge–Newton component theorems and the
-comparison of those classifications with integral specialization. It also excludes bounded integral parahoric shtuka
-models, crystalline deformation and quasi-isogeny diagrams, formal-completion and local-model comparisons,
+comparison of those classifications with integral specialization. The completion of a bounded Iwahori-cell model at a point of a Newton stratum, and its finite surjective
+comparison with the product of the ADLV and a unipotent factor, is a dimension input owned by §4.3. The
+exclusions concern integral local-shtuka deformation spaces and their formal-completion and local-model
+comparisons: bounded integral parahoric shtuka models, crystalline deformation and quasi-isogeny diagrams,
 generic/special-fibre specialization and comparison with local-shtuka diamonds. Fixed-point and elliptic
 correspondences, local-shtuka Lefschetz–Verdier applications, finite-length preservation and the Kottwitz
 character formula are outside this scope. None of these excluded items is a dimension-theorem input here. Connected components,
@@ -137,7 +139,7 @@ The split construction uses heights in the simple roots outside M, with [N[i],N[
 ### From TauCetiRoadmap.RootSystems and TauCetiRoadmap.RootSystemsPartII
 
 Consume RootSystems Layers 3, 4 and 6 for Coxeter theory, chamber fundamental domains, longest elements and
-integral root data. Consume RootSystemsPartII RS2.1, integral-order, for the order determined by the pinned
+integral root data. Consume RootSystemsPartII §1.1, Integral root dominance, for the order determined by the pinned
 positive root cone on the retained lattice and its flipped coroot version. For adjoint A₁ with positive coroot
 2 in ℤ, 0 ≤_ℤ 2 and 0 ≰_ℤ 1. No saturation of that integral cone is allowed. The Red-Min input says that each
 extended-affine w reaches a minimal element of its σ-class by length-nonincreasing simple twisted
@@ -166,11 +168,20 @@ The unique minimal-coset factorization used in §5.2 is supplied by `CoxeterSyst
 
 What RootSystemsPartII must provide (gap:dominant-subtraction): For dominant λ,μ in the full coweight lattice P∨, the least dominant ν with ν+μ≥_ℤλ, denoted λ−_domμ, agreeing with λ−μ when that is dominant, satisfying iterated subtraction, and bounded above by dom(λ−uμ′) for u∈W₀ and dominant μ≥_ℤμ′, with the image of the original lattice Y tracked separately (he21, Proposition 5.1 and Corollaries 5.3–5.4, pp. 8–9).
 
+### From TauCetiRoadmap.VStackSheavesAndLisseCategories
+
+Consume §VS4.0, Newton geometry, for the partial order on B(G) for every nonarchimedean local field: [b]≤[b′]
+exactly when the integral Kottwitz invariants agree and the dominant Newton point of b is dominated by that
+of b′. Every Newton comparison in this README is made inside one integral κ-fibre, and no order between
+classes of different κ is used. For GL₂ with κ=1, the basic class of slopes (1/2,1/2) lies below the ordinary
+class of slopes (1,0); the class of diag(ϖ²,ϖ⁻¹), of κ=1 and slopes (2,−1), is not below either since
+(2,−1) dominates (1,0).
+
 ### From TauCetiRoadmap.BunGAndNewtonStrata
 
-Consume §§0.5–0.6, G-isocrystals and B(G); §§1.7–1.8, galois-average and newton-and-kottwitz-maps;
+Consume §0.6, the Kottwitz set B(G), and §0.8, families of G-isocrystals; §§1.7–1.8, galois-average and newton-and-kottwitz-maps;
 §§1.10–1.11, straight-weyl-classification and classification-by-two-invariants; §§1.13–1.15,
-sigma-centralizer-J-b and defect; §1.21, partial-order-on-B-of-G; §1.27, ordinary-straight-translation; §1.30,
+sigma-centralizer-J-b and defect; §1.27, ordinary-straight-translation; §1.30,
 product-and-unramified-norm; §1.45, general-levi-newton-comparison; and §1.43, z-extension-bounded-lifting, at
 its p-adic scope. Keep the basic class of a given κ, the Newton rational representative and the original
 integral κ distinct. The norm comparison uses τ_i = σ^(−i)τ₀, preserves the ρ-pairing and preserves split-rank
@@ -1101,7 +1112,7 @@ A torus with different valuation is empty even though rational dominance in semi
 - For GL₂, λ=(1,0) and basic slopes (1/2,1/2), κ=1 on both sides and ν≤λ, so the exact top stratum is nonempty; slopes (2,−1) have κ=1 but violate ν≤λ.
 
 *Needs:* §0.4; BunGAndNewtonStrata Layer 1, ordinary-straight-translation; BunGAndNewtonStrata Layer 1,
-galois-average; BunGAndNewtonStrata Layer 1, partial-order-on-B-of-G.
+galois-average; VStackSheavesAndLisseCategories §VS4.0, Newton geometry.
 
 ### 4.2 Generic Newton class of an Iwahori cell
 
@@ -1132,10 +1143,47 @@ The construction has the following API.
 - A class with different κ cannot enter B(G)_w even if its Newton vector is smaller.
 - Greatestness alone must not produce all lower classes; saturation is a separate cordial theorem.
 
-*Needs:* §0.5; BunGAndNewtonStrata Layer 1, partial-order-on-B-of-G; ReductiveGroupsPartII RG2.4,
+*Needs:* §0.5; VStackSheavesAndLisseCategories §VS4.0, Newton geometry; ReductiveGroupsPartII RG2.4,
 iwahori-bruhat-decomposition; §1.3; gap:newton-cell-greatest.
 
-### 4.3 Newton-cell comparison and dimension at the generic class
+### 4.3 Fundamental representatives, Newton-cell comparison and dimension at the generic class
+
+Use the simple quasi-split flag datum and apartment orientation of the Conventions. For [b]∈B(G) let y∈W̃ be a
+σ-straight element with [ẏ]=[b], supplied by BunGAndNewtonStrata §1.10, and let ν_y be its Newton point, so
+that ȳσ(ν_y)=ν_y and the dominant representative of ν_y is ν_b. Let P_y=M_yN_y be the semistandard parabolic
+determined by ν_y: M_y is the centralizer of ν_y and N_y is generated by the root groups U_α with 〈α,ν_y〉>0;
+let N̄_y be the opposite unipotent radical. Put φ_y=Ad(ẏ)∘σ on G(L), which preserves M_y, N_y and N̄_y, and
+I_M=I∩M_y(L), I_N=I∩N_y(L), I_N̄=I∩N̄_y(L). Prove that ẏ is P_y-fundamental: φ_y(I_M)=I_M, φ_y(I_N)⊆I_N and
+φ_y⁻¹(I_N̄)⊆I_N̄. Prove that the two inclusions are contractions: for every congruence kernel I_n there is k
+with φ_y^k(I_N)⊆I_n and φ_y^(−k)(I_N̄)⊆I_n. Prove that the quotient I_N̄/φ_y⁻¹(I_N̄) is an affine space whose
+dimension is ℓ(y)=〈2ρ_(N_y),ν_y〉=〈2ρ,ν_b〉, where 2ρ_(N_y) is the sum of the roots of N_y. The parabolic P_y
+depends on the representative y, not only on [b]; every σ-straight representative of [b] is covered. The
+initial proof is for the unramified datum; the tame quasi-split datum of the Conventions is reached by the
+same reduction, which uses only the based σ-action on the affine Weyl group and the root-group filtrations
+(nie15, Theorem 1.3, PDF p. 3, proof on PDF p. 10; ghkr10, Definition 13.1.2 and Proposition 13.1.3,
+PDF pp. 37–38; mv20, proof of Proposition 3.5 and the paragraph before Theorem 3.10, arXiv v3, PDF pp. 6–7).
+
+A proof route is as follows. Reduce y by length-preserving simple σ-conjugations to a straight element whose
+Newton vector meets the closed base alcove, for which the three subgroup conditions are the alcove
+inequalities; carry the conditions back through each step, expressing the two inclusions as inequalities
+on the affine root-group filtrations of N_y and N̄_y and using a length comparison inside M_y for the
+equality on I_M. The contraction follows from the
+strict positivity of 〈α,ν_y〉 on the roots of N_y, and the dimension from the root-group filtration of N̄_y
+and the translation length formula.
+
+The construction has the following API.
+
+- The representative y, its Newton point ν_y, the parabolic P_y and the twisted Frobenius φ_y, with its source and target G(L).
+- φ_y preserves I_M and maps I_N into itself; φ_y⁻¹ maps I_N̄ into itself, so φ_y(I_N̄) contains I_N̄.
+- Iterates of φ_y on I_N and of φ_y⁻¹ on I_N̄ enter every congruence kernel.
+- The quotient I_N̄/φ_y⁻¹(I_N̄) is an affine space of dimension ℓ(y)=〈2ρ,ν_b〉.
+
+**Checks.**
+
+- In split GL₂ with the base alcove of the Conventions, take y=t^(1,0)=diag(ϖ,1), so ν_y=(1,0), M_y=T, N_y=U_α for α=e₁−e₂ and N̄_y=U_(−α). Here I_N=U_α(ϖO_L), I_N̄=U_(−α)(O_L) and I_M=T(O_L). Then φ_y(U_α(c))=U_α(ϖσ(c)), so φ_y(I_N)=U_α(ϖ²O_L), and φ_y⁻¹(U_(−α)(c))=U_(−α)(σ⁻¹(ϖc)), so φ_y⁻¹(I_N̄)=U_(−α)(ϖO_L); the quotient is O_L/ϖO_L, of dimension 1=ℓ(y)=〈2ρ,(1,0)〉, and the k-th iterates lie in U_α(ϖ^(k+1)O_L) and U_(−α)(ϖ^kO_L). For diag(ϖ²,1) the same computation gives dimension 2.
+- The other straight representative t^(0,1)=diag(1,ϖ) of the same class has ν_y=(0,1), the opposite parabolic and N_y=U_(−α); the quotient is U_α(ϖO_L)/U_α(ϖ²O_L), again of dimension 1. The parabolic is attached to y, the dimension only to [b].
+- For the basic class of GL₂ with κ=1 the straight representative is the length-zero element τ, with ν_y=(1/2,1/2), M_y=G and N_y=1; φ_y(I)=I and the quotient is a point, of dimension 0=〈2ρ,(1/2,1/2)〉.
+- The finite reflection s lies in the class of 1, whose straight representative is y=1 with M_y=G. For the non-straight representative s, Ad(ṡ)∘σ carries I to the opposite Iwahori, so the equality on I_M fails: the length identity ℓ(y)=〈2ρ,ν_b〉 is satisfied by y=1 and not by s, and the subgroup conditions are what the comparison below uses.
 
 For the quasi-split flag datum, let N_[b],w=[b]∩IẇI be nonempty. Let I_n, n≥1, be the congruence kernel
 of the connected Iwahori model modulo ϖ^n. On an admissible congruence quotient
@@ -1149,8 +1197,10 @@ equal-characteristic hypothesis (mv20, Theorem 3.10 and Corollaries 3.11–3.12,
 he15, Theorem 2.23, PDF p. 34, for the numerical comparison in either characteristic).
 
 A proof route constructs the finite-surjective comparison between completed local Newton-stratum models
-and the product with the ADLV factor of mv20, Theorem 3.10, here. The unipotent factor has dimension
-〈2ρ,ν_b〉; compare component dimensions on finite-type models to obtain the equality and both directions
+and the product with the ADLV factor of mv20, Theorem 3.10, here, using the P_y-fundamental representative
+above: the second factor is the completion of the affine space I_N̄/φ_y⁻¹(I_N̄), of dimension ℓ(y)=〈2ρ,ν_b〉,
+and the contraction of φ_y⁻¹ on I_N̄ is what makes the comparison map finite and surjective. Compare
+component dimensions on finite-type models to obtain the equality and both directions
 of the equidimensionality criterion. Section 1.3 supplies the normalized numerical recurrence in either
 characteristic. The Newton stratification on the cell models and their completions is the input of
 gap:newton-cell-greatest; the comparison involving X_w(b) is constructed here after §0.5.
@@ -1178,9 +1228,14 @@ The comparison has the following API.
 - For GL₂, w=s t^(1,0) has ℓw=2. At the basic class ν=(1/2,1/2), dim X_w(b)=1 and 〈2ρ,ν〉=0, so dim_I N=1 and c=1. At the ordinary class ν=(1,0), dim X_w(b)=1 and 〈2ρ,ν〉=1, so dim_I N=2 and c=0. For the Iwahori-model congruence kernels, dim(I/I_n)=4n; at n=1,2 the basic quotient dimensions 5,9 and ordinary dimensions 6,10 give the same differences 1 and 2. These are the codimensions used in §4.6.
 - For G_m with w=1 and valuation(b)=1, both loci are empty by κ mismatch; no finite minimum component codimension is assigned. At b=1 the same cell has dim X=dim_I N=0 and c=0, with both loci equidimensional.
 
-*Needs (cell/ADLV comparison):* §0.5; §4.2; BunGAndNewtonStrata §1.10, straight-weyl-classification;
-gap:straight-finite-parabolic, for the straight representative minimal on both sides whose Levi is the Newton
-centralizer (mv20, Theorem 3.10 and Corollary 3.11); GeometricSatakeAndFusion GS0, parahoric-ind-projectivity;
+*Needs (fundamental representative):* BunGAndNewtonStrata §1.10, straight-weyl-classification;
+gap:twisted-redmin, for the length-preserving reduction to a straight element whose Newton vector meets the
+closed base alcove; ReductiveGroupsPartII RG2.1, affine-roots-and-filtrations;
+ReductiveGroupsPartII RG2.4, translation-length-formula.
+
+*Needs (cell/ADLV comparison):* §0.5; §4.2; the fundamental representative above, with its contraction and
+the dimension ℓ(y)=〈2ρ,ν_b〉 of I_N̄/φ_y⁻¹(I_N̄) (mv20, Theorem 3.10 and Corollary 3.11);
+GeometricSatakeAndFusion GS0, parahoric-ind-projectivity;
 SchemeAndStackFoundations §0.7, fibre_dimension_formula; gap:newton-cell-greatest for the
 equal-characteristic Newton stratification on bounded cell models and their completions.
 
@@ -1248,7 +1303,7 @@ A basic seed must be supplied before applying saturation. Generic greatestness a
 - For split GL₂, w=s t^(1,0) has generic ordinary slopes (1,0) and basic slopes (1/2,1/2) below them. The ordinary dimension is (2+1−0)/2−1/2=1 and the basic dimension is (2+1−1)/2−0=1, in either characteristic. The chain length is (1+1−0)/2=1; in equal characteristic the basic Newton stratum has codimension 2−0−1=1 and its closure is itself, whereas the ordinary stratum’s closure contains both strata.
 - For a split torus, fixed κ gives one Newton class; the interval is a singleton and the nonempty dimension is 0. In equal characteristic its stratum closure is that same stratum.
 
-*Needs:* §4.4; §4.2; §1.3; §3.9; BunGAndNewtonStrata §1.21, partial-order-on-B-of-G; gap:newton-poset-length; gap:newton-cell-strong-purity; §4.3 for the equal-characteristic geometric comparison.
+*Needs:* §4.4; §4.2; §1.3; §3.9; VStackSheavesAndLisseCategories §VS4.0, Newton geometry; gap:newton-poset-length; gap:newton-cell-strong-purity; §4.3 for the equal-characteristic geometric comparison.
 
 ### 4.7 Generic class of x t^λ and the dominant family
 
@@ -1286,7 +1341,8 @@ in another integral component is never inserted into this interval.
 
 Layers 0, 1, 3; GeometricSatakeAndFusion GS0, parahoric-ind-projectivity;
 SchemeAndStackFoundations §0.7, fibre_dimension_formula; BunGAndNewtonStrata Layer 1; BunGAndNewtonStrata Layer 1, galois-average; BunGAndNewtonStrata
-Layer 1, ordinary-straight-translation; BunGAndNewtonStrata Layer 1, partial-order-on-B-of-G;
+Layer 1, ordinary-straight-translation; BunGAndNewtonStrata §1.10, straight-weyl-classification; VStackSheavesAndLisseCategories §VS4.0, Newton geometry;
+ReductiveGroupsPartII RG2.1, affine-roots-and-filtrations; ReductiveGroupsPartII RG2.4, translation-length-formula; gap:twisted-redmin;
 ReductiveGroupsPartII RG2.4, iwahori-bruhat-decomposition; ReductiveGroupsPartII RG2.4,
 translation-length-formula. The individual Needs paragraphs specify the additional comparison constructions
 used by each route.
@@ -1331,7 +1387,7 @@ The construction has the following API.
 - In quasi-split adjoint unitary A₂, λ=ρ∨=ω₁∨+ω₂∨ and y=s₁ give λ_w^♭♭=ω₁∨. Thus λ−λ_w^♭♭=ω₂∨∉Q∨, excluding an unconditional integral upper bound. The lower-bound difference is ω₁∨−(ρ∨−2ω₁∨)=α₁∨. On P∨/Q∨≅ℤ/3, σ acts by −1, so the σ-coinvariants vanish and the two images agree. For x=s₁, η_σ(w)=s₂s₁ has full σ-support and the alcove’s α₁,α₂,θ ranges are (0,1),(−3,−2),(−2,−1), so this is also a shrunken example.
 - With the same unitary datum, λ=ω₁∨ and y=s₁ instead give λ_w^♭♭=ω₂∨. The difference λ−λ_w^♭♭=(α₁∨−α₂∨)/3 is not rationally positive; the lower-bound difference is ω₁∨+ω₂∨=α₁∨+α₂∨.
 
-*Needs:* RootSystems Layers 3–4 and 6; RootSystemsPartII RS2.1; gap:dominant-subtraction;
+*Needs:* RootSystems Layers 3–4 and 6; RootSystemsPartII §1.1; gap:dominant-subtraction;
 ReductiveGroupsPartII RG2.4, dominant-normal-form.
 
 ### 5.2 Parabolic factorization data and invariant ledger
@@ -1369,7 +1425,7 @@ The construction has the following API.
 - Equality after mapping to P∨ coinvariants cannot be used as equality of original integral κ when the map has a kernel.
 
 *Needs:* §5.1; §0.3; ReductiveGroupsPartII RG2.4, length-and-bruhat-order; RootSystems Layers 3–4 and 6;
-RootSystemsPartII RS2.1; gap:dominant-subtraction; gap:demazure-product; gap:parabolic-root-length;
+RootSystemsPartII §1.1; gap:dominant-subtraction; gap:demazure-product; gap:parabolic-root-length;
 `CoxeterSystem.parabolic`; `CoxeterSystem.IsMinimalCosetRep`; `CoxeterSystem.existsUnique_isMinimalCosetRep_mul`; `CoxeterSystem.length_mul_of_isMinimalCosetRep`.
 
 ### Examples
@@ -1381,7 +1437,7 @@ cocharacter lattice ℤα∨.
 ### Dependencies
 
 Layers 0; ReductiveGroupsPartII RG2.4, dominant-normal-form; ReductiveGroupsPartII RG2.4,
-length-and-bruhat-order; RootSystems Layers 3–4 and 6; RootSystemsPartII RS2.1; gap:dominant-subtraction; gap:demazure-product; gap:parabolic-root-length; the pinned Coxeter parabolic API. The individual Needs paragraphs specify the additional comparison constructions used by each
+length-and-bruhat-order; RootSystems Layers 3–4 and 6; RootSystemsPartII §1.1; gap:dominant-subtraction; gap:demazure-product; gap:parabolic-root-length; the pinned Coxeter parabolic API. The individual Needs paragraphs specify the additional comparison constructions used by each
 route.
 
 ## Layer 6: the two geometric correspondences
@@ -1457,9 +1513,9 @@ The construction has the following API.
 **Checks.**
 
 - With y=1 the unnecessary zero-length steps collapse to identity correspondences.
-- The first fibre uses the ordinary product B·σ(w₁), conjugated to the stated endpoint, so its bound carries 1/2.
-- The second fibre uses σ⁻¹(A)*(x′y′)=a, so its bound has no factor 1/2.
-- The terminal chain has σ(a),σ(t^γ); removing these σ symbols before the Frobenius comparison gives the wrong locus.
+- In split adjoint A₁ with x=y=s and λ=2ω∨, the factor B=t^(ω∨)s has length 0, so the step g₃→_B g₂ determines g₂ from g₃ and the forgotten flag of X₂→X₃ carries no fibre; ℓA=ℓB=ℓa=0, ℓw₁=ℓ(x′y′t^γ)=ℓ(t^(2ω∨))=2, so N₁=(0+2−2)/2=0 and N₂=0+0−0=0.
+- In the unitary A₂ example of §5.2, A=s₁, B=t^(ω₁∨)s₁, x′y′=s₂, γ=ω₁∨ and a=s₂, with lengths ℓA=1, ℓB=1, ℓ(x′y′)=1, ℓt^γ=2, ℓa=1, ℓw₁=2 and ℓ(x′y′t^γ)=3. Thus N₁=(1+2−3)/2=0 and N₂=1+1−1=1. A half in the Demazure fibre would give the non-integer 1/2 instead of 1; the half in N₁ is not tested here, since its numerator vanishes. The virtual dimensions 3 and 2 of §6.4 differ by exactly N₁+N₂=1.
+- In that unitary example σ exchanges s₁ with s₂ and ω₁∨ with ω₂∨, so the terminal chain X₅ has steps (s₁,t^(ω₂∨)), whereas deleting σ gives (s₂,t^(ω₁∨)). These are different relative-position labels, and only the stated Frobenius universal homeomorphism identifies X₅ with X_(s₂t^(ω₁∨))(b).
 
 *Needs:* §5.2; §6.1.
 
@@ -1545,7 +1601,7 @@ by each route.
 
 ## Layer 7: Levi obstructions and basic seeds
 
-### 7.1 Levi-compatible P-alcove elements
+### 7.1 Levi-compatible P-alcove elements and the twisted-product comparison
 
 Use the simple quasi-split flag datum and apartment orientation of the Conventions. For σ-stable J⊂S, standard
 P_J=M_JN_J and x∈W₀, call w a (J,x,σ)-alcove element when x⁻¹wσ(x)∈W̃_J and (xN_Jx⁻¹)∩(wIw⁻¹)⊂(xN_Jx⁻¹)∩I. All
@@ -1572,7 +1628,32 @@ The construction has the following API.
 - For a diagram automorphism, x⁻¹w x and x⁻¹wσ(x) differ and only the latter defines the condition.
 - In split A₂ choose x=s₁, y=s₂ and λ=2α₁∨+2α₂∨. Conjugating w=x t^λ y by x gives t^λ s₂s₁. Using y instead gives t^(−2α₂∨) s₂s₁; the translation coordinates (2,2) and (0,−2) differ.
 
-*Needs:* ReductiveGroupsPartII RG2.3, parahoric-subgroup; ReductiveGroupsPartII RG2.4, iwahori-weyl-group.
+For a (J,x,σ)-alcove element w in the classical flag setting, put M′=xM_Jx⁻¹ and I_M=I∩M′. Construct the map
+from the twisted product I×^(I_M)(I_Mẇσ(I_M)) to IẇI sending [i,m] to imσ(i)⁻¹; the quotient identifies
+(i,m) with (ij,j⁻¹mσ(j)) for j∈I_M. Prove the map surjective. If the defining root inclusions are strict for
+every relevant positive root group, prove it injective. Prove that two source points in one fibre have
+I_M-σ-conjugate second coordinates. Its inputs are the root conditions of the definition, the root-group
+filtrations and Lang theory; no statement about Levi classes is used (ghn15, Theorem 3.3.1, PDF p. 11).
+
+A proof route is as follows. Use the Iwahori decomposition along M′ and the root-group filtrations of
+ReductiveGroupsPartII RG2.1 to write an element of IẇI as imσ(i)⁻¹ by successive approximation on the
+congruence filtration, with Lang's theorem on each graded piece; the strict inclusions make each step unique.
+
+The comparison has the following API.
+
+- The source is the quotient of I×(I_Mẇσ(I_M)) by (i,m)↦(ij,j⁻¹mσ(j)) for j∈I_M, and its target is IẇI.
+- The map sends [i,m] to imσ(i)⁻¹ and is unchanged by the specified quotient relation.
+- Every element of IẇI is the image of at least one quotient class.
+- For strict root inclusions, every fibre consists of exactly one quotient class.
+- In every fibre the second coordinates of two representatives are σ-conjugate by I_M.
+
+**Checks.**
+
+- For J=S, I_M=I and the twisted-product map reduces to the identity on IẇI. For the diagonal torus Levi in GL₂, a surjection from two source points to one target point is not an isomorphism; injectivity is used only under strict root inclusions.
+- In G_m with q=2, choose a constant unit ζ of order 3 in 𝔽₄ and σ(ζ)=ζ². For w=1, the equivalent pairs (1,1) and (ζ,ζ) both map to 1, since ζ·ζ·σ(ζ)⁻¹=1. The untwisted relation would identify (1,1) with (ζ,1), whose image is ζ²≠1.
+- For split GL₂, J=∅ and w=t^(1,0) with x=1, the element diag(ϖ,1) is a (∅,1,σ)-alcove element; the twisted-product map from I×^(T(O_L))(T(O_L)ẇσ(T(O_L))) is surjective onto IẇI, and every element of IẇI is σ-conjugate under I to a diagonal element of valuation (1,0).
+
+*Needs:* ReductiveGroupsPartII RG2.3, parahoric-subgroup; ReductiveGroupsPartII RG2.1, affine-roots-and-filtrations; ReductiveGroupsPartII RG2.3, lang-theorem; ReductiveGroupsPartII RG2.4, iwahori-weyl-group.
 
 ### 7.2 The Levi Kottwitz obstruction
 
@@ -1584,8 +1665,11 @@ class in the fibre. Only for basic [b], under the corrected theorem’s hypothes
 by at most one Levi class. (he21, Theorem 6.3, p. 13; ghn15, Theorem 3.3.1, PDF p. 11; ghnerr, Proposition
 0.0.2, p. 2).
 
-A proof route is as follows. Apply the P-alcove Hodge–Newton reduction with the correct component statement.
-If a point exists, extract a Levi σ-class of the stated κ; take the contrapositive.
+A proof route is as follows. If g is a point of X_w(b), then g⁻¹bσ(g) lies in IẇI and, by the surjectivity of
+the twisted-product map of §7.1, equals imσ(i)⁻¹ with m∈I_Mẇσ(I_M); so [b] contains the M′-class of m, and
+x⁻¹mσ(x) lies in I_(M_J)x⁻¹ẇσ(x)σ(I_(M_J)), whose Levi κ is κ_(M_J)(x⁻¹wσ(x)) by the integral κ calculation.
+Take the contrapositive. The obstruction uses only this surjectivity and the Levi κ computation, not the
+image comparison of §7.5.
 
 For GL₂ and M the diagonal torus, diag(ϖ,1) and diag(1,ϖ) are distinct M-classes in one nonbasic G-class.
 Retain the characteristic condition from the corrected geometric comparison.
@@ -1595,7 +1679,7 @@ Retain the characteristic condition from the corrected geometric comparison.
 - In GL₂ the two diagonal representatives with valuations (1,0) and (0,1) give two distinct torus classes over the same nonbasic group class. The obstruction compares against the two-element set, rather than either singleton.
 - For J=S the Levi is G and the obstruction is only κ(w)≠κ(b), as required.
 
-*Needs:* §7.1; BunGAndNewtonStrata Layer 1, general-levi-newton-comparison; §0.6.
+*Needs:* §7.1, the twisted-product comparison; BunGAndNewtonStrata Layer 1, general-levi-newton-comparison; §0.6.
 
 ### 7.3 Proper finite support forces emptiness
 
@@ -1660,12 +1744,10 @@ classification-by-two-invariants; SmoothRepresentationsOfLocalGroups SR.1.5; gap
 Use the simple quasi-split flag datum and apartment orientation of the Conventions. The initial classical
 proof uses the equal-characteristic tame adjoint setting of the Conventions; the general flag theorem includes
 the specified transfer. Let J be σ-stable, let x ∈ W₀, and suppose w is a (J,x,σ)-alcove element in the
-classical flag setting. Put M′ = xM_Jx⁻¹ and I_M = I ∩ M′. Construct the map from the twisted product I
-×^(I_M) (I_M ẇ σ(I_M)) to IẇI, sending [i,m] to i m σ(i)⁻¹. The quotient identifies (i,m) with (ij,j⁻¹mσ(j))
-for j∈I_M. Prove the map surjective; if the defining root inclusions are strict for every relevant positive
-root group, prove it injective. Two source points in any one fibre have I_M-σ-conjugate second coordinates.
-For each [b_M] in B(M_J) mapping to [b] with κ_M(b_M) = κ_M(x⁻¹wσ(x)), compare the corresponding Levi ADLV to
-its image after framing transport and J_b(F)-translation. The union of these images covers X_w(b) on geometric
+classical flag setting. Put M′ = xM_Jx⁻¹ and I_M = I ∩ M′, and use the surjective twisted-product map of §7.1
+from I×^(I_M)(I_Mẇσ(I_M)) to IẇI, with its fibre description. For each [b_M] in B(M_J) mapping to [b] with
+κ_M(b_M) = κ_M(x⁻¹wσ(x)), compare the corresponding Levi ADLV to its image after framing transport and
+J_b(F)-translation. The union of these images covers X_w(b) on geometric
 points. Keep every such Levi class, its M_J-Newton point and its M_J-defect as the invariants of that source. The image-cover statement asserts surjectivity on geometric points; dimensions are compared only after the bounded morphism and its fibre dimensions have been identified as in §0.5. (he21, §6.5, p. 14; ghn15, Theorem 3.3.1,
 PDF p. 11).
 
@@ -1677,19 +1759,16 @@ The all-classes warning from GHN’s erratum remains in force.
 
 The comparison has the following API.
 
-- The source is the quotient of I × (I_M ẇ σ(I_M)) by (i,m) ↦ (ij,j⁻¹mσ(j)) for j∈I_M, and its target is IẇI.
-- The map sends [i,m] to i m σ(i)⁻¹ and is unchanged by the specified quotient relation.
-- Every element of IẇI is the image of at least one quotient class.
-- For strict root inclusions, every fibre consists of exactly one quotient class.
-- In every fibre the second coordinates of two representatives are σ-conjugate by I_M; the induced ADLV images are indexed by all matching Levi classes.
+- For each matching Levi class [b_M], the map from the Levi ADLV of x⁻¹wσ(x) for M_J to X_w(b), after framing transport and J_b(F)-translation.
+- The images over all matching Levi classes cover X_w(b) on geometric points; the induced ADLV images are indexed by all matching Levi classes.
+- Each image retains the M_J-Newton point and M_J-defect of its source class.
 
 **Checks.**
 
-- For J=S, I_M=I and the twisted-product map reduces to the identity on IẇI. For a proper torus Levi in GL₂ the two classes above remain distinct in the B(M)→B(G) fibre before imposing the required Levi κ. A surjection from two points to one point is not an isomorphism; injectivity is used only under strict root inclusions.
-- In G_m with q=2, choose a constant unit ζ of order 3 in 𝔽₄ and σ(ζ)=ζ². For w=1, the equivalent pairs (1,1) and (ζ,ζ) both map to 1, since ζ·ζ·σ(ζ)⁻¹=1. The untwisted relation would identify (1,1) with (ζ,1), whose image is ζ²≠1.
+- For J=S the single matching class is [b] itself and the cover is the identity of X_w(b). For a proper torus Levi in GL₂ the two classes above remain distinct in the B(M)→B(G) fibre before imposing the required Levi κ.
 - In the GL₂ torus example, the B(M)→B(G) fibre has the two classes (1,0) and (0,1); the additional requirement κ_M=(1,0) selects the first and excludes the second. Counting a second matching class here would be a wrong application of the all-classes condition.
 
-*Needs:* §7.2; §1.2; BunGAndNewtonStrata Layer 1, general-levi-newton-comparison.
+*Needs:* §7.1, the twisted-product comparison; §7.2; §1.2; BunGAndNewtonStrata Layer 1, general-levi-newton-comparison.
 
 ### 7.6 From a basic seed to the required Newton class
 
@@ -1712,7 +1791,7 @@ an original G-class until the comparison of §3.2 has been applied to that origi
 
 - For split GL₂, a=s and γ=(1,0), the basic κ=1 class of slopes (1/2,1/2) and the ordinary class of slopes (1,0) bound the interval. Both ADLVs have dimension 1. A class of κ=0 is excluded despite any rational Newton comparison.
 
-*Needs:* §7.4; §4.7; §4.6; BunGAndNewtonStrata Layer 1, partial-order-on-B-of-G.
+*Needs:* §7.4; §4.7; §4.6; VStackSheavesAndLisseCategories §VS4.0, Newton geometry.
 
 ### Examples
 
@@ -1723,9 +1802,9 @@ P¹(𝔽_q), nonempty even when q=2.
 ### Dependencies
 
 Layers 0, 1, 4; BunGAndNewtonStrata Layer 1, classification-by-two-invariants; BunGAndNewtonStrata Layer 1,
-galois-average; BunGAndNewtonStrata Layer 1, general-levi-newton-comparison; BunGAndNewtonStrata Layer 1,
-partial-order-on-B-of-G; ReductiveGroupsPartII RG2.3, lang-theorem; ReductiveGroupsPartII RG2.3,
-parahoric-subgroup; ReductiveGroupsPartII RG2.4, iwahori-weyl-group; SmoothRepresentationsOfLocalGroups SR.1.5; gap:twisted-affine-cocenter; gap:finite-coxeter-basic-class; gap:demazure-product.
+galois-average; BunGAndNewtonStrata Layer 1, general-levi-newton-comparison; VStackSheavesAndLisseCategories §VS4.0,
+Newton geometry; ReductiveGroupsPartII RG2.3, lang-theorem; ReductiveGroupsPartII RG2.3,
+parahoric-subgroup; ReductiveGroupsPartII RG2.1, affine-roots-and-filtrations; ReductiveGroupsPartII RG2.4, iwahori-weyl-group; SmoothRepresentationsOfLocalGroups SR.1.5; gap:twisted-affine-cocenter; gap:finite-coxeter-basic-class; gap:demazure-product.
 The individual Needs paragraphs specify the additional comparison constructions used by each route.
 
 ## Layer 8: the shrunken nonemptiness and dimension theorem
@@ -1804,7 +1883,7 @@ The coweight is 2ρ∨, not 2ρ. An arbitrary large λ statement cannot drop the
 - In adjoint A₂, ν=0 and λ=6ω₁∨=4α₁∨+2α₂∨ satisfy λ−2ρ∨=2α₁∨, but 〈α₂,λ〉=0: translation preserves the α₂-critical strip and fails shrunkenness. The numerical bound alone does not apply the theorem.
 - For adjoint A₁, λ=α∨=2ρ∨ and w=s t^λ satisfy the range; the dimension is 2.
 
-*Needs:* §8.2; RootSystems Layers 3–4 and 6; RootSystemsPartII RS2.1; gap:dominant-subtraction; §5.1.
+*Needs:* §8.2; RootSystems Layers 3–4 and 6; RootSystemsPartII §1.1; gap:dominant-subtraction; §5.1.
 
 ### Examples
 
@@ -1816,7 +1895,7 @@ locus.
 ### Dependencies
 
 Layers 0, 3, 5, 6, 7; BunGAndNewtonStrata Layer 1, classification-by-two-invariants; ReductiveGroupsPartII
-RG2.3; RootSystems Layers 3–4 and 6; RootSystemsPartII RS2.1; gap:dominant-subtraction. The individual
+RG2.3; RootSystems Layers 3–4 and 6; RootSystemsPartII §1.1; gap:dominant-subtraction. The individual
 Needs paragraphs specify the additional comparison constructions used by each route.
 
 ## Downstream consumers
@@ -1861,5 +1940,9 @@ theorem, section and page locators.
 - **vie14.** Eva Viehmann, *Truncations of level 1 of elements in the loop group of a reductive group*. Annals of Mathematics 179 (2014), 1009–1040; published version. [Legal text](https://annals.math.princeton.edu/wp-content/uploads/annals-v179-n3-p03-p.pdf).
 
 - **hn14.** Xuhua He and Sian Nie, *Minimal length elements of extended affine Weyl groups*. Author copy; Compositio Mathematica 150 (2014), 1903–1927. [Legal text](https://archive.ymsc.tsinghua.edu.cn/pacm_download/315/8989-affmin-2.pdf).
+
+- **ghkr10.** Ulrich Görtz, Thomas J. Haines, Robert E. Kottwitz and Daniel C. Reuman, *Affine Deligne–Lusztig varieties in affine flag varieties*. arXiv:0805.0045v4; Compositio Mathematica 146 (2010), 1339–1382; locators are PDF pages of the arXiv version. [Legal text](https://arxiv.org/pdf/0805.0045v4).
+
+- **nie15.** Sian Nie, *Fundamental elements of an affine Weyl group*. arXiv:1310.2229v2; Mathematische Annalen 362 (2015), 485–499; locators are PDF pages of the arXiv version. [Legal text](https://arxiv.org/pdf/1310.2229v2).
 
 - **ham17.** Paul Hamacher, *The almost product structure of Newton strata in the deformation space of a Barsotti–Tate group with crystalline Tate tensors*. Locators use arXiv:1601.03131v3, Definition 2.1(3), PDF p. 4, and Corollary 2.7, PDF p. 6; Math. Z. 287 (2017), 1255–1277. [Legal text](https://arxiv.org/pdf/1601.03131v3).
