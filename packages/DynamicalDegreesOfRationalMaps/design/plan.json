@@ -16,7 +16,7 @@
      "id": "1.1",
      "kind": "definition",
      "name": "RationalMap.functionFieldPullback / RationalMap.topologicalDegree",
-     "statement": "For a dominant K-rational map f : X ⤏ Y of varieties over K, f^* : K(Y) -> K(X) is the K-algebra map induced by RationalMap.fromFunctionField f (which hits the generic point of Y); e(f) = Module.finrank over f^*K(Y) of K(X). f |-> f^* is a bijection onto K-algebra maps K(Y) -> K(X); (g∘f)^* = f^*∘g^*; e(f) > 0 iff dim X = dim Y (junk 0 otherwise); e(g∘f) = e(f)e(g) in equal dimension; e(f) = 1 iff f birational.",
+     "statement": "For a dominant K-rational map f : X ⤏ Y of varieties over K, f^* : K(Y) -> K(X) is the K-algebra map induced by RationalMap.fromFunctionField f (which hits the generic point of Y); e(f) = Module.finrank over f^*K(Y) of K(X). f |-> f^* is a bijection onto K-algebra maps K(Y) -> K(X); (g∘f)^* = f^*∘g^*; e(f) > 0 iff dim X = dim Y (junk 0 otherwise); e(g∘f) = e(f)e(g) in equal dimension; e(f) = 1 iff f^* is an isomorphism iff f is birational (the rational map of a partial isomorphism over K); then Scheme.Birational X Y holds and f^{-1} has pullback (f^*)^{-1}.",
      "hypotheses": [
       "X, Y integral, separated, of finite type over K",
       "f dominant and over Spec K",
@@ -33,7 +33,10 @@
       "mathlib:AlgebraicGeometry.Scheme.functionField",
       "mathlib:Module.finrank",
       "mathlib:Module.finrank_mul_finrank",
-      "mathlib:AlgebraicGeometry.Scheme.Birational",
+      "mathlib:AlgebraicGeometry.Scheme.PartialIso",
+      "mathlib:AlgebraicGeometry.Scheme.PartialIso.IsOver",
+      "mathlib:AlgebraicGeometry.Scheme.PartialIso.symm",
+      "mathlib:AlgebraicGeometry.Scheme.PartialIso.toRationalMap",
       "tauceti:TauCeti.AlgebraicGeometry.topologicalKrullDim_eq_toNat_trdeg_functionField",
       "roadmap:SchemeAndStackFoundations §4.16"
      ],
@@ -66,7 +69,7 @@
       {
        "name": "topologicalDegree_eq_one_iff",
        "role": "characterisation",
-       "statement": "e(f) = 1 iff f is birational (equal dimension)"
+       "statement": "in equal dimension, e(f) = 1 iff f^* is an isomorphism iff f is the rational map of a partial isomorphism over K; then f^{-1} has pullback (f^*)^{-1}"
       }
      ],
      "tests": [
@@ -94,6 +97,11 @@
        "name": "constant_nonexample",
        "kind": "non-example",
        "statement": "a constant map P^1 -> P^1 is not dominant and has no function-field pullback"
+      },
+      {
+       "name": "square_not_birational",
+       "kind": "non-example",
+       "statement": "z ↦ z^2 on P^1: e = 2, f^* not surjective, the rational map of no partial isomorphism, although Scheme.Birational P^1 P^1 holds through the identity"
       }
      ]
     },
@@ -258,7 +266,7 @@
      },
      "prerequisites": [
       "mathlib:AlgebraicGeometry.Scheme.PartialIso",
-      "mathlib:AlgebraicGeometry.Scheme.Birational",
+      "mathlib:AlgebraicGeometry.Scheme.PartialIso.symm",
       "mathlib:AlgebraicGeometry.Scheme.Hom.image",
       "target:1.1",
       "target:1.2",
@@ -471,7 +479,7 @@
       {
        "name": "imperfect_line",
        "kind": "computation",
-       "statement": "x^2 + t y^2 over F_2(t): K' = K(√t), V ≅ P^1_{K'}, m = 1, c_V = 2, (O(1))_V = 2"
+       "statement": "x^2 + t y^2 over F_2(t): integral, not normal at [0:0:1] (cotangent dimension 2); normalization P^1_{K'} with K' = K(√t), H^0(V,O) = K, m = 1, c_V = 2, χ(O_V(n)) = 2n+1, (O(1))_V = 2 = 2·1; base change to K' is the double line with the same value"
       },
       {
        "name": "pinched_nonexample",
@@ -531,7 +539,7 @@
       {
        "name": "isNef_baseChange_iff",
        "role": "compatibility",
-       "statement": "L nef iff L_{K'} nef (gap:numerical-nef-big-transfer)"
+       "statement": "for every projective K-scheme, L nef iff L_{K'} nef; the forward direction on an integral X is gap:numerical-nef-big-transfer, the forward direction in general (through the irreducible components) and the converse (through §2.1 and field-extension compatibility) are proved here"
       },
       {
        "name": "isNef_reduction",
@@ -540,6 +548,11 @@
       }
      ],
      "tests": [
+      {
+       "name": "complex_line_base_change",
+       "kind": "computation",
+       "statement": "P^1_C over R with L = O(1): L_C nef on P^1_C ⊔ P^1_C (degree 1 on each component), converse computes (L·X) = 2 = 1 + 1; the line y = tx in A^2_{K(t)} dominates A^2_K, so the supplied statement is needed on integral X of every dimension"
+      },
       {
        "name": "P1_nef",
        "kind": "characterisation",
@@ -654,10 +667,10 @@
      "id": "3.4",
      "kind": "theorem",
      "name": "hodge_inequality_surface",
-     "statement": "S integral projective surface over K, H nef with (H^2) > 0, D any line bundle: (D·H)^2 ≥ (D^2)(H^2).",
+     "statement": "S integral projective surface over K, H any line bundle with (H^2) > 0, D any line bundle: (D·H)^2 ≥ (D^2)(H^2). No positivity of H is assumed; the route derives the index theorem for H from the ample one of SchemeAndStackFoundations §5.10 by an integer combination xH + yD orthogonal to an ample class.",
      "hypotheses": [
       "S integral projective surface",
-      "H nef with (H^2) > 0"
+      "(H^2) > 0"
      ],
      "locator": {
       "source": "kleiman2005",
@@ -667,11 +680,10 @@
       "target:2.2",
       "target:2.3",
       "target:2.4",
-      "target:3.1",
-      "target:3.2",
       "roadmap:SchemeAndStackFoundations §4.13",
       "roadmap:SchemeAndStackFoundations §4.19",
-      "roadmap:SchemeAndStackFoundations §5.10"
+      "roadmap:SchemeAndStackFoundations §5.10",
+      "roadmap:StableReduction Layer 2"
      ],
      "api": [],
      "tests": [
@@ -689,6 +701,11 @@
        "name": "negative_H",
        "kind": "non-example",
        "statement": "blow-up of P^2 at two points, H = E_1, D = E_2: 0 < 1"
+      },
+      {
+       "name": "nonnef_H",
+       "kind": "computation",
+       "statement": "blow-up of P^2 at a point, H = 2L + E (not nef: H·E = -1, H^2 = 3): D = E gives 1 ≥ -3, D = L gives 4 ≥ 3"
       }
      ]
     },
@@ -799,7 +816,7 @@
      ],
      "locator": {
       "source": "dangfavre2021",
-      "where": "§1.3, lines 436-443 and footnote 4, lines 452-453; dang2020 lines 21-25; dinhsibony2005 lines 61-63; russakovskiishiffman1997 lines 499-505"
+      "where": "§1.3, lines 436-443 and footnote 4, lines 452-453; dang2020 lines 21-25; dinhsibony2005 lines 61-63; russakovskiishiffman1997 lines 499-505; fulton1998 Theorem 1.4 and Proposition 2.5 (uncertified, by locator)"
      },
      "prerequisites": [
       "target:1.2",
@@ -1073,7 +1090,7 @@
       {
        "name": "morphism",
        "kind": "computation",
-       "statement": "morphism of P^d of degree a: λ_k = a^k, infimum not attained at n = 1"
+       "statement": "morphism of P^d of degree a: λ_k = a^k; for 1 ≤ k ≤ d-1 the infimum is not attained at n = 1 (value (d-k+1)^k a^k there), for k = 0 and k = d the sequence is constant and it is attained"
       },
       {
        "name": "cremona",
@@ -1501,8 +1518,8 @@
     "3.5",
     "3.6"
    ],
-   "detail": "For a projective K-scheme X, a line bundle L and a field extension K'/K, L is nef on X iff L_{K'} is nef on X_{K'}; this is the field-extension part of the contract StableReductionPartII records for SchemeAndStackFoundations under the same name. The forward direction transports nefness to the integral variety over an algebraically closed field of §2.4.",
-   "needs": "SchemeAndStackFoundations does not state invariance of nefness under extension of the ground field.",
+   "detail": "The field-extension part of the contract StableReductionPartII records for SchemeAndStackFoundations under the same name, in its forward direction on a projective integral K-scheme. §3.1 derives from it the converse and the statement for every projective K-scheme, and uses it to transport nefness to the integral variety over an algebraically closed field of §2.4.",
+   "needs": "For a projective integral K-scheme X, a line bundle L on X and a field extension K'/K, if (L · C) ≥ 0 for every integral closed curve C ⊆ X, then (L_{K'} · C') ≥ 0 for every integral closed curve C' ⊆ X_{K'}.",
    "supplier": "SchemeAndStackFoundations",
    "section": "§5.3"
   }

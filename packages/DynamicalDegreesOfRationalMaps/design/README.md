@@ -37,6 +37,7 @@ What is left out, as motivation for later roadmaps:
 - Line bundles are Tau Ceti's `TauCeti.AlgebraicGeometry.InvertibleSheaf`, written additively: `L + M` is the tensor product, `mL` the `m`-th tensor power, `−L` the dual. `Pic(X)` is `TauCeti.AlgebraicGeometry.LineBundleClass X`. Pullback along `p` is written `p^*L`.
 - *Intersection numbers.* For a proper `K`-scheme `X`, a closed subscheme `Z ⊆ X` of dimension `≤ r` and line bundles `L_1, …, L_r` on `X`, `(L_1 ⋯ L_r · Z)` is the numerical intersection of CyclotomicClassGroupsAndStickelberger §4.3: the coefficient of `n_1⋯n_r` in `χ_K(Z, n_1L_1 + ⋯ + n_rL_r)`. Write `(L_1 ⋯ L_r)_X` when `Z = X`, and `(L^r)` for equal entries. The number depends on `K`. *Witness:* on `ℙ¹_K`, `(O(a))_{ℙ¹} = a` for every integer `a`, because `χ(O(an)) = an + 1`. For a closed point `P` with `[κ(P) : K] = 2`, the empty intersection `( · P)` is `χ_K(O_P) = 2`; computed over `κ(P)` it is `1`.
 - *Composition.* Mathlib's `Scheme.RationalMap.comp f g`, for `f : X ⤏ Y` dominant and `g : Y ⤏ Z`, applies `f` first. In prose it is `g ∘ f`. *Witness:* on `ℙ¹` with `f(z) = z²` and `g(z) = z + 1`, `f.comp g` is `z ↦ z² + 1`. Its value at `z = 1` is `2`, while `f ∘ g` takes the value `4` there. Iterates are `f^0 = id` and `f^{n+1} = f^n ∘ f`. By Mathlib's `Scheme.RationalMap.comp_assoc` this agrees with `f ∘ f^n`.
+- *Birational maps.* A rational map `f : X ⤏ Y` is *birational* if it is `φ.toRationalMap` for a partial isomorphism `φ` (Mathlib's `Scheme.PartialIso`, an isomorphism between dense opens of `X` and `Y`) that is over `K` in the sense of `Scheme.PartialIso.IsOver`. A birational map is dominant. Its *inverse* `f^{−1}` is `φ.symm.toRationalMap`; it does not depend on `φ`, because its pullback is `(f^*)^{−1}` and §1.1 determines a dominant rational map by its pullback. A morphism is birational if its rational map is. Mathlib's `Scheme.Birational X Y` is the existence of some partial isomorphism between the schemes: a property of the pair, not of a map. *Witness:* `z ↦ z²` on `ℙ¹` is not birational (its pullback `K(z²) ⊆ K(z)` is not surjective), although `Scheme.Birational ℙ¹ ℙ¹` holds through the identity.
 - *Degrees.* For `f : X ⤏ Y` dominant between projective varieties of the same dimension `d`, `0 ≤ k ≤ d`, and line bundles `L` on `X` and `M` on `Y`, `deg_k(f; L, M) = (π_1^*L^{d−k} · π_2^*M^k)_{Γ_f}`. The index `k` counts the copies pulled back from the *target*. For a self-map and `ω` on `X`, `deg_{k,ω}(f) = deg_k(f; ω, ω)`. *Witness:* for `f(z) = z²` on `ℙ¹` and `H = O(1)`, `deg_{0,H}(f) = 1` and `deg_{1,H}(f) = 2 = e(f)`. The opposite convention would give `deg_1 = 1`.
 - *Topological degree.* `e(f) = dim_{f^*K(Y)} K(X)`, Mathlib's `Module.finrank`. It counts inseparable degree and takes the junk value `0` when `K(X)` is infinite-dimensional over `f^*K(Y)`. *Witness:* the Frobenius `[x_i] ↦ [x_i^p]` of `ℙ^d` over a field of characteristic `p` has `e = p^d`; the separable degree would be `1`.
 - *Polarizations.* A *big and nef* line bundle is a nef `L` with `(L^d) > 0`. Nefness is that of ArakelovGeometryAndAbelianHeightsPartII §0.1, extended to projective `K`-schemes in §3.1. A *real polarization* is `ω = Σ a_i L_i` in `Pic(X) ⊗ ℝ` with real `a_i > 0`, every `L_i` nef, and `(ω^d) > 0`. Every ample line bundle and every big and nef line bundle is a real polarization.
@@ -52,7 +53,7 @@ What is left out, as motivation for later roadmaps:
 - `Scheme.RationalMap.fromFunctionField` (line 497) is the morphism `Spec K(X) → Y` of a rational map from an irreducible scheme. `Scheme.RationalMap.equivFunctionFieldOver` (line 558) identifies `S`-morphisms `Spec K(X) → Y` with `S`-rational maps, for `X` integral and `Y` locally of finite type over `S`. These say nothing about dominance or field homomorphisms; §1.1 adds both.
 - `AlgebraicGeometry.Scheme.RationalMap.IsDominant` (Mathlib/AlgebraicGeometry/Birational/Dominant.lean:73): some, equivalently every, representative is dominant.
 - `Scheme.RationalMap.comp` (Mathlib/AlgebraicGeometry/Birational/Composition.lean:156). It requires the first map dominant, the source preirreducible and the middle scheme nonempty. Also used: `Scheme.RationalMap.comp_assoc` (line 183), which assumes the middle schemes irreducible, `Scheme.RationalMap.comp_id` (line 171), `Scheme.RationalMap.id_comp` (line 218), the dominance instance for composites (line 174) and `Scheme.RationalMap.isOver_comp` (line 194).
-- `AlgebraicGeometry.Scheme.PartialIso`, `Scheme.PartialIso.symm`, `Scheme.PartialIso.toRationalMap` and `AlgebraicGeometry.Scheme.Birational` (Mathlib/AlgebraicGeometry/Birational/Birational.lean:39, 88, 166, 181) are birational maps and their inverses.
+- `AlgebraicGeometry.Scheme.PartialIso` (Mathlib/AlgebraicGeometry/Birational/Birational.lean:39) is an isomorphism between dense open subschemes, with `Scheme.PartialIso.IsOver` (line 55), its inverse `Scheme.PartialIso.symm` (line 88) and its rational map `Scheme.PartialIso.toRationalMap` (line 166). `AlgebraicGeometry.Scheme.Birational X Y` (line 181) is the existence of a partial isomorphism between the two schemes; it is a relation between schemes, not a property of a rational map, which is why the Conventions define birational maps through partial isomorphisms.
 - `AlgebraicGeometry.Scheme.Hom.image`, `Scheme.Hom.imageι` and `Scheme.Hom.toImage` (Mathlib/AlgebraicGeometry/IdealSheaf/Subscheme.lean:659, 662, 707). The scheme-theoretic image is the closed subscheme cut out by `Scheme.Hom.ker` (Mathlib/AlgebraicGeometry/IdealSheaf/Basic.lean:691). `Scheme.Hom.toImage` is dominant for quasi-compact morphisms (line 717). Mathlib does not state that the image of a reduced scheme is reduced; §1.2 uses stacks-morphisms Lemma 6.7.
 - `AlgebraicGeometry.Scheme.functionField` (Mathlib/AlgebraicGeometry/FunctionField.lean:37) is the stalk at the generic point; it is a field for integral schemes.
 - `AlgebraicGeometry.IsFinite.iff_isProper_and_isAffineHom` (Mathlib/AlgebraicGeometry/Morphisms/Proper.lean:97), with `AlgebraicGeometry.IsProper`, `AlgebraicGeometry.IsAffineHom`, `AlgebraicGeometry.IsDominant` and `AlgebraicGeometry.IsIntegral`.
@@ -111,7 +112,7 @@ Mathlib has no graph of a rational map, no field homomorphism attached to a domi
 
 ### What SchemeAndStackFoundations must provide
 
-- **gap:numerical-nef-big-transfer** (SchemeAndStackFoundations §5.3, the field-extension part of the contract StableReductionPartII records under the same name). For a projective `K`-scheme `X`, a line bundle `L` on `X` and a field extension `K'/K`, `L` is nef on `X` if and only if `L_{K'}` is nef on `X_{K'}`. The reduction item of §3.1, and through it Kleiman's theorem (§3.2) and every later positivity statement for nef classes that are not ample, use the forward direction.
+- **gap:numerical-nef-big-transfer** (SchemeAndStackFoundations §5.3, the field-extension part of the contract StableReductionPartII records under the same name). For a projective integral `K`-scheme `X`, a line bundle `L` on `X` and a field extension `K'/K`, if `(L · C) ≥ 0` for every integral closed curve `C ⊆ X`, then `(L_{K'} · C') ≥ 0` for every integral closed curve `C' ⊆ X_{K'}`. The field-extension item of §3.1 consumes exactly this and derives from it the converse and the statement for every projective `K`-scheme; the reduction item of §3.1, and through it Kleiman's theorem (§3.2) and every later positivity statement for nef classes that are not ample, use it on an integral scheme.
 
 ## How to read the build
 
@@ -139,15 +140,16 @@ Define the *pullback* `f^* : K(Y) → K(X)` of a dominant rational map `f : X �
 - *Determination.* `f ↦ f^*` is a bijection between dominant `K`-rational maps `X ⤏ Y` and `K`-algebra homomorphisms `K(Y) → K(X)`. The proof composes `Scheme.RationalMap.equivFunctionFieldOver` with the correspondence between `K`-morphisms `Spec K(X) → Y` hitting the generic point and `K`-embeddings of function fields, using that `Y` is of finite type.
 - *Finiteness.* `e(f)` is a positive integer if and only if `dim X = dim Y`. If `dim X > dim Y`, then `K(X)` has positive transcendence degree over `f^*K(Y)` and `e(f) = 0` is a junk value. The proof uses Tau Ceti's `TauCeti.AlgebraicGeometry.topologicalKrullDim_eq_toNat_trdeg_functionField`, and finite generation of `K(X)` over `K`.
 - *Multiplicativity.* If `dim X = dim Y = dim Z`, then `e(g ∘ f) = e(f)·e(g)`, by Mathlib's `Module.finrank_mul_finrank` applied to `f^*g^*K(Z) ⊆ f^*K(Y) ⊆ K(X)`. The pullback `f^*` is injective, being a homomorphism of fields, and carries `g^*K(Z) ⊆ K(Y)` onto `f^*g^*K(Z) ⊆ f^*K(Y)`.
-- *Birationality.* If `dim X = dim Y`, then `e(f) = 1` if and only if `f^*` is an isomorphism, if and only if `f` is birational in the sense of Mathlib's `Scheme.Birational`. In that case the inverse rational map has pullback `(f^*)^{−1}`.
+- *Birationality.* If `dim X = dim Y`, then `e(f) = 1` if and only if `f^*` is an isomorphism, if and only if `f` is birational in the sense of the Conventions. For the last step: when `f^*` is an isomorphism, determination gives a dominant `g : Y ⤏ X` with `g^* = (f^*)^{−1}`; then `(g ∘ f)^* = id` and `(f ∘ g)^* = id`, so `g ∘ f = id_X` and `f ∘ g = id_Y` by determination. Representatives `f_U` and `g_V` therefore compose to the identity on dense opens `U' ⊆ U` and `V' ⊆ V`, and they restrict to inverse isomorphisms between `U_0 = U' ∩ f_U^{−1}(V')` and `V_0 = V' ∩ g_V^{−1}(U')`, a partial isomorphism over `K` whose rational map is `f`. In that case `X` and `Y` are birational in Mathlib's sense `Scheme.Birational X Y`, and `f^{−1}` has pullback `(f^*)^{−1}`.
 
-*Needs:* Mathlib `Scheme.RationalMap.fromFunctionField`, `Scheme.RationalMap.equivFunctionFieldOver`, `Scheme.RationalMap.IsDominant`, `Scheme.functionField`, `Module.finrank`, `Module.finrank_mul_finrank`, `Scheme.Birational`; Tau Ceti `TauCeti.AlgebraicGeometry.topologicalKrullDim_eq_toNat_trdeg_functionField`; SchemeAndStackFoundations §4.16.
+*Needs:* Mathlib `Scheme.RationalMap.fromFunctionField`, `Scheme.RationalMap.equivFunctionFieldOver`, `Scheme.RationalMap.IsDominant`, `Scheme.functionField`, `Module.finrank`, `Module.finrank_mul_finrank`, `Scheme.PartialIso`, `Scheme.PartialIso.IsOver`, `Scheme.PartialIso.symm`, `Scheme.PartialIso.toRationalMap`; Tau Ceti `TauCeti.AlgebraicGeometry.topologicalKrullDim_eq_toNat_trdeg_functionField`; SchemeAndStackFoundations §4.16.
 
 **Checks.**
 
 - For `f(z) = z²` on `ℙ¹`, `f^*(z) = z²` and `e(f) = [K(z) : K(z²)] = 2` in every characteristic. In characteristic `2` the extension is purely inseparable. A convention counting separable degree would give `1` there.
 - For the Frobenius `[x_i] ↦ [x_i^p]` of `ℙ^d` over a field of characteristic `p`, `f^*` is `x_i ↦ x_i^p` on affine coordinates and `e(f) = p^d`.
 - The standard Cremona involution of `ℙ²` has `e = 1` and is birational, although its forms have degree `2`. Multiplicativity gives `e(σ ∘ σ) = 1`.
+- Non-example: `f(z) = z²` on `ℙ¹` has `e(f) = 2`, `f^*` is not surjective, and `f` is the rational map of no partial isomorphism, so the three conditions of the birationality item fail together. Yet `Scheme.Birational ℙ¹ ℙ¹` holds, through the identity. A definition of "birational `f`" through Mathlib's relation on the pair would make the item false.
 - The linear projection `ℙ² ⤏ ℙ¹` from `[0 : 0 : 1]` is dominant with `K(x, y)` of transcendence degree one over `K(x)`, so `e = 0` is the junk value. The finiteness item excludes it.
 - Non-example: a constant map `ℙ¹ → ℙ¹` is not dominant and has no pullback of function fields; Mathlib's composition with it as the first map is not defined.
 
@@ -194,13 +196,13 @@ The construction applies to iterates. For `f : X ⤏ X` and `m, n ≥ 1`, `W_{f^
 
 ### 1.4 Normalization and extension of the field
 
-*Normalization.* Let `ν : X̃ → X` be the normalization of a projective variety. It is finite and birational (SchemeAndStackFoundations §§0.20, 0.30), so `X̃` is a projective variety. For `f : X ⤏ X` dominant put `f̃ = ν^{−1} ∘ f ∘ ν : X̃ ⤏ X̃`, with `ν^{−1}` the rational inverse of the birational morphism `ν`. Prove that `ν × ν` maps `Γ_{f̃}` onto `Γ_f`, properly and birationally, and that `(f^n)~ = f̃^n`.
+*Normalization.* Let `ν : X̃ → X` be the normalization of a projective variety. It is finite and birational (SchemeAndStackFoundations §§0.20, 0.30), so `X̃` is a projective variety. For `f : X ⤏ X` dominant put `f̃ = ν^{−1} ∘ f ∘ ν : X̃ ⤏ X̃`, with `ν^{−1}` the inverse (Conventions) of the birational morphism `ν`, which is an isomorphism over the dense open normal locus of `X`. Prove that `ν × ν` maps `Γ_{f̃}` onto `Γ_f`, properly and birationally, and that `(f^n)~ = f̃^n`.
 
 *Extension of the field.* Let `K'/K` be a field extension. Prove that `(Γ_f)_{K'} ⊆ (X ×_K Y)_{K'}` is the scheme-theoretic image of `γ_f ×_K K'` (flat base change of scheme-theoretic images, stacks-morphisms Lemma 26.16, line 2198). If `X` and `Y` are geometrically integral, `X_{K'}` and `Y_{K'}` are projective varieties over `K'`. Let `f_{K'}` be the rational map of `(f_U)_{K'}`. It is dominant when `f` is; `e(f_{K'}) = e(f)`; `(g ∘ f)_{K'} = g_{K'} ∘ f_{K'}`; and `Γ_{f_{K'}} = (Γ_f)_{K'}` (truong2020 §6.3, line 1529).
 
 For `e(f_{K'}) = e(f)`: `K(X) ⊗_K K'` is free of rank `e(f)` over `f^*K(Y) ⊗_K K'`, a domain whose fraction field is `K(Y_{K'})`. Localizing gives `[K(X_{K'}) : K(Y_{K'})] = e(f)`.
 
-*Needs:* Mathlib `Scheme.PartialIso`, `Scheme.Birational`, `Scheme.Hom.image`; §§1.1–1.2; SchemeAndStackFoundations §§0.11, 0.20, 0.30.
+*Needs:* Mathlib `Scheme.PartialIso`, `Scheme.PartialIso.symm`, `Scheme.Hom.image`; §§1.1–1.2; SchemeAndStackFoundations §§0.11, 0.20, 0.30.
 
 **Checks.**
 
@@ -214,7 +216,7 @@ The identity and its diagonal, `z ↦ z²` on `ℙ¹` with `e = 2`, the Cremona 
 
 ### Dependencies
 
-Mathlib's rational maps, composition, birational maps, scheme-theoretic images and function fields; Tau Ceti's dimension theorem; SchemeAndStackFoundations §§0.7, 0.11, 0.20, 0.30, 4.11, 4.16; StableReduction Layer 2. No other layer of this roadmap.
+Mathlib's rational maps, composition, partial isomorphisms, scheme-theoretic images and function fields; Tau Ceti's dimension theorem; SchemeAndStackFoundations §§0.7, 0.11, 0.20, 0.30, 4.11, 4.16; StableReduction Layer 2. No other layer of this roadmap.
 
 ## Layer 2: Intersection numbers over a field
 
@@ -268,7 +270,7 @@ Let `V` be an integral projective `K`-scheme of dimension `r`. Let `ν : Ṽ →
 
 - (a) `K'` is a finite field extension of `K`, algebraically closed in `K(Ṽ)`. Hence `Ṽ` is geometrically irreducible over `K'` (stacks-varieties Lemma 8.6, tag 054Q, line 691), and `W` is an integral projective variety over `Ω` with `[Ṽ_Ω] = m[W]` for an integer `m ≥ 1`.
 - (b) There is a positive integer `c_V = [K' : K]·m` such that `(L_1 ⋯ L_r)_{V/K} = c_V·(L_1|_W ⋯ L_r|_W)_{W/Ω}` for all line bundles `L_1, …, L_r` on `V`. Here `L|_W` is the pullback along `W → Ṽ_Ω → Ṽ → V`, and the equality extends to real classes.
-- (c) The pullback to `W` of an ample line bundle on `V` is ample (stacks-morphisms Lemma 38.7 (2), line 3862, for the finite morphism `W → V`, with base change of ample line bundles along `Ω/K'`).
+- (c) The pullback to `W` of an ample line bundle on `V` is ample. The morphism `W → V` is affine, being the composite of a closed immersion, the base change of `Spec Ω → Spec K'` and the finite `ν`; it is not finite when `Ω/K'` is infinite. Being affine it is quasi-affine, and stacks-morphisms Lemma 38.7 (2), line 3862, applied once to it, gives the claim.
 
 For (b): the projection formula along `ν`, of degree one, gives the numbers on `Ṽ`. An Euler characteristic over `K` is `[K' : K]` times the one over `K'`. Extending the field to `Ω` changes nothing, and §2.1 gives `m`. Every inequality between products of two intersection numbers, homogeneous of degree one in each factor, therefore holds on `V` once it holds on `W`. The behaviour of nef line bundles under this reduction is §3.1.
 
@@ -278,7 +280,7 @@ For (b): the projection formula along `ν`, of degree one, gives the numbers on 
 
 - `V = ℙ¹_ℂ` as an `ℝ`-scheme: `K' = ℂ`, `W = ℙ¹_ℂ`, `m = 1`, `c_V = 2`, and `(O(1))_{V/ℝ} = 2 = 2·1`.
 - `V = Proj ℝ[x, y, z]/(x² + y² + z²)`, the conic without real points: `K' = ℝ` and `W` is a smooth conic over `ℂ`. Then `c_V = 1` and `(O(1))_{V} = 2 = (O(1))_{W}`.
-- Over `K = 𝔽_2(t)`, `V = Proj K[x, y, z]/(x² + t y²)` is normal with `K' = K(√t)` and `V ≅ ℙ¹_{K'}` (the line `x = √t·y`), geometrically integral over `K'`. So `m = 1` and `c_V = 2`, and `(O(1))_{V/K} = 2 = 2·1`, since `χ_K(O_V(n)) = 2(n + 1)`. Base change over `K` instead gives the non-reduced `V ×_K K'`, with fundamental cycle `2·[line]`, and the same value `2·1`.
+- Over `K = 𝔽_2(t)`, `V = Proj K[x, y, z]/(x² + t y²)` is integral but not normal: at the `K`-point `[0 : 0 : 1]` the cotangent space has dimension `2`, because `x² + t y²` lies in the square of the maximal ideal, so the one-dimensional local ring there is not regular. Its normalization is `ℙ¹_{K'}` with `K' = K(√t)`: the chart `y ≠ 0` is `Spec K[x, z]/(x² + t) = 𝔸¹_{K'}`, and the `K'`-point at infinity is pinched to `[0 : 0 : 1]`. So `H⁰(V, O_V) = K` (a plane conic) while `K' = H⁰(Ṽ, O_Ṽ) = K(√t)`; `Ṽ` is geometrically integral over `K'`, `m = 1` and `c_V = 2`. Since `χ_K(O_V(n)) = 2n + 1` and `ν^*O(1) = O_{ℙ¹_{K'}}(1)`, `(O(1))_{V/K} = 2 = 2·(O(1)|_Ṽ)_{Ṽ/K'}`: the value passes through the normalization, as (a) requires. Base change to `K'` instead gives the double line `(x + √t·y)²` with fundamental cycle `2·[line]` and the same value `2·1`.
 - Non-example: let `V` be `ℙ¹_ℂ` over `ℝ` with the conjugate points `i, −i` pinched to one real point. Then `V` is integral with `H⁰(V, O_V) = ℝ`, but `ℂ ⊆ K(V) = ℂ(t)`. So `V` is not geometrically irreducible over `H⁰(V, O_V)` (stacks-varieties Lemma 8.6), and the normalization (`ℙ¹_ℂ`, with `K' = ℂ`) is needed in (a).
 
 ### Examples
@@ -298,13 +300,14 @@ On a projective `K`-scheme `X`, call a line bundle `L` *nef* if `(L · C) ≥ 0`
 - Ample line bundles are nef, by positivity for ample line bundles (CyclotomicClassGroupsAndStickelberger §4.3). The trivial bundle is nef. Sums and positive multiples of nef line bundles are nef.
 - *Restriction and pullback.* If `L` is nef on `X`, then `L|_Z` is nef on every closed subscheme `Z`. For every morphism `p : Y → X` of projective `K`-schemes, `p^*L` is nef: by the projection formula, `(p^*L · C) = deg(C → p(C))·(L · p(C))` when `p(C)` is a curve, and `0` when it is a point.
 - *Big and nef pullback.* If `p : Y → X` is a generically finite surjective morphism of projective varieties of the same dimension `d` and `L` is big and nef, then `p^*L` is big and nef, with `((p^*L)^d) = deg(p)·(L^d)`.
-- *Field extension.* `L` is nef on `X` if and only if `L_{K'}` is nef on `X_{K'}`, for every field extension `K'/K` (gap:numerical-nef-big-transfer).
+- *Field extension.* Let `K'/K` be a field extension. For `X` integral and `L` nef, `L_{K'}` is nef on `X_{K'}` (gap:numerical-nef-big-transfer). Prove from this that for every projective `K`-scheme `X`, `L` is nef on `X` if and only if `L_{K'}` is nef on `X_{K'}`. Forward direction: an integral curve `C' ⊆ X_{K'}` is reduced, so it lies in `(X_i)_{K'}` for an irreducible component `X_i` of `X` with its reduced structure; `L|_{X_i}` is nef on the integral `X_i`, and the supplied statement for `X_i` gives `(L_{K'} · C') ≥ 0`. Converse: for an integral curve `C ⊆ X`, `(L · C) = (L_{K'} · C_{K'})` by field-extension compatibility (CyclotomicClassGroupsAndStickelberger §4.3), `C_{K'}` has pure dimension one, and §2.1 writes `(L_{K'} · C_{K'})` as `Σ m_i (L_{K'} · C_i)` over its components, each term nonnegative.
 - *Reduction.* For `V`, `Ṽ` and `W` as in §2.4, the pullback to `W` of a nef line bundle on `V` is nef. It is nef on `Ṽ` by pullback, on `Ṽ_Ω` by the field-extension item, and on `W` by restriction.
 
-*Needs:* ArakelovGeometryAndAbelianHeightsPartII §0.1; CyclotomicClassGroupsAndStickelberger §4.3; §§2.2–2.4; SchemeAndStackFoundations §3.3; gap:numerical-nef-big-transfer.
+*Needs:* ArakelovGeometryAndAbelianHeightsPartII §0.1; CyclotomicClassGroupsAndStickelberger §4.3; §§2.1–2.4; SchemeAndStackFoundations §3.3; gap:numerical-nef-big-transfer.
 
 **Checks.**
 
+- `X = ℙ¹_ℂ` as an `ℝ`-scheme with `L = O(1)`: `X_ℂ = ℙ¹_ℂ ⊔ ℙ¹_ℂ` and `L_ℂ` has degree `1` on each component, so it is nef; the converse computes `(L · X) = 2 = 1 + 1` over the two components. In `𝔸²_{K(t)}` the line `y = tx` is an integral curve whose image in `𝔸²_K` is dense, so an integral curve of `X_{K'}` need not lie over a curve of `X`: the supplied statement is used on integral `X` of every dimension, not only on curves.
 - On `ℙ¹`, `O(a)` is nef if and only if `a ≥ 0`. On `ℙ¹ × ℙ¹`, `O(a,b)` is nef if and only if `a, b ≥ 0`, since `O(a,b)` has degree `b` on `{p} × ℙ¹` and `a` on `ℙ¹ × {q}`.
 - `O(1,0)` on `ℙ¹ × ℙ¹` is nef and not ample: its degree on `{p} × ℙ¹` is `0`. It is the pullback of `O(1)` along the first projection.
 - On the blow-up `π : X → ℙ²` of a point, `π^*O(1)` is big and nef with `((π^*O(1))²) = 1 · 1 = 1`. It has degree `0` on the exceptional curve, so it is not ample.
@@ -347,16 +350,17 @@ Prove also that a nef line bundle `A` with `(A^r) > 0` is big. The inequality ex
 
 ### 3.4 The Hodge inequality on surfaces
 
-Let `S` be an integral projective surface over `K`, `H` a nef line bundle with `(H²) > 0`, and `D` any line bundle. Prove `(D · H)² ≥ (D²)·(H²)` (kleiman2005 Theorem B.27, line 3803, which proves the Hodge index theorem on complete surfaces over a field by another route; cutkosky2015 lines 994–1003).
+Let `S` be an integral projective surface over `K`, `H` a line bundle with `(H²) > 0`, and `D` any line bundle. Prove `(D · H)² ≥ (D²)·(H²)`. No positivity of `H` is assumed (kleiman2005 Theorem B.27, line 3803, the Hodge index theorem on a geometrically irreducible complete surface over a field for every `H` with `(H²) > 0`, proved there by another route; cutkosky2015 lines 994–1003).
 
-*Route.* By §2.4 and §3.1 reduce to `S` integral over an algebraically closed `Ω`, with `H` nef and `(H²) > 0`. de Jong's theorem (SchemeAndStackFoundations §4.19) gives an alteration `φ : S' → S` from a regular projective surface. Since `φ` is proper, `S'` is the component of the regular compactification containing it. `S'` is smooth over `Ω` (SchemeAndStackFoundations §4.13, `Ω` perfect). Let `δ` be the generic degree. `φ^*H` is nef with `((φ^*H)²) = δ(H²) > 0` (§3.1). For an ample `A'` on `S'` and rational `t > 0`, `H_t = φ^*H + tA'` is ample (§3.2). The Hodge inequality for ample classes on smooth projective surfaces (SchemeAndStackFoundations §5.10, read through §2.2) gives `(φ^*D · H_t)² ≥ ((φ^*D)²)(H_t²)`. Let `t → 0` and divide by `δ²`, using the projection formula (§2.3).
+*Route.* By §2.4 reduce to `S` integral over an algebraically closed `Ω`: both sides scale by `c_S²`, and `((H|_W)²) = (H²)/c_S > 0`. de Jong's theorem (SchemeAndStackFoundations §4.19) gives an alteration `φ : S' → S` from a regular projective surface. Since `φ` is proper, `S'` is the component of the regular compactification containing it. `S'` is smooth over `Ω` (SchemeAndStackFoundations §4.13, `Ω` perfect). Let `δ` be the generic degree and `H' = φ^*H`, so `(H'²) = δ(H²) > 0` by the projection formula (§2.3). First prove the index theorem for `H'` on `S'`: if `(D' · H') = 0` and `(D'²) > 0` for a line bundle `D'`, fix an ample `A'` (StableReduction Layer 2) and put `x = (D' · A')`, `y = −(H' · A')`. Here `y ≠ 0`, since `(H' · A') = 0` with `(H'²) > 0` contradicts the Hodge index theorem for the ample `A'` (SchemeAndStackFoundations §5.10, read through §2.2). Then `E = xH' + yD'` has `(E · A') = 0` and `(E²) = x²(H'²) + y²(D'²) > 0`, contradicting the same theorem. Next apply the index theorem for `H'` to `D'' = (H'²)·φ^*D − (φ^*D · H')·H'`, which has `(D'' · H') = 0`: `(D''²) = (H'²)·((H'²)·((φ^*D)²) − (φ^*D · H')²) ≤ 0`, so `(φ^*D · H')² ≥ ((φ^*D)²)·(H'²)`. Divide by `δ²`, using the projection formula (§2.3).
 
-*Needs:* §§2.2, 2.3, 2.4, 3.1, 3.2; SchemeAndStackFoundations §§4.13, 4.19, 5.10.
+*Needs:* §§2.2, 2.3, 2.4; SchemeAndStackFoundations §§4.13, 4.19, 5.10; StableReduction Layer 2.
 
 **Checks.**
 
 - On `ℙ¹ × ℙ¹` with `H = O(1,1)`: `D = O(1,−1)` gives `0 ≥ (−2)·2 = −4`; `D = H` gives equality `4 = 4`.
 - On the quadric cone `Q ⊆ ℙ³`, a singular normal surface, `H = D = O(1)` gives `(D·H)² = 4 = 2·2`.
+- On the blow-up of `ℙ²` at a point with `L = π^*O(1)` and exceptional curve `E`, `H = 2L + E` has `(H²) = 4 − 1 = 3 > 0` and `(H · E) = −1`, so `H` is not nef. `D = E` gives `(D·H)² = 1 ≥ (−1)·3 = −3`, and `D = L` gives `4 ≥ 1·3`. A statement restricted to nef `H` would not cover this instance, and the perturbation of `H` to an ample class, which needs `H` nef, is not a route to it.
 - Non-example: on the blow-up of `ℙ²` at two points with exceptional curves `E_1`, `E_2`, take `H = E_1` with `(H²) = −1` and `D = E_2`. Then `(D·H)² = 0 < 1 = (D²)(H²)`. The hypothesis `(H²) > 0` is needed.
 
 ### 3.5 The Khovanskii–Teissier inequalities
@@ -429,7 +433,7 @@ and `deg_k(f; L, M)` with all `L_i = L` and all `M_j = M`. For a self-map put `d
 
 - *Model independence.* Let `Γ'` be an integral projective `K`-scheme of dimension `d` with morphisms `q_1 : Γ' → X` and `q_2 : Γ' → Y`. Suppose `q_1` is generically finite and surjective of generic degree `e`, and the rational map of `q_2` is `f ∘ q_1`. Then `(q_1^*L_1 ⋯ q_2^*M_k)_{Γ'} = e·deg(f; L | M)`. The proof factors `(q_1, q_2)` through `Γ_f` and applies the projection formula. In particular, the normalization of `Γ_f` and every proper birational model of `Γ_f` compute the same numbers (dangfavre2021 lines 442–443).
 - *Product formula.* `deg(f; L | M) = (pr_1^*L_1 ⋯ pr_2^*M_k · Γ_f)` on `X ×_K Y`.
-- *Pullback of cycles.* Put `f^*(M_1 ⋯ M_k) = π_{1*}(c_1(π_2^*M_1) ∩ ⋯ ∩ c_1(π_2^*M_k) ∩ [Γ_f]) ∈ CH_{d−k}(X)`. Then `deg(f; L | M) = deg(c_1(L_1) ∩ ⋯ ∩ c_1(L_{d−k}) ∩ f^*(M_1 ⋯ M_k))`, by the projection formula of SchemeAndStackFoundations §5.3 and §2.2 (dangfavre2021 footnote 4, lines 452–453).
+- *Pullback of cycles.* Put `f^*(M_1 ⋯ M_k) = π_{1*}(c_1(π_2^*M_1) ∩ ⋯ ∩ c_1(π_2^*M_k) ∩ [Γ_f]) ∈ CH_{d−k}(X)`. Then `deg(f; L | M) = deg(c_1(L_1) ∩ ⋯ ∩ c_1(L_{d−k}) ∩ f^*(M_1 ⋯ M_k))`, by the projection formula of SchemeAndStackFoundations §5.3 and §2.2 (dangfavre2021 footnote 4, lines 452–453; fulton1998 Theorem 1.4 and Proposition 2.5 for proper pushforward of cycles and the first Chern class operation with its projection formula, cited by locator).
 - The mixed degree is multilinear in the `L_i` and the `M_j`, and symmetric within each group.
 
 *Needs:* §§1.2, 2.2, 2.3; CyclotomicClassGroupsAndStickelberger §4.3; SchemeAndStackFoundations §§5.2–5.3.
@@ -538,7 +542,7 @@ For `0 ≤ k ≤ d`, prove that `deg_{k,ω}(f^n)^{1/n}` converges as `n → ∞`
 
 **Checks.**
 
-- A morphism `f` of `ℙ^d` of degree `a` has `deg_{k,H}(f^n) = a^{nk}`, so `λ_k = a^k`. The infimum `inf_n ((d − k + 1)^k a^{nk})^{1/n} = a^k` is approached as `n → ∞`, not attained at `n = 1`.
+- A morphism `f` of `ℙ^d` of degree `a` has `deg_{k,H}(f^n) = a^{nk}`, so `λ_k = a^k`. For `1 ≤ k ≤ d − 1` the infimum `inf_n ((d − k + 1)^k a^{nk})^{1/n} = a^k` is approached as `n → ∞` and not attained at `n = 1`, where the value is `(d − k + 1)^k a^k > a^k`. For `k = 0` and `k = d` the constant `(d − k + 1)^k` is `1`, the sequence is constantly `1` or `a^d`, and the infimum is attained at `n = 1`.
 - For the Cremona involution of `ℙ²`, `deg_{1,H}(σ^n)` is `2` for odd `n` and `1` for even `n`, so `λ_1(σ) = 1`.
 - For the Fibonacci map of §6.3, `fib(n + 2)^{1/n} → Real.goldenRatio`.
 
@@ -726,4 +730,4 @@ The Fibonacci map has `deg_{2,H}(f) = e(f) = 1`. The extension of `(x², y)` has
 - `kleiman2005`: S. L. Kleiman, *The Picard scheme*, arXiv:math/0504020v1. Appendix B, Lemma B.12, Theorem B.27.
 - `stacks-varieties`, `stacks-chow`, `stacks-morphisms`, `stacks-constructions`: The Stacks Project, chapters *Varieties* (Lemma 8.6, tag 054Q; §45, tags 0BEL–0BEX), *Chow Homology* (Lemma 41.4, tag 0BFI), *Morphisms* (Lemmas 6.7, 26.16, 38.7; Definition 52.8; tags 056B, 081I, 0892, 02NY) and *Constructions* (Lemma 13.1, tag 01NE).
 - `lazarsfeld2004`: R. Lazarsfeld, *Positivity in Algebraic Geometry I*, Springer (2004). Theorem 1.4.9, Corollary 1.4.10, Theorem 1.6.1, Corollary 1.6.3, Theorem 2.2.15. Cited by locator.
-- `fulton1998`: W. Fulton, *Intersection Theory*, 2nd ed., Springer (1998). Theorem 1.4, Proposition 2.5, §8.1. Cited by locator.
+- `fulton1998`: W. Fulton, *Intersection Theory*, 2nd ed., Springer (1998). Theorem 1.4, Proposition 2.5. Cited by locator.
