@@ -1,0 +1,142 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "RestrictedPowerSeries"
+
+[[source]]
+id = "wedhorn"
+authors = "Torsten Wedhorn"
+title = "Adic Spaces"
+year = 2019
+arxiv = "1910.05934v1"
+locator_scheme = "section"
+locator = "5.6"
+url = "https://arxiv.org/abs/1910.05934v1"
+fetched_from = "https://arxiv.org/pdf/1910.05934v1"
+fetched_at = "2026-11-05T17:31:10Z"
+sha256 = "0e181a1e0fa19419de3c8dec900edcbedc006f89586aba2771a0017ea6c44512"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v1"
+cited_for = ["6.1"]
+
+[[source]]
+id = "gk"
+authors = "Elmar Grosse-Klönne"
+title = "Rigid analytic spaces with overconvergent structure sheaf"
+year = 2014
+venue = "Journal f\"ur die reine und angewandte Mathematik 519 (2000), 73--95"
+arxiv = "1408.3329v1"
+locator_scheme = "section"
+locator = "1"
+url = "https://arxiv.org/abs/1408.3329v1"
+fetched_from = "https://arxiv.org/pdf/1408.3329v1"
+fetched_at = "2026-11-05T17:31:14Z"
+sha256 = "f75311cc7638b225ec79a528d59abdc71f3cf7e3270ff081287c328d60cb071b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v1"
+cited_for = ["7.3"]
+
+[[source]]
+id = "bosch"
+locator_scheme = "section"
+locator = "1.2"
+url = "https://www.uni-muenster.de/IVV5WS/WebHop/user/weckerm/heft378.pdf"
+fetched_from = "https://www.uni-muenster.de/IVV5WS/WebHop/user/weckerm/heft378.pdf"
+fetched_at = "2026-11-05T17:31:20Z"
+sha256 = "7cb79d83e0d78e8919aa4b7c29fbd6f88d3041344f62a1c38a3088ab113cb1e4"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["5.1"]
+
+[[source]]
+id = "ega"
+locator_scheme = "section"
+locator = "0.7.5"
+url = "https://www.numdam.org/item/PMIHES_1960__4__5_0.pdf"
+fetched_from = "https://www.numdam.org/item/PMIHES_1960__4__5_0.pdf"
+fetched_at = "2026-11-05T17:31:24Z"
+sha256 = "9aba23020217535977e279bdd06a0413f48da703086865ba4c00766c85df4ae6"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["6.3"]
+
+[[source]]
+id = "martin"
+authors = "Florent Martin"
+title = "Overconvergent subanalytic subsets in the framework of Berkovich spaces"
+year = 2016
+venue = "MFCS 2014, LNCS 8634, pp. 315-326"
+arxiv = "1211.6684v3"
+locator_scheme = "section"
+locator = "1.3"
+url = "https://arxiv.org/abs/1211.6684v3"
+fetched_from = "https://arxiv.org/pdf/1211.6684v3"
+fetched_at = "2026-11-05T17:36:52Z"
+sha256 = "9f091c760fe61f546f5b6e581426f91adbf6b4db3ae5d5914e9573be073afac7"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v3"
+cited_for = ["3.1"]
+
+[[source]]
+id = "colmez"
+locator_scheme = "section"
+locator = "I.4"
+url = "https://webusers.imj-prg.fr/~pierre.colmez/fonctionsdunevariable.pdf"
+fetched_from = "https://webusers.imj-prg.fr/~pierre.colmez/fonctionsdunevariable.pdf"
+fetched_at = "2026-11-05T17:31:42Z"
+sha256 = "a18e1b0f96033dbc6d27d39dd330974bed63808286092c11d5c8d232d412c380"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["7.1"]
+
+[[source]]
+id = "coleman"
+authors = "Robert F. Coleman"
+title = "P-adic Banach spaces and families of modular forms"
+year = 1997
+venue = "Inventiones mathematicae 127"
+doi = "10.1007/s002220050127"
+locator_scheme = "section"
+locator = "A3"
+url = "https://doi.org/10.1007/s002220050127"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["7.2"]
+
+[[source]]
+id = "bgr"
+authors = "Siegfried Bosch, Ulrich Güntzer, Reinhold Remmert"
+title = "Non-Archimedean Analysis"
+year = 1984
+venue = "Grundlehren der mathematischen Wissenschaften"
+doi = "10.1007/978-3-642-52229-1"
+locator_scheme = "section"
+locator = "5.1"
+url = "https://doi.org/10.1007/978-3-642-52229-1"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["1.1"]
+
+[[source]]
+id = "huber"
+authors = "Roland Huber"
+title = "Étale Cohomology of Rigid Analytic Varieties and Adic Spaces"
+year = 1996
+venue = "Aspects of Mathematics"
+doi = "10.1007/978-3-663-09991-8"
+locator_scheme = "section"
+locator = "1.2"
+url = "https://doi.org/10.1007/978-3-663-09991-8"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["6.4"]
