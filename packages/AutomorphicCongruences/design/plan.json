@@ -36,7 +36,7 @@
    ],
    "needs": "for an odd prime p, the unitary similitude groups GU(2,2) and GU(3,1) over an imaginary quadratic field split at p, and GU(2,2) over a CM quadratic M/F with every p-place split, with neat prime-to-p level, the ordinary Igusa tower of connected p-divisible-group trivializations as a pro-étale torsor under its integral Levi automorphism group (for SU's GU(2,2) tower H(ℤ_p) = GL₂(ℤ_p) × GL₂(ℤ_p), with finite-level group H(ℤ/pˢ)), functions with the specified boundary ideals followed by invariants under the chosen Borel's unipotent subgroup, the residual diagonal torus action defining weights, q- and Fourier–Jacobi expansions and their injectivity, prime-to-p Hecke and U_p actions, Siegel boundary maps and sufficiently regular classical comparison (SU §§5.4.9, 6.1.4–6.2; CLW §§2–4; Wan-2015 §§3–5).",
    "supplier": "IgusaVarietiesAndTorsionConcentration",
-   "section": "Layers IG.1–IG.2"
+   "section": "Layers 1–2"
   },
   {
    "slug": "unitary-galois-imaginary-quadratic",
@@ -133,7 +133,7 @@
    ],
    "needs": "for a totally real field F, an odd prime p unramified in F and a nearly ordinary weight-two residual representation ρ̄ of G_F, absolutely irreducible on G_(F(ζ_p)) and outside Fujiwara's p = 5 exception, with a minimal deformation type satisfying Fujiwara's Definition 6.11 and Hypothesis 6.7, the identification of the minimal deformation ring with the localized Hecke algebra as a complete intersection, the freeness of the quaternionic and Hilbert Hecke modules over it, the finite flat Hida lift and the Gorenstein duality (Fujiwara Theorems 11.1–11.2 and Corollary 11.5), together with the ordinary modularity-lifting alternative used for condition (10) of Wan-2015 §9.2.1.",
    "supplier": "OrdinaryAutomorphicFormsAndModularityLifting",
-   "section": "Layer 4 (R = T), with §§3.28–3.29"
+   "section": "Layer 5 (conditional lifting and arithmetic inputs), with §3.39"
   },
   {
    "slug": "minimal-lift-base-change",
