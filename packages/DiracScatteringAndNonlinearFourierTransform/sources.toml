@@ -1,0 +1,47 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "DiracScatteringAndNonlinearFourierTransform"
+
+[[source]]
+id = "krein1955"
+authors = "M. G. Krein"
+title = "Continuous analogues of propositions on polynomials orthogonal on the unit circle"
+year = 1955
+locator_scheme = "page"
+locator = "pp. 637–640"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6004#issuecomment-6645264652"
+
+[[source]]
+id = "debranges1968"
+authors = "L. de Branges"
+title = "Hilbert Spaces of Entire Functions"
+year = 1968
+locator_scheme = "section"
+locator = "§§19–23"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6004#issuecomment-6645264652"
+
+[[source]]
+id = "remling2018"
+authors = "Christian Remling"
+title = "Spectral Theory of Canonical Systems"
+year = 2018
+doi = "10.1515/9783110563238"
+locator_scheme = "chapter"
+locator = "Ch. 1"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6004#issuecomment-6645264652"
+
+[[source]]
+id = "coddingtonlevinson1955"
+authors = "E. A. Coddington, N. Levinson"
+title = "Theory of Ordinary Differential Equations"
+year = 1955
+locator_scheme = "chapter"
+locator = "Ch. 1 §7, Ch. 2"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6004#issuecomment-6645264652"
