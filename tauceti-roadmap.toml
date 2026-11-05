@@ -146,6 +146,10 @@ repair_pool = true
 # re-review when a reply records `tauceti-roadmap-carried {from, head}` and the folders changed by at most
 # small_change_lines lines (owner decision 2026-11-04).
 carry_accept = true
+# A chore (a `chore:` title, or more than max_folders roadmap folders: a pin bump) gets no folder review; it carries
+# `ai-approved` while a pool member's comment records an accepting chore review of its current head
+# (`tauceti-roadmap-chore-review {head, status}`), the AI review of the whole change (owner request 2026-11-05).
+chore_review = true
 small_change_lines = 150
 
 [agents]
