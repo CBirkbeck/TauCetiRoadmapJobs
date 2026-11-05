@@ -30,7 +30,7 @@ Left to other roadmaps:
 
 **Torus and Fourier conventions.** For L ≥ 1 the torus is `T_L = (ℤ/2Lℤ)^d`, with `|T_L| = (2L)^d`. Its periodic nearest-neighbour coupling of strength J counts one bond per vertex and direction: the Hamiltonian is `−J Σ_{x∈T_L} Σ_{j=1}^d φ_x φ_{x+e_j}`. For L ≥ 2 this is the nearest-neighbour coupling of the torus graph; for L = 1, where `x + e_j = x − e_j`, each pair of neighbours carries the coupling 2J. The dual torus is `Λ*_L = (π/L)ℤ^d ∩ (−π, π]^d`, lattice Fourier modes are `e^{ip·x}` (no factor 2π), `E(p) = 2 Σ_j (1 − cos p_j)` is the symbol of the lattice Laplacian `−Δ`, and `Ŝ_L(p) = Σ_{x∈T_L} e^{ip·x} ⟨φ_0 φ_x⟩` (Aizenman–Duminil-Copin (5.7)–(5.8)). The infrared bound of Layer 5 reads `E(p) Ŝ_L(p) ≤ 1/J` for p ≠ 0. Witness: for the Gaussian lattice field on the torus with single-site measure γ_b, |b| > dJ, one computes `Ŝ_L(p) = 1/(2(|b| − dJ) + J E(p))`, so the constant 1/J is attained in the limit |b| ↓ dJ; this agrees with Peled–Spinka (52) (line 1741), while the constant printed in Aizenman–Duminil-Copin (5.9), `1/(2|J|β)` with `|J| = 2dJ`, is smaller by the factor 4d and is violated by this Gaussian field and by the Ising example of 5.4.
 
-**Test functions and the continuum Fourier transform.** ADC's `C_0(ℝ^d)` is the space of compactly supported continuous functions; here it is Mathlib's `CompactlySupportedContinuousMap` on `EuclideanSpace ℝ (Fin d)` with values in ℝ, written C_c(ℝ^d) (not Mathlib's space of functions vanishing at infinity). The continuum Fourier transform is Mathlib's `𝓕` with kernel `e^{−2πi⟨x,ξ⟩}` (`Real.fourier_eq`); the symbol of `−Δ + m²` is then `4π²|ξ|² + m²`. The Gaussian free field covariance is `C_m(f, g) = ∫ conj(𝓕f(ξ)) 𝓕g(ξ) / (4π²|ξ|² + m²) dξ`. Witness: for d = 1 this is `∫∫ f(x) e^{−m|x−y|}/(2m) g(y) dx dy`, because the Fourier transform of `e^{−m|x|}/(2m)` is `1/(m² + 4π²ξ²)`.
+**Test functions and the continuum Fourier transform.** Aizenman–Duminil-Copin's `C_0(ℝ^d)` is the space of compactly supported continuous functions; here it is Mathlib's `CompactlySupportedContinuousMap` on `EuclideanSpace ℝ (Fin d)` with values in ℝ, written C_c(ℝ^d) (not Mathlib's space of functions vanishing at infinity). The continuum Fourier transform is Mathlib's `𝓕` with kernel `e^{−2πi⟨x,ξ⟩}` (`Real.fourier_eq`); the symbol of `−Δ + m²` is then `4π²|ξ|² + m²`. The Gaussian free field covariance is `C_m(f, g) = ∫ conj(𝓕f(ξ)) 𝓕g(ξ) / (4π²|ξ|² + m²) dξ`. Witness: for d = 1 this is `∫∫ f(x) e^{−m|x−y|}/(2m) g(y) dx dy`, because the Fourier transform of `e^{−m|x|}/(2m)` is `1/(m² + 4π²ξ²)`.
 
 **Total functions.** The rescaled lattice field divides by the square root of a block variance Σ ≥ 0; with Lean's conventions `√0 = 0` and `0⁻¹ = 0` the field is identically zero when Σ = 0, which happens exactly for ρ = δ₀. Monotone limits of nonnegative correlation functions are taken in `[0, ∞]`.
 
@@ -197,7 +197,7 @@ Prove that for b < 0 and a coupling J on a finite set V, the triple (V, J, γ_b)
 **Checks.**
 
 - One site, J = 0: `μ = N(0, 1/(2|b|)) = γ_b`.
-- Two sites with `J_{xy} = J`: stable iff `J < 2|b|`, and then `⟨φ_xφ_y⟩ = J/(4b² − J²)`, `⟨φ_x²⟩ = 2|b|/(4b² − J²)`.
+- Two sites with `J_{xy} = J` of either sign: stable iff `|J| < 2|b|` (the determinant of `2|b| I − J⁰` is `4b² − J²`, negative for `J = −3|b|` although `J < 2|b|`), and then `⟨φ_xφ_y⟩ = J/(4b² − J²)`, `⟨φ_x²⟩ = 2|b|/(4b² − J²)`.
 - d = 1: `G_μ(0) = (2π)⁻¹ ∫ dp/(2 − 2cos p + μ²) = 1/(μ√(4 + μ²))`, which diverges as μ → 0; for d = 2 the massless Dirichlet Green function at the origin diverges as R → ∞ as well, so the massless limit is restricted to d ≥ 3.
 
 ### Examples
@@ -513,7 +513,7 @@ Prove the infrared bound `E(p) Ŝ_L(p) ≤ 1/J` for every p ∈ Λ*_L ∖ {0}, a
 
 **Checks.**
 
-- L = 1, d = 1, Ising: `E(π) = 4` and `Ŝ_1(π) = 1 − tanh 2J`, so the bound reads `4J(1 − tanh 2J) ≤ 1`; the left side has maximum ≈ 0.557, attained near 2J ≈ 0.64. ADC's printed constant `1/(4J)` would require `4(1 − tanh 2J) ≤ 1/(4J)`, false at J = 0.375 (left 1.46, right 0.67).
+- L = 1, d = 1, Ising: `E(π) = 4` and `Ŝ_1(π) = 1 − tanh 2J`, so the bound reads `4J(1 − tanh 2J) ≤ 1`; the left side has maximum ≈ 0.557, attained near 2J ≈ 0.64. The constant `1/(4J)` printed in Aizenman–Duminil-Copin (5.9) would require `4(1 − tanh 2J) ≤ 1/(4J)`, false at J = 0.375 (left 1.46, right 0.67).
 - The Gaussian torus field with |b| > dJ has `E(p)Ŝ_L(p) = E(p)/(2(|b| − dJ) + JE(p)) < 1/J`, approaching 1/J as |b| ↓ dJ: the constant is sharp.
 - Sum rule at L = 1, d = 1, Ising: `½(Ŝ(0) + Ŝ(π)) = ½((1 + t) + (1 − t)) = 1 = ⟨σ_0²⟩` with t = tanh 2J. The excluded mode p = 0 has E(0) = 0 and carries the long-range order.
 
@@ -623,7 +623,7 @@ Define, for L ≥ 1, a function f : ℝ^d → ℝ, a finite set V ⊂ ℤ^d, Σ 
 The API consists of the following facts.
 
 - T is linear in f and in φ, and depends on f only through its values on `L⁻¹V`.
-- For g ∈ W_d and a g-invariant V, `T_{f∘g,L,Σ}(φ) = T_{f,L,Σ}(φ ∘ g)`.
+- For g ∈ W_d and a g-invariant V, `T_{f∘g,L,Σ}(φ) = T_{f,L,Σ}(φ ∘ g⁻¹)`; equivalently `T_{f,L,Σ}(φ ∘ g) = T_{f∘g⁻¹,L,Σ}(φ)`.
 - Covariance: `⟨T_{f,L,Σ} T_{g,L,Σ}⟩_{V,J,ρ} = Σ⁻¹ Σ_{x,y∈V} f(x/L) g(y/L) ⟨φ_xφ_y⟩`.
 - For R ≥ L and Σ = Σ^{(R)}_L > 0, the field of the indicator of Q has variance 1: `⟨T_{1_Q,L,Σ}²⟩_{V_R} = 1`.
 - For even admissible ρ and ferromagnetic J, `Σ^{(R)}_L` is non-decreasing in R (3.2) and is zero only for ρ = δ₀.
@@ -635,6 +635,7 @@ The API consists of the following facts.
 - J = 0, ρ = ρ_I: `Σ^{(R)}_L = (2L + 1)^d` and `⟨T_{f,L}²⟩ = Σ_x f(x/L)²/(2L + 1)^d → 2^{−d} ∫ f²`, the white-noise normalisation.
 - d = 1, L = R = 1, nearest-neighbour Ising with t = tanh J: `Σ^{(1)}_1 = 3 + 4t + 2t²` (open chain of three sites).
 - ρ = δ₀: Σ = 0 and T ≡ 0 by the junk convention of the Conventions.
+- The direction of the W_d action: d = 2, L = 1, Σ = 1, `V = {0, ±e₁, ±e₂}`, g the rotation `(x₁, x₂) ↦ (−x₂, x₁)` (of order 4, so g ≠ g⁻¹) and `f = 1_{e₁}` on V. Then `T_{f∘g}(φ) = φ_{g⁻¹e₁} = φ_{−e₂}`, which agrees with `T_f(φ ∘ g⁻¹) = φ_{−e₂}`; the identity with g on both sides would give `T_f(φ ∘ g) = φ_{ge₁} = φ_{e₂}`, which differs for `φ = 1_{e₂}`. Only d = 1 and the reflections, where g = g⁻¹, fail to separate the two.
 
 ### 7.2 Reachability
 

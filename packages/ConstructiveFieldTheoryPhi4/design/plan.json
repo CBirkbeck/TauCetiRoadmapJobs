@@ -80,7 +80,7 @@
       {
        "name": "cauchy_not_admissible",
        "kind": "non-example",
-       "statement": "The Cauchy law has no second moment and is not admissible; the law with density proportional to exp(-phi^2 log(1+phi^2)) is admissible but fails ADC (2.2) for every alpha > 2."
+       "statement": "The Cauchy law has no second moment and is not admissible; the law with density proportional to exp(-phi^2 log(1+phi^2)) is admissible but fails Aizenman-Duminil-Copin (2.2) for every alpha > 2."
       },
       {
        "name": "biased_ising_not_even",
@@ -430,7 +430,7 @@
       {
        "name": "two_site_gaussian",
        "kind": "computation",
-       "statement": "Two sites: stable iff J < 2|b|; <phi_x phi_y> = J/(4b^2 - J^2), <phi_x^2> = 2|b|/(4b^2 - J^2)."
+       "statement": "Two sites, J of either sign: stable iff |J| < 2|b| (det = 4b^2 - J^2, negative for J = -3|b|); <phi_x phi_y> = J/(4b^2 - J^2), <phi_x^2> = 2|b|/(4b^2 - J^2)."
       },
       {
        "name": "one_dim_green",
@@ -537,7 +537,7 @@
       {
        "name": "mem_even_admissible",
        "role": "lemma",
-       "statement": "Members are even, admissible and satisfy integral exp(|phi|^alpha) < infinity (ADC (2.2))."
+       "statement": "Members are even, admissible and satisfy integral exp(|phi|^alpha) < infinity (Aizenman-Duminil-Copin (2.2))."
       },
       {
        "name": "closure",
@@ -1294,7 +1294,7 @@
       {
        "name": "two_site_ir",
        "kind": "computation",
-       "statement": "L = 1, d = 1 Ising: 4J(1 - tanh 2J) <= 1, max ~0.557 near 2J ~ 0.64; ADC's 1/(4J) fails at J = 0.375 (1.46 vs 0.67)."
+       "statement": "L = 1, d = 1 Ising: 4J(1 - tanh 2J) <= 1, max ~0.557 near 2J ~ 0.64; the constant 1/(4J) printed in Aizenman-Duminil-Copin (5.9) fails at J = 0.375 (1.46 vs 0.67)."
       },
       {
        "name": "gaussian_sharp",
@@ -1587,7 +1587,7 @@
       {
        "name": "hyperoctahedral",
        "role": "lemma",
-       "statement": "T_{f o g} (phi) = T_f(phi o g) for g in W_d and g-invariant V."
+       "statement": "T_{f o g} (phi) = T_f(phi o g^{-1}) for g in W_d and g-invariant V; equivalently T_f(phi o g) = T_{f o g^{-1}}(phi)."
       },
       {
        "name": "covariance",
@@ -1620,6 +1620,11 @@
        "name": "delta_zero",
        "kind": "degenerate",
        "statement": "rho = delta_0: Sigma = 0 and T = 0 by the junk convention."
+      },
+      {
+       "name": "hyperoctahedral_direction",
+       "kind": "non-example",
+       "statement": "d = 2, L = 1, Sigma = 1, V = {0, +-e_1, +-e_2}, g the rotation (x_1, x_2) -> (-x_2, x_1), f = 1_{e_1}: T_{f o g}(phi) = phi_{-e_2} = T_f(phi o g^{-1}); the identity with g on both sides would give phi_{e_2}, differing for phi = 1_{e_2}."
       }
      ]
     },
