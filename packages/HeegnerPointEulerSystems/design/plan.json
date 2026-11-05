@@ -31,22 +31,10 @@
       "needs": "For the ordinary split anticyclotomic Heegner family, provide the integral family logarithm and explicit reciprocity identity on the specified distinguished Tate lattice, with coefficient extension, periods and regulator cokernel, used by BCGS Lemmas 1.2.3–1.2.5; the rational finite-point identity alone does not give this contract."
     },
     {
-      "slug": "primitive-toric-mu",
-      "supplier": "AutomorphicCongruences",
-      "section": "L5w.3 Quaternionic period and primitive anticyclotomic input",
-      "needs": "Supply the precise primitive toric μ=0 theorem and projection/period comparison on the character domain used in BCS Theorem 4.2.1 and Proposition 5.2.1, with p≥5, split ordinary CM hypotheses, residual ramification and every imprimitive Euler factor retained; the independent anticyclotomic divisibility must not consume its cyclotomic-return application."
-    },
-    {
       "slug": "eisenstein-elliptic-unit-inputs",
       "supplier": "EulerSystemsCyclotomicMainConjecture",
       "section": "Scope and ownership",
       "needs": "Provide an earlier elliptic-unit/Katz main-conjecture and μ input for the imaginary-quadratic finite-order character components used by CGS Theorem C under φ|G_p≠1,ω, including local and integral lattice corrections, independently of the Heegner anticyclotomic equality; the cyclotomic-unit theorem over ℚ alone is insufficient."
-    },
-    {
-      "slug": "elliptic-adelic-open-image",
-      "supplier": "ArithmeticGaloisRepresentations",
-      "section": "§6.4 Coefficients and images",
-      "needs": "For every non-CM elliptic curve over a number field, supply Serre’s adelic open-image theorem with finite base-change index and cyclotomic determinant, implying full residual GL₂(𝔽_p) image for E/ℚ at all but finitely many p."
     },
     {
       "slug": "abelian-scalar-image",
