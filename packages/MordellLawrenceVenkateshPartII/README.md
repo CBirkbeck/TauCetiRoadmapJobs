@@ -69,7 +69,7 @@ It uses, and does not redevelop:
   convolution monodromy groups. This roadmap imports its origin-normalized rank-one character
   sheaves (§0.2), the geometric extension comparison (§2.4), the Euler characteristics of a smooth
   ample divisor (§3.1) and the Hodge–Tate row of a generic torsion twist (§3.3), inversion symmetry
-  and the classical form (§4.7), the exceptional Pell sequence and the exceptional threefold degrees
+  and the classical form (§4.8), the exceptional Pell sequence and the exceptional threefold degrees
   (§§5.2–5.3), classical convolution monodromy (§6.7), and the character generic in every
   Galois conjugate with uniform big monodromy on its orbit (§§8.2–8.3). The exceptional degrees are
   used exactly as that roadmap defines them: the pairs start at (1,5), (5,20), (20,76), and
@@ -81,6 +81,9 @@ It uses, and does not redevelop:
   characteristic-zero Levi complements (Layer 6A), root, Weyl, parabolic and Bruhat theory
   (Layer 7) and algebraic parabolics with Levi intersections (Layer 7b). The coefficient-normalizer
   specializations and the disconnected-group statements of Layer 2 are owned here.
+- **ReductiveGroupsPartII** §RG2.0.2 owns the analytic manifold structure on the points of a smooth
+  group over a characteristic-zero local field; Layer 9 uses it for the Zariski density of open
+  subgroups of `SO(E)(ℚ_ℓ)`.
 - **ShimuraData** owns variations of Hodge structure (§3.1), polarized rational and integral
   variations (§§3.3–3.4), the flat-bundle local comparison (§3.5), the transversality criterion
   (§3.6), the parabolic of a Hodge filtration (§3.7) and Mumford–Tate groups (§1.2).
@@ -88,7 +91,8 @@ It uses, and does not redevelop:
   affine faithfully flat torsor of tensor isomorphisms between two fibre functors; PadicHodgeTheory
   §5.5 specializes that torsor to finite-type groups.
 - **PadicHodgeTheory** owns period rings, Fontaine's functors and their tensor exactness
-  (§§3.3–3.6), the Sen operator (§4.4), the rational Fontaine–Laffaille comparison (§6.1) and the
+  (§§3.3–3.6), the Sen operator (§4.4), the rational Fontaine–Laffaille comparison (§6.1), the proper
+  smooth pushforward of de Rham local systems with its Gauss–Manin connection (§7.3) and the
   rational comparison for proper smooth varieties with its functoriality (§§8.1–8.2);
   CrystallineCohomology §CR.7.3 owns relative crystalline cohomology with its Gauss–Manin
   connection.
@@ -230,7 +234,7 @@ finiteness for the quotient of the hypersurface parameter space by `PGL_(n+1)`.
   `e_top(H) = (−1)^(n−1)·n!·d`; so a rank-one twist whose cohomology is concentrated in degree
   `n − 1` has rank `N = n!·d` there. §3.3: for such a twist over a p-adic field the Hodge–Tate
   weight `−q` occurs with multiplicity `d·A(n, q)`, `0 ≤ q < n`. Consumed in §§1.7 and 8.1.
-- §4.7: inversion symmetry and the classical form on the twisted cohomology; consumed in §1.8.
+- §4.8: inversion symmetry and the classical form on the twisted cohomology; consumed in §1.8.
 - §§5.2–5.3: the exceptional Pell pairs and exceptional degrees `D_j`; consumed in §§10.5, 10.6
   and 10.9.
 - §6.7: classical convolution monodromy (`SL`, `Sp` or `SO`) for hypersurfaces outside the
@@ -254,6 +258,13 @@ finiteness for the quotient of the hypersurface parameter space by `PGL_(n+1)`.
   (algebraic parabolics and Levi intersections), all over a field of characteristic zero. Consumed
   in Layers 2, 4 and 5. Connected root theory is used only on identity components; the statements
   for disconnected groups are targets here.
+
+### From TauCetiRoadmap.ReductiveGroupsPartII
+
+- §RG2.0.2 (analytic charts in characteristic zero): for a smooth affine finite-type group `G` over a
+  nondiscrete locally compact field `K` of characteristic zero, `G(K)` is an analytic manifold of
+  dimension `dim G` whose tangent space at the identity is the Lie algebra; used only to see that an open
+  subgroup of `SO(E)(ℚ_ℓ)` has full Lie algebra and is Zariski-dense in `SO(E)`. Consumed in §9.2.
 
 ### From TauCetiRoadmap.RestrictedPowerSeries and TauCetiRoadmap.ComplexKahlerGeometry
 
@@ -304,12 +315,16 @@ finiteness for the quotient of the hypersurface parameter space by `PGL_(n+1)`.
   representations. Consumed in §§0.3, 1.2, 2.6 and 7.1.
 - §5.5: the finite-type specialization of the tensor-isomorphism torsor. Consumed in §7.1.
 - §6.1: the rational Fontaine–Laffaille comparison with its signs. Consumed in §7.3.
+- §7.3: for a proper smooth morphism of smooth rigid spaces the higher direct image of a de Rham local
+  system is de Rham, with associated bundle the relative de Rham cohomology, its Hodge graded pieces and
+  its Gauss–Manin connection; on a residue disk this is the horizontality of the fibrewise de Rham
+  comparisons. Consumed in §§0.1, 0.5 and 0.7 through gap:relative-crystalline-comparison.
 - §§8.1–8.2: for proper smooth `X` with good reduction at `p`, `D_cris(H^i_et(X_C, ℚ_p))` is
   crystalline cohomology of the special fibre with its Frobenius and, over `K`, de Rham cohomology
   with its Hodge filtration; the comparisons commute with pullback, cup product and Tate twists,
   and a cohomological projector restricts them when it is given geometrically on both sides.
   Consumed in §§0.5, 0.7 and 1.2.
-- What PadicHodgeTheory must provide (gap:relative-crystalline-comparison): for a smooth projective morphism `f : 𝒴 → 𝒳` of smooth `W(k)`-schemes with `k` finite and `p` unramified, the fibrewise crystalline comparisons of §8.1 at the points of a residue disk of `𝒳` are horizontal for the Gauss–Manin connection on `R^i f_* Ω^•` and compatible with the Frobenius of the convergent F-isocrystal `R^i f_crys,*` of CrystallineCohomology §CR.7.3, so that `R^i f_*ℚ_p` and that filtered F-isocrystal are associated in the sense of Faltings.
+- What PadicHodgeTheory must provide (gap:relative-crystalline-comparison): for a smooth projective morphism `f : 𝒴 → 𝒳` of smooth `W(k)`-schemes with `k` finite and `p` unramified, the fibrewise crystalline comparisons of §8.1 at the points of a residue disk of `𝒳`, which are horizontal for the Gauss–Manin connection on `R^i f_* Ω^•` by the proper smooth pushforward of de Rham local systems of §7.3, are compatible with the Frobenius of the convergent F-isocrystal `R^i f_crys,*` of CrystallineCohomology §CR.7.3, so that `R^i f_*ℚ_p` and that filtered F-isocrystal are associated in the sense of Faltings.
 - What PadicHodgeTheory must provide (gap:hodge-tate-image-cocharacter): for a crystalline representation `ρ : G_K → GL(V)` of a finite unramified `K/ℚ_p` preserving a family of tensors, the Zariski closure of `ρ(G_K)` contains a torus that is conjugate over `ℚ̄_p`, inside the group fixing those tensors, to the image of the Hodge cocharacter of `D_dR(V)` (Sen; Wintenberger's tensor-compatible splitting).
 
 ### From TauCetiRoadmap.CrystallineCohomology
@@ -439,7 +454,7 @@ API:
 - A tuple whose Betti realization has rank two and étale realization rank one is rejected: the
   comparison cannot be an isomorphism.
 
-*Needs:* ShimuraData §§3.1, 3.3; ComplexComparisonPartII §C5.6; PadicHodgeTheory §§8.1–8.2 with
+*Needs:* ShimuraData §§3.1, 3.3; ComplexComparisonPartII §C5.6; PadicHodgeTheory §§7.3, 8.1–8.2 with
 gap:relative-crystalline-comparison; DeligneWeightsAndPurity §§0.1, 0.7.
 
 ### 0.2 Integral, polarized and integral-Frobenius systems
@@ -562,7 +577,7 @@ API:
   intersection, not the image of the old one.
 - The zero projector gives the rank-zero system and the identity projector the original system.
 
-*Needs:* §§0.2–0.3; ComplexComparisonPartII §§C5.2–C5.3; PadicHodgeTheory §§8.1–8.2 with
+*Needs:* §§0.2–0.3; ComplexComparisonPartII §§C5.2–C5.3; PadicHodgeTheory §§7.3, 8.1–8.2 with
 gap:relative-crystalline-comparison; CrystallineCohomology §CR.7.3; DeligneWeightsAndPurity §§4.3–4.4;
 WeilConjectures Layer WC.3.
 
@@ -604,7 +619,7 @@ For a geometric system of §0.5 and a residue disk `Ω` of a smooth point of goo
 transport of the convergent F-isocrystal identifies the crystalline fibres at all points of `Ω` with
 one finite-dimensional `(V, φ)`, `φ` semilinear for the residue Frobenius; the Hodge filtrations
 `F_x`, transported by the Berthelot–Ogus identification and Gauss–Manin transport, vary analytically
-and define the **p-adic period map** `Φ_p : Ω → Flag(V)` (LS, Remark 5.7, p. 43; proof of Theorem
+and define the **p-adic period map** `Φ_p : Ω → Flag(V)` (LS, Remark 5.7, p. 42; proof of Theorem
 8.17, pp. 83–84). This is a statement on one residue tube, not a global trivialization.
 
 API:
@@ -624,7 +639,7 @@ API:
   MordellLawrenceVenkatesh §2.11.
 
 *Needs:* §§0.1, 0.5; MordellLawrenceVenkatesh §§2.5–2.6, 2.11; CrystallineCohomology §CR.7.3;
-PadicHodgeTheory §8.1 with gap:relative-crystalline-comparison.
+PadicHodgeTheory §§7.3, 8.1 with gap:relative-crystalline-comparison.
 
 ### Examples
 
@@ -636,7 +651,7 @@ lattice.
 ### Dependencies
 
 ShimuraData §§3.1–3.4; ComplexComparisonPartII §§C5.2–C5.3, C5.6; PadicHodgeTheory §§3.3–3.5,
-8.1–8.2; CrystallineCohomology §CR.7.3; MotivesAndAlgebraicCycles §§6.1–6.3, 6.8;
+7.3, 8.1–8.2; CrystallineCohomology §CR.7.3; MotivesAndAlgebraicCycles §§6.1–6.3, 6.8;
 DeligneWeightsAndPurity §§0.1–0.2, 0.7, 0.9, 4.3–4.4; WeilConjectures Layer WC.3;
 MordellLawrenceVenkatesh §§2.5–2.6, 2.11.
 
@@ -855,7 +870,7 @@ API:
 - For `χ ≠ χ⁻¹` the unmodified cup product joins different character factors and is not of the
   `E_I`-balanced diagonal form.
 
-*Needs:* §§1.5, 1.7; SheafConvolutionOnAbelianVarieties §4.7.
+*Needs:* §§1.5, 1.7; SheafConvolutionOnAbelianVarieties §4.8.
 
 ### 1.9 Rational Frobenius polynomials for geometric orbit systems
 
@@ -892,7 +907,7 @@ why the full orbit, its idempotent and its descent are retained.
 
 ### Dependencies
 
-Layer 0; PadicHodgeTheory §§3.3–3.5, 8.2; SheafConvolutionOnAbelianVarieties §§0.2, 3.1, 4.7, 8.3;
+Layer 0; PadicHodgeTheory §§3.3–3.5, 8.2; SheafConvolutionOnAbelianVarieties §§0.2, 3.1, 4.8, 8.3;
 AbelianSchemesAndArithmeticModuli §A3.2; InverseGaloisAndArithmeticFundamentalGroups §IG.0.T4;
 DeligneWeightsAndPurity §§0.2, 0.10, 4.4.
 
@@ -962,9 +977,10 @@ and `Γ ⊂ G` a subgroup. For a cocharacter `λ` of `G` the **Richardson parabo
 parabolic `P_λ = {g : lim_(t→0) λ(t) g λ(t)⁻¹ exists}`, with Levi `L_λ = Z_G(λ)` and unipotent radical.
 Call `Γ` **G-completely reducible** when every `P_λ` containing `Γ` has a Levi containing `Γ`. Prove
 that projecting `Γ` from a minimal Richardson parabolic containing it to its Levi gives a
-G-completely reducible subgroup, unique up to `G(k̄)`-conjugacy, and, for the coefficient normalizers of
-§2.1 over the fields used here (finite extensions of ℚ_p and ℚ), unique up to rational conjugacy after
-the finite extensions stated in the source, depending continuously on a continuous representation.
+G-completely reducible subgroup, unique up to `G(k̄)`-conjugacy. Over a field `k` of characteristic zero
+the construction with `k`-parabolics and `k`-Levis applied to a `k`-rational `Γ` yields a `k`-rational
+subgroup, and for `k` a finite extension of ℚ_p the `G(k)`-conjugacy classes of such subgroups inside one
+geometric class are finitely many by §2.11.
 For `Γ` the image of a representation this is its **G-semisimplification** (LS, Definitions 5.34–5.36
 and Lemma 5.37, pp. 55–56; LV, Lemmas 2.4–2.5, pp. 905–906).
 
@@ -978,6 +994,9 @@ API:
 - A minimal Richardson parabolic containing a given image exists.
 - Its completely reducible Levi images form one geometric `G`-conjugacy class.
 - Levi projection preserves the `G`-conjugacy class of the semisimple part of every element.
+- The semisimplification of a continuous representation into `G(k)`, for `k` a finite extension of ℚ_p,
+  is continuous: the Levi projection `P → L` is a morphism of algebraic groups, so `P(k) → L(k)` is
+  continuous.
 
 **Checks.**
 
@@ -992,8 +1011,9 @@ API:
 
 ### 2.4 Tensor G-structures
 
-For an affine algebraic group `G/k` and a `k`-linear tensor category `C` with fibre functor `ω`, define a
-**G-object** of `C` as an exact faithful `k`-linear symmetric monoidal functor `Rep_fd(G) → C` together
+For an affine algebraic group `G/k` and a `k`-linear rigid abelian tensor category `C` with fibre functor
+`ω` (the category of §0.3 or a tensor subcategory of it), define a **G-object** of `C` as an exact
+faithful `k`-linear symmetric monoidal functor `Rep_fd(G) → C` together
 with a tensor isomorphism between its composite with `ω` and the forgetful functor. A change of
 trivialization conjugates the induced homomorphism of Tannaka groups (LS, Definition 5.38 and Remark
 5.39, p. 56).
@@ -1163,7 +1183,8 @@ and Levi. The finite component action is tracked without identifying the parabol
 
 **Checks.**
 
-- For `H = 1` and `G = GL₂` there are infinitely many Borels but one class of pairs up to `GL₂`.
+- For `H = 1` and `G = GL₂` there are infinitely many Borels but two classes of pairs up to `GL₂`: the
+  Borel pairs `(B, T)` and the trivial pair `(G, G)` given by the trivial cocharacter.
 - For `H` the diagonal torus of `GL_n`, `Z_G(H) = H` acts trivially on the pairs, which correspond to
   ordered set partitions of `{1, …, n}` (block-diagonal Levi and an order of the blocks): 13 pairs for
   `n = 3`.
@@ -1519,7 +1540,7 @@ splitting cocharacter of `F` with values in `P`; its projection defines the **in
 `F_M`. Prove that `F_M` does not depend on the choice: with `Q = P_μ` the stabilizer of `F`, the
 μ-fixed points of the single `Q`-orbit `Q·P` in `G/P` are conjugate under `Z_Q(μ)`. For `GL(V)`, `F_M` is
 the filtration induced by `F` on the graded pieces of the `P`-flag (LS, Lemma 8.2 and Definition 8.3,
-pp. 73–74; LV, Lemmas 11.1–11.2, pp. 986–989; LV printed p. 988 with the corrected graded piece, see
+p. 74; LV, Lemmas 11.1–11.2, pp. 986–989; LV printed p. 988 with the corrected graded piece, see
 Source corrections).
 
 API:
@@ -1833,7 +1854,7 @@ For the neutral tensor category generated by a crystalline p-adic representation
 intersection and similitude tensors, prove that the forgetful fibre functor and the fibre functor
 `D_cris` become tensor-isomorphic over `ℚ̄_p`; such an isomorphism identifies their Tannaka groups by
 conjugation and preserves every pairing tensor. This is existence over an algebraic closure, not a
-canonical rational comparison (LV, footnote 10, printed pp. 977–978; LS, Lemma 5.43, pp. 58–59).
+canonical rational comparison (LV, footnote 11, printed pp. 977–978; LS, Lemma 5.43, pp. 58–59).
 
 A route: MotivesAndAlgebraicCycles §6.8 makes the tensor isomorphisms a faithfully flat torsor, finitely
 presented because the category has a tensor generator (§6.3 there); a nonempty scheme of finite type over
@@ -1853,7 +1874,7 @@ presented because the category has a tensor generator (§6.3 there); a nonempty 
 For primitive middle cohomology of a smooth projective variety over a finite unramified extension of
 `ℚ_p` with good reduction, prove that the Zariski closure of the image of the local Galois representation
 contains a torus conjugate over `ℚ̄_p`, inside the similitude group of the intersection pairing, to the
-image of the Hodge cocharacter transported by §7.1 (LV, proof of Lemma 10.4 and footnote 10, printed
+image of the Hodge cocharacter transported by §7.1 (LV, proof of Lemma 10.4 and footnote 11, printed
 pp. 976–978).
 
 A route: the tensor-compatible Hodge–Tate splitting places the Hodge cocharacter in the algebraic Galois
@@ -1876,8 +1897,8 @@ For a fixed smooth projective family over `ℤ[S⁻¹]` with fixed Hodge type on
 degree `r` and similitude group `GAut` of the intersection pairing, prove that there is `L` such that every
 integral point admits a prime `ℓ ≤ L` outside `S` with `dim Z_GAut((φ_crys,ℓ)^ss) ≤ h⁰`. An auxiliary
 prime `p` outside `S`, large enough for the Fontaine–Laffaille range, is fixed first. The bound is uniform
-in the integral point and is not an effective formula for `L` (LV, Lemma 10.4 and proof, printed
-pp. 976–978).
+in the integral point and is not an effective formula for `L` (LV, Lemma 10.4, statement printed
+p. 975, proof pp. 976–978).
 
 A route: by MordellLawrenceVenkatesh §1.2 the auxiliary `p`-adic representations have finitely many
 semisimplifications. In each reductive image choose a very regular open subset avoiding the finitely many
@@ -1928,7 +1949,7 @@ Under the numerical inequalities of §7.6, fix `ℓ ∉ S` and a residue point w
 Frobenius centralizer has dimension at most `h⁰`. Prove that the integral points in its residue disk whose
 global ℓ-adic representations have a prescribed semisimplification form a subset that is not Zariski dense
 in the base. Global semisimplification flags are self-dual after pairing dual constituents, and every
-graded Hodge average is `r/2` by §5.4 (LV, Lemma 10.5, printed pp. 979–981).
+graded Hodge average is `r/2` by §5.4 (LV, Lemma 10.5, statement printed p. 975, proof pp. 979–981).
 
 A route: construct paired self-dual semisimplification flags, transport their graded data through
 `D_cris`, use the small centralizer and §7.4 with `e = dim Y`, and apply §3.5 on the disk.
@@ -2320,8 +2341,11 @@ is Zariski dense (DeligneWeightsAndPurity §2.2). For `n − 1` even, §5.10 the
 monodromy would make the intersection form, after the sign `(−1)^((n−1)/2)`, positive definite, but by the
 Hodge–Riemann relations its sign alternates with `p` on `H^(p, n−1−p)_prim`, and §8.6 gives nonzero primitive
 Hodge numbers at `p = (n−1)/2` and `p = (n−3)/2` once `d ≥ 2 + 4/(n − 1)`, which holds for `d ≥ 3`, `n ≥ 5`;
-so the monodromy is open and its Zariski closure contains `SO(E)`. The Artin comparison
-(ComplexComparisonPartII §C6.6) passes between the ℓ-adic and Betti monodromy.
+so the monodromy is open in `O(E)(ℚ_ℓ)`. An open subgroup of `SO(E)(ℚ_ℓ)` has Lie algebra `𝔰𝔬(E)`
+(ReductiveGroupsPartII §RG2.0.2, analytic charts), so its Zariski closure, a closed subgroup of `SO(E)` of
+dimension `dim SO(E)`, is the connected group `SO(E)`; the intersection of the open monodromy image with
+`SO(E)(ℚ_ℓ)` is such a subgroup, so the Zariski closure of the monodromy contains `SO(E)`. The Artin
+comparison (ComplexComparisonPartII §C6.6) passes between the ℓ-adic and Betti monodromy.
 
 **Checks.**
 
@@ -2330,9 +2354,13 @@ so the monodromy is open and its Zariski closure contains `SO(E)`. The Artin com
 - Quadrics (`d = 2`) have finite monodromy; they lie outside the range.
 - For `n = 5`, `d = 4` the coefficients of `(1 + t + t²)⁶` at `t²`, `t⁶`, `t^10` are `21, 141, 21`, so
   `h_prim = (0, 21, 141, 21, 0)`, and the form is indefinite.
+- For `dim E = 2` split, `SO(E) = 𝔾_m`, and an open subgroup of `ℚ_ℓ^×` is Zariski-dense in `𝔾_m` (its
+  closure is a closed subgroup with infinitely many points of a one-dimensional irreducible group), while
+  an open subgroup of `O(E)(ℚ_ℓ)` contained in `SO(E)(ℚ_ℓ)` misses the other component and is not dense
+  in `O(E)`; the density statement is made for `SO(E)`, after intersecting with `SO(E)(ℚ_ℓ)`.
 
 *Needs:* §§8.6, 9.1; LefschetzPencilsAndVanishingCycles §§2.8, 3.4, 4.4–4.5, 5.8, 5.10;
-DeligneWeightsAndPurity §2.2; ComplexComparisonPartII §C6.6.
+DeligneWeightsAndPurity §2.2; ReductiveGroupsPartII §RG2.0.2; ComplexComparisonPartII §C6.6.
 
 ### 9.3 Non-density of integral hypersurface parameters
 
@@ -2367,7 +2395,7 @@ not identify coordinate changes over ℚ with coordinate changes over `ℤ[S⁻�
 
 Layers 7 and 8; SchemeAndStackFoundations §4.14; AlgebraicModuliForArithmeticGeometry §2.1;
 EtaleDualityAndPerverseSheaves §4.3; DeligneWeightsAndPurity §§2.2, 9.12; LefschetzPencilsAndVanishingCycles
-§§2.8, 3.4, 4.4–4.5, 5.8, 5.10; ComplexComparisonPartII §C6.6.
+§§2.8, 3.4, 4.4–4.5, 5.8, 5.10; ReductiveGroupsPartII §RG2.0.2; ComplexComparisonPartII §C6.6.
 
 ## Layer 10: Hypersurface Shafarevich finiteness
 
