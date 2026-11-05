@@ -1,0 +1,20 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "RelativisticQuantumFieldTheory"
+
+[[source]]
+id = "dang14"
+authors = "Nguyen Viet Dang"
+title = "The extension of distributions on manifolds, a microlocal approach"
+year = 2014
+arxiv = "1412.2808v1"
+locator_scheme = "theorem"
+locator = "Theorem 3.4"
+url = "https://arxiv.org/abs/1412.2808v1"
+fetched_from = "https://arxiv.org/pdf/1412.2808v1"
+fetched_at = "2026-11-05T12:37:06Z"
+sha256 = "0a6e464cc9edeec43d725b5d550e82c5798dbe60e769c9ed4095cc53946f7b6a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v1"
+cited_for = ["RQFT6.ControlledExtension"]
