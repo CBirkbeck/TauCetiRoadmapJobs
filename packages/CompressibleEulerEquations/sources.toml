@@ -1,0 +1,49 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "CompressibleEulerEquations"
+
+[[source]]
+id = "Christodoulou2007"
+authors = "Demetrios Christodoulou"
+title = "The Formation of Shocks in 3-Dimensional Fluids"
+year = 2007
+doi = "10.4171/031"
+locator_scheme = "chapter"
+locator = "Ch. 1–2"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6000#issuecomment-6645264885"
+
+[[source]]
+id = "HawkingEllis1973"
+authors = "S. W. Hawking, G. F. R. Ellis"
+title = "The Large Scale Structure of Space-Time"
+year = 1973
+doi = "10.1017/CBO9780511524646"
+locator_scheme = "section"
+locator = "§6.5"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6000#issuecomment-6645264885"
+
+[[source]]
+id = "Friedrichs1954"
+authors = "K. O. Friedrichs"
+title = "Symmetric hyperbolic linear differential equations"
+year = 1954
+doi = "10.1002/cpa.3160070206"
+locator_scheme = "page"
+locator = "pp. 345–392"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6000#issuecomment-6645264885"
+
+[[source]]
+id = "ONeill1983"
+authors = "B. O'Neill"
+title = "Semi-Riemannian Geometry with Applications to Relativity"
+year = 1983
+locator_scheme = "chapter"
+locator = "Ch. 14"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6000#issuecomment-6645264885"
