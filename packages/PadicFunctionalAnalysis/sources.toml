@@ -1,0 +1,231 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "PadicFunctionalAnalysis"
+
+[[source]]
+id = "JN"
+authors = "Christian Johansson, James Newton"
+title = "Extended eigenvarieties for overconvergent cohomology"
+year = 2016
+venue = "Alg. Number Th. 13 (2019) 93-158"
+doi = "10.2140/ant.2019.13.93"
+arxiv = "1604.07739v4"
+locator_scheme = "theorem"
+locator = "Lemma 2.1.6"
+url = "https://arxiv.org/abs/1604.07739v4"
+fetched_from = "https://arxiv.org/pdf/1604.07739v4"
+fetched_at = "2026-11-05T00:17:25Z"
+sha256 = "7d0aac739943661097269367fbae7f97a2cf7dcb1323fec9409426c9578a955e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v4"
+cited_for = ["0.3"]
+
+[[source]]
+id = "RJW"
+authors = "Joaquín Rodrigues Jacinto, Chris Williams"
+title = "An introduction to $p$-adic $L$-functions"
+year = 2023
+venue = "Ess. Number Th. 4 (2025) 101-216"
+doi = "10.2140/ent.2025.4.101"
+arxiv = "2309.15692v2"
+locator_scheme = "theorem"
+locator = "Theorem 3.43"
+url = "https://arxiv.org/abs/2309.15692v2"
+fetched_from = "https://arxiv.org/pdf/2309.15692v2"
+fetched_at = "2026-11-05T00:17:43Z"
+sha256 = "efa1e10168fb092ffb072bbf147f85f07bea72d2a8f4907d6e9e4fd559c039c4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v2"
+cited_for = ["4.7"]
+
+[[source]]
+id = "KL"
+authors = "Kiran S. Kedlaya, Ruochuan Liu"
+title = "Relative p-adic Hodge theory: Foundations"
+year = 2013
+arxiv = "1301.0792v5"
+locator_scheme = "theorem"
+locator = "Remark 2.4.4"
+url = "https://arxiv.org/abs/1301.0792v5"
+fetched_from = "https://arxiv.org/pdf/1301.0792v5"
+fetched_at = "2026-11-05T00:17:53Z"
+sha256 = "a6a117423db62aec072442bb15b70e3175bcc3b631bdcd6d74f740e3c6cfd942"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v5"
+cited_for = ["0.4"]
+
+[[source]]
+id = "Buz"
+locator_scheme = "theorem"
+locator = "Lemma 2.2"
+url = "https://www.ma.imperial.ac.uk/~buzzard/maths/research/papers/eigenvarieties.pdf"
+fetched_from = "https://www.ma.imperial.ac.uk/~buzzard/maths/research/papers/eigenvarieties.pdf"
+fetched_at = "2026-11-05T00:17:55Z"
+sha256 = "0c54243868e2da8849452c4cc5a3d4e7b118cf17dd04487d4af137ab167ef57d"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["2.6"]
+
+[[source]]
+id = "ST"
+authors = "Peter Schneider, Jeremy Teitelbaum"
+title = "p-adic Fourier Theory"
+year = 2001
+arxiv = "math/0102012v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.3"
+url = "https://arxiv.org/abs/math/0102012v1"
+fetched_from = "https://arxiv.org/pdf/math/0102012v1"
+fetched_at = "2026-11-05T00:18:02Z"
+sha256 = "3afc0ac0a24ed69da42d3c208223f8cd686177db31b5e35cdd5fcfb93792680c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v1"
+cited_for = ["4.4"]
+
+[[source]]
+id = "LWX"
+authors = "Ruochuan Liu, Daqing Wan, Liang Xiao"
+title = "The eigencurve over the boundary of weight space"
+year = 2014
+venue = "Duke Math. J. 166, no. 9 (2017), 1739-1787"
+doi = "10.1215/00127094-0000012X"
+arxiv = "1412.2584v4"
+locator_scheme = "theorem"
+locator = "Section 3"
+url = "https://arxiv.org/abs/1412.2584v4"
+fetched_from = "https://arxiv.org/pdf/1412.2584v4"
+fetched_at = "2026-11-05T00:18:08Z"
+sha256 = "8154a2e8b7b7000b29cd53d777a6b1449d8f35c0edafcbc239d20a3f3aa090ec"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v4"
+cited_for = ["5.6"]
+
+[[source]]
+id = "Amice"
+authors = "Y. Amice"
+title = "Interpolation $p$-adique"
+year = 1964
+venue = "Bulletin de la Soci&amp;#233;t&amp;#233; math&amp;#233;matique de France 79"
+doi = "10.24033/bsmf.1606"
+locator_scheme = "theorem"
+locator = "Chapitre 10"
+url = "https://doi.org/10.24033/bsmf.1606"
+fetched_from = "https://www.numdam.org/item/10.24033/bsmf.1606.pdf"
+fetched_at = "2026-11-05T00:18:14Z"
+sha256 = "897dbb6a77b3a97ce0672279f16e58c95f7ced384bfcb7fb5c3b0b2fba3b5523"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["4.4"]
+
+[[source]]
+id = "Conrad"
+locator_scheme = "theorem"
+locator = "Lemma 1.1.5"
+url = "https://math.stanford.edu/~conrad/papers/irredpaper.pdf"
+fetched_from = "https://math.stanford.edu/~conrad/papers/irredpaper.pdf"
+fetched_at = "2026-11-05T00:18:17Z"
+sha256 = "cff85f8e59393eedc8ebd891daa537ed62a9e9b1515f794983431da10c0252eb"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["2.6"]
+
+[[source]]
+id = "Serre"
+locator_scheme = "theorem"
+locator = "Proposition 1"
+url = "http://www.numdam.org/item/PMIHES_1962__12__69_0.pdf"
+fetched_from = "https://www.numdam.org/item/PMIHES_1962__12__69_0.pdf"
+fetched_at = "2026-11-05T00:22:18Z"
+sha256 = "67a032c129ad2a36adeeadc4b4ccb3c0ab17c5a1ef8de83f7dda85f2115fe402"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["2.3"]
+
+[[source]]
+id = "Col"
+locator_scheme = "theorem"
+locator = "I.4"
+url = "https://webusers.imj-prg.fr/~pierre.colmez/fonctionsdunevariable.pdf"
+fetched_from = "https://webusers.imj-prg.fr/~pierre.colmez/fonctionsdunevariable.pdf"
+fetched_at = "2026-11-05T00:23:17Z"
+sha256 = "a18e1b0f96033dbc6d27d39dd330974bed63808286092c11d5c8d232d412c380"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["4.4"]
+
+[[source]]
+id = "Sch"
+authors = "P. Schneider"
+title = "Nonarchimedean Functional Analysis"
+year = 2002
+venue = "Springer Monographs in Mathematics"
+doi = "10.1007/978-3-662-04728-6"
+locator_scheme = "section"
+locator = "§10"
+url = "https://doi.org/10.1007/978-3-662-04728-6"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["2.2"]
+
+[[source]]
+id = "BGR"
+authors = "S. Bosch, U. Güntzer, R. Remmert"
+title = "Non-Archimedean Analysis"
+year = 1984
+venue = "Grundlehren der mathematischen Wissenschaften"
+doi = "10.1007/978-3-642-52229-1"
+locator_scheme = "section"
+locator = "§2.7.1"
+url = "https://doi.org/10.1007/978-3-642-52229-1"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["2.6"]
+
+[[source]]
+id = "Mah"
+authors = "K. Mahler"
+title = "An interpolation series for continuous functions of a p-adic variable"
+year = 1958
+venue = "J. reine angew. Math. 199 (1958), 23-34"
+doi = "10.1515/crll.1958.199.23"
+locator_scheme = "page"
+locator = "pp. 23-34"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN243919689_0199/LOG_0005.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN243919689_0199/LOG_0005.pdf"
+fetched_at = "2026-11-05T00:53:19Z"
+sha256 = "7c2e5c340a8923c327d3915691dda3109918644d6bf5d3dd3e0c51bfcc5a87e5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["3.2"]
+
+[[source]]
+id = "Bel"
+authors = "Joël Bellaïche"
+title = "The Eigenbook"
+year = 2021
+venue = "Pathways in Mathematics"
+doi = "10.1007/978-3-030-77263-5"
+locator_scheme = "section"
+locator = "§II.1"
+url = "https://doi.org/10.1007/978-3-030-77263-5"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["2.2"]
