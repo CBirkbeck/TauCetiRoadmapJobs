@@ -208,3 +208,42 @@ licence_class = "institutional"
 status = "certified"
 accessed = "2026-11-05"
 cited_for = ["DLMF §2.4"]
+
+[[source]]
+id = "dlmf58"
+locator_scheme = "equation"
+locator = "5.8.3"
+url = "https://dlmf.nist.gov/5.8"
+fetched_from = "https://dlmf.nist.gov/5.8"
+fetched_at = "2026-11-05T18:40:22Z"
+sha256 = "738b03b7008f80bb01d6a30b5d90228a7dde34609594595cd4f717fa06e85939"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["6.6(a)"]
+
+[[source]]
+id = "dlmf76"
+locator_scheme = "equation"
+locator = "7.6.2"
+url = "https://dlmf.nist.gov/7.6"
+fetched_from = "https://dlmf.nist.gov/7.6"
+fetched_at = "2026-11-05T18:40:23Z"
+sha256 = "98778bcee3bd878f1952613805401ebadb1ae5fbdc6e20ffc467778f6af330fc"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["9.3"]
+
+[[source]]
+id = "dlmf113"
+locator_scheme = "equation"
+locator = "1.13.4"
+url = "https://dlmf.nist.gov/1.13"
+fetched_from = "https://dlmf.nist.gov/1.13"
+fetched_at = "2026-11-05T18:43:21Z"
+sha256 = "59e1a546ea0b80f9715f4f9d2a4eb3543e8c5a13e7a17a81b29430c4c5d170ac"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["2.4"]
