@@ -6,7 +6,7 @@
 
 This roadmap owns: the representation-theoretic symbol and operator calculus (Sobolev scales indexed by all integers, commutator operator classes, symbol families with a semiclassical parameter, the quantization map and its star product, the order-zero bound and the rescaled composition calculus); the real infinitesimal quotient of the imaginary dual and the localization theorems for eigenfunctionals; normalized regular coadjoint multiorbits, their weak topology, Rossmann's character formula and the uniform orbit trace expansion; the representation-smooth refinement of the Schatten ideals; the uniform K-type, Plancherel–Sobolev and Ξ-integrable extensions of the Plancherel formula; local relative characters of GGP pairs and their Plancherel disintegration; stability, torsors and volume forms for the coadjoint action of a GGP subgroup; the stable relative-character expansion; positive inverse branching at archimedean and p-adic places; smooth operator states, semiclassical limit states and their equidistribution; and the truncated period identity with the weighted asymptotic formula. Every one of these is a statement about general Lie groups, real reductive groups or GGP pairs; no target is restricted to a particular group beyond what its source theorem states.
 
-It consumes, and does not plan again: the exponential map, adjoint actions, Baker–Campbell–Hausdorff, real forms and the Cartan/Iwasawa/KAK decompositions (RepresentationTheory/LieGroups Layers 0, 1, 3, 5, 7 and 9, realized at the pin by Tau Ceti `mulInvariantExp` and `lieExp`); PBW, the symmetrization isomorphism, the Casimir, the Weyl dimension formula and the Harish-Chandra and Chevalley isomorphisms (RepresentationTheory/LieHighestWeight Layers 3, 5, 6 and 7); normalized Haar measure, Peter–Weyl and characters of compact groups (RepresentationTheory/CompactGroups Layers 0, 5 and 6); Jacobson–Morozov and the regular nilpotent orbit over ℂ (NilpotentOrbits N1–N2); the principal slice of the adjoint quotient and its differential at regular elements (FormalConnectionsOpers F4.3); moment maps, the Kirillov–Kostant–Souriau form on coadjoint orbits and symplectic reduction (SymplecticGeometry/HamiltonianReduction R1–R3) and the Liouville measure (SymplecticGeometry/ConvexityToric T4); Schatten ideals (OperatorTheory/OperatorIdeals Parts B–C) and the Hilbert-space trace (AutomorphicSpectralTheory §0.9); densities and the coarea formula (DifferentialGeometry Layer 5, GeometricMeasureTheory G2); spinor norms and their local images (OrthogonalSpinGroups Layers 1–3). The Gårding space, the differentiated representation, essential self-adjointness of the Nelson operator `N = 1 − Σ dπ(X_i)²` and its power cores are NoncompactQuantumSymmetry M0; they are not stated again here. The countable almost-orthogonality (Cotlar–Stein) lemma and the Schwartz kernel theorem are PseudodifferentialOperators P5 and P3. Unbounded functional calculus is UnboundedOperators Part A. Admissible (𝔤,K)-modules, infinitesimal characters and the real Langlands classification are AutomorphicFormsOnReductiveGroups §§2.1–2.4; integrability of negative powers of an algebraic height, and the polynomial volume growth of its balls, on the archimedean points of a reductive group are AutomorphicFormsOnReductiveGroups §0.3. The smooth category, Hecke algebras, induction, Jacquet modules, the Bernstein centre, uniform admissibility and the tempered support theorem at p-adic places are SmoothRepresentationsOfLocalGroups SR.0–SR.3a; the unitary dual is SmoothRepresentationsOfLocalGroupsPartII SRU.0–SRU.2. Good compact open subgroups are ReductiveGroupsPartII RG2.3–RG2.4. Adelic measures, compactness of anisotropic quotients and strong approximation are AdelicAlgebraicGroups §§2–4. Ratner's measure classification, ergodic decomposition and Borel density are GeometryOfNumbersAndQuadraticArithmetic §4.2. Compact-quotient automorphic spectra are AutomorphicSpectralTheory §4.7. Trace-class convolution operators and Harish-Chandra's locally integrable distribution characters of finite-length admissible representations of real reductive groups are EndoscopicTransferAndUnitaryTraceComparison §2.3(a)–(b). Local multiplicity one, tempered integrability, local relative forms and the factorization of global periods for unitary pairs are GanGrossPrasadUnitaryGroups §§2.6, 2.7, 3.3 and 4.2.
+It consumes, and does not plan again: the exponential map, adjoint actions, Baker–Campbell–Hausdorff, real forms and the Cartan/Iwasawa/KAK decompositions (RepresentationTheory/LieGroups Layers 0, 1, 3, 5, 7 and 9, realized at the pin by Tau Ceti `mulInvariantExp` and `lieExp`); PBW, the symmetrization isomorphism, the Casimir, the Weyl dimension formula and, for Killing-semisimple Lie algebras, the Harish-Chandra and Chevalley isomorphisms (RepresentationTheory/LieHighestWeight Layers 3, 5, 6 and 7); the reductive invariant quotient with its central affine factors and its Chevalley restriction, the principal slice of the adjoint quotient and its differential at regular elements (FormalConnectionsOpers F4.3); reductive infinitesimal characters (AutomorphicFormsOnReductiveGroups §2.2); normalized Haar measure, Peter–Weyl and characters of compact groups (RepresentationTheory/CompactGroups Layers 0, 5 and 6); the adjoint quotient map, Jacobson–Morozov, finiteness of nilpotent orbits and the regular nilpotent orbit over ℂ (NilpotentOrbits N1–N2); moment maps, the Kirillov–Kostant–Souriau form on coadjoint orbits and symplectic reduction (SymplecticGeometry/HamiltonianReduction R1–R3) and the Liouville measure (SymplecticGeometry/ConvexityToric T4); Schatten ideals (OperatorTheory/OperatorIdeals Parts B–C), the Hilbert-space trace (VonNeumannAlgebras V4.Core) and the trace-norm bound of a Hilbert–Schmidt product (AutomorphicSpectralTheory §0.9); densities and the coarea formula (DifferentialGeometry Layer 5, GeometricMeasureTheory G2); spinor norms and their local images (OrthogonalSpinGroups Layers 1–3). The Gårding space, the differentiated representation, essential self-adjointness of the Nelson operator `N = 1 − Σ dπ(X_i)²` and its power cores are NoncompactQuantumSymmetry M0; they are not stated again here. The countable almost-orthogonality (Cotlar–Stein) lemma and the Schwartz kernel theorem are PseudodifferentialOperators P5 and P3. Unbounded functional calculus is UnboundedOperators Part A. Admissible (𝔤,K)-modules, infinitesimal characters and the real Langlands classification are AutomorphicFormsOnReductiveGroups §§2.1–2.4; integrability of negative powers of an algebraic height, and the polynomial volume growth of its balls, on the archimedean points of a reductive group are AutomorphicFormsOnReductiveGroups §0.3. The smooth category, Hecke algebras, induction, Jacquet modules, the Bernstein centre, uniform admissibility and the tempered support theorem at p-adic places are SmoothRepresentationsOfLocalGroups SR.0–SR.3a; the unitary dual is SmoothRepresentationsOfLocalGroupsPartII SRU.0–SRU.2. Good compact open subgroups are ReductiveGroupsPartII RG2.3–RG2.4. Adelic measures, compactness of anisotropic quotients and strong approximation are AdelicAlgebraicGroups §§2–4. Ratner's measure classification, ergodic decomposition and Borel density are GeometryOfNumbersAndQuadraticArithmetic §4.2. Compact-quotient automorphic spectra are AutomorphicSpectralTheory §4.7. Trace-class convolution operators and Harish-Chandra's locally integrable distribution characters of finite-length admissible representations of real reductive groups are EndoscopicTransferAndUnitaryTraceComparison §2.3(a)–(b). Local multiplicity one, tempered integrability, local relative forms and the factorization of global periods for unitary pairs are GanGrossPrasadUnitaryGroups §§2.6, 2.7, 3.3 and 4.2.
 
 The following inputs are stated by no roadmap at the pins or heads read here and are requested from their natural owners as supplier gaps (see the contracts): the real and p-adic Plancherel formulas and the Cowling–Haagerup–Howe bound with the Ξ-function (AutomorphicSpectralTheory); the Hilbert–Mumford criterion for linear actions of reductive groups and the principal-bundle structure of free stable affine quotients (AlgebraicModuliForArithmeticGeometry); uniform exponents and minimal K-types of unitary representations (AutomorphicFormsOnReductiveGroups); the kernel expansion, polynomial eigenvalue count and restriction Sobolev bound on compact automorphic quotients (AutomorphicSpectralTheory); the countable strong-convergence form of almost orthogonality (PseudodifferentialOperators); the orthogonal counterparts of local multiplicity one, Ξ-integrability, local period forms and period factorization, the polynomially weighted Ξ-integrability of codimension-one unitary and orthogonal pairs over ℝ and ℂ, and the positivity, strong multiplicity one and semicontinuity of local relative characters (GanGrossPrasadUnitaryGroups, whose Part II owns the orthogonal endpoints); and Kneser's global spinor image together with the anisotropic local spinor images over finite extensions of ℚ_p (OrthogonalSpinGroups).
 
@@ -14,7 +14,7 @@ The normalized unweighted asymptotic formula of the source's §31 (Theorem 31.11
 
 ## Conventions
 
-**Groups and representations.** In Layers 0–1, G is a finite-dimensional unimodular real Lie group, realized as a Lie group modeled on its Lie algebra 𝔤: 𝔤 is the model space E, a finite-dimensional real inner-product space, and exp is Tau Ceti `mulInvariantExp`. A representation is a Mathlib `ContRepresentation ℂ G V` on a complex Hilbert space V that is unitary (`TauCeti.ContRepresentation.IsUnitary`) and strongly continuous, the latter an explicit hypothesis `∀ v, Continuous (fun g ↦ π g v)` since the native structure does not include it. Irreducibility is imposed only from Layer 3 on. A real reductive group is the group of real points of a connected reductive algebraic group over ℝ with its Lie topology; it need not be connected. A complex reductive group is regarded as a real Lie group by restriction of scalars. Nonarchimedean local fields have characteristic zero and every residue characteristic, including 2 and 3, is allowed.
+**Groups and representations.** In Layers 0–1, G is a finite-dimensional unimodular real Lie group, realized as a Lie group modeled on its Lie algebra 𝔤: 𝔤 is the model space E, a finite-dimensional real inner-product space, and exp is Tau Ceti `mulInvariantExp`. A representation is a Mathlib `ContRepresentation ℂ G V` on a complex Hilbert space V that is unitary (`ContRepresentation.IsUnitary`) and strongly continuous, the latter an explicit hypothesis `∀ v, Continuous (fun g ↦ π g v)` since the native structure does not include it. Irreducibility is imposed only from Layer 3 on. A real reductive group is the group of real points of a connected reductive algebraic group over ℝ with its Lie topology; it need not be connected. A complex reductive group is regarded as a real Lie group by restriction of scalars. Nonarchimedean local fields have characteristic zero and every residue characteristic, including 2 and 3, is allowed.
 
 **Imaginary dual and Fourier normalization.** Put `𝔤^∧ = Hom_ℝ(𝔤, iℝ)` and write `xξ = ξ(x) ∈ iℝ`; `𝔤^∧` is identified with the Pontryagin dual of 𝔤 by `ξ ↦ (x ↦ e^{xξ})`. The forward and inverse transforms are `φ^∧(ξ) = ∫ φ(x) e^{xξ} dx` and `a^∨(x) = ∫ a(ξ) e^{−xξ} dξ`, with dx and dξ mutually dual so that they are inverse to each other (NV21 §2.1, p. 25). Using the inner product, write `ξ = 2πi⟨η, ·⟩` with `η ∈ 𝔤`; then dx is the inner-product Lebesgue measure, dξ corresponds to dη, the forward transform is Mathlib's inverse transform `𝓕⁻` and `a^∨ = 𝓕 b` for `b(η) = a(2πi⟨η,·⟩)`, where Mathlib's `𝓕 f (w) = ∫ 𝐞(−⟨v,w⟩) f(v) dv` (`Real.fourier_eq`). Lean statements take symbols in this η-coordinate. The orbit measures of Layer 3 carry the factor `(2π)^{−d}` in `σ^d/(d!(2π)^d)`; at the real measure interface of Layer 5 each real coordinate differential carries Lebesgue measure divided by `√(2π)`. These are separate normalizations of the same convention, each pinned by a Check.
 
@@ -54,7 +54,7 @@ A contract marked `gap:` is mathematics the named supplier must provide; it is n
 ### From Tau Ceti
 
 - `mulInvariantExp` (`TauCeti/Geometry/Lie/Exponential/Basic.lean`): the exponential of a finite-dimensional real Lie group on the tangent space at 1, the time-one value of the invariant one-parameter subgroup, together with `lieExp` on left-invariant derivations and the one-parameter subgroup laws. It needs the `C³` regularity supplied by `LieGroup.minSmoothnessThree` (`TauCeti/Geometry/Lie/Basic.lean`), a local instance in Suggested.lean.
-- `TauCeti.ContRepresentation.IsUnitary` (`TauCeti/RepresentationTheory/Continuous/Unitary/Basic.lean`): every operator of the representation preserves the inner product.
+- `ContRepresentation.IsUnitary` (`TauCeti/RepresentationTheory/Continuous/Unitary/Basic.lean`, declared in the root namespace `ContRepresentation`, not under `TauCeti`): every operator of the representation preserves the inner product.
 - `CliffordAlgebra.spinorNorm` and `CliffordAlgebra.range_spinToSpecialOrthogonal_eq_ker_spinorNorm` (`TauCeti/LinearAlgebra/CliffordAlgebra/Spin/SpinorNorm/Basic.lean`): the spinor norm `SO(Q) → K^×/K^{×2}` (valued in `Multiplicative (SquareClassGroup K)`) of a nondegenerate quadratic form Q on a finite-dimensional vector space V over a field K in which 2 is invertible (`[FiniteDimensional K V] [Invertible (2 : K)]`, `hQ : Q.Nondegenerate`), and the identification of the image of Spin with its kernel. Used in §8.7.
 - The quadratic-form Witt extension and cancellation theorems (`TauCeti/LinearAlgebra/QuadraticForm/Witt/`), used in §5.3 for real points of orthogonal fibres.
 - `CliffordAlgebra.spinorNorm_surjective_of_not_anisotropic` (`TauCeti/LinearAlgebra/CliffordAlgebra/Spin/SpinorNorm/Isotropic.lean`): over any field with 2 invertible, the spinor norm of a nondegenerate isotropic finite-dimensional quadratic space is surjective on SO. This covers every isotropic local case, all of ℂ in dimension ≥ 2 and every nonarchimedean quadratic space of dimension ≥ 5. Used in §8.7.
@@ -66,7 +66,7 @@ Layer 0 (the exponential map, local diffeomorphism at 0, one-parameter subgroups
 
 ### From TauCetiRoadmap.RepresentationTheory.LieHighestWeight
 
-Layer 3 (PBW filtration and basis), Layer 5 (the Casimir and its eigenvalue on L(λ)), Layer 6 (the Weyl dimension formula) and Layer 7 (the symmetrization isomorphism `pbwSymmetrization : S(L) ≃ U(L)` in characteristic zero, the Harish-Chandra isomorphism and Chevalley restriction). Symmetrization is linear, not multiplicative; §1.10 relies on exactly this.
+Layer 3 (PBW filtration and basis), Layer 5 (the Casimir and its eigenvalue on L(λ)), Layer 6 (the Weyl dimension formula) and Layer 7 (the symmetrization isomorphism `pbwSymmetrization : S(L) ≃ U(L)`, stated there for every Lie algebra over a field of characteristic zero, and the Harish-Chandra and Chevalley restriction isomorphisms, which that layer states only for finite-dimensional Killing-semisimple L over an algebraically closed field of characteristic zero). The reductive forms used in §§2.1, 5.3 and 5.5, with the centre as additional affine coordinates, are FormalConnectionsOpers F4.3 (invariant quotient and Chevalley restriction) and AutomorphicFormsOnReductiveGroups §2.2 (infinitesimal characters); for 𝔤𝔩₁ the Killing form is zero, the semisimple statement says nothing, and the quotient is the affine line with its coordinate retained, not a point. Symmetrization is linear, not multiplicative; §1.10 relies on exactly this.
 
 ### From TauCetiRoadmap.RepresentationTheory.CompactGroups
 
@@ -74,11 +74,11 @@ Layer 0 (normalized Haar probability measure), Layer 5 (Peter–Weyl) and Layer 
 
 ### From TauCetiRoadmap.NilpotentOrbits
 
-N1.1 (the adjoint quotient `𝔤 → 𝔤//G` and the nilpotent cone) and N2 (N2.1 Jacobson–Morozov; N2.3 the regular nilpotent orbit, open and dense in the nilcone, with centralizer of dimension equal to the rank, compared with the nonzero simple-root coefficients in a Borel nilradical), for complex semisimple Lie algebras. The real-form statements of §8.4 are targets here.
+N1.1 (the adjoint quotient map `χ : 𝔤 → 𝔤//G` and the nilpotent cone `χ^{−1}(0)`; it says nothing about the orbits in a fibre of χ over a nonzero point, which §3.2 obtains from Kostant and Whitney) and N2 (N2.1 Jacobson–Morozov; N2.2 finiteness of the nilpotent orbits; N2.3 the regular nilpotent orbit, open and dense in the nilcone, with centralizer of dimension equal to the rank, compared with the nonzero simple-root coefficients in a Borel nilradical), for complex semisimple Lie algebras. The real-form statements of §8.4 are targets here.
 
 ### From TauCetiRoadmap.FormalConnectionsOpers
 
-F4.3 (the finite invariant and slice theorems): for a reductive Lie algebra over a field of characteristic zero, with its central affine factors retained, the principal slice `f + V_can` maps isomorphically onto the adjoint quotient and meets every regular orbit exactly once, the restriction to the slice has invertible differential, and the regular locus is defined by minimal centralizer dimension. By equivariance the differential of the adjoint quotient map is surjective at every regular element, semisimple or not; §3.5 uses exactly this, after complexification.
+F4.3 (the finite invariant and slice theorems): for a reductive Lie algebra 𝔤 over a field of characteristic zero, with its central affine factors retained, the Chevalley restriction `S(𝔤^*)^G ≃ S(𝔥^*)^W`, built as the Killing-semisimple restriction isomorphism of LieHighestWeight Layer 7 on the derived algebra tensored with the identity on the centre, on which W acts trivially, together with the agreement of group and Lie-algebra invariants; so `𝔤//G` is an affine space whose coordinates are the central coordinates and the semisimple generators. Further, the principal slice `f + V_can` maps isomorphically onto the adjoint quotient and meets every regular orbit exactly once, the restriction to the slice has invertible differential, and the regular locus is defined by minimal centralizer dimension. By equivariance the differential of the adjoint quotient map is surjective at every regular element, semisimple or not; §3.5 uses exactly this, after complexification. §§2.1, 5.3 and 5.5 use the reductive restriction theorem; the groups there (`GL_n`, `U(V)` over an algebraic closure) have nontrivial centres, so the Killing-semisimple statement alone would not cover them.
 
 ### From TauCetiRoadmap.EndoscopicTransferAndUnitaryTraceComparison
 
@@ -97,6 +97,10 @@ HamiltonianReduction R1 (equivariant moment maps), R2 (coadjoint orbits of any f
 ### From TauCetiRoadmap.OperatorTheory.OperatorIdeals
 
 Parts B and C: Hilbert–Schmidt energy and its basis independence (`hilbertSchmidtEnergy`, `hilbertSchmidtEnergy_indep`), the nuclear norm, the Schatten families (`schattenFamily`) and the trace-class and Hilbert–Schmidt endpoints. §3.8 refines these by commutators; it builds no second singular-value or trace construction.
+
+### From TauCetiRoadmap.VonNeumannAlgebras
+
+V4.Core: the trace `Tr(x) = Σ_i ⟨b_i, x b_i⟩` on the trace-class operators of a Hilbert space, on the trace-class and Hilbert–Schmidt carriers of OperatorIdeals; its independence of the orthonormal basis, its cyclicity `Tr(xh) = Tr(hx)` for trace-class h and bounded x and for pairs of Hilbert–Schmidt operators, the norm identity `‖φ_h‖ = ‖h‖₁` for `φ_h(x) = Tr(xh)` and the pairing of bounded operators with the trace class. This is the Hilbert-space trace of §§3.7–3.9 and 8.1 and the one that AutomorphicSpectralTheory §0.9 itself consumes; the trace-norm bound `‖BC‖₁ ≤ ‖B‖_HS ‖C‖_HS` of a product of two Hilbert–Schmidt operators is cited to AutomorphicSpectralTheory §0.9, which states it.
 
 ### From TauCetiRoadmap.DifferentialGeometry and TauCetiRoadmap.GeometricMeasureTheory
 
@@ -118,7 +122,7 @@ M0, item 1: for a strongly continuous unitary representation of a finite-dimensi
 
 ### From TauCetiRoadmap.SmoothBanachRepresentations
 
-SB2 (smooth vectors defined by smooth orbit maps, with the word-seminorm Fréchet topology), SB3 (the differentiated action and integration by parts) and SB6 (Dixmier–Malliavin: smooth vectors are the span of `π(f)v`). Used in §0.6 for integrated test functions.
+Layer 2, §2.1 (smooth vectors defined by smooth orbit maps, with the word-seminorm Fréchet topology), Layer 3, §§3.1 and 3.4 (the differentiated action and integration by parts) and Layer 6, §6.1 (Dixmier–Malliavin: smooth vectors are the span of `π(f)v`). Used in §0.6 for integrated test functions.
 
 ### From TauCetiRoadmap.UnboundedOperators
 
@@ -140,7 +144,7 @@ What AutomorphicFormsOnReductiveGroups must provide (gap:vogan-minimal-ktype): f
 
 ### From TauCetiRoadmap.AutomorphicSpectralTheory
 
-§0.9 (the trace on trace-class operators, cyclicity and `‖BC‖₁ ≤ ‖B‖_HS ‖C‖_HS`), §0.13 (the nuclear LF kernel theorem), §0.14 (vector-valued Schwartz spaces), §4.5 (finite multiplicity of the discrete spectrum) and §4.7 (for a cocompact lattice, `L²(Γ\G)` is a Hilbert direct sum of irreducibles with finite multiplicities and smooth compactly supported convolution operators are trace class with smooth kernels).
+§0.9 (only the trace-norm bound `‖BC‖₁ ≤ ‖B‖_HS ‖C‖_HS` for Hilbert–Schmidt B and C, which it states; the trace itself, its basis independence and its cyclicity are consumed from their owner, VonNeumannAlgebras V4.Core), §0.13 (the nuclear LF kernel theorem), §0.14 (vector-valued Schwartz spaces), §4.5 (finite multiplicity of the discrete spectrum) and §4.7 (for a cocompact lattice, `L²(Γ\G)` is a Hilbert direct sum of irreducibles with finite multiplicities and smooth compactly supported convolution operators are trace class with smooth kernels).
 
 What AutomorphicSpectralTheory must provide (gap:local-plancherel): for a reductive group over ℝ, ℂ or a nonarchimedean local field of characteristic zero with a fixed Haar measure, the Plancherel measure μ on the tempered dual with `f(1) = ∫ tr π(f) dμ(π)` for every smooth compactly supported f.
 
@@ -176,9 +180,11 @@ RG2.3.6 (Moy–Prasad subgroups `G_{x,r}`, r > 0, normal in `G_{x,0}`, pro-p and
 
 ### From TauCetiRoadmap.GanGrossPrasadUnitaryGroups
 
-§2.6 (local multiplicity one for unitary pairs), §2.7 (absolute convergence of tempered matrix coefficients over U(W) and `∫ Ξ_{U(V)} Ξ_{U(W)} (1 + log‖t‖)^d < ∞`), §3.3 (regularized tempered Bessel forms; in codimension one the local period `∫_H ⟨π(h)v,v′⟩⟨σ(h)w,w′⟩ dh`), and §4.2 (factorization of global periods through local forms, using local multiplicity one).
+§2.6 (local multiplicity one for unitary pairs, for all irreducible smooth representations, tempered or not), §2.7 (absolute convergence of tempered matrix coefficients over U(W) and `∫ Ξ_{U(V)} Ξ_{U(W)} (1 + log‖t‖)^d < ∞`), §3.3 (regularized tempered Bessel forms for nonsplit pairs, E/F a quadratic field extension; in codimension one the local period `∫_H ⟨π(h)v,v′⟩⟨σ(h)w,w′⟩ dh`, nonzero exactly when `Hom_H(π ⊗ σ̄, ℂ) ≠ 0`; the split model is excluded there), §5.1a (the split adjacent Whittaker identity: for `E = F × F`, so that `(G, H) = (GL_{n+1}(F), GL_n(F))` with F nonarchimedean, ℝ or ℂ and tempered irreducible unitary π, σ, the H-integral of matrix coefficients equals `λ(W) conj(λ(W′))` for the Rankin–Selberg Whittaker functional λ, is nonzero, and takes a positive value on some smooth tensor), §5.2 (the normalized local period form `α_v` and its nonvanishing criterion, nonzero exactly when the local Bessel model is nonzero, in the nonsplit case through §3.3 and in the split case through §5.1a, up to the nonzero normalizing factor `C_v`), and §4.2 (factorization of global periods through local forms, using local multiplicity one). The local period form at a place is therefore §3.3 when E is a field there and §5.1a when E splits there; when `V_H = 0` the group H is trivial and the form is the Hilbert pairing times the Haar mass of the trivial group, with no supplier.
 
-What GanGrossPrasadUnitaryGroups must provide (gap:unitary-xi-polynomial-tail): the polynomially weighted form of §2.7: over ℝ or ℂ, for a codimension-one unitary pair H = U(W) ⊂ G = U(V) (split or nonsplit), there is η > 0 depending only on the pair with `∫_H Ξ_G(h) Ξ_H(h) |h|^η dh < ∞`, where `|h| = max(‖R(h)‖, ‖R(h^{−1})‖)` is the algebraic norm of §5.8; equivalently `∫_{|h| > X} Ξ_G Ξ_H dh ≪ X^{−η}` for X ≥ 1. The log-weighted estimate of §2.7 does not imply it: it bounds this tail only by `(1 + log X)^{−d}`.
+What GanGrossPrasadUnitaryGroups must provide (gap:unitary-xi-polynomial-tail): over ℝ or ℂ, for a codimension-one unitary pair H = U(W) ⊂ G = U(V) (split or nonsplit), there is η > 0 depending only on the pair with `∫_H Ξ_G(h) Ξ_H(h) |h|^η dh < ∞`, `|h| = max(‖R(h)‖, ‖R(h^{−1})‖)` the algebraic norm of §5.8.
+
+This is the polynomially weighted form of §2.7; equivalently `∫_{|h| > X} Ξ_G Ξ_H dh ≪ X^{−η}` for X ≥ 1. The log-weighted estimate of §2.7 does not imply it, since it bounds this tail only by `(1 + log X)^{−d}`.
 
 The orthogonal counterparts below are assigned by the scope of GanGrossPrasadUnitaryGroups to GanGrossPrasadUnitaryGroups, Part II; each concerns a codimension-one special orthogonal pair `H = SO(V_H) ⊂ G = SO(V)`.
 
@@ -235,7 +241,7 @@ For a strongly continuous unitary representation π of G and a fixed basis B of 
 - `⋂_s π^s` is exactly the space of smooth vectors with its Fréchet topology; equivalently, smooth vectors are the vectors in the domain of every power of Δ (NV21 §3.1(ii), p. 28).
 - For each integer r, `Δ^r` is an isomorphism `π^s → π^{s−2r}`.
 
-*Needs:* NoncompactQuantumSymmetry M0, item 1 (Nelson operator, power cores, enveloping Sobolev bounds and elliptic regularity adapters); UnboundedOperators UO-A01 (powers of Δ); SmoothBanachRepresentations SB2 (smooth vectors and their topology).
+*Needs:* NoncompactQuantumSymmetry M0, item 1 (Nelson operator, power cores, enveloping Sobolev bounds and elliptic regularity adapters); UnboundedOperators UO-A01 (powers of Δ); SmoothBanachRepresentations Layer 2, §2.1 (smooth vectors and their topology).
 
 **Checks.**
 
@@ -306,7 +312,7 @@ For a Schwartz symbol a define `Op(a, χ : π) v = ∫_𝔤 χ(x) a^∨(x) π(ex
 - `Op_h(a, χ) = Op(a(h ·), χ)`.
 - If `Ad(g) supp χ ⊆ 𝒢`, then `π(g) Op(a, χ) π(g)^{−1} = Op(g·a, g·χ)`, the cutoff being transported together with the symbol (NV21 §2.4, p. 26).
 
-*Needs:* §0.1, §0.2, §0.4; Tau Ceti `mulInvariantExp`, `TauCeti.ContRepresentation.IsUnitary`; Mathlib `ContRepresentation`, `MeasureTheory.norm_integral_le_integral_norm`; LieGroups Layer 1 (`Ad` and conjugation of exp).
+*Needs:* §0.1, §0.2, §0.4; Tau Ceti `mulInvariantExp`, `ContRepresentation.IsUnitary`; Mathlib `ContRepresentation`, `MeasureTheory.norm_integral_le_integral_norm`; LieGroups Layer 1 (`Ad` and conjugation of exp).
 
 **Checks.**
 
@@ -319,7 +325,7 @@ For a Schwartz symbol a define `Op(a, χ : π) v = ∫_𝔤 χ(x) a^∨(x) π(ex
 
 Composition maps `Ψ^{m₁} × Ψ^{m₂}` continuously to `Ψ^{m₁+m₂}`, with `∞ + (−∞) = −∞`. An enveloping word of degree r has order r and `Δ^r` has order 2r for every integer r. An operator T is smoothing if and only if `Δ^N T Δ^N` is bounded on π for every N ≥ 0, and these seminorms define the topology of `Ψ^{−∞}`. For f smooth and compactly supported on G, `π(f) = ∫ f(g) π(g) dg` lies in `Ψ^{−∞}` and depends continuously on f (NV21 Lemmas 3.3–3.6, pp. 30–31; Proposition 8.6, pp. 60–61).
 
-*Needs:* §0.2, §0.3; SmoothBanachRepresentations SB3 (integration by parts for `π(f)`).
+*Needs:* §0.2, §0.3; SmoothBanachRepresentations Layer 3, §3.4 (integration by parts for `π(f)`).
 
 **Checks.**
 
@@ -333,7 +339,7 @@ On ℝ with `Π_t(x) = e^{itx}`: the parameter is it, `Δ = 1 + t²`, `‖v‖_s
 
 ### Dependencies
 
-Mathlib `SchwartzMap`, `SchwartzMap.fourierTransformCLM`, `Real.fourier_eq`, `ContRepresentation`, `UniversalEnvelopingAlgebra`, `MeasureTheory.norm_integral_le_integral_norm`; Tau Ceti `mulInvariantExp`, `TauCeti.ContRepresentation.IsUnitary`; LieGroups Layers 0–1; NoncompactQuantumSymmetry M0; UnboundedOperators UO-A01; SmoothBanachRepresentations SB2–SB3.
+Mathlib `SchwartzMap`, `SchwartzMap.fourierTransformCLM`, `Real.fourier_eq`, `ContRepresentation`, `UniversalEnvelopingAlgebra`, `MeasureTheory.norm_integral_le_integral_norm`; Tau Ceti `mulInvariantExp`, `ContRepresentation.IsUnitary`; LieGroups Layers 0–1; NoncompactQuantumSymmetry M0; UnboundedOperators UO-A01; SmoothBanachRepresentations Layers 2–3 (§§2.1, 3.4).
 
 ## Layer 1: The uniform symbol and operator calculus
 
@@ -463,7 +469,7 @@ For an integer m ≥ 0, `T ∈ Ψ^m` if and only if for every enveloping word u 
 
 *Proof route.* Decompose a by §1.4 into pieces localized at ω ∈ Ω; each piece satisfies the L¹ bound of §0.5 uniformly (NV21 Lemmas 8.8–8.9, p. 61). The adjoint formula of §0.5 and §1.1 give `Op_h(a_{ω₁})* Op_h(a_{ω₂}) = Op_h(ā_{ω₁} ⋆_h a_{ω₂}, χ′)`; expand by §1.5, so that only O(1) pairs have nonnegligible products for fixed ω₁ and the remainders are summable. The square-root row sums are then bounded, and the countable almost-orthogonality lemma (PseudodifferentialOperators P5, gap:cotlar-stein-strong) gives strong convergence of `Σ_ω Op_h(a_ω)` to `Op_h(a)` with the norm bound. The source's Lemma 8.10 asserts operator-norm convergence of the sum; only strong convergence holds, as the orthogonal rank-one projections on ℓ² show (both row sums equal 1, the partial sums converge strongly to the identity and every tail has norm 1), and only strong convergence is used.
 
-*Needs:* §0.5, §1.4, §1.5, §1.6; PseudodifferentialOperators P5 (gap:cotlar-stein-strong); Tau Ceti `mulInvariantExp`, `TauCeti.ContRepresentation.IsUnitary`.
+*Needs:* §0.5, §1.4, §1.5, §1.6; PseudodifferentialOperators P5 (gap:cotlar-stein-strong); Tau Ceti `mulInvariantExp`, `ContRepresentation.IsUnitary`.
 
 **Checks.**
 
@@ -520,7 +526,7 @@ On ℝⁿ every C_j with j ≥ 1 vanishes and the calculus is the multiplier cal
 
 ### Dependencies
 
-Layer 0; LieGroups Layers 1 and 3; LieHighestWeight Layers 3 and 7; Mathlib `UniversalEnvelopingAlgebra`; PseudodifferentialOperators P5 (gap:cotlar-stein-strong); Tau Ceti `mulInvariantExp`, `TauCeti.ContRepresentation.IsUnitary`.
+Layer 0; LieGroups Layers 1 and 3; LieHighestWeight Layers 3 and 7; Mathlib `UniversalEnvelopingAlgebra`; PseudodifferentialOperators P5 (gap:cotlar-stein-strong); Tau Ceti `mulInvariantExp`, `ContRepresentation.IsUnitary`.
 
 ## Layer 2: Infinitesimal characters and localization
 
@@ -536,11 +542,11 @@ Let `[𝔤_ℂ^*] = 𝔤_ℂ^*//G` be the spectrum of the G-invariant polynomial
 - The image of `i𝔤^* → [i𝔤^*]` lies in the real form and is Zariski dense; surjectivity is a separate condition and fails in general.
 - A homogeneous invariant of degree d satisfies `p(hλ) = h^d p(λ)`.
 
-*Needs:* AutomorphicFormsOnReductiveGroups §2.2 (infinitesimal characters through the Harish-Chandra isomorphism); LieHighestWeight Layer 7 (Harish-Chandra isomorphism and Chevalley restriction); Mathlib `UniversalEnvelopingAlgebra`.
+*Needs:* AutomorphicFormsOnReductiveGroups §2.2 (infinitesimal characters through the reductive Harish-Chandra isomorphism, with ρ extended by zero on the centre); FormalConnectionsOpers F4.3 (the reductive invariant quotient and its Chevalley restriction, central affine factors included); LieHighestWeight Layer 7 (the Killing-semisimple restriction theorem underlying both); Mathlib `UniversalEnvelopingAlgebra`.
 
 **Checks.**
 
-- For the one-dimensional abelian Lie algebra the quotient is the imaginary line and `|λ|` is homogeneous of degree one; the character `e^{itx}` has `λ = it`.
+- For the one-dimensional abelian Lie algebra the quotient is the imaginary line and `|λ|` is homogeneous of degree one; the character `e^{itx}` has `λ = it`. The Killing form of 𝔤𝔩₁ is zero, so the Killing-semisimple restriction theorem says nothing here; the reductive statement keeps the central coordinate, and a quotient that discarded the centre would be a point and could not carry the parameter it.
 - For 𝔤 = 𝔰𝔬(3), `[i𝔤^*] ≅ ℝ` through the invariant `p(ξ) = ξ(X₁)² + ξ(X₂)² + ξ(X₃)²`, which is `≤ 0` on `i𝔤^*`; the real points with `p > 0` are not in the image of the imaginary dual, and replacing the quotient by that image loses the parameters `λ = [ξ]` with ξ in `𝔤^*` itself.
 - For `GL_n(ℝ)` the quotient is the space of monic polynomials of `ξ/i` (NV21 Example 9.1, p. 72); a quadratic invariant scales by `h²`, while its contribution to `|λ|` scales by `|h|`.
 
@@ -606,7 +612,7 @@ Let `p ∈ S^m_0` be a symbol family of fixed finite order, 0 ≤ δ < 1/2, and 
 
 ### 2.7 Joint infinitesimal-character localization
 
-Let H ⊂ G be reductive and ℓ an h-uniformly continuous functional on `Ψ^{−∞}(π)` that factors H × H-equivariantly through `Ψ^{−∞}(σ)` and the trace. Then `ℓ(Op_h(a)) = O(h^{−M} ⟨hλ_π⟩^{−N} ⟨hλ_σ⟩^{−N})`; if, for some δ < 1/2, every ξ ∈ supp a satisfies `dist([ξ], hλ_π) ≥ h^δ` or `dist([ξ|_𝔥], hλ_σ) ≥ h^δ`, distances being taken in the fixed generator coordinates of `[𝔤^∧]` and `[𝔥^∧]` of §2.1, the bound improves to `O(h^N ⟨hλ_π⟩^{−N} ⟨hλ_σ⟩^{−N})` for every N. The condition is on the invariant coordinates, not on the ambient distance of ξ from the joint fibre. G-invariants are evaluated at `hλ_π` and H-invariants at `hλ_σ` (NV21 Lemma 10.4 and (10.11)–(10.14), pp. 81–82, where the source evaluates both at `hλ_σ`; the G-invariants are corrected to `hλ_π`).
+Fix 0 ≤ δ < 1/2 and a bounded family `a ∈ S^{−∞}_δ`. Let H ⊂ G be reductive, let π and σ be irreducible unitary representations of G and H, possibly depending on h, and let ℓ be a linear functional on `Ψ^{−∞}(π)` that factors through an H × H-equivariant map `Ψ^{−∞}(π) → Ψ^{−∞}(σ)` followed by the trace, with `|ℓ| ≤ ν` for a fixed h-uniformly continuous seminorm ν on `Ψ^{−∞}(π)`. Then for every N there is M, depending on ν, such that `|ℓ(Op_h(a))| ≤ C_N h^{−M} ⟨hλ_π⟩^{−N} ⟨hλ_σ⟩^{−N}`, with C_N controlled by ν and by finitely many `S^{−∞}_δ` seminorms of the family a; if every ξ ∈ supp a satisfies `dist([ξ], hλ_π) ≥ h^δ` or `dist([ξ|_𝔥], hλ_σ) ≥ h^δ`, distances being taken in the fixed generator coordinates of `[𝔤^∧]` and `[𝔥^∧]` of §2.1, the bound improves to `C_N h^N ⟨hλ_π⟩^{−N} ⟨hλ_σ⟩^{−N}` for every N. The condition is on the invariant coordinates, not on the ambient distance of ξ from the joint fibre. G-invariants are evaluated at `hλ_π` and H-invariants at `hλ_σ` (NV21 Lemma 10.4 and (10.7)–(10.14), pp. 81–82, where the source evaluates both at `hλ_σ`; the G-invariants are corrected to `hλ_π`). Without the symbol-class hypothesis on the family a neither estimate holds (Checks).
 
 *Proof route.* Cover the support by finitely many regions where one invariant coordinate difference is large; the central action of G and the H-equivariant factorization give eigenidentities whose leading symbols are the invariant polynomials up to lower degree (§2.4(ii)); apply §2.6 and iterate the lower-degree errors.
 
@@ -616,6 +622,7 @@ Let H ⊂ G be reductive and ℓ an h-uniformly continuous functional on `Ψ^{�
 
 - For G = H = ℝ and characters `e^{itx}`, `e^{isx}`, a functional factoring through both vanishes unless t = s; the bound with both weights is consistent with this.
 - Ambient distance is not enough: for an invariant `q(x) = x²` and the fibre `q = 0`, the point `x = h^δ` has distance `h^δ` from the fibre but invariant difference `h^{2δ} < h^δ`, so the division of §2.6 by `q − 0` gains nothing there; the stated condition excludes this point and admits `x = h^{δ/2}`.
+- The family must be bounded in `S^{−∞}_δ`: for G = H = {1}, π = σ = ℂ and ℓ the identity on the scalars, the family `a(h) = e^{1/h}` consists of Schwartz functions on the zero-dimensional dual, and `ℓ(Op_h(a)) = e^{1/h}` exceeds every `h^{−M}`; the bounded family a = 1 gives the value 1, which is O(1) as the a-priori estimate requires.
 
 ### Examples
 
@@ -623,7 +630,7 @@ For G = SL₂(ℝ) the quotient `[i𝔤^*]` is a line with parameter `λ² ∈ �
 
 ### Dependencies
 
-Layers 0–1; AutomorphicFormsOnReductiveGroups §§2.1–2.4; LieHighestWeight Layers 3, 5 and 7; NoncompactQuantumSymmetry M0; gap:unitary-exponent-bound; gap:vogan-minimal-ktype.
+Layers 0–1; AutomorphicFormsOnReductiveGroups §§2.1–2.4; FormalConnectionsOpers F4.3; LieHighestWeight Layers 3, 5 and 7; NoncompactQuantumSymmetry M0; gap:unitary-exponent-bound; gap:vogan-minimal-ktype.
 
 ## Layer 3: Coadjoint multiorbits and trace asymptotics
 
@@ -652,14 +659,15 @@ On a coadjoint orbit O ⊂ 𝔤^∧ put `σ_ξ(ad*_x ξ, ad*_y ξ) = [x,y]ξ / i
 
 For a real reductive group, the normalized measure of every coadjoint orbit is locally finite on 𝔤^∧: every compact set has finite mass, so every compactly supported continuous function is absolutely integrable. Each fibre of `𝔤^∧ → [𝔤^∧]` is a union of finitely many coadjoint orbits, their number bounded independently of the fibre (NV21 §6.1, p. 42, and §11.1, p. 83, attributing local finiteness to Ranga Rao and the uniform finiteness to Kostant and Whitney).
 
-*Proof route.* Transport by an invariant nondegenerate form to adjoint orbits and apply Ranga Rao's theorem on orbital integrals (rangarao72), converting its invariant measure to the KKS normalization of §3.1; the fibre count follows from Kostant's description of the fibres of the adjoint quotient and Whitney's finiteness of components of real algebraic sets.
+*Proof route.* Transport by an invariant nondegenerate form to adjoint orbits and apply Ranga Rao's theorem on orbital integrals (rangarao72), converting its invariant measure to the KKS normalization of §3.1. The fibre count has two inputs, both background cited by locator. Over ℂ: by Jordan decomposition, the fibre of the adjoint quotient χ over λ consists of the elements whose semisimple part lies in the closed orbit of one semisimple element s and whose nilpotent part is a nilpotent element of the reductive centralizer `𝔤^s`; its `G(ℂ)`-orbits correspond to the nilpotent orbits of that centralizer, which are finite in number, and only finitely many centralizers `𝔤^s` occur up to conjugacy, so every fibre is a finite union of `G(ℂ)`-orbits with a bound depending only on G (kostant63, Theorem 3 and Remark 16, as cited at NV21 §6.1, p. 42). Over ℝ: the real points of a complex orbit O meeting 𝔤 form a semialgebraic set on which the `G(ℝ)`-orbits are open, hence unions of its connected components, and a real algebraic set has finitely many connected components, their number bounded in terms of its degree data; so the real fibre is a finite union of `G(ℝ)`-orbits with a bound depending only on G (whitney57, §3, as cited at NV21 §6.1, p. 42). For one fixed fibre, finiteness of the components alone is at the pin: a cylindrical algebraic decomposition on whose cells the defining polynomials are sign-invariant exists (`TauCeti.exists_isCAD_signInvariant`), has finitely many cells (`TauCeti.IsCAD.finite`), each connected (`TauCeti.IsCAD.isConnected`), and a set defined by sign conditions on those polynomials is a union of its cells; the bound uniform in the fibre is Whitney's.
 
-*Needs:* §3.1; NilpotentOrbits N1.1 (fibres of the adjoint quotient over ℂ).
+*Needs:* §3.1; NilpotentOrbits N1.1 (the quotient map χ) and N2.2 (finiteness of the nilpotent orbits of a complex semisimple Lie algebra, applied to the derived algebra of each centralizer); kostant63, Theorem 3 and Remark 16, and whitney57, §3 (background, cited by locator); Tau Ceti `TauCeti.exists_isCAD_signInvariant`, `TauCeti.IsCAD.finite`, `TauCeti.IsCAD.isConnected` (`TauCeti/Geometry/RealAlgebraic/CAD/`).
 
 **Checks.**
 
 - For an abelian group every orbit is a point of mass 1.
 - The regular nilpotent orbit of SL₂(ℝ) is not closed (its closure contains 0) and has infinite total mass, but finite mass on every compact set: local finiteness, not finite volume, is the assertion.
+- For 𝔰𝔩₂ with the quotient `q(a, b, c) = a² + bc` on `[[a, b], [c, −a]]`: over ℂ the fibre over 0 is {0} together with the regular nilpotent orbit, two orbits, and the fibres over 1 and over −1 are one orbit each. Over ℝ the fibre over 0 is {0} and the two real regular nilpotent orbits, three `SL₂(ℝ)`-orbits, since the `GL₂(ℝ)`-centralizer `{a + bE₁₂}` of `E₁₂` has determinant `a² > 0`; the fibre over 1 is one orbit, since the centralizer of diag(1, −1) contains diag(1, −1) of determinant −1; and the fibre over −1 is two orbits, since J = `[[0, 1], [−1, 0]]` and −J are conjugate only through determinant −1 (the centralizer `{a + bJ}` has determinant `a² + b² > 0`). The uniform bounds are 2 over ℂ and 3 over ℝ; a count read off from the complex fibre alone would miss the real splitting, and a statement about the nilcone alone would say nothing about the fibres over ±1.
 
 ### 3.3 Rossmann's character formula
 
@@ -688,7 +696,7 @@ Topologize the set of regular multiorbits, including the empty one, by `O ↦ ω
 
 **Checks.**
 
-- A constant sequence converges to itself.
+- For a fixed spin-l representation of SU(2), `hO_π` is the sphere of radius `h(l + 1/2)` with mass `h(2l + 1)`, which tends to 0 as h → 0: the family converges to the empty multiorbit. For the character `e^{imθ}` of U(1), `hO_π = {ihm}` has mass 1 for every h and converges to the point orbit {0}, of mass 1. Both parameter families tend to 0 in the quotient, and the limits differ: the topology is on the measures, and a topology through the parameters alone could not separate them.
 - The point masses at `in ∈ i ℝ = (ℝ)^∧`, n → ∞, converge to 0, the empty multiorbit; excluding the empty multiorbit would leave this sequence without a limit.
 - Point masses alternating between i and `2i` have no limit along the full sequence, while each parity converges.
 
@@ -726,7 +734,7 @@ Let π be an irreducible tempered representation of G, possibly depending on h, 
 
 *Proof route.* By §3.3, `tr Op(a) = ∫_{O_π} (j^{−1/2} χ a^∨)^∧ dω`, and by homogeneity `tr Op_h(a) = h^{−d} ∫_{hO_π} (j_h^{−1/2} χ_h a^∨)^∧ dω` (NV21 (6.3)–(6.4), p. 44): the multiplier is `χ/√j`, not χ. Expand it by §1.7, giving the D_j; bound remainders by §3.6, keeping the weight `⟨hλ_π⟩`; for the limit use §3.4 with the uniform tails.
 
-*Needs:* §1.7, §1.10, §3.3, §3.4, §3.6; AutomorphicSpectralTheory §0.9 (trace).
+*Needs:* §1.7, §1.10, §3.3, §3.4, §3.6; VonNeumannAlgebras V4.Core (trace).
 
 **Checks.**
 
@@ -741,10 +749,10 @@ For p = 1, 2, ∞ let `T_p(π)` be the space of operators T on π such that ever
 - Forgetting commutators gives a continuous inclusion into S_p.
 - The word-u seminorm is `‖θ_u(T)‖_p`.
 - Adjunction preserves T_p continuously.
-- On T_1 the trace is the Hilbert-space trace of AutomorphicSpectralTheory §0.9.
+- On T_1 the trace is the Hilbert-space trace of VonNeumannAlgebras V4.Core.
 - Finite-rank operators built from smooth vectors lie in every T_p.
 
-*Needs:* §0.3; OperatorIdeals Parts B–C; AutomorphicSpectralTheory §0.9.
+*Needs:* §0.3; OperatorIdeals Parts B–C; VonNeumannAlgebras V4.Core.
 
 **Checks.**
 
@@ -756,15 +764,15 @@ For p = 1, 2, ∞ let `T_p(π)` be the space of operators T on π such that ever
 
 For N even and large enough in terms of G: `Ψ^{−N}(π)` maps continuously into `⟨λ_π⟩^{d−N} T_1` uniformly over tempered π, with `‖T‖₁ ≤ C⟨λ_π⟩^{d−N}‖T‖_{π^0 → π^N}`. For `Δ_h = 1 − h²Σ dπ(x)²`, `‖Δ_h^{−1}‖ ≤ 1` and `tr Δ_h^{−N/2} ≤ C h^{−d}⟨hλ_π⟩^{d−N}`. For `a ∈ S^{−N}_0`, `Op_h(a)` has trace norm `≪ h^{−d}⟨hλ_π⟩^{d−N}` and Hilbert–Schmidt norm `≪ h^{−d/2}⟨hλ_π⟩^{(d−N)/2}`. For each 0 ≤ δ < 1/2 and N large, `‖Op_h(a)‖₁ ≤ C h^{−d}` for bounded families in `S^{−N}_δ`. For bounded Schwartz tuples, `h^d Op_h(a₁)⋯Op_h(a_k) ∈ ⟨hλ_π⟩^{d−N} T_1` and differs from `h^d Op_h(a₁⋯a_k)` by an element of `h⟨hλ_π⟩^{d−N} T_1`. If `‖Ad(g)‖ ≤ h^{−1+ε}`, then `h^d Op_h(g·a) − h^d π(g)Op_h(a)π(g)^{−1} ∈ h^∞⟨hλ_π⟩^{d−N} T_1` for bounded `S^m_0` families of fixed finite order. Sufficiently negative orders are trace class for nontempered irreducible representations too, without the tempered weights (NV21 Theorem 6.3(ii)–(iii) and Remark 6.4, pp. 44–45; Lemma 12.1 and Theorem 12.2(ii)–(vii), §§12.2–12.3, pp. 87–90).
 
-*Proof route.* For N even, build an approximate inverse of `Δ_h^{N/2}`, an operator of order N, from the order −N symbol `⟨ξ⟩^{−N}`: `Δ_h^{N/2} Op_h(⟨ξ⟩^{−N}) ∈ 1 + hΨ^0` (NV21 Lemma 12.1), invert the bounded `1 + O(h)` error, and bound `tr Δ_h^{−N/2}` by positivity and §3.7. Factor order −N operators through `Δ^{−N/2}` and use `|tr(AB)| ≤ ‖A‖‖B‖₁`; Hilbert–Schmidt bounds come from `T*T`. Products and near-covariance use §1.12 and §1.11 with one more order and enough powers of h.
+*Proof route.* For N even, build an approximate inverse of `Δ_h^N`, an operator of order 2N, from the square of the quantized order −N symbol: `Δ_h^N Op_h(⟨ξ⟩^{−N})² ∈ 1 + hΨ^{−1}`, with inverse of operator norm O(1) for small h (NV21 Lemma 12.1, p. 87); the same composition formula gives `Δ_h^{N/2} Op_h(⟨ξ⟩^{−N/2})² ∈ 1 + hΨ^{−1}`, the form used for `tr Δ_h^{−N/2}` (proof of NV21 Theorem 12.2(ii), p. 89). Invert the bounded `1 + O(h)` error and bound `tr Δ_h^{−N/2}` by positivity and §3.7. Factor order −N operators through `Δ^{−N/2}` and use `|tr(AB)| ≤ ‖A‖‖B‖₁`; Hilbert–Schmidt bounds come from `T*T`. Products and near-covariance use §1.12 and §1.11 with one more order and enough powers of h.
 
-*Needs:* §1.11, §1.12, §3.7, §3.8; §0.6; AutomorphicSpectralTheory §0.9.
+*Needs:* §1.11, §1.12, §3.7, §3.8; §0.6; VonNeumannAlgebras V4.Core (trace); AutomorphicSpectralTheory §0.9 (the Hilbert–Schmidt product bound).
 
 **Checks.**
 
 - `‖Δ_h^{−1}‖ ≤ 1` since `Δ_h ≥ 1`; trace growth is `h^{−d}` and Hilbert–Schmidt growth `h^{−d/2}`, the Weyl-law count of states in a fixed region of a 2d-dimensional orbit at scale h.
 - The identity on an infinite-dimensional irreducible tempered π has vanishing commutators and is not trace class, so by the first assertion it is not in any `Ψ^{−N}` with N large: it has order 0 and is not smoothing.
-- For G = ℝ, N = 2 and the character of frequency t = 1/h, `Δ_h^{N/2} = 1 + h²t² = 2` and `⟨ht⟩^{−N} = 1/2`, so their product is 1, whereas `Δ_h^{N} = 4` would give 2: the exponent N/2 is forced by the orders.
+- For G = ℝ, N = 2 and the character of frequency t = 1/h: `Δ_h^N = (1 + h²t²)² = 4` and `Op_h(⟨ξ⟩^{−N})² = ⟨ht⟩^{−4} = 1/4`, product 1, as membership in `1 + hΨ^{−1}` requires; the half-order form gives `Δ_h^{N/2} Op_h(⟨ξ⟩^{−N/2})² = 2 · 1/2 = 1` as well; dropping the square, `Δ_h^N Op_h(⟨ξ⟩^{−N}) = 4 · 1/2 = 2`, which is not `1 + O(h)`: the orders `2N − 2N = 0` and `N − N = 0` both close, and the square is what the lemma uses.
 
 ### Examples
 
@@ -772,7 +780,7 @@ For SU(2), `O_π` for the spin-l representation is the sphere of radius `l + 1/2
 
 ### Dependencies
 
-Layers 0–2; SymplecticGeometry HamiltonianReduction R2 and ConvexityToric T4; NilpotentOrbits N1.1; FormalConnectionsOpers F4.3; OperatorIdeals Parts B–C; AutomorphicSpectralTheory §0.9; EndoscopicTransferAndUnitaryTraceComparison §2.3; AutomorphicFormsOnReductiveGroups §§2.4 and 2.7.
+Layers 0–2; SymplecticGeometry HamiltonianReduction R2 and ConvexityToric T4; NilpotentOrbits N1.1 and N2.2; FormalConnectionsOpers F4.3; OperatorIdeals Parts B–C; VonNeumannAlgebras V4.Core; AutomorphicSpectralTheory §0.9; EndoscopicTransferAndUnitaryTraceComparison §2.3; AutomorphicFormsOnReductiveGroups §§2.4 and 2.7; Tau Ceti `TauCeti.exists_isCAD_signInvariant`, `TauCeti.IsCAD.finite`, `TauCeti.IsCAD.isConnected`; kostant63 and whitney57 by locator.
 
 ## Layer 4: Uniform Plancherel bounds and local relative characters
 
@@ -833,7 +841,7 @@ For tempered irreducible π and `f ∈ F_Ξ(G)` there is a unique continuous `π
 
 *Proof route.* Move `Δ^{2N}` onto f from both sides (`f ↦ Δ^{2N} ∗ f ∗ Δ^{2N}`) to bound the pairing by a continuous seminorm of f times `‖Δ^{−N}u‖ ‖Δ^{−N}v‖`; sum over an orthonormal basis using §4.2; repeat after differentiating to obtain smooth outputs. Pass the Plancherel identity to the limit from compactly supported f using integrated trace-norm continuity; weak convergence of coefficients alone does not suffice.
 
-*Needs:* §4.2, §4.3; AutomorphicSpectralTheory §0.9 and gap:local-plancherel.
+*Needs:* §4.2, §4.3; VonNeumannAlgebras V4.Core (trace) and gap:local-plancherel.
 
 ### 4.5 Local relative characters
 
@@ -844,8 +852,11 @@ Let (G, H) be a GGP pair over F with Haar measures fixed, and π, σ tempered ir
 - `H_σ` is invariant under conjugation by H, `H_σ(π(s)Tπ(s)^{−1}) = H_σ(T)`, and on smoothing operators it factors through an H × H-equivariant map `Ψ^{−∞}(π) → Ψ^{−∞}(σ)` followed by the trace, which is invariant under the diagonal conjugation action. It is not invariant under independent left and right translations.
 - For F archimedean and N large in terms of G, `H_σ` extends to `Ψ^{−N}(π)` continuously, uniformly in π and σ, by `H_σ(T) = Σ_u ∫_H tr(π(s)T)⟨u, σ(s)u⟩ ds` (NV21 Lemma 18.1(iii), p. 121).
 - `H_σ(T*) = conj(H_σ(T))`: the form is Hermitian. Its nonnegativity on positive operators is not part of the construction; at p-adic places it is the input gap:relative-character-positivity, and at archimedean places it is not used (NV21 Remark 18.2, p. 122).
+- The rank-one value `H_σ(v₁ ⊗ v̄₂)` is, up to the sum over the basis, the local period form of the supplier: GanGrossPrasadUnitaryGroups §3.3 at a place where E is a field, §5.1a at a place where E splits (there `(G, H) = (GL_{n+1}, GL_n)`), gap:orthogonal-local-period-form for orthogonal pairs. In each case the form is nonzero exactly when `Hom_H(π ⊗ σ̄, ℂ) ≠ 0`.
 
-*Needs:* §3.9, §4.3, §4.4; GanGrossPrasadUnitaryGroups §2.7 (unitary convergence) and §3.3 (local period form), gap:orthogonal-xi-integrability and gap:orthogonal-local-period-form (orthogonal convergence and form).
+**Nontempered σ.** For a nontempered irreducible unitary σ of H the integral need not converge, and `H_σ` is instead the auxiliary form `H_σ(v₁ ⊗ v̄₂) = ⟨ℓ_σ(v₁), ℓ_σ(v₂)⟩` for a continuous H-intertwiner `ℓ_σ : π^∞ → σ^∞`, chosen nonzero whenever a nonzero one exists; by local multiplicity one such an `ℓ_σ` is unique up to a scalar, so `H_σ` is zero exactly when `Hom_H(π^∞, σ^∞) = 0` and is otherwise determined up to a positive real factor (NV21 §20, pp. 142–143). Extended linearly to finite-rank smooth operators it is Hermitian, nonnegative on positive operators, invariant under conjugation by H, and factors through the H × H-equivariant map `T ↦ ℓ_σ T ℓ_σ^*` into `Ψ^{−∞}(σ)` followed by the trace; each use (§§7.2, 7.6, 9.1, 9.5) fixes its scale so that this factorization is h-uniformly continuous, and every statement made about it is homogeneous in that scale. It is an auxiliary normalization, not the tempered integral, and no expansion of Layer 6 applies to it.
+
+*Needs:* §3.9, §4.3, §4.4; GanGrossPrasadUnitaryGroups §2.6 (multiplicity one, for the uniqueness of `ℓ_σ`), §2.7 (unitary convergence), §3.3 and §5.1a (the local period form at nonsplit and at split places); gap:orthogonal-multiplicity-one, gap:orthogonal-xi-integrability and gap:orthogonal-local-period-form (orthogonal multiplicity one, convergence and form).
 
 **Checks.**
 
@@ -854,6 +865,7 @@ Let (G, H) be a GGP pair over F with Haar measures fixed, and π, σ tempered ir
 - Multiplying the Haar measure of H by c multiplies `H_σ` by c and divides the Plancherel measure of H by c, leaving §4.6 unchanged.
 - Hermitian symmetry alone does not imply nonnegativity: the form `(z₁, z₂) ↦ z₁ z̄₂ + z₂ z̄₁` on ℂ² is Hermitian and takes the value −2 at (1, −1).
 - For SO(3) ⊃ SO(2) with probability Haar measure, v a unit weight-one vector of the spin-1 representation and `σ(θ) = e^{iθ}`: `f(θ) = e^{iθ}`, the definition gives `∫ e^{iθ} e^{−iθ} dθ = 1`, `tr σ̄(f) = 1`, while `tr σ(f) = ∫ e^{2iθ} dθ = 0`. For T = v ⊗ v̄, left translation alone gives `H_σ(π(θ)T) = e^{iθ}`, equal to −1 at θ = π, while conjugation leaves the value 1.
+- For nontempered σ, scaling a nonzero `ℓ_σ` by c > 0 scales the auxiliary form by c²; choosing `ℓ_σ = 0` although a nonzero intertwiner exists is excluded, since the period `P_Σ(− ⊗ T′)` of §9.1 is then a nonnegative multiple of `H_σ` by multiplicity one and could not be nonzero. For SO(3) ⊃ SO(2), where every σ is tempered, the auxiliary form is never used, and the tempered definition gives `H_σ = 1` on the weight-one projector above.
 
 ### 4.6 Relative Plancherel disintegration
 
@@ -874,7 +886,7 @@ For the compact GGP pair SO(3) ⊃ SO(2) with π the spin-l representation, `H_�
 
 ### Dependencies
 
-Layers 0–3; CompactGroups Layers 5–6; LieHighestWeight Layers 5–6; AutomorphicFormsOnReductiveGroups §§2.2–2.3; AutomorphicSpectralTheory §§0.9, 0.14, gap:local-plancherel and gap:tempered-xi-bounds; SmoothRepresentationsOfLocalGroups SR.1.1; GanGrossPrasadUnitaryGroups §§2.7 and 3.3; gap:orthogonal-xi-integrability; gap:orthogonal-local-period-form; gap:relative-character-positivity.
+Layers 0–3; CompactGroups Layers 5–6; LieHighestWeight Layers 5–6; AutomorphicFormsOnReductiveGroups §§2.2–2.3; VonNeumannAlgebras V4.Core; AutomorphicSpectralTheory §0.14, gap:local-plancherel and gap:tempered-xi-bounds; SmoothRepresentationsOfLocalGroups SR.1.1; GanGrossPrasadUnitaryGroups §§2.6, 2.7, 3.3 and 5.1a; gap:orthogonal-multiplicity-one; gap:orthogonal-xi-integrability; gap:orthogonal-local-period-form; gap:relative-character-positivity.
 
 ## Layer 5: Stable Hamiltonian reduction for GGP pairs
 
@@ -968,7 +980,7 @@ On the standard models the algebraically closed statement is `stableFibre_isTors
 
 *Proof route.* Open orbit: for the standard models compute the stabilizer in H of a generic pair of flags and check that the dimensions match, `dim B_G + dim B_H = dim G` (the source cites Beuzart-Plessis for this standard fact). Surjectivity (NV21 Lemma 14.6, pp. 99–100): choose a Borel B of G × H whose open orbit on X, on which it acts simply transitively, contains the base point x₀ = diag H; the fibre `T*_{x₀}X` is mapped by the moment map onto the annihilator `(diag 𝔥)^⊥ = {(ξ, −ξ_H) : ξ ∈ 𝔤^*}`, and restriction to 𝔟 is an isomorphism of this annihilator onto 𝔟^*, since `𝔟 + diag 𝔥 = 𝔤 ⊕ 𝔥` and the dimensions agree. Every functional λ on 𝔟 vanishing on its nilradical has extensions to 𝔤^* ⊕ 𝔥^* that all have the same invariants, namely the Weyl class of λ restricted to the Cartan (Chevalley restriction), so every point of `[𝔤] × [𝔥]` is attained as `([ξ], [−ξ_H])`; negate the second coordinate. An open orbit alone is not enough: the trivial stabilizer is what makes the restriction to 𝔟 bijective. For stable x the cyclicity criterion of §5.2 shows that the two characteristic polynomials determine the moments `⟨x^j e, e⟩` (Cramer's identities), so two points of one fibre have isometric cyclic spans; Witt's theorem extends the isometry, and in even orthogonal dimension the Pfaffian fixes the orientation. The induced morphism from the quotient of the stable locus to the stable pairs is surjective by Lemma 14.6 and injective by the torsor property, hence an isomorphism onto the normal variety of stable pairs by Zariski's main theorem (Mathlib `AlgebraicGeometry.Scheme.Hom.exists_isIso_morphismRestrict_toNormalization`, characteristic zero); trivial stabilizers and gap:free-stable-quotient-bundle then give the principal bundle structure. Over ℝ the unique conjugator of two real points of a geometric fibre is fixed by complex conjugation.
 
-*Needs:* §5.1, §5.2; AlgebraicModuliForArithmeticGeometry gap:free-stable-quotient-bundle; Mathlib `AlgebraicGeometry.Scheme.Hom.exists_isIso_morphismRestrict_toNormalization`; Tau Ceti quadratic-form Witt theorems; NilpotentOrbits N1.1 (fibres of the adjoint quotient); LieHighestWeight Layer 7 (Chevalley restriction).
+*Needs:* §5.1, §5.2; AlgebraicModuliForArithmeticGeometry gap:free-stable-quotient-bundle; Mathlib `AlgebraicGeometry.Scheme.Hom.exists_isIso_morphismRestrict_toNormalization`; Tau Ceti quadratic-form Witt theorems; NilpotentOrbits N1.1 (the quotient map `𝔤 → 𝔤//G`); FormalConnectionsOpers F4.3 (Chevalley restriction for the reductive groups G × H, central factors included).
 
 **`InvariantlyEquivalent`.** For a set A of matrices and a set Γ of invertible matrices, x and y are invariantly equivalent if every polynomial in the entries whose restriction to A is invariant under conjugation by Γ takes the same value at x and y. With A the skew-symmetric matrices and Γ = `Matrix.specialOrthogonalGroup`, or A all matrices and Γ the invertible ones, this is `[x] = [y]` in the GIT quotient over an algebraically closed field.
 
@@ -1014,7 +1026,7 @@ For a reductive Lie algebra 𝔥 and a Haar form `β_H` on 𝔥^*, there is a un
 
 *Proof route.* Compute the Jacobian of the tangent splitting into root spaces and the Cartan in a Chevalley basis at regular semisimple points, where the root factors give the discriminant; extend the identity of regular forms across the regular non-semisimple locus by Rossmann's normalization lemma (rossmann78).
 
-*Needs:* §2.1, §5.4; LieHighestWeight Layer 7 (Chevalley restriction).
+*Needs:* §2.1, §5.4; FormalConnectionsOpers F4.3 (Chevalley restriction and homogeneous invariant generators for reductive 𝔥, central factors included; for 𝔤𝔩₁ the single generator is the central coordinate).
 
 **Checks.**
 
@@ -1098,7 +1110,7 @@ For SO(3) ⊃ SO(2) over ℝ with V definite, `𝔤^∧ ≅ ℝ³`, a stable fib
 
 ### Dependencies
 
-Layers 0–3; AlgebraicModuliForArithmeticGeometry gap:hilbert-mumford-linear and gap:free-stable-quotient-bundle; Tau Ceti quadratic-form Witt theorems; Mathlib `Matrix.charpoly`, `Matrix.fromBlocks`, `Matrix.toBlocks₁₁`, `MvPolynomial.zeroLocus`, `Matrix.GeneralLinearGroup`, `Matrix.specialOrthogonalGroup`, `KaehlerDifferential`, `AlgebraicGeometry.Scheme.Hom.exists_isIso_morphismRestrict_toNormalization`; LieGroups Layer 1; LieHighestWeight Layer 7; NilpotentOrbits N1.1; SymplecticGeometry HamiltonianReduction R3; DifferentialGeometry Layer 5; GeometricMeasureTheory G2; AutomorphicSpectralTheory gap:local-plancherel; AutomorphicFormsOnReductiveGroups §0.3; AdelicAlgebraicGroups §3.5.
+Layers 0–3; AlgebraicModuliForArithmeticGeometry gap:hilbert-mumford-linear and gap:free-stable-quotient-bundle; Tau Ceti quadratic-form Witt theorems; Mathlib `Matrix.charpoly`, `Matrix.fromBlocks`, `Matrix.toBlocks₁₁`, `MvPolynomial.zeroLocus`, `Matrix.GeneralLinearGroup`, `Matrix.specialOrthogonalGroup`, `KaehlerDifferential`, `AlgebraicGeometry.Scheme.Hom.exists_isIso_morphismRestrict_toNormalization`; LieGroups Layer 1; FormalConnectionsOpers F4.3; NilpotentOrbits N1.1; SymplecticGeometry HamiltonianReduction R3; DifferentialGeometry Layer 5; GeometricMeasureTheory G2; AutomorphicSpectralTheory gap:local-plancherel; AutomorphicFormsOnReductiveGroups §0.3; AdelicAlgebraicGroups §3.5.
 
 ## Layer 6: Stable relative trace asymptotics
 
@@ -1134,12 +1146,13 @@ For a compact S-stable support in 𝔪^∧, `δ < δ′ < 1/2` and a fixed Θ �
 
 Outside a neighbourhood of the identity of radius `h^{1/2−η}` (η > 0 fixed in the proof) the integral of `tr(τ(s)Op_h(a))` over S, for a with compact stable support, is `O(h^∞)`. For moderate `Ad(s)` this follows from stable support separation and near covariance; for larger `Ad(s)`, one-parameter averaging in an expanding direction and integration by parts give rapid decay of the trace; in the huge range the Ξ-bounds and negative-order trace estimates make the integrated tail negligible (NV21 §§19.6–19.7, (19.25)–(19.27), Lemmas 19.6–19.8, pp. 131–135; at the end of §19, p. 136, the main term comes from the complementary small-distance region, not the large-distance one).
 
-*Proof route.* By §5.8 and freeness of the stable action, a compact stable support and its translate by s are separated when s is away from 1; compose with the translated support and apply §1.11 and the disjoint-support case of §1.12; beyond near covariance insert a one-parameter convolution and integrate by parts; cut off at `|s| ≤ h^{−N′}` for the algebraic norm of §5.8 and bound the tail by the polynomially weighted `Ξ_G Ξ_H`-integrability (gap:unitary-xi-polynomial-tail, gap:orthogonal-xi-polynomial-tail) and §3.9: the integrand is `≪ h^{−A} Ξ_G Ξ_H` for a fixed A from §4.1 and §3.9, and the tail is `≪ h^{N′η}`, so it is `O(h^N)` once `N′η > N + A`.
+*Proof route.* The whole support is not separated from its translates (Checks), so first partition a by §1.4 into polynomially many pieces, each supported in a ball of radius `h^{δ′}` with `max(δ, 1/2 − η/2) < δ′ < 1/2` (the statement is monotone in the symbol class, so the class exponent may be raised to δ′), and surround each ball by an envelope symbol ψ equal to 1 on the ball of twice and 0 off the ball of three times that radius; split `tr(τ(s)Op_h(a)) = tr(τ(s)Op_h(a)Op_h(1 − ψ)) + tr(Op_h(ψ)τ(s)Op_h(a))`, the first term negligible by the disjoint-support case of §1.12 and §3.9. In the moderate range `h^{δ′−η/2} ≤ ‖s − 1‖ ≤ h^{−ε}` replace `τ(s)Op_h(ψ)τ(s)^{−1}` by `Op_h(s·ψ)` through near covariance (§1.11), and show that `s·ψ` and the piece have disjoint supports: every ξ in the triple ball is moved by at least `h^{δ′−ε}`, from the uniform properness of §5.8 when `‖s − 1‖ ≥ h^ε` and from the triviality of the stabilizer of ξ (§5.3) when `h^ε > ‖s − 1‖ ≥ h^{δ′−η/2}`; the disjoint-support case of §1.12 then applies piecewise. Beyond near covariance, for `‖s − 1‖ > h^{−ε}`, insert a one-parameter convolution along a direction expanded by s and integrate by parts; cut off at `|s| ≤ h^{−N′}` for the algebraic norm of §5.8 and bound the tail by the polynomially weighted `Ξ_G Ξ_H`-integrability (gap:unitary-xi-polynomial-tail, gap:orthogonal-xi-polynomial-tail) and §3.9: the integrand is `≪ h^{−A} Ξ_G Ξ_H` for a fixed A from §4.1 and §3.9, and the tail is `≪ h^{N′η}`, so it is `O(h^N)` once `N′η > N + A`. The negligible power is chosen before the polynomially many pieces are summed (NV21 Lemma 19.8 and (19.26)–(19.27), pp. 133–134).
 
-*Needs:* §1.11, §1.12, §3.9, §4.1, §5.8, §6.1; GanGrossPrasadUnitaryGroups §2.7 and gap:orthogonal-xi-integrability (`Ξ_G Ξ_H`-integrability); gap:unitary-xi-polynomial-tail and gap:orthogonal-xi-polynomial-tail (its polynomially weighted form).
+*Needs:* §1.4, §1.11, §1.12, §3.9, §4.1, §5.3, §5.8, §6.1; GanGrossPrasadUnitaryGroups §2.7 and gap:orthogonal-xi-integrability (`Ξ_G Ξ_H`-integrability); gap:unitary-xi-polynomial-tail and gap:orthogonal-xi-polynomial-tail (its polynomially weighted form).
 
 **Checks.**
 
+- Separation needs the partition: for GL₂ ⊃ GL₁ acting by `(b, c) ↦ (tb, c/t)` on the stable coordinates, a compact stable set containing (1, 1) and (2, 1/2) meets its translate by t = 2 at the point (2, 1/2), although every stabilizer is trivial; the ball of radius r < 1/3 about (1, 1) is disjoint from its translate, which lies within distance 2r of (2, 1/2), at distance √5/2 from (1, 1).
 - The bound is for the integral over each range, not only the integrand: the huge range has infinite volume and is controlled by the integrable weight `Ξ_G Ξ_H`.
 - The tail needs a power of the norm, not of its logarithm: for GL₂ ⊃ GL₁ over ℝ, `Ξ_{GL₂}(diag(t, 1)) ≍ |t|^{−1/2}(1 + log|t|)` for |t| ≥ 1 and `Ξ_{GL₁} = 1`, so the tail beyond X is `∫_{|t| > X} |t|^{−3/2}(1 + log|t|) dt ≍ X^{−1/2} log X`, and every η < 1/2 works; a log-weighted bound gives only `(1 + log X)^{−d}`, and `h^{−A}(N′ log(1/h))^{−d}` is not `O(h^N)`.
 - The small-element computation of §6.2 is applied to the complementary region where the cutoff is 1.
@@ -1181,14 +1194,13 @@ For tempered π, σ, σ is orbit-distinguished by π if `O_{π,σ} ≠ ∅` (NV2
 
 **Checks.**
 
-- A tempered σ with `O_{π,σ} = ∅` has `k_h(σ) = 0` even when `k(hλ_σ) > 0`.
-- A nontempered σ with parameter in supp k has weight 0.
-- A tempered orbit-distinguished σ with `k(hλ_σ) = 2` has weight 2.
+- For SO(3) ⊃ SO(2) take the spin-l representations with `h_l = (3/4)/(l + 1/2)`, so that every `hO_π` and the limit O is the sphere of radius 3/4, and the characters `e^{imθ}` of SO(2), whose parameter `hλ_σ = hm` is the height coordinate on the sphere. At l = 1, h = 1/2, the weights m = 0, 1, 2 have `hλ_σ = 0, 1/2, 1`, and the fibres of the height are a circle of radius 3/4, a circle of radius `√5/4` (since `(3/4)² − (1/2)² = 5/16`) and the empty set. For k supported in (−3/4, 3/4) with k(0) = 1 and k(1/2) = 2 the weights are `k_h(σ) = 1, 2, 0`: the third is 0 because its fibre is empty, with `hλ_σ = 1` outside supp k as well. Evaluating k at the unscaled parameter `λ_σ = m` would give the weights 1, 0, 0, since 1 ∉ supp k; an orbit of the wrong radius, say 1 instead of 3/4, would make the m = 2 fibre a circle of radius 0 and could give it a nonzero weight.
+- For `H = SO(2,1)^0 ≅ PSL₂(ℝ)` with the parameter `λ²` of the Layer 2 Examples and k supported in the regular window `λ² ∈ (1/4, 1)`: a complementary-series σ has `λ_σ(H)² ∈ (0, 1)`, so `h²λ_σ² < h²` lies outside supp k once h < 1/2, and its weight is 0 by both clauses; at h = 1/10 the discrete series `D_k`, k even, with `h²(k − 1)² ∈ (1/4, 1)` are `D_8` and `D_{10}`, with `h²(k − 1)² = 49/100` and `81/100`, tempered with parameter in supp k, and their weight is `k(h²(k − 1)²)` or 0 according as `O_{π,σ}` is nonempty or empty. The nontempered clause is therefore only visible near the irregular point 0, which a window in the regular set excludes for small h; a window containing 0 would admit complementary series with parameter in supp k, all of weight 0.
 - Defining the weight through `Hom_H(π, σ) ≠ 0` would assert the converse of the last API fact, which is not supplied.
 
 ### 7.2 Positive archimedean inverse branching
 
-Let k, U, V be as in §7.1 with k ≥ 0. For every ε > 0 and N ≥ 0 there are nonnegative `a, a₁, a₂, a_nt ∈ C_c^∞(V)` with: `∫_O a₁² dω` bounded in terms of k and V, `∫_O a₂² dω ≤ ε`, `∫_O a_nt² dω ≤ ε`, and `|∫ k − ∫_O a² dω| ≤ ε`; and for h small, (i) for tempered σ with `hλ_σ ∈ U` and `O_{π,σ} ≠ ∅`, `|k_h(σ)| ≤ |H_σ(Op_h(a₁)²)|` and `|k_h(σ) − H_σ(Op_h(a)²)| ≤ |H_σ(Op_h(a₂)²)| + O(h^N)`; (ii) for nontempered σ with `hλ_σ ∈ U`, `H_σ(Op_h(a)²) = H_σ(Op_h(a_nt)²) + O(h^N)`, for the normalization of `H_σ` on nontempered σ by a family factoring h-uniformly through `Ψ^{−∞}(σ)` and the trace (NV21 Theorem 22.2, (22.8)–(22.11), pp. 146–148; the second inequality in (i) is printed without `O(h^N)`, which is needed outside the region where a₂ has positive fibre mass, and the image of supp a is chosen inside that region).
+Let k, U, V be as in §7.1 with k ≥ 0. For every ε > 0 and N ≥ 0 there are nonnegative `a, a₁, a₂, a_nt ∈ C_c^∞(V)` with: `∫_O a₁² dω` bounded in terms of k and V, `∫_O a₂² dω ≤ ε`, `∫_O a_nt² dω ≤ ε`, and `|∫ k − ∫_O a² dω| ≤ ε`; and for h small, (i) for tempered σ with `hλ_σ ∈ U` and `O_{π,σ} ≠ ∅`, `|k_h(σ)| ≤ |H_σ(Op_h(a₁)²)|` and `|k_h(σ) − H_σ(Op_h(a)²)| ≤ |H_σ(Op_h(a₂)²)| + O(h^N)`; (ii) for nontempered σ with `hλ_σ ∈ U`, `H_σ(Op_h(a)²) = H_σ(Op_h(a_nt)²) + O(h^N)`, where `H_σ` on nontempered σ is the auxiliary form of §4.5, scaled so that its factorization through `Ψ^{−∞}(σ)` and the trace is h-uniformly continuous; the identity is homogeneous in that scale and holds for every nonnegative multiple of the form (NV21 Theorem 22.2, (22.8)–(22.11), pp. 146–148; the second inequality in (i) is printed without `O(h^N)`, which is needed outside the region where a₂ has positive fibre mass, and the image of supp a is chosen inside that region).
 
 *Proof route.* Lift k to squared symbols by a partition of unity on the stable bundle; choose a₂ with positive fibre integral on a compact neighbourhood of the image of supp a and small total mass; choose a_nt equal to a near the preimage of the irregular H-parameters, a null compact set; apply §6.4 inside, §2.7 outside, and §2.3 to show that σ with parameter near regular points are tempered.
 
@@ -1244,7 +1256,7 @@ For a p-adic reductive H let l send a tempered irreducible σ to the conjugacy c
 
 ### 7.6 Allowable components and weights
 
-Fix tempered π over a p-adic field and a distinguished l-component D. D is allowable if there is a good J, with D in the J-visible part, such that every nonnegative continuous k on D, extended by 0 to the whole unitary dual of H, admits for every ε > 0: (i) positive finite-rank T, T₊ built from J-fixed smooth vectors of π with `tr T₊ ≤ ε` and `|k(σ) − H_σ(T)| ≤ H_σ(T₊)` for every irreducible unitary σ; and (ii) bi-J-invariant Hecke functions φ, φ₊ with φ₊ positive definite, `φ₊(1) ≤ ε` and `|k(σ) − tr σ(φ)| ≤ tr σ(φ₊)` for every irreducible unitary σ. On nontempered σ, `H_σ` is a fixed H-equivariant form, possibly 0. An allowable weight is a finite linear combination of continuous nonnegative weights supported on allowable components (NV21 Definition 24.3 and §24.2, pp. 159–160; §20, pp. 142–143).
+Fix tempered π over a p-adic field and a distinguished l-component D. D is allowable if there is a good J, with D in the J-visible part, such that every nonnegative continuous k on D, extended by 0 to the whole unitary dual of H, admits for every ε > 0: (i) positive finite-rank T, T₊ built from J-fixed smooth vectors of π with `tr T₊ ≤ ε` and `|k(σ) − H_σ(T)| ≤ H_σ(T₊)` for every irreducible unitary σ; and (ii) bi-J-invariant Hecke functions φ, φ₊ with φ₊ positive definite, `φ₊(1) ≤ ε` and `|k(σ) − tr σ(φ)| ≤ tr σ(φ₊)` for every irreducible unitary σ. On nontempered σ, `H_σ` is the auxiliary form of §4.5, zero exactly when `Hom_H(π, σ) = 0` and otherwise fixed up to a positive scale. An allowable weight is a finite linear combination of continuous nonnegative weights supported on allowable components (NV21 Definition 24.3 and §24.2, pp. 159–160; §20, pp. 142–143).
 
 - Every nonnegative continuous weight on D has the finite-rank approximation with trace-small positive error.
 - It has the Hecke approximation with positive error of small value at 1.
@@ -1271,7 +1283,7 @@ Fix tempered π over a p-adic field and a distinguished l-component D. D is allo
 
 **Checks.**
 
-- For the unramified component of PGL₂ over ℚ_p, the Satake parameter α ranges over the unit circle (tempered) and the two complementary intervals of real parameters of either sign; f must satisfy `|f| ≤ 2` on the whole unitary locus and `f ≥ 1` on both intervals. The printed example `f_n = α^{−n} + α^{−n+2} + … + α^n` after NV21 Lemma 24.10, p. 166, fails: on the unit circle `f_n(e^{iθ}) = sin((n+1)θ)/sin θ`, so `f_n(1) = n + 1 > 2` for n ≥ 2, and for odd n every exponent is odd, so `f_n ≤ −1` on the negative interval. The Stone–Weierstrass construction of the proof is what is used.
+- For the unramified component of PGL₂ over ℚ_p, with q = p, the Satake parameter α ranges over the unit circle (tempered) and the two complementary intervals `(q^{−1/2}, q^{1/2})` and `(−q^{1/2}, −q^{−1/2})` of real parameters; f must satisfy `|f| ≤ 2` on the whole unitary locus, intervals included, and `f ≥ 1` on both intervals. The polynomial `f_n(α) = n^{−1} Σ_{j=0}^{n} α^{−n+2j}` printed after NV21 Lemma 24.10, p. 166, satisfies the bound on the unit circle, where `f_n(e^{iθ}) = sin((n+1)θ)/(n sin θ)` has absolute value at most `(n + 1)/n ≤ 2` (`f_4(1) = 5/4`), but fails it on the complementary intervals: for q = 5, α = 2 and n = 4, `f_4(2) = (1/16 + 1/4 + 1 + 4 + 16)/4 = 341/64 > 2`, and for every fixed α > 1 in the interval `f_n(α) ≥ α^n/n` grows without bound; for odd n every exponent is odd, so `f_n < 0` on the negative interval (`f_1(−2) = −5/2`), violating `f ≥ 1` there. The Stone–Weierstrass construction of the proof is what is used.
 - A Weyl element acting trivially on a component has the whole component as fixed set; it is discarded before the lower-dimensional fixed-subtorus argument.
 
 ### 7.8 Cuspidal-type allowability
@@ -1311,7 +1323,7 @@ Fix a positive finite-rank smooth operator T′ of trace 1 on π′ at a fixed f
 - Each `C^∞(X)` seminorm of `[T]` is bounded by finitely many T_1 seminorms of T, uniformly in π.
 - The central character and its conjugate cancel on the diagonal, so `[T]` is invariant under the centre.
 
-*Needs:* §3.8, §3.9; AdelicAlgebraicGroups §3.4 (compactness); AutomorphicSpectralTheory §0.9.
+*Needs:* §3.8, §3.9; AdelicAlgebraicGroups §3.4 (compactness); VonNeumannAlgebras V4.Core (trace).
 
 **Checks.**
 
@@ -1358,7 +1370,7 @@ There is a weakly continuous G-equivariant assignment `ξ ↦ δ_ξ` from O to p
 
 For a quasi-split real reductive group G, a nilpotent element in the nilradical of a Borel subalgebra is regular if and only if all its simple-root components are nonzero (NV21 Lemma 27.5, p. 183, citing Kostant). The full Lie centralizer `𝔤_ξ` of a regular nilpotent ξ is abelian of dimension rank G and contains the centre. If S is a connected reductive algebraic subgroup of G whose Lie algebra contains `𝔤_ξ`, then S = G (NV21 Lemma 27.12, p. 186).
 
-*Proof route.* Complexify and use NilpotentOrbits N2.1 (Jacobson–Morozov) and N2.3 (the regular orbit and its centralizer dimension, compared with simple-root coefficients); a real Borel exists by quasi-splitness and Kostant's criterion descends (kostant63). For rigidity, containing the full centralizer forces equal rank and the centre; choose a compatible Cartan and positive system for S, compare simple-root components and the regular centralizer dimension, and conclude that every root space of G lies in S.
+*Proof route.* Complexify and use NilpotentOrbits N2.1 (Jacobson–Morozov) and N2.3 (the regular orbit and its centralizer dimension, compared with simple-root coefficients); a real Borel exists by quasi-splitness and Kostant's criterion descends (kostant59, Theorem 5.3). For rigidity, containing the full centralizer forces equal rank and the centre; choose a compatible Cartan and positive system for S, compare simple-root components and the regular centralizer dimension, and conclude that every root space of G lies in S.
 
 *Needs:* §3.1; LieGroups Layer 1; NilpotentOrbits N2.1, N2.3.
 
@@ -1426,7 +1438,7 @@ For `SO(3) ⊃ SO(2)` with V anisotropic over a totally real F, definite at ever
 
 ### Dependencies
 
-Layers 0–3; NilpotentOrbits N2; LieGroups Layers 1, 5, 7, 9; GeometryOfNumbersAndQuadraticArithmetic §4.2; AdelicAlgebraicGroups §§2.4, 3.4, 4.2; OrthogonalSpinGroups Layers 1–3, gap:local-spinor-images and gap:global-spinor-image; PseudodifferentialOperators P3; AutomorphicSpectralTheory §§0.9, 0.14; Mathlib `RealRMK.integral_rieszMeasure`; Tau Ceti `CliffordAlgebra.spinorNorm`, `CliffordAlgebra.range_spinToSpecialOrthogonal_eq_ker_spinorNorm`, `CliffordAlgebra.spinorNorm_surjective_of_not_anisotropic`, `CliffordAlgebra.spinorNorm_eq_one_of_posDef`, `CliffordAlgebra.spinorNorm_eq_one_of_negDef`, `CliffordAlgebra.spinorNorm_surjective_of_indefinite`.
+Layers 0–3; NilpotentOrbits N2; LieGroups Layers 1, 5, 7, 9; GeometryOfNumbersAndQuadraticArithmetic §4.2; AdelicAlgebraicGroups §§2.4, 3.4, 4.2; OrthogonalSpinGroups Layers 1–3, gap:local-spinor-images and gap:global-spinor-image; PseudodifferentialOperators P3; AutomorphicSpectralTheory §0.14; VonNeumannAlgebras V4.Core; Mathlib `RealRMK.integral_rieszMeasure`; Tau Ceti `CliffordAlgebra.spinorNorm`, `CliffordAlgebra.range_spinToSpecialOrthogonal_eq_ker_spinorNorm`, `CliffordAlgebra.spinorNorm_surjective_of_not_anisotropic`, `CliffordAlgebra.spinorNorm_eq_one_of_posDef`, `CliffordAlgebra.spinorNorm_eq_one_of_negDef`, `CliffordAlgebra.spinorNorm_surjective_of_indefinite`.
 
 ## Layer 9: Truncated periods and the weighted asymptotic formula
 
@@ -1434,15 +1446,15 @@ The positive period functional and its factorization, the smooth period Parseval
 
 ### 9.1 The positive period functional and local factors
 
-Fix once and for all an orthogonal decomposition of `L²([H])` into irreducible automorphic subrepresentations Σ, unramified outside R as in the global setting; a Σ is a summand of this decomposition, so an isomorphism class of global multiplicity m contributes m summands (NV21 §25.3, p. 168). For the fixed Π and such a Σ, define `P_Σ(T, S′)` for positive finite-rank smooth T on π and S′ on π′ by summing, over a decomposition of `T ⊗ S′` into rank-one terms `v ⊗ v̄`, the squared norm of the orthogonal projection of `v|_{[H]}` onto the summand Σ, and extend linearly; put `P_Σ(T) = P_Σ(T, T′)` for the fixed auxiliary T′. If the product functional `(T, S′) ↦ H_σ(T) H_{σ′}(S′)` is nonzero, define `L(Π, Σ)` as the unique scalar with `P_Σ(T, S′) = L(Π, Σ) H_σ(T) H_{σ′}(S′)` for all T and S′, which exists by the global period factorization; if it vanishes identically, put `L(Π, Σ) = 0`, and then `P_Σ = 0` as well, since a nonzero global period would give a nonzero local invariant form and hence, by the local period-form inputs, nonzero `H_σ` and `H_{σ′}` (NV21 §25.4, pp. 168–169; §§28.1–28.2 and (28.1)–(28.6), pp. 187–189). In particular `P_Σ(T) = L(Π, Σ) H_σ(T) H_{σ′}(T′)` for every T, also when `H_{σ′}(T′) = 0`. The factorization and the local period forms are supplier inputs, not consequences of the definition.
+Fix once and for all an orthogonal decomposition of `L²([H])` into irreducible automorphic subrepresentations Σ, unramified outside R as in the global setting; a Σ is a summand of this decomposition, so an isomorphism class of global multiplicity m contributes m summands (NV21 §25.3, p. 168). For the fixed Π and every such Σ, define `P_Σ(T, S′)` for positive finite-rank smooth T on π and S′ on π′ by summing, over a decomposition of `T ⊗ S′` into rank-one terms `v ⊗ v̄`, the squared norm of the orthogonal projection of `v|_{[H]}` onto the summand Σ, and extend linearly; put `P_Σ(T) = P_Σ(T, T′)` for the fixed auxiliary T′. When σ and σ′ are tempered, `H_σ` and `H_{σ′}` are the tempered relative characters of §4.5 and the branching coefficient is defined as follows. If the product functional `(T, S′) ↦ H_σ(T) H_{σ′}(S′)` is nonzero, `L(Π, Σ)` is the unique scalar with `P_Σ(T, S′) = L(Π, Σ) H_σ(T) H_{σ′}(S′)` for all T and S′, which exists by the global period factorization; if it vanishes identically, put `L(Π, Σ) = 0`, and then `P_Σ = 0` as well: the tempered local period form is nonzero exactly when the local intertwining space is nonzero (GanGrossPrasadUnitaryGroups §3.3 at the places where E is a field, §5.1a at the places where E splits, gap:orthogonal-local-period-form for orthogonal pairs), so a nonzero global period, which factors through nonzero local intertwining spaces, would give nonzero `H_σ` and `H_{σ′}` (NV21 §25.4, pp. 168–169; §§28.1–28.2 and (28.1)–(28.6), pp. 187–189). In particular `P_Σ(T) = L(Π, Σ) H_σ(T) H_{σ′}(T′)` for every T, also when `H_{σ′}(T′) = 0`. When σ or σ′ is nontempered, no `L(Π, Σ)` is defined and `P_Σ` is kept as it is: it enters the Parseval identity of §9.2 and the truncation of §9.3 as a summand, and it is bounded in §9.5 through the nontempered clause of §7.2 and the auxiliary majorants of §7.6, using that `P_Σ(− ⊗ T′)` is an H-invariant nonnegative Hermitian form on π and hence, by multiplicity one, a nonnegative multiple of the auxiliary form `H_σ` of §4.5, whose normalization makes it nonzero whenever `P_Σ(− ⊗ T′)` is (NV21 §28.2, p. 188, cases (i)–(ii)). The factorization and the local period forms are supplier inputs, not consequences of the definition.
 
 - For `T = v ⊗ v̄`, `P_Σ(T)` is the squared norm of the Σ-projection of the restriction of the automorphic vector.
 - `P_Σ(T) ≥ 0` for T ≥ 0.
 - `P_Σ` extends by polarization to a linear functional on smooth finite-rank operators.
-- With the supplied normalization, `P_Σ = L(Π, Σ) H_σ ⊗ H_{σ′}` on operators `T ⊗ S′`.
+- With the supplied normalization, `P_Σ = L(Π, Σ) H_σ ⊗ H_{σ′}` on operators `T ⊗ S′` whenever σ and σ′ are tempered; for nontempered σ, `P_Σ(− ⊗ T′) = c H_σ` with c ≥ 0 and the auxiliary `H_σ` of §4.5, and no coefficient L is attached.
 - For summands Σ₁, Σ₂ of the decomposition that are isomorphic, `P_{Σ₁} + P_{Σ₂}` is the squared norm of the projection onto `Σ₁ ⊕ Σ₂` and `L(Π, Σ₁) + L(Π, Σ₂)` its coefficient; these sums do not depend on how the isotypic part is split into summands.
 
-*Needs:* §4.5, §8.1; AutomorphicSpectralTheory §§4.5, 4.7; GanGrossPrasadUnitaryGroups §§2.6, 4.2 (unitary multiplicity one and factorization); gap:orthogonal-multiplicity-one; gap:orthogonal-period-factorization.
+*Needs:* §4.5, §8.1; AutomorphicSpectralTheory §§4.5, 4.7; GanGrossPrasadUnitaryGroups §§2.6, 3.3, 4.2, 5.1a (unitary multiplicity one, the local period forms at nonsplit and at split places, factorization); gap:orthogonal-multiplicity-one; gap:orthogonal-local-period-form; gap:orthogonal-period-factorization.
 
 **Checks.**
 
@@ -1450,7 +1462,8 @@ Fix once and for all an orthogonal decomposition of `L²([H])` into irreducible 
 - Replacing v by cv multiplies the period by `|c|²`, not c.
 - Two orthogonal copies Σ₁, Σ₂ of one isomorphism class, onto each of which v projects with squared norm 1 and with local factors normalized to 1, give `P_{Σ₁} = P_{Σ₂} = 1`, summing to 2 as Parseval requires; projecting each summand onto the whole isotypic part would give 2 for each and a total of 4.
 - At a compact SO(2) auxiliary factor with σ′ of weight 1 and T′ the projection onto weight 0, `H_{σ′}(T′) = 0` and `P_Σ(T) = 0` for every T, so `P_Σ(T) = L H_σ(T) H_{σ′}(T′)` alone determines no L; with S′ variable, the weight-one projection has `H_{σ′}(S′) = 1` and determines L.
-- If σ or σ′ is not locally distinguished, `L(Π, Σ) = 0` by convention and `P_Σ = 0`.
+- If σ and σ′ are tempered and one of them is not locally distinguished, `L(Π, Σ) = 0` by convention and `P_Σ = 0`.
+- The equation `P = L · 0` with P ≠ 0 cannot arise: for tempered σ, `H_σ = 0` forces `Hom_H(π, σ) = 0` and hence a zero period; for nontempered σ the normalization of §4.5 makes `H_σ` nonzero whenever a nonzero intertwiner exists, so `P_Σ(− ⊗ T′) = c H_σ` with `c ≥ 0`, and `P_Σ(− ⊗ T′) ≠ 0` forces `c > 0`. A convention allowing `H_σ = 0` on a nontempered σ with `Hom_H(π, σ) ≠ 0` would leave a nonzero `P_Σ` undetected by every local form, which is why the auxiliary form is normalized as it is. At a split place of a unitary pair the local form is the one of §5.1a, nonzero on some smooth tensor for every tempered pair: with `GL₂(F) ⊃ GL₁(F)` and nonzero Whittaker test vectors it has the positive diagonal value `ab |λ(W)|²` for positive measure constants a, b, so a citation of §3.3 alone, which excludes `E = F × F`, would leave that place without a form.
 
 ### 9.2 Smooth period Parseval and the weak Weyl bound
 
@@ -1495,7 +1508,7 @@ For k ≥ 0 compactly supported in `[𝔥^∧] ∩ image(O_stab)` and a limit `h
 
 In the global setting of Layer 8, including the exclusion `Π ≇ Π ⊗ (η_{K/F} ∘ θ)` for SO(3) ⊃ SO(2), fix k ∈ `C_c^∞([𝔥^∧] ∩ image(O_stab))` and an auxiliary weight k′ on the tempered π′-distinguished dual of `H′`: a finite linear combination of products of finitely supported weights at the compact archimedean places and allowable weights (§7.6) at the finite places of R ∖ {q}. Then `h^d Σ_Σ L(Π, Σ) k_h(σ) k′(σ′) → (τ(H)/τ(G)) ∫ k ∫ k′`, the sum over the summands Σ of the fixed decomposition of §9.1 with σ, σ′ tempered and `O_{π,σ} ≠ ∅` (an isomorphism class of multiplicity m contributes m terms, each with its own `L(Π, Σ)` as in §9.1, so multiplicity is counted once), ∫k for the normalized affine measure on `[𝔥^∧]` and ∫k′ for the Plancherel measure of `H′` (NV21 Theorem 30.1, Definition 30.2 and Lemmas 30.3–30.6, pp. 194–200).
 
-*Proof route.* Choose V, W, U by §9.4. By linearity reduce to nonnegative product weights. Build tensor-product tests from §7.2 at q and §§7.6–7.8 at the auxiliary places, with trace-small positive majorants; apply §9.2, §9.3 and §8.8: the main mass is the normalized affine integral of k (§5.9, §7.2) times the auxiliary Plancherel mass. Control nontempered terms by the small-mass test a_nt and the all-unitary auxiliary majorants, and sum residual `O(h^N)` terms by §9.2. Let h → 0 before the tolerance ε → 0; every subsequence has a further subsequence with the same limit, giving the full limit.
+*Proof route.* Choose V, W, U by §9.4. By linearity reduce to nonnegative product weights. Build tensor-product tests from §7.2 at q and §§7.6–7.8 at the auxiliary places, with trace-small positive majorants; apply §9.2, §9.3 and §8.8: the main mass is the normalized affine integral of k (§5.9, §7.2) times the auxiliary Plancherel mass. Control nontempered terms by the small-mass test a_nt and the all-unitary auxiliary majorants: for nontempered σ the form `P_Σ(− ⊗ T′)` is a nonnegative multiple of the auxiliary `H_σ` of §4.5 (§9.1), so the nontempered clause of §7.2 gives `P_Σ(Op_h(a)² ⊗ T′) = P_Σ(Op_h(a_nt)² ⊗ T′) + O(h^N)` without any coefficient `L(Π, Σ)`; sum residual `O(h^N)` terms by §9.2. Let h → 0 before the tolerance ε → 0; every subsequence has a further subsequence with the same limit, giving the full limit.
 
 *Needs:* §5.9, §7.2, §7.3, §7.6, §7.8, §8.8, §9.1, §9.2, §9.3, §9.4.
 
@@ -1510,7 +1523,7 @@ For `U(2) ⊃ U(1)` with `G_q = U(1,1)`, d = 1 and Σ runs through automorphic c
 
 ### Dependencies
 
-Layers 0–8; AutomorphicSpectralTheory §§4.5, 4.7, gap:kernel-spectral-expansion, gap:polynomial-eigenvalue-count and gap:orbit-restriction-sobolev; GanGrossPrasadUnitaryGroups §§2.6, 4.2; gap:orthogonal-multiplicity-one; gap:orthogonal-period-factorization.
+Layers 0–8; AutomorphicSpectralTheory §§4.5, 4.7, gap:kernel-spectral-expansion, gap:polynomial-eigenvalue-count and gap:orbit-restriction-sobolev; GanGrossPrasadUnitaryGroups §§2.6, 3.3, 4.2, 5.1a; gap:orthogonal-multiplicity-one; gap:orthogonal-local-period-form; gap:orthogonal-period-factorization.
 
 ## Downstream consumers
 
@@ -1536,6 +1549,8 @@ QuantitativeOrbitMethodAndMicrolocalAnalysisOnLieGroups, Part II starts from §9
 - rossmann78: Wulf Rossmann, *Kirillov's character formula for reductive Lie groups*, Inventiones Mathematicae 48 (1978), 207–220, doi:10.1007/BF01390244 (paywalled; cited by its locator); cited for the route of §3.3 and Lemma C used in §5.5.
 - rangarao72: R. Ranga Rao, *Orbital integrals in reductive groups*, Annals of Mathematics 96 (1972), 505–510, doi:10.2307/1970822 (paywalled; cited by its locator); cited for the route of §3.2.
 - barbasch-vogan80: Dan Barbasch and David A. Vogan, Jr., *The local structure of characters*, Journal of Functional Analysis 37 (1980), 27–55, doi:10.1016/0022-1236(80)90026-9 (paywalled; cited by its locator); cited for the route of §3.6.
-- kostant63: Bertram Kostant, *Lie group representations on polynomial rings*, American Journal of Mathematics 85 (1963), 327–404, doi:10.2307/2373130 (paywalled; cited by its locator); cited for the route of §8.4 (Theorem 5.3, as cited in NV21 Lemma 27.5).
+- kostant63: Bertram Kostant, *Lie group representations on polynomial rings*, American Journal of Mathematics 85 (1963), 327–404, doi:10.2307/2373130 (paywalled; cited by its locator); cited for the fibre count of §3.2 (Theorem 3 and Remark 16, as cited in NV21 §6.1).
+- kostant59: Bertram Kostant, *The principal three-dimensional subgroup and the Betti numbers of a complex simple Lie group*, American Journal of Mathematics 81 (1959), 973–1032, doi:10.2307/2372999 (paywalled; cited by its locator); cited for the route of §8.4 (Theorem 5.3, the regular-nilpotent criterion, as cited in NV21 Lemma 27.5).
+- whitney57: Hassler Whitney, *Elementary structure of real algebraic varieties*, Annals of Mathematics 66 (1957), 545–556, doi:10.2307/1969908 (paywalled; cited by its locator); cited for the finiteness of connected components of real algebraic sets in §3.2 (§3, as cited in NV21 §6.1).
 - kostant78: Bertram Kostant, *On Whittaker vectors and representation theory*, Inventiones Mathematicae 48 (1978), 101–184, doi:10.1007/BF01390249 (paywalled; cited by its locator); cited for the genericity criterion in §3.6 (Theorem 6.7.2, as cited in NV21 Lemma 11.6).
 - rallis-schiffmann: Stephen Rallis and Gérard Schiffmann, *Multiplicity one conjectures*, arXiv:0705.2168; cited in §5.2 for the related stability equivalence (Theorems 6.1 and 17.1, as cited in NV21 Remark 14.9).

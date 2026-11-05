@@ -107,9 +107,39 @@ year = 1963
 venue = "American Journal of Mathematics 85"
 doi = "10.2307/2373130"
 locator_scheme = "theorem"
-locator = "Theorem 5.3, as cited in nv21 Lemma 27.5, p. 183"
+locator = "Theorem 3 and Remark 16, as cited in nv21 Section 6.1, p. 42 (fibres of the adjoint quotient are finite unions of orbits, uniformly bounded)"
 url = "https://doi.org/10.2307/2373130"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled (JSTOR); cited by its locator without the text"
+cited_for = ["3.2"]
+
+[[source]]
+id = "kostant59"
+authors = "Bertram Kostant"
+title = "The principal three-dimensional subgroup and the Betti numbers of a complex simple Lie group"
+year = 1959
+venue = "American Journal of Mathematics 81"
+doi = "10.2307/2372999"
+locator_scheme = "theorem"
+locator = "Theorem 5.3, as cited in nv21 Lemma 27.5, p. 183 (a nilpotent in a Borel nilradical is regular iff all simple-root components are nonzero)"
+url = "https://doi.org/10.2307/2372999"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (JSTOR); cited by its locator without the text"
 cited_for = ["8.4"]
+
+[[source]]
+id = "whitney57"
+authors = "Hassler Whitney"
+title = "Elementary structure of real algebraic varieties"
+year = 1957
+venue = "Annals of Mathematics 66"
+doi = "10.2307/1969908"
+locator_scheme = "section"
+locator = "Section 3, as cited in nv21 Section 6.1, p. 42 (a real algebraic set has finitely many connected components, their number bounded in terms of its degree data)"
+url = "https://doi.org/10.2307/1969908"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (JSTOR); cited by its locator without the text"
+cited_for = ["3.2"]

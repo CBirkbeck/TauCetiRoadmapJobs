@@ -1,6 +1,8 @@
-import Mathlib
-import TauCeti.Geometry.Lie.Exponential.Basic
-import TauCeti.RepresentationTheory.Continuous.Unitary.Basic
+module
+
+public import Mathlib
+public import TauCeti.Geometry.Lie.Exponential.Basic
+public import TauCeti.RepresentationTheory.Continuous.Unitary.Basic
 
 /-!
 # The quantitative orbit method and microlocal analysis on Lie groups: target signatures
@@ -71,6 +73,8 @@ open scoped ContDiff Manifold FourierTransform SchwartzMap Topology
 
 open Polynomial Matrix
 
+@[expose] public section
+
 namespace TauCetiRoadmap.QuantitativeOrbitMethodAndMicrolocalAnalysisOnLieGroups
 
 attribute [local instance] LieGroup.minSmoothnessThree
@@ -116,7 +120,7 @@ theorem exists_norm_quantize_le {E : Type*} [NormedAddCommGroup E] [InnerProduct
     ∃ U ∈ 𝓝 (0 : E), ∀ χ : E → ℝ, IsQuantizationCutoff U χ →
       ∃ (C : ℝ) (N : ℕ), ∀ (V : Type u) [NormedAddCommGroup V] [InnerProductSpace ℂ V]
         [CompleteSpace V] (π : ContRepresentation ℂ G V),
-        TauCeti.ContRepresentation.IsUnitary π → (∀ v : V, Continuous fun g : G => π g v) →
+        ContRepresentation.IsUnitary π → (∀ v : V, Continuous fun g : G => π g v) →
         ∀ (h : ℝ), 0 < h → h ≤ 1 → ∀ (b : 𝓢(E, ℂ)) (M : ℝ),
           (∀ j ≤ N, ∀ η : E, h ^ (δ * j) * (1 + ‖η‖) ^ j * ‖iteratedFDeriv ℝ j b η‖ ≤ M) →
           ∀ v : V, ‖quantize π χ (fun η : E => b (h • η)) v‖ ≤ C * M * ‖v‖ := by
