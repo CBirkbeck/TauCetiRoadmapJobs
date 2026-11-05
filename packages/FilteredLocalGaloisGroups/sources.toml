@@ -1,0 +1,66 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "FilteredLocalGaloisGroups"
+
+[[source]]
+id = "hyeon2025"
+authors = "Hyeon"
+title = "The $m$-step solvable anabelian geometry of mixed-characteristic local fields"
+year = 2025
+arxiv = "2405.16950v4"
+locator_scheme = "theorem"
+locator = "Prop. A.1"
+url = "https://arxiv.org/abs/2405.16950v4"
+fetched_from = "https://arxiv.org/pdf/2405.16950v4"
+fetched_at = "2026-11-05T17:11:18Z"
+sha256 = "d32627772bf7f48373c7a51fbe0b6943530c353b0b22c5d76cb7504ddceeb33b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v4"
+cited_for = ["3.4"]
+
+[[source]]
+id = "mochizuki1997"
+locator_scheme = "theorem"
+locator = "Def. 2.3"
+url = "https://www.kurims.kyoto-u.ac.jp/~motizuki/A%20Version%20of%20the%20Grothendieck%20Conjecture%20for%20p-adic%20Local%20Fields.pdf"
+fetched_from = "https://www.kurims.kyoto-u.ac.jp/~motizuki/A%20Version%20of%20the%20Grothendieck%20Conjecture%20for%20p-adic%20Local%20Fields.pdf"
+fetched_at = "2026-11-05T17:11:27Z"
+sha256 = "757670e59a4e9d4c69675fec91b5d6998b411d3554e721b40d445e61a867121e"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["conventions"]
+
+[[source]]
+id = "saidi-tamagawa2022"
+authors = "Saïdi"
+title = "The $m$-step solvable anabelian geometry of number fields"
+year = 2022
+arxiv = "1909.08829v2"
+locator_scheme = "theorem"
+locator = "Prop. 1.1"
+url = "https://arxiv.org/abs/1909.08829v2"
+fetched_from = "https://arxiv.org/pdf/1909.08829v2"
+fetched_at = "2026-11-05T17:11:31Z"
+sha256 = "dfb3fd1c42997040139c09b8f8cc1b8d7e08c9b3e27e17e883f2685d7263b82b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v2"
+cited_for = ["references"]
+
+[[source]]
+id = "serre-local-fields"
+authors = "Jean-Pierre Serre"
+title = "Local Fields"
+year = 1979
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4757-5673-9"
+locator_scheme = "chapter"
+locator = "IV"
+url = "https://doi.org/10.1007/978-1-4757-5673-9"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["conventions"]
