@@ -258,3 +258,17 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["2.2"]
+
+[[source]]
+id = "thurston1986"
+authors = "William P. Thurston"
+title = "A norm for the homology of 3-manifolds"
+year = 1986
+doi = "10.1090/memo/0339"
+locator_scheme = "section"
+locator = "Section 2"
+url = "https://doi.org/10.1090/memo/0339"
+licence_class = "none"
+status = "uncertified"
+version_note = "Mem. Amer. Math. Soc. 59 (1986), no. 339, 99-130; paywalled at AMS, cited by its locator without the text"
+cited_for = ["10.3", "10.4"]
