@@ -1,5 +1,7 @@
-import Mathlib
-import TauCeti.Topology.Algebra.Group.Profinite.CompletedGroupAlgebra.Basic
+module
+
+public import Mathlib
+public import TauCeti.Topology.Algebra.Group.Profinite.CompletedGroupAlgebra.Basic
 
 /-!
 # Locally analytic distributions, part II: target signatures
@@ -38,12 +40,16 @@ Not statable at the pins, with the carrier each one lacks:
   README §4.3): it needs the space of locally analytic functions with its compact-type topology and
   its strong dual.
 * The algebraic Peter–Weyl theorem `K[[G₁]]/Ann(W_k) ≅ End_K(W_k)` (Fu, (32); README §5.2): it
-  needs the action of the completed group algebra on `Sym^k(K²)`, the continuous extension of the
-  algebraic representation, which is a construction through the finite quotients of the lattice
-  `Sym^k(ℤ_p²)` rather than a library object.
+  needs the lattice `Sym^k(ℤ_p²)` as a compact `ℤ_p`-module with its continuous `SL₂(ℤ_p)`-action.
+  Mathlib's `SymmetricPower` carries no functoriality and no group action at the pin, and the
+  `DistribMulAction` of `SL₂(ℤ_p)` on `Fin 2 → ℤ_p` gives only `k = 1`. Once that carrier exists,
+  the `ℤ_p[[G₁]]`-module structure is `TauCeti.IsCompactModule.completedGroupAlgebraModule`, whose
+  group elements act as `G₁` does (`TauCeti.IsCompactModule.completedSMul_of`).
 * The Fréchet–Stein property of the Arens–Michael envelope `𝒰(g)` (README §2.5): it needs
   Fréchet–Stein algebras and the completions `U(g)_r`.
 -/
+
+@[expose] public section
 
 open TensorProduct
 
