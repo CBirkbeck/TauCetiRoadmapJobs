@@ -52,3 +52,93 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-03"
 cited_for = ["K6.1"]
+
+[[source]]
+id = "demailly-agbook"
+locator_scheme = "theorem"
+locator = "Chapter II, Theorem 4.29"
+url = "https://www-fourier.univ-grenoble-alpes.fr/~demailly/manuscripts/agbook.pdf"
+fetched_from = "https://www-fourier.univ-grenoble-alpes.fr/~demailly/manuscripts/agbook.pdf"
+fetched_at = "2026-11-05T01:27:50Z"
+sha256 = "d7c7654a7417e8322e5dcf8fe8ec818b4c1a18cf280b41f2df5a871b776d89a1"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["K3"]
+
+[[source]]
+id = "sakane-parallelisable"
+locator_scheme = "page"
+locator = "Theorem 1, pp. 188-189"
+url = "https://ir.library.osaka-u.ac.jp/repo/ouka/all/5964/ojm13_01_13.pdf"
+fetched_from = "https://ir.library.osaka-u.ac.jp/repo/ouka/all/5964/ojm13_01_13.pdf"
+fetched_at = "2026-11-05T01:27:54Z"
+sha256 = "cc5cb069fa116d8684c4493fc88feb238caa9554fe2dfed2924da27929222011"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["K8"]
+
+[[source]]
+id = "angella-iwasawa"
+authors = "Daniele Angella"
+title = "The cohomologies of the Iwasawa manifold and of its small deformations"
+year = 2012
+venue = "J. Geom. Anal. 23 (2013), no. 3, 1355-1378"
+doi = "10.1007/s12220-011-9291-z"
+arxiv = "1212.4351v1"
+locator_scheme = "theorem"
+locator = "Theorem 4.1 and Appendix A"
+url = "https://arxiv.org/abs/1212.4351v1"
+fetched_from = "https://arxiv.org/pdf/1212.4351v1"
+fetched_at = "2026-11-05T01:27:58Z"
+sha256 = "3f68ba247c9a057074a103c2e08a64ccd99f26c6fdcc91bbc1e9ed8835d382f9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v1"
+cited_for = ["K8"]
+
+[[source]]
+id = "webster-nn"
+authors = "S. M. Webster"
+title = "A new proof of the Newlander-Nirenberg theorem"
+year = 1989
+venue = "Mathematische Zeitschrift 201"
+doi = "10.1007/bf01214897"
+locator_scheme = "page"
+locator = "pp. 303-316"
+url = "https://doi.org/10.1007/bf01214897"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["K1"]
+
+[[source]]
+id = "hormander-alpdo1"
+authors = "L. Hörmander"
+title = "Linear Partial Differential Operators"
+year = 1990
+doi = "10.1007/978-3-662-30722-9"
+locator_scheme = "theorem"
+locator = "Theorems 2.3.4 and 2.3.5"
+url = "https://doi.org/10.1007/978-3-662-30722-9"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["K5a.3"]
+
+[[source]]
+id = "wells-dacm"
+authors = "Raymond O. Wells"
+title = "Differential Analysis on Complex Manifolds"
+year = 2007
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-0-387-73892-5"
+locator_scheme = "chapter"
+locator = "Chapter IV"
+url = "https://doi.org/10.1007/978-0-387-73892-5"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["K5a.10, K5b.1"]
