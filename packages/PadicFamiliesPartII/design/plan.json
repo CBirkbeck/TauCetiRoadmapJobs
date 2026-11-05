@@ -3830,19 +3830,19 @@
       "slug": "partial-hasse-regularity",
       "needs": "On the Hilbert–Siegel and Siegel normalized models, supply regularity of the partial Hasse invariants after arbitrary powers of the others on the supported special-fibre strata, relative toroidal-to-minimal acyclicity of the cuspidal coefficients, and the two-affine cover of the p-rank-at-least-one minimal special fibre (P20 Lemma 8.2.1, BCGP21 Theorem 4.2.12).",
       "supplier": "ShimuraCompactifications",
-      "section": "§C5.20"
+      "section": "§7.20"
     },
     {
       "slug": "mixed-cube-cover",
       "needs": "Supply the cover of the mixed-level Hilbert–Siegel minimal compactification by the 2^{|I|} affinoids indexed by [2,3]^I whose finite intersections are acyclic for the toroidal-to-minimal pushforward of the analytic coefficients (BCGP21 Theorem 6.2.6).",
       "supplier": "ShimuraCompactifications",
-      "section": "§C5.25"
+      "section": "§7.25"
     },
     {
       "slug": "tame-boundary-stabilizers",
       "needs": "For normal neat tame levels K1 ⊂ K2 of the Siegel threefold, supply the action of K2/K1 on a common toroidal model with stabilizers of order prime to p and the identifications O_{X2} = RΓ(K2/K1, Rπ_*O_{X1}), also with −D and for traces (BCGP25 proof of Theorem 7.3.1(5)).",
       "supplier": "ShimuraCompactifications",
-      "section": "§C3.3"
+      "section": "§4.3"
     },
     {
       "slug": "lci-fundamental-class",
