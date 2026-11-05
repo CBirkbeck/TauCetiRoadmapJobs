@@ -50,27 +50,6 @@
    "section": "Layer AG2.2"
   },
   {
-   "slug": "katz-cm-padic-l",
-   "title": "Katz CM p-adic L-functions, Hida's μ = 0 and CM Rankin–Selberg functions",
-   "neededBy": [
-    "0.9",
-    "1.5",
-    "1.7",
-    "2.3",
-    "2.4",
-    "2.8",
-    "2.11",
-    "2.12",
-    "2.22",
-    "5.5",
-    "6.5",
-    "7.4"
-   ],
-   "needs": "for an imaginary quadratic field K in which an odd prime p splits, Katz's two-variable p-adic L-function on Γ_K and its anticyclotomic restriction with the Hida–Tilouine period, Euler-factor and class-number normalization (HT93 Theorem 7.1 and (8.8b)); Hida's vanishing of the μ-invariant of the anticyclotomic restriction for branch characters whose prime-to-p conductor is divisible only by primes split in K, with p unramified in K and outside Hida's exceptional case (Hida2010 Theorem I); for an arithmetic Hecke character χ of infinity type kΦ + κ(1−c), k > 0 and κ ≥ 0, with conductor C, a p-ordinary CM type Φ and p > 2 unramified in the totally real base, Hsieh2012's two distinct nonvanishing branches for the period-, gamma- and auxiliary-Euler-normalized L^(ℓ)(0,χν): in Theorem A, χ|_(𝔸_F^×) = τ_(K/F)|·|_F, μ_p(χ_v) = inf_x v_p(χ_v(x)−1) = 0 at every nonsplit v|C, W(χ|·|_K^(−1/2)) = +1, the ramified part of C is squarefree, ℓ ≠ p splits in K and (pℓ,D_(K/F)C) = 1; in Theorem B, the same local μ = 0 and coprimality, but χ is not residually self-dual (χ·N_(F/ℚ) is not congruent to τ_(K/F) on ideals of F prime to pC), with no squarefree or splitting condition on ℓ. Nonvanishing holds outside finitely many anticyclotomic ℓ-power twists when [F_ℓ:ℚ_ℓ] = 1, and on a Zariski-dense set in general (Hsieh2012 Theorems A–B, pp. 2–3, Corollary 6.5, p. 22). Here this gap uses F = ℚ. Finis2006 Theorem 1.1 supplies the valuation formula for positive-root-number self-dual characters of infinity type (−k,k−1), k ≥ 1, varying at a split odd auxiliary prime ℓ ≠ p with fixed tame conductor; it gives unit nonvanishing only when the sum of its local μ-invariants is zero; and Hida's Rankin–Selberg p-adic L-function of a primitive ordinary form or Hida family against the ordinary CM family of a character, with its congruence-ideal denominator, both orderings, and its factorization through Katz's function on the line interpolating values at s = 1 (Hid91 Lemma 5.3(vi); FW Corollary 7.21).",
-   "supplier": "PadicFamilies",
-   "section": "Layer 4, p-adic L-functions in families (after §4.7)"
-  },
-  {
    "slug": "anticyclotomic-rankin-selberg",
    "title": "Anticyclotomic Rankin–Selberg p-adic L-functions, their μ-invariants and mod-p nonvanishing",
    "neededBy": [
