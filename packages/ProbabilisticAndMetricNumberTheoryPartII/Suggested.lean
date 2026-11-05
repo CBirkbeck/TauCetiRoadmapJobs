@@ -1,4 +1,6 @@
-import Mathlib
+module
+
+public import Mathlib
 
 /-!
 # Probabilistic, metric and ergodic number theory, Part II: target signatures
@@ -17,22 +19,27 @@ Chart conventions: for `n ≥ 3` put `d = n - 2`; a point of the ordered simplex
 
 Stated headlines: eventual uniform contraction of the branches, Schauder–Tychonoff, Birkhoff's
 cone contraction, Hennion's essential-radius bound, the Ruelle–Perron–Frobenius theorem with a C¹
-gap, analytic perturbation of simple isolated eigenvalues, Wielandt separation, the pressure, the
-uniform renewal Tauberian theorem, the uniform counting theorem, the conformal exponent, the
-explicit `n = 3` eigenprobability and counting asymptotic, the p-series enclosure of the exponent
-and its monotonicity in `n`.
+gap and its version uniform on compact parameter intervals, analytic perturbation of simple
+isolated eigenvalues, Wielandt separation, the pressure, the uniform renewal Tauberian theorem,
+the uniform counting theorem, the conformal exponent, the explicit `n = 3` eigenprobability and
+counting asymptotic, the p-series enclosure of the exponent and its monotonicity in `n`.
 
 The Banach space `C¹(Δ; ℂ)` of jets, on which the transfer operators act as bounded operators, is
 a Layer 0 construction of the roadmap and is not a carrier at the pins. The spectral gap of the
-Ruelle–Perron–Frobenius theorem and Wielandt's separation are therefore stated in their equivalent
-forms, as exponential decay of iterates in the pointwise C¹ bound on native `ContDiffOn`
-functions. The following headlines need that carrier as an operator space and are not statable at
-the pins: holomorphy of `s ↦ L_s` in operator norm on `C¹(Δ; ℂ)`, the spectral gap uniform on
-compact parameter intervals, and the meromorphic continuation of the renewal transform with its
-simple pole, each valued in operators on, or elements of, `C¹(Δ; ℂ)`. The Rauzy gasket comparison
+Ruelle–Perron–Frobenius theorem, its uniform version on compact parameter intervals and
+Wielandt's separation are therefore stated in their equivalent forms, as exponential decay of
+iterates in the pointwise C¹ bound on native `ContDiffOn` functions, the constants of the uniform
+version being quantified before the parameter. The following headlines need that carrier as an
+operator space and are not statable at the pins: holomorphy of `s ↦ L_s` in operator norm on
+`C¹(Δ; ℂ)`, the uniform separation of the non-leading spectrum of `L_σ` from `λ_σ` on compact
+parameter intervals together with the holomorphic continuation of the eigendata off the real
+axis, and the meromorphic continuation of the renewal transform with its simple pole, each valued
+in operators on, or elements of, `C¹(Δ; ℂ)`. The Rauzy gasket comparison
 is not statable either: it needs the closed coding attractor and the attractor of the Rauzy
 iterated function system, whose existence as compact sets is itself a theorem of the roadmap.
 -/
+@[expose] public section
+
 noncomputable section
 
 open MeasureTheory Filter Set Topology
@@ -122,12 +129,14 @@ theorem schauder_tychonoff {V : Type*} [AddCommGroup V] [Module ℝ V] [Topologi
     ∃ x ∈ C, f x = x := by
   sorry
 
-/-- **Birkhoff's contraction theorem**, in the infimum form of the Hilbert distance. Let
-`C₁, C₂` be salient convex cones in real vector spaces and `T` a linear map with `T(C₁) ⊆ C₂`
-whose image of `C₁ ∖ {0}` has Hilbert diameter at most `Δ`: any two images are comparable with
-ratio `b / a` of logarithm at most `Δ`. If `a f ≤ g ≤ b f` in `C₁` with `a > 0` and `f ≠ 0`,
-then `a' T f ≤ T g ≤ b' T f` with `a' > 0` and `log (b' / a') ≤ tanh (Δ / 4) log (b / a)`
-(Liverani 1995, Theorem 1.1). -/
+/-- **Birkhoff's contraction theorem**, in order-bound form. Let `C₁, C₂` be salient convex
+cones in real vector spaces and `T` a linear map with `T(C₁) ⊆ C₂` satisfying the order bound:
+any two images `T f`, `T g` of nonzero elements of `C₁` are comparable, `a • T f ≤ T g ≤ b • T f`
+with `a > 0` and `log (b / a) ≤ Δ`. When `T` sends nonzero elements to nonzero elements this is
+the Hilbert diameter bound `diam T(C₁ ∖ {0}) ≤ Δ`; the zero map satisfies it too. If
+`a f ≤ g ≤ b f` in `C₁` with `a > 0` and `f ≠ 0`, then `a' T f ≤ T g ≤ b' T f` with `a' > 0` and
+`log (b' / a') ≤ tanh (Δ / 4) log (b / a)`; taking infima over `a`, `b` gives the Hilbert-distance
+contraction where the distance is defined (Liverani 1995, Theorem 1.1). -/
 theorem birkhoff_contraction {V W : Type*} [AddCommGroup V] [Module ℝ V] [AddCommGroup W]
     [Module ℝ W] (C₁ : PointedCone ℝ V) (C₂ : PointedCone ℝ W)
     (hC₁ : ∀ x ∈ C₁, -x ∈ C₁ → x = 0) (hC₂ : ∀ x ∈ C₂, -x ∈ C₂ → x = 0)
@@ -200,6 +209,25 @@ theorem simple_eigenvalue_analytic {B : Type*} [NormedAddCommGroup B] [NormedSpa
           BijOn (T z - ev z • (1 : B →L[ℂ] B)) (LinearMap.ker (φ z : B →ₗ[ℂ] ℂ))
             (LinearMap.ker (φ z : B →ₗ[ℂ] ℂ))) ∧
         deriv ev z₀ = φ₀ (deriv T z₀ h₀) := by
+  sorry
+
+/-- **Ruelle–Perron–Frobenius, uniform on compact parameter intervals.** For `d ≥ 1` and every
+compact interval `[a, b] ⊂ (1, ∞)` there are `M` and `0 < θ < 1`, chosen before `σ`, such that
+for every `σ ∈ [a, b]` the data of `ruelle_perron_frobenius` exist with these constants: an
+eigenvalue `c > 0`, a positive `C¹` eigenfunction `h` and an eigenprobability `ν` with
+`ν h = 1`, and `c⁻ᵐ L_σ^m f` converges to `h ∫ f dν` in the `C¹` bound at the rate `M θ^m`,
+uniformly for `C¹`-bounded `f` (Gamburd–Magee–Ronan 2019, Theorem 39(1) and §4.4). -/
+theorem uniform_ruelle_perron_frobenius (d : ℕ) (hd : 1 ≤ d) (a b : ℝ) (ha : 1 < a) :
+    ∃ M θ : ℝ, 0 < θ ∧ θ < 1 ∧ ∀ σ ∈ Set.Icc a b,
+      ∃ c : ℝ, 0 < c ∧ ∃ h : (Fin d → ℝ) → ℝ, ∃ ν : Measure (Fin d → ℝ),
+        IsEigenprobability d σ c ν ∧
+        ContDiffOn ℝ 1 h (orderedSimplex d) ∧ (∀ x ∈ orderedSimplex d, 0 < h x) ∧
+        ∫ x, h x ∂ν = 1 ∧
+        (∀ x ∈ orderedSimplex d, transferOp d σ (fun y => (h y : ℂ)) x = c * h x) ∧
+        ∀ (f : (Fin d → ℝ) → ℂ) (K : ℝ), C1BoundedOn d f K →
+          ∀ m : ℕ, C1BoundedOn d
+            (fun x => ((c : ℂ) ^ m)⁻¹ * (transferOp d σ)^[m] f x - h x * ∫ y, f y ∂ν)
+            (M * θ ^ m * K) := by
   sorry
 
 /-! ## Layer 5: Non-lattice separation and pressure -/

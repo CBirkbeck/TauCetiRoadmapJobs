@@ -57,22 +57,24 @@ It leaves the following to named owners.
 - The ordinary Laplace transform predicate `HasLaplace`, with its measure parameter, uniqueness and
   linearity, the squared-sinc kernel `squaredSinc`, the scalar monotone unsmoothing
   `monotoneUnsmoothing` and Delange's theorem `delangeLaplace` are ArithmeticDirichletSeriesPartII
-  HP.0.1, HP.1.1, HP.3.1 and HP.3.2. The two-sided transform used here is `HasLaplace` with the
+  §§0.1, 1.1, 3.1 and 3.2. The two-sided transform used here is `HasLaplace` with the
   measure `volume`; this roadmap adds only its adapters. The uniform smoothing and uniform
-  Tauberian theorems of Layer 6 differ from HP.3 in being uniform over a compact parameter space,
-  with transforms valued in `C(X; ℂ)`; their scalar cases are HP.3.
+  Tauberian theorems of Layer 6 differ from its Layer 3 in being uniform over a compact parameter
+  space, with transforms valued in `C(X; ℂ)`; their scalar cases are its Layer 3.
 - The scalar Wiener–Ikehara theorems are Tau Ceti's `TauCeti.LSeries.wienerIkehara` and its
   variants; they are not used.
 - Brouwer's fixed point theorem for nonempty compact convex subsets of finite-dimensional real
   normed spaces, `brouwerFixedPoint_compactConvex_continuousOn`, is AlgebraicTopology Stage 2,
-  item 7 (DifferentialGeometry Layer 10.5 consumes it). Layer 3 consumes it for the
-  finite-dimensional step of Schauder–Tychonoff and extends the fixed-point conclusion to compact
-  convex subsets of Hausdorff locally convex spaces; the compact-map Schauder theorem on Banach
-  spaces is BanachAlgebras A8.
-- Hilbert's projective metric and Birkhoff's `tanh(Δ/4)` contraction for strictly positive finite
-  kernels are OptimalTransport Layer 13B, item 9. Layer 3 here differs in treating salient convex
-  cones in arbitrary real vector spaces and the C¹ derivative cones; on positive vectors it agrees
-  with the finite case.
+  item 7. Layer 3 consumes it for the finite-dimensional step of Schauder–Tychonoff and extends
+  the fixed-point conclusion to compact convex subsets of Hausdorff locally convex spaces; the
+  compact-map Schauder theorem on Banach spaces is BanachAlgebras A8.
+- Hilbert's projective metric on positive vectors and Birkhoff's `tanh(Δ/4)` contraction for
+  strictly positive finite matrices are Tau Ceti's `TauCeti.hilbertProjectiveDist`,
+  `Matrix.projectiveDiameter` and `Matrix.hilbertProjectiveDist_mulVec_le`
+  (`TauCeti/Data/Matrix/BirkhoffContraction.lean`); OptimalTransport Layer 13B, item 9 states the
+  same finite case for strictly positive kernels. Layer 3 here proves the statement for salient
+  convex cones in arbitrary real vector spaces and for the C¹ derivative cones; on strictly
+  positive vectors its distance is the pinned one.
 - The holomorphic functional calculus and Riesz idempotents for a finite partition of the spectrum,
   with the closed invariant direct-sum decomposition of a Banach-space operator, are BanachAlgebras
   A2. Layer 3 consumes them for the spectral splitting; the finite-cover estimate that bounds the
@@ -117,7 +119,7 @@ It leaves the following to named owners.
 - **Spectral radius.** Mathlib's `spectralRadius` takes values in `ℝ≥0∞`; real bounds are coerced.
 - **Laplace and Fourier transforms.** The Laplace transform is the ordinary transform
   `∫ e^{−st} f(t) dt` of a function, never a Stieltjes transform, in the convention of
-  ArithmeticDirichletSeriesPartII HP.0.1: `HasLaplace f s z μ` asserts integrability of
+  ArithmeticDirichletSeriesPartII §0.1: `HasLaplace f s z μ` asserts integrability of
   `t ↦ e^{−st} f(t)` for `μ` and the value `z`. The one-sided transform uses
   `μ = volume.restrict (Ioi 0)`, the two-sided transform `μ = volume`. Fourier transforms use
   angular frequency, `k̂(ξ) = ∫ e^{−iξt} k(t) dt`, with inverse factor `1/(2π)`.
@@ -168,7 +170,23 @@ It leaves the following to named owners.
 
 ### From Tau Ceti
 
-No declaration of the pinned Tau Ceti is consumed.
+Consume `TauCeti.hilbertProjectiveDist`, `Matrix.projectiveDiameter` and
+`Matrix.hilbertProjectiveDist_mulVec_le` (`TauCeti/Data/Matrix/BirkhoffContraction.lean`): for a
+matrix `K` with strictly positive entries on finite index types and strictly positive vectors
+`x`, `y`, `d(Kx, Ky) ≤ tanh(Δ(K)/4) d(x, y)`, where `d(x, y)` is the supremum over index pairs of
+`log(x_i y_j/(y_i x_j))` and `Δ(K)` is the `d`-diameter of the columns of `K`; the formula is
+total on all real vectors, and its metric laws hold on strictly positive vectors. This is the
+finite positive-matrix case of §3.3 and is used there as a consistency check. Consume
+`IsCompactOperator.finiteDimensional_genEigenspace_nat`
+(`TauCeti/Analysis/Normed/Operator/Compact/Eigenspace.lean`: every finite-order generalised
+eigenspace of a compact operator at a nonzero scalar is finite-dimensional, over any complete
+nontrivially normed field), `IsCompactOperator.finiteDimensional_ker_one_sub`,
+`IsCompactOperator.isClosed_range_one_sub` and
+`IsCompactOperator.finiteDimensional_quotient_range_one_sub`
+(`TauCeti/Analysis/Normed/Operator/Compact/RieszTheory.lean`: for a compact operator `K`, `1 − K`
+has finite-dimensional kernel, and on a Banach space over `ℝ` or `ℂ` it has closed range and
+finite-dimensional cokernel). These are the `r = 0` case of §3.5 and are used there as a
+consistency check.
 
 ### From TauCetiRoadmap.ProbabilisticAndMetricNumberTheory §§4.4 and 4.8
 
@@ -180,16 +198,16 @@ Consume `gaussMap` (`T(x) = fract(1/x)`, `T(0) = 0`), `gaussMeasure` (density
 and uniform convergence for continuous `f` on `[0, 1]`) and its Lebesgue duality from §4.8. The
 supplier's index `a ≥ 1` is `A + 1` here.
 
-### From TauCetiRoadmap.ArithmeticDirichletSeriesPartII HP.0.1, HP.1.1, HP.3.1 and HP.3.2
+### From TauCetiRoadmap.ArithmeticDirichletSeriesPartII §§0.1, 1.1, 3.1 and 3.2
 
 Consume `HasLaplace f s z μ` for `f : ℝ → E` with `NormedSpace ℝ E` and `SMul ℂ E`: integrability
 of `t ↦ exp(−st) • f t` for `μ` together with the value `z`; its uniqueness, almost-everywhere
-congruence and linearity API (HP.0.1). For `λ > 0`, consume `squaredSinc λ`, its nonnegativity,
+congruence and linearity API (§0.1). For `λ > 0`, consume `squaredSinc λ`, its nonnegativity,
 mass one (`squaredSinc_mass`), triangle Fourier transform on `[−2λ, 2λ]` (`squaredSinc_fourier`)
-and tail concentration as `λ → ∞`; evenness holds for every real `λ` (HP.1.1). At `λ = 0` the
+and tail concentration as `λ → ∞`; evenness holds for every real `λ` (§1.1). At `λ = 0` the
 kernel is identically `0`, of mass `0`, and for `λ < 0` it is negative at `v = 0`
 (`squaredSinc (−1) 0 = −1/π`), so the positive scale is part of every use. The
-scalar statements `monotoneUnsmoothing` (HP.3.1) and `delangeLaplace` with `k = 0` (HP.3.2) are the
+scalar statements `monotoneUnsmoothing` (§3.1) and `delangeLaplace` with `k = 0` (§3.2) are the
 one-point cases of Layer 6 and are used as consistency checks of its constants.
 
 ### From TauCetiRoadmap.AlgebraicTopology Stage 2, item 7
@@ -539,14 +557,22 @@ Its API consists of these facts.
   nested images of `Δ` have diameter at most `Dρ^m diam Δ`.
 - `K` is nonempty and compact, `F_a(K) ⊂ K` for every letter, and `K` is the closure of
   `⋃_a F_a(K)`.
-- Every nonempty finite word `u` has a unique fixed point in `Δ`, and it lies in `K` (the periodic
-  code `u u u …`). The empty word acts as the identity and fixes every point of `Δ`; no uniqueness
-  or membership in `K` is asserted for it (for `n = 4` it fixes `(1/3, 1/3, 1/3) ∉ K`).
+- Every nonempty chronological word `u = [a₁, …, a_m]` has a unique fixed point in `Δ`, and it
+  lies in `K`: it is the point coded by the infinite repetition of the reversed word,
+  `(a_m, …, a₁, a_m, …, a₁, …)`, in the outer-prefix convention, whose outer block is
+  `F_{a_m} ∘ ⋯ ∘ F_{a₁} = F_u`. The repetition of `u` itself, `(a₁, …, a_m, a₁, …, a_m, …)`,
+  codes the fixed point of `F_{a₁} ∘ ⋯ ∘ F_{a_m}`, the map of the reversed word, which need not
+  be the same point. The empty word acts as the identity and fixes every point of `Δ`; no
+  uniqueness or membership in `K` is asserted for it (for `n = 4` it fixes `(1/3, 1/3, 1/3) ∉ K`).
 - Every image `F_u(w)` with `|u| = m` lies within `D ρ^m diam Δ` of `K`.
 
 **Checks.**
 
 - A constant code `(a, a, …)` gives the fixed point of `F_a`.
+- `n = 3`, `u = [(0, 1), (1, 1)]`, chart coordinate `w₁`: `F_u = F₁ ∘ F₀` is `w ↦ 1/(4 − w)`, with
+  fixed point `2 − √3 ≈ 0.268`; the periodic code `(a₁, a₂, a₁, a₂, …)` read outer-prefix is the
+  fixed point of `F₀ ∘ F₁ : w ↦ (2 − w)/(5 − 3w)`, which is `1 − 1/√3 ≈ 0.423`; the code of the
+  reversed word, `(a₂, a₁, a₂, a₁, …)`, gives `2 − √3`. Both points lie in `K`.
 - `n = 3`, Gauss coordinate: the fixed point of `x ↦ 1/(x + A + 1)` is
   `x_A = 2/((A + 1) + √((A + 1)² + 4))`, which tends to `0`; so `x = 0` lies in `K`.
 - `n = 3`: every code gives `x = 1/(A₁ + 1 + x′) > 0`, so the unclosed image omits `0` and is not
@@ -701,7 +727,7 @@ negative times.)
   `Re s < 0`, so the sign `−s` is forced.
 - The constant `1` on `ℝ` has no convergent two-sided transform at any `s`.
 
-*Needs:* ArithmeticDirichletSeriesPartII HP.0.1; Mathlib `mellin`, `MellinConvergent`,
+*Needs:* ArithmeticDirichletSeriesPartII §0.1; Mathlib `mellin`, `MellinConvergent`,
 `MeasureTheory.integral_comp_exp`, `MeasureTheory.integrable_comp_exp`,
 `MeasureTheory.tendsto_integral_filter_of_dominated_convergence`.
 
@@ -712,7 +738,7 @@ negative times.)
 
 ### Dependencies
 
-Layers 0–1; ArithmeticDirichletSeriesPartII HP.0.1.
+Layers 0–1; ArithmeticDirichletSeriesPartII §0.1.
 
 ## Layer 3: Fixed points, cones and spectral decomposition
 
@@ -789,8 +815,9 @@ Its API consists of these facts.
 - Scale invariance: `d_C(cf, c′g) = d_C(f, g)` for `c, c′ > 0`; the triangle inequality holds on
   each comparability class.
 - For comparable nonzero elements, `d_C(f, g) = 0` exactly when they lie on one positive ray.
-- On strictly positive vectors of `ℝ^k`, `d(f, g) = log(max_i (g_i/f_i) / min_i (g_i/f_i))`, the
-  convention of OptimalTransport Layer 13B, item 9.
+- On strictly positive vectors of `ℝ^k`, `d(f, g) = log(max_i (g_i/f_i) / min_i (g_i/f_i))`,
+  which is Tau Ceti's `TauCeti.hilbertProjectiveDist f g` and the convention of OptimalTransport
+  Layer 13B, item 9.
 - Every nonzero element of `C_a` is strictly positive: along a segment, `|Df| ≤ af` gives
   `f(y) ≤ e^{a‖y − x‖} f(x)`, so `f` vanishing at one point vanishes everywhere.
 - For `0 < κ < 1`, `C_{κa} ∖ {0}` has finite diameter in `C_a`, at most
@@ -800,9 +827,17 @@ Its API consists of these facts.
   linear with `T(C₁) ⊂ C₂`, and `Δ ≥ 0` such that any two images `Tf`, `Tg` of nonzero elements
   of `C₁` satisfy `a Tf ≤ Tg ≤ b Tf` for some `a > 0` with `log(b/a) ≤ Δ`. If `f ∈ C₁ ∖ {0}` and
   `a f ≤ g ≤ b f` with `a > 0`, then `a′ Tf ≤ Tg ≤ b′ Tf` for some `a′ > 0` with
-  `log(b′/a′) ≤ tanh(Δ/4) log(b/a)`. Taking infima, `d_{C₂}(Tf, Tg) ≤ tanh(Δ/4) d_{C₁}(f, g)`
-  (Liverani, Theorem 1.1, preprint p.4, and its footnote 2 on the absence of topology). One route
-  applies the diameter bound to `g − af` and `bf − g` and rearranges.
+  `log(b′/a′) ≤ tanh(Δ/4) log(b/a)`. The hypothesis on `T` is an order bound on pairs of images,
+  which the zero map satisfies; it is the Hilbert diameter bound `diam T(C₁ ∖ {0}) ≤ Δ` exactly
+  when `T` sends nonzero elements of `C₁` to nonzero elements of `C₂`. For the closed
+  Banach-space cones on which `d_C` is defined, if `T` sends every nonzero element of `C₁` to a
+  nonzero element of `C₂`, taking infima gives `d_{C₂}(Tf, Tg) ≤ tanh(Δ/4) d_{C₁}(f, g)` for
+  comparable `f`, `g` (Liverani, Theorem 1.1, preprint p.4, and its footnote 2 on the absence of
+  topology). One route applies the order bound to `g − af` and `bf − g` when both are nonzero (if
+  one vanishes, `Tg` is a multiple of `Tf` and `a′ = b′` works), obtaining
+  `α T(g − af) ≤ T(bf − g) ≤ β T(g − af)` with `α > 0` and `log(β/α) ≤ Δ`, and rearranges to
+  `a′ = (b + βa)/(1 + β)` and `b′ = (b + αa)/(1 + α)`; as a function of `log(b/a) ≥ 0`,
+  `log(b′/a′)` vanishes at `0` and has derivative at most `(√β − √α)/(√β + √α) = tanh(log(β/α)/4)`.
 
 **Checks.**
 
@@ -817,9 +852,15 @@ Its API consists of these facts.
 - `[[2, 1], [1, 2]]` on `ℝ²_{≥0}` has image diameter `log 4` and contracts by
   `tanh(log 4/4) = 1/3` (the images `(2, 1)`, `(1, 2)` of the axes are at distance `log 4`): for
   `f = (1, 1)`, `g = (1, 2)`, with `d = log 2`, the images `(3, 3)` and `(4, 5)` are at distance
-  `log(5/4) ≈ 0.223 ≤ (1/3) log 2 ≈ 0.231`.
+  `log(5/4) ≈ 0.223 ≤ (1/3) log 2 ≈ 0.231`; this is `Matrix.hilbertProjectiveDist_mulVec_le` for
+  `K = [[2, 1], [1, 2]]`, whose `projectiveDiameter` is `log 4`.
+- `T = 0` on `C₁ = C₂ = ℝ_{≥0}`, `Δ = 0`, `f = g = 1`, `a = b = 1`: every hypothesis of
+  `birkhoff_contraction` holds and its conclusion reads `0 ≤ 0 ≤ 0` with `a′ = b′ = 1`; but
+  `d(Tf, Tg) = d(0, 0)` is not defined, so the metric corollary needs the nonzero-image
+  hypothesis and does not apply to `T = 0`.
 
-*Needs:* §0.4; OptimalTransport Layer 13B, item 9.
+*Needs:* §0.4; Tau Ceti `Matrix.hilbertProjectiveDist_mulVec_le`; OptimalTransport Layer 13B,
+item 9.
 
 ### 3.4 The ball-cover measure of noncompactness
 
@@ -872,13 +913,18 @@ spectral value on the unit circle.
 **Checks.**
 
 - A compact `T` satisfies the hypotheses with `p = ‖·‖`, `k = 1`, `R = ‖T‖` and `r = 0`, and the
-  conclusion is the Riesz–Schauder description of its nonzero spectrum.
+  conclusion is the Riesz–Schauder description of its nonzero spectrum; the finite-dimensional
+  generalised eigenspaces at nonzero scalars and the Fredholm property of `1 − T` at `r = 0` are
+  Tau Ceti's `IsCompactOperator.finiteDimensional_genEigenspace_nat`,
+  `IsCompactOperator.finiteDimensional_ker_one_sub`, `IsCompactOperator.isClosed_range_one_sub`
+  and `IsCompactOperator.finiteDimensional_quotient_range_one_sub`.
 - For `T = id` on an infinite-dimensional space, `r_χ = 1`, and no `r < 1` can satisfy the
   hypotheses with a precompactness seminorm; the conclusion would fail at `z = 1`.
 - For `T = (1/2) id` on `ℂ` the spectral radius is `1/2 < 1`, the first branch of the alternative.
 
 *Needs:* §3.4; BanachAlgebras A2; Mathlib `spectrum.gelfand_formula`, `spectrum.nonempty`,
-`Module.End.maxGenEigenspace`, `ContinuousLinearMap.IsFredholm`.
+`Module.End.maxGenEigenspace`, `ContinuousLinearMap.IsFredholm`; Tau Ceti
+`IsCompactOperator.finiteDimensional_genEigenspace_nat` (the compact case, as a check).
 
 ### 3.6 Countable-branch cone convergence
 
@@ -938,7 +984,9 @@ the support inside `K`.
 
 ### Dependencies
 
-Layers 0–2; AlgebraicTopology Stage 2, item 7; OptimalTransport Layer 13B; BanachAlgebras A2.
+Layers 0–2; Tau Ceti (Birkhoff contraction for positive matrices, Riesz theory of compact
+operators, both as checks); AlgebraicTopology Stage 2, item 7; OptimalTransport Layer 13B;
+BanachAlgebras A2.
 
 ## Layer 4: Analytic perturbation and uniform gaps
 
@@ -999,9 +1047,15 @@ the implicit function theorem to `(z, u, ℓ) ↦ (T(z)u − ℓu, φ₀(u) − 
 
 ### 4.3 Spectral gap on compact parameter intervals
 
-**Uniform gap.** For every compact interval `I ⊂ (1, ∞)` there are `M_I < ∞`, `θ_I < 1` and
-`ε_I > 0` such that for `σ ∈ I` and `m ≥ 0`, `‖λ_σ^{−m} L_σ^m − P_σ‖_{C¹} ≤ M_I θ_I^m`, and every
-spectral value of `L_σ` other than `λ_σ` has modulus at most `λ_σ − ε_I`. Near each real `σ`, the
+**Uniform gap.** Prove `uniform_ruelle_perron_frobenius`: for `d ≥ 1` and every compact interval
+`[a, b] ⊂ (1, ∞)` there are `M` and `0 < θ < 1`, chosen before `σ`, such that for every
+`σ ∈ [a, b]` the data of §3.7 exist with these constants: `λ_σ > 0`, a function `h_σ` that is C¹
+and positive on the simplex, and an eigenprobability `ν_σ` with eigenvalue `λ_σ`,
+`∫ h_σ dν_σ = 1` and `L_σ h_σ = λ_σ h_σ` on the simplex, such that for every `f` with
+`C1BoundedOn` bound `K` and every `m`, `λ_σ^{−m} L_σ^m f − h_σ ∫ f dν_σ` has `C1BoundedOn` bound
+`M θ^m K`. Equivalently, `‖λ_σ^{−m} L_σ^m − P_σ‖_{C¹} ≤ M θ^m` for all `σ ∈ [a, b]` and `m ≥ 0`,
+with `P_σ f = h_σ ∫ f dν_σ`; moreover there is `ε > 0` such that for every `σ ∈ [a, b]` every
+spectral value of `L_σ` other than `λ_σ` has modulus at most `λ_σ − ε`. Near each real `σ`, the
 data `λ`, `h`, `ν` and `P` continue holomorphically, normalised by `ν(1) = ν(h) = 1`; off the real
 axis `ν` is a continuous complex-linear functional, not a measure (GMR19, Theorem 39(1), p.793, and
 §4.4, p.799). One route: at each real parameter a power of the normalised remainder has norm `< 1`;
@@ -1012,6 +1066,13 @@ give uniform constants; uniqueness at real parameters patches the local branches
 
 - The statement is uniform only on compact intervals: as `σ ↓ 1`, `λ_σ → ∞` (§5.4), and no gap
   uniform on `(1, ∞)` is claimed.
+- On the one-point interval `[2, 2]` with `n = 3` the data are those of §3.6: `λ₂ = 1`,
+  `ν₂ = 2 dw₁` on `[0, 1/2]` and `h₂ = 1/(2 log 2 · w₂)`. On `[2, 3]` the constants `M`, `θ` are
+  quantified before `σ`: constants `M_σ`, `θ_σ` taken from §3.7 at each `σ` separately, with
+  `θ_σ → 1` as `σ → 3`, would satisfy the pointwise statement at every `σ` and not the uniform
+  one.
+- For `a > b` the interval is empty and the statement is vacuous; the headline carries only
+  `1 < a`.
 
 *Needs:* §3.7, §2.4, §4.2.
 
@@ -1169,7 +1230,7 @@ assumed continuous in `w`; its transform is C¹-valued because it equals the res
 - The factor `s^{−1}` comes from integrating an indicator: the empty word contributes
   `∫₀^∞ e^{−sr} dr = 1/s`, not `1` as a Stieltjes convention would give.
 
-*Needs:* §6.1, §2.5, §2.4, §5.3; ArithmeticDirichletSeriesPartII HP.0.1;
+*Needs:* §6.1, §2.5, §2.4, §5.3; ArithmeticDirichletSeriesPartII §0.1;
 Mathlib `MeasureTheory.integral_tsum`.
 
 ### 6.3 The simple pole and the counting residue
@@ -1205,7 +1266,7 @@ vanishing for `t < 0`, with `α_x(t) ≤ C e^{at}` uniformly in `x` for `t ≥ 0
 transform `F(s)(x) = ∫₀^∞ e^{−st} α_x(t) dt` is a holomorphic `C(X; ℂ)`-valued map on `Re s > a` and
 `F(s) − B/(s − a)` has a holomorphic `C(X; ℂ)`-valued germ at every point of `Re s = a`, with
 `B ∈ C(X; ℝ)`. Then for every even probability density `k` on `ℝ` whose Fourier transform is
-continuous, nonnegative and compactly supported (for instance `squaredSinc λ` with `λ > 0`, ArithmeticDirichletSeriesPartII HP.1.1),
+continuous, nonnegative and compactly supported (for instance `squaredSinc λ` with `λ > 0`, ArithmeticDirichletSeriesPartII §1.1),
 `∫ k(r − t) e^{−at} α_x(t) dt → B(x)` uniformly in `x` as `r → ∞` (Lalley, §8, proof of Theorem 1,
 (8.10)–(8.12), pp.30–32). One route damps `g_x(t) = e^{−at} α_x(t)` by `e^{−εt}`, writes the
 symmetrised convolution with `k(r − t) + k(−r − t)` as a frequency integral of
@@ -1224,7 +1285,7 @@ the Riemann–Lebesgue lemma for `C(X; ℂ)`-valued integrable functions (or by 
 - `squaredSinc 0` is identically `0`, of mass `0`, so it is not a probability density and is
   excluded; the smoothed limit with it would be `0 ≠ B`.
 
-*Needs:* §2.5; ArithmeticDirichletSeriesPartII HP.1.1; Mathlib
+*Needs:* §2.5; ArithmeticDirichletSeriesPartII §1.1; Mathlib
 `Real.tendsto_integral_exp_smul_cocompact`,
 `MeasureTheory.tendsto_integral_filter_of_dominated_convergence`.
 
@@ -1241,7 +1302,7 @@ uniform relative asymptotic. One route: choose `k = squaredSinc λ` with `λ > 0
 monotonicity on `[r, r + 2δ]` gives a lower bound `(1 − ε) e^{−2aδ} e^{−ar} α_x(r)` for the
 smoothed quantity at `r + δ`, and on `[r − 2δ, r]` an upper bound `e^{2aδ} e^{−ar} α_x(r) + Cε` at
 `r − δ`; §6.4 and `ε, δ ↓ 0` squeeze uniformly. At a single `x` with `B(x) > 0` the hypotheses are
-those of ArithmeticDirichletSeriesPartII HP.3.2 with `k = 0` and `A = B(x)`, and the constants
+those of ArithmeticDirichletSeriesPartII §3.2 with `k = 0` and `A = B(x)`, and the constants
 agree; when `B(x) = 0` the squeeze applies directly.
 
 **Checks.**
@@ -1252,7 +1313,7 @@ agree; when `B(x) = 0` the squeeze applies directly.
   uniformly in `x`, and monotonicity in `t` alone gives only pointwise conclusions.
 - `B` vanishing somewhere is allowed: the conclusion is an absolute, not relative, uniform limit.
 
-*Needs:* §6.4; ArithmeticDirichletSeriesPartII HP.1.1 and HP.3.2.
+*Needs:* §6.4; ArithmeticDirichletSeriesPartII §§1.1 and 3.2.
 
 ### 6.6 Conformal measures
 
@@ -1310,7 +1371,7 @@ identification with an arithmetic exponent is used.
 
 ### Dependencies
 
-Layers 0–5; ArithmeticDirichletSeriesPartII HP.0.1, HP.1.1 and HP.3.2.
+Layers 0–5; ArithmeticDirichletSeriesPartII §§0.1, 1.1 and 3.2.
 
 ## Layer 7: Gauss, Rauzy and exponent comparisons
 
@@ -1330,6 +1391,14 @@ convergence.
 - At `x = 0` the weight of branch `A` is `(A + 2)^{−s}` for `L_s` and `(A + 1)^{−s}` for `G_s`.
 - `x = 1`, `A = 0`: `F₀(1) = 1/2` and `q₀(1) = 3/2`, matching `w = (1/2, 1/2)` and
   `q = 1 + (1/2)` of §0.2.
+- `M₂ 1` takes the values `1` at `x = 0` and `4` at `x = 1`; the inverse multiplier
+  `(1 + x)^{−2}` gives `1` and `1/4`.
+- The derivative of `M₂ 1 = (1 + x)²` is `2(1 + x)`, with endpoint values `2` and `4`, so its C¹
+  sum norm on `[0, 1]` is `4 + 4 = 8`.
+- `s = 2`, `x = 1`, `A = 0`: the conjugated branch weight is
+  `q₀^{−2} (1 + F₀(1))² / (1 + 1)² = (3/2)^{−2} (3/2)² / 4 = 1/4 = (1 + 0 + 1)^{−2}`; with the
+  inverse multiplier, `q₀^{−2} (1 + 1)² / (1 + F₀(1))² = 64/81`, so the direction
+  `M_s^{−1} L_s M_s` is forced.
 
 *Needs:* §2.1, §0.5; ProbabilisticAndMetricNumberTheory §4.4 (`gaussMap`, inverse branches and
 their absolute derivative) and §4.8 (`gaussDensityTransfer`).
@@ -1458,7 +1527,11 @@ The statements above correct the following printed passages.
 - GMR19, (5.5), p.801, and (5.9), p.802: the denominators are squares, `(3 + b − 2w_j)²` and
   `(5 + b − 4w_{n−2})²`, as the case computations in arXiv v3, pp.49 and 52, show (§1.2).
 - GMR19, §5.1, p.801: on the cusp the inequality is `w_{n−1} ≥ (1 + w_{n−2})/2`, not strict; the
-  point `(1/5, 1/5, 3/5)` attains it (§1.1). The index range of (5.1) includes `i = n − 2`.
+  point `(1/5, 1/5, 3/5)` attains it (§1.1).
+- GMR19 arXiv v3, (5.1), p.44: the index range is printed `1 ≤ i ≤ n − 3`; the published display
+  (p.801), the use of (5.1) in the proof of Lemma 48 for `j = n − 2`, `B ≥ 2` (p.803), and the
+  proof of (5.1) in arXiv v3, p.46, which treats `i = 1, …, n − 2`, all need `1 ≤ i ≤ n − 2`
+  (§1.2).
 - GMR19, Table 1, p.804: the derivative row of a surviving coordinate `w_k` is `w_k/(2 − w_i)²`; the
   third such row should carry `w₃` where it precedes the deleted index, not a repeated `w₂`.
 - GMR19 arXiv v3, proof of (5.5), p.49: for ordinary columns the comparison is `C₁ ≥ C_k`, since the
