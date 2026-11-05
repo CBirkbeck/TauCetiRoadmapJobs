@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-9657 mistakes recorded on the board: 5679 misprints, 2517 errors, 1077 gaps, 384 unparsed bullets.
+9676 mistakes recorded on the board: 5690 misprints, 2519 errors, 1081 gaps, 386 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -392,6 +392,8 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Unparsed** (PadicFamiliesPartII, #2279 at a93b409, 2026-11-05): Gap** in BCGP21 at Proposition 4.6.19, proof, printed pages 113–114: the displayed short exact sequence of quotients by sums of powers of partial Hasse invariants is not exact when two or more places are involved (lengths n² against (n−1)²+1); the dévissage must run one exponent at a time; affects the proof.
 - **Unparsed** (PadicFamiliesPartII, #2279 at a93b409, 2026-11-05): Gap** in BCGP21 at Theorem 6.6.4, proof, printed page 167: the two dimension defects are compared for the full overconvergent cohomology while Proposition 6.6.1 bounds the restriction from the multiplicative-locus complex; the argument closes with the defects of that restriction map; affects the proof.
 - **Unparsed** (BallQuotientsAndComplexHyperbolicLattices, #6540 at 541ded3, 2026-11-05): Misprint** in MilneSVI at Remark 3.13, line 1727 and line 1734 (printed p. 39): two consecutive items are both labelled (c); the second should be (d); affects nothing. <!-- tauceti-roadmap-review {"agent": "claude", "head": "541ded3b6d5fa678869c2ba0cf583aa9690bff56", "job": "REV-DESIGN-BallQuotientsAndComplexHyperbolicLattices", "model": "fable", "worker": "chris-x9"} -->
+- **Unparsed** (MotivicStructuresInModuliOfCurves, #2284 at 8643f35, 2026-11-05): Misprint** in clp at Introduction, printed p. 3: unimodality of the dimensions of an extension in each parity is asserted from an injectivity argument; the argument gives nondecreasing dimensions up to the middle only; affects a stated result (a remark).
+- **Unparsed** (MotivicStructuresInModuliOfCurves, #2284 at 8643f35, 2026-11-05): Misprint** in bfp at Remark 2.2, printed p. 1328: Proposition 2.1 is cited as "Proposition 2"; affects nothing.
 
 ## A
 
@@ -1728,6 +1730,16 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at §3.2, condition (i), printed p15 (BFLS line 622): the source says the divergence input β has horizontal degree n; it should be β must have horizontal degree n−1, so d_Hβ belongs to the bracket’s domain; affects a stated result. Found by LocalVariationalFieldTheory (ERRATA-LocalVariationalFieldTheory at a38ee99, 2026-10-24, codex gpt-6-astra).
 - **Error** at §3.2, definition preceding (27) and basis independence after (29), printed pp16–17 (BFLS lines 677–708): the source says ordinary module bilinearity of the operator-valued ω makes the bracket independent of dual bases; it should be use ω(fθ,gη)=f·ω(θ,η)∘m_g; for ω=D_x and θ′=e^xθ, the printed rule changes {F,F} from zero to −∫f²dx for F=∫fu dx; affects a stated result. Found by LocalVariationalFieldTheory (ERRATA-LocalVariationalFieldTheory at a38ee99, 2026-10-24, codex gpt-6-astra).
+
+## bfp
+
+- **Misprint** at Corollary 3.2, printed p. 1330: the source says the conclusion names `M̄_{g,n}`; it should be name `M̄_{4,n}`, all genera following through the induction of §2; affects a stated result; 's wording. Found by MotivicStructuresInModuliOfCurves (#2284 at 8643f35, 2026-11-05, claude fable).
+- **Gap** at Definition 9.1, printed p. 1351: the source says a twisted-count class function is called an element of the representation ring without integrality; it should be a class function, with lattice membership from Proposition 9.3 where used; affects nothing. Found by MotivicStructuresInModuliOfCurves (#2284 at 8643f35, 2026-11-05, claude fable).
+- **Misprint** at equation (3), printed p. 1331: the source says the `E₁` term of the weight spectral sequence of the normalized closed strata omits the orientation character of the edges; it should be carry `det ℚ^{E(G)}` inside the graph invariants; affects the proof; 's bookkeeping, not its conclusion. Found by MotivicStructuresInModuliOfCurves (#2284 at 8643f35, 2026-11-05, claude fable).
+- **Misprint** at opening of §9, printed p. 1351: the source says the Getzler–Kapranov formula is cited as Theorem 8.3; it should be Theorem 8.13, as cited elsewhere in the paper; affects nothing. Found by MotivicStructuresInModuliOfCurves (#2284 at 8643f35, 2026-11-05, claude fable).
+- **Misprint** at proof of Proposition 3.1, printed p. 1330: the source says the error term is written with exponent `d/2`; it should be `s/2`; affects nothing. Found by MotivicStructuresInModuliOfCurves (#2284 at 8643f35, 2026-11-05, claude fable).
+- **Misprint** at §10.1, printed p. 1355: the source says the coefficient `−11` of the open genus-four three-marking count is attached to `q⁴`; it should be `q³`, as in Theorem 1.5; affects nothing. Found by MotivicStructuresInModuliOfCurves (#2284 at 8643f35, 2026-11-05, claude fable).
+- **Misprint** at §9.1, printed p. 1351: the source says for a variety that need not be proper the trace of the twisted Frobenius on ordinary cohomology is equated with the point count; it should be compactly supported cohomology; affects nothing; in the paper's uses. Found by MotivicStructuresInModuliOfCurves (#2284 at 8643f35, 2026-11-05, claude fable).
 
 ## BFT
 
@@ -4052,6 +4064,17 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Error** at Proposition 2.4.8(3): the source says a character ratio for the ordinary filtration that needed correction; it should be the ratio given in the authors' erratum; affects a stated result. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
+## clp
+
+- **Error** at Lemma 2.1, printed p. 4: the source says the hypothesis asks surjectivity only for smaller triples of degree at most `k − 2`, while the proof's induction uses the same-degree triple with one marking fewer; it should be include the same-degree smaller triples; affects a stated result; (the counterexample `S = RH^*`, `(1,12,11)` refutes the printed form; the theorems using it are unaffected). Found by MotivicStructuresInModuliOfCurves (#2284 at 8643f35, 2026-11-05, claude fable).
+- **Gap** at Lemma 3.2, printed p. 10: the source says boundary classes with smaller genus-two factors, or with genus-one factors of lower odd degree times tautological classes, are asserted to lie in the generated extension; it should be factor them through forgetful pullback to `(2, n−1)` and re-associate the graphs; affects the proof. Found by MotivicStructuresInModuliOfCurves (#2284 at 8643f35, 2026-11-05, claude fable).
+- **Gap** at proof of Lemma 5.10, printed p. 19: the source says the argument trivializes the vector bundle on strata and treats the quadratic form as split there; it should be reduce to the parabolic stabilizer; affects the proof. Found by MotivicStructuresInModuliOfCurves (#2284 at 8643f35, 2026-11-05, claude fable).
+- **Misprint** at proof of Lemma 7.3, printed p. 27: the source says the module spanned by the relation symbols is written as induced from `S₁₀`; it should be induced from `S₁₀ × S₂`, the printed decomposition of dimension 66 being correct; affects nothing. Found by MotivicStructuresInModuliOfCurves (#2284 at 8643f35, 2026-11-05, claude fable).
+- **Gap** at proof of Lemma 8.2, printed p. 28: the source says only the bound `2g − 2 + n > 15` is used, leaving `(8,0)` and `(8,1)` to a genus-eight Chow–Künneth property not in Table 1; it should be use the `n ≤ 1` bound `k < 2g` of BFP Proposition 2.1; affects the proof. Found by MotivicStructuresInModuliOfCurves (#2284 at 8643f35, 2026-11-05, claude fable).
+- **Error** at §5.3, equations (5.10)–(5.11), printed p. 20: the source says the half-spin representation is called a representation of `SO₁₀` and the pentagonal locus is identified with a quotient by `SO₁₀`; it should be the `Spin₁₀`-representation with the quotient by `PSO₁₀`, the `SO₁₀`-quotient having a generic `μ₂` stabilizer; affects the proof; (the rational Chow conclusions survive through the gerbe). Found by MotivicStructuresInModuliOfCurves (#2284 at 8643f35, 2026-11-05, claude fable).
+- **Misprint** at §5.3.1 before Lemma 5.8, printed p. 18: the source says the quadratic bundle pulled back to the orthogonal Grassmannian is written as a direct sum of the tautological subbundle and its dual; it should be an extension, split only after reduction to the Levi; affects nothing. Found by MotivicStructuresInModuliOfCurves (#2284 at 8643f35, 2026-11-05, claude fable).
+- **Misprint** at §6.2, proof of Theorem 1.5(3), printed p. 23: the source says the range is written as even `k ≥ 14`; it should be `k ≤ 14`; affects nothing. Found by MotivicStructuresInModuliOfCurves (#2284 at 8643f35, 2026-11-05, claude fable).
+
 ## cluckers_loeser_2008
 
 - **Error** at §15.1, p.83: the source says each affine chart is isomorphic to an open subset of affine space; it should be embedded as a closed subset of affine space, with intrinsic dimension and embedding-independent gluing; affects the proof. Found by LogicAndDefinabilityInNumberTheory (#164 at 888e10d, 2026-10-25, codex gpt-6-astra).
@@ -6094,6 +6117,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Error** at Lemma 4.7, printed page 74 (lines 1766–1780): the source says for large `n` either `n` or `n+2` lies in `W_θ`; it should be `n` or `n+1` (for `θ = π/2` every even `n` has `θ = πj/n` with `j = n/2`, and the proof's `O(1/n)` difference can be `0`); affects the proof; (the roadmap's 9.2(a) uses `n+1`). Found by DimerModelsAndLozengeTilings (#6570 at 229fbb7, 2026-11-05, claude fable).
 
+## gorsky
+
+- **Misprint** at Theorem 3.8, arXiv v3 p. 6: the source says the quotient genus is printed as `½(1 − Σ_{j≤r} k_j)`; it should be `1 − ½ Σ_{j≤r} k_j`; and at Definition 3.5 and Lemma 3.6, p. 5, the modulus symbol `k` should be `r`; affects a stated result; (the formula as printed). Found by MotivicStructuresInModuliOfCurves (#2284 at 8643f35, 2026-11-05, claude fable).
+
 ## GORSP
 
 - **Misprint** at §2, p. 4 (GORSP line 115): the source says Λ_i* equals πΛ_(2r−1) for every indicated i; it should be πΛ_(2r−i); affects a stated result. Found by GeometricSatakeAndFusionPartII (#1177 at 60448fc, 2026-10-27, codex gpt-6-astra).
@@ -7626,6 +7653,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Error** at Lemma 118, p.87: the source says |H̃|·|⟨h₀⟩|/|P| = |H̃|·i_P, false for P=⟨(a,b^p)⟩ in C_{p²}×C_{p²}; it should be (|H̃|/|P′|)·|⟨h⟩|·i_P², still divisible by p·i_P²; affects the proof; (the bound survives). Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
 - **Misprint** at §3 (character decompositions of Λ(G) and its K-groups): the source says the components are indexed by all absolute irreducible characters, which overcounts conjugate characters (e.g. Z₅[C₃]); it should be index by Galois-orbit representatives, as the paper's own §5.1 does; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## kannan
+
+- **Misprint** at Remark 3.8, arXiv v2 pp. 11–12: the source says the corrected quotient genus is printed with the sum running to `r − 1`; it should be run to `r`, as the identity automorphism shows; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "8643f351625ac9c7426e9545f06e9ad73aa551e6", "job": "REV-PKG-MotivicStructuresInModuliOfCurves", "model": "fable", "worker": "chris-x19"} -->. Found by MotivicStructuresInModuliOfCurves (#2284 at 8643f35, 2026-11-05, claude fable).
 
 ## Kapranov
 
