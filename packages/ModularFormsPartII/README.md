@@ -13,11 +13,11 @@ The following are imported and are not planned again.
 - ModularCurvesPartII Layer 15 owns the principal-level `SL₂` amalgam (§15.2), the congruence subgroup property of `SL₂(ℤ[1/p])` (§15.3), congruence classes in ordinary `H¹` (§15.5), principal-level Ihara modulo congruence classes (§15.6), congruence invariance of ordinary characters with the whole cohomological calculation of CDT §4.5 (§15.9), and the enhanced principal-level kernel bound (§15.10). Its §5.14 (twisted curves `X(ρ)`), §§6.3–6.5 (cusp fields, twisted analytic comparison, geometric irreducibility), §8.1 (descent of sections from a split rational cusp) and Layer 11 (regular models of modular fibres) are the arithmetic models used in Layers 5 and 9.
 - DiophantineApproximationAndTranscendencePartII Layer 4 owns integral holonomic germs `H(U, χ, ℤ)` with meromorphic local bases (§4.1), their ring structure (§4.2), the two scalar spans `V` and `W` (§4.3), pole clearing (§4.4), the holonomic rank bound for `W` (§4.5) and its finiteness corollaries (§§4.6–4.7).
 - ConformalMappingPartII owns the continuation of linear ODE solutions and meromorphic local bases (§§0.3, 0.5), the extremality of the pointed cover (§1.4), the normalized covering `F_N : 𝔻 → ℂ ∖ μ_N` (§1.8), the Gamma radius `γ_N`, the conformal radius `|F_N′(0)| = γ_N` with the values at `N = 2, 3` (§§5.1, 5.5), its positive expansion (§5.8) and the uniform mean growth of `F_N^N` (§9.19).
-- AlgebraicModularFormsAndSerreWeights Layer R15.2 (All-prime bounded denominators) owns bounded denominators of rational-coefficient congruence forms and of congruence modular functions holomorphic on `Y(2N)`; Layer R15.1 (All-weight analytic comparison) owns the algebraic–analytic comparison of congruence forms.
+- AlgebraicModularFormsAndSerreWeights §2.9 (All-prime bounded denominators, Layer R15.2) owns bounded denominators of rational-coefficient congruence forms and of congruence modular functions holomorphic on `Y(2N)`; §1.5 (All-weight analytic comparison, Layer R15.1) owns the algebraic–analytic comparison of congruence forms.
 - AutomorphicGaloisRepresentations §4.2 owns the Ramanujan–Petersson bound for Hilbert, hence classical, cuspidal newforms.
 - EtaleCohomologyFoundations §F.0.2 owns finite étale Galois categories and the étale fundamental group.
 - DiophantineApproximationAndTranscendence §§5.2–5.3 owns G-functions, Galochkin's condition and Chudnovsky's theorem.
-- FuchsianOrbifolds owns the presentation of `PSL₂(ℤ)` (Layer 2), cusps and `q`-coordinates (Layer 3), compactified quotients (Layer 4), degree theory (Layer 5) and the level-one quotient with `j` (Layer 6). BelyiMaps owns finite covers of the thrice-punctured sphere (Layer 6) and their algebraization (Layer 9). UniversalCovers (Completed) owns lifting and the Galois correspondence (Stage 2). ConformalMapping owns Schwarz reflection and the monodromy theorem (L4).
+- FuchsianOrbifolds owns the presentation of `PSL₂(ℤ)` (Layer 2 item 5 applied to the level-one group of Layer 6 item 1), cusps and `q`-coordinates (Layer 3), compactified quotients (Layer 4), degree theory (Layer 5) and the level-one quotient with `j` (Layer 6). BelyiMaps owns finite covers of the thrice-punctured sphere (Layer 6) and their algebraization (Layer 9). UniversalCovers (Completed) owns lifting and the Galois correspondence (Stage 2). ConformalMapping owns Schwarz reflection and the monodromy theorem (L4).
 - GeometryOfNumbersAndQuadraticArithmetic §4.3 owns the analytic `q`-Pochhammer product and the Jacobi triple product.
 
 The cohomological content of CDT §4.5 (and Lemma 4.5.12, whose statement the leveraging argument does not use) belongs to ModularCurvesPartII §15.9. The questions of CDT §7.4 on logarithmic vector-valued forms, archimedean deficient places and finiteness of deficient-place sets are not theorems and are not stated.
@@ -45,6 +45,7 @@ The cohomological content of CDT §4.5 (and Lemma 4.5.12, whose statement the le
 - `UpperHalfPlane.cuspFunction h f` and `UpperHalfPlane.qExpansion h f` (`QExpansion.lean`): the function of `exp(2πiτ/h)` with an arbitrary value at `0`, and its Taylor coefficients at `0`. These are the actual Fourier coefficients only for an `h`-periodic function bounded at `∞`; for a function with a pole at `∞` they are not its Laurent coefficients.
 - `ModularForm.eta`, `ModularForm.eta_ne_zero`, `ModularForm.logDeriv_eta_eq_E2` (`DedekindEta.lean`): `η(z) = exp(2πiz/24) ∏(1 − exp(2πinz))` on `ℂ`, nonzero on `ℍ`, with `η′/η = (πi/12)E₂`.
 - `ModularForm.discriminant`, `ModularForm.discriminant_ne_zero`, `CuspForm.discriminant`, `ModularForm.discriminant_qExpansion_coeff_one` (`Discriminant.lean`): `Δ = η²⁴`, nowhere zero on `ℍ`, the weight-12 cusp form with first coefficient 1.
+- `ModularForm.instGCommRing` (`Basic.lean`): the graded commutative ring `⊕_k ModularForm Γ k` for `Γ ≤ GL₂(ℝ)` with `Γ.HasDetPlusMinusOne`, an instance for the image of every subgroup of `SL₂(ℤ)` (`ArithmeticSubgroups.lean`); the ring `M(Γ)` of §8.1 for every finite-index `Γ ≤ SL₂(ℤ)`, congruence or not.
 - `jacobiTheta`, `jacobiTheta_S_smul`, `jacobiTheta_T_sq_smul` (`JacobiTheta/OneVariable.lean`) and `jacobiTheta₂`, `jacobiTheta₂_functional_equation` (`JacobiTheta/TwoVariable.lean`): `θ₃(τ) = Σ exp(πin²τ)`, its `S` law with the principal square root, and `θ₃(τ + 2) = θ₃(τ)`.
 - `EisensteinSeries.E2` (`EisensteinSeries/E2/Defs.lean`), `Derivative.normalizedDerivOfComplex`, `Derivative.serreDerivative`, `Derivative.serreDerivativeMF` (`Derivative.lean`), `Derivative.normalizedDerivOfComplex_E₂` (`RamanujanFormula.lean`): `D E₂ = (E₂² − E₄)/12`, and the Serre derivative maps `ModularForm Γ k` to weight `k + 2`.
 - `Subgroup.normalCore` (`Algebra/Group/Subgroup/Basic.lean`); `Subgroup.goursat_surjective` (`GroupTheory/Goursat.lean`).
@@ -59,11 +60,11 @@ The cohomological content of CDT §4.5 (and Lemma 4.5.12, whose statement the le
 
 ### From TauCetiRoadmap.ModularForms
 
-Layer 0 (character spaces, parity `χ(−I) = (−1)^k`, the graded ring of integral-weight forms), Layer 4 (eigenform and newform bases, oldform reindexing), Worked examples (`η²⁴ = Δ` with the `SL₂(ℤ)` transformation of η) and Layer 10 (the complex modular curve `Γ \ ℍ`). Assumed: these are stated for `Γ₁(N)` with character and for every integral weight.
+Layer 0 (character spaces, parity `χ(−I) = (−1)^k`), Layer 4 (eigenform and newform bases, oldform reindexing), Worked examples (`η²⁴ = Δ` with the `SL₂(ℤ)` transformation of η) and Layer 10 (the complex modular curve `Γ \ ℍ`). Assumed: these are stated for `Γ₁(N)` with character and for every integral weight.
 
 ### From TauCetiRoadmap.FuchsianOrbifolds, BelyiMaps, UniversalCovers and ConformalMapping
 
-FuchsianOrbifolds Layer 2 item 6 (the presentation `PSL₂(ℤ) = ⟨S, R | S² = R³ = 1⟩`), Layer 3 items 1–5 (cusp orbits, normalized cusp data with primitive width, `q`-coordinates, the Laurent criterion), Layer 4 (the compactification `X(Γ)` and the cusp ramification `w_{Γ′}/w_Γ` of a finite-index inclusion), Layer 5 (degree of finite holomorphic maps, the degree-one biholomorphism theorem, descent of invariant meromorphic functions) and Layer 6 (`X(1)` and `j = E₄³/Δ`). These are projective statements; the sign bookkeeping is §1.3. BelyiMaps Layer 6 (finite covers of `ℙ¹ ∖ {0, 1, ∞}` by permutation triples, deck transformations) and Layer 9 (algebraization of finite analytic three-point covers with their function fields). UniversalCovers Stage 2 (lifting criterion, covers and subgroups, deck groups). ConformalMapping L4 (Schwarz reflection, monodromy theorem).
+FuchsianOrbifolds Layer 2 item 5 applied to the level-one group of Layer 6 item 1 (the presentation `PSL₂(ℤ) = ⟨S, R | S² = R³ = 1⟩` with `T = SR`, read off the standard fundamental polygon), Layer 3 items 1–5 (cusp orbits, normalized cusp data with primitive width, `q`-coordinates, the Laurent criterion), Layer 4 (the compactification `X(Γ)` and the cusp ramification `w_{Γ′}/w_Γ` of a finite-index inclusion), Layer 5 (degree of finite holomorphic maps, the degree-one biholomorphism theorem, descent of invariant meromorphic functions) and Layer 6 (`X(1)` and `j = E₄³/Δ`). These are projective statements; the sign bookkeeping is §1.3. BelyiMaps Layer 6 (finite covers of `ℙ¹ ∖ {0, 1, ∞}` by permutation triples, deck transformations) and Layer 9 (algebraization of finite analytic three-point covers with their function fields). UniversalCovers Stage 2 (lifting criterion, covers and subgroups, deck groups). ConformalMapping L4 (Schwarz reflection, monodromy theorem).
 
 ### From TauCetiRoadmap.QSeriesPartitionsAndMockModularForms
 
@@ -91,7 +92,7 @@ What ModularCurvesPartII must provide (gap:udc-all-prime-cuspidal-model-of-full-
 
 ### From TauCetiRoadmap.AlgebraicModularFormsAndSerreWeights
 
-Layer R15.2, All-prime bounded denominators: a holomorphic congruence form with rational coefficients has one integer `D ≥ 1` clearing every coefficient, at every prime including those dividing the level; the same holds for a rational congruence modular function holomorphic on `Y(2N)`, as a Laurent series. Layer R15.1, All-weight analytic comparison. Assumed for every subgroup containing `Γ(N)` and every integral weight.
+§2.9 (All-prime bounded denominators, Layer R15.2): a holomorphic congruence form with rational coefficients has one integer `D ≥ 1` clearing every coefficient, at every prime including those dividing the level; the same holds for a rational congruence modular function holomorphic on `Y(2N)`, as a Laurent series. §1.5 (All-weight analytic comparison, Layer R15.1): the algebraic–analytic comparison of congruence forms in every integral weight. Assumed for every subgroup containing `Γ(N)` and every integral weight.
 
 ### From TauCetiRoadmap.AutomorphicGaloisRepresentations
 
@@ -372,16 +373,16 @@ API:
 
 - Every rational constant lies in `R₂`, including `1/2`; bounded denominators do not mean integral.
 - A series is not admitted merely because it lies in `ℤ[1/2]((t))`; one denominator for all coefficients is required.
-- Every rational weak modular function on `Γ(4)` lies in `R₄`, by the all-prime bounded denominators of AlgebraicModularFormsAndSerreWeights Layer R15.2.
+- Every rational weak modular function on `Γ(4)` lies in `R₄`, by the all-prime bounded denominators of AlgebraicModularFormsAndSerreWeights §2.9 (All-prime bounded denominators, Layer R15.2).
 - An element of the span such as `(λ − 1/2)⁻¹` has an interior pole at `τ = i`; requiring every span element to be holomorphic on `ℍ` would change the definition.
 
 ### 3.3 Congruence functions have bounded denominators
 
 For every `N ≥ 1`, `M₂N ⊆ R₂N` (CDT, Lemma 4.2.2, p.655).
 
-*Proof sketch.* A generator of `M₂N` is a rational weight-zero weak form on `±Γ(2N)`, whose level is `2N`. AlgebraicModularFormsAndSerreWeights Layer R15.2 (All-prime bounded denominators) gives it one denominator at every prime, including the primes dividing `2N`, by clearing its cusp poles with `Δ^m` (§1.4) and dividing by the integral Laurent series `Δ^(−m) = q^(−2m) ∏ (1 − q^(2n))^(−24m)`.
+*Proof sketch.* A generator of `M₂N` is a rational weight-zero weak form on `±Γ(2N)`, whose level is `2N`. AlgebraicModularFormsAndSerreWeights §2.9 (All-prime bounded denominators, Layer R15.2) gives it one denominator at every prime, including the primes dividing `2N`, by clearing its cusp poles with `Δ^m` (§1.4) and dividing by the integral Laurent series `Δ^(−m) = q^(−2m) ∏ (1 − q^(2n))^(−24m)`.
 
-*Needs:* §§1.4, 3.1, 3.2; AlgebraicModularFormsAndSerreWeights Layer R15.2.
+*Needs:* §§1.4, 3.1, 3.2; AlgebraicModularFormsAndSerreWeights §2.9 (All-prime bounded denominators, Layer R15.2).
 
 ### 3.4 The modular holonomy embedding
 
@@ -432,7 +433,7 @@ Let `F_N : 𝔻 → ℂ ∖ μ_N` be the normalized coverings of ConformalMappin
 
 ### Dependencies
 
-Layers 1–2; AlgebraicModularFormsAndSerreWeights Layer R15.2; BelyiMaps Layer 9; DiophantineApproximationAndTranscendencePartII §§4.1–4.5, 4.8; ConformalMappingPartII §§0.5, 1.4, 1.8, 5.5, 5.8.
+Layers 1–2; AlgebraicModularFormsAndSerreWeights §2.9 (All-prime bounded denominators, Layer R15.2); BelyiMaps Layer 9; DiophantineApproximationAndTranscendencePartII §§4.1–4.5, 4.8; ConformalMappingPartII §§0.5, 1.4, 1.8, 5.5, 5.8.
 
 ## Layer 4: The nonabelian Ihara lemma and the generation identity
 
@@ -574,9 +575,9 @@ Let f be a weak form of weight k on a finite-index Γ with period `h ≥ 1` whos
 
 Let f be a weak form of weight k on a finite-index Γ with period `h ≥ 1` whose Laurent expansion at `∞` in `exp(2πiτ/h)` has algebraic coefficients. Then all its coefficients lie in one number field K, and for every `σ ∈ Aut(ℂ/ℚ)` the coefficientwise conjugate series `f^σ` is the expansion at `∞`, with the same period h, of a weak form of weight k on a finite-index subgroup `Γ^σ` (CDT, Remark 6.3.2, p.686, where this fact is used). A power series with algebraic coefficients that is not the germ of a weak form need not have its coefficients in a number field; the modular hypothesis is essential.
 
-*Proof sketch.* By §6.2 reduce to weight 0; `h₀` has rational coefficients and is fixed by σ. A weight-zero weak form on Γ is algebraic over `ℂ(j)`, of degree at most `[PSL₂(ℤ) : ±Γ]`, and integral over `ℂ[j]` because it has no poles on `ℍ`. Since `ℚ̄((t))` and `ℂ` are linearly disjoint over `ℚ̄`, its minimal polynomial P can be taken monic with coefficients in `K₀[j]` for a number field `K₀`. The automorphisms in `Aut(ℂ/K₀)` permute the finitely many Puiseux roots of P at `j = ∞`, so the coefficients of f lie in a finite extension K of `K₀`. For any σ, `f^σ` is a convergent Puiseux root of the monic polynomial `P^σ`; the branch locus of `P^σ` over the j-line lies in `{0, 1728, ∞}`, which σ fixes, with the same ramification indices (dividing 2 over 1728 and 3 over 0). So the cover defined by `P^σ` corresponds to a finite-index subgroup `Γ^σ` of `PSL₂(ℤ) = ⟨S, R | S² = R³ = 1⟩` (FuchsianOrbifolds Layer 2; BelyiMaps Layers 6 and 9), the branch `f^σ` lifts to a holomorphic `Γ^σ`-invariant function on `ℍ`, integral over `ℂ[j]` and hence without poles on `ℍ`, and algebraic, hence meromorphic, at the cusps.
+*Proof sketch.* By §6.2 reduce to weight 0; `h₀` has rational coefficients and is fixed by σ. A weight-zero weak form on Γ is algebraic over `ℂ(j)`, of degree at most `[PSL₂(ℤ) : ±Γ]`, and integral over `ℂ[j]` because it has no poles on `ℍ`. Since `ℚ̄((t))` and `ℂ` are linearly disjoint over `ℚ̄`, its minimal polynomial P can be taken monic with coefficients in `K₀[j]` for a number field `K₀`. The automorphisms in `Aut(ℂ/K₀)` permute the finitely many Puiseux roots of P at `j = ∞`, so the coefficients of f lie in a finite extension K of `K₀`. For any σ, `f^σ` is a convergent Puiseux root of the monic polynomial `P^σ`; the branch locus of `P^σ` over the j-line lies in `{0, 1728, ∞}`, which σ fixes, with the same ramification indices (dividing 2 over 1728 and 3 over 0). So the cover defined by `P^σ` corresponds to a finite-index subgroup `Γ^σ` of `PSL₂(ℤ) = ⟨S, R | S² = R³ = 1⟩` (FuchsianOrbifolds Layer 2 item 5 and Layer 6 item 1; BelyiMaps Layers 6 and 9), the branch `f^σ` lifts to a holomorphic `Γ^σ`-invariant function on `ℍ`, integral over `ℂ[j]` and hence without poles on `ℍ`, and algebraic, hence meromorphic, at the cusps.
 
-*Needs:* §§1.1, 6.2; FuchsianOrbifolds Layers 2, 5; BelyiMaps Layers 6, 9.
+*Needs:* §§1.1, 6.2; FuchsianOrbifolds Layers 2, 5, 6; BelyiMaps Layers 6, 9.
 
 ### 6.6 Algebraic-integer Fourier coefficients
 
@@ -584,7 +585,7 @@ Let f be a weak form of weight k on a finite-index Γ with period `h ≥ 1` whos
 
 *Proof sketch.* By §6.5 the coefficients lie in a number field, which may be enlarged to a Galois number field K with integral basis `α₁, …, α_d`. Each `f_i = Σ_{σ ∈ Gal(K/ℚ)} σ(α_i) f^σ` has coefficients `Tr_{K/ℚ}(α_i a_n) ∈ ℤ` and is a weak form on `⋂_σ Γ^σ` (§6.5). By §6.3 each `f_i` is congruence; inverting the nondegenerate trace matrix writes f as a K-linear combination of the `f_i`, a weak form on the intersection of their congruence subgroups. CDT Remark 6.3.1 sketches a second route, rerunning Layers 3–5 over `K(λ)`.
 
-*Needs:* §§6.3, 6.5; AlgebraicModularFormsAndSerreWeights Layer R15.1.
+*Needs:* §§6.3, 6.5; AlgebraicModularFormsAndSerreWeights §1.5 (All-weight analytic comparison, Layer R15.1).
 
 API:
 
@@ -602,17 +603,17 @@ In the parameter Q, the branch `j^(1/3) = E₄/η⁸ = Q^(−1/3)(1 + 248Q + 412
 
 Set `h = λ(1 − λ)/16 = q ∏_{n≥1} ((1 + q^(2n))/(1 + qⁿ))²⁴ = q ∏_{m odd} (1 + q^m)^(−24)`. It is a nowhere-vanishing weak modular function for the theta group `⟨Γ(2), S⟩`, the conjugate of `Γ₀(2)` containing S. For `n ≥ 1`, the branch `h^(1/n)` with leading term `q^(1/n)` has bounded denominators if and only if `n ∣ 24`, and it is a weak modular function on a congruence subgroup if and only if `n ∣ 24` (CDT, (1.0.4) and the following discussion, p.629). CDT describes h as having level `Γ₀(2)`; with `q = exp(πiτ)`, `T ∈ Γ₀(2)` sends `q` to `−q` and changes the sign of `h = q + ⋯`, so the invariance group is the theta group (the abelianization statements are conjugation-invariant and are unaffected).
 
-*Proof sketch.* Write `h = q·u` with `u = ∏_{m odd}(1 + q^m)^(−24) ∈ 1 + qℤ[[q]]`, from `λ = (θ₂/θ₃)⁴` and `1 − λ = (θ₄/θ₃)⁴` (§2.1). If `n ∣ 24`, every factor of `u^(1/n)` has an integral exponent. Conversely, if `u^(1/n)` has bounded denominators, the root property of §1.2 makes it integral, so its `q`-coefficient `−24/n` is an integer. S maps λ to `1 − λ` and fixes h; h has no zeros on `ℍ`, so `h^(1/n)` is a weak modular function on the kernel of a character of the theta group of order dividing n. Bounded denominators give congruence by §6.4, and congruence gives bounded denominators by AlgebraicModularFormsAndSerreWeights Layer R15.2.
+*Proof sketch.* Write `h = q·u` with `u = ∏_{m odd}(1 + q^m)^(−24) ∈ 1 + qℤ[[q]]`, from `λ = (θ₂/θ₃)⁴` and `1 − λ = (θ₄/θ₃)⁴` (§2.1). If `n ∣ 24`, every factor of `u^(1/n)` has an integral exponent. Conversely, if `u^(1/n)` has bounded denominators, the root property of §1.2 makes it integral, so its `q`-coefficient `−24/n` is an integer. S maps λ to `1 − λ` and fixes h; h has no zeros on `ℍ`, so `h^(1/n)` is a weak modular function on the kernel of a character of the theta group of order dividing n. Bounded denominators give congruence by §6.4, and congruence gives bounded denominators by AlgebraicModularFormsAndSerreWeights §2.9 (All-prime bounded denominators, Layer R15.2).
 
-*Needs:* §§1.1, 1.2, 2.1, 6.4; AlgebraicModularFormsAndSerreWeights Layer R15.2.
+*Needs:* §§1.1, 1.2, 2.1, 6.4; AlgebraicModularFormsAndSerreWeights §2.9 (All-prime bounded denominators, Layer R15.2).
 
 ### 6.9 The Fermat-cover test
 
 For `n ≥ 1`, the Fermat cover `uⁿ + vⁿ = 1` over the λ-line with `λ = uⁿ` corresponds to a congruence subgroup exactly for `n ∈ {1, 2, 4, 8}`, and the normalized branch `v = (1 − 16x)^(1/n)` with `x = λ/16` has bounded denominators exactly for these n (CDT, p.628; §1.1.3, p.631).
 
-*Proof sketch.* For an odd prime p dividing n, the p-adic valuations of the coefficients of `(1 − 16x)^(1/n)` tend to `−∞`. For `n = 2^a` with `a ≥ 1`, the coefficient of `x^m` has 2-adic valuation `(4 − a)m − v₂(m!)`, bounded below exactly when `a ≤ 3`. For `n ∣ 8`, `u = λ^(1/n) = 16^(1/n) q^(1/n) ∏ ((1 + q^(2n))/(1 + q^(2n−1)))^(8/n)` is a scalar times an integral series, and both u and v are congruence by §6.4. For other n, v has unbounded denominators, so it is not congruence (AlgebraicModularFormsAndSerreWeights Layer R15.2), and neither is the cover.
+*Proof sketch.* For an odd prime p dividing n, the p-adic valuations of the coefficients of `(1 − 16x)^(1/n)` tend to `−∞`. For `n = 2^a` with `a ≥ 1`, the coefficient of `x^m` has 2-adic valuation `(4 − a)m − v₂(m!)`, bounded below exactly when `a ≤ 3`. For `n ∣ 8`, `u = λ^(1/n) = 16^(1/n) q^(1/n) ∏ ((1 + q^(2n))/(1 + q^(2n−1)))^(8/n)` is a scalar times an integral series, and both u and v are congruence by §6.4. For other n, v has unbounded denominators, so it is not congruence (AlgebraicModularFormsAndSerreWeights §2.9 (All-prime bounded denominators, Layer R15.2)), and neither is the cover.
 
-*Needs:* §§2.2, 2.4, 6.4; AlgebraicModularFormsAndSerreWeights Layer R15.2.
+*Needs:* §§2.2, 2.4, 6.4; AlgebraicModularFormsAndSerreWeights §2.9 (All-prime bounded denominators, Layer R15.2).
 
 ### Examples
 
@@ -623,7 +624,7 @@ For `n ≥ 1`, the Fermat cover `uⁿ + vⁿ = 1` over the λ-line with `λ = u�
 
 ### Dependencies
 
-Layers 1–5; ConformalMappingPartII §§5.5, 5.8, 9.19; QSeriesPartitionsAndMockModularForms §5.2; AlgebraicModularFormsAndSerreWeights Layers R15.1–R15.2; FuchsianOrbifolds Layers 2, 5, 6; BelyiMaps Layers 6, 9; ModularForms, Worked examples.
+Layers 1–5; ConformalMappingPartII §§5.5, 5.8, 9.19; QSeriesPartitionsAndMockModularForms §5.2; AlgebraicModularFormsAndSerreWeights §§1.5, 2.9 (Layers R15.1–R15.2); FuchsianOrbifolds Layers 2, 5, 6; BelyiMaps Layers 6, 9; ModularForms, Worked examples.
 
 ## Layer 7: Differential equations and vector-valued forms
 
@@ -773,11 +774,11 @@ API:
 
 ### 7.13 An invisible summand of infinite image
 
-Let σ be the representation of `PSL₂(ℤ) = ⟨S, R | S² = R³ = 1⟩` with `σ(S) = diag(1, −1)` and `σ(R) = [[2, 1], [−7, −3]]`, where `T = SR`. Then `σ(T) = [[2, 1], [7, 3]]` is semisimple of infinite order, and `ρ = 1 ⊕ σ`, `F = (1, 0, 0)`, `k = 0` is a vector-valued form with integral coefficients for which ρ has infinite image (counterexample to the unrestricted reading of CDT, Corollary 7.3.4, p.691).
+Let σ be the representation of `PSL₂(ℤ) = ⟨S, R | S² = R³ = 1⟩` (FuchsianOrbifolds Layer 2 item 5 and Layer 6 item 1) with `σ(S) = diag(1, −1)` and `σ(R) = [[2, 1], [−7, −3]]`, where `T = SR`. Then `σ(T) = [[2, 1], [7, 3]]` is semisimple of infinite order, and `ρ = 1 ⊕ σ`, `F = (1, 0, 0)`, `k = 0` is a vector-valued form with integral coefficients for which ρ has infinite image (counterexample to the unrestricted reading of CDT, Corollary 7.3.4, p.691).
 
 *Proof sketch.* `σ(S)² = I`, `σ(R)² = [[−3, −1], [7, 2]]` and `σ(R)³ = I`. The characteristic polynomial of `σ(T)` is `X² − 5X − 1`, with distinct roots `(5 ± √29)/2`, one of modulus greater than one. The first coordinate is constant and transforms trivially; the others vanish.
 
-*Needs:* §7.3; FuchsianOrbifolds Layer 2.
+*Needs:* §7.3; FuchsianOrbifolds Layer 2 item 5 and Layer 6 item 1.
 
 ### 7.14 Positive-weight forms and infinite monodromy
 
@@ -797,7 +798,7 @@ Let h be a nonzero congruence form of weight `k ≥ 1` on `Γ′`, viewed as a g
 
 ### Dependencies
 
-Layers 1–3 and 6; DiophantineApproximationAndTranscendencePartII §§4.1, 4.2, 4.5; DiophantineApproximationAndTranscendence §§5.2–5.3; ConformalMappingPartII §§0.3, 0.5, 1.8, 5.8; QSeriesPartitionsAndMockModularForms §§5.2, 8.1; ModularForms Layer 0; UniversalCovers Stage 2; FuchsianOrbifolds Layer 2.
+Layers 1–3 and 6; DiophantineApproximationAndTranscendencePartII §§4.1, 4.2, 4.5; DiophantineApproximationAndTranscendence §§5.2–5.3; ConformalMappingPartII §§0.3, 0.5, 1.8, 5.8; QSeriesPartitionsAndMockModularForms §§5.2, 8.1; ModularForms Layer 0; UniversalCovers Stage 2; FuchsianOrbifolds Layers 2, 6.
 
 ## Layer 8: Quasimodular forms and arithmetic growth
 
@@ -805,9 +806,9 @@ This layer defines weakly holomorphic quasimodular forms by adjoining `E₂` and
 
 ### 8.1 Weakly holomorphic quasimodular forms
 
-For a finite-index `Γ ≤ SL₂(ℤ)`, let `M(Γ)` be the graded ring of integral-weight modular forms of ModularForms Layer 0, with its central-character convention (if `−I ∈ Γ`, only even weights occur). Define `M̃(Γ) = M(Γ)[E₂]` and `M̃^!(Γ) = M̃(Γ)[Δ⁻¹]`, subrings of the holomorphic functions on `ℍ`, graded by weight and filtered by depth (the degree in `E₂`); equivalently `M̃^!(Γ) = M^!(Γ)[E₂]` with `M^!(Γ)` the weak forms of §1.1 (CDT, Definition 7.4.3, p.692; Lemma 7.4.4, pp.692–693). `E₂` is Mathlib's `EisensteinSeries.E2`.
+For a finite-index `Γ ≤ SL₂(ℤ)`, let `M(Γ) = ⊕_k ModularForm Γ k` be Mathlib's graded commutative ring of integral-weight modular forms on the image of Γ in `GL₂(ℝ)` (`ModularForm.instGCommRing`; its hypothesis `HasDetPlusMinusOne` holds for the image of every subgroup of `SL₂(ℤ)`), with the parity convention of ModularForms Layer 0 (if `−I ∈ Γ`, only even weights occur). Define `M̃(Γ) = M(Γ)[E₂]` and `M̃^!(Γ) = M̃(Γ)[Δ⁻¹]`, subrings of the holomorphic functions on `ℍ`, graded by weight and filtered by depth (the degree in `E₂`); equivalently `M̃^!(Γ) = M^!(Γ)[E₂]` with `M^!(Γ)` the weak forms of §1.1 (CDT, Definition 7.4.3, p.692; Lemma 7.4.4, pp.692–693). `E₂` is Mathlib's `EisensteinSeries.E2`.
 
-*Needs:* §§1.1, 1.4; Mathlib `ModularForm.discriminant`, `ModularForm.logDeriv_eta_eq_E2`, `EisensteinSeries.E2`; ModularForms Layer 0.
+*Needs:* §§1.1, 1.4; Mathlib `ModularForm.instGCommRing`, `ModularForm.discriminant`, `ModularForm.logDeriv_eta_eq_E2`, `EisensteinSeries.E2`; ModularForms Layer 0 (parity only).
 
 API:
 
@@ -841,9 +842,9 @@ Let `K₀(x) = Σ C(2n, n)² xⁿ` and `E₀(x) = ₂F₁(−1/2, 1/2; 1; 16x)`.
 
 ### 8.4 The Catalan integrals and theta quotient
 
-The series `I₁(x) = Σ C(2n, n)² x^(n+1)/(n + 1)` and `I₂(x) = Σ C_n² x^(n+1)`, with `C_n = C(2n, n)/(n + 1)`, are integral, and `I₁′ = K₀`, `x I₂′ = I₁`. Moreover `Σ C_n² (λ/16)ⁿ = (4/θ₂⁴)(4θ₃² θ_qθ₂/θ₂ + 4θ₃ θ_qθ₃ − θ₃⁴)`, an element of `M̃^!(Γ(4))` (CDT, §7.4.2, pp.693–694). These examples support CDT Question 7.4.5 and do not prove it.
+The series `I₁(x) = Σ C(2n, n)² x^(n+1)/(n + 1)` and `I₂(x) = Σ C_n² x^(n+1)`, with `C_n = C(2n, n)/(n + 1)`, are integral, and `I₁′ = K₀`, `x I₂′ = I₁`. Moreover `Σ C_n² (λ/16)ⁿ = (4/θ₂⁴)(4θ₃² θ_qθ₂/θ₂ + 4θ₃ θ_qθ₃ − θ₃⁴)`, an inhomogeneous element of `M̃^!(Γ(4))` with components of weights 1 and 0 (CDT, §7.4.2, pp.693–694). These examples support CDT Question 7.4.5 and do not prove it.
 
-*Proof sketch.* `C(2n, n)²/(n + 1) = C(2n, n)·C_n` and `C_n²(n + 1) = C(2n, n)²/(n + 1)` give integrality and the two derivative identities. The theta quotient follows from the elliptic differential equation and the theta identities; the apparent pole from `θ₂⁴ = 16q + ⋯` cancels. Each term has weight 1 and character `χ₋₄(d)` on `Γ(2)`; `θ_qθ₂/θ₂` is a logarithmic derivative, in which the character of `θ₂` cancels.
+*Proof sketch.* `C(2n, n)²/(n + 1) = C(2n, n)·C_n` and `C_n²(n + 1) = C(2n, n)²/(n + 1)` give integrality and the two derivative identities. The theta quotient follows from the elliptic differential equation and the theta identities; the apparent pole from `θ₂⁴ = 16q + ⋯` cancels. The first two terms have weight 1 and character `χ₋₄(d)` on `Γ(2)`, trivial on `Γ(4)`: `θ_qθ₂/θ₂` is a logarithmic derivative, in which the character of `θ₂` cancels, and `θ₃ θ_qθ₃ = (1/2)θ_q(θ₃²)`, each divided by the weight-2 form `θ₂⁴`. The third term is `−4θ₃⁴/θ₂⁴ = −4/λ` (§2.1), of weight 0 with trivial character. So the sum is an inhomogeneous element of `M̃^!(Γ(4))`, which is all that is claimed; it is not of pure weight 1.
 
 *Needs:* §§2.1, 8.1, 8.2; Mathlib `Derivative.normalizedDerivOfComplex_E₂`, `Derivative.serreDerivativeMF`.
 
@@ -871,9 +872,9 @@ API:
 
 If `ker ρ` contains a principal congruence subgroup, then ρ has no deficient place over any K. At finite places one denominator bounds the coefficients; at archimedean places the coefficients of a weight-k cuspidal component satisfy `|a_m| ≪_ε m^((k−1)/2+ε)` for every `ε > 0` (CDT, §7.4.8, p.695).
 
-*Proof sketch.* Each component is a cusp form on a common `Γ(M)`. Its K-coefficient space is the scalar extension of the rational structure, so AlgebraicModularFormsAndSerreWeights Layer R15.2 gives one denominator. For the archimedean bound decompose into newforms and oldforms (ModularForms Layer 4), apply Deligne's bound in the form of AutomorphicGaloisRepresentations §4.2, including the tempered bound at bad primes, and the divisor bound. Nonzero cusp forms here have even weight at least 2.
+*Proof sketch.* Each component is a cusp form on a common `Γ(M)`. Its K-coefficient space is the scalar extension of the rational structure, so AlgebraicModularFormsAndSerreWeights §2.9 (All-prime bounded denominators, Layer R15.2) gives one denominator. For the archimedean bound decompose into newforms and oldforms (ModularForms Layer 4), apply Deligne's bound in the form of AutomorphicGaloisRepresentations §4.2, including the tempered bound at bad primes, and the divisor bound. Nonzero cusp forms here have even weight at least 2.
 
-*Needs:* §8.5; AlgebraicModularFormsAndSerreWeights Layer R15.2; AutomorphicGaloisRepresentations §4.2; ModularForms Layers 0 and 4.
+*Needs:* §8.5; AlgebraicModularFormsAndSerreWeights §2.9 (All-prime bounded denominators, Layer R15.2); AutomorphicGaloisRepresentations §4.2; ModularForms Layers 0 and 4.
 
 ### 8.7 A finite deficient place from an arithmetic witness
 
@@ -892,7 +893,7 @@ Let f be a component of an element of `S_k(ρ; K)` that is not a weak form on an
 
 ### Dependencies
 
-Layers 1, 2, 6 and 7; ModularForms Layers 0 and 4; AlgebraicModularFormsAndSerreWeights Layer R15.2; AutomorphicGaloisRepresentations §4.2; GeometryOfNumbersAndQuadraticArithmetic §4.3; Mathlib derivative and Eisenstein API.
+Layers 1, 2, 6 and 7; ModularForms Layers 0 and 4; AlgebraicModularFormsAndSerreWeights §2.9 (All-prime bounded denominators, Layer R15.2); AutomorphicGaloisRepresentations §4.2; GeometryOfNumbersAndQuadraticArithmetic §4.3; Mathlib derivative and Eisenstein API.
 
 ## Layer 9: The arithmetic fundamental group of the cuspidal model
 
