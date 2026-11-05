@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-9644 mistakes recorded on the board: 5673 misprints, 2513 errors, 1074 gaps, 384 unparsed bullets.
+9650 mistakes recorded on the board: 5674 misprints, 2516 errors, 1076 gaps, 384 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -508,6 +508,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at the construction after Theorem 5.5.5, printed p.130 (AC line 5528): the source says the source tensors target-side complexes over the source structure sheaf; it should be tensor over the target structure sheaf; affects the proof. Found by ClassicalAdicEtaleCohomologyPartII (#971 at 0c4ae2f, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at the construction preceding Lemma 5.5.6, printed p.130, AC line 5528: the source says two pushed-forward complexes are tensored over O_X; it should be a tensor product over O_Y; affects the proof. Found by ClassicalAdicEtaleCohomologyPartII (#971 at d2c2d15, 2026-10-25, codex gpt-6-astra).
 
+## aggarwal2023
+
+- **Error** at Section 1.3, printed page 10 (lines 465–467): the source says a tiling `M` of `R` is determined by the set `X(M)` of its type-1 lozenges unless `R = T` and `X(M)` is empty; it should be require that no two consecutive rows lack type-1 lozenges (two plane tilings with heights `1_{x>0}` below row `1` and `1` resp. `y` on rows `≥ 1` share `X(M) = {(0,y) : y ≤ 0}`); affects nothing; (the roadmap's 9.7(f) carries the correct statement). <!-- tauceti-roadmap-review {"agent": "claude", "head": "229fbb7fde2b1c7b2018fb8c9c495046a09e2a59", "job": "REV-DESIGN-DimerModelsAndLozengeTilings", "model": "fable", "worker": "chris-x18"} -->. Found by DimerModelsAndLozengeTilings (#6570 at 229fbb7, 2026-11-05, claude fable).
+
 ## AGLR
 
 - **Error** at Example 2.5, printed p. 9 (AGLR lines 526–533): the source says removing discs with C-valued torus centres describes v-closure over any perfectoid C; it should be all geometric residue discs, or assume C algebraically closed; affects a stated result. Found by DiamondsAndVStacksPartII (#1482 at edad780, 2026-10-27, codex gpt-6-astra).
@@ -753,6 +757,11 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## AIP (Andreatta–Iovita–Pilloni), Hilbert adic paper, author final version
 
 - **Error** at Lemma 8.1, §8.1, printed p. 34: the source says the proof applies level rigidity to α/ᾱ without showing that this quotient fixes the level marking; it should be supplemented by a proved freeness hypothesis: in the ℚ(√3), N = 7 CM example the quotient is −1, which moves the marking; affects the proof. Found by  (? at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## aizenman-duminilcopin-2021
+
+- **Error** at (5.9), printed page 24: the source says the infrared bound is `E(p)Ŝ^{(L)}(p) ≤ 1/(2|J|β)` with `|J| = Σ_y J_{0y} = 2dJ`; it should be `≤ 1/(βJ)` for the nearest-neighbour coupling J per bond, the sharp value attained by the Gaussian lattice field as its single-site mass tends to dβJ (and exceeded, under the printed constant, by φ⁴ models with small λ); affects a stated result; ((5.9); the constants of Section 5.3 absorb it). Found by ConstructiveFieldTheoryPhi4 (#6567 at 6ddf991, 2026-11-05, claude fable).
+- **Gap** at Definition 2.1, printed page 8: the source says the source allows block weights b_n of any real sign; the Lebowitz inequality fails for b = (1, −1) with coupling K > (ln 2)/2, and the transfer argument at page 45 (the sampling weights `Q_iQ_j⟨σ_{x,i}σ_{y,j}⟩/⟨τ_xτ_y⟩`) needs Q_i ≥ 0; it should be require b_n ≥ 0; affects the proof; (of the Section 7 extension for the class as literally defined). <!-- tauceti-roadmap-review {"agent": "claude", "head": "6ddf9915bac49d94fa9532911d43cd1bf2d56e01", "job": "REV-DESIGN-ConstructiveFieldTheoryPhi4", "model": "fable", "worker": "chris-x9"} -->. Found by ConstructiveFieldTheoryPhi4 (#6567 at 6ddf991, 2026-11-05, claude fable).
 
 ## akn-delta
 
@@ -6068,6 +6077,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Gap** at Proposition 2.1, final proof step, printed p. 10 (Goodman-Wenzl line 764): the source says the endomorphism argument extends to unequal objects through the retractions of §1.1, without excluding d=0; it should be give a separate argument for τ=±i, or restrict to d≠0; those retractions divide by d; affects the proof. Found by TemperleyLieb (ERRATA-TemperleyLieb at f3fd371, 2026-10-23, codex gpt-6-astra).
 - **Misprint** at §2.4, property 3, printed p. 8 (Goodman-Wenzl line 695): the source says the generic corner uses zᴸ_{λ′}, although only λ and μ were introduced; it should be use zᴸ_μ as the right idempotent; affects nothing. Found by TemperleyLieb (ERRATA-TemperleyLieb at f3fd371, 2026-10-23, codex gpt-6-astra).
 
+## gorin2021
+
+- **Error** at Lemma 4.7, printed page 74 (lines 1766–1780): the source says for large `n` either `n` or `n+2` lies in `W_θ`; it should be `n` or `n+1` (for `θ = π/2` every even `n` has `θ = πj/n` with `j = n/2`, and the proof's `O(1/n)` difference can be `0`); affects the proof; (the roadmap's 9.2(a) uses `n+1`). Found by DimerModelsAndLozengeTilings (#6570 at 229fbb7, 2026-11-05, claude fable).
+
 ## GORSP
 
 - **Misprint** at §2, p. 4 (GORSP line 115): the source says Λ_i* equals πΛ_(2r−1) for every indicated i; it should be πΛ_(2r−i); affects a stated result. Found by GeometricSatakeAndFusionPartII (#1177 at 60448fc, 2026-10-27, codex gpt-6-astra).
@@ -7799,6 +7812,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Error** at proof of Lemma 2.16, printed p. 270 (KEE99 line 681): the source says the fixed-Hilbert-polynomial Picard parameter space is proper; it should be finite type only: a nodal rational curve has Pic⁰=G_m, which is not proper; affects the proof; <!-- tauceti-roadmap-review {"agent": "codex", "head": "b3f8aafb2a89b8f1edcb0410e03a70c7e762312b", "job": "RT-AlgebraicModuliForArithmeticGeometryPartII~2a", "model": "gpt-6-astra", "worker": "chris-6"} -->. Found by AlgebraicModuliForArithmeticGeometryPartII (#1082 at b3f8aaf, 2026-10-27, codex gpt-6-astra).
 - **Error** at proof of Lemma 2.16, printed p. 270, KEE99 lines 680–684: the source says a fixed-Hilbert-polynomial Picard parameter space is proper and finite type for arbitrary projective schemes; it should be use finite-type Pic^τ; nodal Pic⁰=G_m is nonproper, and reducible fixed-polynomial loci can be infinite type; affects the proof. Found by AlgebraicModuliForArithmeticGeometryPartII (#1082 at a7c1e22, 2026-10-26, codex gpt-6-astra).
 
+## kenyon2009
+
+- **Gap** at Section 5.4, printed page 29 (lines 862–866): the source says ergodicity of a torus limit follows because the slope fibre of translation-invariant Gibbs measures is convex with the ergodic measures as its extreme points; it should be note that the fibre over a non-corner slope is not a face (the measure `(δ_{M₁}+δ_{M₂}+δ_{M₃})/3` is extreme in the fibre over `(1/3,1/3)` and not ergodic), so ergodicity needs another argument; affects the proof. Found by DimerModelsAndLozengeTilings (#6570 at 229fbb7, 2026-11-05, claude fable).
+
 ## KervaireMilnor
 
 - **Misprint** at Lemma 8.2 proof, p. 533 (KervaireMilnor line 1089): the source says the obstruction groups use the undefined pair (H,L); it should be amended to use the domain pair (K,L); affects the proof. Found by HomotopySpheres (ERRATA-HomotopySpheres at fb7c47e, 2026-10-23, codex gpt-6-astra).
@@ -9208,6 +9225,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at line 604 (printed p. 14): the source says E = K_{X^M} ⊗ [D]^{−1}; it should be K_{X^M} ⊗ [D], as in the Main Theorem (line 550) and as the simple poles of ν along D (line 606) require; affects nothing. Found by BallQuotientsAndComplexHyperbolicLattices (#6540 at 541ded3, 2026-11-05, claude fable).
 - **Misprint** at §1.1 equation (1), line 144 (printed p. 4): the source says the dot product a′·z′ is written as the bilinear sum of products; it should be the sum with the first factor conjugated, as the preservation of Im zₙ − ‖z′‖² and the commutator formula (12) at line 450 require; affects nothing. Found by BallQuotientsAndComplexHyperbolicLattices (#6540 at 541ded3, 2026-11-05, claude fable).
 - **Error** at §1.3 structure (II), line 373 to line 377, and equation (6), line 175 (printed pp. 5 and 9): the source says every element of Γ_b over a′ ∈ Λ_b has vertical component a multiple of τ, and the multiplier (6) carries no constant factor; it should be a coset t_{a′} + τℤ with a unitary factor e^{2πi t_{a′}/τ} in (6) (the derivation at line 404 to line 438 proves only that the image of Γ_b in ℂ^{n−1} is a lattice; for the lattice generated by n_{(λ,0)} and n_{(iλ,0)} the element over (1+i)λ has vertical component −2λ² with τ = 4λ²); affects a stated result; ((II) and (6)); the Main Theorem is unaffected because the factor is unitary. Found by BallQuotientsAndComplexHyperbolicLattices (#6540 at 541ded3, 2026-11-05, claude fable).
+
+## montalban-cst2
+
+- **Misprint** at XI.2, printed page 208 (line 9039): the source says the source cites the graph result as "[Part 1, Theorem ??]", an unresolved cross-reference; it should be Part 1, Theorem VI.27; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "7791b62063ab7a9787f02dd674229570ed690c43", "job": "REV-DESIGN-CountableStructureSpacesPartII", "model": "fable", "worker": "chris-x17"} -->. Found by CountableStructureSpacesPartII (#6568 at 7791b62, 2026-11-05, claude fable).
 
 ## Montgomery1987
 
