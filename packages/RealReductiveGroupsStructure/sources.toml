@@ -1,0 +1,136 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "RealReductiveGroupsStructure"
+
+[[source]]
+id = "borel-tits1965"
+authors = "Armand Borel, Jacques Tits"
+title = "Groupes réductifs"
+year = 1965
+venue = "Publications Mathématiques de l'IHÉS 27"
+doi = "10.1007/BF02684375"
+locator_scheme = "section"
+locator = "§§4–5, Théorème 4.15, Corollaires 5.9 and 5.19; §14.7"
+url = "https://www.numdam.org/item/PMIHES_1965__27__55_0/"
+fetched_from = "https://www.numdam.org/item/PMIHES_1965__27__55_0.pdf"
+fetched_at = "2026-11-05T01:41:36Z"
+sha256 = "ec6674ba292deaadd77a449f4bad3750db79c0b87b117a892ef6b09bb16357ad"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["comparison with ℝ-parabolic subgroups"]
+
+[[source]]
+id = "bourbaki-lie4-6"
+authors = "N. Bourbaki"
+title = "Lie Groups and Lie Algebras"
+year = 2002
+doi = "10.1007/978-3-540-89394-3"
+locator_scheme = "section"
+locator = "Ch. IV §2, nos. 3–6"
+url = "https://doi.org/10.1007/978-3-540-89394-3"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["parabolic subgroups of a Tits system"]
+
+[[source]]
+id = "warner1972"
+authors = "G. Warner"
+title = "Harmonic Analysis on Semi-Simple Lie Groups I"
+year = 1972
+doi = "10.1007/978-3-642-50275-0"
+locator_scheme = "chapter"
+locator = "Ch. 1, §§1.1–1.2"
+url = "https://doi.org/10.1007/978-3-642-50275-0"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Iwasawa and Bruhat decompositions, parabolic subgroups"]
+
+[[source]]
+id = "knapp2002"
+authors = "Anthony W. Knapp"
+title = "Lie Groups Beyond an Introduction"
+year = 2002
+doi = "10.1007/978-1-4757-2453-0"
+locator_scheme = "chapter"
+locator = "Ch. VI §§4–5, Ch. VII §§2, 5, 7"
+url = "https://doi.org/10.1007/978-1-4757-2453-0"
+licence_class = "none"
+status = "uncertified"
+version_note = "2nd edition, Progress in Mathematics 140, Birkhäuser 2002; the DOI the service resolved is the record of the 1996 first edition; paywalled, cited by its locator without the text"
+cited_for = ["Iwasawa data, Bruhat decomposition, parabolic subalgebras and subgroups"]
+
+[[source]]
+id = "wallach1988"
+authors = "Nolan R. Wallach"
+title = "Real Reductive Groups I"
+year = 1988
+venue = "Pure and Applied Mathematics 132, Academic Press"
+locator_scheme = "chapter"
+locator = "Ch. 2, §§2.1–2.3"
+url = "https://www.sciencedirect.com/bookseries/pure-and-applied-mathematics/vol/132"
+licence_class = "none"
+status = "uncertified"
+version_note = "ISBN 978-0-12-732960-7; the chapter DOI first tried resolved to a different chapter record and was dropped; paywalled, cited by its locator without the text"
+cited_for = ["real reductive groups, parabolic subgroups, Langlands decomposition"]
+
+[[source]]
+id = "brown-fisher-hurtado2022"
+authors = "Aaron Brown, David Fisher, Sebastian Hurtado"
+title = "Zimmer's conjecture: Subexponential growth, measure rigidity, and strong property (T)"
+year = 2022
+doi = "10.4007/annals.2022.196.3.1"
+venue = "Annals of Mathematics 196 (2022), no. 3, 891–940"
+arxiv = "1608.04995v4"
+locator_scheme = "section"
+locator = "§2"
+url = "https://arxiv.org/abs/1608.04995v4"
+fetched_from = "https://arxiv.org/pdf/1608.04995v4"
+fetched_at = "2026-11-05T01:41:52Z"
+sha256 = "d8e419a445d8a47a8f73b42bf6f235a714832d420da4b73acf202de9031d1125"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v4 read; §2 (pp. 11–12 of the preprint) cited by preprint lines; published as Annals of Math. 196 (2022), no. 3, 891–940"
+cited_for = ["standard parabolic conventions"]
+
+[[source]]
+id = "brown-rodriguezhertz-wang2022"
+authors = "Aaron Brown, Federico Rodriguez Hertz, Zhiren Wang"
+title = "Invariant measures and measurable projective factors for actions of higher-rank lattices on manifolds"
+year = 2022
+doi = "10.4007/annals.2022.196.3.2"
+venue = "Annals of Mathematics 196 (2022), no. 3, 941–981"
+arxiv = "1609.05565v2"
+locator_scheme = "section"
+locator = "§2"
+url = "https://arxiv.org/abs/1609.05565v2"
+fetched_from = "https://arxiv.org/pdf/1609.05565v2"
+fetched_at = "2026-11-05T01:41:57Z"
+sha256 = "bb1bee0b47bf5c97c59fbac3288c2b1f6e3f1971e95fc47589b179afad9a4368"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v2 read; §2 (pp. 3–4 of the preprint) cited by preprint lines; published as Annals of Math. 196 (2022), no. 3, 941–981"
+cited_for = ["standard parabolic conventions and dynamical description"]
+
+[[source]]
+id = "bradlow-collier-garciaprada-gothen-oliveira2024"
+authors = "Steve Bradlow, Brian Collier, Oscar Garcia-Prada, Peter Gothen, André Oliveira"
+title = "A general Cayley correspondence and higher Teichmüller spaces"
+year = 2024
+doi = "10.4007/annals.2024.200.3.1"
+venue = "Annals of Mathematics 200 (2024), no. 3, 803–892"
+arxiv = "2101.09377v2"
+locator_scheme = "section"
+locator = "§2"
+url = "https://arxiv.org/abs/2101.09377v2"
+fetched_from = "https://arxiv.org/pdf/2101.09377v2"
+fetched_at = "2026-11-05T01:43:42Z"
+sha256 = "c981234d6e1636c1d894834c3b545c35c8448e8a934db5120fa2b538fa6beaf8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v2 read (title there omits the words 'general' and 'rank'); published as Annals of Math. 200 (2024), no. 3, 803–892"
+cited_for = ["parabolic and Levi conventions for Higgs bundles of real groups"]
