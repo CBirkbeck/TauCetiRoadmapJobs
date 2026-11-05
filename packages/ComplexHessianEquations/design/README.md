@@ -1,22 +1,23 @@
 # Roadmap: complex hessian equations
 
-**Summary.** Build the theory of fully nonlinear elliptic equations of complex Hessian type on compact complex manifolds, in the eigenvalue form used by the modern a priori estimates. A real (1,1)-form `α` has an eigenvalue vector `λ[α] ∈ ℝⁿ` relative to a Hermitian metric `ω_X`, and the equation reads `f(λ[χ + i∂∂̄φ]) = c·e^F` for a symmetric, elliptic, positively homogeneous function `f` on an admissible cone `Γ`. The roadmap develops four things. First, the pointwise calculus: spectral functions of self-adjoint operators over `ℝ` or `ℂ`, with Lewis's derivative formula, Spruck's concavity theorem and the von Neumann–Fan trace inequality. Second, Gårding's theory of hyperbolic polynomials and the cones `Γ_k`, with admissible pairs, the Guo–Phong–Tong structural condition and its examples. Third, the equation on a compact Hermitian manifold and the comparison principle, giving uniqueness. Fourth, the global theory on compact Kähler manifolds: Yau's solution of the complex Monge–Ampère equation by the continuity method (Moser iteration, the Aubin–Yau second-order estimate and Calabi's third-order estimate), the uniform exponential integrability of quasi-plurisubharmonic functions, and the sharp `L^∞` estimates of Guo, Phong and Tong for every admissible pair satisfying the structural condition, on fixed and on degenerating backgrounds.
+**Summary.** Build the theory of fully nonlinear elliptic equations of complex Hessian type on compact complex manifolds, in the eigenvalue form used by the modern a priori estimates. A real (1,1)-form `α` has an eigenvalue vector `λ[α] ∈ ℝⁿ` relative to a Hermitian metric `ω_X`, and the equation reads `f(λ[χ + i∂∂̄φ]) = c·e^F` for a symmetric, elliptic, positively homogeneous function `f` on an admissible cone `Γ`. The roadmap develops four things. First, the pointwise calculus: spectral functions of self-adjoint operators over `ℝ` or `ℂ`, with Lewis's derivative formula and Spruck's concavity theorem, built on the eigenvalue inequalities that OperatorTheory supplies. Second, Gårding's theory of hyperbolic polynomials and the cones `Γ_k`, with admissible pairs, the Guo–Phong–Tong structural condition and its examples. Third, the equation on a compact Hermitian manifold and the comparison principle, giving uniqueness. Fourth, the global theory on compact Kähler manifolds: Yau's solution of the complex Monge–Ampère equation by the continuity method (Moser iteration, the Aubin–Yau second-order estimate and Calabi's third-order estimate), the uniform exponential integrability of quasi-plurisubharmonic functions, and the sharp `L^∞` estimates of Guo, Phong and Tong for every admissible pair satisfying the structural condition, on fixed and on degenerating backgrounds.
 
 ## Scope and ownership
 
 This roadmap owns:
 
-- eigenvalues of a Hermitian form relative to an inner product, Weyl monotonicity, the von Neumann–Fan trace inequality and Ky Fan sums, spectral functions of self-adjoint operators over `RCLike 𝕜` with their first derivative and its continuity, the convexity of spectral domains, the concavity and ellipticity of spectral functions, and the determinant and Euler identities for their derivatives (Layer 1). The real symmetric case is the same statement at `𝕜 = ℝ` and is the Caffarelli–Nirenberg–Spruck setting.
+- eigenvalues of a Hermitian form relative to an inner product, the differentiability of Ky Fan sums at a spectral gap, spectral functions of self-adjoint operators over `RCLike 𝕜` with their first derivative and its continuity, the convexity of spectral domains, the concavity and ellipticity of spectral functions, and the determinant and Euler identities for their derivatives (Layer 1). The real symmetric case is the same statement at `𝕜 = ℝ` and is the Caffarelli–Nirenberg–Spruck setting.
 - elementary symmetric functions with the Newton and Maclaurin inequalities, hyperbolic polynomials and Gårding's theorem, the cones `Γ_k`, the concavity of `σ_k^{1/k}` and of Hessian quotients, admissible cones and admissible pairs, the structural condition, and the standard examples with explicit structural constants (Layer 2).
 - the eigenvalue function of a continuous real (1,1)-form on a complex manifold with a Hermitian metric, `i∂∂̄` of a `C²` function, the complex Laplacian, the form and integration identities, admissible functions, the equation with its normalizations, degenerating backgrounds, the energy and the entropy (Layer 3).
 - the comparison principle and the uniqueness theorem on compact connected Hermitian manifolds (Layer 4).
 - the linear analysis on compact Kähler manifolds that the continuity method and the estimates consume (Layer 5), Yau's theorem (Layer 6), the uniform exponential integrability of quasi-plurisubharmonic functions (Layer 7), and the Guo–Phong–Tong `L^∞` estimates (Layer 8).
 
-No roadmap on the content repository, no open roadmap pull request and no board package owns any of these objects. K3Surfaces §2.1 solves the dimension-two Kähler Monge–Ampère equation for its own use; it is a later consumer of Layer 6. ComplexComparisonPartII Layer C5.4 owns positive currents and the regularization of plurisubharmonic functions, which are pluripotential objects this roadmap does not build. OptimalTransport Layer 6 owns the real Monge–Ampère equation of transport.
+No roadmap on the content repository, no open roadmap pull request and no board package owns any of these objects. The eigenvalue inequalities that Layer 1 rests on are owned on the content repository and consumed as supplier contracts: OperatorTheory/PolarDecomposition PD-A51–A53 (Courant–Fischer min–max, Loewner monotonicity and Weyl's bound for sorted eigenvalues), OperatorTheory/PrincipalAngles PA-B32 (von Neumann's trace inequality) and OperatorTheory/Majorization MAJ-A27 (Ky Fan's maximum principle). K3Surfaces §2.1 solves the dimension-two Kähler Monge–Ampère equation for its own use; it is a later consumer of Layer 6. ComplexComparisonPartII Layer C5.4 owns positive currents and the regularization of plurisubharmonic functions, which are pluripotential objects this roadmap does not build. OptimalTransport Layer 6 owns the real Monge–Ampère equation of transport.
 
 This roadmap leaves:
 
 - to ComplexHessianEquations Part II, two theorems. The first is the existence theorem for the complex Monge–Ampère equation on compact Hermitian manifolds (Tosatti–Weinkove). Its proof uses Cherrier's second- and third-order estimates with torsion, Gauduchon's theorem and the Tosatti–Weinkove `L^∞` argument, none of which the Kähler theory uses. The second is the `L^∞` estimate on compact Hermitian manifolds (Guo–Phong), which compares with the local Dirichlet problem of Caffarelli, Kohn, Nirenberg and Spruck. That Part II also owns the higher differentiability of spectral functions, which no target here uses, and the complex Evans–Krylov estimate. Its introduction states that this roadmap stops at Yau's theorem and the Kähler `L^∞` estimates.
+- to OperatorTheory/PolarDecomposition, OperatorTheory/PrincipalAngles and OperatorTheory/Majorization: the min–max formula, the monotonicity and Weyl continuity of sorted eigenvalues, von Neumann's trace inequality and Ky Fan's maximum principle, consumed as stated in the supplier contracts; Layer 1 only derives their two-sided forms and the differentiability of Ky Fan sums.
 - to PDE, as named supplier contracts below: the Euclidean Schauder estimates, the mean value inequality and the strong maximum principle, the weak Harnack inequality for supersolutions and the Aleksandrov–Bakelman–Pucci maximum principle.
 - to ComplexKahlerGeometry, PseudodifferentialOperators, Yamabe and DifferentialGeometry: the type calculus, Chern connections, Kähler identities, `L²` and Hölder elliptic theory, the Sobolev inequality and integration, consumed as stated in the supplier contracts.
 
@@ -31,7 +32,7 @@ Pluripotential theory (Bedford–Taylor products, capacities, weak solutions), v
 - Top forms: `ω^n = n!·dvol_g`, and `V = ∫_X ω_X^n`. For a real (1,1)-form `α`, `α^k ∧ ω^{n−k} = (k!(n−k)!/n!)·σ_k(λ[α])·ω^n`. **Witness:** for `n = 2` and `λ[α] = (λ₁, λ₂)`, `α ∧ ω = ((λ₁ + λ₂)/2)·ω²` and `α² = λ₁λ₂·ω²`.
 - `σ_k` is the `k`-th elementary symmetric polynomial (`σ_0 = 1`, `σ_k = 0` for `k > n`), `σ_{k;i}(λ) = σ_k(λ)|_{λ_i = 0}`, and `S_k = σ_k / binom(n, k)`. Then `Γ_k = {λ : σ_1(λ) > 0, …, σ_k(λ) > 0}`, so `Γ_n` is the open positive orthant and `Γ_1` the half-space `σ_1 > 0`; `e = (1, …, 1)`.
 - `χ_φ = χ + i∂∂̄φ`, and `ω_{t,φ} = ω_t + i∂∂̄φ` with `ω_t = χ + t·ω_X`. The entropy is `Ent_p(F) = V⁻¹ ∫_X e^{nF}|F|^p ω_X^n` for `p > 0`. Guo–Phong–Tong's `‖e^{nF}‖_{L¹(log L)^p}` equals `n^p·V·Ent_p(F)` (gpt2023 line 82–83).
-- Dictionaries. pss2012 writes `ω_0 + (i/2)∂∂̄φ` and `Δ = g^{pq̄}∂_p∂_q̄` with `ω_0 = (i/2) Σ g_{k̄j} dz^j ∧ dz̄^k`. Its `φ` is twice ours and its `Δ` is half of `Δ_ω`. Its `tr h = n + Δφ` equals our `tr_ω ω_φ = n + Δ_ω φ`. dinew-kolodziej2014 writes `dd^c = 2i∂∂̄`. gpt2023 (5.4) writes the Hessian equation without the factor `binom(n, k)`, so its constant `c` is ours divided by `binom(n, k)^{1/k}`.
+- Dictionaries. pss2012 writes `ω_0 + (i/2)∂∂̄φ` and `Δ = g^{pq̄}∂_p∂_q̄` with `ω_0 = (i/2) Σ g_{k̄j} dz^j ∧ dz̄^k`. Its `φ` is twice ours and its `Δ` is half of `Δ_ω`. Its `tr h = n + Δφ` equals our `tr_ω ω_φ = n + Δ_ω φ`. Its Ricci form `Ricci(ω) = −(i/2)∂∂̄ log ω^n` is half of ours for the same form `ω`, `Ric_PSS = (1/2)·Ric`, consistently with its `(i/2)` normalization of coefficients, so a Kähler–Einstein constant doubles in the dictionary: `Ric_PSS = λ·ω` there is `Ric = 2λ·ω` here. **Witness:** for `ω = i∂∂̄ log(1 + |z|²)` on `ℂP¹`, `Ric = 2ω` (§6.1) while `Ric_PSS = ω`, since `ω = (i/2)·2(1 + |z|²)^{−2} dz ∧ dz̄` and `−(i/2)∂∂̄ log(2(1 + |z|²)^{−2}) = i∂∂̄ log(1 + |z|²)`. dinew-kolodziej2014 writes `dd^c = 2i∂∂̄`. gpt2023 (5.4) writes the Hessian equation without the factor `binom(n, k)`, so its constant `c` is ours divided by `binom(n, k)^{1/k}`.
 - Spaces: `C^{k,α}(X)` is PseudodifferentialOperators §5.4's Hölder space of the trivial real line bundle (`k ≥ 0`, `0 < α < 1`). Solutions are `C²` unless stated, and "smooth" means `C^∞`. Coefficients are real; operators act on `RCLike 𝕜` inner product spaces.
 
 ## Exact supplier contracts
@@ -42,10 +43,9 @@ Read at commit `f6090c7095e1e56b3464c1daba5f24631f1290d2`.
 
 - `LinearMap.IsSymmetric.eigenvalues`, `LinearMap.IsSymmetric.eigenvalues_antitone`, `LinearMap.IsSymmetric.eigenvectorBasis`, `LinearMap.IsSymmetric.hasEigenvalue_eigenvalues` and `LinearMap.IsSymmetric.det_eq_prod_eigenvalues` (`Mathlib/Analysis/InnerProductSpace/Spectrum.lean`). These give the eigenvalues of a self-adjoint operator on a finite-dimensional inner product space over `RCLike 𝕜`, sorted decreasingly as `Fin n → ℝ` under `Module.finrank 𝕜 E = n`, with an orthonormal eigenbasis and `det = ∏ λ_i`. No perturbation theory is included.
 - `Matrix.IsHermitian.eigenvalues`, `Matrix.IsHermitian.spectral_theorem`, `Matrix.IsHermitian.det_eq_prod_eigenvalues` and `Matrix.IsHermitian.trace_eq_sum_eigenvalues` (`Mathlib/Analysis/Matrix/Spectrum.lean`), the matrix form of the same.
-- `LinearMap.IsSymmetric.hasEigenvalue_iSup_of_finiteDimensional` (`Mathlib/Analysis/InnerProductSpace/Rayleigh.lean`): the top eigenvalue is the supremum of the Rayleigh quotient. The full min–max characterization is not in Mathlib and is a target here.
-- `doublyStochastic_eq_convexHull_permMatrix` (`Mathlib/Analysis/Convex/Birkhoff.lean`): Birkhoff's theorem. The majorization criterion mentioned in that file's docstring is not proved there.
 - `MvPolynomial.esymm` and `Multiset.esymm` (`Mathlib/RingTheory/MvPolynomial/Symmetric/Defs.lean`) for `σ_k`; `Polynomial.card_roots_le_derivative` (`Mathlib/Analysis/Calculus/LocalExtr/Polynomial.lean`), Rolle's theorem for real polynomials; `Real.geom_mean_le_arith_mean_weighted` (`Mathlib/Analysis/MeanInequalities.lean`), the weighted AM–GM inequality.
-- `HasStrictFDerivAt.toOpenPartialHomeomorph` (`Mathlib/Analysis/Calculus/InverseFunctionTheorem/FDeriv.lean`) and `HasStrictFDerivAt.implicitFunction` (`Mathlib/Analysis/Calculus/Implicit.lean`): the inverse and implicit function theorems in Banach spaces, used for openness in the continuity method.
+- `HasStrictFDerivAt.toOpenPartialHomeomorph` (`Mathlib/Analysis/Calculus/InverseFunctionTheorem/FDeriv.lean`): the inverse function theorem in Banach spaces, for a map with an invertible strict derivative between complete normed spaces, used for openness in the continuity method. The implicit function theorem is not consumed; Mathlib's `HasStrictFDerivAt.implicitFunction` requires a finite-dimensional target and does not apply to Hölder spaces.
+- `ConvexOn.map_integral_le` (`Mathlib/Analysis/Convex/Integral.lean`): Jensen's inequality for a convex continuous function on a closed convex set and a probability measure, used in §7.1 for the exponential of a logarithmic potential.
 - `ArzelaAscoli.isCompact_closure_of_isClosedEmbedding` (`Mathlib/Topology/UniformSpace/Ascoli.lean`), for closedness in the continuity method.
 - `ConcaveOn`, `HasFDerivAt`, `ContDiffOn`, `IsLocalMax`, and complex manifolds as `IsManifold` over `ℂ`.
 
@@ -56,6 +56,18 @@ Read at commit `358314d4ab97483df4fc4cb8adcc02e74a8d9f5a`.
 - `TauCeti.SmoothTwoForm` (`TauCeti/Geometry/Manifold/TwoForm/Basic.lean`): a smooth section of continuous real bilinear forms on tangent fibres, vanishing on the diagonal.
 - `TauCeti.SmoothTwoForm.Invariant`, `TauCeti.SmoothTwoForm.Tames` and `TauCeti.SmoothTwoForm.Compatible` (`TauCeti/Geometry/Symplectic/Manifold/TwoForm.lean`). They state `J`-invariance `form x (J v) (J w) = form x v w`, tameness `0 < form x v (J v)` for `v ≠ 0`, and their conjunction. Real (1,1)-forms are the invariant two-forms and Hermitian metrics are the compatible ones. Closedness and integrability are not part of these predicates.
 - `TauCeti.riemannianVolume` (`TauCeti/Geometry/Manifold/Riemannian/VolumeDensity/Volume.lean`), the orientation-free Riemannian measure, compared with `ω^n/n!` in Layer 3.
+
+### From TauCetiRoadmap.OperatorTheory/PolarDecomposition
+
+PD-A51, PD-A52 and PD-A53 (Milestone A7), stated there for symmetric endomorphisms of a finite-dimensional inner product space over `𝕜 ∈ {ℝ, ℂ}`, with eigenvalues in nonincreasing order with multiplicity, which is the order of `λ(T)` here. PD-A51 is the Courant–Fischer min–max formula: the `k`-th sorted eigenvalue is the supremum, over subspaces `W` of dimension `k` (its zero-based index names them `(k+1)`-dimensional), of the infimum of the Rayleigh quotient on unit vectors of `W`. PD-A52 is monotonicity in the Loewner order: `S ≤ T` gives `λ_i(S) ≤ λ_i(T)` for every `i`. PD-A53 is Weyl's bound `|λ_i(S) − λ_i(T)| ≤ ‖S − T‖` for every `i`, which makes `λ` Lipschitz with constant `1`. These are consumed for the operators `A_a` of Layer 1 and the eigenvalue functions of Layer 3; nothing of Milestone A7 is re-proved here.
+
+### From TauCetiRoadmap.OperatorTheory/PrincipalAngles
+
+PA-B32, von Neumann's trace inequality: for symmetric `T, S` on a finite-dimensional inner product space, `tr(TS) ≤ Σ_i λ_i(T)λ_i(S)` with both eigenvalue lists in decreasing order. It is consumed in both directions: applied to `T` and `−S`, whose decreasing list is `−λ_{n+1−i}(S)`, it gives the lower bound `tr(TS) ≥ Σ_i λ_i(T)λ_{n+1−i}(S)`, the pairing of the largest eigenvalues of `T` with the smallest of `S`. Its Birkhoff input PA-B31 is not consumed directly.
+
+### From TauCetiRoadmap.OperatorTheory/Majorization
+
+MAJ-A27, Ky Fan's maximum principle: for a symmetric `S` and an orthonormal family `w_1, …, w_m`, `Σ_i Re⟨S w_i, w_i⟩` is at most the sum of the `m` largest eigenvalues of `S`. Evaluated on the top `m` eigenvectors it is an equality, so the sum of the `m` largest eigenvalues is the maximum of `Re tr(PS)` over orthogonal projections `P` of rank `m`, the form used in §1.2.
 
 ### From TauCetiRoadmap.ComplexManifolds
 
@@ -96,11 +108,11 @@ Layers 1 and 2 are finite-dimensional. Layer 1 is the calculus of spectral funct
 
 ## Layer 1: Eigenvalues and spectral functions
 
-Throughout, `E` is a finite-dimensional inner product space over `𝕜 ∈ {ℝ, ℂ}` (`RCLike 𝕜`) of dimension `n`. `Sym(E)` is the real vector space of self-adjoint operators with the trace inner product `⟨S, T⟩ = Re tr(ST)` and the operator norm. `λ(T) ∈ ℝⁿ` is Mathlib's decreasingly sorted eigenvalue vector.
+Throughout, `E` is a finite-dimensional inner product space over `𝕜 ∈ {ℝ, ℂ}` (`RCLike 𝕜`) of dimension `n`. `Sym(E)` is the real vector space of self-adjoint operators with the trace inner product `⟨S, T⟩ = Re tr(ST)` and the operator norm, and `S ≤ T` is the Loewner order, `⟨u, (T − S)u⟩ ≥ 0` for all `u`. `λ(T) ∈ ℝⁿ` is Mathlib's decreasingly sorted eigenvalue vector. The variational facts about `λ` are consumed, not re-proved: the Courant–Fischer min–max formula, the monotonicity of `λ` in the Loewner order and Weyl's bound `|λ_i(S) − λ_i(T)| ≤ ‖S − T‖` are OperatorTheory/PolarDecomposition PD-A51, PD-A52 and PD-A53; von Neumann's trace inequality is OperatorTheory/PrincipalAngles PA-B32; Ky Fan's maximum principle is OperatorTheory/Majorization MAJ-A27 (the supplier contracts above).
 
 ### 1.1 Eigenvalues relative to an inner product
 
-Define, for a Hermitian form `a` on `E` (sesquilinear, conjugate-linear in the first slot, `a(v, u) = conj a(u, v)`), the representing operator `A_a ∈ Sym(E)` with `a(u, v) = ⟨u, A_a v⟩`, and the relative eigenvalue vector `λ[a] = λ(A_a)` (szekelyhidi2018 line 17–24; gpt2023 line 62–66; guo-phong2024 line 108–111). Prove the min–max characterization `λ_i(T) = max_{dim W = i} min_{u ∈ W, ‖u‖ = 1} ⟨u, Tu⟩` from the eigenbasis, extending Mathlib's Rayleigh supremum for `i = 1`. *Needs:* Mathlib `LinearMap.IsSymmetric.eigenvalues`, `LinearMap.IsSymmetric.eigenvectorBasis`, `LinearMap.IsSymmetric.hasEigenvalue_iSup_of_finiteDimensional`.
+Define, for a Hermitian form `a` on `E` (sesquilinear, conjugate-linear in the first slot, `a(v, u) = conj a(u, v)`), the representing operator `A_a ∈ Sym(E)` with `a(u, v) = ⟨u, A_a v⟩`, and the relative eigenvalue vector `λ[a] = λ(A_a)` (szekelyhidi2018 line 17–24; gpt2023 line 62–66; guo-phong2024 line 108–111). Write `a ≤ b` when `b − a` is positive semidefinite, that is, `A_a ≤ A_b`. *Needs:* Mathlib `LinearMap.IsSymmetric.eigenvalues`, `LinearMap.IsSymmetric.eigenvectorBasis`; OperatorTheory/PolarDecomposition PD-A52, PD-A53.
 
 API:
 
@@ -109,6 +121,8 @@ API:
 - `Σ_i λ_i[a] = tr A_a`, `∏_i λ_i[a] = det A_a`, and `det(Id + t·A_a) = Σ_k σ_k(λ[a])·t^k`.
 - Unitary invariance: `λ[a(U·, U·)] = λ[a]` for every unitary `U`. Under a change of inner product `⟨u, v⟩' = ⟨u, Pv⟩` with `P` positive definite, the representing operator becomes `P⁻¹A_a`, which is `⟨·,·⟩'`-self-adjoint.
 - In a basis with Gram matrix `g` and coefficient matrix `(a_{ij})`, `λ[a]` is the spectrum of `g⁻¹a`, the roots of `det(a − λg) = 0`.
+- Monotonicity: `a ≤ b` gives `λ_i[a] ≤ λ_i[b]` for every `i` (PD-A52).
+- Lipschitz continuity: `|λ_i[a] − λ_i[b]| ≤ ‖A_a − A_b‖` for every `i` (PD-A53), so `λ : Sym(E) → ℝⁿ` is Lipschitz with constant `1` for the sup norm on `ℝⁿ`, and `a ↦ λ[a]` is continuous.
 
 **Checks.**
 
@@ -116,36 +130,31 @@ API:
 - For `a = ⟨·,·⟩` the vector is `e` in every dimension. For `a = 0` it is the zero vector, and `λ[−a]` for `λ[a] = (3, 1)` is `(−1, −3)`, not `(−3, −1)`.
 - A non-Hermitian form such as `a(u, v) = ū₁v₂ − ū₂v₁` on `ℂ²` has representing matrix `[[0, 1], [−1, 0]]` with eigenvalues `±i`; it is excluded by the Hermitian hypothesis, and no real `λ[a]` exists.
 - `det(Id + tA)` for `A = diag(1, 2, 3)` is `1 + 6t + 11t² + 6t³`, matching `σ_1 = 6`, `σ_2 = 11`, `σ_3 = 6`.
+- Monotonicity compares equally indexed sorted eigenvalues: `diag(3, 0) ≤ diag(3, 1)` gives `(3, 0) ≤ (3, 1)`, while the cross pairing `λ_1(diag(3, 0)) ≤ λ_2(diag(3, 1))` fails (`3 > 1`).
+- Additivity fails: `λ(diag(1, 0) + diag(0, 1)) = (1, 1)` while `λ(diag(1, 0)) + λ(diag(0, 1)) = (2, 0)`; the eigenvalue map is Lipschitz, not linear.
+- The Lipschitz constant `1` is attained: `S = 0`, `T = [[0, ε], [ε, 0]]` has `λ(T) = (ε, −ε)` and `‖T‖ = ε`.
 
-### 1.2 Weyl monotonicity and continuity
+### 1.2 Ky Fan sums and their derivative
 
-Prove, for `S, T ∈ Sym(E)`: if `S ≤ T` (that is, `⟨u, (T − S)u⟩ ≥ 0` for all `u`) then `λ_i(S) ≤ λ_i(T)` for every `i`; and `|λ_i(S) − λ_i(T)| ≤ ‖S − T‖` for every `i`. Both follow from the min–max characterization of §1.1, and the second makes `λ : Sym(E) → ℝⁿ` globally Lipschitz (lewis1996 line 193–194). *Needs:* §1.1.
+Define the Ky Fan sum `κ_m(T) = Σ_{i ≤ m} λ_i(T)` for `T ∈ Sym(E)` and `1 ≤ m ≤ n`, and for `T` with `λ_m(T) > λ_{m+1}(T)` (no condition when `m = n`) the spectral projection `P_T` onto the span of eigenvectors for `λ_1(T), …, λ_m(T)`.
 
-**Checks.**
+Record the two forms of the supplier inequalities used below. For `F, B ∈ Sym(E)` with eigenvalues `γ_1 ≥ … ≥ γ_n` of `F` and `μ_1 ≤ … ≤ μ_n` of `B`, `Σ_i γ_i μ_i ≤ Re tr(FB) ≤ Σ_i γ_i μ_{n+1−i}`: the upper bound is PA-B32, and the lower bound is PA-B32 applied to `F` and `−B`, whose decreasing eigenvalue list is `−μ_1 ≥ … ≥ −μ_n` (spruck2005 Lemma 1.5, line 11089–11091, states the lower bound). Ky Fan's maximum principle, `κ_m(T) = max Re tr(PT)` over orthogonal projections `P` of rank `m`, is MAJ-A27 evaluated on an orthonormal basis of the range of `P`, with equality at `P = P_T` (lewis1996 line 145–148).
 
-- `S = diag(3, 0) ≤ T = diag(3, 1)`: the sorted vectors compare, `(3, 0) ≤ (3, 1)`. The cross pairing `λ_1(S) ≤ λ_2(T)` fails (`3 > 1`), so the statement is about equally indexed sorted eigenvalues.
-- Additivity fails: `λ(diag(1, 0) + diag(0, 1)) = (1, 1)` while `λ(diag(1, 0)) + λ(diag(0, 1)) = (2, 0)`.
-- `S = 0`, `T = [[0, ε], [ε, 0]]`: `λ(T) = (ε, −ε)` and `‖T‖ = ε`, so the Lipschitz constant 1 is attained.
-
-### 1.3 The von Neumann–Fan trace inequality and Ky Fan sums
-
-Prove: for `F, B ∈ Sym(E)` with eigenvalues `γ_1 ≥ … ≥ γ_n` of `F` and `μ_1 ≤ … ≤ μ_n` of `B`, `Re tr(FB) ≥ Σ_i γ_i μ_i` (spruck2005 Lemma 1.5, line 11089–11091), and symmetrically `Re tr(FB) ≤ Σ_i γ_i μ_{n+1−i}`. Route: in orthonormal eigenbases `(f_i)` of `F` and `(b_j)` of `B`, the matrix `(|⟨f_i, b_j⟩|²)` is doubly stochastic; a linear functional on doubly stochastic matrices attains its extrema at permutation matrices (Birkhoff), and the rearrangement inequality concludes.
-
-Deduce Ky Fan's maximum principle: the sum `κ_m(T)` of the `m` largest eigenvalues of `T` equals `max tr(PT)` over orthogonal projections `P` of rank `m`. Hence `κ_m` is convex and `κ_m(S + T) ≤ κ_m(S) + κ_m(T)` (lewis1996 line 145–148). Prove that if `λ_m(T) > λ_{m+1}(T)` then the maximizing projection is unique, namely the spectral projection `P_T` onto the top `m` eigenvalues, and `κ_m` is differentiable at `T` with gradient `P_T` (lewis1996 Theorem 2.1, line 150–158). The route is the two-sided bound: `κ_m(T + H) ≥ κ_m(T) + tr(P_T H)` by the maximum principle, and `κ_m(T + H) ≤ κ_m(T) + tr(P_{T+H} H)`, with `P_{T+H} → P_T` by compactness of rank-`m` projections and uniqueness of the maximizer. *Needs:* Mathlib `doublyStochastic_eq_convexHull_permMatrix`, `LinearMap.IsSymmetric.eigenvectorBasis`; §1.2.
+Prove: `κ_m` is convex and `κ_m(S + T) ≤ κ_m(S) + κ_m(T)`, as a maximum of linear functionals. If `λ_m(T) > λ_{m+1}(T)`, then `P_T` is the only rank-`m` orthogonal projection `P` with `Re tr(PT) = κ_m(T)`, and `κ_m` is differentiable at `T` with gradient `P_T`, that is, `dκ_m(T)(H) = Re tr(P_T H)` (lewis1996 Theorem 2.1, line 150–158). Route. In an orthonormal eigenbasis `(e_j)` of `T` ordered by `λ(T)`, `Re tr(PT) = Σ_j λ_j(T)·c_j` with `c_j = ‖P e_j‖² ∈ [0, 1]` and `Σ_j c_j = m`; under the gap this linear form attains `κ_m(T)` only at `c_j = 1` for `j ≤ m`, which puts `e_1, …, e_m` in the range of `P`, so `P = P_T`. For the derivative, `κ_m(T + H) ≥ κ_m(T) + Re tr(P_T H)` by the maximum principle, and `κ_m(T + H) ≤ κ_m(T) + Re tr(P_{T+H} H)` since `T + H` keeps the gap for small `H` (PD-A53). Every limit point `P` of `P_{T+H}` as `H → 0` is a rank-`m` projection, by compactness, with `Re tr(PT) = lim κ_m(T + H) = κ_m(T)`, by the continuity of `κ_m` (PD-A53); uniqueness gives `P = P_T`, so `P_{T+H} → P_T` and the two bounds agree to first order. *Needs:* OperatorTheory/PrincipalAngles PA-B32; OperatorTheory/Majorization MAJ-A27; OperatorTheory/PolarDecomposition PD-A53; Mathlib `LinearMap.IsSymmetric.eigenvectorBasis`.
 
 **Checks.**
 
-- `F = diag(2, 1)`, `B = diag(0, 3)`: `tr(FB) = 3`, the lower bound is `2·0 + 1·3 = 3` and the upper bound is `2·3 + 1·0 = 6`. For `B' = diag(3, 0)`, `tr(FB') = 6` attains the upper bound.
+- `F = diag(2, 1)`, `B = diag(0, 3)`: `tr(FB) = 3`, the lower bound is `2·0 + 1·3 = 3` and the upper bound is `2·3 + 1·0 = 6`. For `B' = diag(3, 0)`, `tr(FB') = 6` attains the upper bound. The lower bound comes from PA-B32 at `−B = diag(0, −3)`: `tr(F(−B)) = −3 ≤ 2·0 + 1·(−3) = −3`.
 - `κ_1(T) = λ_1(T)` and `κ_n(T) = tr T`. For `T = diag(3, 1, 1)` and `m = 1` the gap `3 > 1` gives gradient `diag(1, 0, 0)`; for `m = 2` there is no gap, and `κ_2(T + t·diag(0, 1, −1)) = 4 + |t|` is not differentiable at `t = 0`.
 - `κ_1(diag(1, 0) + diag(0, 1)) = 1 ≤ κ_1(diag(1, 0)) + κ_1(diag(0, 1)) = 2`, a strict subadditivity.
 
-### 1.4 Spectral functions and their derivative
+### 1.3 Spectral functions and their derivative
 
-Define, for an open set `Ω ⊆ ℝⁿ` invariant under coordinate permutations and a symmetric function `f : Ω → ℝ`, the spectral domain `Sym_Ω(E) = {T ∈ Sym(E) : λ(T) ∈ Ω}`, which is open by §1.2, and the spectral function `F_f(T) = f(λ(T))` on it. Since `f` is symmetric, `F_f(T) = f(μ)` for any ordering `μ` of the eigenvalues of `T`.
+Define, for an open set `Ω ⊆ ℝⁿ` invariant under coordinate permutations and a symmetric function `f : Ω → ℝ`, the spectral domain `Sym_Ω(E) = {T ∈ Sym(E) : λ(T) ∈ Ω}`, which is open because `λ` is continuous (PD-A53), and the spectral function `F_f(T) = f(λ(T))` on it. Since `f` is symmetric, `F_f(T) = f(μ)` for any ordering `μ` of the eigenvalues of `T`.
 
 Prove Lewis's theorem: `F_f` is differentiable at `T` if and only if `f` is differentiable at `λ(T)`. In that case `∇F_f(T) = Σ_i ∂_i f(λ(T))·e_i ⊗ e_i^*` for any orthonormal eigenbasis `(e_i)` of `T` ordered by `λ(T)`, that is, `dF_f(T)(H) = Σ_i ∂_i f(λ(T))·⟨e_i, H e_i⟩` (lewis1996 Theorem 1.1, line 77–81; spruck2005 Theorem 1.4(i), line 11072–11073). The real symmetric case is the same statement at `𝕜 = ℝ` (lewis1996 line 144). Further, `F_f` is `C¹` on `Sym_Ω(E)` if and only if `f` is `C¹` on `Ω` (lewis1996 line 468–469).
 
-Route. Symmetry of `f` forces `∂_i f(μ) = ∂_j f(μ)` whenever `μ_i = μ_j`, so `∇f(λ(T))` is constant on eigenvalue clusters (lewis1996 Lemma 2.3, line 185–187). Then `∇f(λ(T))·λ(·)` is a combination of Ky Fan sums differentiable at `T` by §1.3 (lewis1996 Lemma 2.2, line 165–166). The first-order expansion of `f` with the Lipschitz bound of §1.2 concludes (lewis1996 Theorem 2.4, line 199–217). Continuity of `T ↦ ∇F_f(T)` at `T_0` follows because spectral projections onto eigenvalue clusters of `T_0` depend continuously on `T`, while `∇f(λ(T))` converges on each cluster to the common value at `λ(T_0)`. *Needs:* §§1.2–1.3; Mathlib `HasFDerivAt`, `ContDiffOn`.
+Route. Symmetry of `f` forces `∂_i f(μ) = ∂_j f(μ)` whenever `μ_i = μ_j`, so `∇f(λ(T))` is constant on eigenvalue clusters (lewis1996 Lemma 2.3, line 185–187). Then `∇f(λ(T))·λ(·)` is a combination of Ky Fan sums `κ_m` at indices `m` where `λ(T)` has a gap, differentiable at `T` by §1.2 (lewis1996 Lemma 2.2, line 165–166). The first-order expansion of `f` with the Lipschitz bound PD-A53 concludes (lewis1996 Theorem 2.4, line 199–217). Continuity of `T ↦ ∇F_f(T)` at `T_0` follows because spectral projections onto eigenvalue clusters of `T_0` depend continuously on `T`, while `∇f(λ(T))` converges on each cluster to the common value at `λ(T_0)`. *Needs:* §1.2; OperatorTheory/PolarDecomposition PD-A53; Mathlib `HasFDerivAt`, `ContDiffOn`.
 
 API:
 
@@ -159,24 +168,26 @@ API:
 - `f(μ) = max_i μ_i` is symmetric but not differentiable at `(1, 1)`; correspondingly `F_f = λ_1` satisfies `λ_1(Id + t·diag(1, 0)) = 1 + max(t, 0)`, which is not differentiable at `t = 0`. This is the negative control for the "only if" direction.
 - `f(μ) = μ_1² + μ_2²` on `ℝ²` gives `F_f(T) = tr(T²)` with `∇F_f(T) = 2T`. At `T = [[0, 1], [1, 0]]` the eigenvalues are `±1`, the eigenbasis formula gives `2·(1·P_+ − 1·P_−) = 2T`, as computed directly.
 
-### 1.5 Convexity of spectral domains, concavity and ellipticity
+### 1.4 Convexity of spectral domains, concavity and ellipticity
 
-Prove, for an open convex symmetric `Γ ⊆ ℝⁿ` (spruck2005 Theorem 1.4 and its proof, line 11066–11100):
+Prove, for an open convex symmetric `Γ ⊆ ℝⁿ` and a symmetric `C¹` function `f : Γ → ℝ` (spruck2005 Theorem 1.4 and its proof, line 11066–11100):
 
-- `Sym_Γ(E)` is convex. Route: an open convex symmetric set is the intersection of open half-spaces `{μ : ⟨y, μ⟩ > s}` together with their permuted copies. Then `μ ∈ Γ` if and only if `⟨y↑, μ↓⟩ > s` for each such `(y, s)`, and by §1.3 `⟨y↑, λ(T)⟩ = min_U Re tr(U diag(y) U^* T)` is concave in `T`.
-- If `f : Γ → ℝ` is symmetric, concave and differentiable, then `F_f` is concave on `Sym_Γ(E)`. The proof applies §1.3 to `∇F_f(S)` and `T`, giving `dF_f(S)(T − S) ≥ F_f(T) − F_f(S)`.
-- If `f` is `C¹` with `∂_i f > 0` on `Γ`, then `∇F_f(T)` is positive definite for every `T ∈ Sym_Γ(E)`.
-- Monotonicity: if `Γ + Γ_n ⊆ Γ` (true when `Γ` is a convex cone containing `Γ_n`), `S ∈ Sym_Γ(E)` and `S ≤ T`, then `T ∈ Sym_Γ(E)` and `F_f(S) ≤ F_f(T)`, with equality only if `S = T`. For vectors, if `μ ∈ Γ` and `μ ≤ ν` componentwise then `ν ∈ Γ` and `f(μ) ≤ f(ν)`.
+- `Sym_Γ(E)` is convex. Route: an open convex symmetric set is the intersection of open half-spaces `{μ : ⟨y, μ⟩ > s}` together with their permuted copies. Then `μ ∈ Γ` if and only if `⟨y↑, μ↓⟩ > s` for each such `(y, s)`, and by the lower trace bound of §1.2, `⟨y↑, λ(T)⟩ = min_U Re tr(U diag(y) U^* T)` over unitary `U` is concave in `T`, so each set `{T : ⟨y↑, λ(T)⟩ > s}` is convex.
+- If `f` is concave, then `F_f` is concave on `Sym_Γ(E)`. Route: for symmetric concave `f`, comparing `f(μ)` with `f` at the transposition of two coordinates shows that `∂_i f(μ) ≤ ∂_j f(μ)` whenever `μ_i > μ_j`, so the eigenvalues `∂_i f(λ(S))` of `∇F_f(S)` are nondecreasing in `i` when `λ(S)` is nonincreasing (spruck2005 line 11095–11097). The lower trace bound of §1.2 applied to `∇F_f(S)` and `T` then gives `Re tr(∇F_f(S)·T) ≥ Σ_i ∂_i f(λ(S))·λ_i(T)`, and since `∇F_f(S)` is diagonal in an eigenbasis of `S`, `Re tr(∇F_f(S)·S) = Σ_i ∂_i f(λ(S))·λ_i(S)`; with the concavity of `f`, `dF_f(S)(T − S) ≥ f(λ(T)) − f(λ(S)) = F_f(T) − F_f(S)` (spruck2005 line 11092–11100).
+- If `∂_i f > 0` on `Γ`, then `∇F_f(T)` is positive definite for every `T ∈ Sym_Γ(E)`.
+- Monotonicity. Suppose `Γ + Γ_n ⊆ Γ` (true when `Γ` is a convex cone containing `Γ_n`); then also `Γ + Γ̄_n ⊆ Γ`, since `μ + d = (μ − εe) + (d + εe)` with `μ − εe ∈ Γ` for small `ε > 0` by openness. If `S ∈ Sym_Γ(E)` and `S ≤ T`, then `T ∈ Sym_Γ(E)`, because `λ(T) = λ(S) + d` with `d ≥ 0` componentwise (PD-A52). If moreover `∂_i f ≥ 0` on `Γ`, then `F_f(S) ≤ F_f(T)`, by the mean value theorem for `f` along the segment from `λ(S)` to `λ(T)`, which lies in `Γ` by convexity. If `∂_i f > 0` on `Γ`, then `F_f(S) < F_f(T)` unless `S = T`: when `λ(S) ≠ λ(T)` the mean value integrand is positive, and when `λ(S) = λ(T)` the operator `T − S ≥ 0` has trace zero, so `S = T`. For vectors, if `μ ∈ Γ` and `μ ≤ ν` componentwise then `ν ∈ Γ`, `f(μ) ≤ f(ν)` when `∂_i f ≥ 0`, and `f(μ) < f(ν)` when `∂_i f > 0` and `μ ≠ ν`.
 
-*Needs:* §§1.2–1.4; Mathlib `ConcaveOn`.
+*Needs:* §§1.2–1.3; OperatorTheory/PolarDecomposition PD-A52; OperatorTheory/PrincipalAngles PA-B32; Mathlib `ConcaveOn`.
 
 **Checks.**
 
 - `Γ = Γ_n` gives the open cone of positive definite operators, and `f = σ_n^{1/n}` gives `F = det^{1/n}`. For `A = diag(4, 1)` and `B = diag(1, 4)`, `F(A) = F(B) = 2` and `F((A + B)/2) = 5/2 ≥ 2`. For `f = σ_n`, which is not concave, `t ↦ det(t·Id_2) = t²` is convex, the expected failure.
 - A non-convex symmetric open cone: `Γ = Γ_2 ∪ {μ : μ_1 > 0, −μ_1/2 < μ_2 < −μ_1/3} ∪ {its mirror}` in `ℝ²`. It contains `diag(1, −0.4)` and `diag(1, 0.1)` in `Sym_Γ`, but their midpoint `diag(1, −0.15)` is outside, so convexity of `Γ` is necessary.
 - `Γ = Γ_1`, `f = σ_1`: `Sym_Γ = {tr T > 0}`, `∇F = Id` is positive definite, and monotonicity is `tr S ≤ tr T` for `S ≤ T`.
+- Ellipticity is needed for monotonicity: `Γ = Γ_1 ⊂ ℝ²`, `f = −σ_1` (symmetric, `C¹`, concave, with `∂_i f = −1`), `S = diag(1, 0) ≤ T = diag(2, 0)`: `F_f(S) = −1 > −2 = F_f(T)`. For the strictness clause `∂_i f > 0` is needed: `f ≡ 0` has `∂_i f = 0 ≥ 0` and `F_f(S) = F_f(T)` with `S ≠ T`.
+- The gradient ordering of the concavity route: `f = σ_2^{1/2}` on `Γ_2 ⊂ ℝ²` at `μ = (4, 1)` has `∂_1 f = (1/2)·μ_2/√(μ_1μ_2) = 1/4` and `∂_2 f = 1`, nondecreasing in the index as `μ` is nonincreasing.
 
-### 1.6 Determinant, Euler and trace inequalities
+### 1.5 Determinant, Euler and trace inequalities
 
 Prove, for an open symmetric cone `Ω` and a `C¹` symmetric `f`:
 
@@ -184,7 +195,7 @@ Prove, for an open symmetric cone `Ω` and a `C¹` symmetric `f`:
 - If `f` is positively homogeneous of degree one, then `Re tr(∇F_f(T)·T) = F_f(T)` (Euler; gpt2023 line 246–250).
 - For positive definite `A, B ∈ Sym(E)`: `Re tr(AB) ≥ n·(det A·det B)^{1/n}`, with equality exactly when `B = c·A⁻¹` for some `c > 0` (gpt2023 line 255, the arithmetic–geometric step). The proof applies AM–GM to the eigenvalues of `A^{1/2} B A^{1/2}`.
 
-*Needs:* §1.4; Mathlib `Real.geom_mean_le_arith_mean_weighted`, `LinearMap.IsSymmetric.det_eq_prod_eigenvalues`.
+*Needs:* §1.3; Mathlib `Real.geom_mean_le_arith_mean_weighted`, `LinearMap.IsSymmetric.det_eq_prod_eigenvalues`.
 
 **Checks.**
 
@@ -198,7 +209,7 @@ The spectral functions `tr`, `det`, `det^{1/n}`, `tr(T²)` and `λ_1`, the last 
 
 ### Dependencies
 
-Mathlib only. No manifold input.
+Mathlib; OperatorTheory/PolarDecomposition PD-A51–A53, OperatorTheory/PrincipalAngles PA-B32 and OperatorTheory/Majorization MAJ-A27. No manifold input.
 
 ## Layer 2: Gårding cones and admissible pairs
 
@@ -219,7 +230,7 @@ Define a homogeneous real polynomial `p` of degree `m` on `ℝ^N` to be hyperbol
 
 Prove Gårding's theorem (spruck2005 Theorem 2.2 and Proposition 2.3, line 11186–11224): `Γ(p, a)` is an open convex cone, `p` is hyperbolic in every direction `b ∈ Γ(p, a)` with `Γ(p, b) = Γ(p, a)`, `p^{1/m}` is concave on `Γ(p, a)`, and `D_b p > 0` on `Γ(p, a)` for `b ∈ Γ(p, a)`. Prove that `D_a p` is hyperbolic in `a` with `Γ(p, a) ⊆ Γ(D_a p, a)` (Rolle). For symmetric `p` hyperbolic in `e`, the cone contains `Γ_n` and lies in the half-space `σ_1 > 0` (spruck2005 Corollary 2.4, line 11225–11235).
 
-Apply it to `σ_n` (hyperbolic in `e` since `σ_n(λ + te) = ∏(λ_i + t)`) and to `σ_k = D_e^{n−k}σ_n/(n − k)!`. Prove `Γ(σ_k, e) = Γ_k = {σ_1 > 0, …, σ_k > 0}`. The inclusion `⊇` holds because when `σ_1, …, σ_k > 0` every coefficient of the shift expansion of §2.1 is positive, so `σ_k(λ + te)` has no root `t ≥ 0`; the inclusion `⊆` follows from the nesting `Γ(σ_k, e) ⊆ Γ(σ_{k−1}, e)`. Hence `Γ_k` is an open convex symmetric cone with `Γ_n ⊆ Γ_k ⊆ Γ_{k−1} ⊆ Γ_1`, and `σ_k^{1/k}` is concave on `Γ_k` with `∂_iσ_k > 0` there (dinew-kolodziej2014 line 139–164). On `Sym(E)` the polynomial `T ↦ σ_k(λ(T))` is hyperbolic in the direction `Id`, with Gårding cone `Sym_{Γ_k}(E)`. *Needs:* §2.1; §1.5 for the operator version.
+Apply it to `σ_n` (hyperbolic in `e` since `σ_n(λ + te) = ∏(λ_i + t)`) and to `σ_k = D_e^{n−k}σ_n/(n − k)!`. Prove `Γ(σ_k, e) = Γ_k = {σ_1 > 0, …, σ_k > 0}`. The inclusion `⊇` holds because when `σ_1, …, σ_k > 0` every coefficient of the shift expansion of §2.1 is positive, so `σ_k(λ + te)` has no root `t ≥ 0`; the inclusion `⊆` follows from the nesting `Γ(σ_k, e) ⊆ Γ(σ_{k−1}, e)`. Hence `Γ_k` is an open convex symmetric cone with `Γ_n ⊆ Γ_k ⊆ Γ_{k−1} ⊆ Γ_1`, and `σ_k^{1/k}` is concave on `Γ_k` with `∂_iσ_k > 0` there (dinew-kolodziej2014 line 139–164). On `Sym(E)` the polynomial `T ↦ σ_k(λ(T))` is hyperbolic in the direction `Id`, with Gårding cone `Sym_{Γ_k}(E)`. *Needs:* §2.1; §1.4 for the operator version.
 
 API:
 
@@ -250,15 +261,15 @@ Define an admissible cone as an open set `Γ ⊆ ℝⁿ` invariant under permuta
 Prove:
 
 - `f > 0` on `Γ_n`, by the Euler identity `Σ_j λ_j ∂_j f = f`.
-- The structural condition with constant `γ` holds if and only if `det ∇F_f(T) ≥ γ` for every `T ∈ Sym_Γ(E)`, the form gpt2023 (1.4) (line 84–86). This follows from §1.6.
+- The structural condition with constant `γ` holds if and only if `det ∇F_f(T) ≥ γ` for every `T ∈ Sym_Γ(E)`, the form gpt2023 (1.4) (line 84–86). This follows from §1.5.
 - gpt2023 Lemma 4 (line 744–769): a concave admissible pair with `f(μ) ≥ nγ^{1/n}(∏_j μ_j)^{1/n}` on `Γ_n` satisfies the structural condition with constant `γ`. The proof combines the tangent inequality of §2.3 with AM–GM over `μ ∈ Γ_n`, `∏μ_j = 1`.
 - Positive combinations. If `(f_1, Γ_1')` and `(f_2, Γ_2')` are admissible pairs with structural constants `γ_1, γ_2` and `a, b > 0`, then `(af_1 + bf_2, Γ_1' ∩ Γ_2')` is an admissible pair with structural constant `(aγ_1^{1/n} + bγ_2^{1/n})^n`, and it is concave when both are (guo-phong2024 line 103–104). The constant comes from the superadditivity `∏(x_j + y_j)^{1/n} ≥ ∏x_j^{1/n} + ∏y_j^{1/n}` for positive `x, y` (spruck2005 line 11314).
 
-*Needs:* §§1.4–1.6, 2.2–2.3.
+*Needs:* §§1.3–1.5, 2.2–2.3.
 
 API:
 
-- The operator `F_f` of an admissible pair is defined on the open cone `Sym_Γ(E)`, is `C¹`, has positive definite gradient, and is concave when the pair is concave (§§1.4–1.5).
+- The operator `F_f` of an admissible pair is defined on the open cone `Sym_Γ(E)`, is `C¹`, has positive definite gradient, and is concave when the pair is concave (§§1.3–1.4).
 - `tr(∇F_f(T)·T) = F_f(T)`, and `∇ log F_f = ∇F_f / F_f` wherever `F_f > 0`.
 - Restriction of a pair to a smaller admissible cone `Γ' ⊆ Γ` is a pair, with the same structural constant if any.
 
@@ -302,7 +313,7 @@ Define, on a complex manifold `X` with a Hermitian metric `ω`, the relative eig
 
 API:
 
-- `λ_ω[α]` is continuous in `x` (§1.2), `λ_ω[ω] = e`, `λ_ω[α + tω] = λ_ω[α] + te`, and `λ_{sω}[α] = s⁻¹λ_ω[α]` for `s > 0`.
+- `λ_ω[α]` is continuous in `x` (OperatorTheory/PolarDecomposition PD-A53), `λ_ω[ω] = e`, `λ_ω[α + tω] = λ_ω[α] + te`, and `λ_{sω}[α] = s⁻¹λ_ω[α]` for `s > 0`.
 - `Σ_j λ_j[α] = tr_ω α`, and `n·α ∧ ω^{n−1} = (tr_ω α)·ω^n`.
 - `i∂∂̄(u + v) = i∂∂̄u + i∂∂̄v`. `i∂∂̄` vanishes on constants, and `i∂∂̄(γ ∘ u) = γ'(u)·i∂∂̄u + γ''(u)·i∂u ∧ ∂̄u` for `γ ∈ C²(ℝ)`.
 - Pullback along holomorphic maps commutes with `i∂∂̄`.
@@ -347,7 +358,7 @@ Prove:
 
 API:
 
-- Admissibility is open in `C²(X)` and preserved by adding constants. If `Γ + Γ_n ⊆ Γ` and `χ ≤ χ'`, then `(χ, Γ)`-admissible implies `(χ', Γ)`-admissible (§1.5).
+- Admissibility is open in `C²(X)` and preserved by adding constants. If `Γ + Γ_n ⊆ Γ` and `χ ≤ χ'`, then `(χ, Γ)`-admissible implies `(χ', Γ)`-admissible (§1.4).
 - Solutions are invariant under biholomorphisms transporting `ω`, `χ` and `F`.
 
 **Checks.**
@@ -364,13 +375,15 @@ API:
 
 - `ω_t` is a Kähler form for `t > 0`, and `V_t ≥ t^n V > 0`.
 - For a solution, `E_t(φ_t) = (c_t^n/V_t)·∫ (−φ_t) e^{nF_t} ω_X^n` (gpt2023 (1.9), line 118–119). For the Monge–Ampère pair, `c_t^n/V_t = 1/V` (gpt2023 Lemma 5, line 785–803).
-- `Ent_p(F) ≥ 0`. For normalized `F`, `V⁻¹ ∫ e^{nF} ω_X^n = 1 ≤ Ent_p(F) + e^n`, and `Ent_q(F) ≤ 1 + Ent_p(F)` for `q ≤ p`.
+- `Ent_p(F) ≥ 0`. For every `F ∈ C⁰(X)` and `p > 0`, `V⁻¹ ∫ e^{nF} ω_X^n ≤ Ent_p(F) + e^n`, since `e^{nF} ≤ e^{nF}|F|^p` where `|F| ≥ 1` and `e^{nF} < e^n` where `|F| < 1` (gpt2023 (3.2), line 450–451, stated there for `p ≥ 1`); it bounds the mass of an unnormalized `e^{nF}` by the entropy.
+- For normalized `F`, `Ent_q(F) ≤ 1 + Ent_p(F)` for `0 < q ≤ p`, by the same splitting.
 
 **Checks.**
 
 - `χ = 0`: `ω_t = tω_X`, `V_t = t^n V`, and `λ_{ω_X}[ω_t] = t·e`.
 - `F = 0` is normalized with `Ent_p(0) = 0`, and `E_t(0) = 0`.
 - Monge–Ampère with `χ = ω_X`: `V_t = (1 + t)^n V` and `c_t^n = (1 + t)^n`, consistent with `c_t^n/V_t = 1/V`.
+- `F = a` constant with `V = 1`: the mass bound reads `e^{na} ≤ e^{na}|a|^p + e^n`; for `|a| ≥ 1` the first term alone gives it, and for `|a| < 1` the second alone, since `e^{na} < e^n`. For normalized `F` the left side is `1` and the bound is trivial, which is why it is stated for arbitrary `F`.
 
 ### Examples
 
@@ -384,19 +397,19 @@ Layers 1–2; ComplexKahlerGeometry K1–K2; DifferentialGeometry Layers 0–1, 
 
 ### 4.1 Pointwise comparison
 
-Prove: let `(f, Γ)` be an admissible pair with `Γ + Γ_n ⊆ Γ`, let `χ` be a continuous real (1,1)-form, and let `φ, ψ ∈ C²(X)` be `(χ, Γ)`-admissible. If `x_0` is a local maximum of `ψ − φ`, then `f(λ[χ_ψ](x_0)) ≤ f(λ[χ_φ](x_0))`. The route: §3.1 gives `H_{χ_ψ} ≤ H_{χ_φ}` at `x_0`, §1.2 gives `λ[χ_ψ] ≤ λ[χ_φ]` componentwise, and §1.5 gives monotonicity of `f` (tosatti-weinkove2010 line 38–47 for the Monge–Ampère case). *Needs:* §§1.2, 1.5, 3.1, 3.3.
+Prove: let `(f, Γ)` be an admissible pair with `Γ + Γ_n ⊆ Γ`, let `χ` be a continuous real (1,1)-form, and let `φ, ψ ∈ C²(X)` be `(χ, Γ)`-admissible. If `x_0` is a local maximum of `ψ − φ`, then `f(λ[χ_ψ](x_0)) ≤ f(λ[χ_φ](x_0))`. The route: §3.1 gives `H_{χ_ψ} ≤ H_{χ_φ}` at `x_0`, PD-A52 gives `λ[χ_ψ] ≤ λ[χ_φ]` componentwise, and §1.4 gives monotonicity of `f`, using the ellipticity `∂_j f > 0` of the admissible pair (tosatti-weinkove2010 line 38–47 for the Monge–Ampère case). *Needs:* §§1.4, 3.1, 3.3; OperatorTheory/PolarDecomposition PD-A52.
 
 **Checks.**
 
 - `ψ = φ + c` with `c` constant: every point is a maximum, and the two values are equal.
 - On `ℂ` with the standard metric, `χ = ω`, `φ = 0` and `ψ = −|z|²/4` on the disc: at `0`, `λ[χ_ψ] = 1/2 < 1 = λ[χ_φ]`, and for the Laplace pair `1/2 ≤ 1`.
-- For the non-convex cone of the §1.5 Check, monotonicity of `f` along a segment can fail, which is why `Γ + Γ_n ⊆ Γ` is assumed.
+- For the non-convex cone of the §1.4 Check, monotonicity of `f` along a segment can fail, which is why `Γ + Γ_n ⊆ Γ` is assumed.
 
 ### 4.2 Uniqueness
 
 Prove (T2): let `X` be a compact connected complex manifold with a Hermitian metric `ω`, `(f, Γ)` a concave admissible pair, or more generally an admissible pair with `Γ` convex, `χ` a continuous real (1,1)-form and `F ∈ C⁰(X)`. If `(c, φ)` and `(c', ψ)` are solutions, then `c = c'` and `φ = ψ` (tosatti-weinkove2010 Corollary 1, line 36–47, for the Monge–Ampère pair).
 
-Route: at a maximum of `ψ − φ`, §4.1 gives `c' ≤ c`, and at a minimum `c ≤ c'`. With `c = c'`, `w = ψ − φ` satisfies `Re tr(a·H_{i∂∂̄w}) = 0`, where `a(x) = ∫_0^1 ∇F_f(h_s(x)) ds` and `h_s = (1 − s)h_{χ_φ} + s·h_{χ_ψ}` lies in `Sym_Γ` by §1.5. The coefficient `a` is continuous and positive definite. The strong maximum principle in charts and connectedness make `w` constant, and `sup φ = sup ψ = 0` gives `w = 0`. *Needs:* §§1.4–1.5, 3.3, 4.1; PDE Lane C item 13.
+Route: at a maximum of `ψ − φ`, §4.1 gives `c' ≤ c`, and at a minimum `c ≤ c'`. With `c = c'`, `w = ψ − φ` satisfies `Re tr(a·H_{i∂∂̄w}) = 0`, where `a(x) = ∫_0^1 ∇F_f(h_s(x)) ds` and `h_s = (1 − s)h_{χ_φ} + s·h_{χ_ψ}` lies in `Sym_Γ` by §1.4. The coefficient `a` is continuous and positive definite. The strong maximum principle in charts and connectedness make `w` constant, and `sup φ = sup ψ = 0` gives `w = 0`. *Needs:* §§1.3–1.4, 3.3, 4.1; PDE Lane C item 13.
 
 **Checks.**
 
@@ -532,7 +545,7 @@ Prove (T3, the Kähler case): let `(X, ω)` be a compact connected Kähler manif
 
 Prove the admissible-pair form: for a Kähler form `χ` and normalized `F`, eigenvalues still relative to `ω_X`, the Monge–Ampère equation `χ_φ^n = c^n e^{nF} ω_X^n` has a unique solution, with `c^n = ∫ χ^n / V`. This is the theorem with background `χ` and the smooth function `nF + log(ω_X^n/χ^n)`.
 
-Route. For `n ≥ 2`, run the continuity method along `tF`, `t ∈ [0, 1]` (pss2012 §2.2, line 216–233). The solvable set contains `0`. It is open by §5.2 and `HasStrictFDerivAt.toOpenPartialHomeomorph` applied to `(φ, β) ↦ log(ω_φ^n/ω^n) − β` at a smooth solution, with regularity of the new solutions by §6.5. It is closed by §§6.2–6.5, whose constants are uniform in `t`, and §5.2's compactness. The constant `b` follows by integrating (§3.2), and uniqueness is §4.2. For `n = 1` the equation is `Δ_ω φ = e^{F+b} − 1`, solvable exactly for the stated `b` by §5.2, and positivity `ω_φ = e^{F+b}ω > 0` is automatic. *Needs:* §§3.2–3.3, 4.2, 5.2, 6.2–6.5; Mathlib `HasStrictFDerivAt.toOpenPartialHomeomorph`, `HasStrictFDerivAt.implicitFunction`.
+Route. For `n ≥ 2`, run the continuity method along `tF`, `t ∈ [0, 1]` (pss2012 §2.2, line 216–233). The solvable set contains `0`. It is open by §5.2 and the inverse function theorem `HasStrictFDerivAt.toOpenPartialHomeomorph` applied to `(φ, β) ↦ log(ω_φ^n/ω^n) − β` between the Banach spaces `{u ∈ C^{2,α} : ∫ u ω^n = 0} × ℝ` and `C^{0,α}`, whose strict derivative at a smooth solution is the isomorphism of §5.2, with regularity of the new solutions by §6.5. It is closed by §§6.2–6.5, whose constants are uniform in `t`, and §5.2's compactness. The constant `b` follows by integrating (§3.2), and uniqueness is §4.2. For `n = 1` the equation is `Δ_ω φ = e^{F+b} − 1`, solvable exactly for the stated `b` by §5.2, and positivity `ω_φ = e^{F+b}ω > 0` is automatic. *Needs:* §§3.2–3.3, 4.2, 5.2, 6.2–6.5; Mathlib `HasStrictFDerivAt.toOpenPartialHomeomorph`.
 
 **Checks.**
 
@@ -547,19 +560,26 @@ Flat tori (explicit linearized solutions), `ℂP^n` with Fubini–Study (`F = 0`
 
 ### Dependencies
 
-Layers 3–5; ComplexKahlerGeometry K4, K6.0; DifferentialGeometry Layer 5; Mathlib inverse and implicit function theorems.
+Layers 3–5; ComplexKahlerGeometry K4, K6.0; DifferentialGeometry Layer 5; Mathlib inverse function theorem.
 
 ## Layer 7: Exponential integrability of quasi-plurisubharmonic functions
 
 ### 7.1 The local estimate
 
-Prove: for `n ≥ 1` and `A > 0` there are `α = α(n, A) > 0` and `C = C(n, A)` such that every plurisubharmonic `u ∈ C²(B(0, 2))`, `B(0, 2) ⊂ ℂⁿ`, with `u ≤ 0` and `∫_{B(0,2)} (−u) ≤ A` satisfies `∫_{B(0,1)} e^{−αu} ≤ C`. This is the local estimate that pss2012 (line 2943–2945) and gpt2023 (line 287–289) attribute to Hörmander (hormander1990, Chapter IV). Route: the Riesz mass of `u` on `B(0, 3/2)` is bounded by `C(n)·A` by integration by parts against a cutoff. Lelong's monotonicity of `r^{2−2n}·mass(B(x, r))` for plurisubharmonic functions bounds the Lelong numbers uniformly. The one-variable estimate for subharmonic functions with bounded Riesz mass, Jensen's inequality applied to the logarithmic potential, integrated over complex lines, gives the uniform bound. *Needs:* §3.1; PDE Lane C item 12.
+Prove, in two steps.
+
+The one-variable estimate. Let `0 < r < R' < R` and `A > 0`. There are `α_1 = log(R/R')/A` and a constant `C_1` depending only on `r`, `R'` and `R` such that every subharmonic `v : D(0, R) → [−∞, 0]` on the disc `D(0, R) ⊂ ℂ`, continuing subharmonically to a neighbourhood of the closed disc, with `v(0) ≥ −A` satisfies `∫_{D(0, r)} e^{−αv} dλ ≤ C_1` for `0 < α ≤ α_1`. Route. Jensen's formula at `0` on `D(0, R)`, the Green–Riesz representation at the centre, gives `(1/2π)·∫_{D(0,R)} log(R/|w|) dμ(w) = m_R − v(0) ≤ A` for the Riesz measure `μ = Δv ≥ 0` and the circle mean `m_R ≤ 0`, hence `M = μ(D(0, R')) ≤ 2πA/log(R/R')`. The Green–Riesz representation on `D(0, R')` (demailly2012 Proposition 4.22, line 1717–1725, Chapter I §4.B, p. 37) writes `v = ∫_{D(0,R')} G_{R'}(·, w) dμ(w) + h` with `G_{R'} ≤ 0` the Green function and `h ≤ 0` the Poisson integral of the boundary values. The circle mean `m_{R'} ≥ v(0) ≥ −A` and Harnack's inequality for the nonnegative harmonic function `−h` (demailly2012 Proposition 4.22(b), line 1726–1731) give `−h ≤ C_H·A` on `D(0, r)` with `C_H = (R' + r)/(R' − r)`. On `D(0, r)`, `−G_{R'}(t, w) ≤ (1/2π)·log(2R'/|t − w|)`, so Jensen's inequality for the convex exponential and the probability measure `μ/M` gives `e^{−αv(t)} ≤ e^{αC_H A}·M⁻¹·∫ (2R'/|t − w|)^{αM/2π} dμ(w)`, whose integral over `t ∈ D(0, r)` is at most `e^{αC_H A}·2π(2R')²/(2 − αM/2π)` when `αM < 4π`; for `α ≤ α_1` the exponent `αM/2π` is at most `1` and `e^{αC_H A} ≤ (R/R')^{C_H}`, so `C_1 = 2π(2R')²(R/R')^{C_H}`. When `M = 0` the function is harmonic and the Harnack bound alone suffices.
+
+The local estimate. For `n ≥ 1` and `A > 0` there are `α = α(n, A) > 0` and `C = C(n)` such that every plurisubharmonic `u ∈ C²(B(0, 2))`, `B(0, 2) ⊂ ℂⁿ`, with `u ≤ 0` and `∫_{B(0,2)} (−u) ≤ A` satisfies `∫_{B(0,1)} e^{−αu} ≤ C`. This is the local estimate that pss2012 (line 2943–2945) and gpt2023 (line 287–289) attribute to Hörmander (hormander1990, Chapter IV). Route. Since `∫_{B(0,1/4)} (−u) ≤ A` and `−u` is continuous, there is `x_0 ∈ B(0, 1/4)` with `u(x_0) ≥ −A'`, `A' = A/vol(B(0, 1/4))`. For every unit vector `ξ ∈ ℂⁿ` the slice `v_ξ(t) = u(x_0 + tξ)` is subharmonic on `D(0, 7/4)`, nonpositive, with `v_ξ(0) = u(x_0) ≥ −A'`, because `H_{i∂∂̄u} ≥ 0` (§3.1) restricts on the complex line through `x_0` in direction `ξ` to `Δ_t v_ξ = 4·H_{i∂∂̄u}(ξ, ξ) ≥ 0`. The one-variable estimate with `R = 3/2`, `R' = 11/8`, `r = 5/4` and `A'` bounds `∫_{D(0,5/4)} e^{−αv_ξ}` by `C_1` for `α ≤ α(n, A) = log(12/11)/A'`, uniformly in `ξ`. Polar coordinates centred at `x_0`, `∫_{B(x_0,5/4)} g = (1/2π)·∫_{S^{2n−1}} ∫_{D(0,5/4)} g(x_0 + tξ)·|t|^{2n−2} dλ(t) dσ(ξ)`, integrate the slice bounds over the sphere of directions, and `B(x_0, 5/4) ⊇ B(0, 1)`; so `C = (5/4)^{2n−2}·vol(S^{2n−1})·C_1/2π`. No monotonicity formula for Lelong numbers is needed. *Needs:* §3.1; PDE Lane C item 12; Mathlib `ConvexOn.map_integral_le`.
 
 **Checks.**
 
-- `u = c·log(|z|²/4)` on `B(0, 2)` has `∫ (−u) ≈ c·K(n)`, and `e^{−αu} = (4/|z|²)^{αc}` is integrable on `B(0, 1)` exactly when `αc < n`. So `α` must shrink like `1/A`: an `α` independent of `A` is false.
-- `u = 0` gives `|B(0, 1)|`.
-- Subharmonic is not enough in `ℂ²`: `u = −|x|^{−1}` in real dimension 4 is subharmonic away from `0` with `∫_{B(0,2)} |u| < ∞`, but `e^{−αu} = e^{α/|x|}` is integrable near `0` for no `α > 0`. Plurisubharmonicity is used.
+- One variable, a point mass: `v(t) = log(|t − w_0|/(2R))` on `D(0, R)` with `|w_0| = R/2` is subharmonic, `≤ 0` (as `|t − w_0| < 2R`), has `v(0) = −log 4`, so `A = log 4`, and Riesz measure `2π·δ_{w_0}`, so `M = 2π ≤ 2π·log 4/log(R/R')`, as the Jensen bound requires. `e^{−αv} = (2R/|t − w_0|)^α` is integrable on `D(0, r)` exactly when `α < 2`, the threshold `αM < 4π` of the Jensen step; the admissible `α_1 = log(R/R')/log 4` is below it.
+- One variable, harmonic: `v ≡ −A` has `M = 0`, and the integral is `πr²·e^{αA}`, within the stated bound since `C_H ≥ 1`.
+- One variable, the centre hypothesis: `v = c·log(|t|/R)` has `v(0) = −∞`, so the estimate does not apply at `0`; recentred at `t_0 = R/4`, where `v(t_0) = −c·log 4`, it gives `α_1 = log(R/R')/(c·log 4)`, and `(R/|t|)^{αc}` is integrable near `0` exactly when `αc < 2`, which every `α ≤ α_1` satisfies. The constant `α` must shrink like `1/c`.
+- `u = c·log(|z|²/4)` on `B(0, 2) ⊂ ℂⁿ` has `∫ (−u) ≈ c·K(n)`, and `e^{−αu} = (4/|z|²)^{αc}` is integrable on `B(0, 1)` exactly when `αc < n`. So `α` must shrink like `1/A`, as `α(n, A)` does: an `α` independent of `A` is false.
+- `u = 0` gives `vol(B(0, 1))`.
+- Subharmonic is not enough in `ℂ²`: `u = −|x|^{−1}` in real dimension 4 is subharmonic away from `0` with `∫_{B(0,2)} |u| < ∞`, but `e^{−αu} = e^{α/|x|}` is integrable near `0` for no `α > 0`. Plurisubharmonicity is used exactly where the slices along complex lines are taken to be subharmonic.
 
 ### 7.2 The global estimate
 
@@ -581,13 +601,13 @@ Layers 3, 5; PDE Lane C item 12.
 
 ## Layer 8: Sharp `L^∞` estimates
 
-Throughout, `(X, ω_X)` is compact connected Kähler of dimension `n`, `(f, Γ)` is an admissible pair satisfying the structural condition with constant `γ`, `p > n`, and the degenerating setting of §3.4 is used with `χ ≥ 0` smooth and closed. Write `Ω_s = {φ_t ≤ −s}`.
+Throughout, `(X, ω_X)` is compact connected Kähler of dimension `n`, `(f, Γ)` is an admissible pair satisfying the structural condition with constant `γ`, `p > n`, and the degenerating setting of §3.4 is used with `χ ≥ 0` smooth and closed. Write `Ω_s = {φ_t ≤ −s}` for the closed sublevel set and `Ω_s^∘ = {φ_t < −s}` for the strict one; they differ by the level set `{φ_t = −s}`, which can have positive measure.
 
 ### 8.1 Comparison with an auxiliary Monge–Ampère equation
 
-Prove (gpt2023 Lemma 1, line 198–302): let `φ_t ∈ C²` solve the degenerating equation with normalized smooth `F_t`, constant `c_t > 0` and `E_t(φ_t) ≤ Ē`. There are `C, β_0 > 0` depending only on `n`, `ω_X`, `χ` and `γ` such that for every `s > 0` with `inf φ_t < −s`, `∫_{Ω_s} exp{β_0·(−(φ_t + s)/A_s^{1/(n+1)})^{(n+1)/n}} ω_X^n ≤ C·exp(C·Ē)`. Here `A_s = (c_t^n/V_t)·∫_{Ω_s} (−φ_t − s) e^{nF_t} ω_X^n`, which is positive exactly when `inf φ_t < −s`, so the quotient is defined.
+Prove (gpt2023 Lemma 1, line 198–302): let `φ_t ∈ C²` solve the degenerating equation with normalized smooth `F_t`, constant `c_t > 0` and `E_t(φ_t) ≤ Ē`. There are `C, β_0 > 0` depending only on `n`, `ω_X`, `χ` and `γ` such that for every `s > 0` with `inf φ_t < −s`, `∫_{Ω_s} exp{β_0·(−(φ_t + s)/A_s^{1/(n+1)})^{(n+1)/n}} ω_X^n ≤ C·exp(C·Ē)`. Here `A_s = (c_t^n/V_t)·∫_{Ω_s} (−φ_t − s) e^{nF_t} ω_X^n`, which is positive exactly when `inf φ_t < −s`, so the quotient is defined. The integrand of `A_s` vanishes on `{φ_t = −s}`, so `A_s` is also the integral over `Ω_s^∘`.
 
-Route. Solve `(ω_t + i∂∂̄ψ)^n = (smooth positive approximations of τ_k(−φ_t − s))·A_{s,k}⁻¹·c_t^n e^{nF_t} ω_X^n` with `sup ψ = 0` by §6.6, with background `ω_t`. Apply the maximum principle (§3.1) to `Φ = −ε(−ψ + Λ)^{n/(n+1)} − (φ_t + s)` with the constants of gpt2023 (2.6). At the maximum use §1.6: `G = ∇ log F_f` is positive definite, `det G ≥ γ f^{−n}`, `tr(G·h) = 1`, and the AM–GM trace inequality. Then apply §7.2 with `ω̂ = a_0 ω_X`, where `χ ≤ (a_0 − 1)ω_X`, and dominated convergence as `k → ∞`. The smooth approximation of the right-hand side, uniform in `x`, replaces the source's direct use of a `C²` right-hand side. *Needs:* §§1.6, 2.4, 3.1, 3.4, 6.6, 7.2.
+Route. Solve `(ω_t + i∂∂̄ψ)^n = (smooth positive approximations of τ_k(−φ_t − s))·A_{s,k}⁻¹·c_t^n e^{nF_t} ω_X^n` with `sup ψ = 0` by §6.6, with background `ω_t`. Apply the maximum principle (§3.1) to `Φ = −ε(−ψ + Λ)^{n/(n+1)} − (φ_t + s)` with the constants of gpt2023 (2.6). At the maximum use §1.5: `G = ∇ log F_f` is positive definite, `det G ≥ γ f^{−n}`, `tr(G·h) = 1`, and the AM–GM trace inequality. Then apply §7.2 with `ω̂ = a_0 ω_X`, where `χ ≤ (a_0 − 1)ω_X`, and dominated convergence as `k → ∞`. The smooth approximation of the right-hand side, uniform in `x`, replaces the source's direct use of a `C²` right-hand side. *Needs:* §§1.5, 2.4, 3.1, 3.4, 6.6, 7.2.
 
 **Checks.**
 
@@ -607,13 +627,14 @@ Prove (gpt2023 Lemma 2, line 412–426): let `φ : [0, ∞) → [0, ∞)` be non
 
 ### 8.3 Degenerating backgrounds
 
-Prove (T4, gpt2023 Theorem 2, line 120–130): if `φ_t ∈ C²` solves the degenerating equation with normalized smooth `F_t`, then `sup_X |φ_t| ≤ C`, with `C` depending only on `ω_X`, `χ`, `p`, `n`, `γ` and upper bounds for `c_t^n/V_t`, `E_t(φ_t)` and `Ent_p(F_t)`. Explicitly, `inf φ_t ≥ −(2B_0)^{1/δ_0}Ē − 1/(1 − 2^{−δ_0})` with `δ_0 = (p − n)/(pn)` and `B_0` as in gpt2023 (2.15) (line 384–387 and 437–441). The route is §8.1 with the generalized Young inequality for `η(x) = (log(1 + x))^p`, Hölder's inequality and §8.2 applied to `s ↦ (c_t^n/V_t)·∫_{Ω_s} e^{nF_t} ω_X^n` (gpt2023 line 303–441). *Needs:* §§3.4, 8.1–8.2.
+Prove (T4, gpt2023 Theorem 2, line 120–130): if `φ_t ∈ C²` solves the degenerating equation with normalized smooth `F_t`, then `sup_X |φ_t| ≤ C`, with `C` depending only on `ω_X`, `χ`, `p`, `n`, `γ` and upper bounds for `c_t^n/V_t`, `E_t(φ_t)` and `Ent_p(F_t)`. Explicitly, `inf φ_t ≥ −(2B_0)^{1/δ_0}Ē − 1/(1 − 2^{−δ_0})` with `δ_0 = (p − n)/(pn)` and `B_0` as in gpt2023 (2.15) (line 384–387 and 437–441). The route is §8.1 with the generalized Young inequality for `η(x) = (log(1 + x))^p`, Hölder's inequality and §8.2 applied to the strict sublevel function `Φ(s) = (c_t^n/V_t)·∫_{Ω_s^∘} e^{nF_t} ω_X^n` (gpt2023 line 303–441). `Φ` is nonincreasing, tends to `0` by Chebyshev's inequality and the energy bound, and is right-continuous because `Ω_s^∘` increases to `Ω_{s_0}^∘` as `s ↓ s_0`; the closed sublevel function `s ↦ (c_t^n/V_t)·∫_{Ω_s} e^{nF_t} ω_X^n`, which gpt2023 line 407 uses, is only left-continuous where a level set of `φ_t` has positive measure (see the Checks). The Hölder step of gpt2023 (2.14) is run on `Ω_s^∘`, which carries the integrand of `A_s` (§8.1), and gives `A_s ≤ B_0·Φ(s)^{1+δ_0}`; the lower bound `A_s ≥ r·Φ(s + r)` for `r ∈ [0, 1]` holds since `−φ_t − s > r` on `Ω_{s+r}^∘`. The conclusion `Φ(S_∞) = 0`, that is `Ω_{S_∞}^∘ = ∅`, gives `inf φ_t ≥ −S_∞`. *Needs:* §§3.4, 8.1–8.2.
 
 **Checks.**
 
 - Monge–Ampère pair with `χ = ω_X`, `F_t = 0`: `φ_t = 0` solves with `c_t = 1 + t`, and the bound holds with `sup |φ_t| = 0`.
 - `δ_0 = (p − n)/(pn)` is positive exactly for `p > n`; at `p = n` the argument gives no bound, matching the hypothesis.
 - `n = 1`, Laplace pair: the equation is linear, `δ_0 = (p − 1)/p`, and the estimate reduces to an `L¹(log L)^p` bound for the Poisson equation on a Riemann surface.
+- Right-continuity needs the strict sublevel sets: take `φ_t = −ε·ρ` with `ρ` a smooth function, `0 ≤ ρ ≤ 1`, equal to `1` exactly on a closed set with nonempty interior `U` and to `0` somewhere, and `ε` so small that `ω_{t,φ_t} > 0`; it solves the equation for the smooth normalized `F_t` and the constant `c_t` that the equation defines, with `sup φ_t = 0`. Then `Ω_s` has measure at least `vol(U) > 0` at `s = ε` and is empty for `s > ε`, so the closed sublevel function jumps at `ε` from the right, whereas `Ω_ε^∘ = ∅` and the strict sublevel function is right-continuous at `ε`.
 
 ### 8.4 The Monge–Ampère case
 
@@ -633,7 +654,7 @@ Prove (gpt2023 Theorem 3 with Lemma 3, line 458–736). Let `φ ∈ C²` solve `
 - (b) for `p' = n` and every `N > 0`, `∫ exp{c_N(−φ)^N} ω_X^n ≤ C_N`;
 - (c) `∫ (−φ)^N e^{nF} ω_X^n ≤ C` for `N = n/(n − p')` when `p' ∈ [1, n)`, and for every `N > 0` when `p' = n`.
 
-The constants depend only on `ω_X`, `n`, `p'`, `γ`, `Ent_{p'}(F)` and `N`. Route: compare with the auxiliary equation `(ω_X + i∂∂̄ψ)^n = (F² + 1)^{p'/2}Ψ_{p'}⁻¹ e^{nF} ω_X^n` (§6.6). Apply the Aleksandrov–Bakelman–Pucci maximum principle on a coordinate ball to the cutoff function `Hη` of gpt2023 (3.13), using `det G ≥ γ f^{−n}` and the real-versus-complex determinant comparison. Then use the `L¹` bound of §5.4 for `Γ_1`-admissible `φ` and §7.2 for `ψ`. *Needs:* §§1.6, 5.4, 6.6, 7.2; `gap:abp-maximum-principle`; `gap:weak-harnack-supersolutions` (through §5.4).
+The constants depend only on `ω_X`, `n`, `p'`, `γ`, `Ent_{p'}(F)` and `N`. Route: compare with the auxiliary equation `(ω_X + i∂∂̄ψ)^n = (F² + 1)^{p'/2}Ψ_{p'}⁻¹ e^{nF} ω_X^n` (§6.6). Apply the Aleksandrov–Bakelman–Pucci maximum principle on a coordinate ball to the cutoff function `Hη` of gpt2023 (3.13), using `det G ≥ γ f^{−n}` and the real-versus-complex determinant comparison. Then use the `L¹` bound of §5.4 for `Γ_1`-admissible `φ` and §7.2 for `ψ`. *Needs:* §§1.5, 5.4, 6.6, 7.2; `gap:abp-maximum-principle`; `gap:weak-harnack-supersolutions` (through §5.4).
 
 **Checks.**
 
@@ -657,9 +678,9 @@ Prove (gpt2023 Theorem 5 with Lemmas 7–8, line 861–952):
 
 - Lemma 7: `E_t(φ_t) ≤ (c_t^n/V_t)·‖e^{nF_t}‖_{L^q}·‖φ_t‖_{L^{q'}}` for conjugate exponents `q, q' > 1`.
 - Lemma 8: for `1 ≤ k < n` and `0 < p' < n/(n − k)`, every `u ∈ C²` with `sup u = 0` and `λ[ω_X + i∂∂̄u] ∈ Γ_k` satisfies `‖u‖_{L^{p'}(ω_X^n)} ≤ C(n, k, p', ω_X)`. Route: compare with the Monge–Ampère solutions `v_j` with right-hand sides `η_j` bounded in `L^{1+ε}` (§§6.6, 8.4). Integrate by parts against `(ω_X + i∂∂̄v_j)^{k−1} ∧ ω_X^{n−k}`, using §3.2's Gårding mixed inequality and Maclaurin form inequality and the `L¹` bound of §5.4, then apply Fatou.
-- Theorem 5: if `λ[ω_{t,φ_t}] ∈ Γ_k` for all `t` and `q > n/k`, then `‖φ_t‖_{L^∞} ≤ C(n, k, q, γ, ω_X, χ, ‖e^{nF_t}‖_{L^q}, c_t^n/V_t)`. Lemma 8 is applied with background `a_0ω_X`: since `a_0ω_X ≥ ω_t`, the function `φ_t` is `(a_0ω_X, Γ_k)`-admissible by §1.5. This step is implicit in gpt2023.
+- Theorem 5: if `λ[ω_{t,φ_t}] ∈ Γ_k` for all `t` and `q > n/k`, then `‖φ_t‖_{L^∞} ≤ C(n, k, q, γ, ω_X, χ, ‖e^{nF_t}‖_{L^q}, c_t^n/V_t)`. Lemma 8 is applied with background `a_0ω_X`: since `a_0ω_X ≥ ω_t`, the function `φ_t` is `(a_0ω_X, Γ_k)`-admissible by §1.4. This step is implicit in gpt2023.
 
-*Needs:* §§1.5, 3.2, 5.4, 6.6, 8.3–8.4; `gap:weak-harnack-supersolutions` (through §5.4).
+*Needs:* §§1.4, 3.2, 5.4, 6.6, 8.3–8.4; `gap:weak-harnack-supersolutions` (through §5.4).
 
 **Checks.**
 
@@ -679,7 +700,7 @@ Layers 1–7; `gap:abp-maximum-principle` (§8.5 and §8.6); `gap:weak-harnack-s
 
 - K3Surfaces §2.1 constructs the Ricci-flat Kähler form on a K3 surface by solving `(ω + i∂∂̄φ)² = c·V`. That is Layer 6 §6.6 in dimension two with a Kähler background, and §6.6 is the theorem to import.
 - ComplexHessianEquations Part II consumes Layers 1–5 for the Tosatti–Weinkove and Guo–Phong theorems on compact Hermitian manifolds. Further Part II directions are subsolution theory, Hessian-equation existence and the Kähler–Einstein (Aubin–Yau) equation `(ω + i∂∂̄φ)^n = e^{φ+F}ω^n`, whose right-hand side depends on `φ`; that equation uses Layer 4's comparison principle and Layer 6's estimates.
-- A real Hessian-equation extension of OptimalTransport Layer 6 can consume the real symmetric case of Layer 1 (`𝕜 = ℝ`), the cone `Γ_n` and §1.6's determinant identities.
+- A real Hessian-equation extension of OptimalTransport Layer 6 can consume the real symmetric case of Layer 1 (`𝕜 = ℝ`), the cone `Γ_n` and §1.5's determinant identities.
 
 ## References
 
@@ -697,6 +718,7 @@ Layers 1–7; `gap:abp-maximum-principle` (§8.5 and §8.6); `gap:weak-harnack-s
 - G. Székelyhidi, *An Introduction to Extremal Kähler Metrics*, GSM 152 (2014) (`szekelyhidi2014`).
 - G. Tian, *On Kähler–Einstein metrics on certain Kähler manifolds with C_1(M) > 0*, Invent. Math. 89 (1987) (`tian1987`).
 - L. Hörmander, *An Introduction to Complex Analysis in Several Variables*, 3rd ed. (1990) (`hormander1990`).
+- J.-P. Demailly, *Complex Analytic and Differential Geometry*, book manuscript, Institut Fourier, version of 21 June 2012 (`demailly2012`).
 - D. Gilbarg, N. S. Trudinger, *Elliptic Partial Differential Equations of Second Order* (2001) (`gilbarg-trudinger2001`).
 - S. Kołodziej, *The complex Monge–Ampère equation*, Acta Math. 180 (1998) (`kolodziej1998`).
 - L. Caffarelli, L. Nirenberg, J. Spruck, *The Dirichlet problem for nonlinear second order elliptic equations III*, Acta Math. 155 (1985) (`cns1985`), and L. Caffarelli, J. J. Kohn, L. Nirenberg, J. Spruck, *… II*, Comm. Pure Appl. Math. 38 (1985) (`ckns1985`), cited for the boundary of this roadmap with its Part II.

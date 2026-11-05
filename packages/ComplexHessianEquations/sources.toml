@@ -154,6 +154,11 @@ cited_for = ["1.3", "1.5", "2.1", "2.2.1", "2.2.3", "2.3", "2.4.4", "2.5.2"]
 
 [[source]]
 id = "lewis1996"
+authors = "A. S. Lewis"
+title = "Derivatives of spectral functions"
+year = 1996
+venue = "Mathematics of Operations Research 21 (1996), no. 3, 576–588"
+doi = "10.1287/moor.21.3.576"
 locator_scheme = "theorem"
 locator = "Theorem 1.1, Theorem 2.1, Lemmas 2.2–2.3, Theorem 2.4"
 url = "https://people.orie.cornell.edu/aslewis/publications/96-derivatives.pdf"
@@ -163,19 +168,15 @@ sha256 = "92d51d0d2667845273ac0c8863f211abe2d780b93848fb636e183389dc02a228"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-05"
-cited_for = ["1.2", "1.3", "1.4.1", "1.4.2"]
-authors = "A. S. Lewis"
-title = "Derivatives of spectral functions"
-year = 1996
-venue = "Mathematics of Operations Research 21 (1996), no. 3, 576–588"
-doi = "10.1287/moor.21.3.576"
 version_note = "the published article as scanned on the author's Cornell page; image-only scan recognised by OCR, so quote with care"
+cited_for = ["1.2", "1.3", "1.4.1", "1.4.2"]
 
 [[source]]
 id = "guedj-zeriahi2005"
 authors = "Vincent Guedj, Ahmed Zeriahi"
 title = "Intrinsic capacities on compact Kähler manifolds"
 year = 2004
+venue = "J. Geom. Anal. 15 (2005)"
 arxiv = "math/0401302v2"
 locator_scheme = "theorem"
 locator = "Proposition 1.7"
@@ -188,7 +189,6 @@ status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v2, the version read; numbering cited as read"
 cited_for = ["5.4.1"]
-venue = "J. Geom. Anal. 15 (2005)"
 
 [[source]]
 id = "cns1985"
@@ -306,4 +306,21 @@ locator = "Chapter IV, the local integrability estimate for plurisubharmonic fun
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled book; the sources service found no legal copy; cited without the text as the local estimate that gpt2023 and pss2012 attribute to it"
+cited_for = ["7.1"]
+
+[[source]]
+id = "demailly2012"
+authors = "Jean-Pierre Demailly"
+title = "Complex Analytic and Differential Geometry"
+year = 2012
+venue = "book manuscript, Institut Fourier, Université de Grenoble I, version of 21 June 2012"
+locator_scheme = "theorem"
+locator = "Proposition 4.22 (Chapter I, §4.B, p. 37): the Green–Riesz representation and the Harnack inequality for subharmonic functions on a disc, the one-variable input of 7.1"
+url = "https://www-fourier.univ-grenoble-alpes.fr/~demailly/manuscripts/agbook.pdf"
+fetched_from = "https://www-fourier.univ-grenoble-alpes.fr/~demailly/manuscripts/agbook.pdf"
+fetched_at = "2026-11-05T14:50:23Z"
+sha256 = "d7c7654a7417e8322e5dcf8fe8ec818b4c1a18cf280b41f2df5a871b776d89a1"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-05"
 cited_for = ["7.1"]

@@ -16,7 +16,7 @@
      "id": "1.1",
      "kind": "definition",
      "name": "relEigenvalues",
-     "statement": "For a Hermitian form a on a finite-dimensional inner product space E over RCLike 𝕜 of dimension n, the representing self-adjoint operator A_a with a(u,v) = ⟪u, A_a v⟫ and the decreasingly sorted eigenvalue vector λ[a] = λ(A_a) ∈ ℝⁿ; with the min–max characterization λ_i(T) = max over i-dimensional W of min over unit u ∈ W of ⟪u, T u⟫.",
+     "statement": "For a Hermitian form a on a finite-dimensional inner product space E over RCLike 𝕜 of dimension n, the representing self-adjoint operator A_a with a(u,v) = ⟪u, A_a v⟫ and the decreasingly sorted eigenvalue vector λ[a] = λ(A_a) ∈ ℝⁿ; a ≤ b means A_a ≤ A_b in the Loewner order. Monotonicity and Lipschitz continuity of λ are consumed from OperatorTheory/PolarDecomposition PD-A52 and PD-A53.",
      "hypotheses": [
       "E finite-dimensional inner product space over RCLike 𝕜",
       "finrank 𝕜 E = n",
@@ -29,7 +29,8 @@
      "prerequisites": [
       "mathlib:LinearMap.IsSymmetric.eigenvalues",
       "mathlib:LinearMap.IsSymmetric.eigenvectorBasis",
-      "mathlib:LinearMap.IsSymmetric.hasEigenvalue_iSup_of_finiteDimensional"
+      "roadmap:OperatorTheory/PolarDecomposition PD-A52",
+      "roadmap:OperatorTheory/PolarDecomposition PD-A53"
      ],
      "api": [
       {
@@ -68,9 +69,14 @@
        "statement": "in a basis with Gram matrix g, λ[a] is the spectrum of g⁻¹a"
       },
       {
-       "name": "eigenvalues_eq_minmax",
-       "role": "characterisation",
-       "statement": "λ_i(T) = max_{dim W = i} min_{u ∈ W, ‖u‖=1} ⟪u, T u⟫"
+       "name": "relEigenvalues_mono",
+       "role": "structure",
+       "statement": "a ≤ b gives λ_i[a] ≤ λ_i[b] for every i (PD-A52)"
+      },
+      {
+       "name": "relEigenvalues_lipschitz",
+       "role": "structure",
+       "statement": "|λ_i[a] − λ_i[b]| ≤ ‖A_a − A_b‖ for every i (PD-A53); a ↦ λ[a] is continuous"
       }
      ],
      "tests": [
@@ -93,66 +99,49 @@
        "name": "det_one_add_smul_diag",
        "kind": "compatibility",
        "statement": "det(Id + t·diag(1,2,3)) = 1 + 6t + 11t² + 6t³, matching σ = (6,11,6)"
+      },
+      {
+       "name": "relEigenvalues_mono_sorted_pairing",
+       "kind": "non-example",
+       "statement": "diag(3,0) ≤ diag(3,1): sorted vectors compare, (3,0) ≤ (3,1), but the cross pairing λ_1(diag(3,0)) = 3 > λ_2(diag(3,1)) = 1"
+      },
+      {
+       "name": "relEigenvalues_not_additive",
+       "kind": "non-example",
+       "statement": "λ(diag(1,0) + diag(0,1)) = (1,1) ≠ (2,0) = λ(diag(1,0)) + λ(diag(0,1))"
+      },
+      {
+       "name": "relEigenvalues_lipschitz_sharp",
+       "kind": "computation",
+       "statement": "λ([[0,ε],[ε,0]]) = (ε, −ε) with operator norm ε: the Lipschitz constant 1 is attained"
       }
      ]
     },
     {
      "id": "1.2",
      "kind": "theorem",
-     "name": "eigenvalues_mono_and_lipschitz",
-     "statement": "For self-adjoint S, T: if S ≤ T then λ_i(S) ≤ λ_i(T) for every i; and |λ_i(S) − λ_i(T)| ≤ ‖S − T‖ for every i.",
+     "name": "kyFan_differentiable",
+     "statement": "For T self-adjoint and 1 ≤ m ≤ n, the Ky Fan sum κ_m(T) = Σ_{i≤m} λ_i(T) is convex and subadditive; it equals max Re tr(PT) over rank-m orthogonal projections (MAJ-A27 evaluated on orthonormal bases of ranges); if λ_m(T) > λ_{m+1}(T) then the spectral projection P_T onto the top m eigenvectors is the unique maximizer and κ_m is differentiable at T with gradient P_T. The two-sided trace inequality Σ γ_i μ_i ≤ Re tr(FB) ≤ Σ γ_i μ_{n+1−i} (γ decreasing eigenvalues of F, μ increasing eigenvalues of B) is recorded as PA-B32 applied to (F,B) and (F,−B).",
      "hypotheses": [
-      "S, T self-adjoint on a finite-dimensional inner product space over RCLike 𝕜"
+      "F, B, T self-adjoint on a finite-dimensional inner product space over RCLike 𝕜",
+      "1 ≤ m ≤ n",
+      "spectral gap λ_m(T) > λ_{m+1}(T) for the uniqueness and differentiability clauses (vacuous for m = n)"
      ],
      "locator": {
       "source": "lewis1996",
-      "where": "line 193–194"
+      "where": "line 145–148 and Theorem 2.1, line 150–158; spruck2005 Lemma 1.5, line 11089–11091 for the lower trace bound"
      },
      "prerequisites": [
-      "target:1.1"
+      "roadmap:OperatorTheory/PrincipalAngles PA-B32",
+      "roadmap:OperatorTheory/Majorization MAJ-A27",
+      "roadmap:OperatorTheory/PolarDecomposition PD-A53",
+      "mathlib:LinearMap.IsSymmetric.eigenvectorBasis"
      ],
      "tests": [
       {
-       "name": "weyl_sorted_pairing",
-       "kind": "non-example",
-       "statement": "S = diag(3,0) ≤ T = diag(3,1): sorted vectors compare but λ_1(S) = 3 > λ_2(T) = 1"
-      },
-      {
-       "name": "weyl_not_additive",
-       "kind": "non-example",
-       "statement": "λ(diag(1,0) + diag(0,1)) = (1,1) ≠ (2,0)"
-      },
-      {
-       "name": "weyl_lipschitz_sharp",
+       "name": "vonNeumann_two_sided_example",
        "kind": "computation",
-       "statement": "λ([[0,ε],[ε,0]]) = (ε, −ε) with norm ε"
-      }
-     ]
-    },
-    {
-     "id": "1.3",
-     "kind": "theorem",
-     "name": "re_trace_mul_ge_and_kyFan",
-     "statement": "For self-adjoint F, B with eigenvalues γ_1 ≥ … ≥ γ_n of F and μ_1 ≤ … ≤ μ_n of B: Re tr(FB) ≥ Σ γ_i μ_i and Re tr(FB) ≤ Σ γ_i μ_{n+1−i}. Consequently the sum κ_m of the m largest eigenvalues is max tr(PT) over rank-m orthogonal projections, is convex and subadditive, and if λ_m(T) > λ_{m+1}(T) then κ_m is differentiable at T with gradient the spectral projection onto the top m eigenvalues.",
-     "hypotheses": [
-      "F, B, T self-adjoint",
-      "1 ≤ m ≤ n",
-      "spectral gap λ_m(T) > λ_{m+1}(T) for the differentiability clause"
-     ],
-     "locator": {
-      "source": "spruck2005",
-      "where": "Lemma 1.5, line 11089–11091; lewis1996 Theorem 2.1, line 145–158"
-     },
-     "prerequisites": [
-      "mathlib:doublyStochastic_eq_convexHull_permMatrix",
-      "mathlib:LinearMap.IsSymmetric.eigenvectorBasis",
-      "target:1.2"
-     ],
-     "tests": [
-      {
-       "name": "vonNeumann_example",
-       "kind": "computation",
-       "statement": "F = diag(2,1), B = diag(0,3): tr(FB) = 3 equals the lower bound 3; B' = diag(3,0) gives 6, the upper bound"
+       "statement": "F = diag(2,1), B = diag(0,3): tr(FB) = 3 equals the lower bound 3; B' = diag(3,0) gives 6, the upper bound; the lower bound is PA-B32 at −B: −3 ≤ 2·0 + 1·(−3)"
       },
       {
        "name": "kyFan_no_gap",
@@ -167,10 +156,10 @@
      ]
     },
     {
-     "id": "1.4.1",
+     "id": "1.3.1",
      "kind": "definition",
      "name": "spectralFunction",
-     "statement": "For an open permutation-invariant Ω ⊆ ℝⁿ and a symmetric f : Ω → ℝ, the spectral domain Sym_Ω(E) = {T self-adjoint : λ(T) ∈ Ω}, open in the real space of self-adjoint operators, and the spectral function F_f(T) = f(λ(T)) on it.",
+     "statement": "For an open permutation-invariant Ω ⊆ ℝⁿ and a symmetric f : Ω → ℝ, the spectral domain Sym_Ω(E) = {T self-adjoint : λ(T) ∈ Ω}, open in the real space of self-adjoint operators because λ is continuous (PD-A53), and the spectral function F_f(T) = f(λ(T)) on it.",
      "hypotheses": [
       "Ω ⊆ ℝⁿ open and invariant under permutations",
       "f symmetric"
@@ -181,7 +170,7 @@
      },
      "prerequisites": [
       "target:1.1",
-      "target:1.2"
+      "roadmap:OperatorTheory/PolarDecomposition PD-A53"
      ],
      "api": [
       {
@@ -239,7 +228,7 @@
      ]
     },
     {
-     "id": "1.4.2",
+     "id": "1.3.2",
      "kind": "theorem",
      "name": "hasFDerivAt_spectralFunction_iff",
      "statement": "F_f is differentiable at T iff f is differentiable at λ(T); then ∇F_f(T) = Σ_i ∂_i f(λ(T)) e_i ⊗ e_i* for any orthonormal eigenbasis (e_i) of T ordered by λ(T). Moreover F_f is C¹ on Sym_Ω(E) iff f is C¹ on Ω. The case 𝕜 = ℝ is the real symmetric statement.",
@@ -252,8 +241,9 @@
       "where": "Theorem 1.1, line 77–81; line 144; line 468–469"
      },
      "prerequisites": [
-      "target:1.3",
-      "target:1.4.1",
+      "target:1.2",
+      "target:1.3.1",
+      "roadmap:OperatorTheory/PolarDecomposition PD-A53",
       "mathlib:HasFDerivAt",
       "mathlib:ContDiffOn"
      ],
@@ -276,13 +266,14 @@
      ]
     },
     {
-     "id": "1.5",
+     "id": "1.4",
      "kind": "theorem",
      "name": "spectralFunction_concave_elliptic",
-     "statement": "For an open convex symmetric Γ: Sym_Γ(E) is convex; if f is symmetric, concave and differentiable then F_f is concave on Sym_Γ(E); if ∂_i f > 0 on Γ then ∇F_f(T) is positive definite; if Γ + Γ_n ⊆ Γ, S ∈ Sym_Γ(E) and S ≤ T then T ∈ Sym_Γ(E) and F_f(S) ≤ F_f(T), with equality only if S = T.",
+     "statement": "For an open convex symmetric Γ and a symmetric C¹ f on Γ: Sym_Γ(E) is convex; if f is concave then F_f is concave on Sym_Γ(E); if ∂_i f > 0 on Γ then ∇F_f(T) is positive definite; if Γ + Γ_n ⊆ Γ, S ∈ Sym_Γ(E) and S ≤ T then T ∈ Sym_Γ(E), and F_f(S) ≤ F_f(T) when ∂_i f ≥ 0 on Γ, with F_f(S) < F_f(T) unless S = T when ∂_i f > 0 on Γ; the same for vectors μ ≤ ν componentwise.",
      "hypotheses": [
       "Γ open, convex, permutation-invariant",
-      "f : Γ → ℝ symmetric and C¹"
+      "f : Γ → ℝ symmetric and C¹",
+      "∂_i f ≥ 0 on Γ for the monotonicity inequality; ∂_i f > 0 on Γ for its strictness clause"
      ],
      "locator": {
       "source": "spruck2005",
@@ -290,8 +281,9 @@
      },
      "prerequisites": [
       "target:1.2",
-      "target:1.3",
-      "target:1.4.2",
+      "target:1.3.2",
+      "roadmap:OperatorTheory/PolarDecomposition PD-A52",
+      "roadmap:OperatorTheory/PrincipalAngles PA-B32",
       "mathlib:ConcaveOn"
      ],
      "tests": [
@@ -309,11 +301,21 @@
        "name": "det_not_concave",
        "kind": "non-example",
        "statement": "t ↦ det(t Id_2) = t² is convex"
+      },
+      {
+       "name": "monotone_needs_ellipticity",
+       "kind": "non-example",
+       "statement": "Γ = Γ_1 ⊂ ℝ², f = −σ_1, S = diag(1,0) ≤ T = diag(2,0): F_f(S) = −1 > −2 = F_f(T); and f ≡ 0 gives F_f(S) = F_f(T) with S ≠ T, so strictness needs ∂_i f > 0"
+      },
+      {
+       "name": "gradient_ordering",
+       "kind": "computation",
+       "statement": "f = σ_2^{1/2} at μ = (4,1): ∂_1 f = 1/4 ≤ ∂_2 f = 1, the ordering used in the concavity route"
       }
      ]
     },
     {
-     "id": "1.6",
+     "id": "1.5",
      "kind": "theorem",
      "name": "det_grad_euler_traceAMGM",
      "statement": "det ∇F_f(T) = ∏_i ∂_i f(λ(T)); if f is positively homogeneous of degree one then Re tr(∇F_f(T) T) = F_f(T); for positive definite A, B: Re tr(AB) ≥ n (det A det B)^{1/n} with equality iff B = cA⁻¹.",
@@ -326,7 +328,7 @@
       "where": "line 241–255"
      },
      "prerequisites": [
-      "target:1.4.2",
+      "target:1.3.2",
       "mathlib:Real.geom_mean_le_arith_mean_weighted",
       "mathlib:LinearMap.IsSymmetric.det_eq_prod_eigenvalues"
      ],
@@ -526,7 +528,7 @@
       "target:2.1",
       "target:2.2.1",
       "target:2.2.2",
-      "target:1.5"
+      "target:1.4"
      ]
     },
     {
@@ -626,7 +628,7 @@
      },
      "prerequisites": [
       "target:2.4.1",
-      "target:1.4.1"
+      "target:1.3.1"
      ],
      "api": [
       {
@@ -744,7 +746,7 @@
       "where": "Lemma 4, line 744–769; guo-phong2024 line 103–104; spruck2005 line 11314"
      },
      "prerequisites": [
-      "target:1.6",
+      "target:1.5",
       "target:2.3",
       "target:2.4.3"
      ]
@@ -1171,12 +1173,12 @@
       {
        "name": "entropy_mass_bound",
        "role": "evaluation",
-       "statement": "for normalized F, 1 ≤ Ent_p(F) + e^n"
+       "statement": "for every F ∈ C⁰(X) and p > 0, V⁻¹ ∫ e^{nF} ω_X^n ≤ Ent_p(F) + e^n (gpt2023 (3.2), line 450–451)"
       },
       {
        "name": "entropy_mono",
        "role": "structure",
-       "statement": "Ent_q(F) ≤ 1 + Ent_p(F) for q ≤ p and normalized F"
+       "statement": "Ent_q(F) ≤ 1 + Ent_p(F) for 0 < q ≤ p and normalized F"
       }
      ],
      "tests": [
@@ -1194,6 +1196,11 @@
        "name": "entropy_constant",
        "kind": "computation",
        "statement": "F = a constant on V = 1: Ent_p(a) = e^{na}|a|^p"
+      },
+      {
+       "name": "entropy_mass_bound_constant",
+       "kind": "computation",
+       "statement": "F = a constant, V = 1: e^{na} ≤ e^{na}|a|^p + e^n, from the first term when |a| ≥ 1 and from e^{na} < e^n when |a| < 1"
       }
      ]
     }
@@ -1218,8 +1225,8 @@
       "where": "line 38–47"
      },
      "prerequisites": [
-      "target:1.2",
-      "target:1.5",
+      "roadmap:OperatorTheory/PolarDecomposition PD-A52",
+      "target:1.4",
       "target:3.1.3",
       "target:3.3.1"
      ],
@@ -1257,8 +1264,8 @@
       "where": "Corollary 1, line 36–47"
      },
      "prerequisites": [
-      "target:1.4.2",
-      "target:1.5",
+      "target:1.3.2",
+      "target:1.4",
       "target:3.3.1",
       "target:4.1",
       "roadmap:PDE Lane C item 13"
@@ -1680,8 +1687,7 @@
       "target:6.3",
       "target:6.4",
       "target:6.5",
-      "mathlib:HasStrictFDerivAt.toOpenPartialHomeomorph",
-      "mathlib:HasStrictFDerivAt.implicitFunction"
+      "mathlib:HasStrictFDerivAt.toOpenPartialHomeomorph"
      ],
      "tests": [
       {
@@ -1713,10 +1719,47 @@
    "title": "Exponential integrability of quasi-plurisubharmonic functions",
    "targets": [
     {
-     "id": "7.1",
+     "id": "7.1.1",
+     "kind": "theorem",
+     "name": "exp_integrable_subharmonic_disc",
+     "statement": "For 0 < r < R' < R and A > 0, with α_1 = log(R/R')/A and C_1 = 2π(2R')²(R/R')^{(R'+r)/(R'−r)}: every subharmonic v ≤ 0 on a neighbourhood of the closed disc D̄(0,R) ⊂ ℂ with v(0) ≥ −A satisfies ∫_{D(0,r)} e^{−αv} dλ ≤ C_1 for 0 < α ≤ α_1.",
+     "hypotheses": [
+      "v subharmonic on a neighbourhood of D̄(0,R), v ≤ 0",
+      "v(0) ≥ −A",
+      "0 < r < R' < R",
+      "0 < α ≤ log(R/R')/A"
+     ],
+     "locator": {
+      "source": "demailly2012",
+      "where": "Proposition 4.22, line 1717–1731 (Green–Riesz representation and Harnack inequality); route: Jensen's formula for the Riesz mass, Jensen's inequality for the logarithmic potential"
+     },
+     "prerequisites": [
+      "roadmap:PDE Lane C item 12",
+      "mathlib:ConvexOn.map_integral_le"
+     ],
+     "tests": [
+      {
+       "name": "disc_point_mass",
+       "kind": "computation",
+       "statement": "v = log(|t − w_0|/(2R)), |w_0| = R/2: A = log 4, Riesz mass 2π ≤ 2π log 4/log(R/R'); (2R/|t−w_0|)^α integrable iff α < 2, the threshold αM < 4π"
+      },
+      {
+       "name": "disc_harmonic",
+       "kind": "degenerate",
+       "statement": "v ≡ −A: M = 0 and the integral is πr² e^{αA}, within the bound since C_H ≥ 1"
+      },
+      {
+       "name": "disc_centre_hypothesis",
+       "kind": "non-example",
+       "statement": "v = c log(|t|/R): v(0) = −∞ so the lemma does not apply at 0; recentred at R/4 it gives α_1 = log(R/R')/(c log 4) and (R/|t|)^{αc} is integrable iff αc < 2"
+      }
+     ]
+    },
+    {
+     "id": "7.1.2",
      "kind": "theorem",
      "name": "local_exp_integrable_psh",
-     "statement": "For n ≥ 1 and A > 0 there are α(n,A) > 0 and C(n,A) with ∫_{B(0,1)} e^{−αu} ≤ C for every plurisubharmonic u ∈ C²(B(0,2)), B(0,2) ⊂ ℂⁿ, with u ≤ 0 and ∫_{B(0,2)} (−u) ≤ A.",
+     "statement": "For n ≥ 1 and A > 0 there are α(n,A) = log(12/11)·vol(B(0,1/4))/A > 0 and C(n) with ∫_{B(0,1)} e^{−αu} ≤ C for every plurisubharmonic u ∈ C²(B(0,2)), B(0,2) ⊂ ℂⁿ, with u ≤ 0 and ∫_{B(0,2)} (−u) ≤ A, for 0 < α ≤ α(n,A). Route: a point x_0 ∈ B(0,1/4) with u(x_0) ≥ −A/vol(B(0,1/4)), the one-variable estimate 7.1.1 on every complex line through x_0, and polar coordinates about x_0.",
      "hypotheses": [
       "u plurisubharmonic and C²",
       "u ≤ 0",
@@ -1724,10 +1767,11 @@
      ],
      "locator": {
       "source": "pss2012",
-      "where": "line 2943–2945; gpt2023 line 287–289 (attributed to hormander1990, Chapter IV)"
+      "where": "line 2943–2945; gpt2023 line 287–289 (attributed to hormander1990, Chapter IV); demailly2012 Proposition 4.22 for the one-variable input"
      },
      "prerequisites": [
       "target:3.1.2",
+      "target:7.1.1",
       "roadmap:PDE Lane C item 12"
      ],
      "tests": [
@@ -1744,7 +1788,7 @@
       {
        "name": "subharmonic_not_enough",
        "kind": "non-example",
-       "statement": "−|x|^{−1} on ℝ⁴ = ℂ² is subharmonic, integrable, but e^{α/|x|} is never integrable near 0"
+       "statement": "−|x|^{−1} on ℝ⁴ = ℂ² is subharmonic, integrable, but e^{α/|x|} is never integrable near 0: its slices along complex lines are not subharmonic"
       }
      ]
     },
@@ -1763,7 +1807,7 @@
      },
      "prerequisites": [
       "target:5.4.1",
-      "target:7.1"
+      "target:7.1.2"
      ],
      "tests": [
       {
@@ -1806,7 +1850,7 @@
       "where": "Lemma 1, line 198–302"
      },
      "prerequisites": [
-      "target:1.6",
+      "target:1.5",
       "target:2.4.3",
       "target:3.1.3",
       "target:3.4.1",
@@ -1867,7 +1911,7 @@
      "id": "8.3",
      "kind": "theorem",
      "name": "gpt_degenerating",
-     "statement": "In the degenerating setting of 3.4.1 on compact connected Kähler (X, ω_X), with (f,Γ) admissible satisfying the structural condition with constant γ, p > n, and φ_t ∈ C² solving the equation with normalized smooth F_t: sup |φ_t| ≤ C with C depending only on ω_X, χ, p, n, γ and upper bounds for c_t^n/V_t, E_t(φ_t), Ent_p(F_t); explicitly inf φ_t ≥ −(2B_0)^{1/δ_0} Ē − 1/(1 − 2^{−δ_0}) with δ_0 = (p−n)/(pn).",
+     "statement": "In the degenerating setting of 3.4.1 on compact connected Kähler (X, ω_X), with (f,Γ) admissible satisfying the structural condition with constant γ, p > n, and φ_t ∈ C² solving the equation with normalized smooth F_t: sup |φ_t| ≤ C with C depending only on ω_X, χ, p, n, γ and upper bounds for c_t^n/V_t, E_t(φ_t), Ent_p(F_t); explicitly inf φ_t ≥ −(2B_0)^{1/δ_0} Ē − 1/(1 − 2^{−δ_0}) with δ_0 = (p−n)/(pn). The De Giorgi lemma 8.2 is applied to the strict sublevel function Φ(s) = (c_t^n/V_t) ∫_{{φ_t < −s}} e^{nF_t} ω_X^n, which is right-continuous; A_s is unchanged since its integrand vanishes on {φ_t = −s}.",
      "hypotheses": [
       "dω_X = 0",
       "χ smooth closed ≥ 0",
@@ -1899,6 +1943,11 @@
        "name": "degenerating_curve",
        "kind": "computation",
        "statement": "n = 1: δ_0 = (p−1)/p, the Poisson equation"
+      },
+      {
+       "name": "degenerating_right_continuity",
+       "kind": "non-example",
+       "statement": "φ_t = −ε ρ with ρ a bump equal to 1 exactly on a closed set with interior U: s ↦ vol{φ_t ≤ −s} is ≥ vol(U) at s = ε and 0 for s > ε, not right-continuous; s ↦ vol{φ_t < −s} is 0 at and after ε"
       }
      ]
     },
@@ -1955,7 +2004,7 @@
       "where": "Theorem 3, Lemma 3, line 458–736"
      },
      "prerequisites": [
-      "target:1.6",
+      "target:1.5",
       "target:5.4.2",
       "target:6.6",
       "target:7.2",
@@ -2032,7 +2081,7 @@
       "where": "Theorem 5, Lemmas 7–8, line 861–952"
      },
      "prerequisites": [
-      "target:1.5",
+      "target:1.4",
       "target:3.2",
       "target:5.4.2",
       "target:6.6",
@@ -2062,6 +2111,29 @@
   }
  ],
  "suppliers": [
+  {
+   "roadmap": "OperatorTheory/PolarDecomposition",
+   "sections": [
+    "PD-A51",
+    "PD-A52",
+    "PD-A53"
+   ],
+   "what": "Courant–Fischer min–max, Loewner monotonicity and Weyl's operator-norm bound for sorted eigenvalues of symmetric endomorphisms of finite-dimensional inner product spaces over ℝ or ℂ"
+  },
+  {
+   "roadmap": "OperatorTheory/PrincipalAngles",
+   "sections": [
+    "PA-B32"
+   ],
+   "what": "von Neumann's trace inequality tr(TS) ≤ Σ λ_i(T)λ_i(S), consumed in both directions via −S"
+  },
+  {
+   "roadmap": "OperatorTheory/Majorization",
+   "sections": [
+    "MAJ-A27"
+   ],
+   "what": "Ky Fan's maximum principle: Σ Re⟪Sw_i,w_i⟫ over an orthonormal family of k vectors is at most the sum of the k largest eigenvalues"
+  },
   {
    "roadmap": "ComplexKahlerGeometry",
    "sections": [
@@ -2142,7 +2214,7 @@
     "8.7"
    ],
    "detail": "r^{−m}‖u‖_{L¹(B_{2r})} ≤ C(inf_{B_r} u + r^{2−m/q}‖f‖_{L^q(B_{4r})}), q > m/2, for nonnegative weak supersolutions of divergence-form uniformly elliptic equations with bounded measurable coefficients (gilbarg-trudinger2001 Theorem 8.18); used on coordinate balls for −φ with Δ_ω φ ≥ −A on Kähler manifolds.",
-   "needs": "PDE plans the Harnack inequality in Lane E item 23 but does not state the weak Harnack inequality for supersolutions on which the L¹ bound rests.",
+   "needs": "the weak Harnack inequality r^{−m}‖u‖_{L¹(B_{2r})} ≤ C(inf_{B_r} u + r^{2−m/q}‖f‖_{L^q(B_{4r})}), q > m/2, for nonnegative weak supersolutions u of divergence-form uniformly elliptic equations Lu ≤ f with bounded measurable coefficients on balls of ℝ^m",
    "supplier": "PDE",
    "section": "Lane E item 23"
   },
@@ -2154,7 +2226,7 @@
     "8.6"
    ],
    "detail": "sup_Ω u ≤ sup_{∂Ω} u + C(m) diam(Ω) ‖(Lu)^−/D^{1/m}‖_{L^m(Γ⁺)} for u ∈ C²(Ω) ∩ C⁰(Ω̄), L = a^{ij}∂_i∂_j with positive definite a, D = det a, Γ⁺ the upper contact set (gilbarg-trudinger2001 Lemma 9.2, Theorem 9.1); applied on coordinate balls of ℝ^{2n} in the energy estimate.",
-   "needs": "No roadmap plans the Aleksandrov–Bakelman–Pucci maximum principle; PDE on its main branch does not.",
+   "needs": "the Aleksandrov–Bakelman–Pucci bound sup_Ω u ≤ sup_{∂Ω} u + C(m)·diam(Ω)·‖(Lu)^−/D^{1/m}‖_{L^m(Γ⁺)} for u ∈ C²(Ω) ∩ C⁰(Ω̄) on bounded domains Ω ⊂ ℝ^m and L = a^{ij}∂_i∂_j with positive definite a, D = det a and Γ⁺ the upper contact set",
    "supplier": "PDE",
    "section": "proposed PDE Part II, Lane C (Aleksandrov–Bakelman–Pucci maximum principle)"
   }
