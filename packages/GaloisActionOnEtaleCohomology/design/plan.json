@@ -229,10 +229,10 @@
      "id": "1.1",
      "kind": "construction",
      "name": "coverAutAction",
-     "statement": "In the settings (a) analytic étale sites of locally strongly sheafy analytic adic spaces, (b) pro-étale sites of locally noetherian analytic adic spaces, (c) small étale sites of schemes: for p : Y → X, an automorphism a of Y with p ∘ a = p, a ring Λ and K ∈ D⁺(X_τ, Λ), define c_a : a^{-1}p^{-1}K ≅ p^{-1}K from the pseudofunctor coherence and p ∘ a = p, and a^♮ := H^i(c_a) ∘ a^* on H^i(Y, p^{-1}K) and RΓ(Y, p^{-1}K).",
+     "statement": "In the settings (a) analytic étale sites of locally strongly sheafy analytic adic spaces, (b) pro-étale sites of locally noetherian analytic adic spaces, (c) small étale sites of schemes: for p : Y → X, an automorphism a of Y with p ∘ a = p, a ring Λ and M ∈ D⁺(X_τ, Λ), define c_a : a^{-1}p^{-1}M ≅ p^{-1}M from the pseudofunctor coherence and p ∘ a = p, and a^♮ := H^i(c_a) ∘ a^* on H^i(Y, p^{-1}M) and RΓ(Y, p^{-1}M).",
      "hypotheses": [
       "p ∘ a = p",
-      "K bounded below"
+      "M bounded below"
      ],
      "locator": {
       "source": "dejongvanderput1996",
@@ -263,7 +263,7 @@
       {
        "name": "linear_natural",
        "role": "functoriality",
-       "statement": "Λ-linear, natural in K, compatible with change of coefficients"
+       "statement": "Λ-linear, natural in M, compatible with change of coefficients"
       },
       {
        "name": "delta",
@@ -305,7 +305,7 @@
       {
        "name": "order",
        "kind": "characterisation",
-       "statement": "on H⁰(Spa(L ⊗_K C), ℤ) = ℤ³ for L/K cyclic cubic, (a∘b)^♮ = b^♮∘a^♮ on indicators of points"
+       "statement": "on H⁰(Spa(L ⊗_K C), ℤ) = ℤ^{Gal(L/K)} for L/K Galois with group S₃ (K = ℚ_2, splitting field of T³ − 2), σ, τ ∈ G_K restricting to s of order 2 and r of order 3, a = Spa(id_L ⊗ σ̂), b = Spa(id_L ⊗ τ̂): (a∘b)^♮ = b^♮∘a^♮ sends δ_1 to δ_{rs}, the wrong order a^♮∘b^♮ sends it to δ_{sr} ≠ δ_{rs}; a cyclic extension (abelian group) does not separate the orders"
       }
      ]
     },
@@ -313,7 +313,7 @@
      "id": "1.2",
      "kind": "construction",
      "name": "rigidGaloisAction",
-     "statement": "For a rigid K-space X and σ ∈ G_K, σ_X := id_X × Spa(σ̂) : X_C → X_C satisfies pr_C ∘ σ_X = pr_C, (στ)_X = τ_X ∘ σ_X, 1_X = id, and for X ≠ ∅, σ ≠ 1 is not a morphism over Spa(C,𝒪_C). For K ∈ D⁺(X_ét, Λ), ρ(σ) := (σ_X)^♮ is a left action of G_K on H^i(X_C, K_C) and RΓ(X_C, K_C) by Λ-linear automorphisms; the same on pro-étale cohomology of pullbacks of objects of D⁺(X_proét, Λ), and H^i(X_C,ét, K_C) ≅ H^i(X_C,proét, ν^*K_C) is ρ-equivariant.",
+     "statement": "For a rigid K-space X and σ ∈ G_K, σ_X := id_X × Spa(σ̂) : X_C → X_C satisfies pr_C ∘ σ_X = pr_C, (στ)_X = τ_X ∘ σ_X, 1_X = id, and for X ≠ ∅, σ ≠ 1 is not a morphism over Spa(C,𝒪_C). For M ∈ D⁺(X_ét, Λ), ρ(σ) := (σ_X)^♮ is a left action of G_K on H^i(X_C, M_C) and RΓ(X_C, M_C) by Λ-linear automorphisms; the same on pro-étale cohomology of pullbacks of objects of D⁺(X_proét, Λ), and H^i(X_C,ét, M_C) ≅ H^i(X_C,proét, ν^*M_C) is ρ-equivariant.",
      "hypotheses": [
       "X locally of finite type over Spa(K,𝒪_K)",
       "Λ any ring"
@@ -388,7 +388,7 @@
      "statement": "ρ commutes with (a) pullback along morphisms g : X′ → X of rigid K-spaces, (b) maps induced by morphisms in D⁺(X_ét, Λ), (c) connecting maps of short exact sequences of sheaves of Λ-modules, (d) cup products; (e) for finite L ⊆ K̄ (not necessarily separable), (X_L)_C = X_C and the G_L-action is the restriction of ρ; (f) for a K-isomorphism τ : K̄ → K̄′, id × Spa(τ̂⁻¹) intertwines ρ′(τστ⁻¹) with ρ(σ).",
      "hypotheses": [
       "X, X′ rigid K-spaces",
-      "K, L ∈ D⁺(X_ét, Λ)"
+      "M, N ∈ D⁺(X_ét, Λ)"
      ],
      "locator": {
       "source": "dejongvanderput1996",
@@ -408,7 +408,7 @@
       {
        "name": "conj_self",
        "kind": "degenerate",
-       "statement": "in (f) with K̄′ = K̄ and τ ∈ G_K the statement is ρ(τ)⁻¹ρ(τστ⁻¹)ρ(τ) = ρ(σ)"
+       "statement": "in (f) with K̄′ = K̄ and τ ∈ G_K, id_X × Spa(τ̂⁻¹) = (τ⁻¹)_X induces ρ(τ⁻¹) = ρ(τ)⁻¹ and the statement is ρ(τ)⁻¹ρ(τστ⁻¹)ρ(τ) = ρ(σ); with ρ(τ) in its place it would read ρ(σ) = ρ(τ²στ⁻²), false for non-commuting σ, τ"
       },
       {
        "name": "kummer",
@@ -426,7 +426,7 @@
      "id": "1.4",
      "kind": "construction",
      "name": "schemeGaloisAction",
-     "statement": "For a scheme X over a field k and σ ∈ G_k, σ_X := id_X × Spec(σ|_{k^sep}) on X_{k^sep} and ρ(σ) := (σ_X)^♮ on H^i(X_{k^sep}, K) for K ∈ D⁺(X_ét, Λ): a left action by Λ-linear automorphisms with the functoriality of 1.3; the pullback H^i(X_{k^sep}, K) → H^i(X_{k̄}, K) is an equivariant isomorphism; compatible with extensions k ⊆ k′.",
+     "statement": "For a scheme X over a field k and σ ∈ G_k, σ_X := id_X × Spec(σ|_{k^sep}) on X_{k^sep} and ρ(σ) := (σ_X)^♮ on H^i(X_{k^sep}, M) for M ∈ D⁺(X_ét, Λ): a left action by Λ-linear automorphisms with the functoriality of 1.3; the pullback H^i(X_{k^sep}, M) → H^i(X_{k̄}, M) is an equivariant isomorphism; compatible with extensions k ⊆ k′.",
      "hypotheses": [
       "k any field",
       "Λ any ring"
@@ -490,7 +490,7 @@
      "id": "2.1",
      "kind": "theorem",
      "name": "rigidGaloisAction_colimit",
-     "statement": "For X a qcqs rigid K-space and K ∈ D⁺(X_ét, Λ) (any abelian sheaf, no torsion hypothesis), the pullbacks induce colim_L H^i(X_L, K_L) ≅ H^i(X_C, K_C) over finite subextensions L of K^sep/K, intertwining ρ with the maps σ_L^♮ : H^i(X_L) → H^i(X_{σL}); G_L fixes the image of H^i(X_L, K_L); hence every element has open stabiliser and H^i(X_C, K_C) is a discrete G_K-module.",
+     "statement": "For X a qcqs rigid K-space and M ∈ D⁺(X_ét, Λ) (any abelian sheaf, no torsion hypothesis), the pullbacks induce colim_L H^i(X_L, M_L) ≅ H^i(X_C, M_C) over finite subextensions L of K^sep/K, intertwining ρ with the maps σ_L^♮ : H^i(X_L) → H^i(X_{σL}); G_L fixes the image of H^i(X_L, M_L); hence every element has open stabiliser and H^i(X_C, M_C) is a discrete G_K-module.",
      "hypotheses": [
       "X quasi-compact and quasi-separated"
      ],
@@ -522,7 +522,7 @@
       {
        "name": "discrete",
        "role": "structure",
-       "statement": "H^i(X_C,K_C) = ⋃_L H^i(X_C,K_C)^{G_L}, a discrete G_K-module"
+       "statement": "H^i(X_C,M_C) = ⋃_L H^i(X_C,M_C)^{G_L}, a discrete G_K-module"
       }
      ],
      "tests": [
@@ -552,7 +552,7 @@
      "id": "2.2",
      "kind": "theorem",
      "name": "schemeGaloisAction_colimit",
-     "statement": "For X a qcqs k-scheme and K ∈ D⁺(X_ét, Λ), colim_L H^i(X_L, K) ≅ H^i(X_{k^sep}, K) over finite subextensions L of k^sep/k, compatibly with ρ; G_L fixes the image of H^i(X_L, K); H^i(X_{k^sep}, K) is a discrete G_k-module.",
+     "statement": "For X a qcqs k-scheme and M ∈ D⁺(X_ét, Λ), colim_L H^i(X_L, M) ≅ H^i(X_{k^sep}, M) over finite subextensions L of k^sep/k, compatibly with ρ; G_L fixes the image of H^i(X_L, M); H^i(X_{k^sep}, M) is a discrete G_k-module.",
      "hypotheses": [
       "X quasi-compact and quasi-separated"
      ],
@@ -584,7 +584,7 @@
      "id": "2.3",
      "kind": "theorem",
      "name": "higherDirectImage_galoisModule",
-     "statement": "For f : X → Spa(K,𝒪_K) a qcqs rigid K-space and K ∈ D⁺(X_ét, Λ): under the equivalence of sheaves of Λ-modules on Spa(K,𝒪_K)_ét with discrete Λ[G_K]-modules (stalk at ξ_C, action of 0.3), R^i f_* K corresponds to (H^i(X_C, K_C), ρ), naturally in K and compatibly with connecting maps. Consequently Hom(R^i f_*ℱ, R^j f_*𝒢) ≅ Hom_{Λ[G_K]}(H^i(X_C,ℱ_C), H^j(X_C,𝒢_C)); morphisms R^i f_*ℱ → Λ give G_K-invariant linear forms; base change along g : X′ → X corresponds to g_C^*.",
+     "statement": "For f : X → Spa(K,𝒪_K) a qcqs rigid K-space and M ∈ D⁺(X_ét, Λ): under the equivalence of sheaves of Λ-modules on Spa(K,𝒪_K)_ét with discrete Λ[G_K]-modules (stalk at ξ_C, action of 0.3), R^i f_* M corresponds to (H^i(X_C, M_C), ρ), naturally in M and compatibly with connecting maps. Consequently Hom(R^i f_*ℱ, R^j f_*𝒢) ≅ Hom_{Λ[G_K]}(H^i(X_C,ℱ_C), H^j(X_C,𝒢_C)); morphisms R^i f_*ℱ → Λ give G_K-invariant linear forms; base change along g : X′ → X corresponds to g_C^*.",
      "hypotheses": [
       "X quasi-compact and quasi-separated"
      ],
@@ -638,7 +638,7 @@
      "id": "2.4",
      "kind": "theorem",
      "name": "schemeHigherDirectImage_galoisModule",
-     "statement": "For f : X → Spec k qcqs and K ∈ D⁺(X_ét, Λ), under SchemeAndStackFoundations §2.15's equivalence (stalk at Spec k^sep, action of Stacks 03QW), R^i f_* K corresponds to (H^i(X_{k^sep}, K), ρ), with the consequences of 2.3.",
+     "statement": "For f : X → Spec k qcqs and M ∈ D⁺(X_ét, Λ), under SchemeAndStackFoundations §2.15's equivalence (stalk at Spec k^sep, action of Stacks 03QW), R^i f_* M corresponds to (H^i(X_{k^sep}, M), ρ), with the consequences of 2.3.",
      "hypotheses": [
       "f quasi-compact and quasi-separated"
      ],
@@ -715,7 +715,7 @@
      "id": "2.6",
      "kind": "theorem",
      "name": "schemeGaloisAction_eq_adicFunctoriality",
-     "statement": "For X locally Noetherian over k, ℓ invertible in k and coefficient descent data (K_n) in EtaleCohomologyFoundations §F.4.1's category, the finite level H^i(X_{k^sep}, K_n) of §F.4.6's continuous G_k-action is ρ, compatibly with reductions. For k = 𝔽_q, ρ(φ) of the arithmetic Frobenius is the inverse of §F.10.2's geometric Frobenius on H^i(X_{k̄}, K_n), using F_{X/k} × id = F_{X_{k̄}} ∘ φ_X⁻¹.",
+     "statement": "For X locally Noetherian over k, ℓ invertible in k and coefficient descent data (M_n) in EtaleCohomologyFoundations §F.4.1's category, the finite level H^i(X_{k^sep}, M_n) of §F.4.6's continuous G_k-action is ρ, compatibly with reductions. For k = 𝔽_q, ρ(φ) of the arithmetic Frobenius is the inverse of §F.10.2's geometric Frobenius on H^i(X_{k̄}, M_n), using F_{X/k} × id = F_{X_{k̄}} ∘ φ_X⁻¹.",
      "hypotheses": [
       "X locally Noetherian",
       "ℓ invertible in k",
@@ -723,7 +723,7 @@
      ],
      "locator": {
       "source": "sga4half",
-      "where": "Arcata; Rapport §§1–2 (uncertified)"
+      "where": "Arcata; Rapport §§1–2"
      },
      "prerequisites": [
       "target:1.4",
@@ -819,7 +819,7 @@
       {
        "name": "product",
        "kind": "computation",
-       "statement": "X = ⊔_m Spa(K): naive H⁰(X_C, ℤ_ℓ) = ∏_m ℤ_ℓ with product topology"
+       "statement": "X = ⊔_m Spa(K): naive H⁰(X_C, ℤ_ℓ) = ∏_m ℤ_ℓ with the ℓ-adic (inverse-limit) topology, open subgroups ℓ^n ∏_m ℤ_ℓ, strictly finer than the product topology and not compact (∏_m ℤ/ℓ is an infinite discrete quotient); not finitely generated"
       },
       {
        "name": "lim1",
@@ -843,7 +843,7 @@
      ],
      "locator": {
       "source": "serreGC1997",
-      "where": "Chapter I, §2 (uncertified)"
+      "where": "Chapter I, §2"
      },
      "prerequisites": [
       "target:2.1",
@@ -877,7 +877,7 @@
      "id": "3.3",
      "kind": "definition",
      "name": "rationalCohomology",
-     "statement": "For M as in 3.2, M ⊗ ℚ_ℓ has the topology in which the image of M is an open subgroup with its quotient topology; H^i(X_C, ℚ_ℓ(j)) := H^i(X_C, ℤ_ℓ(j)) ⊗_{ℤ_ℓ} ℚ_ℓ with the induced action, an object of TopRep ℚ_ℓ G_K; for finitely generated H^i(X_C, ℤ_ℓ(j)) it is finite-dimensional with its Hausdorff vector-space topology and a ContinuousRep G_K ℚ_ℓ.",
+     "statement": "For a ℤ_ℓ-module A as in 3.2, A ⊗ ℚ_ℓ has the topology in which the image of A is an open subgroup with its quotient topology; H^i(X_C, ℚ_ℓ(j)) := H^i(X_C, ℤ_ℓ(j)) ⊗_{ℤ_ℓ} ℚ_ℓ with the induced action, an object of TopRep ℚ_ℓ G_K; for finitely generated H^i(X_C, ℤ_ℓ(j)) it is finite-dimensional with its Hausdorff vector-space topology and a ContinuousRep G_K ℚ_ℓ.",
      "hypotheses": [
       "X quasi-compact and quasi-separated"
      ],
@@ -985,14 +985,14 @@
      "id": "4.2",
      "kind": "theorem",
      "name": "properComparison_equivariant",
-     "statement": "For a proper K-scheme Y, Λ torsion and K ∈ D⁺(Y_ét, Λ), Huber's comparison for Spa(C,𝒪_C) → Spec K gives H^i(Y_{K^sep}, K) ≅ (R^i f_*K)_{Spec C} ≅ H^i((Y^an)_C, K^an); it is G_K-equivariant (scheme action on the left, ρ on the right) by naturality in Spa(C,𝒪_C) over Spec K, and factors through the equivariant isomorphisms H^i(Y_{K̄}, K) ≅ H^i(Y_C, K) (proper base change) and H^i(Y_C, K) ≅ H^i((Y^an)_C, K^an).",
+     "statement": "For a proper K-scheme Y, Λ torsion and M ∈ D⁺(Y_ét, Λ), Huber's comparison for Spa(C,𝒪_C) → Spec K gives H^i(Y_{K^sep}, M) ≅ (R^i f_*M)_{Spec C} ≅ H^i((Y^an)_C, M^an); it is G_K-equivariant (scheme action on the left, ρ on the right) by naturality in Spa(C,𝒪_C) over Spec K, and factors through the equivariant isomorphisms H^i(Y_{K̄}, M) ≅ H^i(Y_C, M) (proper base change) and H^i(Y_C, M) ≅ H^i((Y^an)_C, M^an).",
      "hypotheses": [
       "Y proper over K",
       "Λ torsion"
      ],
      "locator": {
       "source": "berkovich1993",
-      "where": "Theorem 7.1.1, page 125, line 4584; Corollary 7.5.4, page 147, line 5339"
+      "where": "Theorem 7.1.1, page 128, line 4584; Corollary 7.5.4, page 150, line 5339"
      },
      "prerequisites": [
       "target:0.3",
@@ -1077,7 +1077,7 @@
      "id": "4.4",
      "kind": "theorem",
      "name": "finiteness_instances",
-     "statement": "For a rigid K-space X of dimension d, the hypotheses of 4.3 with N = 2d hold when (a) X smooth proper and ℓ invertible in 𝒪_K; (b) X smooth proper, char K = 0, ℓ = p the residue characteristic; (c) X = Y^an for a proper K-scheme Y and ℓ invertible in K; (d) X proper and ℓ invertible in 𝒪_K. Hence the finite levels are finite, H^i(X_C, ℤ_ℓ(j)) is finitely generated, H^i(X_C, ℚ_ℓ(j)) is a finite-dimensional continuous G_K-representation, all vanishing for i > 2d.",
+     "statement": "For a rigid K-space X of dimension d, the hypotheses of 4.3 with N = 2d hold when (a) X smooth proper and ℓ invertible in 𝒪_K; (b) X smooth proper, char K = 0, ℓ = p the residue characteristic; (c) X = Y^an for a proper K-scheme Y and ℓ invertible in K; (d) X proper and ℓ invertible in 𝒪_K (ClassicalAdicEtaleCohomology §11.1 when X_C is locally algebraically of finite type over Spa(C,𝒪_C); the gap proper-rigid-finiteness for the remaining proper X). Hence the finite levels are finite, H^i(X_C, ℤ_ℓ(j)) is finitely generated, H^i(X_C, ℚ_ℓ(j)) is a finite-dimensional continuous G_K-representation, all vanishing for i > 2d.",
      "hypotheses": [
       "one of (a)–(d)"
      ],
@@ -1090,6 +1090,7 @@
       "target:4.3",
       "roadmap:ClassicalAdicEtaleCohomology §8.4",
       "roadmap:ClassicalAdicEtaleCohomology §9.7",
+      "roadmap:ClassicalAdicEtaleCohomology §11.1",
       "roadmap:AInfCohomology §AI.3.1",
       "roadmap:EtaleCohomologyFoundations §F.3",
       "gap:proper-rigid-finiteness"
@@ -1159,9 +1160,10 @@
     "§7.1",
     "§8.2",
     "§8.4",
-    "§9.7"
+    "§9.7",
+    "§11.1"
    ],
-   "what": "analytic sheaf theory, the field equivalence, Leray and Hochschild–Serre, twists, tilde-limits, colimit theorem and stalk formula, geometric field pairs, proper algebraic comparison, vanishing above 2d, smooth proper finiteness and trace"
+   "what": "analytic sheaf theory, the field equivalence, Leray and Hochschild–Serre, twists, tilde-limits, colimit theorem and stalk formula, geometric field pairs, proper algebraic comparison, vanishing above 2d, smooth proper finiteness and trace, finiteness for qcqs spaces locally algebraically of finite type"
   },
   {
    "roadmap": "SchemeAndStackFoundations",
@@ -1301,7 +1303,7 @@
    "neededBy": [
     "4.4"
    ],
-   "detail": "ClassicalAdicEtaleCohomology §9.7 proves finiteness of H^i(X, L) for proper smooth rigid X over an algebraically closed complete rank-one C and n invertible in 𝒪_C (Berkovich 7.4.4). Case (d) of 4.4 needs the same for proper X that need not be smooth.",
+   "detail": "ClassicalAdicEtaleCohomology §9.7 proves finiteness of H^i(X, L) for proper smooth rigid X over an algebraically closed complete rank-one C and n invertible in 𝒪_C (Berkovich 7.4.4). §11.1 proves finiteness for qcqs X locally algebraically of finite type over C (Huber, Proposition 6.1.1), with constructible coefficients killed by n prime to the residue characteristic. Case (d) of 4.4 needs the same for proper X that need not be smooth; the gap is the proper spaces without a locally algebraically finite-type presentation.",
    "needs": "Finiteness of H^i(X, ℤ/n) for every proper rigid space X over an algebraically closed complete rank-one field C and every n invertible in 𝒪_C, without smoothness.",
    "supplier": "ClassicalAdicEtaleCohomology",
    "section": "§9.7"
