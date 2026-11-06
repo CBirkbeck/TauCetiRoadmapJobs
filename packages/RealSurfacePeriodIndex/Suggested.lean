@@ -1,7 +1,9 @@
-import Mathlib
-import TauCeti.Algebra.CentralSimple.Index
-import TauCeti.Algebra.BrauerGroup.Group
-import TauCeti.Algebra.BrauerGroup.BaseChange
+module
+
+public import Mathlib
+public import TauCeti.Algebra.CentralSimple.Index
+public import TauCeti.Algebra.BrauerGroup.Group
+public import TauCeti.Algebra.BrauerGroup.BaseChange
 
 /-!
 # Period and index on real surfaces: target signatures
@@ -46,6 +48,8 @@ Headline theorems not statable at the pins:
   points): del Pezzo surfaces are not at the pins. The pair-of-quadrics theorem stated below
   implies it through the anticanonical model of README §7.12.
 -/
+
+@[expose] public section
 
 open TensorProduct
 

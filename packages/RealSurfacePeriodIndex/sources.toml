@@ -222,14 +222,14 @@ cited_for = ["Layer 0"]
 
 [[source]]
 id = "BRO80"
-authors = "Friedrich Ischebeck"
-title = "Hauptidealringe mit nichttrivialerSK 1-Gruppe"
+authors = "Ludwig Bröcker"
+title = "Reelle Divisoren"
 year = 1980
-venue = "Archiv der Mathematik 35"
-doi = "10.1007/BF01235330"
+venue = "Archiv der Mathematik 35, 140–143"
+doi = "10.1007/BF01235331"
 locator_scheme = "theorem"
 locator = "Satz a), b)"
-url = "https://doi.org/10.1007/BF01235330"
+url = "https://doi.org/10.1007/BF01235331"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
@@ -237,14 +237,14 @@ cited_for = ["Layer 6"]
 
 [[source]]
 id = "DK96"
-authors = "Marc Lackenby"
-title = "Fox's congruence classes and the quantum-SU(2) invariants of links in 3-manifolds"
+authors = "Alexander Degtyarev, Viatcheslav Kharlamov"
+title = "Halves of a real Enriques surface"
 year = 1996
-venue = "Commentarii Mathematici Helvetici 71"
-doi = "10.1007/BF02566441"
+venue = "Commentarii Mathematici Helvetici 71, 628–663"
+doi = "10.1007/BF02566440"
 locator_scheme = "section"
 locator = "§1.3"
-url = "https://doi.org/10.1007/BF02566441"
+url = "https://doi.org/10.1007/BF02566440"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
@@ -252,14 +252,14 @@ cited_for = ["Layer 9"]
 
 [[source]]
 id = "CTP90"
-authors = "Alan Adolphson, Steven Sperber"
-title = "Exponential sums on (G m ) n"
+authors = "Jean-Louis Colliot-Thélène, Raman Parimala"
+title = "Real components of algebraic varieties and étale cohomology"
 year = 1990
-venue = "Inventiones Mathematicae 101"
-doi = "10.1007/BF01231497"
+venue = "Inventiones Mathematicae 101, 81–99"
+doi = "10.1007/BF01231498"
 locator_scheme = "theorem"
 locator = "Proposition 3.1.2"
-url = "https://doi.org/10.1007/BF01231497"
+url = "https://doi.org/10.1007/BF01231498"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
