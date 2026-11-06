@@ -11,9 +11,10 @@ At the pins no headline theorem of this roadmap is statable, so the file states 
 headline is a statement about small v-stacks over the v-site of perfectoid spaces of
 characteristic p and about Scholze's étale derived categories `D_ét(X, Λ)` on them. Neither
 pinned library has perfectoid spaces, the v-topology, diamonds or small v-stacks: Mathlib has
-perfectoid rings and their tilts (`Mathlib/RingTheory/Perfectoid/`), and Tau Ceti has
-pre-adic and adic spaces (`TauCeti/AlgebraicGeometry/AdicSpace/`), but neither has perfectoid
-spaces, their v-site or étale sheaves on it. In detail:
+pretilts, the untilt map and Fontaine's θ (`Mathlib/RingTheory/Perfectoid/`), and Tau Ceti has
+perfectoid Tate rings and fields (`TauCeti/RingTheory/Perfectoid/`) and pre-adic and adic
+spaces (`TauCeti/AlgebraicGeometry/AdicSpace/`), but neither has perfectoid spaces, their
+v-site or étale sheaves on it. In detail:
 
 * Existence of the exceptional functors `Rf_!`, `Rf^!` for fine maps of decent v-stacks, with
   agreement with Scholze's functors, pseudo-functoriality, the projection formula and proper

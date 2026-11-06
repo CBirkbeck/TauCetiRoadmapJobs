@@ -35,6 +35,7 @@ Outside this roadmap: the computation of local terms of Satake sheaves on affine
 - In a correspondence X ← C → X′ the left leg is c₁ and the right leg c₂; a cohomological correspondence is u : c₁^*A → c₂^!A′. Fix(c) = C ×_(X ×_S X) X and In_S(X) = X ×_(X ×_S X) X.
 - For a locally profinite set T and a discrete ring Λ, C(T, Λ) is the ring of locally constant functions and C_c(T, Λ) its ideal of compactly supported ones. For a locally profinite group G, Haar(G, Λ) is the module of left Haar measures, with the right-translation action specified below. G_S and T_S are constant diamonds over S, and S denotes a geometric point Spd C or Spd k when Layer VS8 or VS11 says so.
 - The Haar action is (g·μ)(E) = μ(Eg); when a compact open subgroup has invertible pro-order, it has a coefficient-valued character χ_G(g) = (g·μ)/μ. *Smooth representations of local groups* §SR.2.2 uses δ_SR(g) = μ(Eg⁻¹)/μ(E), so χ_G = δ_SR⁻¹; every Haar twist below uses χ_G. Witness: for the affine group {(a, b)} over ℚ_p with left Haar measure |a|⁻² da db and g = diag(p, 1), μ(Eg) = |p|⁻¹μ(E) = pμ(E), so χ_G(g) = p, while δ_SR(g) = |p| = p⁻¹.
+- For a locally profinite set T with a continuous left G-action, G acts on C(T, Λ) and C_c(T, Λ) by (g·h)(t) = h(g⁻¹·t). In particular G acts on C_c(G, Λ) through its conjugation action g·x = gxg⁻¹ on G, by (g·h)(x) = h(g⁻¹xg), so g·1_K = 1_(gKg⁻¹). With the Haar action above this is the direction under which the trace distribution of VS11.3 is invariant: for the affine group over ℚ_p, Λ = F_5, g = diag(2, 1) and h = 1_K, ∫ g·h d(g·μ) = χ_G(g)·μ(gKg⁻¹) = 2·2⁻¹·μ(K) = μ(K), while the other direction (g·h)(x) = h(gxg⁻¹) gives 2·2·μ(K) = 4μ(K) ≠ μ(K).
 
 ## Exact supplier contracts
 
@@ -44,10 +45,10 @@ Outside this roadmap: the computation of local terms of Satake sheaves on affine
 - `CategoryTheory.ExactPairing`, with `CategoryTheory.ExactPairing.coevaluation` (notation η_) and `CategoryTheory.ExactPairing.evaluation` (notation ε_), and `CategoryTheory.HasRightDual` (Mathlib/CategoryTheory/Monoidal/Rigid/Basic.lean): an exact pairing of X and Y is coevaluation 𝟙 ⟶ X ⊗ Y and evaluation Y ⊗ X ⟶ 𝟙 with the two triangle identities; it is the 1-categorical duality datum of Lu–Zheng, Definition 1.1, with Y the dual of X.
 - `CategoryTheory.Bicategory` (Mathlib/CategoryTheory/Bicategory/Basic.lean): bicategories, the carrier of Lu–Zheng's 2-categories, without monoidal structure at the pin. `CategoryTheory.Bicategory.Adjunction` (Mathlib/CategoryTheory/Bicategory/Adjunction/Basic.lean): adjunctions between 1-morphisms, with unit 𝟙 ⟶ f ≫ g, counit g ≫ f ⟶ 𝟙 and the triangle identities; this is Lu–Zheng's right adjointability (§1.2). `CategoryTheory.Pseudofunctor` (Mathlib/CategoryTheory/Bicategory/Functor/Pseudofunctor.lean), for the pseudo-functoriality of the exceptional functors.
 - `LocallyConstant` (Mathlib/Topology/LocallyConstant/Basic.lean): with values in a ring Λ, `LocallyConstant T Λ` is the ring C(T, Λ). `LocallyConstant.charFn` (Mathlib/Topology/LocallyConstant/Algebra.lean): the characteristic function 1_U of a clopen set U. `TopologicalSpace.CompactOpens` (Mathlib/Topology/Sets/Compacts.lean): compact open subsets.
-- `Module.Dual` and `Module.Dual.eval` (Mathlib/LinearAlgebra/Dual/Defs.lean): the dual module and the canonical map M → M**; `Module.IsReflexive` (same file, line 212): bijectivity of that map, with the instances listed under *Scope and ownership*.
+- `Module.Dual` and `Module.Dual.eval` (Mathlib/LinearAlgebra/Dual/Defs.lean): the dual module and the canonical map M → M**; `Module.IsReflexive` (same file, line 203): bijectivity of that map, with the instances listed under *Scope and ownership*.
 - `IsDiscreteValuationRing` (Mathlib/RingTheory/DiscreteValuationRing/Basic.lean), `IsLocalRing.maximalIdeal` (Mathlib/RingTheory/LocalRing/MaximalIdeal/Defs.lean) and `Module.Finite` (Mathlib/RingTheory/Finiteness/Defs.lean).
 - `LinearMap.trace` (Mathlib/LinearAlgebra/Trace.lean): the trace of an endomorphism of a module with a finite basis, and zero otherwise; only its value on finite free modules is used.
-- `FGModuleCat` with its `RightRigidCategory (FGModuleCat K)` instance over a field K (Mathlib/Algebra/Category/FGModuleCat/Basic.lean, line 264): finite-dimensional vector spaces form a right rigid monoidal category, the dual being the linear dual.
+- `FGModuleCat` with its `RightRigidCategory (FGModuleCat K)` instance over a field K (Mathlib/Algebra/Category/FGModuleCat/Basic.lean, line 265): finite-dimensional vector spaces form a right rigid monoidal category, the dual being the linear dual.
 - `DerivedCategory` (Mathlib/Algebra/Homology/DerivedCategory/Basic.lean): the derived category of an abelian category, the 1-categorical carrier of D(Λ); it carries no monoidal structure at the pin, which is supplied by `EnhancedDerivedSheaves` §E1.4.
 
 ### From Tau Ceti
@@ -57,10 +58,10 @@ Outside this roadmap: the computation of local terms of Satake sheaves on affine
 ### From TauCetiRoadmap.VStackSheavesAndLisseCategories
 
 - §VS0.1 (*artin-v-stack-definition*): Artin v-stacks in the sense of Fargues–Scholze, Definition IV.1.1. Used by VS6.3.
-- §VS0.2 (*enhanced-smooth-descent*, *shriek-pullback-for-smooth-stacky-maps*, *point-to-classifying-stack-not-smooth*): enhanced smooth descent of D_ét, the exceptional pullback for cohomologically smooth stacky maps, and the failure of smoothness of the point of [∗/K] for an infinite compact open K. Used by VS6.8, VS6.10, VS7.5 and VS7.8.
-- §VS1.1 (*ula-definition-with-constructibility*, *ula-descent-and-smooth-locality*, *ula-dualizability-criterion*, *ula-relative-adjoints-and-calculus*) and §VS1.2 (*smooth-ula-criterion*, *ula-for-artin-v-stacks*): ULA objects, their descent and smooth locality, their dualizability criterion and relative calculus, the smooth criterion and ULA objects on Artin v-stacks. Used by VS7.8, VS9.9, VS9.12, VS11.1 and VS11.11.
+- §VS0.2 (*enhanced-smooth-descent*, *shriek-pullback-for-smooth-stacky-maps*, and the Check that the point of [∗/ℤ_p] is not a smooth atlas): enhanced smooth descent of D_ét, the exceptional pullback for cohomologically smooth stacky maps, and the failure of smoothness of the point of [∗/ℤ_p], the model case of an infinite compact open K. Used by VS6.8, VS6.10, VS7.5 and VS7.8.
+- §VS1.1 (*ula-definition-with-constructibility*, *ula-descent-and-smooth-locality*, *ula-dualizability-criterion*, and the sub-target *Relative adjoints and ULA calculus*) and §VS1.2 (*smooth-ula-criterion*, *ula-for-artin-v-stacks*): ULA objects, their descent and smooth locality, their dualizability criterion and relative calculus, the smooth criterion and ULA objects on Artin v-stacks. Used by VS7.8, VS9.9, VS9.12, VS11.1 and VS11.11.
 - §VS4.2 (*classifying-stack-equivalence*): D_ét([∗/G], Λ) is the derived category of smooth representations, with derived invariants and the derived smooth dual. Used by VS8.7, VS8.9 and VS11.1.
-- §VS5.2 (*ula-equals-admissibility*): ULA objects on [∗/G] are the admissible complexes. Used by VS11.1.
+- §VS5.2 (sub-target *Torsion ULA and perfect invariants*): an object of D_ét(Bun_G, Λ) is ULA over the point iff every stratum restriction has perfect derived pro-p invariants; VS11.1 adapts the argument to [S/G_S]. Used by VS11.1.
 
 ### From TauCetiRoadmap.DiamondSixOperations
 
@@ -355,7 +356,7 @@ In the sources it enters as follows: smooth fine maps have invertible relative d
 - For G = Z_p, the point S → [S/G_S] is fine but not ℓ-cohomologically smooth.
 - Open immersions of decent v-stacks are ℓ-cohomologically smooth, in agreement with the cohomological smoothness criterion.
 
-*Needs:* VS6.6; VS6.7; DiamondSixOperations §S4.2; DiamondSixOperations §S4.4; VStackSheavesAndLisseCategories §VS0.2 (*shriek-pullback-for-smooth-stacky-maps*); VStackSheavesAndLisseCategories §VS0.2 (*point-to-classifying-stack-not-smooth*).
+*Needs:* VS6.6; VS6.7; DiamondSixOperations §S4.2; DiamondSixOperations §S4.4; VStackSheavesAndLisseCategories §VS0.2 (*shriek-pullback-for-smooth-stacky-maps*); VStackSheavesAndLisseCategories §VS0.2 (the Check that the point of [∗/ℤ_p] is not a smooth atlas).
 
 ### 6.9 Classifying stacks of group diamonds and their 2-morphisms
 
@@ -1001,7 +1002,7 @@ Hansen–Kaletha–Weinstein, Example 4.2.4, p. 27, shows [S/G_S] → S is fine 
 
 Throughout this subsection, S = Spd C for an algebraically closed perfectoid field C, or S = Spd k for an algebraically closed discrete field k of characteristic p; D_ét(S, Λ) is identified with D(Λ). G is a locally pro-p group admitting a free action on a separated locally spatial diamond X with a strictly surjective cohomologically smooth map X → S (for instance G closed in GL_n(E) for E finite over Q_p or F_p((t)), with X = GL_(n,E)^♢ × S). T is a locally profinite set (Hausdorff, locally compact, totally disconnected); Λ is a discrete commutative ring. G acts continuously on T.
 
-For T locally profinite with a continuous G-action, [T_S/G_S] is decent and fine over S (not cohomologically smooth in general); D_ét([T_S/G_S], Λ) is the derived category of G-equivariant smooth C(T, Λ)-modules; and there is a natural isomorphism H^0([T_S/G_S], K_([T_S/G_S]/S)) ≅ Hom_G(C_c(T, Λ) ⊗ Haar(G, Λ), Λ), the G-invariant distributions on T with values in Haar(G, Λ)^∗; for G unimodular with a chosen Haar measure this is Dist(T, Λ)^G.
+For T locally profinite with a continuous G-action, [T_S/G_S] is decent and fine over S (not cohomologically smooth in general); D_ét([T_S/G_S], Λ) is the derived category of G-equivariant smooth C(T, Λ)-modules; and there is a natural isomorphism H^0([T_S/G_S], K_([T_S/G_S]/S)) ≅ Hom_G(C_c(T, Λ) ⊗ Haar(G, Λ), Λ), the G-invariant distributions on T with values in Haar(G, Λ)^∗, G acting on C_c(T, Λ) by (g·h)(t) = h(g⁻¹·t) and on Haar(G, Λ) by χ_G; for G unimodular with a chosen Haar measure this is Dist(T, Λ)^G.
 
 Hansen–Kaletha–Weinstein, Example 4.2.5 and equation (4.2.1), p. 27, shows [T_S/G_S] is decent and fine over S, describes its sheaves as G-equivariant smooth modules and computes H^0 of its dualizing complex as invariant distributions twisted by Haar measures.
 
@@ -1013,7 +1014,7 @@ Hansen–Kaletha–Weinstein, Example 4.2.5 and equation (4.2.1), p. 27, shows [
 
 **Checks.**
 
-- For T = G with the conjugation action, H^0 is Hom_G(C_c(G, Λ) ⊗ Haar(G, Λ), Λ), the home of trace distributions (VS11.3).
+- For T = G with the conjugation action g·x = gxg⁻¹, so that (g·h)(x) = h(g⁻¹xg), H^0 is Hom_G(C_c(G, Λ) ⊗ Haar(G, Λ), Λ), the home of trace distributions (VS11.3).
 - For T a point, H^0 = Haar(G, Λ)^∗ invariants.
 
 *Needs:* VS8.6; VS8.2; VS8.4; VS8.9; VS8.3; VS6.7; VS7.9.
@@ -1279,14 +1280,14 @@ Hansen–Kaletha–Weinstein, §4.3, paragraph after Proposition 4.3.5, p. 31, s
 
 1. Representable case: the criterion of VS9.8 is condition (ii) of Fargues–Scholze Theorem IV.2.23, equivalent to ULA (VStackSheavesAndLisseCategories §VS1.1 (*ula-dualizability-criterion*)).
 2. General fine π: choose a clean chart g : U → X; g^* commutes with both sides of m up to the invertible twist Rg^!Λ (smooth base change, VS7.8) and detects isomorphisms; ULA-ness is defined and detected through charts (VStackSheavesAndLisseCategories §VS1.2 (*ula-for-artin-v-stacks*), VStackSheavesAndLisseCategories §VS1.1 (*ula-descent-and-smooth-locality*)).
-3. Duals and exterior products: dual and tensor product of dualizable objects are dualizable (VS9.1), or directly VStackSheavesAndLisseCategories §VS1.1 (*ula-relative-adjoints-and-calculus*).
+3. Duals and exterior products: dual and tensor product of dualizable objects are dualizable (VS9.1), or directly VStackSheavesAndLisseCategories §VS1.1 (sub-target *Relative adjoints and ULA calculus*).
 
 **Checks.**
 
 - Constant sheaves on smooth fine X → S are ULA, hence dualizable.
 - On the closed disc over Spd C, j_!Λ for the open unit disc j is not ULA over S, so (D, j_!Λ) is not dualizable.
 
-*Needs:* VS9.8; VStackSheavesAndLisseCategories §VS1.1 (*ula-definition-with-constructibility*); VStackSheavesAndLisseCategories §VS1.2 (*ula-for-artin-v-stacks*); VStackSheavesAndLisseCategories §VS1.1 (*ula-dualizability-criterion*); VStackSheavesAndLisseCategories §VS1.1 (*ula-descent-and-smooth-locality*); VStackSheavesAndLisseCategories §VS1.1 (*ula-relative-adjoints-and-calculus*); VStackSheavesAndLisseCategories §VS1.2 (*smooth-ula-criterion*); VS7.8.
+*Needs:* VS9.8; VStackSheavesAndLisseCategories §VS1.1 (*ula-definition-with-constructibility*); VStackSheavesAndLisseCategories §VS1.2 (*ula-for-artin-v-stacks*); VStackSheavesAndLisseCategories §VS1.1 (*ula-dualizability-criterion*); VStackSheavesAndLisseCategories §VS1.1 (*ula-descent-and-smooth-locality*); VStackSheavesAndLisseCategories §VS1.1 (sub-target *Relative adjoints and ULA calculus*); VStackSheavesAndLisseCategories §VS1.2 (*smooth-ula-criterion*); VS7.8.
 
 ### 9.10 The trace class of a cohomological correspondence
 
@@ -1638,7 +1639,7 @@ Hansen–Kaletha–Weinstein, Proposition 4.4.1 and proof, pp. 34–35; Definiti
 
 1. (1) ⇔ (2): VS9.9, since [S/G_S] → S is fine and smooth.
 2. The Verdier dual is RHom(M, f^!Λ) with f^!Λ = Haar(G, Λ)^∗ (VS8.9), and the derived smooth dual is identified under VStackSheavesAndLisseCategories §VS4.2 (*classifying-stack-equivalence*) (Fargues–Scholze Corollary V.1.4; SmoothRepresentationsOfLocalGroups §SR.0d.2 (*derived-smooth-dual*)).
-3. (2) ⇔ (3): adapt Fargues–Scholze's proof of Theorem V.7.1 from Bun_G to [S/G_S], as HKW22 indicate: by Fargues–Scholze Proposition IV.2.32, ULA-ness is the isomorphism p₁^*RHom(M, Λ) ⊗ p₂^*M ≅ RHom(p₁^*M, p₂^*M) on [S/G_S] ×_S [S/G_S] = [S/(G × G)_S]. Test it against the compact generators c-Ind_(K×K)^(G×G)Λ, K pro-p open (SmoothRepresentationsOfLocalGroups §SR.0d.2 (*compact-generation*)): the left side gives (M^∨)^K ⊗ M^K = RHom(M^K, Λ) ⊗ M^K (invariants of pro-p groups are exact, and 𝔻(V)^K ≅ RHom(V^K, Λ) by SmoothRepresentationsOfLocalGroups §SR.0d.2 (*derived-smooth-dual*)), the right side gives Hom(M_K, M^K) = RHom(M^K, M^K) (coinvariants equal invariants for pro-p K), so the comparison at level K is the map of VS9.4 (b), an isomorphism iff M^K is perfect. The base roadmap proves the Bun_G case (VStackSheavesAndLisseCategories §VS5.2 (*ula-equals-admissibility*)).
+3. (2) ⇔ (3): adapt Fargues–Scholze's proof of Theorem V.7.1 from Bun_G to [S/G_S], as HKW22 indicate: by Fargues–Scholze Proposition IV.2.32, ULA-ness is the isomorphism p₁^*RHom(M, Λ) ⊗ p₂^*M ≅ RHom(p₁^*M, p₂^*M) on [S/G_S] ×_S [S/G_S] = [S/(G × G)_S]. Test it against the compact generators c-Ind_(K×K)^(G×G)Λ, K pro-p open (SmoothRepresentationsOfLocalGroups §SR.0d.2 (*compact-generation*)): the left side gives (M^∨)^K ⊗ M^K = RHom(M^K, Λ) ⊗ M^K (invariants of pro-p groups are exact, and 𝔻(V)^K ≅ RHom(V^K, Λ) by SmoothRepresentationsOfLocalGroups §SR.0d.2 (*derived-smooth-dual*)), the right side gives Hom(M_K, M^K) = RHom(M^K, M^K) (coinvariants equal invariants for pro-p K), so the comparison at level K is the map of VS9.4 (b), an isomorphism iff M^K is perfect. The base roadmap proves the Bun_G case (VStackSheavesAndLisseCategories §VS5.2 (sub-target *Torsion ULA and perfect invariants*)).
 4. Direct proof of (3) ⇒ (1): the coevaluation over (f, Δ_f) is the G × G-equivariant integration map I : C_c(G, Λ) ⊗ Haar(G, Λ) → H^0(M ⊗ M^∨), I(h ⊗ μ) = ∫ h(g) g dμ(g), which factors through End(M^K) for K small; the explicit description of Δ_f^! uses VS8.8 (use compact induction from ΔG ⊂ G × G and its adjunction, with (G × G)/ΔG ≅ G via (g,h) ↦ gh⁻¹).
 
 **Checks.**
@@ -1646,13 +1647,13 @@ Hansen–Kaletha–Weinstein, Proposition 4.4.1 and proof, pp. 34–35; Definiti
 - A smooth representation M placed in degree 0 whose invariants M^K are finite projective Λ-modules for all open pro-p K is admissible.
 - The regular representation C_c(G, Λ) of a noncompact G is not admissible: its K-invariants are not finitely generated.
 
-*Needs:* VS9.9; VS9.8; VS9.4; VS8.9; VS8.8; VS8.5; VStackSheavesAndLisseCategories §VS1.2 (*smooth-ula-criterion*); VStackSheavesAndLisseCategories §VS5.2 (*ula-equals-admissibility*); SmoothRepresentationsOfLocalGroups §SR.0d.2 (*derived-smooth-dual*); SmoothRepresentationsOfLocalGroups §SR.0d.2 (*compact-generation*); SmoothRepresentationsOfLocalGroups §SR.0d.2 (*derived-invariants*); VStackSheavesAndLisseCategories §VS4.2 (*classifying-stack-equivalence*).
+*Needs:* VS9.9; VS9.8; VS9.4; VS8.9; VS8.8; VS8.5; VStackSheavesAndLisseCategories §VS1.2 (*smooth-ula-criterion*); VStackSheavesAndLisseCategories §VS5.2 (sub-target *Torsion ULA and perfect invariants*); SmoothRepresentationsOfLocalGroups §SR.0d.2 (*derived-smooth-dual*); SmoothRepresentationsOfLocalGroups §SR.0d.2 (*compact-generation*); SmoothRepresentationsOfLocalGroups §SR.0d.2 (*derived-invariants*); VStackSheavesAndLisseCategories §VS4.2 (*classifying-stack-equivalence*).
 
 ### 11.2 The inertia stack of a classifying stack
 
 Throughout this subsection, S is a geometric point (Spd C or Spd k); G is a locally pro-p group as in HKW22 Example 4.2.2 (e.g. closed in GL_n(E)); D_ét([S/G_S], Λ) is the derived category of smooth G-representations.
 
-In_S([S/G_S]) ≅ [G_S//G_S], the quotient of G_S by conjugation: a Y-point is a G_S-torsor Ỹ → Y with a G-equivariant automorphism y ↦ φ(y)·y, φ(gy) = gφ(y)g^(-1). Combined with VS8.10 for the conjugation action this gives H^0(In_S([S/G_S]), K_(In_S([S/G_S])/S)) ≅ Hom_G(C_c(G, Λ) ⊗ Haar(G, Λ), Λ), with G acting on C_c(G, Λ) by conjugation and on Haar(G, Λ) by χ_G.
+In_S([S/G_S]) ≅ [G_S//G_S], the quotient of G_S by conjugation: a Y-point is a G_S-torsor Ỹ → Y with a G-equivariant automorphism y ↦ φ(y)·y, φ(gy) = gφ(y)g^(-1). Combined with VS8.10 for the conjugation action this gives H^0(In_S([S/G_S]), K_(In_S([S/G_S])/S)) ≅ Hom_G(C_c(G, Λ) ⊗ Haar(G, Λ), Λ), with G acting on C_c(G, Λ) through conjugation, (g·h)(x) = h(g⁻¹xg), and on Haar(G, Λ) by χ_G (Conventions).
 
 Hansen–Kaletha–Weinstein, §4.4, p. 35, identifies the inertia stack of [S/G_S] with the stack of conjugacy classes [G_S//G_S] and its H^0 of the dualizing complex with Hom_G(C_c(G, Λ) ⊗ Haar(G, Λ), Λ) via Example 4.2.5.
 
@@ -1672,7 +1673,7 @@ Hansen–Kaletha–Weinstein, §4.4, p. 35, identifies the inertia stack of [S/G
 
 Throughout this subsection, S is a geometric point (Spd C or Spd k); G is a locally pro-p group as in HKW22 Example 4.2.2 (e.g. closed in GL_n(E)); D_ét([S/G_S], Λ) is the derived category of smooth G-representations. M is admissible (VS11.1).
 
-For M admissible on [S/G_S], h ∈ C_c(G, Λ) and μ ∈ Haar(G, Λ), the operator I_(h,μ)(v) = ∫_G h(g) g v dμ(g) on M factors through the perfect complex M^K for K pro-p open with h bi-K-invariant; the trace distribution tr.dist(M) ∈ Hom_G(C_c(G, Λ) ⊗ Haar(G, Λ), Λ) sends h ⊗ μ to the Euler-characteristic trace of I_(h,μ) on M^K, independent of K. G acts on C_c(G, Λ) by conjugation and on Haar(G, Λ) by χ_G, and tr.dist(M) is invariant.
+For M admissible on [S/G_S], h ∈ C_c(G, Λ) and μ ∈ Haar(G, Λ), the operator I_(h,μ)(v) = ∫_G h(g) g v dμ(g) on M factors through the perfect complex M^K for K pro-p open with h bi-K-invariant; the trace distribution tr.dist(M) ∈ Hom_G(C_c(G, Λ) ⊗ Haar(G, Λ), Λ) sends h ⊗ μ to the Euler-characteristic trace of I_(h,μ) on M^K, independent of K. G acts on C_c(G, Λ) through conjugation, (g·h)(x) = h(g⁻¹xg), and on Haar(G, Λ) by χ_G (Conventions), and tr.dist(M) is invariant: tr.dist(M)(g·h ⊗ g·μ) = tr.dist(M)(h ⊗ μ).
 
 Hansen–Kaletha–Weinstein, §4.4, equation (4.4.1), p. 35; proof of Proposition 4.4.1, pp. 34–35, defines the trace distribution of an admissible object as h ⊗ μ ↦ Euler characteristic of I_(h,μ), which factors through the perfect complex M^K.
 
@@ -1681,7 +1682,7 @@ The API of the definition:
 - tr.dist(M) ∈ Hom_G(C_c(G, Λ) ⊗ Haar(G, Λ), Λ).
 - tr.dist(M)(h ⊗ μ) = tr(I_(h,μ) | M^K) for K pro-p with h bi-K-invariant.
 - tr.dist is additive in distinguished triangles of admissible objects.
-- tr.dist(M) is invariant under conjugation twisted by χ_G.
+- tr.dist(M) is invariant under conjugation twisted by χ_G: tr.dist(M)(g·h ⊗ g·μ) = tr.dist(M)(h ⊗ μ) for (g·h)(x) = h(g⁻¹xg) and g·μ = χ_G(g)μ.
 - tr.dist(M[1]) = −tr.dist(M).
 - tr.dist(M) = cc_([S/G_S]/S)(M) (VS11.4).
 
@@ -1692,7 +1693,7 @@ In the sources it enters as follows: trace distributions are characteristic clas
 1. For K pro-p, M^K is a direct summand of M via averaging with a normalised Haar measure (SmoothRepresentationsOfLocalGroups §SR.0.3 (*averaging-projector*)).
 2. Integration against h dμ is the action of the Hecke algebra (SmoothRepresentationsOfLocalGroups §SR.1.1 (*integration*), SmoothRepresentationsOfLocalGroups §SR.1.1 (*convolution-algebra*)); for bi-K-invariant h it preserves M^K and is zero on its complement.
 3. Independence of K: for K′ ⊂ K, the trace on M^(K′) equals that on M^K since I_(h,μ) has image in M^K (cyclicity of traces, VS9.1).
-4. Invariance: conjugating h by g and translating μ intertwines I_(h,μ) with g I g^(-1).
+4. Invariance: since (g·μ)(E) = μ(Eg) = μ(g⁻¹Eg) by left invariance, g·μ is the push-forward of μ along x ↦ gxg⁻¹, and the substitution x = gyg⁻¹ in I_(g·h, g·μ) gives I_(g·h, g·μ) = g ∘ I_(h,μ) ∘ g⁻¹ on M; conjugate operators have the same trace on M^(gKg⁻¹) and M^K.
 
 **Checks.**
 
@@ -1701,6 +1702,7 @@ In the sources it enters as follows: trace distributions are characteristic clas
 - For G = Z_p, M = Λ trivial and μ normalised on Z_p, tr.dist(Λ)(h ⊗ μ) = ∫ h dμ.
 - For G = Q_p and M = C_c(Q_p, Λ), M^K is not finitely generated for K = Z_p, so M is not admissible and has no trace distribution.
 - tr.dist(Λ[1]) = −tr.dist(Λ) for G compact.
+- For the affine group {(a, b)} over ℚ_p of the Conventions, p = 2, Λ = F_5, M = Λ trivial, h = 1_K for a compact open K and g = diag(2, 1) (so χ_G(g) = 2 and g·1_K = 1_(gKg⁻¹)): tr.dist(Λ)(g·h ⊗ g·μ) = 2·μ(gKg⁻¹) = 2·μ(Kg⁻¹) = 2·2⁻¹·μ(K) = μ(K) = tr.dist(Λ)(h ⊗ μ); with the other direction (g·h)(x) = h(gxg⁻¹) the value would be 2·μ(Kg) = 4μ(K) ≠ μ(K) in F_5, so only the stated direction makes tr.dist invariant.
 
 *Needs:* VS11.1; VS8.5; VS9.4; SmoothRepresentationsOfLocalGroups §SR.0.3 (*averaging-projector*); SmoothRepresentationsOfLocalGroups §SR.1.1 (*integration*); SmoothRepresentationsOfLocalGroups §SR.1.1 (*convolution-algebra*); SmoothRepresentationsOfLocalGroups §SR.0.3 (*compact-open-invariants*).
 
