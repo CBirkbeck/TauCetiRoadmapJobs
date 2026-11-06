@@ -219,3 +219,19 @@ status = "certified"
 accessed = "2026-10-27"
 version_note = "Published journal version from Numdam; journal pagination."
 cited_for = ["Layer 0"]
+
+[[source]]
+id = "Stacks"
+authors = "The Stacks project authors"
+title = "The Stacks project, chapter Divisors"
+year = 2026
+locator_scheme = "tag"
+locator = "062Y"
+url = "https://stacks.math.columbia.edu/tag/062Y"
+fetched_from = "https://stacks.math.columbia.edu/download/divisors.pdf#nameddest=062Y"
+fetched_at = "2026-11-06T06:44:40Z"
+sha256 = "0527740ac9877baff00aaad784e66aae83ff541dad40d4939028059f9f28a493"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-06"
+cited_for = ["9.1"]
