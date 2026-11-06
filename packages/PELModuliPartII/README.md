@@ -39,13 +39,13 @@ It leaves to other roadmaps, by section:
   equivalence over every ring in which p is nilpotent is the contract gap:zink-display-equivalence.
 - The PEL Rapoport–Zink space of an unramified local PEL datum with a single self-dual lattice, and
   the unstructured framed deformation functor of a p-divisible group, are IgusaVarietiesAndTorsionConcentration
-  §IG.0.27. §0.2 differs in one clause: it treats an arbitrary self-dual periodic multichain over a
+  §0.27. §0.2 differs in one clause: it treats an arbitrary self-dual periodic multichain over a
   ramified or unramified datum, which the almost self-dual, exotic and Krämer spaces need.
 - Strict dimension-one Dieudonné classification and strict O-module deformations with Drinfeld
   levels are EndoscopicTransferAndUnitaryTraceComparison §§7.6 and 10.2; Tate full faithfulness over
   finite fields, Honda theory and the B-linear isogeny classification are its §§8.3 and 8.10.
 - The split Drinfeld-level integral models at a split distinguished place are
-  IgusaVarietiesAndTorsionConcentration §IG.0.31.
+  IgusaVarietiesAndTorsionConcentration §0.31.
 - Locally noetherian formal schemes and the Berthelot generic fibre are AdicSpacesPartIII Layer F0
   and §R2.9; descent, algebraic spaces and stacks are SchemeAndStackFoundations Layer 1, formal
   deformation theory its Layer 4; Grassmannians and their tangent spaces are
@@ -58,8 +58,8 @@ It leaves to other roadmaps, by section:
   a global hermitian space with prescribed local invariants is the contract gap:hermitian-local-global.
 - Smoothness of the automorphism group scheme of a polarized unitary lattice multichain is the
   contract gap:unitary-multichain-stabilizer.
-- Quasi-projectivity and properness of PEL moduli at good primes are ShimuraCompactifications §§C5.5
-  and C5.18; at the remaining primes and parahoric levels they are the contract
+- Quasi-projectivity and properness of PEL moduli at good primes are ShimuraCompactifications §§7.5
+  and 7.18; at the remaining primes and parahoric levels they are the contract
   gap:bad-prime-projectivity.
 
 The special-fibre geometry built on the models of Layers 7 and 8 — the basic isogeny correspondence
@@ -174,6 +174,13 @@ The declarations consumed, with what is assumed of them:
   abelian varieties over a field, with smooth structure morphism. It is the carrier of the abelian
   varieties over F̄_p in §9.1; abelian schemes over a discrete valuation ring or a nilpotent thickening
   are not supplied and are imported from AbelianSchemesAndArithmeticModuli.
+- `TauCeti.FormalScheme.Spf.carrier` and `TauCeti.FormalScheme.Spf.structureSheaf`
+  (`TauCeti/AlgebraicGeometry/FormalScheme/Spf/Carrier.lean`, `.../Spf/StructureSheaf.lean`): the
+  underlying space of the formal spectrum of a topological ring and its structure sheaf for an adic
+  ideal. This is the only formal-scheme carrier at the pin: there is no category of formal schemes,
+  no morphism of formal schemes and no formal smoothness, so the framed moduli of Layers 1–5 and
+  the completions and quotients of Layer 9 are README targets whose carriers Tau Ceti does not yet
+  have, and no target consumes these two declarations.
 
 ### From TauCetiRoadmap.PELModuli
 
@@ -211,8 +218,8 @@ B-linear isogeny classification).
 
 ### From TauCetiRoadmap.IgusaVarietiesAndTorsionConcentration
 
-§IG.0.27 (PEL Rapoport–Zink spaces of an unramified local PEL datum, and the unstructured framed
-deformation functor, whose formal representability is the first step of §0.2); §IG.0.31 (Drinfeld-level
+§0.27 (PEL Rapoport–Zink spaces of an unramified local PEL datum, and the unstructured framed
+deformation functor, whose formal representability is the first step of §0.2); §0.31 (Drinfeld-level
 integral models at a split distinguished place for the signature-(1,n−1) datum, with the CM-type
 matching of RSZ20 §4.3).
 
@@ -261,15 +268,15 @@ What ReductiveGroupsPartII must provide (gap:unitary-multichain-stabilizer): For
 
 ### From TauCetiRoadmap.ShimuraCompactifications
 
-§C5.5 (properness of the integral toroidal model for a complete cone system, hence of the moduli
-itself when the PEL datum has no cusp label) and §C5.18 (quasi-projectivity of the neat PEL moduli of
+§7.5 (properness of the integral toroidal model for a complete cone system, hence of the moduli
+itself when the PEL datum has no cusp label) and §7.18 (quasi-projectivity of the neat PEL moduli of
 PELModuli §M2.8), both over a base of good primes in the sense of PELModuli §M0.10. §8.7, and §7.2 on a base all of whose
 primes are good for the product datum, consume them through finite comparison morphisms from CM-pair
 moduli to the PEL moduli of the product A₀×A; §7.2 on a base with a bad prime, §7.7 and §8.3 consume
 gap:bad-prime-projectivity through the same kind of finite comparison morphism, into the multichain
 moduli that contract names.
 
-What ShimuraCompactifications must provide (gap:bad-prime-projectivity): Pose the PEL moduli problem of PELModuli §M1.7 over an integral base, a localization of the ring of integers of the reflex field or the ring of integers of one of its completions, that contains primes at which ShimuraCompactifications Layer C5 does not apply (primes dividing the discriminant of the PEL order, or primes whose local level is not the stabilizer of a single self-dual lattice), replacing the abelian scheme at each such prime by a multichain of abelian schemes indexed by a polarized lattice multichain of the PEL order and taking the level there to be the stabilizer of that multichain, as in RZ96 Definition 6.9, p. 279; prove that this moduli problem is represented by a separated Deligne–Mumford stack of finite type over the base, at neat level by a quasi-projective scheme through an ample Hodge line, and that it is proper over the base when its generic fibre is proper.
+What ShimuraCompactifications must provide (gap:bad-prime-projectivity): Pose the PEL moduli problem of PELModuli §M1.7 over an integral base, a localization of the ring of integers of the reflex field or the ring of integers of one of its completions, that contains primes at which ShimuraCompactifications Layer 7 does not apply (primes dividing the discriminant of the PEL order, or primes whose local level is not the stabilizer of a single self-dual lattice), replacing the abelian scheme at each such prime by a multichain of abelian schemes indexed by a polarized lattice multichain of the PEL order and taking the level there to be the stabilizer of that multichain, as in RZ96 Definition 6.9, p. 279; prove that this moduli problem is represented by a separated Deligne–Mumford stack of finite type over the base, at neat level by a quasi-projective scheme through an ample Hodge line, and that it is proper over the base when its generic fibre is proper.
 
 ## How to read the build
 
@@ -321,16 +328,16 @@ For local PEL data in the sense of RZ96 Definition 3.21 (a semisimple ℚ_p-alge
 
 Hypotheses for this target: p>2 for the unitary consequences; the data of RZ96 Definition 3.21 for the general statement.
 
-*Route.* Represent the unstructured functor of framed p-divisible groups (RZ96 Theorem 2.16; it is the unstructured functor of IgusaVarietiesAndTorsionConcentration §IG.0.27) and cut out the O_B-stable locus and the 𝓛-set conditions as closed subfunctors; the Kottwitz condition is closed (RZ96 proof of Theorem 3.25). Translate the relative conditions of Layer 0 (strict action, relative polarization of §0.1) into closed conditions on the absolute p-divisible group, and the height and multiplier conditions into open and closed ones. Add the Krämer filtration as a closed subscheme of a Grassmannian bundle and the spin condition as an open condition; separatedness follows from rigidity of quasi-isogenies.
+*Route.* Represent the unstructured functor of framed p-divisible groups (RZ96 Theorem 2.16; it is the unstructured functor of IgusaVarietiesAndTorsionConcentration §0.27) and cut out the O_B-stable locus and the 𝓛-set conditions as closed subfunctors; the Kottwitz condition is closed (RZ96 proof of Theorem 3.25). Translate the relative conditions of Layer 0 (strict action, relative polarization of §0.1) into closed conditions on the absolute p-divisible group, and the height and multiplier conditions into open and closed ones. Add the Krämer filtration as a closed subscheme of a Grassmannian bundle and the spin condition as an open condition; separatedness follows from rigidity of quasi-isogenies.
 
 **Checks.**
 
 - At n=1 with L/K unramified, N_1=Spf O_L̆ (LZ22 §2.2): the strict O_L-action leaves no deformation parameter, whereas the unstructured deformation space of the underlying p-divisible group, of height 2[K:ℚ_p] and dimension [K:ℚ_p], has [K:ℚ_p]² parameters.
 - The spin condition is open, not closed: imposing only the closed conditions on the exotic functor adds the locus where i(u) acts by zero on Lie at some geometric point.
 - At n=2 the completed local ring of N_2 at a point is O_L̆[[t]], whose ideal of definition contains t; the topology is not the p-adic one.
-- IgusaVarietiesAndTorsionConcentration §IG.0.27 is the case of an unramified datum with a single self-dual lattice; the almost self-dual chain Λ⊂Λ^♯ of Layer 2, with Λ^♯/Λ of length one, and the ramified data of Layer 3 and Layer 5 lie outside it.
+- IgusaVarietiesAndTorsionConcentration §0.27 is the case of an unramified datum with a single self-dual lattice; the almost self-dual chain Λ⊂Λ^♯ of Layer 2, with Λ^♯/Λ of length one, and the ramified data of Layer 3 and Layer 5 lie outside it.
 
-*Needs:* §0.1; IgusaVarietiesAndTorsionConcentration §IG.0.27 (unstructured framed functor); AdicSpacesPartIII Layer F0; SchemeAndStackFoundations Layer 4; AbelianSchemesAndArithmeticModuli §A4.7; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.26.
+*Needs:* §0.1; IgusaVarietiesAndTorsionConcentration §0.27 (unstructured framed functor); AdicSpacesPartIII Layer F0; SchemeAndStackFoundations Layer 4; AbelianSchemesAndArithmeticModuli §A4.7; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.26.
 
 ### 0.3 Strict polarized unitary modules
 
@@ -400,12 +407,21 @@ For unramified quadratic L/K, intermediate K₀⊂K and the signature P(r,s) wit
 
 *Route.* Use the embedding decomposition and actual structural-action equation, not just multiplicities. Keep the distinguished quotient, fix the banal summands, and reconstruct the conjugate summand by the perfect pairing. Identify the two functors and apply the imported Grassmannian graph charts and tangent formula.
 
+**API.**
+
+- The local model is the functor on schemes S over Spec O_L̆ of O_L-stable Lagrangian subbundles F of D⊗O_S, where D is the free module of rank n over `O_L ⊗_{O_{K₀}} O_L̆` with its split perfect alternating pairing for which the O_L-action is adjoint to its conjugate, such that the O_L-action on the quotient D⊗O_S/F satisfies the characteristic-polynomial condition (i) for P(r,s) and the structural-action clause (ii) on the distinguished summand; it is a closed subfunctor of the Grassmannian of O_L-stable Lagrangian subbundles of D (Mih19, Definition 2.11, p. 9).
+- The subfunctor cut out by clause (ii) and the rank conditions (i′) on the embedding-graded pieces of the quotient (zero on the banal summands of the chosen half-system, full on the banal summands of its conjugate, r on the distinguished summand and the complementary rank on its conjugate; Mih19, Lemma 2.10, p. 9) is a closed subscheme isomorphic to the Grassmannian of rank-r quotients of the free rank-n O_L̆-module obtained from the distinguished summand of D by the structural action, the banal pieces being forced and the conjugate piece the orthogonal complement of the distinguished one. It contains the local model, the two have the same generic fibre, and they coincide (Mih19, Proposition 2.12 and its proof, pp. 9–10). The Grassmannian is the R-points functor of `Module.Grassmannian` of the Mathlib contract, represented by AlgebraicModuliForArithmeticGeometry §1.3.
+- The local model is integral and smooth over Spec O_L̆ of relative dimension rs, and its relative tangent space at a point is the module of homomorphisms from the rank-s kernel to the rank-r quotient on the distinguished summand (Mih19, Proposition 2.12, p. 9; the tangent formula of AlgebraicModuliForArithmeticGeometry §1.3).
+- For a hermitian O_L–O_K₀-module over a scheme over Spf O_L̆, the Hodge filtration of its relative Dieudonné crystal D_X of §0.1 is, Zariski locally after trivializing the crystal by a basis adapted to the embedding grading, a point of the Lagrangian Grassmannian of D, and the module has signature (r,s) exactly when that point lies in the local model; this is the chart through which §0.4 and §1.2 compute deformations (Mih19, Lemma 2.13 and the proof of Lemma 2.10, pp. 9–10).
+
 **Checks.**
 
 - At (r,s)=(1,n−1) the dimension is n−1.
 - At r=0 or s=0 the local model is the base.
+- Replacing the characteristic-polynomial condition (i) by the rank conditions (i′), keeping clause (ii), does not change the functor: the subfunctor so defined is the integral smooth Grassmannian of the second API bullet, it contains the local model because (i) evaluated on the maximal unramified subring of O_L over O_K₀ forces the ranks of the graded pieces, and the two have the same generic fibre (Mih19, Proposition 2.12, pp. 9–10). A definition that only recorded multiplicities of embeddings, without the equality of generic fibres, would not know that (i) imposes nothing beyond (i′) integrally.
+- Clause (ii) is not implied by (i) when K/K₀ is ramified. Take K₀=ℚ_p, K=ℚ_p(√p), n=2, (r,s)=(2,0) and S the spectrum of the residue field k. The local model has a single k-point, the subbundle whose distinguished part is the image of √p, on whose rank-2 quotient √p acts by zero, as clause (ii) demands since the structural image of √p vanishes in k. The O_L-stable Lagrangian F whose distinguished part is the second coordinate copy of `O_L ⊗_{O_{K₀}} k` inside the free rank-2 module, with conjugate part forced by the pairing, has a rank-2 quotient on which √p acts as a nonzero square-zero nilpotent; for every a in O_L both sides of (i) equal `(t − a₀)²(t − ā₀)²` in k[t], where a₀ and ā₀ are the images of a under the two residue embeddings, so F satisfies (i) and the rank conditions (i′) but not (ii). A definition without clause (ii) therefore has a larger special fibre; when K/K₀ is unramified clause (ii) is automatic (Mih19, Remark 2.9, p. 9).
 
-*Needs:* §0.4; AlgebraicModuliForArithmeticGeometry §1.3; AbelianSchemesAndArithmeticModuli §A4.7.
+*Needs:* §0.4; §0.1; AlgebraicModuliForArithmeticGeometry §1.3; AbelianSchemesAndArithmeticModuli §A4.7.
 
 ### 0.7 Comparison of signature conventions
 
@@ -431,7 +447,7 @@ Precomposing i with the nontrivial automorphism of L/K gives an involutive equiv
 
 Within this roadmap: none; this is the first layer.
 
-Suppliers: PELModuli §M2.15, §M0.18; FiniteFlatGroupsAndIntegralPadicHodgeTheory Layer R07.1, §R07.2.26, §R07.2.10; EndoscopicTransferAndUnitaryTraceComparison §7.6; IgusaVarietiesAndTorsionConcentration §IG.0.27 (unstructured framed functor); AdicSpacesPartIII Layer F0; SchemeAndStackFoundations Layer 4; AbelianSchemesAndArithmeticModuli §A4.7; AlgebraicModuliForArithmeticGeometry §1.3; Mathlib `LinearMap.charpoly`.
+Suppliers: PELModuli §M2.15, §M0.18; FiniteFlatGroupsAndIntegralPadicHodgeTheory Layer R07.1, §R07.2.26, §R07.2.10; EndoscopicTransferAndUnitaryTraceComparison §7.6; IgusaVarietiesAndTorsionConcentration §0.27 (unstructured framed functor); AdicSpacesPartIII Layer F0; SchemeAndStackFoundations Layer 4; AbelianSchemesAndArithmeticModuli §A4.7; AlgebraicModuliForArithmeticGeometry §1.3; Mathlib `LinearMap.charpoly`.
 
 Supplier contracts: gap:zink-display-equivalence (see Exact supplier contracts).
 
@@ -1326,15 +1342,15 @@ Hypotheses for this target: F/F⁺ CM, Φ a CM type with distinguished φ₀, n�
 
 The localized RSZ functor is a smooth separated finite-type Deligne–Mumford stack over O_E[1/d] of relative dimension n−1. For sufficiently small levels on both the CM and unitary factors it is represented by a quasi-projective scheme, and sending a point to the product A₀×A with the action of O_F×O_F, the product polarization and the level structure induced by η₀ and η (through V(A)≅V(A₀,A)⊗V(A₀), V(A₀) being free of rank one) is a finite morphism to the PEL moduli of the product datum: the moduli of PELModuli §M2.8 when every residue characteristic of O_E[1/d] is unramified in F⁺ (then every prime of the base is good for the product datum in the sense of PELModuli §M0.10), and otherwise the multichain moduli of gap:bad-prime-projectivity, whose multichain at every prime of the base is generated by the single self-dual lattice Λ₀⊕Λ. The theorem uses the prescribed good local types and Eisenstein condition, not just the generic Kottwitz signature. (Zhang21, Theorem 6.2, p. 905; Stacks, Tags 0B3G, 0B3H, 0C4M (quasi-projectivity along finite morphisms and under base change); RZ96, Definition 6.9, p. 279 (the multichain moduli problem of the bad case).)
 
-*Route.* Apply PELModuli §M2.8 and §6.6 and impose the local conditions. Compute formal deformations through the relative comparison and the line-Grassmannian chart. Kill stabilizers by sufficiently small levels on both factors. For quasi-projectivity prove the comparison with the product PEL moduli finite (the pair is recovered from its image: A₀ and A as the images of the two idempotents of O_F×O_F, η from the product level structure and η₀; the conditions defining the source are closed, so the comparison is proper and quasi-finite) and pull back quasi-projectivity of that PEL moduli, base-changed to O_E[1/d] (a finite morphism is quasi-affine of finite type, hence quasi-projective; quasi-projective morphisms compose over a quasi-compact base and are stable under base change: Stacks Tags 0B3H, 0C4M, 0B3G): it is ShimuraCompactifications §C5.18 when every residue characteristic of O_E[1/d] is unramified in F⁺, so good in the sense of PELModuli §M0.10, and gap:bad-prime-projectivity for the multichain generated by Λ₀⊕Λ when O_E[1/d] keeps a prime ramified in F⁺; quasi-projectivity is not local on the base, so the second case is not reduced to the first prime by prime.
+*Route.* Apply PELModuli §M2.8 and §6.6 and impose the local conditions. Compute formal deformations through the relative comparison and the line-Grassmannian chart. Kill stabilizers by sufficiently small levels on both factors. For quasi-projectivity prove the comparison with the product PEL moduli finite (the pair is recovered from its image: A₀ and A as the images of the two idempotents of O_F×O_F, η from the product level structure and η₀; the conditions defining the source are closed, so the comparison is proper and quasi-finite) and pull back quasi-projectivity of that PEL moduli, base-changed to O_E[1/d] (a finite morphism is quasi-affine of finite type, hence quasi-projective; quasi-projective morphisms compose over a quasi-compact base and are stable under base change: Stacks Tags 0B3H, 0C4M, 0B3G): it is ShimuraCompactifications §7.18 when every residue characteristic of O_E[1/d] is unramified in F⁺, so good in the sense of PELModuli §M0.10, and gap:bad-prime-projectivity for the multichain generated by Λ₀⊕Λ when O_E[1/d] keeps a prime ramified in F⁺; quasi-projectivity is not local on the base, so the second case is not reduced to the first prime by prime.
 
 **Checks.**
 
 - For n=2 relative dimension is 1.
 - Small unitary level alone does not remove a nontrivial CM automorphism.
-- For F⁺=ℚ(√3), F=F⁺(i) and p=3: 3 is ramified in F⁺ and the place of F⁺ above 3 is inert in F (−1 is not a square modulo 3), so 3 need not divide d; it divides the discriminant of O_F×O_F, 3 is a bad prime in the sense of PELModuli §M0.10, and the comparison lands in the multichain moduli of gap:bad-prime-projectivity, not in that of PELModuli §M2.8. On a base all of whose residue characteristics are unramified in F⁺ the target is the PELModuli §M2.8 moduli and ShimuraCompactifications §C5.18 applies unchanged.
+- For F⁺=ℚ(√3), F=F⁺(i) and p=3: 3 is ramified in F⁺ and the place of F⁺ above 3 is inert in F (−1 is not a square modulo 3), so 3 need not divide d; it divides the discriminant of O_F×O_F, 3 is a bad prime in the sense of PELModuli §M0.10, and the comparison lands in the multichain moduli of gap:bad-prime-projectivity, not in that of PELModuli §M2.8. On a base all of whose residue characteristics are unramified in F⁺ the target is the PELModuli §M2.8 moduli and ShimuraCompactifications §7.18 applies unchanged.
 
-*Needs:* §7.1; §0.5; PELModuli §M0.10; PELModuli §M2.8; SchemeAndStackFoundations Layer 1; AbelianSchemesAndArithmeticModuli §A4.7; ShimuraCompactifications §C5.18; gap:bad-prime-projectivity.
+*Needs:* §7.1; §0.5; PELModuli §M0.10; PELModuli §M2.8; SchemeAndStackFoundations Layer 1; AbelianSchemesAndArithmeticModuli §A4.7; ShimuraCompactifications §7.18; gap:bad-prime-projectivity.
 
 ### 7.3 Semi-global RSZ moduli
 
@@ -1356,7 +1372,7 @@ Hypotheses for this target: F/F⁺ CM, Φ a CM type with distinguished φ₀, n�
 - Since a is prime to p, λ₀ induces a principal polarization on the local CM p-divisible factor.
 - An almost self-dual length-one Hermitian quotient has polarization-kernel order q_v².
 - An object satisfying the distinguished-place condition but violating the sign at another nonsplit p-place is rejected.
-- At a split v₀ with self-dual lattice, signature (1,n−1) and the CM-type matching of RSZ20 (4.19), this functor is the level-zero model Y₀ to which IgusaVarietiesAndTorsionConcentration §IG.0.31 adds Drinfeld level: its strict height-n module is `Hom_{O_{F,w₀}}(A₀[w₀^∞],A[w₀^∞])`, not A[w₀^∞] itself.
+- At a split v₀ with self-dual lattice, signature (1,n−1) and the CM-type matching of RSZ20 (4.19), this functor is the level-zero model Y₀ to which IgusaVarietiesAndTorsionConcentration §0.31 adds Drinfeld level: its strict height-n module is `Hom_{O_{F,w₀}}(A₀[w₀^∞],A[w₀^∞])`, not A[w₀^∞] itself.
 
 *Needs:* §6.1; §6.7; §6.5; §6.8; §6.6; PELModuli §M1.6; PELModuli §M1.1.
 
@@ -1427,7 +1443,7 @@ For the semi-global functor, construct its torsor of trivializations of the pola
 
 Under §7.4’s hypotheses and sufficiently small/neat levels, the model is smooth over O_K of relative dimension n−1. Sending a point to the product A₀×A with the action of O_F×O_F, the product polarization and the induced level structure is a finite morphism to the multichain moduli of gap:bad-prime-projectivity for the product datum, base-changed to O_K, whose multichain at u is generated by Λ₀⊕Λ_u with Λ_u π-modular (Λ_u^♯=π⁻¹Λ_u for a uniformizer π of F_u, matching ker λ[u^∞]=A[π]) and at the other places above p by the lattices of §7.4; hence the model is quasi-projective over O_K. It is projective in the compact Li–Liu setting F⁺≠ℚ: V is then definite at a real place, hence anisotropic, so the product datum has no cusp label and its generic fibre is proper. Changes of split prime-to-p level are finite étale. The absolute-to-relative identification used for its formal basic factor requires F⁺_u/ℚ_p unramified and is Layer 4’s comparison. (LL22, §4.5, p. 66, where projectivity is attributed to RSZ20 Theorem 4.7, which does not prove it (see References, LL22), and Assumption 1.3, p. 4; RSZ21 Theorem 5.7, p. 27; RZ96, Definition 6.9, p. 279 (the multichain moduli problem); Stacks, Tags 0B3G, 0B3H, 0C4M, 01WN, 0BCL (quasi-projectivity and properness along finite morphisms).)
 
-*Route.* Use the even-rank π-modular local-model smoothness theorem at the distinguished place. Use the banal smooth factors and the étale CM base at the other p-places. Prove the comparison with the product PEL moduli finite as in §7.2 (the pair is recovered from the two idempotents of O_F×O_F; the exotic Lie and polarization conditions are closed, so the comparison is proper and quasi-finite) and pull back the quasi-projectivity of gap:bad-prime-projectivity (Stacks Tags 0B3G, 0B3H, 0C4M). For F⁺≠ℚ the generic fibre of the product datum is proper (ShimuraCompactifications §C5.5 over the reflex field, no cusp label), so the gap’s properness clause makes its moduli proper, the model is proper as it is finite over it (Stacks Tag 01WN), and proper quasi-projective is projective (Stacks Tag 0BCL). Use the prime-to-p level torsor for finite étaleness.
+*Route.* Use the even-rank π-modular local-model smoothness theorem at the distinguished place. Use the banal smooth factors and the étale CM base at the other p-places. Prove the comparison with the product PEL moduli finite as in §7.2 (the pair is recovered from the two idempotents of O_F×O_F; the exotic Lie and polarization conditions are closed, so the comparison is proper and quasi-finite) and pull back the quasi-projectivity of gap:bad-prime-projectivity (Stacks Tags 0B3G, 0B3H, 0C4M). For F⁺≠ℚ the generic fibre of the product datum is proper (ShimuraCompactifications §7.5 over the reflex field, no cusp label), so the gap’s properness clause makes its moduli proper, the model is proper as it is finite over it (Stacks Tag 01WN), and proper quasi-projective is projective (Stacks Tag 0BCL). Use the prime-to-p level torsor for finite étaleness.
 
 **Checks.**
 
@@ -1436,7 +1452,7 @@ Under §7.4’s hypotheses and sufficiently small/neat levels, the model is smoo
 - The multichain of the comparison at u is Λ₀⊕Λ_u⊂Λ₀⊕π⁻¹Λ_u up to the periodicity by π on the second factor, so its multichain of abelian schemes is determined by A₀×A and λ; the comparison separates λ from cλ for c≠1, since λ₀×cλ is not a rational multiple of λ₀×λ.
 - For F⁺=ℚ and even n≥4, V of signature (n−1,1) has a trace form that is an indefinite rational quadratic form in 2n≥8 variables, isotropic by Meyer’s theorem, so V is isotropic, the product datum has a cusp label and the projectivity clause would fail; this is why it keeps F⁺≠ℚ.
 
-*Needs:* §7.4; §7.6; §3.4; §4.6; §6.3; SchemeAndStackFoundations Layer 1; gap:bad-prime-projectivity; §7.2; ShimuraCompactifications §C5.5.
+*Needs:* §7.4; §7.6; §3.4; §4.6; §6.3; SchemeAndStackFoundations Layer 1; gap:bad-prime-projectivity; §7.2; ShimuraCompactifications §7.5.
 
 ### 7.8 Ramified wedge and Krämer geometry
 
@@ -1462,7 +1478,7 @@ If v₀ is split in F, with self-dual `Λ_{v₀}` and the Eisenstein condition o
 
 - The split self-dual inert case and nonsplit almost self-dual inert case have different polarization kernels.
 - Flatness survives coefficient extension; regularity is asserted only with the stated unramified base hypothesis.
-- At a split v₀ with self-dual lattice the model is smooth; principal congruence levels at v₀ are the Drinfeld levels of IgusaVarietiesAndTorsionConcentration §IG.0.31, not a target here.
+- At a split v₀ with self-dual lattice the model is smooth; principal congruence levels at v₀ are the Drinfeld levels of IgusaVarietiesAndTorsionConcentration §0.31, not a target here.
 
 *Needs:* §7.6; §1.2; §2.2; §0.5; SchemeAndStackFoundations Layer 1.
 
@@ -1470,7 +1486,7 @@ If v₀ is split in F, with self-dual `Λ_{v₀}` and the Eisenstein condition o
 
 Under LZ22’s global lattice conditions: at 2 the CM extension is unramified; inert split V has self-dual lattice; inert nonsplit V is unramified over ℚ_p with almost self-dual lattice; split places have self-dual lattice; ramified quadratic places are unramified over ℚ_p with self-dual lattice, construct the O_E-model by integral CM pairs and all corresponding local clauses. At ramified quadratic places use the Krämer enhancement with its rank/base restrictions when a regular model is required. Introduce principal congruence levels only at split places satisfying CM matching and `E_ν/E_{r,v}` unramified, by normalization in the generic cover. Keep the ramified coefficient exceptions for both almost self-dual and Krämer regularity. (LZ22, §14.1–14.2, pp. 84–85; HLSY23 §10.2, pp. 77–79; RSZ21 Theorems 6.2 and 6.7, pp. 30, 32.)
 
-*Route.* Specify the global integral abelian-scheme groupoid with all local conditions and sign components. Identify each localization with its semi-global moduli via the canonical lattice-defined level orbit. Use finite normalization for the selected generic level covers and the Drinfeld-level models of IgusaVarietiesAndTorsionConcentration §IG.0.31 to prove finite flatness and the stated regular loci.
+*Route.* Specify the global integral abelian-scheme groupoid with all local conditions and sign components. Identify each localization with its semi-global moduli via the canonical lattice-defined level orbit. Use finite normalization for the selected generic level covers and the Drinfeld-level models of IgusaVarietiesAndTorsionConcentration §0.31 to prove finite flatness and the stated regular loci.
 
 **API.**
 
@@ -1485,7 +1501,7 @@ Under LZ22’s global lattice conditions: at 2 the CM extension is unramified; i
 - At an almost self-dual place a ramified E_ν/ℚ_p is not certified regular by the semistable local theorem.
 - A split congruence level failing CM matching or the unramified reflex extension is not covered by the regular-level theorem.
 
-*Needs:* §7.5; §7.8; §7.9; PELModuli §§M4.5–M4.6; §6.6; SchemeAndStackFoundations Layer 1; IgusaVarietiesAndTorsionConcentration §IG.0.31; EndoscopicTransferAndUnitaryTraceComparison §10.2.
+*Needs:* §7.5; §7.8; §7.9; PELModuli §§M4.5–M4.6; §6.6; SchemeAndStackFoundations Layer 1; IgusaVarietiesAndTorsionConcentration §0.31; EndoscopicTransferAndUnitaryTraceComparison §10.2.
 
 ### Examples
 
@@ -1497,7 +1513,7 @@ Under LZ22’s global lattice conditions: at 2 the CM extension is unramified; i
 
 Within this roadmap: Layer 0 (§0.5); Layer 1 (§1.2); Layer 2 (§2.2); Layer 3 (§3.4); Layer 4 (§4.1, §4.6); Layer 5 (§5.1, §5.6, §5.7); Layer 6 (§6.1, §6.3, §6.4, §6.5, §6.6, §6.7, §6.8).
 
-Suppliers: PELModuli §M0.10, §M1.7, §M1.1, §M2.8, §M1.6, §§M4.5–M4.6; SchemeAndStackFoundations Layer 1, Layer 4; AbelianSchemesAndArithmeticModuli §A4.7, §A4.3; ShimuraCompactifications §C5.18, §C5.5; AlgebraicModuliForArithmeticGeometry §1.3; IgusaVarietiesAndTorsionConcentration §IG.0.31; EndoscopicTransferAndUnitaryTraceComparison §10.2.
+Suppliers: PELModuli §M0.10, §M1.7, §M1.1, §M2.8, §M1.6, §§M4.5–M4.6; SchemeAndStackFoundations Layer 1, Layer 4; AbelianSchemesAndArithmeticModuli §A4.7, §A4.3; ShimuraCompactifications §7.18, §7.5; AlgebraicModuliForArithmeticGeometry §1.3; IgusaVarietiesAndTorsionConcentration §0.31; EndoscopicTransferAndUnitaryTraceComparison §10.2.
 
 Supplier contracts: gap:bad-prime-projectivity, gap:unitary-multichain-stabilizer (see Exact supplier contracts).
 
@@ -1554,7 +1570,7 @@ Under the same special inert and neat coefficient hypotheses, fix the standard d
 
 Over a perfect residue field k of a point of T_p, the completed local ring of the almost self-dual model is either `W(k)[[t₁,…,t_{N−1}]]`, or, for N≥2, W(k)[[x₁,…,x_N]]/(x₁x_N−p). Thus the model is regular and strictly semistable of relative dimension N−1 over the unramified coefficient ring. The N=1 model has only the first type. Quasi-projectivity does not follow from the local rings. For the uniformization datum (V′,j,Λ′_p) of §8.4, sending a pair to (A₀×A, i₀×i, λ₀×λ) with the induced away-p level structure is a finite morphism to the multichain moduli of gap:bad-prime-projectivity for the product datum (the algebra F×F with its involution, V₀⊕V′, a common similitude factor), base-changed to the coefficient ring, whose multichain at p is generated by Λ₀⊕Λ′_p⊂Λ₀⊕Λ′_p^♯; hence the model is quasi-projective over T_p, and it is projective over T_p exactly when its generic fibre is proper, that is, when V′ is anisotropic. The balloon, ground and link geometry and the tangent exact sequences of Theorem 5.2.5(2)–(5) are planned by SelmerIwasawaCohomologyPartII §2.3; this target gives only the ambient local equations. (LTXZZ22, Theorem 5.2.5(1) and its local-model proof, pp. 190–193; RZ96, Definition 6.9, p. 279 (the multichain moduli problem); Stacks, Tags 0B3G, 0B3H, 0C4M, 0C4N, 01WN, 0BCL (quasi-projectivity and properness along finite morphisms, and over T_p).)
 
-*Route.* Normalize the local polarization pairing to diag(p,1,…,1). Describe simultaneous Hodge line/hyperplane lifts and their orthogonality relation by Grothendieck–Messing. In the crossing chart eliminate the remaining variables to obtain x₁x_N=p; in the other admissible charts solve for one variable to obtain a smooth power-series ring. Check the impossible fourth rank case and the N=1 boundary before concluding semistability. Prove the comparison with the product PEL moduli finite as in §8.1 (the pair is recovered from the two idempotents of O_F×O_F and λ; the kernel condition on λ is closed). Pull back the gap’s quasi-projectivity to obtain quasi-projectivity over the coefficient ring (Stacks Tags 0B3G, 0B3H, 0C4M), hence over T_p, since the model is quasi-compact over T_p (Stacks Tag 0C4N). If the generic fibre is proper then V′ is anisotropic, the product datum has no cusp label, its generic fibre is proper (ShimuraCompactifications §C5.5 over the reflex field), the gap makes its moduli proper, the model is proper as it is finite over it (Stacks Tag 01WN), and proper quasi-projective is projective (Stacks Tag 0BCL); the converse is base change to the generic fibre.
+*Route.* Normalize the local polarization pairing to diag(p,1,…,1). Describe simultaneous Hodge line/hyperplane lifts and their orthogonality relation by Grothendieck–Messing. In the crossing chart eliminate the remaining variables to obtain x₁x_N=p; in the other admissible charts solve for one variable to obtain a smooth power-series ring. Check the impossible fourth rank case and the N=1 boundary before concluding semistability. Prove the comparison with the product PEL moduli finite as in §8.1 (the pair is recovered from the two idempotents of O_F×O_F and λ; the kernel condition on λ is closed). Pull back the gap’s quasi-projectivity to obtain quasi-projectivity over the coefficient ring (Stacks Tags 0B3G, 0B3H, 0C4M), hence over T_p, since the model is quasi-compact over T_p (Stacks Tag 0C4N). If the generic fibre is proper then V′ is anisotropic, the product datum has no cusp label, its generic fibre is proper (ShimuraCompactifications §7.5 over the reflex field), the gap makes its moduli proper, the model is proper as it is finite over it (Stacks Tag 01WN), and proper quasi-projective is projective (Stacks Tag 0BCL); the converse is base change to the generic fibre.
 
 **Checks.**
 
@@ -1565,7 +1581,7 @@ Over a perfect residue field k of a point of T_p, the completed local ring of th
 - For F⁺=ℚ and N=2, V′ has signature (1,1) and is isotropic exactly when −det V′ is a norm from F; then the product datum has a cusp label, the generic fibre is a non-proper Shimura curve and the model is quasi-projective but not projective.
 - The multichain of the comparison at p is Λ₀⊕Λ′_p⊂Λ₀⊕Λ′_p^♯⊂p⁻¹(Λ₀⊕Λ′_p), with Λ′_p^♯/Λ′_p of order p², so its multichain of abelian schemes is A₀×A followed by A₀×A^∨ through λ; a p-principal λ would give the single self-dual lattice of §8.1 instead.
 
-*Needs:* §8.2; §7.6; AbelianSchemesAndArithmeticModuli §A4.7; SchemeAndStackFoundations Layer 4; gap:bad-prime-projectivity; §8.4; §8.1; ShimuraCompactifications §C5.5.
+*Needs:* §8.2; §7.6; AbelianSchemesAndArithmeticModuli §A4.7; SchemeAndStackFoundations Layer 4; gap:bad-prime-projectivity; §8.4; §8.1; ShimuraCompactifications §7.5.
 
 ### 8.4 Almost self-dual generic comparison
 
@@ -1590,7 +1606,7 @@ Choose an indefinite Hermitian V′ with the distinguished signature, an away-p 
 
 ### 8.5 Integral level and Hecke system
 
-For fixed allowable integral p-type, form the system over sufficiently small prime-to-p unitary and CM compact opens. The Hecke map indexed by g in `U(V)(𝔸_{F⁺,f}^p)` and a in the CM torus transports η^p to η^p∘g and η₀ to η₀∘a, with the source/target compact opens satisfying the usual inclusion; correspondences are indexed by `K^p∖U(V)(𝔸_{F⁺,f}^p)/K′^p`. The permitted level-forgetful maps are finite étale and compose compatibly. For the LTXZZ almost self-dual case use V° for the tame system and transport it through j in the generic comparison. At p only the split Drinfeld tower of IgusaVarietiesAndTorsionConcentration §IG.0.31 is included. (LTXZZ22, §4.2, pp. 161–162; §5.2, p. 189; compare LL22 §4.5, p. 66.)
+For fixed allowable integral p-type, form the system over sufficiently small prime-to-p unitary and CM compact opens. The Hecke map indexed by g in `U(V)(𝔸_{F⁺,f}^p)` and a in the CM torus transports η^p to η^p∘g and η₀ to η₀∘a, with the source/target compact opens satisfying the usual inclusion; correspondences are indexed by `K^p∖U(V)(𝔸_{F⁺,f}^p)/K′^p`. The permitted level-forgetful maps are finite étale and compose compatibly. For the LTXZZ almost self-dual case use V° for the tame system and transport it through j in the generic comparison. At p only the split Drinfeld tower of IgusaVarietiesAndTorsionConcentration §0.31 is included. (LTXZZ22, §4.2, pp. 161–162; §5.2, p. 189; compare LL22 §4.5, p. 66.)
 
 *Route.* Restrict the existing adelic level category to prime-to-p compact opens preserving the chosen integral local type. Transport the two level structures on the same polarized abelian pair and verify the common-scalar arrow equivalence. Use the prime-to-p étale Tate torsors to prove finite étaleness, and compare the generic Hecke composition with the imported level category.
 
@@ -1607,7 +1623,7 @@ For fixed allowable integral p-type, form the system over sufficiently small pri
 - The unitary finite adeles are those of F⁺, not of the CM field F.
 - A nonsplit change of parahoric p-type is not declared finite étale by this theorem.
 
-*Needs:* §8.1; §8.2; §8.4; IgusaVarietiesAndTorsionConcentration §IG.0.31; PELModuli §M1.13; ShimuraVarieties §1.7.
+*Needs:* §8.1; §8.2; §8.4; IgusaVarietiesAndTorsionConcentration §0.31; PELModuli §M1.13; ShimuraVarieties §1.7.
 
 ### 8.6 Mixed integral isogeny moduli
 
@@ -1632,9 +1648,9 @@ At the inert almost self-dual distinguished place v₀, choose the totally posit
 
 ### 8.7 Smooth integral geometry and tangent space
 
-The neat smooth unitary model is a smooth quasi-projective scheme over T_p of relative dimension N−1. At a geometric point its relative tangent space is `Hom(ω_{A∨,τ∞},H₁^dR(A)_{τ∞}/ω_{A∨,τ∞})`, with source rank 1 and target rank N−1. Its generic fibre is the canonical unitary Shimura variety times the CM factor. It is projective over T_p exactly when its generic fibre is proper. Both quasi-projectivity and this criterion come from the PEL moduli of the product A₀×A through the finite comparison morphism of §8.1: that PEL moduli is quasi-projective (ShimuraCompactifications §C5.18); the product datum has a cusp label exactly when the product Hermitian space has a nonzero totally isotropic F×F-stable subspace, that is, the CM line being anisotropic, exactly when V is isotropic, which is exactly when the generic fibre is not proper; with no cusp label the PEL moduli is proper (ShimuraCompactifications §C5.5). Projectivity does not follow from smoothness and quasi-projectivity alone. Here H₁^dR is the dual of the imported H¹_dR. On complex points the negative period line is `Hom_ℂ(H₁^dR(A₀)_{τ∞},ω_{A∨,τ∞})`; the condition on the zero subspace `ω_{A₀∨,τ∞}` cannot define that line. (LTXZZ22, Theorem 4.2.3 and formula (4.2), pp. 161–163; Remark 4.2.5, p. 163 (corrected period line); Stacks, Tags 0B3G, 0B3H, 0C4M, 0C4N, 01WN, 0BCL (quasi-projectivity and properness along finite morphisms, and over T_p).)
+The neat smooth unitary model is a smooth quasi-projective scheme over T_p of relative dimension N−1. At a geometric point its relative tangent space is `Hom(ω_{A∨,τ∞},H₁^dR(A)_{τ∞}/ω_{A∨,τ∞})`, with source rank 1 and target rank N−1. Its generic fibre is the canonical unitary Shimura variety times the CM factor. It is projective over T_p exactly when its generic fibre is proper. Both quasi-projectivity and this criterion come from the PEL moduli of the product A₀×A through the finite comparison morphism of §8.1: that PEL moduli is quasi-projective (ShimuraCompactifications §7.18); the product datum has a cusp label exactly when the product Hermitian space has a nonzero totally isotropic F×F-stable subspace, that is, the CM line being anisotropic, exactly when V is isotropic, which is exactly when the generic fibre is not proper; with no cusp label the PEL moduli is proper (ShimuraCompactifications §7.5). Projectivity does not follow from smoothness and quasi-projectivity alone. Here H₁^dR is the dual of the imported H¹_dR. On complex points the negative period line is `Hom_ℂ(H₁^dR(A₀)_{τ∞},ω_{A∨,τ∞})`; the condition on the zero subspace `ω_{A₀∨,τ∞}` cannot define that line. (LTXZZ22, Theorem 4.2.3 and formula (4.2), pp. 161–163; Remark 4.2.5, p. 163 (corrected period line); Stacks, Tags 0B3G, 0B3H, 0C4M, 0C4N, 01WN, 0BCL (quasi-projectivity and properness along finite morphisms, and over T_p).)
 
-*Route.* Compute the polarized Hodge deformation using the rank-one distinguished quotient; the other factors are banal. Use neat levels for scheme representability; for quasi-projectivity pull back the quasi-projectivity of ShimuraCompactifications §C5.18 along the finite comparison of §8.1 (a finite morphism is quasi-affine of finite type, hence quasi-projective, and quasi-projective morphisms compose over a quasi-compact base and are stable under base change: Stacks Tags 0B3H, 0C4M, 0B3G); this gives quasi-projectivity over the coefficient ring, and over T_p because the model is quasi-compact over T_p (Stacks Tag 0C4N). Identify the generic canonical model. For the projectivity clause: if the generic fibre is proper then V is anisotropic, the product datum has no cusp label, its PEL moduli is proper by ShimuraCompactifications §C5.5, the model is proper as it is finite over that moduli (Stacks Tag 01WN), and a proper quasi-projective morphism is projective (Stacks Tag 0BCL); the converse is base change to the generic fibre.
+*Route.* Compute the polarized Hodge deformation using the rank-one distinguished quotient; the other factors are banal. Use neat levels for scheme representability; for quasi-projectivity pull back the quasi-projectivity of ShimuraCompactifications §7.18 along the finite comparison of §8.1 (a finite morphism is quasi-affine of finite type, hence quasi-projective, and quasi-projective morphisms compose over a quasi-compact base and are stable under base change: Stacks Tags 0B3H, 0C4M, 0B3G); this gives quasi-projectivity over the coefficient ring, and over T_p because the model is quasi-compact over T_p (Stacks Tag 0C4N). Identify the generic canonical model. For the projectivity clause: if the generic fibre is proper then V is anisotropic, the product datum has no cusp label, its PEL moduli is proper by ShimuraCompactifications §7.5, the model is proper as it is finite over that moduli (Stacks Tag 01WN), and a proper quasi-projective morphism is projective (Stacks Tag 0BCL); the converse is base change to the generic fibre.
 
 **Checks.**
 
@@ -1642,7 +1658,7 @@ The neat smooth unitary model is a smooth quasi-projective scheme over T_p of re
 - The CM tangent contribution is zero because T_p is étale over the coefficient ring.
 - For F⁺=ℚ and N=2, V has signature (1,1) and is isotropic exactly when −det V is a norm from F; then the product datum has a cusp label, the generic fibre is a non-proper Shimura curve and the model is not projective, while for anisotropic V the model is projective.
 
-*Needs:* §8.1; §7.2; AbelianSchemesAndArithmeticModuli §A4.7; AbelianSchemesAndArithmeticModuli §A4.3; ShimuraVarieties §§2.5–2.7; SchemeAndStackFoundations Layer 4; ShimuraCompactifications §§C5.5, C5.18.
+*Needs:* §8.1; §7.2; AbelianSchemesAndArithmeticModuli §A4.7; AbelianSchemesAndArithmeticModuli §A4.3; ShimuraVarieties §§2.5–2.7; SchemeAndStackFoundations Layer 4; ShimuraCompactifications §§7.5, 7.18.
 
 ### Examples
 
@@ -1654,7 +1670,7 @@ The neat smooth unitary model is a smooth quasi-projective scheme over T_p of re
 
 Within this roadmap: Layer 2 (§2.1, §2.4); Layer 6 (§6.3, §6.6); Layer 7 (§7.2, §7.3, §7.6).
 
-Suppliers: PELModuli §M0.10, §M0.18, §M1.6, §M2.8, §M1.1, §M3.8, §§M3.1–M3.2, §M1.13, §M2.14; AbelianSchemesAndArithmeticModuli §A4.7, §A6.13, §A4.3; SchemeAndStackFoundations Layer 4; ShimuraCompactifications §C5.5, §§C5.5, C5.18; GeometryOfNumbersAndQuadraticArithmetic §§2.7, 2.9; ShimuraVarieties §6.7, §1.7, §§2.5–2.7; IgusaVarietiesAndTorsionConcentration §IG.0.31.
+Suppliers: PELModuli §M0.10, §M0.18, §M1.6, §M2.8, §M1.1, §M3.8, §§M3.1–M3.2, §M1.13, §M2.14; AbelianSchemesAndArithmeticModuli §A4.7, §A6.13, §A4.3; SchemeAndStackFoundations Layer 4; ShimuraCompactifications §7.5, §§7.5, 7.18; GeometryOfNumbersAndQuadraticArithmetic §§2.7, 2.9; ShimuraVarieties §6.7, §1.7, §§2.5–2.7; IgusaVarietiesAndTorsionConcentration §0.31.
 
 Supplier contracts: gap:bad-prime-projectivity, gap:hermitian-local-global (see Exact supplier contracts).
 
@@ -1725,7 +1741,7 @@ For the global unitary V and distinguished nonsplit finite place v₀, use the h
 
 ### 9.4 Banal and CM local factors
 
-In the RSZ uniformization hypotheses, the full absolute p-local framed space N′ is the product `(Z^ℚ(ℚ_p)/K_{Z,p})×N_{O_{Ĕ_ν}}×∏_{v|p,v≠v₀}U(V_v)/K_v`, where the other p-factors are banal and satisfy sign and Eisenstein and N is the matching principal or almost self-dual relative framed space. The two coset factors are formal discrete étale spaces. For an exotic model replace N by its absolute exotic factor and then use Layer 4. This decomposition is equivariant for the identified local framing group; none of the discrete factors is discarded before quotienting. (LZ22, §13.1, pp. 80–81; RSZ20 Lemma 8.16 and Remark 8.18, p. 53, Appendix B, pp. 59–60.)
+In the RSZ uniformization hypotheses, the full absolute p-local framed space N′ is the product `(Z^ℚ(ℚ_p)/K_{Z,p})×N_{O_{Ĕ_ν}}×∏_{v|p,v≠v₀}U(V_v)/K_v`, where the other p-factors are banal and satisfy sign and Eisenstein and N is the matching principal or almost self-dual relative framed space. The two coset factors are formal discrete étale spaces. For an exotic model replace N by its absolute exotic factor and then use Layer 4. This decomposition is equivariant for the identified local framing group; none of the discrete factors is discarded before quotienting. (LZ22, §13.1, pp. 80–81; RSZ20 Lemma 8.16, p. 53, and Remark 8.18, p. 54, Appendix B, pp. 59–60.)
 
 *Route.* Split the absolute p-divisible group by the p-adic places and the CM torus component. Use the strict Eisenstein condition and banal deformation rigidity to identify each nondistinguished factor with its discrete lattice-coset functor. Apply the relative comparison only to the distinguished factor and verify the actions on every factor.
 
@@ -1895,7 +1911,7 @@ unsupported as printed, the note says what is used instead; the targets use the 
   §7.4 imposes them on A. In §4.5, p. 66, the integral models are called smooth projective with a
   reference to RSZ20 Theorem 4.7, which proves flatness, the generic fibre and smoothness but no
   projectivity; §7.7 proves projectivity by gap:bad-prime-projectivity and ShimuraCompactifications
-  §C5.5.
+  §7.5.
 - **HLSY23.** Qiao He, Chao Li, Yousheng Shi and Tonghai Yang, *A proof of the Kudla–Rapoport
   conjecture for Krämer models*, [arXiv:2208.07988v2](https://arxiv.org/pdf/2208.07988v2); locators
   are for this version. Notes: Definition 2.2(2), p. 10, gives the framing as a height-zero O_L-linear
@@ -1913,7 +1929,7 @@ unsupported as printed, the note says what is used instead; the targets use the 
   4.2.2, p. 160, writes the unitary Hecke parameter with adeles of F; U(V) is a group over F⁺ and §8.5
   uses `U(V)(𝔸_{F⁺,f}^p)`. The last assertion of Theorem 4.2.3, p. 161, equates projectivity of the
   integral model with properness of its generic fibre without an integral properness argument; §8.7
-  supplies one through ShimuraCompactifications §§C5.5 and C5.18. Remark 4.2.5, p. 163, defines the
+  supplies one through ShimuraCompactifications §§7.5 and 7.18. Remark 4.2.5, p. 163, defines the
   negative period line by a condition on the source Hodge subspace, which is zero at τ∞; §8.1 uses
   `Hom_ℂ(H₁^dR(A₀)_{τ∞},ω_{A∨,τ∞})`. §5.2, p. 188, states the definite space V° in rank N>1 while
   Remark 5.2.4 and Theorem 5.2.5 treat N=1; §8.2 takes N≥1.

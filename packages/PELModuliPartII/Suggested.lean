@@ -11,9 +11,11 @@ listed here with the carrier it lacks.
 * Formal smoothness of the unramified unitary Rapoport–Zink space `N_n` of relative dimension
   `n - 1` (README §1.2), regular semistable reduction of the almost self-dual space (§2.2), formal
   smoothness of the exotic space over every finite extension of `ℚ_p` (§3.4) and its two connected
-  components (§3.7), and regular semistable reduction of the Krämer space (§5.7). They lack formal
-  schemes and `Spf`, formal smoothness of a morphism of formal schemes, and strict formal
-  `O`-modules or `p`-divisible groups over a base, with their relative duals and polarizations.
+  components (§3.7), and regular semistable reduction of the Krämer space (§5.7). They lack a
+  category of formal schemes and formal smoothness of their morphisms (Tau Ceti's
+  `TauCeti.FormalScheme.Spf` gives only the underlying space and the structure sheaf of an affine
+  formal spectrum), and strict formal `O`-modules or `p`-divisible groups over a base, with their
+  relative duals and polarizations.
 * Finite étaleness of the integral CM moduli at every prime (§6.6). It lacks abelian schemes over a
   base with an `O_F`-action, the Kottwitz condition on their Lie algebras, polarizations of a given
   type, and Deligne–Mumford stacks; Tau Ceti's `AbelianVariety` is over a field only.
