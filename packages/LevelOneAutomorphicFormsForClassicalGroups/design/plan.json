@@ -5619,13 +5619,19 @@
       "slug": "integral-spinor-norm-units",
       "supplier": "GeometryOfNumbersAndQuadraticArithmetic",
       "section": "2.4",
-      "needs": "For every prime p, p = 2 included, and every regular quadratic form q on Z_p^n (nondegenerate, or of odd rank with unit half-discriminant), the spinor norm of every element of SO(q)(Z_p) lies in the image of Z_p^x in Q_p^x/Q_p^x2, proved by lifting to GSpin(q)(Z_p)."
+      "needs": "For p = 2 and every regular quadratic form q on Z_2^n (nondegenerate, or of odd rank with unit half-discriminant), the spinor norm of every element of SO(q)(Z_2) lies in the image of Z_2^x in Q_2^x/Q_2^x2, proved by lifting to GSpin(q)(Z_2); for p odd GeometryOfNumbersAndQuadraticArithmetic 2.4.2 already supplies it."
     },
     {
       "slug": "split-orthogonal-regular-form",
       "supplier": "ReductiveGroups",
       "section": "Layer 9",
       "needs": "The identification of the pinned Chevalley-Demazure group schemes of types B_n and D_n over Z with the special orthogonal group schemes of the regular forms x_1 x_2n + ... + x_n x_(n+1) and x_1 x_(2n+1) + ... + x_n x_(n+2) + x_(n+1)^2, compatible with points over Z_2."
+    },
+    {
+      "slug": "conway-group-average-charpoly",
+      "supplier": "CFSGBasicProperties",
+      "section": "P2-L",
+      "needs": "The average characteristic polynomial of Conway's group O(Leech) on Leech tensor Q, (1/|O(Leech)|) sum over gamma in O(Leech) of det(t - gamma) = t^24 + t^16 + t^12 + t^8 + 1, from the conjugacy classes of O(Leech) and the character of its 24-dimensional representation."
     }
   ],
   "requests": [

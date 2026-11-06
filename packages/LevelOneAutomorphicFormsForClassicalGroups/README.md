@@ -28,11 +28,11 @@ This roadmap owns the level-one specialization and everything that is specific t
 Chenevier–Taïbi method: the set `Π_alg` and its counting functions; the archimedean ring `K∞` with
 its parity-truncated weight filtrations; the Rankin–Selberg explicit-formula bilinear forms, the
 Stark–Odlyzko cone inequality for pairs of level-one representations and the finite-dimensional
-quadratic minimization built on it, including the Odlyzko test functions and the Rayleigh
-least-eigenvalue refinement; Miller's vanishing theorem (no other roadmap plans a second proof of
+quadratic minimization built on it, including the Rayleigh least-eigenvalue refinement (the
+Odlyzko kernel and test function are imported); Miller's vanishing theorem (no other roadmap plans a second proof of
 it); level-one Arthur parameters, their packet characters in the holomorphic cases and the
 triangular Euler–Poincaré relation; the masses of torsion classes, the spinor obstruction on
-their characteristic polynomials and the Zassenhaus spinor-norm formula it rests on; Taïbi's
+their characteristic polynomials, resting on the imported Zassenhaus spinor-norm formula; Taïbi's
 explicit evaluation of the geometric side of the level-one `L²`-Lefschetz formula; the
 low-weight classifications; the genus-`g` unweighted theta map on even unimodular lattices, the
 harmonic theta map, first occurrence and the Rallis parameter relation at level one; the
@@ -54,6 +54,14 @@ It leaves to named roadmaps, by section:
   Conventions, §§AL.1.4, AL.3.6, AL.3.7 and AL.3.9.
 - Weil's explicit formula in Mestre's formalism, for an arbitrary pair of completed functions with
   products of gamma factors: AnalyticNumberTheoryPartI §§1.3 and 1.8.
+- The Odlyzko kernel `g = 2(u ∗ u)`, the test functions `g(x/b)/cosh(x/2)` and the nonnegativity of
+  the real part of their transform in the strip `0 ≤ Re s ≤ 1`:
+  SmallRamificationAndAbelianVarietyBaseCases §§1.5–1.7.
+- The Zassenhaus spinor-norm formula for an isometry of a nondegenerate quadratic space over a
+  field of characteristic different from `2`: SymplecticReidemeisterTorsionModSquares §4.1.
+- Conway's group `Co₀ = O(Leech)` as the isometry group of the Leech lattice, its Conway
+  generators and order, the simplicity of `Co₁ = Co₀/{±1}`, and the average characteristic
+  polynomial of its action on `Leech ⊗ ℚ`: CFSGBasicProperties P2-L.
 - Finite multiplicities of the discrete spectrum, the residual spectrum, Wallach's tempered
   cuspidality criterion, Euler–Poincaré functions and Arthur's `L²`-Lefschetz trace formula:
   AutomorphicSpectralTheory §§4.4, 4.5, 4.10, 6.9, 6.17, 6.19 and 6.20.
@@ -76,11 +84,13 @@ It leaves to named roadmaps, by section:
   scalars, rational Gram witnesses, the multiplicity lift and ellipsoid covers:
   ComputationalNumberTheory §§4.1–4.7, 4.17, 4.17a, 4.18, 4.26 and 4.29–4.34, and §5.1 for the
   interpretation of finite families.
-- The integral lattice carrier, isometries and discriminant forms: IntegralLattices, Layer 1, with
-  their Tau Ceti declarations. The construction of the Leech lattice: Rank24LatticeConstructions,
+- The integral lattice carrier, isometries and discriminant forms: Completed/IntegralLattices,
+  Layer 1, with their Tau Ceti declarations; the `p`-neighbour relation of integral lattices:
+  IntegralLattices §4G. The construction of the Leech lattice: Rank24LatticeConstructions,
   Layer 6. Genus-one theta series and `Θ_{E₈} = E₄`: ThetaSeries, Layers 5 and 8. The extended
   binary Golay code: AlgebraicCodingTheory, Layer 5. The order of the Mathieu group `M₂₄`:
-  SporadicOrders, Layer 1. The field spinor norm: OrthogonalSpinGroups, Layer 1.
+  SporadicOrders, Layer 1. The field spinor norm: OrthogonalSpinGroups, Layer 1, which is Tau
+  Ceti's `CliffordAlgebra.orthogonalSpinorNorm` at the pin.
 - Weyl's character and dimension formulas and the highest-weight theory of the classical groups:
   RepresentationTheory/LieHighestWeight Layer 6 and RepresentationTheory/ClassicalGroups Layers
   3–5. Split Chevalley–Demazure group schemes over `ℤ`: ReductiveGroups Layer 9. Level-one
@@ -188,6 +198,11 @@ sets of classes are counted as natural numbers only after their finiteness is pr
   `weightEnumerator_code` (rank 12, doubly even, minimum distance 8, weight enumerator
   `1 + 759y⁸ + 2576y¹² + 759y¹⁶ + y²⁴`), and `TauCeti.BinaryGolay.constructionALattice`, an even
   unimodular positive definite lattice of rank 24 with roots, used as a rooted control in §8.5.
+- `CliffordAlgebra.orthogonalSpinorNorm` (`TauCeti/LinearAlgebra/CliffordAlgebra/Spin/SpinorNorm/Basic.lean`):
+  the spinor norm `O(Q) → Kˣ/Kˣ²` of a nondegenerate quadratic form over a field, the Clifford
+  norm of a Lipschitz lift taken modulo squares; a reflection in `v` has spinor norm the class of
+  `Q(v)`. It is the spinor norm of §4.6 and the one in which the imported Zassenhaus formula is
+  stated.
 
 ### From TauCetiRoadmap.AutomorphicFormsOnReductiveGroups
 
@@ -233,6 +248,18 @@ sets of classes are counted as natural numbers only after their finiteness is pr
   growth in strips, gamma factors `∏ Γ(a_i s + b_i)` and Euler products with
   `|α_i(p)| ≤ p^c`, with zeros summed by symmetric heights. The Rankin–Selberg application in
   §2.6 is a specialization of that statement with `c = 0`.
+
+### From TauCetiRoadmap.SmallRamificationAndAbelianVarietyBaseCases
+
+- §1.5: the kernel `odlyzkoKernel`, `g(x) = (1 − |x|) cos(πx) + sin(π|x|)/π` on `[−1, 1]` and `0`
+  outside, as the convolution square `2(u ∗ u)` of `u = cos(πx)·1_{[−1/2, 1/2]}`: even, `g(0) = 1`,
+  nonnegative, positive definite, of class `C¹`, with integral `4/π²` over the positive half-line.
+- §1.6: for an even continuous compactly supported nonnegative positive definite `f` and
+  `F(x) = f(x)/cosh(x/2)`, the transform `Φ(s) = ∫ F(x) e^{(s − 1/2)x} dx` has nonnegative real part
+  for `0 ≤ Re s ≤ 1`.
+- §1.7: `poitouTestFunction b x = g(x/b)/cosh(x/2)`, even, equal to `1` at `0`, vanishing for
+  `|x| ≥ b`, nonnegative and continuously differentiable. With `b = ℓ` this is the function `F_ℓ` of
+  §2.2, and §§1.5–1.6 give (POS) for it.
 
 ### From TauCetiRoadmap.AutomorphicSpectralTheory
 
@@ -287,13 +314,28 @@ sets of classes are counted as natural numbers only after their finiteness is pr
   `γ_g^k(s) C_g(n/2 + s, ν) L(n/2 − g + 2s, F, St) / ω_g(n/2 + 2s)` has a finite nonzero value at
   `s = 0`, in the normalization of §6.12.
 
+### From TauCetiRoadmap.SymplecticReidemeisterTorsionModSquares
+
+- §4.1: the Zassenhaus formula `zassenhaus_primary_formula`. For a finite-dimensional
+  nondegenerate quadratic form `q` over a field `K` in which `2` is invertible and every isometry
+  `γ ∈ O(q)`, with `N = dim V`, `V₋ = ker(γ + 1)^N` and `U = im(γ + 1)^N`, the spinor norm
+  `CliffordAlgebra.orthogonalSpinorNorm` of `γ` is the class of `disc(V₋) · det((1 + γ)/2 | U)`, where
+  `disc(V₋)` is the Gram determinant of a basis of `V₋` for the associated bilinear form
+  `B(x, x) = q(x)`; no determinant-one or even-dimension hypothesis is made. §4.6 translates it into
+  the characteristic-polynomial form of Chenevier–Taïbi.
+
 ### From TauCetiRoadmap.GeometryOfNumbersAndQuadraticArithmetic
 
 - §2.4: integral genus, proper spinor genus and spinor-norm images of unimodular stabilizers.
+  §2.4.2: for a nondyadic nonarchimedean local field with valuation ring `R` and a nondegenerate
+  unimodular lattice of rank at least two, the spinor-norm image of the proper stabilizer is
+  `R^× K^{×2}`. For `p` odd a regular quadratic form on `ℤ_pⁿ` is unimodular for its polar form
+  (`det(c + cᵀ) = ±1` or `±2`, a unit), and in rank one `SO(q)` is trivial, so §2.4.2 supplies the
+  odd primes of §4.7.
 - What GeometryOfNumbersAndQuadraticArithmetic must provide (gap:integral-spinor-norm-units): for
-  every prime `p`, `p = 2` included, and every regular quadratic form `q` on `ℤ_pⁿ` (nondegenerate,
-  or of odd rank with unit half-discriminant), the spinor norm of every element of `SO(q)(ℤ_p)`
-  lies in the image of `ℤ_p^×` in `ℚ_p^×/ℚ_p^{×2}`, proved by lifting to `GSpin(q)(ℤ_p)`.
+  `p = 2` and every regular quadratic form `q` on `ℤ₂ⁿ` (nondegenerate, or of odd rank with unit
+  half-discriminant), the spinor norm of every element of `SO(q)(ℤ₂)` lies in the image of `ℤ₂^×`
+  in `ℚ₂^×/ℚ₂^{×2}`, proved by lifting to `GSpin(q)(ℤ₂)`.
 
 ### From TauCetiRoadmap.OrthogonalTamagawaAndLatticeMass
 
@@ -314,8 +356,13 @@ sets of classes are counted as natural numbers only after their finiteness is pr
 
 ### From TauCetiRoadmap.IntegralLattices, Rank24LatticeConstructions, ThetaSeries, AlgebraicCodingTheory, SporadicOrders and OrthogonalSpinGroups
 
-- IntegralLattices Layer 1: the lattice carrier, Gram matrices, isometries and their Tau Ceti
-  declarations listed above.
+- Completed/IntegralLattices Layer 1: the lattice carrier, Gram matrices, isometries and their Tau
+  Ceti declarations listed above.
+- IntegralLattices §4G: integral lattices `L`, `M` on the same rational space are `p`-neighbours when
+  `[L : L ∩ M] = [M : L ∩ M] = p`; the relation is symmetric, neighbours have equal determinants and
+  the same genus when `p ∤ 2 det L`, and a neighbour is constructed from an isotropic vector mod `p`.
+  No enumeration and no connectivity of the neighbour graph is supplied; §6.3 uses only the
+  relation.
 - Rank24LatticeConstructions Layer 6: the Leech lattice by Construction B and an odd shift, and its
   absence of roots.
 - ThetaSeries Layer 1 (Poisson summation for a lattice), Layer 5 (genus-one theta series of an
@@ -324,13 +371,24 @@ sets of classes are counted as natural numbers only after their finiteness is pr
 - AlgebraicCodingTheory Layer 5: the extended binary Golay code `G₂₄`.
 - SporadicOrders Layer 1: the permutation model and order `244823040` of `M₂₄`.
 - OrthogonalSpinGroups Layer 1: the spinor norm `θ : SO(Q)(K) → K^×/K^{×2}` of a nondegenerate
-  quadratic space over a field.
+  quadratic space over a field, which at the pin is Tau Ceti's `CliffordAlgebra.orthogonalSpinorNorm`
+  listed above.
+
+### From TauCetiRoadmap.CFSGBasicProperties
+
+- P2-L: Conway's group `Co₀ = O(Leech)`, the isometry group of the Leech lattice of
+  Rank24LatticeConstructions Layer 6, its Conway generators and the proof that they generate it, its
+  order, and the simplicity of `Co₁ = Co₀/{±1}`.
+- What CFSGBasicProperties must provide (gap:conway-group-average-charpoly): the average
+  characteristic polynomial of Conway's group on `Leech ⊗ ℚ`,
+  `(1/|O(Leech)|) Σ_{γ ∈ O(Leech)} det(t − γ) = t²⁴ + t¹⁶ + t¹² + t⁸ + 1`, from the conjugacy classes
+  of `O(Leech)` and the character of its 24-dimensional representation.
 
 ### From TauCetiRoadmap.RepresentationTheory, ReductiveGroups and ModularForms
 
 - LieHighestWeight Layer 6: the Weyl character formula, Weyl dimension formula and Kostant
   multiplicity formula. ClassicalGroups Layers 3–5: highest weights of `SO_n`, `O_n` and `Sp_{2n}`,
-  their characters and dimension formulas. RootSystems: Weyl groups of types `B`, `C`, `D`.
+  their characters and dimension formulas.
 - ReductiveGroups Layer 9: pinned Chevalley–Demazure group schemes over `ℤ`.
 - What ReductiveGroups must provide (gap:split-orthogonal-regular-form): the identification of the
   pinned Chevalley–Demazure groups of types `B_n` and `D_n` over `ℤ` with the special orthogonal
@@ -614,16 +672,22 @@ admissible class `weil_test_function(0, F)` of AnalyticNumberTheoryPartI §1.3. 
 
 ### 2.2 The Odlyzko functions
 
-Let `u(x) = cos(πx)` for `|x| ≤ 1/2` and `0` otherwise, and `g = 2(u ∗ u)`, so that
-`g(x) = (1 − |x|) cos(πx) + sin(π|x|)/π` for `|x| ≤ 1` and `0` otherwise. For `ℓ > 0` define
-`F_ℓ(x) = g(x/ℓ)/cosh(x/2)` and `G_ℓ(x) = g(x/ℓ)` (CL14 IX §3.16, Lemme 3.15 and Proposition 3.17;
-CT20 §2.4.3 and §4.3).
+The kernel `g` is `odlyzkoKernel` of SmallRamificationAndAbelianVarietyBaseCases §1.5: with
+`u(x) = cos(πx)` for `|x| ≤ 1/2` and `0` otherwise, `g = 2(u ∗ u)`, so that
+`g(x) = (1 − |x|) cos(πx) + sin(π|x|)/π` for `|x| ≤ 1` and `0` otherwise; it is even, nonnegative,
+positive definite, of class `C¹`, supported in `[−1, 1]`, with `g(0) = 1` and `∫_0^∞ g = 4/π²`. For
+`ℓ > 0` the test function `F_ℓ(x) = g(x/ℓ)/cosh(x/2)` is `poitouTestFunction ℓ` of that roadmap's
+§1.7, and (POS) for `F_ℓ` is its §1.6 together with the nonnegativity of §1.7: under
+`ξ = i(s − 1/2)/(2π)` the transform `Φ(s) = ∫ F_ℓ(x) e^{(s − 1/2)x} dx` is `F̂_ℓ(ξ)`, and the strip
+`0 ≤ Re s ≤ 1` is `|Im ξ| ≤ 1/(4π)`. Define here `G_ℓ(x) = g(x/ℓ)` (CL14 IX §3.16, Lemme 3.15 and
+Proposition 3.17; CT20 §2.4.3 and §4.3). Prove what the supplier does not state:
 
-- `g` is the stated closed expression, is even, of class `C²`, supported in `[−1, 1]`, with `g(0) = 1`.
-- `F_ℓ` satisfies (POS), and `F̂_ℓ(i/(4π)) = 8ℓ/π²`.
+- `g` is of class `C²`, with `g″(±1) = 0`: on `[0, 1]`, `g″(x) = π sin(πx) − π²(1 − x) cos(πx)`, which
+  vanishes at `1` and equals `−π²` at `0`; so `F_ℓ` and `G_ℓ` lie in the class of §2.1.
+- `F̂_ℓ(i/(4π)) = ∫ g(x/ℓ) dx = 8ℓ/π²`, from the half-line integral `4/π²`.
 - `G_ℓ ≥ 0` and `Ĝ_ℓ ≥ 0` on `ℝ`; `Ĝ_ℓ(0) = 8ℓ/π²` and `Ĝ_ℓ(i/(4π)) = 4π²ℓ(1 + cosh(ℓ/2))/(ℓ²/4 + π²)²`.
 
-*Needs:* §2.1.
+*Needs:* §2.1; SmallRamificationAndAbelianVarietyBaseCases §§1.5–1.7.
 
 **Checks.**
 
@@ -632,6 +696,9 @@ CT20 §2.4.3 and §4.3).
   so both are `C²` across the boundary of the support.
 - For `0 < |x| < ℓ`, `F_ℓ(x) < G_ℓ(x)` because `cosh(x/2) > 1`; exchanging the two families'
   scalar values gives wrong constants, for example `Ĝ_ℓ(i/(4π)) > 8ℓ/π² = F̂_ℓ(i/(4π))`.
+- The point `ξ = i/(4π)` corresponds to `s = 1`, where `Φ(1) = ∫ F_ℓ(x) e^{x/2} dx = ∫ F_ℓ(x) cosh(x/2) dx`
+  by evenness, the value `A_{F_ℓ}` of §2.1; reading the supplier's strip as `|Im ξ| ≤ 1/(2π)` would
+  claim positivity at `ξ = i/(2π)`, that is at `s = 3/2`, which the supplier does not give.
 
 ### 2.3 The archimedean functional
 
@@ -988,9 +1055,10 @@ is the smallest case where the normalized minima differ.
 
 ### Dependencies
 
-AnalyticNumberTheoryPartI §§1.3, 1.8; AutomorphicLFunctionsAndLocalFactors §§AL.1.4, AL.3.6, AL.3.9.2;
-AutomorphicFormsOnReductiveGroups §7.2; ModularForms Layers 3–4; ComputationalNumberTheory §§4.17,
-4.17a, 4.26, 4.29–4.34; Mathlib's Rayleigh quotient and level-one dimension formula; Layer 1.
+AnalyticNumberTheoryPartI §§1.3, 1.8; SmallRamificationAndAbelianVarietyBaseCases §§1.5–1.7;
+AutomorphicLFunctionsAndLocalFactors §§AL.1.4, AL.3.6, AL.3.9.2; AutomorphicFormsOnReductiveGroups
+§7.2; ModularForms Layers 3–4; ComputationalNumberTheory §§4.17, 4.17a, 4.26, 4.29–4.34; Mathlib's
+Rayleigh quotient and level-one dimension formula; Layer 1.
 
 ## Layer 3: Arthur parameters, packet characters and triangular counts
 
@@ -1441,13 +1509,22 @@ and its two classes are exchanged by the outer automorphism and have equal masse
 
 ### 4.6 The Zassenhaus formula
 
-Prove (CT20 Theorem 3.5 and Corollary 3.6): let `q` be a nondegenerate quadratic form on a
-finite-dimensional vector space over a field of characteristic different from `2`, `γ ∈ SO(q)`, and
-`charpoly(γ) = (X − 1)^a (X + 1)^{2b} Q` with `Q(1)Q(−1) ≠ 0`. Then the spinor norm of `γ` is the class of
-`disc(q|ker(γ + 1)^{2b}) · Q(−1)` in `k^×/k^{×2}`. If `a = b = 0`, `disc(q)` is the class of `Q(1)Q(−1)`.
-The spinor norm is that of OrthogonalSpinGroups Layer 1.
+Import the Zassenhaus formula `zassenhaus_primary_formula` of SymplecticReidemeisterTorsionModSquares
+§4.1: for a nondegenerate quadratic form `q` on a finite-dimensional space `V` over a field `k` of
+characteristic different from `2` and `γ ∈ O(q)`, with `V₋ = ker(γ + 1)^{dim V}` and
+`U = im(γ + 1)^{dim V}`, the spinor norm of `γ` is the class of `disc(q|V₋) · det((1 + γ)/2 | U)` in
+`k^×/k^{×2}`. Prove its characteristic-polynomial form (CT20 Theorem 3.5 and Corollary 3.6): let
+`γ ∈ SO(q)` have `charpoly(γ) = (X − 1)^a (X + 1)^{2b} Q` with `Q(1)Q(−1) ≠ 0`. Then `V₋ = ker(γ + 1)^{2b}`,
+`U = ker(γ − 1)^a ⊕ ker Q(γ)`, `(1 + γ)/2` is unipotent on `ker(γ − 1)^a`, and
+`det((1 + γ)/2 | ker Q(γ)) = 2^{−deg Q} (−1)^{deg Q} Q(−1)`; `deg Q` is even because the roots of `Q` come
+in pairs `t, t⁻¹` with `t ≠ ±1`, so the spinor norm of `γ` is the class of `disc(q|ker(γ + 1)^{2b}) · Q(−1)`.
+If `a = b = 0`, `disc(q)` is the class of `Q(1)Q(−1)`: `disc(q)` is the spinor norm of `−1`, the product
+of the spinor norms of `γ` and `−γ`, whose `Q`-polynomials are `Q(X)` and `Q(−X)` as `dim V = deg Q` is
+even. The spinor norm is Tau Ceti's `CliffordAlgebra.orthogonalSpinorNorm`, in which the supplier states
+its formula; on the even-dimensional `V₋` the discriminants of the polar form and of the associated form
+`B(x, x) = q(x)` differ by the square `2^{dim V₋}`, so the class `disc(q|V₋)` is the same for both.
 
-*Needs:* OrthogonalSpinGroups Layer 1.
+*Needs:* SymplecticReidemeisterTorsionModSquares §4.1; Tau Ceti `CliffordAlgebra.orthogonalSpinorNorm`.
 
 **Checks.**
 
@@ -1457,6 +1534,10 @@ The spinor norm is that of OrthogonalSpinGroups Layer 1.
   as it must be over `ℝ` for an element of the connected group.
 - For `a = b = 0` the corollary gives `disc(q) = Q(1)Q(−1)`; for `q = x² + y²` and a rotation of order
   four, `Q = Φ₄`, `Q(1)Q(−1) = 4`, a square, and `disc = 1`.
+- The translation on the same rotation of order four: `V₋ = 0`, `U = V`, `(1 + γ)/2` has determinant
+  `(1 + 1)/4 = 1/2`, whose class is that of `2 = Φ₄(−1) = Q(−1)`; the factor `2^{−deg Q} = 1/4` is a
+  square and `(−1)^{deg Q} = 1`. Forgetting the `(−1)^{deg Q}` would be harmless here but wrong if
+  `deg Q` could be odd, which it cannot.
 
 ### 4.7 The spinor obstruction
 
@@ -1474,8 +1555,9 @@ unit class; §4.6 then gives even valuations.
   `GL_n(R)`.
 - `spinor_charpoly_obstruction` uses all primes, `p = 2` included.
 
-*Needs:* §4.6; GeometryOfNumbersAndQuadraticArithmetic §2.4 with the unit property requested there;
-Mathlib `Matrix.toQuadraticForm'`, `Matrix.charpoly`, `PadicInt`.
+*Needs:* §4.6; GeometryOfNumbersAndQuadraticArithmetic §2.4.2 for `p` odd and the unit property
+requested there (gap:integral-spinor-norm-units) for `p = 2`; Mathlib `Matrix.toQuadraticForm'`,
+`Matrix.charpoly`, `PadicInt`.
 
 **Checks.**
 
@@ -1695,7 +1777,8 @@ For `SO₃` the recovered masses give
 
 ### Dependencies
 
-AutomorphicSpectralTheory §§6.9, 6.17, 6.19–6.20; OrthogonalSpinGroups Layer 1;
+AutomorphicSpectralTheory §§6.9, 6.17, 6.19–6.20; SymplecticReidemeisterTorsionModSquares §4.1;
+OrthogonalSpinGroups Layer 1 and Tau Ceti's `CliffordAlgebra.orthogonalSpinorNorm`;
 GeometryOfNumbersAndQuadraticArithmetic §2.4; LieHighestWeight Layer 6; ClassicalGroups Layers 4–5;
 Mathlib's level-one dimension formula, characteristic polynomials and `p`-adic integers; Layers 1–3.
 
@@ -1777,8 +1860,10 @@ explicit set of 187 parameters, §2.17 with `δ = m = 1` excludes a further self
 `I₁ + I₉ + I₁₇ + I₂₁ + I₂₃`, `I₅ + I₁₃ + I₁₇ + I₂₁ + I₂₃`, `I₅ + I₁₃ + I₁₉ + I₂₃`; by §§3.16 and 4.13 (the dual groups
 are `SO₉` and `SO₁₁`), `N⊥` is `1` at the first
 (the known `PGL₁₀` class) and `0` at the other five. The remaining set `V` has 181 elements, each with
-`I₂₃` of multiplicity at least two, of dimension between 10 and 38, and containing `I_w` with multiplicity
-one for some `w ∈ {1, 3, 5}`.
+`I₂₃` of multiplicity at least two, of dimension between 14 and 42, and containing `I_w` with multiplicity
+one for some `w ∈ {1, 3, 5}`. The parameter `U_exc` is not among the 187 and hence not in `V`: the
+`δ = m = 1` exclusion succeeds at `U_exc`, so no self-dual class outside the known ones has
+archimedean parameter `U_exc`.
 
 *Needs:* §§3.16, 4.13, 5.1, 5.2.
 
@@ -1787,25 +1872,31 @@ one for some `w ∈ {1, 3, 5}`.
 - The 187 residual parameters belong to the one-class list `U₁`, not to `U₂`.
 - The first multiplicity-free residual is the parameter of the known class `Δ₂₃,₂₁,₁₇,₁₁,₃`: the
   exclusions are of classes outside the known set, not of every class.
-- `U_exc ∈ V`: it has `I₂₃` twice, dimension `14` and the simple summand `I₁`.
+- `U_exc ∉ V`, although it has `I₂₃` twice, dimension `14` and the simple summand `I₁`: membership in
+  `V` is failure of the `δ = m = 1` exclusion, not the shape of the parameter. Its dimension `14` is the
+  minimum attained on `V`.
 
 ### 5.5 The exceptional two-class parameter
 
 Prove (CT20 Proposition 4.1(1)): among weight-23 parameters with `I₂₃` repeated, a fibre with at least
 two classes can occur only at `U_exc`, and then it is `{π, π^∨}` with `π` non-self-dual. At `U_exc`,
-`J_{F_ℓ}(U_exc²) > A_{F_ℓ}/3` for `ℓ = 487/50` gives at most two classes (§2.8); a further triple of §2.16 for
-`(U_exc, δ = 1, m = 2)` at `ℓ = 31/4` with known classes `1, Δ₂₁, Sym²Δ₁₁, Δ₂₃,₇` rules out two self-dual
-classes; by §1.7 a fibre of size two is then a dual pair.
+`J_{F_ℓ}(U_exc²) > A_{F_ℓ}/3` for `ℓ = 487/50` gives at most two classes (§2.8). Since `U_exc ∉ V` (§5.4),
+the `δ = m = 1` exclusion of §2.17 holds at `U_exc`: no self-dual class outside the 27 known ones has
+parameter `U_exc`, and no known class has it either, the known classes of motivic weight 23 having
+`I₂₃` with multiplicity one. A singleton fibre would be self-dual by §1.7, so the fibre is empty or
+consists of two non-self-dual classes, which by §1.7 are each other's duals.
 
 *Needs:* §§1.7, 2.8, 2.16, 2.17, 5.4.
 
 **Checks.**
 
-- `U_exc` stays in `V`: the `δ = m = 1` exclusions do not remove it.
+- `U_exc ∉ V`: the `δ = m = 1` exclusion succeeds at `U_exc`, and that is what rules out a self-dual
+  singleton there; had `U_exc` been in `V`, a singleton `{π}` with `π` self-dual would be allowed.
 - A mixed fibre (one self-dual, one not) is impossible because duality acts on the fibre and a
   non-self-dual class brings its dual.
-- Without the `(δ = 1, m = 2)` triple the argument leaves the possibility of two self-dual classes at
-  `U_exc` open.
+- The bound `A_{F_ℓ}/3` alone gives `|T| ≤ 2` and nothing about self-duality: the `δ = 0`, `m = 2`
+  exclusion fails at `U_exc` (it is the one element of `U₂` where it does), so the non-self-duality
+  comes from the `δ = m = 1` exclusion, not from a two-class triple.
 
 ### 5.6 The thirteen top-simple classes of motivic weight 23
 
@@ -1829,15 +1920,17 @@ classes with weights `±23/2, ±v/2`, `v ∈ {7, 9, 13}`; seven `PGL₆` classes
 
 Prove (CT20 Proposition 4.1): let `U ∈ K∞^{≤23}` be effective with `I₂₃` of multiplicity at least two and
 `T = {π ∈ Π_alg : L(π∞) = U}`. If `|T| ≥ 2`, then `U = U_exc` and `T` is a dual pair of non-self-dual
-classes. If `T = {π}`, then `U ∈ V` and `π` is symplectic. In particular there are at most 182 such
-classes; no existence is asserted. The simple odd summand `I_w`, `w ≤ 5`, forces the symplectic type of a
-self-dual `π`.
+classes. If `T = {π}`, then `U ∈ V` and `π` is symplectic. In particular there are at most 183 such
+classes, one at each of the 181 elements of `V` and two at `U_exc`; no existence is asserted. The simple
+odd summand `I_w`, `w ≤ 5`, forces the symplectic type of a self-dual `π`.
 
 *Needs:* §§1.8, 5.4, 5.5.
 
 **Checks.**
 
-- `|V| = 181` and `U_exc ∈ V`; the bound `182` counts the possible dual pair at `U_exc` as two.
+- `|V| = 181` and `U_exc ∉ V`: the `182` parameters of `V ∪ {U_exc}` carry at most `181 + 2 = 183`
+  classes, the possible dual pair at `U_exc` counting as two. Counting `U_exc` inside `V` would give
+  `182` and would contradict `|T| = 1 ⇒ U ∈ V` together with the absence of a self-dual class at `U_exc`.
 - A singleton fibre is self-dual by §1.7.
 - The statement is a list of necessary alternatives; it does not produce any class.
 
@@ -1847,7 +1940,7 @@ Prove (CT20 Theorem 4 and §4.3): assume the generalized Riemann hypothesis of t
 `π ∈ Π_alg` has motivic weight 23 and the weight `23/2` with multiplicity greater than one, then
 `L(π∞) = I₁ + I₇ + I₁₁ + I₁₅ + I₁₉ + I₂₁ + 2I₂₃`, `π` has rank 16, and it is the only element of `Π_alg` with
 these weights. Use `G_ℓ` in place of `F_ℓ`: first exclude the dual pair at `U_exc` with `δ = 0`, `m = 2`,
-then every other element of `V` with `δ = m = 1`.
+then every element of `V` with `δ = m = 1`.
 
 *Needs:* §§2.2, 2.4, 2.17, 5.1, 5.7.
 
@@ -1963,8 +2056,9 @@ lattices of rank `n`, realized as `TauCeti.IntegralLattice` objects, and `ℂ[X_
 unweighted basis `[L]`. Identify the dual of `ℂ[X_n]` with level-one algebraic modular forms of the
 orthogonal group of an even unimodular lattice of rank `n` with trivial coefficients, through
 AutomorphicFormsOnReductiveGroups §§7.4–7.5, and define the Kneser `p`-neighbour operator
-`T_p[L] = Σ [L′]` over the even unimodular `L′` with `L ∩ L′` of index `p` in both, identified with the Hecke
-operator of the characteristic function of the corresponding double coset (CL14 III and V §1). Import
+`T_p[L] = Σ [L′]` over the even unimodular `L′` that are `p`-neighbours of `L` in the sense of
+IntegralLattices §4G (`[L : L ∩ L′] = [L′ : L ∩ L′] = p`), identified with the Hecke operator of the
+characteristic function of the corresponding double coset (CL14 III and V §1). Import
 `|X₈| = 1`, `|X₁₆| = 2` and `|X₂₄| = 24` from OrthogonalTamagawaAndLatticeMass §§4.1–4.2.
 
 - `ℂ[X_n]` is dual to the level-one algebraic modular forms with trivial coefficients, and the basis is
@@ -1973,7 +2067,7 @@ operator of the characteristic function of the corresponding double coset (CL14 
 - `|X₈| = 1`, `|X₁₆| = 2`, `|X₂₄| = 24`.
 
 *Needs:* AutomorphicFormsOnReductiveGroups §§7.4–7.5; OrthogonalTamagawaAndLatticeMass §§3.1, 4.1–4.2;
-IntegralLattices Layer 1.
+Completed/IntegralLattices Layer 1; IntegralLattices §4G.
 
 **Checks.**
 
@@ -2189,8 +2283,8 @@ MetaplecticAutomorphicForms; the five cases are the ones used in §8.8.
 
 AutomorphicBundles §§11.1–11.2, 11.9, 11.16, 12.10–12.11, 12.15; AutomorphicSpectralTheory §4.10;
 AutomorphicFormsOnReductiveGroups §§7.2a, 7.4–7.5; MetaplecticAutomorphicForms §§3.1, 3.10, 3.21, 5.1, 6.14;
-OrthogonalTamagawaAndLatticeMass §§3.1, 4.1–4.2; ThetaSeries Layers 1, 5, 8; AutomorphicLFunctionsAndLocalFactors
-§AL.3.7; Layers 3 and 5.
+OrthogonalTamagawaAndLatticeMass §§3.1, 4.1–4.2; ThetaSeries Layers 1, 5, 8; Completed/IntegralLattices
+Layer 1; IntegralLattices §4G; AutomorphicLFunctionsAndLocalFactors §AL.3.7; Layers 3 and 5.
 
 ## Layer 7: Siegel cusp dimensions and the four weight-thirteen forms
 
@@ -2464,7 +2558,9 @@ Layers 3–6 (§§3.3–3.16, 4.13–4.17, 5.3–5.10, 6.1–6.2, 6.8, 6.10); Au
 The cusp classification gives theta spanning in weights 4, 8 and 12 by induction along the Siegel
 operator. In weight 13, Böcherer's criterion and a direct computation of Fourier coefficients on the
 Leech lattice realize the four forms of §7.10 as harmonic theta series; the invariant alternating forms
-of Niemeier lattices make the harmonic theta map an isomorphism. In the stable range `g ≥ 2k` the
+of Niemeier lattices make the harmonic theta map an isomorphism; the Leech statements of §§8.5–8.6 rest on
+the Mathieu combinatorics of §8.4 and on the Conway-group input imported from CFSGBasicProperties, not
+on Layer 7, and are unconditional. In the stable range `g ≥ 2k` the
 parameters and signs are independent of `g`, which gives the stable dimensions, bijectivity of `Φ` at
 the boundary `g = 2k`, and the theta isomorphism there.
 
@@ -2559,12 +2655,18 @@ Prove:
   containing a root.
 - `finrank_invariantAlternatingForms_of_rootless` (CT19a formula (1) and Proposition 1.4): for a positive
   definite even unimodular lattice of rank 24 without roots, the dimension of
-  `invariantAlternatingForms L g` is `1` for `g ∈ {0, 8, 12, 16, 24}` and `0` otherwise. One route bounds the
-  dimension above by the `N`-invariants of §8.4 and below by `ω_g`, whose `O(Leech)`-invariance follows from
-  the average `(1/|O(Leech)|) Σ det(t − γ) = t²⁴ + t¹⁶ + t¹² + t⁸ + 1` over Conway's group; another obtains
-  the lower bound from §8.8, which produces a nonzero invariant form in each of the four genera. The
-  uniqueness of the rootless class (OrthogonalTamagawaAndLatticeMass §4.2) transports the result from
-  Conway's model to every such `L`.
+  `invariantAlternatingForms L g` is `1` for `g ∈ {0, 8, 12, 16, 24}` and `0` otherwise. The dimension is
+  the multiplicity of the trivial representation of `O(Leech)` in `⋀^g(Leech ⊗ ℚ)`, which is `(−1)^g`
+  times the coefficient of `t^{24−g}` in the average characteristic polynomial
+  `(1/|O(Leech)|) Σ_{γ ∈ O(Leech)} det(t − γ)`; that average is `t²⁴ + t¹⁶ + t¹² + t⁸ + 1` (CT19a formula
+  (1)), imported from CFSGBasicProperties P2-L (gap:conway-group-average-charpoly). The `N`-invariants
+  of §8.4 bound the dimension above by `1` for `g ∈ {0, 8, 12, 16, 24}` and by `0` otherwise, so the
+  `O(Leech)`-invariants are `ℚω_g` in those degrees: `ω_g` is `O(Leech)`-invariant, and for `g = 24`
+  every element of `O(Leech)` has determinant `1`, which also follows from the simplicity of
+  `Co₁ = O(Leech)/{±1}` (CFSGBasicProperties P2-L), as the determinant factors through it. Under the
+  premises of Layer 7, §8.8's first route gives a second proof of the lower bound in genera `8, 12, 16`
+  and `24`. The uniqueness of the rootless class (OrthogonalTamagawaAndLatticeMass §4.2) transports the
+  result from Conway's model to every such `L`.
 - Consequently (CT19a Proposition 4.2) the harmonic source `M_{H_{1,g,24}}(O₂₄)` of §6.7 has dimension `1` for
   `g ∈ {8, 12, 16, 24}` and `0` for every other `g ≥ 1`, and the forms supported on rooted classes vanish.
 
@@ -2574,9 +2676,9 @@ The definition is a submodule: invariance is preserved by sums and scalar multip
 - The invariant forms for `L` and for an isometric lattice correspond under the isometry.
 - Every element of `O(Leech)` has determinant `1`, the case `g = 24`.
 
-*Needs:* §§6.6–6.7, 8.4; OrthogonalTamagawaAndLatticeMass §4.2; Rank24LatticeConstructions Layer 6;
-`TauCeti.IntegralLattice`, `TauCeti.IntegralLattice.Isometry`, `TauCeti.IntegralLattice.vectorsOfNorm`;
-Mathlib `AlternatingMap`.
+*Needs:* §§6.6–6.7, 8.4; CFSGBasicProperties P2-L (gap:conway-group-average-charpoly);
+OrthogonalTamagawaAndLatticeMass §4.2; Rank24LatticeConstructions Layer 6; `TauCeti.IntegralLattice`,
+`TauCeti.IntegralLattice.Isometry`, `TauCeti.IntegralLattice.vectorsOfNorm`; Mathlib `AlternatingMap`.
 
 **Checks.**
 
@@ -2587,6 +2689,9 @@ Mathlib `AlternatingMap`.
   `1`: the reflection `x ↦ −x` negates every linear form.
 - `t²⁴ + t¹⁶ + t¹² + t⁸ + 1` has five nonzero coefficients, all equal to `1`, at `g = 0, 8, 12, 16, 24`; the
   statement for `g > 24` is `0` since `⋀^g` of a 24-dimensional space vanishes.
+- The sign in the reading of the average: for the trivial group acting on `ℚ²⁴` the average is
+  `(t − 1)²⁴`, whose `t²³` coefficient is `−24 = (−1)¹ dim ⋀¹`; for `{±1}` it is `((t − 1)²⁴ + (t + 1)²⁴)/2`,
+  with the odd-degree coefficients `0`, as the invariants of `⋀^g` under `−1` vanish for odd `g`.
 
 ### 8.6 The Leech theta coefficients
 
@@ -2649,7 +2754,8 @@ that the image of `θ_{1,g,24}` is nonzero, hence equal to `ℂF_g` by §7.10.
 
 - `n/2 + ν = 13` in both families: `24/2 + 1 = 16/2 + 5`.
 - The rank-16 statement is for `g = 8` and `ν = 5` only.
-- The two routes are independent: the first uses `L`-function orders, the second a lattice count.
+- The two routes are independent: the first uses `L`-function orders under the premises of Layer 7, the
+  second the lattice count of §8.6, which rests on the Conway-group input of §8.5 and not on Layer 7.
 
 ### 8.9 The rank-sixteen harmonic source
 
@@ -2754,9 +2860,9 @@ form `F₈` is realized both on the Leech lattice (`ν = 1`) and on the rank-16 
 
 ### Dependencies
 
-Layers 6–7 (§§6.1–6.12, 7.9–7.10); OrthogonalTamagawaAndLatticeMass §§4.1–4.2; Rank24LatticeConstructions
-Layer 6; AlgebraicCodingTheory Layer 5; SporadicOrders Layer 1; AutomorphicLFunctionsAndLocalFactors §AL.1.4;
-Tau Ceti's lattice carrier and Golay code.
+Layers 6–7 (§§6.1–6.12, 7.9–7.10); CFSGBasicProperties P2-L; OrthogonalTamagawaAndLatticeMass §§4.1–4.2;
+Rank24LatticeConstructions Layer 6; AlgebraicCodingTheory Layer 5; SporadicOrders Layer 1;
+AutomorphicLFunctionsAndLocalFactors §AL.1.4; Tau Ceti's lattice carrier and Golay code.
 
 ## Downstream consumers
 
