@@ -1,5 +1,7 @@
-import Mathlib
-import TauCeti.RepresentationTheory.ClassicalGroups.SymmetricPower
+module
+
+public import Mathlib
+public import TauCeti.RepresentationTheory.ClassicalGroups.SymmetricPower
 
 /-!
 # Arithmetic locally symmetric spaces, part II: target signatures
@@ -33,6 +35,8 @@ Headline theorems of the README that are not statable at the pins:
   The Borel–Serre quotient, its compactly supported cohomology, the interior image and the
   cuspidal subspace do not exist at the pins.
 -/
+
+@[expose] public section
 
 namespace TauCetiRoadmap.ArithmeticLocallySymmetricSpacesPartII
 
