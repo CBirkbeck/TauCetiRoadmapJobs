@@ -1,0 +1,51 @@
+# Review of SmallRamificationAndAbelianVarietyBaseCasesPartII (pull request #1835 at acfed58)
+
+**Verdict:** accepted
+
+Incremental re-review of the 49 lines changed since 2e903b7 (README only; `Suggested.lean` is byte-identical to the head the previous review read). Unqualified README locations mean `TauCetiRoadmap/SmallRamificationAndAbelianVarietyBaseCasesPartII/README.md`. The change consists of (a) the `gap:<slug>` label on each of the eight supplier contracts and on every Needs and Dependencies line that consumes one, (b) the restated refined approximate-embedding contract at line 73 with its route paragraph and the sentence after it, (c) the hypothesis check added to the §1.7 route at line 314, and (d) one new Check in §1.7 at line 323. No finding remains.
+
+## Previous findings
+
+- R01 — repaired: line 73 now reads "every real c≥1 with (p−1)c∈ℤ, Pₘ(L/K) for all real m>c implies … u(L/K)≤c", with the route (§R07.6.3(ii), the unramified and tame cases, and the integrality step of §R07.6.4(c)) stated in the contract; §1.7 line 314 checks c=1+r/(p−1) against both hypotheses. The board's `design/plan.json` still carries the design-stage `needs` sentence ("every real c>0"); see Declared gaps under Verified sound.
+- R02 — repaired: lines 59, 65, 67, 69, 71, 73, 85, 97 each read "What <Supplier> must provide (gap:<slug>), the … contract: …", and the consuming lines 163, 171, 259, 269, 287, 314, 325, 351, 380, 426, 444, 464, 482, 526 carry the slug after the prose name. The eight README slugs equal the eight `plan.json` slugs, supplier for supplier.
+
+## Verified sound
+
+**Gate and build.** The worker's gate at acfed58 passes every check (build=0, depcheck=0, outside-folder=0, stray-files=0). `git diff --stat origin/main...HEAD` outside the folder is empty. A scratch copy of `Suggested.lean` with four `#check @` lines appended elaborated with `lake env lean` in 13 s: two `declaration uses 'sorry'` warnings (lines 64, 78), nothing else. Dependency check: `depcheck: 239 roadmaps, 2344 edges, 0 problem(s)`, no UPWARD, CYCLE or `moved:` line.
+
+**Signatures (unchanged file, re-elaborated).** `hasWittGoodReductionAt : {X : Scheme} → (X ⟶ Spec ℚ) → (p : ℕ) → [Fact p.Prime] → Prop`; `hasEverywhereWittGoodReduction : {X : Scheme} → (X ⟶ Spec ℚ) → Prop`; `lowDegreeHodgeVanishing` keeps `[Smooth f] [IsProper f]`, the everywhere-good-reduction hypothesis, `i ≠ j`, `i + j ≤ 3`, and concludes `Subsingleton` of TauCeti `Scheme.Modules.Cohomology` of the `i`-th sheaf exterior power of `relativeDifferentials ℚ X` in degree `j`; `geometricK3_hasBadWittPrime` keeps `[Smooth f] [IsProper f]` and the five conditions on the pullback to `AlgebraicClosure ℚ` (relative dimension 2, proper, geometrically integral, trivial second exterior power of the differentials, `Subsingleton` of `H¹` of the unit) and concludes `∃ p, ∃ hp : p.Prime, ¬ hasWittGoodReductionAt f p`. No section `variable` block exists; every binder is explicit. These are the signatures the previous report recorded; generality equals README §§0.1, 3.2, 4.2.
+
+**The restated contract (line 73), checked against the supplier at its open head** (FiniteFlatGroupsAndIntegralPadicHodgeTheory README via `roadmaps show`, lines 8342–8476). §R07.6.2 (line 8342) defines Fontaine's `u_{L/K} = φ_{L/K}(i_{L/K})` with `G^(u) = G^{u−1}`, `v_K(𝒟) = u − i`, and its Checks give `u = 0` unramified, `u = 1` tame totally ramified, `u_{ℚ_p(ζ_{p^n})/ℚ_p} = n`. §R07.6.3 (line 8389) states exactly (i) `m > u ⇒ (P_m)` and (ii) `(P_m) ⇒ m > u − 1/e_{L/K}`; its Check gives `e = 6, i_{L/K} = 1/2, u = 2` for ℚ₃(ζ₉)/ℚ₃. §R07.6.4(c) (lines 8423–8458) contains the integrality argument at `c = v_K(a) + e/(p−1)`: unramified ⇒ `u = 0`; `p ∤ n` ⇒ tame, `u = 1 ≤ v_K(a)`; `p | n` ⇒ `n(p−1)u` and `n(p−1)c` are multiples of `p` within `p−1`. Line 6561 of the same README records the Serre break 2 of ℚ₂(√2)/ℚ₂. The README's contract is the same argument with `v_K(a) + e/(p−1)` replaced by an arbitrary `c ≥ 1` with `(p−1)c ∈ ℤ`, which is all the argument uses; it cites §R07.6.3(ii) and §R07.6.4(c) by number and nothing else. Fontaine93 line 400 (§3.8) sits after the page marker at line 374 (PDF page 12 = printed page 11), so "printed p. 11" at line 75 is right; the "alternative proof on p. 12" at line 314 is the Remarque at lines 410–414 (printed 12). Lines 402–405 derive `u − 1/e ≤ 1 + r/(p−1)` from [Fo1] Prop. 1.5 and the sharp bound from "l'argument de la fin du n° 1.8", as line 75 now says.
+
+**Declared gaps.** Eight slugs in the README, the same eight in `design/plan.json`, each with the same supplier. Seven `needs` sentences are identical in both; for `pm-remove-inverse-e` the README sentence is the repaired one and the plan keeps the design-stage sentence "every real c>0 … including the refinement removing the 1/e loss in §R07.6.3". The roadmap folder under review does not carry `plan.json`, and the package rules fix the plan's entries after the design, so this is not a defect of the folder and no edit to it is requested; it is recorded here for the human who approves: the sentence the board announces to FiniteFlatGroupsAndIntegralPadicHodgeTheory should be the README line 73 form (c ≥ 1, (p−1)c ∈ ℤ), which is what §1.7 and §2.5 use and what §R07.6.3(ii) plus §R07.6.4(c) prove; the design-stage sentence asks for a threshold statement no cited source proves. The other seven gaps were checked precise and minimal in the previous report and are unchanged.
+
+**Consumers of the restated contract.** Every application in the README satisfies the new hypotheses: §1.7 (line 314) with `c = 1 + r/(p−1)`, `0 < r < p−1`, has `c > 1` and `(p−1)c = p−1+r ∈ ℤ`; §2.5 (line 464) applies §1.7 "with interval [0,a]" at `p = 7`, `a ∈ {1,2,3}`, so `c = 1 + a/6` with `6c = 6+a ∈ ℤ`; §1.8 and §2.4 use §1.7 at `p = 7, r = 3`, `c = 3/2`, `6c = 9`. No consumer applies the contract at a `c` outside its hypotheses.
+
+**Adversarial table.** Rows for the changed statements carry computed values; rows for untouched statements are carried from the previous report (PRREVIEW~1), which computed them at 2e903b7 on text this head leaves unchanged.
+
+| Statement | Instances | Values | Result |
+| --- | --- | --- | --- |
+| Contract line 73: `e·u = Σ_{j<i_G}|G_j|` | ℚ₂(√2)/ℚ₂ | `i_G(σ) = v_L(σ√2 − √2) = v_L(2√2) = 3`; `G₀ = G₁ = G₂` of order 2, `G₃ = 1`; Serre upper break `φ(2) = 2`, `u = 3`; `2·3 = 2+2+2` | sound, agrees with Check line 323 and supplier line 6561 |
+| Contract line 73 | ℚ₃(ζ₉)/ℚ₃ | `e = 6`; `G₀` order 6, `G₁ = G₂` order 3, `G₃ = 1`; upper breaks 0, 1; `u = 2`; `6·2 = 6+3+3 = 12`; `i_{L/K} = 3/6 = 1/2` | sound, agrees with Check line 323 and supplier §R07.6.3 Check |
+| Contract line 73, integrality | `p | e`, `(p−1)c ∈ ℤ` | `e(p−1)u = (p−1)Σ|G_j| ∈ pℤ` since `p | e = |G₀|` and each `G_j`, `1 ≤ j < i_G`, is a nontrivial p-group; `e(p−1)c = e·((p−1)c) ∈ pℤ`; (ii) gives `e(p−1)u ≤ e(p−1)c + (p−1)`; two multiples of `p` within `p−1` ⇒ `u ≤ c` | sound |
+| Contract line 73, non-wild cases | unramified; tame | `i_G = 0`, `u = 0 ≤ c`; `G₁ = 1`, upper break 0, `u = 1 ≤ c` needs `c ≥ 1` (hypothesis present); `p ∤ e` with `G₁ ≠ 1` impossible | sound |
+| Contract line 73, negative control | `p = 2`, `c = 2.9`, `e = 4` | (ii): `u ≤ 3.15`; `4u ∈ 2ℤ` ⇒ `u ∈ ½ℤ` ⇒ `u ≤ 3`; `4·2.9 = 11.6 ∉ ℤ` | hypothesis `(p−1)c ∈ ℤ` is needed; matches Check line 323 |
+| §1.7 route, line 314 | `c = 1 + r/(p−1)` | `(p−1)c = p−1+r`; `p = 3, r = 1`: `c = 3/2`, `2c = 3`; `p = 7, r = 3`: `c = 3/2`, `6c = 9`; `c > 1` since `r > 0` | sound |
+| §1.7 Checks lines 320–322 | `p = 7, r = 3`; `p = 3, r = 1` tame quadratic; unramified | bound `3/2`, Serre `1/2`; `u = 1`, `ι = 1/2`, `v(𝒟) = 1/2 < 3/2`; `0 < 1 + r/(p−1)`; at `p = 2` no `0 < r < 1` | carried from PRREVIEW~1, text unchanged |
+| §2.5 via §1.7 with [0,a] | `a = 1, 2, 3` | `c = 7/6, 4/3, 3/2`; `6c = 7, 8, 9` | sound under the new hypotheses |
+| §§0.1, 0.2, 1.1–1.6, 1.8, 2.1–2.8, 3.1–3.2, 4.1–4.3, Conventions | as in PRREVIEW~1 | the 36 rows of PRREVIEW~1 (ℙⁿ, ∅, Spec ℚ, y²=x³−x at 2 and 3, `φ₁[π] = [π]` at `π² = −3`, `(1+π)²` lift control, `3⁴ ≡ 4 mod 7`, `7^{35/36} = 6.6317`, `7^{53/42} = 11.6529`, `7^{5/6} = 5.0611`, `ord₄₉(3) = 42`, `2^{−1/2} ∉ {1, 1/2, 1/4, 1/8}`, …) | carried: the diff touches none of these statements, only their Needs lines |
+
+**Sources, seeded sample.** The seeded targets 0.1, 0.2, 1.3, 1.4, 1.5, 1.6, 2.2, 2.3, 2.4, 2.5, 2.7, 2.8, 4.1, 4.2 are untouched by the diff except for slug insertions in Needs lines; their locators were verified in PRREVIEW~1 (Fontaine93 lines 93–103, 141–146, 175–177, 183–239, 274–283, 285–373; Schroeer23 lines 658, 683–697; LMFDB32a3 lines 91–95, 262, 277, 510–517) and the README text at those locators is unchanged. 1.7 was re-verified at this head: Theorem 2 at Fontaine93 lines 23–30 (printed p. 3), §3.8 at lines 400–407 (printed p. 11), the Remarque at lines 410–414 (printed p. 12).
+
+**Shape and policy on the changed lines.** The `(gap:<slug>), the … contract:` form is the one the gate's text scanners accept (gate OK) and matches the house form on main; no process words, pull-request numbers, LaTeX or absolute paths were added; the new Check is prose with computed values and names no Lean counterpart; every target keeps its locator.
+
+**Headlines and padding.** Unchanged since PRREVIEW~1: two statable headlines stated, three groups named in the module docstring as not statable (Fontaine–Laffaille category, torsion crystalline essential image, geometric étale cohomology with Galois action absent at the Tau Ceti pin), eight one-tactic probes all failing, no padding.
+
+## Not verifiable
+
+- Fontaine 1985, Propositions 1.3, 1.5 and the end of §1.8, which Fontaine93 §3.8 invokes: not in the manifest; read through the supplier's restatement at §§R07.6.2–R07.6.4 and Fontaine93 lines 400–407.
+- Ownership against open pull requests without files in the brief: not re-run; the diff adds no construction.
+
+## Source issues
+
+- **Gap** in Fontaine93 at §3.4, printed p. 9 (line 322): the source chooses lifts of the Frobenius-matrix entries in O_E with no congruence condition; the map from exact solutions to Hom_MF(M, A_E) is well defined only for lifts congruent to the Teichmüller lift modulo b_E; it should say lifts along O_E→A_E; affects the proof (Lemma 2); README §1.2 imposes the condition.
