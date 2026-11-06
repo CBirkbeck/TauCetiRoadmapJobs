@@ -156,3 +156,18 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text; section numbering as in Cohomologie galoisienne, whose pages I-24, I-25 and II-5 Kuhlmann–Pank–Roquette cite for these results (kpr86 lines 228–234)"
 cited_for = ["3.1", "3.2"]
+
+[[source]]
+id = "rg71"
+authors = "Michel Raynaud, Laurent Gruson"
+title = "Critères de platitude et de projectivité. Techniques de « platification » d'un module"
+year = 1971
+venue = "Inventiones Mathematicae 13 (1971), 1–89"
+doi = "10.1007/BF01390094"
+locator_scheme = "theorem"
+locator = "Corollaire 3.4.7"
+url = "https://doi.org/10.1007/BF01390094"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["1.5"]

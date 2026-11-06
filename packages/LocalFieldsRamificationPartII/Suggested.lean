@@ -1,6 +1,8 @@
-import Mathlib
-import TauCeti.RepresentationTheory.Homological.ContCohomology.CohomologicalDimension.Basic
-import TauCeti.Topology.Algebra.Group.Profinite.ProP.Basic
+module
+
+public import Mathlib
+public import TauCeti.RepresentationTheory.Homological.ContCohomology.CohomologicalDimension.Basic
+public import TauCeti.Topology.Algebra.Group.Profinite.ProP.Basic
 
 /-!
 # Local fields and ramification, Part II: target signatures
@@ -39,6 +41,8 @@ Headline theorems not statable at the pins:
 * the composition criteria for unramified and tame extensions: they need the unramified and tame
   extension classes of a non-henselian field, defined through the henselization.
 -/
+
+@[expose] public section
 
 namespace TauCetiRoadmap.LocalFieldsRamificationPartII
 

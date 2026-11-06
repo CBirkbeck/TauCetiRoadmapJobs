@@ -66,7 +66,13 @@ criteria (Layer 5); and the general tameness theorem with its separable export (
   `TauCeti.IsProPSylow.map_of_surjective` and `TauCeti.IsProPSylow.cohomologicalDimensionAt_eq`.
   The invariant `cd_p` itself, its reduction to finite coefficients and its monotonicity on closed
   subgroups are Continuous cohomology of profinite groups, Layer 11, implemented as Tau Ceti's
-  `TauCeti.cohomologicalDimensionAt`.
+  `TauCeti.cohomologicalDimensionAt`. The finite embedding problems with `p`-group kernel, their
+  finite-level solutions and the inverse-limit lifting (Profinite and pro-`p` groups, Layer 5) and
+  the passage from `cd_p ≤ 1` to their solvability (Layer 6 of the same roadmap) are at the pinned
+  Tau Ceti as well: `TauCeti.HasPGroupSolutions`,
+  `TauCeti.exists_continuous_lift_of_compatible_levelSolutions` and
+  `TauCeti.CohomologicalDimensionLE.hasElementaryAbelianSolutions`; §3.2 proves only the
+  compatibility of the level solutions for a pro-`p` kernel.
 - Descent of finite presentation and of étaleness from the source of a faithfully flat morphism
   (EGA IV, 17.7.5(iv) and 17.7.7) belongs to Scheme and stack foundations, Layer 1; §2.1 uses it
   through the supplier contract below.
@@ -169,7 +175,27 @@ criteria (Layer 5); and the general tameness theorem with its separable export (
 - `TauCeti.cohomologicalDimensionAt` and `TauCeti.CohomologicalDimensionLE`,
   `TauCeti/RepresentationTheory/Homological/ContCohomology/CohomologicalDimension/Basic.lean`: the
   `ℕ∞`-valued `cd_p`, defined by vanishing of continuous cohomology of discrete `p`-primary torsion
-  modules in all degrees above the bound.
+  modules in all degrees above the bound; `TauCeti.cohomologicalDimensionAt_le_iff` (same file):
+  `cd_p G ≤ n` is the vanishing predicate `TauCeti.CohomologicalDimensionLE p G n`.
+- The finite embedding problems of a profinite group,
+  `TauCeti/Topology/Algebra/Group/Profinite/EmbeddingProblem/`: `TauCeti.HasPGroupSolutions`
+  (`PGroupKernel.lean`: every finite embedding problem for `G` with `p`-group kernel has a solution)
+  with `TauCeti.HasElementaryAbelianSolutions.hasPGroupSolutions` (same file: the elementary abelian
+  case suffices, by the lower `p`-central series);
+  `TauCeti.CohomologicalDimensionLE.hasElementaryAbelianSolutions` (`CohomologicalDimension.lean`:
+  `cd_p G ≤ 1` gives the elementary abelian case);
+  `TauCeti.LevelSolution` and `TauCeti.levelSolutionMap` (`Level.lean`, `Compatible.lean`: for a
+  continuous surjection `α : A ↠ B` of profinite groups and a continuous `f : G → B`, the solutions
+  of the finite-level problem at an open normal subgroup `U` of `A`, and their transition maps along
+  `V ≤ U`); `TauCeti.exists_continuous_lift_of_compatible_levelSolutions` (`Lift.lean`: a compatible
+  family of level solutions assembles into a continuous homomorphism `G → A` over `B`, with no
+  pro-`p` hypothesis on `A`); `TauCeti.HasPGroupSolutions.exists_compatible_levelSolutions`,
+  `TauCeti.isProjective_of_hasPGroupSolutions` and `TauCeti.IsProjective.exists_continuous_lift`
+  (`Projective.lean`: the compatible family and the lift when the source `A` is pro-`p`). Used in
+  §3.2, which supplies the compatible family for a pro-`p` kernel instead.
+- `Subgroup.exists_minimal_isClosed_le`, `TauCeti/Topology/Algebra/Group/ClosedSubgroup.lean`: a
+  closed subgroup of `A × G`, with `A` compact, projecting onto `G` contains a minimal closed
+  subgroup projecting onto `G`. Used in §3.2.
 - `TauCeti.ConvexSubgroup` (`TauCeti/Algebra/Order/Group/ConvexSubgroup.lean`: convex subgroups of
   a linearly ordered group, totally ordered by inclusion, with ordered quotients) and
   `Valuation.coarsenByUnits` (`TauCeti/RingTheory/Valuation/Coarsen.lean`: the coarsening of a
@@ -452,8 +478,12 @@ foundations §0.13 (`henselization_integral_base_change`, with Stacks Lemmas 15.
 Prove: for a valuation ring `A`, a flat finite-type `A`-algebra is finitely presented, and a finite
 module over a finite-type `A`-algebra that is flat over `A` is finitely presented (Stacks, Lemma
 15.26.6, tag 053E). Prove the same for a Prüfer domain (every localization at a maximal ideal a
-valuation ring), by finite presentation being local on the base. Over a valuation ring flat means
-torsion free. *Needs:* Mathlib `ValuationRing`, `Module.Flat`, `Algebra.FinitePresentation`,
+valuation ring) as the case of a domain of the theorem that a flat finite-type algebra over a domain
+is finitely presented (Raynaud and Gruson 1971, Corollaire 3.4.7; invoked at this step in Temkin
+2017, proof of Lemma 2.3.8, p. 106). The valuation-ring case does not localize to the Prüfer case:
+finite presentation of a finite-type algebra is not detected at the localizations at the maximal
+ideals of the base (the Boolean-ring Check below). Over a valuation ring flat means torsion free.
+*Needs:* Mathlib `ValuationRing`, `Module.Flat`, `Algebra.FinitePresentation`,
 `Algebra.FinitePresentation.of_finitePresentation_tensorProduct_of_faithfullyFlat`.
 
 **Checks.**
@@ -462,6 +492,12 @@ torsion free. *Needs:* Mathlib `ValuationRing`, `Module.Flat`, `Algebra.FinitePr
   finite type and not finitely presented; it is not flat (it is torsion), so flatness cannot be
   dropped.
 - `A[x]/(ax)` with `a ≠ 0` a nonunit is finitely presented and not flat: the converse fails.
+- For `A = ∏_ℕ 𝔽₂` and `I = ⊕_ℕ 𝔽₂` (the finitely supported sequences), `B = A/I` is flat (every
+  module over an absolutely flat ring is flat) and of finite type; at every maximal ideal `𝔪` the
+  localization `A_𝔪` is `𝔽₂` and `B_𝔪` is `0` or `𝔽₂`, finitely presented over it; but `I` is not
+  finitely generated, so `B` is not finitely presented over `A`. Finite presentation is not detected
+  at the localizations at maximal ideals, and `A` is not a domain, so the Raynaud–Gruson theorem does
+  not apply to it.
 
 ### Examples
 
@@ -803,18 +839,51 @@ Prove `exists_continuous_section_of_isProP_ker`: for a prime `p` and a continuou
 homomorphism `f : E → G` of profinite groups whose kernel is pro-`p` (`TauCeti.IsProP`), if
 `TauCeti.cohomologicalDimensionAt p G ≤ 1` then `f` has a continuous homomorphic section (Serre,
 *Galois Cohomology*, I §3.4, Proposition 16; cited in Kuhlmann–Pank–Roquette 1986, p. 44). The
-relative form follows by applying it to a closed subgroup `E′ ⊆ E` with `f(E′) = G`. Route: for a
-finite elementary abelian kernel the obstruction lies in `H²(G, −) = 0`; by a characteristic central
-series, extensions with finite `p`-group kernel split; Zorn's lemma on pairs (closed normal subgroup
-`N ⊆ ker f`, section of `E/N → G`) with compatible sections, and an inverse-limit argument over open
-normal subgroups of the kernel, gives a section for the pro-`p` kernel. *Needs:* Tau Ceti
-`TauCeti.IsProP`, `TauCeti.cohomologicalDimensionAt`; Continuous cohomology of profinite groups,
-Layer 11 (`cd_p_le_iff_finite_pPrimary`).
+relative form follows by applying it to a closed subgroup `E′ ⊆ E` with `f(E′) = G`. Route, in
+three steps of which only the second is proved here. (a) By
+`TauCeti.cohomologicalDimensionAt_le_iff` the hypothesis is the vanishing predicate
+`TauCeti.CohomologicalDimensionLE p G 1`, and at the pinned Tau Ceti this solves every finite embedding problem for `G` with `p`-group kernel,
+`TauCeti.HasPGroupSolutions p G`: the obstruction for an elementary abelian kernel lies in
+`H²(G, −) = 0` (`TauCeti.CohomologicalDimensionLE.hasElementaryAbelianSolutions`), and the lower
+`p`-central series of a finite `p`-group kernel reduces to that case
+(`TauCeti.HasElementaryAbelianSolutions.hasPGroupSolutions`). (b) Write `N = ker f` and choose a
+closed subgroup `H ⊆ E` minimal among the closed subgroups with `f(H) = G`
+(`Subgroup.exists_minimal_isClosed_le`, applied to the graph of `f` in `E × G`). For an open normal
+subgroup `U` of `E`, the image `K_U` of `H ∩ N` in `E/U` is a finite continuous quotient of a closed
+subgroup of the pro-`p` group `N`, hence a `p`-group; the reduction `H → E/U` descends modulo `K_U`
+to a continuous homomorphism from `G = H/(H ∩ N)` to the quotient of the image of `H` by `K_U`,
+which (a) lifts to a continuous homomorphism `β_U : G → E/U`. Over each `g ∈ G` some element of `H`
+reduces to `β_U(g)`, because two elements of the image of `H` with the same class modulo `K_U` differ
+by the reduction of an element of `H ∩ N`; so the elements of `H` whose reduction modulo `U` is
+`β_U` of their image form a closed subgroup of `H` projecting onto `G`, which is `H` by minimality.
+Hence `f̄ ∘ β_U` is the projection `G → G/f(U)`, so `β_U` solves the finite-level problem of `f` and
+the identity of `G` at `U` (`TauCeti.LevelSolution`), and the `β_U` are compatible along `V ≤ U`
+(`TauCeti.levelSolutionMap`), both because every element of `H` over `g` reduces to `β_U(g)`. This
+is the argument of `TauCeti.HasPGroupSolutions.exists_compatible_levelSolutions` with a pro-`p`
+kernel in place of a pro-`p` source: there `K_U` is a `p`-group as a subgroup of the `p`-group
+`E/U`, here as a quotient of a closed subgroup of `N`. (c) The compatible family assembles into a
+continuous homomorphism
+`s : G → E` with `f ∘ s = id` by `TauCeti.exists_continuous_lift_of_compatible_levelSolutions`,
+which assumes nothing pro-`p` about `E`. When `E` is itself pro-`p` the whole statement is
+`TauCeti.isProjective_of_hasPGroupSolutions` with `TauCeti.IsProjective.exists_continuous_lift`.
+*Needs:* Tau Ceti `TauCeti.IsProP`, `TauCeti.cohomologicalDimensionAt`,
+`TauCeti.cohomologicalDimensionAt_le_iff`, `TauCeti.HasPGroupSolutions`,
+`TauCeti.CohomologicalDimensionLE.hasElementaryAbelianSolutions`,
+`TauCeti.HasElementaryAbelianSolutions.hasPGroupSolutions`, `TauCeti.LevelSolution`,
+`TauCeti.levelSolutionMap`, `TauCeti.exists_continuous_lift_of_compatible_levelSolutions`,
+`Subgroup.exists_minimal_isClosed_le`; Profinite and pro-`p` groups, Layer 5 (§§5.1–5.6) and
+Layer 6 (Serre's theorem, step 1); Continuous cohomology of profinite groups, Layer 11
+(`cd_p_le_iff_finite_pPrimary`).
 
 **Checks.**
 - For `G = ℤ_p` (`cd_p = 1`, free pro-`p`) every extension by a pro-`p` group splits.
 - For `G = ℤ/p` (`cd_p = ∞`) the extension `ℤ/p² → ℤ/p` does not split: the hypothesis is needed.
 - If the kernel is trivial, `f` is an isomorphism of profinite groups and the section is `f⁻¹`.
+- For `E = Ẑ = ℤ_p × ∏_{ℓ ≠ p} ℤ_ℓ` and `f` the projection onto `G = ∏_{ℓ ≠ p} ℤ_ℓ`, the kernel
+  `ℤ_p` is pro-`p` and `cd_p G = 0` (its Sylow pro-`p` subgroup is trivial), so the theorem gives a
+  section, the inclusion of the second factor; `E` is not pro-`p`, so the pinned projectivity lifting
+  `TauCeti.IsProjective.exists_continuous_lift`, which needs a pro-`p` source, does not cover this
+  case: step (b) of the route is what is proved here.
 
 ### 3.3 Maximal extensions with prescribed ramification
 
@@ -914,8 +983,9 @@ Schur–Zassenhaus argument is used. *Needs:* §§2.3, 2.5, 2.11, §§3.1–3.2,
 
 ### Dependencies
 
-Layers 0 and 2; Tau Ceti Sylow theory and `TauCeti.cohomologicalDimensionAt`; Continuous cohomology of
-profinite groups, Layer 11.
+Layers 0 and 2; Tau Ceti Sylow theory, `TauCeti.cohomologicalDimensionAt` and the embedding-problem
+modules (`TauCeti.HasPGroupSolutions`, `TauCeti.exists_continuous_lift_of_compatible_levelSolutions`);
+Profinite and pro-`p` groups, Layers 5 and 6; Continuous cohomology of profinite groups, Layer 11.
 
 ## Layer 4: height one
 
@@ -1348,3 +1418,5 @@ when perfect and is always separably tame (§2.8).
   pp. 74–75; Proposition 18.6.8, p. 139; Proposition 18.6.14, p. 141.
 - **serre-cg**: J.-P. Serre, *Galois Cohomology*: I §3.4, Proposition 16; II §2.2,
   Proposition 3 and Corollary 1.
+- **rg71**: M. Raynaud, L. Gruson, *Critères de platitude et de projectivité. Techniques de
+  « platification » d'un module*, Inventiones Mathematicae 13 (1971), 1–89: Corollaire 3.4.7.
