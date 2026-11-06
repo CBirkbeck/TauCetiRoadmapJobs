@@ -1,0 +1,217 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ExplicitPrimeCounting"
+
+[[source]]
+id = "schoenfeld-1976"
+authors = "Lowell Schoenfeld"
+title = "Sharper Bounds for the Chebyshev Functions θ(x) and ψ(x). II"
+year = 1976
+doi = "10.2307/2005976"
+locator_scheme = "theorem"
+locator = "Theorems 6-13, Corollaries 1-2"
+sha256 = "8c3cac1ee52eb05af05ec410adc587a18505a46aacdde41ae097038b0e7c3897"
+licence_class = "operator-local"
+status = "certified"
+local_name = "schoenfeld-1976.pdf"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6066#issuecomment-6671941951"
+
+[[source]]
+id = "platt-2017"
+authors = "David Platt"
+title = "Isolating some non-trivial zeros of zeta"
+year = 2017
+doi = "10.1090/mcom/3198"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+sha256 = "58af168217647ad8f7258600aa3a572f98f7add8c47f2107de887a950e156cb0"
+licence_class = "operator-local"
+status = "certified"
+local_name = "platt-2017.pdf"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6066#issuecomment-6671941951"
+
+[[source]]
+id = "van-de-lune-te-riele-winter-1986"
+authors = "J. van de Lune"
+title = "On the zeros of the Riemann zeta function in the critical strip. IV"
+year = 1986
+doi = "10.1090/s0025-5718-1986-0829637-3"
+locator_scheme = "theorem"
+locator = "Main theorem"
+sha256 = "f41225ec5c8c6782492c3ddc193ab6e80042647f6c87a755509680ca361c2f1a"
+licence_class = "operator-local"
+status = "certified"
+local_name = "van-de-lune-te-riele-winter-1986.pdf"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6066#issuecomment-6671941951"
+
+[[source]]
+id = "rumely-1993"
+authors = "Robert Rumely"
+title = "Numerical computations concerning the ERH"
+year = 1993
+doi = "10.1090/s0025-5718-1993-1195435-0"
+locator_scheme = "theorem"
+locator = "Theorems 1-4"
+sha256 = "6e0108ba62ef3616912de2bba1098f074801343cefa4430d960e892759767888"
+licence_class = "operator-local"
+status = "certified"
+local_name = "rumely-1993.pdf"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6066#issuecomment-6671941951"
+
+[[source]]
+id = "dusart-1999-mc"
+title = "Pierre Dusart, The kth prime is greater than k(ln k + ln ln k − 1) for k ≥ 2, 1999"
+year = 1999
+locator_scheme = "theorem"
+locator = "Theorem"
+sha256 = "cebfbf7fed65edb61c0b03c3eba4bbfa2514b6dd2767812935bb9c6bee78e56d"
+licence_class = "operator-local"
+status = "certified"
+local_name = "dusart-1999-mc.pdf"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6066#issuecomment-6671941951"
+
+[[source]]
+id = "dusart-2002"
+authors = "Pierre Dusart"
+title = "Estimates of 𝜃(𝑥;𝑘,𝑙) for large values of 𝑥"
+year = 2002
+doi = "10.1090/s0025-5718-01-01351-5"
+locator_scheme = "theorem"
+locator = "Theorems 1-3"
+sha256 = "7160a741a355cb08e28283a26ae94d3d4f8ad92798876de018ec7d5e36c5d3d0"
+licence_class = "operator-local"
+status = "certified"
+local_name = "dusart-2002.pdf"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6066#issuecomment-6671941951"
+
+[[source]]
+id = "ramare-2016"
+authors = "O. Ramaré"
+title = "An explicit density estimate for Dirichlet 𝐿-series"
+year = 2016
+doi = "10.1090/mcom/2991"
+locator_scheme = "theorem"
+locator = "Lemma 3.2"
+sha256 = "28a671f114e35a7659981a45144f3465f35a3490ed1d6b48e6631263a294e2f4"
+licence_class = "operator-local"
+status = "certified"
+local_name = "ramare-2016.pdf"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6066#issuecomment-6671941951"
+
+[[source]]
+id = "trevino-2012"
+authors = "Enrique Treviño"
+title = "The least inert prime in a real quadratic field"
+year = 2012
+doi = "10.1090/S0025-5718-2012-02579-8"
+locator_scheme = "theorem"
+locator = "Lemma 4, Table"
+sha256 = "673145898495dc804c25ba64e6ed06e24a3649e2088776e2ee3acaab91314b3e"
+licence_class = "operator-local"
+status = "certified"
+local_name = "trevino-2012.pdf"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6066#issuecomment-6671941951"
+
+[[source]]
+id = "ramare-rumely-1996"
+authors = "Olivier Ramaré, Robert Rumely"
+title = "Primes in arithmetic progressions"
+year = 1996
+doi = "10.1090/s0025-5718-96-00669-2"
+locator_scheme = "theorem"
+locator = "Theorems 1-2, Tables 1-2"
+sha256 = "94bd522a40cfa72da87c5d8acc35f5e8e8ce2ea3347acdda5e1114eb880e553d"
+licence_class = "operator-local"
+status = "certified"
+local_name = "ramare-rumely-1996.pdf"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6066#issuecomment-6671941951"
+
+[[source]]
+id = "kadiri-2008"
+authors = "H. Kadiri"
+title = "Short effective intervals containing primes in arithmetic progressions and the seven cubes problem"
+year = 2008
+doi = "10.1090/s0025-5718-08-02084-x"
+locator_scheme = "theorem"
+locator = "Theorem 1.1, Table 1"
+sha256 = "fb7dd2ed968526464d7eeb674644240dfff6d8421bb5f9c5c37fd1c08bd62dd3"
+licence_class = "operator-local"
+status = "certified"
+local_name = "kadiri-2008.pdf"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6066#issuecomment-6671941951"
+
+[[source]]
+id = "young-potler-1989"
+authors = "Jeff Young, Aaron Potler"
+title = "First occurrence prime gaps"
+year = 1989
+doi = "10.1090/s0025-5718-1989-0947470-1"
+locator_scheme = "page"
+locator = "Table 1"
+sha256 = "66fa5177eafb4b8c13feb956cb55a6849911ed346e36a6606fcf0ab7b4c049c7"
+licence_class = "operator-local"
+status = "certified"
+local_name = "young-potler-1989.pdf"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6066#issuecomment-6671941951"
+
+[[source]]
+id = "nicely-1999"
+authors = "Thomas R. Nicely"
+title = "New maximal prime gaps and first occurrences"
+year = 1999
+doi = "10.1090/s0025-5718-99-01065-0"
+locator_scheme = "page"
+locator = "Table 1"
+sha256 = "285bc3cea78b8b4c707c6700f7724ec2800c993897d1514990e3f1cf9da249a2"
+licence_class = "operator-local"
+status = "certified"
+local_name = "nicely-1999.pdf"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6066#issuecomment-6671941951"
+
+[[source]]
+id = "deleglise-rivat-1998"
+authors = "Marc Deléglise, Joël Rivat"
+title = "Computing 𝜓(𝑥)"
+year = 1998
+doi = "10.1090/s0025-5718-98-00977-6"
+locator_scheme = "page"
+locator = "Table of ψ(x)"
+sha256 = "b2d8dd9fedec99e2a503d791424b6736b6060b19d54fb1ab2d8c40913c46e855"
+licence_class = "operator-local"
+status = "certified"
+local_name = "deleglise-rivat-1998.pdf"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6066#issuecomment-6671941951"
+
+[[source]]
+id = "dusart-1998-thesis"
+title = "https://www.unilim.fr/laco/theses/1998/T1998_01.pdf"
+locator_scheme = "chapter"
+locator = "Chapitres 1-4"
+sha256 = "fb780e05f58f623ce433559a6f47094a407c3397c902063d9876c22ecdef7e2d"
+licence_class = "operator-local"
+status = "certified"
+local_name = "dusart-1998-thesis.pdf"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6066#issuecomment-6671941951"
+
+[[source]]
+id = "rosser-schoenfeld-1962"
+authors = "J. Barkley Rosser, Lowell Schoenfeld"
+title = "Approximate formulas for some functions of prime numbers"
+year = 1962
+doi = "10.1215/ijm/1255631807"
+locator_scheme = "theorem"
+locator = "Theorems 1-12"
+sha256 = "8e37b06f82e09421bceb2502578c47b61469141f0287e6acedb70e01765ab556"
+licence_class = "operator-local"
+status = "certified"
+local_name = "rosser-schoenfeld-1962.pdf"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6066#issuecomment-6672867833"
+
+[[source]]
+id = "cipolla-1902"
+title = "Michele Cipolla, La determinazione assintotica dell'nimo numero primo, 1902"
+year = 1902
+locator_scheme = "page"
+locator = "pp. 132-166"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6066#issuecomment-6671941951"
