@@ -26,13 +26,13 @@ It imports, and does not plan again:
 - **ClassicalAdicEtaleCohomology** §1.3 (the pro-étale sheaf `Ẑ_p`), §§4.1 and 4.6–4.7 (formal nearby cycles, semistable formal schemes, Kummer symbols and the Bloch–Kato–Hyodo filtration) and §§9.6–9.7 (duality for curves).
 - **AInfCohomology** §§AI.3.1 and AI.6.1–AI.6.3: integral pro-étale period sheaves and the `AΩ` complex of a semistable formal scheme with its Hodge–Tate specialization.
 - **PrismaticCohomologyPartIII** §6.25 (the integral étale comparison, without inverting `p` or `d`) with §6.3 (Artin–Schreier–Witt and tilting for perfectoid rings): the comparisons from which the twisted Artin–Schreier sequence of pro-étale sheaves in §6.7 is derived here.
-- **CstConjectureForDaggerVarieties** CS.1 (`stein-affinoid-diagram`): the model-free fundamental diagram of smooth dagger Stein spaces and dagger affinoids over the completion `C` of `K̄`, `K` with countable residue field. The curve theorems of Layer 4 are kept because they hold over every complete algebraically closed `C` with `v_p(C^×) = ℚ` and are proved by passage to the limit from affinoids; the semistable theorem of Layer 5 is kept because it carries the `G_K`-action and the model-dependent overconvergent Hyodo–Kato term. On their common range the statements agree (Checks in §§4.2 and 5.5).
+- **CstConjectureForDaggerVarieties** §1.5 (*the simplified Stein and affinoid diagram*): the model-free fundamental diagram of smooth dagger Stein spaces and dagger affinoids over the completion `C` of `K̄`, `K` with countable residue field. The curve theorems of Layer 4 are kept because they hold over every complete algebraically closed `C` with `v_p(C^×) = ℚ` and are proved by passage to the limit from affinoids; the semistable theorem of Layer 5 is kept because it carries the `G_K`-action and the model-dependent overconvergent Hyodo–Kato term. On their common range the statements agree (Checks in §§4.2 and 5.5).
 - **CohomologyComparisons** §4.11 (proper rigid period comparison over `C`) and §4.12 (the proper-curve potential period interface): the proper-curve diagram of §4.7 here is the exact sequence that §4.12 leaves to another owner; it is proved here by the curve route for every `C` with `v_p(C^×) = ℚ`, and agrees with §4.11 on its range.
-- **VectorBundlesAndIsocrystals** VB0 (Dieudonné–Manin slopes) and VB3 (Banach–Colmez spaces, their Dimensions and the semistable period-space example).
+- **VectorBundlesAndIsocrystals** Layer 1 (*Dieudonné–Manin classification of finite isocrystals*) and Layer 5 (*Banach–Colmez spaces*: *Dimension and the abelian BC category*, *Dimensions of standard Banach–Colmez spaces* and *A semistable period-space example*).
 - **PadicPeriodRings** §4.1: `B_cris^+`, `B_st^+ = B_cris^+[u]`, `φ`, `N`, `θ`, `t` and the embedding `B_st^+ → B_dR^+` fixed by a logarithm of `p`.
 - **SmoothRepresentationsOfLocalGroups** SR.0 (smooth representations) and SR.3 (*steinberg*, *segment-representations*): the complex Steinberg representation and segment representations, compared with `Sp_r(ℂ)` in Checks.
-- **PadicLocalLanglandsForGL2Qp** §6.9 (`DivisionAlgebraTypes.jacquetLanglands`), **GL2AutomorphicRepresentationsAndTransfer** R16.3 (rank-two local parameters) and **PadicHodgeTheory** §§5.3–5.4 (Fontaine's recipe and rank-two types): `JL(M)`, `LL(M)` and `WD(M)` of a rank-two `L-(φ, N, G_F)`-module.
-- **ModpRepresentationsOfGL2OverLocalFields** MP.0 (finite presentation, finiteness calculus, amalgam coherence) and MP.2 (ordinary parts, the category `C` of admissible finitely presented representations and the induced approximation of admissible Banach lattices).
+- **PadicLocalLanglandsForGL2Qp** §6.9 (*Breuil–Strauch through the Drinfeld tower*: the local Jacquet–Langlands correspondence), **GL2AutomorphicRepresentationsAndTransfer** R16.3 (rank-two local parameters) and **PadicHodgeTheory** §§5.3–5.4 (Fontaine's recipe and rank-two types): `JL(M)`, `LL(M)` and `WD(M)` of a rank-two `L-(φ, N, G_F)`-module.
+- **ModpRepresentationsOfGL2OverLocalFields** MP.0 (finite presentation, finiteness calculus, amalgam coherence) and MP.2 (ordinary parts, the category `C` of admissible finitely presented representations and, for `F ≠ ℚ_p`, the induced approximation of admissible Banach lattices).
 
 This roadmap does not contain the following, by owner:
 
@@ -71,7 +71,7 @@ The infinite-level connected components of the Lubin–Tate tower are owned here
 
 ### From Tau Ceti
 
-Nothing at the pin `a91d3aa` concerns rigid or pro-étale cohomology, Hyodo–Kato cohomology or generalized Steinberg representations; `TauCeti/Algebra/Quaternion/Steinberg.lean` concerns the Steinberg relation for symbols and is unrelated.
+Nothing in the pinned Tau Ceti concerns rigid or pro-étale cohomology, Hyodo–Kato cohomology or generalized Steinberg representations; `TauCeti/Algebra/Quaternion/Steinberg.lean` concerns the Steinberg relation for symbols and is unrelated.
 
 ### From TauCetiRoadmap.AdicEtaleGeometry, AdicSpacesPartIII and AdicSpacesPartIV
 
@@ -86,8 +86,8 @@ Nothing at the pin `a91d3aa` concerns rigid or pro-étale cohomology, Hyodo–Ka
 
 ### From TauCetiRoadmap.ClassicalAdicEtaleCohomology
 
-- §1.3: `ProEtaleSheaf.completedZp`, its derived-limit property and the exact sequences `0 → Ẑ_p → Ẑ_p → ν^*ℤ/p^r → 0`; the comparison `H^n(X_ét, F) = H^n(X_proét, ν^*F)`.
-- §4.1 and §4.6: formal étale sites, the specialization `λ`, `FormalScheme.IsSemistable`, `SemistableFormalNearbyCycles` with `R^iΨ = R^iλ_*`, and `FormalNearbySymbol`.
+- §1.3 (*Descent and the étale–pro-étale comparison*): the pro-étale sheaf `Ẑ_p = lim_r ν^*ℤ/p^r`, its derived-limit property and the exact sequences `0 → Ẑ_p → Ẑ_p → ν^*ℤ/p^r → 0`; the comparison `H^n(X_ét, F) = H^n(X_proét, ν^*F)`.
+- §4.1 (*Formal étale sites and specialization*) and §4.6 (*Semistable formal schemes and Kummer symbols*): formal étale sites, the specialization `λ`, semistable formal schemes (Zariski-locally étale over `Spf(O_K{X_1, …, X_n}/(X_1⋯X_r − ϖ_K))`), their nearby cycles `R^iΨ = R^iλ_*` and the Kummer symbols of units.
 - §4.7: the Bloch–Kato–Hyodo filtration on `R^qΨ ℤ/p(q)` with its graded pieces (CDN23 Théorème 2.4).
 - §§9.6–9.7: trace and duality for smooth separated taut curves with coefficients prime to `p`.
 
@@ -104,22 +104,22 @@ Nothing at the pin `a91d3aa` concerns rigid or pro-étale cohomology, Hyodo–Ka
 
 ### From TauCetiRoadmap.LocallyAnalyticDistributions
 
-- §0.0 (locally convex limits, projective tensor and separated completion, `finiteDimensionalML_completedScalar`) and §0.2 (strict sequences, three-space properties, `naProjectiveLimit_cohomology_finiteDimensionalML`).
-- §0.CR.6.6: `LogCrystalline.daggerHK.comparison`, `LogCrystalline.steinHK.limit`, `LogCrystalline.steinHK.operators`, `LogCrystalline.steinHK.exhaustion_independence` and `LogCrystalline.towerHK.comparison`.
+- §0.0 (locally convex limits, projective tensor and separated completion, *Completed scalar extension of finite-dimensional inverse limits*) and §0.2 (strict sequences, three-space properties, *Strict countable inverse limits and cohomology*).
+- §0.CR.6.6 (*Stein curves and curve towers*): *Nonproper finite-piece Hyodo–Kato comparison*, *Hyodo–Kato cohomology of Stein curves* (the projective-limit definition with its continuous `φ` and `N` satisfying `Nφ = pφN`, and its independence of the exhaustion), *Completed Hyodo–Kato comparison for Stein curves* and *Hyodo–Kato cohomology of semistable curve towers*.
 
 ### From TauCetiRoadmap.PadicPeriodRings, PadicHodgeTheory, VectorBundlesAndIsocrystals and PadicDifferentialEquationsAndRigidCohomology
 
 - PadicPeriodRings §4.1: the period rings with `φ(t) = pt`, `N_p(u) = −1`, `θ` on the plus carriers and the filtered embedding fixed by a logarithm branch; §4.3: the fixed fields `B_cris^{G_K} = B_st^{G_K} = K₀`, `(B_dR^+)^{G_K} = K` and the fundamental exact sequence `0 → ℚ_p → B_cris^{φ=1} → B_dR/Fil⁰B_dR → 0`. These are constructed for `C = C_K`, and §4.3 does not state the plus-ring sequences used here; the gap `period-rings-general-C` below asks for the rings over an arbitrary complete algebraically closed `C`.
 - PadicHodgeTheory §5.3 (potentially semistable periods and Fontaine's recipe `WD(D)`), §5.4 (rank-two types) and §8.1 (de Rham comparison for proper smooth varieties).
-- VectorBundlesAndIsocrystals VB0 (slope decomposition) and VB3 (Dimensions of Banach–Colmez spaces; the semistable period-space example `X_st^+(M)` of Dimension `([L:ℚ_p], 2)`).
+- VectorBundlesAndIsocrystals Layer 1, *Dieudonné–Manin classification of finite isocrystals* (the slope decomposition of a finite-dimensional `φ`-module over `C̆`), and Layer 5, *Dimension and the abelian BC category*, *Dimensions of standard Banach–Colmez spaces* and *A semistable period-space example* (`X_st^+(M)` of `L`-Dimension `([L:ℚ_p], 2)` for a supercuspidal rank-two `M` of slope `1/2`).
 - PadicDifferentialEquationsAndRigidCohomology §§RD.4.10–RD.4.11 (rigid cohomology and its functoriality), §RD.4.18 (Frobenius), §RD.4.29 (Gysin) and §RD.7.7 (Katz–Messing equality of Frobenius polynomials); the gap `endomorphism-characteristic-polynomials` below asks for its extension to all endomorphisms.
 - What PadicPeriodRings must provide (gap:period-rings-general-C): `A_cris`, `B_cris^+`, `B_st^+`, `θ`, `θ_0`, `φ`, `N`, the exact sequence `0 → ℚ_p t → (B_cris^+)^{φ=p} --θ--> C → 0`, `(B_cris^+)^{φ=1} = ℚ_p` and `(B_cris^+)^{φ=p^{−1}} = 0`, over an arbitrary complete algebraically closed `C`, without a chosen discretely valued `K` (§§4.1 and 4.3). Needed by §§1.2–1.3 and 3.2–3.3, and through §1.3 by every fundamental diagram (§§3.5, 4.7, 5.5, 6.5).
-- What PadicDifferentialEquationsAndRigidCohomology must provide (gap:endomorphism-characteristic-polynomials): for an abelian variety over a finite field, every endomorphism has the same characteristic polynomial on `V_ℓ` and on rational crystalline `H¹` (Katz–Messing, Theorem 2), extending §RD.7.7. Needed by §4.6.
+- What PadicDifferentialEquationsAndRigidCohomology must provide (gap:endomorphism-characteristic-polynomials): for an abelian variety over a finite field, every endomorphism has the same characteristic polynomial on `V_ℓ` and on rational crystalline `H¹` (KM74, Theorem 2), extending §RD.7.7. Needed by §4.6.
 
 ### From the tower, half-plane and skeleton suppliers
 
-- EndoscopicTransferAndUnitaryTraceComparison §12.2 (`TowerDatum`), §12.3 (`LubinTate.level`), §12.4 (`Drinfeld.level`, `Drinfeld.period` into `Ω_E^{n−1}`), §12.5 (period maps), §12.6–12.8 (infinite level and preperfectoidness), §12.11 (EL duality), §12.12 (`TowerCohomology.atLevel`), §12.14 (`TowerSector.centralQuotient`), §12.19 (descent of `M_n^ϖ` to `F` with its `G′` action), §12.20 (supercuspidal ℓ-adic cohomology in Dat conventions) and §12.21 (Stein covers and Mittag–Leffler).
-- HilbertModularVarietiesAndShimuraCurves §R18.5.1 (`DrinfeldHalfPlane`), §R18.5.2 (`DrinfeldExhaustion`) and §R18.5.3 (`DrinfeldFormalModel`).
+- EndoscopicTransferAndUnitaryTraceComparison §12.2 (*Tower datum and action conventions*), §12.3 (*The formal `O_E`-module tower*: the Lubin–Tate levels), §12.4 (*The special `O_D`-module tower*: the Drinfeld levels and their period map into `Ω_E^{n−1}`), §12.5 (period maps), §12.6–12.8 (infinite level and preperfectoidness), §12.11 (EL duality), §12.12 (*The equivariant compact-support complex*: the compact-support cohomology of each level), §12.14 (*Central quotient and tensor sectors*: the quotient by `ϖ_E^ℤ` and its height classes), §12.19 (descent of `M_n^ϖ` to `F` with its `G′` action), §12.20 (supercuspidal ℓ-adic cohomology in Dat conventions) and §12.21 (Stein covers and Mittag–Leffler).
+- HilbertModularVarietiesAndShimuraCurves §R18.5.1 (*Drinfeld upper half-plane*), §R18.5.2 (*Affinoid exhaustion and tree reduction*) and §R18.5.3 (*Standard Drinfeld formal model*).
 - TropicalAndBerkovichArithmetic §2.11 (formal model skeleton), §2.13 (refinement), §2.14 (existence of semistable vertex sets), §2.15 (marked skeleta), §2.16 (locally finite triangulations, node sets, strict formal-scheme reconstruction) and §2.17 (triangulated curves and formal automorphisms).
 - AbelianSchemesAndArithmeticModuli §A4.2: the universal vector extension of an abelian variety. JacobianChallenge Layer D: the Jacobian of a smooth proper curve.
 - ReductiveGroupsPartII RG2.2: the Bruhat–Tits building of `PGL_{d+1}(K)` with its simplicial structure.
@@ -127,9 +127,9 @@ Nothing at the pin `a91d3aa` concerns rigid or pro-étale cohomology, Hyodo–Ka
 ### From the representation-theoretic suppliers
 
 - SmoothRepresentationsOfLocalGroups SR.0 (smooth category, compact induction), SR.2 (induction) and SR.3 (*steinberg*, *segment-representations*).
-- PadicLocalLanglandsForGL2Qp §6.9: `DivisionAlgebraTypes.jacquetLanglands` and `DrinfeldComparison.localJacquetLanglands`.
+- PadicLocalLanglandsForGL2Qp §6.9 (*Breuil–Strauch through the Drinfeld tower*): the local Jacquet–Langlands correspondence between essentially square-integrable smooth representations of `GL₂(F)` and of `D^×`, characterized by matching characters on regular semisimple elements, and its geometric realisation through the Drinfeld tower.
 - GL2AutomorphicRepresentationsAndTransfer R16.3.1–R16.3.3: rank-two local parameters and the Langlands correspondence `LL`.
-- ModpRepresentationsOfGL2OverLocalFields MP.0/finite-presentation, MP.0/finiteness-calculus, MP.0/amalgam-coherence, MP.2/category-c and MP.2/ordinary-banach.
+- ModpRepresentationsOfGL2OverLocalFields MP.0/finite-presentation, MP.0/finiteness-calculus, MP.0/amalgam-coherence, MP.2/category-c and MP.2/ordinary-banach (stated for `F ≠ ℚ_p`).
 
 ## How to read the build
 
@@ -251,7 +251,7 @@ For a `C̆`-space presented as a quotient `H = W₁/W₂` of `C̆`-Banach spaces
 
 For `r ∈ ℤ` and a `C̆`-space `M` with a bijective `σ`-semilinear Frobenius `φ` and a nilpotent `N` with `Nφ = pφN`, presented as in §1.2, define `X^r_st(M) = (B_st^+ ⊗̂_{C̆} M)^{N=0, φ=p^r}` and the map `θ ⊗ ι: X^r_st(M) → C ⊗̂ M` induced by `θ` on `B_st^+` after the evaluation `u ↦ 0` composed with a de Rham comparison `ι` (CDN-CURVES Théorème 0.1; CDN-STEIN Theorem 1.8). The same definition is used with `C̆` replaced by a closed subfield `F′ ⊂ C̆` stable under `σ`, such as `F = W(k)[1/p]` in Layer 5, and agrees with the `C̆` version after `C̆ ⊗̂_{F′}`.
 
-- `X^r_st` is a functor to topological `ℚ_p`-spaces; for finite-dimensional `M` it is the space of `C`-points of a Banach–Colmez space (VectorBundlesAndIsocrystals VB3).
+- `X^r_st` is a functor to topological `ℚ_p`-spaces; for finite-dimensional `M` it is the space of `C`-points of a Banach–Colmez space (VectorBundlesAndIsocrystals Layer 5, *Banach–Colmez spaces*).
 - If `N = 0` and `M = F′ ⊗_{ℚ_p} M^{φ=p^r}` for a subfield `F′ ⊂ C̆` stable by `σ`, then `X^r_st(M) = M^{φ=p^r} ⊗̂ (B_cris^+)^{φ=1} = M^{φ=p^r}` and `X^{r−1}_st(M) = M^{φ=p^r} ⊗̂ (B_cris^+)^{φ=p^{−1}} = 0` (CDN-STEIN §5.5, lines 2160–2167).
 - For `M` of slope `1/2` (supercuspidal rank-two), `(B_cris^+ ⊗ M)^{φ=1} = 0`, so `θ ⊗ ι` is injective on `X^1_st(M)`.
 
@@ -262,7 +262,7 @@ For `r ∈ ℤ` and a `C̆`-space `M` with a bijective `σ`-semilinear Frobenius
 - A good ordinary elliptic curve: `H¹_HK` has slopes `0` and `1`, `X^1_st = (B_cris^+)^{φ=p} ⊕ ℚ_p` has Dimension `(1, 2)` = `(g, 2g)` for `g = 1`.
 - Replacing `φ = p^r` by `φ = p^{−r}` gives `0` for `r ≥ 1` and `M` of nonnegative slopes, losing the fundamental exact sequence.
 
-*Needs:* §1.2; PadicPeriodRings §4.1; PadicPeriodRings §4.3; `gap:period-rings-general-C`; VectorBundlesAndIsocrystals VB0; VectorBundlesAndIsocrystals VB3.
+*Needs:* §1.2; PadicPeriodRings §4.1; PadicPeriodRings §4.3; `gap:period-rings-general-C`; VectorBundlesAndIsocrystals Layer 1 (*Dieudonné–Manin classification of finite isocrystals*); VectorBundlesAndIsocrystals Layer 5 (*Dimensions of standard Banach–Colmez spaces*).
 
 ### Examples
 
@@ -270,7 +270,7 @@ For the Drinfeld half-space (§6.4), `M = H^r_HK` has linearized Frobenius `q^r`
 
 ### Dependencies
 
-ClassicalAdicEtaleCohomology §1.3; AdicEtaleGeometry A1; EnhancedDerivedSheaves E2; PadicPeriodRings §§4.1 and 4.3 with `gap:period-rings-general-C`; LocallyAnalyticDistributions §§0.0 and 0.2; VectorBundlesAndIsocrystals VB0 and VB3.
+ClassicalAdicEtaleCohomology §1.3; AdicEtaleGeometry A1; EnhancedDerivedSheaves E2; PadicPeriodRings §§4.1 and 4.3 with `gap:period-rings-general-C`; LocallyAnalyticDistributions §§0.0 and 0.2; VectorBundlesAndIsocrystals Layers 1 and 5.
 
 ## Layer 2: Patterns, symbols and ℓ-adic cohomology of quasi-compact curves
 
@@ -386,7 +386,7 @@ Prove: (a) `H^i_HK(Y)` does not depend on `S` and is functorial; (b) `B_cris^+ �
 - A proper curve with good reduction of genus `g`: `H¹_HK(Y) = H¹_rig(Y^sp)`, of dimension `2g`, with `N = 0`; a Tate curve gives a two-dimensional space with `N ≠ 0` of rank one.
 - Dropping `^{[1]}` on boundary components would give the wrong dimension for an affinoid with good reduction of positive genus: its `H¹_HK^sep` is the slope-one part of `H¹_rig` of the proper component plus residues.
 
-*Needs:* §§2.1–2.3, 3.1; PadicPeriodRings §4.1 with `gap:period-rings-general-C`; PadicDifferentialEquationsAndRigidCohomology §§RD.4.10, RD.4.18, RD.4.38; CrystallineCohomology §CR.5.1 (Cartier); VectorBundlesAndIsocrystals VB0.
+*Needs:* §§2.1–2.3, 3.1; PadicPeriodRings §4.1 with `gap:period-rings-general-C`; PadicDifferentialEquationsAndRigidCohomology §§RD.4.10, RD.4.18, RD.4.38; CrystallineCohomology §CR.5.1 (Cartier); VectorBundlesAndIsocrystals Layer 1 (*Dieudonné–Manin classification of finite isocrystals*).
 
 ### 3.3 Syntomic cohomology and the syntomic regulator
 
@@ -429,7 +429,7 @@ For a Tate curve the second row is `0 → Ω¹ → H¹_dR → H¹(O) → 0`, `X^
 
 ### Dependencies
 
-Layers 0–2; PadicPeriodRings §§4.1, 4.3; PadicDifferentialEquationsAndRigidCohomology §§RD.4.10, RD.4.18, RD.4.38; CrystallineCohomology §CR.5.1; VectorBundlesAndIsocrystals VB0, VB3; AdicSpacesPartIII §R3.4.
+Layers 0–2; PadicPeriodRings §§4.1, 4.3; PadicDifferentialEquationsAndRigidCohomology §§RD.4.10, RD.4.18, RD.4.38; CrystallineCohomology §CR.5.1; VectorBundlesAndIsocrystals Layers 1 and 5; AdicSpacesPartIII §R3.4.
 
 ## Layer 4: Overconvergent affinoids, Stein curves, Weil–Deligne actions and Jacobians
 
@@ -443,20 +443,20 @@ For an affinoid `Y` write `Y^† = lim_{δ>0} Y_δ` for its overconvergent struc
 - Overconvergent annulus: `H¹_HK(Y^†) = C̆(−1)` and `X^1_st = ℚ_p`.
 - `(B_st^+ ⊗ H¹_HK(Y^†))^{N=0,φ=p}` and `H¹_dR(Y^†)` are Banach spaces while the other nonzero terms are inductive limits of Banach spaces (CDN-CURVES Remarque 0.6(iii)).
 
-*Needs:* §§3.2–3.5; AdicSpacesPartIV §§F1.5–F1.9; VectorBundlesAndIsocrystals VB3 (closed images through finite Dimension).
+*Needs:* §§3.2–3.5; AdicSpacesPartIV §§F1.5–F1.9; VectorBundlesAndIsocrystals Layer 5 (*Dimension and the abelian BC category*: closed images through finite Dimension).
 
 ### 4.2 Curves without boundary
 
 Let `Y` be a non-proper curve without boundary, written as a strictly increasing union of affinoids `Y_n` or of overconvergent affinoids `Y_n^†`. Set `H¹_HK(Y) = lim_n H¹_HK(Y_n^†)`, a countable projective limit of finite-dimensional `C̆`-spaces with continuous `φ` and `N`. Prove that there is a functorial commutative diagram of Fréchet spaces with exact rows `0 → O(Y)/C --exp--> H¹_proét(Y, ℚ_p(1)) → X^1_st(H¹_HK(Y)) → 0` and `0 → O(Y)/C --d--> Ω¹(Y) → H¹_dR(Y) → 0`, vertical maps `dlog` and `θ ⊗ ι_HK` with closed images, where `ι_HK: C ⊗̂_{C̆} H¹_HK(Y) ≅ H¹_dR(Y)` (CDN-CURVES Théorème 8.1 = Théorème 0.7, Remarque 8.2(iii)); that the kernel of `H¹_proét(Y, ℚ_p(1)) → Ω¹(Y)` is `t·H¹_HK(Y)^{φ=1}` (CDN-CURVES Remarque 0.8(ii)); and that the diagram is `G_K`-equivariant when `Y` is defined over a closed subfield `K ⊂ C` finite over `ℚ_p`.
 
-The proof passes to the limit in §3.5 or §4.1, using `R¹lim O(Y_n) = 0` (AdicSpacesPartIII §R3.4) and closedness of images in the limit. This is the curve case of CstConjectureForDaggerVarieties CS.1 (`stein-affinoid-diagram`), proved here without the model-free syntomic input of that roadmap and over every `C` with `v_p(C^×) = ℚ`.
+The proof passes to the limit in §3.5 or §4.1, using `R¹lim O(Y_n) = 0` (AdicSpacesPartIII §R3.4) and closedness of images in the limit. This is the curve case of CstConjectureForDaggerVarieties §1.5 (*the simplified Stein and affinoid diagram*), proved here without the model-free syntomic input of that roadmap and over every `C` with `v_p(C^×) = ℚ`.
 
 **Checks.**
 
 - Open unit disc: `H¹_HK(Y) = H¹_dR(Y) = 0` and `exp: O(Y)/C ≅ H¹_proét(Y, ℚ_p(1))`.
 - Open annulus: `H¹_HK(Y) = C̆(−1)`, the Kummer class of the coordinate spans the image of `H¹_proét` in `X^1_st = ℚ_p`.
 - A countable disjoint union of open annuli has `H¹_HK = ∏_ℕ C̆(−1)`, and the completed tensor of §1.2 is needed: the ordinary tensor `C ⊗ ∏_ℕ C̆` is strictly smaller than `∏_ℕ C`.
-- On the common range of CstConjectureForDaggerVarieties CS.1 (`C` the completion of `K̄`, `K` with countable residue field), the two diagrams agree: both have the same rows, and their right-hand terms are identified through the uniqueness of the Hyodo–Kato structure with given de Rham comparison on finite-dimensional pieces.
+- On the common range of CstConjectureForDaggerVarieties §1.5 (`C` the completion of `K̄`, `K` with countable residue field), the two diagrams agree: both have the same rows, and their right-hand terms are identified through the uniqueness of the Hyodo–Kato structure with given de Rham comparison on finite-dimensional pieces.
 
 *Needs:* §§4.1, 1.2–1.3; AdicSpacesPartIII §R3.4; EnhancedDerivedSheaves E2; LocallyAnalyticDistributions §§0.0, 0.2.
 
@@ -518,34 +518,41 @@ Prove that for a smooth proper connected curve `Y` over `C` of genus `g` there i
 - Supersingular elliptic curve: slopes `1/2, 1/2`; `Dim X^1_st = (1, 2)` again.
 - `g = 0`: all terms vanish.
 
-*Needs:* §3.5 (for the quasi-compact case `Y` proper); VectorBundlesAndIsocrystals VB3 (Dimensions); CohomologyComparisons §§4.11–4.12 for the Check.
+*Needs:* §3.5 (for the quasi-compact case `Y` proper); VectorBundlesAndIsocrystals Layer 5 (*Dimensions of standard Banach–Colmez spaces*); CohomologyComparisons §§4.11–4.12 for the Check.
 
 ### 4.8 The universal cover of the p-divisible group of a Jacobian
 
 Let `X` be a smooth proper connected curve over `C` with Jacobian `J` (JacobianChallenge Layer D). Define `Ĵ` as the `ℚ_p`-space of sequences `(x_n)_{n∈ℤ}` in `J(C)` with `x_n = p·x_{n+1}` and `x_n → 0` as `n → −∞` (CDN-CURVES §7.1.5, line 4044). Prove the exact sequence `0 → V_p(J) → Ĵ → C ⊗ Lie(J) → 0` given by `log_J`; for `Y ⊂ X` the complement of an open disc, the exact sequence `0 → ℚ_p ⊗̂ O(Y)^× → H¹_ét(Y, ℚ_p(1)) → Ĵ → 0` (CDN-CURVES line 436, Remarque 7.8); and the natural isomorphism `ι_st: Ĵ ≅ X^1_st(H¹_HK(X))` obtained by comparing it with §4.1 (CDN-CURVES Théorème 7.9 = Théorème 0.17), `G_K`-equivariant when `X` is defined over `K`.
 
 - `Ĵ` is functorial in `X`, contains `V_p(J)` as the sequences with `x_n = 0` for `n ≪ 0`, and carries a continuous `G_K`-action when `X` is defined over `K`.
-- If `J` has good reduction, `Ĵ` is the universal cover of the p-divisible group of the Néron model, and `ι_st` agrees with the isomorphism `Ĝ ≅ (B_cris^+ ⊗ D(G))^{φ=p}` of FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.25 (CDN-CURVES Remarque 7.10(i)).
+
+Prove that if `X` has good reduction, so that `J` extends to an abelian scheme `𝒥` over `O_C` with `p`-divisible group `G = 𝒥[p^∞]`, then reduction modulo `p` identifies `Ĵ` with the universal cover `G̃(O_C) = G̃(O_C/p)` of FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.25 (its invariance under the thickening `O_C → O_C/p` is §R07.2.26), compatibly with `V_p(J) = V_p(G)` and with `log_J`. Route: a sequence of `Ĵ` lies in the formal group `𝒥^∧(m_C)` for `n ≪ 0`, where its terms are images of one another under iterates of `[p]`, so every reduction modulo `p^k` is `p`-power torsion; conversely a sequence `(y_n)` of `G̃(O_C)` reduces to a chain `(ȳ_n)` in the torsion group `G(k_C)` with `p·ȳ_{n+1} = ȳ_n`, which vanishes for `n ≪ 0` because `ȳ_0` has finite order, and then `y_n = [p^m](y_{n+m})` tends to `0` in the formal group. The identification of `ι_st` with the Dieudonné-module description of `G̃(O_C)` is stated in §4.9; CDN-CURVES Remarque 7.10(i) records that description and says only that Théorème 7.9 could be deduced from it in the good-reduction case.
 
 **Checks.**
 
 - `g = 0`: `Ĵ = 0`.
 - For a Tate curve `E = 𝔾_m/q^ℤ`, `V_p(E)` is an extension of `ℚ_p` by `ℚ_p(1)` and `Ĵ/V_p(E) ≅ C`.
 - Sequences with `x_n = p·x_{n+1}` but `x_n` not tending to `0` would include lifts along non-torsion points of `J(C)`, and the quotient by `V_p(J)` would no longer be `C ⊗ Lie(J)`.
+- Good ordinary reduction with `g = 1`: `G ⊗ k_C ≅ μ_{p^∞} × ℚ_p/ℤ_p`, so `G̃(O_C)` has Dimension `(1, 1) + (0, 1) = (1, 2)` by the Dieudonné-module description of §4.9, the Dimension of `Ĵ` read off `0 → V_p(J) → Ĵ → C → 0`; for supersingular reduction `D(G_s)` has slope `1/2` twice and the Dimension is again `(1, 2)`, as in §4.7.
+- The Tate curve has no good reduction and its `p`-divisible group does not extend to `O_C`; the universal cover of `μ_{p^∞}`, the `p`-divisible group of the identity component of its Néron model, is `(B_cris^+)^{φ=p}` of Dimension `(1, 1)`, smaller than `Ĵ` of Dimension `(1, 2)`: the good-reduction hypothesis cannot be dropped.
 
-*Needs:* §4.1; §4.7; JacobianChallenge Layer D; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.25.
+*Needs:* §4.1; §4.7; JacobianChallenge Layer D; FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.2.25–R07.2.26.
 
 ### 4.9 Integration and the Jacobian period map
 
 Let `X` be defined over a finite `K/ℚ_p` and `C = ℂ_p`. Let `J̃` be the universal vector extension of `J` (AbelianSchemesAndArithmeticModuli §A4.2). Define `ι_BdR: Ĵ → J̃(B_dR^+)` by sending `(x_n)` to `lim_{n→+∞} p^n·x̂_n` for a bounded sequence of lifts `x̂_n ∈ J̃(B_dR^+)` (CDN-CURVES Remarque 0.18), and `log_{J̃}: J̃(B_dR^+) → B_dR^+ ⊗_K H¹_dR(J)^*`. Prove that `log_{J̃} ∘ ι_BdR` factors through `(B_st^+ ⊗ H¹_HK(X)^*)^{N=0, φ=1}`, that this space equals `X^1_st(H¹_HK(X))` under the identification `H¹_dR(X)^* ≅ H¹_dR(X)` given by cup product into `H²_dR(X) = K`, and that `log_{J̃} ∘ ι_BdR = ι_st` (CDN-CURVES Théorème 7.12, Remarque 7.13).
+
+Prove that if moreover `X` has good reduction, with `𝒥`, `G` and `Ĵ = G̃(O_C)` as in §4.8 and `G_s = G ⊗ k_C`, then `ι_st` corresponds to the period isomorphism `G̃(O_C) ≅ (B_cris^+ ⊗_{C̆} D(G_s))^{F=p}` of FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.28, written there with the covariant Dieudonné module normalised by `φ = p^{−1}F` and fixed points `φ = 1` (§R07.2.20), under the identification `H¹_HK(X) = C̆ ⊗ H¹_cris(X_s/W(k_C))[1/p]` with `N = 0` and the cup-product identification `H¹_HK(X) ≅ H¹_HK(X)^*(−1)` of Théorème 7.12(ii), which carries the contravariant `H¹_cris(X_s)` to the covariant `D(G_s)` (CDN-CURVES Remarque 7.10(ii)). Route: `ι_st = log_{J̃} ∘ ι_BdR` is the logarithm of the universal vector extension `J̃` applied to a lift into `J̃(B_dR^+)`; the isomorphism of §R07.2.28 is the logarithm of the universal vector extension `E(G)` applied to a lift into `E(G)(A_cris)`, where `Lie E(G) = D(G)` is the covariant Dieudonné module and `E(G)` is the pullback of `J̃` to `G ⊂ 𝒥`, the identification through which `D(𝒥[p^∞])` is the crystalline `H¹` of `𝒥` (AbelianSchemesAndArithmeticModuli §§A4.2 and A4.CR.7.2); the two lifts agree through `A_cris ⊂ B_cris^+ ⊂ B_dR^+`, and the factorisation through the `N = 0` part is Théorème 7.12(i). CDN-CURVES Remarque 7.10(i) suggests this deduction without carrying it out.
 
 **Checks.**
 
 - For `x ∈ V_p(J)` the limit stabilizes and `ι_BdR(x)` is the Fontaine period of `x`; `log_{J̃}` lands in `Fil⁰`.
 - `ι_BdR` does not depend on the choice of bounded lifts: two choices differ by a bounded sequence, killed by `p^n` in the limit.
 - `log_{J̃} ∘ ι_BdR` is injective, by non-degeneracy of the period pairing (CDN-CURVES §7.2).
+- Normalisation witness for the good-reduction comparison: for `μ_{p^∞}` the covariant module has `F = σ` (slope `0`), so `(B_cris^+ ⊗ D)^{F=p} = (B_cris^+)^{φ=p}`, an extension of `C` by `ℚ_p t = V_p(μ_{p^∞})`; the contravariant module (slope `1`) would give `(B_cris^+)^{φ=1} = ℚ_p`, with no room for the Lie algebra. In the normalisation `φ = p^{−1}F` of §R07.2.28 the same fixed points are written `φ = 1`.
+- Good ordinary reduction with `g = 1`: `H¹_HK(X)` has slopes `0, 1` and so does `D(G_s)`, so Dimensions alone do not detect the variance; the cup-product identification is what fixes it, and it is pinned by the `μ_{p^∞}` witness.
 
-*Needs:* §§4.1, 4.8; AbelianSchemesAndArithmeticModuli §A4.2; PadicPeriodRings §4.1; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.25 (Check).
+*Needs:* §§4.1, 4.8; AbelianSchemesAndArithmeticModuli §§A4.2 and A4.CR.7.2; PadicPeriodRings §4.1; FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.2.20 and R07.2.28.
 
 ### Examples
 
@@ -553,7 +560,7 @@ For the Drinfeld half-plane over `K`, §4.2 gives `0 → O(Ω)/C → H¹_proét(
 
 ### Dependencies
 
-Layers 0–3; AdicSpacesPartIII §R3.4; AdicSpacesPartIV §§F1.5–F1.9; EnhancedDerivedSheaves E2; LocallyAnalyticDistributions §§0.0, 0.2 and 0.CR.6.6; VectorBundlesAndIsocrystals VB3; PadicDifferentialEquationsAndRigidCohomology §§RD.4.38, RD.7.7; AbelianSchemesAndArithmeticModuli §A4.2; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.25; CohomologyComparisons §§4.11–4.12.
+Layers 0–3; AdicSpacesPartIII §R3.4; AdicSpacesPartIV §§F1.5–F1.9; EnhancedDerivedSheaves E2; LocallyAnalyticDistributions §§0.0, 0.2 and 0.CR.6.6; VectorBundlesAndIsocrystals Layer 5; PadicDifferentialEquationsAndRigidCohomology §§RD.4.38, RD.7.7; AbelianSchemesAndArithmeticModuli §§A4.2 and A4.CR.7.2; FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.2.20, R07.2.25–R07.2.26 and R07.2.28; CohomologyComparisons §§4.11–4.12.
 
 ## Layer 5: Semistable Stein spaces in every dimension
 
@@ -569,7 +576,7 @@ Define a semistable weak formal scheme over `O_K` as a weak formal scheme Zarisk
 **Checks.**
 
 - The standard model of the Drinfeld half-plane (HilbertModularVarietiesAndShimuraCurves §R18.5.3), with `Y_s` the components of the tree ball of radius `s`, is Stein semistable.
-- Rigid affine space `𝔸^d_K` is the generic fibre of the Stein smooth model given by the dagger discs `|T| ≤ |ϖ|^{−m}` (LocallyAnalyticDistributions §0.CR.6.6, Check `affine_line`, in each coordinate).
+- Rigid affine space `𝔸^d_K` is the generic fibre of the Stein smooth model given by the dagger discs `|T| ≤ |ϖ|^{−m}` (the affine-line Check of LocallyAnalyticDistributions §0.CR.6.6, *Hyodo–Kato cohomology of Stein curves*, in each coordinate).
 - A proper semistable formal scheme is not Stein semistable unless its generic fibre is a finite set of points: its tubes cannot form a Stein exhaustion of a positive-dimensional proper space.
 
 *Needs:* AdicSpacesPartIV §F1.7; AdicSpacesPartIV §F1.8; ClassicalAdicEtaleCohomology §4.6.
@@ -619,7 +626,7 @@ Prove that for a Stein semistable weak formal scheme `X` over `O_K` and `r ≥ 0
 - Affine space `𝔸^d_K`, `r ≥ 1`: `H^r_proét(𝔸^d_C, ℚ_p(r)) ≅ Ω^{r−1}(𝔸^d_C)/ker d` (CDN-STEIN Example 1.9).
 - Dimension one: the diagram for `r = 1` is that of §4.2 for the generic fibre, with `Ω⁰/ker d = O(X_C)/C`.
 - For `X` proper semistable, the analogous sequence is `0 → H^r_proét → X^r_st(H^r_HK) → (H^r_dR ⊗ B_dR^+)/F^r` (CDN-STEIN Remark 4.13); the Stein statement has the huge term `Ω^{r−1}/ker d` on the left instead of a term on the right, so it is not a specialization of the proper one.
-- Over `C`, the diagram agrees with CstConjectureForDaggerVarieties CS.1 (`stein-affinoid-diagram`) on its range, whose middle map has the same normalization `p^{−r}`.
+- Over `C`, the diagram agrees with CstConjectureForDaggerVarieties §1.5 (*the simplified Stein and affinoid diagram*) on its range, whose middle map has the same normalization `p^{−r}`.
 
 *Needs:* §§1.1–1.3, 5.1–5.4; CohomologyComparisonsPartII §§4.1–4.5; AdicSpacesPartIV §§F1.8–F1.9; AdicSpacesPartIII §R3.4; LocallyAnalyticDistributions §§0.0, 0.2.
 
@@ -846,18 +853,19 @@ Prove that for `K/F` finite, `k ≥ 1` and `q ≥ 0`, the `G′`-module `H^q_ét
 
 **Checks.**
 
-- `n = 0`, `q = 0`: `H⁰_ét(M_{0,K}^ϖ, 𝔽_p) = 𝔽_p²`, the two copies of `Ω` being exchanged by elements of odd determinant valuation; its dual is a two-dimensional smooth representation of `G′`.
+- `n = 0`, `q = 0`: over `F̆` the level-zero quotient is `ℤ/2 × Ω`, since `ϖ` in the centre of `G` shifts the height by `v(det ϖ) = 2`, and a Frobenius shifts it by `1` (CDN23 lines 196–208; EndoscopicTransferAndUnitaryTraceComparison §12.19), so the two geometric copies of `Ω` are conjugate under `Gal(F₂/F)`, `F₂` the unramified quadratic extension of `F`, and `π₀(M_{0,K}^ϖ) = π₀(Spec(K ⊗_F F₂))`. Hence `H⁰_ét(M_{0,K}^ϖ, 𝔽_p) = 𝔽_p` for `K = F` (or any `K` not containing `F₂`) and `𝔽_p²` for `K ⊇ F₂`; its dual is the permutation representation of `G′` on `π₀(Spec(K ⊗_F F₂))`, on which an element of odd determinant valuation acts as the nontrivial element of `Gal(F₂/F)`: trivial for `K = F`, two-dimensional for `K ⊇ F₂`. The value `𝔽_p²` for every `K` would be the geometric `H⁰`, which §7.7 does not compute.
 - With `ℚ_p`-coefficients the corresponding `H¹` is a Fréchet space that is not compact; the statement concerns torsion coefficients only.
 
 *Needs:* §7.2; §7.6; ClassicalAdicEtaleCohomology §4.1; ClassicalAdicEtaleCohomology §4.6; ClassicalAdicEtaleCohomology §4.7; CrystallineCohomology §CR.5.1; ModpRepresentationsOfGL2OverLocalFields MP.0.
 
 ### 7.8 Non-admissibility for `F ≠ ℚ_p`
 
-For `V` a finite-dimensional `L`-representation of `G_F` with `G_F`-stable lattice `V^+`, `V^+_k = V^+/m_L^k`, and `M` supercuspidal with a `Ǧ`-stable lattice `JL(M)^+`, define `Π_M(V) = Hom_{G_F×Ǧ}(V ⊗ JL(M), H¹_ét(M_{n,C}^ϖ, L(1)))^*`, `Π_M(V^+)` and `Π_M(V^+_k)` with `O_L`- and `O_L/m_L^k`-duals (CDN23 §2.3, lines 1465–1470). Prove: (a) `Π_M(V)` is a unitary Banach representation of `G` with `G`-stable lattice `Π_M(V^+)`, and `(O_L/m_L^k) ⊗ Π_M(V^+)` is a quotient of `Π_M(V^+_k)` (CDN23 Lemme 2.16, using §7.7); (b) if some `Π_M(V^+_k)` is admissible, then `k_L ⊗ Π_M(V^+)` lies in the category `C` of ModpRepresentationsOfGL2OverLocalFields MP.2/category-c (CDN23 Lemme 2.17); (c) for `π` supercuspidal with universal completion `π̂` and `Π` a unitary Banach representation with a lattice whose reduction lies in `C`, `Hom_G(π̂, Π) = 0` (CDN23 Proposition 2.18, using MP.2/ordinary-banach); (d) if `F ≠ ℚ_p` and `Π_M(V) ≠ 0`, then `Π_M(V^+_k)` is smooth and not admissible for every `k ≥ 1` (CDN23 Théorème 2.14), using the injection of §7.5; (e) for every supercuspidal `M` of level at most `n` on which `ϖ` acts trivially there is `V` with `Π_M(V) ≠ 0` (CDN23 Remarque 2.15(ii), line 1494), through a cocompact `Γ ⊂ G′`, the proper curves `X_n = M_{n,F}^ϖ/Γ` with `X₀` of genus `≥ 2`, the occurrence of every representation of `Gal(X_n/X₀)` in `Ω¹(X_n)` (NAK84 Theorem 4, as used in CDN23 Remarque 2.15(ii)) and the étale–de Rham comparison for proper curves (§4.7); (f) consequently, if `F ≠ ℚ_p` and `n > 0`, then `H¹_ét(M_{n,K}^ϖ, k_L)^∨` is not admissible for `K/F` finite and large enough (CDN23 Théorème 2.13).
+For `V` a finite-dimensional `L`-representation of `G_F` with `G_F`-stable lattice `V^+`, `V^+_k = V^+/m_L^k`, and `M` supercuspidal with a `Ǧ`-stable lattice `JL(M)^+`, define `Π_M(V) = Hom_{G_F×Ǧ}(V ⊗ JL(M), H¹_ét(M_{n,C}^ϖ, L(1)))^*`, `Π_M(V^+)` and `Π_M(V^+_k)` with `O_L`- and `O_L/m_L^k`-duals (CDN23 §2.3, lines 1465–1470). Prove: (a) `Π_M(V)` is a unitary Banach representation of `G` with `G`-stable lattice `Π_M(V^+)`, and `(O_L/m_L^k) ⊗ Π_M(V^+)` is a quotient of `Π_M(V^+_k)` (CDN23 Lemme 2.16, using §7.7); (b) if some `Π_M(V^+_k)` is admissible, then `k_L ⊗ Π_M(V^+)` lies in the category `C` of ModpRepresentationsOfGL2OverLocalFields MP.2/category-c (CDN23 Lemme 2.17); (c) for `F ≠ ℚ_p`, `π` supercuspidal with universal completion `π̂` and `Π` a unitary Banach representation with a `G`-stable lattice whose reduction modulo `m_L` lies in `C`, `Hom_G(π̂, Π) = 0` (CDN23 Proposition 2.18; the hypothesis `F ≠ ℚ_p` is that of MP.2/ordinary-banach and of the standing hypothesis of CDN23 §1.5, line 955, under which Corollaire 1.34 is proved); (d) if `F ≠ ℚ_p` and `Π_M(V) ≠ 0`, then `Π_M(V^+_k)` is smooth and not admissible for every `k ≥ 1` (CDN23 Théorème 2.14), using the injection of §7.5; (e) for every supercuspidal `M` of level at most `n` on which `ϖ` acts trivially there is `V` with `Π_M(V) ≠ 0` (CDN23 Remarque 2.15(ii), line 1494), through a cocompact `Γ ⊂ G′`, the proper curves `X_n = M_{n,F}^ϖ/Γ` with `X₀` of genus `≥ 2`, the occurrence of every representation of `Gal(X_n/X₀)` in `Ω¹(X_n)` (NAK84 Theorem 4, as used in CDN23 Remarque 2.15(ii)) and the étale–de Rham comparison for proper curves (§4.7); (f) consequently, if `F ≠ ℚ_p` and `n > 0`, then `H¹_ét(M_{n,K}^ϖ, k_L)^∨` is not admissible for `K/F` finite and large enough (CDN23 Théorème 2.13).
 
 **Checks.**
 
 - `F = ℚ_p`: `Π_M(V)` and `Π_M(V^+_k)` are admissible (CDN23 Remarque 2.15(i)); the hypothesis `F ≠ ℚ_p` in (d) is necessary.
+- `F = ℚ_p` in (c): take `M` supercuspidal of level at most `n` with `ϖ` trivial on `JL(M)` and `V` with `Π_M(V) ≠ 0` (e). Then `Π_M(V)` is a unitary Banach representation (a), `Π_M(V^+_k)` is admissible (CDN23 Remarque 2.15(i)), so `k_L ⊗ Π_M(V^+)` lies in `C` by (b), which holds for every `F`; and the bounded-vector injection of §7.5 dualizes to a map `H(V) ⊗ L̂L(M) → Π_M(V)` with dense image, `H(V) = Hom_{G_F}(V, X^+_st(M))` finite-dimensional with trivial `G`-action, so `Hom_G(L̂L(M), Π_M(V)) ≠ 0` with `π = LL(M)` supercuspidal: (c) fails for `F = ℚ_p`, and its hypothesis `F ≠ ℚ_p` cannot be dropped.
 - `n = 0`: there is no supercuspidal `M` of level zero (§7.4), so (f) is stated for `n > 0`.
 - `n = 1` and `M` of level `2` (`JL(M)` nontrivial on `1 + ϖ_D O_D`): `Ǧ_1` acts trivially on `M_1^ϖ`, so every constituent of `H¹_ét(M^ϖ_{1,C}, L(1))` is trivial on `Ǧ_1`, the `JL(M)`-isotypic part is `0` and `Π_M(V) = 0` for every `V`; the level hypothesis in (e) cannot be dropped. For `n = 1` the hypothesis is met by the two-dimensional `JL(M)` attached to a character of `𝔽_{q²}^×` that does not factor through the norm, so (f) has input.
 - In (c), `St ⊗ χ ∘ det` and principal series receive no nonzero map from `π̂`, because `π` is dense in `π̂` and a cuspidal `π` has no nonzero map to a principal-series constituent; for `π = St` itself (c) fails, since `St` maps to `Ŝt`.
@@ -870,7 +878,7 @@ For `F` unramified quadratic over `ℚ_p` and `M` supercuspidal of level `1` wit
 
 ### Dependencies
 
-Layers 1, 4 and 6; EndoscopicTransferAndUnitaryTraceComparison §§12.2–12.8, 12.11, 12.14, 12.19–12.21; HilbertModularVarietiesAndShimuraCurves §R18.5.3; TropicalAndBerkovichArithmetic §§2.16–2.17; StableReduction Layer 7; AdicSpacesPartIII §R3.7; ClassicalAdicEtaleCohomology §§4.1, 4.6–4.7, 9.6–9.7; CrystallineCohomology §CR.5.1; PadicLocalLanglandsForGL2Qp §6.9; GL2AutomorphicRepresentationsAndTransfer R16.3; PadicHodgeTheory §§5.3–5.4; VectorBundlesAndIsocrystals VB3; ModpRepresentationsOfGL2OverLocalFields MP.0 and MP.2.
+Layers 1, 4 and 6; EndoscopicTransferAndUnitaryTraceComparison §§12.2–12.8, 12.11, 12.14, 12.19–12.21; HilbertModularVarietiesAndShimuraCurves §R18.5.3; TropicalAndBerkovichArithmetic §§2.16–2.17; StableReduction Layer 7; AdicSpacesPartIII §R3.7; ClassicalAdicEtaleCohomology §§4.1, 4.6–4.7, 9.6–9.7; CrystallineCohomology §CR.5.1; PadicLocalLanglandsForGL2Qp §6.9; GL2AutomorphicRepresentationsAndTransfer R16.3; PadicHodgeTheory §§5.3–5.4; VectorBundlesAndIsocrystals Layer 5; ModpRepresentationsOfGL2OverLocalFields MP.0 and MP.2.
 
 ## Downstream consumers
 
@@ -901,3 +909,4 @@ The sources manifest is `packages/ProetaleCohomologyOfPAdicCurvesAndTowers/sourc
 - **CN-I**, **CN-II** — P. Colmez, W. Nizioł, *On the cohomology of p-adic analytic spaces, I and II*, arXiv:2104.13448v3 and arXiv:2108.12785v4: boundary with CstConjectureForDaggerVarieties.
 - **CGN23** — P. Colmez, S. Gilles, W. Nizioł, *Arithmetic duality for p-adic pro-étale cohomology of analytic curves*, arXiv:2308.07712v2: scope of the Part II.
 - **THO24** — J. A. Thorne, *A p-adic approach to the existence of level-raising congruences*, Proc. LMS 128 (2024); arXiv:2212.03591v2: consumer of §6.10.
+- **KM74** — N. M. Katz, W. Messing, *Some consequences of the Riemann hypothesis for varieties over finite fields*, Invent. Math. 23 (1974), cited by locator for the gap `endomorphism-characteristic-polynomials`.

@@ -341,3 +341,18 @@ licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-10-26"
 cited_for = ["6.6"]
+
+[[source]]
+id = "KM74"
+authors = "Nicholas M. Katz, William Messing"
+title = "Some consequences of the Riemann hypothesis for varieties over finite fields"
+year = 1974
+venue = "Inventiones Mathematicae 23"
+doi = "10.1007/bf01405203"
+locator_scheme = "theorem"
+locator = "Theorem 2"
+url = "https://doi.org/10.1007/bf01405203"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["gap endomorphism-characteristic-polynomials; 4.6"]
