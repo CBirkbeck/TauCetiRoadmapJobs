@@ -2062,8 +2062,8 @@
    "supplier": "PadicLocalLanglandsForGL2Qp",
    "section": "§6.9",
    "title": "fixed radius divisibility",
-   "needs": "in §6.9, the vanishing of ∩_{j≥0}(u⁺)^j Π(π,0)′_b used for `DrinfeldComparison.map_injective` must be proved inside one lattice of fixed admissible radius on both charts, not by t-divisibility in the full Robba ring (source correction E9).",
-   "detail": "in §6.9, the vanishing of ∩_{j≥0}(u⁺)^j Π(π,0)′_b used for `DrinfeldComparison.map_injective` must be proved inside one lattice of fixed admissible radius on both charts, not by t-divisibility in the full Robba ring (source correction E9).",
+   "needs": "in §6.9, the vanishing of ∩_{j≥0}(u⁺)^j Π(π,0)′_b used for the injectivity of the comparison map in §6.9 must be proved inside one lattice of fixed admissible radius on both charts, not by t-divisibility in the full Robba ring (source correction E9).",
+   "detail": "in §6.9, the vanishing of ∩_{j≥0}(u⁺)^j Π(π,0)′_b used for the injectivity of the comparison map in §6.9 must be proved inside one lattice of fixed admissible radius on both charts, not by t-divisibility in the full Robba ring (source correction E9).",
    "neededBy": [
     "PadicLocalLanglandsForGL2QpPartII:GR.3/general-central-character",
     "PadicLocalLanglandsForGL2QpPartII:GR.7/infinite-primitives"
