@@ -1,0 +1,54 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "HigherLocalClassFieldTheory"
+
+[[source]]
+id = "zhukov2000"
+locator_scheme = "section"
+locator = "Section 1"
+url = "https://msp.org/gtm/2000/03/gtm-2000-03-001p.pdf"
+fetched_from = "https://msp.org/gtm/2000/03/gtm-2000-03-001p.pdf"
+fetched_at = "2026-11-05T21:43:06Z"
+sha256 = "ef505cbd49e34160754ced8c102295c4c398cb64e7c86c97d7afdc639d0e2e1a"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["0.4"]
+
+[[source]]
+id = "fesenko2000parshin"
+locator_scheme = "section"
+locator = "Section 7"
+url = "https://msp.org/gtm/2000/03/gtm-2000-03-007p.pdf"
+fetched_from = "https://msp.org/gtm/2000/03/gtm-2000-03-007p.pdf"
+fetched_at = "2026-11-05T21:43:15Z"
+sha256 = "54a0850861f7f69582bbcd3f5ac2282185ac796f45d499894d289d1b634757bc"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["5.2"]
+
+[[source]]
+id = "fesenko2000explicit"
+locator_scheme = "section"
+locator = "Section 10"
+url = "https://msp.org/gtm/2000/03/gtm-2000-03-010p.pdf"
+fetched_from = "https://msp.org/gtm/2000/03/gtm-2000-03-010p.pdf"
+fetched_at = "2026-11-05T21:43:21Z"
+sha256 = "d7d6b4528b04883c684b55f4e56e9c5400ae051a22fbc7a4aa07cd771f0fab80"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["4.1"]
+
+[[source]]
+id = "vostokov2000"
+locator_scheme = "section"
+locator = "Section 8"
+url = "https://msp.org/gtm/2000/03/gtm-2000-03-008p.pdf"
+fetched_from = "https://msp.org/gtm/2000/03/gtm-2000-03-008p.pdf"
+fetched_at = "2026-11-05T21:43:31Z"
+sha256 = "9ceea707cfeaf0d77ca529c646971cbc43aee75f1746b5429cecedc402703de2"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["5.3"]
