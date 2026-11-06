@@ -79,7 +79,10 @@ Boundaries:
   the IncompressibleFlows roadmap, which plans integer- and real-order Sobolev spaces on the full
   torus `UnitAddTorus d` (its Layer 0). The spaces `Hᵏ_Λ` here are for discrete period groups of
   any rank; when `Λ` has full rank they are the integer-order, `p = 2` torus spaces of that
-  roadmap, nothing here uses that case, and the agreement is a Check of §4.1.
+  roadmap, nothing here uses that case, and the agreement is a Check of §4.1. For `n = 1` and a
+  full-rank `Λ = Tℤ`, `Hᵏ_Λ` is likewise Tau Ceti's `TauCeti.CircleSobolev k ℂ`, the Fourier-side
+  Sobolev space of `AddCircle T`, restricted to real functions and up to norm equivalence; this
+  case is not used here either, and the norm comparison is a Check of §4.1.
 - **Flat finite propagation for Klein–Gordon** is RelativisticQuantumFieldTheory RQFT1; it is a
   second-order scalar statement on Minkowski space and is neither consumed nor restated.
 - Vacuum boundaries `ρ = 0`, weak and entropy solutions, Riemann solvers and numerical schemes
@@ -188,6 +191,27 @@ on `E`, no Lorentzian quadratic form with a time orientation and no causal curve
 - `TauCeti.Wkp.dense_contDiff_representatives`
   (`TauCeti/Analysis/Sobolev/Wkp/SmoothDensity.lean:92`): density of smooth functions in
   `W^{k,p}(ℝⁿ)` for finite `p`.
+- `TauCeti.Wkp.normedBumpL` with `TauCeti.Wkp.norm_normedBumpL_le_one`,
+  `TauCeti.Wkp.lowerOrder_normedBumpL`, `TauCeti.Wkp.iteratedGradient_normedBumpL` and
+  `TauCeti.Wkp.tendsto_normedBumpL`
+  (`TauCeti/Analysis/Sobolev/Wkp/ApproximateIdentity.lean:52,67,107,118,132`): mollification of
+  `W^{k,p}(ℝⁿ)`, `p < ∞`, by a normalised smooth bump (`ContDiffBump`, radial, hence even and
+  nonnegative) as a contraction in the `Wkp` norm, commuting with the lower-order projection and
+  with the iterated gradient, and converging strongly to the identity as the bump radii tend to
+  `0`; `TauCeti.W1p.normedBumpL` (`TauCeti/Analysis/Sobolev/W1p/Mollification.lean:87`) is the
+  order-one case. These are the `Λ = 0` statements of §4.4.
+- `TauCeti.HasWeakLineDerivOn.contDiffOn_smul`, `TauCeti.HasWeakFDerivOn.contDiffOn_smul` and
+  `TauCeti.HasWeakLineDerivOn.lipschitzOnWith_smul`
+  (`TauCeti/Analysis/Sobolev/Leibniz.lean:112,168,317`): the Leibniz rule for the weak derivative
+  of `ψu` with `ψ` smooth, or Lipschitz, on the open set and `u` weakly differentiable; the
+  product rule of §4.3 for two Sobolev factors is obtained from it by density.
+- `TauCeti.CircleSobolev s E` (`TauCeti/Analysis/Sobolev/Circle/Basic.lean:197`), the
+  Fourier-side Sobolev space of the circle with norm squared `Σ_m (1 + |m|)^{2s}‖c_m‖²`
+  (`TauCeti.CircleSobolev.norm_sq_eq_tsum`, line 375), identified at `s = 0` with
+  `L²(AddCircle T)` for the probability Haar measure by `TauCeti.CircleSobolev.toLpₗᵢ`
+  (`TauCeti/Analysis/Sobolev/Circle/Lp.lean:59`): for `n = 1`, `Λ = Tℤ` and integer `s = k` this
+  is `Hᵏ_Λ` (real functions, complexified) up to norm equivalence; nothing here uses it, and the
+  norm comparison is a Check of §4.1.
 - `TauCeti.le_mul_exp_of_le_add_mul_integral` (`TauCeti/Analysis/ODE/Gronwall.lean:59`): the
   integral Grönwall inequality `φ(t) ≤ c + K∫ₐᵗ φ ⇒ φ(t) ≤ c e^{K(t−a)}` for continuous `φ` and
   `K ≥ 0`, the closure step of every energy estimate.
@@ -379,7 +403,10 @@ and `A⁰ = S`, `Aⁱ = S Mⁱ`, `F = 0`. Prove: both are quasilinear symmetric 
 the corresponding system; for `ζ′ ≠ 0` the roots `λ` of `det(σ(U; ζ) − λA⁰(U)) = 0` are
 `ζ₀ + v·ζ′` with multiplicity `n − 1` (barotropic) or `n` (full) and `ζ₀ + v·ζ′ ± c|ζ′|`; `σ(U; ζ)`
 is positive semidefinite if and only if `ζ₀ + v·ζ′ ≥ c|ζ′|`, positive definite if and only if
-`ζ₀ + v·ζ′ > c|ζ′|`, and singular if and only if `ζ₀ + v·ζ′ = 0` or `|ζ₀ + v·ζ′| = c|ζ′|`; and a
+`ζ₀ + v·ζ′ > c|ζ′|`, and singular if and only if `|ζ₀ + v·ζ′| = c|ζ′|`, or `ζ₀ + v·ζ′ = 0` when
+that root has positive multiplicity (the barotropic system with `n ≥ 2`, and the full system for
+every `n`; for the barotropic system with `n = 1` the root `ζ₀ + vζ₁` is absent and the symbol
+is singular only on the sound sheet); and a
 round cone `(c′, w)` dominates at `U` if and only if `c′ ≥ c(U) + |v − w|`, so the sound cone
 `(c(U), v)` is the least dominating cone (Majda1984, Ch. 2, §2.1, compressible Euler as a
 symmetric hyperbolic system; Dafermos2016, Ch. V, §5.1).
@@ -398,6 +425,11 @@ symmetric hyperbolic system; Dafermos2016, Ch. V, §5.1).
 - Full system, `n = 1`, `P = e^sρ²` at `(ρ, s) = (1, 0)`: `∂_ρP = 2`, `∂_sP = 1`, `d = 3/2`,
   `S = [[2, 0, 1], [0, 1, 0], [1, 0, 3/2]]` with leading minors `2, 2, 2`, positive definite; the
   uncorrected choice `d = 1/2` gives determinant `0`.
+- Multiplicity zero: `n = 1`, barotropic, `(ρ, v) = (1, 3)`, `c = 2`, `ζ = (−3, 1)`: here
+  `ζ₀ + vζ₁ = 0`, yet `σ = −3A⁰ + A¹ = [[0, 4], [4, 0]]` has determinant `−16`, and
+  `g⁻¹(ζ, ζ) = −c⁻²·0 + 1 = 1`, so `ζ` is not null either: `σ` is nonsingular. A statement
+  making `ζ₀ + v·ζ′ = 0` singular for every `n` is refuted; for the full system with `n = 1` at
+  the same `(ρ, v)` the entropy row makes `ζ₀ + vζ₁` a root and `σ` is singular.
 - Dominance at `(ρ, v) = (1, 3)` with `c = 2`: `(2, 3)` dominates, `(2, 0)` does not
   (`ζ = (2, −1)`: `ζ₀ + 0 = 2 ≥ 2·1`, but `ζ₀ + vζ₁ − c|ζ₁| = 2 − 3 − 2 = −3 < 0`), and `(5, 0)`
   dominates, matching `c′ ≥ c + |v − w| = 5`.
@@ -437,9 +469,12 @@ form of a state `U` of either Euler system is `g_{c(U), v(U)}`.
 - Galilean covariance: `g_{c,v}((τ, ξ + τw), (τ′, ξ′ + τ′w)) = g_{c, v−w}((τ, ξ), (τ′, ξ′))`.
 - Identification with the symbol: for a state `U`, `σ(U; ζ)` of §2.2 is positive definite iff
   `ζ` is a future timelike covector of `g_U⁻¹`, positive semidefinite iff `ζ` is future causal, and
-  singular iff `ζ` is `g_U⁻¹`-null or `ζ₀ + v·ζ′ = 0`: the null cone of `g_U⁻¹` is the sound sheet
-  of the characteristic variety (ChristodoulouMiao2014 lines 864–872; Christodoulou2019
-  lines 134–138).
+  singular iff `ζ` is `g_U⁻¹`-null or, when the root `ζ₀ + v·ζ′` of §2.2 has positive multiplicity
+  (barotropic with `n ≥ 2`, full for every `n`), `ζ₀ + v·ζ′ = 0`: the null cone of `g_U⁻¹` is the
+  sound sheet of the characteristic variety, and the hyperplane `ζ₀ + v·ζ′ = 0`, characteristic
+  for the material derivative `B`, is its other sheet, absent for the barotropic system with
+  `n = 1` (§2.2, the multiplicity-zero Check;
+  ChristodoulouMiao2014 lines 864–872; Christodoulou2019 lines 134–138).
 
 **Checks.**
 
@@ -530,16 +565,30 @@ Prove:
   `J⁻_{D′}(q) = J⁻_D(q)` for `q ∈ D′` and `D⁺_D(S) ∩ D′ ⊆ D⁺_{D′}(S ∩ D′)`.
 - *Compact pasts.* If `D` is a domain, `S ⊆ Σ_{t₀}` and `p ∈ D⁺_D(S)`, then every
   past-inextendible causal curve in `D` ending at `p` is defined on `[t₀, t_p]`, `J⁻_D(p)` is
-  compact, and `J⁻_D(p) ∩ Σ_{t₀} ⊆ S`.
+  compact, and `J⁻_D(p) ∩ Σ_{t₀} ⊆ S`. Route: a sequence of points of `J⁻_D(p)` that is unbounded
+  or converges outside `D` yields, by the limit-curve statement of §3.2, a past-inextendible
+  curve ending at `p` that misses `S` (Minguzzi2019 line 1917, §2.11, the limit curve theorems,
+  which give the classical form of this compactness).
 - *Openness.* If moreover `S` is relatively open in `Σ_{t₀}`, then `D⁺_D(S)` is a domain, and
   `q ↦ J⁻_D(q)` is upper semicontinuous on it: every neighbourhood of `J⁻_D(p)` contains
-  `J⁻_D(q)` for `q` near `p`.
+  `J⁻_D(q)` for `q` near `p`. Route: if `q_m → p ∈ D⁺_D(S)` and past-inextendible curves from
+  `q_m` miss `S`, their limit curve (§3.2) extends to a past-inextendible curve from `p`, which
+  meets `S` at time `t₀`; since `S` is open in `Σ_{t₀}` and the curves are equi-Lipschitz, the
+  curves from `q_m` reach a compact neighbourhood of that point inside `D` and, being
+  inextendible, must end at time `t₀` inside `S`, a contradiction. The classical analogue, for
+  closed achronal `S` in a spacetime, is Minguzzi2019 line 3718, Proposition 3.16, eq. (3.1),
+  `Int D⁺(S) = I⁺(S) ∩ I⁻(D⁺(S))`; the open-`S` statement on a domain is proved here.
 - *Idempotence.* In the same setting `D⁺_{D⁺_D(S)}(S) = D⁺_D(S)`: a past-inextendible causal
   curve in `D⁺_D(S)` is past-inextendible in `D`, because its first exit point from `D⁺_D(S)`
-  would start a curve not meeting `S`.
+  would start a curve not meeting `S` (proved here; the notion is MinguzziCone2019 lines
+  1737–1740, Definition 2.17, for closed achronal `S`).
 - *Slabs.* If `D = [t₀, t₁) × E` and `c`, `|v|` are bounded on `[t₀, t₂] × E` for every `t₂ < t₁`,
   then every past causal curve in `D` extends to one defined on `[t₀, t_p]`, `D⁺_D(S)` is the set
-  of `p` all of whose causal curves on `[t₀, t_p]` start in `S`, and `D⁺_D(Σ_{t₀}) = D`.
+  of `p` all of whose causal curves on `[t₀, t_p]` start in `S`, and `D⁺_D(Σ_{t₀}) = D`. Route:
+  the integral characterisation of §3.2 bounds a causal curve on `(a, t_p]` by
+  `|x(t) − x_p| ≤ (t_p − a) sup(|v| + c)`, so it has a limit at `a` and extends by local existence
+  unless `a = t₀` (proved here; the notion is BarGinouxPfaffle2007 line 1006,
+  Definition 1.3.5).
 - *Invariance.* If `D`, `S` are Λ-invariant and the field is Λ-periodic, `D⁺_D(S)` is
   Λ-invariant and `J⁻_D(p + λ) = J⁻_D(p) + λ`; translations and Galilean boosts act likewise.
 
@@ -593,8 +642,12 @@ fundamental domain `F` of `Λ` acting on `E`. Define `Hᵏ_Λ(E; ℝ^N)`, for `k
   isometrically; `∂ᵢ : Hᵏ⁺¹_Λ → Hᵏ_Λ` is bounded; `∫_F (∂ᵢu)·w = −∫_F u·∂ᵢw` for `u, w ∈ H¹_Λ`.
 - For `Λ = 0`, `u ∈ Hᵏ_Λ` iff each coordinate of `u` is the value of an element of
   `TauCeti.Wkp volume ⊤ 2 k`, iff each coordinate is in Mathlib's `MemSobolev k 2` (through
-  `MeasureTheory.Lp.memSobolev_natCast_iff_exists_wkp_value_eq`), with equal norms in the first
-  case and equivalent norms in the second.
+  `MeasureTheory.Lp.memSobolev_natCast_iff_exists_wkp_value_eq`), with equivalent norms in both
+  cases, equal in the first case exactly when `k ≤ 1`: Tau Ceti's `Wkp` norm at order `k ≥ 2`
+  measures the highest derivative by the operator norm on `TauCeti.IteratedGradient`, which for
+  `k = 2` is the operator norm of the Hessian rather than its `ℓ²` norm over multi-indices
+  (`TauCeti/Analysis/Sobolev/Wkp/Basic.lean`, module docstring), while at order `1` the
+  gradient's operator norm is its Euclidean norm.
 - *Localisation.* Fix `χ_Λ ∈ C_c^∞(V)` with `Σ_{λ∈Λ} χ_Λ(· − λ) = 1` on `V`. Then
   `u ↦ (χ_Λ ∘ π_V)u` is bounded from `Hᵏ_Λ` to `Hᵏ(E)`, `u = Σ_{λ∈Λ} τ_λ((χ_Λ ∘ π_V)u)` with a
   locally finite sum, and `‖u‖_{Hᵏ_Λ}` and `‖(χ_Λ ∘ π_V)u‖_{Hᵏ(E)}` are equivalent norms with
@@ -609,6 +662,16 @@ fundamental domain `F` of `Λ` acting on `E`. Define `Hᵏ_Λ(E; ℝ^N)`, for `k
   regardless of the rank would wrongly admit it for `Λ_cyl`.
 - `n = 2`, `Λ = Λ_cyl`: `u = e^{−(x¹)²} cos x²` has `‖u‖²_{L²_Λ} = √(π/2) · π`, while `cos x²` alone
   is not in `H⁰_Λ`.
+- `n = 2`, `Λ = 0`, `k = 2`, `u = e^{−|x|²}`: the Hessian at `0` is `−2I`, with operator norm `2`
+  and `Σ_{|α|=2} |∂^αu(0)|² = 4 + 4 = 8`, root `2√2`; the pointwise inequality is strict on a
+  neighbourhood of `0`, so the `H²_Λ` norm of `u` and its `TauCeti.Wkp volume ⊤ 2 2` norm differ,
+  while the two are equivalent. For `k = 1` the two norms of `u` are both
+  `(∫ u² + |∇u|²)^{1/2}`. A claim of equal norms for every `k` is refuted.
+- `n = 1`, `Λ = 2πℤ`, `k = 1`, `u = cos x`: the Fourier coefficients for the probability Haar
+  measure of `ℝ/2πℤ` are `c_{±1} = 1/2`, so the `TauCeti.CircleSobolev 1 ℂ` norm squared of `u`
+  is `2 · 2² · (1/4) = 2`, while the constant `1` has `1`; here the values are `2π` and `2π`. The
+  ratios `π` and `2π` differ, so the two norms are equivalent (the weights `(1 + |m|)²` and
+  `2π(1 + m²)` have ratio between `1/(2π)` and `1/π`) but not proportional.
 - `n = 1`, `Λ = 2πℤ`, `u = cos x`: `‖u‖²_{H¹_Λ} = π + π = 2π`. For full-rank `Λ = (2πℤ)^n`
   and `u(x) = Σ c_m e^{im·x}`, `‖u‖²_{H¹_Λ} = (2π)^n Σ (1 + |m|²)|c_m|²`, while the
   IncompressibleFlows norm of the rescaled function `y ↦ u(2πy)` on the unit-period torus is
@@ -684,8 +747,11 @@ derivatives up to order `k` on `K`. Every constant is independent of `u`, `f`, `
 - Composition with `Φ(u) = u²`, `n = 1`, `k = 1`: `‖(u²)′‖₂ = ‖2uu′‖₂ ≤ 2‖u‖_∞‖u′‖₂`, the constant
   `2 sup_K |u|` predicted by the composition estimate.
 
-*Needs:* §§4.1–4.2; Mathlib Hölder's inequality, the Leibniz rule for weak derivatives (Tau
-Ceti `TauCeti.HasWeakFDerivOn` and the chain rule for `C^∞ ∘ (C¹ ∩ W^{1,2}_loc)`).
+*Needs:* §§4.1–4.2; Mathlib Hölder's inequality; Tau Ceti's Leibniz rule
+`TauCeti.HasWeakLineDerivOn.contDiffOn_smul`, `TauCeti.HasWeakFDerivOn.contDiffOn_smul` and
+`TauCeti.HasWeakLineDerivOn.lipschitzOnWith_smul` (smooth or Lipschitz factor; two Sobolev
+factors by density through §4.4), `TauCeti.HasWeakFDerivOn` and the chain rule for
+`C^∞ ∘ (C¹ ∩ W^{1,2}_loc)`.
 
 ### 4.4 Friedrichs mollifiers
 
@@ -693,10 +759,16 @@ Construct `J_ε u = φ_ε ⋆ u` with `φ ∈ C_c^∞(E)` even, nonnegative, `�
 `φ_ε = ε^{−n}φ(·/ε)` (Mathlib `MeasureTheory.convolution`). Prove: `J_ε` preserves
 Λ-periodicity and maps `Hᵏ_Λ` into `⋂_j Hʲ_Λ`; `‖J_εu‖_{Hᵏ_Λ} ≤ ‖u‖_{Hᵏ_Λ}`; `J_ε` is symmetric
 for the `L²_Λ` pairing; `∂ᵢJ_ε = J_ε∂ᵢ`; `J_εu → u` in `Hᵏ_Λ`; `‖J_εu‖_{Hᵏ⁺¹_Λ} ≤ Cε^{−1}‖u‖_{Hᵏ_Λ}`
-and `‖J_εu − u‖_{Hᵏ⁻¹_Λ} ≤ Cε‖u‖_{Hᵏ_Λ}`; and Friedrichs' lemma: for `a` bounded and Lipschitz,
-`‖J_ε(a∂ᵢu) − a∂ᵢJ_εu‖_{L²_Λ} ≤ C(‖a‖_∞ + Lip a)‖u‖_{L²_Λ}` for `u ∈ H¹_Λ`, the commutator extends
-to `L²_Λ` with the same bound and tends to `0` strongly as `ε → 0` (Majda1984, Ch. 2, §2.1;
-Friedrichs1954).
+and, for `k ≥ 1`, `‖J_εu − u‖_{Hᵏ⁻¹_Λ} ≤ Cε‖u‖_{Hᵏ_Λ}`; and Friedrichs' lemma: for `a` bounded and
+Lipschitz, `‖J_ε(a∂ᵢu) − a∂ᵢJ_εu‖_{L²_Λ} ≤ C(‖a‖_∞ + Lip a)‖u‖_{L²_Λ}` for `u ∈ H¹_Λ`, the
+commutator extends to `L²_Λ` with the same bound and tends to `0` strongly as `ε → 0`
+(Majda1984, Ch. 2, §2.1; Friedrichs1954). For `Λ = 0` the contraction, the commutation with
+derivatives and the convergence `J_εu → u` are, in Tau Ceti's `Wkp` norm,
+`TauCeti.Wkp.norm_normedBumpL_le_one`, `TauCeti.Wkp.lowerOrder_normedBumpL` with
+`TauCeti.Wkp.iteratedGradient_normedBumpL`, and `TauCeti.Wkp.tendsto_normedBumpL` at `p = 2`, and
+are cited, not reproved (in the multi-index norm of §4.1 the contraction is Young's inequality
+applied to each `∂^αu`); proved here are the Λ-periodic transfer through the localisation of
+§4.1, the `ε^{−1}` gain and `ε` loss bounds, the `L²_Λ` symmetry and Friedrichs' lemma.
 
 **Checks.**
 
@@ -704,14 +776,21 @@ Friedrichs1954).
   `φ_ε = φ(·/ε)` multiplies constants by `εⁿ`.
 - `n = 1`, `Λ = 2πℤ`: `J_ε cos(mx) = φ̂(εm) cos(mx)` with `φ̂(η) = ∫ φ(y) cos(ηy) dy`, a factor in
   `[−1, 1]` tending to `1` as `εm → 0`; with `m ≈ 1/ε` the gain `ε^{−1}` in the `Hᵏ⁺¹` bound is
-  attained up to a constant, so it cannot be improved.
+  attained up to a constant, so it cannot be improved. The loss bound needs `k ≥ 1`: for `k = 0` it
+  would read `‖J_εu − u‖_{L²} ≤ Cε‖u‖_{L²}`, but `‖J_ε cos(mx) − cos(mx)‖₂ = |1 − φ̂(εm)|‖cos(mx)‖₂`
+  tends to `‖cos(mx)‖₂` as `m → ∞` (Riemann–Lebesgue), exceeding `Cε‖cos(mx)‖₂` once `Cε < 1`; for
+  `k = 1` it holds, since `|1 − φ̂(η)| ≤ |η|∫|y|φ(y) dy` gives
+  `|1 − φ̂(εm)|√π ≤ Cεm√π ≤ Cε‖cos(mx)‖_{H¹_Λ}` with `‖cos(mx)‖²_{H¹_Λ} = π(1 + m²)`.
 - Friedrichs' commutator vanishes for constant `a` (`J_ε` commutes with `∂ᵢ`). For `a(x) = x`
   on `ℝ` (only its Lipschitz constant enters) it equals `ψ′ ⋆ u` with `ψ(z) = −zφ_ε(z)`, and
   `‖ψ′‖_{L¹} = ∫ |φ(w) + wφ′(w)| dw` does not depend on `ε`, as the lemma predicts; a bound of
   the form `Cε^{−1}` would be the trivial one.
 
 *Needs:* §4.1; Mathlib `MeasureTheory.convolution`, `ContDiffBump`, Young's inequality for
-convolution; Tau Ceti `TauCeti.Wkp.dense_contDiff_representatives` for the convergence on `Λ = 0`.
+convolution; Tau Ceti `TauCeti.Wkp.normedBumpL`, `TauCeti.Wkp.norm_normedBumpL_le_one`,
+`TauCeti.Wkp.lowerOrder_normedBumpL`, `TauCeti.Wkp.iteratedGradient_normedBumpL`,
+`TauCeti.Wkp.tendsto_normedBumpL` and `TauCeti.Wkp.dense_contDiff_representatives` for the
+statements on `Λ = 0`.
 
 ### Examples
 
@@ -770,8 +849,17 @@ the localised energy of the wave equation on backward cones; Majda1984, Ch. 2, �
 
 - The proof differentiates `E_χ`, which is Lipschitz in `t`, integrates by parts in `x` against
   the Lipschitz weight, and drops the term `∫_F⟨σ(dχ)W, W⟩ ≤ 0`.
-- The truncated moving cone `χ = (R − |x − x₀ − tw| − Mt)₊` is characteristic-monotone for every
-  operator dominated by `(M, w)` on its support.
+- The truncated periodised moving cone `χ = φ₊` with
+  `φ(t, x) = max_{λ∈Λ} (R − |x − λ − x₀ − tw| − Mt)` (for `Λ = 0`,
+  `χ = (R − |x − x₀ − tw| − Mt)₊`) is Lipschitz, Λ-periodic, supported modulo `Λ` in a ball, and
+  characteristic-monotone for every operator dominated by `(M, w)` on its support: at almost
+  every point of `{χ > 0}` the differential of `χ` is that of one term attaining the maximum (a
+  maximum of Lipschitz functions that is differentiable at a point where an attaining term is
+  differentiable has that term's differential), and for that term `dχ = (e·w − M, −e)` with `e`
+  a unit vector, so `σ(dχ) = −σ((M − e·w, e)) ≤ 0` because `M − e·w + w·e = M ≥ M|e|`. A single
+  cone `R − |x − x₀ − tw| − Mt` is not Λ-periodic when `Λ ≠ 0` (for `n = 1`, `Λ = 2πℤ` and `t = 0`
+  it takes the values `R` at `x₀` and `R − 2π` at `x₀ + 2π`) and is not an admissible weight
+  there; its periodisation is.
 
 **Checks.**
 
@@ -779,7 +867,7 @@ the localised energy of the wave equation on backward cones; Majda1984, Ch. 2, �
   `χ = (1 − |x| − t/2)₊` has `−1/2 + 1 = 1/2 > 0` for `x < 0`, and indeed `u = f(x − t)` with
   `f` supported in `(−2, −1)` has `E_χ(0) = 0` but `E_χ(0.9) > 0`, its support `(−1.1, −0.1)`
   meeting `{|x| < 0.55}`.
-- Euler at a constant state `(ρ₀, v₀)`: `χ = (R − |x − tv₀| − c₀t)₊` gives
+- Euler at a constant state `(ρ₀, v₀)`, `Λ = 0`: `χ = (R − |x − tv₀| − c₀t)₊` gives
   `∂_tχ + v₀·∇χ + c₀|∇χ| = (e·v₀ − c₀) − v₀·e + c₀ = 0` with `e = (x − tv₀)/|x − tv₀|`: the sound
   cone itself is admissible, with equality.
 - A non-moving cone `(R − |x| − Mt)₊` at the state `v₀ = 3`, `c₀ = 1` (`n = 1`) is admissible only
@@ -820,10 +908,15 @@ applies `∂^α`, uses the commutator and composition estimates of §4.3, and §
 ### 5.4 Linear existence in `Hᵏ_Λ`
 
 Prove: for coefficients `A^μ(t, x)`, `B(t, x)` with `A^μ − Ā^μ, B ∈ C([0, T]; Hᵏ_Λ)` for constant
-matrices `Ā^μ`, `A⁰ ≥ λ₀I`, `2k > n + 2`, data `W₀ ∈ Hᵏ_Λ` and `f ∈ C([0, T]; Hᵏ_Λ)`, there is a
+matrices `Ā^μ`, with `A⁰ − Ā⁰ ∈ C¹([0, T]; Hᵏ⁻¹_Λ)` in addition (so that `∂_tA⁰` is bounded, since
+`2(k − 1) > n`), `A⁰ ≥ λ₀I`, `2k > n + 2`, data `W₀ ∈ Hᵏ_Λ` and `f ∈ C([0, T]; Hᵏ_Λ)`, there is a
 unique `W ∈ C([0, T]; Hᵏ_Λ) ∩ C¹([0, T]; Hᵏ⁻¹_Λ)` with `LW = f`, `W(0) = W₀`, obeying the estimate
-of §5.3 (Majda1984, Ch. 2, §2.1; Kato1975, Theorem I; LukNotes line 1158, Theorem 5.3, proves the
-wave-equation analogue by duality). Route: the Friedrichs regularisation
+`dE_k/dt ≤ C E_k + C E_k^{1/2}‖f‖_{Hᵏ_Λ}` of §5.3 with `C` depending on `λ₀`, `‖∂_tA⁰‖_∞`,
+`sup_t ‖A^μ − Ā^μ‖_{Hᵏ_Λ}` and `sup_t ‖B‖_{Hᵏ_Λ}` (Majda1984, Ch. 2, §2.1; Kato1975, Theorem I, both
+with `A⁰` Lipschitz in time; LukNotes line 1158, Theorem 5.3, proves the wave-equation analogue by
+duality). The time derivative of `A⁰` enters through the term `∫⟨∂_tA⁰ W, W⟩` of the energy identity
+of §5.1, so the hypothesis on `A⁰` is part of the statement; `Aⁱ` and `B` need no time derivative.
+Route: the Friedrichs regularisation
 `A⁰∂_tW_ε = −Σᵢ J_ε(Aⁱ∂ᵢJ_εW_ε) − BW_ε + f` is an ODE with Lipschitz right-hand side in
 `Hᵏ_Λ` and has a solution on `[0, T]` by `IsPicardLindelof` and the uniform bound; the bounds of
 §5.3 hold uniformly in `ε` by Friedrichs' lemma; `(W_ε)` is Cauchy in `C([0, T]; L²_Λ)` by §5.1;
@@ -871,23 +964,35 @@ uniqueness; BarGinouxPfaffle2007 lines 3664–3668, Theorem 3.2.11, the linear w
 The proof applies §5.2 to `W = U₁ − U₂` with the weight `χ = φ₊`, using the difference bound
 of §2.1.
 
-**Moving cones.** For `x₀ ∈ E`, `R > 0`, `w ∈ E` and `M > 0`, the function
-`φ = R − |x − x₀ − (t − t₁)w| − M(t − t₁)` is a lens function, and it is spacelike for every `U₁`
-such that `(M, w)` dominates at `U₁(q)` for `q ∈ L_φ`; for the Euler systems this holds iff
-`M ≥ c(U₁(q)) + |v(U₁(q)) − w|` on `L_φ` (§2.2).
+**Moving cones.** For `x₀ ∈ E`, `R > 0`, `w ∈ E` and `M > 0`, the *periodised moving cone*
+`φ(t, x) = max_{λ∈Λ} (R − |x − λ − x₀ − (t − t₁)w| − M(t − t₁))` (a maximum over a locally finite
+family, since `Λ` is discrete and each term tends to `−∞` as `|λ| → ∞`) is a lens function: it is
+Lipschitz with constant `1 + |w| + M`, Λ-periodic, and `{φ(t, ·) > 0}` is the union of the
+Λ-translates of the ball of radius `R − M(t − t₁)` about `x₀ + (t − t₁)w`, whose image in `E/Λ` is
+relatively compact. For `Λ = 0` it is the single cone `R − |x − x₀ − (t − t₁)w| − M(t − t₁)`, and
+when `2R` is less than the least norm of a nonzero element of `Λ` the positive parts of the terms
+are pairwise disjoint and `L_φ` is the disjoint union of the Λ-translates of the single cone's
+lens. It is spacelike for every `U₁` such that `(M, w)` dominates at `U₁(q)` for `q ∈ L_φ`: at almost
+every point of `L_φ` the differential of `φ` is that of a term attaining the maximum (§5.2), and
+for that term `σ(U₁; dφ) = −σ(U₁; (M − e·w, e)) ≤ 0` with `e` the unit vector from the term's apex.
+For the Euler systems the dominance condition holds iff `M ≥ c(U₁(q)) + |v(U₁(q)) − w|` on `L_φ`
+(§2.2). Every lens used in §6.2 and §8.4 is a periodised moving cone.
 
-- The relation "spacelike for `U`" is monotone: shrinking `φ` by a positive factor or
-  intersecting two lenses (minimum of two lens functions) keeps it.
+- The relation "spacelike for `U`" is monotone: shrinking `φ` by a positive factor,
+  intersecting two lenses (minimum of two lens functions) or uniting them (maximum, by the
+  differential argument above) keeps it.
 - Translation, Λ-translation and Galilean boost of a lens are lenses for the transformed
   solution.
 
 **Checks.**
 
-- Constant Euler state `(ρ₀, v₀)` with sound speed `c₀`: `φ = R − |x − tv₀| − c₀t` is spacelike,
+- Constant Euler state `(ρ₀, v₀)` with sound speed `c₀`, `Λ = 0`: `φ = R − |x − tv₀| − c₀t` is
+  spacelike,
   with equality `∂_tφ + v₀·∇φ + c₀|∇φ| = 0` (§5.2): null lateral boundaries are admitted.
-- `n = 1`, `v₀ = 3`, `c₀ = 1`: the static cone `R − |x| − Mt` is spacelike iff `M ≥ 4`, the
-  moving cone with `w = 3` iff `M ≥ 1`. A formulation demanding `τ > |v·ξ| + c|ξ|` for the
-  conormal (static cones only) loses this sharpness.
+- `n = 1`, `v₀ = 3`, `c₀ = 1`, `Λ = 0`: the static cone `R − |x| − Mt` is spacelike iff `M ≥ 4`,
+  the moving cone with `w = 3` iff `M ≥ 1`; with `Λ = 2πℤ` and `R < π` the periodised cones have
+  the same differentials on each translate and the same thresholds. A formulation demanding
+  `τ > |v·ξ| + c|ξ|` for the conormal (static cones only) loses this sharpness.
 - Transport `a = 1` with `φ = 1 − |x| − t/2`: not spacelike for `x < 0`, and uniqueness fails on
   `L_φ` (§5.2, the travelling bump).
 
@@ -906,7 +1011,8 @@ and `U₂` a classical solution on `O` with `U₁ = U₂` on `S ∩ O`. If `p �
 
 Route: `J⁻_D(p)` is compact and meets `Σ_{t₀}` inside `S` (§3.3); choose a compact neighbourhood
 `N ⊆ D ∩ O` of it whose slice at `t₀` lies in `S`, on which `κ ∘ U₁` is uniformly continuous; sweep
-from `t₀` to `t_p` in steps `h`, applying §6.1 to moving cones with apex data `(c(q) + 2ε, v(q))`
+from `t₀` to `t_p` in steps `h`, applying §6.1 to periodised moving cones with apex data
+`(c(q) + 2ε, v(q))`
 at points `q` of the shrinking neighbourhoods; each step loses a margin `O(εh)`, so for `ε`
 small the total loss `O(ε(t_p − t₀))` stays below the distance from `J⁻_D(p)` to the complement
 of `N` (Majda1984, Ch. 2, §2.3; ChristodoulouMiao2014 lines 872–878; EperonReallSbierski2019
@@ -963,7 +1069,10 @@ period group `Λ`, `k ∈ ℕ` with `2k > n + 2`, a compact `K ⊆ G` and `M > 0
 (Kato1975, Theorem I; Majda1984, Ch. 2, Theorem 2.1 and the continuation principle of §2.2;
 Dafermos2016, Ch. V, Theorem 5.1.1; LukNotes line 1239, Theorem 6.1, and line 1620,
 Theorem 6.10, for quasilinear wave equations.) Route: the iteration
-`A⁰(U^m)∂_tU^{m+1} + Σᵢ Aⁱ(U^m)∂ᵢU^{m+1} = F(U^m)` with mollified data, solved by §5.4;
+`A⁰(U^m)∂_tU^{m+1} + Σᵢ Aⁱ(U^m)∂ᵢU^{m+1} = F(U^m)` with mollified data, solved by §5.4 (the
+iterate satisfies `U^m − Ū ∈ C([0, T]; Hᵏ_Λ) ∩ C¹([0, T]; Hᵏ⁻¹_Λ)`, so `A⁰(U^m) − A⁰(Ū)` has the time
+regularity `C¹([0, T]; Hᵏ⁻¹_Λ)` that §5.4 asks, by the composition and product estimates of §4.3 at
+order `k − 1`, where `2(k − 1) > n`);
 boundedness in `Hᵏ_Λ` on a uniform interval by §5.3, contraction in `C([0, T]; L²_Λ)` by §5.1,
 convergence in `C([0, T]; Hᵏ⁻¹_Λ)` by §4.2, top-order continuity and continuous dependence by the
 Bona–Smith regularisation of the data; continuation by the tame estimate of §5.3 and Grönwall.
@@ -1171,8 +1280,10 @@ open neighbourhood `N` of `q` and a `C¹` function `φ` on `N` with `dφ(q) ≠ 
 - (b) If moreover `(D, U)` is maximal and `U` extends to a classical solution `Ũ` on `N` (and on
   the Λ-translates of `N`, periodically), then `∂_tφ(q) + ṽ(q)·∇φ(q) = c̃(q)|∇φ(q)|` and
   `∇φ(q) ≠ 0`: `∂D` is a null hypersurface of the acoustical form of `Ũ` at `q`. Route: if the
-  inequality were strict, the moving-cone lens `{φ ≥ 0} ∩ {ψ > 0}` with
-  `ψ = ε − |x − x_q − (t − t_q)ṽ(q)| − M(t − t_q)`, `M > c̃ + |ṽ − ṽ(q)|` near `q`, added to `D`
+  inequality were strict, the lens `{φ ≥ 0} ∩ {ψ > 0}` together with its Λ-translates, where
+  `ψ` is the periodised moving cone of §6.1 with apex data `(ε, x_q, ṽ(q), M)`, that is
+  `ψ = ε − |x − x_q − (t − t_q)ṽ(q)| − M(t − t_q)` near `q` and its Λ-translates elsewhere, with
+  `M > c̃ + |ṽ − ṽ(q)|` near `q` and `2ε` below the least norm of a nonzero period, added to `D`
   with `Ũ`, would give a strictly larger development: past causal curves from the lens stay in it
   until they reach `{φ = 0}`, and cannot re-enter it from `D` because `φ` increases along
   future causal curves near `q`.

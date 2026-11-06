@@ -465,7 +465,7 @@
      "id": "2.2.3",
      "kind": "theorem",
      "name": "CompressibleEuler.symbol_spectrum",
-     "statement": "For ζ′ ≠ 0 the roots of det(σ(U;ζ) − λA⁰(U)) are ζ₀ + v·ζ′ (multiplicity n−1 barotropic, n full) and ζ₀ + v·ζ′ ± c|ζ′|; σ(U;ζ) ≥ 0 iff ζ₀ + v·ζ′ ≥ c|ζ′|, > 0 iff strict, singular iff ζ₀ + v·ζ′ = 0 or |ζ₀ + v·ζ′| = c|ζ′|; (c′,w) dominates at U iff c′ ≥ c(U) + |v − w|.",
+     "statement": "For ζ′ ≠ 0 the roots of det(σ(U;ζ) − λA⁰(U)) are ζ₀ + v·ζ′ (multiplicity n−1 barotropic, n full) and ζ₀ + v·ζ′ ± c|ζ′|; σ(U;ζ) ≥ 0 iff ζ₀ + v·ζ′ ≥ c|ζ′|, > 0 iff strict; singular iff |ζ₀ + v·ζ′| = c|ζ′|, or ζ₀ + v·ζ′ = 0 when that root has positive multiplicity (barotropic with n ≥ 2; full for every n); (c′,w) dominates at U iff c′ ≥ c(U) + |v − w|.",
      "hypotheses": [
       "U ∈ G",
       "ζ′ ≠ 0 for the spectrum"
@@ -478,6 +478,13 @@
       "target:2.2",
       "target:2.2.1",
       "mathlib:Matrix.det"
+     ],
+     "tests": [
+      {
+       "name": "multiplicity_zero",
+       "kind": "non-example",
+       "statement": "n = 1, barotropic, (ρ,v) = (1,3), c = 2, ζ = (−3,1): ζ₀ + vζ₁ = 0 but σ = [[0,4],[4,0]], det −16, nonsingular; g⁻¹(ζ,ζ) = 1, not null"
+      }
      ]
     }
    ]
@@ -557,7 +564,7 @@
      "id": "3.1.1",
      "kind": "theorem",
      "name": "CompressibleEuler.symbol_posDef_iff_futureTimelike",
-     "statement": "For a state U of either Euler system, σ(U;ζ) is positive definite iff ζ is future timelike for g_U⁻¹, positive semidefinite iff ζ is future causal, and singular iff ζ is g_U⁻¹-null or ζ₀ + v·ζ′ = 0.",
+     "statement": "For a state U of either Euler system, σ(U;ζ) is positive definite iff ζ is future timelike for g_U⁻¹, positive semidefinite iff ζ is future causal, and singular iff ζ is g_U⁻¹-null or, when the root ζ₀ + v·ζ′ of 2.2.3 has positive multiplicity (barotropic with n ≥ 2, full for every n), ζ₀ + v·ζ′ = 0.",
      "hypotheses": [
       "U ∈ G"
      ],
@@ -769,7 +776,7 @@
      ],
      "locator": {
       "source": "Minguzzi2019",
-      "where": "line 1917, §2.11 (limit curves)"
+      "where": "line 1917, §2.11 (limit curve theorems, the classical form of the compactness); proved here for open domains along the limit-curve route of 3.2.3"
      },
      "prerequisites": [
       "target:3.3",
@@ -786,8 +793,8 @@
       "S relatively open in Σ_{t₀}"
      ],
      "locator": {
-      "source": "MinguzziCone2019",
-      "where": "lines 1737–1740, Definition 2.17 and §2.9"
+      "source": "Minguzzi2019",
+      "where": "line 3718, Proposition 3.16, eq. (3.1) (openness, classical analogue for closed achronal S); MinguzziCone2019 lines 1737–1740, Definition 2.17 (the notion); the open-S statements are proved here along the limit-curve route of 3.2.3"
      },
      "prerequisites": [
       "target:3.3.1",
@@ -804,7 +811,7 @@
      ],
      "locator": {
       "source": "BarGinouxPfaffle2007",
-      "where": "line 1006, Definition 1.3.5"
+      "where": "line 1006, Definition 1.3.5 (the notion); proved here from the integral characterisation 3.2.1 and the boundedness hypothesis"
      },
      "prerequisites": [
       "target:3.3",
@@ -852,7 +859,7 @@
       {
        "name": "eq_wkp",
        "role": "comparison",
-       "statement": "for Λ = 0 coordinates are values of TauCeti.Wkp volume ⊤ 2 k with equal norms, equivalently MemSobolev k 2"
+       "statement": "for Λ = 0 coordinates are values of TauCeti.Wkp volume ⊤ 2 k with equivalent norms, equal exactly for k ≤ 1 (the Wkp norm uses operator norms on TauCeti.IteratedGradient above order 1); equivalently MemSobolev k 2"
       },
       {
        "name": "localise",
@@ -880,6 +887,16 @@
        "name": "torus_comparison",
        "kind": "compatibility",
        "statement": "cos x on 2πℤ: norm² 2π here versus (1+4π²)/2 for the unit-period torus norm; equivalent, not equal"
+      },
+      {
+       "name": "wkp_norm_k2",
+       "kind": "non-example",
+       "statement": "n = 2, k = 2, u = e^{−|x|²}: Hessian −2I at 0, operator norm 2 versus multi-index ℓ² norm 2√2; H²_Λ and Wkp norms of u differ, equivalent; equal for k = 1"
+      },
+      {
+       "name": "circle_comparison",
+       "kind": "compatibility",
+       "statement": "n = 1, Λ = 2πℤ, k = 1: cos x has TauCeti.CircleSobolev 1 ℂ norm² 2 and H¹_Λ norm² 2π; the constant 1 has 1 and 2π; ratios π and 2π differ, so equivalent but not proportional"
       }
      ]
     },
@@ -935,7 +952,10 @@
      },
      "prerequisites": [
       "target:4.1",
-      "target:4.2"
+      "target:4.2",
+      "tauceti:TauCeti.HasWeakLineDerivOn.contDiffOn_smul",
+      "tauceti:TauCeti.HasWeakFDerivOn.contDiffOn_smul",
+      "tauceti:TauCeti.HasWeakLineDerivOn.lipschitzOnWith_smul"
      ],
      "tests": [
       {
@@ -1010,18 +1030,24 @@
      "prerequisites": [
       "mathlib:MeasureTheory.convolution",
       "mathlib:ContDiffBump",
-      "target:4.1"
+      "target:4.1",
+      "tauceti:TauCeti.Wkp.normedBumpL",
+      "tauceti:TauCeti.Wkp.norm_normedBumpL_le_one",
+      "tauceti:TauCeti.Wkp.lowerOrder_normedBumpL",
+      "tauceti:TauCeti.Wkp.iteratedGradient_normedBumpL",
+      "tauceti:TauCeti.Wkp.tendsto_normedBumpL",
+      "tauceti:TauCeti.Wkp.dense_contDiff_representatives"
      ],
      "api": [
       {
        "name": "bounds",
        "role": "structure",
-       "statement": "preserves Λ-periodicity; ‖J_εu‖_{Hᵏ} ≤ ‖u‖_{Hᵏ}; symmetric for the L²_Λ pairing; commutes with ∂ᵢ; J_εu → u in Hᵏ_Λ"
+       "statement": "preserves Λ-periodicity; ‖J_εu‖_{Hᵏ} ≤ ‖u‖_{Hᵏ}; symmetric for the L²_Λ pairing; commutes with ∂ᵢ; J_εu → u in Hᵏ_Λ (for Λ = 0 these are TauCeti.Wkp.norm_normedBumpL_le_one, lowerOrder_normedBumpL, iteratedGradient_normedBumpL and tendsto_normedBumpL at p = 2)"
       },
       {
        "name": "gain_loss",
        "role": "structure",
-       "statement": "‖J_εu‖_{Hᵏ⁺¹} ≤ Cε^{−1}‖u‖_{Hᵏ}; ‖J_εu − u‖_{Hᵏ⁻¹} ≤ Cε‖u‖_{Hᵏ}"
+       "statement": "‖J_εu‖_{Hᵏ⁺¹} ≤ Cε^{−1}‖u‖_{Hᵏ}; for k ≥ 1, ‖J_εu − u‖_{Hᵏ⁻¹} ≤ Cε‖u‖_{Hᵏ}"
       },
       {
        "name": "friedrichs_lemma",
@@ -1044,6 +1070,11 @@
        "name": "linear_coefficient",
        "kind": "degenerate",
        "statement": "for a = x on ℝ the commutator is ψ′ ⋆ u with ‖ψ′‖_{L¹} = ∫|φ + wφ′| independent of ε"
+      },
+      {
+       "name": "loss_needs_k_ge_one",
+       "kind": "non-example",
+       "statement": "k = 0: ‖J_ε cos(mx) − cos(mx)‖₂ = |1 − φ̂(εm)|‖cos(mx)‖₂ → ‖cos(mx)‖₂ as m → ∞, exceeding Cε‖cos(mx)‖₂ once Cε < 1; for k = 1 the bound holds since |1 − φ̂(η)| ≤ |η|∫|y|φ"
       }
      ]
     }
@@ -1183,11 +1214,12 @@
      "id": "5.4",
      "kind": "theorem",
      "name": "SymmetricHyperbolic.linear_existence",
-     "statement": "For coefficients with A^μ − Ā^μ, B ∈ C([0,T];Hᵏ_Λ), A⁰ ≥ λ₀I, 2k > n + 2, W₀ ∈ Hᵏ_Λ and f ∈ C([0,T];Hᵏ_Λ) there is a unique W ∈ C([0,T];Hᵏ_Λ) ∩ C¹([0,T];Hᵏ⁻¹_Λ) with LW = f, W(0) = W₀, obeying 5.3.",
+     "statement": "For coefficients with A^μ − Ā^μ, B ∈ C([0,T];Hᵏ_Λ), A⁰ − Ā⁰ ∈ C¹([0,T];Hᵏ⁻¹_Λ) (so ∂_tA⁰ is bounded, 2(k−1) > n), A⁰ ≥ λ₀I, 2k > n + 2, W₀ ∈ Hᵏ_Λ and f ∈ C([0,T];Hᵏ_Λ) there is a unique W ∈ C([0,T];Hᵏ_Λ) ∩ C¹([0,T];Hᵏ⁻¹_Λ) with LW = f, W(0) = W₀, obeying the estimate dE_k/dt ≤ C E_k + C E_k^{1/2}‖f‖_{Hᵏ_Λ} of 5.3 with C depending on λ₀, ‖∂_tA⁰‖_∞, sup_t ‖A^μ − Ā^μ‖_{Hᵏ_Λ} and sup_t ‖B‖_{Hᵏ_Λ}.",
      "hypotheses": [
       "2k > n + 2",
       "A⁰ ≥ λ₀I",
-      "coefficients in Ā + C([0,T];Hᵏ_Λ)"
+      "coefficients in Ā + C([0,T];Hᵏ_Λ)",
+      "A⁰ − Ā⁰ ∈ C¹([0,T];Hᵏ⁻¹_Λ)"
      ],
      "locator": {
       "source": "Majda1984",
@@ -1229,12 +1261,12 @@
       {
        "name": "min",
        "role": "constructor",
-       "statement": "the minimum of two lens functions spacelike for U is a lens function spacelike for U"
+       "statement": "the minimum (intersection) and the maximum (union) of two lens functions spacelike for U are lens functions spacelike for U"
       },
       {
        "name": "movingCone",
        "role": "constructor",
-       "statement": "R − |x − x₀ − (t−t₁)w| − M(t−t₁) is a lens function, spacelike for U₁ when (M,w) dominates at U₁ on the lens"
+       "statement": "the periodised moving cone max_{λ∈Λ}(R − |x − λ − x₀ − (t−t₁)w| − M(t−t₁)) is a lens function (Lipschitz, Λ-periodic, slices relatively compact modulo Λ; the single cone when Λ = 0; disjoint translates when 2R is below the least nonzero norm of Λ), spacelike for U₁ when (M,w) dominates at U₁ on the lens, since a.e. its differential is that of a term attaining the maximum"
       }
      ],
      "tests": [
@@ -1252,6 +1284,11 @@
        "name": "steep_lens",
        "kind": "non-example",
        "statement": "transport a = 1, φ = 1 − |x| − t/2 is not spacelike for x < 0"
+      },
+      {
+       "name": "single_cone_not_periodic",
+       "kind": "non-example",
+       "statement": "n = 1, Λ = 2πℤ, t = t₁: the single cone takes R at x₀ and R − 2π at x₀ + 2π, so it is not Λ-periodic; its periodisation takes R at both"
       }
      ]
     },
