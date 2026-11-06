@@ -142,3 +142,16 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["K5a.10, K5b.1"]
+
+[[source]]
+id = "rainer-advanced-complex-analysis"
+locator_scheme = "theorem"
+locator = "Theorems 11.1 and 11.7, pp. 25 and 29"
+url = "https://www.mat.univie.ac.at/~armin/lect/advanced_complex_analysis.pdf"
+fetched_from = "https://www.mat.univie.ac.at/~armin/lect/advanced_complex_analysis.pdf"
+fetched_at = "2026-11-06T11:04:42Z"
+sha256 = "c86be0dcbf5402ff9a610ac1e91a1152588c72c55f55d9573bed6b83dfe8e418"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-06"
+cited_for = ["K2"]
