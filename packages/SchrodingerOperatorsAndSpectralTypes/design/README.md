@@ -10,8 +10,9 @@ with no isolated points), proves the interval criterion for `[a, b] ⊆ σ_ac`, 
 principle below the essential spectrum, the abstract wave operators and the Kato–Rosenblum
 theorem on trace-class perturbations. The second layer gives the lower bounds and cores that
 bounded and Kato–Rellich perturbations preserve. The third layer constructs, on every smooth
-Riemannian manifold without boundary, the minimal operator `Δ₀ = −div grad` on `C_c^∞`, its
-adjoint the maximal operator, the energy form and the Friedrichs Laplacian, and proves the
+Riemannian manifold without boundary, the initial operator `Δ₀ = −div grad` on `C_c^∞` (whose
+closure is the minimal operator), its adjoint the maximal operator, the energy form and the
+Friedrichs Laplacian, and proves the
 theorem of Gaffney, Chernoff and Strichartz: on a complete manifold `Δ₀` is essentially
 self-adjoint, its closure `Δ_X` is the maximal operator and the operator of the energy form on
 `H¹(X) = H¹₀(X)`. It then gives `Δ_X` its spectral vocabulary (kernel, bottom of the spectrum,
@@ -311,7 +312,7 @@ SA-E44; Tau Ceti `TauCeti.ProjValMeasure.inner_proj`, `TauCeti.ProjValMeasure.pr
 **Checks.**
 
 - For `A = diag(1, 2)` on `ℂ²` and `f = (1, i)`: `μ_f = δ₁ + δ₂`, `μ_{P_A({1})f} = δ₁`; for
-  `g = 3·1_{\{2\}}`, `g(A)f = (0, 3i)` and `μ_{g(A)f} = 9δ₂ = μ_f.withDensity |g|²`. A model with
+  `g = 3·1_{{2}}`, `g(A)f = (0, 3i)` and `μ_{g(A)f} = 9δ₂ = μ_f.withDensity |g|²`. A model with
   `|g|` in place of `|g|²` gives `3δ₂`.
 - Spectral orthogonality is needed: for `A = 0` on `ℂ²`, `f = (1, 0)`, `h = (1, 0)`,
   `μ_{f+h} = 4δ₀ ≠ 2δ₀ = μ_f + μ_h`, and `⟪f, P_A(ℝ) h⟫ = 1 ≠ 0`.
@@ -404,7 +405,8 @@ choosing, for `ε = 1/n`, vectors `P_A(J_m) f_n` supported on disjoint annuli
 charged) and summing them with nonzero square-summable weights, using spectral orthogonality.
 (2) an isolated `λ` would force `P_A(I_ε) P_ac = P_A({λ}) P_ac`, and `μ_{P_ac f}({λ}) = 0` for all
 `f`. (3) from (1) and `μ_{P_ac f} ≪ μ_{P_ac ψ}`. (4) from the countable orthogonal cyclic
-decomposition of SA-B85 with weights `ε_j ≠ 0`, `Σ |ε_j|² = 1` (teschl line 4354–4366). *Needs:*
+decomposition of SA-B85 (its nondegenerate `C₀(ℝ)` case, applied to the bounded calculus
+`f ↦ ∫ f dP_A` of SA-B44) with weights `ε_j ≠ 0`, `Σ |ε_j|² = 1` (teschl line 4354–4366). *Needs:*
 1.1–1.3; SelfAdjointSpectralTheory SA-B85, SA-D12; UnboundedOperators UO-C01, UO-C03.
 
 **Checks.**
@@ -457,7 +459,11 @@ in `ℝ ∪ {+∞}`. Prove (teschl line 5044–5055): the sequence `μ_n(A)` is 
 at least `n` eigenvalues below `inf σ_ess(A)` counted with multiplicity, `μ_n(A)` is the `n`-th of
 them; otherwise `μ_n(A) = inf σ_ess(A)` (`+∞` when `σ_ess(A) = ∅`). The same values arise with
 `dom A` replaced by any core of `A`, or by the form domain `dom (A − γ)^{1/2}` with the form of
-UO-D06. As corollaries: `A ≤ B` in form sense gives `μ_n(A) ≤ μ_n(B)`; and for every
+UO-D06. As corollaries: if `A ≤ B` in the **form order**, meaning that the form domains of
+UO-D06 satisfy `Q(B) ⊆ Q(A)` and `q_A(ψ) ≤ q_B(ψ)` for every `ψ ∈ Q(B)`, then `μ_n(A) ≤ μ_n(B)`
+for every `n` (for each obstacle family the infimum of `q_A` over the larger domain `Q(A)` is at
+most the infimum of `q_A ≤ q_B` over `Q(B)`; teschl line 5056–5057 states the common-domain case
+`B − A ≥ 0`); and for every
 `λ < inf σ_ess(A)`, `dim ran P_A((−∞, λ)) = #{n : μ_n(A) < λ}` (teschl line 5063–5069). Route:
 Glazman's lemma, the spectral projections `P_A((−∞, λ))` (finite rank below `inf σ_ess` by UO-C02)
 and SA-E11–SA-E13. *Needs:* 1.3; SelfAdjointSpectralTheory SA-E11–SA-E13, SA-C39; UnboundedOperators
@@ -469,6 +475,11 @@ UO-C02, UO-D06.
   the admissible set is empty); a real-valued junk convention would report `0`.
 - `A = M_x` on `L²[0,1]`: no eigenvalues below `inf σ_ess = 0`, and `μ_n = 0` for every `n`.
 - `A = −1 ⊕ H₀` on `ℂ ⊕ L²(ℝ)` with `H₀` of Layer 4.2: `μ₁ = −1` and `μ_n = 0` for `n ≥ 2`.
+- Form order: `A = diag(1, 3) ≤ B = diag(2, 4)` on `ℂ²` gives `μ₁ = 1 ≤ 2` and `μ₂ = 3 ≤ 4`. The
+  domain inclusion matters: on `(0, 1)` the Neumann Laplacian `N` (form `∫ |u'|²` on `H¹`) and the
+  Dirichlet Laplacian `D` (the same form on `H¹₀ ⊊ H¹`, Layer 3.4) satisfy `N ≤ D` in the form
+  order, with `μ_n(N) = (n − 1)²π² ≤ n²π² = μ_n(D)`; a model that compares the forms on the
+  common domain alone would also conclude `D ≤ N`, yet `μ₁(D) = π² > 0 = μ₁(N)`.
 
 ### 1.7 Abstract wave operators
 
@@ -527,10 +538,15 @@ Plancherel.
 ### 1.9 The Kato–Rosenblum theorem
 
 Let `H₁` be self-adjoint, `V` bounded self-adjoint and trace class, and `H₂ = H₁ + V` on
-`dom H₁` (self-adjoint by SA-C54). Prove that the wave operators `Ω_±(H₂, H₁)` and
-`Ω_±(H₁, H₂)` exist on the absolutely continuous subspaces and are complete: `Ω_±(H₂,H₁)` is a
-partial isometry with initial space `ℋ_ac(H₁)` and final space `ℋ_ac(H₂)`,
-`Ω_±(H₂,H₁)* = Ω_±(H₁,H₂)` on `ℋ_ac(H₂)`, and `H₂ P_ac(H₂) = Ω_± H₁ P_ac(H₁) Ω_±*`. In particular
+`dom H₁` (self-adjoint by SA-C54). When the wave operators of 1.7 exist on `ℋ_ac(H₁)`, write
+`W_±(H₂, H₁) := Ω_±(H₂, H₁) P_ac(H₁)` for the **compressed wave operator**: a bounded operator
+defined on all of `ℋ`, vanishing on `ℋ_ac(H₁)^⊥` and isometric on `ℋ_ac(H₁)` (1.7), the strong
+limit of `e^{itH₂} e^{−itH₁} P_ac(H₁)` (kato57 line 25–28, (1.1)); `Ω_±` of 1.7 is the
+unrestricted limit on `D_±` and need not vanish off `ℋ_ac(H₁)`. Prove that the wave operators
+`Ω_±(H₂, H₁)` and `Ω_±(H₁, H₂)` exist on the absolutely continuous subspaces and are complete, so
+that `W_±(H₂,H₁)` is a partial isometry with initial space `ℋ_ac(H₁)` and final space `ℋ_ac(H₂)`,
+`W_±(H₂,H₁)* = W_±(H₁,H₂)` (kato57 line 29–30, (1.2)), and
+`H₂ P_ac(H₂) = W_±(H₂,H₁) H₁ P_ac(H₁) W_±(H₂,H₁)*` (kato57 line 32–35, (1.3)). In particular
 the absolutely continuous parts `(H₁)_ac` and `(H₂)_ac` are unitarily equivalent and
 `σ_ac(H₁) = σ_ac(H₂)` (kato57 line 21–35, Theorem 1; rs3 §XI.3, Theorems XI.7 and XI.8; kato76
 Ch. X §4.4). Route: on density-bounded vectors (1.8) the Cauchy property of
@@ -546,13 +562,17 @@ UnboundedOperators UO-C03.
 
 **Checks.**
 
-- `V = 0`: `Ω_± = P_ac(H₁)` and both statements reduce to tautologies.
+- `V = 0`: `W_± = P_ac(H₁)` while `Ω_± = 1` on `D_± = ℋ` (1.7). For `H₁ = diag(1, 2)` on `ℂ²`
+  this gives `W_± = 0`, the partial isometry with initial and final space `0`, although `Ω_± = 1`;
+  a statement of the theorem for `Ω_±` itself would be false here. For `H₁ = M_x` on `L²(ℝ)`,
+  `W_± = Ω_± = 1`.
 - `H₁ = M_x` on `L²(ℝ)`, `V = c·⟨φ, ·⟩φ` rank one: the theorem gives `σ_ac(H₂) = ℝ`; the bounded
   non-trace-class `V = c·1` of 1.7 shows the trace-class hypothesis cannot be weakened to
-  boundedness for existence of `Ω_±`.
+  boundedness for existence of `Ω_±` on `ℋ_ac(H₁)`.
 - `H₁ = diag(1/n²)` on `ℓ²` (no absolutely continuous part) with any trace-class `V`:
-  `ℋ_ac(H₁) = 0`, so `ℋ_ac(H₂) = 0` as well; for instance the trace-class `V = −diag(1/n²)` gives
-  `H₂ = 0`. The non-trace-class `V = −diag(1/n)` is excluded although it is compact.
+  `ℋ_ac(H₁) = 0`, so `ℋ_ac(H₂) = 0` and `W_± = 0`; for instance the trace-class `V = −diag(1/n²)`
+  gives `H₂ = 0`, where `D_± = 0` because no coordinate `e^{−it/n²} c_n` with `c_n ≠ 0` converges.
+  The non-trace-class `V = −diag(1/n)` is excluded although it is compact.
 
 ### Examples
 
@@ -680,18 +700,21 @@ DifferentialGeometry 12.2–12.5.
 - Circle of length `2π`: `Δ e^{inθ} = n² e^{inθ}`, and Green's formula with `u = v = e^{inθ}` gives
   `2πn² = 2πn²`; dropping the conjugation would give `∫ v·Δu = n² ∫ e^{2inθ} dθ = 0` for `n ≠ 0`.
 
-### 3.2 The minimal operator
+### 3.2 The initial operator on test functions
 
 Let `D₀ ⊆ L²(X)` be the image of `C_c^∞(X; ℂ)`; the map is injective because `vol_g` has full
-support. Define the **minimal operator** `Δ₀` as the partial operator with domain `D₀` and action
-`[u] ↦ [Δu]` (bms02 line 151–157). Prove: `Δ₀` is densely defined (SmoothBundlesConnections B2.2
+support. Define the **initial operator** `Δ₀` (the Laplacian on `C_c^∞(X; ℂ)`) as the partial
+operator with domain `D₀` and action `[u] ↦ [Δu]`; its closure `closure Δ₀` is the **minimal
+operator** of bms02 line 151–157, which defines the minimal operator as the closure from `C_c^∞`
+and the maximal operator as its adjoint, so that `Δ₀† = (closure Δ₀)†` (HilbertModules H6).
+Prove: `Δ₀` is densely defined (SmoothBundlesConnections B2.2
 with `TauCeti.isLocallyFiniteMeasure_riemannianVolume`), symmetric
 (`LinearPMap.IsFormalAdjoint Δ₀ Δ₀`), nonnegative with `⟪u, Δ₀u⟫ = ∫ ⟨du, du⟩_g dvol_g`, and closable
 (`Δ₀ ≤ Δ₀†`, `LinearPMap.adjoint_isClosed`).
 
 - The quadratic form `⟪u, Δ₀v⟫ = ∫ ⟨du, dv⟩_g` on `D₀` is Hermitian and nonnegative.
 - `Δ₀` commutes with complex conjugation and with isometries of `X`.
-- For an open `Y ⊆ X` with the restricted metric, extension by zero maps the minimal operator of `Y`
+- For an open `Y ⊆ X` with the restricted metric, extension by zero maps the initial operator of `Y`
   into that of `X`.
 
 *Needs:* 3.1; SmoothBundlesConnections B2.2; Tau Ceti `TauCeti.riemannianVolume` and its
@@ -762,10 +785,13 @@ Prove: if `X` is complete, there are `χ_k ∈ C_c^∞(X; ℝ)`, `k ≥ 1`, with
 set eventually contained in `{χ_k = 1}`, and `sup_X |grad χ_k| ≤ 4/k` (gaffney54; grigoryan09
 Ch. 11). Route: enumerate the components `X_j` (countably many by second countability) with base
 points `p_j`; on `X_j` for `j ≤ k` smooth the bounded `1/k`-Lipschitz function
-`clamp(2 − d(p_j, ·)/k, 0, 1)` within `1/8` and gradient `1/k + 1/k` (RiemannianGeometry R7.8 item
-8), compose with a fixed smooth step `φ` equal to `0` on `(−∞, 1/4]`, to `1` on `[3/4, ∞)` and with
-`|φ'| ≤ 2`, and set `χ_k = 0` on the other components; compact support comes from compactness of
-closed balls (HopfRinow (b)). *Needs:* RiemannianGeometry R7.8; Completed/HopfRinow Layers 0–4.
+`clamp(2 − d(p_j, ·)/k, 0, 1)` to a smooth `g` within `1/8` and with gradient at most `1/k + 1/k`
+(RiemannianGeometry R7.8 item 8), compose with a fixed smooth step `φ` equal to `0` on
+`(−∞, 1/8]`, to `1` on `[7/8, ∞)` and with `|φ'| ≤ 2` (a rise of `1` over length `3/4` has average
+slope `4/3 < 2`, so such a step exists), and set `χ_k = 0` on the other components. Then
+`χ_k = φ ∘ g` is `1` where the clamp is `1` (there `g ≥ 7/8`), `0` where the clamp is `0` (there
+`g ≤ 1/8`), and `|grad χ_k| ≤ 2·(2/k) = 4/k`; compact support comes from compactness of closed
+balls (HopfRinow (b)). *Needs:* RiemannianGeometry R7.8; Completed/HopfRinow Layers 0–4.
 
 **Checks.**
 
@@ -774,6 +800,10 @@ closed balls (HopfRinow (b)). *Needs:* RiemannianGeometry R7.8; Completed/HopfRi
   near `0` give `1 ≤ (4/k)·(1/2)`, false once `k > 2`.
 - A countable disjoint union of circles `X = ⊔ S¹_j`: `χ_k = 1` on `S¹_1, …, S¹_k` and `0`
   elsewhere, gradient `0`.
+- The step thresholds: a smooth `φ` equal to `0` on `(−∞, 1/4]` and to `1` on `[3/4, ∞)` cannot have
+  `|φ'| ≤ 2`, since `1 = ∫_{1/4}^{3/4} φ' ≤ (1/2) sup |φ'|` with equality only for `φ' ≡ 2` on
+  `(1/4, 3/4)`, which contradicts `φ'(1/4) = 0`; with thresholds `1/8` and `7/8` the average slope
+  `4/3` leaves room below `2`.
 
 ### 3.6 Essential self-adjointness on complete manifolds
 
@@ -782,7 +812,9 @@ self-adjoint and `closure Δ₀ = Δ_F = Δ_max`; write `Δ_X` for this operator
 `H¹₀(X) = H¹(X)`, `dom Δ_X = {u ∈ H¹(X) : Δu ∈ L²(X)}`, `Δ_X ≥ 0`, `σ(Δ_X) ⊆ [0, ∞)`, the form domain
 of `Δ_X` is `H¹(X)` with `‖Δ_X^{1/2} u‖² = ‖du‖²`, and `C_c^∞(X; ℂ)` is an operator core and a form
 core (bms02 line 245–246, Corollary 2.10 with `D = d` on the trivial line bundle, and line 252–256;
-strichartz83 Theorem 2.4; chernoff73; gaffney54; grigoryan09 Ch. 11).
+strichartz83 Theorem 2.4; chernoff73; gaffney54; grigoryan09 Ch. 11). bms02 assumes `M` connected
+(line 128–129); the disconnected case follows componentwise, since `L²(X) = ⊕_j L²(X_j)` over the
+countably many components, `Δ₀` preserves the summands, and so do `Δ₀† = Δ_max` and `Δ_F`.
 
 Route. (a) For `u ∈ dom Δ_max`, `u ∈ H²_loc` (3.3); integrating `Δ_max u` against `χ_k² u` gives
 `∫ χ_k² |du|² ≤ 2‖Δ_max u‖‖u‖ + 4 sup|grad χ_k|² ‖u‖²`, so `du ∈ L²` and `dom Δ_max ⊆ H¹(X)`. (b) If
@@ -800,7 +832,7 @@ identifications are UO-D06's for the form `𝔞` on `H¹₀ = H¹`. *Needs:* 3.2
 **Checks.**
 
 - Flat `ℝ^d`: `Δ_X = H₀` of Layer 4.2, with `dom = H²(ℝ^d)`.
-- Incomplete but essentially self-adjoint: on `ℝ⁴ ∖ {0}` the minimal Laplacian is essentially
+- Incomplete but essentially self-adjoint: on `ℝ⁴ ∖ {0}` the initial operator `Δ₀` is essentially
   self-adjoint (rs2 §X.1): solutions of `(Δ_max + 1)u = 0` singular at `0` behave like `|x|^{−2}`,
   and `∫_{|x|<1} |x|^{−4} dx = ∞` in dimension `4`. Completeness is sufficient, not necessary.
 - `(0, 1)` is incomplete and `Δ₀` is not essentially self-adjoint (3.2), and `Δ_F ≠ Δ_max`
@@ -813,15 +845,16 @@ Let `X` be complete. Prove:
 
 - `ker Δ_X = {u ∈ L²(X) : u is locally constant almost everywhere}`; its dimension (a cardinal) is
   the number of connected components of finite volume; on a connected `X`, `0` is an eigenvalue iff
-  `vol_g(X) < ∞`, and then it is simple with eigenvector the constant `1` (hm23 line 41–43).
+  `vol_g(X) < ∞`, and then it is simple with eigenvector the constant `1` (hm23 line 41–43 states
+  the finite-area hyperbolic surface case; the general case is the kernel route below).
 - With `λ₀(X) := λ₀(Δ_X)` (2.1, for `X ≠ ∅`):
   `λ₀(X) = inf {∫ ⟨du, du⟩_g / ∫ |u|² : u ∈ C_c^∞(X; ℂ), u ≠ 0} ≥ 0`.
 - The ordered eigenvalues `λ_k(X) := μ_{k+1}(Δ_X)`, `k ≥ 0`, of 1.6, computed on `C_c^∞(X; ℂ)` or on
   `H¹(X)`, are the eigenvalues below `inf σ_ess(Δ_X)` with multiplicity, then `inf σ_ess(Δ_X)`
   (`+∞` if `σ_ess = ∅`).
-- `λ₁⁺(X) := inf (σ(Δ_X) ∖ {0})` in `[0, ∞]`, the first spectral value above `0` (hm23 line 41–47,
-  104–105); if `X` is connected with `vol_g(X) < ∞` and `0 ∉ closure(σ(Δ_X) ∖ {0})`, then
-  `λ₁⁺(X) = λ₁(X)`.
+- `λ₁⁺(X) := inf (σ(Δ_X) ∖ {0})` in `[0, ∞]`, the first spectral value above `0` (the spectral-gap
+  vocabulary of hm23 line 41–47, 104–105, there for finite-area hyperbolic surfaces); if `X` is
+  connected with `vol_g(X) < ∞` and `0 ∉ closure(σ(Δ_X) ∖ {0})`, then `λ₁⁺(X) = λ₁(X)`.
 
 The eigenvalues, the discrete spectrum and the essential spectrum of `Δ_X` are those of
 UnboundedOperators UO-C02 applied to `Δ_X`; Weyl's criterion is teschl line 6277–6281. Route for the
@@ -840,18 +873,28 @@ connected manifold is constant. *Needs:* 1.6, 2.1, 3.6; UnboundedOperators UO-C0
 
 Let `X` be compact. Prove: `X` is complete; `Δ_X` is ComplexKahlerGeometry K5a's `H²` realisation of
 the nonnegative scalar Hodge Laplacian on complex functions (K5a.ComponentwiseCompact for several
-components), so `dom Δ_X = H²(X)` and `Δ_X` has compact resolvent; `σ(Δ_X) = σ_disc(Δ_X)` consists of
-eigenvalues `0 = λ₀ ≤ λ₁ ≤ ⋯` with finite multiplicities and smooth eigenfunctions forming an
-orthonormal basis of `L²(X)`; the multiplicity of `0` is the number of components; the `λ_k` are the
-Courant–Fischer values of VariationalMethods 4.4; and if `dim X ≥ 1` and `X ≠ ∅` then `λ_k → ∞`
-(chavel84 Ch. I). *Needs:* 3.6, 3.7; ComplexKahlerGeometry K5a; VariationalMethods 4.4, 5.1–5.2;
+components), so `dom Δ_X = H²(X)` and `Δ_X` has compact resolvent; `σ(Δ_X) = σ_disc(Δ_X)`, every
+spectral value is an eigenvalue of finite multiplicity, and `L²(X)` has an orthonormal basis of
+smooth eigenfunctions; the multiplicity of `0` is the number of components. If `X ≠ ∅`, the
+eigenvalues listed with multiplicity are `0 = λ₀ ≤ λ₁ ≤ ⋯` with `λ_k = λ_k(X)` of 3.7, and for every
+`k < dim L²(X)` (every `k`, when `dim X ≥ 1`: `L²(X)` is then infinite-dimensional) `λ_k` is the
+Courant–Fischer value `rayleighMinMax ⊤ k` of VariationalMethods 4.4 for the compact form pair
+`(H¹(X) ↪ L²(X), 𝔞)` of 3.4, whose embedding is compact because it factors through the compact
+operator `(Δ_X + 1)^{−1/2}` (3.6's form identification). If `dim X ≥ 1` and `X ≠ ∅`, every `λ_k` is
+finite and `λ_k → ∞` (chavel84 Ch. I). *Needs:* 3.6, 3.7; ComplexKahlerGeometry K5a;
+VariationalMethods 4.4, 5.1–5.2;
 Tau Ceti `IsSelfAdjoint.hasCompactResolvent_iff_isCompactOperator_resolvent`.
 
 **Checks.**
 
 - Round `S²`: eigenvalues `l(l + 1)` with multiplicity `2l + 1`; `λ₁ = λ₂ = λ₃ = 2`.
-- `dim X = 0`: a finite set of `N` points has `L² = ℂ^N`, `Δ_X = 0` and `λ₀ = ⋯ = λ_{N−1} = 0`, so
-  `λ_k → ∞` fails and the clause needs `dim X ≥ 1`.
+- `dim X = 0`: a finite set of `N ≥ 1` points has `L² = ℂ^N`, `Δ_X = 0` and only `N` eigenvalues,
+  all `0`: `λ₀ = ⋯ = λ_{N−1} = 0` and `λ_k = +∞` for `k ≥ N` (empty admissible family, 1.6), whereas
+  `rayleighMinMax ⊤ k = 0` for `k ≥ N` is VariationalMethods' junk value; so the Courant–Fischer
+  identification is asserted only for `k < N`, and the unboundedness clause fails because every
+  finite eigenvalue is `0`, which is why it needs `dim X ≥ 1`.
+- `X = ∅` is compact with `L²(X) = 0` and `σ(Δ_X) = ∅`: there is no eigenvalue `λ₀ = 0`, and
+  `λ₀(X) = μ₁(Δ_X) = +∞`; the eigenvalue clause is stated for `X ≠ ∅` only.
 - Two disjoint circles: `0` has multiplicity `2`, one constant per component.
 
 ### 3.9 Bounded potentials
@@ -873,8 +916,9 @@ as 3.8 without the kernel clause (teschl line 5704–5711). *Needs:* 2.2, 3.6, 3
 
 A **standard cusp end** of a Riemannian surface `X` is an open set `C ⊆ X` with an isometry
 `C ≅ (ℝ/wℤ) × (a, ∞)` for the metric `(dx² + dy²)/y²`, `w > 0`, `a > 0`; its area is `w/a`. Prove: if
-`X` is complete and contains a standard cusp end, then `[1/4, ∞) ⊆ σ_ess(Δ_X)` (lp80 line 279–290 for
-the zero Fourier mode on a cusp; iwaniec02 Ch. 7). Route: for `t ∈ ℝ`, the functions
+`X` is complete and contains a standard cusp end, then `[1/4, ∞) ⊆ σ_ess(Δ_X)` (lp80 line 251–256,
+equations (2.8)–(2.10), for the `x`-independent reduction `s = log y`, `v = u/√y`, and line 279–290
+for the zero Fourier mode on a cusp; iwaniec02 Ch. 7). Route: for `t ∈ ℝ`, the functions
 `u_n = y^{1/2 + it} ψ((log y − n)/n)` with a fixed `ψ ∈ C_c^∞((1, 2))`, independent of `x`, are
 supported in the cusp for large `n`, have disjoint supports along a subsequence, and satisfy
 `‖(Δ − 1/4 − t²)u_n‖ / ‖u_n‖ → 0`, because in `r = log y` the measure is `w e^{−r} dr` and

@@ -390,7 +390,7 @@
       {
        "name": "minMaxValue_le_of_le",
        "role": "functoriality",
-       "statement": "A <= B in form sense implies mu_n(A) <= mu_n(B)."
+       "statement": "If A <= B in the form order (Q(B) subset Q(A) and q_A(psi) <= q_B(psi) for psi in Q(B), form domains of UO-D06), then mu_n(A) <= mu_n(B) for every n."
       }
      ],
      "tests": [
@@ -408,6 +408,11 @@
        "name": "one_bound_state",
        "kind": "computation",
        "statement": "A = -1 (+) H_0 on C (+) L^2(R): mu_1 = -1, mu_n = 0 for n >= 2."
+      },
+      {
+       "name": "form_order",
+       "kind": "non-example",
+       "statement": "diag(1,3) <= diag(2,4): mu_1 = 1 <= 2, mu_2 = 3 <= 4. On (0,1) Neumann N <= Dirichlet D in the form order (H^1_0 subset H^1, same form): mu_n(N) = (n-1)^2 pi^2 <= n^2 pi^2 = mu_n(D); comparing forms on the common domain alone would also give D <= N, yet mu_1(D) = pi^2 > 0 = mu_1(N)."
       }
      ]
     },
@@ -589,7 +594,7 @@
      "id": "1.9",
      "kind": "theorem",
      "name": "kato_rosenblum",
-     "statement": "If H_1 is self-adjoint and V bounded self-adjoint trace class, H_2 = H_1 + V on dom H_1, then Omega_pm(H_2,H_1) exist on H_ac(H_1) and are partial isometries with initial space H_ac(H_1) and final space H_ac(H_2); Omega_pm(H_2,H_1)* = Omega_pm(H_1,H_2) on H_ac(H_2); H_2 P_ac(H_2) = Omega H_1 P_ac(H_1) Omega*; hence (H_1)_ac and (H_2)_ac are unitarily equivalent and sigma_ac(H_1) = sigma_ac(H_2).",
+     "statement": "If H_1 is self-adjoint and V bounded self-adjoint trace class, H_2 = H_1 + V on dom H_1, then Omega_pm(H_2,H_1) and Omega_pm(H_1,H_2) exist on the absolutely continuous subspaces and are complete; the compressed wave operator W_pm(H_2,H_1) := Omega_pm(H_2,H_1) P_ac(H_1) (Kato's strong limit of e^{itH_2} e^{-itH_1} P_ac(H_1)) is a partial isometry with initial space H_ac(H_1) and final space H_ac(H_2); W_pm(H_2,H_1)* = W_pm(H_1,H_2); H_2 P_ac(H_2) = W_pm H_1 P_ac(H_1) W_pm*; hence (H_1)_ac and (H_2)_ac are unitarily equivalent and sigma_ac(H_1) = sigma_ac(H_2). Omega_pm itself is the unrestricted limit of 1.7a and need not vanish off H_ac(H_1).",
      "hypotheses": [
       "H_1 self-adjoint on a complex Hilbert space",
       "V bounded, self-adjoint, nuclearENorm V /= top"
@@ -613,7 +618,7 @@
       {
        "name": "zero_perturbation",
        "kind": "degenerate",
-       "statement": "V = 0: Omega = P_ac(H_1)."
+       "statement": "V = 0: W_pm = P_ac(H_1) while Omega_pm = 1 on D_pm = H; for H_1 = diag(1,2) on C^2, W_pm = 0 (initial and final space 0) although Omega_pm = 1, so the theorem is false for Omega_pm itself; for H_1 = M_x on L^2(R), W_pm = Omega_pm = 1."
       },
       {
        "name": "rank_one",
@@ -623,7 +628,7 @@
       {
        "name": "pure_point",
        "kind": "degenerate",
-       "statement": "H_1 = diag(1/n^2), V = -diag(1/n^2): H_ac(H_1) = H_ac(H_2) = 0; V = -diag(1/n) is compact but not trace class and excluded."
+       "statement": "H_1 = diag(1/n^2), V = -diag(1/n^2): H_ac(H_1) = H_ac(H_2) = 0, W_pm = 0, and D_pm = 0 since no coordinate e^{-it/n^2} c_n with c_n /= 0 converges; V = -diag(1/n) is compact but not trace class and excluded."
       }
      ]
     }
@@ -870,8 +875,8 @@
     {
      "id": "3.2",
      "kind": "definition",
-     "name": "minimalLaplacian",
-     "statement": "Delta_0 : L^2(X) ->l.[C] L^2(X) with domain the image of C_c^infinity(X; C) and action [u] -> [Delta u].",
+     "name": "initialLaplacian",
+     "statement": "The initial operator Delta_0 : L^2(X) ->l.[C] L^2(X) with domain the image of C_c^infinity(X; C) and action [u] -> [Delta u]; its closure is the minimal operator of bms02 (closure from C_c^infinity), and Delta_0^dagger = (closure Delta_0)^dagger.",
      "hypotheses": [
       "X finite-dimensional real smooth manifold, Hausdorff, second countable, boundaryless",
       "smooth Riemannian metric g",
@@ -880,7 +885,7 @@
      ],
      "locator": {
       "source": "bms02",
-      "where": "line 151-157 (S2.1, minimal operator)"
+      "where": "line 151-157 (S2.1: minimal operator = closure from C_c^infinity, maximal = its adjoint)"
      },
      "prerequisites": [
       "target:3.1b",
@@ -891,22 +896,22 @@
      ],
      "api": [
       {
-       "name": "minimalLaplacian_dense",
+       "name": "initialLaplacian_dense",
        "role": "structure",
        "statement": "Delta_0 is densely defined."
       },
       {
-       "name": "minimalLaplacian_symm",
+       "name": "initialLaplacian_symm",
        "role": "structure",
        "statement": "LinearPMap.IsFormalAdjoint Delta_0 Delta_0."
       },
       {
-       "name": "inner_minimalLaplacian_self",
+       "name": "inner_initialLaplacian_self",
        "role": "evaluation",
        "statement": "<u, Delta_0 u> = integral <du, du>_g >= 0."
       },
       {
-       "name": "minimalLaplacian_isClosable",
+       "name": "initialLaplacian_isClosable",
        "role": "structure",
        "statement": "Delta_0 is closable."
       }
@@ -982,7 +987,7 @@
     {
      "id": "3.3b",
      "kind": "theorem",
-     "name": "adjoint_minimalLaplacian",
+     "name": "adjoint_initialLaplacian",
      "statement": "Delta_0^dagger = Delta_max, and dom Delta_max subset H^2_loc(X).",
      "hypotheses": [
       "X finite-dimensional real smooth manifold, Hausdorff, second countable, boundaryless",
@@ -1035,7 +1040,7 @@
        "statement": "a is a closed nonnegative Hermitian form on H^1_0(X) and on H^1(X) (UO-D06)."
       },
       {
-       "name": "energyForm_minimal",
+       "name": "energyForm_initial",
        "role": "compatibility",
        "statement": "a(u,v) = <u, Delta_0 v> on C_c^infinity."
       }
@@ -1084,7 +1089,7 @@
        "statement": "dom Delta_F = H^1_0(X) cap dom Delta_max."
       },
       {
-       "name": "minimal_le_friedrichs_le_maximal",
+       "name": "initial_le_friedrichs_le_maximal",
        "role": "structure",
        "statement": "Delta_0 <= Delta_F <= Delta_max and Delta_F >= 0."
       }
@@ -1138,13 +1143,18 @@
        "name": "circles",
        "kind": "degenerate",
        "statement": "Countable union of circles: chi_k = 1 on the first k circles, gradient 0."
+      },
+      {
+       "name": "step_thresholds",
+       "kind": "non-example",
+       "statement": "A smooth step 0 on (-infinity, 1/4], 1 on [3/4, infinity) cannot have |phi'| <= 2 (1 = integral of phi' over (1/4,3/4) <= sup|phi'|/2 forces phi' = 2 there, against phi'(1/4) = 0); thresholds 1/8, 7/8 give average slope 4/3 < 2."
       }
      ]
     },
     {
      "id": "3.6",
      "kind": "theorem",
-     "name": "essentiallySelfAdjoint_minimalLaplacian",
+     "name": "essentiallySelfAdjoint_initialLaplacian",
      "statement": "If X is complete, Delta_0 is essentially self-adjoint and closure Delta_0 = Delta_F = Delta_max =: Delta_X; H^1_0(X) = H^1(X); dom Delta_X = {u in H^1(X) : Delta u in L^2}; Delta_X >= 0; the form domain is H^1(X) with ||Delta_X^{1/2} u||^2 = ||du||^2; C_c^infinity is an operator core and a form core.",
      "hypotheses": [
       "X finite-dimensional real smooth manifold, Hausdorff, second countable, boundaryless",
@@ -1155,7 +1165,7 @@
      ],
      "locator": {
       "source": "bms02",
-      "where": "line 245-246 (Corollary 2.10), 252-256 (Remark 2.12); strichartz83 Theorem 2.4; chernoff73; gaffney54"
+      "where": "line 245-246 (Corollary 2.10), 252-256 (Remark 2.12), 128-129 (M connected; the disconnected case componentwise); strichartz83 Theorem 2.4; chernoff73; gaffney54"
      },
      "prerequisites": [
       "target:3.3b",
@@ -1199,7 +1209,7 @@
      ],
      "locator": {
       "source": "hm23",
-      "where": "line 41-47, 104-105"
+      "where": "line 41-47, 104-105 (spectral-gap vocabulary, finite-area hyperbolic surfaces)"
      },
      "prerequisites": [
       "target:3.6",
@@ -1255,7 +1265,7 @@
      ],
      "locator": {
       "source": "hm23",
-      "where": "line 41-43"
+      "where": "line 41-43 (finite-area hyperbolic surfaces; the general case by the kernel route)"
      },
      "prerequisites": [
       "target:3.6",
@@ -1269,7 +1279,7 @@
      "id": "3.8",
      "kind": "theorem",
      "name": "compact_laplacian_spectrum",
-     "statement": "For compact X, Delta_X is K5a's H^2 realisation of the nonnegative scalar Hodge Laplacian, with compact resolvent; sigma(Delta_X) = sigma_disc(Delta_X) consists of eigenvalues 0 = lambda_0 <= lambda_1 <= ... of finite multiplicity with smooth eigenfunctions forming an orthonormal basis; mult(0) = number of components; lambda_k are the VariationalMethods 4.4 Courant-Fischer values; if dim X >= 1 and X nonempty, lambda_k -> infinity.",
+     "statement": "For compact X, Delta_X is K5a's H^2 realisation of the nonnegative scalar Hodge Laplacian, with compact resolvent; sigma(Delta_X) = sigma_disc(Delta_X), every spectral value is an eigenvalue of finite multiplicity, and L^2(X) has an orthonormal basis of smooth eigenfunctions; mult(0) = number of components. If X is nonempty, the eigenvalues with multiplicity are 0 = lambda_0 <= lambda_1 <= ... with lambda_k = lambda_k(X) of 3.7a, and for k < dim L^2(X) (every k when dim X >= 1) lambda_k = rayleighMinMax top k of VariationalMethods 4.4 for the compact form pair (H^1(X) -> L^2(X), a) of 3.4. If dim X >= 1 and X nonempty, every lambda_k is finite and lambda_k -> infinity.",
      "hypotheses": [
       "X finite-dimensional real smooth manifold, Hausdorff, second countable, boundaryless",
       "smooth Riemannian metric g",
@@ -1299,12 +1309,17 @@
       {
        "name": "zero_dim",
        "kind": "non-example",
-       "statement": "A finite set of N points: L^2 = C^N, all lambda_k = 0, so lambda_k -> infinity needs dim X >= 1."
+       "statement": "A finite set of N >= 1 points: L^2 = C^N, Delta_X = 0, lambda_0 = ... = lambda_{N-1} = 0 and lambda_k = +infinity for k >= N (1.6a), whereas rayleighMinMax top k = 0 for k >= N is VariationalMethods' junk value: the identification is asserted for k < N only, and the unboundedness clause fails (all finite eigenvalues are 0), so it needs dim X >= 1."
       },
       {
        "name": "two_circles",
        "kind": "degenerate",
        "statement": "Two disjoint circles: 0 has multiplicity 2."
+      },
+      {
+       "name": "empty",
+       "kind": "degenerate",
+       "statement": "X = empty is compact with L^2 = 0 and sigma(Delta_X) = empty: no eigenvalue lambda_0 = 0, lambda_0(X) = mu_1 = +infinity; the eigenvalue clause is stated for nonempty X."
       }
      ]
     },
@@ -1405,7 +1420,7 @@
      ],
      "locator": {
       "source": "lp80",
-      "where": "line 279-290; iwaniec02 Ch. 7; teschl line 6277-6281 (Lemma 6.17)"
+      "where": "line 251-256 ((2.8)-(2.10), the x-independent reduction s = log y, v = u/sqrt(y)), 279-290 (zero Fourier mode); iwaniec02 Ch. 7; teschl line 6277-6281 (Lemma 6.17)"
      },
      "prerequisites": [
       "target:3.10a",
