@@ -111,3 +111,76 @@ licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-11-06"
 cited_for = ["4.5"]
+
+[[source]]
+id = "tomdieck2008"
+authors = "Tammo tom Dieck"
+title = "Algebraic Topology"
+year = 2008
+venue = "EMS Textbooks in Mathematics"
+doi = "10.4171/048"
+locator_scheme = "theorem"
+locator = "Theorem 9.5.1 (connected maps and Eilenberg subcomplexes)"
+url = "https://doi.org/10.4171/048"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["4.8"]
+
+[[source]]
+id = "serre1953"
+authors = "Jean-Pierre Serre"
+title = "Groupes d'homotopie et classes de groupes abéliens"
+year = 1953
+venue = "Annals of Mathematics 58"
+doi = "10.2307/1969789"
+locator_scheme = "theorem"
+locator = "Chapter III, Théorème 1 (Hurewicz modulo a class)"
+url = "https://doi.org/10.2307/1969789"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["8.8d"]
+
+[[source]]
+id = "fq1990"
+authors = "Michael H. Freedman and Frank Quinn"
+title = "Topology of 4-Manifolds"
+year = 1990
+venue = "Princeton Mathematical Series 39"
+locator_scheme = "section"
+locator = "Section 7.7 (stable fundamental group at an end)"
+licence_class = "none"
+status = "uncertified"
+version_note = "book without an open copy; cited by its locator without the text"
+cited_for = ["8.5"]
+
+[[source]]
+id = "milnor1963"
+authors = "John Milnor"
+title = "Morse Theory"
+year = 1963
+venue = "Annals of Mathematics Studies 51"
+doi = "10.2307/2312441"
+locator_scheme = "theorem"
+locator = "Lemmas 3.6 and 3.7 (attachments along homotopic maps)"
+url = "https://doi.org/10.2307/2312441"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["4.5"]
+
+[[source]]
+id = "weibel"
+authors = "Charles A. Weibel"
+title = "An Introduction to Homological Algebra"
+year = 1994
+venue = "Cambridge Studies in Advanced Mathematics 38"
+doi = "10.1017/CBO9781139644136"
+locator_scheme = "theorem"
+locator = "Theorems 5.5.1 and 5.5.10 (classical and complete convergence)"
+url = "https://doi.org/10.1017/CBO9781139644136"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["5.0", "5.1", "6.1"]
