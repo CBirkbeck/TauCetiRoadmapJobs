@@ -8,7 +8,7 @@ This is Part II of CompletedCohomologyAndLocalGlobalCompatibility. The parent st
 
 Capture and algebraic capture belong with the parent §5.3, whose support argument already uses them. Their precise missing supplier interface is gap:algebraic-capture. Layer 3 owns the continuous testing-module extension, smooth-family capture and fixed-centre detection. SmoothRepresentationsOfLocalGroups §SR.5.2 already owns simple strata, simple characters and maximal distinguished cuspidal types; the three specific finite-coefficient families needed here are supplier gaps at that section. ReductiveGroups Layers 6 and 10B supply rational representations over the split coefficient field and complete reducibility. ArithmeticGaloisRepresentations §1.3 supplies continuous induction from open subgroups of profinite groups, with both Frobenius reciprocities and duality. PadicLocalLanglandsForGL2Qp §0.1 supplies analytic-vector density for general compact p-adic analytic groups, and CompletedCohomologyPartII §F.1 supplies the admissible Banach duality.
 
-The completed group algebra and compact-module action are already in the pinned Tau Ceti. Kernel, annihilator and spectrum-closure facts are already in pinned Mathlib and are imported. The flatness, dimension and component-pair theorems for completed tensor products of coefficient rings are stated by LocalGaloisDeformationRings §F.0.1 and DeformationAndDerivedPatchingAlgebra §4.6; §2.1 applies them and adds only the determinant-torsion indexing. Eigenvariety companion/classicality routes of Ding, Newton–Thorne and Breuil–Hellmann–Schraen, and Pan’s modular-curve geometric route, lie outside this roadmap.
+The completed group algebra and compact-module action are already in the pinned Tau Ceti. Kernel, annihilator and spectrum-closure facts are already in pinned Mathlib and are imported. The O-flatness, dimension and component-pair theorems for completed tensor products of coefficient rings are stated by LocalGaloisDeformationRings §F.0.1 and DeformationAndDerivedPatchingAlgebra §4.6; §2.1 applies them and adds only the determinant-torsion indexing. Eigenvariety companion/classicality routes of Ding, Newton–Thorne and Breuil–Hellmann–Schraen, and Pan’s modular-curve geometric route, lie outside this roadmap.
 
 ## Conventions
 
@@ -30,15 +30,15 @@ Write A^d=Hom_cont,O(A,O) for the Schikhof dual, with the compact/lattice topolo
 
 ### From Mathlib
 
-The pin is `6b7abb3c7686292736be2955bd3eb9ebf63b456a`.
+Every file and line below is taken at the pinned Mathlib of the content checkout.
 
-- `Module.annihilator`, `Module.mem_annihilator`, `Module.comap_annihilator`, and `Module.annihilator_eq_bot` in `Mathlib/RingTheory/Ideal/Maps.lean`, lines 868, 870, 894, 900, supply annihilators, contraction and faithful actions. Contraction requires the algebra and scalar tower; the last equivalence requires a ring and an additive group.
+- `Module.annihilator`, `Module.mem_annihilator`, `Module.comap_annihilator`, and `Module.annihilator_eq_bot` in `Mathlib/RingTheory/Ideal/Maps.lean`, lines 869, 871, 895, 901, supply annihilators, contraction and faithful actions. Contraction requires the algebra and scalar tower; the last equivalence requires a ring and an additive group.
 - `LinearMap.ker` and `LinearMap.mem_ker` in `Mathlib/Algebra/Module/Submodule/Ker.lean`, lines 59–64, and `FaithfulSMul` in `Mathlib/Algebra/Group/Action/Faithful.lean`, line 47, supply the kernel and faithful-action vocabulary.
 - `PrimeSpectrum.zeroLocus`, `PrimeSpectrum.vanishingIdeal`, and `PrimeSpectrum.zeroLocus_eq_univ_iff` in `Mathlib/RingTheory/Spectrum/Prime/Basic.lean`, lines 137, 157, 302, and `PrimeSpectrum.zeroLocus_vanishingIdeal_eq_closure` in `Mathlib/RingTheory/Spectrum/Prime/Topology.lean`, line 159, supply the closed-set comparison. The vanishing ideal is the intersection of the primes, so nilpotents are invisible and zero vanishing ideal requires the arithmetic reducedness argument.
 
 ### From Tau Ceti
 
-The pin is `a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039`. Use `TauCeti.completedGroupAlgebra` in `TauCeti/Topology/Algebra/Group/Profinite/CompletedGroupAlgebra/Basic.lean`, line 145, and `TauCeti.IsCompactModule.completedGroupAlgebraModule` in the adjacent `Module.lean`, line 344, as the carrier and action for compact O[[H]]-modules. The latter takes the compact-module witness, compact topological coefficient ring and continuous commuting H-action; it supplies the completed action, rather than compact projectivity or the fixed-centre category. PadicMeasuresIwasawaAlgebras §1.7 uses this same carrier.
+Every file and line below is taken at the pinned Tau Ceti of the content checkout. Use `TauCeti.completedGroupAlgebra` in `TauCeti/Topology/Algebra/Group/Profinite/CompletedGroupAlgebra/Basic.lean`, line 145, and `TauCeti.IsCompactModule.completedGroupAlgebraModule` in the adjacent `Module.lean`, line 344, as the carrier and action for compact O[[H]]-modules. The latter takes the compact-module witness, compact topological coefficient ring and continuous commuting H-action; it supplies the completed action, rather than compact projectivity or the fixed-centre category. PadicMeasuresIwasawaAlgebras §1.7 uses this same carrier.
 
 
 ### From TauCetiRoadmap.CompletedCohomologyAndLocalGlobalCompatibility
@@ -188,9 +188,9 @@ Separate the selected local factor from all auxiliary factors. Geometric splitti
 
 ### 2.1 Patched deformation components
 
-For the imported CEGGPS module and ring, R∞≅R□_ρ̄⊗̂_O A as R□_ρ̄-algebras, with A complete local noetherian, O-flat, reduced and equidimensional. Hence R∞ is reduced, O-flat and flat over R□_ρ̄. After finite coefficient enlargement making each A/𝔭 geometrically integral, its minimal primes are indexed bijectively by (χ,𝔭), where χ:μ_p∞(F)→O× and 𝔭∈Min(A). The associated component ring is R□,χ_ρ̄⊗̂_O A/𝔭; distinct pairs are distinct and contraction to R□_ρ̄ is its χ-component prime. Here R□,χ fixes the determinant on μ_p∞(F), not the whole determinant. (BIP Lemma 6.3, p. 47; Corollaries 4.19, 4.21–4.22 as supplier inputs; BIP lines 2339–2360; CEGGPS lines 3304–3324; HP lines 2680–2759).
+For the imported CEGGPS module and ring, R∞≅R□_ρ̄⊗̂_O A as R□_ρ̄-algebras, with A complete local noetherian, O-flat, reduced and equidimensional. Hence R∞ is reduced and O-flat. After finite coefficient enlargement making each A/𝔭 geometrically integral, its minimal primes are indexed bijectively by (χ,𝔭), where χ:μ_p∞(F)→O× and 𝔭∈Min(A). The associated component ring is R□,χ_ρ̄⊗̂_O A/𝔭; distinct pairs are distinct and contraction to R□_ρ̄ is its χ-component prime. Here R□,χ fixes the determinant on μ_p∞(F), not the whole determinant. (BIP Lemma 6.3, p. 47; Corollaries 4.19, 4.21–4.22 as supplier inputs; BIP lines 2339–2360; CEGGPS lines 3304–3324; HP lines 2680–2759).
 
-Separate the selected p-place factor from the auxiliary local factors in the parent construction; absorb formally smooth variables in A. Apply LocalGaloisDeformationRings §F.0.1 and DeformationAndDerivedPatchingAlgebra §4.6 for flatness, dimension and component pairs, and gap:completed-tensor-reduced-equidimensional and gap:geometric-component-splitting for reducedness and the splitting extension, to the auxiliary Kisin rings. Import the BIP determinant-torsion component theorem from the local-ring owner. Geometric integrality identifies exactly the pairs of minimal primes under completed tensor product.
+Separate the selected p-place factor from the auxiliary local factors in the parent construction; absorb formally smooth variables in A. Apply LocalGaloisDeformationRings §F.0.1 and DeformationAndDerivedPatchingAlgebra §4.6 for O-flatness, dimension and component pairs, and gap:completed-tensor-reduced-equidimensional and gap:geometric-component-splitting for reducedness and the splitting extension, to the auxiliary Kisin rings. Import the BIP determinant-torsion component theorem from the local-ring owner. Geometric integrality identifies exactly the pairs of minimal primes under completed tensor product.
 
 **Checks.**
 
@@ -372,7 +372,7 @@ If a∈R kills M∞, its image lies in every minimal prime 𝔮 chosen by Layer 
 - For a single geometrically integral auxiliary factor, the component pairs are just the χ, so this argument reaches every patched component.
 - For two auxiliary components, selecting one over each χ gives full local coverage but only half of the patched component pairs.
 
-*Needs:* §4.1; LocalGaloisDeformationRings §1.1; gap:framed-ring-components; Mathlib `Module.comap_annihilator`; Mathlib `Module.annihilator_eq_bot.`
+*Needs:* §4.1; LocalGaloisDeformationRings §1.1; gap:framed-ring-components; Mathlib `Module.comap_annihilator`; Mathlib `Module.annihilator_eq_bot`.
 
 ### Examples
 
@@ -380,7 +380,7 @@ In L[x,y]/(xy), the axes are the two components. The whole support crosses both,
 
 ### Dependencies
 
-§2.1; §2.3; §3.5; §3.2; PadicHodgeTheory §3.6; CompletedCohomologyAndLocalGlobalCompatibility §5.3; DeformationAndDerivedPatchingAlgebra §§4.4, 4.6–4.7; LocalGaloisDeformationRings §1.1; gap:framed-ring-components; Mathlib `Module.comap_annihilator`; Mathlib `Module.annihilator_eq_bot.`.
+§2.1; §2.3; §3.5; §3.2; PadicHodgeTheory §3.6; CompletedCohomologyAndLocalGlobalCompatibility §5.3; DeformationAndDerivedPatchingAlgebra §§4.4, 4.6–4.7; LocalGaloisDeformationRings §1.1; gap:framed-ring-components; Mathlib `Module.comap_annihilator`; Mathlib `Module.annihilator_eq_bot`.
 
 ## Layer 5: Three arithmetic density theorems
 
