@@ -1,0 +1,27 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ExplicitCharacterSumsAndSieves"
+
+[[source]]
+id = "granville-ramare-1996"
+authors = "Andrew Granville, Olivier Ramaré"
+title = "Explicit bounds on exponential sums and the scarcity of squarefree binomial coefficients"
+year = 1996
+doi = "10.1112/S0025579300011608"
+locator_scheme = "theorem"
+locator = "Lemma 8.6"
+sha256 = "2fc57e71c90e5246a661464b82a3bd7e33514660e3cf1bb0d6bdadb2ff3fad63"
+licence_class = "operator-local"
+status = "certified"
+local_name = "granville-ramare-1996.pdf"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6062#issuecomment-6671942514"
+
+[[source]]
+id = "huxley-sargos-2006"
+authors = "M. N. Huxley, P. Sargos"
+title = "Points entiers au voisinage d'une courbe plane de classe C^n, II"
+year = 2006
+locator_scheme = "theorem"
+locator = "Theorem 1"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6062#issuecomment-6671942514"
