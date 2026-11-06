@@ -311,7 +311,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
 version_note = "arXiv v2"
-cited_for = ["0.5", "0.7", "0.8", "1.4"]
+cited_for = ["0.5", "0.7", "0.8"]
 
 [[source]]
 id = "BCGP25"

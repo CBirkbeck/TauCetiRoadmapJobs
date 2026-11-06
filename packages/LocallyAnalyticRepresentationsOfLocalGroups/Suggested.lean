@@ -1,4 +1,6 @@
-import Mathlib
+module
+
+public import Mathlib
 
 /-!
 # Locally analytic representations of p-adic reductive groups: target signatures
@@ -41,6 +43,8 @@ it lacks are listed below.
   of L. All carriers of the previous items are needed, together with
   π_alg(φ, h), π_1(φ, h) and their Ext groups.
 -/
+
+@[expose] public section
 
 namespace TauCetiRoadmap.LocallyAnalyticRepresentationsOfLocalGroups
 
