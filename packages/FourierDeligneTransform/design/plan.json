@@ -58,7 +58,7 @@
       {
        "name": "IsNondegenerate.isPrimitive",
        "role": "compatibility",
-       "statement": "A nondegenerate character is AddChar.IsPrimitive."
+       "statement": "For nonzero Λ, a nondegenerate character is AddChar.IsPrimitive (ψ(a) − 1 a unit, hence ψ(a) ≠ 1, for a ≠ 0)."
       }
      ],
      "tests": [
@@ -81,6 +81,11 @@
        "name": "nondeg_Z49",
        "kind": "computation",
        "statement": "Λ = ℤ/49, p = 3, ψ(1) = 18: 18³ = 5832 ≡ 1 and 17 is a unit mod 49."
+      },
+      {
+       "name": "nondeg_zero_ring",
+       "kind": "non-example",
+       "statement": "Λ = 0: ψ(1) − 1 = 0 is a unit, so the unique character is nondegenerate, but it is trivial and not AddChar.IsPrimitive; the primitivity clause needs Λ ≠ 0."
       }
      ]
     },
@@ -88,14 +93,15 @@
      "id": "0.1.1",
      "kind": "theorem",
      "name": "AddChar.IsNondegenerate.sum_trace_mul_eq_ite",
-     "statement": "For a nondegenerate ψ, a finite field k of characteristic p and y ∈ k, Σ_{x ∈ k} ψ(Tr_{k/𝔽_p}(x y)) = |k| if y = 0 and 0 otherwise; every additive character of k into Λ is x ↦ ψ(Tr(c x)) for a unique c ∈ k.",
+     "statement": "For a nondegenerate ψ, a finite field k of characteristic p and y ∈ k, Σ_{x ∈ k} ψ(Tr_{k/𝔽_p}(x y)) = |k| if y = 0 and 0 otherwise; when Spec Λ is connected (in particular nonempty), every additive character of k into Λ^× is x ↦ ψ(Tr(c x)) for a unique c ∈ k.",
      "hypotheses": [
       "ψ nondegenerate",
-      "k finite field of characteristic p"
+      "k finite field of characteristic p",
+      "Spec Λ connected (classification clause only)"
      ],
      "locator": {
-      "source": "LAU87",
-      "where": "(0.2), LAU87 lines 144–149"
+      "source": "KL85",
+      "where": "Appendice (2.4), KL85 lines 442–446 (nontriviality of ψ in the local case); LAU87 (0.2), LAU87 lines 144–149, for the classification of ℚ̄_ℓ-valued characters of 𝔽_q; the orthogonality over a general commutative ring is this roadmap's own, proved by multiplying by ψ(Tr(x_0 y)) − 1"
      },
      "prerequisites": [
       "target:0.1",
@@ -799,6 +805,44 @@
      ]
     },
     {
+     "id": "2.7.1",
+     "kind": "theorem",
+     "name": "HenselianTrait.completion_ramification",
+     "statement": "For a henselian discrete valuation ring R with fraction field K and perfect residue field of characteristic p, and its completion K̂, restriction Gal(K̂^sep/K̂) → Gal(K^sep/K) is an isomorphism carrying inertia and wild inertia onto those of the trait Spec R and G_{K̂}^u onto G_K^u for every u ≥ 0 (upper numbering of G_K from the lower numbering on O_L for finite Galois L/K); breaks, break decompositions and Swan conductors of G_K-representations are those of ArithmeticGaloisRepresentations §3.1 through it. K̂/K need not be separable.",
+     "hypotheses": [
+      "R henselian discrete valuation ring",
+      "residue field perfect of characteristic p"
+     ],
+     "locator": {
+      "source": "LAU87",
+      "where": "(2.1.1), LAU87 lines 680–688 (R between k{π} and k[[π]], ramification taken from the completion); proof by the finite étale equivalence and density of O_L in O_{L̂}"
+     },
+     "prerequisites": [
+      "roadmap:AdicEtaleGeometry §A1.0.5",
+      "roadmap:EtaleCohomologyFoundations §F.3a",
+      "roadmap:ArithmeticGaloisRepresentations §3.1",
+      "mathlib:IsKrasner.of_completeSpace"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "completion_artinSchreier",
+       "kind": "computation",
+       "statement": "R = k{π}, R̂ = k[[π]]: α^p − α = π^{−m}, p ∤ m, has upper jump m over k((π)) and hence over K."
+      },
+      {
+       "name": "completion_nonExcellent",
+       "kind": "boundary",
+       "statement": "R the henselization of the valuation ring of k(π, f^p) ⊂ k((π)), f transcendental over k(π): K̂/K inseparable (f ∈ K̂), restriction still an isomorphism."
+      },
+      {
+       "name": "completion_nonHenselian",
+       "kind": "non-example",
+       "statement": "R = k[π]_(π), p odd: K(√(1 + π)) splits over K̂, so restriction is not onto."
+      }
+     ]
+    },
+    {
      "id": "2.7",
      "kind": "theorem",
      "name": "artinSchreierSheaf_line",
@@ -813,6 +857,7 @@
       "where": "Lecture II, KATZ01 lines 441–460"
      },
      "prerequisites": [
+      "target:2.7.1",
       "target:2.5",
       "target:2.4",
       "roadmap:ArithmeticGaloisRepresentations §3.1",
@@ -1104,11 +1149,10 @@
      "id": "3.6",
      "kind": "theorem",
      "name": "fourierDeligne_functoriality",
-     "statement": "Base change g'^*FT ≅ FT g^* and FT Rg_{V!} ≅ Rg_{V'!} FT; for linear f : E_1 → E_2, FT(Rf_!K) ≅ f^{∨*}FT(K)[r_2 − r_1]; external products; FT(K_1 * K_2) ≅ FT K_1 ⊗ FT K_2[−r]; Plancherel Rπ'_!(FT K_1 ⊗ FT K_2) ≅ Rπ_!(K_1 ⊗ [−1]^*K_2)(−r); FT(Λ_{V(F)}[s]) ≅ Λ_{V(F^⊥)}(−s)[r − s]; FT(τ_{e*}K) ≅ FT(K) ⊗ ℒ_ψ⟨e, ·⟩; for p odd [2]^*FT(ℒ_ψ(q)) ≅ ℒ_ψ(−q') ⊗ π'^*Rπ_!ℒ_ψ(q)[r]; m^*K ≅ M ⊠ L induces m'^*FT(K) ≅ M ⊠ FT(L).",
+     "statement": "Base change g'^*FT ≅ FT g^* and FT Rg_{V!} ≅ Rg_{V'!} FT; for linear f : E_1 → E_2, FT(Rf_!K) ≅ f^{∨*}FT(K)[r_2 − r_1]; external products; FT(K_1 * K_2) ≅ FT K_1 ⊗ FT K_2[−r]; Plancherel Rπ'_!(FT K_1 ⊗ FT K_2) ≅ Rπ_!(K_1 ⊗ [−1]^*K_2)(−r); FT(Λ_{V(F)}[s]) ≅ Λ_{V(F^⊥)}(−s)[r − s]; FT(τ_{e*}K) ≅ FT(K) ⊗ ℒ_ψ⟨e, ·⟩; in every characteristic [2]^*FT(ℒ_ψ(q)) ≅ ℒ_ψ(−q') ⊗ π'^*Rπ_!ℒ_ψ(q)[r]; m^*K ≅ M ⊠ L induces m'^*FT(K) ≅ M ⊠ FT(L).",
      "hypotheses": [
       "S qcqs over 𝔽_p",
-      "ψ nondegenerate",
-      "p odd for the quadratic formula"
+      "ψ nondegenerate"
      ],
      "locator": {
       "source": "LAU87",
@@ -1279,10 +1323,11 @@
      "id": "5.1",
      "kind": "definition",
      "name": "perverseLocalInvariants",
-     "statement": "For perverse K on a smooth curve and a closed point x: rk(K) generic rank of H^{−1}(K), rk_x(K) = dim H^{−1}(K_x̄) − dim H⁰(K_x̄), sw_x(K) Swan conductor of H^{−1}(K_{η̄_x}), a_x(K) = rk(K) + sw_x(K) − rk_x(K).",
+     "statement": "For perverse K on a smooth connected curve X and a closed point x: rk(K) the rank of H^{−1}(K) at the generic point, rk_x(K) = dim H^{−1}(K_x̄) − dim H⁰(K_x̄), sw_x(K) Swan conductor of H^{−1}(K_{η̄_x}) (through 2.7.1), a_x(K) = rk(K) + sw_x(K) − rk_x(K).",
      "hypotheses": [
       "k perfect of characteristic p",
-      "Λ coefficient field"
+      "Λ coefficient field",
+      "X smooth connected curve over k"
      ],
      "locator": {
       "source": "LAU87",
@@ -1290,7 +1335,8 @@
      },
      "prerequisites": [
       "roadmap:ArithmeticGaloisRepresentations §3.1",
-      "roadmap:EtaleDualityAndPerverseSheaves §2.10"
+      "roadmap:EtaleDualityAndPerverseSheaves §2.10",
+      "target:2.7.1"
      ],
      "api": [
       {
@@ -1301,7 +1347,7 @@
       {
        "name": "localInvariants_baseExtension",
        "role": "functoriality",
-       "statement": "Invariant under extension of k inside k̄."
+       "statement": "For finite k'/k inside k̄ and a connected component X' of X ⊗ k', the pullback of K has generic rank rk(K) and the same rk_x, sw_x, a_x at points over x."
       },
       {
        "name": "localInvariants_middle",
@@ -1324,6 +1370,11 @@
        "name": "li_kummer",
        "kind": "computation",
        "statement": "j_!ℒ_χ[1] at 0: sw = 0, rk_0 = 0, a_0 = 1."
+      },
+      {
+       "name": "li_disconnected_nonexample",
+       "kind": "non-example",
+       "statement": "X = ℙ¹ ⊔ ℙ¹, K = Λ[1] ⊔ 0: χ = −2 but the right side is −4 or 0; X = ℙ¹_{𝔽_{q²}} over 𝔽_q (C = 2, g = 0), K = Λ[1]: −4 on both sides."
       }
      ]
     },
@@ -1331,14 +1382,14 @@
      "id": "5.1.1",
      "kind": "theorem",
      "name": "perverseLocalInvariants_eulerPoincare",
-     "statement": "a_x(K) ≥ rk(K) − rk_x(K) ≥ 0, with a_x(K) = 0 iff K[−1] is lisse at x iff rk_x(K) = rk(K); for X projective χ(X_{k̄}, K) = Σ_x deg(x) a_x(K) − χ(X_{k̄}) rk(K).",
+     "statement": "a_x(K) ≥ rk(K) − rk_x(K) ≥ 0, with a_x(K) = 0 iff K[−1] is lisse at x iff rk_x(K) = rk(K); for X projective χ(X_{k̄}, K) = Σ_x deg(x) a_x(K) − χ(X_{k̄}) rk(K), χ(X_{k̄}) = C(2 − 2g) with C the number of components of X_{k̄} and g their common genus.",
      "hypotheses": [
-      "X smooth curve over perfect k",
+      "X smooth connected curve over perfect k",
       "K perverse"
      ],
      "locator": {
       "source": "LAU87",
-      "where": "Lemme (2.2.1.1), Théorème (2.2.1.2), LAU87 lines 856–875"
+      "where": "(2.2.1), Lemme (2.2.1.1), Théorème (2.2.1.2), LAU87 lines 839–875"
      },
      "prerequisites": [
       "target:5.1",
@@ -1354,13 +1405,14 @@
      "name": "swan_tensor_slopeOne",
      "statement": "Slope decomposition and s(V) = Σ λ r(V_λ); for L of rank one and Swan one, s(V ⊗ L) = r(V_{[0,1[}) + s(V_1 ⊗ L) + s(V_{]1,∞[}) with s(V_1 ⊗ L) ≤ r(V_1); ℒ_ψ(a/π) has slope one; for k algebraically closed and V ≠ 0 purely of slope one, some a ∈ k makes V ⊗ ℒ_ψ(a/π) have a nonzero part of slope < 1.",
      "hypotheses": [
-      "henselian trait of equal characteristic p, perfect residue field"
+      "henselian trait of equal characteristic p, perfect residue field (no excellence assumed)"
      ],
      "locator": {
       "source": "LAU87",
       "where": "(2.1.2.4)–(2.1.2.8), LAU87 lines 735–804"
      },
      "prerequisites": [
+      "target:2.7.1",
       "roadmap:ArithmeticGaloisRepresentations §3.1",
       "roadmap:ArithmeticGaloisRepresentations §3.7",
       "roadmap:EtaleCohomologyFoundations §F.3a",
@@ -1428,7 +1480,7 @@
       {
        "name": "fs_constant_nonexample",
        "kind": "non-example",
-       "statement": "Λ_{𝔸¹} is not elementary (H²_c ≠ 0 at t = 0); ℒ_ψ(x) is elementary but not Fourier."
+       "statement": "Λ_{𝔸¹} is not elementary (H²_c ≠ 0 at t = 0); ℒ_ψ(x) is neither elementary nor Fourier (t = −1); j_!(ℒ_χ|_{𝔸¹ ∖ {0,1}}) for nontrivial Kummer χ is elementary but not Fourier (stalk 0 at 1 against Λ for j_*j^*)."
       },
       {
        "name": "fs_quadratic",
@@ -1566,7 +1618,7 @@
      "id": "5.5",
      "kind": "theorem",
      "name": "fourierDeligne_localMonodromy",
-     "statement": "For perverse K on A with K' = FT(K): rk(K') = Σ_s deg(s)a_s(K) + s(F_{∞,]1,∞[}) − r(F_{∞,]1,∞[}); rk_{s'}(K') = rk(K') − r(F_{∞,1}) + s(F_{∞,1} ⊗ ℒ_ψ(x s')) for s' ≠ 0'; rk_{0'}(K') = rk(K') − r(F_{∞,[0,1[}) + s(F_{∞,[0,1[}); the lisse-locus criterion; vanishing cycles at finite s' and at ∞'; the exact sequence 0 → H⁰_c(A_{k̄}, K) → F'_{η̄_{0'}} → 𝔉^{(∞,0')}(F_∞) → H¹_c(A_{k̄}, K) → 0.",
+     "statement": "For perverse K on A with K' = FT(K): rk(K') = Σ_s deg(s)a_s(K) + s(F_{∞,]1,∞[}) − r(F_{∞,]1,∞[}); rk_{s'}(K') = rk(K') − r(F_{∞,1}) + s(F_{∞,1} ⊗ ℒ_ψ(x s')) for s' ≠ 0'; rk_{0'}(K') = rk(K') − r(F_{∞,[0,1[}) + s(F_{∞,[0,1[}); the lisse-locus criterion; vanishing cycles at finite s' and at ∞'; the exact sequence 0 → H⁰_c(A_{k̄}, K) → F'_{η̄_{0'}} → R^{−1}Φ_{0'}(K') → H¹_c(A_{k̄}, K) → 0.",
      "hypotheses": [
       "k perfect",
       "Λ coefficient field",
@@ -1574,7 +1626,7 @@
      ],
      "locator": {
       "source": "LAU87",
-      "where": "(2.3.1.1)–(2.3.3.1), LAU87 lines 933–1034; LAU87 lines 2620–2628"
+      "where": "(2.3.1.1)–(2.3.3.1), LAU87 lines 933–1034"
      },
      "prerequisites": [
       "target:3.3",
@@ -1597,7 +1649,8 @@
      "statement": "For henselian traits T, T' of equal characteristic p with residue field k and uniformizers π, π', the functors 𝔉^{(0,∞')}, 𝔉^{(∞,0')}, 𝔉^{(∞,∞')} : 𝒢 → 𝒢' given by the vanishing cycles for pr' : T ×_k T' → T' of pr^*(V_!) ⊗ ℒ_ψ(π/π'), ⊗ ℒ_ψ(π'/π), ⊗ ℒ_ψ(1/(ππ')) at the point over (t, η̄'), with 𝔉(V) the degree-one cohomology.",
      "hypotheses": [
       "k perfect",
-      "Λ coefficient field"
+      "Λ coefficient field",
+      "T, T' henselian traits over k with residue field k (not necessarily excellent)"
      ],
      "locator": {
       "source": "LAU87",
@@ -1647,14 +1700,15 @@
      "id": "5.6.1",
      "kind": "theorem",
      "name": "localFourierTransform_globalComparison",
-     "statement": "Comparison with global vanishing cycles (shift 2) for K ≅ V_![1] near 0 or ≅ V[1] near ∞; concentration in degree 1 for V that are local monodromies of perverse sheaves on A, hence for all tame V when k is finite; compatibility with extension of k.",
+     "statement": "Comparison with global vanishing cycles (shift 2) for K ≅ V_![1] near 0 or ≅ V[1] near ∞, in particular R^{−1}Φ_{0'}(K') ≅ 𝔉^{(∞,0')}(F_∞) in the sequence at 0' of 5.5; concentration in degree 1 for V that are local monodromies of perverse sheaves on A, hence for all tame V when k is finite; compatibility with extension of k.",
      "hypotheses": [
       "k perfect",
-      "Λ coefficient field"
+      "Λ coefficient field",
+      "T, T' henselian traits over k with residue field k (not necessarily excellent)"
      ],
      "locator": {
       "source": "LAU87",
-      "where": "Lemme (2.4.2.1), Proposition (2.4.2.2), (2.5.2), LAU87 lines 1063–1090 and 1157–1165"
+      "where": "Lemme (2.4.2.1), Proposition (2.4.2.2), (2.5.2), LAU87 lines 1063–1090 and 1157–1165; Proposition (2.3.2.1)(iii), LAU87 lines 993–995"
      },
      "prerequisites": [
       "target:5.6",
@@ -1669,7 +1723,7 @@
      "id": "5.6.2",
      "kind": "theorem",
      "name": "localFourierTransform_tame",
-     "statement": "𝔉^{(0,∞')}(Λ) = Λ, 𝔉^{(∞,0')}(Λ) = Λ(−1), 𝔉^{(∞,∞')}(Λ) = 0; for nontrivial Kummer V_χ = ℒ_χ(π), 𝔉^{(0,∞')}(V_χ) ≅ V'_χ ⊗ G(χ, ψ), 𝔉^{(∞,0')}(V_χ) ≅ V'_χ ⊗ G(χ^{−1}, ψ), 𝔉^{(∞,∞')}(V_χ) = 0.",
+     "statement": "𝔉^{(0,∞')}(Λ) = Λ, 𝔉^{(∞,0')}(Λ) = Λ(−1), 𝔉^{(∞,∞')}(Λ) = 0; for nontrivial Kummer V_χ = ℒ_χ(π), 𝔉^{(0,∞')}(V_χ) ≅ V'_χ ⊗ G(χ, ψ), 𝔉^{(∞,0')}(V_χ) ≅ V'_χ ⊗ G(χ^{−1}, ψ), 𝔉^{(∞,∞')}(V_χ) = 0. Hence for K = j_!F[1] with F_∞ unramified, 0 → H¹_c(A_{k̄}, j_!F) → F'_{η̄_{0'}} → F_∞(−1) → H²_c(A_{k̄}, j_!F) → 0.",
      "hypotheses": [
       "k perfect",
       "Λ coefficient field",
@@ -1677,12 +1731,13 @@
      ],
      "locator": {
       "source": "LAU87",
-      "where": "Proposition (2.5.3.1), LAU87 lines 1170–1182"
+      "where": "Proposition (2.5.3.1), LAU87 lines 1170–1182; LAU87 lines 2620–2628"
      },
      "prerequisites": [
       "target:5.6.1",
       "target:5.4.1",
-      "target:3.6"
+      "target:3.6",
+      "target:5.5"
      ],
      "api": [],
      "tests": []
@@ -1743,12 +1798,19 @@
    "what": "Lang's theorem"
   },
   {
+   "roadmap": "AdicEtaleGeometry",
+   "sections": [
+    "§A1.0.5"
+   ],
+   "what": "finite étale algebras unchanged under henselian completion, for the Galois group of a henselian trait and its completion"
+  },
+  {
    "roadmap": "ArithmeticGaloisRepresentations",
    "sections": [
     "§3.1",
     "§3.7"
    ],
-   "what": "breaks, Swan conductors, Artin–Schreier characters"
+   "what": "breaks, Swan conductors, Artin–Schreier characters over complete fields (transported to henselian traits by 2.7.1)"
   },
   {
    "roadmap": "InverseGaloisAndArithmeticFundamentalGroups",
@@ -1782,24 +1844,16 @@
  ],
  "consumers": [
   {
-   "roadmap": "CongruenceSpectralGap",
-   "what": "§4.2b additive-character sheaf and Kloosterman realization (§§1.1, 2.2–2.5)"
-  },
-  {
    "roadmap": "CharacterSumsOverFiniteFields",
-   "what": "trace-function readings of Gauss, Kummer and Artin–Schreier sums (§§2.3, 2.5–2.6, 5.4)"
+   "what": "trace-function readings of Gauss, Kummer and Artin–Schreier sums with artinSchreierSheaf, kummerSheaf (§§2.3, 2.5–2.6, 5.4)"
   },
   {
    "roadmap": "SheafConvolutionOnAbelianVarieties",
    "what": "kernel transforms and the kernel-composition coherence contract (§§1.1–1.2)"
   },
   {
-   "roadmap": "KloostermanMomentsAndPotentialAutomorphy",
-   "what": "Artin–Schreier sheaves, kernel transforms and the transform on the line"
-  },
-  {
-   "roadmap": "ExponentialSumsAndCircleMethodPartII",
-   "what": "Artin–Schreier sheaves, vanishing and Fourier inversion (§§2.4–2.5, 3.4)"
+   "roadmap": "CongruenceSpectralGap",
+   "what": "can import the weight-free part of its additive-character-sheaf contract (§§2.2–2.5), stated against DeligneWeightsAndPurity, whose weight-zero clause stays there"
   }
  ],
  "gaps": [
