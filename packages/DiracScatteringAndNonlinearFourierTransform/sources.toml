@@ -162,7 +162,7 @@ cited_for = ["Conventions", "4.4", "4.5", "5.1", "5.4", "6.8"]
 id = "killipsimon2003"
 authors = "Rowan Killip, Barry Simon"
 title = "Sum Rules for Jacobi Matrices and Their Applications to Spectral Theory"
-year = 2001
+year = 2003
 venue = "Ann. of Math. (2), Vol. 158 (2003), no. 1, 253--321"
 arxiv = "math-ph/0112008v2"
 locator_scheme = "section"
@@ -174,7 +174,7 @@ sha256 = "0d237afc8e8f669056f9dcc7c5e0a6bc0e916aa6a2f5a69550bc0bf1e205008c"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-06"
-version_note = "arXiv v2 read; locators are to that version"
+version_note = "published 2003 (Ann. of Math. 158); arXiv math-ph/0112008 first submitted December 2001, v2 read; locators are to that version"
 cited_for = ["6.7", "6.8"]
 
 [[source]]

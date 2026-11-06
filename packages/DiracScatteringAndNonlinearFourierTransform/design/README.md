@@ -183,6 +183,13 @@ All at the pinned Mathlib; paths under `Mathlib/`.
   harmonic function is holomorphic), `InnerProductSpace.HarmonicOnNhd.exists_analyticOnNhd_ball_re_eq`
   (line 74, on balls only) and `InnerProductSpace.bounded_harmonic_on_complex_plane_is_constant`
   (`Analysis/Complex/Harmonic/Liouville.lean` line 52).
+- `ContractingWith` (`Topology/MetricSpace/Contracting.lean` line 42, a Lipschitz self-map with constant
+  `K < 1`) for the Picard scheme of §1.2; `MeasureTheory.Measure.rnDeriv` and
+  `MeasureTheory.Measure.singularPart` (`MeasureTheory/Measure/Decomposition/Lebesgue.lean` lines 80, 73,
+  the Lebesgue decomposition `ν = (dν/dx) dx + ν_s` when `ν` has one with respect to Lebesgue measure) in
+  §2.4 and §6.7; `MeasureTheory.measure_limsup_atTop_eq_zero`
+  (`MeasureTheory/OuterMeasure/BorelCantelli.lean` line 62: if `Σ μ(sᵢ) < ∞` then `limsup sᵢ` is null) in
+  §9.3.
 - `Matrix.det_fin_two` (`LinearAlgebra/Matrix/Determinant/Basic.lean` line 815), `NormedSpace.exp`
   for the constant-coefficient Check, `UpperHalfPlane.upperHalfPlaneSet`.
 
@@ -211,6 +218,13 @@ All at the pinned Tau Ceti; paths under `TauCeti/`.
   `UpperHalfPlane.upperHalfPlaneSet` with nonnegative imaginary part is
   `βz + ∫ (1 + xz)/(x − z) dρ(x) + Re F(i)` with `ρ` finite and `β ≥ 0`, and the kernel has
   imaginary part `Im z (1 + x²)/|x − z|²`. Layer 2 and Layer 6 consume it unchanged.
+- `TauCeti.integral_circle_eq_atom_add_integral_cayleyPushforward` and
+  `MeasureTheory.Measure.cayleyPushforward` (`Analysis/Complex/Pick/Nevanlinna.lean` lines 188, 176): for a
+  finite measure `ν` on Mathlib's `Circle` and a continuous `f` from `Circle` to a real Banach space,
+  `∫ f dν = ν({1}) f(1) + ∫_ℝ f((x − i)/(x + i)) dν_C(x)`, where `ν_C` is the Cayley pushforward: the
+  restriction of `ν` to the punctured circle carried to `ℝ` by the inverse of the boundary Cayley map
+  `TauCeti.boundaryCayley`, `x ↦ (x − i)/(x + i)`. §6.6 uses it to read weak convergence of the Cayley
+  images of the measures `μ_T` on the circle as convergence of integrals over `ℝ` plus the atoms at `1`.
 - `TauCeti.PhragmenLindelof.upper_half_plane_of_isBounded` (`Analysis/Complex/PhragmenLindelof.lean`
   line 33): a bounded holomorphic function on `ℂ₊`, continuous on the closed half-plane, is bounded
   by its bound on `ℝ`.
@@ -523,9 +537,12 @@ pp. 27, 55–56, uncertified). Its API:
 
 - `h = 1_{[0,1]}` and `x = 2`: `P[h](2 + i) = (arctan 2 − π/4)/π ≈ 0.102`, while the maximal function of
   `h` at `2` is `1/4` (attained at radius `2`), and `0.102 ≤ 3 · 1/4`.
-- The constant `3`: at `x = 0`, `z = 1 + i ∈ Γ_∞(0)` and `s = 1`, `P(1 + i, 1) = 1/π` and
-  `3P(i, 1) = 3/(2π)`, so the inequality holds; at `s = 2` the ratio `P(1 + i, 2)/P(i, 2) = 5/2` shows a
-  constant below `5/2` is impossible.
+- The constant `3`: at `x = 0`, `z = 0.99 + i ∈ Γ_∞(0)` and `s = 1`, `P(0.99 + i, 1) = 1/(1.0001π)` and
+  `3P(i, 1) = 3/(2π)`, so the inequality holds; at `s = 2` the ratio is
+  `P(0.99 + i, 2)/P(i, 2) = 5/2.0201 ≈ 2.475`. Over the open cone the ratio `P(x′ + iy, s)/P(iy, s)` has
+  supremum `(s² + y²)/((s − y)² + y²)` for `s ≥ y`, largest at `s = y(1 + √5)/2` with value
+  `((1 + √5)/2)² ≈ 2.618`, not attained; so no constant below `2.618` works, and `3` is not sharp. The
+  point `1 + i` lies on the boundary of `Γ_∞(0)`, not in it.
 - `h = 0`: both maximal functions vanish; `h ≡ 1` (in `L¹(Π)`, not in `L¹`): `P[h] ≡ 1` and `M_1 P[h] ≡ 1`.
 - The global maximal function of `h ∈ L¹(Π)` can be infinite (for `h ≡ 1` the averages over
   `B(x, r)` stay `1`, but for `h(x) = |x|^{1/2}` they grow like `√r`), which is why the bound is
@@ -555,7 +572,7 @@ at a Lebesgue point of `w` where `ν_s(B(x, r))/2r → 0` (Mathlib
 
 For `F` holomorphic and bounded on `ℂ₊` define its boundary function `F* ∈ L^∞(ℝ)` as the
 nontangential limit of `F`, which exists almost everywhere (garnett2007, Ch. II §§1–4, pp. 55, 64,
-uncertified; mauth2022 Lemmas 1–2, line 359–377). Its API:
+uncertified). Its API:
 
 - `‖F*‖_∞ ≤ sup_{ℂ₊} |F|` and `F = P[F*]` on `ℂ₊`; `F ↦ F*` is linear and multiplicative.
 - If `F` extends continuously to the closed half-plane then `F* = F` on `ℝ`.
@@ -588,13 +605,14 @@ Define `H²(ℂ₊)` as the holomorphic `F` on `ℂ₊` with `‖F‖² = sup_{y
 (mauth2022 line 337–358). Its API:
 
 - Boundary values: `F(· + iy) → F*` in `L²(ℝ)` as `y → 0`, `‖F*‖_{L²} = ‖F‖`, `y ↦ ‖F(· + iy)‖_{L²}` is
-  nonincreasing, `F → F*` nontangentially almost everywhere, and `F = P[F*]` (mauth2022 Lemma 1).
+  nonincreasing, `F → F*` nontangentially almost everywhere, and `F = P[F*]` (mauth2022 Lemma 1 line
+  359–369, for `H^p(ℂ₊)` with `1 < p < ∞`; garnett2007, Ch. II p. 55, uncertified).
 - Paley–Wiener: the boundary map is an isometry of `H²(ℂ₊)` onto
   `{g ∈ L²(ℝ) : 𝓕g = 0 almost everywhere on (−∞, 0)}` (Mathlib's `𝓕`), and
   `F(z) = ∫₀^∞ φ(s) e^{isz} ds` with `φ ∈ L²(0, ∞)`, `‖F‖² = 2π‖φ‖²` (mauth2022 Lemma 9 line 469;
   garnett2007 p. 84, uncertified); in particular `H²(ℂ₊)` is a Hilbert space.
 - Cauchy formula: `F(z) = (1/(2πi)) ∫ F*(x)/(x − z) dx` and `∫ F*(x)/(x − conj z) dx = 0` for `z ∈ ℂ₊`;
-  hence `|F(z)|² ≤ ‖F‖²/(4π Im z)` (mauth2022 Lemma 2 states a weaker constant).
+  hence `|F(z)|² ≤ ‖F‖²/(4π Im z)` (mauth2022 Lemma 2 line 370–377 states a weaker constant).
 - Products: `∫ F*(x) G*(x) dx = 0` for `F, G ∈ H²(ℂ₊)`; bounded multipliers: `GF ∈ H²(ℂ₊)` with
   `‖GF‖ ≤ sup|G| ‖F‖` for bounded holomorphic `G`.
 - Weak convergence `Fₙ ⇀ F` in `H²(ℂ₊)` implies locally uniform convergence on `ℂ₊`
@@ -1161,18 +1179,25 @@ For `z ∈ ℂ₊` and `t ≥ 0` define the Weyl disc
 point of `⋂_t D_t(z)` (romanov2014 §8 Theorem 15 line 2217–2261, Lemma 23 line 2370; remling2018,
 Ch. 2, waived). Its API:
 
-- For `t > 0`, `D_t(z)` is a closed disc of radius `1/(2 Im z ∫₀ᵗ |Θ(s, z)|² ds)`, decreasing in `t`, with
-  `−Ẽ(t, z)/E(t, z)` on its boundary.
+- For `t > 0`, `D_t(z)` is a closed disc of radius `1/(2 Im z ∫₀ᵗ |Θ(s, z)|² ds)`, decreasing in `t`.
+  Writing `(u, v) = Φ(t, z) + wΘ(t, z)`, its boundary circle consists of the `w` with `u/v ∈ ℝ ∪ {∞}`,
+  among them `−D(t, z)/C(t, z)` and `−B(t, z)/A(t, z)` (`A(t, z)` and `C(t, z)` do not vanish, since
+  `Im(conj A(t, z) · C(t, z)) = Im z ∫₀ᵗ |Θ(s, z)|² ds > 0`), while `−Ẽ(t, z)/E(t, z)`, the point where
+  `u − iv` vanishes, lies in its interior. Equivalently,
+  `D_t(z) = {w : |Ẽ(t, z) + wE(t, z)| ≤ |Ẽ#(t, z) + wE#(t, z)|}`.
 - Limit point: `∫₀^∞ |Θ(s, z)|² ds = ∞` for `z ∈ ℂ₊`, so the intersection is a single point.
 - `m(z)` is the unique `w` with `Φ(·, z) + wΘ(·, z) ∈ L²(ℝ₊; ℂ²)`.
 - `m` is holomorphic on `ℂ₊` with `Im m > 0`, and `−Ẽ(t, ·)/E(t, ·) → m` locally uniformly on `ℂ₊`, with
   error at most twice the radius.
 - The Dirichlet Weyl function is `−1/m = lim E(t, ·)/Ẽ(t, ·)`.
 - Route: `Im(conj u · v)` of `Φ + wΘ` at time `t` is `−Im w + Im z ∫₀ᵗ|Φ + wΘ|²` by the
-  Christoffel–Darboux identity; nesting is monotonicity in `t`; `(u − iv)(t) = Ẽ(t, z) + wE(t, z)` vanishes
-  at `w = −Ẽ/E`. Limit point: if `Θ(·, z₀) ∈ L²` for some `z₀ ∈ ℂ₊`, every solution is square-integrable at
-  `z₀` and then, by variation of constants and §1.1, at every `z`; at `z = 0`, `det[Θ, Φ] = 1` gives
-  `1 ≤ |Θ||Φ|`, which is not integrable on `[0, ∞)`.
+  Christoffel–Darboux identity; nesting is monotonicity in `t`; since `A, B, C, D` are real entire (§3.1),
+  `(u − iv)(t) = Ẽ(t, z) + wE(t, z)` and `(u + iv)(t) = Ẽ#(t, z) + wE#(t, z)`, and
+  `Im(conj u · v) = (|u − iv|² − |u + iv|²)/4` gives the second description, a disc because
+  `|E(t, z)| > |E#(t, z)|` (§3.3); `u − iv` vanishes at `w = −Ẽ/E`, where `u + iv ≠ 0` because
+  `(u, v) ≠ 0`, so that point lies inside the disc. Limit point: if `Θ(·, z₀) ∈ L²` for some `z₀ ∈ ℂ₊`,
+  every solution is square-integrable at `z₀` and then, by variation of constants and §1.1, at every `z`;
+  at `z = 0`, `det[Θ, Φ] = 1` gives `1 ≤ |Θ||Φ|`, which is not integrable on `[0, ∞)`.
 
 *Needs:* §1.1, §1.3, §3.1, §3.2, §3.3.
 
@@ -1180,6 +1205,14 @@ Ch. 2, waived). Its API:
 
 - Free case: `−Ẽ/E = i` for every `t`, `m = i`, and `Φ + iΘ = (i e^{itz}, e^{itz})` is square-integrable on
   `ℝ₊` for `z ∈ ℂ₊`; the radius is `1/sinh(2t Im z) → 0`.
+- `−Ẽ/E` is interior, not a boundary point. Free case, `t = 1.7`, `z = 0.6 + 0.25i`: at `w = −Ẽ/E = i`,
+  `Im z ∫₀ᵗ |Φ + iΘ|² = 1 − e^{−2t Im z} = 1 − e^{−0.85} ≈ 0.5726 < 1 = Im i`; the disc is
+  `|w − i| ≤ e^{−2t Im z} |w + i|`, with centre `i coth(0.85) ≈ 1.4470i` and radius `1/sinh(0.85) ≈ 1.0459`,
+  at distance `0.4470` from `i`, while `−D/C = −cot(tz)`, where `v = 0`, lies on the circle. For the smooth
+  complex potential of §3.1 at the same `t` and `z`, `w₀ = −Ẽ/E ≈ 0.3468 + 0.7493i` has
+  `Im z ∫₀ᵗ |Φ + w₀Θ|² ≈ 0.4541 < Im w₀`, and the disc `|Ẽ + wE| ≤ |Ẽ# + wE#|` has radius `≈ 0.6538`,
+  equal to the stated radius, with `−D/C` and `−B/A` on its circle. A description with `−Ẽ/E` on the
+  boundary would force equality in both instances.
 - On `ℝ`, `Im(−Ẽ(t, x)/E(t, x)) = 1/|E(t, x)|²` by `det M = 1`; for the smooth complex potential of §3.1
   at `x = 0.7`, both sides are `0.983136`, and `Im(E/Ẽ) = 1/|Ẽ|² = 0.838119`.
 - Compact support (`q = 0` on `(T, ∞)`): `m = −Ẽ(T, ·)/E(T, ·)` exactly, since beyond `T` the
@@ -1298,10 +1331,11 @@ inner when it moreover extends to a meromorphic function on `ℂ`; for `λ ∈ �
 Hermite–Biehler, entire of order at most one, with no real zeros:
 
 - `θ_E = E#/E` is meromorphic inner, and products of meromorphic inner functions are meromorphic inner.
-- Writing `E(x) = |E(x)| e^{−iφ(x)}` with `φ` continuous on `ℝ`, `θ_E(x) = e^{2iφ(x)}` and
-  `φ′(x) = π K(x, x)/|E(x)|² > 0`, with `K` the kernel of §6.1.
+- Writing `E(x) = |E(x)| e^{−iψ(x)}` with `ψ` continuous on `ℝ`, so that `ψ = −arg E` (for `E = E(t, ·)`
+  one may take `ψ = −φ(t, ·)`, the negative of the branch `φ` of §3.2), `θ_E(x) = e^{2iψ(x)}` and
+  `ψ′(x) = π K(x, x)/|E(x)|² > 0`, with `K` the kernel of §6.1.
 - If `(ζₙ)` are the zeros of `θ_E` in `ℂ₊` with multiplicity (the conjugates of the zeros of `E`), then
-  `Σ Im ζₙ/(1 + |ζₙ|²) < ∞` and there is `c ≥ 0` with `2φ′(x) = |θ_E′(x)| = c + Σₙ 2 Im ζₙ/|x − ζₙ|²` for every
+  `Σ Im ζₙ/(1 + |ζₙ|²) < ∞` and there is `c ≥ 0` with `2ψ′(x) = |θ_E′(x)| = c + Σₙ 2 Im ζₙ/|x − ζₙ|²` for every
   `x ∈ ℝ` (poltoratski2024 line 312–321 and the proof of Lemma 1, line 337–346).
 - Route: Hadamard factorisation of `E` with genus one (AnalyticNumberTheoryPartI §0.23) gives
   `E′/E = β + Σₙ (1/(z − zₙ) + 1/zₙ)`; on `ℝ`, `θ_E′/θ_E = −2i Im(E′/E)`; the Hermite–Biehler inequality
@@ -1311,9 +1345,10 @@ Hermite–Biehler, entire of order at most one, with no real zeros:
 
 **Checks.**
 
-- `E = e^{−itz}`: `θ_E = e^{2itz}`, no zeros, `|θ_E′| = 2t = c`, and `φ′ = t = π(t/π)/1`.
+- `E = e^{−itz}`: `θ_E = e^{2itz}`, no zeros, `|θ_E′| = 2t = c`, and `ψ(x) = tx`, `ψ′ = t = π(t/π)/1`,
+  while the branch of §3.2 is `φ(t, x) = −tx`, with `∂ₜφ = −x`.
 - `E(z) = z + i`: `θ_E = (z − i)/(z + i) = b_i`, `|θ_E′(x)| = 2/(1 + x²) = 2 Im i/|x − i|²`, `c = 0`, and
-  `φ′ = 1/(1 + x²) = π(1/π)/(1 + x²)`.
+  `ψ′ = 1/(1 + x²) = π(1/π)/(1 + x²)`.
 - `e^{−i/z}` is inner but has an essential singularity at `0`, so it is not meromorphic inner; `e^{−iz}`
   is unbounded on `ℂ₊` (`|e^{−iz}| = e^{Im z}`), so the reflected convention `E/E#` is not inner.
 
@@ -1393,8 +1428,8 @@ Define, for `s ∈ ℝ` and `C > 0` (or a function `C(t) > 0`), the sets of time
 **Checks.**
 
 - Free case: `E(t, ·) = e^{−itz}` has no zeros, so `T₀(s, C) = ∅` and `T₁(s, C) = (0, ∞)`.
-- `γ(1) = √2/√(sinh 2) ≈ 0.7369`; and for real `a`, `|γ(p) sin(a + ip)|² = 2(sin²a + sinh²p)/sinh 2p`,
-  which tends to `1` as `p → ∞` uniformly in `a`.
+- `γ(1) = √2/√(sinh 2) ≈ 1.41421/1.90443 ≈ 0.7426`; and for real `a`,
+  `|γ(p) sin(a + ip)|² = 2(sin²a + sinh²p)/sinh 2p`, which tends to `1` as `p → ∞` uniformly in `a`.
 - A zero at `s − i/(2t)` puts `t` in `T₀(s, 1)` and outside `T₁(s, 1)`; a zero at `s − 2i/t` puts `t` in
   `T₀(s, 3) ∩ T₁(s, 3)`.
 
@@ -1582,8 +1617,8 @@ Layer 2 (§2.3, §2.4, §2.6–§2.8), Layer 3, Layer 6, Layer 7.
 ## Layer 9: Pointwise convergence of the non-linear Fourier transform
 
 The potential is real and square-integrable. The route of this layer is the argument of
-poltoratski2024 §9 in the version read (arXiv version 14), whose subinterval calculus and resonance
-lemmas are stated here as targets.
+poltoratski2024 §9 of arXiv version 14, whose subinterval calculus and resonance lemmas are stated
+here as targets.
 
 ### 9.1 Scattering data of subintervals
 
@@ -1770,10 +1805,10 @@ Layer 3, Layer 4, Layer 5 (§5.2, §5.5, §5.6), Layer 6 (§6.5, §6.8), Layer 7
 
 ## Downstream consumers
 
-- One-dimensional Schrödinger and Dirac operator theory (SchrodingerOperatorsAndSpectralTypes and its
-  successors): Layer 1 (fundamental matrices entire in the spectral parameter for `L¹_loc`
-  coefficients), §3.3 (Hermite–Biehler property), §6.4–§6.6 (Weyl functions and spectral measures) and §6.8
-  (the Szegő condition, the Dirac form of Deift–Killip-type statements).
+- A roadmap on one-dimensional Schrödinger and Dirac operators and their spectral types: Layer 1
+  (fundamental matrices entire in the spectral parameter for `L¹_loc` coefficients), §3.3 (Hermite–Biehler
+  property), §6.4–§6.6 (Weyl functions and spectral measures) and §6.8 (the Szegő condition, the Dirac form
+  of Deift–Killip-type statements).
 - Operator-theoretic roadmaps realising `Ju′ + Vu` in `L²` (UnboundedOperators): §1.2 at a
   fixed parameter and §1.6 for the parameter dependence of the solutions used in Weyl's alternative.
 - PDE §6.2 (Galerkin systems with coefficients integrable in time) and StochasticCalculus (comparison
@@ -1788,7 +1823,7 @@ Layer 3, Layer 4, Layer 5 (§5.2, §5.5, §5.6), Layer 6 (§6.5, §6.8), Layer 7
 ## References
 
 - **poltoratski2024** — A. Poltoratski, *Pointwise convergence of the non-linear Fourier transform*, Ann.
-  of Math. 199 (2024), 741–793; arXiv:2103.13349, version 14 read. Locators are to that version; §9 of
+  of Math. 199 (2024), 741–793; arXiv:2103.13349 version 14, to which the locators refer; §9 of
   version 14 (the subinterval calculus, the insertion of zero intervals and Lemma 10) is the route of
   Layer 9, and replaces the argument through Lemma 11 of the published version, in which mnatsakanyan2022
   (abstract and line 135–137 of its version 4) reports an error.
