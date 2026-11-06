@@ -41,6 +41,8 @@ Complexes are cohomological in degrees `1,…,n`. The explicit weight-four compl
 δ[x]₄ = [x]₃⊗u(x),  δ([x]₃⊗y) = [x]₂⊗x∧y,  δ([x]₂⊗y∧z) = (1−x)∧x∧y∧z.
 ```
 
+The weight-four Chevalley–Eilenberg complex `L₄ → (L₃⊗U ⊕ Λ²B₂) → B₂⊗Λ²U → Λ⁴U` carries `δ([x]₃⊗y) = [x]₂⊗x∧y`, the same rule on `D₂₁(x,y)⊗c` through §1.6, `δ([x]₂⊗y∧z) = (1−x)∧x∧y∧z`, and on `Λ²B₂` the rule `δ([x]₂∧[y]₂) = [x]₂⊗δ[y]₂ − [y]₂⊗δ[x]₂` (Goncharov–Rudenko [GR], Lemma 3.13, p. 43, GR line 1901). This complex is identified with the exterior-algebra complex `Λ•L`, `d(a∧b) = δa∧b − a∧δb`, of the graded Lie coalgebra `L = U ⊕ B₂ ⊕ L₃ ⊕ L₄` as follows: the weight-`(k,1)` part `L_k∧L₁` with `L_k⊗L₁` by `a∧b ↦ a⊗b` for `a` of weight `k > 1` and `b` of weight one; `L₂∧L₁∧L₁` with `B₂⊗Λ²U` by `a∧b∧c ↦ a⊗(b∧c)`; and `Λ²L₂` with `Λ²B₂` by `A∧B ↦ −A∧B`. The sign on `Λ²B₂` is forced by the other rules: under the natural inclusion of `Λ²L₂` the derivation rule gives `[y]₂⊗δ[x]₂ − [x]₂⊗δ[y]₂` on `[x]₂∧[y]₂`, and `d² = 0` on `δD₃₁` of §3.1 then fails (§3.1, Checks). Consequently the `Λ²L₂`-component of the Lie cobracket of `D₃₁(x,y)` is `−[x]₂∧[y]₂`, while the component `δ₂₂D₃₁(x,y)` written in §3.1 and §3.3 is `+[x]₂∧[y]₂`; the two identifications of the weight-`(k,1)` parts enter only the signs of the realization of §3.13.
+
 Periods. `Lₙ` is PolylogarithmFunctions' single-valued polylogarithm in Zagier's Bernoulli normalization with `B₁ = −1/2`, real part in odd and imaginary part in even weight; `L₄` is odd under complex conjugation and inversion. For a number field of signature `(r₁,r₂)` and degree `N = r₁ + 2r₂`, `d₄ = r₂` and the zeta-normalized determinant is `Z₄(F;y) = π^{4(r₁+r₂)} |disc F|^{−1/2} det(L₄(σᵢ(yⱼ)))`, rows indexed by complex places through their chosen embeddings, columns by symbol families; the empty determinant is one. Changing the chosen embedding of a complex place negates its row. The canonical period is `L₄*(z) = (5L₄(z) + (1/3)L₂(z)log²|z|)/16`, with `L₃* = 3L₃/8` and `L₂* = L₂/2` (Goncharov–Rudenko (191), p. 77). The real differential operator is `d^C = ∂ − ∂̄`. Borel's regulator `r_Bo` is taken in BorelRegulators' Tate-divided real coordinates; in those coordinates an `L₄`-period column is `λπ³` times a Borel column with `λ ∈ ℚˣ`, and `r_Bo = −2 r_Be` (BorelRegulators §6.2).
 
 Normal-crossing degrees. In the coefficient diagram of §5.3 a codimension-`q` stratum carries weight `4−q` and a term of internal degree `j` sits in total degree `j+2q`; pushforward of a current from codimension `q` adds ordinary degree `2q` and the factor `(2πi)^q`; the current component of a Deligne term of degree `k` has ordinary degree `k−1`.
@@ -361,7 +363,7 @@ Define the raw map on `Raw₄(F)` by `δS₄(x) = S₃(x)⊗u(x)` and
 δD₃₁(x,y) = D₂₁(x,y)⊗(x/y) + S₃(x/y)⊗((1−x)/(1−y)) + S₃(x)⊗(1−1/y) − S₃(y)⊗(1−1/x) + [x]₂∧[y]₂,
 ```
 
-with values in `(L₃(F)⊗U(F)) ⊕ Λ²B₂(F)`. Prove that it kills `Q₄` and all its specializations, so descends to `L₄(F)`, and that with `δ` on `B₂` and §1.6 it makes `U ⊕ B₂ ⊕ L₃ ⊕ L₄` a graded Lie coalgebra through weight four: the Chevalley–Eilenberg differential squares to zero (Goncharov–Rudenko [GR], §1.2, item 3, (37)–(38) and the specialization check, pp. 13–14, GR line 573; §5.2, Proposition 5.5, p. 56; Theorem 1.14(a), p. 16). A proof route kills generic `Q₄` by §2.5 and `d² = 0` on `K₄`, checks each order case of §1.2 for the specializations, and checks co-Jacobi on single and double generators with §1.6. *Needs:* §§1.2, 1.4, 1.6, 2.5; Mathlib `TensorProduct.lift`, `ExteriorAlgebra.exteriorPower`.
+with values in `(L₃(F)⊗U(F)) ⊕ Λ²B₂(F)`. Prove that it kills `Q₄` and all its specializations, so descends to `L₄(F)`, and that with `δ` on `B₂` and §1.6 it makes `U ⊕ B₂ ⊕ L₃ ⊕ L₄` a graded Lie coalgebra through weight four, its values read in `Λ²L` through the identifications of the Conventions: the Chevalley–Eilenberg differential squares to zero (Goncharov–Rudenko [GR], §1.2, item 3, (37)–(38) and the specialization check, pp. 13–14, GR line 573; §5.2, Proposition 5.5, p. 56; Theorem 1.14(a), p. 16). A proof route kills generic `Q₄` by §2.5 and `d² = 0` on `K₄`, checks each order case of §1.2 for the specializations, and checks co-Jacobi on single and double generators with §1.6. *Needs:* §§1.2, 1.4, 1.6, 2.5; Mathlib `TensorProduct.lift`, `ExteriorAlgebra.exteriorPower`.
 
 The cobracket has the following API.
 
@@ -374,6 +376,7 @@ The cobracket has the following API.
 - The `(2,2)` component of `δD₃₁(x,y)` is `[x]₂∧[y]₂` with coefficient `+1`; in particular `δD₃₁(x,y) + δD₃₁(y,x)` has zero `Λ²B₂` component.
 - The specialization of `δD₃₁(t⁻¹u,t⁻¹v)` is `3[u₀/v₀]₃⊗u(u₀/v₀)`, the cobracket of the equal-pole value `3S₄(u₀/v₀)` of §1.2.
 - On single symbols the cobracket followed by §1.5 is `[x]₄ ↦ [x]₃⊗u(x)`, the first differential of `Γ(F,4)`.
+- `d² = 0` on `D₃₁(x,y)`: applying `δ⊗id` to the four tensor terms and the Conventions' rule to `[x]₂∧[y]₂`, the two contributions cancel in `B₂⊗Λ²U`. Evaluated over `ℚ(i)` by the functional `[w]₂⊗(a∧b) ↦ D(w)(log|a| ord₃(b) − ord₃(a) log|b|)`, with `D` the Bloch–Wigner function and `ord₃` the valuation at the inert prime `3`, at `x = −7/9 − 8i`, `y = −2 + 3i` the tensor terms give `−0.5011` and the `Λ²B₂` term `+0.5011`. The natural rule `[y]₂⊗δ[x]₂ − [x]₂⊗δ[y]₂` on `Λ²B₂`, equivalently the coefficient `−1` on `[x]₂∧[y]₂`, gives the sum `−1.0023`, so the sign of the `Λ²B₂` term is not free once the other rules are fixed.
 
 ### 3.2 The single-symbol subspace and the explicit weight-four complex
 
@@ -400,7 +403,7 @@ Prove that
 0 → B₄(F) → L₄(F) → Λ²B₂(F) → 0,      δ₂₂ D₃₁(x,y) = [x]₂∧[y]₂,
 ```
 
-is exact for every infinite field, where `δ₂₂` is the `Λ²B₂` component of the cobracket. Consequently the inclusion of `Γ(F,4)` into the weight-four Chevalley–Eilenberg complex is a quasi-isomorphism: its cokernel is the two-term complex `Λ²B₂ → Λ²B₂` with identity differential (Goncharov–Rudenko [GR], §6, Theorem 6.1 with Lemmas 6.2–6.6 and Corollary 6.5, pp. 57–61, GR line 2604; Theorem 1.14(c) and Corollary 1.15, p. 16). A proof route specializes `Q₄` along the collision strata of `M̄₀,₇` used in §6 of the source to show that modulo `B₄(F)` the double symbol is antisymmetric and satisfies the five-term relation in each argument, so that `[x]₂∧[y]₂ ↦ D₃₁(x,y)` is a well-defined inverse of `δ₂₂` on the quotient. *Needs:* §§1.4, 3.1–3.2; K3BlochGroups §§3.3–3.4; Mathlib `ExteriorAlgebra.exteriorPower`.
+is exact for every infinite field, where `δ₂₂` is the `Λ²B₂` component of the cobracket in the coordinates of §3.1 (the `Λ²L₂`-component of the Lie cobracket is its negative, by the Conventions; exactness does not see the sign). Consequently the inclusion of `Γ(F,4)` into the weight-four Chevalley–Eilenberg complex is a quasi-isomorphism: its cokernel is the two-term complex `Λ²B₂ → Λ²B₂` with identity differential (Goncharov–Rudenko [GR], §6, Theorem 6.1 with Lemmas 6.2–6.6 and Corollary 6.5, pp. 57–61, GR line 2604; Theorem 1.14(c) and Corollary 1.15, p. 16). A proof route specializes `Q₄` along the collision strata of `M̄₀,₇` used in §6 of the source to show that modulo `B₄(F)` the double symbol is antisymmetric and satisfies the five-term relation in each argument, so that `[x]₂∧[y]₂ ↦ D₃₁(x,y)` is a well-defined inverse of `δ₂₂` on the quotient. *Needs:* §§1.4, 3.1–3.2; K3BlochGroups §§3.3–3.4; Mathlib `ExteriorAlgebra.exteriorPower`.
 
 **Checks.**
 
@@ -424,6 +427,7 @@ The coalgebra has the following API.
 - For four letters, `⟨a,b,c,d⟩ + ⟨a,c,b,d⟩ + ⟨a,c,d,b⟩ = 0`: the shuffle of `b` with `(c,d)` behind the fixed `a`.
 - A mixed two-letter word `⟨X_s,X_t⟩`, `s ≠ t`, has weight one and survives; `⟨X_s,X_s⟩` is zero in `CLie_S`.
 - With two punctures `S = {a,s}` one has `V = ℚX_s` and every positive-weight class vanishes: words of length at least three are killed by shuffles and the length-two word is pure.
+- The order of the two factors of a cut is a convention with a witness: the cut through the letter `vⱼ` and the arc between `v_{i−1}` and `vᵢ` contributes `⟨vᵢ,…,vⱼ⟩∧⟨vⱼ,…,v_{i−1}⟩`, the factor that begins after the cut arc first. For `⟨a,b,c⟩` this is `⟨a,b⟩∧⟨b,c⟩ + ⟨b,c⟩∧⟨c,a⟩ + ⟨c,a⟩∧⟨a,b⟩`, and the reversed word `⟨c,b,a⟩` has the negative; the opposite order negates every cobracket, and with it the signs of §3.13. For a word of length five the fifteen cuts split as five of type `(1,3)`, five of type `(3,1)` and five of type `(2,2)`, and the differential `d(a∧b) = δa∧b − a∧δb` squares to zero on every word of length four or five, before any shuffle relation is imposed.
 
 ### 3.5 Special derivations
 
@@ -481,7 +485,7 @@ The correlators have the following API.
 
 - For `u ≠ w`, `Cor_∞(u,w) = u(u − w)`, not `u(u/w)`.
 - Repeated arguments are allowed in weight `m > 1`; `bᵢ = a` lies outside the domain and is reached only through §3.11's specialization.
-- In weight two the correlator `Cor_∞(0,1,y)` is the motivic dilogarithm of `y` with the sign of (67); its Hodge period is `−(1/2)(2πi)^{−2}L₂` as in §3.9.
+- In weight two the three cuts of `(0,1,y)` give `u(−1)∧u(1−y) + u(1−y)∧u(y) + u(y)∧u(−1) = (1−y)∧y = δ[y]₂`, since `u(−1) = 0`, and by (67) with the cross-ratio `s(∞,0,1,y) = 1−y` one has `Cor_∞(0,1,y) = −Li₂^M(1−y) = Li₂^M(y)`: the correlator is the motivic dilogarithm of `y` with the plus sign. Its Hodge period is `+(1/2)(2πi)^{−2}L₂(y)`, the negative of the §3.9 value of `Cor^H(1,0,y)`: reversing the cyclic order of three points inverts the cross-ratio and negates a weight-two correlator.
 
 ### 3.9 Hodge correlators
 
@@ -489,7 +493,7 @@ For the punctured complex line define the Hodge correlator `Cor^H_a(z₀,…,z_m
 
 **Checks.**
 
-- The three-leaf correlator is `Cor^H(1,0,z) = −(1/2)(2πi)^{−2}L₂(z)` (Malkin [M20], p. 18); a normalization without the Tate factor or with the opposite sign fails this value.
+- The three-leaf correlator is `Cor^H(1,0,z) = −(1/2)(2πi)^{−2}L₂(z)` (Malkin [M20], p. 18), and `Cor^H(0,1,z) = Cor^H(1,0,1−z) = +(1/2)(2πi)^{−2}L₂(z)` by the shift and rescaling invariance at the base point `∞` and `L₂(1−z) = −L₂(z)`; a normalization without the Tate factor or with the opposite sign fails these values.
 - Cyclic reordering of the leaves preserves the correlator.
 - An affine change of coordinate fixing the tangential data preserves correlators of weight greater than one.
 
@@ -501,7 +505,7 @@ Prove that for `m > 1`, `Cor^H(z₀,…,z_m)` is continuous on `ℂ^{m+1}` minus
 
 - At a partial collision `z₁ → z₂` with `z₀` fixed the limit exists and equals the correlator with `z₁ = z₂`.
 - Three arguments collapsing to one point give direction-dependent limits such as `L₂((a−c)/(b−c))`; the full diagonal must be excluded.
-- In weight one (`m = 1`) the correlator `log|z₀ − z₁|` is not continuous at `z₀ = z₁`, so the hypothesis `m > 1` is needed.
+- In weight one (`m = 1`) the full diagonal is `{z₀ = z₁}` and the correlator `log|z₀ − z₁|` is continuous on its complement, so the continuity clause holds there too; but there is no partial collision, the correlator depends on the tangent vector at the base point (§3.8), and it is unbounded near the diagonal. The partial-collision clause has content only for `m > 1`, the scope of Lemma 29 of the source, where the limit is the correlator with the coincident arguments retained.
 
 ### 3.11 Change of base point
 
@@ -515,7 +519,7 @@ Let `ℓ ≥ 3`, `a ≠ b`, and `x₁,…,x_ℓ ∈ ℙ¹(F)` different from `a`
 
 ### 3.12 Depth reduction in weight four
 
-Prove that for `ℓ > 3` arguments every motivic correlator of weight `ℓ−1` is a rational combination of correlators with two equal arguments, after a projective change of coordinate and the specialization of §3.11; and that every weight-four correlator (`ℓ = 5`) is a combination of `−Cor_∞(0,0,x,1,y)` and `−Cor_∞(0,0,0,1,z)` (Goncharov–Rudenko [GR], §2, item 7, Proposition 2.9 with footnote 12, pp. 33–34; Corollary 2.10, p. 34, GR line 1486). A proof route shows from §3.11 that, modulo repeated-argument correlators, exchanging the base point with an argument negates the class; for even `ℓ` cyclic invariance then kills it, and for odd `ℓ > 3` the first-shuffle relation does. *Needs:* §§3.4, 3.8, 3.10–3.11.
+Prove that for `ℓ > 3` arguments every motivic correlator of weight `ℓ−1` is a rational combination of correlators with two equal arguments, after a projective change of coordinate and the specialization of §3.11; and that every weight-four correlator (`ℓ = 5`) is a combination of the correlators `Cor_∞(0,0,x,1,y)` and `Cor_∞(0,0,0,1,z)` (Goncharov–Rudenko [GR], §2, item 7, Proposition 2.9 with footnote 12, pp. 33–34; Corollary 2.10, p. 34, GR line 1486). A proof route shows from §3.11 that, modulo repeated-argument correlators, exchanging the base point with an argument negates the class; for even `ℓ` cyclic invariance then kills it, and for odd `ℓ > 3` the first-shuffle relation does. *Needs:* §§3.4, 3.8, 3.10–3.11.
 
 **Checks.**
 
@@ -525,17 +529,19 @@ Prove that for `ℓ > 3` arguments every motivic correlator of weight `ℓ−1` 
 
 ### 3.13 Realization of the combinatorial Lie coalgebra
 
-For a number field `F` prove that `Sₘ(y) ↦ −Cor_∞(0,…,0,1,y)` with `m−1` zeros, `D₂₁(x,y) ↦ Cor_∞(0,x,1,y)` and `D₃₁(x,y) ↦ −Cor_∞(0,0,x,1,y)` define a natural morphism of graded Lie coalgebras from `U ⊕ B₂ ⊕ L₃ ⊕ L₄` to the Lie coalgebra of `MT(F)`, whose image in weights at most four is the correlator subcoalgebra (Goncharov–Rudenko [GR], §1.2, item 5, Theorem 1.13, pp. 15–16, GR line 660; §2, Theorem 2.4 and Proposition 2.5, pp. 29–31; §5.3, pp. 56–57). No injectivity or surjectivity onto the motivic Lie coalgebra is asserted. A proof route compares the cut formula with the cobrackets of §§1.6 and 3.1; shows by Layer 2 that the image of each relation has zero cobracket, hence by rigidity (§3.7) is a constant extension; kills the constant using `Ext¹_{MT(ℚ)}(ℚ(0),ℚ(4)) = 0` and the value of `S₃(1)` in weight three; and uses §3.10 for the specialized relations and §3.12 for the image. *Needs:* §§1.5, 3.1, 3.7–3.12; PeriodsAndSpecialValues PS.9.9 and the contract mixed-tate-number-fields.
+For a number field `F` prove that `Sₘ(y) ↦ Cor_∞(0,…,0,1,y)` with `m−1` zeros (`m = 2,3,4`), `D₂₁(x,y) ↦ −Cor_∞(0,x,1,y)` and `D₃₁(x,y) ↦ Cor_∞(0,0,x,1,y)` define a natural morphism of graded Lie coalgebras from `U ⊕ B₂ ⊕ L₃ ⊕ L₄`, its cobrackets of §§1.6 and 3.1 read in `Λ²L` through the identifications of the Conventions, to the Lie coalgebra of `MT(F)`, whose image in weights at most four is the correlator subcoalgebra (Goncharov–Rudenko [GR], §1.2, item 5, Theorem 1.13, pp. 15–16, GR line 660; §2, Theorem 2.4 and Proposition 2.5, pp. 29–31; §5.3, pp. 56–57). No injectivity or surjectivity onto the motivic Lie coalgebra is asserted. The signs are those forced by the cut formula (66), the value (67) and the identifications of the Conventions, and differ from the source's Definition 2.3 (whose weight-two entry has the cobracket `y∧(1−y)`); they are recomputed in the Checks. A proof route compares the cut formula with the cobrackets of §§1.6 and 3.1 through the identifications of the Conventions; shows by Layer 2 that the image of each relation has zero cobracket, hence by rigidity (§3.7) is a constant extension; kills the constant using `Ext¹_{MT(ℚ)}(ℚ(0),ℚ(4)) = 0` and the value of `S₃(1)` in weight three; and uses §3.10 for the specialized relations and §3.12 for the image. *Needs:* §§1.5, 3.1, 3.7–3.12; PeriodsAndSpecialValues PS.9.9 and the contract mixed-tate-number-fields.
 
 **Checks.**
 
-- Weight two: `S₂(y) ↦ −Cor_∞(0,1,y)`, whose cut cobracket must equal the image of `δ[y]₂ = (1−y)∧y`; this comparison fixes the minus sign, and the opposite sign gives `y∧(1−y)`.
-- The image of `S₃(1)` is the motivic `ζ(3)`, nonzero in `Ext¹_{MT(ℚ)}(ℚ(0),ℚ(3)) ≅ ℚ`.
+- Weight two: the cut cobracket of `Cor_∞(0,1,y)` is `u(1−y)∧u(y) = (1−y)∧y = δ[y]₂`, since `u(−1) = 0` kills the two cuts with the factor `Cor_∞(0,1)`; so `S₂(y) ↦ Cor_∞(0,1,y)`, and the minus sign gives `y∧(1−y)`.
+- Weight three, single symbol: of the eight cuts of `(0,0,1,y)` six vanish, because `u(0) = u(−1) = 0` and `Cor_∞(0,0,1) = Cor_∞(y,0,0) = 0` by the first-shuffle relation `2⟨X₁,X₀,X₀⟩ = 0` of §3.4; the two survivors give `Cor_∞(0,1,y)∧u(y)`, which is `[y]₂⊗u(y) = δS₃(y)` under `a∧b ↦ a⊗b`, so `S₃(y) ↦ Cor_∞(0,0,1,y)`; the identification `b∧a ↦ a⊗b` would give the minus sign. Of the fifteen cuts of `(0,0,0,1,y)` only `Cor_∞(0,0,1,y)∧u(y)` survives, since `Cor_∞(0,0,0,1) = Cor_∞(y,0,0,0) = 0` by the shuffle `3⟨X₁,X₀,X₀,X₀⟩ = 0` and every `(2,2)`-cut has a factor with a repeated letter, so `S₄(y) ↦ Cor_∞(0,0,0,1,y)` with the same sign.
+- Double symbols: for a word `(b₁,b₂,b₃,b₄)` the cuts give `Σ_k Cor_∞(b_k,b_{k+1},b_{k+2}) ∧ u((b_{k+2}−b_{k−1})/(b_{k−1}−b_k))`; for `(0,x,1,y)`, with `Cor_∞(0,x,1) = [1−x]₂ = −[x]₂`, `Cor_∞(x,1,y) = [(y−x)/(1−x)]₂`, `Cor_∞(1,y,0) = [y]₂` and `Cor_∞(y,0,x) = [y/x]₂` by shift, rescaling and the reflection `[1−w]₂ = −[w]₂`, this is minus the image of the four-term `δD₂₁(x,y)` of §1.6, so `D₂₁(x,y) ↦ −Cor_∞(0,x,1,y)`. For `(0,0,x,1,y)` the ten cuts of types `(3,1)` and `(1,3)` give the image of the four tensor terms of `δD₃₁(x,y)`, using `Cor_∞(0,0,x,y) = Cor_∞(0,0,1,y/x)` and `Cor_∞(0,0,x,1) = Cor_∞(0,0,1,1/x)` with `S₃(1/x) = S₃(x)`; the single surviving `(2,2)`-cut is `Cor_∞(0,x,1)∧Cor_∞(1,y,0) = −[x]₂∧[y]₂` in `Λ²L₂`, the model's `+[x]₂∧[y]₂` under the Conventions, so `D₃₁(x,y) ↦ Cor_∞(0,0,x,1,y)`. With the natural inclusion of `Λ²B₂` no choice of sign makes `D₃₁` compatible, which is how the sign of the Conventions is detected. Evaluated over `ℚ(i)` at `x = −8/9 + 6i`, `y = 4 + 5i` through `δ⊗id` and the functionals `[w]₂⊗a⊗b ↦ D(w) log|a| ord₃(b)` and `D(w) ord₃(a) log|b|`, both sides of the tensor comparison are `0.1206` and `0.1481`, and the two `Λ²B₂` terms both give `0.0275` under the functional of §3.1.
+- The image of `S₃(1)` is a nonzero rational multiple of the motivic `ζ(3)`, nonzero in `Ext¹_{MT(ℚ)}(ℚ(0),ℚ(3)) ≅ ℚ`.
 - The image of `Q₄` vanishes because `Ext¹_{MT(ℚ)}(ℚ(0),ℚ(4)) = 0` (`K₇(ℚ)⊗ℚ = 0`); in weight three the analogous constant need not vanish and is fixed by `S₃(1)`.
 
 ### Examples
 
-Over `F = ℚ(i)` the weight-four Lie coalgebra contains `S₄(i)`, whose image is a motivic class with Hodge period `L₄*(i) = 5L₄(i)/16` since `|i| = 1`. The correlator `Cor_∞(0,0,x,1,y)` with `x = 2, y = 3` over ℚ is the image of `−D₃₁(2,3)`, with cobracket containing `[2]₂∧[3]₂`.
+Over `F = ℚ(i)` the weight-four Lie coalgebra contains `S₄(i)`, whose image is a motivic class with Hodge period `L₄*(i) = 5L₄(i)/16` since `|i| = 1`. The correlator `Cor_∞(0,0,x,1,y)` with `x = 3, y = 5` over ℚ is the image of `D₃₁(3,5)`; the `(2,2)`-cut of its cobracket is `Cor_∞(0,3,1)∧Cor_∞(1,5,0) = −[3]₂∧[5]₂` in `Λ²L₂`, the model's `δ₂₂D₃₁(3,5) = [3]₂∧[5]₂`, and it is nonzero because `[3]₂` and `[5]₂` map to the independent vectors `2∧3` and `2(2∧5)` of `Λ²U(ℚ)` and `B₂(ℚ)` injects into `Λ²U(ℚ)`. The choice `x = 2` would be degenerate: `[2]₂ ↦ u(−1)∧u(2) = 0`, so `[2]₂ = 0` in `B₂(ℚ)` and the `(2,2)`-component vanishes.
 
 ### Dependencies
 
