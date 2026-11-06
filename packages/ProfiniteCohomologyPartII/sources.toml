@@ -72,3 +72,20 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text. HW, p.5, quote this theorem and record that its sign convention differs from Kraines'."
 cited_for = ["Layer 1", "References"]
+
+[[source]]
+id = "Milne"
+authors = ["J. S. Milne"]
+title = "Class Field Theory"
+year = 2020
+version_note = "Version 4.03 (6 August 2020), course notes from the author's page; locators use its printed pagination (printed p. 66 is PDF page 75)."
+locator_scheme = "section"
+locator = "Chapter II, Example 1.20, p. 66; Proposition 3.4, p. 81"
+url = "https://www.jmilne.org/math/CourseNotes/CFT.pdf"
+fetched_from = "https://www.jmilne.org/math/CourseNotes/CFT.pdf"
+fetched_at = "2026-11-06T14:03:07Z"
+sha256 = "50d79af78250a9f1117ad9d337e0b231704a533fc707966ed1bfa52e13d498f5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-06"
+cited_for = ["8.1"]
