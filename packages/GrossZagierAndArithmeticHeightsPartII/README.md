@@ -8,7 +8,7 @@ GrossZagierAndArithmeticHeights stops at Shimura curves: its Layers 6–9 own th
 
 The following are owned elsewhere and imported by section. The unitary Rapoport–Zink spaces of all four types, their canonical rank-one sources, special Hom spaces, rank-raising embedding and diagonal graph, the auxiliary isogeny space of the almost self-dual comparison with its generic projections, the relative and absolute exotic comparison, the exotic Bruhat–Tits strata and connected components, the integral CM moduli, the RSZ, exotic and Krämer integral models with their level and sign data, and the basic-locus uniformizations are PELModuliPartII U0–U9. Grothendieck–Messing deformation theory of Barsotti–Tate groups, including the homomorphism-lifting criterion, is AbelianSchemesAndArithmeticModuli §A4.CR.7.2. Tate modules, Tate's full-faithfulness theorem and covariant Dieudonné modules are FiniteFlatGroupsAndIntegralPadicHodgeTheory §§R07.1.8, R07.1.22 and R07.2.20. Canonical and quasi-canonical lifts and their degrees are LubinTateFormalModulesAndQuasiCanonicalLifts LT.6–LT.7; the endomorphism-lifting lengths along quasi-canonical lifts, in the unramified and the ramified quadratic case, are GrossZagierAndArithmeticHeights §7.2. Hermitian lattices, duals, fundamental invariants, the unramified local densities, Siegel polynomials, the Cho–Yamauchi weight, the overlattice formula and the functional equation are GeometryOfNumbersAndQuadraticArithmetic §§2.7, 2.9 and 3.2. Supported K-theory, Tor and Euler pairings on locally noetherian formal schemes are SchemeKTheoryOperationsPartII FK.0–FK.4; supported cycle classes, the rational multiplicativity of the codimension filtration on regular schemes and the identification Gr₁G₀ ⊗ ℚ ≅ CH₁ ⊗ ℚ are SchemeKTheoryOperations §§6.12 and 7.7. The hermitian uncertainty principle (Li–Zhang, Proposition 8.1.6) is MetaplecticAutomorphicForms §3.3a; the Weil index, Weil operators, unitary dual-pair splittings, hermitian oscillator normalizations, Siegel–Weil sections, the anisotropic Siegel–Weil formula and coherent and incoherent section collections are MetaplecticAutomorphicForms §§2.1, 2.5, 3.3, 3.3b, 6.2, 6.4 and 6.7. Local and adelic Schwartz–Bruhat Fourier analysis with self-dual measures is AutomorphicLFunctionsAndLocalFactors AL.0. Normalized induction, Eisenstein series and their continuation are AutomorphicSpectralTheory §§1.1, 1.2 and 2.4. Arithmetic divisors with Green functions and their pairing with proper one-cycles, valued in ℝ modulo excluded prime logarithms, are ArakelovGeometryAndAbelianHeights §§1.8–1.10. Strong approximation is AdelicAlgebraicGroups §4.2.
 
-Four directions that use the same objects have different end theorems and are not targets here: the arithmetic inner product formula for unitary groups (Li–Liu), whose theorems MotivesAndAlgebraicCycles §7.19 states with the almost self-dual identity of §4.5 as an explicit local premise; heights of special divisors on GSpin Shimura varieties; p-adic arithmetic inner product formulas; and CM values of higher Green functions. Generic local Jacquet–Rallis theory (orbit matching, transfer factors, smooth transfer and the Jacquet–Rallis fundamental lemma) belongs to EndoscopicTransferAndUnitaryTraceComparison and is requested from it below; this roadmap owns only Zhang's global relative trace series built from it. The arithmetic fundamental lemma for arbitrary regular semisimple elements, and over p-adic fields other than ℚ_p, is not proved here: §14.7 formulates that statement and identifies §14.6 as its strongly regular case over ℚ_p.
+Four directions that use the same objects have different end theorems and are not targets here: the arithmetic inner product formula for unitary groups (Li–Liu), whose theorems MotivesAndAlgebraicCycles §7.19 states with the almost self-dual identity of §4.5 as an explicit local premise; heights of special divisors on GSpin Shimura varieties; p-adic arithmetic inner product formulas; and CM values of higher Green functions. Generic local Jacquet–Rallis theory belongs to EndoscopicTransferAndUnitaryTraceComparison and EndoscopicTransferAndUnitaryTraceComparisonPartII: the spherical Jacquet–Rallis fundamental lemmas in the GL_n(F₀)-group and augmented Lie-algebra formulations are stated by EndoscopicTransferAndUnitaryTraceComparisonPartII §§4.4–4.5, the regular matching, twisted orbital distributions and smooth transfer in those formulations are requested by that roadmap from EndoscopicTransferAndUnitaryTraceComparison, and only the passage to Zhang's formulations on S_n is requested from EndoscopicTransferAndUnitaryTraceComparison below; this roadmap owns only Zhang's global relative trace series built from these. The arithmetic fundamental lemma for arbitrary regular semisimple elements, and over p-adic fields other than ℚ_p, is not proved here: §14.7 formulates that statement and identifies §14.6 as its strongly regular case over ℚ_p.
 
 ## Conventions
 
@@ -39,7 +39,7 @@ Standing hypotheses of the global layers: F/F₀ is a CM extension of number fie
 
 ### From Mathlib and Tau Ceti
 
-The pins are Mathlib `6b7abb3c7686292736be2955bd3eb9ebf63b456a` and Tau Ceti `a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039`. The finite-degree polynomial identities of the density normalizations use Mathlib `Polynomial`, `Polynomial.eval` and `Polynomial.derivative` over ℚ. Nonarchimedean local fields are Mathlib `IsNonarchimedeanLocalField` (Mathlib/NumberTheory/LocalField/Basic.lean); it is a predicate on a valued field with its topology and supplies no quadratic extension, hermitian form or Haar normalization. Neither pin has formal schemes, Rapoport–Zink spaces, supported K-theory of formal schemes, hermitian local densities, unitary Siegel Eisenstein series, orbital integrals or arithmetic Chow groups; these come from the roadmaps below or are constructed here.
+The pinned Mathlib and Tau Ceti are those of the content repository's `lake-manifest.json`. The finite-degree polynomial identities of the density normalizations use Mathlib `Polynomial`, `Polynomial.eval` and `Polynomial.derivative` over ℚ. Nonarchimedean local fields are Mathlib `IsNonarchimedeanLocalField` (Mathlib/NumberTheory/LocalField/Basic.lean); it is a predicate on a valued field with its topology and supplies no quadratic extension, hermitian form or Haar normalization. Neither pin has formal schemes, Rapoport–Zink spaces, supported K-theory of formal schemes, hermitian local densities, unitary Siegel Eisenstein series, orbital integrals or arithmetic Chow groups; these come from the roadmaps below or are constructed here.
 
 ### From TauCetiRoadmap.PELModuliPartII
 
@@ -113,9 +113,13 @@ Consume §M0.22 (hermitian spaces over CM orders), §M1.3 (unitary O_F-abelian s
 
 ### From TauCetiRoadmap.EndoscopicTransferAndUnitaryTraceComparison
 
-Consume §§2.1 and 2.4 (normalized orbital integrals and their convergence) and §2.13 (Fourier transforms of orbital integrals). It has no Jacquet–Rallis theory; ordinary endoscopic transfer and the ordinary fundamental lemma do not give Jacquet–Rallis matching or orbital-integral identities.
+Consume §§2.1 and 2.4 (normalized orbital integrals and their convergence) and §2.13 (Fourier transforms of orbital integrals), and the Jacquet–Rallis regular matching across pure forms, the η(det)-twisted orbital distributions and the local smooth transfer with partial Fourier compatibility, in the GL_n(F₀)-group and augmented Lie-algebra formulations, that EndoscopicTransferAndUnitaryTraceComparisonPartII requests from it under the contract it calls jr-local-comparison. Its ordinary endoscopic transfer and ordinary fundamental lemma do not give Jacquet–Rallis matching or orbital-integral identities.
 
-What EndoscopicTransferAndUnitaryTraceComparison must provide (gap:jr-afl-local-inputs): for an unramified quadratic extension of p-adic fields of odd residue characteristic, Jacquet–Rallis matching of regular semisimple orbits between S_n = {γ ∈ GL_n(F) : γγ̄ = 1} under GL_(n−1)(F₀) and U(V_n) under U(V_(n−1)), and between S_(n−1) × (F₀^(n−1) ⊕ (F₀^(n−1))*) and U(V_(n−1)) × V_(n−1), with Zhang's transfer factors, the η-twisted orbital integrals with the variable s, smooth transfer compatible with the partial Fourier transform, and the Jacquet–Rallis fundamental lemma for the unit test functions in both versions for every residue cardinality q, including q ≤ n.
+What EndoscopicTransferAndUnitaryTraceComparison must provide (gap:jr-afl-local-inputs): for an unramified quadratic extension of p-adic fields of odd residue characteristic, the passage from the GL_n(F₀)-group formulation, with the space X_n of invertible hermitian matrices on the unitary side, and the augmented Lie-algebra formulation of EndoscopicTransferAndUnitaryTraceComparisonPartII §§4.4–4.5, and from the matching, η-twisted orbital distributions and smooth transfer that that roadmap requests from EndoscopicTransferAndUnitaryTraceComparison, to Zhang's formulations on S_n = {γ ∈ GL_n(F) : γγ̄ = 1} under GL_(n−1)(F₀) and on S_(n−1) × (F₀^(n−1) ⊕ (F₀^(n−1))*) under GL_(n−1)(F₀): regular semisimple matching with U(V_n) under U(V_(n−1)) and with U(V_(n−1)) × V_(n−1), the transfer factors ω(γ) = η̃(det(γ)^(−⌊n/2⌋)·det(γ^i e)_(i=0)^(n−1)) and ω(γ,u′) = η̃(det(γ)^(−⌊(n−1)/2⌋)·det(γ^i u₁)_(i=0)^(n−2)), smooth transfer compatible with the partial Fourier transform, and the Jacquet–Rallis fundamental lemma for the unit test functions in both of Zhang's versions for every residue cardinality q, including q ≤ n.
+
+### From TauCetiRoadmap.EndoscopicTransferAndUnitaryTraceComparisonPartII
+
+Consume §4.4 (the spherical rank-shifted Jacquet–Rallis comparison between GL_n(F₀) under η-twisted GL_(n−1)(F₀)-conjugation and the space X_n of invertible hermitian matrices of both isometry classes under U(V_(n−1)), for an unramified quadratic extension and every residue cardinality, which at the unit of the spherical Hecke algebra is the Jacquet–Rallis fundamental lemma in the group formulation, with the vanishing for the other hermitian form) and §4.5 (the augmented spherical Jacquet–Rallis transfer between gl_n(F₀) × F₀^n × (F₀^n)* and Herm(V_n) × V_n, which at the unit is the fundamental lemma in the augmented Lie-algebra formulation). Both are stated for the reference hermitian forms with Haar measures giving the hyperspecial subgroups volume one, the normalization of §9.3; the passage to Zhang's formulations on S_n is gap:jr-afl-local-inputs above.
 
 ## How to read the build
 
@@ -197,7 +201,7 @@ Its API consists of the following facts:
 
 ### 0.5 Cartier divisors, difference divisors and Tor independence
 
-Prove the divisor theory of special cycles. For 0 ≠ x ∈ V_n, Z(x) is an effective Cartier divisor on N_n or is empty; flatness over Spf O_F̆ is not asserted, since a nonzero label can have vertical components. The difference divisor D(x) = Z(x) − Z(ϖ⁻¹x) is effective and regular, and Z(x) = Σ_(i≥0) D(ϖ^(−i)x) as a locally finite sum. For F-linearly independent x, y the sheaves Tor_i(O_(Z(x)), O_(Z(y))) vanish for i ≥ 1, so O_(Z(x)) ⊗^L O_(Z(y)) = O_(Z(x)) ⊗ O_(Z(y)) (LZ §2.4, p. 11; Lemma 2.8.1, pp. 13–14). The route: Cartierness from the one-equation lifting obstruction of a homomorphism out of the height-two, dimension-one source; regularity of D(x) by Terstiege's local computation; Tor independence by showing that the local equations of Z(x) and Z(y) have no common factor in the regular local rings of N_n, by induction on n through restriction to Z(u) ≅ N_(n−1) at points that are not super-general and through the difference divisors at super-general points of the strata of §0.4.
+Prove the divisor theory of special cycles. For 0 ≠ x ∈ V_n, Z(x) is an effective Cartier divisor on N_n or is empty; flatness over Spf O_F̆ is not asserted, since a nonzero label can have vertical components. The difference divisor D(x) = Z(x) − Z(ϖ⁻¹x) is effective and regular, and Z(x) = Σ_(i≥0) D(ϖ^(−i)x) as a locally finite sum. For F-linearly independent x, y the sheaves Tor_i(O_(Z(x)), O_(Z(y))) vanish for i ≥ 1, so O_(Z(x)) ⊗^L O_(Z(y)) = O_(Z(x)) ⊗ O_(Z(y)) (LZ §2.4, p. 11; Lemma 2.8.1, pp. 13–14; Ter13b Theorem 1, p. 2; Ter13a Lemma 3.1, pp. 21–22). The route: Cartierness from the one-equation lifting obstruction of a homomorphism out of the height-two, dimension-one source; regularity of D(x) by Terstiege's induction on n, whose base n ≤ 3 is the explicit local computation on the space for GU(1,2) and whose step restricts to Z(u) ≅ N_(n−1) at points that are not super-general and uses the regularity of the special fibre of Z(x) at super-general points, written for F₀ = ℚ_p and carried out here over F₀ as LZ states it; Tor independence by showing that the local equations of Z(x) and Z(y) have no common factor in the regular local rings of N_n, by induction on n through restriction to Z(u) ≅ N_(n−1) at points that are not super-general and through the difference divisors at super-general points of the strata of §0.4, with base case n ≤ 3 from the absence of common components of two special divisors with independent labels on the space for GU(1,2).
 
 **Checks.**
 
@@ -560,7 +564,7 @@ Its API consists of the following facts:
 
 ### 4.2 Almost self-dual comparison model
 
-Prove the integral structure of the auxiliary isogeny space Ñ of PELModuliPartII U2 *mixed-framed-space*, with projections π₁: Ñ → N_n¹ and π₂: Ñ → Z(x₀) ⊂ N_(n+1): Ñ is regular of dimension n; π₁ is finite flat of degree q+1, étale away from the balloon locus and totally ramified along it; π₂ is proper and an isomorphism away from the exceptional locus; the exceptional locus is a reduced Cartier divisor, a disjoint union of components P_Λ ≅ ℙ^(n−1) indexed by the type-zero vertex lattices, each the reduced inverse image of a balloon stratum, with normal bundle O(−1); and the n-fold derived self-intersection of one component is (−1)^(n−1) while mixed intersections of distinct components vanish (LRZ Theorem 14.6.2, pp. 60–61; Corollary 16.1.5, p. 69; §16.4, Proposition 16.4.1, pp. 70–71; LZ Conjecture 10.4.1, pp. 66–67). The route compares the signatures, polarization kernels, quasi-isogenies and lattice pairs of the two moduli problems with the lattice-pair model of LRZ §14 and applies its finite-flatness theorem; no blow-up ideal and no unreduced inverse-image identity is asserted.
+Prove the integral structure of the auxiliary isogeny space Ñ of PELModuliPartII U2 *mixed-framed-space*, with projections π₁: Ñ → N_n¹ and π₂: Ñ → Z(x₀) ⊂ N_(n+1): Ñ is regular of dimension n; π₁ is finite flat of degree q+1, étale away from the closed balloon locus and totally ramified along it, where the closed balloon locus is the reduced closed subscheme of the special fibre of N_n¹ that is the disjoint union of the strata V(Λ) ≅ ℙ^(n−1) over the type-zero vertex lattices Λ (LRZ Definition 14.2.2, p. 57), and a balloon stratum is one of these V(Λ); π₂ is proper and an isomorphism away from the exceptional locus; the exceptional locus is a reduced Cartier divisor, a disjoint union of components P_Λ ≅ ℙ^(n−1) indexed by the type-zero vertex lattices, each the reduced inverse image of a balloon stratum, with normal bundle O(−1); and the n-fold derived self-intersection of one component is (−1)^(n−1) while mixed intersections of distinct components vanish (LRZ Theorem 14.6.2, pp. 60–61; Corollary 16.1.5, p. 69; §16.4, Proposition 16.4.1, pp. 70–71; LZ Conjecture 10.4.1, pp. 66–67). The route compares the signatures, polarization kernels, quasi-isogenies and lattice pairs of the two moduli problems with the lattice-pair model of LRZ §14 and applies its finite-flatness theorem; no blow-up ideal and no unreduced inverse-image identity is asserted.
 
 Its API consists of the following facts:
 
@@ -615,7 +619,7 @@ Prove that for every full-rank L ⊂ W_n, (q+1)·Int_Y(L) = ∂Den_Λ(L) − Den
 
 ### 4.6 Li–Liu normalization of the local identities
 
-Prove the conversion to Li–Liu's local normalization. For n = 2r, a nonsingular T at an inert place v and q = #k_(F₀,v) (the residue cardinality of the place of the totally real field below the place of the CM field), put b_(n,v)(0) = ∏_(i=1)^n (1 − (−q)^(−i))⁻¹. In Li–Liu's Whittaker parameter the self-dual Euler intersection equals b_(n,v)(0)·W′_T(φ₀)/log q, and the almost self-dual intersection equals b_(n,v)(0)/log q times ((q^(2r) − 1)/(q+1)·W′_T(φ₁) − (log q)/(q+1)·W_T(φ₀)), for Li–Liu's sections φ₀, φ₁ (LL1 Notation 2.1 (F1), (F4), p. 10; §8 local identity, pp. 39–40; §9 local identity, pp. 44–45; LZ Remarks 3.4.2, p. 17, and 10.5.4, p. 72). The route compares Li–Liu's normalization of the local density with Li–Zhang's standard section before transporting derivatives; the correction term of §4.5 is kept.
+Prove the conversion to Li–Liu's local normalization. For n = 2r, a nonsingular T at an inert place v and q = #k_(F₀,v) (the residue cardinality of the place of the totally real field below the place of the CM field), put b_(n,v)(0) = ∏_(i=1)^n (1 − (−q)^(−i))⁻¹. In Li–Liu's Whittaker parameter the self-dual Euler intersection equals b_(n,v)(0)·W′_T(φ₀)/log q, and the almost self-dual intersection equals b_(n,v)(0)/log q times ((q^(2r) − 1)/(q+1)·W′_T(φ₁) − (log q)/(q+1)·W_T(φ₀)), for the lattice-indicator sections of LL1 (LZ's φ₀, φ₁) (LL1 Notation 2.1 (F1), (F4), p. 10; §8 local identity, pp. 39–40; §9 local identity, pp. 44–45; LZ Remarks 3.4.2, p. 17, and 10.5.4, p. 72). The route compares Li–Liu's normalization of the local density with Li–Zhang's standard section before transporting derivatives; the correction term of §4.5 is kept.
 
 **Checks.**
 
@@ -816,19 +820,19 @@ Prove that the geometric and analytic horizontal functions agree: primitive hori
 
 ### 6.7 Exotic special two-overlattice induction
 
-Prove the special case analysis. Assume r ≥ 2 and L♭ integral with an isolated largest invariant a = a_(n−1) > a_(n−2), hence a odd. The number of integral full lattices M ⊃ L♭ with invariants (a₁, …, a_(n−2), a−1, a−1) is 0 or 2. In the case of two, M± ∩ (L♭ ⊗ F) = L♭, a > 3, and there are orthogonal decompositions L♭ = A ⊥ B and M± = A ⊥ B± with A of rank n−2 and invariants (a₁, …, a_(n−2)), B of rank one and invariant a, and B± of rank two and invariants (a−1, a−1). Define S_L♭ = M₊ ∪ M₋ in the special case and L♭ + W_int otherwise. For x ∉ (L♭ ⊗ F) ∪ S_L♭ one can write L♭ + O_F·x = L♭′ + O_F·x′ with val(L♭′) < val(L♭) (LL2 Lemma 2.57, pp. 34–35; Lemma 2.58, p. 36). The route uses the ramified normal forms to classify the alternatives through the minor valuations of the moment matrix; the bound a > 3 gives strict positivity on the residual line used in §6.8.
+Prove the special case analysis. Assume r ≥ 2 and L♭ integral with an isolated largest invariant a = a_(n−1) > a_(n−2), hence a odd. The number of integral full lattices M ⊃ L♭ with invariants (a₁, …, a_(n−2), a−1, a−1) is 0 or 2. In the case of two, M± ∩ (L♭ ⊗ F) = L♭, a ≥ 3, and there are orthogonal decompositions L♭ = A ⊥ B and M± = A ⊥ B± with A of rank n−2 and invariants (a₁, …, a_(n−2)), B of rank one and invariant a, and B± of rank two and invariants (a−1, a−1). Define S_L♭ = M₊ ∪ M₋ in the special case and L♭ + W_int otherwise. For x ∉ (L♭ ⊗ F) ∪ S_L♭ one can write L♭ + O_F·x = L♭′ + O_F·x′ with val(L♭′) < val(L♭) (LL2 Lemma 2.57, pp. 34–35; Lemma 2.58, p. 36). The route uses the ramified normal forms to classify the alternatives through the minor valuations of the moment matrix; since a ≥ 3, every vector of B₊ ∪ B₋ has norm of valuation at least two, so B₊ ∪ B₋ ⊂ u·(V→)_int, where V→ is the orthogonal complement of A ⊗ F in V and (V→)_int its set of vectors of integral norm; this is the strict support used in §6.8.
 
 **Checks.**
 
 - If a_(n−1) = a_(n−2) the hypothesis fails and the lemma does not apply.
 - In the special case the two lattices have the same hyperplane intersection L♭, so they are invisible to the horizontal part.
-- An isolated top invariant 1 or 3 never produces the two-lattice case.
+- An isolated top invariant a = 1 never produces the two-lattice case: the two overlattices would have all invariants zero, hence be trace-self-dual, which the nonsplit space excludes. a = 3 does occur: for L♭ = ⟨e₁, e₂, e⟩ with h(e₁,e₁) = β₁, h(e₂,e₂) = β₂ and h(e,e) = βu², where β₁, β₂, β are units with −β₁β₂ a non-square unit, and x₀ ⊥ L♭ with h(x₀,x₀) = β, the vectors u⁻¹e ± x₀ are isotropic with h(e, u⁻¹e ± x₀) of valuation one, so the two lattices L♭ + O_F·(u⁻¹e ± x₀) are integral with invariants (1,1,2,2), meet L♭ ⊗ F in L♭ and are distinct; a bound a > 3 would miss them.
 
 *Needs:* §§5.6, 6.3.
 
 ### 6.8 Exotic smooth Kudla–Rapoport identity
 
-Prove that for every full-rank lattice L in the nonsplit even-rank exotic special Hom space, Int(L) = ∂Den(L) (LL2 Theorem 2.7, p. 11; proof in §2.7, pp. 37–38). The route inducts on val(L♭) with the rank-two base §5.5 and cancellation §5.6: the difference Φ = ∂Den_V − Int_V is Schwartz with Fourier support in V_int (§§6.4–6.5) and is confined by §6.7 to S_L♭; in the ordinary case its factorization through a lattice indicator kills it, and in the special case the strict positive support on the remaining line and the hermitian uncertainty principle kill it.
+Prove that for every full-rank lattice L in the nonsplit even-rank exotic special Hom space, Int(L) = ∂Den(L) (LL2 Theorem 2.7, p. 11; §2.7, pp. 34–37, proof of the theorem p. 37). The route inducts on val(L♭) with the rank-two base §5.5 and cancellation §5.6: the difference Φ = ∂Den_V − Int_V is Schwartz with Fourier support in V_int (§§6.4–6.5) and is confined by §6.7 to S_L♭; in the ordinary case its factorization through a lattice indicator kills it, and in the special case the residual function on the plane V→ of §6.7 has support in u·(V→)_int and Fourier support in (V→)_int, and the hermitian uncertainty principle kills it.
 
 **Checks.**
 
@@ -852,7 +856,7 @@ Prove that when F₀/ℚ_p is unramified, under the equivalence of relative and 
 
 ### Examples
 
-A full-rank exotic overlattice of type two contributes 2 through the empty product and one of type four contributes 2(1 − q²). On a type-four component the indicator sum has q²+1 terms and gives −q(1+q) + (q²+1) = 1 − q on Λ. The special two-overlattice case requires a > 3, so an isolated top invariant 1 or 3 is always ordinary.
+A full-rank exotic overlattice of type two contributes 2 through the empty product and one of type four contributes 2(1 − q²). On a type-four component the indicator sum has q²+1 terms and gives −q(1+q) + (q²+1) = 1 − q on Λ. The special two-overlattice case requires a ≥ 3 and occurs at a = 3 (§6.7); an isolated top invariant 1 is always ordinary.
 
 ### Dependencies
 
@@ -883,7 +887,7 @@ Its API consists of the following facts:
 
 ### 7.2 Symplectic incidence resolution
 
-Construct the symplectic incidence varieties. For a 2m-dimensional symplectic space V over F_q with Frobenius Φ, let S_V parametrize Lagrangian subspaces U with dim(U ∩ ΦU) ≥ m−1, and Y_V the pairs (U, U′) with dim U′ = m−1 and U′ ⊂ U ∩ ΦU. Prove that Y_V is smooth and projective of dimension m; for m ≥ 2 the projection Y_V → S_V resolves the singularities of S_V at its rational points, with exceptional fibres ℙ^(m−1); for m = 1, S_V = ℙ¹ and the projection is an isomorphism (K §3.1, Propositions 3.1–3.3, pp. 16–17). The route constructs the isotropic flag incidence scheme and computes its tangent spaces, treating m = 1 separately.
+Construct the symplectic incidence varieties. For a 2m-dimensional symplectic space V over F_q with Frobenius Φ, let S_V parametrize Lagrangian subspaces U with dim(U ∩ ΦU) ≥ m−1, and Y_V the pairs (U, U′) with dim U′ = m−1 and U′ ⊂ U ∩ ΦU. Prove that Y_V is smooth and projective of dimension m; for m ≥ 2 the projection Y_V → S_V resolves the singularities of S_V at its rational points, with exceptional fibres ℙ^(m−1); for m = 1, S_V = ℙ¹ and the projection is an isomorphism (K §3.1, Lemma 3.1, Proposition 3.2 and Remark 3.3, pp. 16–17). The route constructs the isotropic flag incidence scheme and computes its tangent spaces, treating m = 1 separately.
 
 Its API consists of the following facts:
 
@@ -952,7 +956,7 @@ Its API consists of the following facts:
 
 ### 7.6 Modified Krämer horizontal and vertical classes
 
-Define the modified classes. Work in K₀ modulo F^n for the rank-(n−1) derived cycle. For a horizontal M♭ put 𝒟(M♭) = [O_(Z̃(M♭)°)] + α·[O_ℓ] where ℓ is an exceptional line in the type-zero vertex containing M♭, with α = (1 − (−1)^(n−1))/2 for unimodular M♭ and α = 1 otherwise. Sum 𝒟 over the horizontal overlattices to obtain H*, and put V* = ᴸZ(L♭) − H* (K Lemma 4.4 and (4.4)–(4.6), p. 28; Definitions 4.5, 4.7 and Lemmas 4.6, 4.9, p. 29). The correction is the class of an exceptional line, not of the whole exceptional ℙ^(n−1). The route uses the pairing of exceptional lines with special divisors to modify the horizontal decomposition in the quotient.
+Define the modified classes. Work in K₀ modulo F^n for the rank-(n−1) derived cycle. For a horizontal M♭ put 𝒟(M♭) = [O_(Z̃(M♭)°)] + α·[O_ℓ] where ℓ is an exceptional line in the type-zero vertex containing M♭, with α = (1 − (−1)^(n−1))/2 for unimodular M♭ and α = 1 otherwise. Sum 𝒟 over the horizontal overlattices to obtain H*, and put V* = ᴸZ(L♭) − H* (K Lemma 4.4 and (4.4)–(4.6), p. 28; Definitions 4.5 and 4.7, Remark 4.6 and Lemmas 4.8–4.9, p. 29). The correction is the class of an exceptional line, not of the whole exceptional ℙ^(n−1). The route uses the pairing of exceptional lines with special divisors to modify the horizontal decomposition in the quotient.
 
 Its API consists of the following facts:
 
@@ -1155,7 +1159,7 @@ Its API consists of the following facts:
 
 ### 9.3 AFL orbital-integral normalization
 
-Define the analytic side of the AFL. For the group version let S_n = {γ ∈ GL_n(F) : γγ̄ = 1} with GL_(n−1)(F₀)-conjugation; for the semi-Lie version use S_m × (F₀^m ⊕ (F₀^m)*) with m = n−1 and GL_m(F₀). The twisted orbital integral is Orb(γ, f′, s) = ∫ f′(h⁻¹γh)·|det h|^s·η(det h) dh over GL_m(F₀) with vol(GL_m(O_F₀)) = 1, η the quadratic character of F/F₀; ∂Orb(γ, f′) = ω(γ)·d/ds|_(s=0) Orb(γ, f′, s) with the transfer factor ω(γ) = η̃(det(γ)^(−⌊n/2⌋)·det(γ^i e)_(i=0)^(n−1)) in the group version, η̃ a fixed extension of η to F^×, and the corresponding factor in the semi-Lie version. The AFL statement for a matching pair is ∂Orb = −Int·log q with q = #k_F₀ (Z §2.3, (2.13)–(2.18); Conjecture 3.2 and Conjecture 3.8). Matching here is Jacquet–Rallis matching, supplied by gap:jr-afl-local-inputs; ordinary endoscopic matching is not used.
+Define the analytic side of the AFL. For the group version let S_n = {γ ∈ GL_n(F) : γγ̄ = 1} with GL_(n−1)(F₀)-conjugation; for the semi-Lie version use S_m × (F₀^m ⊕ (F₀^m)*) with m = n−1 and GL_m(F₀). The twisted orbital integral is Orb(γ, f′, s) = ∫ f′(h⁻¹γh)·|det h|^s·η(det h) dh over GL_m(F₀) with vol(GL_m(O_F₀)) = 1, η the quadratic character of F/F₀; ∂Orb(γ, f′) = ω(γ)·d/ds|_(s=0) Orb(γ, f′, s) with the transfer factor ω(γ) = η̃(det(γ)^(−⌊n/2⌋)·det(γ^i e)_(i=0)^(n−1)) in the group version, η̃ a fixed extension of η to F^×, and the corresponding factor in the semi-Lie version. The AFL statement for a matching pair is ∂Orb = −Int·log q with q = #k_F₀ (Z §2.3, (2.13)–(2.18); Conjecture 3.2 and Conjecture 3.8). Matching here is Jacquet–Rallis matching in Zhang's formulation, supplied by gap:jr-afl-local-inputs from the formulations of EndoscopicTransferAndUnitaryTraceComparisonPartII §§4.4–4.5; ordinary endoscopic matching is not used.
 
 Its API consists of the following facts:
 
@@ -1170,7 +1174,7 @@ Its API consists of the following facts:
 - Omitting ω(γ) makes ∂Orb change sign under conjugations with η(det) = −1.
 - The logarithm is log q for the residue cardinality q of F₀, not log(q²).
 
-*Needs:* §9.2; gap:jr-afl-local-inputs (EndoscopicTransferAndUnitaryTraceComparison §§2.1, 2.4); AutomorphicLFunctionsAndLocalFactors AL.0.
+*Needs:* §9.2; EndoscopicTransferAndUnitaryTraceComparisonPartII §§4.4–4.5; gap:jr-afl-local-inputs (EndoscopicTransferAndUnitaryTraceComparison §§2.1, 2.4); AutomorphicLFunctionsAndLocalFactors AL.0.
 
 ### 9.4 Relative Cayley graph comparison
 
@@ -1194,7 +1198,7 @@ Prove the reductions between the two versions (Z §§4.3–4.5; Proposition 4.12
 - At q = n the count gives n+1 residues against n+1 excluded values, so the elementary argument can fail.
 - The norm-unit reduction uses Z(u) ≅ N_(m−1) for unit-norm u and involves no scalar ξ, which is why it holds at every q.
 
-*Needs:* §§0.8, 9.3–9.4; gap:jr-afl-local-inputs.
+*Needs:* §§0.8, 9.3–9.4; EndoscopicTransferAndUnitaryTraceComparisonPartII §§4.4–4.5; gap:jr-afl-local-inputs.
 
 ### 9.6 Local constancy and compact support
 
@@ -1218,7 +1222,7 @@ Prove that for an unramified quadratic extension of odd residue characteristic a
 - If O_F[g] is not maximal the statement does not apply.
 - For m = 1 the statement is the rank-one case, where both sides are computed by the lifting length of §0.9 and the unit orbital integral.
 
-*Needs:* §§9.2–9.3; gap:jr-afl-local-inputs.
+*Needs:* §§9.2–9.3; EndoscopicTransferAndUnitaryTraceComparisonPartII §§4.4–4.5; gap:jr-afl-local-inputs.
 
 ### Examples
 
@@ -1226,7 +1230,7 @@ The Cayley map is undefined at a block with d = 1, so the graph comparison requi
 
 ### Dependencies
 
-Layers 0 and 2; PELModuliPartII U1; SchemeKTheoryOperationsPartII FK.3–FK.4; gap:jr-afl-local-inputs; AutomorphicLFunctionsAndLocalFactors AL.0.
+Layers 0 and 2; PELModuliPartII U1; SchemeKTheoryOperationsPartII FK.3–FK.4; EndoscopicTransferAndUnitaryTraceComparisonPartII §§4.4–4.5; gap:jr-afl-local-inputs; AutomorphicLFunctionsAndLocalFactors AL.0.
 
 ## Layer 10: Global special cycles and local degrees
 
@@ -1284,7 +1288,7 @@ Prove that at an admissible nonsplit place v the formal completion of a global s
 
 ### 10.4 Local arithmetic degrees
 
-Define the local arithmetic degree. For a nonsingular T whose special cycle is supported in the special fibre at v₀, let Int_(T,v₀) be the sum over the places ν | v₀ of the reflex field E of the finite derived Euler characteristics times log q_ν, divided by [E : F₀]; at almost self-dual level state whether auxiliary cycles are used, and divide their pullback degrees by deg π₁ = q+1. The global finite degree Int_T is the sum of the local degrees; it is not automatically the naive arithmetic Chow degree of the Y-cycles (LZ §13.5, p. 83; §14.4, p. 86).
+Define the local arithmetic degree. For a nonsingular T whose special cycle is supported in the special fibre at v₀, let Int_(T,v₀) be the sum over the places ν | v₀ of the reflex field E of the finite derived Euler characteristics times log q_ν, divided by [E : F₀]; at almost self-dual level state whether auxiliary cycles are used, and divide their pullback degrees by deg π₁ = q+1. The global finite degree Int_T is the sum of the local degrees; it is not automatically the naive arithmetic Chow degree of the Y-cycles (LZ §13.5, p. 83; §14.4, pp. 85–86).
 
 Its API consists of the following facts:
 
@@ -1716,7 +1720,7 @@ Construct Zhang's relative trace series from the local Jacquet–Rallis inputs, 
 
 ### 14.1 Relative trace series and Gaussian inputs
 
-Construct, for a fixed irreducible CM polynomial α, the relative orbital series J(h, Φ′, s) on SL₂(𝔸_ℚ) × (test functions), its entire continuation, its nonzero-norm Fourier expansion over orbits and the derivative decomposition ∂J = ∂Orb_nil + Σ_v ∂J_v; prove that partial transfer at fixed α commutes with the SL₂ Weil action; at infinity use the corrected partial Gaussians, for which the derivative for ξ < 0 is one half of the weight-one Whittaker factor times Ei(−4πa|ξ|); and match the nonsingular local characteristic functions by the Jacquet–Rallis fundamental lemma (Z §§11.3–12.7, (12.32)–(12.38), Theorem 12.14; Appendix A, Theorem A.1; MZ §§7.1–7.3 and footnote 5, pp. 33–36). Regular nilpotent orbits are included in the constant term. The route builds the series from the local inputs of gap:jr-afl-local-inputs, the adelic Weil representation and the Poisson summation of AutomorphicLFunctionsAndLocalFactors AL.0.
+Construct, for a fixed irreducible CM polynomial α, the relative orbital series J(h, Φ′, s) on SL₂(𝔸_ℚ) × (test functions), its entire continuation, its nonzero-norm Fourier expansion over orbits and the derivative decomposition ∂J = ∂Orb_nil + Σ_v ∂J_v; prove that partial transfer at fixed α commutes with the SL₂ Weil action; at infinity use the corrected partial Gaussians, for which the derivative for ξ < 0 is one half of the weight-one Whittaker factor times Ei(−4πa|ξ|); and match the nonsingular local characteristic functions by the Jacquet–Rallis fundamental lemma of EndoscopicTransferAndUnitaryTraceComparisonPartII §§4.4–4.5, carried to Zhang's formulation by gap:jr-afl-local-inputs (Z §§11.3–12.7, (12.32)–(12.38), Theorem 12.14; Appendix A, Theorem A.1; MZ §§7.1–7.3 and footnote 5, pp. 33–36). Regular nilpotent orbits are included in the constant term. The route builds the series from the local inputs of gap:jr-afl-local-inputs, the adelic Weil representation and the Poisson summation of AutomorphicLFunctionsAndLocalFactors AL.0.
 
 Its API consists of the following facts:
 
@@ -1731,7 +1735,7 @@ Its API consists of the following facts:
 - The nilpotent orbital term is part of ∂J and is not discarded.
 - Matching uses Jacquet–Rallis transfer factors; ordinary endoscopic transfer is not used.
 
-*Needs:* §9.3; gap:jr-afl-local-inputs (EndoscopicTransferAndUnitaryTraceComparison §§2.1, 2.4, 2.13); MetaplecticAutomorphicForms §§2.5, 3.3, 4.5; AutomorphicLFunctionsAndLocalFactors AL.0.
+*Needs:* §9.3; EndoscopicTransferAndUnitaryTraceComparisonPartII §§4.4–4.5; gap:jr-afl-local-inputs (EndoscopicTransferAndUnitaryTraceComparison §§2.1, 2.4, 2.13); MetaplecticAutomorphicForms §§2.5, 3.3, 4.5; AutomorphicLFunctionsAndLocalFactors AL.0.
 
 ### 14.2 Corrected holomorphic derivative
 
@@ -1818,7 +1822,7 @@ Expanding the corrected series gives E♭ = (2∂J + Int_(K−B)) + Int_B = 2∂
 
 ### Dependencies
 
-Layers 9 and 12; gap:jr-afl-local-inputs; AdelicAlgebraicGroups §4.2; MetaplecticAutomorphicForms §§2.5, 3.3, 4.5; AutomorphicLFunctionsAndLocalFactors AL.0.
+Layers 9 and 12; EndoscopicTransferAndUnitaryTraceComparisonPartII §§4.4–4.5; gap:jr-afl-local-inputs; AdelicAlgebraicGroups §4.2; MetaplecticAutomorphicForms §§2.5, 3.3, 4.5; AutomorphicLFunctionsAndLocalFactors AL.0.
 
 ## Downstream consumers
 
@@ -1838,7 +1842,7 @@ The following corrections are part of the statements above; each is stated in ou
 - LZ Conjecture 10.4.1: the comparison geometry used by Theorem 10.5.1 is LRZ Theorem 14.6.2 with Corollary 16.1.5, with the exceptional divisor equal to the reduced inverse image of the balloon locus (§4.2).
 - LZ Definition 3.5.1 against §7.3: the differentiated weight is m(0) = 0, m(1) = 1; the extension m(0) = 1 is not used, and type zero does not occur in the nonsplit full-rank setting (§3.2).
 - LL2 Lemma 2.56: the reflection fixes x_i for i < n and sends x_n to −x_n (§5.6). LL2 proof of Proposition 2.44: the conductor term is indexed by the outer variable j; the statement of the proposition is correct as printed (§5.5).
-- LL2 Lemma 2.57: in the two-lattice case the isolated top invariant satisfies a > 3 (§6.7).
+- LL2 Lemma 2.57: the inequalities r > 2 in the hypothesis and a_(n−1) > 3 in the conclusion are to be read as r ≥ 2 and a_(n−1) ≥ 3; the proof derives only non-strict bounds from Lemma 2.23(1), and the proof of Theorem 2.7 applies the lemma at r = 2. The two-lattice case occurs with a = 3 (§6.7).
 - LL1 Lemma 5.4 and §8: the number of tensor factors is the tuple rank r (§§10.1–10.2).
 - K Definition 2.2: the framing quasi-isogeny is required to be compatible with the polarizations (§7.1). K §3.1: for m = 1 the incidence map is the identity of ℙ¹; the description of singular rational points applies for m ≥ 2 (§7.2). K Theorem 3.19 and Proposition 3.20: positive strata meet only along a positive-type vertex sum, and the support criterion assumes L integral (§7.3). K Proposition 3.17: type-zero reducedness needs its own argument (§7.4).
 - K Theorem 8.2: only constancy on W_(≥0) ∖ {0} holds; vanishing on the negative cone fails by the rank-three example of §8.4; in (8.6) the orthogonal-sum sign is χ(−1)^n₁ (§8.4).
@@ -1857,3 +1861,5 @@ The following corrections are part of the statements above; each is stated in ou
 - **MZ.** Andreas Mihatsch and Wei Zhang, [On the arithmetic fundamental lemma conjecture over a general p-adic field](https://arxiv.org/abs/2104.02779v4), arXiv:2104.02779v4; published in J. Eur. Math. Soc., DOI 10.4171/JEMS/1375, whose numbering may differ. Locators use arXiv v4.
 - **Howard19.** Benjamin Howard, [Linear invariance of intersections on unitary Rapoport–Zink spaces](https://arxiv.org/abs/1811.01482v2), arXiv:1811.01482v2; published in Forum Math. 31 (2019).
 - **Lusztig76.** George Lusztig, Coxeter orbits and eigenspaces of Frobenius, Invent. Math. 38 (1976); cited by locator (1.18, 6.1 and 7.3) through LZ §5.3.
+- **Ter13a.** Ulrich Terstiege, [Intersections of special cycles on the Shimura variety for GU(1,2)](https://arxiv.org/abs/1006.2106v1), arXiv:1006.2106v1; published in J. Reine Angew. Math. 684 (2013). Locators use the arXiv v1 pagination; its Lemma 3.1 and Proposition 3.2 carry the numbers LZ cites.
+- **Ter13b.** Ulrich Terstiege, [On the regularity of special difference divisors](https://arxiv.org/abs/1209.1286v1), arXiv:1209.1286v1; published in C. R. Math. Acad. Sci. Paris 351 (2013). Locators use the arXiv v1 pagination.
