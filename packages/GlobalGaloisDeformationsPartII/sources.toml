@@ -201,3 +201,37 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["8.9"]
+
+[[source]]
+id = "Ser05"
+authors = "Jean-Pierre Serre"
+title = "Complète réductibilité"
+year = 2005
+locator_scheme = "theorem"
+locator = "Propositions 3.2 and 3.3, pp.206–207 (Séminaire Bourbaki, exposé 932, Astérisque 299)"
+url = "http://www.numdam.org/item/SB_2003-2004__46__195_0/"
+fetched_from = "https://www.numdam.org/item/SB_2003-2004__46__195_0.pdf"
+fetched_at = "2026-11-06T14:44:17Z"
+sha256 = "994cb44c45a38def47488910fd8b5ebd614da284c5ffec034da2dea88020e44d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-06"
+cited_for = ["7.1"]
+
+[[source]]
+id = "BMR05"
+authors = "M. Bate, B. M. S. Martin, G. Roehrle"
+title = "A Geometric Approach to Complete Reducibility"
+year = 2005
+arxiv = "math/0408109v2"
+locator_scheme = "theorem"
+locator = "Theorem 5.8"
+url = "https://arxiv.org/abs/math/0408109v2"
+fetched_from = "https://arxiv.org/pdf/math/0408109v2"
+fetched_at = "2026-11-06T14:48:05Z"
+sha256 = "6d0342a79f8178a51f0dcded98d02952453238136a709eec0cfbc0fce9caae58"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-06"
+version_note = "arXiv v2"
+cited_for = ["1.5"]
