@@ -5401,12 +5401,6 @@
       "supplier": "EtaleDualityAndPerverseSheaves",
       "section": "§0.7",
       "needs": "Export the Frobenius-equivariant compact-cohomology comparison for every Zariski locally trivial rank-a affine bundle, with degree shift 2a, twist −a and compatibility with base change and the localization filtration."
-    },
-    {
-      "slug": "two-line-chart-epimorphism",
-      "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
-      "section": "§3.7, generation-open restriction",
-      "needs": "In §3.7 distinguish the two-Hom-frame Quot open Q₁₂ of S16 §6.4 from its first-evaluation epimorphism open; restrict to the latter before identifying the quotient with strongly L₁-generated sheaves, and restrict the supplied cotangent zero-level equivalence accordingly."
     }
   ],
   "sourceIssues": [

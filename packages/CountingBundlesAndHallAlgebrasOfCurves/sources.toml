@@ -242,3 +242,21 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 cited_for = ["7.3; 9.1–9.4: invariance of the small étale site and cohomology under reduction"]
+
+[[source]]
+id = "M20P"
+authors = "Anton Mellit"
+title = "Poincare polynomials of character varieties, Macdonald polynomials and affine Springer fibers"
+year = 2017
+arxiv = "1710.04513v1"
+locator_scheme = "theorem"
+locator = "§2.1 Proposition 2.1, pp.6–7; §2.3, pp.10–11; §7.1 Theorems 7.1–7.2, Proposition 7.3 and Corollary 7.4, pp.54–55"
+url = "https://arxiv.org/abs/1710.04513v1"
+fetched_from = "https://arxiv.org/pdf/1710.04513v1"
+fetched_at = "2026-11-06T14:13:48Z"
+sha256 = "79492a4295430b845da931a269606c5cb6356a43fb5ea48beea6926a8cb3e2cc"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-06"
+version_note = "arXiv v1"
+cited_for = ["Scope and ownership (parabolic theorem); RepresentationTheory/SchurWeyl supplier contract (stable symmetric functions, Hall pairing); 11.2"]
