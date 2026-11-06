@@ -39,9 +39,9 @@ locator_scheme = "section"
 locator = "Section 2.6.4"
 licence_class = "none"
 status = "waived"
+version_note = "waived; no legal text readable; the Li-type bound is not planned"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6064#issuecomment-6671942201"
 cited_for = ["Scope (motivation for a Part II)"]
-version_note = "waived; no legal text readable; the Li-type bound is not planned"
 
 [[source]]
 id = "louboutin2017"
@@ -160,7 +160,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-06"
 version_note = "arXiv, latest version"
-cited_for = ["3.3"]
+cited_for = ["3.3", "4.7"]
 
 [[source]]
 id = "garcialee2022artin"
@@ -214,7 +214,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-06"
 version_note = "arXiv v3"
-cited_for = ["4.2"]
+cited_for = ["4.1", "4.2"]
 
 [[source]]
 id = "lee2021zerofree"
@@ -288,7 +288,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-06"
 version_note = "arXiv v2"
-cited_for = ["6.3 (consumed from ExplicitCharacterSumsAndSieves)"]
+cited_for = ["Scope (the explicit Burgess inequalities, left to ExplicitCharacterSumsAndSieves Layer 4)"]
 
 [[source]]
 id = "mcgown2012"
@@ -306,7 +306,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-06"
 version_note = "arXiv v1"
-cited_for = ["6.3 (consumed from ExplicitCharacterSumsAndSieves)"]
+cited_for = ["Scope (the explicit Burgess inequalities, left to ExplicitCharacterSumsAndSieves Layer 4)"]
 
 [[source]]
 id = "louboutin2005"
@@ -322,8 +322,8 @@ sha256 = "8f589798df23bcf1ecc49905fae75ac88de4126e02d064c24dbd21d61f688632"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-06"
-cited_for = ["0.2", "3.2", "5.1", "5.2"]
 version_note = "the displayed inequalities of Theorem 10 are absent from the Numdam text layer; inequality (13) is restated from its proof route and (14) is not planned"
+cited_for = ["0.2", "3.2", "5.1", "5.2"]
 
 [[source]]
 id = "louboutin2000"
@@ -333,11 +333,11 @@ year = 2000
 venue = "Journal of Number Theory 85"
 doi = "10.1006/jnth.2000.2545"
 locator_scheme = "theorem"
-locator = "Theorem 1"
+locator = "Corollary 3"
 url = "https://doi.org/10.1006/jnth.2000.2545"
 licence_class = "none"
 status = "uncertified"
-version_note = "paywalled; the statement is quoted at louboutin2003 line 605"
+version_note = "paywalled; Corollary 3 is quoted at louboutin2003 lines 603-605, where it is cited as [Lou7, Corollary 3]"
 cited_for = ["5.5"]
 
 [[source]]
@@ -425,7 +425,7 @@ sha256 = "d5f7c9a26a62940faba552f3cbea2a5f77c77d05d31eaf554e2689eed37484a7"
 licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-11-06"
-cited_for = ["6.3 (consumed from ExplicitCharacterSumsAndSieves)"]
+cited_for = ["Scope (the explicit Burgess inequalities, left to ExplicitCharacterSumsAndSieves Layer 4)"]
 
 [[source]]
 id = "sunley1973"
@@ -451,12 +451,12 @@ year = 2001
 venue = "Canadian Journal of Mathematics 53 (2001), no. 6, 1194–1222"
 doi = "10.4153/CJM-2001-045-5"
 locator_scheme = "theorem"
-locator = "Theorem 1"
+locator = "Theorems 1 and 7"
 url = "https://doi.org/10.4153/CJM-2001-045-5"
 licence_class = "none"
 status = "uncertified"
-version_note = "paywalled; the statement is quoted at louboutin2003 lines 297–300"
-cited_for = ["3.1", "5.1"]
+version_note = "paywalled; Theorem 1 is quoted at louboutin2003 lines 297–300 and louboutin2005 lines 38–39; Theorem 7 is quoted at louboutin2003 lines 337–339 (Lemma 7(2), as [Lou8, Theorem 7])"
+cited_for = ["3.1", "5.1", "5.6"]
 
 [[source]]
 id = "chen2022"
@@ -494,7 +494,7 @@ authors = "Stephen D. Cohen, Tomás Oliveira e Silva, Tim Trudgian"
 title = "On Grosswald's conjecture on primitive roots"
 year = 2015
 arxiv = "1503.04519v1"
-locator_scheme = "section"
+locator_scheme = "theorem"
 locator = "Theorem 1"
 url = "https://arxiv.org/abs/1503.04519v1"
 fetched_from = "https://arxiv.org/pdf/1503.04519v1"
@@ -538,3 +538,65 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; the bound R_K/w_K ≥ 0.09058 is quoted at garcialee2022mertens line 1215"
 cited_for = ["3.3"]
+
+[[source]]
+id = "rosser-schoenfeld-1962"
+authors = "J. Barkley Rosser, Lowell Schoenfeld"
+title = "Approximate formulas for some functions of prime numbers"
+year = 1962
+venue = "Illinois Journal of Mathematics 6, 64-94"
+doi = "10.1215/ijm/1255631807"
+local_name = "rosser-schoenfeld-1962.pdf"
+locator_scheme = "theorem"
+locator = "Theorem 15"
+fetched_at = "2026-11-06T21:07:09Z"
+sha256 = "8e37b06f82e09421bceb2502578c47b61469141f0287e6acedb70e01765ab556"
+licence_class = "operator-local"
+status = "certified"
+accessed = "2026-11-06"
+cited_for = ["gap:totient-quotient-bound"]
+
+[[source]]
+id = "schoenfeld-1976"
+authors = "Lowell Schoenfeld"
+title = "Sharper Bounds for the Chebyshev Functions θ(x) and ψ(x). II"
+year = 1976
+venue = "Mathematics of Computation 30, 337-360"
+doi = "10.2307/2005976"
+local_name = "schoenfeld-1976.pdf"
+locator_scheme = "theorem"
+locator = "Corollary 2"
+fetched_at = "2026-11-06T21:07:42Z"
+sha256 = "8c3cac1ee52eb05af05ec410adc587a18505a46aacdde41ae097038b0e7c3897"
+licence_class = "operator-local"
+status = "certified"
+accessed = "2026-11-06"
+cited_for = ["gap:explicit-mertens-second"]
+
+[[source]]
+id = "washington1997"
+authors = "Lawrence C. Washington"
+title = "Introduction to Cyclotomic Fields"
+year = 1997
+venue = "Graduate Texts in Mathematics 83, 2nd edition, Springer"
+doi = "10.1007/978-1-4612-1934-7"
+locator_scheme = "theorem"
+locator = "Theorem 4.10"
+licence_class = "none"
+status = "uncertified"
+version_note = "textbook, not openly available; cited by its locator for the standard divisibility h(K+) | h(K) of a CM-field"
+cited_for = ["0.4"]
+
+[[source]]
+id = "lang1994"
+authors = "Serge Lang"
+title = "Algebraic Number Theory"
+year = 1994
+venue = "Graduate Texts in Mathematics 110, 2nd edition, Springer"
+doi = "10.1007/978-1-4612-0853-2"
+locator_scheme = "chapter"
+locator = "Chapter XIII"
+licence_class = "none"
+status = "uncertified"
+version_note = "textbook, not openly available; cited by its locator for the class-number formula and the Hecke integral representation, as louboutin2003 line 138 cites it"
+cited_for = ["0.4", "References"]
