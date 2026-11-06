@@ -134,3 +134,40 @@ licence_class = "institutional"
 status = "certified"
 accessed = "2026-11-05"
 cited_for = ["7.2"]
+
+[[source]]
+id = "Temkin"
+authors = "M. Temkin"
+title = "On local properties of non-Archimedean analytic spaces"
+year = 2000
+venue = "Mathematische Annalen 318, 585-607"
+doi = "10.1007/s002080000123"
+version_note = "author-page copy; locators follow its numbering (Corollaries 4.4-4.6 in Section 4)"
+locator_scheme = "theorem"
+locator = "Corollary 4.5"
+url = "https://math.huji.ac.il/~temkin/papers/Local_Properties_I.pdf"
+fetched_from = "https://math.huji.ac.il/~temkin/papers/Local_Properties_I.pdf"
+fetched_at = "2026-11-06T06:39:39Z"
+sha256 = "f787ecceed92ac599349f8343557584effd96c6b531125374c0e96ceafc62a1f"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-06"
+cited_for = ["6.3"]
+
+[[source]]
+id = "Lutkebohmert"
+authors = "W. Lütkebohmert"
+title = "Formal-algebraic and rigid-analytic geometry"
+year = 1990
+venue = "Mathematische Annalen 286, 341-371"
+version_note = "GDZ digitisation of the journal article, image-only scan read by OCR; Theorem 3.1 and Corollary 3.2 in Section 3"
+locator_scheme = "theorem"
+locator = "Corollary 3.2"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN235181684_0286/LOG_0028.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN235181684_0286/LOG_0028.pdf"
+fetched_at = "2026-11-06T06:40:57Z"
+sha256 = "c6fbd7d9eeacd9ad6b46ff5cb67c17cd12622ed0b425eb6698006c5ad78635f0"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-06"
+cited_for = ["6.3"]
