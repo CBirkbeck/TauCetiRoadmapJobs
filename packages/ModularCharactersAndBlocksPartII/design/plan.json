@@ -16,7 +16,7 @@
      "id": "1.1",
      "kind": "definition",
      "name": "invariantIrreducibleCharacters",
-     "statement": "For a group S acting on a finite group Γ by automorphisms, the action (s · χ)(g) = χ(s⁻¹ • g) on functions Γ → ℂ, the set Irr_S(Γ) of S-invariant members of TauCeti.irreducibleCharacters ℂ Γ, and C_Γ(S) = FixedPoints.subgroup S Γ.",
+     "statement": "For a group S acting on a finite group Γ by automorphisms, the action of S on functions Γ → ℂ given by Mathlib's arrowAction, (s · χ)(g) = χ(s⁻¹ • g), the set Irr_S(Γ) of S-invariant members of TauCeti.irreducibleCharacters ℂ Γ, and C_Γ(S) = FixedPoints.subgroup S Γ.",
      "hypotheses": [
       "Γ a finite group",
       "S a group",
@@ -28,6 +28,7 @@
      },
      "prerequisites": [
       "mathlib:MulDistribMulAction",
+      "mathlib:arrowAction",
       "mathlib:FixedPoints.subgroup",
       "mathlib:SemidirectProduct.inl_aut",
       "tauceti:TauCeti.irreducibleCharacters",
@@ -37,11 +38,6 @@
       "roadmap:InductionRestriction Layer 1"
      ],
      "api": [
-      {
-       "name": "charSMul_mul",
-       "role": "action law",
-       "statement": "1 · χ = χ and (s t) · χ = s · (t · χ)."
-      },
       {
        "name": "charSMul_mem_irreducibleCharacters",
        "role": "preservation",
@@ -137,7 +133,7 @@
      ],
      "locator": {
       "source": "glauberman",
-      "where": "line 355 (Brauer's permutation lemma); isaacs Theorem 6.32 (uncertified)"
+      "where": "line 355 (Brauer's permutation lemma); isaacs Theorem 6.32"
      },
      "prerequisites": [
       "tauceti:TauCeti.characterTable",
@@ -192,7 +188,6 @@
      "prerequisites": [
       "mathlib:SemidirectProduct",
       "mathlib:LinearMap.det",
-      "tauceti:TauCeti.cliffordObstruction_eq_zero_iff",
       "roadmap:InductionRestriction Layer 7"
      ],
      "api": [
@@ -356,7 +351,7 @@
      ],
      "locator": {
       "source": "glauberman",
-      "where": "Theorem 2 (c), line 240; isaacs Corollary 6.17 (uncertified)"
+      "where": "Theorem 2 (c), line 240; isaacs Corollary 6.17"
      },
      "prerequisites": [
       "tauceti:TauCeti.IsProjectiveInertiaExtension",
@@ -782,7 +777,7 @@
      ],
      "locator": {
       "source": "glauberman",
-      "where": "Theorem 4, line 543; Corollaries 7-8, line 601; spath-vallejo lines 118, 129; navarro-2018 Chapter 2 (uncertified); isaacs Chapter 13 (uncertified)"
+      "where": "Theorem 4, line 543; Corollaries 7-8, line 601; spath-vallejo lines 118, 129; navarro-2018 Chapter 2; isaacs Chapter 13"
      },
      "prerequisites": [
       "target:4.2",
@@ -1075,7 +1070,7 @@
      ],
      "locator": {
       "source": "martinez",
-      "where": "Theorem 3.4, line 728, proof lines 783-831; mnst line 51; navarro-1998 Chapter 3 (uncertified); feit Chapter IV (uncertified)"
+      "where": "Theorem 3.4, line 728, proof lines 783-831; mnst line 51; navarro-1998 Chapter 3; feit Chapter IV"
      },
      "prerequisites": [
       "target:6.1",
@@ -1528,7 +1523,7 @@
      ],
      "locator": {
       "source": "martinez",
-      "where": "Theorem 8.10, line 2011; navarro-1998 Theorem 5.9 (uncertified)"
+      "where": "Theorem 8.10, line 2011; navarro-1998 Theorem 5.9"
      },
      "prerequisites": [
       "roadmap:ModularCharactersAndBlocks §5.1",
@@ -1680,13 +1675,13 @@
      ],
      "locator": {
       "source": "reynolds",
-      "where": "Theorem 9, line 542; martinez Theorem 9.8, line 2328"
+      "where": "Theorem 9, line 542 (a corollary of Theorem 8, line 531); martinez Theorem 9.8, line 2328"
      },
      "prerequisites": [
-      "target:6.2",
+      "target:6.3",
       "target:8.3",
-      "gap:ito-abelian-normal-degree",
       "tauceti:TauCeti.card_irreducibleCharacters",
+      "tauceti:TauCeti.Representation.finrank_dvd_card",
       "roadmap:CharacterTheory §2.1"
      ],
      "api": [],
@@ -1877,26 +1872,15 @@
  "consumers": [],
  "gaps": [
   {
-   "slug": "ito-abelian-normal-degree",
-   "title": "Itô's theorem and degree divisibility by the index of a scalar subgroup",
-   "neededBy": [
-    "8.4"
-   ],
-   "detail": "For finite G and an abelian normal subgroup A, χ(1) ∣ |G : A| for χ ∈ Irr(G) (isaacs Theorem 6.15), through dim ρ ∣ |G : Z| for an irreducible complex ρ and a subgroup Z acting by scalars (isaacs Theorem 3.12, via irreducibility of external tensor powers and degree divisibility for the quotient by the kernel of the product of scalars). Neither CharacterTheory nor the pinned libraries state it.",
-   "needs": "A statement and proof that the degree of an irreducible character divides the index of an abelian normal subgroup.",
-   "supplier": "none",
-   "section": "a proposed CharacterTheory Part II (degree divisibility from central and abelian normal subgroups)"
-  },
-  {
    "slug": "clifford-multiplicity-dvd-index",
    "title": "Clifford degree quotient divides the index",
    "neededBy": [
     "8.3"
    ],
-   "detail": "For N ⊴ G finite, χ ∈ Irr(G) and θ an irreducible constituent of χ|_N, χ(1)/θ(1) divides |G : N| (isaacs Corollary 11.29), through the divisibility of the degree of an irreducible projective representation of a finite group by its order (via the native linearization over a finite central extension and the scalar-subgroup divisibility of the other gap). InductionRestriction Layer 7 and the pinned Tau Ceti supply the tensor factorisation but not this divisibility.",
-   "needs": "A statement and proof that χ(1)/θ(1) divides |G : N| for θ under χ and N normal.",
-   "supplier": "none",
-   "section": "a proposed further InductionRestriction part on projective representations"
+   "detail": "For a finite group G, N ⊴ G, χ ∈ Irr(G) and θ an irreducible constituent of χ|_N, χ(1)/θ(1) is a natural number dividing |G : N| (isaacs Corollary 11.29; the step at reynolds line 538 in the proof of Theorem 8). Route: by the Clifford correspondence (InductionRestriction Layer 5) reduce to θ invariant; the tensor factorisation of InductionRestriction Layer 7 writes the character over θ as a compatible projective extension of θ tensored with an irreducible projective representation of G/N, whose degree divides |G : N| by Schur's theorem, itself from the lifting to a finite central extension (Layer 7) and the divisibility of a degree by the index of a central subgroup (isaacs Theorem 3.12). InductionRestriction Layer 7 and the pinned Tau Ceti supply the factorisation and the lifting but no degree divisibility.",
+   "needs": "InductionRestriction Layer 7 must prove that χ(1)/θ(1) divides |G : N| for a finite group G, N ⊴ G, χ ∈ Irr(G) and an irreducible constituent θ of χ|_N.",
+   "supplier": "InductionRestriction",
+   "section": "Layer 7"
   }
  ]
 }

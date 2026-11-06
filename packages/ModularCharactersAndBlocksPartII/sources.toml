@@ -128,7 +128,7 @@ year = 1963
 venue = "Nagoya Math. J. 22 (1963), 15–32"
 doi = "10.1017/S0027763000011004"
 locator_scheme = "theorem"
-locator = "height (line 60); Theorem 1 (line 133); Theorem 2 (line 149); the projective-character argument (line 201); Theorem 7 (line 509); Theorem 8 (line 531); Theorem 9 (line 542)"
+locator = "height (line 60); Theorem 1 (line 133); Theorem 2 (line 149); the projective-character argument (line 201); Theorem 7 (line 509); Theorem 8 (line 531) and the projective-degree step of its proof (line 538); Theorem 9 (line 542)"
 url = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/6A237E1857DE9EA8AA916597260D4433/S0027763000011004a.pdf/blocks-and-normal-subgroups-of-finite-groups.pdf"
 fetched_from = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/6A237E1857DE9EA8AA916597260D4433/S0027763000011004a.pdf/blocks-and-normal-subgroups-of-finite-groups.pdf"
 fetched_at = "2026-11-05T02:46:12Z"
@@ -137,7 +137,7 @@ licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "Nagoya Mathematical Journal archive on Cambridge Core, served without login"
-cited_for = ["§6.3", "§7.4", "§8.2", "§8.3", "§8.4"]
+cited_for = ["Exact supplier contracts (gap:clifford-multiplicity-dvd-index)", "§6.3", "§7.4", "§8.2", "§8.3", "§8.4"]
 
 [[source]]
 id = "martinez"
@@ -200,12 +200,12 @@ title = "Character Theory of Finite Groups"
 year = 1976
 venue = "Academic Press 1976; AMS Chelsea reprint 2006"
 locator_scheme = "chapter"
-locator = "Theorem 3.12, Theorem 6.15, Corollary 6.17, Theorem 6.32, Corollary 11.29, Chapter 13"
+locator = "Theorem 3.12, Corollary 6.17, Theorem 6.32, Corollary 11.29, Chapter 13"
 url = "https://bookstore.ams.org/chel-359"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Exact supplier contracts (recorded gaps)", "§1.3", "§2.4", "§4.5"]
+cited_for = ["Exact supplier contracts (gap:clifford-multiplicity-dvd-index)", "§1.3", "§2.4", "§4.5"]
 
 [[source]]
 id = "isaacs-1973"

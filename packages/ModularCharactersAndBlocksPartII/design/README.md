@@ -59,7 +59,7 @@ Already in the libraries, and consumed rather than rebuilt:
   `TauCeti.mem_irreducibleCharacters_iff`, `TauCeti.card_irreducibleCharacters`,
   `TauCeti.ClassFunction.characterPairing`, `TauCeti.characterTable`,
   `TauCeti.sum_characterTable_mul_conj`, `TauCeti.virtualCharacters`,
-  `Representation.nonempty_equiv_of_character_eq`, `Representation.isIntegral_character`.
+  `Representation.nonempty_equiv_of_character_eq`; Mathlib's `Representation.isIntegral_character`.
 - **Conjugation, inertia and Clifford theory.** `TauCeti.conjNormalFDRep`,
   `TauCeti.conjNormalFDRep_ρ`, `TauCeti.char_conjFDRep`, `TauCeti.inertia`, `TauCeti.le_inertia`,
   `TauCeti.mem_inertia_iff`, `FDRep.cliffordCorrespondence`, `FDRep.clifford_restrict_dvd_finrank`,
@@ -69,7 +69,7 @@ Already in the libraries, and consumed rather than rebuilt:
   `TauCeti.IsProjectiveInertiaExtension.tensorRepEquiv`,
   `TauCeti.IsProjectiveInertiaExtension.isIrreducible_tensorRep_iff`,
   `TauCeti.IsProjectiveInertiaExtension.tmulIntertwining_bijective`,
-  `TauCeti.exists_isProjectiveInertiaExtension`, `TauCeti.cliffordObstruction_eq_zero_iff`.
+  `TauCeti.exists_isProjectiveInertiaExtension`.
 - **Galois action, fields of values, central characters and degrees.**
   `IsPrimitiveRoot.cyclotomicIrreducibleCharacterAction`,
   `IsPrimitiveRoot.cyclotomicIrreducibleCharacterAction_apply`, `FDRep.characterField`,
@@ -80,7 +80,8 @@ Already in the libraries, and consumed rather than rebuilt:
   `TauCeti.classSum`, `TauCeti.classSumCenter`.
 - **Group theory.** Mathlib's `SemidirectProduct` with `SemidirectProduct.inl`,
   `SemidirectProduct.inr`, `SemidirectProduct.inl_aut`, `SemidirectProduct.rightHom`;
-  `MulDistribMulAction`, `MulDistribMulAction.toMulAut`, `FixedPoints.subgroup`,
+  `MulDistribMulAction`, `MulDistribMulAction.toMulAut`, `arrowAction` (the action of a group on
+  functions out of a set it acts on), `FixedPoints.subgroup`,
   `FixedPoints.mem_subgroup`, the quotient action
   `MulDistribMulAction (G ⧸ H) (FixedPoints.subgroup H α)` of
   `Mathlib/GroupTheory/GroupAction/OfQuotient.lean`, the conjugation action of a normaliser
@@ -105,15 +106,11 @@ Planned by other roadmaps, and imported by name and section:
   (induced characters and Frobenius reciprocity), Layer 5 (Clifford theory) and Layer 7 (the
   scalar extension obstruction and the tensor factorisation over a compatible projective
   extension).
-- FiniteGroupInvariants §6.2 owns Brauer's permutation lemma for the Galois action on characters
-  and classes; the version of §1.3 here is for an action by group automorphisms, the case
-  Glauberman's argument needs.
 
-Recorded gaps, which this roadmap consumes and does not plan (see *Exact supplier contracts*):
-Itô's theorem `χ(1) ∣ |G : A|` for an abelian normal subgroup `A`, through the divisibility of a
-degree by the index of a subgroup acting by scalars; and the Clifford divisibility
-`χ(1)/θ(1) ∣ |G : N|` for `θ` under `χ`. Both extend the direction of CharacterTheory and
-InductionRestriction respectively, neither of which plans them.
+One supplier gap, which this roadmap consumes and does not plan (see *Exact supplier contracts*):
+the Clifford divisibility `χ(1)/θ(1) ∣ |G : N|` for `N ⊴ G` and `θ` under `χ`, a statement about
+projective representations that InductionRestriction Layer 7 is to provide
+(gap:clifford-multiplicity-dvd-index).
 
 Cited and not planned: Kessar and Malle's proof that abelian defect groups force height zero
 (kessar-malle line 25, Theorem 1.1); Malle, Navarro, Schaeffer Fry and Tiep's proof of the converse
@@ -121,10 +118,12 @@ for odd `p` (mnst line 70, Theorem A); Ruhstorfer's proof of the Alperin–McKay
 height zero conjecture for `p = 2` (ruhstorfer line 20, Theorem A, and line 33, Corollary B); and
 Glauberman degree-divisibility in general (geck line 29, completing hartley-turull line 84,
 Theorem A). These rest on the classification of finite simple groups and on Lusztig's theory;
-Layers 5 and 9 state the predicates they concern. Not owned: the Isaacs correspondence for `Γ` of
-odd order and arbitrary `S` (isaacs-1973), its agreement with Glauberman's, Turull's theory above
-the correspondence, inductive conditions and reduction theorems, blocks with cyclic defect groups,
-and Dade's conjectures.
+Layers 5 and 9 state the predicates they concern. Not owned: Brauer's permutation lemma for the
+Galois action on characters and classes, which FiniteGroupInvariants §6.2 states (§1.3 here is the
+version for a group automorphism, which Glauberman's argument needs); the Isaacs correspondence
+for `Γ` of odd order and arbitrary `S` (isaacs-1973), its agreement with Glauberman's, Turull's
+theory above the correspondence, inductive conditions and reduction theorems, blocks with cyclic
+defect groups, and Dade's conjectures.
 
 ## Conventions
 
@@ -139,8 +138,9 @@ and Dade's conjectures.
 - **The semidirect product.** `Γ ⋊ S` is `Γ ⋊[MulDistribMulAction.toMulAut S Γ] S`. Mathlib's
   `SemidirectProduct.inl_aut` gives `inr s · inl g · inr s⁻¹ = inl (s • g)`. Elements of `Γ` and
   `S` are identified with their images under `inl` and `inr`.
-- **Conjugate characters.** For `χ : Γ → ℂ` put `(s · χ)(g) = χ(s⁻¹ • g)`; this is a left action,
-  and it is the character of the conjugate representation by `inr s` in the sense of
+- **Conjugate characters.** For `χ : Γ → ℂ`, `s · χ` is given by Mathlib's `arrowAction` for the
+  action of `S` on `Γ`, so `(s · χ)(g) = χ(s⁻¹ • g)`; this is a left action, and it is the
+  character of the conjugate representation by `inr s` in the sense of
   `TauCeti.char_conjFDRep` (`({}^x χ)(y) = χ(x⁻¹ y x)`). Witness: `Γ = C₇ = ⟨r⟩`, `S = C₃` acting by
   `r ↦ r²`, `χ(r) = ζ₇`; then `s⁻¹ • r = r⁴` and `(s · χ)(r) = ζ₇⁴`, whereas `χ(s • r) = ζ₇²`.
   `Irr_S(Γ)` is the set of `S`-invariant members of `TauCeti.irreducibleCharacters ℂ Γ`.
@@ -186,15 +186,20 @@ and Dade's conjectures.
 `SemidirectProduct`, `SemidirectProduct.inl`, `SemidirectProduct.inr`, `SemidirectProduct.inl_aut`
 (`inl (φ g n) = inr g * inl n * inr g⁻¹`), `SemidirectProduct.rightHom`,
 `SemidirectProduct.range_inl_eq_ker_rightHom`; `MulDistribMulAction`,
-`MulDistribMulAction.toMulAut`, `FixedPoints.subgroup` (the elements fixed by every `m`, with
-`FixedPoints.mem_subgroup`), the instance `MulDistribMulAction (G ⧸ H) (FixedPoints.subgroup H α)`
+`MulDistribMulAction.toMulAut`, `arrowAction` (`Mathlib/Algebra/Group/Action/Basic.lean`: for
+`[DivisionMonoid G] [MulAction G A]`, the action `(g • F)(a) = F(g⁻¹ • a)` on `A → B`, with its
+action laws; a definition, not an instance), `FixedPoints.subgroup` (the elements fixed by
+every `m`, with `FixedPoints.mem_subgroup`), the instance `MulDistribMulAction (G ⧸ H) (FixedPoints.subgroup H α)`
 for normal `H` (`Mathlib/GroupTheory/GroupAction/OfQuotient.lean`), the conjugation action
 `MulDistribMulAction (normalizer H) H` and `Subgroup.normalizerMonoidHom`
 (`Mathlib/GroupTheory/Subgroup/Centralizer.lean`); `Subgroup.exists_right_complement'_of_coprime`
 (existence only: the file `Mathlib/GroupTheory/SchurZassenhaus.lean` proves no conjugacy of
 complements beyond the abelian case); `Sylow`, `IsPGroup`, `IsSolvable`, `IsCyclic`, `ConjClasses`,
 `MulAut.conj`, `Subgroup.index`, `QuotientGroup`; `Representation`, `Representation.character`,
-`Representation.IsIrreducible`, `LinearMap.det`, `FDRep`; `IsCyclotomicExtension`,
+`Representation.IsIrreducible`, `Representation.isIntegral_character`
+(`Mathlib/RepresentationTheory/Character.lean`: for a finite group and a finite-dimensional
+representation over a field, the character values are integral over `ℤ`), `LinearMap.det`,
+`FDRep`; `IsCyclotomicExtension`,
 `IsPrimitiveRoot.autToPow`, `ZMod.chineseRemainder`, `IsGalois`, `IntermediateField.adjoin`,
 `IntermediateField.fixedField`, `IsIntegral`; `padicValNat`, `padicValRat`;
 `IsDiscreteValuationRing`, `IsAdicComplete`, `IsLocalRing.ResidueField`, `MonoidAlgebra`,
@@ -250,8 +255,9 @@ a projective multiplicity representation with factor set `β⁻¹`; this roadmap
   the agreement with the minimality of `P` with `e ∈ Tr_P^G(k[G]^P)` and with defect classes
   (the defect groups of `B` are the Sylow `p`-subgroups of `C_G(x)` for `x` in a defect class),
   `O_p(G)` in every defect group, `⟨x⟩` in every defect group of every block of `C_G(x)` for a
-  `p`-element `x`, and the characterisation of defect zero (`Irr(B) = {χ}`, `|G|_p ∣ χ(1)`; a
-  character of defect zero vanishes on `p`-singular elements).
+  `p`-element `x`, and the characterisation of defect zero (`Irr(B) = {χ}`, `IBr(B) = {χ⁰}`,
+  `|G|_p ∣ χ(1)`). With §3.1 and the block-diagonality of §4.2 this gives `Φ_{χ⁰} = χ`, so a
+  character of defect zero vanishes on `p`-singular elements.
 - §6.3: Brauer pairs, the order relation, and the maximal `B`-Brauer pairs, whose first components
   are the defect groups.
 - §7.1: block induction `b^G`, defined when `C_G(D_b) ≤ H`, its transitivity, the central
@@ -288,18 +294,19 @@ reciprocity), Layer 5 (Clifford's theorem and the Clifford correspondence), Laye
 obstruction `cliffordObstruction` and the tensor factorisation over a compatible projective
 extension).
 
-### Recorded gaps
-
-- **ito-abelian-normal-degree.** For a finite group `G` and an abelian normal subgroup `A`,
-  `χ(1) ∣ |G : A|` for every `χ ∈ Irr(G)` (Itô; isaacs Theorem 6.15), through the divisibility
-  `dim ρ ∣ |G : Z|` for an irreducible complex `ρ` and a subgroup `Z` acting by scalars (isaacs
-  Theorem 3.12). Supplier: none; its natural owner is a CharacterTheory Part II on degree
-  divisibility. Needed by §8.4.
-- **clifford-multiplicity-dvd-index.** For `N ⊴ G` finite, `χ ∈ Irr(G)` and an irreducible
-  constituent `θ` of `χ|_N`, `χ(1)/θ(1)` divides `|G : N|` (isaacs Corollary 11.29), through the
-  divisibility of the degree of an irreducible projective representation of a finite group by its
-  order. Supplier: none; its natural owner is a further InductionRestriction part on projective
-  representations. Needed by §8.3.
+What InductionRestriction must provide (gap:clifford-multiplicity-dvd-index): for a finite group
+`G`, `N ⊴ G`, `χ ∈ Irr(G)` and an irreducible constituent `θ` of `χ|_N`, the quotient `χ(1)/θ(1)`
+is a natural number dividing `|G : N|` (isaacs Corollary 11.29; the step used in the proof of
+reynolds line 531, Theorem 8, at line 538). The supplying section is Layer 7, "projective
+representations, factor sets, and the Schur multiplier": it owns the tensor factorisation of an
+irreducible representation of the inertia group of `θ` as a compatible projective extension of `θ`
+tensored with a projective representation of the inertia quotient, and the lifting of projective
+representations to a central extension, but states no degree divisibility. The divisibility
+reduces, through the Clifford correspondence of Layer 5 and that factorisation, to Schur's theorem
+that the degree of an irreducible projective representation of a finite group divides the order
+of the group, which follows from the lifting to a finite central extension and the divisibility of
+the degree of an irreducible representation by the index of a central subgroup (isaacs
+Theorem 3.12). §8.3 uses it for Reynolds' height formula.
 
 ## How to read the build
 
@@ -324,17 +331,17 @@ defect groups and heights.
 
 ### 1.1 Conjugate characters and invariant characters
 
-Define the action of `S` on functions `Γ → ℂ` by `(s · χ)(g) = χ(s⁻¹ • g)`, the set `Irr_S(Γ)` of
-`S`-invariant irreducible characters, and the fixed-point subgroup `C = C_Γ(S)` as Mathlib's
-`FixedPoints.subgroup S Γ` (glauberman line 94, the conjugate `η^a`; hartley-turull line 302).
-No coprimality is assumed in this subsection. *Needs:* Mathlib `MulDistribMulAction`,
-`FixedPoints.subgroup`, `SemidirectProduct.inl_aut`; Tau Ceti `TauCeti.irreducibleCharacters`,
-`TauCeti.conjNormalFDRep`, `TauCeti.char_conjFDRep`, `TauCeti.inertia`; InductionRestriction
-Layer 1.
+Take the action of `S` on functions `Γ → ℂ` to be Mathlib's `arrowAction` for the action of `S`
+on `Γ`, so `(s · χ)(g) = χ(s⁻¹ • g)`; its action laws are Mathlib's. Define the set `Irr_S(Γ)` of
+`S`-invariant irreducible characters, and take the fixed-point subgroup `C = C_Γ(S)` to be
+Mathlib's `FixedPoints.subgroup S Γ` (glauberman line 94, the conjugate `η^a`; hartley-turull
+line 302). No coprimality is assumed in this subsection. *Needs:* Mathlib `MulDistribMulAction`,
+`arrowAction`, `FixedPoints.subgroup`, `SemidirectProduct.inl_aut`; Tau Ceti
+`TauCeti.irreducibleCharacters`, `TauCeti.conjNormalFDRep`, `TauCeti.char_conjFDRep`,
+`TauCeti.inertia`; InductionRestriction Layer 1.
 
-- The rule `s · χ` is a left action: `1 · χ = χ` and `(s t) · χ = s · (t · χ)`.
-- It preserves class functions, characters, irreducibility, degrees `(s · χ)(1) = χ(1)` and the
-  pairing `[s · χ, s · ψ] = [χ, ψ]`; so `S` permutes `Irr(Γ)` and `Irr_S(Γ)` is the fixed set.
+- The action `s · χ` preserves class functions, characters, irreducibility, degrees
+  `(s · χ)(1) = χ(1)` and the pairing `[s · χ, s · ψ] = [χ, ψ]`; so `S` permutes `Irr(Γ)` and `Irr_S(Γ)` is the fixed set.
 - `s · χ` is the character of the conjugate of a representation affording `χ` by `inr s` in
   `Γ ⋊ S`; hence `χ ∈ Irr_S(Γ)` exactly when the inertia group `TauCeti.inertia` of a
   representation affording `χ` in `Γ ⋊ S` is everything.
@@ -376,7 +383,7 @@ For a finite group `Γ` and `σ ∈ MulAut Γ`, prove that the number of `χ ∈
 equals the number of conjugacy classes `K` with `σ(K) = K`. Consequently, for a cyclic group `A`
 acting on `Γ`, `|Irr_A(Γ)|` equals the number of `A`-invariant classes, and for any finite `A` the
 numbers of `A`-orbits on `Irr(Γ)` and on the classes agree (glauberman line 355, citing Brauer;
-isaacs Theorem 6.32, uncertified). Route: `σ` permutes the rows and the columns of the character
+isaacs Theorem 6.32). Route: `σ` permutes the rows and the columns of the character
 table `X`, giving permutation matrices with `P X = X Q`; `X` is invertible by column
 orthogonality, so `tr P = tr Q`; Burnside's lemma gives the orbit count. *Needs:* Tau Ceti
 `TauCeti.characterTable`, `TauCeti.sum_characterTable_mul_conj`; CharacterTheory §3.5; §1.1.
@@ -415,10 +422,12 @@ implementing the twist, so that `S(a) S(b) = c(a, b) S(a b)` with scalar `c` by 
 hypothesis; with `d(a) = det S(a)`, `e(b) = Π_a c(a, b)`, `r = dim V`, `n = |A|` and `i n + j r = 1`,
 the rescaling by `f(a) = d(a)^j e(a)^i` trivialises `c`, and a final rescaling makes the
 determinants `1`; two such extensions differ by scalars `h(a)` with `h(a)^r = h(a)^n = 1`. No
-finiteness of `Γ` and no coprimality with `|Γ|` is used. The extension obstruction of
-`TauCeti.cliffordObstruction` vanishes under these hypotheses; the theorem adds the normalisation
-and uniqueness. *Needs:* Mathlib `SemidirectProduct`, `LinearMap.det`; InductionRestriction
-Layer 7.
+finiteness of `Γ` and no coprimality with `|Γ|` is used. For `inl(Γ) ⊴ Γ ⋊ A`, where the twist
+hypothesis makes the inertia group of `ρ` everything, the existence part says that the scalar
+extension obstruction of InductionRestriction Layer 7 vanishes (Tau Ceti defines this obstruction
+for simple representations over an algebraically closed field only); the theorem adds the
+normalisation and uniqueness, over every field. *Needs:* Mathlib `SemidirectProduct`,
+`LinearMap.det`; InductionRestriction Layer 7.
 
 - For `B ≤ A`, the restriction of `ρ*` to `Γ ⋊ B` is the normalised extension for `B`.
 - `ρ*` is natural for isomorphisms of `ρ` and commutes with scalar extension of `F`.
@@ -469,9 +478,9 @@ automorphisms of `ℚ(ζ_m)` and `ℚ(ζ_n)` extend to a common automorphism of 
 extension with the same determinant normalisation, hence to `χ̂`; `χ̂(s)` is an algebraic integer
 in `ℚ(χ) ∩ ℚ(ζ_{|S|}) ⊆ ℚ(ζ_{|Γ|}) ∩ ℚ(ζ_{|S|}) = ℚ`. *Needs:* §2.2; Mathlib
 `IsCyclotomicExtension`, `IsPrimitiveRoot.autToPow`, `ZMod.chineseRemainder`, `IsGalois`,
-`IntermediateField.fixedField`, `IsIntegral`; Tau Ceti
-`IsPrimitiveRoot.cyclotomicIrreducibleCharacterAction_apply`, `FDRep.characterField`,
-`Representation.isIntegral_character`; CharacterTheory §4.4.
+`IntermediateField.fixedField`, `IsIntegral`, `Representation.isIntegral_character`; Tau Ceti
+`IsPrimitiveRoot.cyclotomicIrreducibleCharacterAction_apply`, `FDRep.characterField`;
+CharacterTheory §4.4.
 
 **Checks.**
 - `SL(2,3)`: all values of the canonical `χ̂` are rational (`2, −2, 0, −1, 1`), while `χ̂ ω` takes
@@ -483,7 +492,7 @@ in `ℚ(χ) ∩ ℚ(ζ_{|S|}) ⊆ ℚ(ζ_{|Γ|}) ∩ ℚ(ζ_{|S|}) = ℚ`. *Need
 
 Let `N ⊴ G` be finite, `θ ∈ Irr(N)` and `χ̂ ∈ Irr(G)` with `χ̂|_N = θ`. Prove that
 `β ↦ χ̂ · (β ∘ π)`, `π : G → G/N`, is a bijection from `Irr(G/N)` onto `Irr(G | θ)` (glauberman
-line 240, Theorem 2 (c), citing Gallagher; isaacs Corollary 6.17, uncertified). Route: `θ` is
+line 240, Theorem 2 (c), citing Gallagher; isaacs Corollary 6.17). Route: `θ` is
 `G`-invariant, so its inertia group is `G`; a representation affording `χ̂` is a compatible
 extension with trivial factor set, and `tensorRepEquiv`, `isIrreducible_tensorRep_iff` and
 `tmulIntertwining_bijective` identify the irreducible representations of `G` over `θ` with the
@@ -695,11 +704,11 @@ every finite solvable `S` acting on it coprimely, of a bijection
 irreducible constituent of `χ|_C` of multiplicity prime to `p`; and
 `π(Γ, S)(χ) = π(C_Γ(T), S/T)(π(Γ, T)(χ))` for every `T ⊴ S`, where `π(Γ, T)(χ)` is
 `S/T`-invariant by §4.4 (glauberman line 543, Theorem 4, line 601, Corollaries 7–8; spath-vallejo
-line 118 and line 129 for the compatibility law; navarro-2018, Chapter 2, uncertified, for the
+line 118 and line 129 for the compatibility law; navarro-2018, Chapter 2, for the
 uniqueness formulation). For a `p`-group `S` prove further that for every `χ ∈ Irr_S(Γ)` there is
 exactly one `λ ∈ Irr(C)` with `p ∤ [χ|_C, λ]`, that `[χ|_C, λ] ≡ ±1 (mod p)` and that
 `[χ|_C, μ] ≡ 0 (mod p)` for all other `μ ∈ Irr(C)` (glauberman line 540, Theorem 4 (a); isaacs,
-Chapter 13, uncertified). Define the **Glauberman correspondence** by `θ* = π(Γ, S)(θ)`. Route:
+Chapter 13). Define the **Glauberman correspondence** by `θ* = π(Γ, S)(θ)`. Route:
 existence with `π(Γ, S) = Λ⁻¹` (§§4.3–4.4), the compatibility law by choosing a composition
 series through `T`, the `p`-group property from §4.2; uniqueness by induction on `|S|` through a
 normal subgroup `T` of prime index, which exists for solvable `S ≠ 1`, the factor `π(C_Γ(T), S/T)`
@@ -834,8 +843,8 @@ Tau Ceti `TauCeti.Representation.isIntegral_centralCharacter_classSumCenter`.
 
 Let `B` be a block of `G` with defect group `D`, `|G|_p = p^a`, `|D| = p^d`. Prove that
 `p^{a−d} ∣ χ(1)` for every `χ ∈ Irr(B)` and that some `χ ∈ Irr(B)` has `ν(χ(1)) = a − d`
-(martinez line 728, Theorem 3.4, proof lines 783–831; mnst line 51; navarro-1998, Chapter 3,
-uncertified; feit, Chapter IV, uncertified). Route: for a defect class `𝒞 = Cl(x)`,
+(martinez line 728, Theorem 3.4, proof lines 783–831; mnst line 51; navarro-1998, Chapter 3;
+feit, Chapter IV). Route: for a defect class `𝒞 = Cl(x)`,
 `ν(|𝒞|) = a − d`; `λ_B(𝒞⁺) ≠ 0` makes `ω_χ(𝒞⁺) = |𝒞| χ(x)/χ(1)` a unit, so `|𝒞|/χ(1) ∉ m` and
 `ν(|𝒞|) ≤ ν(χ(1))`; `a_B(𝒞) ≠ 0` and Osima's formula with `Φ_φ(1)/|G| ∈ O` give `φ(x⁻¹)` a unit for
 some `φ ∈ IBr(B)`, hence `χ(x⁻¹)` a unit for some `χ ∈ Irr(B)` (every Brauer character of `B` is
@@ -1051,7 +1060,7 @@ Tau Ceti Clifford theory.
 ### 8.1 Vanishing off the defect groups
 
 For `χ ∈ Irr(B)` and `g ∈ G` whose `p`-part lies in no defect group of `B`, prove `χ(g) = 0`
-(martinez line 2011, Theorem 8.10; navarro-1998, Theorem 5.9, uncertified). Route: write
+(martinez line 2011, Theorem 8.10; navarro-1998, Theorem 5.9). Route: write
 `χ(u v) = Σ_φ d^u_{χφ} φ(v)` with `u` the `p`-part; a nonzero `d^u_{χφ}`, `φ ∈ IBr(b)`, makes
 `(⟨u⟩, b)` a `B`-Brauer pair by the second main theorem, contained in a maximal one whose first
 component is a defect group. *Needs:* base §§5.1, 6.3, 7.2.
@@ -1072,8 +1081,9 @@ and to `0` otherwise, is in `Irr(B)`, and `ξ ↦ θ_ξ` is a bijection `Irr(P) 
 `{ν(ξ(1)) : ξ ∈ Irr(P)}` (martinez line 2018, Theorem 8.11, and line 2131, Corollary 8.12;
 reynolds line 509, Theorem 7). Route: every block of `G/P` dominated by `B` has defect zero
 (§7.3); two such blocks coincide, since their central characters vanish on `p`-singular classes
-and agree on `p`-regular ones, a `p`-regular class of `G` meeting `x P` only in `x` because
-`p`-regular elements centralise `P`; so `θ` is unique and `IBr(B) = {θ⁰}` by domination. For
+(a character of defect zero is the projective character `Φ_{χ⁰}` of base §3.1, which vanishes on
+`p`-singular elements) and agree on `p`-regular ones, a `p`-regular class of `G` meeting `x P`
+only in `x` because `p`-regular elements centralise `P`; so `θ` is unique and `IBr(B) = {θ⁰}` by domination. For
 `χ ∈ Irr(B)`, `χ|_P = e ξ` (`G` acts on `Irr(P)` through inner automorphisms of `P`),
 `χ(g) = d_{χθ⁰} ξ(1)⁻¹ θ(g_{p'}) ξ(g_p)` by §8.1 and the direct product `⟨g_{p'}⟩ × P`, and
 `[χ, χ] = 1` gives `d_{χθ⁰} = ξ(1)`; surjectivity because `Φ_{θ⁰} = Σ_{χ ∈ Irr(B)} ξ_χ(1) χ`
@@ -1098,10 +1108,11 @@ for `χ ∈ Irr(B)` lying over `θ_ξ ∈ Irr(b)`, `ξ ∈ Irr(D)`, `h(χ) ≥ �
 some `χ ∈ Irr(B)` (§7.2). Route: `χ = ψ^G` with `ψ ∈ Irr(T | θ_ξ)` (Clifford, `G_{θ_ξ} ≤ T`),
 `θ_ξ(1) ∣ ψ(1)`, `ν(|G : D|) = ν(|G : T|) + ν(|N : D|)`. Prove further Reynolds' height formula:
 `h(χ) = ν(ξ(1))` for every irreducible constituent `ξ` of `χ|_D`, so the set of heights of `B` is
-`{ν(ξ(1)) : ξ ∈ Irr(D)}` (reynolds line 531, Theorem 8; martinez line 2131), using the recorded
-gap clifford-multiplicity-dvd-index to make `ψ(1)/θ_ξ(1)` prime to `p`. *Needs:* §§7.2, 7.6, 8.2;
-Tau Ceti `FDRep.cliffordCorrespondence`, `FDRep.clifford_restrict_dvd_finrank`; gap
-clifford-multiplicity-dvd-index for the height formula.
+`{ν(ξ(1)) : ξ ∈ Irr(D)}` (reynolds line 531, Theorem 8; martinez line 2131), using
+gap:clifford-multiplicity-dvd-index (applied to `N ⊴ T`) to make `ψ(1)/θ_ξ(1)` prime to `p`.
+*Needs:* §§7.2, 7.6, 8.2; Tau Ceti `FDRep.cliffordCorrespondence`,
+`FDRep.clifford_restrict_dvd_finrank`; gap:clifford-multiplicity-dvd-index (InductionRestriction
+Layer 7) for the height formula.
 
 **Checks.**
 - `SL(2,3)`, `p = 2`, `D = Q₈`: heights `{0, 1} = {ν(1), ν(2)}`; the three-dimensional character
@@ -1113,13 +1124,16 @@ clifford-multiplicity-dvd-index for the height formula.
 ### 8.4 Reynolds' theorem
 
 Let `B` be a block of `G` with a normal defect group `D`. Prove that `Irr(B) = Irr₀(B)` exactly when
-`D` is abelian (reynolds line 542, Theorem 9; martinez line 2328, Theorem 9.8). Route: if all
-heights vanish, §8.3 gives `ν(ξ(1)) = 0` for every `ξ ∈ Irr(D)`, so every irreducible character of
-the `p`-group `D` is linear and `D` is abelian; if `D` is abelian, Itô's theorem (recorded gap
-ito-abelian-normal-degree) gives `ν(χ(1)) ≤ ν(|G : D|)`, and §6.2 gives the reverse inequality.
-*Needs:* §§6.2, 8.3; gap ito-abelian-normal-degree; Tau Ceti `TauCeti.card_irreducibleCharacters`
-and CharacterTheory §2.1 (the sum of the squares of the degrees is `|D|`), for "all characters
-linear implies abelian".
+`D` is abelian (reynolds line 542, Theorem 9, a corollary of Theorem 8; martinez line 2328,
+Theorem 9.8). Route: both directions come from §8.3. If all heights vanish, the bound
+`h(χ) ≥ ν(ξ(1))` and the fact that every `θ_ξ` lies under some `χ ∈ Irr(B)` give `ν(ξ(1)) = 0` for
+every `ξ ∈ Irr(D)`; since `ξ(1)` divides the `p`-power `|D|`, every `ξ` is linear, so `D` has
+`|D|` irreducible characters, hence `|D|` conjugacy classes, and is abelian. If `D` is abelian, it
+has `|D|` classes, so `|D|` irreducible characters whose squared degrees sum to `|D|`; every
+`ξ ∈ Irr(D)` is linear and the height formula of §8.3 gives `h(χ) = ν(ξ(1)) = 0` for every
+`χ ∈ Irr(B)`. *Needs:* §§6.3, 8.3; Tau Ceti `TauCeti.card_irreducibleCharacters`,
+`TauCeti.Representation.finrank_dvd_card`; CharacterTheory §2.1 (the sum of the squares of the
+degrees is `|D|`).
 
 **Checks.**
 - Blocks of defect zero (`D = 1`): `Irr(B) = {χ} = Irr₀(B)`.
@@ -1137,8 +1151,9 @@ linear implies abelian".
 
 ### Dependencies
 
-Layers 6–7; base §§3.1, 4.2, 5.1, 6.2–6.3, 7.2, 8.1; Tau Ceti Clifford theory; the recorded gaps
-ito-abelian-normal-degree and clifford-multiplicity-dvd-index.
+Layers 6–7; base §§3.1, 4.2, 5.1, 6.2–6.3, 7.2, 8.1; Tau Ceti Clifford theory, character counts
+and degrees; CharacterTheory §2.1; gap:clifford-multiplicity-dvd-index (InductionRestriction
+Layer 7).
 
 ## Layer 9: the height zero and Alperin–McKay conjectures
 
@@ -1212,7 +1227,7 @@ GlaubermanZStar consumes the base only.
   the compatibility law (lines 118–130).
 - W. F. Reynolds, *Blocks and normal subgroups of finite groups*, Nagoya Math. J. 22 (1963),
   15–32: height (line 60), Theorems 1–2 (lines 133, 149), Theorem 7 (line 509), Theorems 8–9
-  (lines 531, 542).
+  (lines 531, 542), and the projective-degree step in the proof of Theorem 8 (line 538).
 - J. M. Martínez, *Modular representation theory of finite groups*, course notes, Firenze 2024:
   §2.1 (lines 351–566), §3.1–3.2 (lines 696–831), Lemma 4.4 (line 984), Lecture 7 (lines
   1582–1870), Theorems 8.5, 8.8, 8.10, 8.11 and Corollary 8.12 (lines 1928–2131), Lecture 9
@@ -1225,7 +1240,7 @@ GlaubermanZStar consumes the base only.
   Ann. of Math. 200 (2024): Theorem A (line 70).
 - L. Ruhstorfer, *The Alperin–McKay and Brauer's height zero conjecture for the prime 2*,
   Ann. of Math. 201 (2025): Theorem A (line 20), Corollary B (line 33).
-- I. M. Isaacs, *Character Theory of Finite Groups*, 1976 (cited by locator: Theorems 3.12, 6.15,
+- I. M. Isaacs, *Character Theory of Finite Groups*, 1976 (cited by locator: Theorems 3.12,
   6.32, Corollaries 6.17, 11.29, Chapter 13).
 - G. Navarro, *Characters and Blocks of Finite Groups*, 1998 (cited by locator: Chapter 3,
   Theorem 5.9); *Character Theory and the McKay Conjecture*, 2018 (cited by locator: Chapter 2).
