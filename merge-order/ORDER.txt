@@ -373,6 +373,7 @@ SporadicOrders
 GeometryOfNumbersAndQuadraticArithmeticPartII
 ExponentialSumsAndCircleMethodPartII
 HyperellipticCurves
+AbelianVarietiesOverFiniteFields
 AbelianSurfacesModularity
 DeRhamCohomologyAndDuality
 PadicExtensionFamilies
