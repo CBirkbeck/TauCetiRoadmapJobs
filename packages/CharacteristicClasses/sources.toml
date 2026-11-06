@@ -85,10 +85,10 @@ authors = "John Milnor"
 title = "Construction of Universal Bundles, II"
 year = 1956
 doi = "10.2307/1970012"
-url = "https://doi.org/10.2307/1970012"
-licence_class = "none"
 locator_scheme = "section"
 locator = "2-3"
+url = "https://doi.org/10.2307/1970012"
+licence_class = "none"
 status = "uncertified"
 cited_for = ["C1.1b"]
 note = "Annals of Mathematics 63 (1956) 430-436; the JSTOR landing page is paywalled, cited by locator only"
@@ -99,22 +99,50 @@ authors = "John Milnor, James D. Stasheff"
 title = "Characteristic Classes"
 year = 1974
 doi = "10.1515/9781400881826"
-url = "https://doi.org/10.1515/9781400881826"
-licence_class = "none"
 locator_scheme = "section"
 locator = "19"
+url = "https://doi.org/10.1515/9781400881826"
+licence_class = "none"
 status = "uncertified"
 cited_for = ["C2.1", "C3.2", "C7.1"]
 note = "Annals of Mathematics Studies 76, Princeton University Press; no legal open copy, cited by locator only (sections 10, 14, 19, Theorem 15.3)"
 
 [[source]]
 id = "milnor-tdv"
-licence_class = "none"
 authors = "John Milnor"
 title = "Topology from the Differentiable Viewpoint"
 year = 1965
 locator_scheme = "section"
 locator = "6"
+licence_class = "none"
 status = "uncertified"
 cited_for = ["C2.3"]
 note = "University Press of Virginia 1965, Princeton Landmarks reprint 1997; no DOI located and no legal open copy, cited by locator only"
+
+[[source]]
+id = "cohen-fiber-bundles"
+locator_scheme = "section"
+locator = "1.2.2, 3.4.2"
+url = "https://math.stanford.edu/~ralph/fiber.pdf"
+fetched_from = "https://math.stanford.edu/~ralph/fiber.pdf"
+fetched_at = "2026-11-06T08:49:54Z"
+sha256 = "1416c4bf496b7e5f6c9d0c569ac42a298dfb6157db66968c189a0fd08b8ccf78"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-06"
+cited_for = ["C7.3a"]
+
+[[source]]
+id = "bott-tu"
+authors = "Raoul Bott, Loring W. Tu"
+title = "Differential Forms in Algebraic Topology"
+year = 1982
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4757-3951-0"
+locator_scheme = "section"
+locator = "6, 11-14, 20-23"
+url = "https://doi.org/10.1007/978-1-4757-3951-0"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["C2.1"]
