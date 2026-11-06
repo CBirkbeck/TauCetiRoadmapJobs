@@ -5352,30 +5352,6 @@
       "section": "RG2.3.3"
     },
     {
-      "slug": "scheme-local-model-representative",
-      "needs": "For a local-model triple over a p-adic field F satisfying p>2, local abelian type, and essentially tame classical adjoint factors without triality, the normalized flat projective scheme Mloc of KPZ26 (3.2.13), with reduced special fibre and generic flag variety, represents the intrinsic integral v-sheaf local model; retain its functorial adjoint and restriction-of-scalars comparisons (KPZ26, Theorem 3.2.15 and §3.4.2, pp.20 and 28; KPZ26 line 895).",
-      "supplier": "GeometricSatakeAndFusion",
-      "section": "GS0, Bounded admissible affine flag loci"
-    },
-    {
-      "slug": "scheme-local-model-hodge-immersion",
-      "needs": "For a quasi-tame local-model triple with G=∏Res_{K_i/F}H_i, each H_i tamely split and classical, p odd, and a Hodge embedding ρ factoring as KPZ26 (3.3.24), some repeated sum ρ^⊕m with m≥1 admits a lattice Λ, a quasi-parahoric 𝒢′ with (𝒢′)°=𝒢°, and a closed local-model immersion into Gr(d,Λ) over the reflex integers, with the specified full-fixer cases of Remark 3.3.26 and the standard division-algebra representations in its proof (KPZ26, Theorem 3.3.25, p.26; KPZ26 lines 1125–1140 and 3100–3106).",
-      "supplier": "GeometricSatakeAndFusion",
-      "section": "GS0, Bounded admissible affine flag loci"
-    },
-    {
-      "slug": "schubert-curve-spanned-tangents",
-      "needs": "For a mod-p abelian-type pair (G,μ) over k with p∤|π₁(Gder)| and no Dᴴ factors, every tangent space of the affine Schubert variety S_μ is spanned by tangent images of smooth formal k[[t]]-curves through that point (KPZ26, Theorem 4.1.6, p.31; KPZ26 lines 1363–1365).",
-      "supplier": "GeometricSatakeAndFusion",
-      "section": "GS0, Bounded admissible affine flag loci"
-    },
-    {
-      "slug": "local-model-curve-spanned-tangents",
-      "needs": "Under the standard assumptions p>2, local abelian type and essentially tame classical adjoint factors, if 𝒢≅Res_{O_K/O_F}ℋ for ℋ/O_K reductive, the tangent spaces of the special-fibre local model are spanned by smooth formal curves at every point of the minimal stratum, and at every point when there are no Dᴴ factors (KPZ26, Theorem 4.4.3, p.47; KPZ26 lines 2049–2055).",
-      "supplier": "GeometricSatakeAndFusion",
-      "section": "GS0, Bounded admissible affine flag loci"
-    },
-    {
       "slug": "integral-hodge-realization-extension",
       "needs": "For a complete mixed-characteristic DVR O_K with perfect residue field and an abelian scheme A/O_K, prove that the rational étale and de Rham realizations of an absolute Hodge tensor of A_K agree under the crystalline–de Rham comparison for H¹(A_K), with mixed tensors, duals and Tate twists; neither the existence of an integral moduli model nor integral tensor extension is an input to this rational comparison.",
       "supplier": "ShimuraVarieties",
