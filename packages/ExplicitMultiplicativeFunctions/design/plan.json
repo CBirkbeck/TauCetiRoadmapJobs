@@ -1,0 +1,2170 @@
+{
+ "roadmap": "ExplicitMultiplicativeFunctions",
+ "title": "Explicit multiplicative functions",
+ "parent": null,
+ "summary": "The numerically explicit layer of multiplicative number theory on Mathlib's ArithmeticFunction carrier: explicit bounds for the summatory functions M, m, m̌ of the Möbius function (with semigroup restrictions and character twists) and the general conversion theorems behind them (Meissel–MacLeod–Balazard identities, Balazard's conversion, Ramaré's prime-to-Möbius transfer with every finite computation named), the convolution comparison theorem with its models, explicit upper bounds for averages of nonnegative multiplicative functions, the explicit averages of μ², μ²/φ, τ, τ_k, τ², 2^ω, φ, the explicit Mertens and tilted Euler products, and the pointwise bounds for ω, τ_k, σ, σ*; every analytic input is a parameter or a named Prop and every published constant is an instance.",
+ "baseline": {
+  "mathlib": "1b1ccf4b088b32fa3f23f2de1127433254a81e1e",
+  "tauceti": "2fd255d997f47c0b5d834ee416c7015d55444ce5"
+ },
+ "layers": [
+  {
+   "key": "0",
+   "title": "Carriers, elementary remainders and computational hypotheses",
+   "targets": [
+    {
+     "id": "0.1",
+     "kind": "definition",
+     "name": "moebiusSum",
+     "statement": "M(x) = Σ_{n ≤ x} μ(n), m(x) = Σ_{n ≤ x} μ(n)/n, m̌(x) = Σ_{n ≤ x} μ(n) log(x/n)/n as functions ℝ → ℝ over Finset.Icc 1 ⌊x⌋₊ (zero for x < 1), and M_k(f, x) = Σ_{n ≤ x} f(n) log^k n.",
+     "hypotheses": [
+      "x : ℝ"
+     ],
+     "locator": {
+      "source": "balazard2012",
+      "where": "lines 87–91 and 296–314 (definitions of m, M, m₁)"
+     },
+     "prerequisites": [
+      "mathlib:ArithmeticFunction.moebius",
+      "mathlib:Nat.floor",
+      "mathlib:sum_mul_eq_sub_sub_integral_mul"
+     ],
+     "api": [
+      {
+       "name": "step",
+       "role": "structure",
+       "statement": "M is constant on [N, N+1) with M(N) − M(N−1) = μ(N); m likewise with μ(N)/N"
+      },
+      {
+       "name": "logSum_eq_integral",
+       "role": "evaluation",
+       "statement": "m̌(x) = ∫_1^x m(t) dt/t for x ≥ 1, and m̌(x) = m(x) log x − Σ_{n ≤ x} μ(n) log n/n"
+      },
+      {
+       "name": "abel",
+       "role": "compatibility",
+       "statement": "m(x) = M(x)/x + ∫_1^x M(t) dt/t² for x ≥ 1 by Mathlib's Abel summation"
+      },
+      {
+       "name": "agree_nat",
+       "role": "compatibility",
+       "statement": "M(N) = Σ_{n ∈ Finset.Icc 1 N} μ n for natural N and M(x) = M(⌊x⌋₊)"
+      }
+     ],
+     "tests": [
+      {
+       "name": "values",
+       "kind": "computation",
+       "statement": "M(1)=1, M(2)=0, M(5)=−2, M(13)=−3, M(10^6)=212; m(7)=−1/105; m̌(2)=log 2, m̌(30)=1.00302…"
+      },
+      {
+       "name": "below_one",
+       "kind": "degenerate",
+       "statement": "M(0.5)=0, m(0.5)=0, m̌(1)=0"
+      },
+      {
+       "name": "not_step",
+       "kind": "non-example",
+       "statement": "m̌(1.5)=log 1.5 ≠ m̌(1): m̌ is not a step function; a definition over Finset.range would give M(1)=0"
+      }
+     ]
+    },
+    {
+     "id": "0.2",
+     "kind": "definition",
+     "name": "moebiusSumIn",
+     "statement": "For a set S of primes, factoredBy S n := n ≠ 0 ∧ ∀ p ∈ n.primeFactors, p ∈ S; M_S, m_S, m̌_S the sums restricted to factoredBy S; M_q etc. the instance S_q = {p : ¬ p ∣ q}; excludedWeight S = ∏_{p ∉ S}(1 − 1/p)⁻¹ when finitely many primes are excluded.",
+     "hypotheses": [
+      "S : Set ℕ of primes",
+      "for excludedWeight: finitely many primes outside S"
+     ],
+     "locator": {
+      "source": "ramare2015mc",
+      "where": "lines 224–230 (the convolution g_q) and 248–274 (Lemma 1.9)"
+     },
+     "prerequisites": [
+      "mathlib:Nat.factoredNumbers",
+      "mathlib:Nat.primeFactors",
+      "mathlib:Nat.totient",
+      "target:0.1"
+     ],
+     "api": [
+      {
+       "name": "factoredBy_one",
+       "role": "evaluation",
+       "statement": "factoredBy S 1 for every S; factoredBy ∅ n ↔ n = 1"
+      },
+      {
+       "name": "modulus_instance",
+       "role": "compatibility",
+       "statement": "factoredBy S_q n ↔ n ≠ 0 ∧ Nat.Coprime n q, hence M_q(x) = Σ_{n ≤ x, (n,q)=1} μ(n) and M_1 = M"
+      },
+      {
+       "name": "convolution_decomposition",
+       "role": "structure",
+       "statement": "1_{(n,q)=1} μ = g_q ⋆ μ with g_q(p^k)=1 for p ∣ q, 0 otherwise; m_q(x) = Σ_{a ≤ x, a ∣ q^∞} m(x/a)/a; M_q(x) = Σ_{a ≤ x, a ∣ q^∞} M(x/a)"
+      },
+      {
+       "name": "excludedWeight_modulus",
+       "role": "evaluation",
+       "statement": "excludedWeight S_q = q/φ(q); the weight of the set of all primes is 1"
+      }
+     ],
+     "tests": [
+      {
+       "name": "S_two",
+       "kind": "computation",
+       "statement": "S = {2}: M_S(x) = 0 for x ≥ 2, m_S(x) = 1/2 for x ≥ 2"
+      },
+      {
+       "name": "m2_ten",
+       "kind": "computation",
+       "statement": "m_2(10) = 1 − 1/3 − 1/5 − 1/7 = 34/105, and the decomposition m(10)+m(5)/2+m(2)/4+m(1)/8 gives 34/105"
+      },
+      {
+       "name": "weights",
+       "kind": "computation",
+       "statement": "excludedWeight S_6 = 3, excludedWeight S_1 = 1"
+      },
+      {
+       "name": "infinite_excluded",
+       "kind": "non-example",
+       "statement": "S with infinitely many excluded primes has no excludedWeight; every coprime bound carries the finiteness hypothesis"
+      }
+     ]
+    },
+    {
+     "id": "0.3",
+     "kind": "theorem",
+     "name": "harmonicRemainder_bounds",
+     "statement": "R₁(X) = Σ_{n ≤ X} 1/n − log X − γ satisfies |R₁(X)| ≤ γ/X for X > 0, |R₁(X)| ≤ 6/(11X) for X ≥ 1, Σ_{n ≤ t} 1/n = log t + γ + O*(0.9105 t^{−1/3}) for t > 0, and 0 < H_N − log N − γ < 1/N for natural N ≥ 1.",
+     "hypotheses": [
+      "X > 0, resp. X ≥ 1, t > 0, N ≥ 1"
+     ],
+     "locator": {
+      "source": "akhileshRamare2017",
+      "where": "lines 319–338, Lemma 2.1; ramare1995 Lemma 3.3 (first part)"
+     },
+     "prerequisites": [
+      "mathlib:harmonic_le_one_add_log",
+      "mathlib:log_add_one_le_harmonic",
+      "mathlib:Real.eulerMascheroniSeq_lt_eulerMascheroniConstant",
+      "mathlib:Real.eulerMascheroniConstant_lt_eulerMascheroniSeq'",
+      "roadmap:AnalyticNumberTheoryPartI §3.22a"
+     ],
+     "tests": [
+      {
+       "name": "X_one",
+       "kind": "computation",
+       "statement": "R₁(1) = 1 − γ = 0.4227 ≤ 6/11"
+      },
+      {
+       "name": "empty_sum",
+       "kind": "degenerate",
+       "statement": "X = 1/2: R₁ = log 2 − γ = 0.1159 ≤ γ/X = 1.154"
+      },
+      {
+       "name": "cube_root",
+       "kind": "characterisation",
+       "statement": "t = 1/8: log 8 − γ = 1.502 ≤ 0.9105·2 = 1.821; 3 exp(−4/3) = 0.9104 is the least admissible constant on (0,1)"
+      }
+     ]
+    },
+    {
+     "id": "0.4",
+     "kind": "theorem",
+     "name": "sum_id_le",
+     "statement": "For X ≥ 0 and c ∈ [1, 2], Σ_{q ≤ X} q = X²/2 + O*(X^c/2).",
+     "hypotheses": [
+      "0 ≤ X",
+      "1 ≤ c ≤ 2"
+     ],
+     "locator": {
+      "source": "ramare2016mc",
+      "where": "lines 540–562, Lemma 4.3"
+     },
+     "prerequisites": [
+      "mathlib:Finset.sum_range_id_mul_two"
+     ],
+     "tests": [
+      {
+       "name": "X_one",
+       "kind": "computation",
+       "statement": "X = 1, c = 1: equality 1 = 1/2 + 1/2"
+      },
+      {
+       "name": "small_X",
+       "kind": "degenerate",
+       "statement": "X = 1/2: 0 vs 1/8 ≤ X^c/2; c = 3 would fail"
+      },
+      {
+       "name": "near_three",
+       "kind": "computation",
+       "statement": "X = 2.999, c = 1: 3 − 4.497 = −1.497, within 1.4995"
+      }
+     ]
+    },
+    {
+     "id": "0.5",
+     "kind": "definition",
+     "name": "squarefreeRemainder",
+     "statement": "R(x) = Σ_{n ≤ x} μ²(n) − 6x/π², Δ(x) = Σ_{n ≤ x} τ(n) − x(log x + 2γ − 1), σ*(n) = Σ_{d ∣ n, (d, n/d)=1} d, and γ₁ = lim (Σ_{n ≤ N} log n/n − ½ log² N) (existence proved).",
+     "hypotheses": [
+      "x > 0 for R, Δ"
+     ],
+     "locator": {
+      "source": "berkaneBordellesRamare2012",
+      "where": "lines 55–68 (Δ), 187–189 (γ₁); moserMacLeod1966 line 10 (R)"
+     },
+     "prerequisites": [
+      "mathlib:ArithmeticFunction.sigma_zero_apply",
+      "mathlib:hasSum_zeta_two",
+      "mathlib:Nat.Coprime",
+      "target:0.3"
+     ],
+     "api": [
+      {
+       "name": "R_step",
+       "role": "structure",
+       "statement": "R(x) = R(⌊x⌋) − 6(x − ⌊x⌋)/π²; Δ continuous off integers with derivative −(log x + 2γ)"
+      },
+      {
+       "name": "unitarySigma_mult",
+       "role": "structure",
+       "statement": "σ* multiplicative, σ*(p^a) = p^a + 1, σ*(n) ≤ σ(n) with equality iff n squarefree"
+      },
+      {
+       "name": "gammaOne_asymp",
+       "role": "evaluation",
+       "statement": "Σ_{n ≤ N} log n/n = ½ log² N + γ₁ + O(log N/N); the constant term of Σ_{n ≤ t} τ(n)/n is γ² − 2γ₁"
+      }
+     ],
+     "tests": [
+      {
+       "name": "R_values",
+       "kind": "computation",
+       "statement": "R(1) = 0.392, R(4) = 0.568, R(176) = −0.995 (Q(176) = 106)"
+      },
+      {
+       "name": "Delta_values",
+       "kind": "computation",
+       "statement": "Δ(1) = 2 − 2γ = 0.8456, Δ(4) = 1.837; Δ(1980) > 0.5√1980"
+      },
+      {
+       "name": "unitary",
+       "kind": "computation",
+       "statement": "σ*(12) = 20 ≠ σ(12) = 28; σ*(30) = 72 = σ(30); σ*(8) = 9"
+      },
+      {
+       "name": "gammaOne_sign",
+       "kind": "characterisation",
+       "statement": "Σ_{n ≤ 10^6} τ(n)/n − ½log²10^6 − 2γ log 10^6 = 0.47890 matches γ² − 2γ₁ = 0.47881, not γ² − γ₁ = 0.40599"
+      }
+     ]
+    },
+    {
+     "id": "0.6",
+     "kind": "definition",
+     "name": "localFactor",
+     "statement": "For multiplicative h with H̄(s₀) < ∞ at some s₀ < 0: localFactor h p s = Σ_ν h(p^ν) p^{−νs}; H(s) = ∏_p localFactor h p s; H'(s)/H(s) = Σ_p ℓ_p'/ℓ_p and H''(s) = H(s)[(Σ ℓ_p'/ℓ_p)² + Σ (ℓ_p''/ℓ_p − (ℓ_p'/ℓ_p)²)] when H(s) ≠ 0, with H(0) = Σ h(n), H'(0) = −Σ h(n) log n, H''(0) = Σ h(n) log² n, H̄(−1/3) = Σ |h(n)| n^{1/3}.",
+     "hypotheses": [
+      "h multiplicative",
+      "H̄ converges at some s₀ < 0",
+      "s ≥ s₀"
+     ],
+     "locator": {
+      "source": "ramare1995",
+      "where": "lines 526–548 (OCR) and the termwise differentiation of absolutely convergent Dirichlet series"
+     },
+     "prerequisites": [
+      "mathlib:EulerProduct.eulerProduct_hasProd",
+      "mathlib:Real.summable_nat_rpow_inv",
+      "tauceti:ArithmeticDirichletSeries.EulerProduct.localArithmeticFactor"
+     ],
+     "api": [
+      {
+       "name": "euler_product",
+       "role": "structure",
+       "statement": "H(s) = ∏_p localFactor h p s absolutely for s ≥ s₀"
+      },
+      {
+       "name": "log_deriv",
+       "role": "evaluation",
+       "statement": "the displayed formulas for H' and H'' in terms of the local factors"
+      },
+      {
+       "name": "tauceti_compat",
+       "role": "compatibility",
+       "statement": "at K = ℚ, Tau Ceti's localArithmeticFactor at (p) evaluated at p^{−s} is localFactor h p s"
+      }
+     ],
+     "tests": [
+      {
+       "name": "delta",
+       "kind": "degenerate",
+       "statement": "h = δ: every local factor is 1, H ≡ 1, H' = H'' = 0, H̄(−1/3) = 1"
+      },
+      {
+       "name": "mu_over_square",
+       "kind": "computation",
+       "statement": "h = μ/n²: H(0) = 6/π², H'(0) = (6/π²)Σ_p log p/(p²−1) = 0.3465 > 0"
+      },
+      {
+       "name": "mu_over_n",
+       "kind": "non-example",
+       "statement": "h = μ/n has H̄ divergent at 0; outside the hypothesis"
+      }
+     ]
+    },
+    {
+     "id": "0.7",
+     "kind": "definition",
+     "name": "MoebiusTableVerified",
+     "statement": "The Prop hypotheses: MoebiusTableVerified c H (|M(x)| ≤ c√x on [33, H]); MoebiusRangeVerified/MoebiusDivRangeVerified/MoebiusLogRangeVerified ε a b; MoebiusAbsIntegralLE D₀ I; RamareTransferComputations (fields (i)–(viii)); SquarefreeRangeVerified, SquarefreeIntegralRangeVerified; DivisorRangeVerified, PiltzRangeVerified; StieltjesGammaOneEnclosure; EulerGammaEnclosure d; MeisselMertensConstantEnclosure; ArithmeticalConstantsEnclosure; SuperiorTableVerified k ε₁ ε₂ λ, PrimorialTableVerified, SuperchampionTableVerified; PolyaVinogradovBound χ P; ProgressionProductTableVerified; MertensProductInitialRangeVerified; each a Prop with range and constant as data, monotone in the range and antitone in the constant.",
+     "hypotheses": [
+      "none; these are definitions"
+     ],
+     "locator": {
+      "source": "hurst2018",
+      "where": "lines 420–426 (the 0.571 table); ramare2015mc lines 461–478 (Lemmas 2.2–2.3); ramare2013aa lines 553–565, 633–637, 677–678, 707–725, 759"
+     },
+     "prerequisites": [
+      "target:0.1",
+      "target:0.5",
+      "mathlib:Real.eulerMascheroniConstant",
+      "tauceti:mertensConstant",
+      "roadmap:ComputationalNumberTheory §4.17a"
+     ],
+     "api": [
+      {
+       "name": "mono_range",
+       "role": "structure",
+       "statement": "each Prop is implied by the same Prop with a larger range or a smaller constant"
+      },
+      {
+       "name": "instances",
+       "role": "evaluation",
+       "statement": "MoebiusTableVerified 0.571 10^16 → MoebiusTableVerified 0.571 10^12"
+      },
+      {
+       "name": "not_a_theorem",
+       "role": "compatibility",
+       "statement": "EulerGammaEnclosure d is not derivable from Mathlib's 1/2 < γ < 2/3 for d ≥ 2"
+      }
+     ],
+     "tests": [
+      {
+       "name": "vacuous",
+       "kind": "degenerate",
+       "statement": "MoebiusTableVerified c H with H < 33 is vacuous; MoebiusAbsIntegralLE 1 0 holds, MoebiusAbsIntegralLE 2 0 fails"
+      },
+      {
+       "name": "sharp_constant",
+       "kind": "non-example",
+       "statement": "MoebiusTableVerified 0.5 10^16 is false: |M(7766842813)|/√(7766842813) = 0.571"
+      },
+      {
+       "name": "gamma_digits",
+       "kind": "characterisation",
+       "statement": "Mathlib's bounds give |γ − 0.577| ≤ 0.09 only"
+      },
+      {
+       "name": "gammaOne_sign",
+       "kind": "non-example",
+       "statement": "StieltjesGammaOneEnclosure with +0.0728 contradicts the Dirichlet-divisor witness"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "1",
+   "title": "The Mertens function M(x)",
+   "targets": [
+    {
+     "id": "1.1",
+     "kind": "theorem",
+     "name": "balazard_identity",
+     "statement": "Meissel: Σ_{n ≤ x} μ(n)⌊x/n⌋ = 1 (x ≥ 1); MacLeod: Σ_{n ≤ x} μ(n) macleodPhi k (x/n) = k(1 − 1/x)^{k−1} (k ≥ 1, x ≥ 1); Balazard: m(x) = M(x)/x + 4(1−1/x)²/x − 4(1−1/x)³/(3x) + (1/x)∫_1^x M(x/t) ε₁'(t) dt with 0 ≤ ε₁' ≤ 1/t²; El Marraki: ∫_1^D ⌊D/t⌋ M(t) dt/t = log D; Ramaré's weight passage (Lemma 8.1).",
+     "hypotheses": [
+      "x ≥ 1",
+      "k ≥ 1",
+      "D ≥ D₀ ≥ 1, D₀ > 1 when k ≥ 1"
+     ],
+     "locator": {
+      "source": "balazard2012",
+      "where": "lines 81–84 (Meissel), 180–200 (Prop. 1), 428–470 (Props 6–7, identity (2.1)); ramare2013aa lines 696–704 (Lemma 8.1), 736–746"
+     },
+     "prerequisites": [
+      "mathlib:ArithmeticFunction.moebius_mul_coe_zeta",
+      "mathlib:Polynomial.bernoulli",
+      "mathlib:sum_mul_eq_sub_sub_integral_mul",
+      "target:0.1"
+     ],
+     "tests": [
+      {
+       "name": "meissel_small",
+       "kind": "computation",
+       "statement": "x = 2.5: 2 − 1 = 1; x = 6: 6 − 3 − 2 − 1 + 1 = 1"
+      },
+      {
+       "name": "balazard_x2",
+       "kind": "computation",
+       "statement": "x = 2: 1/2 = 0 + 5/12 + (1/2)(ε₁(2) − ε₁(1)) = 5/12 + 1/12"
+      },
+      {
+       "name": "elmarraki_D3",
+       "kind": "computation",
+       "statement": "D = 3: 2 log 1.5 + log(4/3) = log 3"
+      },
+      {
+       "name": "lemma81_delta",
+       "kind": "degenerate",
+       "statement": "f = δ: M_k(δ,D) = 0 for k ≥ 1 and the identity reads 1 = 1"
+      }
+     ]
+    },
+    {
+     "id": "1.2",
+     "kind": "theorem",
+     "name": "moebiusSum_linear_elementary",
+     "statement": "|M(x)| ≤ x/80 for x ≥ 1119 and |M(x)| ≤ (x+1)/80 + 11/2 for x ≥ 0 (MacLeod); |M(x)| ≤ x/1036 for x ≥ 120 727 (Costa Pereira), under the finite-range Props of the sources.",
+     "hypotheses": [
+      "x ≥ 1119, resp. x ≥ 0, resp. x ≥ 120 727",
+      "MoebiusRangeVerified instances"
+     ],
+     "locator": {
+      "source": "macleod1967",
+      "where": "lines 24–29, (4)–(5) with macleod1969errata lines 14–17; costaPereira1989 lines 793–803"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:0.7",
+      "gap:psi-relative-large",
+      "gap:psi-initial-range"
+     ],
+     "tests": [
+      {
+       "name": "slack",
+       "kind": "computation",
+       "statement": "max_{1 ≤ x ≤ 1118}(|M(x)| − x/80) = 5.5125 = 1/80 + 11/2"
+      },
+      {
+       "name": "false_variant",
+       "kind": "non-example",
+       "statement": "|M(x)| ≤ x/80 + 5 for all x fails (5.5125 > 5)"
+      },
+      {
+       "name": "million",
+       "kind": "computation",
+       "statement": "|M(10^6)| = 212 ≤ 965"
+      }
+     ]
+    },
+    {
+     "id": "1.3",
+     "kind": "theorem",
+     "name": "moebiusSum_linear_table",
+     "statement": "Under MoebiusTableVerified 0.571 10^12 and the sources' direct verification Prop: |M(x)| ≤ x/2360 for x ≥ 617 973 and |M(x)| ≤ x/4345 for x ≥ 2 160 535; and the tail lemma: |M(x)| ≤ A x/log x for x ≥ X₁ implies |M(x)| ≤ x/B for x ≥ max(X₁, e^{AB}).",
+     "hypotheses": [
+      "MoebiusTableVerified 0.571 10^12",
+      "MoebiusRangeVerified (x ↦ x/4345) 2 160 535 X_CDEM"
+     ],
+     "locator": {
+      "source": "cohenDressElMarraki2007",
+      "where": "Theorem 1 (uncertified); quoted at ramare2013aa lines 262–265 and elMarraki1995 lines 231–244 (Théorème 1)"
+     },
+     "prerequisites": [
+      "target:0.7",
+      "target:1.4"
+     ],
+     "tests": [
+      {
+       "name": "table_range",
+       "kind": "computation",
+       "statement": "0.571√x ≤ x/4345 iff x ≥ 6.16·10^6: the range below is the direct verification"
+      },
+      {
+       "name": "tail_threshold",
+       "kind": "computation",
+       "statement": "A = 0.0130, B = 4345 gives e^{56.5}: the tail lemma alone does not cover [10^12, e^{56.5}]"
+      },
+      {
+       "name": "million",
+       "kind": "computation",
+       "statement": "10^6/4345 = 230 ≥ 212"
+      }
+     ]
+    },
+    {
+     "id": "1.4",
+     "kind": "theorem",
+     "name": "moebiusSum_div_log",
+     "statement": "|M(x)| < 0.10917 x/log x for x ≥ 685; |M(x)| ≤ 0.6437752 x/log x for x > 1; |M(x)| ≤ 362.7 x/log² x for x > 1 (El Marraki), under the 1/4345 bound and a Chebyshev bound |ψ(x) − x| ≤ 0.00776291 x/log x for x > e^22; Schoenfeld's 2.9 x/log x for x > 1 as a corollary.",
+     "hypotheses": [
+      "x ≥ 685, resp. x > 1",
+      "target 1.3",
+      "gap:psi-dusart-log"
+     ],
+     "locator": {
+      "source": "elMarraki1995",
+      "where": "Théorème 2 (4.6), its Corollaire, Théorème 3 (OCR text); quoted at bordelles2015 lines 64–66; schoenfeld1969 lines 52–57"
+     },
+     "prerequisites": [
+      "target:1.3",
+      "gap:psi-dusart-log",
+      "target:0.7"
+     ],
+     "tests": [
+      {
+       "name": "sup_constant",
+       "kind": "computation",
+       "statement": "max_{1<x≤3000} log x |M(x)|/x = 0.6437751…: the Corollaire's constant is the supremum to seven digits"
+      },
+      {
+       "name": "threshold_685",
+       "kind": "computation",
+       "statement": "0.10917·685/log 685 = 11.45 ≥ |M(685)|; at x = 13 the bound 0.553 < 3 fails"
+      },
+      {
+       "name": "schoenfeld",
+       "kind": "compatibility",
+       "statement": "0.6437752 < 2.9"
+      }
+     ]
+    },
+    {
+     "id": "1.5",
+     "kind": "theorem",
+     "name": "moebius_of_prime_estimates",
+     "statement": "Selberg's identity μ·log² = μ ⋆ (Λ⋆Λ − Λ·log); the Selberg remainder R₂*; the hyperbola decomposition and the Chebyshev decomposition of R₂*; the parametric estimates (Lemmas 5.1, 5.2, 6.1, 7.2, 8.1 schemes with all constants as parameters); the instance: under gap:psi-ratio-max, gap:psi-initial-range, gap:psi-dusart-log, gap:psi-relative-large, gap:psi-tilde-explicit, MoebiusTableVerified 0.571 10^12, the 1/4345 bound, the 0.7√D squarefree remainder, Σ μ²(d)/d ≤ (6/π²) log y + 1.166 and RamareTransferComputations: |M(D)| ≤ (0.0130/log D − 0.118/log² D) D for D ≥ 1 078 853, and |M(D)| ≤ 0.013 D/log D for D ≥ 1 100 000.",
+     "hypotheses": [
+      "the listed gaps and Props",
+      "D ≥ 1 078 853"
+     ],
+     "locator": {
+      "source": "ramare2013aa",
+      "where": "lines 50–51 (Theorem 1.1), 171–197 (3.3)–(3.4), 357–383 (Lemma 5.1), 471–550 (Lemma 6.2), 587–646 (7.1)–(7.2), 680–725 (Lemmas 7.2, 8.1)"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:0.7",
+      "target:1.3",
+      "target:7.1",
+      "target:7.2",
+      "gap:psi-ratio-max",
+      "gap:psi-initial-range",
+      "gap:psi-dusart-log",
+      "gap:psi-relative-large",
+      "gap:psi-tilde-explicit",
+      "mathlib:ArithmeticFunction.vonMangoldt_mul_zeta"
+     ],
+     "tests": [
+      {
+       "name": "selberg_pointwise",
+       "kind": "computation",
+       "statement": "at n = p: −log² p both sides; at n = p²: 0 both sides; at n = pq: (log p + log q)² both sides"
+      },
+      {
+       "name": "uncorrected_input",
+       "kind": "non-example",
+       "statement": "at x = 23, ψ̃(23) − log 23 + γ = 0.053 > 0.0067/log 23 = 0.0021: the printed range x ≥ 23 is false"
+      },
+      {
+       "name": "absorption",
+       "kind": "characterisation",
+       "statement": "0.144 − 2·0.0130 = 0.118"
+      },
+      {
+       "name": "threshold_value",
+       "kind": "computation",
+       "statement": "at D = 1 078 853 the bound is 349.6"
+      }
+     ]
+    },
+    {
+     "id": "1.6",
+     "kind": "theorem",
+     "name": "moebiusSum_coprime",
+     "statement": "For S excluding finitely many primes: M_S(x) = Σ_{a ≤ x, a ∈ ⟨Sᶜ⟩} M(x/a); (1 + log(x/q))|M_q(x)|/x ≤ q/φ(q) for 1 ≤ q < x; Ramaré's Theorems 1.18–1.19 rows (0.997, 0.429 from 490, 1/5 from 4536, 0.0918 from 48 513; and 1, 1/2 from 490, 1/5 from 7100, 39/400 from 48 645) with φ(q)/q replaceable by ∏_{p∣q}(1+1/p)⁻¹, stated for ⟨S⟩ with w_S; de Camargo's constants under their own Prop.",
+     "hypotheses": [
+      "1 ≤ q < x",
+      "finitely many excluded primes",
+      "MoebiusRangeVerified instances"
+     ],
+     "locator": {
+      "source": "ramare2015mc",
+      "where": "lines 407–432, Theorems 1.18–1.19; deCamargo2025 (uncertified)"
+     },
+     "prerequisites": [
+      "target:0.2",
+      "target:1.5",
+      "target:0.7"
+     ],
+     "tests": [
+      {
+       "name": "q_one",
+       "kind": "compatibility",
+       "statement": "q = 1: log x |M(x)|/x ≤ 0.997 for x > 1; the maximum over (1, 3000] is 0.6438"
+      },
+      {
+       "name": "q_two",
+       "kind": "computation",
+       "statement": "M_2(5) = −1, (1/2) log(5/2)/5 = 0.092"
+      },
+      {
+       "name": "all_primes_excluded",
+       "kind": "non-example",
+       "statement": "q = ∏_{p ≤ x} p gives M_q(x) = 1 and log(x/q) < 0: the factor q/φ(q) and x > q are needed"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "2",
+   "title": "The logarithmic sum m(x)",
+   "targets": [
+    {
+     "id": "2.1",
+     "kind": "theorem",
+     "name": "moebius_div_le_one",
+     "statement": "For every set S of primes and real x, |Σ_{n ∈ ⟨S⟩, n ≤ x} μ(n)/n| ≤ 1; −1 + 2/x ≤ m(x) for natural x ≥ 1; for r ≥ 1, ε ≥ 0: |Σ_{d ≤ x, (d,r)=1} μ(d)/d^{1+ε}| ≤ 1 + ε and ≥ −(11/15)(1 + ε).",
+     "hypotheses": [
+      "none beyond S a set of primes; r ≥ 1, ε ≥ 0"
+     ],
+     "locator": {
+      "source": "tao2010",
+      "where": "lines 111–140, Theorem 1.1; ramare2013facm lines 21–38, Theorem 1.1"
+     },
+     "prerequisites": [
+      "target:0.2",
+      "mathlib:ArithmeticFunction.moebius_mul_coe_zeta",
+      "mathlib:Nat.factoredNumbers"
+     ],
+     "tests": [
+      {
+       "name": "empty_S",
+       "kind": "degenerate",
+       "statement": "S = ∅: m_S(x) = 1 for x ≥ 1 (equality); x < 1: 0 ≤ 1"
+      },
+      {
+       "name": "S_23",
+       "kind": "computation",
+       "statement": "S = {2,3}, x = 6: 1 − 1/2 − 1/3 + 1/6 = 1/3"
+      },
+      {
+       "name": "not_semigroup",
+       "kind": "non-example",
+       "statement": "the sum over A = {1, 6} is 7/6 > 1: the semigroup structure is needed"
+      }
+     ]
+    },
+    {
+     "id": "2.2",
+     "kind": "theorem",
+     "name": "moebius_div_of_moebiusSum",
+     "statement": "|m(x)| ≤ |M(x)|/x + x⁻²∫_1^x |M(t)| dt + 8/(3x) for x ≥ 1 (Balazard); |m(D)| ≤ |M(D)|/D + D⁻¹∫_1^D |M(t)| dt/t + log D/D for D ≥ 1 (El Marraki); the derived theorems from a bound |M(t)| ≤ ε(t) t on [t₀, D] with ε nonincreasing and a table below t₀.",
+     "hypotheses": [
+      "x ≥ 1",
+      "ε nonincreasing"
+     ],
+     "locator": {
+      "source": "ramare2015mc",
+      "where": "lines 91–95, Theorem 1.1; balazard2012 lines 444–448, Proposition 7; ramare2013aa lines 728–759, Lemma 9.1"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:0.1"
+     ],
+     "tests": [
+      {
+       "name": "x_one_two",
+       "kind": "computation",
+       "statement": "x = 1: 1 ≤ 1 + 8/3; x = 2: 1/2 ≤ 1/4 + 4/3"
+      },
+      {
+       "name": "elmarraki_D2",
+       "kind": "computation",
+       "statement": "D = 2: 1/2 ≤ log 2"
+      },
+      {
+       "name": "asymptotic_constants",
+       "kind": "characterisation",
+       "statement": "constant ε ≡ α: Balazard's route gives limsup|m| ≤ 3α/2, El Marraki's 2α"
+      }
+     ]
+    },
+    {
+     "id": "2.3",
+     "kind": "theorem",
+     "name": "moebius_div_thresholds",
+     "statement": "|m(x)| ≤ 0.0144/log x − 0.1/log² x for x ≥ 463 421 (Theorem 1.2), under MoebiusAbsIntegralLE 1 078 853 113 556 832, target 1.5 and MoebiusDivRangeVerified; the rows (log x)|m(x)| ≤ 1/12 (687), 1/20 (3355), 1/25 (3470), 1/40 (24 270), 1/65 (96 018), 1/69 (96 955), and |m(x)| ≤ 1 (1), 1/10 (7), 1/20 (41), 1/100 (1419); Ramaré 2013's 0.0260/log D − 0.118/log² D for D ≥ 60 298 with its rounded forms; Bordellès' 0.19/log x (x ≥ 33) and 546/log² x (x > 1); El Marraki's 0.2185 and 726 as corollaries.",
+     "hypotheses": [
+      "the listed Props",
+      "the stated thresholds"
+     ],
+     "locator": {
+      "source": "ramare2015mc",
+      "where": "lines 116–152 (Theorem 1.2, Corollary 1.3, with three thresholds corrected: 1/20 from 3355, 1/65 from 96 018, 1/100 from 1419); ramare2013aa lines 56–65; bordelles2015 lines 76–77"
+     },
+     "prerequisites": [
+      "target:1.5",
+      "target:1.4",
+      "target:2.2",
+      "target:0.7"
+     ],
+     "tests": [
+      {
+       "name": "corrected_thresholds",
+       "kind": "computation",
+       "statement": "last x with |m(x)| > 1/100 is 1418 (ten violations in [1106, 1418], max 0.011657 at 1109); last x with log x|m(x)| > 1/20 is 3354 (max 0.0648 at 2837); last with > 1/65 is 96 017"
+      },
+      {
+       "name": "exact_rows",
+       "kind": "computation",
+       "statement": "1/12: last violation 686; 1/25: 3461; 1/40: 24 269; 1/69: 96 954"
+      },
+      {
+       "name": "small_thresholds",
+       "kind": "computation",
+       "statement": "m(6) = 2/15 > 1/10, m(7) = −1/105; m(40) = 0.0505 > 1/20, m(41) = 0.0261"
+      },
+      {
+       "name": "cor12_holds",
+       "kind": "computation",
+       "statement": "Ramaré 2013 Corollary 1.2 has no violation on [60 298, 1.2·10^6]"
+      }
+     ]
+    },
+    {
+     "id": "2.4",
+     "kind": "theorem",
+     "name": "moebius_div_coprime",
+     "statement": "m_S(x) = Σ_{a ≤ x, a ∈ ⟨Sᶜ⟩} m(x/a)/a; Ramaré's Lemma 1.9; Theorems 1.12–1.13 (0.78, 5/16 from 687, 17/125 from 24 233; 1.694, 1/2 from 296, 5/38 from 882, 1/7 from 11 811) for 1 ≤ q < x; the 2(q/φ(q))/log(x/q) bound; Bordellès' |m_k(x)| < (k/φ(k)) C_m/log²(e x k^{−m}) for x ≥ k^m with C_m = 1100(1 + 4e⁻¹√ζ(m+1/2))²; de Camargo's 0.3055 under its Prop.",
+     "hypotheses": [
+      "1 ≤ q < x",
+      "finitely many excluded primes",
+      "MoebiusDivRangeVerified instances"
+     ],
+     "locator": {
+      "source": "ramare2015mc",
+      "where": "lines 248–274 (Lemma 1.9), 297–325 (Theorems 1.12–1.13); ramare2014aa lines 74–81; bordelles2015 lines 88–100"
+     },
+     "prerequisites": [
+      "target:0.2",
+      "target:2.3",
+      "target:0.7"
+     ],
+     "tests": [
+      {
+       "name": "q_one",
+       "kind": "compatibility",
+       "statement": "q = 1: log x |m(x)| ≤ 0.78 with maximum 0.3466 at x = 2"
+      },
+      {
+       "name": "m2_ten",
+       "kind": "computation",
+       "statement": "m_2(10) = 34/105 and (1/2) log 5 · 34/105 = 0.2606"
+      },
+      {
+       "name": "C_m",
+       "kind": "computation",
+       "statement": "C₁ = 12 554.9 (⌈C₁⌉ = 12 555), C₁₀ = 6722"
+      },
+      {
+       "name": "x_le_q",
+       "kind": "non-example",
+       "statement": "q the product of all primes ≤ x: m_q(x) = 1, log(x/q) < 0"
+      }
+     ]
+    },
+    {
+     "id": "2.5",
+     "kind": "theorem",
+     "name": "moebius_div_sq_tail",
+     "statement": "|Σ_{d > D} μ(d)/d²| ≤ 1/D for every real D ≥ 1.",
+     "hypotheses": [
+      "D ≥ 1",
+      "MoebiusRangeVerified for 1 ≤ D < 1119"
+     ],
+     "locator": {
+      "source": "trevino2015jnt",
+      "where": "Claim 3.1 (uncertified); proof via Abel summation and MacLeod's x/80"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "mathlib:hasSum_zeta_two",
+      "target:0.7"
+     ],
+     "tests": [
+      {
+       "name": "D_one",
+       "kind": "computation",
+       "statement": "|6/π² − 1| = 0.392 ≤ 1"
+      },
+      {
+       "name": "cancellation_needed",
+       "kind": "non-example",
+       "statement": "D = 1.9: Σ_{d ≥ 2} 1/d² = 0.645 > 1/1.9 = 0.526 while the true tail is 0.392"
+      },
+      {
+       "name": "checked_range",
+       "kind": "computation",
+       "statement": "no violation for D ∈ [1, 5000] at the worst points D → (N+1)⁻"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "3",
+   "title": "The logarithmically weighted sum m̌(x)",
+   "targets": [
+    {
+     "id": "3.1",
+     "kind": "theorem",
+     "name": "moebius_logWeighted_integral_bound",
+     "statement": "m̌(x) − 1 = (6 − 8γ)/(3x) − (5 − 4γ)/x² + (6 − 4γ)/(3x⁴) + (1/x)∫_1^x M(x/t) h'(t) dt with h' = (3/2 − γ)ε₁' − g', |t²h'(t)| ≤ 7/4 − γ; hence |m̌(x) − 1| ≤ ((7/4 − γ)/x²)∫_1^x |M(t)| dt + 2/x for x ≥ 1 (Theorem 1.4), and the derived bound from |M(t)| ≤ ε(t)t on [t₀, x] with ∫_1^{t₀}|M| ≤ I.",
+     "hypotheses": [
+      "x ≥ 1"
+     ],
+     "locator": {
+      "source": "ramare2015mc",
+      "where": "lines 155–163 (Theorem 1.4), 652–689 (Lemma 3.2, sign corrected by ramare2015corr lines 13–19; middle coefficient 5 − 4γ as derived from line 661)"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:0.1",
+      "mathlib:Polynomial.bernoulli",
+      "target:0.7"
+     ],
+     "tests": [
+      {
+       "name": "x_one",
+       "kind": "computation",
+       "statement": "polynomial part (6−8γ)/3 − (5−4γ) + (6−4γ)/3 = −1 = m̌(1) − 1; with 6 − 4γ it would be −2"
+      },
+      {
+       "name": "x_two",
+       "kind": "computation",
+       "statement": "polynomial part −0.3655, so ∫_1^2 h' = 0.117 ∈ [−0.125, 0.586]"
+      },
+      {
+       "name": "inequality_x2",
+       "kind": "computation",
+       "statement": "|log 2 − 1| = 0.3069 ≤ 0.293 + 1"
+      }
+     ]
+    },
+    {
+     "id": "3.2",
+     "kind": "theorem",
+     "name": "moebius_logWeighted_thresholds",
+     "statement": "|m̌(x) − 1| ≤ 0.00140/log x for x ≥ 9950; |m̌(x) − 1| log x ≤ 0.213 (x ≥ 1), 0.0203 (x ≥ 16), 1/396 (x ≥ 3162), 1/714 (x ≥ 9549); |m̌(x) − 1| ≤ 1 (x ≥ 1), 1/125 (x ≥ 7), 1/500 (x ≥ 44), 1/1250 (x ≥ 222).",
+     "hypotheses": [
+      "MoebiusAbsIntegralLE 464 402 30 016 365",
+      "target 1.5",
+      "MoebiusLogRangeVerified instances"
+     ],
+     "locator": {
+      "source": "ramare2015corr",
+      "where": "lines 20–32 (corrected Theorem 1.5); ramare2015mc lines 179–190 (Corollary 1.6)"
+     },
+     "prerequisites": [
+      "target:3.1",
+      "target:1.5",
+      "target:0.7"
+     ],
+     "tests": [
+      {
+       "name": "all_rows_checked",
+       "kind": "computation",
+       "statement": "no violation up to 10^6 at integers and left limits"
+      },
+      {
+       "name": "threshold_7",
+       "kind": "computation",
+       "statement": "|m̌(7) − 1| = 0.0045 ≤ 1/125, |m̌(6) − 1| = 0.0251 > 1/125"
+      },
+      {
+       "name": "sharp_first_row",
+       "kind": "computation",
+       "statement": "x = 2: 0.3069·0.693 = 0.2127 ≤ 0.213"
+      }
+     ]
+    },
+    {
+     "id": "3.3",
+     "kind": "theorem",
+     "name": "moebius_logWeighted_coprime_nonneg",
+     "statement": "0 ≤ m̌_q(x) ≤ 1.00303 q/φ(q) for q ≥ 1, x ≥ 1 (and for ⟨S⟩ with w_S); Balazard's 0 ≤ m̌(x) ≤ m̌(30); Ramaré's mollified bound |Σ_{d ≤ x,(d,r)=1} μ(d) log(x/d)/d^{1+ε}| ≤ 1.4 + 4.7ε + 3.3ε² + (1+ε)(r^{1+ε}/φ_{1+ε}(r)) x^ε for 0 ≤ ε ≤ 1.38.",
+     "hypotheses": [
+      "q ≥ 1, x ≥ 1",
+      "0 ≤ ε ≤ 1.38, r ≥ 1"
+     ],
+     "locator": {
+      "source": "ramare2015mc",
+      "where": "lines 278–285, Corollary 1.10; ramare2013facm lines 54–62, Theorem 1.2"
+     },
+     "prerequisites": [
+      "target:0.2",
+      "target:2.1",
+      "target:3.1",
+      "target:3.2"
+     ],
+     "tests": [
+      {
+       "name": "optimal",
+       "kind": "computation",
+       "statement": "m̌(30) = 1.00302 ≤ 1.00303; m̌(1) = 0"
+      },
+      {
+       "name": "q_two",
+       "kind": "computation",
+       "statement": "m̌_2(4) = 1.290 ≤ 2.006"
+      },
+      {
+       "name": "mollified_eps0",
+       "kind": "compatibility",
+       "statement": "ε = 0, r = 1 gives 2.4, weaker than 1.00303"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "4",
+   "title": "Character twists",
+   "targets": [
+    {
+     "id": "4.1",
+     "kind": "theorem",
+     "name": "moebius_twisted_div",
+     "statement": "For χ ≠ 1 modulo q, PolyaVinogradovBound χ P, x ≥ 1: |Σ_{n ≤ x} μ(n)χ(n)/n| ≤ (1 + 2P)/|L(1,χ)| and |Σ_{n ≤ x,(n,k)=1} μ(n)χ(n)/n| ≤ (k/φ(k))(1 + 2P)/|L(1,χ)|; for q ≥ 37 and P ≤ √q log q − 1/2 the bound (k/φ(k)) 2√q log q/|L(1,χ)|.",
+     "hypotheses": [
+      "χ ≠ 1",
+      "PolyaVinogradovBound χ P",
+      "x ≥ 1, k ≥ 1"
+     ],
+     "locator": {
+      "source": "bordelles2015",
+      "where": "lines 105–107 (Proposition 3) and 606–625 (its proof); bordelles2005 page 4 (uncertified)"
+     },
+     "prerequisites": [
+      "mathlib:DirichletCharacter.LFunction_apply_one_ne_zero",
+      "mathlib:DirichletCharacter.LFunction",
+      "mathlib:sum_mul_eq_sub_sub_integral_mul",
+      "target:0.2",
+      "target:0.7"
+     ],
+     "tests": [
+      {
+       "name": "trivial_excluded",
+       "kind": "degenerate",
+       "statement": "χ = 1 is excluded: L(1,χ) is the pole of ζ"
+      },
+      {
+       "name": "mod3",
+       "kind": "computation",
+       "statement": "q = 3, P = 1, L(1,χ) = π/(3√3): bound 4.96; partial sums 1, 3/2, 1.7"
+      },
+      {
+       "name": "mod4",
+       "kind": "computation",
+       "statement": "q = 4, P = 1, L(1,χ) = π/4: bound 3.82; partial sums 1, 4/3, 1.133"
+      },
+      {
+       "name": "k_factor",
+       "kind": "computation",
+       "statement": "k = 6: factor 3"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "5",
+   "title": "The convolution method",
+   "targets": [
+    {
+     "id": "5.1",
+     "kind": "theorem",
+     "name": "convolution_comparison",
+     "statement": "If g = h ⋆ k, H̄(−1/3) < ∞ and Σ_{n ≤ t} k(n) = A log² t + B log t + C + O*(D t^{−1/3}) for all t > 0, then Σ_{n ≤ t} g(n) = u log² t + v log t + w + O*(D t^{−1/3} H̄(−1/3)) with u = AH(0), v = 2AH'(0) + BH(0), w = AH''(0) + BH'(0) + CH(0); and Σ_{n ≤ t} n g(n) = U t log t + V t + O*(2.5 D t^{2/3} H̄(−1/3)) with U = 2AH(0), V = 2AH'(0) + BH(0) − 2AH(0).",
+     "hypotheses": [
+      "g = h ⋆ k",
+      "H̄(−1/3) < ∞",
+      "the model asymptotic for all t > 0"
+     ],
+     "locator": {
+      "source": "ramare1995",
+      "where": "Lemma 3.2 (OCR text lines 474–491); the weighted leading coefficient restated as 2AH(0)"
+     },
+     "prerequisites": [
+      "target:0.6",
+      "mathlib:sum_mul_eq_sub_integral_mul₀"
+     ],
+     "tests": [
+      {
+       "name": "h_delta",
+       "kind": "degenerate",
+       "statement": "h = δ: the conclusion is the hypothesis"
+      },
+      {
+       "name": "weighted_witness",
+       "kind": "characterisation",
+       "statement": "h = δ, k = τ/n: Σ_{n ≤ t} τ(n) = t log t + (2γ−1)t + …, so U = 1 = 2AH(0), not AH(0) = 1/2"
+      },
+      {
+       "name": "divergent_H",
+       "kind": "non-example",
+       "statement": "h = μ/n: H̄(−1/3) = ∞, nothing is asserted"
+      }
+     ]
+    },
+    {
+     "id": "5.2",
+     "kind": "theorem",
+     "name": "divisor_div_model",
+     "statement": "Σ_{n ≤ t} 1/n = log t + γ + O*(0.9105 t^{−1/3}) and Σ_{n ≤ t} τ(n)/n = ½ log² t + 2γ log t + γ² − 2γ₁ + O*(1.16 t^{−1/3}) for all t > 0; the constant γ² − 2γ₁ settled by the Laurent expansion of ζ(1+s)².",
+     "hypotheses": [
+      "t > 0",
+      "StieltjesGammaOneEnclosure only for the decimal value"
+     ],
+     "locator": {
+      "source": "berkaneBordellesRamare2012",
+      "where": "lines 182–189, Corollary 2.2 (constant term read as γ² − 2γ₁); trudgian2015 lines 426–432"
+     },
+     "prerequisites": [
+      "target:0.3",
+      "target:0.5",
+      "target:7.4",
+      "mathlib:sum_mul_eq_sub_sub_integral_mul"
+     ],
+     "tests": [
+      {
+       "name": "million",
+       "kind": "computation",
+       "statement": "Σ_{n ≤ 10^6} τ(n)/n − ½log² − 2γ log = 0.47890 vs γ² − 2γ₁ = 0.47881 (and 0.40599 for γ² − γ₁)"
+      },
+      {
+       "name": "t_one",
+       "kind": "computation",
+       "statement": "|1 − 0.4788| = 0.521 ≤ 1.16"
+      },
+      {
+       "name": "t_half",
+       "kind": "degenerate",
+       "statement": "t = 1/2: |−0.081| ≤ 1.46"
+      },
+      {
+       "name": "t_two",
+       "kind": "computation",
+       "statement": "|2 − 1.519| ≤ 0.92"
+      }
+     ]
+    },
+    {
+     "id": "5.3",
+     "kind": "theorem",
+     "name": "second_model",
+     "statement": "For c ∈ [1,2] with H̄(c) < ∞ and t > 0: Σ_{n ≤ t} Σ_{d ∣ n} (n/d) h(d) = (t²/2) H(2) + O*(t^c H̄(c)/2).",
+     "hypotheses": [
+      "1 ≤ c ≤ 2",
+      "H̄(c) < ∞",
+      "t > 0"
+     ],
+     "locator": {
+      "source": "ramare2016mc",
+      "where": "lines 539–543, Lemma 4.3 with the scheme of ramare1995 Lemma 3.2"
+     },
+     "prerequisites": [
+      "target:0.4"
+     ],
+     "tests": [
+      {
+       "name": "h_delta",
+       "kind": "degenerate",
+       "statement": "h = δ: target 0.4 itself"
+      },
+      {
+       "name": "h_mu",
+       "kind": "non-example",
+       "statement": "h = μ, c = 1: H̄(1) = ∞; c = 2: error not smaller than the main term"
+      },
+      {
+       "name": "c_three",
+       "kind": "non-example",
+       "statement": "c = 3 is outside the range"
+      }
+     ]
+    },
+    {
+     "id": "5.4",
+     "kind": "theorem",
+     "name": "beyond_main_term",
+     "statement": "Akhilesh–Ramaré Theorems 1.3 and 1.4: for g with Σ g(m)/m, Σ g(m) log m/m convergent and ∫_1^∞ |G♯(t)| dt/t < ∞, A₀ ≥ 1 (resp. η ≥ 1), D ≥ 1: Σ_{n ≤ D}(g ⋆ 1)(n)/n = Σ_m (g(m)/m)(log(D/m) + γ) + ∫_{D/A₀}^∞ G♯(t)dt/t + O*(ℛ) (resp. ∫_{ηD}^∞ G♯ dt/t − (γ − log η)G♯(ηD) + O*((γ/D)Σ_{m ≤ ηD}|g(m)|), 6/11 for η = 1), with ℛ as displayed.",
+     "hypotheses": [
+      "the convergence hypotheses",
+      "A₀ ≥ 1 resp. η ≥ 1",
+      "D ≥ 1"
+     ],
+     "locator": {
+      "source": "akhileshRamare2017",
+      "where": "lines 135–171 (Theorem 1.3, Lemma 2.1), 202–224 (Theorem 1.4)"
+     },
+     "prerequisites": [
+      "target:0.3",
+      "target:0.1"
+     ],
+     "tests": [
+      {
+       "name": "g_delta",
+       "kind": "degenerate",
+       "statement": "g = δ: the harmonic remainder with ℛ = 6/(11D)"
+      },
+      {
+       "name": "g_mu",
+       "kind": "characterisation",
+       "statement": "g = μ: left side 1, main term 1, integral → 0"
+      },
+      {
+       "name": "no_integrability",
+       "kind": "non-example",
+       "statement": "without ∫|G♯|dt/t < ∞ the integral term is undefined; g = 1 is excluded"
+      }
+     ]
+    },
+    {
+     "id": "5.5",
+     "kind": "theorem",
+     "name": "levinFainleib_explicit",
+     "statement": "For g ≥ 0 multiplicative with |Σ_{p^ν ≤ Q} g(p^ν) log p^ν − κ log Q| ≤ L (Q ≥ 1) and Σ_p Σ_{ν,k ≥ 1} g(p^k)g(p^ν) log p^ν ≤ A: Σ_{d ≤ D} g(d) = C (log D)^κ (1 + O*(B/log D)) for D ≥ exp(2(L + A)), B = 2(L+A)(1 + 2(κ+1)e^{κ+1}), C = Γ(κ+1)⁻¹ ∏_p (Σ_ν g(p^ν))(1 − 1/p)^κ.",
+     "hypotheses": [
+      "g ≥ 0 multiplicative",
+      "the two prime-sum hypotheses",
+      "D ≥ exp(2(L + A))"
+     ],
+     "locator": {
+      "source": "ramare2009",
+      "where": "Theorem 21.1 (uncertified)"
+     },
+     "prerequisites": [
+      "target:0.6",
+      "mathlib:Real.Gamma",
+      "roadmap:SieveMethodsAndPrimePatterns §1.1",
+      "roadmap:SieveMethodsAndPrimePatterns §0.5",
+      "roadmap:AnalyticNumberTheoryPartI §0.11",
+      "gap:mertens-logp-explicit"
+     ],
+     "tests": [
+      {
+       "name": "mu_sq_over_d",
+       "kind": "compatibility",
+       "statement": "g = μ²/d: κ = 1, C = 6/π², consistent with Σ μ²(d)/d = (6/π²) log D + O(1)"
+      },
+      {
+       "name": "kappa_zero",
+       "kind": "degenerate",
+       "statement": "g = δ: 1 = 1·(log D)⁰ with B = 0"
+      },
+      {
+       "name": "mu_sq_excluded",
+       "kind": "non-example",
+       "statement": "g = μ² with weights log p^ν has unbounded first hypothesis"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "6",
+   "title": "Upper bounds for nonnegative multiplicative functions",
+   "targets": [
+    {
+     "id": "6.1",
+     "kind": "theorem",
+     "name": "sum_div_le_prod",
+     "statement": "For f ≥ 0 multiplicative and y ≥ 1: Σ_{n ≤ y} f(n)/n ≤ ∏_{p ≤ y}(1 + Σ_{1 ≤ m ≤ log y/log p} f(p^m)/p^m) ≤ ∏_{p ≤ y} Σ_{m ≥ 0} f(p^m)/p^m (when convergent); Σ_{n ≤ y} f(n) ≤ y Σ_{n ≤ y} f(n)/n.",
+     "hypotheses": [
+      "f ≥ 0 multiplicative",
+      "y ≥ 1"
+     ],
+     "locator": {
+      "source": "ramare1995",
+      "where": "Lemma 3.1 (the Rankin-type product bound); AnalyticNumberTheoryPartI §3.35a for the indexing"
+     },
+     "prerequisites": [
+      "mathlib:Nat.equivProdNatFactoredNumbers",
+      "mathlib:Finset.prod_le_prod",
+      "roadmap:AnalyticNumberTheoryPartI §3.35a",
+      "roadmap:ProbabilisticAndMetricNumberTheory Layer 3"
+     ],
+     "tests": [
+      {
+       "name": "f_one",
+       "kind": "computation",
+       "statement": "y = 2: 3/2 ≤ 3/2 (equality); y = 3: 11/6 ≤ 2"
+      },
+      {
+       "name": "f_delta",
+       "kind": "degenerate",
+       "statement": "1 ≤ 1"
+      },
+      {
+       "name": "f_tau_lossy",
+       "kind": "characterisation",
+       "statement": "f = τ: the product is ≈ e^{2γ} log² y against ½ log² y"
+      },
+      {
+       "name": "f_id",
+       "kind": "non-example",
+       "statement": "f(n) = n: the finite product holds, the infinite one diverges"
+      }
+     ]
+    },
+    {
+     "id": "6.2",
+     "kind": "theorem",
+     "name": "daboussiRivat_smooth_tail",
+     "statement": "For z ≥ 2, f ≥ 0 multiplicative, S = Σ_{p ≤ z} f(p) log p/(1 + f(p)) > 0, K(t) = log t − 1 + 1/t, log y ≥ S: Σ_{n > y} v_z(n) μ²(n) f(n) ≤ ∏_{p ≤ z}(1 + f(p)) exp(−(log y/log z) K(log y/S)), the matching lower bound for Σ_{n ≤ y}, and the forms for log y ≥ 7S.",
+     "hypotheses": [
+      "z ≥ 2",
+      "S > 0",
+      "log y ≥ S"
+     ],
+     "locator": {
+      "source": "daboussiRivat2001",
+      "where": "lines 302–360, Lemma 4"
+     },
+     "prerequisites": [
+      "mathlib:Nat.smoothNumbers",
+      "target:6.1",
+      "mathlib:Real.add_one_le_exp"
+     ],
+     "tests": [
+      {
+       "name": "f_zero",
+       "kind": "degenerate",
+       "statement": "S = 0 excluded"
+      },
+      {
+       "name": "f_one_z2",
+       "kind": "computation",
+       "statement": "z = 2, y = 2: 0 ≤ 2e^{−0.193} = 1.65 and 2 ≥ 0.35"
+      },
+      {
+       "name": "kernel_sign",
+       "kind": "non-example",
+       "statement": "K(t) = log t − 1 − 1/t would be negative on [1, 3.6]"
+      }
+     ]
+    },
+    {
+     "id": "6.3",
+     "kind": "theorem",
+     "name": "hallTenenbaum",
+     "statement": "For f ≥ 0 multiplicative with Σ_{p ≤ y} f(p) log p ≤ Ay (y ≥ 0) and Σ_p Σ_{ν ≥ 2} f(p^ν) log p^ν/p^ν ≤ B: Σ_{n ≤ x} f(n) ≤ (A + B + 1)(x/log x) Σ_{n ≤ x} f(n)/n for x > 1.",
+     "hypotheses": [
+      "f ≥ 0 multiplicative",
+      "the two hypotheses",
+      "x > 1"
+     ],
+     "locator": {
+      "source": "hallTenenbaum1988",
+      "where": "Theorem 01 (uncertified); proof via Σ f(n) log n and log(x/n) ≤ x/n"
+     },
+     "prerequisites": [
+      "mathlib:Nat.factorization",
+      "mathlib:Real.log_le_sub_one_of_pos",
+      "mathlib:Chebyshev.theta_le_log4_mul_x"
+     ],
+     "tests": [
+      {
+       "name": "f_one",
+       "kind": "computation",
+       "statement": "A = log 4, B ≤ 1.1: ⌊x⌋ ≤ 3.49 (x/log x)(log x + γ + …)"
+      },
+      {
+       "name": "x_two",
+       "kind": "computation",
+       "statement": "right side ≥ 1 + f(2) by the hypothesis at y = 2"
+      },
+      {
+       "name": "x_one",
+       "kind": "degenerate",
+       "statement": "x = 1 excluded; x → 1⁺ gives +∞ on the right"
+      },
+      {
+       "name": "f_p_eq_p",
+       "kind": "non-example",
+       "statement": "f(p) = p violates the first hypothesis"
+      }
+     ]
+    },
+    {
+     "id": "6.4",
+     "kind": "theorem",
+     "name": "bordelles_monotone_local",
+     "statement": "For f ≥ 0 multiplicative with f(p^{a+1}) ≥ f(p^a) for all p, a ≥ 0 and convergent local series: Σ_{n ≤ x} f(n) ≤ x ∏_{p ≤ x}(1 − 1/p)(1 + Σ_{a ≥ 1} f(p^a)/p^a) for x ≥ 1.",
+     "hypotheses": [
+      "monotone local values",
+      "convergent local series",
+      "x ≥ 1"
+     ],
+     "locator": {
+      "source": "bordelles2012",
+      "where": "Theorem 4.28 (uncertified); proof via g = f ⋆ μ ≥ 0"
+     },
+     "prerequisites": [
+      "target:6.1",
+      "mathlib:ArithmeticFunction.coe_moebius_mul_coe_zeta",
+      "mathlib:Nat.floor_le"
+     ],
+     "tests": [
+      {
+       "name": "f_one",
+       "kind": "computation",
+       "statement": "⌊x⌋ ≤ x"
+      },
+      {
+       "name": "f_tau",
+       "kind": "computation",
+       "statement": "x = 2: 3 ≤ 4"
+      },
+      {
+       "name": "f_mu_sq",
+       "kind": "non-example",
+       "statement": "f = μ² is excluded and the bound would be false at x = 1, 2, 3"
+      }
+     ]
+    },
+    {
+     "id": "6.5",
+     "kind": "theorem",
+     "name": "vanLintRichert_coprimality",
+     "statement": "For f ≥ 0 multiplicative, d ≥ 1, x ≥ 1: Σ_{n ≤ x} μ²(n)f(n) ≤ ∏_{p ∣ d}(1 + f(p)) Σ_{n ≤ x,(n,d)=1} μ²(n)f(n) ≤ Σ_{n ≤ x·rad(d)} μ²(n)f(n).",
+     "hypotheses": [
+      "f ≥ 0 multiplicative",
+      "d ≥ 1",
+      "x ≥ 1"
+     ],
+     "locator": {
+      "source": "vanLintRichert1965",
+      "where": "lines 60–90, §1 (OCR'd scan)"
+     },
+     "prerequisites": [
+      "mathlib:Nat.sum_divisors_filter_squarefree",
+      "mathlib:Nat.Coprime"
+     ],
+     "tests": [
+      {
+       "name": "d_one",
+       "kind": "degenerate",
+       "statement": "equalities"
+      },
+      {
+       "name": "f_one_d2_x4",
+       "kind": "computation",
+       "statement": "3 ≤ 4 ≤ 6"
+      },
+      {
+       "name": "rad",
+       "kind": "characterisation",
+       "statement": "d = 4 gives the same numbers as d = 2; x·d = 16 would give 11"
+      },
+      {
+       "name": "no_mu_sq",
+       "kind": "non-example",
+       "statement": "f(2) = 1, f(4) = 5: left 8 > middle 4 without squarefreeness"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "7",
+   "title": "Explicit averages of the classical functions",
+   "targets": [
+    {
+     "id": "7.1",
+     "kind": "theorem",
+     "name": "squarefree_remainder",
+     "statement": "|R(x)| ≤ √x (x ≥ 1), |R(x)| < √x/2 (x ≥ 8); Cohen–Dress local bounds; under SquarefreeRangeVerified: |R(x)| ≤ 0.1333√x (x ≥ 1664), 0.036438√x (x ≥ 82 005), 0.02767√x (x ≥ 438 653), −0.103229√x ≤ R(x) ≤ 0.679091√x (x ≥ 1); |R(x)| ≤ 1.06√(x/log x) for x > 1.",
+     "hypotheses": [
+      "x in the stated ranges",
+      "SquarefreeRangeVerified, SquarefreeIntegralRangeVerified"
+     ],
+     "locator": {
+      "source": "moserMacLeod1966",
+      "where": "lines 12–14, 81 (9); cohenDressElMarraki2007 (uncertified) as quoted at cipu2015 lines 622–629; ramare2019bcp lines 219–225 (Corollary 3.4)"
+     },
+     "prerequisites": [
+      "mathlib:Nat.sum_divisors_filter_squarefree",
+      "target:2.5",
+      "target:1.4",
+      "target:7.2",
+      "target:0.7"
+     ],
+     "tests": [
+      {
+       "name": "values",
+       "kind": "computation",
+       "statement": "R(1) = 0.392 ≤ 1; R(8) = 1.14 ≤ 1.41; R(176) = −0.995"
+      },
+      {
+       "name": "threshold_8",
+       "kind": "non-example",
+       "statement": "R(3) = 1.18 > √3/2 = 0.866"
+      },
+      {
+       "name": "crossover",
+       "kind": "characterisation",
+       "statement": "1.06√(x/log x) ≤ 0.1333√x iff x ≥ e^{63.2}"
+      }
+     ]
+    },
+    {
+     "id": "7.2",
+     "kind": "theorem",
+     "name": "squarefree_reciprocal",
+     "statement": "(6/π²) log N + 0.578 ≤ Σ_{n ≤ N} μ²(n)/n ≤ (6/π²) log N + 1.166 (N ≥ 1), (1.040, 1.048) for N ≥ 1000; Σ_{d ≤ D} μ²(d)/d = (6/π²)(log D + C₂) + O*(7/(20√D log D)) (D ≥ 1665) and O*(0.073/√D) (D ≥ 3475); Σ_{d ≤ D} μ²(d)/φ(d) = log D + c₀ + O*(11/(√D log D)) (D > 1) and O*(2.44/√D) (D ≥ 1); G_q(D) = (φ(q)/q)(log D + c(q)) + O*(5.9 j(q)/√D); G₁(D) = log D + c₀ + O*(3.95/√D).",
+     "hypotheses": [
+      "the stated ranges",
+      "SquarefreeRangeVerified, SquarefreeIntegralRangeVerified",
+      "ArithmeticalConstantsEnclosure for decimals"
+     ],
+     "locator": {
+      "source": "ramare2016mc",
+      "where": "lines 450–462 (Lemma 3.4); ramare2019bcp lines 179–214 (Theorems 3.1–3.2, Corollary 3.3); akhileshRamare2017 lines 78–125 (Theorems 1.1–1.2)"
+     },
+     "prerequisites": [
+      "target:5.1",
+      "target:5.4",
+      "target:7.1",
+      "target:2.3",
+      "target:0.7",
+      "mathlib:Nat.totient",
+      "mathlib:hasSum_zeta_two"
+     ],
+     "tests": [
+      {
+       "name": "small_N",
+       "kind": "computation",
+       "statement": "N = 3: 11/6 = 1.833 ∈ [1.246, 1.834]: the constant 1.166 is attained to three decimals"
+      },
+      {
+       "name": "constants",
+       "kind": "computation",
+       "statement": "C₂ = 1.7171, c₀ = 1.3326"
+      },
+      {
+       "name": "G1_small",
+       "kind": "computation",
+       "statement": "G₁(1) = 1 vs 1.3326 (within 2.44); G₁(2) = 2 vs 2.026"
+      },
+      {
+       "name": "j_q",
+       "kind": "computation",
+       "statement": "j(1) = 1, j(2) = 0.84, j(6) = 1.216; the table j⋆(6) = 5.2 < 5.9·1.216"
+      },
+      {
+       "name": "no_phi_factor",
+       "kind": "non-example",
+       "statement": "q = 2, D = 2 without φ(q)/q: 1 vs 2.37"
+      }
+     ]
+    },
+    {
+     "id": "7.3",
+     "kind": "theorem",
+     "name": "rieselVaughan_lemma2",
+     "statement": "Σ_{q ≤ y} μ²(q)∏_{p ∣ q, p ≠ 2} 2/(p−2) = (1/4)∏_{p > 2}(p−1)²/(p(p−2)) · (log² y − A₃ log y − A₄ + O*(1088 y^{−1/3})) for y ≥ 1.",
+     "hypotheses": [
+      "y ≥ 1",
+      "ArithmeticalConstantsEnclosure for A₃, A₄"
+     ],
+     "locator": {
+      "source": "rieselVaughan1983",
+      "where": "Lemma 2 (uncertified); route Layer 5.1 with the model τ/n and H(0) = (1/2)∏_{p>2}(p−1)²/(p(p−2))"
+     },
+     "prerequisites": [
+      "target:5.1",
+      "target:5.2",
+      "target:0.6",
+      "target:0.7"
+     ],
+     "tests": [
+      {
+       "name": "y_one",
+       "kind": "computation",
+       "statement": "left 1; the product is 1.5147 and u = 0.379"
+      },
+      {
+       "name": "y_two",
+       "kind": "computation",
+       "statement": "left 1 + g(2) = 2 (g(2) = 1)"
+      },
+      {
+       "name": "y_three",
+       "kind": "computation",
+       "statement": "left 2 + 2 = 4"
+      },
+      {
+       "name": "p_two",
+       "kind": "non-example",
+       "statement": "including p = 2 in the product divides by zero"
+      }
+     ]
+    },
+    {
+     "id": "7.4",
+     "kind": "theorem",
+     "name": "divisor_remainder",
+     "statement": "|Δ(x) + 2Σ_{n ≤ √x} ψ_B(x/n)| ≤ 1/2 (x ≥ 1); under DivisorRangeVerified: |Δ(x)| ≤ 0.961√x (x ≥ 1), 0.482√x (x ≥ 1981), 0.397√x (x ≥ 5560), 0.764 x^{1/3} log x (x ≥ 9995).",
+     "hypotheses": [
+      "x in the stated ranges",
+      "DivisorRangeVerified"
+     ],
+     "locator": {
+      "source": "berkaneBordellesRamare2012",
+      "where": "lines 64–77 (Theorems 1.1–1.2), 192–197 (Lemma 3.1)"
+     },
+     "prerequisites": [
+      "target:0.5",
+      "target:0.3",
+      "target:0.7",
+      "mathlib:Nat.card_divisors",
+      "mathlib:Int.fract"
+     ],
+     "tests": [
+      {
+       "name": "small_x",
+       "kind": "computation",
+       "statement": "Δ(1) = 0.8456 ≤ 0.961; Δ(4) = 1.837 ≤ 1.922; Δ(2) = 1.305 ≤ 1.359"
+      },
+      {
+       "name": "hyperbola_x4",
+       "kind": "computation",
+       "statement": "Δ(4) + 2(−1) = −0.163, |·| ≤ 1/2"
+      },
+      {
+       "name": "sharpness",
+       "kind": "non-example",
+       "statement": "|Δ(1980)| > 0.5√1980; |Δ(9994)| > 0.80·9994^{1/3} log 9994: the threshold x ≥ 5 is false"
+      }
+     ]
+    },
+    {
+     "id": "7.5",
+     "kind": "theorem",
+     "name": "piltz_divisor_sum",
+     "statement": "Σ_{m ≤ x} τ_k(m) ≤ x(log x + γ + 1/x)^{k−1} (k ≥ 1, x ≥ 1); Σ_{m ≤ x} τ_k(m) ≤ 2x(log x)^{k−1} (x ≥ 6) under PiltzRangeVerified k; under DivisorRangeVerified: Σ_{n ≤ x} τ₄(n) = (1/6)x log³x + (2γ − 1/2)x log²x + C₃ x log x + C₄ x + O*(4.48 x^{3/4} log x) (x ≥ 2), ≤ (1/3) x log³ x (x ≥ 193); Σ_{n ≤ x} τ(n)² = π⁻² x log³ x + D₂ x log² x + D₃ x log x + D₄ x + O*(9.73 x^{3/4} log x + 0.73√x) (x ≥ 2), ≤ (1/4) x log³ x (x ≥ 433), ≤ x log³ x (x ≥ 7).",
+     "hypotheses": [
+      "k ≥ 1, x in the stated ranges",
+      "DivisorRangeVerified, PiltzRangeVerified"
+     ],
+     "locator": {
+      "source": "cullyHugillTrudgian2021",
+      "where": "lines 62–71, 125–135, 230–242 (Theorems 1–2, (18)); bordelles2002 Theorems 1–2 (uncertified)"
+     },
+     "prerequisites": [
+      "target:0.3",
+      "target:5.2",
+      "target:7.4",
+      "target:0.5",
+      "target:0.7",
+      "mathlib:ArithmeticFunction.sigma_zero_apply",
+      "mathlib:Nat.card_divisors"
+     ],
+     "tests": [
+      {
+       "name": "k_small",
+       "kind": "computation",
+       "statement": "k = 1: ⌊x⌋ ≤ x; k = 2, x = 2: 3 ≤ 3.54"
+      },
+      {
+       "name": "second_form",
+       "kind": "computation",
+       "statement": "x = 6: 14 ≤ 21.5 (k=2), 25 ≤ 38.5 (k=3); x = 2, k = 2: 3 > 2.77; no violation for k ≤ 7, 6 ≤ x ≤ 2000"
+      },
+      {
+       "name": "thresholds_exact",
+       "kind": "computation",
+       "statement": "τ₄: last failure of (1/3)x log³x at 192; τ²: 432 and 6"
+      },
+      {
+       "name": "C3_sign",
+       "kind": "characterisation",
+       "statement": "C₃ = 6γ² − 4γ − 4γ₁ + 1 = 0.981 with γ₁ = −0.0728"
+      }
+     ]
+    },
+    {
+     "id": "7.6",
+     "kind": "theorem",
+     "name": "two_pow_omega_sums",
+     "statement": "For x ≥ 1: Σ_{n ≤ x} 2^{ω(n)}/n ≤ (3/π²) log² x + 1.3949 log x + 0.4107 + 3.253 x^{−1/3} and > (3/π²) log² x + 0.0895 log x − 0.916; for x > 1: Σ_{n ≤ x} 2^{ω(n)} ≤ (6/π²) x log x + 0.787 x − 0.3762 + 8.14 x^{2/3} and (6/π²) x log x − 0.518398 x < Σ < (6/π²) x log x + 2.04864 x.",
+     "hypotheses": [
+      "x ≥ 1 resp. x > 1",
+      "StieltjesGammaOneEnclosure for the constants"
+     ],
+     "locator": {
+      "source": "trudgian2015",
+      "where": "lines 415–423, Lemma 13; cipu2015 lines 633–654, Lemma 4.3"
+     },
+     "prerequisites": [
+      "target:5.1",
+      "target:5.2",
+      "target:7.1",
+      "target:0.6",
+      "mathlib:hasSum_zeta_two",
+      "target:0.7"
+     ],
+     "tests": [
+      {
+       "name": "x_one",
+       "kind": "computation",
+       "statement": "1 ∈ (−0.916, 3.66)"
+      },
+      {
+       "name": "x_ten",
+       "kind": "computation",
+       "statement": "5.3913 ∈ (0.9017, 6.7441); 23 ∈ (8.81, 59.27)"
+      },
+      {
+       "name": "x_1e5",
+       "kind": "computation",
+       "statement": "56.7584 ≤ 56.8298; 778 581 ∈ (648 062, 796 139)"
+      },
+      {
+       "name": "coefficient",
+       "kind": "characterisation",
+       "statement": "(12/π²)(Σ_p log p/(p²−1) + γ) = 1.3948; with Σ log p/p² instead: 1.302"
+      }
+     ]
+    },
+    {
+     "id": "7.7",
+     "kind": "theorem",
+     "name": "totient_sums",
+     "statement": "Σ_{n ≤ x} φ(n)/n ≤ (6/π²)x + log x + 1 and Σ_{n ≤ x} nφ(n) ≤ (2/π²)x³ + ½x² log x + x² for x ≥ 1.",
+     "hypotheses": [
+      "x ≥ 1"
+     ],
+     "locator": {
+      "source": "trevino2015ijnt",
+      "where": "lines 223–232 (Lemma 2), 285–296 (Lemma 3)"
+     },
+     "prerequisites": [
+      "target:2.5",
+      "target:0.3",
+      "target:0.4",
+      "mathlib:Nat.totient",
+      "mathlib:ArithmeticFunction.coe_moebius_mul_coe_zeta"
+     ],
+     "tests": [
+      {
+       "name": "values",
+       "kind": "computation",
+       "statement": "x = 10: 6.2238 ≤ 9.3819; x = 100: 60.83 ≤ 66.40"
+      },
+      {
+       "name": "second",
+       "kind": "computation",
+       "statement": "x = 41: 14 751 ≤ 18 769; x = 42: 15 255 ≤ 20 074"
+      },
+      {
+       "name": "no_constant",
+       "kind": "non-example",
+       "statement": "without the constant 1: 1 > 0.608 at x = 1"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "8",
+   "title": "Explicit Euler products over primes",
+   "targets": [
+    {
+     "id": "8.1",
+     "kind": "theorem",
+     "name": "mertens_product_explicit",
+     "statement": "The B of AnalyticNumberTheoryPartI §0.19 equals mertensConstant ℚ and B = γ + Σ_p(log(1 − 1/p) + 1/p); for x > 1: 1 − 1/log² x ≤ e^γ log x ∏_{p ≤ x}(1 − 1/p) ≤ 1 + 1/(2 log² x) and 1 − 1/(2 log² x) ≤ ∏_{p ≤ x}(1 − 1/p)⁻¹/(e^γ log x) ≤ 1 + 1/log² x; the general transfer from |Σ_{p ≤ x} 1/p − log log x − B| ≤ ε(x); both quotients within 1 ± 1/(4 log³ x) for x > 2 278 382 (and Dusart's 1/(5 log³ x) by locator).",
+     "hypotheses": [
+      "x > 1",
+      "MertensProductInitialRangeVerified for 1 < x < 286",
+      "gap:mertens-reciprocal-explicit for the cubic form"
+     ],
+     "locator": {
+      "source": "rosserSchoenfeld1962",
+      "where": "Theorems 7–8, (3.26)–(3.30) (uncertified); AnalyticNumberTheoryPartI §0.19 for x ≥ 286; dusart2018 (uncertified)"
+     },
+     "prerequisites": [
+      "roadmap:AnalyticNumberTheoryPartI §0.19",
+      "roadmap:AnalyticNumberTheoryPartI §0.21",
+      "roadmap:AnalyticNumberTheoryPartI §0.26",
+      "tauceti:mertensConstant",
+      "tauceti:tendsto_primeSummatory_inv_absNorm_sub_log_log",
+      "mathlib:Real.add_one_le_exp",
+      "target:0.7",
+      "gap:mertens-reciprocal-explicit"
+     ],
+     "tests": [
+      {
+       "name": "small_x",
+       "kind": "computation",
+       "statement": "x = 2: 0.6173 ∈ [−1.08, 2.04]; x = 11: 0.8874 ∈ [0.826, 1.087]; x = 283: 0.9833 ∈ [0.9686, 1.0157]"
+      },
+      {
+       "name": "near_one",
+       "kind": "degenerate",
+       "statement": "x → 1⁺: empty product, lower bound → −∞"
+      },
+      {
+       "name": "inversion",
+       "kind": "characterisation",
+       "statement": "the second pair follows from the first for L² ≥ 2, i.e. x ≥ 4.11"
+      },
+      {
+       "name": "B_value",
+       "kind": "computation",
+       "statement": "γ + Σ_p(log(1−1/p)+1/p) = 0.5772 − 0.3157 = 0.2615"
+      }
+     ]
+    },
+    {
+     "id": "8.2",
+     "kind": "theorem",
+     "name": "vanlalngaia_tilted_product",
+     "statement": "For complex |ε| < 2 and x ≥ e^22: ∏_{p ≤ x}(1 + ε/p) = exp(γ(ε) + εB)(log x)^ε (1 + O*(0.841/log³ x)) with γ(ε) = Σ_p Σ_{n ≥ 2} (−1)^{n+1} ε^n/(n p^n); the general transfer from |Σ_{p ≤ x} 1/p − log log x − B| ≤ η(x).",
+     "hypotheses": [
+      "|ε| < 2",
+      "x ≥ e^22",
+      "gap:mertens-reciprocal-explicit"
+     ],
+     "locator": {
+      "source": "vanlalngaia2017",
+      "where": "Theorem 5 (OCR text lines 87–97)"
+     },
+     "prerequisites": [
+      "target:8.1",
+      "gap:mertens-reciprocal-explicit",
+      "mathlib:Complex.cpow",
+      "target:0.6"
+     ],
+     "tests": [
+      {
+       "name": "eps_zero",
+       "kind": "degenerate",
+       "statement": "both sides 1"
+      },
+      {
+       "name": "eps_minus_one",
+       "kind": "compatibility",
+       "statement": "γ(−1) = B − γ, recovering e^{−γ}/log x"
+      },
+      {
+       "name": "eps_one",
+       "kind": "characterisation",
+       "statement": "γ(1) = −0.182, e^{γ(1)+B} = 1.083 = (6/π²)e^γ"
+      },
+      {
+       "name": "eps_two",
+       "kind": "non-example",
+       "statement": "ε = 2: γ(2) only conditionally convergent at p = 2"
+      }
+     ]
+    },
+    {
+     "id": "8.3",
+     "kind": "theorem",
+     "name": "mertens_product_progression",
+     "statement": "For q ≥ 1, (a, q) = 1, x ≥ x₀(q): ∏_{p ≤ x, p ≡ a (q)}(1 − 1/p)⁻¹ ≤ C(q, a)(log x)^{1/φ(q)} with Bordellès' table (ProgressionProductTableVerified); the general transfer from |Σ_{p ≤ x, p ≡ a (q)} 1/p − log log x/φ(q) − B(q,a)| ≤ η(x).",
+     "hypotheses": [
+      "(a, q) = 1",
+      "x ≥ x₀(q)",
+      "ProgressionProductTableVerified",
+      "the progression reciprocal-prime estimate as hypothesis"
+     ],
+     "locator": {
+      "source": "bordelles2005",
+      "where": "Theorem 1 (uncertified)"
+     },
+     "prerequisites": [
+      "target:8.1",
+      "gap:mertens-logp-explicit",
+      "target:0.7",
+      "mathlib:Nat.totient",
+      "mathlib:Nat.ModEq"
+     ],
+     "tests": [
+      {
+       "name": "q_one",
+       "kind": "compatibility",
+       "statement": "q = 1 is the Mertens product"
+      },
+      {
+       "name": "q_two",
+       "kind": "computation",
+       "statement": "odd primes: C(2,1) ≥ e^γ/2 = 0.89"
+      },
+      {
+       "name": "q_four_x5",
+       "kind": "computation",
+       "statement": "(1 − 1/5)⁻¹ = 1.25 vs C(4,1)·1.27"
+      },
+      {
+       "name": "not_coprime",
+       "kind": "non-example",
+       "statement": "a not coprime to q: at most one prime in the class"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "9",
+   "title": "Pointwise bounds",
+   "targets": [
+    {
+     "id": "9.1",
+     "kind": "theorem",
+     "name": "omega_le",
+     "statement": "ω(n) ≤ 1.3841 log n/log log n for n ≥ 3, via θ(p_k) ≥ k(log k + log log k − c) for k ≥ k₀ from gap:nth-prime-lower and PrimorialTableVerified for k < k₀.",
+     "hypotheses": [
+      "n ≥ 3",
+      "PrimorialTableVerified",
+      "gap:nth-prime-lower"
+     ],
+     "locator": {
+      "source": "robin1983aa",
+      "where": "lines 42–48, Théorème 11 (OCR'd scan)"
+     },
+     "prerequisites": [
+      "mathlib:ArithmeticFunction.cardDistinctFactors",
+      "mathlib:Nat.nth",
+      "mathlib:Chebyshev.theta",
+      "target:0.7",
+      "gap:nth-prime-lower"
+     ],
+     "tests": [
+      {
+       "name": "primorials",
+       "kind": "computation",
+       "statement": "n = 510 510: 7 ≤ 7.06; n = 223 092 870: 9 ≤ 9.0004"
+      },
+      {
+       "name": "small_n",
+       "kind": "degenerate",
+       "statement": "n = 2 excluded (log log 2 < 0)"
+      },
+      {
+       "name": "constant_sharp",
+       "kind": "non-example",
+       "statement": "1.38 fails at 223 092 870 (8.97 < 9)"
+      },
+      {
+       "name": "theta_step",
+       "kind": "computation",
+       "statement": "θ(p₉) = 19.22 ≥ 17.16; θ(p₁₄) = 37.11 ≤ 37.28"
+      }
+     ]
+    },
+    {
+     "id": "9.2",
+     "kind": "theorem",
+     "name": "divisor_pointwise",
+     "statement": "τ(n) ≤ n^{1.538 log 2/log log n}, τ₃(n) ≤ n^{1.5915 log 3/log log n}, τ₄(n) ≤ n^{1.6338 log 4/log log n}, τ₅(n) ≤ n^{1.6715 log 5/log log n} for n ≥ 3, and the exponent λ(k) + 10^{−4} for 2 ≤ k ≤ 100, under SuperiorTableVerified; the reduction to superior k-highly composite numbers; τ_k(n) ≤ n^s ζ(s)^{k−1} for n ≥ 1, s > 1, k ≥ 1.",
+     "hypotheses": [
+      "n ≥ 3 (resp. n ≥ 1, s > 1)",
+      "SuperiorTableVerified k ε₁(k) ε₂(k) λ(k)"
+     ],
+     "locator": {
+      "source": "teo2026",
+      "where": "lines 1795–1990 (§§6.1–6.5, Tables 12–18); nicolasRobin1983 lines 10–15, 159–170; durasNicolasRobin1999 (uncertified)"
+     },
+     "prerequisites": [
+      "mathlib:Nat.card_divisors",
+      "mathlib:ArithmeticFunction.sigma_zero_apply",
+      "tauceti:sigma_le_rpow_mul_tsum",
+      "mathlib:Real.summable_nat_rpow_inv",
+      "target:0.7",
+      "roadmap:AnalyticNumberTheoryPartI §3.7"
+     ],
+     "tests": [
+      {
+       "name": "maximiser_k2",
+       "kind": "computation",
+       "statement": "n = 6 983 776 800: τ = 2304, f₂ = 1.53794 > 1.5379: the exponent must be 1.538"
+      },
+      {
+       "name": "k3",
+       "kind": "computation",
+       "statement": "n = 43 243 200: τ₃ = 45 360, f₃ = 1.59141 ≤ 1.5915"
+      },
+      {
+       "name": "k4_k5",
+       "kind": "computation",
+       "statement": "n = 259 459 200: f₄ = 1.63373 ≤ 1.6338, f₅ = 1.67144 ≤ 1.6715"
+      },
+      {
+       "name": "n_two",
+       "kind": "degenerate",
+       "statement": "n = 2 excluded"
+      },
+      {
+       "name": "zeta_bound",
+       "kind": "computation",
+       "statement": "k = 2, s = 2, n = 6: 4 ≤ 59"
+      }
+     ]
+    },
+    {
+     "id": "9.3",
+     "kind": "theorem",
+     "name": "sigma_pointwise",
+     "statement": "σ(n)/n ≤ 2.59791 log log(3τ(n)) for n ≥ 2 and σ(n)/n ≤ e^γ log log(eτ(n)) + log log log(e^e τ(n)) + 0.9415 (Nicolas, under SuperchampionTableVerified); σ(n) < 2.59 n log log n for n ≥ 7 and σ*(n) < (28/15) n log log n for n ≥ 31 (Ivić); σ(n) ≤ (3/4)e^γ n log log n for odd n ≥ 21 (Eum–Koo, by locator).",
+     "hypotheses": [
+      "n ≥ 2, resp. n ≥ 7, n ≥ 31, odd n ≥ 21",
+      "SuperchampionTableVerified",
+      "gap:prime-count-lower"
+     ],
+     "locator": {
+      "source": "nicolas2008",
+      "where": "lines 56–68, Théorème 2; ivic1977 lines 19–24, Theorems 1–2; eumKoo2015 Theorem 1.1 (uncertified)"
+     },
+     "prerequisites": [
+      "mathlib:ArithmeticFunction.sigma",
+      "target:0.5",
+      "target:8.1",
+      "target:9.1",
+      "gap:prime-count-lower",
+      "target:0.7"
+     ],
+     "tests": [
+      {
+       "name": "ivic_thresholds",
+       "kind": "computation",
+       "statement": "n = 12: 28 < 28.29; n = 6: 12 > 9.06; n = 30: σ*(30) = 72 > 68.5, n = 31: 32 < 71.4"
+      },
+      {
+       "name": "nicolas_n2",
+       "kind": "computation",
+       "statement": "n = 2: 1.5 ≤ 2.59791·log log 6 = 1.515; n = 1 fails"
+      },
+      {
+       "name": "n_5040",
+       "kind": "computation",
+       "statement": "σ/n = 3.838 ≤ 4.28"
+      },
+      {
+       "name": "odd_needed",
+       "kind": "non-example",
+       "statement": "Eum–Koo at n = 12: 28 > 14.6"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "suppliers": [
+  {
+   "roadmap": "AnalyticNumberTheoryPartI",
+   "sections": [
+    "§0.8",
+    "§0.11",
+    "§0.19",
+    "§0.21",
+    "§0.26",
+    "§3.1",
+    "§3.7",
+    "§3.9",
+    "§3.12",
+    "§3.22",
+    "§3.22a",
+    "§3.35",
+    "§3.35a"
+   ],
+   "what": "Rosser–Schoenfeld reciprocal-prime estimate for x ≥ 286 (unconditional), Mertens' second and third theorems with O(1), the qualitative harmonic and Dirichlet-divisor asymptotics, the divisor subpower and maximal-order bounds, the asymptotic coprime Möbius sums, Rankin's smooth-number bound and the finite-prime smooth Dirichlet series."
+  },
+  {
+   "roadmap": "SieveMethodsAndPrimePatterns",
+   "sections": [
+    "§0.5",
+    "§1.1"
+   ],
+   "what": "The logarithmic sieve dimension predicate and the asymptotic Levin–Fainleib/Selberg denominator, cited for the statement shape of Layer 5.5."
+  },
+  {
+   "roadmap": "ProbabilisticAndMetricNumberTheory",
+   "sections": [
+    "Layer 3"
+   ],
+   "what": "The Rankin-type bound for multiplicative functions with f(p^ν) = f(p) ≥ 1, cited as the instance of Layer 6.1."
+  },
+  {
+   "roadmap": "ComputationalNumberTheory",
+   "sections": [
+    "§4.17a",
+    "Layer 4",
+    "Layer 5"
+   ],
+   "what": "The explicit digamma remainders that discharge EulerGammaEnclosure, and the layers where the Props of Layer 0.7 are discharged by certified computation."
+  },
+  {
+   "roadmap": "ZerosOfLFunctions",
+   "sections": [
+    "Layer 9"
+   ],
+   "what": "The semantics AllOnCriticalLine of verified zeros, entering only through the explicit-primes contract; not restated."
+  }
+ ],
+ "consumers": [
+  {
+   "roadmap": "ExplicitCharacterSumsAndSieves",
+   "what": "pointwise bounds on τ(q), 2^ω(q), q/φ(q) (Layer 9, 6.1) for Burgess; Σ μ²/φ with coprimality (7.2) and coprimality removal (6.5) for Selberg's density sum"
+  },
+  {
+   "roadmap": "ExplicitNumberFields",
+   "what": "Piltz divisor bounds and the τ₄ asymptotic with DivisorRangeVerified (7.5); divisor pointwise bounds (9.2)"
+  },
+  {
+   "roadmap": "ExplicitZetaBounds",
+   "what": "divisor sums (7.5) for mean-value and large-sieve constants"
+  },
+  {
+   "roadmap": "ExplicitPrimeCounting Part II",
+   "what": "coprime Möbius bounds (1.6, 2.4) for explicit prime estimates in progressions"
+  },
+  {
+   "roadmap": "SieveMethodsAndPrimePatterns Part II",
+   "what": "explicit Levin–Fainleib (5.5) and Σ μ²/φ (7.2) as explicit Selberg main terms"
+  },
+  {
+   "roadmap": "ErdosProgressionPowers",
+   "what": "effective divisor bounds (9.2)"
+  },
+  {
+   "roadmap": "EffectiveClassNumbers",
+   "what": "explicit Mertens products (8.1–8.3)"
+  },
+  {
+   "roadmap": "PolynomialGaloisGroupsPartII",
+   "what": "explicit Mertens products (8.1–8.3)"
+  },
+  {
+   "roadmap": "ComputationalNumberTheory",
+   "what": "the Prop shapes of Layer 0.7 that its Layers 4–5 discharge"
+  }
+ ],
+ "gaps": [
+  {
+   "slug": "psi-ratio-max",
+   "title": "ψ(x) ≤ 1.04 x for all x ≥ 0",
+   "neededBy": [
+    "1.5"
+   ],
+   "detail": "Rosser–Schoenfeld 1962, Theorem 12 (the maximum of ψ(x)/x at x = 113).",
+   "needs": "An explicit uniform bound ψ(x) ≤ 1.04 x for every real x ≥ 0.",
+   "supplier": "ExplicitPrimeCounting",
+   "section": "Layer 2 (T2.1, ψ(x) < 1.03883 x)"
+  },
+  {
+   "slug": "psi-initial-range",
+   "title": "|ψ(x) − x| ≤ √x on [8, 10^10] and ≤ 0.8√x on [1500, 10^10]",
+   "neededBy": [
+    "1.5",
+    "1.2"
+   ],
+   "detail": "The finite verification under verified zeros used at ramare2013aa lines 205–207.",
+   "needs": "The two finite-range Chebyshev bounds as a Prop or theorem.",
+   "supplier": "ExplicitPrimeCounting",
+   "section": "Layer 1–2 (bounds under RH(H))"
+  },
+  {
+   "slug": "psi-dusart-log",
+   "title": "|ψ(x) − x| ≤ 0.0065 x/log x for x ≥ exp(22)",
+   "neededBy": [
+    "1.5",
+    "1.4"
+   ],
+   "detail": "Dusart's Théorème 1.3, improving Rosser–Schoenfeld Theorem 7 (0.0077629).",
+   "needs": "An explicit bound of the shape a x/log x for x ≥ x₀ with a ≤ 0.00776291 and x₀ ≤ exp(22).",
+   "supplier": "ExplicitPrimeCounting",
+   "section": "Layer 2 (T2.2, Dusart)"
+  },
+  {
+   "slug": "psi-relative-large",
+   "title": "|ψ(x) − x| ≤ 0.000213 x for x ≥ 10^10",
+   "neededBy": [
+    "1.5",
+    "1.2"
+   ],
+   "detail": "Used at ramare2013aa line 220, (4.4).",
+   "needs": "A relative Chebyshev bound of size 0.000213 beyond 10^10.",
+   "supplier": "ExplicitPrimeCounting",
+   "section": "Layer 2 (T2.0 scheme instances)"
+  },
+  {
+   "slug": "psi-tilde-explicit",
+   "title": "ψ̃(x) = log x − γ + O*(0.0067/log x) for x ≥ 1 520 000 and the small-range form with (ψ(x) − x)/x",
+   "neededBy": [
+    "1.5"
+   ],
+   "detail": "Vanlalngaia 2017, Theorem 9, rectifying Ramaré 2013; the printed range x ≥ 23 is false (computed at x = 23).",
+   "needs": "The corrected explicit estimate for Σ_{n ≤ x} Λ(n)/n in both forms.",
+   "supplier": "ExplicitPrimeCounting",
+   "section": "Layer 3 (T3.2)"
+  },
+  {
+   "slug": "mertens-reciprocal-explicit",
+   "title": "Σ_{p ≤ x} 1/p = log log x + B + O*(4/log³ x) (x ≥ 2), 2.3 (x ≥ 1000), 1 (x ≥ 24 284); Dusart's 1/(5 log³ x) for x > 2 278 382; Vanlalngaia's Theorem 4 form",
+   "neededBy": [
+    "8.1",
+    "8.2"
+   ],
+   "detail": "Vanlalngaia 2017 Corollary 1 and Theorem 4; Dusart 2018.",
+   "needs": "The explicit cubic-logarithm remainders for the reciprocal-prime sum with B = mertensConstant ℚ.",
+   "supplier": "ExplicitPrimeCounting",
+   "section": "Layer 3 (T3.3)"
+  },
+  {
+   "slug": "mertens-logp-explicit",
+   "title": "Σ_{p ≤ x}(log p)/p = log x + E + O*(1/(2 log x)) for x ≥ 319 with one E",
+   "neededBy": [
+    "8.3",
+    "5.5"
+   ],
+   "detail": "Rosser–Schoenfeld Theorem 6; AnalyticNumberTheoryPartI §0.8 has it with an existential E.",
+   "needs": "The two-sided estimate with the same constant E at both endpoints, and its progression analogue for Layer 8.3.",
+   "supplier": "ExplicitPrimeCounting",
+   "section": "Layer 3 (T3.1) and Layer 5 for progressions"
+  },
+  {
+   "slug": "nth-prime-lower",
+   "title": "p_k ≥ k(log k + log log k − 1) for k ≥ 2",
+   "neededBy": [
+    "9.1",
+    "9.3"
+   ],
+   "detail": "Dusart's lower bound for the k-th prime, with p₁ = 2 (index shift as that roadmap states it).",
+   "needs": "The explicit lower bound for the k-th prime.",
+   "supplier": "ExplicitPrimeCounting",
+   "section": "Layer 4 (T4.2)"
+  },
+  {
+   "slug": "prime-count-lower",
+   "title": "π(x) > x/log x for x ≥ 17",
+   "neededBy": [
+    "9.3"
+   ],
+   "detail": "Rosser–Schoenfeld 1962, Corollary 1; used by Ivić at line 49.",
+   "needs": "The explicit lower bound on the prime-counting function.",
+   "supplier": "ExplicitPrimeCounting",
+   "section": "Layer 2 (T2.6)"
+  }
+ ]
+}
