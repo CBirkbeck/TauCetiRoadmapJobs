@@ -163,8 +163,9 @@ timeout_minutes = 360
 # Per-lane overrides: `agent` pins the family, `model` its model; `codex_model` and `claude_model` pin
 # the model per family and leave the family to the worker. Reviews run only on the review models.
 [agents.lanes.review]
+# Package and design reviews: Astra on Codex; a Claude reviewer runs the model it was started with (Opus or
+# Fable), so that an Opus reviewer can take the packages a Fable worker repaired and vice versa.
 codex_model = "gpt-6-astra"
-claude_model = "fable"
 
 [agents.lanes.prreview]
 codex_model = "gpt-6-astra"
