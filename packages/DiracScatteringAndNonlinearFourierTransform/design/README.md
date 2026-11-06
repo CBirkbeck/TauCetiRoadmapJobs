@@ -60,12 +60,14 @@ It leaves to named owners:
   functions, the Lebesgue differentiation theorem, the `L²` Fourier transform and Phragmén–Lindelöf
   in a half-plane to Mathlib, consumed as listed in the supplier contracts;
 - the essentially-bounded Carathéodory theorem, the constant-kernel integral Grönwall inequality,
-  the Dyson series of a continuous path, the Hardy–Littlewood maximal function with its weak
+  the Dyson series of a continuous path, Jacobi's formula for the derivative of the determinant,
+  the identity `det(exp A) = exp(tr A)`, Young's inequality for an integrable kernel, the duality
+  `L^∞(μ) ≃ L¹(μ)*` of a finite measure, the Hardy–Littlewood maximal function with its weak
   and strong type bounds, the Herglotz and Nevanlinna representations, the Cayley transform of
   the half-plane, the half-plane Phragmén–Lindelöf principle for bounded functions, the converse
   mean-value theorem for harmonic functions and the F. and M. Riesz uniqueness theorem on discs
   to Tau Ceti; Layer 1 states the integrable-coefficient generalisations and records the pinned
-  essentially-bounded and continuous cases as Checks;
+  essentially-bounded, continuous and constant-coefficient cases as Checks;
 - finite-order Hadamard factorization to AnalyticNumberTheoryPartI §0.23, consumed in Layer 7
   for entire functions of order at most one;
 - the disc Hardy space `H²(𝔻)` and its Toeplitz operators to OperatorTheory (ToeplitzOperators T1);
@@ -169,7 +171,7 @@ All at the pinned Mathlib; paths under `Mathlib/`.
 - `MeasureTheory.TendstoInMeasure` (`MeasureTheory/Function/ConvergenceInMeasure.lean` line 57),
   `tendstoInMeasure_of_tendsto_eLpNorm` (line 445), `TendstoInMeasure.exists_seq_tendsto_ae`
   (line 266).
-- `fourier_real_eq` (`Analysis/Fourier/FourierTransform.lean` line 484, the kernel
+- `fourier_real_eq` (`Analysis/Fourier/FourierTransform.lean` line 483, the kernel
   `e^{−2πi v w}`) and `MeasureTheory.Lp.fourierTransformₗᵢ` (`Analysis/Fourier/LpSpace.lean` line 51,
   the `L²` Fourier transform as a linear isometry equivalence); `Measure.ext_of_charFun`
   (`MeasureTheory/Measure/CharacteristicFunction/Basic.lean` line 257, finite measures with equal
@@ -183,6 +185,8 @@ All at the pinned Mathlib; paths under `Mathlib/`.
   harmonic function is holomorphic), `InnerProductSpace.HarmonicOnNhd.exists_analyticOnNhd_ball_re_eq`
   (line 74, on balls only) and `InnerProductSpace.bounded_harmonic_on_complex_plane_is_constant`
   (`Analysis/Complex/Harmonic/Liouville.lean` line 52).
+- `WeakDual.isCompact_closedBall` (`Analysis/Normed/Module/WeakDual.lean` line 270, Banach–Alaoglu:
+  closed balls of the dual of a normed space over a proper field are weak-* compact), in §2.5.
 - `ContractingWith` (`Topology/MetricSpace/Contracting.lean` line 42, a Lipschitz self-map with constant
   `K < 1`) for the Picard scheme of §1.2; `MeasureTheory.Measure.rnDeriv` and
   `MeasureTheory.Measure.singularPart` (`MeasureTheory/Measure/Decomposition/Lebesgue.lean` lines 80, 73,
@@ -192,6 +196,14 @@ All at the pinned Mathlib; paths under `Mathlib/`.
   §9.3.
 - `Matrix.det_fin_two` (`LinearAlgebra/Matrix/Determinant/Basic.lean` line 815), `NormedSpace.exp`
   for the constant-coefficient Check, `UpperHalfPlane.upperHalfPlaneSet`.
+- For Liouville's formula in §1.4: `Matrix.det_apply` (`LinearAlgebra/Matrix/Determinant/Basic.lean`
+  line 66, the Leibniz expansion of `det` as a signed sum over permutations of products of entries),
+  `Matrix.trace_mul_comm` (`LinearAlgebra/Matrix/Trace.lean` line 156, `tr(AB) = tr(BA)`),
+  `Matrix.mul_nonsing_inv` (`LinearAlgebra/Matrix/NonsingularInverse.lean` line 209, `AA⁻¹ = 1` when
+  `det A` is a unit), `HasFDerivAt.comp_hasDerivAt` (`Analysis/Calculus/Deriv/Comp.lean` line 375, the
+  chain rule along a curve) and `HasFDerivAt.restrictScalars`
+  (`Analysis/Calculus/FDeriv/RestrictScalars.lean` line 54). The derivative of `det` is Tau Ceti's
+  (below).
 
 ### From Tau Ceti
 
@@ -208,11 +220,28 @@ All at the pinned Tau Ceti; paths under `TauCeti/`.
 - `TauCeti.dysonSeriesLeft` and `TauCeti.hasDerivAt_dysonSeriesLeft`
   (`Analysis/ODE/DysonSeries.lean` lines 165, 281): the time-ordered exponential of a
   **continuous** path in a Banach algebra; compatibility Check for the propagator.
+- `Matrix.hasFDerivAt_det` (`Analysis/Calculus/FDeriv/Det.lean` line 110): Jacobi's formula. Over a
+  nontrivially normed field, with Mathlib's `L∞` operator norm on matrices
+  (`open scoped Matrix.Norms.Operator`), `det` has Fréchet derivative `H ↦ det A · tr(A⁻¹H)` at
+  every square matrix `A` whose determinant is a unit; the same file has the adjugate form
+  `tr(adj A · H)` at every matrix (`Matrix.fderiv_det_apply_adjugate`, line 75). §1.4 consumes the
+  invertible form. `Matrix.det_exp` (`Analysis/Normed/Algebra/MatrixExponential.lean` line 75):
+  `det(exp A) = exp(tr A)` for a square matrix over an `RCLike` field, the constant-coefficient case
+  of §1.4 and its compatibility Check.
 - `TauCeti.maximalFunction` (`MeasureTheory/Integral/MaximalFunction.lean` line 125, the centred
   maximal function `sup_{r>0} ⨍_{B(x,r)} ‖f‖` with values in `ℝ≥0∞`),
   `TauCeti.mul_measure_lt_maximalFunction_le` (line 353, weak type `(1,1)` with constant `4^{dim}`
   for an additive Haar measure) and `TauCeti.lintegral_rpow_maximalFunction_le` (line 439, strong
   type `(p,p)` for `1 < p`), applied on `ℝ` with Lebesgue measure.
+- `TauCeti.norm_convolutionLp_le` and `TauCeti.convolutionLp_ae_eq_convolution`
+  (`MeasureTheory/Function/Lp/Convolution.lean` lines 117, 197): Young's inequality. On a
+  finite-dimensional real normed space with an additive Haar measure, for `1 ≤ p < ∞` and a real
+  integrable kernel `k`, convolution with `k` is a continuous linear operator on `Lᵖ` of norm at most
+  `∫ |k|`, represented almost everywhere by the pointwise convolution `∫ k(y) f(x − y) dy` for a
+  Banach-space-valued `f`. §5.1 applies it on `ℝ` with `p = 2`.
+- `MeasureTheory.Lp.dualOneEquiv` (`MeasureTheory/Function/L1Space/Dual.lean` line 102): for a
+  **finite** measure `μ` and `𝕜 = ℝ` or `ℂ`, integration against an essentially bounded function is a
+  linear isometric equivalence `L^∞(μ) ≃ L¹(μ)*`. §2.5 applies it to the finite Poisson measure `Π`.
 - `TauCeti.exists_isFiniteMeasure_eq_nevanlinnaKernel_add` and `TauCeti.nevanlinnaKernel_im`
   (`Analysis/Complex/Pick/Nevanlinna.lean` lines 436, 332): a function holomorphic on
   `UpperHalfPlane.upperHalfPlaneSet` with nonnegative imaginary part is
@@ -355,17 +384,32 @@ solution with value `y` at `s` (romanov2014 line 213–224 for the chain rule).
 ### 1.4 Liouville's formula
 
 For `E = Fin n → 𝕜` and a matrix coefficient `P`, prove `det N_P(t, s) = exp(∫_s^t tr P)` for
-`s, t ∈ I` (coddingtonlevinson1955, Ch. 1 §7, waived; romanov2014 line 218–219 for `det ≡ 1`). Route:
-the determinant of an absolutely continuous matrix function has derivative `det N · tr(N⁻¹N′)`
-almost everywhere, and `N⁻¹N′ = N⁻¹PN` has trace `tr P`.
+`s, t ∈ I`, with `N_P(t, s)` and `P(r)` identified with their matrices in the standard basis
+(coddingtonlevinson1955, Ch. 1 §7, waived; romanov2014 line 218–219 for `det ≡ 1`). Route: fix `s`.
+At almost every `t` the curve `N_P(·, s)` has derivative `P(t)N` at `t`, where `N = N_P(t, s)` is
+invertible (§1.2, §1.3). The chain rule and Jacobi's formula at an invertible matrix (Tau Ceti
+`Matrix.hasFDerivAt_det`, restricted to real scalars when `𝕜 = ℂ`) then give
+`∂ₜ det N_P(t, s) = det N · tr(N⁻¹P(t)N) = det N · tr P(t)`. The function `det N_P(·, s)` is
+absolutely continuous, being a finite sum of products of the absolutely continuous entries (the
+Leibniz expansion). It is therefore an absolutely continuous solution of the scalar equation
+`y′ = (tr P) y`, `y(s) = 1`, whose coefficient is integrable because `|tr P| ≤ n‖P‖`. By the
+uniqueness clause of §1.2 it equals `exp(∫_s^t tr P)`, which solves the same equation.
 
-*Needs:* §1.3; Mathlib `Matrix.det` and its derivative along a path, `Matrix.trace`.
+*Needs:* §1.2 (absolute continuity, the derivative almost everywhere, the uniqueness clause), §1.3
+(invertibility); Tau Ceti `Matrix.hasFDerivAt_det`; Mathlib `Matrix.det_apply`,
+`Matrix.trace_mul_comm`, `Matrix.mul_nonsing_inv`, `HasFDerivAt.comp_hasDerivAt`,
+`HasFDerivAt.restrictScalars`, `AbsolutelyContinuousOnInterval.add`,
+`AbsolutelyContinuousOnInterval.smul`.
 
 **Checks.**
 
 - Diagonal `P = diag(p₁, p₂)`: `N = diag(e^{∫p₁}, e^{∫p₂})` and both sides are `e^{∫(p₁ + p₂)}`.
 - The time-ordered example of 1.3: `det [[1,1],[1,2]] = 1 = e^{tr A + tr B}`.
 - Trace-free Dirac coefficient: `−Ω(z − Q_q)` has trace `0`, so `det = 1` (used in §3.1).
+- Agreement with Tau Ceti: for a constant coefficient `P = A`, `N_P(t, s) = exp((t − s)A)` (§1.3), and
+  the formula is Tau Ceti `Matrix.det_exp` at `(t − s)A`. For `A = [[1, 1], [0, 1]]`,
+  `exp(tA) = e^t [[1, t], [0, 1]]` has determinant `e^{2t} = e^{t tr A}`; a formula with the sum of
+  the entries (`e^{3t}`) or with `det A` (`e^t`) in place of the trace gives the wrong value.
 
 ### 1.5 Continuous dependence on the coefficient
 
@@ -447,8 +491,9 @@ because `Y` is a uniform limit of step functions and `F` is Lipschitz in `x`
 ### Dependencies
 
 Mathlib (Bochner integration, absolutely continuous functions, Lebesgue differentiation, parametric
-integrals, locally uniform limits of holomorphic functions); Tau Ceti `Analysis/ODE` for the
-compatibility Checks.
+integrals, locally uniform limits of holomorphic functions, determinants and traces of matrices);
+Tau Ceti Jacobi's formula (`Analysis/Calculus/FDeriv/Det.lean`) for §1.4, and Tau Ceti
+`Analysis/ODE` and `Matrix.det_exp` for the compatibility Checks.
 
 ## Layer 2: Function theory of the upper half-plane
 
@@ -581,14 +626,17 @@ uncertified). Its API:
 - Route: the bounded functions `F(· + iε)` are continuous up to `ℝ`, and `F(· + iε) − P[F(· + iε)|_ℝ]`,
   reflected oddly across `ℝ`, has the mean-value property (Tau Ceti
   `TauCeti.harmonicOnNhd_of_setAverage_ball_eq`) and is bounded, hence constant by
-  `InnerProductSpace.bounded_harmonic_on_complex_plane_is_constant`, hence `0`; a weak-* limit point of
-  `F(· + iε)` in `L^∞ = (L¹)^*` gives the Poisson representation, and §2.4 the nontangential limits.
+  `InnerProductSpace.bounded_harmonic_on_complex_plane_is_constant`, hence `0`. A weak-* limit point of
+  `F(· + iε)` in `L^∞(Π) = L¹(Π)^*` gives the Poisson representation, because `x ↦ (1 + x²)P(z, x)` is
+  bounded and so lies in `L¹(Π)`; as a space of classes `L^∞(Π)` is `L^∞(ℝ)`, since `Π` and Lebesgue
+  measure have the same null sets. §2.4 then gives the nontangential limits.
   Uniqueness and the logarithmic bound transport Tau Ceti `TauCeti.eqOn_const_ball_of_tendsto_circleMap`
   and `AnalyticOnNhd.le_circleAverage_log_norm` through the Cayley transform, under which a disc radius
   ending at `ζ ≠ 1` becomes an arc ending at `x` inside every cone at `x`.
 
-*Needs:* §2.1, §2.4; Mathlib Liouville for harmonic functions, weak-* compactness in `L^∞`;
-Tau Ceti `TauCeti.harmonicOnNhd_of_setAverage_ball_eq`, `TauCeti.eqOn_const_ball_of_tendsto_circleMap`,
+*Needs:* §2.1, §2.4; Mathlib `InnerProductSpace.bounded_harmonic_on_complex_plane_is_constant`,
+`WeakDual.isCompact_closedBall`; Tau Ceti `MeasureTheory.Lp.dualOneEquiv`,
+`TauCeti.harmonicOnNhd_of_setAverage_ball_eq`, `TauCeti.eqOn_const_ball_of_tendsto_circleMap`,
 `AnalyticOnNhd.le_circleAverage_log_norm`, `TauCeti.bijOn_sub_I_div_add_I_upperHalfPlaneSet`.
 
 **Checks.**
@@ -695,9 +743,10 @@ garnett2007, Ch. II §4, p. 64, uncertified). Its API:
 
 ### Dependencies
 
-Mathlib (harmonic functions, Lebesgue differentiation, the `L²` Fourier transform, Phragmén–Lindelöf);
-Tau Ceti (maximal function, Nevanlinna representation, half-plane primitives, mean-value converse,
-F. and M. Riesz uniqueness, Cayley transform).
+Mathlib (harmonic functions, Lebesgue differentiation, the `L²` Fourier transform, Phragmén–Lindelöf,
+Banach–Alaoglu); Tau Ceti (maximal function, Nevanlinna representation, half-plane primitives,
+mean-value converse, F. and M. Riesz uniqueness, Cayley transform, the dual of `L¹` of a finite
+measure).
 
 ## Layer 3: Dirac systems and their Hermite–Biehler functions
 
@@ -958,12 +1007,14 @@ limits `a(∞, ·)`, `b(∞, ·)`, `ρ(∞, ·) = b(∞, ·)/a(∞, ·)`; that `
 that `y log a(∞, iy) → ½‖q‖²` as `y → ∞`; and that for real potentials `a(∞, iy) ≥ 1`
 (denisov2006 Theorem 11.1 line 3246–3255 for Krein systems and §13 (245)–(248) line 4219–4258 for
 the dictionary; poltoratski2024 line 518–529). Route: §4.5 gives
-`|r(t, z)| ≤ 2(e^{−2y·} * |q|)(t)`, so `‖r(·, z)‖_{L²} ≤ ‖q‖/y` by Young's inequality and
+`|r(t, z)| ≤ 2(e^{−2y·} * |q|)(t)`, so `‖r(·, z)‖_{L²} ≤ ‖q‖/y` by Young's inequality for the kernel
+`e^{−2ys} 1_{s ≥ 0}` of `L¹` norm `1/(2y)`, and
 `|log a(t, z)| ≤ ∫|q||r| ≤ ‖q‖²/y`; the tails of `∫ q r` and of `∫ q e^{2izs} a^{−2}` are bounded by
 Cauchy–Schwarz.
 
-*Needs:* §4.3, §4.5; Mathlib `TendstoLocallyUniformlyOn.differentiableOn`, Young's inequality for
-convolutions on `ℝ`.
+*Needs:* §4.3, §4.5; Mathlib `TendstoLocallyUniformlyOn.differentiableOn`; Tau Ceti
+`TauCeti.norm_convolutionLp_le` and `TauCeti.convolutionLp_ae_eq_convolution` (Young's inequality on
+`ℝ` with `p = 2`).
 
 **Checks.**
 
