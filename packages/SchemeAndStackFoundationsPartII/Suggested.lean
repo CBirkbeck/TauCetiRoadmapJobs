@@ -1,6 +1,8 @@
-import Mathlib
-import TauCeti.Algebra.AlgebraicGroup.Fppf.Basic
-import TauCeti.AlgebraicGeometry.AffineGroupScheme.CartierDuality.FiniteLocallyFree
+module
+
+public import Mathlib
+public import TauCeti.Algebra.AlgebraicGroup.Fppf.Basic
+public import TauCeti.AlgebraicGeometry.AffineGroupScheme.CartierDuality.FiniteLocallyFree
 
 /-!
 # Scheme and stack foundations, part II — flat cohomology: target signatures
@@ -40,6 +42,8 @@ Headline theorems not statable at the pins, with what each lacks:
 
 universe w u
 
+@[expose] public section
+
 namespace TauCetiRoadmap.SchemeAndStackFoundationsPartII
 
 open CategoryTheory Opposite TauCeti
@@ -55,12 +59,17 @@ noncomputable def pointsAddFunctor {R : Type u} [CommRing R]
     CommAlgCat.{u} R ⥤ AddCommGrpCat.{u} :=
   letI : Coalgebra.IsCocomm R
       (FiniteLocallyFreeCommAffineGroupSchemeCat.coordinateHopfAlgebra R G).obj :=
-    (FiniteLocallyFreeCommAffineGroupSchemeCat.coordinateHopfAlgebra R G).property.2.2
+    ((finiteLocallyFreeBicommutativeHopfAlgProperty_iff R _).mp
+      (FiniteLocallyFreeCommAffineGroupSchemeCat.coordinateHopfAlgebra R G).property).2.2
   { obj := fun A => AddCommGrpCat.of (Additive (WithConv
       ((FiniteLocallyFreeCommAffineGroupSchemeCat.coordinateHopfAlgebra R G).obj →ₐ[R] A)))
     map := fun f => AddCommGrpCat.ofHom (MonoidHom.toAdditive (AlgHom.mapValue f.hom))
-    map_id := fun _ => AddCommGrpCat.hom_ext (AddMonoidHom.ext fun _ => rfl)
-    map_comp := fun _ _ => AddCommGrpCat.hom_ext (AddMonoidHom.ext fun _ => rfl) }
+    map_id := fun _ => by
+      simp only [CommAlgCat.hom_id, AlgHom.mapValue_id]
+      rfl
+    map_comp := fun _ _ => by
+      simp only [CommAlgCat.hom_comp, AlgHom.mapValue_comp]
+      rfl }
 
 /-- The coefficient sheaf of `G` on the affine fppf site of `R`: the points functor, lifted one
 universe and sheafified. The type-valued points presheaf is already an fppf sheaf

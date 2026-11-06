@@ -10,9 +10,9 @@ PerfectoidQuotientsPartII Layer Q7 owns ind-fppf and ind-syntomic ring maps (§Q
 
 PrismaticCohomologyPartIII §6.0 owns the perfect-base classification, the Hom/Ext description, the perfect pro-fppf comparison, the V−1 sequence and the perfect-base cohomology triangle through `Prismatic.FlatCohomology.perfectDieudonneComparison`, as well as p-adic continuity `Prismatic.FlatCohomology.pContinuity` and principal excision `Prismatic.FlatCohomology.excision`. Its proof routes also construct Bégueri resolutions, animated fppf cohomology, the cohomology deformation triangle and perfection of pro-fppf covers; the exports needed here are the supplier contracts below. Layer 4 here proves the affine vanishing consequence of the imported triangle, Layer 2 the animated-point cotangent interfaces, and Layer 3 the further Postnikov, truncation, nilpotent and support consequences of the imported construction.
 
-HeightsRationalPointsAndObstructions §§2.6a–2.6c owns `TwistedModule`, `endomorphismAzumaya`, projective stabilization, `localEtale_finiteFree_domination`, `twistedBundle_affine_glue` and `Brauer.affine_comparison`; its §2.6d treats quasi-projective schemes of finite type over infinite fields. Layer 1 extends the comparison to every quasi-compact separated scheme with an ample invertible sheaf, through the arithmetic Skolem argument. Twisted-module calculus is used on Noetherian models after SchemeAndStackFoundations §0.9 approximation and the continuity contract gap:flat-cohomology-continuity; its general construction is not repeated here. AlgebraicModuliForArithmeticGeometry Layer 4 owns banded gerbes and their H² classification. AlgebraicVectorBundles L0A–L0C owns the untwisted tensor, dual, Hom and rank operations.
+HeightsRationalPointsAndObstructions §§2.6a–2.6c owns `TwistedModule`, `endomorphismAzumaya`, projective stabilization, `localEtale_finiteFree_domination`, `twistedBundle_affine_glue` and `Brauer.affine_comparison`; its §2.6d treats quasi-projective schemes of finite type over infinite fields. Layer 1 extends the comparison to every quasi-compact separated scheme with an ample invertible sheaf, through the arithmetic Skolem argument; Moret-Bailly's theorem over number fields is ClassicalSerreModularity `I.0/moret-bailly-split-points`, and its integral form over Spec ℤ is consumed through the contract gap:integral-skolem-point. Twisted-module calculus is used on Noetherian models after SchemeAndStackFoundations §0.9 approximation and the continuity contract gap:flat-cohomology-continuity; its general construction is not repeated here. AlgebraicModuliForArithmeticGeometry Layer 4 owns banded gerbes and their H² classification. AlgebraicVectorBundles L0A–L0C owns the untwisted tensor, dual, Hom and rank operations.
 
-The pinned libraries provide the ordinary algebraic predicates, the scheme fppf and fpqc topologies, Tau Ceti's affine fppf site with its Hopf-algebra point sheaves, the category of finite locally free commutative affine group schemes over an affine base with Cartier duality, abelian sheaf `Ext` groups and the separated completion of a topological ring. DerivedModuleAlgebra owns ordinary square-zero classification (§0.5), Koszul complexes (§0.K.1) and module completion (§§1.1–1.9); EnhancedDerivedSheaves supplies animated rings and modules, hypercovers and cotangent complexes. ArcTopologyAndDescent owns arc and complete arc descent of étale cohomology and integral perfectoid hyperdescent, imported through the contracts below. Purity for flat cohomology, the perfectoid Dieudonné key formula and their birational applications have other owners and consume these general interfaces.
+The pinned libraries provide the ordinary algebraic predicates, the scheme fppf and fpqc topologies, Tau Ceti's affine fppf site with its Hopf-algebra point sheaves, the category of finite locally free commutative affine group schemes over an affine base with Cartier duality, abelian sheaf `Ext` groups and the separated completion of a topological ring. DerivedModuleAlgebra owns ordinary square-zero classification (§0.5), Koszul complexes (§0.K.1), perfect complexes and Tor amplitude (§1.E.0) and module completion (§§1.1–1.9); EnhancedDerivedSheaves supplies animated rings and modules, hypercovers and cotangent complexes. PrismaticCohomology §2.0 owns arc descent, excision, formal glueing and the punctured henselian comparison of torsion étale cohomology; ArcTopologyAndDescent owns complete arc descent of étale cohomology and integral perfectoid hyperdescent, imported through the contracts below. Purity for flat cohomology, the perfectoid Dieudonné key formula and their birational applications have other owners and consume these general interfaces.
 
 ## Conventions
 
@@ -43,39 +43,39 @@ In the covariant crystalline convention, M(ℤ/p^n) has F=pσ and V=σ⁻¹, whe
 
 ### From Mathlib
 
-At the pin 6b7abb3c7686292736be2955bd3eb9ebf63b456a.
+At the pinned Mathlib of the content repository's manifest; file and line numbers are those of that pin.
 
 | Supplier declaration | Pinned file and line | Input consumed |
 | --- | --- | --- |
-| `Algebra.FinitePresentation` | Mathlib/RingTheory/FinitePresentation.lean:43 | Finitely presented algebras; the stages of pro-ppf maps in §0.1. |
-| `Module.FaithfullyFlat` | Mathlib/RingTheory/Flat/FaithfullyFlat/Basic.lean:63 | Flatness with faithfulness on maximal ideals; keeps flat and faithfully flat apart. |
-| `AlgebraicGeometry.Scheme.fppfTopology` | Mathlib/AlgebraicGeometry/Sites/Fpqc.lean:53 | Scheme fppf topology of jointly surjective flat locally finitely presented families. |
-| `AlgebraicGeometry.Scheme.fpqcTopology` | Mathlib/AlgebraicGeometry/Sites/Fpqc.lean:75 | Scheme fpqc topology with the quasi-compact covering condition. |
+| `Algebra.FinitePresentation` | Mathlib/RingTheory/FinitePresentation.lean:44 | Finitely presented algebras; the stages of pro-ppf maps in §0.1. |
+| `Module.FaithfullyFlat` | Mathlib/RingTheory/Flat/FaithfullyFlat/Basic.lean:64 | Flatness with faithfulness on maximal ideals; keeps flat and faithfully flat apart. |
+| `AlgebraicGeometry.Scheme.fppfTopology` | Mathlib/AlgebraicGeometry/Sites/Fpqc.lean:54 | Scheme fppf topology of jointly surjective flat locally finitely presented families. |
+| `AlgebraicGeometry.Scheme.fpqcTopology` | Mathlib/AlgebraicGeometry/Sites/Fpqc.lean:76 | Scheme fpqc topology with the quasi-compact covering condition. |
 | `HenselianRing` | Mathlib/RingTheory/Henselian.lean:94 | Henselian pairs by Jacobson containment and simple-root lifting; neither locality nor completeness is included. |
 | `IsAzumaya` | Mathlib/Algebra/Azumaya/Defs.lean:60 | Azumaya algebras over a ring (projective, finite, faithful, with bijective left–right multiplication map); not a scheme Brauer group. |
 | `AdicCompletion.flat_of_isNoetherian` | Mathlib/RingTheory/AdicCompletion/AsTensorProduct.lean:378 | Flatness of the adic completion of a Noetherian ring; faithful flatness is not stated at the pin. |
 | `CategoryTheory.HasExt` | Mathlib/Algebra/Homology/DerivedCategory/Ext/Basic.lean:55 | The smallness condition under which `Ext` groups of an abelian category exist in a chosen universe; taken as an instance argument in §9.0. |
 | `CategoryTheory.Abelian.extFunctor` | Mathlib/Algebra/Homology/DerivedCategory/Ext/Basic.lean:437 | The bifunctor of `n`-th `Ext` groups; evaluated on fppf sheaves in §9.0. |
-| `CategoryTheory.presheafToSheaf` | Mathlib/CategoryTheory/Sites/Sheafification.lean:73 | Sheafification; for `AddCommGrpCat.{u+1}`-valued presheaves on the affine fppf site of a ring in universe `u` it exists at the pin, for `AddCommGrpCat.{u}` it does not. |
-| `AddCommGrpCat.free` | Mathlib/Algebra/Category/Grp/Adjunctions.lean:53 | Free abelian groups, applied to representable presheaves. |
-| `AddCommGrpCat.uliftFunctor` | Mathlib/Algebra/Category/Grp/Basic.lean:479 | Universe lift of abelian groups (additive form of `CommGrpCat.uliftFunctor`); fully faithful and exact. |
-| `CategoryTheory.Sheaf.cohomologyPresheafFunctor` | Mathlib/CategoryTheory/Sites/SheafCohomology/Basic.lean:69 | The model for §9.0: `Ext` from the free sheaf on a representable is cohomology of the slice site. |
+| `CategoryTheory.presheafToSheaf` | Mathlib/CategoryTheory/Sites/Sheafification.lean:74 | Sheafification; for `AddCommGrpCat.{u+1}`-valued presheaves on the affine fppf site of a ring in universe `u` it exists at the pin, for `AddCommGrpCat.{u}` it does not. |
+| `AddCommGrpCat.free` | Mathlib/Algebra/Category/Grp/Adjunctions.lean:54 | Free abelian groups, applied to representable presheaves. |
+| `AddCommGrpCat.uliftFunctor` | Mathlib/Algebra/Category/Grp/Basic.lean:491 | Universe lift of abelian groups (additive form of `CommGrpCat.uliftFunctor`); fully faithful and exact. |
+| `CategoryTheory.Sheaf.cohomologyPresheafFunctor` | Mathlib/CategoryTheory/Sites/SheafCohomology/Basic.lean:70 | The model for §9.0: `Ext` from the free sheaf on a representable is cohomology of the slice site. |
 | `UniformSpace.Completion` | Mathlib/Topology/UniformSpace/Completion.lean:291 | Separated completion; with `UniformSpace.Completion.algebra` (Mathlib/Topology/Algebra/UniformRing.lean:198) it is an algebra over a uniform topological ring. |
 
 ### From Tau Ceti
 
-At the pin a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039.
+At the pinned Tau Ceti of the content repository's manifest; file and line numbers are those of that pin.
 
 | Supplier declaration | Pinned file and line | Input consumed |
 | --- | --- | --- |
-| `TauCeti.CommAlgCat.fppfTopology` | TauCeti/Algebra/Category/CommAlgCat/Fppf.lean:51 | The fppf topology on `(CommAlgCat R)ᵒᵖ` induced from schemes over Spec R. |
-| `TauCeti.HopfAlgebra.pointsPresheaf_isSheaf` | TauCeti/Algebra/AlgebraicGroup/Fppf/Basic.lean:61 | The points presheaf of a commutative Hopf algebra is an fppf sheaf. |
-| `TauCeti.HopfAlgebra.pointsFppfSheaf` | TauCeti/Algebra/AlgebraicGroup/Fppf/Basic.lean:76 | The group-valued (`GrpCat`) fppf sheaf of points, before an abelian coefficient adapter. |
-| `TauCeti.AlgHom.mapValue` | TauCeti/Algebra/AlgebraicGroup/FunctorOfPoints.lean:154 | Functoriality of convolution points in the value algebra; `TauCeti.AlgHom.instCommGroup` (line 203) makes the points of a cocommutative Hopf algebra a commutative group. |
-| `TauCeti.FiniteLocallyFreeCommAffineGroupSchemeCat` | TauCeti/AlgebraicGeometry/AffineGroupScheme/CartierDuality/FiniteLocallyFree.lean:131 | Finite locally free commutative affine group schemes over an affine base: finite, flat, locally of finite presentation and commutative. |
-| `TauCeti.FiniteLocallyFreeCommAffineGroupSchemeCat.coordinateHopfAlgebra` | TauCeti/AlgebraicGeometry/AffineGroupScheme/CartierDuality/FiniteLocallyFree.lean:307 | The coordinate Hopf algebra, finite projective and cocommutative. |
-| `TauCeti.FiniteLocallyFreeCommAffineGroupSchemeCat.cartierDual` | TauCeti/AlgebraicGeometry/AffineGroupScheme/CartierDuality/FiniteLocallyFree.lean:331 | Finite locally free Cartier duality over an affine base. |
-| `TauCeti.FiniteLocallyFreeCommAffineGroupSchemeCat.cartierDualBaseChangeNatIso` | TauCeti/AlgebraicGeometry/AffineGroupScheme/CartierDuality/BaseChange.lean:174 | Cartier dualization commutes with arbitrary base change; used by the Bégueri resolution contract. |
+| `TauCeti.CommAlgCat.fppfTopology` | TauCeti/Algebra/Category/CommAlgCat/Fppf.lean:61 | The fppf topology on `(CommAlgCat R)ᵒᵖ` induced from schemes over Spec R. |
+| `TauCeti.HopfAlgebra.pointsPresheaf_isSheaf` | TauCeti/Algebra/AlgebraicGroup/Fppf/Basic.lean:57 | The points presheaf of a commutative Hopf algebra is an fppf sheaf. |
+| `TauCeti.HopfAlgebra.pointsFppfSheaf` | TauCeti/Algebra/AlgebraicGroup/Fppf/Basic.lean:72 | The group-valued (`GrpCat`) fppf sheaf of points, before an abelian coefficient adapter. |
+| `AlgHom.mapValue` | TauCeti/Algebra/AlgebraicGroup/FunctorOfPoints.lean:143 | Functoriality of convolution points in the value algebra; `AlgHom.convCommGroupOfSemiring` (line 232) makes the points of a cocommutative Hopf algebra a commutative group. Both live in the root namespace `AlgHom`, not under `TauCeti`. |
+| `TauCeti.FiniteLocallyFreeCommAffineGroupSchemeCat` | TauCeti/AlgebraicGeometry/AffineGroupScheme/CartierDuality/FiniteLocallyFree.lean:122 | Finite locally free commutative affine group schemes over an affine base: finite, flat, locally of finite presentation and commutative. |
+| `TauCeti.FiniteLocallyFreeCommAffineGroupSchemeCat.coordinateHopfAlgebra` | TauCeti/AlgebraicGeometry/AffineGroupScheme/CartierDuality/FiniteLocallyFree.lean:298 | The coordinate Hopf algebra, finite projective and cocommutative. |
+| `TauCeti.FiniteLocallyFreeCommAffineGroupSchemeCat.cartierDual` | TauCeti/AlgebraicGeometry/AffineGroupScheme/CartierDuality/FiniteLocallyFree.lean:321 | Finite locally free Cartier duality over an affine base. |
+| `TauCeti.FiniteLocallyFreeCommAffineGroupSchemeCat.cartierDualBaseChangeNatIso` | TauCeti/AlgebraicGeometry/AffineGroupScheme/CartierDuality/BaseChange.lean:172 | Cartier dualization commutes with arbitrary base change; used by the Bégueri resolution contract. |
 
 `HenselianRing` includes Jacobson containment and simple-root lifting, not locality or completeness. `IsAzumaya` includes projectivity, finite generation and faithful scalar action besides bijectivity of the left–right multiplication map. Tau Ceti's points sheaf is group-valued; §9.0 builds the abelian coefficient sheaf from the commutative group structure of points of a cocommutative Hopf algebra.
 
@@ -151,7 +151,7 @@ What EnhancedDerivedSheaves must provide (gap:general-square-zero): For m≥0 an
 
 ### From TauCetiRoadmap.DerivedModuleAlgebra
 
-§0.5 classifies ordinary square-zero extensions, §0.K.1 supplies finite Koszul complexes, §§0.10–0.13 perfect complexes and amplitude, and §§1.1–1.8 limits, completion, Nakayama, Koszul completion towers and complete flatness. §1.9 supplies p-adic Čech module descent for ordinary p-complete rings with bounded p-power torsion; the finite-tuple animated hypercover extension is a contract below.
+§0.5 classifies ordinary square-zero extensions, §0.K.1 supplies finite Koszul complexes, §0.10 derived base change of the cotangent complex, §0.11 its localization, §0.12 the smooth cotangent computation, §0.13 two-term models of regular quotients, §1.E.0 perfect complexes and Tor amplitude, and §§1.1–1.8 limits, completion, Nakayama, Koszul completion towers and complete flatness. §1.9 supplies p-adic Čech module descent for ordinary p-complete rings with bounded p-power torsion; the finite-tuple animated hypercover extension is a contract below.
 
 What DerivedModuleAlgebra must provide (gap:adic-flat-module-limits): For a finite weakly proregular ideal J⊂C and flat C/J^n-modules M_n with M_(n+1)⊗_(C/J^(n+1))C/J^n≃M_n, their limit M′ is classically J-complete, M′/J^nM′≃M_n and Tor_i^C(N,M′)=0 for i>0 and J-power-torsion N, and completion preserves this adic flatness. Section: §1.7. (Y18 Theorems 1.8, 4.3 and 5.9, pp.5–6, 14, 16–17; published numbering cited by CS24: 2.8, 4.3, 6.9).
 
@@ -171,15 +171,19 @@ Layer 0 §§0.1, 0.4–0.6: integral perfectoid rings, reducedness, compatible-r
 
 Layer RG2.0a §§RG2.0a.1–RG2.0a.3: affine Weil restriction along finite locally free maps and arbitrary base change.
 
-### From TauCetiRoadmap.PotentialModularityAndCompatibleSystems
+### From TauCetiRoadmap.ClassicalSerreModularity
 
-Layer 2 §2.8 `moret_bailly_integral_point`: the integral-point theorem for incomplete Skolem data. It is applied with base ℤ, an empty set of prescribed places, and an open of affine space surjective over ℤ.
+`I.0/moret-bailly-split-points` is Moret-Bailly's theorem over a number field K in its field form: for a separated, geometrically irreducible K-scheme X of finite type, finitely many places of K with finite Galois local extensions and nonempty open Galois-stable sets of smooth local points, it gives a finite extension K′/K split at those places and a point of X(K′) meeting every prescribed set under every embedding. Its route spreads X out over a ring of T-integers, adds a place so that the Skolem datum is incomplete, and proves the integral-point theorem for incomplete Skolem data over that base. Layer 1 consumes that integral form over Spec ℤ with no prescribed places, which is the contract below; the field form is not enough, since §1.1 needs a section over a finite flat extension of ℤ.
+
+What ClassicalSerreModularity must provide (gap:integral-skolem-point): For a separated, finite-type, surjective morphism X→Spec ℤ with X irreducible and X_ℚ geometrically irreducible, and no prescribed places (an incomplete Skolem datum over Spec ℤ), supply an irreducible closed subscheme Y⊂X finite and surjective over Spec ℤ; equivalently an order R′ in a number field together with a point of X(R′). Section: Layer I §I.0. (DJ Claim 3.22 and its proof, pp.8–9).
+
+### From TauCetiRoadmap.PrismaticCohomology
+
+§2.0: for a torsion abelian étale sheaf G on a base, X↦RΓ(X_ét,G) on qcqs schemes over it satisfies arc descent and excision; for a finite ideal I of an ordinary ring A and an A-algebra B with A/I^n≃B/I^nB for all n>0, the formal glueing square of torsion étale cohomology on Spec A, Spec B and their complements of V(I) is cartesian; and for a henselian pair (A,I) with I finite, torsion étale cohomology of Spec A minus V(I) agrees with that of Spec Â_I minus V(IÂ_I). The hypercomplete form of this arc sheaf, which Layers 5 and 7 use, is stated at ArcTopologyAndDescent §11.5: X↦RΓ(X_ét,G) takes values in coconnective complexes, so its descent upgrades to hyperdescent by truncation. The restriction of this sheaf to a quasi-compact open U of the base inherits arc hyperdescent, because the base change of an arc hypercover to U is an arc hypercover of U, and the supported fibre of the two is a limit of hypersheaves.
 
 ### From TauCetiRoadmap.ArcTopologyAndDescent
 
-What ArcTopologyAndDescent must provide (gap:torsion-arc-hyperdescent): For every qcqs scheme X and torsion abelian étale sheaf F, étale cohomology and its restrictions to quasi-compact opens satisfy arc hyperdescent. Section: Layer 6 §6.4.
-
-What ArcTopologyAndDescent must provide (gap:formal-glueing): For a finite ideal I in an ordinary ring A and an A-algebra B with A/I^n ≃ B/I^nB for all n>0, the formal glueing square for torsion étale cohomology is cartesian. Section: Layer 8 §8.6.
+§11.5 states that the ordinary torsion étale functor R↦RΓ(Spec R,F) of PrismaticCohomology §2.0 is a hypercomplete arc sheaf, by truncation of its coconnective values; it is consumed as the hypercomplete form of that supplier's arc descent.
 
 What ArcTopologyAndDescent must provide (gap:complete-etale-hyperdescent): For a finite ideal I and torsion étale coefficients, cohomology of I-adic completions, I-henselizations and their punctured spectra satisfies I-complete arc hyperdescent. Section: Layer 11 §11.5.
 
@@ -238,9 +242,9 @@ Prove the following statement. Let X be quasi-compact and separated with an ampl
 - Over an affine base the construction recovers a positive-rank twisted bundle from HeightsRationalPointsAndObstructions §2.6c. Rank zero cannot generate an Azumaya representative.
 - For the neutral gerbe over ℙ¹_ℤ, O with its weight-one character is a rank-one solution; a restriction to schemes over infinite fields would exclude this arithmetic base.
 
-**Proof route.** Spread out the finite gerbe data and the ample bundle to a finite-type ℤ-model; affine Gabber supplies enough local twisted bundles. After choosing a μ_n-lift by fppf Kummer and descending its finite data through Noetherian approximation, use the Noetherian twisted-module calculus of HeightsRationalPointsAndObstructions §2.6a. For a class killed by n, select n+1 coherent twisted sheaves, finite locally free at prescribed complementary points and of common generic rank r. The direct sum of r^n copies of each has weight one; their tensor product has weight n+1. On a 𝔾_m-gerbe tensor weights add as integers: transport weight n+1 back to weight one with a chosen invertible weight −n sheaf, or make the construction on a μ_n-gerbe lift. Use Serre generation and the high codimension of the determinantal bad cone to choose a morphism with controlled kernels. de Jong Claim 3.22 obtains such a section after a finite flat ℤ-extension: the complement of the bad closure is an open of affine space, surjective over ℤ, so the imported incomplete-Skolem theorem applies with empty local conditions. Push the kernel back along the finite faithfully flat extension; its nonfree locus improves in codimension. Iterate through the finite dimension of the model.
+**Proof route.** Spread out the finite gerbe data and the ample bundle to a finite-type ℤ-model; affine Gabber supplies enough local twisted bundles. After choosing a μ_n-lift by fppf Kummer and descending its finite data through Noetherian approximation, use the Noetherian twisted-module calculus of HeightsRationalPointsAndObstructions §2.6a. For a class killed by n, select n+1 coherent twisted sheaves, finite locally free at prescribed complementary points and of common generic rank r. The direct sum of r^n copies of each has weight one; their tensor product has weight n+1. On a 𝔾_m-gerbe tensor weights add as integers: transport weight n+1 back to weight one with a chosen invertible weight −n sheaf, or make the construction on a μ_n-gerbe lift. Use Serre generation and the high codimension of the determinantal bad cone to choose a morphism with controlled kernels. de Jong Claim 3.22 obtains such a section after a finite flat ℤ-extension: the bad closure has codimension at least two in the affine space of coefficient vectors over ℤ, so its complement U is an open of affine space that is surjective over Spec ℤ, irreducible, with geometrically irreducible generic fibre, and the integral form of Moret-Bailly's theorem over Spec ℤ with no prescribed places (ClassicalSerreModularity `I.0/moret-bailly-split-points`, exported as gap:integral-skolem-point) gives an order R′ in a number field and a point of U(R′) (DJ §3.22, pp.8–9). Push the kernel back along the finite faithfully flat extension; its nonfree locus improves in codimension. Iterate through the finite dimension of the model.
 
-*Needs:* AlgebraicModuliForArithmeticGeometry Layer 4; SchemeAndStackFoundations §1.22; HeightsRationalPointsAndObstructions §2.6c `Brauer.affine_comparison`; HeightsRationalPointsAndObstructions §2.6a `TwistedModule`; SchemeAndStackFoundations Layer 2 §§2.1–2.6; SchemeAndStackFoundations §0.9; PotentialModularityAndCompatibleSystems Layer 2 §2.8 `moret_bailly_integral_point`; HeightsRationalPointsAndObstructions §2.6b; HeightsRationalPointsAndObstructions §2.6c `localEtale_finiteFree_domination`; HeightsRationalPointsAndObstructions §2.6c `twistedBundle_affine_glue`; SchemeAndStackFoundations §2.11 `fppf_kummer_sequence`; gap:flat-cohomology-continuity; gap:ample-global-generation.
+*Needs:* AlgebraicModuliForArithmeticGeometry Layer 4; SchemeAndStackFoundations §1.22; HeightsRationalPointsAndObstructions §2.6c `Brauer.affine_comparison`; HeightsRationalPointsAndObstructions §2.6a `TwistedModule`; SchemeAndStackFoundations Layer 2 §§2.1–2.6; SchemeAndStackFoundations §0.9; ClassicalSerreModularity `I.0/moret-bailly-split-points`; gap:integral-skolem-point; HeightsRationalPointsAndObstructions §2.6b; HeightsRationalPointsAndObstructions §2.6c `localEtale_finiteFree_domination`; HeightsRationalPointsAndObstructions §2.6c `twistedBundle_affine_glue`; SchemeAndStackFoundations §2.11 `fppf_kummer_sequence`; gap:flat-cohomology-continuity; gap:ample-global-generation.
 
 ### 1.2 Gabber’s Brauer comparison with an ample bundle
 
@@ -262,7 +266,7 @@ For the neutral gerbe B𝔾_m over ℙ¹_ℤ, the standard character tensored wi
 
 ### Dependencies
 
-AlgebraicModuliForArithmeticGeometry Layer 4; SchemeAndStackFoundations §1.22; HeightsRationalPointsAndObstructions §2.6c `Brauer.affine_comparison`; HeightsRationalPointsAndObstructions §2.6a `TwistedModule`; SchemeAndStackFoundations Layer 2 §§2.1–2.6; SchemeAndStackFoundations §0.9; PotentialModularityAndCompatibleSystems Layer 2 §2.8 `moret_bailly_integral_point`; HeightsRationalPointsAndObstructions §2.6b; HeightsRationalPointsAndObstructions §2.6c `localEtale_finiteFree_domination`; HeightsRationalPointsAndObstructions §2.6c `twistedBundle_affine_glue`; SchemeAndStackFoundations §2.11 `fppf_kummer_sequence`; gap:flat-cohomology-continuity; gap:ample-global-generation; HeightsRationalPointsAndObstructions §2.6a `endomorphismAzumaya`; SchemeAndStackFoundations §2.22 `CohomologicalBrauer`; gap:brauer-class-injective.
+AlgebraicModuliForArithmeticGeometry Layer 4; SchemeAndStackFoundations §1.22; HeightsRationalPointsAndObstructions §2.6c `Brauer.affine_comparison`; HeightsRationalPointsAndObstructions §2.6a `TwistedModule`; SchemeAndStackFoundations Layer 2 §§2.1–2.6; SchemeAndStackFoundations §0.9; ClassicalSerreModularity `I.0/moret-bailly-split-points`; gap:integral-skolem-point; HeightsRationalPointsAndObstructions §2.6b; HeightsRationalPointsAndObstructions §2.6c `localEtale_finiteFree_domination`; HeightsRationalPointsAndObstructions §2.6c `twistedBundle_affine_glue`; SchemeAndStackFoundations §2.11 `fppf_kummer_sequence`; gap:flat-cohomology-continuity; gap:ample-global-generation; HeightsRationalPointsAndObstructions §2.6a `endomorphismAzumaya`; SchemeAndStackFoundations §2.22 `CohomologicalBrauer`; gap:brauer-class-injective.
 
 ## Layer 2: Animated group points and cotangent deformation
 
@@ -322,7 +326,7 @@ Prove the following statement. For a flat affine commutative R-group G of finite
 
 **Proof route.** Use the finite-presentation flat group cotangent theorem (CS24 §5.1.11), whose precise adapter is gap:flat-group-cotangent-amplitude, rather than inferring amplitude from flatness of an arbitrary algebra. A p-primary finite flat group becomes finite étale after inverting p; localization of the perfect cotangent is zero. Compactness gives a finite p-power annihilator.
 
-*Needs:* §2.2 the cotangent at the identity; DerivedModuleAlgebra §§0.10–0.13; SchemeAndStackFoundations Layer 1 §§1.13–1.15; gap:flat-group-cotangent-amplitude.
+*Needs:* §2.2 the cotangent at the identity; DerivedModuleAlgebra §§0.10–0.13, 1.E.0; SchemeAndStackFoundations Layer 1 §§1.13–1.15; gap:flat-group-cotangent-amplitude.
 
 ### 2.4 Deformation of group-valued points
 
@@ -344,7 +348,7 @@ For μ_p over 𝔽_p the linearized cotangent complex is [𝔽_p→0 𝔽_p] in 
 
 ### Dependencies
 
-EnhancedDerivedSheaves E5:animation.1 `animatedAlgebras`; EnhancedDerivedSheaves E5:animation.1–.4; EnhancedDerivedSheaves E1.3; SchemeAndStackFoundations Layer 1 §§1.13–1.15; gap:animation-composition; gap:classical-affine-group-adapter; EnhancedDerivedSheaves E5:cotangent-export.1 `cotangentComplex`; EnhancedDerivedSheaves E5:cotangent-export.1 `cotangentComplex_ordinary`; EnhancedDerivedSheaves E5:animation.4 `animatedModules`; EnhancedDerivedSheaves E3.2; DerivedModuleAlgebra §§0.10–0.13; gap:flat-group-cotangent-amplitude; EnhancedDerivedSheaves E5:cotangent-export.1; gap:general-square-zero; DerivedModuleAlgebra §0.5.
+EnhancedDerivedSheaves E5:animation.1 `animatedAlgebras`; EnhancedDerivedSheaves E5:animation.1–.4; EnhancedDerivedSheaves E1.3; SchemeAndStackFoundations Layer 1 §§1.13–1.15; gap:animation-composition; gap:classical-affine-group-adapter; EnhancedDerivedSheaves E5:cotangent-export.1 `cotangentComplex`; EnhancedDerivedSheaves E5:cotangent-export.1 `cotangentComplex_ordinary`; EnhancedDerivedSheaves E5:animation.4 `animatedModules`; EnhancedDerivedSheaves E3.2; DerivedModuleAlgebra §§0.10–0.13, 1.E.0; gap:flat-group-cotangent-amplitude; EnhancedDerivedSheaves E5:cotangent-export.1; gap:general-square-zero; DerivedModuleAlgebra §0.5.
 
 ## Layer 3: Animated sites, supports and deformation consequences
 
@@ -659,7 +663,7 @@ Prove the following statement. Let A→A′ be animated R-algebras with π₀A a
 
 **Proof route.** Continuity identifies cohomology on the two rings from the identical derived quotients. Use the punctured formal-glueing comparison and étale primary coefficients on D(p). Apply the support fibre sequence for the indicated open.
 
-*Needs:* PrismaticCohomologyPartIII §6.0 `Prismatic.FlatCohomology.pContinuity`; §5.2 derived Beauville–Laszlo glueing; §3.7 flat cohomology with supports; gap:torsion-arc-hyperdescent; gap:complete-etale-hyperdescent.
+*Needs:* PrismaticCohomologyPartIII §6.0 `Prismatic.FlatCohomology.pContinuity`; §5.2 derived Beauville–Laszlo glueing; §3.7 flat cohomology with supports; PrismaticCohomology §2.0; gap:complete-etale-hyperdescent.
 
 ### Examples
 
@@ -667,7 +671,7 @@ For ℤ_p and μ_p with p odd, H¹=ℤ_p^×/(ℤ_p^×)^p=ℤ/p, while the perfec
 
 ### Dependencies
 
-PerfectoidQuotientsPartII §§Q7.1, Q7.3; SchemeAndStackFoundations §0.12; SchemeAndStackFoundations §0.14 `henselian_pair_permanence`; SchemeAndStackFoundations Layer 2 §§2.1–2.6; gap:flat-cohomology-continuity; gap:torsor-limit-descent; gap:animated-flat-cohomology; EnhancedDerivedSheaves E5:animation.1 `animatedAlgebras`; DerivedModuleAlgebra §§1.2–1.4; DerivedModuleAlgebra §1.6; EnhancedDerivedSheaves E2:towers.1; PrismaticCohomologyPartIII §6.0 `Prismatic.FlatCohomology.pContinuity`; §4.1 higher vanishing over perfect affine rings; §3.11 cohomology across nil ideals; SchemeAndStackFoundations §2.2; SchemeAndStackFoundations §2.10 `smoothGroup_fppf_etale_comparison`; gap:begueri-resolution; gap:char-p-etale-dimension; §3.7 flat cohomology with supports; gap:torsion-arc-hyperdescent; gap:complete-etale-hyperdescent.
+PerfectoidQuotientsPartII §§Q7.1, Q7.3; SchemeAndStackFoundations §0.12; SchemeAndStackFoundations §0.14 `henselian_pair_permanence`; SchemeAndStackFoundations Layer 2 §§2.1–2.6; gap:flat-cohomology-continuity; gap:torsor-limit-descent; gap:animated-flat-cohomology; EnhancedDerivedSheaves E5:animation.1 `animatedAlgebras`; DerivedModuleAlgebra §§1.2–1.4; DerivedModuleAlgebra §1.6; EnhancedDerivedSheaves E2:towers.1; PrismaticCohomologyPartIII §6.0 `Prismatic.FlatCohomology.pContinuity`; §4.1 higher vanishing over perfect affine rings; §3.11 cohomology across nil ideals; SchemeAndStackFoundations §2.2; SchemeAndStackFoundations §2.10 `smoothGroup_fppf_etale_comparison`; gap:begueri-resolution; gap:char-p-etale-dimension; §3.7 flat cohomology with supports; PrismaticCohomology §2.0; gap:complete-etale-hyperdescent.
 
 ## Layer 6: Derived excision with supports
 
@@ -759,7 +763,7 @@ Prove the following statement. For ordinary R and commutative finite locally fre
 
 **Proof route.** Split into primary coefficients. Primary continuity and punctured étale formal glueing reduce the question to derived characteristic-p quotients. Use the deformation triangle and Postnikov convergence to reduce to ordinary characteristic-p algebras. Ind-fppf semiperfect refinements, followed by nilpotent approximation, reduce to perfect algebras. Use the perfect-base V−1 formula: Witt-module faithful-flat hyperdescent and its finite Tor-amplitude Dieudonné coefficients compute the limit.
 
-*Needs:* §3.8 fppf hyperdescent and Postnikov convergence; §5.1 ind-fppf refinements splitting all covers; PrismaticCohomologyPartIII §6.0 `Prismatic.FlatCohomology.pContinuity`; PrismaticCohomologyPartIII §6.0 `Prismatic.FlatCohomology.excision`; PrismaticCohomologyPartIII §6.0 `Prismatic.FlatCohomology.perfectDieudonneComparison`; gap:cohomology-deformation; §3.11 cohomology across nil ideals; gap:perfection-covers; §3.7 flat cohomology with supports; gap:torsion-arc-hyperdescent; gap:formal-glueing; SchemeAndStackFoundations Layer 2 §§2.1–2.6; gap:flat-cohomology-continuity; gap:torsor-limit-descent; EnhancedDerivedSheaves E5:animation.2.
+*Needs:* §3.8 fppf hyperdescent and Postnikov convergence; §5.1 ind-fppf refinements splitting all covers; PrismaticCohomologyPartIII §6.0 `Prismatic.FlatCohomology.pContinuity`; PrismaticCohomologyPartIII §6.0 `Prismatic.FlatCohomology.excision`; PrismaticCohomologyPartIII §6.0 `Prismatic.FlatCohomology.perfectDieudonneComparison`; gap:cohomology-deformation; §3.11 cohomology across nil ideals; gap:perfection-covers; §3.7 flat cohomology with supports; PrismaticCohomology §2.0; ArcTopologyAndDescent §11.5; SchemeAndStackFoundations Layer 2 §§2.1–2.6; gap:flat-cohomology-continuity; gap:torsor-limit-descent; EnhancedDerivedSheaves E5:animation.2.
 
 ### 7.2 Primary descent modulo p
 
@@ -781,7 +785,7 @@ The split faithfully flat cover A→A×A has a contracting augmented Čech diagr
 
 ### Dependencies
 
-§3.8 fppf hyperdescent and Postnikov convergence; §5.1 ind-fppf refinements splitting all covers; PrismaticCohomologyPartIII §6.0 `Prismatic.FlatCohomology.pContinuity`; PrismaticCohomologyPartIII §6.0 `Prismatic.FlatCohomology.excision`; PrismaticCohomologyPartIII §6.0 `Prismatic.FlatCohomology.perfectDieudonneComparison`; gap:cohomology-deformation; §3.11 cohomology across nil ideals; gap:perfection-covers; §3.7 flat cohomology with supports; gap:torsion-arc-hyperdescent; gap:formal-glueing; SchemeAndStackFoundations Layer 2 §§2.1–2.6; gap:flat-cohomology-continuity; gap:torsor-limit-descent; EnhancedDerivedSheaves E5:animation.2; §3.6 henselization of an animated ring; §5.5 primary invariance under derived completion; §3.3 flatness after a nilpotent thickening.
+§3.8 fppf hyperdescent and Postnikov convergence; §5.1 ind-fppf refinements splitting all covers; PrismaticCohomologyPartIII §6.0 `Prismatic.FlatCohomology.pContinuity`; PrismaticCohomologyPartIII §6.0 `Prismatic.FlatCohomology.excision`; PrismaticCohomologyPartIII §6.0 `Prismatic.FlatCohomology.perfectDieudonneComparison`; gap:cohomology-deformation; §3.11 cohomology across nil ideals; gap:perfection-covers; §3.7 flat cohomology with supports; PrismaticCohomology §2.0; ArcTopologyAndDescent §11.5; SchemeAndStackFoundations Layer 2 §§2.1–2.6; gap:flat-cohomology-continuity; gap:torsor-limit-descent; EnhancedDerivedSheaves E5:animation.2; §3.6 henselization of an animated ring; §5.5 primary invariance under derived completion; §3.3 flatness after a nilpotent thickening.
 
 ## Layer 8: Complete continuity
 

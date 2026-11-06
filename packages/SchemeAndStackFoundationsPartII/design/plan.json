@@ -3518,25 +3518,14 @@
       "source": "CS24 Lemma 4.1.6, pp.37–38"
     },
     {
-      "slug": "torsion-arc-hyperdescent",
-      "supplier": "ArcTopologyAndDescent",
-      "section": "Layer 6 §6.4",
-      "needs": "For every qcqs scheme X and torsion abelian étale sheaf F, étale cohomology and its restrictions to quasi-compact opens satisfy arc hyperdescent.",
+      "slug": "integral-skolem-point",
+      "supplier": "ClassicalSerreModularity",
+      "section": "Layer I §I.0",
+      "needs": "For a separated, finite-type, surjective morphism X→Spec ℤ with X irreducible and X_ℚ geometrically irreducible, and no prescribed places (an incomplete Skolem datum over Spec ℤ), supply an irreducible closed subscheme Y⊂X finite and surjective over Spec ℤ; equivalently an order R′ in a number field together with a point of X(R′).",
       "nodes": [
-        "SchemeAndStackFoundationsPartII:FC.5/p-complete-comparison",
-        "SchemeAndStackFoundationsPartII:FC.7/fpqc-hyperdescent"
+        "SchemeAndStackFoundationsPartII:FC.1/ample-twisted-generation"
       ],
-      "source": ""
-    },
-    {
-      "slug": "formal-glueing",
-      "supplier": "ArcTopologyAndDescent",
-      "section": "Layer 8 §8.6",
-      "needs": "For a finite ideal I in an ordinary ring A and an A-algebra B with A/I^n ≃ B/I^nB for all n>0, the formal glueing square for torsion étale cohomology is cartesian.",
-      "nodes": [
-        "SchemeAndStackFoundationsPartII:FC.7/fpqc-hyperdescent"
-      ],
-      "source": ""
+      "source": "DJ Claim 3.22 and its proof, pp.8–9"
     },
     {
       "slug": "complete-etale-hyperdescent",
