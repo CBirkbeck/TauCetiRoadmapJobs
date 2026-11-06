@@ -38,8 +38,9 @@ This roadmap owns:
   boundaries and stability under smooth families of metrics (Layer 2);
 - regular domains `{ρ ≥ 0}` of a boundaryless Riemannian manifold as Riemannian manifolds with
   boundary, sublevel sets whose level sets are strictly concave from the superlevel sets, the
-  collar extension and the double of `M`, the manifold-level extension of smooth functions and
-  metrics across `∂M`, the realisation theorem, and the comparison of `II` with the immersion
+  interior of `M` as a boundaryless manifold, the collar extension and the double of `M` as
+  compatible open gluings, the manifold-level extension of smooth functions and metrics across
+  `∂M`, the realisation theorem, and the comparison of `II` with the immersion
   geometry of RiemannianGeometry R5a (Layer 3);
 - geodesics of a regular domain, second-order contact of geodesics with the boundary, the normal
   exponential and signed distance of a two-sided hypersurface with its Gauss lemma, boundary
@@ -68,8 +69,12 @@ It leaves to other roadmaps, by section:
   immersions: RiemannianGeometry R5a; normal-coordinate jets: RiemannianGeometry R1 (item 4);
 - the normal exponential of an embedding and its tubular neighbourhoods: already in Tau Ceti
   (`TauCeti.SmoothEmbedding.normalExp` and the tube theorems);
-- the smooth collar theorem and gluing along boundaries: GeometricTopology Layer 1;
-- the half-space Seeley extension: ComplexKahlerGeometry K5a;
+- the smooth collar theorem: GeometricTopology Layer 1; gluing along a piece of the boundary in
+  the corners category is also GeometricTopology Layer 1's and is not consumed, since the collar
+  extension and the double of `M` (3.3) are compatible open gluings of boundaryless pieces, which
+  Tau Ceti has (`TopCat.GlueData.chartedSpace`);
+- the extension of smooth functions across a smooth boundary by the half-space Seeley extension:
+  ComplexKahlerGeometry K5a;
 - uniform normal radii on compact sets: SmoothBundlesConnections B6.0;
 - the geodesic X-ray transform, Santaló's formula, Pestov identities, simple manifolds and the
   boundary and lens rigidity theorems themselves: future roadmaps that consume Layers 2, 4 and 5;
@@ -155,7 +160,9 @@ Paternain–Salo–Uhlmann Lemma 3.1.13.
 metric and finite dimension but no boundaryless model; `ContDiffAt.implicitFunction` and
 `ContDiffAt.contDiffAt_implicitFunction`; `SmoothPartitionOfUnity`,
 `exists_contMDiffSection_forall_mem_convex_of_local` and
-`exists_contMDiff_zero_iff_one_iff_of_isClosed` (finite-dimensional, Hausdorff, σ-compact).
+`exists_contMDiff_zero_iff_one_iff_of_isClosed` (finite-dimensional, Hausdorff, σ-compact);
+`TopCat.GlueData` with its element-level constructor `TopCat.GlueData.MkCore`
+(`Mathlib/Topology/Gluing.lean`): spaces glued along open subsets by transition homeomorphisms.
 
 **From Tau Ceti** (at the pin): the boundary manifold `TauCeti.isManifold_boundary`,
 `TauCeti.isSmoothEmbedding_subtypeVal_boundary`, `TauCeti.mfderiv_subtypeVal_boundary`,
@@ -191,17 +198,26 @@ bundles `TauCeti.sphereBundleChartedSpace`, `TauCeti.isManifold_sphereBundle`,
 `ContDiff.sub_eq_hadamardFactor_apply`, `ContDiff.contDiff_hadamardFactor` and
 `TauCeti.contDiff_intervalIntegral`; the model spaces `TauCeti.sphereRoundMetric`,
 `TauCeti.UpperHalfSpace` with `TauCeti.UpperHalfSpace.hyperbolicMetric` and
-`TauCeti.UpperHalfSpace.hasConstantSectionalCurvature`. Every name in this paragraph is consumed,
-never restated.
+`TauCeti.UpperHalfSpace.hasConstantSectionalCurvature`; compatible open gluing
+`TopCat.GlueData.chartedSpace`, `TopCat.GlueData.IsCompatible`, `TopCat.GlueData.isCompatible_iff`,
+`TopCat.GlueData.IsCompatible.isManifold`, `TopCat.GlueData.IsCompatible.isLocalDiffeomorph_ι`,
+`TopCat.GlueData.IsCompatible.partialDiffeomorphι`, `TopCat.GlueData.IsCompatible.contMDiff_iff`
+(pieces and overlaps modelled on one space, `C^n` manifolds on the pieces, local diffeomorphisms
+as overlap maps; the glued space is a `C^n` manifold on which each canonical map is a
+diffeomorphism onto its open image), with the Hausdorff criterion
+`TopCat.GlueData.t2Space_iff_isClosed_chartRel` (the glued space is Hausdorff iff every gluing
+relation is closed in the product of its two pieces) and the instance
+`TopCat.GlueData.secondCountableTopology` (countably many second-countable pieces). Every name in
+this paragraph is consumed, never restated.
 
 **From TauCetiRoadmap.DifferentialGeometry**: 5.1 (the outward-pointing boundary interface),
 12.1 (every finite-dimensional Hausdorff σ-compact manifold carries a smooth metric, in Tau Ceti as
 `TauCeti.nonempty_contMDiffRiemannianMetric`), 12.2–12.3 (gradient and symmetric Hessian), 12.5 (the outward unit
-normal of the boundary divergence theorem). **Required of DifferentialGeometry 12.5:** a named
-outward unit normal `ν_out(q) ∈ T_qM` at every `q ∈ ∂M` of a Riemannian manifold with boundary
-over `𝓡∂ (n+1)`, with the three facts that define it: `|ν_out(q)| = 1`, `ν_out(q)` is
-`g`-orthogonal to `dι_q(T_q∂M)`, and `ν_out(q)` is outward pointing in the sense of 5.1. 12.5
-states its divergence theorem with this normal but does not name it.
+normal of the boundary divergence theorem). What DifferentialGeometry must provide
+(gap:dg-outward-unit-normal): a named outward unit normal along `∂M` of a Riemannian manifold
+with boundary over `𝓡∂ (n+1)`, proved to be a unit vector, `g`-orthogonal to `dι(T∂M)` and
+outward pointing in the sense of 5.1; 12.5 states its divergence theorem with this normal but
+does not name it.
 
 **From TauCetiRoadmap.HopfRinow** (completed): Layer 1 (geodesic equation, maximal intervals,
 geodesic spray and smooth local flow, `riemannianExp` on its natural domain), Layer 2 (normal
@@ -218,17 +234,14 @@ sphere normalisation `B = −g · position`).
 
 **From TauCetiRoadmap.GeometricTopology**: Layer 1, collar neighbourhoods (Lee, *Introduction to
 Smooth Manifolds*, Theorem 9.25, with its extract): `∂M` has a smooth collar, a diffeomorphism
-`c : ∂M × [0, 1) → U` onto an open neighbourhood `U` of `∂M` with `c(q, 0) = q`; Layer 1, gluing
-along a piece of the boundary. **Required of GeometricTopology Layer 1 (gluing along a piece of
-the boundary):** for full-boundary gluing of two Hausdorff second-countable manifolds with
-boundary over `𝓡∂ (n+1)` along a diffeomorphism of their boundaries, using collars, the glued
-space is a Hausdorff second-countable boundaryless smooth manifold of dimension `n + 1` in which
-each piece is a closed subset, the two collars combine into a smooth bicollar
-`∂M × (−1, 1)` of the seam, and each piece with its own atlas is diffeomorphic to its image with
-the atlas induced from the glued manifold.
+`c : ∂M × [0, 1) → U` onto an open neighbourhood `U` of `∂M` with `c(q, 0) = q`. Nothing else
+of Layer 1 is consumed: the gluings of 3.3 are open gluings of boundaryless pieces, taken from
+Tau Ceti.
 
-**From TauCetiRoadmap.ComplexKahlerGeometry**: K5a, the half-space Seeley extension: a function
-on the closed half-space `{x⁰ ≥ 0} ⊆ ℝⁿ⁺¹` that is smooth up to the boundary (Mathlib's
+**From TauCetiRoadmap.ComplexKahlerGeometry**: K5a (extension of smooth functions across a
+smooth boundary: the half-space Seeley extension), a step of K5a's construction of
+diffeomorphisms of closures of bounded smooth domains rather than a separately numbered item: a
+function on the closed half-space `{x⁰ ≥ 0} ⊆ ℝⁿ⁺¹` that is smooth up to the boundary (Mathlib's
 `ContDiffOn ℝ ∞` on the closed half-space) is the restriction of a smooth function on `ℝⁿ⁺¹`.
 
 **From TauCetiRoadmap.SmoothBundlesConnections**: B6.0, positive uniform normal radii on compact
@@ -302,8 +315,8 @@ Prove its Riemannian hypersurface API (Paternain–Salo–Uhlmann, lines 2687–
 
 Define, for an open `U ⊆ M`, a boundary defining function on `U` as `ρ : M → ℝ`, smooth on `U`,
 with `ρ > 0` on `U ∩ int M`, `ρ = 0` on `U ∩ ∂M` and `dρ_q ≠ 0` for `q ∈ U ∩ ∂M`; a global one is
-the case `U = M` (Paternain–Salo–Uhlmann, Lemma 3.1.10, lines 2766–2773; Uhlmann–Vasy, lines
-25–26 and 134–136). Prove:
+the case `U = M` (Uhlmann–Vasy, lines 134–136 and 25–26; the stronger normalised function of
+Paternain–Salo–Uhlmann, Lemma 3.1.10, is the `ρ̂` of 4.3). Prove:
 
 - Local existence: the normal coordinate `x⁰` of a half-space chart is a boundary defining
   function on the chart source.
@@ -597,33 +610,79 @@ holds at every `y ∈ U` (Stefanov–Uhlmann–Vasy, lines 128–129 and 198–2
 ### 3.3 The collar extension and the double
 
 Let `M` be Hausdorff and second countable, and `c : ∂M × [0, 1) → M` a smooth collar
-(GeometricTopology Layer 1). Construct `M̃ := M ∪_{∂M} (∂M × [0, 1))`, the full-boundary gluing of
-`M` with the outer collar along `q ↦ (q, 0)` (GeometricTopology Layer 1), and prove:
+(GeometricTopology Layer 1): a diffeomorphism of manifolds with boundary onto an open
+neighbourhood `U` of `∂M` with `c(q, 0) = q`. Give `int M` the boundaryless structure over
+`𝓘(ℝ, ℝⁿ⁺¹)` whose charts are the half-space charts of `M` restricted to interior points and read
+in `ℝⁿ⁺¹` (interior points are read in the open half-space `{x⁰ > 0}`, and the restricted images
+are open there), so that the inclusion `int M → M` is a smooth open embedding and `c` restricts to
+a diffeomorphism `∂M × (0, 1) → U ∩ int M` of boundaryless manifolds. Construct `M̃` as the
+compatible open gluing (Tau Ceti `TopCat.GlueData.chartedSpace`,
+`TopCat.GlueData.IsCompatible.isManifold`, the gluing data given by Mathlib's
+`TopCat.GlueData.MkCore`) of the two boundaryless pieces `int M` and the bicollar `∂M × (−1, 1)`
+along the open subsets `U ∩ int M` and `∂M × (0, 1)` identified by `c`, and prove:
 
-- `M̃` is a Hausdorff second-countable boundaryless smooth manifold of dimension `n + 1`, `M` is
-  closed in `M̃`, and `c` extends to a smooth open embedding `c̃ : ∂M × (−1, 1) → M̃` with
-  `c̃(q, t) ∈ M` iff `t ≥ 0`.
-- There is `ρ̃ ∈ C^∞(M̃)` with `0` a regular value, `ρ̃(c̃(q, t)) = t` for `|t| < 1/2`, `ρ̃ > 0` on
-  `int M`, `ρ̃ = 0` on `∂M` and `ρ̃ < 0` on `M̃ ∖ M`; the identity of `M` is a diffeomorphism from
-  `M`'s atlas onto Tau Ceti's sublevel atlas of `{ρ̃ ≥ 0}`.
-- If `M` is compact and `∂M ≠ ∅`, the double `DM := M ∪_{∂M} M` (GeometricTopology Layer 1, gluing
-  along the identity) is a compact boundaryless manifold containing `M` as the regular domain
-  `{ρ_D ≥ 0}` of a smooth `ρ_D` with `0` regular; `DM` is connected when `M` is.
+- `M̃` is a Hausdorff second-countable boundaryless smooth manifold of dimension `n + 1`:
+  Hausdorff by the closed-relation criterion (`TopCat.GlueData.t2Space_iff_isClosed_chartRel`),
+  since if `c(q_k, t_k) → x` in `int M` and `(q_k, t_k) → (q, t)` in `∂M × (−1, 1)`, then `t ≥ 0`,
+  `x = c(q, t)` by continuity of `c` on `∂M × [0, 1)`, and `t > 0` because `x ∉ ∂M`, so the limit
+  pair lies in the relation; second countable as a gluing of two second-countable pieces
+  (`TopCat.GlueData.secondCountableTopology`).
+- The canonical maps of the two pieces are smooth open embeddings
+  (`TopCat.GlueData.IsCompatible.isLocalDiffeomorph_ι`,
+  `TopCat.GlueData.IsCompatible.partialDiffeomorphι`); write `c̃ : ∂M × (−1, 1) → M̃` for that of
+  the bicollar. The map `M → M̃` equal to the canonical map on `int M` and to `q ↦ c̃(q, 0)` on
+  `∂M` is a closed embedding with image `M̃ ∖ c̃(∂M × (−1, 0))`; identifying `M` with its image,
+  `M` is closed in `M̃`, `c̃` extends `c`, and `c̃(q, t) ∈ M` iff `t ≥ 0`.
+- There is `ρ̃ ∈ C^∞(M̃)` with `0` a regular value, `ρ̃ > 0` on `int M`, `ρ̃ = 0` on `∂M`,
+  `ρ̃ < 0` on `M̃ ∖ M`, and `ρ̃(c̃(q, t)) = t` on a neighbourhood of `∂M × {0}` in `∂M × (−1, 1)`,
+  which contains `∂M × (−1/2, 1/2)` when `∂M` is compact. Route: with a smooth partition of
+  unity `φ₀ + φ₁ = 1` subordinate to the open cover of `M̃` by `c̃(∂M × (−1, 1))` and `M̃ ∖ ∂M`
+  (`∂M` is closed in `M̃`; for compact `∂M` the second set is replaced by
+  `M̃ ∖ c̃(∂M × [−1/2, 1/2])`, open because `c̃(∂M × [−1/2, 1/2])` is compact), set `ρ̃ := φ₀ · (χ ∘ t) + φ₁ · s`, with `t` the bicollar
+  coordinate, `χ` an odd smooth function equal to `t` for `|t| ≤ 1/2` and to `1` for `t ≥ 3/4`,
+  and `s` the locally constant function equal to `1` on `int M` and to `−1` on `M̃ ∖ M`. The
+  identity of `M` is a diffeomorphism from `M`'s atlas onto Tau Ceti's sublevel atlas of
+  `{ρ̃ ≥ 0}`: at interior points both atlases consist of the charts of `int M`, and near `∂M` the
+  bicollar chart restricted to `t ≥ 0` is `c` composed with a chart of `∂M`, a chart of `M`'s
+  maximal atlas in which `ρ̃ = t` is the normal coordinate, so the sublevel charts built from it
+  are compatible with `M`'s half-space charts.
+- If `M` is compact and `∂M ≠ ∅`, the double `DM` is the compatible open gluing of three
+  boundaryless pieces, two copies of `int M` and the bicollar `∂M × (−1, 1)`: the first copy is
+  glued along `(q, t) ↦ c(q, t)` on `∂M × (0, 1)`, the second along `(q, t) ↦ c(q, −t)` on
+  `∂M × (−1, 0)`, and the two copies do not meet (the cocycle condition is vacuous). `DM` is
+  Hausdorff (the closed-relation argument for each pair of pieces), second countable,
+  boundaryless, compact (the continuous image of `M ⊔ M` under the two copy maps `M → DM`), and
+  contains the first copy of `M` as the regular domain `{ρ_D ≥ 0}` of a smooth `ρ_D` with `0`
+  regular, built as `ρ̃` was with `s = 1` on the first copy of `int M` and `s = −1` on the second,
+  and `ρ_D(c̃(q, t)) = t` for `|t| < 1/2`; `DM` is connected when `M` is, since the two copies of
+  `M` are connected and meet along `∂M ≠ ∅`.
 
 (Paternain–Salo–Uhlmann, Lemma 3.1.8 and Exercise 3.1.9, lines 2749–2762; Lee, *Introduction to
 Smooth Manifolds*, Theorem 9.25, for the collar.)
 
 **Checks.**
 
-- `M = [0, 1]`: `DM` is a circle and `M̃` an open interval containing `[0, 1]`; the closed unit disc
-  doubles to a 2-sphere.
+- `M = [0, 1]`: `int M = (0, 1)` glued to a bicollar `(−1, 1)` at each end gives `M̃ = (−1, 2)`, an
+  open interval containing `[0, 1]`; `DM` is a circle; the closed unit disc doubles to a 2-sphere.
 - The closed half-space `ℝⁿ × [0, ∞)`: `M̃ ≅ ℝⁿ × (−1, ∞)`, non-compact, with `ρ̃ = x⁰` near the
   boundary.
+- The bicollar piece is what makes `M̃` Hausdorff: gluing two copies of `int M` along the open
+  subset `U ∩ int M` alone is Tau Ceti's double of `int M` along an open set, Hausdorff only when
+  that set is closed in `int M` (`TauCeti.t2Space_doubleGlueData_iff`); for `M = [0, 1]` with the
+  collar `c(0, t) = t/2`, `c(1, t) = 1 − t/2` the set is `(0, 1/2) ∪ (1/2, 1)`, not closed in
+  `(0, 1)`, and the double has two copies of the point `1/2` with no disjoint neighbourhoods. In
+  `M̃` the seam `∂M × {0}` lies in the bicollar piece and the gluing relation is closed.
 - If `∂M = ∅` the double is `M ⊔ M`, disconnected for nonempty `M`; the connectedness clause needs
   `∂M ≠ ∅`, and the realisation theorem 3.5 then takes `M̃ = M`.
 
-*Needs:* GeometricTopology Layer 1 (collar neighbourhoods; gluing along a piece of the boundary,
-with the contract above); 3.1; Mathlib `exists_contMDiff_zero_iff_one_iff_of_isClosed`.
+*Needs:* GeometricTopology Layer 1 (collar neighbourhoods); 3.1; Tau Ceti
+`TopCat.GlueData.chartedSpace`, `TopCat.GlueData.IsCompatible.isManifold`,
+`TopCat.GlueData.IsCompatible.isLocalDiffeomorph_ι`,
+`TopCat.GlueData.IsCompatible.partialDiffeomorphι`, `TopCat.GlueData.IsCompatible.contMDiff_iff`,
+`TopCat.GlueData.t2Space_iff_isClosed_chartRel`, `TopCat.GlueData.secondCountableTopology`,
+`TauCeti.isManifold_boundary`, `TauCeti.scalarRegularSublevelChartedSpace`; Mathlib
+`TopCat.GlueData`, `TopCat.GlueData.MkCore`, `ModelWithCorners.isClosed_boundary`,
+`SmoothPartitionOfUnity`.
 
 ### 3.4 Extension of functions and metrics across the boundary
 
@@ -650,7 +709,8 @@ Let `M = {ρ ≥ 0}` be a regular domain of a Hausdorff second-countable boundar
 - On a regular domain with empty boundary (`M` open and closed in `N`), extension by any smooth
   function on the complement works and no Seeley step is used.
 
-*Needs:* 3.1; ComplexKahlerGeometry K5a (half-space Seeley extension); DifferentialGeometry 12.1
+*Needs:* 3.1; ComplexKahlerGeometry K5a (extension across a smooth boundary: the half-space
+Seeley extension); DifferentialGeometry 12.1
 (Tau Ceti `TauCeti.nonempty_contMDiffRiemannianMetric`); Mathlib `SmoothPartitionOfUnity`, `exists_contMDiffSection_forall_mem_convex_of_local`.
 
 ### 3.5 The realisation theorem
@@ -703,7 +763,8 @@ circle and the sphere; the conformal ball as a domain in `(ℝⁿ⁺¹, e^{2φ} 
 ### Dependencies
 
 3.1 uses Layer 1 and Tau Ceti's sublevel atlas and pullback metric; 3.2 uses 1.4, 2.1 and 3.1;
-3.3 uses GeometricTopology Layer 1 and 3.1; 3.4 uses 3.1, ComplexKahlerGeometry K5a and
+3.3 uses GeometricTopology Layer 1 (the collar), Tau Ceti's compatible open gluing and 3.1; 3.4
+uses 3.1, ComplexKahlerGeometry K5a and
 DifferentialGeometry 12.1; 3.5 uses 3.3–3.4; 3.6 uses Layer 1, 3.1 and RiemannianGeometry R5a.
 
 ## Layer 4: Geodesics at the boundary
@@ -787,11 +848,21 @@ Ceti `TauCeti.SmoothEmbedding.normalExp` through the trivialisation of the norma
   and `grad r_Σ = ν_Σ` on `Σ`, and there is an open `W' ⊆ W` containing `Σ` with
   `|r_Σ(y)| = d_N(y, Σ)` for `y ∈ W'`.
 - Boundary case `Σ = ∂M`, `f = ρ`: on `W' ∩ M`, `r_{∂M}(y) = d_M(y, ∂M)`, the distance to `∂M` of
-  `(M, g_M)` itself (no path is shorter than the normal segment, which lies in `M`); `r_{∂M}` is a
-  boundary defining function near `∂M` with `grad r_{∂M} = ν_in` on `∂M`; and there is `ρ̂ ∈
-  C^∞(N)` with `ρ̂ = r_{∂M}` on a neighbourhood of `∂M` in `N` (so `ρ̂ = d_M(·, ∂M)` near `∂M` in
-  `M`), `M = {ρ̂ ≥ 0}`, `∂M = {ρ̂ = 0}`, `N ∖ M = {ρ̂ < 0}` and `grad ρ̂ = ν_in` on `∂M`. Route:
-  `ρ̂ = ψ r_{∂M} + (1 − ψ) ρ` with a cutoff `ψ` equal to `1` near `∂M` and supported in `W'`.
+  `(M, g_M)` itself (no path is shorter than the normal segment, which lies in `M`), and `r_{∂M}`
+  is a boundary defining function near `∂M` with `grad r_{∂M} = ν_in` on `∂M`.
+- Normalised defining function: choose a smooth `ε₁ : ∂M → (0, ∞)` with `ε₁ < ε`, constant when
+  `∂M` is compact, such that the closed tube `E_{∂M}({|r| ≤ ε₁(q)})` is closed in `N` (Tau Ceti's
+  closed-tube theorem, applied inside `W`), and write `W := E_{∂M}({|r| < ε(q)})` and
+  `W₁ := E_{∂M}({|r| < ε₁(q)})`. There is `ρ̂ ∈ C^∞(N)` with `ρ̂ = r_{∂M}` on `W₁` (so
+  `ρ̂ = d_M(·, ∂M)` near `∂M` in `M`), `ρ̂ = 1` on `M ∖ W`, `ρ̂ = −1` on `N ∖ (M ∪ W)`, and `ρ̂`
+  between `r_{∂M}` and `1` on `W ∩ M` and between `r_{∂M}` and `−1` on `W ∖ M`. Hence
+  `M = {ρ̂ ≥ 0}`, `∂M = {ρ̂ = 0}`, `N ∖ M = {ρ̂ < 0}`, `grad ρ̂ = ν_in` on `∂M`, and for
+  `0 < ε < 1` every point of `{ρ̂ ≥ −ε} ∖ M` lies in `W` with `r_{∂M} ≥ −ε`. Route:
+  `ρ̂ = ψ r_{∂M} + (1 − ψ) s` with a smooth cutoff `ψ : N → [0, 1]` equal to `1` on the closed
+  tube `E_{∂M}({|r| ≤ ε₁(q)})` and to `0` off `W`, and a smooth `s : N → [−1, 1]` equal to `1` on
+  the closed set `M ∖ W₁` and to `−1` on the closed set `N ∖ (M ∪ W₁)` (closed because
+  `∂M ⊆ W₁`), both from Mathlib's `exists_contMDiff_zero_iff_one_iff_of_isClosed`; on `W ∖ W₁`
+  the value `ρ̂` is a convex combination of `r_{∂M}` and `s = ±1`.
 
 **Checks.**
 
@@ -805,7 +876,7 @@ Ceti `TauCeti.SmoothEmbedding.normalExp` through the trivialisation of the norma
 `TauCeti.isSmoothEmbedding_coe_regularLevel`, `TauCeti.SmoothEmbedding.normalExp`,
 `TauCeti.SmoothEmbedding.exists_partialDiffeomorph_normalExp_subset`,
 `TauCeti.SmoothEmbedding.exists_isClosedEmbedding_normalExp_norm_le_subset`; Mathlib
-`Manifold.riemannianEDist`.
+`Manifold.riemannianEDist`, `exists_contMDiff_zero_iff_one_iff_of_isClosed`.
 
 ### 4.4 Boundary normal coordinates
 
@@ -854,22 +925,38 @@ lines 128–134): let `q ∈ ∂M` with `∂M` strictly convex at `q`. Then:
 
 ### 4.6 Slight enlargements of a strictly convex domain
 
-Prove (Paternain–Salo–Uhlmann, lines 3093–3096): if `∂M` is compact and strictly convex and `ρ̂` is
-the defining function of 4.3, there is `ε₀ > 0` such that for `0 < ε ≤ ε₀`, `−ε` is a regular value
-of `ρ̂`, `M_ε := {ρ̂ ≥ −ε}` is a regular domain with strictly convex boundary and `M ⊆ int M_ε`; if
-`M` is compact, so is `M_ε`. Route: `{|ρ̂| ≤ ε₀}` is the closed tube of 4.3, compact, on which `dρ̂ ≠ 0`
-and `−Hess ρ̂` is positive on unit vectors of `ker dρ̂` by 2.3 and continuity; apply 3.2 to `x = −ρ̂`.
+Prove (Paternain–Salo–Uhlmann, lines 3093–3096): if `∂M` is compact and strictly convex and `ρ̂`
+is the normalised defining function of 4.3, with constant tube radii `ε₁ < ε` there, there is
+`ε₀` with `0 < ε₀ < min(ε₁, 1)` such that for `0 < ε ≤ ε₀`: `M_ε := {ρ̂ ≥ −ε}` equals
+`M ∪ E_{∂M}(∂M × [−ε, 0))`, `−ε` is a regular value of `ρ̂`, `M_ε` is a regular domain with
+strictly convex boundary `E_{∂M}(∂M × {−ε})`, `M ⊆ int M_ε`, and `M_ε` is compact if `M` is.
+Route: by 4.3 a point of `M_ε ∖ M` lies in `W` with `r_{∂M} ≥ −ε > −ε₁`, hence in `W₁`, where
+`ρ̂ = r_{∂M}`; so `M_ε = M ∪ E_{∂M}(∂M × [−ε, 0))`, `dρ̂ = dr_{∂M} ≠ 0` on `{ρ̂ = −ε}`, and with
+the defining function `ρ̂ + ε` of `M_ε`, for which `|d(ρ̂ + ε)| = 1`, 3.1 gives
+`II_{M_ε} = −Hess r_{∂M}` on the tangent spaces of `E_{∂M}(∂M × {−ε})`. At `ε = 0` this is
+`II_{∂M} ≥ c h` (2.3); `Hess r_{∂M}` is continuous on the compact set `E_{∂M}(∂M × [−ε₁/2, 0])`,
+over which the unit tangent vectors of the level sets of `r_{∂M}` form a compact set, so
+`−Hess r_{∂M} > 0` on those vectors for `|r| ≤ ε₀` and some `ε₀ > 0`, which is 3.2 for `x = −ρ̂`.
+`M_ε = M ∪ E_{∂M}(∂M × [−ε, 0])` is a union of two compact sets when `M` is compact, and
+`M ⊆ {ρ̂ > −ε} = int M_ε`.
 
 **Checks.**
 
-- Unit ball, `ρ̂ = 1 − |x|` near the sphere: `M_ε` is the ball of radius `1 + ε` with
-  `II = h/(1 + ε)`.
+- Unit ball with tube radius `ε = 1/2` and `ε₁ = 1/4`, so that `ρ̂ = 1 − |x|` on
+  `3/4 < |x| < 5/4`: for `ε < 1/4`, `M_ε` is the ball of radius `1 + ε` with `II = h/(1 + ε)`.
 - Spherical cap of radius `R < π/2` in the unit sphere (6.3): `M_ε` is the cap of radius `R + ε`,
   strictly convex iff `R + ε < π/2`, so `ε₀ < π/2 − R` and `ε₀` depends on the domain.
 - The half-space is not strictly convex and every `M_ε` is a flat half-space: the hypothesis is
   needed for the conclusion.
+- The normalisation of `ρ̂` off the tube is needed: on `ℝ²`, `ρ(x) = (1 − |x|²) e^{−|x|²}` has `0`
+  as a regular value (its radial derivative at `|x| = 1` is `−2/e`) and `M = {ρ ≥ 0}` is the closed
+  unit disc; a smooth function equal to `r_{∂M}` near the circle and to `ρ` for `|x| ≥ 5/4` has
+  every property of 4.3's `ρ̂` except the normalisation, but `ρ` attains its minimum `−e^{−2}` at
+  `|x| = √2` and tends to `0` from below, so for `0 < ε < e^{−2}` the set `{ρ ≥ −ε}` contains an
+  unbounded exterior `{|x| ≥ r₂}` with `r₂ > √2`, whose boundary circle has `II = −h/r₂ < 0`, and
+  `−e^{−2}` is a critical value: no `ε₀` works for that function.
 
-*Needs:* 2.3, 3.2, 4.3.
+*Needs:* 2.3, 3.1, 3.2, 4.3.
 
 ### Examples
 
@@ -881,7 +968,7 @@ spherical caps for enlargements.
 
 4.1 uses 3.1, 3.5 and HopfRinow Layer 1; 4.2 uses Layer 1, 2.1–2.2 and 4.1; 4.3 uses 1.3, 3.1, 4.1,
 HopfRinow Layers 1–2 and Tau Ceti's normal exponential; 4.4 uses 1.4 and 4.3; 4.5 uses 2.1–2.2 and
-3.1–3.2; 4.6 uses 2.3, 3.2 and 4.3.
+3.1–3.2; 4.6 uses 2.3, 3.1–3.2 and 4.3.
 
 ## Layer 5: Exit time and scattering relation
 
@@ -979,7 +1066,8 @@ half-space Seeley extension.
 
 *Needs:* Mathlib `ContDiffAt.implicitFunction`, `ContDiffAt.contDiffAt_implicitFunction`; Tau Ceti
 `ContDiff.sub_eq_hadamardFactor_apply`, `ContDiff.contDiff_hadamardFactor`,
-`TauCeti.contDiff_intervalIntegral`; ComplexKahlerGeometry K5a (half-space Seeley extension).
+`TauCeti.contDiff_intervalIntegral`; ComplexKahlerGeometry K5a (extension across a smooth
+boundary: the half-space Seeley extension).
 
 ### 5.4 Regularity of the exit time
 
@@ -1170,7 +1258,8 @@ Prove: for a boundaryless Hausdorff Riemannian `(N, g)` and `p ∈ N` there is `
 for `0 < R < r_p` the function `d(p, ·)²` is smooth on `B(p, r_p)` with `R²` a regular value there,
 and the closed ball `B̄(p, R) = {d(p, ·)² ≤ R²}` is a compact regular domain with strictly convex
 boundary which is non-trapping; on a compact set of centres `r_p` can be chosen uniformly
-(Paternain–Salo–Uhlmann, lines 307–310; Lee, *Introduction to Riemannian Manifolds*, Ch. 6). Route:
+(Lee, *Introduction to Riemannian Manifolds*, Ch. 6; the spherical-cap instance is
+Paternain–Salo–Uhlmann, Example 3.1.4, lines 2677–2678). Route:
 in normal coordinates `z` at `p`, `d(p, ·) = |z|` (HopfRinow Layer 2), the Christoffel symbols vanish
 at `p` (RiemannianGeometry R1 item 4), so `Hess |z|² = 2g + O(|z|²)`, positive definite on a small
 ball; apply 3.2 and 5.5; uniformity from SmoothBundlesConnections B6.0.
@@ -1220,8 +1309,9 @@ and SmoothBundlesConnections B6.0; 6.5 uses 1.6, 2.1 and 3.1.
 - **PositiveMass**, 5.1–5.2: the boundary mean curvature `H = tr_h II/n` for the inward normal
   (1.5), identified with RiemannianGeometry R5a's `⟨B, ν_in⟩` by 3.6, with `H = 1` on the unit
   sphere and `H = −1` on the boundary of the exterior of the unit ball.
-- **LorentzianGeometry** (domains with boundary): regular domains (3.1), the collar extension and
-  realisation (3.3–3.5) and the defining-function calculus (1.3), where the metric is Riemannian.
+- A future Lorentzian geometry roadmap (domains with boundary): regular domains (3.1), the
+  collar extension and realisation (3.3–3.5) and the defining-function calculus (1.3), where the
+  metric is Riemannian.
 - Future roadmaps on the geodesic X-ray transform, lens and boundary rigidity and simple manifolds
   (Stefanov–Uhlmann–Vasy, Theorems 1.1–1.4; Uhlmann–Vasy; Paternain–Salo–Uhlmann, Chapters 4–5):
   the convexity predicates (2.1), level-set concavity (3.2), convexity functions (4.5), boundary
