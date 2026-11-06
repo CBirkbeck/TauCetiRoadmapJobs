@@ -25,3 +25,556 @@ locator = "Theorem 1"
 licence_class = "none"
 status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6062#issuecomment-6671942514"
+
+[[source]]
+id = "patel2022"
+doi = "10.1016/j.indag.2022.04.007"
+venue = "Indagationes Mathematicae (N.S.) 33 (2022), no. 5, 1012-1032"
+authors = "Dhir Patel"
+title = "An Explicit Upper Bound for $|ζ(1+it)|$"
+year = 2020
+arxiv = "2009.00769v1"
+locator_scheme = "theorem"
+locator = "Lemma 2.3; Lemmas 3.1, 3.2"
+url = "https://arxiv.org/abs/2009.00769v1"
+fetched_from = "https://arxiv.org/pdf/2009.00769v1"
+fetched_at = "2026-11-06T00:33:22Z"
+sha256 = "6ce77f4a2eaf87ad4642054758b3f2580dee381dff715ab30e1eaf7b8a58bef8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-06"
+version_note = "arXiv v1; Lemma 2.3 is the corrected Cheng-Graham second derivative test with hypotheses 1/W ≤ |f''| ≤ 1/V, V < W, W > 1; Lemmas 3.1 and 3.2 are the fourth and fifth derivative tests"
+cited_for = ["1b; 1d"]
+
+[[source]]
+id = "hiary2016zeta"
+doi = "10.1016/j.indag.2015.10.011"
+venue = "Indagationes Mathematicae (N.S.) 27 (2016), no. 2, 524-533"
+authors = "Ghaith A. Hiary"
+title = "An explicit van der Corput estimate for $ζ(1/2+it)$"
+year = 2015
+arxiv = "1507.01261v4"
+locator_scheme = "theorem"
+locator = "Lemma 1.2"
+url = "https://arxiv.org/abs/1507.01261v4"
+fetched_from = "https://arxiv.org/pdf/1507.01261v4"
+fetched_at = "2026-11-06T00:33:27Z"
+sha256 = "9a1c88ff34de375a4f634319b44502a25cf4b58509ef5e665c6ae017e4c22740"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-06"
+version_note = "arXiv v4; Lemma 1.2 assumes W > 1, λ ≥ 1 and 1/W ≤ |f'''| ≤ λ/W, and has β = (64/15)/√η + 3/W^{1/3}, where the TME-EMT page prints 65/15"
+cited_for = ["1c"]
+
+[[source]]
+id = "karatsubakorolev2007"
+authors = "A. A. Karatsuba, M. A. Korolev"
+title = "Approximation of an exponential sum by a shorter one"
+year = 2007
+venue = "Doklady Mathematics 75"
+doi = "10.1134/S1064562407010115"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://doi.org/10.1134/S1064562407010115"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["1f"]
+
+[[source]]
+id = "bordelles2012"
+authors = "Olivier Bordellès"
+title = "Arithmetic Tales"
+year = 2012
+venue = "Universitext"
+doi = "10.1007/978-1-4471-4096-2"
+locator_scheme = "theorem"
+locator = "Theorems 5.6, 5.8, 5.12"
+url = "https://doi.org/10.1007/978-1-4471-4096-2"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["2a; 2b; 2c"]
+
+[[source]]
+id = "filaseta1990"
+authors = "M. Filaseta"
+title = "Short interval results for squarefree numbers"
+year = 1990
+venue = "Journal of Number Theory 35"
+doi = "10.1016/0022-314x(90)90108-4"
+locator_scheme = "theorem"
+locator = "Lemma 3"
+url = "https://www.sciencedirect.com/science/article/pii/0022314X90901084"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["2d"]
+
+[[source]]
+id = "bachmanrachakonda2001"
+authors = "Gennady Bachman, Leelanand Rachakonda"
+title = "On a Problem of Dobrowolski and Williams and the Pólya-Vinogradov Inequality"
+year = 2001
+venue = "The Ramanujan Journal 5"
+doi = "10.1023/A:1011445212478"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://doi.org/10.1023/A:1011445212478"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["3b"]
+
+[[source]]
+id = "frolenkovsoundararajan2013"
+authors = "D. A. Frolenkov, K. Soundararajan"
+title = "A generalization of the Pólya–Vinogradov inequality"
+year = 2013
+venue = "The Ramanujan Journal 31"
+doi = "10.1007/s11139-012-9462-y"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://doi.org/10.1007/s11139-012-9462-y"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["3c"]
+
+[[source]]
+id = "buthe2014"
+doi = "10.4064/aa166-3-5"
+venue = "Acta Arithmetica 166 (2014), no. 3, 289-299"
+authors = "J. Büthe"
+title = "A Brun-Titchmarsh inequality for weighted sums over prime numbers"
+year = 2014
+arxiv = "1410.7561v2"
+locator_scheme = "theorem"
+locator = "Definition 4.1, Theorems 4.2 and 4.3 (arXiv v2 numbering)"
+url = "https://arxiv.org/abs/1410.7561v2"
+fetched_from = "https://arxiv.org/pdf/1410.7561v2"
+fetched_at = "2026-11-06T00:34:30Z"
+sha256 = "83c6afae9cf205e6f45c14708f4dd9a15304e5b8cfc163893fc6bdf5513846b9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-06"
+version_note = "arXiv v2; the indicator case of Theorem 4.2 recovers only the van Lint-Richert form 2y/(φ(k) log(y/k)) (1 + 8/log(y/k)) of Brun-Titchmarsh (lines 349-353), not Montgomery-Vaughan's Theorem 2; Theorem 4.3 (k = 1) gives the Montgomery-Vaughan strength"
+cited_for = ["5a"]
+
+[[source]]
+id = "ramareviswanadham2021"
+version_note = "HAL copy is the English version, Proceedings of the Steklov Institute of Mathematics 314 (2021), no. 1, 203-237, doi 10.1134/S0081543821040118; Lemmas 14 and 15 numbered as there"
+authors = "Olivier Ramaré, Gudlavalleti Kasi Viswanadham"
+title = "Модулярные тернарные аддитивные задачи с иррегулярными или простыми числами"
+year = 2021
+venue = "Труды Математического института имени В. А. Стеклова 314"
+doi = "10.4213/tm4191"
+locator_scheme = "theorem"
+locator = "Lemmas 14, 15"
+url = "https://hal.science/hal-03383050v1"
+fetched_from = "https://hal.science/hal-03383050/document"
+fetched_at = "2026-11-06T00:34:32Z"
+sha256 = "49c2d0ae5f74d44400e15cbe4c5b95c966e52a521a73b0ca0368611a74674ee6"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-06"
+cited_for = ["5b"]
+
+[[source]]
+id = "siebert1976"
+authors = "H. Siebert"
+title = "Montgomery's weighted sieve for dimension two"
+year = 1976
+venue = "Monatshefte f�r Mathematik 82"
+doi = "10.1007/bf01540603"
+locator_scheme = "theorem"
+locator = "Theorem"
+url = "https://doi.org/10.1007/bf01540603"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["5c"]
+
+[[source]]
+id = "greaves2001"
+authors = "George Greaves"
+title = "Sieves in Number Theory"
+year = 2001
+doi = "10.1007/978-3-662-04658-6"
+locator_scheme = "theorem"
+locator = "Theorem 1, p. 52"
+url = "https://doi.org/10.1007/978-3-662-04658-6"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["5d"]
+
+[[source]]
+id = "nathanson1996"
+authors = "Melvyn B. Nathanson"
+title = "Additive Number Theory"
+year = 1996
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4757-3845-2"
+locator_scheme = "theorem"
+locator = "Theorems 9.7, 9.8"
+url = "https://doi.org/10.1007/978-1-4757-3845-2"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["5f"]
+
+[[source]]
+id = "trevino2015"
+doi = "10.1142/S1793042115400163"
+venue = "International Journal of Number Theory 11 (2015), no. 5, 1653-1678"
+authors = "Enrique Treviño"
+title = "The Burgess inequality and the least k-th power non-residue"
+year = 2014
+arxiv = "1412.3062v2"
+locator_scheme = "theorem"
+locator = "Theorem 1, Corollary 1, Theorem 2, Corollary 2, Theorem 3, Tables 1-3"
+url = "https://arxiv.org/abs/1412.3062v2"
+fetched_from = "https://arxiv.org/pdf/1412.3062v2"
+fetched_at = "2026-11-06T00:36:01Z"
+sha256 = "676bb69d2d5d5c422b0cb7f3edc1d265c80ce01655e07d2c5db2b8d399d42321"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-06"
+version_note = "arXiv v2; its Table 3 (the constants c_2(r)) is tabulated for p_0 in {10^10, 10^15, 10^20} and differs from the table quoted on the TME-EMT character-sums page (p_0 in {10^7, 10^10, 10^20}, from 3.7451 to 1.5210); the design states the table of the version it reads and names the other as a Check"
+cited_for = ["4a; 4b"]
+
+[[source]]
+id = "mcgown2012"
+doi = "10.1142/S1793042112500133"
+venue = "International Journal of Number Theory 8 (2012), no. 1, 227-254"
+authors = "Kevin J. McGown"
+title = "Norm-Euclidean Galois fields"
+year = 2010
+arxiv = "1011.4501v2"
+locator_scheme = "theorem"
+locator = "Theorem A.1 (appendix) and its table of C(r)"
+url = "https://arxiv.org/abs/1011.4501v2"
+fetched_from = "https://arxiv.org/pdf/1011.4501v2"
+fetched_at = "2026-11-06T00:36:07Z"
+sha256 = "fcc8acb52fddce7b8e40ec4988be0bac5541f34fdec5704d6a5eb20bf83b242a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-06"
+version_note = "arXiv v2 carries the title \"Norm-Euclidean Galois fields\"; published as \"Norm-Euclidean cyclic fields of prime degree\"; the explicit Burgess inequality with the table C(2) = 10.0366 to C(15) = 1.7700 is Theorem A.1 of the appendix in the arXiv numbering and is restated as Theorem C in trevino2015 lines 113-128"
+cited_for = ["4c"]
+
+[[source]]
+id = "jainsharmakhaleliu2021"
+doi = "10.1142/S1793042121500834"
+venue = "International Journal of Number Theory 17 (2021), no. 10, 2207-2219"
+authors = "Niraek Jain-Sharma, Tanmay Khale, Mengzhen Liu"
+title = "Explicit Burgess Bound for Composite Moduli"
+year = 2020
+arxiv = "2010.09530v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.1 and Corollary 1.2"
+url = "https://arxiv.org/abs/2010.09530v2"
+fetched_from = "https://arxiv.org/pdf/2010.09530v2"
+fetched_at = "2026-11-06T00:36:13Z"
+sha256 = "1723a57670d1575d8787a7142161ef56895fcd22f3202d59360eb3493247976a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-06"
+version_note = "arXiv v2"
+cited_for = ["4e"]
+
+[[source]]
+id = "bordignonkerr2020"
+authors = "Matteo Bordignon, Bryce Kerr"
+title = "An explicit Pólya-Vinogradov inequality via Partial Gaussian sums"
+year = 2019
+arxiv = "1909.01052v1"
+locator_scheme = "theorem"
+locator = "Corollary 1; Theorem 5"
+url = "https://arxiv.org/abs/1909.01052v1"
+fetched_from = "https://arxiv.org/pdf/1909.01052v1"
+fetched_at = "2026-11-06T00:42:02Z"
+sha256 = "9313b23072ab136e718fb9b6ede068d417c543e89c67069ba875e4a295e7a4e3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-06"
+version_note = "arXiv v1"
+cited_for = ["3e"]
+
+[[source]]
+id = "bordignon2021"
+doi = "10.4153/S0008439520000934"
+venue = "Canadian Mathematical Bulletin 64 (2021), no. 4, 906-910"
+authors = "Matteo Bordignon"
+title = "A Pólya--Vinogradov inequality for short character sums"
+year = 2020
+arxiv = "2002.02640v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/2002.02640v2"
+fetched_from = "https://arxiv.org/pdf/2002.02640v2"
+fetched_at = "2026-11-06T00:36:25Z"
+sha256 = "810ed7ed42fd369193ec0cfa09c75b374e9591a8195d8a1367066382c23ba0e3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-06"
+version_note = "arXiv v2; this is the short-sum bound S(N,χ) ≤ c(1/3−γ+ε)√q log q for N ≤ q^{1−γ}; context only: the non-squarefree Pólya-Vinogradov analogue the filed statement and the TME-EMT page attribute to this paper is bordignon2022partial"
+cited_for = ["3e (context)"]
+
+[[source]]
+id = "booker2006"
+version_note = "AMS open archive copy; the explicit Burgess bound is Proposition 2 (not a theorem), for integers 0 < M, N ≤ 2√d and the sum over M ≤ n < M+N"
+doi = "10.1090/S0025-5718-06-01850-3"
+venue = "Mathematics of Computation 75 (2006), no. 255, 1481-1492"
+year = "2006"
+title = "Quadratic class numbers and character sums"
+authors = "Andrew R. Booker"
+locator_scheme = "theorem"
+locator = "Proposition 2 and Table 1"
+url = "https://www.ams.org/journals/mcom/2006-75-255/S0025-5718-06-01850-3/S0025-5718-06-01850-3.pdf"
+fetched_from = "https://www.ams.org/journals/mcom/2006-75-255/S0025-5718-06-01850-3/S0025-5718-06-01850-3.pdf"
+fetched_at = "2026-11-06T00:36:26Z"
+sha256 = "d5f7c9a26a62940faba552f3cbea2a5f77c77d05d31eaf554e2689eed37484a7"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-06"
+cited_for = ["4d"]
+
+[[source]]
+id = "fan2022"
+venue = "Integers 22 (2022), Paper No. A26"
+year = "2022"
+title = "An inequality for the distribution of numbers free of small prime factors"
+authors = "Kai Fan"
+locator_scheme = "theorem"
+locator = "Theorem (the single theorem, inequalities (4) and (5))"
+url = "http://math.colgate.edu/~integers/w26/w26.pdf"
+fetched_from = "https://math.colgate.edu/~integers/w26/w26.pdf"
+fetched_at = "2026-11-06T00:36:27Z"
+sha256 = "02ee997d8e54f6a247ac91d2e1aa74f63a6acf8c3545e4d45da914efc75eb480"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-06"
+cited_for = ["5e"]
+
+[[source]]
+id = "tmeemt-art05"
+authors = "André de Camargo, Olivier Ramaré, Dominique Benielli (editors), TME-EMT wiki"
+title = "Explicit results on exponential sums (TME-EMT wiki, Art05)"
+year = 2026
+version_note = "wiki page, last updated 2026-01-28; secondary source quoting the statements of the primary papers"
+locator_scheme = "section"
+locator = "Explicit results on exponential sums"
+url = "https://tme-emt-1f5ce3.pages.math.cnrs.fr/Art05.html"
+fetched_from = "https://tme-emt-1f5ce3.pages.math.cnrs.fr/Art05.html"
+fetched_at = "2026-11-06T00:36:28Z"
+sha256 = "23f3a0529d1f6edf749e081665bee0f3ce97fb1dda9f33ce43fd51e840d15d65"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-06"
+cited_for = ["Layer 1"]
+
+[[source]]
+id = "tmeemt-art11"
+authors = "André de Camargo, Olivier Ramaré, Dominique Benielli (editors), TME-EMT wiki"
+title = "Integer Points near Smooth Plane Curves (TME-EMT wiki, Art11)"
+year = 2026
+version_note = "wiki page, last updated 2026-01-28; secondary source quoting the statements of the primary papers"
+locator_scheme = "section"
+locator = "Integer Points near Smooth Plane Curves"
+url = "https://tme-emt-1f5ce3.pages.math.cnrs.fr/Art11.html"
+fetched_from = "https://tme-emt-1f5ce3.pages.math.cnrs.fr/Art11.html"
+fetched_at = "2026-11-06T00:36:28Z"
+sha256 = "b38e466c45ad591e244118ef1ece15aee0d695ee1c3ec70936911200b35f6b7c"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-06"
+cited_for = ["Layer 2"]
+
+[[source]]
+id = "tmeemt-art14"
+authors = "André de Camargo, Olivier Ramaré, Dominique Benielli (editors), TME-EMT wiki"
+title = "Sieve bounds (TME-EMT wiki, Art14)"
+year = 2026
+version_note = "wiki page, last updated 2026-01-28; secondary source quoting the statements of the primary papers"
+locator_scheme = "section"
+locator = "Sieve bounds"
+url = "https://tme-emt-1f5ce3.pages.math.cnrs.fr/Art14.html"
+fetched_from = "https://tme-emt-1f5ce3.pages.math.cnrs.fr/Art14.html"
+fetched_at = "2026-11-06T00:36:28Z"
+sha256 = "0d7ad3d481ef9fb413d486874facdf3cbfcc7e5801ccebc775ee58658b19fb0b"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-06"
+cited_for = ["Layer 5"]
+
+[[source]]
+id = "tmeemt-art15"
+authors = "André de Camargo, Olivier Ramaré, Dominique Benielli (editors), TME-EMT wiki"
+title = "Character sums (TME-EMT wiki, Art15)"
+year = 2026
+version_note = "wiki page, last updated 2026-01-28; secondary source quoting the statements of the primary papers"
+locator_scheme = "section"
+locator = "Character sums"
+url = "https://tme-emt-1f5ce3.pages.math.cnrs.fr/Art15.html"
+fetched_from = "https://tme-emt-1f5ce3.pages.math.cnrs.fr/Art15.html"
+fetched_at = "2026-11-06T00:36:29Z"
+sha256 = "f21f4d876c4039fa379a9d458f5a4f5eb03350e89b09ed56675d0dbfa550bf1e"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-06"
+cited_for = ["Layers 3, 4"]
+
+[[source]]
+id = "huxleysargos1995"
+version_note = "ICM Polish digital mathematics library copy (open); Théorème 1 has implicit constants depending on n; the explicit constants are Bordellès 2012, Theorem 5.12 (uncertified)"
+doi = "10.4064/aa-69-4-359-366"
+venue = "Acta Arithmetica 69 (1995), no. 4, 359-366"
+year = "1995"
+title = "Points entiers au voisinage d'une courbe plane de classe C^n"
+authors = "M. N. Huxley, P. Sargos"
+locator_scheme = "theorem"
+locator = "Théorème 1"
+url = "https://matwbn.icm.edu.pl/ksiazki/aa/aa69/aa6943.pdf"
+fetched_from = "https://matwbn.icm.edu.pl/ksiazki/aa/aa69/aa6943.pdf"
+fetched_at = "2026-11-06T00:36:33Z"
+sha256 = "b3c8d631309c915c3792de666504d0e56968128d33fc5ff7f77465683fdc414f"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-06"
+cited_for = ["2c"]
+
+[[source]]
+id = "bordignon2022partial"
+version_note = "published open access (CC BY 4.0) at EMS Press; arXiv v1 read for the numbering: Theorem 1.3 is the Pólya-Vinogradov bound for every primitive character with leading constants (2/π²)(3/8+ε) (even) and (1/π)(3/8+ε) (odd); this is the non-squarefree analogue of bordignonkerr2020 that the TME-EMT page attributes to [Bordignon, 2021]"
+arxiv = "2001.05114v1"
+doi = "10.4171/RMI/1328"
+venue = "Revista Matemática Iberoamericana 38 (2022), no. 4, 1101-1127"
+authors = "Matteo Bordignon"
+title = "Partial Gaussian sums and the Pólya--Vinogradov inequality for primitive characters"
+year = "2022"
+locator_scheme = "theorem"
+locator = "Theorem 1.3 (arXiv v1 numbering; the published text, CC BY 4.0, is the certified copy but its extraction garbles theorem headings)"
+url = "https://ems.press/content/serial-article-files/39044"
+fetched_from = "https://ems.press/content/serial-article-files/39044"
+fetched_at = "2026-11-06T00:41:22Z"
+sha256 = "9642b7b7be99859b67262b2f2c74a6db28a5c4744a0b09880b530b54e6c598fc"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-06"
+cited_for = ["3e"]
+
+[[source]]
+id = "chenggraham2004"
+authors = "Yuanyou Cheng, Sidney W. Graham"
+title = "Explicit estimates for the Riemann zeta function"
+year = 2004
+venue = "Rocky Mountain Journal of Mathematics 34, no. 4, 1261-1280"
+doi = "10.1216/rmjm/1181069799"
+locator_scheme = "theorem"
+locator = "Lemma 3"
+url = "https://projecteuclid.org/journals/rocky-mountain-journal-of-mathematics/volume-34/issue-4/Explicit-Estimates-for-the-Riemann-Zeta-Function/10.1216/rmjm/1181069799.full"
+licence_class = "open-repository"
+status = "uncertified"
+version_note = "open on Project Euclid, but the sources service received only an anti-bot page (Incapsula) for the PDF on 2026-11-06; cited by locator; the corrected form of Lemma 3 is Patel 2022, Lemma 2.3 (patel2022, certified)"
+cited_for = ["1b"]
+
+[[source]]
+id = "rieselvaughan1983"
+authors = "Hans Riesel, Robert C. Vaughan"
+title = "On sums of primes"
+year = 1983
+venue = "Arkiv för Matematik 21, no. 1-2, 46-74"
+doi = "10.1007/BF02384300"
+locator_scheme = "theorem"
+locator = "Lemma 4"
+url = "https://projecteuclid.org/journals/arkiv-for-matematik/volume-21/issue-1-2/On-sums-of-primes/10.1007/BF02384300.full"
+licence_class = "open-repository"
+status = "uncertified"
+version_note = "open on Project Euclid, but the sources service received only an anti-bot page (Incapsula) on 2026-11-06; cited by locator; the statement and the (L, A) table are quoted on the TME-EMT sieve page (tmeemt-art14 lines 124-155)"
+cited_for = ["5c"]
+
+[[source]]
+id = "montgomeryvaughan1973"
+authors = "Hugh L. Montgomery, Robert C. Vaughan"
+title = "The large sieve"
+year = 1973
+venue = "Mathematika 20, no. 2, 119-133"
+doi = "10.1112/S0025579300004708"
+locator_scheme = "theorem"
+locator = "Theorem 2"
+url = "https://doi.org/10.1112/S0025579300004708"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (Wiley/LMS); cited by its locator without the text; the statement is quoted on the TME-EMT sieve page (tmeemt-art14 lines 84-87)"
+cited_for = ["5a"]
+
+[[source]]
+id = "montgomeryvaughan1974"
+authors = "Hugh L. Montgomery, Robert C. Vaughan"
+title = "Hilbert's inequality"
+year = 1974
+venue = "Journal of the London Mathematical Society (2) 8, 73-82"
+doi = "10.1112/jlms/s2-8.1.73"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://doi.org/10.1112/jlms/s2-8.1.73"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (Wiley/LMS); consumed input only (the sharp large sieve constant is planned by SieveMethodsAndPrimePatterns section 2.9); cited by its locator"
+cited_for = ["5a (consumed input)"]
+
+[[source]]
+id = "vinogradov2004"
+authors = "I. M. Vinogradov"
+title = "The method of trigonometrical sums in the theory of numbers"
+year = 2004
+venue = "Dover, Mineola NY (reprint of the 1954 Interscience translation)"
+locator_scheme = "chapter"
+locator = "Chapter I, the first derivative test for integer points near a curve"
+licence_class = "none"
+status = "uncertified"
+version_note = "book, no legal online copy found; cited by locator; the statement is quoted on the TME-EMT integer-points page (tmeemt-art11 lines 116-119) with the proof reference Bordellès 2012, Theorem 5.6"
+cited_for = ["2a"]
+
+[[source]]
+id = "huxley1996"
+authors = "M. N. Huxley"
+title = "Area, Lattice Points and Exponential Sums"
+year = 1996
+venue = "London Mathematical Society Monographs (N.S.) 13, Oxford Science Publications"
+doi = "10.1093/oso/9780198534662.001.0001"
+locator_scheme = "chapter"
+locator = "Chapter 3, the second derivative test (reduction to the first derivative)"
+licence_class = "none"
+status = "uncertified"
+version_note = "book (OUP, paywalled); cited by locator; the explicit form is Bordellès 2012, Theorem 5.8, quoted on the TME-EMT integer-points page (tmeemt-art11 lines 132-137)"
+cited_for = ["2b"]
+
+[[source]]
+id = "grahamkolesnik1991"
+authors = "S. W. Graham, G. Kolesnik"
+title = "Van der Corput's Method of Exponential Sums"
+year = 1991
+venue = "London Mathematical Society Lecture Note Series 126, Cambridge University Press"
+doi = "10.1017/CBO9780511661976"
+locator_scheme = "chapter"
+locator = "Chapters 2-3 (van der Corput's A- and B-processes)"
+licence_class = "none"
+status = "uncertified"
+version_note = "book (CUP, paywalled); background for Layers 1-2 only; cited by locator"
+cited_for = ["context for Layers 1 and 2"]
+
+[[source]]
+id = "qiu1991"
+authors = "Zhuo Ming Qiu"
+title = "An inequality of Vinogradov for character sums"
+year = 1991
+venue = "Shandong Daxue Xuebao Ziran Kexue Ban 26, no. 1, 125-128"
+locator_scheme = "page"
+locator = "pp. 125-128, main theorem"
+licence_class = "none"
+status = "uncertified"
+version_note = "print only (Chinese); no legal online copy found; cited by locator; the two inequalities are quoted on the TME-EMT character-sums page (tmeemt-art15 lines 84-89)"
+cited_for = ["3a"]
