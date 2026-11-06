@@ -14,8 +14,11 @@ so the file states nothing; the headline theorems and what each one lacks are li
   local-unit module with its Coates–Wiles derivatives and the primitive elliptic-unit class
   (which define Rubin's p-adic L-function), Gross Q-curves with their p-adic avatars, and
   characteristic ideals of modules over R⟦Γ⁻⟧. The pins have Hecke characters, continuous
-  cohomology and the completed group algebra, but none of these other carriers; the only
-  pinned Selmer group is the 2-descent group `WeierstrassCurve.Affine.selmerGroup₂`.
+  cohomology and the completed group algebra, but none of these other carriers; the pinned
+  Selmer groups are the 2-descent groups `WeierstrassCurve.Affine.selmerGroup₂` and
+  `WeierstrassCurve.Affine.selmerGroupA` and Mathlib's S-unit group
+  `IsDedekindDomain.selmerGroup`, none of which is the p-primary Galois-cohomological Selmer
+  carrier used here.
 * Layer 4 (§4.2): torsion of the opposite signed Selmer dual and vanishing of the compact
   strict and opposite signed Selmer modules. It lacks the same signed Selmer carriers and the
   compact corestriction limits with their Cartier-dual local conditions.
