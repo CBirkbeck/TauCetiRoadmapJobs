@@ -70,8 +70,8 @@ carrier.
   (Stacks, Lemma 29.37.21 (054L)).
 - *Connected smooth schemes with a rational point are geometrically integral*:
   SchemeAndStackFoundations §0.8, `rational_point_component` (Stacks, Lemmas 33.7.14 (04KV),
-  33.25.4 (056T); Properties, Lemma 28.7.7 (033N)). The step "smooth and geometrically connected
-  implies geometrically integral" is already Tau Ceti's instance
+  33.25.4 (056T) and 33.25.10 (0CDW); Properties, Lemma 28.7.7 (033N)). The step "smooth and
+  geometrically connected implies geometrically integral" is already Tau Ceti's instance
   `TauCeti.AlgebraicGeometry.Smooth.geometricallyIntegral`.
 - *Polynomial evaluation, base-`B` digits, weights*: Mathlib `MvPolynomial.eval₂Hom`,
   `Nat.ofDigits_inj_of_len_eq`, `Nat.ofDigits_eq_sum_mapIdx`, `Nat.injOn_ofDigits`,
@@ -130,8 +130,12 @@ conjugacy classes; monodromy of universal hypersurface families; semistable pote
 - `AlgebraicGeometry.IsClosedImmersion.spec_of_surjective`: the spectrum of a surjective ring map
   is a closed immersion (`Mathlib/AlgebraicGeometry/Morphisms/ClosedImmersion.lean`).
 - `AlgebraicGeometry.Etale.etale_isStableUnderBaseChange`,
-  `AlgebraicGeometry.Etale.iff_smoothOfRelativeDimension_zero`
-  (`Mathlib/AlgebraicGeometry/Morphisms/Etale.lean`); `AlgebraicGeometry.SmoothOfRelativeDimension`
+  `AlgebraicGeometry.Etale.iff_smoothOfRelativeDimension_zero`, and the instance
+  `HasRingHomProperty @Etale RingHom.Etale`, by which an étale morphism of affine schemes is the
+  spectrum of an étale ring map (`Mathlib/AlgebraicGeometry/Morphisms/Etale.lean`);
+  `Algebra.Etale.baseChange`, étaleness of algebras is stable under base change
+  (`Mathlib/RingTheory/Etale/Basic.lean`), and `Algebra.EssFiniteType.of_finiteType`
+  (`Mathlib/RingTheory/EssentialFiniteness.lean`); `AlgebraicGeometry.SmoothOfRelativeDimension`
   and the composition instance `AlgebraicGeometry.smoothOfRelativeDimension_comp`, which adds
   relative dimensions (`Mathlib/AlgebraicGeometry/Morphisms/Smooth.lean`); the instance
   `AlgebraicGeometry.AffineSpace.smoothOfRelativeDimension` (`𝔸(n; S) → S` is smooth of relative
@@ -142,8 +146,12 @@ conjugacy classes; monodromy of universal hypersurface families; semistable pote
   open (`Mathlib/AlgebraicGeometry/Morphisms/UniversallyOpen.lean`).
 - `AlgebraicGeometry.GeometricallyIntegral`: for every field-valued point of the base the fibre
   product is integral (`Mathlib/AlgebraicGeometry/Geometrically/Integral.lean`). The definition
-  quantifies over all fields `K` with a map `Spec K → Y`; it does not by itself include finite
-  type or nonemptiness, which the targets here state separately.
+  quantifies over all fields `K` with a map `Spec K → Y`; it does not include finite type, which
+  the targets here state separately; it does include nonemptiness of every fibre product
+  `X ×_Y Spec K`, since Mathlib's `IsIntegral` carries a `nonempty` field
+  (`Mathlib/AlgebraicGeometry/Properties.lean`). In particular a geometrically integral
+  `k`-scheme is nonempty, so the targets below do not state that separately; the nonemptiness
+  they do state is that of the good open `g⁻¹(U)`, which is a different claim.
 - `Algebra.FormallyEtale.iff_exists_algEquiv_prod`: an étale algebra essentially of finite type
   over a field is a finite product of finite separable field extensions
   (`Mathlib/RingTheory/Etale/Field.lean`).
@@ -280,8 +288,9 @@ over a field use `IsOpen.dense`. *Needs:* §1.2; the surjectivity above; Mathlib
 
 **Checks.**
 
-- Over `𝔽_q`, `h = T^q − T ∈ k[X_0]` (`m = 1`, so `φ` is the identity): `D(h) ⊆ 𝔸¹` is nonempty and
-  dense, yet contains no `𝔽_q`-point. A version of the theorem asking for a rational point of
+- Over `𝔽_q`, `h = X_0^q − X_0 ∈ k[X_0]` (`m = 1`, so `φ(h) = T^q − T` for every `B`, as
+  `X_0 ↦ T^(B^0) = T`): `D(φ(h)) ⊆ 𝔸¹` is nonempty and dense, yet contains no `𝔽_q`-point, since
+  `a^q = a` for every `a ∈ 𝔽_q`. A version of the theorem asking for a rational point of
   `D(φ(h))` is false here.
 - For `m = 1` and `h = X_0`, every `B ≥ 2` works and `a_B` is the identity of `𝔸¹`.
 - For `m = 0` over a field the graph `Spec k[T] → Spec k` is not a closed immersion (it is not
@@ -314,15 +323,21 @@ nonzero `h ∈ k[X_0, …, X_{m-1}]` with `π(Z) ⊆ V(h)`. The polynomial `h` n
 the closure of `π(Z)`. *Proof sketch.* Write `V = Spec A` with `A` a domain. The pullback
 `π^* : k[X] → A` is injective: `π` is flat and locally of finite presentation, hence open
 (`Flat.generalizingMap`, `isOpenMap_of_generalizingMap`), so its image is a nonempty open subset of
-the irreducible `𝔸^m_k`, which lies in no `V(p)` with `p ≠ 0`. Localising at `k[X] ∖ {0}`, the
-algebra `A ⊗ k(X)` is étale and of finite type over the field `k(X)`, hence a finite product of
-finite separable extensions (`Algebra.FormallyEtale.iff_exists_algEquiv_prod`); so every element of
-`A` is algebraic over `k[X]`. Since `Z ≠ V` and `A` is reduced, the ideal `I` of `Z` is nonzero;
+the irreducible `𝔸^m_k`, which lies in no `V(p)` with `p ≠ 0`. Since `π` is étale, `π^*` is an
+étale ring map (`Etale` is the scheme-morphism property attached to `RingHom.Etale`, the
+`HasRingHomProperty` instance in `Mathlib/AlgebraicGeometry/Morphisms/Etale.lean`). Localising at
+`k[X] ∖ {0}`, the base change `k(X) ⊗_{k[X]} A` is étale over the field `k(X)`
+(`Algebra.Etale.baseChange`), in particular of finite presentation, hence essentially of finite
+type, so it is a finite product of finite separable extensions
+(`Algebra.FormallyEtale.iff_exists_algEquiv_prod`); so every element of `A` is algebraic over
+`k[X]`. Since `Z ≠ V` and `A` is reduced, the ideal `I` of `Z` is nonzero;
 `Ideal.under_ne_bot_of_algebraic_mem` gives `0 ≠ h ∈ k[X]` with `π^*(h) ∈ I`, and then `h` vanishes on
 `π(Z)`. (A route through dimension theory — the closure of `π(Z)` has dimension `< m` — gives the
 same conclusion.) *Needs:* Mathlib `AlgebraicGeometry.Flat.generalizingMap`,
-`AlgebraicGeometry.isOpenMap_of_generalizingMap`, `Algebra.FormallyEtale.iff_exists_algEquiv_prod`,
-`Ideal.under_ne_bot_of_algebraic_mem`.
+`AlgebraicGeometry.isOpenMap_of_generalizingMap`, the `HasRingHomProperty @Etale RingHom.Etale`
+instance (`Mathlib/AlgebraicGeometry/Morphisms/Etale.lean`), `Algebra.Etale.baseChange`
+(`Mathlib/RingTheory/Etale/Basic.lean`), `Algebra.EssFiniteType.of_finiteType`,
+`Algebra.FormallyEtale.iff_exists_algEquiv_prod`, `Ideal.under_ne_bot_of_algebraic_mem`.
 
 **Checks.**
 
@@ -378,7 +393,8 @@ API (each a target of this subsection):
   (`Etale.iff_smoothOfRelativeDimension_zero`, `smoothOfRelativeDimension_comp`,
   `AffineSpace.smoothOfRelativeDimension`).
 - `s_C` is geometrically integral, by `rational_point_component` applied to the connected smooth
-  `k`-scheme `C` with its rational point `c`.
+  `k`-scheme `C` with its rational point `c` (Stacks, Lemma 33.25.10 (0CDW), for the variety `C`
+  smooth at `c`).
 - The good open: `q⁻¹(D(φ(h))) ⊆ g⁻¹(U)`, where `φ = polynomialGraph k m B`; both are nonempty, and
   `g⁻¹(U)` is dense in `C`.
 - For the identity chart (`V = 𝔸^m_k`, `π = id`) the fibre product is `𝔸¹_k`, `C = W`, `q` is an
@@ -509,7 +525,8 @@ degree one geometry. *Needs:* Tau Ceti `TauCeti.AlgebraicGeometry.RationalPoint.
 ### Dependencies
 
 Layer 1; SchemeAndStackFoundations §0.8 (`etale_coordinates`, `rational_point_component`); Mathlib
-étale, smooth, flat and geometrically integral morphisms, `Algebra.FormallyEtale.iff_exists_algEquiv_prod`,
+étale, smooth, flat and geometrically integral morphisms, the `HasRingHomProperty @Etale RingHom.Etale`
+instance, `Algebra.Etale.baseChange`, `Algebra.FormallyEtale.iff_exists_algEquiv_prod`,
 `Ideal.under_ne_bot_of_algebraic_mem`; Tau Ceti `TauCeti.AlgebraicGeometry.Smooth.geometricallyIntegral`
 and `TauCeti.AlgebraicGeometry.RationalPoint.Basic`.
 
@@ -562,5 +579,7 @@ and `TauCeti.AlgebraicGeometry.RationalPoint.Basic`.
   `Mathlib/AlgebraicGeometry/Morphisms/Smooth.lean`,
   `Mathlib/AlgebraicGeometry/Morphisms/ClosedImmersion.lean`,
   `Mathlib/AlgebraicGeometry/Morphisms/UniversallyOpen.lean`,
-  `Mathlib/AlgebraicGeometry/Geometrically/Integral.lean`, `Mathlib/RingTheory/Etale/Field.lean`,
-  `Mathlib/RingTheory/Ideal/GoingUp.lean`, `Mathlib/Topology/Irreducible.lean`.
+  `Mathlib/AlgebraicGeometry/Geometrically/Integral.lean`, `Mathlib/AlgebraicGeometry/Properties.lean`,
+  `Mathlib/RingTheory/Etale/Basic.lean`, `Mathlib/RingTheory/Etale/Field.lean`,
+  `Mathlib/RingTheory/EssentialFiniteness.lean`, `Mathlib/RingTheory/Ideal/GoingUp.lean`,
+  `Mathlib/Topology/Irreducible.lean`.
