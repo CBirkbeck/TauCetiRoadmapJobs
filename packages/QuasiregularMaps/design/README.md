@@ -65,11 +65,12 @@ It leaves to named roadmaps:
   with Hadamard's inequality (T4), the Euclidean chain rules (T1) and the Euclidean
   compatibility (T6). Everything here is stated on that class. The locally Lipschitz case of
   the class (§2.8) is owned here, because the supplier plans only `C¹` maps.
-- **DifferentialGeometry** owns orientations and orientation-preserving maps (Layer 2), chartwise
-  null sets (10.2), metrics on open submanifolds (12.1) and the Riemannian volume (12.4). Tau Ceti
-  implements the parts used here. The descent of an orientation to the quotient of a manifold by
-  a free, properly discontinuous, orientation-preserving action is a section DifferentialGeometry
-  lacks; it is requested of DifferentialGeometry, Part II (§7.5).
+- **DifferentialGeometry** owns orientations and orientation-preserving maps (Layer 2), metrics
+  on open submanifolds (12.1) and the Riemannian volume (12.4). Tau Ceti implements the parts used
+  here. Chartwise null sets are already in Tau Ceti (`TauCeti.IsNullSet`) and are consumed from
+  there. The descent of an orientation to the quotient of a manifold by a free, properly
+  discontinuous, orientation-preserving action is a section DifferentialGeometry lacks; it is
+  requested of DifferentialGeometry, Part II (§7.5).
 - **RiemannianGeometry** R4 item 7 owns quotients of a Riemannian manifold by free properly
   discontinuous isometry groups, with the descended metric and covering projection.
 - **GeometricTopology** Layer 11 owns realizations of abstract simplicial complexes, simplicial
@@ -296,7 +297,6 @@ requirement.
 
 - Layer 2.1–2.2: orientations, tangent orientations, orientation-preserving maps and pullback
   orientations along local diffeomorphisms, through the Tau Ceti declarations above.
-- Layer 10.2: chartwise null sets, through `TauCeti.IsNullSet`.
 - Layer 12.1: the metric of an open submanifold (used in §2.5).
 - Layer 12.4: the Riemannian volume form and the measure `TauCeti.riemannianVolume` with full
   support.
@@ -1486,7 +1486,8 @@ Layers 2, 4 and 6; RiemannianGeometry R4 item 7; DifferentialGeometry Layer 2 (g
   - The modulus inequalities of Poletsky and Väisälä, Liouville's theorem in dimension `n ≥ 3`,
     and Rickman's Picard theorem (Rickman1993, Ch. VI).
 - **QuasiregularMaps, Part III** (cohomology of quasiregularly elliptic manifolds) consumes
-  Part II, DifferentialGeometry Layers 6–9 and SobolevDifferentialForms. Its targets:
+  Part II, de Rham cohomology with the de Rham theorem and Poincaré duality, and
+  SobolevDifferentialForms. Its targets:
   - The Bonk–Heinonen bound `dim H^k_dR(N) ≤ C(n, K)` (BonkHeinonen2001, Theorem 1.1, as cited by
     Prywes2019 lines 33–34).
   - Prywes's bound `dim H^k_dR(N) ≤ binom(n, k)` (Prywes2019 Theorem 1.1, lines 28–30).

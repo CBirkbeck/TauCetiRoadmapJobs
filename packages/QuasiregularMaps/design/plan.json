@@ -1862,11 +1862,10 @@
       "sections": [
         "Layer 2.1",
         "Layer 2.2",
-        "Layer 10.2",
         "Layer 12.1",
         "Layer 12.4"
       ],
-      "what": "Orientations and orientation-preserving maps, chartwise null sets, metrics on open submanifolds, the Riemannian volume (through the Tau Ceti declarations that implement them); gap orientation-descent for the missing descent section."
+      "what": "Orientations and orientation-preserving maps, metrics on open submanifolds, the Riemannian volume (through the Tau Ceti declarations that implement them); gap orientation-descent for the missing descent section. Chartwise null sets are consumed from Tau Ceti (TauCeti.IsNullSet) directly."
     },
     {
       "roadmap": "RiemannianGeometry",
