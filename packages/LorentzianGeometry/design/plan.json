@@ -401,6 +401,26 @@
        "name": "one_plus_one_null",
        "kind": "computation",
        "statement": "−c²dt² + (dx − v dt)² has null vectors ∂_t + (v ± c)∂_x."
+      },
+      {
+       "name": "time_coordinate_last",
+       "kind": "compatibility",
+       "statement": "TauCeti.realCliffordForm 1 1 has weights 1, −1: Q(e₁) = −1, Q(e₀) = 1, so e₁ is timelike and ker dt = ℝe₀ spacelike; time-first reading would make e₀ timelike."
+      },
+      {
+       "name": "acoustical_shift_direction",
+       "kind": "non-example",
+       "statement": "c = 2, v = (1, 0): (1, (3, 0)) has a = −4 + 4 = 0 (null); the unshifted form gives 5 and the opposite shift ξ + τv gives 12."
+      },
+      {
+       "name": "acoustical_inverse_not_gram",
+       "kind": "computation",
+       "statement": "c = 2, v = (1, 0): Gram [[−3,−1,0],[−1,1,0],[0,0,1]], inverse [[−¼,−¼,0],[−¼,¾,0],[0,0,1]] = −¼B⊗B + Σ∂_i⊗∂_i, a⁻¹(dt,dt) = −¼; the Gram matrix read in the dual basis gives −3."
+      },
+      {
+       "name": "sound_speed_nonzero",
+       "kind": "degenerate",
+       "statement": "c = 0: B = (1, v) lies in the radical of ⟪ξ − τv, ξ' − τ'v⟫, which is degenerate."
       }
      ]
     }
@@ -628,7 +648,7 @@
      ],
      "locator": {
       "source": "minguzzi2019",
-      "where": "§1.7, lines 439–452, pp. 10–11"
+      "where": "§1.7, lines 450–452, p. 11 (a coordinate field timelike at one point is timelike nearby by continuity; local timelike fields); signature constancy is Tau Ceti TauCeti.Manifold.isLocallyConstant_sigPos_sigNeg_of_continuous; constancy of causal character and time sense on preconnected sets proved here"
      },
      "prerequisites": [
       "target:1.1",
@@ -993,7 +1013,28 @@
       "tauceti:TauCeti.Manifold.ContMDiffNondegenerateMetric.IsMetricCompatible.apply_curveVelocityWithin_self_eq_of_accelerationWithin_eq_zero"
      ],
      "api": [],
-     "tests": []
+     "tests": [
+      {
+       "name": "parametrisation_matters",
+       "kind": "non-example",
+       "statement": "Minkowski: s ↦ p + sv is a geodesic; s ↦ p + s²v (v ≠ 0) has acceleration 2v although its image lies on the same line; on s > 0 it is a pregeodesic with f = 1/s, φ⁻¹(s) = s²/2, giving σ ↦ p + 2σv."
+      },
+      {
+       "name": "constancy_needs_compatibility",
+       "kind": "non-example",
+       "statement": "Null line (s, s): g(γ',γ') = 0 for all s. For the torsion-free non-compatible ∇ = D + v⁰Y⁰e₀ of 3.1, (log(1+s), 0) has zero acceleration and g(γ',γ') = −(1+s)⁻² = −1, −¼ at s = 0, 1."
+      },
+      {
+       "name": "pregeodesic_reparametrisation_sign",
+       "kind": "computation",
+       "statement": "γ(t) = (e^{2t}/2, 0): γ'' = 2γ', φ(s) = ½ log(2s + c) solves φ'' = −2φ'², γ∘φ(s) = ((2s + c)/2, 0) (0.8 at s = 0.3, c = 1); the wrong sign φ = −½ log(1 − 2s) gives (1/(2(1 − 2s)), 0) with second derivative 4 at s = 0."
+      },
+      {
+       "name": "de_sitter_coordinate_lines",
+       "kind": "computation",
+       "statement": "−dt² + cosh²t dx²: Γ^t_tt = Γ^x_tt = 0, so (s, 0) is a geodesic (g = −1); (t₀, s) has acceleration cosh t₀ sinh t₀ ∂_t (0.4047 at t₀ = 0.37), a geodesic only for t₀ = 0, although both are coordinate-straight."
+      }
+     ]
     },
     {
      "id": "3.6",
@@ -1393,7 +1434,33 @@
       "target:5.1"
      ],
      "api": [],
-     "tests": []
+     "tests": [
+      {
+       "name": "three_types_minkowski3",
+       "kind": "computation",
+       "statement": "Minkowski ℝ³: {t = 0}, {x¹ = 0}, {t = x¹} have g⁻¹(df,df) = −1, 1, 0 (spacelike, timelike, null); grad(t − x¹) = −∂_t − ∂_{x¹}, radical ℝ(∂_t + ∂_{x¹})."
+      },
+      {
+       "name": "both_clauses_needed",
+       "kind": "non-example",
+       "statement": "{x¹ = 0} contains the null ∂_t + ∂_{x²} and the timelike ∂_t; {t = 0} contains no timelike vector; tangent vectors (a, a, b) of {t = x¹} have g = b² ≥ 0."
+      },
+      {
+       "name": "null_normal_direction",
+       "kind": "computation",
+       "statement": "∂_t + ∂_{x¹} and 3(∂_t + ∂_{x¹}) are null normals of {t = x¹}; g(∂_t, ∂_t + ∂_{x¹}) = −1 (future-directed), grad(t − x¹) past-directed; the Euclidean normal ∂_t − ∂_{x¹} is null but d(t − x¹)(∂_t − ∂_{x¹}) = 2, not tangent."
+      },
+      {
+       "name": "mixed_type_parabola",
+       "kind": "computation",
+       "statement": "H = {t = x²/2} in Minkowski ℝ²: g⁻¹(df,df) = −1 + x² (−0.75, 0, 3 at x = 0.5, 1, 2); spacelike and timelike loci open in H, null locus {x = ±1} not open."
+      },
+      {
+       "name": "acoustical_slices_spacelike",
+       "kind": "compatibility",
+       "statement": "Acoustical slices {t = const}: g⁻¹(dt, dt) = −c⁻² < 0, spacelike."
+      }
+     ]
     },
     {
      "id": "5.3",
@@ -1405,8 +1472,8 @@
       "g of class C^0"
      ],
      "locator": {
-      "source": "luoyu2023",
-      "where": "lines 1005–1008; christodoulou2007 Ch. 1; galloway2004 §3, lines 176–181, p. 5"
+      "source": "dafermosluk2017",
+      "where": "§2.2.1, (2.7), lines 1900–1905, p. 38 (eikonal equation; its level sets are null hypersurfaces); luoyu2023 §2.1, lines 999–1000 (level sets of the acoustical function are null hypersurfaces) and 1005–1008 (null generator L); christodoulou2007 Ch. 1–2; galloway2004 §3, lines 176–181, p. 5"
      },
      "prerequisites": [
       "target:1.2",
@@ -1460,11 +1527,14 @@
      "id": "5.4",
      "kind": "theorem",
      "name": "TauCeti.Manifold.LorentzianMetric.covariantDerivative_nullNormal",
-     "statement": "For g of class C¹, ∇ Levi-Civita for g, H a null C² hypersurface and L a C¹ field on U that is a null normal along H ∩ U: ∇_L L = κL on H ∩ U with κ continuous; over a boundaryless model integral curves of L through H stay in H while in U, are null pregeodesics and reparametrise to null geodesics (null generators); for u optical of class C² and L = −grad u, ∇_L L = 0 on U.",
+     "statement": "For g of class C¹, ∇ Levi-Civita for g, H a null C² hypersurface and L a C¹ field on U that is a null normal along H ∩ U: ∇_L L = κL on H ∩ U with κ continuous. Over a boundaryless model, for an integral curve γ : J → U of L on an open interval meeting H, the parameter set {s ∈ J | γ(s) ∈ H} is open in J; when H ∩ U is closed in U (one defining function on U, or a level set of an optical function) it is J, so γ stays in H while in U. On intervals of the parameter set γ is a null pregeodesic and reparametrises to a null geodesic (null generator). For M Hausdorff, every p ∈ H ∩ U lies on exactly one maximal generator segment (an integral curve of L in H ∩ U through p of which every other is a restriction). For u optical of class C² and L = −grad u, ∇_L L = 0 on U.",
      "hypotheses": [
       "g of class C¹",
       "H of class C², null",
-      "L of class C¹, null normal along H ∩ U"
+      "L of class C¹, null normal along H ∩ U",
+      "boundaryless model (integral curves)",
+      "H ∩ U closed in U (staying in H)",
+      "M Hausdorff (uniqueness of maximal generator segments)"
      ],
      "locator": {
       "source": "galloway2004",
@@ -1480,9 +1550,25 @@
       "mathlib:exists_isMIntegralCurveAt_of_contMDiffAt",
       "mathlib:isMIntegralCurveOn_Ioo_eqOn_of_contMDiff_boundaryless"
      ],
-     "proofSketch": "N = grad f: ∇_N N = ½ grad h with h = g⁻¹(df, df) vanishing on H, so dh ∝ df on H; general L via φ = g(L, Y); optical case ∇_L L = ½ grad g⁻¹(du,du) = 0; invariance of H by the division lemma and Grönwall.",
+     "proofSketch": "N = grad f: ∇_N N = ½ grad h with h = g⁻¹(df, df) vanishing on H, so dh ∝ df on H; general L via φ = g(L, Y); optical case ∇_L L = ½ grad g⁻¹(du,du) = 0. Openness of the parameter set: (f∘γ)' = df(L)∘γ with |df(L)| ≤ C|f| near H by the division lemma and Grönwall; closedness from H ∩ U closed in U; maximal segments from uniqueness of integral curves on open intervals, which needs T2Space.",
      "api": [],
-     "tests": []
+     "tests": [
+      {
+       "name": "closedness_needed",
+       "kind": "non-example",
+       "statement": "Minkowski ℝ², H = {t = x, x > 0}, U = ℝ², L = ∂_t + ∂_x: the curve (1+s, 1+s) is in H at s = −½ and not at s = −1, −1.5 (points (0,0), (−½,−½) of U); parameter set (−1, ∞) open; on U' = {x > 0}, where H is closed, the curve is in H for all s > −1."
+      },
+      {
+       "name": "hausdorff_needed",
+       "kind": "non-example",
+       "statement": "Two Minkowski planes glued along {t < 0}, H the union of the lines {t = x}, L = ∂_t + ∂_x: through (−1, −1) pass two integral curves in H, equal for s < 1 and different for s ≥ 1."
+      },
+      {
+       "name": "light_cone_kappa",
+       "kind": "computation",
+       "statement": "H = {t = |x|, x ≠ 0} closed in U = ℝ^{1+n} ∖ {0}, L = 2t∂_t + 2x·∇ = 2t(∂_t + ∂_r) on H: ∇_L L = 2L, κ = 2 (at (1,1,0): L = (2,2,0), ∇_L L = (4,4,0)); integral curves e^{2s}(t₀,x₀) stay in H; for u = t − |x|, L = ∂_t + ∂_r has ∇_L L = 0."
+      }
+     ]
     },
     {
      "id": "5.5",

@@ -84,7 +84,7 @@ venue = "Ann. of Math. (2) 202(2): 309-630 (September 2025)"
 doi = "10.4007/annals.2025.202.2.1"
 arxiv = "1710.01722v1"
 locator_scheme = "section"
-locator = "§1.1.4 (lines 366–383)"
+locator = "§1.1.4 (lines 366–383); §2.2.1, (2.7) (lines 1900–1905; arXiv v1 p. 38)"
 url = "https://arxiv.org/abs/1710.01722v1"
 fetched_from = "https://arxiv.org/pdf/1710.01722v1"
 fetched_at = "2026-11-04T22:41:00Z"
@@ -93,7 +93,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
 version_note = "arXiv v1"
-cited_for = ["4.5"]
+cited_for = ["4.5", "5.3"]
 
 [[source]]
 id = "luoyu2023"
@@ -102,7 +102,7 @@ title = "On the stability of multi-dimensional rarefaction waves I: the energy e
 year = 2023
 arxiv = "2302.09714v2"
 locator_scheme = "section"
-locator = "§1 (lines 95, 420–424, 1005–1008)"
+locator = "§1 (lines 95, 420–424); §2.1 (lines 999–1000, 1005–1008)"
 url = "https://arxiv.org/abs/2302.09714v2"
 fetched_from = "https://arxiv.org/pdf/2302.09714v2"
 fetched_at = "2026-11-04T22:46:15Z"
