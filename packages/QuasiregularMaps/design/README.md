@@ -16,13 +16,14 @@ quasiregular, and it develops quasiregularly elliptic manifolds. The end theorem
   maximal definitions give one class of maps;
 - a continuous map of a Euclidean domain is `ACL^p` if and only if it lies in `W^{1,p}_loc`,
   so the definition here agrees with the classical one;
-- a non-degenerate orientation-preserving simplicial map of `C¹`-triangulated closed manifolds
-  is quasiregular, with its outer distortion computed simplex by simplex;
+- a non-degenerate orientation-preserving simplicial map of `C¹`-triangulated manifolds with
+  bounded simplexwise distortion, in particular one with closed source, is quasiregular, with its
+  outer distortion computed simplex by simplex;
 - quasiregular ellipticity of a closed connected orientable manifold is independent of the
   metric and the orientation;
 - every closed orientable flat manifold is `1`-quasiregularly elliptic;
-- a closed manifold that receives a non-degenerate orientation-preserving simplicial map from
-  a flat torus is quasiregularly elliptic.
+- a connected oriented Riemannian manifold that receives a non-degenerate orientation-preserving
+  simplicial map from a flat torus is quasiregularly elliptic.
 
 Reshetnyak's theorem, the composition of arbitrary quasiregular maps and the cohomological
 constraints on quasiregularly elliptic manifolds of Bonk–Heinonen, Prywes and Heikkilä–Pankka
@@ -47,10 +48,10 @@ This roadmap owns:
 - `ACL` and `ACL^p` maps on Euclidean domains, the theorem `ACL^p = W^{1,p}_loc` for continuous
   maps, and the agreement with Definition 2.20 of Martio–Rickman–Väisälä;
 - the measure-theoretic facts about `C¹` smooth triangulations of boundaryless manifolds that the
-  Sobolev theory needs (local finiteness, purity, null lower skeleton, bi-Lipschitz top
-  simplices); simplicial maps between triangulated manifolds; the Lipschitz regularity of
-  piecewise `C¹` maps; and the quasiregularity of non-degenerate orientation-preserving
-  simplicial maps;
+  Sobolev theory needs (local finiteness, purity, null lower skeleton, top simplices locally
+  bi-Lipschitz in charts); simplicial maps between triangulated manifolds; the Lipschitz
+  regularity of piecewise `C¹` maps; and the quasiregularity of non-degenerate
+  orientation-preserving simplicial maps;
 - quasiregularly elliptic and `K`-quasiregularly elliptic manifolds, their independence of the
   orientation and, for closed manifolds, of the metric; transfer along `C¹` local
   diffeomorphisms of bounded distortion; flat examples; simplicial branched coverings by tori.
@@ -174,10 +175,13 @@ It leaves to named roadmaps:
 - `IsOpen.ae_eq_zero_of_integral_contDiff_smul_eq_zero`
   (`Mathlib/Analysis/Distribution/AEEqOfIntegralContDiff.lean`): the fundamental lemma of the
   calculus of variations.
-- `LipschitzWith.ae_differentiableAt` (`Mathlib/Analysis/Calculus/Rademacher.lean`) and
-  `Convex.norm_image_sub_le_of_norm_hasFDerivWithin_le`
+- `LipschitzWith.ae_differentiableAt` (`Mathlib/Analysis/Calculus/Rademacher.lean`),
+  `Convex.norm_image_sub_le_of_norm_hasFDerivWithin_le` and
+  `Convex.norm_image_sub_le_of_norm_hasFDerivWithin_le'`
   (`Mathlib/Analysis/Calculus/MeanValue.lean`): Rademacher's theorem; the mean value inequality
-  on convex sets.
+  on convex sets, and its variant against a fixed linear map.
+- `extChartAt` (`Mathlib/Geometry/Manifold/IsManifold/ExtChartAt.lean`): the preferred extended
+  chart at a point, in which the local bi-Lipschitz property of §6.1 is stated.
 - `DifferentiableAt.conformalAt` (`Mathlib/Analysis/Complex/Conformal.lean`): a complex
   differentiable map with non-zero derivative is conformal.
 
@@ -621,8 +625,10 @@ Prove the following. If `f` is `K`-quasiregular and `U ⊆ M` is open, then `f|_
 restricted orientation `TauCeti.Manifold.Orientation.restrict`, and `K_O(f|_U) ≤ K_O(f)`. A
 continuous `f` is `K`-quasiregular iff every point has an open neighbourhood `U` with `f|_U`
 `K`-quasiregular. For every open cover `(U_i)` of `M` and continuous `f`,
-`K_O(f) = sup_i K_O(f|_{U_i})`. Route: locality of the class (SobolevMapsBetweenManifolds T2), a
-countable subcover (second countability) and `TauCeti.IsNullSet.iUnion` (Rickman1993, Ch. I).
+`K_O(f) = max(1, sup_i K_O(f|_{U_i}))`; the `max` matters only for the empty cover of `M = ∅`,
+since every `K_O(f|_{U_i})` is at least `1`. Route: locality of the class
+(SobolevMapsBetweenManifolds T2), a countable subcover (second countability) and
+`TauCeti.IsNullSet.iUnion` (Rickman1993, Ch. I).
 
 **Checks.**
 
@@ -631,6 +637,8 @@ countable subcover (second countability) and `TauCeti.IsNullSet.iUnion` (Rickman
   `R`, while `K_O(f) = ∞` on `ℝ²`. The map is locally quasiregular but not quasiregular, so
   quasiregularity is a uniform condition.
 - `z ↦ z²` on `{Re z > 0}` is injective and `1`-quasiregular.
+- For `M = ∅` and the empty cover, `K_O(f) = 1` (§2.3), while the supremum of the empty family
+  in `[0, ∞]` is `0`. The bare supremum would give `0`, and `max(1, ·)` restores `1`.
 
 *Needs:* §2.1, §2.2; Tau Ceti `TauCeti.IsNullSet.iUnion`, `TauCeti.Manifold.Orientation.restrict`;
 DifferentialGeometry 12.1; SobolevMapsBetweenManifolds T2 (gap `sobolev-maps-class`).
@@ -1124,15 +1132,28 @@ Prove, for a `C¹` smooth triangulation `κ` of a boundaryless `n`-manifold `M` 
   (`TauCeti.IsNullSet`);
 - for each `n`-simplex `σ`, `κ(σ°)` is open in `M` and `κ` restricts to a `C¹` diffeomorphism of
   `σ°` onto it;
-- for each `n`-simplex `σ`, `κ|σ` is bi-Lipschitz in charts onto its image.
+- for each `n`-simplex `σ`, `κ|σ` is locally bi-Lipschitz in charts: for every `x ∈ σ` there
+  are a neighbourhood `σ'` of `x` in `σ` and constants `0 < c ≤ C` such that `κ(σ')` lies in the
+  source of the chart `φ = extChartAt 𝓘(ℝ, E) (κ x)` of `M` and
+  `c |y − z| ≤ |φ(κ y) − φ(κ z)| ≤ C |y − z|` for all `y, z ∈ σ'`. Here `σ` carries its barycentric
+  coordinates, as a subset of `σ → ℝ` with a fixed norm (`TauCeti.IsSimplexImmersion`). A closed
+  simplex image need not lie in one chart domain, so the property is stated point by point; any
+  other chart at `κ x` gives the same property after shrinking `σ'`, since transition maps are
+  `C¹` with invertible differentials.
 
 Route. The null images come from `DifferentiableOn.addHaar_image_eq_zero_of_finrank_lt_finrank`
 in charts. A maximal simplex `τ` has `τ°` open in the realization. If `dim τ < n` then `κ(τ°)`
 would be a non-empty open null set, which is impossible (`TauCeti.IsNullSet.interior_eq_empty`).
 If `dim τ > n`, an injective differential from a space of dimension above `n` into `ℝⁿ` is
-impossible. For the bi-Lipschitz property, suppose difference quotients of `κ` on the compact
-convex `σ` tend to `0`. Then either two limit points have equal images, against injectivity, or
-the differential within `σ` kills a unit vector, against `TauCeti.IsSimplexImmersion`. The notion
+impossible. For the local bi-Lipschitz property at `x ∈ σ`, the chart representative `φ ∘ κ` is
+`C¹` within `σ` near `x`, with a continuous family `A(y)` of derivatives within `σ`. The
+derivative `A(x)` is injective on the directions of `σ`, the vectors with coordinate sum zero
+(`TauCeti.IsSimplexImmersion`). Since `y − z` is such a direction for `y, z ∈ σ`, there is
+`c₀ > 0` with `|A(x)(y − z)| ≥ c₀ |y − z|`. Choose `σ'` a small convex neighbourhood of `x` in `σ`
+on which `‖A(y) − A(x)‖ ≤ c₀/2` and `‖A(y)‖` is bounded. The mean value inequality against the
+fixed map `A(x)` (`Convex.norm_image_sub_le_of_norm_hasFDerivWithin_le'`) gives the lower bound
+with `c = c₀/2`, and the mean value inequality
+(`Convex.norm_image_sub_le_of_norm_hasFDerivWithin_le`) gives the upper bound. The notion
 of piecewise smooth triangulation is HeikkilaPankka2025 Appendix B, lines 1236–1245, which asks
 for an extension of `κ|σ` to a neighbourhood of `σ` in its plane. The within-simplex formulation
 of `TauCeti.IsSmoothTriangulation` suffices for every statement here.
@@ -1141,15 +1162,21 @@ of `TauCeti.IsSmoothTriangulation` suffices for every statement here.
 
 - The boundary of a triangle, mapped onto the unit circle by radial projection, is a `C¹` smooth
   triangulation of `S¹`. Its complex is pure of dimension `1`, and the image of its `0`-skeleton
-  is `3` points, a null set.
+  is `3` points, a null set. For the inscribed triangle with vertices at angles `0`, `2π/3`,
+  `4π/3`, the edge `p(t) = (1 − t)v₀ + t v₁` has `|p(t)|² = 1 − 3t + 3t² ∈ [1/4, 1]`, and its
+  angle has `dθ/dt = (√3/2)/|p(t)|²`, between `√3/2` and `2√3`. The image arc has length `2π/3`
+  and misses the antipode of each of its points, so it lies in the stereographic chart at any of
+  them, and the edge is bi-Lipschitz there.
 - The boundary of a tetrahedron radially projected onto `S²` is pure of dimension `2`; the image
   of its `1`-skeleton is `6` great-circle arcs, a null set.
 - Following a triangulation of `[0, 1]` by `t ↦ t²` gives a homeomorphism whose differential
   vanishes at `0`. Tau Ceti's `TauCeti.exists_contMDiff_not_isSmoothTriangulation_trans` shows it is not
-  a `C¹` triangulation, and its inverse `t ↦ √t` is not Lipschitz, so the bi-Lipschitz statement
-  uses the injectivity of the differential.
+  a `C¹` triangulation, and its inverse `t ↦ √t` is not Lipschitz near `0`, so the local
+  bi-Lipschitz statement at the vertex `0` uses the injectivity of the differential.
 
-*Needs:* Tau Ceti `TauCeti.IsSmoothTriangulation`, `TauCeti.IsSimplexImmersion`,
+*Needs:* Mathlib `extChartAt`, `Convex.norm_image_sub_le_of_norm_hasFDerivWithin_le`,
+`Convex.norm_image_sub_le_of_norm_hasFDerivWithin_le'`; Tau Ceti `TauCeti.IsSmoothTriangulation`,
+`TauCeti.IsSimplexImmersion`,
 `AbstractSimplicialComplex.Realization`, `AbstractSimplicialComplex.exists_finset_support_subset_of_isCompact`,
 `PreAbstractSimplicialComplex.IsPure`, `DifferentiableOn.addHaar_image_eq_zero_of_finrank_lt_finrank`,
 `TauCeti.IsNullSet.interior_eq_empty`; GeometricTopology Layer 11.
@@ -1198,11 +1225,17 @@ HeikkilaPankka2025 Lemma B.2, lines 1255–1260, gives the case of closed `M` wi
 Stokes' theorem (lines 1261–1316). Route here:
 
 - continuity, by the pasting lemma for the locally finite closed cover by the `κ(σ)` (§6.1);
-- Lipschitz bounds on each `κ(σ)` in chart coordinates, from the mean value inequality on the
-  convex `σ` (`Convex.norm_image_sub_le_of_norm_hasFDerivWithin_le`) and the bi-Lipschitz
-  property of §6.1;
+- Lipschitz bounds near each point of each `κ(σ)` in chart coordinates. Take `x ∈ σ`, the
+  chart `φ` of `M` at `κ x` and a chart `ψ` of `N` at `p(κ x)`. Then `ψ ∘ p ∘ κ` is Lipschitz on
+  a small convex neighbourhood of `x` in `σ`, by the mean value inequality
+  (`Convex.norm_image_sub_le_of_norm_hasFDerivWithin_le`). The local bi-Lipschitz property of
+  §6.1 makes `(φ ∘ κ)⁻¹` Lipschitz on `φ(κ(σ'))`, so `ψ ∘ p ∘ φ⁻¹` is Lipschitz there. Only this
+  local form is used, never a bound on a whole closed simplex. Constants from different
+  simplices are combined by taking their maximum;
 - gluing along segments: a continuous function on a segment that is `L`-Lipschitz on each of
-  finitely many closed pieces covering it is `L`-Lipschitz.
+  finitely many closed pieces covering it is `L`-Lipschitz. The pieces near `κ x` are the local
+  pieces of the finitely many `n`-simplices through `x`, which cover a neighbourhood of `κ x`:
+  the other `κ(σ)` form a locally finite family of closed sets missing `κ x` (§6.1).
 
 **Checks.**
 
@@ -1292,8 +1325,9 @@ map `ℝⁿ → N`, and quasiregularly elliptic when it is `K`-quasiregularly el
 Prove that `N` is `K`-quasiregularly elliptic for `o_N` iff it is for `−o_N`, with the same `K`.
 Route: if `f : (ℝⁿ, std) → (N, o_N)` is `K`-quasiregular, then by §4.2 it is `K`-quasiregular
 from `(ℝⁿ, −std)` to `(N, −o_N)`. The reflection `R` is an orientation-preserving isometry
-`(ℝⁿ, std) → (ℝⁿ, −std)`, so §4.3 makes `f ∘ R` `K`-quasiregular to `(N, −o_N)`, and it is
-non-constant (HeikkilaPankka2025 lines 20–21).
+`(ℝⁿ, std) → (ℝⁿ, −std)`, so §4.3 makes `f ∘ R` `K`-quasiregular to `(N, −o_N)`. It is
+non-constant because `R` is a bijection, so it is a witness in the sense of the definition
+(HeikkilaPankka2025 lines 20–21).
 
 **Checks.**
 
@@ -1324,9 +1358,11 @@ diffeomorphism, orientation preserving at every point, with
 `K_q = max(1, sup_y q_O(dq_y)) < ∞`, which is automatic for compact `N`. Prove that if `N` is
 `K`-quasiregularly elliptic then `N'` is `K_q K`-quasiregularly elliptic. In particular, a closed
 manifold finitely and orientation-preservingly covered by a quasiregularly elliptic closed
-manifold is quasiregularly elliptic. Route: §4.4 with §2.7. If `q ∘ f` were constant, `f(ℝⁿ)`
-would be a connected subset of a discrete fibre of `q`, and `f` would be constant
-(HeikkilaPankka2025 lines 85–91).
+manifold is quasiregularly elliptic. Postcomposing a non-constant quasiregular map `ℝⁿ → N`
+with a map `N → N'` is the construction of HeikkilaPankka2025 lines 85–91, there with a
+piecewise linear branched covering in place of `q` (§7.6). Route: §4.4 with §2.7. If `q ∘ f`
+were constant, `f(ℝⁿ)` would be a connected subset of a fibre of `q`; the fibres of a local
+homeomorphism are discrete, so `f` would be constant.
 
 **Checks.**
 
@@ -1379,15 +1415,16 @@ Layer 2 (gap `orientation-descent`).
 
 ### 7.6 Simplicial branched coverings by tori
 
-Let `N` be closed, `T` a connected oriented Riemannian `n`-manifold, and `π : ℝⁿ → T` a `C¹`
-local diffeomorphism, orientation preserving at every point, with `K_π < ∞`. Let `κ₁`, `κ₂` be
-`C¹` smooth triangulations of `T` and `N`, and `p = κ₂ ∘ |s| ∘ κ₁⁻¹` non-degenerate and
-orientation preserving with `K_p < ∞` (automatic for compact `T`). Prove that `p ∘ π` is
-non-constant and `K_π max(1, K_p)`-quasiregular, so `N` is quasiregularly elliptic. In
-particular a non-degenerate orientation-preserving simplicial map from a flat torus
+Let `T` be a connected oriented Riemannian `n`-manifold and `π : ℝⁿ → T` a `C¹` local
+diffeomorphism, orientation preserving at every point, with `K_π < ∞`. Let `κ₁`, `κ₂` be `C¹`
+smooth triangulations of `T` and `N`, and `p = κ₂ ∘ |s| ∘ κ₁⁻¹` non-degenerate and orientation
+preserving with `K_p < ∞` (automatic for compact `T`). Prove that `p ∘ π` is non-constant and
+`K_π max(1, K_p)`-quasiregular, so `N` is quasiregularly elliptic. No compactness of `N` is
+assumed. In particular a non-degenerate orientation-preserving simplicial map from a flat torus
 `ℝⁿ/Λ → N` makes `N` `max(1, K_p)`-quasiregularly elliptic. This is the construction of
-HeikkilaPankka2025 lines 32–34 and 85–91, where the piecewise linear branched coverings come from
-Piergallini and Zuddas.
+HeikkilaPankka2025 lines 32–34 and 85–91, where `N` is closed and the piecewise linear branched
+coverings come from Piergallini and Zuddas; Proposition B.1 there (lines 1247–1251) is likewise
+stated for closed manifolds.
 
 Route: §4.3 and §6.4. For non-constancy, the image of `π` is open and non-empty, so it meets
 some `κ₁(σ°)` (§6.1: the union of these is the complement of a null set and is dense). Near a
@@ -1399,6 +1436,8 @@ constant. No surjectivity of `π` is needed.
 - `T = N = Tⁿ` and `p = id` recover §7.5 with `K = 1`.
 - The doubling of `T²` (§6.4) composed with `π : ℝ² → T²` is `2`-quasiregular and non-constant.
 - A degenerate simplicial map fails §6.4 and gives no conclusion.
+- `T = N = ℝ²` with the integer grid triangulated by diagonals, `s = id` and `π = id`: `K_π = 1`,
+  `K_p = 1`, and `p ∘ π = id` is non-constant and `1`-quasiregular although `N` is not compact.
 
 *Needs:* §4.3, §6.1, §6.4, §7.1.
 

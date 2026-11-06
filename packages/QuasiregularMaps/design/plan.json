@@ -570,7 +570,7 @@
           "id": "2.5",
           "kind": "theorem",
           "name": "IsQuasiregularWith.restrict / isQuasiregularWith_iff_local",
-          "statement": "If f is K-quasiregular and U ⊆ M open (restricted metric and orientation) then f|_U is K-quasiregular and K_O(f|_U) <= K_O(f); a continuous f is K-quasiregular iff every point has an open neighbourhood U with f|_U K-quasiregular; for every open cover (U_i) and continuous f, K_O(f) = sup_i K_O(f|_(U_i)).",
+          "statement": "If f is K-quasiregular and U ⊆ M open (restricted metric and orientation) then f|_U is K-quasiregular and K_O(f|_U) <= K_O(f); a continuous f is K-quasiregular iff every point has an open neighbourhood U with f|_U K-quasiregular; for every open cover (U_i) and continuous f, K_O(f) = max(1, sup_i K_O(f|_(U_i))) (the max matters only for the empty cover of M = ∅).",
           "hypotheses": [
             "n >= 1",
             "M, N smooth, Hausdorff, second countable, boundaryless manifolds modelled with 𝓘(ℝ, E), E a real normed space of dimension n",
@@ -601,6 +601,11 @@
               "name": "local_sq_halfplane",
               "kind": "computation",
               "statement": "z ↦ z² on Re z > 0 is injective and 1-quasiregular"
+            },
+            {
+              "name": "local_empty_cover",
+              "kind": "degenerate",
+              "statement": "M = ∅ with the empty cover: K_O(f) = 1 (2.3) while sup of the empty family in [0,∞] is 0; max(1, ·) restores 1"
             }
           ]
         },
@@ -1355,7 +1360,7 @@
           "id": "6.1",
           "kind": "theorem",
           "name": "IsSmoothTriangulation.isPure / isNullSet_lowerSkeleton",
-          "statement": "For a C¹ smooth triangulation κ of a boundaryless n-manifold M: every compact subset of M meets κ(σ) for finitely many σ (K locally finite); K is pure of dimension n; the image of the union of simplices of dimension < n is a TauCeti.IsNullSet; for each n-simplex σ, κ(σ°) is open and κ restricts to a C¹ diffeomorphism of σ° onto it; κ|σ is bi-Lipschitz in charts onto its image.",
+          "statement": "For a C¹ smooth triangulation κ of a boundaryless n-manifold M: every compact subset of M meets κ(σ) for finitely many σ (K locally finite); K is pure of dimension n; the image of the union of simplices of dimension < n is a TauCeti.IsNullSet; for each n-simplex σ, κ(σ°) is open and κ restricts to a C¹ diffeomorphism of σ° onto it; κ|σ is locally bi-Lipschitz in charts: for every x ∈ σ there are a neighbourhood σ' of x in σ and 0 < c <= C with κ(σ') in the source of φ = extChartAt 𝓘(ℝ, E) (κ x) and c|y − z| <= |φ(κ y) − φ(κ z)| <= C|y − z| for y, z ∈ σ' (σ in barycentric coordinates in σ -> ℝ).",
           "hypotheses": [
             "κ : AbstractSimplicialComplex.Realization K ≃ₜ M with TauCeti.IsSmoothTriangulation at smoothness exponent 1",
             "M boundaryless of dimension n >= 1"
@@ -1365,6 +1370,9 @@
             "where": "Appendix B, lines 1236-1245 (piecewise smooth triangulations)"
           },
           "prerequisites": [
+            "mathlib:extChartAt",
+            "mathlib:Convex.norm_image_sub_le_of_norm_hasFDerivWithin_le",
+            "mathlib:Convex.norm_image_sub_le_of_norm_hasFDerivWithin_le'",
             "tauceti:TauCeti.IsSmoothTriangulation",
             "tauceti:TauCeti.IsSimplexImmersion",
             "tauceti:AbstractSimplicialComplex.Realization",
@@ -1379,7 +1387,7 @@
             {
               "name": "triangulation_circle",
               "kind": "computation",
-              "statement": "boundary of a triangle radially projected onto S¹: pure of dimension 1, 0-skeleton image = 3 points, null"
+              "statement": "boundary of a triangle radially projected onto S¹: pure of dimension 1, 0-skeleton image = 3 points, null; edge p(t) = (1−t)v_0 + t v_1 of the inscribed triangle has |p(t)|² = 1 − 3t + 3t² ∈ [1/4,1], dθ/dt = (√3/2)/|p(t)|² ∈ [√3/2, 2√3]; the arc of length 2π/3 lies in the stereographic chart at each of its points, so the edge is bi-Lipschitz there"
             },
             {
               "name": "triangulation_sphere",
@@ -1389,7 +1397,7 @@
             {
               "name": "triangulation_square_map",
               "kind": "non-example",
-              "statement": "following a triangulation of [0,1] by t ↦ t² is not a C¹ triangulation (TauCeti.exists_contMDiff_not_isSmoothTriangulation_trans) and its inverse √t is not Lipschitz"
+              "statement": "following a triangulation of [0,1] by t ↦ t² is not a C¹ triangulation (TauCeti.exists_contMDiff_not_isSmoothTriangulation_trans) and its inverse √t is not Lipschitz near 0, so local bi-Lipschitz fails at the vertex 0"
             }
           ]
         },
@@ -1629,7 +1637,7 @@
           ],
           "locator": {
             "source": "HeikkilaPankka2025",
-            "where": "lines 20-21"
+            "where": "lines 20-21 (the definition of quasiregular ellipticity that the witness f∘R satisfies)"
           },
           "prerequisites": [
             "target:4.2",
@@ -1704,7 +1712,7 @@
           ],
           "locator": {
             "source": "HeikkilaPankka2025",
-            "where": "lines 85-91"
+            "where": "lines 85-91 (the same postcomposition, there with a piecewise linear branched covering in place of q)"
           },
           "prerequisites": [
             "target:2.7",
@@ -1788,7 +1796,7 @@
           "id": "7.6",
           "kind": "theorem",
           "name": "isQuasiregularlyElliptic_of_simplicial",
-          "statement": "For N closed, T a connected oriented Riemannian n-manifold, π : ℝⁿ -> T a C¹ local diffeomorphism orientation preserving everywhere with K_π < ∞, and p = κ_2 ∘ |s| ∘ κ_1⁻¹ : T -> N non-degenerate and orientation preserving with K_p < ∞ (automatic for compact T): p∘π is non-constant and K_π·max(1,K_p)-quasiregular, so N is quasiregularly elliptic; in particular a non-degenerate orientation-preserving simplicial map from a flat torus ℝⁿ/Λ to N makes N max(1,K_p)-quasiregularly elliptic.",
+          "statement": "For T a connected oriented Riemannian n-manifold, π : ℝⁿ -> T a C¹ local diffeomorphism orientation preserving everywhere with K_π < ∞, and p = κ_2 ∘ |s| ∘ κ_1⁻¹ : T -> N non-degenerate and orientation preserving with K_p < ∞ (automatic for compact T): p∘π is non-constant and K_π·max(1,K_p)-quasiregular, so N is quasiregularly elliptic (no compactness of N assumed); in particular a non-degenerate orientation-preserving simplicial map from a flat torus ℝⁿ/Λ to N makes N max(1,K_p)-quasiregularly elliptic.",
           "hypotheses": [
             "n >= 1",
             "M, N smooth, Hausdorff, second countable, boundaryless manifolds modelled with 𝓘(ℝ, E), E a real normed space of dimension n",
@@ -1796,7 +1804,6 @@
             "orientations o_M, o_N : TauCeti.Manifold.Orientation 𝓘(ℝ, E) _ (Fin n)",
             "N connected",
             "ℝⁿ = EuclideanSpace ℝ (Fin n) with the flat metric and the standard orientation",
-            "N closed",
             "T connected oriented Riemannian n-manifold",
             "π : ℝⁿ -> T C¹ local diffeomorphism, orientation preserving, K_π < ∞",
             "p as in 6.4"
@@ -1827,6 +1834,11 @@
               "name": "simplicial_elliptic_degenerate",
               "kind": "non-example",
               "statement": "a degenerate simplicial map fails 6.4 and gives no conclusion"
+            },
+            {
+              "name": "simplicial_elliptic_noncompact",
+              "kind": "degenerate",
+              "statement": "T = N = ℝ² with the integer grid triangulated by diagonals, s = id, π = id: K_π = K_p = 1 and p∘π = id is non-constant and 1-quasiregular although N is not compact"
             }
           ]
         }
