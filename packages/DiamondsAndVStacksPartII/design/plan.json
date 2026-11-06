@@ -5872,12 +5872,6 @@
     "needs": "For a complete Tate O-algebra A admitting a noetherian ring of definition formally of finite type over the complete DVR O, prove that A is Jacobson–Tate and admits an excellent ring of definition, with maximal-support rank-one valuations dense and rational localizations again pseudoaffinoid (LOU17 Propositions 3.3, 4.6)."
   },
   {
-    "slug": "noetherian-definition-rational-flatness",
-    "supplier": "AdicSpacesPartII",
-    "section": "R0.18",
-    "needs": "For a complete separated Huber ring A admitting a noetherian ring of definition, prove flatness of the completed rational localization A → A⟨f₁/g,…,fₙ/g⟩ when (g,f₁,…,fₙ) generates an open ideal, including the Tate analytic charts of a non-Tate noetherian adic ring; use the pinned flat_toCompletionLoc for strongly noetherian complete Tate sources, and supply only the missing noetherian-ring-of-definition case."
-  },
-  {
     "slug": "finite-ideal-formal-schemes",
     "supplier": "AdicSpacesPartIII",
     "section": "F0.3 / R2.3",
