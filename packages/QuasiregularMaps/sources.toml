@@ -19,7 +19,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v2 read; its numbering (Theorem 1.1, (1.1), Corollary 1.2, Proposition 2.1, Theorem 2.2, Appendix B) is the one cited; the Annals version was not checked"
-cited_for = ["Final targets", "Scope"]
+cited_for = ["2.1", "2.8", "4.1", "4.2", "6.1", "6.2", "6.3", "6.4", "7.1", "7.2", "7.3", "7.4", "7.5", "7.6", "Downstream consumers"]
 
 [[source]]
 id = "Prywes2019"
@@ -39,7 +39,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v1 read; Theorem 1.1 and Corollary 1.2 are cited with the arXiv numbering; the Annals version was not checked"
-cited_for = ["Final targets"]
+cited_for = ["2.1", "2.9", "7.1", "7.5", "Downstream consumers"]
 
 [[source]]
 id = "BonkHeinonen2001"
@@ -54,7 +54,7 @@ url = "https://projecteuclid.org/journals/acta-mathematica/volume-186/issue-2/Qu
 licence_class = "none"
 status = "uncertified"
 version_note = "the open copy on Project Euclid answered the fetcher with a bot-protection page and the DOI resolves to a paywalled host; cited by its locator without the text, with the numbering as cited by HeikkilaPankka2025 (Theorem 1.11) and Prywes2019 (Proposition 1.4)"
-cited_for = ["Final targets"]
+cited_for = ["Downstream consumers"]
 
 [[source]]
 id = "Rickman1993"
@@ -69,7 +69,7 @@ url = "https://doi.org/10.1007/978-3-642-78201-5"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Scope", "Final targets"]
+cited_for = ["2.4", "2.5", "2.6", "2.7", "4.1", "4.3", "4.4", "5.2", "Downstream consumers"]
 
 [[source]]
 id = "Vaisala1971"
@@ -84,7 +84,7 @@ url = "https://doi.org/10.1007/BFb0061216"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Scope", "Final targets"]
+cited_for = ["5.2"]
 
 [[source]]
 id = "Reshetnyak1989"
@@ -99,7 +99,7 @@ url = "https://doi.org/10.1090/mmono/073"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled (AMS); cited by its locator without the text"
-cited_for = ["Final targets"]
+cited_for = ["Downstream consumers"]
 
 [[source]]
 id = "IwaniecMartin2001"
@@ -114,7 +114,7 @@ url = "https://doi.org/10.1093/oso/9780198509295.001.0001"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled (OUP); cited by its locator without the text"
-cited_for = ["Scope"]
+cited_for = ["Scope and ownership"]
 
 [[source]]
 id = "Gromov1999"
@@ -129,7 +129,7 @@ url = "https://doi.org/10.1007/978-0-8176-4583-0"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text; the DOI is that of the 2007 reprint"
-cited_for = ["Consumers"]
+cited_for = ["Downstream consumers"]
 
 [[source]]
 id = "Gromov1981"
@@ -142,7 +142,7 @@ locator = "p. 200"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled (Princeton University Press); cited by its locator without the text, as the place where the question on quasiregular ellipticity of simply connected manifolds is asked, with the page as cited by Prywes2019 and HeikkilaPankka2025"
-cited_for = ["Consumers"]
+cited_for = ["Downstream consumers"]
 
 [[source]]
 id = "MartioRickmanVaisala1969"
@@ -161,4 +161,19 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "the journal's open archive (Creative Commons Attribution 4.0); the scan is image-only and the recognised text is noisy"
-cited_for = ["Scope", "Final targets"]
+cited_for = ["Conventions", "1.1", "1.2", "1.3", "1.4", "2.1", "2.2", "2.3", "2.9", "2.10", "3.1", "3.2", "3.3", "3.4", "5.1", "5.3", "Downstream consumers"]
+
+[[source]]
+id = "Ahlfors2006"
+authors = "Lars V. Ahlfors"
+title = "Lectures on Quasiconformal Mappings"
+year = 2006
+venue = "Second edition, University Lecture Series 38, American Mathematical Society"
+doi = "10.1090/ulect/038"
+locator_scheme = "chapter"
+locator = "Ch. I"
+url = "https://doi.org/10.1090/ulect/038"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (AMS); the sources service found no legal open copy (the DOI landing page is the publisher's priced e-book); cited by its locator without the text, for the standard linear algebra of the planar map z ↦ az + b z̄ and the analytic definition of planar quasiconformality"
+cited_for = ["1.5", "2.10"]
