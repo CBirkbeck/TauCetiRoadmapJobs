@@ -3776,8 +3776,8 @@
       "slug": "local-models",
       "id": "gap:local-models",
       "supplier": "GeometricSatakeAndFusionPartII",
-      "section": "LM.3/canonical-abelian-model and LM.7/general-normal-representative, very-special special fibre (new statement)",
-      "needs": "For a very special parahoric and odd p, prove that the geometric special fibre of the canonical normal local model of LM.3/canonical-abelian-model and LM.7/general-normal-representative is integral, the μ-admissible set having a unique extremal element, and that the extremal Schubert stratum lies in the smooth locus, including ramified groups (KZ Theorem 4.4.4 and its proof, p.43; §5.2.1, p.49).",
+      "section": "§§3.1 and 7.6, very-special special fibre (new statement)",
+      "needs": "For a very special parahoric and odd p, prove that the μ-admissible set has a unique maximal element, so that the geometric special fibre of the normal local model of §§3.1 and 7.6 is irreducible, hence integral (KZ Theorem 4.4.4 and its proof, p.43; §5.2.1, p.49). The smoothness of the extremal Schubert stratum is §3.7 and is not part of the gap.",
       "stageId": "ShimuraVarietiesPartII",
       "neededBy": [
         "ShimuraVarietiesPartII:SV2.1/de-rham-frame-diagram",
@@ -3796,8 +3796,8 @@
       "slug": "open-curve-companions",
       "id": "gap:open-curve-companions",
       "supplier": "GlobalShtukasAndFunctionFieldLanglands",
-      "section": "§§6.1–6.2, Constant twists and Compatible systems on curves",
-      "needs": "Extend the algebraic p-plain companion theorem of §§6.1–6.2 to semisimple lisse sheaves on smooth geometrically connected open curves over the original F_q by direct sums, allowing a constant twist and a finite coefficient extension.",
+      "section": "§§6.1–6.2, Constant twists and Compatible systems on curves (semisimple form)",
+      "needs": "State §6.2 for semisimple lisse sheaves on a smooth geometrically connected open curve over F_q, as the direct sum of the companions of its irreducible constituents, with one common finite coefficient extension. The constant twist of §6.1 and the irreducible companion of §6.2 are supplied and are not part of the gap.",
       "stageId": "ShimuraVarietiesPartII",
       "neededBy": [
         "ShimuraVarietiesPartII:SV2.7/representationwise-independence"
@@ -3886,7 +3886,7 @@
       "slug": "component-specialization",
       "id": "gap:component-specialization",
       "supplier": "ShimuraCompactifications",
-      "section": "Layer C5, Hodge-type integral extension (new section)",
+      "section": "Layer 7, Hodge-type integral extension (new section)",
       "needs": "For the normal Hodge models S_K defined in Layer 0 at neat tame level over the completed maximal unramified local reflex ring, assuming their geometric special fibre is locally integral, prove that the special fibre of each connected integral component is geometrically irreducible, compatibly with specialization, as used in the proof of HT Corollary 1.3.16.",
       "stageId": "ShimuraVarietiesPartII",
       "neededBy": [
@@ -4024,17 +4024,6 @@
       "stageId": "ShimuraVarietiesPartII",
       "neededBy": [
         "ShimuraVarietiesPartII:SV2.4/auxiliary-prime-rank"
-      ]
-    },
-    {
-      "slug": "arbitrary-dvr-good-reduction",
-      "id": "gap:arbitrary-dvr-good-reduction",
-      "supplier": "NeronModelsAndSemistableAbelianVarieties",
-      "section": "§§5.1–5.2, extension beyond excellent traits",
-      "needs": "Extend the good-reduction criterion and descent to an arbitrary mixed-characteristic DVR in the full prime-to-p level situation of HT Lemma 1.3.6, or supply descent from an excellent complete trait; §§5.1–5.2 state the excellent-DVR case.",
-      "stageId": "ShimuraVarietiesPartII",
-      "neededBy": [
-        "ShimuraVarietiesPartII:SV2.1/pro-dvr-property"
       ]
     }
   ],
