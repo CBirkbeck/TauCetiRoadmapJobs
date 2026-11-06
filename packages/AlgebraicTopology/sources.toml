@@ -85,3 +85,29 @@ licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-11-03"
 cited_for = ["4.5"]
+
+[[source]]
+id = "ftw1973"
+locator_scheme = "theorem"
+locator = "Theorem 4.2"
+url = "https://www.numdam.org/item/CM_1973__27_1_1_0.pdf"
+fetched_from = "https://www.numdam.org/item/CM_1973__27_1_1_0.pdf"
+fetched_at = "2026-11-06T08:48:44Z"
+sha256 = "10d5f8cd24cb2d2f8e92eb031bce52903903cdef9277fa4bf5ac284bcc38b5b2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-06"
+cited_for = ["8.5"]
+
+[[source]]
+id = "strom1972"
+locator_scheme = "theorem"
+locator = "Theorem 6"
+url = "https://journals.msp.org/mscand/article/download/2424/2423"
+fetched_from = "https://journals.msp.org/mscand/article/download/2424/2423"
+fetched_at = "2026-11-06T09:14:08Z"
+sha256 = "84bc80677a37027d5912faa528e058677729fd04d0702a7c10c91de99b11fece"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-06"
+cited_for = ["4.5"]
