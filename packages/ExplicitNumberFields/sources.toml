@@ -1,0 +1,68 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ExplicitNumberFields"
+
+[[source]]
+id = "bordelles2002"
+authors = "Olivier Bordellès"
+title = "Explicit upper bounds for the average order of d_n(m) and application to class number"
+year = 2002
+locator_scheme = "theorem"
+locator = "Theorem 2"
+sha256 = "321ca48d8c21570ad31317144d4153478d060e2deb464e5177b87c55a164bd73"
+licence_class = "operator-local"
+status = "certified"
+local_name = "bordelles2002.pdf"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6064#issuecomment-6671942201"
+
+[[source]]
+id = "bordelles2006"
+authors = "Olivier Bordellès"
+title = "An inequality for the class number"
+year = 2006
+locator_scheme = "theorem"
+locator = "Theorem 1"
+sha256 = "c8ee318853727413594167d063eb40a8dee3cd4f35bc290895ec7afcbb86d809"
+licence_class = "operator-local"
+status = "certified"
+local_name = "bordelles2006.pdf"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6064#issuecomment-6671942201"
+
+[[source]]
+id = "louboutin2015mmj"
+authors = "Stéphane R. Louboutin"
+title = "Explicit upper bounds for residues of Dedekind zeta functions"
+year = 2015
+doi = "10.17323/1609-4514-2015-15-4-727-740"
+locator_scheme = "section"
+locator = "Section 2.6.4"
+licence_class = "none"
+status = "waived"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6064#issuecomment-6671942201"
+
+[[source]]
+id = "louboutin2017"
+authors = "Stéphane R. Louboutin"
+title = "Simple zeros of Dedekind zeta functions"
+year = 2017
+doi = "10.7169/facm/1598"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+sha256 = "bec7dbc6530640f176a036f5fdc52acea292df56b82bead7d4350aa7057fbe73"
+licence_class = "operator-local"
+status = "certified"
+local_name = "louboutin2017.pdf"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6064#issuecomment-6672868062"
+
+[[source]]
+id = "louboutin2015ijnt"
+authors = "Stéphane R. Louboutin"
+title = "Real zeros of Dedekind zeta functions"
+year = 2015
+doi = "10.1142/S1793042115500463"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+sha256 = "c5474936bbd32e8e84489296f46f878a6a3d14160518531208bc17541273c1c7"
+licence_class = "operator-local"
+status = "certified"
+local_name = "louboutin2015ijnt.pdf"
+resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6064#issuecomment-6672868062"
