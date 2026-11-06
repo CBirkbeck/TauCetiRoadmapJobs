@@ -502,8 +502,8 @@ Distinguish three types of simple perverse sheaves on `A`: (T1) `i_{s*}F` for a 
 
 ### 5.3 Fourier sheaves
 
-A constructible sheaf `ℱ` on `A` is elementary if `H⁰_c(A_{k̄}, ℱ) = 0` and `H²_c(A_{k̄}, ℱ ⊗ ℒ_ψ(t x)) = 0` for all `t ∈ k̄`; it is Fourier if it is a middle extension and `H⁰(A_{k̄}, ℱ ⊗ ℒ_ψ(t x)) = 0 = H²_c(A_{k̄}, ℱ ⊗ ℒ_ψ(t x))` for all `t`; an irreducible Fourier sheaf is a Fourier sheaf whose restriction to a dense open of lissity is geometrically irreducible. Define the naive transform `NFT_ψ(ℱ) = R¹pr'_!(pr^*ℱ ⊗ ℒ_ψ(x x'))`. Prove: for elementary `ℱ`, `FT(ℱ[1]) ≅ NFT_ψ(ℱ)[1]`, `NFT_ψ(ℱ)` is elementary and `NFT_ψ(NFT_ψ ℱ) ≅ [−1]^*ℱ(−1)`; for Fourier `ℱ`, `NFT_ψ(ℱ)` is Fourier and `D(NFT_ψ ℱ) ≅ NFT_ψ([−1]^* Dℱ)(1)` for the middle-extension dual; irreducible Fourier goes to irreducible Fourier; over `𝔽_q` the trace function of `NFT_ψ(ℱ)` is `−𝔉_ψ(t_ℱ)`. Prove that `NFT_ψ` restricts to an autoequivalence of the category of lisse sheaves on `A` all of whose breaks at `∞` exceed `1`, with quasi-inverse `[−1]^* NFT_ψ(−)(1)`: such a sheaf is Fourier, §5.5's lisse-locus criterion shows its transform is lisse on `A'`, and applied to the inverse transform it shows that the transform has no part of slope `< 1` at `∞'` and, through the slope-one twisting lemma of §5.1, no part of slope `1`; no stationary-phase formula is used. (ESDE (7.3.3)–(7.3.6) and Théorème (7.3.8), ESDE lines 7235–7310; ESDE §7.8 Class (1), ESDE lines 7877–7889; KATZ01 lines 888–893.)
-*Needs:* §§3.4–3.5, 3.8, 5.2, 5.5; §2.7.
+A constructible sheaf `ℱ` on `A` is elementary if `H⁰_c(A_{k̄}, ℱ) = 0` and `H²_c(A_{k̄}, ℱ ⊗ ℒ_ψ(t x)) = 0` for all `t ∈ k̄`; it is Fourier if it is a middle extension and `H⁰(A_{k̄}, ℱ ⊗ ℒ_ψ(t x)) = 0 = H²_c(A_{k̄}, ℱ ⊗ ℒ_ψ(t x))` for all `t`; an irreducible Fourier sheaf is a Fourier sheaf whose restriction to a dense open of lissity is geometrically irreducible. Define the naive transform `NFT_ψ(ℱ) = R¹pr'_!(pr^*ℱ ⊗ ℒ_ψ(x x'))`. Prove: for elementary `ℱ`, `FT(ℱ[1]) ≅ NFT_ψ(ℱ)[1]`, `NFT_ψ(ℱ)` is elementary and `NFT_ψ(NFT_ψ ℱ) ≅ [−1]^*ℱ(−1)`; for Fourier `ℱ`, `NFT_ψ(ℱ)` is Fourier and `D(NFT_ψ ℱ) ≅ NFT_ψ([−1]^* Dℱ)(1)` for the middle-extension dual; irreducible Fourier goes to irreducible Fourier; over `𝔽_q` the trace function of `NFT_ψ(ℱ)` is `−𝔉_ψ(t_ℱ)`. (ESDE (7.3.3)–(7.3.6) and Théorème (7.3.8), ESDE lines 7235–7310.)
+*Needs:* §§3.4–3.5, 3.8, 5.2.
 
 API:
 - The middle-extension dual of a Fourier sheaf is Fourier, and so are its translates and its twists `ℱ ⊗ ℒ_ψ(a x)`.
@@ -544,6 +544,9 @@ Let `K` be perverse on `A`, `K' = FT(K)`, `U`, `U'` the open sets of lissity of 
 Route: proper base change gives `rk_{s'}(K') = −χ_c(A_{k̄}, K ⊗ ℒ_ψ(x s'))`, which §5.1's Euler–Poincaré formula and the twisting formula evaluate; the vanishing statements are the local acyclicity of §3.3, once for `D × A' → A'` and once with the roles of `A` and `A'` exchanged; the identification at `∞'` uses `RΨ = RΦ` there because the kernel vanishes on `D × ∞'`.
 *Needs:* §§3.3, 3.4, 4.2, 5.1, 5.2; LefschetzPencilsAndVanishingCycles §§0.3–0.7; EtaleCohomologyFoundations §§F.2.1, F.3a.
 
+Prove that the naive transform `NFT_ψ` of §5.3 restricts to an autoequivalence of the category of lisse sheaves on `A` all of whose breaks at `∞` exceed `1`, with quasi-inverse `[−1]^* NFT_ψ(−)(1)`. Route: such a sheaf `ℱ` is Fourier, so `FT(ℱ[1]) ≅ NFT_ψ(ℱ)[1]` (§5.3), and the lisse-locus criterion above with `S = ∅` and all slopes of `F_∞` above `1` shows that `G = NFT_ψ(ℱ)` is lisse on `A'`. After extending `k` to `k̄`, the criterion with the roles of `A` and `A'` exchanged, applied to `G[1]`, whose transform `[−1]^*ℱ(−1)[1]` is lisse on `A`, shows that `G` has no part of slope `< 1` at `∞'` and that its slope-one part `G_1` satisfies `s(G_1 ⊗ ℒ_ψ(x' s)) = r(G_1)` for every `s ≠ 0`; the slope-one twisting lemma of §5.1 then forces `G_1 = 0`. No stationary-phase formula is used. (ESDE §7.8 Class (1), ESDE lines 7877–7889, stated there over an algebraically closed field; KATZ01 lines 888–893.)
+*Needs:* §§2.7, 5.1, 5.3; the lisse-locus criterion above.
+
 **Checks.**
 - `K = Λ[1]`: `S = ∅`, `F_∞` trivial, so `rk(K') = 0` and `rk_{0'}(K') = 0 − 1 + 0 = −1`, matching `K' = i_{0'*}Λ(−1)`; the sequence at `0'` reads `0 → 0 → 0 → Λ(−1) → H²_c(𝔸¹_{k̄}, Λ) = Λ(−1) → 0`.
 - `K = i_{0*}Λ`: `a_0 = 1`, `F = 0`, so `rk(K') = 1` and `U' = A'`, matching `K' = Λ[1]`; a formula with `−Σ a_s` would give a negative rank.
@@ -575,8 +578,8 @@ Layers 3–4; §§2.6–2.7; ArithmeticGaloisRepresentations §§3.1, 3.7; Lefsc
 
 ## Downstream consumers
 
-- CharacterSumsOverFiniteFields: the readings of Gauss, Kummer and Artin–Schreier sums as Frobenius traces use the sheaves of §§2.5–2.6 with the traces of §2.3 and the Gauss-sum line of §5.4, with the normalization `ψ(Tr x)`, `χ(N x)` of the Conventions.
-- SheafConvolutionOnAbelianVarieties: its convolution is the kernel transform of the difference kernel, and its kernel-composition coherence contract is §1.2.
+- CharacterSumsOverFiniteFields §3.6, background there and not a target, reads Gauss, Kummer and Artin–Schreier sums as Frobenius traces of `ℒ_ψ` and `ℒ_χ` with the normalization `ψ(Tr x)`, `χ(N x)` of the Conventions and the eigenvalue `−g(χ, ψ)` on the Gauss-sum line; it can import these sheaves from §§2.5–2.6, their traces from §2.3 and the Gauss-sum line from §5.4.
+- SheafConvolutionOnAbelianVarieties builds its convolution `K * L = Ra_!(K ⊠ L)` and its coherence directly from EtaleCohomologyFoundations §0.8 and describes it as the transform with the difference kernel; it can import §§1.1–1.2 for that description and for the composition coherence of kernels.
 - CongruenceSpectralGap §4.2b states its additive-character-sheaf input as a contract on DeligneWeightsAndPurity. The weight-free part of that contract (the rank-one sheaf, its trace `ψ ∘ Tr`, tensor, base-extension and duality laws and the trivial character) is what §§2.2–2.5 construct and can be imported from here; the weight-zero clause stays with DeligneWeightsAndPurity.
 - The future roadmap described below.
 

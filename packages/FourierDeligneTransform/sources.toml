@@ -105,7 +105,7 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-06"
 version_note = "author's AWS 2000 lecture notes, the version published in Adv. Math.; locators use lecture and statement names"
-cited_for = ["2.2", "2.5", "2.7", "5.3.2", "Conventions"]
+cited_for = ["2.2", "2.5", "2.7", "5.5.1", "Conventions"]
 
 [[source]]
 id = "ESDE"
@@ -123,7 +123,7 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-06"
 version_note = "author's corrected manuscript; chapter-local page numbering"
-cited_for = ["5.3", "5.3.1", "5.3.2"]
+cited_for = ["5.3", "5.3.1", "5.5.1"]
 
 [[source]]
 id = "SGA45-ST"

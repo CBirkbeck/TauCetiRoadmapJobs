@@ -1517,28 +1517,6 @@
      "tests": []
     },
     {
-     "id": "5.3.2",
-     "kind": "theorem",
-     "name": "naiveFourier_wildLisse_equiv",
-     "statement": "NFT_ψ restricts to an autoequivalence of the category of lisse sheaves on A all of whose breaks at ∞ exceed 1, with quasi-inverse [−1]^*NFT_ψ(−)(1).",
-     "hypotheses": [
-      "k perfect",
-      "Λ coefficient field"
-     ],
-     "locator": {
-      "source": "ESDE",
-      "where": "§7.8 Class (1), ESDE lines 7877–7889; KATZ01 lines 888–893"
-     },
-     "prerequisites": [
-      "target:5.3.1",
-      "target:5.5",
-      "target:5.1.2",
-      "target:2.7"
-     ],
-     "api": [],
-     "tests": []
-    },
-    {
      "id": "5.4",
      "kind": "definition",
      "name": "gaussSumLine",
@@ -1638,6 +1616,28 @@
       "roadmap:LefschetzPencilsAndVanishingCycles §§0.3–0.7",
       "roadmap:EtaleCohomologyFoundations §F.2.1",
       "roadmap:EtaleCohomologyFoundations §F.3a"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "5.5.1",
+     "kind": "theorem",
+     "name": "naiveFourier_wildLisse_equiv",
+     "statement": "NFT_ψ restricts to an autoequivalence of the category of lisse sheaves on A all of whose breaks at ∞ exceed 1, with quasi-inverse [−1]^*NFT_ψ(−)(1).",
+     "hypotheses": [
+      "k perfect",
+      "Λ coefficient field"
+     ],
+     "locator": {
+      "source": "ESDE",
+      "where": "§7.8 Class (1), ESDE lines 7877–7889; KATZ01 lines 888–893"
+     },
+     "prerequisites": [
+      "target:5.3.1",
+      "target:5.5",
+      "target:5.1.2",
+      "target:2.7"
      ],
      "api": [],
      "tests": []
@@ -1845,11 +1845,11 @@
  "consumers": [
   {
    "roadmap": "CharacterSumsOverFiniteFields",
-   "what": "trace-function readings of Gauss, Kummer and Artin–Schreier sums with artinSchreierSheaf, kummerSheaf (§§2.3, 2.5–2.6, 5.4)"
+   "what": "can import artinSchreierSheaf, kummerSheaf with their traces and the Gauss-sum line (§§2.3, 2.5–2.6, 5.4) for the trace-function reading of its §3.6, background there, which names ℒ_ψ, ℒ_χ with the normalization ψ(Tr x), χ(N x) and the eigenvalue −g(χ, ψ)"
   },
   {
    "roadmap": "SheafConvolutionOnAbelianVarieties",
-   "what": "kernel transforms and the kernel-composition coherence contract (§§1.1–1.2)"
+   "what": "can import kernel transforms and the composition coherence of kernels (§§1.1–1.2); it builds its convolution Ra_!(K ⊠ L) and its coherence from EtaleCohomologyFoundations §0.8 and describes convolution as the transform with the difference kernel"
   },
   {
    "roadmap": "CongruenceSpectralGap",
