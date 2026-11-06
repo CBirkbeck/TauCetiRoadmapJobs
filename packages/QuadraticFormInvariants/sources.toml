@@ -115,3 +115,32 @@ status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v1"
 cited_for = ["Layer 8"]
+
+[[source]]
+id = "omeara1963"
+authors = "O. Timothy O’Meara"
+title = "Introduction to Quadratic Forms"
+year = 1963
+doi = "10.1007/978-3-642-62031-7"
+locator_scheme = "section"
+locator = "§63"
+url = "https://doi.org/10.1007/978-3-642-62031-7"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 6"]
+
+[[source]]
+id = "scharlau1985"
+authors = "Winfried Scharlau"
+title = "Quadratic and Hermitian Forms"
+year = 1985
+venue = "Grundlehren der mathematischen Wissenschaften"
+doi = "10.1007/978-3-642-69971-9"
+locator_scheme = "chapter"
+locator = "Ch. 2 §5, Ch. 5"
+url = "https://doi.org/10.1007/978-3-642-69971-9"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layers 6, 9"]
