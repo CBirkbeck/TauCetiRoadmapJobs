@@ -1,5 +1,7 @@
-import Mathlib
-import TauCeti.GroupTheory.SpecificGroups.Braid.Basic
+module
+
+public import Mathlib
+public import TauCeti.GroupTheory.SpecificGroups.Braid.Basic
 
 /-!
 # Inverse Galois theory and arithmetic fundamental groups, Part II: target signatures
@@ -33,6 +35,8 @@ Headline theorems not statable at the pins:
 * `(n − 2)`-connectivity of the disc arc complex (Hatcher–Wahl Proposition 7.2): there is no
   carrier for isotopy classes of embedded arcs in a marked disc.
 -/
+
+@[expose] public section
 
 namespace TauCetiRoadmap.InverseGaloisAndArithmeticFundamentalGroupsPartII
 

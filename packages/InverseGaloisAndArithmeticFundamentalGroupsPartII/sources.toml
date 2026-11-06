@@ -58,3 +58,53 @@ status = "certified"
 accessed = "2026-10-26"
 version_note = "Read in arXiv v4 (2009); cited by statement number and arXiv page."
 cited_for = ["2.2", "2.6"]
+
+[[source]]
+id = "PAL60"
+authors = "Richard S. Palais"
+title = "Local triviality of the restriction map for embeddings"
+year = 1960
+venue = "Commentarii Mathematici Helvetici 34, 305–312"
+doi = "10.1007/BF02565942"
+locator_scheme = "theorem"
+locator = "Theorem A (an action with local cross-sections makes every equivariant map locally trivial) and §3 (restriction of embeddings and diffeomorphisms to a compact submanifold)"
+url = "https://doi.org/10.1007/BF02565942"
+licence_class = "none"
+status = "uncertified"
+version_note = "Cited by its locator without the text. The DOI resolves to a paywalled publisher page; the EuDML record (eudml.org/doc/139198) and the GDZ resolver return only landing pages, no readable scan was obtained."
+accessed = "2026-11-06"
+cited_for = ["2.1"]
+
+[[source]]
+id = "ALEX23"
+authors = "James W. Alexander"
+title = "On the deformation of an n-cell"
+year = 1923
+venue = "Proceedings of the National Academy of Sciences of the USA 9 (12), 406–407"
+doi = "10.1073/pnas.9.12.406"
+locator_scheme = "page"
+locator = "pp. 406–407 (the whole note: a homeomorphism of the n-cell fixing the boundary is isotopic to the identity relative to the boundary)"
+url = "https://doi.org/10.1073/pnas.9.12.406"
+licence_class = "none"
+status = "uncertified"
+version_note = "Cited by its locator without the text. The publisher page and PDF (pnas.org) returned HTTP 403 and the PubMed Central copy (PMC1085470) served only a browser-check page; no readable text was obtained."
+accessed = "2026-11-06"
+cited_for = ["2.1"]
+
+[[source]]
+id = "SMA59"
+authors = "Stephen Smale"
+title = "Diffeomorphisms of the 2-sphere"
+year = 1959
+venue = "Proceedings of the American Mathematical Society 10, 621–626"
+doi = "10.1090/S0002-9939-1959-0112149-8"
+locator_scheme = "theorem"
+locator = "Theorem B (the diffeomorphisms of the square that are the identity near the boundary form a contractible space) and Theorem 4"
+url = "https://www.ams.org/journals/proc/1959-010-04/S0002-9939-1959-0112149-8/S0002-9939-1959-0112149-8.pdf"
+fetched_from = "https://www.ams.org/journals/proc/1959-010-04/S0002-9939-1959-0112149-8/S0002-9939-1959-0112149-8.pdf"
+fetched_at = "2026-11-06T04:13:53Z"
+sha256 = "f2c495988ae1355fbe01a0878228008ad861bfccb17d6cc9c85d219156622c64"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-06"
+cited_for = ["2.1"]

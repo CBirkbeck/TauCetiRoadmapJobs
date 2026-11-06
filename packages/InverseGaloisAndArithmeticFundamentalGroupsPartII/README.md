@@ -83,12 +83,20 @@ It does not own, and consumes by name:
   Hurewicz and Whitehead: AlgebraicTopology Stages 2, 4, 5 and 8;
 - collars, tubular neighbourhoods and diffeomorphism groups of compact manifolds relative to the
   boundary: GeometricTopology Layers 1 and 3;
-- surfaces with punctures, their mapping class groups and the evaluation fibration of the
-  homeomorphism group: MordellLawrenceVenkatesh §§5.1, 5.7, 5.9, 5.17;
 - graded and DG modules over an algebra, balanced tensor products, derived tensor products and
   their resolutions: DGAInfinity Layers 0, 1 and 5;
 - group homology, representations, monoid algebras, graded objects and spectral-sequence pages:
   Mathlib.
+
+ArithmeticStatisticsPartVIII §5.16 states, for its own §5.19, the component-ring stability, the
+graded `Tor` spectral sequences, the K-complex bound, the arc spectral sequence, EVW Theorem 6.1,
+Corollary 6.2 for centreless `G`, the finite cell models and both uniform Betti bounds, and
+imports nothing from this roadmap; this roadmap proves the same theorems in Layers 0–5 for every
+finite group and nonsplitting class, together with the unmarked stability for every `G` (§4.5),
+the full-monodromy stability with its shift uniform in `n` (§4.3) and the uniform étale bound for
+every centreless `G` and rational nonsplitting generating class (§5.3). The two statements have a
+single owner in the build order, and every supplier of this roadmap precedes
+ArithmeticStatisticsPartVIII; nothing here is cited from it.
 
 A stabilization map that commutes with Frobenius, and limits of Cohen–Lenstra type over `𝔽_q(t)`
 for fixed `q`, do not follow from the results here: the operator `U` is a sum of gluing maps of
@@ -182,10 +190,10 @@ time.
 
 ### From TauCetiRoadmap.InverseGaloisAndArithmeticFundamentalGroups
 
-- §IG.3.2, *The Hurwitz braid action* (`HurwitzAction.action`): the left action of `B_r` on `G^r`
+- §IG.3.2, *The Hurwitz braid action*: the left action of `B_r` on `G^r`
   by positive moves, preserving the ordered product, the generated subgroup and the multiset of
   classes.
-- §IG.3.2, *The braid-orbit monoid* (`BraidOrbitMonoid`): `c`-valued tuples of every length
+- §IG.3.2, *The braid-orbit monoid*: `c`-valued tuples of every length
   modulo braids, with concatenation; it contains the empty tuple and non-generating tuples, and a
   tuple of product one is central.
 - §IG.3.2, *Extracting an element of a single class*: for `c` a single class generating `G` there
@@ -269,17 +277,9 @@ isotopy extension for a finite system of disjoint properly embedded arcs in a co
 relative to a closed subset of the boundary, together with cutting a surface along such a system.
 
 What GeometricTopology must provide (gap:geomtop-marked-disc-diffeomorphisms): in Layer 3, the
-closed subgroup of `Diff(D, ∂D)` preserving a finite set `P` of interior points setwise, and the
-identification of its group of components with the topological mapping class group of
-`(D, P)` relative to `∂D` of MordellLawrenceVenkatesh §5.9.
-
-### From TauCetiRoadmap.MordellLawrenceVenkatesh
-
-- §5.1 surfaces with boundary and punctures; §5.7 annular neighbourhoods and cutting; §5.9 the
-  mapping class group `Mod(S)` of orientation-preserving homeomorphisms fixing `∂S` pointwise up to
-  isotopy relative to `∂S`, which may permute the punctures, with `Mod(D²) = 1`; §5.17 the
-  evaluation fibration `Homeo⁺(S, ∂S) → int(S)` with fibre the homeomorphisms fixing the marked
-  point.
+closed subgroup `Diff(D, P; ∂D)` of `Diff(D, ∂D)` preserving a finite set `P` of interior points
+setwise, and the bijectivity of the homomorphism `π_0 Diff(D, P; ∂D) → Mod(D, P)` to the
+topological mapping class group of the marked disc relative to `∂D` defined in §2.1.
 
 ### From TauCetiRoadmap.DGAInfinity
 
@@ -301,7 +301,9 @@ exact sequences in either variable, its comparison with `CategoryTheory.Functor.
 composite-functor spectral sequence `Tor_i^(R̄)(k, Tor_j^R(R̄, M)) ⇒ Tor_(i+j)^R(k, M)` for a
 quotient `R → R̄ → k`, and the hyperhomology spectral sequence of a bounded-below complex of right
 modules tensored with a left module, all preserving the internal grading and with finite-diagonal
-convergence.
+convergence. ArithmeticStatisticsPartVIII §5.16 (*Tor spectral sequences over graded algebras*)
+states the same spectral sequences for its own use; the generic graded `Tor` is DGAInfinity's, and
+this roadmap takes it from there.
 
 ## How to read the build
 
@@ -914,26 +916,70 @@ points.
 
 ### 2.1 The braid group as the mapping class group of the marked disc
 
-Prove: there are compatible isomorphisms
-`π_0 Diff⁺(D, P; ∂D) ≅ Mod(D, P) ≅ TauCeti.BraidGroup n ≅ π_1(Conf_n)`, where `Mod(D, P)` is the
-group of isotopy classes relative to `∂D` of orientation-preserving homeomorphisms fixing `∂D`
-pointwise and preserving `P` setwise (MordellLawrenceVenkatesh §5.9). The generator `σ_i`
-corresponds to the positive half twist exchanging the `i`-th and `(i+1)`-st points (EVW16 §2.1,
-p. 8; EVW16 lines 354–368). *Proof sketch.* The evaluation map `Homeo⁺(D, ∂D) → Conf_n(int D)`
-at `P` is a locally trivial bundle with fibre the homeomorphisms preserving `P` (the argument of
-MordellLawrenceVenkatesh §5.17 with `n` points), and `Homeo⁺(D, ∂D)` is contractible by the
-Alexander trick; the homotopy sequence identifies `π_1(Conf_n)` with `Mod(D, P)`. Compare with the
-generators of §IG.5.1 and ReductiveGroups Layer 11A, and with the smooth group through GeometricTopology
-Layer 3. *Needs:* Tau Ceti `TauCeti.BraidGroup`; §IG.5.1; MordellLawrenceVenkatesh §§5.9, 5.17;
-ReductiveGroups Layer 11A; GeometricTopology Layer 3 (gap:geomtop-marked-disc-diffeomorphisms).
+Define `Mod(D, P)` as the group, under composition, of isotopy classes relative to `∂D` of
+orientation-preserving homeomorphisms of `D` that fix `∂D` pointwise and preserve `P` setwise; an
+isotopy relative to `∂D` fixes `∂D` pointwise and preserves `P` setwise at every time. Write
+`Diff(D, P; ∂D)` for the closed subgroup of `Diff(D, ∂D)` (GeometricTopology Layer 3) of
+diffeomorphisms preserving `P` setwise; a diffeomorphism fixing `∂D` pointwise preserves the
+orientation. *Needs:* GeometricTopology Layer 3 (gap:geomtop-marked-disc-diffeomorphisms).
+
+- Restriction to `P` is a homomorphism `Mod(D, P) → Sym(P)`, whose kernel is the pure mapping
+  class group of the classes fixing `P` pointwise.
+- `Mod(D, ∅)` is trivial: a homeomorphism of the disc fixing `∂D` pointwise is isotopic to the
+  identity relative to `∂D` through the coning isotopy that is the identity outside the disc of
+  radius `t` and a rescaled copy of the homeomorphism inside it (ALEX23, pp. 406–407).
+- `Mod(D, P)` acts on the isotopy classes of arcs of §2.2.
+- Inclusion induces a homomorphism `π_0 Diff(D, P; ∂D) → Mod(D, P)`, bijective by
+  GeometricTopology Layer 3 (gap:geomtop-marked-disc-diffeomorphisms).
 
 **Checks.**
 
-- `n = 0, 1`: all three groups are trivial (`Mod(D²) = 1`).
+- `n = 0` and `n = 1`: the group is trivial. For `n = 1` the coning isotopy centred at the marked
+  point fixes that point at every time, so it is an isotopy relative to `∂D` and `P`.
+- A wrong model that lets isotopies move `∂D` would make the Dehn twist about a curve parallel to
+  `∂D` trivial, by rotating a collar; for `n = 2` that twist is the full twist `σ_1²`, which in
+  `Mod(D, P) ≅ ℤ` generates the subgroup of index two, so the half twist has infinite order here
+  and order two in the wrong model.
+- A wrong model that fixes `P` pointwise gives, for `n = 2`, the subgroup `2ℤ` of `ℤ`: the half
+  twist exchanges the two points and is excluded, as `Mod(D, P) → Sym(P)` records.
+
+Prove: there are compatible isomorphisms
+`π_0 Diff(D, P; ∂D) ≅ Mod(D, P) ≅ TauCeti.BraidGroup n ≅ π_1(Conf_n)`, under which the generator
+`σ_i` corresponds to the positive half twist exchanging the `i`-th and `(i+1)`-st points (EVW16 §2.1,
+p. 8; EVW16 lines 354–368). *Proof sketch.* The evaluation map `Diff(D, ∂D) → Conf_n(int D)`,
+`φ ↦ φ(P)`, is a locally trivial fibre bundle with fibre `Diff(D, P; ∂D)` over `P`: the action of
+`Diff(D, ∂D)` on the ordered configuration space admits local cross-sections, obtained by pushing
+`n` small disjoint discs around the points of a configuration, and an equivariant map to a space
+with local cross-sections is locally trivial (PAL60, Theorem A and §3); the finite cover
+`PConf_n → Conf_n` carries the bundle down. `Diff(D, ∂D)` is contractible: the diffeomorphisms of
+the square that are the identity near the boundary form a contractible space in the `C^r`
+topology (SMA59, Theorem B and Theorem 4; SMA59 lines 15–17, 124–129), the interior of the square
+is diffeomorphic to the interior of `D` with the compactly supported diffeomorphisms matching, and a
+collar of `∂D` (GeometricTopology Layer 1) retracts `Diff(D, ∂D)` onto the subgroup of
+diffeomorphisms that are the identity near `∂D`. The homotopy exact sequence of the bundle then
+makes the boundary map `π_1(Conf_n, P) → π_0 Diff(D, P; ∂D)`, the class of a loop to the end of its
+lifted isotopy, an isomorphism; compose with `π_1(Conf_n) ≅ TauCeti.BraidGroup n` of §IG.5.1 and
+with `π_0 Diff(D, P; ∂D) ≅ Mod(D, P)`. The loop exchanging two adjacent points counterclockwise
+lifts to the positive half twist, the convention of §IG.3.2 and ReductiveGroups Layer 11A.
+*Needs:* Tau Ceti `TauCeti.BraidGroup`, `TauCeti.TopCat.serreFibrations`; §IG.5.1; ReductiveGroups
+Layer 11A; GeometricTopology Layers 1, 3 (gap:geomtop-marked-disc-diffeomorphisms);
+AlgebraicTopology Stage 8 (the exact sequence of the based pair
+`(Diff(D, ∂D), Diff(D, P; ∂D))`, whose relative homotopy groups the lifting property of the bundle
+identifies with those of `Conf_n`).
+
+**Checks.**
+
+- `n = 0, 1`: all four groups are trivial; `Conf_0` is a point and `Conf_1 = int D` is
+  contractible.
 - `n = 2`: `B_2 ≅ ℤ`, generated by the half twist, whose square is the Dehn twist about a curve
-  around both points, a pure mapping class.
+  around both points, a pure mapping class; `Conf_2(int D)` has the homotopy type of a circle.
 - The pure mapping classes are `TauCeti.BraidGroup.pureSubgroup n`, the kernel of
   `TauCeti.BraidGroup.permHom`; a full twist is not a half twist.
+- For the annulus `A` in place of `D` the conclusion fails: `π_0 Diff(A, ∂A)` contains the Dehn
+  twist about the core, which is not trivial, so the twist about the core, viewed in
+  `π_0 Diff(A, {x}; ∂A)`, maps to a nontrivial class and is not the end of a lifted loop of the one
+  point; the boundary map is not surjective, and the contractibility of `Diff(D, ∂D)` is what the
+  disc statement uses.
 
 ### 2.2 The based arc complex
 
@@ -1023,8 +1069,7 @@ removing intersections of an isotopy with the arcs already fixed lies in `π_2` 
 relative to an arc, which vanishes. The complement of a neighbourhood of `v_q` is a disc with
 `n − q − 1` points, whose mapping classes are the shifted braid group. Deleting the `i`-th arc of
 `v_q` is `s_(q,i) · v_(q−1)`. *Needs:* §2.1, §2.2, §2.3, §2.4; GeometricTopology Layers 1, 3
-(gap:geomtop-arc-isotopy-extension, gap:geomtop-marked-disc-diffeomorphisms); MordellLawrenceVenkatesh
-§5.7.
+(gap:geomtop-arc-isotopy-extension, gap:geomtop-marked-disc-diffeomorphisms).
 
 **Checks.**
 
@@ -1065,8 +1110,8 @@ complexes of the cut surfaces, which is `(n − p − 2)`-connected by induction
 
 ### Dependencies
 
-Tau Ceti `TauCeti.BraidGroup`; §IG.5.1; ReductiveGroups Layer 11A; MordellLawrenceVenkatesh §§5.7,
-5.9, 5.17; GeometricTopology Layers 1, 3; AlgebraicTopology Stages 4, 5, 8. Independent of Layer 1.
+Tau Ceti `TauCeti.BraidGroup`, `TauCeti.TopCat.serreFibrations`; §IG.5.1; ReductiveGroups Layer 11A;
+GeometricTopology Layers 1, 3; AlgebraicTopology Stages 4, 5, 8. Independent of Layer 1.
 
 ## Layer 3: the arc spectral sequence for Hurwitz homology
 
@@ -1418,9 +1463,12 @@ following statements of the source are corrected where they are used.
 
 ## Downstream consumers
 
-- ArithmeticStatisticsPartVIII §5.19 is conditional on the uniform Betti hypothesis (HS) for
-  EVW's Hurwitz schemes `Hn^c_{G,n}` with `G` centreless and `c` a rational nonsplitting class
-  generating `G`, for coefficient primes `ℓ > max(|G|, q, n)`; §5.3 proves that hypothesis.
+- ArithmeticStatisticsPartVIII §5.19 uses the uniform étale Betti bound for the generalized
+  dihedral data `(G_A, c_A)` in the form stated by ArithmeticStatisticsPartVIII §5.16 (*Uniform
+  Betti numbers of Hurwitz schemes*). §5.3 states that bound for every centreless `G` and every
+  rational nonsplitting class generating `G`, for coefficient primes `ℓ > max(|G|, q, n)`, and
+  §4.2, §4.3 and §4.5 the stability theorems behind it; a roadmap that needs them for general
+  `(G, c)` cites these sections.
 
 ## Worked examples
 
@@ -1449,3 +1497,12 @@ following statements of the source are corrected where they are used.
   Ann. of Math. Stud. 138 (1995), 110–124;
   [author's copy](https://people.math.osu.edu/davis.12/finitekpi1.pdf), §1.2, Theorem 1.4.1,
   Lemma 2.2.1, Corollary 2.2.3.
+- [SMA59] S. Smale, *Diffeomorphisms of the 2-sphere*, Proc. Amer. Math. Soc. 10 (1959), 621–626;
+  [AMS open archive](https://www.ams.org/journals/proc/1959-010-04/S0002-9939-1959-0112149-8/),
+  Theorem B and Theorem 4. Locators give the line in the cached text.
+- [PAL60] R. S. Palais, *Local triviality of the restriction map for embeddings*, Comment. Math.
+  Helv. 34 (1960), 305–312, [doi:10.1007/BF02565942](https://doi.org/10.1007/BF02565942),
+  Theorem A and §3; cited by its locator.
+- [ALEX23] J. W. Alexander, *On the deformation of an n-cell*, Proc. Nat. Acad. Sci. USA 9 (1923),
+  406–407, [doi:10.1073/pnas.9.12.406](https://doi.org/10.1073/pnas.9.12.406); cited by its
+  locator.
