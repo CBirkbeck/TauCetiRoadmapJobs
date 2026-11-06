@@ -1,0 +1,909 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ExplicitMultiplicativeFunctions"
+
+[[source]]
+id = "rieselVaughan1983"
+authors = "H. Riesel, R. C. Vaughan"
+title = "On sums of primes"
+year = 1983
+venue = "Arkiv för Matematik 21"
+doi = "10.1007/BF02384300"
+locator_scheme = "theorem"
+locator = "Lemma 2"
+url = "https://doi.org/10.1007/BF02384300"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 7"]
+
+[[source]]
+id = "hurst2018"
+authors = "Greg Hurst"
+title = "Computations of the Mertens Function and Improved Bounds on the Mertens Conjecture"
+year = 2016
+venue = "Mathematics of Computation 87"
+doi = "10.1090/mcom/3275"
+arxiv = "1610.08551v2"
+locator_scheme = "theorem"
+locator = "Theorem 1 (|M(x)| < 0.571 √x for 33 ≤ x ≤ 10^16)"
+url = "https://arxiv.org/abs/1610.08551v2"
+fetched_from = "https://arxiv.org/pdf/1610.08551v2"
+fetched_at = "2026-11-05T21:10:54Z"
+sha256 = "18bdf91da4578ba13e17bc57c9ef5f375e21ac723f09e2d06b47422afc3674e8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v2"
+cited_for = ["Layer 1 hypothesis MoebiusTableVerified(10^16)"]
+
+[[source]]
+id = "tao2010"
+authors = "Terence Tao"
+title = "A remark on partial sums involving the Mobius function"
+year = 2009
+venue = "Bulletin of the Australian Mathematical Society 81"
+doi = "10.1017/S0004972709000884"
+arxiv = "0908.4323v5"
+locator_scheme = "theorem"
+locator = "Theorem 1.1 and Remark (semigroup generality)"
+url = "https://arxiv.org/abs/0908.4323v5"
+fetched_from = "https://arxiv.org/pdf/0908.4323v5"
+fetched_at = "2026-11-05T21:17:27Z"
+sha256 = "7431ab4f16fc3dd1d99d40b51d0b1346c84f926bb29a5a9bbd03609f2395cedb"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v5"
+cited_for = ["Layer 2"]
+
+[[source]]
+id = "trevino2015jnt"
+authors = "Enrique Treviño"
+title = "The least k-th power non-residue"
+year = 2015
+venue = "Journal of Number Theory 149"
+doi = "10.1016/j.jnt.2014.10.019"
+locator_scheme = "theorem"
+locator = "Claim 3.1"
+url = "https://doi.org/10.1016/j.jnt.2014.10.019"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 2"]
+
+[[source]]
+id = "cullyHugillTrudgian2021"
+authors = "Michaela Cully-Hugill, Timothy Trudgian"
+title = "Two explicit divisor sums"
+year = 2019
+venue = "The Ramanujan Journal 56"
+doi = "10.1007/s11139-020-00333-3"
+arxiv = "1911.07369v1"
+locator_scheme = "theorem"
+locator = "Theorems 1 and 2"
+url = "https://arxiv.org/abs/1911.07369v1"
+fetched_from = "https://arxiv.org/pdf/1911.07369v1"
+fetched_at = "2026-11-05T21:10:03Z"
+sha256 = "23cbb0b82f0fa410fc7c179a5e59a05d465daefa3fcde9308ec32cea56a541b9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v1"
+cited_for = ["Layer 7"]
+
+[[source]]
+id = "trudgian2015"
+authors = "Tim Trudgian"
+title = "Bounds on the number of Diophantine quintuples"
+year = 2015
+venue = "Journal of Number Theory 157"
+doi = "10.1016/j.jnt.2015.05.004"
+arxiv = "1501.04401v1"
+locator_scheme = "theorem"
+locator = "Lemma 12"
+url = "https://arxiv.org/abs/1501.04401v1"
+fetched_from = "https://arxiv.org/pdf/1501.04401v1"
+fetched_at = "2026-11-05T21:11:39Z"
+sha256 = "ac0da1e5897c9fd8e2bf56b5df9ba1f9697676b62266a868d49ad8364c4a7829"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v1"
+cited_for = ["Layer 7"]
+
+[[source]]
+id = "dusart2018"
+authors = "Pierre Dusart"
+title = "Explicit estimates of some functions over primes"
+year = 2016
+venue = "The Ramanujan Journal 45"
+doi = "10.1007/s11139-016-9839-4"
+locator_scheme = "theorem"
+locator = "Theorem 5.9"
+url = "https://doi.org/10.1007/s11139-016-9839-4"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 8"]
+
+[[source]]
+id = "eumKoo2015"
+authors = "Ick Sun Eum, Ja Kyung Koo"
+title = "The Riemann hypothesis and an upper bound of the divisor function for odd integers"
+year = 2015
+venue = "Journal of Mathematical Analysis and Applications 421"
+doi = "10.1016/j.jmaa.2014.07.063"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://doi.org/10.1016/j.jmaa.2014.07.063"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 9"]
+
+[[source]]
+id = "teo2026"
+authors = "Lee-Peng Teo"
+title = "Superior Highly Composite Numbers and the Explicit Upper Bound of Generalized Divisor Functions"
+year = 2025
+venue = "The Ramanujan Journal 69"
+doi = "10.1007/s11139-025-01290-5"
+arxiv = "2508.06764v2"
+locator_scheme = "section"
+locator = "Sections 6.1-6.2, Tables 16-18"
+url = "https://arxiv.org/abs/2508.06764v2"
+fetched_from = "https://arxiv.org/pdf/2508.06764v2"
+fetched_at = "2026-11-05T21:09:19Z"
+sha256 = "d94b11ca20c8ec791c7db4cc6f1a91dd0bc8e5d5ce7f00bbdb5bc88cd2c2ef65"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v2"
+cited_for = ["Layer 9"]
+
+[[source]]
+id = "balazard2012"
+authors = "M. Balazard"
+title = "Elementary remarks on Möbius' function"
+year = 2012
+venue = "Proceedings of the Steklov Institute of Mathematics 276, 33-39 (preprint hal-00732694)"
+locator_scheme = "section"
+locator = "Sections 2-3 (identities for M, m, m̌)"
+url = "https://hal.science/hal-00732694"
+fetched_from = "https://hal.science/hal-00732694/document"
+fetched_at = "2026-11-05T21:06:19Z"
+sha256 = "b94d7dfe7e939595d239425a7caca39baeb335056cddb7f64ca4108df64932f0"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["Layer 2; Layer 3"]
+
+[[source]]
+id = "rosserSchoenfeld1962"
+authors = "J. B. Rosser, L. Schoenfeld"
+title = "Approximate formulas for some functions of prime numbers"
+year = 1962
+venue = "Illinois Journal of Mathematics 6, 64-94"
+locator_scheme = "equation"
+locator = "(2.2), (2.11), Theorems 7-8 (3.26)-(3.30)"
+url = "https://projecteuclid.org/journals/illinois-journal-of-mathematics/volume-6/issue-1/Approximate-formulas-for-some-functions-of-prime-numbers/10.1215/ijm/1255631807.pdf"
+licence_class = "none"
+status = "uncertified"
+accessed = "2026-11-05"
+version_note = "open access at the publisher, but the host blocked the automated fetch (bot check); cited by its locator without the text"
+cited_for = ["Layer 7; Layer 8"]
+
+[[source]]
+id = "cohenDressElMarraki2007"
+authors = "H. Cohen, F. Dress, M. El Marraki"
+title = "Explicit estimates for summatory functions linked to the Möbius μ-function"
+year = 2007
+venue = "Functiones et Approximatio Commentarii Mathematici 37, 51-63"
+locator_scheme = "theorem"
+locator = "Theorems 1-3"
+url = "https://projecteuclid.org/journals/functiones-et-approximatio-commentarii-mathematici/volume-37/issue-1/Explicit-estimates-for-summatory-functions-linked-to-the-M%C3%B6bius-mu/10.7169/facm/1229618741.pdf"
+licence_class = "none"
+status = "uncertified"
+accessed = "2026-11-05"
+version_note = "open access at the publisher, but the host blocked the automated fetch (bot check); cited by its locator without the text"
+cited_for = ["Layer 1; Layer 7"]
+
+[[source]]
+id = "dressElMarraki1993"
+authors = "F. Dress, M. El Marraki"
+title = "Fonction sommatoire de la fonction de Möbius 2. Majorations asymptotiques élémentaires"
+year = 1993
+venue = "Experimental Mathematics 2, 99-112"
+locator_scheme = "theorem"
+locator = "Théorème principal (|M(x)| ≤ x/2360)"
+url = "https://projecteuclid.org/journals/experimental-mathematics/volume-2/issue-2/Fonction-sommatoire-de-la-fonction-de-M%C3%B6bius-2-Majorations-asymptotiques/em/1048516215.pdf"
+licence_class = "none"
+status = "uncertified"
+accessed = "2026-11-05"
+version_note = "open access at the publisher, but the host blocked the automated fetch (bot check); cited by its locator without the text"
+cited_for = ["Layer 1"]
+
+[[source]]
+id = "dress1993"
+authors = "F. Dress"
+title = "Fonction sommatoire de la fonction de Möbius 1. Majorations expérimentales"
+year = 1993
+venue = "Experimental Mathematics 2, 89-98"
+locator_scheme = "theorem"
+locator = "Théorème 1 (|M(x)| ≤ 0.571 √x for 33 ≤ x ≤ 10^12)"
+url = "https://projecteuclid.org/journals/experimental-mathematics/volume-2/issue-2/Fonction-sommatoire-de-la-fonction-de-M%C3%B6bius-1-Majorations-exp%C3%A9rimentales/em/1048516214.pdf"
+licence_class = "none"
+status = "uncertified"
+accessed = "2026-11-05"
+version_note = "open access at the publisher, but the host blocked the automated fetch (bot check); cited by its locator without the text"
+cited_for = ["Layer 1 hypothesis MoebiusTableVerified(10^12)"]
+
+[[source]]
+id = "kotnikVanDeLune2004"
+authors = "T. Kotnik, J. van de Lune"
+title = "On the order of the Mertens function"
+year = 2004
+venue = "Experimental Mathematics 13, 473-481"
+locator_scheme = "section"
+locator = "Section 2 (verification |M(x)| < √x up to 10^14)"
+url = "https://projecteuclid.org/journals/experimental-mathematics/volume-13/issue-4/On-the-Order-of-the-Mertens-Function/em/1109106439.pdf"
+licence_class = "none"
+status = "uncertified"
+accessed = "2026-11-05"
+version_note = "open access at the publisher, but the host blocked the automated fetch (bot check); cited by its locator without the text"
+cited_for = ["Layer 1 hypothesis MoebiusTableVerified(10^14)"]
+
+[[source]]
+id = "ramare2013facm"
+authors = "O. Ramaré"
+title = "Some elementary explicit bounds for two mollifications of the Moebius function"
+year = 2013
+venue = "Functiones et Approximatio Commentarii Mathematici 49, 229-240"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://ramare-olivier.github.io/Maths/MuLog-4.pdf"
+fetched_from = "https://ramare-olivier.github.io/Maths/MuLog-4.pdf"
+fetched_at = "2026-11-05T21:17:46Z"
+sha256 = "2b3aa3f84b6df1877d5cc78060cc54c3da24eea77f63aa2b1b03045d24041f08"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["Layer 2"]
+
+[[source]]
+id = "nicolas2008"
+venue = "Functiones et Approximatio Commentarii Mathematici 39, 315-334"
+authors = "Jean-Louis Nicolas"
+title = "Quelques inégalités effectives entre des fonctions arithmétiques usuelles"
+year = 2008
+arxiv = "0803.1109v1"
+locator_scheme = "theorem"
+locator = "Theorems 1-2 (bounds for σ(n)/n)"
+url = "https://arxiv.org/abs/0803.1109v1"
+fetched_from = "https://arxiv.org/pdf/0803.1109v1"
+fetched_at = "2026-11-05T21:08:32Z"
+sha256 = "47d9ed85c2b7ffce5881d7e1a51627d56ee29d6a70e13393de8a9bcb3f177c7e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v1"
+cited_for = ["Layer 9"]
+
+[[source]]
+id = "ramare2015mc"
+authors = "O. Ramaré"
+title = "Explicit estimates on several summatory functions involving the Moebius function"
+year = 2015
+venue = "Mathematics of Computation 84, 1359-1387"
+locator_scheme = "theorem"
+locator = "Theorems 1.1-1.6 and Corollaries"
+url = "https://ramare-olivier.github.io/Maths/mcom2914.pdf"
+fetched_from = "https://ramare-olivier.github.io/Maths/mcom2914.pdf"
+fetched_at = "2026-11-05T21:08:34Z"
+sha256 = "dc266dce8eba0af1b920a58b03b948f30178c5a9c4c735b0858f5cd177265b96"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["Layers 1-3"]
+
+[[source]]
+id = "ramare2013aa"
+authors = "O. Ramaré"
+title = "From explicit estimates for the primes to explicit estimates for the Moebius function"
+year = 2013
+venue = "Acta Arithmetica 157, 365-379"
+locator_scheme = "theorem"
+locator = "Theorems 1.1-1.2"
+url = "https://ramare-olivier.github.io/Maths/ElementaryConversion-11.pdf"
+fetched_from = "https://ramare-olivier.github.io/Maths/ElementaryConversion-11.pdf"
+fetched_at = "2026-11-05T21:08:35Z"
+sha256 = "a73711ba98a3eb5cc4dc11510d2ebad04547a0ec9c9112baae0392d8e83c346a"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["Layer 1; Layer 2"]
+
+[[source]]
+id = "akhileshRamare2017"
+authors = "Akhilesh P., O. Ramaré"
+title = "Explicit averages of non-negative multiplicative functions: going beyond the main term"
+year = 2017
+venue = "Colloquium Mathematicum 147, 275-313"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://www.impan.pl/shop/publication/transaction/download/product/92047"
+fetched_from = "https://www.impan.pl/shop/publication/transaction/download/product/92047"
+fetched_at = "2026-11-05T21:19:02Z"
+sha256 = "ffc348ae762b391353b4ee4eaa6b8c4dffe6f6aba85278ab494bfd4bf1524aa0"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["Layer 5"]
+
+[[source]]
+id = "berkaneBordellesRamare2012"
+authors = "D. Berkane, O. Bordellès, O. Ramaré"
+title = "Explicit upper bounds for the remainder term in the divisor problem"
+year = 2012
+venue = "Mathematics of Computation 81, 1025-1051"
+locator_scheme = "theorem"
+locator = "Theorem 1.1; Corollary 2.2"
+url = "https://hal.science/hal-02572796/document"
+fetched_from = "https://hal.science/hal-02572796/document"
+fetched_at = "2026-11-05T21:17:44Z"
+sha256 = "847847c4745bd0d96a76f385a0fe9389a579d0974e90af32783b3ed496f01bda"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["Layer 5; Layer 7"]
+
+[[source]]
+id = "ramare2014aa"
+authors = "O. Ramaré"
+title = "Explicit estimates on the summatory functions of the Moebius function with coprimality restrictions"
+year = 2014
+venue = "Acta Arithmetica 165, 1-10"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://hal.science/hal-02572851/document"
+fetched_from = "https://hal.science/hal-02572851/document"
+fetched_at = "2026-11-05T21:17:44Z"
+sha256 = "c4018dba8bd66f641f98f606231835ed0c92801402cb7ca2d60442a36a53e035"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["Layer 2"]
+
+[[source]]
+id = "ramare1995"
+authors = "O. Ramaré"
+title = "On Šnirel'man's constant"
+year = 1995
+venue = "Annali della Scuola Normale Superiore di Pisa, Classe di Scienze (4) 22, 645-706"
+locator_scheme = "theorem"
+locator = "Lemmas 3.2 and 3.3, Section 3"
+url = "https://www.numdam.org/item/ASNSP_1995_4_22_4_645_0.pdf"
+fetched_from = "https://www.numdam.org/item/ASNSP_1995_4_22_4_645_0.pdf"
+fetched_at = "2026-11-05T21:10:06Z"
+sha256 = "f245f39de4d16c25a3452d351c519fc854738e19e6511383eafea9e29337b588"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["Layer 0; Layer 5"]
+
+[[source]]
+id = "ramare2019bcp"
+authors = "O. Ramaré"
+title = "Explicit average orders: news and problems"
+year = 2019
+venue = "Banach Center Publications 118, 153-176"
+locator_scheme = "theorem"
+locator = "Theorems 3.1-3.2, Corollaries 3.3-3.4"
+url = "https://hal.science/hal-02585977/document"
+fetched_from = "https://hal.science/hal-02585977/document"
+fetched_at = "2026-11-05T21:17:45Z"
+sha256 = "b3e28f5ac1427b0090a68f23310479bbee135be31acb2f48a046d77595acc65b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["Layer 7"]
+
+[[source]]
+id = "trevino2015ijnt"
+venue = "International Journal of Number Theory 11, 1653-1678"
+authors = "Enrique Treviño"
+title = "The Burgess inequality and the least k-th power non-residue"
+year = 2014
+arxiv = "1412.3062v2"
+locator_scheme = "theorem"
+locator = "Lemmas 2 and 3"
+url = "https://arxiv.org/abs/1412.3062v2"
+fetched_from = "https://arxiv.org/pdf/1412.3062v2"
+fetched_at = "2026-11-05T21:12:27Z"
+sha256 = "676bb69d2d5d5c422b0cb7f3edc1d265c80ce01655e07d2c5db2b8d399d42321"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v2"
+cited_for = ["Layer 7"]
+
+[[source]]
+id = "bermentRamare2012"
+authors = "P. Berment, O. Ramaré"
+title = "Ordre moyen d'une fonction arithmétique par la méthode de convolution"
+year = 2012
+venue = "Revue de la filière mathématiques (RMS) 122, 1-15"
+locator_scheme = "section"
+locator = "Section 2 (the comparison theorem)"
+url = "https://ramare-olivier.github.io/Maths/MethodeDeConvolution-6.pdf"
+fetched_from = "https://ramare-olivier.github.io/Maths/MethodeDeConvolution-6.pdf"
+fetched_at = "2026-11-05T21:12:28Z"
+sha256 = "7dd8229be98722f2235dcd4d99d3004ce486a3feeea6c3b1456d8401062c0a2a"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["Layer 5"]
+
+[[source]]
+id = "kreminski2003"
+authors = "R. Kreminski"
+title = "Newton-Cotes integration for approximating Stieltjes (generalized Euler) constants"
+year = 2003
+venue = "Mathematics of Computation 72, 1379-1397"
+locator_scheme = "page"
+locator = "Table 2 (value of γ_1)"
+url = "https://www.ams.org/journals/mcom/2003-72-243/S0025-5718-02-01483-7/S0025-5718-02-01483-7.pdf"
+fetched_from = "https://www.ams.org/journals/mcom/2003-72-243/S0025-5718-02-01483-7/S0025-5718-02-01483-7.pdf"
+fetched_at = "2026-11-05T21:16:32Z"
+sha256 = "097c40c977a5fd0d3e1d996f10b12d648063c3b3dd104ab5b636fe14c47c682b"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["Layer 5 hypothesis StieltjesGammaOneValue"]
+
+[[source]]
+id = "daboussiRivat2001"
+authors = "H. Daboussi, J. Rivat"
+title = "Explicit upper bounds for exponential sums over primes"
+year = 2001
+venue = "Mathematics of Computation 70, 431-447"
+locator_scheme = "theorem"
+locator = "Lemma 4"
+url = "https://www.ams.org/journals/mcom/2001-70-233/S0025-5718-00-01280-1/S0025-5718-00-01280-1.pdf"
+fetched_from = "https://www.ams.org/journals/mcom/2001-70-233/S0025-5718-00-01280-1/S0025-5718-00-01280-1.pdf"
+fetched_at = "2026-11-05T21:16:34Z"
+sha256 = "6c8b026cf41822f2d354342a30d11b2c46cddc698ec3557cbb9a1695e7f5efae"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["Layer 6"]
+
+[[source]]
+id = "ramare2016mc"
+authors = "O. Ramaré"
+title = "An explicit density estimate for Dirichlet L-series"
+year = 2016
+venue = "Mathematics of Computation 85, 325-356"
+locator_scheme = "theorem"
+locator = "Lemmas 3.2, 3.4 and 4.3"
+url = "https://www.ams.org/journals/mcom/2016-85-297/S0025-5718-2015-02991-3/S0025-5718-2015-02991-3.pdf"
+fetched_from = "https://www.ams.org/journals/mcom/2016-85-297/S0025-5718-2015-02991-3/S0025-5718-2015-02991-3.pdf"
+fetched_at = "2026-11-05T21:16:35Z"
+sha256 = "28a671f114e35a7659981a45144f3465f35a3490ed1d6b48e6631263a294e2f4"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["Layer 0; Layer 5; Layer 7"]
+
+[[source]]
+id = "ramare2015corr"
+authors = "O. Ramaré"
+title = "Corrigendum to: Explicit estimates on several summatory functions involving the Moebius function"
+year = 2019
+venue = "Mathematics of Computation 88, 2383-2388"
+locator_scheme = "page"
+locator = "pp. 2383-2388"
+url = "https://www.ams.org/journals/mcom/2019-88-319/S0025-5718-2019-03449-X/S0025-5718-2019-03449-X.pdf"
+fetched_from = "https://www.ams.org/journals/mcom/2019-88-319/S0025-5718-2019-03449-X/S0025-5718-2019-03449-X.pdf"
+fetched_at = "2026-11-05T21:16:36Z"
+sha256 = "5ee5c5a3246b024fc7bdfde06701fec473c51e8237f3a5f58e5a29062a85a13f"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["Layers 1-3"]
+
+[[source]]
+id = "ivic1977"
+authors = "A. Ivić"
+title = "Two inequalities for the sum of divisors functions"
+year = 1977
+venue = "Univ. u Novom Sadu Zb. Rad. Prirod.-Mat. Fak. 7, 17-22"
+locator_scheme = "theorem"
+locator = "Theorems 1 and 2"
+url = "https://sites.dmi.uns.ac.rs/nsjom/Papers/07/NSJOM_07_017_022.pdf"
+fetched_from = "https://sites.dmi.uns.ac.rs/nsjom/Papers/07/NSJOM_07_017_022.pdf"
+fetched_at = "2026-11-05T21:17:42Z"
+sha256 = "773f680c1d05ae7969fff9b2121b54eaafd71b8bb063c65a39cfbb8598628a35"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["Layer 9"]
+
+[[source]]
+id = "bordelles2015"
+authors = "O. Bordellès"
+title = "Some explicit estimates for the Möbius function"
+year = 2015
+venue = "Journal of Integer Sequences 18, Article 15.11.1"
+locator_scheme = "theorem"
+locator = "Theorem 1.1; Proposition 3"
+url = "https://cs.uwaterloo.ca/journals/JIS/VOL18/Bordelles2/bordelles21.pdf"
+fetched_from = "https://cs.uwaterloo.ca/journals/JIS/VOL18/Bordelles2/bordelles21.pdf"
+fetched_at = "2026-11-05T21:18:55Z"
+sha256 = "62c425ab93f8b4c90691ad7822f370358aa8992113bda8664f7a066759008460"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["Layer 2; Layer 4"]
+
+[[source]]
+id = "elMarraki1995"
+authors = "M. El Marraki"
+title = "Fonction sommatoire de la fonction de Möbius 3. Majorations asymptotiques effectives fortes"
+year = 1995
+venue = "Journal de Théorie des Nombres de Bordeaux 7, 407-433"
+locator_scheme = "theorem"
+locator = "Théorème 1"
+url = "https://jtnb.centre-mersenne.org/item/JTNB_1995__7_2_407_0.pdf"
+fetched_from = "https://jtnb.centre-mersenne.org/item/JTNB_1995__7_2_407_0.pdf"
+fetched_at = "2026-11-05T21:18:55Z"
+sha256 = "9d6f666dceea2a04fa32190a2d3715566993593d6b7384a2f40a643a2a4afe1f"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["Layer 1"]
+
+[[source]]
+id = "nicolasRobin1983"
+authors = "J.-L. Nicolas, G. Robin"
+title = "Majorations explicites pour le nombre de diviseurs de n"
+year = 1983
+venue = "Canadian Mathematical Bulletin 26, 485-492"
+locator_scheme = "theorem"
+locator = "Théorème 1"
+url = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/D424A2915C0A748C93CF4962D0120B94/S0008439500065188a.pdf/majorations-explicites-pour-le-nombre-de-diviseurs-de-n.pdf"
+fetched_from = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/D424A2915C0A748C93CF4962D0120B94/S0008439500065188a.pdf/majorations-explicites-pour-le-nombre-de-diviseurs-de-n.pdf"
+fetched_at = "2026-11-05T21:18:56Z"
+sha256 = "6c914a50f2caa5b2ad496a1a3093d56f37f64c646cb27479393642d27f1c3d5c"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["Layer 9"]
+
+[[source]]
+id = "moserMacLeod1966"
+authors = "L. Moser, R. A. MacLeod"
+title = "The error term for the squarefree integers"
+year = 1966
+venue = "Canadian Mathematical Bulletin 9, 303-306"
+locator_scheme = "theorem"
+locator = "Theorem"
+url = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/AE3E0660B97BC4138798E9B72C5E01EC/S0008439500052887a.pdf/error_term_for_the_squarefree_integers.pdf"
+fetched_from = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/AE3E0660B97BC4138798E9B72C5E01EC/S0008439500052887a.pdf/error_term_for_the_squarefree_integers.pdf"
+fetched_at = "2026-11-05T21:18:56Z"
+sha256 = "d5c88362964d7cfb76acb25a77e4a37f7254e6f736105537d2bacd221cfe2a47"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["Layer 7"]
+
+[[source]]
+id = "cipu2015"
+authors = "M. Cipu"
+title = "Further remarks on Diophantine quintuples"
+year = 2015
+venue = "Acta Arithmetica 168, 201-219"
+locator_scheme = "theorem"
+locator = "Lemma 4.3"
+url = "https://www.impan.pl/shop/publication/transaction/download/product/82042"
+fetched_from = "https://www.impan.pl/shop/publication/transaction/download/product/82042"
+fetched_at = "2026-11-05T21:19:01Z"
+sha256 = "22937ca602e3ee34f5748a3a24d833cc82c0672feb590f053ec150d38e4715ec"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["Layer 7"]
+
+[[source]]
+id = "vanlalngaia2017"
+authors = "R. Vanlalngaia"
+title = "Explicit Mertens sums"
+year = 2017
+venue = "Integers 17, Paper A11"
+locator_scheme = "theorem"
+locator = "Theorem 5"
+url = "https://zenodo.org/records/10636070"
+fetched_from = "https://zenodo.org/records/10636070/files/r11.pdf"
+fetched_at = "2026-11-05T21:19:03Z"
+sha256 = "822cbc5f6b4bdfcca89f5d977d98da9a060354ed0772845feb6d2dbc3a662c59"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["Layer 8"]
+
+[[source]]
+id = "granvilleRamare1996"
+authors = "A. Granville, O. Ramaré"
+title = "Explicit bounds on exponential sums and the scarcity of squarefree binomial coefficients"
+year = 1996
+venue = "Mathematika 43"
+doi = "10.1112/S0025579300011608"
+locator_scheme = "theorem"
+locator = "Lemma 8.6 (|Σ_{d≤D,(d,r)=1} μ(d)/d| ≤ 1)"
+url = "https://doi.org/10.1112/S0025579300011608"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (Wiley/Cambridge); cited by its locator without the text"
+cited_for = ["Layer 2"]
+
+[[source]]
+id = "davenport1937"
+authors = "H. Davenport"
+title = "On some infinite series involving arithmetical functions"
+year = 1937
+venue = "Quarterly Journal of Mathematics, Oxford Series 8"
+doi = "10.1093/qmath/os-8.1.8"
+locator_scheme = "theorem"
+locator = "Lemma 1"
+url = "https://doi.org/10.1093/qmath/os-8.1.8"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (Oxford); cited by its locator without the text"
+cited_for = ["Layer 2"]
+
+[[source]]
+id = "deCamargo2025"
+authors = "A. P. de Camargo"
+title = "Sharp estimates for the Möbius function with coprimality restrictions"
+year = 2025
+venue = "Mathematics of Computation"
+doi = "10.1090/mcom/4128"
+locator_scheme = "theorem"
+locator = "Theorems 1.1-1.2"
+url = "https://doi.org/10.1090/mcom/4128"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (AMS, too recent for the open archive); no arXiv version found; cited by its locator without the text"
+cited_for = ["Layer 1", "Layer 2"]
+
+[[source]]
+id = "ramare2009"
+authors = "O. Ramaré"
+title = "Arithmetical aspects of the large sieve inequality"
+year = 2009
+venue = "Harish-Chandra Research Institute Lecture Notes 1, Hindustan Book Agency"
+doi = "10.1007/978-93-86279-40-8"
+locator_scheme = "theorem"
+locator = "Theorem 21.1 (explicit Levin-Fainleib)"
+url = "https://doi.org/10.1007/978-93-86279-40-8"
+licence_class = "none"
+status = "uncertified"
+version_note = "book, paywalled; cited by its locator without the text"
+cited_for = ["Layer 5"]
+
+[[source]]
+id = "hallTenenbaum1988"
+authors = "R. R. Hall, G. Tenenbaum"
+title = "Divisors"
+year = 1988
+venue = "Cambridge Tracts in Mathematics 90, Cambridge University Press"
+doi = "10.1017/CBO9780511566004"
+locator_scheme = "theorem"
+locator = "Theorem 01"
+url = "https://doi.org/10.1017/CBO9780511566004"
+licence_class = "none"
+status = "uncertified"
+version_note = "book, paywalled; cited by its locator without the text"
+cited_for = ["Layer 6"]
+
+[[source]]
+id = "bordelles2012"
+authors = "O. Bordellès"
+title = "Arithmetic Tales"
+year = 2012
+venue = "Universitext, Springer"
+doi = "10.1007/978-1-4471-4096-2"
+locator_scheme = "theorem"
+locator = "Section 4.6, Theorems 4.22 and 4.28"
+url = "https://doi.org/10.1007/978-1-4471-4096-2"
+licence_class = "none"
+status = "uncertified"
+version_note = "book, paywalled; cited by its locator without the text"
+cited_for = ["Layer 6"]
+
+[[source]]
+id = "durasNicolasRobin1999"
+authors = "J.-L. Duras, J.-L. Nicolas, G. Robin"
+title = "Grandes valeurs de la fonction d_k"
+year = 1999
+venue = "Number theory in progress, Vol. 2 (Zakopane-Kościelisko, 1997), de Gruyter, 743-770"
+doi = "10.1515/9783110285581.743"
+locator_scheme = "page"
+locator = "pp. 743-770 (τ_k(n) ≤ n^s ζ(s)^{k-1})"
+url = "https://doi.org/10.1515/9783110285581.743"
+licence_class = "none"
+status = "uncertified"
+version_note = "book chapter, paywalled (de Gruyter); cited by its locator without the text"
+cited_for = ["Layer 9"]
+
+[[source]]
+id = "robin1983thesis"
+authors = "G. Robin"
+title = "Grandes valeurs de fonctions arithmétiques et problèmes d'optimisation en nombres entiers"
+year = 1983
+venue = "Thèse, Université de Limoges"
+locator_scheme = "page"
+locator = "p. 51 (τ_3(n) ≤ n^{1.59141 log 3/log log n})"
+url = ""
+licence_class = "none"
+status = "uncertified"
+version_note = "thesis, no legal online copy found; cited by its locator without the text"
+cited_for = ["Layer 9"]
+
+[[source]]
+id = "cohenDress1988"
+authors = "H. Cohen, F. Dress"
+title = "Estimations numériques du reste de la fonction sommatoire relative aux entiers sans facteur carré"
+year = 1988
+venue = "Prépublications mathématiques d'Orsay, Colloque de théorie analytique des nombres, Marseille, 73-76"
+locator_scheme = "page"
+locator = "pp. 73-76"
+url = ""
+licence_class = "none"
+status = "uncertified"
+version_note = "preprint series, no legal online copy found; cited by its locator without the text"
+cited_for = ["Layer 7"]
+
+[[source]]
+id = "elMarraki1996"
+authors = "M. El Marraki"
+title = "Majorations de la fonction sommatoire de la fonction μ(n)/n"
+year = 1996
+venue = "Preprint, Université Bordeaux 1, 96-8"
+locator_scheme = "theorem"
+locator = "Théorème (|m(D)| ≤ 0.2185/log D for D ≥ 33; ≤ 726/log² D for D > 1)"
+url = ""
+licence_class = "none"
+status = "uncertified"
+version_note = "unpublished preprint, no legal online copy found; cited by its locator without the text"
+cited_for = ["Layer 2"]
+
+[[source]]
+id = "macleod1967"
+authors = "R. A. MacLeod"
+title = "A new estimate for the sum M(x) = Σ_{n≤x} μ(n)"
+year = 1967
+venue = "Acta Arithmetica 13, 49-59"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "http://matwbn.icm.edu.pl/ksiazki/aa/aa13/aa1314.pdf"
+fetched_from = "https://matwbn.icm.edu.pl/ksiazki/aa/aa13/aa1314.pdf"
+fetched_at = "2026-11-05T21:22:46Z"
+sha256 = "7142f39a2cd89f52c01f5c08aae663178adc7c37b5431b51a93eaecb803e0afd"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["Layer 1"]
+
+[[source]]
+id = "macleod1969errata"
+authors = "R. A. MacLeod"
+title = "Errata to the paper: A new estimate for the sum M(x) = Σ_{n≤x} μ(n)"
+year = 1969
+venue = "Acta Arithmetica 16, 99-100"
+locator_scheme = "page"
+locator = "pp. 99-100"
+url = "http://matwbn.icm.edu.pl/ksiazki/aa/aa16/aa1619.pdf"
+fetched_from = "https://matwbn.icm.edu.pl/ksiazki/aa/aa16/aa1619.pdf"
+fetched_at = "2026-11-05T21:22:57Z"
+sha256 = "266c855712221c9c1379612dc7246a3b947e5a9dc6f2eb8800fcd749b5aa5870"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["Layer 1"]
+
+[[source]]
+id = "costaPereira1989"
+authors = "N. Costa Pereira"
+title = "Elementary estimates for the Chebyshev function ψ(X) and for the Möbius function M(X)"
+year = 1989
+venue = "Acta Arithmetica 52, 307-337"
+locator_scheme = "theorem"
+locator = "Theorem 3 (|M(x)| ≤ x/1036)"
+url = "http://matwbn.icm.edu.pl/ksiazki/aa/aa52/aa5241.pdf"
+fetched_from = "https://matwbn.icm.edu.pl/ksiazki/aa/aa52/aa5241.pdf"
+fetched_at = "2026-11-05T21:24:22Z"
+sha256 = "089d802fd227e1320425e679cb28e3b80629dd1b147127edc04ebe0cb2426fb8"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["Layer 1"]
+
+[[source]]
+id = "schoenfeld1969"
+authors = "L. Schoenfeld"
+title = "An improved estimate for the summatory function of the Möbius function"
+year = 1969
+venue = "Acta Arithmetica 15, 221-233"
+locator_scheme = "theorem"
+locator = "Theorem 2 (|M(x)| ≤ 2.9 x/log x)"
+url = "http://matwbn.icm.edu.pl/ksiazki/aa/aa15/aa15120.pdf"
+fetched_from = "https://matwbn.icm.edu.pl/ksiazki/aa/aa15/aa15120.pdf"
+fetched_at = "2026-11-05T21:25:09Z"
+sha256 = "0722cba93f0642dafb1a82b73a904f4659eecfc1a53a6a5a52a97aa423ce691a"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["Layer 1"]
+
+[[source]]
+id = "vanLintRichert1965"
+authors = "J. H. van Lint, H.-E. Richert"
+title = "On primes in arithmetic progressions"
+year = 1965
+venue = "Acta Arithmetica 11, 209-216"
+locator_scheme = "section"
+locator = "Section 2, Lemma (removal of coprimality)"
+url = "http://matwbn.icm.edu.pl/ksiazki/aa/aa11/aa11117.pdf"
+fetched_from = "https://matwbn.icm.edu.pl/ksiazki/aa/aa11/aa11117.pdf"
+fetched_at = "2026-11-05T21:25:49Z"
+sha256 = "5ffa91a78ccc211d0bad2f5a8078d851f689eef2d338721511af010cacf6a5eb"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["Layer 6"]
+
+[[source]]
+id = "robin1983aa"
+authors = "G. Robin"
+title = "Estimation de la fonction de Tchebychef θ sur le k-ième nombre premier et grandes valeurs de la fonction ω(n) nombre de diviseurs premiers de n"
+year = 1983
+venue = "Acta Arithmetica 42, 367-389"
+locator_scheme = "theorem"
+locator = "Théorème 11 (ω(n) ≤ 1.3841 log n/log log n)"
+url = "http://matwbn.icm.edu.pl/ksiazki/aa/aa42/aa4242.pdf"
+fetched_from = "https://matwbn.icm.edu.pl/ksiazki/aa/aa42/aa4242.pdf"
+fetched_at = "2026-11-05T21:27:21Z"
+sha256 = "018d5d94f97388289c667a31d2c6b05b022968168d214300095491476e707fcb"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["Layer 9"]
+
+[[source]]
+id = "bordelles2002"
+authors = "O. Bordellès"
+title = "Explicit upper bounds for the average order of d_n(m) and application to class number"
+year = 2002
+venue = "JIPAM Journal of Inequalities in Pure and Applied Mathematics 3, Article 38"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://emis.univie.ac.at/journals/JIPAM/images/053_01_JIPAM/053_01.pdf"
+licence_class = "none"
+status = "uncertified"
+version_note = "open-access journal (JIPAM, EMIS mirrors); every mirror answered HTTP 503/404 at fetch time, so the text was not read; re-fetch when EMIS is reachable"
+cited_for = ["Layer 7"]
+
+[[source]]
+id = "bordelles2005"
+authors = "O. Bordellès"
+title = "An explicit Mertens' type inequality for arithmetic progressions"
+year = 2005
+venue = "JIPAM Journal of Inequalities in Pure and Applied Mathematics 6, Article 67"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://emis.univie.ac.at/journals/JIPAM/images/172_04_JIPAM/172_04.pdf"
+licence_class = "none"
+status = "uncertified"
+version_note = "open-access journal (JIPAM, EMIS mirrors); every mirror answered HTTP 503/404 at fetch time, so the text was not read; re-fetch when EMIS is reachable"
+cited_for = ["Layer 8"]
