@@ -553,7 +553,6 @@ authors = "Olivier Ramaré"
 title = "Sur un théorème de Mertens"
 year = 2002
 venue = "manuscripta mathematica 108 (2002), 495–513"
-version_note = "The cached text is the author's copy of the manuscripta mathematica paper (pages 495–513); the DOI of the entry had resolved to a different article of the same volume and was removed."
 locator_scheme = "theorem"
 locator = "Corollaire 1, Théorème 2, Corollaires 4–5"
 url = "https://ramare-olivier.github.io/Maths/mertens.pdf"
@@ -563,6 +562,7 @@ sha256 = "a4757eb2b12b14a3d2ca7b9030c924107fcd0351abd09b48813c73f410fe9933"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-06"
+version_note = "The cached text is the author's copy of the manuscripta mathematica paper (pages 495–513); the DOI of the entry had resolved to a different article of the same volume and was removed."
 cited_for = ["Layer 5"]
 
 [[source]]
@@ -934,3 +934,21 @@ licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-11-06"
 cited_for = ["1.4"]
+
+[[source]]
+id = "broadbent-kadiri-lumley-ng-wilk-2021"
+authors = "Samuel Broadbent, Habiba Kadiri, Allysa Lumley, Nathan Ng, Kirsten Wilk"
+title = "Sharper Bounds for the Chebyshev function $θ(x)$"
+year = 2020
+arxiv = "2002.11068v2"
+locator_scheme = "theorem"
+locator = "Corollaries 11.1–11.2 (arXiv v2, lines 927–975)"
+url = "https://arxiv.org/abs/2002.11068v2"
+fetched_from = "https://arxiv.org/pdf/2002.11068v2"
+fetched_at = "2026-11-06T19:37:51Z"
+sha256 = "4260869785b9c77294519851a520429a2870aaa513813585e67b985a59b76bb8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-06"
+version_note = "arXiv v2 read; its numbering differs from the published Math. Comp. 90 (2021) version. The v2 Corollaries 11.1–11.2 re-prove the 0.15 bound and the Theorem 4.2 rows of dusart-2018; v2 works with R = 5.573412 and does not contain the bound with R = 5.5666305 and A = 121.096 that fiori-kadiri-swidinsky-2023 lines 151–154 quote as Corollary 1.3 of the published version, which is cited through that quotation"
+cited_for = ["3.1", "3.3", "3.5", "4.6", "7.5"]
