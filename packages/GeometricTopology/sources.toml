@@ -272,3 +272,17 @@ licence_class = "none"
 status = "uncertified"
 version_note = "Mem. Amer. Math. Soc. 59 (1986), no. 339, 99-130; paywalled at AMS, cited by its locator without the text"
 cited_for = ["10.3", "10.4"]
+
+[[source]]
+id = "gabai1983"
+authors = "David Gabai"
+title = "Foliations and the topology of 3-manifolds"
+year = 1983
+doi = "10.4310/jdg/1214437784"
+locator_scheme = "theorem"
+locator = "Corollary 6.18"
+url = "https://doi.org/10.4310/jdg/1214437784"
+licence_class = "none"
+status = "uncertified"
+version_note = "J. Differential Geom. 18 (1983), 445-503; the Project Euclid landing page offers no readable copy, cited by its locator without the text"
+cited_for = ["10.3"]
