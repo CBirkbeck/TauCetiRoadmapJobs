@@ -1,0 +1,126 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "QuasicoherentSheavesOnPrestacks"
+
+[[source]]
+id = "SAG"
+authors = "J. Lurie"
+title = "Spectral Algebraic Geometry"
+year = 2018
+locator_scheme = "theorem"
+locator = "Definition 6.2.2.1; Remarks 6.2.2.2, 6.2.2.5; Propositions 6.2.3.1, 6.2.3.4, 6.2.4.1; §§6.2.5-6.2.6; Proposition 6.3.4.1; Corollary 6.3.4.3; Theorem 2.1.2.2; Corollaries 2.1.2.3, 2.2.6.2; Proposition 2.2.3.3; Theorem D.6.3.1; Corollaries D.6.3.3-D.6.3.4; Definitions 9.1.0.1, 9.4.4.1; Propositions 9.1.3.1, 9.1.5.1, 9.6.1.1"
+url = "https://www.math.ias.edu/~lurie/papers/SAG-rootfile.pdf"
+fetched_from = "https://www.math.ias.edu/~lurie/papers/SAG-rootfile.pdf"
+fetched_at = "2026-11-06T16:54:17Z"
+sha256 = "515109098ae5cd73bf266fa97bf498b4e8c7adb6e936be67e6fa9a86bb69020d"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-06"
+version_note = "Author PDF of February 2018; PDF page equals printed page."
+cited_for = ["T1", "T2", "T3", "T4", "T5", "T6", "T7", "T8"]
+
+[[source]]
+id = "HA"
+authors = "J. Lurie"
+title = "Higher Algebra"
+year = 2017
+locator_scheme = "theorem"
+locator = "Proposition 4.6.1.11; Remark 7.1.1.16; Theorem 7.1.2.1; Propositions 7.2.4.2, 7.2.4.4, 7.2.4.11, 7.2.4.17; Definition 7.2.4.10"
+url = "https://www.math.ias.edu/~lurie/papers/HA.pdf"
+fetched_from = "https://www.math.ias.edu/~lurie/papers/HA.pdf"
+fetched_at = "2026-11-06T16:56:43Z"
+sha256 = "112b145a95a62daefb8275851cac9ab6430004cfc8f751a33a8d981fd7ad68c3"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-06"
+version_note = "Author PDF of 18 September 2017; PDF page equals printed page."
+cited_for = ["T1", "T7", "T8"]
+
+[[source]]
+id = "GR-I"
+authors = "D. Gaitsgory and N. Rozenblyum"
+title = "A study in derived algebraic geometry, Volume I: Correspondences and duality"
+year = 2017
+locator_scheme = "chapter"
+locator = "Chapter I.3: Theorem 1.3.4; Corollaries 1.3.5, 1.3.7, 1.3.8, 1.3.11; Propositions 1.4.2, 1.4.4, 1.5.4, 2.2.2, 2.4.3; Corollaries 3.6.4-3.6.5"
+url = "https://people.mpim-bonn.mpg.de/gaitsgde/Book/Vol1.pdf"
+fetched_from = "https://people.mpim-bonn.mpg.de/gaitsgde/Book/Vol1.pdf"
+fetched_at = "2026-11-06T16:57:43Z"
+sha256 = "add4c68bdd8245b5b8adafbe4bd1cb8ff027e1ce289ac2f227d82eb25459cf1b"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-06"
+version_note = "Published version (AMS Mathematical Surveys and Monographs 221, 2017) as posted by the authors on their book page; printed page = PDF page minus 37. Works over a field of characteristic 0."
+cited_for = ["T1", "T2", "T3", "T4", "T5", "T6", "T7"]
+
+[[source]]
+id = "HNR"
+authors = "Jack Hall, Amnon Neeman, David Rydh"
+title = "One positive and two negative results for derived categories of algebraic stacks"
+year = 2014
+arxiv = "1405.1888v2"
+locator_scheme = "theorem"
+locator = "Theorems 1.1-1.3; Proposition 3.1; Theorem C.1"
+url = "https://arxiv.org/abs/1405.1888v2"
+fetched_from = "https://arxiv.org/pdf/1405.1888v2"
+fetched_at = "2026-11-06T16:58:27Z"
+sha256 = "9021e1ee0a79285a6fef481f6effb687a1a221de45a1798963e4ed5205341328"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-06"
+version_note = "arXiv v2"
+cited_for = ["T6", "T8"]
+
+[[source]]
+id = "HR-perf"
+authors = "Jack Hall, David Rydh"
+title = "Perfect complexes on algebraic stacks"
+year = 2014
+venue = "Compositio Math. 153 (2017) 2318-2367"
+doi = "10.1112/S0010437X17007394"
+arxiv = "1405.1887v3"
+locator_scheme = "theorem"
+locator = "Theorems A, B; Introduction (tameness remark)"
+url = "https://arxiv.org/abs/1405.1887v3"
+fetched_from = "https://arxiv.org/pdf/1405.1887v3"
+fetched_at = "2026-11-06T16:58:34Z"
+sha256 = "5b249a6dd4614f4b3e5d64c776c4aefeed381394172c7dc941888a87c675c754"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-06"
+version_note = "arXiv v3"
+cited_for = ["T8"]
+
+[[source]]
+id = "BZFN"
+authors = "David Ben-Zvi, John Francis, David Nadler"
+title = "Integral Transforms and Drinfeld Centers in Derived Algebraic Geometry"
+year = 2008
+venue = "J. Amer. Math. Soc. 23 (2010), no. 4, 909-966"
+arxiv = "0805.0157v5"
+locator_scheme = "theorem"
+locator = "Definitions 3.1-3.2; Propositions 3.9, 3.19, 3.21, 3.24; Corollaries 3.22-3.23"
+url = "https://arxiv.org/abs/0805.0157v5"
+fetched_from = "https://arxiv.org/pdf/0805.0157v5"
+fetched_at = "2026-11-06T16:58:40Z"
+sha256 = "e7f41f48b84006b509d4c6db5cb8f50f3b1b10455d50557e1843fdfc970790f2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-06"
+version_note = "arXiv v5"
+cited_for = ["T8"]
+
+[[source]]
+id = "Stacks"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project"
+year = 2026
+locator_scheme = "tag"
+locator = "071Q (Lemma 75.4.2); 06WG; 06WT; 09IP; 08ET"
+url = "https://stacks.math.columbia.edu/tag/071Q"
+fetched_from = "https://stacks.math.columbia.edu/download/spaces-perfect.pdf#nameddest=071Q"
+fetched_at = "2026-11-06T17:00:02Z"
+sha256 = "99304b1a36799044a20cb7c74ad12e1a73e06ca2cd3b132b6c37a9b869a41a29"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-06"
+cited_for = ["T4", "T5", "T6", "T8"]
