@@ -144,7 +144,7 @@ year = 2016
 venue = "Ann. of Math. (2) 183 (2016), 1–71"
 arxiv = "0910.2803v2"
 locator_scheme = "theorem"
-locator = "Theorem 0.4; Theorem 0.6 (Theorem 0.10 in the published version); Corollary 0.8; Definition 4.18; p. 5"
+locator = "Theorem 0.1 (published 0.4); Corollary 0.4 (published 0.8); Theorem 0.6 (published 0.10); Definition 4.18; p. 5"
 url = "https://arxiv.org/abs/0910.2803v2"
 fetched_from = "https://arxiv.org/pdf/0910.2803v2"
 fetched_at = "2026-10-26T19:56:28Z"
@@ -152,7 +152,7 @@ sha256 = "99ccd6b5ea5c2aef30d98c3b60e060c1169dd77e32d45542b513d4a6ca90f6f4"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
-version_note = "arXiv v2; its Theorem 0.6 is Theorem 0.10 of the published version cited by Dittmann–Pop"
+version_note = "arXiv v2, numbering cited; its Theorem 0.1, Corollary 0.4 and Theorem 0.6 are Theorem 0.4, Corollary 0.8 and Theorem 0.10 of the published version cited by Dittmann–Pop"
 cited_for = ["0.1; 1.2; 1.4"]
 
 [[source]]
@@ -266,3 +266,22 @@ status = "certified"
 accessed = "2026-10-26"
 version_note = "numdam scan; page numbers are those of the exposé"
 cited_for = ["0.8a; 0.9; 0.12"]
+
+[[source]]
+id = "cossart_piltant"
+authors = "Vincent Cossart, Olivier Piltant"
+title = "Resolution of singularities of threefolds in positive characteristic II"
+year = 2009
+venue = "J. Algebra 321 (2009), no. 7, 1836–1976"
+doi = "10.1016/j.jalgebra.2008.11.030"
+locator_scheme = "theorem"
+locator = "Theorem of the introduction (resolution of reduced quasi-projective threefolds), p. 5 of the HAL version"
+version_note = "HAL hal-00139445v2 (author version of 17 November 2008); the page cited is that of this version"
+url = "https://hal.science/hal-00139445v2"
+fetched_from = "https://hal.science/hal-00139445/document"
+fetched_at = "2026-11-06T05:36:50Z"
+sha256 = "9bbb1e05c945afa537ee35042d4c80d3cac241089623665d02bc7331ae9ffe14"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-06"
+cited_for = ["1.4"]
