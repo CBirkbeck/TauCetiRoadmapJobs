@@ -2924,7 +2924,7 @@
     {
       "id": "G-HOM",
       "supplier": "VectorBundlesAndIsocrystals",
-      "section": "Layer VB3, VS Hom vanishing from torsion period modules",
+      "section": "Layer 5, VS Hom vanishing from torsion period modules",
       "needs": "For every classical BC W, every VS natural map W→B_dR factors through the sub-VS t^(−N)B_dR⁺ for one N≥0 independent of Λ (CN25 Corollary 3.18 and proof, p. 18).",
       "neededBy": [
         "VectorBundlesAndIsocrystalsPartII:H.0/period-valued-height-functor",

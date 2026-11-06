@@ -80,8 +80,8 @@ theorem semilinearRep_equivariant_map_smul (p : ℕ) [Fact p.Prime]
 
 /-- **The fundamental theorem for an extension of a `ℂ_p`-line** (README §1.8). Let `K/ℚ_p` be
 finite, `E` a `ℚ_p`-Banach space with a jointly continuous linear action of `G_K`, `V ⊂ E` a
-`G_K`-stable finite-dimensional subspace, and `q : E → W` a continuous equivariant surjection with
-kernel `V` onto a one-dimensional continuous semilinear `ℂ_p`-representation `W`. If
+finite-dimensional subspace, and `q : E → W` a continuous equivariant surjection with kernel `V`
+onto a one-dimensional continuous semilinear `ℂ_p`-representation `W` (so `V` is `G_K`-stable). If
 `η : E → ℂ_p` is continuous, `ℚ_p`-linear and `G_K`-equivariant with `η(E) ≠ η(V)`, then `η` is
 surjective and its kernel is a finite-dimensional `ℚ_p`-space of dimension `dim V`.
 (Fontaine, *Presque C_p-représentations*, Théorème 4.1, p. 329, proof completed p. 340.) -/
@@ -91,7 +91,6 @@ theorem fundamental_extension_surjective (p : ℕ) [Fact p.Prime]
     (ρ : (PadicAlgCl p ≃ₐ[K] PadicAlgCl p) →* (E →L[ℚ_[p]] E))
     (hρ : Continuous fun x : (PadicAlgCl p ≃ₐ[K] PadicAlgCl p) × E => ρ x.1 x.2)
     (V : Submodule ℚ_[p] E) [FiniteDimensional ℚ_[p] V]
-    (hV : ∀ (σ : PadicAlgCl p ≃ₐ[K] PadicAlgCl p), ∀ v ∈ V, ρ σ v ∈ V)
     {W : Type*} [AddCommGroup W] [Module ℂ_[p] W] [TopologicalSpace W]
     [IsModuleTopology ℂ_[p] W] (hW : Module.finrank ℂ_[p] W = 1) (ρW : SemilinearRep p K W)
     (q : E →+ W) (hq : Continuous q) (hq_surj : Function.Surjective q)
