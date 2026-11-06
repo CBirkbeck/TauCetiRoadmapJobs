@@ -1,5 +1,15 @@
-import Mathlib
-import TauCeti.AlgebraicGeometry.Cohomology.Basic
+module
+
+public import Mathlib
+public import TauCeti.AlgebraicGeometry.Cohomology.Basic
+public import TauCeti.AlgebraicGeometry.Cohomology.Pullback
+public import TauCeti.AlgebraicGeometry.Cohomology.Module.Base
+public import TauCeti.AlgebraicGeometry.Chow.Basic
+public import TauCeti.AlgebraicGeometry.LineBundle.Ample
+public import TauCeti.AlgebraicGeometry.LineBundle.Dual
+public import TauCeti.AlgebraicGeometry.EffectiveCartierDivisor.Invertible
+public import TauCeti.AlgebraicGeometry.AbelianVariety.Basic
+public import TauCeti.AlgebraicGeometry.ProjectiveSpectrum.ProjectiveOver
 
 /-!
 # Crystalline cohomology, Part II (Witt vector cohomology of singular varieties): target signatures
@@ -10,16 +20,24 @@ Every target, API list and Check lives in the README.
 
 Statable at the pins, and stated below:
 
+* the point-count consequence of Berthelot–Bloch–Esnault for a morphism of proper schemes over a
+  finite field inducing isomorphisms on structure-sheaf cohomology (README §6.4 (ii)), as
+  `card_rationalPoints_modEq_of_cohomologyPullback_bijective`; its cohomology is Tau Ceti's
+  sheaf cohomology `TauCeti.AlgebraicGeometry.Scheme.Modules.Cohomology` of the structure sheaf,
+  and the map is Tau Ceti's pullback `AlgebraicGeometry.Scheme.Hom.cohomologyPullback` composed
+  with the identification `f^* 𝒪_Y ≅ 𝒪_X`. The absolute form (README §6.4 (iv)) is its case
+  `Y = Spec K`;
 * the Ax–Katz congruence modulo `q` for complete intersections of small degree in projective
   space (README §6.6), as `card_projectiveZeroLocus_modEq_one`, and its affine form,
   `card_dvd_card_solutions_of_sum_lt`, which strengthens Mathlib's Chevalley–Warning theorem
   `char_dvd_card_solutions_of_sum_lt` from `p` to `q`;
-* the absolute form of the point-count consequence of Berthelot–Bloch–Esnault (README §6.4
-  (iv)): a proper scheme over a finite field whose global functions are the constants and whose
-  structure sheaf has no higher cohomology has a number of rational points congruent to `1`
-  modulo `q`, as `card_rationalPoints_modEq_one_of_cohomology_vanishing`. Its cohomology is
-  Tau Ceti's sheaf cohomology `TauCeti.AlgebraicGeometry.Scheme.Modules.Cohomology` of the
-  structure sheaf `SheafOfModules.unit`.
+* Serre's congruence `|Θ(F_q)| ≡ |Θ'(F_q)| mod q` for theta divisors on an abelian variety
+  (README §6.9), as `card_thetaDivisor_modEq`, with the definition `IsThetaDivisor` on Tau Ceti's
+  abelian varieties, effective Cartier ideal sheaves, dual line bundles and ample classes;
+* Esnault's point count for universally `CH_0`-trivial smooth projective varieties (README
+  §6.14 (i)), as `card_rationalPoints_modEq_one_of_universallyCH0Trivial`, with the definitions
+  `zeroCycleDegree` and `UniversallyCH0Trivial` on Tau Ceti's zero-cycles modulo rational
+  equivalence.
 
 Not statable at the pins (each is a README target):
 
@@ -29,26 +47,39 @@ Not statable at the pins (each is a README target):
   the Witt vector sheaves `W_n 𝒪_X`, `W 𝒪_X` of a scheme and their cohomology.
 * Bhatt–Scholze's h-descent for Frobenius-inverted Witt vector cohomology (§§1.5–1.6):
   no h-topology and no Witt vector sheaves of schemes.
-* The relative point-count congruence `|X(F_q)| ≡ |Y(F_q)| mod q` for a morphism `f : X → Y` of
-  proper `F_q`-schemes inducing isomorphisms `H^i(Y, 𝒪_Y) ≅ H^i(X, 𝒪_X)` (§6.4 (ii)): the
-  pinned sheaf cohomology of schemes is functorial in the coefficient sheaf only, with no
-  pullback along a morphism of schemes.
-* Serre's congruence `|Θ(F_q)| ≡ |Θ'(F_q)| mod q` for theta divisors (§6.9): Tau Ceti has
-  abelian varieties but no ample line bundles or principal polarizations on them.
 * The theorems on Witt-rational singularities (§§5.4, 5.6, 5.12): no Witt vector
   sheaves, no Witt canonical sheaves, no isogeny category of sheaves on schemes.
-* Esnault's vanishing and point count for universally `CH_0`-trivial varieties and their
-  WO-rational degenerations (§§6.13–6.14): no Chow groups of zero-cycles and no Witt
-  vector cohomology.
+* Esnault's vanishing of Witt vector cohomology of universally `CH_0`-trivial varieties and the
+  point count of their WO-rational degenerations (§6.13, §6.14 (ii)): no Witt vector cohomology
+  and no Witt-rational singularities.
 -/
+
+@[expose] public section
 
 universe u
 
-open AlgebraicGeometry CategoryTheory MvPolynomial
+open AlgebraicGeometry CategoryTheory Limits MonoidalCategory MvPolynomial
+open TauCeti.AlgebraicGeometry
 
 namespace TauCetiRoadmap.CrystallineCohomologyPartII
 
 /-! ## Layer 6: Point counts modulo q and Esnault's theorem -/
+
+/-- **Point counts along a morphism inducing isomorphisms on structure-sheaf cohomology**
+(Berthelot–Bloch–Esnault, Corollary 1.6). Let `K` be a finite field, `X` and `Y` proper over `K`
+and `f : X → Y` a `K`-morphism such that for every `i` the pullback `Hⁱ(Y, 𝒪_Y) → Hⁱ(X, f^* 𝒪_Y)`
+composed with the canonical identification `f^* 𝒪_Y ≅ 𝒪_X` is bijective. Then the numbers of
+`K`-rational points of `X` and `Y`, the sections of their structure morphisms, are congruent
+modulo `|K|`. -/
+theorem card_rationalPoints_modEq_of_cohomologyPullback_bijective {K : Type u} [Field K]
+    [Fintype K] {X Y : Scheme.{u}} (πX : X ⟶ Spec (.of K)) (πY : Y ⟶ Spec (.of K))
+    [IsProper πX] [IsProper πY] (f : X ⟶ Y) (hf : f ≫ πY = πX)
+    (hH : ∀ i, Function.Bijective (fun x =>
+      (Scheme.Modules.cohomologyFunctor X i).map (Scheme.Modules.pullbackObjUnitIso f).hom
+        (f.cohomologyPullback (𝟙_ Y.Modules) i x))) :
+    Nat.card {s : Spec (.of K) ⟶ X // s ≫ πX = 𝟙 _} ≡
+      Nat.card {s : Spec (.of K) ⟶ Y // s ≫ πY = 𝟙 _} [MOD Fintype.card K] := by
+  sorry
 
 /-- **Ax–Katz modulo `q`** (Berthelot–Bloch–Esnault, Corollary 1.5, from Proposition 6.8 and
 Corollary 1.3). Let `K` be a finite field and `F₀, …, F_{r-1}` homogeneous polynomials in
@@ -74,18 +105,60 @@ theorem card_dvd_card_solutions_of_sum_lt {K σ ι : Type*} [Field K] [Fintype K
     Fintype.card K ∣ Nat.card {x : σ → K // ∀ i ∈ s, eval x (f i) = 0} := by
   sorry
 
-/-- **Point counts of proper schemes without higher structure-sheaf cohomology**
-(Berthelot–Bloch–Esnault, Corollary 1.6 for the structure morphism `X → Spec F_q`). Let `K` be a
-finite field and `π : X → Spec K` proper, such that `π` identifies `K` with the global functions
-`Γ(X, 𝒪_X)` and `H^i(X, 𝒪_X) = 0` for every `i ≥ 1`. Then the number of `K`-rational points of
-`X`, the sections of `π`, is congruent to `1` modulo `|K|`. -/
-theorem card_rationalPoints_modEq_one_of_cohomology_vanishing {K : Type u} [Field K] [Fintype K]
-    {X : Scheme.{u}} (π : X ⟶ Spec (.of K)) [IsProper π]
-    (hΓ : Function.Bijective π.appTop)
-    (hH : ∀ i, 0 < i →
-      Subsingleton (TauCeti.AlgebraicGeometry.Scheme.Modules.Cohomology
-        (SheafOfModules.unit X.ringCatSheaf) i)) :
-    Nat.card {s : Spec (.of K) ⟶ X // s ≫ π = 𝟙 _} ≡ 1 [MOD Fintype.card K] := by
+/-- A **theta divisor** on an abelian variety `A` over `K`, encoded by its ideal sheaf
+`I = 𝒪_A(−Θ)`: `I` is an effective Cartier ideal sheaf, the dual `𝒪_A(Θ)` of the line bundle `I`
+is ample, and `𝒪_A(Θ)` has a one-dimensional space of global sections. For an ample line bundle
+`L` on an abelian variety `h⁰(L) = χ(L)` and `deg φ_L = χ(L)²`, so the last condition says that
+`𝒪_A(Θ)` defines a principal polarization (README §6.9). -/
+def IsThetaDivisor {K : Type u} [Field K] (A : AbelianVariety K)
+    (I : A.toScheme.IdealSheafData) : Prop :=
+  ∃ hI : I.IsEffectiveCartier,
+    (LineBundleClass.mk hI.toInvertibleSheaf.dual).IsAmple ∧
+    letI : A.toScheme.Over (Spec (.of K)) := ⟨A.toOver.hom⟩
+    Module.finrank K (Scheme.Modules.Cohomology hI.toInvertibleSheaf.dual.obj 0) = 1
+
+/-- **Serre's congruence for theta divisors** (Berthelot–Bloch–Esnault, Theorem 1.4). Two theta
+divisors on an abelian variety over a finite field `K` have congruent numbers of `K`-rational
+points modulo `|K|`; the rational points of a divisor are the sections of its closed subscheme
+over `Spec K`. -/
+theorem card_thetaDivisor_modEq {K : Type u} [Field K] [Fintype K] (A : AbelianVariety K)
+    (I I' : A.toScheme.IdealSheafData) (hI : IsThetaDivisor A I) (hI' : IsThetaDivisor A I') :
+    Nat.card {s : Spec (.of K) ⟶ I.subscheme // s ≫ (I.subschemeι ≫ A.toOver.hom) = 𝟙 _} ≡
+      Nat.card {s : Spec (.of K) ⟶ I'.subscheme // s ≫ (I'.subschemeι ≫ A.toOver.hom) = 𝟙 _}
+        [MOD Fintype.card K] := by
+  sorry
+
+/-- The **degree of a zero-cycle** `z` on a scheme `π : X → Spec L` over a field: the sum of its
+coefficients weighted by the residue degrees `[κ(x) : L]` (README §6.10; the support of a cycle
+is locally finite, so the sum is finite when `X` is quasi-compact). -/
+noncomputable def zeroCycleDegree {X : Scheme.{u}} {L : Type u} [Field L]
+    (π : X ⟶ Spec (.of L)) (z : AlgebraicCycle X ℤ) : ℤ :=
+  ∑ᶠ x, z x * (π.residueDegree x : ℤ)
+
+/-- **Universal rational `CH₀`-triviality** of a proper scheme `π : X → Spec K` (README §6.10):
+for every field extension `L` of `K`, the degree `CH₀(X_L) ⊗ ℚ → ℚ` is bijective, that is, some
+zero-cycle on `X_L` has nonzero degree and every zero-cycle of degree `0` on `X_L` has a positive
+multiple rationally equivalent to zero. -/
+def UniversallyCH0Trivial {K : Type u} [Field K] {X : Scheme.{u}} (π : X ⟶ Spec (.of K))
+    [IsProper π] : Prop :=
+  ∀ (L : Type u) [Field L] [Algebra K L],
+    let πL := pullback.snd π (Spec.map (CommRingCat.ofHom (algebraMap K L)))
+    haveI : IsLocallyNoetherian (pullback π (Spec.map (CommRingCat.ofHom (algebraMap K L)))) :=
+      LocallyOfFiniteType.isLocallyNoetherian πL
+    (∃ z : Chow.cyclesOfDimension (pullback π (Spec.map (CommRingCat.ofHom (algebraMap K L)))) 0,
+      zeroCycleDegree πL z ≠ 0) ∧
+    ∀ z : Chow.cyclesOfDimension (pullback π (Spec.map (CommRingCat.ofHom (algebraMap K L)))) 0,
+      zeroCycleDegree πL z = 0 → ∃ N : ℕ, 0 < N ∧ N • z ∈ Chow.RatEquiv _ 0
+
+/-- **Esnault's theorem** (Esnault, Corollary 1.2; README §6.14 (i)): a smooth, projective,
+geometrically connected variety over a finite field `K` that is universally `CH₀`-trivial has a
+number of `K`-rational points congruent to `1` modulo `|K|`; in particular it has a rational
+point. -/
+theorem card_rationalPoints_modEq_one_of_universallyCH0Trivial {K : Type u} [Field K]
+    [Fintype K] {X : Scheme.{u}} [X.Over (Spec (.of K))] [X.IsProjectiveOver K]
+    [Smooth (X ↘ Spec (.of K))] [GeometricallyConnected (X ↘ Spec (.of K))]
+    (h : UniversallyCH0Trivial (X ↘ Spec (.of K))) :
+    Nat.card {s : Spec (.of K) ⟶ X // s ≫ (X ↘ Spec (.of K)) = 𝟙 _} ≡ 1 [MOD Fintype.card K] := by
   sorry
 
 end TauCetiRoadmap.CrystallineCohomologyPartII
