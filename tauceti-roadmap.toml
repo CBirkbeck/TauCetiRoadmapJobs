@@ -129,7 +129,7 @@ ready_after = false
 
 [design]
 # The design lane is the only expensive one: at most this many design jobs per operator per day.
-daily_cap = 10
+daily_cap = 16   # 2026-11-06: ten were spent by midday with the five explicit analytic number theory designs still waiting
 
 # AI review of every open roadmap pull request (any author): one PRREVIEW job per new head, the
 # `ai-approved` label while the latest review accepts the current head; a human still approves and merges.
