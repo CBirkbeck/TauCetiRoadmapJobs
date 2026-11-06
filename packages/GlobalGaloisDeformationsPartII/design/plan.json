@@ -4918,18 +4918,6 @@
       "section": "RG2.1"
     },
     {
-      "slug": "lazard-lattice-comparison",
-      "needs": "For a sufficiently small uniform subgroup U and every finite free O-lattice V with continuous linear action, export a finite free completed-group-ring resolution computing all V/ϖʳ cohomology from one bounded finite O-complex and the rational comparison with Lie(U)-cohomology, with the action obtained by differentiation.",
-      "supplier": "NoncommutativeAndEquivariantIwasawa",
-      "section": "§§0.13 and F.2"
-    },
-    {
-      "slug": "semisimple-lie-cohomology-vanishing",
-      "needs": "Extending the complex-simple Whitehead input of AffineLieAlgebras §A1 to the shared absolute Chevalley–Eilenberg complex of ArithmeticLocallySymmetricSpaces ALS.F.5, export all-degree vanishing for a semisimple characteristic-zero Lie algebra acting on a finite-dimensional module with no invariants, and Whitehead vanishing in degrees one and two for every finite-dimensional module, compatibly with scalar extension to p-adic coefficient fields.",
-      "supplier": "AutomorphicFormsOnReductiveGroups",
-      "section": "Layer 1, absolute Chevalley–Eilenberg comparison"
-    },
-    {
       "slug": "root-cocycle-lattices",
       "needs": "At §2.28 export the fixed-quotient root lifting functors and explicit cocycle lattices of FKP19 Lemma 3.5, pp.17–18 and Lemma 6.7, pp.46–47, including divided coboundaries, coefficient short exactness, |Lᵅ_r|=|H⁰_w(M_r)|, rank-one unramified quotients and stability of the nonempty higher lifting fibres.",
       "supplier": "LocalGaloisDeformationRings",
@@ -5030,12 +5018,6 @@
       "needs": "At §§2.14, 8.5 and 8.10, for p odd, r≥2 and an odd residual extension of 1 by χ̄≠κ̄⁻¹, export the ordinary potentially crystalline local lift over ℚ_p with unramified quotient and determinant μω₀, where μ=κʳ⁻¹[χ̄κ̄¹⁻ʳ] and ω₀ is finite p-power order, residually trivial and trivial on Art_ℚp(p); at the extension-sensitive Serre weight export the compatible crystalline choice used in §8.3.",
       "supplier": "LocalGaloisDeformationRings",
       "section": "§§2.14, 8.5, 8.10"
-    },
-    {
-      "slug": "finite-image-semisimplification-scalar-extension",
-      "needs": "For a split connected reductive G over finite k of characteristic sufficiently large in its root datum, a finite Γ⊂G(k) and a finite extension k′/k, the G(k′)-conjugacy class obtained by semisimplifying the scalar-extended Levi projection equals the class obtained by semisimplifying Γ over k′, with a minimal k′-parabolic chosen anew.",
-      "supplier": "ReductiveGroupsPartII",
-      "section": "RG2.1"
     },
     {
       "slug": "parabolic-adjoint-filtration",
