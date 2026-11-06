@@ -9,14 +9,15 @@ together with the few definitions they need.
 
 The statable headlines are the counting theorems that fix the sizes of the answers: the
 cardinality of the cusp truncation set `S(a,b,r)` and Sylvester's count for its coprime part
-`T(a,b,r)`, which is the length of the cusp K-group `K_{2r}` (README §1.1), and the closed formula
+`T(a,b,r)`, which is the length over `W(k)` of the cusp K-group `K_{2r}` for a perfect field `k`
+(README §1.1), and the closed formula
 for the number of words without cyclic repetitions, which gives the multiplicities in the
 coordinate-axes formulas (README §1.4).
 
 The following headline theorems are not statable at the pins, because Mathlib and Tau Ceti have
 no algebraic K-theory, no topological Hochschild homology or topological cyclic homology, no
-cyclic homology, no big Witt vectors, no predicate for perfectoid rings, no de Rham–Witt complex
-and no syntomic complexes:
+cyclic homology, no big Witt vectors, no de Rham–Witt complex and no syntomic complexes (perfectoid
+rings themselves are `TauCeti.Perfectoid.IsIntegralPerfectoid`):
 
 * Hesselholt's formula for `K_q(k[x,y]/(xy),(x,y))` over a regular noetherian `𝔽_p`-algebra
   (README §5.2): it lacks algebraic K-theory and the de Rham–Witt complex.
@@ -27,7 +28,7 @@ and no syntomic complexes:
   W_S(k)/(V_a W_{S/a}(k) + V_b W_{S/b}(k))` over perfect `𝔽_p`-algebras (README §6.2): it lacks
   algebraic K-theory and big Witt vectors.
 * Riggenbach's theorem `K_{2r−1}(R[x]/x^e,(x);ℤ_p) ≅ W_{re}(R)/V_e W_r(R)` over perfectoid rings
-  (README §7.2): it lacks algebraic K-theory, big Witt vectors and perfectoid rings.
+  (README §7.2): it lacks algebraic K-theory and big Witt vectors.
 * The Antieau–Krause–Nikolaus theorems on finite chain rings `O_K/ϖ^n`: the structure of the
   p-adic K-groups through syntomic cohomology, Angeltveit's order quotient, the even vanishing
   theorem and the nilpotence bound for `v₁` (README §§9.2, 9.3, 9.5, 9.6): they lack algebraic

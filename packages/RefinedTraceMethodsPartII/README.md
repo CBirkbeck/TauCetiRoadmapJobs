@@ -17,8 +17,8 @@ This roadmap owns the following.
 The following are imported, not planned again.
 
 - THH of E₁-rings with its Frobenius, symmetric monoidality, TC and its fibre formula, spherical monoid rings with the unstable Frobenius of an unpointed E₁-monoid, parametrized Tate constructions and dualizing spectra, representation-graded TR, relative K and TC with `K^inv`, the Dundas–Goodwillie–McCarthy theorem, henselian rigidity, Goodwillie's rational theorem, truncating excision with the Land–Tamme correction and the KABI consequence, and continuity: RefinedTraceMethods §§1.4, 1.9, 2.3–2.4, 2.6, 2.8–2.10, 2.13, 4.12, 4.17–4.18.
-- Pointed-monoid THH in the classical genuine model and the cell types of `B^cy(Π_e)`, the big Witt power-series comparison, λ-graded TR of regular noetherian 𝔽_p-algebras and the truncated-polynomial K-groups over regular noetherian 𝔽_p-algebras and perfect fields: KTheoryFiniteLocalFields §§5.16, 5.16a, 5.17. The truncated-polynomial theorem over perfect fields is a Check of Layer 7 here, not a target. K-theory of finite fields, Gabber rigidity and TC of perfect fields come from KTheoryFiniteLocalFields §§1.1–1.6, 2.1 and 5.1.
-- Truncation sets, big Witt rings, F, V and Teichmüller maps and the comparison with p-typical Witt vectors: QWittVectors §§1.1–1.5. p-typical de Rham–Witt complexes: CrystallineCohomology CR.4.
+- Pointed-monoid THH in the classical genuine model and the cell types of `B^cy(Π_e)`, λ-graded TR of regular noetherian 𝔽_p-algebras and the truncated-polynomial K-groups over regular noetherian 𝔽_p-algebras and perfect fields: KTheoryFiniteLocalFields §§5.16, 5.17; the power-series groups `𝕎_N(k)` these are written in are its Conventions. The truncated-polynomial theorem over perfect fields is a Check of Layer 7 here, not a target. K-theory of finite fields, Gabber rigidity and TC of perfect fields come from KTheoryFiniteLocalFields §§1.1–1.6, 2.1 and 5.1.
+- Truncation sets, big Witt rings, F, V and Teichmüller maps, the big Witt power-series comparison and the comparison with p-typical Witt vectors: QWittVectors §§1.1–1.5 (the power-series comparison is §1.4a). p-typical de Rham–Witt complexes: CrystallineCohomology CR.4.
 - Vanishing of NK for regular noetherian rings: SchemeKTheoryOperations §5.2. Relative K-theory as a fibre: GeneralAlgebraicKTheory §8.1.
 - δ-rings, prisms, Breuil–Kisin prisms and prismatic envelopes: PrismaticCohomology §§0.55–0.56, 0.73–0.76, 0.93 and 2.13. Nygaard filtrations, Breuil–Kisin twists, the ideals `I_r` of transversal prisms, Nygaard completion, the Cartier–Witt stack, prismatic crystals and absolute prismatic and Hodge–Tate cohomology: PrismaticCohomologyPartII §§3.6, 3.9–3.10, 3.20 and Layer 4. Syntomic complexes and the motivic filtration on TC: PrismaticCohomologyPartIII §§6.8–6.9, 6.28, 6.31 and 7.0. Perfectoid rings, `A_inf`, Bökstedt periodicity for perfectoid rings and the perfectoid trace coefficients: AInfCohomology AI.0 and §AI.7.2.
 
@@ -38,7 +38,7 @@ Homological grading is used for spectra and mixed complexes. `TC^-(X) = X^{hT}`,
 
 A pointed monoid is a monoid Π with an absorbing element 0, that is a `MonoidWithZero` of Mathlib. Its pointed monoid algebra is `k(Π) = k[Π]/k·[0]`. The reduced cyclic bar construction `B^cy(Π)` is the realization of the pointed cyclic set `[n] ↦ Π^{∧(n+1)}`. For an unpointed monoid M, `M_+ = M ⊔ {0}` is pointed and `k(M_+) = k[M]`.
 
-Big Witt vectors use QWittVectors' coordinate model on a truncation set S. `W_S(R)` has F_n, V_n and Teichmüller maps. `W_N(R)` means `W_{{1,…,N}}(R)`, with `W_0(R) = 0`. The power-series comparison `γ_N(a) = ∏ (1 − a_d t^d)^{−1}` of QWittVectors §1.4a and KTheoryFiniteLocalFields §5.16a fixes signs: `γ_1(a) = 1 + at`. Mathlib's `WittVector p R` and `TruncatedWittVector p n R` are the p-typical carriers; `W_s(R)` denotes the p-typical Witt vectors of length s, with `W_0 = 0`. For a positive integer d prime to p and a truncation set S, put `s_S(d) = #{j ≥ 0 : dp^j ∈ S}`. For S = {1,…,m} this is the unique s ≥ 1 with `p^{s−1}d ≤ m < p^s d`, written `s(m,d)`, when d ≤ m. `J_p` is the set of positive integers prime to p.
+Big Witt vectors use QWittVectors' coordinate model on a truncation set S. `W_S(R)` has F_n, V_n and Teichmüller maps. `W_N(R)` means `W_{{1,…,N}}(R)`, with `W_0(R) = 0`. The power-series comparison `γ_N(a) = ∏ (1 − a_d t^d)^{−1}` of QWittVectors §1.4a fixes signs: `γ_1(a) = 1 + at`. Mathlib's `WittVector p R` and `TruncatedWittVector p n R` are the p-typical carriers; `W_s(R)` denotes the p-typical Witt vectors of length s, with `W_0 = 0`. For a positive integer d prime to p and a truncation set S, put `s_S(d) = #{j ≥ 0 : dp^j ∈ S}`. For S = {1,…,m} this is the unique s ≥ 1 with `p^{s−1}d ≤ m < p^s d`, written `s(m,d)`, when d ≤ m. `J_p` is the set of positive integers prime to p.
 
 Prismatic conventions follow PrismaticCohomologyPartII and PrismaticCohomologyPartIII. `Δ_R{i}` is the Breuil–Kisin twisted absolute prismatic cohomology, `N^{≥i}Δ̂_R{i}` its Nygaard filtration, and `ℤ_p(i)(R) = fib(can − φ_i : N^{≥i}Δ̂_R{i} → Δ̂_R{i})`. Cohomological degrees are written `H^j`, with `H^j(C) = π_{−j}(C)`. For a δ-ring A and an A-algebra R, `Δ_{R/A}` is the prismatic package of Layer 8.
 
@@ -62,7 +62,7 @@ A finite chain ring is `R = O_K/ϖ^n` with K/ℚ_p finite, `e = v_K(p)`, residue
 - `KaehlerDifferential` and exterior powers supply absolute Kähler forms `Ω^j_{k/ℚ}`.
 - `Polynomial`, `PowerSeries`, `Ideal.Quotient` and `MvPolynomial` supply the coordinate rings `k[x]/x^e`, `k[x_1,…,x_d]/(x_ix_j)_{i≠j}` and `k[x,y]/(y^a − x^b)`.
 
-Mathlib and Tau Ceti have no big Witt vectors, cyclic bar constructions, THH, TC, algebraic K-theory, cyclic homology or syntomic complexes at the pins. Mathlib/RingTheory/Perfectoid has Fontaine's θ and untilts, but no predicate for a perfectoid ring.
+Mathlib and Tau Ceti have no big Witt vectors, cyclic bar constructions, THH, TC, algebraic K-theory, cyclic homology or syntomic complexes at the pins. Mathlib/RingTheory/Perfectoid has Fontaine's θ and untilts; Tau Ceti has the predicate `TauCeti.Perfectoid.IsIntegralPerfectoid p A` (TauCeti/RingTheory/Perfectoid/Integral.lean), the integral perfectoid rings of Bhatt–Morrow–Scholze, which are the perfectoid rings of Layers 3 and 7, but no big Witt vectors or K-theory.
 
 ### From Tau Ceti
 
@@ -98,7 +98,7 @@ Mathlib and Tau Ceti have no big Witt vectors, cyclic bar constructions, THH, TC
 - §4.4: the norm, homotopy orbits and the comparison of the genuine with the modern cyclotomic model.
 - §5.1: `π_*TC^-(k)`, `π_*TP(k)`, can and φ for perfect fields, and TC of perfect fields.
 - §5.16: the classical pointed-monoid THH equivalence and the cofibre sequences for the weight pieces of `B^cy(Π_e)`.
-- §5.16a: the big Witt power-series comparison.
+- Conventions: the series groups `𝕎_N(k)` of truncated power series with constant term 1 modulo `t^{N+1}` and `𝕎(k)` of such formal series, with the substitution Verschiebung `V_n` induced by `t ↦ t^n` and the Teichmüller class `(1 − at)^{−1}`; QWittVectors §1.4a identifies them with the coordinate groups `W_N(k)` and `W(k)`.
 - §5.17: `TR^n_{q−λ}(A;p) ≃ ⊕_{r=1}^{n} ⊕_{ℓ_{n−r} ≤ m < ℓ_{n−1−r}} W_rΩ^{q−2m}_A` for regular noetherian 𝔽_p-algebras A, and the truncated-polynomial K-groups over perfect fields.
 
 ### From TauCetiRoadmap.QWittVectors
@@ -158,7 +158,7 @@ Define the cusp counting function `cuspCount a b m`, written `ℓ(a,b,m)`: for p
 - S(a,b,r) ⊆ S(a,b,r+1), and every positive integer lies in S(a,b,r) for r large.
 - `ncard_cuspTruncationSet`: for coprime a, b ≥ 2 and r ≥ 0, S(a,b,r) is finite with `#S(a,b,r) = ½(a+1)(b+1) − 1 + rab`, stated without subtraction or halving as `2·#S(a,b,r) + 2 = (a+1)(b+1) + 2rab` (hesselholt-cusp-polytopes Corollary 1.6, line 386).
 - For coprime a, b ≥ 2: `#(S(a,b,r)/a) = (r+1)b`, `#(S(a,b,r)/b) = (r+1)a` and `#(S(a,b,r)/ab) = r+1` (hesselholt-cusp-polytopes Corollary 1.6, line 386).
-- *Sylvester's count* (`ncard_cuspCoprimeSet`). For coprime a, b ≥ 2 and r ≥ 0, the set T(a,b,r) is a finite truncation set with `2·#T(a,b,r) = (2r+1)(a−1)(b−1)`. This is the length over W(k) of the cusp K-group `K_{2r}` of §6.2. The proof is inclusion–exclusion on the four cardinalities above (hesselholt-cusp-polytopes Corollary 1.7, line 395; hn-cusp line 37).
+- *Sylvester's count* (`ncard_cuspCoprimeSet`). For coprime a, b ≥ 2 and r ≥ 0, the set T(a,b,r) is a finite truncation set with `2·#T(a,b,r) = (2r+1)(a−1)(b−1)`. When k is a perfect field this is the length over W(k) of the cusp K-group `K_{2r}` of §6.2, because each graded piece of the V-filtration of `W_T(k)` is then the simple W(k)-module k; for k = 𝔽_p × 𝔽_p the length is `2·#T(a,b,r)`, and for a non-noetherian perfect k it is infinite. The proof is inclusion–exclusion on the four cardinalities above (hesselholt-cusp-polytopes Corollary 1.7, line 395; hn-cusp line 37).
 - *Conductor.* For coprime a, b ≥ 2, the least c such that every m ≥ c is a nonnegative combination of a and b is `(a−1)(b−1)` (hesselholt-cusp-polytopes Remark 1.5, line 373).
 
 *Needs:* Mathlib `Finset.card`, `Set.ncard`, `Nat.Coprime`; QWittVectors §1.1 (truncation sets).
@@ -180,7 +180,7 @@ For a truncation set S, positive integers n_1, …, n_k and `T = {m ∈ S : n_i 
 
 - For S = {1,2}, n_1 = 2 and R = 𝔽_2: `W_{{1,2}}(𝔽_2) = ℤ/4` (by QWittVectors §1.5), `V_2W_{{1}}(𝔽_2) = {0,2}` and `W_{{1}}(𝔽_2) = 𝔽_2`. The quotient has two elements on both sides.
 - For n_1 = 1 the set T is empty, `W_∅ = 0` and `V_1` is the identity, so both sides are zero. A version keeping the index 1 in T would give R instead of 0.
-- Over ℤ with S = {1,2,3,4} and n_1 = 2: T = {1,3}. The vector `V_2τ(1)` has coordinates (0,1,0,0) and restricts to 0, while τ(1) restricts to (1,0) ≠ 0. Keeping 2 in T would give the truncation set {1,2,3}, and a quotient of length 3 over W(ℤ) instead of 2 = #T.
+- Over ℤ with S = {1,2,3,4} and n_1 = 2: T = {1,3}. The vector `V_2τ(1)` has coordinates (0,1,0,0) and restricts to 0, while τ(1) restricts to (1,0) ≠ 0. Keeping 2 in T would give the truncation set {1,2,3}, and a quotient with three coordinates instead of #T = 2; over 𝔽_2 that wrong quotient has 8 elements, the right one `W_{{1,3}}(𝔽_2) = 𝔽_2²` has 4.
 
 ### 1.3 The p-typical index functions
 
@@ -619,8 +619,8 @@ Prove that for every perfect 𝔽_p-algebra k and coprime a, b ≥ 2, `K_j(k[x,y
 
 **Checks.**
 
-- r = 0: `K_0(A,(x,y))` has length `(a−1)(b−1)/2` over W(k), the δ-invariant of the cusp (hn-cusp line 37). For (a,b) = (2,3) and a perfect field k this is `W_{{1}}(k) = k`, the unipotent Picard group `(k[t]/t²)^×/k^× ≅ k` of the conductor square.
-- For every r, the length is `½(2r+1)(a−1)(b−1)` by Sylvester's count (§1.1). For (2,5) and r = 0 this is 2, and `T(2,5,0) = {1,3}`. For k = 𝔽_3 this gives `W_{{1,3}}(𝔽_3) = W_2(𝔽_3) = ℤ/9`, cyclic, while a componentwise reading would give `𝔽_3²`.
+- r = 0 and k a perfect field: `K_0(A,(x,y))` has length `(a−1)(b−1)/2` over W(k), the δ-invariant of the cusp (hn-cusp line 37). For (a,b) = (2,3) and a perfect field k this is `W_{{1}}(k) = k`, the unipotent Picard group `(k[t]/t²)^×/k^× ≅ k` of the conductor square.
+- For a perfect field k and every r, the length is `½(2r+1)(a−1)(b−1)` by Sylvester's count (§1.1). For (2,5) and r = 0 this is 2, and `T(2,5,0) = {1,3}`. For k = 𝔽_3 this gives `W_{{1,3}}(𝔽_3) = W_2(𝔽_3) = ℤ/9`, cyclic, while a componentwise reading would give `𝔽_3²`. The length formula needs a field: for k = 𝔽_3 × 𝔽_3 the theorem gives `ℤ/9 × ℤ/9`, of length 4 over `W(k) = ℤ_3 × ℤ_3`, and for the perfection of `𝔽_3[t]` already `K_0 = W_{{1}}(k) = k` has infinite length.
 - Negative degrees: `K_{−1}(A,(x,y)) = 0` for every perfect field, because F has no negative homotopy (§6.1) and `NK_{−1}(k) = 0`. The theorem therefore excludes negative K-groups, which a nonconnective statement over a singular base k would have to track.
 
 ### Examples
@@ -658,7 +658,7 @@ Prove also the syntomic form: for every perfect 𝔽_p-algebra k and i ≥ 1, th
 **Checks.**
 
 - e = 1: `W_r(R)/V_1W_r(R) = 0`, as for `R[x]/x = R`.
-- R a perfect field: the group is `𝕎_{re}(k)/V_e𝕎_r(k)` of KTheoryFiniteLocalFields §5.17, transported by the big Witt comparison of KTheoryFiniteLocalFields §5.16a. For R = 𝔽_2, e = 2 and r = 1 it is ℤ/2, the principal units `1 + x𝔽_2[x]/x²`. For R = 𝔽_3, e = 2 and r = 2: `T_{2,2} = {1,3}` and the group is `W_2(𝔽_3) = ℤ/9`, not `𝔽_3²`.
+- R a perfect field: the group is `𝕎_{re}(k)/V_e𝕎_r(k)` of KTheoryFiniteLocalFields §5.17, transported by the big Witt comparison of QWittVectors §1.4a. For R = 𝔽_2, e = 2 and r = 1 it is ℤ/2, the principal units `1 + x𝔽_2[x]/x²`. For R = 𝔽_3, e = 2 and r = 2: `T_{2,2} = {1,3}` and the group is `W_2(𝔽_3) = ℤ/9`, not `𝔽_3²`.
 - Mixed characteristic: for `R = O_C` (the ring of integers of the completed algebraic closure of ℚ_p), e = 2 and r = 1, the group is `W_{{1}}(O_C) = O_C`. This agrees with relative K_1, the p-completed principal units `1 + xO_C`, which are additively O_C through `1 + ax ↦ a`.
 
 ### Examples
@@ -667,7 +667,7 @@ For R = 𝔽_p and e = 2 the odd groups are `K_{2r−1}(𝔽_p[x]/x²,(x)) ≅ W
 
 ### Dependencies
 
-Layers 1–3. Suppliers: RefinedTraceMethods §4.17; KTheoryFiniteLocalFields §§5.16, 5.16a, 5.17; PrismaticCohomologyPartII §§3.19, 3.24, 4.23; PrismaticCohomologyPartIII §7.0; CrystallineCohomology CR.2; AInfCohomology §AI.7.2; gap `bigwitt-ptypical-decomposition`.
+Layers 1–3. Suppliers: RefinedTraceMethods §4.17; KTheoryFiniteLocalFields §§5.16, 5.17 and Conventions; QWittVectors §1.4a; PrismaticCohomologyPartII §§3.19, 3.24, 4.23; PrismaticCohomologyPartIII §7.0; CrystallineCohomology CR.2; AInfCohomology §AI.7.2; gap `bigwitt-ptypical-decomposition`.
 
 ## Layer 8: Prismatic and syntomic cohomology relative to δ-rings and of filtered rings
 
