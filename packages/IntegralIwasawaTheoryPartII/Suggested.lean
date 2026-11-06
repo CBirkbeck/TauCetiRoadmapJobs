@@ -13,7 +13,7 @@ carriers are available. None of the following headlines is statable at these pin
   complex Hecke (Artin) `L`-function `L(χ, s)` of a finite-order character of a number
   field other than `ℚ`, and the Iwasawa logarithm on finite extensions of `ℚ_p`, through
   which Gross's regulator is defined.
-* The all-prime lower bound `ord_{s=0} L_p(χω, s) ≥ r` (§0.7) lacks `L_p(χω, s)` and the
+* The all-prime lower bound `ord_{s=0} L_p(χω, s) ≥ r` (§0.8) lacks `L_p(χω, s)` and the
   integral Sczech–Eisenstein cocycle with its measures.
 * The exact-order criterion `ord_{s=0} L_p(χω, s) = r ↔ R_p(χ) ≠ 0` and its rank-one case
   (§§5.7–5.8) lack `L_p(χω, s)` and the Iwasawa logarithm.
