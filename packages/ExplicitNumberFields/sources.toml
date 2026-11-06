@@ -66,3 +66,445 @@ licence_class = "operator-local"
 status = "certified"
 local_name = "louboutin2015ijnt.pdf"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6064#issuecomment-6672868062"
+
+[[source]]
+id = "rademacher1959"
+authors = "Hans Rademacher"
+title = "On the Phragm�n-Lindel�f theorem and some applications"
+year = 1959
+venue = "Mathematische Zeitschrift 72"
+doi = "10.1007/BF01162949"
+locator_scheme = "theorem"
+locator = "Theorem 4"
+url = "https://doi.org/10.1007/BF01162949"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 1"]
+
+[[source]]
+id = "lee2023ideals"
+authors = "Ethan S. Lee"
+title = "On the number of integral ideals in a number field"
+year = 2023
+venue = "Journal of Mathematical Analysis and Applications 517"
+doi = "10.1016/j.jmaa.2022.126585"
+arxiv = "2203.00389v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.2"
+url = "https://arxiv.org/abs/2203.00389v2"
+fetched_from = "https://arxiv.org/pdf/2203.00389v2"
+fetched_at = "2026-11-06T01:00:26Z"
+sha256 = "8e5f8c7af4fbfc2d2f930d2195cdd8ebb2bae9f6389c3a2d0317f306a30fbd55"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-06"
+version_note = "arXiv v2"
+cited_for = ["Layer 2"]
+
+[[source]]
+id = "debaene2019"
+authors = "Korneel Debaene"
+title = "Explicit counting of ideals and a Brun–Titchmarsh inequality for the Chebotarev density theorem"
+year = 2019
+arxiv = "1611.10103"
+locator_scheme = "theorem"
+locator = "Corollary 2"
+url = "https://arxiv.org/abs/1611.10103"
+fetched_from = "https://arxiv.org/pdf/1611.10103"
+fetched_at = "2026-11-06T01:01:13Z"
+sha256 = "0c08a95fe8953d92e0c56a4a529f14d55f9e2fb7f0b46617a44c590295e0c77f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-06"
+version_note = "arXiv, latest version"
+cited_for = ["Layer 2"]
+
+[[source]]
+id = "gunramaresivaraman2023"
+authors = "Sanoli Gun, Olivier Ramaré, Jyothsnaa Sivaraman"
+title = "Counting ideals in ray classes"
+year = 2023
+venue = "Journal of Number Theory 243"
+doi = "10.1016/j.jnt.2022.08.005"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://hal.science/hal-03805062v1"
+fetched_from = "https://hal.science/hal-03805062/document"
+fetched_at = "2026-11-06T01:01:14Z"
+sha256 = "69650c9c6c9c80ff687891e255bb527ddf8728305e0afd58d5b4ca470f45b08f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-06"
+cited_for = ["Layer 2"]
+
+[[source]]
+id = "garcialee2022mertens"
+authors = "Stephan Ramon Garcia, Ethan Simpson Lee"
+title = "Unconditional explicit Mertens' theorems for number fields and Dedekind zeta residue bounds"
+year = 2022
+arxiv = "2007.10313"
+locator_scheme = "section"
+locator = "Section 3"
+url = "https://arxiv.org/abs/2007.10313"
+fetched_from = "https://arxiv.org/pdf/2007.10313"
+fetched_at = "2026-11-06T01:02:26Z"
+sha256 = "cd91d1a695fd152cf36ecd3d10f817fa95dd69449a80aca8cb71710bbaaf9e2e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-06"
+version_note = "arXiv, latest version"
+cited_for = ["Layer 3"]
+
+[[source]]
+id = "garcialee2022artin"
+authors = "Stephan Ramon Garcia, Ethan Simpson Lee"
+title = "Explicit estimates for Artin L-functions: Duke's short-sum theorem and Dedekind zeta residues"
+year = 2022
+arxiv = "2101.11853"
+locator_scheme = "theorem"
+locator = "Corollary 2"
+url = "https://arxiv.org/abs/2101.11853"
+fetched_from = "https://arxiv.org/pdf/2101.11853"
+fetched_at = "2026-11-06T01:02:50Z"
+sha256 = "928dc942d8b0df0ac4a222571bec41638db6013e3affe77f924dfc3a56f2e49d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-06"
+version_note = "arXiv, latest version"
+cited_for = ["Layer 3"]
+
+[[source]]
+id = "trudgian2015"
+authors = "Timothy S. Trudgian"
+title = "An improved upper bound for the error in the zero-counting formulae for Dirichlet L-functions and Dedekind zeta-functions"
+year = 2015
+arxiv = "1206.1844"
+locator_scheme = "theorem"
+locator = "Theorem 2"
+url = "https://arxiv.org/abs/1206.1844"
+fetched_from = "https://arxiv.org/pdf/1206.1844"
+fetched_at = "2026-11-06T01:04:16Z"
+sha256 = "c6e94ad46b6ce7b8e180566970093ce49cedcdc285e5d91c9db76dc410f42b20"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-06"
+version_note = "arXiv, latest version"
+cited_for = ["Layer 5"]
+
+[[source]]
+id = "hasanalizadeshenwong2022"
+authors = "Elchin Hasanalizade, Quanli Shen, Peng-Jie Wong"
+title = "Counting zeros of Dedekind zeta functions"
+year = 2021
+arxiv = "2102.04663v3"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://arxiv.org/abs/2102.04663v3"
+fetched_from = "https://arxiv.org/pdf/2102.04663v3"
+fetched_at = "2026-11-06T01:04:35Z"
+sha256 = "f86bc699394c6c64c06bfab787c3daec8995293f4e1ca1e930c45dbc884f4022"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-06"
+version_note = "arXiv v3"
+cited_for = ["Layer 5"]
+
+[[source]]
+id = "lee2021zerofree"
+authors = "Ethan S. Lee"
+title = "On an explicit zero-free region for the Dedekind zeta-function"
+year = 2021
+venue = "Journal of Number Theory 224"
+doi = "10.1016/j.jnt.2020.12.015"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://doi.org/10.1016/j.jnt.2020.12.015"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 5"]
+
+[[source]]
+id = "mcgowntrudgian2020"
+authors = "Kevin J. McGown, Tim Trudgian"
+title = "Explicit upper bounds on the least primitive root"
+year = 2020
+arxiv = "1904.12373"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/1904.12373"
+fetched_from = "https://arxiv.org/pdf/1904.12373"
+fetched_at = "2026-11-06T01:05:46Z"
+sha256 = "71552491eccb4fba4589076c4f25c94b7ed7241fb60b6d9c8b0e948b6de5c9d1"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-06"
+version_note = "arXiv, latest version"
+cited_for = ["Layer 6"]
+
+[[source]]
+id = "kerrmcgowntrudgian2020"
+authors = "Bryce Kerr, Kevin McGown, Tim Trudgian"
+title = "The least primitive root modulo $p^{2}$"
+year = 2019
+arxiv = "1908.11497v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/1908.11497v1"
+fetched_from = "https://arxiv.org/pdf/1908.11497v1"
+fetched_at = "2026-11-06T01:06:49Z"
+sha256 = "74d4207ec10737bdd90bc4742fe616cb9615fedce24cb6eaa314f15c96d6fb37"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-06"
+version_note = "arXiv v1"
+cited_for = ["Layer 6"]
+
+[[source]]
+id = "trevino2015"
+authors = "Enrique Treviño"
+title = "The Burgess inequality and the least k-th power non-residue"
+year = 2015
+arxiv = "1412.3062v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/1412.3062v2"
+fetched_from = "https://arxiv.org/pdf/1412.3062v2"
+fetched_at = "2026-11-06T01:07:25Z"
+sha256 = "676bb69d2d5d5c422b0cb7f3edc1d265c80ce01655e07d2c5db2b8d399d42321"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-06"
+version_note = "arXiv v2"
+cited_for = ["Layer 6, H1"]
+
+[[source]]
+id = "mcgown2012"
+authors = "Kevin J. McGown"
+title = "On the constant in Burgess' bound for the number of consecutive residues or non-residues"
+year = 2012
+arxiv = "1011.4490v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/1011.4490v1"
+fetched_from = "https://arxiv.org/pdf/1011.4490v1"
+fetched_at = "2026-11-06T01:07:39Z"
+sha256 = "e0b41313bfb544f085519629bec842a544d2f555fd12c4e3ebddf0f02830f934"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-06"
+version_note = "arXiv v1"
+cited_for = ["H1"]
+
+[[source]]
+id = "louboutin2005"
+authors = "Stéphane R. Louboutin"
+title = "On the use of explicit bounds on residues of Dedekind zeta functions taking into account the behavior of small primes"
+year = 2005
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "http://www.numdam.org/item/JTNB_2005__17_2_559_0/"
+fetched_from = "https://www.numdam.org/item/JTNB_2005__17_2_559_0.pdf"
+fetched_at = "2026-11-06T01:09:34Z"
+sha256 = "8f589798df23bcf1ecc49905fae75ac88de4126e02d064c24dbd21d61f688632"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-06"
+cited_for = ["Layer 3, Layer 4(a)"]
+
+[[source]]
+id = "louboutin2000"
+authors = "Stéphane Louboutin"
+title = "Explicit Bounds for Residues of Dedekind Zeta Functions, Values of L-Functions at s=1, and Relative Class Numbers"
+year = 2000
+venue = "Journal of Number Theory 85"
+doi = "10.1006/jnth.2000.2545"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://doi.org/10.1006/jnth.2000.2545"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 3, Layer 4(c)"]
+
+[[source]]
+id = "cullyhugilltrudgian2021"
+authors = "Michaela Cully-Hugill, Tim Trudgian"
+title = "Two explicit divisor sums"
+year = 2021
+venue = "The Ramanujan Journal 56"
+doi = "10.1007/s11139-020-00333-3"
+locator_scheme = "theorem"
+locator = "Theorem 2"
+url = "https://doi.org/10.1007/s11139-020-00333-3"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 4(b)"]
+
+[[source]]
+id = "kadiri2012"
+authors = "HABIBA KADIRI"
+title = "EXPLICIT ZERO-FREE REGIONS FOR DEDEKIND ZETA FUNCTIONS"
+year = 2012
+venue = "International Journal of Number Theory 08"
+doi = "10.1142/S1793042112500078"
+arxiv = "1106.1868v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/1106.1868v1"
+fetched_from = "https://arxiv.org/pdf/1106.1868v1"
+fetched_at = "2026-11-06T01:11:56Z"
+sha256 = "8c20f3fc7b27d080e97b1304bcf95f54cbf5905fba59fbf1a3f0dc4d3e78d368"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-06"
+version_note = "arXiv v1"
+cited_for = ["Layer 5"]
+
+[[source]]
+id = "mcgowntrevinotrudgian2016"
+authors = "Kevin McGown, Enrique Treviño, Tim Trudgian"
+title = "Resolving Grosswald's conjecture on GRH"
+year = 2016
+venue = "Functiones et Approximatio Commentarii Mathematici 55"
+doi = "10.7169/facm/2016.55.2.5"
+arxiv = "1508.05182v1"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://arxiv.org/abs/1508.05182v1"
+fetched_from = "https://arxiv.org/pdf/1508.05182v1"
+fetched_at = "2026-11-06T01:12:21Z"
+sha256 = "fd6ed9e51ca9fb59c4af79739ffd1fc51aa775d693400af20c3c3a72fd96ed80"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-06"
+version_note = "arXiv v1"
+cited_for = ["Layer 6"]
+
+[[source]]
+id = "louboutin2003"
+authors = "Stéphane Louboutin"
+title = "Explicit lower bounds for residues at s = 1 of Dedekind zeta functions and relative class numbers of CM-fields"
+year = 2003
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://www.ams.org/journals/tran/2003-355-08/S0002-9947-03-03313-0/S0002-9947-03-03313-0.pdf"
+fetched_from = "https://www.ams.org/journals/tran/2003-355-08/S0002-9947-03-03313-0/S0002-9947-03-03313-0.pdf"
+fetched_at = "2026-11-06T01:14:09Z"
+sha256 = "bb4743480bfebf91b7f0975f860c95493b940dfa072d9d7aa40b9fc15ea96eef"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-06"
+cited_for = ["Layer 4(c)"]
+
+[[source]]
+id = "booker2006"
+authors = "Andrew R. Booker"
+title = "Quadratic class numbers and character sums"
+year = 2006
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://www.ams.org/journals/mcom/2006-75-255/S0025-5718-06-01850-3/S0025-5718-06-01850-3.pdf"
+fetched_from = "https://www.ams.org/journals/mcom/2006-75-255/S0025-5718-06-01850-3/S0025-5718-06-01850-3.pdf"
+fetched_at = "2026-11-06T01:14:35Z"
+sha256 = "d5f7c9a26a62940faba552f3cbea2a5f77c77d05d31eaf554e2689eed37484a7"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-06"
+cited_for = ["H1 (consumed)"]
+
+[[source]]
+id = "ahnkwon2014"
+authors = "Milton Espinoza"
+title = "Signed Shintani cones for number fields with one complex place"
+year = 2014
+venue = "Journal of Number Theory 145"
+doi = "10.1016/j.jnt.2014.06.003"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://doi.org/10.1016/j.jnt.2014.06.003"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 5"]
+
+[[source]]
+id = "sunley1973"
+authors = "Judith S. Sunley"
+title = "Class numbers of totally imaginary quadratic extensions of totally real fields"
+year = 1973
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://www.ams.org/journals/tran/1973-175-00/S0002-9947-1973-0311622-9/S0002-9947-1973-0311622-9.pdf"
+fetched_from = "https://www.ams.org/journals/tran/1973-175-00/S0002-9947-1973-0311622-9/S0002-9947-1973-0311622-9.pdf"
+fetched_at = "2026-11-06T01:17:23Z"
+sha256 = "a1c40b201f182ed898e1c1ca727fbe514cb0826817fb7b49837bb7b4a7342a0d"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-06"
+cited_for = ["Layer 2"]
+
+[[source]]
+id = "louboutin2001"
+authors = "Stéphane Louboutin"
+title = "Explicit upper bounds for residues of Dedekind zeta functions and values of L-functions at s = 1, and explicit lower bounds for relative class numbers of CM-fields"
+year = 2001
+venue = "Canadian Journal of Mathematics 53 (2001), no. 6, 1194–1222"
+doi = "10.4153/CJM-2001-045-5"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://doi.org/10.4153/CJM-2001-045-5"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (Cambridge); the sources service found no legal copy; cited by its locator without the text"
+cited_for = ["Layer 3", "Layer 4(a)"]
+
+[[source]]
+id = "chen2022"
+authors = "Bryce Chen"
+title = "Explicit upper bound on the least primitive root modulo p²"
+year = 2022
+venue = "International Journal of Number Theory 18 (2022), no. 2, 389–395"
+doi = "10.1142/S1793042122500233"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://doi.org/10.1142/S1793042122500233"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (World Scientific, HTTP 403 to the service); cited by its locator without the text"
+cited_for = ["Layer 6", "H3"]
+
+[[source]]
+id = "ramare2001"
+authors = "Olivier Ramaré"
+title = "Approximate formulae for L(1, χ)"
+year = 2001
+venue = "Acta Arithmetica 100 (2001), 245–266"
+doi = "10.4064/aa100-3-4"
+locator_scheme = "theorem"
+locator = "Corollary 1"
+url = "https://doi.org/10.4064/aa100-3-4"
+licence_class = "none"
+status = "uncertified"
+version_note = "open at the IMPAN archive, which answered HTTP 502 to the service on every attempt; cited by its locator; the bounds are consumed from ExplicitZetaBounds target 14, which records the same work"
+cited_for = ["Layer 4(a)"]
+
+[[source]]
+id = "cohenoliveirasilvatrudgian2016"
+authors = "Stephen D. Cohen, Tomás Oliveira e Silva, Tim Trudgian"
+title = "On Grosswald's conjecture on primitive roots"
+year = 2015
+arxiv = "1503.04519v1"
+locator_scheme = "section"
+locator = "Section 4"
+url = "https://arxiv.org/abs/1503.04519v1"
+fetched_from = "https://arxiv.org/pdf/1503.04519v1"
+fetched_at = "2026-11-06T01:18:04Z"
+sha256 = "9286f37b3122b56e5249580cde54c9b6b7917a40e8e32baaeb1c9ab3f0e8ef94"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-06"
+version_note = "arXiv v1"
+cited_for = ["H2"]
