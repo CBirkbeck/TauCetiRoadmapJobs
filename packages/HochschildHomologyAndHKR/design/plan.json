@@ -1038,7 +1038,7 @@
      "id": "6.1",
      "kind": "theorem",
      "name": "HochschildHKR.suspendCochain_coboundary",
-     "statement": "For A in degree zero (DGAInfinity Layer 1), Θ: C^n(A,A) → arity-n Hochschild cochains of DGAInfinity Layer 8, Θf∘s^{⊗n}=s∘f, is a k-linear isomorphism, with Θ(δf)=(−1)^{p+1}[m,Θf], Θ(f∪g)=(−1)^{p(q−1)} m{Θf,Θg}, Θ(f∘g)=Θf{Θg} for the Gerstenhaber composition (f∘g)(a)=Σ_{i=1}^p(−1)^{(i−1)(q−1)} f(…,g(a_i,…,a_{i+q−1}),…), and Θ{f,g}=[Θf,Θg] with {f,g}=f∘g−(−1)^{(p−1)(q−1)}g∘f; hence HH^n(A,A) is Layer 8's Hochschild cohomology in Gerstenhaber degree n−1 and Layer 8's bracket is transported to HH^•(A,A).",
+     "statement": "For A in degree zero, 𝒜 = TauCeti.IsNonUnitalDGAlgebra.toAInfinityAlgebra of the trivially graded A with zero differential: for n ≥ 1, Θ: C^n(A,A) → TauCeti.AInfinityAlgebra.PositiveHochschild.cochains 𝒜 (n−1), Θf∘s^{⊗n}=s∘f, is a k-linear isomorphism (degree n−1 cochains are exactly the arity-n ones), with, for p,q ≥ 1, Θ(δf)=(−1)^{p+1}·TauCeti.AInfinityAlgebra.hochschildDifferential 𝒜 (p−1) (Θf), Θ(f∘g)=TauCeti.ReducedTensorWords.brace (Θf) (Θg) (q−1) for the Gerstenhaber composition (f∘g)(a)=Σ_{i=1}^p(−1)^{(i−1)(q−1)} f(…,g(a_i,…,a_{i+q−1}),…), and Θ{f,g}=TauCeti.ReducedTensorWords.gerstenhaberBracket (p−1) (q−1) (Θf) (Θg) with {f,g}=f∘g−(−1)^{(p−1)(q−1)}g∘f; against DGAInfinity Layer 8 (arity zero, multiple brace): Θ(δx)=−[m,Θx] for x∈C⁰, Θ(f∘y)=Θf{Θy}, Θ{f,y}=[Θf,Θy] for y∈C⁰, and Θ(f∪g)=(−1)^{p(q−1)} m{Θf,Θg} for all p,q ≥ 0. Hence HH^n(A,A) = TauCeti.AInfinityAlgebra.PositiveHochschild.Cohomology 𝒜 (n−1) for n ≥ 2 with cohomologyBracket transported for p,q ≥ 2 (degree 0 of the pinned complex is Der_k(A), not HH¹), and HH^n(A,A) is Layer 8's Hochschild cohomology in Gerstenhaber degree n−1 for every n ≥ 0 with Layer 8's bracket transported to HH^•(A,A).",
      "hypotheses": [
       "k a commutative ring",
       "A a ring with Algebra k A",
@@ -1051,45 +1051,58 @@
      "prerequisites": [
       "target:1.2",
       "target:5.1",
-      "roadmap:DGAInfinity Layer 0",
-      "roadmap:DGAInfinity Layer 1",
-      "roadmap:DGAInfinity Layer 8",
       "tauceti:TauCeti.AInfinity.IsSuspension",
       "tauceti:TauCeti.IsDGAlgebra",
-      "tauceti:TauCeti.IsNonUnitalDGAlgebra.toAInfinityAlgebra"
+      "tauceti:TauCeti.IsNonUnitalDGAlgebra.toAInfinityAlgebra",
+      "tauceti:TauCeti.ReducedTensorWords.brace",
+      "tauceti:TauCeti.ReducedTensorWords.gerstenhaberBracket",
+      "tauceti:TauCeti.AInfinityAlgebra.hochschildDifferential",
+      "tauceti:TauCeti.AInfinityAlgebra.hochschildDifferential_eq_brace_sub",
+      "tauceti:TauCeti.AInfinityAlgebra.PositiveHochschild.cochains",
+      "tauceti:TauCeti.AInfinityAlgebra.PositiveHochschild.complex",
+      "tauceti:TauCeti.AInfinityAlgebra.PositiveHochschild.Cohomology",
+      "tauceti:TauCeti.AInfinityAlgebra.PositiveHochschild.cohomologyBracket",
+      "roadmap:DGAInfinity Layer 0",
+      "roadmap:DGAInfinity Layer 1",
+      "roadmap:DGAInfinity Layer 8"
      ],
      "api": [
       {
        "name": "HochschildHKR.suspendCochain_apply",
        "role": "evaluation",
-       "statement": "Θf(sa₁⊗…⊗sa_n)=s f(a₁,…,a_n) on degree-zero inputs."
+       "statement": "Θf(sa₁⊗…⊗sa_n)=s f(a₁,…,a_n) on degree-zero inputs; Θf is f on the length-n summand of TauCeti.ReducedTensorWords k A and 0 elsewhere."
       },
       {
        "name": "HochschildHKR.bracket_one",
        "role": "compatibility",
-       "statement": "On C¹, {f,g}=f∘g−g∘f; on HH¹(A,A) the transported bracket is that of Der/Inn from TauCeti.derivationLieAlgebra."
+       "statement": "On C¹, {f,g}=f∘g−g∘f; on HH¹(A,A) the transported bracket is that of Der/Inn from TauCeti.derivationLieAlgebra; on the pinned complex it is the bracket of PositiveHochschild.Cohomology 𝒜 0 = Der_k(A) before the quotient by inner derivations."
       },
       {
        "name": "HochschildHKR.suspendCochain_degree",
        "role": "evaluation",
-       "statement": "Layer 8's Hochschild cohomology of A sits in Gerstenhaber degrees ≥ −1, the degree −1 part being Z(A)."
+       "statement": "Layer 8's Hochschild cohomology of A sits in Gerstenhaber degrees ≥ −1, the degree −1 part being Z(A); the pinned positive-arity complex sees degrees ≥ 0, its degree-0 cohomology is Der_k(A) (no arity-zero cochains) and its degree-(n−1) cohomology is HH^n(A,A) for n ≥ 2."
       }
      ],
      "tests": [
       {
        "name": "susp_n0",
        "kind": "computation",
-       "statement": "For x∈C⁰, [m,Θx](sa)=s(xa−ax) while Θ(δx)(sa)=s(ax−xa): sign −1."
+       "statement": "Arity zero (DGAInfinity Layer 8 only): for x∈C⁰, [m,Θx](sa)=s(xa−ax) while Θ(δx)(sa)=s(ax−xa): sign −1."
       },
       {
        "name": "susp_n1",
        "kind": "computation",
-       "statement": "For f∈C¹, [m,Θf](sa⊗sb)=s(f(a)b+af(b)−f(ab))=Θ(δf)(sa⊗sb): sign +1; a uniform sign fails one case."
+       "statement": "At the pin (hochschildDifferential_eq_brace_sub, q=0): m{Θf}=s(f(a)b+af(b)), Θf{m}=sf(ab), so [m,Θf](sa⊗sb)=s(f(a)b+af(b)−f(ab))=Θ(δf)(sa⊗sb): sign +1; a uniform sign fails one of n=0, n=1."
+      },
+      {
+       "name": "susp_n2",
+       "kind": "computation",
+       "statement": "At the pin (q=1): m{Θf}(sa⊗sb⊗sc)=s(f(a,b)c−af(b,c)), Θf{m}=s(f(ab,c)−f(a,bc)), [m,Θf]=m{Θf}+Θf{m}=−Θ(δf): sign −1; the model m{F}−F{m} without (−1)^q gives s(a+ac−2ab) for f(a,b)=a on k[x] against δf=a−ac, equal to +Θ(δf) at (x,x,x) and −Θ(δf) at (x,1,x), so not ±Θ(δf) when 2≠0."
       },
       {
        "name": "susp_cup_10",
        "kind": "computation",
-       "statement": "For f∈C¹, y∈C⁰, m{Θf,Θy}(sa)=−s(f(a)y), so Θ(f∪y)=−m{Θf,Θy}; at (1,1) the sign is +1."
+       "statement": "Arity zero (Layer 8 only): for f∈C¹, y∈C⁰, m{Θf,Θy}(sa)=−s(f(a)y), so Θ(f∪y)=−m{Θf,Θy}; at (1,1) the sign is +1."
       }
      ]
     },
@@ -1110,7 +1123,10 @@
       "target:5.2",
       "target:6.1",
       "roadmap:DGAInfinity Layer 0",
-      "roadmap:DGAInfinity Layer 8"
+      "roadmap:DGAInfinity Layer 8",
+      "tauceti:TauCeti.AInfinityAlgebra.hochschildDifferential_eq_brace_sub",
+      "tauceti:TauCeti.AInfinityAlgebra.hochschildDifferential_gerstenhaberBracket",
+      "tauceti:TauCeti.ReducedTensorWords.brace_brace_sub_smul_brace_brace"
      ],
      "api": [],
      "tests": [
@@ -1128,6 +1144,11 @@
        "name": "homotopy_kxy",
        "kind": "compatibility",
        "statement": "On k[x,y], ∂_x∪∂_y+∂_y∪∂_x=−δ(∂_x∂_y); on k[x], ∂∪∂=−δ(∂^{[2]}) with ∂^{[2]}(x^j)=C(j,2)x^{j−2}."
+      },
+      {
+       "name": "homotopy_leibniz",
+       "kind": "compatibility",
+       "statement": "Adding (−1)^{pq} times the identity with f,g exchanged cancels the cup products and gives δ{f,g}={f,δg}−(−1)^q{δf,g} (using (−1)^{pq+p+q}=−(−1)^{(p−1)(q−1)}), which under 6.1 is the pinned Leibniz rule [m,[F,G]]=[[m,F],G]+(−1)^{|F|}[F,[m,G]] at |F|=p−1, |G|=q−1."
       }
      ]
     },
@@ -1135,11 +1156,11 @@
      "id": "6.3",
      "kind": "theorem",
      "name": "HochschildHKR.chainComparison",
-     "statement": "There are signs ν_n∈{±1}, ν₀=1, such that a₀⊗a₁⊗…⊗a_n ↦ ν_n a₀⊗sa₁⊗…⊗sa_n is an isomorphism of complexes from C_•(A,A) (degree n in cohomological degree −n, via ComplexShape.embeddingDownNat) to the Hochschild chains of DGAInfinity Layer 8 of A in degree zero; for k-flat A these are the derived Hochschild chains of KTheoryFiniteLocalFields §4.0, so HH_n(A,A) ≅ HH_n(A/k) naturally in A.",
+     "statement": "There are signs ν_n∈{±1}, ν₀=1, such that a₀⊗a₁⊗…⊗a_n ↦ ν_n a₀⊗sa₁⊗…⊗sa_n is an isomorphism of complexes from C_•(A,A) (degree n in cohomological degree −n, via ComplexShape.embeddingDownNat) to the Hochschild chains of DGAInfinity Layer 8 of A in degree zero; for k-flat A, RefinedTraceMethods §1.1 identifies the homology of the cyclic bar complex with the derived HH_n(A/k) of KTheoryFiniteLocalFields §4.0, so HH_n(A,A) ≅ HH_n(A/k) naturally in A.",
      "hypotheses": [
       "k a commutative ring",
       "A a ring with Algebra k A",
-      "Module.Flat k A for the identification with KTheoryFiniteLocalFields §4.0"
+      "Module.Flat k A for the identification with KTheoryFiniteLocalFields §4.0 through RefinedTraceMethods §1.1"
      ],
      "locator": {
       "source": "Ginz05",
@@ -1149,6 +1170,7 @@
       "target:1.1",
       "roadmap:DGAInfinity Layer 8",
       "roadmap:KTheoryFiniteLocalFields §4.0",
+      "roadmap:RefinedTraceMethods §1.1",
       "mathlib:ComplexShape.embeddingDownNat",
       "mathlib:HomologicalComplex.extend"
      ],
@@ -1162,7 +1184,7 @@
       {
        "name": "chaincomp_Fp_Z",
        "kind": "non-example",
-       "statement": "For k=ℤ, A=𝔽_p (not flat): classical HH₂=0 while derived HH₂(𝔽_p/ℤ)=𝔽_p (RefinedTraceMethods §1.10)."
+       "statement": "For k=ℤ, A=𝔽_p (not flat): classical HH₂=0 while derived HH₂(𝔽_p/ℤ)=𝔽_p (RefinedTraceMethods §§1.1, 1.10)."
       },
       {
        "name": "chaincomp_matrix",
@@ -1175,12 +1197,12 @@
      "id": "6.4",
      "kind": "theorem",
      "name": "HochschildHKR.antisymmetrization",
-     "statement": "For commutative R flat over k: the classical antisymmetrisation ε^cl_n: Ω^n_{R/k}→HH_n(R,R), r₀dr₁∧…∧dr_n ↦ [Σ_σ sgn(σ) r₀⊗r_{σ(1)}⊗…⊗r_{σ(n)}], is a well-defined natural R-linear map carried by 6.3 to ν_n ε_n of RefinedTraceMethods §1.9; the classical projection π^cl_n:[r₀⊗…⊗r_n]↦r₀dr₁∧…∧dr_n is well defined and corresponds to ν_n π_n; π^cl_n∘ε^cl_n=n!; ε^cl₁ is the inverse of 3.4; if R is smooth over k, ε^cl_n is an isomorphism for every n.",
+     "statement": "For commutative R over k: the classical antisymmetrisation ε^cl_n: Ω^n_{R/k}→HH_n(R,R), r₀dr₁∧…∧dr_n ↦ [Σ_σ sgn(σ) r₀⊗r_{σ(1)}⊗…⊗r_{σ(n)}], is a well-defined natural R-linear map and, if R is flat over k, is carried by 6.3 to ν_n ε_n of RefinedTraceMethods §1.9; the classical projection π^cl_n:[r₀⊗…⊗r_n]↦r₀dr₁∧…∧dr_n is well defined and, if R is flat over k, corresponds to ν_n π_n; π^cl_n∘ε^cl_n=n!; ε^cl₁ is the inverse of 3.4; if R is smooth over k, ε^cl_n is an isomorphism for every n. The cycle and π∘b=0 computations hold for every commutative R; flatness enters only the comparison with the derived chains.",
      "hypotheses": [
       "k a commutative ring",
       "R a commutative ring with Algebra k R",
-      "Module.Flat k R",
-      "Algebra.Smooth k R for the last assertion"
+      "Module.Flat k R for the comparison clauses with RefinedTraceMethods §1.9 in (a) and (b)",
+      "Algebra.Smooth k R for the last assertion (d)"
      ],
      "locator": {
       "source": "Ginz05",
@@ -1226,6 +1248,11 @@
        "name": "antisym_zero",
        "kind": "degenerate",
        "statement": "ε^cl₀ is the identity of R=HH₀(R,R)."
+      },
+      {
+       "name": "antisym_Fp_Z",
+       "kind": "non-example",
+       "statement": "For k=ℤ, R=𝔽_p (not flat): Ω^n_{𝔽_p/ℤ}=0 for n≥1 and HH_n(𝔽_p,𝔽_p)=0 for n≥1 (b_n=1 for even n≥2, 0 for odd n), so (a)–(c) hold with both sides zero while derived HH₂(𝔽_p/ℤ)=𝔽_p: only the comparison clauses need flatness."
       }
      ]
     }
@@ -1736,7 +1763,7 @@
      ],
      "locator": {
       "source": "HKR62",
-      "where": "Theorem 3.1, line 210; Ginz05 §9.3"
+      "where": "lines 268–279 (the Koszul-resolution computation inside the proof of Theorem 3.1; Theorem 3.1 itself, line 210, assumes Noetherian regular rings); Ginz05 Lemma 9.3.1, line 2187; Loday98 §3.2; Weibel94 §9.4"
      },
      "prerequisites": [
       "target:4.4",
@@ -1767,7 +1794,7 @@
      ],
      "locator": {
       "source": "Ginz05",
-      "where": "§9.2; HKR62 Theorem 5.2, line 548"
+      "where": "§9.2, lines 2142–2156; HKR62 line 495 (the product formula) with the class identity of 7.5; HKR62 Theorem 5.2, line 548, is the perfect-field case"
      },
      "prerequisites": [
       "target:7.5",
@@ -1803,7 +1830,7 @@
     "Layer 1",
     "Layer 8"
    ],
-   "what": "Suspension and Koszul sign conventions, brace operations and the brace relation (Layer 0); an algebra as a DG algebra in degree zero (Layer 1); Hochschild cochains and chains of DG algebras, cup product, braces, Gerstenhaber bracket, Hochschild differential [m,−] (Layer 8)."
+   "what": "Suspension and Koszul sign conventions, the multiple brace and the brace relation (Layer 0; the single brace and the Gerstenhaber bracket are the pinned TauCeti.ReducedTensorWords.brace and gerstenhaberBracket); an algebra as a DG algebra in degree zero (Layer 1); Hochschild cochains in all arities including arity zero, the cup product as the multiple brace m{F,G}, the bracket and [m,−] on the full complex, and Hochschild chains of DG algebras (Layer 8; in positive arities these are the pinned TauCeti.AInfinityAlgebra.PositiveHochschild.cochains with TauCeti.AInfinityAlgebra.hochschildDifferential)."
   },
   {
    "roadmap": "DerivedModuleAlgebra",
@@ -1822,9 +1849,10 @@
   {
    "roadmap": "RefinedTraceMethods",
    "sections": [
+    "§1.1",
     "§1.9"
    ],
-   "what": "The antisymmetrisation ε_n, projection π_n, π_n ε_n = n!, multiplicativity of ε and the isomorphism ε₁ on derived Hochschild chains."
+   "what": "For k-flat A, the derived Hochschild homology HH_n(A/k) of KTheoryFiniteLocalFields §4.0 is the homology of the cyclic bar complex (C_•(A/k), b) (§1.1); the antisymmetrisation ε_n, projection π_n, π_n ε_n = n!, multiplicativity of ε and the isomorphism ε₁ on derived Hochschild chains (§1.9)."
   }
  ],
  "consumers": [],

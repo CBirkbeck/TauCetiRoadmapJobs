@@ -90,8 +90,20 @@ commutative algebras), `KaehlerDifferential` with `KaehlerDifferential.linearMap
 free modules, `Algebra.Smooth`, `Abelian.Ext` with its computation from projective resolutions,
 `Functor.leftDerived`, the Dold–Kan normalisation of simplicial objects, `TrivSqZeroExt`;
 Tau Ceti's `TauCeti.BalancedTensorProduct`, the Kronecker map and universal coefficient sequence
-(`TauCeti.ChainComplex.kronecker`), and `TauCeti.derivationLieAlgebra` with
-`TauCeti.innerDerivation`.
+(`TauCeti.ChainComplex.kronecker`), `TauCeti.derivationLieAlgebra` with
+`TauCeti.innerDerivation`, and the suspended Hochschild cochains of positive arity of an `A∞`
+algebra: the brace `TauCeti.ReducedTensorWords.brace` and the Gerstenhaber bracket
+`TauCeti.ReducedTensorWords.gerstenhaberBracket` with their pre-Lie, antisymmetry and Jacobi
+identities, the Hochschild differential `TauCeti.AInfinityAlgebra.hochschildDifferential` with
+its Leibniz rule for the bracket, the cochain complex
+`TauCeti.AInfinityAlgebra.PositiveHochschild.complex`, its cohomology
+`TauCeti.AInfinityAlgebra.PositiveHochschild.Cohomology` with the bracket
+`TauCeti.AInfinityAlgebra.PositiveHochschild.cohomologyBracket`, and the normalised cochains
+`TauCeti.AInfinityAlgebra.PositiveHochschild.normalizedCochains` for a strict unit. The pin does
+not include cochains of arity zero (so neither `HH⁰` nor the quotient of the derivations by the
+inner ones), the cup product and the multiple brace `m{F,G}`, or Hochschild chains; these are
+imported from DGAInfinity Layer 8 by section, and Layer 6 compares both with the classical
+complexes.
 
 Variants kept here, each differing in one stated respect from an existing object:
 
@@ -284,8 +296,47 @@ canonical map, and the determinant map is identified as `n!` times it.
 - `TauCeti.AInfinityAlgebra`, `TauCeti.AInfinity.IsSuspension`, `TauCeti.IsDGAlgebra` and
   `TauCeti.IsNonUnitalDGAlgebra.toAInfinityAlgebra` (`TauCeti/Algebra/Homology/AInfinity/`): the
   suspended bar convention of DGAInfinity, which fixes the sign of `Θ` in the conventions. The
-  pinned Tau Ceti contains no Hochschild cochain or brace declarations; those are imported from
-  DGAInfinity Layers 0 and 8 by section.
+  suspension sign of `TauCeti.AInfinity.IsSuspension` is `(−1)^{suspExp}` with
+  `suspExp = Σ_i (n − 1 − i) d_i` for inputs of degrees `d_i` (`MultilinearMap.suspend` and
+  `MultilinearMap.suspExp`, `TauCeti/LinearAlgebra/Graded/Shift.lean`), which is `0` on inputs of
+  degree zero: `Θf(sa₁ ⊗ ⋯ ⊗ sa_n) = s f(a₁,…,a_n)` with no sign. The shifted grading
+  `𝒜.grading.shift 1` places `sA` in degree `−1` (`TauCeti/Algebra/Module/GradedModule/Shift.lean`:
+  the degree-`p` piece of the shift by `1` is the degree-`(p + 1)` piece); the suspension changes
+  the grading, not the module.
+- `TauCeti.ReducedTensorWords.brace` and `TauCeti.ReducedTensorWords.gerstenhaberBracket`
+  (`TauCeti/LinearAlgebra/TensorCoalgebra/Brace.lean`): for a graded module `M`, its reduced tensor
+  coalgebra `Tᶜ(M)` (`TauCeti.ReducedTensorWords`, words of positive length) and linear maps
+  `F, G : Tᶜ(M) → M` of degrees `p` and `q`, the brace `F{G} = F ∘ D G`, where `D G`
+  (`TauCeti.ReducedTensorWords.gradedCoderiv`) inserts `G` into every block of consecutive letters
+  with the Koszul sign `(−1)^{q · (sum of the degrees of the letters before the block)}`, and the
+  bracket `[F,G] = F{G} − (−1)^{pq} G{F}`; with the pre-Lie identity
+  `F{G}{H} − (−1)^{qr} F{H}{G} = F{[G,H]}`
+  (`TauCeti.ReducedTensorWords.brace_brace_sub_smul_brace_brace`), graded antisymmetry
+  (`TauCeti.ReducedTensorWords.gerstenhaberBracket_swap`) and the graded Jacobi identity
+  (`TauCeti.ReducedTensorWords.leibniz_gerstenhaberBracket`). These are the operations §6.1
+  transports; nothing is assumed of them beyond their definitions.
+- `TauCeti.AInfinityAlgebra.hochschildDifferential`
+  (`TauCeti/Algebra/Homology/AInfinity/Algebra/Hochschild/Basic.lean`): for an `A∞` algebra `𝒜`
+  with suspended Taylor map `m` and a cochain `F` of degree `q`, the Hochschild differential
+  `[m, F] = m{F} − (−1)^q F{m}` (`TauCeti.AInfinityAlgebra.hochschildDifferential_eq_brace_sub`),
+  squaring to zero, with the Leibniz rule `[m,[F,G]] = [[m,F],G] + (−1)^p [F,[m,G]]` for `F` of
+  degree `p` (`TauCeti.AInfinityAlgebra.hochschildDifferential_gerstenhaberBracket`) and, for `ψ`
+  of degree zero, the pre-Lie identity `m{ψ}{ψ} − m{ψ{ψ}} = [m,ψ]{ψ} + ψ{[m,ψ]} − [m, ψ{ψ}]`
+  (`TauCeti.AInfinityAlgebra.brace_brace_sub_brace_brace_eq_hochschildDifferential`). All degrees
+  are suspended degrees: an unsuspended map of arity `n` and internal degree `r` has degree
+  `r + n − 1`.
+- `TauCeti.AInfinityAlgebra.PositiveHochschild.cochains`,
+  `TauCeti.AInfinityAlgebra.PositiveHochschild.complex`,
+  `TauCeti.AInfinityAlgebra.PositiveHochschild.bracket`,
+  `TauCeti.AInfinityAlgebra.PositiveHochschild.Cohomology`,
+  `TauCeti.AInfinityAlgebra.PositiveHochschild.cohomologyBracket` and
+  `TauCeti.AInfinityAlgebra.PositiveHochschild.normalizedCochains`
+  (`TauCeti/Algebra/Homology/AInfinity/Algebra/Hochschild/Complex.lean`, `Cohomology.lean` and
+  `Normalized.lean`): the homogeneous cochains of degree `p`, the `ℤ`-indexed cochain complex in
+  `ModuleCat k` with differential `[m,−]`, the bracket of homogeneous cochains, the cohomology
+  `Z^p/B^p` with the induced bracket (bilinear, graded antisymmetric, Jacobi), and the cochains
+  vanishing on words containing a strict unit `e`. The complex has positive arities only: no
+  arity-zero cochains, no cup product, no multiple brace, no chains.
 - `CategoryTheory.ProjectiveResolution.extLinearEquiv` and
   `CategoryTheory.ProjectiveResolution.isoExt_hom_comp_homologyMap`
   (`TauCeti/Algebra/Homology/Ext/ProjectiveResolution.lean`): computing `Ext` from two resolutions
@@ -294,18 +345,25 @@ canonical map, and the determinant map is identified as `n!` times it.
 ### From TauCetiRoadmap.DGAInfinity
 
 - Standing conventions and Layer 0: cohomological grading, the degree `−1` suspension `s`, the
-  Koszul tensor-map rule `(f ⊗ g)(x ⊗ y) = (−1)^{|g||x|} f(x) ⊗ g(y)`, and brace operations with the
-  exact Koszul sign for substituting an operation after the first inputs. Assumed: the brace
-  `F{G}` and the multiple brace `F{G,H}` obey this rule and the brace relation
-  `(F{G}){H} − F{G{H}} = F{G,H} + (−1)^{|G||H|} F{H,G}`.
+  Koszul tensor-map rule `(f ⊗ g)(x ⊗ y) = (−1)^{|g||x|} f(x) ⊗ g(y)`, and the multiple brace
+  `F{G,H}` with the exact Koszul sign for substituting operations after the first inputs.
+  Assumed: Layer 0's single brace `F{G}` is the pinned `TauCeti.ReducedTensorWords.brace` (the
+  same Koszul sign), the multiple brace obeys the same rule, and the brace relation
+  `(F{G}){H} − F{G{H}} = F{G,H} + (−1)^{|G||H|} F{H,G}` holds; its antisymmetrisation in `(G,H)` is
+  the pinned pre-Lie identity `TauCeti.ReducedTensorWords.brace_brace_sub_smul_brace_brace`.
 - Layer 1: an ordinary `k`-algebra is a DG algebra concentrated in degree zero with zero
   differential.
 - Layer 8: the Hochschild cochains of such an algebra as coderivation components
-  `(sA)^{⊗n} → sA`, the cup product, braces, the Gerstenhaber bracket
-  `[F,G] = F{G} − (−1)^{|F||G|} G{F}` and the Hochschild differential `[m, −]`; and the Hochschild
-  chains of the algebra (the cyclic bar construction with differential determined by `m`). Assumed:
-  for an algebra in degree zero the chain differential is, termwise, the suspended classical
-  boundary up to a sign depending only on the degree; §6.3 fixes the resulting signs.
+  `(sA)^{⊗n} → sA` in all arities `n ≥ 0`, the cup product as the multiple brace `m{F,G}`, the
+  Gerstenhaber bracket `[F,G] = F{G} − (−1)^{|F||G|} G{F}` and the Hochschild differential `[m, −]`
+  on the full complex; and the Hochschild chains of the algebra (the cyclic bar construction with
+  differential determined by `m`). Assumed: in arities `n ≥ 1` Layer 8's cochains, brace, bracket
+  and differential are the pinned `TauCeti.AInfinityAlgebra.PositiveHochschild.cochains`,
+  `TauCeti.ReducedTensorWords.brace`, `TauCeti.ReducedTensorWords.gerstenhaberBracket` and
+  `TauCeti.AInfinityAlgebra.hochschildDifferential`, and the arity-zero cochains (elements of
+  `sA`) extend them with the same Koszul signs; for an algebra in degree zero the chain
+  differential is, termwise, the suspended classical boundary up to a sign depending only on the
+  degree; §6.3 fixes the resulting signs.
 
 ### From TauCetiRoadmap.DerivedModuleAlgebra
 
@@ -323,6 +381,10 @@ canonical map, and the determinant map is identified as `n!` times it.
 
 ### From TauCetiRoadmap.RefinedTraceMethods
 
+- §1.1 (The cyclic enhancement of supplied derived Hochschild chains): for an ordinary `k`-algebra
+  `A` flat as a `k`-module, the derived Hochschild homology `HH_n(A/k)` of KTheoryFiniteLocalFields
+  §4.0 is the homology of the cyclic bar complex `(C_•(A/k), b)`, the derived object being the
+  totalisation of the cyclic bar construction; for non-flat `A` the two differ (`k = ℤ`, `A = 𝔽_p`).
 - §1.9 (The antisymmetrisation map and the HKR projection): for commutative `A` flat over `k`, the
   antisymmetrisation `ε_n : Ω^n_{A/k} → HH_n(A/k)` and the projection `π_n`, with the formulas of
   the conventions, `π_n ∘ ε_n = n!`, multiplicativity of `ε` for the shuffle product, naturality
@@ -345,8 +407,10 @@ Layer 2 deduces the normalisation theorem from Mathlib's Dold–Kan normalisatio
 identifies the low degrees and classifies square-zero extensions. Layer 4 constructs the bar
 resolution and identifies the theory with `Ext` and `Tor` over `Aᵉ` for `k`-projective `A`.
 Layer 5 constructs the cup product, the graded algebra `HH^•(A,A)` and its comparison with the
-Yoneda product. Layer 6 compares the complexes with DGAInfinity Layer 8 and KTheoryFiniteLocalFields
-§4.0, proves Gerstenhaber's homotopy formula through the transported braces, and describes the
+Yoneda product. Layer 6 compares the cochain complex with the pinned positive-arity Hochschild complex of
+Tau Ceti and DGAInfinity Layer 8, the chain complex with Layer 8's chains and, for flat
+algebras, with the derived chains of KTheoryFiniteLocalFields §4.0 through RefinedTraceMethods
+§1.1, proves Gerstenhaber's homotopy formula through the transported braces, and describes the
 antisymmetrisation of RefinedTraceMethods §1.9 on the classical complex. Layer 7 proves the
 duality lemma, extends the exterior-power pairing to finite projective modules, defines
 polyvector fields and the HKR maps, and proves the cohomological HKR theorem. Layer 8 computes
@@ -927,52 +991,109 @@ resolutions. No roadmap supplier is used.
 
 ### 6.1 Cochains of an algebra in degree zero
 
-Regard an ordinary `k`-algebra `A` as a DG algebra concentrated in degree zero (DGAInfinity
-Layer 1). Prove that the suspension `Θ` of the conventions, `Θf ∘ s^{⊗n} = s ∘ f`, is a `k`-linear
-isomorphism from `C^n(A,A)` onto the arity-`n` Hochschild cochains of DGAInfinity Layer 8 (all of
-Gerstenhaber degree `n − 1`), and that for `f ∈ C^p(A,A)` and `g ∈ C^q(A,A)`:
-`Θ(δf) = (−1)^{p+1} [m, Θf]`; `Θ(f ∪ g) = (−1)^{p(q−1)} m{Θf, Θg}`; `Θ(f ∘ g) = Θf{Θg}` with `f ∘ g` the
-Gerstenhaber composition of the conventions; and `Θ{f,g} = [Θf, Θg]` with
-`{f,g} = f ∘ g − (−1)^{(p−1)(q−1)} g ∘ f`. Consequently `Θ` identifies `HH^n(A,A)` with the cohomology of
-DGAInfinity Layer 8's Hochschild cochains of `A` in Gerstenhaber degree `n − 1`, and transports
-Layer 8's Gerstenhaber bracket to an operation `{−,−} : HH^p(A,A) × HH^q(A,A) → HH^{p+q−1}(A,A)`
-(Ginz05 §6.6, lines 1351–1375; Ger63 §7; the sign dictionary follows from DGAInfinity's Koszul
-tensor-map rule and suspension square).
+Regard an ordinary `k`-algebra `A` as a DG algebra concentrated in degree zero with zero
+differential (DGAInfinity Layer 1): the grading with `A` in degree `0` and the zero differential
+satisfy `TauCeti.IsNonUnitalDGAlgebra`, and `𝒜 = TauCeti.IsNonUnitalDGAlgebra.toAInfinityAlgebra`
+is the `A∞` algebra with `m₂(a,b) = ab` and all other operations zero, whose suspended Taylor map
+`m` is `sa ⊗ sb ↦ s(ab)` (no sign: `TauCeti.AInfinity.IsSuspension` on degree-zero inputs).
+Prove that for every `n ≥ 1` the suspension `Θ` of the conventions, `Θf ∘ s^{⊗n} = s ∘ f`, is a
+`k`-linear isomorphism from `C^n(A,A)` onto
+`TauCeti.AInfinityAlgebra.PositiveHochschild.cochains 𝒜 (n − 1)`: a homogeneous map of degree
+`n − 1` out of the reduced tensor coalgebra on `sA`, with `sA` in degree `−1`, is supported on the
+words of length `n`, so the cochains of degree `n − 1` are exactly the arity-`n` cochains, and
+`Θf` is `f` itself on the length-`n` summand of `TauCeti.ReducedTensorWords k A` and `0` on the
+others. Prove that for `f ∈ C^p(A,A)` and `g ∈ C^q(A,A)` with `p, q ≥ 1`:
+`Θ(δf) = (−1)^{p+1} · TauCeti.AInfinityAlgebra.hochschildDifferential 𝒜 (p − 1) (Θf)`;
+`Θ(f ∘ g) = TauCeti.ReducedTensorWords.brace (Θf) (Θg) (q − 1)` with `f ∘ g` the Gerstenhaber
+composition of the conventions (the brace inserts `Θg`, of degree `q − 1`, after `i − 1` letters
+of degree `−1` with the Koszul sign `(−1)^{(q−1)(i−1)}`, which is Ginzburg's sign); and
+`Θ{f,g} = TauCeti.ReducedTensorWords.gerstenhaberBracket (p − 1) (q − 1) (Θf) (Θg)` with
+`{f,g} = f ∘ g − (−1)^{(p−1)(q−1)} g ∘ f`. Prove the remaining clauses of the dictionary against
+DGAInfinity Layer 8, which extends the pinned cochains by the arity-zero cochains `C⁰ = A` and
+carries the cup product as the multiple brace: `Θ(δx) = −[m, Θx]` for `x ∈ C⁰`; `Θ(f ∘ y) = Θf{Θy}`
+and `Θ{f,y} = [Θf, Θy]` for `y ∈ C⁰` by the same brace rule; and
+`Θ(f ∪ g) = (−1)^{p(q−1)} m{Θf, Θg}` for all `p, q ≥ 0`. Consequently `Θ` identifies `HH^n(A,A)`
+for `n ≥ 2` with `TauCeti.AInfinityAlgebra.PositiveHochschild.Cohomology 𝒜 (n − 1)` and
+transports `TauCeti.AInfinityAlgebra.PositiveHochschild.cohomologyBracket` to an operation
+`{−,−} : HH^p(A,A) × HH^q(A,A) → HH^{p+q−1}(A,A)` for `p, q ≥ 2`, graded antisymmetric and
+satisfying the graded Jacobi identity for the degrees `p − 1`, `q − 1`
+(`TauCeti.AInfinityAlgebra.PositiveHochschild.cohomologyBracket_swap`,
+`TauCeti.AInfinityAlgebra.PositiveHochschild.leibniz_cohomologyBracket`); in degree `0` the pinned
+cohomology is `Z¹(A,A) = Der_k(A)`, there being no arity-zero cochain to quotient by, and the
+extension of `{−,−}` to the degrees involving `HH¹` and `HH⁰` is the transport of Layer 8's
+bracket on the full complex, which identifies `HH^n(A,A)` with Layer 8's Hochschild cohomology of
+`A` in Gerstenhaber degree `n − 1` for every `n ≥ 0` (Ginz05 §6.6, lines 1351–1375; Ger63 §7; the
+sign dictionary follows from DGAInfinity's Koszul tensor-map rule and suspension square).
 
-*Needs:* §§1.2, 5.1; DGAInfinity Layer 0 (suspension, braces and their Koszul signs); DGAInfinity
-Layer 1 (an algebra as a DG algebra in degree zero); DGAInfinity Layer 8 (Hochschild cochains,
-`[m,−]`, braces, cup product, Gerstenhaber bracket); Tau Ceti `TauCeti.AInfinity.IsSuspension`,
-`TauCeti.IsDGAlgebra`, `TauCeti.IsNonUnitalDGAlgebra.toAInfinityAlgebra`.
+*Needs:* §§1.2, 5.1; Tau Ceti `TauCeti.AInfinity.IsSuspension`, `TauCeti.IsDGAlgebra`,
+`TauCeti.IsNonUnitalDGAlgebra.toAInfinityAlgebra`, `TauCeti.ReducedTensorWords.brace`,
+`TauCeti.ReducedTensorWords.gerstenhaberBracket`,
+`TauCeti.AInfinityAlgebra.hochschildDifferential` with
+`TauCeti.AInfinityAlgebra.hochschildDifferential_eq_brace_sub`,
+`TauCeti.AInfinityAlgebra.PositiveHochschild.cochains`,
+`TauCeti.AInfinityAlgebra.PositiveHochschild.complex`,
+`TauCeti.AInfinityAlgebra.PositiveHochschild.Cohomology`,
+`TauCeti.AInfinityAlgebra.PositiveHochschild.cohomologyBracket`; DGAInfinity Layer 0 (the
+multiple brace and its Koszul sign); DGAInfinity Layer 1 (an algebra as a DG algebra in degree
+zero); DGAInfinity Layer 8 (the arity-zero cochains, the cup product as `m{−,−}`, the bracket on
+the full complex).
 
 - On degree-zero inputs `Θf(sa₁ ⊗ ⋯ ⊗ sa_n) = s f(a₁,…,a_n)`; `Θ` is natural for algebra
   isomorphisms.
 - On `C¹`, `{f,g} = f ∘ g − g ∘ f` is the commutator of linear maps, so `{−,−}` on `HH¹(A,A)` is the
-  bracket of `Der_k(A,A)/Inn(A,A)` inherited from `TauCeti.derivationLieAlgebra`.
+  bracket of `Der_k(A,A)/Inn(A,A)` inherited from `TauCeti.derivationLieAlgebra`; on the pinned
+  complex it is the bracket of `TauCeti.AInfinityAlgebra.PositiveHochschild.Cohomology 𝒜 0 = Der_k(A)`
+  before the quotient by inner derivations.
 - The Hochschild cohomology of Layer 8 for `A` is concentrated in Gerstenhaber degrees `≥ −1`, the
-  degree `−1` part being `HH⁰(A,A) = Z(A)`.
+  degree `−1` part being `HH⁰(A,A) = Z(A)`; the pinned positive-arity complex sees the degrees
+  `≥ 0` and misses the arity-zero cochains, so its degree-`0` cohomology is `Der_k(A)` rather than
+  `HH¹(A,A)`, and its cohomology in degree `n − 1 ≥ 1` is `HH^n(A,A)`.
 
 **Checks.**
 
-- `n = 0`: for `x ∈ C⁰`, `[m, Θx](sa) = m(sx, sa) − m(sa, sx) = s(xa − ax)`, the second sign coming
-  from moving `Θx` (degree `−1`) past `sa` (degree `−1`); and `Θ(δx)(sa) = s(ax − xa)`, so the sign is
+- `n = 0` (arity zero, DGAInfinity Layer 8 only): for `x ∈ C⁰`,
+  `[m, Θx](sa) = m(sx, sa) − m(sa, sx) = s(xa − ax)`, the second sign coming from moving `Θx`
+  (degree `−1`) past `sa` (degree `−1`); and `Θ(δx)(sa) = s(ax − xa)`, so the sign is
   `(−1)^{0+1} = −1`.
-- `n = 1`: `[m, Θf](sa ⊗ sb) = s(f(a) b + a f(b) − f(ab)) = Θ(δf)(sa ⊗ sb)`, sign `+1`; a dictionary with
-  a uniform sign would fail one of these two cases.
-- `(p,q) = (1,0)`: `m{Θf, Θy}(sa) = −s(f(a) y)`, the sign of moving `Θy` past `sa`, so
-  `Θ(f ∪ y) = −m{Θf, Θy} = (−1)^{1·(0−1)} m{Θf,Θy}`; at `(p,q) = (1,1)` the sign is `+1`.
+- `n = 1` (at the pin, `TauCeti.AInfinityAlgebra.hochschildDifferential_eq_brace_sub` with
+  `q = 0`): `m{Θf}(sa ⊗ sb) = s(f(a) b + a f(b))` (no sign: `Θf` has degree `0`),
+  `Θf{m}(sa ⊗ sb) = s f(ab)`, so `[m, Θf](sa ⊗ sb) = s(f(a) b + a f(b) − f(ab)) = Θ(δf)(sa ⊗ sb)`,
+  sign `+1`; a dictionary with a uniform sign would fail one of the two cases `n = 0`, `n = 1`.
+- `n = 2` (at the pin, `q = 1`): `m{Θf}(sa ⊗ sb ⊗ sc) = s(f(a,b) c − a f(b,c))` (the sign of moving
+  `Θf`, of degree `1`, past `sa`), `Θf{m}(sa ⊗ sb ⊗ sc) = s(f(ab, c) − f(a, bc))` (the sign of moving
+  `m` past `sa`), and `[m, Θf] = m{Θf} + Θf{m}`, so
+  `[m, Θf](sa ⊗ sb ⊗ sc) = s(f(a,b) c − a f(b,c) + f(ab,c) − f(a,bc)) = −Θ(δf)(sa ⊗ sb ⊗ sc)`, sign
+  `(−1)^{2+1} = −1`; the model `m{F} − F{m}` without the `(−1)^q` would give
+  `s(f(a,b) c − a f(b,c) − f(ab,c) + f(a,bc))`: for `f(a,b) = a` on `k[x]` this is `s(a + ac − 2ab)`
+  while `δf(a,b,c) = a − ac`, and at `(x,x,x)` the model equals `+Θ(δf)` but at `(x,1,x)` it equals
+  `−Θ(δf)`, so it is not `±Θ(δf)` when `2 ≠ 0` in `k`.
+- `(p,q) = (1,0)` (arity zero, Layer 8 only): `m{Θf, Θy}(sa) = −s(f(a) y)`, the sign of moving `Θy`
+  past `sa`, so `Θ(f ∪ y) = −m{Θf, Θy} = (−1)^{1·(0−1)} m{Θf,Θy}`; at `(p,q) = (1,1)` the sign is `+1`.
 
 ### 6.2 Gerstenhaber's homotopy formula and graded commutativity
 
 Prove that for `f ∈ C^p(A,A)` and `g ∈ C^q(A,A)`,
 `g ∪ f − (−1)^{pq} f ∪ g = δf ∘ g + (−1)^q (δ(f ∘ g) − f ∘ δg)`, and deduce that the cup product on
 `HH^•(A,A)` is graded commutative, `[g] ∪ [f] = (−1)^{pq} [f] ∪ [g]` (Ger63 §7; Ginz05
-Proposition 6.6.4, line 1379; Loday98 §1.5). One route transports DGAInfinity's brace relation
+Proposition 6.6.4, line 1379; Loday98 §1.5). One route transports the brace relation of DGAInfinity Layer 0
 through §6.1: with `D = [m, −]`, the relation gives
 `(DF){G} + (−1)^{|F|} F{DG} − D(F{G}) = m{F,G} + (−1)^{|F||G|} m{G,F}`, which §6.1's dictionary turns
-into the displayed identity. The identity printed as Ginz05 (6.6.3), line 1368, does not hold with
-the coboundary of Ginz05 line 1058 (see the Checks); the form above is the one used.
+into the displayed identity. The multiple brace `m{F,G}` is not at the pin, so this step is
+Layer 0's; what the pin supplies is `[m, F] = m{F} − (−1)^{|F|} F{m}`
+(`TauCeti.AInfinityAlgebra.hochschildDifferential_eq_brace_sub`), the pre-Lie identity
+`TauCeti.ReducedTensorWords.brace_brace_sub_smul_brace_brace` (the antisymmetric part of the
+brace relation, in which the multiple braces cancel), and the Leibniz rule
+`D[F,G] = [DF,G] + (−1)^{|F|} [F,DG]`
+(`TauCeti.AInfinityAlgebra.hochschildDifferential_gerstenhaberBracket`), which is the
+antisymmetrisation of the displayed identity in `(f,g)` and the reason the bracket of §6.1
+descends to cohomology. The identity printed as Ginz05 (6.6.3), line 1368, does not hold with the
+coboundary of Ginz05 line 1058 (see the Checks); the form above is the one used.
 
-*Needs:* §§5.2, 6.1; DGAInfinity Layer 0 (the brace relation); DGAInfinity Layer 8 (`[m,−]`).
+*Needs:* §§5.2, 6.1; DGAInfinity Layer 0 (the brace relation with the multiple brace);
+DGAInfinity Layer 8 (the cup product as `m{−,−}` and the arity-zero cochains); Tau Ceti
+`TauCeti.AInfinityAlgebra.hochschildDifferential_eq_brace_sub`,
+`TauCeti.AInfinityAlgebra.hochschildDifferential_gerstenhaberBracket`,
+`TauCeti.ReducedTensorWords.brace_brace_sub_smul_brace_brace`.
 
 **Checks.**
 
@@ -985,6 +1106,12 @@ the coboundary of Ginz05 line 1058 (see the Checks); the form above is the one u
 - On `k[x,y]`, `∂_x ∪ ∂_y + ∂_y ∪ ∂_x = −δ(∂_x ∂_y)`, so `[∂_x ∪ ∂_y] = −[∂_y ∪ ∂_x]` although the
   cochains differ (§5.1 Checks). On `k[x]`, `∂ ∪ ∂ = −δ(∂^{[2]})` with `∂^{[2]}(x^j) = C(j,2) x^{j−2}`,
   defined over every `k`: at `(x,x)`, `−δ(∂^{[2]})(x,x) = −(0 − 1 + 0) = 1 = (∂ ∪ ∂)(x,x)`.
+- Antisymmetrisation: adding `(−1)^{pq}` times the identity with `f` and `g` exchanged cancels the
+  cup products and leaves `δ{f,g} = {f, δg} − (−1)^q {δf, g}`, using
+  `(−1)^{pq+p+q} = −(−1)^{(p−1)(q−1)}`; under §6.1 this is the pinned Leibniz rule
+  `[m,[F,G]] = [[m,F],G] + (−1)^{|F|} [F,[m,G]]` at `|F| = p − 1`, `|G| = q − 1`, since
+  `Θ(δ{f,g}) = (−1)^{p+q} D[Θf,Θg]`, `DΘf = (−1)^{p+1} Θ(δf)` and `DΘg = (−1)^{q+1} Θ(δg)`. A
+  wrong sign on the `(−1)^q` of the displayed identity would contradict the pinned rule.
 
 ### 6.3 Chains of a flat algebra
 
@@ -992,13 +1119,17 @@ Prove that there are signs `ν_n ∈ {±1}` with `ν₀ = 1` such that
 `a₀ ⊗ a₁ ⊗ ⋯ ⊗ a_n ↦ ν_n a₀ ⊗ sa₁ ⊗ ⋯ ⊗ sa_n` is an isomorphism of complexes from `C_•(A,A)`
 (homological degree `n` placed in cohomological degree `−n`) to the Hochschild chains of
 DGAInfinity Layer 8 of `A` in degree zero; the signs are determined by Layer 8's chain differential
-through the Koszul rule. For `A` flat as a `k`-module these chains are the derived Hochschild
-chains of KTheoryFiniteLocalFields §4.0, so `HH_n(A,A) ≅ HH_n(A/k)`, naturally in `A`; under this
+through the Koszul rule. For `A` flat as a `k`-module, RefinedTraceMethods §1.1 identifies the
+homology of the cyclic bar complex with the derived Hochschild homology `HH_n(A/k)` of
+KTheoryFiniteLocalFields §4.0 (the derived object is the totalisation of the cyclic bar
+construction of a `k`-flat algebra), so `HH_n(A,A) ≅ HH_n(A/k)`, naturally in `A`; under this
 isomorphism the check `HH₀(A) = A/[A,A]` of §4.0 is §3.1 (Loday98 §1.1; the identification of the
 underlying modules is that of Ginz05 §5.1, lines 963–976).
 
 *Needs:* §1.1; DGAInfinity Layer 8 (Hochschild chains); KTheoryFiniteLocalFields §4.0 (Cyclic
-homology foundations); Mathlib `ComplexShape.embeddingDownNat` (the embedding `n ↦ −n` of
+homology foundations, the derived `HH_n(A/k)`); RefinedTraceMethods §1.1 (the cyclic enhancement
+of supplied derived Hochschild chains: for `k`-flat `A`, `HH(A/k)` is the homology of
+`(C_•(A/k), b)`); Mathlib `ComplexShape.embeddingDownNat` (the embedding `n ↦ −n` of
 `ComplexShape.down ℕ` into `ComplexShape.up ℤ`) with `HomologicalComplex.extend`.
 
 **Checks.**
@@ -1006,24 +1137,29 @@ homology foundations); Mathlib `ComplexShape.embeddingDownNat` (the embedding `n
 - For `A = k` both complexes have `k` in every degree and differentials alternating between `0`
   and an isomorphism; the comparison is the identity up to the signs `ν_n`.
 - For `k = ℤ` and `A = 𝔽_p`, which is not flat, the classical `HH₂(𝔽_p,𝔽_p) = 0` (§3.4 Checks), while
-  the derived `HH₂(𝔽_p/ℤ) = 𝔽_p` (RefinedTraceMethods §1.10): the flatness hypothesis is needed for
-  the second identification.
+  the derived `HH₂(𝔽_p/ℤ) = 𝔽_p` (RefinedTraceMethods §§1.1 and 1.10): the flatness hypothesis is
+  needed for the second identification.
 - For `A = Mat₂(k)` the degree-one boundaries correspond: `b(E₁₂ ⊗ E₂₁) = E₁₁ − E₂₂` is sent to
   `ν₀(E₁₁ − E₂₂)`, so `ν₁` is the sign of Layer 8's degree-one differential on `a₀ ⊗ sa₁`.
 
 ### 6.4 Antisymmetrisation and projection on the classical complex
 
-For a commutative `k`-algebra `R` flat over `k`, prove: (a) the classical antisymmetrisation
+For a commutative `k`-algebra `R`, prove: (a) the classical antisymmetrisation
 `ε^cl_n : Ω^n_{R/k} → HH_n(R,R)`, `r₀ dr₁ ∧ ⋯ ∧ dr_n ↦ [Σ_{σ∈S_n} sgn(σ) r₀ ⊗ r_{σ(1)} ⊗ ⋯ ⊗ r_{σ(n)}]`, is a
-well-defined natural `R`-linear map, and §6.3 carries it to `ν_n ε_n` of RefinedTraceMethods §1.9;
-(b) the classical projection `π^cl_n : HH_n(R,R) → Ω^n_{R/k}`, `[r₀ ⊗ ⋯ ⊗ r_n] ↦ r₀ dr₁ ∧ ⋯ ∧ dr_n`, is
-well-defined and corresponds to `ν_n π_n`; (c) `π^cl_n ∘ ε^cl_n = n! · id`, and `ε^cl₁` is the
-inverse of the isomorphism of §3.4; (d) if `R` is smooth over `k`, `ε^cl_n` is an isomorphism for
-every `n` (Ginz05 §9.2, lines 2142–2156; AV20 lines 237–243; Loday98 §1.3 and §3.4, Theorem 3.4.4;
-Weibel94 §9.4).
+well-defined natural `R`-linear map, and, if `R` is flat over `k`, §6.3 carries it to `ν_n ε_n` of
+RefinedTraceMethods §1.9; (b) the classical projection `π^cl_n : HH_n(R,R) → Ω^n_{R/k}`,
+`[r₀ ⊗ ⋯ ⊗ r_n] ↦ r₀ dr₁ ∧ ⋯ ∧ dr_n`, is well-defined and, if `R` is flat over `k`, corresponds to
+`ν_n π_n`; (c) `π^cl_n ∘ ε^cl_n = n! · id`, and `ε^cl₁` is the inverse of the isomorphism of §3.4;
+(d) if `R` is smooth over `k` (hence flat, `Algebra.Smooth.flat`), `ε^cl_n` is an isomorphism for
+every `n`. Flatness enters only through the comparison with the derived chains: the
+antisymmetrised chain is a cycle (the inner terms of `b` cancel in the pairs `σ, σ ∘ (i i+1)` and
+the first term of `σ` cancels the last term of its cyclic shift) and `π^cl_n ∘ b = 0` by the Leibniz
+rule of `d`, for every commutative `R` (Ginz05 §9.2, lines 2142–2156; AV20 lines 237–243; Loday98
+§1.3 and §3.4, Theorem 3.4.4; Weibel94 §9.4).
 
-*Needs:* §§1.5, 3.4, 6.3; RefinedTraceMethods §1.9 (the antisymmetrisation map and the HKR
-projection); gap smooth-hkr-antisymmetrisation (for (d)); Mathlib `Algebra.Smooth.flat`.
+*Needs:* §§1.5, 3.4; §6.3 and RefinedTraceMethods §1.9 (the antisymmetrisation map and the HKR
+projection) for the comparison clauses of (a) and (b); gap smooth-hkr-antisymmetrisation (for
+(d)); Mathlib `Algebra.Smooth.flat`.
 
 **Checks.**
 
@@ -1032,6 +1168,10 @@ projection); gap smooth-hkr-antisymmetrisation (for (d)); Mathlib `Algebra.Smoot
 - For `R = k[x]/(x²)` with `k` a nonzero field, `R` is flat but not smooth, `Ω²_{R/k} = 0` while
   `HH₂(R,R) ≠ 0`, so `ε^cl₂` is not surjective and (d) needs smoothness.
 - `ε^cl₀` is the identity of `R = HH₀(R,R)`.
+- For `k = ℤ` and `R = 𝔽_p`, which is not flat: `Ω^n_{𝔽_p/ℤ} = 0` for `n ≥ 1` and the classical
+  complex is `𝔽_p` in every degree with `b_n = 1` for even `n ≥ 2` and `0` for odd `n`, so
+  `HH_n(𝔽_p,𝔽_p) = 0` for `n ≥ 1`; (a)–(c) hold with both sides zero, while the derived
+  `HH₂(𝔽_p/ℤ) = 𝔽_p` is not `HH₂(𝔽_p,𝔽_p)`: the comparison clauses need flatness, (a)–(c) do not.
 
 ### Examples
 
@@ -1041,8 +1181,12 @@ antisymmetrised chain `1 ⊗ x ⊗ y − 1 ⊗ y ⊗ x` represents `ε(dx ∧ dy
 
 ### Dependencies
 
-Layers 1–5; DGAInfinity Layers 0, 1 and 8; KTheoryFiniteLocalFields §4.0; RefinedTraceMethods
-§1.9; the gap smooth-hkr-antisymmetrisation, used only in §6.4(d).
+Layers 1–5; the pinned Tau Ceti braces, Gerstenhaber bracket, Hochschild differential and
+positive-arity Hochschild complex (`TauCeti.ReducedTensorWords.brace`,
+`TauCeti.AInfinityAlgebra.hochschildDifferential`,
+`TauCeti.AInfinityAlgebra.PositiveHochschild.complex`); DGAInfinity Layers 0, 1 and 8;
+KTheoryFiniteLocalFields §4.0; RefinedTraceMethods §§1.1 and 1.9; the gap
+smooth-hkr-antisymmetrisation, used only in §6.4(d).
 
 ## Layer 7: Polyvector fields and the cohomological HKR theorem
 
@@ -1314,8 +1458,11 @@ For `R = MvPolynomial (Fin m) k` over any commutative `k`, prove that `HH_n(R,R)
 `[∂_{i₁} ∪ ⋯ ∪ ∂_{i_n}]`, `∂_i = MvPolynomial.pderiv i`; that the two bases are dual under `h_n`; and
 that `HH_n(R,R) = HH^n(R,R) = 0` for `n > m`. Consequently `ε^cl_n` is an isomorphism, and
 `D₁ ∧ ⋯ ∧ D_n ↦ [D₁ ∪ ⋯ ∪ D_n]` is a well-defined isomorphism `T^n_{R/k} ≅ HH^n(R,R)` (the map `Ψ_n` of
-§7.6), for polynomial algebras over every `k`, without the gap used in §6.4(d) (HKR62 Theorem 3.1, line 210;
-Ginz05 §9.3; Loday98 §3.2; Weibel94 §9.4).
+§7.6), for polynomial algebras over every `k`, without the gap used in §6.4(d) (HKR62 lines
+268–279, the Koszul-resolution computation inside the proof of Theorem 3.1, which uses only the
+regular sequence of §8.1 and not the Noetherian and regularity hypotheses of the theorem's
+statement at line 210; Ginz05 Lemma 9.3.1, line 2187, for a regular sequence in a commutative
+`k`-algebra; Loday98 §3.2, symmetric algebras over any `k`; Weibel94 §9.4).
 
 *Needs:* §§4.4, 4.5, 6.2, 6.4(a), 7.1, 7.4, 7.5, 8.2, 8.3; Mathlib `MvPolynomial.pderiv`,
 `CategoryTheory.ProjectiveResolution.isoLeftDerivedObj`; Tau Ceti
@@ -1327,7 +1474,10 @@ For `R = MvPolynomial (Fin m) k`, `g ∈ R` and `r₁,…,r_m ∈ R`, prove that
 `⟨g∂₁, ∂₂, …, ∂_m⟩(r₁,…,r_m) = g · det(∂_j r_i)`, the Jacobian determinant, that its class is
 `m! · g · [∂₁ ∪ ⋯ ∪ ∂_m]`, that `HH^m(R,R)` is free of rank one on `[∂₁ ∪ ⋯ ∪ ∂_m]`, and that when `m!` is
 invertible in `k`, `Φ^m_HKR(g ∂₁ ∧ ⋯ ∧ ∂_m)(r₁,…,r_m) = (g/m!) det(∂_j r_i)` with class
-`g · [∂₁ ∪ ⋯ ∪ ∂_m]` (Ginz05 §9.2; HKR62 Theorem 5.2).
+`g · [∂₁ ∪ ⋯ ∪ ∂_m]`. The determinant formula is the evaluation of the determinant cocycle of §7.5
+at the derivations `g∂₁, ∂₂, …, ∂_m`, its class identity is that of §7.5 with the product formula
+of HKR62 line 495, and the rank-one statement is the top degree of §8.4 (Ginz05 §9.2, lines
+2142–2156; HKR62 Theorem 5.2, line 548, is the case of a perfect field `k`).
 
 *Needs:* §§7.5, 8.4.
 
@@ -1377,7 +1527,8 @@ such a roadmap is outside this one.
 
 - **HKR62**: Gerhard Hochschild, Bertram Kostant and Alex Rosenberg, *Differential forms on regular
   affine algebras*, Transactions of the American Mathematical Society 102 (1962), 383–408,
-  DOI 10.1090/S0002-9947-1962-0142598-8. Theorem 3.1 (line 210), Lemma 4.1 (line 301), the bar
+  DOI 10.1090/S0002-9947-1962-0142598-8. Theorem 3.1 (line 210) and the Koszul computation inside
+  its proof (lines 268–279), Lemma 4.1 (line 301), the bar
   resolution and its products (lines 410–495), Theorem 5.1 (line 522), Theorem 5.2 (line 548), the
   characteristic-two example (lines 569–582).
 - **Ginz05**: Victor Ginzburg, *Lectures on noncommutative geometry*, arXiv:math/0506603 (2005).
