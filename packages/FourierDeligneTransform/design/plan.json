@@ -888,8 +888,8 @@
       "where": "(1.2.1), LAU87 lines 372–377; KL85 lines 365–371"
      },
      "prerequisites": [
-      "roadmap:AlgebraicVectorBundles §L1A",
-      "roadmap:AlgebraicVectorBundles §L2B",
+      "roadmap:AlgebraicVectorBundles §L1A (Layer 4, relative Spec)",
+      "roadmap:AlgebraicVectorBundles §L2B (Layer 7, geometric vector bundles)",
       "tauceti:TauCeti.AlgebraicGeometry.FiniteLocallyFreeSheaf.dual",
       "tauceti:TauCeti.AlgebraicGeometry.FiniteLocallyFreeSheaf.evalIso",
       "target:2.5"
@@ -1403,7 +1403,7 @@
      "id": "5.1.2",
      "kind": "theorem",
      "name": "swan_tensor_slopeOne",
-     "statement": "Slope decomposition and s(V) = Σ λ r(V_λ); for L of rank one and Swan one, s(V ⊗ L) = r(V_{[0,1[}) + s(V_1 ⊗ L) + s(V_{]1,∞[}) with s(V_1 ⊗ L) ≤ r(V_1); ℒ_ψ(a/π) has slope one; for k algebraically closed and V ≠ 0 purely of slope one, some a ∈ k makes V ⊗ ℒ_ψ(a/π) have a nonzero part of slope < 1.",
+     "statement": "Slope decomposition and s(V) = Σ λ r(V_λ); for L of rank one and Swan one, s(V ⊗ L) = r(V_{[0,1[}) + s(V_1 ⊗ L) + s(V_{]1,∞[}) with s(V_1 ⊗ L) ≤ r(V_1); ℒ_ψ(a/π) has slope one; for k algebraically closed and V ≠ 0 purely of slope one, some a ∈ k makes V ⊗ ℒ_ψ(a/π) have a nonzero part of slope < 1. Route of the last clause, with K = k((π)) and G^u the upper ramification subgroups of G_K: G^1/G^{1+} is abelian of exponent p, so it suffices that every character θ of it is ℒ_ψ(b/π)|_{G^1} for some b ∈ k. θ factors through H^1 = Gal(L/L_0) for a finite Galois L/K with group H, H^{1+} = 1 and L_0 = L^{H^1}; with m = ψ_{L_0/K}(1) (Herbrand function), G^1 = G_{L_0}^m and G^{1+} = G_{L_0}^{m+}, so θ = ℒ_ψ(w) for a class w ∈ L_0/℘(L_0) of break ≤ m. In L_0 = k((ϖ_0)) the coefficient c(b) of ϖ_0^{−m} in the reduced representative of the class of b/π is injective and additive in b, with c(b)^{p^N} an additive polynomial in b, hence a monomial and onto k; choosing c(b) equal to the coefficient of w leaves w − [b/π] of break < m, trivial on G_{L_0}^m = G^1.",
      "hypotheses": [
       "henselian trait of equal characteristic p, perfect residue field (no excellence assumed)"
      ],
@@ -1415,11 +1415,26 @@
       "target:2.7.1",
       "roadmap:ArithmeticGaloisRepresentations §3.1",
       "roadmap:ArithmeticGaloisRepresentations §3.7",
+      "roadmap:RamificationOfCompleteDiscretelyValuedFields §3a.1",
+      "roadmap:RamificationOfCompleteDiscretelyValuedFields §4a.1",
+      "roadmap:RamificationOfCompleteDiscretelyValuedFields §4a.2",
+      "tauceti:TauCeti.additiveHilbert90",
       "roadmap:EtaleCohomologyFoundations §F.3a",
       "target:2.7"
      ],
      "api": [],
-     "tests": []
+     "tests": [
+      {
+       "name": "twist_slopeHalf_untwist",
+       "kind": "computation",
+       "statement": "k = 𝔽̄_p, W of rank 2 purely of slope 1/2, b ≠ 0: V = W ⊗ ℒ_ψ(b/π) is purely of slope one and a = −b returns W, of slope 1/2."
+      },
+      {
+       "name": "twist_nonClosed_nonexample",
+       "kind": "non-example",
+       "statement": "k = 𝔽_p, c ∈ 𝔽_{p²} ∖ 𝔽_p, V induced from ℒ_ψ(c/π) on the unramified quadratic extension: purely of slope one, and for every a ∈ 𝔽_p both characters ℒ_ψ((c + a)/π), ℒ_ψ((c^p + a)/π) of V ⊗ ℒ_ψ(a/π) have slope one; algebraic closure of k is needed."
+      }
+     ]
     },
     {
      "id": "5.2",
@@ -1785,8 +1800,8 @@
   {
    "roadmap": "AlgebraicVectorBundles",
    "sections": [
-    "§L1A",
-    "§L2B"
+    "§L1A (Layer 4, relative Spec)",
+    "§L2B (Layer 7, geometric vector bundles)"
    ],
    "what": "relative Spec, geometric vector bundles and duals"
   },
@@ -1803,6 +1818,15 @@
     "§A1.0.5"
    ],
    "what": "finite étale algebras unchanged under henselian completion, for the Galois group of a henselian trait and its completion"
+  },
+  {
+   "roadmap": "RamificationOfCompleteDiscretelyValuedFields",
+   "sections": [
+    "§3a.1",
+    "§4a.1",
+    "§4a.2"
+   ],
+   "what": "lower ramification groups and their graded pieces, the absolute upper filtration, ψ_{L/K} and the open-subgroup identity G_K^u ∩ G_L = G_L^{ψ_{L/K}(u)}, for the slope-one twisting lemma"
   },
   {
    "roadmap": "ArithmeticGaloisRepresentations",
