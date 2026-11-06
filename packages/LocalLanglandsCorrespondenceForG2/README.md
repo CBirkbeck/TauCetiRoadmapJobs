@@ -4,7 +4,7 @@
 
 ## Scope and ownership
 
-This roadmap owns: the comparisons of parameters through the dual-group maps SL₃ → G₂ → Spin₇ → SO₇ and Spin₇ → GL₈ (Layer 0), including Chenevier's G₂-descent theorems and the weak equivalence of Spin₇-valued parameters; the globalization theorems for G₂ and PGSp₆ that GS proves for this application (Layer 1) and the classical global theta step for discrete heart representations (Layer 8); the triality descent over F and the spin transfer (Layer 2); the G₂ parameter map, its explicit description, the rank-seven standard lift, the G₂ × GL_r gamma factors and both characterizations (Layer 3); the A₂ packets (Layer 4); the Kret–Shin parameters and the exceptional spin identity (Layer 5); the diamond fibres (Layer 6); the assembly of the G₂ correspondence and its enhanced theta applications (Layer 7); the extended spin transfer and the weak PGSp₆ correspondence (Layers 9–10).
+This roadmap owns: the comparisons of parameters through the dual-group maps SL₃ → G₂ → Spin₇ → SO₇ and Spin₇ → GL₈ (Layer 0), including Griess's conjugacy theorem for G₂ (stated here as a target, since no roadmap states it), Chenevier's G₂-descent theorems and the weak equivalence of Spin₇-valued parameters; the globalization theorems for G₂ and PGSp₆ that GS proves for this application (Layer 1) and the classical global theta step for discrete heart representations (Layer 8); the triality descent over F and the spin transfer (Layer 2); the G₂ parameter map, its explicit description, the rank-seven standard lift, the G₂ × GL_r gamma factors and both characterizations (Layer 3); the A₂ packets (Layer 4); the Kret–Shin parameters and the exceptional spin identity (Layer 5); the diamond fibres (Layer 6); the assembly of the G₂ correspondence and its enhanced theta applications (Layer 7); the extended spin transfer and the weak PGSp₆ correspondence (Layers 9–10).
 
 It does not own, and imports by section:
 
@@ -13,17 +13,17 @@ It does not own, and imports by section:
 - Arthur's local packets and multiplicity formula for Sp₆ and SO₈, Xu's packets and multiplicity formula for GSp₂ₙ, and the Gan–Takeda correspondence for GSp₄: ModularityAndLanglandsExtensions, Layer 3 (§§3.5, 3.8, 3.15, 3.17, 3.19, 3.27).
 - The local Langlands correspondence for GL_n, its inner forms and the Jacquet–Langlands correspondence: EndoscopicTransferAndUnitaryTraceComparison, §§4.7a, 4.8 and Layer 10 (§§10.1, 10.26, 10.30, 10.31).
 - The similitude theta correspondences PGSp₆ × PGSO₈ and the PGSp₆ dichotomy between the two orthogonal towers, first occurrence, the Rallis inner product formula and the global nonvanishing criterion: MetaplecticAutomorphicForms, §§3.10, 3.34, 3.41, 3.42, 6.13, 6.14.
-- Rankin–Selberg factors, isobaric sums and strong multiplicity one, boundary nonvanishing and unramified L-group factors: AutomorphicLFunctionsAndLocalFactors, Layers AL.3–AL.4.
+- Rankin–Selberg factors, isobaric sums and strong multiplicity one, boundary nonvanishing and unramified L-group factors: AutomorphicLFunctionsAndLocalFactors, Layers AL.3–AL.4. The Langlands–Shahidi spin factors of PGSp₆: AutomorphicLFunctionsAndLocalFactorsPartII, Layer 6, through the contract below, which extends the spin L-factor contract of ExceptionalThetaCorrespondencesForG2 on the same supplier.
 - Normalized induction, Jacquet functors, Whittaker functionals, the tempered classification and the Langlands classification: SmoothRepresentationsOfLocalGroups, SR.2–SR.3. Weak containment, the Fell topology, the corrected isolated-summand theorem (GS Proposition 11.6 corrected), Heiermann–Opdam, and the isolation of discrete series, of Steinberg and of supercuspidals: SmoothRepresentationsOfLocalGroupsPartII, SRU.1, SRU.3, SRU.4.
 - Automorphic forms, cusp forms and their Hilbert spaces: AutomorphicFormsOnReductiveGroups, Layers 0 and 4; the trace formula: AutomorphicSpectralTheory, Layer 6.
 - Galois representations attached to regular algebraic polarized cuspidal representations of GL_n over totally real fields and their local–global compatibility at all places: AutomorphicGaloisRepresentationsPartII, Layers AG2.2, AG2.5, AG2.6.
-- The pinned Chevalley–Demazure groups (Tau Ceti roadmap ReductiveGroups, Layer 9), the spin and half-spin representations, the fundamental representations of B₃ and D₄, Spin₆ ≅ SL₄ and triality for Spin₈ (RepresentationTheory/SpinRepresentations, Layers 4, 5, 6, 8), the local invariant of the Brauer group and the local Weil group (ClassFieldTheory, Layers 5 and 9).
+- The pinned Chevalley–Demazure groups (Tau Ceti roadmap ReductiveGroups, Layer 9), the spin and half-spin representations, the fundamental representations of B₃ and D₄, Spin₆ ≅ SL₄ and triality for Spin₈ (RepresentationTheory/SpinRepresentations, Layers 4, 5, 6, 8), the local invariant of the Brauer group and the local Weil group (ClassFieldTheory, Layers 5 and 9), and the Chebotarev density theorem (Chebotarev, Layer 10).
 
-The Kret–Shin GSpin-valued Galois representations, Shin's automorphic Plancherel density theorem, the Langlands–Shahidi spin factors of PGSp₆, the Poincaré-series weak-containment theorem, relative isolation for generic discrete series, the generic local converse theorem for GL_n, the explicit classical similitude theta tables, the similitude Rallis inner product formula and the global spin-pole converse are consumed from the suppliers named in the supplier contracts below, each stated there as what that supplier provides.
+The Kret–Shin GSpin-valued Galois representations, Shin's automorphic Plancherel density theorem, the Langlands–Shahidi spin factors of PGSp₆, the Poincaré-series weak-containment theorem, the real unitarity bound for regular discrete-series infinitesimal characters, relative isolation for generic discrete series, the generic local converse theorem for GL_n, the explicit classical similitude theta tables, the complex-place theta matching, the similitude Rallis inner product formula and the global spin-pole converse are consumed from the suppliers named in the supplier contracts below, each stated there as what that supplier provides.
 
 ## Conventions
 
-- F is a nonarchimedean local field of characteristic zero with residue field of order q and residue characteristic p; W_F is its Weil group, normalized by the geometric reciprocity of ClassFieldTheory, Layer 9, and |w| = q^(−deg w) with arithmetic Frobenius of degree one. ψ is a fixed nontrivial unitary additive character of F. Normalized induction and Jacquet functors use the positive square root of the modulus.
+- F is a nonarchimedean local field of characteristic zero with residue field of order q and residue characteristic p; W_F is its Weil group (ClassFieldTheory, Layer 9), with the arithmetic normalization of local reciprocity (a uniformizer corresponds to an arithmetic Frobenius), and |w| = q^(−deg w) with arithmetic Frobenius of degree one, so that |·| on W_F corresponds to the absolute value of F. The correspondence rec of EndoscopicTransferAndUnitaryTraceComparison §10.1 is stated with the geometric reciprocity map and the character ω(w) = q^(deg w) with geometric Frobenius of degree −1, so ω = |·|⁻¹; a parameter stated there is read in this convention by the inversion transport of SmoothRepresentationsOfLocalGroups SR.5.2 (*classical-llc-normalization*): a character χ ∘ Art_geo⁻¹ becomes (χ ∘ Art_arith⁻¹)⁻¹, and a parameter its contragredient. Every composition of rec with |·|^(±1/2) in this roadmap (§§3.2, 3.5, 3.6, 9.3) uses the character |·| fixed here, and every identity between factors of representations and factors of Weil–Deligne representations (§§2.4, 3.10, 3.12) is read with rec and the factors in one convention, that of EndoscopicTransferAndUnitaryTraceComparison §10.1, before the transport. ψ is a fixed nontrivial unitary additive character of F. Normalized induction and Jacquet functors use the positive square root of the modulus.
 - WD_F = W_F × SL₂(ℂ). A parameter for a split group G is a homomorphism φ : WD_F → Ĝ(ℂ), continuous on W_F with semisimple Frobenius image and algebraic on SL₂(ℂ), taken up to Ĝ(ℂ)-conjugacy (ExceptionalThetaCorrespondencesForG2, Layer 0, *Complex local parameters*). A parameter class always means conjugacy by the named dual group; a GL_n-conjugacy class of a composite is never substituted for it. Φ(G) is the set of parameter classes. Bounded means bounded image of W_F; discrete means not contained in a proper Levi subgroup of Ĝ. Every comparison through the Weil–Deligne dictionary keeps the monodromy operator N.
 - Dual-group maps: j : SL₃(ℂ) → G₂(ℂ), i : G₂(ℂ) → Spin₇(ℂ), q : Spin₇(ℂ) → SO₇(ℂ), the vector representation v = q ∘ i of dimension 7, the spin representation s : Spin₇(ℂ) → GL₈(ℂ), the inclusion h : Spin₆(ℂ) = SL₄(ℂ) → Spin₇(ℂ). The kernels are ker j = ker i = ker v = 1 and ker q = μ₂ = Z(Spin₇(ℂ)); s(−1) = −1 on all eight coordinates and q(−1) = 1.
 - Component groups: S_φ = π₀ Z_(G₂(ℂ))(φ) for G₂ (the centre of G₂(ℂ) is trivial, so raw and fixed-split groups agree). For PGSp₆ the enhancements of the split form are characters of S_φ̃ / image Z(Spin₇) = S_φ̃ / image μ₂ (ExceptionalThetaCorrespondencesForG2, Layer 0, *Raw and fixed-split component groups*).
@@ -66,13 +66,18 @@ The Kret–Shin GSpin-valued Galois representations, Shin's automorphic Plancher
 ### From TauCetiRoadmap.MetaplecticAutomorphicForms
 
 - §3.10 first occurrence in a Witt tower; §3.34 the similitude theta correspondence and its Howe duality; §3.41 the PGSp₆–PGSO₈ similitude lift of generic σ, nonzero, with standard parameter φ_b ⊕ 1 and its unramified Satake comparison through Spin₇ → Spin₈; §3.42 the PGSp₆ dichotomy between the two orthogonal towers; §6.13 the Rallis inner product formula; §6.14 the global theta nonvanishing criterion.
-- What MetaplecticAutomorphicForms must provide (gap:pgsp6-similitude-theta-tables): for the similitude pairs PGSp₆ × PGSO₈, PGSp₆ × PGO₆ and PGSp₆ × PGO₅,₁ over F, the parameters of the theta lift of every irreducible representation induced from each proper Levi of PGSp₆ (including the lower-tower Jacquet–Langlands identification with a duality orbit of PGL₄ or PGL₂(D)), the rule that a quadratic twist by χ ∘ sim pulls back along each similitude lift as χ ∘ sim (and along triality as the spinor-norm character), the lift of each generic constituent of a Siegel-induced representation I₃(τ) with τ discrete on PGL₃, and the matching at complex places (Adams–Barbasch).
+- What MetaplecticAutomorphicForms must provide (gap:pgsp6-similitude-theta-tables): for the similitude pairs PGSp₆ × PGSO₈, PGSp₆ × PGO₆ and PGSp₆ × PGO₅,₁ over F, the parameters of the theta lift of every irreducible representation induced from each proper Levi of PGSp₆ (including the lower-tower Jacquet–Langlands identification with a duality orbit of PGL₄ or PGL₂(D)), the rule that a quadratic twist by χ ∘ sim pulls back along each similitude lift as χ ∘ sim (and along triality as the spinor-norm character), and the lift of each generic constituent of a Siegel-induced representation I₃(τ) with τ discrete on PGL₃.
+- What MetaplecticAutomorphicForms must provide (gap:pgsp6-pgso8-complex-theta): for the pair PGSp₆(ℂ) × PGSO₈(ℂ) at a complex place (where the similitude and isometry correspondences coincide, since PGSp₆(ℂ) = Sp₆(ℂ)/μ₂), the theta correspondence described on Langlands parameters (Adams–Barbasch), so that the local spin lift of a generic σ at a complex place (§2.2) has the parameter of the triality transform of the parameter of σ and the spin gamma identity of §2.4 holds there (GS, proof of Proposition 4.1(i), p. 19; §3.34).
 - What MetaplecticAutomorphicForms must provide (gap:pgsp6-similitude-rallis): for a cuspidal representation Σ of PGSp₆(𝔸_k) with generic global Arthur parameter whose local similitude theta lifts to split PGSO₈ are nonzero at every place, the global similitude lift to PGSO₈ is nonzero when L^S(s, Σ, std) is nonzero at s = 1, and it is cuspidal when the lift to PGO₆ vanishes (the similitude form of §§6.13–6.14 in the second-term range).
 
 ### From TauCetiRoadmap.AutomorphicLFunctionsAndLocalFactors
 
 - Layer AL.3: the local Rankin–Selberg factors and functional equation, the induced-factor product, the global functional equation, the pole criterion, boundary nonvanishing, strong multiplicity one and its isobaric form. Layer AL.4: the unramified L-group factor and functorial operations on unramified factors.
-- What AutomorphicLFunctionsAndLocalFactors must provide (gap:pgsp6-shahidi-spin-factor): the Langlands–Shahidi gamma, L- and epsilon factors γ(s, σ, spin, ψ) of generic irreducible representations σ of PGSp₆(F) for the eight-dimensional spin representation of Spin₇(ℂ), with their behaviour under quadratic twists, holomorphy of L(s, σ, spin) in Re s > 0 for tempered σ, and the global functional equation for globally generic cuspidal representations of PGSp₆ over a number field.
+
+### From TauCetiRoadmap.AutomorphicLFunctionsAndLocalFactorsPartII
+
+- Layer 6 (generalized local factors): the local-factor layer that ExceptionalThetaCorrespondencesForG2 extends by its spin L-factor contract ramified-spin-factor (the degree-eight L(s, σ, spin) of generic σ of PGSp₆(F) from the Heisenberg parabolic of split F₄, with the supercuspidal pole criterion).
+- What AutomorphicLFunctionsAndLocalFactorsPartII must provide (gap:pgsp6-shahidi-spin-factor): extending the contract ramified-spin-factor of ExceptionalThetaCorrespondencesForG2 (the same Langlands–Shahidi construction from the Heisenberg parabolic of split F₄ with Levi GSp₆), the gamma and epsilon factors γ(s, σ, spin, ψ) and ε(s, σ, spin, ψ) of generic irreducible representations σ of PGSp₆(F) for the eight-dimensional spin representation of Spin₇(ℂ), the rule γ(s, σ ⊗ χ ∘ sim, spin, ψ) = γ(s, σ, spin ⊗ χ, ψ) for quadratic χ, holomorphy of L(s, σ, spin) in Re s > 0 for tempered σ, and the global functional equation for globally generic cuspidal representations of PGSp₆ over a number field.
 
 ### From TauCetiRoadmap.SmoothRepresentationsOfLocalGroups and SmoothRepresentationsOfLocalGroupsPartII
 
@@ -82,7 +87,8 @@ The Kret–Shin GSpin-valued Galois representations, Shin's automorphic Plancher
 ### From TauCetiRoadmap.AutomorphicFormsOnReductiveGroups
 
 - Layer 0 automorphic forms and the adelic quotient; Layer 2 (§§2.4–2.5) real tempered and discrete-series representations and archimedean parameters; Layer 4 cusp forms, cuspidal realizations and Whittaker coefficients (§§4.2–4.3).
-- What AutomorphicFormsOnReductiveGroups must provide (gap:poincare-weak-containment): for a reductive group G over a number field, a closed subgroup H that is either the pointwise stabilizer G_D of a quaternion subalgebra in Aut(O) or a maximal unipotent subgroup with a generic character, and prescribed local representations δ_v at a finite set S that are H_v-distinguished square-integrable summands of L²(H_v \ G_v), the product of the δ_v with a hyperspecial vector outside S and at most one further finite place is weakly contained in the restriction to ∏_(v ∈ S) G_v of the H-distinguished part of L²(G(k) \ G(𝔸_k)) (Sakellaridis–Venkatesh, Theorem 16.3.2 and Remark 16.4.1); and the real isolation statement that a unitary representation with discrete-series infinitesimal character sufficiently far from the walls is a discrete series, with an explicit bound.
+- What AutomorphicFormsOnReductiveGroups must provide (gap:poincare-weak-containment): for a reductive group G over a number field, a closed subgroup H that is either the pointwise stabilizer G_D of a quaternion subalgebra in Aut(O) or a maximal unipotent subgroup with a generic character, and prescribed local representations δ_v at a finite set S that are H_v-distinguished square-integrable summands of L²(H_v \ G_v), the product of the δ_v with a hyperspecial vector outside S and at most one further finite place is weakly contained in the restriction to ∏_(v ∈ S) G_v of the H-distinguished part of L²(G(k) \ G(𝔸_k)) (Sakellaridis–Venkatesh, Theorem 16.3.2 and Remark 16.4.1).
+- What AutomorphicFormsOnReductiveGroups must provide (gap:regular-real-unitarity): for each of split G₂(ℝ) and split PGSp₆(ℝ) with a fixed positive system, a constant C ≥ 0 depending only on the group and the system such that every irreducible unitary Harish-Chandra module whose infinitesimal character Λ is real, integral, that of a discrete series, and satisfies ⟨Λ, α∨⟩ > C for every positive root α is a discrete-series module (Layer 2, §2.4; GS, proof of Lemma 8.3, p. 25). This is the contract that ExceptionalThetaCorrespondencesForG2 declares on the same supplier under the same slug, with the same statement.
 
 ### From TauCetiRoadmap.AutomorphicSpectralTheory
 
@@ -100,12 +106,25 @@ The Kret–Shin GSpin-valued Galois representations, Shin's automorphic Plancher
 - RepresentationTheory/SpinRepresentations, Layer 2 (Spin and the double cover Spin₇ → SO₇), Layer 4 (spin and half-spin representations), Layer 5 (fundamental representations of B₃ and D₄), Layer 6 (Spin₆ ≅ SL₄ with V ≅ Λ²(ℂ⁴)) and Layer 8 (triality for Spin₈ and the pullback cycle of the three eight-dimensional representations).
 - ClassFieldTheory, Layer 5 (the Brauer group of F and the local invariant) and Layer 9 (the local Weil group).
 - OrthogonalSpinGroups, Layer 1 (the Lipschitz group and the spinor norm) and Layer 2 (local spinor norms), for the spinor-norm character in §2.1.
+- Chebotarev (completed), Layer 10 (*Dirichlet-density Chebotarev*): the Chebotarev density theorem for a finite Galois extension of number fields, applied to the finite quotients of the image of a Galois representation, so that two semisimple ℓ-adic representations with conjugate Frobenius images at a set of places of density one are isomorphic; used in §§0.9, 5.2 and 8.2.
 
 ## How to read the build
 
-Layer 0 is pure dual-group mathematics: branching, detection of the A₂ and Spin₇ images, standard injectivity, quadratic rigidity, weak equivalence and the unacceptability of Spin₇, and Chenevier's descent theorems. Layer 1 globalizes local representations of G₂ and PGSp₆ with prescribed periods, Whittaker models or spin-regular weights. Layer 2 builds the spin transfer from generic PGSp₆ to GL₈ through triality and compares its gamma factors. Layer 3 defines the G₂ parameter map from the theta dichotomy and proves its spectral properties and both characterizations. Layer 4 parametrizes the packets over the discrete A₂ parameters. Layer 5 constructs Kret–Shin parameters and proves the exceptional spin identity on all generic discrete series. Layer 6 identifies every diamond discrete fibre with a distinguished one of Xu's packets. Layer 7 assembles the Main Theorem and its enhanced applications. Layers 8–10 extend the spin method to all of PGSp₆: the classical global theta lift of a globalized discrete series, extended spin transfer, existence of joint Spin₇-lifts, and the weak correspondence with its fibres. Layer 1 does not use Layer 0, and Layer 2 uses only §0.1 and §1.6 from them; Layers 4–6 depend on Layer 3; Layers 8–9 depend on Layers 0–2 but not on Layers 3–7, and Layer 10 uses Layers 5 and 6 only for the diamond classes of §§10.1 and 10.9.
+Layer 0 is pure dual-group mathematics: Griess's conjugacy theorem, branching, detection of the A₂ and Spin₇ images, standard injectivity, quadratic rigidity, weak equivalence and the unacceptability of Spin₇, and Chenevier's descent theorems. Layer 1 globalizes local representations of G₂ and PGSp₆ with prescribed periods, Whittaker models or spin-regular weights. Layer 2 builds the spin transfer from generic PGSp₆ to GL₈ through triality and compares its gamma factors. Layer 3 defines the G₂ parameter map from the theta dichotomy and proves its spectral properties and both characterizations. Layer 4 parametrizes the packets over the discrete A₂ parameters. Layer 5 constructs Kret–Shin parameters and proves the exceptional spin identity on all generic discrete series. Layer 6 identifies every diamond discrete fibre with a distinguished one of Xu's packets. Layer 7 assembles the Main Theorem and its enhanced applications. Layers 8–10 extend the spin method to all of PGSp₆: the classical global theta lift of a globalized discrete series, extended spin transfer, existence of joint Spin₇-lifts, and the weak correspondence with its fibres. Layer 1 does not use Layer 0, and Layer 2 uses only §0.1 and §1.6 from them; Layers 4–6 depend on Layer 3; Layers 8–9 depend on Layers 0–2 but not on Layers 3–7, and Layer 10 uses Layers 5 and 6 only for the diamond classes of §§10.1 and 10.9.
 
 ## Layer 0: Parameters of G₂ and Spin₇
+
+### 0.0 Griess's conjugacy theorem for G₂
+
+Let E be ℂ or a field isomorphic to ℂ (such as the Ē_λ of §0.10), Γ a group, and ρ, ρ′ : Γ → G₂(E) homomorphisms whose seven-dimensional representations v ∘ ρ and v ∘ ρ′ are completely reducible. Prove that if v ∘ ρ ≅ v ∘ ρ′ as representations of Γ, then ρ′ = g ρ g⁻¹ for some g ∈ G₂(E) (Griess, Theorem 1, cited by its locator; this is the statement used in C, proof of Theorem 6.4, p. 149, in HKT, proof of Lemma 4.6, p. 22, and in GS, §3.4, p. 13). Deduce two forms used below: G₂ is acceptable on completely reducible homomorphisms, that is, if ρ(γ) and ρ′(γ) are G₂(E)-conjugate for every γ ∈ Γ then ρ and ρ′ are conjugate by one element, because elementwise conjugacy gives v ∘ ρ and v ∘ ρ′ the same character and completely reducible representations with the same character are isomorphic; and, with Γ = ℤ, two semisimple elements of G₂(E) with the same characteristic polynomial on v are G₂(E)-conjugate. For Γ = WD_F every parameter has completely reducible v-image (finite inertia image, semisimple Frobenius, algebraic on SL₂(ℂ)), and v ∘ φ ≅ v ∘ φ′ as representations of WD_F is isomorphism of the Weil–Deligne representations with their monodromy; this is the form used in §§0.3–0.5. The statement passes between ℂ and E along a field isomorphism, G₂ being defined over ℚ. *Needs:* ExceptionalThetaCorrespondencesForG2, Layer 0 (the inclusion G₂ ⊂ SO₇ and the representation v).
+
+**Checks.**
+
+- v is injective, so v ∘ ρ trivial forces ρ trivial: the only homomorphism with v-image 1^⊕7 is the trivial one, and the theorem's conclusion for ρ′ = 1 is consistent with this.
+- An algebraic homomorphism ρ : SL₂(ℂ) → G₂(ℂ) with v ∘ ρ ≅ Sym⁶ is conjugate to the principal SL₂: the seven-dimensional datum Sym⁶ determines a single G₂-class, which is what the Steinberg parameter of §§0.2 and 0.4 uses.
+- v ∘ j ∘ φ_τ ≅ 1 ⊕ φ_τ ⊕ φ_τ∨ ≅ v ∘ j ∘ φ_τ∨, so j ∘ φ_τ and j ∘ φ_τ∨ are G₂(ℂ)-conjugate; the conjugating element is the duality element of the normalizer of j(SL₃) in §0.2.
+- Equal image subgroups are not the hypothesis: for ζ a primitive fifth root of unity let t be the torus element with coordinates (ζ, ζ, ζ³) (product ζ⁵ = 1), whose v-eigenvalues are 1, ζ, ζ, ζ⁴, ζ⁴, ζ², ζ³, and put ρ(1) = t, ρ′(1) = t² on Γ = ℤ/5. The images coincide, but t² has v-eigenvalues 1, ζ², ζ², ζ³, ζ³, ζ⁴, ζ (coordinates (ζ², ζ², ζ)), a different multiset (ζ occurs twice versus once), so v ∘ ρ ≇ v ∘ ρ′ and t, t² are not conjugate; the hypothesis is an isomorphism intertwining ρ and ρ′.
+- The analogous statement for Spin₇(ℂ) with its spin representation is false (§0.8); the theorem is specific to G₂ and v.
 
 ### 0.1 Branching of the vector and spin representations
 
@@ -122,7 +141,7 @@ Prove that v ∘ j ≅ 1 ⊕ Std₃ ⊕ Std₃∨ as algebraic representations o
 
 ### 0.2 Detection of discrete A₂ parameters
 
-Prove that j induces an injection Φ(PGL₃)/(φ_τ ∼ φ_τ∨) → Φ(G₂); that a discrete parameter φ of G₂ lies in its image exactly when L(s, v ∘ φ) has a pole at s = 0; and that for φ = j ∘ φ_τ with φ_τ discrete, S_φ ≅ μ₃ when φ_τ is not self-dual and S_φ ≅ S₃ when φ_τ is self-dual (GS, Lemma 2.4(i), pp. 9–10). *Route:* the normalizer of j(SL₃) in G₂(ℂ) is j(SL₃) ⋊ ⟨duality⟩ and acts on parameters by φ_τ ↦ φ_τ∨; a pole of L(s, v ∘ φ) at 0 is a nonzero φ-invariant vector of v; for discrete φ that vector is nonisotropic and its stabilizer is a conjugate of j(SL₃); the centralizers are computed from Z_G₂(SL₃) = μ₃ and Z_G₂(SO₃) = S₃. The conjugacy theorem for G₂ cited in GS Lemma 2.4 gives the injectivity modulo duality. *Needs:* §0.1; ExceptionalThetaCorrespondencesForG2, Layer 0 (dual-group inclusions and centralizers; component groups); EndoscopicTransferAndUnitaryTraceComparison §10.1 (L-factors of Weil–Deligne representations).
+Prove that j induces an injection Φ(PGL₃)/(φ_τ ∼ φ_τ∨) → Φ(G₂); that a discrete parameter φ of G₂ lies in its image exactly when L(s, v ∘ φ) has a pole at s = 0; and that for φ = j ∘ φ_τ with φ_τ discrete, S_φ ≅ μ₃ when φ_τ is not self-dual and S_φ ≅ S₃ when φ_τ is self-dual (GS, Lemma 2.4(i), pp. 9–10). *Route:* the normalizer of j(SL₃) in G₂(ℂ) is j(SL₃) ⋊ ⟨duality⟩ and acts on parameters by φ_τ ↦ φ_τ∨; a pole of L(s, v ∘ φ) at 0 is a nonzero φ-invariant vector of v; for discrete φ that vector is nonisotropic and its stabilizer is a conjugate of j(SL₃); the centralizers are computed from Z_G₂(SL₃) = μ₃ and Z_G₂(SO₃) = S₃. Injectivity modulo duality uses no conjugacy theorem: G₂-conjugate parameters have isomorphic v-images, and an isomorphism 1 ⊕ φ_τ ⊕ φ_τ∨ ≅ 1 ⊕ φ_τ′ ⊕ φ_τ′∨ forces φ_τ′ ≅ φ_τ or φ_τ′ ≅ φ_τ∨ by comparing irreducible summands and determinants, including the case of three characters (GS, proof of Lemma 2.4(i), p. 10). *Needs:* §0.1; ExceptionalThetaCorrespondencesForG2, Layer 0 (dual-group inclusions and centralizers; component groups); EndoscopicTransferAndUnitaryTraceComparison §10.1 (L-factors of Weil–Deligne representations).
 
 **Checks.**
 
@@ -133,7 +152,7 @@ Prove that j induces an injection Φ(PGL₃)/(φ_τ ∼ φ_τ∨) → Φ(G₂); 
 
 ### 0.3 Spin detection of G₂ parameters
 
-Prove that i induces an injection Φ(G₂) → Φ(PGSp₆); that for φ ∈ Φ♦_ds(G₂) the parameter i ∘ φ is discrete and L(s, s ∘ i ∘ φ) has a pole at s = 0; that conversely a discrete Spin₇-valued parameter φ̃ with a pole of L(s, s ∘ φ̃) at s = 0 is i ∘ φ for a unique diamond discrete φ; and that for such φ the inclusion induces S_φ ≅ S_(i∘φ)/image Z(Spin₇) (GS, Lemma 2.4(ii), p. 9; §8.3, p. 24). *Route:* a pole is a φ̃-invariant spinor; complete reducibility makes the invariant subspace nondegenerate for the spin quadratic form, so it contains a nonisotropic vector whose stabilizer is a conjugate of i(G₂); the conjugacy and centralizer comparison is Gross–Savin's. *Needs:* §0.1, §0.2; ExceptionalThetaCorrespondencesForG2, Layer 0.
+Prove that i induces an injection Φ(G₂) → Φ(PGSp₆); that for φ ∈ Φ♦_ds(G₂) the parameter i ∘ φ is discrete and L(s, s ∘ i ∘ φ) has a pole at s = 0; that conversely a discrete Spin₇-valued parameter φ̃ with a pole of L(s, s ∘ φ̃) at s = 0 is i ∘ φ for a unique diamond discrete φ; and that for such φ the inclusion induces S_φ ≅ S_(i∘φ)/image Z(Spin₇) (GS, Lemma 2.4(ii), p. 9; §8.3, p. 24). *Route:* a pole is a φ̃-invariant spinor; complete reducibility makes the invariant subspace nondegenerate for the spin quadratic form, so it contains a nonisotropic vector whose stabilizer is a conjugate of i(G₂); injectivity of i follows from §0.0 after applying q, since Spin₇-conjugate i ∘ φ, i ∘ φ′ have isomorphic v-images; the centralizer comparison is Gross–Savin's. *Needs:* §0.0, §0.1, §0.2; ExceptionalThetaCorrespondencesForG2, Layer 0.
 
 **Checks.**
 
@@ -143,7 +162,7 @@ Prove that i induces an injection Φ(G₂) → Φ(PGSp₆); that for φ ∈ Φ�
 
 ### 0.4 Standard injectivity
 
-Prove that v induces an injection Φ(G₂) → Φ(GL₇): two G₂-valued parameters whose seven-dimensional Weil–Deligne representations are isomorphic are G₂(ℂ)-conjugate (GS, Lemma 2.4(iii), p. 9; §3.4, p. 13). Prove that v carries Φ♦_ds(G₂) into discrete parameters of SO₇. *Route:* elements of G₂(ℂ) that are conjugate in GL₇(ℂ) are conjugate in G₂(ℂ) (the conjugacy theorem cited in GS Lemma 2.4(iii)), and acceptability of G₂ for the reductive Zariski closure of the image of W_F × SL₂(ℂ), keeping the algebraic SL₂ factor. *Needs:* ExceptionalThetaCorrespondencesForG2, Layer 0; §0.1.
+Prove that v induces an injection Φ(G₂) → Φ(GL₇): two G₂-valued parameters whose seven-dimensional Weil–Deligne representations are isomorphic are G₂(ℂ)-conjugate (GS, Lemma 2.4(iii), p. 9; §3.4, p. 13). Prove that v carries Φ♦_ds(G₂) into discrete parameters of SO₇. *Route:* an isomorphism of the Weil–Deligne representations v ∘ φ ≅ v ∘ φ′ with their monodromy is an isomorphism of representations of the group WD_F = W_F × SL₂(ℂ); every parameter has completely reducible v-image, so §0.0 gives the G₂(ℂ)-conjugacy. Discreteness of v ∘ φ for diamond φ is GS Lemma 2.4(iii). *Needs:* §0.0, §0.1; ExceptionalThetaCorrespondencesForG2, Layer 0.
 
 **Checks.**
 
@@ -153,7 +172,7 @@ Prove that v induces an injection Φ(G₂) → Φ(GL₇): two G₂-valued parame
 
 ### 0.5 Quadratic twist rigidity on the G₂ image
 
-Let Γ be a group, ρ : Γ → G₂(ℂ) a homomorphism with completely reducible image and χ : Γ → {±1} a nontrivial character. Prove: if i ∘ ρ and χ · (i ∘ ρ) are not Spin₇(ℂ)-conjugate, then (v ∘ ρ) ⊗ χ has no nonzero invariant vector; in particular, if s ∘ (χ · i ∘ ρ) ≅ 1 ⊕ v ∘ ρ then χ · (i ∘ ρ) is conjugate to i ∘ ρ (HKT, Lemma 4.6). *Route:* a trivial summand of s ∘ (χ · i ∘ ρ) = χ ⊗ (1 ⊕ v ∘ ρ) is an invariant spinor; the invariant subspace is nondegenerate by complete reducibility, so it contains a nonisotropic vector, whose stabilizer is a conjugate of G₂(ℂ); then §0.4. *Needs:* §0.1, §0.4.
+Let Γ be a group, ρ : Γ → G₂(ℂ) a homomorphism with completely reducible image and χ : Γ → {±1} a nontrivial character. Prove: if i ∘ ρ and χ · (i ∘ ρ) are not Spin₇(ℂ)-conjugate, then (v ∘ ρ) ⊗ χ has no nonzero invariant vector; in particular, if s ∘ (χ · i ∘ ρ) ≅ 1 ⊕ v ∘ ρ then χ · (i ∘ ρ) is conjugate to i ∘ ρ (HKT, Lemma 4.6). *Route:* a trivial summand of s ∘ (χ · i ∘ ρ) = χ ⊗ (1 ⊕ v ∘ ρ) is an invariant spinor; the invariant subspace is nondegenerate by complete reducibility, so it contains a nonisotropic vector, whose stabilizer is a conjugate of G₂(ℂ): some conjugate of χ · (i ∘ ρ) is i ∘ ρ′ for a homomorphism ρ′ : Γ → G₂(ℂ), and v ∘ ρ′ = q ∘ (χ · i ∘ ρ) ≅ v ∘ ρ because q kills the centre; then §0.0 makes ρ′ conjugate to ρ, hence χ · (i ∘ ρ) conjugate to i ∘ ρ. *Needs:* §0.0, §0.1.
 
 **Checks.**
 
@@ -176,6 +195,8 @@ Define two parameters φ, φ′ : WD_F → Spin₇(ℂ) to be weakly equivalent 
 - The trivial parameter and the unramified quadratic central parameter (Frobenius ↦ −1 ∈ Z(Spin₇)) have equal SO₇-images and unequal spin images (all eigenvalues 1 versus all −1), so they have different weak classes; equality of q-images alone does not define the relation.
 - Twisting twice by the same χ returns the weak class, since χ² = 1.
 - The two homomorphisms of §0.8 have the same weak class but different conjugacy classes, so the quotient map Φ(PGSp₆) → Φ_w(PGSp₆) is not injective.
+
+*Needs:* ExceptionalThetaCorrespondencesForG2, Layer 0 (*Complex local parameters*, *Raw and fixed-split component groups*); SpinRepresentations, Layers 2 and 4 (the maps q and s).
 
 ### 0.7 Weak equivalence and elementwise conjugacy
 
@@ -200,7 +221,7 @@ Prove that there are a finite group Γ and homomorphisms r, r′ : Γ → Spin�
 
 ### 0.9 Chenevier's local factorization criterion
 
-Let k be totally real and A a cuspidal automorphic representation of GL₇(𝔸_k), regular algebraic at every real place. Prove that the following are equivalent: for almost every place the Satake parameter of A lies in v(G₂(ℂ)); for every finite place u the Weil–Deligne parameter of A_u lifts to a G₂(ℂ)-valued parameter, unique up to G₂(ℂ)-conjugacy (C, Theorem E, p. 100; Corollary 6.8, pp. 149–150). Chenevier's statements use W_F × SU₂; translate them to W_F × SL₂(ℂ) keeping N. *Route:* Chenevier's group-theoretic classification of subgroups of SO₇ whose elements are conjugate into G₂, the Galois representation of A and local–global compatibility, then §0.4. *Needs:* §0.4; AutomorphicGaloisRepresentationsPartII, AG2.2 and AG2.5; Chebotarev density.
+Let k be totally real and A a cuspidal automorphic representation of GL₇(𝔸_k), regular algebraic at every real place. Prove that the following are equivalent: for almost every place the Satake parameter of A lies in v(G₂(ℂ)); for every finite place u the Weil–Deligne parameter of A_u lifts to a G₂(ℂ)-valued parameter, unique up to G₂(ℂ)-conjugacy (C, Theorem E, p. 100; Corollary 6.8, pp. 149–150). Chenevier's statements use W_F × SU₂; translate them to W_F × SL₂(ℂ) keeping N. *Route:* Chenevier's group-theoretic classification of subgroups of SO₇ whose elements are conjugate into G₂, the Galois representation of A and local–global compatibility, Chebotarev density to pass from almost all Satake parameters to the image of the Galois representation, the uniqueness of the lift from §0.0 (as in C, proof of Theorem 6.4), then §0.4. *Needs:* §0.0, §0.4; AutomorphicGaloisRepresentationsPartII, AG2.2 and AG2.5; Chebotarev, Layer 10.
 
 **Checks.**
 
@@ -210,7 +231,7 @@ Let k be totally real and A a cuspidal automorphic representation of GL₇(𝔸_
 
 ### 0.10 Chenevier's G₂-valued Galois lift
 
-For k and A as in §0.9 satisfying the almost-everywhere G₂ condition, a coefficient field E, a prime ℓ and λ | ℓ of E, prove that the semisimple Galois representation r_(A,λ) : Gal(k̄/k) → GL₇(Ē_λ) is v ∘ r̃ for a continuous semisimple r̃ : Gal(k̄/k) → G₂(Ē_λ), unique up to G₂(Ē_λ)-conjugacy (C, §§6.2–6.3, Theorem 6.4, pp. 147–148). Semisimple means that the identity component of the Zariski closure of the image is reductive. *Route:* Chenevier's condition (G) forces self-duality, the representation is attached by AG2.2, and Theorem 6.4 gives the lift. The local comparison of r̃ at ramified places and at places above ℓ is §3.15, not part of this statement. *Needs:* §0.4; AutomorphicGaloisRepresentationsPartII, AG2.2.
+For k and A as in §0.9 satisfying the almost-everywhere G₂ condition, a coefficient field E, a prime ℓ and λ | ℓ of E, prove that the semisimple Galois representation r_(A,λ) : Gal(k̄/k) → GL₇(Ē_λ) is v ∘ r̃ for a continuous semisimple r̃ : Gal(k̄/k) → G₂(Ē_λ), unique up to G₂(Ē_λ)-conjugacy (C, §§6.2–6.3, Theorem 6.4, pp. 147–148). Semisimple means that the identity component of the Zariski closure of the image is reductive. *Route:* Chenevier's condition (G) forces self-duality, the representation is attached by AG2.2, and Theorem 6.4 gives the lift, with uniqueness from §0.0 over Ē_λ. The local comparison of r̃ at ramified places and at places above ℓ is §3.15, not part of this statement. *Needs:* §0.0, §0.4; AutomorphicGaloisRepresentationsPartII, AG2.2.
 
 **Checks.**
 
@@ -223,10 +244,11 @@ For k and A as in §0.9 satisfying the almost-everywhere G₂ condition, a coeff
 - The subregular parameter: trivial on W_F, SL₂ through the principal SL₂ of SL₃. Then v ∘ φ = 1 ⊕ Sym² ⊕ Sym², s ∘ i ∘ φ = 1 ⊕ 1 ⊕ Sym² ⊕ Sym² and S_φ ≅ S₃ (§§0.1–0.3).
 - The Steinberg parameter of G₂: v ∘ φ = Sym⁶, s ∘ i ∘ φ = 1 ⊕ Sym⁶, S_φ = 1.
 - The pair (r, r′) of §0.8 on μ₄ × μ₄.
+- The order-five torus element t of §0.0 and its square: equal image subgroups, different v-spectra, not conjugate.
 
 ### Dependencies
 
-ExceptionalThetaCorrespondencesForG2, Layer 0; SpinRepresentations, Layers 2, 4, 5, 6; EndoscopicTransferAndUnitaryTraceComparison, §10.1; AutomorphicGaloisRepresentationsPartII, AG2.2 and AG2.5; Mathlib `spinGroup`, `Matrix.charpoly`.
+ExceptionalThetaCorrespondencesForG2, Layer 0; SpinRepresentations, Layers 2, 4, 5, 6; EndoscopicTransferAndUnitaryTraceComparison, §10.1; AutomorphicGaloisRepresentationsPartII, AG2.2 and AG2.5; Chebotarev, Layer 10; Mathlib `spinGroup`, `Matrix.charpoly`.
 
 ## Layer 1: Globalization with periods and Whittaker models
 
@@ -244,6 +266,8 @@ Let k be totally real, O a totally definite octonion algebra over k split at eve
 - Rescaling the quotient measure by a positive constant rescales every period and leaves Z_D and L²_D unchanged.
 - In a multiplicity-two model V ⊕ V with period P(v₁, v₂) = P₀(v₁) + P₀(v₂) and P₀ ≠ 0, the zero-period copy is the antidiagonal and L²_D meets V ⊕ V in the diagonal copy; the first coordinate copy has nonzero period but is not contained in L²_D, so "nonzero period" does not characterize the copies contained in L²_D.
 
+*Needs:* ExceptionalThetaCorrespondencesForG2, Layer 9 (*Quaternion pointwise stabilizers*); AutomorphicFormsOnReductiveGroups, Layer 0 (the adelic quotient and automorphic forms) and Layer 4, §4.2 (the discrete decomposition of the compact quotient with its automorphic realizations); GlobalQuadraticForms (the totally definite octonion algebra and its quaternion subalgebras).
+
 ### 1.2 The fixed-supercuspidal generic spectrum
 
 For a split simple group G over a number field k, a nondegenerate global Whittaker character ψ, a finite place w and a generic supercuspidal σ of G(k_w), define L²_(ψ,σ) as the orthogonal complement, inside the σ-isotypic part at w of the cuspidal spectrum, of the closed span of the irreducible cuspidal subrepresentations on which the global ψ-Whittaker functional vanishes (GS, §10.3, p. 29). No multiplicity-one theorem is assumed; the Hilbert sum keeps the automorphic multiplicity spaces.
@@ -258,9 +282,11 @@ For a split simple group G over a number field k, a nondegenerate global Whittak
 - A nongeneric cuspidal representation with component σ at w is excluded.
 - In a multiplicity-two model V ⊕ V with Whittaker functional W(v₁, v₂) = W₀(v₁) + W₀(v₂), W₀ ≠ 0, the selected copy is the diagonal; taking the whole σ-isotypic component would also include the antidiagonal copy with zero coefficient.
 
+*Needs:* AutomorphicFormsOnReductiveGroups, Layer 0 and Layer 4, §§4.2–4.3 (cusp forms, cuspidal realizations and global Whittaker coefficients); SmoothRepresentationsOfLocalGroups, SR.2.3 (local Whittaker functionals and genericity of σ).
+
 ### 1.3 Poincaré series and weak containment
 
-Prove: (a) in the setting of §1.1, for a finite set S of finite places and local representations δ_u (u ∈ S) that are summands of L²(G_D(k_u) \ G(k_u)), together with the unramified spherical vectors outside S, the representation ⊗_(u∈S) δ_u is weakly contained in the restriction of L²_D to ∏_(u∈S) G(k_u); (b) in the setting of §1.2, products of generic square-integrable local representations at a finite set S, with hyperspecial vectors outside S ∪ {w} and outside at most one further finite place, are weakly contained in L²_(ψ,σ) (GS, proofs of Propositions 10.5 and 10.7, pp. 28–30). *Route:* the Poincaré-series construction of Sakellaridis–Venkatesh. *Needs:* §§1.1–1.2; AutomorphicFormsOnReductiveGroups, Layers 0 and 4, together with the Poincaré-series weak-containment theorem of the AutomorphicFormsOnReductiveGroups contract; SmoothRepresentationsOfLocalGroupsPartII, SRU.1.1.
+Prove: (a) in the setting of §1.1, for a finite set S of finite places and local representations δ_u (u ∈ S) that are summands of L²(G_D(k_u) \ G(k_u)), together with the unramified spherical vectors outside S, the representation ⊗_(u∈S) δ_u is weakly contained in the restriction of L²_D to ∏_(u∈S) G(k_u); (b) in the setting of §1.2, products of generic square-integrable local representations at a finite set S, with hyperspecial vectors outside S ∪ {w} and outside at most one further finite place, are weakly contained in L²_(ψ,σ) (GS, proofs of Propositions 10.5 and 10.7, pp. 28–30). *Route:* the Poincaré-series construction of Sakellaridis–Venkatesh. *Needs:* §§1.1–1.2; AutomorphicFormsOnReductiveGroups, Layers 0 and 4 and the poincare-weak-containment contract; SmoothRepresentationsOfLocalGroupsPartII, SRU.1.1.
 
 **Checks.**
 
@@ -290,7 +316,7 @@ Let δ be a generic discrete series of G₂(F) whose PGSp₆ theta lift is a dis
 
 ### 1.6 Globalization of isolated generic discrete series
 
-For a split simple group G over a number field k, a finite set S of finite places with prescribed generic discrete series δ_u (u ∈ S), each isolated in the sense of §1.5 for G₂ or of the relative-generic-isolation contract for classical G, a further finite place w ∉ S with a prescribed generic supercuspidal σ, and real components prescribed far from the walls, prove that there is a globally generic cuspidal Π with Π_u ≅ δ_u for u ∈ S, Π_w ≅ σ, and Π spherical outside S ∪ {w} and outside at most one further finite place (GS, Proposition 10.7 and proof, pp. 29–30). *Route:* §1.3(b) and isolation place by place, SRU.1.10. *Needs:* §1.3, §1.5; SmoothRepresentationsOfLocalGroupsPartII, SRU.1.10; the real-isolation statement of the AutomorphicFormsOnReductiveGroups contract.
+For a split simple group G over a number field k, a finite set S of finite places with prescribed generic discrete series δ_u (u ∈ S), each isolated in the sense of §1.5 for G₂ or of the relative-generic-isolation contract for classical G, a further finite place w ∉ S with a prescribed generic supercuspidal σ, and real components prescribed far from the walls, prove that there is a globally generic cuspidal Π with Π_u ≅ δ_u for u ∈ S, Π_w ≅ σ, and Π spherical outside S ∪ {w} and outside at most one further finite place (GS, Proposition 10.7 and proof, pp. 29–30). *Route:* §1.3(b) and isolation place by place, SRU.1.10. *Needs:* §1.3, §1.5; SmoothRepresentationsOfLocalGroupsPartII, SRU.1.10; AutomorphicFormsOnReductiveGroups, Layer 2 (§2.4) and the regular-real-unitarity contract (the prescribed real components far from the walls are discrete series).
 
 **Checks.**
 
@@ -316,7 +342,7 @@ Let σ be a discrete series of PGSp₆(F), k a totally real field with a finite 
 
 ### Dependencies
 
-AutomorphicFormsOnReductiveGroups, Layers 0 and 4; AutomorphicSpectralTheory, Layer 6; ModularityAndLanglandsExtensions §§3.17, 3.19, 3.27; SmoothRepresentationsOfLocalGroups, SR.2; SmoothRepresentationsOfLocalGroupsPartII, SRU.1, SRU.3, SRU.4; ExceptionalThetaCorrespondencesForG2, Layers 8–10; GlobalQuadraticForms.
+AutomorphicFormsOnReductiveGroups, Layers 0, 2 (§2.4) and 4 and the poincare-weak-containment and regular-real-unitarity contracts; AutomorphicSpectralTheory, Layer 6; ModularityAndLanglandsExtensions §§3.17, 3.19, 3.27; SmoothRepresentationsOfLocalGroups, SR.2; SmoothRepresentationsOfLocalGroupsPartII, SRU.1, SRU.3, SRU.4; ExceptionalThetaCorrespondencesForG2, Layers 8–10; GlobalQuadraticForms.
 
 ## Layer 2: Triality and the generic spin transfer
 
@@ -360,7 +386,7 @@ For a cuspidal Σ of PGSp₆(𝔸_k) with nonzero cuspidal similitude theta lift
 
 - The unramified spin Satake classes determine SpinLift(Σ) (isobaric strong multiplicity one).
 - The global Arthur parameter of SpinLift(Σ) is orthogonal with trivial determinant.
-- Each local standard parameter of the triality transfer equals the local theta construction at that place; at complex places use the Adams–Barbasch matching of the pgsp6-similitude-theta-tables contract.
+- Each local standard parameter of the triality transfer equals the local theta construction at that place; at complex places use the Adams–Barbasch matching of the pgsp6-pgso8-complex-theta contract.
 
 **Checks.**
 
@@ -368,11 +394,11 @@ For a cuspidal Σ of PGSp₆(𝔸_k) with nonzero cuspidal similitude theta lift
 - The ranks of the isobaric summands add up to eight.
 - A definition requiring SpinLift(Σ) to be cuspidal would reject the case 1 ⊞ A; cuspidality is proved separately under extra hypotheses (§8.2).
 
-*Needs:* §2.2; ModularityAndLanglandsExtensions §§3.8, 3.17; AutomorphicLFunctionsAndLocalFactors, AL.3 (isobaric strong multiplicity one); MetaplecticAutomorphicForms §3.41.
+*Needs:* §2.2; ModularityAndLanglandsExtensions §§3.8, 3.17; AutomorphicLFunctionsAndLocalFactors, AL.3 (isobaric strong multiplicity one); MetaplecticAutomorphicForms §3.41 and the pgsp6-pgso8-complex-theta contract.
 
 ### 2.4 Spin gamma factors of the local spin lift
 
-For generic discrete series σ of PGSp₆(F), prove that γ(s, σ, spin, ψ) = γ(s, SpinLift(σ), ψ), the left side being the Langlands–Shahidi factor and the right the standard factor of GL₈, with the same ψ and compatible Haar measures (GS, Proposition 4.1(i) and proof, pp. 18–19). *Route:* globalize σ over a totally complex field at one or two places isomorphic to F, with a Steinberg place and a generic supercuspidal place (§1.6), compare the global functional equations of the spin L-function and of the standard L-function of SpinLift, cancel the unramified and complex places, and use one versus two copies of σ to remove a possible root of unity. The globalization of §1.6 allows one further finite place with uncontrolled component; the cancellation requires either a globalization in which that place is spherical, or an identity of the two gamma factors at that place obtained by the same induction on the depth of the auxiliary place. *Needs:* §1.6, §2.3; AutomorphicLFunctionsAndLocalFactors, AL.3 (global Rankin–Selberg functional equation) and the pgsp6-shahidi-spin-factor contract; EndoscopicTransferAndUnitaryTraceComparison §10.30.
+For generic discrete series σ of PGSp₆(F), prove that γ(s, σ, spin, ψ) = γ(s, SpinLift(σ), ψ), the left side being the Langlands–Shahidi factor and the right the standard factor of GL₈, with the same ψ and compatible Haar measures (GS, Proposition 4.1(i) and proof, pp. 18–19). *Route:* globalize σ over a totally complex field at one or two places isomorphic to F, with a Steinberg place and a generic supercuspidal place (§1.6), compare the global functional equations of the spin L-function and of the standard L-function of SpinLift, cancel the unramified and complex places, and use one versus two copies of σ to remove a possible root of unity. The globalization of §1.6 allows one further finite place with uncontrolled component; the cancellation requires either a globalization in which that place is spherical, or an identity of the two gamma factors at that place obtained by the same induction on the depth of the auxiliary place. *Needs:* §1.6, §2.3; AutomorphicLFunctionsAndLocalFactors, AL.3 (global Rankin–Selberg functional equation); AutomorphicLFunctionsAndLocalFactorsPartII, pgsp6-shahidi-spin-factor contract; MetaplecticAutomorphicForms, pgsp6-pgso8-complex-theta contract (the identity at the complex places); EndoscopicTransferAndUnitaryTraceComparison §10.30.
 
 **Checks.**
 
@@ -397,7 +423,7 @@ For generic discrete series σ of PGSp₆(F) and quadratic χ, prove SpinLift(σ
 
 ### Dependencies
 
-Tau Ceti `TauCeti.D4Tripled.trialityAutomorphism`; ReductiveGroups, Layer 9; SpinRepresentations, Layer 8; OrthogonalSpinGroups, Layers 1–2; MetaplecticAutomorphicForms §§3.34, 3.41; ModularityAndLanglandsExtensions §§3.8, 3.15, 3.17; EndoscopicTransferAndUnitaryTraceComparison §10.30; AutomorphicLFunctionsAndLocalFactors, AL.3; Layer 0 (§0.1); Layer 1 (§1.6).
+Tau Ceti `TauCeti.D4Tripled.trialityAutomorphism`; ReductiveGroups, Layer 9; SpinRepresentations, Layer 8; OrthogonalSpinGroups, Layers 1–2; MetaplecticAutomorphicForms §§3.34, 3.41 and the pgsp6-similitude-theta-tables and pgsp6-pgso8-complex-theta contracts; ModularityAndLanglandsExtensions §§3.8, 3.15, 3.17; EndoscopicTransferAndUnitaryTraceComparison §10.30; AutomorphicLFunctionsAndLocalFactors, AL.3; AutomorphicLFunctionsAndLocalFactorsPartII, pgsp6-shahidi-spin-factor contract; Layer 0 (§0.1); Layer 1 (§1.6).
 
 ## Layer 3: The G₂ parameter map and its characterizations
 
@@ -422,7 +448,7 @@ Using the dichotomy Irr(G₂) = Irr♠ ⊔ Irr♥, define L : Irr(G₂(F)) → �
 **Checks.**
 
 - St_G₂ maps to the principal SL₂ parameter of G₂ with trivial Weil part.
-- For an unramified irreducible π, L(π) is the Satake class together with the monodromy prescribed by the unramified correspondence; for the trivial representation, L(1) is trivial on SL₂(ℂ) and sends w ∈ W_F to the image under the principal SL₂ of diag(|w|^(1/2), |w|^(−1/2)), so v ∘ L(1) has arithmetic-Frobenius eigenvalues q^(−3), q^(−2), …, q^(3) and N = 0; confusing it with the Steinberg parameter (same semisimple Frobenius, N ≠ 0) is excluded by N.
+- For an unramified irreducible π, L(π) is the Satake class together with the monodromy prescribed by the unramified correspondence; for the trivial representation, L(1) is trivial on SL₂(ℂ) and sends w ∈ W_F to the image under the principal SL₂ of diag(|w|^(1/2), |w|^(−1/2)) with |·| the character of Conventions (|Frob| = q⁻¹ for arithmetic Frobenius), so v ∘ L(1) has arithmetic-Frobenius eigenvalues q^(−3), q^(−2), …, q^(3) and N = 0; confusing it with the Steinberg parameter (same semisimple Frobenius, N ≠ 0) is excluded by N.
 - Replacing D by its opposite algebra and the PGL₃ parameter by its dual leaves L(π) unchanged, because j ∘ φ_τ and j ∘ φ_τ∨ are G₂-conjugate (§0.2).
 
 *Needs:* §3.1, §0.2; ExceptionalThetaCorrespondencesForG2, Layers 5–6 (division Howe duality, dichotomy); EndoscopicTransferAndUnitaryTraceComparison §§4.7a, 10.30–10.31.
@@ -549,7 +575,7 @@ Prove γ(s, π × τ, ψ) = γ(s, (v ∘ L(π)) ⊗ rec(τ), ψ) for all π, τ,
 
 ### 3.13 Characterization by gamma factors
 
-Prove that L is the unique map Irr(G₂(F)) → Φ(G₂) satisfying §3.5, §3.6, §3.7 and §3.12 for all r (GS, Main Theorem (x), p. 4; §3.4, pp. 13–14). *Route:* for tempered π the parameter v ∘ L(π) is bounded and its twisted gamma factors determine it by the generic local converse theorem for GL₇; §0.4 recovers L(π); the nontempered case follows from §3.5. *Needs:* §§3.5–3.7, §3.11, §3.12, §0.4; EndoscopicTransferAndUnitaryTraceComparison, gln-generic-local-converse contract.
+Prove that L is the unique map Irr(G₂(F)) → Φ(G₂) satisfying §3.5, §3.6, §3.7 and §3.12 for all r (GS, Main Theorem (x), p. 4; §3.4, pp. 13–14). *Route:* for tempered π the parameter v ∘ L(π) is bounded and its twisted gamma factors determine it by the generic local converse theorem for GL₇; §0.4, through Griess's theorem §0.0, recovers L(π) from v ∘ L(π); the nontempered case follows from §3.5. *Needs:* §§3.5–3.7, §3.11, §3.12, §0.0, §0.4; EndoscopicTransferAndUnitaryTraceComparison, gln-generic-local-converse contract.
 
 **Checks.**
 
@@ -606,23 +632,24 @@ Define the labelling of the three degree-three central simple algebras M₃(F), 
 
 ### 4.2 Non-self-dual A₂ packets
 
-Let φ = j ∘ φ_τ be discrete with φ_τ not self-dual, so S_φ ≅ μ₃. Prove: the split theta lift gives the unique generic member of L⁻¹(φ), labelled 1, and the lifts from PD₁× and PD₂× give the members labelled χ and χ⁻¹; for p ≠ 3 this is a bijection L⁻¹(φ) ≅ Irr(μ₃), and for p = 3 it is an injection Irr(μ₃) → L⁻¹(φ) that is a bijection onto L⁻¹(φ) whenever both division lifts are nonzero (GS, Proposition 3.2, pp. 14–16). *Needs:* §4.1, §3.4; ExceptionalThetaCorrespondencesForG2, Layer 5 (*Howe duality for the cubic division pair*, *The residue-characteristic bound for division nonvanishing*) and Layer 8 (*Howe duality for all three exceptional pairs*).
+Let φ = j ∘ φ_τ be discrete with φ_τ not self-dual, so S_φ ≅ μ₃. Prove: the split theta lift of τ is the unique generic member of L⁻¹(φ), labelled 1; the lifts of the Jacquet–Langlands transfers of τ to PD₁× and to PD₂× (equivalently, of τ∨ to PD₂× and to PD₁×, §4.1), when nonzero, are distinct members labelled χ and χ⁻¹; and every member of L⁻¹(φ) is one of these three lifts. The labelling is therefore an injection L⁻¹(φ) → Irr(μ₃); it is a bijection for p ≠ 3, where both division lifts are nonzero, and for p = 3 it is a bijection exactly when both division lifts are nonzero (GS, Proposition 3.2 and proof, pp. 14–16). *Route:* the dichotomy and Howe duality for the three pairs place each member of the fibre as a lift from M₃(F), D₁ or D₂ of the representation with parameter φ_τ or φ_τ∨; injectivity of theta makes the three lifts distinct (the lifts from D₁ and D₂ differ because τ ≇ τ∨); the split lift is nonzero in every residue characteristic (HD, Theorem 8.5(i)) and the division lifts for p ≠ 3. *Needs:* §4.1, §3.4; ExceptionalThetaCorrespondencesForG2, Layer 5 (*Howe duality for the cubic division pair*, *The residue-characteristic bound for division nonvanishing*) and Layer 8 (*Howe duality for all three exceptional pairs*).
 
 **Checks.**
 
 - The fibre has three elements for p ≠ 3, one generic.
-- χ and χ⁻¹ are different characters of μ₃, so the two division lifts are different members.
-- At p = 3 the conclusion is an injection: the division lift may vanish, and the statement does not assert that all three labels occur.
+- χ and χ⁻¹ are different characters of μ₃, so the two division lifts, when nonzero, are different members: they are lifts from one algebra of τ and of τ∨, and τ ≇ τ∨.
+- At p = 3 the conclusion is an injection L⁻¹(φ) → Irr(μ₃), not a map Irr(μ₃) → L⁻¹(φ): a division lift may vanish, and when both vanish the fibre is the single generic member; the statement does not assert that all three labels occur.
 
 ### 4.3 Self-dual A₂ packets
 
-Let φ = j ∘ φ_τ be discrete with φ_τ self-dual, so S_φ ≅ S₃. Prove, for p ≠ 3, a bijection L⁻¹(φ) ≅ Irr(S₃) = {1, sgn, std₂} with the generic member labelled 1: the two lifts θ(τ⁺) and θ(τ⁻) of the extensions of τ to PGL₃ ⋊ ⟨duality⟩ are the members labelled by the two characters trivial on μ₃ (1 for the generic one and sgn), and the division lift (the same representation from D₁ and D₂, which are exchanged by duality) is the member labelled std₂, whose restriction to μ₃ is χ ⊕ χ⁻¹. For p = 3 prove the corresponding injection (GS, Proposition 3.2 and proof, pp. 14–16; HD, Theorems 8.2 and 8.5, PDF pp. 25–29). *Route:* the normalizer of μ₃ in S₃ acts by inversion; Clifford theory for the two extensions τ±; HD Theorem 8.5 separates the generic and nongeneric split lifts in every residue characteristic including 2; the central restriction of the division lift. The μ₃-centralizer construction used for §4.2 does not apply when S_φ = S₃, so this argument is separate. *Needs:* §4.1, §3.3, §0.2; ExceptionalThetaCorrespondencesForG2, Layer 5 (*PGL₃ outer extensions and their signs*, *Nonzero minus lift for selfdual supercuspidals*, *The split-E₆ lift table*).
+Let φ = j ∘ φ_τ be discrete with φ_τ self-dual, so S_φ ≅ S₃. Prove, for p ≠ 3, a bijection L⁻¹(φ) ≅ Irr(S₃) = {1, sgn, std₂} with the generic member labelled 1: the two lifts θ(τ⁺) and θ(τ⁻) of the extensions of τ to PGL₃ ⋊ ⟨duality⟩ are the members labelled by the two characters trivial on μ₃ (1 for the generic one and sgn), and the division lift (the same representation from D₁ and D₂, which are exchanged by duality) is the member labelled std₂, whose restriction to μ₃ is χ ⊕ χ⁻¹. For p = 3 prove the corresponding injection L⁻¹(φ) → Irr(S₃) with the same labels: both split lifts θ(τ⁺) and θ(τ⁻) are nonzero for discrete τ in every residue characteristic (HD, Theorem 8.5(i)), so the injection is a bijection exactly when the division lift is nonzero; and since a self-dual discrete series of PGL₃ is St_PGL₃ or a self-dual supercuspidal, which exists only for p = 2 (ExceptionalThetaCorrespondencesForG2, Layer 5, *Nonzero minus lift for selfdual supercuspidals*), at p = 3 the only self-dual discrete φ_τ is Sym² and the injection is the bijection of §4.4 (GS, Proposition 3.2 and proof, pp. 14–16; HD, Theorems 8.2 and 8.5, PDF pp. 25–29). *Route:* the normalizer of μ₃ in S₃ acts by inversion; Clifford theory for the two extensions τ±; HD Theorem 8.5 separates the generic and nongeneric split lifts in every residue characteristic including 2; the central restriction of the division lift. The μ₃-centralizer construction used for §4.2 does not apply when S_φ = S₃, so this argument is separate. *Needs:* §4.1, §3.3, §0.2; ExceptionalThetaCorrespondencesForG2, Layer 5 (*PGL₃ outer extensions and their signs*, *Nonzero minus lift for selfdual supercuspidals*, *The split-E₆ lift table*).
 
 **Checks.**
 
 - |Irr(S₃)| = 3 while |S₃| = 6: the fibre has three elements, not six.
 - std₂ restricted to μ₃ is χ ⊕ χ⁻¹, a sum of the two nontrivial characters; it is not a single Kottwitz character.
 - sgn restricts trivially to μ₃, so the corresponding member comes from the split form, not from a division algebra.
+- The direction at p = 3 is L⁻¹(φ) → Irr(S₃): a self-dual supercuspidal τ of PGL₃ would have S_φ = S₃ with a division lift of unknown nonvanishing at p = 3, but such τ exist only for p = 2, so the p = 3 case is the subregular fibre, where all three labels occur.
 
 ### 4.4 The subregular fibre
 
@@ -672,7 +699,7 @@ For a generic discrete series σ of PGSp₆(F), define KS(σ) ⊂ Φ(PGSp₆) as
 
 ### 5.2 Existence of Kret–Shin parameters
 
-Prove that every generic discrete series σ of PGSp₆(F) has KS(σ) ≠ ∅, and that any two members are conjugate after multiplication by a quadratic character of W_F (GS, Proposition 5.1 and proof, p. 20). *Route:* globalize σ over a totally real field with a Steinberg place, a generic supercuspidal place and cohomological generic spin-regular discrete series at the real places (§1.6 and §1.7); apply the Kret–Shin theorem to the cuspidal Σ; compare s ∘ ρ_Σ with the Galois representations of the isobaric summands of SpinLift(Σ) by Chebotarev, after checking that each summand is regular algebraic with the correct shift; read off the local parameter at the place of σ from local–global compatibility with N at a place not above ℓ. Two Spin₇-lifts of one SO₇-parameter differ by a character W_F → μ₂. *Needs:* §5.1, §1.6, §1.7, §2.3; AutomorphicGaloisRepresentationsPartII, AG2.2 and AG2.5, and the kret-shin-gspin-galois contract; ModularityAndLanglandsExtensions §3.17.
+Prove that every generic discrete series σ of PGSp₆(F) has KS(σ) ≠ ∅, and that any two members are conjugate after multiplication by a quadratic character of W_F (GS, Proposition 5.1 and proof, p. 20). *Route:* globalize σ over a totally real field with a Steinberg place, a generic supercuspidal place and cohomological generic spin-regular discrete series at the real places (§1.6 and §1.7); apply the Kret–Shin theorem to the cuspidal Σ; compare s ∘ ρ_Σ with the Galois representations of the isobaric summands of SpinLift(Σ) by Chebotarev, after checking that each summand is regular algebraic with the correct shift; read off the local parameter at the place of σ from local–global compatibility with N at a place not above ℓ. Two Spin₇-lifts of one SO₇-parameter differ by a character W_F → μ₂. *Needs:* §5.1, §1.6, §1.7, §2.3; AutomorphicGaloisRepresentationsPartII, AG2.2 and AG2.5, and the kret-shin-gspin-galois contract; ModularityAndLanglandsExtensions §3.17; Chebotarev, Layer 10.
 
 **Checks.**
 
@@ -727,13 +754,13 @@ Prove that for every generic discrete series π of G₂(F), θ(π) is a nonzero 
 
 ### Dependencies
 
-Layers 0–3; ModularityAndLanglandsExtensions §§3.15, 3.17; AutomorphicGaloisRepresentationsPartII, AG2.2, AG2.5 and the kret-shin-gspin-galois contract; AutomorphicLFunctionsAndLocalFactors, AL.3; MetaplecticAutomorphicForms §3.41 and the pgsp6-similitude-theta-tables contract; ExceptionalThetaCorrespondencesForG2, Layers 8 and 10.
+Layers 0–3; ModularityAndLanglandsExtensions §§3.15, 3.17; AutomorphicGaloisRepresentationsPartII, AG2.2, AG2.5 and the kret-shin-gspin-galois contract; Chebotarev, Layer 10; AutomorphicLFunctionsAndLocalFactors, AL.3; MetaplecticAutomorphicForms §3.41 and the pgsp6-similitude-theta-tables contract; ExceptionalThetaCorrespondencesForG2, Layers 8 and 10.
 
 ## Layer 6: Diamond fibres and distinguished Xu packets
 
 ### 6.1 Surjectivity onto diamond discrete parameters
 
-Prove that for every φ ∈ Φ♦_ds(G₂) there is a generic discrete series π with L(π) = φ, in every residue characteristic (GS, Proposition 6.1 and proof, pp. 21–22). *Route:* when φ is nontrivial on SL₂, read π from the explicit lift tables. When φ is trivial on SL₂, take the generic representation σ₀ of Sp₆(F) with parameter q ∘ i ∘ φ and a generic lift σ to PGSp₆; a member of KS(σ) (§5.2) differs from i ∘ φ by a quadratic character χ, so replacing σ by σ ⊗ χ ∘ sim (§2.5) gives KS(σ) ∋ i ∘ φ; then L(s, σ, spin) = L(s, SpinLift(σ)) (§2.4) has a pole at s = 0 by §0.3, and the supercuspidal spin-pole criterion gives a nonzero G₂ lift π. *Needs:* §0.3, §2.4, §2.5, §5.2; ExceptionalThetaCorrespondencesForG2, Layer 8 (*The supercuspidal spin-pole criterion*, explicit tables); ModularityAndLanglandsExtensions §§3.15, 3.19; AutomorphicLFunctionsAndLocalFactors, pgsp6-shahidi-spin-factor contract.
+Prove that for every φ ∈ Φ♦_ds(G₂) there is a generic discrete series π with L(π) = φ, in every residue characteristic (GS, Proposition 6.1 and proof, pp. 21–22). *Route:* when φ is nontrivial on SL₂, read π from the explicit lift tables. When φ is trivial on SL₂, take the generic representation σ₀ of Sp₆(F) with parameter q ∘ i ∘ φ and a generic lift σ to PGSp₆; a member of KS(σ) (§5.2) differs from i ∘ φ by a quadratic character χ, so replacing σ by σ ⊗ χ ∘ sim (§2.5) gives KS(σ) ∋ i ∘ φ; then L(s, σ, spin) = L(s, SpinLift(σ)) (§2.4) has a pole at s = 0 by §0.3, and the supercuspidal spin-pole criterion gives a nonzero G₂ lift π. *Needs:* §0.3, §2.4, §2.5, §5.2; ExceptionalThetaCorrespondencesForG2, Layer 8 (*The supercuspidal spin-pole criterion*, explicit tables); ModularityAndLanglandsExtensions §§3.15, 3.19; AutomorphicLFunctionsAndLocalFactorsPartII, pgsp6-shahidi-spin-factor contract.
 
 **Checks.**
 
@@ -769,7 +796,7 @@ For φ ∈ Φ♦_ds(G₂) put φ♭ = q ∘ i ∘ φ and define X*(φ) as the un
 
 ### 6.4 Globalization with two identical local components
 
-For π in L⁻¹(φ) with φ ∈ Φ♦_ds(G₂), prove that there are a totally real k with two finite places w₁, w₂, k_w₁ ≅ k_w₂ ≅ F, and a cuspidal Π with Π_w₁ ≅ Π_w₂ ≅ π and cuspidal nonzero PGSp₆ lift Σ whose Sp₆-restriction has a generic global parameter: for generic π on split G₂ with an auxiliary generic depth-zero supercuspidal place whose PGSp₆ lift is supercuspidal and discrete series far from the walls at the real places; for nongeneric π (supercuspidal here) on the totally definite octonion form with a Steinberg place (GS, proof of Lemma 8.3, pp. 24–25). *Needs:* §1.4, §1.6; ExceptionalThetaCorrespondencesForG2, Layer 8 (*A generic depth-zero lift example*) and Layer 10 (nonvanishing, cuspidality criteria, real infinitesimal-character matching).
+For π in L⁻¹(φ) with φ ∈ Φ♦_ds(G₂), prove that there are a totally real k with two finite places w₁, w₂, k_w₁ ≅ k_w₂ ≅ F, and a cuspidal Π with Π_w₁ ≅ Π_w₂ ≅ π and cuspidal nonzero PGSp₆ lift Σ whose Sp₆-restriction has a generic global parameter: for generic π on split G₂ with an auxiliary generic depth-zero supercuspidal place whose PGSp₆ lift is supercuspidal and discrete series far from the walls at the real places; for nongeneric π (supercuspidal here) on the totally definite octonion form with a Steinberg place (GS, proof of Lemma 8.3, pp. 24–25). *Needs:* §1.4, §1.6; ExceptionalThetaCorrespondencesForG2, Layer 8 (*A generic depth-zero lift example*) and Layer 10 (nonvanishing, cuspidality criteria, real infinitesimal-character matching); AutomorphicFormsOnReductiveGroups, regular-real-unitarity contract (the real components of the lift are discrete series).
 
 **Checks.**
 
@@ -820,17 +847,17 @@ For φ ∈ Φ♦_ds(G₂) define the enhancement bijection L⁻¹(φ) ≅ Irr(S_
 
 ### Dependencies
 
-Layers 0–5; ModularityAndLanglandsExtensions §§3.15, 3.19, 3.27; AutomorphicLFunctionsAndLocalFactors, AL.3 and the pgsp6-shahidi-spin-factor contract; ExceptionalThetaCorrespondencesForG2, Layers 8 and 10 and the spin-pole-global-converse contract.
+Layers 0–5; ModularityAndLanglandsExtensions §§3.15, 3.19, 3.27; AutomorphicLFunctionsAndLocalFactors, AL.3; AutomorphicLFunctionsAndLocalFactorsPartII, pgsp6-shahidi-spin-factor contract; AutomorphicFormsOnReductiveGroups, regular-real-unitarity contract; ExceptionalThetaCorrespondencesForG2, Layers 8 and 10 and the spin-pole-global-converse contract.
 
 ## Layer 7: The G₂ correspondence and its enhanced theta applications
 
 ### 7.1 The local Langlands correspondence for split G₂
 
-Prove that L : Irr(G₂(F)) → Φ(G₂) is surjective with finite fibres and satisfies: discrete-series detection (§3.7); temperedness and tempered induction (§3.6); the Langlands-quotient property (§3.5); the two theta diagrams (§3.2); the characterizations by the diagrams (§3.14) and by gamma factors (§3.13); the spin diagram on generic discrete series with generic tempered intermediate codomain (§5.6); preservation of G₂ × GL_r gamma factors (§3.12); global–local compatibility under the hypotheses of §3.15; and for every φ a natural bijection L⁻¹(φ) ≅ Irr(S_φ) when p ≠ 3, and for p = 3 the same outside j(Φ_ds(PGL₃)), where there is a natural injection Irr(S_φ) → L⁻¹(φ) that is a bijection for the subregular parameter; for bounded φ the trivial character corresponds to the unique generic member (GS, Main Theorem, pp. 3–4). *Route:* the nontempered parameters (§3.5), the bounded non-discrete parameters (§3.8), the discrete A₂ parameters (§§4.2–4.4) and the diamond discrete parameters (§§6.1, 6.7) exhaust Φ(G₂). *Needs:* §§3.5–3.8, 3.12–3.15, §§4.2–4.4, §5.6, §§6.1, 6.7.
+Prove that L : Irr(G₂(F)) → Φ(G₂) is surjective with finite fibres and satisfies: discrete-series detection (§3.7); temperedness and tempered induction (§3.6); the Langlands-quotient property (§3.5); the two theta diagrams (§3.2); the characterizations by the diagrams (§3.14) and by gamma factors (§3.13); the spin diagram on generic discrete series with generic tempered intermediate codomain (§5.6); preservation of G₂ × GL_r gamma factors (§3.12); global–local compatibility under the hypotheses of §3.15; and for every φ a natural bijection L⁻¹(φ) ≅ Irr(S_φ) when p ≠ 3, and for p = 3 the same outside j(Φ_ds(PGL₃)), where there is a natural injection L⁻¹(φ) → Irr(S_φ), with the labels of §§4.2–4.3, that is a bijection whenever the division lifts are nonzero and in particular for the subregular parameter; for bounded φ the trivial character corresponds to the unique generic member (GS, Main Theorem, pp. 3–4). *Route:* the nontempered parameters (§3.5), the bounded non-discrete parameters (§3.8), the discrete A₂ parameters (§§4.2–4.4) and the diamond discrete parameters (§§6.1, 6.7) exhaust Φ(G₂). *Needs:* §§3.5–3.8, 3.12–3.15, §§4.2–4.4, §5.6, §§6.1, 6.7.
 
 **Checks.**
 
-- At p = 3 the A₂ statement is an injection: the conclusion is not promoted to a bijection on the discrete PGL₃ image, except for the subregular parameter (§4.4).
+- At p = 3 the A₂ statement is an injection L⁻¹(φ) → Irr(S_φ) whose image omits the labels of vanishing division lifts: the conclusion is not promoted to a bijection on the discrete PGL₃ image, except for the subregular parameter (§4.4) and the fibres whose division lifts are nonzero.
 - The fibre over the subregular parameter has three elements and S_φ = S₃ has six elements.
 - The fibre over the principal parameter is {St_G₂} and over the unramified parameter of the trivial representation is {1}.
 
@@ -893,7 +920,7 @@ If σ in §1.7 lies in Irr♥(PGSp₆) (the classical locus lifting to split PGS
 
 ### 8.2 Kret–Shin parameters of discrete heart representations
 
-For every discrete series σ ∈ Irr♥(PGSp₆), prove that there is a discrete Spin₇-valued parameter φ̃ with q ∘ φ̃ the Arthur parameter of the restriction of σ and s ∘ φ̃ the parameter of the triality-theta GL₈-transfer of σ, and that its weak class is unique (GS, Theorem 12.3, p. 36; conclusion of §12.6, p. 38). *Route:* apply the Kret–Shin theorem to Σ of §1.7, whose Steinberg, cohomological and spin-regular hypotheses hold; Kret–Shin Proposition 13.1(4) gives irreducibility of the eight-dimensional spin Galois representation; the global transfer SpinLift(Σ) of §2.3 is isobaric with regular algebraic summands; comparing Galois representations by Chebotarev identifies their sum with s ∘ ρ_Σ, irreducibility forces a single cuspidal summand, and local–global compatibility with N at a place not above ℓ gives the local parameter. *Needs:* §1.7, §8.1, §2.3, §0.6; AutomorphicGaloisRepresentationsPartII, AG2.2, AG2.5 and the kret-shin-gspin-galois contract.
+For every discrete series σ ∈ Irr♥(PGSp₆), prove that there is a discrete Spin₇-valued parameter φ̃ with q ∘ φ̃ the Arthur parameter of the restriction of σ and s ∘ φ̃ the parameter of the triality-theta GL₈-transfer of σ, and that its weak class is unique (GS, Theorem 12.3, p. 36; conclusion of §12.6, p. 38). *Route:* apply the Kret–Shin theorem to Σ of §1.7, whose Steinberg, cohomological and spin-regular hypotheses hold; Kret–Shin Proposition 13.1(4) gives irreducibility of the eight-dimensional spin Galois representation; the global transfer SpinLift(Σ) of §2.3 is isobaric with regular algebraic summands; comparing Galois representations by Chebotarev identifies their sum with s ∘ ρ_Σ, irreducibility forces a single cuspidal summand, and local–global compatibility with N at a place not above ℓ gives the local parameter. *Needs:* §1.7, §8.1, §2.3, §0.6; AutomorphicGaloisRepresentationsPartII, AG2.2, AG2.5 and the kret-shin-gspin-galois contract; Chebotarev, Layer 10.
 
 **Checks.**
 
@@ -907,7 +934,7 @@ For every discrete series σ ∈ Irr♥(PGSp₆), prove that there is a discrete
 
 ### Dependencies
 
-Layers 0–2 and §1.7; MetaplecticAutomorphicForms §§3.10, 3.41, 3.42 and the pgsp6-similitude-rallis contract; AutomorphicLFunctionsAndLocalFactors, AL.3; AutomorphicGaloisRepresentationsPartII, AG2.2, AG2.5 and the kret-shin-gspin-galois contract.
+Layers 0–2 and §1.7; MetaplecticAutomorphicForms §§3.10, 3.41, 3.42 and the pgsp6-similitude-rallis contract; AutomorphicLFunctionsAndLocalFactors, AL.3; AutomorphicGaloisRepresentationsPartII, AG2.2, AG2.5 and the kret-shin-gspin-galois contract; Chebotarev, Layer 10.
 
 ## Layer 9: The extended spin transfer and joint Spin₇-lifts
 
@@ -1106,6 +1133,7 @@ The statements above differ from the printed sources in the following places; ea
 - [HD] W. T. Gan and G. Savin, *Howe duality and dichotomy for exceptional theta correspondences*, Invent. Math. 232 (2023); arXiv:2102.00372 (v1 read; theorem numbers as cited). Theorems 8.2, 8.5, 15.1, 15.2; Lemmas 13.4, 13.8.
 - [GF] W. T. Gan and G. Savin, *A theory of γ-factors for G₂ × GL_r*, arXiv:2308.12561 (v1). Definition 2.1, Proposition 2.3, Theorem 2.4.
 - [GS20] W. T. Gan and G. Savin, *An exceptional Siegel–Weil formula and poles of the Spin L-function of PGSp₆*, Compositio Math. 156 (2020); arXiv:1904.06000 (v1 read). Theorem 1.1.
+- [Griess] R. L. Griess, Jr., *Basic conjugacy theorems for G₂*, Invent. Math. 121 (1995), 257–277; doi:10.1007/BF01884298. Theorem 1, cited by its locator (the text is not open access).
 - [C] G. Chenevier, *Subgroups of Spin(7) or SO(7) with each element conjugate to some element of G₂ and applications to automorphic forms*, Doc. Math. 24 (2019), 95–161. Theorem E p. 100; Theorem 6.4 p. 148; Corollary 6.8 pp. 149–150.
 - [CG] G. Chenevier and W. T. Gan, *Spin(7) is unacceptable*, arXiv:2303.15897 (v1); Peking Math. J. 8 (2025). Lemma 3.10, Proposition 3.12, Example 1, Corollaries 4.6 and 4.8.
 - [HKT] M. Harris, C. Khare and J. Thorne, *A local Langlands parameterization for generic supercuspidal representations of p-adic G₂*, Ann. Sci. ENS 56 (2023); arXiv:1909.05933 (v3 read). Lemma 4.6.

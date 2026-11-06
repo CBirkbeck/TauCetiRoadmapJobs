@@ -53,7 +53,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
 version_note = "arXiv v3"
-cited_for = ["0.5"]
+cited_for = ["0.0", "0.5"]
 
 [[source]]
 id = "HD"
@@ -71,7 +71,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
 version_note = "arXiv v1"
-cited_for = ["3.3", "3.4", "3.5", "4.3", "4.4", "5.5"]
+cited_for = ["3.3", "3.4", "3.5", "4.2", "4.3", "4.4", "5.5"]
 
 [[source]]
 id = "GS"
@@ -106,7 +106,7 @@ sha256 = "f21a45314ba0331c1217e3094a5929158a8e3e04bc2bc02bff36811ac9aa7d40"
 licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-10-26"
-cited_for = ["0.9", "0.10"]
+cited_for = ["0.0", "0.9", "0.10"]
 
 [[source]]
 id = "KS"
@@ -200,3 +200,17 @@ accessed = "2026-10-26"
 version_note = "arXiv v2"
 cited_for = ["Exact supplier contracts", "1.5"]
 
+[[source]]
+id = "Griess"
+authors = "Robert L. Griess, Jr."
+title = "Basic conjugacy theorems for G₂"
+year = 1995
+venue = "Inventiones mathematicae 121 (1995) 257-277"
+doi = "10.1007/BF01884298"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://doi.org/10.1007/BF01884298"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["0.0", "0.3", "0.4", "0.5", "0.9", "0.10", "3.13"]

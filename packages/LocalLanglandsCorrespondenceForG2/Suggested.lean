@@ -16,10 +16,12 @@ Not statable at the pins, with what each lacks:
 
 * the local Langlands correspondence for split `G₂` (README §7.1: a surjective finite-to-one map
   `Irr(G₂(F)) → Φ(G₂)` with the discrete, tempered and Langlands-quotient properties, the two
-  theta diagrams, the two characterizations and the enhanced fibres): neither library has the
-  local Weil group `W_F` of a `p`-adic field, Weil–Deligne or `L`-parameters, the category of
-  smooth representations of `G₂(F)` or the group `G₂(F)` of a `p`-adic field as a topological
-  group;
+  theta diagrams, the two characterizations and the enhanced fibres): Tau Ceti has the local
+  Weil group `W_F` of a nonarchimedean local field (`TauCeti.ClassFieldTheory.WeilGroup`, with
+  its degree `weilDegree`), but neither library has the complex group `G₂(ℂ)` (no automorphism
+  group of `TauCeti.Octonion` as a linear algebraic group, no comparison with `spinGroup`),
+  Weil–Deligne or `L`-parameters valued in it, the category of smooth representations of
+  `G₂(F)`, or the group `G₂(F)` of a `p`-adic field as a topological group;
 * the generic supercuspidal correspondence (README §7.2): the same carriers, and genericity
   (Whittaker functionals) for `G₂(F)`;
 * the characterization by `G₂ × GL_r` gamma factors (README §§3.12–3.13): local gamma factors of
@@ -32,9 +34,11 @@ Not statable at the pins, with what each lacks:
   parameters of `W_F × SL₂(ℂ)`;
 * the all-places global–local compatibility (README §3.15): automorphic representations of `G₂`
   over a number field and the Galois representations attached to them;
-* standard injectivity and quadratic-twist rigidity for `G₂`-valued parameters (README §§0.4–0.5):
-  the parameters, and the embedding `G₂(ℂ) → Spin₇(ℂ)` as a stabilizer of a nonisotropic spinor
-  (Mathlib has `spinGroup` and Tau Ceti has the octonions, but no comparison between them).
+* Griess's conjugacy theorem for `G₂` (README §0.0), standard injectivity and quadratic-twist
+  rigidity for `G₂`-valued parameters (README §§0.4–0.5): the group `G₂(ℂ)` with its
+  seven-dimensional representation, the parameters, and the embedding `G₂(ℂ) → Spin₇(ℂ)` as a
+  stabilizer of a nonisotropic spinor (Mathlib has `spinGroup` and Tau Ceti has the octonions,
+  but no comparison between them).
 -/
 
 namespace TauCetiRoadmap.LocalLanglandsCorrespondenceForG2
