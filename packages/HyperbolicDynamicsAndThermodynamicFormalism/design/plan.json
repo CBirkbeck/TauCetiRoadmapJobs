@@ -55,6 +55,11 @@
        "name": "flow_bowenBall_comparison",
        "role": "compatibility",
        "statement": "For t > 0 on a compact metric space, B_{nt}(x,eps) is contained in the g^t-ball B_n(x,eps), and the g^t-ball B_n(x,delta) is contained in B_{nt}(x,eps) for delta a uniform-continuity modulus on [0,t] x X."
+      },
+      {
+       "name": "gammaSet_isClosed",
+       "role": "structure",
+       "statement": "For a homeomorphism, Gamma_eps(x) is the intersection over n of T^{-n} B_{2n+1}(T^n x, eps) with closed balls; it is closed, and compact when X is compact."
       }
      ],
      "tests": [
@@ -173,9 +178,9 @@
      "id": "1.4",
      "kind": "definition",
      "name": "Flow.topEntropy",
-     "statement": "h_top(g) = coverEntropy (g 1) univ; on a compact Hausdorff space coverEntropy (g t) univ = |t| h_top(g) for all real t, and on a compact metric space h_top(g) is the flow separated-set growth rate.",
+     "statement": "h_top(g) = coverEntropy (g 1) univ; on a nonempty compact Hausdorff space coverEntropy (g t) univ = |t| h_top(g) for all real t (0 * oo = 0; on the empty space both sides are bot for t != 0 only), and on a compact metric space h_top(g) is the flow separated-set growth rate (separated = pairwise disjoint open d_T-balls).",
      "hypotheses": [
-      "X compact Hausdorff uniform (compact metric for the separated form)",
+      "X nonempty compact Hausdorff uniform (compact metric for the separated form)",
       "g continuous flow"
      ],
      "locator": {
@@ -192,7 +197,7 @@
       {
        "name": "topEntropy_time",
        "role": "evaluation",
-       "statement": "coverEntropy (g t) univ = |t| h_top(g)."
+       "statement": "On a nonempty compact Hausdorff space coverEntropy (g t) univ = |t| h_top(g) for every real t, with 0 * oo = 0."
       },
       {
        "name": "topEntropy_reverse",
@@ -237,6 +242,8 @@
       "where": "lines 1687-1690"
      },
      "prerequisites": [
+      "mathlib:Dynamics.coverEntropy",
+      "mathlib:Dynamics.coverEntropyEntourage",
       "target:1.1"
      ],
      "api": [
@@ -258,7 +265,7 @@
       {
        "name": "coverEntropy_eq_scale",
        "role": "evaluation",
-       "statement": "h_top(T) equals the entropy at any entourage {d <= eps}, eps < c, and is finite (BowenEntropyExpansive1972 Theorem 2.4)."
+       "statement": "T is entropy-expansive at scale eps when coverEntropy T (Phi_eps x) = 0 for all x (two-sided Gamma_eps for homeomorphisms of compact spaces, BowenEntropyExpansive1972 Corollary 2.3). An entropy-expansive map of a compact metric space has finite entropy, equal to coverEntropyEntourage T univ {d <= eps} (BowenEntropyExpansive1972 Theorem 2.4; the entropy at a fixed scale is finite by itineraries through a finite cover). An expansive homeomorphism is entropy-expansive at every eps < c, so h_top(T) < oo equals the entropy at any {d <= eps}, eps < c, and there are finitely many points of each period."
       }
      ],
      "tests": [
@@ -276,6 +283,11 @@
        "name": "finite_identity",
        "kind": "degenerate",
        "statement": "The identity of a finite set is expansive; the identity of [0,1] is not."
+      },
+      {
+       "name": "identity_interval_entropy_expansive",
+       "kind": "degenerate",
+       "statement": "The identity of [0,1] is entropy-expansive at every scale but not expansive: finiteness of entropy holds for the wider class, finiteness of periodic points needs expansivity."
       }
      ]
     },
@@ -294,7 +306,10 @@
      },
      "prerequisites": [
       "mathlib:Flow",
-      "target:1.1"
+      "mathlib:Dynamics.coverEntropy",
+      "target:1.1",
+      "target:1.4",
+      "target:1.5"
      ],
      "api": [
       {
@@ -310,7 +325,12 @@
       {
        "name": "timeMap_entropyExpansive",
        "role": "compatibility",
-       "statement": "Every time-t map is entropy-expansive (BowenEntropyExpansive1972 Example 1.6)."
+       "statement": "Every time-t map is entropy-expansive (BowenEntropyExpansive1972 Example 1.6); hence on a compact metric space h_top(g) = coverEntropy (g 1) univ < oo by 1.5's finiteness theorem applied to g^1, and every h(g^t) is finite by 1.4."
+      },
+      {
+       "name": "topEntropy_lt_top",
+       "role": "finiteness",
+       "statement": "A Bowen-Walters expansive flow on a compact metric space has finite topological entropy."
       },
       {
        "name": "isExpansive_reverse",
@@ -616,7 +636,7 @@
      ],
      "locator": {
       "source": "Walters1982",
-      "where": "Theorem 9.7; BowenRuelle1975 line 174"
+      "where": "Theorem 9.7 (first four items), Theorem 9.8 (power rule and conjugacy invariance); BowenRuelle1975 line 174"
      },
      "prerequisites": [
       "mathlib:Dynamics.coverEntropy",
@@ -775,7 +795,7 @@
      "id": "3.2",
      "kind": "theorem",
      "name": "Dynamics.measureEntropy_mix",
-     "statement": "h_{p mu + (1-p) nu}(T) = p h_mu(T) + (1-p) h_nu(T) for mu, nu in M(T); and h_mu(T, xi) >= integral of h_{mu_x}(T, xi) for a measurable family with integral mu.",
+     "statement": "For finite partitions P, Q: h_mu(T,P) <= h_mu(T,Q) + H_mu(P|Q), from the chain rule applied to n-fold joins (H(P^n) <= H(Q^n) + sum_{i<n} H(T^{-i}P | T^{-i}Q) = H(Q^n) + n H(P|Q)) with monotonicity of conditional entropy under refinement of the conditioning (Jensen) and invariance of mu; h_{p mu + (1-p) nu}(T) = p h_mu(T) + (1-p) h_nu(T) for mu, nu in M(T); and h_mu(T, xi) >= integral of h_{mu_x}(T, xi) for a measurable family with integral mu.",
      "hypotheses": [
       "T measurable",
       "mu, nu in M(T)",
@@ -783,7 +803,7 @@
      ],
      "locator": {
       "source": "Walters1982",
-      "where": "Theorem 8.1"
+      "where": "Theorem 4.12 (conditional inequality), Theorem 8.1 (affinity)"
      },
      "prerequisites": [
       "roadmap:GeometryOfNumbersAndQuadraticArithmetic §4.2",
@@ -806,6 +826,11 @@
        "name": "trivial_weights",
        "kind": "degenerate",
        "statement": "p = 0, 1 or nu = mu give the trivial identity."
+      },
+      {
+       "name": "conditional_inequality_shift",
+       "kind": "computation",
+       "statement": "Bernoulli(1/2) on the two-shift: P = x_0 partition, Q trivial gives log 2 <= 0 + log 2 (equality); P = (x_0,x_1), Q = x_0 gives log 2 <= log 2 + log 2 with H(P|Q) = log 2, and without the conditional term the inequality log 2 <= 0 would be false."
       }
      ]
     },
@@ -828,7 +853,8 @@
       "roadmap:ArithmeticDynamics §2.7",
       "roadmap:GeometryOfNumbersAndQuadraticArithmetic §4.2",
       "mathlib:MeasureTheory.Measure.Regular",
-      "target:3.1"
+      "target:3.1",
+      "target:3.2"
      ],
      "api": [],
      "tests": [
@@ -945,9 +971,9 @@
      },
      "prerequisites": [
       "roadmap:GeometryOfNumbersAndQuadraticArithmetic §4.2",
-      "roadmap:ArithmeticDynamics §2.6",
       "roadmap:ArithmeticDynamics §2.7",
       "target:3.1",
+      "target:3.2",
       "target:3.3"
      ],
      "api": [
@@ -1200,11 +1226,10 @@
      "id": "4.6",
      "kind": "theorem",
      "name": "Dynamics.exists_isEquilibriumState",
-     "statement": "If mu -> h_mu(T) is upper semicontinuous on M(T) (h_top < oo, X nonempty compact metric), ES(phi) is nonempty and compact for every continuous phi; in particular for expansive homeomorphisms.",
+     "statement": "If mu -> h_mu(T) is upper semicontinuous on M(T) as a [0,oo]-valued function (X nonempty compact metric), ES(phi) is nonempty and compact for every continuous phi, with no finiteness of h_top(T) assumed: an upper semicontinuous function on a nonempty compact set attains its supremum also when it is oo; in particular for expansive homeomorphisms.",
      "hypotheses": [
       "X nonempty compact metric",
       "T continuous",
-      "h_top(T) < oo",
       "entropy upper semicontinuous on M(T)"
      ],
      "locator": {
@@ -1235,6 +1260,11 @@
        "name": "identity_interval",
        "kind": "degenerate",
        "statement": "Identity of [0,1]: ES(phi) is the set of measures on argmax phi."
+      },
+      {
+       "name": "infinite_entropy_case",
+       "kind": "degenerate",
+       "statement": "When h_top = oo, P = oo and ES(phi) is the set of measures of infinite entropy, nonempty and closed under upper semicontinuity; finiteness was redundant."
       }
      ]
     },
@@ -1415,7 +1445,7 @@
       {
        "name": "gibbs_equivalent",
        "role": "characterisation",
-       "statement": "Two Gibbs measures are mutually absolutely continuous; equal if one is ergodic (BowenPeriodicPoints1971 Lemma 6.4)."
+       "statement": "If T is expansive and eps is below an expansivity constant, two Gibbs measures for phi at scale eps are mutually absolutely continuous with bounded densities (Gibbs bounds pass to smaller scales by uniform expansivity, BowenPeriodicPoints1971 Lemma 2.4; Vitali covering by two-sided Bowen balls, which shrink to points); equal if one is ergodic (BowenPeriodicPoints1971 Lemma 6.4)."
       },
       {
        "name": "gibbs_cohomologous",
@@ -1438,6 +1468,11 @@
        "name": "delta_nonexample",
        "kind": "non-example",
        "statement": "A fixed-point mass on the two-shift is not Gibbs."
+      },
+      {
+       "name": "identity_interval_nonexample",
+       "kind": "nonexample",
+       "statement": "Identity of [0,1], phi = 0, eps = 1: every invariant measure is Gibbs with K = 1 and delta_0, delta_1 are mutually singular; expansivity is needed for equivalence."
       }
      ]
     },
@@ -1588,7 +1623,7 @@
      "id": "6.2",
      "kind": "theorem",
      "name": "Dynamics.HasHyperbolicLocalProductStructure.expansive_shadowing_closing",
-     "statement": "Hyperbolic local product structure implies: expansive with constant delta*; shadowing of pseudo-orbits by unique points; closing lemma; transitive implies dense periodic points (Axiom A*).",
+     "statement": "Hyperbolic local product structure implies: expansive with constant delta*; shadowing of pseudo-orbits by points, unique when 2 beta <= delta*; closing lemma; transitive implies dense periodic points (Axiom A*).",
      "hypotheses": [
       "X compact metric",
       "f homeomorphism with hyperbolic local product structure"
@@ -1617,6 +1652,11 @@
        "name": "rotation_nonexample",
        "kind": "non-example",
        "statement": "The irrational rotation has unshadowed pseudo-orbits and no periodic points."
+      },
+      {
+       "name": "shift_large_beta",
+       "kind": "nonexample",
+       "statement": "On the two-shift (diameter 1, delta* = 1/2) with beta = 1 every point shadows every pseudo-orbit; uniqueness needs 2 beta <= delta*."
       }
      ]
     },
@@ -2618,9 +2658,10 @@
      "id": "10.1",
      "kind": "definition",
      "name": "Manifold.IsBasicSet",
-     "statement": "A basic set is a locally maximal hyperbolic set on which the diffeomorphism or flow is transitive; an attractor is a basic set with a neighbourhood U, g^t U in U for t >= T0, Lambda = intersection of g^t U; its basin is the set of points asymptotic to Lambda.",
+     "statement": "A basic set is a nonempty locally maximal hyperbolic set on which the diffeomorphism or flow is transitive; an attractor is a basic set with a neighbourhood U, g^t U in U for t >= T0, Lambda = intersection of g^t U; its basin is the set of points asymptotic to Lambda.",
      "hypotheses": [
-      "f C^1 diffeomorphism or g C^1 flow"
+      "f C^1 diffeomorphism or g C^1 flow",
+      "Lambda nonempty"
      ],
      "locator": {
       "source": "BowenRuelle1975",
@@ -2643,7 +2684,7 @@
       {
        "name": "anosov_basicSet",
        "role": "constructor",
-       "statement": "A transitive Anosov system is a basic set Lambda = M and an attractor with basin M."
+       "statement": "A transitive Anosov system on a nonempty compact manifold is a basic set Lambda = M and an attractor with basin M."
       },
       {
        "name": "basicSet_inv",
@@ -2666,6 +2707,11 @@
        "name": "cat_suspension",
        "kind": "computation",
        "statement": "Suspension of the cat map: Lambda = M, attractor with basin M."
+      },
+      {
+       "name": "empty_set_excluded",
+       "kind": "nonexample",
+       "statement": "The empty set is vacuously hyperbolic, locally maximal and transitive but has no invariant measure; nonemptiness excludes it."
       }
      ]
     },
@@ -2676,7 +2722,7 @@
      "statement": "Bowen's theorem: a Hoelder potential on a basic set of a C^1 diffeomorphism has a unique equilibrium state, ergodic, Gibbs, positive on relatively open sets, unchanged by phi + c + psi o f - psi; in particular for transitive Anosov diffeomorphisms.",
      "hypotheses": [
       "f C^1 diffeomorphism of compact M",
-      "Lambda basic set",
+      "Lambda basic set (nonempty)",
       "phi Hoelder on Lambda"
      ],
      "locator": {
@@ -2716,7 +2762,7 @@
      "statement": "Bowen-Ruelle: a Hoelder F on a basic set of a C^1 flow has a unique equilibrium state nu_{g,F}, flow-ergodic, positive on relatively open sets, lower Gibbs bound, unchanged by F + c + L_g psi, equilibrium for g^t and F_t, invariant under rescaling; in particular transitive Anosov flows.",
      "hypotheses": [
       "g C^1 flow on compact M",
-      "Lambda basic set",
+      "Lambda basic set (nonempty)",
       "F Hoelder on Lambda"
      ],
      "locator": {
@@ -2724,7 +2770,9 @@
       "where": "Theorem 3.3, lines 272-277; Proposition 3.1, lines 213-222; TsujiiZhang2023 lines 106-109 and 485-495"
      },
      "prerequisites": [
+      "target:1.6",
       "target:4.9",
+      "target:6.6",
       "target:6.8",
       "target:8.5",
       "target:9.2",
@@ -2755,7 +2803,7 @@
      "name": "Flow.IsBasicSet.existsUnique_maxEntropy",
      "statement": "Unique measure of maximal entropy (Bowen-Margulis) on basic sets of C^1 flows, ergodic and fully supported, with positive entropy unless Lambda is one periodic orbit; Bowen's measure for diffeomorphisms (positive entropy unless finite); Haar for toral automorphisms.",
      "hypotheses": [
-      "Lambda basic set of a C^1 flow or diffeomorphism"
+      "Lambda basic set (nonempty) of a C^1 flow or diffeomorphism"
      ],
      "locator": {
       "source": "BowenRuelle1975",
@@ -2936,7 +2984,7 @@
      "statement": "(a) P(g|Lambda, phi^u) = limsup (1/T) log m(B_Lambda(eps,T)) <= 0; (b) if W^s_Lambda(eps) has positive volume (attractors, Anosov), P = 0 and h_{mu+}(g^1) = -integral phi^u d mu+.",
      "hypotheses": [
       "g C^2 flow on compact M",
-      "Lambda basic set"
+      "Lambda basic set (nonempty)"
      ],
      "locator": {
       "source": "BowenRuelle1975",
@@ -2975,7 +3023,7 @@
      "statement": "For an attractor of a C^2 flow, m-almost every point of the basin is generic for mu+ = nu_{g,phi^u}; for transitive C^2 Anosov flows mu+ is the unique invariant probability whose generic points have positive (full) volume and the only absolutely continuous invariant probability.",
      "hypotheses": [
       "g C^2 flow on compact M",
-      "Lambda attractor with basin W^s_Lambda"
+      "Lambda attractor (a nonempty basic set) with basin W^s_Lambda"
      ],
      "locator": {
       "source": "BowenRuelle1975",
@@ -3093,7 +3141,7 @@
     "9.3"
    ],
    "detail": "RiemannianGeometry R2 supplies Jacobi fields and variations through geodesics but not the connection map of the Levi-Civita connection, the horizontal-vertical splitting of T(TM), or the identification of the derivative of the geodesic flow with the Jacobi-field map; proposed as RiemannianGeometry, Part II.",
-   "needs": "The connection map, the horizontal-vertical splitting of T(TM) identified with TM + TM, and D(geodesic flow)(J(0), D_tJ(0)) = (J(t), D_tJ(t)).",
+   "needs": "For a smooth Riemannian manifold with its Levi-Civita connection: the connection map K : T(TM) -> TM, the horizontal-vertical splitting of T_v(TM) identified with T_x M + T_x M, and, for v in TM, xi in T_v(TM) with components (w, w') and t in the domain of the geodesic of v, D(geodesic flow at time t)_v xi = (J(t), D_t J(t)) where J is the Jacobi field along that geodesic with J(0) = w, D_t J(0) = w'.",
    "supplier": "RiemannianGeometry",
    "section": "proposed Part II: connection map and Jacobi derivative of the geodesic flow"
   }

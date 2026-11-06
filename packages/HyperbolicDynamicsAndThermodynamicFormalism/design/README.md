@@ -20,7 +20,7 @@ Not part of this roadmap: nonuniform hyperbolicity (Pesin theory, Lyapunov expon
 - Pressure has the potential added: P_T(φ) is the exponential growth rate of Σ exp(S_nφ) over separated sets, so P_T(0) = h_top(T). The inverse-temperature form of statistical mechanics is P_T(−βH) for an energy H and inverse temperature β; equilibrium states of −βH are Gibbs states at temperature 1/β. Witness: on the full shift on k symbols, P(c) = log k + c for a constant c, so the inverse-temperature form of the constant energy H = 1 gives P(−β) = log k − β.
 - Birkhoff sums are Mathlib's `birkhoffSum T φ n`, the sum of φ∘T^k over 0 ≤ k < n; S_0φ = 0. For a flow g and potential F, the orbit integral over [0, t] is ∫₀ᵗ F(g^s x) ds, and F_t denotes the function x ↦ ∫₀ᵗ F(g^s x) ds, so F_1 is the time-one average of BowenRuelle1975, lines 191–192.
 - Dynamical distances use n terms for maps and closed time intervals for flows: d_n(x, y) = max over 0 ≤ k < n of d(T^k x, T^k y) (d_0 = 0), matching Mathlib's `Dynamics.dynEntourage`, and d_t(x, y) = sup over 0 ≤ s ≤ t of d(g^s x, g^s y). Bowen balls B_n(x, ε) and B_t(x, ε) are the open balls of these distances, so B_0(x, ε) is the whole space. Witness: for the doubling map of ℝ/ℤ, B_2(0, 1/8) is the arc of half-width 1/16.
-- Separated sets: a finite set is (n, U)-separated when it is a dynamical net in the sense of Mathlib's `Dynamics.IsDynNetIn` for the entourage U; on a metric space U is {d < ε}.
+- Separated sets: a finite set is (n, U)-separated when it is a dynamical net in the sense of Mathlib's `Dynamics.IsDynNetIn` for the entourage U, that is, the balls of the n-step dynamical entourage about its points are pairwise disjoint; on a metric space U is {d < ε}. For a flow, a finite set E is (T, ε)-separated when the open d_T-balls of radius ε about its points are pairwise disjoint. Disjoint balls of radius ε force d_T(x, y) ≥ ε, and the classical convention d_T(x, y) > ε at scale 2ε forces disjoint balls at scale ε, so the two conventions differ by at most a factor two in the scale, which the limit ε → 0 does not see; a Check at a fixed scale is read with the disjoint-ball convention.
 - Invariant measures: M(T) is the set of Borel probability measures μ with `MeasurePreserving T μ μ`; for a flow g, M(g) is the set of probability measures preserved by every g^t. Ergodicity of a map is Mathlib's `Ergodic`; ergodicity of a flow is `ErgodicVAdd ℝ X μ` for the additive action `Flow.toAddAction`. The weak topology is that of `MeasureTheory.ProbabilityMeasure`.
 - Transitivity is Mathlib's `AddAction.IsTopologicallyTransitive`, for a map through the ℕ-flow `Flow.fromIter` and for a homeomorphism or flow through `Flow.toAddAction` of the ℤ- or ℝ-flow. Topological mixing is defined in §1.7.
 - Manifolds are finite-dimensional real smooth manifolds without boundary, modelled with corners I on a finite-dimensional normed space E; compactness is assumed where stated. Diffeomorphisms of class C^r (r ≥ 1) are Mathlib's `Diffeomorph I I M M r`. A C^r flow is a `Flow ℝ M` whose map (t, x) ↦ g^t x is C^r on ℝ × M; its generator is X(x) = d/dt g^t x at t = 0.
@@ -50,6 +50,11 @@ At commit `1b1ccf4b088b32fa3f23f2de1127433254a81e1e`.
 - `Bundle.ContinuousRiemannianMetric`, `Bundle.RiemannianBundle`, `IsContinuousRiemannianBundle` (`Mathlib/Topology/VectorBundle/Riemannian.lean`); `Bundle.ContMDiffRiemannianMetric`, `IsContMDiffRiemannianBundle` (`Mathlib/Geometry/Manifold/VectorBundle/Riemannian.lean`); `IsRiemannianManifold` (`Mathlib/Geometry/Manifold/Riemannian/Basic.lean`).
 - `Diffeomorph`, `mfderiv`, `ContMDiff` (`Mathlib/Geometry/Manifold/`).
 - `MeasureTheory.lintegral_image_eq_lintegral_abs_det_fderiv_mul` (`Mathlib/MeasureTheory/Function/Jacobian.lean`): the Euclidean change of variables, used in charts by the volume lemmas.
+- `MeasureTheory.MeasurePreserving` (`Mathlib/Dynamics/Ergodic/MeasurePreserving.lean`): the invariance predicate defining M(T).
+- `MeasureTheory.Measure.exists_regular_eq_of_compactSpace` (`Mathlib/MeasureTheory/Integral/RieszMarkovKakutani/Real.lean`): on a compact Hausdorff Borel space, every finite measure has a regular finite measure with the same integrals of bounded continuous functions; used by §4.2 to pass from a weak limit to a regular representative.
+- `Continuous.inner_bundle` (`Mathlib/Topology/VectorBundle/Riemannian.lean`): the inner product of two continuous sections of a continuous Riemannian bundle is continuous; used by §7.3.
+- `extChartAt` (`Mathlib/Geometry/Manifold/IsManifold/ExtChartAt.lean`): the extended chart of a manifold at a point, the chart in which §8.2 applies the Hadamard–Perron theorem.
+- `fderiv` (`Mathlib/Analysis/Calculus/FDeriv/Defs.lean`) and `ContractingWith` (`Mathlib/Topology/MetricSpace/Contracting.lean`): the Fréchet derivative and the contraction-mapping predicate used by the graph transform of §8.1.
 
 ### From Tau Ceti
 
@@ -60,6 +65,7 @@ At commit `2fd255d997f47c0b5d834ee416c7015d55444ce5`.
 - `TauCeti.SmoothMappingTorus`, `TauCeti.SmoothMappingTorus.flow`, `TauCeti.SmoothMappingTorus.contMDiff_uncurry_flow`, `TauCeti.SmoothMappingTorus.flow_one_mk` (`TauCeti/Geometry/Manifold/Instances/MappingTorus.lean`): the smooth mapping torus of a diffeomorphism φ, the quotient of ℝ × M by (t + 1, x) ∼ (t, φx), with its smooth suspension flow [t, x] ↦ [t + s, x] whose time-one map is φ on each fibre.
 - `AddCircle.instIsManifold` (`TauCeti/Geometry/Manifold/Instances/AddCircle.lean`): ℝ/pℤ as an analytic manifold with the quotient map a local diffeomorphism.
 - `TauCeti.catMap`, `TauCeti.det_catMap`, `TauCeti.charpolyRev_catMap` (`TauCeti/Dynamics/CatMap.lean`): the matrix (2 1; 1 1), its determinant 1 and det(1 − tP) = 1 − 3t + t².
+- `ContinuousLinearMap.lyapunovPerronSolution`, `ContinuousLinearMap.lyapunovPerronGraphMap`, `ContinuousLinearMap.localStableGraphMap`, `ContinuousLinearMap.localUnstableGraphMap` (`TauCeti/Analysis/ODE/LyapunovPerron/{Basic,Graph,Local,Smooth}.lean`): the Lyapunov–Perron fixed point for an ordinary differential equation y' = Ay + N(y) with an exponential dichotomy of the linear part, its Lipschitz graph over the stable spectral subspace, the cut-off local stable and unstable graphs at a hyperbolic equilibrium, and their smoothness in the parameter. These concern a single hyperbolic equilibrium of a vector field on a Banach space, not a hyperbolic set, and no target consumes them: §8.1 names them only as the construction its graph transform parallels in discrete time.
 
 ### From TauCetiRoadmap.GeometryOfNumbersAndQuadraticArithmetic — §4.2
 
@@ -71,7 +77,7 @@ The **Entropy and Haar measure on leaves** paragraph: `finitePartitionEntropy`, 
 
 ### From TauCetiRoadmap.ArithmeticDynamics — §§2.6–2.7
 
-§2.6: hμ(T) is the supremum of hμ(T, P) over finite partitions P, with the inequality hμ(T, P) ≤ hμ(T, Q) + Hμ(P | Q) for finite partitions. §2.7: conditional entropy Hμ(P | ℰ) against a sub-σ-algebra with its chain rule; the Shannon–McMillan–Breiman theorem; for a continuous map of a nonempty compact metric space and an invariant Borel probability μ, the inequality of the EReal image of hμ(T) with `Dynamics.coverEntropy T Set.univ`; finite Borel partitions of arbitrarily small diameter with μ-null boundaries; and, on a nonempty standard Borel space, the ergodic decomposition kernel x ↦ μ_x of a measure-preserving map with almost-everywhere uniqueness and hμ(T) = ∫⁻ hμ_x(T) dμ(x).
+§2.6: hμ(T) is the supremum of hμ(T, P) over finite partitions P (its inequality hμ(T, P) ≤ hμ(T, Q) + Hμ(P | Q) is stated there only for a finite truncation Q of a countable P, as a step of that proof; the inequality for two arbitrary finite partitions is §3.2 of this roadmap). §2.7: conditional entropy Hμ(P | ℰ) against a sub-σ-algebra with its chain rule; the Shannon–McMillan–Breiman theorem; for a continuous map of a nonempty compact metric space and an invariant Borel probability μ, the inequality of the EReal image of hμ(T) with `Dynamics.coverEntropy T Set.univ`; finite Borel partitions of arbitrarily small diameter with μ-null boundaries; and, on a nonempty standard Borel space, the ergodic decomposition kernel x ↦ μ_x of a measure-preserving map with almost-everywhere uniqueness and hμ(T) = ∫⁻ hμ_x(T) dμ(x).
 
 ### From TauCetiRoadmap.DifferentialGeometry — Layers 3 and 12
 
@@ -89,8 +95,8 @@ Unit disc and sphere bundles of a vector bundle with a metric as smooth manifold
 
 These are what the named suppliers must provide for Layer 9's geodesic-flow example; nothing else in the roadmap depends on them.
 
-- TangentialBordism §2.3 must provide the unit sphere bundle of a smooth Riemannian vector bundle as a closed smooth submanifold of the total space: the inclusion is a smooth embedding, and a smooth map into the total space with values in the sphere bundle is smooth into it.
-- RiemannianGeometry, Part II (a proposed extension) must provide the connection map of the Levi-Civita connection, the resulting splitting of T(TM) into horizontal and vertical subbundles each identified with TM, and the theorem that the derivative of the geodesic flow sends (J(0), D_tJ(0)) to (J(t), D_tJ(t)) for the Jacobi field J along the geodesic.
+- What TangentialBordism §2.3 must provide (gap:sphere-bundle-embedding): the unit sphere bundle of a smooth Riemannian vector bundle as a closed smooth submanifold of the total space: the inclusion is a smooth embedding, and a smooth map into the total space with values in the sphere bundle is smooth into it.
+- What RiemannianGeometry, Part II (a proposed extension) must provide (gap:connection-map-jacobi-derivative): for a smooth Riemannian manifold (M, g) with its Levi-Civita connection, the connection map K : T(TM) → TM, the resulting splitting of T_v(TM) into the horizontal and vertical subspaces, each identified with T_{π(v)}M, and the theorem that, for v ∈ TM, a vector ξ ∈ T_v(TM) with horizontal and vertical components (w, w') and t in the domain of the geodesic γ_v of v, the derivative of the geodesic flow at v applied to ξ has components (J(t), D_tJ(t)), where J is the Jacobi field along γ_v with J(0) = w and D_tJ(0) = w' (RiemannianGeometry R2 supplies J).
 
 ## How to read the build
 
@@ -110,7 +116,7 @@ Its API:
 - B_0(x, ε) is the whole space and B_1(x, ε) is the ball of radius ε; B_{n+1}(x, ε) ⊆ B_n(x, ε), and the balls increase with ε.
 - T maps B_{n+1}(x, ε) into B_n(Tx, ε); for a semiconjugacy h with h∘S = T∘h and h Lipschitz with constant L, h maps B^S_n(x, ε) into B^T_n(hx, Lε).
 - For a continuous flow on a compact metric space and t > 0: the flow ball B_{nt}(x, ε) lies in the time-t ball B^{g^t}_n(x, ε), and conversely B^{g^t}_n(x, δ) lies in B_{nt}(x, ε) whenever δ is a modulus of uniform continuity of (s, y) ↦ g^s y on [0, t] × X for ε.
-- For a homeomorphism the two-sided set Γ_ε(x) of points whose whole orbit stays ε-close to that of x is the intersection over n of T^{−n}B_{2n+1}(T^n x, ε) with closed balls, and is compact.
+- For a homeomorphism the two-sided set Γ_ε(x) of points whose whole orbit stays ε-close to that of x is the intersection over n of T^{−n}B_{2n+1}(T^n x, ε) with closed balls; it is closed, and compact when X is compact (ClimenhagaThompson2016, line 358, for compact X). For the identity of ℝ it is the closed ε-ball, closed but not compact.
 
 **Checks.**
 
@@ -152,7 +158,13 @@ Prove that for a uniformly continuous map T of a uniform space and k ≥ 1, `Dyn
 
 ### 1.4 Topological entropy of a flow
 
-Define the topological entropy of a continuous flow g on a uniform space as h_top(g) = `Dynamics.coverEntropy` (g 1) Set.univ. Prove that on a compact Hausdorff space `Dynamics.coverEntropy` (g t) Set.univ = |t| h_top(g) for every real t, with the convention 0 · ∞ = 0, and that on a compact metric space h_top(g) is the limit as ε → 0 of the limsup as T → ∞ of (1/T) log of the largest cardinality of a (T, ε)-separated set for d_T (BowenGroupEndomorphisms1971, Proposition 21, lines 487–495, for t > 0; BowenRuelle1975, lines 174 and 182–189, for the separated-set form as the pressure of the zero function). For t > 0 the proof shows h(g^t) ≤ (t/s) h(g^s) for all s, t > 0 by comparing spanning sets as in §1.3; t < 0 follows from §1.3's inverse rule since g^{−t} = (g^t)⁻¹ (`Flow.toHomeomorph`), and t = 0 is the identity.
+Define the topological entropy of a continuous flow g on a uniform space as h_top(g) = `Dynamics.coverEntropy` (g 1) Set.univ. Prove that on a nonempty compact Hausdorff space `Dynamics.coverEntropy` (g t) Set.univ = |t| h_top(g) for every real t, with the convention 0 · ∞ = 0, and that on a compact metric space h_top(g) is the limit as ε → 0 of the limsup as T → ∞ of (1/T) log of the largest cardinality of a (T, ε)-separated set for d_T (BowenGroupEndomorphisms1971, Proposition 21, lines 487–495, for t > 0; BowenRuelle1975, lines 174 and 182–189, for the separated-set form as the pressure of the zero function). For t > 0 the proof shows h(g^t) ≤ (t/s) h(g^s) for all s, t > 0 by comparing spanning sets as in §1.3; t < 0 follows from §1.3's inverse rule since g^{−t} = (g^t)⁻¹ (`Flow.toHomeomorph`), and t = 0 is the identity, whose entropy is 0 on a nonempty space.
+
+Its API:
+
+- On a nonempty compact Hausdorff space, `Dynamics.coverEntropy` (g t) Set.univ = |t| h_top(g) for every real t, with 0 · ∞ = 0; on the empty space both h_top(g) and every h(g^t) are ⊥, and the law holds for t ≠ 0 only, since |0| · ⊥ = 0 in EReal while the left side is ⊥, as in §1.3's Check for k = 0.
+- The reversed flow `Flow.reverse` has the same entropy, the case t = −1 of the rescaling law.
+- On a compact metric space h_top(g) is the limit as ε → 0 of the limsup as T → ∞ of (1/T) log of the largest cardinality of a (T, ε)-separated set for d_T, with separated sets as in the Conventions.
 
 **Checks.**
 
@@ -170,15 +182,16 @@ Its API:
 
 - On a compact space expansivity is independent of the metric (the constant changes), and passes to T⁻¹ with the same constant and to T^k, k ≠ 0, with a smaller constant.
 - On a compact space, for every ε > 0 there is N such that d(x, y) < ε whenever d(T^n x, T^n y) ≤ c for all |n| ≤ N (BowenPeriodicPoints1971, Lemma 2.4, lines 98–100).
-- An expansive homeomorphism of a compact metric space has finitely many points of each period, and finite entropy equal to the entropy at any entourage {d ≤ ε} with ε < c (BowenEntropyExpansive1972, Theorem 2.4, lines 192–193, for the more general entropy-expansive maps).
+- A uniformly continuous map T of a compact metric space is entropy-expansive at scale ε > 0 when `Dynamics.coverEntropy` T Φ_ε(x) = 0 for every x, where Φ_ε(x) is the set of points whose forward orbit stays within ε of that of x (BowenEntropyExpansive1972, lines 55–56); for a homeomorphism of a compact space the two-sided set Γ_ε(x) of §1.1 may be used instead (BowenEntropyExpansive1972, Corollary 2.3, line 188). An entropy-expansive map of a compact metric space has finite entropy, equal to its spanning-set entropy at the entourage {d ≤ ε}: `Dynamics.coverEntropy` T Set.univ = `Dynamics.coverEntropyEntourage` T Set.univ {d ≤ ε} < ∞ (BowenEntropyExpansive1972, Theorem 2.4, lines 192–193; the entropy at a fixed scale is finite on a compact metric space because the itineraries through a finite cover by N balls of radius ε/2 give at most N^n points that (n, ε)-span X). In particular an expansive homeomorphism with constant c is entropy-expansive at every scale ε < c, since Γ_ε(x) = {x}, so it has finite entropy equal to the entropy at any entourage {d ≤ ε} with ε < c, and it has finitely many points of each period.
 
 **Checks.**
 
 - The full shift on k symbols with d(x, y) = 2^{−N(x,y)}, N the least |i| with x_i ≠ y_i, is expansive with constant 1/2: distinct points differ at some coordinate n, and then d(T^n x, T^n y) = 1.
 - An isometry of an infinite compact metric space (an irrational rotation of ℝ/ℤ) is not expansive: points at distance less than c stay at that distance forever.
 - The identity of a finite metric space is expansive with any c below the least distance, while the identity of [0, 1] is not.
+- The identity of [0, 1] is entropy-expansive at every scale although it is not expansive (Φ_ε(x) is a closed interval, on which the identity has entropy 0), so finiteness of entropy is the conclusion for the wider class, while finiteness of the sets of periodic points needs expansivity itself.
 
-*Needs:* Layer 1.1.
+*Needs:* Mathlib `Dynamics.coverEntropy`, `Dynamics.coverEntropyEntourage`; Layer 1.1.
 
 ### 1.6 Bowen–Walters expansive flows
 
@@ -188,7 +201,7 @@ Its API:
 
 - An expansive flow has, for every η > 0, an ε > 0 with Γ_ε(x) contained in the orbit segment g^{[−η, η]}x for every x (ClimenhagaThompson2016, lines 356–366).
 - Its fixed points are isolated (ClimenhagaThompson2016, lines 380–381, citing Bowen and Walters).
-- Every time-t map of a flow with Γ_ε(x) ⊆ g^{[−η, η]}x is entropy-expansive (BowenEntropyExpansive1972, Example 1.6, lines 117–133), and every invariant measure is almost expansive in the sense of ClimenhagaThompson2016, Definition 2.7 (lines 371–375).
+- Every time-t map of a flow with Γ_ε(x) ⊆ g^{[−η, η]}x is entropy-expansive (BowenEntropyExpansive1972, Example 1.6, lines 117–133), and every invariant measure is almost expansive in the sense of ClimenhagaThompson2016, Definition 2.7 (lines 371–375). Hence a Bowen–Walters expansive flow on a compact metric space has finite entropy: h_top(g) = `Dynamics.coverEntropy` (g 1) Set.univ < ∞ by §1.5's finiteness theorem for entropy-expansive maps applied to g^1, and every h(g^t) is finite by §1.4.
 - Expansivity is preserved by time reversal and by rescaling g(at), a > 0.
 
 **Checks.**
@@ -197,7 +210,7 @@ Its API:
 - The linear flow of irrational slope on ℝ²/ℤ² is not expansive: two points on a short transverse segment stay at the same distance for all time without lying on a common short orbit segment.
 - The identity flow of the circle is not expansive (every point is a non-isolated fixed point); the identity flow of a finite set is.
 
-*Needs:* Mathlib `Flow`; Layer 1.1.
+*Needs:* Mathlib `Flow`, `Dynamics.coverEntropy`; Layers 1.1, 1.4, 1.5.
 
 ### 1.7 Topological mixing
 
@@ -299,7 +312,7 @@ Prove that for a continuous map T of a nonempty compact Hausdorff space and a co
 
 ### 2.3 Basic properties of pressure
 
-Prove, for a continuous map T of a nonempty compact Hausdorff space and continuous potentials φ, ψ (Walters1982, Theorem 9.7; BowenRuelle1975, line 174 for the first item):
+Prove, for a continuous map T of a nonempty compact Hausdorff space and continuous potentials φ, ψ (Walters1982, Theorem 9.7, for the first four items, and Theorem 9.8 for the power rule and conjugacy invariance; BowenRuelle1975, line 174 for the first item):
 
 - P_T(0) = h_top(T), and h_top(T) + min φ ≤ P_T(φ) ≤ h_top(T) + max φ, so P_T(φ) is finite iff h_top(T) is.
 - φ ≤ ψ implies P_T(φ) ≤ P_T(ψ); P_T(φ + c) = P_T(φ) + c for a real constant c.
@@ -368,15 +381,22 @@ Its API:
 
 ### 3.2 Affinity and concavity of measure entropy
 
-Prove that for a measurable map T of a measurable space, μ, ν ∈ M(T) and 0 ≤ p ≤ 1, the measure entropy of pμ + (1 − p)ν is p hμ(T) + (1 − p) hν(T) in [0, ∞] (Walters1982, Theorem 8.1); and that for a measurable family x ↦ μ_x of measures in M(T) with integral μ and a finite partition ξ, hμ(T, ξ) ≥ ∫ hμ_x(T, ξ) dμ(x). For a finite partition the entropy of the mixture lies between p Hμ + (1 − p) Hν and that quantity plus log 2; dividing the entropies of the n-fold joins by n removes the log 2, and the supremum over finite partitions (ArithmeticDynamics §2.6) passes to measure entropy. The integral inequality is Jensen's inequality for the concave function t ↦ −t log t applied to each n-fold join, combined with the fact that GeometryOfNumbersAndQuadraticArithmetic §4.2 defines the rate as the infimum over n of H(ξ^n)/n.
+Prove, for a measurable map T of a measurable space and μ ∈ M(T):
+
+- for finite partitions P and Q, hμ(T, P) ≤ hμ(T, Q) + Hμ(P | Q) (Walters1982, Theorem 4.12, and its use in Theorem 8.3): by the chain rule of GeometryOfNumbersAndQuadraticArithmetic §4.2, Hμ(Pⁿ) ≤ Hμ(Pⁿ ∨ Qⁿ) = Hμ(Qⁿ) + Hμ(Pⁿ | Qⁿ) ≤ Hμ(Qⁿ) + Σ_{i<n} Hμ(T^{−i}P | T^{−i}Q) = Hμ(Qⁿ) + n Hμ(P | Q), where Pⁿ is the n-fold join of the T^{−i}P, the middle step uses that conditional entropy is subadditive in its first argument and decreases when the conditioning is refined (Jensen's inequality for t ↦ −t log t, proved here), and the last step is the invariance of μ; divide by n and let n → ∞;
+- for μ, ν ∈ M(T) and 0 ≤ p ≤ 1, the measure entropy of pμ + (1 − p)ν is p hμ(T) + (1 − p) hν(T) in [0, ∞] (Walters1982, Theorem 8.1);
+- for a measurable family x ↦ μ_x of measures in M(T) with integral μ and a finite partition ξ, hμ(T, ξ) ≥ ∫ hμ_x(T, ξ) dμ(x).
+
+For a finite partition the entropy of the mixture lies between p Hμ + (1 − p) Hν and that quantity plus log 2; dividing the entropies of the n-fold joins by n removes the log 2, and the supremum over finite partitions (ArithmeticDynamics §2.6) passes to measure entropy. The integral inequality is Jensen's inequality for the concave function t ↦ −t log t applied to each n-fold join, combined with the fact that GeometryOfNumbersAndQuadraticArithmetic §4.2 defines the rate as the infimum over n of H(ξ^n)/n.
 
 **Checks.**
 
 - For the identity on two points all invariant measures have entropy 0, and so does every mixture, although (δ_a + δ_b)/2 has partition entropy log 2 for the partition into points: the log 2 defect lives at finite n only.
 - On the full two-shift, the mixture with weights 1/2 of the Bernoulli measures (1/2, 1/2) and (1/3, 2/3) has entropy (1/2) log 2 + (1/2)(log 3 − (2/3) log 2), about 0.6648, while the Bernoulli measure of the averaged weights (5/12, 7/12) has entropy about 0.6792: entropy of a mixture is not the entropy of the averaged process.
 - With p = 0 or 1, or ν = μ, the identity is trivial.
+- For the conditional inequality on the full two-shift with the Bernoulli measure (1/2, 1/2): P the partition by x_0 and Q the trivial partition give hμ(T, P) = log 2 ≤ 0 + Hμ(P | Q) = log 2, equality; P the partition by (x_0, x_1) and Q the partition by x_0 give log 2 ≤ log 2 + log 2, with Hμ(P | Q) = log 2 ≠ 0, so the inequality is strict there and a version without the conditional term would be false (hμ(T, P) = log 2 > 0 = hμ(T, {X})).
 
-*Needs:* GeometryOfNumbersAndQuadraticArithmetic §4.2 (`finitePartitionEntropy`, `partitionEntropyRate`, `measureEntropy`); ArithmeticDynamics §2.6 (supremum over finite partitions); Layer 3.1.
+*Needs:* GeometryOfNumbersAndQuadraticArithmetic §4.2 (`finitePartitionEntropy`, `conditionalPartitionEntropy` and its chain rule, `partitionEntropyRate`, `measureEntropy`); ArithmeticDynamics §2.6 (supremum over finite partitions); Layer 3.1.
 
 ### 3.3 Entropy through fine partitions
 
@@ -386,7 +406,7 @@ Prove, for a continuous map T of a compact metric space and μ ∈ M(T) (Walters
 - hμ(T) is the supremum of hμ(T, ξ) over finite Borel partitions with μ-null boundaries;
 - the rate is unchanged by refining with iterates: hμ(T, ξ ∨ T⁻¹ξ ∨ ⋯ ∨ T^{−m}ξ) = hμ(T, ξ), and for invertible T also with the forward images T^jξ, j ≤ m.
 
-The first item follows from Hμ(η | ξ_k) → 0 for every finite partition η (approximate each atom of η from inside by a compact set; once diam ξ_k is below the least distance between these compacts, each atom of ξ_k meets at most one of them) together with ArithmeticDynamics §2.6's inequality hμ(T, η) ≤ hμ(T, ξ_k) + Hμ(η | ξ_k). The second uses the small-diameter null-boundary partitions of ArithmeticDynamics §2.7.
+The first item follows from Hμ(η | ξ_k) → 0 for every finite partition η (approximate each atom of η from inside by a compact set; once diam ξ_k is below the least distance between these compacts, each atom of ξ_k meets at most one of them) together with §3.2's inequality hμ(T, η) ≤ hμ(T, ξ_k) + Hμ(η | ξ_k) for finite partitions. The second uses the small-diameter null-boundary partitions of ArithmeticDynamics §2.7.
 
 **Checks.**
 
@@ -394,7 +414,7 @@ The first item follows from Hμ(η | ξ_k) → 0 for every finite partition η (
 - For the identity map every rate is 0, and so is the limit.
 - For the trivial partition {X} the rate is 0: the first item needs the diameters to tend to 0, not merely the partitions to be finite.
 
-*Needs:* ArithmeticDynamics §2.6 (supremum over finite partitions and the conditional inequality), §2.7 (null-boundary partitions of small diameter); GeometryOfNumbersAndQuadraticArithmetic §4.2 (`conditionalPartitionEntropy` and its chain rule); Mathlib regularity of finite Borel measures on metric spaces; Layer 3.1.
+*Needs:* ArithmeticDynamics §2.6 (supremum over finite partitions), §2.7 (null-boundary partitions of small diameter); GeometryOfNumbersAndQuadraticArithmetic §4.2 (`conditionalPartitionEntropy` and its chain rule); Mathlib regularity of finite Borel measures on metric spaces; Layers 3.1, 3.2 (the conditional inequality).
 
 ### 3.4 Entropy of expansive homeomorphisms
 
@@ -435,7 +455,7 @@ Prove that for a continuous flow g on a compact metric space and μ ∈ M(g), h�
 - For the flow on a periodic orbit every time-t map has entropy 0.
 - hμ(g^{−1}) = hμ(g^1); without the absolute value the formula would assign negative entropy to t < 0.
 
-*Needs:* GeometryOfNumbersAndQuadraticArithmetic §4.2 (`entropy_inverse`, chain rule, `conditionalPartitionEntropy`); ArithmeticDynamics §2.6 (conditional inequality), §2.7 (null-boundary partitions); Layers 3.1, 3.3.
+*Needs:* GeometryOfNumbersAndQuadraticArithmetic §4.2 (`entropy_inverse`, chain rule, `conditionalPartitionEntropy`); ArithmeticDynamics §2.7 (null-boundary partitions); Layers 3.1, 3.2 (the conditional inequality), 3.3.
 
 ### Examples
 
@@ -521,19 +541,20 @@ Convexity and the face property come from affinity (§3.2) and the bound of §4.
 
 ### 4.6 Existence of equilibrium states
 
-Prove that if T is a continuous map of a nonempty compact metric space with h_top(T) < ∞ and μ ↦ hμ(T) is upper semicontinuous on M(T), then ES_T(φ) is nonempty and compact for every continuous φ; in particular this holds for expansive homeomorphisms (Walters1982, Theorem 8.2 and Theorem 9.13(iv); BowenRuelle1975, lines 178–179). The free energy is upper semicontinuous on the compact set M(T) (§3.1), so it attains its supremum, which is P_T(φ) by §4.2; for expansive homeomorphisms use §3.4.
+Prove that if T is a continuous map of a nonempty compact metric space and μ ↦ hμ(T) is upper semicontinuous on M(T) as a [0, ∞]-valued function, then ES_T(φ) is nonempty and compact for every continuous φ; in particular this holds for expansive homeomorphisms (Walters1982, Theorem 8.2 and Theorem 9.13(iv); BowenRuelle1975, lines 178–179). No finiteness of h_top(T) is assumed: the free energy is upper semicontinuous on the nonempty compact set M(T) (§3.1), and an upper semicontinuous EReal-valued function on a nonempty compact set attains its supremum, also when that supremum is ∞ (the sets where it is at least n are closed, nonempty and nested), so some μ has free energy P_T(φ) by §4.2; ES_T(φ) is the closed set where the free energy is at least P_T(φ). For expansive homeomorphisms use §3.4.
 
 **Checks.**
 
 - The full shift is expansive and has a measure of maximal entropy, the uniform Bernoulli measure.
 - For every finite r ≥ 1 and every manifold of dimension at least 2 there is a C^r diffeomorphism with finite topological entropy and no measure of maximal entropy (Buzzi2014, Corollary 1, lines 114–116); the upper semicontinuity hypothesis cannot be dropped.
 - For the identity of [0, 1] (not expansive) and continuous φ, ES(φ) is the set of measures on the maximum set of φ, nonempty because entropy vanishes identically and is trivially upper semicontinuous.
+- When h_top(T) = ∞ the statement still applies: P_T(φ) = ∞ by §2.3, ∫φ dμ is finite for every μ, so ES_T(φ) is exactly the set of invariant measures of infinite entropy, which upper semicontinuity makes nonempty and closed; a measure of finite entropy is then never an equilibrium state. Upper semicontinuity itself fails in the natural infinite-entropy examples (the shift on [0, 1]^ℤ carries product measures on 2^k equally spaced values, of entropy k log 2, converging to a point mass of entropy 0), which is why the finiteness hypothesis was redundant rather than harmless: it is upper semicontinuity that does the work.
 
 *Needs:* Mathlib `UpperSemicontinuous`, `MeasureTheory.ProbabilityMeasure` (compactness); Layers 3.1, 3.4, 4.2, 4.4.
 
 ### 4.7 Newhouse's theorem, as an input
 
-State, without proof, Newhouse's theorem: for a C^∞ map f of a compact C^∞ manifold, μ ↦ hμ(f) is upper semicontinuous on M(f); consequently every continuous potential has an equilibrium state for f, and in particular f has a measure of maximal entropy (Newhouse1989, Theorem 1; BCS2022, lines 59–60, and Buzzi2014, lines 25–27, for the statement). Its proof, through Yomdin's theory of C^r volume growth, is outside this roadmap: the statement is an input recorded so that consumers can state their hypotheses against the definitions here, and no target of this roadmap uses it.
+State, without proof, Newhouse's theorem: for a C^∞ map f of a compact C^∞ manifold, μ ↦ hμ(f) is upper semicontinuous on M(f); consequently, by §4.6, which assumes no finiteness of entropy, every continuous potential has an equilibrium state for f, and in particular f has a measure of maximal entropy (Newhouse1989, Theorem 1; BCS2022, lines 59–60, and Buzzi2014, lines 25–27, for the statement). Its proof, through Yomdin's theory of C^r volume growth, is outside this roadmap: the statement is an input recorded so that consumers can state their hypotheses against the definitions here, and no target of this roadmap uses it.
 
 **Checks.**
 
@@ -597,7 +618,7 @@ Its API:
 
 - A measure with the (lower) Gibbs property at arbitrarily small scales gives positive mass to every nonempty open set.
 - If μ is Gibbs for φ at a scale below an expansivity constant of T, then μ is an equilibrium state of φ.
-- Two Gibbs measures for the same φ and scale are mutually absolutely continuous with bounded densities; if one is ergodic they are equal (BowenPeriodicPoints1971, Lemma 6.4, lines 615–618, for the last step).
+- If T is expansive and ε is below an expansivity constant, two Gibbs measures μ, ν for the same φ at scale ε are mutually absolutely continuous with bounded densities; if one of them is ergodic they are equal (BowenPeriodicPoints1971, Lemma 6.4, lines 615–618, for the last step). The Gibbs bounds pass to every smaller scale ε' < ε with other constants, since by uniform expansivity (BowenPeriodicPoints1971, Lemma 2.4, lines 98–100) there is N with T^{−N}B_{n+2N}(T^{−N}x, ε) ⊆ B_n(x, ε'), and invariance gives μ(B_n(x, ε')) ≥ K⁻¹e^{−2N(|P_T(φ)| + sup|φ|)} exp(−nP_T(φ) + S_nφ(x)). The two-sided balls T^jB_{2j+1}(T^{−j}x, r) have the same bounds by invariance; for a closed set A, a Vitali covering by such balls of radius ε/5 about points of A, pairwise disjoint and with the balls of radius ε covering A, gives μ(A) ≤ K K_{ε/5} ν(N_j(A)) with N_j(A) the two-sided neighbourhood of A of radius ε/5 at order j; these neighbourhoods decrease to A as j → ∞ because r < c forces Γ_r(x) = {x}, so μ(A) ≤ K K_{ε/5} ν(A) on closed sets and, by regularity, on Borel sets.
 - μ is Gibbs for φ iff it is Gibbs for φ + c, and iff it is Gibbs for φ + ψ∘T − ψ with K multiplied by e^{2 sup|ψ|}.
 
 **Checks.**
@@ -605,6 +626,7 @@ Its API:
 - The uniform Bernoulli measure on the full two-shift with φ = 0 and ε = 1/2: B_n(x, 1/2) is the cylinder fixing x_{−1}, …, x_n, of measure 2^{−(n+2)}, and exp(n log 2) = 2^n, so the product is 1/4 for all x and n: Gibbs with K = 4.
 - For the swap of two points a, b and small ε, B_n(x, ε) = {x} has measure 1/2, P(φ) = (φ(a) + φ(b))/2, and |nP − S_nφ(x)| ≤ |φ(a) − φ(b)|/2, so the unique invariant measure is Gibbs.
 - The point mass at a fixed point of the full two-shift is not Gibbs for φ = 0: Bowen balls of other points have measure 0.
+- Without expansivity two Gibbs measures need not be equivalent: for the identity of [0, 1], φ = 0 and ε = 1, every Bowen ball is [0, 1], P = 0, and every invariant measure is Gibbs with K = 1, yet δ₀ and δ₁ are mutually singular; at ε = 1/10 Lebesgue measure and the uniform measure on the twenty points k/20 are both Gibbs with K = 20 and are mutually singular.
 
 *Needs:* Layers 1.1, 1.5, 2.3, 3.1.
 
@@ -667,17 +689,18 @@ Its API:
 Prove, for a homeomorphism f of a compact metric space with hyperbolic local product structure:
 
 - f is expansive with constant δ* (BowenPeriodicPoints1971, Lemma 2.3, lines 96–97): if d(f^n x, f^n y) ≤ δ* for all n ∈ ℤ then f^n y ∈ W^u_{δ*}(f^n x) and d(x, y) ≤ cλ^n δ* for every n;
-- shadowing: for every β > 0 there is α > 0 such that every α-pseudo-orbit (x_n)_{n∈ℤ}, d(f x_n, x_{n+1}) < α, is β-shadowed by exactly one point y, d(f^n y, x_n) ≤ β for all n (Bowen1975, Chapter 3; KatokHasselblatt1995, Section 18.1);
+- shadowing: for every β > 0 there is α > 0 such that every α-pseudo-orbit (x_n)_{n∈ℤ}, d(f x_n, x_{n+1}) < α, is β-shadowed by some point y, d(f^n y, x_n) ≤ β for all n, and the shadowing point is unique when 2β ≤ δ*, two shadowing points staying 2β-close along their whole orbits (Bowen1975, Chapter 3; KatokHasselblatt1995, Section 18.1);
 - closing: for every ε > 0 there are φ(ε) > 0 and R(ε) such that if m ≥ R(ε) and d(f^m y, y) < φ(ε), there is z with f^m z = z and d(f^k z, f^k y) ≤ ε for 0 ≤ k ≤ m (BowenPeriodicPoints1971, 2.5, lines 101–104);
 - if f is topologically transitive, its periodic points are dense, so f satisfies Axiom A*.
 
-Shadowing of finite pseudo-orbits is proved by iterating the bracket along the pseudo-orbit, as in BowenPeriodicPoints1971's proof of 2.10 (lines 171–200), with the errors summed as a geometric series by (A3); compactness gives bi-infinite pseudo-orbits and expansivity gives uniqueness. Closing applies shadowing to the periodic pseudo-orbit y, fy, …, f^{m−1}y, y, …. For the last item, every point of a transitive homeomorphism of a compact space is nonwandering, with arbitrarily long return times of nearby points unless X is a single finite orbit, and closing turns a long return of a nearby point into a periodic point.
+Shadowing of finite pseudo-orbits is proved by iterating the bracket along the pseudo-orbit, as in BowenPeriodicPoints1971's proof of 2.10 (lines 171–200), with the errors summed as a geometric series by (A3); compactness gives bi-infinite pseudo-orbits and expansivity with constant δ* gives uniqueness for 2β ≤ δ*. Closing applies shadowing to the periodic pseudo-orbit y, fy, …, f^{m−1}y, y, …. For the last item, every point of a transitive homeomorphism of a compact space is nonwandering, with arbitrarily long return times of nearby points unless X is a single finite orbit, and closing turns a long return of a nearby point into a periodic point.
 
 **Checks.**
 
 - On the full two-shift a pseudo-orbit is a sequence of points whose consecutive symbols agree up to α, and the shadowing point reads off the zeroth symbols; the closing lemma produces the periodic sequence repeating the first m symbols of y.
 - On the identity of a finite set every pseudo-orbit with α below the least distance is constant, and shadowing is trivial.
 - The irrational rotation (no (A3)) has the pseudo-orbit adding α/2 extra rotation at each step, which no orbit shadows at scale β < 1/4 for long times; it also has no periodic points.
+- On the full two-shift with the metric of §1.5 (diameter 1, δ* = 1/2) and β = 1, every point 1-shadows every pseudo-orbit, so uniqueness fails above the expansivity scale; at β = 1/4, 2β = 1/2 = δ* and the shadowing point is unique.
 
 *Needs:* Layers 1.5, 6.1.
 
@@ -902,7 +925,7 @@ Prove the uniform Hadamard–Perron theorem: let ℝ^d = E^u ⊕ E^s with balls 
 - With λ ≥ 1 allowed (only λ < μ and μ > 1 required) the theorem produces strong unstable manifolds for dominated splittings, as needed for flows, where the complement contains the neutral flow direction.
 - With μ = λ the cone argument fails: for f_n = Id on ℝ² every line through 0 is invariant, so uniqueness of the family is lost.
 
-*Needs:* Mathlib calculus (`fderiv`, contraction mapping `ContractingWith`); TauCeti's Lyapunov–Perron results serve only as a model for the continuous-time case.
+*Needs:* Mathlib calculus (`fderiv`, contraction mapping `ContractingWith`). Tau Ceti's Lyapunov–Perron construction of the local stable manifold of a hyperbolic equilibrium of an ordinary differential equation (`ContinuousLinearMap.lyapunovPerronSolution`, `ContinuousLinearMap.localStableGraphMap`) is the continuous-time analogue of this graph transform; it concerns an equilibrium, not a sequence of maps, and is not consumed.
 
 ### 8.2 Local stable and unstable manifolds of hyperbolic sets of diffeomorphisms
 
@@ -1046,12 +1069,12 @@ Layers 1, 7; Tau Ceti's circle, mapping torus and geodesic flow; DifferentialGeo
 
 ### 10.1 Basic sets and attractors
 
-Define a basic set of a C¹ diffeomorphism f as a locally maximal hyperbolic set Λ on which f is topologically transitive, and a basic set of a C¹ flow as a locally maximal hyperbolic set on which the flow is topologically transitive; call a basic set Λ of a flow an attractor when it has an open neighbourhood U with g^t(U) ⊆ U for all t ≥ T₀ and Λ the intersection of g^t(U) over t ≥ 0, and define its basin W^s_Λ as the set of points y with d(g^t y, Λ) → 0 (BowenRuelle1975, lines 25–34, where density of periodic orbits is a further axiom).
+Define a basic set of a C¹ diffeomorphism f as a nonempty locally maximal hyperbolic set Λ on which f is topologically transitive, and a basic set of a C¹ flow as a nonempty locally maximal hyperbolic set on which the flow is topologically transitive; call a basic set Λ of a flow an attractor when it has an open neighbourhood U with g^t(U) ⊆ U for all t ≥ T₀ and Λ the intersection of g^t(U) over t ≥ 0, and define its basin W^s_Λ as the set of points y with d(g^t y, Λ) → 0 (BowenRuelle1975, lines 25–34, where density of periodic orbits is a further axiom).
 
 Its API:
 
 - Periodic points (orbits) are dense in a basic set (§6.2, §6.6 and §§8.4–8.5), so Bowen–Ruelle's density axiom is a theorem.
-- A transitive Anosov diffeomorphism or flow of a compact manifold M is a basic set Λ = M, and for flows an attractor with U = M and basin M.
+- A transitive Anosov diffeomorphism or flow of a nonempty compact manifold M is a basic set Λ = M, and for flows an attractor with U = M and basin M.
 - Basic sets of f are basic sets of f⁻¹, and basic sets of a flow are basic sets of its reversal; the basin of an attractor is open.
 
 **Checks.**
@@ -1059,12 +1082,13 @@ Its API:
 - A hyperbolic periodic orbit of a flow is a basic set, and it is an attractor iff its unstable bundle is zero.
 - The union of two distinct hyperbolic fixed points of a diffeomorphism is locally maximal and hyperbolic but not transitive, hence not a basic set.
 - For the constant-roof suspension of the cat map, Λ = M is a basic set and an attractor with basin M.
+- The empty set is compact, invariant, locally maximal with U = ∅, hyperbolic and transitive, all vacuously, and carries no invariant probability measure; nonemptiness excludes it, so that §§10.2–10.4 have a measure to speak of.
 
 *Needs:* Layers 6.2, 6.6, 7.1, 7.2, 8.4, 8.5.
 
 ### 10.2 Bowen's theorem for diffeomorphisms
 
-Prove that if Λ is a basic set of a C¹ diffeomorphism f of a compact manifold and φ : Λ → ℝ is Hölder continuous, then φ has a unique equilibrium state μ_φ for f restricted to Λ; μ_φ is ergodic, has the Gibbs property at small scales, gives positive mass to every nonempty relatively open subset of Λ, and μ_φ = μ_{φ'} whenever φ' = φ + c + ψ∘f − ψ for a real c and a continuous ψ on Λ (Bowen1975, Chapter 4, Theorem 4.1; ClimenhagaThompson2016, Theorem 5.5, for the criterion used). In particular a transitive C¹ Anosov diffeomorphism of a compact manifold and a Hölder potential on M have a unique equilibrium state; the C² case is a specialisation. By §8.4 and §10.1, f restricted to Λ satisfies Axiom A*; §6.8(a) applies, and §4.4 gives the invariance.
+Prove that if Λ is a basic set of a C¹ diffeomorphism f of a compact manifold and φ : Λ → ℝ is Hölder continuous, then φ has a unique equilibrium state μ_φ for f restricted to Λ; μ_φ is ergodic, has the Gibbs property at small scales, gives positive mass to every nonempty relatively open subset of Λ, and μ_φ = μ_{φ'} whenever φ' = φ + c + ψ∘f − ψ for a real c and a continuous ψ on Λ (Bowen1975, Chapter 4, Theorem 4.1; ClimenhagaThompson2016, Theorem 5.5, for the criterion used). In particular a transitive C¹ Anosov diffeomorphism of a nonempty compact manifold and a Hölder potential on M have a unique equilibrium state; the C² case is a specialisation. By §8.4 and §10.1, f restricted to Λ, a nonempty compact metric space, satisfies Axiom A*; §6.8(a) applies, and §4.4 gives the invariance.
 
 **Checks.**
 
@@ -1076,7 +1100,7 @@ Prove that if Λ is a basic set of a C¹ diffeomorphism f of a compact manifold 
 
 ### 10.3 The Bowen–Ruelle theorem for flows
 
-Prove that if Λ is a basic set of a C¹ flow g on a compact manifold and F : Λ → ℝ is Hölder continuous, then F has a unique equilibrium state ν_{g,F} for g restricted to Λ; ν_{g,F} is ergodic for the flow, positive on nonempty relatively open subsets of Λ, satisfies the lower Gibbs bound ν_{g,F}(B_x(ε, T)) ≥ C_ε exp(−T P(g|Λ, F) + ∫₀ᵀ F(g^t x) dt) for x ∈ Λ, T > 0, and ν_{g,F} = ν_{g,F'} whenever F' = F + c + L_gψ for a real c and a continuous ψ differentiable along the flow with continuous derivative (in particular for ψ of class C¹ on M); moreover ν_{g,F} is the equilibrium state of F_t for g^t among g-invariant measures for every t > 0, and ν_{g_a, aF} = ν_{g,F} for the rescaled flow g_a(t) = g(at), a > 0 (BowenRuelle1975, Theorem 3.3, lines 272–277, and Proposition 3.1, lines 213–222; TsujiiZhang2023, lines 106–109 and Definition 3.5, lines 485–495, for the statement in the consumers' form). In particular a transitive C¹ Anosov flow on a compact manifold and a Hölder F have exactly one equilibrium state, and C² flows are a specialisation. By §8.5 and §10.1, g restricted to Λ has hyperbolic local product structure and is transitive; §6.8(b) applies, and §4.9 gives the invariance and time-change statements.
+Prove that if Λ is a basic set of a C¹ flow g on a compact manifold and F : Λ → ℝ is Hölder continuous, then F has a unique equilibrium state ν_{g,F} for g restricted to Λ; ν_{g,F} is ergodic for the flow, positive on nonempty relatively open subsets of Λ, satisfies the lower Gibbs bound ν_{g,F}(B_x(ε, T)) ≥ C_ε exp(−T P(g|Λ, F) + ∫₀ᵀ F(g^t x) dt) for x ∈ Λ, T > 0, and ν_{g,F} = ν_{g,F'} whenever F' = F + c + L_gψ for a real c and a continuous ψ differentiable along the flow with continuous derivative (in particular for ψ of class C¹ on M); moreover ν_{g,F} is the equilibrium state of F_t for g^t among g-invariant measures for every t > 0, and ν_{g_a, aF} = ν_{g,F} for the rescaled flow g_a(t) = g(at), a > 0 (BowenRuelle1975, Theorem 3.3, lines 272–277, and Proposition 3.1, lines 213–222; TsujiiZhang2023, lines 106–109 and Definition 3.5, lines 485–495, for the statement in the consumers' form). In particular a transitive C¹ Anosov flow on a nonempty compact manifold and a Hölder F have exactly one equilibrium state, and C² flows are a specialisation. By §8.5 and §10.1, g restricted to Λ, a nonempty compact metric space, has hyperbolic local product structure and is transitive; §6.8(b) applies. The flow g|Λ is Bowen–Walters expansive by §6.6, so h_top(g|Λ) < ∞ by §1.6, and §4.9 gives the invariance and time-change statements.
 
 **Checks.**
 
@@ -1084,7 +1108,7 @@ Prove that if Λ is a basic set of a C¹ flow g on a compact manifold and F : Λ
 - For a hyperbolic periodic orbit of period p, ν_{g,F} is the normalised time measure for every F, with P = (1/p)∫₀^p F along the orbit.
 - For F' = F + 5 + L_gψ the equilibrium state is unchanged while the pressure increases by exactly 5.
 
-*Needs:* Layers 4.9, 6.8, 8.5, 9.2, 10.1.
+*Needs:* Layers 1.6 (finite entropy of expansive flows), 4.9, 6.6, 6.8, 8.5, 9.2, 10.1.
 
 ### 10.4 Bowen–Margulis and Bowen measures
 
@@ -1164,7 +1188,7 @@ Prove, for a basic set Λ of a C² flow on a compact manifold: (a) P(g|Λ, φ^u)
 
 ### 11.5 The SRB theorem
 
-Prove that if Λ is an attractor of a C² flow on a compact manifold with basin W^s_Λ, then for m-almost every x ∈ W^s_Λ and every continuous u : M → ℝ, (1/T)∫₀ᵀ u(g^t x) dt → ∫u dμ⁺ as T → ∞, where μ⁺ = ν_{g,φ^u} is the equilibrium state of the geometric potential (BowenRuelle1975, Theorem 5.1, lines 421–469). In particular, for a transitive C² Anosov flow on a compact manifold, m-almost every point of M is generic for μ⁺; μ⁺ is the unique g-invariant probability measure whose generic points have positive volume, hence the unique one whose generic points have full volume; and every g-invariant probability measure absolutely continuous with respect to m equals μ⁺ (BowenRuelle1975, Remark 5.2, lines 470–472). The proof is Bowen–Ruelle's: for δ > 0 the set of points of a neighbourhood U of Λ whose time averages deviate by more than δ is covered, beyond any time N, by disjoint Bowen balls of points of Λ with deviating averages; the volume lemma (§11.3(a)), P(φ^u) = 0 (§11.4) and the lower Gibbs bound (§10.3) compare the total volume with the μ⁺-measure of the deviation sets beyond N, which tends to 0 by flow-ergodicity of μ⁺ and the pointwise ergodic theorem (ProbabilisticAndMetricNumberTheory §4.1 applied to g^1 and u_1); invariance of the deviation set and g^t(U) shrinking to Λ extend the conclusion to the basin, and a countable dense set of u finishes.
+Prove that if Λ is an attractor of a C² flow on a compact manifold with basin W^s_Λ, then for m-almost every x ∈ W^s_Λ and every continuous u : M → ℝ, (1/T)∫₀ᵀ u(g^t x) dt → ∫u dμ⁺ as T → ∞, where μ⁺ = ν_{g,φ^u} is the equilibrium state of the geometric potential (BowenRuelle1975, Theorem 5.1, lines 421–469). In particular, for a transitive C² Anosov flow on a nonempty compact manifold, m-almost every point of M is generic for μ⁺; μ⁺ is the unique g-invariant probability measure whose generic points have positive volume, hence the unique one whose generic points have full volume; and every g-invariant probability measure absolutely continuous with respect to m equals μ⁺ (BowenRuelle1975, Remark 5.2, lines 470–472). The proof is Bowen–Ruelle's: for δ > 0 the set of points of a neighbourhood U of Λ whose time averages deviate by more than δ is covered, beyond any time N, by disjoint Bowen balls of points of Λ with deviating averages; the volume lemma (§11.3(a)), P(φ^u) = 0 (§11.4) and the lower Gibbs bound (§10.3) compare the total volume with the μ⁺-measure of the deviation sets beyond N, which tends to 0 by flow-ergodicity of μ⁺ and the pointwise ergodic theorem (ProbabilisticAndMetricNumberTheory §4.1 applied to g^1 and u_1); invariance of the deviation set and g^t(U) shrinking to Λ extend the conclusion to the basin, and a countable dense set of u finishes.
 
 **Checks.**
 
@@ -1202,7 +1226,7 @@ Layers 2–10; ProbabilisticAndMetricNumberTheory §4.1; Tau Ceti's Riemannian v
 - **Buzzi2014** — J. Buzzi, *C^r surface diffeomorphisms with no maximal entropy measure*, Ergodic Theory Dynam. Systems (2014), arXiv:1205.4096v1. Corollary 1.
 - **TsujiiZhang2023** — M. Tsujii, Z. Zhang, *Smooth mixing Anosov flows in dimension three are exponentially mixing*, Ann. of Math. 197 (2023), arXiv:2006.04293v1. Theorem 1.1, Definition 3.5.
 - **BCS2022** — J. Buzzi, S. Crovisier, O. Sarig, *Measures of maximal entropy for surface diffeomorphisms*, Ann. of Math. 195 (2022), arXiv:1811.02240v2. Definition 1.1, Main Theorem, Corollaries 1.4–1.6.
-- **Walters1982** — P. Walters, *An Introduction to Ergodic Theory*, GTM 79 (cited by locator). Chapters 7–9.
+- **Walters1982** — P. Walters, *An Introduction to Ergodic Theory*, GTM 79 (cited by locator). Theorem 4.12 and Chapters 7–9 (Theorems 8.1, 8.2, 8.3, 8.6, 9.7, 9.8, 9.10, 9.13).
 - **Bowen1975** — R. Bowen, *Equilibrium States and the Ergodic Theory of Anosov Diffeomorphisms*, LNM 470, 2nd ed. 2008 (cited by locator). Chapters 1, 3, 4.
 - **KatokHasselblatt1995** — A. Katok, B. Hasselblatt, *Introduction to the Modern Theory of Dynamical Systems* (cited by locator). Sections 6.2, 6.4, 18.1, 18.4, 19.1 and Chapter 17.
 - **FH2019** — T. Fisher, B. Hasselblatt, *Hyperbolic Flows*, EMS Zurich Lectures (cited by locator). Part II.
