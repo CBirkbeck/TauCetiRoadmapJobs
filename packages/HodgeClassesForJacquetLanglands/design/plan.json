@@ -4033,9 +4033,9 @@
     },
     {
       "slug": "derham-local-system-cohomology",
-      "needs": "Prove that for a proper smooth variety X over a finite extension K of ℚ_p and a de Rham ℚ_p-local system 𝕃 on X the G_K-representation H^i_et(X_K̄, 𝕃) is de Rham, that a ℚ_p-local system on a geometrically connected smooth K-variety which is de Rham at one classical point is de Rham, and that subquotients of de Rham representations are de Rham (IP23, Remark 11.10, p. 90).",
+      "needs": "Prove that a lisse ℚ_p-sheaf on a geometrically connected smooth variety over a finite extension K of ℚ_p whose stalk at one classical point, defined over a finite extension K′ of K, is a de Rham representation of G_{K′} is de Rham in the sense of §7.2, and that every subquotient of a de Rham representation of G_K is de Rham (IP23, Remark 11.10, p. 90).",
       "supplier": "PadicHodgeTheory",
-      "section": "§8.1"
+      "section": "§§3.3, 7.2"
     }
   ],
   "coverage": [

@@ -46,7 +46,9 @@ It leaves the following to the named roadmaps and does not state them again.
   symmetric bijective form it is the inverse of `exteriorPower.hodgeStar`, and §1.4 then specialises
   to the degree-`(2,2)` case of the identity `Δ • ⋆(⋆x) = (−1)^{kl} x` that the module documentation of
   `Mathlib/LinearAlgebra/ExteriorPower/HodgeStar.lean` states without proof. The determinant action on the top exterior
-  power is Tau Ceti's `exteriorPower.map_top_eq_det_smul`.
+  power is Tau Ceti's `LinearMap.map_exteriorPower_finrank_eq_det_smul`, and a basis trivializes the
+  top power through Tau Ceti's `Module.Basis.exteriorPowerTopEquiv` and Mathlib's
+  `Module.Basis.topVector`.
 - Quaternion algebras, their norm-rescaling isomorphisms `TauCeti.QuaternionAlgebra.normMulEquiv`
   and `TauCeti.QuaternionAlgebra.rescaleJEquiv`, the common-slot tensor isomorphism
   `TauCeti.QuaternionAlgebra.tensorAlgEquivTensorMatrix` and the Brauer identity
@@ -164,6 +166,11 @@ unless named geometric, the cyclotomic character `ε_ℓ` has Hodge–Tate weigh
   star `exteriorPower.hodgeStar` (`Mathlib/LinearAlgebra/ExteriorPower/HodgeStar.lean`). The wedge pairing needs a
   trivialization of the top power and `k + l = finrank`; the Hodge star needs a bijective bilinear
   form. Neither accepts a conjugate-linear form: that is the content of §§1.3–1.4.
+- `Module.Basis.topVector` and `exteriorPower.isUnit_apply_topVector`
+  (`Mathlib/LinearAlgebra/ExteriorPower/WedgePairing.lean`): for a basis `b` of a finite free module
+  over a nontrivial ring, the wedge of all its vectors in increasing order, an element of
+  `⋀^{finrank}`, and the fact that any trivialization `vol` of the top power takes a unit value on
+  it.
 - Semilinear maps `M →ₛₗ[σ] N`, `LinearMap.det`, `Module.Basis`, `Matrix.det`, `Module.Dual`.
 - `QuaternionAlgebra` (`ℍ[R,c₁,c₂,c₃]`) and its basis lemmas.
 - `MvPolynomial.funext` (`Mathlib/Algebra/MvPolynomial/Funext.lean`): over an infinite integral
@@ -181,9 +188,11 @@ unless named geometric, the cyclotomic character `ε_ℓ` has Hodge–Tate weigh
   (`TauCeti/Geometry/Hodge/InternalHom/Basic.lean`) has weight `n₂ − n₁`; the tensor product is in
   `TauCeti/Geometry/Hodge/TensorProduct/Basic.lean`. The carrier has no coefficient action; the `L`-action of an
   `L`-Hodge structure is extra data commuting with `F`.
-- `exteriorPower.map_top_eq_det_smul` and `exteriorPower.topEquiv`
-  (`TauCeti/LinearAlgebra/ExteriorPower/Basic.lean`): an endomorphism of a free module of rank `n`
-  acts on `⋀ⁿ` by its determinant, and a basis trivializes the top power.
+- `LinearMap.map_exteriorPower_finrank_eq_det_smul` and `Module.Basis.exteriorPowerTopEquiv`
+  (`TauCeti/LinearAlgebra/ExteriorPower/Basis.lean`): an endomorphism `f` of a free module `M` acts
+  on `⋀^{finrank M}` as `det f • id`, and a basis indexed by `Fin n` identifies `⋀ⁿM` with the scalars,
+  sending an exterior product of `n` vectors to its determinant against the basis and the wedge of
+  the basis to `1`.
 - `TauCeti.QuaternionAlgebra.normMulEquiv` and `TauCeti.QuaternionAlgebra.rescaleJEquiv`
   (`TauCeti/Algebra/Quaternion/SymbolEquiv.lean`): `ℍ[R,a,N(z)b] ≃ₐ ℍ[R,a,b]` for a unit `z` of the
   quadratic algebra `R[√a]`, sending `j` to `(x + y i) j`, and its scalar special case.
@@ -261,7 +270,7 @@ used in the archimedean Whittaker coefficients of §7.5.
 
 ### From TauCetiRoadmap.AutomorphicLFunctionsAndLocalFactors
 
-AL.3, *Rankin–Selberg nonvanishing on the boundary*: for unitary cuspidal `π₁, π₂` over a number
+§AL.3.6.3, *Rankin–Selberg nonvanishing on the boundary*: for unitary cuspidal `π₁, π₂` over a number
 field, the partial `L^S(s, π₁ × π₂)` has no zeros on `Re(s) ≥ 1`; used at `GL₁ × GL₁` in §6.1 and for
 the adjoint lift in §8.1.
 
@@ -278,8 +287,8 @@ Hodge–Tate weight `+1`; Tate twists `tateTwist` of §1.2.
 ### From TauCetiRoadmap.GL2AutomorphicRepresentationsAndTransfer
 
 §R16.1.8 finite Hecke characters with prescribed local components and its finite-quotient extension
-criterion; §R17.3.1 global Jacquet–Langlands with `globalJL_local`, `globalJL_central`,
-`globalJL_inverse`; §R17.3.5 quaternionic strong multiplicity one;
+criterion; §R17.3.1 global Jacquet–Langlands `JL_D` with its local-components, central-character and
+inverse clauses; §R17.3.5 quaternionic strong multiplicity one;
 §R17.3.7 coefficient conjugation of global transfer; §R17.3.8 rational-model comparison; §R16.4.4
 strong multiplicity one through agreeing unitary eigensystems off a finite set; §R16.4.5 the field
 `ℚ(π)` and its finite-part rational model; §R16.6.3 Hilbert cohomological algebraic weights
@@ -369,16 +378,23 @@ and Betti local systems.
 ### From TauCetiRoadmap.PadicHodgeTheory, PadicPeriodRings and SelmerIwasawaCohomology
 
 PadicHodgeTheory §3.3 (Fontaine's functors; `D_dR` exact on de Rham objects, preserving tensors,
-duals and determinants), §4.4 (Sen's operator and differential de Rham realizations) and §8.1 (`H^i_et(X_{K̄}, ℚ_p)` of a proper smooth `X/K` is de Rham with
-`D_dR = H^i_dR(X/K)`). PadicPeriodRings §1.4 (`H¹(G_K, ℂ_p)` is spanned by `log χ`).
-SelmerIwasawaCohomology §2.7 the unramified condition and §4.9 `blochKatoCondition` with
-`H¹_f(K, ℚ_p) = H¹_ur(K, ℚ_p)`.
+duals and determinants), §4.4 (Sen's operator and differential de Rham realizations), §7.2 (de Rham
+lisse `ℚ_p`-sheaves on a smooth adic space over a complete discretely valued `k/ℚ_p` with perfect
+residue field, and, for a de Rham lisse `L` on a proper smooth `X` with associated filtered bundle
+`E`, the Galois-equivariant strictly filtered comparison
+`H^i(X_{k̄}, L) ⊗ B_dR ≃ H^i_dR(X, E) ⊗_k B_dR`, so that `H^i(X_{k̄}, L)` is a de Rham representation
+with `D_dR = H^i_dR(X, E)`) and §8.1
+(`H^i_et(X_{K̄}, ℚ_p)` of a proper smooth `X/K` is de Rham with `D_dR = H^i_dR(X/K)`, and the
+algebraic–analytic étale comparison through which an algebraic proper smooth `X` enters §7.2).
+PadicPeriodRings §1.4 (`H¹(G_K, ℂ_p)` is spanned by `log χ`).
+SelmerIwasawaCohomology §2.7 the unramified condition and §4.9 the Bloch–Kato local condition `H¹_f`,
+with `H¹_f(K, ℚ_p) = H¹_ur(K, ℚ_p)` for the trivial representation.
 
-What PadicHodgeTheory must provide (gap:derham-local-system-cohomology): for a proper smooth variety
-`X` over a finite extension `K` of `ℚ_p` and a de Rham `ℚ_p`-local system `𝕃` on `X`, the
-`G_K`-representation `H^i_et(X_{K̄}, 𝕃)` is de Rham, and a `ℚ_p`-local system on a geometrically
-connected smooth `K`-variety that is de Rham at one classical point is de Rham, and every subquotient of
-a de Rham representation is de Rham (the de Rham input of IP23, Remark 11.10, p. 90).
+What PadicHodgeTheory must provide (gap:derham-local-system-cohomology): a lisse `ℚ_p`-sheaf `𝕃` on a
+geometrically connected smooth variety over a finite extension `K` of `ℚ_p` whose stalk at one
+classical point `x`, defined over a finite extension `K′` of `K`, is a de Rham representation of
+`G_{K′}` is de Rham in the sense of §7.2, and every subquotient of a de Rham representation of `G_K`
+is de Rham (the de Rham input of IP23, Remark 11.10, p. 90).
 
 ## How to read the build
 
@@ -468,8 +484,12 @@ open `K ⊂ G(𝔸_f)`:
 unramified outside a finite set by spreading out a smooth proper model of the canonical model and
 the lisse sheaf, with proper and smooth base change; they are de Rham at places above `ℓ` because
 `𝕍_ℓ` is de Rham at a special point, where reciprocity (ShimuraVarieties §4.3) gives a locally
-algebraic abelian representation (PadicHodgeTheory §3.3), so the de Rham input of
-gap:derham-local-system-cohomology applies.
+algebraic abelian representation (PadicHodgeTheory §3.3); each geometric connected component of the
+canonical model is geometrically connected over a finite extension `E′` of `E` and contains a special
+point, so the one-point rigidity of gap:derham-local-system-cohomology makes `𝕍_ℓ` a de Rham lisse
+sheaf on each component at each place of `E′` above `ℓ`, the filtered comparison of PadicHodgeTheory
+§7.2, through the algebraic–analytic comparison of its §8.1, makes the cohomology of each component
+de Rham, and finite induction (PadicHodgeTheory §3.3) makes `H^i_et(Sh_K ⊗_E ℚ̄, 𝕍_ℓ)` de Rham.
 
 - The construction is functorial in `ρ`, compatible with tensor products and duals, and with
   extension of coefficients `L ⊂ L′`.
@@ -490,11 +510,15 @@ gap:derham-local-system-cohomology applies.
   `dim Π_f^K = r` the summand of `H^i` is `r` copies of it.
 - Replacing `ρ` by its dual exchanges degrees `i` and `2D − i` under Poincaré duality, with the twist
   `(D)`.
+- The de Rham argument is made component by component: `Sh_K` has `π₀(Sh_K ⊗_E ℚ̄)` in bijection with
+  `G(ℚ)⁺\G(𝔸_f)/K` and is not geometrically connected in general, so the one-point rigidity cannot
+  be applied to it as a whole; every component `X⁺ × gK` contains a special point, because a special
+  `h ∈ X⁺` gives the special point `[h, g]`.
 
 *Needs:* ArithmeticLocallySymmetricSpaces §§ALS.1.1–ALS.1.2, ALS.3.3, ALS.5b.4 and
 gap:compact-matsushima; ShimuraData §§3.1, 3.3, 4.3; ComplexKahlerGeometry §K6.1 and
 gap:vhs-hodge-decomposition; ShimuraVarieties §§4.3, 6.7, 8.1; ComplexComparisonPartII C6;
-EtaleCohomologyFoundations §§F.2.1–F.2.2, F.3; PadicHodgeTheory §§3.3, 8.1 and
+EtaleCohomologyFoundations §§F.2.1–F.2.2, F.3; PadicHodgeTheory §§3.3, 7.2, 8.1 and
 gap:derham-local-system-cohomology; MotivesAndAlgebraicCycles §7.15.
 
 ### 0.3 Pullback and normalized trace along morphisms of Shimura data
@@ -658,8 +682,9 @@ with `d_U(w) = 1` (IP23, Definition 5.2, p. 28). For any basis `b` of `U`,
   `−5/2`, not to `−40`.
 - A degenerate Hermitian form has volume `0`.
 
-*Needs:* Mathlib `exteriorPower.pairingDual`, `exteriorPower.ιMulti`, `Matrix.det`; Tau Ceti
-`exteriorPower.topEquiv`.
+*Needs:* Mathlib `exteriorPower.pairingDual`, `exteriorPower.ιMulti`, `Matrix.det`,
+`Module.Basis.topVector`, `exteriorPower.isUnit_apply_topVector`; Tau Ceti
+`Module.Basis.exteriorPowerTopEquiv`.
 
 ### 1.2 The determinant norm identity
 
@@ -674,7 +699,8 @@ prove `N_{E/F}(det g) = ν(g)^n`, and that the induced Hermitian form on `⋀^rU
   `N(det g) = ν⁴`.
 - `det g` itself need not equal `ν^{n/2}`; only its norm is determined.
 
-*Needs:* §1.1; Tau Ceti `exteriorPower.map_top_eq_det_smul`; Mathlib `exteriorPower.map`.
+*Needs:* §1.1; Tau Ceti `LinearMap.map_exteriorPower_finrank_eq_det_smul`; Mathlib
+`exteriorPower.map`.
 
 ### 1.3 The exterior operator
 
@@ -785,7 +811,8 @@ identification `Spin₆ ≃ SL₄` of RepresentationTheory/SpinRepresentations L
   identity hold, while its conjugate `σ(ν²/det g)` does not.
 - `⋀²g = id` for `g = −1`, which lies in `GSU`; the kernel is not trivial.
 
-*Needs:* §§1.2, 1.3, 1.6; Tau Ceti `exteriorPower.map_top_eq_det_smul`; ReductiveGroups Layers 3, 6;
+*Needs:* §§1.2, 1.3, 1.6; Tau Ceti `LinearMap.map_exteriorPower_finrank_eq_det_smul`; ReductiveGroups
+Layers 3, 6;
 RepresentationTheory/SpinRepresentations Layer 6.
 
 ### 1.8 The exceptional projective isomorphism
@@ -816,8 +843,9 @@ For `U = B₁ ⊥ B₂` with `E`-basis `(1, j₁, 1, j₂)`, `H = diag(1, −J�
 ### Dependencies
 
 Mathlib `exteriorPower` (Basic, Pairing, WedgePairing, BilinForm, HodgeStar), `QuaternionAlgebra`,
-`groupCohomology.H1ofAutOnUnitsUnique`; Tau Ceti `exteriorPower.map_top_eq_det_smul`,
-`exteriorPower.topEquiv`, `TauCeti.QuaternionAlgebra.normMulEquiv`,
+`groupCohomology.H1ofAutOnUnitsUnique`, `Module.Basis.topVector`; Tau Ceti
+`LinearMap.map_exteriorPower_finrank_eq_det_smul`, `Module.Basis.exteriorPowerTopEquiv`,
+`TauCeti.QuaternionAlgebra.normMulEquiv`,
 `TauCeti.QuaternionAlgebra.rescaleJEquiv`; ReductiveGroups Layers 3, 6;
 RepresentationTheory/SpinRepresentations Layer 6.
 
@@ -1380,7 +1408,7 @@ range at split places and by the conservation relation at ramified places.
 
 *Needs:* GL2AutomorphicRepresentationsAndTransfer §§R16.4.4, R17.3.1, R17.4.16;
 MetaplecticAutomorphicForms §§3.9, 3.16, 3.23, 3.24, 5.6, 6.13, 6.14; AutomorphicLFunctionsAndLocalFactors
-AL.3 (Rankin–Selberg nonvanishing on the boundary, at `GL₁ × GL₁`); §0.4.
+§AL.3.6.3 (Rankin–Selberg nonvanishing on the boundary, at `GL₁ × GL₁`); §0.4.
 
 ### 6.2 Quaternionic product theta lifting
 
@@ -1479,7 +1507,7 @@ dihedral form of central character `ξ_E`.
 
 Layers 0–3; MetaplecticAutomorphicForms §§3.3c, 3.7, 3.9, 3.16, 3.23–3.28, 3.32a, 3.34, 3.36, 3.38, 5.6,
 6.4, 6.10–6.15; GL2AutomorphicRepresentationsAndTransfer §§R16.4.4, R17.3.1, R17.4.16;
-AutomorphicLFunctionsAndLocalFactors AL.3; AdelicAlgebraicGroups §3.4.
+AutomorphicLFunctionsAndLocalFactors §AL.3.6.3; AdelicAlgebraicGroups §3.4.
 
 ## Layer 7: simultaneous nonvanishing of restricted theta classes
 
@@ -1734,7 +1762,7 @@ nonvanishing; in the dihedral case `σ` is the induction of `χ` with `χ^σ ≠
 
 *Needs:* §§3.2, 6.5, 7.10; GL2AutomorphicRepresentationsAndTransfer §§R17.3.1, R17.4.2, R17.4.13,
 R17.4.16 and gap:norm-subgroup-restriction; MetaplecticAutomorphicForms §3.36;
-AutomorphicLFunctionsAndLocalFactors AL.3 (Rankin–Selberg nonvanishing on the boundary).
+AutomorphicLFunctionsAndLocalFactors §AL.3.6.3 (Rankin–Selberg nonvanishing on the boundary).
 
 ### 8.2 The three cohomological modules of `U(2,2)`
 
@@ -1876,7 +1904,7 @@ its `q₁` part in cochain bidegree `(1,1)` has Hodge type `(1,1)`, and the shif
 Layers 0–7; AutomorphicFormsOnReductiveGroups §§5.2, 5.4, 5.7; ShimuraData §§3.1, 3.10, 4.3;
 ArithmeticLocallySymmetricSpaces §§ALS.3.3, ALS.5b.4; MetaplecticAutomorphicForms §§3.35, 3.36;
 GL2AutomorphicRepresentationsAndTransfer §§R16.4.5, R17.3.1, R17.3.7, R17.4.2, R17.4.13, R17.4.16;
-AutomorphicLFunctionsAndLocalFactors AL.3.
+AutomorphicLFunctionsAndLocalFactors §AL.3.6.3.
 
 ## Layer 9: the conditional Galois calculation
 
