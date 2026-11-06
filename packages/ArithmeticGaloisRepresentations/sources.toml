@@ -15,3 +15,39 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["3.0"]
+
+[[source]]
+id = "darmon-diamond-taylor-2007"
+authors = "Henri Darmon, Fred Diamond, Richard Taylor"
+title = "Fermat's Last Theorem"
+year = 2007
+venue = "revised version (2007) of Current Developments in Mathematics 1995"
+locator_scheme = "section"
+locator = "Section 2.1"
+url = "https://www.math.mcgill.ca/darmon/pub/Articles/Expository/05.DDT/paper.pdf"
+fetched_from = "https://www.math.mcgill.ca/darmon/pub/Articles/Expository/05.DDT/paper.pdf"
+fetched_at = "2026-11-06T01:09:39Z"
+sha256 = "254f6e29957f95219eff046c29478f5ee584615bee12c8aa8357f499c8cbe8b3"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-06"
+cited_for = ["2.1", "1.2", "5.3", "6.4a"]
+
+[[source]]
+id = "boxer-calegari-gee-pilloni-2021"
+authors = "George Boxer, Frank Calegari, Toby Gee, Vincent Pilloni"
+title = "Abelian surfaces over totally real fields are potentially modular"
+year = 2021
+venue = "Publ. Math. IHÉS 134 (2021), 153–501"
+arxiv = "1812.09269v3"
+locator_scheme = "theorem"
+locator = "Remark 7.5.8"
+url = "https://arxiv.org/abs/1812.09269v3"
+fetched_from = "https://arxiv.org/pdf/1812.09269v3"
+fetched_at = "2026-11-06T01:10:05Z"
+sha256 = "7c8d74b0628d8b9cc841a853372ca2d0bc18c086ab46d138f75afd15f35689ed"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-06"
+version_note = "arXiv v3; the README's BCGP21 locators (section numbers and pages) follow arXiv v3"
+cited_for = ["7.11"]
