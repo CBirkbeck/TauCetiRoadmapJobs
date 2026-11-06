@@ -4,8 +4,8 @@
  "parent": null,
  "summary": "Finitely many hard spheres of diameter ε in a flat position space (Euclidean space or a flat torus): elastic scattering, trajectories, Alexander's theorem (the hard-sphere flow exists off a null set and is a measure-preserving group), its Koopman group, transported densities and the weak Liouville equation with specular reflection, marginals, Maxwellian canonical and grand canonical ensembles with their invariance and correlation functions, the hard-sphere Boltzmann collision operator and mild solutions, Lanford's theorem stated as a proposition, and its law of large numbers for the rescaled empirical measure.",
  "baseline": {
-  "mathlib": "f6090c7095e1e56b3464c1daba5f24631f1290d2",
-  "tauceti": "358314d4ab97483df4fc4cb8adcc02e74a8d9f5a"
+  "mathlib": "1b1ccf4b088b32fa3f23f2de1127433254a81e1e",
+  "tauceti": "2fd255d997f47c0b5d834ee416c7015d55444ce5"
  },
  "layers": [
   {
@@ -120,7 +120,7 @@
      "id": "1.3",
      "kind": "definition",
      "name": "FlatTorus",
-     "statement": "For L : Submodule ℤ E with DiscreteTopology L and IsZLattice ℝ L, FlatTorus L = E ⧸ L with the quotient norm and the image of Lebesgue measure restricted to a measurable fundamental domain; it is a FlatPositionSpace with π the quotient map and ρ half the minimal norm of a nonzero lattice vector; total mass ZLattice.covolume L.",
+     "statement": "For L : Submodule ℤ E with DiscreteTopology L and IsZLattice ℝ L, FlatTorus L = E ⧸ L.toAddSubgroup with the quotient norm (QuotientAddGroup.instNormedAddCommGroup, L closed since discrete), the Borel σ-algebra (QuotientAddGroup.borelSpace) and the MeasureSpace instance whose volume is the image of Lebesgue measure restricted to the fundamental domain ZSpan.fundamentalDomain of a chosen ℤ-basis of L; the set is also a fundamental domain for the opposite subgroup acting by right translation (E commutative). Mathlib then gives: AddQuotientMeasureEqMeasurePreimage vol volume (MeasureTheory.IsFundamentalDomain.quotientMeasureEqMeasurePreimage_quotientMeasure, additive form), independence of the fundamental domain (MeasureTheory.IsAddFundamentalDomain.addProjection_respects_measure), measure preservation of the quotient map from vol restricted to a fundamental domain (measurePreserving_quotientAddGroup_mk_of_AddQuotientMeasureEqMeasurePreimage), and the Haar property of the finite measure volume (QuotientMeasureEqMeasurePreimage.haarMeasure_quotient, additive form). Total mass ZLattice.covolume L (ZLattice.covolume_eq_measure_fundamentalDomain). It is a FlatPositionSpace with π the quotient map and ρ half the minimal norm of a nonzero lattice vector; the local measure axiom is the unfolding of a fundamental domain over the disjoint translates of A ⊆ B(0, ρ).",
      "hypotheses": [
       "DiscreteTopology L",
       "IsZLattice ℝ L"
@@ -136,16 +136,22 @@
       "mathlib:QuotientAddGroup.instNormedAddCommGroup",
       "mathlib:QuotientAddGroup.norm_mk",
       "mathlib:IsZLattice",
+      "mathlib:ZSpan.fundamentalDomain",
       "mathlib:ZLattice.isAddFundamentalDomain",
       "mathlib:ZLattice.covolume",
+      "mathlib:ZLattice.covolume_eq_measure_fundamentalDomain",
       "mathlib:MeasureTheory.AddQuotientMeasureEqMeasurePreimage",
+      "mathlib:MeasureTheory.IsFundamentalDomain.quotientMeasureEqMeasurePreimage_quotientMeasure",
+      "mathlib:MeasureTheory.IsAddFundamentalDomain.addProjection_respects_measure",
+      "mathlib:measurePreserving_quotientAddGroup_mk_of_AddQuotientMeasureEqMeasurePreimage",
+      "mathlib:MeasureTheory.QuotientMeasureEqMeasurePreimage.haarMeasure_quotient",
       "mathlib:UnitAddTorus.measurePreserving_equivPiIoc"
      ],
      "api": [
       {
-       "name": "measure_indep_domain",
-       "role": "well-definedness",
-       "statement": "The measure does not depend on the fundamental domain and satisfies AddQuotientMeasureEqMeasurePreimage."
+       "name": "isAddFundamentalDomain_op",
+       "role": "construction",
+       "statement": "The chosen fundamental domain is a fundamental domain for AddSubgroup.op L.toAddSubgroup acting by right translation; volume is the image of vol restricted to every fundamental domain of L, the quotient map is measure preserving from vol restricted to any of them, and volume is a finite Haar measure (all three cited from Mathlib). Non-example: B(0, 1/2) is not a fundamental domain of ℤ^d for d ≥ 2 (its translates cover a set of density ω_d/2^d < 1)."
       },
       {
        "name": "compact_connected",
@@ -249,21 +255,22 @@
      "prerequisites": [
       "mathlib:Submodule.reflection",
       "mathlib:Submodule.det_reflection",
+      "mathlib:MeasureTheory.Measure.map_linearMap_addHaar_eq_smul_addHaar",
       "mathlib:MeasureTheory.MeasurePreserving"
      ],
      "api": [
       {
-       "name": "HardSphere.scatter_involutive",
+       "name": "scatter_involutive",
        "role": "structure",
        "statement": "σ_ν ∘ σ_ν = id for |ν| = 1."
       },
       {
-       "name": "HardSphere.scatter_conserves",
+       "name": "scatter_conserves",
        "role": "conservation",
        "statement": "v' + w' = v + w and |v'|² + |w'|² = |v|² + |w|²."
       },
       {
-       "name": "HardSphere.measurePreserving_scatter",
+       "name": "measurePreserving_scatter",
        "role": "measure",
        "statement": "σ_ν preserves Lebesgue measure on E × E; LinearMap.det σ_ν = −1."
       },
@@ -310,13 +317,13 @@
      "id": "2.2",
      "kind": "theorem",
      "name": "HardSphere.measurePreserving_precollision",
-     "statement": "Θ(v, w, ω) = (σ_ω(v, w), −ω) and (v, w, ω) ↦ (w, v, −ω) are measure-preserving involutions of E × E × S^{d−1} (vol ⊗ vol ⊗ σ_S) preserving ⟨w − v, ω⟩_+; for d ≥ 2, ∫_{S^{d−1}} ⟨k, ω⟩_+ dσ_S = ω_{d−1}|k|.",
+     "statement": "Θ(v, w, ω) = (σ_ω(v, w), −ω) and (v, w, ω) ↦ (w, v, −ω) are measure-preserving involutions of E × E × S^{d−1} (vol ⊗ vol ⊗ σ_S) preserving the hard-sphere kernel ⟨w − v, ω⟩_+; for d ≥ 1, ∫_{S^{d−1}} ⟨k, ω⟩_+ dσ_S = ω_{d−1}|k| with ω_0 = 1 (an elementary computation of this roadmap: polar coordinates reduce it to ∫_{B(0,1)} ⟨e, x⟩_+ = ω_{d−1}/(d + 1), stated in none of the sources).",
      "hypotheses": [
-      "d ≥ 2 for the cross-section formula"
+      "d ≥ 1"
      ],
      "locator": {
       "source": "GST2013",
-      "where": "lines 394–400 and (2.2.1) lines 432–437"
+      "where": "lines 394–400 (the involution); (2.2.1) lines 432–437 (unit Jacobians); lines 674 and 1264–1268 (the hard-sphere kernel b(w, ω) = (ω·w)_+); the cross-section value has no source locator"
      },
      "prerequisites": [
       "target:2.1",
@@ -329,6 +336,11 @@
        "name": "cross_section_d3",
        "kind": "computation",
        "statement": "d = 3: π|k|; d = 2: 2|k|."
+      },
+      {
+       "name": "cross_section_d1",
+       "kind": "degenerate",
+       "statement": "d = 1: σ_S is the counting measure on S⁰ = {±1} (total mass 2) and the integral is |k| = ω_0|k|; ∫_{B(0,1)} ⟨e, x⟩_+ = 1/2 = ω_0/2."
       },
       {
        "name": "prob_normalisation",
@@ -1096,12 +1108,12 @@
      "id": "6.2",
      "kind": "theorem",
      "name": "HardSphere.measurePreserving_stepMap",
-     "statement": "For R > 0, δ > 0 with ε + 2Rδ < ρ, on the set S_{δ,R} (|V| ≤ R, no particle within ε + 2Rδ of two others, no incoming or grazing contact state, no grazing collision in [0, δ] between near pairs) the near pairs form a matching, each collides at most once in [0, δ], the step map Φ_δ (pair maps on near pairs, free transport otherwise) gives the trajectory on [0, δ], and Φ_δ is injective and measure preserving; the complement of S_{δ,R} in 𝒟̄ ∩ {|V| ≤ R} is I (η = 2Rδ) up to a null set.",
+     "statement": "For R > 0, δ > 0 with ε + 4Rδ < ρ (near pairs, at distance at most ε + 2Rδ, then satisfy ‖x_i − x_j‖ + 2Rδ ≤ ε + 4Rδ < ρ, the domain of the pair maps of 4.5 with η = 4Rδ), on the set S_{δ,R} (|V| ≤ R, no particle within ε + 2Rδ of two others, no incoming or grazing contact state, no grazing collision in [0, δ] between near pairs) the near pairs form a matching, each collides at most once in [0, δ], the step map Φ_δ (pair maps on near pairs, free transport otherwise) gives the trajectory on [0, δ], and Φ_δ is injective and measure preserving; the complement of S_{δ,R} in 𝒟̄ ∩ {|V| ≤ R} is I (η = 2Rδ) up to a null set.",
      "hypotheses": [
       "0 < ε",
       "R > 0",
       "δ > 0",
-      "ε + 2Rδ < ρ"
+      "ε + 4Rδ < ρ"
      ],
      "locator": {
       "source": "GST2013",
@@ -1118,7 +1130,7 @@
       {
        "name": "two_body_step",
        "kind": "computation",
-       "statement": "N = 2, head-on witness, δ = 3, R = 1: Φ_3 reproduces B_3."
+       "statement": "N = 2, head-on witness, δ = 3, R = 1, ε + 4Rδ < ρ = ∞: Φ_3 reproduces B_3."
       },
       {
        "name": "energy_ball",
@@ -1129,6 +1141,11 @@
        "name": "three_particles",
        "kind": "non-example",
        "statement": "Without the three-particle exclusion a particle can meet two others within one step."
+      },
+      {
+       "name": "chart_domain",
+       "kind": "non-example",
+       "statement": "Unit torus, ε = 0.3, R = 1: δ = 0.09 satisfies ε + 2Rδ = 0.48 < 1/2 but a near pair at distance 0.47 would need the pair map at separation 0.65 ≥ ρ; δ = 0.045 satisfies ε + 4Rδ = 0.48 < 1/2 and near pairs stay within 0.39 + 0.09 = 0.48 < ρ."
       }
      ]
     },
@@ -1136,12 +1153,14 @@
      "id": "6.3",
      "kind": "theorem",
      "name": "HardSphere.volume_badSteps_le",
-     "statement": "For t > 0, R > 0 and bounded K ⊆ X, the configurations in 𝒟̄ with positions in K and |V| ≤ R whose states at times jδ (0 ≤ j < t/δ) are not all in S_{δ,R} have measure at most C(N, ε, R, K, t) δ.",
+     "statement": "For t > 0, R > 0, bounded K ⊆ X and every δ > 0 with ε + 4Rδ < ρ, the configurations in 𝒟̄ with positions in K and |V| ≤ R whose states at times jδ (0 ≤ j < t/δ) are not all in S_{δ,R} have measure at most C(N, ε, R, K, t) δ, with C independent of δ.",
      "hypotheses": [
       "0 < ε < ρ",
       "t > 0",
       "R > 0",
-      "K bounded"
+      "K bounded",
+      "δ > 0",
+      "ε + 4Rδ < ρ"
      ],
      "locator": {
       "source": "GST2013",
@@ -1530,7 +1549,7 @@
       "target:3.4",
       "target:7.1",
       "target:8.1",
-      "mathlib:intervalIntegral.integral_eq_sub_of_hasDerivAt"
+      "mathlib:intervalIntegral.integral_eq_sub_of_hasDerivAt_of_le"
      ],
      "api": [
       {
@@ -1559,6 +1578,11 @@
        "name": "non_specular",
        "kind": "non-example",
        "statement": "φ = χ(t)⟨v_1, e_1⟩ violates the specular condition and the left side is ∫ W⁰ χ(τ)(⟨v_1,e_1⟩ − ⟨v_1',e_1⟩) ≠ 0 for head-on data."
+      },
+      {
+       "name": "collision_time_derivative",
+       "kind": "non-example",
+       "statement": "Head-on witness, φ = χ(t)ψ(⟨x_1 − x_2, e_1⟩) with ψ bounded smooth and the identity on [−10, 10]: t ↦ φ(t, T_t Z) is χ(t)(2 − t) for t < 1 and χ(t) t for t ≥ 1, continuous at 1 with one-sided derivatives χ'(1) ∓ χ(1); the derivative is used only on the open pieces."
       }
      ]
     },
