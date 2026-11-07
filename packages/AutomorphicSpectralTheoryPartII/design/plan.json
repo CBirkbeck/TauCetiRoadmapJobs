@@ -4141,30 +4141,6 @@
   ],
   "gaps": [
     {
-      "slug": "nash-schwartz-analysis",
-      "supplier": "AutomorphicSpectralTheory",
-      "section": "§0.14",
-      "needs": "Supply the Nash Schwartz product and embedding comparison on real algebraic groups used in §§1.1 and 2.15."
-    },
-    {
-      "slug": "tensor-holomorphy",
-      "supplier": "AutomorphicSpectralTheory",
-      "section": "§0.15",
-      "needs": "Supply holomorphy of the completed projective tensor of two locally bounded holomorphic families in complete nuclear Fréchet spaces."
-    },
-    {
-      "slug": "slf-isotypic-sums",
-      "supplier": "AutomorphicSpectralTheory",
-      "section": "§0.11",
-      "needs": "Supply the countable K_f-isotypical direct-sum description of an SLF representation for a fixed compact open K_f in G(𝔸_f), with Fréchet summands and the induced direct-sum topology on closed invariant subspaces."
-    },
-    {
-      "slug": "frechet-bilinear-continuity",
-      "supplier": "AutomorphicSpectralTheory",
-      "section": "§0.11",
-      "needs": "Supply joint continuity of separately continuous bilinear maps from a product of two complex Fréchet spaces to a Hausdorff locally convex space."
-    },
-    {
       "slug": "real-point-root-data",
       "supplier": "ReductiveGroups",
       "section": "Layer 7",
@@ -4187,18 +4163,6 @@
       "supplier": "AutomorphicFormsOnReductiveGroups",
       "section": "§§2.2–2.4",
       "needs": "Supply containment of every tempered infinitesimal character in the union, over realized maximal real tori, of the shifted spectral lattice strips of §0.4 with purely imaginary split part."
-    },
-    {
-      "slug": "rapid-semisimple-centre",
-      "supplier": "AutomorphicSpectralTheory",
-      "section": "§§6.1–6.3",
-      "needs": "Supply the semisimple rapid-symbol multiplier from compact smooth finite-K-type stages to Schwartz stages of a semisimple real reductive group, for W-invariant rapidly decreasing symbols."
-    },
-    {
-      "slug": "split-centre-fourier-laplace",
-      "supplier": "AutomorphicSpectralTheory",
-      "section": "§§6.1–6.3",
-      "needs": "Supply the Fourier–Laplace multiplier of a rapidly decreasing symbol on a split real torus, continuous on each fixed finite-type, fixed-support Schwartz stage."
     },
     {
       "slug": "kostant-centralizer",
@@ -4249,36 +4213,6 @@
       "needs": "Supply comparison of quotient identity-neighborhood volumes on [G]_P with exp(−2⟨ρ₀,H₀(x)⟩) on fixed Siegel charts, uniformly at each fixed finite level."
     },
     {
-      "slug": "cuspidal-data-central-comparison",
-      "supplier": "AutomorphicSpectralTheory",
-      "section": "§§1.6–1.10, 4.1–4.4",
-      "needs": "Compare Weyl-and-twist normalized cuspidal data, with twists and inducing parameters in the relative space (a_M^G)*, and pseudo-Eisenstein spans with the full split-central-character convention and intermediate compact smooth quotient data, preserving quotient measures."
-    },
-    {
-      "slug": "cuspidal-polynomial-counting",
-      "supplier": "AutomorphicFormsOnReductiveGroups",
-      "section": "§4.2",
-      "needs": "Supply the fixed-level finite-K-type polynomial cuspidal elliptic eigenvalue-count bound with multiplicity on derived semisimple quotients, including arbitrary-level reduction through finitely many conjugate levels and the Casimir-sign comparison."
-    },
-    {
-      "slug": "hereditary-intertwining-bounds",
-      "supplier": "AutomorphicSpectralTheory",
-      "section": "§§2.3–2.5, 3.1–3.4",
-      "needs": "Supply the normalized-intertwiner comparison and hereditary polynomial parameter and derivative estimates (HP), including (UT) and (WR) for every Levi, unconditionally for finite products of restrictions of scalars of GL_n."
-    },
-    {
-      "slug": "refined-langlands-discrete-data",
-      "supplier": "AutomorphicSpectralTheory",
-      "section": "§§4.11–4.14",
-      "needs": "Supply the decomposition of the fixed-level central-character L² space by Langlands discrete data (M,σ) with σ discrete, with its normalized-twist and Weyl equivalence, central disintegration and residual summands explicit."
-    },
-    {
-      "slug": "discrete-spectrum-casimir-counting",
-      "supplier": "AutomorphicSpectralTheory",
-      "section": "§§4.7–4.9",
-      "needs": "Supply the fixed-level finite-K-type polynomial bound for the number, with multiplicity, of discrete-spectrum Casimir eigenvalues of absolute value at most R."
-    },
-    {
       "slug": "central-character-affine-lattice",
       "supplier": "AdelicAlgebraicGroups",
       "section": "§§2.1–2.3, 4.6–4.7",
@@ -4289,30 +4223,6 @@
       "supplier": "SmoothRepresentationsOfLocalGroups",
       "section": "SR.4.1–SR.4.2",
       "needs": "Supply normalized spherical Hecke characters under parabolic induction and restriction to an unramified Levi, with each fixed Hecke value a finite exponential polynomial in the common complex twist parameter."
-    },
-    {
-      "slug": "compact-eisenstein-comparison",
-      "supplier": "AutomorphicSpectralTheory",
-      "section": "§§1.5–1.8, 3.1–3.4",
-      "needs": "Identify the supplied compact cuspidal pseudo-Eisenstein inner-product and Weyl/intertwining constant-term formulas and their measures with the BPCZ and Lapid parameter conventions used in §3.6."
-    },
-    {
-      "slug": "arthur-factorization-comparison",
-      "supplier": "AutomorphicSpectralTheory",
-      "section": "§6.3",
-      "needs": "For each normal compact open K₀⊂K_f and each m≥1, supply Z∈U(g∞), a smooth compactly supported g₁ and a compactly supported g₂ of class C^m, both invariant under K∞-conjugation and bi-K₀-invariant, with f=f*g₁+(f*Z)*g₂ for every bi-K₀-invariant Schwartz function f, the choice depending only on K₀ and m."
-    },
-    {
-      "slug": "compact-kernel-central-comparison",
-      "supplier": "AutomorphicSpectralTheory",
-      "section": "§6.4",
-      "needs": "Identify the compact-test parabolic kernels `K_f,P` and their support components `K_f,P,χ` with the quotient measures and pairing convention of §3.8, and prove `K⁰_f,P,χ(x,y) = ∫ K_f,P,χ(x,ay) δ_P(a)^(−1/2) da`, the integral over `a ∈ A_P∞`, for compactly supported smooth f."
-    },
-    {
-      "slug": "compact-kernel-spectral-comparison",
-      "supplier": "AutomorphicSpectralTheory",
-      "section": "§6.4",
-      "needs": "Supply the compact-test spectral expansion of the support component `K⁰_f,χ` by discrete-inducing Eisenstein series used in §3.10, with its sum over χ, standard P and K-types, coefficient `|𝒫(M_P)|^(−1)`, conjugated second Eisenstein factor and dual Haar measure on the imaginary relative space `i(a_P^G)*`."
     },
     {
       "slug": "local-sobolev-evaluation",
