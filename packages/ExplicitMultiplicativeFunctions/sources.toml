@@ -100,7 +100,7 @@ venue = "Journal of Number Theory 157"
 doi = "10.1016/j.jnt.2015.05.004"
 arxiv = "1501.04401v1"
 locator_scheme = "theorem"
-locator = "Lemma 12"
+locator = "Lemmas 12-15"
 url = "https://arxiv.org/abs/1501.04401v1"
 fetched_from = "https://arxiv.org/pdf/1501.04401v1"
 fetched_at = "2026-11-05T21:11:39Z"
@@ -185,13 +185,13 @@ title = "Approximate formulas for some functions of prime numbers"
 year = 1962
 venue = "Illinois Journal of Mathematics 6, 64-94"
 locator_scheme = "equation"
-locator = "(2.2), (2.11), Theorems 7-8 (3.26)-(3.30)"
+locator = "(2.2), (2.11), Theorem 4 (3.14), Theorems 7-8 (3.26)-(3.30) p. 70, Theorem 15 (3.40)-(3.42) pp. 71-72"
 url = "https://projecteuclid.org/journals/illinois-journal-of-mathematics/volume-6/issue-1/Approximate-formulas-for-some-functions-of-prime-numbers/10.1215/ijm/1255631807.pdf"
 licence_class = "none"
 status = "uncertified"
 accessed = "2026-11-05"
 version_note = "open access at the publisher, but the host blocked the automated fetch (bot check); cited by its locator without the text"
-cited_for = ["Layer 7; Layer 8"]
+cited_for = ["Layer 7; Layer 8; Layer 9.4"]
 
 [[source]]
 id = "cohenDressElMarraki2007"
@@ -200,7 +200,7 @@ title = "Explicit estimates for summatory functions linked to the Möbius μ-fun
 year = 2007
 venue = "Functiones et Approximatio Commentarii Mathematici 37, 51-63"
 locator_scheme = "theorem"
-locator = "Theorems 1-3"
+locator = "Theorem 5 bis (|M(x)| ≤ x/4345 for x ≥ 2 160 535) and Theorem 3 bis (squarefree remainder)"
 url = "https://projecteuclid.org/journals/functiones-et-approximatio-commentarii-mathematici/volume-37/issue-1/Explicit-estimates-for-summatory-functions-linked-to-the-M%C3%B6bius-mu/10.7169/facm/1229618741.pdf"
 licence_class = "none"
 status = "uncertified"
@@ -555,7 +555,7 @@ title = "Fonction sommatoire de la fonction de Möbius 3. Majorations asymptotiq
 year = 1995
 venue = "Journal de Théorie des Nombres de Bordeaux 7, 407-433"
 locator_scheme = "theorem"
-locator = "Théorème 1 (the 1/4345 bound restated); Théorème 2, (4.6); its Corollaire; Théorème 3"
+locator = "Théorème 1, (4.5), p. 418 (0.002969 x/√log x for x ≥ 142 194); Théorème 2, (4.6); its Corollaire; Théorème 3 and its corollary, p. 421; (3.1)"
 url = "https://jtnb.centre-mersenne.org/item/JTNB_1995__7_2_407_0.pdf"
 fetched_from = "https://jtnb.centre-mersenne.org/item/JTNB_1995__7_2_407_0.pdf"
 fetched_at = "2026-11-05T21:18:55Z"
@@ -670,7 +670,7 @@ id = "deCamargo2025"
 authors = "A. P. de Camargo"
 title = "Sharp estimates for the Möbius function with coprimality restrictions"
 year = 2025
-venue = "Mathematics of Computation"
+venue = "Mathematics of Computation 95, 2515–2538"
 doi = "10.1090/mcom/4128"
 locator_scheme = "theorem"
 locator = "Theorems 1.1-1.2"
@@ -733,7 +733,7 @@ year = 1999
 venue = "Number theory in progress, Vol. 2 (Zakopane-Kościelisko, 1997), de Gruyter, 743-770"
 doi = "10.1515/9783110285581.743"
 locator_scheme = "page"
-locator = "pp. 743-770 (τ_k(n) ≤ n^s ζ(s)^{k-1})"
+locator = "Théorème 1.1 (i)-(iii), p. 744; two-term bounds quoted pp. 745-746"
 url = "https://doi.org/10.1515/9783110285581.743"
 licence_class = "none"
 status = "uncertified"
@@ -891,7 +891,7 @@ title = "Explicit upper bounds for the average order of d_n(m) and application t
 year = 2002
 venue = "JIPAM Journal of Inequalities in Pure and Applied Mathematics 3, Article 38"
 locator_scheme = "theorem"
-locator = "Theorem 1"
+locator = "Theorems 4.1-4.2"
 url = "https://emis.univie.ac.at/journals/JIPAM/images/053_01_JIPAM/053_01.pdf"
 licence_class = "none"
 status = "uncertified"
@@ -911,3 +911,395 @@ licence_class = "none"
 status = "uncertified"
 version_note = "open-access journal (JIPAM, EMIS mirrors); every mirror answered HTTP 503/404 at fetch time, so the text was not read; re-fetch when EMIS is reachable"
 cited_for = ["Layer 8"]
+
+[[source]]
+id = "ramareZunigaAlterman2025"
+authors = "O. Ramaré, S. Zuniga Alterman"
+title = "From explicit estimates for the primes to explicit estimates for the Möbius function II"
+year = 2025
+venue = "Functiones et Approximatio Commentarii Mathematici, advance publication"
+doi = "10.7169/facm/250121-19-5"
+arxiv = "2408.05969v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.1, Corollaries 1.1-1.3, Lemmas 5.1-7.3, (39)"
+url = "https://arxiv.org/abs/2408.05969v2"
+licence_class = "open-repository"
+status = "uncertified"
+version_note = "arXiv v2 (the v1 threshold 1 079 974 is superseded); arXiv text read for this design, not fetched by the certification pipeline; cited by its locator"
+cited_for = ["Layer 1.5", "Layer 1.10", "Layer 2.7"]
+
+[[source]]
+id = "chirreHelfgott2025"
+authors = "Andrés Chirre, Harald Andrés Helfgott"
+title = "Optimal bounds for sums of bounded arithmetic functions"
+year = 2025
+arxiv = "2511.14736v1"
+locator_scheme = "theorem"
+locator = "Corollaries 1.2, 1.3, 6.8, 7.13; Lemmas 6.5-6.7, 7.12; Proposition 8.4; §9"
+url = "https://arxiv.org/abs/2511.14736v1"
+licence_class = "open-repository"
+status = "uncertified"
+version_note = "arXiv v1; unrefereed preprint; statements read from the arXiv text for this design, not fetched by the certification pipeline; cited by its locator"
+cited_for = ["Layer 0.7", "Layer 1.7", "Layer 7.8"]
+
+[[source]]
+id = "daval2023"
+authors = "Florian Daval"
+title = "Conversions explicites des nombres premiers vers la fonction de Möbius"
+year = 2023
+arxiv = "2308.10084v1"
+locator_scheme = "theorem"
+locator = "Théorème A; Lemmes 1, 11, 13, 14"
+url = "https://arxiv.org/abs/2308.10084v1"
+licence_class = "open-repository"
+status = "uncertified"
+version_note = "arXiv v1; unrefereed preprint; statements read from the arXiv text for this design, not fetched by the certification pipeline; cited by its locator"
+cited_for = ["Layer 1.8"]
+
+[[source]]
+id = "daval2025"
+authors = "Florian Daval"
+title = "Explicit conversions between summatory functions of the Möbius function"
+year = 2025
+venue = "Combinatorial and Number Theory 14, 163-188"
+doi = "10.2140/cnt.2025.14.163"
+arxiv = "2006.01295v1"
+locator_scheme = "theorem"
+locator = "Théorèmes A-B, 2-5, Lemme 1 (constants of the arXiv version)"
+url = "https://doi.org/10.2140/cnt.2025.14.163"
+licence_class = "none"
+status = "uncertified"
+version_note = "published text paywalled; the constants are those of the French arXiv version 2006.01295v1, which the published abstract matches; the published m-threshold 97 603 is taken (arXiv: 97 063)"
+cited_for = ["Layer 2.2", "Layer 2.3", "Layer 3.4"]
+
+[[source]]
+id = "johnstonLeongTudzi2024"
+authors = "Daniel R. Johnston, Nicol Leong, Sebastian Tudzi"
+title = "New bounds and progress towards a conjecture on the summatory function of (-2)^{Omega(n)}"
+year = 2024
+arxiv = "2408.04143v3"
+locator_scheme = "theorem"
+locator = "Appendix A: Theorems A.1-A.2, Table 1, Lemma A.5"
+url = "https://arxiv.org/abs/2408.04143v3"
+licence_class = "open-repository"
+status = "uncertified"
+version_note = "arXiv v3; unrefereed preprint; statements read from the arXiv text for this design, not fetched by the certification pipeline; cited by its locator"
+cited_for = ["Layer 1.4", "Layer 2.3"]
+
+[[source]]
+id = "leeLeong2022"
+authors = "Ethan Simpson Lee, Nicol Leong"
+title = "New explicit bounds for Mertens function and the reciprocal of the Riemann zeta-function"
+year = 2022
+arxiv = "2208.06141v5"
+locator_scheme = "equation"
+locator = "(9)-(11)"
+url = "https://arxiv.org/abs/2208.06141v5"
+licence_class = "open-repository"
+status = "uncertified"
+version_note = "arXiv v5; unrefereed preprint; statements read from the arXiv text for this design, not fetched by the certification pipeline; cited by its locator"
+cited_for = ["Layer 1.9"]
+
+[[source]]
+id = "ramareZunigaAlterman2026"
+authors = "O. Ramaré, S. Zuniga Alterman"
+title = "Möbius function and primes: an identity factory with applications"
+year = 2026
+arxiv = "2312.05138v3"
+locator_scheme = "theorem"
+locator = "Theorems 1.2, 1.3, 1.7, 1.8"
+url = "https://arxiv.org/abs/2312.05138v3"
+licence_class = "open-repository"
+status = "uncertified"
+version_note = "arXiv v3; unrefereed preprint; statements read from the arXiv text for this design, not fetched by the certification pipeline; cited by its locator"
+cited_for = ["Layer 2.6", "Layer 3.3"]
+
+[[source]]
+id = "mossinghoffOliveiraESilvaTrudgian2021"
+authors = "Michael J. Mossinghoff, Tomás Oliveira e Silva, Tim Trudgian"
+title = "The distribution of k-free numbers"
+year = 2021
+venue = "Mathematics of Computation 90"
+doi = "10.1090/mcom/3581"
+arxiv = "1912.04972v2"
+locator_scheme = "theorem"
+locator = "Theorems 2-3 and the gap data"
+url = "https://arxiv.org/abs/1912.04972v2"
+licence_class = "open-repository"
+status = "uncertified"
+version_note = "arXiv v2; arXiv text read for this design, not fetched by the certification pipeline; cited by its locator"
+cited_for = ["Layer 0.7", "Layer 7.1", "Layer 7.8"]
+
+[[source]]
+id = "zunigaAlterman2022"
+authors = "Sebastian Zuniga Alterman"
+title = "Explicit averages of square-free supported functions: to the edge of the convolution method"
+year = 2022
+venue = "Colloquium Mathematicum 168, 1-23"
+doi = "10.4064/cm8337-11-2020"
+arxiv = "2003.05887v5"
+locator_scheme = "theorem"
+locator = "Theorem 3.3, Corollary 3.4, Lemmas 4.1, 4.7"
+url = "https://arxiv.org/abs/2003.05887v5"
+licence_class = "open-repository"
+status = "uncertified"
+version_note = "arXiv v5; arXiv text read for this design, not fetched by the certification pipeline; cited by its locator"
+cited_for = ["Layer 5.6", "Layer 7.2"]
+
+[[source]]
+id = "plattTrudgian2018"
+authors = "Dave Platt, Tim Trudgian"
+title = "Improved bounds on Brun's constant"
+year = 2018
+arxiv = "1803.01925v1"
+locator_scheme = "theorem"
+locator = "Lemma 1 (1.0503 x^{-2/5} for all x > 0), Lemma 4, §2.1"
+url = "https://arxiv.org/abs/1803.01925v1"
+licence_class = "open-repository"
+status = "uncertified"
+version_note = "arXiv v1; arXiv text read for this design, not fetched by the certification pipeline; cited by its locator"
+cited_for = ["Layer 5.1", "Layer 5.2", "Layer 7.3", "Layer 7.6"]
+
+[[source]]
+id = "bordellesDaval2026"
+authors = "Olivier Bordellès, Florian Daval"
+title = "On a Smoothed Dirichlet Divisor Problem"
+year = 2026
+arxiv = "2601.01905v3"
+locator_scheme = "theorem"
+locator = "Theorem 1, Corollary 1, Lemma 8, (4)"
+url = "https://arxiv.org/abs/2601.01905v3"
+licence_class = "open-repository"
+status = "uncertified"
+version_note = "arXiv v3; unrefereed preprint; statements read from the arXiv text for this design, not fetched by the certification pipeline; cited by its locator"
+cited_for = ["Layer 7.4"]
+
+[[source]]
+id = "tudzi2025"
+authors = "Sebastian Tudzi"
+title = "On the Generalised Divisor Problem"
+year = 2025
+arxiv = "2506.21823v2"
+locator_scheme = "theorem"
+locator = "Theorems 1.1-1.2"
+url = "https://arxiv.org/abs/2506.21823v2"
+licence_class = "open-repository"
+status = "uncertified"
+version_note = "arXiv v2; unrefereed preprint; statements read from the arXiv text for this design, not fetched by the certification pipeline; cited by its locator"
+cited_for = ["Layer 7.9"]
+
+[[source]]
+id = "palojarviTudzi2026"
+authors = "Neea Palojärvi, Sebastian Tudzi"
+title = "Explicit and Effective Estimates for the error term in the Generalised Divisor Problem"
+year = 2026
+arxiv = "2603.16023v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.1, Lemma 4.1, Table 2"
+url = "https://arxiv.org/abs/2603.16023v1"
+licence_class = "open-repository"
+status = "uncertified"
+version_note = "arXiv v1; unrefereed preprint; statements read from the arXiv text for this design, not fetched by the certification pipeline; cited by its locator"
+cited_for = ["Layer 7.9"]
+
+[[source]]
+id = "kumchevEtAl2023"
+authors = "Angel Kumchev, Wade McCormick, Nathan McNew, Ariana Park, Russell Scherr, Willow Ziehr"
+title = "Explicit bounds for large gaps between squarefree integers"
+year = 2023
+arxiv = "2211.09975v3"
+locator_scheme = "theorem"
+locator = "Theorems 1-3"
+url = "https://arxiv.org/abs/2211.09975v3"
+licence_class = "open-repository"
+status = "uncertified"
+version_note = "arXiv v3; unrefereed preprint; statements read from the arXiv text for this design, not fetched by the certification pipeline; cited by its locator"
+cited_for = ["Layer 7.8"]
+
+[[source]]
+id = "simonicStarichkova2023"
+authors = "Aleksander Simonič, Valeriia V. Starichkova"
+title = "Atkinson's formula for the mean square of zeta(s) with an explicit error term"
+year = 2023
+venue = "Journal of Number Theory 244, 111-168"
+doi = "10.1016/j.jnt.2022.09.010"
+arxiv = "2105.06821v3"
+locator_scheme = "section"
+locator = "§3, footnote 6 (0.764 x^{1/3} log x for x ≥ 5)"
+url = "https://arxiv.org/abs/2105.06821v3"
+licence_class = "open-repository"
+status = "uncertified"
+version_note = "arXiv v3; arXiv text read for this design, not fetched by the certification pipeline; cited by its locator"
+cited_for = ["Layer 7.4"]
+
+[[source]]
+id = "bordelles2006"
+authors = "O. Bordellès"
+title = "An inequality for the class number"
+year = 2006
+venue = "JIPAM Journal of Inequalities in Pure and Applied Mathematics 7, Article 87"
+locator_scheme = "theorem"
+locator = "Theorem 2.1, Lemma 3.2"
+url = "https://emis.univie.ac.at/journals/JIPAM/"
+licence_class = "none"
+status = "uncertified"
+version_note = "open-access journal on the EMIS mirrors; a copy of the text was read for this design, not fetched by the certification pipeline"
+cited_for = ["Layer 7.5"]
+
+[[source]]
+id = "bordelles2024"
+authors = "Olivier Bordellès"
+title = "An explicit result for short sums of positive arithmetic functions"
+year = 2024
+arxiv = "2402.12333v3"
+locator_scheme = "theorem"
+locator = "Lemma 16"
+url = "https://arxiv.org/abs/2402.12333v3"
+licence_class = "open-repository"
+status = "uncertified"
+version_note = "arXiv v3; arXiv text read for this design, not fetched by the certification pipeline; cited by its locator"
+cited_for = ["Layer 6.3"]
+
+[[source]]
+id = "dubbe2020"
+authors = "F. Dubbe"
+title = "Explicit bound of the divisor function"
+year = 2020
+venue = "Functiones et Approximatio Commentarii Mathematici 63, 133-136"
+doi = "10.7169/facm/1854"
+locator_scheme = "page"
+locator = "pp. 133-136"
+url = "https://doi.org/10.7169/facm/1854"
+licence_class = "none"
+status = "uncertified"
+version_note = "the publisher blocked the automated fetch; the statement is known only through secondary citations and is recorded by locator only"
+cited_for = ["Layer 7.5"]
+
+[[source]]
+id = "axler2018"
+authors = "Christian Axler"
+title = "New estimates for some functions defined over primes"
+year = 2018
+venue = "Integers 18, #A52"
+arxiv = "1703.08032v2"
+locator_scheme = "theorem"
+locator = "Propositions 5.1 and 6.1 (arXiv v2); Propositions 7 and 9 in print"
+url = "https://arxiv.org/abs/1703.08032v2"
+licence_class = "open-repository"
+status = "uncertified"
+version_note = "arXiv v2 and the Integers print were read; the 0.07 form of Proposition 6.1 is stated only in arXiv v2; arXiv text read for this design, not fetched by the certification pipeline; cited by its locator"
+cited_for = ["Layer 8.1"]
+
+[[source]]
+id = "axler2022"
+authors = "Christian Axler"
+title = "Effective estimates for some functions defined over primes"
+year = 2022
+arxiv = "2203.05917v4"
+locator_scheme = "theorem"
+locator = "Theorem 1.5, Proposition 6.1, Corollary 6.2"
+url = "https://arxiv.org/abs/2203.05917v4"
+licence_class = "open-repository"
+status = "uncertified"
+version_note = "arXiv v4; unrefereed preprint; statements read from the arXiv text for this design, not fetched by the certification pipeline; cited by its locator"
+cited_for = ["Layer 8.1", "Layer 8.2"]
+
+[[source]]
+id = "languascoZaccagnini2009"
+authors = "A. Languasco, A. Zaccagnini"
+title = "On the constant in the Mertens product for arithmetic progressions. II. Numerical values"
+year = 2009
+venue = "Mathematics of Computation 78, 315-326"
+doi = "10.1090/S0025-5718-08-02148-0"
+arxiv = "0712.1665v1"
+locator_scheme = "equation"
+locator = "(1)-(2), (7), Tables 1-3 (3 ≤ q ≤ 100, at least 100 digits)"
+url = "https://arxiv.org/abs/0712.1665v1"
+licence_class = "open-repository"
+status = "uncertified"
+version_note = "arXiv v1; arXiv text read for this design, not fetched by the certification pipeline; cited by its locator"
+cited_for = ["Layer 0.7", "Layer 8.3"]
+
+[[source]]
+id = "axlerNicolas2023"
+authors = "Christian Axler, Jean-Louis Nicolas"
+title = "Large values of n/φ(n) and σ(n)/n"
+year = 2023
+venue = "Acta Arithmetica 209, 357-383"
+locator_scheme = "equation"
+locator = "(1.13)-(1.22), Theorem 1.2"
+url = "http://math.univ-lyon1.fr/~nicolas/colsansHR.pdf"
+licence_class = "author-page"
+status = "uncertified"
+version_note = "author copy read for this design, not fetched by the certification pipeline"
+cited_for = ["Layer 0.7", "Layer 9.3", "Layer 9.4"]
+
+[[source]]
+id = "robin1984"
+authors = "G. Robin"
+title = "Grandes valeurs de la fonction somme des diviseurs et hypothèse de Riemann"
+year = 1984
+venue = "Journal de Mathématiques Pures et Appliquées 63, 187-213"
+locator_scheme = "theorem"
+locator = "Théorème 2"
+url = "https://www.sciencedirect.com/journal/journal-de-mathematiques-pures-et-appliquees"
+licence_class = "none"
+status = "uncertified"
+version_note = "not reached; cited by its locator as restated in axlerNicolas2023"
+cited_for = ["Layer 9.3", "Layer 9.4"]
+
+[[source]]
+id = "banks2026"
+authors = "William D. Banks"
+title = "On the OpenAI proof that Landau-Siegel zeros do not exist"
+year = 2026
+arxiv = "2610.15483v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.1, Remark 7.1"
+url = "https://arxiv.org/abs/2610.15483v1"
+licence_class = "open-repository"
+status = "uncertified"
+version_note = "arXiv v1; unrefereed preprint; statements read from the arXiv text for this design, not fetched by the certification pipeline; cited by its locator"
+cited_for = ["Supplier contracts (zero-free inputs)", "Layer 0.7"]
+
+[[source]]
+id = "luZamanZhao2026"
+authors = "Rick F. Lu, Asif Zaman, Haonan Zhao"
+title = "Numerical computations concerning Landau-Siegel zeros"
+year = 2026
+venue = "Mathematics of Computation (to appear)"
+doi = "10.1090/mcom/4268"
+arxiv = "2602.03626v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/2602.03626v2"
+licence_class = "open-repository"
+status = "uncertified"
+version_note = "arXiv v2; arXiv text read for this design, not fetched by the certification pipeline; cited by its locator"
+cited_for = ["Layer 0.7"]
+
+[[source]]
+id = "openai2026siegel"
+authors = "OpenAI"
+title = "Uniform exclusion of Landau-Siegel zeros"
+year = 2026
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://github.com/openai/math"
+licence_class = "open-repository"
+status = "uncertified"
+version_note = "unrefereed preprint in the openai/math repository; cited for the qualitative statement only"
+cited_for = ["Supplier contracts (zero-free inputs)"]
+
+[[source]]
+id = "openai2026quasiRH"
+authors = "OpenAI"
+title = "The Quasi-Riemann Hypothesis: a zero-free half-plane Re s > 7/8"
+year = 2026
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://github.com/openai/math"
+licence_class = "open-repository"
+status = "uncertified"
+version_note = "unrefereed preprint in the openai/math repository, with no numerical constants; context only"
+cited_for = ["Supplier contracts (zero-free inputs)"]
